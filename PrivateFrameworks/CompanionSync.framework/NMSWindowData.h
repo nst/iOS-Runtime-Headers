@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSArray, NSDate, NSObject<OS_dispatch_queue>, NSString;
-
 @interface NMSWindowData : NSObject {
     struct sqlite3_stmt { } *_addMessageInFlight;
     struct sqlite3_stmt { } *_countPendingMessages;
@@ -22,16 +20,16 @@
     NSObject<OS_dispatch_queue> *_syncQ;
 }
 
-@property(readonly) unsigned int countOfAllMessagesInFlight;
-@property(readonly) unsigned int countOfPendingMessages;
-@property(readonly) NSDate * dateOfNextMessageExpiry;
-@property(readonly) NSArray * expiredMessageIDs;
-@property(readonly) unsigned int lengthOfAllMessagesInFlight;
+@property (nonatomic, readonly) unsigned int countOfAllMessagesInFlight;
+@property (nonatomic, readonly) unsigned int countOfPendingMessages;
+@property (nonatomic, readonly) NSDate *dateOfNextMessageExpiry;
+@property (nonatomic, readonly) NSArray *expiredMessageIDs;
+@property (nonatomic, readonly) unsigned int lengthOfAllMessagesInFlight;
 
 - (void).cxx_destruct;
 - (int)_getSchemaVersion;
 - (BOOL)_openDBForceRecreate:(BOOL)arg1;
-- (BOOL)_syncTransaction:(BOOL)arg1 block:(id)arg2;
+- (BOOL)_syncTransaction:(BOOL)arg1 block:(id /* block */)arg2;
 - (void)addMessageWithID:(id)arg1 ofLength:(unsigned int)arg2 timeoutTime:(double)arg3;
 - (unsigned int)countOfAllMessagesInFlight;
 - (unsigned int)countOfPendingMessages;

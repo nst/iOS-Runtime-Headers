@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DResourceLoader : NSObject {
-}
+@interface TSCH3DResourceLoader : NSObject
 
 + (id)loader;
 

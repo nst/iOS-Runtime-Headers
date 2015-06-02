@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUExtrasContext, NSLayoutConstraint, UIView, UIViewController, UIViewController<MPUExtrasVideoPlaybackViewController>;
-
 @interface MPUExtrasFeatureContainerViewController : UIViewController {
     float _collectionViewHeight;
     MPUExtrasContext *_context;
@@ -12,10 +10,10 @@
     UIViewController<MPUExtrasVideoPlaybackViewController> *_videoPlaybackViewController;
 }
 
-@property float collectionViewHeight;
-@property(readonly) MPUExtrasContext * context;
-@property UIView * menuBarView;
-@property(retain) UIViewController * videoPlaybackViewController;
+@property (nonatomic) float collectionViewHeight;
+@property (nonatomic, readonly) MPUExtrasContext *context;
+@property (nonatomic) UIView *menuBarView;
+@property (nonatomic, retain) UIViewController *videoPlaybackViewController;
 
 - (void).cxx_destruct;
 - (void)_menuBarHeightChange:(id)arg1;

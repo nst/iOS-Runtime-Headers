@@ -6,7 +6,7 @@
     unsigned int _repeatType;
 }
 
-@property(readonly) unsigned int repeatType;
+@property (nonatomic, readonly) unsigned int repeatType;
 
 - (id)initWithCommand:(id)arg1 mediaRemoteType:(unsigned int)arg2 options:(id)arg3;
 - (unsigned int)repeatType;

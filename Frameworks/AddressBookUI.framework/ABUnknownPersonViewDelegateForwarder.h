@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABUnknownPersonViewController, NSString;
-
 @interface ABUnknownPersonViewDelegateForwarder : NSObject <UITableViewDataSource, UITableViewDelegate> {
     ABUnknownPersonViewController *_viewController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)initWithUnknownPersonViewController:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;

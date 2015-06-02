@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSString;
-
 @interface SUNavigationMenu : NSObject <NSCopying> {
     NSString *_cancelTitle;
     NSString *_closedTitle;
@@ -14,13 +12,13 @@
     NSString *_openTitle;
 }
 
-@property(readonly) NSString * cancelTitle;
-@property(readonly) NSString * closedTitle;
-@property(readonly) int initialSelectedIndex;
-@property int location;
-@property(readonly) NSArray * menuItems;
-@property(readonly) NSArray * navigationButtons;
-@property(readonly) NSString * openTitle;
+@property (nonatomic, readonly) NSString *cancelTitle;
+@property (nonatomic, readonly) NSString *closedTitle;
+@property (nonatomic, readonly) int initialSelectedIndex;
+@property (nonatomic) int location;
+@property (nonatomic, readonly) NSArray *menuItems;
+@property (nonatomic, readonly) NSArray *navigationButtons;
+@property (nonatomic, readonly) NSString *openTitle;
 
 - (void)_loadFromDictionary:(id)arg1;
 - (int)_locationForString:(id)arg1;

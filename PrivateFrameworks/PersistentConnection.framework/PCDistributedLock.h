@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class NSString;
-
 @interface PCDistributedLock : NSObject <NSLocking> {
     int _fd;
     NSString *_path;

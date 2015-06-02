@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, UIViewController;
-
 @interface SKUIIPadChartsColumnView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -15,9 +13,9 @@
     int _selectedViewControllerIndex;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(copy) NSArray * contentViewControllers;
-@property(readonly) UIViewController * selectedViewController;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic, copy) NSArray *contentViewControllers;
+@property (nonatomic, readonly) UIViewController *selectedViewController;
 
 - (void).cxx_destruct;
 - (void)_addSelectedViewController;

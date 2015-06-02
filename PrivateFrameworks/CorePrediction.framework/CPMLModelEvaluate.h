@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePrediction.framework/CorePrediction
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CPMLSchema, NSMutableArray, NSNumber, NSString;
-
 @interface CPMLModelEvaluate : NSObject {
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSData, NSDictionary, NSURLResponse;
-
 @interface NSCachedURLResponseInternal : NSObject {
     struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; } *_cachedURLResponse;
     NSData *data;

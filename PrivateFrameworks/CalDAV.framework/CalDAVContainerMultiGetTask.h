@@ -7,8 +7,8 @@
     BOOL _getScheduleTags;
 }
 
-@property BOOL getScheduleChanges;
-@property BOOL getScheduleTags;
+@property (nonatomic) BOOL getScheduleChanges;
+@property (nonatomic) BOOL getScheduleTags;
 
 - (id)copyAdditionalPropElements;
 - (BOOL)getScheduleChanges;

@@ -6,7 +6,7 @@
     BOOL _alwaysVisible;
 }
 
-@property BOOL alwaysVisible;
+@property (nonatomic) BOOL alwaysVisible;
 
 - (BOOL)alwaysVisible;
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2;

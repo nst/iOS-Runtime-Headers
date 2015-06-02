@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSData;
-
 @interface HMDCharacteristicWriteRequest : HMDCharacteristicRequest {
     NSData *_authorizationData;
     id _value;
 }
 
-@property(readonly) NSData * authorizationData;
-@property(readonly) id value;
+@property (nonatomic, readonly) NSData *authorizationData;
+@property (nonatomic, readonly) id value;
 
 + (id)writeRequestWithCharacteristic:(id)arg1 value:(id)arg2 authorizationData:(id)arg3;
 

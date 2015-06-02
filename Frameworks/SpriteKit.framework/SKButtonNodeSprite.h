@@ -2,37 +2,19 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<SKButtonNodeSpriteDelegate>, SKAction;
-
 @interface SKButtonNodeSprite : SKSpriteNode {
     NSObject<SKButtonNodeSpriteDelegate> *_delegate;
     SKAction *_downAction;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _downBlock;
-
+    id /* block */ _downBlock;
     int _touches;
     SKAction *_upAction;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _upBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _upInsideBlock;
-
+    id /* block */ _upBlock;
+    id /* block */ _upInsideBlock;
 }
 
-@property NSObject<SKButtonNodeSpriteDelegate> * delegate;
-@property(retain) SKAction * downAction;
-@property(retain) SKAction * upAction;
+@property (nonatomic) NSObject<SKButtonNodeSpriteDelegate> *delegate;
+@property (nonatomic, retain) SKAction *downAction;
+@property (nonatomic, retain) SKAction *upAction;
 
 + (id)buttonWithFontNamed:(id)arg1;
 
@@ -43,9 +25,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (void)onTouchDownInside:(id)arg1;
-- (void)onTouchUp:(id)arg1;
-- (void)onTouchUpInside:(id)arg1;
+- (void)onTouchDownInside:(id /* block */)arg1;
+- (void)onTouchUp:(id /* block */)arg1;
+- (void)onTouchUpInside:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDownAction:(id)arg1;
 - (void)setUpAction:(id)arg1;

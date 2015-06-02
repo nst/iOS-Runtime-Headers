@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOTileKeyList, NSMutableArray, NSSet, VKTileKeyList;
-
 @interface VKScene : NSObject <NSCopying> {
     GEOTileKeyList *_debugKeyList;
     BOOL _fullyLoaded;
@@ -15,13 +13,13 @@
     NSSet *_tilesToRender;
 }
 
-@property(retain) GEOTileKeyList * debugKeyList;
-@property BOOL fullyLoaded;
-@property(retain) VKTileKeyList * keysInView;
-@property BOOL mapIsOpaque;
-@property(retain) VKTileKeyList * neighborKeys;
-@property(retain) NSSet * neighborTiles;
-@property(retain) NSSet * tilesToRender;
+@property (nonatomic, retain) GEOTileKeyList *debugKeyList;
+@property (nonatomic) BOOL fullyLoaded;
+@property (nonatomic, retain) VKTileKeyList *keysInView;
+@property (nonatomic) BOOL mapIsOpaque;
+@property (nonatomic, retain) VKTileKeyList *neighborKeys;
+@property (nonatomic, retain) NSSet *neighborTiles;
+@property (nonatomic, retain) NSSet *tilesToRender;
 
 - (void)addRasterOverlayScene:(id)arg1;
 - (void)clearRasterOverlayScenes;

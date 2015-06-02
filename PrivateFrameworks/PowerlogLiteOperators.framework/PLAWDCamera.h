@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableSet, PLEntryNotificationOperatorComposition, PLOperator;
-
 @interface PLAWDCamera : PLAWDAuxMetrics {
     double _backCameraTimestamp;
     PLEntryNotificationOperatorComposition *_cameraEventCallbackBack;
@@ -18,16 +16,16 @@
 }
 
 @property double backCameraTimestamp;
-@property(retain) PLEntryNotificationOperatorComposition * cameraEventCallbackBack;
-@property(retain) PLEntryNotificationOperatorComposition * cameraEventCallbackFront;
-@property(retain) PLEntryNotificationOperatorComposition * cameraEventCallbackTorch;
+@property (retain) PLEntryNotificationOperatorComposition *cameraEventCallbackBack;
+@property (retain) PLEntryNotificationOperatorComposition *cameraEventCallbackFront;
+@property (retain) PLEntryNotificationOperatorComposition *cameraEventCallbackTorch;
 @property long cameraSubmitCnt;
 @property double frontCameraTimestamp;
-@property PLOperator * operator;
+@property PLOperator *operator;
 @property BOOL prevBackCameraState;
 @property BOOL prevFrontCameraState;
 @property BOOL prevTorchCameraState;
-@property(retain) NSMutableSet * runningMetrics;
+@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property double torchCameraTimestamp;
 
 + (id)entryAggregateDefinitionAwdCamera;

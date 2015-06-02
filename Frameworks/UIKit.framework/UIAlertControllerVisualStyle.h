@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIAlertControllerDescriptor, UITraitCollection;
-
 @interface UIAlertControllerVisualStyle : NSObject {
     UIAlertControllerDescriptor *_descriptor;
     UITraitCollection *_traitCollection;
 }
 
-@property(retain) UIAlertControllerDescriptor * descriptor;
-@property(retain) UITraitCollection * traitCollection;
+@property (nonatomic, retain) UIAlertControllerDescriptor *descriptor;
+@property (nonatomic, retain) UITraitCollection *traitCollection;
 
 - (id)_detailMessageFont;
 - (float)_scaledMarginAboveMessageLabelFirstBaseline;

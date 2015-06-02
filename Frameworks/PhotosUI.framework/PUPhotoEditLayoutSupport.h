@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoEditLayoutSupport : NSObject {
-}
+@interface PUPhotoEditLayoutSupport : NSObject
 
 + (id)layoutConstraintsForHidingSecondaryView:(id)arg1 layoutOrientation:(int)arg2;
 + (id)layoutConstraintsForHidingView:(id)arg1 layoutOrientation:(int)arg2;
-+ (void)transitionFromBarView:(id)arg1 orientation:(int)arg2 toBarView:(id)arg3 orientation:(int)arg4 coordinator:(id)arg5 completionHandler:(id)arg6;
++ (void)transitionFromBarView:(id)arg1 orientation:(int)arg2 toBarView:(id)arg3 orientation:(int)arg4 coordinator:(id)arg5 completionHandler:(id /* block */)arg6;
 
 @end

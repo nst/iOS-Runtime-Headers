@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class <NSObject><UIPDFDocumentDelegate>, NSString, UIPDFPageImageCache;
-
 @interface UIPDFDocument : NSObject {
     float _cachedWidth;
     struct CGPDFDocument { } *_cgDocument;
@@ -20,12 +18,12 @@
     int _thumbnailLock;
 }
 
-@property(readonly) struct CGPDFDocument { }* CGDocument;
-@property <NSObject><UIPDFDocumentDelegate> * delegate;
-@property(readonly) NSString * documentID;
-@property(readonly) unsigned int numberOfPages;
-@property(retain) UIPDFPageImageCache * pageImageCache;
-@property(retain) UIPDFPageImageCache * thumbnailCache;
+@property (readonly) struct CGPDFDocument { }*CGDocument;
+@property (nonatomic) <NSObject><UIPDFDocumentDelegate> *delegate;
+@property (readonly) NSString *documentID;
+@property (readonly) unsigned int numberOfPages;
+@property (retain) UIPDFPageImageCache *pageImageCache;
+@property (retain) UIPDFPageImageCache *thumbnailCache;
 
 + (id)documentNamed:(id)arg1;
 

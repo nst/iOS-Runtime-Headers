@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTextAlternatives;
-
 @interface UITextReplacementGeneratorForDictation : UITextReplacementGenerator {
     NSTextAlternatives *_alternatives;
 }
 
-@property(readonly) NSTextAlternatives * alternatives;
+@property (nonatomic, readonly) NSTextAlternatives *alternatives;
 
 - (id)alternatives;
 - (void)dealloc;

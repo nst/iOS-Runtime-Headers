@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLStatusDelegate>, NSDate, NSDictionary, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL;
-
 @interface CPLStatus : NSObject {
     <CPLStatusDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_lock;
@@ -11,15 +9,15 @@
     NSURL *_statusFileURL;
 }
 
-@property(readonly) NSDictionary * cloudAssetCountPerType;
-@property(readonly) NSDate * cloudAssetCountPerTypeLastCheckDate;
-@property <CPLStatusDelegate> * delegate;
-@property NSDate * exitDeleteTime;
-@property BOOL hasChangesToProcess;
-@property BOOL iCloudLibraryExists;
-@property BOOL iCloudLibraryHasBeenWiped;
-@property BOOL isExceedingQuota;
-@property NSDate * lastSuccessfulSyncDate;
+@property (nonatomic, readonly) NSDictionary *cloudAssetCountPerType;
+@property (nonatomic, readonly) NSDate *cloudAssetCountPerTypeLastCheckDate;
+@property (nonatomic) <CPLStatusDelegate> *delegate;
+@property (nonatomic) NSDate *exitDeleteTime;
+@property (nonatomic) BOOL hasChangesToProcess;
+@property (nonatomic) BOOL iCloudLibraryExists;
+@property (nonatomic) BOOL iCloudLibraryHasBeenWiped;
+@property (nonatomic) BOOL isExceedingQuota;
+@property (nonatomic) NSDate *lastSuccessfulSyncDate;
 
 + (id)statusForSharedLibrary;
 

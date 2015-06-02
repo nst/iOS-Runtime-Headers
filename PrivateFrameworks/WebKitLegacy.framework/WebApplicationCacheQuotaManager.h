@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebSecurityOrigin;
-
 @interface WebApplicationCacheQuotaManager : NSObject <WebQuotaManager> {
     WebSecurityOrigin *_origin;
 }

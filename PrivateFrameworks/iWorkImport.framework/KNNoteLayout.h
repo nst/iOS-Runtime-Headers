@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPLayout, TSWPPadding;
-
 @interface KNNoteLayout : TSDLayout <TSWPColumnMetrics, TSWPLayoutParent> {
     TSWPLayout *mContainedLayout;
     TSWPPadding *mPadding;
@@ -13,14 +11,14 @@
     } mSizeOfScrollViewEnclosingCanvas;
 }
 
-@property(readonly) BOOL alwaysStartsNewTarget;
-@property(readonly) unsigned int columnCount;
-@property(readonly) BOOL columnsAreLeftToRight;
-@property(readonly) TSWPLayout * containedLayout;
-@property(readonly) TSWPPadding * layoutMargins;
-@property(readonly) TSWPPadding * padding;
-@property(readonly) BOOL shrinkTextToFit;
-@property(readonly) float textScaleFactor;
+@property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
+@property (nonatomic, readonly) unsigned int columnCount;
+@property (nonatomic, readonly) BOOL columnsAreLeftToRight;
+@property (nonatomic, readonly) TSWPLayout *containedLayout;
+@property (nonatomic, readonly) TSWPPadding *layoutMargins;
+@property (nonatomic, readonly) TSWPPadding *padding;
+@property (nonatomic, readonly) BOOL shrinkTextToFit;
+@property (nonatomic, readonly) float textScaleFactor;
 
 - (id).cxx_construct;
 - (void)addChild:(id)arg1;

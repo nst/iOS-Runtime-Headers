@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSDate, NSString;
-
 @interface AFBulletin : NSObject <NSSecureCoding> {
     BOOL _allDay;
     NSString *_bulletinID;
@@ -20,19 +18,19 @@
     NSString *_title;
 }
 
-@property(getter=isAllDay,readonly) BOOL allDay;
-@property(copy,readonly) NSString * bulletinID;
-@property(copy,readonly) NSDate * date;
-@property(copy) NSString * displayName;
-@property(copy,readonly) NSDate * endDate;
-@property(copy,readonly) NSString * message;
-@property(copy,readonly) NSString * modalAlertContentMessage;
-@property(getter=isRead) BOOL read;
-@property(copy,readonly) NSDate * recencyDate;
-@property(copy,readonly) NSString * sectionID;
-@property(copy,readonly) NSString * subtitle;
-@property(copy,readonly) NSString * timeZone;
-@property(copy,readonly) NSString * title;
+@property (getter=isAllDay, nonatomic, readonly) BOOL allDay;
+@property (nonatomic, readonly, copy) NSString *bulletinID;
+@property (nonatomic, readonly, copy) NSDate *date;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, readonly, copy) NSDate *endDate;
+@property (nonatomic, readonly, copy) NSString *message;
+@property (nonatomic, readonly, copy) NSString *modalAlertContentMessage;
+@property (getter=isRead, nonatomic) BOOL read;
+@property (nonatomic, readonly, copy) NSDate *recencyDate;
+@property (nonatomic, readonly, copy) NSString *sectionID;
+@property (nonatomic, readonly, copy) NSString *subtitle;
+@property (nonatomic, readonly, copy) NSString *timeZone;
+@property (nonatomic, readonly, copy) NSString *title;
 
 + (BOOL)supportsSecureCoding;
 

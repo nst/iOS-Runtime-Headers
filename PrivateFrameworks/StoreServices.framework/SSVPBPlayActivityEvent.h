@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSData, NSString;
-
 @interface SSVPBPlayActivityEvent : PBCodable <NSCopying> {
     NSString *_containerID;
     int _containerType;
@@ -45,50 +43,50 @@
     NSData *_trackInfo;
 }
 
-@property(retain) NSString * containerID;
-@property int containerType;
-@property(retain) NSString * deviceName;
-@property int endReasonType;
-@property double eventDateTimestamp;
-@property double eventSecondsFromGMT;
-@property(retain) NSString * externalID;
-@property(retain) NSString * featureName;
-@property(readonly) BOOL hasContainerID;
-@property BOOL hasContainerType;
-@property(readonly) BOOL hasDeviceName;
-@property BOOL hasEndReasonType;
-@property BOOL hasEventDateTimestamp;
-@property BOOL hasEventSecondsFromGMT;
-@property(readonly) BOOL hasExternalID;
-@property(readonly) BOOL hasFeatureName;
-@property BOOL hasItemDuration;
-@property BOOL hasItemEndTime;
-@property BOOL hasItemStartTime;
-@property BOOL hasItemType;
-@property BOOL hasMediaType;
-@property BOOL hasOffline;
-@property BOOL hasPersistentID;
-@property(readonly) BOOL hasPersonalizedContainerID;
-@property BOOL hasSBEnabled;
-@property BOOL hasSourceType;
-@property BOOL hasStoreAccountID;
-@property(readonly) BOOL hasStoreID;
-@property(readonly) BOOL hasTimedMetadata;
-@property(readonly) BOOL hasTrackInfo;
-@property double itemDuration;
-@property double itemEndTime;
-@property double itemStartTime;
-@property int itemType;
-@property int mediaType;
-@property BOOL offline;
-@property long long persistentID;
-@property(retain) NSString * personalizedContainerID;
-@property BOOL sBEnabled;
-@property int sourceType;
-@property unsigned long long storeAccountID;
-@property(retain) NSString * storeID;
-@property(retain) NSData * timedMetadata;
-@property(retain) NSData * trackInfo;
+@property (nonatomic, retain) NSString *containerID;
+@property (nonatomic) int containerType;
+@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic) int endReasonType;
+@property (nonatomic) double eventDateTimestamp;
+@property (nonatomic) double eventSecondsFromGMT;
+@property (nonatomic, retain) NSString *externalID;
+@property (nonatomic, retain) NSString *featureName;
+@property (nonatomic, readonly) BOOL hasContainerID;
+@property (nonatomic) BOOL hasContainerType;
+@property (nonatomic, readonly) BOOL hasDeviceName;
+@property (nonatomic) BOOL hasEndReasonType;
+@property (nonatomic) BOOL hasEventDateTimestamp;
+@property (nonatomic) BOOL hasEventSecondsFromGMT;
+@property (nonatomic, readonly) BOOL hasExternalID;
+@property (nonatomic, readonly) BOOL hasFeatureName;
+@property (nonatomic) BOOL hasItemDuration;
+@property (nonatomic) BOOL hasItemEndTime;
+@property (nonatomic) BOOL hasItemStartTime;
+@property (nonatomic) BOOL hasItemType;
+@property (nonatomic) BOOL hasMediaType;
+@property (nonatomic) BOOL hasOffline;
+@property (nonatomic) BOOL hasPersistentID;
+@property (nonatomic, readonly) BOOL hasPersonalizedContainerID;
+@property (nonatomic) BOOL hasSBEnabled;
+@property (nonatomic) BOOL hasSourceType;
+@property (nonatomic) BOOL hasStoreAccountID;
+@property (nonatomic, readonly) BOOL hasStoreID;
+@property (nonatomic, readonly) BOOL hasTimedMetadata;
+@property (nonatomic, readonly) BOOL hasTrackInfo;
+@property (nonatomic) double itemDuration;
+@property (nonatomic) double itemEndTime;
+@property (nonatomic) double itemStartTime;
+@property (nonatomic) int itemType;
+@property (nonatomic) int mediaType;
+@property (nonatomic) BOOL offline;
+@property (nonatomic) long long persistentID;
+@property (nonatomic, retain) NSString *personalizedContainerID;
+@property (nonatomic) BOOL sBEnabled;
+@property (nonatomic) int sourceType;
+@property (nonatomic) unsigned long long storeAccountID;
+@property (nonatomic, retain) NSString *storeID;
+@property (nonatomic, retain) NSData *timedMetadata;
+@property (nonatomic, retain) NSData *trackInfo;
 
 - (void).cxx_destruct;
 - (id)containerID;

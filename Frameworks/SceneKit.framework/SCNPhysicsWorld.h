@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <SCNPhysicsContactDelegate>, NSMutableArray, SCNPhysicsContact, SCNScene;
-
 @interface SCNPhysicsWorld : NSObject <NSSecureCoding> {
     struct c3dAether { 
         struct vector<c3dPhysicsField *, std::__1::allocator<c3dPhysicsField *> > { 
@@ -41,10 +34,10 @@
     struct btDiscreteDynamicsWorld { int (**x1)(); struct btAlignedObjectArray<btCollisionObject *> { struct btAlignedAllocator<btCollisionObject *, 16> { } x_2_1_1; int x_2_1_2; int x_2_1_3; struct btCollisionObject {} **x_2_1_4; bool x_2_1_5; } x2; struct btDispatcher {} *x3; struct btDispatcherInfo { float x_4_1_1; int x_4_1_2; int x_4_1_3; float x_4_1_4; bool x_4_1_5; struct btIDebugDraw {} *x_4_1_6; bool x_4_1_7; bool x_4_1_8; bool x_4_1_9; float x_4_1_10; bool x_4_1_11; float x_4_1_12; } x4; struct btBroadphaseInterface {} *x5; struct btIDebugDraw {} *x6; bool x7; int (*x8)(); int (*x9)(); void *x10; struct btContactSolverInfo { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; float x_11_1_5; int x_11_1_6; float x_11_1_7; float x_11_1_8; float x_11_1_9; float x_11_1_10; float x_11_1_11; int x_11_1_12; float x_11_1_13; float x_11_1_14; float x_11_1_15; float x_11_1_16; int x_11_1_17; int x_11_1_18; int x_11_1_19; float x_11_1_20; float x_11_1_21; } x11; float x12; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_13_1_1; int x_13_1_2; int x_13_1_3; struct btTypedConstraint {} **x_13_1_4; bool x_13_1_5; } x13; struct InplaceSolverIslandCallback {} *x14; struct btConstraintSolver {} *x15; struct btSimulationIslandManager {} *x16; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_17_1_1; int x_17_1_2; int x_17_1_3; struct btTypedConstraint {} **x_17_1_4; bool x_17_1_5; } x17; struct btAlignedObjectArray<btRigidBody *> { struct btAlignedAllocator<btRigidBody *, 16> { } x_18_1_1; int x_18_1_2; int x_18_1_3; struct btRigidBody {} **x_18_1_4; bool x_18_1_5; } x18; struct btVector3 { float x_19_1_1[4]; } x19; float x20; bool x21; bool x22; bool x23; bool x24; struct btAlignedObjectArray<btActionInterface *> { struct btAlignedAllocator<btActionInterface *, 16> { } x_25_1_1; int x_25_1_2; int x_25_1_3; struct btActionInterface {} **x_25_1_4; bool x_25_1_5; } x25; int x26; struct btAlignedObjectArray<btPersistentManifold *> { struct btAlignedAllocator<btPersistentManifold *, 16> { } x_27_1_1; int x_27_1_2; int x_27_1_3; struct btPersistentManifold {} **x_27_1_4; bool x_27_1_5; } x27; bool x28; } *_world;
 }
 
-@property <SCNPhysicsContactDelegate> * contactDelegate;
-@property struct SCNVector3 { float x1; float x2; float x3; } gravity;
-@property float speed;
-@property double timeStep;
+@property <SCNPhysicsContactDelegate> *contactDelegate;
+@property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } gravity;
+@property (nonatomic) float speed;
+@property (nonatomic) double timeStep;
 
 + (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;
@@ -63,7 +56,7 @@
 - (struct btDynamicsWorld { int (**x1)(); struct btAlignedObjectArray<btCollisionObject *> { struct btAlignedAllocator<btCollisionObject *, 16> { } x_2_1_1; int x_2_1_2; int x_2_1_3; struct btCollisionObject {} **x_2_1_4; bool x_2_1_5; } x2; struct btDispatcher {} *x3; struct btDispatcherInfo { float x_4_1_1; int x_4_1_2; int x_4_1_3; float x_4_1_4; bool x_4_1_5; struct btIDebugDraw {} *x_4_1_6; bool x_4_1_7; bool x_4_1_8; bool x_4_1_9; float x_4_1_10; bool x_4_1_11; float x_4_1_12; } x4; struct btBroadphaseInterface {} *x5; struct btIDebugDraw {} *x6; bool x7; int (*x8)(); int (*x9)(); void *x10; struct btContactSolverInfo { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; float x_11_1_5; int x_11_1_6; float x_11_1_7; float x_11_1_8; float x_11_1_9; float x_11_1_10; float x_11_1_11; int x_11_1_12; float x_11_1_13; float x_11_1_14; float x_11_1_15; float x_11_1_16; int x_11_1_17; int x_11_1_18; int x_11_1_19; float x_11_1_20; float x_11_1_21; } x11; float x12; }*)_handle;
 - (BOOL)_needsRedraw;
 - (id)_physicsContact;
-- (void)_postCommandWithBlock:(id)arg1;
+- (void)_postCommandWithBlock:(id /* block */)arg1;
 - (void)_preTick:(double)arg1;
 - (id)_rayTestWithSegmentFromPoint:(struct btVector3 { float x1[4]; })arg1 toPoint:(struct btVector3 { float x1[4]; })arg2 options:(id)arg3;
 - (void)_removeFieldFromWorld:(id)arg1;

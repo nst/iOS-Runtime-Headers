@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
-
 @interface SKUINavigationBarViewElement : SKUIViewElement {
     BOOL _hidesShadow;
 }
 
-@property(readonly) BOOL hidesShadow;
-@property(readonly) NSArray * mainViewElements;
-@property(readonly) NSArray * navigationPalettes;
+@property (nonatomic, readonly) BOOL hidesShadow;
+@property (nonatomic, readonly) NSArray *mainViewElements;
+@property (nonatomic, readonly) NSArray *navigationPalettes;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (BOOL)hidesShadow;

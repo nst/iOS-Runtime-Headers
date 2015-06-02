@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class CBPeripheral, CBService, NSArray, NSData, NSNumber;
-
 @interface CBCharacteristic : CBAttribute {
     NSArray *_descriptors;
     NSNumber *_handle;
@@ -16,15 +14,15 @@
     NSNumber *_valueHandle;
 }
 
-@property(retain) NSArray * descriptors;
-@property(readonly) NSNumber * handle;
-@property(readonly) BOOL isBroadcasted;
+@property (retain) NSArray *descriptors;
+@property (nonatomic, readonly) NSNumber *handle;
+@property (readonly) BOOL isBroadcasted;
 @property BOOL isNotifying;
-@property(readonly) CBPeripheral * peripheral;
-@property(readonly) unsigned int properties;
-@property CBService * service;
-@property(retain) NSData * value;
-@property(readonly) NSNumber * valueHandle;
+@property (nonatomic, readonly) CBPeripheral *peripheral;
+@property (nonatomic, readonly) unsigned int properties;
+@property (nonatomic) CBService *service;
+@property (retain) NSData *value;
+@property (nonatomic, readonly) NSNumber *valueHandle;
 
 - (void)dealloc;
 - (id)description;

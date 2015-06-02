@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDHome, HMMessageDispatcher, NSDate, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface HMDTrigger : NSObject <HMMessageReceiver, NSSecureCoding> {
     BOOL _active;
     NSMutableArray *_currentActionSets;
@@ -15,20 +13,20 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property BOOL active;
-@property(retain) NSMutableArray * currentActionSets;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property HMDHome * home;
-@property(readonly) NSObject<OS_dispatch_queue> * messageReceiveQueue;
-@property(readonly) NSUUID * messageTargetUUID;
-@property(copy) NSDate * mostRecentFireDate;
-@property(retain) HMMessageDispatcher * msgDispatcher;
-@property(retain) NSString * name;
-@property(readonly) Class superclass;
-@property(retain) NSUUID * uuid;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic) BOOL active;
+@property (nonatomic, retain) NSMutableArray *currentActionSets;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) HMDHome *home;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
+@property (nonatomic, readonly) NSUUID *messageTargetUUID;
+@property (nonatomic, copy) NSDate *mostRecentFireDate;
+@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, retain) NSString *name;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSUUID *uuid;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (BOOL)supportsSecureCoding;
 

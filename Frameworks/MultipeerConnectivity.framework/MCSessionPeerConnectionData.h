@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MultipeerConnectivity.framework/MultipeerConnectivity
  */
 
-@class NSData;
-
 @interface MCSessionPeerConnectionData : NSObject {
     int _encryptionPreference;
     NSData *_gckSessionConnectionData;
     BOOL _hasIdentitySet;
 }
 
-@property int encryptionPreference;
-@property(retain) NSData * gckSessionConnectionData;
-@property BOOL hasIdentitySet;
+@property (nonatomic) int encryptionPreference;
+@property (nonatomic, retain) NSData *gckSessionConnectionData;
+@property (nonatomic) BOOL hasIdentitySet;
 
 + (id)connectionDataSegmentWithEncryptionPreference:(int)arg1 identitySet:(BOOL)arg2 gckSessionConnectionDataBytes:(void*)arg3 gckSessionConnectionDataLength:(unsigned long)arg4;
 

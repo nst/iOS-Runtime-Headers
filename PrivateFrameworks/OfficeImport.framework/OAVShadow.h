@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAVShadow : NSObject {
-}
+@interface OAVShadow : NSObject
 
 + (id)readFromManager:(id)arg1;
 

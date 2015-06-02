@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartAxisAnalysis;
-
 @interface TSCHChartStackedPercentValueAxis : TSCHChartValueAxis {
     TSCHChartAxisAnalysis *mInProgressAnalysisForErrorBarData;
 }

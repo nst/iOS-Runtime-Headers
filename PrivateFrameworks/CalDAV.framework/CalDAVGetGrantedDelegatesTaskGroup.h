@@ -7,8 +7,8 @@
     int _state;
 }
 
-@property BOOL fetchPrincipalDetails;
-@property int state;
+@property (nonatomic) BOOL fetchPrincipalDetails;
+@property (nonatomic) int state;
 
 - (void)_expandPropertiesWithAllowWrite:(BOOL)arg1;
 - (void)_fetchOnlyHrefs;

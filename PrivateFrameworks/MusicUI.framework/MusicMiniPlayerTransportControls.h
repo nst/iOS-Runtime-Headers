@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPImageCacheRequest, UIImageView;
-
 @interface MusicMiniPlayerTransportControls : MPUMiniPlayerTransportControls {
     UIImageView *_artworkImageView;
     MPImageCacheRequest *_currentImageCacheRequest;

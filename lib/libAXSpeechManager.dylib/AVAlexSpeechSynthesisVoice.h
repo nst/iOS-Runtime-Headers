@@ -2,8 +2,7 @@
    Image: /usr/lib/libAXSpeechManager.dylib
  */
 
-@interface AVAlexSpeechSynthesisVoice : AVSpeechSynthesisVoice {
-}
+@interface AVAlexSpeechSynthesisVoice : AVSpeechSynthesisVoice
 
 + (id)voice;
 + (id)voiceIdentifier;

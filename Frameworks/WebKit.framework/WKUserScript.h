@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString;
-
 @interface WKUserScript : NSObject <NSCopying> {
     BOOL _forMainFrameOnly;
     int _injectionTime;
@@ -12,9 +10,9 @@
     } _source;
 }
 
-@property(getter=isForMainFrameOnly,readonly) BOOL forMainFrameOnly;
-@property(readonly) int injectionTime;
-@property(copy,readonly) NSString * source;
+@property (getter=isForMainFrameOnly, nonatomic, readonly) BOOL forMainFrameOnly;
+@property (nonatomic, readonly) int injectionTime;
+@property (nonatomic, readonly, copy) NSString *source;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

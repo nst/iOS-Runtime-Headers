@@ -2,46 +2,43 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, NSDateComponents, NSString;
+@interface CNMutableContact : CNContact
 
-@interface CNMutableContact : CNContact {
-}
-
-@property(copy) NSDateComponents * alternateBirthday;
-@property(copy) NSDateComponents * birthday;
-@property(copy) NSArray * birthdays;
+@property (copy) NSDateComponents *alternateBirthday;
+@property (copy) NSDateComponents *birthday;
+@property (copy) NSArray *birthdays;
 @property int contactType;
-@property(copy) NSArray * dates;
-@property(copy) NSString * departmentName;
-@property(copy) NSArray * emailAddresses;
-@property(copy) NSString * familyName;
-@property(copy) NSString * givenName;
-@property(copy) NSArray * instantMessageAddresses;
-@property(copy) NSString * jobTitle;
-@property(copy) NSString * middleName;
-@property(copy) NSString * namePrefix;
-@property(copy) NSString * nameSuffix;
-@property(copy) NSString * nickname;
-@property(copy) NSString * note;
-@property(copy) NSString * organizationName;
-@property(copy) NSArray * phoneNumbers;
-@property(copy) NSString * phoneticFamilyName;
-@property(copy) NSString * phoneticGivenName;
-@property(copy) NSString * phoneticMiddleName;
-@property(copy) NSArray * postalAddresses;
-@property(copy) NSString * previousFamilyName;
-@property(copy) NSArray * relatedNames;
-@property(copy) NSArray * ringtone;
-@property(copy) NSArray * socialProfiles;
-@property(copy) NSArray * textTone;
-@property(copy) NSArray * urlAddresses;
+@property (copy) NSArray *dates;
+@property (copy) NSString *departmentName;
+@property (copy) NSArray *emailAddresses;
+@property (copy) NSString *familyName;
+@property (copy) NSString *givenName;
+@property (copy) NSArray *instantMessageAddresses;
+@property (copy) NSString *jobTitle;
+@property (copy) NSString *middleName;
+@property (copy) NSString *namePrefix;
+@property (copy) NSString *nameSuffix;
+@property (copy) NSString *nickname;
+@property (copy) NSString *note;
+@property (copy) NSString *organizationName;
+@property (copy) NSArray *phoneNumbers;
+@property (copy) NSString *phoneticFamilyName;
+@property (copy) NSString *phoneticGivenName;
+@property (copy) NSString *phoneticMiddleName;
+@property (copy) NSArray *postalAddresses;
+@property (copy) NSString *previousFamilyName;
+@property (copy) NSArray *relatedNames;
+@property (copy) NSArray *ringtone;
+@property (copy) NSArray *socialProfiles;
+@property (copy) NSArray *textTone;
+@property (copy) NSArray *urlAddresses;
 
 + (id)contact;
 + (id)contactWithRecord:(void*)arg1;
 + (id)contactWithRecord:(void*)arg1 unify:(BOOL)arg2;
 
 - (struct __CFString { }*)_ABLabelFromCNLabel:(id)arg1;
-- (void)_setMultiValueForProperty:(int)arg1 values:(id)arg2 valueFromCNValue:(id)arg3;
+- (void)_setMultiValueForProperty:(int)arg1 values:(id)arg2 valueFromCNValue:(id /* block */)arg3;
 - (void)_setStringMultiValueForProperty:(int)arg1 values:(id)arg2;
 - (void)_setValue:(id)arg1 forProperty:(int)arg2;
 - (void)addProperties:(id)arg1 excludingProperties:(id)arg2 fromContact:(id)arg3;

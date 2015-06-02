@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSDStroke;
-
 @interface TSTCellBorder : NSObject <NSCopying, TSSPropertyCommandSerializing, TSTCellDiffing> {
     TSDStroke *_bottomStroke;
     int _bottomStrokeOrder;
@@ -28,23 +21,23 @@
     int _topStrokeOrder;
 }
 
-@property(retain,readonly) TSDStroke * bottomStroke;
-@property(readonly) int bottomStrokeOrder;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) BOOL definedBottomStroke;
-@property(readonly) BOOL definedLeftStroke;
-@property(readonly) BOOL definedRightStroke;
-@property(readonly) BOOL definedTopStroke;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isEmpty;
-@property(retain,readonly) TSDStroke * leftStroke;
-@property(readonly) int leftStrokeOrder;
-@property(retain,readonly) TSDStroke * rightStroke;
-@property(readonly) int rightStrokeOrder;
-@property(readonly) Class superclass;
-@property(retain,readonly) TSDStroke * topStroke;
-@property(readonly) int topStrokeOrder;
+@property (nonatomic, readonly, retain) TSDStroke *bottomStroke;
+@property (nonatomic, readonly) int bottomStrokeOrder;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) BOOL definedBottomStroke;
+@property (nonatomic, readonly) BOOL definedLeftStroke;
+@property (nonatomic, readonly) BOOL definedRightStroke;
+@property (nonatomic, readonly) BOOL definedTopStroke;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly, retain) TSDStroke *leftStroke;
+@property (nonatomic, readonly) int leftStrokeOrder;
+@property (nonatomic, readonly, retain) TSDStroke *rightStroke;
+@property (nonatomic, readonly) int rightStrokeOrder;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) TSDStroke *topStroke;
+@property (nonatomic, readonly) int topStrokeOrder;
 
 + (id)cellBorder;
 + (id)cellBorderForResettingAllStrokes;

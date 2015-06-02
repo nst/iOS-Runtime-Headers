@@ -2,23 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <AFSiriTaskDelivering>, AFSiriRequest, AFWatchdogTimer, NSObject<OS_dispatch_queue>, NSString, NSXPCListener;
-
 @interface AFSiriTaskExecution : NSObject <AFSiriResponseHandling, NSXPCListenerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deliveryHandler;
-
+    id /* block */ _completionHandler;
+    id /* block */ _deliveryHandler;
     NSObject<OS_dispatch_queue> *_queue;
     AFSiriRequest *_request;
     int _state;
@@ -28,10 +14,10 @@
     NSXPCListener *_usageResultListener;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_completeWithError:(id)arg1;
@@ -42,8 +28,8 @@
 - (void)handleSiriResponse:(id)arg1;
 - (id)initWithRequest:(id)arg1 taskDeliverer:(id)arg2 usageResultListener:(id)arg3;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)setCompletionHandler:(id)arg1;
-- (void)setDeliveryHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setDeliveryHandler:(id /* block */)arg1;
 - (void)start;
 
 @end

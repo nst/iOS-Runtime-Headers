@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StreamingZip.framework/StreamingZip
  */
 
-@class NSXPCConnection, StreamingUnzipState;
-
 @interface StreamingUnzipper : NSObject <StreamingUnzipProtocol> {
     StreamingUnzipState *_currentState;
     void *_decompressionOutputBuffer;
@@ -11,22 +9,22 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property NSXPCConnection * xpcConnection;
+@property (nonatomic) NSXPCConnection *xpcConnection;
 
 - (void).cxx_destruct;
 - (id)_beginNonStreamablePassthroughWithRemainingBytes:(const void*)arg1 length:(unsigned int)arg2;
 - (void)_setErrorState;
-- (void)_supplyBytes:(const char *)arg1 length:(unsigned int)arg2 withReply:(id)arg3;
+- (void)_supplyBytes:(const char *)arg1 length:(unsigned int)arg2 withReply:(id /* block */)arg3;
 - (void)dealloc;
-- (void)finishStreamWithReply:(id)arg1;
+- (void)finishStreamWithReply:(id /* block */)arg1;
 - (id)init;
 - (void)setXpcConnection:(id)arg1;
-- (void)setupUnzipperWithOutputPath:(id)arg1 sandboxExtensionToken:(char *)arg2 options:(id)arg3 withReply:(id)arg4;
-- (void)supplyBytes:(id)arg1 withReply:(id)arg2;
-- (void)supplyDispatchData:(id)arg1 withReply:(id)arg2;
-- (void)supplyRemappableData:(id)arg1 withReply:(id)arg2;
-- (void)supplyXPCData:(id)arg1 withReply:(id)arg2;
-- (void)suspendStreamWithReply:(id)arg1;
+- (void)setupUnzipperWithOutputPath:(id)arg1 sandboxExtensionToken:(char *)arg2 options:(id)arg3 withReply:(id /* block */)arg4;
+- (void)supplyBytes:(id)arg1 withReply:(id /* block */)arg2;
+- (void)supplyDispatchData:(id)arg1 withReply:(id /* block */)arg2;
+- (void)supplyRemappableData:(id)arg1 withReply:(id /* block */)arg2;
+- (void)supplyXPCData:(id)arg1 withReply:(id /* block */)arg2;
+- (void)suspendStreamWithReply:(id /* block */)arg1;
 - (id)xpcConnection;
 
 @end

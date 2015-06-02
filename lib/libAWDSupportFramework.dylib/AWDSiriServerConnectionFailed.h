@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDSiriServerConnectionFailed : PBCodable <NSCopying> {
     int _connectionType;
     long long _errorCode;
@@ -16,14 +14,14 @@
     unsigned long long _timestamp;
 }
 
-@property int connectionType;
-@property long long errorCode;
-@property(retain) NSString * errorDomain;
-@property BOOL hasConnectionType;
-@property BOOL hasErrorCode;
-@property(readonly) BOOL hasErrorDomain;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) int connectionType;
+@property (nonatomic) long long errorCode;
+@property (nonatomic, retain) NSString *errorDomain;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic, readonly) BOOL hasErrorDomain;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (int)connectionType;
 - (void)copyTo:(id)arg1;

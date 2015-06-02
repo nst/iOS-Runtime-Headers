@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIOfferViewDelegate>, NSMapTable, NSMutableArray, NSString;
-
 @interface SKUIOfferView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIViewElementView> {
     unsigned int _alignment;
     NSMapTable *_buttonElements;
@@ -21,13 +19,13 @@
     NSMutableArray *_offerButtonViews;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIOfferViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int metadataPosition;
-@property(getter=isShowingConfirmation,readonly) BOOL showingConfirmation;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIOfferViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int metadataPosition;
+@property (getter=isShowingConfirmation, nonatomic, readonly) BOOL showingConfirmation;
+@property (readonly) Class superclass;
 
 + (id)_attributedStringForButton:(id)arg1 context:(id)arg2;
 + (id)_attributedStringForLabel:(id)arg1 context:(id)arg2;

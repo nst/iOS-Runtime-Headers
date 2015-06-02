@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSObject<OS_dispatch_source>, NSString, NSUserDefaults;
-
 @interface LSUserActivityDebuggingManager : NSObject {
     int _additionalLogFile;
     struct __asl_object_s { } *_client;
@@ -15,14 +13,14 @@
 }
 
 @property int additionalLogFile;
-@property struct __asl_object_s { }* client;
+@property struct __asl_object_s { }*client;
 @property unsigned long long lastLogRotationTime;
-@property(copy) NSString * logFileDirectoryPath;
-@property(readonly) BOOL logFileEnabled;
-@property(copy) NSString * logFilePath;
-@property NSObject<OS_dispatch_source> * logRotationTimerSource;
-@property(readonly) BOOL loggingEnabled;
-@property(retain) NSUserDefaults * userDefaults;
+@property (copy) NSString *logFileDirectoryPath;
+@property (readonly) BOOL logFileEnabled;
+@property (copy) NSString *logFilePath;
+@property NSObject<OS_dispatch_source> *logRotationTimerSource;
+@property (readonly) BOOL loggingEnabled;
+@property (retain) NSUserDefaults *userDefaults;
 
 + (id)hexDataDump:(id)arg1;
 + (void)log:(int)arg1 format:(id)arg2;

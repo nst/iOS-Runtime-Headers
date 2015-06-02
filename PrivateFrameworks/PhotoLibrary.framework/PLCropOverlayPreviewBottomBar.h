@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIButton;
-
 @interface PLCropOverlayPreviewBottomBar : UIView {
     int _backgroundStyle;
     UIButton *_cancelButton;
@@ -11,10 +9,10 @@
     UIButton *_playbackButton;
 }
 
-@property int backgroundStyle;
-@property(readonly) UIButton * cancelButton;
-@property(readonly) UIButton * doneButton;
-@property(readonly) UIButton * playbackButton;
+@property (nonatomic) int backgroundStyle;
+@property (nonatomic, readonly) UIButton *cancelButton;
+@property (nonatomic, readonly) UIButton *doneButton;
+@property (nonatomic, readonly) UIButton *playbackButton;
 
 - (void)_commonPLCropOverlayEditPhotoBottomBarInitialization;
 - (void)_updateBackgroundStyle;

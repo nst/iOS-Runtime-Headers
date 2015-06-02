@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSCHPieBodyLayoutItemPathCache : NSObject {
     struct CGPath { } *pathLayoutRelative;
     NSArray *pathSelectionKnobs;
@@ -25,12 +23,12 @@
     } wedgeCenterPoint;
 }
 
-@property(readonly) struct CGPath { }* pathLayoutRelative;
-@property(copy,readonly) NSArray * pathSelectionKnobs;
-@property(readonly) struct CGPath { }* pathTransformRelative;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rootedLayoutRect;
-@property(readonly) unsigned int seriesIndex;
-@property(readonly) struct CGPoint { float x1; float x2; } wedgeCenterPoint;
+@property (nonatomic, readonly) struct CGPath { }*pathLayoutRelative;
+@property (nonatomic, readonly, copy) NSArray *pathSelectionKnobs;
+@property (nonatomic, readonly) struct CGPath { }*pathTransformRelative;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rootedLayoutRect;
+@property (nonatomic, readonly) unsigned int seriesIndex;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } wedgeCenterPoint;
 
 - (void)dealloc;
 - (id)initWithSeriesIndex:(unsigned int)arg1 rootedLayoutRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 wedgeCenterPoint:(struct CGPoint { float x1; float x2; })arg3 pathLayoutRelative:(struct CGPath { }*)arg4 pathTransformRelative:(struct CGPath { }*)arg5 pathSelectionKnobs:(id)arg6;

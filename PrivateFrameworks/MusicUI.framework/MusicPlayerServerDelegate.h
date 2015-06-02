@@ -2,37 +2,23 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MPAVController, MPMediaItem, MPNowPlayingObserver, MusicAVPlayer, NSString;
-
 @interface MusicPlayerServerDelegate : NSObject <MPMusicPlayerControllerServerDelegate> {
     MusicAVPlayer *_applicationPlayer;
     MPMediaItem *_firstItem;
     MPNowPlayingObserver *_nowPlayingObserver;
     int _playbackShuffleMode;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _repeatChangeHandler;
-
+    id /* block */ _repeatChangeHandler;
     MPAVController *_repeatChangeHandlerPlayer;
     int _repeatMode;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shuffleChangeHandler;
-
+    id /* block */ _shuffleChangeHandler;
     MPAVController *_shuffleChangeHandlerPlayer;
     int _shuffleMode;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_appDefaultsChanged:(id)arg1;
@@ -45,8 +31,8 @@
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithGeniusMixPlaylist:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithQuery:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithRadioStation:(id)arg2;
-- (void)musicPlayerServer:(id)arg1 registerForRepeatModeChangesWithChangeHandler:(id)arg2;
-- (void)musicPlayerServer:(id)arg1 registerForShuffleModeChangesWithChangeHandler:(id)arg2;
+- (void)musicPlayerServer:(id)arg1 registerForRepeatModeChangesWithChangeHandler:(id /* block */)arg2;
+- (void)musicPlayerServer:(id)arg1 registerForShuffleModeChangesWithChangeHandler:(id /* block */)arg2;
 - (void)musicPlayerServer:(id)arg1 setFirstItem:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 setNowPlayingItem:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 setPlaybackSpeed:(int)arg2;

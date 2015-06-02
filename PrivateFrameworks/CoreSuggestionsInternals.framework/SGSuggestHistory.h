@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSMutableSet, NSUbiquitousKeyValueStore;
-
 @interface SGSuggestHistory : NSObject {
     NSUbiquitousKeyValueStore *_backingKVStore;
     NSMutableSet *_contactHashes;

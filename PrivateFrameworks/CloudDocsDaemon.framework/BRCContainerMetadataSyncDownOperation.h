@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, BRCContainerMetadataSyncPersistedState, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface BRCContainerMetadataSyncDownOperation : _BRCOperation <BRCOperationSubclass> {
     NSMutableArray *_desiredKeysForDesiredAssets;
     NSMutableArray *_recordIDsForDesiredAssets;
@@ -12,17 +10,17 @@
     BRCContainerMetadataSyncPersistedState *_state;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)initWithSession:(id)arg1 state:(id)arg2;
 - (void)main;
-- (void)performAfterCreatingZoneIfNeeded:(id)arg1;
-- (void)performAfterFetchingAssetContents:(id)arg1;
-- (void)performAfterFetchingRecordChanges:(id)arg1;
+- (void)performAfterCreatingZoneIfNeeded:(id /* block */)arg1;
+- (void)performAfterFetchingAssetContents:(id /* block */)arg1;
+- (void)performAfterFetchingRecordChanges:(id /* block */)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 
 @end

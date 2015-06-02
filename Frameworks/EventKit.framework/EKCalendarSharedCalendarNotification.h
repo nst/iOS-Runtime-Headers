@@ -7,8 +7,8 @@
     int _sharingInvitationResponse;
 }
 
-@property unsigned int allowedEntityTypes;
-@property int sharingInvitationResponse;
+@property (nonatomic) unsigned int allowedEntityTypes;
+@property (nonatomic) int sharingInvitationResponse;
 
 - (unsigned int)allowedEntityTypes;
 - (id)calendarFromEventStore:(id)arg1;

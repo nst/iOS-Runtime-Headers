@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIEditorialLinkViewDelegate>, NSMutableArray, SKUIEditorialLinkLayout, UIColor;
-
 @interface SKUIEditorialLinkView : UIView {
     NSMutableArray *_buttons;
     <SKUIEditorialLinkViewDelegate> *_delegate;
@@ -13,9 +11,9 @@
     UIColor *_textColor;
 }
 
-@property <SKUIEditorialLinkViewDelegate> * delegate;
-@property int horizontalAlignment;
-@property(retain) SKUIEditorialLinkLayout * linkLayout;
+@property (nonatomic) <SKUIEditorialLinkViewDelegate> *delegate;
+@property (nonatomic) int horizontalAlignment;
+@property (nonatomic, retain) SKUIEditorialLinkLayout *linkLayout;
 
 - (void).cxx_destruct;
 - (void)_linkButtonAction:(id)arg1;

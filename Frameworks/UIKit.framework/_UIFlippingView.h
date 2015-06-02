@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFlippingView : UIView {
-}
+@interface _UIFlippingView : UIView
 
 + (Class)layerClass;
 

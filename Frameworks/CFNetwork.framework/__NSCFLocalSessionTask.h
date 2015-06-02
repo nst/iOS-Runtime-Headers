@@ -2,31 +2,12 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSData, NSInputStream, NSObject<OS_dispatch_data>, NSObject<OS_dispatch_source>, NSString, NSURL, NSURLSessionConfiguration, __NSCFURLSessionConnection, __NSURLSessionLocal;
-
 @interface __NSCFLocalSessionTask : NSURLSessionTask <NSURLSessionDataTaskSubclass, NSURLSessionTaskSubclass, NSURLSessionUploadTaskSubclass, SessionConnectionDelegate> {
     NSURLSessionConfiguration *__configuration;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _async_initialization;
-
+    id /* block */ _async_initialization;
     __NSCFURLSessionConnection *_cfConn;
     struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; } *_connKey;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _dataTaskCompletion;
-
+    id /* block */ _dataTaskCompletion;
     NSObject<OS_dispatch_data> *_dataTaskData;
     BOOL _didIssueDidFinish;
     NSString *_duetAccountedBundleID;
@@ -42,28 +23,28 @@
     NSURL *_uploadFile;
 }
 
-@property(retain) NSURLSessionConfiguration * _configuration;
-@property(copy) id async_initialization;
-@property(retain) __NSCFURLSessionConnection * cfConn;
-@property struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }* connKey;
-@property(copy) id dataTaskCompletion;
-@property NSObject<OS_dispatch_data> * dataTaskData;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (retain) NSURLSessionConfiguration *_configuration;
+@property (copy) id /* block */ async_initialization;
+@property (retain) __NSCFURLSessionConnection *cfConn;
+@property struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*connKey;
+@property (copy) id /* block */ dataTaskCompletion;
+@property NSObject<OS_dispatch_data> *dataTaskData;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL didIssueDidFinish;
-@property(retain) NSString * duetAccountedBundleID;
+@property (retain) NSString *duetAccountedBundleID;
 @property BOOL duetAccountingIsDiscretionary;
-@property(readonly) unsigned int hash;
-@property(retain) __NSURLSessionLocal * localSession;
-@property NSObject<OS_dispatch_data> * pendingResponseBytes;
+@property (readonly) unsigned int hash;
+@property (retain) __NSURLSessionLocal *localSession;
+@property NSObject<OS_dispatch_data> *pendingResponseBytes;
 @property BOOL pendingResponseDisposition;
 @property BOOL pendingResponseDisposition_didFinish;
-@property NSObject<OS_dispatch_source> * resourceTimeout;
-@property(readonly) Class superclass;
+@property NSObject<OS_dispatch_source> *resourceTimeout;
+@property (readonly) Class superclass;
 @property unsigned int suspendCount;
-@property(retain) NSData * uploadData;
-@property(retain) NSInputStream * uploadDataStream;
-@property(retain) NSURL * uploadFile;
+@property (retain) NSData *uploadData;
+@property (retain) NSInputStream *uploadDataStream;
+@property (retain) NSURL *uploadFile;
 
 - (id)_configuration;
 - (void)_finishAllow;
@@ -77,41 +58,41 @@
 - (void)_onqueue_conditionalRequirementsChanged:(BOOL)arg1;
 - (void)_onqueue_connectionWaitingWithReason:(long long)arg1;
 - (void)_onqueue_didFinishWithError:(id)arg1;
-- (void)_onqueue_didReceiveChallenge:(id)arg1 request:(id)arg2 withCompletion:(id)arg3;
-- (void)_onqueue_didReceiveDispatchData:(id)arg1 completion:(id)arg2;
-- (void)_onqueue_didReceiveResponse:(id)arg1 completion:(id)arg2;
-- (void)_onqueue_didReceiveResponse:(id)arg1 redirectRequest:(id)arg2 withCompletion:(id)arg3;
+- (void)_onqueue_didReceiveChallenge:(id)arg1 request:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)_onqueue_didReceiveDispatchData:(id)arg1 completion:(id /* block */)arg2;
+- (void)_onqueue_didReceiveResponse:(id)arg1 completion:(id /* block */)arg2;
+- (void)_onqueue_didReceiveResponse:(id)arg1 redirectRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_onqueue_didSendBodyBytes:(long long)arg1 totalBytesSent:(long long)arg2 totalBytesExpectedToSend:(long long)arg3;
 - (void)_onqueue_disavow;
-- (void)_onqueue_needNewBodyStream:(id)arg1 withCompletion:(id)arg2;
+- (void)_onqueue_needNewBodyStream:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_onqueue_resume;
 - (id)_onqueue_strippedMutableRequest;
 - (void)_onqueue_suspend;
-- (void)_onqueue_willCacheResponse:(id)arg1 withCompletion:(id)arg2;
-- (void)_onqueue_willSendRequestForEstablishedConnection:(id)arg1 withCompletion:(id)arg2;
+- (void)_onqueue_willCacheResponse:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_onqueue_willSendRequestForEstablishedConnection:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_private_onqueue_didReceiveResponse:(id)arg1;
 - (void)_private_onqueue_didReceiveResponseDisposition:(int)arg1;
 - (void)_task_onqueue_didFinish;
-- (void)_task_onqueue_didReceiveDispatchData:(id)arg1 completionHandler:(id)arg2;
-- (id)async_initialization;
+- (void)_task_onqueue_didReceiveDispatchData:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id /* block */)async_initialization;
 - (void)cancel_with_error:(id)arg1;
 - (id)canceledError;
 - (id)cfConn;
 - (struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)connKey;
 - (void)connection:(id)arg1 _conditionalRequirementsChanged:(BOOL)arg2;
-- (void)connection:(id)arg1 _willSendRequestForEstablishedConnection:(id)arg2 completion:(id)arg3;
-- (void)connection:(id)arg1 challenged:(id)arg2 authCallback:(id)arg3;
+- (void)connection:(id)arg1 _willSendRequestForEstablishedConnection:(id)arg2 completion:(id /* block */)arg3;
+- (void)connection:(id)arg1 challenged:(id)arg2 authCallback:(id /* block */)arg3;
 - (void)connection:(id)arg1 didFinishLoadingWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveConnectionCacheKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2 completion:(id)arg3;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2 completion:(id)arg3;
-- (void)connection:(id)arg1 request:(id)arg2 needsNewBodyStreamCallback:(id)arg3;
+- (void)connection:(id)arg1 didReceiveData:(id)arg2 completion:(id /* block */)arg3;
+- (void)connection:(id)arg1 didReceiveResponse:(id)arg2 completion:(id /* block */)arg3;
+- (void)connection:(id)arg1 request:(id)arg2 needsNewBodyStreamCallback:(id /* block */)arg3;
 - (void)connection:(id)arg1 sentBodyBytes:(id)arg2 totalBytes:(id)arg3 expectedBytes:(id)arg4;
 - (void)connection:(id)arg1 waitingWithReason:(long long)arg2;
-- (void)connection:(id)arg1 wasRedirected:(id)arg2 newRequest:(id)arg3 responseCallback:(id)arg4;
-- (void)connection:(id)arg1 willCacheResponse:(id)arg2 responseCallback:(id)arg3;
+- (void)connection:(id)arg1 wasRedirected:(id)arg2 newRequest:(id)arg3 responseCallback:(id /* block */)arg4;
+- (void)connection:(id)arg1 willCacheResponse:(id)arg2 responseCallback:(id /* block */)arg3;
 - (void)connectionWillFinishLoading:(id)arg1;
-- (id)dataTaskCompletion;
+- (id /* block */)dataTaskCompletion;
 - (id)dataTaskData;
 - (void)dealloc;
 - (id)description;
@@ -128,11 +109,11 @@
 - (BOOL)pendingResponseDisposition_didFinish;
 - (id)posixError:(int)arg1;
 - (id)resourceTimeout;
-- (void)setAsync_initialization:(id)arg1;
+- (void)setAsync_initialization:(id /* block */)arg1;
 - (void)setCfConn:(id)arg1;
 - (void)setConnKey:(struct HTTPConnectionCacheKey { int (**x1)(); struct __CFAllocator {} *x2; int x3; unsigned int x4; struct __CFString {} *x5; int x6; int x7; struct __CFDictionary {} *x8; unsigned int x9; struct __CFDictionary {} *x10; struct NetworkProxy {} *x11; struct __CFString {} *x12; int x13; int x14; }*)arg1;
 - (void)setConnection:(id)arg1;
-- (void)setDataTaskCompletion:(id)arg1;
+- (void)setDataTaskCompletion:(id /* block */)arg1;
 - (void)setDataTaskData:(id)arg1;
 - (void)setDidIssueDidFinish:(BOOL)arg1;
 - (void)setDuetAccountedBundleID:(id)arg1;

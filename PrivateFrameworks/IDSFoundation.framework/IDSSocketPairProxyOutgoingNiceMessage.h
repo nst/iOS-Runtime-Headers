@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@interface IDSSocketPairProxyOutgoingNiceMessage : IDSSocketPairDataMessage {
-}
+@interface IDSSocketPairProxyOutgoingNiceMessage : IDSSocketPairDataMessage
 
 - (unsigned char)command;
 

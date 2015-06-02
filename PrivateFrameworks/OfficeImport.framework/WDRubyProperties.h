@@ -3,15 +3,15 @@
  */
 
 @interface WDRubyProperties : NSObject {
-    unsigned int mOriginal : 1;
+    unsigned int mOriginal;
     struct { int x1; unsigned short x2; unsigned short x3; unsigned short x4; int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; } *mOriginalProperties;
 }
 
-@property int alignment;
-@property unsigned short baseFontSize;
-@property unsigned short distanceBetween;
-@property unsigned short phoneticGuideFontSize;
-@property int phoneticGuideLanguage;
+@property (nonatomic) int alignment;
+@property (nonatomic) unsigned short baseFontSize;
+@property (nonatomic) unsigned short distanceBetween;
+@property (nonatomic) unsigned short phoneticGuideFontSize;
+@property (nonatomic) int phoneticGuideLanguage;
 
 - (int)alignment;
 - (unsigned short)baseFontSize;

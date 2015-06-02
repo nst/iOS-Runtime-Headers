@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class NSDataDetector, NSDateFormatter, NSNumberFormatter;
-
 @interface CUIKEventDescriptionGenerator : NSObject {
     NSDataDetector *_addressDetector;
     NSDateFormatter *_dateFormatter;

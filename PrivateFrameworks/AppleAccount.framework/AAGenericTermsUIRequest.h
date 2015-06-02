@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class ACAccount, NSDictionary;
-
 @interface AAGenericTermsUIRequest : AARequest {
     ACAccount *_account;
     NSDictionary *_requestDictionary;

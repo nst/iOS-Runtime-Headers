@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor;
-
 @interface OADAdjustedColor : OADColor {
     unsigned char mAdjustmentParam;
     int mAdjustmentType;

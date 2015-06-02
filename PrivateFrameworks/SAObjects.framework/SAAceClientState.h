@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAAceClientState : SADomainObject {
-}
+@interface SAAceClientState : SADomainObject
 
 + (id)aceClientState;
 + (id)aceClientStateWithDictionary:(id)arg1 context:(id)arg2;

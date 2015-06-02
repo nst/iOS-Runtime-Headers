@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface TCBundleResourceException : NSException {
-}
+@interface TCBundleResourceException : NSException
 
 @end

@@ -6,7 +6,7 @@
     BOOL _aggroBubbles;
 }
 
-@property BOOL aggroBubbles;
+@property (nonatomic) BOOL aggroBubbles;
 
 - (BOOL)aggroBubbles;
 - (void)animateTransition:(id)arg1;

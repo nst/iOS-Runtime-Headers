@@ -2,11 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebAutoFillDelegate>, DOMNode, NSHashTable, NSLock, NSMutableArray, NSMutableSet, NSObject<UIFormPeripheral>, NSString, NSTimer, UIResponder, UIView, UIWebFormAccessory, UIWebFormDelegate, UIWebPDFView, UIWebTouchEventsGestureRecognizer;
-
 @interface UIWebBrowserView : UIWebDocumentView <UIWebFormAccessoryDelegate, UIWebTouchEventsGestureRecognizerDelegate, WBUFormAutoFillWebView, _UIWebRotationDelegate> {
     UIWebFormAccessory *_accessory;
-    unsigned int _accessoryEnabled : 1;
+    unsigned int _accessoryEnabled;
     NSHashTable *_activeHighlighters;
     struct CGRect { 
         struct CGPoint { 
@@ -18,8 +16,8 @@
             float height; 
         } size; 
     } _addressViewBounds;
-    unsigned int _allowDOMFocusRedirects : 1;
-    unsigned int _alwaysDispatchesScrollEvents : 1;
+    unsigned int _allowDOMFocusRedirects;
+    unsigned int _alwaysDispatchesScrollEvents;
     DOMNode *_assistedNodeStartingFocusRedirects;
     unsigned int _audioSessionCategoryOverride;
     <UIWebAutoFillDelegate> *_autoFillDelegate;
@@ -27,10 +25,10 @@
     NSMutableArray *_deferredTouchEvents;
     unsigned int _dispatchedTouchEvents;
     UIResponder *_editingDelegateForEverythingExceptForms;
-    unsigned int _forceInputView : 1;
+    unsigned int _forceInputView;
     UIWebFormDelegate *_formDelegate;
-    unsigned int _formIsAutoFilling : 1;
-    unsigned int _hasEditedTextField : 1;
+    unsigned int _formIsAutoFilling;
+    unsigned int _hasEditedTextField;
     NSObject<UIFormPeripheral> *_input;
     struct CGRect { 
         struct CGPoint { 
@@ -42,7 +40,7 @@
             float height; 
         } size; 
     } _inputViewBounds;
-    unsigned int _inputViewObeysDOMFocus : 1;
+    unsigned int _inputViewObeysDOMFocus;
     float _lastAdjustmentForScroller;
     struct { 
         NSMutableArray *all; 
@@ -67,27 +65,29 @@
     UIWebTouchEventsGestureRecognizer *_webTouchEventsGestureRecognizer;
 }
 
-@property(retain) UIWebFormAccessory * _accessory;
-@property(retain) DOMNode * _currentAssistedNode;
-@property UIResponder * _editingDelegateForEverythingExceptForms;
-@property(retain) NSObject<UIFormPeripheral> * _input;
-@property(getter=isAccessoryEnabled) BOOL accessoryEnabled;
-@property BOOL allowDOMFocusRedirects;
-@property BOOL allowsInlineMediaPlayback;
-@property BOOL alwaysDispatchesScrollEvents;
-@property unsigned int audioSessionCategoryOverride;
-@property <UIWebAutoFillDelegate> * autoFillDelegate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasEditedTextField;
-@property(readonly) unsigned int hash;
-@property BOOL inputViewObeysDOMFocus;
-@property(readonly) BOOL isDispatchingTouchEvents;
-@property BOOL mediaPlaybackRequiresUserAction;
-@property NSString * networkInterfaceName;
-@property(readonly) Class superclass;
-@property(readonly) BOOL webui_privateBrowsingEnabled;
-@property(readonly) UIView * webui_viewForAutoFillPrompt;
+@property (nonatomic, retain) UIWebFormAccessory *_accessory;
+@property (nonatomic, retain) DOMNode *_currentAssistedNode;
+@property (nonatomic) UIResponder *_editingDelegateForEverythingExceptForms;
+@property (nonatomic, retain) NSObject<UIFormPeripheral> *_input;
+@property (getter=isAccessoryEnabled, nonatomic) BOOL accessoryEnabled;
+@property (nonatomic) BOOL allowDOMFocusRedirects;
+@property (nonatomic) BOOL allowsInlineMediaPlayback;
+@property (nonatomic) BOOL alwaysDispatchesScrollEvents;
+@property (nonatomic) unsigned int audioSessionCategoryOverride;
+@property (nonatomic) <UIWebAutoFillDelegate> *autoFillDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasEditedTextField;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL inputViewObeysDOMFocus;
+@property (nonatomic, readonly) BOOL isDispatchingTouchEvents;
+@property (nonatomic) BOOL mediaPlaybackRequiresUserAction;
+@property (nonatomic) NSString *networkInterfaceName;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL webui_privateBrowsingEnabled;
+@property (nonatomic, readonly) UIView *webui_viewForAutoFillPrompt;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)getUIWebBrowserViewForWebFrame:(id)arg1;
 + (void)initialize;
@@ -119,7 +119,6 @@
 - (id)_editingDelegateForEverythingExceptForms;
 - (void)_endAllowingFocusRedirects;
 - (void)_endDeferringEvents;
-- (id)_frameToFormMetadataForLastPasswordGenerationOrSubmitEvent;
 - (void)_handleDeferredEvents;
 - (BOOL)_hasSubviewContainingWebContent:(id)arg1;
 - (id)_input;
@@ -191,7 +190,6 @@
 - (struct CGSize { float x1; float x2; })contentSizeForScrollView:(id)arg1;
 - (void)copy:(id)arg1;
 - (void)dealloc;
-- (void)enumerateUnsubmittedFormsUsingBlock:(id)arg1;
 - (void)formDelegateTextDidChange;
 - (id)formElement;
 - (BOOL)hasEditedTextField;
@@ -252,9 +250,14 @@
 - (void)webView:(id)arg1 willRemoveScrollingLayer:(id)arg2 withContentsLayer:(id)arg3 forNode:(id)arg4;
 - (void)webViewDidCommitCompositingLayerChanges:(id)arg1;
 - (void)webViewDidPreventDefaultForEvent:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+
+- (id)_frameToFormMetadataForLastPasswordGenerationOrSubmitEvent;
+- (void)enumerateUnsubmittedFormsUsingBlock:(id /* block */)arg1;
 - (id)webui_formMetadataAndFrame:(id*)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;
 - (id)webui_formMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
-- (id)webui_preventNavigationDuringAutoFillPrompt;
+- (id /* block */)webui_preventNavigationDuringAutoFillPrompt;
 - (BOOL)webui_privateBrowsingEnabled;
 - (void)webui_removeFormMetadataForLastPasswordGenerationOrSubmitEventInFrame:(id)arg1;
 - (void)webui_setFormMetadata:(id)arg1 forLastPasswordGenerationOrSubmitEventInFrame:(id)arg2;

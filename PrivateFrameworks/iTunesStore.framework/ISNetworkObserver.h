@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ISNetworkObserver : NSObject <SSDownloadQueueObserver> {
     NSString *_dataStatusIndicator;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -19,19 +17,19 @@
     struct __CTServerConnection { } *_telephonyServer;
 }
 
-@property(readonly) NSString * connectionTypeHeader;
-@property(readonly) NSString * dataStatusIndicator;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) double lastNetworkTypeChangeTime;
-@property(readonly) NSString * modemRegistrationStatus;
+@property (readonly) NSString *connectionTypeHeader;
+@property (readonly) NSString *dataStatusIndicator;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) double lastNetworkTypeChangeTime;
+@property (readonly) NSString *modemRegistrationStatus;
 @property int networkType;
-@property(readonly) NSString * operatorName;
-@property(readonly) BOOL shouldShowCellularAutomaticDownloadsSwitch;
-@property(readonly) Class superclass;
-@property(getter=isUsingNetwork,readonly) BOOL usingNetwork;
-@property(getter=isWiFiEnabled,readonly) BOOL wifiEnabled;
+@property (readonly) NSString *operatorName;
+@property (readonly) BOOL shouldShowCellularAutomaticDownloadsSwitch;
+@property (readonly) Class superclass;
+@property (getter=isUsingNetwork, readonly) BOOL usingNetwork;
+@property (getter=isWiFiEnabled, readonly) BOOL wifiEnabled;
 
 + (void)set3GEnabled:(BOOL)arg1;
 + (void)setAirplaneModeEnabled:(BOOL)arg1;

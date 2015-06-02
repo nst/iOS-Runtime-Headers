@@ -2,37 +2,27 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GKComposeHeaderWithStaticRecipients, NSArray, NSString;
-
 @interface GKSimpleComposeController : GKBaseComposeController {
     NSString *_defaultMessage;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _doneHandler;
-
+    id /* block */ _doneHandler;
     NSArray *_players;
     GKComposeHeaderWithStaticRecipients *_toField;
 }
 
-@property(retain) NSString * defaultMessage;
-@property(copy) id doneHandler;
-@property(retain) NSArray * players;
-@property(retain) GKComposeHeaderWithStaticRecipients * toField;
+@property (nonatomic, retain) NSString *defaultMessage;
+@property (nonatomic, copy) id /* block */ doneHandler;
+@property (nonatomic, retain) NSArray *players;
+@property (nonatomic, retain) GKComposeHeaderWithStaticRecipients *toField;
 
 - (void)dealloc;
 - (id)defaultMessage;
-- (id)doneHandler;
+- (id /* block */)doneHandler;
 - (void)donePressed;
 - (void)loadView;
 - (id)players;
-- (void)pushOntoNavigationController:(id)arg1 withDoneHandler:(id)arg2;
+- (void)pushOntoNavigationController:(id)arg1 withDoneHandler:(id /* block */)arg2;
 - (void)setDefaultMessage:(id)arg1;
-- (void)setDoneHandler:(id)arg1;
+- (void)setDoneHandler:(id /* block */)arg1;
 - (void)setPlayers:(id)arg1;
 - (void)setToField:(id)arg1;
 - (void)setupSendButton;

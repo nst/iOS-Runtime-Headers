@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSDImageProvider, TSPObjectContext;
-
 @interface TSDImageResamplingOperation : NSObject {
     struct CGSize { 
         float width; 
@@ -15,11 +13,11 @@
     TSPObjectContext *mObjectContext;
 }
 
-@property struct CGSize { float x1; float x2; } desiredSize;
-@property(copy) NSString * displayName;
-@property(retain) TSDImageProvider * imageProvider;
-@property struct CGPath { }* maskingPath;
-@property(retain) TSPObjectContext * objectContext;
+@property (nonatomic) struct CGSize { float x1; float x2; } desiredSize;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, retain) TSDImageProvider *imageProvider;
+@property (nonatomic) struct CGPath { }*maskingPath;
+@property (nonatomic, retain) TSPObjectContext *objectContext;
 
 - (void)dealloc;
 - (struct CGSize { float x1; float x2; })desiredSize;

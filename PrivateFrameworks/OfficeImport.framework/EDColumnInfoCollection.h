@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources, EDWorksheet;
-
 @interface EDColumnInfoCollection : EDSortedCollection {
     EDResources *mResources;
     EDWorksheet *mWorksheet;

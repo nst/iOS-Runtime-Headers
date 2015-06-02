@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPIdentifier, CKDPRecordZoneIdentifier, CKDPSubscriptionNotification, NSMutableArray;
-
 @interface CKDPSubscription : PBCodable <NSCopying> {
     int _evaluationType;
     NSMutableArray *_filters;
@@ -25,22 +23,22 @@
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-@property int evaluationType;
-@property(retain) NSMutableArray * filters;
-@property BOOL fireOnce;
-@property BOOL hasEvaluationType;
-@property BOOL hasFireOnce;
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasNotification;
-@property BOOL hasOwner;
-@property(readonly) BOOL hasZoneIdentifier;
-@property(retain) CKDPIdentifier * identifier;
-@property(readonly) int* mutationTriggers;
-@property(readonly) unsigned int mutationTriggersCount;
-@property(retain) CKDPSubscriptionNotification * notification;
-@property int owner;
-@property(retain) NSMutableArray * recordTypes;
-@property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
+@property (nonatomic) int evaluationType;
+@property (nonatomic, retain) NSMutableArray *filters;
+@property (nonatomic) BOOL fireOnce;
+@property (nonatomic) BOOL hasEvaluationType;
+@property (nonatomic) BOOL hasFireOnce;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) BOOL hasNotification;
+@property (nonatomic) BOOL hasOwner;
+@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic, retain) CKDPIdentifier *identifier;
+@property (nonatomic, readonly) int*mutationTriggers;
+@property (nonatomic, readonly) unsigned int mutationTriggersCount;
+@property (nonatomic, retain) CKDPSubscriptionNotification *notification;
+@property (nonatomic) int owner;
+@property (nonatomic, retain) NSMutableArray *recordTypes;
+@property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 - (void).cxx_destruct;
 - (void)addFilters:(id)arg1;

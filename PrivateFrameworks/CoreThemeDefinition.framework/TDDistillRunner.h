@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSString, NSURL, TDDistiller, TDLogger;
-
 @interface TDDistillRunner : NSObject {
     int _assetStoreVersionNumber;
     NSString *_assetStoreVersionString;
@@ -15,9 +13,9 @@
 }
 
 @property int assetStoreVersionNumber;
-@property(copy) NSString * assetStoreVersionString;
-@property(retain) TDLogger * logger;
-@property(copy) NSURL * outputURL;
+@property (copy) NSString *assetStoreVersionString;
+@property (nonatomic, retain) TDLogger *logger;
+@property (nonatomic, copy) NSURL *outputURL;
 
 - (BOOL)_isDistillUnnecessaryForDocument:(id)arg1;
 - (void)_moveScratchToOutputPath;

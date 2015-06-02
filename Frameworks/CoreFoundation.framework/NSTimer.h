@@ -2,21 +2,15 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
+@interface NSTimer : NSObject
 
-@class NSDate;
-
-@interface NSTimer : NSObject {
-}
-
-@property(copy) NSDate * fireDate;
-@property(readonly) double timeInterval;
+@property (copy) NSDate *fireDate;
+@property (readonly) double timeInterval;
 @property double tolerance;
-@property(retain,readonly) id userInfo;
-@property(getter=isValid,readonly) BOOL valid;
+@property (readonly, retain) id userInfo;
+@property (getter=isValid, readonly) BOOL valid;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)scheduledTimerWithTimeInterval:(double)arg1 invocation:(id)arg2 repeats:(BOOL)arg3;

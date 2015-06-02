@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, UIActivityIndicatorView, UIColor, UILabel;
-
 @interface EKUIInviteesViewConflictSearchCell : UITableViewCell {
     UILabel *_label;
     float _leftInset;
@@ -12,11 +10,11 @@
     UIActivityIndicatorView *_spinner;
 }
 
-@property(retain) UILabel * label;
-@property float leftInset;
-@property(retain) UIColor * originalLabelFontColor;
-@property(retain) NSArray * persistentConstraints;
-@property(retain) UIActivityIndicatorView * spinner;
+@property (nonatomic, retain) UILabel *label;
+@property (nonatomic) float leftInset;
+@property (nonatomic, retain) UIColor *originalLabelFontColor;
+@property (nonatomic, retain) NSArray *persistentConstraints;
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
 
 + (id)_grayTextColor;
 + (id)_labelFont;

@@ -25,7 +25,7 @@
     BOOL _detailBySource;
 }
 
-@property BOOL detailBySource;
+@property (nonatomic) BOOL detailBySource;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

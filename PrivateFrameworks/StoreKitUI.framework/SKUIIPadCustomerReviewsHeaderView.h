@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, SKUIClientContext, SKUIColorScheme, UIButton, UIControl, UILabel, UIPopoverController, UIView;
-
 @interface SKUIIPadCustomerReviewsHeaderView : UIControl <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
     UIButton *_appSupportButton;
     SKUIClientContext *_clientContext;
@@ -18,15 +16,15 @@
     UIButton *_writeAReviewButton;
 }
 
-@property(readonly) UIControl * appSupportButton;
-@property(retain) SKUIColorScheme * colorScheme;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int selectedSortIndex;
-@property(copy) NSArray * sortTitles;
-@property(readonly) Class superclass;
-@property(readonly) UIControl * writeAReviewButton;
+@property (nonatomic, readonly) UIControl *appSupportButton;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int selectedSortIndex;
+@property (nonatomic, copy) NSArray *sortTitles;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIControl *writeAReviewButton;
 
 - (void).cxx_destruct;
 - (void)_destroySortPopoverController;

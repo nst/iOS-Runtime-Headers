@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIViewController;
-
 @interface SKUIBackdropContentViewController : UIViewController {
     int _backdropViewPrivateStyle;
     UIViewController *_contentViewController;
 }
 
-@property int backdropViewPrivateStyle;
-@property(retain) UIViewController * contentViewController;
+@property (nonatomic) int backdropViewPrivateStyle;
+@property (nonatomic, retain) UIViewController *contentViewController;
 
 - (void).cxx_destruct;
 - (int)backdropViewPrivateStyle;

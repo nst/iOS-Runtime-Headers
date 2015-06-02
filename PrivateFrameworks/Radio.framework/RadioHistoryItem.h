@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDate, NSString, RadioTrack;
-
 @interface RadioHistoryItem : NSObject <NSCopying, NSMutableCopying> {
     NSDate *_datePlayed;
     NSString *_externalIdentifier;
@@ -11,10 +9,10 @@
     int _type;
 }
 
-@property(readonly) NSDate * datePlayed;
-@property(copy,readonly) NSString * externalIdentifier;
-@property(readonly) RadioTrack * track;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSDate *datePlayed;
+@property (nonatomic, readonly, copy) NSString *externalIdentifier;
+@property (nonatomic, readonly) RadioTrack *track;
+@property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

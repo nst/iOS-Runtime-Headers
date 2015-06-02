@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/NotificationsUI.framework/NotificationsUI
  */
 
-@class NSDictionary;
-
 @interface NCInteractiveNotificationViewController : UIViewController <NCInteractiveNotificationServiceInterface> {
     NSDictionary *_context;
     float _maximumHeight;
     BOOL _modal;
 }
 
-@property(copy) NSDictionary * context;
-@property float maximumHeight;
-@property(getter=isModal) BOOL modal;
+@property (nonatomic, copy) NSDictionary *context;
+@property (nonatomic) float maximumHeight;
+@property (getter=isModal, nonatomic) BOOL modal;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
 - (void)_didChangeRevealPercent:(float)arg1;
-- (void)_getActionContextWithCompletion:(id)arg1;
-- (void)_getActionTitlesWithCompletion:(id)arg1;
-- (void)_getInitialStateWithCompletion:(id)arg1;
+- (void)_getActionContextWithCompletion:(id /* block */)arg1;
+- (void)_getActionTitlesWithCompletion:(id /* block */)arg1;
+- (void)_getInitialStateWithCompletion:(id /* block */)arg1;
 - (void)_handleActionAtIndex:(unsigned int)arg1;
 - (void)_handleActionIdentifier:(id)arg1;
 - (void)_interactiveNotificationDidAppear;

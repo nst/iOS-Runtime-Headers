@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString, NSURL;
-
 @interface ISReview : NSObject <NSCoding, NSCopying> {
     int _assetType;
     NSString *_body;
@@ -19,19 +17,19 @@
     unsigned int _titleMaxLength;
 }
 
-@property int assetType;
-@property(retain) NSString * body;
-@property unsigned int bodyMaxLength;
-@property(readonly) BOOL hasSavedDraft;
-@property(retain) NSURL * infoURL;
-@property unsigned long long itemIdentifier;
-@property(retain) NSString * nickname;
-@property BOOL nicknameIsConfirmed;
-@property unsigned int nicknameMaxLength;
-@property float rating;
-@property(retain) NSURL * submitURL;
-@property(retain) NSString * title;
-@property unsigned int titleMaxLength;
+@property (nonatomic) int assetType;
+@property (nonatomic, retain) NSString *body;
+@property (nonatomic) unsigned int bodyMaxLength;
+@property (nonatomic, readonly) BOOL hasSavedDraft;
+@property (nonatomic, retain) NSURL *infoURL;
+@property (nonatomic) unsigned long long itemIdentifier;
+@property (nonatomic, retain) NSString *nickname;
+@property (nonatomic) BOOL nicknameIsConfirmed;
+@property (nonatomic) unsigned int nicknameMaxLength;
+@property (nonatomic) float rating;
+@property (nonatomic, retain) NSURL *submitURL;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) unsigned int titleMaxLength;
 
 - (id)_draftFileName;
 - (id)_draftsDirectoryPath;

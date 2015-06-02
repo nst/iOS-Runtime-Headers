@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class <CLLocationManagerDelegate>, CLLocationManager, NSDate, NSString, NSTimer;
-
 @interface WeatherLocationManager : NSObject <CLLocationManagerDelegate> {
     NSTimer *_accuracyFallbackTimer;
     BOOL _activelyTrackingLocation;
@@ -24,18 +22,18 @@
     double _oldestAcceptedTime;
 }
 
-@property BOOL activelyTrackingLocation;
-@property int authorizationStatus;
-@property(copy,readonly) NSString * debugDescription;
-@property <CLLocationManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float lastLocationAccuracy;
-@property struct { double x1; double x2; } lastLocationCoord;
-@property(copy) NSDate * lastLocationTimeStamp;
-@property(retain) CLLocationManager * locationManager;
-@property BOOL locationTrackingIsReady;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL activelyTrackingLocation;
+@property (nonatomic) int authorizationStatus;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CLLocationManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float lastLocationAccuracy;
+@property (nonatomic) struct { double x1; double x2; } lastLocationCoord;
+@property (nonatomic, copy) NSDate *lastLocationTimeStamp;
+@property (nonatomic, retain) CLLocationManager *locationManager;
+@property (nonatomic) BOOL locationTrackingIsReady;
+@property (readonly) Class superclass;
 
 + (void)clearSharedLocationManager;
 + (id)sharedWeatherLocationManager;

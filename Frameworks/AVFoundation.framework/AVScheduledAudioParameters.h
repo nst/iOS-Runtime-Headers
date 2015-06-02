@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVScheduledAudioParametersInternal, NSArray;
-
 @interface AVScheduledAudioParameters : NSObject <NSCopying, NSMutableCopying> {
     AVScheduledAudioParametersInternal *_scheduledParametersInternal;
 }
 
-@property(getter=_ramps,setter=_setRamps:,copy) NSArray * ramps;
+@property (getter=_ramps, setter=_setRamps:, nonatomic, copy) NSArray *ramps;
 
 - (id)_audioVolumeCurve;
 - (id)_ramps;

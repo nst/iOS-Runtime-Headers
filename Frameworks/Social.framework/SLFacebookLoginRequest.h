@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class ACAccount;
-
 @interface SLFacebookLoginRequest : SLFacebookRequest {
     ACAccount *_account;
 }

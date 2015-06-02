@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDictionary, NSString, NSURL, NSUUID;
-
 @interface WBSCloudTab : NSObject <NSCopying> {
     BOOL _isShowingReader;
     NSDictionary *_readerScrollPositionDictionary;
@@ -12,13 +10,13 @@
     NSUUID *_uuid;
 }
 
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(readonly) NSDictionary * dictionaryRepresentationForUserActivityUserInfo;
-@property BOOL isShowingReader;
-@property(copy) NSDictionary * readerScrollPositionDictionary;
-@property(copy) NSString * title;
-@property(retain) NSURL * url;
-@property(retain) NSUUID * uuid;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentationForUserActivityUserInfo;
+@property (nonatomic) BOOL isShowingReader;
+@property (nonatomic, copy) NSDictionary *readerScrollPositionDictionary;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) NSURL *url;
+@property (nonatomic, retain) NSUUID *uuid;
 
 + (id)_dictionaryWithURL:(id)arg1 uuid:(id)arg2 title:(id)arg3 isShowingReader:(BOOL)arg4 readerScrollPosition:(id)arg5;
 

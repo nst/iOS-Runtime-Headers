@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSData, NSString, PHAsset;
-
 @interface PHAssetDuplicateProperties : NSObject {
     PHAsset *_asset;
     NSData *_originalHash;
     NSString *_publicGlobalUUID;
 }
 
-@property(readonly) PHAsset * asset;
-@property(retain) NSData * originalHash;
-@property(retain) NSString * publicGlobalUUID;
+@property (nonatomic, readonly) PHAsset *asset;
+@property (nonatomic, retain) NSData *originalHash;
+@property (nonatomic, retain) NSString *publicGlobalUUID;
 
 - (void).cxx_destruct;
 - (id)asset;

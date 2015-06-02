@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSArray, TIKeyboardCandidate;
-
 @interface TIAutocorrectionList : NSObject <NSSecureCoding> {
     TIKeyboardCandidate *_autocorrection;
     NSArray *_predictions;
 }
 
-@property(readonly) TIKeyboardCandidate * autocorrection;
-@property(readonly) NSArray * candidates;
-@property(readonly) NSArray * predictions;
-@property(readonly) BOOL shouldAcceptTopCandidate;
+@property (nonatomic, readonly) TIKeyboardCandidate *autocorrection;
+@property (nonatomic, readonly) NSArray *candidates;
+@property (nonatomic, readonly) NSArray *predictions;
+@property (nonatomic, readonly) BOOL shouldAcceptTopCandidate;
 
 + (id)autocorrectionListWithCandidates:(id)arg1 shouldAcceptTopCandidate:(BOOL)arg2;
 + (id)listWithAutocorrection:(id)arg1 predictions:(id)arg2;

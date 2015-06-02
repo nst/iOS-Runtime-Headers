@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class CoreRCInterfaceListener;
-
 @interface CoreRCInterface : NSObject {
     CoreRCInterfaceListener *_listener;
     id _testProperty;
 }
 
-@property CoreRCInterfaceListener * listener;
-@property(copy) id testProperty;
+@property (nonatomic) CoreRCInterfaceListener *listener;
+@property (nonatomic, copy) id testProperty;
 
 - (void)dealloc;
 - (BOOL)doesNotImplement:(SEL)arg1 error:(id*)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, NSDictionary, NSString;
-
 @interface AVCaptureDeviceFormatInternal_FigRecorder : NSObject {
     struct { 
         long long value; 

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABDirectoryGroupWrapper : ABGroupWrapper {
-}
+@interface ABDirectoryGroupWrapper : ABGroupWrapper
 
 + (id)newDirectoryGroupWrapperWithAccountIdentifier:(id)arg1 store:(void*)arg2 addressBook:(void*)arg3;
 

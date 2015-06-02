@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPDSiriSearchResult : PBCodable <NSCopying> {
     NSMutableArray *_disambiguationLabels;
 }
 
-@property(retain) NSMutableArray * disambiguationLabels;
+@property (nonatomic, retain) NSMutableArray *disambiguationLabels;
 
 - (void)addDisambiguationLabel:(id)arg1;
 - (void)clearDisambiguationLabels;

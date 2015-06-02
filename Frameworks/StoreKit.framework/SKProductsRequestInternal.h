@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSSet;
-
 @interface SKProductsRequestInternal : NSObject {
     NSSet *_productIdentifiers;
 }

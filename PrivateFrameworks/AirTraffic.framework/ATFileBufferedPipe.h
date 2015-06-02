@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class ATFileBuffer, NSFileHandle, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSPipe;
-
 @interface ATFileBufferedPipe : NSObject {
     ATFileBuffer *_buffer;
     NSFileHandle *_fileHandleForReading;
@@ -17,8 +15,8 @@
     NSObject<OS_dispatch_source> *_writeSource;
 }
 
-@property(retain,readonly) NSFileHandle * fileHandleForReading;
-@property(retain,readonly) NSFileHandle * fileHandleForWriting;
+@property (readonly, retain) NSFileHandle *fileHandleForReading;
+@property (readonly, retain) NSFileHandle *fileHandleForWriting;
 
 + (id)pipe;
 

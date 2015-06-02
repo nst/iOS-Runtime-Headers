@@ -2,15 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@interface AVAudioPCMBuffer : AVAudioBuffer {
-}
+@interface AVAudioPCMBuffer : AVAudioBuffer
 
-@property(readonly) float** floatChannelData;
-@property(readonly) unsigned int frameCapacity;
-@property unsigned int frameLength;
-@property(readonly) short** int16ChannelData;
-@property(readonly) int** int32ChannelData;
-@property(readonly) unsigned int stride;
+@property (nonatomic, readonly) float**floatChannelData;
+@property (nonatomic, readonly) unsigned int frameCapacity;
+@property (nonatomic) unsigned int frameLength;
+@property (nonatomic, readonly) short**int16ChannelData;
+@property (nonatomic, readonly) int**int32ChannelData;
+@property (nonatomic, readonly) unsigned int stride;
 
 - (void)_initChannelPtrs;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

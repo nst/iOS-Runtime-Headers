@@ -2,18 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface WebCookieStorageObjCAdapter : NSObject {
-    int (*m_cookieChangeCallback)();
+    int (*m_cookieChangeCallback;
 }
 
 - (void)cookiesChangedNotificationHandler:(id)arg1;
 - (void)notifyCookiesChangedOnMainThread;
-- (void)startListeningForCookieChangeNotificationsWithCallback:(int (*)())arg1;
+- (void)startListeningForCookieChangeNotificationsWithCallback:(int (*)arg1;
 - (void)stopListeningForCookieChangeNotifications;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class CIFilter, NSArray, NSString, SKTexture, SKTextureCache;
-
 @interface SKTexture : NSObject <NSCoding, NSCopying> {
     int _alignment;
     unsigned int *_alphaMap;
@@ -59,23 +57,23 @@
     unsigned int _textureTarget;
 }
 
-@property(readonly) unsigned int* alphaMap;
-@property(readonly) struct CGSize { float x1; float x2; } alphaMapSize;
-@property struct CGPoint { float x1; float x2; } cropOffset;
-@property struct CGPoint { float x1; float x2; } cropScale;
-@property BOOL disableAlpha;
-@property int filteringMode;
-@property(readonly) BOOL hasAlpha;
-@property(readonly) NSString * imageNameOrPath;
-@property(readonly) BOOL isRepeatable;
-@property BOOL isRotated;
-@property(copy) NSString * originalAtlasName;
-@property(readonly) struct CGSize { float x1; float x2; } pixelSize;
-@property(copy) NSString * subTextureName;
-@property unsigned int textureTarget;
-@property(readonly) BOOL useAlpha;
-@property BOOL usesMipmaps;
-@property int wrapMode;
+@property (nonatomic, readonly) unsigned int*alphaMap;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } alphaMapSize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } cropOffset;
+@property (nonatomic) struct CGPoint { float x1; float x2; } cropScale;
+@property (nonatomic) BOOL disableAlpha;
+@property (nonatomic) int filteringMode;
+@property (nonatomic, readonly) BOOL hasAlpha;
+@property (nonatomic, readonly) NSString *imageNameOrPath;
+@property (nonatomic, readonly) BOOL isRepeatable;
+@property (nonatomic) BOOL isRotated;
+@property (nonatomic, copy) NSString *originalAtlasName;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } pixelSize;
+@property (nonatomic, copy) NSString *subTextureName;
+@property (nonatomic) unsigned int textureTarget;
+@property (nonatomic, readonly) BOOL useAlpha;
+@property (nonatomic) BOOL usesMipmaps;
+@property (nonatomic) int wrapMode;
 
 + (void)_addTextureToPreloadlist:(id)arg1;
 + (id)_textureByTransferingData:(char *)arg1 size:(struct CGSize { float x1; float x2; })arg2;
@@ -87,7 +85,7 @@
 + (void)deleteUnusedTextures;
 + (id)lookupTextureCacheForName:(id)arg1;
 + (void)preloadTextures;
-+ (void)preloadTextures:(id)arg1 withCompletionHandler:(id)arg2;
++ (void)preloadTextures:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 + (void)registerTextureCache:(id)arg1 forName:(id)arg2;
 + (id)textureNoiseWithSmoothness:(float)arg1 size:(struct CGSize { float x1; float x2; })arg2 grayscale:(BOOL)arg3;
 + (id)textureVectorNoiseWithSmoothness:(float)arg1 size:(struct CGSize { float x1; float x2; })arg2;
@@ -149,7 +147,7 @@
 - (id)originalAtlasName;
 - (struct CGSize { float x1; float x2; })pixelSize;
 - (void)preload;
-- (void)preloadWithCompletionHandler:(id)arg1;
+- (void)preloadWithCompletionHandler:(id /* block */)arg1;
 - (void)setCropOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCropScale:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setDisableAlpha:(BOOL)arg1;

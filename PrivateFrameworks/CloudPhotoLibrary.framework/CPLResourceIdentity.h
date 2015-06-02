@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSString, NSURL;
-
 @interface CPLResourceIdentity : NSObject <NSCopying, NSSecureCoding> {
     BOOL _available;
     unsigned int _fileSize;
@@ -16,12 +14,12 @@
     } _imageDimensions;
 }
 
-@property(getter=isAvailable) BOOL available;
-@property unsigned int fileSize;
-@property(copy) NSURL * fileURL;
-@property(copy) NSString * fileUTI;
-@property(copy) NSString * fingerPrint;
-@property struct CGSize { float x1; float x2; } imageDimensions;
+@property (getter=isAvailable, nonatomic) BOOL available;
+@property (nonatomic) unsigned int fileSize;
+@property (nonatomic, copy) NSURL *fileURL;
+@property (nonatomic, copy) NSString *fileUTI;
+@property (nonatomic, copy) NSString *fingerPrint;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageDimensions;
 
 + (Class)_identityImplementationClass;
 + (id)alloc;

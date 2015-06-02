@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class DigitalClockLabel, NSString, UIFont, UILabel, UISwitch, UIView;
-
 @interface AlarmView : UIView <MTDateLabelObserver> {
     UILabel *_detailLabel;
     UISwitch *_enabledSwitch;
@@ -19,21 +17,21 @@
     DigitalClockLabel *_timeLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) UILabel * detailLabel;
-@property(readonly) UISwitch * enabledSwitch;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * name;
-@property(retain) UIFont * nameFont;
-@property(retain,readonly) UILabel * nameLabel;
-@property(retain) UIFont * repeatFont;
-@property(retain,readonly) UILabel * repeatLabel;
-@property(copy) NSString * repeatText;
-@property(retain,readonly) UILabel * secondaryDesignatorLabel;
-@property int style;
-@property(readonly) Class superclass;
-@property(readonly) DigitalClockLabel * timeLabel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) UILabel *detailLabel;
+@property (nonatomic, readonly) UISwitch *enabledSwitch;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) UIFont *nameFont;
+@property (nonatomic, readonly, retain) UILabel *nameLabel;
+@property (nonatomic, retain) UIFont *repeatFont;
+@property (nonatomic, readonly, retain) UILabel *repeatLabel;
+@property (nonatomic, copy) NSString *repeatText;
+@property (nonatomic, readonly, retain) UILabel *secondaryDesignatorLabel;
+@property (nonatomic) int style;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) DigitalClockLabel *timeLabel;
 
 - (void)dateLabel:(id)arg1 timeDesignatorDidChange:(id)arg2;
 - (void)dealloc;

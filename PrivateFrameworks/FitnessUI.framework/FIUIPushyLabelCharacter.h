@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSAttributedString, UIView;
-
 @interface FIUIPushyLabelCharacter : NSObject {
     UIView *_renderedView;
     NSAttributedString *_sourceText;
 }
 
-@property(retain) UIView * renderedView;
-@property(retain) NSAttributedString * sourceText;
+@property (retain) UIView *renderedView;
+@property (retain) NSAttributedString *sourceText;
 
 - (void).cxx_destruct;
 - (id)renderedView;

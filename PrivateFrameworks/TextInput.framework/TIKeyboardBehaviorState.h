@@ -14,15 +14,15 @@
     BOOL spaceConfirmation;
 }
 
-@property BOOL followsZhuyin;
-@property BOOL hasAutocorrection;
-@property BOOL hasCandidateSelected;
-@property BOOL hasCandidates;
-@property BOOL hasInput;
-@property BOOL hasNextPage;
-@property BOOL showsCandidatesInLayout;
-@property BOOL showsExtendedList;
-@property BOOL spaceConfirmation;
+@property (nonatomic) BOOL followsZhuyin;
+@property (nonatomic) BOOL hasAutocorrection;
+@property (nonatomic) BOOL hasCandidateSelected;
+@property (nonatomic) BOOL hasCandidates;
+@property (nonatomic) BOOL hasInput;
+@property (nonatomic) BOOL hasNextPage;
+@property (nonatomic) BOOL showsCandidatesInLayout;
+@property (nonatomic) BOOL showsExtendedList;
+@property (nonatomic) BOOL spaceConfirmation;
 
 - (BOOL)followsZhuyin;
 - (BOOL)hasAutocorrection;

@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <MKLocationProviderDelegate>, CLLocationManager, NSBundle, NSLock, NSString;
-
 @interface MKCoreLocationProvider : NSObject <CLLocationManagerDelegate, CLLocationManagerVehicleDelegate, MKLocationProvider> {
     NSLock *_authorizationLock;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _authorizationRequestBlock;
-
+    id /* block */ _authorizationRequestBlock;
     int _authorizationStatus;
     CLLocationManager *_clLocationManager;
     <MKLocationProviderDelegate> *_delegate;
@@ -25,27 +15,27 @@
     BOOL _waitingForAuthorization;
 }
 
-@property(readonly) CLLocationManager * _clLocationManager;
-@property int activityType;
-@property(readonly) BOOL airplaneModeBlocksLocation;
-@property(copy) id authorizationRequestBlock;
-@property(readonly) int authorizationStatus;
-@property(copy,readonly) NSString * debugDescription;
-@property <MKLocationProviderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property double desiredAccuracy;
-@property double distanceFilter;
-@property(retain) NSBundle * effectiveBundle;
-@property(copy) NSString * effectiveBundleIdentifier;
-@property(readonly) double expectedGpsUpdateInterval;
-@property(readonly) unsigned int hash;
-@property int headingOrientation;
-@property(readonly) BOOL isSimulation;
-@property(readonly) BOOL isTracePlayer;
-@property(getter=isLocationServicesPreferencesDialogEnabled) BOOL locationServicesPreferencesDialogEnabled;
-@property BOOL matchInfoEnabled;
-@property(readonly) Class superclass;
-@property(readonly) BOOL usesCLMapCorrection;
+@property (nonatomic, readonly) CLLocationManager *_clLocationManager;
+@property (nonatomic) int activityType;
+@property (nonatomic, readonly) BOOL airplaneModeBlocksLocation;
+@property (nonatomic, copy) id /* block */ authorizationRequestBlock;
+@property (nonatomic, readonly) int authorizationStatus;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MKLocationProviderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double desiredAccuracy;
+@property (nonatomic) double distanceFilter;
+@property (nonatomic, retain) NSBundle *effectiveBundle;
+@property (nonatomic, copy) NSString *effectiveBundleIdentifier;
+@property (nonatomic, readonly) double expectedGpsUpdateInterval;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int headingOrientation;
+@property (nonatomic, readonly) BOOL isSimulation;
+@property (nonatomic, readonly) BOOL isTracePlayer;
+@property (getter=isLocationServicesPreferencesDialogEnabled, nonatomic) BOOL locationServicesPreferencesDialogEnabled;
+@property (nonatomic) BOOL matchInfoEnabled;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL usesCLMapCorrection;
 
 - (void).cxx_destruct;
 - (id)_clLocationManager;
@@ -54,7 +44,7 @@
 - (void)_updateAuthorizationStatus;
 - (int)activityType;
 - (BOOL)airplaneModeBlocksLocation;
-- (id)authorizationRequestBlock;
+- (id /* block */)authorizationRequestBlock;
 - (int)authorizationStatus;
 - (void)dealloc;
 - (id)delegate;
@@ -82,7 +72,7 @@
 - (void)requestWhenInUseAuthorization;
 - (void)requestWhenInUseAuthorizationWithPrompt;
 - (void)setActivityType:(int)arg1;
-- (void)setAuthorizationRequestBlock:(id)arg1;
+- (void)setAuthorizationRequestBlock:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;

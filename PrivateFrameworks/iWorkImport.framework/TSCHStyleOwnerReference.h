@@ -7,11 +7,11 @@
     int mType;
 }
 
-@property(readonly) Class genericPropertyMapClass;
-@property(readonly) unsigned int index;
-@property(readonly) Class nonstyleClass;
-@property(readonly) Class styleClass;
-@property(readonly) int type;
+@property (nonatomic, readonly) Class genericPropertyMapClass;
+@property (nonatomic, readonly) unsigned int index;
+@property (nonatomic, readonly) Class nonstyleClass;
+@property (nonatomic, readonly) Class styleClass;
+@property (nonatomic, readonly) int type;
 
 + (id)styleOwnerReferenceWithType:(int)arg1 index:(unsigned int)arg2;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseConnection, ML3MusicLibrary, NSMutableArray;
-
 @interface ML3EntityReplacer : NSObject {
     ML3DatabaseConnection *_connection;
     ML3MusicLibrary *_library;
@@ -11,7 +9,7 @@
     struct __CFDictionary { } *_propertyToIndexPair;
 }
 
-@property(getter=isOpen,readonly) BOOL open;
+@property (getter=isOpen, nonatomic, readonly) BOOL open;
 
 - (void).cxx_destruct;
 - (void)bindDouble:(double)arg1 forProperty:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKMapServiceTicket>, <MKReverseGeocoderDelegate>, MKMapItem;
-
 @interface MKReverseGeocoderInternal : NSObject {
     struct { 
         double latitude; 

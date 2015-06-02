@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPickerView;
-
 @interface _UIPickerWheelView : UIView {
     UIPickerView *_pickerView;
 }

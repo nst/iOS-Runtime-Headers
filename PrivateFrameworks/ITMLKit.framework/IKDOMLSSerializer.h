@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMLSSerializer : IKJSObject <IKDOMLSSerializer> {
-}
+@interface IKDOMLSSerializer : IKJSObject <IKDOMLSSerializer>
 
 - (id)writeToString:(id)arg1;
 

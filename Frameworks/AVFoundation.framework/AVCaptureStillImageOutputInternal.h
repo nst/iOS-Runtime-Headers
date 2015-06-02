@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSDictionary, NSMutableArray;
-
 @interface AVCaptureStillImageOutputInternal : NSObject {
     BOOL EV0CaptureEnabled;
     int HDRCaptureMode;

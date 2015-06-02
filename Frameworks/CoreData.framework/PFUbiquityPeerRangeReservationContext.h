@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDictionary, NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSPersistentStore, NSPersistentStoreCoordinator;
-
 @interface PFUbiquityPeerRangeReservationContext : NSObject {
     NSMutableDictionary *_globalIDToLocalURI;
     NSArray *_globalObjectIDs;
@@ -16,12 +14,12 @@
     NSMutableArray *_unresolvedGlobalObjectIDs;
 }
 
-@property(readonly) NSArray * globalObjectIDs;
-@property(readonly) NSManagedObjectContext * moc;
-@property(readonly) int numRangesToReserve;
-@property(readonly) NSDictionary * peerEntityNameRangeStartSet;
-@property(readonly) NSPersistentStoreCoordinator * psc;
-@property(readonly) NSPersistentStore * store;
+@property (nonatomic, readonly) NSArray *globalObjectIDs;
+@property (nonatomic, readonly) NSManagedObjectContext *moc;
+@property (nonatomic, readonly) int numRangesToReserve;
+@property (nonatomic, readonly) NSDictionary *peerEntityNameRangeStartSet;
+@property (nonatomic, readonly) NSPersistentStoreCoordinator *psc;
+@property (nonatomic, readonly) NSPersistentStore *store;
 
 - (id)createLocalIDStringForStoreUUID:(id)arg1 entityName:(id)arg2 andPrimaryKeyString:(id)arg3;
 - (BOOL)createNewPeerRangesWithCache:(id)arg1 Error:(id*)arg2;

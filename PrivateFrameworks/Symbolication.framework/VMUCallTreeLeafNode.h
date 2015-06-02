@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSCountedSet, NSString;
-
 @interface VMUCallTreeLeafNode : VMUCallTreeNode {
     NSCountedSet *_addresses;
     NSString *_combinedName;

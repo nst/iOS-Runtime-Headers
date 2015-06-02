@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <BWFigVideoDeviceStillImageCaptureDelegate>, BWDeviceMotionActivityDetector, BWStillImageTimeMachine, BWZoomCommandHandler, FigCaptureThermalMonitor, NSArray, NSData, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BWFigVideoCaptureDevice : BWCaptureDevice <BWZoomCompletionDelegate> {
     float _ISO;
     int _activeFormatIndex;
@@ -63,7 +52,7 @@
     BOOL _clientProcessHasAccessToCamera;
     int _clientRetainedBufferCountHint;
     struct OpaqueCMClock { } *_clock;
-    int (*_createAutofocusSampleBufferProcessorFunction)();
+    int (*_createAutofocusSampleBufferProcessorFunction;
     int _currentBiasedExposureCompletedID;
     struct { 
         double integrationTime; 
@@ -157,11 +146,7 @@
     int _skippedFramesCountForAF;
     BOOL _sphereEnabled;
     int _sphereLock;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _stillImageBufferTimeMachineHandler;
-
+    id /* block */ _stillImageBufferTimeMachineHandler;
     <BWFigVideoDeviceStillImageCaptureDelegate> *_stillImageCaptureDelegate;
     NSObject<OS_dispatch_group> *_stillImageCaptureDelegateDispatchGroup;
     BOOL _stillImageCaptureEnabled;
@@ -198,10 +183,10 @@
     NSObject<OS_dispatch_queue> *_zoomUpdateQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (struct __CFString { }*)_autofocusProcessorImageControlModeFromImageControlMode:(int)arg1;
 + (void)initialize;
@@ -224,7 +209,7 @@
 - (void)_emitVideoSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_handleStillImageSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_handleVideoSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
-- (id)_initWithFigCaptureDeviceRef:(struct OpaqueFigCaptureDevice { }*)arg1 figCaptureStreamRef:(struct OpaqueFigCaptureStream { }*)arg2 attributes:(id)arg3 createAutofocusSampleBufferProcessorFunction:(int (*)())arg4;
+- (id)_initWithFigCaptureDeviceRef:(struct OpaqueFigCaptureDevice { }*)arg1 figCaptureStreamRef:(struct OpaqueFigCaptureStream { }*)arg2 attributes:(id)arg3 createAutofocusSampleBufferProcessorFunction:(int (*)arg4;
 - (float)_ispAppliedZoomFromSampleBufferMetadataDictionary:(id)arg1;
 - (void)_postManualControlRequestCompletedWithName:(id)arg1 requestID:(int)arg2 timeDictionary:(id)arg3 additionalPayloadItems:(id)arg4;
 - (void)_postNotificationWithPayload:(id)arg1 notificationPayload:(id)arg2;
@@ -293,7 +278,7 @@
 - (void)rampToVideoZoomFactor:(float)arg1 withRate:(float)arg2 commandID:(int)arg3;
 - (void)registerForAEMatrixMetadata;
 - (void)registerForFaceDetectionMetadata;
-- (BOOL)registerStillImageBufferHandler:(id)arg1 error:(id*)arg2;
+- (BOOL)registerStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (id)sensorIDDictionary;
 - (void)setActiveFormatIndex:(int)arg1;
 - (long)setAlternateOutputSizeAndCrop:(id)arg1;
@@ -320,7 +305,7 @@
 - (void)setOverscanPercentage:(struct CGSize { float x1; float x2; })arg1;
 - (void)setProperty:(id)arg1 isObserved:(BOOL)arg2;
 - (long)setProvidesStortorgetMetadata:(BOOL)arg1;
-- (void)setStillImageBufferTimeMachineHandler:(id)arg1;
+- (void)setStillImageBufferTimeMachineHandler:(id /* block */)arg1;
 - (void)setStillImageCaptureDelegate:(id)arg1;
 - (void)setStillImageCaptureEnabled:(BOOL)arg1;
 - (void)setStillImageStabilizationAutomaticallyEnabled:(BOOL)arg1;
@@ -339,12 +324,12 @@
 - (void)sourceNodeWillEmitVideoPreviewSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)sourceNodeWillEmitVideoSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)sourceNodeWillStartStreaming;
-- (BOOL)startStreamingToSampleBufferHandler:(id)arg1 error:(id*)arg2;
-- (id)stillImageBufferTimeMachineHandler;
+- (BOOL)startStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
+- (id /* block */)stillImageBufferTimeMachineHandler;
 - (id)stillImageCaptureDelegate;
 - (BOOL)stillImageCaptureEnabled;
 - (float)stillImageStabilizationIntegrationTimeThreshold;
-- (BOOL)stopStreamingToSampleBufferHandler:(id)arg1 error:(id*)arg2;
+- (BOOL)stopStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (struct OpaqueFigCaptureStream { }*)stream;
 - (id)streamSupportedProperties;
 - (id)supportedFormats;
@@ -352,7 +337,7 @@
 - (BOOL)timeMachineEnabledForMultistream;
 - (void)unregisterForAEMatrixMetadata;
 - (void)unregisterForFaceDetectionMetadata;
-- (BOOL)unregisterStillImageBufferHandler:(id)arg1 error:(id*)arg2;
+- (BOOL)unregisterStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (BOOL)usesFullRangeVideo;
 - (id)zoomCommandHandler;
 - (void)zoomCommandHandler:(id)arg1 didApplyZoomFactor:(float)arg2 rampComplete:(BOOL)arg3 rampCommandID:(int)arg4;

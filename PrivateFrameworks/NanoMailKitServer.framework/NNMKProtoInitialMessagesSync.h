@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface NNMKProtoInitialMessagesSync : PBCodable <NSCopying> {
     NSData *_dateForRequestingMoreMessages;
     NSData *_dateSynced;
@@ -19,21 +17,21 @@
     NSString *_syncedMailboxURL;
 }
 
-@property(retain) NSData * dateForRequestingMoreMessages;
-@property(retain) NSData * dateSynced;
-@property unsigned int fullSyncVersion;
-@property(readonly) BOOL hasDateForRequestingMoreMessages;
-@property(readonly) BOOL hasDateSynced;
-@property BOOL hasFullSyncVersion;
-@property(readonly) BOOL hasSyncedMailboxAccountId;
-@property(readonly) BOOL hasSyncedMailboxCustomName;
-@property BOOL hasSyncedMailboxType;
-@property(readonly) BOOL hasSyncedMailboxURL;
-@property(retain) NSMutableArray * initialMessages;
-@property(retain) NSString * syncedMailboxAccountId;
-@property(retain) NSString * syncedMailboxCustomName;
-@property unsigned int syncedMailboxType;
-@property(retain) NSString * syncedMailboxURL;
+@property (nonatomic, retain) NSData *dateForRequestingMoreMessages;
+@property (nonatomic, retain) NSData *dateSynced;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic, readonly) BOOL hasDateForRequestingMoreMessages;
+@property (nonatomic, readonly) BOOL hasDateSynced;
+@property (nonatomic) BOOL hasFullSyncVersion;
+@property (nonatomic, readonly) BOOL hasSyncedMailboxAccountId;
+@property (nonatomic, readonly) BOOL hasSyncedMailboxCustomName;
+@property (nonatomic) BOOL hasSyncedMailboxType;
+@property (nonatomic, readonly) BOOL hasSyncedMailboxURL;
+@property (nonatomic, retain) NSMutableArray *initialMessages;
+@property (nonatomic, retain) NSString *syncedMailboxAccountId;
+@property (nonatomic, retain) NSString *syncedMailboxCustomName;
+@property (nonatomic) unsigned int syncedMailboxType;
+@property (nonatomic, retain) NSString *syncedMailboxURL;
 
 - (void).cxx_destruct;
 - (void)addInitialMessage:(id)arg1;

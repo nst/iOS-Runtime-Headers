@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIPhotoEffectNoir : CIPhotoEffect {
-}
+@interface CIPhotoEffectNoir : CIPhotoEffect
 
 + (id)customAttributes;
 

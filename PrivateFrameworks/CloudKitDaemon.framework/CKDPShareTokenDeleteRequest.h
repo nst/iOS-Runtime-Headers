@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSString;
-
 @interface CKDPShareTokenDeleteRequest : PBRequest <NSCopying> {
     NSString *_routingKey;
     NSData *_shortTokenHash;
 }
 
-@property(readonly) BOOL hasRoutingKey;
-@property(readonly) BOOL hasShortTokenHash;
-@property(retain) NSString * routingKey;
-@property(retain) NSData * shortTokenHash;
+@property (nonatomic, readonly) BOOL hasRoutingKey;
+@property (nonatomic, readonly) BOOL hasShortTokenHash;
+@property (nonatomic, retain) NSString *routingKey;
+@property (nonatomic, retain) NSData *shortTokenHash;
 
 + (id)options;
 

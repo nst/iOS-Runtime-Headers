@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray;
-
 @interface _UIPopoverLayoutInfo : NSObject <NSCopying> {
     unsigned int _arrowDirection;
     float _arrowHeight;
@@ -61,19 +59,19 @@
     BOOL _updatesEnabled;
 }
 
-@property(readonly) unsigned int arrowDirection;
-@property float arrowHeight;
-@property BOOL constrainToTargetRect;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } containingFrame;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } containingFrameInsets;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property(readonly) float offset;
-@property BOOL preferLandscapeOrientations;
-@property unsigned int preferredArrowDirections;
-@property struct CGSize { float x1; float x2; } preferredContentSize;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
-@property(getter=_updatesEnabled,setter=_setUpdatesEnabled:) BOOL updatesEnabled;
+@property (nonatomic, readonly) unsigned int arrowDirection;
+@property (nonatomic) float arrowHeight;
+@property (nonatomic) BOOL constrainToTargetRect;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } containingFrame;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } containingFrameInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (nonatomic, readonly) float offset;
+@property (nonatomic) BOOL preferLandscapeOrientations;
+@property (nonatomic) unsigned int preferredArrowDirections;
+@property (nonatomic) struct CGSize { float x1; float x2; } preferredContentSize;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
+@property (getter=_updatesEnabled, setter=_setUpdatesEnabled:, nonatomic) BOOL updatesEnabled;
 
 + (id)_observationKeys;
 
@@ -106,7 +104,7 @@
 - (void)setPreferLandscapeOrientations:(BOOL)arg1;
 - (void)setPreferredArrowDirections:(unsigned int)arg1;
 - (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setProperties:(id)arg1;
+- (void)setProperties:(id /* block */)arg1;
 - (void)setTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetRect;
 

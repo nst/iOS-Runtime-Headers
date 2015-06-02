@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSNumber, TSCH3DFillSetIdentifier, TSCH3DLightingModel, TSDFill;
-
 @interface TSCH3DFill : TSDFill {
     TSDFill *_cachedImageFill;
     struct CGSize { 
@@ -21,10 +14,10 @@
     NSNumber *_percentage;
 }
 
-@property(retain) TSCH3DFillSetIdentifier * identifier;
-@property(readonly) TSCH3DLightingModel * lightingModel;
-@property(retain) NSNumber * percentage;
-@property(readonly) float percentageValue;
+@property (nonatomic, retain) TSCH3DFillSetIdentifier *identifier;
+@property (readonly) TSCH3DLightingModel *lightingModel;
+@property (nonatomic, retain) NSNumber *percentage;
+@property (nonatomic, readonly) float percentageValue;
 
 + (id)fill;
 + (id)fillWithIdentifier:(id)arg1;

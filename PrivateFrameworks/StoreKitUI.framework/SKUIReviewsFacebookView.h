@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIClientContext, SKUIColorScheme, UIButton, UIControl, UIImageView, UILabel, UIView;
-
 @interface SKUIReviewsFacebookView : UIView {
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
@@ -22,11 +20,11 @@
     BOOL _userLiked;
 }
 
-@property(retain) SKUIColorScheme * colorScheme;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property(copy) NSArray * friendNames;
-@property(readonly) UIControl * likeToggleButton;
-@property(getter=isUserLiked) BOOL userLiked;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, copy) NSArray *friendNames;
+@property (nonatomic, readonly) UIControl *likeToggleButton;
+@property (getter=isUserLiked, nonatomic) BOOL userLiked;
 
 - (void).cxx_destruct;
 - (id)_composedStringForNames:(id)arg1 userLiked:(BOOL)arg2;

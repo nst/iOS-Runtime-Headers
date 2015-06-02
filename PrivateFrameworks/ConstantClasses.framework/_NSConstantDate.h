@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConstantClasses.framework/ConstantClasses
  */
 
-@interface _NSConstantDate : NSDate {
-}
+@interface _NSConstantDate : NSDate
 
 + (id)alloc;
 + (void)load;

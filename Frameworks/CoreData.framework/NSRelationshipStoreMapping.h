@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSString;
-
 @interface NSRelationshipStoreMapping : NSPropertyStoreMapping {
     NSString *_destinationEntityExternalName;
     NSArray *_foreignKeys;

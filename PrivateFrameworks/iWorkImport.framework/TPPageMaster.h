@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, NSString, TPDocumentRoot, TPSection, TSWPStorage;
-
 @interface TPPageMaster : TSPObject <TPMasterDrawableProvider, TSKDocumentObject, TSKModel, TSPCopying, TSWPHeaderFooterProvider> {
     TPDocumentRoot *_documentRoot;
-    TSWPStorage *_headerFooters[2][3];
+    TSWPStorage *_headerFooters;
     NSMutableArray *_masterDrawables;
     TPSection *_section;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * masterDrawables;
-@property TPSection * section;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *masterDrawables;
+@property (nonatomic) TPSection *section;
+@property (readonly) Class superclass;
 
 - (void)addMasterDrawable:(id)arg1 atIndex:(unsigned int)arg2 insertContext:(id)arg3 suppressDOLC:(BOOL)arg4;
 - (void)addMasterDrawables:(id)arg1 atIndex:(unsigned int)arg2 insertContext:(id)arg3 suppressDOLC:(BOOL)arg4;

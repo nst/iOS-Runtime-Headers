@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKReminderLocationPickerDelegate>, <EKStyleProvider>, EKReminderLocationPickerCell, EKReminderLocationPickerModel, NSString, UIAlertView;
-
 @interface EKReminderLocationPicker : UITableViewController <ABPeoplePickerNavigationControllerDelegate, EKReminderLocationPickerCellButtonHandler, EKReminderLocationPickerModelDelegate, UIAlertViewDelegate, UITextFieldDelegate> {
     BOOL _allowsShowInMap;
     EKReminderLocationPickerCell *_currentLocationCell;
@@ -19,11 +17,11 @@
     EKReminderLocationPickerCell *_typedLocationCell;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <EKReminderLocationPickerDelegate> * locationPickerDelegate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <EKReminderLocationPickerDelegate> *locationPickerDelegate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)_accessoryTypeForLocationItem:(id)arg1 isSelected:(BOOL)arg2;

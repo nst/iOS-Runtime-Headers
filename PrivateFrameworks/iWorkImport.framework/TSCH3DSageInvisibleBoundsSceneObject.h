@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DSageInvisibleBoundsSceneObject : TSCH3DSceneObject {
-}
+@interface TSCH3DSageInvisibleBoundsSceneObject : TSCH3DSceneObject
 
 - (id)effects;
 - (void)get3PieceStageBounds:(id)arg1;

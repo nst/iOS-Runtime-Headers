@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSData, NSDictionary, NSExpression, NSMutableArray, NSString;
-
 @interface NSEntityMapping : NSObject {
     NSMutableArray *_attributeMappings;
     NSString *_destinationEntityName;
@@ -25,17 +23,17 @@
     NSDictionary *_userInfo;
 }
 
-@property(retain) NSArray * attributeMappings;
-@property(copy) NSString * destinationEntityName;
-@property(copy) NSData * destinationEntityVersionHash;
-@property(copy) NSString * entityMigrationPolicyClassName;
+@property (retain) NSArray *attributeMappings;
+@property (copy) NSString *destinationEntityName;
+@property (copy) NSData *destinationEntityVersionHash;
+@property (copy) NSString *entityMigrationPolicyClassName;
 @property unsigned int mappingType;
-@property(copy) NSString * name;
-@property(retain) NSArray * relationshipMappings;
-@property(copy) NSString * sourceEntityName;
-@property(copy) NSData * sourceEntityVersionHash;
-@property(retain) NSExpression * sourceExpression;
-@property(retain) NSDictionary * userInfo;
+@property (copy) NSString *name;
+@property (retain) NSArray *relationshipMappings;
+@property (copy) NSString *sourceEntityName;
+@property (copy) NSData *sourceEntityVersionHash;
+@property (retain) NSExpression *sourceExpression;
+@property (nonatomic, retain) NSDictionary *userInfo;
 
 + (void)initialize;
 

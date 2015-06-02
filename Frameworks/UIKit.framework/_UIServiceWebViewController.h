@@ -2,27 +2,25 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, WebUIBrowserLoadingController, _UIServiceWebView;
-
 @interface _UIServiceWebViewController : UIViewController <WebUIBrowserLoadingControllerDelegate, _UIServiceWebViewControllerProtocol> {
     WebUIBrowserLoadingController *_loadingController;
     _UIServiceWebView *_uiWebView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
 - (BOOL)_isInternalInstall;
 - (id)_makeAlertView;
-- (void)_remotelyDecidePolicyForRequest:(id)arg1 inMainFrame:(BOOL)arg2 navigationType:(id)arg3 decisionHandler:(id)arg4;
+- (void)_remotelyDecidePolicyForRequest:(id)arg1 inMainFrame:(BOOL)arg2 navigationType:(id)arg3 decisionHandler:(id /* block */)arg4;
 - (void)_remotelyDispatchDidDismissViewController;
-- (void)_remotelyDispatchWillPresentViewControllerWithCompletionHandler:(id)arg1;
-- (void)_webContentSizeWithReplyHandler:(id)arg1;
+- (void)_remotelyDispatchWillPresentViewControllerWithCompletionHandler:(id /* block */)arg1;
+- (void)_webContentSizeWithReplyHandler:(id /* block */)arg1;
 - (void)_willAppearInRemoteViewController;
 - (void)browserLoadingController:(id)arg1 didFinishLoadingWithError:(id)arg2 dataSource:(id)arg3;
 - (void)browserLoadingControllerDidStartLoading:(id)arg1;

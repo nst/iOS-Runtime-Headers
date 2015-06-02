@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartFeaturePie : TSCHChartFeature {
-}
+@interface TSCHChartFeaturePie : TSCHChartFeature
 
 - (id)defaultDataFileName;
 - (int)deprecated3DBevelEdgesSpecificProperty;

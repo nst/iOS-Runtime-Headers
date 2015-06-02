@@ -10,8 +10,8 @@
     BOOL _renderOnClient;
 }
 
-@property struct CGSize { float x1; float x2; } imageSize;
-@property BOOL renderOnClient;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) BOOL renderOnClient;
 
 + (BOOL)supportsSecureCoding;
 

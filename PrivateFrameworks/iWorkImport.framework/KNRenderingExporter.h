@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNOffscreenController, KNPdfHyperlinkController, KNSlideNode, NSArray, NSMutableArray, NSOrderedSet, NSString;
-
 @interface KNRenderingExporter : TSARenderingExporter <TSDCanvasDelegate> {
     unsigned int mCurrentBuildIndex;
     unsigned int mCurrentPage;
@@ -28,35 +26,35 @@
     unsigned int mSlidesPerPage;
 }
 
-@property(readonly) unsigned int currentBuildIndex;
-@property(retain) KNSlideNode * currentSlideNode;
-@property(readonly) unsigned int currentSlideNumber;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float heightOfPrintedText;
-@property(retain) KNOffscreenController * offscreenController;
-@property float pageMargin;
-@property int printLayout;
-@property(copy) NSString * printTitle;
-@property id printView;
-@property(getter=isPrintingBackgrounds) BOOL printingBackgrounds;
-@property(getter=isPrintingBorders) BOOL printingBorders;
-@property(getter=isPrintingBuilds) BOOL printingBuilds;
-@property(getter=isPrintingDate) BOOL printingDate;
-@property(getter=isPrintingDraftQuality) BOOL printingDraftQuality;
-@property(getter=isPrintingPageMargins) BOOL printingPageMargins;
-@property(getter=isPrintingSelectedSlides) BOOL printingSelectedSlides;
-@property(getter=isPrintingSkippedSlides) BOOL printingSkippedSlides;
-@property(getter=isPrintingSlideNumbers) BOOL printingSlideNumbers;
-@property(readonly) unsigned int rangeEnd;
-@property(readonly) unsigned int rangeStart;
-@property(copy) NSOrderedSet * selectedSlideNodes;
-@property(readonly) NSArray * slidesForPrinting;
-@property unsigned int slidesPerPage;
-@property(readonly) float spaceForSlideNumbers;
-@property(readonly) Class superclass;
-@property(readonly) BOOL usesViewForDrawing;
+@property (nonatomic, readonly) unsigned int currentBuildIndex;
+@property (nonatomic, retain) KNSlideNode *currentSlideNode;
+@property (nonatomic, readonly) unsigned int currentSlideNumber;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float heightOfPrintedText;
+@property (nonatomic, retain) KNOffscreenController *offscreenController;
+@property (nonatomic) float pageMargin;
+@property (nonatomic) int printLayout;
+@property (nonatomic, copy) NSString *printTitle;
+@property (nonatomic) id printView;
+@property (getter=isPrintingBackgrounds, nonatomic) BOOL printingBackgrounds;
+@property (getter=isPrintingBorders, nonatomic) BOOL printingBorders;
+@property (getter=isPrintingBuilds, nonatomic) BOOL printingBuilds;
+@property (getter=isPrintingDate, nonatomic) BOOL printingDate;
+@property (getter=isPrintingDraftQuality, nonatomic) BOOL printingDraftQuality;
+@property (getter=isPrintingPageMargins, nonatomic) BOOL printingPageMargins;
+@property (getter=isPrintingSelectedSlides, nonatomic) BOOL printingSelectedSlides;
+@property (getter=isPrintingSkippedSlides, nonatomic) BOOL printingSkippedSlides;
+@property (getter=isPrintingSlideNumbers, nonatomic) BOOL printingSlideNumbers;
+@property (nonatomic, readonly) unsigned int rangeEnd;
+@property (nonatomic, readonly) unsigned int rangeStart;
+@property (nonatomic, copy) NSOrderedSet *selectedSlideNodes;
+@property (nonatomic, readonly) NSArray *slidesForPrinting;
+@property (nonatomic) unsigned int slidesPerPage;
+@property (nonatomic, readonly) float spaceForSlideNumbers;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL usesViewForDrawing;
 
 - (void)addAnchorPointForSlide:(id)arg1 context:(struct CGContext { }*)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsRect;

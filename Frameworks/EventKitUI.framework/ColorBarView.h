@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIColor;
-
 @interface ColorBarView : UIView {
     UIColor *_color;
 }
 
-@property(retain) UIColor * color;
+@property (nonatomic, retain) UIColor *color;
 
 - (void).cxx_destruct;
 - (id)color;

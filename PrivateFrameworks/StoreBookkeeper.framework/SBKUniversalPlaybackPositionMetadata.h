@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSString;
-
 @interface SBKUniversalPlaybackPositionMetadata : NSObject <NSCopying, SBKKeyValuePayloadPair> {
     double _bookmarkTime;
     BOOL _hasBeenPlayed;
@@ -13,13 +11,13 @@
 }
 
 @property double bookmarkTime;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL hasBeenPlayed;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * itemIdentifier;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *itemIdentifier;
 @property unsigned int playCount;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 @property double timestamp;
 
 + (id)_testableMetadataItem_1;

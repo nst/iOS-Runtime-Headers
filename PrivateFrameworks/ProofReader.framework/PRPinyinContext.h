@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSMutableArray;
-
 @interface PRPinyinContext : PRAutocorrectionContext {
     unsigned int _abbreviatedSyllableCount;
     NSMutableArray *_addedModifications;
@@ -14,12 +12,12 @@
     void *_connection;
     unsigned int _endIndex;
     NSMutableArray *_geometryDataArray;
-    unsigned int _lastIndexes[4];
+    unsigned int _lastIndexes;
     BOOL _lastSyllableIsPartial;
     unsigned int _length;
     unsigned int _lengthBeforeApostrophes;
     NSMutableArray *_modifications;
-    unsigned int _nextIndexes[2];
+    unsigned int _nextIndexes;
     NSMutableArray *_prefixes;
     unsigned int _previouslyAnalyzedLength;
     NSMutableArray *_removedModifications;

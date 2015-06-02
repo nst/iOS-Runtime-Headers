@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class CKRecordID, CKShareID, NSString;
-
 @interface BRCSharingCopyAccessTokenOperation : _BRCFrameworkOperation <BRCOperationSubclass> {
     CKRecordID *_recordID;
     CKShareID *_shareID;
     BOOL _wantsSharePermissions;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) CKRecordID * recordID;
-@property(retain) CKShareID * shareID;
-@property(readonly) Class superclass;
-@property BOOL wantsSharePermissions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CKRecordID *recordID;
+@property (nonatomic, retain) CKShareID *shareID;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL wantsSharePermissions;
 
 - (void).cxx_destruct;
 - (id)initWithItem:(id)arg1;

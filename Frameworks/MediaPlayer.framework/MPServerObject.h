@@ -7,8 +7,8 @@
     int _clientPID;
 }
 
-@property(readonly) struct { unsigned int x1[8]; }* clientAuditToken;
-@property(readonly) int clientPID;
+@property (nonatomic, readonly) struct { unsigned int x1[8]; }*clientAuditToken;
+@property (nonatomic, readonly) int clientPID;
 
 + (id)_center;
 

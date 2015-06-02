@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class CKRecord, NSError;
-
 @interface BRCLocalVersion : BRCVersion {
     NSError *_uploadError;
     CKRecord *_uploadedAssets;
 }
 
-@property(retain) NSError * uploadError;
-@property(retain) CKRecord * uploadedAssets;
+@property (nonatomic, retain) NSError *uploadError;
+@property (nonatomic, retain) CKRecord *uploadedAssets;
 
 + (BOOL)supportsSecureCoding;
 

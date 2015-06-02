@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReferencingDelegateStorage, NSArray;
-
 @interface AVCaptureMetadataOutputInternal_FigRecorder : NSObject {
     AVWeakReferencingDelegateStorage *delegateStorage;
     NSArray *metadataObjectTypes;

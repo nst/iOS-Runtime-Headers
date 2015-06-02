@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDate, NSString;
-
 @interface WBSRecentWebSearchEntry : NSObject {
     NSDate *_date;
     NSString *_searchString;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) NSString * searchString;
+@property (readonly) NSDate *date;
+@property (readonly) NSString *searchString;
 
 - (void).cxx_destruct;
 - (id)date;

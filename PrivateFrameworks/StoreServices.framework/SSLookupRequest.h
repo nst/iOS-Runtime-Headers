@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, SSAuthenticationContext, SSLookupProperties;
-
 @interface SSLookupRequest : SSRequest <SSXPCCoding> {
     SSAuthenticationContext *_authenticationContext;
     int _personalizationStyle;
@@ -11,17 +9,17 @@
     int _resultFilters;
 }
 
-@property(copy,readonly) SSLookupProperties * _lookupProperties;
-@property BOOL authenticatesIfNeeded;
-@property(copy) SSAuthenticationContext * authenticationContext;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * keyProfile;
-@property int localizationStyle;
-@property int personalizationStyle;
-@property int resultFilters;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, copy) SSLookupProperties *_lookupProperties;
+@property (nonatomic) BOOL authenticatesIfNeeded;
+@property (nonatomic, copy) SSAuthenticationContext *authenticationContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *keyProfile;
+@property (nonatomic) int localizationStyle;
+@property (nonatomic) int personalizationStyle;
+@property (nonatomic) int resultFilters;
+@property (readonly) Class superclass;
 
 - (id)_lookupProperties;
 - (void)_setTimeoutInterval:(id)arg1;
@@ -44,8 +42,8 @@
 - (void)setResultFilters:(int)arg1;
 - (void)setValue:(id)arg1 forRequestParameter:(id)arg2;
 - (BOOL)start;
-- (void)startWithCompletionBlock:(id)arg1;
-- (void)startWithLookupBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
+- (void)startWithLookupBlock:(id /* block */)arg1;
 - (id)valueForRequestParameter:(id)arg1;
 
 @end

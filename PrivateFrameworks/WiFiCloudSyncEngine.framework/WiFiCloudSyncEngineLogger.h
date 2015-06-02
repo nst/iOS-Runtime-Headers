@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WiFiCloudSyncEngine.framework/WiFiCloudSyncEngine
  */
 
-@interface WiFiCloudSyncEngineLogger : NSObject {
-}
+@interface WiFiCloudSyncEngineLogger : NSObject
 
 @end

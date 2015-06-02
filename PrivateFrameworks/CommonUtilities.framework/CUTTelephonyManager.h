@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommonUtilities.framework/CommonUtilities
  */
 
-@class NSMutableSet, NSRecursiveLock;
-
 @interface CUTTelephonyManager : NSObject {
     NSMutableSet *_disableFastDormancyTokens;
     NSRecursiveLock *_lock;
@@ -12,11 +10,11 @@
     void *_suspendDormancyAssertion;
 }
 
-@property struct __CTServerConnection { }* _serverConnection;
-@property void* _suspendDormancyAssertion;
-@property(retain) NSMutableSet * disableFastDormancyTokens;
-@property(retain) NSRecursiveLock * lock;
-@property BOOL registered;
+@property (nonatomic) struct __CTServerConnection { }*_serverConnection;
+@property (nonatomic) void*_suspendDormancyAssertion;
+@property (nonatomic, retain) NSMutableSet *disableFastDormancyTokens;
+@property (nonatomic, retain) NSRecursiveLock *lock;
+@property (nonatomic) BOOL registered;
 
 + (id)sharedInstance;
 

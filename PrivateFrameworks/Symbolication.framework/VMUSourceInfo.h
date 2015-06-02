@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSString;
-
 @interface VMUSourceInfo : NSObject {
     NSString *_fileName;
     unsigned int _lineNumber;

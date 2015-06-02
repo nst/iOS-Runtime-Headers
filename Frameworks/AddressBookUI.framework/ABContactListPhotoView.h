@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABStyleProvider, ABUIPerson, UIImageView;
-
 @interface ABContactListPhotoView : UIView {
     UIImageView *_contactImageView;
     ABUIPerson *_person;
     ABStyleProvider *_styleProvider;
 }
 
-@property(retain) ABUIPerson * person;
-@property void* record;
-@property(retain) ABStyleProvider * styleProvider;
+@property (nonatomic, retain) ABUIPerson *person;
+@property (nonatomic) void*record;
+@property (nonatomic, retain) ABStyleProvider *styleProvider;
 
 - (id)_framedPhoto;
 - (void)dealloc;

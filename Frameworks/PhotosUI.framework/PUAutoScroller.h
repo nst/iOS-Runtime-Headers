@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSTimer, UIScrollView;
-
 @interface PUAutoScroller : NSObject {
     struct CGPoint { 
         float x; 
@@ -17,10 +15,10 @@
     NSTimer *_timer;
 }
 
-@property struct CGPoint { float x1; float x2; } distanceFromCenterFrame;
-@property(retain) UIScrollView * scrollView;
-@property struct CGPoint { float x1; float x2; } speed;
-@property(retain) NSTimer * timer;
+@property (nonatomic) struct CGPoint { float x1; float x2; } distanceFromCenterFrame;
+@property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic) struct CGPoint { float x1; float x2; } speed;
+@property (nonatomic, retain) NSTimer *timer;
 
 + (void)_scrollTestFire;
 + (void)performScrollTest:(id)arg1 iterations:(unsigned int)arg2 length:(float)arg3 delta:(float)arg4 vertical:(BOOL)arg5;

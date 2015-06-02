@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSArray;
-
 @interface AACloudKitDevicesListResponse : AAResponse {
     NSArray *_incompatibleDeviceNames;
     NSArray *_incompatibleDevices;
@@ -11,10 +9,10 @@
     NSArray *_needUpgradeDevices;
 }
 
-@property(readonly) NSArray * incompatibleDeviceNames;
-@property(readonly) NSArray * incompatibleDevices;
-@property(readonly) NSArray * needUpgradeDeviceNames;
-@property(readonly) NSArray * needUpgradeDevices;
+@property (nonatomic, readonly) NSArray *incompatibleDeviceNames;
+@property (nonatomic, readonly) NSArray *incompatibleDevices;
+@property (nonatomic, readonly) NSArray *needUpgradeDeviceNames;
+@property (nonatomic, readonly) NSArray *needUpgradeDevices;
 
 - (void).cxx_destruct;
 - (id)incompatibleDeviceNames;

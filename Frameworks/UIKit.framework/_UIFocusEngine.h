@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMapTable, NSString, NSUserDefaults, UIMoveEvent, UIPanGestureRecognizer, UIScrollView, UIWindow, _UIDynamicAnimationGroup, _UIFocusEngineTapGestureRecognizer, _UIFocusEngineTargetedDynamicAnimation, _UIFocusTouchDebugView;
-
 @interface _UIFocusEngine : NSObject <UIGestureRecognizerDelegate> {
     NSMapTable *_activeScrollViewBounds;
     unsigned int _currentGestureID;
@@ -51,16 +49,16 @@
     NSUserDefaults *_userDefaults;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(retain) UIMoveEvent * moveEvent;
-@property(getter=_playsSoundOnFocusChange,setter=_setPlaysSoundOnFocusChange:) BOOL playsSoundOnFocusChange;
-@property(getter=_sendsFocusDirection,setter=_setSendsFocusDirection:) BOOL sendsFocusDirection;
-@property BOOL shouldShowDebugOverlays;
-@property(readonly) Class superclass;
-@property UIWindow * targetWindow;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIMoveEvent *moveEvent;
+@property (getter=_playsSoundOnFocusChange, setter=_setPlaysSoundOnFocusChange:, nonatomic) BOOL playsSoundOnFocusChange;
+@property (getter=_sendsFocusDirection, setter=_setSendsFocusDirection:, nonatomic) BOOL sendsFocusDirection;
+@property (nonatomic) BOOL shouldShowDebugOverlays;
+@property (readonly) Class superclass;
+@property (nonatomic) UIWindow *targetWindow;
 
 + (id)defaultTuningValues;
 + (void)initialize;

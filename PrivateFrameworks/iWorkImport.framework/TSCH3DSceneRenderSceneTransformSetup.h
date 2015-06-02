@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DSceneRenderSceneTransformSetup : TSCH3DSceneRenderSetup {
-}
+@interface TSCH3DSceneRenderSceneTransformSetup : TSCH3DSceneRenderSetup
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

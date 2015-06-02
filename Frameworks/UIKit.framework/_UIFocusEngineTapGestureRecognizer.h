@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFocusEngineTapGestureRecognizer : UITapGestureRecognizer {
-}
+@interface _UIFocusEngineTapGestureRecognizer : UITapGestureRecognizer
 
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 

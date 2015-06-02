@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSSet, SSMetricsConfiguration;
-
 @interface SSMetricsConfiguration : NSObject {
     NSSet *_blacklistedEvents;
     SSMetricsConfiguration *_childConfiguration;
@@ -19,12 +17,12 @@
     BOOL _sendDisabled;
 }
 
-@property(retain) SSMetricsConfiguration * childConfiguration;
-@property BOOL disableEventDecoration;
-@property(readonly) NSDictionary * fieldsMap;
+@property (nonatomic, retain) SSMetricsConfiguration *childConfiguration;
+@property (nonatomic) BOOL disableEventDecoration;
+@property (nonatomic, readonly) NSDictionary *fieldsMap;
 
 + (id)_reportingFrequencyOverride;
-+ (void)getReportingFrequencyOverrideWithCompletionBlock:(id)arg1;
++ (void)getReportingFrequencyOverrideWithCompletionBlock:(id /* block */)arg1;
 + (void)setReportingFrequencyOverride:(id)arg1;
 
 - (BOOL)_configBooleanForKey:(id)arg1 defaultValue:(BOOL)arg2;

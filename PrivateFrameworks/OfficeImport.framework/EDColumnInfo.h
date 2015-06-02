@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDReference, EDResources, EDWorksheet, NSString;
-
 @interface EDColumnInfo : NSObject <EDKeyedObject, NSCopying> {
     bool mHidden;
     unsigned char mOutlineLevel;
@@ -14,10 +12,10 @@
     EDWorksheet *mWorksheet;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)columnInfoWithResources:(id)arg1 worksheet:(id)arg2;
 

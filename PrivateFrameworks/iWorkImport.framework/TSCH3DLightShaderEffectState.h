@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TSCH3DLightShaderEffectState : NSObject {
     NSMutableArray *mLights;
     struct LightingPackageShaderEffectState { 

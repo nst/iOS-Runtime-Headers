@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
-
 @interface NSSQLBindIntarray : NSObject {
     unsigned int _index;
     NSString *_tableName;
@@ -11,8 +9,8 @@
 }
 
 @property unsigned int index;
-@property(retain) NSString * tableName;
-@property(retain) id value;
+@property (retain) NSString *tableName;
+@property (retain) id value;
 
 - (void)dealloc;
 - (unsigned int)index;

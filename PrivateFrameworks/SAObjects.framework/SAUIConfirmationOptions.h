@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAUIConfirmationOptions : AceObject <SAAceSerializable>
 
-@interface SAUIConfirmationOptions : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSArray * allConfirmationOptions;
-@property(copy) NSString * cancelTrigger;
-@property(copy) NSArray * confirmCommands;
-@property(copy) NSString * confirmText;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSArray * denyCommands;
-@property(copy) NSString * denyText;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSArray *allConfirmationOptions;
+@property (nonatomic, copy) NSString *cancelTrigger;
+@property (nonatomic, copy) NSArray *confirmCommands;
+@property (nonatomic, copy) NSString *confirmText;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSArray *denyCommands;
+@property (nonatomic, copy) NSString *denyText;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)confirmationOptions;
 + (id)confirmationOptionsWithDictionary:(id)arg1 context:(id)arg2;

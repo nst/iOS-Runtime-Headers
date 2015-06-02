@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKTrafficSupport : NSObject {
-}
+@interface MKTrafficSupport : NSObject
 
 + (id)sharedTrafficSupport;
 

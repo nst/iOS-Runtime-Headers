@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSArray, NSLinguisticTagger, NSMutableArray, NSMutableOrderedSet, NSString;
-
 @interface AXLanguageTaggedContent : NSObject {
     struct _NSRange { 
         unsigned int location; 
@@ -19,14 +17,14 @@
     NSString *_userPreferredLangID;
 }
 
-@property(readonly) NSString * content;
-@property(retain) NSArray * currentDialects;
-@property(retain) NSLinguisticTagger * linguisticTagger;
-@property BOOL splitContentOnNewlines;
-@property(getter=isTagged) BOOL tagged;
-@property(retain) NSMutableArray * tags;
-@property(retain) NSMutableOrderedSet * unpredictedAmbiguousLangMaps;
-@property(copy) NSString * userPreferredLangID;
+@property (nonatomic, readonly) NSString *content;
+@property (nonatomic, retain) NSArray *currentDialects;
+@property (nonatomic, retain) NSLinguisticTagger *linguisticTagger;
+@property (nonatomic) BOOL splitContentOnNewlines;
+@property (getter=isTagged, nonatomic) BOOL tagged;
+@property (nonatomic, retain) NSMutableArray *tags;
+@property (nonatomic, retain) NSMutableOrderedSet *unpredictedAmbiguousLangMaps;
+@property (nonatomic, copy) NSString *userPreferredLangID;
 
 - (void)_addTag;
 - (void)_manuallyProcessContentWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -35,8 +33,8 @@
 - (id)currentDialects;
 - (void)dealloc;
 - (id)description;
-- (void)enumeratePredictedTags:(id)arg1;
-- (void)enumerateUnpredictedTags:(id)arg1;
+- (void)enumeratePredictedTags:(id /* block */)arg1;
+- (void)enumerateUnpredictedTags:(id /* block */)arg1;
 - (BOOL)hasOnlyNonWesternLangMaps;
 - (BOOL)hasOnlyWesternLangMaps;
 - (id)initWithContent:(id)arg1;

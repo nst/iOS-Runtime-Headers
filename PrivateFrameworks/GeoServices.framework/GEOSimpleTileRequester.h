@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSMutableSet, NSString;
-
 @interface GEOSimpleTileRequester : GEOTileRequester <NSURLConnectionDelegate> {
     BOOL _cancelled;
     NSMutableArray *_errors;
@@ -12,10 +10,10 @@
     NSMutableArray *_waiting;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (int)eTagType;
 

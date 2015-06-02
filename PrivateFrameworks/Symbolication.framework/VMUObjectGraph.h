@@ -2,22 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class VMUObjectGraph;
-
 @interface VMUObjectGraph : VMUDirectedGraph {
     id *_classInfos;
     unsigned int _classInfosCount;
     unsigned int _internalizedCount;
     struct _VMUBlockNode { unsigned long long x1; unsigned int x2 : 3; unsigned int x3 : 36; unsigned int x4 : 25; } *_internalizedNodes;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _nodeProvider;
-
+    id /* block */ _nodeProvider;
     VMUObjectGraph *_referenceGraph;
     unsigned int _referenceGraphEdgeNamespaceSize;
     unsigned int _referenceGraphNodeNamespaceSize;
@@ -36,14 +26,14 @@
 - (void)archiveDictionaryRepresentation:(id)arg1 options:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (unsigned int)enumerateMarkedObjects:(void*)arg1 withBlock:(id)arg2;
-- (unsigned int)enumerateObjectsWithBlock:(id)arg1;
-- (unsigned int)enumerateReferencesOfNode:(unsigned int)arg1 withBlock:(id)arg2;
-- (unsigned int)enumerateReferencesWithBlock:(id)arg1;
+- (unsigned int)enumerateMarkedObjects:(void*)arg1 withBlock:(id /* block */)arg2;
+- (unsigned int)enumerateObjectsWithBlock:(id /* block */)arg1;
+- (unsigned int)enumerateReferencesOfNode:(unsigned int)arg1 withBlock:(id /* block */)arg2;
+- (unsigned int)enumerateReferencesWithBlock:(id /* block */)arg1;
 - (id)initWithArchived:(id)arg1 options:(unsigned int)arg2;
-- (id)initWithNodes:(unsigned int)arg1 nodeProvider:(id)arg2;
+- (id)initWithNodes:(unsigned int)arg1 nodeProvider:(id /* block */)arg2;
 - (void)internalizeNodes;
-- (struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; })nodeDetails:(unsigned int)arg1;
+- (struct { unsigned long long x1; unsigned int x2 : 60; unsigned int x3 : 4; id x4; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; oneway void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; bycopy unsigned int x25; void*x26; unsigned short x27; void*x28; long doublex29; void*x30; void*x31; void*x32; void*x33; out const void*x34; void*x35; void*x36; void*x37; void*x38; const void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; long doublex48; void*x49; void*x50; long long x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; id x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void x119; void*x120; out void*x121; int x122; void*x123; double x124; void*x125; char *x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; oneway void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; oneway void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; oneway void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; unsigned short x192; void*x193; out void x194; int x195; void*x196; oneway void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; const unsigned long x204; int x205; short x206; void*x207; unsigned short x208; in int x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; oneway void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; unsigned short x234; void*x235; out void x236; int x237; void*x238; oneway void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; const unsigned long x246; int x247; short x248; void*x249; unsigned short x250; in int x251; void*x252; void*x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; oneway void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; unsigned short x277; void*x278; short x279; void*x280; void*x281; void*x282; void*x283; unsigned long x284; int x285; unsigned int x286/* : ? */; const void*x287; const void*x288; void*x289; void*x290; const int x291; void x292; void*x293; void*x294; void*x295; void*x296; const void*x297; void*x298; void*x299; void*x300; out const void*x301; short x302; void*x303; unsigned short x304; void*x305; unsigned int x306/* : ? */; void*x307; void*x308; BOOL x309; void*x310; short x311; void*x312; float x313; const void*x314; void*x315; void*x316; void*x317; out const void*x318; void*x319; unsigned short x320; void*x321; unsigned int x322/* : ? */; void*x323; void*x324; BOOL x325; void*x326; short x327; void*x328; void*x329; void*x330; void*x331; void*x332; void*x333; void*x334; void*x335; void*x336; void*x337; void*x338; void*x339; void*x340; void*x341; void*x342; void*x343; void*x344; void*x345; void*x346; void*x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; void*x358; void*x359; void*x360; void*x361; void*x362; void*x363; void*x364; void*x365; void*x366; void*x367; })nodeDetails:(unsigned int)arg1;
 - (struct { unsigned long long x1; int x2; unsigned long long x3; })referenceInfoWithName:(unsigned int)arg1;
 
 @end

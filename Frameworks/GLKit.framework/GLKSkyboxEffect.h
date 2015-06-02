@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class GLKEffect, GLKEffectPropertyTexture, GLKEffectPropertyTransform, NSMutableArray, NSString;
-
 @interface GLKSkyboxEffect : NSObject <GLKNamedEffect> {
     union _GLKVector3 { 
         struct { 
@@ -39,21 +37,21 @@
     float _zSize;
 }
 
-@property union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } center;
-@property unsigned char centerChanged;
-@property GLKEffect * effect;
-@property unsigned char effectStale;
-@property(copy) NSString * label;
-@property unsigned int positionVBO;
-@property unsigned int programName;
-@property(readonly) NSMutableArray * propertyArray;
-@property unsigned int texCoordVBO;
-@property(readonly) GLKEffectPropertyTexture * textureCubeMap;
-@property(readonly) GLKEffectPropertyTransform * transform;
-@property unsigned int vao;
-@property float xSize;
-@property float ySize;
-@property float zSize;
+@property (nonatomic) union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; } center;
+@property (nonatomic) unsigned char centerChanged;
+@property (nonatomic) GLKEffect *effect;
+@property (nonatomic) unsigned char effectStale;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic) unsigned int positionVBO;
+@property (nonatomic) unsigned int programName;
+@property (nonatomic, readonly) NSMutableArray *propertyArray;
+@property (nonatomic) unsigned int texCoordVBO;
+@property (nonatomic, readonly) GLKEffectPropertyTexture *textureCubeMap;
+@property (nonatomic, readonly) GLKEffectPropertyTransform *transform;
+@property (nonatomic) unsigned int vao;
+@property (nonatomic) float xSize;
+@property (nonatomic) float ySize;
+@property (nonatomic) float zSize;
 
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })center;
 - (unsigned char)centerChanged;

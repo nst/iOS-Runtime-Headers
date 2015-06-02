@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@interface WFDocumentStructureTag : WFTagFlyweight {
-}
+@interface WFDocumentStructureTag : WFTagFlyweight
 
 + (id)tagForNumberOfImages:(int)arg1;
 + (id)tagForNumberOfPixels:(int)arg1;

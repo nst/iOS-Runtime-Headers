@@ -2,17 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class GKButton, GKLabel, NSString;
-
 @interface GKSectionHeaderView : GKHeaderWithUnderlineView {
     BOOL _allSectionItemsVisible;
     int _itemCount;
-    int (*_itemCountFormatter)();
+    int (*_itemCountFormatter;
     GKLabel *_leftLabel;
     BOOL _manualItemCount;
     int _maxItemCount;
@@ -24,20 +17,20 @@
     SEL _showAllAction;
 }
 
-@property BOOL allSectionItemsVisible;
-@property int itemCount;
-@property int (* itemCountFormatter;
-@property(retain) GKLabel * leftLabel;
-@property(retain) NSString * leftText;
-@property BOOL manualItemCount;
-@property int maxItemCount;
-@property int maxRange;
-@property SEL rightAction;
-@property(retain) GKButton * rightButton;
-@property id rightTarget;
-@property(retain) NSString * rightText;
-@property unsigned int sectionIndex;
-@property SEL showAllAction;
+@property (nonatomic) BOOL allSectionItemsVisible;
+@property (nonatomic) int itemCount;
+@property (nonatomic) int (*itemCountFormatter;
+@property (nonatomic, retain) GKLabel *leftLabel;
+@property (nonatomic, retain) NSString *leftText;
+@property (nonatomic) BOOL manualItemCount;
+@property (nonatomic) int maxItemCount;
+@property (nonatomic) int maxRange;
+@property (nonatomic) SEL rightAction;
+@property (nonatomic, retain) GKButton *rightButton;
+@property (nonatomic) id rightTarget;
+@property (nonatomic, retain) NSString *rightText;
+@property (nonatomic) unsigned int sectionIndex;
+@property (nonatomic) SEL showAllAction;
 
 + (id)padMetrics;
 + (id)phoneMetrics;
@@ -48,7 +41,7 @@
 - (void)establishConstraints;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)itemCount;
-- (int (*)())itemCountFormatter;
+- (int (*)itemCountFormatter;
 - (id)leftLabel;
 - (id)leftText;
 - (BOOL)manualItemCount;
@@ -64,7 +57,7 @@
 - (unsigned int)sectionIndex;
 - (void)setAllSectionItemsVisible:(BOOL)arg1;
 - (void)setItemCount:(int)arg1;
-- (void)setItemCountFormatter:(int (*)())arg1;
+- (void)setItemCountFormatter:(int (*)arg1;
 - (void)setLeftLabel:(id)arg1;
 - (void)setLeftText:(id)arg1;
 - (void)setManualItemCount:(BOOL)arg1;

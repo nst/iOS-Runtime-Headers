@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIDownloadsCellView, UIImageView;
-
 @interface SKUIDownloadsCollectionViewCell : UICollectionViewCell {
     int _cellState;
     SKUIDownloadsCellView *_cellView;
     UIImageView *_editIndicator;
 }
 
-@property int cellState;
-@property(readonly) SKUIDownloadsCellView * cellView;
+@property (nonatomic) int cellState;
+@property (nonatomic, readonly) SKUIDownloadsCellView *cellView;
 
 - (void).cxx_destruct;
 - (void)_reloadEditState;

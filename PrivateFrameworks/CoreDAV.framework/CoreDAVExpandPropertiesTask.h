@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableSet;
-
 @interface CoreDAVExpandPropertiesTask : CoreDAVPropertyFindBaseTask {
     NSMutableSet *_propertiesToExpand;
 }
 
-@property(retain) NSMutableSet * propertiesToExpand;
+@property (nonatomic, retain) NSMutableSet *propertiesToExpand;
 
 - (void)addPropertyToExpandWithPropertiesToFind:(id)arg1 expandedName:(id)arg2 expandedNameSpace:(id)arg3;
 - (void)dealloc;

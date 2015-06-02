@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class BiometricKit, NSHashTable, NSString;
-
 @interface PKBiometricEventMonitor : NSObject <BiometricKitDelegate> {
     BiometricKit *_biometricKit;
     BOOL _fingerDetectionEnabled;
@@ -14,13 +12,13 @@
     BOOL _shouldSendFingerOffNotification;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isFingerDetectionEnabled) BOOL fingerDetectionEnabled;
-@property(getter=isFingerOn,readonly) BOOL fingerOn;
-@property(readonly) unsigned int hash;
-@property(getter=isPaused,readonly) BOOL paused;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isFingerDetectionEnabled, nonatomic) BOOL fingerDetectionEnabled;
+@property (getter=isFingerOn, nonatomic, readonly) BOOL fingerOn;
+@property (readonly) unsigned int hash;
+@property (getter=isPaused, nonatomic, readonly) BOOL paused;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 

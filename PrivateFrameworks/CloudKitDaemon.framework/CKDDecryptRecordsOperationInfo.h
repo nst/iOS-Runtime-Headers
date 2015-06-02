@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSArray, NSDictionary;
-
 @interface CKDDecryptRecordsOperationInfo : CKDatabaseOperationInfo {
     NSArray *_recordsToDecrypt;
     NSDictionary *_webSharingIdentityDataByRecordID;
 }
 
-@property(retain) NSArray * recordsToDecrypt;
-@property(retain) NSDictionary * webSharingIdentityDataByRecordID;
+@property (nonatomic, retain) NSArray *recordsToDecrypt;
+@property (nonatomic, retain) NSDictionary *webSharingIdentityDataByRecordID;
 
 - (void).cxx_destruct;
 - (id)recordsToDecrypt;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTSChoiceRowTableViewCell : PTSRowTableViewCell {
-}
+@interface PTSChoiceRowTableViewCell : PTSRowTableViewCell
 
 + (int)cellStyleForRow:(id)arg1;
 

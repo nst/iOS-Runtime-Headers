@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@interface MBError : NSObject {
-}
+@interface MBError : NSObject
 
 + (int)codeForErrno:(int)arg1;
 + (int)codeForNSError:(id)arg1;

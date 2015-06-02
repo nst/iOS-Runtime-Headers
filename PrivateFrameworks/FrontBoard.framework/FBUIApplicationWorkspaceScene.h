@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class BKSProcessAssertion, NSMutableArray, NSMutableSet;
-
 @interface FBUIApplicationWorkspaceScene : FBWorkspaceScene {
     NSMutableSet *_allWatchdogs;
     BOOL _createResponseReceived;
@@ -18,15 +16,15 @@
     NSMutableArray *_watchdogStack;
 }
 
-@property(getter=_workspaceQueue_isTransitioningToForeground,readonly) BOOL transitioningToForeground;
+@property (getter=_workspaceQueue_isTransitioningToForeground, nonatomic, readonly) BOOL transitioningToForeground;
 
-- (void)_dispatchBlockAfterProcessLaunch:(id)arg1;
-- (void)_workspaceQueue_activateForSEO:(BOOL)arg1 withSettings:(id)arg2 transitionContext:(id)arg3 eventBlock:(id)arg4;
+- (void)_dispatchBlockAfterProcessLaunch:(id /* block */)arg1;
+- (void)_workspaceQueue_activateForSEO:(BOOL)arg1 withSettings:(id)arg2 transitionContext:(id)arg3 eventBlock:(id /* block */)arg4;
 - (void)_workspaceQueue_activateResponseReceived:(id)arg1;
 - (void)_workspaceQueue_cancelAllWatchdogTimers;
 - (void)_workspaceQueue_cancelWatchdogTimer:(id)arg1;
 - (id)_workspaceQueue_createWatchdogForSceneAction:(unsigned int)arg1 transitionContext:(id)arg2;
-- (void)_workspaceQueue_deactivateForSEO:(BOOL)arg1 withSettings:(id)arg2 transitionContext:(id)arg3 eventBlock:(id)arg4;
+- (void)_workspaceQueue_deactivateForSEO:(BOOL)arg1 withSettings:(id)arg2 transitionContext:(id)arg3 eventBlock:(id /* block */)arg4;
 - (void)_workspaceQueue_deactivateResponseReceived:(id)arg1;
 - (unsigned int)_workspaceQueue_determineSceneActionFromSettings:(id)arg1 toSettings:(id)arg2;
 - (void)_workspaceQueue_dropAllProcessAssertions;
@@ -47,8 +45,8 @@
 - (void)_workspaceQueue_takeSEOProcessAssertionWithTransitionContext:(id)arg1;
 - (void)_workspaceQueue_takeSuspendingProcessAssertion;
 - (void)dealloc;
-- (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id)arg3;
-- (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id)arg5;
+- (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
+- (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
 - (id)initWithParentWorkspace:(id)arg1 host:(id)arg2 initialClientSettings:(id)arg3;
 - (id)parentWorkspace;
 

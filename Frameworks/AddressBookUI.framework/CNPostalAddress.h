@@ -2,29 +2,28 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface CNPostalAddress : NSObject <NSCopying, NSMutableCopying> {
     NSMutableDictionary *_addressDictionary;
 }
 
-@property(copy,readonly) NSString * ISOCountryCode;
-@property(retain) NSMutableDictionary * addressDictionary;
-@property(copy,readonly) NSString * city;
-@property(copy,readonly) NSString * country;
-@property(readonly) NSString * formattedAddress;
-@property(readonly) NSString * formattedAddressSingleLine;
-@property(copy,readonly) NSString * postalCode;
-@property(copy,readonly) NSString * state;
-@property(copy,readonly) NSString * street;
-@property(copy,readonly) NSString * subAdministrativeArea;
-@property(copy,readonly) NSString * subLocality;
+@property (readonly, copy) NSString *ISOCountryCode;
+@property (retain) NSMutableDictionary *addressDictionary;
+@property (readonly, copy) NSString *city;
+@property (readonly, copy) NSString *country;
+@property (nonatomic, readonly) NSString *formattedAddress;
+@property (nonatomic, readonly) NSString *formattedAddressSingleLine;
+@property (readonly, copy) NSString *postalCode;
+@property (readonly, copy) NSString *state;
+@property (readonly, copy) NSString *street;
+@property (readonly, copy) NSString *subAdministrativeArea;
+@property (readonly, copy) NSString *subLocality;
+
+// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
 
 + (id)addressFormatsDictionary;
 + (id)defaultCountryCode;
 + (id)localizedAddressFormatDictionaryForCountryCode:(id)arg1;
 + (id)localizedCountryNameForCountryCode:(id)arg1;
-+ (id)pkPostalAddressWithDictionary:(id)arg1;
 + (id)postalAddress;
 + (id)postalAddressWithDictionary:(id)arg1;
 
@@ -43,13 +42,18 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)keyboardSettingsForAddressPart:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
-- (id)pkAddressDictionary;
-- (id)pkFormattedAddressSingleLine;
 - (id)postalCode;
 - (void)setAddressDictionary:(id)arg1;
 - (id)state;
 - (id)street;
 - (id)subAdministrativeArea;
 - (id)subLocality;
+
+// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+
++ (id)pkPostalAddressWithDictionary:(id)arg1;
+
+- (id)pkAddressDictionary;
+- (id)pkFormattedAddressSingleLine;
 
 @end

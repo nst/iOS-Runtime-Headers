@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class IDSDevice, NSArray, NSData, NSDate, NSDictionary, NSMapTable, NSMutableArray, NSString;
-
 @interface _IDSAccount : NSObject <IDSDaemonListenerProtocol> {
     NSDictionary *_accountConfig;
     id _delegateContext;
@@ -18,43 +16,43 @@
     NSString *_uniqueID;
 }
 
-@property(setter=_setIsEnabled:) BOOL _isEnabled;
-@property(retain) NSDictionary * accountInfo;
-@property(readonly) int accountType;
-@property(retain,readonly) NSArray * aliasStrings;
-@property(retain,readonly) NSArray * aliases;
-@property(readonly) BOOL canSend;
-@property(readonly) NSDate * dateRegistered;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) NSArray * devices;
-@property(retain,readonly) NSString * displayName;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isActive;
-@property(retain) NSString * loginID;
-@property(retain,readonly) NSArray * nearbyDevices;
-@property(readonly) NSDate * nextRegistrationDate;
-@property(retain,readonly) NSString * primaryServiceName;
-@property(readonly) NSString * profileID;
-@property(retain,readonly) NSDictionary * profileInfo;
-@property(readonly) NSData * pushToken;
-@property(retain,readonly) NSString * pushTopic;
-@property(readonly) NSString * regionBasePhoneNumber;
-@property(readonly) NSString * regionID;
-@property(readonly) NSDictionary * regionServerContext;
-@property(readonly) NSArray * registeredURIs;
-@property(readonly) NSData * registrationCertificate;
-@property(readonly) int registrationStatus;
-@property(retain,readonly) NSString * serviceName;
-@property(readonly) Class superclass;
-@property(retain,readonly) NSString * uniqueID;
-@property(retain,readonly) NSArray * vettedAliases;
+@property (setter=_setIsEnabled:, nonatomic) BOOL _isEnabled;
+@property (nonatomic, retain) NSDictionary *accountInfo;
+@property (nonatomic, readonly) int accountType;
+@property (nonatomic, readonly, retain) NSArray *aliasStrings;
+@property (nonatomic, readonly, retain) NSArray *aliases;
+@property (nonatomic, readonly) BOOL canSend;
+@property (nonatomic, readonly) NSDate *dateRegistered;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) NSArray *devices;
+@property (nonatomic, readonly, retain) NSString *displayName;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic, retain) NSString *loginID;
+@property (nonatomic, readonly, retain) NSArray *nearbyDevices;
+@property (nonatomic, readonly) NSDate *nextRegistrationDate;
+@property (nonatomic, readonly, retain) NSString *primaryServiceName;
+@property (nonatomic, readonly) NSString *profileID;
+@property (nonatomic, readonly, retain) NSDictionary *profileInfo;
+@property (nonatomic, readonly) NSData *pushToken;
+@property (nonatomic, readonly, retain) NSString *pushTopic;
+@property (nonatomic, readonly) NSString *regionBasePhoneNumber;
+@property (nonatomic, readonly) NSString *regionID;
+@property (nonatomic, readonly) NSDictionary *regionServerContext;
+@property (nonatomic, readonly) NSArray *registeredURIs;
+@property (nonatomic, readonly) NSData *registrationCertificate;
+@property (nonatomic, readonly) int registrationStatus;
+@property (nonatomic, readonly, retain) NSString *serviceName;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) NSString *uniqueID;
+@property (nonatomic, readonly, retain) NSArray *vettedAliases;
 
-- (void)_callDelegatesWithBlock:(id)arg1;
-- (void)_callDelegatesWithBlock:(id)arg1 group:(id)arg2;
+- (void)_callDelegatesWithBlock:(id /* block */)arg1;
+- (void)_callDelegatesWithBlock:(id /* block */)arg1 group:(id)arg2;
 - (void)_callDevicesChanged;
 - (void)_callNearbyDevicesChanged;
-- (void)_callRegistrationDelegatesWithBlock:(id)arg1;
+- (void)_callRegistrationDelegatesWithBlock:(id /* block */)arg1;
 - (void)_connect;
 - (BOOL)_isEnabled;
 - (BOOL)_isiCloudPairingService;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class NSDateFormatter, NSMutableDictionary, UsageFeed;
-
 @interface AppLaunchStatsNetwork : NSObject {
     NSMutableDictionary *bundleDict;
     UsageFeed *symptomsfeed;
@@ -11,7 +9,7 @@
 }
 
 - (void).cxx_destruct;
-- (void)bundleEnd:(id)arg1 seqNum:(long long)arg2 endHandler:(id)arg3;
+- (void)bundleEnd:(id)arg1 seqNum:(long long)arg2 endHandler:(id /* block */)arg3;
 - (void)bundleStart:(id)arg1 seqNum:(long long)arg2;
 - (id)findOrCreate:(id)arg1;
 - (id)init;

@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKTurnBasedExchangeReplyInternal, GKTurnBasedMatch, GKTurnBasedParticipant, NSData, NSDate, NSString;
-
 @interface GKTurnBasedExchangeReply : NSObject {
     GKTurnBasedExchangeReplyInternal *_internal;
     GKTurnBasedMatch *_matchWeak;
     GKTurnBasedParticipant *_recipient;
 }
 
-@property(retain) NSData * data;
-@property(retain) GKTurnBasedExchangeReplyInternal * internal;
-@property GKTurnBasedMatch * match;
-@property(readonly) NSString * message;
-@property(retain) GKTurnBasedParticipant * recipient;
-@property(readonly) NSDate * replyDate;
+@property (nonatomic, retain) NSData *data;
+@property (retain) GKTurnBasedExchangeReplyInternal *internal;
+@property (nonatomic) GKTurnBasedMatch *match;
+@property (nonatomic, readonly) NSString *message;
+@property (nonatomic, retain) GKTurnBasedParticipant *recipient;
+@property (nonatomic, readonly) NSDate *replyDate;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSAttributedString;
-
 @interface IMMessagePartChatItem : IMMessageChatItem {
     int _index;
     NSAttributedString *_text;
 }
 
-@property int index;
-@property(copy,readonly) NSAttributedString * text;
+@property (nonatomic) int index;
+@property (nonatomic, readonly, copy) NSAttributedString *text;
 
 + (id)_messageItemWithPartsDeleted:(id)arg1 fromMessageItem:(id)arg2;
 + (id)_newMessagePartsForMessageItem:(id)arg1;

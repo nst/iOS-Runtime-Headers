@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSArray, NSString;
-
 @interface BRTask : NSObject {
     NSArray *_argv;
     NSString *_redirectStderrToFileAtPath;
@@ -13,12 +11,12 @@
     int _waitStatus;
 }
 
-@property(retain) NSArray * argv;
-@property(retain) NSString * redirectStderrToFileAtPath;
-@property int redirectStderrToFileDescriptor;
-@property(retain) NSString * redirectStdoutToFileAtPath;
-@property int redirectStdoutToFileDescriptor;
-@property(readonly) int waitStatus;
+@property (nonatomic, retain) NSArray *argv;
+@property (nonatomic, retain) NSString *redirectStderrToFileAtPath;
+@property (nonatomic) int redirectStderrToFileDescriptor;
+@property (nonatomic, retain) NSString *redirectStdoutToFileAtPath;
+@property (nonatomic) int redirectStdoutToFileDescriptor;
+@property (nonatomic, readonly) int waitStatus;
 
 + (id)sanitizeStringForFilename:(id)arg1;
 + (id)taskWithCommand:(id)arg1;

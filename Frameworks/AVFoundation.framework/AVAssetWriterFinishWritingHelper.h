@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class <AVAssetWriterFinishWritingHelperDelegate>, AVWeakReference, NSObject<OS_dispatch_queue>;
-
 @interface AVAssetWriterFinishWritingHelper : AVAssetWriterHelper {
     <AVAssetWriterFinishWritingHelperDelegate> *_delegate;
     struct OpaqueFigAssetWriter { } *_figAssetWriter;

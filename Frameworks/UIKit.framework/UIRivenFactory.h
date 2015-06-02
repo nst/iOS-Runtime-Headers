@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIRivenFactory : NSObject {
-}
+@interface UIRivenFactory : NSObject
 
 + (id)_splitKeyboardLayoutHints;
 

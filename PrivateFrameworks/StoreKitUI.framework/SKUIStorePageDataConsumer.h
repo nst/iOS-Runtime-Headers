@@ -6,7 +6,7 @@
     Class _storePageClass;
 }
 
-@property Class storePageClass;
+@property (nonatomic) Class storePageClass;
 
 - (id)_artistPageComponentsForDictionary:(id)arg1 items:(id)arg2;
 - (id)_backgroundArtworkWithDictionary:(id)arg1;

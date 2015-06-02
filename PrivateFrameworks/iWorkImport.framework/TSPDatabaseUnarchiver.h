@@ -6,7 +6,7 @@
     unsigned long long _databaseVersion;
 }
 
-@property(readonly) unsigned long long preUFFVersion;
+@property (nonatomic, readonly) unsigned long long preUFFVersion;
 
 - (BOOL)canValidateReferences;
 - (struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { }*)filterIdentifiers:(const struct set<long long, std::__1::less<long long>, std::__1::allocator<long long> > { }*)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartSeriesTypeMixedArea : TSCHChartSeriesTypeArea {
-}
+@interface TSCHChartSeriesTypeMixedArea : TSCHChartSeriesTypeArea
 
 - (id)g_genericToSpecificPropertyMapMixedArea;
 - (id)genericToSpecificPropertyMap;

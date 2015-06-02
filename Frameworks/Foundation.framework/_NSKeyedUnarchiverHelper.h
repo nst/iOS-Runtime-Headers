@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSMutableArray;
-
 @interface _NSKeyedUnarchiverHelper : NSObject {
     NSMutableArray *_allowedClasses;
     unsigned int _lastRef;

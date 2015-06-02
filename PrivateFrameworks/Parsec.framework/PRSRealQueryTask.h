@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class <PRSSessionController>, NSMutableData, NSString, NSURLSessionDataTask;
-
 @interface PRSRealQueryTask : PRSQueryTask <PRSParsecDataHandler, PRSTriggerTask> {
     BOOL _allowLocation;
     NSMutableData *_collectedData;
@@ -17,20 +15,20 @@
     double _startTime;
 }
 
-@property BOOL allowLocation;
-@property(retain) NSMutableData * collectedData;
-@property(retain) NSURLSessionDataTask * dataTask;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (nonatomic) BOOL allowLocation;
+@property (nonatomic, retain) NSMutableData *collectedData;
+@property (nonatomic, retain) NSURLSessionDataTask *dataTask;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL doCache;
 @property BOOL doResume;
-@property <PRSSessionController> * factory;
+@property (nonatomic) <PRSSessionController> *factory;
 @property BOOL failed;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * queryString;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *queryString;
 @property float scaleFactor;
-@property double startTime;
-@property(readonly) Class superclass;
+@property (nonatomic) double startTime;
+@property (readonly) Class superclass;
 
 + (id)existingQueryForString:(id)arg1 scaleFactor:(float)arg2 webSearch:(BOOL)arg3 handler:(id)arg4;
 

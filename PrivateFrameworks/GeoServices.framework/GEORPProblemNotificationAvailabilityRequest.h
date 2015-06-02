@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOClientCapabilities, NSData, NSString;
-
 @interface GEORPProblemNotificationAvailabilityRequest : PBRequest <NSCopying> {
     struct { 
         unsigned long long *list; 
@@ -26,20 +24,20 @@
     } _problemTypes;
 }
 
-@property(readonly) unsigned long long* businessIds;
-@property(readonly) unsigned int businessIdsCount;
-@property(retain) GEOClientCapabilities * clientCapabilities;
-@property(retain) NSString * countryCode;
-@property(retain) NSData * devicePushToken;
-@property(readonly) BOOL hasClientCapabilities;
-@property(readonly) BOOL hasCountryCode;
-@property(readonly) BOOL hasDevicePushToken;
-@property BOOL hasPinType;
-@property BOOL hasPlaceType;
-@property int pinType;
-@property int placeType;
-@property(readonly) int* problemTypes;
-@property(readonly) unsigned int problemTypesCount;
+@property (nonatomic, readonly) unsigned long long*businessIds;
+@property (nonatomic, readonly) unsigned int businessIdsCount;
+@property (nonatomic, retain) GEOClientCapabilities *clientCapabilities;
+@property (nonatomic, retain) NSString *countryCode;
+@property (nonatomic, retain) NSData *devicePushToken;
+@property (nonatomic, readonly) BOOL hasClientCapabilities;
+@property (nonatomic, readonly) BOOL hasCountryCode;
+@property (nonatomic, readonly) BOOL hasDevicePushToken;
+@property (nonatomic) BOOL hasPinType;
+@property (nonatomic) BOOL hasPlaceType;
+@property (nonatomic) int pinType;
+@property (nonatomic) int placeType;
+@property (nonatomic, readonly) int*problemTypes;
+@property (nonatomic, readonly) unsigned int problemTypesCount;
 
 - (void)addBusinessId:(unsigned long long)arg1;
 - (void)addProblemType:(int)arg1;

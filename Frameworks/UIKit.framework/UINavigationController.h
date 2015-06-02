@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <UINavigationControllerDelegate>, <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, NSArray, NSString, NSUUID, UIGestureRecognizer, UINavigationBar, UINavigationTransitionView, UIPanGestureRecognizer, UITapGestureRecognizer, UIToolbar, UIView, UIViewController, _UIAnimationCoordinator, _UIBarPanGestureRecognizer, _UIBarTapGestureRecognizer, _UINavigationControllerPalette, _UINavigationInteractiveTransition, _UINavigationParallaxTransition;
-
 @interface UINavigationController : UIViewController <GKContentRefresh, GKURLHandling, UIGestureRecognizerDelegatePrivate, UINavigationBarDelegate> {
     NSString *__backdropGroupName;
     BOOL __barAnimationWasCancelled;
@@ -21,11 +15,7 @@
     NSUUID *__navbarAnimationId;
     NSUUID *__toolbarAnimationId;
     <UIViewControllerAnimatedTransitioning> *__transitionController;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __updateNavigationBarHandler;
-
+    id /* block */ __updateNavigationBarHandler;
     BOOL __usingBuiltinAnimator;
     UITapGestureRecognizer *_backGestureRecognizer;
     float _bottomInsetDelta;
@@ -106,58 +96,60 @@
     _UINavigationControllerPalette *_transitioningTopPalette;
 }
 
-@property(getter=_backdropGroupName,setter=_setBackdropGroupName:,retain) NSString * _backdropGroupName;
-@property(setter=_setBarAnimationWasCancelled:) BOOL _barAnimationWasCancelled;
-@property(setter=_setInteractiveAnimationCoordinator:,retain) _UIAnimationCoordinator * _barInteractiveAnimationCoordinator;
-@property(setter=_setBarSwipeHideGesture:,retain) _UIBarPanGestureRecognizer * _barSwipeHideGesture;
-@property(setter=_setBarTapHideGesture:,retain) _UIBarTapGestureRecognizer * _barTapHideGesture;
-@property(setter=_setCachedInteractionController:,retain) _UINavigationInteractiveTransition * _cachedInteractionController;
-@property(setter=_setCachedTransitionController:,retain) _UINavigationParallaxTransition * _cachedTransitionController;
-@property(setter=_setInteractionController:,retain) <UIViewControllerInteractiveTransitioning> * _interactionController;
-@property(setter=_setKeyboardAppearedNotificationToken:,retain) id _keyboardAppearedNotificationToken;
-@property(setter=_setNavbarAnimationId:,retain) NSUUID * _navbarAnimationId;
-@property(setter=_setToolbarAnimationId:,retain) NSUUID * _toolbarAnimationId;
-@property(setter=_setToolbarClass:) Class _toolbarClass;
-@property(setter=_setTransitionController:,retain) <UIViewControllerAnimatedTransitioning> * _transitionController;
-@property(setter=_setUpdateNavigationBarHandler:,copy) id _updateNavigationBarHandler;
-@property(getter=_isUsingBuiltinAnimator,setter=_setUsingBuiltinAnimator:) BOOL _usingBuiltinAnimator;
-@property(getter=_allowNestedNavigationControllers,setter=_setAllowNestedNavigationControllers:) BOOL allowNestedNavigationControllers;
-@property BOOL avoidMovingNavBarOffscreenBeforeUnhiding;
-@property(retain,readonly) UIPanGestureRecognizer * barHideOnSwipeGestureRecognizer;
-@property(readonly) UITapGestureRecognizer * barHideOnTapGestureRecognizer;
-@property(readonly) UIViewController * bottomViewController;
-@property(getter=_builtinTransitionGap,setter=_setBuiltinTransitionGap:) float builtinTransitionGap;
-@property(getter=_builtinTransitionStyle,setter=_setBuiltinTransitionStyle:) int builtinTransitionStyle;
-@property(getter=_isCrossfadingInTabBar,setter=_setCrossfadingInTabBar:) BOOL crossfadingInTabBar;
-@property(getter=_isCrossfadingOutTabBar,setter=_setCrossfadingOutTabBar:) BOOL crossfadingOutTabBar;
-@property float customNavigationTransitionDuration;
-@property(copy,readonly) NSString * debugDescription;
-@property <UINavigationControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIViewController * detailViewController;
-@property(getter=_didExplicitlyHideTabBar,setter=_setDidExplicitlyHideTabBar:) BOOL didHideTabBar;
-@property(retain) UIViewController * disappearingViewController;
-@property(readonly) unsigned int hash;
-@property BOOL hidesBarsOnSwipe;
-@property BOOL hidesBarsOnTap;
-@property BOOL hidesBarsWhenKeyboardAppears;
-@property BOOL hidesBarsWhenVerticallyCompact;
-@property(readonly) UIGestureRecognizer * interactivePopGestureRecognizer;
-@property(getter=isInteractiveTransition) BOOL interactiveTransition;
+@property (getter=_backdropGroupName, setter=_setBackdropGroupName:, nonatomic, retain) NSString *_backdropGroupName;
+@property (setter=_setBarAnimationWasCancelled:, nonatomic) BOOL _barAnimationWasCancelled;
+@property (setter=_setInteractiveAnimationCoordinator:, nonatomic, retain) _UIAnimationCoordinator *_barInteractiveAnimationCoordinator;
+@property (setter=_setBarSwipeHideGesture:, nonatomic, retain) _UIBarPanGestureRecognizer *_barSwipeHideGesture;
+@property (setter=_setBarTapHideGesture:, nonatomic, retain) _UIBarTapGestureRecognizer *_barTapHideGesture;
+@property (setter=_setCachedInteractionController:, nonatomic, retain) _UINavigationInteractiveTransition *_cachedInteractionController;
+@property (setter=_setCachedTransitionController:, nonatomic, retain) _UINavigationParallaxTransition *_cachedTransitionController;
+@property (setter=_setInteractionController:, nonatomic, retain) <UIViewControllerInteractiveTransitioning> *_interactionController;
+@property (setter=_setKeyboardAppearedNotificationToken:, nonatomic, retain) id _keyboardAppearedNotificationToken;
+@property (setter=_setNavbarAnimationId:, nonatomic, retain) NSUUID *_navbarAnimationId;
+@property (setter=_setToolbarAnimationId:, nonatomic, retain) NSUUID *_toolbarAnimationId;
+@property (setter=_setToolbarClass:, nonatomic) Class _toolbarClass;
+@property (setter=_setTransitionController:, nonatomic, retain) <UIViewControllerAnimatedTransitioning> *_transitionController;
+@property (setter=_setUpdateNavigationBarHandler:, nonatomic, copy) id /* block */ _updateNavigationBarHandler;
+@property (getter=_isUsingBuiltinAnimator, setter=_setUsingBuiltinAnimator:, nonatomic) BOOL _usingBuiltinAnimator;
+@property (getter=_allowNestedNavigationControllers, setter=_setAllowNestedNavigationControllers:, nonatomic) BOOL allowNestedNavigationControllers;
+@property (nonatomic) BOOL avoidMovingNavBarOffscreenBeforeUnhiding;
+@property (nonatomic, readonly, retain) UIPanGestureRecognizer *barHideOnSwipeGestureRecognizer;
+@property (nonatomic, readonly) UITapGestureRecognizer *barHideOnTapGestureRecognizer;
+@property (nonatomic, readonly) UIViewController *bottomViewController;
+@property (getter=_builtinTransitionGap, setter=_setBuiltinTransitionGap:, nonatomic) float builtinTransitionGap;
+@property (getter=_builtinTransitionStyle, setter=_setBuiltinTransitionStyle:, nonatomic) int builtinTransitionStyle;
+@property (getter=_isCrossfadingInTabBar, setter=_setCrossfadingInTabBar:, nonatomic) BOOL crossfadingInTabBar;
+@property (getter=_isCrossfadingOutTabBar, setter=_setCrossfadingOutTabBar:, nonatomic) BOOL crossfadingOutTabBar;
+@property (nonatomic) float customNavigationTransitionDuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UINavigationControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (retain) UIViewController *detailViewController;
+@property (getter=_didExplicitlyHideTabBar, setter=_setDidExplicitlyHideTabBar:, nonatomic) BOOL didHideTabBar;
+@property (nonatomic, retain) UIViewController *disappearingViewController;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesBarsOnSwipe;
+@property (nonatomic) BOOL hidesBarsOnTap;
+@property (nonatomic) BOOL hidesBarsWhenKeyboardAppears;
+@property (nonatomic) BOOL hidesBarsWhenVerticallyCompact;
+@property (nonatomic, readonly) UIGestureRecognizer *interactivePopGestureRecognizer;
+@property (getter=isInteractiveTransition, nonatomic) BOOL interactiveTransition;
 @property BOOL isExpanded;
-@property(getter=_isNestedNavigationController,setter=_setIsNestedNavigationController:) BOOL isNestedNavigationController;
-@property(readonly) UINavigationBar * navigationBar;
-@property(getter=isNavigationBarHidden) BOOL navigationBarHidden;
-@property(readonly) UINavigationTransitionView * navigationTransitionView;
-@property BOOL needsDeferredTransition;
-@property BOOL pretendNavBarHidden;
-@property(readonly) UIViewController * previousViewController;
-@property(readonly) Class superclass;
-@property(readonly) UIToolbar * toolbar;
-@property(getter=isToolbarHidden) BOOL toolbarHidden;
-@property(retain,readonly) UIViewController * topViewController;
-@property(copy) NSArray * viewControllers;
-@property(retain,readonly) UIViewController * visibleViewController;
+@property (getter=_isNestedNavigationController, setter=_setIsNestedNavigationController:, nonatomic) BOOL isNestedNavigationController;
+@property (nonatomic, readonly) UINavigationBar *navigationBar;
+@property (getter=isNavigationBarHidden, nonatomic) BOOL navigationBarHidden;
+@property (nonatomic, readonly) UINavigationTransitionView *navigationTransitionView;
+@property (nonatomic) BOOL needsDeferredTransition;
+@property (nonatomic) BOOL pretendNavBarHidden;
+@property (nonatomic, readonly) UIViewController *previousViewController;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIToolbar *toolbar;
+@property (getter=isToolbarHidden, nonatomic) BOOL toolbarHidden;
+@property (nonatomic, readonly, retain) UIViewController *topViewController;
+@property (nonatomic, copy) NSArray *viewControllers;
+@property (nonatomic, readonly, retain) UIViewController *visibleViewController;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_directlySetsContentOverlayInsetsForChildren;
 + (BOOL)_shouldForwardViewWillTransitionToSize;
@@ -165,18 +157,6 @@
 + (BOOL)doesOverridePreferredInterfaceOrientationForPresentation;
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
 
-- (void)MPU_popToRootViewControllerAnimated:(BOOL)arg1;
-- (void)MPU_popToViewController:(id)arg1 animated:(BOOL)arg2 popRequestSentCompletion:(id)arg3;
-- (void)MPU_popToViewControllerBeforeViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)MPU_pushNowPlayingViewControllerOfClass:(Class)arg1 player:(id)arg2 animated:(BOOL)arg3;
-- (void)MPU_pushViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)_MPUExtras_replaceViewController:(id)arg1 withViewController:(id)arg2 animated:(BOOL)arg3;
-- (void)__ck_callDelegateBlocks;
-- (void)__ck_enqueueCompletionBlock:(id)arg1;
-- (id)__ck_popToRootViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (id)__ck_popToViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
-- (id)__ck_popViewControllerAnimated:(BOOL)arg1 completion:(id)arg2;
-- (void)__ck_pushViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
 - (void)__viewWillLayoutSubviews;
 - (id)_additionalViewControllersToCheckForUserActivity;
 - (struct CGSize { float x1; float x2; })_adjustedContentSizeForPopover:(struct CGSize { float x1; float x2; })arg1;
@@ -219,7 +199,7 @@
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
 - (BOOL)_doesTopViewControllerSupportInterfaceOrientation:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
-- (void)_executeNavigationHandler:(id)arg1 deferred:(BOOL)arg2;
+- (void)_executeNavigationHandler:(id /* block */)arg1 deferred:(BOOL)arg2;
 - (id)_existingNavigationBar;
 - (id)_existingToolbar;
 - (id)_existingToolbarWithItems;
@@ -237,15 +217,6 @@
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
-- (void)_gkForceNextContentUpdate;
-- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
-- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
-- (void)_gkReplaceTopViewControllerWithViewController:(id)arg1 transition:(id)arg2;
-- (void)_gkResetContents;
-- (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
-- (void)_gkSetViewControllers:(id)arg1 transition:(id)arg2;
-- (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
-- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (BOOL)_hasNestedNavigationController;
 - (BOOL)_hasTranslucentNavigationBarIncludingViewController:(id)arg1;
 - (void)_hideForKeyboardAppearance;
@@ -310,7 +281,6 @@
 - (void)_presentationTransitionUnwrapViewController:(id)arg1;
 - (void)_presentationTransitionWrapViewController:(id)arg1 forTransitionContext:(id)arg2;
 - (void)_propagateContentAdjustmentsForControllersWithSharedViews;
-- (void)_pu_setCurrentNavigationTransition:(id)arg1;
 - (BOOL)_reallyWantsFullScreenLayout;
 - (void)_releaseContainerViews;
 - (void)_repositionPaletteWithNavigationBarHidden:(BOOL)arg1 duration:(double)arg2 shouldUpdateNavigationItems:(BOOL)arg3;
@@ -350,12 +320,11 @@
 - (void)_setNavigationBarHidesCompletelyOffscreen:(BOOL)arg1;
 - (void)_setPreferredContentSizeFromChildContentContainer:(id)arg1;
 - (void)_setSearchHidNavigationBar:(BOOL)arg1;
-- (void)_setStoreBarStyle:(int)arg1 clientInterface:(id)arg2;
 - (void)_setToolbarAnimationId:(id)arg1;
 - (void)_setToolbarClass:(Class)arg1;
 - (void)_setToolbarHidden:(BOOL)arg1 edge:(unsigned int)arg2 duration:(double)arg3;
 - (void)_setTransitionController:(id)arg1;
-- (void)_setUpdateNavigationBarHandler:(id)arg1;
+- (void)_setUpdateNavigationBarHandler:(id /* block */)arg1;
 - (void)_setUseCurrentStatusBarHeight:(BOOL)arg1;
 - (void)_setUseStandardStatusBarHeight:(BOOL)arg1;
 - (void)_setUsingBuiltinAnimator:(BOOL)arg1;
@@ -412,7 +381,7 @@
 - (void)_updateInteractivePopGestureEnabledState;
 - (void)_updateInteractiveTransition:(float)arg1;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
-- (id)_updateNavigationBarHandler;
+- (id /* block */)_updateNavigationBarHandler;
 - (void)_updatePaletteBackground;
 - (void)_updatePaletteConstraints;
 - (void)_updateScrollViewFromViewController:(id)arg1 toViewController:(id)arg2;
@@ -437,7 +406,6 @@
 - (id)bottomViewController;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
-- (BOOL)ckCanDismissWhenSuspending;
 - (void)collapseSecondaryViewController:(id)arg1 forSplitViewController:(id)arg2;
 - (BOOL)condensesBarsOnSwipe;
 - (struct CGSize { float x1; float x2; })contentSizeForViewInPopover;
@@ -459,18 +427,15 @@
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)existingPaletteForEdge:(unsigned int)arg1;
-- (id)firstViewController;
 - (BOOL)hidesBarsOnSwipe;
 - (BOOL)hidesBarsOnTap;
 - (BOOL)hidesBarsWhenKeyboardAppears;
 - (BOOL)hidesBarsWhenVerticallyCompact;
-- (unsigned int)indexOfViewController:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNavigationBarClass:(Class)arg1 toolbarClass:(Class)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithRootViewController:(id)arg1;
 - (id)interactivePopGestureRecognizer;
-- (void)invalidate;
 - (BOOL)isAlreadyPoppingNavItem;
 - (BOOL)isBuiltinTransition;
 - (BOOL)isCustomTransition;
@@ -483,12 +448,10 @@
 - (int)lastOperation;
 - (void)loadView;
 - (void)makeModalViewControllerTopViewController;
-- (id)mf_keyPathsMapForUICustomization;
 - (int)modalTransitionStyle;
 - (id)moreListImage;
 - (id)moreListSelectedImage;
 - (id)moreListTableCell;
-- (void)music_pushNowPlayingViewControllerAnimated:(BOOL)arg1;
 - (id)navigationBar;
 - (void)navigationBar:(id)arg1 buttonClicked:(int)arg2;
 - (BOOL)navigationBar:(id)arg1 shouldPopItem:(id)arg2;
@@ -502,10 +465,8 @@
 - (double)navigationTransitionView:(id)arg1 durationForTransition:(int)arg2;
 - (BOOL)needsDeferredTransition;
 - (id)paletteForEdge:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (void)popRecursivelyToRootController;
 - (id)popToRootViewControllerAnimated:(BOOL)arg1;
 - (id)popToRootViewControllerWithTransition:(int)arg1;
-- (void)popToSigninControllerAnimated:(BOOL)arg1;
 - (id)popToViewController:(id)arg1 animated:(BOOL)arg2;
 - (id)popToViewController:(id)arg1 transition:(int)arg2;
 - (id)popToViewControllerWithSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
@@ -519,18 +480,10 @@
 - (int)preferredStatusBarStyle;
 - (BOOL)pretendNavBarHidden;
 - (id)previousViewController;
-- (id)pu_currentInteractiveTransition;
-- (id)pu_currentNavigationTransition;
-- (void)pu_navigationTransitionDidEnd:(id)arg1;
-- (void)pu_navigationTransitionWillStart:(id)arg1;
-- (void)pu_popToViewController:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
-- (void)pu_popViewControllerAnimated:(BOOL)arg1 interactive:(BOOL)arg2;
-- (void)pu_pushViewController:(id)arg1 withTransition:(id)arg2 animated:(BOOL)arg3 isInteractive:(BOOL)arg4;
 - (void)purgeMemoryForReason:(int)arg1;
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1 transition:(int)arg2;
 - (void)pushViewController:(id)arg1 transition:(int)arg2 forceImmediate:(BOOL)arg3;
-- (void)rc_changeTopNavigationItemPropertiesToPropertiesInNavigationItem:(id)arg1 animated:(BOOL)arg2;
 - (id)rotatingFooterView;
 - (id)rotatingHeaderView;
 - (id)rotatingSnapshotViewForWindow:(id)arg1;
@@ -569,16 +522,12 @@
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (void)showViewController:(id)arg1 sender:(id)arg2;
-- (id)signInControllerInHierarchy;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (unsigned int)supportedInterfaceOrientations;
-- (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;
-- (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 - (id)tabBarItem;
 - (id)toolbar;
 - (id)topViewController;
 - (void)traitCollectionDidChange:(id)arg1;
-- (BOOL)transcriptControllerIsVisible;
 - (void)updateTabBarItemForViewController:(id)arg1;
 - (void)updateTitleForViewController:(id)arg1;
 - (id)viewControllerForUnwindSegueAction:(SEL)arg1 fromViewController:(id)arg2 withSender:(id)arg3;
@@ -597,5 +546,81 @@
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willShowViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (id)mf_keyPathsMapForUICustomization;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (void)_pu_setCurrentNavigationTransition:(id)arg1;
+- (id)pu_currentInteractiveTransition;
+- (id)pu_currentNavigationTransition;
+- (void)pu_navigationTransitionDidEnd:(id)arg1;
+- (void)pu_navigationTransitionWillStart:(id)arg1;
+- (void)pu_popToViewController:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
+- (void)pu_popViewControllerAnimated:(BOOL)arg1 interactive:(BOOL)arg2;
+- (void)pu_pushViewController:(id)arg1 withTransition:(id)arg2 animated:(BOOL)arg3 isInteractive:(BOOL)arg4;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (void)__ck_callDelegateBlocks;
+- (void)__ck_enqueueCompletionBlock:(id /* block */)arg1;
+- (id)__ck_popToRootViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (id)__ck_popToViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (id)__ck_popViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)__ck_pushViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
+- (BOOL)ckCanDismissWhenSuspending;
+- (BOOL)transcriptControllerIsVisible;
+
+// Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
+
+- (void)popToSigninControllerAnimated:(BOOL)arg1;
+- (id)signInControllerInHierarchy;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
+
+- (void)_gkReplaceTopViewControllerWithViewController:(id)arg1 transition:(id)arg2;
+- (void)_gkSetViewControllers:(id)arg1 transition:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkForceNextContentUpdate;
+- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)_gkResetContents;
+- (void)_gkSetContentsNeedUpdateWithHandler:(id /* block */)arg1;
+- (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+
+- (void)MPU_popToRootViewControllerAnimated:(BOOL)arg1;
+- (void)MPU_popToViewController:(id)arg1 animated:(BOOL)arg2 popRequestSentCompletion:(id /* block */)arg3;
+- (void)MPU_popToViewControllerBeforeViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)MPU_pushNowPlayingViewControllerOfClass:(Class)arg1 player:(id)arg2 animated:(BOOL)arg3;
+- (void)MPU_pushViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)_MPUExtras_replaceViewController:(id)arg1 withViewController:(id)arg2 animated:(BOOL)arg3;
+
+// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
+
+- (void)music_pushNowPlayingViewControllerAnimated:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
+
+- (void)popRecursivelyToRootController;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (void)rc_changeTopNavigationItemPropertiesToPropertiesInNavigationItem:(id)arg1 animated:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)_setStoreBarStyle:(int)arg1 clientInterface:(id)arg2;
+- (id)firstViewController;
+- (unsigned int)indexOfViewController:(id)arg1;
+- (void)invalidate;
+- (void)tabBarControllerDidLongPressTabBarItem:(id)arg1;
+- (void)tabBarControllerDidReselectTabBarItem:(id)arg1;
 
 @end

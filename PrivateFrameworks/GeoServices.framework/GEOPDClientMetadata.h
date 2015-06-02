@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, NSMutableArray, NSString;
-
 @interface GEOPDClientMetadata : PBCodable <NSCopying> {
     NSString *_deviceCountryCode;
     NSString *_deviceDisplayLocale;
@@ -19,21 +17,21 @@
     unsigned int _timeSinceMapEnteredForeground;
 }
 
-@property(retain) NSString * deviceCountryCode;
-@property(retain) NSString * deviceDisplayLocale;
-@property(retain) NSMutableArray * deviceInstalledKeyboardLocales;
-@property(retain) NSString * deviceKeyboardLocale;
-@property(retain) GEOLatLng * deviceLocation;
-@property(retain) NSString * deviceSpokenLocale;
-@property(readonly) BOOL hasDeviceCountryCode;
-@property(readonly) BOOL hasDeviceDisplayLocale;
-@property(readonly) BOOL hasDeviceKeyboardLocale;
-@property(readonly) BOOL hasDeviceLocation;
-@property(readonly) BOOL hasDeviceSpokenLocale;
-@property BOOL hasResultListAttributionSupport;
-@property BOOL hasTimeSinceMapEnteredForeground;
-@property int resultListAttributionSupport;
-@property unsigned int timeSinceMapEnteredForeground;
+@property (nonatomic, retain) NSString *deviceCountryCode;
+@property (nonatomic, retain) NSString *deviceDisplayLocale;
+@property (nonatomic, retain) NSMutableArray *deviceInstalledKeyboardLocales;
+@property (nonatomic, retain) NSString *deviceKeyboardLocale;
+@property (nonatomic, retain) GEOLatLng *deviceLocation;
+@property (nonatomic, retain) NSString *deviceSpokenLocale;
+@property (nonatomic, readonly) BOOL hasDeviceCountryCode;
+@property (nonatomic, readonly) BOOL hasDeviceDisplayLocale;
+@property (nonatomic, readonly) BOOL hasDeviceKeyboardLocale;
+@property (nonatomic, readonly) BOOL hasDeviceLocation;
+@property (nonatomic, readonly) BOOL hasDeviceSpokenLocale;
+@property (nonatomic) BOOL hasResultListAttributionSupport;
+@property (nonatomic) BOOL hasTimeSinceMapEnteredForeground;
+@property (nonatomic) int resultListAttributionSupport;
+@property (nonatomic) unsigned int timeSinceMapEnteredForeground;
 
 - (void)addDeviceInstalledKeyboardLocale:(id)arg1;
 - (void)clearDeviceInstalledKeyboardLocales;

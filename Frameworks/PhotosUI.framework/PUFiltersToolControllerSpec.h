@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUFiltersToolControllerSpec : PUPhotoEditToolControllerSpec {
-}
+@interface PUFiltersToolControllerSpec : PUPhotoEditToolControllerSpec
 
-@property(readonly) struct CGSize { float x1; float x2; } thumbnailCellSize;
-@property(readonly) float thumbnailEdgeMaxLength;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } thumbnailCellSize;
+@property (nonatomic, readonly) float thumbnailEdgeMaxLength;
 
 - (void)configureThumbnailsCollectionLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })thumbnailCellSize;

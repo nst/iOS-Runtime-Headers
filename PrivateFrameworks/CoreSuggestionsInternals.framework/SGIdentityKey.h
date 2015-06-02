@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString;
-
 @interface SGIdentityKey : NSObject <NSCopying> {
     NSString *_content;
     unsigned int _type;
 }
 
-@property(readonly) NSString * externalId;
-@property(readonly) unsigned int type;
+@property (nonatomic, readonly) NSString *externalId;
+@property (nonatomic, readonly) unsigned int type;
 
 + (unsigned int)identityTypeForKeyPart:(id)arg1;
 + (BOOL)isSupportedEntityType:(long long)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class CIFilter;
-
 @interface BLAdjustmentModel : NSObject {
     float _autoBlackLevelAtShadowsMaxLevel;
     float _autoShadowsMaxLevel;
@@ -58,15 +56,15 @@
     float _whiteLevel;
 }
 
-@property(retain) CIFilter * colorBalanceFilter;
-@property(retain) CIFilter * colorFilter;
-@property(retain) CIFilter * curvesFilter;
-@property(retain) CIFilter * faceBalanceFilter;
-@property(retain) CIFilter * highlightsAndShadowsFilter;
-@property(retain) CIFilter * skyAndGrassFilter;
-@property(retain) CIFilter * tempAndTintFilter;
-@property(retain) CIFilter * underwaterBalanceFilter;
-@property(retain) CIFilter * vibranceFilter;
+@property (nonatomic, retain) CIFilter *colorBalanceFilter;
+@property (nonatomic, retain) CIFilter *colorFilter;
+@property (nonatomic, retain) CIFilter *curvesFilter;
+@property (nonatomic, retain) CIFilter *faceBalanceFilter;
+@property (nonatomic, retain) CIFilter *highlightsAndShadowsFilter;
+@property (nonatomic, retain) CIFilter *skyAndGrassFilter;
+@property (nonatomic, retain) CIFilter *tempAndTintFilter;
+@property (nonatomic, retain) CIFilter *underwaterBalanceFilter;
+@property (nonatomic, retain) CIFilter *vibranceFilter;
 
 + (id)exposureValuesForToneCurveData:(id)arg1 highlightsAndShadowsData:(id)arg2 andHistogramData:(id)arg3;
 + (struct CGPoint { float x1; float x2; })pointOnCurveFromPoint:(struct CGPoint { float x1; float x2; })arg1 withSlope:(float)arg2 andCurveData:(float*)arg3;

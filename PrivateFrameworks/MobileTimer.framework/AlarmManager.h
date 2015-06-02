@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class NSArray, NSDate, NSMutableArray, NSString;
-
 @interface AlarmManager : NSObject {
     NSMutableArray *_alarms;
     NSString *_defaultSound;
@@ -14,12 +12,12 @@
     NSMutableArray *logMessageList;
 }
 
-@property(retain,readonly) NSArray * alarms;
-@property(readonly) NSString * defaultSound;
-@property(readonly) int defaultSoundType;
-@property BOOL invalidAlarmsDetected;
-@property(retain) NSDate * lastModified;
-@property(retain) NSMutableArray * logMessageList;
+@property (nonatomic, readonly, retain) NSArray *alarms;
+@property (nonatomic, readonly) NSString *defaultSound;
+@property (nonatomic, readonly) int defaultSoundType;
+@property (nonatomic) BOOL invalidAlarmsDetected;
+@property (nonatomic, retain) NSDate *lastModified;
+@property (nonatomic, retain) NSMutableArray *logMessageList;
 
 + (id)copyReadAlarmsFromPreferences;
 + (BOOL)discardOldVersion;

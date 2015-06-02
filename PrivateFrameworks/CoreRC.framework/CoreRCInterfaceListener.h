@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class <CoreRCInterfaceListenerDelegate>, NSArray, NSMutableArray;
-
 @interface CoreRCInterfaceListener : NSObject {
     <CoreRCInterfaceListenerDelegate> *_delegate;
     NSMutableArray *_interfaces;
 }
 
-@property <CoreRCInterfaceListenerDelegate> * delegate;
-@property(readonly) NSArray * interfaces;
+@property (nonatomic) <CoreRCInterfaceListenerDelegate> *delegate;
+@property (nonatomic, readonly) NSArray *interfaces;
 
 - (void)addInterface:(id)arg1;
 - (void)dealloc;

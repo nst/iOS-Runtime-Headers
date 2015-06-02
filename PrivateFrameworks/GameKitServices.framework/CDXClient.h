@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CDXClientDelegate>, NSData, NSError, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface CDXClient : NSObject {
     struct sockaddr_in { 
         unsigned char sin_len; 
@@ -26,13 +20,9 @@
     unsigned long long holePunchSID_;
     NSObject<OS_dispatch_source> *holePunchTimer_;
     unsigned short localPort_;
-    void *padding_[10];
+    void *padding_;
     unsigned short port_;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id preblobCallback_;
-
+    id /* block */ preblobCallback_;
     BOOL preblobIsUpToDate_;
     NSData *preblob_;
     unsigned long long prevHolePunchSID_;
@@ -46,11 +36,11 @@
     BOOL willReconfigureShortly_;
 }
 
-@property <CDXClientDelegate> * delegate;
-@property(readonly) NSError * error;
-@property(readonly) NSData * preblob;
-@property(copy) id preblobCallback;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic) <CDXClientDelegate> *delegate;
+@property (nonatomic, readonly) NSError *error;
+@property (readonly) NSData *preblob;
+@property (nonatomic, copy) id /* block */ preblobCallback;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 + (id)sharedClient;
 
@@ -65,7 +55,7 @@
 - (void)invalidateSession:(id)arg1;
 - (void)networkDidChange;
 - (id)preblob;
-- (id)preblobCallback;
+- (id /* block */)preblobCallback;
 - (id)queue;
 - (void)resetHolepunchTimer;
 - (void)restart;
@@ -74,7 +64,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setPreblob:(id)arg1;
-- (void)setPreblobCallback:(id)arg1;
+- (void)setPreblobCallback:(id /* block */)arg1;
 - (void)start;
 - (void)startListeningOnSockets;
 - (void)stopHolePunchTimer;

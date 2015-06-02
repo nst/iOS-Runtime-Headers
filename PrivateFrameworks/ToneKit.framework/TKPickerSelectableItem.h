@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class NSString;
-
 @interface TKPickerSelectableItem : TKPickerRowItem {
     NSString *_detailText;
     BOOL _showsCheckmark;
@@ -12,11 +10,11 @@
     BOOL _textCentered;
 }
 
-@property(copy) NSString * detailText;
-@property BOOL showsCheckmark;
-@property BOOL showsDisclosureIndicator;
-@property(copy) NSString * text;
-@property(getter=isTextCentered) BOOL textCentered;
+@property (nonatomic, copy) NSString *detailText;
+@property (nonatomic) BOOL showsCheckmark;
+@property (nonatomic) BOOL showsDisclosureIndicator;
+@property (nonatomic, copy) NSString *text;
+@property (getter=isTextCentered, nonatomic) BOOL textCentered;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (void)_setDetailText:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDFormula, EDResources, OADGraphicProperties;
-
 @interface CHDTrendlineLabel : NSObject {
     bool mAutomaticLabelDeleted;
     unsigned int mContentFormatId;

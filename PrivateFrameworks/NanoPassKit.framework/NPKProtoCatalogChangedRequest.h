@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NPKProtoCatalog;
-
 @interface NPKProtoCatalogChangedRequest : PBRequest <NSCopying> {
     NPKProtoCatalog *_catalog;
     struct { 
@@ -14,11 +12,11 @@
     unsigned int _resyncID;
 }
 
-@property(retain) NPKProtoCatalog * catalog;
-@property BOOL hasLastKnownResyncID;
-@property BOOL hasResyncID;
-@property unsigned int lastKnownResyncID;
-@property unsigned int resyncID;
+@property (nonatomic, retain) NPKProtoCatalog *catalog;
+@property (nonatomic) BOOL hasLastKnownResyncID;
+@property (nonatomic) BOOL hasResyncID;
+@property (nonatomic) unsigned int lastKnownResyncID;
+@property (nonatomic) unsigned int resyncID;
 
 - (void).cxx_destruct;
 - (id)catalog;

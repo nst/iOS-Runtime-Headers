@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class <AXHARemoteControllerDelegate>, AXHAPacket, AXHARemoteMessage, AXHATimer, NSInputStream, NSMutableArray, NSMutableData, NSNetService, NSOutputStream, NSString;
-
 @interface AXHARemoteController : NSObject <NSNetServiceDelegate, NSStreamDelegate> {
     AXHATimer *_communicationTimer;
     AXHARemoteMessage *_currentMessageInFlight;
@@ -18,20 +16,20 @@
     NSNetService *_service;
 }
 
-@property(retain) AXHATimer * communicationTimer;
-@property(retain) AXHARemoteMessage * currentMessageInFlight;
-@property(copy,readonly) NSString * debugDescription;
-@property <AXHARemoteControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL didValidateHIID;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableData * inputBuffer;
-@property(retain) NSInputStream * inputStream;
-@property(retain) NSMutableData * outputBuffer;
-@property(retain) NSMutableArray * outputDataQueue;
-@property(retain) NSOutputStream * outputStream;
-@property(retain) NSNetService * service;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) AXHATimer *communicationTimer;
+@property (nonatomic, retain) AXHARemoteMessage *currentMessageInFlight;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AXHARemoteControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didValidateHIID;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableData *inputBuffer;
+@property (nonatomic, retain) NSInputStream *inputStream;
+@property (nonatomic, retain) NSMutableData *outputBuffer;
+@property (nonatomic, retain) NSMutableArray *outputDataQueue;
+@property (nonatomic, retain) NSOutputStream *outputStream;
+@property (nonatomic, retain) NSNetService *service;
+@property (readonly) Class superclass;
 
 - (void)acceptConnection:(int)arg1;
 - (void)clearMessageQueue;
@@ -72,7 +70,7 @@
 - (void)resetConnection;
 - (void)sendDataChunk;
 - (BOOL)sendObject:(id)arg1;
-- (BOOL)sendObject:(id)arg1 withSendCompletion:(id)arg2;
+- (BOOL)sendObject:(id)arg1 withSendCompletion:(id /* block */)arg2;
 - (id)service;
 - (void)setCommunicationTimer:(id)arg1;
 - (void)setCurrentMessageInFlight:(id)arg1;

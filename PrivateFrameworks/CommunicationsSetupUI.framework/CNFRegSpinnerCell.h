@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class UIActivityIndicatorView;
-
 @interface CNFRegSpinnerCell : PSTableCell {
     UIActivityIndicatorView *_activityIndicator;
 }

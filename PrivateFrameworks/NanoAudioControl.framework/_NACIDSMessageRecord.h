@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSString, PBCodable;
-
 @interface _NACIDSMessageRecord : NSObject {
     PBCodable *_message;
     NSString *_queueOne;
@@ -11,10 +9,10 @@
     int _type;
 }
 
-@property(retain) PBCodable * message;
-@property(copy) NSString * queueOne;
-@property double timeout;
-@property int type;
+@property (nonatomic, retain) PBCodable *message;
+@property (nonatomic, copy) NSString *queueOne;
+@property (nonatomic) double timeout;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (id)message;

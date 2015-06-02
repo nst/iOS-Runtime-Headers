@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSDate, NSNumber, NSUUID;
-
 @interface CMNatalieData : CMLogItem {
     double fBasalNatalies;
     double fMets;
@@ -14,13 +12,13 @@
     double fStartDate;
 }
 
-@property(readonly) NSNumber * basalNatalies;
-@property(readonly) NSNumber * mets;
-@property(readonly) NSNumber * natalies;
-@property(readonly) int recordId;
-@property(readonly) int session;
-@property(readonly) NSUUID * sourceId;
-@property(readonly) NSDate * startDate;
+@property (nonatomic, readonly) NSNumber *basalNatalies;
+@property (nonatomic, readonly) NSNumber *mets;
+@property (nonatomic, readonly) NSNumber *natalies;
+@property (nonatomic, readonly) int recordId;
+@property (nonatomic, readonly) int session;
+@property (nonatomic, readonly) NSUUID *sourceId;
+@property (nonatomic, readonly) NSDate *startDate;
 
 + (id)maxNatalieEntries;
 + (id)sessionName:(int)arg1;

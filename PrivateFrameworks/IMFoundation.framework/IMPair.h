@@ -7,8 +7,8 @@
     id _second;
 }
 
-@property(retain) id first;
-@property(retain) id second;
+@property (retain) id first;
+@property (retain) id second;
 
 + (id)pairWithFirst:(id)arg1 second:(id)arg2;
 

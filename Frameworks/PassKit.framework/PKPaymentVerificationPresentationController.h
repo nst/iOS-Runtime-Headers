@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentVerificationEntryDelegate>, <PKPaymentVerificationPresentationDelegate>, NSNumber, NSString, PKPassView, PKPaymentPass, PKPaymentWebService, PKVerificationRequestRecord;
-
 @interface PKPaymentVerificationPresentationController : NSObject <SKStoreProductViewControllerDelegate> {
     BOOL _bankAppNotFound;
     <PKPaymentVerificationPresentationDelegate> *_delegate;
@@ -19,17 +17,17 @@
     PKPaymentWebService *_webService;
 }
 
-@property(readonly) NSString * alternateMethodButtonTitle;
-@property(readonly) NSString * completeVerificationButtonTitle;
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPaymentVerificationPresentationDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property <PKPaymentVerificationEntryDelegate> * entryDelegate;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) NSString * verificationBodyString;
-@property(readonly) PKVerificationRequestRecord * verificationRecord;
-@property(readonly) NSString * verificationTitleString;
+@property (readonly) NSString *alternateMethodButtonTitle;
+@property (readonly) NSString *completeVerificationButtonTitle;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPaymentVerificationPresentationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <PKPaymentVerificationEntryDelegate> *entryDelegate;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (readonly) NSString *verificationBodyString;
+@property (readonly) PKVerificationRequestRecord *verificationRecord;
+@property (readonly) NSString *verificationTitleString;
 
 - (id)_bankAppName;
 - (id)_bankAppStoreIDs;

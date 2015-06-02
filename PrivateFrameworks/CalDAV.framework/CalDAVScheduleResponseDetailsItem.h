@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CoreDAVErrorItem, CoreDAVItemWithHrefChildItem, CoreDAVLeafItem, ICSDocument, NSString;
-
 @interface CalDAVScheduleResponseDetailsItem : CoreDAVItem {
     ICSDocument *_calendarData;
     CoreDAVItemWithHrefChildItem *_recipientHREF;
@@ -12,12 +10,12 @@
     CoreDAVErrorItem *_topLevelErrorItem;
 }
 
-@property(retain) ICSDocument * calendarData;
-@property(retain) CoreDAVItemWithHrefChildItem * recipientHREF;
-@property(readonly) NSString * recipientString;
-@property(retain) CoreDAVLeafItem * requestStatus;
-@property(retain) NSString * responseDescription;
-@property(retain) CoreDAVErrorItem * topLevelErrorItem;
+@property (nonatomic, retain) ICSDocument *calendarData;
+@property (nonatomic, retain) CoreDAVItemWithHrefChildItem *recipientHREF;
+@property (nonatomic, readonly) NSString *recipientString;
+@property (nonatomic, retain) CoreDAVLeafItem *requestStatus;
+@property (nonatomic, retain) NSString *responseDescription;
+@property (nonatomic, retain) CoreDAVErrorItem *topLevelErrorItem;
 
 - (void)_setCalendarDataWithLeafItem:(id)arg1;
 - (id)calendarData;

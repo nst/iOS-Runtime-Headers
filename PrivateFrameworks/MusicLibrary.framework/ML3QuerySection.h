@@ -10,8 +10,8 @@
     unsigned int _sectionIndex;
 }
 
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property unsigned int sectionIndex;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic) unsigned int sectionIndex;
 
 - (id)description;
 - (unsigned int)hash;

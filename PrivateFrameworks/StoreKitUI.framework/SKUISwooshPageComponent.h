@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, NSURL;
-
 @interface SKUISwooshPageComponent : SKUIPageComponent {
     NSArray *_bricks;
     int _fcKind;
@@ -25,19 +23,19 @@
     NSString *_title;
 }
 
-@property(readonly) NSArray * bricks;
-@property(readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
-@property(readonly) NSArray * lockups;
-@property(readonly) NSArray * mediaComponents;
-@property(readonly) NSString * platformKeyProfile;
-@property(readonly) int seeAllStyle;
-@property(readonly) NSString * seeAllTitle;
-@property(readonly) NSURL * seeAllURL;
-@property(readonly) BOOL showsBrickTitles;
-@property(readonly) BOOL showsIndexNumbers;
-@property(readonly) BOOL showsMediaTitles;
-@property(readonly) int swooshType;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSArray *bricks;
+@property (nonatomic, readonly) struct SKUILockupStyle { int x1; int x2; unsigned int x3; } lockupStyle;
+@property (nonatomic, readonly) NSArray *lockups;
+@property (nonatomic, readonly) NSArray *mediaComponents;
+@property (nonatomic, readonly) NSString *platformKeyProfile;
+@property (nonatomic, readonly) int seeAllStyle;
+@property (nonatomic, readonly) NSString *seeAllTitle;
+@property (nonatomic, readonly) NSURL *seeAllURL;
+@property (nonatomic, readonly) BOOL showsBrickTitles;
+@property (nonatomic, readonly) BOOL showsIndexNumbers;
+@property (nonatomic, readonly) BOOL showsMediaTitles;
+@property (nonatomic, readonly) int swooshType;
+@property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
 - (id)_brickItemsWithChildren:(id)arg1 customPageContext:(id)arg2;
@@ -59,7 +57,7 @@
 - (void)_updateLockupItemsWithLookupResponse:(id)arg1;
 - (id)bricks;
 - (int)componentType;
-- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id)arg2;
+- (void)enumerateMissingItemIdentifiersFromIndex:(int)arg1 usingBlock:(id /* block */)arg2;
 - (id)initWithCustomPageContext:(id)arg1;
 - (id)initWithFeaturedContentContext:(id)arg1 kind:(int)arg2;
 - (id)initWithItemList:(id)arg1;

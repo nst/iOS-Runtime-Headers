@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class CPLRUDictionaryNode;
-
 @interface CPLRUDictionary : NSObject {
     struct __CFDictionary { } *_dictionary;
     CPLRUDictionaryNode *_head;

@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEOMapRequestManager;
-
 @interface GEOMapRequest : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     BOOL _isFinished;
     GEOMapRequestManager *_requestManager;
 }
 
-@property(copy) id completionHandler;
-@property(readonly) BOOL isFinished;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, readonly) BOOL isFinished;
 
 - (void)cancel;
 - (void)complete;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)initWithManager:(id)arg1;
 - (BOOL)isFinished;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 
 @end

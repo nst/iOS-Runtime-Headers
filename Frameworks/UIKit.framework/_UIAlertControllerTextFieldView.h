@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextField, UIView, UIVisualEffectView, _UIAlertControllerTextField;
-
 @interface _UIAlertControllerTextFieldView : UIView {
     UIVisualEffectView *_borderContainerView;
     UIView *_borderView;
@@ -11,7 +9,7 @@
     _UIAlertControllerTextField *_textField;
 }
 
-@property(readonly) UITextField * textField;
+@property (readonly) UITextField *textField;
 
 - (void)_addConstraints;
 - (float)_borderWidth;

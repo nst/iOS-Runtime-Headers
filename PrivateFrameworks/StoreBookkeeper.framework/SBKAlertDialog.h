@@ -2,29 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface SBKAlertDialog : NSObject {
     NSString *_acceptButtonTitle;
     NSString *_cancelButtonTitle;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     NSString *_message;
     NSString *_title;
 }
 
-@property(copy) NSString * acceptButtonTitle;
-@property(copy) NSString * cancelButtonTitle;
-@property(copy) id completionHandler;
-@property(copy) NSString * message;
-@property(copy) NSString * title;
+@property (copy) NSString *acceptButtonTitle;
+@property (copy) NSString *cancelButtonTitle;
+@property (copy) id /* block */ completionHandler;
+@property (copy) NSString *message;
+@property (copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_runAsCFUserNotificationDisplayAlert;
@@ -32,15 +22,15 @@
 - (id)acceptButtonTitle;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)cancelButtonTitle;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 cancelButtonTitle:(id)arg3 acceptButtonTitle:(id)arg4;
 - (id)message;
 - (void)setAcceptButtonTitle:(id)arg1;
 - (void)setCancelButtonTitle:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setTitle:(id)arg1;
-- (void)showWithCompletionHandler:(id)arg1;
+- (void)showWithCompletionHandler:(id /* block */)arg1;
 - (id)title;
 
 @end

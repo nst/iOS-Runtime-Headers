@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString, PTXMotionWindow, PTXParallaxController, PTXParallaxSettings, UIView;
-
 @interface PTXParallaxView : UIView <PTXParallaxObserver, _UISettingsKeyObserver> {
     PTXParallaxController *_parallaxController;
     BOOL _resizesView;
@@ -17,12 +15,12 @@
     float _viewAlpha;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL resizesView;
-@property(readonly) Class superclass;
-@property(retain) UIView * view;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL resizesView;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *view;
 
 - (void).cxx_destruct;
 - (void)_clearOffset;

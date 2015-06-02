@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDFaceTimeCallInterruptionBegan : PBCodable <NSCopying> {
     NSString *_guid;
     struct { 
@@ -22,20 +20,20 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSString * guid;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsAudioInterrupted;
-@property BOOL hasIsVideo;
-@property BOOL hasIsVideoInterrupted;
-@property BOOL hasLinkQuality;
-@property BOOL hasOnLockScreen;
-@property BOOL hasTimestamp;
-@property unsigned int isAudioInterrupted;
-@property unsigned int isVideo;
-@property unsigned int isVideoInterrupted;
-@property int linkQuality;
-@property unsigned int onLockScreen;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsAudioInterrupted;
+@property (nonatomic) BOOL hasIsVideo;
+@property (nonatomic) BOOL hasIsVideoInterrupted;
+@property (nonatomic) BOOL hasLinkQuality;
+@property (nonatomic) BOOL hasOnLockScreen;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int isAudioInterrupted;
+@property (nonatomic) unsigned int isVideo;
+@property (nonatomic) unsigned int isVideoInterrupted;
+@property (nonatomic) int linkQuality;
+@property (nonatomic) unsigned int onLockScreen;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSString;
-
 @interface PKColor : NSObject <NSCopying, NSSecureCoding> {
     float _alpha;
     float _blue;
@@ -12,9 +10,9 @@
     float _red;
 }
 
-@property(readonly) struct CGColor { }* CGColor;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * string;
+@property (nonatomic, readonly) struct CGColor { }*CGColor;
+@property (nonatomic, readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *string;
 
 + (id)colorFromString:(id)arg1;
 + (id)colorWithH:(float)arg1 S:(float)arg2 B:(float)arg3 A:(float)arg4;

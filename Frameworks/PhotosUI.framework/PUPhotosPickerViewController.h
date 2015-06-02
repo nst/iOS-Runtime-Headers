@@ -2,38 +2,28 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, PUPhotosPickerSessionInfo, PUPhotosPickerViewControllerSpec, PUTabbedLibraryViewController;
-
 @interface PUPhotosPickerViewController : UIViewController <PLAssetContainerListChangeObserver, PUSessionInfoObserver, UITabBarControllerDelegate> {
     PUTabbedLibraryViewController *__tabbedLibraryViewController;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     int _currentContentMode;
     PUPhotosPickerSessionInfo *_photosPickerSessionInfo;
     PUPhotosPickerViewControllerSpec *_spec;
 }
 
-@property(setter=_setTabbedLibraryViewController:,retain) PUTabbedLibraryViewController * _tabbedLibraryViewController;
-@property(copy) id completionHandler;
-@property int currentContentMode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (setter=_setTabbedLibraryViewController:, nonatomic, retain) PUTabbedLibraryViewController *_tabbedLibraryViewController;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic) int currentContentMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2 orTargetAlbumName:(id)arg3 isLocal:(BOOL)arg4;
 - (void)_setTabbedLibraryViewController:(id)arg1;
 - (id)_tabbedLibraryViewController;
 - (void)assetContainerListDidChange:(id)arg1;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (int)currentContentMode;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
@@ -41,7 +31,7 @@
 - (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2 isLocal:(BOOL)arg3;
 - (void)loadView;
 - (void)sessionInfoStatusDidChange:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setCurrentContentMode:(int)arg1;
 - (BOOL)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;

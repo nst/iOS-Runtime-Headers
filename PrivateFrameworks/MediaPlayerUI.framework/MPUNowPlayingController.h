@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUNowPlayingDelegate>, NSDictionary, NSObject<OS_dispatch_source>, NSString, UIImage;
-
 @interface MPUNowPlayingController : NSObject {
     BOOL _cachedArtworkDirty;
     UIImage *_cachedNowPlayingArtwork;
@@ -23,15 +21,15 @@
     double _timeInformationUpdateInterval;
 }
 
-@property(readonly) double currentDuration;
-@property(readonly) double currentElapsed;
-@property(readonly) UIImage * currentNowPlayingArtwork;
-@property(readonly) NSDictionary * currentNowPlayingInfo;
-@property <MPUNowPlayingDelegate> * delegate;
-@property(readonly) BOOL isPlaying;
-@property(readonly) NSString * nowPlayingAppDisplayID;
-@property BOOL shouldUpdateNowPlayingArtwork;
-@property double timeInformationUpdateInterval;
+@property (nonatomic, readonly) double currentDuration;
+@property (nonatomic, readonly) double currentElapsed;
+@property (nonatomic, readonly) UIImage *currentNowPlayingArtwork;
+@property (nonatomic, readonly) NSDictionary *currentNowPlayingInfo;
+@property (nonatomic) <MPUNowPlayingDelegate> *delegate;
+@property (nonatomic, readonly) BOOL isPlaying;
+@property (nonatomic, readonly) NSString *nowPlayingAppDisplayID;
+@property (nonatomic) BOOL shouldUpdateNowPlayingArtwork;
+@property (nonatomic) double timeInformationUpdateInterval;
 
 - (void).cxx_destruct;
 - (void)_registerForNotifications;

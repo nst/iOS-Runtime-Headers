@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIAddToReadingListActivity : UIActivity {
-}
+@interface UIAddToReadingListActivity : UIActivity
 
 - (id)_activityImage;
 - (void)_addToReadingList:(id)arg1 withTitle:(id)arg2;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIDividerPageComponent;
+@interface SKUIDividerPageSection : SKUIStorePageSection
 
-@interface SKUIDividerPageSection : SKUIStorePageSection {
-}
-
-@property(readonly) SKUIDividerPageComponent * pageComponent;
+@property (nonatomic, readonly) SKUIDividerPageComponent *pageComponent;
 
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;

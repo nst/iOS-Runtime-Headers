@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDDatabase, NSMutableDictionary, NSNumber, NSString, NSXPCConnection;
-
 @interface ACDClient : NSObject {
     struct __CFBundle { } *_bundle;
     NSString *_bundleID;
@@ -16,14 +14,14 @@
     NSNumber *_pid;
 }
 
-@property(readonly) NSString * adamOrDisplayID;
-@property(readonly) struct __CFBundle { }* bundle;
-@property(retain) NSString * bundleID;
-@property(readonly) NSXPCConnection * connection;
-@property(readonly) ACDDatabase * database;
-@property(readonly) NSString * localizedAppName;
-@property(readonly) NSString * name;
-@property(readonly) NSNumber * pid;
+@property (nonatomic, readonly) NSString *adamOrDisplayID;
+@property (nonatomic, readonly) struct __CFBundle { }*bundle;
+@property (nonatomic, retain) NSString *bundleID;
+@property (nonatomic, readonly) NSXPCConnection *connection;
+@property (nonatomic, readonly) ACDDatabase *database;
+@property (nonatomic, readonly) NSString *localizedAppName;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) NSNumber *pid;
 
 + (id)_bundleForNonPlugInPID:(int)arg1;
 + (id)_bundleForPID:(int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDGLDataBuffer, TSDGLFrameBuffer, TSDGLShader, TSDGLState;
-
 @interface TSDGLMotionBlurEffect : NSObject {
     TSDGLDataBuffer *_FBODataBuffer;
     TSDGLState *_GLState;
@@ -19,7 +17,7 @@
     } _framebufferSize;
     BOOL _isSingleObject;
     float _motionBlurStrength;
-    int _originalViewport[4];
+    int _originalViewport;
     struct CGSize { 
         float width; 
         float height; 
@@ -35,11 +33,11 @@
     TSDGLShader *_velocityVisualizerShader;
 }
 
-@property(retain) TSDGLState * GLState;
-@property int debugDrawMode;
-@property float framebufferScale;
-@property BOOL isSingleObject;
-@property float motionBlurStrength;
+@property (nonatomic, retain) TSDGLState *GLState;
+@property (nonatomic) int debugDrawMode;
+@property (nonatomic) float framebufferScale;
+@property (nonatomic) BOOL isSingleObject;
+@property (nonatomic) float motionBlurStrength;
 
 - (id)GLState;
 - (void)bindColorAndVelocityFramebuffer;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableSet, TSDCanvas, TSDLayout, TSDRootLayout;
-
 @interface TSDLayoutController : NSObject {
     TSDCanvas *mCanvas;
     NSMutableSet *mInvalidChildrenLayouts;
@@ -15,7 +13,7 @@
 }
 
 + (id)allInteractiveLayoutControllers;
-+ (void)temporaryLayoutControllerForInfos:(id)arg1 useInBlock:(id)arg2;
++ (void)temporaryLayoutControllerForInfos:(id)arg1 useInBlock:(id /* block */)arg2;
 
 - (id)canvas;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class AppLaunchStatsState;
-
 @interface AppLaunchStatsComputation : NSObject {
     AppLaunchStatsState *aplsState;
 }

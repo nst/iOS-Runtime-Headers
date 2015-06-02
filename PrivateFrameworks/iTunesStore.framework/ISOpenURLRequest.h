@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSString, NSURL;
-
 @interface ISOpenURLRequest : NSObject <NSCopying> {
     BOOL _interruptsKeybagRefresh;
     BOOL _isITunesStoreURL;
@@ -12,11 +10,11 @@
     NSString *_urlBagKey;
 }
 
-@property(getter=isITunesStoreURL) BOOL ITunesStoreURL;
-@property(retain) NSURL * URL;
-@property(copy) NSString * URLBagKey;
-@property BOOL interruptsKeybagRefresh;
-@property(copy) NSString * targetIdentifier;
+@property (getter=isITunesStoreURL, nonatomic) BOOL ITunesStoreURL;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, copy) NSString *URLBagKey;
+@property (nonatomic) BOOL interruptsKeybagRefresh;
+@property (nonatomic, copy) NSString *targetIdentifier;
 
 + (id)openURLRequestWithURL:(id)arg1;
 

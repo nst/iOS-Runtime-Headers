@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class CoreCECDevice, NSString;
-
 @interface CoreCECBus : CoreRCBus {
     BOOL _hasLink;
     union CECOSDName { 
@@ -20,14 +18,14 @@
     } _tvLanguageCodeASCII;
 }
 
-@property(readonly) CoreCECDevice * activeSource;
-@property BOOL hasLink;
-@property(readonly) NSString * osdName;
-@property union CECOSDName { unsigned char x1[15]; struct { unsigned char x_2_1_1; unsigned char x_2_1_2[14]; } x2; } osdNameASCII;
-@property unsigned int physicalAddress;
-@property unsigned int systemAudioModeStatus;
-@property(readonly) NSString * tvLanguageCode;
-@property struct CECLanguage { unsigned char x1[3]; } tvLanguageCodeASCII;
+@property (nonatomic, readonly) CoreCECDevice *activeSource;
+@property (nonatomic) BOOL hasLink;
+@property (nonatomic, readonly) NSString *osdName;
+@property (nonatomic) union CECOSDName { unsigned char x1[15]; struct { unsigned char x_2_1_1; unsigned char x_2_1_2[14]; } x2; } osdNameASCII;
+@property (nonatomic) unsigned int physicalAddress;
+@property (nonatomic) unsigned int systemAudioModeStatus;
+@property (nonatomic, readonly) NSString *tvLanguageCode;
+@property (nonatomic) struct CECLanguage { unsigned char x1[3]; } tvLanguageCodeASCII;
 
 + (BOOL)supportsSecureCoding;
 

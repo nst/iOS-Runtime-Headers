@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface IMTunesController : NSObject {
     NSDate *_lastChange;
     NSDictionary *_lastInfo;
@@ -12,9 +10,9 @@
     NSMutableDictionary *_playerInfo;
 }
 
-@property(readonly) BOOL isEnabled;
-@property(readonly) NSString * messageFormat;
-@property(readonly) NSDictionary * playerInfo;
+@property (nonatomic, readonly) BOOL isEnabled;
+@property (nonatomic, readonly) NSString *messageFormat;
+@property (nonatomic, readonly) NSDictionary *playerInfo;
 
 + (id)sharedTunesController;
 

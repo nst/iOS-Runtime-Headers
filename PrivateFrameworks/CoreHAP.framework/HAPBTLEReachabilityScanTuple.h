@@ -2,33 +2,23 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface HAPBTLEReachabilityScanTuple : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     NSString *_identifier;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy) id completion;
-@property(retain) NSString * identifier;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, copy) id /* block */ completion;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
-+ (id)reachabilityScanTupleWithCompletion:(id)arg1 workQueue:(id)arg2 identifier:(id)arg3;
++ (id)reachabilityScanTupleWithCompletion:(id /* block */)arg1 workQueue:(id)arg2 identifier:(id)arg3;
 
 - (void).cxx_destruct;
-- (id)completion;
+- (id /* block */)completion;
 - (id)identifier;
 - (id)queue;
-- (void)setCompletion:(id)arg1;
+- (void)setCompletion:(id /* block */)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setQueue:(id)arg1;
 

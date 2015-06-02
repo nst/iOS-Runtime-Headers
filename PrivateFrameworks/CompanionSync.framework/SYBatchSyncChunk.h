@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSMutableArray, NSString, SYMessageHeader;
-
 @interface SYBatchSyncChunk : PBCodable <NSCopying> {
     unsigned int _chunkIndex;
     SYMessageHeader *_header;
@@ -11,10 +9,10 @@
     NSString *_syncID;
 }
 
-@property unsigned int chunkIndex;
-@property(retain) SYMessageHeader * header;
-@property(retain) NSMutableArray * objects;
-@property(retain) NSString * syncID;
+@property (nonatomic) unsigned int chunkIndex;
+@property (nonatomic, retain) SYMessageHeader *header;
+@property (nonatomic, retain) NSMutableArray *objects;
+@property (nonatomic, retain) NSString *syncID;
 
 - (void).cxx_destruct;
 - (void)addObjects:(id)arg1;

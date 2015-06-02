@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOTimezone : PBCodable <NSCopying> {
     NSString *_identifier;
 }
 
-@property(retain) NSString * identifier;
+@property (nonatomic, retain) NSString *identifier;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

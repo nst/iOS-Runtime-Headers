@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectID, NSMutableDictionary, NSPersistentStoreMap, NSString;
-
 @interface NSStoreMapNode : NSObject {
     NSString *_entityName;
     NSPersistentStoreMap *_map;

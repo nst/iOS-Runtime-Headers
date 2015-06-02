@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString, UIImage, UIImageView, UIView;
-
 @interface MPVideoBackgroundView : UIView {
     UIImageView *_backgroundPlaceholderImageView;
     UIView *_backgroundPlaceholderPosterImageView;
@@ -18,21 +12,17 @@
     UIImageView *_iconView;
     UIView *_imageView;
     int _interfaceOrientation;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _layoutSubviewsPostflightHandler;
-
+    id /* block */ _layoutSubviewsPostflightHandler;
     BOOL _showDestinationPlaceholder;
 }
 
-@property(retain) UIImage * backgroundPlaceholderImage;
-@property(retain) UIView * backgroundPlaceholderPosterImageView;
-@property(readonly) UIView * backgroundPlaceholderView;
-@property(copy) NSString * destinationName;
-@property int destinationPlaceholderStyle;
-@property int interfaceOrientation;
-@property(copy) id layoutSubviewsPostflightHandler;
+@property (nonatomic, retain) UIImage *backgroundPlaceholderImage;
+@property (nonatomic, retain) UIView *backgroundPlaceholderPosterImageView;
+@property (nonatomic, readonly) UIView *backgroundPlaceholderView;
+@property (nonatomic, copy) NSString *destinationName;
+@property (nonatomic) int destinationPlaceholderStyle;
+@property (nonatomic) int interfaceOrientation;
+@property (nonatomic, copy) id /* block */ layoutSubviewsPostflightHandler;
 
 - (void).cxx_destruct;
 - (void)_createInformationalTitleView:(id*)arg1 systemFont:(id)arg2 lineBreakMode:(int)arg3;
@@ -47,7 +37,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)interfaceOrientation;
 - (void)layoutSubviews;
-- (id)layoutSubviewsPostflightHandler;
+- (id /* block */)layoutSubviewsPostflightHandler;
 - (id)qtIcon;
 - (void)setBackgroundPlaceholderImage:(id)arg1;
 - (void)setBackgroundPlaceholderPosterImageView:(id)arg1;
@@ -55,7 +45,7 @@
 - (void)setDestinationName:(id)arg1;
 - (void)setDestinationPlaceholderStyle:(int)arg1;
 - (void)setInterfaceOrientation:(int)arg1;
-- (void)setLayoutSubviewsPostflightHandler:(id)arg1;
+- (void)setLayoutSubviewsPostflightHandler:(id /* block */)arg1;
 - (void)setShowDestinationPlaceholder:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowQTAudioOnlyUI:(BOOL)arg1;
 

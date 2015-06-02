@@ -2,16 +2,15 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSKnownKeysMappingStrategy : NSObject <NSFastEnumeration, NSSecureCoding> {
-}
+@interface NSKnownKeysMappingStrategy : NSObject <NSFastEnumeration, NSSecureCoding>
 
-@property(readonly) id* keys;
-@property(readonly) unsigned int length;
+@property (nonatomic, readonly) id*keys;
+@property (nonatomic, readonly) unsigned int length;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)fastIndexForKnownKey:(id)arg1;
 - (unsigned int)indexForKey:(id)arg1;

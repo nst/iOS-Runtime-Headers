@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <CNContactPickerContentDelegate>, NSArray, NSPredicate, NSString;
-
 @interface CNContactPickerContentViewController : UIViewController <CNContactPickerContentViewController> {
     BOOL _clientWantsPersons;
     BOOL _clientWantsProperties;
@@ -14,18 +12,18 @@
     NSPredicate *_predicateForSelectionOfProperty;
 }
 
-@property void* addressBook;
+@property void*addressBook;
 @property BOOL clientWantsPersons;
 @property BOOL clientWantsProperties;
-@property(copy,readonly) NSString * debugDescription;
-@property <CNContactPickerContentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(copy) NSArray * displayedKeys;
-@property(readonly) unsigned int hash;
-@property(copy) NSPredicate * predicateForEnablingContact;
-@property(copy) NSPredicate * predicateForSelectionOfContact;
-@property(copy) NSPredicate * predicateForSelectionOfProperty;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property <CNContactPickerContentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *displayedKeys;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSPredicate *predicateForEnablingContact;
+@property (nonatomic, copy) NSPredicate *predicateForSelectionOfContact;
+@property (nonatomic, copy) NSPredicate *predicateForSelectionOfProperty;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)clientWantsPersons;
@@ -43,6 +41,6 @@
 - (void)setPredicateForEnablingContact:(id)arg1;
 - (void)setPredicateForSelectionOfContact:(id)arg1;
 - (void)setPredicateForSelectionOfProperty:(id)arg1;
-- (void)setupWithOptions:(id)arg1 readyBlock:(id)arg2;
+- (void)setupWithOptions:(id)arg1 readyBlock:(id /* block */)arg2;
 
 @end

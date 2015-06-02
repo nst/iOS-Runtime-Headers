@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSArray, NSMutableArray, NSString;
-
 @interface MFBaseFilterDataConsumer : NSObject <MFDataConsumer> {
     NSMutableArray *_consumers;
     BOOL _serialAppend;
 }
 
-@property(readonly) NSArray * consumers;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isSerialAppend) BOOL serialAppend;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSArray *consumers;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isSerialAppend, nonatomic) BOOL serialAppend;
+@property (readonly) Class superclass;
 
 + (id)filterWithConsumer:(id)arg1;
 + (id)filterWithConsumers:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSData, NSDate, NSDictionary, NSError, NSString, NSURL, NSUUID;
-
 @interface LSUserActivityInfo : NSObject <NSCopying, NSSecureCoding> {
     NSDate *_activityDate;
     NSData *_activityPayload;
@@ -18,17 +16,17 @@
     NSURL *_webpageURL;
 }
 
-@property(copy) NSDate * activityDate;
-@property(copy) NSData * activityPayload;
+@property (copy) NSDate *activityDate;
+@property (copy) NSData *activityPayload;
 @property unsigned int changeCount;
-@property(copy) NSError * error;
-@property(copy) NSDictionary * options;
-@property(copy) NSData * streamsData;
-@property(copy) NSString * title;
+@property (copy) NSError *error;
+@property (copy) NSDictionary *options;
+@property (copy) NSData *streamsData;
+@property (copy) NSString *title;
 @property unsigned int type;
-@property(copy) NSString * typeIdentifier;
-@property(copy) NSUUID * uuid;
-@property(copy) NSURL * webpageURL;
+@property (copy) NSString *typeIdentifier;
+@property (copy) NSUUID *uuid;
+@property (copy) NSURL *webpageURL;
 
 + (BOOL)supportsSecureCoding;
 

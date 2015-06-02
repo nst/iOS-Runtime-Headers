@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>, VKTimer;
-
 @interface MKThrottledGate : NSObject {
     float _availableTickets;
     int _maxAvailableTickets;
@@ -20,7 +18,7 @@
 - (void)_timerFired:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)dispatch:(id)arg1;
+- (void)dispatch:(id /* block */)arg1;
 - (id)initWithMax:(int)arg1 refreshRate:(float)arg2 queue:(id)arg3;
 
 @end

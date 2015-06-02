@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class <FIUIAchievementsModelDelegate>, HKExtendedHealthStore, NSArray, NSObject<OS_dispatch_queue>;
-
 @interface FIUIAchievementsModel : NSObject {
     NSArray *_achievements;
     NSObject<OS_dispatch_queue> *_achievementsLock;
@@ -12,12 +10,12 @@
     BOOL _loadingAchievements;
 }
 
-@property <FIUIAchievementsModelDelegate> * delegate;
+@property (nonatomic) <FIUIAchievementsModelDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (id)achievements;
 - (id)delegate;
-- (void)fetchAchievementsOnDay:(id)arg1 inCalendar:(id)arg2 completion:(id)arg3;
+- (void)fetchAchievementsOnDay:(id)arg1 inCalendar:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (void)setDelegate:(id)arg1;
 

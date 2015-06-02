@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OITSUPointerKeyDictionary : OITSUNoCopyDictionary {
-}
+@interface OITSUPointerKeyDictionary : OITSUNoCopyDictionary
 
 - (id)initWithCapacity:(unsigned int)arg1;
 

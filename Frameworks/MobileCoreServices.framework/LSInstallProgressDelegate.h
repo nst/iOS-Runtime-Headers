@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class LSInstallProgressList, LSObserverTimer, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface LSInstallProgressDelegate : NSObject <LSInstallProgressProtocol, NSXPCListenerDelegate> {
     NSMutableSet *_inactiveInstalls;
     NSObject<OS_dispatch_queue> *_installControlsQueue;
@@ -20,10 +18,10 @@
     LSObserverTimer *installsUpdatedTimer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)addObserver:(id)arg1 withUUID:(id)arg2;
 - (void)beginObservingConnection;
@@ -33,7 +31,7 @@
 - (void)handleCancelInstallationForApp:(id)arg1;
 - (id)init;
 - (void)installationEndedForApplication:(id)arg1;
-- (void)installationFailedForApplication:(id)arg1 reply:(id)arg2;
+- (void)installationFailedForApplication:(id)arg1 reply:(id /* block */)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)parentProgressForApplication:(id)arg1 andPhase:(unsigned int)arg2 isActive:(BOOL)arg3;
@@ -45,10 +43,10 @@
 - (void)sendChangeNotificationForApp:(id)arg1;
 - (void)sendFailedNotificationForApp:(id)arg1 isUninstall:(BOOL)arg2;
 - (void)sendIconUpdatedNotificationForApp:(id)arg1;
-- (void)sendInstalledNotificationForApp:(id)arg1 reply:(id)arg2;
+- (void)sendInstalledNotificationForApp:(id)arg1 reply:(id /* block */)arg2;
 - (void)sendInstalledNotificationForApps:(id)arg1;
 - (void)sendNetworkUsageChangedNotification;
-- (void)sendUninstalledNotificationForApp:(id)arg1 reply:(id)arg2;
+- (void)sendUninstalledNotificationForApp:(id)arg1 reply:(id /* block */)arg2;
 - (void)sendUninstalledNotificationForApps:(id)arg1;
 - (void)sendWillUninstallNotificationForApps:(id)arg1 Plugins:(id)arg2 isUpdate:(BOOL)arg3;
 

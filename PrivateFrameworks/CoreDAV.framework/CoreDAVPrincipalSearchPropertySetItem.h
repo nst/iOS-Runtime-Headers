@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableSet;
-
 @interface CoreDAVPrincipalSearchPropertySetItem : CoreDAVItem {
     NSMutableSet *_principalSearchProperties;
 }
 
-@property(retain) NSMutableSet * principalSearchProperties;
+@property (nonatomic, retain) NSMutableSet *principalSearchProperties;
 
 + (id)copyParseRules;
 

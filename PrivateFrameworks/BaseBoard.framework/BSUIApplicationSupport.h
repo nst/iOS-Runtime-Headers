@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSUIApplicationSupport : NSObject {
-}
+@interface BSUIApplicationSupport : NSObject
 
 + (id)GSEventPortNameForBundleID:(id)arg1;
 + (id)UIRemoteApplicationPortNameForBundleID:(id)arg1;

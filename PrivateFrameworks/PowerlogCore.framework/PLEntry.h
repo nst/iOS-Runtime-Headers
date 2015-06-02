@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSArray, NSDate, NSDictionary, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface PLEntry : NSObject <NSCopying> {
     NSMutableDictionary *_dictionary;
     NSDate *_entryDate;
@@ -14,19 +12,19 @@
     BOOL _writeToDB;
 }
 
-@property(readonly) NSArray * arrayKeys;
-@property(readonly) NSArray * definedKeys;
-@property(retain) NSMutableDictionary * dictionary;
-@property(readonly) NSArray * dynamicKeys;
-@property(retain) NSDate * entryDate;
-@property(retain) NSDictionary * entryDefinition;
-@property long long entryID;
-@property(retain) NSString * entryKey;
-@property(readonly) BOOL hasArrayKeys;
-@property(readonly) BOOL hasDynamicKeys;
+@property (readonly) NSArray *arrayKeys;
+@property (readonly) NSArray *definedKeys;
+@property (retain) NSMutableDictionary *dictionary;
+@property (readonly) NSArray *dynamicKeys;
+@property (nonatomic, retain) NSDate *entryDate;
+@property (nonatomic, retain) NSDictionary *entryDefinition;
+@property (nonatomic) long long entryID;
+@property (nonatomic, retain) NSString *entryKey;
+@property (readonly) BOOL hasArrayKeys;
+@property (readonly) BOOL hasDynamicKeys;
 @property BOOL isErrorEntry;
-@property(readonly) NSMutableArray * keys;
-@property(getter=allValues,readonly) NSMutableArray * values;
+@property (readonly) NSMutableArray *keys;
+@property (getter=allValues, readonly) NSMutableArray *values;
 @property BOOL writeToDB;
 
 + (Class)classForEntryKey:(id)arg1;

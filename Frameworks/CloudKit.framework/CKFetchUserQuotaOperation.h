@@ -2,31 +2,23 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CKFetchUserQuotaOperation : CKDatabaseOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchUserQuotaCompletionBlock;
-
+    id /* block */ _fetchUserQuotaCompletionBlock;
     unsigned long long _quotaAvailable;
 }
 
-@property(copy) id fetchUserQuotaCompletionBlock;
-@property unsigned long long quotaAvailable;
+@property (nonatomic, copy) id /* block */ fetchUserQuotaCompletionBlock;
+@property (nonatomic) unsigned long long quotaAvailable;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
-- (id)fetchUserQuotaCompletionBlock;
+- (id /* block */)fetchUserQuotaCompletionBlock;
 - (id)init;
 - (Class)operationInfoClass;
 - (void)performCKOperation;
 - (unsigned long long)quotaAvailable;
-- (void)setFetchUserQuotaCompletionBlock:(id)arg1;
+- (void)setFetchUserQuotaCompletionBlock:(id /* block */)arg1;
 - (void)setQuotaAvailable:(unsigned long long)arg1;
 
 @end

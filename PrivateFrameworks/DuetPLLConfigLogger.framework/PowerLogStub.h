@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DuetPLLConfigLogger.framework/DuetPLLConfigLogger
  */
 
-@class BudgetPool, NSDate, NSNumber, NSObject<OS_dispatch_queue>;
-
 @interface PowerLogStub : NSObject <DuetLoggerProtocol> {
     NSNumber *batteryCapacity;
     NSObject<OS_dispatch_queue> *pllStubQueue;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIApplicationDelegate>, IKAppContext, IKAppDataStorage, NSArray, NSDictionary, NSMutableArray, NSOperationQueue, NSString, NSURL, SKUIAppDeviceConfig, SKUIClientContext, SKUIMetricsController, SKUIModalDocumentController, SKUINavigationDocumentController, SKUIPreviewDocumentController, SKUIPreviewOverlayViewController, SKUISimpleContainerViewController, SKUITabBarController, SKUIURL, SKUIURLResolver, UITabBarController, UIViewController, _SKUIApplicationShutdownHelper;
-
 @interface SKUIApplicationController : NSObject <IKAppContextDelegate, IKApplication, SKUIModalDocumentDelegate, SKUIModalSourceViewProvider, SKUINavigationDocumentDelegate, SKUIURLResolverDelegate, UINavigationControllerDelegate, UITabBarControllerDelegate> {
     SKUIURL *_activationURL;
     NSURL *_applicationScriptURL;
@@ -39,21 +37,21 @@
     NSMutableArray *_whenLoadedBlocks;
 }
 
-@property(readonly) int _applicationMode;
-@property(setter=_setHidesTabBar:) BOOL _hidesTabBar;
-@property(readonly) NSArray * _navigationControllers;
-@property(readonly) SKUIPreviewDocumentController * _previewOverlayDocumentController;
-@property(setter=_setSelectedTabBarIndex:) int _selectedTabBarIndex;
-@property(readonly) SKUINavigationDocumentController * _transientNavigationController;
-@property(readonly) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIApplicationDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIViewController * rootViewController;
-@property(readonly) Class superclass;
-@property(readonly) UITabBarController * tabBarController;
-@property(copy) NSArray * tabBarItems;
+@property (nonatomic, readonly) int _applicationMode;
+@property (setter=_setHidesTabBar:, nonatomic) BOOL _hidesTabBar;
+@property (nonatomic, readonly) NSArray *_navigationControllers;
+@property (nonatomic, readonly) SKUIPreviewDocumentController *_previewOverlayDocumentController;
+@property (setter=_setSelectedTabBarIndex:, nonatomic) int _selectedTabBarIndex;
+@property (nonatomic, readonly) SKUINavigationDocumentController *_transientNavigationController;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIApplicationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIViewController *rootViewController;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITabBarController *tabBarController;
+@property (nonatomic, copy) NSArray *tabBarItems;
 
 + (id)applicationOptionsWithLaunchOptions:(id)arg1;
 
@@ -136,8 +134,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)deviceConfigForContext:(id)arg1;
-- (void)evaluateBlockWhenLoaded:(id)arg1;
-- (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id)arg2;
+- (void)evaluateBlockWhenLoaded:(id /* block */)arg1;
+- (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithClientContextClass:(Class)arg1;
 - (void)loadApplication;
 - (void)loadApplicationWithOptions:(id)arg1;

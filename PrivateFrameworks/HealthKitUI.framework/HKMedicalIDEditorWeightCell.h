@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSMassFormatter, NSNumber, NSString, UIPickerView;
-
 @interface HKMedicalIDEditorWeightCell : HKMedicalIDEditorCell <UIPickerViewDataSource, UIPickerViewDelegate> {
     NSNumber *_kilogramValue;
     int _localWeightUnit;
@@ -11,11 +9,11 @@
     UIPickerView *_picker;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSNumber * kilogramValue;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSNumber *kilogramValue;
+@property (readonly) Class superclass;
 
 + (double)defaultKilogramValue;
 

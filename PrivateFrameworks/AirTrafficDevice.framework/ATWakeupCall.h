@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray, NSNetServiceBrowser, NSString, NSThread;
-
 @interface ATWakeupCall : NSObject <NSNetServiceBrowserDelegate, NSNetServiceDelegate> {
     NSNetServiceBrowser *_browser;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     NSMutableArray *_hostLibraryIdentifiers;
     unsigned int _hostsToResolve;
     NSMutableArray *_resolvedLibraryIdentifiers;
@@ -25,14 +15,14 @@
     NSThread *_wakeThread;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)sendWakeupCall:(id)arg1;
 + (void)sendWakeupCallToAllSyncHosts;
-+ (id)wakeableHostsWithCompletion:(id)arg1;
++ (id)wakeableHostsWithCompletion:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (void)dealloc;

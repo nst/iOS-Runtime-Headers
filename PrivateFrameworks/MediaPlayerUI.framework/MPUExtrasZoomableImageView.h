@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSString, UIImage, UIImageView;
-
 @interface MPUExtrasZoomableImageView : UIScrollView <MPUExtrasZoomingImageTransitionParticipant, UIScrollViewDelegate> {
     UIImage *_image;
     struct CGSize { 
@@ -18,15 +16,15 @@
     UIImageView *_zoomView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property struct CGSize { float x1; float x2; } imageSize;
-@property struct CGPoint { float x1; float x2; } pointToCenterAfterResize;
-@property float scaleToRestoreAfterResize;
-@property(readonly) Class superclass;
-@property(retain) UIImageView * zoomView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } pointToCenterAfterResize;
+@property (nonatomic) float scaleToRestoreAfterResize;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIImageView *zoomView;
 
 - (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_maximumContentOffset;

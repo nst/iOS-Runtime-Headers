@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, SSMutableAuthenticationContext;
-
 @interface SUScriptAuthenticationOperation : ISOperation {
     NSNumber *_authenticatedDSID;
     SSMutableAuthenticationContext *_authenticationContext;
 }
 
-@property(retain) NSNumber * authenticatedDSID;
+@property (retain) NSNumber *authenticatedDSID;
 
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;

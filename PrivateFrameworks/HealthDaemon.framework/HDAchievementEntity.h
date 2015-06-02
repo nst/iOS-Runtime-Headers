@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSString;
+@interface HDAchievementEntity : HDHealthEntity <HDNanoSyncEntity, HDSyncEntity>
 
-@interface HDAchievementEntity : HDHealthEntity <HDNanoSyncEntity, HDSyncEntity> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_achievementWithProperties:(id)arg1 values:(id*)arg2 propertySetters:(id)arg3;
-+ (BOOL)_enumerateAchievementsWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3 usingBlock:(id)arg4;
++ (BOOL)_enumerateAchievementsWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4;
 + (id)_insertAchievement:(id)arg1 provenance:(int)arg2 database:(id)arg3 error:(id*)arg4;
 + (BOOL)_insertAchievements:(id)arg1 provenance:(int)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
 + (id)_predicateForProvenance:(int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSCalendar, NSMutableArray;
-
 @interface _FIUIFakeStatisticsCollection : NSObject {
     NSMutableArray *_buckets;
     NSCalendar *_calendar;

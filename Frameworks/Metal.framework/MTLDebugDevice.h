@@ -2,38 +2,37 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLDebugDevice : MTLToolsDevice {
-}
+@interface MTLDebugDevice : MTLToolsDevice
 
-- (void)_newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)_newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (id)_newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
-- (void)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (id)_newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
-- (void)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (id)_newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)initWithBaseObject:(id)arg1 parent:(id)arg2;
 - (id)newBufferWithBytes:(const void*)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3;
-- (id)newBufferWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3 deallocator:(id)arg4;
+- (id)newBufferWithBytesNoCopy:(void*)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3 deallocator:(id /* block */)arg4;
 - (id)newBufferWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
 - (id)newCommandQueue;
 - (id)newCommandQueueWithMaxCommandBufferCount:(unsigned int)arg1;
-- (void)newComputePipelineStateWithDescriptor:(id)arg1 completionHandler:(id)arg2;
+- (void)newComputePipelineStateWithDescriptor:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)newComputePipelineStateWithDescriptor:(id)arg1 error:(id*)arg2;
-- (void)newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (id)newComputePipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
-- (void)newComputePipelineStateWithFunction:(id)arg1 completionHandler:(id)arg2;
+- (void)newComputePipelineStateWithFunction:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)newComputePipelineStateWithFunction:(id)arg1 error:(id*)arg2;
-- (void)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (id)newComputePipelineStateWithFunction:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)newDefaultLibrary;
 - (id)newDepthStencilStateWithDescriptor:(id)arg1;
 - (id)newLibraryWithData:(id)arg1 error:(id*)arg2;
 - (id)newLibraryWithFile:(id)arg1 error:(id*)arg2;
-- (void)newLibraryWithSource:(id)arg1 options:(id)arg2 completionHandler:(id)arg3;
+- (void)newLibraryWithSource:(id)arg1 options:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)newLibraryWithSource:(id)arg1 options:(id)arg2 error:(id*)arg3;
-- (void)newRenderPipelineStateWithDescriptor:(id)arg1 completionHandler:(id)arg2;
+- (void)newRenderPipelineStateWithDescriptor:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)newRenderPipelineStateWithDescriptor:(id)arg1 error:(id*)arg2;
-- (void)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (id)newRenderPipelineStateWithDescriptor:(id)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (id)newSamplerStateWithDescriptor:(id)arg1;
 - (id)newTextureWithDescriptor:(id)arg1;

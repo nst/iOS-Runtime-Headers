@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray, NSString;
-
 @interface CKFetchRecordVersionsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     NSArray *_desiredKeys;
     NSString *_minimumVersionETag;
     NSArray *_recordIDs;
 }
 
-@property(retain) NSArray * desiredKeys;
-@property(retain) NSString * minimumVersionETag;
-@property(retain) NSArray * recordIDs;
+@property (nonatomic, retain) NSArray *desiredKeys;
+@property (nonatomic, retain) NSString *minimumVersionETag;
+@property (nonatomic, retain) NSArray *recordIDs;
 
 + (BOOL)supportsSecureCoding;
 

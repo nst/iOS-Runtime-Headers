@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSDate, NSMutableSet, NSObject, NSString, PUMapItem;
-
 @interface PUMapAnnotation : NSObject <PUMapAnnotationAnimatable> {
     struct { 
         double latitude; 
@@ -18,24 +16,24 @@
     unsigned int _relativeOrder;
 }
 
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property(readonly) unsigned int count;
-@property(retain,readonly) NSDate * dateCreated;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) NSObject * itemId;
-@property(retain) PUMapItem * mapItem;
-@property(readonly) NSArray * mapItems;
-@property(readonly) struct { double x1; double x2; } originalCoordinate;
-@property unsigned int relativeOrder;
-@property(retain,readonly) NSMutableSet * subAnnotations;
-@property(copy,readonly) NSString * subtitle;
-@property(readonly) Class superclass;
-@property(copy,readonly) NSString * title;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly, retain) NSDate *dateCreated;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) NSObject *itemId;
+@property (nonatomic, retain) PUMapItem *mapItem;
+@property (nonatomic, readonly) NSArray *mapItems;
+@property (nonatomic, readonly) struct { double x1; double x2; } originalCoordinate;
+@property (nonatomic) unsigned int relativeOrder;
+@property (nonatomic, readonly, retain) NSMutableSet *subAnnotations;
+@property (nonatomic, readonly, copy) NSString *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *title;
 
-+ (id)annotationSortingComparatorNewestToOldest;
-+ (id)annotationSortingComparatorOldestToNewest;
++ (id /* block */)annotationSortingComparatorNewestToOldest;
++ (id /* block */)annotationSortingComparatorOldestToNewest;
 + (id)compactDescriptionForAnnotations:(id)arg1;
 
 - (void).cxx_destruct;

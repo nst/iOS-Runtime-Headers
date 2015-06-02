@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class NSDate;
-
 @interface CUIKUserActivityRemindersListDate : CUIKUserActivity {
     NSDate *_date;
 }
 
-@property(readonly) NSDate * date;
+@property (nonatomic, readonly) NSDate *date;
 
 - (void).cxx_destruct;
 - (id)date;

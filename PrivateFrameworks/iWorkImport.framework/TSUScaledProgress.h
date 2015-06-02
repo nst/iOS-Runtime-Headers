@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_queue>, TSUProgress, TSUScaledProgressStorage;
-
 @interface TSUScaledProgress : TSUProgress {
     TSUProgress *mProgress;
     id mProgressObserver;
@@ -12,9 +10,9 @@
 }
 
 @property double maxValue;
-@property(retain) TSUProgress * progress;
+@property (retain) TSUProgress *progress;
 
-- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id)arg3;
+- (id)addProgressObserverWithValueInterval:(double)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isIndeterminate;

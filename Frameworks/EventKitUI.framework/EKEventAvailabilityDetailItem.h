@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, UITableViewCell;
-
 @interface EKEventAvailabilityDetailItem : EKEventDetailItem {
     int _availability;
     unsigned int _availabilityIndexInChoices;

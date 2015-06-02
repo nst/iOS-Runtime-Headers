@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class IKShowcaseTemplate, MPUExtrasCarouselViewController, MPUExtrasImageBrowserViewController, MPUExtrasZoomingImageTransitionController, NSArray, NSDictionary, NSString;
-
 @interface MPUExtrasShowcaseTemplateViewController : MPUExtrasTemplateViewController <MPUExtrasCarouselViewControllerDataSource, MPUExtrasCarouselViewControllerDelegate, MPUExtrasImageBrowserViewControllerDataSource, MPUExtrasNavigationAnimationControllerProvider, MPUExtrasZoomingImageInteractiveTransitionSource, MPUExtrasZoomingImageTransitionParticipant> {
     MPUExtrasZoomingImageTransitionController *_activeZoomingImageInteractiveTransitionController;
     unsigned int _autohighlightIndex;
@@ -15,23 +13,23 @@
     BOOL _supportsOneupMode;
 }
 
-@property(retain) MPUExtrasZoomingImageTransitionController * activeZoomingImageInteractiveTransitionController;
-@property unsigned int autohighlightIndex;
-@property(retain) NSArray * bannerButtonElements;
-@property(retain) NSArray * carouselLockupElements;
-@property(retain) MPUExtrasCarouselViewController * carouselViewController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MPUExtrasImageBrowserViewController * imageBrowserViewController;
-@property(readonly) unsigned int indexOfVisibleItem;
-@property(retain) NSDictionary * overriddenFullscreenImages;
-@property(readonly) Class superclass;
-@property BOOL supportsOneupMode;
-@property(readonly) IKShowcaseTemplate * templateElement;
+@property (nonatomic, retain) MPUExtrasZoomingImageTransitionController *activeZoomingImageInteractiveTransitionController;
+@property (nonatomic) unsigned int autohighlightIndex;
+@property (nonatomic, retain) NSArray *bannerButtonElements;
+@property (nonatomic, retain) NSArray *carouselLockupElements;
+@property (nonatomic, retain) MPUExtrasCarouselViewController *carouselViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPUExtrasImageBrowserViewController *imageBrowserViewController;
+@property (nonatomic, readonly) unsigned int indexOfVisibleItem;
+@property (nonatomic, retain) NSDictionary *overriddenFullscreenImages;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL supportsOneupMode;
+@property (nonatomic, readonly) IKShowcaseTemplate *templateElement;
 
 - (void).cxx_destruct;
-- (void)_loadTextElement:(id)arg1 textAttributes:(id)arg2 withCompletionHandler:(id)arg3;
+- (void)_loadTextElement:(id)arg1 textAttributes:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)_mainChildViewController;
 - (void)_prepareLayout;
 - (void)_pushImageBrowserWithVisibleItemIndex:(unsigned int)arg1;
@@ -44,15 +42,15 @@
 - (id)carouselViewController;
 - (void)carouselViewController:(id)arg1 configureCarouselCollectionViewCell:(id)arg2 forItemAtIndex:(unsigned int)arg3 withThumbnailImageContainerSize:(struct CGSize { float x1; float x2; })arg4;
 - (void)carouselViewController:(id)arg1 didHighlightItemAtIndex:(unsigned int)arg2;
-- (void)carouselViewController:(id)arg1 didSelectItemAtIndex:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)carouselViewController:(id)arg1 didSelectItemAtIndex:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (void)finalizeZoomingImageTransitionWithContext:(id)arg1 transitionFinished:(BOOL)arg2;
 - (void)handlePinchGestureForZoomingImageInteractiveTransitionWithContext:(id)arg1;
 - (id)imageBrowserViewController;
-- (void)imageBrowserViewController:(id)arg1 loadDescriptionAtIndex:(unsigned int)arg2 withCompletionHandler:(id)arg3;
-- (void)imageBrowserViewController:(id)arg1 loadImageAtIndex:(unsigned int)arg2 withCompletionHandler:(id)arg3;
-- (void)imageBrowserViewController:(id)arg1 loadSubtitleAtIndex:(unsigned int)arg2 withCompletionHandler:(id)arg3;
-- (void)imageBrowserViewController:(id)arg1 loadTitleAtIndex:(unsigned int)arg2 withCompletionHandler:(id)arg3;
+- (void)imageBrowserViewController:(id)arg1 loadDescriptionAtIndex:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)imageBrowserViewController:(id)arg1 loadImageAtIndex:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)imageBrowserViewController:(id)arg1 loadSubtitleAtIndex:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)imageBrowserViewController:(id)arg1 loadTitleAtIndex:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
 - (unsigned int)indexOfVisibleItem;
 - (id)initWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
 - (unsigned int)numberOfImagesForBrowserViewController:(id)arg1;

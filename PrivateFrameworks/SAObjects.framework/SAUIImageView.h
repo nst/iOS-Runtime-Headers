@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString, SAUIImageResource;
+@interface SAUIImageView : SAAceView
 
-@interface SAUIImageView : SAAceView {
-}
-
-@property(copy) NSArray * commands;
-@property(copy) NSString * descriptionText;
-@property(retain) SAUIImageResource * image;
-@property(copy) NSNumber * tintColor;
+@property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, copy) NSString *descriptionText;
+@property (nonatomic, retain) SAUIImageResource *image;
+@property (nonatomic, copy) NSNumber *tintColor;
 
 + (id)imageView;
 + (id)imageViewWithDictionary:(id)arg1 context:(id)arg2;

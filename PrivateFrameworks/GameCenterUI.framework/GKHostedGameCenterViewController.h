@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKGameCenterViewController, GKRemoteGameCenterViewController;
+@interface GKHostedGameCenterViewController : GKHostedViewController
 
-@interface GKHostedGameCenterViewController : GKHostedViewController {
-}
-
-@property(readonly) GKGameCenterViewController * _parentController;
-@property(readonly) GKRemoteGameCenterViewController * _remoteController;
+@property (nonatomic, readonly) GKGameCenterViewController *_parentController;
+@property (nonatomic, readonly) GKRemoteGameCenterViewController *_remoteController;
 
 - (id)_parentController;
 - (id)_presentingViewController;

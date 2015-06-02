@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUCompletionQueryDataSourceDelegate>, NSMutableDictionary, NSMutableSet;
-
 @interface MPUCompletionQueryDataSource : MPUQueryDataSource {
     <MPUCompletionQueryDataSourceDelegate> *_completionDelegate;
     NSMutableDictionary *_completions;
@@ -15,10 +13,10 @@
     NSMutableDictionary *_variants;
 }
 
-@property <MPUCompletionQueryDataSourceDelegate> * completionDelegate;
-@property BOOL shouldAutomaticallyLoadCompletions;
-@property(readonly) BOOL shouldLoadCompletionArtwork;
-@property BOOL shouldShowCompletions;
+@property (nonatomic) <MPUCompletionQueryDataSourceDelegate> *completionDelegate;
+@property (nonatomic) BOOL shouldAutomaticallyLoadCompletions;
+@property (nonatomic, readonly) BOOL shouldLoadCompletionArtwork;
+@property (nonatomic) BOOL shouldShowCompletions;
 
 - (void).cxx_destruct;
 - (long long)_pidForSectionAtIndex:(int)arg1;

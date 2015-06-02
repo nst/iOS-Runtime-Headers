@@ -9,8 +9,8 @@
     double _intendedFireDate;
 }
 
-@property BOOL hasIntendedFireDate;
-@property double intendedFireDate;
+@property (nonatomic) BOOL hasIntendedFireDate;
+@property (nonatomic) double intendedFireDate;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

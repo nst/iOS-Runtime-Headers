@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SACalendar, SAMPPlaybackInfo, SAMPReleaseInfo;
+@interface SAMPMediaItem : SAMPMediaEntity
 
-@interface SAMPMediaItem : SAMPMediaEntity {
-}
-
-@property(copy) NSString * album;
-@property(copy) NSString * artist;
-@property(retain) SACalendar * dateAdded;
-@property(retain) SACalendar * datePurchased;
-@property(copy) NSString * genre;
-@property(retain) SAMPPlaybackInfo * playbackInfo;
-@property(retain) SAMPReleaseInfo * releaseInfo;
-@property(copy) NSString * sortAlbum;
-@property(copy) NSString * sortArtist;
+@property (nonatomic, copy) NSString *album;
+@property (nonatomic, copy) NSString *artist;
+@property (nonatomic, retain) SACalendar *dateAdded;
+@property (nonatomic, retain) SACalendar *datePurchased;
+@property (nonatomic, copy) NSString *genre;
+@property (nonatomic, retain) SAMPPlaybackInfo *playbackInfo;
+@property (nonatomic, retain) SAMPReleaseInfo *releaseInfo;
+@property (nonatomic, copy) NSString *sortAlbum;
+@property (nonatomic, copy) NSString *sortArtist;
 
 + (id)mediaItem;
 + (id)mediaItemWithDictionary:(id)arg1 context:(id)arg2;

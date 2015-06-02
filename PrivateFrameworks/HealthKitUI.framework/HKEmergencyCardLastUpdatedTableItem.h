@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSDateFormatter, UILabel, UITableViewCell;
-
 @interface HKEmergencyCardLastUpdatedTableItem : HKEmergencyCardTableItem {
     UITableViewCell *_cell;
     NSDateFormatter *_dateFormatter;

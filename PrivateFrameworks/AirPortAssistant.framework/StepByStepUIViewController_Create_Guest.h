@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSString;
-
 @interface StepByStepUIViewController_Create_Guest : StepByStepUIViewController <TableViewManagerDelegate> {
     int _guestNetSecMode;
     BOOL _guestNetworkEnabled;
@@ -11,10 +9,10 @@
     NSString *_wifiPassword;
 }
 
-@property int guestNetSecMode;
-@property BOOL guestNetworkEnabled;
-@property(copy) NSString * wifiName;
-@property(copy) NSString * wifiPassword;
+@property (nonatomic) int guestNetSecMode;
+@property (nonatomic) BOOL guestNetworkEnabled;
+@property (nonatomic, copy) NSString *wifiName;
+@property (nonatomic, copy) NSString *wifiPassword;
 
 - (void)addGuestNetworkIsEnabledSection;
 - (void)addGuestNetworkPasswordSection;

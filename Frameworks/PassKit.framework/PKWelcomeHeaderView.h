@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIActivityIndicatorView, UIButton, UIView;
-
 @interface PKWelcomeHeaderView : UIView {
     UIButton *_actionButton;
     UIActivityIndicatorView *_activityIndicator;
@@ -12,8 +10,8 @@
     UIView *_titleView;
 }
 
-@property(readonly) unsigned int passType;
-@property BOOL showActivityIndicator;
+@property (nonatomic, readonly) unsigned int passType;
+@property (nonatomic) BOOL showActivityIndicator;
 
 - (void)_addTapped;
 - (void)addTapped;

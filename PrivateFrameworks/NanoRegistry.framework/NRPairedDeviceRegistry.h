@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
  */
 
-@class NRFrameworkDevice, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID, NSXPCConnection;
-
 @interface NRPairedDeviceRegistry : NSObject <NRPairedDeviceRegistryXPCFrameworkDelegate, NSXPCConnectionDelegate> {
     NSUUID *_clientUUID;
     unsigned short _compatibilityState;
@@ -27,30 +25,30 @@
     BOOL _xpcConnectionInvalidated;
 }
 
-@property(retain) NSUUID * clientUUID;
-@property unsigned short compatibilityState;
-@property(retain) NSObject<OS_dispatch_queue> * connectQueue;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSObject<OS_dispatch_queue> * deviceQueue;
-@property(retain) NSMutableArray * devicesBlocks;
-@property(retain) NSMutableArray * finishedPairingSemaphores;
-@property BOOL hasSomeEntitlements;
-@property(readonly) unsigned int hash;
-@property unsigned int lastUnpairReason;
-@property(retain) NSMutableDictionary * mutableDeviceDictionary;
-@property(retain) NRFrameworkDevice * pairedDevice;
-@property int pairingCompatibilityVersion;
-@property(retain) NRFrameworkDevice * pairingDevice;
-@property(retain) NSUUID * pairingDeviceID;
-@property(retain) NSObject<OS_dispatch_queue> * pdrQueue;
-@property double reconnectDelay;
-@property(retain) NSObject<OS_dispatch_queue> * reconnectQueue;
-@property(readonly) unsigned int status;
-@property(readonly) Class superclass;
-@property(retain) NSXPCConnection * xpcConnection;
-@property BOOL xpcConnectionInterrupted;
-@property BOOL xpcConnectionInvalidated;
+@property (nonatomic, retain) NSUUID *clientUUID;
+@property (nonatomic) unsigned short compatibilityState;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *connectQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *deviceQueue;
+@property (nonatomic, retain) NSMutableArray *devicesBlocks;
+@property (nonatomic, retain) NSMutableArray *finishedPairingSemaphores;
+@property (nonatomic) BOOL hasSomeEntitlements;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int lastUnpairReason;
+@property (nonatomic, retain) NSMutableDictionary *mutableDeviceDictionary;
+@property (nonatomic, retain) NRFrameworkDevice *pairedDevice;
+@property (nonatomic) int pairingCompatibilityVersion;
+@property (nonatomic, retain) NRFrameworkDevice *pairingDevice;
+@property (nonatomic, retain) NSUUID *pairingDeviceID;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *pdrQueue;
+@property (nonatomic) double reconnectDelay;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *reconnectQueue;
+@property (nonatomic, readonly) unsigned int status;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
+@property (nonatomic) BOOL xpcConnectionInterrupted;
+@property (nonatomic) BOOL xpcConnectionInvalidated;
 
 + (id)sharedInstance;
 
@@ -68,7 +66,7 @@
 - (void)_addRemoveRecoveryStepResetNVRAM:(BOOL)arg1;
 - (void)_addRemoveRecoveryStepStockholmReset:(BOOL)arg1;
 - (void)_addRemoveRecoveryStepUnpairBluetooth:(BOOL)arg1 withPairingDeviceID:(id)arg2;
-- (void)_pairingStorePathPairingID:(id)arg1;
+- (void)_pairingStorePathPairingID:(id /* block */)arg1;
 - (id)_recoveryDescription;
 - (void)_setObliterationEnabled:(BOOL)arg1;
 - (void)_triggerRecovery;
@@ -80,8 +78,8 @@
 - (void)abortPairing;
 - (void)abortPairingWithReason:(id)arg1;
 - (id)clientUUID;
-- (void)companionOOBDiscoverAndPairWithName:(id)arg1 withOutOfBandPairingKey:(id)arg2 operationHasBegun:(id)arg3;
-- (void)companionPasscodePairWithDevice:(id)arg1 operationHasBegun:(id)arg2;
+- (void)companionOOBDiscoverAndPairWithName:(id)arg1 withOutOfBandPairingKey:(id)arg2 operationHasBegun:(id /* block */)arg3;
+- (void)companionPasscodePairWithDevice:(id)arg1 operationHasBegun:(id /* block */)arg2;
 - (unsigned short)compatibilityState;
 - (id)connectQueue;
 - (void)dealloc;
@@ -92,9 +90,9 @@
 - (id)getActivePairedDevice;
 - (id)getAllDevices;
 - (id)getDevices;
-- (void)getDevicesWithBlock:(id)arg1;
-- (void)gizmoOOBAdvertiseAndPairWithName:(id)arg1 operationHasBegun:(id)arg2;
-- (void)gizmoPasscodeAdvertiseAndPairWithName:(id)arg1 operationHasBegun:(id)arg2;
+- (void)getDevicesWithBlock:(id /* block */)arg1;
+- (void)gizmoOOBAdvertiseAndPairWithName:(id)arg1 operationHasBegun:(id /* block */)arg2;
+- (void)gizmoPasscodeAdvertiseAndPairWithName:(id)arg1 operationHasBegun:(id /* block */)arg2;
 - (BOOL)hasSomeEntitlements;
 - (id)init;
 - (BOOL)isPaired;
@@ -112,7 +110,7 @@
 - (id)pairingDeviceID;
 - (id)pairingID;
 - (id)pairingStorePath;
-- (void)pairingStorePathPairingID:(id)arg1;
+- (void)pairingStorePathPairingID:(id /* block */)arg1;
 - (id)pdrQueue;
 - (double)reconnectDelay;
 - (id)reconnectQueue;
@@ -140,8 +138,8 @@
 - (void)setXpcConnectionInvalidated:(BOOL)arg1;
 - (unsigned int)status;
 - (void)suspendPairingClientCrashMonitoring;
-- (void)unpairWithDevice:(id)arg1 shouldObliterate:(BOOL)arg2 operationHasBegun:(id)arg3;
-- (void)waitForPairingStorePathPairingID:(id)arg1;
+- (void)unpairWithDevice:(id)arg1 shouldObliterate:(BOOL)arg2 operationHasBegun:(id /* block */)arg3;
+- (void)waitForPairingStorePathPairingID:(id /* block */)arg1;
 - (void)xpcAssertInClient:(id)arg1;
 - (void)xpcCompatibilityStateDidChange:(unsigned short)arg1 withDevice:(id)arg2 andDeviceID:(id)arg3;
 - (id)xpcConnection;

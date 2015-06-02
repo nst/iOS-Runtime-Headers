@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKStyleProvider>, <EKTravelRouteEstimationControllerDelegate>, EKEventStore, EKStructuredLocation, NSDate, NSDictionary, NSMutableArray;
-
 @interface EKTravelRouteEstimationController : NSObject {
     NSDate *_arrivalDate;
     <EKTravelRouteEstimationControllerDelegate> *_delegate;
@@ -18,15 +16,15 @@
     NSDictionary *_travelTimeLookupErrors;
 }
 
-@property(retain) NSDate * arrivalDate;
-@property <EKTravelRouteEstimationControllerDelegate> * delegate;
-@property(retain) EKStructuredLocation * destinationStructuredLocation;
-@property(retain) EKStructuredLocation * evaluatedOriginLocation;
+@property (retain) NSDate *arrivalDate;
+@property (nonatomic) <EKTravelRouteEstimationControllerDelegate> *delegate;
+@property (retain) EKStructuredLocation *destinationStructuredLocation;
+@property (retain) EKStructuredLocation *evaluatedOriginLocation;
 @property BOOL isEstimating;
-@property(readonly) unsigned int numberOfOutputRows;
-@property(retain) EKStructuredLocation * originStructuredLocation;
-@property(retain) NSDictionary * travelTimeEstimatedValues;
-@property(retain) NSDictionary * travelTimeLookupErrors;
+@property (nonatomic, readonly) unsigned int numberOfOutputRows;
+@property (nonatomic, retain) EKStructuredLocation *originStructuredLocation;
+@property (retain) NSDictionary *travelTimeEstimatedValues;
+@property (retain) NSDictionary *travelTimeLookupErrors;
 
 - (void).cxx_destruct;
 - (void)_beginOriginLocationEstimationCoreRoutineLookup;

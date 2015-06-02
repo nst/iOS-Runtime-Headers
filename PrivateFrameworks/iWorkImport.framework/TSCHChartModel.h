@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, TSCHChartGrid, TSCHChartInfo;
-
 @interface TSCHChartModel : NSObject <NSCopying, TSCHNotifyOnModify, TSCHUnretainedParent, TSDMixing> {
     NSMutableArray *mAxisList;
     TSCHChartGrid *mGrid;
@@ -25,25 +18,25 @@
     NSMutableArray *mSeriesList;
 }
 
-@property(retain,readonly) NSArray * axisList;
-@property(retain,readonly) NSArray * categoryAxisList;
-@property TSCHChartInfo * chartInfo;
-@property(retain) TSCHChartGrid * grid;
-@property(readonly) BOOL isMultiData;
-@property(readonly) BOOL isTransient;
-@property(readonly) unsigned int maxNumberOfReferenceLines;
-@property unsigned int multiDataSetIndex;
-@property(readonly) unsigned int numberOfChunkableMultiDataSets;
-@property(readonly) unsigned int numberOfMultiDataSetCategories;
-@property(readonly) unsigned int numberOfMultiDataSets;
-@property(readonly) unsigned int numberOfSeries;
-@property(readonly) unsigned int numberOfSeriesForCalculatingBarWidth;
-@property(readonly) unsigned int numberOfValues;
-@property(retain,readonly) NSDictionary * referenceLinesMap;
-@property int scatterFormat;
-@property(retain,readonly) NSArray * seriesList;
-@property(retain,readonly) id syncRoot;
-@property(retain,readonly) NSArray * valueAxisList;
+@property (nonatomic, readonly, retain) NSArray *axisList;
+@property (nonatomic, readonly, retain) NSArray *categoryAxisList;
+@property (nonatomic) TSCHChartInfo *chartInfo;
+@property (nonatomic, retain) TSCHChartGrid *grid;
+@property (nonatomic, readonly) BOOL isMultiData;
+@property (nonatomic, readonly) BOOL isTransient;
+@property (nonatomic, readonly) unsigned int maxNumberOfReferenceLines;
+@property (nonatomic) unsigned int multiDataSetIndex;
+@property (nonatomic, readonly) unsigned int numberOfChunkableMultiDataSets;
+@property (nonatomic, readonly) unsigned int numberOfMultiDataSetCategories;
+@property (nonatomic, readonly) unsigned int numberOfMultiDataSets;
+@property (nonatomic, readonly) unsigned int numberOfSeries;
+@property (nonatomic, readonly) unsigned int numberOfSeriesForCalculatingBarWidth;
+@property (nonatomic, readonly) unsigned int numberOfValues;
+@property (nonatomic, readonly, retain) NSDictionary *referenceLinesMap;
+@property (nonatomic) int scatterFormat;
+@property (nonatomic, readonly, retain) NSArray *seriesList;
+@property (nonatomic, readonly, retain) id syncRoot;
+@property (nonatomic, readonly, retain) NSArray *valueAxisList;
 
 - (id)axisForID:(id)arg1;
 - (id)axisList;
@@ -58,7 +51,7 @@
 - (id)dataSetNameForMultiDataModel;
 - (void)dealloc;
 - (unsigned int)defaultOrdinalForAxisType:(int)arg1 seriesIndex:(unsigned int)arg2;
-- (void)enumerateMultiDataModelsUsingBlock:(id)arg1;
+- (void)enumerateMultiDataModelsUsingBlock:(id /* block */)arg1;
 - (id)grid;
 - (unsigned int)gridIndexForSeriesDimension:(id)arg1;
 - (BOOL)hasReferenceLines;

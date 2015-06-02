@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAMicroblogGetTwitterCredential : SAMicroblogGetSocialCredential
 
-@interface SAMicroblogGetTwitterCredential : SAMicroblogGetSocialCredential {
-}
-
-@property(copy) NSString * consumerKey;
-@property(copy) NSString * consumerSecret;
+@property (nonatomic, copy) NSString *consumerKey;
+@property (nonatomic, copy) NSString *consumerSecret;
 
 + (id)getTwitterCredential;
 + (id)getTwitterCredentialWithDictionary:(id)arg1 context:(id)arg2;

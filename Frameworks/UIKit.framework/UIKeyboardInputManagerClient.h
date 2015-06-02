@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSXPCConnection;
-
 @interface UIKeyboardInputManagerClient : NSObject {
     NSXPCConnection *_connection;
 }
 
-@property(retain) NSXPCConnection * connection;
+@property (nonatomic, retain) NSXPCConnection *connection;
 
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 

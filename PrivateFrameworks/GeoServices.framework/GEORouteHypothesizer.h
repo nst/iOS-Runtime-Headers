@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <GEORouteHypothesizerDelegate>, GEOComposedRoute, GEOComposedWaypoint, GEODirectionsRequestFeedback, GEOETARoute, GEOETAUpdater, GEOLocation, GEOLocationShifter, GEORoute, GEORouteAttributes, GEORouteHypothesis, GEORouteHypothesizerUpdater, NSData, NSDate, NSString;
-
 @interface GEORouteHypothesizer : NSObject <GEOETAUpdaterDelegate, GEORouteHypothesizerUpdaterDelegate> {
     NSDate *_arrivalDate;
     GEOETARoute *_baselineETARoute;
@@ -19,11 +13,7 @@
     GEOETAUpdater *_etaUpdater;
     GEORoute *_existingRoute;
     GEODirectionsRequestFeedback *_feedback;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     GEORouteHypothesis *_hypothesis;
     NSDate *_lastETARequestDate;
     GEOLocation *_lastLocation;
@@ -36,27 +26,27 @@
     NSData *_usualRouteData;
 }
 
-@property(readonly) NSDate * arrivalDate;
-@property(copy,readonly) NSString * debugDescription;
-@property <GEORouteHypothesizerDelegate> * delegate;
-@property(readonly) NSDate * departureDate;
-@property(copy,readonly) NSString * description;
-@property(readonly) GEOComposedWaypoint * destination;
-@property unsigned int etaUpdateFrequency;
-@property(retain) GEODirectionsRequestFeedback * feedback;
-@property(readonly) unsigned int hash;
-@property(readonly) GEOComposedRoute * route;
-@property(readonly) GEOComposedWaypoint * source;
-@property(readonly) NSDate * suggestedNextUpdateDate;
-@property(readonly) Class superclass;
-@property(readonly) BOOL supportsDirections;
-@property(readonly) BOOL supportsLiveTraffic;
+@property (nonatomic, readonly) NSDate *arrivalDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <GEORouteHypothesizerDelegate> *delegate;
+@property (nonatomic, readonly) NSDate *departureDate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) GEOComposedWaypoint *destination;
+@property (nonatomic) unsigned int etaUpdateFrequency;
+@property (nonatomic, retain) GEODirectionsRequestFeedback *feedback;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) GEOComposedRoute *route;
+@property (nonatomic, readonly) GEOComposedWaypoint *source;
+@property (nonatomic, readonly) NSDate *suggestedNextUpdateDate;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsDirections;
+@property (nonatomic, readonly) BOOL supportsLiveTraffic;
 
 - (void)_commonInit;
 - (void)_createUpdaterWithStartingLocation:(id)arg1;
 - (void)_refreshETAWithRouteMatch:(id)arg1;
 - (void)_updateETAWithRouteMatch:(id)arg1;
-- (void)_updateLocation:(id)arg1 hypothesisHandler:(id)arg2;
+- (void)_updateLocation:(id)arg1 hypothesisHandler:(id /* block */)arg2;
 - (void)_updateLocationAndETAUpdateInterval;
 - (id)arrivalDate;
 - (void)dealloc;
@@ -84,6 +74,6 @@
 - (id)suggestedNextUpdateDate;
 - (BOOL)supportsDirections;
 - (BOOL)supportsLiveTraffic;
-- (void)updateLocation:(id)arg1 hypothesisHandler:(id)arg2;
+- (void)updateLocation:(id)arg1 hypothesisHandler:(id /* block */)arg2;
 
 @end

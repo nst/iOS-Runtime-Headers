@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVItem;
-
 @interface MPAVControllerToAggregateDCommunicator : NSObject {
     MPAVItem *_item;
     unsigned int _lastMediaType;

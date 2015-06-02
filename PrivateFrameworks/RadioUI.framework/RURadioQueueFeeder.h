@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSArray, NSMapTable, NSMutableSet, RURadioAdObserver, RadioStation, RadioStationSkipController;
-
 @interface RURadioQueueFeeder : MPQueueFeeder {
     RURadioAdObserver *_adObserver;
     NSMapTable *_adSlotToAllAdTracks;
@@ -24,10 +22,10 @@
     BOOL _wasUsingBackgroundNetwork;
 }
 
-@property(copy,readonly) NSArray * allPreparedAdSlotRadioTracks;
-@property(retain) RadioStation * station;
-@property(copy) NSArray * tracks;
-@property(readonly) NSArray * tracksForNextPlaybackGroup;
+@property (nonatomic, readonly, copy) NSArray *allPreparedAdSlotRadioTracks;
+@property (nonatomic, retain) RadioStation *station;
+@property (nonatomic, copy) NSArray *tracks;
+@property (nonatomic, readonly) NSArray *tracksForNextPlaybackGroup;
 
 + (void)_explicitContentAllowedDidChangeNotification:(id)arg1;
 + (id)_tracksByRemovingPromotionalContentFromTracks:(id)arg1;
@@ -53,7 +51,7 @@
 - (id)_currentTrackPlaybackDescriptorQueueWithCurrentItem:(id)arg1 shouldIncludePlaybackInformation:(BOOL)arg2 skipDate:(id)arg3;
 - (BOOL)_endPlaybackIfNecessaryForNetworkType;
 - (void)_fetchAdSlotIfNeededForRadioTrack:(id)arg1 inStation:(id)arg2;
-- (void)_fetchAdditionalTracksWithBaseIndex:(int)arg1 withCompletionHandler:(id)arg2;
+- (void)_fetchAdditionalTracksWithBaseIndex:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_fetchNextTrackAdSlotIfNeeded;
 - (BOOL)_hasReceivedStreamTrack;
 - (unsigned int)_indexOfCurrentItem;

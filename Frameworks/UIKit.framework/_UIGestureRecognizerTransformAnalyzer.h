@@ -12,10 +12,10 @@
     float _translationWeight;
 }
 
-@property(readonly) int dominantComponent;
-@property float pinchingWeight;
-@property float rotationWeight;
-@property float translationWeight;
+@property (nonatomic, readonly) int dominantComponent;
+@property (nonatomic) float pinchingWeight;
+@property (nonatomic) float rotationWeight;
+@property (nonatomic) float translationWeight;
 
 - (void)analyzeTouches:(id)arg1;
 - (int)dominantComponent;

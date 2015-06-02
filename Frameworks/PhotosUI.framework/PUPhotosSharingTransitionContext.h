@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PHAssetCollectionDataSource>, NSIndexPath;
-
 @interface PUPhotosSharingTransitionContext : NSObject {
     <PHAssetCollectionDataSource> *_assetCollectionsDataSource;
     NSIndexPath *_keyAssetIndexPath;
 }
 
-@property(retain) <PHAssetCollectionDataSource> * assetCollectionsDataSource;
-@property(retain) NSIndexPath * keyAssetIndexPath;
+@property (nonatomic, retain) <PHAssetCollectionDataSource> *assetCollectionsDataSource;
+@property (nonatomic, retain) NSIndexPath *keyAssetIndexPath;
 
 - (void).cxx_destruct;
 - (id)assetCollectionsDataSource;

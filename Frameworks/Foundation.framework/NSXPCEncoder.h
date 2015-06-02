@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class <NSXPCEncoderDelegate>, NSObject<OS_xpc_object>, NSXPCConnection;
-
 @interface NSXPCEncoder : NSXPCCoder {
     BOOL _askForReplacement;
     NSXPCConnection *_connection;
@@ -15,8 +13,8 @@
     struct __CFDictionary { } *_replacedObjects;
 }
 
-@property NSXPCConnection * _connection;
-@property <NSXPCEncoderDelegate> * delegate;
+@property NSXPCConnection *_connection;
+@property <NSXPCEncoderDelegate> *delegate;
 
 + (id)_dataWithXPCObject:(id)arg1;
 

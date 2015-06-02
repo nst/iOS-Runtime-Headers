@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, PBUnknownFields;
-
 @interface GEOPDAutocompleteEntryBusiness : PBCodable <NSCopying> {
     GEOLatLng *_center;
     struct { 
@@ -15,13 +13,13 @@
     PBUnknownFields *_unknownFields;
 }
 
-@property(retain) GEOLatLng * center;
-@property(readonly) BOOL hasCenter;
-@property BOOL hasMuid;
-@property BOOL hasResultProviderId;
-@property unsigned long long muid;
-@property int resultProviderId;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, retain) GEOLatLng *center;
+@property (nonatomic, readonly) BOOL hasCenter;
+@property (nonatomic) BOOL hasMuid;
+@property (nonatomic) BOOL hasResultProviderId;
+@property (nonatomic) unsigned long long muid;
+@property (nonatomic) int resultProviderId;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (id)center;
 - (void)copyTo:(id)arg1;

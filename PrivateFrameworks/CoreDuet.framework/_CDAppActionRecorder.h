@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface _CDAppActionRecorder : NSObject <_CDActivityEventRecording, _CDAppActionRecording> {
     NSXPCConnection *_connection;
     NSString *_previousActivityType;
@@ -11,14 +9,14 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) NSXPCConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * previousActivityType;
-@property(retain) NSString * previousTitle;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *previousActivityType;
+@property (nonatomic, retain) NSString *previousTitle;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
 
 + (id)appActionRecorder;
 

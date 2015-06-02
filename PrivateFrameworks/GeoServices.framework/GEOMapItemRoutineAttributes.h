@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOMapItemRoutineAttributes : PBCodable <NSCopying> {
     double _eventDate;
     NSString *_eventName;
@@ -16,14 +14,16 @@
     int _loiType;
 }
 
-@property double eventDate;
-@property(retain) NSString * eventName;
-@property BOOL hasEventDate;
-@property(readonly) BOOL hasEventName;
-@property BOOL hasIsEventAllDay;
-@property BOOL hasLoiType;
-@property BOOL isEventAllDay;
-@property int loiType;
+@property (nonatomic) double eventDate;
+@property (nonatomic, retain) NSString *eventName;
+@property (nonatomic) BOOL hasEventDate;
+@property (nonatomic, readonly) BOOL hasEventName;
+@property (nonatomic) BOOL hasIsEventAllDay;
+@property (nonatomic) BOOL hasLoiType;
+@property (nonatomic) BOOL isEventAllDay;
+@property (nonatomic) int loiType;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -37,7 +37,6 @@
 - (BOOL)hasIsEventAllDay;
 - (BOOL)hasLoiType;
 - (unsigned int)hash;
-- (id)initWithLOIType:(int)arg1 event:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEventAllDay;
 - (int)loiType;
@@ -51,5 +50,9 @@
 - (void)setIsEventAllDay:(BOOL)arg1;
 - (void)setLoiType:(int)arg1;
 - (void)writeTo:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
+
+- (id)initWithLOIType:(int)arg1 event:(id)arg2;
 
 @end

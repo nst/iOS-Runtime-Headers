@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSDate, NSIndexSet, NSMutableIndexSet, NSOrderedSet, NSString, PLManagedAsset, PLPhotoLibrary;
-
 @interface PLAvalanche : NSObject <PLAssetChangeObserver, PLAssetContainer> {
     PLManagedAsset *__aNewPick;
     PLManagedAsset *__anOldPick;
     NSMutableIndexSet *__autoPickIndexes;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id __completionHandler;
-
+    id /* block */ __completionHandler;
     NSIndexSet *__originalAutoPickIndexes;
     unsigned int __originalStackIndex;
     NSIndexSet *__originalUserFavoriteIndexes;
@@ -27,37 +17,37 @@
     NSString *_uuid;
 }
 
-@property(setter=_setANewPick:,retain) PLManagedAsset * _aNewPick;
-@property(setter=_setAnOldPick:,retain) PLManagedAsset * _anOldPick;
-@property(retain) NSMutableIndexSet * _autoPickIndexes;
-@property(setter=_setCompletionHandler:,copy) id _completionHandler;
-@property(retain) NSIndexSet * _originalAutoPickIndexes;
-@property unsigned int _originalStackIndex;
-@property(retain) NSIndexSet * _originalUserFavoriteIndexes;
-@property unsigned int _stackIndex;
-@property(retain) NSMutableIndexSet * _userFavoriteIndexes;
-@property(readonly) unsigned int approximateCount;
-@property(retain) NSOrderedSet * assets;
-@property(readonly) unsigned int assetsCount;
-@property(readonly) BOOL canShowAvalancheStacks;
-@property(readonly) BOOL canShowComments;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) NSDate * endDate;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isEmpty;
-@property(retain) PLManagedAsset * keyAsset;
-@property(copy,readonly) NSArray * localizedLocationNames;
-@property(copy,readonly) NSString * localizedTitle;
-@property(retain) PLPhotoLibrary * photoLibrary;
-@property(readonly) unsigned int photosCount;
-@property(retain) PLManagedAsset * secondaryKeyAsset;
-@property(retain,readonly) NSDate * startDate;
-@property(readonly) Class superclass;
-@property(retain) PLManagedAsset * tertiaryKeyAsset;
-@property(retain,readonly) NSString * title;
-@property(retain) NSString * uuid;
-@property(readonly) unsigned int videosCount;
+@property (setter=_setANewPick:, nonatomic, retain) PLManagedAsset *_aNewPick;
+@property (setter=_setAnOldPick:, nonatomic, retain) PLManagedAsset *_anOldPick;
+@property (nonatomic, retain) NSMutableIndexSet *_autoPickIndexes;
+@property (setter=_setCompletionHandler:, nonatomic, copy) id /* block */ _completionHandler;
+@property (nonatomic, retain) NSIndexSet *_originalAutoPickIndexes;
+@property (nonatomic) unsigned int _originalStackIndex;
+@property (nonatomic, retain) NSIndexSet *_originalUserFavoriteIndexes;
+@property (nonatomic) unsigned int _stackIndex;
+@property (nonatomic, retain) NSMutableIndexSet *_userFavoriteIndexes;
+@property (nonatomic, readonly) unsigned int approximateCount;
+@property (nonatomic, retain) NSOrderedSet *assets;
+@property (nonatomic, readonly) unsigned int assetsCount;
+@property (nonatomic, readonly) BOOL canShowAvalancheStacks;
+@property (nonatomic, readonly) BOOL canShowComments;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) NSDate *endDate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, retain) PLManagedAsset *keyAsset;
+@property (nonatomic, readonly, copy) NSArray *localizedLocationNames;
+@property (nonatomic, readonly, copy) NSString *localizedTitle;
+@property (nonatomic, retain) PLPhotoLibrary *photoLibrary;
+@property (nonatomic, readonly) unsigned int photosCount;
+@property (nonatomic, retain) PLManagedAsset *secondaryKeyAsset;
+@property (nonatomic, readonly, retain) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PLManagedAsset *tertiaryKeyAsset;
+@property (nonatomic, readonly, retain) NSString *title;
+@property (nonatomic, retain) NSString *uuid;
+@property (nonatomic, readonly) unsigned int videosCount;
 
 + (id)_assetAmongAssets:(id)arg1 fromIndexes:(id)arg2 excludingIndexes:(id)arg3;
 + (unsigned int)_calculateStackAssetForAssetCount:(unsigned int)arg1 autoPicks:(id)arg2 userFavorites:(id)arg3;
@@ -79,18 +69,18 @@
 - (id)_aNewPick;
 - (id)_anOldPick;
 - (id)_autoPickIndexes;
-- (id)_completionHandler;
+- (id /* block */)_completionHandler;
 - (id)_originalAutoPickIndexes;
 - (unsigned int)_originalStackIndex;
 - (id)_originalUserFavoriteIndexes;
 - (void)_recalculateStackAsset;
 - (void)_setANewPick:(id)arg1;
 - (void)_setAnOldPick:(id)arg1;
-- (void)_setCompletionHandler:(id)arg1;
+- (void)_setCompletionHandler:(id /* block */)arg1;
 - (unsigned int)_stackIndex;
 - (id)_userFavoriteIndexes;
 - (void)addUserFavorite:(id)arg1;
-- (void)applyChangesAndDeleteNonPicks:(BOOL)arg1 currentContainer:(id)arg2 completionHandler:(id)arg3;
+- (void)applyChangesAndDeleteNonPicks:(BOOL)arg1 currentContainer:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)applyTrashedState:(short)arg1;
 - (unsigned int)approximateCount;
 - (id)assets;

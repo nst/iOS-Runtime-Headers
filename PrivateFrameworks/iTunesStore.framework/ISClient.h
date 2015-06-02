@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSLock, NSString;
-
 @interface ISClient : NSObject {
     NSString *_appleClientApplication;
     NSString *_appleClientVersions;
@@ -13,11 +11,11 @@
     NSString *_userAgent;
 }
 
-@property(copy) NSString * appleClientApplication;
-@property(readonly) NSString * appleClientVersions;
-@property(copy) NSString * identifier;
-@property(copy) NSString * partnerHeader;
-@property(copy) NSString * userAgent;
+@property (copy) NSString *appleClientApplication;
+@property (readonly) NSString *appleClientVersions;
+@property (copy) NSString *identifier;
+@property (copy) NSString *partnerHeader;
+@property (copy) NSString *userAgent;
 
 + (id)currentClient;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class APSConnection, NSTimer;
-
 @interface FTNetworkSupport : NSObject {
     Class _APSConnectionClass;
     APSConnection *_apsConnection;
@@ -12,17 +10,17 @@
     NSTimer *_reliabilityAttemptTimer;
 }
 
-@property(readonly) BOOL allowAnyNetwork;
-@property(readonly) BOOL dataActiveAndReachable;
-@property BOOL enableCriticalReliability;
-@property(readonly) BOOL networkActive;
-@property(readonly) BOOL networkEnabled;
-@property(readonly) BOOL networkReachable;
-@property(readonly) BOOL validNetworkActive;
-@property(readonly) BOOL validNetworkEnabled;
-@property(readonly) BOOL validNetworkReachable;
-@property(readonly) BOOL wiFiActiveAndReachable;
-@property(readonly) BOOL willSearchForNetwork;
+@property (nonatomic, readonly) BOOL allowAnyNetwork;
+@property (nonatomic, readonly) BOOL dataActiveAndReachable;
+@property (nonatomic) BOOL enableCriticalReliability;
+@property (nonatomic, readonly) BOOL networkActive;
+@property (nonatomic, readonly) BOOL networkEnabled;
+@property (nonatomic, readonly) BOOL networkReachable;
+@property (nonatomic, readonly) BOOL validNetworkActive;
+@property (nonatomic, readonly) BOOL validNetworkEnabled;
+@property (nonatomic, readonly) BOOL validNetworkReachable;
+@property (nonatomic, readonly) BOOL wiFiActiveAndReachable;
+@property (nonatomic, readonly) BOOL willSearchForNetwork;
 
 + (id)sharedInstance;
 

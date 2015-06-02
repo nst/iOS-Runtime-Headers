@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AAChildAccountCreationUIRequest : AAFamilyRequest {
-}
+@interface AAChildAccountCreationUIRequest : AAFamilyRequest
 
 - (BOOL)isUserInitiated;
 - (id)urlString;

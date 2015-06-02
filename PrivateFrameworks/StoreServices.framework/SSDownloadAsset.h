@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString, NSURLRequest, SSURLRequestProperties;
-
 @interface SSDownloadAsset : SSEntity {
     int _assetType;
     SSURLRequestProperties *_localProperties;
 }
 
-@property(retain,readonly) NSURLRequest * URLRequest;
-@property(readonly) SSURLRequestProperties * URLRequestProperties;
-@property(readonly) NSString * downloadFileName;
-@property(readonly) NSString * downloadPath;
-@property(getter=isExternal,readonly) BOOL external;
-@property(readonly) long long fileSize;
-@property(readonly) NSString * finalizedPath;
-@property(readonly) NSArray * sinfs;
+@property (readonly, retain) NSURLRequest *URLRequest;
+@property (readonly) SSURLRequestProperties *URLRequestProperties;
+@property (readonly) NSString *downloadFileName;
+@property (readonly) NSString *downloadPath;
+@property (getter=isExternal, readonly) BOOL external;
+@property (readonly) long long fileSize;
+@property (readonly) NSString *finalizedPath;
+@property (readonly) NSArray *sinfs;
 
 + (long long)_existsMessage;
 + (long long)_getExternalValuesMessage;

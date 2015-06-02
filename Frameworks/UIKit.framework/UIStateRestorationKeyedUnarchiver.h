@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary;
-
 @interface UIStateRestorationKeyedUnarchiver : NSKeyedUnarchiver {
     NSDictionary *_defaultValues;
 }

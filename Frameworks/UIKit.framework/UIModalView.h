@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIModalViewDelegate>, NSMutableArray, NSString, UILabel, UIToolbar, UIView, UIWindow;
-
 @interface UIModalView : UIView <UITextFieldDelegate> {
     float _bodyTextHeight;
     UILabel *_bodyTextLabel;
@@ -69,17 +67,17 @@
     UIToolbar *_toolbar;
 }
 
-@property int cancelButtonIndex;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIModalViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL groupsTextFields;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * message;
-@property(readonly) int numberOfButtons;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property(getter=isVisible,readonly) BOOL visible;
+@property (nonatomic) int cancelButtonIndex;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIModalViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL groupsTextFields;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, readonly) int numberOfButtons;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (getter=isVisible, nonatomic, readonly) BOOL visible;
 
 + (id)_popupAlertBackground;
 + (BOOL)atLeastOneAlertVisible;

@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMCSSStyleDeclaration, NSString;
+@interface DOMWebKitCSSKeyframeRule : DOMCSSRule
 
-@interface DOMWebKitCSSKeyframeRule : DOMCSSRule {
-}
-
-@property(copy) NSString * keyText;
-@property(readonly) DOMCSSStyleDeclaration * style;
+@property (copy) NSString *keyText;
+@property (readonly) DOMCSSStyleDeclaration *style;
 
 - (id)keyText;
 - (void)setKeyText:(id)arg1;

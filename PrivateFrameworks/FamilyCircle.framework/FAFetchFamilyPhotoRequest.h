@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FamilyCircle.framework/FamilyCircle
  */
 
-@class NSNumber, NSString;
-
 @interface FAFetchFamilyPhotoRequest : FAFamilyCircleRequest {
     NSString *_emailAddress;
     NSString *_fullname;
@@ -19,15 +17,15 @@
     BOOL _useMonogramAsLastResort;
 }
 
-@property(copy) NSString * emailAddress;
-@property(copy) NSString * fullname;
-@property(readonly) BOOL localFallback;
-@property(copy,readonly) NSNumber * memberDSID;
-@property(copy,readonly) NSString * memberHashedDSID;
+@property (copy) NSString *emailAddress;
+@property (copy) NSString *fullname;
+@property (readonly) BOOL localFallback;
+@property (readonly, copy) NSNumber *memberDSID;
+@property (readonly, copy) NSString *memberHashedDSID;
 @property double monogramDiameter;
 @property int monogramStyle;
-@property(copy) NSString * phoneNumber;
-@property(readonly) unsigned int requestedSize;
+@property (copy) NSString *phoneNumber;
+@property (readonly) unsigned int requestedSize;
 @property double requiredHeight;
 @property double requiredWidth;
 @property BOOL useMonogramAsLastResort;
@@ -56,7 +54,7 @@
 - (void)setRequiredHeight:(double)arg1;
 - (void)setRequiredWidth:(double)arg1;
 - (void)setUseMonogramAsLastResort:(BOOL)arg1;
-- (void)startRequestWithCompletionHandler:(id)arg1;
+- (void)startRequestWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)useMonogramAsLastResort;
 
 @end

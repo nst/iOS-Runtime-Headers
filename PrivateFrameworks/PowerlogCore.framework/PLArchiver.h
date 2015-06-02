@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSDate, NSMutableArray, NSNumber, PLSQLiteConnection, PLStorageOperator;
-
 @interface PLArchiver : NSObject {
     PLSQLiteConnection *_connection;
     BOOL _enabled;
@@ -14,13 +12,13 @@
     PLStorageOperator *_storageOperator;
 }
 
-@property(retain) PLSQLiteConnection * connection;
+@property (retain) PLSQLiteConnection *connection;
 @property BOOL enabled;
-@property(retain) NSDate * lastArchiveDate;
-@property(retain) NSNumber * minDaysMainDB;
-@property(retain) NSNumber * minDaysTotalLogDuration;
-@property(retain) NSMutableArray * notificationBlocks;
-@property PLStorageOperator * storageOperator;
+@property (retain) NSDate *lastArchiveDate;
+@property (nonatomic, retain) NSNumber *minDaysMainDB;
+@property (nonatomic, retain) NSNumber *minDaysTotalLogDuration;
+@property (retain) NSMutableArray *notificationBlocks;
+@property PLStorageOperator *storageOperator;
 
 + (id)archivePathFromMetadataPath:(id)arg1;
 + (id)archivePaths;
@@ -46,7 +44,7 @@
 - (id)minDaysMainDB;
 - (id)minDaysTotalLogDuration;
 - (id)notificationBlocks;
-- (void)registerForArchivingNotificationUsingBlock:(id)arg1;
+- (void)registerForArchivingNotificationUsingBlock:(id /* block */)arg1;
 - (void)removeAllShmAndWal;
 - (void)runActivity;
 - (void)setConnection:(id)arg1;

@@ -17,16 +17,16 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int domain;
-@property unsigned int error;
-@property BOOL hasDomain;
-@property BOOL hasError;
-@property BOOL hasNewSchema;
-@property BOOL hasOldSchema;
-@property BOOL hasTimestamp;
-@property unsigned int newSchema;
-@property unsigned int oldSchema;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int domain;
+@property (nonatomic) unsigned int error;
+@property (nonatomic) BOOL hasDomain;
+@property (nonatomic) BOOL hasError;
+@property (nonatomic) BOOL hasNewSchema;
+@property (nonatomic) BOOL hasOldSchema;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int newSchema;
+@property (nonatomic) unsigned int oldSchema;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

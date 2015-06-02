@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSHashTable, NSMutableArray, NSMutableSet, NSString, UIFieldEditor, UIGestureRecognizer, UILongPressGestureRecognizer, UIResponder<UITextInput>, UITapGestureRecognizer, UITextChecker, UITextSelectionView, UIView;
-
 @interface UITextInteractionAssistant : NSObject <UIGestureRecognizerDelegate> {
     struct CGPoint { 
         float x; 
@@ -34,25 +32,25 @@
     UIResponder<UITextInput> *_view;
 }
 
-@property struct CGPoint { float x1; float x2; } autoscrollUntransformedExtentPoint;
-@property BOOL autoscrolled;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIGestureRecognizer * doubleTapGesture;
-@property(getter=isExperimentalUIEnabled,readonly) BOOL experimentalUIEnabled;
-@property(readonly) BOOL externalTextInput;
-@property(readonly) UIFieldEditor * fieldEditor;
-@property(readonly) unsigned int hash;
-@property BOOL inGesture;
-@property(retain) UILongPressGestureRecognizer * loupeGesture;
-@property struct CGPoint { float x1; float x2; } loupeGestureEndPoint;
-@property(readonly) UIView * scrollView;
-@property(readonly) UITextSelectionView * selectionView;
-@property(retain,readonly) UITapGestureRecognizer * singleTapGesture;
-@property(retain) UITapGestureRecognizer * singleTapGesture;
-@property(readonly) Class superclass;
-@property(readonly) UIResponder<UITextInput> * textDocument;
-@property(readonly) UIResponder<UITextInput> * view;
+@property (nonatomic) struct CGPoint { float x1; float x2; } autoscrollUntransformedExtentPoint;
+@property (nonatomic) BOOL autoscrolled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIGestureRecognizer *doubleTapGesture;
+@property (getter=isExperimentalUIEnabled, nonatomic, readonly) BOOL experimentalUIEnabled;
+@property (nonatomic, readonly) BOOL externalTextInput;
+@property (nonatomic, readonly) UIFieldEditor *fieldEditor;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL inGesture;
+@property (nonatomic, retain) UILongPressGestureRecognizer *loupeGesture;
+@property (nonatomic) struct CGPoint { float x1; float x2; } loupeGestureEndPoint;
+@property (nonatomic, readonly) UIView *scrollView;
+@property (nonatomic, readonly) UITextSelectionView *selectionView;
+@property (nonatomic, readonly, retain) UITapGestureRecognizer *singleTapGesture;
+@property (nonatomic, retain) UITapGestureRecognizer *singleTapGesture;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIResponder<UITextInput> *textDocument;
+@property (nonatomic, readonly) UIResponder<UITextInput> *view;
 
 - (id)_asText;
 - (id)_scrollable;

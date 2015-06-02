@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@class ATDeviceService, ATIDSService, NSObject<OS_dispatch_queue>, NSString, PSYProgressObserver;
-
 @interface ATDevicePairedSyncManager : NSObject <ATIDSServiceListener, ATMessageLinkObserver, ATSessionObserver, PSYProgressObserverDelegate> {
     ATDeviceService *_deviceService;
     ATIDSService *_idsService;
@@ -12,11 +10,11 @@
     PSYProgressObserver *_syncProgressObserver;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property BOOL initialSyncPhaseCompleted;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)handleDevicePairedNotification;

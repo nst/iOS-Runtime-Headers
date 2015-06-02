@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class <HDHealthDaemon>, <HDQueryServerDelegate>, <NSXPCProxyCreating>, HKSampleType, NSObject<OS_dispatch_queue>, NSString, NSUUID, _HKFilter;
-
 @interface HDQueryServer : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, HKQueryServer> {
     <NSXPCProxyCreating> *_clientProxy;
     <HDHealthDaemon> *_daemon;
@@ -17,23 +15,23 @@
     int _shouldDeactivate;
 }
 
-@property(readonly) <NSXPCProxyCreating> * clientProxy;
-@property(readonly) <HDHealthDaemon> * daemon;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) <HDQueryServerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) _HKFilter * filter;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * queryQueue;
-@property int queryState;
-@property(readonly) NSUUID * queryUUID;
-@property(readonly) HKSampleType * sampleType;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) <NSXPCProxyCreating> *clientProxy;
+@property (nonatomic, readonly) <HDHealthDaemon> *daemon;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) <HDQueryServerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) _HKFilter *filter;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queryQueue;
+@property (nonatomic) int queryState;
+@property (nonatomic, readonly) NSUUID *queryUUID;
+@property (nonatomic, readonly) HKSampleType *sampleType;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_activationTransactionString;
 - (BOOL)_isAuthorizedToReadType:(id)arg1 withRestrictedSourceIdentifier:(id*)arg2;
-- (void)_pauseServerValidate:(BOOL)arg1 withCompletion:(id)arg2;
+- (void)_pauseServerValidate:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (id)_predicateString;
 - (id)_queryStateString;
 - (void)_queue_closeActivationTransactionIfNecessary;
@@ -49,28 +47,28 @@
 - (BOOL)_shouldExecuteWhenProtectedDataIsUnavailable;
 - (BOOL)_shouldListenForUpdates;
 - (BOOL)_shouldStopProcessingQuery;
-- (void)activateServerWithCompletion:(id)arg1;
+- (void)activateServerWithCompletion:(id /* block */)arg1;
 - (id)clientProxy;
 - (id)daemon;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
 - (void)deactivateServer;
-- (void)deactivateServerWithCompletion:(id)arg1;
+- (void)deactivateServerWithCompletion:(id /* block */)arg1;
 - (id)delegate;
 - (id)diagnosticDescription;
 - (id)filter;
 - (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 healthDaemon:(id)arg6;
-- (void)onQueue:(id)arg1;
+- (void)onQueue:(id /* block */)arg1;
 - (void)pauseServer;
-- (void)pauseServerValidateWithCompletion:(id)arg1;
+- (void)pauseServerValidateWithCompletion:(id /* block */)arg1;
 - (id)queryQueue;
 - (int)queryState;
 - (id)queryUUID;
 - (void)resumeServer;
-- (id)sampleAuthorizationFilter;
+- (id /* block */)sampleAuthorizationFilter;
 - (id)sampleType;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
 - (void)samplesOfTypeWereRemoved:(id)arg1;
-- (void)scheduleDatabaseAccessOnQueueWithBlock:(id)arg1;
+- (void)scheduleDatabaseAccessOnQueueWithBlock:(id /* block */)arg1;
 - (void)setQueryQueue:(id)arg1;
 - (void)setQueryState:(int)arg1;
 

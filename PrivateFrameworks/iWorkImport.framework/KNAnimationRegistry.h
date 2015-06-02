@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSDictionary;
-
 @interface KNAnimationRegistry : NSObject {
     NSDictionary *mAlternateEffectIdentifiersForEffectIdentifierAndFilter;
     NSArray *mAnimationInfos;

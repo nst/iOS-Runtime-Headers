@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class <CoreDAVLocalDBTreeInfoProvider>, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSURL;
-
 @interface CoreDAVRecursiveContainerSyncTaskGroup : CoreDAVTaskGroup <CoreDAVDeleteTaskDelegate, CoreDAVMkcolTaskDelegate, CoreDAVPropPatchTaskDelegate, CoreDAVPutTaskDelegate, CoreDAVTaskGroupDelegate> {
     NSArray *_actions;
     NSURL *_addMemberURL;
@@ -28,18 +26,18 @@
     BOOL _useMultiGet;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CoreDAVLocalDBTreeInfoProvider> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSURL * folderURL;
-@property(readonly) NSDictionary * folderURLToChildrenURLOrder;
-@property(readonly) unsigned int hash;
-@property unsigned int multiGetBatchSize;
-@property(retain) NSString * nextCTag;
-@property BOOL preflightCTag;
-@property(readonly) NSString * previousCTag;
-@property(retain) NSString * previousSyncToken;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CoreDAVLocalDBTreeInfoProvider> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSURL *folderURL;
+@property (nonatomic, readonly) NSDictionary *folderURLToChildrenURLOrder;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int multiGetBatchSize;
+@property (nonatomic, retain) NSString *nextCTag;
+@property (nonatomic) BOOL preflightCTag;
+@property (nonatomic, readonly) NSString *previousCTag;
+@property (nonatomic, retain) NSString *previousSyncToken;
+@property (readonly) Class superclass;
 
 - (id)_copyContainerParserMappings;
 - (void)_folderModTask:(id)arg1 parsedPropStats:(id)arg2 error:(id)arg3;

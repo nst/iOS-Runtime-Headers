@@ -9,8 +9,8 @@
     double _time;
 }
 
-@property BOOL hasTime;
-@property double time;
+@property (nonatomic) BOOL hasTime;
+@property (nonatomic) double time;
 
 - (id)_prettyDictionaryRepresentation;
 - (void)copyTo:(id)arg1;

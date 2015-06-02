@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABStarkKnobTransportButton : ABTransportButton {
-}
+@interface ABStarkKnobTransportButton : ABTransportButton
 
 + (id)transportButton;
 

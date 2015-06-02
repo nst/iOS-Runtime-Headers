@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class CAShapeLayer;
+@interface SKUIShapeView : UIView
 
-@interface SKUIShapeView : UIView {
-}
-
-@property(retain,readonly) CAShapeLayer * layer;
+@property (nonatomic, readonly, retain) CAShapeLayer *layer;
 
 + (Class)layerClass;
 

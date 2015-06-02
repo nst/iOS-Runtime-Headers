@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABRecordMerger : NSObject {
-}
+@interface ABRecordMerger : NSObject
 
 + (BOOL)_addMultiValueEntry:(void*)arg1 atIndex:(long)arg2 toMultiValue:(void*)arg3 withProperty:(int)arg4 existingValues:(struct __CFSet { }*)arg5;
 + (void)_addValue:(void*)arg1 withProperty:(int)arg2 toExistingValues:(struct __CFSet { }*)arg3;

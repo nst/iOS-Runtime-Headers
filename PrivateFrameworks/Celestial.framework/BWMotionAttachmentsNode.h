@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSDictionary;
-
 @interface BWMotionAttachmentsNode : BWNode {
     NSDictionary *_optionsDict;
     struct OpaqueFigSampleBufferProcessor { } *_sampleBufferProcessor;

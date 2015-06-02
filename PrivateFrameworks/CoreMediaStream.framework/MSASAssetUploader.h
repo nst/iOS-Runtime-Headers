@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSASAssetUploaderDelegate>, NSMutableArray, NSMutableDictionary, NSMutableSet;
-
 @interface MSASAssetUploader : MSASAssetTransferer {
     NSMutableDictionary *_assetCollectionGUIDToRequestorContext;
     NSMutableDictionary *_assetCollectionsToItemInFlightMap;
@@ -15,15 +13,15 @@
     int _state;
 }
 
-@property(retain) NSMutableDictionary * assetCollectionGUIDToRequestorContext;
-@property(retain) NSMutableDictionary * assetCollectionsToItemInFlightMap;
-@property(retain) NSMutableSet * assetCollectionsWithAuthorizationError;
-@property(retain) NSMutableDictionary * assetToAssetCollectionMap;
-@property <MSASAssetUploaderDelegate> * delegate;
-@property BOOL didEncounterNetworkConditionError;
-@property(retain) NSMutableArray * finishedAssetCollections;
-@property(retain) NSMutableArray * itemsInFlight;
-@property int state;
+@property (nonatomic, retain) NSMutableDictionary *assetCollectionGUIDToRequestorContext;
+@property (nonatomic, retain) NSMutableDictionary *assetCollectionsToItemInFlightMap;
+@property (nonatomic, retain) NSMutableSet *assetCollectionsWithAuthorizationError;
+@property (nonatomic, retain) NSMutableDictionary *assetToAssetCollectionMap;
+@property (nonatomic) <MSASAssetUploaderDelegate> *delegate;
+@property (nonatomic) BOOL didEncounterNetworkConditionError;
+@property (nonatomic, retain) NSMutableArray *finishedAssetCollections;
+@property (nonatomic, retain) NSMutableArray *itemsInFlight;
+@property (nonatomic) int state;
 
 - (void).cxx_destruct;
 - (void)MMCSEngine:(id)arg1 didCreateRequestorContext:(id)arg2 forAssets:(id)arg3;
@@ -44,7 +42,7 @@
 - (void)didFinishPuttingAllAssets;
 - (id)finishedAssetCollections;
 - (id)itemsInFlight;
-- (void)registerAssetCollections:(id)arg1 completionBlock:(id)arg2;
+- (void)registerAssetCollections:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setAssetCollectionGUIDToRequestorContext:(id)arg1;
 - (void)setAssetCollectionsToItemInFlightMap:(id)arg1;
 - (void)setAssetCollectionsWithAuthorizationError:(id)arg1;
@@ -55,15 +53,15 @@
 - (void)setState:(int)arg1;
 - (int)state;
 - (void)unregisterAssetCollections:(id)arg1;
-- (void)unregisterAssetCollections:(id)arg1 completionBlock:(id)arg2;
+- (void)unregisterAssetCollections:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)workQueueCancel;
 - (void)workQueueCancelAssetCollections:(id)arg1;
 - (void)workQueueDidFinishWithItem:(id)arg1 error:(id)arg2;
 - (void)workQueueGoIdle;
-- (void)workQueueRegisterAssetCollections:(id)arg1 index:(unsigned int)arg2 results:(id)arg3 completionBlock:(id)arg4;
-- (void)workQueueRegisterAssets:(id)arg1 index:(unsigned int)arg2 completionBlock:(id)arg3;
+- (void)workQueueRegisterAssetCollections:(id)arg1 index:(unsigned int)arg2 results:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)workQueueRegisterAssets:(id)arg1 index:(unsigned int)arg2 completionBlock:(id /* block */)arg3;
 - (void)workQueueRetryOutstandingActivities;
-- (void)workQueueShutDownCompletionBlock:(id)arg1;
+- (void)workQueueShutDownCompletionBlock:(id /* block */)arg1;
 - (void)workQueueStop;
 - (void)workQueueStopTrackingItem:(id)arg1;
 - (void)workQueueUploadNextBatch;

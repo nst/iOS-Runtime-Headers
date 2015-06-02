@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableDictionary, NSMutableString;
-
 @interface PLBBEurekaEventMsg : PLBasebandMessage {
     NSMutableDictionary *_commonInfo;
     unsigned char _inited;
@@ -13,12 +11,12 @@
     NSMutableString *_sdState;
 }
 
-@property(retain) NSMutableDictionary * commonInfo;
-@property unsigned char inited;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSMutableString * sdAct;
-@property(retain) NSMutableString * sdEvent;
-@property(retain) NSMutableString * sdState;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (nonatomic) unsigned char inited;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (nonatomic, retain) NSMutableString *sdAct;
+@property (nonatomic, retain) NSMutableString *sdEvent;
+@property (nonatomic, retain) NSMutableString *sdState;
 
 + (id)bbEuEvMsgEventNotProcessed;
 + (id)bbEuEvMsgNameBBEurekaMsgLite;

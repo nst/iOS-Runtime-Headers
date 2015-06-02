@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUViewControllerFactory : NSObject {
-}
+@interface SUViewControllerFactory : NSObject
 
 - (id)newComposeReviewViewControllerWithCompositionURL:(id)arg1;
 - (id)newDownloadsViewController;

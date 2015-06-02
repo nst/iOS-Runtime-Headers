@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <WKBrowsingContextHistoryDelegate>, <WKBrowsingContextLoadDelegate>, <WKBrowsingContextPolicyDelegate>, NSArray, NSString, NSURL, WKBackForwardList, WKBrowsingContextHandle, _WKRemoteObjectRegistry;
-
 @interface WKBrowsingContextController : NSObject {
-    struct WeakObjCPtr<id<WKBrowsingContextHistoryDelegate> > { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKBrowsingContextHistoryDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKBrowsingContextHistoryDelegate> > { 
         id m_weakReference; 
     } _historyDelegate;
-    struct WeakObjCPtr<id<WKBrowsingContextLoadDelegate> > { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKBrowsingContextLoadDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKBrowsingContextLoadDelegate> > { 
         id m_weakReference; 
     } _loadDelegate;
     unsigned int _observedRenderingProgressEvents;
@@ -20,7 +18,7 @@
             struct PageLoadStateObserver {} *__first_; 
         } __ptr_; 
     } _pageLoadStateObserver;
-    struct WeakObjCPtr<id<WKBrowsingContextPolicyDelegate> > { 
+    /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKBrowsingContextPolicyDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKBrowsingContextPolicyDelegate> > { 
         id m_weakReference; 
     } _policyDelegate;
     struct RetainPtr<_WKRemoteObjectRegistry> { 
@@ -28,35 +26,35 @@
     } _remoteObjectRegistry;
 }
 
-@property(readonly) struct OpaqueWKPage { }* _pageRef;
-@property(readonly) _WKRemoteObjectRegistry * _remoteObjectRegistry;
-@property(readonly) NSURL * activeURL;
-@property(copy) NSString * applicationNameForUserAgent;
-@property(readonly) WKBackForwardList * backForwardList;
-@property(readonly) BOOL canGoBack;
-@property(readonly) BOOL canGoForward;
-@property(readonly) NSArray * certificateChain;
-@property(readonly) NSURL * committedURL;
-@property(copy) NSString * customUserAgent;
-@property(readonly) double estimatedProgress;
+@property (readonly) struct OpaqueWKPage { }*_pageRef;
+@property (nonatomic, readonly) _WKRemoteObjectRegistry *_remoteObjectRegistry;
+@property (readonly) NSURL *activeURL;
+@property (copy) NSString *applicationNameForUserAgent;
+@property (readonly) WKBackForwardList *backForwardList;
+@property (readonly) BOOL canGoBack;
+@property (readonly) BOOL canGoForward;
+@property (readonly) NSArray *certificateChain;
+@property (readonly) NSURL *committedURL;
+@property (copy) NSString *customUserAgent;
+@property (readonly) double estimatedProgress;
 @property float gapBetweenPages;
-@property(readonly) WKBrowsingContextHandle * handle;
-@property(readonly) BOOL hasOnlySecureContent;
-@property <WKBrowsingContextHistoryDelegate> * historyDelegate;
-@property <WKBrowsingContextLoadDelegate> * loadDelegate;
-@property(getter=isLoading,readonly) BOOL loading;
-@property unsigned int observedRenderingProgressEvents;
-@property(readonly) unsigned int pageCount;
+@property (nonatomic, readonly) WKBrowsingContextHandle *handle;
+@property (readonly) BOOL hasOnlySecureContent;
+@property <WKBrowsingContextHistoryDelegate> *historyDelegate;
+@property <WKBrowsingContextLoadDelegate> *loadDelegate;
+@property (getter=isLoading, readonly) BOOL loading;
+@property (nonatomic) unsigned int observedRenderingProgressEvents;
+@property (readonly) unsigned int pageCount;
 @property float pageLength;
 @property float pageZoom;
 @property BOOL paginationBehavesLikeColumns;
 @property unsigned int paginationMode;
-@property <WKBrowsingContextPolicyDelegate> * policyDelegate;
-@property(readonly) int processIdentifier;
-@property(readonly) NSURL * provisionalURL;
+@property <WKBrowsingContextPolicyDelegate> *policyDelegate;
+@property (nonatomic, readonly) int processIdentifier;
+@property (readonly) NSURL *provisionalURL;
 @property float textZoom;
-@property(readonly) NSString * title;
-@property(readonly) NSURL * unreachableURL;
+@property (readonly) NSString *title;
+@property (readonly) NSURL *unreachableURL;
 
 + (id)_browsingContextControllerForPageRef:(struct OpaqueWKPage { }*)arg1;
 + (id)customSchemes;

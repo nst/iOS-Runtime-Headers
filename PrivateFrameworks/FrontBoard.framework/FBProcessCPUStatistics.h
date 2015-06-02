@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class BSMachSendRight;
-
 @interface FBProcessCPUStatistics : NSObject {
     BSMachSendRight *_taskNamePort;
     struct FBProcessTimes { 
@@ -14,10 +12,10 @@
     } _times;
 }
 
-@property(readonly) double totalElapsedIdleTime;
-@property(readonly) double totalElapsedSystemTime;
-@property(readonly) double totalElapsedTime;
-@property(readonly) double totalElapsedUserTime;
+@property (nonatomic, readonly) double totalElapsedIdleTime;
+@property (nonatomic, readonly) double totalElapsedSystemTime;
+@property (nonatomic, readonly) double totalElapsedTime;
+@property (nonatomic, readonly) double totalElapsedUserTime;
 
 - (double)_elapsedCPUTime;
 - (void)_getApplicationCPUTimesForUser:(double*)arg1 system:(double*)arg2 idle:(double*)arg3;

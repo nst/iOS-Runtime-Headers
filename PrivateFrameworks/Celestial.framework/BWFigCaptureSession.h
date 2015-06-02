@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSString;
-
 @interface BWFigCaptureSession : NSObject <BWGraphStatusDelegate, BWImageQueueSinkNodePreviewTapDelegate, BWNodeFileWriterStatusDelegate, BWNodeRenderDelegate, BWRemoteQueueSinkNodeDelegate, BWSourceNodeErrorDelegate, BWStillImageCaptureStatusDelegate> {
     struct OpaqueFigCaptureSession { } *_captureSession;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)fileWriter:(id)arg1 pausedRecordingForSettingsID:(unsigned long long)arg2;
 - (void)fileWriter:(id)arg1 resumedRecordingForSettingsID:(unsigned long long)arg2;

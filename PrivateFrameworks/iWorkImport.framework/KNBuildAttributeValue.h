@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <NSObject>, NSString, TSDPathSource, TSUColor;
-
 @interface KNBuildAttributeValue : TSPObject <NSCopying> {
     BOOL _boolValue;
     TSUColor *_colorValue;
@@ -19,15 +17,15 @@
     NSString *_stringValue;
 }
 
-@property(readonly) BOOL boolValue;
-@property(readonly) TSUColor * colorValue;
-@property(readonly) double doubleValue;
-@property(readonly) int integerValue;
-@property(readonly) BOOL isEmpty;
-@property(readonly) <NSObject> * objectValue;
-@property(readonly) TSDPathSource * pathSourceValue;
-@property(readonly) NSString * stringValue;
-@property(readonly) unsigned int type;
+@property (nonatomic, readonly) BOOL boolValue;
+@property (nonatomic, readonly) TSUColor *colorValue;
+@property (nonatomic, readonly) double doubleValue;
+@property (nonatomic, readonly) int integerValue;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) <NSObject> *objectValue;
+@property (nonatomic, readonly) TSDPathSource *pathSourceValue;
+@property (nonatomic, readonly) NSString *stringValue;
+@property (nonatomic, readonly) unsigned int type;
 
 + (id)emptyValue;
 + (id)valueWithBool:(BOOL)arg1;

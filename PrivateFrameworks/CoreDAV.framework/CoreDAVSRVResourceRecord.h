@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSNumber, NSString;
-
 @interface CoreDAVSRVResourceRecord : NSObject {
     NSNumber *_port;
     NSNumber *_priority;
@@ -12,11 +10,11 @@
     NSNumber *_weight;
 }
 
-@property(retain) NSNumber * port;
-@property(retain) NSNumber * priority;
-@property(retain) NSString * serviceString;
-@property(retain) NSString * target;
-@property(retain) NSNumber * weight;
+@property (nonatomic, retain) NSNumber *port;
+@property (nonatomic, retain) NSNumber *priority;
+@property (nonatomic, retain) NSString *serviceString;
+@property (nonatomic, retain) NSString *target;
+@property (nonatomic, retain) NSNumber *weight;
 
 - (void)dealloc;
 - (id)description;

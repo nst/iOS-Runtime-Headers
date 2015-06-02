@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSHashTable, NSObject<OS_dispatch_queue>;
-
 @interface DAAccountMonitor : NSObject {
     NSHashTable *_accounts;
     NSObject<OS_dispatch_queue> *_accountsQueue;
 }
 
-@property(retain) NSHashTable * accounts;
-@property(retain) NSObject<OS_dispatch_queue> * accountsQueue;
+@property (nonatomic, retain) NSHashTable *accounts;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *accountsQueue;
 
 + (id)sharedMonitor;
 

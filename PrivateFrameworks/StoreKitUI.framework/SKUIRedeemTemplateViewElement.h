@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIRedeemTemplateViewElement : SKUIViewElement {
     NSString *_initialCode;
 }
 
-@property(readonly) NSString * initialCode;
+@property (nonatomic, readonly) NSString *initialCode;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

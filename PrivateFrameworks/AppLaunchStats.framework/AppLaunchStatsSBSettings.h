@@ -2,26 +2,16 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AppLaunchStatsSaveAndRestore, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSUserDefaults;
-
 @interface AppLaunchStatsSBSettings : NSObject <DuetLoggerProtocol> {
     NSUserDefaults *aplsSBSettingsDefault;
     NSObject<OS_dispatch_queue> *aplsSettingsQueue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id callbackBlock;
-
+    id /* block */ callbackBlock;
     AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
     NSMutableDictionary *settingsBlacklist;
 }
 
 - (void).cxx_destruct;
-- (id)init:(id)arg1;
+- (id)init:(id /* block */)arg1;
 - (bool)isAppDisabledInSettingsList:(id)arg1;
 - (bool)isManagedConfigurationSettingOn;
 - (void)loadSettingsBlacklist;

@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSDate, WDBorder, WDDocument, WDShading, WDStyle;
-
 @interface WDTableProperties : NSObject <NSCopying> {
     WDDocument *mDocument;
-    unsigned int mOriginal : 1;
+    unsigned int mOriginal;
     struct { 
         WDStyle *baseStyle; 
         unsigned short look; 
@@ -79,8 +77,8 @@
         unsigned int editDateOverridden : 1; 
         unsigned int formattingChangeDateOverridden : 1; 
     } mOriginalProperties;
-    unsigned int mResolved : 1;
-    unsigned int mTracked : 1;
+    unsigned int mResolved;
+    unsigned int mTracked;
     struct { 
         WDStyle *baseStyle; 
         unsigned short look; 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface BSBaseXPCServer : NSObject {
     NSMutableSet *_clients;
     BOOL _connectionResumed;
@@ -14,7 +12,7 @@
     BOOL _usesAnonymousConnection;
 }
 
-@property(getter=usesAnonymousConnection) BOOL usesAnonymousConnection;
+@property (getter=usesAnonymousConnection, nonatomic) BOOL usesAnonymousConnection;
 
 - (void)_addClientConnection:(id)arg1;
 - (id)_clients;
@@ -25,7 +23,7 @@
 - (id)_notifyTokenName;
 - (id)_queue_clientForConnection:(id)arg1;
 - (void)_queue_removeClientConnection:(id)arg1;
-- (void)_sendReply:(id)arg1 messagePacker:(id)arg2;
+- (void)_sendReply:(id)arg1 messagePacker:(id /* block */)arg2;
 - (void)dealloc;
 - (id)initWithServiceName:(id)arg1;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;

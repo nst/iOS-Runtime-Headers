@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UITabBarBackgroundView : UIImageView {
-}
+@interface _UITabBarBackgroundView : UIImageView
 
 @end

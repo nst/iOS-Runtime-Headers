@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOStateTimingFeedbackCollection : PBCodable <NSCopying> {
     double _durationInOldState;
     struct { 
@@ -17,11 +15,11 @@
     NSMutableArray *_stateTransitions;
 }
 
-@property double durationInOldState;
-@property BOOL hasDurationInOldState;
-@property BOOL hasSessionID;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property(retain) NSMutableArray * stateTransitions;
+@property (nonatomic) double durationInOldState;
+@property (nonatomic) BOOL hasDurationInOldState;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic, retain) NSMutableArray *stateTransitions;
 
 - (void)addStateTransition:(id)arg1;
 - (void)clearStateTransitions;

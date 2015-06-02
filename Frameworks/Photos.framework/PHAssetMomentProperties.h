@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSData, PHAsset;
-
 @interface PHAssetMomentProperties : NSObject {
     PHAsset *_asset;
     NSData *_reverseLocationData;
     BOOL _reverseLocationDataIsValid;
 }
 
-@property(readonly) PHAsset * asset;
-@property(readonly) NSData * reverseLocationData;
-@property(readonly) BOOL reverseLocationDataIsValid;
+@property (nonatomic, readonly) PHAsset *asset;
+@property (nonatomic, readonly) NSData *reverseLocationData;
+@property (nonatomic, readonly) BOOL reverseLocationDataIsValid;
 
 - (void).cxx_destruct;
 - (id)asset;

@@ -7,8 +7,8 @@
     unsigned int _revisionID;
 }
 
-@property(readonly) unsigned int interfaceID;
-@property(readonly) unsigned int revisionID;
+@property (nonatomic, readonly) unsigned int interfaceID;
+@property (nonatomic, readonly) unsigned int revisionID;
 
 - (id)canonicalResponseForResponse:(id)arg1;
 - (id)initWithInterfaceID:(unsigned int)arg1 revisionID:(unsigned int)arg2;

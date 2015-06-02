@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class GEOMapRegion, NSString;
-
 @interface VKGlobeCameraController : VKScreenCameraController <VKInteractiveCameraController> {
     struct CameraManager { 
         int (**_vptr$CameraManager)(); 
@@ -102,27 +95,27 @@
     BOOL _wasPitched;
 }
 
-@property(readonly) struct { double x1; double x2; double x3; } centerCoordinate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property struct GlobeView { int (**x1)(); }* globeView;
-@property(readonly) unsigned int hash;
-@property(readonly) GEOMapRegion * mapRegion;
-@property(readonly) GEOMapRegion * mapRegionOfInterest;
-@property(readonly) double pitch;
-@property(readonly) double presentationYaw;
-@property(readonly) Class superclass;
-@property(readonly) double yaw;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; } centerCoordinate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) struct GlobeView { int (**x1)(); }*globeView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) GEOMapRegion *mapRegion;
+@property (nonatomic, readonly) GEOMapRegion *mapRegionOfInterest;
+@property (nonatomic, readonly) double pitch;
+@property (nonatomic, readonly) double presentationYaw;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) double yaw;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_centerScreenPoint;
 - (struct Vector2i { int x1; int x2; })_cursorFromScreenPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (void)_rotateAroundTargetWithDuration:(double)arg1 rotations:(double)arg2 completion:(id)arg3;
+- (void)_rotateAroundTargetWithDuration:(double)arg1 rotations:(double)arg2 completion:(id /* block */)arg3;
 - (struct CGPoint { float x1; float x2; })_scaledScreenPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_update3DState;
 - (double)altitude;
-- (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id)arg5;
+- (void)animateToMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 completion:(id /* block */)arg5;
 - (BOOL)canEnter3DMode;
 - (struct { double x1; double x2; double x3; })centerCoordinate;
 - (BOOL)currentZoomLevelAllowsRotation;
@@ -130,7 +123,7 @@
 - (double)durationToAnimateToMapRegion:(id)arg1;
 - (void)enter3DMode;
 - (void)exit3DMode;
-- (void)flyoverTourAnimation:(id)arg1 animateToStart:(BOOL)arg2 labelChanged:(id)arg3 stateChange:(id)arg4;
+- (void)flyoverTourAnimation:(id)arg1 animateToStart:(BOOL)arg2 labelChanged:(id /* block */)arg3 stateChange:(id /* block */)arg4;
 - (struct GlobeView { int (**x1)(); }*)globeView;
 - (id)init;
 - (BOOL)isFlyoverTourStarted;
@@ -140,9 +133,9 @@
 - (id)mapRegionOfInterest;
 - (int)maximumNormalizedZoomLevel;
 - (int)minimumNormalizedZoomLevel;
-- (void)moveTo:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(BOOL)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id)arg8 completion:(id)arg9;
-- (void)moveTo:(struct { double x1; double x2; })arg1 zoom:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
-- (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id)arg5;
+- (void)moveTo:(struct { double x1; double x2; })arg1 height:(double)arg2 useHeight:(BOOL)arg3 zoom:(double)arg4 rotation:(double)arg5 tilt:(double)arg6 duration:(double)arg7 timingCurve:(id /* block */)arg8 completion:(id /* block */)arg9;
+- (void)moveTo:(struct { double x1; double x2; })arg1 zoom:(double)arg2 rotation:(double)arg3 tilt:(double)arg4 duration:(double)arg5 timingCurve:(id /* block */)arg6 completion:(id /* block */)arg7;
+- (void)panWithOffset:(struct CGPoint { float x1; float x2; })arg1 relativeToScreenPoint:(struct CGPoint { float x1; float x2; })arg2 animated:(BOOL)arg3 duration:(double)arg4 completionHandler:(id /* block */)arg5;
 - (void)pauseFlyoverTourAnimation;
 - (double)pitch;
 - (void)pitch:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;
@@ -151,11 +144,11 @@
 - (void)resumeFlyoverTourAnimation;
 - (void)rotate:(double)arg1 atScreenPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)rotateTo:(double)arg1 animated:(BOOL)arg2;
-- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id)arg6 completion:(id)arg7;
+- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id /* block */)arg6 completion:(id /* block */)arg7;
 - (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
 - (void)setGesturing:(BOOL)arg1;
 - (void)setGlobeView:(struct GlobeView { int (**x1)(); }*)arg1;
-- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id)arg5;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)setYaw:(double)arg1 animated:(BOOL)arg2;
 - (void)showSearchResultAnimationAtCoordinate:(struct { double x1; double x2; })arg1 withZoom:(double)arg2;
 - (BOOL)snapMapIfNecessary:(const struct VKPoint { double x1; double x2; double x3; }*)arg1 animated:(BOOL)arg2;
@@ -171,7 +164,7 @@
 - (void)stopPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopRotatingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)stopSearchResultAnimation;
-- (void)tapZoom:(struct CGPoint { float x1; float x2; })arg1 levels:(double)arg2 completionHandler:(id)arg3;
+- (void)tapZoom:(struct CGPoint { float x1; float x2; })arg1 levels:(double)arg2 completionHandler:(id /* block */)arg3;
 - (int)tileSize;
 - (void)tiltTo:(double)arg1 animated:(BOOL)arg2 exaggerate:(BOOL)arg3;
 - (void)updateCameraManager;
@@ -182,7 +175,7 @@
 - (void)updateRotationWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 newValue:(double)arg2;
 - (id)viewportInfo;
 - (double)yaw;
-- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id)arg3;
+- (void)zoom:(double)arg1 withFocusPoint:(struct CGPoint { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
 - (double)zoomForMapRegion:(id)arg1;
 
 @end

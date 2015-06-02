@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSAttributedString;
+@interface CKTextMessagePartChatItem : CKMessagePartChatItem
 
-@interface CKTextMessagePartChatItem : CKMessagePartChatItem {
-}
-
-@property(readonly) BOOL containsHyperlink;
-@property(copy,readonly) NSAttributedString * subject;
-@property(copy,readonly) NSAttributedString * text;
+@property (nonatomic, readonly) BOOL containsHyperlink;
+@property (nonatomic, readonly, copy) NSAttributedString *subject;
+@property (nonatomic, readonly, copy) NSAttributedString *text;
 
 - (Class)balloonViewClass;
 - (id)composition;

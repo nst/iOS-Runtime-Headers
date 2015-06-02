@@ -8,9 +8,9 @@
     int _gestureType;
 }
 
-@property(readonly) int buttonType;
-@property(readonly) int gestureState;
-@property(readonly) int gestureType;
+@property (nonatomic, readonly) int buttonType;
+@property (nonatomic, readonly) int gestureState;
+@property (nonatomic, readonly) int gestureType;
 
 + (unsigned int)_packetEventType;
 

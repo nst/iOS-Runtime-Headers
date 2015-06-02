@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class NSData;
-
 @interface PBDataReader : NSObject {
     const char *_bytes;
     NSData *_data;

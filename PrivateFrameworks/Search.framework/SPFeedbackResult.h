@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString;
-
 @interface SPFeedbackResult : NSObject <NSSecureCoding> {
     unsigned int _domain;
     NSString *_fbr;
     int _flags;
 }
 
-@property unsigned int domain;
-@property(retain) NSString * fbr;
-@property int flags;
-@property(readonly) NSString * parsecString;
+@property (nonatomic) unsigned int domain;
+@property (nonatomic, retain) NSString *fbr;
+@property (nonatomic) int flags;
+@property (readonly) NSString *parsecString;
 
 + (BOOL)supportsSecureCoding;
 

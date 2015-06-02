@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CNContact, NSArray, NSDecimalNumber, NSMutableArray, NSMutableDictionary, NSString, PKPassLibrary, PKPaymentApplication, PKPaymentOptionsDefaults, PKPaymentOptionsRecents, PKPaymentPass, PKPaymentRequest, PKPaymentTransaction, PKShippingMethod;
-
 @interface PKPaymentAuthorizationDataModel : NSObject <PKPaymentValidating> {
     NSArray *_acceptedPasses;
     CNContact *_billingAddress;
@@ -33,43 +27,39 @@
     NSMutableDictionary *_statusForPasses;
     NSDecimalNumber *_transactionAmount;
     NSMutableDictionary *_typeToItemMap;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _updateHandler;
-
+    id /* block */ _updateHandler;
 }
 
-@property(readonly) NSArray * acceptedPasses;
-@property(retain) CNContact * billingAddress;
-@property(retain) CNContact * cachedRecentAddress;
-@property(readonly) NSString * currencyCode;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) PKPaymentOptionsDefaults * defaults;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * hostAppLocalizedName;
-@property(readonly) NSArray * items;
-@property(retain) PKPassLibrary * library;
-@property(readonly) NSString * merchantName;
-@property(retain) PKPaymentPass * pass;
-@property(retain) PKPaymentApplication * paymentApplication;
-@property(retain) PKPaymentRequest * paymentRequest;
-@property(retain) NSArray * paymentSummaryItems;
-@property(retain) PKPaymentTransaction * pendingTransaction;
-@property(readonly) BOOL pinRequired;
-@property(retain) PKPaymentOptionsRecents * recents;
-@property(retain) CNContact * shippingAddress;
-@property(getter=isShippingEditable) BOOL shippingEditable;
-@property(retain) NSString * shippingEditableMessage;
-@property(retain) CNContact * shippingEmail;
-@property(retain) PKShippingMethod * shippingMethod;
-@property(retain) CNContact * shippingName;
-@property(retain) CNContact * shippingPhone;
-@property(retain) NSString * shippingType;
-@property(readonly) Class superclass;
-@property(retain) NSDecimalNumber * transactionAmount;
-@property(copy) id updateHandler;
+@property (nonatomic, readonly) NSArray *acceptedPasses;
+@property (nonatomic, retain) CNContact *billingAddress;
+@property (nonatomic, retain) CNContact *cachedRecentAddress;
+@property (nonatomic, readonly) NSString *currencyCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) PKPaymentOptionsDefaults *defaults;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *hostAppLocalizedName;
+@property (nonatomic, readonly) NSArray *items;
+@property (nonatomic, retain) PKPassLibrary *library;
+@property (nonatomic, readonly) NSString *merchantName;
+@property (nonatomic, retain) PKPaymentPass *pass;
+@property (nonatomic, retain) PKPaymentApplication *paymentApplication;
+@property (nonatomic, retain) PKPaymentRequest *paymentRequest;
+@property (nonatomic, retain) NSArray *paymentSummaryItems;
+@property (nonatomic, retain) PKPaymentTransaction *pendingTransaction;
+@property (nonatomic, readonly) BOOL pinRequired;
+@property (nonatomic, retain) PKPaymentOptionsRecents *recents;
+@property (nonatomic, retain) CNContact *shippingAddress;
+@property (getter=isShippingEditable, nonatomic) BOOL shippingEditable;
+@property (nonatomic, retain) NSString *shippingEditableMessage;
+@property (nonatomic, retain) CNContact *shippingEmail;
+@property (nonatomic, retain) PKShippingMethod *shippingMethod;
+@property (nonatomic, retain) CNContact *shippingName;
+@property (nonatomic, retain) CNContact *shippingPhone;
+@property (nonatomic, retain) NSString *shippingType;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSDecimalNumber *transactionAmount;
+@property (nonatomic, copy) id /* block */ updateHandler;
 
 - (void)_ensureItemForClass:(Class)arg1;
 - (void)_ensureItems;
@@ -124,7 +114,7 @@
 - (void)setShippingType:(id)arg1;
 - (void)setStatus:(int)arg1 forItemWithType:(int)arg2;
 - (void)setTransactionAmount:(id)arg1;
-- (void)setUpdateHandler:(id)arg1;
+- (void)setUpdateHandler:(id /* block */)arg1;
 - (id)shippingAddress;
 - (id)shippingEditableMessage;
 - (id)shippingEmail;
@@ -134,6 +124,6 @@
 - (id)shippingType;
 - (int)statusForPass:(id)arg1;
 - (id)transactionAmount;
-- (id)updateHandler;
+- (id /* block */)updateHandler;
 
 @end

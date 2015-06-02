@@ -2,62 +2,44 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKDMMCS, CKDMMCSItemGroup, NSMutableDictionary;
-
 @interface CKDMMCSItemGroupContext : NSObject <CKDCancelling> {
     CKDMMCS *_MMCS;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     CKDMMCSItemGroup *_itemGroup;
     NSMutableDictionary *_itemsByID;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _startBlock;
-
+    id /* block */ _progressBlock;
+    id /* block */ _startBlock;
 }
 
-@property(retain) CKDMMCS * MMCS;
-@property(copy) id completionBlock;
-@property(retain) CKDMMCSItemGroup * itemGroup;
-@property(retain) NSMutableDictionary * itemsByID;
-@property(copy) id progressBlock;
-@property(copy) id startBlock;
+@property (nonatomic, retain) CKDMMCS *MMCS;
+@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, retain) CKDMMCSItemGroup *itemGroup;
+@property (nonatomic, retain) NSMutableDictionary *itemsByID;
+@property (nonatomic, copy) id /* block */ progressBlock;
+@property (nonatomic, copy) id /* block */ startBlock;
 
 - (void).cxx_destruct;
 - (id)MMCS;
 - (void)_cleanupItems;
 - (BOOL)_setupItemsWithError:(id*)arg1;
 - (void)cancel;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (void)didCompleteRequestWithError:(id)arg1;
 - (void)didGetItemID:(unsigned long long)arg1 signature:(id)arg2 path:(id)arg3 error:(id)arg4;
 - (void)didPutItemID:(unsigned long long)arg1 signature:(id)arg2 receipt:(id)arg3 error:(id)arg4;
 - (void)didPutSectionWithItemID:(unsigned long long)arg1 signature:(id)arg2 receipt:(id)arg3 error:(id)arg4;
-- (id)initWithMMCS:(id)arg1 itemGroup:(id)arg2 progress:(id)arg3 start:(id)arg4 completionHandler:(id)arg5;
+- (id)initWithMMCS:(id)arg1 itemGroup:(id)arg2 progress:(id /* block */)arg3 start:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (id)itemGroup;
 - (id)itemsByID;
-- (id)progressBlock;
-- (void)setCompletionBlock:(id)arg1;
+- (id /* block */)progressBlock;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setItemGroup:(id)arg1;
 - (void)setItemsByID:(id)arg1;
 - (void)setMMCS:(id)arg1;
-- (void)setProgressBlock:(id)arg1;
-- (void)setStartBlock:(id)arg1;
+- (void)setProgressBlock:(id /* block */)arg1;
+- (void)setStartBlock:(id /* block */)arg1;
 - (void)start;
-- (id)startBlock;
+- (id /* block */)startBlock;
 - (void)updateProgressForItemID:(unsigned long long)arg1 state:(int)arg2 progress:(double)arg3 error:(id)arg4;
 
 @end

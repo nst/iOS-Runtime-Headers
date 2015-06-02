@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSData, NSDictionary, NSString;
-
 @interface SKPaymentInternal : NSObject <NSCopying> {
     NSString *_applicationUsername;
     NSString *_partnerIdentifier;

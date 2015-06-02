@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface TCFontDatabaseCacheEntry : NSObject {
     BOOL _bold;
     int _fontClass;
@@ -11,10 +9,10 @@
     NSString *_name;
 }
 
-@property(readonly) BOOL bold;
-@property(readonly) int fontClass;
-@property(readonly) BOOL italic;
-@property(readonly) NSString * name;
+@property (nonatomic, readonly) BOOL bold;
+@property (nonatomic, readonly) int fontClass;
+@property (nonatomic, readonly) BOOL italic;
+@property (nonatomic, readonly) NSString *name;
 
 + (id)newFontDatabaseCacheEntryWithName:(id)arg1 fontClass:(int)arg2 bold:(BOOL)arg3 italic:(BOOL)arg4;
 

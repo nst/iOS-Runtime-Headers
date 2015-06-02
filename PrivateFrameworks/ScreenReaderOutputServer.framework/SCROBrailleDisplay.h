@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class <SCROBrailleDisplayCommandDispatcherProtocol>, <SCROBrailleDisplayDelegate>, <SCROBrailleDriverProtocol>, <SCROIOElementProtocol>, NSData, NSLock, NSMutableArray, NSMutableString, NSString, SCROBrailleEventDispatcher, SCROBrailleLine;
-
 @interface SCROBrailleDisplay : NSObject <SCROBrailleDisplayCommandDispatcherDelegate> {
     BOOL _automaticBrailleTranslationEnabled;
     struct __CFRunLoopTimer { } *_blinkerEventTimer;
@@ -76,15 +74,15 @@
     int _statusSize;
 }
 
-@property BOOL automaticBrailleTranslationEnabled;
-@property(copy,readonly) NSString * debugDescription;
-@property BOOL delegateWantsDisplayCallback;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL inputAllowed;
-@property int inputContractionMode;
-@property BOOL inputEightDot;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL automaticBrailleTranslationEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL delegateWantsDisplayCallback;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL inputAllowed;
+@property (nonatomic) int inputContractionMode;
+@property (nonatomic) BOOL inputEightDot;
+@property (readonly) Class superclass;
 
 + (BOOL)brailleDriverClassIsValid:(Class)arg1;
 + (id)displayWithIOElement:(id)arg1 driverIdentifier:(id)arg2 delegate:(id)arg3;

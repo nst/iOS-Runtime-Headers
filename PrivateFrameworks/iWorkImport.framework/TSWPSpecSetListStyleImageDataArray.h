@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface TSWPSpecSetListStyleImageDataArray : TSWPSpecListStyleImageDataArray {
     NSArray *_listStyleImageDataArray;
     BOOL _unset;

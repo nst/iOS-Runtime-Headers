@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class <PRSSimpleResult>, NSArray, NSMutableDictionary, NSString, PRSDecoder;
-
 @interface PRSSearchCompletionResultSet : NSObject <PRSDecoderDelegate> {
     BOOL _cacheable;
     float _completionScore;
@@ -19,19 +17,19 @@
     NSArray *_results;
 }
 
-@property(getter=isCacheable,readonly) BOOL cacheable;
-@property(readonly) float completionScore;
-@property(readonly) NSString * completionString;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * feedbackQueryIdentifier;
-@property(readonly) unsigned int hash;
-@property double maxAge;
-@property(readonly) NSArray * patternStrings;
-@property(readonly) NSString * prefix;
-@property(readonly) NSString * resultStatusString;
-@property(readonly) NSArray * results;
-@property(readonly) Class superclass;
+@property (getter=isCacheable, nonatomic, readonly) BOOL cacheable;
+@property (nonatomic, readonly) float completionScore;
+@property (nonatomic, readonly) NSString *completionString;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSString *feedbackQueryIdentifier;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double maxAge;
+@property (nonatomic, readonly) NSArray *patternStrings;
+@property (nonatomic, readonly) NSString *prefix;
+@property (nonatomic, readonly) NSString *resultStatusString;
+@property (nonatomic, readonly) NSArray *results;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (Class)classForObjectsAtPropertyPath:(id)arg1 ofObject:(id)arg2 protocol:(id*)arg3;
@@ -40,7 +38,7 @@
 - (id)completionString;
 - (id)convertedValue:(id)arg1 forPropertyPath:(id)arg2 ofObject:(id)arg3;
 - (id)description;
-- (void)enumeratePatternsUsingBlock:(id)arg1;
+- (void)enumeratePatternsUsingBlock:(id /* block */)arg1;
 - (id)feedbackQueryIdentifier;
 - (unsigned int)hash;
 - (id)initWithFactory:(id)arg1 session:(id)arg2 resourceProvider:(id)arg3 prefix:(id)arg4 completionString:(id)arg5 score:(float)arg6 resultStatusString:(id)arg7 feedbackQueryIdentifier:(id)arg8 resultDictionaries:(id)arg9 matchesArray:(id)arg10 error:(id*)arg11;

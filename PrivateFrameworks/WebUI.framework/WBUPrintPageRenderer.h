@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSNumberFormatter, NSString, UIColor, UIFont, UIPrintFormatter, UIWebBrowserView, UIWebPaginationInfo, WebFrame;
-
 @interface WBUPrintPageRenderer : UIPrintPageRenderer <UIPrintInteractionControllerDelegate> {
     NSString *_URLString;
     float _URLWidth;
@@ -28,15 +26,15 @@
     WebFrame *_webFrame;
 }
 
-@property(retain) NSString * URLString;
-@property(retain) UIWebBrowserView * browserView;
-@property(retain) UIPrintFormatter * contentFormatter;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL printFooter;
-@property(readonly) Class superclass;
-@property(retain) WebFrame * webFrame;
+@property (nonatomic, retain) NSString *URLString;
+@property (nonatomic, retain) UIWebBrowserView *browserView;
+@property (nonatomic, retain) UIPrintFormatter *contentFormatter;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL printFooter;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) WebFrame *webFrame;
 
 - (void).cxx_destruct;
 - (id)URLString;

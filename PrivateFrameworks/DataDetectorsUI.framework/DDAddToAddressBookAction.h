@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
  */
 
-@interface DDAddToAddressBookAction : DDAddressAction {
-}
+@interface DDAddToAddressBookAction : DDAddressAction
 
 - (int)interactionType;
 - (id)localizedName;

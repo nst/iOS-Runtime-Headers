@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface CKFetchWebAuthTokenOperation : CKDatabaseOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchWebAuthTokenCompletionBlock;
-
+    id /* block */ _fetchWebAuthTokenCompletionBlock;
     NSString *_webAuthToken;
 }
 
-@property(copy) id fetchWebAuthTokenCompletionBlock;
-@property(copy) NSString * webAuthToken;
+@property (nonatomic, copy) id /* block */ fetchWebAuthTokenCompletionBlock;
+@property (nonatomic, copy) NSString *webAuthToken;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
-- (id)fetchWebAuthTokenCompletionBlock;
+- (id /* block */)fetchWebAuthTokenCompletionBlock;
 - (id)init;
 - (Class)operationInfoClass;
 - (void)performCKOperation;
-- (void)setFetchWebAuthTokenCompletionBlock:(id)arg1;
+- (void)setFetchWebAuthTokenCompletionBlock:(id /* block */)arg1;
 - (void)setWebAuthToken:(id)arg1;
 - (id)webAuthToken;
 

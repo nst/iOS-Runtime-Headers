@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class <CoreDAVTaskGroupDelegate>, NSDictionary, NSMutableDictionary, NSSet, NSString, NSURL;
-
 @interface CalDAVAddDropBoxAttachmentsTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate, CoreDAVTaskGroupDelegate> {
     NSSet *_aceItems;
     NSDictionary *_attachments;
@@ -16,21 +14,21 @@
     int _state;
 }
 
-@property(retain) NSSet * aceItems;
-@property(retain) NSDictionary * attachments;
-@property(retain) NSSet * attendeePrincipalURLs;
-@property BOOL attendeesCanManageDropBox;
-@property(retain) NSDictionary * contentTypes;
-@property(copy,readonly) NSString * debugDescription;
-@property <CoreDAVTaskGroupDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSURL * dropboxURL;
-@property(retain,readonly) NSDictionary * etags;
-@property(readonly) unsigned int hash;
-@property(retain) NSDictionary * putFailureSizes;
-@property(retain) NSMutableDictionary * sentAttachmentURLsToETags;
-@property int state;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSSet *aceItems;
+@property (nonatomic, retain) NSDictionary *attachments;
+@property (nonatomic, retain) NSSet *attendeePrincipalURLs;
+@property (nonatomic) BOOL attendeesCanManageDropBox;
+@property (nonatomic, retain) NSDictionary *contentTypes;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CoreDAVTaskGroupDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSURL *dropboxURL;
+@property (nonatomic, readonly, retain) NSDictionary *etags;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSDictionary *putFailureSizes;
+@property (nonatomic, retain) NSMutableDictionary *sentAttachmentURLsToETags;
+@property (nonatomic) int state;
+@property (readonly) Class superclass;
 
 + (id)dropboxACEItemsForPrincipalURLs:(id)arg1 baseURL:(id)arg2 writable:(BOOL)arg3;
 

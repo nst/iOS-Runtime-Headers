@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSDictionary;
-
 @interface _HKDictionaryEntitlements : _HKEntitlements {
     NSDictionary *_entitlements;
 }

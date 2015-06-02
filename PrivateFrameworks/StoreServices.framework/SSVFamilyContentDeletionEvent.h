@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray;
-
 @interface SSVFamilyContentDeletionEvent : NSObject {
     NSArray *_deletedAccounts;
 }
 
-@property(readonly) NSArray * deletedAccounts;
+@property (nonatomic, readonly) NSArray *deletedAccounts;
 
 + (id)notificationPayloadWithAccountPairs:(id)arg1;
 + (void)postDistributedNotificationWithAccountPairs:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCManagedAppManagerReader : NSObject {
-}
+@interface MCManagedAppManagerReader : NSObject
 
 + (id)attributesByAppID;
 + (id)managedAppIDsWithFlags:(int)arg1;

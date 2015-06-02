@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEOPhotoInfo;
-
 @interface MKMapItemMetadataImageRequest : MKMapItemMetadataRequest {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _imageHandler;
-
+    id /* block */ _imageHandler;
     GEOPhotoInfo *_info;
 }
 
-@property(copy) id imageHandler;
-@property(retain) GEOPhotoInfo * info;
+@property (nonatomic, copy) id /* block */ imageHandler;
+@property (retain) GEOPhotoInfo *info;
 
 + (id)requestWithMapItem:(id)arg1 info:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)handleData:(id)arg1;
 - (void)handleError:(id)arg1;
-- (id)imageHandler;
+- (id /* block */)imageHandler;
 - (id)info;
-- (void)setImageHandler:(id)arg1;
+- (void)setImageHandler:(id /* block */)arg1;
 - (void)setInfo:(id)arg1;
 - (id)url;
 

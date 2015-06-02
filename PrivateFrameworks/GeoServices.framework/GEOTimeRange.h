@@ -13,12 +13,12 @@
     unsigned int _to;
 }
 
-@property BOOL allDay;
-@property unsigned int from;
-@property BOOL hasAllDay;
-@property BOOL hasFrom;
-@property BOOL hasTo;
-@property unsigned int to;
+@property (nonatomic) BOOL allDay;
+@property (nonatomic) unsigned int from;
+@property (nonatomic) BOOL hasAllDay;
+@property (nonatomic) BOOL hasFrom;
+@property (nonatomic) BOOL hasTo;
+@property (nonatomic) unsigned int to;
 
 - (BOOL)allDay;
 - (void)copyTo:(id)arg1;

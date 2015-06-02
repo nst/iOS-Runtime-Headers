@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIActivityIndicatorView;
-
 @interface UIPrintStatusJobTableViewCell : UITableViewCell {
     UIActivityIndicatorView *_activityIndicator;
 }
 
-@property BOOL showActive;
+@property (nonatomic) BOOL showActive;
 
 - (void)dealloc;
 - (id)initWithReuseIdentifier:(id)arg1;

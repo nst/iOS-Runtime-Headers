@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKScoreInternal, NSArray, NSDate, NSDictionary, NSString;
-
 @interface GKLeaderboardInternal : GKInternalRepresentation {
     unsigned short _friendRank;
     unsigned short _friendRankCount;
@@ -20,22 +18,22 @@
     NSString *_title;
 }
 
-@property(retain) NSString * category;
-@property unsigned short friendRank;
-@property unsigned short friendRankCount;
-@property(retain) NSString * groupIdentifier;
-@property(retain) NSDictionary * icons;
-@property(retain) NSString * identifier;
-@property(retain) NSDate * lastSubmittedDate;
-@property(retain) NSString * leaderboardSetIdentifier;
-@property(retain) NSString * localizedTitle;
-@property(readonly) unsigned int maxRange;
-@property unsigned int maxRank;
-@property unsigned int overallRank;
-@property unsigned int overallRankCount;
-@property(retain) GKScoreInternal * playerScore;
-@property(retain) NSArray * scores;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic) unsigned short friendRank;
+@property (nonatomic) unsigned short friendRankCount;
+@property (nonatomic, retain) NSString *groupIdentifier;
+@property (nonatomic, retain) NSDictionary *icons;
+@property (nonatomic, retain) NSString *identifier;
+@property (nonatomic, retain) NSDate *lastSubmittedDate;
+@property (nonatomic, retain) NSString *leaderboardSetIdentifier;
+@property (nonatomic, retain) NSString *localizedTitle;
+@property (nonatomic, readonly) unsigned int maxRange;
+@property (nonatomic) unsigned int maxRank;
+@property (nonatomic) unsigned int overallRank;
+@property (nonatomic) unsigned int overallRankCount;
+@property (nonatomic, retain) GKScoreInternal *playerScore;
+@property (nonatomic, retain) NSArray *scores;
+@property (nonatomic, retain) NSString *title;
 
 + (id)secureCodedPropertyKeys;
 

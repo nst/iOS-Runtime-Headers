@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class <ISStoreURLOperationDelegate>, NSNumber, SSURLBagContext;
-
 @interface ISStoreURLOperation : ISURLOperation {
     NSNumber *_authenticatedDSID;
     BOOL _canSendGUIDParameter;
@@ -16,11 +14,11 @@
     BOOL _useUserSpecificURLBag;
 }
 
-@property(readonly) SSURLBagContext * URLBagContext;
-@property(retain) NSNumber * authenticatedDSID;
+@property (readonly) SSURLBagContext *URLBagContext;
+@property (retain) NSNumber *authenticatedDSID;
 @property BOOL canSendGUIDParameter;
-@property <ISStoreURLOperationDelegate> * delegate;
-@property BOOL ignorePreexistingSecureToken;
+@property <ISStoreURLOperationDelegate> *delegate;
+@property (nonatomic) BOOL ignorePreexistingSecureToken;
 @property BOOL needsAuthentication;
 @property BOOL needsURLBag;
 @property BOOL performsMachineDataActions;

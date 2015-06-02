@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class SSPersistentCache;
-
 @interface SSDatabaseCacheEntry : SSSQLiteEntity {
     SSPersistentCache *_persistentCache;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSString;
-
 @interface TUProxyCall : TUCall <NSSecureCoding> {
     int _callIdentifier;
     NSString *_callerNameFromNetwork;
@@ -17,17 +15,17 @@
     BOOL _voicemail;
 }
 
-@property int callIdentifier;
-@property(copy) NSString * callerNameFromNetwork;
-@property(retain) NSString * conferenceIdentifier;
-@property(getter=isConferenced) BOOL conferenced;
-@property(copy) NSString * destinationID;
-@property(copy) NSString * displayName;
-@property(getter=isOutgoing) BOOL outgoing;
-@property int service;
-@property double startTime;
-@property int status;
-@property(getter=isVoicemail) BOOL voicemail;
+@property (nonatomic) int callIdentifier;
+@property (nonatomic, copy) NSString *callerNameFromNetwork;
+@property (nonatomic, retain) NSString *conferenceIdentifier;
+@property (getter=isConferenced, nonatomic) BOOL conferenced;
+@property (nonatomic, copy) NSString *destinationID;
+@property (nonatomic, copy) NSString *displayName;
+@property (getter=isOutgoing, nonatomic) BOOL outgoing;
+@property (nonatomic) int service;
+@property (nonatomic) double startTime;
+@property (nonatomic) int status;
+@property (getter=isVoicemail, nonatomic) BOOL voicemail;
 
 + (BOOL)supportsSecureCoding;
 

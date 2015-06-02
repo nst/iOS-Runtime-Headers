@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSMutableDictionary;
-
 @interface TIKeyboardLayoutFactory : NSObject {
     NSMutableDictionary *_internalCache;
     void *_layoutsLibraryHandle;
 }
 
-@property(retain) NSMutableDictionary * internalCache;
-@property(readonly) void* layoutsLibraryHandle;
+@property (retain) NSMutableDictionary *internalCache;
+@property (nonatomic, readonly) void*layoutsLibraryHandle;
 
 + (id)layoutsFileName;
 + (id)sharedKeyboardFactory;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSDGLShaderQualifier : NSObject {
     NSString *_name;
     BOOL _needsUpdate;
     int _uniformLocation;
 }
 
-@property(readonly) NSString * name;
-@property(readonly) BOOL needsUpdate;
-@property int uniformLocation;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) BOOL needsUpdate;
+@property (nonatomic) int uniformLocation;
 
 - (void)dealloc;
 - (id)initWithName:(id)arg1;

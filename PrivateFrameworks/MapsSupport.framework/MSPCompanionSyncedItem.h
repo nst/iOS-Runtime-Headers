@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class MSPBookmarkStorage, MSPPinStorage, MSPSearchRequestStorage, NSString, PBUnknownFields;
-
 @interface MSPCompanionSyncedItem : PBCodable <NSCopying, SYObject> {
     MSPBookmarkStorage *_bookmark;
     MSPPinStorage *_pin;
@@ -12,19 +10,19 @@
     PBUnknownFields *_unknownFields;
 }
 
-@property(retain) MSPBookmarkStorage * bookmark;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasBookmark;
-@property(readonly) BOOL hasPin;
-@property(readonly) BOOL hasSearchRequest;
-@property(readonly) BOOL hasSyncId;
-@property(readonly) unsigned int hash;
-@property(retain) MSPPinStorage * pin;
-@property(retain) MSPSearchRequestStorage * searchRequest;
-@property(readonly) Class superclass;
-@property(retain) NSString * syncId;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, retain) MSPBookmarkStorage *bookmark;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasBookmark;
+@property (nonatomic, readonly) BOOL hasPin;
+@property (nonatomic, readonly) BOOL hasSearchRequest;
+@property (nonatomic, readonly) BOOL hasSyncId;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MSPPinStorage *pin;
+@property (nonatomic, retain) MSPSearchRequestStorage *searchRequest;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *syncId;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
 - (id)bookmark;

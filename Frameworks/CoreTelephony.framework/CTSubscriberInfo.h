@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@interface CTSubscriberInfo : NSObject {
-}
+@interface CTSubscriberInfo : NSObject
 
 + (id)subscriber;
 

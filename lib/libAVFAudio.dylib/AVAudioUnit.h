@@ -2,16 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class NSString;
+@interface AVAudioUnit : AVAudioNode
 
-@interface AVAudioUnit : AVAudioNode {
-}
-
-@property(readonly) struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; } audioComponentDescription;
-@property(readonly) struct OpaqueAudioComponentInstance { }* audioUnit;
-@property(readonly) NSString * manufacturerName;
-@property(readonly) NSString * name;
-@property(readonly) unsigned int version;
+@property (nonatomic, readonly) struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; } audioComponentDescription;
+@property (nonatomic, readonly) struct OpaqueAudioComponentInstance { }*audioUnit;
+@property (nonatomic, readonly) NSString *manufacturerName;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) unsigned int version;
 
 - (struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })audioComponentDescription;
 - (struct OpaqueAudioComponentInstance { }*)audioUnit;

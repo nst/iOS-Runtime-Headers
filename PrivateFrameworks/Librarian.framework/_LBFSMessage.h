@@ -8,9 +8,9 @@
     id _val;
 }
 
-@property(retain) id info;
+@property (retain) id info;
 @property int updateType;
-@property(retain) id val;
+@property (retain) id val;
 
 - (void)dealloc;
 - (id)info;

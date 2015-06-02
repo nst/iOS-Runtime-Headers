@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class HSCloudClient, NSObject<HSCloudAvailability>, NSObject<OS_dispatch_queue>;
-
 @interface MPCloudController : NSObject {
     NSObject<HSCloudAvailability> *_cloudAvailabilityController;
     HSCloudClient *_cloudClient;
@@ -16,19 +14,19 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(readonly) BOOL canDefaultMediaLibraryShowCloudContent;
-@property(readonly) BOOL canShowCloudDownloadButtons;
-@property(readonly) BOOL canShowCloudMusic;
-@property(readonly) BOOL canShowCloudVideo;
-@property(readonly) HSCloudClient * cloudClient;
-@property(readonly) BOOL enablingJaliscoGeniusRequiresTerms;
-@property(readonly) BOOL hasCloudLockerAccount;
-@property(readonly) BOOL hasPurchaseHistoryAccount;
-@property(readonly) BOOL isCloudEnabled;
-@property(readonly) BOOL isGeniusEnabled;
-@property(readonly) BOOL isInitialImport;
-@property(readonly) BOOL isUpdateInProgress;
-@property(getter=isJaliscoGeniusEnabled,readonly) BOOL jaliscoGeniusEnabled;
+@property (nonatomic, readonly) BOOL canDefaultMediaLibraryShowCloudContent;
+@property (nonatomic, readonly) BOOL canShowCloudDownloadButtons;
+@property (nonatomic, readonly) BOOL canShowCloudMusic;
+@property (nonatomic, readonly) BOOL canShowCloudVideo;
+@property (nonatomic, readonly) HSCloudClient *cloudClient;
+@property (nonatomic, readonly) BOOL enablingJaliscoGeniusRequiresTerms;
+@property (nonatomic, readonly) BOOL hasCloudLockerAccount;
+@property (nonatomic, readonly) BOOL hasPurchaseHistoryAccount;
+@property (nonatomic, readonly) BOOL isCloudEnabled;
+@property (nonatomic, readonly) BOOL isGeniusEnabled;
+@property (nonatomic, readonly) BOOL isInitialImport;
+@property (nonatomic, readonly) BOOL isUpdateInProgress;
+@property (getter=isJaliscoGeniusEnabled, nonatomic, readonly) BOOL jaliscoGeniusEnabled;
 
 + (BOOL)isMediaApplication;
 + (void)migrateCellularDataPreferencesIfNeeded;
@@ -36,9 +34,9 @@
 
 - (void).cxx_destruct;
 - (void)_initializeUpdateInProgressState;
-- (void)acceptJaliscGeniusTermsAndConditionsVersion:(long long)arg1 withCompletionHandler:(id)arg2;
-- (void)addGeniusPlaylistWithPersistentID:(unsigned long long)arg1 name:(id)arg2 seedItemSagaIDs:(id)arg3 itemSagaIDs:(id)arg4 completionHandler:(id)arg5;
-- (void)addPlaylistWithPersistentID:(unsigned long long)arg1 name:(id)arg2 completionHandler:(id)arg3;
+- (void)acceptJaliscGeniusTermsAndConditionsVersion:(long long)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)addGeniusPlaylistWithPersistentID:(unsigned long long)arg1 name:(id)arg2 seedItemSagaIDs:(id)arg3 itemSagaIDs:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)addPlaylistWithPersistentID:(unsigned long long)arg1 name:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)becomeActive;
 - (void)becomeActiveAndWaitUntilDone:(BOOL)arg1;
 - (BOOL)canDefaultMediaLibraryShowCloudContent;
@@ -62,12 +60,12 @@
 - (BOOL)isInitialImport;
 - (BOOL)isJaliscoGeniusEnabled;
 - (BOOL)isUpdateInProgress;
-- (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
-- (void)loadJaliscoGeniusTermsAndConditionsWithCompletionHandler:(id)arg1;
-- (void)loadUpdateProgressWithCompletionHandler:(id)arg1;
-- (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id)arg2;
+- (void)loadGeniusItemsForSagaID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
+- (void)loadJaliscoGeniusTermsAndConditionsWithCompletionHandler:(id /* block */)arg1;
+- (void)loadUpdateProgressWithCompletionHandler:(id /* block */)arg1;
+- (void)removePlaylistWithSagaID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
 - (void)resignActive;
-- (void)savePlaylist:(id)arg1 completionHandler:(id)arg2;
+- (void)savePlaylist:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setItemProperties:(id)arg1 forPurchaseHistoryID:(unsigned long long)arg2;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;
 - (BOOL)shouldProhibitActionsForCurrentNetworkConditions;

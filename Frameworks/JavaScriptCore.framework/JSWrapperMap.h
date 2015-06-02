@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
  */
 
-@class JSContext, NSMapTable, NSMutableDictionary;
-
 @interface JSWrapperMap : NSObject {
     struct WeakGCMap<id, JSC::JSObject, WTF::PtrHash<id>, WTF::HashTraits<id> > { 
         struct HashMap<id, JSC::Weak<JSC::JSObject>, WTF::PtrHash<id>, WTF::HashTraits<id>, WTF::HashTraits<JSC::Weak<JSC::JSObject> > > { 

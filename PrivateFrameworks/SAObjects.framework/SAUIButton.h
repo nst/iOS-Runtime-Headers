@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString, SAUIImageResource;
+@interface SAUIButton : SAAceView
 
-@interface SAUIButton : SAAceView {
-}
-
-@property(copy) NSArray * commands;
-@property(retain) SAUIImageResource * image;
-@property(copy) NSString * secondaryText;
-@property(copy) NSString * text;
+@property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, retain) SAUIImageResource *image;
+@property (nonatomic, copy) NSString *secondaryText;
+@property (nonatomic, copy) NSString *text;
 
 + (id)button;
 + (id)buttonWithDictionary:(id)arg1 context:(id)arg2;

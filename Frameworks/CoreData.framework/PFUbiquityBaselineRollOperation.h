@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSObject<PFUbiquityBaselineRollOperationDelegate>, PFUbiquityBaselineHeuristics;
-
 @interface PFUbiquityBaselineRollOperation : PFUbiquityBaselineOperation {
     PFUbiquityBaselineHeuristics *_heuristics;
 }
 
-@property NSObject<PFUbiquityBaselineRollOperationDelegate> * delegate;
+@property NSObject<PFUbiquityBaselineRollOperationDelegate> *delegate;
 
 - (void)dealloc;
 - (id)delegate;

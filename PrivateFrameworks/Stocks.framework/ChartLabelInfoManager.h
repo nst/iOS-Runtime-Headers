@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class ChartLabelInfo, NSMutableArray;
-
 @interface ChartLabelInfoManager : NSObject {
     NSMutableArray *_integerLabelInfoArray;
     NSMutableArray *_monthLabelInfoArrays;

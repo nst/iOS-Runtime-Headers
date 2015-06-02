@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSDictionary, NSOperationQueue, NSString, NSURL, NSURLConnection, NSURLRequest;
-
 @interface NSURLConnectionInternal : NSObject <NSURLAuthenticationChallengeSender, NSURLConnectionRequired> {
     NSURLConnection *_connection;
     BOOL _connectionActive;
@@ -15,25 +13,25 @@
     NSURL *_url;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_connectionProperties;
 - (void)_invalidate;
 - (void)_setDelegateQueue:(id)arg1;
 - (id)_timingData;
-- (void)_withActiveConnectionAndDelegate:(id)arg1;
-- (void)_withConnectionAndDelegate:(id)arg1;
-- (void)_withConnectionAndDelegate:(id)arg1 onlyActive:(BOOL)arg2;
+- (void)_withActiveConnectionAndDelegate:(id /* block */)arg1;
+- (void)_withConnectionAndDelegate:(id /* block */)arg1;
+- (void)_withConnectionAndDelegate:(id /* block */)arg1 onlyActive:(BOOL)arg2;
 - (void)_withConnectionDisconnectFromConnection;
 - (void)cancelAuthenticationChallenge:(id)arg1;
 - (void)continueWithoutCredentialForAuthenticationChallenge:(id)arg1;
 - (id)currentRequest;
 - (void)dealloc;
-- (id)initWithInfo:(const struct InternalInit { id x1; id x2; id x3; id x4; BOOL x5; long long x6; }*)arg1;
-- (void)invokeForDelegate:(id)arg1;
+- (id)initWithInfo:(const struct InternalInit { id x1; id x2; BOOL x3; long long x4; }*)arg1;
+- (void)invokeForDelegate:(id /* block */)arg1;
 - (BOOL)isConnectionActive;
 - (id)originalRequest;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIDSRegistrationPhoneNumberValidationFinished : PBCodable <NSCopying> {
     NSString *_guid;
     struct { 
@@ -18,16 +16,16 @@
     unsigned int _validationDuration;
 }
 
-@property(retain) NSString * guid;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasNumberOfSMSSent;
-@property BOOL hasRegistrationError;
-@property BOOL hasTimestamp;
-@property BOOL hasValidationDuration;
-@property unsigned int numberOfSMSSent;
-@property int registrationError;
-@property unsigned long long timestamp;
-@property unsigned int validationDuration;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasNumberOfSMSSent;
+@property (nonatomic) BOOL hasRegistrationError;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasValidationDuration;
+@property (nonatomic) unsigned int numberOfSMSSent;
+@property (nonatomic) int registrationError;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int validationDuration;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

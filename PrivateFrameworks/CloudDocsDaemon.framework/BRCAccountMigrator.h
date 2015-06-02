@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCAccountMigrator : BRCAccountOnlinePerformer {
-}
+@interface BRCAccountMigrator : BRCAccountOnlinePerformer
 
 - (void)perform;
 

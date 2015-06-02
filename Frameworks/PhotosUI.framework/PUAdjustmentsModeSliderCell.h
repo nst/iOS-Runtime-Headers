@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSString, PUAdjustmentsMode, PUAdjustmentsModeBadge, PUPhotoEditLevelSlider, UILabel;
-
 @interface PUAdjustmentsModeSliderCell : UICollectionViewCell <PUPhotoEditLayoutStaticAdaptable> {
     PUAdjustmentsMode *_adjustmentsMode;
     BOOL _enabled;
@@ -20,18 +18,18 @@
     BOOL _toggleable;
 }
 
-@property(retain) PUAdjustmentsMode * adjustmentsMode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(readonly) int layoutOrientation;
-@property(retain) PUPhotoEditLevelSlider * levelSlider;
-@property float sliderShortSideLength;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property int titleLabelPosition;
-@property(getter=isToggleable) BOOL toggleable;
+@property (nonatomic, retain) PUAdjustmentsMode *adjustmentsMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int layoutOrientation;
+@property (nonatomic, retain) PUPhotoEditLevelSlider *levelSlider;
+@property (nonatomic) float sliderShortSideLength;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) int titleLabelPosition;
+@property (getter=isToggleable, nonatomic) BOOL toggleable;
 
 + (float)sliderTopMarginVerticalForTitleLabelPosition:(int)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface OITSUTemporaryDirectory : NSObject {
     BOOL _leak;
     NSString *_path;

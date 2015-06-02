@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSMutableDictionary, NSPersistentStore, NSString;
-
 @interface PFUbiquityPeerRangeCache : NSObject {
     NSMutableDictionary *_allEntityRanges;
     NSMutableDictionary *_cachedRanges;
@@ -14,10 +12,10 @@
     NSMutableDictionary *_translatedGlobalIDs;
 }
 
-@property(readonly) NSString * localPeerID;
-@property(readonly) NSPersistentStore * privateStore;
-@property(readonly) NSString * storeName;
-@property(readonly) NSDictionary * translatedGlobalIDs;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (nonatomic, readonly) NSPersistentStore *privateStore;
+@property (nonatomic, readonly) NSString *storeName;
+@property (nonatomic, readonly) NSDictionary *translatedGlobalIDs;
 
 + (void)initialize;
 + (int)integerFromPrimaryKeyString:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFProtectedSQLiteConnection, NSArray;
-
 @interface _MFLibrarySQLiteConnectionWrapper : NSObject {
     MFProtectedSQLiteConnection *_connection;
     BOOL _invalid;
@@ -12,10 +10,10 @@
     BOOL _writer;
 }
 
-@property(readonly) MFProtectedSQLiteConnection * connection;
-@property BOOL invalid;
-@property(readonly) unsigned int refcount;
-@property(readonly) BOOL writer;
+@property (nonatomic, readonly) MFProtectedSQLiteConnection *connection;
+@property (nonatomic) BOOL invalid;
+@property (nonatomic, readonly) unsigned int refcount;
+@property (nonatomic, readonly) BOOL writer;
 
 + (id)wrapperWithConnection:(id)arg1 forWriting:(BOOL)arg2;
 

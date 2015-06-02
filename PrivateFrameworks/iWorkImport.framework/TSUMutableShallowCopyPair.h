@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUMutableShallowCopyPair : TSUShallowCopyPair {
-}
+@interface TSUMutableShallowCopyPair : TSUShallowCopyPair
 
 - (void)setFirst:(id)arg1;
 - (void)setSecond:(id)arg1;

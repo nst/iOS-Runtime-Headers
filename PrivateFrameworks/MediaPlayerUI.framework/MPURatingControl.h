@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPURatingControlDelegate>, NSMutableArray, UIPanGestureRecognizer, UITapGestureRecognizer;
-
 @interface MPURatingControl : UIControl {
     <MPURatingControlDelegate> *_delegate;
     struct UIEdgeInsets { 
@@ -18,9 +16,9 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property <MPURatingControlDelegate> * delegate;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitTestEdgeInsets;
-@property float rating;
+@property (nonatomic) <MPURatingControlDelegate> *delegate;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitTestEdgeInsets;
+@property (nonatomic) float rating;
 
 + (id)ratingDotImage;
 + (id)ratingStarImage;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
+@interface PLPhotoStreamAlbum : PLManagedAlbum
 
-@interface PLPhotoStreamAlbum : PLManagedAlbum {
-}
-
-@property(retain) NSString * personID;
+@property (nonatomic, retain) NSString *personID;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUColor;
-
 @interface MFPen : NSObject <MFObject> {
     OITSUColor *m_colour;
     int m_penStyle;

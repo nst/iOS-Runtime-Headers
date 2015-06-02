@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKContiguousContainerView, GKTextView, NSArray, NSLayoutConstraint, NSString, UIScrollView, UIView;
-
 @interface GKBaseComposeController : GKLoadableContentViewController <UITextViewDelegate> {
     UIScrollView *_backgroundView;
     NSArray *_composeHeaderFields;
@@ -27,21 +25,21 @@
     float _scrollContentInsetAdjustY;
 }
 
-@property(retain) UIScrollView * backgroundView;
-@property(retain) NSArray * composeHeaderFields;
-@property(retain) NSLayoutConstraint * contentHeightConstraint;
-@property(retain) NSLayoutConstraint * contentLeadingConstraint;
-@property(retain) UIView * contentView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) GKContiguousContainerView * headerFieldContainer;
-@property UIView * intendedFirstResponder;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } lastKnownKeyboardFrame;
-@property(retain) GKTextView * messageField;
-@property(retain) NSLayoutConstraint * messageFieldTrailingConstraint;
-@property float scrollContentInsetAdjustY;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIScrollView *backgroundView;
+@property (nonatomic, retain) NSArray *composeHeaderFields;
+@property (nonatomic, retain) NSLayoutConstraint *contentHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *contentLeadingConstraint;
+@property (nonatomic, retain) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) GKContiguousContainerView *headerFieldContainer;
+@property (nonatomic) UIView *intendedFirstResponder;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } lastKnownKeyboardFrame;
+@property (nonatomic, retain) GKTextView *messageField;
+@property (nonatomic, retain) NSLayoutConstraint *messageFieldTrailingConstraint;
+@property (nonatomic) float scrollContentInsetAdjustY;
+@property (readonly) Class superclass;
 
 - (void)_adjustContentInsetForShowingKeyboard:(BOOL)arg1;
 - (BOOL)_gkWantsCustomRightBarButtonItemInViewService;

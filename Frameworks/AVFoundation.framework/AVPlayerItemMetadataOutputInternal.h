@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, AVWeakReferencingDelegateStorage, NSArray, NSObject<OS_dispatch_queue>;
-
 @interface AVPlayerItemMetadataOutputInternal : NSObject {
     struct __CFDictionary { } *accumulatedMetadataGroups;
     NSObject<OS_dispatch_queue> *accumulationQueue;

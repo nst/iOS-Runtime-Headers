@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMImplementation : DOMObject {
-}
+@interface DOMImplementation : DOMObject
 
 - (id)createCSSStyleSheet:(id)arg1 :(id)arg2;
 - (id)createCSSStyleSheet:(id)arg1 media:(id)arg2;

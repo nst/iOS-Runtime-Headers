@@ -8,9 +8,9 @@
     BOOL _sharpen;
 }
 
-@property int radius;
-@property float radiusScale;
-@property BOOL sharpen;
+@property (nonatomic) int radius;
+@property (nonatomic) float radiusScale;
+@property (nonatomic) BOOL sharpen;
 
 + (id)layerWithBlur:(int)arg1;
 + (id)layerWithSharpen:(int)arg1;

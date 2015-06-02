@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSString;
-
 @interface ABVCardActivityAlertScanner : NSObject {
     unsigned int _position;
     NSString *_string;

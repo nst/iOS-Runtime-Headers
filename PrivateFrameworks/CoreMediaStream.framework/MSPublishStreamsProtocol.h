@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray;
-
 @interface MSPublishStreamsProtocol : MSStreamsProtocol {
     struct __MSPSPCUCContext { 
         struct __MSSPCContext { 

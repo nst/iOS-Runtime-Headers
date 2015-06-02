@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPCommentContent, CKDPCommentedOnId, NSString;
-
 @interface CKDPPostCommentRequest : PBRequest <NSCopying> {
     CKDPCommentContent *_commentContent;
     CKDPCommentedOnId *_identifier;
     NSString *_path;
 }
 
-@property(retain) CKDPCommentContent * commentContent;
-@property(readonly) BOOL hasCommentContent;
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasPath;
-@property(retain) CKDPCommentedOnId * identifier;
-@property(retain) NSString * path;
+@property (nonatomic, retain) CKDPCommentContent *commentContent;
+@property (nonatomic, readonly) BOOL hasCommentContent;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) BOOL hasPath;
+@property (nonatomic, retain) CKDPCommentedOnId *identifier;
+@property (nonatomic, retain) NSString *path;
 
 + (id)options;
 

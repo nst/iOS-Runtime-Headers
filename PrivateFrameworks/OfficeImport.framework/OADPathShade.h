@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADRelativeRect;
-
 @interface OADPathShade : OADShade {
     OADRelativeRect *mFillToRect;
     BOOL mIsFillToRectOverridden;

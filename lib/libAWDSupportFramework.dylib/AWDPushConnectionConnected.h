@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDPushConnectionConnected : PBCodable <NSCopying> {
     unsigned int _connectDuration;
     unsigned int _connectionType;
@@ -20,18 +18,18 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int connectDuration;
-@property unsigned int connectionType;
-@property unsigned int dualChannelState;
-@property(retain) NSString * guid;
-@property BOOL hasConnectDuration;
-@property BOOL hasConnectionType;
-@property BOOL hasDualChannelState;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasLinkQuality;
-@property BOOL hasTimestamp;
-@property int linkQuality;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int connectDuration;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) unsigned int dualChannelState;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasConnectDuration;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasDualChannelState;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasLinkQuality;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) int linkQuality;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)connectDuration;
 - (unsigned int)connectionType;

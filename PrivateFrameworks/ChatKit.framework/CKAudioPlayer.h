@@ -2,42 +2,32 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CKAudioPlayerDelegate>, AVAudioPlayer, CADisplayLink, CKMediaObject, NSString;
-
 @interface CKAudioPlayer : NSObject <AVAudioPlayerDelegate> {
     AVAudioPlayer *_audioPlayer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     <CKAudioPlayerDelegate> *_delegate;
     CADisplayLink *_displayLink;
     CKMediaObject *_mediaObject;
     double _prevCurrentTime;
 }
 
-@property(retain) AVAudioPlayer * audioPlayer;
-@property id block;
-@property(readonly) double currentTime;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKAudioPlayerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) CADisplayLink * displayLink;
-@property(readonly) double duration;
-@property(readonly) unsigned int hash;
-@property(retain) CKMediaObject * mediaObject;
-@property(getter=isPlaying,readonly) BOOL playing;
-@property double prevCurrentTime;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) AVAudioPlayer *audioPlayer;
+@property (nonatomic) id /* block */ block;
+@property (nonatomic, readonly) double currentTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKAudioPlayerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CADisplayLink *displayLink;
+@property (nonatomic, readonly) double duration;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CKMediaObject *mediaObject;
+@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
+@property (nonatomic) double prevCurrentTime;
+@property (readonly) Class superclass;
 
 - (id)audioPlayer;
 - (void)audioPlayerDidFinishPlaying:(id)arg1 successfully:(BOOL)arg2;
-- (id)block;
+- (id /* block */)block;
 - (double)currentTime;
 - (void)dealloc;
 - (id)delegate;
@@ -50,10 +40,10 @@
 - (id)mediaObject;
 - (void)pause;
 - (void)play;
-- (void)playWithCompletionBlock:(id)arg1;
+- (void)playWithCompletionBlock:(id /* block */)arg1;
 - (double)prevCurrentTime;
 - (void)setAudioPlayer:(id)arg1;
-- (void)setBlock:(id)arg1;
+- (void)setBlock:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayLink:(id)arg1;
 - (void)setMediaObject:(id)arg1;

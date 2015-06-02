@@ -2,24 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDataModel.framework/CoreDuetDataModel
  */
 
-@class NSDate, NSNumber, NSString;
+@interface CDDMPoolNameMapper : NSManagedObject
 
-@interface CDDMPoolNameMapper : NSManagedObject {
-}
-
-@property(retain) NSNumber * anonymizedBeacon;
-@property(retain) NSNumber * anonymizedLocation;
-@property(retain) NSNumber * clientId;
-@property(retain) NSDate * creationDate;
-@property(retain) NSNumber * integerId;
-@property(retain) NSNumber * localDaysSinceSunday;
-@property(retain) NSNumber * localTime;
-@property(retain) NSNumber * localTimeQuarterHourSlot;
-@property(retain) NSNumber * maxFraction;
-@property(retain) NSString * name;
-@property(retain) NSNumber * networkQuality;
-@property(retain) NSNumber * parentPoolIntegerId;
-@property(retain) NSNumber * type;
-@property(retain) NSNumber * userId;
+@property (nonatomic, retain) NSNumber *anonymizedBeacon;
+@property (nonatomic, retain) NSNumber *anonymizedLocation;
+@property (nonatomic, retain) NSNumber *clientId;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSNumber *integerId;
+@property (nonatomic, retain) NSNumber *localDaysSinceSunday;
+@property (nonatomic, retain) NSNumber *localTime;
+@property (nonatomic, retain) NSNumber *localTimeQuarterHourSlot;
+@property (nonatomic, retain) NSNumber *maxFraction;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *networkQuality;
+@property (nonatomic, retain) NSNumber *parentPoolIntegerId;
+@property (nonatomic, retain) NSNumber *type;
+@property (nonatomic, retain) NSNumber *userId;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSArray, NSNumber, NSString;
-
 @interface GKLocalPlayerInternal : GKFriendPlayerInternal {
     NSString *_accountName;
     NSArray *_emailAddresses;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSData, PHAsset;
-
 @interface PHAssetEmbeddedThumbnailProperties : NSObject {
     PHAsset *_asset;
     short _embeddedThumbnailHeight;
@@ -12,13 +10,13 @@
     short _embeddedThumbnailWidth;
 }
 
-@property(readonly) PHAsset * asset;
-@property(readonly) NSData * embeddedThumbnailData;
-@property(readonly) short embeddedThumbnailHeight;
-@property(readonly) int embeddedThumbnailLength;
-@property(readonly) int embeddedThumbnailOffset;
-@property(readonly) short embeddedThumbnailWidth;
-@property(readonly) BOOL hasEmbeddedThumbnail;
+@property (nonatomic, readonly) PHAsset *asset;
+@property (nonatomic, readonly) NSData *embeddedThumbnailData;
+@property (nonatomic, readonly) short embeddedThumbnailHeight;
+@property (nonatomic, readonly) int embeddedThumbnailLength;
+@property (nonatomic, readonly) int embeddedThumbnailOffset;
+@property (nonatomic, readonly) short embeddedThumbnailWidth;
+@property (nonatomic, readonly) BOOL hasEmbeddedThumbnail;
 
 - (void).cxx_destruct;
 - (id)asset;

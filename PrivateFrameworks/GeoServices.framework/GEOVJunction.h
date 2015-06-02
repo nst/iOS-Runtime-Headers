@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOVJunction : PBCodable <NSCopying> {
     NSMutableArray *_connectingRoads;
     NSMutableArray *_laneConnections;
 }
 
-@property(retain) NSMutableArray * connectingRoads;
-@property(retain) NSMutableArray * laneConnections;
+@property (nonatomic, retain) NSMutableArray *connectingRoads;
+@property (nonatomic, retain) NSMutableArray *laneConnections;
 
 - (void)addConnectingRoad:(id)arg1;
 - (void)addLaneConnections:(id)arg1;

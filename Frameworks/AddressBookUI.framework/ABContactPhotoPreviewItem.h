@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSString, NSURL;
-
 @interface ABContactPhotoPreviewItem : NSObject <QLPreviewItem> {
     NSString *_previewItemTitle;
     NSURL *_previewItemURL;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * previewItemTitle;
-@property(retain) NSURL * previewItemURL;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) NSString *previewItemTitle;
+@property (retain) NSURL *previewItemURL;
+@property (readonly) Class superclass;
 
 - (id)previewItemTitle;
 - (id)previewItemURL;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKReminderShowMoreEditItem : EKReminderChangeVisibilityEditItem {
-}
+@interface EKReminderShowMoreEditItem : EKReminderChangeVisibilityEditItem
 
 - (int)visibilityToCommit;
 

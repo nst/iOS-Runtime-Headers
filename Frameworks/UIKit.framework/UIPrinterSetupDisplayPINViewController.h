@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class PKPrinter;
-
 @interface UIPrinterSetupDisplayPINViewController : UIViewController {
     PKPrinter *_printer;
 }
 
-@property(retain) PKPrinter * printer;
+@property (nonatomic, retain) PKPrinter *printer;
 
 - (void)dealloc;
 - (void)enterPIN;

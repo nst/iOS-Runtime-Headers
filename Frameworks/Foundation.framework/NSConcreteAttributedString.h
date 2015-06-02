@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSRLEArray, NSString;
-
 @interface NSConcreteAttributedString : NSAttributedString {
     NSRLEArray *attributes;
     NSString *string;

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray, NSString;
-
 @interface CKDPPulseResponse : PBCodable <NSCopying> {
     NSString *_currentEtag;
     NSMutableArray *_userDatas;
 }
 
-@property(retain) NSString * currentEtag;
-@property(readonly) BOOL hasCurrentEtag;
-@property(retain) NSMutableArray * userDatas;
+@property (nonatomic, retain) NSString *currentEtag;
+@property (nonatomic, readonly) BOOL hasCurrentEtag;
+@property (nonatomic, retain) NSMutableArray *userDatas;
 
 - (void).cxx_destruct;
 - (void)addUserData:(id)arg1;

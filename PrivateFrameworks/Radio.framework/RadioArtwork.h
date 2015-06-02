@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSURL;
-
 @interface RadioArtwork : NSObject <NSCopying> {
     NSURL *_URL;
     struct CGSize { 
@@ -12,9 +10,9 @@
     } _pixelSize;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) struct CGSize { float x1; float x2; } pixelSize;
-@property(readonly) struct CGSize { float x1; float x2; } pointSize;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } pixelSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } pointSize;
 
 - (void).cxx_destruct;
 - (id)URL;

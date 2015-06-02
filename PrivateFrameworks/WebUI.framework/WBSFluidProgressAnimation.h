@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class CAMediaTimingFunction;
-
 @interface WBSFluidProgressAnimation : NSObject {
     double _animationDuration;
     float _destinationPosition;
@@ -11,10 +9,10 @@
     CAMediaTimingFunction *_timingFunction;
 }
 
-@property double animationDuration;
-@property float destinationPosition;
-@property float initialPosition;
-@property(retain) CAMediaTimingFunction * timingFunction;
+@property (nonatomic) double animationDuration;
+@property (nonatomic) float destinationPosition;
+@property (nonatomic) float initialPosition;
+@property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 - (void).cxx_destruct;
 - (double)animationDuration;

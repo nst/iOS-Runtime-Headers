@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@interface IDSSocketPairSavedReceipt : IDSSocketPairDataMessage {
-}
+@interface IDSSocketPairSavedReceipt : IDSSocketPairDataMessage
 
 - (unsigned char)command;
 

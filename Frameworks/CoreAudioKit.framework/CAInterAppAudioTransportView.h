@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CAUITransportButton, NSTimer, UIColor, UIFont, UILabel;
-
 @interface CAInterAppAudioTransportView : UIView {
     BOOL _connected;
     UIFont *_currentTimeLabelFont;
@@ -28,16 +21,16 @@
     CAUITransportButton *rewindButton;
 }
 
-@property(getter=isConnected,readonly) BOOL connected;
-@property(retain) UIFont * currentTimeLabelFont;
-@property(getter=isEnabled) BOOL enabled;
-@property(retain) UIColor * labelColor;
-@property(retain) UIColor * pauseButtonColor;
-@property(retain) UIColor * playButtonColor;
-@property(getter=isPlaying,readonly) BOOL playing;
-@property(retain) UIColor * recordButtonColor;
-@property(getter=isRecording,readonly) BOOL recording;
-@property(retain) UIColor * rewindButtonColor;
+@property (getter=isConnected, nonatomic, readonly) BOOL connected;
+@property (nonatomic, retain) UIFont *currentTimeLabelFont;
+@property (getter=isEnabled) BOOL enabled;
+@property (nonatomic, retain) UIColor *labelColor;
+@property (nonatomic, retain) UIColor *pauseButtonColor;
+@property (nonatomic, retain) UIColor *playButtonColor;
+@property (getter=isPlaying, nonatomic, readonly) BOOL playing;
+@property (nonatomic, retain) UIColor *recordButtonColor;
+@property (getter=isRecording, nonatomic, readonly) BOOL recording;
+@property (nonatomic, retain) UIColor *rewindButtonColor;
 
 - (void)appHasGoneForeground;
 - (void)appHasGoneInBackground;

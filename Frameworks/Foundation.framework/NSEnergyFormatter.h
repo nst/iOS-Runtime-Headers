@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSNumberFormatter;
-
 @interface NSEnergyFormatter : NSFormatter {
     void *_formatter;
     BOOL _isForFoodEnergyUse;
-    void *_reserved[2];
+    void *_reserved;
 }
 
-@property(getter=isForFoodEnergyUse) BOOL forFoodEnergyUse;
-@property(copy) NSNumberFormatter * numberFormatter;
+@property (getter=isForFoodEnergyUse) BOOL forFoodEnergyUse;
+@property (copy) NSNumberFormatter *numberFormatter;
 @property int unitStyle;
 
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;

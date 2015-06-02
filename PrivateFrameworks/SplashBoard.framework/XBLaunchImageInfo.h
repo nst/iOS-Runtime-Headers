@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@class NSString, UIImage;
-
 @interface XBLaunchImageInfo : NSObject <BSXPCCoding> {
     UIImage *_image;
     BOOL _isDownscaled;
@@ -18,18 +16,18 @@
     } _size;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property BOOL isDownscaled;
-@property BOOL isOpaque;
-@property BOOL isSnapshot;
-@property int orientation;
-@property(retain) NSString * path;
-@property float scale;
-@property struct CGSize { float x1; float x2; } size;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) BOOL isDownscaled;
+@property (nonatomic) BOOL isOpaque;
+@property (nonatomic) BOOL isSnapshot;
+@property (nonatomic) int orientation;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic) float scale;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)description;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSDictionary;
-
 @interface CAMHardwareLockIndicatorView : UIView {
     NSDictionary *__indicatorTextAttributes;
     BOOL _exposureLocked;
     BOOL _focusLocked;
 }
 
-@property(readonly) NSDictionary * _indicatorTextAttributes;
-@property(getter=isExposureLocked) BOOL exposureLocked;
-@property(getter=isFocusLocked) BOOL focusLocked;
+@property (nonatomic, readonly) NSDictionary *_indicatorTextAttributes;
+@property (getter=isExposureLocked, nonatomic) BOOL exposureLocked;
+@property (getter=isFocusLocked, nonatomic) BOOL focusLocked;
 
 - (void).cxx_destruct;
 - (void)_commonCAMHardwareLockIndicatorViewInitialization;

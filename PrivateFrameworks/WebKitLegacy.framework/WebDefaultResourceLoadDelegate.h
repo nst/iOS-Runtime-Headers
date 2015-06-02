@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebDefaultResourceLoadDelegate : NSObject {
-}
+@interface WebDefaultResourceLoadDelegate : NSObject
 
 + (id)sharedResourceLoadDelegate;
 

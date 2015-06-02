@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartSeriesTypeArea : TSCHChartSeriesType {
-}
+@interface TSCHChartSeriesTypeArea : TSCHChartSeriesType
 
 - (id)elementBuilder;
 - (unsigned int)filterChartLabelPosition:(unsigned int)arg1;

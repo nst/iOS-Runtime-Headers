@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UIImageView;
-
 @interface CAMFlashButton : CAMExpandableMenuButton {
     UIImageView *__glyphView;
     UIImageView *__warningIndicatorView;
@@ -11,11 +9,11 @@
     BOOL _unavailable;
 }
 
-@property(readonly) UIImageView * _glyphView;
-@property(readonly) UIImageView * _warningIndicatorView;
-@property BOOL allowsAutomaticFlash;
-@property int flashMode;
-@property(getter=isUnavailable) BOOL unavailable;
+@property (nonatomic, readonly) UIImageView *_glyphView;
+@property (nonatomic, readonly) UIImageView *_warningIndicatorView;
+@property (nonatomic) BOOL allowsAutomaticFlash;
+@property (nonatomic) int flashMode;
+@property (getter=isUnavailable, nonatomic) BOOL unavailable;
 
 - (void).cxx_destruct;
 - (void)_commonCAMFlashButtonInitialization;

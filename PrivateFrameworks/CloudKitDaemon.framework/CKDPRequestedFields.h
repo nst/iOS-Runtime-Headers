@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPRequestedFields : PBCodable <NSCopying> {
     NSMutableArray *_fields;
 }
 
-@property(retain) NSMutableArray * fields;
+@property (nonatomic, retain) NSMutableArray *fields;
 
 - (void).cxx_destruct;
 - (void)addFields:(id)arg1;

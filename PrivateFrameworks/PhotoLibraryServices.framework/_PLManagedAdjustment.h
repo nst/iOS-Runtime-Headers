@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface _PLManagedAdjustment : PLManagedObject {
-}
+@interface _PLManagedAdjustment : PLManagedObject
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSSMutablePropertySet;
-
 @interface TSSPropertySetChangeDetails : NSObject {
     TSSMutablePropertySet *mChangedProperties;
 }

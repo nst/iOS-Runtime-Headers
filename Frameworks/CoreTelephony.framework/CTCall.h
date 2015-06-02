@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@class NSString;
-
 @interface CTCall : NSObject {
     NSString *_callID;
     NSString *_callState;
 }
 
-@property(copy) NSString * callID;
-@property(copy) NSString * callState;
+@property (nonatomic, copy) NSString *callID;
+@property (nonatomic, copy) NSString *callState;
 
 + (id)callForCTCallRef:(struct __CTCall { }*)arg1;
 

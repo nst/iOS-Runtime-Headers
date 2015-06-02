@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIView;
-
 @interface PUPhotosSharingProgressOverlay : UIView {
     BOOL _isShowing;
     UIView *_progressView;
 }
 
-@property(retain) UIView * progressView;
+@property (nonatomic, retain) UIView *progressView;
 
 - (void).cxx_destruct;
 - (id)_grayScaleImageFromImage:(id)arg1;

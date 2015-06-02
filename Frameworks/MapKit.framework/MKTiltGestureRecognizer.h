@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UITouch;
-
 @interface MKTiltGestureRecognizer : UIPanGestureRecognizer {
     float _initialDistance;
     struct CGPoint { 

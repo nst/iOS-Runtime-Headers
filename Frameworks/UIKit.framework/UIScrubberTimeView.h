@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor;
-
 @interface UIScrubberTimeView : UIView {
-    unsigned int _align : 2;
+    unsigned int _align;
     NSString *_time;
     UIColor *_timeColor;
     UIColor *_timeShadowColor;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPResponseOperationResultError;
-
 @interface CKDPResponseOperationResult : PBCodable <NSCopying> {
     int _code;
     CKDPResponseOperationResultError *_error;
@@ -12,10 +10,10 @@
     } _has;
 }
 
-@property int code;
-@property(retain) CKDPResponseOperationResultError * error;
-@property BOOL hasCode;
-@property(readonly) BOOL hasError;
+@property (nonatomic) int code;
+@property (nonatomic, retain) CKDPResponseOperationResultError *error;
+@property (nonatomic) BOOL hasCode;
+@property (nonatomic, readonly) BOOL hasError;
 
 - (void).cxx_destruct;
 - (int)code;

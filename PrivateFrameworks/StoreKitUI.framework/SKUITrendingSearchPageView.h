@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUITrendingSearchPageViewDelegate>, SKUITrendingSearchPage, SKUITrendingSearchView;
-
 @interface SKUITrendingSearchPageView : UIView {
     <SKUITrendingSearchPageViewDelegate> *_delegate;
     SKUITrendingSearchPage *_page;
     SKUITrendingSearchView *_trendingSearchView;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property <SKUITrendingSearchPageViewDelegate> * delegate;
-@property(retain) SKUITrendingSearchPage * page;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) <SKUITrendingSearchPageViewDelegate> *delegate;
+@property (nonatomic, retain) SKUITrendingSearchPage *page;
 
 - (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;

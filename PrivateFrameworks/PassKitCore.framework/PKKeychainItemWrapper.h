@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSMutableDictionary;
-
 @interface PKKeychainItemWrapper : NSObject {
     NSMutableDictionary *genericPasswordQuery;
     NSMutableDictionary *keychainItemData;
 }
 
-@property(retain) NSMutableDictionary * genericPasswordQuery;
-@property(retain) NSMutableDictionary * keychainItemData;
+@property (nonatomic, retain) NSMutableDictionary *genericPasswordQuery;
+@property (nonatomic, retain) NSMutableDictionary *keychainItemData;
 
 - (void)dealloc;
 - (id)dictionaryToSecItemFormat:(id)arg1;

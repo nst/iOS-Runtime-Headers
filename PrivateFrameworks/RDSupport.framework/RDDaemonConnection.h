@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RDSupport.framework/RDSupport
  */
 
-@class NSString, NSXPCConnection;
-
 @interface RDDaemonConnection : NSObject {
     NSString *_lastAppLaunchBundleID;
     NSXPCConnection *_xpcConnection;

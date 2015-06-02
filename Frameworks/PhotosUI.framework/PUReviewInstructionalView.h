@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UILabel;
-
 @interface PUReviewInstructionalView : UIView {
     UILabel *__instructionalLabel;
 }
 
-@property(readonly) UILabel * _instructionalLabel;
+@property (nonatomic, readonly) UILabel *_instructionalLabel;
 
 - (void).cxx_destruct;
 - (void)_commonPUReviewInstructionalViewInitialization;

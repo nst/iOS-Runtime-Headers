@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicNavigationControllerDelegate>;
+@interface MusicNavigationController : UINavigationController
 
-@interface MusicNavigationController : UINavigationController {
-}
-
-@property <MusicNavigationControllerDelegate> * delegate;
+@property (nonatomic) <MusicNavigationControllerDelegate> *delegate;
 
 - (BOOL)music_shouldPresentModallyInMoreList;
 - (void)traitCollectionDidChange:(id)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDPMescalSessionInfoRequest : PBRequest <NSCopying> {
     NSData *_requestData;
 }
 
-@property(readonly) BOOL hasRequestData;
-@property(retain) NSData * requestData;
+@property (nonatomic, readonly) BOOL hasRequestData;
+@property (nonatomic, retain) NSData *requestData;
 
 + (id)options;
 

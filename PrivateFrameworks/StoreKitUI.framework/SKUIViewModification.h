@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, SKUIViewReusePool;
-
 @interface SKUIViewModification : NSObject {
     SKUIViewReusePool *_viewPool;
     NSMutableArray *_views;
 }
 
-@property(readonly) NSArray * views;
+@property (nonatomic, readonly) NSArray *views;
 
 - (void).cxx_destruct;
 - (id)_addImageViewWithReuseIdentifier:(id)arg1 viewElement:(id)arg2 context:(id)arg3;

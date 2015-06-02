@@ -2,33 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableArray;
-
 @interface CKDModifySharesOperation : CKDDatabaseOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deleteCompletionBlock;
-
+    id /* block */ _deleteCompletionBlock;
     BOOL _haveOutstandingMetadatas;
     int _numShareSaveAttempts;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _saveCompletionBlock;
-
+    id /* block */ _saveCompletionBlock;
     NSMutableArray *_shareMetadatas;
 }
 
-@property(copy) id deleteCompletionBlock;
-@property BOOL haveOutstandingMetadatas;
-@property int numShareSaveAttempts;
-@property(copy) id saveCompletionBlock;
-@property(retain) NSMutableArray * shareMetadatas;
+@property (nonatomic, copy) id /* block */ deleteCompletionBlock;
+@property (nonatomic) BOOL haveOutstandingMetadatas;
+@property (nonatomic) int numShareSaveAttempts;
+@property (nonatomic, copy) id /* block */ saveCompletionBlock;
+@property (nonatomic, retain) NSMutableArray *shareMetadatas;
 
 - (void).cxx_destruct;
 - (void)_addOwnerToShares;
@@ -55,18 +41,18 @@
 - (BOOL)_serializePCSDataForShare:(id)arg1 error:(id*)arg2;
 - (BOOL)_serializePublicPCSForShareInfo:(id)arg1 error:(id*)arg2;
 - (BOOL)_updateSharePublicPCS:(id)arg1 error:(id*)arg2;
-- (id)deleteCompletionBlock;
+- (id /* block */)deleteCompletionBlock;
 - (BOOL)haveOutstandingMetadatas;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (BOOL)makeStateTransition;
 - (id)nameForState:(unsigned int)arg1;
 - (int)numShareSaveAttempts;
-- (id)saveCompletionBlock;
-- (void)setDeleteCompletionBlock:(id)arg1;
+- (id /* block */)saveCompletionBlock;
+- (void)setDeleteCompletionBlock:(id /* block */)arg1;
 - (void)setHaveOutstandingMetadatas:(BOOL)arg1;
 - (void)setNumShareSaveAttempts:(int)arg1;
-- (void)setSaveCompletionBlock:(id)arg1;
+- (void)setSaveCompletionBlock:(id /* block */)arg1;
 - (void)setShareMetadatas:(id)arg1;
 - (id)shareMetadatas;
 

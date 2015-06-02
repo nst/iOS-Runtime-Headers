@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BRCAccountSession, BRCClientRanksPersistedState, BRCXPCClient, BRNotificationQueue, NSHashTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BRCNotificationManager : NSObject <BRCModule> {
-
-  /* Unexpected information at end of encoded ivar type: I */
-  /* Error parsing encoded ivar type info: AI */
-    /* Warning: Unrecognized filer type: 'A' using 'void*' */ void*_activeAliasQueries;
-
+    unsigned int _activeAliasQueries;
     NSObject<OS_dispatch_queue> *_cacheQueue;
     BRCXPCClient *_client;
     BOOL _isCancelled;
@@ -25,22 +15,22 @@
     NSMutableDictionary *_transferCache;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasActiveAliasWatchers;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) BRCAccountSession * session;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) BOOL hasActiveAliasWatchers;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (nonatomic, readonly) BRCAccountSession *session;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)cancel;
 - (void)close;
 - (void)flushUpdates;
-- (void)getPipeWithXPCReceiver:(id)arg1 client:(id)arg2 root:(id)arg3 reply:(id)arg4;
+- (void)getPipeWithXPCReceiver:(id)arg1 client:(id)arg2 root:(id)arg3 reply:(id /* block */)arg4;
 - (BOOL)hasActiveAliasWatchers;
 - (id)initWithAccountSession:(id)arg1;
-- (void)invalidatePipesWatchingContainerID:(id)arg1 completionBlock:(id)arg2;
+- (void)invalidatePipesWatchingContainerID:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)isCancelled;
 - (id)pipeWithReceiver:(id)arg1 root:(id)arg2;
 - (void)queueUpdate:(id)arg1;

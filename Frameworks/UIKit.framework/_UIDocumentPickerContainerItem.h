@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDate, NSMapTable, NSString, NSURL, _UIDocumentPickerContainerModel, _UIDocumentPickerURLContainerModel;
-
 @interface _UIDocumentPickerContainerItem : NSObject <_UIDocumentPickerDirectoryObserverItem> {
     id _item;
     _UIDocumentPickerURLContainerModel *_model;
@@ -18,22 +16,22 @@
     _UIDocumentPickerContainerModel *_weak_parentModel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) id item;
-@property(retain,readonly) _UIDocumentPickerContainerModel * model;
-@property _UIDocumentPickerContainerModel * parentModel;
-@property(copy) NSString * pickabilityReason;
-@property BOOL pickable;
-@property(readonly) NSDate * sortDate;
-@property(retain,readonly) NSString * subtitle;
-@property(retain,readonly) NSString * subtitle2;
-@property(readonly) Class superclass;
-@property(retain) NSMapTable * thumbnailsBySize;
-@property(retain,readonly) NSString * title;
-@property(readonly) int type;
-@property(retain,readonly) NSURL * url;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) id item;
+@property (nonatomic, readonly, retain) _UIDocumentPickerContainerModel *model;
+@property (nonatomic) _UIDocumentPickerContainerModel *parentModel;
+@property (nonatomic, copy) NSString *pickabilityReason;
+@property (nonatomic) BOOL pickable;
+@property (nonatomic, readonly) NSDate *sortDate;
+@property (nonatomic, readonly, retain) NSString *subtitle;
+@property (nonatomic, readonly, retain) NSString *subtitle2;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMapTable *thumbnailsBySize;
+@property (nonatomic, readonly, retain) NSString *title;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly, retain) NSURL *url;
 
 + (id)_lruThumbnailArray;
 + (void)clearLRUThumbnailCache;

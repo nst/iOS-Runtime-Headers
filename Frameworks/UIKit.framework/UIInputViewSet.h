@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIInputViewController, UIKeyboard, UIResponder, UIView;
-
 @interface UIInputViewSet : NSObject {
     UIInputViewController *_accessoryViewController;
     UIView *_inputAccessoryView;
@@ -15,25 +13,25 @@
     float _splitHeightDelta;
 }
 
-@property(readonly) BOOL _inputViewIsSplit;
-@property(retain) UIInputViewController * accessoryViewController;
-@property(getter=isEmpty,readonly) BOOL empty;
-@property(retain) UIView * inputAccessoryView;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputAccessoryViewBounds;
-@property(retain) UIView * inputView;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputViewBounds;
-@property(retain) UIInputViewController * inputViewController;
-@property(readonly) BOOL inputViewKeyboardCanSplit;
-@property(readonly) BOOL isInputAccessoryViewPlaceholder;
-@property(readonly) BOOL isInputViewPlaceholder;
-@property(readonly) BOOL isSplit;
-@property(readonly) UIKeyboard * keyboard;
-@property(readonly) UIView * layeringView;
-@property UIResponder * restorableResponder;
-@property BOOL restoreUsingBecomeFirstResponder;
-@property(readonly) UIView * splitExemptSubview;
-@property float splitHeightDelta;
-@property(readonly) BOOL supportsSplit;
+@property (nonatomic, readonly) BOOL _inputViewIsSplit;
+@property (nonatomic, retain) UIInputViewController *accessoryViewController;
+@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
+@property (nonatomic, retain) UIView *inputAccessoryView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputAccessoryViewBounds;
+@property (nonatomic, retain) UIView *inputView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } inputViewBounds;
+@property (nonatomic, retain) UIInputViewController *inputViewController;
+@property (nonatomic, readonly) BOOL inputViewKeyboardCanSplit;
+@property (nonatomic, readonly) BOOL isInputAccessoryViewPlaceholder;
+@property (nonatomic, readonly) BOOL isInputViewPlaceholder;
+@property (nonatomic, readonly) BOOL isSplit;
+@property (nonatomic, readonly) UIKeyboard *keyboard;
+@property (nonatomic, readonly) UIView *layeringView;
+@property (nonatomic) UIResponder *restorableResponder;
+@property (nonatomic) BOOL restoreUsingBecomeFirstResponder;
+@property (nonatomic, readonly) UIView *splitExemptSubview;
+@property (nonatomic) float splitHeightDelta;
+@property (nonatomic, readonly) BOOL supportsSplit;
 
 + (id)emptyInputSet;
 + (id)inputSetWithInputView:(id)arg1 accessoryView:(id)arg2;

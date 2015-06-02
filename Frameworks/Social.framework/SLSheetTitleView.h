@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSMutableArray, NSString, UIImageView, UILabel;
-
 @interface SLSheetTitleView : UIView {
     NSMutableArray *_constraints;
     UIImageView *_serviceIconView;
@@ -11,7 +9,7 @@
     UILabel *_titleLabel;
 }
 
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_setupTitleLabel;

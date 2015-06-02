@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDImageAdjustments, TSDInfoGeometry, TSDLayoutGeometry, TSDMaskLayout, TSDPathSource<TSDSmartPathSource>, TSUBezierPath;
-
 @interface TSDImageLayout : TSDMediaLayout <TSDShapeControlLayout> {
     TSDLayoutGeometry *mBaseImageLayoutGeometry;
     TSDInfoGeometry *mBaseInfoGeometry;
@@ -37,7 +35,7 @@
     TSUBezierPath *mTracedPath;
 }
 
-@property(readonly) TSDPathSource<TSDSmartPathSource> * smartPathSource;
+@property (nonatomic, readonly) TSDPathSource<TSDSmartPathSource> *smartPathSource;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInfluencingExteriorWrap;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })computeAlignmentFrameInRoot:(BOOL)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSConstantString : NSSimpleCString {
-}
+@interface NSConstantString : NSSimpleCString
 
 - (const char *)_fastCStringContents:(BOOL)arg1;
 - (BOOL)_isDeallocating;

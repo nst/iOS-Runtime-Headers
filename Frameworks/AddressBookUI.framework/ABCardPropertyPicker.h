@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class NSArray, NSString, UITableView;
-
 @interface ABCardPropertyPicker : UIView <ABStyleProviding, UITableViewDataSource, UITableViewDelegate> {
     NSArray *_allProperties;
     id _delegate;
@@ -11,11 +9,11 @@
     UITableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) UITableView * tableView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITableView *tableView;
 
 - (void)dealloc;
 - (void)deselectAllRowsWithAnimation:(BOOL)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKLandmarkIconGenerator : NSObject {
-}
+@interface VKLandmarkIconGenerator : NSObject
 
 + (id)sharedGenerator;
 

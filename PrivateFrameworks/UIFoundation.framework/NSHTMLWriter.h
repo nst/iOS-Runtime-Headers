@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSAttributedString, NSData, NSDictionary, NSFileWrapper, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, NSMutableOrderedSet, NSMutableString, NSString, NSURL;
-
 @interface NSHTMLWriter : NSObject {
     NSAttributedString *_attrStr;
     NSMutableArray *_blockStyleStrings;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIReviewsFacebookViewControllerDelegate>, SKUIClientContext, SKUIFacebookLikeStatus, SKUIReviewsFacebookView;
-
 @interface SKUIReviewsFacebookViewController : UIViewController {
     SKUIClientContext *_clientContext;
     <SKUIReviewsFacebookViewControllerDelegate> *_delegate;
@@ -11,9 +9,9 @@
     SKUIReviewsFacebookView *_facebookView;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property <SKUIReviewsFacebookViewControllerDelegate> * delegate;
-@property(copy) SKUIFacebookLikeStatus * facebookLikeStatus;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic) <SKUIReviewsFacebookViewControllerDelegate> *delegate;
+@property (nonatomic, copy) SKUIFacebookLikeStatus *facebookLikeStatus;
 
 - (void).cxx_destruct;
 - (void)_changeStatusToUserLiked:(BOOL)arg1;

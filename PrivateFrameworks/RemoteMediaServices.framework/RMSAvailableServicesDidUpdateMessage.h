@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSMutableArray;
-
 @interface RMSAvailableServicesDidUpdateMessage : PBCodable <NSCopying> {
     struct { 
         unsigned int sessionIdentifier : 1; 
@@ -12,9 +10,9 @@
     int _sessionIdentifier;
 }
 
-@property BOOL hasSessionIdentifier;
-@property(retain) NSMutableArray * services;
-@property int sessionIdentifier;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic, retain) NSMutableArray *services;
+@property (nonatomic) int sessionIdentifier;
 
 - (void).cxx_destruct;
 - (void)addServices:(id)arg1;

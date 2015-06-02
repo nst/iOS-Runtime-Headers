@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString, WKContentView;
-
 @interface WKMultipleSelectPicker : UIPickerView <UIPickerViewDataSource, UIPickerViewDelegate, WKFormControl> {
     bool _allowsMultipleSelection;
     float _fontSize;
@@ -14,10 +12,10 @@
     WKContentView *_view;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)controlBeginEditing;
 - (void)controlEndEditing;

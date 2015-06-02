@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCEUtilities : NSObject {
-}
+@interface TSCEUtilities : NSObject
 
 @end

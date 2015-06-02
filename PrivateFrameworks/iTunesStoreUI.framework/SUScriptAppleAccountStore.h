@@ -2,24 +2,22 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ACAccountStore, NSString, SUScriptAppleAccount;
-
 @interface SUScriptAppleAccountStore : SUScriptObject {
     ACAccountStore *_accountStore;
     NSString *_effectiveBundleID;
 }
 
-@property(readonly) NSString * accessPurposeRead;
-@property(readonly) NSString * accessPurposeReadWrite;
-@property(readonly) NSString * accessPurposeWrite;
-@property(readonly) NSString * accountTypeIdentifierFacebook;
-@property(readonly) NSString * accountTypeIdentifierSinaWeibo;
-@property(readonly) NSString * accountTypeIdentifierTwitter;
-@property(readonly) NSString * effectiveBundleID;
-@property(readonly) SUScriptAppleAccount * primaryAppleAccount;
-@property(readonly) int renewResultFailed;
-@property(readonly) int renewResultRejected;
-@property(readonly) int renewResultRenewed;
+@property (readonly) NSString *accessPurposeRead;
+@property (readonly) NSString *accessPurposeReadWrite;
+@property (readonly) NSString *accessPurposeWrite;
+@property (readonly) NSString *accountTypeIdentifierFacebook;
+@property (readonly) NSString *accountTypeIdentifierSinaWeibo;
+@property (readonly) NSString *accountTypeIdentifierTwitter;
+@property (readonly) NSString *effectiveBundleID;
+@property (readonly) SUScriptAppleAccount *primaryAppleAccount;
+@property (readonly) int renewResultFailed;
+@property (readonly) int renewResultRejected;
+@property (readonly) int renewResultRenewed;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

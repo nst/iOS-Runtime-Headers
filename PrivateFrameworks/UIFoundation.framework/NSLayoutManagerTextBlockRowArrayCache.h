@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSArray;
-
 @interface NSLayoutManagerTextBlockRowArrayCache : NSObject {
     BOOL _collapseBorders;
     float _containerWidth;

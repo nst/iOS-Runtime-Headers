@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAEndpointPlugin : SAEndpoint
 
-@interface SAEndpointPlugin : SAEndpoint {
-}
-
-@property(copy) NSString * pluginPath;
+@property (nonatomic, copy) NSString *pluginPath;
 
 + (id)endpointPlugin;
 + (id)endpointPluginWithDictionary:(id)arg1 context:(id)arg2;

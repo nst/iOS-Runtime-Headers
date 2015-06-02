@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIViewServiceDummyPopoverControllerDelegate>;
-
 @interface _UIViewServiceDummyPopoverController : UIPopoverController {
     <_UIViewServiceDummyPopoverControllerDelegate> *_dummyPopoverControllerDelegate;
 }
 
-@property(retain) <_UIViewServiceDummyPopoverControllerDelegate> * dummyPopoverControllerDelegate;
+@property (nonatomic, retain) <_UIViewServiceDummyPopoverControllerDelegate> *dummyPopoverControllerDelegate;
 
 + (Class)_popoverViewClass;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSData, NSDictionary, NSString, NSURL;
-
 @interface NSFileWrapper : NSObject <NSCoding> {
     id _contents;
     NSDictionary *_fileAttributes;
@@ -13,16 +11,16 @@
     NSString *_preferredFileName;
 }
 
-@property(getter=isDirectory,readonly) BOOL directory;
-@property(copy) NSDictionary * fileAttributes;
-@property(copy,readonly) NSDictionary * fileWrappers;
-@property(copy) NSString * filename;
-@property(copy) NSString * preferredFilename;
-@property(getter=isRegularFile,readonly) BOOL regularFile;
-@property(copy,readonly) NSData * regularFileContents;
-@property(copy,readonly) NSData * serializedRepresentation;
-@property(getter=isSymbolicLink,readonly) BOOL symbolicLink;
-@property(copy,readonly) NSURL * symbolicLinkDestinationURL;
+@property (getter=isDirectory, readonly) BOOL directory;
+@property (copy) NSDictionary *fileAttributes;
+@property (readonly, copy) NSDictionary *fileWrappers;
+@property (copy) NSString *filename;
+@property (copy) NSString *preferredFilename;
+@property (getter=isRegularFile, readonly) BOOL regularFile;
+@property (readonly, copy) NSData *regularFileContents;
+@property (readonly, copy) NSData *serializedRepresentation;
+@property (getter=isSymbolicLink, readonly) BOOL symbolicLink;
+@property (readonly, copy) NSURL *symbolicLinkDestinationURL;
 
 + (BOOL)_canSafelyMapFilesAtPath:(id)arg1;
 + (BOOL)_finishWritingToURL:(id)arg1 byMovingItemAtURL:(id)arg2 addingAttributes:(id)arg3 error:(id*)arg4;

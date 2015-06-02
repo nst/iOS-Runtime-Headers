@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSArray;
+@interface BWCaptureDevice : NSObject
 
-@interface BWCaptureDevice : NSObject {
-}
-
-@property(readonly) struct OpaqueCMClock { }* clock;
-@property int maximumFrameRate;
-@property int minimumFrameRate;
-@property(readonly) int position;
-@property(readonly) NSArray * supportedFormats;
+@property (nonatomic, readonly) struct OpaqueCMClock { }*clock;
+@property (nonatomic) int maximumFrameRate;
+@property (nonatomic) int minimumFrameRate;
+@property (nonatomic, readonly) int position;
+@property (nonatomic, readonly) NSArray *supportedFormats;
 
 - (int)activeFormatIndex;
 - (void)captureStillImageBracketNow:(int)arg1 bracketSettings:(id)arg2;
@@ -23,13 +20,13 @@
 - (int)maximumFrameRate;
 - (int)minimumFrameRate;
 - (int)position;
-- (BOOL)registerStillImageBufferHandler:(id)arg1 error:(id*)arg2;
+- (BOOL)registerStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (void)setActiveFormatIndex:(int)arg1;
 - (void)setMaximumFrameRate:(int)arg1;
 - (void)setMinimumFrameRate:(int)arg1;
-- (BOOL)startStreamingToSampleBufferHandler:(id)arg1 error:(id*)arg2;
-- (BOOL)stopStreamingToSampleBufferHandler:(id)arg1 error:(id*)arg2;
+- (BOOL)startStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
+- (BOOL)stopStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (id)supportedFormats;
-- (BOOL)unregisterStillImageBufferHandler:(id)arg1 error:(id*)arg2;
+- (BOOL)unregisterStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 
 @end

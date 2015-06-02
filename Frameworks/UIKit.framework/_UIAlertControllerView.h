@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, NSMutableArray, NSString, UIAlertController, UIAlertControllerVisualStyle, UICollectionView, UILabel, UIView, UIView<UIAlertControllerBackgroundView>, _UIAlertControllerCollectionViewFlowLayout, _UIAlertControllerShadowedScrollView, _UIKeyboardLayoutAlignmentView;
-
 @interface _UIAlertControllerView : UIView <UICollectionViewDataSource, UICollectionViewDelegate, UIScrollViewDelegate> {
     UICollectionView *_actionCollectionView;
     NSMutableArray *_actionViews;
@@ -72,50 +70,50 @@
     NSLayoutConstraint *_widthConstraint;
 }
 
-@property(readonly) UIView * _dimmingView;
-@property(readonly) _UIAlertControllerCollectionViewFlowLayout * _flowLayout;
-@property(readonly) UIView * _foregroundView;
-@property(setter=_setVisualStyle:,retain) UIAlertControllerVisualStyle * _visualStyle;
-@property UIAlertController * alertController;
+@property (readonly) UIView *_dimmingView;
+@property (readonly) _UIAlertControllerCollectionViewFlowLayout *_flowLayout;
+@property (readonly) UIView *_foregroundView;
+@property (setter=_setVisualStyle:, nonatomic, retain) UIAlertControllerVisualStyle *_visualStyle;
+@property UIAlertController *alertController;
 @property BOOL alignsToKeyboard;
-@property(retain) NSLayoutConstraint * backdropViewBottomConstraint;
-@property(retain) NSLayoutConstraint * backdropViewRightConstraint;
+@property (retain) NSLayoutConstraint *backdropViewBottomConstraint;
+@property (retain) NSLayoutConstraint *backdropViewRightConstraint;
 @property BOOL cancelActionIsDiscrete;
-@property(retain) NSLayoutConstraint * centerXConstraint;
-@property(retain) NSLayoutConstraint * centerYConstraint;
-@property(retain) NSLayoutConstraint * collectionViewHeightConstraint;
-@property(retain) NSLayoutConstraint * collectionViewHorizontalAlignmentConstraint;
-@property(retain) NSLayoutConstraint * collectionViewTopAlignmentConstraint;
-@property(retain) NSLayoutConstraint * collectionViewWidthConstraint;
-@property(retain) NSLayoutConstraint * contentScrollViewBottomConstraint;
-@property(retain) NSLayoutConstraint * contentViewBottomConstraint;
-@property(retain) NSLayoutConstraint * contentViewControllerContainerViewHeightConstraint;
-@property(retain) NSLayoutConstraint * contentViewControllerContainerViewTopAlignmentConstraint;
-@property(retain) NSLayoutConstraint * contentViewControllerContainerViewWidthConstraint;
-@property(retain) NSLayoutConstraint * contentViewControllerViewBottomConstraint;
-@property(retain) NSLayoutConstraint * contentViewControllerViewLeftConstraint;
-@property(retain) NSLayoutConstraint * contentViewControllerViewRightConstraint;
-@property(retain) NSLayoutConstraint * contentViewControllerViewTopConstraint;
-@property(retain) NSLayoutConstraint * contentViewTopConstraint;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSLayoutConstraint * detailMessageLabelTopAlignmentConstraint;
-@property(retain) NSLayoutConstraint * discreteCancelActionViewHeightConstraint;
-@property(retain) NSLayoutConstraint * discreteCancelActionViewLeadingConstraint;
-@property(retain) NSLayoutConstraint * discreteCancelActionViewTopConstraint;
-@property(retain) NSLayoutConstraint * discreteCancelActionViewWidthConstraint;
-@property(retain) NSLayoutConstraint * foregroundViewWidthConstraint;
+@property (retain) NSLayoutConstraint *centerXConstraint;
+@property (retain) NSLayoutConstraint *centerYConstraint;
+@property (retain) NSLayoutConstraint *collectionViewHeightConstraint;
+@property (retain) NSLayoutConstraint *collectionViewHorizontalAlignmentConstraint;
+@property (retain) NSLayoutConstraint *collectionViewTopAlignmentConstraint;
+@property (retain) NSLayoutConstraint *collectionViewWidthConstraint;
+@property (retain) NSLayoutConstraint *contentScrollViewBottomConstraint;
+@property (retain) NSLayoutConstraint *contentViewBottomConstraint;
+@property (retain) NSLayoutConstraint *contentViewControllerContainerViewHeightConstraint;
+@property (retain) NSLayoutConstraint *contentViewControllerContainerViewTopAlignmentConstraint;
+@property (retain) NSLayoutConstraint *contentViewControllerContainerViewWidthConstraint;
+@property (retain) NSLayoutConstraint *contentViewControllerViewBottomConstraint;
+@property (retain) NSLayoutConstraint *contentViewControllerViewLeftConstraint;
+@property (retain) NSLayoutConstraint *contentViewControllerViewRightConstraint;
+@property (retain) NSLayoutConstraint *contentViewControllerViewTopConstraint;
+@property (retain) NSLayoutConstraint *contentViewTopConstraint;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) NSLayoutConstraint *detailMessageLabelTopAlignmentConstraint;
+@property (retain) NSLayoutConstraint *discreteCancelActionViewHeightConstraint;
+@property (retain) NSLayoutConstraint *discreteCancelActionViewLeadingConstraint;
+@property (retain) NSLayoutConstraint *discreteCancelActionViewTopConstraint;
+@property (retain) NSLayoutConstraint *discreteCancelActionViewWidthConstraint;
+@property (retain) NSLayoutConstraint *foregroundViewWidthConstraint;
 @property BOOL hasDimmingView;
-@property(readonly) unsigned int hash;
-@property(retain) NSLayoutConstraint * heightConstraint;
+@property (readonly) unsigned int hash;
+@property (retain) NSLayoutConstraint *heightConstraint;
 @property BOOL inPopover;
 @property int layoutOrientation;
-@property(retain) NSLayoutConstraint * messageLabelTopAlignmentConstraint;
+@property (retain) NSLayoutConstraint *messageLabelTopAlignmentConstraint;
 @property BOOL shouldHaveBackdropView;
 @property BOOL showsCancelAction;
-@property(readonly) Class superclass;
-@property(retain) NSLayoutConstraint * titleLabelTopAlignmentConstraint;
-@property(retain) NSLayoutConstraint * widthConstraint;
+@property (readonly) Class superclass;
+@property (retain) NSLayoutConstraint *titleLabelTopAlignmentConstraint;
+@property (retain) NSLayoutConstraint *widthConstraint;
 
 + (BOOL)_retroactivelyRequiresConstraintBasedLayout;
 + (void)initialize;

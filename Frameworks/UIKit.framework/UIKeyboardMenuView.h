@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, NSTimer, UIDimmingView, UIInputSwitcherSelectionExtraView, UIInputSwitcherShadowView, UIInputSwitcherTableView, UIKBTree, UIKeyboardLayoutStar;
-
 @interface UIKeyboardMenuView : UIView <UIDimmingViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIKeyboardLayoutStar *_layout;
     UIKBTree *_referenceKey;
@@ -40,16 +38,16 @@
     int m_visibleRows;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property UIKeyboardLayoutStar * layout;
-@property int mode;
-@property UIKBTree * referenceKey;
-@property(readonly) Class superclass;
-@property BOOL usesDarkTheme;
-@property BOOL usesStraightLeftEdge;
-@property(readonly) BOOL usesTable;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) UIKeyboardLayoutStar *layout;
+@property (nonatomic) int mode;
+@property (nonatomic) UIKBTree *referenceKey;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL usesDarkTheme;
+@property (nonatomic) BOOL usesStraightLeftEdge;
+@property (readonly) BOOL usesTable;
 
 + (id)viewThatContainsBaseKey;
 

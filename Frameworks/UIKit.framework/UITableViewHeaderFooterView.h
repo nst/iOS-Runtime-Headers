@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor, UIImage, UILabel, UITableView, UIView, _UITableViewHeaderFooterViewLabel;
-
 @interface UITableViewHeaderFooterView : UIView <UITableViewSubviewReusing> {
     UIImage *_backgroundImage;
     UIView *_backgroundView;
@@ -42,28 +40,28 @@
     UIColor *_tintColor;
 }
 
-@property(retain) UIImage * backgroundImage;
-@property(retain) UIView * backgroundView;
-@property(retain,readonly) UIView * contentView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) UILabel * detailTextLabel;
-@property BOOL floating;
-@property(readonly) unsigned int hash;
-@property(getter=_marginWidth,setter=_setMarginWidth:) float marginWidth;
-@property float maxTitleWidth;
-@property(copy) NSString * reuseIdentifier;
-@property(getter=_rightMarginWidth,setter=_setRightMarginWidth:) float rightMarginWidth;
-@property BOOL sectionHeader;
-@property(getter=_stripPadding,setter=_setStripPadding:) BOOL stripPadding;
-@property(readonly) Class superclass;
-@property UITableView * tableView;
-@property int tableViewStyle;
-@property(copy) NSString * text;
-@property int textAlignment;
-@property(retain,readonly) UILabel * textLabel;
-@property(retain) UIColor * tintColor;
-@property(getter=_isTopHeader,setter=_setTopHeader:) BOOL topHeader;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, readonly, retain) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) UILabel *detailTextLabel;
+@property (nonatomic) BOOL floating;
+@property (readonly) unsigned int hash;
+@property (getter=_marginWidth, setter=_setMarginWidth:, nonatomic) float marginWidth;
+@property (nonatomic) float maxTitleWidth;
+@property (nonatomic, copy) NSString *reuseIdentifier;
+@property (getter=_rightMarginWidth, setter=_setRightMarginWidth:, nonatomic) float rightMarginWidth;
+@property (nonatomic) BOOL sectionHeader;
+@property (getter=_stripPadding, setter=_setStripPadding:, nonatomic) BOOL stripPadding;
+@property (readonly) Class superclass;
+@property (nonatomic) UITableView *tableView;
+@property (nonatomic) int tableViewStyle;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
+@property (nonatomic, readonly, retain) UILabel *textLabel;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (getter=_isTopHeader, setter=_setTopHeader:, nonatomic) BOOL topHeader;
 
 + (id)_defaultFontForTableViewStyle:(int)arg1 isSectionHeader:(BOOL)arg2;
 + (id)_defaultPlainHeaderFooterFont;

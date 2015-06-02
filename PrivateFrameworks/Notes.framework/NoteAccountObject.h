@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class NSDictionary, NSNumber, NSSet, NSString, NoteStoreObject;
-
 @interface NoteAccountObject : NoteCollectionObject {
     NSDictionary *_constraints;
 }
 
-@property(retain) NSString * accountIdentifier;
-@property int accountType;
-@property(retain) NSDictionary * constraints;
-@property(retain) NSString * constraintsPath;
-@property(retain) NoteStoreObject * defaultStore;
-@property(retain) NSString * name;
-@property(retain) NSString * pathToConstraintsPlist;
-@property(retain) NSSet * stores;
-@property(retain) NSNumber * type;
+@property (nonatomic, retain) NSString *accountIdentifier;
+@property (nonatomic) int accountType;
+@property (nonatomic, retain) NSDictionary *constraints;
+@property (nonatomic, retain) NSString *constraintsPath;
+@property (nonatomic, retain) NoteStoreObject *defaultStore;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *pathToConstraintsPlist;
+@property (nonatomic, retain) NSSet *stores;
+@property (nonatomic, retain) NSNumber *type;
 
 - (void).cxx_destruct;
 - (int)accountType;

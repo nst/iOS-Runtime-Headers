@@ -7,8 +7,8 @@
     int _section;
 }
 
-@property(readonly) unsigned int index;
-@property(readonly) int section;
+@property (nonatomic, readonly) unsigned int index;
+@property (nonatomic, readonly) int section;
 
 + (id)itemPathWithIndex:(unsigned int)arg1 inSection:(int)arg2;
 

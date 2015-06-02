@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSNumber;
-
 @interface AutoCropper : NSObject {
     NSNumber *bufferZone;
     struct CGSize { 
@@ -14,10 +12,10 @@
     BOOL shouldFavorTop;
 }
 
-@property(retain) NSNumber * bufferZone;
-@property struct CGSize { float x1; float x2; } originalImageSize;
-@property BOOL shouldFavorBottom;
-@property BOOL shouldFavorTop;
+@property (nonatomic, retain) NSNumber *bufferZone;
+@property (nonatomic) struct CGSize { float x1; float x2; } originalImageSize;
+@property (nonatomic) BOOL shouldFavorBottom;
+@property (nonatomic) BOOL shouldFavorTop;
 
 - (id)bufferZone;
 - (id)clusterRects:(id)arg1;

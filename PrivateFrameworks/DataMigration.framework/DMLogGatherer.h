@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DataMigration.framework/DataMigration
  */
 
-@interface DMLogGatherer : NSObject {
-}
+@interface DMLogGatherer : NSObject
 
 + (void)gatherItemsFromDirectory:(id)arg1 destPath:(id)arg2 prefixFilter:(id)arg3;
 + (id)gatherLogs:(id)arg1;

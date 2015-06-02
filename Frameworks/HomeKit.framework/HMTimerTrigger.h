@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class NSCalendar, NSDate, NSDateComponents, NSTimeZone;
-
 @interface HMTimerTrigger : HMTrigger <NSSecureCoding> {
     NSDate *_fireDate;
     NSDateComponents *_recurrence;
@@ -11,10 +9,10 @@
     NSTimeZone *_timeZone;
 }
 
-@property(copy) NSDate * fireDate;
-@property(copy) NSDateComponents * recurrence;
-@property(copy) NSCalendar * recurrenceCalendar;
-@property(copy) NSTimeZone * timeZone;
+@property (nonatomic, copy) NSDate *fireDate;
+@property (nonatomic, copy) NSDateComponents *recurrence;
+@property (nonatomic, copy) NSCalendar *recurrenceCalendar;
+@property (nonatomic, copy) NSTimeZone *timeZone;
 
 + (BOOL)supportsSecureCoding;
 
@@ -36,8 +34,8 @@
 - (void)setRecurrenceCalendar:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (id)timeZone;
-- (void)updateFireDate:(id)arg1 completionHandler:(id)arg2;
-- (void)updateRecurrence:(id)arg1 completionHandler:(id)arg2;
-- (void)updateTimeZone:(id)arg1 completionHandler:(id)arg2;
+- (void)updateFireDate:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateRecurrence:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateTimeZone:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

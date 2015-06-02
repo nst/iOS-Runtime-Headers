@@ -2,37 +2,23 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableData, NSString, NSURLAuthenticationChallenge, NSURLResponse;
-
 @interface APDAsyncURLConnection : NSURLConnection <UIAlertViewDelegate> {
     NSURLResponse *_URLResponse;
     NSURLAuthenticationChallenge *_requestChanllenge;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id mCompleteBlock;
-
+    id /* block */ mCompleteBlock;
     NSMutableData *mData;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id mErrorBlock;
-
+    id /* block */ mErrorBlock;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-+ (id)requestURL:(id)arg1 cachePolicy:(unsigned int)arg2 completeBlock:(id)arg3 errorBlock:(id)arg4;
-+ (id)requestURL:(id)arg1 completeBlock:(id)arg2 errorBlock:(id)arg3;
-+ (id)requestURL:(id)arg1 postData:(id)arg2 cachePolicy:(unsigned int)arg3 completeBlock:(id)arg4 errorBlock:(id)arg5;
-+ (id)requestURL:(id)arg1 postData:(id)arg2 completeBlock:(id)arg3 errorBlock:(id)arg4;
++ (id)requestURL:(id)arg1 cachePolicy:(unsigned int)arg2 completeBlock:(id /* block */)arg3 errorBlock:(id /* block */)arg4;
++ (id)requestURL:(id)arg1 completeBlock:(id /* block */)arg2 errorBlock:(id /* block */)arg3;
++ (id)requestURL:(id)arg1 postData:(id)arg2 cachePolicy:(unsigned int)arg3 completeBlock:(id /* block */)arg4 errorBlock:(id /* block */)arg5;
++ (id)requestURL:(id)arg1 postData:(id)arg2 completeBlock:(id /* block */)arg3 errorBlock:(id /* block */)arg4;
 
 - (void).cxx_destruct;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
@@ -42,7 +28,7 @@
 - (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
 - (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
-- (id)initWithRequestURL:(id)arg1 postData:(id)arg2 cachePolicy:(unsigned int)arg3 completeBlock:(id)arg4 errorBlock:(id)arg5;
-- (id)initWithRequestURL:(id)arg1 postData:(id)arg2 completeBlock:(id)arg3 errorBlock:(id)arg4;
+- (id)initWithRequestURL:(id)arg1 postData:(id)arg2 cachePolicy:(unsigned int)arg3 completeBlock:(id /* block */)arg4 errorBlock:(id /* block */)arg5;
+- (id)initWithRequestURL:(id)arg1 postData:(id)arg2 completeBlock:(id /* block */)arg3 errorBlock:(id /* block */)arg4;
 
 @end

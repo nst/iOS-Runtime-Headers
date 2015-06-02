@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarHomeItemView : UIStatusBarButtonActionItemView {
-}
+@interface UIStatusBarHomeItemView : UIStatusBarButtonActionItemView
 
 - (int)buttonType;
 - (id)contentsImage;

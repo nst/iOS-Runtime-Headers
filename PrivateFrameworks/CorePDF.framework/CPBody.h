@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface CPBody : CPZone {
-}
+@interface CPBody : CPZone
 
 - (void)accept:(id)arg1;
 - (BOOL)isBodyZone;

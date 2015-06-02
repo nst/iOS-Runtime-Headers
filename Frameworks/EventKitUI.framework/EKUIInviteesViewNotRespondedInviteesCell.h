@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSArray, NSLayoutConstraint, UIActivityIndicatorView, UIImageView, UILabel;
-
 @interface EKUIInviteesViewNotRespondedInviteesCell : UITableViewCell {
     UIImageView *_availabilityTypeImageView;
     UILabel *_commentLabel;
@@ -16,15 +14,15 @@
     UIActivityIndicatorView *_spinner;
 }
 
-@property(retain) UIImageView * availabilityTypeImageView;
-@property(retain) UILabel * commentLabel;
-@property(retain) NSLayoutConstraint * minimumHeightConstraint;
-@property(retain) NSLayoutConstraint * nameBaselineToTopConstraint;
-@property(retain) UILabel * nameLabel;
-@property(retain) NSArray * persistentConstraints;
-@property(retain) NSArray * removableConstraints;
-@property BOOL showSpinner;
-@property(retain) UIActivityIndicatorView * spinner;
+@property (nonatomic, retain) UIImageView *availabilityTypeImageView;
+@property (nonatomic, retain) UILabel *commentLabel;
+@property (nonatomic, retain) NSLayoutConstraint *minimumHeightConstraint;
+@property (nonatomic, retain) NSLayoutConstraint *nameBaselineToTopConstraint;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) NSArray *persistentConstraints;
+@property (nonatomic, retain) NSArray *removableConstraints;
+@property (nonatomic) BOOL showSpinner;
+@property (nonatomic, retain) UIActivityIndicatorView *spinner;
 
 + (id)_commentLabelFont;
 + (float)_leftTextInset;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
-@class NSError, NSString;
-
 @interface PLCPLDownloadContext : NSObject {
     BOOL _completed;
     NSError *_error;
@@ -14,10 +12,10 @@
 }
 
 @property BOOL completed;
-@property(retain) NSError * error;
+@property (retain) NSError *error;
 @property double progress;
-@property(retain) NSString * resourceTypeDescription;
-@property(retain) NSString * taskIdentifier;
+@property (retain) NSString *resourceTypeDescription;
+@property (retain) NSString *taskIdentifier;
 @property double updateLastQueuedTime;
 
 - (BOOL)completed;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardCandidateGridHeaderContainerView : UICollectionReusableView {
-}
+@interface UIKeyboardCandidateGridHeaderContainerView : UICollectionReusableView
 
 + (id)collectionViewKind;
 + (id)reuseIdentifier;

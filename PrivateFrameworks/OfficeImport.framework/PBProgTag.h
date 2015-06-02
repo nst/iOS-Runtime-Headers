@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PBProgTag : NSObject {
-}
+@interface PBProgTag : NSObject
 
 + (id)binaryTagDataWithName:(const unsigned short*)arg1 inProgTags:(id)arg2;
 + (id)binaryTagDataWithName:(const unsigned short*)arg1 inProgTagsParent:(id)arg2;

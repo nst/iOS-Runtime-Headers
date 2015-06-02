@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEConfiguration, NEConfigurationManager, NSMutableArray, NSString;
-
 @interface NEProfileIngestion : NSObject <NEProfileIngestionDelegate> {
     NSString *_clientName;
     NSMutableArray *_currentConfigurations;
@@ -12,11 +10,11 @@
     NSString *_payloadType;
 }
 
-@property(readonly) NSString * clientName;
-@property(retain) NSMutableArray * currentConfigurations;
-@property(retain) NEConfiguration * ingestedConfiguration;
-@property(readonly) NEConfigurationManager * manager;
-@property(readonly) NSString * payloadType;
+@property (readonly) NSString *clientName;
+@property (retain) NSMutableArray *currentConfigurations;
+@property (retain) NEConfiguration *ingestedConfiguration;
+@property (readonly) NEConfigurationManager *manager;
+@property (readonly) NSString *payloadType;
 
 + (id)getServiceIDForPayload:(id)arg1;
 + (void)profileMigrationComplete;

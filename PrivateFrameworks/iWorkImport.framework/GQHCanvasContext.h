@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDAffineGeometry, NSMutableString, NSString;
-
 @interface GQHCanvasContext : NSObject <GQHContext> {
     struct __CFString { } *mBezierStr;
     NSMutableString *mFunctionName;
@@ -12,10 +10,10 @@
     BOOL mHasStroke;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)addPathForLineEndStyle:(int)arg1 graphicStyle:(id)arg2 atPoint:(struct CGPoint { float x1; float x2; })arg3 neighboringCP:(struct CGPoint { float x1; float x2; })arg4 filledPath:(struct CGPath {}**)arg5 strokedPath:(struct CGPath {}**)arg6;
 - (void)addScriptTagToHtml:(id)arg1 state:(id)arg2;

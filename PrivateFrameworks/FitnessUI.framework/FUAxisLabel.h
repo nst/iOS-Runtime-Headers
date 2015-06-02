@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSString, UIColor;
-
 @interface FUAxisLabel : NSObject {
     UIColor *_labelColor;
     id _location;
     NSString *_text;
 }
 
-@property(retain) UIColor * labelColor;
-@property(retain) id location;
-@property(retain) NSString * text;
+@property (nonatomic, retain) UIColor *labelColor;
+@property (nonatomic, retain) id location;
+@property (nonatomic, retain) NSString *text;
 
 - (void).cxx_destruct;
 - (id)description;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSData;
-
 @interface TSCH3DMipmaps : NSObject {
     unsigned int mComponents;
     NSData *mData;
@@ -11,10 +9,10 @@
     int mWidth;
 }
 
-@property(readonly) unsigned int components;
-@property(readonly) NSData * data;
-@property(readonly) int height;
-@property(readonly) int width;
+@property (nonatomic, readonly) unsigned int components;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly) int height;
+@property (nonatomic, readonly) int width;
 
 + (id)mipmapPathFromPath:(id)arg1;
 + (struct CGSize { float x1; float x2; })mipmapSizeForTexturableSize:(struct CGSize { float x1; float x2; })arg1;

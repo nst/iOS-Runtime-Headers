@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface IKAppDataStorage : NSObject <IKAppDataStoring> {
     NSString *_filePath;
     unsigned int _format;
@@ -12,10 +10,10 @@
     NSObject<OS_dispatch_queue> *_storageQueue;
 }
 
-@property(retain,readonly) NSString * filePath;
-@property(retain,readonly) NSString * identifier;
-@property(retain) NSMutableDictionary * storageDict;
-@property(retain) NSObject<OS_dispatch_queue> * storageQueue;
+@property (nonatomic, readonly, retain) NSString *filePath;
+@property (nonatomic, readonly, retain) NSString *identifier;
+@property (nonatomic, retain) NSMutableDictionary *storageDict;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *storageQueue;
 
 - (void).cxx_destruct;
 - (void)_saveDict:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItemWithNoChildren, CoreDAVLeafItem;
-
 @interface CoreDAVErrorItem : CoreDAVItem {
     CoreDAVItemWithNoChildren *_ctagOkay;
     CoreDAVItemWithNoChildren *_imageError;
@@ -22,21 +20,21 @@
     CoreDAVItemWithNoChildren *_validTimezone;
 }
 
-@property(retain) CoreDAVItemWithNoChildren * ctagOkay;
-@property(retain) CoreDAVItemWithNoChildren * imageError;
-@property(retain) CoreDAVItemWithNoChildren * invalidImageType;
-@property(retain) CoreDAVItemWithNoChildren * maxAttendees;
-@property(retain) CoreDAVItemWithNoChildren * maxImageSize;
-@property(retain) CoreDAVItemWithNoChildren * maxResourceSize;
-@property(retain) CoreDAVItemWithNoChildren * maxResources;
-@property(retain) CoreDAVItemWithNoChildren * noUIDConflict;
-@property(retain) CoreDAVItemWithNoChildren * numberOfMatchesWithinLimits;
-@property(retain) CoreDAVItemWithNoChildren * quotaExceeded;
-@property(retain) CoreDAVLeafItem * status;
-@property(retain) CoreDAVItemWithNoChildren * uid;
-@property(retain) CoreDAVItemWithNoChildren * validAddressData;
-@property(retain) CoreDAVItemWithNoChildren * validSyncToken;
-@property(retain) CoreDAVItemWithNoChildren * validTimezone;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *ctagOkay;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *imageError;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *invalidImageType;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *maxAttendees;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *maxImageSize;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *maxResourceSize;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *maxResources;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *noUIDConflict;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *numberOfMatchesWithinLimits;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *quotaExceeded;
+@property (nonatomic, retain) CoreDAVLeafItem *status;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *uid;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *validAddressData;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *validSyncToken;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *validTimezone;
 
 + (id)copyParseRules;
 

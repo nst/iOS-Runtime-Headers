@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCWaveformSelectionOverlayDelegate>, CALayer, NSMutableDictionary, RCOverlayBarLayer, RCTextLayer, RCUIConfiguration;
-
 @interface RCWaveformSelectionOverlay : UIView {
     RCUIConfiguration *_UIConfiguration;
     double _assetCurrentTime;
@@ -48,20 +46,20 @@
     NSMutableDictionary *_trackedTouches;
 }
 
-@property(copy) RCUIConfiguration * UIConfiguration;
-@property double assetCurrentTime;
-@property double assetDuration;
-@property(readonly) int beginTimeIndicatorSelectionAffinity;
-@property(readonly) float currentTimeIndicatorCoordinate;
-@property <RCWaveformSelectionOverlayDelegate> * delegate;
-@property(getter=isDisplayingSelectionTimes) BOOL displayingSelectionTimes;
-@property(getter=isEditingEnabled) BOOL editingEnabled;
-@property(readonly) int endTimeIndicatorSelectionAffinity;
-@property(readonly) struct { double x1; double x2; } selectedTimeRange;
-@property double selectedTimeRangeMaximumDuration;
-@property double selectedTimeRangeMinimumDuration;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionRect;
-@property double trackedAssetCurrentTime;
+@property (nonatomic, copy) RCUIConfiguration *UIConfiguration;
+@property (nonatomic) double assetCurrentTime;
+@property (nonatomic) double assetDuration;
+@property (nonatomic, readonly) int beginTimeIndicatorSelectionAffinity;
+@property (nonatomic, readonly) float currentTimeIndicatorCoordinate;
+@property (nonatomic) <RCWaveformSelectionOverlayDelegate> *delegate;
+@property (getter=isDisplayingSelectionTimes, nonatomic) BOOL displayingSelectionTimes;
+@property (getter=isEditingEnabled, nonatomic) BOOL editingEnabled;
+@property (nonatomic, readonly) int endTimeIndicatorSelectionAffinity;
+@property (nonatomic, readonly) struct { double x1; double x2; } selectedTimeRange;
+@property (nonatomic) double selectedTimeRangeMaximumDuration;
+@property (nonatomic) double selectedTimeRangeMinimumDuration;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectionRect;
+@property (nonatomic) double trackedAssetCurrentTime;
 
 - (void).cxx_destruct;
 - (id)UIConfiguration;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUExtrasBorderedImageView, NSString;
-
 @interface MPUExtrasZoomingImageTransitionController : UIPercentDrivenInteractiveTransition <MPUExtrasOptionallyInteractiveAnimationController, UIViewControllerAnimatedTransitioning> {
     struct CGPoint { 
         float x; 
@@ -16,16 +14,16 @@
     MPUExtrasBorderedImageView *_zoomingImageView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct CGPoint { float x1; float x2; } initialPinchCenter;
-@property float initialPinchScale;
-@property(getter=isInteractive) BOOL interactive;
-@property unsigned int itemIndex;
-@property BOOL shouldUseSpringAnimation;
-@property(readonly) Class superclass;
-@property(retain) MPUExtrasBorderedImageView * zoomingImageView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialPinchCenter;
+@property (nonatomic) float initialPinchScale;
+@property (getter=isInteractive, nonatomic) BOOL interactive;
+@property (nonatomic) unsigned int itemIndex;
+@property (nonatomic) BOOL shouldUseSpringAnimation;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) MPUExtrasBorderedImageView *zoomingImageView;
 
 - (void).cxx_destruct;
 - (float)_desiredSpeedForNonInteractiveAnimationWithDuration:(double)arg1 deferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 finalTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;

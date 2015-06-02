@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, UIColor, UIImage;
-
 @interface HKDataCategory : NSObject {
     UIColor *_bottomColor;
     NSMutableDictionary *_cachedGradients;
@@ -18,14 +16,14 @@
     UIColor *_topColor;
 }
 
-@property(readonly) int categoryID;
-@property(readonly) UIImage * dashboardIcon;
-@property(readonly) NSArray * dataUnitGroups;
-@property(readonly) NSString * displayName;
-@property(readonly) BOOL isMeCategory;
-@property(readonly) UIImage * listIcon;
-@property(readonly) NSString * listIconName;
-@property(readonly) UIImage * shareIcon;
+@property (nonatomic, readonly) int categoryID;
+@property (nonatomic, readonly) UIImage *dashboardIcon;
+@property (nonatomic, readonly) NSArray *dataUnitGroups;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) BOOL isMeCategory;
+@property (nonatomic, readonly) UIImage *listIcon;
+@property (nonatomic, readonly) NSString *listIconName;
+@property (nonatomic, readonly) UIImage *shareIcon;
 
 - (void).cxx_destruct;
 - (id)_generateGradientOfHeight:(float)arg1;

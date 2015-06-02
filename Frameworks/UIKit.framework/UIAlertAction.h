@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <_UIAlertActionRepresenting>, NSString, UIAlertController, UIColor, UIImage, UIViewController;
-
 @interface UIAlertAction : NSObject <NSCopying> {
     UIAlertController *__alertController;
     NSString *__descriptiveText;
@@ -15,47 +9,35 @@
     BOOL _checked;
     UIViewController *_contentViewController;
     BOOL _enabled;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handler;
-
+    id /* block */ _handler;
     UIImage *_image;
     UIColor *_imageTintColor;
     BOOL _isDefault;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shouldDismissHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _simpleHandler;
-
+    id /* block */ _shouldDismissHandler;
+    id /* block */ _simpleHandler;
     int _style;
     NSString *_title;
     int _titleTextAlignment;
     UIColor *_titleTextColor;
 }
 
-@property(setter=_setAlertController:) UIAlertController * _alertController;
-@property(setter=_setDescriptiveText:,copy) NSString * _descriptiveText;
-@property(setter=_setIsDefault:) BOOL _isDefault;
-@property(setter=_setRepresenter:) <_UIAlertActionRepresenting> * _representer;
-@property(getter=_contentViewController,setter=_setContentViewController:,retain) UIViewController * contentViewController;
-@property(getter=isEnabled) BOOL enabled;
-@property(copy) id handler;
-@property(retain) UIImage * image;
-@property(copy) id shouldDismissHandler;
-@property(copy) id simpleHandler;
-@property int style;
-@property(copy) NSString * title;
+@property (setter=_setAlertController:, nonatomic) UIAlertController *_alertController;
+@property (setter=_setDescriptiveText:, nonatomic, copy) NSString *_descriptiveText;
+@property (setter=_setIsDefault:) BOOL _isDefault;
+@property (setter=_setRepresenter:) <_UIAlertActionRepresenting> *_representer;
+@property (getter=_contentViewController, setter=_setContentViewController:, nonatomic, retain) UIViewController *contentViewController;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, copy) id /* block */ handler;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, copy) id /* block */ shouldDismissHandler;
+@property (nonatomic, copy) id /* block */ simpleHandler;
+@property (nonatomic) int style;
+@property (nonatomic, copy) NSString *title;
 
 + (id)_actionWithContentViewController:(id)arg1 style:(int)arg2;
-+ (id)_actionWithTitle:(id)arg1 descriptiveText:(id)arg2 image:(id)arg3 style:(int)arg4 handler:(id)arg5 shouldDismissHandler:(id)arg6;
-+ (id)_actionWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 handler:(id)arg4 shouldDismissHandler:(id)arg5;
-+ (id)actionWithTitle:(id)arg1 style:(int)arg2 handler:(id)arg3;
++ (id)_actionWithTitle:(id)arg1 descriptiveText:(id)arg2 image:(id)arg3 style:(int)arg4 handler:(id /* block */)arg5 shouldDismissHandler:(id /* block */)arg6;
++ (id)_actionWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 handler:(id /* block */)arg4 shouldDismissHandler:(id /* block */)arg5;
++ (id)actionWithTitle:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3;
 
 - (id)_alertController;
 - (id)_contentViewController;
@@ -80,18 +62,18 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)handler;
+- (id /* block */)handler;
 - (id)image;
 - (BOOL)isEnabled;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setHandler:(id)arg1;
+- (void)setHandler:(id /* block */)arg1;
 - (void)setImage:(id)arg1;
-- (void)setShouldDismissHandler:(id)arg1;
-- (void)setSimpleHandler:(id)arg1;
+- (void)setShouldDismissHandler:(id /* block */)arg1;
+- (void)setSimpleHandler:(id /* block */)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
-- (id)shouldDismissHandler;
-- (id)simpleHandler;
+- (id /* block */)shouldDismissHandler;
+- (id /* block */)simpleHandler;
 - (int)style;
 - (id)title;
 

@@ -2,27 +2,17 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BKSApplicationStateMonitor, NSObject<OS_dispatch_queue>;
-
 @interface HMDApplicationStateMonitor : NSObject {
     BKSApplicationStateMonitor *_bkAppStateMonitor;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _notificationHandler;
-
+    id /* block */ _notificationHandler;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) BKSApplicationStateMonitor * bkAppStateMonitor;
-@property(copy) id notificationHandler;
-@property(retain) NSObject<OS_dispatch_queue> * notificationQueue;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) BKSApplicationStateMonitor *bkAppStateMonitor;
+@property (nonatomic, copy) id /* block */ notificationHandler;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *notificationQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)applicationStateDescription:(unsigned int)arg1;
 
@@ -30,11 +20,11 @@
 - (id)bkAppStateMonitor;
 - (void)handleAppStateChangedInfo:(id)arg1;
 - (id)init;
-- (id)notificationHandler;
+- (id /* block */)notificationHandler;
 - (id)notificationQueue;
 - (void)setBkAppStateMonitor:(id)arg1;
-- (void)setNotificationHandler:(id)arg1;
-- (void)setNotificationHandler:(id)arg1 queue:(id)arg2;
+- (void)setNotificationHandler:(id /* block */)arg1;
+- (void)setNotificationHandler:(id /* block */)arg1 queue:(id)arg2;
 - (void)setNotificationQueue:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)start;

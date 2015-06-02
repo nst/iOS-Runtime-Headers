@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebFormControl>;
-
 @interface UIWebDateTimePopoverViewController : UIViewController {
     <UIWebFormControl> *_innerWebDateTimeControl;
 }
 
-@property(retain) <UIWebFormControl> * _innerWebDateTimeControl;
+@property (nonatomic, retain) <UIWebFormControl> *_innerWebDateTimeControl;
 
 - (id)_innerWebDateTimeControl;
 - (void)dealloc;

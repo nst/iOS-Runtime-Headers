@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartPieAreaLayoutItem : TSCH2DChartAbstractAreaLayoutItem {
-}
+@interface TSCHChartPieAreaLayoutItem : TSCH2DChartAbstractAreaLayoutItem
 
 - (void)buildSubTree;
 - (void)p_layoutInward;

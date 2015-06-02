@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class IKAppDocument, IKViewElement, MPUExtrasContext, NSDictionary, NSString;
-
 @interface MPUExtrasTemplateViewController : MPUExtrasElementViewController <IKAppDocumentDelegate> {
     MPUExtrasContext *_context;
     IKViewElement *_displayedTemplate;
@@ -11,13 +9,13 @@
     NSDictionary *_options;
 }
 
-@property(readonly) MPUExtrasContext * context;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) IKAppDocument * document;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL showsPlaceholder;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) MPUExtrasContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) IKAppDocument *document;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL showsPlaceholder;
+@property (readonly) Class superclass;
 
 + (id)templateViewControllerWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
 

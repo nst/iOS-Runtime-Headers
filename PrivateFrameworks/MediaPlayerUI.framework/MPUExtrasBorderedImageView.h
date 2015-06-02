@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UIColor;
-
 @interface MPUExtrasBorderedImageView : UIImageView {
     struct CGAffineTransform { 
         float a; 
@@ -18,12 +16,12 @@
     BOOL _shouldUseTransformWhenReplicatingState;
 }
 
-@property(copy) UIColor * borderColor;
-@property float borderWidth;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } deferredTransform;
-@property BOOL shouldDeferSettingTransform;
-@property BOOL shouldSkipImageWhenReplicatingState;
-@property BOOL shouldUseTransformWhenReplicatingState;
+@property (nonatomic, copy) UIColor *borderColor;
+@property (nonatomic) float borderWidth;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } deferredTransform;
+@property (nonatomic) BOOL shouldDeferSettingTransform;
+@property (nonatomic) BOOL shouldSkipImageWhenReplicatingState;
+@property (nonatomic) BOOL shouldUseTransformWhenReplicatingState;
 
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)borderColor;

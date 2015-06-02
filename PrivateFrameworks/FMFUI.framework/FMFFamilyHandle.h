@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class NSNumber;
-
 @interface FMFFamilyHandle : FMFHandle {
     NSNumber *_dsid;
 }
 
-@property(copy) NSNumber * dsid;
+@property (nonatomic, copy) NSNumber *dsid;
 
 - (void).cxx_destruct;
 - (id)dsid;

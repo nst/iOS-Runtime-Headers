@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class LTEInternalDeviceList;
-
 @interface LTEAudioDeviceList : NSObject {
     LTEInternalDeviceList *_internalList;
 }
 
-@property(copy) id changeListener;
+@property (nonatomic, copy) id /* block */ changeListener;
 
 + (id)currentInputDevice;
 + (id)defaultInputDevice;
 + (id)defaultOutputDevice;
 + (BOOL)setInputDevice:(id)arg1;
 
-- (id)changeListener;
+- (id /* block */)changeListener;
 - (void)dealloc;
 - (id)devices;
 - (id)init;
 - (id)inputDevices;
 - (id)outputDevices;
-- (void)setChangeListener:(id)arg1;
+- (void)setChangeListener:(id /* block */)arg1;
 
 @end

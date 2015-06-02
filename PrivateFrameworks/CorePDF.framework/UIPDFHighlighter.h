@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSMutableArray;
-
 @interface UIPDFHighlighter : NSObject {
     struct CGColor { } *_borderColor;
     float _enlargeFactor;
@@ -15,7 +13,7 @@
     float inset;
 }
 
-@property float inset;
+@property (nonatomic) float inset;
 
 - (void)addAnimation:(id)arg1;
 - (void)addHighlightFor:(id)arg1 to:(id)arg2 animated:(BOOL)arg3;

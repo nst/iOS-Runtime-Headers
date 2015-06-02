@@ -6,17 +6,17 @@
     void *_rangeVectorOpaque;
 }
 
-@property(readonly) unsigned int finish;
-@property(readonly) BOOL isEmpty;
-@property(readonly) unsigned int rangeCount;
-@property(readonly) unsigned int start;
+@property (nonatomic, readonly) unsigned int finish;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) unsigned int rangeCount;
+@property (nonatomic, readonly) unsigned int start;
 
 - (void)addRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id)arg2;
-- (void)enumerateRangesUsingBlock:(id)arg1;
+- (void)enumerateRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateRangesUsingBlock:(id /* block */)arg1;
 - (unsigned int)finish;
 - (id)init;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

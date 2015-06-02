@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSString, PHAsset;
-
 @interface PHAssetOriginalMetadataProperties : NSObject {
     PHAsset *_asset;
     NSString *_originalAssetsUUID;
@@ -15,14 +13,14 @@
     short _originalWidth;
 }
 
-@property(readonly) PHAsset * asset;
-@property(readonly) NSString * originalAssetsUUID;
-@property(readonly) short originalExifOrientation;
-@property(readonly) NSString * originalFilename;
-@property(readonly) int originalFilesize;
-@property(readonly) short originalHeight;
-@property(readonly) NSString * originalPath;
-@property(readonly) short originalWidth;
+@property (nonatomic, readonly) PHAsset *asset;
+@property (nonatomic, readonly) NSString *originalAssetsUUID;
+@property (nonatomic, readonly) short originalExifOrientation;
+@property (nonatomic, readonly) NSString *originalFilename;
+@property (nonatomic, readonly) int originalFilesize;
+@property (nonatomic, readonly) short originalHeight;
+@property (nonatomic, readonly) NSString *originalPath;
+@property (nonatomic, readonly) short originalWidth;
 
 - (void).cxx_destruct;
 - (id)asset;

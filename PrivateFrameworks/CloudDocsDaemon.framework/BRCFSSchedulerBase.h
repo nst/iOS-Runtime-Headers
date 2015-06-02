@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCAccountSession, BRCDeadlineToken, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString, PQLNameInjection;
-
 @interface BRCFSSchedulerBase : NSObject <BRCLifeCycle> {
     BOOL _hasActiveWork;
     BOOL _hasWork;
@@ -16,15 +14,15 @@
     PQLNameInjection *_tableName;
 }
 
-@property(readonly) BOOL closed;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL hasActiveWork;
-@property BOOL hasWork;
-@property(retain) NSObject<OS_dispatch_group> * hasWorkGroup;
-@property(readonly) unsigned int hash;
-@property BOOL isCancelled;
-@property(readonly) Class superclass;
+@property (readonly) BOOL closed;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasActiveWork;
+@property (nonatomic) BOOL hasWork;
+@property (retain) NSObject<OS_dispatch_group> *hasWorkGroup;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCancelled;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_canRetryThrottleID:(long long)arg1 zone:(id)arg2;

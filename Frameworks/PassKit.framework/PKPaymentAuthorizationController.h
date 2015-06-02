@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PKPaymentAuthorizationControllerDelegate>, <PKPaymentAuthorizationControllerPrivateDelegate>, NSObject<OS_dispatch_queue>, NSString, NSTimer, NSXPCConnection, NSXPCListener, PKInAppPaymentService, PKPaymentAuthorizationControllerExportedObject, PKPaymentRequest;
-
 @interface PKPaymentAuthorizationController : NSObject <NSXPCListenerDelegate> {
     NSXPCConnection *_connection;
     double _connectionTimeout;
@@ -17,32 +11,28 @@
     PKInAppPaymentService *_inAppPaymentService;
     NSXPCListener *_listener;
     PKPaymentRequest *_paymentRequest;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _presentationCompletionBlock;
-
+    id /* block */ _presentationCompletionBlock;
     NSObject<OS_dispatch_queue> *_queue;
     NSTimer *_timer;
 }
 
-@property(setter=_setPrivateDelegate:) <PKPaymentAuthorizationControllerPrivateDelegate> * _privateDelegate;
-@property(retain) NSXPCConnection * connection;
-@property double connectionTimeout;
-@property(copy,readonly) NSString * debugDescription;
-@property <PKPaymentAuthorizationControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL didPresent;
-@property(retain) PKPaymentAuthorizationControllerExportedObject * exportedObject;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * hostIdentifier;
-@property(retain) PKInAppPaymentService * inAppPaymentService;
-@property(retain) NSXPCListener * listener;
-@property(retain) PKPaymentRequest * paymentRequest;
-@property(copy) id presentationCompletionBlock;
-@property NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class superclass;
-@property(retain) NSTimer * timer;
+@property (setter=_setPrivateDelegate:, nonatomic) <PKPaymentAuthorizationControllerPrivateDelegate> *_privateDelegate;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (nonatomic) double connectionTimeout;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKPaymentAuthorizationControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didPresent;
+@property (nonatomic, retain) PKPaymentAuthorizationControllerExportedObject *exportedObject;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *hostIdentifier;
+@property (nonatomic, retain) PKInAppPaymentService *inAppPaymentService;
+@property (nonatomic, retain) NSXPCListener *listener;
+@property (nonatomic, retain) PKPaymentRequest *paymentRequest;
+@property (nonatomic, copy) id /* block */ presentationCompletionBlock;
+@property (nonatomic) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSTimer *timer;
 
 + (BOOL)canMakePayments;
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1;
@@ -57,7 +47,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)didPresent;
-- (void)dismissWithCompletion:(id)arg1;
+- (void)dismissWithCompletion:(id /* block */)arg1;
 - (id)exportedObject;
 - (id)hostIdentifier;
 - (id)inAppPaymentService;
@@ -65,8 +55,8 @@
 - (id)listener;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)paymentRequest;
-- (void)presentWithCompletion:(id)arg1;
-- (id)presentationCompletionBlock;
+- (void)presentWithCompletion:(id /* block */)arg1;
+- (id /* block */)presentationCompletionBlock;
 - (id)queue;
 - (void)setConnection:(id)arg1;
 - (void)setConnectionTimeout:(double)arg1;
@@ -77,7 +67,7 @@
 - (void)setInAppPaymentService:(id)arg1;
 - (void)setListener:(id)arg1;
 - (void)setPaymentRequest:(id)arg1;
-- (void)setPresentationCompletionBlock:(id)arg1;
+- (void)setPresentationCompletionBlock:(id /* block */)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setTimer:(id)arg1;
 - (id)timer;

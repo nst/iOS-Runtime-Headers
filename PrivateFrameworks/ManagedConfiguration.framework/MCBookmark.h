@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSString, NSURL;
-
 @interface MCBookmark : NSObject <NSCopying> {
     NSURL *_URL;
     NSString *_path;
     NSString *_title;
 }
 
-@property(retain) NSURL * URL;
-@property(retain) NSString * path;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (id)URL;

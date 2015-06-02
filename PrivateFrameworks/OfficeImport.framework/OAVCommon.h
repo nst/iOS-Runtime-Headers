@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAVCommon : NSObject {
-}
+@interface OAVCommon : NSObject
 
 + (void)initialize;
 

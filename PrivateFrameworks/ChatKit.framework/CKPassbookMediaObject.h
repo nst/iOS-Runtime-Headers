@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class PKPass, UIImage;
-
 @interface CKPassbookMediaObject : CKMediaObject {
     UIImage *_icon;
     PKPass *_pass;
 }
 
-@property(retain) UIImage * icon;
-@property(retain) PKPass * pass;
+@property (nonatomic, retain) UIImage *icon;
+@property (nonatomic, retain) PKPass *pass;
 
 + (id)UTITypes;
 + (id)attachmentSummary:(unsigned int)arg1;

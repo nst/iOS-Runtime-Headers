@@ -6,7 +6,7 @@
     BOOL _overlay;
 }
 
-@property(getter=isOverlay) BOOL overlay;
+@property (getter=isOverlay, nonatomic) BOOL overlay;
 
 - (BOOL)isOverlay;
 - (void)setOverlay:(BOOL)arg1;

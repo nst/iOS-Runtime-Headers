@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEONameInfo, NSMutableArray, NSString;
-
 @interface GEOCompanionDriveStep : PBCodable <GEOCompanionManeuverStep, NSCopying> {
     int _drivingSide;
     GEONameInfo *_exitNumber;
@@ -26,29 +24,29 @@
     BOOL _toFreeway;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property int drivingSide;
-@property(retain) GEONameInfo * exitNumber;
-@property BOOL hasDrivingSide;
-@property(readonly) BOOL hasExitNumber;
-@property BOOL hasJunctionType;
-@property BOOL hasManeuverType;
-@property(readonly) BOOL hasShield;
-@property BOOL hasShieldType;
-@property BOOL hasToFreeway;
-@property(readonly) unsigned int hash;
-@property(readonly) struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }* junctionElements;
-@property(readonly) unsigned int junctionElementsCount;
-@property int junctionType;
-@property(retain) NSMutableArray * maneuverNames;
-@property int maneuverType;
-@property(retain) NSString * shield;
-@property int shieldType;
-@property(retain) NSMutableArray * signposts;
-@property(readonly) Class superclass;
-@property BOOL toFreeway;
-@property(readonly) int transportType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int drivingSide;
+@property (nonatomic, retain) GEONameInfo *exitNumber;
+@property (nonatomic) BOOL hasDrivingSide;
+@property (nonatomic, readonly) BOOL hasExitNumber;
+@property (nonatomic) BOOL hasJunctionType;
+@property (nonatomic) BOOL hasManeuverType;
+@property (nonatomic, readonly) BOOL hasShield;
+@property (nonatomic) BOOL hasShieldType;
+@property (nonatomic) BOOL hasToFreeway;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*junctionElements;
+@property (nonatomic, readonly) unsigned int junctionElementsCount;
+@property (nonatomic) int junctionType;
+@property (nonatomic, retain) NSMutableArray *maneuverNames;
+@property (nonatomic) int maneuverType;
+@property (nonatomic, retain) NSString *shield;
+@property (nonatomic) int shieldType;
+@property (nonatomic, retain) NSMutableArray *signposts;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL toFreeway;
+@property (nonatomic, readonly) int transportType;
 
 - (void)addJunctionElement:(struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })arg1;
 - (void)addManeuverName:(id)arg1;

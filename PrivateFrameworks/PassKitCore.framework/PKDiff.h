@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSMutableArray, NSString;
-
 @interface PKDiff : NSObject <NSSecureCoding> {
     NSMutableArray *_hunks;
     NSString *_passUniqueID;
 }
 
-@property(copy) NSString * passUniqueID;
+@property (nonatomic, copy) NSString *passUniqueID;
 
 + (BOOL)supportsSecureCoding;
 
@@ -21,7 +19,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateHunks:(id)arg1;
+- (void)enumerateHunks:(id /* block */)arg1;
 - (BOOL)getHunkForKey:(id)arg1 oldValue:(id*)arg2 newValue:(id*)arg3 message:(id*)arg4;
 - (unsigned int)hash;
 - (int)hunkCount;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class NSObject<OS_dispatch_queue>, NSXPCConnection;
-
 @interface VTServiceClient : NSObject {
     NSObject<OS_dispatch_queue> *_queue;
     NSXPCConnection *_vtxConnection;
@@ -14,7 +12,7 @@
 - (void)dealloc;
 - (void)enableVoiceTrigger:(BOOL)arg1 withAssertion:(id)arg2;
 - (void)feedbackWithReason:(unsigned char)arg1 atTime:(double)arg2;
-- (void)getSiriLanguageCode:(id)arg1;
+- (void)getSiriLanguageCode:(id /* block */)arg1;
 - (id)init;
 - (void)reportEventWithAudioFile:(id)arg1 metaDataFile:(id)arg2;
 - (void)resetAssertions;

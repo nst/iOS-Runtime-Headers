@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableData, NSString;
-
 @interface PTPHostUSBTransport : PTPTransport {
     struct __CFRunLoopSource { } *_CFRunLoopSource;
     unsigned char _bulkPipeIn;

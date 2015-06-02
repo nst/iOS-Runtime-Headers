@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSHashTable;
-
 @interface MKAmbientLightMonitor : NSObject {
     int _ambientLightLevel;
     struct __IOHIDEventSystemClient { } *_client;
@@ -31,9 +29,9 @@
     float _runningStatSum;
 }
 
-@property(readonly) int ambientLightLevel;
-@property BOOL debugLogLux;
-@property(getter=isMonitoring,readonly) BOOL monitoring;
+@property (nonatomic, readonly) int ambientLightLevel;
+@property (nonatomic) BOOL debugLogLux;
+@property (getter=isMonitoring, nonatomic, readonly) BOOL monitoring;
 
 + (id)sharedAmbientLightMonitor;
 

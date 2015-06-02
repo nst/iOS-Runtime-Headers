@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUAlbumListViewController, PUAlbumListViewControllerSpec, PUFeedViewControllerSpec, PUZoomableGridViewControllerSpec;
-
 @interface PUTabbedLibraryViewControllerSpec : NSObject {
     PUAlbumListViewControllerSpec *_albumListViewControllerSpec;
     PUAlbumListViewController *_createAlbumListViewController;
@@ -12,11 +10,11 @@
     PUZoomableGridViewControllerSpec *_zoomableGridViewControllerSpec;
 }
 
-@property(readonly) PUAlbumListViewControllerSpec * albumListViewControllerSpec;
-@property(readonly) PUAlbumListViewController * createAlbumListViewController;
-@property(readonly) PUAlbumListViewController * createSharedAlbumListViewController;
-@property(readonly) PUFeedViewControllerSpec * feedViewControllerSpec;
-@property(readonly) PUZoomableGridViewControllerSpec * zoomableGridViewControllerSpec;
+@property (nonatomic, readonly) PUAlbumListViewControllerSpec *albumListViewControllerSpec;
+@property (nonatomic, readonly) PUAlbumListViewController *createAlbumListViewController;
+@property (nonatomic, readonly) PUAlbumListViewController *createSharedAlbumListViewController;
+@property (nonatomic, readonly) PUFeedViewControllerSpec *feedViewControllerSpec;
+@property (nonatomic, readonly) PUZoomableGridViewControllerSpec *zoomableGridViewControllerSpec;
 
 - (void).cxx_destruct;
 - (id)albumListViewControllerSpec;

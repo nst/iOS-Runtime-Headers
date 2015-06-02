@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDCollection, EDColumnInfoCollection, EDMergedCellCollection, EDPane, EDReference, EDRowBlocks, EDWarnings, OITSUPointerKeyDictionary;
-
 @interface EDWorksheet : EDSheet {
     EDColumnInfoCollection *mColumnInfos;
     EDCollection *mConditionalFormattings;

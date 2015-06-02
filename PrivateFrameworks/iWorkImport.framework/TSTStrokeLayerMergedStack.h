@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTMutableStrokeLayer, TSTStrokeLayer, TSTStrokeOrderedLayer;
-
 @interface TSTStrokeLayerMergedStack : TSTStrokeLayerAbstractStack {
     TSTMutableStrokeLayer *_clearedMajorStrokeLayer;
     TSTMutableStrokeLayer *_clearedMinorStrokeLayer;
@@ -17,16 +15,16 @@
     TSTMutableStrokeLayer *_spillMinorStrokeLayer;
 }
 
-@property(retain) TSTMutableStrokeLayer * clearedMajorStrokeLayer;
-@property(retain) TSTMutableStrokeLayer * clearedMinorStrokeLayer;
-@property(retain) TSTStrokeOrderedLayer * customOrderedStrokeLayer;
-@property(retain) TSTStrokeLayer * customUnorderedStrokeLayer;
-@property(retain) TSTStrokeLayer * defaultMajorStrokeLayer;
-@property(retain) TSTStrokeLayer * defaultMinorStrokeLayer;
-@property(retain) TSTStrokeOrderedLayer * dynamicOrderedStrokeLayer;
-@property(retain) TSTMutableStrokeLayer * dynamicUnorderedStrokeLayer;
-@property(retain) TSTMutableStrokeLayer * spillMajorStrokeLayer;
-@property(retain) TSTMutableStrokeLayer * spillMinorStrokeLayer;
+@property (nonatomic, retain) TSTMutableStrokeLayer *clearedMajorStrokeLayer;
+@property (nonatomic, retain) TSTMutableStrokeLayer *clearedMinorStrokeLayer;
+@property (nonatomic, retain) TSTStrokeOrderedLayer *customOrderedStrokeLayer;
+@property (nonatomic, retain) TSTStrokeLayer *customUnorderedStrokeLayer;
+@property (nonatomic, retain) TSTStrokeLayer *defaultMajorStrokeLayer;
+@property (nonatomic, retain) TSTStrokeLayer *defaultMinorStrokeLayer;
+@property (nonatomic, retain) TSTStrokeOrderedLayer *dynamicOrderedStrokeLayer;
+@property (nonatomic, retain) TSTMutableStrokeLayer *dynamicUnorderedStrokeLayer;
+@property (nonatomic, retain) TSTMutableStrokeLayer *spillMajorStrokeLayer;
+@property (nonatomic, retain) TSTMutableStrokeLayer *spillMinorStrokeLayer;
 
 + (float)maxWidthForLeftStrokes:(id)arg1 mergedWithRightStrokes:(id)arg2 atRowIndex:(int)arg3;
 + (float)maxWidthForLeftStrokes:(id)arg1 mergedWithRightStrokes:(id)arg2 inRange:(struct TSTSimpleRange { int x1; unsigned int x2; })arg3 cachedMax:(float)arg4;

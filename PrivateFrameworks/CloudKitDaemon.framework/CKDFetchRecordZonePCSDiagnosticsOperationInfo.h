@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSArray;
-
 @interface CKDFetchRecordZonePCSDiagnosticsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     NSArray *_recordZoneIDs;
 }
 
-@property(retain) NSArray * recordZoneIDs;
+@property (nonatomic, retain) NSArray *recordZoneIDs;
 
 - (void).cxx_destruct;
 - (id)recordZoneIDs;

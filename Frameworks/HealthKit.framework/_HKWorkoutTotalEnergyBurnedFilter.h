@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKQuantity;
-
 @interface _HKWorkoutTotalEnergyBurnedFilter : _HKFilter {
     unsigned int _operatorType;
     HKQuantity *_totalEnergyBurned;
 }
 
-@property(readonly) unsigned int operatorType;
-@property(readonly) HKQuantity * totalEnergyBurned;
+@property (nonatomic, readonly) unsigned int operatorType;
+@property (nonatomic, readonly) HKQuantity *totalEnergyBurned;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterWithTotalEnergyBurned:(id)arg1 operatorType:(unsigned int)arg2;
@@ -23,7 +23,10 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)operatorType;
-- (id)predicateWithHealthDaemon:(id)arg1;
 - (id)totalEnergyBurned;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
+- (id)predicateWithHealthDaemon:(id)arg1;
 
 @end

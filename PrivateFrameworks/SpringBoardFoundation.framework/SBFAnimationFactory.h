@@ -2,27 +2,25 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class BSAnimationSettings, NSString;
-
 @interface SBFAnimationFactory : NSObject <NSCopying, _UIBasicAnimationFactory> {
     BSAnimationSettings *_settings;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) double delay;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) double delay;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-+ (void)animateWithFactory:(id)arg1 actions:(id)arg2;
-+ (void)animateWithFactory:(id)arg1 actions:(id)arg2 completion:(id)arg3;
-+ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id)arg3;
-+ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id)arg3 completion:(id)arg4;
-+ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned int)arg3 actions:(id)arg4;
-+ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned int)arg3 actions:(id)arg4 completion:(id)arg5;
-+ (void)animateWithFactory:(id)arg1 options:(unsigned int)arg2 actions:(id)arg3;
-+ (void)animateWithFactory:(id)arg1 options:(unsigned int)arg2 actions:(id)arg3 completion:(id)arg4;
++ (void)animateWithFactory:(id)arg1 actions:(id /* block */)arg2;
++ (void)animateWithFactory:(id)arg1 actions:(id /* block */)arg2 completion:(id /* block */)arg3;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id /* block */)arg3;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 actions:(id /* block */)arg3 completion:(id /* block */)arg4;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned int)arg3 actions:(id /* block */)arg4;
++ (void)animateWithFactory:(id)arg1 additionalDelay:(double)arg2 options:(unsigned int)arg3 actions:(id /* block */)arg4 completion:(id /* block */)arg5;
++ (void)animateWithFactory:(id)arg1 options:(unsigned int)arg2 actions:(id /* block */)arg3;
++ (void)animateWithFactory:(id)arg1 options:(unsigned int)arg2 actions:(id /* block */)arg3 completion:(id /* block */)arg4;
 + (id)factoryWithAnimationAttributes:(id)arg1;
 + (id)factoryWithDuration:(double)arg1;
 + (id)factoryWithDuration:(double)arg1 delay:(double)arg2;
@@ -35,7 +33,7 @@
 + (id)factoryWithSettings:(id)arg1;
 + (id)factoryWithSettings:(id)arg1 timingFunction:(id)arg2;
 
-- (void)_animateWithAdditionalDelay:(double)arg1 options:(unsigned int)arg2 actions:(id)arg3 completion:(id)arg4;
+- (void)_animateWithAdditionalDelay:(double)arg1 options:(unsigned int)arg2 actions:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_initWithSettings:(id)arg1;
 - (id)_timingFunctionForAnimation;

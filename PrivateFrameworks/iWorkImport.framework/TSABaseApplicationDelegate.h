@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSADownloadDelegate>, NSArray, NSString, TSADocumentRoot;
-
 @interface TSABaseApplicationDelegate : TSKApplicationDelegate {
     <TSADownloadDelegate> *_downloadDelegate;
     TSADocumentRoot *mDocumentRoot;
 }
 
-@property(readonly) NSArray * applicationTemplateVariants;
-@property(readonly) NSString * collaboratorPersonID;
-@property TSADocumentRoot * documentRoot;
-@property(retain) <TSADownloadDelegate> * downloadDelegate;
-@property(readonly) NSArray * importableDocumentTypes;
-@property(readonly) NSString * nativeDocumentExtension;
-@property(readonly) NSString * nativeDocumentType;
-@property(readonly) NSString * nativeSFFDocumentType;
-@property(readonly) NSArray * readableDocumentTypes;
-@property(readonly) NSString * tangierEditingFormatDocumentType;
-@property(readonly) NSString * templateDocumentExtension;
-@property(readonly) NSString * templateDocumentType;
-@property(readonly) NSString * templateSFFDocumentType;
+@property (nonatomic, readonly) NSArray *applicationTemplateVariants;
+@property (nonatomic, readonly) NSString *collaboratorPersonID;
+@property (nonatomic) TSADocumentRoot *documentRoot;
+@property (nonatomic, retain) <TSADownloadDelegate> *downloadDelegate;
+@property (nonatomic, readonly) NSArray *importableDocumentTypes;
+@property (nonatomic, readonly) NSString *nativeDocumentExtension;
+@property (nonatomic, readonly) NSString *nativeDocumentType;
+@property (nonatomic, readonly) NSString *nativeSFFDocumentType;
+@property (nonatomic, readonly) NSArray *readableDocumentTypes;
+@property (nonatomic, readonly) NSString *tangierEditingFormatDocumentType;
+@property (nonatomic, readonly) NSString *templateDocumentExtension;
+@property (nonatomic, readonly) NSString *templateDocumentType;
+@property (nonatomic, readonly) NSString *templateSFFDocumentType;
 
 + (void)resetSharedConfigurations;
 + (id)sharedDelegate;
@@ -64,7 +62,7 @@
 - (void)setIWorkAuthorColorIndex:(unsigned int)arg1;
 - (void)setIWorkAuthorName:(id)arg1;
 - (BOOL)shouldShowLogMenu;
-- (id)stringForICloudPreferenceKey:(id)arg1 defaultValueGenerator:(id)arg2;
+- (id)stringForICloudPreferenceKey:(id)arg1 defaultValueGenerator:(id /* block */)arg2;
 - (id)tangierEditingFormatDocumentType;
 - (id)templateDocumentExtension;
 - (id)templateDocumentType;

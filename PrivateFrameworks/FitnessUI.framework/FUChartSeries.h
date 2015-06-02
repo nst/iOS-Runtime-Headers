@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class <FUChartSeriesDataSource>, <FUChartSeriesDelegate>, FUChartDataSet, NSArray, NSDate, NSNumber;
-
 @interface FUChartSeries : UIView {
     float _animationDuration;
     NSArray *_dataPoints;
@@ -22,13 +20,13 @@
     NSNumber *_minYValue;
 }
 
-@property float animationDuration;
-@property(retain) FUChartDataSet * dataSet;
-@property <FUChartSeriesDataSource> * dataSource;
-@property <FUChartSeriesDelegate> * delegate;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(retain) NSNumber * maxYValue;
-@property(retain) NSNumber * minYValue;
+@property (nonatomic) float animationDuration;
+@property (nonatomic, retain) FUChartDataSet *dataSet;
+@property (nonatomic) <FUChartSeriesDataSource> *dataSource;
+@property (nonatomic) <FUChartSeriesDelegate> *delegate;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic, retain) NSNumber *maxYValue;
+@property (nonatomic, retain) NSNumber *minYValue;
 
 - (void).cxx_destruct;
 - (id)_getMaxXValue;

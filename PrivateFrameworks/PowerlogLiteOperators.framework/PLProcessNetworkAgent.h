@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, NSDictionary, PLEntryNotificationOperatorComposition, UsageFeed;
-
 @interface PLProcessNetworkAgent : PLAgent {
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
     NSDictionary *_lastEntry;
@@ -12,11 +10,11 @@
     UsageFeed *_usageFeed;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelChanged;
-@property(retain) NSDictionary * lastEntry;
-@property(retain) NSDate * lastEntryTime;
-@property struct __NStatManager { }* statManagerRef;
-@property(retain) UsageFeed * usageFeed;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
+@property (retain) NSDictionary *lastEntry;
+@property (retain) NSDate *lastEntryTime;
+@property struct __NStatManager { }*statManagerRef;
+@property (retain) UsageFeed *usageFeed;
 
 + (id)accountingGroupDefinitions;
 + (id)entryEventBackwardDefinitionUsage;

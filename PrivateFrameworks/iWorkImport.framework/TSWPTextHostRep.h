@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSObject<TSDContainerInfo>, NSObject<TSKSearchReference>, NSString, TSWPShapeRep;
-
 @interface TSWPTextHostRep : TSDRep <TSDContainerRep> {
     NSObject<TSKSearchReference> *_activeSearchReference;
     TSWPShapeRep *_editingRep;
@@ -11,14 +9,14 @@
     BOOL _useFindOverlayers;
 }
 
-@property(retain) NSObject<TSKSearchReference> * activeSearchReference;
-@property(readonly) NSObject<TSDContainerInfo> * containerInfo;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * searchReferences;
-@property(readonly) Class superclass;
-@property(readonly) BOOL useFindOverlayers;
+@property (nonatomic, retain) NSObject<TSKSearchReference> *activeSearchReference;
+@property (nonatomic, readonly) NSObject<TSDContainerInfo> *containerInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *searchReferences;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL useFindOverlayers;
 
 - (id)activeSearchReference;
 - (void)addAdditionalChildLayersToArray:(id)arg1;

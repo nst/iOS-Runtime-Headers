@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableString, WDCharacterProperties;
-
 @interface WDCharacterRun : WDRun {
     BOOL mBinaryWriterContentFlag;
     WDCharacterProperties *mProperties;

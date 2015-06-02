@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSMutableSet;
-
 @interface CalDAVItemWithRecurrenceChildren : CoreDAVItem {
     NSMutableSet *_recurrences;
 }
 
-@property(retain) NSMutableSet * recurrences;
+@property (nonatomic, retain) NSMutableSet *recurrences;
 
 - (void)addRecurrence:(id)arg1;
 - (id)copyParseRules;

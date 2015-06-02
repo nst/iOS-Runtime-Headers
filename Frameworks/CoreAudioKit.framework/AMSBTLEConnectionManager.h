@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class <BTLEConnectionTable>, CBCentralManager, NSMutableArray, NSString, NSTimer;
-
 @interface AMSBTLEConnectionManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate> {
     CBCentralManager *centralManager;
     int centralState;
@@ -14,11 +12,11 @@
     NSTimer *refreshTimer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSMutableArray * peripheralList;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) NSMutableArray *peripheralList;
+@property (readonly) Class superclass;
 
 - (id)amsPeripheralForCBPeripheral:(id)arg1;
 - (int)bluetoothState;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class <CPLMinglePulledChangesTaskDelegate>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CPLMinglePulledChangesTask : CPLEngineSyncTask {
     NSString *_clientCacheIdentifier;
     unsigned int _countOfNotifiedBatchesInPullQueue;
@@ -11,7 +9,7 @@
     NSObject<OS_dispatch_queue> *_lock;
 }
 
-@property(retain) <CPLMinglePulledChangesTaskDelegate> * delegate;
+@property (retain) <CPLMinglePulledChangesTaskDelegate> *delegate;
 
 + (BOOL)mingleBatch:(id)arg1 forStore:(id)arg2 putBatchesInPullQueue:(BOOL*)arg3 error:(id*)arg4;
 

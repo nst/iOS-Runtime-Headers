@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface FTRegUtilities : NSObject {
-}
+@interface FTRegUtilities : NSObject
 
 + (void)authorizationController:(id)arg1 authorizedAccount:(BOOL)arg2;
 + (void)changePasswordControllerDidCancel:(id)arg1;

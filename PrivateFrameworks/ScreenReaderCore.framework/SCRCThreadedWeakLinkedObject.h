@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSLock;
-
 @interface SCRCThreadedWeakLinkedObject : NSObject {
     BOOL _calledDealloc;
     int _referenceCount;

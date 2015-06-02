@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSMutableArray, Protocol;
-
 @interface SKInvocationQueueProxy : NSObject {
     NSMutableArray *_invocationQueue;
     id _invocationTarget;
     Protocol *_protocol;
 }
 
-@property(retain) id invocationTarget;
+@property (nonatomic, retain) id invocationTarget;
 
 - (void)dealloc;
 - (void)forwardInvocation:(id)arg1;

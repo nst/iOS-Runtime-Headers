@@ -2,21 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@interface PKPhysicsFieldLinearGravity : PKPhysicsField {
-}
+@interface PKPhysicsFieldLinearGravity : PKPhysicsField
 
 + (id)field;
 
-- (/* Warning: Unrecognized filer type: '8' using 'void*' */ void*)direction;
-     /* Encoded args for previous method: 8@0:4 */
-
+- (void)direction;
 - (id)init;
-- (void)setDirection:(/* Warning: Unrecognized filer type: '' using 'void*' */ void*)arg1;
-     /* Encoded args for previous method: v24@0:48 */
-
+- (void)setDirection;
 
 @end

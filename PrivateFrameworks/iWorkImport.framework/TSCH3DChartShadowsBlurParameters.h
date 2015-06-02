@@ -9,10 +9,10 @@
     int mShadowSize;
 }
 
-@property float kernelScale;
-@property int numPasses;
-@property float quality;
-@property int shadowSize;
+@property (nonatomic) float kernelScale;
+@property (nonatomic) int numPasses;
+@property (nonatomic) float quality;
+@property (nonatomic) int shadowSize;
 
 + (id)paramsWithQuality:(float)arg1 numPasses:(int)arg2 shadowSize:(int)arg3 kernelScale:(float)arg4;
 

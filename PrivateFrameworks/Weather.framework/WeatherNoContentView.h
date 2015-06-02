@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class UIView;
-
 @interface WeatherNoContentView : UIView {
     UIView *_centerView;
     struct { 

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, NSURL;
-
 @interface PUEditingFullSizeImagePayload : NSObject <NSSecureCoding> {
     int _imageOrientation;
     NSString *_sandboxExtensionToken;
     NSURL *_url;
 }
 
-@property int imageOrientation;
-@property(retain) NSString * sandboxExtensionToken;
-@property(setter=setURL:,retain) NSURL * url;
+@property (nonatomic) int imageOrientation;
+@property (nonatomic, retain) NSString *sandboxExtensionToken;
+@property (setter=setURL:, nonatomic, retain) NSURL *url;
 
 + (BOOL)supportsSecureCoding;
 

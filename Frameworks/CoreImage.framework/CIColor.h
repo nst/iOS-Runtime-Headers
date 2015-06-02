@@ -3,15 +3,15 @@
  */
 
 @interface CIColor : NSObject <NSCoding, NSCopying> {
-    void *_pad[3];
+    void *_pad;
     void *_priv;
 }
+
+// Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
 
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-+ (id)colorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
-+ (id)colorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithString:(id)arg1;
 
 - (struct CGColor { }*)CGColor;
@@ -29,12 +29,20 @@
 - (unsigned int)hash;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithColor:(id)arg1;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (id)initWithString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned long)numberOfComponents;
 - (float)red;
 - (id)stringRepresentation;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)initWithColor:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
+
++ (id)colorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
++ (id)colorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 
 @end

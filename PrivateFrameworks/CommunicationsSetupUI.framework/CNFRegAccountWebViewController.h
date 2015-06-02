@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class NSString, NSTimer;
-
 @interface CNFRegAccountWebViewController : CNFRegServerWebViewController <UIAlertViewDelegate> {
     NSTimer *_bagLoadTimer;
     BOOL _failedBagLoad;
     BOOL _listeningForBagLoad;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL failedBagLoad;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL failedBagLoad;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_bagLoadTimeout:(id)arg1;
 - (void)_handleFTServerBagFinishedLoading;
@@ -22,7 +20,7 @@
 - (id)_nonModalParentController;
 - (void)_reload;
 - (void)_reloadDelayed;
-- (void)_showGenericErrorWithHandler:(id)arg1;
+- (void)_showGenericErrorWithHandler:(id /* block */)arg1;
 - (void)_showURLDidNotLoadAlert;
 - (void)_startBagLoadTimer;
 - (void)_startListeningForBagLoad;

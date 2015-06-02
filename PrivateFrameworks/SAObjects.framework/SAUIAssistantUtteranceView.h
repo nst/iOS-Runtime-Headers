@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString;
+@interface SAUIAssistantUtteranceView : SAAceView
 
-@interface SAUIAssistantUtteranceView : SAAceView {
-}
-
-@property(copy) NSString * dialogIdentifier;
-@property(copy) NSNumber * postDialogDelayInMilliseconds;
-@property(copy) NSString * text;
+@property (nonatomic, copy) NSString *dialogIdentifier;
+@property (nonatomic, copy) NSNumber *postDialogDelayInMilliseconds;
+@property (nonatomic, copy) NSString *text;
 
 + (id)assistantUtteranceView;
 + (id)assistantUtteranceViewWithDictionary:(id)arg1 context:(id)arg2;

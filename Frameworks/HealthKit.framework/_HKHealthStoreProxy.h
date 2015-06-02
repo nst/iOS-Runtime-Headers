@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKHealthStore;
-
 @interface _HKHealthStoreProxy : NSObject {
     HKHealthStore *_healthStore;
 }
 
-@property HKHealthStore * healthStore;
+@property (nonatomic) HKHealthStore *healthStore;
 
 - (void).cxx_destruct;
 - (void)forwardInvocation:(id)arg1;

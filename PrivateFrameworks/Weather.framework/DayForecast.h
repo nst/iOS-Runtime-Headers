@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class NSString;
-
 @interface DayForecast : NSObject {
     unsigned int _dayNumber;
     unsigned int _dayOfWeek;
@@ -12,11 +10,11 @@
     NSString *_low;
 }
 
-@property unsigned int dayNumber;
-@property unsigned int dayOfWeek;
-@property(copy) NSString * high;
-@property unsigned int icon;
-@property(copy) NSString * low;
+@property (nonatomic) unsigned int dayNumber;
+@property (nonatomic) unsigned int dayOfWeek;
+@property (nonatomic, copy) NSString *high;
+@property (nonatomic) unsigned int icon;
+@property (nonatomic, copy) NSString *low;
 
 - (int)compareDayNumberToDayForecast:(id)arg1;
 - (unsigned int)dayNumber;

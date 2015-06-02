@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLDiskSpaceManagement : NSObject {
-}
+@interface PLDiskSpaceManagement : NSObject
 
 + (long long)_processCloudSharedAsset:(id)arg1 shouldFreeSpace:(BOOL)arg2;
 + (unsigned long long)_scanAndDeleteCacheFilesInDirectory:(id)arg1 shouldFreeSpace:(BOOL)arg2 bytesToPurge:(unsigned long long)arg3;

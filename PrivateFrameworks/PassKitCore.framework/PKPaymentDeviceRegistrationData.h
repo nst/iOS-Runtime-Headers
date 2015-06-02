@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSDictionary, NSString;
-
 @interface PKPaymentDeviceRegistrationData : NSObject <NSSecureCoding> {
     BOOL _devSigned;
     NSString *_deviceSerialNumber;
@@ -13,12 +11,12 @@
     NSDictionary *_stateInformation;
 }
 
-@property BOOL devSigned;
-@property(copy) NSString * deviceSerialNumber;
-@property(copy) NSString * productType;
-@property(copy) NSString * secureElementIdentifier;
-@property(copy) NSString * signedAuthToken;
-@property(copy) NSDictionary * stateInformation;
+@property (nonatomic) BOOL devSigned;
+@property (nonatomic, copy) NSString *deviceSerialNumber;
+@property (nonatomic, copy) NSString *productType;
+@property (nonatomic, copy) NSString *secureElementIdentifier;
+@property (nonatomic, copy) NSString *signedAuthToken;
+@property (nonatomic, copy) NSDictionary *stateInformation;
 
 + (BOOL)supportsSecureCoding;
 

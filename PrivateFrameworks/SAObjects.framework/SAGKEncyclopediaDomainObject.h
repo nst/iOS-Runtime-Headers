@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAGKEncyclopediaDomainObject : SAGKDomainObject
 
-@interface SAGKEncyclopediaDomainObject : SAGKDomainObject {
-}
-
-@property(copy) NSArray * linkedAnswerGroups;
-@property(copy) NSString * name;
-@property(copy) NSString * nameAnnotation;
-@property(copy) NSArray * structuredAnswers;
+@property (nonatomic, copy) NSArray *linkedAnswerGroups;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *nameAnnotation;
+@property (nonatomic, copy) NSArray *structuredAnswers;
 
 + (id)encyclopediaDomainObject;
 + (id)encyclopediaDomainObjectWithDictionary:(id)arg1 context:(id)arg2;

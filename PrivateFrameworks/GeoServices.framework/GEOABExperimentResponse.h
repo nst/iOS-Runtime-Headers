@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOABExperimentResponse : PBCodable <NSCopying> {
     NSMutableArray *_assignments;
     struct { 
@@ -20,19 +18,19 @@
     double _timestamp;
 }
 
-@property(retain) NSMutableArray * assignments;
-@property BOOL hasInvalidatePoiCache;
-@property BOOL hasInvalidateTileCache;
-@property BOOL hasRefreshIntervalSeconds;
-@property(readonly) BOOL hasRequestGuid;
-@property(readonly) BOOL hasSourceURL;
-@property BOOL hasTimestamp;
-@property BOOL invalidatePoiCache;
-@property BOOL invalidateTileCache;
-@property unsigned long long refreshIntervalSeconds;
-@property(retain) NSString * requestGuid;
-@property(retain) NSString * sourceURL;
-@property double timestamp;
+@property (nonatomic, retain) NSMutableArray *assignments;
+@property (nonatomic) BOOL hasInvalidatePoiCache;
+@property (nonatomic) BOOL hasInvalidateTileCache;
+@property (nonatomic) BOOL hasRefreshIntervalSeconds;
+@property (nonatomic, readonly) BOOL hasRequestGuid;
+@property (nonatomic, readonly) BOOL hasSourceURL;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL invalidatePoiCache;
+@property (nonatomic) BOOL invalidateTileCache;
+@property (nonatomic) unsigned long long refreshIntervalSeconds;
+@property (nonatomic, retain) NSString *requestGuid;
+@property (nonatomic, retain) NSString *sourceURL;
+@property (nonatomic) double timestamp;
 
 - (id)_querySubstringForServiceType:(int)arg1 placeRequestType:(int)arg2;
 - (void)addAssignment:(id)arg1;

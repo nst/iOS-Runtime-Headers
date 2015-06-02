@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class GEOLatLng, GEOMapItemStorage, NSString, PBUnknownFields;
-
 @interface MSPPlaceBookmark : PBCodable <NSCopying> {
     GEOLatLng *_droppedPinCoordinate;
     struct { 
@@ -15,15 +13,15 @@
     PBUnknownFields *_unknownFields;
 }
 
-@property(retain) GEOLatLng * droppedPinCoordinate;
-@property(readonly) BOOL hasDroppedPinCoordinate;
-@property(readonly) BOOL hasMapItemStorage;
-@property BOOL hasOrigin;
-@property(readonly) BOOL hasTitle;
-@property(retain) GEOMapItemStorage * mapItemStorage;
-@property int origin;
-@property(retain) NSString * title;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, retain) GEOLatLng *droppedPinCoordinate;
+@property (nonatomic, readonly) BOOL hasDroppedPinCoordinate;
+@property (nonatomic, readonly) BOOL hasMapItemStorage;
+@property (nonatomic) BOOL hasOrigin;
+@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic, retain) GEOMapItemStorage *mapItemStorage;
+@property (nonatomic) int origin;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

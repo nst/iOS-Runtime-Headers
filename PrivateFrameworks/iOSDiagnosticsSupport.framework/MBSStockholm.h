@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/iOSDiagnosticsSupport.framework/iOSDiagnosticsSupport
  */
 
-@class NFCardEmulation, NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface MBSStockholm : NSObject <NFCardEmulationDelegate, NFCardManagerDelegate> {
     NFCardEmulation *_cardEmulation;
     bool _cardEmulationSuspended;
     NSObject<OS_dispatch_semaphore> *_semaphore;
 }
 
-@property(retain) NFCardEmulation * cardEmulation;
-@property bool cardEmulationSuspended;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_semaphore> * semaphore;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NFCardEmulation *cardEmulation;
+@property (nonatomic) bool cardEmulationSuspended;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *semaphore;
+@property (readonly) Class superclass;
 
 - (id)cardEmulation;
 - (void)cardEmulation:(id)arg1 didChangeRestrictedMode:(BOOL)arg2;

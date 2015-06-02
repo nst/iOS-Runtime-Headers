@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLPreviewZoomTransitionAnimator : QLPreviewTransitionAnimator {
-}
+@interface QLPreviewZoomTransitionAnimator : QLPreviewTransitionAnimator
 
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

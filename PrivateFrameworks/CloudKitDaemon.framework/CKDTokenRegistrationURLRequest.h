@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSString;
-
 @interface CKDTokenRegistrationURLRequest : CKDURLRequest {
     NSString *_apsEnvironmentString;
     NSString *_bundleID;
     NSData *_token;
 }
 
-@property(retain) NSString * apsEnvironmentString;
-@property(retain) NSString * bundleID;
-@property(retain) NSData * token;
+@property (nonatomic, retain) NSString *apsEnvironmentString;
+@property (nonatomic, retain) NSString *bundleID;
+@property (nonatomic, retain) NSData *token;
 
 - (void).cxx_destruct;
 - (id)apsEnvironmentString;

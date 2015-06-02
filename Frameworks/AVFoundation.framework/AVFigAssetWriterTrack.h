@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInputFigAssetWriterEndPassOperation, AVMediaFileType, AVWeakReference, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVFigAssetWriterTrack : NSObject {
     BOOL _aboveHighWaterLevel;
     NSObject<OS_dispatch_queue> *_aboveHighWaterLevelQueue;
@@ -21,14 +19,14 @@
     AVWeakReference *_weakReference;
 }
 
-@property(getter=isAboveHighWaterLevel,readonly) BOOL aboveHighWaterLevel;
-@property(readonly) BOOL encoderSupportsMultiPass;
-@property(readonly) struct OpaqueFigAssetWriter { }* figAssetWriter;
-@property(readonly) AVMediaFileType * mediaFileType;
-@property(readonly) NSString * mediaType;
-@property(readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } sampleBufferCoalescingInterval;
-@property(readonly) int trackID;
+@property (getter=isAboveHighWaterLevel, readonly) BOOL aboveHighWaterLevel;
+@property (nonatomic, readonly) BOOL encoderSupportsMultiPass;
+@property (nonatomic, readonly) struct OpaqueFigAssetWriter { }*figAssetWriter;
+@property (nonatomic, readonly) AVMediaFileType *mediaFileType;
+@property (nonatomic, readonly) NSString *mediaType;
+@property (nonatomic, readonly) struct __CVPixelBufferPool { }*pixelBufferPool;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } sampleBufferCoalescingInterval;
+@property (nonatomic, readonly) int trackID;
 
 + (id)assetWriterTrackWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 mediaType:(id)arg2 mediaFileType:(id)arg3 formatSpecification:(id)arg4 sourcePixelBufferAttributes:(id)arg5 multiPass:(BOOL)arg6 error:(id*)arg7;
 
@@ -40,7 +38,7 @@
 - (BOOL)beginPassReturningError:(id*)arg1;
 - (void)dealloc;
 - (BOOL)encoderSupportsMultiPass;
-- (void)endPassWithCompletionHandler:(id)arg1;
+- (void)endPassWithCompletionHandler:(id /* block */)arg1;
 - (struct OpaqueFigAssetWriter { }*)figAssetWriter;
 - (void)finalize;
 - (id)init;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABMembersController, CNContact, NSString, _UIAccessDeniedView;
-
 @interface ABMembersViewController : ABAbstractViewController <ABMembersControllerDelegate, ABNewPersonViewControllerDelegate, ABPersonEditDelegate, ABViewControllerBannerViewProtocol> {
     _UIAccessDeniedView *_accessDeniedView;
     id _insertionLabel;
@@ -15,16 +13,16 @@
     BOOL _shouldHandleExternalChangeOnPersonViewControllers;
 }
 
-@property(readonly) _UIAccessDeniedView * accessDeniedView;
-@property(readonly) BOOL allowsCancel;
-@property(readonly) BOOL allowsCardEditing;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isSearchingWithNoContactSelected;
-@property(readonly) BOOL shouldShowGroups;
-@property(readonly) Class superclass;
-@property(readonly) CNContact * unsavedContact;
+@property (nonatomic, readonly) _UIAccessDeniedView *accessDeniedView;
+@property (readonly) BOOL allowsCancel;
+@property (readonly) BOOL allowsCardEditing;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) BOOL isSearchingWithNoContactSelected;
+@property (readonly) BOOL shouldShowGroups;
+@property (readonly) Class superclass;
+@property (readonly) CNContact *unsavedContact;
 
 - (void)_applicationEnteringBackground;
 - (void)_applicationEnteringForeground;

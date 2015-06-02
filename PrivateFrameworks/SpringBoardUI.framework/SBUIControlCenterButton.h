@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class <SBUIControlCenterButtonDelegate>, NSString, UIImage, UIImageView, UIVisualEffect, UIVisualEffectView;
-
 @interface SBUIControlCenterButton : SBFButton <SBUIControlCenterControl, _UISettingsKeyObserver> {
     UIVisualEffectView *_backgroundEffectView;
     UIImageView *_backgroundImageView;
@@ -27,18 +25,18 @@
     BOOL _useSmallButton;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SBUIControlCenterButtonDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isCircleButton;
-@property BOOL isRectButton;
-@property float naturalHeight;
-@property(retain) UIImage * normalBGImage;
-@property(retain) UIImage * sourceGlyphImage;
-@property(retain) UIImage * sourceSelectedGlyphImage;
-@property(readonly) Class superclass;
-@property BOOL useSmallButton;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SBUIControlCenterButtonDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isCircleButton;
+@property (nonatomic) BOOL isRectButton;
+@property (nonatomic) float naturalHeight;
+@property (nonatomic, retain) UIImage *normalBGImage;
+@property (nonatomic, retain) UIImage *sourceGlyphImage;
+@property (nonatomic, retain) UIImage *sourceSelectedGlyphImage;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useSmallButton;
 
 + (id)_buttonWithBGImage:(id)arg1 glyphImage:(id)arg2 naturalHeight:(float)arg3;
 + (id)_circleBackgroundImage;

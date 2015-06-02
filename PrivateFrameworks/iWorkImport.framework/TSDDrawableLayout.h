@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSDWrapSegments, TSUBezierPath;
-
 @interface TSDDrawableLayout : TSDLayout <TSDWrappable> {
     TSUBezierPath *mCachedExternalWrapPath;
     TSUBezierPath *mCachedWrapPath;
     TSDWrapSegments *mCachedWrapSegments;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasAlpha;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasAlpha;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)allowsConnections;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsInRoot;

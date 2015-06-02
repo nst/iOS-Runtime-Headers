@@ -7,7 +7,7 @@
     id _target;
 }
 
-@property(readonly) id target;
+@property (nonatomic, readonly) id target;
 
 + (BOOL)canObserveFontsForTarget:(id)arg1;
 

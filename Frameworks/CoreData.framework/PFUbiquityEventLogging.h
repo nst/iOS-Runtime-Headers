@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableSet;
-
 @interface PFUbiquityEventLogging : NSObject {
     NSMutableSet *_logEvents;
     int _logLevel;

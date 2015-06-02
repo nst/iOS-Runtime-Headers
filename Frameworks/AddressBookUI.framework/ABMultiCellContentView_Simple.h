@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABHighlightingTextField, NSString;
-
 @interface ABMultiCellContentView_Simple : ABMultiCellContentView <UITextFieldDelegate> {
     NSString *_previousValue;
     ABHighlightingTextField *_textField;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) NSString * text;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *text;
 
 + (struct CGSize { float x1; float x2; })layoutSubviewsForView:(id)arg1 usingSize:(struct CGSize { float x1; float x2; })arg2 propertyGroup:(id)arg3 info:(id)arg4 styleProvider:(id)arg5 whenEditing:(BOOL)arg6;
 
@@ -27,7 +25,7 @@
 - (void)setAbCellStyle:(int)arg1;
 - (void)setPropertyGroup:(id)arg1 andInfo:(id)arg2;
 - (BOOL)shouldSendTouchesToSuperviewForHitView:(id)arg1;
-- (struct { id x1; unsigned int x2; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
+- (struct { id x1; })suggestionsForString:(id)arg1 inputIndex:(unsigned int)arg2;
 - (BOOL)tabToNextResponder:(BOOL)arg1 fromView:(id)arg2;
 - (id)text;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;

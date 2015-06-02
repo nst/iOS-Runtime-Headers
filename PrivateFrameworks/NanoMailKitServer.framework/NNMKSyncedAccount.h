@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKSyncedAccount : NSObject {
     NSString *_accountId;
     NSString *_displayName;
@@ -12,11 +10,11 @@
     BOOL _shouldArchive;
 }
 
-@property(retain) NSString * accountId;
-@property(retain) NSString * displayName;
-@property unsigned int resendInterval;
-@property BOOL resendRequested;
-@property BOOL shouldArchive;
+@property (nonatomic, retain) NSString *accountId;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic) unsigned int resendInterval;
+@property (nonatomic) BOOL resendRequested;
+@property (nonatomic) BOOL shouldArchive;
 
 - (void).cxx_destruct;
 - (id)accountId;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableArray, NSString, PLImageTable;
-
 @interface PLTemporaryImageTable : NSObject {
     int _imageFormat;
     PLImageTable *_imageTable;

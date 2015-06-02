@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKUIEventStatusButtonsViewDelegate>, NSArray, UIButton, UIFont;
-
 @interface EKUIEventStatusButtonsView : UIView {
     NSArray *_actions;
     float _baselineFromBoundsTop;
@@ -17,16 +15,16 @@
     int _textSizeMode;
 }
 
-@property(retain) NSArray * actions;
-@property float baselineFromBoundsTop;
-@property float buttonsCharge;
-@property(readonly) UIButton * centerButton;
-@property <EKUIEventStatusButtonsViewDelegate> * delegate;
-@property BOOL disableButtonHighlights;
-@property(readonly) UIFont * font;
-@property BOOL forcesSingleButtonToCenter;
-@property int selectedAction;
-@property int textSizeMode;
+@property (nonatomic, retain) NSArray *actions;
+@property (nonatomic) float baselineFromBoundsTop;
+@property (nonatomic) float buttonsCharge;
+@property (nonatomic, readonly) UIButton *centerButton;
+@property (nonatomic) <EKUIEventStatusButtonsViewDelegate> *delegate;
+@property (nonatomic) BOOL disableButtonHighlights;
+@property (nonatomic, readonly) UIFont *font;
+@property (nonatomic) BOOL forcesSingleButtonToCenter;
+@property (nonatomic) int selectedAction;
+@property (nonatomic) int textSizeMode;
 
 - (void).cxx_destruct;
 - (int)_actionForButton:(id)arg1;

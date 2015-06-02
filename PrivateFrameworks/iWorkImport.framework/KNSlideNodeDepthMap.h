@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface KNSlideNodeDepthMap : NSObject {
     NSArray *_depthsOfSlideNodes;
     NSArray *_slideNodes;
 }
 
-@property(readonly) NSArray * depthsOfSlideNodes;
-@property(readonly) NSArray * slideNodes;
+@property (nonatomic, readonly) NSArray *depthsOfSlideNodes;
+@property (nonatomic, readonly) NSArray *slideNodes;
 
 - (void)dealloc;
 - (id)depthsOfSlideNodes;
-- (void)enumerateSlideNodesAndDepthsUsingBlock:(id)arg1;
+- (void)enumerateSlideNodesAndDepthsUsingBlock:(id /* block */)arg1;
 - (id)initWithSlideNodes:(id)arg1 depths:(id)arg2;
 - (id)slideNodes;
 

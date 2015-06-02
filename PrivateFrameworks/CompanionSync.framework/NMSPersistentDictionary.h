@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface NMSPersistentDictionary : NSObject <NSLocking> {
     struct sqlite3_stmt { } *_byDate;
     struct sqlite3 { } *_db;
@@ -23,7 +21,7 @@
 - (id)_objectFromData:(id)arg1;
 - (void)_openDBForceRecreate:(BOOL)arg1;
 - (void)dealloc;
-- (void)enumerateObjectsSortedByExpirationDate:(id)arg1;
+- (void)enumerateObjectsSortedByExpirationDate:(id /* block */)arg1;
 - (id)init;
 - (id)initWithPath:(id)arg1 objectClass:(Class)arg2 loggingFacility:(struct __CFString { }*)arg3;
 - (void)lock;

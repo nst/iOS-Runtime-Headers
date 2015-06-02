@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PXPresentation : NSObject {
-}
+@interface PXPresentation : NSObject
 
 + (id)readFromPackage:(id)arg1 fileName:(id)arg2 reader:(id)arg3 cancel:(id)arg4 isThumbnail:(BOOL)arg5 delegate:(id)arg6;
 + (void)readPresentationProperties:(id)arg1 to:(id)arg2 state:(id)arg3;

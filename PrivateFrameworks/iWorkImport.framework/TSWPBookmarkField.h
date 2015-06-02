@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSWPBookmarkField : TSWPSmartField {
     BOOL _forRange;
     BOOL _hidden;
     NSString *_name;
 }
 
-@property BOOL forRange;
-@property BOOL hidden;
-@property(retain) NSString * name;
+@property (nonatomic) BOOL forRange;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic, retain) NSString *name;
 
 - (BOOL)allowsEditing;
 - (int)attributeArrayKind;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSSet;
-
 @interface CalDAVNotificationContainerSyncTaskGroup : CoreDAVContainerSyncTaskGroup {
     NSSet *_notificationTypeNamesToFetch;
 }
 
-@property(retain) NSSet * notificationTypeNamesToFetch;
+@property (nonatomic, retain) NSSet *notificationTypeNamesToFetch;
 
 - (id)copyAdditionalResourcePropertiesToFetch;
 - (id)copyGetTaskWithURL:(id)arg1;

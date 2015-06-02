@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKLabel, GKTextStyle, NSAttributedString, NSString;
-
 @interface GKTextBubbleControl : GKBaseBubbleWithTextControl {
     GKTextStyle *_overrideTextStyle;
     BOOL _smallText;
@@ -12,12 +10,12 @@
     GKLabel *_textStyle;
 }
 
-@property(retain) NSAttributedString * attributedText;
-@property(retain) GKTextStyle * overrideTextStyle;
-@property BOOL smallText;
-@property(retain) NSString * text;
-@property(retain) GKLabel * textLabel;
-@property(retain) GKLabel * textStyle;
+@property (nonatomic, retain) NSAttributedString *attributedText;
+@property (nonatomic, retain) GKTextStyle *overrideTextStyle;
+@property (nonatomic) BOOL smallText;
+@property (nonatomic, retain) NSString *text;
+@property (nonatomic, retain) GKLabel *textLabel;
+@property (nonatomic, retain) GKLabel *textStyle;
 
 - (void)_updateTextLabel;
 - (id)attributedText;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@interface BLEMIDIAccessor : NSObject {
-}
+@interface BLEMIDIAccessor : NSObject
 
 + (BOOL)deviceIsLocalPeripheral:(struct OpaqueMIDIDevice { }*)arg1;
 + (BOOL)deviceIsNullDevice:(struct OpaqueMIDIDevice { }*)arg1;

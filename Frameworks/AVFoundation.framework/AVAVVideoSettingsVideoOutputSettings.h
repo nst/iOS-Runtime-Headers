@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSDictionary;
-
 @interface AVAVVideoSettingsVideoOutputSettings : AVVideoOutputSettings <AVReencodedVideoSettingsForFig> {
     NSDictionary *_VTCleanApertureDictionary;
     NSDictionary *_VTPixelAspectRatioDictionary;
     NSDictionary *_adaptedVideoCompressionProperties;
 }
 
-@property(readonly) unsigned long videoCodecType;
-@property(readonly) NSDictionary * videoCompressionProperties;
-@property(readonly) NSDictionary * videoEncoderSpecification;
+@property (nonatomic, readonly) unsigned long videoCodecType;
+@property (nonatomic, readonly) NSDictionary *videoCompressionProperties;
+@property (nonatomic, readonly) NSDictionary *videoEncoderSpecification;
 
 + (BOOL)_validateVideoCompressionProperties:(id)arg1 againstSupportedPropertyDictionary:(id)arg2 forCodecType:(id)arg3 exceptionReason:(id*)arg4;
 + (id)_videoOutputSettingsWithVideoSettingsDictionary:(id)arg1 exceptionReason:(id*)arg2;

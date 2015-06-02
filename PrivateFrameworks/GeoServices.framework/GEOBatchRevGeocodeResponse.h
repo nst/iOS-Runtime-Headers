@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSDictionary, NSMutableArray;
-
 @interface GEOBatchRevGeocodeResponse : PBCodable <NSCopying> {
     NSMutableArray *_batchPlaceResults;
     NSMutableArray *_clusters;
@@ -20,18 +18,18 @@
     NSMutableArray *_versionDomains;
 }
 
-@property(retain) NSMutableArray * batchPlaceResults;
-@property(retain) NSMutableArray * clusters;
-@property BOOL hasStatusCode;
-@property BOOL hasTimestamp;
-@property BOOL hasTtl;
-@property BOOL hasVersion;
-@property(retain) NSDictionary * httpHeaders;
-@property int statusCode;
-@property double timestamp;
-@property unsigned int ttl;
-@property unsigned int version;
-@property(retain) NSMutableArray * versionDomains;
+@property (nonatomic, retain) NSMutableArray *batchPlaceResults;
+@property (nonatomic, retain) NSMutableArray *clusters;
+@property (nonatomic) BOOL hasStatusCode;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTtl;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic, retain) NSDictionary *httpHeaders;
+@property (nonatomic) int statusCode;
+@property (nonatomic) double timestamp;
+@property (nonatomic) unsigned int ttl;
+@property (nonatomic) unsigned int version;
+@property (nonatomic, retain) NSMutableArray *versionDomains;
 
 - (void)addBatchPlaceResult:(id)arg1;
 - (void)addCluster:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKPhysicsBody;
-
 @interface SKPhysicsJoint : NSObject <NSCoding> {
     BOOL __implicit;
     SKPhysicsBody *bodyA;
@@ -15,11 +13,11 @@
     float reactionTorque;
 }
 
-@property BOOL _implicit;
-@property(retain) SKPhysicsBody * bodyA;
-@property(retain) SKPhysicsBody * bodyB;
-@property(readonly) struct CGVector { float x1; float x2; } reactionForce;
-@property(readonly) float reactionTorque;
+@property (nonatomic) BOOL _implicit;
+@property (nonatomic, retain) SKPhysicsBody *bodyA;
+@property (nonatomic, retain) SKPhysicsBody *bodyB;
+@property (nonatomic, readonly) struct CGVector { float x1; float x2; } reactionForce;
+@property (nonatomic, readonly) float reactionTorque;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

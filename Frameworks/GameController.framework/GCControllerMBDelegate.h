@@ -2,31 +2,21 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSTimer;
-
 @interface GCControllerMBDelegate : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     struct BTPairingAgentImpl { } *_pairingAgent;
     struct BTSessionImpl { } *_session;
     NSTimer *_timer;
 }
 
-@property(copy) id completionHandler;
+@property (nonatomic, copy) id /* block */ completionHandler;
 
 - (void).cxx_destruct;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (void)fireCompletionHandler;
 - (void)scanTimeout:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)startScan;
 - (void)stopScan;
 

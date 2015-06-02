@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDictationiPhoneLayoutView : UIDictationView {
-}
+@interface UIDictationiPhoneLayoutView : UIDictationView
 
 - (id)doneButtonTitleForLightBackground:(BOOL)arg1;
 - (void)finishReturnToKeyboard;

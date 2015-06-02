@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class UISlider;
-
 @interface PTSSliderRowTableViewCell : PTSRowTableViewCell {
     UISlider *_slider;
 }

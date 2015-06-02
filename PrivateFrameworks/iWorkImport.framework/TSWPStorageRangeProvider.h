@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject, NSString;
-
 @interface TSWPStorageRangeProvider : NSObject {
     NSString *_identifier;
     NSObject *_object;
@@ -13,9 +11,9 @@
     } _range;
 }
 
-@property(readonly) NSString * identifier;
-@property(readonly) NSObject * object;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) NSObject *object;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 
 - (id).cxx_construct;
 - (void)dealloc;

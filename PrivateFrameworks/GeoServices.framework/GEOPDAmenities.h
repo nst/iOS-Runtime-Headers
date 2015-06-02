@@ -8,8 +8,8 @@
     unsigned int _amenitysSpace;
 }
 
-@property(readonly) struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }* amenitys;
-@property(readonly) unsigned int amenitysCount;
+@property (nonatomic, readonly) struct { int x1; BOOL x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; }*amenitys;
+@property (nonatomic, readonly) unsigned int amenitysCount;
 
 + (id)amentiesForPlaceData:(id)arg1;
 

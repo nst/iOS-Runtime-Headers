@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKDayOccurrenceContentView, EKDayOccurrenceTravelTimeView, EKDayOccurrenceView, EKEvent, NSString, UIColor, UIImageView, UIView;
-
 @interface EKDayOccurrenceView : UIView <EKDayOccurrenceTravelTimeViewMetricsDelegate, NSCopying> {
     BOOL _allDay;
     BOOL _allDayDrawingStyle;
@@ -32,7 +30,7 @@
     BOOL _needsReply;
     EKEvent *_occurrence;
     int _occurrenceBackgroundStyle;
-    unsigned int _offsetContentForLandscape : 1;
+    unsigned int _offsetContentForLandscape;
     float _originalXBeforeOffset;
     struct UIEdgeInsets { 
         float top; 
@@ -47,7 +45,7 @@
     BOOL _showsTravelTime;
     UIView *_startResizeHandle;
     BOOL _tentative;
-    unsigned int _touchKeptInsideOccurrence : 1;
+    unsigned int _touchKeptInsideOccurrence;
     UIImageView *_travelBackgroundView;
     double _travelTime;
     EKDayOccurrenceTravelTimeView *_travelTimeContentView;
@@ -76,46 +74,46 @@
     BOOL _visibleHeightLocked;
 }
 
-@property(getter=isAllDay) BOOL allDay;
-@property BOOL allDayDrawingStyle;
-@property(getter=isBirthday) BOOL birthday;
-@property float bottomPinningProximity;
-@property(getter=isCancelled) BOOL cancelled;
-@property float cappedColorBarHeight;
-@property(copy) UIColor * color;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=isDeclined) BOOL declined;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL dimmed;
-@property BOOL drawsResizeHandles;
-@property(getter=isFacebook) BOOL facebook;
-@property(readonly) unsigned int hash;
-@property BOOL hideBackgroundImage;
-@property BOOL hideText;
-@property BOOL isSelectedCopyView;
-@property(copy) NSString * location;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } margin;
-@property BOOL needsReply;
-@property(retain) EKEvent * occurrence;
-@property int occurrenceBackgroundStyle;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
-@property BOOL reduceLayoutProcessingForAnimation;
-@property int routingMode;
-@property(retain) UIColor * secondaryTextColor;
-@property BOOL selected;
-@property EKDayOccurrenceView * selectedCopy;
-@property BOOL showsTravelTime;
-@property(readonly) Class superclass;
-@property(getter=isTentative) BOOL tentative;
-@property(retain) UIColor * textBackgroundColor;
-@property(retain) UIColor * timeTextColor;
-@property(copy) NSString * title;
-@property(retain) UIColor * titleTextColor;
-@property double travelTime;
-@property float travelTimeSubviewHeightInPoints;
-@property BOOL usesSmallText;
-@property(readonly) BOOL visibleHeightLocked;
+@property (getter=isAllDay, nonatomic) BOOL allDay;
+@property (nonatomic) BOOL allDayDrawingStyle;
+@property (getter=isBirthday, nonatomic) BOOL birthday;
+@property (nonatomic) float bottomPinningProximity;
+@property (getter=isCancelled, nonatomic) BOOL cancelled;
+@property (nonatomic) float cappedColorBarHeight;
+@property (nonatomic, copy) UIColor *color;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDeclined, nonatomic) BOOL declined;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL dimmed;
+@property (nonatomic) BOOL drawsResizeHandles;
+@property (getter=isFacebook, nonatomic) BOOL facebook;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hideBackgroundImage;
+@property (nonatomic) BOOL hideText;
+@property (nonatomic) BOOL isSelectedCopyView;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } margin;
+@property (nonatomic) BOOL needsReply;
+@property (nonatomic, retain) EKEvent *occurrence;
+@property (nonatomic) int occurrenceBackgroundStyle;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } padding;
+@property (nonatomic) BOOL reduceLayoutProcessingForAnimation;
+@property (nonatomic) int routingMode;
+@property (nonatomic, retain) UIColor *secondaryTextColor;
+@property (nonatomic) BOOL selected;
+@property (nonatomic) EKDayOccurrenceView *selectedCopy;
+@property (nonatomic) BOOL showsTravelTime;
+@property (readonly) Class superclass;
+@property (getter=isTentative, nonatomic) BOOL tentative;
+@property (nonatomic, retain) UIColor *textBackgroundColor;
+@property (nonatomic, retain) UIColor *timeTextColor;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) UIColor *titleTextColor;
+@property (nonatomic) double travelTime;
+@property (nonatomic) float travelTimeSubviewHeightInPoints;
+@property (nonatomic) BOOL usesSmallText;
+@property (nonatomic, readonly) BOOL visibleHeightLocked;
 
 + (id)_adjustedOccurrenceColorForDarkBackground:(id)arg1 opaque:(BOOL)arg2;
 + (id)_adjustedStripeColorForDarkBackground:(id)arg1;
@@ -157,7 +155,7 @@
 - (void)_updateResizeHandleLocations;
 - (float)_verticalContentInset;
 - (BOOL)allDayDrawingStyle;
-- (void)animateToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isAllDay:(BOOL)arg2 beginFromCurrentState:(BOOL)arg3 whenFinished:(id)arg4;
+- (void)animateToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isAllDay:(BOOL)arg2 beginFromCurrentState:(BOOL)arg3 whenFinished:(id /* block */)arg4;
 - (id)arrayOfResizeHandles;
 - (float)bottomPinningProximity;
 - (void)bringResizeHandlesToFront;

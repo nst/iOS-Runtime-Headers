@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSMutableArray, NSUUID;
-
 @interface _HKWorkoutResumeData : NSObject <NSSecureCoding> {
     NSMutableArray *_gaps;
     NSUUID *_lastUUID;
     BOOL _lastUUIDInJournal;
 }
 
-@property(retain) NSMutableArray * gaps;
-@property(retain) NSUUID * lastUUID;
-@property BOOL lastUUIDInJournal;
+@property (nonatomic, retain) NSMutableArray *gaps;
+@property (nonatomic, retain) NSUUID *lastUUID;
+@property (nonatomic) BOOL lastUUIDInJournal;
 
 + (BOOL)supportsSecureCoding;
 

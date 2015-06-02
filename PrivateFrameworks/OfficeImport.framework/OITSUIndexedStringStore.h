@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface OITSUIndexedStringStore : NSObject {
     NSMutableDictionary *_indexByString;
     int _lock;

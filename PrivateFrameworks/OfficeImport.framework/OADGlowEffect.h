@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor;
-
 @interface OADGlowEffect : OADEffect {
     OADColor *mColor;
     float mRadius;

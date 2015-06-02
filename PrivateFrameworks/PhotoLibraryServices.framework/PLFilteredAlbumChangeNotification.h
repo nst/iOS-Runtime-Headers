@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSIndexSet, NSString, PLAssetContainerChangeNotification, PLFilteredAlbum, PLIndexMapper;
-
 @interface PLFilteredAlbumChangeNotification : PLAssetContainerChangeNotification <PLDerivedNotification, PLIndexMapperDataSource> {
     PLFilteredAlbum *_album;
     PLAssetContainerChangeNotification *_backingNotification;
@@ -12,13 +10,13 @@
     NSIndexSet *_oldFilteredIndexes;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSIndexSet * filteredIndexes;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) PLIndexMapper * indexMapper;
-@property(readonly) Class superclass;
-@property(retain,readonly) NSIndexSet * updatedFilteredIndexes;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSIndexSet *filteredIndexes;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) PLIndexMapper *indexMapper;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) NSIndexSet *updatedFilteredIndexes;
 
 + (id)notificationForDerivedObject:(id)arg1 priorChangeState:(id)arg2 forBackingObjectNotification:(id)arg3;
 

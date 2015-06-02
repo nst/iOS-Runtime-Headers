@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateBridge.framework/SoftwareUpdateBridge
  */
 
-@class NSError, NSString, SUBDocumentation;
-
 @interface SUBDescriptor : NSObject <NSSecureCoding> {
     NSError *_denialReasons;
     SUBDocumentation *_documentation;
@@ -24,25 +22,25 @@
     BOOL _willProceedWithInstallation;
 }
 
-@property(retain) NSError * denialReasons;
-@property(retain) SUBDocumentation * documentation;
-@property(retain) NSString * documentationID;
-@property long long downloadSize;
-@property(retain,readonly) NSString * humanReadableUpdateName;
-@property long long installationSize;
-@property BOOL isAwaitingAdmissionControlForInstallation;
-@property(retain) NSString * marketingVersion;
-@property long msuHandle;
-@property long long msuPrepareSize;
-@property(readonly) long long preparationSize;
-@property(retain) NSString * productBuildVersion;
-@property(retain) NSString * productSystemName;
-@property(retain) NSString * productVersion;
-@property(retain) NSString * publisher;
-@property long long totalRequiredFreeSpace;
-@property long long unarchivedSize;
-@property BOOL userDidAcceptTermsAndConditions;
-@property BOOL willProceedWithInstallation;
+@property (nonatomic, retain) NSError *denialReasons;
+@property (nonatomic, retain) SUBDocumentation *documentation;
+@property (nonatomic, retain) NSString *documentationID;
+@property (nonatomic) long long downloadSize;
+@property (nonatomic, readonly, retain) NSString *humanReadableUpdateName;
+@property (nonatomic) long long installationSize;
+@property (nonatomic) BOOL isAwaitingAdmissionControlForInstallation;
+@property (nonatomic, retain) NSString *marketingVersion;
+@property (nonatomic) long msuHandle;
+@property (nonatomic) long long msuPrepareSize;
+@property (nonatomic, readonly) long long preparationSize;
+@property (nonatomic, retain) NSString *productBuildVersion;
+@property (nonatomic, retain) NSString *productSystemName;
+@property (nonatomic, retain) NSString *productVersion;
+@property (nonatomic, retain) NSString *publisher;
+@property (nonatomic) long long totalRequiredFreeSpace;
+@property (nonatomic) long long unarchivedSize;
+@property (nonatomic) BOOL userDidAcceptTermsAndConditions;
+@property (nonatomic) BOOL willProceedWithInstallation;
 
 + (BOOL)supportsSecureCoding;
 

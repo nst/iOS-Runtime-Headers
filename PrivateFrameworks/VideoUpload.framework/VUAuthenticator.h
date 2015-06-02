@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/VideoUpload.framework/VideoUpload
  */
 
-@class JSONHTTPRequest, NSString;
-
 @interface VUAuthenticator : NSObject <JSONHTTPRequestDelegate> {
     NSString *_accountName;
     JSONHTTPRequest *_authenticationRequest;
     int _authenticatorState;
 }
 
-@property(readonly) NSString * accountName;
-@property(readonly) int authenticatorState;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSString *accountName;
+@property (nonatomic, readonly) int authenticatorState;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedAuthenticator;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKUITheme;
-
 @interface GKThemeBrush : GKBrush {
     GKUITheme *_theme;
 }
 
-@property(retain) GKUITheme * theme;
+@property (nonatomic, retain) GKUITheme *theme;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

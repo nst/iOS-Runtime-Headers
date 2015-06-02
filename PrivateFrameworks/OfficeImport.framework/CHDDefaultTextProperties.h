@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHDDefaultTextProperties : EDKeyedCollection {
-}
+@interface CHDDefaultTextProperties : EDKeyedCollection
 
 - (id)allTextDefaultProperties;
 - (id)percentageTextDefaultProperties;

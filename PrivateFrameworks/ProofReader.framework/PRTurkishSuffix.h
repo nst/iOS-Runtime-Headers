@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@class NSString;
-
 @interface PRTurkishSuffix : NSObject {
-    unsigned char _isOptional[16];
+    unsigned char _isOptional;
     NSString *_name;
     NSString *_pattern;
-    unsigned char _patternBuffer[16];
+    unsigned char _patternBuffer;
     unsigned int _patternBufferLength;
     BOOL _postponesApostrophe;
     int _suffixType;
 }
 
-+ (void)_enumerateSuffixMatchesForBuffer:(char *)arg1 length:(unsigned int)arg2 followedByLetter:(unsigned char)arg3 options:(unsigned int)arg4 depth:(unsigned int)arg5 matchState:(int)arg6 suffixStack:(id*)arg7 suffixRangeStack:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg8 usingBlock:(id)arg9;
-+ (void)enumerateSuffixMatchesForBuffer:(char *)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3 usingBlock:(id)arg4;
-+ (void)enumerateSuffixMatchesForWord:(id)arg1 options:(unsigned int)arg2 usingBlock:(id)arg3;
++ (void)_enumerateSuffixMatchesForBuffer:(char *)arg1 length:(unsigned int)arg2 followedByLetter:(unsigned char)arg3 options:(unsigned int)arg4 depth:(unsigned int)arg5 matchState:(int)arg6 suffixStack:(id*)arg7 suffixRangeStack:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg8 usingBlock:(id /* block */)arg9;
++ (void)enumerateSuffixMatchesForBuffer:(char *)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
++ (void)enumerateSuffixMatchesForWord:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
 + (id)standardTurkishNounSuffixes;
 + (id)standardTurkishSuffixes;
 + (id)standardTurkishVerbSuffixes;

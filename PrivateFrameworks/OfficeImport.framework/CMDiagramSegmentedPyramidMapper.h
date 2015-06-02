@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMDiagramSegmentedPyramidMapper : CMDiagramShapeMapper {
-}
+@interface CMDiagramSegmentedPyramidMapper : CMDiagramShapeMapper
 
 - (id)_suggestedBoundsForPyramidLayerWithIndex:(unsigned int)arg1 inLayer:(unsigned int)arg2 andSlice:(unsigned int)arg3;
 - (unsigned int)layerCount;

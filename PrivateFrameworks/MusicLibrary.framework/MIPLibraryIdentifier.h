@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface MIPLibraryIdentifier : PBCodable <NSCopying> {
     struct { 
         unsigned int libraryId : 1; 
@@ -12,10 +10,10 @@
     NSString *_libraryName;
 }
 
-@property BOOL hasLibraryId;
-@property(readonly) BOOL hasLibraryName;
-@property long long libraryId;
-@property(retain) NSString * libraryName;
+@property (nonatomic) BOOL hasLibraryId;
+@property (nonatomic, readonly) BOOL hasLibraryName;
+@property (nonatomic) long long libraryId;
+@property (nonatomic, retain) NSString *libraryName;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

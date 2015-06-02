@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class CalLocation, NSString;
-
 @interface CalRoute : NSObject <NSSecureCoding> {
     double _duration;
     CalLocation *_end;
@@ -12,9 +10,9 @@
 }
 
 @property double duration;
-@property(retain) CalLocation * end;
-@property(copy) NSString * route;
-@property(retain) CalLocation * start;
+@property (retain) CalLocation *end;
+@property (copy) NSString *route;
+@property (retain) CalLocation *start;
 
 + (BOOL)supportsSecureCoding;
 

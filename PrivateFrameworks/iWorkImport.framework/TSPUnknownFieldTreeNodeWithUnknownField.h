@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSPUnknownField;
-
 @interface TSPUnknownFieldTreeNodeWithUnknownField : TSPUnknownFieldTreeNode {
     TSPUnknownField *_unknownField;
 }
 
-@property(retain) TSPUnknownField * unknownField;
+@property (nonatomic, retain) TSPUnknownField *unknownField;
 
 - (void).cxx_destruct;
 - (void)setUnknownField:(id)arg1;

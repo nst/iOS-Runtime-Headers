@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class UIImage, UIImageView;
-
 @interface PTXParallaxImageView : PTXParallaxView {
     UIImageView *_imageView;
 }
 
-@property(retain) UIImage * image;
+@property (nonatomic, retain) UIImage *image;
 
 - (void).cxx_destruct;
 - (id)image;

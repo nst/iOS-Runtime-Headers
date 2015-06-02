@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSNumber, NSString;
-
 @interface SSFamilyMember : NSObject <SSXPCCoding> {
     NSString *_firstName;
     NSString *_iCloudAccountName;
@@ -14,17 +12,17 @@
     BOOL _sharingPurchases;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * firstName;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * iCloudAccountName;
-@property(retain) NSNumber * iCloudIdentifier;
-@property(retain) NSNumber * iTunesIdentifier;
-@property(retain) NSString * lastName;
-@property(getter=isMe) BOOL me;
-@property(getter=isSharingPurchases) BOOL sharingPurchases;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *firstName;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *iCloudAccountName;
+@property (nonatomic, retain) NSNumber *iCloudIdentifier;
+@property (nonatomic, retain) NSNumber *iTunesIdentifier;
+@property (nonatomic, retain) NSString *lastName;
+@property (getter=isMe, nonatomic) BOOL me;
+@property (getter=isSharingPurchases, nonatomic) BOOL sharingPurchases;
+@property (readonly) Class superclass;
 
 - (id)copyXPCEncoding;
 - (id)description;

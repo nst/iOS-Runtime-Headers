@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCHStyleActAlike>, NSArray, NSString;
-
 @interface TSCHChartStylePreset : TSPObject <TSCHStyleSwapSupporting, TSPCopying, TSSPreset> {
     NSArray *mCategoryAxisStyles;
     <TSCHStyleActAlike> *mChartStyle;
@@ -16,19 +14,19 @@
     NSArray *mValueAxisStyles;
 }
 
-@property(readonly) NSArray * categoryAxisStyles;
-@property(readonly) <TSCHStyleActAlike> * chartStyle;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) <TSCHStyleActAlike> * legendStyle;
-@property(readonly) NSArray * paragraphStyles;
-@property(readonly) NSString * presetKind;
-@property(readonly) <TSCHStyleActAlike> * refLineStyle;
-@property(readonly) NSArray * seriesStyles;
-@property(readonly) Class superclass;
-@property(readonly) struct __CFUUID { }* uuid;
-@property(readonly) NSArray * valueAxisStyles;
+@property (nonatomic, readonly) NSArray *categoryAxisStyles;
+@property (nonatomic, readonly) <TSCHStyleActAlike> *chartStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) <TSCHStyleActAlike> *legendStyle;
+@property (nonatomic, readonly) NSArray *paragraphStyles;
+@property (nonatomic, readonly) NSString *presetKind;
+@property (nonatomic, readonly) <TSCHStyleActAlike> *refLineStyle;
+@property (nonatomic, readonly) NSArray *seriesStyles;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct __CFUUID { }*uuid;
+@property (nonatomic, readonly) NSArray *valueAxisStyles;
 
 + (BOOL)needsObjectUUID;
 + (id)p_getDefaultErrorBarColor:(id)arg1 valueAxisStyles:(id)arg2;

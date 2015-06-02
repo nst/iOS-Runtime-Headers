@@ -2,27 +2,25 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSNumber, NSString, NSURL, SAPersonAttribute;
+@interface SASmsSms : SADomainObject
 
-@interface SASmsSms : SADomainObject {
-}
+@property (nonatomic, copy) NSURL *attachment;
+@property (nonatomic, copy) NSString *chatIdentifier;
+@property (nonatomic, copy) NSDate *dateSent;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSArray *msgRecipients;
+@property (nonatomic, retain) SAPersonAttribute *msgSender;
+@property (nonatomic, copy) NSNumber *outgoing;
+@property (nonatomic, copy) NSArray *recipients;
+@property (nonatomic, copy) NSString *sender;
+@property (nonatomic, copy) NSString *subject;
+@property (nonatomic, copy) NSString *timezoneId;
 
-@property(copy) NSURL * attachment;
-@property(copy) NSString * chatIdentifier;
-@property(copy) NSDate * dateSent;
-@property(copy) NSString * message;
-@property(copy) NSArray * msgRecipients;
-@property(retain) SAPersonAttribute * msgSender;
-@property(copy) NSNumber * outgoing;
-@property(copy) NSArray * recipients;
-@property(copy) NSString * sender;
-@property(copy) NSString * subject;
-@property(copy) NSString * timezoneId;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)sms;
 + (id)smsWithDictionary:(id)arg1 context:(id)arg2;
 
-- (id)af_messageValue;
 - (id)attachment;
 - (id)chatIdentifier;
 - (id)dateSent;
@@ -48,5 +46,9 @@
 - (id)subject;
 - (id)timezoneId;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (id)af_messageValue;
 
 @end

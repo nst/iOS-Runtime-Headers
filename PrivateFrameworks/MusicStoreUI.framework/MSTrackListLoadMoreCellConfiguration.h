@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@interface MSTrackListLoadMoreCellConfiguration : SULoadMoreMediaCellConfiguration {
-}
+@interface MSTrackListLoadMoreCellConfiguration : SULoadMoreMediaCellConfiguration
 
 + (float)rowHeightForContext:(id)arg1 representedObject:(id)arg2;
 

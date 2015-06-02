@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSMutableDictionary, NSNumber, NSString, UIImage, _UIBarButtonItemAppearanceStorage;
-
 @interface _UINavigationBarAppearanceStorage : _UIBarAppearanceStorage {
     NSString *_backdropViewGroupName;
     BOOL _deferShadowToSearchBar;
@@ -21,25 +19,25 @@
     NSMutableDictionary *titleVerticalAdjustmentsForBarMetrics;
 }
 
-@property(readonly) _UIBarButtonItemAppearanceStorage * _barButtonAppearanceStorage;
-@property int activeBarMetrics;
-@property(retain) UIImage * backIndicatorImage;
-@property(retain) NSNumber * backIndicatorLeftMargin;
-@property(retain) UIImage * backIndicatorTransitionMaskImage;
-@property(retain) NSString * backdropViewGroupName;
-@property(readonly) UIImage * backgroundImage;
-@property(readonly) _UIBarButtonItemAppearanceStorage * barButtonAppearanceStorage;
-@property(readonly) UIImage * cardBackgroundImage;
-@property(readonly) UIImage * condensedBackgroundImage;
-@property int defaultBarMetrics;
-@property BOOL deferShadowToSearchBar;
-@property BOOL hidesShadow;
-@property(readonly) UIImage * miniBackgroundImage;
-@property(readonly) UIImage * miniPromptBackgroundImage;
-@property(readonly) UIImage * promptBackgroundImage;
-@property BOOL reversesShadowOffset;
-@property(retain) UIImage * shadowImage;
-@property(copy) NSDictionary * textAttributes;
+@property (nonatomic, readonly) _UIBarButtonItemAppearanceStorage *_barButtonAppearanceStorage;
+@property (nonatomic) int activeBarMetrics;
+@property (nonatomic, retain) UIImage *backIndicatorImage;
+@property (nonatomic, retain) NSNumber *backIndicatorLeftMargin;
+@property (nonatomic, retain) UIImage *backIndicatorTransitionMaskImage;
+@property (nonatomic, retain) NSString *backdropViewGroupName;
+@property (nonatomic, readonly) UIImage *backgroundImage;
+@property (nonatomic, readonly) _UIBarButtonItemAppearanceStorage *barButtonAppearanceStorage;
+@property (nonatomic, readonly) UIImage *cardBackgroundImage;
+@property (nonatomic, readonly) UIImage *condensedBackgroundImage;
+@property (nonatomic) int defaultBarMetrics;
+@property (nonatomic) BOOL deferShadowToSearchBar;
+@property (nonatomic) BOOL hidesShadow;
+@property (nonatomic, readonly) UIImage *miniBackgroundImage;
+@property (nonatomic, readonly) UIImage *miniPromptBackgroundImage;
+@property (nonatomic, readonly) UIImage *promptBackgroundImage;
+@property (nonatomic) BOOL reversesShadowOffset;
+@property (nonatomic, retain) UIImage *shadowImage;
+@property (nonatomic, copy) NSDictionary *textAttributes;
 
 + (int)typicalBarPosition;
 

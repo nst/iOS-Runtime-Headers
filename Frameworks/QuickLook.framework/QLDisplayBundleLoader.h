@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSMutableDictionary;
-
 @interface QLDisplayBundleLoader : NSObject {
     NSMutableDictionary *_displayBundlesById;
 }

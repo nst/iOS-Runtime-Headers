@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIBezierPath, UIColor, UIGroupTableViewCellBackground, UIView;
-
 @interface UIRoundedRectButton : UIButton {
     UIColor *_fillColor;
     UIBezierPath *_fillPath;

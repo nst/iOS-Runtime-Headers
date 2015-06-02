@@ -6,7 +6,7 @@
     unsigned int _maxCommandBufferCount;
 }
 
-@property(readonly) unsigned int maxCommandBufferCount;
+@property (nonatomic, readonly) unsigned int maxCommandBufferCount;
 
 - (id)commandBuffer;
 - (id)commandBufferWithUnretainedReferences;

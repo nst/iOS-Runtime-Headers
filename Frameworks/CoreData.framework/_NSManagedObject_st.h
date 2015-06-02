@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext, NSManagedObjectID;
-
 @interface _NSManagedObject_st : NSObject {
     id _cd_entity;
     unsigned long _cd_extraFlags;

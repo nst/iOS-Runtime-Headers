@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath, NSString;
-
 @interface _UICollectionViewItemKey : NSObject <NSCopying> {
     NSString *_identifier;
     NSIndexPath *_indexPath;
@@ -11,10 +9,10 @@
     unsigned int _type;
 }
 
-@property(retain,readonly) NSString * identifier;
-@property(retain,readonly) NSIndexPath * indexPath;
-@property(readonly) BOOL isClone;
-@property(readonly) unsigned int type;
+@property (nonatomic, readonly, retain) NSString *identifier;
+@property (nonatomic, readonly, retain) NSIndexPath *indexPath;
+@property (nonatomic, readonly) BOOL isClone;
+@property (nonatomic, readonly) unsigned int type;
 
 + (id)collectionItemKeyForCellWithIndexPath:(id)arg1;
 + (id)collectionItemKeyForDecorationViewOfKind:(id)arg1 andIndexPath:(id)arg2;

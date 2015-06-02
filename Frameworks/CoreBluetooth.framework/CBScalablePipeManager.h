@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <CBScalablePipeManagerDelegate>, CBXpcConnection, NSHashTable, NSMutableSet, NSSet, NSString;
-
 @interface CBScalablePipeManager : NSObject <CBXpcConnectionDelegate> {
     CBXpcConnection *_connection;
     <CBScalablePipeManagerDelegate> *_delegate;
@@ -12,12 +10,12 @@
     int _state;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSSet * identifiers;
-@property(readonly) int state;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) NSSet *identifiers;
+@property (readonly) int state;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (void)handleDataAvailable:(id)arg1;

@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOLocationShiftProvider : NSObject {
-}
+@interface GEOLocationShiftProvider : NSObject
 
 + (unsigned short)providerID;
 
 - (void)cancelRequest;
-- (void)startRequest:(id)arg1 finished:(id)arg2 error:(id)arg3;
+- (void)startRequest:(id)arg1 finished:(id /* block */)arg2 error:(id /* block */)arg3;
 
 @end

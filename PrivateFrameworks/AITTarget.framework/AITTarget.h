@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AITTarget.framework/AITTarget
  */
 
-@class AITXPCConnection, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface AITTarget : NSObject <AITXPCConnectionDelegate> {
     NSObject<OS_dispatch_queue> *_clientQueue;
     int _notifyToken;
@@ -17,13 +15,13 @@
     AITXPCConnection *_xpcConnection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property NSObject<OS_dispatch_queue> * rpcDispatchQueue;
-@property(copy) NSString * rpcSelectorPrefix;
-@property(retain) id rpcTarget;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) NSObject<OS_dispatch_queue> *rpcDispatchQueue;
+@property (nonatomic, copy) NSString *rpcSelectorPrefix;
+@property (nonatomic, retain) id rpcTarget;
+@property (readonly) Class superclass;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)sharedTarget;
@@ -31,13 +29,13 @@
 - (BOOL)_appIsWhitelisted;
 - (void)_fireProbe:(id)arg1 withArgumentDictionary:(id)arg2;
 - (void)_flushQueuedProbes;
-- (void)_probeBarrier:(id)arg1;
+- (void)_probeBarrier:(id /* block */)arg1;
 - (BOOL)_probeIsEnabled:(id)arg1;
 - (id)_rpcTarget;
 - (void)_sendAckForToken:(id)arg1 success:(BOOL)arg2 returnValue:(id)arg3 details:(id)arg4;
 - (void)_setupWatchdog;
 - (void)_setupXPCConnectionIfNeeded;
-- (void)addObserver:(id)arg1 forMessage:(id)arg2 dispatchQueue:(id)arg3 block:(id)arg4;
+- (void)addObserver:(id)arg1 forMessage:(id)arg2 dispatchQueue:(id)arg3 block:(id /* block */)arg4;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;

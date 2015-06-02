@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface ___UIAccessibilityNSAttributedString_super : UIAccessibilitySafeCategory {
-}
+@interface ___UIAccessibilityNSAttributedString_super : UIAccessibilitySafeCategory
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
  */
 
-@class <TTSSpeechSynthesizerDelegate>, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface TTSSpeechSynthesizer : NSObject <TTSSpeechConnectionDelegate> {
     unsigned int _audioQueueFlags;
     unsigned int _audioSessionID;
@@ -30,12 +28,12 @@
     float _volume;
 }
 
-@property <TTSSpeechSynthesizerDelegate> * delegate;
-@property float pitch;
-@property float rate;
-@property(readonly) NSString * resolvedVoiceIdentifier;
-@property(retain) NSString * voiceIdentifier;
-@property float volume;
+@property (nonatomic) <TTSSpeechSynthesizerDelegate> *delegate;
+@property (nonatomic) float pitch;
+@property (nonatomic) float rate;
+@property (nonatomic, readonly) NSString *resolvedVoiceIdentifier;
+@property (nonatomic, retain) NSString *voiceIdentifier;
+@property (nonatomic) float volume;
 
 + (id)availableLanguageCodes;
 + (id)availableVoices;

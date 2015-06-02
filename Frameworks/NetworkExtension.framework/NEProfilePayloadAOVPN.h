@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@interface NEProfilePayloadAOVPN : NEProfilePayloadBase {
-}
+@interface NEProfilePayloadAOVPN : NEProfilePayloadBase
 
 - (id)validatePayload;
 

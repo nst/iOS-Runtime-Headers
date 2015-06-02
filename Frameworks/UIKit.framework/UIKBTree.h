@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
-
 @interface UIKBTree : NSObject <NSCopying> {
     NSMutableDictionary *cache;
     NSString *layoutTag;
@@ -13,12 +11,12 @@
     int type;
 }
 
-@property(retain) NSMutableDictionary * cache;
-@property(retain) NSString * layoutTag;
-@property(retain) NSString * name;
-@property(retain) NSMutableDictionary * properties;
-@property(retain) NSMutableArray * subtrees;
-@property int type;
+@property (nonatomic, retain) NSMutableDictionary *cache;
+@property (nonatomic, retain) NSString *layoutTag;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSMutableDictionary *properties;
+@property (nonatomic, retain) NSMutableArray *subtrees;
+@property (nonatomic) int type;
 
 + (int)extraIPhoneIdiom:(int)arg1 width:(float)arg2 landscape:(BOOL)arg3;
 + (id)key;

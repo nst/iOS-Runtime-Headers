@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface PLMomentNodeCache : NSObject {
     struct sqlite3 { } *__momentsDatabase;
     NSMutableDictionary *__nodesByObjectID;
@@ -15,14 +13,14 @@
     struct sqlite3_stmt { } *__temporalSelectStatement;
 }
 
-@property(readonly) struct sqlite3 { }* _momentsDatabase;
-@property(readonly) NSMutableDictionary * _nodesByObjectID;
-@property(readonly) NSMutableArray * _nodesByRowID;
-@property(readonly) NSMutableDictionary * _nodesByUserTag;
-@property(readonly) struct sqlite3_stmt { }* _spatialInsertStatement;
-@property(readonly) struct sqlite3_stmt { }* _spatialSelectStatement;
-@property(readonly) struct sqlite3_stmt { }* _temporalInsertStatement;
-@property(readonly) struct sqlite3_stmt { }* _temporalSelectStatement;
+@property (nonatomic, readonly) struct sqlite3 { }*_momentsDatabase;
+@property (nonatomic, readonly) NSMutableDictionary *_nodesByObjectID;
+@property (nonatomic, readonly) NSMutableArray *_nodesByRowID;
+@property (nonatomic, readonly) NSMutableDictionary *_nodesByUserTag;
+@property (nonatomic, readonly) struct sqlite3_stmt { }*_spatialInsertStatement;
+@property (nonatomic, readonly) struct sqlite3_stmt { }*_spatialSelectStatement;
+@property (nonatomic, readonly) struct sqlite3_stmt { }*_temporalInsertStatement;
+@property (nonatomic, readonly) struct sqlite3_stmt { }*_temporalSelectStatement;
 
 - (struct sqlite3 { }*)_momentsDatabase;
 - (id)_nodesByObjectID;
@@ -36,7 +34,7 @@
 - (void)closeMomentsDatabase;
 - (unsigned int)countOfTemporalNeighborsOfNode:(id)arg1 forTheta:(double)arg2;
 - (void)dealloc;
-- (void)executePreparedStatement:(struct sqlite3_stmt { }*)arg1 withStatementBlock:(id)arg2;
+- (void)executePreparedStatement:(struct sqlite3_stmt { }*)arg1 withStatementBlock:(id /* block */)arg2;
 - (id)init;
 - (void)insertNode:(id)arg1;
 - (id)nodeForAsset:(id)arg1;
@@ -44,7 +42,7 @@
 - (id)nodesWithTag:(id)arg1;
 - (id)nodesWithinMinDate:(double)arg1 maxDate:(double)arg2;
 - (void)openMomentsDatabase;
-- (void)performBatch:(id)arg1;
+- (void)performBatch:(id /* block */)arg1;
 - (void)prepareAndExecuteStatement:(const char *)arg1;
 - (struct sqlite3_stmt { }*)prepareStatement:(const char *)arg1;
 - (void)setupMomentsDatabase;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIImageView, _UIBackdropView;
-
 @interface PLWallpaperButton : UIButton <_UIBackdropViewObserver> {
     _UIBackdropView *_backdropView;
     UIImageView *_titleMaskImageView;
 }
 
-@property(retain) _UIBackdropView * backdropView;
-@property(retain) UIImageView * titleMaskImageView;
+@property (nonatomic, retain) _UIBackdropView *backdropView;
+@property (nonatomic, retain) UIImageView *titleMaskImageView;
 
 - (void)_setupBackdropView;
 - (id)backdropView;

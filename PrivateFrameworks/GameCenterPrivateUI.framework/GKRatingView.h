@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSLayoutConstraint, UIImageView;
-
 @interface GKRatingView : UIView {
     UIImageView *_backgroundImageView;
     UIImageView *_foregroundImageView;
@@ -11,10 +9,10 @@
     float _value;
 }
 
-@property(retain) UIImageView * backgroundImageView;
-@property(retain) UIImageView * foregroundImageView;
-@property(retain) NSLayoutConstraint * foregroundWidthConstraint;
-@property float value;
+@property (nonatomic, retain) UIImageView *backgroundImageView;
+@property (nonatomic, retain) UIImageView *foregroundImageView;
+@property (nonatomic, retain) NSLayoutConstraint *foregroundWidthConstraint;
+@property (nonatomic) float value;
 
 - (void)awakeFromNib;
 - (id)backgroundImageView;

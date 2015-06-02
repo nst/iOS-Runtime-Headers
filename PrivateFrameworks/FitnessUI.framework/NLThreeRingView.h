@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NLArcView, UIImageView;
-
 @interface NLThreeRingView : UIView {
     NLArcView *_briskArcView;
     NLArcView *_calorieArcView;
@@ -14,13 +12,13 @@
     NLArcView *_sedentaryArcView;
 }
 
-@property(retain) NLArcView * briskArcView;
-@property(retain) NLArcView * calorieArcView;
-@property(retain) UIImageView * fadedView;
-@property float interspacing;
-@property float lineThickness;
-@property float outerDiameter;
-@property(retain) NLArcView * sedentaryArcView;
+@property (nonatomic, retain) NLArcView *briskArcView;
+@property (nonatomic, retain) NLArcView *calorieArcView;
+@property (nonatomic, retain) UIImageView *fadedView;
+@property (nonatomic) float interspacing;
+@property (nonatomic) float lineThickness;
+@property (nonatomic) float outerDiameter;
+@property (nonatomic, retain) NLArcView *sedentaryArcView;
 
 - (void).cxx_destruct;
 - (id)_generateArcWithNesting:(int)arg1 fromColor:(id)arg2 toColor:(id)arg3;

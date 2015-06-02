@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/QuickLookThumbnailing.framework/QuickLookThumbnailing
  */
 
-@class GSAddition, NSDictionary, NSURL;
-
 @interface QLThumbnailAddition : NSObject {
     GSAddition *_addition;
     NSURL *_additionURL;
@@ -12,9 +10,9 @@
     NSDictionary *_thumbnailDataDictionary;
 }
 
-@property(retain) NSURL * additionURL;
-@property(retain) NSDictionary * metadata;
-@property(retain) NSDictionary * thumbnailDataDictionary;
+@property (retain) NSURL *additionURL;
+@property (retain) NSDictionary *metadata;
+@property (retain) NSDictionary *thumbnailDataDictionary;
 
 + (id)_additionCreationInfo;
 + (BOOL)_hitAdditionsOnURL:(id)arg1 error:(id*)arg2;

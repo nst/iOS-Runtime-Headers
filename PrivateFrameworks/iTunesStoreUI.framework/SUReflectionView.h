@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIImage;
-
 @interface SUReflectionView : UIView {
     UIImage *_image;
 }

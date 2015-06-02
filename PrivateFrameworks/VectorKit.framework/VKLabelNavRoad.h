@@ -2,21 +2,10 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, VKLabelNavJunction, VKLabelNavRoadLabel, VKLabelTile;
-
 @interface VKLabelNavRoad : NSObject <VKLabelNavFeature> {
     BOOL _areLabelsDisabled;
     BOOL _areNavStylesInitialized;
-    struct { struct { id x_1_1_1; char *x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned int x_1_1_7; unsigned long long x_1_1_8; BOOL x_1_1_9; unsigned long long x_1_1_10; float x_1_1_11; unsigned long long x_1_1_12; id x_1_1_13; int x_1_1_14; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; } *_data;
+    struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; } *_data;
     struct Matrix<float, 2, 1> { 
         float _e[2]; 
     } _direction;
@@ -55,29 +44,29 @@
     unsigned int _vertexIndexB;
 }
 
-@property BOOL areLabelsDisabled;
-@property(readonly) const char * cstrName;
-@property /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  direction; /* unknown property attribute:  1>=[2f]} */
-@property int intraRoadPriority;
-@property(readonly) BOOL isAwayFromRoute;
-@property BOOL isGuidanceStepStart;
-@property BOOL isInGuidance;
-@property BOOL isOnRoute;
-@property(readonly) BOOL isOnewayToJunction;
-@property(readonly) BOOL isRamp;
-@property BOOL isRoadLabelUnique;
-@property BOOL isStartOfRoadName;
-@property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }* junctionB;
-@property(readonly) NSString * name;
-@property(readonly) VKLabelNavJunction * navJunctionA;
-@property(readonly) int roadClass;
-@property(readonly) int roadSignAlignment;
-@property float routeCrossProduct;
-@property struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
-@property(readonly) NSString * shieldDisplayGroup;
-@property(readonly) NSString * shieldGroup;
-@property(readonly) BOOL suppressRoadSignIfShieldPresent;
-@property(readonly) VKLabelTile * tile;
+@property (nonatomic) BOOL areLabelsDisabled;
+@property (nonatomic, readonly) const char *cstrName;
+@property (nonatomic) /* Warning: unhandled struct encoding: '{Matrix<float' */ struct  direction; /* unknown property attribute:  1>=[2f]} */
+@property (nonatomic) int intraRoadPriority;
+@property (nonatomic, readonly) BOOL isAwayFromRoute;
+@property (nonatomic) BOOL isGuidanceStepStart;
+@property (nonatomic) BOOL isInGuidance;
+@property (nonatomic) BOOL isOnRoute;
+@property (nonatomic, readonly) BOOL isOnewayToJunction;
+@property (nonatomic, readonly) BOOL isRamp;
+@property (nonatomic) BOOL isRoadLabelUnique;
+@property (nonatomic) BOOL isStartOfRoadName;
+@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*junctionB;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) VKLabelNavJunction *navJunctionA;
+@property (nonatomic, readonly) int roadClass;
+@property (nonatomic, readonly) int roadSignAlignment;
+@property (nonatomic) float routeCrossProduct;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeOffset;
+@property (nonatomic, readonly) NSString *shieldDisplayGroup;
+@property (nonatomic, readonly) NSString *shieldGroup;
+@property (nonatomic, readonly) BOOL suppressRoadSignIfShieldPresent;
+@property (nonatomic, readonly) VKLabelTile *tile;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSDictionary, NSMutableSet, NSSet;
-
 @interface MPMediaQueryCriteria : NSObject <NSCopying> {
     NSSet *_collectionPropertiesToFetch;
     unsigned int _entityOrder;
@@ -16,16 +14,16 @@
     BOOL _useSections;
 }
 
-@property(copy) NSSet * collectionPropertiesToFetch;
-@property unsigned int entityOrder;
-@property(readonly) BOOL excludesEntitiesWithBlankNames;
-@property(copy) NSSet * filterPredicates;
-@property int groupingType;
-@property BOOL ignoreSystemFilterPredicates;
-@property(copy) NSSet * itemPropertiesToFetch;
-@property(copy) NSDictionary * orderingDirectionMappings;
-@property(copy) NSArray * orderingProperties;
-@property(readonly) BOOL specifiesPlaylistItems;
+@property (nonatomic, copy) NSSet *collectionPropertiesToFetch;
+@property (nonatomic) unsigned int entityOrder;
+@property (nonatomic, readonly) BOOL excludesEntitiesWithBlankNames;
+@property (nonatomic, copy) NSSet *filterPredicates;
+@property (nonatomic) int groupingType;
+@property (nonatomic) BOOL ignoreSystemFilterPredicates;
+@property (nonatomic, copy) NSSet *itemPropertiesToFetch;
+@property (nonatomic, copy) NSDictionary *orderingDirectionMappings;
+@property (nonatomic, copy) NSArray *orderingProperties;
+@property (nonatomic, readonly) BOOL specifiesPlaylistItems;
 
 - (void).cxx_destruct;
 - (id)ML3CollectionsQueryInLibrary:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, _UIScreenEdgePanRecognizerCornerSettings, _UIScreenEdgePanRecognizerDwellSettings, _UIScreenEdgePanRecognizerEdgeSettings;
-
 @interface _UIScreenEdgePanRecognizerSettings : _UISettings {
     BOOL _analysisFailureOverlayVisible;
     BOOL _analysisLoggingEnabled;
@@ -15,14 +13,14 @@
     NSString *_navigationGestureMode;
 }
 
-@property BOOL analysisFailureOverlayVisible;
-@property BOOL analysisLoggingEnabled;
-@property BOOL analysisLoggingOverlayVisible;
-@property(retain) _UIScreenEdgePanRecognizerCornerSettings * cornerSettings;
-@property(retain) _UIScreenEdgePanRecognizerDwellSettings * dwellSettings;
-@property(retain) _UIScreenEdgePanRecognizerEdgeSettings * edgeSettings;
-@property(copy) NSString * multitaskingGestureMode;
-@property(copy) NSString * navigationGestureMode;
+@property (nonatomic) BOOL analysisFailureOverlayVisible;
+@property (nonatomic) BOOL analysisLoggingEnabled;
+@property (nonatomic) BOOL analysisLoggingOverlayVisible;
+@property (nonatomic, retain) _UIScreenEdgePanRecognizerCornerSettings *cornerSettings;
+@property (nonatomic, retain) _UIScreenEdgePanRecognizerDwellSettings *dwellSettings;
+@property (nonatomic, retain) _UIScreenEdgePanRecognizerEdgeSettings *edgeSettings;
+@property (nonatomic, copy) NSString *multitaskingGestureMode;
+@property (nonatomic, copy) NSString *navigationGestureMode;
 
 + (id)settingsControllerModule;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicPartialPlaybackCellConfiguration : MusicStandardMediaCellConfiguration {
-}
+@interface MusicPartialPlaybackCellConfiguration : MusicStandardMediaCellConfiguration
 
 + (Class)tableViewCellClass;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDCharacterProperties;
-
 @interface WDSpecialCharacter : WDRun {
     WDCharacterProperties *mProperties;
     int mType;

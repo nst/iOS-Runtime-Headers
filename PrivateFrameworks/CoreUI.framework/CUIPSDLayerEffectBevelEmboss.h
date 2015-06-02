@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIColor;
-
 @interface CUIPSDLayerEffectBevelEmboss : CUIPSDLayerEffectComponent {
     unsigned int _altitude;
     short _angle;
@@ -23,10 +21,10 @@
 @property unsigned int blurSize;
 @property unsigned int direction;
 @property int highlightBlendMode;
-@property(retain) CUIColor * highlightColor;
+@property (retain) CUIColor *highlightColor;
 @property float highlightOpacity;
 @property int shadowBlendMode;
-@property(retain) CUIColor * shadowColor;
+@property (retain) CUIColor *shadowColor;
 @property float shadowOpacity;
 @property unsigned int softenSize;
 

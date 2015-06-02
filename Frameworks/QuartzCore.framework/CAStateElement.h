@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CALayer, CAStateElement, NSString;
-
 @interface CAStateElement : NSObject <NSCoding, NSCopying> {
     CAStateElement *_source;
     CALayer *_target;
 }
 
-@property(copy,readonly) NSString * keyPath;
-@property(retain) CAStateElement * source;
-@property CALayer * target;
+@property (nonatomic, readonly, copy) NSString *keyPath;
+@property (nonatomic, retain) CAStateElement *source;
+@property (nonatomic) CALayer *target;
 
 + (void)CAMLParserStartElement:(id)arg1;
 
@@ -22,7 +20,7 @@
 - (void)dealloc;
 - (void)encodeWithCAMLWriter:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)foreachLayer:(id)arg1;
+- (void)foreachLayer:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)keyPath;
 - (BOOL)matches:(id)arg1;

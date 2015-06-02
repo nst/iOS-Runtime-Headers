@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKQuantity, NSDate, NSDateComponents, NSString;
-
 @interface HKActivityCache : HKSample <HDCoding, NSCopying> {
     long long _activeEnergyBurnedAnchor;
     double _activeHours;
@@ -27,41 +25,43 @@
 @property long long activeEnergyBurnedAnchor;
 @property double activeHours;
 @property long long activeHoursAnchor;
-@property(readonly) double activeHoursGoal;
-@property(readonly) double activeHoursGoalPercentage;
+@property (readonly) double activeHoursGoal;
+@property (readonly) double activeHoursGoalPercentage;
 @property double briskMinutes;
 @property long long briskMinutesAnchor;
-@property(readonly) double briskMinutesGoal;
-@property(readonly) double briskMinutesGoalPercentage;
-@property(setter=_setCacheIndex:) long long cacheIndex;
-@property(readonly) NSDateComponents * dateComponents;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) HKQuantity * energyBurned;
-@property(retain) HKQuantity * energyBurnedGoal;
+@property (readonly) double briskMinutesGoal;
+@property (readonly) double briskMinutesGoalPercentage;
+@property (setter=_setCacheIndex:) long long cacheIndex;
+@property (readonly) NSDateComponents *dateComponents;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) HKQuantity *energyBurned;
+@property (retain) HKQuantity *energyBurnedGoal;
 @property long long energyBurnedGoalAnchor;
-@property(readonly) NSDate * energyBurnedGoalDate;
-@property(readonly) double energyBurnedGoalPercentage;
-@property(readonly) BOOL hasActiveHours;
-@property(readonly) BOOL hasActiveHoursGoal;
-@property(readonly) BOOL hasActiveHoursGoalPercentage;
-@property(readonly) BOOL hasBriskMinutes;
-@property(readonly) BOOL hasBriskMinutesGoal;
-@property(readonly) BOOL hasBriskMinutesGoalPercentage;
-@property(readonly) BOOL hasDateComponents;
-@property(readonly) BOOL hasEnergyBurned;
-@property(readonly) BOOL hasEnergyBurnedGoal;
-@property(readonly) BOOL hasEnergyBurnedGoalPercentage;
-@property(readonly) BOOL hasStepCount;
-@property(readonly) BOOL hasWalkingAndRunningDistance;
-@property(readonly) unsigned int hash;
+@property (readonly) NSDate *energyBurnedGoalDate;
+@property (readonly) double energyBurnedGoalPercentage;
+@property (readonly) BOOL hasActiveHours;
+@property (readonly) BOOL hasActiveHoursGoal;
+@property (readonly) BOOL hasActiveHoursGoalPercentage;
+@property (readonly) BOOL hasBriskMinutes;
+@property (readonly) BOOL hasBriskMinutesGoal;
+@property (readonly) BOOL hasBriskMinutesGoalPercentage;
+@property (readonly) BOOL hasDateComponents;
+@property (readonly) BOOL hasEnergyBurned;
+@property (readonly) BOOL hasEnergyBurnedGoal;
+@property (readonly) BOOL hasEnergyBurnedGoalPercentage;
+@property (readonly) BOOL hasStepCount;
+@property (readonly) BOOL hasWalkingAndRunningDistance;
+@property (readonly) unsigned int hash;
 @property unsigned int knownFields;
 @property int stepCount;
 @property long long stepCountAnchor;
-@property(readonly) Class superclass;
-@property(retain) HKQuantity * walkingAndRunningDistance;
+@property (readonly) Class superclass;
+@property (retain) HKQuantity *walkingAndRunningDistance;
 @property long long walkingAndRunningDistanceAnchor;
 @property long long workoutAnchor;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_activityCacheWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 cacheIndex:(long long)arg7 energyBurned:(id)arg8 briskMinutes:(double)arg9 activeHours:(double)arg10 stepCount:(int)arg11 walkingAndRunningDistance:(id)arg12 energyBurnedGoal:(id)arg13;
 + (id)_activityCacheWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 cacheIndex:(long long)arg7 energyBurned:(id)arg8 walkingAndRunningDistance:(id)arg9 energyBurnedGoal:(id)arg10;
@@ -69,7 +69,6 @@
 + (id)_newActivityCacheWithStartDate:(id)arg1 endDate:(id)arg2 dateComponents:(id)arg3 energyBurned:(id)arg4 briskMinutes:(double)arg5 activeHours:(double)arg6 energyBurnedGoal:(id)arg7 stepCount:(int)arg8 walkingAndRunningDistance:(id)arg9 metadata:(id)arg10;
 + (id)_newActivityCacheWithStartDate:(id)arg1 endDate:(id)arg2 dateComponents:(id)arg3 energyBurned:(id)arg4 energyBurnedGoal:(id)arg5 walkingAndRunningDistance:(id)arg6 metadata:(id)arg7;
 + (id)_newActivityCacheWithUUID:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 dateComponents:(id)arg4;
-+ (id)createWithCodable:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -103,15 +102,11 @@
 - (long long)activeHoursAnchor;
 - (double)activeHoursGoal;
 - (double)activeHoursGoalPercentage;
-- (BOOL)addCodableRepresentationToCollectionForJournal:(id)arg1;
-- (BOOL)addCodableRepresentationToCollectionForSync:(id)arg1;
 - (double)briskMinutes;
 - (long long)briskMinutesAnchor;
 - (double)briskMinutesGoal;
 - (double)briskMinutesGoalPercentage;
 - (long long)cacheIndex;
-- (id)codableRepresentationForJournal;
-- (id)codableRepresentationForSync;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dateComponents;
 - (void)encodeWithCoder:(id)arg1;
@@ -140,5 +135,14 @@
 - (id)walkingAndRunningDistance;
 - (long long)walkingAndRunningDistanceAnchor;
 - (long long)workoutAnchor;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (id)createWithCodable:(id)arg1;
+
+- (BOOL)addCodableRepresentationToCollectionForJournal:(id)arg1;
+- (BOOL)addCodableRepresentationToCollectionForSync:(id)arg1;
+- (id)codableRepresentationForJournal;
+- (id)codableRepresentationForSync;
 
 @end

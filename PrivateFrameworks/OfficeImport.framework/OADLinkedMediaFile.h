@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSURL;
-
 @interface OADLinkedMediaFile : OADMovie {
     BOOL mIsExternal;
     NSURL *mUrl;
 }
 
 @property BOOL isExternal;
-@property(retain) NSURL * url;
+@property (retain) NSURL *url;
 
 - (void)dealloc;
 - (BOOL)isExternal;

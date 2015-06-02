@@ -10,11 +10,11 @@
     int _width;
 }
 
-@property int bytesPerPixel;
-@property char * data;
-@property int height;
-@property(retain) struct CGImage { }* imageRef;
-@property int width;
+@property (nonatomic) int bytesPerPixel;
+@property (nonatomic) char *data;
+@property (nonatomic) int height;
+@property (nonatomic, retain) struct CGImage { }*imageRef;
+@property (nonatomic) int width;
 
 + (id)rawImageForImage:(struct CGImage { }*)arg1;
 

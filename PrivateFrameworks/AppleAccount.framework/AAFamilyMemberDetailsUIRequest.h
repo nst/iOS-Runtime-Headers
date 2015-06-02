@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSNumber, NSString;
-
 @interface AAFamilyMemberDetailsUIRequest : AAFamilyRequest {
     NSNumber *_memberDSID;
     NSString *_memberEmail;
 }
 
-@property(copy) NSNumber * memberDSID;
-@property(copy) NSString * memberEmail;
+@property (nonatomic, copy) NSNumber *memberDSID;
+@property (nonatomic, copy) NSString *memberEmail;
 
 - (void).cxx_destruct;
 - (BOOL)isUserInitiated;

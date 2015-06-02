@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIBadgeLabel, SKUIClientContext, UIColor, UIImageView, UILabel;
-
 @interface SKUILockupMetadataView : UIView {
     UILabel *_artistNameLabel;
     UILabel *_categoryLabel;
@@ -22,18 +20,18 @@
     unsigned int _visibleFields;
 }
 
-@property(copy) NSString * artistName;
-@property(copy) NSString * categoryString;
-@property(retain) SKUIClientContext * clientContext;
-@property(copy) NSString * editorialBadgeString;
-@property(copy) NSString * itemCountString;
-@property(copy) NSString * itemOfferString;
-@property int numberOfUserRatings;
-@property(readonly) UIColor * primaryTextColor;
-@property(copy) NSString * releaseDateString;
-@property(copy) NSString * title;
-@property float userRating;
-@property unsigned int visibleFields;
+@property (nonatomic, copy) NSString *artistName;
+@property (nonatomic, copy) NSString *categoryString;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, copy) NSString *editorialBadgeString;
+@property (nonatomic, copy) NSString *itemCountString;
+@property (nonatomic, copy) NSString *itemOfferString;
+@property (nonatomic) int numberOfUserRatings;
+@property (nonatomic, readonly) UIColor *primaryTextColor;
+@property (nonatomic, copy) NSString *releaseDateString;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) float userRating;
+@property (nonatomic) unsigned int visibleFields;
 
 + (float)maximumHeightWithVisibleFields:(unsigned int)arg1;
 

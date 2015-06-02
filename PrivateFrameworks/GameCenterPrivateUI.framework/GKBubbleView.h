@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UIImageView;
-
 @interface GKBubbleView : UIView {
     BOOL _animating;
     float _animationAngle;
     float _animationRadiansPerSecond;
-    BOOL _animationReversed[9];
-    float _animationScale[9];
+    BOOL _animationReversed;
+    float _animationScale;
     int _bubbleType;
     UIImageView *_highlightView;
     UIImageView *_imageView;
@@ -24,21 +22,21 @@
     BOOL _touchAnimationRunning;
 }
 
-@property BOOL animating;
-@property float animationAngle;
-@property float animationRadiansPerSecond;
-@property int bubbleType;
-@property(retain) UIImageView * highlightView;
-@property(retain) UIImageView * imageView;
-@property float moveAnimationAngle;
-@property float moveAnimationRadiansPerSecond;
-@property float moveAnimationScale;
-@property int numFaces;
-@property int numVertices;
-@property float touchAnimationAngle;
-@property BOOL touchAnimationCanEnd;
-@property float touchAnimationElapsed;
-@property BOOL touchAnimationRunning;
+@property (nonatomic) BOOL animating;
+@property (nonatomic) float animationAngle;
+@property (nonatomic) float animationRadiansPerSecond;
+@property (nonatomic) int bubbleType;
+@property (nonatomic, retain) UIImageView *highlightView;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic) float moveAnimationAngle;
+@property (nonatomic) float moveAnimationRadiansPerSecond;
+@property (nonatomic) float moveAnimationScale;
+@property (nonatomic) int numFaces;
+@property (nonatomic) int numVertices;
+@property (nonatomic) float touchAnimationAngle;
+@property (nonatomic) BOOL touchAnimationCanEnd;
+@property (nonatomic) float touchAnimationElapsed;
+@property (nonatomic) BOOL touchAnimationRunning;
 
 - (BOOL)animating;
 - (float)animationAngle;

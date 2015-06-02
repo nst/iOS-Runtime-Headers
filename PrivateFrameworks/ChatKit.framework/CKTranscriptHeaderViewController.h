@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKConversation;
-
 @interface CKTranscriptHeaderViewController : UIViewController {
     CKConversation *_conversation;
     BOOL _shouldInvalidateOnAddressBookChange;
 }
 
-@property(retain) CKConversation * conversation;
-@property(readonly) BOOL shouldInvalidateOnAddressBookChange;
+@property (nonatomic, retain) CKConversation *conversation;
+@property (nonatomic, readonly) BOOL shouldInvalidateOnAddressBookChange;
 
 - (id)conversation;
 - (void)dealloc;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFAlarm;
-
 @interface AFSearchAlarmsRequest : AFSiriRequest {
     AFAlarm *_criteria;
     int _options;
 }
 
-@property(retain) AFAlarm * criteria;
-@property int options;
+@property (nonatomic, retain) AFAlarm *criteria;
+@property (nonatomic) int options;
 
 + (BOOL)supportsSecureCoding;
 

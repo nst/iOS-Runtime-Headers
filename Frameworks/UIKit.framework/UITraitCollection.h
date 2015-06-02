@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary;
-
 @interface UITraitCollection : NSObject <NSCopying, NSSecureCoding> {
     struct { 
         int userInterfaceIdiom; 
@@ -16,12 +14,14 @@
     NSDictionary *_clientDefinedTraits;
 }
 
-@property(readonly) BOOL MPU_hasCompactWidth;
-@property(readonly) BOOL MPU_hasRegularWidth;
-@property(readonly) float displayScale;
-@property(readonly) int horizontalSizeClass;
-@property(readonly) int userInterfaceIdiom;
-@property(readonly) int verticalSizeClass;
+@property (nonatomic, readonly) BOOL MPU_hasCompactWidth;
+@property (nonatomic, readonly) BOOL MPU_hasRegularWidth;
+@property (nonatomic, readonly) float displayScale;
+@property (nonatomic, readonly) int horizontalSizeClass;
+@property (nonatomic, readonly) int userInterfaceIdiom;
+@property (nonatomic, readonly) int verticalSizeClass;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_emptyTraitCollection;
 + (id)_traitCollectionWithValue:(id)arg1 forTraitNamed:(id)arg2;
@@ -34,8 +34,6 @@
 + (id)traitCollectionWithUserInterfaceIdiom:(int)arg1;
 + (id)traitCollectionWithVerticalSizeClass:(int)arg1;
 
-- (BOOL)MPU_hasCompactWidth;
-- (BOOL)MPU_hasRegularWidth;
 - (int)_compare:(id)arg1;
 - (id)_initWithBuiltinTraitStorage:(struct { int x1; float x2; int x3; unsigned int x4; int x5; int x6; }*)arg1 clientDefinedTraits:(id)arg2;
 - (BOOL)_matchesIntersectionWithTraitCollection:(id)arg1;
@@ -54,9 +52,17 @@
 - (unsigned int)interactionModel;
 - (BOOL)isEqual:(id)arg1;
 - (int)touchLevel;
-- (BOOL)tsu_isCompactHeight;
-- (BOOL)tsu_isCompactWidth;
 - (int)userInterfaceIdiom;
 - (int)verticalSizeClass;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (BOOL)MPU_hasCompactWidth;
+- (BOOL)MPU_hasRegularWidth;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
+- (BOOL)tsu_isCompactHeight;
+- (BOOL)tsu_isCompactWidth;
 
 @end

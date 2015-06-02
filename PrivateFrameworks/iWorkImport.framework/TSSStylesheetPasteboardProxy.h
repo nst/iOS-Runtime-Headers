@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_queue>, TSSStylesheet, TSUMutableRetainedPointerSet;
-
 @interface TSSStylesheetPasteboardProxy : TSPObject {
     TSUMutableRetainedPointerSet *mReferencedStyles;
     NSObject<OS_dispatch_queue> *mReferencedStylesQueue;

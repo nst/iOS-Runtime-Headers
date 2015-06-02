@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableDictionary;
-
 @interface CKDFlowControlManager : NSObject {
     unsigned int _defaultBudget;
     double _defaultRegeneration;
@@ -11,10 +9,10 @@
     NSMutableDictionary *_operationFlowControls;
 }
 
-@property unsigned int defaultBudget;
-@property double defaultRegeneration;
+@property (nonatomic) unsigned int defaultBudget;
+@property (nonatomic) double defaultRegeneration;
 @property double maximumThrottleTime;
-@property(retain) NSMutableDictionary * operationFlowControls;
+@property (nonatomic, retain) NSMutableDictionary *operationFlowControls;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

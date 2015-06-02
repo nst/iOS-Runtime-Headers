@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableObjectCollection;
-
 @interface _HDDataBatchInsertionJournalEntry : HDJournalEntry {
     HDCodableObjectCollection *_collection;
     int _provenance;
 }
 
-@property(readonly) HDCodableObjectCollection * collection;
-@property(readonly) int provenance;
+@property (nonatomic, readonly) HDCodableObjectCollection *collection;
+@property (nonatomic, readonly) int provenance;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;

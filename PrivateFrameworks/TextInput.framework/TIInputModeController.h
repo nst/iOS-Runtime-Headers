@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSArray, NSString;
-
 @interface TIInputModeController : NSObject {
     NSArray *_supportedInputModeIdentifiers;
     NSArray *_supportedInputModeLanguageAndRegions;
@@ -13,15 +11,15 @@
     NSArray *enabledInputModes;
 }
 
-@property(copy) NSString * currentLanguage;
-@property(copy) NSString * currentLocale;
-@property(copy) NSArray * defaultInputModes;
-@property(readonly) NSArray * enabledInputModeIdentifiers;
-@property(copy) NSArray * enabledInputModes;
-@property(readonly) NSArray * supportedInputModeIdentifiers;
-@property(readonly) NSArray * supportedInputModeLanguageAndRegions;
+@property (nonatomic, copy) NSString *currentLanguage;
+@property (nonatomic, copy) NSString *currentLocale;
+@property (nonatomic, copy) NSArray *defaultInputModes;
+@property (readonly) NSArray *enabledInputModeIdentifiers;
+@property (nonatomic, copy) NSArray *enabledInputModes;
+@property (readonly) NSArray *supportedInputModeIdentifiers;
+@property (readonly) NSArray *supportedInputModeLanguageAndRegions;
 
-+ (id)_inputModesForLocale:(id)arg1 language:(id)arg2 modeFetcher:(id)arg3;
++ (id)_inputModesForLocale:(id)arg1 language:(id)arg2 modeFetcher:(id /* block */)arg3;
 + (id)sharedInputModeController;
 
 - (id)currentLanguage;

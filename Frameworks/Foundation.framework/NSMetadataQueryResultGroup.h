@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSString;
-
 @interface NSMetadataQueryResultGroup : NSObject {
-    id _private[9];
-    unsigned int _private2[1];
+    /* Warning: unhandled array encoding: '[9@]' */ id _private;
+    unsigned int _private2;
     void *_reserved;
 }
 
-@property(copy,readonly) NSString * attribute;
-@property(readonly) unsigned int resultCount;
-@property(copy,readonly) NSArray * results;
-@property(copy,readonly) NSArray * subgroups;
-@property(retain,readonly) id value;
+@property (readonly, copy) NSString *attribute;
+@property (readonly) unsigned int resultCount;
+@property (readonly, copy) NSArray *results;
+@property (readonly, copy) NSArray *subgroups;
+@property (readonly, retain) id value;
 
 - (void)_addResult:(unsigned int)arg1;
 - (id)_init:(id)arg1 attributes:(id)arg2 index:(unsigned int)arg3 value:(id)arg4;

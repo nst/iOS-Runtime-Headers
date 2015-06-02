@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSString, TSDGLShader;
-
 @interface TSDGLDataBuffer : NSObject <TSDGLDataBufferAccessor> {
     BOOL _didTeardown;
     unsigned int _drawMode;
@@ -25,17 +23,17 @@
         float height; 
     } mGLElementMeshSize;
     unsigned int mGLElementQuadParticleCount;
-    unsigned int mGLVertexArrayObjects[2];
+    unsigned int mGLVertexArrayObjects;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property unsigned int drawMode;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isDoubleBuffered;
-@property(readonly) Class superclass;
-@property(readonly) NSArray * vertexAttributes;
-@property(readonly) unsigned int vertexCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned int drawMode;
+@property (readonly) unsigned int hash;
+@property (readonly) BOOL isDoubleBuffered;
+@property (readonly) Class superclass;
+@property (readonly) NSArray *vertexAttributes;
+@property (readonly) unsigned int vertexCount;
 
 - (struct { float x1; float x2; })GLPoint2DForAttribute:(id)arg1 atIndex:(unsigned int)arg2;
 - (struct { float x1; float x2; float x3; })GLPoint3DForAttribute:(id)arg1 atIndex:(unsigned int)arg2;
@@ -72,7 +70,7 @@
 - (void)setGLfloat:(float)arg1 forAttribute:(id)arg2 atIndex:(unsigned int)arg3;
 - (void)setGLushort:(unsigned short)arg1 forIndexElement:(unsigned int)arg2;
 - (void)teardown;
-- (void)updateDataBufferAttributes:(id)arg1 withBlock:(id)arg2;
+- (void)updateDataBufferAttributes:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)vertexAttributeNamed:(id)arg1;
 - (id)vertexAttributes;
 - (unsigned int)vertexCount;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class LSApplicationProxy, NSMutableSet, NSObject<OS_dispatch_queue>, NSProgress;
-
 @interface FBApplicationPlaceholder : FBBundleInfo {
     NSObject<OS_dispatch_queue> *_queue;
     double _queue_cachedPercentComplete;
@@ -14,17 +12,17 @@
     NSProgress *_queue_progress;
 }
 
-@property(getter=isCancellable,readonly) BOOL cancellable;
-@property(readonly) unsigned int installPhase;
-@property(readonly) unsigned int installState;
-@property(readonly) unsigned int installType;
-@property(getter=isNewsstand,readonly) BOOL newsstand;
-@property(getter=isPausable,readonly) BOOL pausable;
-@property(readonly) double percentComplete;
-@property(getter=_proxy,setter=_setProxy:,retain) LSApplicationProxy * proxy;
-@property(getter=isRestricted,readonly) BOOL restricted;
+@property (getter=isCancellable, nonatomic, readonly) BOOL cancellable;
+@property (nonatomic, readonly) unsigned int installPhase;
+@property (nonatomic, readonly) unsigned int installState;
+@property (nonatomic, readonly) unsigned int installType;
+@property (getter=isNewsstand, nonatomic, readonly) BOOL newsstand;
+@property (getter=isPausable, nonatomic, readonly) BOOL pausable;
+@property (nonatomic, readonly) double percentComplete;
+@property (getter=_proxy, setter=_setProxy:, nonatomic, retain) LSApplicationProxy *proxy;
+@property (getter=isRestricted, nonatomic, readonly) BOOL restricted;
 
-- (void)_dispatchToObservers:(id)arg1 block:(id)arg2;
+- (void)_dispatchToObservers:(id)arg1 block:(id /* block */)arg2;
 - (id)_iconDictionary;
 - (double)_normalizedProgress:(double)arg1;
 - (void)_noteChangedSignificantly;

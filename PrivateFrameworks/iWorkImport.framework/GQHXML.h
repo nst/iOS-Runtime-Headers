@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <GQHXMLOutput>;
-
 @interface GQHXML : NSObject {
     bool isProgressive;
     struct __CFString { } *mCss;
@@ -14,7 +12,7 @@
     BOOL mUseExternalCss;
 }
 
-@property(readonly) bool isProgressive;
+@property (readonly) bool isProgressive;
 
 - (void)addCharRef:(const char *)arg1;
 - (void)addContent:(struct __CFString { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class <GEOMapItem>, RTLOIDisplayInfo, RTPredictedLocationOfInterest;
-
 @interface RTPLOIETA : NSObject {
     unsigned int _baselineETASeconds;
     RTLOIDisplayInfo *_displayInfo;
@@ -12,7 +10,7 @@
     unsigned int _responseETASeconds;
 }
 
-@property(readonly) RTPredictedLocationOfInterest * ploi;
+@property (nonatomic, readonly) RTPredictedLocationOfInterest *ploi;
 
 - (void).cxx_destruct;
 - (id)_displayInfoForDate:(id)arg1;

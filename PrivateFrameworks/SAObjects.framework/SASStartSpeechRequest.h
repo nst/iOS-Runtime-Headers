@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDictionary;
+@interface SASStartSpeechRequest : SASStartSpeech
 
-@interface SASStartSpeechRequest : SASStartSpeech {
-}
-
-@property BOOL eyesFree;
-@property BOOL handsFree;
-@property BOOL talkOnly;
-@property(copy) NSDictionary * voiceTriggerEventInfo;
-@property(copy) NSArray * voiceTriggerPhrases;
+@property (nonatomic) BOOL eyesFree;
+@property (nonatomic) BOOL handsFree;
+@property (nonatomic) BOOL talkOnly;
+@property (nonatomic, copy) NSDictionary *voiceTriggerEventInfo;
+@property (nonatomic, copy) NSArray *voiceTriggerPhrases;
 
 + (id)startSpeechRequest;
 + (id)startSpeechRequestWithDictionary:(id)arg1 context:(id)arg2;

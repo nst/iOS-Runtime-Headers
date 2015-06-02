@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class IMAVCamera, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface IMAVCameraController : NSObject {
     NSMutableArray *_cameras;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain,readonly) NSArray * cameras;
-@property(retain) IMAVCamera * currentCamera;
+@property (nonatomic, readonly, retain) NSArray *cameras;
+@property (nonatomic, retain) IMAVCamera *currentCamera;
 
 + (id)sharedInstance;
 

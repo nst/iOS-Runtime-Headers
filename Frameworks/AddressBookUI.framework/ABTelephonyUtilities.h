@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABTelephonyUtilities : NSObject {
-}
+@interface ABTelephonyUtilities : NSObject
 
 + (BOOL)supportsFaceTimeAudioCalls;
 + (BOOL)supportsTelephonyCalls;

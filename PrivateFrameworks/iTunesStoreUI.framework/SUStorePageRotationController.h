@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SURotationController, SUViewController;
-
 @interface SUStorePageRotationController : SURotationController {
     SURotationController *_childRotationController;
     SUViewController *_childViewController;

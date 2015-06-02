@@ -10,7 +10,7 @@
     double _timeoutTime;
 }
 
-@property double timeoutInterval;
+@property (nonatomic) double timeoutInterval;
 
 - (void)abortParsing;
 - (BOOL)areBlocksCopied;

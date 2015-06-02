@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPComponentWriteChannel>, <TSPComponentWriterDelegate>, NSHashTable, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString, TSPArchiverManager, TSPComponent, TSPObject;
-
 @interface TSPComponentWriter : NSObject {
     NSHashTable *_analyzedCommandToModelReferences;
     NSHashTable *_archivedObjects;
@@ -48,14 +46,14 @@
     unsigned long long _writeVersion;
 }
 
-@property(readonly) TSPComponent * component;
-@property(readonly) unsigned long long readVersion;
-@property(readonly) unsigned long long writeVersion;
+@property (nonatomic, readonly) TSPComponent *component;
+@property (nonatomic, readonly) unsigned long long readVersion;
+@property (nonatomic, readonly) unsigned long long writeVersion;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addCommandToModelReferences:(id)arg1 parentObject:(id)arg2;
-- (void)analyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(BOOL)arg2 archiver:(id)arg3 completion:(id)arg4;
+- (void)analyzeCommandToModelReference:(id)arg1 isAnalyzingExternalComponent:(BOOL)arg2 archiver:(id)arg3 completion:(id /* block */)arg4;
 - (BOOL)canSkipArchivingStronglyReferencedObject:(id)arg1 fromComponentRootObject:(id)arg2;
 - (id)commandToModelReferencesToWrite;
 - (id)component;
@@ -72,9 +70,9 @@
 - (void)validateExplicitComponentOwnershipForObject:(id)arg1 archiverOrNil:(id)arg2 parentObject:(id)arg3 hasArchiverAccessLock:(BOOL)arg4;
 - (BOOL)validateObjectContextForObject:(id)arg1;
 - (void)writeArchiver:(id)arg1;
-- (void)writeObject:(id)arg1 archiver:(id)arg2 parentObject:(id)arg3 completion:(id)arg4;
-- (void)writeObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(BOOL)arg3 isAnalyzingExternalComponent:(BOOL)arg4 hasArchiverAccessLock:(BOOL)arg5 completion:(id)arg6;
+- (void)writeObject:(id)arg1 archiver:(id)arg2 parentObject:(id)arg3 completion:(id /* block */)arg4;
+- (void)writeObjects:(id)arg1 parentObject:(id)arg2 isCommandToModelReference:(BOOL)arg3 isAnalyzingExternalComponent:(BOOL)arg4 hasArchiverAccessLock:(BOOL)arg5 completion:(id /* block */)arg6;
 - (unsigned long long)writeVersion;
-- (void)writeWithCompletionQueue:(id)arg1 completion:(id)arg2;
+- (void)writeWithCompletionQueue:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface DADConnection : NSObject {
     NSMutableSet *_accountIdsWithAlreadyResetCerts;
     NSMutableSet *_accountIdsWithAlreadyResetThrottleTimers;
@@ -21,11 +15,7 @@
     NSMutableDictionary *_inFlightShareRequests;
     NSObject<OS_dispatch_queue> *_muckingWithConn;
     NSObject<OS_dispatch_queue> *_muckingWithInFlightCollections;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _statusReportBlock;
-
+    id /* block */ _statusReportBlock;
 }
 
 + (void)setShouldIgnoreAccountChanges;
@@ -57,13 +47,13 @@
 - (void)_requestDaemonStopMonitoringAgents_Sync;
 - (void)_resetCertWarningsForAccountId:(id)arg1 andDataclasses:(int)arg2 isUserRequested:(BOOL)arg3;
 - (void)_resetThrottleTimersForAccountId:(id)arg1;
-- (void)_sendSynchronousXPCMessageWithParameters:(id)arg1 handlerBlock:(id)arg2;
+- (void)_sendSynchronousXPCMessageWithParameters:(id)arg1 handlerBlock:(id /* block */)arg2;
 - (void)_serverContactsSearchQueryFinished:(id)arg1;
 - (void)_serverDiedWithReason:(id)arg1;
 - (void)_shareResponseFinished:(id)arg1;
 - (void)_tearDownInFlightObjects;
 - (id)activeSyncDeviceIdentifier;
-- (id)beginDownloadingAttachmentWithUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 progressBlock:(id)arg4 completionBlock:(id)arg5;
+- (id)beginDownloadingAttachmentWithUUID:(id)arg1 accountID:(id)arg2 queue:(id)arg3 progressBlock:(id /* block */)arg4 completionBlock:(id /* block */)arg5;
 - (void)cancelCalendarAvailabilityRequestWithID:(id)arg1;
 - (void)cancelCalendarDirectorySearchWithID:(id)arg1;
 - (void)cancelDownloadingAttachmentWithDownloadID:(id)arg1 error:(id)arg2;
@@ -71,26 +61,26 @@
 - (id)currentPolicyKeyForAccountID:(id)arg1;
 - (void)dealloc;
 - (id)decodedErrorFromData:(id)arg1;
-- (void)externalIdentificationForAccountID:(id)arg1 resultsBlock:(id)arg2;
+- (void)externalIdentificationForAccountID:(id)arg1 resultsBlock:(id /* block */)arg2;
 - (void)fillOutCurrentEASTimeZoneInfo;
 - (void)handleURL:(id)arg1;
 - (id)init;
 - (BOOL)isOofSettingsSupportedForAccountWithID:(id)arg1;
-- (id)performCalendarDirectorySearchWithAccountID:(id)arg1 terms:(id)arg2 recordTypes:(id)arg3 resultLimit:(unsigned int)arg4 resultsBlock:(id)arg5 completionBlock:(id)arg6;
+- (id)performCalendarDirectorySearchWithAccountID:(id)arg1 terms:(id)arg2 recordTypes:(id)arg3 resultLimit:(unsigned int)arg4 resultsBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6;
 - (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)processFolderChange:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)processMeetingRequests:(id)arg1 deliveryIdsToClear:(id)arg2 deliveryIdsToSoftClear:(id)arg3 inFolderWithId:(id)arg4 forAccountWithId:(id)arg5;
-- (BOOL)registerForInterrogationWithBlock:(id)arg1;
+- (BOOL)registerForInterrogationWithBlock:(id /* block */)arg1;
 - (void)removeStoresForAccountWithID:(id)arg1;
 - (void)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 withItemsCount:(unsigned int)arg3 andAccountWithID:(id)arg4;
-- (id)requestCalendarAvailabilityWithAccountID:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 ignoredEventID:(id)arg4 addresses:(id)arg5 resultsBlock:(id)arg6 completionBlock:(id)arg7;
+- (id)requestCalendarAvailabilityWithAccountID:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 ignoredEventID:(id)arg4 addresses:(id)arg5 resultsBlock:(id /* block */)arg6 completionBlock:(id /* block */)arg7;
 - (void)requestDaemonShutdown;
 - (void)requestDaemonStartMonitoringAgents;
 - (void)requestDaemonStartMonitoringAgents_Sync;
 - (void)requestDaemonStopMonitoringAgents;
 - (BOOL)requestPolicyUpdateForAccountID:(id)arg1;
 - (void)resetTimersAndWarnings;
-- (void)respondToSharedCalendarInvite:(int)arg1 forCalendarWithID:(id)arg2 accountID:(id)arg3 queue:(id)arg4 completionBlock:(id)arg5;
+- (void)respondToSharedCalendarInvite:(int)arg1 forCalendarWithID:(id)arg2 accountID:(id)arg3 queue:(id)arg4 completionBlock:(id /* block */)arg5;
 - (BOOL)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (BOOL)retrieveOofSettingsRequest:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3 forAccountID:(id)arg4;

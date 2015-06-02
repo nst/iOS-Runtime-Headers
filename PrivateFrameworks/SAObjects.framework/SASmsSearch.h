@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSNumber, NSString;
+@interface SASmsSearch : SADomainCommand
 
-@interface SASmsSearch : SADomainCommand {
-}
-
-@property(copy) NSDate * end;
-@property(copy) NSString * message;
-@property(copy) NSNumber * outgoing;
-@property(copy) NSArray * recipients;
-@property(copy) NSArray * senders;
-@property(copy) NSDate * start;
-@property(copy) NSString * subject;
-@property(copy) NSNumber * unread;
+@property (nonatomic, copy) NSDate *end;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSNumber *outgoing;
+@property (nonatomic, copy) NSArray *recipients;
+@property (nonatomic, copy) NSArray *senders;
+@property (nonatomic, copy) NSDate *start;
+@property (nonatomic, copy) NSString *subject;
+@property (nonatomic, copy) NSNumber *unread;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;

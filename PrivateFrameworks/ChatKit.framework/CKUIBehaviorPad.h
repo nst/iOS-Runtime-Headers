@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKUIBehaviorPad : CKUIBehavior {
-}
+@interface CKUIBehaviorPad : CKUIBehavior
 
 - (struct CGSize { float x1; float x2; })attachmentBrowserDefaultSizeForSquare;
 - (float)attachmentBrowserGridInterItemSpacing;

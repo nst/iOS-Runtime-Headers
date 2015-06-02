@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContactStyle;
-
 @interface ABContactStyleStyleProvider : ABStyleProvider {
     CNContactStyle *_contactStyle;
 }
 
-@property(retain) CNContactStyle * contactStyle;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
 
 - (id)cardCellBackgroundColor;
 - (id)cardCellDividerColorVertical:(BOOL)arg1;

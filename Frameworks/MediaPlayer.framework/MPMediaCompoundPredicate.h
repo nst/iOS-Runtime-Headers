@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSString;
-
 @interface MPMediaCompoundPredicate : MPMediaPredicate <MPPProtobufferCoding> {
     NSArray *_predicates;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) NSArray * predicates;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSArray *predicates;
+@property (readonly) Class superclass;
 
 + (id)predicateMatchingPredicates:(id)arg1;
 

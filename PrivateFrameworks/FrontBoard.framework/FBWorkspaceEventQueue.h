@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBWorkspaceEventQueue : BSEventQueue {
-}
+@interface FBWorkspaceEventQueue : BSEventQueue
 
 + (id)sharedInstance;
 

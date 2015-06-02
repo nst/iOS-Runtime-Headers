@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSMutableArray, NSMutableData;
-
 @interface PTPDevicePropDescDataset : NSObject {
     NSMutableData *_content;
     id _currentValue;

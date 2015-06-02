@@ -2,27 +2,24 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDate, NSString, PLAdditionalAssetAttributes, PLCloudMaster, PLManagedAsset;
+@interface PLCloudResource : PLManagedObject
 
-@interface PLCloudResource : PLManagedObject {
-}
-
-@property(retain,readonly) PLManagedAsset * asset;
-@property(retain) PLAdditionalAssetAttributes * assetAttributes;
-@property(retain) NSString * assetUuid;
-@property(retain) PLCloudMaster * cloudMaster;
-@property(retain) NSString * filePath;
-@property long long fileSize;
-@property(retain) NSString * fingerprint;
-@property int height;
-@property BOOL isAvailable;
-@property BOOL isFlattened;
-@property BOOL isLocallyAvailable;
-@property(retain) NSDate * lastOnDemandDownloadDate;
-@property(retain) NSDate * prunedAt;
-@property int type;
-@property(retain) NSString * uniformTypeIdentifier;
-@property int width;
+@property (nonatomic, readonly, retain) PLManagedAsset *asset;
+@property (nonatomic, retain) PLAdditionalAssetAttributes *assetAttributes;
+@property (nonatomic, retain) NSString *assetUuid;
+@property (nonatomic, retain) PLCloudMaster *cloudMaster;
+@property (nonatomic, retain) NSString *filePath;
+@property (nonatomic) long long fileSize;
+@property (nonatomic, retain) NSString *fingerprint;
+@property (nonatomic) int height;
+@property (nonatomic) BOOL isAvailable;
+@property (nonatomic) BOOL isFlattened;
+@property (nonatomic) BOOL isLocallyAvailable;
+@property (nonatomic, retain) NSDate *lastOnDemandDownloadDate;
+@property (nonatomic, retain) NSDate *prunedAt;
+@property (nonatomic) int type;
+@property (nonatomic, retain) NSString *uniformTypeIdentifier;
+@property (nonatomic) int width;
 
 + (id)allCloudResourcesInManagedObjectContext:(id)arg1;
 + (long long)bytesNeededToDownloadOriginalResourcesInLibrary:(id)arg1;

@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalPreferences;
-
 @interface EKUIDebugPreferences : NSObject {
     CalPreferences *_preferences;
 }
 
-@property BOOL showInviteesAndMoreRegion;
-@property BOOL verifyIntegrityOfAvailabilityTimeSearchTimelines;
+@property (nonatomic) BOOL showInviteesAndMoreRegion;
+@property (nonatomic) BOOL verifyIntegrityOfAvailabilityTimeSearchTimelines;
 
 + (id)shared;
 

@@ -2,25 +2,17 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface HKChartBoundsRule : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _descriptor;
-
+    id /* block */ _descriptor;
 }
 
-@property(copy) id descriptor;
+@property (nonatomic, copy) id /* block */ descriptor;
 
-+ (id)ruleWithDescriptor:(id)arg1;
++ (id)ruleWithDescriptor:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)adjustedValuesForMinValue:(double)arg1 maxValue:(double)arg2 minValueOut:(double*)arg3 maxValueOut:(double*)arg4;
-- (id)descriptor;
-- (void)setDescriptor:(id)arg1;
+- (id /* block */)descriptor;
+- (void)setDescriptor:(id /* block */)arg1;
 
 @end

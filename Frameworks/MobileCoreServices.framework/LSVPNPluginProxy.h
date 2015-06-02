@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface LSVPNPluginProxy : LSBundleProxy {
-}
+@interface LSVPNPluginProxy : LSBundleProxy
 
 + (id)VPNPluginProxyForIdentifier:(id)arg1;
 

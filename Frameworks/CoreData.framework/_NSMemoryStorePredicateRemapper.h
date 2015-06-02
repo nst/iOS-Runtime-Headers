@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext;
-
 @interface _NSMemoryStorePredicateRemapper : NSObject {
     NSManagedObjectContext *_context;
 }

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface TSTCellUIDList : NSObject <NSCopying> {
     struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { 
         struct UUIDData<TSP::UUIDData> {} *__begin_; 
@@ -49,8 +42,8 @@
     } _uncompressedCellUIDs;
 }
 
-@property(readonly) unsigned long compressedSize;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, readonly) unsigned long compressedSize;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 + (id)cellUIDList;
 + (id)cellUIDListFromRange:(const struct TSTCellUIDRange { struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_1_1_1; struct UUIDData<TSP::UUIDData> {} *x_1_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_1_1_3; } x1; struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_2_1_1; struct UUIDData<TSP::UUIDData> {} *x_2_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_2_1_3; } x2; }*)arg1;
@@ -68,7 +61,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long)count;
 - (void)dealloc;
-- (void)enumerateCellUIDsUsingBlock:(id)arg1;
+- (void)enumerateCellUIDsUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initFromMessage:(const struct CellUIDListArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSP::UUID> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct RepeatedPtrField<TSP::UUID> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct RepeatedField<int> { int *x_7_1_1; int x_7_1_2; int x_7_1_3; } x7; struct RepeatedField<int> { int *x_8_1_1; int x_8_1_2; int x_8_1_3; } x8; }*)arg1 unarchiver:(id)arg2;
 - (id)iterator;

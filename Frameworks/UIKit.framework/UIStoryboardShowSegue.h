@@ -6,7 +6,7 @@
     SEL _action;
 }
 
-@property SEL action;
+@property (nonatomic) SEL action;
 
 - (SEL)action;
 - (void)perform;

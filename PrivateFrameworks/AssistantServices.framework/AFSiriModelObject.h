@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFSiriModelObject : NSObject <NSSecureCoding> {
     NSString *_identifier;
 }

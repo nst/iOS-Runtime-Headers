@@ -2,17 +2,10 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSFetchRequest, NSManagedObjectContext, NSPersistentStore, NSSQLEntity, NSSQLModel, NSSQLRowCache, NSSQLStatement;
-
 @interface _PFFetchPlanHeader : NSObject {
     NSSQLStatement *cached_sql_statement;
     NSManagedObjectContext *current_context;
-    int (*entity_for_ek_funptr)();
+    int (*entity_for_ek_funptr;
     NSFetchRequest *fetch_request;
     struct { 
         unsigned int principal_entity_has_subentities : 1; 

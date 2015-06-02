@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, RadioStation;
-
 @interface RUStationShareInformationProvider : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableDictionary *_shareTypeToLoadCompletionHandlers;
@@ -11,12 +9,12 @@
     RadioStation *_station;
 }
 
-@property(readonly) RadioStation * station;
+@property (nonatomic, readonly) RadioStation *station;
 
 - (void).cxx_destruct;
-- (void)_loadStationShareInfoForShareType:(int)arg1 withCompletionHandler:(id)arg2;
+- (void)_loadStationShareInfoForShareType:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)initWithStation:(id)arg1;
-- (void)loadShareInformationForShareType:(int)arg1 withCompletionHandler:(id)arg2;
+- (void)loadShareInformationForShareType:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)station;
 
 @end

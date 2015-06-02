@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDictionary, NSObject<OS_dispatch_queue>, RadioRequestContext;
-
 @interface RadioRequest : NSObject {
     BOOL _asynchronousBackgroundRequest;
     BOOL _cachedResponse;
@@ -15,19 +13,19 @@
     NSDictionary *_unparsedResponseDictionary;
 }
 
-@property(getter=isAsynchronousBackgroundRequest) BOOL asynchronousBackgroundRequest;
-@property(getter=isCachedResponse,readonly) BOOL cachedResponse;
-@property(readonly) int errorCode;
-@property(copy) RadioRequestContext * requestContext;
-@property(readonly) double retryInterval;
-@property(readonly) int status;
-@property(copy,readonly) NSDictionary * unparsedResponseDictionary;
+@property (getter=isAsynchronousBackgroundRequest, nonatomic) BOOL asynchronousBackgroundRequest;
+@property (getter=isCachedResponse, readonly) BOOL cachedResponse;
+@property (readonly) int errorCode;
+@property (copy) RadioRequestContext *requestContext;
+@property (readonly) double retryInterval;
+@property (readonly) int status;
+@property (readonly, copy) NSDictionary *unparsedResponseDictionary;
 
-+ (void)loadServiceConfigurationWithCompletionHandler:(id)arg1;
++ (void)loadServiceConfigurationWithCompletionHandler:(id /* block */)arg1;
 
 - (void).cxx_destruct;
-- (void)_loadRadioStoreBagAndAllowRetry:(BOOL)arg1 withCompletionHandler:(id)arg2;
-- (void)_loadRadioStoreBagWithCompletionHandler:(id)arg1;
+- (void)_loadRadioStoreBagAndAllowRetry:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_loadRadioStoreBagWithCompletionHandler:(id /* block */)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (int)errorCode;

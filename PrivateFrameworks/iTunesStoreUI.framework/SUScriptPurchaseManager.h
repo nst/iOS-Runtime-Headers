@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptPurchaseManager : SUScriptObject {
-}
+@interface SUScriptPurchaseManager : SUScriptObject
 
 + (void)initialize;
 + (id)webScriptNameForSelector:(SEL)arg1;

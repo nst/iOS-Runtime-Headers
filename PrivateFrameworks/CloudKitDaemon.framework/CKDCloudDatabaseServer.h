@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_source>, NSOperationQueue, NSString, NSXPCListener;
-
 @interface CKDCloudDatabaseServer : NSObject <NSXPCListenerDelegate> {
     NSOperationQueue *_clientTeardownQueue;
     NSMutableArray *_connectedClients;
@@ -11,14 +9,14 @@
     NSXPCListener *_xpcListener;
 }
 
-@property(retain) NSOperationQueue * clientTeardownQueue;
-@property(retain) NSMutableArray * connectedClients;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_source> * sighandlerSource;
-@property(readonly) Class superclass;
-@property(retain) NSXPCListener * xpcListener;
+@property (nonatomic, retain) NSOperationQueue *clientTeardownQueue;
+@property (nonatomic, retain) NSMutableArray *connectedClients;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *sighandlerSource;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSXPCListener *xpcListener;
 
 + (id)sharedServer;
 

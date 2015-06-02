@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString;
+@interface RadioMutableSeedMetadata : RadioSeedMetadata
 
-@interface RadioMutableSeedMetadata : RadioSeedMetadata {
-}
-
-@property(copy) NSString * seedDescription;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *seedDescription;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setSeedDescription:(id)arg1;

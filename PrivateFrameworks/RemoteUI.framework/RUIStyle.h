@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUIStyle : NSObject {
-}
+@interface RUIStyle : NSObject
 
 + (id)defaultStyle;
 + (id)setupAssistantModalStyle;

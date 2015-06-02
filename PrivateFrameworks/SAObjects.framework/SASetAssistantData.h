@@ -2,46 +2,43 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString, SAVoice, SAWatchData;
+@interface SASetAssistantData : SABaseCommand <SAServerBoundCommand>
 
-@interface SASetAssistantData : SABaseCommand <SAServerBoundCommand> {
-}
-
-@property(copy) NSArray * abSources;
-@property(copy) NSString * aceId;
-@property(copy) NSNumber * allowUserGeneratedContent;
-@property(copy) NSString * anchor;
-@property BOOL censorSpeech;
-@property(copy) NSString * countryCode;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) NSNumber * debugFlags;
-@property(copy,readonly) NSString * description;
-@property(copy) NSArray * deviceCapabilities;
-@property(copy) NSString * deviceColor;
-@property(copy) NSString * deviceEnclosure;
-@property(copy) NSString * deviceVersion;
-@property(copy) NSString * firstName;
-@property BOOL handsFree;
-@property(readonly) unsigned int hash;
-@property(copy) NSNumber * holdToTalkThresholdInMilliseconds;
-@property BOOL inRetailStoreDemoMode;
-@property(copy) NSString * lastName;
-@property(copy) NSArray * meCards;
-@property(copy) NSString * osVersion;
-@property(copy) NSArray * parentalRestrictions;
-@property(copy) NSString * refId;
-@property(copy) NSString * region;
-@property(copy) NSNumber * storefront;
-@property(readonly) Class superclass;
-@property(copy) NSString * temperatureUnit;
-@property(copy) NSString * timeZoneId;
-@property(retain) SAVoice * ttsVoice;
-@property(copy) NSNumber * twentyFourHourTimeDisplay;
-@property(copy) NSNumber * uiScale;
-@property(copy) NSString * userInterfaceIdiom;
-@property BOOL voiceOver;
-@property(copy) NSNumber * voiceTriggerEnabled;
-@property(retain) SAWatchData * watchData;
+@property (nonatomic, copy) NSArray *abSources;
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic, copy) NSNumber *allowUserGeneratedContent;
+@property (nonatomic, copy) NSString *anchor;
+@property (nonatomic) BOOL censorSpeech;
+@property (nonatomic, copy) NSString *countryCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) NSNumber *debugFlags;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *deviceCapabilities;
+@property (nonatomic, copy) NSString *deviceColor;
+@property (nonatomic, copy) NSString *deviceEnclosure;
+@property (nonatomic, copy) NSString *deviceVersion;
+@property (nonatomic, copy) NSString *firstName;
+@property (nonatomic) BOOL handsFree;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSNumber *holdToTalkThresholdInMilliseconds;
+@property (nonatomic) BOOL inRetailStoreDemoMode;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, copy) NSArray *meCards;
+@property (nonatomic, copy) NSString *osVersion;
+@property (nonatomic, copy) NSArray *parentalRestrictions;
+@property (nonatomic, copy) NSString *refId;
+@property (nonatomic, copy) NSString *region;
+@property (nonatomic, copy) NSNumber *storefront;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *temperatureUnit;
+@property (nonatomic, copy) NSString *timeZoneId;
+@property (nonatomic, retain) SAVoice *ttsVoice;
+@property (nonatomic, copy) NSNumber *twentyFourHourTimeDisplay;
+@property (nonatomic, copy) NSNumber *uiScale;
+@property (nonatomic, copy) NSString *userInterfaceIdiom;
+@property (nonatomic) BOOL voiceOver;
+@property (nonatomic, copy) NSNumber *voiceTriggerEnabled;
+@property (nonatomic, retain) SAWatchData *watchData;
 
 + (id)setAssistantData;
 + (id)setAssistantDataWithDictionary:(id)arg1 context:(id)arg2;

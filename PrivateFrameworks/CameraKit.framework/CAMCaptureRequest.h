@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSDictionary, NSMutableDictionary;
-
 @interface CAMCaptureRequest : NSObject <NSCopying, NSMutableCopying> {
     NSMutableDictionary *__parameterStorage;
     int _type;
 }
 
-@property(copy,readonly) NSDictionary * _customParameterStorage;
-@property(readonly) NSMutableDictionary * _parameterStorage;
-@property(readonly) int type;
+@property (nonatomic, readonly, copy) NSDictionary *_customParameterStorage;
+@property (nonatomic, readonly) NSMutableDictionary *_parameterStorage;
+@property (nonatomic, readonly) int type;
 
 - (void).cxx_destruct;
 - (id)_customParameterStorage;

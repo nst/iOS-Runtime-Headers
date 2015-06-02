@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSString;
-
 @interface SGDetection : NSObject {
     NSString *_context;
     NSString *_extraction;
@@ -16,12 +14,12 @@
     unsigned int _type;
 }
 
-@property(readonly) NSString * context;
-@property(readonly) NSString * extraction;
-@property(readonly) BOOL hasPhoneLabel;
-@property(readonly) NSString * label;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } match;
-@property(readonly) unsigned int type;
+@property (nonatomic, readonly) NSString *context;
+@property (nonatomic, readonly) NSString *extraction;
+@property (nonatomic, readonly) BOOL hasPhoneLabel;
+@property (nonatomic, readonly) NSString *label;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } match;
+@property (nonatomic, readonly) unsigned int type;
 
 + (id)detectionWithType:(unsigned int)arg1 text:(id)arg2 matchRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 matchString:(id)arg4 label:(id)arg5 hasPhoneLabel:(BOOL)arg6;
 

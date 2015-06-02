@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKCollectionViewDataSource, NSMutableDictionary, NSString;
-
 @interface GKAggregateMapping : NSObject <NSCopying> {
     GKCollectionViewDataSource *_dataSource;
     NSString *_dynamicTag;
@@ -13,12 +11,12 @@
     int _sectionCount;
 }
 
-@property(retain) GKCollectionViewDataSource * dataSource;
-@property(retain) NSString * dynamicTag;
-@property(retain) NSMutableDictionary * globalSectionsToTags;
-@property(retain) NSMutableDictionary * globalToLocalSections;
-@property(retain) NSMutableDictionary * localToGlobalSections;
-@property int sectionCount;
+@property (nonatomic, retain) GKCollectionViewDataSource *dataSource;
+@property (nonatomic, retain) NSString *dynamicTag;
+@property (nonatomic, retain) NSMutableDictionary *globalSectionsToTags;
+@property (nonatomic, retain) NSMutableDictionary *globalToLocalSections;
+@property (nonatomic, retain) NSMutableDictionary *localToGlobalSections;
+@property (nonatomic) int sectionCount;
 
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (void)addMappingFromGlobalSection:(unsigned int)arg1 toLocalSection:(unsigned int)arg2 withTag:(id)arg3;

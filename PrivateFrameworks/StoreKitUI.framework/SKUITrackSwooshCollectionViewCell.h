@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUITrackSwooshCellLayout;
-
 @interface SKUITrackSwooshCollectionViewCell : SKUIItemCollectionViewCell {
     SKUITrackSwooshCellLayout *_layout;
 }
 
-@property(readonly) SKUITrackSwooshCellLayout * layout;
+@property (nonatomic, readonly) SKUITrackSwooshCellLayout *layout;
 
 - (void).cxx_destruct;
 - (void)_configureForItem:(id)arg1 clientContext:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDPResponseOperationResultErrorExtension : PBCodable <NSCopying> {
     NSString *_extensionName;
     struct { 
@@ -12,10 +10,10 @@
     unsigned int _typeCode;
 }
 
-@property(retain) NSString * extensionName;
-@property(readonly) BOOL hasExtensionName;
-@property BOOL hasTypeCode;
-@property unsigned int typeCode;
+@property (nonatomic, retain) NSString *extensionName;
+@property (nonatomic, readonly) BOOL hasExtensionName;
+@property (nonatomic) BOOL hasTypeCode;
+@property (nonatomic) unsigned int typeCode;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

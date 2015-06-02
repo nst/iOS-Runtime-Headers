@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class NSMutableArray;
-
 @interface AXBackBoardServer : AXServer {
     NSMutableArray *_eventListeners;
     BOOL _overrideGestureRecognition;
 }
 
-@property BOOL inPreboardMode;
-@property BOOL invertColorsEnabled;
+@property (nonatomic) BOOL inPreboardMode;
+@property (nonatomic) BOOL invertColorsEnabled;
 
 + (id)server;
 
@@ -36,7 +34,7 @@
 - (void)postEvent:(id)arg1 systemEvent:(BOOL)arg2;
 - (void)registerAccessibilityUIServicePID:(int)arg1;
 - (void)registerAssistiveTouchPID:(int)arg1;
-- (void)registerEventListener:(id)arg1 withIdentifierCallback:(id)arg2;
+- (void)registerEventListener:(id /* block */)arg1 withIdentifierCallback:(id /* block */)arg2;
 - (void)registerGestureConflictWithZoom:(id)arg1;
 - (void)registerSiriViewServicePID:(int)arg1;
 - (void)removeEventListener:(id)arg1;

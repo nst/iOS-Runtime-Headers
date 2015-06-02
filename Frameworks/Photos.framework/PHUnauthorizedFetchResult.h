@@ -2,29 +2,19 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSOrderedSet, NSString, PHFetchOptions;
-
 @interface PHUnauthorizedFetchResult : PHFetchResult {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fetchBlock;
-
+    id /* block */ _fetchBlock;
     NSString *_identifier;
     NSOrderedSet *_objectIDs;
     NSArray *_objects;
     PHFetchOptions *_options;
 }
 
-@property(readonly) id fetchBlock;
-@property(readonly) NSString * identifier;
-@property(readonly) NSOrderedSet * objectIDs;
-@property(readonly) NSArray * objects;
-@property(copy,readonly) PHFetchOptions * options;
+@property (readonly) id /* block */ fetchBlock;
+@property (readonly) NSString *identifier;
+@property (readonly) NSOrderedSet *objectIDs;
+@property (readonly) NSArray *objects;
+@property (readonly, copy) PHFetchOptions *options;
 
 - (void).cxx_destruct;
 - (id)changeHandlingKey;
@@ -32,7 +22,7 @@
 - (int)collectionFetchType;
 - (id)containerIdentifier;
 - (id)description;
-- (id)fetchBlock;
+- (id /* block */)fetchBlock;
 - (id)fetchRequest;
 - (id)fetchResultWithChangeHandlingValue:(id)arg1;
 - (id)fetchedObjectIDs;
@@ -40,7 +30,7 @@
 - (void)getMediaTypeCounts;
 - (unsigned int)hash;
 - (id)identifier;
-- (id)initWithOptions:(id)arg1 fetchBlock:(id)arg2;
+- (id)initWithOptions:(id)arg1 fetchBlock:(id /* block */)arg2;
 - (BOOL)interestedInChange:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)objectIDAtIndex:(unsigned int)arg1;

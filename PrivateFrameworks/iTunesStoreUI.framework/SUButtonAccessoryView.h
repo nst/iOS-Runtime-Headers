@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUGradientButton;
-
 @interface SUButtonAccessoryView : UIView {
     SUGradientButton *_button;
 }
 
-@property(readonly) SUGradientButton * button;
+@property (nonatomic, readonly) SUGradientButton *button;
 
 - (id)button;
 - (void)dealloc;

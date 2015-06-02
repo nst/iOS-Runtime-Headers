@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, NSURL, SUPlayerStatus;
-
 @interface SUScriptAudioPlayer : SUScriptObject {
     NSURL *_certificateUrl;
     NSURL *_keyUrl;
@@ -11,30 +9,30 @@
     NSURL *_url;
 }
 
-@property(readonly) NSString * URL;
-@property(readonly) NSString * certificateURL;
-@property(readonly) double currentTime;
-@property(readonly) double duration;
-@property(readonly) NSString * keyURL;
-@property(readonly) NSString * nowPlayingKeyAlbumTitle;
-@property(readonly) NSString * nowPlayingKeyAlbumTrackCount;
-@property(readonly) NSString * nowPlayingKeyAlbumTrackNumber;
-@property(readonly) NSString * nowPlayingKeyArtist;
-@property(readonly) NSString * nowPlayingKeyArtwork;
-@property(readonly) NSString * nowPlayingKeyComposer;
-@property(readonly) NSString * nowPlayingKeyDiscCount;
-@property(readonly) NSString * nowPlayingKeyDiscNumber;
-@property(readonly) NSString * nowPlayingKeyGenre;
-@property(readonly) NSString * nowPlayingKeyPersistentID;
-@property(readonly) NSString * nowPlayingKeyPlaybackDuration;
-@property(readonly) NSString * nowPlayingKeyTitle;
-@property(readonly) int playerStateActive;
-@property(readonly) int playerStateBuffering;
-@property(readonly) int playerStateFailed;
-@property(readonly) int playerStateFinished;
-@property(readonly) int playerStatePaused;
-@property(readonly) int playerStateUnplayed;
-@property(readonly) int state;
+@property (readonly) NSString *URL;
+@property (readonly) NSString *certificateURL;
+@property (readonly) double currentTime;
+@property (readonly) double duration;
+@property (readonly) NSString *keyURL;
+@property (readonly) NSString *nowPlayingKeyAlbumTitle;
+@property (readonly) NSString *nowPlayingKeyAlbumTrackCount;
+@property (readonly) NSString *nowPlayingKeyAlbumTrackNumber;
+@property (readonly) NSString *nowPlayingKeyArtist;
+@property (readonly) NSString *nowPlayingKeyArtwork;
+@property (readonly) NSString *nowPlayingKeyComposer;
+@property (readonly) NSString *nowPlayingKeyDiscCount;
+@property (readonly) NSString *nowPlayingKeyDiscNumber;
+@property (readonly) NSString *nowPlayingKeyGenre;
+@property (readonly) NSString *nowPlayingKeyPersistentID;
+@property (readonly) NSString *nowPlayingKeyPlaybackDuration;
+@property (readonly) NSString *nowPlayingKeyTitle;
+@property (readonly) int playerStateActive;
+@property (readonly) int playerStateBuffering;
+@property (readonly) int playerStateFailed;
+@property (readonly) int playerStateFinished;
+@property (readonly) int playerStatePaused;
+@property (readonly) int playerStateUnplayed;
+@property (readonly) int state;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

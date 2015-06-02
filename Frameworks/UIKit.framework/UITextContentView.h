@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITextContentViewDelegate>, <UITextInputDelegate>, <UITextInputTokenizer>, DOMHTMLElement, NSAttributedString, NSDictionary, NSString, UIColor, UIFont, UITextInteractionAssistant, UITextPosition, UITextRange, UIView, UIWebDocumentView, WebFrame;
-
 @interface UITextContentView : UIView <UITextInput, UITextInputTraits, UITextLinkInteraction> {
     BOOL m_allowsEditingTextAttributes;
     BOOL m_becomesEditableWithGestures;
@@ -32,39 +30,39 @@
     UIWebDocumentView *m_webView;
 }
 
-@property BOOL allowsEditingTextAttributes;
-@property(copy) NSAttributedString * attributedText;
-@property int autocapitalizationType;
-@property int autocorrectionType;
-@property(readonly) UITextPosition * beginningOfDocument;
-@property(copy,readonly) NSString * debugDescription;
-@property <UITextContentViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isEditable) BOOL editable;
-@property(getter=isEditing) BOOL editing;
-@property BOOL enablesReturnKeyAutomatically;
-@property(readonly) UITextPosition * endOfDocument;
-@property(retain) UIFont * font;
-@property(readonly) unsigned int hash;
-@property <UITextInputDelegate> * inputDelegate;
-@property int keyboardAppearance;
-@property int keyboardType;
-@property(readonly) UITextRange * markedTextRange;
-@property(copy) NSDictionary * markedTextStyle;
-@property int returnKeyType;
-@property BOOL scrollsSelectionOnWebDocumentChanges;
-@property(getter=isSecureTextEntry) BOOL secureTextEntry;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
-@property(copy) UITextRange * selectedTextRange;
-@property int selectionAffinity;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } selectionInset;
-@property int spellCheckingType;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
-@property int textAlignment;
-@property(retain) UIColor * textColor;
-@property(readonly) UIView * textInputView;
-@property(readonly) <UITextInputTokenizer> * tokenizer;
+@property (nonatomic) BOOL allowsEditingTextAttributes;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (nonatomic) int autocapitalizationType;
+@property (nonatomic) int autocorrectionType;
+@property (nonatomic, readonly) UITextPosition *beginningOfDocument;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UITextContentViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isEditable, nonatomic) BOOL editable;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, readonly) UITextPosition *endOfDocument;
+@property (nonatomic, retain) UIFont *font;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <UITextInputDelegate> *inputDelegate;
+@property (nonatomic) int keyboardAppearance;
+@property (nonatomic) int keyboardType;
+@property (nonatomic, readonly) UITextRange *markedTextRange;
+@property (nonatomic, copy) NSDictionary *markedTextStyle;
+@property (nonatomic) int returnKeyType;
+@property (nonatomic) BOOL scrollsSelectionOnWebDocumentChanges;
+@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } selectedRange;
+@property (copy) UITextRange *selectedTextRange;
+@property (nonatomic) int selectionAffinity;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } selectionInset;
+@property (nonatomic) int spellCheckingType;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) int textAlignment;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic, readonly) UIView *textInputView;
+@property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
 
 - (void)_addShortcut:(id)arg1;
 - (unsigned int)_allowedLinkTypes;

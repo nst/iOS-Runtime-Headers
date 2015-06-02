@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureConnection, AVCaptureSession, AVCaptureVideoPreviewLayerInternal, NSString;
-
 @interface AVCaptureVideoPreviewLayer : CALayer {
     AVCaptureVideoPreviewLayerInternal *_internal;
 }
 
-@property BOOL automaticallyAdjustsMirroring;
-@property(readonly) AVCaptureConnection * connection;
-@property(getter=isMirrored) BOOL mirrored;
-@property(getter=isMirroringSupported,readonly) BOOL mirroringSupported;
-@property int orientation;
-@property(getter=isOrientationSupported,readonly) BOOL orientationSupported;
-@property(retain) AVCaptureSession * session;
-@property(copy) NSString * videoGravity;
+@property (nonatomic) BOOL automaticallyAdjustsMirroring;
+@property (nonatomic, readonly) AVCaptureConnection *connection;
+@property (getter=isMirrored, nonatomic) BOOL mirrored;
+@property (getter=isMirroringSupported, nonatomic, readonly) BOOL mirroringSupported;
+@property (nonatomic) int orientation;
+@property (getter=isOrientationSupported, nonatomic, readonly) BOOL orientationSupported;
+@property (nonatomic, retain) AVCaptureSession *session;
+@property (copy) NSString *videoGravity;
 
 + (id)alloc;
 + (void)initialize;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class MSBackoffManager, NSMutableDictionary, NSString;
-
 @interface MSCupidStateMachine : NSObject <MSStreamsProtocolDelegate> {
     MSBackoffManager *_MMCSBackoffManager;
     BOOL _hasDeactivated;
@@ -13,13 +11,13 @@
     NSMutableDictionary *_userManifest;
 }
 
-@property(retain) NSMutableDictionary * _userManifest;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL hasDeactivated;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * personID;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSMutableDictionary *_userManifest;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasDeactivated;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *personID;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_abort;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libtzupdate.dylib
  */
 
-@class NSArray, NSNumber, NSString, NSURL;
-
 @interface TZVersionInfo : NSObject {
     NSArray *_alertZones;
     NSString *_bundleVersion;
@@ -17,17 +15,17 @@
     NSString *_tzDataVersion;
 }
 
-@property(retain) NSArray * alertZones;
-@property(retain) NSString * bundleVersion;
-@property(retain) NSArray * changedFiles;
-@property(retain) NSURL * diskLocation;
-@property(retain) NSString * icuChecksumBaseline;
-@property(retain) NSString * icuChecksumCurrent;
-@property(retain) NSString * icuNameBaseline;
-@property(retain) NSString * icuNameCurrent;
-@property(retain) NSNumber * shouldAlertAll;
-@property(retain) NSString * tzDataVersion;
-@property(readonly) NSString * versionString;
+@property (retain) NSArray *alertZones;
+@property (retain) NSString *bundleVersion;
+@property (retain) NSArray *changedFiles;
+@property (retain) NSURL *diskLocation;
+@property (retain) NSString *icuChecksumBaseline;
+@property (retain) NSString *icuChecksumCurrent;
+@property (retain) NSString *icuNameBaseline;
+@property (retain) NSString *icuNameCurrent;
+@property (retain) NSNumber *shouldAlertAll;
+@property (retain) NSString *tzDataVersion;
+@property (readonly) NSString *versionString;
 
 + (id)_tzDataVersionFromZoneinfoDirectory:(id)arg1 withError:(id*)arg2;
 + (BOOL)_verifyVersionInfoDictionary:(id)arg1;

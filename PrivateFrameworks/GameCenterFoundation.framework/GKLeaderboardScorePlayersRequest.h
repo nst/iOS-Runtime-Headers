@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSArray;
-
 @interface GKLeaderboardScorePlayersRequest : GKLeaderboardScoreRequest {
     NSArray *_playerInternals;
 }
 
-@property(copy) NSArray * playerInternals;
+@property (nonatomic, copy) NSArray *playerInternals;
 
 + (BOOL)supportsSecureCoding;
 

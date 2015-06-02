@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISpeechSynthesisDelegate>, <AFUISpeechSynthesisLocalDelegate>, AFUIQueue, AFVoiceInfo, NSMutableArray, NSString, VSSpeechSynthesizer;
-
 @interface AFUISpeechSynthesis : NSObject <AFUIQueueDelegate, AFUISpeechSynthesis, AFUISpeechSynthesisElementDelegate, VSSpeechSynthesizerDelegate> {
     NSMutableArray *_activeElements;
     <AFUISpeechSynthesisDelegate> *_delegate;
@@ -15,14 +13,14 @@
     VSSpeechSynthesizer *_synthesizer;
 }
 
-@property(getter=_activeElements,readonly) NSMutableArray * activeElements;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) <AFUISpeechSynthesisDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=_elementQueue,readonly) AFUIQueue * elementQueue;
-@property(readonly) unsigned int hash;
-@property <AFUISpeechSynthesisLocalDelegate> * localDelegate;
-@property(readonly) Class superclass;
+@property (getter=_activeElements, nonatomic, readonly) NSMutableArray *activeElements;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) <AFUISpeechSynthesisDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=_elementQueue, nonatomic, readonly) AFUIQueue *elementQueue;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <AFUISpeechSynthesisLocalDelegate> *localDelegate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_activeElements;
@@ -35,8 +33,8 @@
 - (void)_updateSynthesizerWithVoice:(id)arg1;
 - (void)cancel;
 - (id)delegate;
-- (void)enqueueText:(id)arg1 completion:(id)arg2;
-- (void)enqueueText:(id)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 preparationIdentifier:(id)arg4 completion:(id)arg5 animationIdentifier:(id)arg6;
+- (void)enqueueText:(id)arg1 completion:(id /* block */)arg2;
+- (void)enqueueText:(id)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 preparationIdentifier:(id)arg4 completion:(id /* block */)arg5 animationIdentifier:(id)arg6;
 - (id)init;
 - (void)invalidate;
 - (BOOL)isSpeaking;

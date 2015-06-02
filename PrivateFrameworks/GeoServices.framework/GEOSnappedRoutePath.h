@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class GEOComposedRoute, GEOComposedRouteSection, GEOMapRequest, NSArray;
-
 @interface GEOSnappedRoutePath : NSObject {
     GEOMapRequest *_edgeSearchRequest;
     NSArray *_edges;
@@ -27,14 +20,14 @@
     struct { float x1; float x2; } *_unsnappedPoints;
 }
 
-@property(readonly) NSArray * edges;
-@property(readonly) BOOL hasCompletedMapMatching;
-@property(readonly) BOOL isMapMatched;
-@property(readonly) BOOL isMapMatching;
-@property(readonly) const struct RouteMapMatchingSection { int (**x1)(); }* mapMatchingSection;
-@property(readonly) unsigned int routeEndIndex;
-@property(readonly) unsigned int routeStartIndex;
-@property(readonly) GEOComposedRouteSection * section;
+@property (readonly) NSArray *edges;
+@property (readonly) BOOL hasCompletedMapMatching;
+@property (readonly) BOOL isMapMatched;
+@property (readonly) BOOL isMapMatching;
+@property (readonly) const struct RouteMapMatchingSection { int (**x1)(); }*mapMatchingSection;
+@property (readonly) unsigned int routeEndIndex;
+@property (readonly) unsigned int routeStartIndex;
+@property (readonly) GEOComposedRouteSection *section;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -50,7 +43,7 @@
 - (BOOL)isMapMatched;
 - (BOOL)isMapMatching;
 - (const struct RouteMapMatchingSection { int (**x1)(); }*)mapMatchingSection;
-- (void)matchWithDecoder:(id)arg1 completionHandler:(id)arg2;
+- (void)matchWithDecoder:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)removeObserver:(id)arg1;
 - (unsigned int)routeEndIndex;
 - (unsigned int)routeStartIndex;

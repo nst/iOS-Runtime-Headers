@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABCardGroupItem : NSObject {
-}
+@interface ABCardGroupItem : NSObject
 
 @end

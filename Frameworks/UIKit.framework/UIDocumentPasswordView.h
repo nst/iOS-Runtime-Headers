@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSObject<UIDocumentPasswordViewDelegate>, NSString, UIDocumentPasswordField, UIImageView, UILabel, UITextField;
-
 @interface UIDocumentPasswordView : UIView <UITextFieldDelegate> {
     UIImageView *_iconView;
     UILabel *_label;
@@ -11,12 +9,12 @@
     NSObject<UIDocumentPasswordViewDelegate> *passwordDelegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property NSObject<UIDocumentPasswordViewDelegate> * passwordDelegate;
-@property(readonly) UITextField * passwordField;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) NSObject<UIDocumentPasswordViewDelegate> *passwordDelegate;
+@property (nonatomic, readonly) UITextField *passwordField;
+@property (readonly) Class superclass;
 
 - (BOOL)_canDrawContent;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_iconRectForContainerRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

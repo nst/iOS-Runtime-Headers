@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString;
+@interface PLPhotoEditPFDataConverter : NSObject <PLPhotoEditDataExporter, PLPhotoEditDataImporter>
 
-@interface PLPhotoEditPFDataConverter : NSObject <PLPhotoEditDataExporter, PLPhotoEditDataImporter> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)_filtersForLegacyAutoEnhanceSettingsDictionary:(id)arg1;
 + (id)_knownFormatVersions;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicComposersViewController : MusicArtistsViewController {
-}
+@interface MusicComposersViewController : MusicArtistsViewController
 
 + (int)containerItemType;
 + (id)itemPersistentIDPropertyForGroupingType:(int)arg1;

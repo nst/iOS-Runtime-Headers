@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableDictionary;
-
 @interface ECCurrencyConverter : NSObject {
     NSMutableDictionary *mLassoToXlCurrencyCode;
     NSMutableDictionary *mXlAccountingFormat;

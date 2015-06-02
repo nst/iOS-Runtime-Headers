@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface UITableViewCellDeleteConfirmationGestureRecognizer : UIGestureRecognizer {
     UIView *_excludedView;
 }

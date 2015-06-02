@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <OccurrenceCacheDataSourceProtocol>, CalendarEventLoader, EKCalendarDate, EKEvent, EKEventStore, NSArray, NSCalendar, NSLock, NSSet, NSString, _EKNotificationMonitor;
-
 @interface CalendarModel : NSObject <CalendarEventLoaderDelegate> {
     int _cachedFakeTodayIndex;
     NSCalendar *_calendar;
@@ -23,16 +21,16 @@
     NSArray *_visibleCalendars;
 }
 
-@property(copy) NSCalendar * calendar;
-@property(readonly) EKEventStore * eventStore;
-@property unsigned int firstVisibleSecond;
-@property(readonly) int readWriteCalendarCount;
-@property(retain) NSString * searchString;
-@property(retain) NSSet * selectedCalendars;
-@property(copy) EKCalendarDate * selectedDate;
-@property(readonly) EKCalendarDate * selectedDay;
-@property(retain) EKEvent * selectedOccurrence;
-@property(readonly) int visibleCalendarCount;
+@property (nonatomic, copy) NSCalendar *calendar;
+@property (nonatomic, readonly) EKEventStore *eventStore;
+@property (nonatomic) unsigned int firstVisibleSecond;
+@property (nonatomic, readonly) int readWriteCalendarCount;
+@property (nonatomic, retain) NSString *searchString;
+@property (nonatomic, retain) NSSet *selectedCalendars;
+@property (nonatomic, copy) EKCalendarDate *selectedDate;
+@property (nonatomic, readonly) EKCalendarDate *selectedDay;
+@property (nonatomic, retain) EKEvent *selectedOccurrence;
+@property (nonatomic, readonly) int visibleCalendarCount;
 
 - (void).cxx_destruct;
 - (void)_createOccurrenceCacheDataSources;

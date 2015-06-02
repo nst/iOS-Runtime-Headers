@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKProtoAccountDeletion : PBCodable <NSCopying> {
     NSString *_accountId;
 }
 
-@property(retain) NSString * accountId;
-@property(readonly) BOOL hasAccountId;
+@property (nonatomic, retain) NSString *accountId;
+@property (nonatomic, readonly) BOOL hasAccountId;
 
 - (void).cxx_destruct;
 - (id)accountId;

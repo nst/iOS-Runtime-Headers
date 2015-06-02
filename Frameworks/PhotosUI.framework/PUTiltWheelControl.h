@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, PUSnappingController, PUTiltWheel, PUTiltWheelTriangleView;
-
 @interface PUTiltWheelControl : UIControl <PUTiltWheelDataSource> {
     BOOL __needsDataReload;
     struct CGPoint { 
@@ -19,19 +17,19 @@
     int _wheelOrientation;
 }
 
-@property(setter=_setNeedsDataReload:) BOOL _needsDataReload;
-@property(setter=_setPanPreviousPoint:) struct CGPoint { float x1; float x2; } _panPreviousPoint;
-@property(setter=_setSnappingController:,retain) PUSnappingController * _snappingController;
-@property(setter=_setTiltWheel:,retain) PUTiltWheel * _tiltWheel;
-@property(setter=_setTriangleView:,retain) PUTiltWheelTriangleView * _triangleView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float maxTiltAngle;
-@property float minTiltAngle;
-@property(readonly) Class superclass;
-@property float tiltAngle;
-@property int wheelOrientation;
+@property (setter=_setNeedsDataReload:, nonatomic) BOOL _needsDataReload;
+@property (setter=_setPanPreviousPoint:, nonatomic) struct CGPoint { float x1; float x2; } _panPreviousPoint;
+@property (setter=_setSnappingController:, nonatomic, retain) PUSnappingController *_snappingController;
+@property (setter=_setTiltWheel:, nonatomic, retain) PUTiltWheel *_tiltWheel;
+@property (setter=_setTriangleView:, nonatomic, retain) PUTiltWheelTriangleView *_triangleView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float maxTiltAngle;
+@property (nonatomic) float minTiltAngle;
+@property (readonly) Class superclass;
+@property (nonatomic) float tiltAngle;
+@property (nonatomic) int wheelOrientation;
 
 - (void).cxx_destruct;
 - (float)_angleBetweenPoint:(struct CGPoint { float x1; float x2; })arg1 andPoint:(struct CGPoint { float x1; float x2; })arg2 measuredFrom:(struct CGPoint { float x1; float x2; })arg3;

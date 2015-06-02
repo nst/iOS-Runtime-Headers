@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemonExtensions.framework/HealthDaemonExtensions
  */
 
-@class <HDHealthDaemon>, <HDHealthExtensionsServerDelegate>, HDClient, NSObject<OS_dispatch_queue>, NSString;
-
 @interface HDHealthExtensionsServer : NSObject <HDDiagnosticObject, HKExtendedServerInterface> {
     HDClient *_client;
     <HDHealthExtensionsServerDelegate> *_delegate;
@@ -12,41 +10,41 @@
     BOOL _registeredForAchievementNotifications;
 }
 
-@property(retain) HDClient * client;
-@property(copy,readonly) NSString * debugDescription;
-@property <HDHealthExtensionsServerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) <HDHealthDaemon> * healthDaemon;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property BOOL registeredForAchievementNotifications;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) HDClient *client;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HDHealthExtensionsServerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) <HDHealthDaemon> *healthDaemon;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic) BOOL registeredForAchievementNotifications;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldAcceptConnectionForClient:(id)arg1 error:(id*)arg2;
 + (id)serverWithClient:(id)arg1 healthDaemon:(id)arg2 delegate:(id)arg3 error:(id*)arg4;
 
 - (void).cxx_destruct;
 - (void)_achievementsAdded:(id)arg1;
-- (void)addAchievement:(id)arg1 completion:(id)arg2;
+- (void)addAchievement:(id)arg1 completion:(id /* block */)arg2;
 - (id)client;
 - (id)clientInterface;
 - (void)dealloc;
 - (id)delegate;
 - (id)diagnosticDescription;
-- (void)fetchAchievementsWithCompletedDateBetweenStart:(id)arg1 end:(id)arg2 completion:(id)arg3;
-- (void)fetchNumberOfUnviewedAchievementsWithCompletion:(id)arg1;
-- (void)fetchUnalertedAchievementsWithCompletion:(id)arg1;
-- (void)forceNanoSyncWithPullRequest:(BOOL)arg1 completion:(id)arg2;
+- (void)fetchAchievementsWithCompletedDateBetweenStart:(id)arg1 end:(id)arg2 completion:(id /* block */)arg3;
+- (void)fetchNumberOfUnviewedAchievementsWithCompletion:(id /* block */)arg1;
+- (void)fetchUnalertedAchievementsWithCompletion:(id /* block */)arg1;
+- (void)forceNanoSyncWithPullRequest:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)healthDaemon;
 - (id)initWithClient:(id)arg1 healthDaemon:(id)arg2 delegate:(id)arg3;
 - (void)invalidate;
-- (void)markAchievementAsViewed:(id)arg1 completion:(id)arg2;
-- (void)markAchievementsAlerted:(id)arg1 completion:(id)arg2;
+- (void)markAchievementAsViewed:(id)arg1 completion:(id /* block */)arg2;
+- (void)markAchievementsAlerted:(id)arg1 completion:(id /* block */)arg2;
 - (id)queue;
-- (void)registerForAchievementNotificationsAndFetchUnalertedCountWithCompletion:(id)arg1;
+- (void)registerForAchievementNotificationsAndFetchUnalertedCountWithCompletion:(id /* block */)arg1;
 - (BOOL)registeredForAchievementNotifications;
-- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
-- (void)resetNanoSyncWithCompletion:(id)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (void)resetNanoSyncWithCompletion:(id /* block */)arg1;
 - (id)serverInterface;
 - (void)setClient:(id)arg1;
 - (void)setDelegate:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext, NSMutableArray, NSSQLConnection, NSSQLCore, NSSQLEntity;
-
 @interface NSSQLChannel : NSObject {
     NSSQLConnection *_connection;
     NSSQLEntity *_currentEntity;

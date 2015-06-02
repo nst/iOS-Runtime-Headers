@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSDInfoGeometry : NSObject <NSCopying, NSMutableCopying, TSDMixing> {
     float mAngle;
     struct { 
@@ -25,13 +20,13 @@
     } mSize;
 }
 
-@property(readonly) float angle;
-@property(readonly) BOOL heightValid;
-@property(readonly) BOOL horizontalFlip;
-@property(readonly) struct CGPoint { float x1; float x2; } position;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) BOOL verticalFlip;
-@property(readonly) BOOL widthValid;
+@property (nonatomic, readonly) float angle;
+@property (nonatomic, readonly) BOOL heightValid;
+@property (nonatomic, readonly) BOOL horizontalFlip;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } position;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) BOOL verticalFlip;
+@property (nonatomic, readonly) BOOL widthValid;
 
 + (id)geometryFromFullTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (id)geometryFromFullTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1 widthValid:(BOOL)arg2 heightValid:(BOOL)arg3;

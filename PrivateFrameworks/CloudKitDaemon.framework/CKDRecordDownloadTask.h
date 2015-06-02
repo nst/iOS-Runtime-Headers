@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDProgressTracker, CKRecord, NSError, NSMutableArray, NSObject<OS_dispatch_group>;
-
 @interface CKDRecordDownloadTask : NSObject {
     NSMutableArray *_assetsToDownload;
     NSError *_error;
@@ -13,12 +11,12 @@
     CKRecord *_record;
 }
 
-@property(retain) NSMutableArray * assetsToDownload;
-@property(retain) NSError * error;
-@property(retain) NSObject<OS_dispatch_group> * group;
-@property(retain) NSMutableArray * packageIndexSets;
-@property(retain) CKDProgressTracker * progressTracker;
-@property(retain) CKRecord * record;
+@property (nonatomic, retain) NSMutableArray *assetsToDownload;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *group;
+@property (nonatomic, retain) NSMutableArray *packageIndexSets;
+@property (nonatomic, retain) CKDProgressTracker *progressTracker;
+@property (nonatomic, retain) CKRecord *record;
 
 - (void).cxx_destruct;
 - (id)assetsToDownload;

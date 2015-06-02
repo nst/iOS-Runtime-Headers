@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEOMapAccess, GEOMapTileFinder;
-
 @interface GEOMapEdgeBuilder : GEOMapRequest {
     BOOL _buildAhead;
     BOOL _buildBehind;
     GEOMapTileFinder *_currentTileFinder;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _edgeHandler;
-
+    id /* block */ _edgeHandler;
     struct Matrix<float, 2, 1> { 
         float _e[2]; 
     } _firstTilePoint;
@@ -51,8 +41,8 @@
     } _tileKeysSeen;
 }
 
-@property(copy) id edgeHandler;
-@property(readonly) GEOMapAccess * map;
+@property (nonatomic, copy) id /* block */ edgeHandler;
+@property (nonatomic, readonly) GEOMapAccess *map;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -72,12 +62,12 @@
 - (id)_lastTile;
 - (BOOL)_pointConnects:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 rect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 to:(const struct { double x1; double x2; }*)arg3;
 - (id)_tileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
-- (void)buildEdge:(id)arg1;
+- (void)buildEdge:(id /* block */)arg1;
 - (void)cancel;
 - (void)dealloc;
-- (id)edgeHandler;
+- (id /* block */)edgeHandler;
 - (id)initWithMap:(id)arg1;
 - (id)map;
-- (void)setEdgeHandler:(id)arg1;
+- (void)setEdgeHandler:(id /* block */)arg1;
 
 @end

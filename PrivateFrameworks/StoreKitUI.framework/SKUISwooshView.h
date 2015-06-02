@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUILinkButton, UIButton, UICollectionView, UIColor, UIControl, UILabel, UIView;
-
 @interface SKUISwooshView : UIView {
     UIView *_borderView;
     UICollectionView *_collectionView;
@@ -26,15 +24,15 @@
     UILabel *_titleLabel;
 }
 
-@property(readonly) UIControl * chevronTitleControl;
-@property(retain) UICollectionView * collectionView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } collectionViewInsets;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property(readonly) UIControl * seeAllControl;
-@property(copy) NSString * seeAllTitle;
-@property BOOL showsChevronForTitle;
-@property(copy) NSString * title;
-@property(copy) UIColor * titleColor;
+@property (nonatomic, readonly) UIControl *chevronTitleControl;
+@property (nonatomic, retain) UICollectionView *collectionView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } collectionViewInsets;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, readonly) UIControl *seeAllControl;
+@property (nonatomic, copy) NSString *seeAllTitle;
+@property (nonatomic) BOOL showsChevronForTitle;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) UIColor *titleColor;
 
 - (void).cxx_destruct;
 - (id)_seeAllArrowImage;

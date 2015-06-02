@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface PLPreheatItem : NSObject {
     int _CPLNotifyRegistrationToken;
     BOOL _CPLPrefetching;
@@ -25,26 +23,26 @@
     NSString *_virtualCPLTaskIdentifier;
 }
 
-@property(readonly) BOOL CPLPrefetching;
-@property(readonly) NSObject<OS_dispatch_group> * CPLPrefetchingWaitGroup;
+@property (nonatomic, readonly) BOOL CPLPrefetching;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *CPLPrefetchingWaitGroup;
 @property BOOL CPLPrefetchingWasCancelled;
-@property(readonly) NSString * assetUUID;
-@property int bestFormat;
+@property (nonatomic, readonly) NSString *assetUUID;
+@property (nonatomic) int bestFormat;
 @property BOOL didCompleteCPLPrefetchingWithSuccessOrError;
-@property(readonly) int format;
-@property(readonly) int imageType;
-@property(readonly) struct CGSize { float x1; float x2; } optimalSourcePixelSize;
-@property(retain) NSString * virtualCPLTaskIdentifier;
+@property (nonatomic, readonly) int format;
+@property (nonatomic, readonly) int imageType;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } optimalSourcePixelSize;
+@property (retain) NSString *virtualCPLTaskIdentifier;
 
 - (BOOL)CPLPrefetching;
 - (id)CPLPrefetchingWaitGroup;
 - (BOOL)CPLPrefetchingWasCancelled;
-- (BOOL)addImageHandler:(id)arg1;
+- (BOOL)addImageHandler:(id /* block */)arg1;
 - (id)assetUUID;
 - (int)bestFormat;
 - (id)cachedImage:(BOOL*)arg1;
 - (id)cachedImageIfAvailable:(BOOL*)arg1;
-- (void)cancelPreheatRequestWithCompletionHandler:(id)arg1;
+- (void)cancelPreheatRequestWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (int)decrementPrefetchCount;
 - (id)description;
@@ -61,7 +59,7 @@
 - (void)setCPLPrefetchingWasCancelled:(BOOL)arg1;
 - (void)setDidCompleteCPLPrefetchingWithSuccessOrError:(BOOL)arg1;
 - (void)setVirtualCPLTaskIdentifier:(id)arg1;
-- (void)startPreheatRequestWithCompletionHandler:(id)arg1;
+- (void)startPreheatRequestWithCompletionHandler:(id /* block */)arg1;
 - (id)virtualCPLTaskIdentifier;
 
 @end

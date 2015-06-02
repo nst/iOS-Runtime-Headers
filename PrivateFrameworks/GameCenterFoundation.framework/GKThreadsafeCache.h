@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKLinkedList, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface GKThreadsafeCache : NSObject <GKCache> {
     GKLinkedList *_cacheList;
     unsigned int _count;
@@ -13,16 +11,16 @@
     NSObject<OS_dispatch_queue> *_syncQueue;
 }
 
-@property(retain) GKLinkedList * cacheList;
-@property unsigned int count;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableDictionary * dictionary;
-@property(readonly) unsigned int hash;
-@property unsigned int maxCount;
-@property(retain) NSMutableDictionary * missingEntryQueues;
-@property(readonly) Class superclass;
-@property NSObject<OS_dispatch_queue> * syncQueue;
+@property (nonatomic, retain) GKLinkedList *cacheList;
+@property (nonatomic) unsigned int count;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableDictionary *dictionary;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int maxCount;
+@property (nonatomic, retain) NSMutableDictionary *missingEntryQueues;
+@property (readonly) Class superclass;
+@property (nonatomic) NSObject<OS_dispatch_queue> *syncQueue;
 
 - (id)cacheList;
 - (unsigned int)count;
@@ -34,7 +32,7 @@
 - (unsigned int)maxCount;
 - (id)missingEntryQueues;
 - (id)objectForKey:(id)arg1;
-- (id)objectForKey:(id)arg1 withMissingHandler:(id)arg2;
+- (id)objectForKey:(id)arg1 withMissingHandler:(id /* block */)arg2;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)removeAllObjects;
 - (void)removeObjectForKey:(id)arg1;

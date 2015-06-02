@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPAssetUploadTokenRetrieveResponse : PBCodable <NSCopying> {
     NSMutableArray *_uploadTokens;
 }
 
-@property(retain) NSMutableArray * uploadTokens;
+@property (nonatomic, retain) NSMutableArray *uploadTokens;
 
 - (void).cxx_destruct;
 - (void)addUploadTokens:(id)arg1;

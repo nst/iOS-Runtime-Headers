@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class ISDialogOperation, MPUserNotification, NSLock, RadioGetTracksRequest, RadioPlaybackContext, RadioRequestContext, RadioStation;
-
 @interface RURadioGetTracksOperation : NSOperation {
     ISDialogOperation *_dialogOperation;
     MPUserNotification *_explicitUserNotification;
@@ -17,20 +11,16 @@
     RadioPlaybackContext *_playbackContext;
     int _reasonType;
     RadioRequestContext *_requestContext;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _responseBlock;
-
+    id /* block */ _responseBlock;
     RadioStation *_station;
 }
 
 @property unsigned int numberOfTracks;
-@property(copy) RadioPlaybackContext * playbackContext;
-@property(readonly) int reasonType;
-@property(retain) RadioRequestContext * requestContext;
-@property(copy) id responseBlock;
-@property(readonly) RadioStation * station;
+@property (copy) RadioPlaybackContext *playbackContext;
+@property (readonly) int reasonType;
+@property (retain) RadioRequestContext *requestContext;
+@property (copy) id /* block */ responseBlock;
+@property (readonly) RadioStation *station;
 
 - (void).cxx_destruct;
 - (id)_heartbeatTokenDataAllowingDelay:(BOOL)arg1 error:(id*)arg2;
@@ -45,11 +35,11 @@
 - (id)playbackContext;
 - (int)reasonType;
 - (id)requestContext;
-- (id)responseBlock;
+- (id /* block */)responseBlock;
 - (void)setNumberOfTracks:(unsigned int)arg1;
 - (void)setPlaybackContext:(id)arg1;
 - (void)setRequestContext:(id)arg1;
-- (void)setResponseBlock:(id)arg1;
+- (void)setResponseBlock:(id /* block */)arg1;
 - (id)station;
 
 @end

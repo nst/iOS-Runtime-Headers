@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSBackoffManagerDelegate>, NSDate;
-
 @interface MSBackoffManager : NSObject <NSCoding> {
     double _backoffFactor;
     double _currentInterval;
@@ -15,14 +13,14 @@
     NSDate *_retryAfterDate;
 }
 
-@property double backoffFactor;
-@property double currentInterval;
-@property <MSBackoffManagerDelegate> * delegate;
-@property double initialInterval;
-@property double maxBackoffInterval;
-@property(retain) NSDate * nextExpiryDate;
-@property double randomizeFactor;
-@property(retain) NSDate * retryAfterDate;
+@property (nonatomic) double backoffFactor;
+@property (nonatomic) double currentInterval;
+@property (nonatomic) <MSBackoffManagerDelegate> *delegate;
+@property (nonatomic) double initialInterval;
+@property (nonatomic) double maxBackoffInterval;
+@property (nonatomic, retain) NSDate *nextExpiryDate;
+@property (nonatomic) double randomizeFactor;
+@property (nonatomic, retain) NSDate *retryAfterDate;
 
 - (void).cxx_destruct;
 - (void)_complainAboutMissingKeyInArchive:(id)arg1;

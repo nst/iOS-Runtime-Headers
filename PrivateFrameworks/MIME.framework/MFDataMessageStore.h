@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSData, NSString;
-
 @interface MFDataMessageStore : MFMessageStore {
     NSData *_data;
     Class _messageClass;

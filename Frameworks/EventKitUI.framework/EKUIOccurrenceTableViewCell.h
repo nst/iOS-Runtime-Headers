@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class ColorBarView, EKCalendarDate, NSAttributedString, NSDate, NSDictionary, NSLayoutConstraint, NSString, UIColor, UIImage, UIImageView, UILabel, UIView;
-
 @interface EKUIOccurrenceTableViewCell : UITableViewCell {
     UIImageView *_angleStripeBackgroundView;
     UILabel *_bottomTimeLabel;
@@ -55,9 +53,9 @@
     BOOL _usesVibrantSeparatorOverlayDrawing;
 }
 
-@property BOOL drawsOwnRowSeparators;
-@property BOOL usesInsetMargin;
-@property BOOL usesVibrantSeparatorOverlayDrawing;
+@property (nonatomic) BOOL drawsOwnRowSeparators;
+@property (nonatomic) BOOL usesInsetMargin;
+@property (nonatomic) BOOL usesVibrantSeparatorOverlayDrawing;
 
 + (id)_birthdayIcon;
 + (void)_clearCaches;

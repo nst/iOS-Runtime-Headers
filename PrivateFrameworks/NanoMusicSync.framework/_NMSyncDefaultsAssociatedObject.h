@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoMusicSync.framework/NanoMusicSync
  */
 
-@class MPMediaPlaylist;
-
 @interface _NMSyncDefaultsAssociatedObject : NSObject {
     MPMediaPlaylist *_assetSyncPlaylist;
 }
 
-@property(retain) MPMediaPlaylist * assetSyncPlaylist;
+@property (nonatomic, retain) MPMediaPlaylist *assetSyncPlaylist;
 
 - (void).cxx_destruct;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;

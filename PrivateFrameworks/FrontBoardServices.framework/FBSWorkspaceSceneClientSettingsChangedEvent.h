@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@class FBSSceneClientSettingsDiff, FBSSceneTransitionContext;
-
 @interface FBSWorkspaceSceneClientSettingsChangedEvent : FBSWorkspaceSceneEvent {
     FBSSceneClientSettingsDiff *_clientSettings;
     FBSSceneTransitionContext *_transition;
 }
 
-@property(retain) FBSSceneClientSettingsDiff * clientSettingsDiff;
-@property(retain) FBSSceneTransitionContext * transitionContext;
+@property (nonatomic, retain) FBSSceneClientSettingsDiff *clientSettingsDiff;
+@property (nonatomic, retain) FBSSceneTransitionContext *transitionContext;
 
 - (id)clientSettingsDiff;
 - (void)dealloc;

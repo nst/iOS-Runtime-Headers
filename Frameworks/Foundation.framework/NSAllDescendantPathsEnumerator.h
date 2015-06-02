@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSAllDescendantPathsEnumerator, NSArray, NSFileAttributes, NSString;
-
 @interface NSAllDescendantPathsEnumerator : NSDirectoryEnumerator {
-    BOOL _padding[3];
+    BOOL _padding;
     NSArray *contents;
     BOOL cross;
     unsigned int depth;

@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFUIApplicationSiriTaskDeliverer : NSObject <AFSiriTaskDelivering> {
     NSString *_appBundleIdentifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)deliverSiriTask:(id)arg1 completionHandler:(id)arg2;
+- (void)deliverSiriTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)description;
 - (id)initWithAppBundleIdentifier:(id)arg1;
 

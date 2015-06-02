@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface CAMPhoneCameraRollSpec : CAMCameraRollSpec {
-}
+@interface CAMPhoneCameraRollSpec : CAMCameraRollSpec
 
 - (id)_doneButtonItem;
 - (id)newAlbumNavigationControllerForAssetCollection:(id)arg1 fetchResultContainingAssetCollection:(id)arg2 inApplicationViewController:(id)arg3;

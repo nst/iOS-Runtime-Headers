@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaItemArtwork, NSString;
-
 @interface MPContentItem : NSObject {
     MPMediaItemArtwork *_artwork;
     struct _MRContentItem { } *_mrContentItem;
 }
 
-@property(retain) MPMediaItemArtwork * artwork;
-@property(getter=isContainer) BOOL container;
-@property(copy,readonly) NSString * identifier;
-@property(getter=isPlayable) BOOL playable;
-@property float playbackProgress;
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (nonatomic, retain) MPMediaItemArtwork *artwork;
+@property (getter=isContainer, nonatomic) BOOL container;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (getter=isPlayable, nonatomic) BOOL playable;
+@property (nonatomic) float playbackProgress;
+@property (nonatomic, copy) NSString *subtitle;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)_initWithMediaRemoteContentItem:(struct _MRContentItem { }*)arg1;

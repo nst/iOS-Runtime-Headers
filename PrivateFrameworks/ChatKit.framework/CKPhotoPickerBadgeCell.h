@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIImageView;
-
 @interface CKPhotoPickerBadgeCell : UICollectionReusableView {
     UIImageView *_checkmarkImageView;
     BOOL _selected;
 }
 
-@property(retain) UIImageView * checkmarkImageView;
-@property(getter=isSelected) BOOL selected;
+@property (nonatomic, retain) UIImageView *checkmarkImageView;
+@property (getter=isSelected, nonatomic) BOOL selected;
 
 - (id)checkmarkImageView;
 - (void)dealloc;

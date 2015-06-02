@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLPlatformObject, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface CPLEngineFileStorage : NSObject <CPLAbstractObject> {
     NSURL *_baseURL;
     NSURL *_crashMarkerURL;
@@ -15,14 +13,14 @@
     NSMutableArray *_uncommittedFiles;
 }
 
-@property(readonly) NSURL * baseURL;
-@property(copy,readonly) NSString * debugDescription;
-@property BOOL deleteImmediately;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL keepOriginals;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSURL *baseURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL deleteImmediately;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL keepOriginals;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (readonly) Class superclass;
 
 + (id)platformImplementationProtocol;
 
@@ -30,7 +28,7 @@
 - (void)_addIdentityToUncommittedFiles:(id)arg1;
 - (BOOL)_compactStorageIncludeOriginals:(BOOL)arg1 desiredFreeSpace:(unsigned long long*)arg2 error:(id*)arg3;
 - (BOOL)_fixupIdentity:(id)arg1 fileURL:(id)arg2 data:(id)arg3 error:(id*)arg4;
-- (BOOL)_recoverFromCrashWithRecoveryHandler:(id)arg1 error:(id*)arg2;
+- (BOOL)_recoverFromCrashWithRecoveryHandler:(id /* block */)arg1 error:(id*)arg2;
 - (void)_removeIdentityFromUncommittedFiles:(id)arg1;
 - (id)baseURL;
 - (void)checkFileSizeForIdentity:(id)arg1;
@@ -44,16 +42,16 @@
 - (BOOL)deleteImmediately;
 - (BOOL)discardAllRetainedFileURLsWithError:(id*)arg1;
 - (BOOL)discardUncommittedFileWithIdentity:(id)arg1 error:(id*)arg2;
-- (void)doRead:(id)arg1;
-- (BOOL)doWrite:(id)arg1 error:(id*)arg2;
+- (void)doRead:(id /* block */)arg1;
+- (BOOL)doWrite:(id /* block */)arg1 error:(id*)arg2;
 - (id)fileEnumerator;
-- (id)fileEnumeratorIncludingPropertiesForKeys:(id)arg1 errorHandler:(id)arg2;
+- (id)fileEnumeratorIncludingPropertiesForKeys:(id)arg1 errorHandler:(id /* block */)arg2;
 - (BOOL)hasCrashMarker;
 - (BOOL)hasFileWithIdentity:(id)arg1;
 - (id)initWithBaseURL:(id)arg1;
 - (BOOL)keepOriginals;
 - (BOOL)linkOrCopyFileWithIdentity:(id)arg1 destinationURL:(id)arg2 error:(id*)arg3;
-- (BOOL)openWithRecoveryHandler:(id)arg1 error:(id*)arg2;
+- (BOOL)openWithRecoveryHandler:(id /* block */)arg1 error:(id*)arg2;
 - (id)platformObject;
 - (BOOL)releaseFileURL:(id)arg1 error:(id*)arg2;
 - (id)retainFileURLForIdentity:(id)arg1 resourceType:(unsigned int)arg2 error:(id*)arg3;

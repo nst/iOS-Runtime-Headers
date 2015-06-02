@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOExperimentServerProxyDelegate>, GEOABExperimentResponse, NSLock, NSString;
-
 @interface GEOExperimentServerRemoteProxy : NSObject <GEOExperimentServerProxy> {
     <GEOExperimentServerProxyDelegate> *_delegate;
     int _experimentsChangedToken;
@@ -11,12 +9,12 @@
     NSLock *_experimentsInfoLock;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <GEOExperimentServerProxyDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) GEOABExperimentResponse * experimentsInfo;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <GEOExperimentServerProxyDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) GEOABExperimentResponse *experimentsInfo;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_debug_setQuerySubstring:(id)arg1 forExperimentType:(int)arg2 dispatcherRequestType:(int)arg3;
 - (void)dealloc;

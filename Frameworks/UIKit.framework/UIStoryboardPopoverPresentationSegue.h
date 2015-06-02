@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIBarButtonItem, UIView;
-
 @interface UIStoryboardPopoverPresentationSegue : UIStoryboardSegue <UIPopoverPresentationControllerDelegate> {
     UIBarButtonItem *_anchorBarButtonItem;
     struct CGRect { 
@@ -21,15 +19,15 @@
     unsigned int _permittedArrowDirections;
 }
 
-@property(retain) UIBarButtonItem * anchorBarButtonItem;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } anchorRect;
-@property(retain) UIView * anchorView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * passthroughViews;
-@property unsigned int permittedArrowDirections;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIBarButtonItem *anchorBarButtonItem;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } anchorRect;
+@property (nonatomic, retain) UIView *anchorView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *passthroughViews;
+@property (nonatomic) unsigned int permittedArrowDirections;
+@property (readonly) Class superclass;
 
 - (void)_prepare;
 - (id)anchorBarButtonItem;

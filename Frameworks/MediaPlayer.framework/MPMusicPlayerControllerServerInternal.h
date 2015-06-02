@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPMusicPlayerControllerServerDelegate>, MPMusicPlayerControllerServer, MPVideoViewController, NSMutableArray, NSMutableDictionary;
-
 @interface MPMusicPlayerControllerServerInternal : MPServerObject <MPMusicPlayerController> {
     int _activeClientPID;
     NSMutableArray *_clientPorts;
@@ -11,7 +9,7 @@
     NSMutableDictionary *_clientStateForPIDs;
     <MPMusicPlayerControllerServerDelegate> *_delegate;
     MPMusicPlayerControllerServer *_musicPlayerServer;
-    unsigned int _queuePrepared : 1;
+    unsigned int _queuePrepared;
     MPVideoViewController *_videoViewController;
 }
 

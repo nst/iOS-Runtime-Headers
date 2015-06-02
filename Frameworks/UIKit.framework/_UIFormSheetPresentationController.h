@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDimmingView, UIDropShadowView;
-
 @interface _UIFormSheetPresentationController : UIPresentationController {
     UIDimmingView *_dimmingView;
     UIDropShadowView *_dropShadowView;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABMultipleSourceImagePickerDelegate>, NSMutableArray;
-
 @interface ABMultipleImagePickerViewController : UITableViewController {
     <ABMultipleSourceImagePickerDelegate> *_delegate;
     NSMutableArray *_imageCellData;
     unsigned int _selectedImageIndex;
 }
 
-@property <ABMultipleSourceImagePickerDelegate> * delegate;
+@property (nonatomic) <ABMultipleSourceImagePickerDelegate> *delegate;
 
 - (void)addImageData:(id)arg1 title:(id)arg2 isSelectedImage:(BOOL)arg3 person:(id)arg4;
 - (void)dealloc;

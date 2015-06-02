@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class AVAudioPayload, DTMFEventHandler, LTEAudioSessionConfig, NSMutableArray, NSObject<LTEConferenceDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, VCJitterBuffer, WRMClient;
-
 @interface LTEConference : NSObject <WRMClientDelegate> {
     NSObject<LTEConferenceDelegate> *_delegate;
     double _rtcpTimeoutEnabledTime;
@@ -55,10 +53,10 @@
     WRMClient *wrmClient;
 }
 
-@property(readonly) unsigned int conferenceID;
-@property NSObject<LTEConferenceDelegate> * delegate;
+@property (readonly) unsigned int conferenceID;
+@property (nonatomic) NSObject<LTEConferenceDelegate> *delegate;
 @property BOOL isValid;
-@property(retain) LTEAudioSessionConfig * sessionConfig;
+@property (nonatomic, retain) LTEAudioSessionConfig *sessionConfig;
 
 - (unsigned long)AMRModeToBitrate;
 - (id)addAudioPayload:(int)arg1;
@@ -105,11 +103,11 @@
 - (void)setupRTPPayloadsWithDestinationIPPort:(struct tagIPPORT { int x1; BOOL x2[16]; union { unsigned int x_3_1_1; unsigned char x_3_1_2[16]; } x3; unsigned short x4; }*)arg1;
 - (id)setupRTPWithLocalParticipantInfo:(id)arg1 error:(id*)arg2;
 - (id)setupRTPWithSockets:(id)arg1 error:(id*)arg2;
-- (void)startAudioWithCompletionHandler:(id)arg1;
+- (void)startAudioWithCompletionHandler:(id /* block */)arg1;
 - (void)startCall;
 - (void)startPausedHeartbeat;
 - (void)startWRM;
-- (void)stopAudioWithCompletionHandler:(id)arg1;
+- (void)stopAudioWithCompletionHandler:(id /* block */)arg1;
 - (void)stopCall;
 - (void)stopPausedHeartbeat;
 - (void)stopSendDTMFEvent;

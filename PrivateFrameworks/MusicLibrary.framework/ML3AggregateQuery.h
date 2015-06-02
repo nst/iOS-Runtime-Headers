@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSString;
-
 @interface ML3AggregateQuery : ML3Query {
     Class _aggregateEntityClass;
     NSString *_foreignPersistentIDProperty;
     BOOL _isFastCountable;
 }
 
-@property(readonly) Class aggregateEntityClass;
-@property(readonly) NSString * foreignPersistentIDProperty;
-@property BOOL isFastCountable;
+@property (nonatomic, readonly) Class aggregateEntityClass;
+@property (nonatomic, readonly) NSString *foreignPersistentIDProperty;
+@property (nonatomic) BOOL isFastCountable;
 
 - (void).cxx_destruct;
 - (Class)aggregateEntityClass;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKCaptureDelegate>, AVCaptureDeviceInput, AVCaptureSession, AVCaptureVideoPreviewLayer, NSObject<OS_dispatch_queue>, NSString;
-
 @interface PKCaptureSession : NSObject <AVCaptureMetadataOutputObjectsDelegate> {
     AVCaptureSession *_captureSession;
     <PKCaptureDelegate> *_delegate;
@@ -12,13 +10,13 @@
     AVCaptureVideoPreviewLayer *_previewLayer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PKCaptureDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isRunning;
-@property(readonly) AVCaptureVideoPreviewLayer * previewLayer;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKCaptureDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isRunning;
+@property (nonatomic, readonly) AVCaptureVideoPreviewLayer *previewLayer;
+@property (readonly) Class superclass;
 
 - (void)_changeCameraConfiguration;
 - (void)autoExposeAtPoint:(struct CGPoint { float x1; float x2; })arg1;

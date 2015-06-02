@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAWeatherLocationSnippet : SAUISnippet
 
-@interface SAWeatherLocationSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * weatherLocations;
+@property (nonatomic, copy) NSArray *weatherLocations;
 
 + (id)locationSnippet;
 + (id)locationSnippetWithDictionary:(id)arg1 context:(id)arg2;

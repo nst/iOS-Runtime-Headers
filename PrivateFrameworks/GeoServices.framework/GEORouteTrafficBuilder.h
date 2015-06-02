@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableData;
-
 @interface GEORouteTrafficBuilder : NSObject {
     NSMutableData *_trafficColors;
     unsigned int _trafficDistance;

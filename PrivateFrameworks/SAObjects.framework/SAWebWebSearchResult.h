@@ -2,24 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString;
+@interface SAWebWebSearchResult : AceObject <SAAceSerializable>
 
-@interface SAWebWebSearchResult : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * imageResults;
-@property(copy) NSArray * newsResults;
-@property(copy) NSArray * relatedSearchResults;
-@property(readonly) Class superclass;
-@property(copy) NSNumber * totalImageResults;
-@property(copy) NSNumber * totalNewsResults;
-@property(copy) NSNumber * totalVideoResults;
-@property(copy) NSNumber * totalWebResults;
-@property(copy) NSArray * videoResults;
-@property(copy) NSArray * webResults;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *imageResults;
+@property (nonatomic, copy) NSArray *newsResults;
+@property (nonatomic, copy) NSArray *relatedSearchResults;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSNumber *totalImageResults;
+@property (nonatomic, copy) NSNumber *totalNewsResults;
+@property (nonatomic, copy) NSNumber *totalVideoResults;
+@property (nonatomic, copy) NSNumber *totalWebResults;
+@property (nonatomic, copy) NSArray *videoResults;
+@property (nonatomic, copy) NSArray *webResults;
 
 + (id)webSearchResult;
 + (id)webSearchResultWithDictionary:(id)arg1 context:(id)arg2;

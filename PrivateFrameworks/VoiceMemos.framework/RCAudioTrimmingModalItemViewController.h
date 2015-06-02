@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class AVPlayerItem, NSURL, RCAVWaveformViewController, RCFileInputWaveformDataSource, RCPreviewController, RCUIConfiguration, UIButton, UILabel, UIView;
-
 @interface RCAudioTrimmingModalItemViewController : UIViewController <RCAVWaveformViewControllerDelegate> {
     NSURL *_audioURL;
     RCUIConfiguration *_defaultUIConfiguration;
@@ -22,13 +20,13 @@
     RCAVWaveformViewController *_waveformViewController;
 }
 
-@property(copy,readonly) NSURL * audioURL;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) double maximumDuration;
-@property(readonly) RCPreviewController * previewController;
-@property float progress;
-@property(readonly) struct { double x1; double x2; } selectedTimeRange;
-@property BOOL showsProgress;
+@property (nonatomic, readonly, copy) NSURL *audioURL;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) double maximumDuration;
+@property (nonatomic, readonly) RCPreviewController *previewController;
+@property (nonatomic) float progress;
+@property (nonatomic, readonly) struct { double x1; double x2; } selectedTimeRange;
+@property (nonatomic) BOOL showsProgress;
 
 - (void).cxx_destruct;
 - (void)_beginOrResumePreviewing;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSLayoutConstraint, UIView;
-
 @interface PKPaymentAuthorizationPresentationController : UIPresentationController {
     UIView *_dimmingView;
     NSLayoutConstraint *_leftConstraint;
@@ -16,8 +14,8 @@
     NSLayoutConstraint *_topConstraint;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } contentSize;
-@property(readonly) struct CGSize { float x1; float x2; } maximumContentSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } maximumContentSize;
 
 - (void)_notifyObserversAboutDidAdjustToSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_notifyObserversAboutWillAdjustToSize:(struct CGSize { float x1; float x2; })arg1;

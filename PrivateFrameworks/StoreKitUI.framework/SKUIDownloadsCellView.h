@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSAttributedString, NSString, UIButton, UIImage, UIImageView, UILabel, UISlider;
-
 @interface SKUIDownloadsCellView : UIView {
     NSAttributedString *_attributedTitle;
     UIButton *_button;
@@ -16,13 +14,13 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) NSAttributedString * attributedTitle;
-@property(readonly) UIButton * button;
-@property int buttonType;
-@property(retain) UIImage * image;
-@property BOOL isPad;
-@property float progress;
-@property(retain) NSString * subtitle;
+@property (nonatomic, retain) NSAttributedString *attributedTitle;
+@property (nonatomic, readonly) UIButton *button;
+@property (nonatomic) int buttonType;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) BOOL isPad;
+@property (nonatomic) float progress;
+@property (nonatomic, retain) NSString *subtitle;
 
 - (void).cxx_destruct;
 - (id)attributedTitle;

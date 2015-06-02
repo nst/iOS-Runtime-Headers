@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSUUID;
-
 @interface HMDNameValidator : NSObject {
     NSUUID *_homeManagerUUID;
     NSMutableDictionary *_namespaceList;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSUUID * homeManagerUUID;
-@property(copy) NSMutableDictionary * namespaceList;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) NSUUID *homeManagerUUID;
+@property (nonatomic, copy) NSMutableDictionary *namespaceList;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (id)_addName:(id)arg1 namespace:(id)arg2;

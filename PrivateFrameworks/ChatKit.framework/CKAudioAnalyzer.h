@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSDictionary, NSMutableData, NSString;
-
 @interface CKAudioAnalyzer : NSObject <Endpointer> {
     struct OpaqueAudioComponentInstance { } *_audioUnitEPVAD;
     float _decoderLatency;
@@ -14,7 +12,7 @@
     struct { 
         float rms; 
         unsigned int zc; 
-    } _frameAnalysisArray[25];
+    } _frameAnalysisArray;
     unsigned long _frameRate;
     unsigned int _framesSeen;
     float _heuristicTransitionRatio;
@@ -28,19 +26,19 @@
     double _startWaitTime;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property float decoderLatency;
-@property(copy,readonly) NSString * description;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) float decoderLatency;
+@property (readonly, copy) NSString *description;
 @property double endWaitTime;
 @property int endpointMode;
-@property(readonly) unsigned int hash;
-@property float heuristicTransitionRatio;
-@property float heuristicWindowSec;
-@property unsigned long inMaxSamplesPerBuffer;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float heuristicTransitionRatio;
+@property (nonatomic) float heuristicWindowSec;
+@property (nonatomic) unsigned long inMaxSamplesPerBuffer;
 @property double interspeechWaitTime;
-@property float speechPaddingFactor;
+@property (nonatomic) float speechPaddingFactor;
 @property double startWaitTime;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 

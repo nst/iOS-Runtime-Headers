@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class <FigCameraViewfinderDelegate><FigCameraViewfinderSessionDelegate>, FigCameraViewfinderSession, FigDelegateStorage, NSObject<OS_dispatch_queue>;
-
 @interface FigCameraViewfinder : NSObject {
     FigCameraViewfinderSession *_delegateActiveViewfinderSession;
     FigDelegateStorage *_delegateStorage;
 }
 
-@property(readonly) <FigCameraViewfinderDelegate><FigCameraViewfinderSessionDelegate> * delegate;
-@property(retain) FigCameraViewfinderSession * delegateActiveViewfinderSession;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (readonly) <FigCameraViewfinderDelegate><FigCameraViewfinderSessionDelegate> *delegate;
+@property (nonatomic, retain) FigCameraViewfinderSession *delegateActiveViewfinderSession;
+@property (readonly) NSObject<OS_dispatch_queue> *queue;
 
 + (id)cameraViewfinder;
 

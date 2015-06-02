@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <GQHContext>, GQHTableState, GQHXML, GQSDocument;
-
 @interface GQHState : NSObject {
     int mCachedCellStyleIndex;
     struct __CFDictionary { } *mCachedTableStyles;

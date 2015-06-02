@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
-
 @interface SKUINavigationBarMenusView : SKUIViewReuseView {
     SEL _buttonAction;
     id _buttonTarget;
@@ -16,7 +14,7 @@
     NSArray *_menuViewElements;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
 
 + (id)_attributedStringWithMenuItem:(id)arg1 context:(id)arg2;
 + (void)requestLayoutWithMenus:(id)arg1 width:(int)arg2 context:(id)arg3;

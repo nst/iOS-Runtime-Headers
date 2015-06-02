@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKButton, UILabel;
-
 @interface GKFriendRequestCell : GKBasePlayerCell {
     GKButton *_acceptButton;
     GKButton *_declineButton;
@@ -11,10 +9,10 @@
     UILabel *_whenLabel;
 }
 
-@property(retain) GKButton * acceptButton;
-@property(retain) GKButton * declineButton;
-@property(retain) UILabel * messageLabel;
-@property(retain) UILabel * whenLabel;
+@property (nonatomic, retain) GKButton *acceptButton;
+@property (nonatomic, retain) GKButton *declineButton;
+@property (nonatomic, retain) UILabel *messageLabel;
+@property (nonatomic, retain) UILabel *whenLabel;
 
 + (void)applyFriendRequest:(id)arg1 messageStringToLabel:(id)arg2 showAlias:(BOOL)arg3;
 + (Class)cellClassForPlayer:(id)arg1;

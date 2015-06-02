@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSDecimalNumber, NSString;
-
 @interface PKPaymentApplication : NSObject <NSSecureCoding> {
     NSString *_applicationIdentifier;
     NSString *_dpanIdentifier;
@@ -19,19 +17,19 @@
     BOOL _supportsInAppPayment;
 }
 
-@property(copy) NSString * applicationIdentifier;
-@property(setter=setDPANIdentifier:,copy) NSString * dpanIdentifier;
-@property(setter=setDPANSuffix:,copy) NSString * dpanSuffix;
-@property BOOL inAppPINRequired;
-@property(copy) NSDecimalNumber * inAppPINRequiredAmount;
-@property(copy) NSString * inAppPINRequiredCurrency;
-@property int paymentNetworkIdentifier;
-@property(setter=setSanitizedDPAN:,copy) NSString * sanitizedDPAN;
-@property(copy) NSString * secureElementIdentifier;
-@property int state;
-@property(readonly) NSString * stateAsString;
-@property BOOL supportsContactlessPayment;
-@property BOOL supportsInAppPayment;
+@property (nonatomic, copy) NSString *applicationIdentifier;
+@property (setter=setDPANIdentifier:, nonatomic, copy) NSString *dpanIdentifier;
+@property (setter=setDPANSuffix:, nonatomic, copy) NSString *dpanSuffix;
+@property (nonatomic) BOOL inAppPINRequired;
+@property (nonatomic, copy) NSDecimalNumber *inAppPINRequiredAmount;
+@property (nonatomic, copy) NSString *inAppPINRequiredCurrency;
+@property (nonatomic) int paymentNetworkIdentifier;
+@property (setter=setSanitizedDPAN:, nonatomic, copy) NSString *sanitizedDPAN;
+@property (nonatomic, copy) NSString *secureElementIdentifier;
+@property (nonatomic) int state;
+@property (nonatomic, readonly) NSString *stateAsString;
+@property (nonatomic) BOOL supportsContactlessPayment;
+@property (nonatomic) BOOL supportsInAppPayment;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextToSpeech.framework/TextToSpeech
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface TTSAudioSession : NSObject {
     struct __CFBag { } *_activityBag;
     BOOL _audioSessionIsSetUp;

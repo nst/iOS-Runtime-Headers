@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SADomainObject;
+@interface SAUISnippetObjectInteraction : SAUISnippetInteraction
 
-@interface SAUISnippetObjectInteraction : SAUISnippetInteraction {
-}
-
-@property(retain) SADomainObject * object;
+@property (nonatomic, retain) SADomainObject *object;
 
 + (id)snippetObjectInteraction;
 + (id)snippetObjectInteractionWithDictionary:(id)arg1 context:(id)arg2;

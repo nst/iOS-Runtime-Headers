@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MessageSupport.framework/MessageSupport
  */
 
-@class NSString;
-
 @interface MFDebugTimer : NSObject {
     double _timer_base;
     unsigned long long _timer_end;
@@ -13,7 +11,7 @@
     NSString *name;
 }
 
-@property(retain) NSString * name;
+@property (retain) NSString *name;
 
 + (id)sharedTimer;
 + (id)timerWithName:(id)arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSString, NSXPCConnection;
-
 @interface TUAccountsController : NSObject {
     int _outgoingRelayCallerIDChangedToken;
     NSXPCConnection *_xpcConnection;
 }
 
-@property(copy,readonly) NSString * formattedOutgoingRelayCallerID;
-@property(copy,readonly) NSString * outgoingRelayCallerID;
-@property int outgoingRelayCallerIDChangedToken;
-@property(retain) NSXPCConnection * xpcConnection;
+@property (nonatomic, readonly, copy) NSString *formattedOutgoingRelayCallerID;
+@property (nonatomic, readonly, copy) NSString *outgoingRelayCallerID;
+@property (nonatomic) int outgoingRelayCallerIDChangedToken;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
 - (void)_setUpXPCConnection;
 - (void)_tearDownXPCConnection;

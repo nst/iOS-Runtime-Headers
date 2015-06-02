@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMapTable, NSString;
-
 @interface CKDProgressTracker : NSObject {
     unsigned long long _cachedCompletedBytes;
     unsigned long long _cachedTotalBytes;
@@ -14,13 +12,13 @@
     NSString *_trackingID;
 }
 
-@property unsigned long long cachedCompletedBytes;
-@property unsigned long long cachedTotalBytes;
-@property(retain) NSMapTable * completedBytesByItems;
-@property BOOL hasCachedCompletedBytes;
-@property BOOL hasCachedTotalBytes;
-@property double lastItemPercentage;
-@property(retain) NSString * trackingID;
+@property (nonatomic) unsigned long long cachedCompletedBytes;
+@property (nonatomic) unsigned long long cachedTotalBytes;
+@property (nonatomic, retain) NSMapTable *completedBytesByItems;
+@property (nonatomic) BOOL hasCachedCompletedBytes;
+@property (nonatomic) BOOL hasCachedTotalBytes;
+@property (nonatomic) double lastItemPercentage;
+@property (nonatomic, retain) NSString *trackingID;
 
 + (unsigned long long)_sizeForItem:(id)arg1;
 

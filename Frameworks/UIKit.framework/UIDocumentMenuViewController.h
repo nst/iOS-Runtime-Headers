@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIDocumentMenuDelegate>, NSMutableArray, NSString, NSURL, UIAlertController, _UIDocumentPickerRemoteViewController;
-
 @interface UIDocumentMenuViewController : UIViewController <UIAlertControllerContaining, _UIDocumentPickerRemoteViewControllerContaining> {
     UIAlertController *_alertController;
     NSMutableArray *_auxiliaryOptions;
@@ -14,19 +12,19 @@
     <UIDocumentMenuDelegate> *_weak_delegate;
 }
 
-@property(retain) UIAlertController * alertController;
-@property(retain) NSMutableArray * auxiliaryOptions;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIDocumentMenuDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL dismissDelegateCalled;
-@property unsigned int documentPickerMode;
-@property(readonly) unsigned int hash;
-@property(getter=_remoteViewController,setter=_setRemoteViewController:,retain) _UIDocumentPickerRemoteViewController * remoteViewController;
-@property(readonly) Class superclass;
-@property(copy) NSURL * uploadURL;
+@property (nonatomic, retain) UIAlertController *alertController;
+@property (nonatomic, retain) NSMutableArray *auxiliaryOptions;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIDocumentMenuDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL dismissDelegateCalled;
+@property (nonatomic) unsigned int documentPickerMode;
+@property (readonly) unsigned int hash;
+@property (getter=_remoteViewController, setter=_setRemoteViewController:, nonatomic, retain) _UIDocumentPickerRemoteViewController *remoteViewController;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSURL *uploadURL;
 
-- (void)_commonInitWithCompletion:(id)arg1;
+- (void)_commonInitWithCompletion:(id /* block */)arg1;
 - (id)_containedAlertController;
 - (void)_didSelectPicker;
 - (void)_didSelectURL:(id)arg1;
@@ -38,7 +36,7 @@
 - (BOOL)_requiresCustomPresentationController;
 - (void)_setRemoteViewController:(id)arg1;
 - (void)_stitchFileCreationAtURL:(id)arg1;
-- (void)addOptionWithTitle:(id)arg1 image:(id)arg2 order:(unsigned int)arg3 handler:(id)arg4;
+- (void)addOptionWithTitle:(id)arg1 image:(id)arg2 order:(unsigned int)arg3 handler:(id /* block */)arg4;
 - (id)alertController;
 - (id)auxiliaryOptions;
 - (void)dealloc;

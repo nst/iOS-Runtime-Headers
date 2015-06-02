@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, TSULocale;
-
 @interface TSUDateParser : NSObject {
     NSMutableArray *mFormatCategories;
     BOOL mIsJapaneseLocale;

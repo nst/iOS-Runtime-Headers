@@ -5,7 +5,7 @@
 @interface PTPEventPacket : NSObject {
     unsigned short _eventCode;
     int _numParameters;
-    unsigned long _parameters[3];
+    unsigned long _parameters;
     unsigned long _transactionID;
 }
 

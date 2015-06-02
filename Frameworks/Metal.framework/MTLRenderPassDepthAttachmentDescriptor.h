@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLRenderPassDepthAttachmentDescriptor : MTLRenderPassAttachmentDescriptor {
-}
+@interface MTLRenderPassDepthAttachmentDescriptor : MTLRenderPassAttachmentDescriptor
 
-@property double clearDepth;
+@property (nonatomic) double clearDepth;
 
 - (double)clearDepth;
 - (id)description;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABDateFieldDelegate>, <ABDatePickerPresentationDelegate>, NSDate, UIButton, UIDatePicker;
-
 @interface ABDateField : ABUILabelWithPlaceholder {
     UIButton *_clearButton;
     NSDate *_date;
@@ -21,11 +19,11 @@
     BOOL _usesDatePickerAsInputView;
 }
 
-@property(retain) NSDate * date;
-@property struct CGSize { float x1; float x2; } datePickerSize;
-@property <ABDateFieldDelegate> * delegate;
-@property(getter=isEditable) BOOL editable;
-@property <ABDatePickerPresentationDelegate> * presentationDelegate;
+@property (nonatomic, retain) NSDate *date;
+@property (nonatomic) struct CGSize { float x1; float x2; } datePickerSize;
+@property (nonatomic) <ABDateFieldDelegate> *delegate;
+@property (getter=isEditable, nonatomic) BOOL editable;
+@property (nonatomic) <ABDatePickerPresentationDelegate> *presentationDelegate;
 
 - (void)_attachToDatePicker:(id)arg1;
 - (id)_clearButton;

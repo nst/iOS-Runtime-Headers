@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@class AccountUtilities, CPExclusiveLock, NSManagedObjectContext, NSManagedObjectModel, NSMutableDictionary, NSNumber, NSPersistentStoreCoordinator, NSPredicate, NoteAccountObject, NoteStoreObject;
-
 @interface NoteContext : NSObject {
     struct __CXIndex { } *__SharedNoteStoreSearchIndex;
     int __SharedNoteStoreSearchIndexCount;
@@ -28,9 +26,9 @@
     NSPredicate *_searchPredicate;
 }
 
-@property(retain) AccountUtilities * accountUtilities;
-@property(readonly) BOOL isIndexing;
-@property(retain,readonly) NSManagedObjectContext * managedObjectContext;
+@property (nonatomic, retain) AccountUtilities *accountUtilities;
+@property (nonatomic, readonly) BOOL isIndexing;
+@property (nonatomic, readonly, retain) NSManagedObjectContext *managedObjectContext;
 
 + (void)clearTestsNotesRootPath;
 + (BOOL)databaseIsCorrupt:(id)arg1;

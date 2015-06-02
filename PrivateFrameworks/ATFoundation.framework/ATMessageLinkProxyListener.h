@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class <ATMessageLink>, NSString, NSXPCListener;
-
 @interface ATMessageLinkProxyListener : NSObject <NSXPCListenerDelegate> {
     NSXPCListener *_listener;
     <ATMessageLink> *_messageLink;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) <ATMessageLink> * messageLink;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) <ATMessageLink> *messageLink;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)endpoint;

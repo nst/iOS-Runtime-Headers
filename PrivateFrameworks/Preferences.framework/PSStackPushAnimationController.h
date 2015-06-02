@@ -2,20 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSString, UINavigationController;
-
 @interface PSStackPushAnimationController : NSObject <UIViewControllerAnimatedTransitioning> {
     int _animationPreset;
     NSMutableArray *_animationsToRunAlongsideToVC;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     double _completionStagger;
     BOOL _hasStartedAnimation;
     UINavigationController *_navigationController;
@@ -26,18 +16,18 @@
     NSArray *_viewControllers;
 }
 
-@property int animationPreset;
-@property(copy) id completionBlock;
-@property double completionStagger;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property UINavigationController * navigationController;
-@property double pushDuration;
-@property float springDamping;
-@property double startStagger;
-@property(readonly) Class superclass;
-@property(retain) NSArray * viewControllers;
+@property (nonatomic) int animationPreset;
+@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic) double completionStagger;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) UINavigationController *navigationController;
+@property (nonatomic) double pushDuration;
+@property (nonatomic) float springDamping;
+@property (nonatomic) double startStagger;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSArray *viewControllers;
 
 + (id)_animationParametersForPreset:(int)arg1;
 + (id)_snapshotOfViewController:(id)arg1 withNavigationBar:(id)arg2 prevViewController:(id)arg3;
@@ -46,23 +36,23 @@
 + (void)setDefaultAnimationPreset:(int)arg1;
 
 - (double)_actualDuration;
-- (void)_addAnimation:(id)arg1 forViewAtIndex:(unsigned int)arg2 count:(unsigned int)arg3;
+- (void)_addAnimation:(id /* block */)arg1 forViewAtIndex:(unsigned int)arg2 count:(unsigned int)arg3;
 - (double)_desiredDuration;
 - (void)_loadDefaultValues;
 - (BOOL)_shouldSkipFirstPush;
 - (id)_valueForAnimationParameter:(id)arg1;
-- (void)animateAlongsideToViewController:(id)arg1;
+- (void)animateAlongsideToViewController:(id /* block */)arg1;
 - (void)animateTransition:(id)arg1;
 - (void)animationEnded:(BOOL)arg1;
 - (int)animationPreset;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (double)completionStagger;
 - (void)dealloc;
 - (id)init;
 - (id)navigationController;
 - (double)pushDuration;
 - (void)setAnimationPreset:(int)arg1;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setCompletionStagger:(double)arg1;
 - (void)setNavigationController:(id)arg1;
 - (void)setPushDuration:(double)arg1;

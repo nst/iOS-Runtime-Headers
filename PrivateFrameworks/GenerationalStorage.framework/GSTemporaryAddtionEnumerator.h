@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
  */
 
-@class GSTemporaryStorage, NSArray, NSDirectoryEnumerator, NSError, NSString;
-
 @interface GSTemporaryAddtionEnumerator : NSEnumerator <GSAdditionEnumerating> {
     NSArray *_array;
     NSDirectoryEnumerator *_enumerator;
@@ -15,7 +13,7 @@
     unsigned long long _withoutOption;
 }
 
-@property(readonly) NSError * error;
+@property (nonatomic, readonly) NSError *error;
 
 - (id)_nextURL;
 - (void)dealloc;

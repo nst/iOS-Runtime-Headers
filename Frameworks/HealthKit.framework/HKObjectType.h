@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSString;
-
 @interface HKObjectType : NSObject <NSCopying, NSSecureCoding> {
     int _code;
     Class _dataObjectClass;
     NSString *_identifier;
 }
 
-@property(readonly) int code;
-@property(readonly) Class dataObjectClass;
-@property(readonly) NSString * identifier;
+@property (nonatomic, readonly) int code;
+@property (nonatomic, readonly) Class dataObjectClass;
+@property (readonly) NSString *identifier;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_allDataTypeIdentifiers;
 + (BOOL)_allowAuthorizationForReadingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
@@ -43,11 +43,14 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
-- (id)hk_categoryID;
-- (id)hk_localizedName;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
+- (id)hk_categoryID;
+- (id)hk_localizedName;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSString;
-
 @interface FigCaptureSinkConfiguration : NSObject <FigXPCCoding, NSCopying> {
     NSString *_sinkID;
     int _sinkType;
@@ -11,14 +9,14 @@
     BOOL _videoDataDiscardsLateVideoFrames;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * sinkID;
-@property int sinkType;
-@property(readonly) Class superclass;
-@property BOOL videoDataDerivedFromPreview;
-@property BOOL videoDataDiscardsLateVideoFrames;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *sinkID;
+@property (nonatomic) int sinkType;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL videoDataDerivedFromPreview;
+@property (nonatomic) BOOL videoDataDiscardsLateVideoFrames;
 
 + (void)initialize;
 + (int)sinkTypeForString:(id)arg1;

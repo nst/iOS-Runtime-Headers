@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSString;
-
 @interface CKFetchWebAuthTokenOperationResult : CKOperationResult <NSSecureCoding> {
     NSString *_webAuthToken;
 }
 
-@property(copy) NSString * webAuthToken;
+@property (nonatomic, copy) NSString *webAuthToken;
 
 + (BOOL)supportsSecureCoding;
 

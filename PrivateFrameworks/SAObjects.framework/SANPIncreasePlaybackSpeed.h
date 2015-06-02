@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SANPIncreasePlaybackSpeed : SADomainCommand {
-}
+@interface SANPIncreasePlaybackSpeed : SADomainCommand
 
 + (id)increasePlaybackSpeed;
 + (id)increasePlaybackSpeedWithDictionary:(id)arg1 context:(id)arg2;

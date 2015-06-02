@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_dispatch_queue>, NSURL, SSSQLiteDatabase;
-
 @interface SSVCookieStorage : NSObject {
     SSSQLiteDatabase *_db;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     NSURL *_storageLocation;
 }
 
-@property(readonly) NSURL * storageLocation;
+@property (readonly) NSURL *storageLocation;
 
 + (BOOL)_setupCookieDatabase:(id)arg1;
 + (id)sharedInstance;

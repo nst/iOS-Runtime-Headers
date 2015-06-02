@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSMutableArray, NSMutableDictionary, SLSheetTextComposeView, UILabel, UITextView, UIView;
-
 @interface SLSheetContentView : UIView {
     UIView *_accessoryView;
     BOOL _autoCompletionMode;
@@ -19,10 +17,10 @@
     float _textViewTopMargin;
 }
 
-@property(retain) UIView * accessoryView;
-@property(readonly) UILabel * placeholderLabel;
-@property(retain) UIView * previewView;
-@property(readonly) UITextView * textView;
+@property (nonatomic, retain) UIView *accessoryView;
+@property (nonatomic, readonly) UILabel *placeholderLabel;
+@property (nonatomic, retain) UIView *previewView;
+@property (nonatomic, readonly) UITextView *textView;
 
 - (void).cxx_destruct;
 - (float)_previewMarginForContentSize:(struct CGSize { float x1; float x2; })arg1;

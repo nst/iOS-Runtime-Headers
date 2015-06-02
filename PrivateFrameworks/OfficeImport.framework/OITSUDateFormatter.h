@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface OITSUDateFormatter : NSObject {
     NSString *mDateOnlyFormatString;
     struct __CFDateFormatter { } *mFullDateFormatter;

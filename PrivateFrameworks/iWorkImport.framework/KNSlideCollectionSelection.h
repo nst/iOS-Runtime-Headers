@@ -2,21 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNSlideNode, NSOrderedSet;
-
 @interface KNSlideCollectionSelection : TSKSelection {
     KNSlideNode *mSlideNodeToEdit;
     NSOrderedSet *mSlideNodes;
 }
 
-@property(getter=isEmpty,readonly) BOOL empty;
-@property(readonly) KNSlideNode * slideNodeToEdit;
-@property(readonly) NSOrderedSet * slideNodes;
+@property (getter=isEmpty, nonatomic, readonly) BOOL empty;
+@property (nonatomic, readonly) KNSlideNode *slideNodeToEdit;
+@property (nonatomic, readonly) NSOrderedSet *slideNodes;
 
 + (Class)archivedSelectionClass;
 

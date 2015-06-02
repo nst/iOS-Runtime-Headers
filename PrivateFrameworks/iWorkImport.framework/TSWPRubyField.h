@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSWPRubyField : TSWPSmartField {
     NSString *_rubyText;
 }
 
-@property(readonly) NSString * baseText;
-@property(readonly) int baseTextScript;
-@property(copy) NSString * rubyText;
+@property (nonatomic, readonly) NSString *baseText;
+@property (nonatomic, readonly) int baseTextScript;
+@property (nonatomic, copy) NSString *rubyText;
 
 - (BOOL)allowsEditing;
 - (int)attributeArrayKind;

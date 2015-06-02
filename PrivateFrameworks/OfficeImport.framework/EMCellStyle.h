@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDStyle;
-
 @interface EMCellStyle : CMStyle <NSCopying> {
     double _columnWidth;
     double _contentWidth;

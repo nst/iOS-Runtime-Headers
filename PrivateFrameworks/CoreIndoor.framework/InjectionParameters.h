@@ -13,12 +13,12 @@
     float _timeBetweenLocationsTime2dSeconds;
 }
 
-@property BOOL hasTimeBetweenLocationsMultiphoneSeconds;
-@property BOOL hasTimeBetweenLocationsPdrSeconds;
-@property BOOL hasTimeBetweenLocationsTime2dSeconds;
-@property float timeBetweenLocationsMultiphoneSeconds;
-@property float timeBetweenLocationsPdrSeconds;
-@property float timeBetweenLocationsTime2dSeconds;
+@property (nonatomic) BOOL hasTimeBetweenLocationsMultiphoneSeconds;
+@property (nonatomic) BOOL hasTimeBetweenLocationsPdrSeconds;
+@property (nonatomic) BOOL hasTimeBetweenLocationsTime2dSeconds;
+@property (nonatomic) float timeBetweenLocationsMultiphoneSeconds;
+@property (nonatomic) float timeBetweenLocationsPdrSeconds;
+@property (nonatomic) float timeBetweenLocationsTime2dSeconds;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

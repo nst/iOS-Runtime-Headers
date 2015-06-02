@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDWiFiMetricsKnownNetworksEvent : PBCodable <NSCopying> {
     unsigned int _eventType;
     struct { 
@@ -18,16 +16,16 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int eventType;
-@property BOOL hasEventType;
-@property BOOL hasNetworkSecurity;
-@property BOOL hasNetworkTypeBitMap;
-@property(readonly) BOOL hasOui;
-@property BOOL hasTimestamp;
-@property unsigned int networkSecurity;
-@property unsigned int networkTypeBitMap;
-@property(retain) NSData * oui;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int eventType;
+@property (nonatomic) BOOL hasEventType;
+@property (nonatomic) BOOL hasNetworkSecurity;
+@property (nonatomic) BOOL hasNetworkTypeBitMap;
+@property (nonatomic, readonly) BOOL hasOui;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int networkSecurity;
+@property (nonatomic) unsigned int networkTypeBitMap;
+@property (nonatomic, retain) NSData *oui;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

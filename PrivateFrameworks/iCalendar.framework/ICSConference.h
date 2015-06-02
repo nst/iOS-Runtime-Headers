@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSString;
+@interface ICSConference : ICSProperty
 
-@interface ICSConference : ICSProperty {
-}
-
-@property(retain) NSString * feature;
-@property(retain) NSString * info;
-@property(retain) NSString * language;
-@property(retain) NSString * region;
+@property (nonatomic, retain) NSString *feature;
+@property (nonatomic, retain) NSString *info;
+@property (nonatomic, retain) NSString *language;
+@property (nonatomic, retain) NSString *region;
 
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (id)feature;

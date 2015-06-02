@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DGLFramebuffer;
-
 @interface TSCH3DGLMixinFramebuffer : TSCH3DGLFramebuffer {
     TSCH3DGLFramebuffer *mOriginal;
 }
 
-@property(retain) TSCH3DGLFramebuffer * original;
+@property (nonatomic, retain) TSCH3DGLFramebuffer *original;
 
 - (id)GLHandleForSession:(id)arg1;
 - (BOOL)activateInsideSession:(id)arg1;

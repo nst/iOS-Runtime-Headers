@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@class FMFHandle, NSArray, NSMutableDictionary, NSString, UIAlertView;
-
 @interface FMFLocationSharingViewController : PSListController <FMFSessionDelegateInternal> {
     void *_addressBook;
     NSArray *_allFollowersHandles;
@@ -20,23 +18,23 @@
     BOOL _useFamilyCirclePhotosLoaded;
 }
 
-@property void* addressBook;
-@property(retain) NSArray * allFollowersHandles;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableDictionary * dsidToFamilyPhoto;
-@property(retain) NSArray * familyMembers;
-@property(retain) NSArray * familySpecifiers;
-@property(retain) NSArray * followersHandles;
-@property(retain) NSArray * followersSpecifiers;
-@property(retain) UIAlertView * genericErrorAlert;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * hashedFamilyDsids;
-@property BOOL isMyLocationEnabled;
-@property(retain) FMFHandle * lastSelectedHandle;
-@property(readonly) Class superclass;
-@property BOOL useFamilyCirclePhotos;
-@property BOOL useFamilyCirclePhotosLoaded;
+@property (nonatomic) void*addressBook;
+@property (nonatomic, retain) NSArray *allFollowersHandles;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableDictionary *dsidToFamilyPhoto;
+@property (nonatomic, retain) NSArray *familyMembers;
+@property (nonatomic, retain) NSArray *familySpecifiers;
+@property (nonatomic, retain) NSArray *followersHandles;
+@property (nonatomic, retain) NSArray *followersSpecifiers;
+@property (nonatomic, retain) UIAlertView *genericErrorAlert;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *hashedFamilyDsids;
+@property (nonatomic) BOOL isMyLocationEnabled;
+@property (nonatomic, retain) FMFHandle *lastSelectedHandle;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useFamilyCirclePhotos;
+@property (nonatomic) BOOL useFamilyCirclePhotosLoaded;
 
 - (void).cxx_destruct;
 - (id)_followerHandleWithHashedDSID:(id)arg1;

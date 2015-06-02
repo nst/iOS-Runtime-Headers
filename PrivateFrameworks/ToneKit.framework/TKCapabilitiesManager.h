@@ -7,12 +7,12 @@
     BOOL _ringtoneStoreAvailable;
 }
 
-@property(getter=_isAlertToneStoreAvailable,setter=_setAlertToneStoreAvailable:) BOOL _alertToneStoreAvailable;
-@property(getter=_isRingtoneStoreAvailable,setter=_setRingtoneStoreAvailable:) BOOL _ringtoneStoreAvailable;
-@property(getter=isAlertToneStoreAvailable,readonly) BOOL alertToneStoreAvailable;
-@property(readonly) BOOL hasUserGeneratedVibrationsCapability;
-@property(readonly) BOOL hasVibratorCapability;
-@property(getter=isRingtoneStoreAvailable,readonly) BOOL ringtoneStoreAvailable;
+@property (getter=_isAlertToneStoreAvailable, setter=_setAlertToneStoreAvailable:, nonatomic) BOOL _alertToneStoreAvailable;
+@property (getter=_isRingtoneStoreAvailable, setter=_setRingtoneStoreAvailable:, nonatomic) BOOL _ringtoneStoreAvailable;
+@property (getter=isAlertToneStoreAvailable, nonatomic, readonly) BOOL alertToneStoreAvailable;
+@property (nonatomic, readonly) BOOL hasUserGeneratedVibrationsCapability;
+@property (nonatomic, readonly) BOOL hasVibratorCapability;
+@property (getter=isRingtoneStoreAvailable, nonatomic, readonly) BOOL ringtoneStoreAvailable;
 
 + (id)sharedCapabilitiesManager;
 

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUExtrasCarouselCollectionViewDelegate>;
-
 @interface MPUExtrasCarouselCollectionView : UICollectionView {
     <MPUExtrasCarouselCollectionViewDelegate> *_carouselCollectionViewDelegate;
 }
 
-@property <MPUExtrasCarouselCollectionViewDelegate> * carouselCollectionViewDelegate;
+@property (nonatomic) <MPUExtrasCarouselCollectionViewDelegate> *carouselCollectionViewDelegate;
 
 - (void).cxx_destruct;
 - (id)carouselCollectionViewDelegate;

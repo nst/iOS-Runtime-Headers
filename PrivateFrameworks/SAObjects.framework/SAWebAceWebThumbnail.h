@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
+@interface SAWebAceWebThumbnail : SAWebAcePicture
 
-@interface SAWebAceWebThumbnail : SAWebAcePicture {
-}
-
-@property(copy) NSURL * url;
+@property (nonatomic, copy) NSURL *url;
 
 + (id)aceWebThumbnail;
 + (id)aceWebThumbnailWithDictionary:(id)arg1 context:(id)arg2;

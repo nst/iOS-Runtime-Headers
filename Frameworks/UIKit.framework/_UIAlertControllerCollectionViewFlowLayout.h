@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIAlertControllerVisualStyle;
-
 @interface _UIAlertControllerCollectionViewFlowLayout : UICollectionViewFlowLayout {
     NSArray *_actionDelimiterIndices;
     float _alignedDescriptiveLabelTextWidth;
@@ -12,11 +10,11 @@
     UIAlertControllerVisualStyle *_visualStyle;
 }
 
-@property(retain) NSArray * actionDelimiterIndices;
+@property (nonatomic, retain) NSArray *actionDelimiterIndices;
 @property float alignedDescriptiveLabelTextWidth;
 @property BOOL hideSeparators;
 @property BOOL shouldRoundFirstCell;
-@property UIAlertControllerVisualStyle * visualStyle;
+@property (nonatomic) UIAlertControllerVisualStyle *visualStyle;
 
 + (Class)layoutAttributesClass;
 

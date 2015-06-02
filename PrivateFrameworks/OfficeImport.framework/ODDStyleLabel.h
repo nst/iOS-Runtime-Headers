@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADShapeStyle;
-
 @interface ODDStyleLabel : NSObject {
     OADShapeStyle *mShapeStyle;
 }

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInputPortInternal_FigRecorder, AVCaptureInput_FigRecorder, NSString;
-
 @interface AVCaptureInputPort_FigRecorder : NSObject {
     AVCaptureInputPortInternal_FigRecorder *_internal;
 }
 
-@property(readonly) struct OpaqueCMClock { }* clock;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) struct opaqueCMFormatDescription { }* formatDescription;
-@property(readonly) AVCaptureInput_FigRecorder * input;
-@property(readonly) NSString * mediaType;
+@property (nonatomic, readonly) struct OpaqueCMClock { }*clock;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) struct opaqueCMFormatDescription { }*formatDescription;
+@property (nonatomic, readonly) AVCaptureInput_FigRecorder *input;
+@property (nonatomic, readonly) NSString *mediaType;
 
 + (BOOL)automaticallyNotifiesObserversOfClock;
 + (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;

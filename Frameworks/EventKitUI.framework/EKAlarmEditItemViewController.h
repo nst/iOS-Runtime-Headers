@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalendarEventAlarmTable, EKCalendar, EKUIAlarm, NSString;
-
 @interface EKAlarmEditItemViewController : EKEditItemViewController <CalendarEventAlarmTableDelegate> {
     EKUIAlarm *_alarm;
     unsigned int _alarmIndex;
@@ -16,18 +14,18 @@
     CalendarEventAlarmTable *_table;
 }
 
-@property(retain) EKUIAlarm * alarm;
-@property unsigned int alarmIndex;
-@property BOOL allDay;
-@property(retain) EKCalendar * calendar;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL eventHasTravelTime;
-@property(readonly) unsigned int hash;
-@property int presetIdentifier;
-@property BOOL shouldAllowAlarmsTriggeringAfterStartDate;
-@property BOOL shouldShowLeaveNowOption;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) EKUIAlarm *alarm;
+@property (nonatomic) unsigned int alarmIndex;
+@property (nonatomic) BOOL allDay;
+@property (nonatomic, retain) EKCalendar *calendar;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL eventHasTravelTime;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int presetIdentifier;
+@property (nonatomic) BOOL shouldAllowAlarmsTriggeringAfterStartDate;
+@property (nonatomic) BOOL shouldShowLeaveNowOption;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_storeChanged:(id)arg1;

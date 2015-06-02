@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileContainerManager.framework/MobileContainerManager
  */
 
-@interface MCMPluginKitPluginContainer : MCMContainer {
-}
+@interface MCMPluginKitPluginContainer : MCMContainer
 
 @end

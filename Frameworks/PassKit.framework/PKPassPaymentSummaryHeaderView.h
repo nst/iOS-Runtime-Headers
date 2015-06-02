@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString, UILabel;
-
 @interface PKPassPaymentSummaryHeaderView : UIView {
     UILabel *_titleLabel;
 }
 
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *title;
 
 + (id)_titleFont;
 + (float)preferredHeight;

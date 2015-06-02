@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSDictionary, NSLock, NSMutableArray, NSString;
-
 @interface GEONetworkDefaults : NSObject {
     NSString *_cacheFilePath;
     NSMutableArray *_completionHandlers;
@@ -21,7 +19,7 @@
 - (id)init;
 - (BOOL)needsUpdate;
 - (void)refreshNetworkDefaults;
-- (void)registerNetworkDefaults:(id)arg1;
+- (void)registerNetworkDefaults:(id /* block */)arg1;
 - (id)valueForKey:(id)arg1;
 
 @end

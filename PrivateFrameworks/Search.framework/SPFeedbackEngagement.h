@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString, NSURL;
-
 @interface SPFeedbackEngagement : SPFeedback {
     NSURL *_action_destination;
     NSString *_cardType;
@@ -11,10 +9,10 @@
     BOOL _userReturnedToResultsList;
 }
 
-@property(retain) NSURL * action_destination;
-@property(retain) NSString * cardType;
-@property BOOL engagementOnCard;
-@property BOOL userReturnedToResultsList;
+@property (nonatomic, retain) NSURL *action_destination;
+@property (nonatomic, retain) NSString *cardType;
+@property (nonatomic) BOOL engagementOnCard;
+@property (nonatomic) BOOL userReturnedToResultsList;
 
 - (id)action_destination;
 - (id)cardType;

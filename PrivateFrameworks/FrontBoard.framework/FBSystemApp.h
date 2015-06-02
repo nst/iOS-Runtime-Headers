@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBSceneClientProviderInvalidationAction, NSMapTable, NSMutableDictionary, NSString;
-
 @interface FBSystemApp : UIApplication <BKSSystemApplicationDelegate, FBSSceneUpdater, FBSceneClient, FBSceneClientProvider> {
     NSMapTable *_hostsByIdentifier;
     NSMutableDictionary *_initialClientSettingsByIdentifier;
@@ -11,10 +9,10 @@
     NSMutableDictionary *_scenesByIdentifier;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)preFrontBoardInitializationHook;
 + (BOOL)registerAsSystemApp;
@@ -32,9 +30,9 @@
 - (void)endTransaction;
 - (id)fbsSceneWithIdentifier:(id)arg1;
 - (BOOL)handleDoubleHeightStatusBarTap:(int)arg1;
-- (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id)arg3;
+- (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)host:(id)arg1 didReceiveActions:(id)arg2;
-- (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id)arg5;
+- (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
 - (id)init;
 - (BOOL)isFrontBoard;
 - (BOOL)isSuspended;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class AXLangMap, AXLanguageManager, NSCharacterSet, NSLocale, NSString;
-
 @interface AXDialectMap : NSObject {
     AXLangMap *_langMap;
     NSLocale *_locale;
@@ -13,19 +11,19 @@
     NSString *_voiceName;
 }
 
-@property(readonly) AXLanguageManager * langManager;
-@property AXLangMap * langMap;
-@property(readonly) NSString * languageNameAndLocaleInCurrentLocale;
-@property(readonly) NSString * languageNameAndLocaleInNativeLocale;
-@property(readonly) NSString * languageNameInCurrentLocale;
-@property(readonly) NSString * languageNameInNativeLocale;
-@property(retain) NSLocale * locale;
-@property(readonly) NSString * localeNameInCurrentLocale;
-@property(readonly) NSString * regionID;
-@property(retain) NSCharacterSet * secondaryLanguageRange;
-@property(retain) NSCharacterSet * speakableCharacters;
-@property(copy) NSString * specificLanguageID;
-@property(copy) NSString * voiceName;
+@property (nonatomic, readonly) AXLanguageManager *langManager;
+@property (nonatomic) AXLangMap *langMap;
+@property (nonatomic, readonly) NSString *languageNameAndLocaleInCurrentLocale;
+@property (nonatomic, readonly) NSString *languageNameAndLocaleInNativeLocale;
+@property (nonatomic, readonly) NSString *languageNameInCurrentLocale;
+@property (nonatomic, readonly) NSString *languageNameInNativeLocale;
+@property (nonatomic, retain) NSLocale *locale;
+@property (nonatomic, readonly) NSString *localeNameInCurrentLocale;
+@property (nonatomic, readonly) NSString *regionID;
+@property (nonatomic, retain) NSCharacterSet *secondaryLanguageRange;
+@property (nonatomic, retain) NSCharacterSet *speakableCharacters;
+@property (nonatomic, copy) NSString *specificLanguageID;
+@property (nonatomic, copy) NSString *voiceName;
 
 - (id)basicDescription;
 - (BOOL)canSpeakCharacter:(unsigned short)arg1;

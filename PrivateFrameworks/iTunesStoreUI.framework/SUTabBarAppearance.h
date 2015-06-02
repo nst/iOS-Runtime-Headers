@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableDictionary, UIImage;
-
 @interface SUTabBarAppearance : NSObject <NSCopying> {
     UIImage *_backgroundImage;
     UIImage *_dividerImage;
@@ -14,18 +12,18 @@
     NSMutableDictionary *_titleTextAttributes;
 }
 
-@property(retain) UIImage * backgroundImage;
-@property(retain) UIImage * dividerImage;
-@property(retain) UIImage * selectedDividerImage;
-@property(retain) UIImage * selectionIndicatorImage;
-@property float tabBarButtonSpacing;
-@property float tabBarButtonWidth;
+@property (nonatomic, retain) UIImage *backgroundImage;
+@property (nonatomic, retain) UIImage *dividerImage;
+@property (nonatomic, retain) UIImage *selectedDividerImage;
+@property (nonatomic, retain) UIImage *selectionIndicatorImage;
+@property (nonatomic) float tabBarButtonSpacing;
+@property (nonatomic) float tabBarButtonWidth;
 
 - (id)backgroundImage;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)dividerImage;
-- (void)enumerateTitleTextAttributesUsingBlock:(id)arg1;
+- (void)enumerateTitleTextAttributesUsingBlock:(id /* block */)arg1;
 - (id)selectedDividerImage;
 - (id)selectionIndicatorImage;
 - (void)setBackgroundImage:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class BSCFBundle, LSApplicationProxy, NSDictionary, NSString, NSURL;
-
 @interface FBBundleInfo : NSObject {
     BSCFBundle *_bundle;
     NSString *_bundleIdentifier;
@@ -15,14 +13,14 @@
     LSApplicationProxy *_proxy;
 }
 
-@property(getter=_bundle,retain,readonly) BSCFBundle * bundle;
-@property(copy) NSString * bundleIdentifier;
-@property(copy) NSString * bundleType;
-@property(retain) NSURL * bundleURL;
-@property(copy) NSString * bundleVersion;
-@property(copy) NSString * displayName;
-@property(copy) NSDictionary * extendedInfo;
-@property(getter=_proxy,retain,readonly) LSApplicationProxy * proxy;
+@property (getter=_bundle, nonatomic, readonly, retain) BSCFBundle *bundle;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (nonatomic, copy) NSString *bundleType;
+@property (nonatomic, retain) NSURL *bundleURL;
+@property (nonatomic, copy) NSString *bundleVersion;
+@property (nonatomic, copy) NSString *displayName;
+@property (nonatomic, copy) NSDictionary *extendedInfo;
+@property (getter=_proxy, nonatomic, readonly, retain) LSApplicationProxy *proxy;
 
 - (id)_bundle;
 - (id)_proxy;

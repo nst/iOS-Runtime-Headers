@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKMediaObject, NSString, UIImageView, UILabel;
-
 @interface CKAttachmentView : UIView <CKAttachmentView> {
     UILabel *_actionLabel;
     UIImageView *_iconImageView;
@@ -12,15 +10,15 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) UILabel * actionLabel;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIImageView * iconImageView;
-@property(retain) CKMediaObject * mediaObject;
-@property(retain) UILabel * subtitleLabel;
-@property(readonly) Class superclass;
-@property(retain) UILabel * titleLabel;
+@property (nonatomic, retain) UILabel *actionLabel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImageView *iconImageView;
+@property (nonatomic, retain) CKMediaObject *mediaObject;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (id)action;
 - (id)actionLabel;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUNetworkLockoutViewController : SULockoutViewController {
-}
+@interface SUNetworkLockoutViewController : SULockoutViewController
 
 - (void)_reloadUserInterface;
 - (id)init;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class ACDClient, NSDictionary, NSSet;
-
 @interface ACDClientAuthorization : NSObject {
     ACDClient *_client;
     NSSet *_grantedPermissions;
@@ -11,10 +9,10 @@
     NSDictionary *_options;
 }
 
-@property(retain) ACDClient * client;
-@property(retain) NSSet * grantedPermissions;
-@property BOOL isGranted;
-@property(copy) NSDictionary * options;
+@property (nonatomic, retain) ACDClient *client;
+@property (nonatomic, retain) NSSet *grantedPermissions;
+@property (nonatomic) BOOL isGranted;
+@property (nonatomic, copy) NSDictionary *options;
 
 - (void).cxx_destruct;
 - (id)client;

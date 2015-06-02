@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSDictionary, NSMutableDictionary, NSNumber, NSString, SSItemImageCollection, SUClientInterface, UIImage;
-
 @interface SUSectionsResponse : NSObject {
     BOOL _cacheable;
     SUClientInterface *_clientInterface;
@@ -15,19 +13,19 @@
     NSNumber *_shouldResetUserOrdering;
 }
 
-@property(readonly) NSArray * allSections;
-@property(getter=isCacheable) BOOL cacheable;
-@property(retain) UIImage * moreListImage;
-@property(readonly) SSItemImageCollection * moreListImageCollection;
-@property(retain) UIImage * moreListSelectedImage;
-@property(readonly) NSString * moreListTitle;
-@property(copy,readonly) NSDictionary * rawResponseDictionary;
-@property(readonly) int responseType;
-@property(readonly) NSArray * sections;
-@property(readonly) NSDictionary * sectionsDictionary;
-@property BOOL shouldResetUserOrdering;
-@property(copy) NSString * storeFrontIdentifier;
-@property(readonly) NSString * versionString;
+@property (nonatomic, readonly) NSArray *allSections;
+@property (getter=isCacheable, nonatomic) BOOL cacheable;
+@property (nonatomic, retain) UIImage *moreListImage;
+@property (nonatomic, readonly) SSItemImageCollection *moreListImageCollection;
+@property (nonatomic, retain) UIImage *moreListSelectedImage;
+@property (nonatomic, readonly) NSString *moreListTitle;
+@property (nonatomic, readonly, copy) NSDictionary *rawResponseDictionary;
+@property (nonatomic, readonly) int responseType;
+@property (nonatomic, readonly) NSArray *sections;
+@property (nonatomic, readonly) NSDictionary *sectionsDictionary;
+@property (nonatomic) BOOL shouldResetUserOrdering;
+@property (nonatomic, copy) NSString *storeFrontIdentifier;
+@property (nonatomic, readonly) NSString *versionString;
 
 + (id)lastCachedVersionIdentifier;
 + (id)sectionsCacheDirectory;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class IDSServiceMonitor, NSMutableSet;
-
 @interface IDSServiceContainer : NSObject {
     NSMutableSet *_listeners;
     IDSServiceMonitor *_monitor;
 }
 
-@property(retain,readonly) NSMutableSet * listeners;
-@property(retain) IDSServiceMonitor * monitor;
+@property (nonatomic, readonly, retain) NSMutableSet *listeners;
+@property (nonatomic, retain) IDSServiceMonitor *monitor;
 
 - (BOOL)addListenerID:(id)arg1;
 - (void)dealloc;

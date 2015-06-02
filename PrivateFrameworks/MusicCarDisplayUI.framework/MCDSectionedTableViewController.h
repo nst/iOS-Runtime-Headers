@@ -6,8 +6,8 @@
     unsigned int *_offsetOfSection;
 }
 
-@property(readonly) unsigned int countOfActions;
-@property(readonly) BOOL isSectioning;
+@property (nonatomic, readonly) unsigned int countOfActions;
+@property (nonatomic, readonly) BOOL isSectioning;
 
 - (unsigned int)countOfActions;
 - (void)dealloc;

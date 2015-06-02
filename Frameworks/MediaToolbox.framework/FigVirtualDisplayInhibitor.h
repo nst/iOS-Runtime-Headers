@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@interface FigVirtualDisplayInhibitor : NSObject {
-}
+@interface FigVirtualDisplayInhibitor : NSObject
 
 - (id)init;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;

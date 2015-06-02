@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCWorkerThread : NSThread {
-}
+@interface MCWorkerThread : NSThread
 
 + (id)theThread;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSMutableArray, NSUbiquitousKeyValueStore;
-
 @interface StockManager : NSObject {
     NSMutableArray *_chartDataLRUCache;
     NSMutableArray *_defaultListStockSymbols;

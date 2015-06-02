@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor, UIImage;
-
 @interface SKUIStackViewItemView : UIView {
     UIColor *_borderColor;
     UIImage *_image;
@@ -11,10 +9,10 @@
     BOOL _shouldFlipImageVertical;
 }
 
-@property(copy) UIColor * borderColor;
-@property(retain) UIImage * image;
-@property BOOL shouldFlipImageHorizontal;
-@property BOOL shouldFlipImageVertical;
+@property (nonatomic, copy) UIColor *borderColor;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) BOOL shouldFlipImageHorizontal;
+@property (nonatomic) BOOL shouldFlipImageVertical;
 
 - (void).cxx_destruct;
 - (id)borderColor;

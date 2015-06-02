@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSEntityDescription, NSManagedObjectID;
-
 @interface _CDSnapshot : NSObject <NSCopying, NSMutableCopying> {
     struct _snapshotFlags_st { 
         unsigned int _readOnly : 1; 
@@ -15,8 +13,8 @@
     int _cd_version;
 }
 
-@property(readonly) NSEntityDescription * entity;
-@property(readonly) NSManagedObjectID * objectID;
+@property (nonatomic, readonly) NSEntityDescription *entity;
+@property (nonatomic, readonly) NSManagedObjectID *objectID;
 
 + (void)_entityDeallocated;
 + (id)alloc;

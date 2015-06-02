@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSArray, NSData, NSDictionary, NSString;
-
 @interface GKMatchRequestInternal : GKInternalRepresentation {
     unsigned char _defaultNumberOfPlayers;
     NSString *_inviteMessage;
@@ -20,19 +18,19 @@
     unsigned int _version;
 }
 
-@property unsigned char defaultNumberOfPlayers;
-@property(copy) NSString * inviteMessage;
-@property(retain) NSDictionary * localizableInviteMessage;
-@property unsigned int matchType;
-@property unsigned char maxPlayers;
-@property unsigned char minPlayers;
-@property unsigned int playerAttributes;
-@property int playerGroup;
-@property(retain) NSArray * recipientPlayerIDs;
-@property(retain) NSArray * recipients;
-@property(retain) NSString * rid;
-@property(retain) NSData * sessionToken;
-@property unsigned int version;
+@property (nonatomic) unsigned char defaultNumberOfPlayers;
+@property (nonatomic, copy) NSString *inviteMessage;
+@property (nonatomic, retain) NSDictionary *localizableInviteMessage;
+@property (nonatomic) unsigned int matchType;
+@property (nonatomic) unsigned char maxPlayers;
+@property (nonatomic) unsigned char minPlayers;
+@property (nonatomic) unsigned int playerAttributes;
+@property (nonatomic) int playerGroup;
+@property (nonatomic, retain) NSArray *recipientPlayerIDs;
+@property (nonatomic, retain) NSArray *recipients;
+@property (nonatomic, retain) NSString *rid;
+@property (nonatomic, retain) NSData *sessionToken;
+@property (nonatomic) unsigned int version;
 
 + (id)secureCodedPropertyKeys;
 

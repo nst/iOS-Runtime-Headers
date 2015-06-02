@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUPurchaseManagerDelegate>, NSMutableArray, NSMutableSet, NSSet, NSString, SUQueueSessionManager;
-
 @interface SUPurchaseManager : NSObject <SSDownloadManagerObserver, SSPurchaseRequestDelegate, SSPurchaseRequestDelegatePrivate, SUContinuationDelegate> {
     <SUPurchaseManagerDelegate> *_delegate;
     NSMutableSet *_futurePurchases;
@@ -20,16 +18,16 @@
     BOOL _waitingForAuthentication;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SUPurchaseManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSSet * futurePurchases;
-@property(readonly) unsigned int hash;
-@property(readonly) int numberOfPendingPurchases;
-@property(readonly) NSSet * purchasedItemIdentifiers;
-@property(retain) SUQueueSessionManager * queueSessionManager;
-@property(readonly) Class superclass;
-@property(copy) NSString * userAgent;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SUPurchaseManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSSet *futurePurchases;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int numberOfPendingPurchases;
+@property (nonatomic, readonly) NSSet *purchasedItemIdentifiers;
+@property (nonatomic, retain) SUQueueSessionManager *queueSessionManager;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *userAgent;
 
 - (id)_accountForPurchase:(id)arg1;
 - (void)_addBatchForPurchases:(id)arg1 options:(id)arg2;

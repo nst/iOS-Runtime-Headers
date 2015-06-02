@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOAutomobileOptions, GEOWalkingOptions, GEOWaypoint, GEOWaypointTyped, NSMutableArray;
-
 @interface GEOETARequest : PBRequest <NSCopying> {
     BOOL _allowPartialResults;
     GEOAutomobileOptions *_automobileOptions;
@@ -42,31 +40,31 @@
     GEOWalkingOptions *_walkingOptions;
 }
 
-@property BOOL allowPartialResults;
-@property(retain) GEOAutomobileOptions * automobileOptions;
-@property(retain) NSMutableArray * destinationWaypointTypeds;
-@property(retain) NSMutableArray * destinations;
-@property unsigned int distanceLimitMeters;
-@property BOOL hasAllowPartialResults;
-@property(readonly) BOOL hasAutomobileOptions;
-@property BOOL hasDistanceLimitMeters;
-@property BOOL hasIncludeDistance;
-@property BOOL hasIncludeHistoricTravelTime;
-@property(readonly) BOOL hasOrigin;
-@property(readonly) BOOL hasOriginWaypointTyped;
-@property BOOL hasSessionID;
-@property BOOL hasTimepoint;
-@property BOOL hasTransportType;
-@property(readonly) BOOL hasWalkingOptions;
-@property BOOL includeDistance;
-@property BOOL includeHistoricTravelTime;
-@property(retain) GEOWaypoint * origin;
-@property(retain) GEOWaypointTyped * originWaypointTyped;
-@property(retain) NSMutableArray * serviceTags;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property struct { double x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } timepoint;
-@property int transportType;
-@property(retain) GEOWalkingOptions * walkingOptions;
+@property (nonatomic) BOOL allowPartialResults;
+@property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
+@property (nonatomic, retain) NSMutableArray *destinationWaypointTypeds;
+@property (nonatomic, retain) NSMutableArray *destinations;
+@property (nonatomic) unsigned int distanceLimitMeters;
+@property (nonatomic) BOOL hasAllowPartialResults;
+@property (nonatomic, readonly) BOOL hasAutomobileOptions;
+@property (nonatomic) BOOL hasDistanceLimitMeters;
+@property (nonatomic) BOOL hasIncludeDistance;
+@property (nonatomic) BOOL hasIncludeHistoricTravelTime;
+@property (nonatomic, readonly) BOOL hasOrigin;
+@property (nonatomic, readonly) BOOL hasOriginWaypointTyped;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) BOOL hasTimepoint;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic, readonly) BOOL hasWalkingOptions;
+@property (nonatomic) BOOL includeDistance;
+@property (nonatomic) BOOL includeHistoricTravelTime;
+@property (nonatomic, retain) GEOWaypoint *origin;
+@property (nonatomic, retain) GEOWaypointTyped *originWaypointTyped;
+@property (nonatomic, retain) NSMutableArray *serviceTags;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) struct { double x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } timepoint;
+@property (nonatomic) int transportType;
+@property (nonatomic, retain) GEOWalkingOptions *walkingOptions;
 
 - (void)addDestination:(id)arg1;
 - (void)addDestinationWaypointTyped:(id)arg1;

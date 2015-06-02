@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDocumentInteractionController;
-
 @interface _UIDocumentActivityViewController : UIActivityViewController {
     UIDocumentInteractionController *_documentInteractionController;
     BOOL _hideSystemActivities;
     BOOL hideSystemActivities;
 }
 
-@property UIDocumentInteractionController * documentInteractionController;
-@property BOOL hideSystemActivities;
+@property (nonatomic) UIDocumentInteractionController *documentInteractionController;
+@property (nonatomic) BOOL hideSystemActivities;
 
 - (void)_performActivity:(id)arg1;
 - (void)_prepareActivity:(id)arg1;

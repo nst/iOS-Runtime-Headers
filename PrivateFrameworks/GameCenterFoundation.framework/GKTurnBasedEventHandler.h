@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSObject<GKTurnBasedEventHandlerDelegate>, NSObject<OS_dispatch_queue>;
-
 @interface GKTurnBasedEventHandler : NSObject {
     NSObject<GKTurnBasedEventHandlerDelegate> *_delegateWeak;
     BOOL _didBecomeActive;
     NSObject<OS_dispatch_queue> *_lookForEventQueue;
 }
 
-@property NSObject<GKTurnBasedEventHandlerDelegate> * delegate;
-@property BOOL didBecomeActive;
-@property NSObject<OS_dispatch_queue> * lookForEventQueue;
+@property (nonatomic) NSObject<GKTurnBasedEventHandlerDelegate> *delegate;
+@property (nonatomic) BOOL didBecomeActive;
+@property (nonatomic) NSObject<OS_dispatch_queue> *lookForEventQueue;
 
 + (id)sharedTurnBasedEventHandler;
 

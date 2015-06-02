@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RURadioTrackPreviewAVItem : RURadioAVItem {
-}
+@interface RURadioTrackPreviewAVItem : RURadioAVItem
 
 - (void)loadAssetAndPlayerItem;
 

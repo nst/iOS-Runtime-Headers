@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIBarBackgroundCustomImageContainer : UIImageView {
-}
+@interface _UIBarBackgroundCustomImageContainer : UIImageView
 
 @end

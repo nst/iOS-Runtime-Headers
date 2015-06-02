@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSArray, NSDictionary;
-
 @interface BWBracketSettings : NSObject {
     NSDictionary *_bracketedCaptureOverrides;
     NSArray *_exposureValues;
@@ -12,11 +10,11 @@
     BOOL _providePreBracketedEV0;
 }
 
-@property(copy) NSDictionary * bracketedCaptureOverrides;
-@property(copy) NSArray * exposureValues;
-@property(copy) NSArray * manualExposureBracketedCaptureParams;
-@property(copy) NSDictionary * oisBracketedCaptureParams;
-@property BOOL providePreBracketedEV0;
+@property (nonatomic, copy) NSDictionary *bracketedCaptureOverrides;
+@property (nonatomic, copy) NSArray *exposureValues;
+@property (nonatomic, copy) NSArray *manualExposureBracketedCaptureParams;
+@property (nonatomic, copy) NSDictionary *oisBracketedCaptureParams;
+@property (nonatomic) BOOL providePreBracketedEV0;
 
 + (id)bracketSettings;
 

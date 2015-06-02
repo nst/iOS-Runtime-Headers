@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMetadataFaceObjectInternal;
-
 @interface AVMetadataFaceObject : AVMetadataObject <NSCopying> {
     AVMetadataFaceObjectInternal *_internal;
 }
 
-@property(readonly) int faceID;
-@property(readonly) BOOL hasRollAngle;
-@property(readonly) BOOL hasYawAngle;
-@property(readonly) float rollAngle;
-@property(readonly) float yawAngle;
+@property (readonly) int faceID;
+@property (readonly) BOOL hasRollAngle;
+@property (readonly) BOOL hasYawAngle;
+@property (readonly) float rollAngle;
+@property (readonly) float yawAngle;
 
 + (id)faceObjectWithFigEmbeddedCaptureDeviceFaceDictionary:(id)arg1 input:(id)arg2;
 

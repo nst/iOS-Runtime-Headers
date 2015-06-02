@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
-
 @interface AAAvailabilityResponse : AAResponse {
     NSString *_eta;
     NSString *_feature;
     NSString *_status;
 }
 
-@property(readonly) NSString * eta;
-@property(readonly) NSString * feature;
-@property(readonly) NSString * status;
+@property (nonatomic, readonly) NSString *eta;
+@property (nonatomic, readonly) NSString *feature;
+@property (nonatomic, readonly) NSString *status;
 
 - (void).cxx_destruct;
 - (id)eta;

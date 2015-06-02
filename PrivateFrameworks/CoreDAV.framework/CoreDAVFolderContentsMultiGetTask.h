@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@interface CoreDAVFolderContentsMultiGetTask : CoreDAVContainerMultiGetTask {
-}
+@interface CoreDAVFolderContentsMultiGetTask : CoreDAVContainerMultiGetTask
 
 - (id)copyAdditionalPropElements;
 - (id)initWithURLs:(id)arg1 atContainerURL:(id)arg2 appSpecificDataItemClass:(Class)arg3;

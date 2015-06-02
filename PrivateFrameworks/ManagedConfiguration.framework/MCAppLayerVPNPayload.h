@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSArray, NSString;
-
 @interface MCAppLayerVPNPayload : MCVPNPayloadBase {
     NSArray *_SafariDomains;
     NSString *_VPNUUID;
 }
 
-@property(retain) NSArray * SafariDomains;
-@property(retain) NSString * VPNUUID;
+@property (nonatomic, retain) NSArray *SafariDomains;
+@property (nonatomic, retain) NSString *VPNUUID;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

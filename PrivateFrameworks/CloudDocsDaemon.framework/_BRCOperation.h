@@ -2,34 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BRCSyncContext, BRCThrottle, NSDate, NSError, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSUUID;
-
 @interface _BRCOperation : NSOperation {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     BOOL _executing;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _finishBlock;
-
+    id /* block */ _finishBlock;
     BOOL _finished;
     NSObject<OS_dispatch_group> *_group;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSError *_lastError;
     NSDate *_lastTryDate;
     id _logSections;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _mainBlock;
-
+    id /* block */ _mainBlock;
     NSDate *_nextTryDate;
     BRCThrottle *_operationThrottle;
-    unsigned char _operationUUID[16];
+    unsigned char _operationUUID;
     NSObject<OS_dispatch_source> *_retryTimer;
     NSDate *_startDate;
     NSMutableArray *_subOperations;
@@ -38,17 +24,17 @@
     BOOL _usesBackgroundSession;
 }
 
-@property(readonly) NSObject<OS_dispatch_queue> * callbackQueue;
-@property(readonly) NSError * error;
-@property(getter=isExecuting) BOOL executing;
-@property(copy) id finishBlock;
-@property(getter=isFinished) BOOL finished;
-@property(readonly) id logSections;
-@property(copy) id mainBlock;
-@property(readonly) NSUUID * operationID;
-@property BRCThrottle * operationThrottle;
-@property(readonly) BRCSyncContext * syncContext;
-@property BOOL usesBackgroundSession;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic, readonly) NSError *error;
+@property (getter=isExecuting, nonatomic) BOOL executing;
+@property (nonatomic, copy) id /* block */ finishBlock;
+@property (getter=isFinished, nonatomic) BOOL finished;
+@property (nonatomic, readonly) id logSections;
+@property (nonatomic, copy) id /* block */ mainBlock;
+@property (nonatomic, readonly) NSUUID *operationID;
+@property (nonatomic) BRCThrottle *operationThrottle;
+@property (nonatomic, readonly) BRCSyncContext *syncContext;
+@property (nonatomic) BOOL usesBackgroundSession;
 
 - (void).cxx_destruct;
 - (void)_completedWithResult:(id)arg1 error:(id)arg2;
@@ -57,17 +43,17 @@
 - (BOOL)_finishIfCancelled;
 - (void)_main;
 - (void)_scheduleExecutionWithPreviousError:(id)arg1 throttle:(id)arg2;
-- (void)addRegisterSubscriptionForZoneID:(id)arg1 completion:(id)arg2;
+- (void)addRegisterSubscriptionForZoneID:(id)arg1 completion:(id /* block */)arg2;
 - (void)addSubOperation:(id)arg1;
 - (void)addSubOperation:(id)arg1 overrideContext:(id)arg2;
-- (void)addZoneCreationWithZoneID:(id)arg1 completion:(id)arg2;
+- (void)addZoneCreationWithZoneID:(id)arg1 completion:(id /* block */)arg2;
 - (id)callbackQueue;
 - (void)cancel;
 - (void)completedWithResult:(id)arg1 error:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)error;
-- (id)finishBlock;
+- (id /* block */)finishBlock;
 - (BOOL)finishIfCancelled;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)init;
@@ -80,14 +66,14 @@
 - (BOOL)isFinished;
 - (id)logSections;
 - (void)main;
-- (id)mainBlock;
+- (id /* block */)mainBlock;
 - (id)operationID;
 - (id)operationThrottle;
 - (void)schedule;
 - (void)setExecuting:(BOOL)arg1;
-- (void)setFinishBlock:(id)arg1;
+- (void)setFinishBlock:(id /* block */)arg1;
 - (void)setFinished:(BOOL)arg1;
-- (void)setMainBlock:(id)arg1;
+- (void)setMainBlock:(id /* block */)arg1;
 - (void)setOperationThrottle:(id)arg1;
 - (void)setUsesBackgroundSession:(BOOL)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;

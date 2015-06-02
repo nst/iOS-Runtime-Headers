@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFAccountLoader : NSObject {
-}
+@interface MFAccountLoader : NSObject
 
 + (Class)_accountClassForString:(id)arg1 error:(id*)arg2;
 + (id)_accountClassStringWithPersistentAccount:(id)arg1 error:(id*)arg2;

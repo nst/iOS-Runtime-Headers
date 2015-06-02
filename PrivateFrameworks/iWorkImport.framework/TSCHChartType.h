@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartFeature;
-
 @interface TSCHChartType : NSObject <TSDMixing> {
     TSCHChartFeature *mFeature;
 }

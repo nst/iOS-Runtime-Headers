@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class UIImage, UIImageView;
-
 @interface MCDTableViewCell : UITableViewCell {
     UIImageView *_artworkImageView;
     float _originalLeftInset;
 }
 
-@property(retain) UIImage * artworkImage;
+@property (nonatomic, retain) UIImage *artworkImage;
 
 - (void).cxx_destruct;
 - (id)artworkImage;

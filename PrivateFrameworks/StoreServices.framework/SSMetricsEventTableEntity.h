@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSMetricsEventTableEntity : SSSQLiteEntity {
-}
+@interface SSMetricsEventTableEntity : SSSQLiteEntity
 
 + (id)databaseTable;
 

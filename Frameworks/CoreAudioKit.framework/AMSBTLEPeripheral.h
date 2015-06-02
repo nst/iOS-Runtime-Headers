@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@class CBCentralManager, CBPeripheral, NSString;
-
 @interface AMSBTLEPeripheral : NSObject {
     BOOL _changingState;
     BOOL available;
@@ -17,15 +15,15 @@
     NSString *uuid;
 }
 
-@property(getter=isAvailable) BOOL available;
-@property(getter=isChangingState) BOOL changingState;
+@property (getter=isAvailable) BOOL available;
+@property (getter=isChangingState) BOOL changingState;
 @property BOOL inputAvailable;
 @property double lastSeen;
-@property(retain) NSString * name;
-@property(getter=isOnline) BOOL online;
+@property (retain) NSString *name;
+@property (getter=isOnline) BOOL online;
 @property BOOL outputAvailable;
-@property(readonly) CBPeripheral * peripheral;
-@property(retain,readonly) NSString * uuid;
+@property (readonly) CBPeripheral *peripheral;
+@property (readonly, retain) NSString *uuid;
 
 - (BOOL)canConnect;
 - (BOOL)connect;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class BLPixelImageBuffer, CIFilter, NSMutableDictionary;
-
 @interface BLPEModel : NSObject {
     NSMutableDictionary *_AdaptiveGradientProcessingCache;
     NSMutableDictionary *_InkProcessingCache;
@@ -21,14 +19,14 @@
     CIFilter *_warmAndCoolFilter;
 }
 
-@property(retain) CIFilter * auraFilter;
-@property(retain) CIFilter * blackAndWhiteFilter;
-@property(retain) CIFilter * dramaFilter;
-@property(retain) CIFilter * duotoneFilter;
-@property BOOL liveInteraction;
-@property(retain) CIFilter * photoFiltersFilter;
-@property(retain) CIFilter * vintageFilter;
-@property(retain) CIFilter * warmAndCoolFilter;
+@property (nonatomic, retain) CIFilter *auraFilter;
+@property (nonatomic, retain) CIFilter *blackAndWhiteFilter;
+@property (nonatomic, retain) CIFilter *dramaFilter;
+@property (nonatomic, retain) CIFilter *duotoneFilter;
+@property (nonatomic) BOOL liveInteraction;
+@property (nonatomic, retain) CIFilter *photoFiltersFilter;
+@property (nonatomic, retain) CIFilter *vintageFilter;
+@property (nonatomic, retain) CIFilter *warmAndCoolFilter;
 
 - (id)auraFilter;
 - (id)blackAndWhiteFilter;

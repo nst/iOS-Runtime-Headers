@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSCache, NSObject<OS_dispatch_queue>;
-
 @interface PLPlaceholderThumbnailManager : NSObject {
     NSObject<OS_dispatch_queue> *_isolation;
     NSCache *_placeholderDataCache;

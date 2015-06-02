@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSSearchIndexOperationDelegate>, PSSearchEntry;
-
 @interface PSSearchIndexOperation : NSOperation {
     <PSSearchIndexOperationDelegate> *_delegate;
     PSSearchEntry *_searchEntry;
 }
 
-@property <PSSearchIndexOperationDelegate> * delegate;
-@property(readonly) PSSearchEntry * searchEntry;
+@property (nonatomic) <PSSearchIndexOperationDelegate> *delegate;
+@property (nonatomic, readonly) PSSearchEntry *searchEntry;
 
 + (id)_bundleForSearchEntry:(id)arg1 thirdPartyApp:(BOOL*)arg2 checkManifest:(BOOL*)arg3;
 + (id)_loadSearchEntriesFromPlistForEntry:(id)arg1 bundle:(id)arg2;

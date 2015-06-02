@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKStackingViewControllerDelegate>, NSArray, NSLayoutConstraint, NSMapTable, NSMutableSet, NSString, UIScrollView, UIView, UIViewController, _MKStackView, _MKStackingContentView, _MKStackingPlaceholderView;
-
 @interface MKStackingViewController : UIViewController <UIScrollViewDelegate> {
     _MKStackingContentView *_contentView;
     unsigned int _countOfCurrentLayoutInvocations;
@@ -30,16 +28,16 @@
     BOOL _willRelayoutForPreferredContentSizeChange;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIView * headerView;
-@property UIViewController * selectedViewController;
-@property(retain) UIView * selectorView;
-@property <MKStackingViewControllerDelegate> * stackingDelegate;
-@property(readonly) Class superclass;
-@property(retain) UIView * titleView;
-@property(copy) NSArray * viewControllers;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIView *headerView;
+@property (nonatomic) UIViewController *selectedViewController;
+@property (nonatomic, retain) UIView *selectorView;
+@property (nonatomic) <MKStackingViewControllerDelegate> *stackingDelegate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *titleView;
+@property (nonatomic, copy) NSArray *viewControllers;
 
 - (void).cxx_destruct;
 - (void)_addPreferredHeightConstraintForViewControllerIfNeeded:(id)arg1;

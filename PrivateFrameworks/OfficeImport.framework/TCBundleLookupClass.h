@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface TCBundleLookupClass : NSObject {
-}
+@interface TCBundleLookupClass : NSObject
 
 @end

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFMimeTextAttachment, NSData;
-
 @interface MFMailInlineTextAttachment : MFMessageTextAttachment {
     struct CGSize { 
         float width; 
         float height; 
     } _cachedImageSize;
     BOOL _displayableAsIcon;
-    unsigned int _hasBeenDownloaded : 1;
+    unsigned int _hasBeenDownloaded;
     NSData *_iconImageData;
     MFMimeTextAttachment *_original;
 }

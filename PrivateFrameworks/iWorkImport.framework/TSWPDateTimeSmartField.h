@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDate, NSString;
-
 @interface TSWPDateTimeSmartField : TSWPSmartField {
     NSDate *_date;
     long _dateStyle;
@@ -14,13 +12,13 @@
     int _updatePlan;
 }
 
-@property(copy) NSDate * date;
-@property long dateStyle;
-@property(copy) NSString * format;
-@property(copy) NSString * localeIdentifier;
-@property BOOL needsUpdate;
-@property long timeStyle;
-@property int updatePlan;
+@property (nonatomic, copy) NSDate *date;
+@property (nonatomic) long dateStyle;
+@property (nonatomic, copy) NSString *format;
+@property (nonatomic, copy) NSString *localeIdentifier;
+@property (nonatomic) BOOL needsUpdate;
+@property (nonatomic) long timeStyle;
+@property (nonatomic) int updatePlan;
 
 + (id)dateStringFromTime:(double)arg1 withFormat:(id)arg2 localeIdentifier:(id)arg3 dateStyle:(long)arg4 timeStyle:(long)arg5;
 + (id)newDateFormatWithLocaleIdentifier:(id)arg1 dateStyle:(long)arg2 timeStyle:(long)arg3;

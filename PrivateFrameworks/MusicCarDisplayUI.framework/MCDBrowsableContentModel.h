@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSCache, NSMapTable, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MCDBrowsableContentModel : NSObject {
     NSObject<OS_dispatch_queue> *_backgroundQueue;
     NSString *_bundleID;
@@ -19,8 +17,8 @@
     NSObject<OS_dispatch_queue> *_serialAccessQueue;
 }
 
-@property(copy,readonly) NSString * bundleID;
-@property struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, readonly, copy) NSString *bundleID;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
 
 - (void).cxx_destruct;
 - (void)_contentItemsUpdated:(id)arg1;
@@ -36,8 +34,8 @@
 - (id)contentItemForIndexPath:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (void)fetchChildrenAtIndexPath:(id)arg1 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 completionHandler:(id)arg3;
-- (void)getCountOfItemsForIndexPath:(id)arg1 completionHandler:(id)arg2;
+- (void)fetchChildrenAtIndexPath:(id)arg1 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)getCountOfItemsForIndexPath:(id)arg1 completionHandler:(id /* block */)arg2;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithBundleID:(id)arg1;
 - (void)initiatePlaybackAtIndexPath:(id)arg1;

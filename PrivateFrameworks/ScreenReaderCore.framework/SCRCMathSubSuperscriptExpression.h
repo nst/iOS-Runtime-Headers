@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class SCRCMathExpression;
-
 @interface SCRCMathSubSuperscriptExpression : SCRCMathExpression {
     SCRCMathExpression *_base;
     SCRCMathExpression *_subscript;
     SCRCMathExpression *_superscript;
 }
 
-@property(retain) SCRCMathExpression * base;
-@property(retain) SCRCMathExpression * subscript;
-@property(retain) SCRCMathExpression * superscript;
+@property (nonatomic, retain) SCRCMathExpression *base;
+@property (nonatomic, retain) SCRCMathExpression *subscript;
+@property (nonatomic, retain) SCRCMathExpression *superscript;
 
 - (id)_stringToAddForSuperscript:(id)arg1 withPriorDescription:(id)arg2 updatedDescription:(id*)arg3;
 - (id)base;

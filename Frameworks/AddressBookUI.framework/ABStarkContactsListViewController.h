@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStarkContactsListViewControllerDelegate>, ABMembersDataSource, ABModel, ABStarkNoContentBannerView, AVExternalDevice, NSString;
-
 @interface ABStarkContactsListViewController : UITableViewController <ABContactViewControllerDelegate, ABMembersDataSourceDelegate> {
     ABMembersDataSource *_dataSource;
     AVExternalDevice *_externalDevice;
@@ -13,14 +11,14 @@
     <ABStarkContactsListViewControllerDelegate> *_peoplePickerDelegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) AVExternalDevice * externalDevice;
-@property(readonly) unsigned int hash;
-@property BOOL limitedUI;
-@property(retain) ABStarkNoContentBannerView * overlayView;
-@property <ABStarkContactsListViewControllerDelegate> * peoplePickerDelegate;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) AVExternalDevice *externalDevice;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL limitedUI;
+@property (nonatomic, retain) ABStarkNoContentBannerView *overlayView;
+@property (nonatomic) <ABStarkContactsListViewControllerDelegate> *peoplePickerDelegate;
+@property (readonly) Class superclass;
 
 - (BOOL)abDataSource:(id)arg1 selectedPerson:(void*)arg2 atIndexPath:(id)arg3 withMemberCell:(id)arg4 animate:(BOOL)arg5;
 - (BOOL)abDataSource:(id)arg1 shouldAllowSelectingPersonWithRecordID:(int)arg2;

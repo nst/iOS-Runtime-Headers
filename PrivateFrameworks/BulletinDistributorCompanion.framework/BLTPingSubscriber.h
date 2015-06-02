@@ -2,26 +2,24 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class <BLTPingService>, NSMutableDictionary, NSString;
-
 @interface BLTPingSubscriber : NSObject <BLTPingSubscribing> {
     NSMutableDictionary *_bulletinHandlers;
     NSMutableDictionary *_pingHandlers;
     <BLTPingService> *_service;
 }
 
-@property(retain) NSMutableDictionary * bulletinHandlers;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableDictionary * pingHandlers;
-@property(retain) <BLTPingService> * service;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSMutableDictionary *bulletinHandlers;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *pingHandlers;
+@property (nonatomic, retain) <BLTPingService> *service;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)bulletinHandlers;
-- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id)arg2;
-- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id)arg3;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id /* block */)arg2;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (id)initWithService:(id)arg1;
 - (id)pingHandlers;
@@ -36,8 +34,8 @@
 - (void)setBulletinHandlers:(id)arg1;
 - (void)setPingHandlers:(id)arg1;
 - (void)setService:(id)arg1;
-- (void)subscribeToSectionID:(id)arg1 withBulletinHandler:(id)arg2;
-- (void)subscribeToSectionID:(id)arg1 withPingHandler:(id)arg2;
+- (void)subscribeToSectionID:(id)arg1 withBulletinHandler:(id /* block */)arg2;
+- (void)subscribeToSectionID:(id)arg1 withPingHandler:(id /* block */)arg2;
 - (void)subscribeWithMachServiceName:(id)arg1;
 - (void)unsubscribeFromSectionID:(id)arg1;
 

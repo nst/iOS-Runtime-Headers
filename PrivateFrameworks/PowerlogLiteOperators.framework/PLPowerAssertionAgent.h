@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableArray, NSMutableDictionary, PLCFNotificationOperatorComposition, PLEntryNotificationOperatorComposition, PLNSTimerOperatorComposition;
-
 @interface PLPowerAssertionAgent : PLAgent {
     NSMutableDictionary *_assertionAggregatedLastSample;
     PLCFNotificationOperatorComposition *_assertionBufferFullNotification;
@@ -19,19 +17,19 @@
     PLEntryNotificationOperatorComposition *_wakeNotification;
 }
 
-@property(retain) NSMutableDictionary * assertionAggregatedLastSample;
-@property(retain) PLCFNotificationOperatorComposition * assertionBufferFullNotification;
-@property BOOL assertionBufferFullNotificationActive;
-@property(retain) PLNSTimerOperatorComposition * assertionBufferFullNotificationRearmTimer;
-@property(retain) NSMutableArray * assertionBufferNotificationTracking;
-@property(retain) PLCFNotificationOperatorComposition * assertionNotification;
-@property(retain) PLNSTimerOperatorComposition * assertionSnapShotTimer;
-@property BOOL assertionSnapshotTimerActive;
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelNotificiations;
-@property(retain) PLEntryNotificationOperatorComposition * canSleepNotification;
+@property (nonatomic, retain) NSMutableDictionary *assertionAggregatedLastSample;
+@property (retain) PLCFNotificationOperatorComposition *assertionBufferFullNotification;
+@property (nonatomic) BOOL assertionBufferFullNotificationActive;
+@property (retain) PLNSTimerOperatorComposition *assertionBufferFullNotificationRearmTimer;
+@property (retain) NSMutableArray *assertionBufferNotificationTracking;
+@property (retain) PLCFNotificationOperatorComposition *assertionNotification;
+@property (retain) PLNSTimerOperatorComposition *assertionSnapShotTimer;
+@property (nonatomic) BOOL assertionSnapshotTimerActive;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelNotificiations;
+@property (retain) PLEntryNotificationOperatorComposition *canSleepNotification;
 @property BOOL firstBufferDrain;
-@property(retain) PLNSTimerOperatorComposition * runQueryTimer;
-@property(retain) PLEntryNotificationOperatorComposition * wakeNotification;
+@property (retain) PLNSTimerOperatorComposition *runQueryTimer;
+@property (retain) PLEntryNotificationOperatorComposition *wakeNotification;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

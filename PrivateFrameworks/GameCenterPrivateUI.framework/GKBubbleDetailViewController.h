@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKHorizontalBubbleControlsView, GKLabel, GKPlayerWithSpeechBalloonView, NSArray, UIImageView;
-
 @interface GKBubbleDetailViewController : GKCenteredContentViewController {
     NSArray *_activeConstraints;
     GKHorizontalBubbleControlsView *_bubblesView;
@@ -21,26 +19,26 @@
     GKLabel *_titleLabel;
 }
 
-@property(retain) NSArray * activeConstraints;
-@property(retain) GKHorizontalBubbleControlsView * bubblesView;
-@property(retain) GKLabel * descriptionLabel;
-@property BOOL didFloatInBubbles;
-@property BOOL didTransition;
-@property(retain) GKLabel * disabledFunctionalityLabel;
-@property(retain) UIImageView * iconView;
-@property(retain) NSArray * landscapeConstraints;
-@property(retain) GKPlayerWithSpeechBalloonView * playerWithSpeechView;
-@property(retain) NSArray * portraitConstraints;
-@property BOOL showDescriptionView;
-@property BOOL showPlayerWithSpeechView;
-@property(retain) GKLabel * subtitleLabel;
-@property(retain) GKLabel * titleLabel;
+@property (nonatomic, retain) NSArray *activeConstraints;
+@property (nonatomic, retain) GKHorizontalBubbleControlsView *bubblesView;
+@property (nonatomic, retain) GKLabel *descriptionLabel;
+@property (nonatomic) BOOL didFloatInBubbles;
+@property (nonatomic) BOOL didTransition;
+@property (nonatomic, retain) GKLabel *disabledFunctionalityLabel;
+@property (nonatomic, retain) UIImageView *iconView;
+@property (nonatomic, retain) NSArray *landscapeConstraints;
+@property (nonatomic, retain) GKPlayerWithSpeechBalloonView *playerWithSpeechView;
+@property (nonatomic, retain) NSArray *portraitConstraints;
+@property (nonatomic) BOOL showDescriptionView;
+@property (nonatomic) BOOL showPlayerWithSpeechView;
+@property (nonatomic, retain) GKLabel *subtitleLabel;
+@property (nonatomic, retain) GKLabel *titleLabel;
 
 + (Class)iconViewClass;
 
 - (void)activateAppropriateConstraints;
 - (id)activeConstraints;
-- (void)animateOutBubbleWithFocus:(int)arg1 completion:(id)arg2;
+- (void)animateOutBubbleWithFocus:(int)arg1 completion:(id /* block */)arg2;
 - (id)bubblesView;
 - (void)dealloc;
 - (id)descriptionLabel;

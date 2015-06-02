@@ -2,17 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CIColor, NSString;
-
 @interface UIColor : NSObject <NSCopying, NSSecureCoding> {
     NSString *_systemColorName;
 }
 
-@property(readonly) struct CGColor { }* CGColor;
-@property(readonly) CIColor * CIColor;
-@property(getter=_systemColorName,setter=_setSystemColorName:,retain) NSString * systemColorName;
+@property (nonatomic, readonly) struct CGColor { }*CGColor;
+@property (nonatomic, readonly) CIColor *CIColor;
+@property (getter=_systemColorName, setter=_setSystemColorName:, nonatomic, retain) NSString *systemColorName;
 
-+ (id)SCNJSExportProtocol;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)__halfTransparentBlackColor;
 + (id)__halfTransparentWhiteColor;
 + (id)_accessibilityButtonShapesBackgroundColorOnDark;
@@ -43,14 +42,9 @@
 + (id)_externalSystemSuperDarkGrayColor;
 + (id)_externalSystemWhiteColor;
 + (id)_grayColorForFontSize:(float)arg1;
-+ (id)_iAd_colorWithRGBA:(unsigned int)arg1;
 + (float)_luminanceWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3;
-+ (id)_mapkit_userLocationAccuracyRingFillColor;
-+ (id)_mapkit_userLocationAccuracyRingStrokeColor;
-+ (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
 + (id)_markedTextBackgroundColor;
 + (id)_markedTextBorderColor;
-+ (id)_remoteUI_colorWithString:(id)arg1;
 + (id)_systemColorForColor:(id)arg1 withName:(id)arg2;
 + (id)_systemColorWithName:(id)arg1;
 + (id)_systemDestructiveTintColor;
@@ -66,38 +60,17 @@
 + (id)_vibrantLightSectionDelimiterDividerBurnColor;
 + (id)_vibrantLightSectionDelimiterDividerDarkeningColor;
 + (id)_webContentBackgroundColor;
-+ (id)ab_colorWithR:(float)arg1 G:(float)arg2 B:(float)arg3 A:(float)arg4;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)blackColor;
 + (id)blueColor;
 + (id)brownColor;
-+ (id)cardBackgroundInPopoverColor;
-+ (id)cardCellBackgroundColor;
-+ (id)cardCellReadonlyBackgroundColor;
-+ (id)cardCellSeparatorColor;
-+ (id)cardLabelReadonlyTextColor;
-+ (id)cardValueReadonlyTextColor;
-+ (id)cardValueTextColor;
-+ (id)checkerboardColorWithColor:(id)arg1 andColor:(id)arg2 squareSize:(struct CGSize { float x1; float x2; })arg3;
-+ (id)checkerboardColorWithColor:(id)arg1 andColor:(id)arg2 squareSize:(struct CGSize { float x1; float x2; })arg3;
 + (id)classFallbacksForKeyedArchiver;
 + (id)clearColor;
-+ (id)color:(float)arg1 :(float)arg2 :(float)arg3 :(float)arg4;
-+ (id)colorWithC3DColor4:(const struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg1;
 + (id)colorWithCGColor:(struct CGColor { }*)arg1;
 + (id)colorWithCIColor:(id)arg1;
-+ (id)colorWithCSSString:(id)arg1;
-+ (id)colorWithComponentRGBA:(struct { float x1; float x2; float x3; float x4; })arg1;
 + (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
-+ (id)colorWithPKColor:(id)arg1;
 + (id)colorWithPatternImage:(id)arg1;
-+ (id)colorWithR:(int)arg1 G:(int)arg2 B:(int)arg3 alpha:(float)arg4;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-+ (id)colorWithStyleString:(id)arg1;
-+ (id)colorWithWebColor:(id)arg1;
-+ (id)colorWithWebColorName:(id)arg1;
-+ (id)colorWithWebHexTriplet:(id)arg1;
-+ (id)colorWithWebRgb:(id)arg1;
 + (id)colorWithWhite:(float)arg1 alpha:(float)arg2;
 + (id)cyanColor;
 + (id)darkGrayColor;
@@ -105,65 +78,6 @@
 + (id)externalSystemGreenColor;
 + (id)externalSystemRedColor;
 + (id)externalSystemTealColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeDarkSeparatorColor;
-+ (id)faceTimeDarkSeparatorColor;
-+ (id)faceTimeDarkSeparatorColor;
-+ (id)faceTimeDarkSeparatorColor;
-+ (id)faceTimeDarkSeparatorColor;
-+ (id)faceTimeDarkSeparatorColor;
-+ (id)faceTimeDarkSeparatorColor;
-+ (id)faceTimeDarkSeparatorColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightSeparatorColor;
-+ (id)faceTimeLightSeparatorColor;
-+ (id)faceTimeLightSeparatorColor;
-+ (id)faceTimeLightSeparatorColor;
-+ (id)faceTimeLightSeparatorColor;
-+ (id)faceTimeLightSeparatorColor;
-+ (id)faceTimeLightSeparatorColor;
-+ (id)faceTimeLightSeparatorColor;
-+ (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
-+ (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)fmfOrangeColor;
-+ (id)grayCheckerboardColor;
-+ (id)grayCheckerboardColor;
 + (id)grayColor;
 + (id)greenColor;
 + (id)groupTableViewBackgroundColor;
@@ -178,7 +92,6 @@
 + (id)orangeColor;
 + (id)pinStripeColor;
 + (id)purpleColor;
-+ (id)randomColor;
 + (id)redColor;
 + (id)scrollViewTexturedBackgroundColor;
 + (id)sectionHeaderBackgroundColor;
@@ -187,16 +100,6 @@
 + (id)sectionListBorderColor;
 + (id)selectionGrabberColor;
 + (id)selectionHighlightColor;
-+ (id)siriui_glyphColor;
-+ (id)siriui_highlightColor;
-+ (id)siriui_keylineColor;
-+ (id)siriui_keylineColorStark;
-+ (id)siriui_maskingColor;
-+ (id)siriui_maskingHighlightColor;
-+ (id)siriui_semiTransparentTextColor;
-+ (id)siriui_snippetBackgroundColor;
-+ (id)siriui_textColor;
-+ (id)siriui_textHighlightColor;
 + (BOOL)supportsSecureCoding;
 + (id)systemBlueColor;
 + (id)systemDarkBlueColor;
@@ -235,90 +138,253 @@
 + (id)tableSeparatorDarkColor;
 + (id)tableSeparatorLightColor;
 + (id)tableShadowColor;
-+ (id)tableViewBackgroundColorOpaque;
-+ (id)tableViewCellDarkBlueTextColor;
-+ (id)tableViewCellDarkBlueTextColor;
 + (id)textFieldAtomBlueColor;
 + (id)textFieldAtomPurpleColor;
-+ (id)transparentGrayCheckerboardColor;
-+ (id)transparentGrayCheckerboardColor;
 + (id)underPageBackgroundColor;
-+ (id)verifiedColor;
 + (id)viewFlipsideBackgroundColor;
 + (id)whiteColor;
 + (id)yellowColor;
 
 - (struct CGColor { }*)CGColor;
 - (id)CIColor;
-- (BOOL)SCNColorGetRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (id)_colorBlendedWithColor:(id)arg1;
 - (id)_colorBlendedWithColor:(id)arg1 compositingFilter:(id)arg2;
 - (id)_colorBlendedWithColors:(id)arg1;
 - (float)_colorDifferenceFromColor:(id)arg1;
 - (BOOL)_getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (BOOL)_getWhite:(float*)arg1 alpha:(float*)arg2;
-- (float)_gkLuminance;
 - (BOOL)_isSimilarToColor:(id)arg1 withinPercentage:(float)arg2;
 - (float)_luminance;
 - (float)_luminanceDifferenceFromColor:(id)arg1;
-- (id)_mapkit_blendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
-- (BOOL)_mapkit_getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
-- (BOOL)_mapkit_isWhite;
 - (void)_setSystemColorName:(id)arg1;
 - (id)_systemColorName;
-- (float)a;
-- (float)alpha;
 - (float)alphaComponent;
-- (float)b;
-- (float)blue;
-- (float)blueComponent;
-- (float)brightnessComponent;
-- (id)burnWithColor:(id)arg1;
 - (struct CGColor { }*)cgColor;
 - (Class)classForCoder;
-- (id)colorByAlteringOpacityToPercentage:(float)arg1;
-- (id)colorByBlendingWithColor:(id)arg1;
-- (BOOL)colorToC3DColor4:(struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg1;
 - (id)colorWithAlphaComponent:(float)arg1;
-- (struct { float x1; float x2; float x3; float x4; })componentRGBA;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)darkerColorByPercentage:(float)arg1;
 - (void)dealloc;
-- (float)differenceFromColor:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (float)g;
 - (BOOL)getHue:(float*)arg1 saturation:(float*)arg2 brightness:(float*)arg3 alpha:(float*)arg4;
 - (BOOL)getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (BOOL)getWhite:(float*)arg1 alpha:(float*)arg2;
-- (float)green;
-- (float)greenComponent;
 - (unsigned int)hash;
-- (float)hueComponent;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
 - (id)initWithCIColor:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 - (id)initWithPatternImage:(id)arg1;
-- (id)initWithR:(int)arg1 G:(int)arg2 B:(int)arg3 alpha:(float)arg4;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
-- (id)initWithStyleString:(id)arg1;
 - (id)initWithWhite:(float)arg1 alpha:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isGreenOrYellow;
 - (BOOL)isPatternColor;
-- (float)luminance;
-- (id)overlayWithColor:(id)arg1;
-- (id)pu_colorWithIncreasedAlpha;
-- (id)pu_colorWithIncreasedBrightness;
-- (float)r;
-- (float)red;
-- (float)redComponent;
-- (float)saturationComponent;
 - (void)set;
 - (void)setFill;
 - (void)setStroke;
-- (id)soverWithColor:(id)arg1;
 - (id)styleString;
+
+// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+
++ (id)ab_colorWithR:(float)arg1 G:(float)arg2 B:(float)arg3 A:(float)arg4;
++ (id)cardBackgroundInPopoverColor;
++ (id)cardCellBackgroundColor;
++ (id)cardCellReadonlyBackgroundColor;
++ (id)cardCellSeparatorColor;
++ (id)cardLabelReadonlyTextColor;
++ (id)cardValueReadonlyTextColor;
++ (id)cardValueTextColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)randomColor;
+
+// Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
+
++ (id)tableViewBackgroundColorOpaque;
+
+- (float)blueComponent;
+- (float)brightnessComponent;
+- (id)burnWithColor:(id)arg1;
+- (float)differenceFromColor:(id)arg1;
+- (float)greenComponent;
+- (float)hueComponent;
+- (BOOL)isGreenOrYellow;
+- (float)luminance;
+- (id)overlayWithColor:(id)arg1;
+- (float)redComponent;
+- (float)saturationComponent;
+- (id)soverWithColor:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
++ (id)_mapkit_userLocationAccuracyRingFillColor;
++ (id)_mapkit_userLocationAccuracyRingStrokeColor;
++ (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
+
+- (id)_mapkit_blendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
+- (BOOL)_mapkit_getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (BOOL)_mapkit_isWhite;
+
+// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+
++ (id)colorWithPKColor:(id)arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)pu_colorWithIncreasedAlpha;
+- (id)pu_colorWithIncreasedBrightness;
+
+// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
+
++ (id)SCNJSExportProtocol;
++ (id)color:(float)arg1 :(float)arg2 :(float)arg3 :(float)arg4;
++ (id)colorWithC3DColor4:(const struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg1;
+
+- (BOOL)SCNColorGetRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
+- (float)a;
+- (float)b;
+- (BOOL)colorToC3DColor4:(struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg1;
+- (float)g;
+- (float)r;
+
+// Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
+
++ (id)colorWithComponentRGBA:(struct { float x1; float x2; float x3; float x4; })arg1;
+
+- (float)alpha;
+- (float)blue;
+- (struct { float x1; float x2; float x3; float x4; })componentRGBA;
+- (float)green;
+- (float)red;
+
+// Image: /System/Library/Frameworks/iAd.framework/iAd
+
++ (id)_iAd_colorWithRGBA:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
+
++ (id)verifiedColor;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (id)colorByBlendingWithColor:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
+
++ (id)fmfOrangeColor;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (float)_gkLuminance;
+
+// Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
+
++ (id)colorWithCSSString:(id)arg1;
++ (id)colorWithR:(int)arg1 G:(int)arg2 B:(int)arg3 alpha:(float)arg4;
+
+- (id)initWithR:(int)arg1 G:(int)arg2 B:(int)arg3 alpha:(float)arg4;
+
+// Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
+
++ (id)colorWithWebColor:(id)arg1;
++ (id)colorWithWebColorName:(id)arg1;
++ (id)colorWithWebHexTriplet:(id)arg1;
++ (id)colorWithWebRgb:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
++ (id)checkerboardColorWithColor:(id)arg1 andColor:(id)arg2 squareSize:(struct CGSize { float x1; float x2; })arg3;
++ (id)grayCheckerboardColor;
++ (id)tableViewCellDarkBlueTextColor;
++ (id)transparentGrayCheckerboardColor;
+
+// Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
+
++ (id)_remoteUI_colorWithString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
++ (id)siriui_glyphColor;
++ (id)siriui_highlightColor;
++ (id)siriui_keylineColor;
++ (id)siriui_keylineColorStark;
++ (id)siriui_maskingColor;
++ (id)siriui_maskingHighlightColor;
++ (id)siriui_semiTransparentTextColor;
++ (id)siriui_snippetBackgroundColor;
++ (id)siriui_textColor;
++ (id)siriui_textHighlightColor;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
+
+- (id)colorByAlteringOpacityToPercentage:(float)arg1;
+- (id)darkerColorByPercentage:(float)arg1;
 - (id)tpImageFromColor;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
++ (id)colorWithStyleString:(id)arg1;
+
+- (id)initWithStyleString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)checkerboardColorWithColor:(id)arg1 andColor:(id)arg2 squareSize:(struct CGSize { float x1; float x2; })arg3;
++ (id)grayCheckerboardColor;
++ (id)tableViewCellDarkBlueTextColor;
++ (id)transparentGrayCheckerboardColor;
 
 @end

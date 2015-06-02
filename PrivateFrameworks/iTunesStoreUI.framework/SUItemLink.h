@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, NSURL;
-
 @interface SUItemLink : NSObject <NSCopying> {
     int _linkTarget;
     int _linkType;
@@ -11,10 +9,10 @@
     NSURL *_url;
 }
 
-@property(retain) NSURL * URL;
-@property int linkTarget;
-@property int linkType;
-@property(copy) NSString * title;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic) int linkTarget;
+@property (nonatomic) int linkType;
+@property (nonatomic, copy) NSString *title;
 
 - (id)URL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

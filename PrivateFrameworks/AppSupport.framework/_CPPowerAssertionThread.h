@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSDate, NSTimer;
-
 @interface _CPPowerAssertionThread : NSThread {
     NSDate *_earliest;
     NSTimer *_timer;

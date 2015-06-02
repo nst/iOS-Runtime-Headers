@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKGameInviteComposeController : GKSimpleComposeController {
-}
+@interface GKGameInviteComposeController : GKSimpleComposeController
 
 - (id)init;
 - (void)loadView;

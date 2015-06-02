@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSString;
-
 @interface PTSAddGroupSettingsRowAction : PTSRowAction {
     NSString *_groupKeyPath;
     Class _settingsClass;
 }
 
-@property(copy) NSString * groupKeyPath;
-@property(retain) Class settingsClass;
+@property (nonatomic, copy) NSString *groupKeyPath;
+@property (nonatomic, retain) Class settingsClass;
 
 + (id)actionWithGroupKeyPath:(id)arg1 settingsClass:(Class)arg2;
 

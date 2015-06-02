@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class LTEVTPWrapper, NSArray, NSObject<OS_dispatch_queue>;
-
 @interface LTEConferenceManager : NSObject <LTEConferenceDelegate> {
     LTEVTPWrapper *_vtpWrapper;
     NSArray *conferenceArray;
@@ -14,7 +12,7 @@
     NSObject<OS_dispatch_queue> *xpcQueue;
 }
 
-@property(readonly) LTEVTPWrapper * vtpWrapper;
+@property (readonly) LTEVTPWrapper *vtpWrapper;
 
 + (id)LTEConferenceManagerSingleton;
 + (void)addNSError:(id)arg1 toLTEConfXPCArgumentDictionary:(id)arg2;

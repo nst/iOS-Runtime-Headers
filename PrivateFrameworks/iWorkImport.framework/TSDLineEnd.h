@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSDLineEnd : NSObject <NSCopying, TSDMixing> {
     struct CGPoint { 
         float x; 
@@ -21,13 +14,13 @@
     struct CGPath { } *mWrapPath;
 }
 
-@property(readonly) struct CGPoint { float x1; float x2; } endPoint;
-@property(readonly) NSString * identifier;
-@property(readonly) BOOL isFilled;
-@property(readonly) BOOL isNone;
-@property(readonly) int lineJoin;
-@property(readonly) struct CGPath { }* path;
-@property(readonly) struct CGPath { }* wrapPath;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } endPoint;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) BOOL isFilled;
+@property (nonatomic, readonly) BOOL isNone;
+@property (nonatomic, readonly) int lineJoin;
+@property (nonatomic, readonly) struct CGPath { }*path;
+@property (nonatomic, readonly) struct CGPath { }*wrapPath;
 
 + (id)filledArrow;
 + (id)filledCircle;

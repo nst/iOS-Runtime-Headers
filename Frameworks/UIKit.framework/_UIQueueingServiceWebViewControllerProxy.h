@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIQueueingServiceWebViewControllerProxyDelegate>, NSMutableArray;
-
 @interface _UIQueueingServiceWebViewControllerProxy : NSObject {
     <_UIQueueingServiceWebViewControllerProxyDelegate> *_delegate;
     NSMutableArray *_queuedInvocations;
     id _serviceViewControllerProxy;
 }
 
-@property <_UIQueueingServiceWebViewControllerProxyDelegate> * delegate;
-@property(retain) id serviceViewControllerProxy;
+@property (nonatomic) <_UIQueueingServiceWebViewControllerProxyDelegate> *delegate;
+@property (nonatomic, retain) id serviceViewControllerProxy;
 
 - (void)dealloc;
 - (id)delegate;

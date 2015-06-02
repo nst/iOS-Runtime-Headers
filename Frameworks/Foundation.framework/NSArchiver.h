@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableData;
-
 @interface NSArchiver : NSCoder {
     void *ids;
     void *map;
@@ -14,7 +12,7 @@
     void *stringTable;
 }
 
-@property(retain,readonly) NSMutableData * archiverData;
+@property (readonly, retain) NSMutableData *archiverData;
 
 + (BOOL)archiveRootObject:(id)arg1 toFile:(id)arg2;
 + (id)archivedDataWithRootObject:(id)arg1;

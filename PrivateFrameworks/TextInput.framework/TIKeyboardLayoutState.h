@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString;
-
 @interface TIKeyboardLayoutState : NSObject <NSCopying, NSSecureCoding> {
     BOOL _canMultitap;
     BOOL _hasAccentKey;
@@ -14,13 +12,13 @@
     NSString *_layoutTag;
 }
 
-@property BOOL canMultitap;
-@property BOOL hasAccentKey;
-@property BOOL hasCandidateKey;
-@property(copy) NSString * inputMode;
-@property BOOL interfaceIdiomIsPad;
-@property BOOL isAlphabeticPlane;
-@property(copy) NSString * layoutTag;
+@property (nonatomic) BOOL canMultitap;
+@property (nonatomic) BOOL hasAccentKey;
+@property (nonatomic) BOOL hasCandidateKey;
+@property (nonatomic, copy) NSString *inputMode;
+@property (nonatomic) BOOL interfaceIdiomIsPad;
+@property (nonatomic) BOOL isAlphabeticPlane;
+@property (nonatomic, copy) NSString *layoutTag;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SASTTemplateAction>, NSString, SASTTemplateStarRating, SAUIDecoratedText;
+@interface SASTLocationListItem : AceObject <SASTActionableTemplateItem>
 
-@interface SASTLocationListItem : AceObject <SASTActionableTemplateItem> {
-}
-
-@property(retain) <SASTTemplateAction> * action;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) SAUIDecoratedText * formattedDistance;
-@property(readonly) unsigned int hash;
-@property(retain) SASTTemplateStarRating * rating;
-@property(retain) SAUIDecoratedText * subtitle;
-@property(readonly) Class superclass;
-@property(retain) SAUIDecoratedText * title;
+@property (nonatomic, retain) <SASTTemplateAction> *action;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) SAUIDecoratedText *formattedDistance;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SASTTemplateStarRating *rating;
+@property (nonatomic, retain) SAUIDecoratedText *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SAUIDecoratedText *title;
 
 + (id)locationListItem;
 + (id)locationListItemWithDictionary:(id)arg1 context:(id)arg2;

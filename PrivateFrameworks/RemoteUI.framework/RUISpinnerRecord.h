@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class NSArray, NSString, UINavigationItem;
-
 @interface RUISpinnerRecord : NSObject {
     NSArray *_leftItems;
     UINavigationItem *_navigationItem;
@@ -11,10 +9,10 @@
     NSString *_title;
 }
 
-@property(retain) NSArray * leftItems;
-@property(retain) UINavigationItem * navigationItem;
-@property(retain) NSArray * rightItems;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSArray *leftItems;
+@property (nonatomic, retain) UINavigationItem *navigationItem;
+@property (nonatomic, retain) NSArray *rightItems;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (id)leftItems;

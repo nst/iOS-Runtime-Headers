@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIActivityViewPopoverBackgroundView : _UIPopoverStandardChromeView {
-}
+@interface UIActivityViewPopoverBackgroundView : _UIPopoverStandardChromeView
 
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 + (void)useNormalContentViewInsets:(BOOL)arg1;

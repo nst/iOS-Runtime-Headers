@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentOptionGroupDetailedItemCell : PKPaymentOptionGroupItemCell {
-}
+@interface PKPaymentOptionGroupDetailedItemCell : PKPaymentOptionGroupItemCell
 
 - (void)_updateCellContent;
 - (id)initWithReuseIdentifier:(id)arg1;

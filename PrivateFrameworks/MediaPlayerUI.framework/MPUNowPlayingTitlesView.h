@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUMarqueeView, NSDictionary, NSString, UIImage, UIImageView, UILabel;
-
 @interface MPUNowPlayingTitlesView : UIView {
     NSString *_albumText;
     NSString *_artistText;
@@ -36,21 +34,21 @@
     NSDictionary *_titleTextAttributes;
 }
 
-@property(copy) NSString * albumText;
-@property(copy) NSString * artistText;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } detailMarqueeEdgeInsets;
-@property(retain) NSDictionary * detailTextAttributes;
-@property(getter=isExplicit) BOOL explicit;
-@property(retain) UIImage * explicitImage;
-@property(getter=isMarqueeEnabled) BOOL marqueeEnabled;
-@property(copy) NSString * stationNameText;
-@property int style;
-@property float textMargin;
-@property(readonly) float titleBaselineOffsetFromBottom;
-@property float titleLeading;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleMarqueeEdgeInsets;
-@property(copy) NSString * titleText;
-@property(retain) NSDictionary * titleTextAttributes;
+@property (nonatomic, copy) NSString *albumText;
+@property (nonatomic, copy) NSString *artistText;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } detailMarqueeEdgeInsets;
+@property (nonatomic, retain) NSDictionary *detailTextAttributes;
+@property (getter=isExplicit, nonatomic) BOOL explicit;
+@property (nonatomic, retain) UIImage *explicitImage;
+@property (getter=isMarqueeEnabled, nonatomic) BOOL marqueeEnabled;
+@property (nonatomic, copy) NSString *stationNameText;
+@property (nonatomic) int style;
+@property (nonatomic) float textMargin;
+@property (nonatomic, readonly) float titleBaselineOffsetFromBottom;
+@property (nonatomic) float titleLeading;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleMarqueeEdgeInsets;
+@property (nonatomic, copy) NSString *titleText;
+@property (nonatomic, retain) NSDictionary *titleTextAttributes;
 
 + (Class)labelClass;
 

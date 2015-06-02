@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString, VKTileCache, VKTileKeyList, VKTileKeyMap, VKTileSource, VKTrafficDynamicTileSource;
-
 @interface VKTrafficTileSource : VKTileSetBackedTileSource <VKTileSourceClient> {
     VKTileKeyList *_building;
     VKTrafficDynamicTileSource *_dynamicTileSource;
@@ -12,11 +10,11 @@
     VKTileSource *_roadTileSource;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) VKTileSource * roadTileSource;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) VKTileSource *roadTileSource;
+@property (readonly) Class superclass;
 
 - (void)_generatedTraffic:(id)arg1;
 - (BOOL)canFetchTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;

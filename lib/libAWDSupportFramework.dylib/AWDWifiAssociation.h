@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData, NSString;
-
 @interface AWDWifiAssociation : PBCodable <NSCopying> {
     NSData *_bssidOui;
     int _channel;
@@ -22,22 +20,22 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSData * bssidOui;
-@property int channel;
-@property int deauthReason;
-@property(retain) NSData * deauthSourceOui;
-@property unsigned int error;
-@property(readonly) BOOL hasBssidOui;
-@property BOOL hasChannel;
-@property BOOL hasDeauthReason;
-@property(readonly) BOOL hasDeauthSourceOui;
-@property BOOL hasError;
-@property(readonly) BOOL hasSecurity;
-@property BOOL hasSignal;
-@property BOOL hasTimestamp;
-@property(retain) NSString * security;
-@property int signal;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSData *bssidOui;
+@property (nonatomic) int channel;
+@property (nonatomic) int deauthReason;
+@property (nonatomic, retain) NSData *deauthSourceOui;
+@property (nonatomic) unsigned int error;
+@property (nonatomic, readonly) BOOL hasBssidOui;
+@property (nonatomic) BOOL hasChannel;
+@property (nonatomic) BOOL hasDeauthReason;
+@property (nonatomic, readonly) BOOL hasDeauthSourceOui;
+@property (nonatomic) BOOL hasError;
+@property (nonatomic, readonly) BOOL hasSecurity;
+@property (nonatomic) BOOL hasSignal;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSString *security;
+@property (nonatomic) int signal;
+@property (nonatomic) unsigned long long timestamp;
 
 - (id)bssidOui;
 - (int)channel;

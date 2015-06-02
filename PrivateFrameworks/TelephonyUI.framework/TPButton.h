@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class _UIBackdropView;
-
 @interface TPButton : UIButton {
     _UIBackdropView *_backdropView;
     BOOL _blursBackground;
@@ -12,9 +10,9 @@
     BOOL _usesOverlayBlendingForContents;
 }
 
-@property BOOL blursBackground;
-@property BOOL roundsCorners;
-@property BOOL usesOverlayBlendingForContents;
+@property (nonatomic) BOOL blursBackground;
+@property (nonatomic) BOOL roundsCorners;
+@property (nonatomic) BOOL usesOverlayBlendingForContents;
 
 + (float)defaultHeight;
 + (float)defaultHeightForColor:(int)arg1;

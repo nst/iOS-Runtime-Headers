@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSString;
-
 @interface TSCH3DLightingPackage : NSObject <NSCopying> {
     NSArray *_lights;
     NSString *_name;
 }
 
-@property(copy,readonly) NSString * localizedName;
-@property(copy) NSString * name;
+@property (nonatomic, readonly, copy) NSString *localizedName;
+@property (nonatomic, copy) NSString *name;
 
 + (id)allNamedPackages;
 + (id)instanceWithArchive:(const struct Chart3DLightingPackageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<TSCH::Chart3DLightArchive> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1 unarchiver:(id)arg2;

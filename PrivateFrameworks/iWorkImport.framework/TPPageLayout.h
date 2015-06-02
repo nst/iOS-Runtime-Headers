@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <NSFastEnumeration>, <TPMasterDrawableProvider>, <TSWPHeaderFooterProvider>, NSArray, TPBodyLayout, TPFootnoteContainerLayout, TPInflatableFootnoteContainerLayout, TPMarginAdjustLayout, TSURetainedPointerKeyDictionary, TSWPPadding;
-
 @interface TPPageLayout : TSWPPageLayout <TPAttachmentLayoutParent, TSWPColumnMetrics, TSWPLayoutParent> {
     BOOL _childLayoutsValid;
     BOOL _childTextLayoutsNeedInvalidationForExteriorWrap;
@@ -18,24 +16,24 @@
     unsigned int _pageNumber;
 }
 
-@property(readonly) BOOL allowsBody;
-@property(readonly) BOOL allowsFootnotes;
-@property(readonly) BOOL alwaysStartsNewTarget;
-@property(readonly) NSArray * anchoredDrawableLayouts;
-@property(readonly) TPBodyLayout * bodyLayout;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bodyRect;
-@property(readonly) <NSFastEnumeration> * childTextLayoutsForExteriorWrap;
-@property(readonly) unsigned int columnCount;
-@property(readonly) BOOL columnsAreLeftToRight;
-@property(readonly) NSArray * floatingDrawableLayouts;
-@property(readonly) TPFootnoteContainerLayout * footnoteContainerLayout;
-@property(readonly) TSWPPadding * layoutMargins;
-@property(readonly) <TPMasterDrawableProvider> * masterDrawableProvider;
-@property(readonly) unsigned int pageCount;
-@property(readonly) unsigned int pageIndex;
-@property(readonly) unsigned int pageNumber;
-@property(readonly) BOOL shrinkTextToFit;
-@property(readonly) float textScaleFactor;
+@property (nonatomic, readonly) BOOL allowsBody;
+@property (nonatomic, readonly) BOOL allowsFootnotes;
+@property (nonatomic, readonly) BOOL alwaysStartsNewTarget;
+@property (nonatomic, readonly) NSArray *anchoredDrawableLayouts;
+@property (nonatomic, readonly) TPBodyLayout *bodyLayout;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bodyRect;
+@property (nonatomic, readonly) <NSFastEnumeration> *childTextLayoutsForExteriorWrap;
+@property (nonatomic, readonly) unsigned int columnCount;
+@property (nonatomic, readonly) BOOL columnsAreLeftToRight;
+@property (nonatomic, readonly) NSArray *floatingDrawableLayouts;
+@property (nonatomic, readonly) TPFootnoteContainerLayout *footnoteContainerLayout;
+@property (nonatomic, readonly) TSWPPadding *layoutMargins;
+@property (nonatomic, readonly) <TPMasterDrawableProvider> *masterDrawableProvider;
+@property (nonatomic, readonly) unsigned int pageCount;
+@property (nonatomic, readonly) unsigned int pageIndex;
+@property (nonatomic, readonly) unsigned int pageNumber;
+@property (nonatomic, readonly) BOOL shrinkTextToFit;
+@property (nonatomic, readonly) float textScaleFactor;
 
 - (void)addAttachmentLayout:(id)arg1;
 - (id)additionalDependenciesForChildLayout:(id)arg1;

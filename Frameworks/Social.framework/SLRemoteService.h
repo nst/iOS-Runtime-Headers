@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSBundle, NSSet, NSString, NSURL, UIImage;
-
 @interface SLRemoteService : SLService <NSSecureCoding> {
     NSString *_accountTypeIdentifier;
     UIImage *_activityImage;
@@ -26,24 +24,24 @@
     NSSet *_supportedVideoAssetURLSchemes;
 }
 
-@property(retain) NSString * accountTypeIdentifier;
-@property(retain) NSString * activityImageName;
-@property(retain) NSString * activityViewIconResourceName;
+@property (retain) NSString *accountTypeIdentifier;
+@property (retain) NSString *activityImageName;
+@property (retain) NSString *activityViewIconResourceName;
 @property BOOL addDeviceClassToRequest;
 @property int authenticationStyle;
-@property(retain) NSString * localizedServiceName;
+@property (retain) NSString *localizedServiceName;
 @property int maximumImageCount;
 @property int maximumImageDataSize;
 @property int maximumURLCount;
-@property int maximumVideoCount;
+@property (nonatomic) int maximumVideoCount;
 @property int maximumVideoDataSize;
 @property int maximumVideoTimeLimit;
-@property(readonly) NSBundle * serviceBundle;
-@property(retain) NSURL * serviceBundleURL;
+@property (readonly) NSBundle *serviceBundle;
+@property (retain) NSURL *serviceBundleURL;
 @property BOOL serviceRegionTargetIsChina;
-@property(retain) NSString * serviceTypeIdentifier;
-@property(retain) NSSet * supportedImageAssetURLSchemes;
-@property(retain) NSSet * supportedVideoAssetURLSchemes;
+@property (retain) NSString *serviceTypeIdentifier;
+@property (retain) NSSet *supportedImageAssetURLSchemes;
+@property (retain) NSSet *supportedVideoAssetURLSchemes;
 
 + (id)_cachedServiceWithType:(id)arg1;
 + (id)_cachedServices;

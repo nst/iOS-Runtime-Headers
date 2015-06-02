@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class UIView;
+@interface MusicNowPlayingPlaybackControlsView : RUNowPlayingPlaybackControlsView
 
-@interface MusicNowPlayingPlaybackControlsView : RUNowPlayingPlaybackControlsView {
-}
-
-@property(readonly) UIView * viewForPresentingRepeat;
+@property (nonatomic, readonly) UIView *viewForPresentingRepeat;
 
 + (unsigned long long)defaultVisibleParts;
 

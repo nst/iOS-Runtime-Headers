@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UITableViewCell, UITextView;
-
 @interface EKEventNotesDetailItem : EKEventDetailItem {
     UITableViewCell *_cell;
     BOOL _cellNeedsUpdate;

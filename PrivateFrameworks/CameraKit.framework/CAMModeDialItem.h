@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSString, UIFont, UILabel;
-
 @interface CAMModeDialItem : UIView {
     UILabel *__selectedTitleLabel;
     UILabel *__titleLabel;
@@ -12,11 +10,11 @@
     NSString *_title;
 }
 
-@property(readonly) UILabel * _selectedTitleLabel;
-@property(readonly) UILabel * _titleLabel;
-@property(retain) UIFont * font;
-@property(getter=isSelected) BOOL selected;
-@property(copy) NSString * title;
+@property (nonatomic, readonly) UILabel *_selectedTitleLabel;
+@property (nonatomic, readonly) UILabel *_titleLabel;
+@property (nonatomic, retain) UIFont *font;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_commonCAMModeDialItemInitialization;

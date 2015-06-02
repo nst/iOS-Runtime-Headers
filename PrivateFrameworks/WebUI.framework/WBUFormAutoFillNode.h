@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class DOMNode, NSString;
-
 @interface WBUFormAutoFillNode : NSObject <WBSFormAutoFillNode> {
     DOMNode *_domNode;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) DOMNode * domNode;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) DOMNode *domNode;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)autoFillNodeWithDOMNode:(id)arg1;
 

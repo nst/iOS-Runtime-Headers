@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext;
-
 @interface SKUIProductPageTableSection : SKUITableViewSection {
     SKUIClientContext *_clientContext;
     BOOL _expanded;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(getter=isExpanded) BOOL expanded;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (getter=isExpanded, nonatomic) BOOL expanded;
 
 - (void).cxx_destruct;
 - (id)clientContext;

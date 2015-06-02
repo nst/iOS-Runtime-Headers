@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseConnection, NSString;
-
 @interface ML3DatabaseStatement : NSObject {
     BOOL _clearBindingsAfterRunning;
     ML3DatabaseConnection *_connection;
@@ -12,11 +10,11 @@
     struct sqlite3_stmt { } *_sqliteStatement;
 }
 
-@property BOOL clearBindingsAfterRunning;
-@property(readonly) ML3DatabaseConnection * connection;
-@property BOOL isExecuting;
-@property(readonly) NSString * sql;
-@property(readonly) struct sqlite3_stmt { }* sqliteStatement;
+@property (nonatomic) BOOL clearBindingsAfterRunning;
+@property (nonatomic, readonly) ML3DatabaseConnection *connection;
+@property (nonatomic) BOOL isExecuting;
+@property (nonatomic, readonly) NSString *sql;
+@property (nonatomic, readonly) struct sqlite3_stmt { }*sqliteStatement;
 
 - (void).cxx_destruct;
 - (void)bindBytes:(const void*)arg1 length:(int)arg2 forParameterAtPosition:(int)arg3;

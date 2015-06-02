@@ -2,10 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface TSCH3Dvec3DataBuffer : TSCH3DFloatVectorDataBuffer {
     struct vector<glm::detail::tvec3<float>, std::__1::allocator<glm::detail::tvec3<float> > > { 
         struct tvec3<float> {} *__begin_; 
@@ -16,7 +12,7 @@
     } mContainer;
 }
 
-@property(readonly) /* Warning: unhandled struct encoding: '{vector<glm::detail::tvec3<float>' */ struct * container; /* unknown property attribute:  std::__1::allocator<glm::detail::tvec3<float> > >=^{tvec3<float>}}} */
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<glm::detail::tvec3<float>' */ struct *container; /* unknown property attribute:  std::__1::allocator<glm::detail::tvec3<float> > >=^{tvec3<float>}}} */
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

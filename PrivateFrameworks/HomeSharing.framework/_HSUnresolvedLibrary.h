@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSNetService;
-
 @interface _HSUnresolvedLibrary : NSObject {
     int _browserType;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     NSNetService *_netService;
     struct _DNSServiceRef_t { } *_resolvingDNSService;
 }
@@ -26,6 +16,6 @@
 - (void)_timeoutResolve;
 - (void)dealloc;
 - (id)initWithNSNetService:(id)arg1 browserType:(int)arg2;
-- (void)resolveWithTimeout:(double)arg1 completionHandler:(id)arg2;
+- (void)resolveWithTimeout:(double)arg1 completionHandler:(id /* block */)arg2;
 
 @end

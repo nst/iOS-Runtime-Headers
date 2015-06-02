@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSMutableSet, NSSet;
-
 @interface CPLEngineResourceDownloadTaskGroup : NSObject {
     NSMutableSet *_activeTasks;
 }
 
-@property(readonly) NSSet * activeTasks;
-@property(getter=isComplete,readonly) BOOL complete;
+@property (nonatomic, readonly) NSSet *activeTasks;
+@property (getter=isComplete, nonatomic, readonly) BOOL complete;
 
 - (void).cxx_destruct;
 - (id)activeTasks;

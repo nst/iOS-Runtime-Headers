@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKEventStore, NSMutableDictionary, NSMutableSet;
-
 @interface EKPersistentObject : NSObject {
     NSMutableDictionary *_committedProperties;
     NSMutableSet *_dirtyProperties;
@@ -18,9 +16,9 @@
     NSMutableDictionary *_referencers;
 }
 
-@property(retain) NSMutableDictionary * committedProperties;
-@property(readonly) int entityType;
-@property(readonly) EKEventStore * eventStore;
+@property (nonatomic, retain) NSMutableDictionary *committedProperties;
+@property (nonatomic, readonly) int entityType;
+@property (nonatomic, readonly) EKEventStore *eventStore;
 
 + (id)defaultPropertiesToLoad;
 + (id)relations;
@@ -40,8 +38,8 @@
 - (BOOL)_loadRelationForKey:(id)arg1 value:(id*)arg2;
 - (id)_loadStringValueForKey:(id)arg1;
 - (id)_loadedPropertyKeys;
-- (void)_primitiveSetValue:(id)arg1 forKey:(id)arg2 daemonSetter:(id)arg3;
-- (id)_primitiveValueForKey:(id)arg1 loader:(id)arg2;
+- (void)_primitiveSetValue:(id)arg1 forKey:(id)arg2 daemonSetter:(id /* block */)arg3;
+- (id)_primitiveValueForKey:(id)arg1 loader:(id /* block */)arg2;
 - (id)_propertyForKey:(id)arg1;
 - (id)_relationForKey:(id)arg1;
 - (void)_releaseLoadedProperties;

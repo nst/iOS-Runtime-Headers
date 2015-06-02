@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, VMAccount;
-
 @interface VMVoicemail : NSObject {
     VMAccount *_account;
     NSMutableDictionary *_cache;
@@ -15,10 +13,10 @@
     struct __CFPhoneNumber { } *_senderPhoneNumber;
 }
 
-@property(retain) id cachedAddressBookRef;
-@property(retain) NSString * cachedDisplayName;
-@property(readonly) struct __CFPhoneNumber { }* callbackPhoneNumber;
-@property(readonly) struct __CFPhoneNumber { }* senderPhoneNumber;
+@property (nonatomic, retain) id cachedAddressBookRef;
+@property (nonatomic, retain) NSString *cachedDisplayName;
+@property (readonly) struct __CFPhoneNumber { }*callbackPhoneNumber;
+@property (readonly) struct __CFPhoneNumber { }*senderPhoneNumber;
 
 + (void)_doVoicemailMapHousekeepingNoLock;
 + (id)_findPreviouslyCreatedVoicemailWithAccountNoLock:(id)arg1 identifier:(long long)arg2;
@@ -30,7 +28,7 @@
 
 - (void)_forceUpdateCache;
 - (void)_handleDataAvailable:(id)arg1;
-- (void)_lockedPreemptivelySetFlags:(unsigned int)arg1 clearFlags:(unsigned int)arg2 unlockedBlock:(id*)arg3;
+- (void)_lockedPreemptivelySetFlags:(unsigned int)arg1 clearFlags:(unsigned int)arg2 unlockedBlock:(id /* block */*)arg3;
 - (void)_preemptivelySetFlags:(unsigned int)arg1 clearFlags:(unsigned int)arg2;
 - (void)_updateCache;
 - (void*)abRecordUsingAddressBook:(void*)arg1;

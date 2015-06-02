@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData, NSString;
-
 @interface GEOProxyClient : NSObject {
     NSData *_auditToken;
     NSString *_bundleIdentifier;
@@ -11,10 +9,10 @@
     BOOL _isApplication;
 }
 
-@property(retain) NSData * auditToken;
-@property(retain) NSString * bundleIdentifier;
-@property(retain) NSString * bundleVersion;
-@property BOOL isApplication;
+@property (nonatomic, retain) NSData *auditToken;
+@property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic, retain) NSString *bundleVersion;
+@property (nonatomic) BOOL isApplication;
 
 + (id)compositeClientForClients:(id)arg1;
 + (id)currentClient;

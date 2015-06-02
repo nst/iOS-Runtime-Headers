@@ -2,8 +2,7 @@
    Image: /usr/lib/system/libxpc.dylib
  */
 
-@interface OS_xpc_connection : OS_xpc_object <OS_xpc_connection> {
-}
+@interface OS_xpc_connection : OS_xpc_object <OS_xpc_connection>
 
 + (void)load;
 

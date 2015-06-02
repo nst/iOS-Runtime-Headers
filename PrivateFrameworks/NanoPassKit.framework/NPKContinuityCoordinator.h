@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSObject<OS_dispatch_queue>, NSUserActivity;
-
 @interface NPKContinuityCoordinator : NSObject {
     NSUserActivity *_currentUserActivity;
     NSUserActivity *_getPaymentPassesUserActivity;
@@ -13,12 +11,12 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property NSUserActivity * currentUserActivity;
-@property(retain) NSUserActivity * getPaymentPassesUserActivity;
-@property(retain) NSUserActivity * individualPassUserActivity;
-@property(retain) NSUserActivity * passListUserActivity;
-@property(retain) NSUserActivity * provisionPassUserActivity;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic) NSUserActivity *currentUserActivity;
+@property (nonatomic, retain) NSUserActivity *getPaymentPassesUserActivity;
+@property (nonatomic, retain) NSUserActivity *individualPassUserActivity;
+@property (nonatomic, retain) NSUserActivity *passListUserActivity;
+@property (nonatomic, retain) NSUserActivity *provisionPassUserActivity;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)sharedContinuityCoordinator;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DCIMServices.framework/DCIMServices
  */
 
-@interface DCIMAssetFormats : NSObject {
-}
+@interface DCIMAssetFormats : NSObject
 
 + (BOOL)formatSizeIsShortSide:(int)arg1;
 + (int)masterThumbnailFormat;

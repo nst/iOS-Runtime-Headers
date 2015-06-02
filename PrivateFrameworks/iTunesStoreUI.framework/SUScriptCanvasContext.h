@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUScriptColor;
-
 @interface SUScriptCanvasContext : SUScriptObject {
     struct CGContext { } *_context;
     struct CGPath { } *_contextPath;
@@ -20,20 +18,20 @@
     float _width;
 }
 
-@property(retain) id fillStyle;
+@property (retain) id fillStyle;
 @property float globalAlpha;
-@property(retain) NSString * globalCompositeOperation;
-@property(readonly) float height;
-@property(retain) id lineCap;
-@property(retain) id lineJoin;
+@property (retain) NSString *globalCompositeOperation;
+@property (readonly) float height;
+@property (retain) id lineCap;
+@property (retain) id lineJoin;
 @property float lineWidth;
 @property float miterLimit;
 @property float shadowBlur;
-@property(retain) id shadowColor;
+@property (retain) id shadowColor;
 @property float shadowOffsetX;
 @property float shadowOffsetY;
-@property(retain) id strokeStyle;
-@property(readonly) float width;
+@property (retain) id strokeStyle;
+@property (readonly) float width;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@class NSArray, NSString, NSValue;
-
 @interface RKSentenceClassifier : NSObject {
     NSArray *_alternatives;
     NSArray *_appreciations;
@@ -20,20 +18,20 @@
     NSValue *_sentenceTag;
 }
 
-@property(readonly) NSString * alternativeConjunction;
-@property(retain) NSArray * alternatives;
-@property(retain) NSArray * appreciations;
-@property(retain) NSArray * choiceDelimiters;
-@property(retain) NSArray * interrogatives;
-@property(retain) NSArray * inversions;
-@property(retain) NSArray * sentenceEntities;
+@property (readonly) NSString *alternativeConjunction;
+@property (retain) NSArray *alternatives;
+@property (retain) NSArray *appreciations;
+@property (retain) NSArray *choiceDelimiters;
+@property (retain) NSArray *interrogatives;
+@property (retain) NSArray *inversions;
+@property (retain) NSArray *sentenceEntities;
 @property BOOL sentenceHasAlternativeConjunction;
 @property BOOL sentenceHasQuestionTerminator;
 @property BOOL sentenceIsAllSymbols;
 @property BOOL sentenceIsTerminated;
-@property(retain) NSString * sentenceString;
-@property(retain) NSString * sentenceStringOriginal;
-@property(retain) NSValue * sentenceTag;
+@property (retain) NSString *sentenceString;
+@property (retain) NSString *sentenceStringOriginal;
+@property (retain) NSValue *sentenceTag;
 
 + (id)alternativeInversionsForLanguage:(id)arg1;
 + (id)appreciationKeywordsForLanguage:(id)arg1;

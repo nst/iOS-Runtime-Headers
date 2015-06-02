@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUPhotoView, PUPhotosZoomingSharingGridCell, UIView;
-
 @interface PUPhotosSharingGridCell : UICollectionViewCell {
     int _currentImageRequestID;
     UIView *_highlightOverlayView;
@@ -20,8 +18,8 @@
     UIView *_zoomingCellSuperview;
 }
 
-@property int currentImageRequestID;
-@property(readonly) PUPhotoView * photoView;
+@property (nonatomic) int currentImageRequestID;
+@property (nonatomic, readonly) PUPhotoView *photoView;
 
 - (void).cxx_destruct;
 - (void)_updateHighlight;

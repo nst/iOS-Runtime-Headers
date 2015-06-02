@@ -2,11 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSSet;
+@interface TDSchemaCategory : TDThemeConstant
 
-@interface TDSchemaCategory : TDThemeConstant {
-}
-
-@property(retain) NSSet * elements;
+@property (nonatomic, retain) NSSet *elements;
 
 @end

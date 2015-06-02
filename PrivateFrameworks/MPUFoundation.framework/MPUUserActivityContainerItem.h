@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPMediaEntity, _MPUProtoBufUserActivityContainerItem;
-
 @interface MPUUserActivityContainerItem : NSObject <NSCopying, NSMutableCopying> {
     int _containerItemType;
     MPMediaEntity *_selectedMediaEntity;
     MPMediaEntity *_visualReferenceMediaEntity;
 }
 
-@property(readonly) int containerItemType;
-@property(readonly) _MPUProtoBufUserActivityContainerItem * protoBufUserActivityContainerItem;
-@property(readonly) MPMediaEntity * selectedMediaEntity;
-@property(readonly) MPMediaEntity * visualReferenceMediaEntity;
+@property (nonatomic, readonly) int containerItemType;
+@property (nonatomic, readonly) _MPUProtoBufUserActivityContainerItem *protoBufUserActivityContainerItem;
+@property (nonatomic, readonly) MPMediaEntity *selectedMediaEntity;
+@property (nonatomic, readonly) MPMediaEntity *visualReferenceMediaEntity;
 
 - (void).cxx_destruct;
 - (int)containerItemType;

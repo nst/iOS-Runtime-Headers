@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DProjectiveTextureShaderEffect : TSCH3DShaderEffect {
-}
+@interface TSCH3DProjectiveTextureShaderEffect : TSCH3DShaderEffect
 
 + (id)stateSharingID;
 + (id)variableShadowBorderFade;

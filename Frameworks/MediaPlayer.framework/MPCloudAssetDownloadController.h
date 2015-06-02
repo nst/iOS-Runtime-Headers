@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPCloudAssetDownloadSessionIdentifier, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface MPCloudAssetDownloadController : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSMutableDictionary *_downloadSessions;

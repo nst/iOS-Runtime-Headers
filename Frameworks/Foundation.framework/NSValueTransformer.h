@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSValueTransformer : NSObject {
-}
+@interface NSValueTransformer : NSObject
 
 + (id)_transformerRegistry;
 + (BOOL)allowsReverseTransformation;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOTileKeyList, GEOTileRequester;
-
 @interface GEOTileServerLocalProxyBatchContext : NSObject {
     GEOTileKeyList *_fullList;
     GEOTileKeyList *_interestList;
@@ -12,11 +10,11 @@
     GEOTileRequester *_tileRequester;
 }
 
-@property(retain) GEOTileKeyList * fullList;
-@property(retain) GEOTileKeyList * interestList;
-@property(retain) GEOTileKeyList * networkList;
-@property(retain) GEOTileKeyList * pendingNetworkList;
-@property(retain) GEOTileRequester * tileRequester;
+@property (nonatomic, retain) GEOTileKeyList *fullList;
+@property (nonatomic, retain) GEOTileKeyList *interestList;
+@property (nonatomic, retain) GEOTileKeyList *networkList;
+@property (nonatomic, retain) GEOTileKeyList *pendingNetworkList;
+@property (nonatomic, retain) GEOTileRequester *tileRequester;
 
 - (void)dealloc;
 - (id)fullList;

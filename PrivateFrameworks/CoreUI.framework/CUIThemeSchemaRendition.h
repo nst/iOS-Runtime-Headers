@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIPSDGradient, NSDictionary;
-
 @interface CUIThemeSchemaRendition : CUIThemeRendition {
     int _columnSlices;
     struct { 
@@ -23,7 +21,7 @@
         } size; 
     } _elementRect;
     CUIPSDGradient *_gradient;
-    struct CGImage {} *_image[9];
+    struct CGImage {} *_image;
     struct CGSize { 
         float width; 
         float height; 
@@ -37,15 +35,15 @@
             float width; 
             float height; 
         } size; 
-    } _layoutRects[9];
+    } _layoutRects;
     unsigned long _nimages;
     int _rowSlices;
     NSDictionary *cuiInfo;
 }
 
-@property(readonly) CUIPSDGradient * gradient;
-@property(readonly) unsigned long numberOfSlices;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }* sliceRects;
+@property (nonatomic, readonly) CUIPSDGradient *gradient;
+@property (nonatomic, readonly) unsigned long numberOfSlices;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*sliceRects;
 
 - (id).cxx_construct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRectangle;

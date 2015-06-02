@@ -13,12 +13,12 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasLearnedNongeocodableEvents;
-@property BOOL hasNongeocodableEvents;
-@property BOOL hasTimestamp;
-@property int learnedNongeocodableEvents;
-@property int nongeocodableEvents;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasLearnedNongeocodableEvents;
+@property (nonatomic) BOOL hasNongeocodableEvents;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) int learnedNongeocodableEvents;
+@property (nonatomic) int nongeocodableEvents;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

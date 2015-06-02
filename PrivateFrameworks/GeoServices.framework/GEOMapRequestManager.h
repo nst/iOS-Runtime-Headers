@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableSet;
-
 @interface GEOMapRequestManager : NSObject {
     NSMutableSet *_requests;
 }

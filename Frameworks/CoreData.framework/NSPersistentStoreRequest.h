@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray;
-
 @interface NSPersistentStoreRequest : NSObject <NSCopying> {
     NSArray *_affectedStores;
 }
 
-@property(retain) NSArray * affectedStores;
-@property(readonly) unsigned int requestType;
+@property (nonatomic, retain) NSArray *affectedStores;
+@property (readonly) unsigned int requestType;
 
 + (void)initialize;
 

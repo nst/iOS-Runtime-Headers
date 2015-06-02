@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoControllerProtocol>, <MPVideoOverlayDelegate>, MPAVController, MPAVItem, MPAudioAndSubtitlesController, MPDetailSlider, MPKnockoutButton, MPVolumeSlider, NSArray, NSLayoutConstraint, NSString, UIActivityIndicatorView, UIButton, UILabel, UINavigationBar, UIPopoverController, UIStatusBar, UIView, _UIBackdropView;
-
 @interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, MPDetailSliderDelegate, MPVideoOverlay, UIPopoverControllerDelegate> {
     BOOL _allowsExitFromFullscreen;
     UIButton *_audioAndSubtitlesButton;
@@ -56,25 +54,25 @@
     unsigned long long visibleParts;
 }
 
-@property BOOL allowsDetailScrubbing;
-@property BOOL allowsExitFromFullscreen;
-@property BOOL allowsWirelessPlayback;
-@property BOOL automaticallyHandleTransportControls;
-@property(readonly) float bottomBarHeight;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPVideoOverlayDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property unsigned long long desiredParts;
-@property unsigned long long disabledParts;
-@property(readonly) unsigned int hash;
-@property(retain) MPAVItem * item;
-@property(retain,readonly) UINavigationBar * navigationBar;
-@property BOOL navigationBarHidden;
-@property(retain) MPAVController * player;
-@property int style;
-@property(readonly) Class superclass;
-@property <MPVideoControllerProtocol> * videoViewController;
-@property unsigned long long visibleParts;
+@property (nonatomic) BOOL allowsDetailScrubbing;
+@property (nonatomic) BOOL allowsExitFromFullscreen;
+@property (nonatomic) BOOL allowsWirelessPlayback;
+@property (nonatomic) BOOL automaticallyHandleTransportControls;
+@property (nonatomic, readonly) float bottomBarHeight;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPVideoOverlayDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned long long desiredParts;
+@property (nonatomic) unsigned long long disabledParts;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPAVItem *item;
+@property (nonatomic, readonly, retain) UINavigationBar *navigationBar;
+@property (nonatomic) BOOL navigationBarHidden;
+@property (nonatomic, retain) MPAVController *player;
+@property (nonatomic) int style;
+@property (readonly) Class superclass;
+@property (nonatomic) <MPVideoControllerProtocol> *videoViewController;
+@property (nonatomic) unsigned long long visibleParts;
 
 - (void).cxx_destruct;
 - (void)_activeAudioRouteDidChange:(id)arg1;
@@ -158,8 +156,8 @@
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 animateAlongside:(id)arg3 completionBlock:(id)arg4;
-- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
+- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 animateAlongside:(id /* block */)arg3 completionBlock:(id /* block */)arg4;
+- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (void)setItem:(id)arg1;
 - (void)setNavigationBarHidden:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;

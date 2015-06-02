@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class MCDBrowsableContentModel, NSString, UINavigationController;
-
 @interface MCDPlayableContentViewController : UIViewController {
     NSString *_bundleID;
     BOOL _hasBrowsableContent;
@@ -11,7 +9,7 @@
     UINavigationController *_navigationController;
 }
 
-@property(copy,readonly) NSString * bundleID;
+@property (nonatomic, readonly, copy) NSString *bundleID;
 
 - (void).cxx_destruct;
 - (void)_embedAppropriateViewController;

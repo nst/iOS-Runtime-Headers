@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaLibrary, NSArray;
-
 @interface MusicSharedLibrariesViewController : UITableViewController <UIViewControllerRestoration> {
     MPMediaLibrary *_connectingMediaLibrary;
     NSArray *_sharedMediaLibraries;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCalendarItem, EKEventStore, EKStructuredLocation, EKTravelRouteEstimationController, NSDate, NSIndexPath, NSString, UISwitch, UITableView, UIView;
-
 @interface EKEventTravelTimeEditViewController : EKEditItemViewController <EKEditItemViewControllerDelegate, EKTravelRouteEstimationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSDate *_arrivalDate;
     EKCalendarItem *_calendarItem;
@@ -42,15 +40,15 @@
     int _travelTimeSelectedChoice;
 }
 
-@property(retain) NSDate * arrivalDate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) EKStructuredLocation * destinationStructuredLocation;
-@property(readonly) unsigned int hash;
-@property(retain) EKStructuredLocation * originStructuredLocation;
-@property int selectedRoutingMode;
-@property double selectedTravelTime;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSDate *arrivalDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) EKStructuredLocation *destinationStructuredLocation;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) EKStructuredLocation *originStructuredLocation;
+@property (nonatomic) int selectedRoutingMode;
+@property (nonatomic) double selectedTravelTime;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_autoselectFromAvailableChoices;

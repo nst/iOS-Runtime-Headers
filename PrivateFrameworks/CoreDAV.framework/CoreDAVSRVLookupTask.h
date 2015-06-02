@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSArray, NSString;
-
 @interface CoreDAVSRVLookupTask : CoreDAVTask {
     NSArray *_fetchedRecords;
     struct __CFHost { } *_host;
     NSString *_serviceString;
 }
 
-@property(retain) NSArray * fetchedRecords;
-@property struct __CFHost { }* host;
-@property(retain) NSString * serviceString;
+@property (nonatomic, retain) NSArray *fetchedRecords;
+@property (nonatomic) struct __CFHost { }*host;
+@property (nonatomic, retain) NSString *serviceString;
 
 - (void)dealloc;
 - (id)description;

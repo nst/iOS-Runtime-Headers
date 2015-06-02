@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAClientBoundCommand>, NSString;
+@interface SAGKAlternateResult : AceObject <SAAceSerializable>
 
-@interface SAGKAlternateResult : AceObject <SAAceSerializable> {
-}
-
-@property(retain) <SAClientBoundCommand> * command;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * name;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) <SAClientBoundCommand> *command;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *name;
+@property (readonly) Class superclass;
 
 + (id)alternateResult;
 + (id)alternateResultWithDictionary:(id)arg1 context:(id)arg2;

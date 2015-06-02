@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OABDrawing : NSObject {
-}
+@interface OABDrawing : NSObject
 
 + (unsigned long)addShapeIdForObject:(id)arg1;
 + (void)applyRulesFromSolverContainer:(id)arg1 state:(id)arg2;

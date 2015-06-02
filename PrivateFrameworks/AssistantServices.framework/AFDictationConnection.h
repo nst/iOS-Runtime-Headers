@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class <AFDictationDelegate>, NSString, NSXPCConnection;
-
 @interface AFDictationConnection : NSObject {
     unsigned int _audioSessionID;
     float _averagePower;
@@ -14,15 +12,15 @@
     BOOL _isWaitingForAudioFile;
     NSString *_lastUsedLanguage;
     float _peakPower;
-    unsigned int _stateInSync : 1;
+    unsigned int _stateInSync;
 }
 
-@property(readonly) BOOL currentlyUsingLocalDication;
-@property <AFDictationDelegate> * delegate;
+@property (nonatomic, readonly) BOOL currentlyUsingLocalDication;
+@property (nonatomic) <AFDictationDelegate> *delegate;
 
 + (BOOL)dictationIsEnabled;
 + (BOOL)dictationIsSupportedForLanguageCode:(id)arg1 error:(id*)arg2;
-+ (void)fetchSupportedLanguageCodes:(id)arg1;
++ (void)fetchSupportedLanguageCodes:(id /* block */)arg1;
 
 - (void).cxx_destruct;
 - (void)_availabilityChanged:(id)arg1;

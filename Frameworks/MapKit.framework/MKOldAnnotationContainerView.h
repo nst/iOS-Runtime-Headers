@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKOldAnnotationContainerView : MKAnnotationContainerView {
-}
+@interface MKOldAnnotationContainerView : MKAnnotationContainerView
 
 @end

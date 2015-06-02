@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SASSpeechFailure : SABaseClientBoundCommand
 
-@interface SASSpeechFailure : SABaseClientBoundCommand {
-}
-
-@property int errorCode;
-@property int reason;
-@property(copy) NSString * reasonDescription;
+@property (nonatomic) int errorCode;
+@property (nonatomic) int reason;
+@property (nonatomic, copy) NSString *reasonDescription;
 
 + (id)speechFailure;
 + (id)speechFailureWithDictionary:(id)arg1 context:(id)arg2;

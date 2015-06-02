@@ -7,8 +7,8 @@
     float _rightClip;
 }
 
-@property float leftClip;
-@property float rightClip;
+@property (nonatomic) float leftClip;
+@property (nonatomic) float rightClip;
 
 - (float)leftClip;
 - (float)rightClip;

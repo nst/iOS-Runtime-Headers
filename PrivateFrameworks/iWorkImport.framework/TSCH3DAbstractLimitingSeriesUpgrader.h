@@ -2,22 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class TSCHChartInfo;
-
 @interface TSCH3DAbstractLimitingSeriesUpgrader : NSObject {
     TSCHChartInfo *mChartInfo;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id mWillModifyBlock;
-
+    id /* block */ mWillModifyBlock;
 }
 
-@property(copy) id willModifyBlock;
+@property (nonatomic, copy) id /* block */ willModifyBlock;
 
 + (BOOL)chartTypeUsesSeriesLimiting:(id)arg1;
 + (float)depthFactorForAdjustingNumberOfSeries:(unsigned int)arg1 chartType:(id)arg2 fromOldLimitingSeries:(unsigned int)arg3 toNewLimitingSeries:(unsigned int)arg4;
@@ -34,9 +24,9 @@
 - (void)mutateInfoWithMutations:(id)arg1;
 - (unsigned int)numberOfSeries;
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })oldLayoutSettings;
-- (void)setWillModifyBlock:(id)arg1;
+- (void)setWillModifyBlock:(id /* block */)arg1;
 - (void)upgrade;
 - (struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; unsigned int x7; })upgradedLayoutSettings;
-- (id)willModifyBlock;
+- (id /* block */)willModifyBlock;
 
 @end

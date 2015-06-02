@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UILabel;
-
 @interface GKStatusCell : GKCollectionViewCell {
     UILabel *_statusLabel;
 }
 
-@property(retain) UILabel * statusLabel;
+@property (nonatomic, retain) UILabel *statusLabel;
 
 - (BOOL)canRemoveItem;
 - (void)dealloc;

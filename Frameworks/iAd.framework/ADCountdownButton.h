@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class CAShapeLayer, UIImage, UIImageView, UIView;
-
 @interface ADCountdownButton : UIControl {
     UIImageView *_backgroundView;
     BOOL _dimmed;
@@ -14,13 +12,13 @@
     UIView *_outlineView;
 }
 
-@property(retain) UIImageView * backgroundView;
-@property BOOL dimmed;
-@property(retain) UIImage * dimmedIconImage;
-@property(retain) UIImage * iconImage;
-@property(retain) UIImageView * iconView;
-@property(retain) CAShapeLayer * outlineProgressLayer;
-@property(retain) UIView * outlineView;
+@property (nonatomic, retain) UIImageView *backgroundView;
+@property (nonatomic) BOOL dimmed;
+@property (nonatomic, retain) UIImage *dimmedIconImage;
+@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic, retain) UIImageView *iconView;
+@property (nonatomic, retain) CAShapeLayer *outlineProgressLayer;
+@property (nonatomic, retain) UIView *outlineView;
 
 + (id)_closeBoxImage;
 + (id)_inactiveCloseBoxImage;
@@ -50,6 +48,6 @@
 - (void)setIconView:(id)arg1;
 - (void)setOutlineProgressLayer:(id)arg1;
 - (void)setOutlineView:(id)arg1;
-- (void)startEnablingButtonWithCountdownDuration:(double)arg1 completionHandler:(id)arg2;
+- (void)startEnablingButtonWithCountdownDuration:(double)arg1 completionHandler:(id /* block */)arg2;
 
 @end

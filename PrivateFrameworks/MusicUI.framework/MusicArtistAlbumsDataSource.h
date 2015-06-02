@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface MusicArtistAlbumsDataSource : MusicQueryDataSource {
     NSArray *_sectionEntities;
     NSMutableDictionary *_sectionRanges;

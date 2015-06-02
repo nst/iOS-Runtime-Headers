@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DAxisLabelKind, TSCH3DValueEnumerator;
-
 @interface TSCH3DAxisLabelCachedEnumerator : TSCH3DValueEnumerator {
     struct vector<TSCH3D::AxisLabelCacheItem, std::__1::allocator<TSCH3D::AxisLabelCacheItem> > { 
         struct AxisLabelCacheItem {} *__begin_; 
@@ -20,7 +18,7 @@
     BOOL mValid;
 }
 
-@property(readonly) TSCH3DAxisLabelKind * kind;
+@property (nonatomic, readonly) TSCH3DAxisLabelKind *kind;
 
 + (id)enumeratorWithAxisLabelEnumerator:(id)arg1;
 

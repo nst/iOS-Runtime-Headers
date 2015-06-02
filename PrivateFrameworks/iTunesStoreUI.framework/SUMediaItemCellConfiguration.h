@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUMediaItemCellConfiguration : SUItemCellConfiguration {
-}
+@interface SUMediaItemCellConfiguration : SUItemCellConfiguration
 
-@property(readonly) struct CGSize { float x1; float x2; } artworkSize;
-@property(readonly) int mediaIconType;
-@property(readonly) BOOL showContentRating;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } artworkSize;
+@property (nonatomic, readonly) int mediaIconType;
+@property (nonatomic, readonly) BOOL showContentRating;
 
 + (id)copyDefaultContext;
 

@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AVItem, NSDictionary, NSString;
-
 @interface SBUISound : NSObject {
     NSString *_accountIdentifier;
     int _alertType;
     AVItem *_avItem;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     NSDictionary *_controllerAttributes;
     double _maxDuration;
     BOOL _repeats;
@@ -32,26 +22,26 @@
     NSDictionary *_vibrationPattern;
 }
 
-@property(setter=_setResolvedSoundID:) unsigned long _resolvedSystemSoundID;
-@property(copy) NSString * accountIdentifier;
-@property int alertType;
-@property(retain) AVItem * avItem;
-@property(retain) NSDictionary * controllerAttributes;
-@property double maxDuration;
-@property(getter=isRepeating) BOOL repeats;
-@property(retain) NSString * ringtoneName;
-@property(copy) NSString * songPath;
-@property unsigned int soundBehavior;
-@property int soundType;
-@property unsigned long systemSoundID;
-@property(copy) NSString * toneIdentifier;
-@property(copy) NSString * vibrationIdentifier;
-@property(retain) NSDictionary * vibrationPattern;
+@property (setter=_setResolvedSoundID:, nonatomic) unsigned long _resolvedSystemSoundID;
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic) int alertType;
+@property (nonatomic, retain) AVItem *avItem;
+@property (nonatomic, retain) NSDictionary *controllerAttributes;
+@property (nonatomic) double maxDuration;
+@property (getter=isRepeating, nonatomic) BOOL repeats;
+@property (nonatomic, retain) NSString *ringtoneName;
+@property (nonatomic, copy) NSString *songPath;
+@property (nonatomic) unsigned int soundBehavior;
+@property (nonatomic) int soundType;
+@property (nonatomic) unsigned long systemSoundID;
+@property (nonatomic, copy) NSString *toneIdentifier;
+@property (nonatomic, copy) NSString *vibrationIdentifier;
+@property (nonatomic, retain) NSDictionary *vibrationPattern;
 
-- (id)_completionBlock;
+- (id /* block */)_completionBlock;
 - (unsigned long)_resolvedSystemSoundID;
 - (id)_resolvedToneIdentifier;
-- (void)_setCompletionBlock:(id)arg1;
+- (void)_setCompletionBlock:(id /* block */)arg1;
 - (void)_setResolvedSoundID:(unsigned long)arg1;
 - (void)_setResolvedToneIdentifier:(id)arg1;
 - (id)accountIdentifier;
@@ -69,7 +59,7 @@
 - (BOOL)isPlaying;
 - (BOOL)isRepeating;
 - (double)maxDuration;
-- (BOOL)playInEvironments:(int)arg1 completion:(id)arg2;
+- (BOOL)playInEvironments:(int)arg1 completion:(id /* block */)arg2;
 - (id)ringtoneName;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setAlertType:(int)arg1;

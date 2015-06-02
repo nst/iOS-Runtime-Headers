@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIItemArtworkContext, SKUILockupSwooshViewController, SKUIVideoImageDataConsumer, UIImage;
-
 @interface SKUILockupSwooshArtworkLoader : SKUISwooshArtworkLoader {
     SKUIItemArtworkContext *_context;
     SKUIVideoImageDataConsumer *_videoImageConsumer;
     UIImage *_videoPlaceholderImage;
 }
 
-@property(readonly) SKUILockupSwooshViewController * swooshViewController;
+@property (nonatomic, readonly) SKUILockupSwooshViewController *swooshViewController;
 
 - (void).cxx_destruct;
 - (id)cachedImageForItem:(id)arg1;

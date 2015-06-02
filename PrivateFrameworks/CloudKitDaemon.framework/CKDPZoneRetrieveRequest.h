@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordZoneIdentifier;
-
 @interface CKDPZoneRetrieveRequest : PBRequest <NSCopying> {
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-@property(readonly) BOOL hasZoneIdentifier;
-@property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
+@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 + (id)options;
 

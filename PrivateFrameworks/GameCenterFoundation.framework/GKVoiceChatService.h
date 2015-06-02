@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class <GKVoiceChatClient>;
-
 @interface GKVoiceChatService : NSObject {
     id _voiceChatService;
 }
 
-@property <GKVoiceChatClient> * client;
-@property(readonly) float inputMeterLevel;
-@property(getter=isInputMeteringEnabled) BOOL inputMeteringEnabled;
-@property(getter=isMicrophoneMuted) BOOL microphoneMuted;
-@property(readonly) float outputMeterLevel;
-@property(getter=isOutputMeteringEnabled) BOOL outputMeteringEnabled;
-@property float remoteParticipantVolume;
+@property <GKVoiceChatClient> *client;
+@property (readonly) float inputMeterLevel;
+@property (getter=isInputMeteringEnabled, nonatomic) BOOL inputMeteringEnabled;
+@property (getter=isMicrophoneMuted, nonatomic) BOOL microphoneMuted;
+@property (readonly) float outputMeterLevel;
+@property (getter=isOutputMeteringEnabled, nonatomic) BOOL outputMeteringEnabled;
+@property (nonatomic) float remoteParticipantVolume;
 
 + (id)defaultVoiceChatService;
 + (void)initialize;

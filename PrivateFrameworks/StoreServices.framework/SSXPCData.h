@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface SSXPCData : NSData {
     NSObject<OS_xpc_object> *_xpcData;
 }
 
-@property(readonly) NSObject<OS_xpc_object> * xpcData;
+@property (nonatomic, readonly) NSObject<OS_xpc_object> *xpcData;
 
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADColor;
-
 @interface OADDuotoneEffect : OADBlipEffect {
     OADColor *mColor1;
     OADColor *mColor2;

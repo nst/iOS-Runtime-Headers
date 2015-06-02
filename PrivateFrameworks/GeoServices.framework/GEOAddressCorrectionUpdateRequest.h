@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOAddressCorrectionUpdateRequest : PBRequest <NSCopying> {
     NSString *_addressID;
     int _correctionStatus;
@@ -13,11 +11,11 @@
     NSMutableArray *_significantLocations;
 }
 
-@property(retain) NSString * addressID;
-@property int correctionStatus;
-@property(readonly) BOOL hasAddressID;
-@property BOOL hasCorrectionStatus;
-@property(retain) NSMutableArray * significantLocations;
+@property (nonatomic, retain) NSString *addressID;
+@property (nonatomic) int correctionStatus;
+@property (nonatomic, readonly) BOOL hasAddressID;
+@property (nonatomic) BOOL hasCorrectionStatus;
+@property (nonatomic, retain) NSMutableArray *significantLocations;
 
 - (void)addSignificantLocation:(id)arg1;
 - (id)addressID;

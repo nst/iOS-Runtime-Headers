@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKCalendarIgnoreAlertsEditItem : EKCalendarAbstractSwitchEditItem {
-}
+@interface EKCalendarIgnoreAlertsEditItem : EKCalendarAbstractSwitchEditItem
 
 - (id)cellText;
 - (BOOL)configureWithCalendar:(id)arg1;

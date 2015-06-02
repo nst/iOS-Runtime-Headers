@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface __UIAccessibilityValidateBlockSignatureSentinel : NSObject {
-}
+@interface __UIAccessibilityValidateBlockSignatureSentinel : NSObject
 
 @end

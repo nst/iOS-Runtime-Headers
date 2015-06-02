@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSDate, NSNumber, NSString;
-
 @interface FUChartPointNumeric : NSObject <FUChartPoint> {
     NSDate *_xValue;
     NSNumber *_yValue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) NSDate * xValue;
-@property(retain) NSNumber * yValue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSDate *xValue;
+@property (nonatomic, retain) NSNumber *yValue;
 
 + (id)chartPointWithXValue:(id)arg1 yValue:(id)arg2;
 

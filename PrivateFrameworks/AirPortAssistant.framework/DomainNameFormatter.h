@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface DomainNameFormatter : APFormatter {
-}
+@interface DomainNameFormatter : APFormatter
 
 + (id)domainNameFormatter:(unsigned int)arg1;
 + (id)domainNameSet;

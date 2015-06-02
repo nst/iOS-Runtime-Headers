@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSAttributedString, NSMutableArray, NSString, RMList;
-
 @interface CPReadingModel : NSObject {
     NSAttributedString *_cachedAttributedString;
     NSString *_cachedString;
@@ -83,9 +81,9 @@
 - (void)tables:(struct CGPDFNode { }*)arg1 layout:(struct CGPDFLayout { }*)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })textRangeForLine:(unsigned int)arg1;
 - (struct { int x1; int x2; })textRangeForStringRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)visitColumns:(struct CGPDFNode { }*)arg1 completion:(id)arg2;
-- (void)visitLayoutAreas:(struct CGPDFNode { }*)arg1 completion:(id)arg2;
-- (void)visitParagraphs:(struct CGPDFNode { }*)arg1 completion:(id)arg2;
-- (void)visitTextLines:(struct CGPDFNode { }*)arg1 completion:(id)arg2;
+- (void)visitColumns:(struct CGPDFNode { }*)arg1 completion:(id /* block */)arg2;
+- (void)visitLayoutAreas:(struct CGPDFNode { }*)arg1 completion:(id /* block */)arg2;
+- (void)visitParagraphs:(struct CGPDFNode { }*)arg1 completion:(id /* block */)arg2;
+- (void)visitTextLines:(struct CGPDFNode { }*)arg1 completion:(id /* block */)arg2;
 
 @end

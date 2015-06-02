@@ -2,12 +2,16 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPPlaceholderAVItem : MPAVItem {
-}
+@interface MPPlaceholderAVItem : MPAVItem
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
-- (BOOL)mpuReporting_isValidReportingItem;
 - (BOOL)supportsSkip;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (BOOL)mpuReporting_isValidReportingItem;
 
 @end

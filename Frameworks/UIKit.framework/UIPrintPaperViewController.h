@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIPrintPanelViewController;
-
 @interface UIPrintPaperViewController : UITableViewController {
     UIPrintPanelViewController *_printPanelViewController;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABCardGroupItem, CNContactStyle, NSArray;
-
 @interface ABContactCell : UITableViewCell {
     BOOL _addedConstantsConstraints;
     ABCardGroupItem *_cardGroupItem;
@@ -14,12 +12,12 @@
     NSArray *_variableConstraints;
 }
 
-@property(retain) ABCardGroupItem * cardGroupItem;
-@property(retain) CNContactStyle * contactStyle;
-@property BOOL hasBeenDisplayed;
-@property float leftContentMargin;
-@property float rightContentMargin;
-@property BOOL showSeparator;
+@property (nonatomic, retain) ABCardGroupItem *cardGroupItem;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
+@property (nonatomic) BOOL hasBeenDisplayed;
+@property (nonatomic) float leftContentMargin;
+@property (nonatomic) float rightContentMargin;
+@property (nonatomic) BOOL showSeparator;
 
 - (id)cardGroupItem;
 - (id)constantConstraints;

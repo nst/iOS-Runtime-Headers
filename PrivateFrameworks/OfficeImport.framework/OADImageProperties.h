@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADImageFill;
-
 @interface OADImageProperties : OADGraphicProperties {
     OADImageFill *mImageFill;
 }

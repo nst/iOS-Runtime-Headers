@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHChartRep;
-
 @interface TSCH3DChartRepAs2D : TSCHChartRep {
     TSCHChartRep *m2DRep;
 }

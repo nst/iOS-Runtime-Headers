@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLLastAccountManager : NSObject {
-}
+@interface SLLastAccountManager : NSObject
 
 + (id)_lastAccountOfTypeIdentifier:(id)arg1 inStore:(id)arg2 updatePrefs:(BOOL)arg3 prefKey:(id)arg4 prefAppID:(id)arg5;
 + (void)_setLastAccount:(id)arg1 prefKey:(id)arg2 prefAppID:(id)arg3;

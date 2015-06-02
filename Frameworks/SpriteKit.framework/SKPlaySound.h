@@ -2,23 +2,9 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, SKSoundSource;
-
 @interface SKPlaySound : SKAction {
     NSString *_filePath;
-
-  /* Error parsing encoded ivar type info: ^{SKCPlaySound=^^?If@?@BddffdBB@?iffff@cc} */
-    struct SKCPlaySound { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; bool x7; double x8; double x9; float x10; float x11; double x12; bool x13; bool x14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; id x22; BOOL x23; BOOL x24; } *_mycaction;
-
+    struct SKCPlaySound { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; id x19; BOOL x20; } *_mycaction;
     struct CGPoint { 
         float x; 
         float y; 

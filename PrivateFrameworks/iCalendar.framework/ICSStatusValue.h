@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSString;
-
 @interface ICSStatusValue : ICSPredefinedValue {
     NSString *_statusString;
 }
 
-@property(retain) NSString * statusString;
+@property (retain) NSString *statusString;
 
 + (id)statusTypeFromCode:(int)arg1;
 + (id)statusTypeFromCode:(int)arg1 statusString:(id)arg2;

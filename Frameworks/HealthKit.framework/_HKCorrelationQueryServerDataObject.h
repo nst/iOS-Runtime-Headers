@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSDictionary;
-
 @interface _HKCorrelationQueryServerDataObject : _HKQueryServerDataObject {
     NSDictionary *_filterDictionary;
     int _version;
 }
 
-@property(retain) NSDictionary * filterDictionary;
-@property int version;
+@property (nonatomic, retain) NSDictionary *filterDictionary;
+@property (nonatomic) int version;
 
 + (BOOL)supportsSecureCoding;
 

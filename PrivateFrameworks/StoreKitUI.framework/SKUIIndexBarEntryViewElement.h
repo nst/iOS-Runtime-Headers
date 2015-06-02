@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIViewElement;
-
 @interface SKUIIndexBarEntryViewElement : SKUIViewElement {
     NSString *_targetIndexBarEntryID;
     int _visibilityPriority;
 }
 
-@property(readonly) SKUIViewElement * childElement;
-@property(copy,readonly) NSString * targetIndexBarEntryID;
-@property(readonly) int visibilityPriority;
+@property (nonatomic, readonly) SKUIViewElement *childElement;
+@property (nonatomic, readonly, copy) NSString *targetIndexBarEntryID;
+@property (nonatomic, readonly) int visibilityPriority;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

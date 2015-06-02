@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, SKUIProductPageItem;
-
 @interface SKUITextActivityItemProvider : UIActivityItemProvider {
     SKUIClientContext *_clientContext;
     SKUIProductPageItem *_item;

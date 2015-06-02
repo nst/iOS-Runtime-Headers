@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceTrigger.framework/VoiceTrigger
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface VTAggregator : NSObject {
     double _cumulativeDowntime;
     double _cumulativeUptime;

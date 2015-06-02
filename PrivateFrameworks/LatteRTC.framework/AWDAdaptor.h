@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class NSMutableArray;
-
 @interface AWDAdaptor : NSObject {
     NSMutableArray *frameErasureRateArray;
     NSMutableArray *jitterBufferResidencyTimeArray;

@@ -3,8 +3,8 @@
  */
 
 @interface UIRemoveControlMultiSelectButton : UIRemoveControlMinusButton {
-    unsigned int _isHighlighted : 1;
-    unsigned int _isSelected : 1;
+    unsigned int _isHighlighted;
+    unsigned int _isSelected;
 }
 
 + (float)defaultWidth;

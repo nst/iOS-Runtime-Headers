@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUDeferredUISearchField : UISearchField <SUDeferredUIView> {
     int _deferredClearButtonMode;
     id _deferredFont;
@@ -24,11 +22,11 @@
     BOOL _isDeferringInterfaceUpdates;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=isDeferringInterfaceUpdates) BOOL deferringInterfaceUpdates;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDeferringInterfaceUpdates, nonatomic) BOOL deferringInterfaceUpdates;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_commitDeferredInterfaceUpdates;
 - (void)_saveCurrentStateAsDeferred;

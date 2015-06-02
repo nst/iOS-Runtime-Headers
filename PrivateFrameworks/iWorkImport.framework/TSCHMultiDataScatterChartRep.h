@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHMultiDataScatterChartRep : TSCHMultiDataChartRep {
-}
+@interface TSCHMultiDataScatterChartRep : TSCHMultiDataChartRep
 
 - (id)createMultiDataElementShapeLayerForSeriesIndex:(unsigned int)arg1;
 - (void)updateAppearanceForElementLayer:(id)arg1 seriesIndex:(unsigned int)arg2;

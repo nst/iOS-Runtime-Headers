@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSPObjectDelegate>, NSString, NSUUID, TSPComponent, TSPObject, TSPObjectContext, TSPUnknownContent, TSUUUIDPath;
-
 @interface TSPObject : NSObject {
     NSUUID *_UUID;
     TSPComponent *_component;
@@ -14,26 +12,26 @@
     TSPUnknownContent *_unknownContent;
 }
 
-@property(readonly) BOOL allowsImplicitComponentOwnership;
-@property(readonly) TSPObject * componentRootObject;
-@property(readonly) TSPObjectContext * context;
-@property(readonly) unsigned int delayedArchivingPriority;
-@property(readonly) BOOL isCommandObject;
-@property(readonly) BOOL isComponentRoot;
-@property(readonly) BOOL needsArchiving;
-@property(copy) NSUUID * objectUUID;
-@property(readonly) TSUUUIDPath * objectUUIDPath;
-@property(readonly) NSString * packageLocator;
-@property(readonly) BOOL shouldDelayArchiving;
-@property(readonly) BOOL storeOutsideObjectArchive;
-@property TSPComponent * tsp_component;
-@property <TSPObjectDelegate> * tsp_delegate;
-@property(readonly) NSString * tsp_description;
-@property long long tsp_identifier;
-@property(readonly) BOOL tsp_isInDocument;
-@property long long tsp_modifyObjectToken;
-@property(readonly) long long tsp_unarchiverIdentifier;
-@property(readonly) TSPUnknownContent * tsp_unknownContent;
+@property (nonatomic, readonly) BOOL allowsImplicitComponentOwnership;
+@property (nonatomic, readonly) TSPObject *componentRootObject;
+@property (nonatomic, readonly) TSPObjectContext *context;
+@property (nonatomic, readonly) unsigned int delayedArchivingPriority;
+@property (nonatomic, readonly) BOOL isCommandObject;
+@property (nonatomic, readonly) BOOL isComponentRoot;
+@property (nonatomic, readonly) BOOL needsArchiving;
+@property (nonatomic, copy) NSUUID *objectUUID;
+@property (nonatomic, readonly) TSUUUIDPath *objectUUIDPath;
+@property (nonatomic, readonly) NSString *packageLocator;
+@property (nonatomic, readonly) BOOL shouldDelayArchiving;
+@property (nonatomic, readonly) BOOL storeOutsideObjectArchive;
+@property (nonatomic) TSPComponent *tsp_component;
+@property (nonatomic) <TSPObjectDelegate> *tsp_delegate;
+@property (nonatomic, readonly) NSString *tsp_description;
+@property (nonatomic) long long tsp_identifier;
+@property (nonatomic, readonly) BOOL tsp_isInDocument;
+@property (nonatomic) long long tsp_modifyObjectToken;
+@property (nonatomic, readonly) long long tsp_unarchiverIdentifier;
+@property (nonatomic, readonly) TSPUnknownContent *tsp_unknownContent;
 
 + (BOOL)needsObjectUUID;
 + (id)newObjectForUnarchiver:(id)arg1;
@@ -75,10 +73,10 @@
 - (BOOL)shouldDelayArchiving;
 - (BOOL)storeOutsideObjectArchive;
 - (id)tsp_component;
-- (void)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 completion:(id)arg3;
+- (void)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)tsp_deepCopyWithOptions:(id)arg1;
-- (void)tsp_deepCopyWithOptions:(id)arg1 completion:(id)arg2;
+- (void)tsp_deepCopyWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (id)tsp_delegate;
 - (id)tsp_description;
 - (id)tsp_descriptionWithDepth:(unsigned int)arg1;

@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNOffscreenRenderer : SCNRenderer {
-}
+@interface SCNOffscreenRenderer : SCNRenderer
 
-@property unsigned int antialiasingMode;
-@property(readonly) unsigned int textureID;
+@property (nonatomic) unsigned int antialiasingMode;
+@property (nonatomic, readonly) unsigned int textureID;
 
 + (id)offscreenRendererWithContext:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 

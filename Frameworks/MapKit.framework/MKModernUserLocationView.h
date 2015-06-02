@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class CALayer, UIImage;
-
 @interface MKModernUserLocationView : MKUserLocationView {
     CALayer *_baseDimmingLayer;
     CALayer *_baseLayer;
@@ -13,9 +11,9 @@
     BOOL _shouldInnerPulse;
 }
 
-@property(retain) UIImage * innerImageMask;
-@property BOOL rotateInnerImageToMatchCourse;
-@property BOOL shouldInnerPulse;
+@property (nonatomic, retain) UIImage *innerImageMask;
+@property (nonatomic) BOOL rotateInnerImageToMatchCourse;
+@property (nonatomic) BOOL shouldInnerPulse;
 
 + (float)baseDiameter;
 + (float)innerDiameter;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUColor;
-
 @interface TSSSpecSetColor : TSSSpecColor {
     TSUColor *_color;
     BOOL _unset;

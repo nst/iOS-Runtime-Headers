@@ -2,20 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSString;
-
 @interface KNRecordingEventTrack : TSPObject {
     NSArray *mEvents;
     NSString *mType;
 }
 
-@property(readonly) NSArray * events;
-@property(readonly) NSString * type;
+@property (nonatomic, readonly) NSArray *events;
+@property (nonatomic, readonly) NSString *type;
 
 - (void)dealloc;
 - (id)eventTrackByReplacingSegmentAfterTime:(double)arg1 withEventTrack:(id)arg2;

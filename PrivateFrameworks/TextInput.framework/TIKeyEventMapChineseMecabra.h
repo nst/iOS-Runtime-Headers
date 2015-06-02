@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIKeyEventMapChineseMecabra : TIKeyEventMapChinese {
-}
+@interface TIKeyEventMapChineseMecabra : TIKeyEventMapChinese
 
 + (id)inlineNumbersAndPunctuationSet;
 + (BOOL)supportsSecureCoding;

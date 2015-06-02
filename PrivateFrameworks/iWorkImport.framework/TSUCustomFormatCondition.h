@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUCustomFormatData;
-
 @interface TSUCustomFormatCondition : NSObject <NSCopying> {
     int mConditionType;
     double mConditionValue;
     TSUCustomFormatData *mData;
 }
 
-@property(readonly) int conditionType;
-@property(readonly) double conditionValue;
-@property(readonly) TSUCustomFormatData * data;
+@property (nonatomic, readonly) int conditionType;
+@property (nonatomic, readonly) double conditionValue;
+@property (nonatomic, readonly) TSUCustomFormatData *data;
 
 - (int)conditionType;
 - (double)conditionValue;

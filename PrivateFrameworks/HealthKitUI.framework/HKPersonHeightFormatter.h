@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class NSLengthFormatter, NSNumber;
-
 @interface HKPersonHeightFormatter : NSObject {
     NSLengthFormatter *_heightFormatter;
     NSNumber *_usesImperialUnits;

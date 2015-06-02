@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface HMDIdentityRegistry : NSObject {
     NSMutableDictionary *_registry;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(retain) NSMutableDictionary * registry;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, retain) NSMutableDictionary *registry;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (void)clear;

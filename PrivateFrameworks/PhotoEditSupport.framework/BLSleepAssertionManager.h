@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class NSObject<OS_dispatch_semaphore>;
-
 @interface BLSleepAssertionManager : NSObject {
     int m_assertionCount;
     int m_assertionLock;

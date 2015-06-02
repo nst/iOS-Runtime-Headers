@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSNumber, NSString;
-
 @interface GKGameDescriptor : GKInternalRepresentation {
     NSNumber *_adamID;
     NSString *_bundleIdentifier;
@@ -11,10 +9,10 @@
     NSNumber *_externalVersion;
 }
 
-@property(retain) NSNumber * adamID;
-@property(copy) NSString * bundleIdentifier;
-@property(copy) NSString * bundleVersion;
-@property(retain) NSNumber * externalVersion;
+@property (nonatomic, retain) NSNumber *adamID;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (nonatomic, copy) NSString *bundleVersion;
+@property (nonatomic, retain) NSNumber *externalVersion;
 
 + (id)gameDescriptorWithBundleID:(id)arg1;
 + (id)gameDescriptorWithBundleID:(id)arg1 adamID:(id)arg2;

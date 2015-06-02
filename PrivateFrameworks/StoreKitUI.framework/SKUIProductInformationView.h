@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, NSString, SKUIColorScheme, UILabel, UIView;
-
 @interface SKUIProductInformationView : UIView {
     SKUIColorScheme *_colorScheme;
     struct UIEdgeInsets { 
@@ -20,11 +18,11 @@
     NSMutableArray *_valueLabels;
 }
 
-@property(retain) SKUIColorScheme * colorScheme;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property BOOL hidesSeparatorView;
-@property(retain) NSArray * informationLines;
-@property(retain) NSString * title;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) BOOL hidesSeparatorView;
+@property (nonatomic, retain) NSArray *informationLines;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (float)_keyWidth;

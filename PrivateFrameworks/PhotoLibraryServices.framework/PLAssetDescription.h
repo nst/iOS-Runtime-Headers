@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSString, PLAdditionalAssetAttributes;
+@interface PLAssetDescription : PLManagedObject
 
-@interface PLAssetDescription : PLManagedObject {
-}
-
-@property(retain) PLAdditionalAssetAttributes * assetAttributes;
-@property(retain) NSString * longDescription;
+@property (nonatomic, retain) PLAdditionalAssetAttributes *assetAttributes;
+@property (nonatomic, retain) NSString *longDescription;
 
 - (void)prepareForDeletion;
 - (void)willSave;

@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, TSCEFunctionSpec;
-
 @interface TSCEFunctionArgumentSpec : NSObject <NSCopying> {
     int mAccessorMode;
     int mArgumentContext;
@@ -29,26 +23,26 @@
     BOOL mReferenceForGeometryOnly;
 }
 
-@property(readonly) int accessorMode;
-@property(readonly) int argumentContext;
-@property(readonly) short defaultModeIndex;
-@property(readonly) BOOL disallowCurrency;
-@property(readonly) BOOL disallowDuration;
-@property(readonly) NSArray * disallowedTypes;
-@property(readonly) BOOL forceArrayMode;
-@property TSCEFunctionSpec * functionSpec;
-@property(readonly) short index;
-@property(readonly) BOOL isInteger;
-@property(readonly) BOOL isMode;
-@property(readonly) BOOL isOptional;
-@property(readonly) BOOL maxInclusive;
-@property(readonly) double maxValue;
-@property(readonly) BOOL minInclusive;
-@property(readonly) double minValue;
-@property(readonly) /* Warning: unhandled struct encoding: '{vector<TSCEValue' */ struct * modeValues; /* unknown property attribute:  std::__1::allocator<TSCEValue> >=^{TSCEValue}}} */
-@property(readonly) short numModes;
-@property int rangeContext;
-@property(readonly) BOOL referenceForGeometryOnly;
+@property (nonatomic, readonly) int accessorMode;
+@property (nonatomic, readonly) int argumentContext;
+@property (nonatomic, readonly) short defaultModeIndex;
+@property (nonatomic, readonly) BOOL disallowCurrency;
+@property (nonatomic, readonly) BOOL disallowDuration;
+@property (nonatomic, readonly) NSArray *disallowedTypes;
+@property (nonatomic, readonly) BOOL forceArrayMode;
+@property (nonatomic) TSCEFunctionSpec *functionSpec;
+@property (nonatomic, readonly) short index;
+@property (nonatomic, readonly) BOOL isInteger;
+@property (nonatomic, readonly) BOOL isMode;
+@property (nonatomic, readonly) BOOL isOptional;
+@property (nonatomic, readonly) BOOL maxInclusive;
+@property (nonatomic, readonly) double maxValue;
+@property (nonatomic, readonly) BOOL minInclusive;
+@property (nonatomic, readonly) double minValue;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<TSCEValue' */ struct *modeValues; /* unknown property attribute:  std::__1::allocator<TSCEValue> >=^{TSCEValue}}} */
+@property (nonatomic, readonly) short numModes;
+@property (nonatomic) int rangeContext;
+@property (nonatomic, readonly) BOOL referenceForGeometryOnly;
 
 + (id)argumentSpecWithIndex:(short)arg1 type:(int)arg2 accessorMode:(int)arg3 disallowedTypes:(id)arg4 argumentContext:(int)arg5 rangeContext:(int)arg6 minValue:(double)arg7 minInclusive:(BOOL)arg8 maxValue:(double)arg9 maxInclusive:(BOOL)arg10 isInteger:(BOOL)arg11 disallowDuration:(BOOL)arg12 disallowCurrency:(BOOL)arg13 modeValues:(struct vector<TSCEValue, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x1; struct TSCEValue {} *x2; struct __compressed_pair<TSCEValue *, std::__1::allocator<TSCEValue> > { struct TSCEValue {} *x_3_1_1; } x3; }*)arg14 defaultModeIndex:(short)arg15 referenceForGeometryOnly:(BOOL)arg16 forceArrayMode:(BOOL)arg17;
 

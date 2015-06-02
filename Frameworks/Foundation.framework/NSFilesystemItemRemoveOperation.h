@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSError, NSString;
-
 @interface NSFilesystemItemRemoveOperation : NSOperation {
     id _delegate;
     NSError *_error;

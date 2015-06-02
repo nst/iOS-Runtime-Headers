@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIMenuPopoverDelegate>, NSArray, NSString, SKUIMenuViewController, UIPopoverController;
-
 @interface SKUIMenuPopoverController : NSObject <SKUIMenuViewControllerDelegate, UIPopoverControllerDelegate> {
     <SKUIMenuPopoverDelegate> *_delegate;
     SKUIMenuViewController *_menuViewController;
     UIPopoverController *_popoverController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIMenuPopoverDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * menuTitles;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIMenuPopoverDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *menuTitles;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_destroyPopoverController;

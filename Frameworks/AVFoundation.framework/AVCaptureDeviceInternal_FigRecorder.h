@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureDeviceInput_FigRecorder;
-
 @interface AVCaptureDeviceInternal_FigRecorder : NSObject {
     AVCaptureDeviceInput_FigRecorder *_activeInput;
     int _configLockPid;

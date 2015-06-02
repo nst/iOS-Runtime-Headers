@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKUIDividedGridViewControllerDelegate>, NSArray;
-
 @interface EKUIDividedGridViewController : UIViewController {
     NSArray *_allCells;
     NSArray *_buttonTitles;
@@ -13,11 +11,11 @@
     NSArray *_weekViews;
 }
 
-@property(retain) NSArray * allCells;
-@property(retain) NSArray * buttonTitles;
-@property <EKUIDividedGridViewControllerDelegate> * delegate;
-@property float preferredWidth;
-@property(retain) NSArray * weekViews;
+@property (retain) NSArray *allCells;
+@property (nonatomic, retain) NSArray *buttonTitles;
+@property <EKUIDividedGridViewControllerDelegate> *delegate;
+@property (nonatomic) float preferredWidth;
+@property (retain) NSArray *weekViews;
 
 + (id)dividerColor;
 

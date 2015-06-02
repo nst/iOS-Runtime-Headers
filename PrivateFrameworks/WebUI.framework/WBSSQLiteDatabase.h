@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSObject<OS_dispatch_queue>, NSString, NSURL;
-
 @interface WBSSQLiteDatabase : NSObject {
     struct sqlite3 { } *_handle;
     NSObject<OS_dispatch_queue> *_queue;
     NSURL *_url;
 }
 
-@property(readonly) int changedRowCount;
-@property(readonly) struct sqlite3 { }* handle;
-@property(readonly) int lastErrorCode;
-@property(readonly) NSString * lastErrorMessage;
-@property(readonly) int lastInsertRowID;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, readonly) int changedRowCount;
+@property (nonatomic, readonly) struct sqlite3 { }*handle;
+@property (nonatomic, readonly) int lastErrorCode;
+@property (nonatomic, readonly) NSString *lastErrorMessage;
+@property (nonatomic, readonly) int lastInsertRowID;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
 - (int)_openWithFlags:(int)arg1;

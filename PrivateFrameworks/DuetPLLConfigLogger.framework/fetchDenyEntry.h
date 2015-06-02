@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/DuetPLLConfigLogger.framework/DuetPLLConfigLogger
  */
 
-@class NSDate;
-
 @interface fetchDenyEntry : NSObject {
     NSDate *_when;
     int _why;
 }
 
-@property(retain) NSDate * when;
+@property (retain) NSDate *when;
 @property int why;
 
 - (void).cxx_destruct;

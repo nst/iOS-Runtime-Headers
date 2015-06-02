@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITabBar;
-
 @interface UITabBarSwappableImageView : UIImageView {
     id _alternate;
     int _buttonTag;

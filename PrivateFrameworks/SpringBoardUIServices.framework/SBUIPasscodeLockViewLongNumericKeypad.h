@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBUIPasscodeLockViewLongNumericKeypad : SBUIPasscodeLockViewWithKeypad {
-}
+@interface SBUIPasscodeLockViewLongNumericKeypad : SBUIPasscodeLockViewWithKeypad
 
 - (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
 - (BOOL)_includesStatusView;

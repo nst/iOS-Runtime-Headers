@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartTypePie3D : TSCH3DChartType {
-}
+@interface TSCHChartTypePie3D : TSCH3DChartType
 
 - (BOOL)approximatesTitleAccommodationUsingLegendSize;
 - (id)categoryLabelPositioner;

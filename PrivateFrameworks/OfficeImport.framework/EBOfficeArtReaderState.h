@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EBReaderState;
-
 @interface EBOfficeArtReaderState : OABReaderState {
     EBReaderState *mReaderState;
 }

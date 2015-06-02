@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSTimer;
-
 @interface TodayInvalidationTimerWrapper : NSObject {
     NSTimer *_tzSupportDayRolloverTimer;
 }

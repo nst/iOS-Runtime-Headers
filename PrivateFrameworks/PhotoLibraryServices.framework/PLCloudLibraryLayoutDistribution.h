@@ -8,9 +8,9 @@
     unsigned short secondaryQualityClass;
 }
 
-@property unsigned long long cutoffPoint;
-@property unsigned short primaryQualityClass;
-@property unsigned short secondaryQualityClass;
+@property (nonatomic) unsigned long long cutoffPoint;
+@property (nonatomic) unsigned short primaryQualityClass;
+@property (nonatomic) unsigned short secondaryQualityClass;
 
 - (unsigned long long)cutoffPoint;
 - (unsigned short)primaryQualityClass;

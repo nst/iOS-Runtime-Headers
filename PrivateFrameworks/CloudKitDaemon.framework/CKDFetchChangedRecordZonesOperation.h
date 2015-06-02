@@ -2,35 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKServerChangeToken;
-
 @interface CKDFetchChangedRecordZonesOperation : CKDDatabaseOperation {
     CKServerChangeToken *_previousServerChangeToken;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordZoneWithIDChangedBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordZoneWithIDWasDeletedBlock;
-
+    id /* block */ _recordZoneWithIDChangedBlock;
+    id /* block */ _recordZoneWithIDWasDeletedBlock;
     unsigned int _resultsLimit;
     CKServerChangeToken *_serverChangeToken;
     int _status;
 }
 
-@property(retain) CKServerChangeToken * previousServerChangeToken;
-@property(copy) id recordZoneWithIDChangedBlock;
-@property(copy) id recordZoneWithIDWasDeletedBlock;
-@property unsigned int resultsLimit;
-@property(retain) CKServerChangeToken * serverChangeToken;
-@property int status;
+@property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
+@property (nonatomic, copy) id /* block */ recordZoneWithIDChangedBlock;
+@property (nonatomic, copy) id /* block */ recordZoneWithIDWasDeletedBlock;
+@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic, retain) CKServerChangeToken *serverChangeToken;
+@property (nonatomic) int status;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -40,13 +26,13 @@
 - (void)main;
 - (Class)operationResultClass;
 - (id)previousServerChangeToken;
-- (id)recordZoneWithIDChangedBlock;
-- (id)recordZoneWithIDWasDeletedBlock;
+- (id /* block */)recordZoneWithIDChangedBlock;
+- (id /* block */)recordZoneWithIDWasDeletedBlock;
 - (unsigned int)resultsLimit;
 - (id)serverChangeToken;
 - (void)setPreviousServerChangeToken:(id)arg1;
-- (void)setRecordZoneWithIDChangedBlock:(id)arg1;
-- (void)setRecordZoneWithIDWasDeletedBlock:(id)arg1;
+- (void)setRecordZoneWithIDChangedBlock:(id /* block */)arg1;
+- (void)setRecordZoneWithIDWasDeletedBlock:(id /* block */)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
 - (void)setServerChangeToken:(id)arg1;
 - (void)setStatus:(int)arg1;

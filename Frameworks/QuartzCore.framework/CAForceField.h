@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CALayer, CAValueFunction, NSString;
-
 @interface CAForceField : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     BOOL _enabled;
     CAValueFunction *_function;
@@ -17,10 +10,10 @@
     void *_priv;
 }
 
-@property(getter=isEnabled) BOOL enabled;
-@property(retain) CAValueFunction * function;
-@property(retain) CALayer * layer;
-@property(copy) NSString * name;
+@property (getter=isEnabled) BOOL enabled;
+@property (retain) CAValueFunction *function;
+@property (retain) CALayer *layer;
+@property (copy) NSString *name;
 
 + (void)CAMLParserStartElement:(id)arg1;
 + (id)defaultValueForKey:(id)arg1;

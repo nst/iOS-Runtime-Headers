@@ -2,38 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface UIActivityItemImageRep : NSObject {
     id _asset;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _dataProvider;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _thumbnailProvider;
-
+    id /* block */ _dataProvider;
+    id /* block */ _thumbnailProvider;
 }
 
-@property(retain) id asset;
-@property(copy) id dataProvider;
-@property(copy) id thumbnailProvider;
+@property (nonatomic, retain) id asset;
+@property (nonatomic, copy) id /* block */ dataProvider;
+@property (nonatomic, copy) id /* block */ thumbnailProvider;
 
-+ (id)activityItemImageRepWithAsset:(id)arg1 thumbnailProvider:(id)arg2 dataProvider:(id)arg3;
++ (id)activityItemImageRepWithAsset:(id)arg1 thumbnailProvider:(id /* block */)arg2 dataProvider:(id /* block */)arg3;
 
 - (id)asset;
 - (id)data;
-- (id)dataProvider;
+- (id /* block */)dataProvider;
 - (void)dealloc;
 - (void)setAsset:(id)arg1;
-- (void)setDataProvider:(id)arg1;
-- (void)setThumbnailProvider:(id)arg1;
+- (void)setDataProvider:(id /* block */)arg1;
+- (void)setThumbnailProvider:(id /* block */)arg1;
 - (id)thumbnail;
-- (id)thumbnailProvider;
+- (id /* block */)thumbnailProvider;
 
 @end

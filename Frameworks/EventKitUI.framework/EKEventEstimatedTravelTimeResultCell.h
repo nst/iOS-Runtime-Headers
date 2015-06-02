@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKEventEstimatedTravelTimeResultCell : EKEventStandardTravelTimeCell {
-}
+@interface EKEventEstimatedTravelTimeResultCell : EKEventStandardTravelTimeCell
 
 @end

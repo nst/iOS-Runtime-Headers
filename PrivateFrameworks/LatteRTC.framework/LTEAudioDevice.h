@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class NSNumber, NSString;
-
 @interface LTEAudioDevice : NSObject {
     NSNumber *_deviceID;
     NSString *_deviceName;
@@ -12,10 +10,10 @@
     BOOL _outputAvailable;
 }
 
-@property(readonly) NSNumber * deviceID;
-@property(readonly) NSString * deviceName;
-@property(readonly) BOOL inputAvailable;
-@property(readonly) BOOL outputAvailable;
+@property (nonatomic, readonly) NSNumber *deviceID;
+@property (nonatomic, readonly) NSString *deviceName;
+@property (nonatomic, readonly) BOOL inputAvailable;
+@property (nonatomic, readonly) BOOL outputAvailable;
 
 - (void)createName;
 - (void)createNameForScope:(unsigned long)arg1;

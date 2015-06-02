@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class AVPlayer, AVPlayerLayer;
-
 @interface PLAVPlayerView : UIView {
     unsigned int _scaleMode;
 }
 
-@property(retain,readonly) AVPlayerLayer * layer;
-@property(retain) AVPlayer * player;
-@property unsigned int scaleMode;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
+@property (nonatomic, readonly, retain) AVPlayerLayer *layer;
+@property (nonatomic, retain) AVPlayer *player;
+@property (nonatomic) unsigned int scaleMode;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
 
 + (Class)layerClass;
 

@@ -11,10 +11,10 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int callCount;
-@property BOOL hasCallCount;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int callCount;
+@property (nonatomic) BOOL hasCallCount;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned int)callCount;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class AVPlayerController, NSTimer;
-
 @interface AVPlayerControllerTimeResolver : NSObject <NSCoding> {
     double _currentTime;
     double _interval;
@@ -13,14 +11,14 @@
 }
 
 @property double currentTime;
-@property(getter=isCurrentTimeAtEndOfSeekableTimeRanges,readonly) BOOL currentTimeAtEndOfSeekableTimeRanges;
+@property (getter=isCurrentTimeAtEndOfSeekableTimeRanges, readonly) BOOL currentTimeAtEndOfSeekableTimeRanges;
 @property double currentTimeWithinEndTimes;
 @property double interval;
-@property(retain) AVPlayerController * playerController;
-@property(readonly) double remainingTime;
-@property(readonly) double remainingTimeWithinEndTimes;
+@property (retain) AVPlayerController *playerController;
+@property (readonly) double remainingTime;
+@property (readonly) double remainingTimeWithinEndTimes;
 @property double resolution;
-@property(getter=isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges,readonly) BOOL thirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
+@property (getter=isThirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges, readonly) BOOL thirtySecondsBeforeCurrentTimeWithinSeekableTimeRanges;
 
 + (BOOL)automaticallyNotifiesObserversOfCurrentTime;
 + (id)keyPathsForValuesAffectingCurrentTimeAtEndOfSeekableTimeRanges;

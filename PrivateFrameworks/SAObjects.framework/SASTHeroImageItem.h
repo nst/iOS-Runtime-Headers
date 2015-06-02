@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUINanoImageResource;
+@interface SASTHeroImageItem : AceObject <SASTTemplateItem>
 
-@interface SASTHeroImageItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) SAUINanoImageResource * watchImageResource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) SAUINanoImageResource *watchImageResource;
 
 + (id)heroImageItem;
 + (id)heroImageItemWithDictionary:(id)arg1 context:(id)arg2;

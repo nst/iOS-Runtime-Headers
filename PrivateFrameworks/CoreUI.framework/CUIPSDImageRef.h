@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, _CUIPSDSublayerInfo;
-
 @interface CUIPSDImageRef : NSObject {
     int _file;
     BOOL _parsedForLayers;

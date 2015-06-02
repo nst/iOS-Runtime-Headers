@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFConditionLock, NSDictionary, NSError;
-
 @interface _MFDAResolveRecipientsConsumer : NSObject <DAResolveRecipientsConsumer> {
     MFConditionLock *_conditionLock;
     NSError *_error;
     NSDictionary *_resolvedRecipientsByEmailAddress;
 }
 
-@property(readonly) NSError * error;
+@property (readonly) NSError *error;
 
 - (void)actionFailed:(int)arg1 forTask:(id)arg2 error:(id)arg3;
 - (void)dealloc;

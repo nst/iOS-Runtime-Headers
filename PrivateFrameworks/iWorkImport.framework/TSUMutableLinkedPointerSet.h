@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSULinkedPointerSetEntry;
-
 @interface TSUMutableLinkedPointerSet : NSObject <NSFastEnumeration> {
     struct __CFDictionary { } *mDictionary;
     TSULinkedPointerSetEntry *mHead;
@@ -14,7 +12,7 @@
 - (id)array;
 - (BOOL)containsObject:(id)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (void)encodeToOwnedReferenceMessage:(struct RepeatedPtrField<TSP::Reference> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
 - (void)encodeToReferenceMessage:(struct RepeatedPtrField<TSP::Reference> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;

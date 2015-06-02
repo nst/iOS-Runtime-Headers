@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSDictionary;
-
 @interface PUPhotoEditImageValues : NSObject {
     BOOL _complete;
     NSDictionary *_smartBlackAndWhiteStatistics;
@@ -13,12 +11,12 @@
     NSDictionary *_smartToneStatistics;
 }
 
-@property(getter=isComplete) BOOL complete;
-@property(copy) NSDictionary * smartBlackAndWhiteStatistics;
+@property (getter=isComplete) BOOL complete;
+@property (copy) NSDictionary *smartBlackAndWhiteStatistics;
 @property float smartColorAutoSuggestion;
-@property(copy) NSDictionary * smartColorStatistics;
+@property (copy) NSDictionary *smartColorStatistics;
 @property float smartToneAutoSuggestion;
-@property(copy) NSDictionary * smartToneStatistics;
+@property (copy) NSDictionary *smartToneStatistics;
 
 - (void).cxx_destruct;
 - (BOOL)isComplete;

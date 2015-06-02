@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDSQLiteQuery, NSArray, NSString;
-
 @interface HDSQLiteContainsPredicate : HDSQLitePropertyPredicate <NSCopying> {
     BOOL _negative;
     HDSQLiteQuery *_query;
@@ -11,10 +9,10 @@
     id _values;
 }
 
-@property(getter=isNegative,readonly) BOOL negative;
-@property(readonly) HDSQLiteQuery * query;
-@property(readonly) NSString * queryProperty;
-@property(readonly) NSArray * values;
+@property (getter=isNegative, nonatomic, readonly) BOOL negative;
+@property (nonatomic, readonly) HDSQLiteQuery *query;
+@property (nonatomic, readonly) NSString *queryProperty;
+@property (nonatomic, readonly) NSArray *values;
 
 + (id)containsPredicateWithProperty:(id)arg1 query:(id)arg2 queryProperty:(id)arg3;
 + (id)containsPredicateWithProperty:(id)arg1 values:(id)arg2;

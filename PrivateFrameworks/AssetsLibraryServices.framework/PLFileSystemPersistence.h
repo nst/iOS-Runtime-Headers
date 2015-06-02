@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface PLFileSystemPersistence : NSObject {
     NSObject<OS_dispatch_queue> *_writerQueue;
 }

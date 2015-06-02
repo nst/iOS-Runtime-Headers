@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebCoreScrollView : WAKScrollView {
-}
+@interface WebCoreScrollView : WAKScrollView
 
 @end

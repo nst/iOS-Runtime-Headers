@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCPhotoEvaluator : NSObject {
-}
+@interface SCRCPhotoEvaluator : NSObject
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;

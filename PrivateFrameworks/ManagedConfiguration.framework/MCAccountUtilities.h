@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@interface MCAccountUtilities : NSObject {
-}
+@interface MCAccountUtilities : NSObject
 
 + (id)accountDataclassesForBundleID:(id)arg1;
 + (BOOL)hasManagedAccountOfDataclasses:(id)arg1;

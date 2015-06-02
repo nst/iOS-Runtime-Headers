@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDAContent;
-
 @interface WMOfficeArtMapper : CMDrawableMapper {
     WDAContent *mContent;
     unsigned int mCurrentPage;

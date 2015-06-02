@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIInterpolatingMotionEffect : UIMotionEffect {
     float _horizontalAccelerationBoostFactor;
     NSString *_keyPath;
@@ -13,10 +11,10 @@
     float _verticalAccelerationBoostFactor;
 }
 
-@property(readonly) NSString * keyPath;
-@property(retain) id maximumRelativeValue;
-@property(retain) id minimumRelativeValue;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSString *keyPath;
+@property (nonatomic, retain) id maximumRelativeValue;
+@property (nonatomic, retain) id minimumRelativeValue;
+@property (nonatomic, readonly) int type;
 
 - (float)_horizontalAccelerationBoostFactor;
 - (id)_keyPathsAndRelativeValuesForPose:(id)arg1;

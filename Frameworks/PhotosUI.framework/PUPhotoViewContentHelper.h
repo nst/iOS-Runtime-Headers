@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUAvalancheStackView, PUBackgroundColorView, PUBadgeView, PUPhotoDecoration, PUTextBannerView, UIImage, UIImageView, UIView;
-
 @interface PUPhotoViewContentHelper : NSObject {
     UIImageView *__crossfadeImageView;
     float _avalancheMaxPixelSize;
@@ -40,27 +38,27 @@
     double _videoDuration;
 }
 
-@property(retain) UIImageView * _crossfadeImageView;
-@property float avalancheMaxPixelSize;
-@property struct CGColor { }* avalancheStackBackgroundColor;
-@property(retain) PUAvalancheStackView * avalancheStackView;
-@property BOOL avoidsImageViewIfPossible;
-@property BOOL avoidsPhotoDecoration;
-@property(readonly) UIView * badgeContainerView;
-@property(readonly) int badgeType;
-@property(readonly) UIView * contentView;
-@property int fillMode;
-@property BOOL flattensBadgeView;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageContentFrame;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } imageTransform;
-@property BOOL needsAvalancheStack;
-@property(copy) PUPhotoDecoration * photoDecoration;
-@property(retain) UIImage * photoImage;
-@property(retain) UIImageView * photoImageView;
-@property struct CGSize { float x1; float x2; } photoSize;
-@property(readonly) PUTextBannerView * textBannerView;
-@property(getter=isTextBannerVisible) BOOL textBannerVisible;
-@property(readonly) double videoDuration;
+@property (nonatomic, retain) UIImageView *_crossfadeImageView;
+@property (nonatomic) float avalancheMaxPixelSize;
+@property (nonatomic) struct CGColor { }*avalancheStackBackgroundColor;
+@property (nonatomic, retain) PUAvalancheStackView *avalancheStackView;
+@property (nonatomic) BOOL avoidsImageViewIfPossible;
+@property (nonatomic) BOOL avoidsPhotoDecoration;
+@property (nonatomic, readonly) UIView *badgeContainerView;
+@property (nonatomic, readonly) int badgeType;
+@property (nonatomic, readonly) UIView *contentView;
+@property (nonatomic) int fillMode;
+@property (nonatomic) BOOL flattensBadgeView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageContentFrame;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } imageTransform;
+@property (nonatomic) BOOL needsAvalancheStack;
+@property (nonatomic, copy) PUPhotoDecoration *photoDecoration;
+@property (nonatomic, retain) UIImage *photoImage;
+@property (nonatomic, retain) UIImageView *photoImageView;
+@property (nonatomic) struct CGSize { float x1; float x2; } photoSize;
+@property (nonatomic, readonly) PUTextBannerView *textBannerView;
+@property (getter=isTextBannerVisible, nonatomic) BOOL textBannerVisible;
+@property (nonatomic, readonly) double videoDuration;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_imageContentFrameForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;
 + (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2 fillMode:(int)arg3;

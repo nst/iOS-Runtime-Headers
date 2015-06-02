@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class NSMethodSignature, NSString;
-
 @interface CLIntersiloInterfaceSelectorInfo : NSObject {
     int _numArguments;
     int _replyBlockIndex;
@@ -14,13 +12,13 @@
     NSString *_str;
 }
 
-@property(readonly) int numArguments;
-@property(readonly) int replyBlockIndex;
-@property(readonly) int returnAddressIndex;
-@property(readonly) int returnValueSize;
-@property(readonly) SEL sel;
-@property(retain,readonly) NSMethodSignature * sig;
-@property(retain,readonly) NSString * str;
+@property (nonatomic, readonly) int numArguments;
+@property (nonatomic, readonly) int replyBlockIndex;
+@property (nonatomic, readonly) int returnAddressIndex;
+@property (nonatomic, readonly) int returnValueSize;
+@property (nonatomic, readonly) SEL sel;
+@property (nonatomic, readonly, retain) NSMethodSignature *sig;
+@property (nonatomic, readonly, retain) NSString *str;
 
 - (void).cxx_destruct;
 - (id)description;

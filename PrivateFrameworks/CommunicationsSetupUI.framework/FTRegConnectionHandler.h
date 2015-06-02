@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class NSString;
-
 @interface FTRegConnectionHandler : NSObject {
     unsigned int _caps;
     struct { 
@@ -15,12 +13,12 @@
     int _serviceType;
 }
 
-@property(setter=_setListenerID:,copy) NSString * _listenerID;
-@property(retain) NSString * _logName;
-@property(retain,readonly) NSString * _serviceName;
-@property unsigned int caps;
-@property(copy) NSString * name;
-@property int serviceType;
+@property (setter=_setListenerID:, nonatomic, copy) NSString *_listenerID;
+@property (nonatomic, retain) NSString *_logName;
+@property (nonatomic, readonly, retain) NSString *_serviceName;
+@property (nonatomic) unsigned int caps;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) int serviceType;
 
 - (void)_disconnectFromDaemon;
 - (void)_handleDaemonConnected:(id)arg1;

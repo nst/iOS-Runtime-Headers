@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseConnection, MLMediaLibraryService, NSMutableArray, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface ML3StatementAccumulator : NSObject {
     ML3DatabaseConnection *_connection;
     NSString *_databasePath;
@@ -15,12 +13,12 @@
     MLMediaLibraryService *_xpcService;
 }
 
-@property(readonly) ML3DatabaseConnection * connection;
-@property(readonly) NSString * databasePath;
-@property(retain) NSUUID * existingTransactionIdentifier;
-@property unsigned int priorityLevel;
-@property(readonly) NSMutableArray * statementQueue;
-@property unsigned int statementThreshold;
+@property (nonatomic, readonly) ML3DatabaseConnection *connection;
+@property (nonatomic, readonly) NSString *databasePath;
+@property (nonatomic, retain) NSUUID *existingTransactionIdentifier;
+@property (nonatomic) unsigned int priorityLevel;
+@property (nonatomic, readonly) NSMutableArray *statementQueue;
+@property (nonatomic) unsigned int statementThreshold;
 
 - (void).cxx_destruct;
 - (BOOL)_onQueueFlushAndWait:(BOOL)arg1;

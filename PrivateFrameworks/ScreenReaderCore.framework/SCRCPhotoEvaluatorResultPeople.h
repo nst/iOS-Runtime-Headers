@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSArray;
-
 @interface SCRCPhotoEvaluatorResultPeople : SCRCPhotoEvaluatorResult {
     struct CGSize { 
         float width; 
@@ -12,7 +10,7 @@
     NSArray *_people;
 }
 
-@property(readonly) NSArray * people;
+@property (nonatomic, readonly) NSArray *people;
 
 - (void)dealloc;
 - (id)humanReadableResult;

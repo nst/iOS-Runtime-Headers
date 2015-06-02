@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class EKEvent, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSString;
-
 @interface EKUIInviteesViewNotRespondedInviteesSection : NSObject <EKUIInviteesViewSection> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _addInviteesTapped;
-
+    id /* block */ _addInviteesTapped;
     NSOperationQueue *_availabilityRequestsQueue;
     NSString *_cachedAddInviteeCellReuseIdentifier;
     NSString *_cachedInviteeCellReuseIdentifier;
@@ -23,44 +13,32 @@
     NSMutableSet *_participantAddressesForInFlightAvailabilityOperations;
     NSMutableDictionary *_participantAddressesToAvailabilityType;
     NSMutableDictionary *_participantAddressesToParticipantIndex;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _participantRemoved;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _participantTapped;
-
+    id /* block */ _participantRemoved;
+    id /* block */ _participantTapped;
     NSMutableArray *_participants;
     unsigned int _reuseIdentifierVersion;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _tableViewCellHook;
-
+    id /* block */ _tableViewCellHook;
 }
 
-@property(copy) id addInviteesTapped;
-@property(retain) NSOperationQueue * availabilityRequestsQueue;
-@property(retain) NSString * cachedAddInviteeCellReuseIdentifier;
-@property(retain) NSString * cachedInviteeCellReuseIdentifier;
-@property BOOL canSeeAttendeeStatuses;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL editable;
-@property(retain) EKEvent * event;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableSet * participantAddressesForInFlightAvailabilityOperations;
-@property(retain) NSMutableDictionary * participantAddressesToAvailabilityType;
-@property(retain) NSMutableDictionary * participantAddressesToParticipantIndex;
-@property(copy) id participantRemoved;
-@property(copy) id participantTapped;
-@property(retain) NSMutableArray * participants;
-@property unsigned int reuseIdentifierVersion;
-@property(readonly) Class superclass;
-@property(copy) id tableViewCellHook;
+@property (nonatomic, copy) id /* block */ addInviteesTapped;
+@property (nonatomic, retain) NSOperationQueue *availabilityRequestsQueue;
+@property (nonatomic, retain) NSString *cachedAddInviteeCellReuseIdentifier;
+@property (nonatomic, retain) NSString *cachedInviteeCellReuseIdentifier;
+@property (nonatomic) BOOL canSeeAttendeeStatuses;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL editable;
+@property (nonatomic, retain) EKEvent *event;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableSet *participantAddressesForInFlightAvailabilityOperations;
+@property (nonatomic, retain) NSMutableDictionary *participantAddressesToAvailabilityType;
+@property (nonatomic, retain) NSMutableDictionary *participantAddressesToParticipantIndex;
+@property (nonatomic, copy) id /* block */ participantRemoved;
+@property (nonatomic, copy) id /* block */ participantTapped;
+@property (nonatomic, retain) NSMutableArray *participants;
+@property (nonatomic) unsigned int reuseIdentifierVersion;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ tableViewCellHook;
 
 + (id)_participantAddressForParticipant:(id)arg1;
 
@@ -76,7 +54,7 @@
 - (void)_setParticipantIndex:(id)arg1 forParticipantAddress:(id)arg2;
 - (void)_updateCell:(id)arg1 forParticipantAtIndex:(int)arg2 animated:(BOOL)arg3;
 - (void)_updateCellForParticipantWithAddress:(id)arg1;
-- (id)addInviteesTapped;
+- (id /* block */)addInviteesTapped;
 - (id)availabilityRequestsQueue;
 - (id)cachedAddInviteeCellReuseIdentifier;
 - (id)cachedInviteeCellReuseIdentifier;
@@ -98,14 +76,14 @@
 - (id)participantAddressesForInFlightAvailabilityOperations;
 - (id)participantAddressesToAvailabilityType;
 - (id)participantAddressesToParticipantIndex;
-- (id)participantRemoved;
-- (id)participantTapped;
+- (id /* block */)participantRemoved;
+- (id /* block */)participantTapped;
 - (id)participants;
 - (void)reloadAndRegisterReusableCellsWithTableView:(id)arg1;
 - (unsigned int)reuseIdentifierVersion;
 - (BOOL)sectionShouldBeShown;
 - (void)selectRow:(id)arg1;
-- (void)setAddInviteesTapped:(id)arg1;
+- (void)setAddInviteesTapped:(id /* block */)arg1;
 - (void)setAvailabilityRequestsQueue:(id)arg1;
 - (void)setCachedAddInviteeCellReuseIdentifier:(id)arg1;
 - (void)setCachedInviteeCellReuseIdentifier:(id)arg1;
@@ -115,12 +93,12 @@
 - (void)setParticipantAddressesForInFlightAvailabilityOperations:(id)arg1;
 - (void)setParticipantAddressesToAvailabilityType:(id)arg1;
 - (void)setParticipantAddressesToParticipantIndex:(id)arg1;
-- (void)setParticipantRemoved:(id)arg1;
-- (void)setParticipantTapped:(id)arg1;
+- (void)setParticipantRemoved:(id /* block */)arg1;
+- (void)setParticipantTapped:(id /* block */)arg1;
 - (void)setParticipants:(id)arg1;
 - (void)setReuseIdentifierVersion:(unsigned int)arg1;
-- (void)setTableViewCellHook:(id)arg1;
-- (id)tableViewCellHook;
+- (void)setTableViewCellHook:(id /* block */)arg1;
+- (id /* block */)tableViewCellHook;
 - (id)titleForDeleteConfirmationButtonForRow:(id)arg1;
 - (void)updateWithEvent:(id)arg1 editable:(BOOL)arg2;
 

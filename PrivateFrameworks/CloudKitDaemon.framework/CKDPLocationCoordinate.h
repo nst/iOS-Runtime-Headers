@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPDate;
-
 @interface CKDPLocationCoordinate : PBCodable <NSCopying> {
     double _altitude;
     double _course;
@@ -24,22 +22,22 @@
     double _verticalAccuracy;
 }
 
-@property double altitude;
-@property double course;
-@property BOOL hasAltitude;
-@property BOOL hasCourse;
-@property BOOL hasHorizontalAccuracy;
-@property BOOL hasLatitude;
-@property BOOL hasLongitude;
-@property BOOL hasSpeed;
-@property(readonly) BOOL hasTimestamp;
-@property BOOL hasVerticalAccuracy;
-@property double horizontalAccuracy;
-@property double latitude;
-@property double longitude;
-@property double speed;
-@property(retain) CKDPDate * timestamp;
-@property double verticalAccuracy;
+@property (nonatomic) double altitude;
+@property (nonatomic) double course;
+@property (nonatomic) BOOL hasAltitude;
+@property (nonatomic) BOOL hasCourse;
+@property (nonatomic) BOOL hasHorizontalAccuracy;
+@property (nonatomic) BOOL hasLatitude;
+@property (nonatomic) BOOL hasLongitude;
+@property (nonatomic) BOOL hasSpeed;
+@property (nonatomic, readonly) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasVerticalAccuracy;
+@property (nonatomic) double horizontalAccuracy;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
+@property (nonatomic) double speed;
+@property (nonatomic, retain) CKDPDate *timestamp;
+@property (nonatomic) double verticalAccuracy;
 
 - (void).cxx_destruct;
 - (double)altitude;

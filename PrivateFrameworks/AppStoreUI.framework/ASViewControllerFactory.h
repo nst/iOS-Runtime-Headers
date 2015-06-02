@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppStoreUI.framework/AppStoreUI
  */
 
-@interface ASViewControllerFactory : SUViewControllerFactory {
-}
+@interface ASViewControllerFactory : SUViewControllerFactory
 
 - (id)newNetworkLockoutViewControllerWithSection:(id)arg1;
 - (id)newPlaceholderViewController;

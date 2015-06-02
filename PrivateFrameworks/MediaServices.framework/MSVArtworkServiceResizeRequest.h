@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class NSMutableArray, NSURL;
-
 @interface MSVArtworkServiceResizeRequest : MSVArtworkServiceRequest {
     BOOL _overwriteExistingDestinations;
     NSMutableArray *_resizeDestinations;
     NSURL *_sourceURL;
 }
 
-@property BOOL overwriteExistingDestinations;
-@property(retain) NSMutableArray * resizeDestinations;
-@property(copy) NSURL * sourceURL;
+@property (nonatomic) BOOL overwriteExistingDestinations;
+@property (nonatomic, retain) NSMutableArray *resizeDestinations;
+@property (nonatomic, copy) NSURL *sourceURL;
 
 + (BOOL)supportsSecureCoding;
 
@@ -21,7 +19,7 @@
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateDestinationsUsingBlock:(id)arg1;
+- (void)enumerateDestinationsUsingBlock:(id /* block */)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSourceURL:(id)arg1;
 - (Class)operationClass;

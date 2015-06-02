@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebApplicationCache : NSObject {
-}
+@interface WebApplicationCache : NSObject
 
 + (long long)defaultOriginQuota;
 + (void)deleteAllApplicationCaches;

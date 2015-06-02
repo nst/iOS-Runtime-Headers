@@ -2,19 +2,12 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface OCCEncryptor : NSObject {
     NSString *mOutputFilename;
     struct OCCStreamer { int (**x1)(); struct OCCCryptoKey {} *x2; char *x3; } *mStreamer;
 }
 
-@property(readonly) NSString * outputFilename;
+@property (nonatomic, readonly) NSString *outputFilename;
 
 + (id)allocTempFileWithBase:(id)arg1 filename:(id*)arg2;
 

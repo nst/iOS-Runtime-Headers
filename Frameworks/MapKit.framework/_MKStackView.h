@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSArray;
-
 @interface _MKStackView : UIView {
     NSArray *_stackConstraints;
     NSArray *_stackedSubviews;
 }
 
-@property(copy) NSArray * stackedSubviews;
+@property (nonatomic, copy) NSArray *stackedSubviews;
 
 - (void).cxx_destruct;
 - (void)setStackedSubviews:(id)arg1;

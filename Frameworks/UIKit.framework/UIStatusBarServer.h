@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIStatusBarServerClient>;
-
 @interface UIStatusBarServer : NSObject {
     struct __CFRunLoopSource { } *_source;
     <UIStatusBarServerClient> *_statusBar;
 }
 
-@property(retain) <UIStatusBarServerClient> * statusBar;
+@property (nonatomic, retain) <UIStatusBarServerClient> *statusBar;
 
 + (unsigned int)_publisherPort;
 + (unsigned int)_serverPort;

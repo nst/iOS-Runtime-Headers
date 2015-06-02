@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class <TRTransferServerDelegate>, NSObject<OS_dispatch_queue>, NSString, WPTransfer;
-
 @interface TRTransferServer : NSObject <WPTransferDelegate> {
     int _advertiserState;
     struct { struct _CCCryptor {} *x1; unsigned char x2[16]; unsigned char x3[16]; unsigned int x4; } *_aesContext;
@@ -16,11 +14,11 @@
     WPTransfer *_transferSession;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <TRTransferServerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <TRTransferServerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_beginAdvertisingIfPowered;

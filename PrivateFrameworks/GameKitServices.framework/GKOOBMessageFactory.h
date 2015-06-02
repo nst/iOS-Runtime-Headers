@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@interface GKOOBMessageFactory : NSObject {
-}
+@interface GKOOBMessageFactory : NSObject
 
 + (id)createMessageFromData:(id)arg1;
 

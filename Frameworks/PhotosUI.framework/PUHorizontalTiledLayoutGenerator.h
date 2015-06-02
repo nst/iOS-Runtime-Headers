@@ -10,12 +10,12 @@
     float _referenceHeight;
 }
 
-@property float referenceHeight;
+@property (nonatomic) float referenceHeight;
 
 - (BOOL)_addColumnWithContiguousTiles:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2;
 - (BOOL)_addColumnWithTiles:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 imageFrames:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 count:(int)arg3;
 - (BOOL)_addSpecialSequenceBlock:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (void)_enumerateColumnFramesWithContiguousTiles:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2 useMagneticGuidelines:(BOOL)arg3 block:(id)arg4;
+- (void)_enumerateColumnFramesWithContiguousTiles:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 count:(int)arg2 useMagneticGuidelines:(BOOL)arg3 block:(id /* block */)arg4;
 - (BOOL)_hasLeftSuboptimalColumn;
 - (BOOL)_isAtEndOfColumn;
 - (BOOL)_parseSingleTile;

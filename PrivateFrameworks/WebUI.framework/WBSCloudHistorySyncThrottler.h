@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <WBSCloudHistorySyncThrottlerDataStore>, NSArray, NSMutableArray;
-
 @interface WBSCloudHistorySyncThrottler : NSObject {
     <WBSCloudHistorySyncThrottlerDataStore> *_dataStore;
     unsigned int _maximumNumberOfOperationWithinMonitoredPeriod;
@@ -12,7 +10,7 @@
     NSArray *_throttlingDistribution;
 }
 
-@property(retain) <WBSCloudHistorySyncThrottlerDataStore> * dataStore;
+@property (nonatomic, retain) <WBSCloudHistorySyncThrottlerDataStore> *dataStore;
 
 + (id)_distributionBucketsFromConfiguration:(id)arg1;
 + (BOOL)policyStringRepresentsValidPolicy:(id)arg1;

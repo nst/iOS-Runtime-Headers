@@ -2,29 +2,29 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendarItem, NSString, NSURL;
-
 @interface EKParticipant : EKObject <EKIdentityProtocol, NSCopying> {
     EKCalendarItem *_owner;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) NSString * UUID;
-@property(copy) NSURL * address;
-@property(copy) NSString * comment;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * emailAddress;
-@property(copy) NSString * firstName;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isCurrentUser;
-@property(copy) NSString * lastName;
-@property(readonly) NSString * name;
-@property(readonly) EKCalendarItem * owner;
-@property(readonly) int participantRole;
-@property(readonly) int participantStatus;
-@property(readonly) int participantType;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) NSString *UUID;
+@property (nonatomic, copy) NSURL *address;
+@property (nonatomic, copy) NSString *comment;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSString *firstName;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isCurrentUser;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) EKCalendarItem *owner;
+@property (nonatomic, readonly) int participantRole;
+@property (nonatomic, readonly) int participantStatus;
+@property (nonatomic, readonly) int participantType;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 + (void*)findABPersonByURL:(id)arg1 inAddressBook:(void*)arg2;
 
@@ -35,8 +35,6 @@
 - (id)address;
 - (id)comment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)displayName;
-- (id)displayNameWithDecomposedFirstName:(id*)arg1 lastName:(id*)arg2 department:(id*)arg3;
 - (id)emailAddress;
 - (id)firstName;
 - (BOOL)isCurrentUser;
@@ -53,5 +51,10 @@
 - (void)setEmailAddress:(id)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setLastName:(id)arg1;
+
+// Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
+
+- (id)displayName;
+- (id)displayNameWithDecomposedFirstName:(id*)arg1 lastName:(id*)arg2 department:(id*)arg3;
 
 @end

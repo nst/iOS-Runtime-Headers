@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString;
+@interface PKMerchantMapViewController : _MKPlaceViewController <_MKPlaceViewControllerDelegate>
 
-@interface PKMerchantMapViewController : _MKPlaceViewController <_MKPlaceViewControllerDelegate> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)activityViewControllerForPlaceViewController:(id)arg1;
 - (void)done:(id)arg1;

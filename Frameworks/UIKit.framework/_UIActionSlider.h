@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <_UIActionSliderDelegate>, NSString, UIBezierPath, UIColor, UIFont, UIImage, UIImageView, UILabel, UIPanGestureRecognizer, UIView, UIView<_UIActionSliderLabel>, _UIActionSliderKnob, _UIBackdropView, _UIVibrantSettings;
-
 @interface _UIActionSlider : UIControl <UIGestureRecognizerDelegate> {
     BOOL _animating;
     float _cachedTrackMaskWidth;
@@ -47,34 +45,34 @@
     _UIVibrantSettings *_vibrantSettings;
 }
 
-@property(getter=isAnimating) BOOL animating;
-@property float cachedTrackMaskWidth;
-@property(copy,readonly) NSString * debugDescription;
-@property <_UIActionSliderDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) UIColor * knobColor;
-@property(retain) UIImage * knobImage;
-@property struct CGSize { float x1; float x2; } knobImageOffset;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } knobInsets;
-@property(readonly) UIBezierPath * knobMaskPath;
-@property float knobPosition;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } knobRect;
-@property(getter=_knobView,readonly) UIView * knobView;
-@property float knobWidth;
-@property(getter=isShowingTrackLabel) BOOL showingTrackLabel;
-@property(readonly) UIPanGestureRecognizer * slideGestureRecognizer;
-@property int style;
-@property(readonly) Class superclass;
-@property int textStyle;
-@property(retain) UIFont * trackFont;
-@property(retain,readonly) UILabel * trackLabel;
-@property struct CGSize { float x1; float x2; } trackSize;
-@property(copy) NSString * trackText;
-@property float trackTextBaselineFromBottom;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackTextRect;
-@property float trackWidthProportion;
-@property(retain) _UIVibrantSettings * vibrantSettings;
+@property (getter=isAnimating, nonatomic) BOOL animating;
+@property (nonatomic) float cachedTrackMaskWidth;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <_UIActionSliderDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIColor *knobColor;
+@property (nonatomic, retain) UIImage *knobImage;
+@property (nonatomic) struct CGSize { float x1; float x2; } knobImageOffset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } knobInsets;
+@property (nonatomic, readonly) UIBezierPath *knobMaskPath;
+@property (nonatomic) float knobPosition;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } knobRect;
+@property (getter=_knobView, nonatomic, readonly) UIView *knobView;
+@property (nonatomic) float knobWidth;
+@property (getter=isShowingTrackLabel, nonatomic) BOOL showingTrackLabel;
+@property (nonatomic, readonly) UIPanGestureRecognizer *slideGestureRecognizer;
+@property (nonatomic) int style;
+@property (readonly) Class superclass;
+@property (nonatomic) int textStyle;
+@property (nonatomic, retain) UIFont *trackFont;
+@property (nonatomic, readonly, retain) UILabel *trackLabel;
+@property (nonatomic) struct CGSize { float x1; float x2; } trackSize;
+@property (nonatomic, copy) NSString *trackText;
+@property (nonatomic) float trackTextBaselineFromBottom;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } trackTextRect;
+@property (nonatomic) float trackWidthProportion;
+@property (nonatomic, retain) _UIVibrantSettings *vibrantSettings;
 
 - (void)_hideTrackLabel:(BOOL)arg1;
 - (float)_knobAvailableX;

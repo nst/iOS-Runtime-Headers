@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDCharacteristic;
-
 @interface HMDCharacteristicRequest : NSObject {
     HMDCharacteristic *_characteristic;
 }
 
-@property(readonly) HMDCharacteristic * characteristic;
+@property (nonatomic, readonly) HMDCharacteristic *characteristic;
 
 + (id)requestWithCharacteristic:(id)arg1;
 

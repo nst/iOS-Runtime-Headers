@@ -2,23 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PUCloudSharedPostCommentViewControllerDelegate>, NSArray, NSMutableArray, NSString, PUCloudSharedBackdropView, PUStackView, UIColor, UILabel, UITableView, UITextView, UIView;
-
 @interface PUCloudSharedPostCommentViewController : UIViewController <PLModalDimmingContained, UITableViewDataSource, UITableViewDelegate, UITextViewDelegate> {
     NSString *_albumName;
     NSMutableArray *_attachments;
     NSArray *_backgroundConstraints;
     UIView *_backgroundView;
     <PUCloudSharedPostCommentViewControllerDelegate> *_commentDelegate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     PUCloudSharedBackdropView *_containerView;
     struct { 
         unsigned int hasDidCancelComment : 1; 
@@ -37,16 +27,16 @@
     UITextView *_textView;
 }
 
-@property <PUCloudSharedPostCommentViewControllerDelegate> * commentDelegate;
-@property(readonly) NSString * commentText;
-@property(copy) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isNewAlbum;
-@property(copy) NSString * placeholderText;
-@property int selectedAlbumIndex;
-@property(readonly) Class superclass;
+@property (nonatomic) <PUCloudSharedPostCommentViewControllerDelegate> *commentDelegate;
+@property (nonatomic, readonly) NSString *commentText;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isNewAlbum;
+@property (nonatomic, copy) NSString *placeholderText;
+@property (nonatomic) int selectedAlbumIndex;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addBackgroundViewConstraintsInView:(id)arg1;
@@ -61,7 +51,7 @@
 - (void)addImage:(id)arg1;
 - (id)commentDelegate;
 - (id)commentText;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)initWithAlbumName:(id)arg1 isCreateAlbum:(BOOL)arg2;
@@ -75,7 +65,7 @@
 - (struct CGSize { float x1; float x2; })preferredSizeInParentViewController;
 - (int)selectedAlbumIndex;
 - (void)setCommentDelegate:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setIsNewAlbum:(BOOL)arg1;
 - (void)setPlaceholderText:(id)arg1;
 - (void)setSelectedAlbumIndex:(int)arg1;

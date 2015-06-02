@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class UIColor;
-
 @interface SKLightNode : SKNode {
     UIColor *_ambientColor;
     unsigned int _categoryBitMask;
@@ -13,12 +11,12 @@
     UIColor *_shadowColor;
 }
 
-@property(retain) UIColor * ambientColor;
-@property unsigned int categoryBitMask;
-@property(getter=isEnabled) BOOL enabled;
-@property float falloff;
-@property(retain) UIColor * lightColor;
-@property(retain) UIColor * shadowColor;
+@property (nonatomic, retain) UIColor *ambientColor;
+@property (nonatomic) unsigned int categoryBitMask;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic) float falloff;
+@property (nonatomic, retain) UIColor *lightColor;
+@property (nonatomic, retain) UIColor *shadowColor;
 
 - (void).cxx_destruct;
 - (id)ambientColor;

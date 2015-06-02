@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFError, MFInvocationQueue, MFMailboxUid, NSMutableSet, NSString, NSThread;
-
 @interface MFActivityMonitor : MFPriorityDesignator {
     unsigned int _bytesRead;
     unsigned int _bytesWritten;
-    unsigned int _canCancel : 1;
-    unsigned int _changeCount : 8;
+    unsigned int _canCancel;
+    unsigned int _changeCount;
     unsigned int _currentCount;
     double _currentItemPercentDone;
     id _delegate;
@@ -17,8 +15,8 @@
     MFError *_error;
     unsigned int _expectedLength;
     unsigned int _gotNewMessagesState;
-    unsigned int _isActive : 1;
-    unsigned int _key : 13;
+    unsigned int _isActive;
+    unsigned int _key;
     double _lastTime;
     MFMailboxUid *_mailbox;
     unsigned int _maxCount;
@@ -26,15 +24,15 @@
     double _percentDone;
     NSMutableSet *_reasons;
     NSThread *_runningThread;
-    unsigned int _shouldCancel : 1;
+    unsigned int _shouldCancel;
     double _startTime;
     NSString *_statusMessage;
-    unsigned int _supportsPerItemProgress : 1;
+    unsigned int _supportsPerItemProgress;
     id _target;
     NSString *_taskName;
 }
 
-@property(retain) MFMailboxUid * mailbox;
+@property (retain) MFMailboxUid *mailbox;
 
 + (id)currentMonitor;
 + (void)destroyMonitor;

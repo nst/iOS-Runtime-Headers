@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <PLManagedObjectContextPTPNotificationDelegate>, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_xpc_object>, PLDelayedFiledSystemDeletions, PLMergePolicy, PLPhotoLibrary;
-
 @interface PLManagedObjectContext : NSManagedObjectContext {
     NSMutableArray *_albumUuidForCloudDeletion;
     NSMutableSet *_avalancheUUIDsForUpdate;
@@ -41,20 +39,20 @@
     NSObject<OS_xpc_object> *changeHubConnection;
 }
 
-@property NSObject<OS_xpc_object> * changeHubConnection;
-@property int changeSource;
-@property(retain) PLDelayedFiledSystemDeletions * delayedDeletions;
-@property BOOL hasMetadataChanges;
-@property BOOL isBackingALAssetsLibrary;
-@property BOOL isInitializingSingletons;
-@property BOOL isLoadingPhotoLibrary;
-@property(readonly) BOOL isUserInterfaceContext;
-@property(readonly) BOOL mergingChanges;
-@property PLPhotoLibrary * photoLibrary;
-@property <PLManagedObjectContextPTPNotificationDelegate> * ptpNotificationDelegate;
-@property BOOL regenerateVideoThumbnails;
-@property(readonly) BOOL savingDuringMerge;
-@property BOOL suspendClientServerTransactions;
+@property (nonatomic) NSObject<OS_xpc_object> *changeHubConnection;
+@property (nonatomic) int changeSource;
+@property (nonatomic, retain) PLDelayedFiledSystemDeletions *delayedDeletions;
+@property (nonatomic) BOOL hasMetadataChanges;
+@property (nonatomic) BOOL isBackingALAssetsLibrary;
+@property (nonatomic) BOOL isInitializingSingletons;
+@property (nonatomic) BOOL isLoadingPhotoLibrary;
+@property (nonatomic, readonly) BOOL isUserInterfaceContext;
+@property (nonatomic, readonly) BOOL mergingChanges;
+@property (nonatomic) PLPhotoLibrary *photoLibrary;
+@property (nonatomic) <PLManagedObjectContextPTPNotificationDelegate> *ptpNotificationDelegate;
+@property (nonatomic) BOOL regenerateVideoThumbnails;
+@property (nonatomic, readonly) BOOL savingDuringMerge;
+@property (nonatomic) BOOL suspendClientServerTransactions;
 
 + (void)__prepareEntityPropertyLookups;
 + (id)_attributeNamesByIndexByEntityNames;
@@ -91,8 +89,8 @@
 + (unsigned long long)indexValueForRelationshipNames:(id)arg1 entity:(id)arg2;
 + (id)managedObjectModel;
 + (id)managedObjectModelURL;
-+ (void)mergeChangesFromRemoteContextSave:(id)arg1 intoAllContextsNotIdenticalTo:(id)arg2 completionHandler:(id)arg3;
-+ (void)mergeIntoAllContextsChangesFromRemoteContextSave:(id)arg1 completionHandler:(id)arg2;
++ (void)mergeChangesFromRemoteContextSave:(id)arg1 intoAllContextsNotIdenticalTo:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)mergeIntoAllContextsChangesFromRemoteContextSave:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)moveOldStoreAside;
 + (BOOL)moveStoreFromURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 + (void)recordVersion:(int)arg1 forStore:(id)arg2 extraMetadata:(id)arg3;
@@ -190,6 +188,6 @@
 - (void)setupLocalChangeNotifications;
 - (BOOL)suspendClientServerTransactions;
 - (void)tearDownLocalChangeNotifications;
-- (void)withDispatchGroup:(id)arg1 performBlock:(id)arg2;
+- (void)withDispatchGroup:(id)arg1 performBlock:(id /* block */)arg2;
 
 @end

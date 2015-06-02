@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class TSMTraceBuffer;
-
 @interface TCTracingManager : NSObject {
     TSMTraceBuffer *mBuffer;
     unsigned int mCount;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface MPHomeSharingRentalTracker : NSObject {
     NSObject<OS_dispatch_queue> *_rentalTrackerQueue;
     NSMutableDictionary *_rentals;

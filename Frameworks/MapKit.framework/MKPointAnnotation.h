@@ -9,7 +9,7 @@
     } _coordinate;
 }
 
-@property struct { double x1; double x2; } coordinate;
+@property (nonatomic) struct { double x1; double x2; } coordinate;
 
 - (struct { double x1; double x2; })coordinate;
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;

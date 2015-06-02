@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSData, NSUUID;
-
 @interface _HDCorrelationInsertionJournalEntry : HDJournalEntry {
     NSUUID *_correlationUUID;
     NSData *_objectUUIDsData;
     int _provenance;
 }
 
-@property(readonly) NSUUID * correlationUUID;
-@property(readonly) NSData * objectUUIDsData;
-@property(readonly) int provenance;
+@property (nonatomic, readonly) NSUUID *correlationUUID;
+@property (nonatomic, readonly) NSData *objectUUIDsData;
+@property (nonatomic, readonly) int provenance;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;

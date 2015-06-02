@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OCPException : NSException {
-}
+@interface OCPException : NSException
 
 @end

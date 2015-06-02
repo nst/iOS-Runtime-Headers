@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_source>, NSString, PKAuthenticator, PKPassPaymentPayStateView, PKPassPaymentSummaryView, PKPaymentService, UIButton;
-
 @interface PKPassPaymentContainerView : PKPassPaymentFooterContentView <PKAuthenticatorDelegate, PKBiometricEventObserver, PKPassPaymentPayStateViewDelegate, PKPassPaymentSummaryViewDelegate, PKPaymentServiceDelegate> {
     UIButton *_actionButton;
     BOOL _authenticating;
@@ -28,18 +26,18 @@
     BOOL _waitingForGlyphView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_activateForPayment;
-- (void)_addTransitionCompletionHandler:(id)arg1;
+- (void)_addTransitionCompletionHandler:(id /* block */)arg1;
 - (void)_applyLatestTransactionAndMessageToSummaryView;
 - (void)_applyPayState:(int)arg1;
 - (void)_applyPayState:(int)arg1 afterDelay:(double)arg2;
 - (void)_applyPayState:(int)arg1 withTextOverride:(id)arg2;
-- (void)_applyPayState:(int)arg1 withTextOverride:(id)arg2 completionHandler:(id)arg3;
+- (void)_applyPayState:(int)arg1 withTextOverride:(id)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)_authenticationAllowed;
 - (void)_authorizeForPaymentWithCredential:(id)arg1;
 - (void)_beginPasscodeOnlyAuthentication;
@@ -53,7 +51,7 @@
 - (void)_deauthorizeForPayment;
 - (id)_emphasisButtonForState:(int)arg1;
 - (void)_emphasizeStateIfPossible:(int)arg1 withTextOverride:(id)arg2;
-- (void)_endFingerprintAnimationWithSuccess:(BOOL)arg1 completion:(id)arg2;
+- (void)_endFingerprintAnimationWithSuccess:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_endPaymentAuthorization;
 - (void)_endTransition:(BOOL)arg1;
 - (void)_executeTransitionCompletionHandlers:(BOOL)arg1;
@@ -66,8 +64,8 @@
 - (BOOL)_isForegroundActiveWithReasons:(unsigned int)arg1;
 - (BOOL)_isInBackgroundWithReasons:(unsigned int)arg1;
 - (BOOL)_isLifecycleNotificationRelevant:(id)arg1;
-- (void)_lookupLatestMessageWithCompletion:(id)arg1;
-- (void)_lookupLatestTransactionWithCompletion:(id)arg1;
+- (void)_lookupLatestMessageWithCompletion:(id /* block */)arg1;
+- (void)_lookupLatestTransactionWithCompletion:(id /* block */)arg1;
 - (void)_passcodeAuthenticationButtonPressed:(id)arg1;
 - (void)_passcodeFallbackButtonPressed:(id)arg1;
 - (void)_performAuthentication;
@@ -81,7 +79,7 @@
 - (BOOL)_showSummaryState;
 - (void)_startFingeroffTimeout;
 - (void)_startFingerprintAnimation;
-- (void)_transitionToState:(int)arg1 withTextOverride:(id)arg2 animated:(BOOL)arg3 completionHandler:(id)arg4;
+- (void)_transitionToState:(int)arg1 withTextOverride:(id)arg2 animated:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (void)_transitionViewsAnimated:(BOOL)arg1;
 - (void)_updateAuthenticatorState;
 - (void)authenticatorDidEncounterFingerOff:(id)arg1;
@@ -104,7 +102,7 @@
 - (void)paymentPassWithUniqueIdentifierDidDeauthorize:(id)arg1;
 - (void)paymentPassWithUniqueIdentifierDidFailTransaction:(id)arg1;
 - (void)paymentServiceReceivedInterruption;
-- (void)presentPasscodeViewController:(id)arg1 completionHandler:(id)arg2;
+- (void)presentPasscodeViewController:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)summaryView:(id)arg1 didDeleteMessage:(id)arg2;
 - (void)willBecomeHiddenAnimated:(BOOL)arg1;
 - (void)willBecomeVisibleAnimated:(BOOL)arg1;

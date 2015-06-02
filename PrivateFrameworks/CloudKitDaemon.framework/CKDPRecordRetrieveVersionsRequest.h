@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordIdentifier, CKDPRequestedFields, NSString;
-
 @interface CKDPRecordRetrieveVersionsRequest : PBRequest <NSCopying> {
     NSString *_minimumVersionEtag;
     CKDPRecordIdentifier *_recordIdentifier;
     CKDPRequestedFields *_requestedFields;
 }
 
-@property(readonly) BOOL hasMinimumVersionEtag;
-@property(readonly) BOOL hasRecordIdentifier;
-@property(readonly) BOOL hasRequestedFields;
-@property(retain) NSString * minimumVersionEtag;
-@property(retain) CKDPRecordIdentifier * recordIdentifier;
-@property(retain) CKDPRequestedFields * requestedFields;
+@property (nonatomic, readonly) BOOL hasMinimumVersionEtag;
+@property (nonatomic, readonly) BOOL hasRecordIdentifier;
+@property (nonatomic, readonly) BOOL hasRequestedFields;
+@property (nonatomic, retain) NSString *minimumVersionEtag;
+@property (nonatomic, retain) CKDPRecordIdentifier *recordIdentifier;
+@property (nonatomic, retain) CKDPRequestedFields *requestedFields;
 
 + (id)options;
 

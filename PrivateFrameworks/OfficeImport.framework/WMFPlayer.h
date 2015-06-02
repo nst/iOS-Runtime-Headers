@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class MFGraphicsDevice;
-
 @interface WMFPlayer : NSObject {
     BOOL m_boundsSet;
     MFGraphicsDevice *m_gdi;

@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAHASearchCriteriaFilter : SAHAFilter
 
-@interface SAHASearchCriteriaFilter : SAHAFilter {
-}
-
-@property(copy) NSString * attribute;
-@property(copy) NSString * entityType;
-@property(copy) NSString * groupName;
-@property(copy) NSString * homeName;
-@property(copy) NSString * roomName;
-@property(copy) NSString * sceneName;
-@property(copy) NSString * serviceName;
-@property(copy) NSString * serviceType;
-@property(copy) NSString * zoneName;
+@property (nonatomic, copy) NSString *attribute;
+@property (nonatomic, copy) NSString *entityType;
+@property (nonatomic, copy) NSString *groupName;
+@property (nonatomic, copy) NSString *homeName;
+@property (nonatomic, copy) NSString *roomName;
+@property (nonatomic, copy) NSString *sceneName;
+@property (nonatomic, copy) NSString *serviceName;
+@property (nonatomic, copy) NSString *serviceType;
+@property (nonatomic, copy) NSString *zoneName;
 
 + (id)searchCriteriaFilter;
 + (id)searchCriteriaFilterWithDictionary:(id)arg1 context:(id)arg2;

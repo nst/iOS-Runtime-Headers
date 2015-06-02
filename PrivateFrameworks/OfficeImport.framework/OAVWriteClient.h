@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAVWriteClient : NSObject {
-}
+@interface OAVWriteClient : NSObject
 
 - (id)textWrapPointsForDrawable:(id)arg1 state:(id)arg2;
 - (void)updateClientAnchorFromOrientedBoundsForDrawable:(id)arg1 state:(id)arg2;

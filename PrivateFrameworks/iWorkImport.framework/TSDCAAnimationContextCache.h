@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CAMediaTimingFunction, NSString;
-
 @interface TSDCAAnimationContextCache : NSObject <TSDCAAnimationContextCacheProtocol> {
     double _beginTime;
     double _duration;
@@ -12,15 +10,15 @@
     CAMediaTimingFunction *_timingFunction;
 }
 
-@property(readonly) double beginTime;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property(readonly) NSString * fillMode;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) double timeOffset;
-@property(readonly) CAMediaTimingFunction * timingFunction;
+@property (nonatomic, readonly) double beginTime;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) NSString *fillMode;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) double timeOffset;
+@property (nonatomic, readonly) CAMediaTimingFunction *timingFunction;
 
 - (double)beginTime;
 - (double)duration;

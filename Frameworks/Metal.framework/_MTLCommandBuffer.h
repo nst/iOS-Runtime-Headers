@@ -2,19 +2,10 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <MTLCommandEncoder>, <MTLCommandQueue>, MTLError, NSDictionary, NSError, NSString, _MTLCommandQueue<MTLCommandQueue>;
-
 @interface _MTLCommandBuffer : NSObject {
     unsigned long long _commitTime;
     bool _completedCallbacksDone;
-
-  /* Error parsing encoded ivar type info: ^{MTLDispatch=^{MTLDispatch}@?} */
-    struct MTLDispatch { struct MTLDispatch {} *x1; id x2; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x3; } *_completedDispatchList;
-
+    struct MTLDispatch { struct MTLDispatch {} *x1; id /* block */ x2; } *_completedDispatchList;
     unsigned long long _completionHandlerEnqueueTime;
     unsigned long long _completionHandlerExecutionTime;
     unsigned long long _completionInterruptTime;
@@ -38,10 +29,7 @@
     _MTLCommandQueue<MTLCommandQueue> *_queue;
     BOOL _retainedReferences;
     bool _scheduledCallbacksDone;
-
-  /* Error parsing encoded ivar type info: ^{MTLDispatch=^{MTLDispatch}@?} */
-    struct MTLDispatch { struct MTLDispatch {} *x1; id x2; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x3; } *_scheduledDispatchList;
-
+    struct MTLDispatch { struct MTLDispatch {} *x1; id /* block */ x2; } *_scheduledDispatchList;
     bool _skipRender;
     unsigned int _status;
     BOOL _strongObjectReferences;
@@ -50,19 +38,19 @@
     BOOL _synchronousDebugMode;
 }
 
-@property(readonly) <MTLCommandQueue> * commandQueue;
-@property(readonly) NSError * error;
-@property(copy) NSString * label;
-@property(getter=isProfilingEnabled) BOOL profilingEnabled;
-@property(readonly) NSDictionary * profilingResults;
-@property(readonly) BOOL retainedReferences;
-@property(readonly) unsigned int status;
-@property(readonly) BOOL synchronousDebugMode;
+@property (readonly) <MTLCommandQueue> *commandQueue;
+@property (readonly) NSError *error;
+@property (copy) NSString *label;
+@property (getter=isProfilingEnabled) BOOL profilingEnabled;
+@property (readonly) NSDictionary *profilingResults;
+@property (readonly) BOOL retainedReferences;
+@property (readonly) unsigned int status;
+@property (readonly) BOOL synchronousDebugMode;
 
 + (void)initialize;
 
-- (void)addCompletedHandler:(id)arg1;
-- (void)addScheduledHandler:(id)arg1;
+- (void)addCompletedHandler:(id /* block */)arg1;
+- (void)addScheduledHandler:(id /* block */)arg1;
 - (id)commandQueue;
 - (void)commit;
 - (void)commitAndReset;

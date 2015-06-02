@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSULinkedPointerSetEntry;
-
 @interface OITSUMutableLinkedPointerSet : NSObject <NSFastEnumeration> {
     struct __CFDictionary { } *mDictionary;
     OITSULinkedPointerSetEntry *mHead;
@@ -14,7 +12,7 @@
 - (id)array;
 - (BOOL)containsObject:(id)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)firstObject;
 - (BOOL)hasObjects;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotoStreamCreateTitleDelegate>, NSString, UIColor, UILabel, UINavigationItem, UITextField, UITextView;
-
 @interface PUPhotoStreamCreateTitleViewController : UIViewController <UITextViewDelegate> {
     UILabel *_descriptionLabel;
     UILabel *_instructionLabel;
@@ -15,11 +13,11 @@
     UITextField *_titleField;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property <PUPhotoStreamCreateTitleDelegate> * titleDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) <PUPhotoStreamCreateTitleDelegate> *titleDelegate;
 
 - (void).cxx_destruct;
 - (void)_addConstraintsForTraitCollection:(id)arg1;

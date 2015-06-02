@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, NSURL;
+@interface SAAnswerObjectLine : AceObject <SAAceSerializable>
 
-@interface SAAnswerObjectLine : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSURL * image;
-@property(copy) NSNumber * imageInverted;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSURL *image;
+@property (nonatomic, copy) NSNumber *imageInverted;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
 
 + (id)objectLine;
 + (id)objectLineWithDictionary:(id)arg1 context:(id)arg2;

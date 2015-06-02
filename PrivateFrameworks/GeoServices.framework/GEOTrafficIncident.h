@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOTrafficIncident : PBCodable <NSCopying> {
     double _endTime;
     struct { 
@@ -26,26 +24,26 @@
     int _vertexOffset;
 }
 
-@property double endTime;
-@property BOOL hasEndTime;
-@property(readonly) BOOL hasInfo;
-@property BOOL hasLastUpdated;
-@property(readonly) BOOL hasLocation;
-@property BOOL hasStartTime;
-@property(readonly) BOOL hasTitle;
-@property BOOL hasType;
-@property BOOL hasUID;
-@property BOOL hasVertexCount;
-@property BOOL hasVertexOffset;
-@property(retain) NSString * info;
-@property double lastUpdated;
-@property(retain) NSString * location;
-@property double startTime;
-@property(retain) NSString * title;
-@property int type;
-@property long long uID;
-@property int vertexCount;
-@property int vertexOffset;
+@property (nonatomic) double endTime;
+@property (nonatomic) BOOL hasEndTime;
+@property (nonatomic, readonly) BOOL hasInfo;
+@property (nonatomic) BOOL hasLastUpdated;
+@property (nonatomic, readonly) BOOL hasLocation;
+@property (nonatomic) BOOL hasStartTime;
+@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) BOOL hasUID;
+@property (nonatomic) BOOL hasVertexCount;
+@property (nonatomic) BOOL hasVertexOffset;
+@property (nonatomic, retain) NSString *info;
+@property (nonatomic) double lastUpdated;
+@property (nonatomic, retain) NSString *location;
+@property (nonatomic) double startTime;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) int type;
+@property (nonatomic) long long uID;
+@property (nonatomic) int vertexCount;
+@property (nonatomic) int vertexOffset;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

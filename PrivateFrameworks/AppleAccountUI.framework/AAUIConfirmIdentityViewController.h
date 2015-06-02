@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIConfirmIdentityViewControllerDelegate>, AAUIProfilePictureStore, ACAccount, NSString, NSValue, UIButton, UIImage, UIImagePickerController, UILabel, UIScrollView, UIView;
-
 @interface AAUIConfirmIdentityViewController : UIViewController <UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     ACAccount *_account;
     UIView *_contentView;
@@ -22,11 +20,11 @@
     UIButton *_useDifferentIDButton;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIConfirmIdentityViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIConfirmIdentityViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_addPhotoButtonWasTapped:(id)arg1;

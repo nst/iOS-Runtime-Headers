@@ -2,39 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BLAlert, BLAlertAction, BLAlertViewController, NSArray, NSString;
-
 @interface BLAlert : NSObject <BLAlertViewControllerDelegate, UIAlertViewDelegate> {
     NSArray *_actions;
     BLAlertViewController *_alertView;
     BLAlertAction *_cancelAction;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _conditionBlock;
-
+    id /* block */ _conditionBlock;
     id _context;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _executionBlock;
-
+    id /* block */ _executionBlock;
     int _options;
     BOOL _showing;
     BLAlert *_strongSelf;
 }
 
-@property(copy) id conditionBlock;
-@property(retain) id context;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) BLAlert * strongSelf;
-@property(readonly) Class superclass;
+@property (copy) id /* block */ conditionBlock;
+@property (retain) id context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (retain) BLAlert *strongSelf;
+@property (readonly) Class superclass;
 
 + (id)pendingAlerts;
 + (void)performWithTitle:(id)arg1 message:(id)arg2 action:(id)arg3;
@@ -44,25 +30,25 @@
 - (void).cxx_destruct;
 - (void)alertViewController:(id)arg1 didPressButtonAtIndex:(int)arg2;
 - (void)cancelDelayedHide;
-- (id)conditionBlock;
+- (id /* block */)conditionBlock;
 - (id)context;
 - (void)dealloc;
 - (void)hide;
 - (void)hide:(BOOL)arg1;
-- (void)hideWithCompletionBlock:(id)arg1;
+- (void)hideWithCompletionBlock:(id /* block */)arg1;
 - (void)hideWithDelay:(double)arg1;
-- (void)hideWithDelay:(double)arg1 completionBlock:(id)arg2;
+- (void)hideWithDelay:(double)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 cancelAction:(id)arg3 otherActions:(id)arg4;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 options:(int)arg3 cancelAction:(id)arg4 otherActions:(id)arg5;
 - (BOOL)isShowing;
-- (void)setConditionBlock:(id)arg1;
+- (void)setConditionBlock:(id /* block */)arg1;
 - (void)setContext:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setStrongSelf:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)show;
 - (void)showPendingAlertIfNeeded;
-- (void)showWithExecutionBlock:(id)arg1;
+- (void)showWithExecutionBlock:(id /* block */)arg1;
 - (id)strongSelf;
 - (BOOL)wantSingular;
 

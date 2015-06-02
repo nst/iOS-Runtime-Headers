@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSDate, NSDictionary, NSObject<OS_dispatch_queue>, NSURL, NSURLSession;
-
 @interface CPLConfiguration : NSObject {
     NSDictionary *_configuration;
     NSURL *_configurationFileURL;

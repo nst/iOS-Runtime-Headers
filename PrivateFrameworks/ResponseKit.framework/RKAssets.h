@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@interface RKAssets : NSObject {
-}
+@interface RKAssets : NSObject
 
 + (id)alternativeInversions;
 + (id)appreciationKeywords;

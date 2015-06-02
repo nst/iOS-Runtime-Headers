@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@interface CallFingerprint : NSObject {
-}
+@interface CallFingerprint : NSObject
 
 + (id)getDatabasePredicate:(id)arg1;
 + (BOOL)match:(id)arg1 :(id)arg2;

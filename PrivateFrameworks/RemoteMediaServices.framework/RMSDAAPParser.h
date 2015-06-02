@@ -2,15 +2,14 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@interface RMSDAAPParser : NSObject {
-}
+@interface RMSDAAPParser : NSObject
 
 + (id)objectWithData:(id)arg1;
 + (id)objectWithData:(id)arg1 error:(id*)arg2;
 + (id)sharedInstance;
 + (id)typeForDRCPValueType:(int)arg1;
 
-- (void)enumerateDAAPChunksInBytes:(const char *)arg1 length:(unsigned int)arg2 usingBlock:(id)arg3;
+- (void)enumerateDAAPChunksInBytes:(const char *)arg1 length:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
 - (id)parseBrowseResults:(const char *)arg1 length:(unsigned int)arg2;
 - (id)parseContentCodes:(const char *)arg1 length:(unsigned int)arg2;
 - (id)parseContentCollectionDict:(const char *)arg1 length:(unsigned int)arg2;

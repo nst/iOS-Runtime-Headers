@@ -2,18 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@interface PCLogging : NSObject {
-}
+@interface PCLogging : NSObject
 
 + (void)_appendString:(id)arg1 toFileNamed:(id)arg2;
 + (void)_configureLogFacilityIfNeeded:(id)arg1;
 + (id)_facilityForIdentifier:(id)arg1;
 + (id)_fileNameForIdentifier:(id)arg1;
-+ (id)_formatBlock;
++ (id /* block */)_formatBlock;
 + (void)_printLoggingConfig;
 + (void)enableConsoleLoggingForLevel:(int)arg1;
 + (void)enableFileLogging:(BOOL)arg1;
-+ (void)enableLoggingForCustomHandler:(id)arg1;
++ (void)enableLoggingForCustomHandler:(id /* block */)arg1;
 + (id)getMainBundleId;
 + (void)initialize;
 + (void)logAtLevel:(int)arg1 delegate:(id)arg2 format:(id)arg3;

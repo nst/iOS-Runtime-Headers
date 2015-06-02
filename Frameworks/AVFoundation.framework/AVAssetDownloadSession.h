@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetDownloadSessionInternal, NSError, NSURL;
-
 @interface AVAssetDownloadSession : NSObject {
     AVAssetDownloadSessionInternal *_internal;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) unsigned long long availableFileSize;
-@property(readonly) NSURL * destinationURL;
-@property(readonly) unsigned long long downloadToken;
-@property(readonly) NSError * error;
-@property(readonly) unsigned long long fileSize;
-@property(readonly) int priority;
-@property(readonly) int status;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) unsigned long long availableFileSize;
+@property (nonatomic, readonly) NSURL *destinationURL;
+@property (nonatomic, readonly) unsigned long long downloadToken;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) unsigned long long fileSize;
+@property (nonatomic, readonly) int priority;
+@property (nonatomic, readonly) int status;
 
 + (id)assetDownloadSessionWithDownloadToken:(unsigned long long)arg1;
 + (id)assetDownloadSessionWithURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;

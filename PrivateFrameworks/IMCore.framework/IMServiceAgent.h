@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSArray, NSDictionary;
-
 @interface IMServiceAgent : NSObject {
     NSDictionary *_currentAVChatInfo;
 }
 
-@property(readonly) NSDictionary * currentAVChatInfo;
-@property(retain) NSArray * myAvailableMessages;
-@property(retain) NSArray * myAwayMessages;
-@property(readonly) unsigned int requestAudioReflectorStart;
-@property(readonly) unsigned int requestAudioReflectorStop;
-@property(readonly) unsigned long long vcCapabilities;
+@property (nonatomic, readonly) NSDictionary *currentAVChatInfo;
+@property (nonatomic, retain) NSArray *myAvailableMessages;
+@property (nonatomic, retain) NSArray *myAwayMessages;
+@property (nonatomic, readonly) unsigned int requestAudioReflectorStart;
+@property (nonatomic, readonly) unsigned int requestAudioReflectorStop;
+@property (nonatomic, readonly) unsigned long long vcCapabilities;
 
 + (void)forgetStatusImageAppearance;
 + (id)imageNameForStatus:(unsigned int)arg1;

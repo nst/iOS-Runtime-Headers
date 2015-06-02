@@ -2,33 +2,23 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class PHVideoRequestOptions;
-
 @interface PHVideoRequest : PHImageManagerRequest {
     PHVideoRequestOptions *_options;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _resultHandler;
-
+    id /* block */ _resultHandler;
 }
 
-@property(readonly) PHVideoRequestOptions * options;
-@property(copy,readonly) id resultHandler;
+@property (nonatomic, readonly) PHVideoRequestOptions *options;
+@property (nonatomic, readonly, copy) id /* block */ resultHandler;
 
-+ (id)videoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(id)arg4;
++ (id)videoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(id /* block */)arg4;
 
 - (void).cxx_destruct;
 - (void)clearResultHandler;
 - (void)cloneIDAndResultHandlerFromRequest:(id)arg1;
 - (id)description;
-- (id)initVideoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(id)arg4;
+- (id)initVideoRequestWithAsset:(id)arg1 options:(id)arg2 domain:(id)arg3 resultHandler:(id /* block */)arg4;
 - (BOOL)isVideo;
 - (id)options;
-- (id)resultHandler;
+- (id /* block */)resultHandler;
 
 @end

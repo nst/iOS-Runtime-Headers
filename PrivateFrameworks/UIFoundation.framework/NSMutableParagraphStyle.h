@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSArray;
-
-@interface NSMutableParagraphStyle : NSParagraphStyle {
-}
+@interface NSMutableParagraphStyle : NSParagraphStyle
 
 @property int alignment;
 @property int baseWritingDirection;
-@property float defaultTabInterval;
+@property (nonatomic) float defaultTabInterval;
 @property float firstLineHeadIndent;
 @property float headIndent;
 @property float hyphenationFactor;
@@ -20,7 +17,7 @@
 @property float minimumLineHeight;
 @property float paragraphSpacing;
 @property float paragraphSpacingBefore;
-@property(copy) NSArray * tabStops;
+@property (nonatomic, copy) NSArray *tabStops;
 @property float tailIndent;
 
 - (void)_mutateTabStops;

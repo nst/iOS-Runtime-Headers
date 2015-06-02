@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABPropertyGroupItem;
-
 @interface ABLabelPickerController : ABPickerController {
     ABPropertyGroupItem *_item;
 }
 
-@property(readonly) ABPropertyGroupItem * item;
+@property (nonatomic, readonly) ABPropertyGroupItem *item;
 
 - (void)dealloc;
 - (id)initForPropertyItem:(id)arg1;

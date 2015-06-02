@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSMutableArray;
-
 @interface RURadioMyStationsCollectionViewLayout : UICollectionViewFlowLayout {
     NSMutableArray *_deletedIndexPaths;
     NSMutableArray *_insertedIndexPaths;

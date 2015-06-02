@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableDictionary, TSCHChartStyle, TSCHLegendStyle, TSCHReferenceLineStyle;
+@interface TSCHChartStyleState : TSCHPropertyValueStorageContainer <NSCopying>
 
-@interface TSCHChartStyleState : TSCHPropertyValueStorageContainer <NSCopying> {
-}
-
-@property(copy) NSMutableArray * categoryAxisStyles;
-@property(retain) TSCHChartStyle * chartStyle;
-@property(retain) TSCHLegendStyle * legendStyle;
-@property(copy) NSMutableArray * paragraphStyles;
-@property(copy) NSMutableDictionary * referenceLineStyles;
-@property(retain) TSCHReferenceLineStyle * referenceLineThemeStyle;
-@property(copy) NSMutableArray * seriesPrivateStyles;
-@property(copy) NSMutableArray * seriesThemeStyles;
-@property(copy) NSMutableArray * valueAxisStyles;
+@property (nonatomic, copy) NSMutableArray *categoryAxisStyles;
+@property (nonatomic, retain) TSCHChartStyle *chartStyle;
+@property (nonatomic, retain) TSCHLegendStyle *legendStyle;
+@property (nonatomic, copy) NSMutableArray *paragraphStyles;
+@property (nonatomic, copy) NSMutableDictionary *referenceLineStyles;
+@property (nonatomic, retain) TSCHReferenceLineStyle *referenceLineThemeStyle;
+@property (nonatomic, copy) NSMutableArray *seriesPrivateStyles;
+@property (nonatomic, copy) NSMutableArray *seriesThemeStyles;
+@property (nonatomic, copy) NSMutableArray *valueAxisStyles;
 
 - (id)allStyles;
 - (id)applyStyleSwapTuple:(id)arg1;

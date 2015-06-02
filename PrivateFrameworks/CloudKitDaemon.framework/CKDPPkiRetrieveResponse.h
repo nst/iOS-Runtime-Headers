@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPPkiRetrieveResponse : PBCodable <NSCopying> {
     NSMutableArray *_publicKeys;
 }
 
-@property(retain) NSMutableArray * publicKeys;
+@property (nonatomic, retain) NSMutableArray *publicKeys;
 
 - (void).cxx_destruct;
 - (void)addPublicKey:(id)arg1;

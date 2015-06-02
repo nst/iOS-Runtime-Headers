@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPUserDefaults : NSObject {
-}
+@interface TSWPUserDefaults : NSObject
 
 + (BOOL)automaticallyDetectLinks;
 + (BOOL)automaticallyDetectLists;

@@ -4,16 +4,16 @@
 
 @interface MFBase64Encoder : MFBaseFilterDataConsumer {
     unsigned long _left;
-    unsigned char _leftovers[3];
+    unsigned char _leftovers;
     unsigned long _line;
     unsigned long _lineBreak;
     BOOL _padChar;
     const char *_table;
 }
 
-@property BOOL allowSlash;
-@property unsigned long lineBreak;
-@property BOOL padChar;
+@property (nonatomic) BOOL allowSlash;
+@property (nonatomic) unsigned long lineBreak;
+@property (nonatomic) BOOL padChar;
 
 - (BOOL)allowSlash;
 - (int)appendData:(id)arg1;

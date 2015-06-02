@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDColumnInfo;
-
 @interface EMColumnInfoMapper : CMMapper {
     unsigned int columnSpan;
     double columnWidth;

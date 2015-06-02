@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TNPageLayout;
-
 @interface TNPageContentLayout : TSDLayout {
     TNPageLayout *mPageLayout;
     unsigned int mPageNumber;
 }
 
-@property TNPageLayout * pageLayout;
-@property(readonly) unsigned int pageNumber;
+@property TNPageLayout *pageLayout;
+@property (readonly) unsigned int pageNumber;
 
 - (id)computeLayoutGeometry;
 - (id)initWithPageLayout:(id)arg1;

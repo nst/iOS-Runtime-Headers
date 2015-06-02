@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDTableRow;
-
 @interface WMTableRowMapper : CMMapper {
     double mHeight;
     WDTableRow *mWdTableRow;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class <SGObject>, SGContact;
-
 @interface SGContactMatch : NSObject <NSCopying, NSSecureCoding> {
     SGContact *_contact;
     long long _matchingFieldType;
 }
 
-@property(readonly) SGContact * contact;
-@property(readonly) <SGObject> * matchingField;
+@property (nonatomic, readonly) SGContact *contact;
+@property (nonatomic, readonly) <SGObject> *matchingField;
 
 + (BOOL)supportsSecureCoding;
 

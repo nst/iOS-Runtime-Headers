@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIEnhancementHistogram;
-
 @interface CIEnhancementCalculation : NSObject {
     CIEnhancementHistogram *borderHist;
     float curvePercent;
@@ -22,11 +20,11 @@
     CIEnhancementHistogram *satHist;
 }
 
-@property(readonly) CIEnhancementHistogram * borderHist;
-@property(readonly) CIEnhancementHistogram * lumHist;
-@property(readonly) struct { float x1; float x2; } originalFaceColor;
-@property(readonly) CIEnhancementHistogram * rgbSumHist;
-@property(readonly) CIEnhancementHistogram * satHist;
+@property (readonly) CIEnhancementHistogram *borderHist;
+@property (readonly) CIEnhancementHistogram *lumHist;
+@property (readonly) struct { float x1; float x2; } originalFaceColor;
+@property (readonly) CIEnhancementHistogram *rgbSumHist;
+@property (readonly) CIEnhancementHistogram *satHist;
 
 + (float)bestWarmthForI:(float)arg1 q:(float)arg2 percentChange:(float*)arg3;
 

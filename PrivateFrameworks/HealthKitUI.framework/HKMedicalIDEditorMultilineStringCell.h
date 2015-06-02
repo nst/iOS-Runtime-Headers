@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <HKMedicalIDEditorCellHeightChangeDelegate>, NSString, UILabel, UITextView;
-
 @interface HKMedicalIDEditorMultilineStringCell : HKMedicalIDEditorCell <UITextViewDelegate> {
     <HKMedicalIDEditorCellHeightChangeDelegate> *_heightChangeDelegate;
     UILabel *_labelLabel;
@@ -18,15 +16,15 @@
     } _textViewExtraMargins;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <HKMedicalIDEditorCellHeightChangeDelegate> * heightChangeDelegate;
-@property(retain) NSString * placeholder;
-@property(retain) NSString * stringValue;
-@property(readonly) Class superclass;
-@property(readonly) UITextView * textView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textViewExtraMargins;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <HKMedicalIDEditorCellHeightChangeDelegate> *heightChangeDelegate;
+@property (nonatomic, retain) NSString *placeholder;
+@property (nonatomic, retain) NSString *stringValue;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITextView *textView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textViewExtraMargins;
 
 + (BOOL)showsLabelAndValue;
 

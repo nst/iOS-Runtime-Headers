@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class NSArray;
-
 @interface APDNavigationSection : APDNavigationItem {
     NSArray *_children;
 }
 
-@property(copy) NSArray * children;
+@property (nonatomic, copy) NSArray *children;
 
 - (void).cxx_destruct;
 - (id)children;

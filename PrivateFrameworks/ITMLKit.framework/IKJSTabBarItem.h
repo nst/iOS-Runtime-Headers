@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKAppNavigationController>, IKJSNavigationDocument, IKJSTabBar, JSManagedValue, NSString;
-
 @interface IKJSTabBarItem : IKJSObject <IKJSTabBarItem> {
     NSString *_identifier;
     JSManagedValue *_managedNavigationDocument;
@@ -14,13 +12,13 @@
     NSString *_rootURL;
 }
 
-@property(readonly) NSString * identifier;
-@property(retain) JSManagedValue * managedNavigationDocument;
-@property(retain) JSManagedValue * managedSelf;
-@property(readonly) <IKAppNavigationController> * navigationControllerDelegate;
-@property(readonly) IKJSNavigationDocument * navigationDocument;
-@property IKJSTabBar * owner;
-@property(readonly) NSString * rootURL;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, retain) JSManagedValue *managedNavigationDocument;
+@property (nonatomic, retain) JSManagedValue *managedSelf;
+@property (nonatomic, readonly) <IKAppNavigationController> *navigationControllerDelegate;
+@property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
+@property (nonatomic) IKJSTabBar *owner;
+@property (nonatomic, readonly) NSString *rootURL;
 
 - (void).cxx_destruct;
 - (void)dealloc;

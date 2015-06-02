@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInputInternal_FigRecorder, NSArray;
-
 @interface AVCaptureInput_FigRecorder : NSObject {
     AVCaptureInputInternal_FigRecorder *_inputInternal;
 }
 
-@property(readonly) NSArray * ports;
+@property (nonatomic, readonly) NSArray *ports;
 
 - (void)_applyOverridesToCaptureOptions:(id)arg1;
 - (struct OpaqueCMClock { }*)clock;

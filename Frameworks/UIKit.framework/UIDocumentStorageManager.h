@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSMetadataQuery, NSMutableSet, NSObject<OS_dispatch_queue>, NSURL, _UIDocumentStorage;
-
 @interface UIDocumentStorageManager : NSObject {
     NSURL *_defaultURL;
     NSDictionary *_identifiersToURLMap;
@@ -13,19 +11,19 @@
     _UIDocumentStorage *_storage;
 }
 
-@property(readonly) NSURL * dataStorageURL;
-@property(readonly) NSURL * documentStorageURL;
-@property(readonly) BOOL usesUbiquitousStorage;
+@property (readonly) NSURL *dataStorageURL;
+@property (readonly) NSURL *documentStorageURL;
+@property (readonly) BOOL usesUbiquitousStorage;
 
-+ (void)requestSharedManager:(id)arg1;
++ (void)requestSharedManager:(id /* block */)arg1;
 
 - (void)_appActivated:(id)arg1;
-- (void)_finishSetupWithDecision:(BOOL)arg1 completionHandler:(id)arg2;
+- (void)_finishSetupWithDecision:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)_identifierToURLMap;
-- (id)_initWithCompletionHandler:(id)arg1;
+- (id)_initWithCompletionHandler:(id /* block */)arg1;
 - (void)_initialGatherFinished;
-- (void)_loadUserICloudChoiceWithCompletionHandler:(id)arg1;
-- (id)_observeContentsOfDirectories:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id)arg3;
+- (void)_loadUserICloudChoiceWithCompletionHandler:(id /* block */)arg1;
+- (id)_observeContentsOfDirectories:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id /* block */)arg3;
 - (id)_queryResults;
 - (void)_queryUpdated;
 - (void)_resetQuery;
@@ -38,10 +36,10 @@
 - (id)dataStorageURL;
 - (id)documentStorageURL;
 - (id)init;
-- (id)observeContentsOfDirectory:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id)arg3;
-- (id)observeContentsOfUbiquitousContainersWithIdentifiers:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id)arg3;
+- (id)observeContentsOfDirectory:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id /* block */)arg3;
+- (id)observeContentsOfUbiquitousContainersWithIdentifiers:(id)arg1 sortedWithDescriptors:(id)arg2 updateHandler:(id /* block */)arg3;
 - (void)removeObserver:(id)arg1;
-- (void)runSetupProcessWithCompletionHandler:(id)arg1;
+- (void)runSetupProcessWithCompletionHandler:(id /* block */)arg1;
 - (void)updateObserver:(id)arg1 withSortDescriptors:(id)arg2;
 - (BOOL)usesUbiquitousStorage;
 - (void)willAddURL:(id)arg1;

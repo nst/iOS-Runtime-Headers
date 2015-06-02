@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreTelephony.framework/CoreTelephony
  */
 
-@class NSData, NSMutableDictionary, NSString;
-
 @interface CTMessagePart : NSObject {
     NSString *_contentId;
     NSString *_contentLocation;
@@ -12,10 +10,10 @@
     NSData *_data;
 }
 
-@property(copy) NSString * contentId;
-@property(copy) NSString * contentLocation;
-@property(copy) NSString * contentType;
-@property(copy) NSData * data;
+@property (nonatomic, copy) NSString *contentId;
+@property (nonatomic, copy) NSString *contentLocation;
+@property (nonatomic, copy) NSString *contentType;
+@property (nonatomic, copy) NSData *data;
 
 - (void)addContentTypeParameterWithName:(id)arg1 value:(id)arg2;
 - (id)allContentTypeParameterNames;

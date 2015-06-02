@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptTextFieldNativeObjectUISearchBar : SUScriptTextFieldNativeObject {
-}
+@interface SUScriptTextFieldNativeObjectUISearchBar : SUScriptTextFieldNativeObject
 
 - (id)_nativeObjectDelegate;
 - (void)_setNativeObjectDelegate:(id)arg1;

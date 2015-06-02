@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class <MFComposeActivityContinuationOperationDelegate>, NSData, NSInputStream, NSObject<OS_dispatch_queue>, NSOutputStream, NSString;
-
 @interface MFComposeActivityContinuationOperation : NSOperation <NSStreamDelegate> {
     <MFComposeActivityContinuationOperationDelegate> *_delegate;
     BOOL _doneWithInputStream;
@@ -20,15 +18,15 @@
     unsigned int _transmissionType;
 }
 
-@property(readonly) unsigned int bytesExpected;
-@property(readonly) unsigned int bytesReceived;
-@property(copy,readonly) NSString * debugDescription;
-@property <MFComposeActivityContinuationOperationDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSData * draftData;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property unsigned int transmissionType;
+@property (nonatomic, readonly) unsigned int bytesExpected;
+@property (nonatomic, readonly) unsigned int bytesReceived;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MFComposeActivityContinuationOperationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSData *draftData;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) unsigned int transmissionType;
 
 + (id)receivingOperationWithInputStream:(id)arg1 outputStream:(id)arg2;
 + (id)sendingOperationWithDraftData:(id)arg1 inputStream:(id)arg2 outputStream:(id)arg3;

@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, NSURL, SAFmfGeoFence;
+@interface SAFmfGeoFenceSnippet : SAUISnippet
 
-@interface SAFmfGeoFenceSnippet : SAUISnippet {
-}
-
-@property(retain) SAFmfGeoFence * aceFmfGeoFence;
-@property(copy) NSNumber * enable;
-@property(copy) NSString * fenceType;
-@property(copy) NSNumber * oneTimeOnly;
-@property(copy) NSURL * searchContext;
+@property (nonatomic, retain) SAFmfGeoFence *aceFmfGeoFence;
+@property (nonatomic, copy) NSNumber *enable;
+@property (nonatomic, copy) NSString *fenceType;
+@property (nonatomic, copy) NSNumber *oneTimeOnly;
+@property (nonatomic, copy) NSURL *searchContext;
 
 + (id)geoFenceSnippet;
 + (id)geoFenceSnippetWithDictionary:(id)arg1 context:(id)arg2;

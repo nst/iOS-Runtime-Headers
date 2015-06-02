@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUILockupViewElement;
-
 @interface SKUIPreviewTemplateViewElement : SKUIViewElement {
     long long _itemIdentifier;
     NSString *_previewURLString;
 }
 
-@property(readonly) long long itemIdentifier;
-@property(readonly) SKUILockupViewElement * previewLockup;
-@property(readonly) NSString * previewURLString;
+@property (nonatomic, readonly) long long itemIdentifier;
+@property (nonatomic, readonly) SKUILockupViewElement *previewLockup;
+@property (nonatomic, readonly) NSString *previewURLString;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

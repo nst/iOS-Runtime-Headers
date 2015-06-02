@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBFPasscodeLockTrackerForPreventLockAssertions : SBFPasscodeLockAssertionTracker {
-}
+@interface SBFPasscodeLockTrackerForPreventLockAssertions : SBFPasscodeLockAssertionTracker
 
 @end

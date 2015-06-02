@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSData, PLManagedAsset;
+@interface PLSearchData : PLManagedObject
 
-@interface PLSearchData : PLManagedObject {
-}
-
-@property(retain) PLManagedAsset * asset;
-@property(retain) NSData * data;
-@property BOOL valid;
+@property (nonatomic, retain) PLManagedAsset *asset;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic) BOOL valid;
 
 @end

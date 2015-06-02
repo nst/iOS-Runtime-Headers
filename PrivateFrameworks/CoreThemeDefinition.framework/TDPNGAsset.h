@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSSet;
-
 @interface TDPNGAsset : TDAsset {
     int _exifOrientation;
     unsigned int _fileScaleFactor;
 }
 
-@property(retain) NSSet * renditions;
+@property (nonatomic, retain) NSSet *renditions;
 
 - (void)_logError:(id)arg1;
 - (int)exifOrientation;

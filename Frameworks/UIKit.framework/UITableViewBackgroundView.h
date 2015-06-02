@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UIView;
-
 @interface UITableViewBackgroundView : UIView {
     UIImageView *_gradientImageView;
     UIView *_textureImageView;

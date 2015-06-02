@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString, SKUIColorScheme, SKUISegmentedControl;
-
 @interface SKUIPillsControl : UIControl {
     SKUIColorScheme *_colorScheme;
     struct UIEdgeInsets { 
@@ -18,13 +16,13 @@
     NSArray *_titles;
 }
 
-@property(copy) SKUIColorScheme * colorScheme;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property int maximumNumberOfVisiblePills;
-@property(copy) NSString * moreListTitle;
-@property int selectedIndex;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectedPillFrame;
-@property(copy) NSArray * titles;
+@property (nonatomic, copy) SKUIColorScheme *colorScheme;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (nonatomic) int maximumNumberOfVisiblePills;
+@property (nonatomic, copy) NSString *moreListTitle;
+@property (nonatomic) int selectedIndex;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } selectedPillFrame;
+@property (nonatomic, copy) NSArray *titles;
 
 - (void).cxx_destruct;
 - (void)_segmentedControlAction:(id)arg1;

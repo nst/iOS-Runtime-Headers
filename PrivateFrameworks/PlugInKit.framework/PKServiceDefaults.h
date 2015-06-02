@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PlugInKit.framework/PlugInKit
  */
 
-@class PKServicePersonality;
-
 @interface PKServiceDefaults : NSUserDefaults {
     PKServicePersonality *_personality;
 }
 
-@property PKServicePersonality * personality;
+@property PKServicePersonality *personality;
 
 - (void).cxx_destruct;
 - (id)initWithPersonality:(id)arg1;

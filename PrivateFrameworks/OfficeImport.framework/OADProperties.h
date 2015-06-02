@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADProperties;
-
 @interface OADProperties : NSObject {
-    unsigned int mIsMerged : 1;
-    unsigned int mIsMergedWithParent : 1;
+    unsigned int mIsMerged;
+    unsigned int mIsMergedWithParent;
     OADProperties *mParent;
 }
 

@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKShareePickerViewControllerDelegate>, EKCalendarShareePicker, NSArray, NSString;
-
 @interface EKShareePickerViewController : UIViewController <EKEventAttendeePickerDelegate> {
     <EKShareePickerViewControllerDelegate> *_delegate;
     EKCalendarShareePicker *_picker;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <EKShareePickerViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * sharees;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKShareePickerViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *sharees;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 

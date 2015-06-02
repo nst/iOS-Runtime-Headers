@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RUNetworkObserver : NSObject {
-}
+@interface RUNetworkObserver : NSObject
 
 + (id)sharedNetworkObserver;
 

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSArray;
-
 @interface MPUExtrasVideoTimeline : NSObject {
     NSArray *_events;
     NSArray *_timelineElements;
 }
 
-@property(readonly) NSArray * events;
+@property (nonatomic, readonly) NSArray *events;
 
 - (void).cxx_destruct;
 - (id)description;

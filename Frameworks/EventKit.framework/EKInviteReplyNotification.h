@@ -2,20 +2,17 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendar, NSDate, NSString;
+@interface EKInviteReplyNotification : EKObject
 
-@interface EKInviteReplyNotification : EKObject {
-}
-
-@property(readonly) BOOL alerted;
-@property(readonly) EKCalendar * calendar;
-@property(readonly) NSString * calendarName;
-@property(readonly) NSDate * creationDate;
-@property(readonly) NSString * shareeAddress;
-@property(readonly) NSString * shareeDisplayName;
-@property(readonly) NSString * shareeFirstName;
-@property(readonly) NSString * shareeLastName;
-@property(readonly) int status;
+@property (nonatomic, readonly) BOOL alerted;
+@property (nonatomic, readonly) EKCalendar *calendar;
+@property (nonatomic, readonly) NSString *calendarName;
+@property (nonatomic, readonly) NSDate *creationDate;
+@property (nonatomic, readonly) NSString *shareeAddress;
+@property (nonatomic, readonly) NSString *shareeDisplayName;
+@property (nonatomic, readonly) NSString *shareeFirstName;
+@property (nonatomic, readonly) NSString *shareeLastName;
+@property (nonatomic, readonly) int status;
 
 - (id)_persistentInviteReplyNotification;
 - (BOOL)alerted;

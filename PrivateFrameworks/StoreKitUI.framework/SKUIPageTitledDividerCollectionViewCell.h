@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UILabel, UIView;
-
 @interface SKUIPageTitledDividerCollectionViewCell : UICollectionViewCell {
     UILabel *_dividerLabel;
     UIView *_leftLine;
@@ -11,8 +9,8 @@
     float _topEdgeInset;
 }
 
-@property(copy) NSString * dividerTitle;
-@property float topEdgeInset;
+@property (nonatomic, copy) NSString *dividerTitle;
+@property (nonatomic) float topEdgeInset;
 
 - (void).cxx_destruct;
 - (void)applyLayoutAttributes:(id)arg1;

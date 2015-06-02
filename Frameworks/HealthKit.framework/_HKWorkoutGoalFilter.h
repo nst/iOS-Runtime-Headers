@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class HKQuantity;
-
 @interface _HKWorkoutGoalFilter : _HKFilter {
     HKQuantity *_comparisonQuantity;
     unsigned int _goalType;
     unsigned int _operatorType;
 }
 
-@property(readonly) HKQuantity * comparisonQuantity;
-@property(readonly) unsigned int goalType;
-@property(readonly) unsigned int operatorType;
+@property (nonatomic, readonly) HKQuantity *comparisonQuantity;
+@property (nonatomic, readonly) unsigned int goalType;
+@property (nonatomic, readonly) unsigned int operatorType;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterWithComparisonQuantity:(id)arg1 goalType:(unsigned int)arg2 operatorType:(unsigned int)arg3;
@@ -27,6 +27,9 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)operatorType;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
 - (id)predicateWithHealthDaemon:(id)arg1;
 
 @end

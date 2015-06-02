@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSNumber;
-
 @interface MCPasswordPolicyPayload : MCPayload {
     NSNumber *_isAlphanumericPasscodeRequired;
     NSNumber *_isManualFetchingWhenRoaming;
@@ -18,17 +16,17 @@
     NSNumber *_passcodeHistoryCount;
 }
 
-@property(retain,readonly) NSNumber * isAlphanumericPasscodeRequired;
-@property(retain,readonly) NSNumber * isManualFetchingWhenRoaming;
-@property(retain,readonly) NSNumber * isPasscodeRequired;
-@property(retain,readonly) NSNumber * isSimplePasscodeAllowed;
-@property(retain,readonly) NSNumber * maxFailedAttempts;
-@property(retain,readonly) NSNumber * maxGracePeriodMinutes;
-@property(retain,readonly) NSNumber * maxInactivityMinutes;
-@property(retain,readonly) NSNumber * maxPasscodeAgeDays;
-@property(retain,readonly) NSNumber * minComplexCharacters;
-@property(retain,readonly) NSNumber * minLength;
-@property(retain,readonly) NSNumber * passcodeHistoryCount;
+@property (nonatomic, readonly, retain) NSNumber *isAlphanumericPasscodeRequired;
+@property (nonatomic, readonly, retain) NSNumber *isManualFetchingWhenRoaming;
+@property (nonatomic, readonly, retain) NSNumber *isPasscodeRequired;
+@property (nonatomic, readonly, retain) NSNumber *isSimplePasscodeAllowed;
+@property (nonatomic, readonly, retain) NSNumber *maxFailedAttempts;
+@property (nonatomic, readonly, retain) NSNumber *maxGracePeriodMinutes;
+@property (nonatomic, readonly, retain) NSNumber *maxInactivityMinutes;
+@property (nonatomic, readonly, retain) NSNumber *maxPasscodeAgeDays;
+@property (nonatomic, readonly, retain) NSNumber *minComplexCharacters;
+@property (nonatomic, readonly, retain) NSNumber *minLength;
+@property (nonatomic, readonly, retain) NSNumber *passcodeHistoryCount;
 
 + (id)localizedPluralForm;
 + (id)localizedSingularForm;

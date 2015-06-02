@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
-
 @interface UIOldSliderFillView : UIView {
     UIImage *_sliderImage;
 }

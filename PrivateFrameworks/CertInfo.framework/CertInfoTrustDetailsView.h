@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class CertInfoCertificateDetailsView, NSArray;
-
 @interface CertInfoTrustDetailsView : UIView {
     NSArray *_certificateViews;
     CertInfoCertificateDetailsView *_currentCertView;

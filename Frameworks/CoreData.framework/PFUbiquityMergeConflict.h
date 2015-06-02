@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary;
-
 @interface PFUbiquityMergeConflict : NSMergeConflict {
     NSDictionary *_ancestorSnapshot;
 }
 
-@property(retain) NSDictionary * ancestorSnapshot;
+@property (retain) NSDictionary *ancestorSnapshot;
 
 - (id)ancestorSnapshot;
 - (void)dealloc;

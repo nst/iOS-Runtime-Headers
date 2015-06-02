@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSArray, NSManagedObjectContext, NSSet, NSString, PLPhotoLibrary;
-
 @interface PHChangeValidationController : NSObject {
     NSArray *_albumsToDelete;
     NSArray *_assetsToChangeContent;
@@ -22,20 +20,20 @@
     NSSet *_updateRequests;
 }
 
-@property(readonly) NSArray * albumsToDelete;
-@property(readonly) NSArray * assetsToChangeContent;
-@property(readonly) NSArray * assetsToDelete;
-@property(readonly) NSArray * assetsToHide;
-@property(readonly) NSArray * assetsToRevert;
-@property(copy,readonly) NSString * clientName;
-@property(readonly) BOOL confirmationRequired;
-@property(readonly) NSSet * deleteRequests;
-@property(readonly) NSArray * foldersToDelete;
-@property(readonly) NSSet * insertRequests;
-@property(readonly) NSManagedObjectContext * managedObjectContext;
-@property(readonly) PLPhotoLibrary * photoLibrary;
-@property(readonly) NSArray * renderedContentURLs;
-@property(readonly) NSSet * updateRequests;
+@property (nonatomic, readonly) NSArray *albumsToDelete;
+@property (nonatomic, readonly) NSArray *assetsToChangeContent;
+@property (nonatomic, readonly) NSArray *assetsToDelete;
+@property (nonatomic, readonly) NSArray *assetsToHide;
+@property (nonatomic, readonly) NSArray *assetsToRevert;
+@property (nonatomic, readonly, copy) NSString *clientName;
+@property (nonatomic, readonly) BOOL confirmationRequired;
+@property (nonatomic, readonly) NSSet *deleteRequests;
+@property (nonatomic, readonly) NSArray *foldersToDelete;
+@property (nonatomic, readonly) NSSet *insertRequests;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) PLPhotoLibrary *photoLibrary;
+@property (nonatomic, readonly) NSArray *renderedContentURLs;
+@property (nonatomic, readonly) NSSet *updateRequests;
 
 - (void).cxx_destruct;
 - (BOOL)_prepareWithError:(id*)arg1;

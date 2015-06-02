@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, NSURL, SKUIPassbookLoader, SKUIRedeemITunesPassLearnMoreView;
-
 @interface SKUIRedeemITunesPassLearnMoreViewController : SKUIRedeemStepViewController <SKUIPassbookLoaderDelegate> {
     BOOL _didTapAddPassbookButton;
     SKUIRedeemITunesPassLearnMoreView *_learnMoreView;
@@ -11,10 +9,10 @@
     NSURL *_passbookURL;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_didLoadPassbookURLString:(id)arg1;

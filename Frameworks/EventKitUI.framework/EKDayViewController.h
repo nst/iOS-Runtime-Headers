@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKDayViewControllerDataSource>, <EKDayViewControllerDelegate>, CalendarOccurrencesCollection, EKDayView, EKDayViewWithGutters, EKEventEditViewController, EKEventGestureController, NSCalendar, NSDateComponents, NSString, NSTimer, ScrollSpringFactory, UIScrollView, UIView;
-
 @interface EKDayViewController : UIViewController <BlockableScrollViewDelegate, EKDayViewDataSource, EKDayViewDelegate, EKEventGestureControllerDelegate, UIScrollViewDelegate> {
     BOOL _adjustingForDeceleration;
     BOOL _allowsDaySwitching;
@@ -19,7 +17,7 @@
     <EKDayViewControllerDataSource> *_dataSource;
     double _dayEnd;
     double _dayStart;
-    unsigned int _decelerating : 1;
+    unsigned int _decelerating;
     ScrollSpringFactory *_decelerationSpringFactory;
     <EKDayViewControllerDelegate> *_delegate;
     BOOL _disableGestureDayChange;
@@ -29,8 +27,8 @@
     BOOL _fingerDown;
     UIView *_gestureOccurrenceSuperview;
     float _gutterWidth;
-    unsigned int _hasPendingNextDate : 1;
-    unsigned int _hasPendingPreviousDate : 1;
+    unsigned int _hasPendingNextDate;
+    unsigned int _hasPendingPreviousDate;
     UIScrollView *_horizontalScrollingView;
     BOOL _initialLoad;
     BOOL _instigatedDateChange;
@@ -53,8 +51,8 @@
     CalendarOccurrencesCollection *_previousDayOccurrences;
     EKDayViewWithGutters *_previousDayWithGutter;
     BOOL _resizing;
-    unsigned int _scrollViewAnimating : 1;
-    unsigned int _settingDateFromScrolling : 1;
+    unsigned int _scrollViewAnimating;
+    unsigned int _settingDateFromScrolling;
     BOOL _shouldAutoscrollAfterAppearance;
     BOOL _shouldAutoscrollOnNextActivation;
     NSTimer *_showNowTimer;
@@ -64,34 +62,34 @@
     BOOL _viewAppeared;
 }
 
-@property BOOL allowsDaySwitching;
-@property BOOL allowsSelection;
-@property BOOL alwaysAnimate;
-@property BOOL animateAllDayAreaHeight;
-@property(copy) NSCalendar * calendar;
-@property(readonly) UIView * currentAllDayView;
-@property(readonly) BOOL currentDayContainsOccurrences;
-@property(retain) EKEventEditViewController * currentEditor;
-@property <EKDayViewControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <EKDayViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL disableGestureDayChange;
-@property BOOL disableNotifyDateChangeDuringTracking;
-@property(copy) NSDateComponents * displayDate;
-@property(retain) UIView * gestureOccurrenceSuperview;
-@property float gutterWidth;
-@property(readonly) unsigned int hash;
-@property struct CGPoint { float x1; float x2; } normalizedContentOffset;
-@property BOOL notifyWhenTapOtherEventDuringDragging;
-@property(copy) NSDateComponents * pendingNextDate;
-@property(copy) NSDateComponents * pendingPreviousDate;
-@property BOOL shouldAutoscrollAfterAppearance;
-@property BOOL shouldAutoscrollOnNextActivation;
-@property(retain) NSTimer * showNowTimer;
-@property BOOL showsBanner;
-@property(readonly) Class superclass;
-@property BOOL transitionedToSameDay;
+@property (nonatomic) BOOL allowsDaySwitching;
+@property (nonatomic) BOOL allowsSelection;
+@property (nonatomic) BOOL alwaysAnimate;
+@property (nonatomic) BOOL animateAllDayAreaHeight;
+@property (nonatomic, copy) NSCalendar *calendar;
+@property (nonatomic, readonly) UIView *currentAllDayView;
+@property (nonatomic, readonly) BOOL currentDayContainsOccurrences;
+@property (nonatomic, retain) EKEventEditViewController *currentEditor;
+@property (nonatomic) <EKDayViewControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKDayViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableGestureDayChange;
+@property (nonatomic) BOOL disableNotifyDateChangeDuringTracking;
+@property (nonatomic, copy) NSDateComponents *displayDate;
+@property (nonatomic, retain) UIView *gestureOccurrenceSuperview;
+@property (nonatomic) float gutterWidth;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGPoint { float x1; float x2; } normalizedContentOffset;
+@property (nonatomic) BOOL notifyWhenTapOtherEventDuringDragging;
+@property (nonatomic, copy) NSDateComponents *pendingNextDate;
+@property (nonatomic, copy) NSDateComponents *pendingPreviousDate;
+@property (nonatomic) BOOL shouldAutoscrollAfterAppearance;
+@property (nonatomic) BOOL shouldAutoscrollOnNextActivation;
+@property (nonatomic, retain) NSTimer *showNowTimer;
+@property (nonatomic) BOOL showsBanner;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL transitionedToSameDay;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 

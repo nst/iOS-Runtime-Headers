@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKStaticRenderContentView;
-
 @interface GKDetachedContentView : UIView {
     GKStaticRenderContentView *_renderView;
 }
 
-@property GKStaticRenderContentView * renderView;
+@property (nonatomic) GKStaticRenderContentView *renderView;
 
 - (id)renderView;
 - (void)setRenderView:(id)arg1;

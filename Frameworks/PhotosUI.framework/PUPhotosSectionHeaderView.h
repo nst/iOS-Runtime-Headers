@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUPhotosSectionHeaderViewDelegate>, NSArray, NSDate, NSString, PUPhotosSectionHeaderContentView, UIButton, UIImageView, UILabel, UIView, _UIBackdropView;
-
 @interface PUPhotosSectionHeaderView : UICollectionReusableView {
     UIButton *_actionButton;
     struct UIEdgeInsets { 
@@ -56,23 +54,23 @@
     BOOL _usingBackgroundBlur;
 }
 
-@property(copy) NSString * actionButtonTitle;
-@property BOOL allowsLocationInteraction;
-@property(copy) NSString * backdropViewGroupName;
-@property unsigned int backgroundStyle;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property <PUPhotosSectionHeaderViewDelegate> * delegate;
-@property(readonly) BOOL generateDefaultTitleFromDates;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } highlightInsets;
-@property(readonly) NSDate * sectionEndDate;
-@property int sectionIndex;
-@property(retain) NSArray * sectionLocations;
-@property(readonly) NSDate * sectionStartDate;
-@property(retain) NSString * sectionTitle;
-@property BOOL showsActionButton;
-@property int style;
-@property(readonly) NSString * synthesizedSectionTitle;
-@property(readonly) BOOL useYearOnlyForDefaultTitle;
+@property (nonatomic, copy) NSString *actionButtonTitle;
+@property (nonatomic) BOOL allowsLocationInteraction;
+@property (nonatomic, copy) NSString *backdropViewGroupName;
+@property (nonatomic) unsigned int backgroundStyle;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic) <PUPhotosSectionHeaderViewDelegate> *delegate;
+@property (nonatomic, readonly) BOOL generateDefaultTitleFromDates;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } highlightInsets;
+@property (nonatomic, readonly) NSDate *sectionEndDate;
+@property (nonatomic) int sectionIndex;
+@property (nonatomic, retain) NSArray *sectionLocations;
+@property (nonatomic, readonly) NSDate *sectionStartDate;
+@property (nonatomic, retain) NSString *sectionTitle;
+@property (nonatomic) BOOL showsActionButton;
+@property (nonatomic) int style;
+@property (nonatomic, readonly) NSString *synthesizedSectionTitle;
+@property (nonatomic, readonly) BOOL useYearOnlyForDefaultTitle;
 
 + (void)_updateLabelGlobalCachedSizes;
 + (void)initialize;
@@ -118,7 +116,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })highlightInsets;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (void)performBatchUpdateOfDateDependentPropertiesWithBlock:(id)arg1;
+- (void)performBatchUpdateOfDateDependentPropertiesWithBlock:(id /* block */)arg1;
 - (void)prepareForReuse;
 - (id)sectionEndDate;
 - (int)sectionIndex;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSPointerArray;
-
 @interface PUCollageView : UIView {
     NSPointerArray *__imageSizes;
     NSArray *__imageViews;
@@ -16,12 +14,12 @@
     float _spacing;
 }
 
-@property(readonly) NSPointerArray * _imageSizes;
-@property(readonly) NSArray * _imageViews;
-@property(readonly) int _numberOfImageViews;
-@property struct CGSize { float x1; float x2; } collageSize;
-@property int numberOfItems;
-@property float spacing;
+@property (nonatomic, readonly) NSPointerArray *_imageSizes;
+@property (nonatomic, readonly) NSArray *_imageViews;
+@property (nonatomic, readonly) int _numberOfImageViews;
+@property (nonatomic) struct CGSize { float x1; float x2; } collageSize;
+@property (nonatomic) int numberOfItems;
+@property (nonatomic) float spacing;
 
 + (int)maximumNumberOfItems;
 

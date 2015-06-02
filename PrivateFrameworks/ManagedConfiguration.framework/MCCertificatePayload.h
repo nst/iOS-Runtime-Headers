@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSDate, NSString;
-
 @interface MCCertificatePayload : MCPayload {
     NSData *_certificatePersistentID;
     NSString *_installedOnDeviceID;
 }
 
-@property(retain) NSData * certificatePersistentID;
-@property(retain,readonly) NSDate * expiry;
-@property(copy) NSString * installedOnDeviceID;
-@property(readonly) BOOL isIdentity;
-@property(readonly) BOOL isRoot;
-@property(readonly) BOOL isSigned;
+@property (nonatomic, retain) NSData *certificatePersistentID;
+@property (nonatomic, readonly, retain) NSDate *expiry;
+@property (nonatomic, copy) NSString *installedOnDeviceID;
+@property (nonatomic, readonly) BOOL isIdentity;
+@property (nonatomic, readonly) BOOL isRoot;
+@property (nonatomic, readonly) BOOL isSigned;
 
 - (void).cxx_destruct;
 - (id)certificatePersistentID;

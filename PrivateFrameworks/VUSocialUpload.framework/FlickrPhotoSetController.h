@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class <FlickrComposeOptionViewDelegate>, FlickrPhotoSetManager, NSString;
-
 @interface FlickrPhotoSetController : UITableViewController <FlickrPhotoSetTableDelegate> {
     <FlickrComposeOptionViewDelegate> *_delegate;
     FlickrPhotoSetManager *_manager;
@@ -12,15 +10,15 @@
     int _selectedIndexRow;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <FlickrComposeOptionViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) FlickrPhotoSetManager * manager;
-@property(readonly) long long photoSetID;
-@property(readonly) NSString * photoSetTitle;
-@property int selectedIndexRow;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FlickrComposeOptionViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) FlickrPhotoSetManager *manager;
+@property (nonatomic, readonly) long long photoSetID;
+@property (nonatomic, readonly) NSString *photoSetTitle;
+@property (nonatomic) int selectedIndexRow;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)delegate;

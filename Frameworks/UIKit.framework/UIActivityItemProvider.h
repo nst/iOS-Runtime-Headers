@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIActivityItemProvider : NSOperation <UIActivityItemSource> {
     NSString *_activityType;
     id _placeholderItem;
@@ -12,15 +10,15 @@
     NSString *_status;
 }
 
-@property(readonly) NSString * activityType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) id placeholderItem;
-@property float progress;
-@property(retain) id providedItem;
-@property(copy) NSString * status;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSString *activityType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) id placeholderItem;
+@property (nonatomic) float progress;
+@property (nonatomic, retain) id providedItem;
+@property (nonatomic, copy) NSString *status;
+@property (readonly) Class superclass;
 
 - (void)_setActivityType:(id)arg1;
 - (id)activityType;

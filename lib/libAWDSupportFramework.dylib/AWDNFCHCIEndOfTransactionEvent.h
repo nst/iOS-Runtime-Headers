@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDNFCHCIEndOfTransactionEvent : PBCodable <NSCopying> {
     NSData *_aid;
     NSData *_cdi;
@@ -40,44 +38,44 @@
     unsigned int _version;
 }
 
-@property(retain) NSData * aid;
-@property(retain) NSData * cdi;
-@property unsigned int command;
-@property unsigned int commandStatus;
-@property unsigned int currencyCode;
-@property unsigned int cvm;
-@property(readonly) BOOL hasAid;
-@property(readonly) BOOL hasCdi;
-@property BOOL hasCommand;
-@property BOOL hasCommandStatus;
-@property BOOL hasCurrencyCode;
-@property BOOL hasCvm;
-@property BOOL hasIad;
-@property BOOL hasInformative;
-@property(readonly) BOOL hasMaid;
-@property(readonly) BOOL hasMaidDeprecated;
-@property(readonly) BOOL hasMcii;
-@property BOOL hasMsc;
-@property BOOL hasTimeDeltaFromReference;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasTransactionId;
-@property BOOL hasTransactionStatus;
-@property BOOL hasTransactionTotal;
-@property(readonly) BOOL hasUuidReference;
-@property BOOL hasVersion;
-@property unsigned long long iad;
-@property unsigned int informative;
-@property(retain) NSData * maid;
-@property(retain) NSData * maidDeprecated;
-@property(retain) NSData * mcii;
-@property unsigned int msc;
-@property unsigned long long timeDeltaFromReference;
-@property unsigned long long timestamp;
-@property(retain) NSData * transactionId;
-@property unsigned int transactionStatus;
-@property unsigned long long transactionTotal;
-@property(retain) NSData * uuidReference;
-@property unsigned int version;
+@property (nonatomic, retain) NSData *aid;
+@property (nonatomic, retain) NSData *cdi;
+@property (nonatomic) unsigned int command;
+@property (nonatomic) unsigned int commandStatus;
+@property (nonatomic) unsigned int currencyCode;
+@property (nonatomic) unsigned int cvm;
+@property (nonatomic, readonly) BOOL hasAid;
+@property (nonatomic, readonly) BOOL hasCdi;
+@property (nonatomic) BOOL hasCommand;
+@property (nonatomic) BOOL hasCommandStatus;
+@property (nonatomic) BOOL hasCurrencyCode;
+@property (nonatomic) BOOL hasCvm;
+@property (nonatomic) BOOL hasIad;
+@property (nonatomic) BOOL hasInformative;
+@property (nonatomic, readonly) BOOL hasMaid;
+@property (nonatomic, readonly) BOOL hasMaidDeprecated;
+@property (nonatomic, readonly) BOOL hasMcii;
+@property (nonatomic) BOOL hasMsc;
+@property (nonatomic) BOOL hasTimeDeltaFromReference;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasTransactionId;
+@property (nonatomic) BOOL hasTransactionStatus;
+@property (nonatomic) BOOL hasTransactionTotal;
+@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) unsigned long long iad;
+@property (nonatomic) unsigned int informative;
+@property (nonatomic, retain) NSData *maid;
+@property (nonatomic, retain) NSData *maidDeprecated;
+@property (nonatomic, retain) NSData *mcii;
+@property (nonatomic) unsigned int msc;
+@property (nonatomic) unsigned long long timeDeltaFromReference;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSData *transactionId;
+@property (nonatomic) unsigned int transactionStatus;
+@property (nonatomic) unsigned long long transactionTotal;
+@property (nonatomic, retain) NSData *uuidReference;
+@property (nonatomic) unsigned int version;
 
 - (id)aid;
 - (id)cdi;

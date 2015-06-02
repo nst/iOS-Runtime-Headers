@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUPhotosGridDownloadHelper, PUPhotosGridViewController;
-
 @interface PUUIImagePickerControllerHelper : NSObject {
     PUPhotosGridDownloadHelper *_downloadHelper;
     PUPhotosGridViewController *_gridViewController;
 }
 
-@property(readonly) PUPhotosGridViewController * gridViewController;
+@property (nonatomic, readonly) PUPhotosGridViewController *gridViewController;
 
 + (int)albumFilterForMediaTypes:(id)arg1;
 + (id)albumListViewControllerSpec;

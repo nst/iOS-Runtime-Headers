@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableString;
-
 @interface OAVStyle : NSObject {
     NSMutableString *_string;
 }

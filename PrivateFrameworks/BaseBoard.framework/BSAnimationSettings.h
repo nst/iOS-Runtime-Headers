@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class CAMediaTimingFunction, NSString;
-
 @interface BSAnimationSettings : NSObject <BSXPCCoding, NSCopying, NSMutableCopying, NSSecureCoding> {
     double _delay;
     double _duration;
@@ -11,14 +9,14 @@
     CAMediaTimingFunction *_timingFunction;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) double delay;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property(readonly) double frameInterval;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain,readonly) CAMediaTimingFunction * timingFunction;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) double delay;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) double frameInterval;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) CAMediaTimingFunction *timingFunction;
 
 + (id)settingsWithDuration:(double)arg1;
 + (id)settingsWithDuration:(double)arg1 delay:(double)arg2;

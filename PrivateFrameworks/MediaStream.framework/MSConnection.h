@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaStream.framework/MediaStream
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSXPCConnection;
-
 @interface MSConnection : NSObject {
     NSXPCConnection *_center;
     NSXPCConnection *_noWakeCenter;
@@ -27,7 +25,7 @@
 - (void)handleSubscriptionPushForPersonID:(id)arg1;
 - (id)init;
 - (BOOL)isBusy;
-- (void)isBusyCompletionBlock:(id)arg1;
+- (void)isBusyCompletionBlock:(id /* block */)arg1;
 - (id)pause;
 - (void)pollForSubscriptionUpdatesForPersonID:(id)arg1;
 - (void)refreshServerSideConfigurationForPersonID:(id)arg1;

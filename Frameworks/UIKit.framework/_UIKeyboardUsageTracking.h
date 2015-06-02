@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIKeyboardUsageTracking : NSObject {
-}
+@interface _UIKeyboardUsageTracking : NSObject
 
 + (void)inputSwitcherSetPredictionPreference:(BOOL)arg1;
 + (void)keyboardExtensionCrashed;

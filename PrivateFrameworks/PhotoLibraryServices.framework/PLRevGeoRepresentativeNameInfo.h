@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableOrderedSet, NSString;
-
 @interface PLRevGeoRepresentativeNameInfo : NSObject {
     BOOL _addCountyIfNeeded;
     BOOL _allEntriesAtHome;
@@ -15,15 +13,15 @@
     unsigned int _type;
 }
 
-@property BOOL addCountyIfNeeded;
-@property BOOL allEntriesAtHome;
-@property BOOL allEntriesMatchHomeForOrderType;
-@property(readonly) NSMutableOrderedSet * geoPlaces;
-@property(copy,readonly) NSString * localizedName;
-@property unsigned int matchingCount;
-@property(copy) NSString * name;
-@property(readonly) NSMutableOrderedSet * remainingGeoPlaces;
-@property unsigned int type;
+@property (nonatomic) BOOL addCountyIfNeeded;
+@property (nonatomic) BOOL allEntriesAtHome;
+@property (nonatomic) BOOL allEntriesMatchHomeForOrderType;
+@property (nonatomic, readonly) NSMutableOrderedSet *geoPlaces;
+@property (nonatomic, readonly, copy) NSString *localizedName;
+@property (nonatomic) unsigned int matchingCount;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) NSMutableOrderedSet *remainingGeoPlaces;
+@property (nonatomic) unsigned int type;
 
 - (void)_addResourceKeys:(id)arg1 toTypeMap:(id)arg2 forOrderType:(unsigned int)arg3 countryCode:(id)arg4;
 - (BOOL)_administrativeAreaCode:(id)arg1 supportedForOrderType:(unsigned int)arg2;

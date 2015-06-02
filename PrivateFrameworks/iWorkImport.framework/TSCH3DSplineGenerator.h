@@ -22,9 +22,9 @@
     float mTension;
 }
 
-@property float adaptiveThreshold;
-@property float detail;
-@property float tension;
+@property (nonatomic) float adaptiveThreshold;
+@property (nonatomic) float detail;
+@property (nonatomic) float tension;
 
 + (id)generator;
 

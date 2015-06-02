@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class <GEOMapItemPrivate>, <PLMomentGenerationDataManagement>, CLLocation, NSDate, NSDateFormatter, NSDictionary, NSMutableArray, NSMutableOrderedSet, NSMutableSet, NSObject<OS_dispatch_queue>, NSOrderedSet, NSString, PLMomentAnalyzerQueue, PLMomentAnalyzerWorkThread;
-
 @interface PLMomentAnalyzer : NSObject {
     NSMutableArray *_activeGEORequests;
     BOOL _addCountyIfNeeded;
@@ -58,9 +56,9 @@
     PLMomentAnalyzerQueue *_yearMomentProcessingQueue;
 }
 
-@property(retain,readonly) CLLocation * _homeLocation;
-@property(retain,readonly) <PLMomentGenerationDataManagement> * _momentDataManager;
-@property <PLMomentGenerationDataManagement> * momentGenerationDataManager;
+@property (nonatomic, readonly, retain) CLLocation *_homeLocation;
+@property (nonatomic, readonly, retain) <PLMomentGenerationDataManagement> *_momentDataManager;
+@property (nonatomic) <PLMomentGenerationDataManagement> *momentGenerationDataManager;
 @property BOOL throttlesCollectionListAnalysis;
 
 - (void)_addOrUpdateNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2;
@@ -81,8 +79,8 @@
 - (void)_finalizeInitOnWorkQueue;
 - (void)_finishedGEORequestInfo:(id)arg1 withSuccess:(BOOL)arg2 errorType:(unsigned int)arg3;
 - (void)_finishedProcessingMomentWithUuid:(id)arg1 withSuccess:(BOOL)arg2;
-- (void)_forwardGeocodeAddressDictionary:(id)arg1 withCompletionBlock:(id)arg2;
-- (void)_forwardGeocodeAddressDictionaryOnGeoThread:(id)arg1 withCompletionBlock:(id)arg2;
+- (void)_forwardGeocodeAddressDictionary:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (void)_forwardGeocodeAddressDictionaryOnGeoThread:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (id)_geoLocationForCoordinate:(struct { double x1; double x2; })arg1 date:(id)arg2;
 - (unsigned int)_geoOrderInPrioritySet:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)_homeLocation;
@@ -108,8 +106,8 @@
 - (id)_resetAndSortedNameInfoArray:(id)arg1 homeAtEnd:(BOOL)arg2;
 - (void)_resetErrorState;
 - (void)_reverseGeocodeMoment:(id)arg1 shouldFilterIfInProgress:(BOOL)arg2 invalidOnly:(BOOL)arg3;
-- (void)_runBlockOnWorkQueue:(id)arg1;
-- (void)_runOnWorkQueueAferSeconds:(double)arg1 block:(id)arg2;
+- (void)_runBlockOnWorkQueue:(id /* block */)arg1;
+- (void)_runOnWorkQueueAferSeconds:(double)arg1 block:(id /* block */)arg2;
 - (void)_saveDataIfNeededAfterTimeDiff:(double)arg1;
 - (void)_saveDataIfReachedObjectChangeThreshold;
 - (void)_saveGlobalMetadata;

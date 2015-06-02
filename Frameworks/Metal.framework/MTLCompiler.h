@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface MTLCompiler : NSObject {
     struct { 
         unsigned char key[32]; 
@@ -18,29 +11,29 @@
     NSString *_pluginPath;
 }
 
-@property(readonly) struct { unsigned char x1[32]; } cacheUUID;
-@property struct MTLCompilerConnectionManager { int (**x1)(); }* compilerConnectionManager;
-@property NSObject<OS_dispatch_queue> * compilerQueue;
-@property(copy,readonly) NSString * pluginPath;
+@property (readonly) struct { unsigned char x1[32]; } cacheUUID;
+@property struct MTLCompilerConnectionManager { int (**x1)(); }*compilerConnectionManager;
+@property NSObject<OS_dispatch_queue> *compilerQueue;
+@property (readonly, copy) NSString *pluginPath;
 
 - (id).cxx_construct;
 - (struct { unsigned char x1[32]; })cacheUUID;
-- (void)compileFragmentFunction:(id)arg1 serializedPixelFormat:(id)arg2 stateData:(id)arg3 completionHandler:(id)arg4;
-- (void)compileFragmentFunction:(id)arg1 serializedPixelFormat:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id)arg5;
-- (void)compileFunction:(id)arg1 serializedPipelineData:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id)arg5;
-- (void)compileFunction:(id)arg1 stateData:(id)arg2 completionHandler:(id)arg3;
-- (void)compileFunction:(id)arg1 stateData:(id)arg2 options:(unsigned int)arg3 completionHandler:(id)arg4;
-- (void)compileRequest:(id)arg1 completionHandler:(id)arg2;
-- (void)compileVertexFunction:(id)arg1 serializedPipelineDescriptorData:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id)arg5;
-- (void)compileVertexFunction:(id)arg1 serializedVertexDescriptor:(id)arg2 stateData:(id)arg3 completionHandler:(id)arg4;
-- (void)compileVertexFunction:(id)arg1 serializedVertexDescriptor:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id)arg5;
+- (void)compileFragmentFunction:(id)arg1 serializedPixelFormat:(id)arg2 stateData:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)compileFragmentFunction:(id)arg1 serializedPixelFormat:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
+- (void)compileFunction:(id)arg1 serializedPipelineData:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
+- (void)compileFunction:(id)arg1 stateData:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)compileFunction:(id)arg1 stateData:(id)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
+- (void)compileRequest:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)compileVertexFunction:(id)arg1 serializedPipelineDescriptorData:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
+- (void)compileVertexFunction:(id)arg1 serializedVertexDescriptor:(id)arg2 stateData:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)compileVertexFunction:(id)arg1 serializedVertexDescriptor:(id)arg2 stateData:(id)arg3 options:(unsigned int)arg4 completionHandler:(id /* block */)arg5;
 - (struct MTLCompilerConnectionManager { int (**x1)(); }*)compilerConnectionManager;
 - (id)compilerQueue;
 - (void)dealloc;
 - (id)initWithArch:(unsigned int)arg1 cacheUUID:(struct { unsigned char x1[32]; }*)arg2 pluginPath:(id)arg3;
 - (id)initWithTargetData:(id)arg1 cacheUUID:(struct { unsigned char x1[32]; }*)arg2 pluginPath:(id)arg3;
 - (id)pluginPath;
-- (void)reflectionWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id)arg3;
+- (void)reflectionWithFunction:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (void)setCompilerConnectionManager:(struct MTLCompilerConnectionManager { int (**x1)(); }*)arg1;
 - (void)setCompilerQueue:(id)arg1;
 

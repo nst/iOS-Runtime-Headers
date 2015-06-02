@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class ICSDateValue, NSMutableSet;
-
 @interface CalDAVCalendarServerResourceChangedItem : CoreDAVItem {
     NSMutableSet *_collectionChanges;
     NSMutableSet *_collectionUpdates;
@@ -13,12 +11,12 @@
     NSMutableSet *_updated;
 }
 
-@property(retain) NSMutableSet * collectionChanges;
-@property(retain) NSMutableSet * collectionUpdates;
-@property(retain) NSMutableSet * created;
-@property(retain) NSMutableSet * deleted;
-@property(retain) ICSDateValue * dtstamp;
-@property(retain) NSMutableSet * updated;
+@property (nonatomic, retain) NSMutableSet *collectionChanges;
+@property (nonatomic, retain) NSMutableSet *collectionUpdates;
+@property (nonatomic, retain) NSMutableSet *created;
+@property (nonatomic, retain) NSMutableSet *deleted;
+@property (nonatomic, retain) ICSDateValue *dtstamp;
+@property (nonatomic, retain) NSMutableSet *updated;
 
 - (void)addCollectionChanges:(id)arg1;
 - (void)addCollectionUpdates:(id)arg1;

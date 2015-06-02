@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class ISPropertyListProvider, NSDictionary;
-
 @interface ISProcessPropertyListOperation : ISOperation {
     ISPropertyListProvider *_dataProvider;
     NSDictionary *_propertyList;
 }
 
-@property(retain) ISPropertyListProvider * dataProvider;
+@property (retain) ISPropertyListProvider *dataProvider;
 
 - (id)dataProvider;
 - (void)dealloc;

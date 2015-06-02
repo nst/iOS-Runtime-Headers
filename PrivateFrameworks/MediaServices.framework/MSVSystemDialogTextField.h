@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class NSString;
-
 @interface MSVSystemDialogTextField : NSObject {
     int _keyboardType;
     BOOL _secure;
     NSString *_title;
 }
 
-@property int keyboardType;
-@property(getter=isSecure) BOOL secure;
-@property(copy) NSString * title;
+@property (nonatomic) int keyboardType;
+@property (getter=isSecure, nonatomic) BOOL secure;
+@property (nonatomic, copy) NSString *title;
 
 + (id)textFieldWithTitle:(id)arg1;
 + (id)textFieldWithTitle:(id)arg1 secure:(BOOL)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSAttributedString, NSMutableArray, UIMorphingLabel;
-
 @interface UIMorphingLabelGlyphSet : NSObject {
     NSAttributedString *_attributedString;
     unsigned int _glyphCount;
@@ -20,14 +18,14 @@
     float _lineWidth;
 }
 
-@property(readonly) NSAttributedString * attributedString;
-@property(readonly) unsigned int glyphCount;
-@property(readonly) const struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }* glyphFrames;
-@property(readonly) const struct CGPoint { float x1; float x2; }* glyphPositions;
-@property(readonly) NSArray * glyphViews;
-@property(readonly) const unsigned short* glyphs;
-@property(readonly) struct CGPoint { float x1; float x2; } lineOrigin;
-@property(readonly) float lineWidth;
+@property (nonatomic, readonly) NSAttributedString *attributedString;
+@property (nonatomic, readonly) unsigned int glyphCount;
+@property (nonatomic, readonly) const struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*glyphFrames;
+@property (nonatomic, readonly) const struct CGPoint { float x1; float x2; }*glyphPositions;
+@property (nonatomic, readonly) NSArray *glyphViews;
+@property (nonatomic, readonly) const unsigned short*glyphs;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } lineOrigin;
+@property (nonatomic, readonly) float lineWidth;
 
 - (id)attributedString;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectForGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

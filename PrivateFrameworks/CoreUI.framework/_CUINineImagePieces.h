@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIImage;
-
 @interface _CUINineImagePieces : NSObject {
     CUIImage *_bottom;
     CUIImage *_bottomLeft;

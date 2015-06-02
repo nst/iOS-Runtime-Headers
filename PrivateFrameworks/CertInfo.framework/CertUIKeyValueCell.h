@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSArray, UILabel;
-
 @interface CertUIKeyValueCell : UITableViewCell {
     NSArray *_constraints;
     UILabel *_keyLabel;
     UILabel *_valueLabel;
 }
 
-@property(retain) NSArray * constraints;
-@property(retain) UILabel * keyLabel;
-@property(retain) UILabel * valueLabel;
+@property (nonatomic, retain) NSArray *constraints;
+@property (nonatomic, retain) UILabel *keyLabel;
+@property (nonatomic, retain) UILabel *valueLabel;
 
 - (void).cxx_destruct;
 - (void)_setup;

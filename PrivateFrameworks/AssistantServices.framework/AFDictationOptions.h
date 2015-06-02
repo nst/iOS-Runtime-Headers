@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFSiriContext, NSString;
-
 @interface AFDictationOptions : NSObject <NSCopying, NSSecureCoding> {
     NSString *_applicationName;
     NSString *_applicationVersion;
@@ -20,19 +18,19 @@
     int _transcriptionMode;
 }
 
-@property(copy) NSString * applicationName;
-@property(copy) NSString * applicationVersion;
-@property(retain) AFSiriContext * context;
-@property(copy) NSString * fieldIdentifier;
-@property(copy) NSString * fieldLabel;
-@property(copy) NSString * interactionIdentifier;
-@property int keyboardType;
-@property(copy) NSString * languageCodeOverride;
-@property(copy) NSString * postfixText;
-@property(copy) NSString * prefixText;
-@property int returnKeyType;
-@property(copy) NSString * selectedText;
-@property int transcriptionMode;
+@property (nonatomic, copy) NSString *applicationName;
+@property (nonatomic, copy) NSString *applicationVersion;
+@property (nonatomic, retain) AFSiriContext *context;
+@property (nonatomic, copy) NSString *fieldIdentifier;
+@property (nonatomic, copy) NSString *fieldLabel;
+@property (nonatomic, copy) NSString *interactionIdentifier;
+@property (nonatomic) int keyboardType;
+@property (nonatomic, copy) NSString *languageCodeOverride;
+@property (nonatomic, copy) NSString *postfixText;
+@property (nonatomic, copy) NSString *prefixText;
+@property (nonatomic) int returnKeyType;
+@property (nonatomic, copy) NSString *selectedText;
+@property (nonatomic) int transcriptionMode;
 
 + (BOOL)supportsSecureCoding;
 

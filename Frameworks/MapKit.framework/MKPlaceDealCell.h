@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSString;
+@interface MKPlaceDealCell : ABContactCell
 
-@interface MKPlaceDealCell : ABContactCell {
-}
-
-@property(retain) NSString * dealTitle;
+@property (nonatomic, retain) NSString *dealTitle;
 
 + (id)reuseIdentifier;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NSString, UIActivityIndicatorView, UIImageView, UILabel, UIView;
-
 @interface InternetViewController : AssistantSubUIViewController <UIScrollViewDelegate> {
     NSString *_swapDescriptionText;
     NSString *_swapSourceLabelText;
@@ -18,18 +16,18 @@
     UIView *tableHeaderContainerView;
 }
 
-@property(retain) UIImageView * cablingImageLastFrame;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIView * descriptionContainerView;
-@property(retain) UIView * diagramContainerView;
-@property(readonly) unsigned int hash;
-@property unsigned int internetFlow;
-@property(retain) UIView * spinnerWithStatusAdjacentView;
-@property(readonly) Class superclass;
-@property(retain) NSString * swapDescriptionText;
-@property(retain) NSString * swapSourceLabelText;
-@property(retain) UIView * tableHeaderContainerView;
+@property (nonatomic, retain) UIImageView *cablingImageLastFrame;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *descriptionContainerView;
+@property (nonatomic, retain) UIView *diagramContainerView;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int internetFlow;
+@property (nonatomic, retain) UIView *spinnerWithStatusAdjacentView;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *swapDescriptionText;
+@property (nonatomic, retain) NSString *swapSourceLabelText;
+@property (nonatomic, retain) UIView *tableHeaderContainerView;
 
 - (void)addInformationalDiagramWithWANConnectedBaseProductID:(unsigned int)arg1 replacementProductID:(unsigned int)arg2;
 - (void)addInternetNotWorkingUI;

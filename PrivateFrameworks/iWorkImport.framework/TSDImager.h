@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString, TSDCanvas, TSKDocumentRoot;
-
 @interface TSDImager : NSObject <TSDCanvasDelegate> {
     struct CGRect { 
         struct CGPoint { 
@@ -37,11 +31,7 @@
         float width; 
         float height; 
     } mMaximumScaledImageSize;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id mPostRenderAction;
-
+    id /* block */ mPostRenderAction;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -98,23 +88,23 @@
     float mViewScale;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } actualScaledClipRect;
-@property struct CGColor { }* backgroundColor;
-@property(retain,readonly) TSDCanvas * canvas;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL distortedToMatch;
-@property(readonly) unsigned int hash;
-@property BOOL imageMustHaveEvenDimensions;
-@property(retain) NSArray * infos;
-@property BOOL isPrinting;
-@property struct CGSize { float x1; float x2; } maximumScaledImageSize;
-@property struct CGSize { float x1; float x2; } scaledImageSize;
-@property BOOL shouldReuseBitmapContext;
-@property(readonly) Class superclass;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unscaledClipRect;
-@property float viewScale;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } actualScaledClipRect;
+@property (nonatomic) struct CGColor { }*backgroundColor;
+@property (nonatomic, readonly, retain) TSDCanvas *canvas;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL distortedToMatch;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL imageMustHaveEvenDimensions;
+@property (nonatomic, retain) NSArray *infos;
+@property (nonatomic) BOOL isPrinting;
+@property (nonatomic) struct CGSize { float x1; float x2; } maximumScaledImageSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } scaledImageSize;
+@property (nonatomic) BOOL shouldReuseBitmapContext;
+@property (readonly) Class superclass;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unscaledClipRect;
+@property (nonatomic) float viewScale;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })actualScaledClipRect;
 - (struct CGColor { }*)backgroundColor;
@@ -144,7 +134,7 @@
 - (void)setInfos:(id)arg1;
 - (void)setIsPrinting:(BOOL)arg1;
 - (void)setMaximumScaledImageSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setPostRenderAction:(id)arg1;
+- (void)setPostRenderAction:(id /* block */)arg1;
 - (void)setScaledImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShouldReuseBitmapContext:(BOOL)arg1;
 - (void)setUnscaledClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

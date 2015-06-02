@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSString;
-
 @interface PTPInitCommandRequestPacket : NSObject {
     NSString *_initiatorFriendlyName;
-    unsigned char _initiatorGUID[16];
+    unsigned char _initiatorGUID;
 }
 
 - (id)contentForTCP;

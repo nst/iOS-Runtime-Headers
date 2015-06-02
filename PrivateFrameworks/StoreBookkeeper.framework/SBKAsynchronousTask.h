@@ -2,27 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSError, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, SBKTaskAssertion;
-
 @interface SBKAsynchronousTask : NSObject {
     int _cancelType;
     NSMutableArray *_completions;
     NSString *_debugDescription;
     NSError *_error;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _expirationHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _finishedHandler;
-
+    id /* block */ _expirationHandler;
+    id /* block */ _finishedHandler;
     NSObject<OS_dispatch_queue> *_handlerQueue;
     NSObject<OS_dispatch_queue> *_queue;
     id _result;
@@ -33,18 +19,18 @@
 }
 
 @property int cancelType;
-@property(retain) NSMutableArray * completions;
-@property(retain) NSError * error;
-@property(copy) id expirationHandler;
-@property(copy) id finishedHandler;
-@property(retain) id result;
-@property(retain) SBKTaskAssertion * taskAssertion;
+@property (retain) NSMutableArray *completions;
+@property (retain) NSError *error;
+@property (copy) id /* block */ expirationHandler;
+@property (copy) id /* block */ finishedHandler;
+@property (retain) id result;
+@property (retain) SBKTaskAssertion *taskAssertion;
 
 - (void).cxx_destruct;
 - (void)_invalidateAssertion:(BOOL)arg1;
 - (void)_invalidateTimer;
 - (void)_onQueueFireExpirationHandlerIfNecesary;
-- (void)addTaskCompletionBlock:(id)arg1;
+- (void)addTaskCompletionBlock:(id /* block */)arg1;
 - (void)beginTaskOperation;
 - (int)cancelType;
 - (id)completions;
@@ -53,18 +39,18 @@
 - (id)description;
 - (void)endTaskOperation;
 - (id)error;
-- (id)expirationHandler;
+- (id /* block */)expirationHandler;
 - (void)finishTaskOperationWithResult:(id)arg1 error:(id)arg2;
-- (id)finishedHandler;
+- (id /* block */)finishedHandler;
 - (id)initWithHandlerQueue:(id)arg1 timeout:(double)arg2 debugDescription:(id)arg3;
 - (void)invalidate;
-- (void)invokeTaskCompletionBlocksWithBlock:(id)arg1;
+- (void)invokeTaskCompletionBlocksWithBlock:(id /* block */)arg1;
 - (id)result;
 - (void)setCancelType:(int)arg1;
 - (void)setCompletions:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setExpirationHandler:(id)arg1;
-- (void)setFinishedHandler:(id)arg1;
+- (void)setExpirationHandler:(id /* block */)arg1;
+- (void)setFinishedHandler:(id /* block */)arg1;
 - (void)setResult:(id)arg1;
 - (void)setTaskAssertion:(id)arg1;
 - (id)taskAssertion;

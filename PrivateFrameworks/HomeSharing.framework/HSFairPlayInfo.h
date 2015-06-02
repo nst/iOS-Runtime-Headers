@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface HSFairPlayInfo : NSObject {
     void *_hwInfo;
     NSObject<OS_dispatch_queue> *_sapQueue;
     void *_session;
 }
 
-@property(readonly) NSString * deviceGUID;
+@property (nonatomic, readonly) NSString *deviceGUID;
 
 - (void).cxx_destruct;
 - (BOOL)_getHardwareInfo:(struct FairPlayHWInfo_ { unsigned int x1; unsigned char x2[20]; }*)arg1;

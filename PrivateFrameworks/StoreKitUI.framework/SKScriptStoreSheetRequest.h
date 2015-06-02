@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, WebScriptObject;
-
 @interface SKScriptStoreSheetRequest : SUScriptObject {
     int _pageStyle;
     WebScriptObject *_productParameters;
@@ -11,12 +9,12 @@
 }
 
 @property int productPageStyle;
-@property(readonly) int productPageStyleAutomatic;
-@property(readonly) int productPageStyleBanner;
-@property(readonly) int productPageStylePad;
-@property(readonly) int productPageStylePhone;
-@property(retain) WebScriptObject * productParameters;
-@property(retain) NSString * productURL;
+@property (readonly) int productPageStyleAutomatic;
+@property (readonly) int productPageStyleBanner;
+@property (readonly) int productPageStylePad;
+@property (readonly) int productPageStylePhone;
+@property (retain) WebScriptObject *productParameters;
+@property (retain) NSString *productURL;
 
 + (void)initialize;
 + (id)webScriptNameForKey:(const char *)arg1;

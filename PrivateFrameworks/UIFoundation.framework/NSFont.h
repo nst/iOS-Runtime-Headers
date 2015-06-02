@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSFont : UIFont <NSCopying> {
-}
+@interface NSFont : UIFont <NSCopying>
 
 + (id)fontWithName:(id)arg1 size:(float)arg2;
 

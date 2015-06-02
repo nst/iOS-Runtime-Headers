@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AAUIAccountCreationRemoteUI, AAUIAccountRepairRemoteUI, AAUICredentialRecoveryController, AAUIGenericTermsRemoteUI, ABMonogrammer, ACAccount, ACAccountType, NSMutableArray, NSString, PSSpecifier, RUILoader, UIImageView, UINavigationController;
-
 @interface AAUIBaseSignInViewController : ACUIViewController <AAUIAccountCreationDelegate, AAUIAccountRepairRemoteUIDelegate, AAUICredentialRecoveryPresentationDelegate, AAUIGenericTermsRemoteUIDelegate> {
     ACAccount *_account;
     AAUIAccountRepairRemoteUI *_accountRepairRemoteUI;
@@ -16,11 +10,7 @@
     PSSpecifier *_createNewAccountButtonSpecifier;
     AAUICredentialRecoveryController *_credentialRecoveryUIController;
     AAUIGenericTermsRemoteUI *_genericTermsRemoteUI;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _identityConsolidationCompletion;
-
+    id /* block */ _identityConsolidationCompletion;
     NSString *_initialTitle;
     BOOL _isPasswordDirty;
     BOOL _isPresentedModally;
@@ -37,12 +27,12 @@
     id _textFieldTextDidChangeObserver;
 }
 
-@property(readonly) ACAccount * account;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(setter=setPresentedModally:) BOOL isPresentedModally;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) ACAccount *account;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (setter=setPresentedModally:, nonatomic) BOOL isPresentedModally;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_accountDescriptionFromEmailAddress:(id)arg1;
@@ -72,7 +62,7 @@
 - (BOOL)_runningInMail;
 - (void)_saveAccountAndComplete;
 - (BOOL)_saveAccountWithAllDataclassesEnabledIfPossible;
-- (void)_saveAccountWithAllDataclassesEnabledIfPossibleWithCompletion:(id)arg1;
+- (void)_saveAccountWithAllDataclassesEnabledIfPossibleWithCompletion:(id /* block */)arg1;
 - (void)_setPassword:(id)arg1 withSpecifier:(id)arg2;
 - (void)_setUsername:(id)arg1 withSpecifier:(id)arg2;
 - (BOOL)_shouldShowCancelDone;

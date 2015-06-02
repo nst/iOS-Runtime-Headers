@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class BLActivityAlert, NSDictionary, NSString, PLUIController, UIWindow;
-
 @interface PLPhotosApplication : UIApplication <UIApplicationDelegate> {
     NSString *_currentTestName;
     NSDictionary *_currentTestOptions;
@@ -22,16 +20,16 @@
     UIWindow *_window;
 }
 
-@property(retain) NSString * currentTestName;
-@property(retain) NSDictionary * currentTestOptions;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) BLActivityAlert * iPhotoMigrationActivityAlert;
-@property(readonly) BOOL isOnWifi;
-@property(readonly) BOOL isReachable;
-@property(readonly) Class superclass;
-@property(retain) UIWindow * window;
+@property (nonatomic, retain) NSString *currentTestName;
+@property (nonatomic, retain) NSDictionary *currentTestOptions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) BLActivityAlert *iPhotoMigrationActivityAlert;
+@property (nonatomic, readonly) BOOL isOnWifi;
+@property (nonatomic, readonly) BOOL isReachable;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIWindow *window;
 
 + (void)initialize;
 
@@ -73,6 +71,6 @@
 - (void)sharedFinishedLaunching:(BOOL)arg1;
 - (BOOL)shouldAllowSBAlertSupression;
 - (BOOL)useCompatibleSuspensionAnimation;
-- (BOOL)visitViewControllersWithBlock:(id)arg1;
+- (BOOL)visitViewControllersWithBlock:(id /* block */)arg1;
 
 @end

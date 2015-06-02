@@ -7,7 +7,7 @@
     int _width;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

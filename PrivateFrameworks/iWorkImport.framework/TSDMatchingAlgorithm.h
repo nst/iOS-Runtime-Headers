@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray;
-
 @interface TSDMatchingAlgorithm : NSObject {
     int *mCostMatrix;
     BOOL *mIsColCovered;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOTileKeyMap;
-
 @interface VKResourcesTileSource : VKTileSource {
     GEOTileKeyMap *_keyToKeysMap;
 }

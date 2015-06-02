@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKPlayerInternal, NSData, NSDictionary, NSString;
-
 @interface GKInviteInternal : GKInternalRepresentation {
     NSString *_bundleID;
     NSString *_deviceID;
@@ -25,25 +23,25 @@
     unsigned char _version;
 }
 
-@property(retain) NSString * bundleID;
-@property(retain) NSString * deviceID;
-@property(retain) NSString * inviteID;
-@property(readonly) BOOL isNearby;
-@property(retain) NSDictionary * localizableMessage;
-@property unsigned int matchType;
-@property(retain) NSString * message;
-@property(retain) NSString * participantID;
-@property(retain) NSData * peerBlob;
-@property(retain) NSString * peerID;
-@property(retain) NSData * peerNATIP;
-@property int peerNATType;
-@property(retain) NSData * peerPushToken;
-@property(retain) GKPlayerInternal * player;
-@property unsigned int playerAttributes;
-@property int playerGroup;
-@property(retain) NSString * rid;
-@property(retain) NSData * sessionToken;
-@property unsigned char version;
+@property (nonatomic, retain) NSString *bundleID;
+@property (nonatomic, retain) NSString *deviceID;
+@property (nonatomic, retain) NSString *inviteID;
+@property (nonatomic, readonly) BOOL isNearby;
+@property (nonatomic, retain) NSDictionary *localizableMessage;
+@property (nonatomic) unsigned int matchType;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic, retain) NSString *participantID;
+@property (nonatomic, retain) NSData *peerBlob;
+@property (nonatomic, retain) NSString *peerID;
+@property (nonatomic, retain) NSData *peerNATIP;
+@property (nonatomic) int peerNATType;
+@property (nonatomic, retain) NSData *peerPushToken;
+@property (nonatomic, retain) GKPlayerInternal *player;
+@property (nonatomic) unsigned int playerAttributes;
+@property (nonatomic) int playerGroup;
+@property (nonatomic, retain) NSString *rid;
+@property (nonatomic, retain) NSData *sessionToken;
+@property (nonatomic) unsigned char version;
 
 + (id)inviteFromNearbyPlayer:(id)arg1 participantID:(id)arg2 deviceID:(id)arg3 bundleID:(id)arg4 connectionData:(id)arg5;
 + (id)inviteWithBulletin:(id)arg1;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class BRCAccountHandler, BRCAccountSession, BRCCloudFileProvider, BRCVersionsFileProvider, NSDate, NSError, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_source>, NSString, NSXPCListener, NSXPCListenerEndpoint;
-
 @interface BRCDaemon : NSObject <BRCAccountHandlerDelegate, BRCReachabilityDelegate, NSXPCListenerDelegate> {
     BRCAccountHandler *_accountHandler;
     NSString *_appSupportDirPath;
@@ -38,26 +31,26 @@
     NSObject<OS_dispatch_group> *_xpcTokenListenerBlockerUntilReady;
 }
 
-@property(readonly) BRCAccountHandler * accountHandler;
-@property(retain) NSString * appSupportDirPath;
-@property(retain) NSString * cacheDirPath;
-@property(retain) Class containerClass;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL disableAccountChangesHandling;
-@property BOOL disableAppsChangesHandling;
-@property(readonly) NSXPCListenerEndpoint * endpoint;
-@property(readonly) BRCCloudFileProvider * fileProvider;
-@property unsigned int forceIsGreedyState;
-@property(readonly) unsigned int hash;
-@property(retain) NSError * loggedOutError;
-@property(retain) NSString * logsDirPath;
-@property(retain) NSString * rootDirPath;
-@property(retain) BRCAccountSession * session;
-@property(readonly) NSDate * startupDate;
-@property(readonly) Class superclass;
-@property(readonly) NSString * ubiquityTokenSalt;
-@property(readonly) BRCVersionsFileProvider * versionsProvider;
+@property (nonatomic, readonly) BRCAccountHandler *accountHandler;
+@property (nonatomic, retain) NSString *appSupportDirPath;
+@property (nonatomic, retain) NSString *cacheDirPath;
+@property (nonatomic, retain) Class containerClass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableAccountChangesHandling;
+@property (nonatomic) BOOL disableAppsChangesHandling;
+@property (nonatomic, readonly) NSXPCListenerEndpoint *endpoint;
+@property (nonatomic, readonly) BRCCloudFileProvider *fileProvider;
+@property (nonatomic) unsigned int forceIsGreedyState;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSError *loggedOutError;
+@property (nonatomic, retain) NSString *logsDirPath;
+@property (nonatomic, retain) NSString *rootDirPath;
+@property (nonatomic, retain) BRCAccountSession *session;
+@property (nonatomic, readonly) NSDate *startupDate;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *ubiquityTokenSalt;
+@property (nonatomic, readonly) BRCVersionsFileProvider *versionsProvider;
 
 + (id)daemon;
 

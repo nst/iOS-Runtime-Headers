@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDPResetContainerRequest : PBRequest <NSCopying> {
-}
+@interface CKDPResetContainerRequest : PBRequest <NSCopying>
 
 + (id)options;
 

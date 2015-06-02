@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDAffineGeometry, GQDBezierPath, NSString;
-
 @interface GQDDrawable : NSObject <GQWrapPointGenerator> {
     GQDAffineGeometry *mGeometry;
     BOOL mHasPagesOrder;
@@ -15,10 +13,10 @@
     GQDBezierPath *mWrapPath;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)addWrapPoint:(id)arg1;
 - (void)clearWrapPoints;

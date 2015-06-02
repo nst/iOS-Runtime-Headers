@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, WDTable, WDTableRowProperties;
-
 @interface WDTableRow : NSObject {
     NSMutableArray *mCells;
     unsigned int mIndex;

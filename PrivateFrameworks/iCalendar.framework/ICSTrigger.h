@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@interface ICSTrigger : ICSProperty {
-}
+@interface ICSTrigger : ICSProperty
 
 - (void)fixAlarmTrigger;
 - (id)initWithDate:(id)arg1;

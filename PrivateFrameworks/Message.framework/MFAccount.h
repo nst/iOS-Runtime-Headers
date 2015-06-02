@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class ACAccount, NSDictionary, NSMutableDictionary, NSString;
-
 @interface MFAccount : NSObject {
     ACAccount *_persistentAccount;
     int _persistentAccountLock;
@@ -11,20 +9,20 @@
     NSMutableDictionary *_unsavedAccountProperties;
 }
 
-@property(readonly) ACAccount * accountForRenewingCredentials;
-@property(retain) NSString * displayName;
-@property(retain) NSString * hostname;
-@property(readonly) NSString * identifier;
-@property(readonly) NSString * managedTag;
-@property(readonly) ACAccount * parentAccount;
-@property(readonly) NSString * parentAccountIdentifier;
-@property(readonly) ACAccount * persistentAccount;
-@property(readonly) NSDictionary * properties;
-@property(copy) NSString * sourceApplicationBundleIdentifier;
-@property(readonly) NSString * syncStoreIdentifier;
-@property(readonly) NSString * type;
-@property(readonly) NSString * uniqueId;
-@property(retain) NSString * username;
+@property (readonly) ACAccount *accountForRenewingCredentials;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSString *hostname;
+@property (readonly) NSString *identifier;
+@property (readonly) NSString *managedTag;
+@property (readonly) ACAccount *parentAccount;
+@property (readonly) NSString *parentAccountIdentifier;
+@property (readonly) ACAccount *persistentAccount;
+@property (readonly) NSDictionary *properties;
+@property (nonatomic, copy) NSString *sourceApplicationBundleIdentifier;
+@property (readonly) NSString *syncStoreIdentifier;
+@property (readonly) NSString *type;
+@property (readonly) NSString *uniqueId;
+@property (nonatomic, retain) NSString *username;
 
 + (id)_accountClass;
 + (id)_basicPropertyForKey:(id)arg1 persistentAccount:(id)arg2;
@@ -67,7 +65,7 @@
 - (id)_password;
 - (id)_passwordWithError:(id*)arg1;
 - (void)_queueAccountInfoDidChange;
-- (BOOL)_renewCredentialsWithOptions:(id)arg1 completion:(id)arg2;
+- (BOOL)_renewCredentialsWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)_setAccountProperties:(id)arg1;
 - (BOOL)_shouldTryDirectSSLConnectionOnPort:(unsigned int)arg1;
 - (id)accountClass;
@@ -119,15 +117,15 @@
 - (void)persistentAccountDidChange:(id)arg1 previousAccount:(id)arg2;
 - (unsigned int)portNumber;
 - (id)preferredAuthScheme;
-- (BOOL)promptUserForPasswordWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id)arg3;
-- (BOOL)promptUserForWebLoginWithURL:(id)arg1 shouldConfirm:(BOOL)arg2 completionHandler:(id)arg3;
+- (BOOL)promptUserForPasswordWithTitle:(id)arg1 message:(id)arg2 completionHandler:(id /* block */)arg3;
+- (BOOL)promptUserForWebLoginWithURL:(id)arg1 shouldConfirm:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (id)properties;
 - (void)releaseAllConnections;
 - (void)releaseAllForcedConnections;
 - (void)removeAccountPropertyForKey:(id)arg1;
 - (void)removePersistentAccount;
 - (void)removeValueInAccountPropertiesForKey:(id)arg1;
-- (BOOL)renewCredentialsWithCompletion:(id)arg1;
+- (BOOL)renewCredentialsWithCompletion:(id /* block */)arg1;
 - (void)reportAuthenticationError:(id)arg1 authScheme:(id)arg2;
 - (BOOL)requiresAuthentication;
 - (void)savePersistentAccount;

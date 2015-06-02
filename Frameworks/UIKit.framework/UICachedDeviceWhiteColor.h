@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICachedDeviceWhiteColor : UIDeviceWhiteColor {
-}
+@interface UICachedDeviceWhiteColor : UIDeviceWhiteColor
 
 - (void)_forceDealloc;
 - (BOOL)allowsWeakReference;

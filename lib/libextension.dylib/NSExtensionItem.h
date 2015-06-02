@@ -2,16 +2,14 @@
    Image: /usr/lib/libextension.dylib
  */
 
-@class NSArray, NSAttributedString, NSDictionary, NSMutableDictionary;
-
 @interface NSExtensionItem : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary *_userInfo;
 }
 
-@property(copy) NSArray * attachments;
-@property(copy) NSAttributedString * attributedContentText;
-@property(copy) NSAttributedString * attributedTitle;
-@property(copy) NSDictionary * userInfo;
+@property (nonatomic, copy) NSArray *attachments;
+@property (nonatomic, copy) NSAttributedString *attributedContentText;
+@property (nonatomic, copy) NSAttributedString *attributedTitle;
+@property (nonatomic, copy) NSDictionary *userInfo;
 
 + (BOOL)supportsSecureCoding;
 

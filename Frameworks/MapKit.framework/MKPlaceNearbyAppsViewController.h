@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceNearbyAppsViewControllerDelegate>, NSArray, NSString;
-
 @interface MKPlaceNearbyAppsViewController : UITableViewController <MKPlaceViewNearbyAppsCellDelegate, MKStackingViewControllerPreferredSizeUse> {
     <MKPlaceNearbyAppsViewControllerDelegate> *_nearbyAppsDelegate;
     NSArray *_storeItems;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <MKPlaceNearbyAppsViewControllerDelegate> * nearbyAppsDelegate;
-@property(readonly) BOOL requiresPreferredContentSizeInStackingView;
-@property(retain) NSArray * storeItems;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <MKPlaceNearbyAppsViewControllerDelegate> *nearbyAppsDelegate;
+@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (nonatomic, retain) NSArray *storeItems;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)contentSizeDidChange;

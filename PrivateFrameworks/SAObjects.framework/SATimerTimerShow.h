@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SATimerTimerShow : SADomainCommand <SATimerTimerAction>
 
-@interface SATimerTimerShow : SADomainCommand <SATimerTimerAction> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)timerShow;
 + (id)timerShowWithDictionary:(id)arg1 context:(id)arg2;

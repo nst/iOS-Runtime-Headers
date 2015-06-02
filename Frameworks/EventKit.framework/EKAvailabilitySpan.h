@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate;
-
 @interface EKAvailabilitySpan : NSObject {
     NSDate *_endDate;
     NSDate *_startDate;
     int _type;
 }
 
-@property(readonly) NSDate * endDate;
-@property(readonly) NSDate * startDate;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSDate *startDate;
+@property (nonatomic, readonly) int type;
 
 - (id)description;
 - (id)endDate;

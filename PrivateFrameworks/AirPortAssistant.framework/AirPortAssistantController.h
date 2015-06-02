@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <AirPortAssistantControllerDelegate>, NSDictionary, NSString;
-
 @interface AirPortAssistantController : NSObject {
     NSString *_configuredSSID;
     id _context;
@@ -12,11 +10,11 @@
     id _viewController;
 }
 
-@property(retain) NSString * configuredSSID;
-@property(retain) id context;
-@property <AirPortAssistantControllerDelegate> * delegate;
-@property(retain) NSDictionary * unconfiguredWACDevices;
-@property(retain) id viewController;
+@property (retain) NSString *configuredSSID;
+@property (retain) id context;
+@property (nonatomic) <AirPortAssistantControllerDelegate> *delegate;
+@property (retain) NSDictionary *unconfiguredWACDevices;
+@property (retain) id viewController;
 
 + (id)assistantUIViewControllerWithParameters:(id)arg1;
 + (void)cancelAirPortAssistantController;

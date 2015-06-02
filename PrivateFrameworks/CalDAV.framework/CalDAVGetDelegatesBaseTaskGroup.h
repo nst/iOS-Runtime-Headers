@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class NSMutableArray, NSMutableSet, NSSet, NSString, NSURL;
-
 @interface CalDAVGetDelegatesBaseTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate, CoreDAVTaskGroupDelegate> {
     NSURL *_principalURL;
     NSMutableSet *_readDetails;
@@ -13,18 +11,18 @@
     NSMutableArray *_writePrincipalURLs;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSURL * principalURL;
-@property(retain) NSMutableSet * readDetails;
-@property(retain,readonly) NSSet * readOnlyPrincipalDetails;
-@property(retain) NSMutableArray * readPrincipalURLs;
-@property(retain,readonly) NSSet * readWritePrincipalDetails;
-@property BOOL serverSupportsExpandPropertyReport;
-@property(readonly) Class superclass;
-@property(retain) NSMutableSet * writeDetails;
-@property(retain) NSMutableArray * writePrincipalURLs;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSURL *principalURL;
+@property (nonatomic, retain) NSMutableSet *readDetails;
+@property (nonatomic, readonly, retain) NSSet *readOnlyPrincipalDetails;
+@property (nonatomic, retain) NSMutableArray *readPrincipalURLs;
+@property (nonatomic, readonly, retain) NSSet *readWritePrincipalDetails;
+@property (nonatomic) BOOL serverSupportsExpandPropertyReport;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableSet *writeDetails;
+@property (nonatomic, retain) NSMutableArray *writePrincipalURLs;
 
 - (void)_getPrincipalDetailsForURL:(id)arg1;
 - (id)_mappingsForPrincipalDetails;

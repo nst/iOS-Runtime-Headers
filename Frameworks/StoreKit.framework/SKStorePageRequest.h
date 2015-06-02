@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-@class NSDictionary, NSURL;
-
 @interface SKStorePageRequest : NSObject {
     int _pageStyle;
     NSDictionary *_productParameters;
     NSURL *_productURL;
 }
 
-@property int productPageStyle;
-@property(copy) NSDictionary * productParameters;
-@property(copy) NSURL * productURL;
+@property (nonatomic) int productPageStyle;
+@property (nonatomic, copy) NSDictionary *productParameters;
+@property (nonatomic, copy) NSURL *productURL;
 
 - (id)copyXPCEncoding;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class UITextInputTraits, UIView;
-
 @interface SBUIAlphanumericPasscodeEntryField : SBUIPasscodeEntryField {
     UIView *_leftPaddingView;
     UIView *_rightPaddingView;
@@ -11,9 +9,9 @@
     UIView *_springViewParent;
 }
 
-@property(readonly) UITextInputTraits * textInputTraits;
+@property (nonatomic, readonly) UITextInputTraits *textInputTraits;
 
-- (void)_autofillForMesaWithCompletion:(id)arg1;
+- (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
 - (void)_resetForFailedPasscode:(BOOL)arg1 playUnlockFailedSound:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;

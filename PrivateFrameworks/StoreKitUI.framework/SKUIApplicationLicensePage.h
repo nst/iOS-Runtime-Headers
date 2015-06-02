@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIApplicationLicensePage : NSObject <NSCopying> {
     NSString *_licenseAgreementHTML;
     NSString *_title;
 }
 
-@property(copy) NSString * licenseAgreementHTML;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *licenseAgreementHTML;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

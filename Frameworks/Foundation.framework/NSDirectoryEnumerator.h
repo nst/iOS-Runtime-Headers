@@ -2,14 +2,11 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSDictionary;
+@interface NSDirectoryEnumerator : NSEnumerator
 
-@interface NSDirectoryEnumerator : NSEnumerator {
-}
-
-@property(copy,readonly) NSDictionary * directoryAttributes;
-@property(copy,readonly) NSDictionary * fileAttributes;
-@property(readonly) unsigned int level;
+@property (readonly, copy) NSDictionary *directoryAttributes;
+@property (readonly, copy) NSDictionary *fileAttributes;
+@property (readonly) unsigned int level;
 
 - (id)directoryAttributes;
 - (id)fileAttributes;

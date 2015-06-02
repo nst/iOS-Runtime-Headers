@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, NSMutableIndexSet, NSString;
-
 @interface SKUISearchResultGroup : NSObject {
     NSMutableIndexSet *_editorialIndexSet;
     NSMutableArray *_entities;
     NSString *_groupKind;
 }
 
-@property(readonly) NSArray * availableEntities;
-@property(readonly) NSString * groupKind;
-@property(readonly) int numberOfEntities;
+@property (nonatomic, readonly) NSArray *availableEntities;
+@property (nonatomic, readonly) NSString *groupKind;
+@property (nonatomic, readonly) int numberOfEntities;
 
 - (void).cxx_destruct;
 - (void)_addEntity:(id)arg1 withIdentifier:(id)arg2 type:(int)arg3;

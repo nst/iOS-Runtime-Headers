@@ -9,8 +9,8 @@
     float _intensity;
 }
 
-@property BOOL hasIntensity;
-@property float intensity;
+@property (nonatomic) BOOL hasIntensity;
+@property (nonatomic) float intensity;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

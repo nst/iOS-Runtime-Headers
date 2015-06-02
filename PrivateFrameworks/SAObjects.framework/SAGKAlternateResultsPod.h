@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAGKAlternateResultsPod : SAGKPodView
 
-@interface SAGKAlternateResultsPod : SAGKPodView {
-}
-
-@property(copy) NSArray * alternateResults;
+@property (nonatomic, copy) NSArray *alternateResults;
 
 + (id)alternateResultsPod;
 + (id)alternateResultsPodWithDictionary:(id)arg1 context:(id)arg2;

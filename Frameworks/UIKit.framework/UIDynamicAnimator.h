@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <UIDynamicAnimatorDelegate>, <_UIDynamicReferenceSystem>, CADisplayLink, CALayer, NSArray, NSMutableArray, NSMutableDictionary, NSMutableSet, PKExtendedPhysicsWorld, UIDynamicAnimatorTicker, UIView;
-
 @interface UIDynamicAnimator : NSObject {
     float _accuracy;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _action;
-
+    id /* block */ _action;
     NSMutableArray *_beginContacts;
     NSMutableSet *_behaviorsToAdd;
     NSMutableSet *_behaviorsToRemove;
@@ -60,11 +50,11 @@
     PKExtendedPhysicsWorld *_world;
 }
 
-@property(copy,readonly) NSArray * behaviors;
-@property <UIDynamicAnimatorDelegate> * delegate;
-@property(readonly) UIView * referenceView;
-@property(getter=isRunning,readonly) BOOL running;
-@property(retain) UIDynamicAnimatorTicker * ticker;
+@property (nonatomic, readonly, copy) NSArray *behaviors;
+@property (nonatomic) <UIDynamicAnimatorDelegate> *delegate;
+@property (nonatomic, readonly) UIView *referenceView;
+@property (getter=isRunning, nonatomic, readonly) BOOL running;
+@property (nonatomic, retain) UIDynamicAnimatorTicker *ticker;
 
 + (id)_allDynamicAnimators;
 + (void)_clearReferenceViewFromAnimators:(id)arg1;
@@ -102,8 +92,8 @@
 - (void)_registerImplicitBounds;
 - (void)_reportBeginContacts;
 - (void)_reportEndContacts;
-- (void)_runBlockPostSolverIfNeeded:(id)arg1;
-- (void)_setAction:(id)arg1;
+- (void)_runBlockPostSolverIfNeeded:(id /* block */)arg1;
+- (void)_setAction:(id /* block */)arg1;
 - (void)_setAlwaysDisableDisplayLink:(BOOL)arg1;
 - (void)_setAnimatorIntegralization:(unsigned int)arg1;
 - (void)_setDebugInterval:(int)arg1;
@@ -118,9 +108,9 @@
 - (void)_stop;
 - (void)_tickle;
 - (long long)_ticks;
-- (void)_traverseBehaviorHierarchy:(id)arg1;
+- (void)_traverseBehaviorHierarchy:(id /* block */)arg1;
 - (void)_unregisterBehavior:(id)arg1;
-- (void)_unregisterBodyForItem:(id)arg1 action:(id)arg2;
+- (void)_unregisterBodyForItem:(id)arg1 action:(id /* block */)arg2;
 - (void)_unregisterCollisionGroup;
 - (void)_unregisterImplicitBounds;
 - (id)_world;

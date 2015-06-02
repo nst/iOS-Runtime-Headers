@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@interface SCRCMathSpaceExpression : SCRCMathExpression {
-}
+@interface SCRCMathSpaceExpression : SCRCMathExpression
 
 - (BOOL)beginsWithSpace;
 - (id)dollarCodeDescriptionWithNumberOfOuterRadicals:(unsigned int)arg1 treePosition:(id)arg2;

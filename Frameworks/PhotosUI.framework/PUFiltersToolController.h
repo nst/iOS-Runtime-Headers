@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSMutableDictionary, NSString, PUFiltersToolControllerSpec, UICollectionView, UICollectionViewFlowLayout;
-
 @interface PUFiltersToolController : PUPhotoEditToolController <UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *__collectionView;
     UICollectionViewFlowLayout *__collectionViewLayout;
@@ -14,16 +12,16 @@
     BOOL _didPerformInitialScrollToReveal;
 }
 
-@property(setter=_setCollectionView:,retain) UICollectionView * _collectionView;
-@property(setter=_setCollectionViewLayout:,retain) UICollectionViewFlowLayout * _collectionViewLayout;
-@property(readonly) BOOL _needsThumbnails;
-@property(setter=_setSelectedFilterIndex:) unsigned int _selectedFilterIndex;
-@property(setter=_setThumbnailImages:,retain) NSMutableDictionary * _thumbnailImages;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) PUFiltersToolControllerSpec * spec;
-@property(readonly) Class superclass;
+@property (setter=_setCollectionView:, nonatomic, retain) UICollectionView *_collectionView;
+@property (setter=_setCollectionViewLayout:, nonatomic, retain) UICollectionViewFlowLayout *_collectionViewLayout;
+@property (nonatomic, readonly) BOOL _needsThumbnails;
+@property (setter=_setSelectedFilterIndex:, nonatomic) unsigned int _selectedFilterIndex;
+@property (setter=_setThumbnailImages:, nonatomic, retain) NSMutableDictionary *_thumbnailImages;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PUFiltersToolControllerSpec *spec;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_collectionView;

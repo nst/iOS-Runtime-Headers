@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class <CoreRCDeviceDelegate>, CoreRCManager, NSUUID;
-
 @interface CoreRCDevice : NSObject <NSCopying, NSSecureCoding> {
     NSUUID *_busUniqueID;
     <CoreRCDeviceDelegate> *_delegate;
@@ -11,9 +9,9 @@
     NSUUID *_uniqueID;
 }
 
-@property(readonly) NSUUID * busUniqueID;
-@property(readonly) BOOL isLocalDevice;
-@property(readonly) NSUUID * uniqueID;
+@property (nonatomic, readonly) NSUUID *busUniqueID;
+@property (nonatomic, readonly) BOOL isLocalDevice;
+@property (nonatomic, readonly) NSUUID *uniqueID;
 
 + (BOOL)supportsSecureCoding;
 

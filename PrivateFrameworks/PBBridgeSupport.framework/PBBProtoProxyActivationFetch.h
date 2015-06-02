@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-@class NSData;
-
 @interface PBBProtoProxyActivationFetch : PBCodable <NSCopying> {
     NSData *_request;
 }
 
-@property(retain) NSData * request;
+@property (nonatomic, retain) NSData *request;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

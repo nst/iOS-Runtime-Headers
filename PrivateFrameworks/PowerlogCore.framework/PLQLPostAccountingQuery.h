@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSString;
-
 @interface PLQLPostAccountingQuery : PLQLAccountingQuery {
     NSArray *_additionalAccountingGroups;
     NSString *_daemonToBreak;
@@ -12,11 +10,11 @@
     NSDictionary *_skipProcess;
 }
 
-@property(retain,readonly) NSArray * additionalAccountingGroups;
-@property(retain,readonly) NSString * daemonToBreak;
-@property(retain,readonly) NSString * parentAccountingQueryToRunOn;
-@property(retain) NSMutableArray * postpostAccountingQueries;
-@property(retain,readonly) NSDictionary * skipProcess;
+@property (readonly, retain) NSArray *additionalAccountingGroups;
+@property (readonly, retain) NSString *daemonToBreak;
+@property (readonly, retain) NSString *parentAccountingQueryToRunOn;
+@property (retain) NSMutableArray *postpostAccountingQueries;
+@property (readonly, retain) NSDictionary *skipProcess;
 
 - (void).cxx_destruct;
 - (void)addPostPostAccountingChildren:(id)arg1;

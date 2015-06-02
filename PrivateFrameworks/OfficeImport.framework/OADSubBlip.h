@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSData;
-
 @interface OADSubBlip : OCDDelayedMedia {
     NSData *mData;
     struct CGRect { 

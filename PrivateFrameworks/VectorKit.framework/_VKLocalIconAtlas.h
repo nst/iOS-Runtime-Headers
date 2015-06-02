@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKResourceManager;
-
 @interface _VKLocalIconAtlas : VKIconAtlas {
     VKResourceManager *_resourceManager;
 }

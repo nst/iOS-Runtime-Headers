@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommonUtilities.framework/CommonUtilities
  */
 
-@class NSDictionary, NSHashTable, NSMutableSet, NSNumber, NSObject<OS_dispatch_queue>, NSRecursiveLock, NSRunLoop, NSString, NSThread;
-
 @interface CUTWiFiManager : NSObject <CUTPowerMonitorDelegate> {
     void *_currentNetwork;
     NSHashTable *_delegateMap;
@@ -27,39 +25,39 @@
     NSHashTable *_wowClients;
 }
 
-@property(readonly) BOOL autoAssociateWiFi;
-@property BOOL autoAssociateWiFiAsForegroundClient;
-@property void* currentNetwork;
-@property(retain,readonly) NSString * currentSSID;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSHashTable * delegateMap;
-@property(copy,readonly) NSString * description;
-@property void* dynamicStore;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isHostingWiFiHotSpot;
+@property (nonatomic, readonly) BOOL autoAssociateWiFi;
+@property (nonatomic) BOOL autoAssociateWiFiAsForegroundClient;
+@property (nonatomic) void*currentNetwork;
+@property (nonatomic, readonly, retain) NSString *currentSSID;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSHashTable *delegateMap;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) void*dynamicStore;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isHostingWiFiHotSpot;
 @property BOOL isPrimaryCellularCached;
-@property(readonly) BOOL isWiFiAssociated;
-@property(readonly) BOOL isWiFiCaptive;
-@property(readonly) BOOL isWiFiEnabled;
-@property(readonly) BOOL isWoWEnabled;
-@property(readonly) BOOL isWoWSupported;
-@property(copy) NSDictionary * lastWiFiPowerInfo;
-@property int linkToken;
-@property(retain) NSRecursiveLock * lock;
-@property struct __CFRunLoopSource { }* runLoopSource;
-@property NSObject<OS_dispatch_queue> * scUpdateQueue;
-@property(readonly) Class superclass;
-@property(retain) NSMutableSet * wiFiAutoAssociationTokens;
-@property(retain,readonly) NSNumber * wiFiScaledRSSI;
-@property(retain,readonly) NSNumber * wiFiScaledRate;
-@property(retain,readonly) NSNumber * wiFiSignalStrength;
-@property void* wifiDevice;
-@property void* wifiManager;
-@property(retain) NSRunLoop * wifiRunLoop;
-@property(retain) NSThread * wifiThread;
-@property(readonly) BOOL willTryToAutoAssociateWiFiNetwork;
-@property(readonly) BOOL willTryToSearchForWiFiNetwork;
-@property(retain) NSHashTable * wowClients;
+@property (nonatomic, readonly) BOOL isWiFiAssociated;
+@property (nonatomic, readonly) BOOL isWiFiCaptive;
+@property (nonatomic, readonly) BOOL isWiFiEnabled;
+@property (nonatomic, readonly) BOOL isWoWEnabled;
+@property (nonatomic, readonly) BOOL isWoWSupported;
+@property (nonatomic, copy) NSDictionary *lastWiFiPowerInfo;
+@property (nonatomic) int linkToken;
+@property (nonatomic, retain) NSRecursiveLock *lock;
+@property (nonatomic) struct __CFRunLoopSource { }*runLoopSource;
+@property (nonatomic) NSObject<OS_dispatch_queue> *scUpdateQueue;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableSet *wiFiAutoAssociationTokens;
+@property (nonatomic, readonly, retain) NSNumber *wiFiScaledRSSI;
+@property (nonatomic, readonly, retain) NSNumber *wiFiScaledRate;
+@property (nonatomic, readonly, retain) NSNumber *wiFiSignalStrength;
+@property (nonatomic) void*wifiDevice;
+@property (nonatomic) void*wifiManager;
+@property (nonatomic, retain) NSRunLoop *wifiRunLoop;
+@property (nonatomic, retain) NSThread *wifiThread;
+@property (nonatomic, readonly) BOOL willTryToAutoAssociateWiFiNetwork;
+@property (nonatomic, readonly) BOOL willTryToSearchForWiFiNetwork;
+@property (nonatomic, retain) NSHashTable *wowClients;
 
 + (id)sharedInstance;
 
@@ -73,11 +71,11 @@
 - (void)_handlePotentialDeviceChange:(struct __WiFiDeviceClient { }*)arg1;
 - (BOOL)_isPrimaryCellular;
 - (void)_performBackgroundInit;
-- (void)_performCurrentNetworkBlock:(id)arg1;
-- (void)_performCurrentNetworkBlock:(id)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2;
-- (void)_performCurrentNetworkBlock:(id)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2 async:(BOOL)arg3;
-- (void)_performDeviceBlock:(id)arg1;
-- (void)_performDeviceBlock:(id)arg1 useCache:(BOOL)arg2;
+- (void)_performCurrentNetworkBlock:(id /* block */)arg1;
+- (void)_performCurrentNetworkBlock:(id /* block */)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2;
+- (void)_performCurrentNetworkBlock:(id /* block */)arg1 withDevice:(struct __WiFiDeviceClient { }*)arg2 async:(BOOL)arg3;
+- (void)_performDeviceBlock:(id /* block */)arg1;
+- (void)_performDeviceBlock:(id /* block */)arg1 useCache:(BOOL)arg2;
 - (void)_performPowerReading;
 - (void)_setCurrentNetwork:(struct __WiFiNetwork { }*)arg1;
 - (id)_ssidFromNetwork:(struct __WiFiNetwork { }*)arg1;
@@ -92,7 +90,7 @@
 - (BOOL)autoAssociateWiFiAsForegroundClient;
 - (void*)currentNetwork;
 - (id)currentSSID;
-- (void)currentWiFiNetworkPowerUsageWithCompletion:(id)arg1;
+- (void)currentWiFiNetworkPowerUsageWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (id)delegateMap;
 - (void*)dynamicStore;

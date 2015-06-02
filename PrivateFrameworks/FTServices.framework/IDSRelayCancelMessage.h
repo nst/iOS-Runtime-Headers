@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSData, NSNumber, NSString;
-
 @interface IDSRelayCancelMessage : IDSFaceTimeMessage <NSCopying> {
     NSString *_peerID;
     NSData *_peerPushToken;
@@ -16,15 +14,15 @@
     NSNumber *_selfRelayPort;
 }
 
-@property(copy) NSString * peerID;
-@property(copy) NSData * peerPushToken;
-@property(copy) NSData * peerRelayIP;
-@property(copy) NSNumber * peerRelayPort;
-@property(copy) NSNumber * reason;
-@property(copy) NSData * relayConnectionID;
-@property(copy) NSNumber * relayType;
-@property(copy) NSData * selfRelayIP;
-@property(copy) NSNumber * selfRelayPort;
+@property (copy) NSString *peerID;
+@property (copy) NSData *peerPushToken;
+@property (copy) NSData *peerRelayIP;
+@property (copy) NSNumber *peerRelayPort;
+@property (copy) NSNumber *reason;
+@property (copy) NSData *relayConnectionID;
+@property (copy) NSNumber *relayType;
+@property (copy) NSData *selfRelayIP;
+@property (copy) NSNumber *selfRelayPort;
 
 - (id)bagKey;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

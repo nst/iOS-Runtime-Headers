@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UILongPressGestureRecognizer, UIView;
-
 @interface UICollectionViewCell : UICollectionReusableView <UIGestureRecognizerDelegate> {
     UIView *_backgroundView;
     struct { 
@@ -22,15 +20,15 @@
     id _selectionSegueTemplate;
 }
 
-@property(retain) UIView * backgroundView;
-@property(readonly) UIView * contentView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(getter=isSelected) BOOL selected;
-@property(retain) UIView * selectedBackgroundView;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic, readonly) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic, retain) UIView *selectedBackgroundView;
+@property (readonly) Class superclass;
 
 + (Class)_contentViewClass;
 

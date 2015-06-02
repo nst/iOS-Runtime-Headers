@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WDIterator;
-
 @interface WDTestIterator : WDIterator {
     WDIterator *mIterator;
     id mNext;

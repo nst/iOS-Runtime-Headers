@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSSet, NSString, VKPolylineOverlay, VKPolylineOverlayRenderRegion;
-
 @interface VKRouteLine : NSObject <GEORouteMapMatchingDataSource> {
     struct { 
         double x0; 
@@ -46,17 +44,17 @@
     double _viewUnitsPerPoint;
 }
 
-@property(readonly) struct { double x1; double x2; double x3; double x4; } bounds;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (nonatomic, readonly) struct { double x1; double x2; double x3; double x4; } bounds;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL hasNewRoadMatches;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL needsUpdate;
-@property VKPolylineOverlay * overlay;
-@property double simplificationEpsilonPoints;
-@property(readonly) Class superclass;
-@property(readonly) struct PolylineCoordinate { unsigned int x1; float x2; }* userLocationIndex;
-@property(readonly) struct fast_shared_ptr<vk::RouteLineSection> { struct _fast_shared_ptr_control {} *x1; } userLocationSection;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL needsUpdate;
+@property (nonatomic) VKPolylineOverlay *overlay;
+@property (nonatomic) double simplificationEpsilonPoints;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct PolylineCoordinate { unsigned int x1; float x2; }*userLocationIndex;
+@property (nonatomic, readonly) struct fast_shared_ptr<vk::RouteLineSection> { struct _fast_shared_ptr_control {} *x1; } userLocationSection;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -66,8 +64,8 @@
 - (BOOL)buildRouteLineForPainter:(id)arg1 keysInView:(id)arg2 tiles:(id)arg3 containerModel:(id)arg4 viewUnitsPerPoint:(double)arg5 force:(BOOL)arg6 curve:(BOOL)arg7 selected:(BOOL)arg8;
 - (void)createMeshIfNecessary:(int)arg1;
 - (void)dealloc;
-- (void)forEachMapMatchingSection:(id)arg1;
-- (void)forEachSection:(id)arg1;
+- (void)forEachMapMatchingSection:(id /* block */)arg1;
+- (void)forEachSection:(id /* block */)arg1;
 - (void)generateArrowsForManeuverDisplayMode:(int)arg1 routeLineWidth:(float)arg2;
 - (BOOL)hasNewRoadMatches;
 - (BOOL)isTrafficUpToDate;

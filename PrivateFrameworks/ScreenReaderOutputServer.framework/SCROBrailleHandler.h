@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@class NSString, SCROBrailleDisplayManager;
-
 @interface SCROBrailleHandler : SCROHandler <SCROSBrailleDisplayManagerDelegate> {
     SCROBrailleDisplayManager *_brailleDisplayManager;
     struct { 
@@ -27,10 +25,10 @@
     BOOL _wantsInputCallbacks;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)configurationDidChange;
 - (void)dealloc;

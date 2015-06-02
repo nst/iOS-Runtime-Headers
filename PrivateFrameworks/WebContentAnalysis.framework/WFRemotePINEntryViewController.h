@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSObject<WFPINEntryViewControllerProtocol>;
-
 @interface WFRemotePINEntryViewController : _UIRemoteViewController <WFPINEntryViewControllerProtocol> {
     NSObject<WFPINEntryViewControllerProtocol> *_delegate;
 }
 
-@property NSObject<WFPINEntryViewControllerProtocol> * delegate;
+@property (nonatomic) NSObject<WFPINEntryViewControllerProtocol> *delegate;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;

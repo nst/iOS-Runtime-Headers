@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIPickerViewTestParameters : NSObject {
     int _componentToScroll;
     int _remainingIterations;

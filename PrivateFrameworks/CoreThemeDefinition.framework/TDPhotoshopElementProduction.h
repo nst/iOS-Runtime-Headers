@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class CUIImage, CUIPSDImageRef, NSDate, NSMutableAttributedString, TDPhotoshopAsset;
-
 @interface TDPhotoshopElementProduction : TDElementProduction <TDElementAttributes> {
     CUIImage *_baselineMetricsMask;
     NSDate *_cachedImageDate;
@@ -14,7 +12,7 @@
     CUIPSDImageRef *psdImageRef;
 }
 
-@property(retain) TDPhotoshopAsset * asset;
+@property (nonatomic, retain) TDPhotoshopAsset *asset;
 
 + (unsigned int)sliceColumnsPerRendition:(int)arg1;
 + (unsigned int)sliceRowsPerRendition:(int)arg1;

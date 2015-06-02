@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface FigAudioCaptureConnectionConfiguration : FigCaptureConnectionConfiguration {
-}
+@interface FigAudioCaptureConnectionConfiguration : FigCaptureConnectionConfiguration
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;

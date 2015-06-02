@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsLibraryPrivate;
-
 @interface ALAssetsLibrary : NSObject {
     id _internal;
 }
 
-@property(retain) ALAssetsLibraryPrivate * internal;
+@property (nonatomic, retain) ALAssetsLibraryPrivate *internal;
 
 + (struct CGImage { }*)_aspectRatioThumbnailForAssetURL:(id)arg1;
 + (long long)_estimatedOutputFileLengthForVideoFilePath:(id)arg1 metadata:(id)arg2 exportPreset:(id)arg3 exportProperties:(id)arg4;
@@ -28,17 +26,17 @@
 - (void)_addGroupListForContainerList:(id)arg1 ofType:(unsigned int)arg2 toArray:(id)arg3;
 - (id)_copyGroupForURL:(id)arg1;
 - (BOOL)_libraryIsAvailable;
-- (void)_performBlock:(id)arg1;
-- (void)_performBlockAndWait:(id)arg1;
-- (void)_writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(int)arg2 imageData:(id)arg3 metadata:(id)arg4 internalProperties:(id)arg5 completionBlock:(id)arg6;
-- (void)_writeVideoAtPathToSavedPhotosAlbum:(id)arg1 internalProperties:(id)arg2 completionBlock:(id)arg3;
-- (void)addAssetsGroupAlbumWithName:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
-- (void)assetForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
+- (void)_performBlock:(id /* block */)arg1;
+- (void)_performBlockAndWait:(id /* block */)arg1;
+- (void)_writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(int)arg2 imageData:(id)arg3 metadata:(id)arg4 internalProperties:(id)arg5 completionBlock:(id /* block */)arg6;
+- (void)_writeVideoAtPathToSavedPhotosAlbum:(id)arg1 internalProperties:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)addAssetsGroupAlbumWithName:(id)arg1 resultBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
+- (void)assetForURL:(id)arg1 resultBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
 - (id)assetsGroupsRelatedToAssetsGroup:(id)arg1;
 - (void)dealloc;
-- (void)deleteAssetForURL:(id)arg1 completionBlock:(id)arg2;
-- (void)enumerateGroupsWithTypes:(unsigned int)arg1 usingBlock:(id)arg2 failureBlock:(id)arg3;
-- (void)groupForURL:(id)arg1 resultBlock:(id)arg2 failureBlock:(id)arg3;
+- (void)deleteAssetForURL:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)enumerateGroupsWithTypes:(unsigned int)arg1 usingBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
+- (void)groupForURL:(id)arg1 resultBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
 - (BOOL)hasCompletedRestorePostProcessing;
 - (id)init;
 - (id)internal;
@@ -48,9 +46,9 @@
 - (void)registerAlbum:(struct NSObject { Class x1; }*)arg1 assetGroupPrivate:(id)arg2;
 - (void)setInternal:(id)arg1;
 - (BOOL)videoAtPathIsCompatibleWithSavedPhotosAlbum:(id)arg1;
-- (void)writeImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
-- (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 metadata:(id)arg2 completionBlock:(id)arg3;
-- (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(int)arg2 completionBlock:(id)arg3;
-- (void)writeVideoAtPathToSavedPhotosAlbum:(id)arg1 completionBlock:(id)arg2;
+- (void)writeImageDataToSavedPhotosAlbum:(id)arg1 metadata:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 metadata:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)writeImageToSavedPhotosAlbum:(struct CGImage { }*)arg1 orientation:(int)arg2 completionBlock:(id /* block */)arg3;
+- (void)writeVideoAtPathToSavedPhotosAlbum:(id)arg1 completionBlock:(id /* block */)arg2;
 
 @end

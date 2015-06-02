@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
-
 @interface AASigningSession : NSObject {
     NSString *_certURL;
     struct NACContextOpaque_ { } *_context;
@@ -11,7 +9,7 @@
     NSString *_sessionURL;
 }
 
-@property(readonly) long error;
+@property (nonatomic, readonly) long error;
 
 - (void).cxx_destruct;
 - (void)dealloc;

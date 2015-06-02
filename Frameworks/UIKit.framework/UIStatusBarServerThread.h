@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface UIStatusBarServerThread : NSThread {
     NSMutableArray *_clientPorts;
     struct { 

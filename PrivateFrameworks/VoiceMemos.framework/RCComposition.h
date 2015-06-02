@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSArray, NSDate, NSString, NSURL;
-
 @interface RCComposition : NSObject <NSCopying, NSMutableCopying, RCDictionaryPListRepresentationCoding> {
     double _cachedComposedAVURLDuration;
     BOOL _cachedComposedAVURLDurationIsValid;
@@ -16,21 +14,21 @@
     NSURL *_savedRecordingURI;
 }
 
-@property double cachedComposedAVURLDuration;
-@property BOOL cachedComposedAVURLDurationIsValid;
-@property(readonly) NSURL * composedAVURL;
-@property(readonly) double composedDuration;
-@property(readonly) NSArray * composedFragments;
-@property(readonly) NSURL * composedWaveformURL;
-@property(readonly) NSDate * creationDate;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) NSArray * decomposedFragments;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL readonly;
-@property(retain) NSURL * savedRecordingURI;
-@property(readonly) Class superclass;
-@property(readonly) NSString * title;
+@property (nonatomic) double cachedComposedAVURLDuration;
+@property (nonatomic) BOOL cachedComposedAVURLDurationIsValid;
+@property (nonatomic, readonly) NSURL *composedAVURL;
+@property (nonatomic, readonly) double composedDuration;
+@property (nonatomic, readonly) NSArray *composedFragments;
+@property (nonatomic, readonly) NSURL *composedWaveformURL;
+@property (nonatomic, readonly) NSDate *creationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSArray *decomposedFragments;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL readonly;
+@property (nonatomic, retain) NSURL *savedRecordingURI;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *title;
 
 + (id)_compositionFragmentsFolderForComposedAVURL:(id)arg1;
 + (id)_compositionLoadedFromMetadataURL:(id)arg1 composedAVURL:(id)arg2 savedRecordingURI:(id)arg3 createIfNeeded:(BOOL)arg4;
@@ -65,7 +63,7 @@
 - (void)deleteFromFilesystem;
 - (id)description;
 - (id)dictionaryPListRepresentation;
-- (void)enumerateOrphanedFragmentsWithBlock:(id)arg1;
+- (void)enumerateOrphanedFragmentsWithBlock:(id /* block */)arg1;
 - (unsigned long long)estimatedFileSizeOfComposedAssetIncludingRelatedResources:(BOOL)arg1;
 - (unsigned long long)fileSizeOfAssetsIncludingRelatedResources:(BOOL)arg1;
 - (id)initWithComposedAVURL:(id)arg1 savedRecordingURI:(id)arg2 decomposedFragments:(id)arg3 composedFragments:(id)arg4;

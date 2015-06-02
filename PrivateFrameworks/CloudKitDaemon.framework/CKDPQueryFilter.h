@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPLocationBound, CKDPRecordFieldIdentifier, CKDPRecordFieldValue;
-
 @interface CKDPQueryFilter : PBCodable <NSCopying> {
     CKDPLocationBound *_bounds;
     CKDPRecordFieldIdentifier *_fieldName;
@@ -14,14 +12,14 @@
     int _type;
 }
 
-@property(retain) CKDPLocationBound * bounds;
-@property(retain) CKDPRecordFieldIdentifier * fieldName;
-@property(retain) CKDPRecordFieldValue * fieldValue;
-@property(readonly) BOOL hasBounds;
-@property(readonly) BOOL hasFieldName;
-@property(readonly) BOOL hasFieldValue;
-@property BOOL hasType;
-@property int type;
+@property (nonatomic, retain) CKDPLocationBound *bounds;
+@property (nonatomic, retain) CKDPRecordFieldIdentifier *fieldName;
+@property (nonatomic, retain) CKDPRecordFieldValue *fieldValue;
+@property (nonatomic, readonly) BOOL hasBounds;
+@property (nonatomic, readonly) BOOL hasFieldName;
+@property (nonatomic, readonly) BOOL hasFieldValue;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (id)bounds;

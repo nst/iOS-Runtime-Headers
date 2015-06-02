@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKShare, CKShareID;
-
 @interface CKDShareResponse : NSObject {
     CKShare *_share;
     CKShareID *_shareID;
 }
 
-@property(retain) CKShare * share;
-@property(retain) CKShareID * shareID;
+@property (nonatomic, retain) CKShare *share;
+@property (nonatomic, retain) CKShareID *shareID;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

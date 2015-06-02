@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSString, PHAsset;
-
 @interface PHAssetInternalProperties : NSObject {
     PHAsset *_asset;
     NSString *_avalancheUUID;
@@ -11,10 +9,10 @@
     short _visibilityState;
 }
 
-@property(readonly) PHAsset * asset;
-@property(readonly) NSString * avalancheUUID;
-@property(readonly) double sortToken;
-@property(readonly) short visibilityState;
+@property (nonatomic, readonly) PHAsset *asset;
+@property (nonatomic, readonly) NSString *avalancheUUID;
+@property (nonatomic, readonly) double sortToken;
+@property (nonatomic, readonly) short visibilityState;
 
 - (void).cxx_destruct;
 - (id)asset;

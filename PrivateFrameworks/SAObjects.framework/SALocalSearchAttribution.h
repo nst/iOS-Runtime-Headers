@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SALocalSearchAttribution : AceObject <SAAceSerializable>
 
-@interface SALocalSearchAttribution : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSString * attributionId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) NSArray * urls;
-@property int version;
+@property (nonatomic, copy) NSString *attributionId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *urls;
+@property (nonatomic) int version;
 
 + (id)attribution;
 + (id)attributionWithDictionary:(id)arg1 context:(id)arg2;

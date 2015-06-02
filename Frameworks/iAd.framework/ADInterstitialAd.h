@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class <ADInterstitialAdDelegate>, ADAdSpace, ADInterstitialAdPresentationViewController, ADInterstitialView, NSSet, NSString, UIView, UIViewController;
-
 @interface ADInterstitialAd : NSObject <ADAdRecipient> {
     BOOL _actionInProgress;
     ADAdSpace *_adSpace;
@@ -19,26 +17,26 @@
     ADInterstitialAdPresentationViewController *_presentationViewController;
 }
 
-@property(getter=isActionInProgress) BOOL actionInProgress;
-@property(retain) ADAdSpace * adSpace;
-@property(readonly) UIView * adSpaceView;
-@property BOOL canLoadMoreThanOnce;
-@property(copy) NSSet * context;
-@property int creativeType;
-@property(copy,readonly) NSString * debugDescription;
-@property <ADInterstitialAdDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL hasLoadedFirstAd;
-@property(readonly) unsigned int hash;
-@property(readonly) int internalAdType;
-@property <ADInterstitialAdDelegate> * internalDelegate;
-@property UIViewController * internalPresentingViewController;
-@property(retain) ADInterstitialView * interstitialView;
-@property(getter=isLoaded) BOOL loaded;
-@property(readonly) int options;
-@property(retain) ADInterstitialAdPresentationViewController * presentationViewController;
-@property(readonly) UIViewController * presentingViewController;
-@property(readonly) Class superclass;
+@property (getter=isActionInProgress, nonatomic) BOOL actionInProgress;
+@property (nonatomic, retain) ADAdSpace *adSpace;
+@property (nonatomic, readonly) UIView *adSpaceView;
+@property (nonatomic) BOOL canLoadMoreThanOnce;
+@property (nonatomic, copy) NSSet *context;
+@property (nonatomic) int creativeType;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ADInterstitialAdDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasLoadedFirstAd;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int internalAdType;
+@property (nonatomic) <ADInterstitialAdDelegate> *internalDelegate;
+@property (nonatomic) UIViewController *internalPresentingViewController;
+@property (nonatomic, retain) ADInterstitialView *interstitialView;
+@property (getter=isLoaded, nonatomic) BOOL loaded;
+@property (nonatomic, readonly) int options;
+@property (nonatomic, retain) ADInterstitialAdPresentationViewController *presentationViewController;
+@property (nonatomic, readonly) UIViewController *presentingViewController;
+@property (readonly) Class superclass;
 
 - (BOOL)_considerClosingAdSpace;
 - (void)_dismissModalInterstitial;

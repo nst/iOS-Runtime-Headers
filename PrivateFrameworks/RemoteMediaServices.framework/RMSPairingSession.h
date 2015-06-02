@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class <RMSPairingSessionDelegate>, NSString, RMSPairingServer;
-
 @interface RMSPairingSession : NSObject <NSNetServiceDelegate, RMSPairingServerDelegate, RMSPairingSession> {
     NSString *_advertisedAppName;
     NSString *_advertisedDeviceModel;
@@ -13,15 +11,15 @@
     NSString *_passcode;
 }
 
-@property(retain) NSString * advertisedAppName;
-@property(retain) NSString * advertisedDeviceModel;
-@property(retain) NSString * advertisedDeviceName;
-@property(copy,readonly) NSString * debugDescription;
-@property <RMSPairingSessionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * passcode;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSString *advertisedAppName;
+@property (nonatomic, retain) NSString *advertisedDeviceModel;
+@property (nonatomic, retain) NSString *advertisedDeviceName;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RMSPairingSessionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *passcode;
+@property (readonly) Class superclass;
 
 + (id)localPairingSession;
 + (id)proxyPairingSession;

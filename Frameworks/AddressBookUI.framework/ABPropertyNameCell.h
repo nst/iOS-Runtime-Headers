@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPropertyCellDelegate>, ABPropertyGroupItem, UIResponder, UITextField;
-
 @interface ABPropertyNameCell : ABContactCell {
     <ABPropertyCellDelegate> *_delegate;
     UIResponder *_firstResponderItem;
     UITextField *_textField;
 }
 
-@property <ABPropertyCellDelegate> * delegate;
-@property(readonly) UIResponder * firstResponderItem;
-@property(retain) ABPropertyGroupItem * propertyItem;
-@property(readonly) UITextField * textField;
+@property (nonatomic) <ABPropertyCellDelegate> *delegate;
+@property (nonatomic, readonly) UIResponder *firstResponderItem;
+@property (nonatomic, retain) ABPropertyGroupItem *propertyItem;
+@property (nonatomic, readonly) UITextField *textField;
 
 - (id)constantConstraints;
 - (void)dealloc;

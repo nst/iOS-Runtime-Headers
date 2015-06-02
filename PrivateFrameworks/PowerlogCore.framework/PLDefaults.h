@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableDictionary;
-
 @interface PLDefaults : NSObject {
     BOOL _debugEnabled;
     NSMutableDictionary *_instancePrefsCache;
@@ -12,9 +10,9 @@
 }
 
 @property BOOL debugEnabled;
-@property(retain) NSMutableDictionary * instancePrefsCache;
-@property(retain) NSMutableDictionary * managedPrefsCache;
-@property(retain) NSMutableDictionary * userPrefsCache;
+@property (retain) NSMutableDictionary *instancePrefsCache;
+@property (retain) NSMutableDictionary *managedPrefsCache;
+@property (retain) NSMutableDictionary *userPrefsCache;
 
 + (BOOL)boolForKey:(id)arg1;
 + (BOOL)boolForKey:(id)arg1 ifNotSet:(BOOL)arg2;

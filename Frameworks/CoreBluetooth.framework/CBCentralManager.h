@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <CBCentralManagerDelegate>, CBPairingAgent, CBXpcConnection, NSMapTable, NSString;
-
 @interface CBCentralManager : NSObject <CBPairingAgentParentDelegate, CBXpcConnectionDelegate> {
     CBXpcConnection *_connection;
     <CBCentralManagerDelegate> *_delegate;
@@ -25,14 +23,14 @@
     int _state;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <CBCentralManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CBCentralManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property BOOL isScanning;
-@property(readonly) CBPairingAgent * sharedPairingAgent;
+@property (nonatomic, readonly) CBPairingAgent *sharedPairingAgent;
 @property int state;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (void)cancelPeripheralConnection:(id)arg1;
 - (void)cancelPeripheralConnection:(id)arg1 force:(BOOL)arg2;
@@ -40,7 +38,7 @@
 - (id)dataArrayToUUIDArray:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)forEachPeripheral:(id)arg1;
+- (void)forEachPeripheral:(id /* block */)arg1;
 - (void)handleConnectedPeripheralsRetrieved:(id)arg1;
 - (void)handleConnectionParametersUpdated:(id)arg1;
 - (void)handlePeripheralConnectionCompleted:(id)arg1;

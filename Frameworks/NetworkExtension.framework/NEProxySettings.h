@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEProxyServer, NSArray, NSString, NSURL;
-
 @interface NEProxySettings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _FTPEnabled;
     NEProxyServer *_FTPServer;
@@ -29,25 +27,25 @@
 }
 
 @property BOOL FTPEnabled;
-@property(copy) NEProxyServer * FTPServer;
+@property (copy) NEProxyServer *FTPServer;
 @property BOOL HTTPEnabled;
 @property BOOL HTTPSEnabled;
-@property(copy) NEProxyServer * HTTPSServer;
-@property(copy) NEProxyServer * HTTPServer;
+@property (copy) NEProxyServer *HTTPSServer;
+@property (copy) NEProxyServer *HTTPServer;
 @property BOOL RTSPEnabled;
-@property(copy) NEProxyServer * RTSPServer;
+@property (copy) NEProxyServer *RTSPServer;
 @property BOOL SOCKSEnabled;
-@property(copy) NEProxyServer * SOCKSServer;
+@property (copy) NEProxyServer *SOCKSServer;
 @property BOOL autoProxyConfigurationEnabled;
 @property BOOL autoProxyDiscovery;
-@property(copy) NSArray * exceptionList;
+@property (copy) NSArray *exceptionList;
 @property BOOL excludeSimpleHostnames;
 @property BOOL gopherEnabled;
-@property(copy) NEProxyServer * gopherServer;
-@property(copy) NSString * proxyAutoConfigJavaScript;
-@property(copy) NSURL * proxyAutoConfigURL;
-@property(copy) NSArray * supplementalMatchDomains;
-@property(copy) NSArray * supplementalMatchOrders;
+@property (copy) NEProxyServer *gopherServer;
+@property (copy) NSString *proxyAutoConfigJavaScript;
+@property (copy) NSURL *proxyAutoConfigURL;
+@property (copy) NSArray *supplementalMatchDomains;
+@property (copy) NSArray *supplementalMatchOrders;
 @property BOOL usePassiveFTP;
 
 + (BOOL)supportsSecureCoding;

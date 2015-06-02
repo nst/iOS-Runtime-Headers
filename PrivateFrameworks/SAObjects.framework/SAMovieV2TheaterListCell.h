@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SADistance, SAMovieV2MovieListSnippet;
+@interface SAMovieV2TheaterListCell : SADomainObject
 
-@interface SAMovieV2TheaterListCell : SADomainObject {
-}
-
-@property(retain) SADistance * relativeDistance;
-@property(copy) NSString * theaterAddress;
-@property(copy) NSString * theaterName;
-@property(retain) SAMovieV2MovieListSnippet * theaterShowtimeListSnippet;
+@property (nonatomic, retain) SADistance *relativeDistance;
+@property (nonatomic, copy) NSString *theaterAddress;
+@property (nonatomic, copy) NSString *theaterName;
+@property (nonatomic, retain) SAMovieV2MovieListSnippet *theaterShowtimeListSnippet;
 
 + (id)theaterListCell;
 + (id)theaterListCellWithDictionary:(id)arg1 context:(id)arg2;

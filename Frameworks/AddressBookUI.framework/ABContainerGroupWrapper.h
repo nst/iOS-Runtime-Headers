@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABContainerGroupWrapper : ABGroupWrapper {
-}
+@interface ABContainerGroupWrapper : ABGroupWrapper
 
 - (BOOL)isContainerWrapper;
 - (BOOL)isEqual:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class _UIAccessDeniedView;
-
 @interface PLUIPrivacyViewController : UIViewController {
     _UIAccessDeniedView *_accessDeniedView;
     BOOL _showingAccessDeniedView;

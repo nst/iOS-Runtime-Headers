@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHDUnsupportedSeries : CHDSeries {
-}
+@interface CHDUnsupportedSeries : CHDSeries
 
 @end

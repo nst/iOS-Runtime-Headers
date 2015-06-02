@@ -10,11 +10,11 @@
     float _vertexVariance;
 }
 
-@property float controlpointVariance;
-@property float endpointVariance;
-@property unsigned int vertexCount;
-@property struct GKVertexCurve { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; }* vertexCurves;
-@property float vertexVariance;
+@property (nonatomic) float controlpointVariance;
+@property (nonatomic) float endpointVariance;
+@property (nonatomic) unsigned int vertexCount;
+@property (nonatomic) struct GKVertexCurve { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGPoint { float x_2_1_1; float x_2_1_2; } x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; struct CGPoint { float x_5_1_1; float x_5_1_2; } x5; }*vertexCurves;
+@property (nonatomic) float vertexVariance;
 
 + (id)standardBezierPathForSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)standardBubbleShape;

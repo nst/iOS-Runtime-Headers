@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class <CalDAVPrincipal>, NSMutableSet;
-
 @interface CalDAVOperation : CoreDAVTaskGroup {
     BOOL _isCancellingTaskGroups;
     NSMutableSet *_outstandingTaskGroups;
     <CalDAVPrincipal> *_principal;
 }
 
-@property(readonly) NSMutableSet * outstandingTaskGroups;
-@property(readonly) <CalDAVPrincipal> * principal;
+@property (nonatomic, readonly) NSMutableSet *outstandingTaskGroups;
+@property (nonatomic, readonly) <CalDAVPrincipal> *principal;
 
-- (void)_tearDownAllTaskGroupsWithBlock:(id)arg1;
+- (void)_tearDownAllTaskGroupsWithBlock:(id /* block */)arg1;
 - (void)bailWithError:(id)arg1;
 - (void)cancelTaskGroup;
 - (void)dealloc;

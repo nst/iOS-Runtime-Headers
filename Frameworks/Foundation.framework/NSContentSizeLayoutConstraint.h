@@ -7,8 +7,8 @@
     float _huggingPriority;
 }
 
-@property(readonly) float compressionResistancePriority;
-@property(readonly) float huggingPriority;
+@property (readonly) float compressionResistancePriority;
+@property (readonly) float huggingPriority;
 
 - (id)_priorityDescription;
 - (float)compressionResistancePriority;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class <CUIKSingleDayTimelineGeometryDelegate>, <CUIKSingleDayTimelineLayoutScreenUtils>, <CUIKSingleDayTimelineViewItem>, NSArray, NSCalendar, NSDate, NSMutableArray;
-
 @interface CUIKSingleDayTimelineLayout : NSObject {
     NSCalendar *_calendar;
     NSMutableArray *_collidingOccurrences;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, SSDownloadManager;
-
 @interface MPDownloadManager : NSObject <SSDownloadManagerObserverPrivate> {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSDownloadManager *_downloadManager;
@@ -13,21 +11,21 @@
     struct __CFArray { } *_observers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSArray * downloads;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *downloads;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)mediaPlayerDownloadManager;
 
 - (void).cxx_destruct;
-- (void)_applyBlockToObservers:(id)arg1;
+- (void)_applyBlockToObservers:(id /* block */)arg1;
 - (void)_clearCache;
 - (id)_copyObservers;
 - (void)_rebuildCacheIfNecessary;
 - (void)addObserver:(id)arg1;
-- (void)cancelDownloads:(id)arg1 completionBlock:(id)arg2;
+- (void)cancelDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadsDidChange:(id)arg2;

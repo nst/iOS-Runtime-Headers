@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSString, NSURL, UIImage;
-
 @interface GKGameSharingInfo : NSObject {
     BOOL _complete;
     NSString *_developerName;
@@ -15,14 +13,14 @@
     NSURL *_viewItemURL;
 }
 
-@property BOOL complete;
-@property(retain) NSString * developerName;
-@property(retain) NSString * emailBody;
-@property(retain) NSString * emailSubject;
-@property(retain) NSString * gameName;
-@property(retain) UIImage * iconImage;
-@property(retain) NSURL * shortViewItemURL;
-@property(retain) NSURL * viewItemURL;
+@property (nonatomic) BOOL complete;
+@property (nonatomic, retain) NSString *developerName;
+@property (nonatomic, retain) NSString *emailBody;
+@property (nonatomic, retain) NSString *emailSubject;
+@property (nonatomic, retain) NSString *gameName;
+@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic, retain) NSURL *shortViewItemURL;
+@property (nonatomic, retain) NSURL *viewItemURL;
 
 - (BOOL)complete;
 - (void)dealloc;

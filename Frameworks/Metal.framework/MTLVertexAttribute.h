@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class NSString;
-
 @interface MTLVertexAttribute : NSObject {
     BOOL _active;
     unsigned int _attributeIndex;
@@ -11,10 +9,10 @@
     NSString *_name;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(readonly) unsigned int attributeIndex;
-@property(readonly) unsigned int attributeType;
-@property(readonly) NSString * name;
+@property (getter=isActive, readonly) BOOL active;
+@property (readonly) unsigned int attributeIndex;
+@property (readonly) unsigned int attributeType;
+@property (readonly) NSString *name;
 
 - (unsigned int)attributeIndex;
 - (unsigned int)attributeType;

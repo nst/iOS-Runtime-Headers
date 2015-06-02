@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIDeveloperInfo, SKUIDeveloperInfoView, UIScrollView;
-
 @interface SKUIDeveloperInfoViewController : SKUIViewController {
     SKUIDeveloperInfo *_developerInfo;
     SKUIDeveloperInfoView *_infoView;
     UIScrollView *_scrollView;
 }
 
-@property(readonly) SKUIDeveloperInfo * developerInfo;
+@property (nonatomic, readonly) SKUIDeveloperInfo *developerInfo;
 
 - (void).cxx_destruct;
 - (id)developerInfo;

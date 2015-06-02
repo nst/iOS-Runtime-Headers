@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWDeferredMetadataCache, BWFigVideoCaptureDevice, BWNodeOutput, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BWMultiStreamCameraSourceNode : BWSourceNode <BWFigCameraSourceNode> {
     float _aeMaxGain;
     BWFigVideoCaptureDevice *_captureDevice;
@@ -39,7 +37,7 @@
         NSObject<OS_dispatch_queue> *bufferServicingQueue; 
         struct opaqueCMFormatDescription {} *cachedFormatDescription; 
         int frameCount; 
-    } _outputsStorage[4];
+    } _outputsStorage;
     struct CGSize { 
         float width; 
         float height; 
@@ -75,15 +73,15 @@
     BOOL _videoStabilizationEnabled;
 }
 
-@property(readonly) BWFigVideoCaptureDevice * captureDevice;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BWNodeOutput * detectedFacesOutput;
-@property(readonly) unsigned int hash;
-@property(readonly) BWNodeOutput * previewOutput;
-@property(readonly) BWNodeOutput * stillImageOutput;
-@property(readonly) Class superclass;
-@property(readonly) BWNodeOutput * videoCaptureOutput;
+@property (readonly) BWFigVideoCaptureDevice *captureDevice;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) BWNodeOutput *detectedFacesOutput;
+@property (readonly) unsigned int hash;
+@property (readonly) BWNodeOutput *previewOutput;
+@property (readonly) BWNodeOutput *stillImageOutput;
+@property (readonly) Class superclass;
+@property (readonly) BWNodeOutput *videoCaptureOutput;
 
 + (id)cameraSourceNodeWithCaptureDevice:(id)arg1;
 + (void)initialize;

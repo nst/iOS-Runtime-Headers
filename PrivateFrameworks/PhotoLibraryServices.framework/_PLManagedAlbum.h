@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface _PLManagedAlbum : PLGenericAlbum {
-}
+@interface _PLManagedAlbum : PLGenericAlbum
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

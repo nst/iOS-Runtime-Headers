@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, UIActivityIndicatorView, UIImageView, UILabel;
-
 @interface _UIRefreshControlDefaultContentView : _UIRefreshControlContentView {
     BOOL _animationsAreValid;
     BOOL _areAnimationsValid;
@@ -16,11 +14,11 @@
     UILabel *_textLabel;
 }
 
-@property BOOL areAnimationsValid;
-@property(readonly) UIImageView * arrow;
-@property(readonly) UIImageView * imageView;
-@property(readonly) UIActivityIndicatorView * spinner;
-@property(readonly) UILabel * textLabel;
+@property (nonatomic) BOOL areAnimationsValid;
+@property (nonatomic, readonly) UIImageView *arrow;
+@property (nonatomic, readonly) UIImageView *imageView;
+@property (nonatomic, readonly) UIActivityIndicatorView *spinner;
+@property (nonatomic, readonly) UILabel *textLabel;
 
 - (double)_currentTimeOffset;
 - (void)_fadeInMagic;

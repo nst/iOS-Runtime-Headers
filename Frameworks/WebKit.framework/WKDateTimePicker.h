@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class NSString, WKContentView;
-
 @interface WKDateTimePicker : NSObject <WKFormControl> {
     struct RetainPtr<UIDatePicker> { 
         void *m_ptr; 

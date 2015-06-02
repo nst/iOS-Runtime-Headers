@@ -24,22 +24,22 @@
     int _type;
 }
 
-@property unsigned int featureIndex;
-@property unsigned int featureTileX;
-@property unsigned int featureTileY;
-@property unsigned int featureTileZ;
-@property BOOL hasFeatureIndex;
-@property BOOL hasFeatureTileX;
-@property BOOL hasFeatureTileY;
-@property BOOL hasFeatureTileZ;
-@property BOOL hasIdentifier;
-@property BOOL hasStyle;
-@property BOOL hasType;
-@property unsigned int identifier;
-@property int style;
-@property(readonly) struct { int x1; int x2; }* styleAttributes;
-@property(readonly) unsigned int styleAttributesCount;
-@property int type;
+@property (nonatomic) unsigned int featureIndex;
+@property (nonatomic) unsigned int featureTileX;
+@property (nonatomic) unsigned int featureTileY;
+@property (nonatomic) unsigned int featureTileZ;
+@property (nonatomic) BOOL hasFeatureIndex;
+@property (nonatomic) BOOL hasFeatureTileX;
+@property (nonatomic) BOOL hasFeatureTileY;
+@property (nonatomic) BOOL hasFeatureTileZ;
+@property (nonatomic) BOOL hasIdentifier;
+@property (nonatomic) BOOL hasStyle;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) unsigned int identifier;
+@property (nonatomic) int style;
+@property (nonatomic, readonly) struct { int x1; int x2; }*styleAttributes;
+@property (nonatomic, readonly) unsigned int styleAttributesCount;
+@property (nonatomic) int type;
 
 - (void)addStyleAttribute:(struct { int x1; int x2; })arg1;
 - (void)clearStyleAttributes;

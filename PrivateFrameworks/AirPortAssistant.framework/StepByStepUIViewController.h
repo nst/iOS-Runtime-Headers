@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class NetTopoMiniStaticLayout, UIActivityIndicatorView, UILabel, UIView;
-
 @interface StepByStepUIViewController : AssistantSubUIViewController {
     UIView *justTextContainerView;
     UILabel *justTextLabel;
@@ -17,16 +15,16 @@
     UIView *topoView;
 }
 
-@property(retain) UIView * justTextContainerView;
-@property UILabel * justTextLabel;
-@property int sbsMode;
-@property(retain) UILabel * spinnerWithStatusBelowLabel;
-@property(retain) UIActivityIndicatorView * spinnerWithStatusBelowSpinner;
-@property(retain) UIView * spinnerWithStatusBelowView;
-@property(retain) UIView * tableFooterContainerView;
-@property(retain) UIView * tableHeaderContainerView;
-@property(retain) NetTopoMiniStaticLayout * topoLayout;
-@property(retain) UIView * topoView;
+@property (nonatomic, retain) UIView *justTextContainerView;
+@property (nonatomic) UILabel *justTextLabel;
+@property (nonatomic) int sbsMode;
+@property (nonatomic, retain) UILabel *spinnerWithStatusBelowLabel;
+@property (nonatomic, retain) UIActivityIndicatorView *spinnerWithStatusBelowSpinner;
+@property (nonatomic, retain) UIView *spinnerWithStatusBelowView;
+@property (nonatomic, retain) UIView *tableFooterContainerView;
+@property (nonatomic, retain) UIView *tableHeaderContainerView;
+@property (nonatomic, retain) NetTopoMiniStaticLayout *topoLayout;
+@property (nonatomic, retain) UIView *topoView;
 
 - (void)dealloc;
 - (id)justTextContainerView;

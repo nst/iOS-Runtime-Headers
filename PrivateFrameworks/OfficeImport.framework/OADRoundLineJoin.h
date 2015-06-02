@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADRoundLineJoin : OADLineJoin {
-}
+@interface OADRoundLineJoin : OADLineJoin
 
 + (id)defaultProperties;
 

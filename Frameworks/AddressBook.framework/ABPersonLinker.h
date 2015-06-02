@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSMutableDictionary;
-
 @interface ABPersonLinker : NSObject {
     void *_addressBook;
     NSMutableDictionary *_peopleByFirstName;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface MLChapterTOC : NSObject {
-}
+@interface MLChapterTOC : NSObject
 
 - (struct ChapterData { }*)chapterDataRef;
 - (unsigned int)chapterIndexAtTimeLocationInMS:(unsigned int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class <SLFacebookVideoOptionsDelegate>, NSArray, NSURL, SLVideoQualityOption;
-
 @interface SLFacebookVideoOptionsViewController : UITableViewController {
     <SLFacebookVideoOptionsDelegate> *_delegate;
     NSArray *_qualityOptions;
@@ -11,7 +9,7 @@
     NSURL *_videoAssetURL;
 }
 
-@property <SLFacebookVideoOptionsDelegate> * delegate;
+@property (nonatomic) <SLFacebookVideoOptionsDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (void)_generateQualityOptionsWithAssetURL:(id)arg1;

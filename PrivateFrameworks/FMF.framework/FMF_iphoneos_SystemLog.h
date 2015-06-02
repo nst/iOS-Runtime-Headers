@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@interface FMF_iphoneos_SystemLog : FMFSystemLog {
-}
+@interface FMF_iphoneos_SystemLog : FMFSystemLog
 
 - (id)init;
 - (BOOL)isLoggingToFile;

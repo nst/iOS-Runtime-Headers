@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaItem, MPMediaPlaylist, NSMutableArray, NSString;
-
 @interface MusicGeniusMixPlaybackContext : MusicQueryPlaybackContext <MusicGeniusMixQueueFeederDataSource> {
     BOOL _finite;
     NSMutableArray *_indexedSubQueries;
@@ -11,17 +9,17 @@
     MPMediaItem *_requiredInitialMediaItem;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) MPMediaPlaylist * mixPlaylist;
-@property(retain) MPMediaItem * requiredInitialMediaItem;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MPMediaPlaylist *mixPlaylist;
+@property (nonatomic, retain) MPMediaItem *requiredInitialMediaItem;
+@property (readonly) Class superclass;
 
 + (Class)queueFeederClass;
 
 - (void).cxx_destruct;
-- (void)_enumerateItemsBySubQueryUsingBlock:(id)arg1;
+- (void)_enumerateItemsBySubQueryUsingBlock:(id /* block */)arg1;
 - (id)_generateNewItemsQuery:(id*)arg1 index:(unsigned int)arg2;
 - (unsigned int)_indexOfSubQueryWithSubQueryIndex:(unsigned int)arg1 searchOptions:(unsigned int)arg2;
 - (id)_queryForMediaItemAtIndex:(unsigned int)arg1;

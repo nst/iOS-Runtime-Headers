@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDictionary;
-
 @interface SUScriptDictionary : NSObject {
     NSDictionary *_dictionary;
 }
 
-@property(readonly) NSDictionary * dictionary;
+@property (readonly) NSDictionary *dictionary;
 
 + (BOOL)isKeyExcludedFromWebScript:(const char *)arg1;
 

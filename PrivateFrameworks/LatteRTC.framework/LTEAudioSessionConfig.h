@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class LTENetworkAddress, NSString;
-
 @interface LTEAudioSessionConfig : NSObject {
     int _audioSessionMode;
     NSString *_cName;
@@ -32,31 +30,31 @@
     unsigned int _txPayloadType;
 }
 
-@property int audioSessionMode;
-@property(copy) NSString * cName;
-@property int codecType;
-@property int direction;
-@property unsigned int dtmfPayloadType;
-@property unsigned int dtmfTimestampRate;
-@property(getter=isDTXEnabled) BOOL dtxEnabled;
-@property(retain) LTENetworkAddress * localAddress;
-@property unsigned int maxPtime;
-@property(getter=isOctectAligned) BOOL octetAligned;
-@property int preferredAMRMode;
-@property unsigned int ptime;
-@property(getter=isRateAdaptationEnabled) BOOL rateAdaptationEnabled;
-@property int rateModeMask;
-@property(retain) LTENetworkAddress * remoteAddress;
-@property(getter=isRTCPEnabled) BOOL rtcpEnabled;
-@property unsigned short rtcpRemotePort;
-@property double rtcpSendInterval;
-@property(getter=isRTCPTimeOutEnabled) BOOL rtcpTimeOutEnabled;
-@property double rtcpTimeOutInterval;
-@property(getter=isRTCPXREnabled) BOOL rtcpXREnabled;
-@property(getter=isRTPTimeOutEnabled) BOOL rtpTimeOutEnabled;
-@property double rtpTimeOutInterval;
-@property unsigned int rxPayloadType;
-@property unsigned int txPayloadType;
+@property (nonatomic) int audioSessionMode;
+@property (nonatomic, copy) NSString *cName;
+@property (nonatomic) int codecType;
+@property (nonatomic) int direction;
+@property (nonatomic) unsigned int dtmfPayloadType;
+@property (nonatomic) unsigned int dtmfTimestampRate;
+@property (getter=isDTXEnabled, nonatomic) BOOL dtxEnabled;
+@property (nonatomic, retain) LTENetworkAddress *localAddress;
+@property (nonatomic) unsigned int maxPtime;
+@property (getter=isOctectAligned, nonatomic) BOOL octetAligned;
+@property (nonatomic) int preferredAMRMode;
+@property (nonatomic) unsigned int ptime;
+@property (getter=isRateAdaptationEnabled, nonatomic) BOOL rateAdaptationEnabled;
+@property (nonatomic) int rateModeMask;
+@property (nonatomic, retain) LTENetworkAddress *remoteAddress;
+@property (getter=isRTCPEnabled, nonatomic) BOOL rtcpEnabled;
+@property (nonatomic) unsigned short rtcpRemotePort;
+@property (nonatomic) double rtcpSendInterval;
+@property (getter=isRTCPTimeOutEnabled, nonatomic) BOOL rtcpTimeOutEnabled;
+@property (nonatomic) double rtcpTimeOutInterval;
+@property (getter=isRTCPXREnabled, nonatomic) BOOL rtcpXREnabled;
+@property (getter=isRTPTimeOutEnabled, nonatomic) BOOL rtpTimeOutEnabled;
+@property (nonatomic) double rtpTimeOutInterval;
+@property (nonatomic) unsigned int rxPayloadType;
+@property (nonatomic) unsigned int txPayloadType;
 
 - (int)audioSessionMode;
 - (id)cName;

@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class NSString;
+@interface AVAudioUnitGenerator : AVAudioUnit <AVAudioMixing>
 
-@interface AVAudioUnitGenerator : AVAudioUnit <AVAudioMixing> {
-}
-
-@property BOOL bypass;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property float volume;
+@property (nonatomic) BOOL bypass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) float volume;
 
 - (BOOL)bypass;
 - (id)initWithAudioComponentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1;

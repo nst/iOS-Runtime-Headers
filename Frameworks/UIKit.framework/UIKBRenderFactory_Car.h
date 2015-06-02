@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory_Car : UIKBRenderFactory {
-}
+@interface UIKBRenderFactory_Car : UIKBRenderFactory
 
-@property(readonly) float carScale;
+@property (nonatomic, readonly) float carScale;
 
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)activeKeyColor;

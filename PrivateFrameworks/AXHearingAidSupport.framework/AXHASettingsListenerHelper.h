@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class NSMutableArray;
-
 @interface AXHASettingsListenerHelper : NSObject {
     void *_listenerAddress;
     NSMutableArray *_selectorKeys;

@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureSessionInternal, NSArray, NSString;
-
 @interface AVCaptureSession : NSObject {
     AVCaptureSessionInternal *_internal;
 }
 
-@property BOOL automaticallyConfiguresApplicationAudioSession;
-@property(readonly) NSArray * inputs;
-@property(getter=isInterrupted,readonly) BOOL interrupted;
-@property(readonly) struct OpaqueCMClock { }* masterClock;
-@property(readonly) NSArray * outputs;
-@property(getter=isRunning,readonly) BOOL running;
-@property(copy) NSString * sessionPreset;
-@property BOOL usesApplicationAudioSession;
+@property (nonatomic) BOOL automaticallyConfiguresApplicationAudioSession;
+@property (nonatomic, readonly) NSArray *inputs;
+@property (getter=isInterrupted, nonatomic, readonly) BOOL interrupted;
+@property (nonatomic, readonly) struct OpaqueCMClock { }*masterClock;
+@property (nonatomic, readonly) NSArray *outputs;
+@property (getter=isRunning, nonatomic, readonly) BOOL running;
+@property (nonatomic, copy) NSString *sessionPreset;
+@property (nonatomic) BOOL usesApplicationAudioSession;
 
 + (id)allSessionPresets;
 + (id)alloc;

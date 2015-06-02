@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSString;
-
 @interface TIKeyboardCandidateSingle : TIKeyboardCandidate {
     NSString *_candidate;
     NSString *_input;
 }
 
-@property(copy) NSString * candidate;
-@property(copy) NSString * input;
+@property (nonatomic, copy) NSString *candidate;
+@property (nonatomic, copy) NSString *input;
 
 + (id)candidateWithCandidate:(id)arg1 forInput:(id)arg2;
 + (id)candidateWithUnchangedInput:(id)arg1;

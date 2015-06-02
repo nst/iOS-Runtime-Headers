@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@class AXDialectMap, NSArray, NSCharacterSet, NSLocale, NSString;
-
 @interface AXLanguageManager : NSObject {
     NSCharacterSet *_commonCharacters;
     AXDialectMap *_dialectForCurrentLocale;
@@ -12,12 +10,12 @@
     NSLocale *_userLocale;
 }
 
-@property(retain) NSCharacterSet * commonCharacters;
-@property AXDialectMap * dialectForCurrentLocale;
-@property AXDialectMap * dialectForSystemLanguage;
-@property(retain) NSArray * langMaps;
-@property(readonly) NSString * systemLanguageID;
-@property(copy) NSLocale * userLocale;
+@property (nonatomic, retain) NSCharacterSet *commonCharacters;
+@property (nonatomic) AXDialectMap *dialectForCurrentLocale;
+@property (nonatomic) AXDialectMap *dialectForSystemLanguage;
+@property (nonatomic, retain) NSArray *langMaps;
+@property (nonatomic, readonly) NSString *systemLanguageID;
+@property (nonatomic, copy) NSLocale *userLocale;
 
 + (id)commonPunctuationCharacters;
 + (id)dialectForAlternativeVoiceIdentifier:(id)arg1;

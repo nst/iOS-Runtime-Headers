@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSAttributedString, NSString, NSURL, UIImage;
-
 @interface SKUIBadgeViewElement : SKUIViewElement {
     UIImage *_fallbackImage;
     NSString *_resourceName;
@@ -15,12 +13,12 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) NSAttributedString * attributedString;
-@property(readonly) int badgeType;
-@property(readonly) UIImage * fallbackImage;
-@property(readonly) NSString * resourceName;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) NSAttributedString *attributedString;
+@property (nonatomic, readonly) int badgeType;
+@property (nonatomic, readonly) UIImage *fallbackImage;
+@property (nonatomic, readonly) NSString *resourceName;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 - (void).cxx_destruct;
 - (id)URL;

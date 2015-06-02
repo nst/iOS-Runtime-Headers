@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSMutableSet, SBFColorBoxes, UIImage;
-
 @interface SBFStaticWallpaperView : SBFWallpaperView {
     SBFColorBoxes *_colorBoxes;
     UIImage *_displayedImage;
@@ -12,7 +10,7 @@
     BOOL _sampleAndDiplayedImageAreSame;
 }
 
-@property(retain) SBFColorBoxes * colorBoxes;
+@property (nonatomic, retain) SBFColorBoxes *colorBoxes;
 
 + (BOOL)_allowsParallax;
 + (BOOL)_allowsRasterization;

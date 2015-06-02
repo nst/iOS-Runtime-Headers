@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKPuckAnimatorLocationProjector;
-
 @interface VKCameraContext : NSObject {
     BOOL _allowVerticalPanning;
     BOOL _animated;
@@ -36,17 +34,17 @@
     double _verticalGroundspanScale;
 }
 
-@property(readonly) BOOL allowVerticalPanning;
-@property(readonly) BOOL animated;
-@property BOOL applied;
-@property int courseSource;
-@property struct { double x1; double x2; } courseTargetLocation;
-@property int focusStyle;
-@property(readonly) double heading;
-@property(readonly) struct { double x1; double x2; } pointOfFocus;
-@property(readonly) struct { double x1; double x2; } pointOfReference;
-@property int style;
-@property(readonly) double verticalGroundspanScale;
+@property (nonatomic, readonly) BOOL allowVerticalPanning;
+@property (nonatomic, readonly) BOOL animated;
+@property (nonatomic) BOOL applied;
+@property (nonatomic) int courseSource;
+@property (nonatomic) struct { double x1; double x2; } courseTargetLocation;
+@property (nonatomic) int focusStyle;
+@property (nonatomic, readonly) double heading;
+@property (nonatomic, readonly) struct { double x1; double x2; } pointOfFocus;
+@property (nonatomic, readonly) struct { double x1; double x2; } pointOfReference;
+@property (nonatomic) int style;
+@property (nonatomic, readonly) double verticalGroundspanScale;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -61,7 +59,7 @@
 - (struct { double x1; double x2; })courseTargetLocation;
 - (void)dealloc;
 - (id)description;
-- (void)enumeratePointsOfInterestUsingBlock:(id)arg1;
+- (void)enumeratePointsOfInterestUsingBlock:(id /* block */)arg1;
 - (int)focusStyle;
 - (double)heading;
 - (id)init;

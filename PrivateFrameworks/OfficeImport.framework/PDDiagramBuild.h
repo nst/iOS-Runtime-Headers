@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PDDiagramBuild : PDBuild {
-}
+@interface PDDiagramBuild : PDBuild
 
 @end

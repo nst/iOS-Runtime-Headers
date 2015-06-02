@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact, NSString;
-
 @interface CNContactPropertyProxy : NSObject {
     CNContact *_contact;
     int _identifier;
     NSString *_property;
 }
 
-@property CNContact * contact;
+@property CNContact *contact;
 @property int identifier;
-@property NSString * property;
+@property NSString *property;
 
 + (id)proxyForContact:(id)arg1 propertyKey:(id)arg2 propertyIdentifier:(int)arg3;
 

@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUIDecoratedText, SAUINanoImageResource;
+@interface SASTComparisonEntity : AceObject <SAAceSerializable>
 
-@interface SASTComparisonEntity : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) SAUIDecoratedText * decoratedTitle;
-@property(retain) SAUIDecoratedText * decoratedValue;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUINanoImageResource * imageResource;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) SAUIDecoratedText *decoratedTitle;
+@property (nonatomic, retain) SAUIDecoratedText *decoratedValue;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUINanoImageResource *imageResource;
+@property (readonly) Class superclass;
 
 + (id)comparisonEntity;
 + (id)comparisonEntityWithDictionary:(id)arg1 context:(id)arg2;

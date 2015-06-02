@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class WBReader;
-
 @interface WBOfficeArtReaderState : OABReaderState {
     int mCurrentTextType;
     WBReader *mReader;
 }
 
-@property int currentTextType;
-@property WBReader * reader;
+@property (nonatomic) int currentTextType;
+@property (nonatomic) WBReader *reader;
 
 - (int)currentTextType;
 - (id)initWithClient:(Class)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSData, NSDate, NSNumber, NSString;
-
 @interface ISPurchaseReceipt : NSObject {
     BOOL _createdFromCoder;
     NSString *mAdamID;
@@ -33,30 +31,30 @@
     struct SecCmsSignedDataStr { } *mSignedData;
 }
 
-@property(readonly) NSString * adamID;
-@property(readonly) NSString * bundleIdentifier;
-@property(readonly) NSString * bundleVersion;
-@property(readonly) NSString * cancellationReason;
-@property(readonly) NSString * developerID;
-@property(readonly) NSString * downloadID;
-@property(readonly) NSString * dsid;
-@property(readonly) NSDate * expirationDate;
-@property(readonly) NSNumber * frToolVersion;
-@property(readonly) NSString * hwtype;
-@property(readonly) NSString * installerVersionID;
-@property(readonly) BOOL isProductionReceipt;
-@property(readonly) BOOL isRevoked;
-@property(readonly) BOOL isVPPLicensed;
-@property(readonly) NSString * organizationDisplayName;
-@property(readonly) NSString * parentalControls;
-@property(readonly) NSDate * purchaseDate;
-@property(readonly) NSString * purchaseDateString;
-@property(readonly) NSDate * receiptCreationDate;
-@property(readonly) NSData * receiptData;
-@property(readonly) NSString * receiptDataString;
-@property(readonly) NSString * receiptType;
-@property(readonly) NSDate * renewalDate;
-@property(readonly) NSString * renewalDateString;
+@property (readonly) NSString *adamID;
+@property (readonly) NSString *bundleIdentifier;
+@property (readonly) NSString *bundleVersion;
+@property (readonly) NSString *cancellationReason;
+@property (readonly) NSString *developerID;
+@property (readonly) NSString *downloadID;
+@property (readonly) NSString *dsid;
+@property (readonly) NSDate *expirationDate;
+@property (readonly) NSNumber *frToolVersion;
+@property (readonly) NSString *hwtype;
+@property (readonly) NSString *installerVersionID;
+@property (readonly) BOOL isProductionReceipt;
+@property (readonly) BOOL isRevoked;
+@property (readonly) BOOL isVPPLicensed;
+@property (readonly) NSString *organizationDisplayName;
+@property (readonly) NSString *parentalControls;
+@property (readonly) NSDate *purchaseDate;
+@property (readonly) NSString *purchaseDateString;
+@property (readonly) NSDate *receiptCreationDate;
+@property (readonly) NSData *receiptData;
+@property (readonly) NSString *receiptDataString;
+@property (readonly) NSString *receiptType;
+@property (readonly) NSDate *renewalDate;
+@property (readonly) NSString *renewalDateString;
 
 + (id)receiptFromBundleAtPath:(id)arg1;
 + (id)receiptFromBundleAtURL:(id)arg1;

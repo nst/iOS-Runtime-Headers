@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOMapItemURLExtras : NSObject {
-}
+@interface GEOMapItemURLExtras : NSObject
 
 + (id)_mapItemsFromDirectionsAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;
 + (id)_mapItemsFromPresentAction:(id)arg1 hasCurrentLocation:(BOOL*)arg2 currentLocationIndex:(unsigned int*)arg3 options:(id*)arg4;

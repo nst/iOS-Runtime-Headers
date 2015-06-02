@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class UIImageView;
-
 @interface MFComposeSMIMELockButton : UIButton {
     BOOL _canEncrypt;
     UIImageView *_lockedImageView;
@@ -17,9 +15,9 @@
     } touchInsets;
 }
 
-@property BOOL canEncrypt;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchInsets;
-@property BOOL wantsEncryption;
+@property (nonatomic) BOOL canEncrypt;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } touchInsets;
+@property (nonatomic) BOOL wantsEncryption;
 
 - (void)_closeLock;
 - (void)_openLock;

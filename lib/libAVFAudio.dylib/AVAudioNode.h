@@ -2,26 +2,19 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class AVAudioEngine, AVAudioTime, NSString;
-
 @interface AVAudioNode : NSObject <AVAudioMixing> {
     void *_impl;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) AVAudioEngine * engine;
-@property(readonly) unsigned int hash;
-@property(readonly) AVAudioTime * lastRenderTime;
-@property(readonly) unsigned int numberOfInputs;
-@property(readonly) unsigned int numberOfOutputs;
-@property(readonly) Class superclass;
-@property float volume;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) AVAudioEngine *engine;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) AVAudioTime *lastRenderTime;
+@property (nonatomic, readonly) unsigned int numberOfInputs;
+@property (nonatomic, readonly) unsigned int numberOfOutputs;
+@property (readonly) Class superclass;
+@property (nonatomic) float volume;
 
 - (struct OpaqueAudioComponentInstance { }*)audioUnit;
 - (id)clock;
@@ -29,11 +22,11 @@
 - (void)didAttachToEngine:(id)arg1;
 - (void)didDetachFromEngine:(id)arg1;
 - (id)engine;
-- (struct AVAudioNodeImplBase { int (**x1)(); struct AVAudioEngineImpl {} *x2; struct AVAudioNodeTap {} *x3; id x4; struct vector<bool, std::__1::allocator<bool> > { unsigned long *x_5_1_1; unsigned int x_5_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { unsigned long x_3_2_1; } x_5_1_3; } x5; bool x6; struct AVAudioMixingImpl {} *x7; }*)impl;
+- (struct AVAudioNodeImplBase { int (**x1)(); struct AVAudioEngineImpl {} *x2; struct AVAudioNodeTap {} *x3; id x4; void x5; /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*x6; BOOL x7; void*x8; out const void*x9; unsigned int x10/* : ? */; out out long x11; void*x12; void*x13; short x14; void*x15; double x16; SEL x17; SEL x18; void*x19; void*x20; void*x21; SEL x22; SEL x23; void*x24; long x25; long x26; out BOOL x27; void*x28; void*x29; out const void*x30; unsigned int x31/* : ? */; out out long x32; void*x33; void*x34; void*x35; void*x36; unsigned long *x37; unsigned int x38; struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { unsigned long x_39_1_1; } x39; }*)impl;
 - (id)init;
-- (id)initWithImpl:(struct AVAudioNodeImplBase { int (**x1)(); struct AVAudioEngineImpl {} *x2; struct AVAudioNodeTap {} *x3; id x4; struct vector<bool, std::__1::allocator<bool> > { unsigned long *x_5_1_1; unsigned int x_5_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { unsigned long x_3_2_1; } x_5_1_3; } x5; bool x6; struct AVAudioMixingImpl {} *x7; }*)arg1;
+- (id)initWithImpl:(struct AVAudioNodeImplBase { int (**x1)(); struct AVAudioEngineImpl {} *x2; struct AVAudioNodeTap {} *x3; id x4; void x5; /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*x6; BOOL x7; void*x8; out const void*x9; unsigned int x10/* : ? */; out out long x11; void*x12; void*x13; short x14; void*x15; double x16; SEL x17; SEL x18; void*x19; void*x20; void*x21; SEL x22; SEL x23; void*x24; long x25; long x26; out BOOL x27; void*x28; void*x29; out const void*x30; unsigned int x31/* : ? */; out out long x32; void*x33; void*x34; void*x35; void*x36; unsigned long *x37; unsigned int x38; struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { unsigned long x_39_1_1; } x39; }*)arg1;
 - (id)inputFormatForBus:(unsigned int)arg1;
-- (void)installTapOnBus:(unsigned int)arg1 bufferSize:(unsigned int)arg2 format:(id)arg3 block:(id)arg4;
+- (void)installTapOnBus:(unsigned int)arg1 bufferSize:(unsigned int)arg2 format:(id)arg3 block:(id /* block */)arg4;
 - (id)lastRenderTime;
 - (id)nameForInputBus:(unsigned int)arg1;
 - (id)nameForOutputBus:(unsigned int)arg1;

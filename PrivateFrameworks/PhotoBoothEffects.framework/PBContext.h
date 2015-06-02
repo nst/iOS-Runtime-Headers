@@ -2,19 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoBoothEffects.framework/PhotoBoothEffects
  */
 
-@interface PBContext : NSObject {
-}
+@interface PBContext : NSObject
 
-@property(retain) struct __CVPixelBufferPool { }* largePool;
-@property struct _CAImageQueue { }* outputImageQueue;
-@property(retain) struct __CVPixelBufferPool { }* smallPool;
+@property (nonatomic, retain) struct __CVPixelBufferPool { }*largePool;
+@property (nonatomic) struct _CAImageQueue { }*outputImageQueue;
+@property (nonatomic, retain) struct __CVPixelBufferPool { }*smallPool;
 
 + (id)openCLContext;
 + (id)openGLContext;
 + (id)openGLContext:(id)arg1;
 
-- (void)applyFilter:(id)arg1 toSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 resultHandler:(id)arg4;
-- (void)applyFilter:(id)arg1 toSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 surfaceResultHandler:(id)arg4;
+- (void)applyFilter:(id)arg1 toSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 resultHandler:(id /* block */)arg4;
+- (void)applyFilter:(id)arg1 toSurface:(struct __IOSurface { }*)arg2 mirrored:(BOOL)arg3 surfaceResultHandler:(id /* block */)arg4;
 - (struct __CVBuffer { }*)createCVPixelBufferForFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2;
 - (struct __CVBuffer { }*)createCVPixelBufferForFilter:(id)arg1 inputPixelBuffer:(struct __CVBuffer { }*)arg2 mirrored:(BOOL)arg3;
 - (id)init;

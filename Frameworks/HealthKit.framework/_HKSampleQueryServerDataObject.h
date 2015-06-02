@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSArray;
-
 @interface _HKSampleQueryServerDataObject : _HKQueryServerDataObject {
     unsigned int _limit;
     NSArray *_sortDescriptors;
 }
 
-@property unsigned int limit;
-@property(retain) NSArray * sortDescriptors;
+@property (nonatomic) unsigned int limit;
+@property (nonatomic, retain) NSArray *sortDescriptors;
 
 + (BOOL)supportsSecureCoding;
 

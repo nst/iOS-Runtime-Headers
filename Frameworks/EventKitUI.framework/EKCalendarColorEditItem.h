@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSMutableArray;
-
 @interface EKCalendarColorEditItem : EKCalendarEditItem {
     NSMutableArray *_cells;
     unsigned int _checkedRow;
 }
 
-@property(readonly) NSMutableArray * cells;
+@property (nonatomic, readonly) NSMutableArray *cells;
 
 - (void).cxx_destruct;
 - (id)_cellForColor:(id)arg1;

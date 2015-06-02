@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class <MPUInsetProxyScrollViewDelegate>;
+@interface MPUInsetProxyScrollView : UIScrollView
 
-@interface MPUInsetProxyScrollView : UIScrollView {
-}
-
-@property <MPUInsetProxyScrollViewDelegate> * delegate;
+@property (nonatomic) <MPUInsetProxyScrollViewDelegate> *delegate;
 
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setScrollIndicatorInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

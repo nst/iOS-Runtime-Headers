@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MSVCPLoggingController : NSObject {
     NSMutableDictionary *_cachedLoggingLevelPairs;
     BOOL _cachedPPTTestsAreInProgress;
@@ -15,9 +13,9 @@
     NSObject<OS_dispatch_queue> *_serialLoggingQueue;
 }
 
-@property(copy,readonly) NSString * defaultCategory;
-@property BOOL masterLoggingSwitchEnabled;
-@property(copy,readonly) NSArray * registeredConfigurations;
+@property (nonatomic, readonly, copy) NSString *defaultCategory;
+@property (nonatomic) BOOL masterLoggingSwitchEnabled;
+@property (nonatomic, readonly, copy) NSArray *registeredConfigurations;
 
 + (id)sharedController;
 

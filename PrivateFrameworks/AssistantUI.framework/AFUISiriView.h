@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <AFUISiriViewDelegate>, NSString, SiriUIAudioRoutePickerButton, SiriUIHelpButton, UIButton, UIView, UIView<SBUIPasscodeLockView>, UIView<SiriUISiriStatusViewProtocol>, _UIBackdropView;
-
 @interface AFUISiriView : UIView <SBUIPasscodeLockViewDelegate, SiriUISiriStatusViewDelegate> {
     SiriUIAudioRoutePickerButton *_audioRoutePickerButton;
     _UIBackdropView *_backdropView;
@@ -29,44 +23,36 @@
     UIView<SiriUISiriStatusViewProtocol> *_siriStatusView;
     UIView *_statusViewContainer;
     BOOL _statusViewHidden;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _triggerUpdater;
-
+    id /* block */ _triggerUpdater;
     unsigned int _unlockAttemptCount;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _unlockCompletion;
-
+    id /* block */ _unlockCompletion;
 }
 
-@property BOOL carDisplaySnippetVisible;
-@property(retain) UIView * contentView;
-@property(copy,readonly) NSString * debugDescription;
-@property <AFUISiriViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL disabled;
-@property(readonly) UIView * foregroundView;
-@property int frozenBackdropSnapshotOrientation;
-@property(retain) UIView * frozenBackdropSnapshotView;
-@property(readonly) unsigned int hash;
-@property int mode;
-@property int siriSessionState;
-@property BOOL statusViewHidden;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL carDisplaySnippetVisible;
+@property (nonatomic, retain) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AFUISiriViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disabled;
+@property (nonatomic, readonly) UIView *foregroundView;
+@property (nonatomic) int frozenBackdropSnapshotOrientation;
+@property (nonatomic, retain) UIView *frozenBackdropSnapshotView;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int mode;
+@property (nonatomic) int siriSessionState;
+@property (nonatomic) BOOL statusViewHidden;
+@property (readonly) Class superclass;
 
-+ (void)_animateView:(id)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fromYPosition:(float)arg3 toYPostion:(float)arg4 fade:(int)arg5 completion:(id)arg6;
++ (void)_animateView:(id)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fromYPosition:(float)arg3 toYPostion:(float)arg4 fade:(int)arg5 completion:(id /* block */)arg6;
 
 - (void).cxx_destruct;
-- (void)_animateLockViewIsAnimatingIn:(BOOL)arg1 completion:(id)arg2;
+- (void)_animateLockViewIsAnimatingIn:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_audioRouteButtonTapped:(id)arg1;
 - (void)_configureHelpButton;
 - (void)_configureReportBugButton;
 - (void)_helpButtonTapped:(id)arg1;
 - (void)_hideLockViewWithResult:(int)arg1;
-- (void)_hideLockViewWithResult:(int)arg1 hideCompletion:(id)arg2;
+- (void)_hideLockViewWithResult:(int)arg1 hideCompletion:(id /* block */)arg2;
 - (void)_layoutReportBugButton;
 - (id)_lockViewBackgroundColor;
 - (id)_lockViewLegibilityProvider;
@@ -110,7 +96,7 @@
 - (void)setSiriSessionState:(int)arg1;
 - (void)setStatusViewHidden:(BOOL)arg1;
 - (void)setStatusViewUserInteractionEnabled:(BOOL)arg1;
-- (void)showPasscodeUnlockWithCompletion:(id)arg1;
+- (void)showPasscodeUnlockWithCompletion:(id /* block */)arg1;
 - (void)siriDidActivateFromSource:(int)arg1;
 - (int)siriSessionState;
 - (void)siriStatusViewHoldDidBegin:(id)arg1;

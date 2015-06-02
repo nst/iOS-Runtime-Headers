@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSDate, NSString, UIDateLabel, UIImageView, UILabel;
-
 @interface CKConversationListCell : UITableViewCell {
     UIImageView *_chevronImageView;
     UIDateLabel *_dateLabel;
@@ -17,9 +15,9 @@
     UIImageView *_unreadIndicatorImageView;
 }
 
-@property(retain) NSDate * searchMessageDate;
-@property(copy) NSString * searchMessageGUID;
-@property(copy) NSString * searchSummaryText;
+@property (nonatomic, retain) NSDate *searchMessageDate;
+@property (nonatomic, copy) NSString *searchMessageGUID;
+@property (nonatomic, copy) NSString *searchSummaryText;
 
 + (float)cellHeight;
 + (id)identifier;

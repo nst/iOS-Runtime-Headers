@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLEngineFileStorage, CPLPlatformObject, NSMutableSet, NSString, NSURL;
-
 @interface CPLEngineResourceStorage : CPLEngineStorage <CPLAbstractObject> {
     CPLEngineFileStorage *_fileStorage;
     NSMutableSet *_identitiesToCommit;
@@ -11,12 +9,12 @@
     NSURL *_tempFolderURL;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) CPLEngineFileStorage * fileStorage;
-@property(readonly) unsigned int hash;
-@property(readonly) CPLPlatformObject * platformObject;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) CPLEngineFileStorage *fileStorage;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) CPLPlatformObject *platformObject;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)compactWithError:(id*)arg1;

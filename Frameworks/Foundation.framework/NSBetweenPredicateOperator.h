@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSBetweenPredicateOperator : NSPredicateOperator {
-}
+@interface NSBetweenPredicateOperator : NSPredicateOperator
 
 - (void)_setOptions:(unsigned int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

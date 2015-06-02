@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCAVPlayerDelegate>, AVPlayerItem;
-
 @interface RCAVPlayer : AVPlayer {
     AVPlayerItem *_AVPlayerItemBeingObserved;
     <RCAVPlayerDelegate> *_delegate;
@@ -12,9 +10,9 @@
     BOOL _valid;
 }
 
-@property <RCAVPlayerDelegate> * delegate;
-@property(readonly) BOOL isReadyToPlay;
-@property double updateRate;
+@property (nonatomic) <RCAVPlayerDelegate> *delegate;
+@property (nonatomic, readonly) BOOL isReadyToPlay;
+@property (nonatomic) double updateRate;
 
 - (void).cxx_destruct;
 - (void)_AVAudioSessionMediaServicesWereLostNotification:(id)arg1;

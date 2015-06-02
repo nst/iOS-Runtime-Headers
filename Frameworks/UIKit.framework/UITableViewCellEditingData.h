@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITableViewCell, UITableViewCellDeleteConfirmationControl_Legacy, UITableViewCellEditControl, UITableViewCellReorderControl, UIView;
-
 @interface UITableViewCellEditingData : NSObject {
     UITableViewCell *_cell;
     UITableViewCellDeleteConfirmationControl_Legacy *_deleteConfirmationControl;
@@ -13,7 +11,7 @@
     UIView *_reorderSeparatorView;
 }
 
-@property(getter=isDataRequired,readonly) BOOL dataRequired;
+@property (getter=isDataRequired, nonatomic, readonly) BOOL dataRequired;
 
 - (void)dealloc;
 - (id)deleteConfirmationControl:(BOOL)arg1;

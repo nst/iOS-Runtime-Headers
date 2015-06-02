@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSWPTOCController>, NSArray, NSSet, TSWPTOCPartitioner, TSWPTOCSettings;
-
 @interface TSWPTOCInfo : TSWPShapeInfo {
     NSArray *_pageNumberRanges;
     TSWPTOCPartitioner *_partitioner;
@@ -17,11 +10,11 @@
     TSWPTOCSettings *_tocSettings;
 }
 
-@property(retain) NSArray * pageNumberRanges;
-@property(readonly) NSSet * paragraphStylesShownInTOC;
-@property <TSWPTOCController> * tocController;
-@property(setter=setTOCEntries:,retain) NSArray * tocEntries;
-@property(setter=setTOCSettings:,retain) TSWPTOCSettings * tocSettings;
+@property (nonatomic, retain) NSArray *pageNumberRanges;
+@property (nonatomic, readonly) NSSet *paragraphStylesShownInTOC;
+@property (nonatomic) <TSWPTOCController> *tocController;
+@property (setter=setTOCEntries:, nonatomic, retain) NSArray *tocEntries;
+@property (setter=setTOCSettings:, nonatomic, retain) TSWPTOCSettings *tocSettings;
 
 + (BOOL)canPartition;
 

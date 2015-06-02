@@ -2,122 +2,112 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <TSUMultipleChoiceListChoiceProviding>, NSString, NSUUID, TSDCommentStorage, TSTCellBorder, TSTCellStyle, TSTConditionalStyleSet, TSTImportWarningSet, TSTRichTextPayload, TSUCustomFormat, TSUFormatObject, TSULocale, TSWPParagraphStyle, TSWPStorage;
-
 @interface TSTCell : NSObject <NSCopying> {
     TSULocale *mLocale;
-
-  /* Error parsing encoded ivar type info: {?="mUnused"b8"mValueType"b8"mCellFlags"b16"mValue"(?="mDouble"d"mString"{?="mID"I"mString"@"NSString"}"mDate"@"NSDate")"mCellStyleID"I"mCellStyle"@"TSTCellStyle""mTextStyleID"I"mTextStyle"@"TSWPParagraphStyle""mConditionalStyleSetID"I"mConditionalStyleSet"@"TSTConditionalStyleSet""mConditionalAppliedRule"C"mFormulaID"I"mFormula"^{TSCEFormula}"mFormulaSyntaxErrorID"I"mFormulaSyntaxError"@"TSWPStorage""mRichTextPayloadID"I"mRichTextPayload"@"TSTRichTextPayload""mCommentStorageID"I"mCommentStorage"@"TSDCommentStorage""mImportWarningSetID"I"mImportWarningSet"@"TSTImportWarningSet""mCellFormats"{?="mExplicitFormatFlags"b16"mCurrentCellFormatID"I"mCurrentCellFormat"{?="mFormatType"i""(?="mNumberFormatStruct"{?="mCurrencyCodeIndex"b16"mDecimalPlaces"b8"mNegativeStyle"b3"mShowThousandsSeparator"b1"mUseAccountingStyle"b1}"mFractionFormatStruct"{?="mFractionAccuracy"b8}"mBaseFormatStruct"{?="mBase"b8"mBasePlaces"b8"mBaseUseMinusSign"b1}"mDateFormatStruct"{?="mSuppressDateFormat"b1"mSuppressTimeFormat"b1"mDateTimeFormat"@"NSString"}"mDurationFormatStruct"{?="mUseAutomaticUnits"b1"mDurationUnitSmallest"i"mDurationUnitLargest"i"mDurationStyle"i}"mCustomFormatStruct"{?="mCustomFormatKey"@"NSUUID""mCustomFormat"@"TSUCustomFormat""mLegacyID"I"mAppliedConditionKey"C}"mControlFormatStruct"{?="mMinimum"d"mMaximum"d"mIncrement"d"mDisplayFormatType"i"mOrientation"b2"mPosition"b2}"mMultipleChoiceListFormatStruct"{?="mInitialValue"i"mMultipleChoiceListFormatID"I"mData"@"<TSUMultipleChoiceListChoiceProviding>"})}"mNumberFormatID"I"mNumberFormatRef"@"TSUFormatObject""mCurrencyFormatID"I"mCurrencyFormatRef"@"TSUFormatObject""mDurationFormatID"I"mDurationFormatRef"@"TSUFormatObject""mDateFormatID"I"mDateFormatRef"@"TSUFormatObject""mControlFormatID"I"mControlFormatRef"@"TSUFormatObject""mCustomFormatID"I"mCustomFormatRef"@"TSUFormatObject""mBaseFormatID"I"mBaseFormatRef"@"TSUFormatObject""mMultipleChoiceListFormatID"I"mMultipleChoiceListFormatRef"@"TSUFormatObject"}"mCellBorder"@"TSTCellBorder"} */
     struct { 
         unsigned int mUnused : 8; 
         unsigned int mValueType : 8; 
         unsigned int mCellFlags : 16; 
-        union { 
+        /* Warning: unhandled union encoding: '(?="mDouble"d"mString"{?="mID"I"mString"@"NSString"}"mDate"@"NSDate")"mCellStyleID"I"mCellStyle"@"TSTCellStyle""mTextStyleID"I"mTextStyle"@"TSWPParagraphStyle""mConditionalStyleSetID"I"mConditionalStyleSet"@"TSTConditionalStyleSet""mConditionalAppliedRule"C"mFormulaID"I"mFormula"^{TSCEFormula}"mFormulaSyntaxErrorID"I"mFormulaSyntaxError"@"TSWPStorage""mRichTextPayloadID"I"mRichTextPayload"@"TSTRichTextPayload""mCommentStorageID"I"mCommentStorage"@"TSDCommentStorage""mImportWarningSetID"I"mImportWarningSet"@"TSTImportWarningSet""mCellFormats"{?="mExplicitFormatFlags"b16"mCurrentCellFormatID"I"mCurrentCellFormat"{?="mFormatType"i""(?="mNumberFormatStruct"{?="mCurrencyCodeIndex"b16"mDecimalPlaces"b8"mNegativeStyle"b3"mShowThousandsSeparator"b1"mUseAccountingStyle"b1}"mFractionFormatStruct"{?="mFractionAccuracy"b8}"mBaseFormatStruct"{?="mBase"b8"mBasePlaces"b8"mBaseUseMinusSign"b1}"mDateFormatStruct"{?="mSuppressDateFormat"b1"mSuppressTimeFormat"b1"mDateTimeFormat"@"NSString"}"mDurationFormatStruct"{?="mUseAutomaticUnits"b1"mDurationUnitSmallest"i"mDurationUnitLargest"i"mDurationStyle"i}"mCustomFormatStruct"{?="mCustomFormatKey"@"NSUUID""mCustomFormat"@"TSUCustomFormat""mLegacyID"I"mAppliedConditionKey"C}"mControlFormatStruct"{?="mMinimum"d"mMaximum"d"mIncrement"d"mDisplayFormatType"i"mOrientation"b2"mPosition"b2}"mMultipleChoiceListFormatStruct"{?="mInitialValue"i"mMultipleChoiceListFormatID"I"mData"@"<TSUMultipleChoiceListChoiceProviding>"})}"mNumberFormatID"I"mNumberFormatRef"@"TSUFormatObject""mCurrencyFormatID"I"mCurrencyFormatRef"@"TSUFormatObject""mDurationFormatID"I"mDurationFormatRef"@"TSUFormatObject""mDateFormatID"I"mDateFormatRef"@"TSUFormatObject""mControlFormatID"I"mControlFormatRef"@"TSUFormatObject""mCustomFormatID"I"mCustomFormatRef"@"TSUFormatObject""mBaseFormatID"I"mBaseFormatRef"@"TSUFormatObject""mMultipleChoiceListFormatID"I"mMultipleChoiceListFormatRef"@"TSUFormatObject"}"mCellBorder"@"TSTCellBorder"}' */ union { 
             double mDouble; 
             struct { 
                 unsigned int mID; 
                 NSString *mString; 
             } mString; 
             id mDate; 
-            /* Warning: Unrecognized filer type: ')' using 'void*' */ void*NSDate; 
-            unsigned int mCellStyleID; 
-            TSTCellStyle *mCellStyle; 
-            unsigned int mTextStyleID; 
-            TSWPParagraphStyle *mTextStyle; 
-            unsigned int mConditionalStyleSetID; 
-            TSTConditionalStyleSet *mConditionalStyleSet; 
-            unsigned char mConditionalAppliedRule; 
-            unsigned int mFormulaID; 
-            struct TSCEFormula {} *mFormula; 
-            unsigned int mFormulaSyntaxErrorID; 
-            TSWPStorage *mFormulaSyntaxError; 
-            unsigned int mRichTextPayloadID; 
-            TSTRichTextPayload *mRichTextPayload; 
-            unsigned int mCommentStorageID; 
-            TSDCommentStorage *mCommentStorage; 
-            unsigned int mImportWarningSetID; 
-            TSTImportWarningSet *mImportWarningSet; 
-            struct { 
-                unsigned int mExplicitFormatFlags : 16; 
-                unsigned int mCurrentCellFormatID; 
-                struct { 
-                    int mFormatType; 
-                    union { 
-                        struct { 
-                            unsigned int mCurrencyCodeIndex : 16; 
-                            unsigned int mDecimalPlaces : 8; 
-                            unsigned int mNegativeStyle : 3; 
-                            unsigned int mShowThousandsSeparator : 1; 
-                            unsigned int mUseAccountingStyle : 1; 
-                        } mNumberFormatStruct; 
-                        struct { 
-                            unsigned int mFractionAccuracy : 8; 
-                        } mFractionFormatStruct; 
-                        struct { 
-                            unsigned int mBase : 8; 
-                            unsigned int mBasePlaces : 8; 
-                            unsigned int mBaseUseMinusSign : 1; 
-                        } mBaseFormatStruct; 
-                        struct { 
-                            unsigned int mSuppressDateFormat : 1; 
-                            unsigned int mSuppressTimeFormat : 1; 
-                            NSString *mDateTimeFormat; 
-                        } mDateFormatStruct; 
-                        struct { 
-                            unsigned int mUseAutomaticUnits : 1; 
-                            int mDurationUnitSmallest; 
-                            int mDurationUnitLargest; 
-                            int mDurationStyle; 
-                        } mDurationFormatStruct; 
-                        struct { 
-                            NSUUID *mCustomFormatKey; 
-                            TSUCustomFormat *mCustomFormat; 
-                            unsigned int mLegacyID; 
-                            unsigned char mAppliedConditionKey; 
-                        } mCustomFormatStruct; 
-                        struct { 
-                            double mMinimum; 
-                            double mMaximum; 
-                            double mIncrement; 
-                            int mDisplayFormatType; 
-                            unsigned int mOrientation : 2; 
-                            unsigned int mPosition : 2; 
-                        } mControlFormatStruct; 
-                        struct { 
-                            int mInitialValue; 
-                            unsigned int mMultipleChoiceListFormatID; 
-                            <TSUMultipleChoiceListChoiceProviding> *mData; 
-                        } mMultipleChoiceListFormatStruct; 
-                    } ; 
-                } mCurrentCellFormat; 
-                unsigned int mNumberFormatID; 
-                TSUFormatObject *mNumberFormatRef; 
-                unsigned int mCurrencyFormatID; 
-                TSUFormatObject *mCurrencyFormatRef; 
-                unsigned int mDurationFormatID; 
-                TSUFormatObject *mDurationFormatRef; 
-                unsigned int mDateFormatID; 
-                TSUFormatObject *mDateFormatRef; 
-                unsigned int mControlFormatID; 
-                TSUFormatObject *mControlFormatRef; 
-                unsigned int mCustomFormatID; 
-                TSUFormatObject *mCustomFormatRef; 
-                unsigned int mBaseFormatID; 
-                TSUFormatObject *mBaseFormatRef; 
-                unsigned int mMultipleChoiceListFormatID; 
-                TSUFormatObject *mMultipleChoiceListFormatRef; 
-            } mCellFormats; 
-            TSTCellBorder *mCellBorder; 
         } mValue; 
+        unsigned int mCellStyleID; 
+        TSTCellStyle *mCellStyle; 
+        unsigned int mTextStyleID; 
+        TSWPParagraphStyle *mTextStyle; 
+        unsigned int mConditionalStyleSetID; 
+        TSTConditionalStyleSet *mConditionalStyleSet; 
+        unsigned char mConditionalAppliedRule; 
+        unsigned int mFormulaID; 
+        struct TSCEFormula {} *mFormula; 
+        unsigned int mFormulaSyntaxErrorID; 
+        TSWPStorage *mFormulaSyntaxError; 
+        unsigned int mRichTextPayloadID; 
+        TSTRichTextPayload *mRichTextPayload; 
+        unsigned int mCommentStorageID; 
+        TSDCommentStorage *mCommentStorage; 
+        unsigned int mImportWarningSetID; 
+        TSTImportWarningSet *mImportWarningSet; 
+        struct { 
+            unsigned int mExplicitFormatFlags : 16; 
+            unsigned int mCurrentCellFormatID; 
+            struct { 
+                int mFormatType; 
+                union { 
+                    struct { 
+                        unsigned int mCurrencyCodeIndex : 16; 
+                        unsigned int mDecimalPlaces : 8; 
+                        unsigned int mNegativeStyle : 3; 
+                        unsigned int mShowThousandsSeparator : 1; 
+                        unsigned int mUseAccountingStyle : 1; 
+                    } mNumberFormatStruct; 
+                    struct { 
+                        unsigned int mFractionAccuracy : 8; 
+                    } mFractionFormatStruct; 
+                    struct { 
+                        unsigned int mBase : 8; 
+                        unsigned int mBasePlaces : 8; 
+                        unsigned int mBaseUseMinusSign : 1; 
+                    } mBaseFormatStruct; 
+                    struct { 
+                        unsigned int mSuppressDateFormat : 1; 
+                        unsigned int mSuppressTimeFormat : 1; 
+                        NSString *mDateTimeFormat; 
+                    } mDateFormatStruct; 
+                    struct { 
+                        unsigned int mUseAutomaticUnits : 1; 
+                        int mDurationUnitSmallest; 
+                        int mDurationUnitLargest; 
+                        int mDurationStyle; 
+                    } mDurationFormatStruct; 
+                    struct { 
+                        NSUUID *mCustomFormatKey; 
+                        TSUCustomFormat *mCustomFormat; 
+                        unsigned int mLegacyID; 
+                        unsigned char mAppliedConditionKey; 
+                    } mCustomFormatStruct; 
+                    struct { 
+                        double mMinimum; 
+                        double mMaximum; 
+                        double mIncrement; 
+                        int mDisplayFormatType; 
+                        unsigned int mOrientation : 2; 
+                        unsigned int mPosition : 2; 
+                    } mControlFormatStruct; 
+                    struct { 
+                        int mInitialValue; 
+                        unsigned int mMultipleChoiceListFormatID; 
+                        <TSUMultipleChoiceListChoiceProviding> *mData; 
+                    } mMultipleChoiceListFormatStruct; 
+                } ; 
+            } mCurrentCellFormat; 
+            unsigned int mNumberFormatID; 
+            TSUFormatObject *mNumberFormatRef; 
+            unsigned int mCurrencyFormatID; 
+            TSUFormatObject *mCurrencyFormatRef; 
+            unsigned int mDurationFormatID; 
+            TSUFormatObject *mDurationFormatRef; 
+            unsigned int mDateFormatID; 
+            TSUFormatObject *mDateFormatRef; 
+            unsigned int mControlFormatID; 
+            TSUFormatObject *mControlFormatRef; 
+            unsigned int mCustomFormatID; 
+            TSUFormatObject *mCustomFormatRef; 
+            unsigned int mBaseFormatID; 
+            TSUFormatObject *mBaseFormatRef; 
+            unsigned int mMultipleChoiceListFormatID; 
+            TSUFormatObject *mMultipleChoiceListFormatRef; 
+        } mCellFormats; 
+        TSTCellBorder *mCellBorder; 
     } mPrivate;
-
 }
 
-@property(readonly) TSULocale * locale;
+@property (nonatomic, readonly) TSULocale *locale;
 
 - (id).cxx_construct;
 - (void)applyFormulaResult:(const struct TSCEValue { unsigned int x1[64]; int x2; }*)arg1;

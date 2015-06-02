@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDUnprotectedKeyValueEntity : HDKeyValueEntity {
-}
+@interface HDUnprotectedKeyValueEntity : HDKeyValueEntity
 
 + (id)databaseTable;
 + (int)protectionClass;

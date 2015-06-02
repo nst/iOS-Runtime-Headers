@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicNoContentViewController : UIViewController {
-}
+@interface MusicNoContentViewController : UIViewController
 
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)music_hasContent;

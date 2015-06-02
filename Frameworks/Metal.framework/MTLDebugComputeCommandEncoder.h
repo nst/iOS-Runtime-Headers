@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLComputePipelineState>, <MTLDevice>, MTLDebugFunctionArgument;
-
 @interface MTLDebugComputeCommandEncoder : MTLToolsComputeCommandEncoder {
-    MTLDebugFunctionArgument *_buffers[31];
+    MTLDebugFunctionArgument *_buffers;
     <MTLDevice> *_cachedDevice;
     <MTLComputePipelineState> *_computePipelineState;
     const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; unsigned int x19; float x20; float x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; } *_limits;
-    MTLDebugFunctionArgument *_samplers[16];
-    MTLDebugFunctionArgument *_textures[31];
-    MTLDebugFunctionArgument *_threadgroupMemoryLengths[31];
+    MTLDebugFunctionArgument *_samplers;
+    MTLDebugFunctionArgument *_textures;
+    MTLDebugFunctionArgument *_threadgroupMemoryLengths;
     BOOL canDealloc;
     BOOL canEndEncoding;
     BOOL canSetComputePipelineState;
@@ -19,8 +17,8 @@
     BOOL hasSetComputePipelineState;
 }
 
-@property(readonly) <MTLDevice> * cachedDevice;
-@property(readonly) <MTLComputePipelineState> * computePipelineState;
+@property (nonatomic, readonly) <MTLDevice> *cachedDevice;
+@property (nonatomic, readonly) <MTLComputePipelineState> *computePipelineState;
 
 - (void).cxx_destruct;
 - (void)_setDefaults;

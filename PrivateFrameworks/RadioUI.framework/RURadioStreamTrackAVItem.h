@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSArray, NSData, NSString, _MPRadioStreamMetadata;
-
 @interface RURadioStreamTrackAVItem : RURadioAVItem <AVAssetResourceLoaderDelegate> {
     _MPRadioStreamMetadata *_adamIDMetadata;
     long long _albumStoreID;
@@ -15,10 +13,10 @@
     _MPRadioStreamMetadata *_timedMetadata;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_createMetadataForRadioStreamTrack;

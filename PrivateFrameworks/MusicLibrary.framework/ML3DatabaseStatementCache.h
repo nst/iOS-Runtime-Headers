@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3StatementCacheList, NSMutableDictionary;
-
 @interface ML3DatabaseStatementCache : NSObject {
     unsigned int _cacheSize;
     ML3StatementCacheList *_nodeList;
     NSMutableDictionary *_statementsDictionary;
 }
 
-@property(readonly) unsigned int cacheSize;
+@property (nonatomic, readonly) unsigned int cacheSize;
 
 - (void).cxx_destruct;
 - (id)allStatements;

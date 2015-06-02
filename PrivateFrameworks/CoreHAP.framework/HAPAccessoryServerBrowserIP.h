@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class <HAPAccessoryServerBrowserDelegate>, NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface HAPAccessoryServerBrowserIP : HAPAccessoryServerBrowser {
     struct BonjourBrowser { } *_bonjourBrowser;
     <HAPAccessoryServerBrowserDelegate> *_delegate;
@@ -11,9 +9,9 @@
     NSMutableSet *_discoveredAccessoryServers;
 }
 
-@property <HAPAccessoryServerBrowserDelegate> * delegate;
-@property(retain) NSObject<OS_dispatch_queue> * delegateQueue;
-@property(retain) NSMutableSet * discoveredAccessoryServers;
+@property (nonatomic) <HAPAccessoryServerBrowserDelegate> *delegate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (nonatomic, retain) NSMutableSet *discoveredAccessoryServers;
 
 - (void).cxx_destruct;
 - (BOOL)_delegateRespondsToSelector:(SEL)arg1;

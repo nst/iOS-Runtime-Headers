@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSNumber, NSString, SKUIInfoListViewElement, SKUIViewElementLayoutContext;
-
 @interface SKUIKeyValueInfoListPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
     SKUIInfoListViewElement *_infoList;
@@ -11,13 +9,13 @@
     NSArray *_viewElements;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_enumerateVisibleViewElementsUsingBlock:(id)arg1;
+- (void)_enumerateVisibleViewElementsUsingBlock:(id /* block */)arg1;
 - (void)_reloadViewElementProperties;
 - (void)_requestCellLayout;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;

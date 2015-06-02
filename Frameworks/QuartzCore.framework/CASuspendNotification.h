@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CASuspendNotification : NSObject {
-}
+@interface CASuspendNotification : NSObject
 
 - (void)willSuspend:(id)arg1;
 

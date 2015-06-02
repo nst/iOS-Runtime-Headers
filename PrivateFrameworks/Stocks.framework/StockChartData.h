@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSArray, NSDate, NSMutableDictionary, NSTimeZone, Stock;
-
 @interface StockChartData : NSObject {
     int _chartInterval;
     double _expirationTime;
@@ -26,21 +24,21 @@
     NSMutableDictionary *_yAxisLabelInfoCache;
 }
 
-@property int chartInterval;
-@property double expirationTime;
-@property BOOL hasVolume;
-@property(retain) NSArray * interestingIndexes;
-@property BOOL isUnavailable;
-@property(retain) NSDate * marketCloseDate;
-@property(retain) NSDate * marketOpenDate;
-@property(retain) NSTimeZone * marketTimeZone;
-@property struct { double x1; double x2; unsigned long long x3; }* maxValue;
-@property struct { double x1; double x2; unsigned long long x3; }* minValue;
-@property float previousClosePrice;
-@property Stock * stock;
-@property(readonly) unsigned int stockValueCount;
-@property(readonly) struct { double x1; double x2; unsigned long long x3; }* stockValues;
-@property int yAxisFractionDigits;
+@property (nonatomic) int chartInterval;
+@property (nonatomic) double expirationTime;
+@property (nonatomic) BOOL hasVolume;
+@property (nonatomic, retain) NSArray *interestingIndexes;
+@property (nonatomic) BOOL isUnavailable;
+@property (nonatomic, retain) NSDate *marketCloseDate;
+@property (nonatomic, retain) NSDate *marketOpenDate;
+@property (nonatomic, retain) NSTimeZone *marketTimeZone;
+@property (nonatomic) struct { double x1; double x2; unsigned long long x3; }*maxValue;
+@property (nonatomic) struct { double x1; double x2; unsigned long long x3; }*minValue;
+@property (nonatomic) float previousClosePrice;
+@property (nonatomic) Stock *stock;
+@property (readonly) unsigned int stockValueCount;
+@property (readonly) struct { double x1; double x2; unsigned long long x3; }*stockValues;
+@property (nonatomic) int yAxisFractionDigits;
 
 - (void).cxx_destruct;
 - (struct { double x1; double x2; unsigned long long x3; }*)allocateStockValuesWithCount:(unsigned int)arg1;

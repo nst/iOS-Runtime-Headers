@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSArray, NSData, NSDate, NSString;
-
 @interface CPLMasterChange : CPLItemChange {
     NSDate *_creationDate;
     NSString *_filename;
@@ -17,22 +15,22 @@
     NSArray *_resources;
 }
 
-@property(copy) NSDate * creationDate;
-@property(copy) NSString * filename;
-@property unsigned int fullSizeJPEGSource;
-@property(copy) NSDate * importDate;
-@property(copy) NSString * importGroupIdentifier;
-@property(readonly) BOOL isImage;
-@property(readonly) BOOL isVideo;
-@property(copy) NSString * itemType;
-@property(retain) NSData * mediaMetaData;
-@property(copy) NSString * mediaMetaDataType;
-@property int originalOrientation;
-@property(copy) NSArray * resources;
+@property (nonatomic, copy) NSDate *creationDate;
+@property (nonatomic, copy) NSString *filename;
+@property (nonatomic) unsigned int fullSizeJPEGSource;
+@property (nonatomic, copy) NSDate *importDate;
+@property (nonatomic, copy) NSString *importGroupIdentifier;
+@property (nonatomic, readonly) BOOL isImage;
+@property (nonatomic, readonly) BOOL isVideo;
+@property (nonatomic, copy) NSString *itemType;
+@property (nonatomic, retain) NSData *mediaMetaData;
+@property (nonatomic, copy) NSString *mediaMetaDataType;
+@property (nonatomic) int originalOrientation;
+@property (nonatomic, copy) NSArray *resources;
 
 - (void).cxx_destruct;
 - (void)awakeFromStorage;
-- (id)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
+- (id /* block */)checkDefaultValueBlockForPropertyWithSelector:(SEL)arg1;
 - (id)creationDate;
 - (unsigned int)dataClassType;
 - (int)dequeueOrder;

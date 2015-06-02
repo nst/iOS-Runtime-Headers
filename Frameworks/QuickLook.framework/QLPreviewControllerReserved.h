@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <QLPreviewItem>, MPVolumeView, NSArray, NSMutableDictionary, NSNumberFormatter, NSString, NSURL, QLArchiveViewer, QLPreviewItemsSource, UIBarButtonItem, UIDocumentInteractionController, UILabel, UINavigationController, UIView, UIViewController<QLPreviewContentControllerProtocol>, _UIAsyncInvocation;
-
 @interface QLPreviewControllerReserved : NSObject {
     UIBarButtonItem *actionItem;
     UIBarButtonItem *archiveItem;
@@ -22,7 +16,7 @@
     UIDocumentInteractionController *interactionController;
     BOOL internalViewsLoaded;
     BOOL isDelayingPresentation;
-    unsigned int isInUIDICPopover : 1;
+    unsigned int isInUIDICPopover;
     QLPreviewItemsSource *itemsSource;
     NSURL *lastPreviewedCurrentItemURL;
     NSURL *lastPreviewedRealItemURL;
@@ -38,23 +32,15 @@
     UIBarButtonItem *playPauseButton;
     UIViewController<QLPreviewContentControllerProtocol> *previewContentController;
     <QLPreviewItem> *previewItem;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id readyBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id restorePreviousStateBlock;
-
+    id /* block */ readyBlock;
+    id /* block */ restorePreviousStateBlock;
     UIBarButtonItem *routeButton;
     BOOL scrubbing;
     BOOL showActionAsDefaultButton;
     BOOL sourceIsManaged;
-    unsigned int statusBarWasHidden : 1;
+    unsigned int statusBarWasHidden;
     UIBarButtonItem *titleItem;
-    unsigned int toolbarWasHidden : 1;
+    unsigned int toolbarWasHidden;
     BOOL useCustomActionButton;
     MPVolumeView *volumeView;
     MPVolumeView *volumeViewHidden;

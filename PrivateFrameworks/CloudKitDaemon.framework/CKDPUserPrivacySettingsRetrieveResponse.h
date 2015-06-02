@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPUserPrivacySettings, NSMutableArray;
-
 @interface CKDPUserPrivacySettingsRetrieveResponse : PBCodable <NSCopying> {
     NSMutableArray *_applicationBundles;
     CKDPUserPrivacySettings *_userPrivacySettings;
 }
 
-@property(retain) NSMutableArray * applicationBundles;
-@property(readonly) BOOL hasUserPrivacySettings;
-@property(retain) CKDPUserPrivacySettings * userPrivacySettings;
+@property (nonatomic, retain) NSMutableArray *applicationBundles;
+@property (nonatomic, readonly) BOOL hasUserPrivacySettings;
+@property (nonatomic, retain) CKDPUserPrivacySettings *userPrivacySettings;
 
 - (void).cxx_destruct;
 - (void)addApplicationBundle:(id)arg1;

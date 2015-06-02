@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableDictionary, TSKCustomFormatList, TSPLazyReference, TSTMergeRegionMap, TSTTableHeaderStorage, TSTTileIDKeyDict;
-
 @interface TSTTableDataStore : TSPContainedObject {
     unsigned long mCellCount;
     BOOL mCellCountValid;
@@ -35,17 +28,17 @@
     TSTTileIDKeyDict *mTileStorage;
 }
 
-@property(readonly) BOOL hasPasteboardCustomFormats;
+@property (nonatomic, readonly) BOOL hasPasteboardCustomFormats;
 
 - (id)addPasteboardCustomFormat:(id)arg1 toDocument:(id)arg2 updatingPasteboardFormat:(BOOL)arg3;
 - (void)clearPasteboardCustomFormatMap;
 - (void)copyPasteboardCustomFormatsFromDataStore:(id)arg1;
 - (void)dealloc;
 - (void)debugDump;
-- (void)enumerateCellStoragesInRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 withBlock:(id)arg2;
-- (void)enumerateColumnHeaderInfosWithBlock:(id)arg1;
-- (void)enumerateRowHeaderInfosWithBlock:(id)arg1;
-- (void)enumerateTilesAtNode:(struct TSTTableRBTreeNode_s { unsigned short x1; unsigned short x2; struct TSTTableRBTreeNode_s {} *x3; struct TSTTableRBTreeNode_s {} *x4; struct TSTTableRBTreeNode_s {} *x5; BOOL x6; }*)arg1 usingBlock:(id)arg2;
+- (void)enumerateCellStoragesInRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 withBlock:(id /* block */)arg2;
+- (void)enumerateColumnHeaderInfosWithBlock:(id /* block */)arg1;
+- (void)enumerateRowHeaderInfosWithBlock:(id /* block */)arg1;
+- (void)enumerateTilesAtNode:(struct TSTTableRBTreeNode_s { unsigned short x1; unsigned short x2; struct TSTTableRBTreeNode_s {} *x3; struct TSTTableRBTreeNode_s {} *x4; struct TSTTableRBTreeNode_s {} *x5; BOOL x6; }*)arg1 usingBlock:(id /* block */)arg2;
 - (void)gatherReorganizeValuesForColumn:(unsigned char)arg1 rowRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 outValues:(struct TSTCellReorganizeValue { unsigned int x1 : 8; unsigned int x2 : 8; union { double x_3_1_1; BOOL x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; struct TSTCellReorganizePopupInfo { unsigned int x_5_2_1; int x_5_2_2; } x_3_1_5; } x3; }*)arg3;
 - (BOOL)hasFormulaByID:(unsigned int)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (BOOL)hasPasteboardCustomFormats;

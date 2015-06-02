@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class <VimeoPostDelegate>, ACAccount, ALAsset, ALAssetsLibrary, NSArray, NSData, NSString, NSURL, VUDataReader;
-
 @interface VimeoPost : NSObject {
     unsigned int _accessType;
     ACAccount *_account;
@@ -30,23 +28,23 @@
     int _videoSize;
 }
 
-@property unsigned int accessType;
-@property(retain) ACAccount * account;
-@property(retain) ALAsset * asset;
-@property(retain) NSData * assetData;
-@property(retain) NSURL * assetURL;
-@property(retain) VUDataReader * dataReader;
-@property <VimeoPostDelegate> * delegate;
-@property(retain) NSURL * exportedVideoURL;
-@property(retain) NSString * postDescription;
-@property int privacySettings;
-@property(retain) NSArray * tags;
-@property(retain) NSString * title;
-@property int videoSize;
+@property (nonatomic) unsigned int accessType;
+@property (nonatomic, retain) ACAccount *account;
+@property (nonatomic, retain) ALAsset *asset;
+@property (nonatomic, retain) NSData *assetData;
+@property (nonatomic, retain) NSURL *assetURL;
+@property (nonatomic, retain) VUDataReader *dataReader;
+@property (nonatomic) <VimeoPostDelegate> *delegate;
+@property (nonatomic, retain) NSURL *exportedVideoURL;
+@property (nonatomic, retain) NSString *postDescription;
+@property (nonatomic) int privacySettings;
+@property (nonatomic, retain) NSArray *tags;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic) int videoSize;
 
 + (BOOL)_isUsingCellular;
 + (id)dictionaryWithResponseData:(id)arg1 error:(id*)arg2;
-+ (void)getAvailableQuotaForAccount:(id)arg1 completion:(id)arg2;
++ (void)getAvailableQuotaForAccount:(id)arg1 completion:(id /* block */)arg2;
 
 - (void).cxx_destruct;
 - (void)_checkQuota;

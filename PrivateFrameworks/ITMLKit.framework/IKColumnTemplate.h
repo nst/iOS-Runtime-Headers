@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKColumnCollectionElement, IKDocumentBannerElement;
+@interface IKColumnTemplate : IKViewElement
 
-@interface IKColumnTemplate : IKViewElement {
-}
-
-@property(retain,readonly) IKColumnCollectionElement * columnCollection;
-@property(retain,readonly) IKDocumentBannerElement * documentBanner;
+@property (nonatomic, readonly, retain) IKColumnCollectionElement *columnCollection;
+@property (nonatomic, readonly, retain) IKDocumentBannerElement *documentBanner;
 
 - (id)columnCollection;
 - (id)documentBanner;

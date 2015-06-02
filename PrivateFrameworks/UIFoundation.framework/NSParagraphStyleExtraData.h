@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSArray;
-
 @interface NSParagraphStyleExtraData : NSObject {
     int _headerLevel;
     float _hyphenationFactor;

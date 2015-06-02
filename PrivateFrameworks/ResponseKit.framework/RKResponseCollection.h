@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface RKResponseCollection : NSObject {
     NSString *_context;
     NSMutableDictionary *_phraseMap;
@@ -11,10 +9,10 @@
     NSMutableDictionary *_responseCatalogNonEditable;
 }
 
-@property(retain) NSString * context;
-@property(retain) NSMutableDictionary * phraseMap;
-@property(retain) NSMutableDictionary * responseCatalogEditable;
-@property(retain) NSMutableDictionary * responseCatalogNonEditable;
+@property (retain) NSString *context;
+@property (retain) NSMutableDictionary *phraseMap;
+@property (retain) NSMutableDictionary *responseCatalogEditable;
+@property (retain) NSMutableDictionary *responseCatalogNonEditable;
 
 + (id)responseCollectionWithContext:(id)arg1;
 

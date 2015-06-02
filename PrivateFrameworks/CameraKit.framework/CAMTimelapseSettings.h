@@ -8,12 +8,12 @@
     double _maxOutputLength;
 }
 
-@property(readonly) double initialCaptureTimeInterval;
-@property(readonly) int maxFailedStateReadAttempts;
-@property(readonly) int maxMovieWriteAttempts;
-@property(readonly) double maxOutputFPS;
-@property(readonly) int maxOutputFrames;
-@property(readonly) double maxOutputLength;
+@property (nonatomic, readonly) double initialCaptureTimeInterval;
+@property (nonatomic, readonly) int maxFailedStateReadAttempts;
+@property (nonatomic, readonly) int maxMovieWriteAttempts;
+@property (nonatomic, readonly) double maxOutputFPS;
+@property (nonatomic, readonly) int maxOutputFrames;
+@property (nonatomic, readonly) double maxOutputLength;
 
 + (id)sharedInstance;
 

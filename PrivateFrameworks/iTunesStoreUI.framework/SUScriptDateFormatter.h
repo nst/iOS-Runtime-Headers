@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSDateFormatter, NSString;
-
 @interface SUScriptDateFormatter : SUScriptObject {
     NSDateFormatter *_dateFormatter;
 }
 
-@property(copy) NSString * dateFormat;
-@property(readonly) unsigned int dateFormatterFullStyle;
-@property(readonly) unsigned int dateFormatterLongStyle;
-@property(readonly) unsigned int dateFormatterMediumStyle;
-@property(readonly) unsigned int dateFormatterNoStyle;
-@property(readonly) unsigned int dateFormatterShortStyle;
+@property (copy) NSString *dateFormat;
+@property (readonly) unsigned int dateFormatterFullStyle;
+@property (readonly) unsigned int dateFormatterLongStyle;
+@property (readonly) unsigned int dateFormatterMediumStyle;
+@property (readonly) unsigned int dateFormatterNoStyle;
+@property (readonly) unsigned int dateFormatterShortStyle;
 @property unsigned int dateStyle;
-@property(copy) NSString * localeIdentifier;
+@property (copy) NSString *localeIdentifier;
 @property unsigned int timeStyle;
 
 + (void)initialize;

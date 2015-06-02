@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface WebThreadSafeUndoManager : NSUndoManager {
-}
+@interface WebThreadSafeUndoManager : NSUndoManager
 
 - (BOOL)_alwaysShowEditAlertView;
 - (void)redo;

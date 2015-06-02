@@ -11,7 +11,7 @@
     } mImp;
 }
 
-@property(readonly) double value;
+@property (nonatomic, readonly) double value;
 
 - (id).cxx_construct;
 - (id)enumerator;

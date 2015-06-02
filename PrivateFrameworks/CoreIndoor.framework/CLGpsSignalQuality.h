@@ -6,7 +6,7 @@
     int _quality;
 }
 
-@property int quality;
+@property (nonatomic) int quality;
 
 + (BOOL)supportsSecureCoding;
 

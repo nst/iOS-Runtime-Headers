@@ -8,9 +8,9 @@
     BOOL _logLocationIndicatorSent;
 }
 
-@property BOOL isInternalBuild;
-@property BOOL logLevelsMaxedOut;
-@property BOOL logLocationIndicatorSent;
+@property (nonatomic) BOOL isInternalBuild;
+@property (nonatomic) BOOL logLevelsMaxedOut;
+@property (nonatomic) BOOL logLocationIndicatorSent;
 
 + (id)sharedInstance;
 

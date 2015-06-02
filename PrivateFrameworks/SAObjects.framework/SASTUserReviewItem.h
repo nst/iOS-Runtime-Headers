@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SAUIDecoratedText;
+@interface SASTUserReviewItem : AceObject <SASTTemplateItem>
 
-@interface SASTUserReviewItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SAUIDecoratedText * reviewDate;
-@property(retain) SAUIDecoratedText * reviewText;
-@property(retain) SAUIDecoratedText * reviewer;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SAUIDecoratedText *reviewDate;
+@property (nonatomic, retain) SAUIDecoratedText *reviewText;
+@property (nonatomic, retain) SAUIDecoratedText *reviewer;
+@property (readonly) Class superclass;
 
 + (id)userReviewItem;
 + (id)userReviewItemWithDictionary:(id)arg1 context:(id)arg2;

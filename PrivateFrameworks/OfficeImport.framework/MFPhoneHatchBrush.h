@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSUColor;
-
 @interface MFPhoneHatchBrush : MFPhoneBrush {
     OITSUColor *m_colour;
     int m_style;

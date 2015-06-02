@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OITSUBundleLookupClass : NSObject {
-}
+@interface OITSUBundleLookupClass : NSObject
 
 @end

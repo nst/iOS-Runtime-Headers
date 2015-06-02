@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, _UIBackdropView;
-
 @interface _UIModalItemAlertBackgroundView : _UIModalItemBackgroundView {
     _UIBackdropView *_effectView;
     UIImageView *_fillingView;

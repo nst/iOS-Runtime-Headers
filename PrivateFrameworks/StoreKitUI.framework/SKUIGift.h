@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSDate, NSString, SKUIGiftTheme, SKUIItem;
-
 @interface SKUIGift : NSObject <NSCopying> {
     int _category;
     NSDate *_deliveryDate;
@@ -18,17 +16,17 @@
     NSString *_totalGiftAmountString;
 }
 
-@property(copy) NSDate * deliveryDate;
-@property int giftAmount;
-@property(copy) NSString * giftAmountString;
-@property(readonly) int giftCategory;
-@property(readonly) SKUIItem * item;
-@property(copy) NSString * message;
-@property(copy) NSArray * recipientAddresses;
-@property(copy) NSString * senderEmailAddress;
-@property(copy) NSString * senderName;
-@property(copy) SKUIGiftTheme * theme;
-@property(copy) NSString * totalGiftAmountString;
+@property (nonatomic, copy) NSDate *deliveryDate;
+@property (nonatomic) int giftAmount;
+@property (nonatomic, copy) NSString *giftAmountString;
+@property (nonatomic, readonly) int giftCategory;
+@property (nonatomic, readonly) SKUIItem *item;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSArray *recipientAddresses;
+@property (nonatomic, copy) NSString *senderEmailAddress;
+@property (nonatomic, copy) NSString *senderName;
+@property (nonatomic, copy) SKUIGiftTheme *theme;
+@property (nonatomic, copy) NSString *totalGiftAmountString;
 
 - (void).cxx_destruct;
 - (id)HTTPBodyDictionary;

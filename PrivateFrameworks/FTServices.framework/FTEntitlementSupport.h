@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@class NSDictionary;
-
 @interface FTEntitlementSupport : NSObject {
     struct __CTServerConnection { } *_ctServerConnection;
     struct __CFString { } *_entitlementStatus;
 }
 
-@property(readonly) BOOL faceTimeNonWiFiEntitled;
-@property(retain,readonly) NSDictionary * registrationState;
+@property (nonatomic, readonly) BOOL faceTimeNonWiFiEntitled;
+@property (nonatomic, readonly, retain) NSDictionary *registrationState;
 
 + (id)sharedInstance;
 

@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class MFMessageStore, MFMimePart, NSArray, NSString, NSURL;
-
 @interface MFMessage : NSObject <NSCopying> {
     NSArray *_bcc;
     NSString *_cachedMessageIDHeader;
-    unsigned int _calculatedAttachmentInfo : 1;
+    unsigned int _calculatedAttachmentInfo;
     NSArray *_cc;
     NSString *_contentType;
     long long _conversationID;
@@ -28,7 +26,7 @@
     NSArray *_to;
 }
 
-@property(retain) MFMimePart * parentPart;
+@property (nonatomic, retain) MFMimePart *parentPart;
 
 + (Class)dataMessageStoreToUse;
 + (id)messageWithRFC822Data:(id)arg1;

@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKAudioElement, NSArray, UIColor;
+@interface IKBackgroundElement : IKViewElement
 
-@interface IKBackgroundElement : IKViewElement {
-}
-
-@property(retain,readonly) IKAudioElement * audio;
-@property(retain,readonly) UIColor * backgroundColor;
-@property(retain,readonly) NSArray * images;
-@property(readonly) double transitionInterval;
+@property (nonatomic, readonly, retain) IKAudioElement *audio;
+@property (nonatomic, readonly, retain) UIColor *backgroundColor;
+@property (nonatomic, readonly, retain) NSArray *images;
+@property (nonatomic, readonly) double transitionInterval;
 
 - (id)audio;
 - (id)backgroundColor;

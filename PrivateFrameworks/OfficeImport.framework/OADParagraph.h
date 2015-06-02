@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OADCharacterProperties, OADParagraphProperties;
-
 @interface OADParagraph : NSObject {
     OADCharacterProperties *mParagraphEndCharacterProperties;
     OADParagraphProperties *mProperties;

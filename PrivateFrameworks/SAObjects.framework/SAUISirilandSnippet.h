@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAUISirilandSnippet : SAUISnippet
 
-@interface SAUISirilandSnippet : SAUISnippet {
-}
-
-@property(copy) NSString * navigationPath;
+@property (nonatomic, copy) NSString *navigationPath;
 
 + (id)sirilandSnippet;
 + (id)sirilandSnippetWithDictionary:(id)arg1 context:(id)arg2;

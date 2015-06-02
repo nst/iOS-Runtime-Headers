@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIModalDocumentController;
-
 @interface SKUIJSModalDocumentController : IKJSObject <SKUIJSModalDocumentController> {
     SKUIModalDocumentController *_modalDocumentController;
 }
 
-@property(retain,readonly) NSArray * documents;
+@property (nonatomic, readonly, retain) NSArray *documents;
 
 - (void).cxx_destruct;
 - (id)_adjustedOptionsWithOptions:(id)arg1;

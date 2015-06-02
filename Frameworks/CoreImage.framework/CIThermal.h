@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIThermal : CILumaMap {
-}
+@interface CIThermal : CILumaMap
 
 + (id)customAttributes;
 

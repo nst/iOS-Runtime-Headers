@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class GEOMapItemPhotosAttribution, NSArray;
-
 @interface _MKMapItemPhotosAttribution : _MKMapItemAttribution {
     GEOMapItemPhotosAttribution *_geoPhotosAttribution;
 }
 
-@property(readonly) NSArray * addPhotoURLs;
+@property (nonatomic, readonly) NSArray *addPhotoURLs;
 
 - (void).cxx_destruct;
 - (id)addPhotoURLs;

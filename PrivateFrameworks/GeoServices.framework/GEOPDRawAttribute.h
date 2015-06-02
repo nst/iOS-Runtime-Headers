@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOPDRawAttribute : PBCodable <NSCopying> {
     NSString *_key;
     NSString *_value;
 }
 
-@property(readonly) BOOL hasKey;
-@property(readonly) BOOL hasValue;
-@property(retain) NSString * key;
-@property(retain) NSString * value;
+@property (nonatomic, readonly) BOOL hasKey;
+@property (nonatomic, readonly) BOOL hasValue;
+@property (nonatomic, retain) NSString *key;
+@property (nonatomic, retain) NSString *value;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

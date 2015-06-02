@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext, NSMutableArray, NSMutableDictionary, NSMutableSet, NSOperationQueue, NSSQLAdapter, NSSQLConnection, NSSQLEntity, NSSQLModel, NSSQLRow, NSSQLRowCache, NSSaveChangesRequest, NSSet, NSString, NSURL;
-
 @interface NSSQLCore : NSPersistentStore <NSFilePresenter> {
     NSSQLAdapter *_adapter;
     NSMutableDictionary *_batchFaultBuffer;
@@ -47,13 +45,13 @@
     NSMutableDictionary *_updatedFOKRowsInCurrentSave;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(copy,readonly) NSURL * presentedItemURL;
-@property(copy,readonly) NSURL * primaryPresentedItemURL;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
+@property (readonly, copy) NSURL *presentedItemURL;
+@property (readonly, copy) NSURL *primaryPresentedItemURL;
+@property (readonly) Class superclass;
 
 + (BOOL)SQLGenerationV1Default;
 + (BOOL)_destroyPersistentStoreAtURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
@@ -124,7 +122,7 @@
 - (id)_ubiquityDictionaryForAttribute:(id)arg1 onObject:(id)arg2;
 - (void)_uncacheRows:(id)arg1;
 - (void)_useModel:(id)arg1;
-- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id)arg1;
+- (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;
 - (id)adapter;
 - (id)availableChannel;
 - (void)beginBatchUpdateOnConnection:(id)arg1;

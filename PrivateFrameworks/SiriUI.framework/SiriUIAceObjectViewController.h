@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class <SiriUIAceObjectViewControllerDelegate>, AceObject, NSString;
-
 @interface SiriUIAceObjectViewController : UIViewController <SiriUIViewController> {
     AceObject *_aceObject;
     <SiriUIAceObjectViewControllerDelegate> *_delegate;
     BOOL _virgin;
 }
 
-@property(retain) AceObject * aceObject;
-@property(copy,readonly) NSString * debugDescription;
-@property <SiriUIAceObjectViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(getter=isVirgin,readonly) BOOL virgin;
+@property (nonatomic, retain) AceObject *aceObject;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SiriUIAceObjectViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (getter=isVirgin, nonatomic, readonly) BOOL virgin;
 
 - (void).cxx_destruct;
 - (void)_aceObjectViewControllerWillBeRemoved;

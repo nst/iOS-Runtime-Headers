@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, UIImageView;
-
 @interface SKUIIPhoneSlideshowCell : UICollectionViewCell {
     struct CGSize { 
         float width; 
@@ -13,10 +11,10 @@
     UIImageView *_playIcon;
 }
 
-@property(retain) UIImage * image;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageFrame;
-@property struct CGSize { float x1; float x2; } imageSize;
-@property(getter=isVideo) BOOL video;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageFrame;
+@property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
+@property (getter=isVideo, nonatomic) BOOL video;
 
 - (void).cxx_destruct;
 - (id)image;

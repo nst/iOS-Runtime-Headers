@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SASportsTeamSnippet : SASportsSnippet
 
-@interface SASportsTeamSnippet : SASportsSnippet {
-}
-
-@property(copy) NSArray * teams;
+@property (nonatomic, copy) NSArray *teams;
 
 + (id)teamSnippet;
 + (id)teamSnippetWithDictionary:(id)arg1 context:(id)arg2;

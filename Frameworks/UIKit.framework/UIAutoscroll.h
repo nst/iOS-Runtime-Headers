@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSTimer, UIView<UIAutoscrollContainer>;
-
 @interface UIAutoscroll : NSObject {
     BOOL m_active;
     unsigned int m_count;
@@ -18,13 +16,13 @@
     NSTimer *m_timer;
 }
 
-@property BOOL active;
-@property unsigned int count;
-@property int directions;
-@property struct CGPoint { float x1; float x2; } point;
-@property double repeatInterval;
-@property(retain) UIView<UIAutoscrollContainer> * scrollContainer;
-@property(retain) id target;
+@property (nonatomic) BOOL active;
+@property (nonatomic) unsigned int count;
+@property (nonatomic) int directions;
+@property (nonatomic) struct CGPoint { float x1; float x2; } point;
+@property (nonatomic) double repeatInterval;
+@property (nonatomic, retain) UIView<UIAutoscrollContainer> *scrollContainer;
+@property (nonatomic, retain) id target;
 
 - (BOOL)active;
 - (unsigned int)count;

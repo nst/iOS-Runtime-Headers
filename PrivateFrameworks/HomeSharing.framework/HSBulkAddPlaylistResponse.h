@@ -6,7 +6,7 @@
     unsigned int _containerID;
 }
 
-@property unsigned int containerID;
+@property (nonatomic) unsigned int containerID;
 
 - (unsigned int)containerID;
 - (void)setContainerID:(unsigned int)arg1;

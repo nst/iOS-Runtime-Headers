@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class HAPCharacteristicMetadata, HAPService, NSNumber, NSString;
-
 @interface HAPCharacteristic : NSObject {
     BOOL _eventNotificationsEnabled;
     NSNumber *_instanceID;
@@ -15,15 +13,15 @@
     id _value;
 }
 
-@property BOOL eventNotificationsEnabled;
-@property(copy) NSNumber * instanceID;
-@property(retain) HAPCharacteristicMetadata * metadata;
-@property unsigned int properties;
-@property HAPService * service;
-@property BOOL shouldValidateValueAfterReading;
-@property(readonly) BOOL supportsAdditionalAuthorizationData;
-@property(copy) NSString * type;
-@property(copy) id value;
+@property (nonatomic) BOOL eventNotificationsEnabled;
+@property (nonatomic, copy) NSNumber *instanceID;
+@property (nonatomic, retain) HAPCharacteristicMetadata *metadata;
+@property (nonatomic) unsigned int properties;
+@property (nonatomic) HAPService *service;
+@property (nonatomic) BOOL shouldValidateValueAfterReading;
+@property (nonatomic, readonly) BOOL supportsAdditionalAuthorizationData;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic, copy) id value;
 
 - (void).cxx_destruct;
 - (id)_generateValidMetadata:(id)arg1;

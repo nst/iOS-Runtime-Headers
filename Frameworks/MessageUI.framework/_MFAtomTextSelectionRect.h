@@ -17,9 +17,9 @@
     } rect;
 }
 
-@property BOOL containsEnd;
-@property BOOL containsStart;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
+@property (nonatomic) BOOL containsEnd;
+@property (nonatomic) BOOL containsStart;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
 
 - (BOOL)containsEnd;
 - (BOOL)containsStart;

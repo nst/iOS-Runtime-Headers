@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartGridRenderer : TSCHRenderer {
-}
+@interface TSCHChartGridRenderer : TSCHRenderer
 
 - (void)dealloc;
 - (id)init;

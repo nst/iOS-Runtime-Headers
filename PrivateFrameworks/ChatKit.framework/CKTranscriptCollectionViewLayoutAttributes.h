@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKChatItem;
-
 @interface CKTranscriptCollectionViewLayoutAttributes : UICollectionViewLayoutAttributes {
     CKChatItem *_chatItem;
     struct CATransform3D { 
@@ -54,8 +52,8 @@
     } _targetFrame;
 }
 
-@property(retain) CKChatItem * chatItem;
-@property(readonly) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } contentTransform3D;
+@property (nonatomic, retain) CKChatItem *chatItem;
+@property (nonatomic, readonly) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } contentTransform3D;
 
 - (id)chatItem;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })contentTransform3D;

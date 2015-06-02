@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@interface CUIMutablePSDImageRef : CUIPSDImageRef {
-}
+@interface CUIMutablePSDImageRef : CUIPSDImageRef
 
 - (void)addLayer:(id)arg1;
 - (void)addLayoutMetricsChannel:(id)arg1;
@@ -20,8 +19,8 @@
 - (unsigned int)newSliceRectsArray:(struct PSDRect {}**)arg1 withXCutPositions:(id)arg2 yCutPositions:(id)arg3;
 - (unsigned int)newUInt32CArray:(unsigned int**)arg1 withNSArray:(id)arg2 prependNumber:(id)arg3 appendNumber:(id)arg4;
 - (unsigned int)psdLayerBlendModeForCGBlendMode:(int)arg1;
-- (BOOL)saveToURL:(id)arg1 completionHandler:(id)arg2;
-- (BOOL)saveWithCompletionHandler:(id)arg1;
+- (BOOL)saveToURL:(id)arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)saveWithCompletionHandler:(id /* block */)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)updateSliceName:(id)arg1 atIndex:(unsigned int)arg2;
 

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class BSEventQueue, NSString;
-
 @interface BSEventQueueLock : NSObject {
     BSEventQueue *_eventQueue;
     NSString *_reason;
     BOOL _relinquished;
 }
 
-@property(retain) BSEventQueue * eventQueue;
-@property(copy) NSString * reason;
+@property (nonatomic, retain) BSEventQueue *eventQueue;
+@property (nonatomic, copy) NSString *reason;
 
 - (void)dealloc;
 - (id)description;

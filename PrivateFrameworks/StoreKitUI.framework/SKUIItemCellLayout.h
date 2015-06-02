@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUICellImageView, SKUIItemOffer, SKUIItemOfferButton, SKUIItemOfferButtonAppearance, SKUIItemState, UIImage, UILabel, UIView;
-
 @interface SKUIItemCellLayout : SKUICellLayout <SKUIItemOfferButtonDelegate> {
     BOOL _hidesItemOfferButton;
     BOOL _highlighted;
@@ -19,24 +17,24 @@
     BOOL _selected;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL displaysItemOfferButton;
-@property(readonly) unsigned int hash;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(retain) UIImage * iconImage;
-@property(getter=isIconImageHidden) BOOL iconImageHidden;
-@property(readonly) UIView * iconImageView;
-@property(retain) SKUIItemOffer * itemOffer;
-@property(readonly) SKUIItemOfferButton * itemOfferButton;
-@property(retain) SKUIItemOfferButtonAppearance * itemOfferButtonAppearance;
-@property(readonly) UILabel * itemOfferNoticeLabel;
-@property(copy) NSString * itemOfferNoticeString;
-@property(copy) SKUIItemState * itemState;
-@property(readonly) UIView * removeControlView;
-@property(getter=isRestricted) BOOL restricted;
-@property(getter=isSelected) BOOL selected;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL displaysItemOfferButton;
+@property (readonly) unsigned int hash;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, retain) UIImage *iconImage;
+@property (getter=isIconImageHidden, nonatomic) BOOL iconImageHidden;
+@property (nonatomic, readonly) UIView *iconImageView;
+@property (nonatomic, retain) SKUIItemOffer *itemOffer;
+@property (nonatomic, readonly) SKUIItemOfferButton *itemOfferButton;
+@property (nonatomic, retain) SKUIItemOfferButtonAppearance *itemOfferButtonAppearance;
+@property (nonatomic, readonly) UILabel *itemOfferNoticeLabel;
+@property (nonatomic, copy) NSString *itemOfferNoticeString;
+@property (nonatomic, copy) SKUIItemState *itemState;
+@property (nonatomic, readonly) UIView *removeControlView;
+@property (getter=isRestricted, nonatomic) BOOL restricted;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_canShowItemOfferNotice;

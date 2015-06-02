@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPStoreItemOffer, NSSet;
-
 @interface MPUSystemBuyButtonConfiguration : NSObject {
     float _downloadProgress;
     MPStoreItemOffer *_offer;
@@ -11,11 +9,11 @@
     BOOL _visible;
 }
 
-@property float downloadProgress;
-@property(readonly) NSSet * interfacePerceptibleKeyPaths;
-@property(retain) MPStoreItemOffer * offer;
-@property unsigned int progressType;
-@property BOOL visible;
+@property (nonatomic) float downloadProgress;
+@property (nonatomic, readonly) NSSet *interfacePerceptibleKeyPaths;
+@property (nonatomic, retain) MPStoreItemOffer *offer;
+@property (nonatomic) unsigned int progressType;
+@property (nonatomic) BOOL visible;
 
 - (void).cxx_destruct;
 - (float)downloadProgress;

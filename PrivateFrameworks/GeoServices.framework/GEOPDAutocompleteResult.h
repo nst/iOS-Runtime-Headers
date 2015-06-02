@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOPDAutocompleteResult : PBCodable <NSCopying> {
     NSMutableArray *_sections;
 }
 
-@property(retain) NSMutableArray * sections;
+@property (nonatomic, retain) NSMutableArray *sections;
 
 - (void)addSections:(id)arg1;
 - (void)clearSections;

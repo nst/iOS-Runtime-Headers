@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString, PLPhotoLibrary;
-
 @interface PLBulletinsTestDaemonJob : PLDaemonJob {
     NSArray *_addedAssetUUIDs;
     NSString *_albumUUID;
@@ -11,10 +9,10 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property(retain) NSArray * addedAssetUUIDs;
-@property(retain) NSString * albumUUID;
+@property (nonatomic, retain) NSArray *addedAssetUUIDs;
+@property (nonatomic, retain) NSString *albumUUID;
 @property long long bulletinType;
-@property(retain) PLPhotoLibrary * photoLibrary;
+@property (nonatomic, retain) PLPhotoLibrary *photoLibrary;
 
 + (void)notifyAssets:(id)arg1 wereAddedToAlbum:(id)arg2;
 + (void)notifyCommentWasReceivedForAssets:(id)arg1;

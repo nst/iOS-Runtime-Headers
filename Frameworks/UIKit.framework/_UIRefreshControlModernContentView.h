@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UILabel, UIView, _UIRefreshControlModernReplicatorView;
-
 @interface _UIRefreshControlModernContentView : _UIRefreshControlContentView {
     BOOL _animationsAreValid;
     BOOL _areAnimationsValid;
@@ -15,9 +13,9 @@
     UILabel *_textLabel;
 }
 
-@property BOOL areAnimationsValid;
-@property float currentPopStiffness;
-@property(readonly) UILabel * textLabel;
+@property (nonatomic) BOOL areAnimationsValid;
+@property (nonatomic) float currentPopStiffness;
+@property (nonatomic, readonly) UILabel *textLabel;
 
 - (void)_cleanUpAfterRevealing;
 - (double)_currentTimeOffset;

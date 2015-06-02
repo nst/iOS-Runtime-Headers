@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSSPropertyMap : NSObject <NSCopying, TSSPropertySource> {
     struct TSSPropertyStore { } *mStore;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)propertyMap;
 + (id)propertyMapWithDictionary:(id)arg1;
@@ -34,7 +32,7 @@
 - (id)diffOnlyDifferences:(id)arg1;
 - (id)diffPropertyNames:(id)arg1;
 - (double)doubleValueForProperty:(int)arg1;
-- (void)enumeratePropertiesAndObjectsUsingBlock:(id)arg1;
+- (void)enumeratePropertiesAndObjectsUsingBlock:(id /* block */)arg1;
 - (void)filterWithProperties:(id)arg1;
 - (float)floatValueForProperty:(int)arg1;
 - (unsigned int)hash;
@@ -49,14 +47,14 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectForProperty:(int)arg1;
 - (id)old_description;
-- (void)pSetArrayOfBools:(bool[9])arg1 forProperty:(int)arg2;
-- (void)pSetArrayOfFloats:(float[9])arg1 forProperty:(int)arg2;
-- (void)pSetArrayOfInts:(int[9])arg1 forProperty:(int)arg2;
-- (void)pSetArrayOfObjects:(id[9])arg1 forProperty:(int)arg2;
-- (void)pSetRepeatedArrayOfBools:(const struct RepeatedField<bool> { bool *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(bool[9])arg3 validator:(id)arg4;
-- (void)pSetRepeatedArrayOfFloats:(const struct RepeatedField<float> { float *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(float[9])arg3 validator:(id)arg4;
-- (void)pSetRepeatedArrayOfInts:(const struct RepeatedField<int> { int *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(int[9])arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6;
-- (void)pSetRepeatedArrayOfInts:(const struct RepeatedField<int> { int *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(int[9])arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6 usePreviousValueOnDefault:(BOOL)arg7;
+- (void)pSetArrayOfBools:(bool)arg1 forProperty:(int)arg2;
+- (void)pSetArrayOfFloats:(float)arg1 forProperty:(int)arg2;
+- (void)pSetArrayOfInts:(int)arg1 forProperty:(int)arg2;
+- (void)pSetArrayOfObjects:(/* Warning: unhandled array encoding: '[9@]' */ id)arg1 forProperty:(int)arg2;
+- (void)pSetRepeatedArrayOfBools:(const struct RepeatedField<bool> { bool *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(bool)arg3 validator:(id)arg4;
+- (void)pSetRepeatedArrayOfFloats:(const struct RepeatedField<float> { float *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(float)arg3 validator:(id)arg4;
+- (void)pSetRepeatedArrayOfInts:(const struct RepeatedField<int> { int *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(int)arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6;
+- (void)pSetRepeatedArrayOfInts:(const struct RepeatedField<int> { int *x1; int x2; int x3; }*)arg1 forProperty:(int)arg2 defaultValues:(int)arg3 min:(int)arg4 max:(int)arg5 validator:(id)arg6 usePreviousValueOnDefault:(BOOL)arg7;
 - (void)p_getAllKeys:(int*)arg1;
 - (id)propertyMapByAddingValuesFromPropertyMap:(id)arg1;
 - (id)propertyMapByRemovingValuesForProperties:(id)arg1;

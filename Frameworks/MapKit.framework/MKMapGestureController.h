@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKMapGestureControllerDelegate>, MKBasicMapView, MKTiltGestureRecognizer, MKVariableDelayTapRecognizer, NSString, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIPinchGestureRecognizer, UIRotationGestureRecognizer, UITapGestureRecognizer, _MKUserInteractionGestureRecognizer, _UIDynamicAnimationGroup, _UIDynamicValueAnimation;
-
 @interface MKMapGestureController : NSObject <MKVariableDelayTapRecognizerDelegate, UIGestureRecognizerDelegate, _MKUserInteractionGestureRecognizerTouchObserver> {
     <MKMapGestureControllerDelegate> *_delegate;
     BOOL _didStartLongPress;
@@ -25,22 +23,22 @@
     UITapGestureRecognizer *_twoFingerTapGestureRecognizer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <MKMapGestureControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) UITapGestureRecognizer * doubleTapGestureRecognizer;
-@property(readonly) unsigned int hash;
-@property(readonly) MKBasicMapView * mapView;
-@property(readonly) UIPanGestureRecognizer * panGestureRecognizer;
-@property BOOL panWithMomentum;
-@property(readonly) UIPinchGestureRecognizer * pinchGestureRecognizer;
-@property(getter=isRotationEnabled) BOOL rotationEnabled;
-@property(getter=isScrollEnabled) BOOL scrollEnabled;
-@property(readonly) Class superclass;
-@property(getter=isTiltEnabled) BOOL tiltEnabled;
-@property(readonly) UILongPressGestureRecognizer * twoFingerLongPressGestureRecognizer;
-@property(readonly) UITapGestureRecognizer * twoFingerTapGestureRecognizer;
-@property(getter=isZoomEnabled) BOOL zoomEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MKMapGestureControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UITapGestureRecognizer *doubleTapGestureRecognizer;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MKBasicMapView *mapView;
+@property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
+@property (nonatomic) BOOL panWithMomentum;
+@property (nonatomic, readonly) UIPinchGestureRecognizer *pinchGestureRecognizer;
+@property (getter=isRotationEnabled, nonatomic) BOOL rotationEnabled;
+@property (getter=isScrollEnabled, nonatomic) BOOL scrollEnabled;
+@property (readonly) Class superclass;
+@property (getter=isTiltEnabled, nonatomic) BOOL tiltEnabled;
+@property (nonatomic, readonly) UILongPressGestureRecognizer *twoFingerLongPressGestureRecognizer;
+@property (nonatomic, readonly) UITapGestureRecognizer *twoFingerTapGestureRecognizer;
+@property (getter=isZoomEnabled, nonatomic) BOOL zoomEnabled;
 
 - (void).cxx_destruct;
 - (void)_clearGesture:(id)arg1;

@@ -2,57 +2,35 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class GEOTileKeyList;
-
 @interface GEOTileLoaderDeprecatedCtx : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callback;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _error;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _finished;
-
+    id /* block */ _callback;
+    id /* block */ _error;
+    id /* block */ _finished;
     GEOTileKeyList *_notLoaded;
     GEOTileKeyList *_originalList;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progress;
-
+    id /* block */ _progress;
     struct __CFRunLoop { } *_runloop;
     GEOTileKeyList *_satisfiedList;
     GEOTileKeyList *_submittedList;
 }
 
-@property(readonly) id callback;
-@property(copy) id error;
-@property(copy) id finished;
-@property(copy) id progress;
+@property (nonatomic, readonly) id /* block */ callback;
+@property (nonatomic, copy) id /* block */ error;
+@property (nonatomic, copy) id /* block */ finished;
+@property (nonatomic, copy) id /* block */ progress;
 
 - (void)breakCycle;
-- (id)callback;
+- (id /* block */)callback;
 - (void)cancel;
 - (void)dealloc;
-- (id)error;
+- (id /* block */)error;
 - (void)failure:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 error:(id)arg2 info:(id)arg3;
-- (id)finished;
+- (id /* block */)finished;
 - (id)initWithList:(id)arg1;
-- (id)progress;
-- (void)setError:(id)arg1;
-- (void)setFinished:(id)arg1;
-- (void)setProgress:(id)arg1;
+- (id /* block */)progress;
+- (void)setError:(id /* block */)arg1;
+- (void)setFinished:(id /* block */)arg1;
+- (void)setProgress:(id /* block */)arg1;
 - (void)success:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 tile:(id)arg2 info:(id)arg3;
 
 @end

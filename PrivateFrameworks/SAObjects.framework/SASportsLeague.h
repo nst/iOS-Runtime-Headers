@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, SASportsSeason;
+@interface SASportsLeague : AceObject <SAAceSerializable>
 
-@interface SASportsLeague : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * diplayedText;
-@property(copy) NSNumber * displayTeamLocationOverName;
-@property(copy) NSString * displayedText;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property(retain) SASportsSeason * season;
-@property(copy) NSString * sport;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *diplayedText;
+@property (nonatomic, copy) NSNumber *displayTeamLocationOverName;
+@property (nonatomic, copy) NSString *displayedText;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, retain) SASportsSeason *season;
+@property (nonatomic, copy) NSString *sport;
+@property (readonly) Class superclass;
 
 + (id)league;
 + (id)leagueWithDictionary:(id)arg1 context:(id)arg2;

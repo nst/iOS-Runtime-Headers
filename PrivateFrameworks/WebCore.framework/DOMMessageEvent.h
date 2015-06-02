@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class <DOMEventTarget>, DOMMessagePort, NSString;
+@interface DOMMessageEvent : DOMEvent
 
-@interface DOMMessageEvent : DOMEvent {
-}
-
-@property(readonly) NSString * data;
-@property(copy,readonly) NSString * lastEventId;
-@property(readonly) DOMMessagePort * messagePort;
-@property(copy,readonly) NSString * origin;
-@property(readonly) <DOMEventTarget> * source;
+@property (readonly) NSString *data;
+@property (readonly, copy) NSString *lastEventId;
+@property (readonly) DOMMessagePort *messagePort;
+@property (readonly, copy) NSString *origin;
+@property (readonly) <DOMEventTarget> *source;
 
 - (id)data;
 - (void)initMessageEvent:(id)arg1 canBubbleArg:(BOOL)arg2 cancelableArg:(BOOL)arg3 dataArg:(id)arg4 originArg:(id)arg5 lastEventIdArg:(id)arg6 sourceArg:(id)arg7 messagePort:(id)arg8;

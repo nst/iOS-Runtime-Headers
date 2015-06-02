@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEditItemViewControllerDelegate>, <EKStyleProvider>, EKUIRecurrenceAlertController;
-
 @interface EKEditItemViewController : UIViewController <EKEditItemViewControllerProtocol> {
     <EKEditItemViewControllerDelegate> *_editDelegate;
     struct CGRect { 
@@ -23,12 +21,12 @@
     unsigned int _subitem;
 }
 
-@property <EKEditItemViewControllerDelegate> * editDelegate;
-@property BOOL editItemShouldBeAskedForInjectableViewController;
-@property BOOL modal;
-@property BOOL presentModally;
-@property BOOL showsDoneButton;
-@property unsigned int subitem;
+@property (nonatomic) <EKEditItemViewControllerDelegate> *editDelegate;
+@property (nonatomic) BOOL editItemShouldBeAskedForInjectableViewController;
+@property (nonatomic) BOOL modal;
+@property (nonatomic) BOOL presentModally;
+@property (nonatomic) BOOL showsDoneButton;
+@property (nonatomic) unsigned int subitem;
 
 - (void).cxx_destruct;
 - (void)_saveAndDismissWithForce:(BOOL)arg1;

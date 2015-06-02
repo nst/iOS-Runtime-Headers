@@ -2,31 +2,29 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSMutableArray, NSString, SUCellConfiguration, UIBezierPath, UIView;
-
 @interface SUTableCellContentView : UIView <SUCellConfigurationView> {
     int _clipCorners;
     UIBezierPath *_clipPath;
     SUCellConfiguration *_configuration;
-    unsigned int _drawAsDisabled : 1;
-    unsigned int _highlighted : 1;
-    unsigned int _highlightsOnlyContentView : 1;
+    unsigned int _drawAsDisabled;
+    unsigned int _highlighted;
+    unsigned int _highlightsOnlyContentView;
     UIView *_overlayView;
     NSMutableArray *_subviews;
-    unsigned int _useSubviewLayout : 1;
+    unsigned int _useSubviewLayout;
 }
 
-@property int clipCorners;
-@property(retain) SUCellConfiguration * configuration;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=isDeleteConfirmationVisible) BOOL deleteConfirmationVisisble;
-@property(copy,readonly) NSString * description;
-@property BOOL drawAsDisabled;
-@property(readonly) unsigned int hash;
-@property(getter=isHighlighted) BOOL highlighted;
-@property BOOL highlightsOnlyContentView;
-@property(readonly) Class superclass;
-@property BOOL usesSubviews;
+@property (nonatomic) int clipCorners;
+@property (nonatomic, retain) SUCellConfiguration *configuration;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDeleteConfirmationVisible, nonatomic) BOOL deleteConfirmationVisisble;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL drawAsDisabled;
+@property (readonly) unsigned int hash;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic) BOOL highlightsOnlyContentView;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL usesSubviews;
 
 - (id)_clipPath;
 - (id)_clippedImageForImage:(id)arg1;

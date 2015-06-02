@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSDictionary, SKUIReviewMetadata;
-
 @interface SKUIPostReviewOperation : ISOperation {
     NSDictionary *_responseDictionary;
     SKUIReviewMetadata *_review;
 }
 
-@property(readonly) NSDictionary * responseDictionary;
+@property (readonly) NSDictionary *responseDictionary;
 
 - (void).cxx_destruct;
 - (id)_httpBody;

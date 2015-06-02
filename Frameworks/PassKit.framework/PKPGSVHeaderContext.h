@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIView;
-
 @interface PKPGSVHeaderContext : NSObject {
     struct UIEdgeInsets { 
         float top; 
@@ -21,15 +19,15 @@
     UIView *_subheaderView;
 }
 
-@property(readonly) float headerHeight;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } headerMargins;
-@property(readonly) UIView * headerView;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } subheaderMargins;
-@property(readonly) UIView * subheaderView;
-@property(readonly) float totalHeight;
+@property (nonatomic, readonly) float headerHeight;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } headerMargins;
+@property (nonatomic, readonly) UIView *headerView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } subheaderMargins;
+@property (nonatomic, readonly) UIView *subheaderView;
+@property (nonatomic, readonly) float totalHeight;
 
-+ (void)animateAppearanceForLayer:(id)arg1 withCompletionHandler:(id)arg2;
-+ (void)animateDisappearanceForLayer:(id)arg1 withCompletionHandler:(id)arg2;
++ (void)animateAppearanceForLayer:(id)arg1 withCompletionHandler:(id /* block */)arg2;
++ (void)animateDisappearanceForLayer:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 + (id)createUpdatedHeaderContextForGroupStackView:(id)arg1 passType:(unsigned int)arg2 currentContext:(id)arg3 allowSubheader:(BOOL)arg4;
 
 - (float)_headerHeight;

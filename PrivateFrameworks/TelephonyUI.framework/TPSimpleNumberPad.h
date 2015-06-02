@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class <TPSimpleNumberPadDelegate>, UIButton;
-
 @interface TPSimpleNumberPad : TPNumberPad {
     <TPSimpleNumberPadDelegate> *_delegate;
     UIButton *_deleteButton;
     BOOL _showsDeleteButton;
 }
 
-@property <TPSimpleNumberPadDelegate> * delegate;
-@property BOOL showsDeleteButton;
+@property <TPSimpleNumberPadDelegate> *delegate;
+@property (nonatomic) BOOL showsDeleteButton;
 
 + (id)_numberPadCharacters;
 

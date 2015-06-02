@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class <GKSessionDOOBReceiveHandler>, <GKSessionDataReceiveHandler>, <GKSessionDelegate>, <GKSessionPrivateDelegate>, GKAutoPeerIDTable, GKConnection, GKList, GKSession, GKTable, GKVoiceChatSessionListener, NSString;
-
 @interface GKSessionInternal : NSObject {
     GKConnection *_connection;
     <GKSessionDataReceiveHandler> *_dataReceiveHandler;
@@ -16,8 +14,8 @@
     NSString *_displayName;
     struct _DNSServiceRef_t { } *_dnsServiceConnection;
     struct _DNSServiceRef_t { } *_dnsServiceResolveConnection;
-    <GKSessionDOOBReceiveHandler> *_doobReceiveHandler[2];
-    void *_doobReceiveHandlerContext[2];
+    <GKSessionDOOBReceiveHandler> *_doobReceiveHandler;
+    void *_doobReceiveHandlerContext;
     BOOL _handleEventsRunning;
     BOOL _isBusy;
     BOOL _isPublishing;
@@ -58,23 +56,23 @@
     struct OpaqueGCKSession { } *sessionRef;
 }
 
-@property struct OpaqueAGPSession { }* agpSessionRef;
-@property(getter=isAvailable) BOOL available;
-@property(getter=isBusy) BOOL busy;
-@property(retain,readonly) GKConnection * connection;
-@property(readonly) id dataReceiveHandler;
-@property <GKSessionDelegate> * delegate;
+@property (nonatomic) struct OpaqueAGPSession { }*agpSessionRef;
+@property (getter=isAvailable) BOOL available;
+@property (getter=isBusy) BOOL busy;
+@property (readonly, retain) GKConnection *connection;
+@property (nonatomic, readonly) id dataReceiveHandler;
+@property <GKSessionDelegate> *delegate;
 @property double disconnectTimeout;
-@property(readonly) NSString * displayName;
-@property(copy) NSString * domain;
-@property unsigned int maxPeers;
-@property(readonly) NSString * peerID;
-@property unsigned int port;
-@property <GKSessionPrivateDelegate> * privateDelegate;
-@property(copy) NSString * serviceType;
-@property(readonly) NSString * sessionID;
-@property(readonly) int sessionMode;
-@property struct OpaqueGCKSession { }* sessionRef;
+@property (readonly) NSString *displayName;
+@property (nonatomic, copy) NSString *domain;
+@property (nonatomic) unsigned int maxPeers;
+@property (readonly) NSString *peerID;
+@property (nonatomic) unsigned int port;
+@property <GKSessionPrivateDelegate> *privateDelegate;
+@property (nonatomic, copy) NSString *serviceType;
+@property (readonly) NSString *sessionID;
+@property (readonly) int sessionMode;
+@property (nonatomic) struct OpaqueGCKSession { }*sessionRef;
 @property BOOL wifiEnabled;
 
 - (BOOL)acceptConnectionFromPeer:(id)arg1 error:(id*)arg2;

@@ -2,54 +2,40 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, PHAsset;
-
 @interface PUResourceDownloadRequest : NSObject {
     BOOL __downloadCanceled;
     PHAsset *_asset;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _downloadCompletionHandler;
-
+    id /* block */ _downloadCompletionHandler;
     double _progress;
     NSMutableDictionary *_progressByRequestIdentifier;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressChangeHandler;
-
+    id /* block */ _progressChangeHandler;
     int _requestType;
 }
 
-@property(getter=_isDownloadCanceled,setter=_setDownloadCanceled:) BOOL _downloadCanceled;
-@property(readonly) PHAsset * asset;
-@property double progress;
-@property(copy) id progressChangeHandler;
-@property(readonly) int requestType;
+@property (getter=_isDownloadCanceled, setter=_setDownloadCanceled:, nonatomic) BOOL _downloadCanceled;
+@property (readonly) PHAsset *asset;
+@property (nonatomic) double progress;
+@property (nonatomic, copy) id /* block */ progressChangeHandler;
+@property (readonly) int requestType;
 
 - (void).cxx_destruct;
 - (void)_didFinishDownloadWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (void)_fetchResourcesForConsumingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id)arg3;
-- (void)_fetchResourcesForEditingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id)arg3;
-- (void)_fetchResourcesWithNetworkAccessAllowed:(BOOL)arg1 handler:(id)arg2;
+- (void)_fetchResourcesForConsumingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
+- (void)_fetchResourcesForEditingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
+- (void)_fetchResourcesWithNetworkAccessAllowed:(BOOL)arg1 handler:(id /* block */)arg2;
 - (BOOL)_isDownloadCanceled;
 - (void)_setDownloadCanceled:(BOOL)arg1;
 - (void)_setProgress:(double)arg1;
-- (void)_simulateFetchResourcesWithDuration:(double)arg1 success:(BOOL)arg2 networkAccessAllowed:(BOOL)arg3 handler:(id)arg4;
+- (void)_simulateFetchResourcesWithDuration:(double)arg1 success:(BOOL)arg2 networkAccessAllowed:(BOOL)arg3 handler:(id /* block */)arg4;
 - (void)_updateCombinedProgressWithValue:(double)arg1 forRequestIdentifier:(id)arg2 networkAccessAllowed:(BOOL)arg3;
 - (id)asset;
 - (void)cancelDownloadRequest;
-- (void)downloadRequiredResourcesWithCompletionHandler:(id)arg1;
-- (void)fetchIsDownloadRequiredWithHandler:(id)arg1;
+- (void)downloadRequiredResourcesWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchIsDownloadRequiredWithHandler:(id /* block */)arg1;
 - (id)initWithAsset:(id)arg1 requestType:(int)arg2;
 - (double)progress;
-- (id)progressChangeHandler;
+- (id /* block */)progressChangeHandler;
 - (int)requestType;
-- (void)setProgressChangeHandler:(id)arg1;
+- (void)setProgressChangeHandler:(id /* block */)arg1;
 
 @end

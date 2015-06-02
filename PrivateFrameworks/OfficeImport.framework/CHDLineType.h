@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHDLineType : CHDChartTypeWithGrouping {
-}
+@interface CHDLineType : CHDChartTypeWithGrouping
 
 - (int)defaultLabelPosition;
 - (id)initWithChart:(id)arg1;

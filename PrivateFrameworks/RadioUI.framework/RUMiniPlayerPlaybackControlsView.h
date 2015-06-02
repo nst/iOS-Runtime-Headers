@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class UIView;
+@interface RUMiniPlayerPlaybackControlsView : MPUMiniPlayerPlaybackControlsView
 
-@interface RUMiniPlayerPlaybackControlsView : MPUMiniPlayerPlaybackControlsView {
-}
-
-@property(readonly) UIView * viewForPresentingStationActions;
-@property(readonly) UIView * viewForPresentingTrackActions;
+@property (nonatomic, readonly) UIView *viewForPresentingStationActions;
+@property (nonatomic, readonly) UIView *viewForPresentingTrackActions;
 
 - (BOOL)_allowsScrubbingForItem:(id)arg1;
 - (id)_artistTextForItem:(id)arg1;

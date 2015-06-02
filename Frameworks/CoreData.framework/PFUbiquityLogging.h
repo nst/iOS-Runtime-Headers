@@ -6,7 +6,7 @@
     int _desiredLogLevel;
 }
 
-@property int desiredLogLevel;
+@property (nonatomic) int desiredLogLevel;
 
 + (BOOL)canLogMessageAtLevel:(int)arg1;
 + (void)initialize;

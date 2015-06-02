@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray, NSMutableDictionary, YTCaptionTrackRequest, YTCaptionsRequest;
-
 @interface YTCaptioningCache : NSObject <YTCaptionTrackRequestDelegate, YTCaptionsRequestDelegate> {
     NSMutableDictionary *_cache;
     NSMutableArray *_captionTrackQueue;

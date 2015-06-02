@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray;
-
 @interface CKFetchSubscriptionsOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     BOOL _isFetchAllSubscriptionsOperation;
     NSArray *_subscriptionIDs;
 }
 
-@property BOOL isFetchAllSubscriptionsOperation;
-@property(retain) NSArray * subscriptionIDs;
+@property (nonatomic) BOOL isFetchAllSubscriptionsOperation;
+@property (nonatomic, retain) NSArray *subscriptionIDs;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIGestureRecognizerDelegate>, NSMutableArray, NSMutableSet, UIPhysicalButtonsEvent, UITouchesEvent, UIView;
-
 @interface UIGestureRecognizer : NSObject {
     NSMutableArray *_delayedTouches;
     <UIGestureRecognizerDelegate> *_delegate;
@@ -56,13 +54,15 @@
     UIView *_view;
 }
 
-@property BOOL cancelsTouchesInView;
-@property BOOL delaysTouchesBegan;
-@property BOOL delaysTouchesEnded;
-@property <UIGestureRecognizerDelegate> * delegate;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) int state;
-@property(readonly) UIView * view;
+@property (nonatomic) BOOL cancelsTouchesInView;
+@property (nonatomic) BOOL delaysTouchesBegan;
+@property (nonatomic) BOOL delaysTouchesEnded;
+@property (nonatomic) <UIGestureRecognizerDelegate> *delegate;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) int state;
+@property (nonatomic, readonly) UIView *view;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_touchesBeganWasDelayedForTouch:(id)arg1;
 
@@ -143,7 +143,6 @@
 - (struct CGPoint { float x1; float x2; })locationInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (unsigned int)numberOfTouches;
-- (void)pu_cancel;
 - (void)removeFailureRequirement:(id)arg1;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (void)requireGestureRecognizerToFail:(id)arg1;
@@ -164,5 +163,9 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (id)view;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (void)pu_cancel;
 
 @end

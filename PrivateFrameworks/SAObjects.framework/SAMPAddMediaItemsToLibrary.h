@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAMPCollection;
+@interface SAMPAddMediaItemsToLibrary : SABaseClientBoundCommand
 
-@interface SAMPAddMediaItemsToLibrary : SABaseClientBoundCommand {
-}
-
-@property(retain) SAMPCollection * mediaItems;
+@property (nonatomic, retain) SAMPCollection *mediaItems;
 
 + (id)addMediaItemsToLibrary;
 + (id)addMediaItemsToLibraryWithDictionary:(id)arg1 context:(id)arg2;

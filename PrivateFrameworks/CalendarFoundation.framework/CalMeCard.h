@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class NSArray, NSString;
-
 @interface CalMeCard : NSObject <NSSecureCoding> {
     NSString *_displayName;
     NSArray *_emailAddresses;
@@ -11,9 +9,9 @@
     int _version;
 }
 
-@property(retain,readonly) NSString * displayName;
-@property(retain,readonly) NSArray * emailAddresses;
-@property(retain,readonly) NSString * uniqueID;
+@property (readonly, retain) NSString *displayName;
+@property (readonly, retain) NSArray *emailAddresses;
+@property (readonly, retain) NSString *uniqueID;
 @property int version;
 
 + (id)cardFromPath:(id)arg1;

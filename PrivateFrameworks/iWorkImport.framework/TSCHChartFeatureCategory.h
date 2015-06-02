@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartFeatureCategory : TSCHChartFeature {
-}
+@interface TSCHChartFeatureCategory : TSCHChartFeature
 
 - (void)p_initializeAxisIDs;
 - (int)representativeGridValueAxisType;

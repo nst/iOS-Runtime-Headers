@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSString;
-
 @interface MFProtectedSQLiteConnection : MFSQLiteConnection {
     BOOL _attached;
     NSString *_protectedName;
@@ -11,7 +9,7 @@
     long _vfsOnce;
 }
 
-@property(readonly) BOOL isProtectedDatabaseAttached;
+@property (nonatomic, readonly) BOOL isProtectedDatabaseAttached;
 
 - (const char *)_vfsModuleName;
 - (int)attachProtectedDatabase;

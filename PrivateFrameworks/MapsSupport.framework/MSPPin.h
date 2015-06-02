@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class MSPDroppedPin;
-
 @interface MSPPin : PBCodable <NSCopying> {
     MSPDroppedPin *_droppedPin;
 }
 
-@property(retain) MSPDroppedPin * droppedPin;
-@property(readonly) BOOL hasDroppedPin;
+@property (nonatomic, retain) MSPDroppedPin *droppedPin;
+@property (nonatomic, readonly) BOOL hasDroppedPin;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIColor;
-
 @interface CUIPSDLayerEffectOuterGlow : CUIPSDLayerEffectComponent {
     int _blendMode;
     unsigned int _blurSize;
@@ -14,7 +12,7 @@
 
 @property int blendMode;
 @property unsigned int blurSize;
-@property(retain) CUIColor * color;
+@property (retain) CUIColor *color;
 @property float opacity;
 @property unsigned int spread;
 

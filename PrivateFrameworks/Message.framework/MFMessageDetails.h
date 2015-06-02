@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFMessageLibrary, NSString;
-
 @interface MFMessageDetails : NSObject {
     long long conversationHash;
     unsigned int dateReceived;

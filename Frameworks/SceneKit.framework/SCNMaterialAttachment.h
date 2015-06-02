@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSDictionary;
-
 @interface SCNMaterialAttachment : NSObject {
     void *context;
     unsigned int glID;
@@ -15,11 +13,11 @@
     unsigned int target;
 }
 
-@property void* context;
-@property unsigned int glID;
-@property(copy) NSDictionary * options;
-@property struct CGSize { float x1; float x2; } size;
-@property unsigned int target;
+@property (nonatomic) void*context;
+@property (nonatomic) unsigned int glID;
+@property (nonatomic, copy) NSDictionary *options;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic) unsigned int target;
 
 - (void*)context;
 - (void)dealloc;

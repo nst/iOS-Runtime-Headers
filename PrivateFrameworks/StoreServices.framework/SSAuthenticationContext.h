@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary, NSNumber, NSString, SSURLBagContext;
-
 @interface SSAuthenticationContext : NSObject <NSCopying, NSMutableCopying, SSXPCCoding> {
     NSString *_accountName;
     BOOL _accountNameEditable;
@@ -34,38 +32,38 @@
     NSArray *_userAgentComponents;
 }
 
-@property(copy,readonly) NSDictionary * HTTPHeaders;
-@property(readonly) SSURLBagContext * URLBagContext;
-@property(copy,readonly) NSString * accountName;
-@property(getter=isAccountNameEditable,readonly) BOOL accountNameEditable;
-@property(readonly) int accountScope;
-@property(readonly) BOOL allowsBioAuthentication;
-@property(readonly) BOOL allowsBootstrapCellularData;
-@property(readonly) BOOL allowsRetry;
-@property(readonly) BOOL canCreateNewAccount;
-@property(readonly) BOOL canSetActiveAccount;
-@property(copy,readonly) NSString * clientIdentifierHeader;
-@property(copy,readonly) NSString * debugDescription;
-@property(getter=isDemoAccount,readonly) BOOL demoAccount;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL displaysOnLockScreen;
-@property(readonly) unsigned int hash;
-@property(copy,readonly) NSString * initialPassword;
-@property(readonly) BOOL persistsAcrossDeviceLock;
-@property(readonly) BOOL persistsPasswordFallback;
-@property(copy,readonly) NSString * preferredITunesStoreClient;
-@property(readonly) int promptStyle;
-@property(copy,readonly) NSString * reasonDescription;
-@property(copy,readonly) NSDictionary * requestParameters;
-@property(retain,readonly) NSNumber * requiredUniqueIdentifier;
-@property(readonly) BOOL shouldCreateNewSession;
-@property(readonly) BOOL shouldFollowAccountButtons;
-@property(readonly) BOOL shouldIgnoreProtocol;
-@property(readonly) BOOL shouldSuppressDialogs;
-@property(copy,readonly) NSDictionary * signupRequestParameters;
-@property(readonly) Class superclass;
-@property(readonly) int tokenType;
-@property(copy,readonly) NSArray * userAgentComponents;
+@property (nonatomic, readonly, copy) NSDictionary *HTTPHeaders;
+@property (nonatomic, readonly) SSURLBagContext *URLBagContext;
+@property (nonatomic, readonly, copy) NSString *accountName;
+@property (getter=isAccountNameEditable, nonatomic, readonly) BOOL accountNameEditable;
+@property (readonly) int accountScope;
+@property (nonatomic, readonly) BOOL allowsBioAuthentication;
+@property (nonatomic, readonly) BOOL allowsBootstrapCellularData;
+@property (nonatomic, readonly) BOOL allowsRetry;
+@property (nonatomic, readonly) BOOL canCreateNewAccount;
+@property (nonatomic, readonly) BOOL canSetActiveAccount;
+@property (nonatomic, readonly, copy) NSString *clientIdentifierHeader;
+@property (readonly, copy) NSString *debugDescription;
+@property (getter=isDemoAccount, nonatomic, readonly) BOOL demoAccount;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL displaysOnLockScreen;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSString *initialPassword;
+@property (nonatomic, readonly) BOOL persistsAcrossDeviceLock;
+@property (nonatomic, readonly) BOOL persistsPasswordFallback;
+@property (nonatomic, readonly, copy) NSString *preferredITunesStoreClient;
+@property (nonatomic, readonly) int promptStyle;
+@property (nonatomic, readonly, copy) NSString *reasonDescription;
+@property (nonatomic, readonly, copy) NSDictionary *requestParameters;
+@property (nonatomic, readonly, retain) NSNumber *requiredUniqueIdentifier;
+@property (nonatomic, readonly) BOOL shouldCreateNewSession;
+@property (nonatomic, readonly) BOOL shouldFollowAccountButtons;
+@property (nonatomic, readonly) BOOL shouldIgnoreProtocol;
+@property (nonatomic, readonly) BOOL shouldSuppressDialogs;
+@property (nonatomic, readonly, copy) NSDictionary *signupRequestParameters;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) int tokenType;
+@property (nonatomic, readonly, copy) NSArray *userAgentComponents;
 
 + (id)contextForSignIn;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSArray, TSDBitmapImageProvider, TSDFrame;
-
 @interface TSDFrameRep : NSObject {
     TSDBitmapImageProvider *mAdornment;
     TSDFrame *mFrame;

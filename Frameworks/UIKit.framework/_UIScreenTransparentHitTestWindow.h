@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface _UIScreenTransparentHitTestWindow : UIWindow {
     UIView *_hitTestableView;
 }

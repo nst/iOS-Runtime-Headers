@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSMutableArray;
-
 @interface CKAttachmentSaver : NSObject {
     NSMutableArray *_attachments;
     unsigned int _errorCount;

@@ -11,10 +11,10 @@
     int _sessionIdentifier;
 }
 
-@property BOOL hasMacAddress;
-@property BOOL hasSessionIdentifier;
-@property long long macAddress;
-@property int sessionIdentifier;
+@property (nonatomic) BOOL hasMacAddress;
+@property (nonatomic) BOOL hasSessionIdentifier;
+@property (nonatomic) long long macAddress;
+@property (nonatomic) int sessionIdentifier;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

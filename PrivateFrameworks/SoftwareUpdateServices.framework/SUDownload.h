@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class SUDescriptor, SUDownloadMetadata, SUOperationProgress;
-
 @interface SUDownload : NSObject <NSCopying, NSSecureCoding> {
     SUDescriptor *_descriptor;
     SUDownloadMetadata *_metadata;
     SUOperationProgress *_progress;
 }
 
-@property(retain) SUDescriptor * descriptor;
-@property(retain) SUDownloadMetadata * metadata;
-@property(retain) SUOperationProgress * progress;
+@property (nonatomic, retain) SUDescriptor *descriptor;
+@property (nonatomic, retain) SUDownloadMetadata *metadata;
+@property (nonatomic, retain) SUOperationProgress *progress;
 
 + (BOOL)supportsSecureCoding;
 

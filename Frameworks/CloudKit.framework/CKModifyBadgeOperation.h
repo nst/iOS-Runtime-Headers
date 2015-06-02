@@ -2,21 +2,13 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CKModifyBadgeOperation : CKOperation {
     unsigned int _badgeValue;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _modifyBadgeCompletionBlock;
-
+    id /* block */ _modifyBadgeCompletionBlock;
 }
 
-@property unsigned int badgeValue;
-@property(copy) id modifyBadgeCompletionBlock;
+@property (nonatomic) unsigned int badgeValue;
+@property (nonatomic, copy) id /* block */ modifyBadgeCompletionBlock;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -24,9 +16,9 @@
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;
 - (id)initWithBadgeValue:(unsigned int)arg1;
-- (id)modifyBadgeCompletionBlock;
+- (id /* block */)modifyBadgeCompletionBlock;
 - (void)performCKOperation;
 - (void)setBadgeValue:(unsigned int)arg1;
-- (void)setModifyBadgeCompletionBlock:(id)arg1;
+- (void)setModifyBadgeCompletionBlock:(id /* block */)arg1;
 
 @end

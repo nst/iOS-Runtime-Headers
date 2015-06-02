@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class IKSlideshowElement, MPUExtrasSlideshowViewController, NSArray, NSString, UITapGestureRecognizer;
-
 @interface MPUExtrasSlideshowTemplateViewController : MPUExtrasTemplateViewController <MPUExtrasSlideshowViewControllerDataSource, MPUExtrasZoomingImageTransitionParticipant> {
     NSArray *_imageElements;
     BOOL _overlayHidden;
@@ -12,14 +10,14 @@
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * imageElements;
-@property(retain) MPUExtrasSlideshowViewController * slideshowViewController;
-@property(readonly) Class superclass;
-@property(retain) UITapGestureRecognizer * tapGestureRecognizer;
-@property(readonly) IKSlideshowElement * templateElement;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *imageElements;
+@property (nonatomic, retain) MPUExtrasSlideshowViewController *slideshowViewController;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, readonly) IKSlideshowElement *templateElement;
 
 - (void).cxx_destruct;
 - (void)_firstImageLoadedHideNavigationBar;
@@ -39,7 +37,7 @@
 - (BOOL)shouldPerformZoomingImageTransitionFromImageElement:(id)arg1 toImageAtIndex:(unsigned int)arg2;
 - (BOOL)showsPlaceholder;
 - (id)slideshowViewController;
-- (void)slideshowViewController:(id)arg1 loadImageAtIndex:(unsigned int)arg2 withCompletionHandler:(id)arg3;
+- (void)slideshowViewController:(id)arg1 loadImageAtIndex:(unsigned int)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)tapGestureRecognizer;
 - (id)templateElement;
 - (void)viewDidAppear:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSMutableArray, NSPort;
-
 @interface NSPortMessage : NSObject {
     NSMutableArray *components;
     NSPort *localPort;
@@ -13,10 +11,10 @@
     void *reserved2;
 }
 
-@property(copy,readonly) NSArray * components;
+@property (readonly, copy) NSArray *components;
 @property unsigned int msgid;
-@property(retain,readonly) NSPort * receivePort;
-@property(retain,readonly) NSPort * sendPort;
+@property (readonly, retain) NSPort *receivePort;
+@property (readonly, retain) NSPort *sendPort;
 
 - (id)components;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

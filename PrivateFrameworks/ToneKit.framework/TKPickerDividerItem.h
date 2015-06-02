@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKPickerDividerItem : TKPickerRowItem {
-}
+@interface TKPickerDividerItem : TKPickerRowItem
 
 @end

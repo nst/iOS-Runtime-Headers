@@ -3,7 +3,7 @@
  */
 
 @interface AVController : NSObject {
-    struct AVControllerPrivate { id x1; id x2; id x3; id x4; id x5; Class x6; id x7; int x8; int x9; float x10; float x11; int x12; BOOL x13; id x14; float x15; struct __CFString {} *x16; id x17; BOOL x18; BOOL x19; BOOL x20; id x21; struct OpaqueFigVisualContext {} *x22; id x23; struct __CFRunLoop {} *x24; unsigned int x25; int x26; int x27; int x28; BOOL x29; BOOL x30; BOOL x31; BOOL x32; id x33; struct OpaqueFigPlayer {} *x34; id x35; id x36; id x37; BOOL x38; BOOL x39; id x40; id x41; BOOL x42; BOOL x43; BOOL x44; int x45; BOOL x46; } *_priv;
+    struct AVControllerPrivate { id x1; id x2; id x3; id x4; int x5; float x6; float x7; int x8; BOOL x9; id x10; struct __CFString {} *x11; id x12; BOOL x13; BOOL x14; id x15; struct OpaqueFigVisualContext {} x16; id x17; struct __CFRunLoop {} x18; unsigned int x19; int x20; int x21; int x22; BOOL x23; BOOL x24; BOOL x25; BOOL x26; id x27; struct OpaqueFigPlayer {} x28; id x29; id x30; BOOL x31; id x32; BOOL x33; BOOL x34; BOOL x35; int x36; BOOL x37; } *_priv;
 }
 
 + (id)avController;
@@ -73,7 +73,7 @@
 - (void)pause;
 - (BOOL)play:(id*)arg1;
 - (BOOL)playNextItem:(id*)arg1;
-- (struct AVControllerPrivate { id x1; id x2; id x3; id x4; id x5; Class x6; id x7; int x8; int x9; float x10; float x11; int x12; BOOL x13; id x14; float x15; struct __CFString {} *x16; id x17; BOOL x18; BOOL x19; BOOL x20; id x21; struct OpaqueFigVisualContext {} *x22; id x23; struct __CFRunLoop {} *x24; unsigned int x25; int x26; int x27; int x28; BOOL x29; BOOL x30; BOOL x31; BOOL x32; id x33; struct OpaqueFigPlayer {} *x34; id x35; id x36; id x37; BOOL x38; BOOL x39; id x40; id x41; BOOL x42; BOOL x43; BOOL x44; int x45; BOOL x46; }*)privateStorage;
+- (struct AVControllerPrivate { id x1; id x2; id x3; id x4; int x5; float x6; float x7; int x8; BOOL x9; id x10; struct __CFString {} *x11; id x12; BOOL x13; BOOL x14; id x15; struct OpaqueFigVisualContext {} x16; id x17; struct __CFRunLoop {} x18; unsigned int x19; int x20; int x21; int x22; BOOL x23; BOOL x24; BOOL x25; BOOL x26; id x27; struct OpaqueFigPlayer {} x28; id x29; id x30; BOOL x31; id x32; BOOL x33; BOOL x34; BOOL x35; int x36; BOOL x37; }*)privateStorage;
 - (id)queue;
 - (id)queueFeeder;
 - (float)rate;

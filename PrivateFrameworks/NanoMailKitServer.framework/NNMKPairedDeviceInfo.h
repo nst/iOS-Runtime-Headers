@@ -7,8 +7,8 @@
     float _screenWidth;
 }
 
-@property float screenScale;
-@property float screenWidth;
+@property (nonatomic) float screenScale;
+@property (nonatomic) float screenWidth;
 
 + (id)pairedDeviceInfoWithScreenWidth:(float)arg1 screenScale:(float)arg2;
 

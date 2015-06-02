@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DFillTextureCoordinates : NSObject {
-}
+@interface TSCH3DFillTextureCoordinates : NSObject
 
 + (id)coordinates;
 

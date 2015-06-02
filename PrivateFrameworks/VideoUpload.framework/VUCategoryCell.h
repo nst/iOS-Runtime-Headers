@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VideoUpload.framework/VideoUpload
  */
 
-@interface VUCategoryCell : UITableViewCell {
-}
+@interface VUCategoryCell : UITableViewCell
 
 - (id)init;
 - (void)setCategoryString:(id)arg1;

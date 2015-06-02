@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSString;
-
 @interface RTSourceEventKit : RTSource {
     NSString *_eventIdentifier;
 }
 
-@property(retain,readonly) NSString * eventIdentifier;
+@property (nonatomic, readonly, retain) NSString *eventIdentifier;
 
 + (BOOL)supportsSecureCoding;
 

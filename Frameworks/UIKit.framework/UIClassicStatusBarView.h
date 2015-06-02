@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage, UIImageView;
-
 @interface UIClassicStatusBarView : _UIScrollsToTopInitiatorView {
     UIImageView *_backgroundView;
     UIImage *_image;
 }
 
-@property(retain) UIImage * image;
+@property (nonatomic, retain) UIImage *image;
 
 - (void)dealloc;
 - (id)image;

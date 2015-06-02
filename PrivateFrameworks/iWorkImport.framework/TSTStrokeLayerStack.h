@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTMutableStrokeLayer, TSTStrokeLayer;
-
 @interface TSTStrokeLayerStack : TSTStrokeLayerAbstractStack {
     TSTMutableStrokeLayer *_clearedStrokeLayer;
     TSTStrokeLayer *_customStrokeLayer;
@@ -14,13 +12,13 @@
     int _type;
 }
 
-@property(retain) TSTMutableStrokeLayer * clearedStrokeLayer;
-@property(retain) TSTStrokeLayer * customStrokeLayer;
-@property(retain) TSTStrokeLayer * defaultStrokeLayer;
-@property(retain) TSTMutableStrokeLayer * dynamicStrokeLayer;
-@property(retain) TSTMutableStrokeLayer * spillStrokeLayer;
-@property int stackKind;
-@property int type;
+@property (nonatomic, retain) TSTMutableStrokeLayer *clearedStrokeLayer;
+@property (nonatomic, retain) TSTStrokeLayer *customStrokeLayer;
+@property (nonatomic, retain) TSTStrokeLayer *defaultStrokeLayer;
+@property (nonatomic, retain) TSTMutableStrokeLayer *dynamicStrokeLayer;
+@property (nonatomic, retain) TSTMutableStrokeLayer *spillStrokeLayer;
+@property (nonatomic) int stackKind;
+@property (nonatomic) int type;
 
 + (id)strokeLayerStackWithStackKind:(int)arg1;
 

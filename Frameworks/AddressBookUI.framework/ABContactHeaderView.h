@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactHeaderViewDelegate>, <ABPresenterDelegate>, ABContactPhotoView, CNContact, CNContactStyle, NSDictionary, NSMutableArray;
-
 @interface ABContactHeaderView : UIView {
     CNContact *_contact;
     CNContactStyle *_contactStyle;
@@ -21,14 +19,14 @@
     ABContactPhotoView *_photoView;
 }
 
-@property(readonly) CNContact * contact;
-@property(retain) CNContactStyle * contactStyle;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
-@property <ABPresenterDelegate> * delegate;
-@property(retain) NSMutableArray * headerConstraints;
-@property <ABContactHeaderViewDelegate> * headerDelegate;
-@property(copy) NSDictionary * nameTextAttributes;
-@property(readonly) ABContactPhotoView * photoView;
+@property (nonatomic, readonly) CNContact *contact;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentMargins;
+@property (nonatomic) <ABPresenterDelegate> *delegate;
+@property (nonatomic, retain) NSMutableArray *headerConstraints;
+@property (nonatomic) <ABContactHeaderViewDelegate> *headerDelegate;
+@property (nonatomic, copy) NSDictionary *nameTextAttributes;
+@property (nonatomic, readonly) ABContactPhotoView *photoView;
 
 - (id)contact;
 - (id)contactStyle;

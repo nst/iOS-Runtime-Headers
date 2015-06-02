@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/ExternalAccessory.framework/ExternalAccessory
  */
 
-@class EAAccessory, EASession, NSCondition, NSMutableData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSRecursiveLock;
-
 @interface EAInputStream : NSInputStream {
     EAAccessory *_accessory;
     id _delegate;

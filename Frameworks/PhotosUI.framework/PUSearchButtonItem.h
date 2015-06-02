@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUSearchButtonItemCustomView, UINavigationItem, UISearchBar, UIView;
-
 @interface PUSearchButtonItem : UIBarButtonItem {
     PUSearchButtonItemCustomView *_customView;
     UINavigationItem *_navigationItem;
@@ -24,11 +22,11 @@
     BOOL _wantsShowingSearchBar;
 }
 
-@property float maxSearchBarWidth;
-@property(readonly) UINavigationItem * navigationItem;
-@property BOOL nudgesSearchIcon;
-@property(readonly) UISearchBar * searchBar;
-@property(readonly) BOOL showingSearchBar;
+@property (nonatomic) float maxSearchBarWidth;
+@property (nonatomic, readonly) UINavigationItem *navigationItem;
+@property (nonatomic) BOOL nudgesSearchIcon;
+@property (nonatomic, readonly) UISearchBar *searchBar;
+@property (nonatomic, readonly) BOOL showingSearchBar;
 
 - (void).cxx_destruct;
 - (id)_allNavigationButtonItems;

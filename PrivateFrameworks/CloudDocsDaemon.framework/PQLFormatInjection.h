@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface PQLFormatInjection : PQLNameInjectionBase <PQLInjecting> {
     NSMutableArray *_binds;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSData * sql;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSData *sql;
+@property (readonly) Class superclass;
 
 + (id)formatInjection:(id)arg1;
 

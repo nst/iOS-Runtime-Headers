@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@interface UIMovieBackgroundView : UIImageView {
-}
+@interface UIMovieBackgroundView : UIImageView
 
 + (struct CGSize { float x1; float x2; })bugViewSizeForFrameSize:(struct CGSize { float x1; float x2; })arg1 bugSize:(struct CGSize { float x1; float x2; })arg2;
 

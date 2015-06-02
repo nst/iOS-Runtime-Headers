@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <UITextFieldDelegate>, NSString, SKUIGift, SKUIGiftRecipientTableViewCell, UITextView;
-
 @interface SKUIGiftAddressingSection : SKUIGiftTableViewSection {
     float _footerHeight;
     NSString *_footerString;
@@ -14,8 +12,8 @@
     float _textViewCellHeight;
 }
 
-@property(retain) SKUIGift * gift;
-@property <UITextFieldDelegate> * textFieldDelegate;
+@property (nonatomic, retain) SKUIGift *gift;
+@property (nonatomic) <UITextFieldDelegate> *textFieldDelegate;
 
 - (void).cxx_destruct;
 - (id)_attributedPlaceholderWithString:(id)arg1;

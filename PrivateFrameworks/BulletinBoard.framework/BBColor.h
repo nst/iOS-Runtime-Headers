@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSString, UIColor;
-
 @interface BBColor : NSObject <BBUniquableObject, NSCopying, NSSecureCoding> {
     float _alpha;
     float _blue;
@@ -11,15 +9,17 @@
     float _red;
 }
 
-@property(readonly) float alpha;
-@property(readonly) float blue;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) float green;
-@property(readonly) unsigned int hash;
-@property(readonly) float red;
-@property(readonly) Class superclass;
-@property(copy,readonly) UIColor * uiColor;
+@property (nonatomic, readonly) float alpha;
+@property (nonatomic, readonly) float blue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) float green;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float red;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) UIColor *uiColor;
+
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
 
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (BOOL)supportsSecureCoding;
@@ -35,7 +35,10 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (float)red;
-- (id)uiColor;
 - (id)uniqueIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
+
+- (id)uiColor;
 
 @end

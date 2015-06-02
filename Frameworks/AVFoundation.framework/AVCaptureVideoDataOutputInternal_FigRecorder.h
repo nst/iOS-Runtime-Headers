@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReferencingDelegateStorage, NSDictionary;
-
 @interface AVCaptureVideoDataOutputInternal_FigRecorder : NSObject {
     BOOL alwaysDiscardsLateVideoFrames;
     BOOL delegateRespondsToDidDropSBufCallback;

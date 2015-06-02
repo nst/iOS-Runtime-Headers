@@ -6,7 +6,7 @@
     unsigned long _dataPhaseInfo;
     int _numParameters;
     unsigned short _operationCode;
-    unsigned long _parameters[5];
+    unsigned long _parameters;
     unsigned long _transactionID;
 }
 

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDWiProxLeAdvertiseStartRequest : PBRequest <NSCopying> {
     unsigned int _dataLength;
     struct { 
@@ -16,14 +14,14 @@
     int _type;
 }
 
-@property unsigned int dataLength;
-@property BOOL hasDataLength;
-@property(readonly) BOOL hasSessionId;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
-@property(retain) NSString * sessionId;
-@property unsigned long long timestamp;
-@property int type;
+@property (nonatomic) unsigned int dataLength;
+@property (nonatomic) BOOL hasDataLength;
+@property (nonatomic, readonly) BOOL hasSessionId;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic, retain) NSString *sessionId;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) int type;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

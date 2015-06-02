@@ -2,18 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface TSKCOUpdateOperation : TSKCOAbstractOperation {
     NSString *mPropertyName;
 }
 
-@property(readonly) NSString * propertyName;
+@property (nonatomic, readonly) NSString *propertyName;
 
 - (int)conflictTypeWithOperation:(id)arg1 hadRun:(BOOL)arg2;
 - (void)dealloc;

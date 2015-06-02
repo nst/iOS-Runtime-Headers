@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
  */
 
-@class NPSManager;
-
 @interface NTKClockStatusBarSettings : NSObject {
     NPSManager *_npsManager;
 }

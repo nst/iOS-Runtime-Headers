@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSString;
-
 @interface RMSBeginPairingMessage : PBCodable <NSCopying> {
     NSString *_appName;
     NSString *_deviceModel;
@@ -11,14 +9,14 @@
     NSString *_passcode;
 }
 
-@property(retain) NSString * appName;
-@property(retain) NSString * deviceModel;
-@property(retain) NSString * deviceName;
-@property(readonly) BOOL hasAppName;
-@property(readonly) BOOL hasDeviceModel;
-@property(readonly) BOOL hasDeviceName;
-@property(readonly) BOOL hasPasscode;
-@property(retain) NSString * passcode;
+@property (nonatomic, retain) NSString *appName;
+@property (nonatomic, retain) NSString *deviceModel;
+@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic, readonly) BOOL hasAppName;
+@property (nonatomic, readonly) BOOL hasDeviceModel;
+@property (nonatomic, readonly) BOOL hasDeviceName;
+@property (nonatomic, readonly) BOOL hasPasscode;
+@property (nonatomic, retain) NSString *passcode;
 
 - (void).cxx_destruct;
 - (id)appName;

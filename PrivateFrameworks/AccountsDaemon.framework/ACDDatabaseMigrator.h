@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class NSManagedObjectContext, NSMutableDictionary, NSPersistentStoreCoordinator, NSString;
-
 @interface ACDDatabaseMigrator : NSObject {
     NSString *_databasePath;
     NSManagedObjectContext *_migrationContext;

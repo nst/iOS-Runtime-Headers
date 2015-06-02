@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIBezierPath, UIView<UIKBHandwritingStrokeEnabled>;
-
 @interface UIKBHandwritingQuadCurvePointFIFO : UIKBHandwritingPointFIFO {
     UIBezierPath *_path;
     NSMutableArray *_prevPoints;
     UIView<UIKBHandwritingStrokeEnabled> *_strokeView;
 }
 
-@property(retain) UIBezierPath * path;
-@property(retain) NSMutableArray * prevPoints;
-@property(retain) UIView<UIKBHandwritingStrokeEnabled> * strokeView;
+@property (nonatomic, retain) UIBezierPath *path;
+@property (nonatomic, retain) NSMutableArray *prevPoints;
+@property (nonatomic, retain) UIView<UIKBHandwritingStrokeEnabled> *strokeView;
 
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clear;

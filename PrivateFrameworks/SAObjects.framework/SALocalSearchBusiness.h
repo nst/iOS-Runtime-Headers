@@ -2,27 +2,24 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDictionary, NSNumber, NSString, NSURL, SALocalSearchRating;
+@interface SALocalSearchBusiness : AceObject <SAAceSerializable>
 
-@interface SALocalSearchBusiness : AceObject <SAAceSerializable> {
-}
-
-@property(copy) NSNumber * businessId;
-@property(copy) NSDictionary * businessIds;
-@property(copy) NSURL * businessUrl;
-@property(copy) NSArray * categories;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * extSessionGuid;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * name;
-@property(copy) NSString * openingHours;
-@property(copy) NSArray * phoneNumbers;
-@property(copy) NSURL * photo;
-@property(retain) SALocalSearchRating * rating;
-@property(copy) NSArray * reviews;
-@property(readonly) Class superclass;
-@property int totalNumberOfReviews;
+@property (nonatomic, copy) NSNumber *businessId;
+@property (nonatomic, copy) NSDictionary *businessIds;
+@property (nonatomic, copy) NSURL *businessUrl;
+@property (nonatomic, copy) NSArray *categories;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *extSessionGuid;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *openingHours;
+@property (nonatomic, copy) NSArray *phoneNumbers;
+@property (nonatomic, copy) NSURL *photo;
+@property (nonatomic, retain) SALocalSearchRating *rating;
+@property (nonatomic, copy) NSArray *reviews;
+@property (readonly) Class superclass;
+@property (nonatomic) int totalNumberOfReviews;
 
 + (id)business;
 + (id)businessWithDictionary:(id)arg1 context:(id)arg2;

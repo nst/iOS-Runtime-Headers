@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDSaveUserPrivacySettingsURLRequest : CKDURLRequest {
     NSString *_bundleID;
     int _discoverableTrinary;
 }
 
-@property(copy) NSString * bundleID;
-@property int discoverableTrinary;
+@property (nonatomic, copy) NSString *bundleID;
+@property (nonatomic) int discoverableTrinary;
 
 - (void).cxx_destruct;
 - (id)bundleID;

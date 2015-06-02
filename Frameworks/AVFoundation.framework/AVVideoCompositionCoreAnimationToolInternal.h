@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class CALayer, NSArray;
-
 @interface AVVideoCompositionCoreAnimationToolInternal : NSObject {
     CALayer *animationLayer;
     int auxiliaryTrackID;

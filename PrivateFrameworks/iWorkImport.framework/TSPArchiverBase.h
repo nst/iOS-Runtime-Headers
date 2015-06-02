@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSHashTable, TSPObject;
-
 @interface TSPArchiverBase : NSObject {
     NSHashTable *_commandToModelReferences;
     struct FieldPath { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedField<unsigned int> { unsigned int *x_5_1_1; int x_5_1_2; int x_5_1_3; } x5; int x6; } *_currentFieldPath;
@@ -24,14 +17,14 @@
     NSHashTable *_weakReferences;
 }
 
-@property(readonly) NSHashTable * commandToModelReferences;
-@property(readonly) NSHashTable * dataReferences;
-@property(readonly) BOOL isForCopy;
-@property(readonly) NSHashTable * lazyReferences;
-@property unsigned long long messageVersion;
-@property(readonly) TSPObject * object;
-@property(readonly) NSHashTable * strongReferences;
-@property(readonly) NSHashTable * weakReferences;
+@property (nonatomic, readonly) NSHashTable *commandToModelReferences;
+@property (nonatomic, readonly) NSHashTable *dataReferences;
+@property (nonatomic, readonly) BOOL isForCopy;
+@property (nonatomic, readonly) NSHashTable *lazyReferences;
+@property (nonatomic) unsigned long long messageVersion;
+@property (nonatomic, readonly) TSPObject *object;
+@property (nonatomic, readonly) NSHashTable *strongReferences;
+@property (nonatomic, readonly) NSHashTable *weakReferences;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -40,17 +33,17 @@
 - (id)commandToModelReferences;
 - (id)dataReferences;
 - (void)dealloc;
-- (void)enumerateRulesUsingBlock:(id)arg1;
+- (void)enumerateRulesUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (id)initWithObject:(id)arg1;
 - (BOOL)isForCopy;
 - (id)lazyReferences;
 - (struct Message { int (**x1)(); }*)message;
 - (unsigned long long)messageVersion;
-- (struct Message { int (**x1)(); }*)messageWithNewFunction:(int (*)())arg1;
+- (struct Message { int (**x1)(); }*)messageWithNewFunction:(int (*)arg1;
 - (id)object;
 - (void)releaseMessage;
-- (void)scopedRulesForField:(int)arg1 usingBlock:(id)arg2;
+- (void)scopedRulesForField:(int)arg1 usingBlock:(id /* block */)arg2;
 - (void)setDataReference:(id)arg1 message:(struct DataReference { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; }*)arg2;
 - (void)setDataReferenceArray:(id)arg1 message:(struct RepeatedPtrField<TSP::DataReference> { void **x1; int x2; int x3; int x4; }*)arg2;
 - (void)setIgnoreAndDropRuleForField:(int)arg1;

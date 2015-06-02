@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/TouchRemote.framework/TouchRemote
  */
 
-@class NSData, NSDictionary, NSString;
-
 @interface TRNowPlayingArtworkUpdatePacketEvent : TRPacketEvent {
     NSData *_artworkData;
     NSString *_artworkMIMEType;
     NSDictionary *_nowPlayingInfo;
 }
 
-@property(readonly) NSData * artworkData;
-@property(readonly) NSString * artworkMIMEType;
-@property(readonly) NSDictionary * nowPlayingInfo;
+@property (nonatomic, readonly) NSData *artworkData;
+@property (nonatomic, readonly) NSString *artworkMIMEType;
+@property (nonatomic, readonly) NSDictionary *nowPlayingInfo;
 
 + (unsigned int)_packetEventType;
 

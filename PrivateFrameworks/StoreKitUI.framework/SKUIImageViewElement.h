@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, NSURL, SKUIImageViewElementCacheKey;
-
 @interface SKUIImageViewElement : SKUIViewElement {
     NSString *_alt;
     BOOL _enabled;
@@ -17,11 +15,11 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) id resourceCacheKey;
-@property(readonly) NSString * resourceName;
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) id transientResourceCacheKey;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) id resourceCacheKey;
+@property (nonatomic, readonly) NSString *resourceName;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) id transientResourceCacheKey;
 
 - (void).cxx_destruct;
 - (id)URL;

@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <UITextFieldDelegate>, NSAttributedString, NSString, UIControl, UILabel, UITextField, UIView;
-
 @interface SKUIGiftTextFieldTableViewCell : UITableViewCell {
     UILabel *_label;
     UITextField *_textField;
     UIView *_topBorderView;
 }
 
-@property(copy) NSAttributedString * attributedPlaceholder;
-@property(getter=isEnabled) BOOL enabled;
-@property int keyboardType;
-@property(copy) NSString * label;
-@property(readonly) UIControl * textField;
-@property <UITextFieldDelegate> * textFieldDelegate;
-@property(copy) NSString * value;
+@property (nonatomic, copy) NSAttributedString *attributedPlaceholder;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic) int keyboardType;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, readonly) UIControl *textField;
+@property (nonatomic) <UITextFieldDelegate> *textFieldDelegate;
+@property (nonatomic, copy) NSString *value;
 
 - (void).cxx_destruct;
 - (id)attributedPlaceholder;

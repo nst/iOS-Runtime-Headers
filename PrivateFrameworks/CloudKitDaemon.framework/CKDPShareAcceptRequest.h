@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPProtectionInfo, CKDPShareIdentifier, NSString;
-
 @interface CKDPShareAcceptRequest : PBRequest <NSCopying> {
     NSString *_etag;
     CKDPProtectionInfo *_publicParticipantPublicKey;
@@ -11,14 +9,14 @@
     CKDPShareIdentifier *_shareId;
 }
 
-@property(retain) NSString * etag;
-@property(readonly) BOOL hasEtag;
-@property(readonly) BOOL hasPublicParticipantPublicKey;
-@property(readonly) BOOL hasSelfAddedPcs;
-@property(readonly) BOOL hasShareId;
-@property(retain) CKDPProtectionInfo * publicParticipantPublicKey;
-@property(retain) CKDPProtectionInfo * selfAddedPcs;
-@property(retain) CKDPShareIdentifier * shareId;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, readonly) BOOL hasEtag;
+@property (nonatomic, readonly) BOOL hasPublicParticipantPublicKey;
+@property (nonatomic, readonly) BOOL hasSelfAddedPcs;
+@property (nonatomic, readonly) BOOL hasShareId;
+@property (nonatomic, retain) CKDPProtectionInfo *publicParticipantPublicKey;
+@property (nonatomic, retain) CKDPProtectionInfo *selfAddedPcs;
+@property (nonatomic, retain) CKDPShareIdentifier *shareId;
 
 + (id)options;
 

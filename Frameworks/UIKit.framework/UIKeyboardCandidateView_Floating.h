@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIKeyboardCandidateView_Floating : UIKeyboardCandidateView <UIKeyboardCandidateViewInline> {
     struct CGRect { 
         struct CGPoint { 
@@ -21,11 +19,11 @@
     } presentationSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property struct CGSize { float x1; float x2; } presentationSize;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 + (float)defaultExtendedControlHeight;
 

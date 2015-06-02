@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSCloudStorageOffersManagerDelegate>, CommerceRemoteUIDelegate, NSString;
-
 @interface PSCloudStorageOffersManager : NSObject <CommerceRemoteUIDelegateDelegate> {
     CommerceRemoteUIDelegate *_commerceDelegate;
     <PSCloudStorageOffersManagerDelegate> *_delegate;
     unsigned long long _requiredStorageThreshold;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PSCloudStorageOffersManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned long long requiredStorageThreshold;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PSCloudStorageOffersManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned long long requiredStorageThreshold;
+@property (readonly) Class superclass;
 
 - (void)beginFlowWithNavigationController:(id)arg1 modally:(BOOL)arg2;
 - (void)cancelLoad;

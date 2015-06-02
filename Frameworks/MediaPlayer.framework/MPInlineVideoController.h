@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, MPAVItem, MPAudioVideoRoutingPopoverController, MPInlineAudioOverlay, MPInlineVideoFullscreenViewController, MPSwipableView, MPTVOutWindow, MPVideoBackgroundView, MPVideoContainerView, MPVideoPlaybackOverlayView, MPVideoView, MPVolumeController, MPWeakTimer, NSSet, NSString, UIActivityIndicatorView, UIAlertView, UIColor, UIImage, UINavigationController, UIPinchGestureRecognizer, UITapGestureRecognizer, UIView, UIView<MPVideoOverlay>, UIWindow, _UIHostedWindow;
-
 @interface MPInlineVideoController : NSObject <MPSwipableViewDelegate, MPTransportControlsTarget, MPVideoControllerProtocol, MPVideoOverlayDelegate, MPVolumeControllerDelegate, UIAlertViewDelegate, UIPopoverControllerDelegate> {
     BOOL _TVOutEnabled;
     BOOL _TVOutEnabledMaster;
@@ -78,52 +76,52 @@
     UIWindow *_windowForFullscreenTransition;
 }
 
-@property BOOL TVOutEnabled;
-@property(readonly) UIView * advertisementView;
-@property BOOL allowsDetailScrubbing;
-@property BOOL allowsWirelessPlayback;
-@property BOOL alwaysAllowHidingControlsOverlay;
-@property int artworkImageStyle;
-@property BOOL attemptAutoPlayWhenControlsHidden;
-@property int audioOverlayStyle;
-@property BOOL autoPlayWhenLikelyToKeepUp;
-@property BOOL automaticallyHandleTransportControls;
-@property(readonly) UIView * backgroundView;
-@property(retain) UIColor * backstopColor;
-@property BOOL canAnimateControlsOverlay;
-@property(readonly) BOOL canChangeScaleMode;
-@property BOOL canShowControlsOverlay;
-@property BOOL controlsOverlayVisible;
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property unsigned long long desiredParts;
-@property BOOL disableAutoRotation;
-@property BOOL disableControlsAutohide;
-@property unsigned long long disabledParts;
-@property BOOL displayPlaybackErrorAlerts;
-@property(getter=isFullscreen) BOOL fullscreen;
-@property(readonly) UIView * fullscreenView;
-@property(readonly) unsigned int hash;
-@property(readonly) _UIHostedWindow * hostedWindow;
-@property(readonly) unsigned int hostedWindowContextID;
-@property BOOL inlinePlaybackUsesTVOut;
-@property(retain) MPAVItem * item;
-@property unsigned int itemTypeOverride;
-@property BOOL navigationBarHidden;
-@property int orientation;
-@property(copy) NSString * playbackErrorDescription;
-@property(retain) MPAVController * player;
-@property(retain) UIImage * posterImage;
-@property unsigned int scaleMode;
-@property(readonly) UIView * subtitlesView;
-@property(readonly) Class superclass;
-@property int videoOverlayStyle;
-@property(retain,readonly) UIView<MPVideoOverlay> * videoOverlayView;
-@property(retain,readonly) MPVideoView * videoView;
-@property(retain,readonly) UIView * view;
-@property(readonly) BOOL viewControllerWillRequestExit;
-@property unsigned long long visibleParts;
+@property (nonatomic) BOOL TVOutEnabled;
+@property (nonatomic, readonly) UIView *advertisementView;
+@property (nonatomic) BOOL allowsDetailScrubbing;
+@property (nonatomic) BOOL allowsWirelessPlayback;
+@property (nonatomic) BOOL alwaysAllowHidingControlsOverlay;
+@property (nonatomic) int artworkImageStyle;
+@property (nonatomic) BOOL attemptAutoPlayWhenControlsHidden;
+@property (nonatomic) int audioOverlayStyle;
+@property (nonatomic) BOOL autoPlayWhenLikelyToKeepUp;
+@property (nonatomic) BOOL automaticallyHandleTransportControls;
+@property (nonatomic, readonly) UIView *backgroundView;
+@property (nonatomic, retain) UIColor *backstopColor;
+@property (nonatomic) BOOL canAnimateControlsOverlay;
+@property (nonatomic, readonly) BOOL canChangeScaleMode;
+@property (nonatomic) BOOL canShowControlsOverlay;
+@property (nonatomic) BOOL controlsOverlayVisible;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned long long desiredParts;
+@property (nonatomic) BOOL disableAutoRotation;
+@property (nonatomic) BOOL disableControlsAutohide;
+@property (nonatomic) unsigned long long disabledParts;
+@property (nonatomic) BOOL displayPlaybackErrorAlerts;
+@property (getter=isFullscreen, nonatomic) BOOL fullscreen;
+@property (nonatomic, readonly) UIView *fullscreenView;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) _UIHostedWindow *hostedWindow;
+@property (nonatomic, readonly) unsigned int hostedWindowContextID;
+@property (nonatomic) BOOL inlinePlaybackUsesTVOut;
+@property (nonatomic, retain) MPAVItem *item;
+@property (nonatomic) unsigned int itemTypeOverride;
+@property (nonatomic) BOOL navigationBarHidden;
+@property (nonatomic) int orientation;
+@property (nonatomic, copy) NSString *playbackErrorDescription;
+@property (nonatomic, retain) MPAVController *player;
+@property (nonatomic, retain) UIImage *posterImage;
+@property (nonatomic) unsigned int scaleMode;
+@property (nonatomic, readonly) UIView *subtitlesView;
+@property (readonly) Class superclass;
+@property (nonatomic) int videoOverlayStyle;
+@property (nonatomic, readonly, retain) UIView<MPVideoOverlay> *videoOverlayView;
+@property (nonatomic, readonly, retain) MPVideoView *videoView;
+@property (nonatomic, readonly, retain) UIView *view;
+@property (nonatomic, readonly) BOOL viewControllerWillRequestExit;
+@property (nonatomic) unsigned long long visibleParts;
 
 - (void).cxx_destruct;
 - (BOOL)TVOutEnabled;

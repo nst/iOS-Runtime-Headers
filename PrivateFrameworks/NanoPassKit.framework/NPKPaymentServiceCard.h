@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSString;
-
 @interface NPKPaymentServiceCard : NSObject <NSSecureCoding> {
     NSString *_applicationIdentifier;
     NSString *_passUniqueIdentifier;
     int _paymentApplicationState;
 }
 
-@property(copy) NSString * applicationIdentifier;
-@property(getter=isReadyForPayment,readonly) BOOL availableForPayment;
-@property(copy) NSString * passUniqueIdentifier;
-@property int paymentApplicationState;
+@property (nonatomic, copy) NSString *applicationIdentifier;
+@property (getter=isReadyForPayment, nonatomic, readonly) BOOL availableForPayment;
+@property (nonatomic, copy) NSString *passUniqueIdentifier;
+@property (nonatomic) int paymentApplicationState;
 
 + (id)paymentServiceCardForPassUniqueID:(id)arg1 paymentApplication:(id)arg2;
 + (id)paymentServiceCardForPaymentPass:(id)arg1;

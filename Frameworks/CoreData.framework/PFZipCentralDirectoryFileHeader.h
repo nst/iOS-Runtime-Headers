@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSData, NSString;
-
 @interface PFZipCentralDirectoryFileHeader : NSObject {
     unsigned int _compressedSize;
     unsigned short _compressionMethod;
@@ -26,25 +24,25 @@
     unsigned short _versionNeededToExtract;
 }
 
-@property unsigned int compressedSize;
-@property unsigned short compressionMethod;
-@property unsigned int crc32;
-@property unsigned int externalFileAttrs;
-@property(retain) NSData * extraFieldData;
-@property(readonly) unsigned short extraFieldLength;
-@property(retain) NSString * fileComment;
-@property(readonly) unsigned short fileCommentLength;
-@property unsigned short fileStartDiskNumber;
-@property(retain) NSString * filename;
-@property(readonly) unsigned short filenameLength;
-@property unsigned short generalPurposeBit;
-@property unsigned short internalFileAttrs;
-@property unsigned short lastModDate;
-@property unsigned short lastModTime;
-@property unsigned int localFileHeaderRelativeOffset;
-@property unsigned int uncompressedSize;
-@property unsigned short versionMadeBy;
-@property unsigned short versionNeededToExtract;
+@property (nonatomic) unsigned int compressedSize;
+@property (nonatomic) unsigned short compressionMethod;
+@property (nonatomic) unsigned int crc32;
+@property (nonatomic) unsigned int externalFileAttrs;
+@property (nonatomic, retain) NSData *extraFieldData;
+@property (nonatomic, readonly) unsigned short extraFieldLength;
+@property (nonatomic, retain) NSString *fileComment;
+@property (nonatomic, readonly) unsigned short fileCommentLength;
+@property (nonatomic) unsigned short fileStartDiskNumber;
+@property (nonatomic, retain) NSString *filename;
+@property (nonatomic, readonly) unsigned short filenameLength;
+@property (nonatomic) unsigned short generalPurposeBit;
+@property (nonatomic) unsigned short internalFileAttrs;
+@property (nonatomic) unsigned short lastModDate;
+@property (nonatomic) unsigned short lastModTime;
+@property (nonatomic) unsigned int localFileHeaderRelativeOffset;
+@property (nonatomic) unsigned int uncompressedSize;
+@property (nonatomic) unsigned short versionMadeBy;
+@property (nonatomic) unsigned short versionNeededToExtract;
 
 - (void)appendToData:(id)arg1;
 - (unsigned int)compressedSize;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSDictionary, PHFetchResult;
-
 @interface PUPhotosDataSourceSectionCache : NSObject {
     NSDictionary *_assetCollectionToSection;
     PHFetchResult *_collectionListFetchResult;
@@ -12,11 +10,11 @@
     int _estimatedVideosCount;
 }
 
-@property(readonly) NSDictionary * assetCollectionToSection;
-@property(readonly) PHFetchResult * collectionListFetchResult;
-@property(readonly) int estimatedOtherCount;
-@property(readonly) int estimatedPhotosCount;
-@property(readonly) int estimatedVideosCount;
+@property (nonatomic, readonly) NSDictionary *assetCollectionToSection;
+@property (nonatomic, readonly) PHFetchResult *collectionListFetchResult;
+@property (nonatomic, readonly) int estimatedOtherCount;
+@property (nonatomic, readonly) int estimatedPhotosCount;
+@property (nonatomic, readonly) int estimatedVideosCount;
 
 - (void).cxx_destruct;
 - (id)assetCollectionToSection;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUPhotoViewContentHelper;
-
 @interface PUPhotoView : UIView {
     PUPhotoViewContentHelper *_contentHelper;
 }
 
-@property(readonly) PUPhotoViewContentHelper * contentHelper;
+@property (nonatomic, readonly) PUPhotoViewContentHelper *contentHelper;
 
 - (void).cxx_destruct;
 - (id)contentHelper;

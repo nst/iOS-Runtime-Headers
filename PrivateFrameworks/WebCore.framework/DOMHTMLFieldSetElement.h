@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMHTMLFormElement;
+@interface DOMHTMLFieldSetElement : DOMHTMLElement
 
-@interface DOMHTMLFieldSetElement : DOMHTMLElement {
-}
-
-@property(readonly) DOMHTMLFormElement * form;
+@property (readonly) DOMHTMLFormElement *form;
 
 - (BOOL)checkValidity;
 - (BOOL)disabled;

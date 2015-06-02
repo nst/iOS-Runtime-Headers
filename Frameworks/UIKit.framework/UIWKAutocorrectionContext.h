@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UIWKAutocorrectionContext : NSObject {
     NSString *_contextAfterSelection;
     NSString *_contextBeforeSelection;
@@ -15,11 +13,11 @@
     NSString *_selectedText;
 }
 
-@property(copy) NSString * contextAfterSelection;
-@property(copy) NSString * contextBeforeSelection;
-@property(copy) NSString * markedText;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } rangeInMarkedText;
-@property(copy) NSString * selectedText;
+@property (nonatomic, copy) NSString *contextAfterSelection;
+@property (nonatomic, copy) NSString *contextBeforeSelection;
+@property (nonatomic, copy) NSString *markedText;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } rangeInMarkedText;
+@property (nonatomic, copy) NSString *selectedText;
 
 - (id)contextAfterSelection;
 - (id)contextBeforeSelection;

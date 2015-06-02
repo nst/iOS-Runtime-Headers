@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSString;
-
 @interface BRCSharingCopyiWorkShareURLOperation : BRCSharingModifyShareOperation {
     NSString *_appName;
 }

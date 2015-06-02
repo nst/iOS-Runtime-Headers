@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@interface SBReadonlyTableViewCell : PTSRowTableViewCell {
-}
+@interface SBReadonlyTableViewCell : PTSRowTableViewCell
 
 + (int)cellStyleForRow:(id)arg1;
 

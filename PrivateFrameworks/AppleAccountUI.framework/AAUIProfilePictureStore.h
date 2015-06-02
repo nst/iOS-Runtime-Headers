@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class AAGrandSlamSigner, ABMonogrammer, ACAccount, ACAccountStore, NSOperationQueue;
-
 @interface AAUIProfilePictureStore : NSObject {
     ACAccount *_account;
     ACAccountStore *_accountStore;
@@ -15,16 +13,16 @@
     int _pictureStyle;
 }
 
-@property float pictureDiameter;
-@property int pictureStyle;
+@property (nonatomic) float pictureDiameter;
+@property (nonatomic) int pictureStyle;
 
 - (void).cxx_destruct;
 - (id)_correctlySizedImageFromImage:(id)arg1;
 - (id)_fallbackProfilePictureForPersonWithFirstName:(id)arg1 lastName:(id)arg2;
 - (id)_familyMemberPersonPicture:(id)arg1;
-- (void)_fetchProfilePictureForAccountOwnerFromServer:(id)arg1 serverCacheTag:(id)arg2 completion:(id)arg3;
-- (void)_fetchProfilePictureForFamilyMemberFromServer:(id)arg1 serverCacheTag:(id)arg2 completion:(id)arg3;
-- (void)_fetchProfilePictureWithRequest:(id)arg1 personID:(id)arg2 completion:(id)arg3;
+- (void)_fetchProfilePictureForAccountOwnerFromServer:(id)arg1 serverCacheTag:(id)arg2 completion:(id /* block */)arg3;
+- (void)_fetchProfilePictureForFamilyMemberFromServer:(id)arg1 serverCacheTag:(id)arg2 completion:(id /* block */)arg3;
+- (void)_fetchProfilePictureWithRequest:(id)arg1 personID:(id)arg2 completion:(id /* block */)arg3;
 - (void)_invalidateMonogrammer;
 - (id)_meCardPicture;
 - (id)_monogramPersonImage:(void*)arg1;
@@ -40,8 +38,8 @@
 - (void)_updateServerProfilePictureWithRequest:(id)arg1;
 - (id)cacheablePictureForPicture:(id)arg1 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)dealloc;
-- (void)fetchProfilePictureForAccountOwner:(id)arg1;
-- (void)fetchProfilePictureForFamilyMember:(id)arg1 completion:(id)arg2;
+- (void)fetchProfilePictureForAccountOwner:(id /* block */)arg1;
+- (void)fetchProfilePictureForFamilyMember:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (id)initWithAppleAccount:(id)arg1 grandSlamAccount:(id)arg2 accountStore:(id)arg3;
 - (id)initWithAppleAccount:(id)arg1 store:(id)arg2;

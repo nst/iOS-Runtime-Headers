@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEVPNProtocol, NSArray;
-
 @interface NEVPN : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _enabled;
     BOOL _onDemandEnabled;
@@ -11,10 +9,10 @@
     NEVPNProtocol *_protocol;
 }
 
-@property(getter=isEnabled) BOOL enabled;
-@property(getter=isOnDemandEnabled) BOOL onDemandEnabled;
-@property(copy) NSArray * onDemandRules;
-@property(copy) NEVPNProtocol * protocol;
+@property (getter=isEnabled) BOOL enabled;
+@property (getter=isOnDemandEnabled) BOOL onDemandEnabled;
+@property (copy) NSArray *onDemandRules;
+@property (copy) NEVPNProtocol *protocol;
 
 + (BOOL)supportsSecureCoding;
 

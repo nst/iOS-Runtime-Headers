@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EBWorksheet : NSObject {
-}
+@interface EBWorksheet : NSObject
 
 + (void)readChildrenWithState:(id)arg1;
 + (void)readSheetPresentationInfoWithState:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSNumber, UIFont;
-
 @interface PKPassFieldTemplate : NSObject {
     NSNumber *_boxedSuppressesEmptyLabel;
     NSNumber *_boxedSuppressesLabel;
@@ -15,19 +13,19 @@
     Class _viewSubclass;
 }
 
-@property(retain) NSNumber * boxedSuppressesEmptyLabel;
-@property(retain) NSNumber * boxedSuppressesLabel;
-@property(retain) NSNumber * boxedTextAlignment;
-@property(retain) NSNumber * boxedValueCanWrap;
-@property(retain) NSNumber * boxedVerticalPadding;
-@property(retain) UIFont * labelFont;
-@property BOOL suppressesEmptyLabel;
-@property BOOL suppressesLabel;
-@property int textAlignment;
-@property BOOL valueCanWrap;
-@property(retain) UIFont * valueFont;
-@property float verticalPadding;
-@property(retain) Class viewSubclass;
+@property (nonatomic, retain) NSNumber *boxedSuppressesEmptyLabel;
+@property (nonatomic, retain) NSNumber *boxedSuppressesLabel;
+@property (nonatomic, retain) NSNumber *boxedTextAlignment;
+@property (nonatomic, retain) NSNumber *boxedValueCanWrap;
+@property (nonatomic, retain) NSNumber *boxedVerticalPadding;
+@property (nonatomic, retain) UIFont *labelFont;
+@property (nonatomic) BOOL suppressesEmptyLabel;
+@property (nonatomic) BOOL suppressesLabel;
+@property (nonatomic) int textAlignment;
+@property (nonatomic) BOOL valueCanWrap;
+@property (nonatomic, retain) UIFont *valueFont;
+@property (nonatomic) float verticalPadding;
+@property (nonatomic, retain) Class viewSubclass;
 
 + (id)_templateByResolvingTemplate:(id)arg1 withDefault:(id)arg2;
 + (id)fieldTemplateWithTextAlignment:(int)arg1;

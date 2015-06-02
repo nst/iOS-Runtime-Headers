@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class NSString, SCNMaterialProperty, SCNOrderedDictionary, SCNTechnique;
-
 @interface SCNLight : NSObject <NSCopying, NSSecureCoding, SCNAnimatable, SCNTechniqueSupport> {
     SCNOrderedDictionary *_animations;
-    float _attenuations[6];
-    unsigned int _castsShadow : 1;
+    float _attenuations;
+    unsigned int _castsShadow;
     unsigned int _categoryBitMask;
     id _color;
     SCNMaterialProperty *_gobo;
-    unsigned int _goboProjectShadows : 1;
-    unsigned int _isPresentationInstance : 1;
+    unsigned int _goboProjectShadows;
+    unsigned int _isPresentationInstance;
     struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4[6]; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_5_1_1; } x5; union C3DVector2 { float x_6_1_1[2]; struct { float x_2_2_1; float x_2_2_2; } x_6_1_2; struct { float x_3_2_1; float x_3_2_2; } x_6_1_3; struct { float x_4_2_1; float x_4_2_2; } x_6_1_4; } x6; float x7; float x8; unsigned int x9; unsigned int x10; bool x11; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; double x15; double x16; double x17; struct __C3DEffectSlot {} *x18; struct __C3DFXTechnique {} *x19; } *_light;
     NSString *_name;
     float _orthographicScale;
@@ -27,37 +25,37 @@
     unsigned int _shadowSampleCount;
     SCNTechnique *_technique;
     NSString *_type;
-    unsigned int _usesDeferredShadows : 1;
-    unsigned int _usesModulatedMode : 1;
+    unsigned int _usesDeferredShadows;
+    unsigned int _usesModulatedMode;
     double _zFar;
     double _zNear;
 }
 
-@property float attenuationEndDistance;
-@property float attenuationFalloffExponent;
-@property float attenuationStartDistance;
-@property BOOL castsShadow;
-@property unsigned int categoryBitMask;
-@property(retain) id color;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) SCNMaterialProperty * gobo;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * name;
-@property float orthographicScale;
-@property float shadowBias;
-@property(retain) id shadowColor;
-@property struct CGSize { float x1; float x2; } shadowMapSize;
-@property int shadowMode;
-@property float shadowRadius;
-@property unsigned int shadowSampleCount;
-@property float spotInnerAngle;
-@property float spotOuterAngle;
-@property(readonly) Class superclass;
-@property(copy) SCNTechnique * technique;
-@property(copy) NSString * type;
-@property float zFar;
-@property float zNear;
+@property (nonatomic) float attenuationEndDistance;
+@property (nonatomic) float attenuationFalloffExponent;
+@property (nonatomic) float attenuationStartDistance;
+@property (nonatomic) BOOL castsShadow;
+@property (nonatomic) unsigned int categoryBitMask;
+@property (nonatomic, retain) id color;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) SCNMaterialProperty *gobo;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) float orthographicScale;
+@property (nonatomic) float shadowBias;
+@property (nonatomic, retain) id shadowColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowMapSize;
+@property (nonatomic) int shadowMode;
+@property (nonatomic) float shadowRadius;
+@property (nonatomic) unsigned int shadowSampleCount;
+@property (nonatomic) float spotInnerAngle;
+@property (nonatomic) float spotOuterAngle;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) SCNTechnique *technique;
+@property (nonatomic, copy) NSString *type;
+@property (nonatomic) float zFar;
+@property (nonatomic) float zNear;
 
 + (id)SCNJSExportProtocol;
 + (id)light;

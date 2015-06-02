@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel, UITextView;
-
 @interface EKEventDetailNotesCell : EKEventDetailCell {
     BOOL _isTruncatingNotes;
     UILabel *_notesTitleView;
     UITextView *_notesView;
 }
 
-@property(readonly) BOOL isTruncatingNotes;
+@property (nonatomic, readonly) BOOL isTruncatingNotes;
 
 - (void).cxx_destruct;
 - (id)_notesTitleView;

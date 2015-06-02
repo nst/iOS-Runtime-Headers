@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCDownloadThumbnailEntry : BRCDownloadEntry {
-}
+@interface BRCDownloadThumbnailEntry : BRCDownloadEntry
 
 - (BOOL)_stageWithSession:(id)arg1 error:(id*)arg2;
 - (id)description;

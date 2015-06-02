@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSMutableArray, UIKBTree, UIKeyboardSliceSet, UIKeyboardTransitionSlice;
-
 @interface UIKBSplitKeyplaneGenerator : NSObject {
     struct CGSize { 
         float width; 

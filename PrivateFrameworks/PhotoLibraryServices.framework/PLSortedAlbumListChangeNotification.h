@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLAssetContainerListChangeNotification, PLSortedAlbumList;
-
 @interface PLSortedAlbumListChangeNotification : PLAssetContainerListChangeNotification {
     PLSortedAlbumList *_albumList;
     PLAssetContainerListChangeNotification *_backingNotification;

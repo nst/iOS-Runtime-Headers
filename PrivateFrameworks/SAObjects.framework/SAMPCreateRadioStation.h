@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSURL;
+@interface SAMPCreateRadioStation : SABaseClientBoundCommand
 
-@interface SAMPCreateRadioStation : SABaseClientBoundCommand {
-}
-
-@property(copy) NSNumber * startPlaying;
-@property(copy) NSURL * stationUrl;
+@property (nonatomic, copy) NSNumber *startPlaying;
+@property (nonatomic, copy) NSURL *stationUrl;
 
 + (id)createRadioStation;
 + (id)createRadioStationWithDictionary:(id)arg1 context:(id)arg2;

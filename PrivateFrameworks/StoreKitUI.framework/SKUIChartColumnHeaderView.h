@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray;
-
 @interface SKUIChartColumnHeaderView : UIControl {
     NSArray *_buttons;
     int _selectedTitleIndex;
 }
 
-@property int selectedTitleIndex;
-@property(copy) NSArray * titles;
+@property (nonatomic) int selectedTitleIndex;
+@property (nonatomic, copy) NSArray *titles;
 
 - (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;

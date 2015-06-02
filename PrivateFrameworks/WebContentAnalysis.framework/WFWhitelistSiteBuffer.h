@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSMutableArray, NSMutableSet;
-
 @interface WFWhitelistSiteBuffer : NSObject {
     unsigned int maxSize;
     NSMutableArray *siteBuffer;
@@ -11,8 +9,8 @@
 }
 
 @property unsigned int maxSize;
-@property(retain) NSMutableArray * siteBuffer;
-@property(retain) NSMutableSet * siteSet;
+@property (retain) NSMutableArray *siteBuffer;
+@property (retain) NSMutableSet *siteSet;
 
 - (void)addURLString:(id)arg1;
 - (BOOL)containsMetasitePrefixOfURLString:(id)arg1;

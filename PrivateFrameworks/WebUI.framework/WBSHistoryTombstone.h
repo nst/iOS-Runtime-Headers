@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDictionary, NSString;
-
 @interface WBSHistoryTombstone : NSObject {
     double _endTime;
     long long _generation;
@@ -11,11 +9,11 @@
     NSString *_urlString;
 }
 
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(readonly) double endTime;
-@property(readonly) long long generation;
-@property(readonly) double startTime;
-@property(readonly) NSString * urlString;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, readonly) double endTime;
+@property (nonatomic, readonly) long long generation;
+@property (nonatomic, readonly) double startTime;
+@property (nonatomic, readonly) NSString *urlString;
 
 - (void).cxx_destruct;
 - (id)description;

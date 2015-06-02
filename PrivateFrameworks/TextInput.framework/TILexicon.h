@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSArray;
-
 @interface TILexicon : NSObject <NSCopying, NSSecureCoding> {
     NSArray *_entries;
 }
 
-@property(readonly) NSArray * entries;
+@property (nonatomic, readonly) NSArray *entries;
 
 + (id)lexiconWithEntries:(id)arg1;
-+ (void)requestLexiconFromBundlePath:(id)arg1 completionHandler:(id)arg2;
++ (void)requestLexiconFromBundlePath:(id)arg1 completionHandler:(id /* block */)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

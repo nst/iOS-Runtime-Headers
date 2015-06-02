@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class <NDBackgroundSessionProtocol>, NSError, NSString;
-
 @interface __NSCFBackgroundSessionTask : NSURLSessionTask <NSURLSessionTaskSubclass> {
     unsigned int _ident;
     NSError *_immediateError;
@@ -11,13 +9,13 @@
     BOOL _sentCancel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int ident;
-@property(retain) NSError * immediateError;
-@property(retain) <NDBackgroundSessionProtocol> * remoteSession;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) unsigned int ident;
+@property (retain) NSError *immediateError;
+@property (retain) <NDBackgroundSessionProtocol> *remoteSession;
+@property (readonly) Class superclass;
 
 - (void)_onqueue_adjustPoolPriority;
 - (void)_onqueue_adjustPriorityHint:(float)arg1;
@@ -25,14 +23,14 @@
 - (void)_onqueue_connectionWaitingWithError:(id)arg1;
 - (void)_onqueue_connectionWaitingWithReason:(long long)arg1;
 - (void)_onqueue_didFinishWithError:(id)arg1;
-- (void)_onqueue_didReceiveChallenge:(id)arg1 request:(id)arg2 withCompletion:(id)arg3;
+- (void)_onqueue_didReceiveChallenge:(id)arg1 request:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)_onqueue_didReceiveResponse:(id)arg1;
 - (void)_onqueue_didResume;
 - (void)_onqueue_didSendBodyBytes:(long long)arg1 totalBytesSent:(long long)arg2 totalBytesExpectedToSend:(long long)arg3;
 - (void)_onqueue_disavow;
 - (void)_onqueue_resume;
 - (void)_onqueue_suspend;
-- (void)_onqueue_willSendRequestForEstablishedConnection:(id)arg1 withCompletion:(id)arg2;
+- (void)_onqueue_willSendRequestForEstablishedConnection:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)_timingData;
 - (void)dealloc;
 - (unsigned int)ident;

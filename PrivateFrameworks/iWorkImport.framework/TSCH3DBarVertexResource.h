@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DBarExtrusionGeometry;
-
 @interface TSCH3DBarVertexResource : TSCH3DAbstractBarVertexResource {
     TSCH3DBarExtrusionGeometry *mGeometry;
 }

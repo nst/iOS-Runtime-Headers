@@ -7,7 +7,7 @@
     int _logLevel;
 }
 
-@property int logLevel;
+@property (nonatomic) int logLevel;
 
 + (id)sharedLogger;
 

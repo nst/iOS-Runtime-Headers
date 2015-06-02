@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class AVPlayerController;
-
 @interface AVNowPlayingInfoController : NSObject {
-    unsigned int _nowPlayingInfoNeedsUpdate : 1;
+    unsigned int _nowPlayingInfoNeedsUpdate;
     AVPlayerController *_playerController;
     id _playerControllerCurrentTimeJumpedObserver;
 }
 
-@property(retain) AVPlayerController * playerController;
+@property (nonatomic, retain) AVPlayerController *playerController;
 
 - (void).cxx_destruct;
 - (void)_setNowPlayingInfoNeedsUpdate;

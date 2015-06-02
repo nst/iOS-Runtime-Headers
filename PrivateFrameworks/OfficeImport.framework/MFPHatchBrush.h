@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface MFPHatchBrush : MFPImageBrush {
-}
+@interface MFPHatchBrush : MFPImageBrush
 
 + (id)bitmapNameForHatchStyle:(int)arg1;
 

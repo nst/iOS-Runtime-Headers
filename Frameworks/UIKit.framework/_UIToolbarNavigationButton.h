@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIToolbarNavigationButton : UINavigationButton {
-}
+@interface _UIToolbarNavigationButton : UINavigationButton
 
 - (void)updateImageIfNeeded;
 - (void)updateImageIfNeededWithTintColor:(id)arg1;

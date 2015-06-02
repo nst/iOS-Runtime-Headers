@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDWiProxLeRemoveServiceRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -13,12 +11,12 @@
     unsigned long long _timestamp;
 }
 
-@property(readonly) BOOL hasServiceUUID;
-@property(readonly) BOOL hasSessionId;
-@property BOOL hasTimestamp;
-@property(retain) NSString * serviceUUID;
-@property(retain) NSString * sessionId;
-@property unsigned long long timestamp;
+@property (nonatomic, readonly) BOOL hasServiceUUID;
+@property (nonatomic, readonly) BOOL hasSessionId;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSString *serviceUUID;
+@property (nonatomic, retain) NSString *sessionId;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

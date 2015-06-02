@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <WebCaretChangeListener>, <WebDeviceOrientationProvider>, <WebFormDelegate>, <WebGeolocationProvider>, <WebNotificationProvider>, NSMutableSet, NSString, NSURL, WAKWindow, WebFixedPositionContent, WebIndicateLayer, WebInspector, WebNodeHighlight, WebPreferences, WebVideoFullscreenController;
-
 @interface WebViewPrivate : NSObject {
     id UIDelegate;
     id UIDelegateForwarder;

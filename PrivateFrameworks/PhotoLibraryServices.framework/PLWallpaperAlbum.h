@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLWallpaperAlbum : PLManagedAlbum {
-}
+@interface PLWallpaperAlbum : PLManagedAlbum
 
-@property short wallpaperAlbumType;
+@property (nonatomic) short wallpaperAlbumType;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

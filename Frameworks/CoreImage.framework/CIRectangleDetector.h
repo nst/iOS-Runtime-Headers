@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIContext, NSMutableDictionary;
-
 @interface CIRectangleDetector : CIDetector {
     float _height;
     void *_internalBuffer;
@@ -16,7 +14,7 @@
     struct __CVBuffer { } *scaleBuffer;
 }
 
-@property(retain) CIContext * context;
+@property (nonatomic, retain) CIContext *context;
 
 - (id)context;
 - (void)dealloc;

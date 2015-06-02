@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreMIDI.framework/CoreMIDI
  */
 
-@class NSString;
-
 @interface MIDINetworkSession : NSObject {
-    struct _MIDINetworkSessionImpl { struct OpaqueMIDIEntity {} *x1; struct OpaqueMIDIEndpoint {} *x2; struct OpaqueMIDIEndpoint {} *x3; id x4; id x5; struct ContactOrConnectionSet { bool x_6_1_1; id x_6_1_2; } x6; } *_impl;
+    struct _MIDINetworkSessionImpl { struct OpaqueMIDIEntity {} *x1; struct OpaqueMIDIEndpoint {} *x2; struct OpaqueMIDIEndpoint {} *x3; id x4; struct ContactOrConnectionSet { bool x_5_1_1; id x_5_1_2; } x5; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; oneway void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; unsigned short x49; long doublex50; inout long doublex51; unsigned short x52; void*x53; void*x54; void*x55; int x56; in void*x57; short x58; long doublex59; void*x60; void*x61; void*x62; int x63; long x64; void*x65; void*x66; void*x67; void*x68; void*x69; oneway void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; unsigned char x76; void*x77; unsigned short x78; void*x79; short x80; void*x81; void*x82; void*x83; void*x84; unsigned long x85; int x86; unsigned int x87/* : ? */; const void*x88; const void*x89; void*x90; void*x91; const int x92; void x93; void*x94; void*x95; void*x96; void*x97; const void*x98; void*x99; void*x100; void*x101; out const void*x102; short x103; void*x104; void*x105; const void*x106; float x107; void*x108; const void*x109; in BOOL x110; void*x111; short x112; void*x113; float x114; const void*x115; void*x116; void*x117; void*x118; out const void*x119; void*x120; void*x121; const void*x122; float x123; void*x124; const void*x125; in BOOL x126; void*x127; short x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; unsigned long x166; } *_impl;
 }
 
-@property unsigned int connectionPolicy;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) NSString * localName;
-@property(readonly) NSString * networkName;
-@property(readonly) unsigned int networkPort;
+@property (nonatomic) unsigned int connectionPolicy;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) NSString *localName;
+@property (nonatomic, readonly) NSString *networkName;
+@property (nonatomic, readonly) unsigned int networkPort;
 
 + (id)defaultSession;
 

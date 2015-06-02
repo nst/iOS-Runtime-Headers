@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUIDividerView : UIView {
     int _dividerOrientation;
     float _dividerSize;
 }
 
-@property(retain) UIColor * dividerColor;
-@property int dividerOrientation;
-@property float dividerSize;
+@property (nonatomic, retain) UIColor *dividerColor;
+@property (nonatomic) int dividerOrientation;
+@property (nonatomic) float dividerSize;
 
 - (id)dividerColor;
 - (int)dividerOrientation;

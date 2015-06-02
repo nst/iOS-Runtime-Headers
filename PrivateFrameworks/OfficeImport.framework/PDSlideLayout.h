@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDSlideMaster;
-
 @interface PDSlideLayout : PDSlideChild {
     int mSlideLayoutType;
     PDSlideMaster *mSlideMaster;

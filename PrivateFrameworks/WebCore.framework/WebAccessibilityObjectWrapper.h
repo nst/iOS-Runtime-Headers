@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface WebAccessibilityObjectWrapper : WebAccessibilityObjectWrapperBase {
     unsigned long long m_accessibilityTraitsFromAncestor;
     int m_isAccessibilityElement;
@@ -118,7 +113,7 @@
 - (BOOL)accessibilityRequired;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })accessibilityRowRange;
 - (BOOL)accessibilityScroll:(int)arg1;
-- (void)accessibilitySetPostedNotificationCallback:(int (*)())arg1 withContext:(void*)arg2;
+- (void)accessibilitySetPostedNotificationCallback:(int (*)arg1 withContext:(void*)arg2;
 - (id)accessibilitySpeechHint;
 - (BOOL)accessibilitySupportsARIAExpanded;
 - (id)accessibilityTitleElement;

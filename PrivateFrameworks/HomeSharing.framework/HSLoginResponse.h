@@ -6,7 +6,7 @@
     unsigned int sessionID;
 }
 
-@property unsigned int sessionID;
+@property (nonatomic) unsigned int sessionID;
 
 - (unsigned int)sessionID;
 - (void)setSessionID:(unsigned int)arg1;

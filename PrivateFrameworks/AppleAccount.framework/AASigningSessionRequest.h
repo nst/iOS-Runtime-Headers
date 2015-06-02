@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSData;
-
 @interface AASigningSessionRequest : AARequest {
     NSData *_sessionInfoRequestData;
 }

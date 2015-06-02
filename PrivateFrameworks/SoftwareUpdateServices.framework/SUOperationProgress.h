@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class NSString;
-
 @interface SUOperationProgress : NSObject <NSCopying, NSSecureCoding> {
     float _normalizedPercentComplete;
     float _percentComplete;
@@ -11,10 +9,10 @@
     double _timeRemaining;
 }
 
-@property float normalizedPercentComplete;
-@property float percentComplete;
-@property(retain) NSString * phase;
-@property double timeRemaining;
+@property (nonatomic) float normalizedPercentComplete;
+@property (nonatomic) float percentComplete;
+@property (nonatomic, retain) NSString *phase;
+@property (nonatomic) double timeRemaining;
 
 + (BOOL)supportsSecureCoding;
 

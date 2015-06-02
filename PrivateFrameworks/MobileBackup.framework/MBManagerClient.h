@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
  */
 
-@class MBConnection, NSObject<OS_dispatch_queue>;
-
 @interface MBManagerClient : MBManager <MBConnectionHandler> {
     MBConnection *_conn;
     NSObject<OS_dispatch_queue> *_eventQueue;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIImage, UIImageView, UILabel;
-
 @interface SKUIStarRatingView : UIView {
     float _elementSpacing;
     UIImageView *_ratingStarsImageView;
     UILabel *_textLabel;
 }
 
-@property float elementSpacing;
-@property(retain) UIImage * ratingStarsImage;
-@property(readonly) UILabel * textLabel;
+@property (nonatomic) float elementSpacing;
+@property (nonatomic, retain) UIImage *ratingStarsImage;
+@property (nonatomic, readonly) UILabel *textLabel;
 
 - (void).cxx_destruct;
 - (float)elementSpacing;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerItemOutputInternal;
-
 @interface AVPlayerItemOutput : NSObject {
     AVPlayerItemOutputInternal *_outputInternal;
 }
 
-@property BOOL suppressesPlayerRendering;
+@property (nonatomic) BOOL suppressesPlayerRendering;
 
 - (BOOL)_attachToPlayerItem:(id)arg1;
 - (struct OpaqueCMTimebase { }*)_copyTimebase;

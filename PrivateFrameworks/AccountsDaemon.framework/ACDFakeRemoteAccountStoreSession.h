@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AccountsDaemon.framework/AccountsDaemon
  */
 
-@class NSObject;
-
 @interface ACDFakeRemoteAccountStoreSession : ACRemoteAccountStoreSession {
     NSObject *_proxy;
 }
@@ -11,6 +9,6 @@
 - (void).cxx_destruct;
 - (id)initWithFakeProxy:(id)arg1;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 
 @end

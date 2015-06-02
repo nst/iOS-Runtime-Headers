@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLPhotoScrubberDataSource>, <PLPhotoScrubberSpeedDelegate>, NSMutableArray, NSTimer, UIImageView, UIView;
-
 @interface PLPhotoScrubber : UIControl {
     int __lastSpeedRegime;
     double __lastTime;
@@ -36,12 +34,12 @@
     double _timeOfLastTouch;
 }
 
-@property(setter=_setLastSpeedRegime:) int _lastSpeedRegime;
-@property(setter=_setLastTime:) double _lastTime;
-@property(setter=_setScrubbingSpeed:) float _scrubbingSpeed;
-@property(setter=_setTimeoutTimer:,retain) NSTimer * _timeoutTimer;
-@property <PLPhotoScrubberDataSource> * dataSource;
-@property <PLPhotoScrubberSpeedDelegate> * speedDelegate;
+@property (setter=_setLastSpeedRegime:, nonatomic) int _lastSpeedRegime;
+@property (setter=_setLastTime:, nonatomic) double _lastTime;
+@property (setter=_setScrubbingSpeed:, nonatomic) float _scrubbingSpeed;
+@property (setter=_setTimeoutTimer:, nonatomic, retain) NSTimer *_timeoutTimer;
+@property (nonatomic) <PLPhotoScrubberDataSource> *dataSource;
+@property (nonatomic) <PLPhotoScrubberSpeedDelegate> *speedDelegate;
 
 - (struct CGPoint { float x1; float x2; })_centerForImageAtIndex:(int)arg1;
 - (void)_handleTimeoutTimer:(id)arg1;

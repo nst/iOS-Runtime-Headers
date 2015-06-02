@@ -2,10 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@interface IMAudioMessageChatItem : IMExpirableMessageChatItem {
-}
+@interface IMAudioMessageChatItem : IMExpirableMessageChatItem
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
+- (BOOL)isAttachmentContiguousWithChatItem:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (Class)__ck_chatItemClass;
-- (BOOL)isAttachmentContiguousWithChatItem:(id)arg1;
 
 @end

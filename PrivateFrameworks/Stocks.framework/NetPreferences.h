@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSString;
-
 @interface NetPreferences : NSObject {
     NSString *_UUID;
     NSString *_buildVersion;
@@ -12,7 +10,7 @@
     BOOL _serviceDebugging;
 }
 
-@property(getter=isNetworkReachable) BOOL networkReachable;
+@property (getter=isNetworkReachable, nonatomic) BOOL networkReachable;
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;

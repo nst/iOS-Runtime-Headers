@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-@class CalLogNode, NSArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>;
-
 @interface CalLogMaster : NSObject {
     CalLogNode *_aslNode;
     BOOL _autoFlush;
@@ -17,14 +15,14 @@
     CalLogNode *_userNotificationNode;
 }
 
-@property(retain) CalLogNode * aslNode;
-@property BOOL autoFlush;
-@property BOOL hasValidNotificationRegistrationToken;
-@property int notificationRegistrationToken;
-@property(retain) CalLogNode * rootConfigurationNode;
-@property(retain) CalLogNode * standardOutNode;
-@property(retain) NSArray * topLevelNodes;
-@property(retain) CalLogNode * userNotificationNode;
+@property (nonatomic, retain) CalLogNode *aslNode;
+@property (nonatomic) BOOL autoFlush;
+@property (nonatomic) BOOL hasValidNotificationRegistrationToken;
+@property (nonatomic) int notificationRegistrationToken;
+@property (nonatomic, retain) CalLogNode *rootConfigurationNode;
+@property (nonatomic, retain) CalLogNode *standardOutNode;
+@property (nonatomic, retain) NSArray *topLevelNodes;
+@property (nonatomic, retain) CalLogNode *userNotificationNode;
 
 + (id)sharedLogMaster;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUZipArchive, TSUZipEntry;
-
 @interface TSUContainedZipArchive : TSUZipArchive {
     TSUZipEntry *_entry;
     TSUZipArchive *_zipArchive;

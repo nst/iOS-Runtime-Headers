@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMapTable, NSOperationQueue;
-
 @interface CKDAccountNotifier : NSObject {
     int _accountChangedToken;
     NSMapTable *_notificationObservers;
     NSOperationQueue *_notifyQueue;
 }
 
-@property int accountChangedToken;
-@property(retain) NSMapTable * notificationObservers;
-@property(retain) NSOperationQueue * notifyQueue;
+@property (nonatomic) int accountChangedToken;
+@property (nonatomic, retain) NSMapTable *notificationObservers;
+@property (nonatomic, retain) NSOperationQueue *notifyQueue;
 
 + (id)sharedNotifier;
 
@@ -23,7 +21,7 @@
 - (id)notificationObservers;
 - (id)notifyQueue;
 - (void)postAccountChangedNotification:(id)arg1;
-- (void)registerObserver:(id)arg1 forAccountChangeNotification:(id)arg2;
+- (void)registerObserver:(id)arg1 forAccountChangeNotification:(id /* block */)arg2;
 - (void)setAccountChangedToken:(int)arg1;
 - (void)setNotificationObservers:(id)arg1;
 - (void)setNotifyQueue:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString, NSThread;
-
 @interface GEORequester : PBRequester {
     NSString *_debugRequestName;
     BOOL _disableReplay;
@@ -12,7 +10,7 @@
     BOOL _usePersistentConnection;
 }
 
-@property(retain) NSString * debugRequestName;
+@property (nonatomic, retain) NSString *debugRequestName;
 @property BOOL disableReplay;
 
 + (id)_logRequestResponseDirectory;

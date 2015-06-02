@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
  */
 
-@class NSArray, NSMutableArray;
-
 @interface _SBFForkJoinObservable : SBFObservable {
     NSArray *_observables;
     NSMutableArray *_results;

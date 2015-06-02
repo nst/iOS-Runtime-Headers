@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber, NSString, NSURL;
+@interface SAFmfLocationSnippet : SAUISnippet
 
-@interface SAFmfLocationSnippet : SAUISnippet {
-}
-
-@property(copy) NSNumber * atRequestedLocation;
-@property(copy) NSArray * locations;
-@property(copy) NSString * proximity;
-@property(copy) NSURL * searchContext;
+@property (nonatomic, copy) NSNumber *atRequestedLocation;
+@property (nonatomic, copy) NSArray *locations;
+@property (nonatomic, copy) NSString *proximity;
+@property (nonatomic, copy) NSURL *searchContext;
 
 + (id)locationSnippet;
 + (id)locationSnippetWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKAddedToDocumentContext_PastingMatchStyle : TSKAddedToDocumentContext_Pasting {
-}
+@interface TSKAddedToDocumentContext_PastingMatchStyle : TSKAddedToDocumentContext_Pasting
 
 - (id)description;
 - (BOOL)matchStyle;

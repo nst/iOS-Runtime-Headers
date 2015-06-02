@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSURL;
-
 @interface SSLookupItemArtwork : NSObject {
     NSDictionary *_dictionary;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) int height;
-@property(readonly) NSDictionary * lookupDictionary;
-@property(readonly) int width;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) int height;
+@property (nonatomic, readonly) NSDictionary *lookupDictionary;
+@property (nonatomic, readonly) int width;
 
 - (id)URL;
 - (void)dealloc;

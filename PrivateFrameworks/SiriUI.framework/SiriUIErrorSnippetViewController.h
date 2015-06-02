@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class NSError;
-
 @interface SiriUIErrorSnippetViewController : SiriUISnippetViewController {
     NSError *_error;
 }

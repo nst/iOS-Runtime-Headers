@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CPLChangeBatch;
-
 @interface PLCloudPhotoLibraryBatchContainer : NSObject {
     CPLChangeBatch *_batch;
     BOOL _reachedMinSplit;
@@ -11,10 +9,10 @@
     BOOL _wasSplit;
 }
 
-@property(retain) CPLChangeBatch * batch;
-@property BOOL reachedMinSplit;
-@property unsigned int retryCount;
-@property BOOL wasSplit;
+@property (nonatomic, retain) CPLChangeBatch *batch;
+@property (nonatomic) BOOL reachedMinSplit;
+@property (nonatomic) unsigned int retryCount;
+@property (nonatomic) BOOL wasSplit;
 
 - (void)addRecord:(id)arg1;
 - (id)batch;

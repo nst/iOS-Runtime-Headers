@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString;
-
 @interface WBSCloudHistoryConfiguration : NSObject {
     unsigned int _maximumRequestCharacterCount;
     NSString *_multipleDeviceFetchChangesThrottlingPolicyString;
@@ -15,11 +13,11 @@
 }
 
 @property unsigned int maximumRequestCharacterCount;
-@property(retain) NSString * multipleDeviceFetchChangesThrottlingPolicyString;
-@property(retain) NSString * multipleDeviceSaveChangesThrottlingPolicyString;
-@property(retain) NSString * singleDeviceFetchChangesThrottlingPolicyString;
-@property(retain) NSString * singleDeviceSaveChangesThrottlingPolicyString;
-@property(retain) NSString * syncCircleSizeRetrievalThrottlingPolicyString;
+@property (retain) NSString *multipleDeviceFetchChangesThrottlingPolicyString;
+@property (retain) NSString *multipleDeviceSaveChangesThrottlingPolicyString;
+@property (retain) NSString *singleDeviceFetchChangesThrottlingPolicyString;
+@property (retain) NSString *singleDeviceSaveChangesThrottlingPolicyString;
+@property (retain) NSString *syncCircleSizeRetrievalThrottlingPolicyString;
 @property unsigned int syncWindow;
 
 + (id)existingSharedCloudHistoryConfiguration;

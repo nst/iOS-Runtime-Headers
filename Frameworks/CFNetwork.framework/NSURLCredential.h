@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSURLCredentialInternal;
-
 @interface NSURLCredential : NSObject <NSCopying, NSSecureCoding> {
     NSURLCredentialInternal *_internal;
 }
 
-@property(readonly) unsigned int persistence;
+@property (readonly) unsigned int persistence;
 
 + (id)credentialForTrust:(struct __SecTrust { }*)arg1;
 + (id)credentialWithIdentity:(struct __SecIdentity { }*)arg1 certificates:(id)arg2 persistence:(unsigned int)arg3;

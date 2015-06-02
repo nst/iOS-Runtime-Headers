@@ -2,23 +2,21 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class <MTLDevice>, MTLToolsPointerArray, NSString;
-
 @interface MTLToolsCommandQueue : MTLToolsObject <MTLCommandQueueSPI> {
     MTLToolsPointerArray *_commandBuffers;
 }
 
 @property int backgroundTrackingPID;
-@property(readonly) MTLToolsPointerArray * commandBuffers;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <MTLDevice> * device;
+@property (nonatomic, readonly) MTLToolsPointerArray *commandBuffers;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) <MTLDevice> *device;
 @property BOOL executionEnabled;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * label;
-@property(getter=isProfilingEnabled) BOOL profilingEnabled;
+@property (readonly) unsigned int hash;
+@property (copy) NSString *label;
+@property (getter=isProfilingEnabled) BOOL profilingEnabled;
 @property BOOL skipRender;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)acceptVisitor:(id)arg1;

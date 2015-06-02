@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSMutableDictionary;
-
 @interface CUIPSDLayerEffects : NSObject {
     NSMutableDictionary *_effectList;
     float _effectScale;
     BOOL _visible;
 }
 
-@property(copy) NSMutableDictionary * effectList;
+@property (copy) NSMutableDictionary *effectList;
 @property float effectScale;
 @property BOOL visible;
 

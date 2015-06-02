@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class IDSAccount, NSArray, NSString;
-
 @interface IMDAppleServiceSession : IMDServiceSession {
     NSString *_GUID;
     NSString *_serviceName;
 }
 
-@property(retain,readonly) NSString * GUID;
-@property(retain,readonly) NSArray * aliases;
-@property(retain,readonly) NSString * callerID;
-@property(retain,readonly) NSString * callerURI;
-@property(retain,readonly) IDSAccount * idsAccount;
-@property(readonly) NSArray * registeredURIs;
-@property(readonly) NSString * serviceType;
-@property(retain,readonly) NSArray * vettedAliases;
+@property (nonatomic, readonly, retain) NSString *GUID;
+@property (nonatomic, readonly, retain) NSArray *aliases;
+@property (nonatomic, readonly, retain) NSString *callerID;
+@property (nonatomic, readonly, retain) NSString *callerURI;
+@property (nonatomic, readonly, retain) IDSAccount *idsAccount;
+@property (nonatomic, readonly) NSArray *registeredURIs;
+@property (nonatomic, readonly) NSString *serviceType;
+@property (nonatomic, readonly, retain) NSArray *vettedAliases;
 
 - (id)GUID;
 - (id)_aliasStrings;

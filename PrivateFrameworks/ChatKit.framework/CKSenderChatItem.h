@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKSenderChatItem : CKChatItem {
-}
+@interface CKSenderChatItem : CKChatItem
 
 - (Class)cellClass;
 - (id)cellIdentifier;

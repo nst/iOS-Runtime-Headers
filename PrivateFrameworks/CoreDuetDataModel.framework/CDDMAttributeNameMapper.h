@@ -2,26 +2,23 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDataModel.framework/CoreDuetDataModel
  */
 
-@class NSDate, NSNumber, NSString;
+@interface CDDMAttributeNameMapper : NSManagedObject
 
-@interface CDDMAttributeNameMapper : NSManagedObject {
-}
-
-@property(retain) NSNumber * anonymizedBeacon;
-@property(retain) NSNumber * anonymizedLocation;
-@property(retain) NSString * associatedPools;
-@property(retain) NSNumber * category;
-@property(retain) NSNumber * clientId;
-@property(retain) NSDate * creationDate;
-@property(retain) NSString * dataProtectionClass;
-@property(retain) NSNumber * estimatedCadenceSeconds;
-@property(retain) NSNumber * integerId;
-@property(retain) NSNumber * localDaysSinceSunday;
-@property(retain) NSNumber * localTime;
-@property(retain) NSNumber * localTimeQuarterHourSlot;
-@property(retain) NSString * name;
-@property(retain) NSNumber * networkQuality;
-@property(retain) NSNumber * type;
-@property(retain) NSNumber * userId;
+@property (nonatomic, retain) NSNumber *anonymizedBeacon;
+@property (nonatomic, retain) NSNumber *anonymizedLocation;
+@property (nonatomic, retain) NSString *associatedPools;
+@property (nonatomic, retain) NSNumber *category;
+@property (nonatomic, retain) NSNumber *clientId;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSString *dataProtectionClass;
+@property (nonatomic, retain) NSNumber *estimatedCadenceSeconds;
+@property (nonatomic, retain) NSNumber *integerId;
+@property (nonatomic, retain) NSNumber *localDaysSinceSunday;
+@property (nonatomic, retain) NSNumber *localTime;
+@property (nonatomic, retain) NSNumber *localTimeQuarterHourSlot;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *networkQuality;
+@property (nonatomic, retain) NSNumber *type;
+@property (nonatomic, retain) NSNumber *userId;
 
 @end

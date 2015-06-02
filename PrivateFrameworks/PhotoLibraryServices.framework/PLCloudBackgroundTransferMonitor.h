@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface PLCloudBackgroundTransferMonitor : NSObject {
     NSObject<OS_dispatch_queue> *_isolationQueue;
     NSMutableDictionary *_pendingBGTransfers;
@@ -18,6 +16,6 @@
 - (void)completeBackgroundTransferWithIdentifier:(id)arg1 withError:(id)arg2;
 - (void)dealloc;
 - (id)init;
-- (void)onCompletedResource:(id)arg1 invokeBlock:(id)arg2;
+- (void)onCompletedResource:(id)arg1 invokeBlock:(id /* block */)arg2;
 
 @end

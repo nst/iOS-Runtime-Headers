@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKCardMediaObject : CKMediaObject {
-}
+@interface CKCardMediaObject : CKMediaObject
 
 - (BOOL)shouldBeQuickLooked;
 - (BOOL)shouldShowDisclosure;

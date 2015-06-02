@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@class NSLock, NSXPCConnection, NSXPCInterface;
-
 @interface MSXPCService : NSObject {
     NSXPCConnection *_connection;
     NSLock *_lock;
@@ -11,14 +9,14 @@
     BOOL _shouldLaunchMobileMail;
 }
 
-@property BOOL shouldLaunchMobileMail;
+@property (nonatomic) BOOL shouldLaunchMobileMail;
 
 - (id)connection;
 - (void)dealloc;
 - (id)initWithRemoteObjectInterface:(id)arg1;
 - (id)newConnectionForInterface:(id)arg1;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (void)setShouldLaunchMobileMail:(BOOL)arg1;
 - (BOOL)shouldLaunchMobileMail;
 

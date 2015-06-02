@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
  */
 
-@class NSObject<OS_dispatch_queue>, VMAccount;
-
 @interface VMServiceClient : NSObject {
     long long _behaviorFlags;
     VMAccount *_legacyVisualVoicemailAccount;

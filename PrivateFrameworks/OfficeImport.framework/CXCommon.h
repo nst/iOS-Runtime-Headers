@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CXCommon : NSObject {
-}
+@interface CXCommon : NSObject
 
 + (void)initialize;
 

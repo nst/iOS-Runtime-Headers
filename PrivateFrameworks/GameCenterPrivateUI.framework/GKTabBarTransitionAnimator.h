@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class NSString, _GKBubbleFlowTransitionInfo;
-
 @interface GKTabBarTransitionAnimator : NSObject <UIViewControllerAnimatorTransitioning> {
     _GKBubbleFlowTransitionInfo *_transitionInfo;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) _GKBubbleFlowTransitionInfo * transitionInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) _GKBubbleFlowTransitionInfo *transitionInfo;
 
 - (void)_animateTransition:(id)arg1;
 - (void)_animateTransitionInTwoParts:(id)arg1;

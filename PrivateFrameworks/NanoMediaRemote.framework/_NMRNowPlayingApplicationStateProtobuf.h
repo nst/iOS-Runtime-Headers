@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
  */
 
-@class NSString;
-
 @interface _NMRNowPlayingApplicationStateProtobuf : PBCodable <NSCopying> {
     NSString *_companionBundleIdentifier;
     struct { 
@@ -14,14 +12,14 @@
     NSString *_watchBundleIdentifier;
 }
 
-@property(retain) NSString * companionBundleIdentifier;
-@property(readonly) BOOL hasCompanionBundleIdentifier;
-@property(readonly) BOOL hasLocalizedDisplayName;
-@property BOOL hasPlaybackState;
-@property(readonly) BOOL hasWatchBundleIdentifier;
-@property(retain) NSString * localizedDisplayName;
-@property unsigned int playbackState;
-@property(retain) NSString * watchBundleIdentifier;
+@property (nonatomic, retain) NSString *companionBundleIdentifier;
+@property (nonatomic, readonly) BOOL hasCompanionBundleIdentifier;
+@property (nonatomic, readonly) BOOL hasLocalizedDisplayName;
+@property (nonatomic) BOOL hasPlaybackState;
+@property (nonatomic, readonly) BOOL hasWatchBundleIdentifier;
+@property (nonatomic, retain) NSString *localizedDisplayName;
+@property (nonatomic) unsigned int playbackState;
+@property (nonatomic, retain) NSString *watchBundleIdentifier;
 
 - (void).cxx_destruct;
 - (id)companionBundleIdentifier;

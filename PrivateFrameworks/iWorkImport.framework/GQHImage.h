@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHImage : NSObject {
-}
+@interface GQHImage : NSObject
 
 + (int)handleFloatingImageBinary:(id)arg1 geometry:(id)arg2 style:(id)arg3 cropGeometry:(id)arg4 maskingShapePath:(id)arg5 alphaMaskBezier:(struct CGPath { }*)arg6 state:(id)arg7;
 + (int)handleFloatingMedia:(id)arg1 state:(id)arg2;

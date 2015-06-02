@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SADomainObject;
+@interface SADomainObjectUpdate : SABaseClientBoundCommand <SADomainObjectCommand>
 
-@interface SADomainObjectUpdate : SABaseClientBoundCommand <SADomainObjectCommand> {
-}
-
-@property(retain) SADomainObject * addFields;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SADomainObject * identifier;
-@property(retain) SADomainObject * removeFields;
-@property(retain) SADomainObject * setFields;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SADomainObject *addFields;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SADomainObject *identifier;
+@property (nonatomic, retain) SADomainObject *removeFields;
+@property (nonatomic, retain) SADomainObject *setFields;
+@property (readonly) Class superclass;
 
 + (id)domainObjectUpdate;
 + (id)domainObjectUpdateWithDictionary:(id)arg1 context:(id)arg2;

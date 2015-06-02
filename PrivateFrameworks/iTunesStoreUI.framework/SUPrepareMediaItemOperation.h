@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUMediaPlayerItem;
-
 @interface SUPrepareMediaItemOperation : ISOperation {
     SUMediaPlayerItem *_mediaItem;
 }
 
-@property(copy,readonly) SUMediaPlayerItem * mediaPlayerItem;
+@property (nonatomic, readonly, copy) SUMediaPlayerItem *mediaPlayerItem;
 
 - (BOOL)_runHEADRequest:(id*)arg1;
 - (void)dealloc;

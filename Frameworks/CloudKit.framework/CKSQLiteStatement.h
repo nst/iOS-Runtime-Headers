@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKSQLite, NSString;
-
 @interface CKSQLiteStatement : NSObject {
     NSString *_SQL;
     CKSQLite *_SQLite;
@@ -11,10 +9,10 @@
     BOOL _reset;
 }
 
-@property(readonly) NSString * SQL;
-@property(readonly) CKSQLite * SQLite;
-@property(readonly) struct sqlite3_stmt { }* handle;
-@property(getter=isReset) BOOL reset;
+@property (nonatomic, readonly) NSString *SQL;
+@property (nonatomic, readonly) CKSQLite *SQLite;
+@property (nonatomic, readonly) struct sqlite3_stmt { }*handle;
+@property (getter=isReset, nonatomic) BOOL reset;
 
 - (void).cxx_destruct;
 - (id)SQL;

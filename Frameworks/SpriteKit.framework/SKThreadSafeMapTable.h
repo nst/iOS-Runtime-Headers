@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class NSMutableArray;
-
 @interface SKThreadSafeMapTable : NSObject <NSCoding, NSCopying, NSFastEnumeration> {
     NSMutableArray *_storage;
     int _storageLock;

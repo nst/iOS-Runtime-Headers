@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLRenderPassAttachmentDescriptor;
-
 @interface MTLRenderPassColorAttachmentDescriptorArray : NSObject {
-    MTLRenderPassAttachmentDescriptor *_descriptors[10];
+    MTLRenderPassAttachmentDescriptor *_descriptors;
 }
 
 - (id)_descriptorAtIndex:(unsigned int)arg1;

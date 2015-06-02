@@ -6,7 +6,7 @@
     unsigned int _reason;
 }
 
-@property unsigned int reason;
+@property (nonatomic) unsigned int reason;
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

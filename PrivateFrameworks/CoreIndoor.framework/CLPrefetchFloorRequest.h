@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreIndoor.framework/CoreIndoor
  */
 
-@class NSDate, NSString;
-
 @interface CLPrefetchFloorRequest : NSObject <NSSecureCoding> {
     NSString *_floorUuid;
     NSDate *_relevancy;
     NSString *_venueUuid;
 }
 
-@property(retain) NSString * floorUuid;
-@property(retain) NSDate * relevancy;
-@property(retain) NSString * venueUuid;
+@property (nonatomic, retain) NSString *floorUuid;
+@property (nonatomic, retain) NSDate *relevancy;
+@property (nonatomic, retain) NSString *venueUuid;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor;
-
 @interface _UIGraphicsLetterpressStyle : NSObject <NSCopying> {
     UIColor *bottomGradientColor;
     UIColor *embossHighlightColor;
@@ -27,21 +25,21 @@
     UIColor *topGradientColor;
 }
 
-@property(retain) UIColor * bottomGradientColor;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(retain) UIColor * embossHighlightColor;
-@property(retain) UIColor * embossShadowColor;
-@property float embossSize;
-@property float innerOpacity;
-@property int innerShadowBlendMode;
-@property float innerShadowBlur;
-@property(retain) UIColor * innerShadowColor;
-@property struct CGPoint { float x1; float x2; } innerShadowOffset;
-@property int outerShadowBlendMode;
-@property float outerShadowBlur;
-@property(retain) UIColor * outerShadowColor;
-@property struct CGPoint { float x1; float x2; } outerShadowOffset;
-@property(retain) UIColor * topGradientColor;
+@property (nonatomic, retain) UIColor *bottomGradientColor;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic, retain) UIColor *embossHighlightColor;
+@property (nonatomic, retain) UIColor *embossShadowColor;
+@property (nonatomic) float embossSize;
+@property (nonatomic) float innerOpacity;
+@property (nonatomic) int innerShadowBlendMode;
+@property (nonatomic) float innerShadowBlur;
+@property (nonatomic, retain) UIColor *innerShadowColor;
+@property (nonatomic) struct CGPoint { float x1; float x2; } innerShadowOffset;
+@property (nonatomic) int outerShadowBlendMode;
+@property (nonatomic) float outerShadowBlur;
+@property (nonatomic, retain) UIColor *outerShadowColor;
+@property (nonatomic) struct CGPoint { float x1; float x2; } outerShadowOffset;
+@property (nonatomic, retain) UIColor *topGradientColor;
 
 + (id)defaultLetterpressStyle;
 + (id)old2xLetterpressStyle;

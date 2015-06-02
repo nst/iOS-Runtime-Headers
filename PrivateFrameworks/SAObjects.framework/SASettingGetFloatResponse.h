@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingGetFloatResponse : SASettingGetNumberResponse {
-}
+@interface SASettingGetFloatResponse : SASettingGetNumberResponse
 
 + (id)getFloatResponse;
 + (id)getFloatResponseWithDictionary:(id)arg1 context:(id)arg2;

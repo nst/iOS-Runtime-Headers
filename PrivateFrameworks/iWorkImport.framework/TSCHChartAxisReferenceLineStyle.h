@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSCHChartAxisID;
-
 @interface TSCHChartAxisReferenceLineStyle : NSObject {
     TSCHChartAxisID *mAxisIdentifier;
     NSArray *mReferenceLineStyles;
 }
 
-@property(copy) TSCHChartAxisID * axisIdentifier;
-@property(copy) NSArray * referenceLineStyles;
+@property (nonatomic, copy) TSCHChartAxisID *axisIdentifier;
+@property (nonatomic, copy) NSArray *referenceLineStyles;
 
 - (id)axisIdentifier;
 - (void)dealloc;

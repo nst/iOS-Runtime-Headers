@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DShaderEffect : NSObject <TSCH3DShaderEffectStateInfo> {
-}
+@interface TSCH3DShaderEffect : NSObject <TSCH3DShaderEffectStateInfo>
 
 + (id)effect;
 + (Class)stateClass;

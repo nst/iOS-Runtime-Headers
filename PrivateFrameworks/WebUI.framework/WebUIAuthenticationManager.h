@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableArray, UIAlertController;
-
 @interface WebUIAuthenticationManager : NSObject {
     UIAlertController *_alertController;
     NSMutableArray *_authenticationChallenges;

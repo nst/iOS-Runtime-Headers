@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSArray, NSMutableArray, PKPass, PKPassBucketTemplate, PKPassColorProfile;
-
 @interface PKPassBucketView : UIView {
     int _background;
     NSArray *_bucket;
@@ -13,10 +11,10 @@
     PKPass *_pass;
 }
 
-@property(retain) NSArray * bucket;
-@property(retain) PKPassBucketTemplate * bucketTemplate;
-@property(retain) PKPassColorProfile * colorProfile;
-@property(retain) PKPass * pass;
+@property (nonatomic, retain) NSArray *bucket;
+@property (nonatomic, retain) PKPassBucketTemplate *bucketTemplate;
+@property (nonatomic, retain) PKPassColorProfile *colorProfile;
+@property (nonatomic, retain) PKPass *pass;
 
 - (int)_backgroundForBucketTemplate:(id)arg1;
 - (id)_fieldViewsByWidth;
@@ -30,7 +28,7 @@
 - (id)description;
 - (void)layoutSubviews;
 - (id)pass;
-- (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id)arg3;
+- (void)presentDiff:(id)arg1 inView:(id)arg2 completion:(id /* block */)arg3;
 - (void)setBucket:(id)arg1;
 - (void)setBucketTemplate:(id)arg1;
 - (void)setColorProfile:(id)arg1;

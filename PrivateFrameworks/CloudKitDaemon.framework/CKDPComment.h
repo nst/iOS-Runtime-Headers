@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPCommentContent, CKDPDate, CKDPIdentifier, CKDPLikeInfo, NSString;
-
 @interface CKDPComment : PBCodable <NSCopying> {
     CKDPCommentContent *_commentContent;
     CKDPIdentifier *_commentId;
@@ -13,18 +11,18 @@
     NSString *_path;
 }
 
-@property(retain) CKDPCommentContent * commentContent;
-@property(retain) CKDPIdentifier * commentId;
-@property(retain) CKDPDate * createdAt;
-@property(retain) CKDPIdentifier * from;
-@property(readonly) BOOL hasCommentContent;
-@property(readonly) BOOL hasCommentId;
-@property(readonly) BOOL hasCreatedAt;
-@property(readonly) BOOL hasFrom;
-@property(readonly) BOOL hasLikeInfo;
-@property(readonly) BOOL hasPath;
-@property(retain) CKDPLikeInfo * likeInfo;
-@property(retain) NSString * path;
+@property (nonatomic, retain) CKDPCommentContent *commentContent;
+@property (nonatomic, retain) CKDPIdentifier *commentId;
+@property (nonatomic, retain) CKDPDate *createdAt;
+@property (nonatomic, retain) CKDPIdentifier *from;
+@property (nonatomic, readonly) BOOL hasCommentContent;
+@property (nonatomic, readonly) BOOL hasCommentId;
+@property (nonatomic, readonly) BOOL hasCreatedAt;
+@property (nonatomic, readonly) BOOL hasFrom;
+@property (nonatomic, readonly) BOOL hasLikeInfo;
+@property (nonatomic, readonly) BOOL hasPath;
+@property (nonatomic, retain) CKDPLikeInfo *likeInfo;
+@property (nonatomic, retain) NSString *path;
 
 - (void).cxx_destruct;
 - (id)commentContent;

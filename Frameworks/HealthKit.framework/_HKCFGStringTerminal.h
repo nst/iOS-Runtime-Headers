@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSString;
-
 @interface _HKCFGStringTerminal : _HKCFGTerminal {
     BOOL _caseSensitive;
     NSString *_string;
 }
 
-@property BOOL caseSensitive;
-@property(copy) NSString * string;
+@property (nonatomic) BOOL caseSensitive;
+@property (nonatomic, copy) NSString *string;
 
 - (void).cxx_destruct;
 - (id)_label;

@@ -2,21 +2,21 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MIPMultiverseIdentifier, MPMediaItem, MPMediaLibrary;
-
 @interface MPMediaEntity : NSObject <NSCopying, NSSecureCoding> {
     MIPMultiverseIdentifier *_multiverseIdentifier;
 }
 
-@property(readonly) BOOL hasDeletableContent;
-@property(readonly) BOOL isDownloadable;
-@property(readonly) BOOL isDownloadableStoreOffer;
-@property(readonly) BOOL isPurchasableStoreOffer;
-@property(readonly) MPMediaLibrary * mediaLibrary;
-@property(readonly) MIPMultiverseIdentifier * multiverseIdentifier;
-@property(readonly) unsigned long long persistentID;
-@property(readonly) int preferredStoreOfferVariant;
-@property(readonly) MPMediaItem * representativeItem;
+@property (nonatomic, readonly) BOOL hasDeletableContent;
+@property (nonatomic, readonly) BOOL isDownloadable;
+@property (nonatomic, readonly) BOOL isDownloadableStoreOffer;
+@property (nonatomic, readonly) BOOL isPurchasableStoreOffer;
+@property (nonatomic, readonly) MPMediaLibrary *mediaLibrary;
+@property (nonatomic, readonly) MIPMultiverseIdentifier *multiverseIdentifier;
+@property (nonatomic, readonly) unsigned long long persistentID;
+@property (nonatomic, readonly) int preferredStoreOfferVariant;
+@property (nonatomic, readonly) MPMediaItem *representativeItem;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (BOOL)canFilterByProperty:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -28,8 +28,7 @@
 - (id)completionOfferForVariant:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
-- (BOOL)hasDeletableContent;
+- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id /* block */)arg2;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMultiverseIdentifier:(id)arg1;
@@ -46,5 +45,9 @@
 - (id)representativeItem;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
+
+- (BOOL)hasDeletableContent;
 
 @end

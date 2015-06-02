@@ -2,22 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber, NSString, SACalendar, SAUIAppPunchOut;
+@interface SAMovieShowtime : AceObject <SAAceSerializable>
 
-@interface SAMovieShowtime : AceObject <SAAceSerializable> {
-}
-
-@property(retain) SAUIAppPunchOut * buyTicketsPunchout;
-@property(copy) NSNumber * childTicketQuantity;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL is3d;
-@property BOOL isImax;
-@property(copy) NSNumber * regularTicketQuantity;
-@property(copy) NSNumber * seniorTicketQuantity;
-@property(retain) SACalendar * showtime;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SAUIAppPunchOut *buyTicketsPunchout;
+@property (nonatomic, copy) NSNumber *childTicketQuantity;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL is3d;
+@property (nonatomic) BOOL isImax;
+@property (nonatomic, copy) NSNumber *regularTicketQuantity;
+@property (nonatomic, copy) NSNumber *seniorTicketQuantity;
+@property (nonatomic, retain) SACalendar *showtime;
+@property (readonly) Class superclass;
 
 + (id)showtime;
 + (id)showtimeWithDictionary:(id)arg1 context:(id)arg2;

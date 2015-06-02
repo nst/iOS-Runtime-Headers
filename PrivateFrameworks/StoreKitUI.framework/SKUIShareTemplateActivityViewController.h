@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, SKUIShareTemplateViewElement;
-
 @interface SKUIShareTemplateActivityViewController : UIActivityViewController {
     SKUIClientContext *_clientContext;
     SKUIShareTemplateViewElement *_templateElement;

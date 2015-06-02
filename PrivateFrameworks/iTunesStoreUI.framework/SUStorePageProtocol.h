@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSNumber, NSString, SSURLRequestProperties;
-
 @interface SUStorePageProtocol : NSObject <NSCopying> {
     NSArray *_allowedOrientations;
     NSString *_copyright;
@@ -19,18 +17,18 @@
     BOOL _shouldReplaceRootViewController;
 }
 
-@property(retain) NSArray * allowedOrientations;
-@property(retain) NSString * copyright;
-@property(copy) NSArray * expectedClientIdentifiers;
-@property(retain) NSNumber * focusedItemIdentifier;
-@property(copy) NSArray * navigationButtons;
-@property(retain) NSArray * navigationHistoryItems;
-@property(copy) NSArray * navigationMenus;
-@property(retain) SSURLRequestProperties * overlayBackgroundURLRequestProperties;
-@property(retain) NSString * rootSectionIdentifier;
-@property BOOL shouldDisplayInOverlay;
-@property BOOL shouldExcludeFromNavigationHistory;
-@property BOOL shouldReplaceRootViewController;
+@property (nonatomic, retain) NSArray *allowedOrientations;
+@property (nonatomic, retain) NSString *copyright;
+@property (nonatomic, copy) NSArray *expectedClientIdentifiers;
+@property (nonatomic, retain) NSNumber *focusedItemIdentifier;
+@property (nonatomic, copy) NSArray *navigationButtons;
+@property (nonatomic, retain) NSArray *navigationHistoryItems;
+@property (nonatomic, copy) NSArray *navigationMenus;
+@property (nonatomic, retain) SSURLRequestProperties *overlayBackgroundURLRequestProperties;
+@property (nonatomic, retain) NSString *rootSectionIdentifier;
+@property (nonatomic) BOOL shouldDisplayInOverlay;
+@property (nonatomic) BOOL shouldExcludeFromNavigationHistory;
+@property (nonatomic) BOOL shouldReplaceRootViewController;
 
 - (id)_initCommon;
 - (id)_newNavigationButtonsFromArray:(id)arg1;

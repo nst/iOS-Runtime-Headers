@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMBadgeTextView : CAMBadgeView {
-}
+@interface CAMBadgeTextView : CAMBadgeView
 
 - (id)_maskImage;
 - (id)_text;

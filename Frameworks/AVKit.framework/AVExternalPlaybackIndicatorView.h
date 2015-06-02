@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class UILabel;
-
 @interface AVExternalPlaybackIndicatorView : UIView {
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;

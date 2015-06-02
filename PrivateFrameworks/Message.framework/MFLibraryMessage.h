@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class MFLock, NSMutableDictionary, NSMutableSet, NSString;
-
 @interface MFLibraryMessage : MFMailMessage {
     unsigned long long _conversationFlags;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _deallocationHandler;
-
+    id /* block */ _deallocationHandler;
     unsigned int _libraryID;
     unsigned int _mailboxID;
     NSString *_messageID;
@@ -28,7 +18,7 @@
     unsigned long long _uniqueRemoteId;
 }
 
-@property(copy) id deallocationHandler;
+@property (nonatomic, copy) id /* block */ deallocationHandler;
 
 + (id)messageWithLibraryID:(unsigned int)arg1;
 
@@ -45,7 +35,7 @@
 - (id)dataConsumerForMimePart:(id)arg1;
 - (id)dataPathForMimePart:(id)arg1;
 - (void)dealloc;
-- (id)deallocationHandler;
+- (id /* block */)deallocationHandler;
 - (id)description;
 - (BOOL)hasTemporaryUid;
 - (unsigned int)hash;
@@ -76,7 +66,7 @@
 - (id)preferredEmailAddressToReplyWith;
 - (id)remoteID;
 - (void)setConversationFlags:(unsigned long long)arg1;
-- (void)setDeallocationHandler:(id)arg1;
+- (void)setDeallocationHandler:(id /* block */)arg1;
 - (void)setFlags:(unsigned long long)arg1;
 - (void)setHasTemporaryUid:(BOOL)arg1;
 - (void)setIsPartial:(BOOL)arg1;

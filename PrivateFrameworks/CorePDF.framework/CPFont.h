@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSString;
-
 @interface CPFont : NSObject <CPDisposable> {
     struct CGFont { } *cgFont;
     struct CGPDFFont { } *cgPDFFont;

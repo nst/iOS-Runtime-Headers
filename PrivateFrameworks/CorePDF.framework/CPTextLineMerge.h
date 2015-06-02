@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSMutableArray;
-
 @interface CPTextLineMerge : NSObject {
     NSMutableArray *avail;
 }

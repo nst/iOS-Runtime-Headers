@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIDownloadsChildViewControllerDelegate>, NSArray, NSString, SKUIClientContext, UICollectionView, _UIContentUnavailableView;
-
 @interface SKUIIPadDownloadsViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIClientContext *_clientContext;
     UICollectionView *_collectionView;
@@ -13,13 +11,13 @@
     _UIContentUnavailableView *_noContentView;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIDownloadsChildViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) NSArray * downloads;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIDownloadsChildViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSArray *downloads;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cancelAction:(id)arg1;

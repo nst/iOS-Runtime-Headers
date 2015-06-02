@@ -2,34 +2,24 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface SBUIBannerAction : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _actionBlock;
-
+    id /* block */ _actionBlock;
     NSString *_remoteServiceBundleIdentifier;
     NSString *_remoteViewControllerClassName;
 }
 
-@property(copy) id actionBlock;
-@property(copy) NSString * remoteServiceBundleIdentifier;
-@property(copy) NSString * remoteViewControllerClassName;
+@property (nonatomic, copy) id /* block */ actionBlock;
+@property (nonatomic, copy) NSString *remoteServiceBundleIdentifier;
+@property (nonatomic, copy) NSString *remoteViewControllerClassName;
 
-+ (id)actionWithBlock:(id)arg1;
++ (id)actionWithBlock:(id /* block */)arg1;
 
-- (id)actionBlock;
+- (id /* block */)actionBlock;
 - (void)dealloc;
-- (id)initWithActionBlock:(id)arg1 remoteViewControllerClassName:(id)arg2 remoteServiceBundleIdentifier:(id)arg3;
+- (id)initWithActionBlock:(id /* block */)arg1 remoteViewControllerClassName:(id)arg2 remoteServiceBundleIdentifier:(id)arg3;
 - (id)remoteServiceBundleIdentifier;
 - (id)remoteViewControllerClassName;
-- (void)setActionBlock:(id)arg1;
+- (void)setActionBlock:(id /* block */)arg1;
 - (void)setRemoteServiceBundleIdentifier:(id)arg1;
 - (void)setRemoteViewControllerClassName:(id)arg1;
 

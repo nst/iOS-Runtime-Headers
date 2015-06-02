@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EBSheet : NSObject {
-}
+@interface EBSheet : NSObject
 
 + (Class)ebSheetClassFromEDSheet:(id)arg1;
 + (Class)edSheetClassFromXlSheetTypeEnum:(int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSFileHandle;
-
 @interface ATFileBuffer : NSObject {
     NSFileHandle *_bufferFileHandle;
     unsigned int _currentReadLocation;

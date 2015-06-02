@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSDate, NSString, PreferencesValueCell, UIDatePicker, UITableView, UITableViewCell;
-
 @interface EKRecurrenceEndEditItemViewController : EKEditItemViewController <EKCellShortener, UITableViewDataSource, UITableViewDelegate> {
     NSDate *_bestInitialDate;
     PreferencesValueCell *_dateCell;
@@ -14,15 +12,15 @@
     NSDate *_repeatEndDate;
     int _shorteningStatus;
     UITableView *_table;
-    unsigned int _updatingPicker : 1;
+    unsigned int _updatingPicker;
 }
 
-@property(copy) NSDate * bestInitialDate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSDate * repeatEndDate;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSDate *bestInitialDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSDate *repeatEndDate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_cellForRow:(int)arg1;

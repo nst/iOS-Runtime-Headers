@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CarKit.framework/CarKit
  */
 
-@class <CRCarPlayPreferencesDelegate>, NSString;
-
 @interface CRCarPlayPreferences : NSObject <MCProfileConnectionObserver> {
     BOOL _cachedCarPlayAllowed;
     <CRCarPlayPreferencesDelegate> *_preferencesDelegate;
 }
 
-@property BOOL cachedCarPlayAllowed;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <CRCarPlayPreferencesDelegate> * preferencesDelegate;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL cachedCarPlayAllowed;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <CRCarPlayPreferencesDelegate> *preferencesDelegate;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)_isCarPlayAllowed;

@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString, NSURL;
+@interface SPTitleSection : SPSection <PRSTitleSection>
 
-@interface SPTitleSection : SPSection <PRSTitleSection> {
-}
-
-@property(retain) NSURL * attribution_url;
-@property(retain) NSString * subtitle;
-@property(retain) NSString * title;
-@property(retain) NSString * type;
-@property(retain) NSURL * url;
+@property (nonatomic, retain) NSURL *attribution_url;
+@property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *type;
+@property (nonatomic, retain) NSURL *url;
 
 @end

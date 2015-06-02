@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUIPageDividerCollectionViewCell : UICollectionViewCell {
     UIView *_dividerLine;
     float _leftEdgeInset;
@@ -11,9 +9,9 @@
     int _verticalAlignment;
 }
 
-@property float leftEdgeInset;
-@property float rightEdgeInset;
-@property int verticalAlignment;
+@property (nonatomic) float leftEdgeInset;
+@property (nonatomic) float rightEdgeInset;
+@property (nonatomic) int verticalAlignment;
 
 - (void).cxx_destruct;
 - (void)applyLayoutAttributes:(id)arg1;

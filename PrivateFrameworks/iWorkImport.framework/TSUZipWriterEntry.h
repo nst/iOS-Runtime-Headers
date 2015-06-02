@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSUZipWriterEntry : NSObject {
     unsigned int _CRC;
     NSString *_name;
@@ -11,10 +9,10 @@
     unsigned long long _size;
 }
 
-@property unsigned int CRC;
-@property(copy) NSString * name;
-@property unsigned long long offset;
-@property unsigned long long size;
+@property (nonatomic) unsigned int CRC;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) unsigned long long offset;
+@property (nonatomic) unsigned long long size;
 
 - (void).cxx_destruct;
 - (unsigned int)CRC;

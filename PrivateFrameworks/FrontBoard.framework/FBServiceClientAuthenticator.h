@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class NSString;
-
 @interface FBServiceClientAuthenticator : NSObject {
     unsigned int _credentials;
     NSString *_entitlement;
@@ -13,11 +11,11 @@
 + (id)sharedSystemClientAuthenticator;
 + (id)sharedUIAppClientAuthenticator;
 
-- (int)_authenticateAuditToken:(struct { unsigned int x1[8]; }*)arg1 connection:(id)arg2 entitlement:(id)arg3 withResult:(id)arg4;
-- (int)authenticateAuditToken:(struct { unsigned int x1[8]; }*)arg1 forEntitlement:(id)arg2 withResult:(id)arg3;
-- (int)authenticateAuditToken:(struct { unsigned int x1[8]; }*)arg1 withResult:(id)arg2;
-- (int)authenticateConnection:(id)arg1 forEntitlement:(id)arg2 withResult:(id)arg3;
-- (int)authenticateConnection:(id)arg1 withResult:(id)arg2;
+- (int)_authenticateAuditToken:(struct { unsigned int x1[8]; }*)arg1 connection:(id)arg2 entitlement:(id)arg3 withResult:(id /* block */)arg4;
+- (int)authenticateAuditToken:(struct { unsigned int x1[8]; }*)arg1 forEntitlement:(id)arg2 withResult:(id /* block */)arg3;
+- (int)authenticateAuditToken:(struct { unsigned int x1[8]; }*)arg1 withResult:(id /* block */)arg2;
+- (int)authenticateConnection:(id)arg1 forEntitlement:(id)arg2 withResult:(id /* block */)arg3;
+- (int)authenticateConnection:(id)arg1 withResult:(id /* block */)arg2;
 - (id)init;
 - (id)initWithCredentials:(unsigned int)arg1;
 - (id)initWithEntitlement:(id)arg1;

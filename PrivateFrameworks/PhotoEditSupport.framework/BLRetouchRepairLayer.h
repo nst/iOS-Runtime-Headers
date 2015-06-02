@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class BLImagePatchList, NSMutableData, UIImage;
-
 @interface BLRetouchRepairLayer : BLRetouchEffectLayer {
     struct CGRect { 
         struct CGPoint { 
@@ -27,11 +25,11 @@
     int _totalStrokeArea;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } brushStrokeRect;
-@property(retain) UIImage * repairAnalysisImage;
-@property(retain) BLImagePatchList * repairPatchList;
-@property(retain) UIImage * repairSourceImage;
-@property int totalStrokeArea;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } brushStrokeRect;
+@property (nonatomic, retain) UIImage *repairAnalysisImage;
+@property (nonatomic, retain) BLImagePatchList *repairPatchList;
+@property (nonatomic, retain) UIImage *repairSourceImage;
+@property (nonatomic) int totalStrokeArea;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })brushStrokeRect;
 - (void)dealloc;

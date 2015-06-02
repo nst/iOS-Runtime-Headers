@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class RCCompositionController;
-
 @interface RCSavedRecordingPreviewController : RCPreviewController {
     RCCompositionController *_compositionController;
     BOOL _postPrepareShouldPlay;
@@ -14,7 +12,7 @@
     } _postPrepareTimeRange;
 }
 
-@property(retain) RCCompositionController * compositionController;
+@property (nonatomic, retain) RCCompositionController *compositionController;
 
 + (id)sharedRecordingPreviewController;
 

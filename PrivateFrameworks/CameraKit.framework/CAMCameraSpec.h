@@ -2,23 +2,22 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMCameraSpec : NSObject {
-}
+@interface CAMCameraSpec : NSObject
 
-@property(readonly) BOOL shouldCreateAvalancheIndicator;
-@property(readonly) BOOL shouldCreateElapsedTimeView;
-@property(readonly) BOOL shouldCreateFiltersButton;
-@property(readonly) BOOL shouldCreateFlashButton;
-@property(readonly) BOOL shouldCreateFlipButton;
-@property(readonly) BOOL shouldCreateHDRButton;
-@property(readonly) BOOL shouldCreateImageWell;
-@property(readonly) BOOL shouldCreateModeDial;
-@property(readonly) BOOL shouldCreatePanoramaView;
-@property(readonly) BOOL shouldCreateShutterButton;
-@property(readonly) BOOL shouldCreateSlalomIndicator;
-@property(readonly) BOOL shouldCreateStillDuringVideo;
-@property(readonly) BOOL shouldCreateTimerButton;
-@property(readonly) BOOL shouldCreateZoomSlider;
+@property (nonatomic, readonly) BOOL shouldCreateAvalancheIndicator;
+@property (nonatomic, readonly) BOOL shouldCreateElapsedTimeView;
+@property (nonatomic, readonly) BOOL shouldCreateFiltersButton;
+@property (nonatomic, readonly) BOOL shouldCreateFlashButton;
+@property (nonatomic, readonly) BOOL shouldCreateFlipButton;
+@property (nonatomic, readonly) BOOL shouldCreateHDRButton;
+@property (nonatomic, readonly) BOOL shouldCreateImageWell;
+@property (nonatomic, readonly) BOOL shouldCreateModeDial;
+@property (nonatomic, readonly) BOOL shouldCreatePanoramaView;
+@property (nonatomic, readonly) BOOL shouldCreateShutterButton;
+@property (nonatomic, readonly) BOOL shouldCreateSlalomIndicator;
+@property (nonatomic, readonly) BOOL shouldCreateStillDuringVideo;
+@property (nonatomic, readonly) BOOL shouldCreateTimerButton;
+@property (nonatomic, readonly) BOOL shouldCreateZoomSlider;
 
 + (id)specForCurrentPlatform;
 + (id)specForPad;

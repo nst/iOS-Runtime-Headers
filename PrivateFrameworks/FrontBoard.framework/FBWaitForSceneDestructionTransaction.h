@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBScene, FBSceneManager, NSString;
-
 @interface FBWaitForSceneDestructionTransaction : FBTransaction <FBSceneManagerObserver> {
     FBSceneManager *_sceneManager;
     FBScene *_sceneToWaitForDeath;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) FBScene * scene;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) FBScene *scene;
+@property (readonly) Class superclass;
 
 - (void)_begin;
 - (id)_customizedDescriptionProperties;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDResources;
-
 @interface EDColorReference : NSObject <NSCopying> {
     unsigned int mColorIndex;
     EDResources *mResources;

@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSString, NSURL;
+@interface SBKMutableStoreURLBagContext : SBKStoreURLBagContext
 
-@interface SBKMutableStoreURLBagContext : SBKStoreURLBagContext {
-}
-
-@property(copy) NSString * domain;
+@property (copy) NSString *domain;
 @property BOOL domainDisabled;
 @property double pollingIntervalInSeconds;
-@property(retain) NSURL * pullAllKeyValueRequestURL;
-@property(retain) NSURL * pullKeyValueRequestURL;
-@property(retain) NSURL * pushAllKeyValueRequestURL;
-@property(retain) NSURL * pushKeyValueRequestURL;
-@property(retain) NSURL * syncRequestURL;
+@property (retain) NSURL *pullAllKeyValueRequestURL;
+@property (retain) NSURL *pullKeyValueRequestURL;
+@property (retain) NSURL *pushAllKeyValueRequestURL;
+@property (retain) NSURL *pushKeyValueRequestURL;
+@property (retain) NSURL *syncRequestURL;
 
 @end

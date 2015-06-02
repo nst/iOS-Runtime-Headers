@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
-
 @interface NSSQLAliasGenerator : NSObject {
     unsigned int _nextTableAlias;
     unsigned int _nextTempTableAlias;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDTCell;
-
 @interface GQDTPopupCell : GQDTCell {
     GQDTCell *mResultCell;
 }

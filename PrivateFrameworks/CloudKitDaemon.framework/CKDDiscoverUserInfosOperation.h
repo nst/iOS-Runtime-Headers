@@ -2,35 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray;
-
 @interface CKDDiscoverUserInfosOperation : CKDOperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _discoverUserInfosProgressBlock;
-
+    id /* block */ _discoverUserInfosProgressBlock;
     NSArray *_emailsToDiscover;
     NSArray *_userRecordIDsToDiscover;
 }
 
-@property(copy) id discoverUserInfosProgressBlock;
-@property(retain) NSArray * emailsToDiscover;
-@property(retain) NSArray * userRecordIDsToDiscover;
+@property (nonatomic, copy) id /* block */ discoverUserInfosProgressBlock;
+@property (nonatomic, retain) NSArray *emailsToDiscover;
+@property (nonatomic, retain) NSArray *userRecordIDsToDiscover;
 
 - (void).cxx_destruct;
-- (void)_discoverEmails:(id)arg1 userRecordIDs:(id)arg2 completionBlock:(id)arg3;
+- (void)_discoverEmails:(id)arg1 userRecordIDs:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleDiscoveredInfo:(id)arg1 emailToDiscover:(id)arg2;
-- (id)discoverUserInfosProgressBlock;
+- (id /* block */)discoverUserInfosProgressBlock;
 - (id)emailsToDiscover;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
-- (void)setDiscoverUserInfosProgressBlock:(id)arg1;
+- (void)setDiscoverUserInfosProgressBlock:(id /* block */)arg1;
 - (void)setEmailsToDiscover:(id)arg1;
 - (void)setUserRecordIDsToDiscover:(id)arg1;
 - (id)userRecordIDsToDiscover;

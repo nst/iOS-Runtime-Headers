@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKCalendarDate, EKDayOccurrenceView, EKEvent, NSDate, NSString;
-
 @interface EKDayViewContentItem : NSObject <CUIKSingleDayTimelineViewItem> {
     float _bottomPinningProximity;
     EKCalendarDate *_endDate;
@@ -24,27 +22,27 @@
     EKDayOccurrenceView *_view;
 }
 
-@property float bottomPinningProximity;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSDate * end;
-@property(copy) EKCalendarDate * endDate;
-@property(readonly) float enoughHeightForOneLine;
-@property(readonly) EKEvent * event;
-@property(readonly) unsigned int eventIndex;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL hideTravelTime;
-@property(readonly) NSDate * start;
-@property(copy) EKCalendarDate * startDate;
-@property(copy,readonly) EKCalendarDate * startDateIncludingTravelTime;
-@property(readonly) NSDate * startWithTravelTime;
-@property(readonly) Class superclass;
-@property float topPinningProximity;
-@property double travelTime;
+@property (nonatomic) float bottomPinningProximity;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDate *end;
+@property (nonatomic, copy) EKCalendarDate *endDate;
+@property (nonatomic, readonly) float enoughHeightForOneLine;
+@property (nonatomic, readonly) EKEvent *event;
+@property (nonatomic, readonly) unsigned int eventIndex;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL hideTravelTime;
+@property (nonatomic, readonly) NSDate *start;
+@property (nonatomic, copy) EKCalendarDate *startDate;
+@property (nonatomic, readonly, copy) EKCalendarDate *startDateIncludingTravelTime;
+@property (nonatomic, readonly) NSDate *startWithTravelTime;
+@property (readonly) Class superclass;
+@property (nonatomic) float topPinningProximity;
+@property (nonatomic) double travelTime;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unPinnedViewFrame;
-@property(retain) EKDayOccurrenceView * view;
-@property(readonly) float viewMaxNaturalTextHeight;
-@property(readonly) BOOL visibleHeightLocked;
+@property (nonatomic, retain) EKDayOccurrenceView *view;
+@property (nonatomic, readonly) float viewMaxNaturalTextHeight;
+@property (readonly) BOOL visibleHeightLocked;
 
 + (float)barToBarHorizontalDistanceIncludingBarWidth;
 

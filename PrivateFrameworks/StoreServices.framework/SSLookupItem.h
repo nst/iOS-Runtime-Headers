@@ -2,27 +2,25 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSDictionary, NSNumber, NSString, NSURL;
-
 @interface SSLookupItem : NSObject {
     NSDictionary *_dictionary;
 }
 
-@property(readonly) NSNumber * ITunesStoreIdentifier;
-@property(getter=isPOIBased,readonly) BOOL POIBased;
-@property(readonly) NSString * artistName;
-@property(readonly) NSArray * artwork;
-@property(readonly) NSString * bundleIdentifier;
-@property(readonly) NSArray * categoryNames;
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * itemKind;
-@property(readonly) NSDictionary * lookupDictionary;
-@property(readonly) int numberOfUserRatings;
-@property(readonly) int numberOfUserRatingsForCurrentVersion;
-@property(readonly) NSArray * offers;
-@property(readonly) NSURL * productPageURL;
-@property(readonly) float userRating;
-@property(readonly) float userRatingForCurrentVersion;
+@property (nonatomic, readonly) NSNumber *ITunesStoreIdentifier;
+@property (getter=isPOIBased, nonatomic, readonly) BOOL POIBased;
+@property (nonatomic, readonly) NSString *artistName;
+@property (nonatomic, readonly) NSArray *artwork;
+@property (nonatomic, readonly) NSString *bundleIdentifier;
+@property (nonatomic, readonly) NSArray *categoryNames;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) NSString *itemKind;
+@property (nonatomic, readonly) NSDictionary *lookupDictionary;
+@property (nonatomic, readonly) int numberOfUserRatings;
+@property (nonatomic, readonly) int numberOfUserRatingsForCurrentVersion;
+@property (nonatomic, readonly) NSArray *offers;
+@property (nonatomic, readonly) NSURL *productPageURL;
+@property (nonatomic, readonly) float userRating;
+@property (nonatomic, readonly) float userRatingForCurrentVersion;
 
 - (id)ITunesStoreIdentifier;
 - (id)artistName;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class NSMutableString, NSString;
-
 @interface CPPDFAnnotationParserDelegate : NSObject <NSXMLParserDelegate> {
     struct __CFDictionary { } *_annotationDictionary;
     NSMutableString *_characters;
@@ -14,7 +12,7 @@
     struct CGPoint { 
         float x; 
         float y; 
-    } _p[4];
+    } _p;
     BOOL _parseError;
     struct __CFArray { } *_quadPoints;
     struct CGRect { 
@@ -29,17 +27,17 @@
     } _rect;
 }
 
-@property struct __CFDictionary { }* annotationDictionary;
-@property(readonly) struct __CFString { }* annotationId;
-@property(readonly) struct CGColor { }* color;
-@property(readonly) struct __CFString { }* content;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) struct __CFString { }* otherId;
-@property(readonly) BOOL parseError;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
-@property(readonly) Class superclass;
+@property (nonatomic) struct __CFDictionary { }*annotationDictionary;
+@property (nonatomic, readonly) struct __CFString { }*annotationId;
+@property (nonatomic, readonly) struct CGColor { }*color;
+@property (nonatomic, readonly) struct __CFString { }*content;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct __CFString { }*otherId;
+@property (nonatomic, readonly) BOOL parseError;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
+@property (readonly) Class superclass;
 
 - (void)addQuadpoints;
 - (struct __CFDictionary { }*)annotationDictionary;

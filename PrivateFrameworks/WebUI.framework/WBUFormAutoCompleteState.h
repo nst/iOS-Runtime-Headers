@@ -2,20 +2,10 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <WBUFormAutoFillFrameHandle>, NSArray, NSDictionary, NSMutableDictionary, NSString, UIView<WBUFormAutoFillWebView>, WBUFormDataController;
-
 @interface WBUFormAutoCompleteState : NSObject <UIActionSheetDelegate, WBUCreditCardCaptureViewControllerDelegate> {
     int _action;
     BOOL _canAutoComplete;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _creditCardCaptureCompletionHandler;
-
+    id /* block */ _creditCardCaptureCompletionHandler;
     WBUFormDataController *_dataController;
     NSDictionary *_formMetadata;
     unsigned int _formType;
@@ -26,14 +16,14 @@
     NSDictionary *_textFieldMetadata;
 }
 
-@property WBUFormDataController * dataController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) <WBUFormAutoFillFrameHandle> * frame;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) NSString * textFieldValue;
-@property(readonly) UIView<WBUFormAutoFillWebView> * webView;
+@property (nonatomic) WBUFormDataController *dataController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) <WBUFormAutoFillFrameHandle> *frame;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSString *textFieldValue;
+@property (nonatomic, readonly) UIView<WBUFormAutoFillWebView> *webView;
 
 + (BOOL)_shouldSaveCredentialsInProtectionSpace:(id)arg1;
 
@@ -45,7 +35,7 @@
 - (BOOL)_canAutoFillCreditCardData;
 - (void)_captureCreditCardDataWithCameraAndFill;
 - (void)_ensureFormMetadata;
-- (void)_gatherFormValuesWithCompletionHandler:(id)arg1;
+- (void)_gatherFormValuesWithCompletionHandler:(id /* block */)arg1;
 - (void)_generateAndSuggestPassword;
 - (id)_matchesForPartialString:(id)arg1;
 - (void)_offerToAutoFillFromPotentialCredentialMatches;
@@ -62,7 +52,7 @@
 - (void)creditCardCaptureViewControllerDidCancel:(id)arg1;
 - (id)dataController;
 - (void)dealloc;
-- (void)fetchFormMetadataWithCompletion:(id)arg1;
+- (void)fetchFormMetadataWithCompletion:(id /* block */)arg1;
 - (id)frame;
 - (void)getTextFieldMetadata:(id*)arg1 formMetadata:(id*)arg2;
 - (BOOL)hasCurrentSuggestions;

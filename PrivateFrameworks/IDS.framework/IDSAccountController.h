@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class NSSet, _IDSAccountController;
-
 @interface IDSAccountController : NSObject {
     _IDSAccountController *_internal;
 }
 
-@property(retain,readonly) NSSet * accounts;
+@property (nonatomic, readonly, retain) NSSet *accounts;
 
 - (id)_initWithService:(id)arg1;
 - (id)_initWithService:(id)arg1 onIDSQueue:(BOOL)arg2;
@@ -27,10 +25,10 @@
 - (void)removeAccount:(id)arg1;
 - (void)removeDelegate:(id)arg1;
 - (id)serviceName;
-- (void)setupAccountWithLoginID:(id)arg1 aliases:(id)arg2 password:(id)arg3 completionHandler:(id)arg4;
-- (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 aliases:(id)arg5 completionHandler:(id)arg6;
-- (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 completionHandler:(id)arg5;
-- (void)setupAccountWithLoginID:(id)arg1 password:(id)arg2 completionHandler:(id)arg3;
-- (void)setupAccountWithSetupParameters:(id)arg1 aliases:(id)arg2 completionHandler:(id)arg3;
+- (void)setupAccountWithLoginID:(id)arg1 aliases:(id)arg2 password:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 aliases:(id)arg5 completionHandler:(id /* block */)arg6;
+- (void)setupAccountWithLoginID:(id)arg1 authToken:(id)arg2 profileID:(id)arg3 selfHandle:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)setupAccountWithLoginID:(id)arg1 password:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setupAccountWithSetupParameters:(id)arg1 aliases:(id)arg2 completionHandler:(id /* block */)arg3;
 
 @end

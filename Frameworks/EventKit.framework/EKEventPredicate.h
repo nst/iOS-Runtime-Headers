@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSString, NSTimeZone;
-
 @interface EKEventPredicate : EKPredicate <EKDefaultPropertiesLoading, NSSecureCoding> {
     NSDate *_endDate;
     BOOL _shouldLoadDefaultProperties;
@@ -13,16 +11,16 @@
     NSString *_uuid;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSDate * endDate;
-@property(readonly) NSString * eventUUID;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL shouldLoadDefaultProperties;
-@property(readonly) NSDate * startDate;
-@property(readonly) Class superclass;
-@property(readonly) NSTimeZone * timeZone;
-@property(readonly) NSString * title;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSDate *endDate;
+@property (nonatomic, readonly) NSString *eventUUID;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL shouldLoadDefaultProperties;
+@property (nonatomic, readonly) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSTimeZone *timeZone;
+@property (nonatomic, readonly) NSString *title;
 
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4;
 + (id)predicateWithStartDate:(id)arg1 endDate:(id)arg2 timeZone:(id)arg3 calendars:(id)arg4 loadDefaultProperties:(BOOL)arg5;

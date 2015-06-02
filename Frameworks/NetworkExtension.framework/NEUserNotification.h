@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface NEUserNotification : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callback;
-
+    id /* block */ _callback;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     BOOL _isBanner;
     struct __CFUserNotification { } *_notification;
     struct __CFRunLoopSource { } *_notificationSource;
 }
 
-@property(copy) id callback;
-@property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
+@property (nonatomic, copy) id /* block */ callback;
+@property (retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property BOOL isBanner;
-@property struct __CFUserNotification { }* notification;
-@property struct __CFRunLoopSource { }* notificationSource;
+@property struct __CFUserNotification { }*notification;
+@property struct __CFRunLoopSource { }*notificationSource;
 
 - (void).cxx_destruct;
-- (id)callback;
+- (id /* block */)callback;
 - (id)callbackQueue;
 - (void)cancel;
 - (void)dealloc;
@@ -36,8 +26,8 @@
 - (BOOL)isBanner;
 - (struct __CFUserNotification { }*)notification;
 - (struct __CFRunLoopSource { }*)notificationSource;
-- (BOOL)postNotificationWithCallbackQueue:(id)arg1 callbackHandler:(id)arg2;
-- (void)setCallback:(id)arg1;
+- (BOOL)postNotificationWithCallbackQueue:(id)arg1 callbackHandler:(id /* block */)arg2;
+- (void)setCallback:(id /* block */)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setIsBanner:(BOOL)arg1;
 - (void)setNotification:(struct __CFUserNotification { }*)arg1;

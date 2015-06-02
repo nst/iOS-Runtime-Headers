@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABNamePropertyGroup, ABStyleProvider, NSString, UIFont, UILabel, UIView;
-
 @interface ABPersonNameDisplayView : ABPasteboardControl {
     BOOL _alignOnBottom;
     NSString *_customHeadline;
@@ -24,19 +22,19 @@
     UILabel *_tagLineLabel;
 }
 
-@property BOOL alignOnBottom;
-@property(retain) UIView * customMessageView;
-@property(copy) NSString * headline;
-@property(copy) NSString * message;
-@property(copy) NSString * messageDetail;
-@property(retain) UIFont * messageDetailFont;
-@property(retain) UIFont * messageFont;
-@property float minimumHeight;
-@property(retain) ABNamePropertyGroup * namePropertyGroup;
-@property int primaryProperty;
-@property(copy) NSString * primaryPropertyFormattingCountryCode;
-@property(retain) ABStyleProvider * styleProvider;
-@property(copy) NSString * tagLine;
+@property (nonatomic) BOOL alignOnBottom;
+@property (nonatomic, retain) UIView *customMessageView;
+@property (nonatomic, copy) NSString *headline;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *messageDetail;
+@property (nonatomic, retain) UIFont *messageDetailFont;
+@property (nonatomic, retain) UIFont *messageFont;
+@property (nonatomic) float minimumHeight;
+@property (nonatomic, retain) ABNamePropertyGroup *namePropertyGroup;
+@property (nonatomic) int primaryProperty;
+@property (nonatomic, copy) NSString *primaryPropertyFormattingCountryCode;
+@property (nonatomic, retain) ABStyleProvider *styleProvider;
+@property (nonatomic, copy) NSString *tagLine;
 
 - (void)_adjustLabelTextColorForPasteboardSelection:(BOOL)arg1;
 - (void)_appendString:(id)arg1 withFormatKey:(id)arg2 toTagLine:(id)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, NSURL;
-
 @interface _UIDocumentPickerContainerMetadataItem : _UIDocumentPickerContainerItem {
     NSString *_cachedSubtitle;
     NSString *_cachedSubtitle2;

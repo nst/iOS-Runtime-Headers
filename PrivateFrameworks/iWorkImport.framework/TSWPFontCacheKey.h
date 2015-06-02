@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSWPFontCacheKey : NSObject {
     NSString *_fontName;
     float _fontSize;
     unsigned int _hash;
 }
 
-@property(readonly) NSString * fontName;
-@property(readonly) float fontSize;
+@property (nonatomic, readonly) NSString *fontName;
+@property (nonatomic, readonly) float fontSize;
 
 + (id)cacheKeyWithFontName:(id)arg1 size:(float)arg2;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSString, PLPhotoLibrary;
-
 @interface PLFileSystemAssetImporter : NSObject {
     NSMutableDictionary *_existingOIDsByUUID;
     NSMutableSet *_existingUUIDs;
@@ -15,10 +13,10 @@
     unsigned int _thumbnailBatchFetchSize;
 }
 
-@property(retain) NSMutableDictionary * existingOIDsByUUID;
-@property(retain) NSMutableSet * existingUUIDs;
-@property(retain) NSMutableDictionary * existingUUIDsByPath;
-@property unsigned int thumbnailBatchFetchSize;
+@property (nonatomic, retain) NSMutableDictionary *existingOIDsByUUID;
+@property (nonatomic, retain) NSMutableSet *existingUUIDs;
+@property (nonatomic, retain) NSMutableDictionary *existingUUIDsByPath;
+@property (nonatomic) unsigned int thumbnailBatchFetchSize;
 
 - (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2;
 - (id)addAssetWithURLs:(id)arg1;

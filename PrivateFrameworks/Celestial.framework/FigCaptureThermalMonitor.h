@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface FigCaptureThermalMonitor : NSObject {
     float _maxTorchLevel;
     NSObject<OS_dispatch_queue> *_notificationQueue;
     int _registrationToken;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _torchHandler;
-
+    id /* block */ _torchHandler;
 }
 
-@property(readonly) float maxTorchLevel;
+@property (nonatomic, readonly) float maxTorchLevel;
 
 + (void)initialize;
 
 - (void)_thermalNotification:(int)arg1;
 - (void)dealloc;
 - (id)init;
-- (id)initWithThermalHandler:(id)arg1;
+- (id)initWithThermalHandler:(id /* block */)arg1;
 - (float)maxTorchLevel;
 
 @end

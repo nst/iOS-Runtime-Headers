@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData, NSString;
-
 @interface AWDNFCTSMStartEvent : PBCodable <NSCopying> {
     struct { 
         unsigned int timeDeltaFromReference : 1; 
@@ -23,22 +21,22 @@
     NSData *_uuidReference;
 }
 
-@property BOOL hasIdxTableAvail;
-@property BOOL hasPersistentAvail;
-@property BOOL hasTimeDeltaFromReference;
-@property BOOL hasTimestamp;
-@property BOOL hasTransientDeselectAvail;
-@property BOOL hasTransientResetAvail;
-@property(readonly) BOOL hasUrl;
-@property(readonly) BOOL hasUuidReference;
-@property unsigned int idxTableAvail;
-@property unsigned int persistentAvail;
-@property unsigned long long timeDeltaFromReference;
-@property unsigned long long timestamp;
-@property unsigned int transientDeselectAvail;
-@property unsigned int transientResetAvail;
-@property(retain) NSString * url;
-@property(retain) NSData * uuidReference;
+@property (nonatomic) BOOL hasIdxTableAvail;
+@property (nonatomic) BOOL hasPersistentAvail;
+@property (nonatomic) BOOL hasTimeDeltaFromReference;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransientDeselectAvail;
+@property (nonatomic) BOOL hasTransientResetAvail;
+@property (nonatomic, readonly) BOOL hasUrl;
+@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) unsigned int idxTableAvail;
+@property (nonatomic) unsigned int persistentAvail;
+@property (nonatomic) unsigned long long timeDeltaFromReference;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int transientDeselectAvail;
+@property (nonatomic) unsigned int transientResetAvail;
+@property (nonatomic, retain) NSString *url;
+@property (nonatomic, retain) NSData *uuidReference;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface AFPreferences : NSObject {
     int _navToken;
     BOOL _navTokenIsValid;

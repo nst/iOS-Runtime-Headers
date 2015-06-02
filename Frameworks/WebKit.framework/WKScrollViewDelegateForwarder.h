@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@class <UIScrollViewDelegate>, NSString, WKWebView;
-
 @interface WKScrollViewDelegateForwarder : NSObject <UIScrollViewDelegate> {
     <UIScrollViewDelegate> *_externalDelegate;
     WKWebView *_internalDelegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)forwardInvocation:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSXPCConnection, NSXPCInterface;
-
 @interface _NSXPCDistantObject : NSObject <NSSecureCoding, NSXPCProxyCreating> {
     NSXPCConnection *_connection;
     BOOL _exported;
@@ -14,11 +12,11 @@
     int _selectorLock;
 }
 
-@property(retain) NSXPCConnection * _connection;
+@property (retain) NSXPCConnection *_connection;
 @property BOOL _exported;
 @property unsigned long long _generationCount;
 @property unsigned long long _proxyNumber;
-@property(retain) NSXPCInterface * _remoteInterface;
+@property (retain) NSXPCInterface *_remoteInterface;
 
 + (BOOL)supportsSecureCoding;
 
@@ -38,9 +36,9 @@
 - (id)initWithCoder:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)remoteObjectProxy;
-- (id)remoteObjectProxyWithErrorHandler:(id)arg1;
-- (id)remoteObjectProxyWithTimeout:(double)arg1 errorHandler:(id)arg2;
-- (id)remoteObjectProxyWithUserInfo:(id)arg1 errorHandler:(id)arg2;
+- (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
+- (id)remoteObjectProxyWithTimeout:(double)arg1 errorHandler:(id /* block */)arg2;
+- (id)remoteObjectProxyWithUserInfo:(id)arg1 errorHandler:(id /* block */)arg2;
 - (void)set_connection:(id)arg1;
 - (void)set_exported:(BOOL)arg1;
 - (void)set_generationCount:(unsigned long long)arg1;

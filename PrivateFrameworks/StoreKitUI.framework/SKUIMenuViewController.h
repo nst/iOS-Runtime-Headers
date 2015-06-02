@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIMenuViewControllerDelegate>, NSArray, UIColor;
-
 @interface SKUIMenuViewController : UITableViewController {
     UIColor *_borderColor;
     <SKUIMenuViewControllerDelegate> *_delegate;
@@ -13,11 +11,11 @@
     NSArray *_menuTitles;
 }
 
-@property <SKUIMenuViewControllerDelegate> * delegate;
-@property int indexOfCheckedTitle;
-@property(readonly) NSArray * menuImages;
-@property int menuStyle;
-@property(readonly) NSArray * menuTitles;
+@property (nonatomic) <SKUIMenuViewControllerDelegate> *delegate;
+@property (nonatomic) int indexOfCheckedTitle;
+@property (nonatomic, readonly) NSArray *menuImages;
+@property (nonatomic) int menuStyle;
+@property (nonatomic, readonly) NSArray *menuTitles;
 
 - (void).cxx_destruct;
 - (void)_reloadViewStyling;

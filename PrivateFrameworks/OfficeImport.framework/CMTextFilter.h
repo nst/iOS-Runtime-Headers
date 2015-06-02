@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMTextFilter : NSObject {
-}
+@interface CMTextFilter : NSObject
 
 + (id)convertLineBreaksToParagraphBreaks:(id)arg1;
 + (id)convertToVericalString:(id)arg1;

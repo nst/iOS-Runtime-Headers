@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class NSDictionary, NSError;
-
 @interface AXHAMessage : NSObject {
     NSError *_error;
     NSDictionary *_payload;
 }
 
-@property(retain) NSError * error;
-@property(retain) NSDictionary * payload;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) NSDictionary *payload;
 
 + (id)messageWithPayload:(id)arg1;
 

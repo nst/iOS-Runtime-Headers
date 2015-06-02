@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class CLLocation, CLRegion, GEOMapItemStorage, NSArray, NSDictionary;
-
 @interface CLPlacemarkInternal : NSObject {
     NSDictionary *addressDictionary;
     NSArray *areasOfInterest;

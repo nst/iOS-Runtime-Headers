@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSString, UIImage, UIView, UIView<CKJoystickButton>;
-
 @interface CKJoystickButtonItem : NSObject {
     SEL _action;
     UIView<CKJoystickButton> *_button;
@@ -15,14 +13,14 @@
     UIView *_view;
 }
 
-@property SEL action;
-@property(retain) UIView<CKJoystickButton> * button;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(retain) UIImage * image;
-@property SEL tapAction;
-@property id target;
-@property(copy) NSString * title;
-@property(retain) UIView * view;
+@property (nonatomic) SEL action;
+@property (nonatomic, retain) UIView<CKJoystickButton> *button;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) SEL tapAction;
+@property (nonatomic) id target;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, retain) UIView *view;
 
 - (SEL)action;
 - (id)button;

@@ -2,27 +2,25 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@class FBApplicationLibrary, NSString;
-
 @interface XBApplicationController : NSObject <FBApplicationLibraryPreInstallClient> {
     FBApplicationLibrary *_applicationLibrary;
 }
 
-@property(retain) FBApplicationLibrary * applicationLibrary;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) FBApplicationLibrary *applicationLibrary;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 
-- (void)_captureOrUpdateLaunchImagesForApplications:(id)arg1 firstImageIsReady:(id)arg2;
+- (void)_captureOrUpdateLaunchImagesForApplications:(id)arg1 firstImageIsReady:(id /* block */)arg2;
 - (void)_removeAllCachedLaunchImages;
 - (void)_removeCachedLaunchImagesForApplications:(id)arg1 forgetApp:(BOOL)arg2;
 - (id)applicationLibrary;
-- (void)applicationLibrary:(id)arg1 _willNotify_didAddApplications:(id)arg2 completion:(id)arg3;
-- (void)applicationLibrary:(id)arg1 _willNotify_didReplaceApplications:(id)arg2 withApplications:(id)arg3 completion:(id)arg4;
-- (void)applicationLibrary:(id)arg1 didRemoveApplications:(id)arg2 completion:(id)arg3;
+- (void)applicationLibrary:(id)arg1 _willNotify_didAddApplications:(id)arg2 completion:(id /* block */)arg3;
+- (void)applicationLibrary:(id)arg1 _willNotify_didReplaceApplications:(id)arg2 withApplications:(id)arg3 completion:(id /* block */)arg4;
+- (void)applicationLibrary:(id)arg1 didRemoveApplications:(id)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;
 - (id)init;
 - (void)setApplicationLibrary:(id)arg1;

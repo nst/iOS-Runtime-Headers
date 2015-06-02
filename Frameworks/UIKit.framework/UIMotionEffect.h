@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UIMotionAnalyzerSettings;
-
 @interface UIMotionEffect : NSObject <NSCoding, NSCopying> {
     _UIMotionAnalyzerSettings *_preferredMotionAnalyzerSettings;
 }

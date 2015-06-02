@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SAMovieMovie;
+@interface SAMovieShowtimeSelectionSnippet : SAUISnippet
 
-@interface SAMovieShowtimeSelectionSnippet : SAUISnippet {
-}
-
-@property(retain) SAMovieMovie * movie;
+@property (nonatomic, retain) SAMovieMovie *movie;
 
 + (id)showtimeSelectionSnippet;
 + (id)showtimeSelectionSnippetWithDictionary:(id)arg1 context:(id)arg2;

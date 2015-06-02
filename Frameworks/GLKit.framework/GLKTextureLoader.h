@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/GLKit.framework/GLKit
  */
 
-@class EAGLContext, NSLock;
-
 @interface GLKTextureLoader : NSObject {
     EAGLContext *_glContext;
     NSLock *_nsLock;
 }
 
-@property(retain) EAGLContext * glContext;
-@property(retain) NSLock * nsLock;
+@property (retain) EAGLContext *glContext;
+@property (retain) NSLock *nsLock;
 
 + (id)_textureWithTexture:(id)arg1 error:(id*)arg2;
 + (id)commonCubeMapWithContentsOfFiles:(id)arg1 options:(id)arg2 error:(id*)arg3 lock:(id)arg4 glContext:(id)arg5;
@@ -28,18 +26,18 @@
 + (id)textureWithContentsOfURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
 + (void)unlockAndRestoreContext:(id)arg1 glContext:(id)arg2;
 
-- (void)cubeMapWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)cubeMapWithContentsOfFiles:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)cubeMapWithContentsOfURL:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)cubeMapWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)cubeMapWithContentsOfFiles:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)cubeMapWithContentsOfURL:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)dealloc;
 - (id)glContext;
 - (id)initWithSharegroup:(id)arg1;
 - (id)nsLock;
 - (void)setGlContext:(id)arg1;
 - (void)setNsLock:(id)arg1;
-- (void)textureWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)textureWithContentsOfData:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)textureWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
-- (void)textureWithContentsOfURL:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id)arg4;
+- (void)textureWithCGImage:(struct CGImage { }*)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)textureWithContentsOfData:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)textureWithContentsOfFile:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)textureWithContentsOfURL:(id)arg1 options:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 
 @end

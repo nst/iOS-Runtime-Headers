@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@interface CUIThemeSchema : NSObject {
-}
+@interface CUIThemeSchema : NSObject
 
 + (id)defaultSchema;
 + (id)schemaForPlatform:(int)arg1;
@@ -18,8 +17,8 @@
 - (const struct { char *x1; char *x2; BOOL x3; int x4; struct { char *x_5_1_1; char *x_5_1_2; struct _renditionkeytoken { unsigned short x_3_2_1; unsigned short x_3_2_2; } x_5_1_3[5]; int x_5_1_4; int x_5_1_5; struct { char *x_6_2_1; char *x_6_2_2; int x_6_2_3; unsigned int x_6_2_4; } x_5_1_6[12]; } x5[7]; }*)elementDefinitionAtIndex:(unsigned int)arg1;
 - (unsigned int)elementDefinitionCount;
 - (const struct { char *x1; char *x2; BOOL x3; int x4; struct { char *x_5_1_1; char *x_5_1_2; struct _renditionkeytoken { unsigned short x_3_2_1; unsigned short x_3_2_2; } x_5_1_3[5]; int x_5_1_4; int x_5_1_5; struct { char *x_6_2_1; char *x_6_2_2; int x_6_2_3; unsigned int x_6_2_4; } x_5_1_6[12]; } x5[7]; }*)elementDefinitionWithName:(id)arg1;
-- (void)enumerateAvailableThemeAttributesInPartDefinition:(const struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; }*)arg1 usingBlock:(id)arg2;
-- (void)enumerateAvailableValuesForThemeAttribute:(int)arg1 inPartDefinition:(const struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; }*)arg2 usingBlock:(id)arg3;
+- (void)enumerateAvailableThemeAttributesInPartDefinition:(const struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; }*)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateAvailableValuesForThemeAttribute:(int)arg1 inPartDefinition:(const struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; }*)arg2 usingBlock:(id /* block */)arg3;
 - (unsigned int)partDefinitionCountForEffectDefinition:(const struct { char *x1; char *x2; BOOL x3; int x4; struct { char *x_5_1_1; char *x_5_1_2; struct _renditionkeytoken { unsigned short x_3_2_1; unsigned short x_3_2_2; } x_5_1_3[5]; int x_5_1_4; int x_5_1_5; struct { char *x_6_2_1; char *x_6_2_2; int x_6_2_3; unsigned int x_6_2_4; } x_5_1_6[12]; } x5[7]; }*)arg1;
 - (unsigned int)partDefinitionCountForElementDefinition:(const struct { char *x1; char *x2; BOOL x3; int x4; struct { char *x_5_1_1; char *x_5_1_2; struct _renditionkeytoken { unsigned short x_3_2_1; unsigned short x_3_2_2; } x_5_1_3[5]; int x_5_1_4; int x_5_1_5; struct { char *x_6_2_1; char *x_6_2_2; int x_6_2_3; unsigned int x_6_2_4; } x_5_1_6[12]; } x5[7]; }*)arg1;
 - (const struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; }*)partDefinitionForWidgetName:(id)arg1;

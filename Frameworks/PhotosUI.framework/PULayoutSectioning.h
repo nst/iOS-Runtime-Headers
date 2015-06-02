@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PULayoutSectioningDelegate>, PULayoutSectioning;
-
 @interface PULayoutSectioning : NSObject {
     PULayoutSectioning *_baseSectioning;
     <PULayoutSectioningDelegate> *_delegate;
@@ -11,8 +9,8 @@
     BOOL _invalidatingSections;
 }
 
-@property(retain) PULayoutSectioning * baseSectioning;
-@property <PULayoutSectioningDelegate> * delegate;
+@property (nonatomic, retain) PULayoutSectioning *baseSectioning;
+@property (nonatomic) <PULayoutSectioningDelegate> *delegate;
 
 - (void).cxx_destruct;
 - (int)__debugUnsampledIndexForRealIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg1;
@@ -23,8 +21,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)enumerateRealMainItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id)arg3;
-- (void)enumerateRealSectionsForVisualSection:(int)arg1 usingBlock:(id)arg2;
+- (void)enumerateRealMainItemIndexPathsForVisualSection:(int)arg1 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateRealSectionsForVisualSection:(int)arg1 usingBlock:(id /* block */)arg2;
 - (BOOL)hasSomeSampling;
 - (void)invalidateSampling;
 - (void)invalidateSections;

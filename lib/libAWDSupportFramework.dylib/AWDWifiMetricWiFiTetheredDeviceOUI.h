@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDWifiMetricWiFiTetheredDeviceOUI : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -12,10 +10,10 @@
     unsigned long long _timestamp;
 }
 
-@property(readonly) BOOL hasTetheredOUI;
-@property BOOL hasTimestamp;
-@property(retain) NSData * tetheredOUI;
-@property unsigned long long timestamp;
+@property (nonatomic, readonly) BOOL hasTetheredOUI;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSData *tetheredOUI;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

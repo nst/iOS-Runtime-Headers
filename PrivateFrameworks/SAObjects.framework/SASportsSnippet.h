@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SASportsLeague, SAUIAppPunchOut;
+@interface SASportsSnippet : SAUISnippet
 
-@interface SASportsSnippet : SAUISnippet {
-}
-
-@property(retain) SASportsLeague * league;
-@property(retain) SAUIAppPunchOut * leagueAppPunchOut;
-@property(retain) SAUIAppPunchOut * punchOut;
+@property (nonatomic, retain) SASportsLeague *league;
+@property (nonatomic, retain) SAUIAppPunchOut *leagueAppPunchOut;
+@property (nonatomic, retain) SAUIAppPunchOut *punchOut;
 
 + (id)snippet;
 + (id)snippetWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class UIImage;
-
 @interface StockGraphImageSet : NSObject {
     UIImage *_highlightOverlayImage;
     UIImage *_lineGraphImage;
     UIImage *_volumeGraphImage;
 }
 
-@property(retain) UIImage * highlightOverlayImage;
-@property(retain) UIImage * lineGraphImage;
-@property(retain) UIImage * volumeGraphImage;
+@property (nonatomic, retain) UIImage *highlightOverlayImage;
+@property (nonatomic, retain) UIImage *lineGraphImage;
+@property (nonatomic, retain) UIImage *volumeGraphImage;
 
 - (void).cxx_destruct;
 - (id)highlightOverlayImage;

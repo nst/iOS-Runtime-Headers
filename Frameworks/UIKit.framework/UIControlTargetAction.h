@@ -9,7 +9,7 @@
     id _target;
 }
 
-@property BOOL cancelled;
+@property (nonatomic) BOOL cancelled;
 
 - (BOOL)cancelled;
 - (void)setCancelled:(BOOL)arg1;

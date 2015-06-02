@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSError, NSString, SSDownloadPhase;
-
 @interface SSDownloadStatus : NSObject <NSCopying, SSXPCCoding> {
     SSDownloadPhase *_activePhase;
     BOOL _contentRestricted;
@@ -12,18 +10,18 @@
     BOOL _paused;
 }
 
-@property(readonly) SSDownloadPhase * activePhase;
-@property(getter=isContentRestricted) BOOL contentRestricted;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(getter=isFailed) BOOL failed;
-@property(getter=isFailedTransient,readonly) BOOL failedTransient;
-@property(readonly) unsigned int hash;
-@property(getter=isPausable) BOOL pausable;
-@property(getter=isPaused) BOOL paused;
-@property(readonly) float percentComplete;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) SSDownloadPhase *activePhase;
+@property (getter=isContentRestricted, nonatomic) BOOL contentRestricted;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (getter=isFailed, nonatomic) BOOL failed;
+@property (getter=isFailedTransient, nonatomic, readonly) BOOL failedTransient;
+@property (readonly) unsigned int hash;
+@property (getter=isPausable, nonatomic) BOOL pausable;
+@property (getter=isPaused, nonatomic) BOOL paused;
+@property (nonatomic, readonly) float percentComplete;
+@property (readonly) Class superclass;
 
 - (id)activePhase;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

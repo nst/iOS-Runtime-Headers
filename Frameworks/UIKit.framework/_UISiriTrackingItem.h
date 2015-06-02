@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIColor, UIImage, UIImageView;
-
 @interface _UISiriTrackingItem : NSObject {
     UIImageView *_animatedView;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _animationCompletionHandler;
-
+    id /* block */ _animationCompletionHandler;
     UIImage *_capturedGlyphImage;
     BOOL _deleted;
     struct _NSRange { 
@@ -42,21 +32,21 @@
     } _textRange;
 }
 
-@property(retain) UIImageView * animatedView;
-@property(copy) id animationCompletionHandler;
-@property(retain) UIImage * capturedGlyphImage;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } glyphRange;
-@property BOOL isABigReplacement;
-@property BOOL isASmallReplacement;
-@property BOOL isAnIntroduction;
-@property float offscreenXLocation;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetFrame;
-@property(retain) UIColor * textColor;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } textRange;
+@property (nonatomic, retain) UIImageView *animatedView;
+@property (nonatomic, copy) id /* block */ animationCompletionHandler;
+@property (nonatomic, retain) UIImage *capturedGlyphImage;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } glyphRange;
+@property (nonatomic) BOOL isABigReplacement;
+@property (nonatomic) BOOL isASmallReplacement;
+@property (nonatomic) BOOL isAnIntroduction;
+@property (nonatomic) float offscreenXLocation;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetFrame;
+@property (nonatomic, retain) UIColor *textColor;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } textRange;
 
 - (void)animateOut;
 - (id)animatedView;
-- (id)animationCompletionHandler;
+- (id /* block */)animationCompletionHandler;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)captureGlyphsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 containerOrigin:(struct CGPoint { float x1; float x2; })arg2 fromLayoutManager:(id)arg3;
 - (id)capturedGlyphImage;
@@ -69,7 +59,7 @@
 - (BOOL)isAnIntroduction;
 - (float)offscreenXLocation;
 - (void)setAnimatedView:(id)arg1;
-- (void)setAnimationCompletionHandler:(id)arg1;
+- (void)setAnimationCompletionHandler:(id /* block */)arg1;
 - (void)setCapturedGlyphImage:(id)arg1;
 - (void)setGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setIsABigReplacement:(BOOL)arg1;

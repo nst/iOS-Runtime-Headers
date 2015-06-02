@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class ACAccount, DAStatusReport, DATaskManager, DATrustHandler, NSArray, NSData, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet, NSString, NSURL;
-
 @interface DAAccount : NSObject {
     NSArray *_appIdsForPasswordPrompt;
     ACAccount *_backingAccountInfo;
@@ -24,48 +22,48 @@
     BOOL _wasUserInitiated;
 }
 
-@property(copy) NSString * accountDescription;
-@property(readonly) NSString * accountID;
-@property(readonly) NSArray * appIdsForPasswordPrompt;
-@property(readonly) ACAccount * backingAccountInfo;
-@property(readonly) NSString * changeTrackingID;
-@property(copy,readonly) NSString * clientToken;
-@property(setter=setDAAccountVersion:) int daAccountVersion;
-@property(retain) NSMutableDictionary * dataclassPropertyURLsByDataclass;
-@property(copy) NSString * emailAddress;
-@property(copy) NSArray * emailAddresses;
-@property(readonly) int enabledDataclassesBitmask;
-@property(retain) NSData * encryptionIdentityPersistentReference;
-@property(copy) NSString * host;
-@property(copy,readonly) NSData * identityPersist;
-@property(readonly) BOOL isChildAccount;
-@property BOOL isValidating;
-@property(readonly) int keychainAccessibilityType;
-@property unsigned long long lastQueryStartedTime;
-@property(copy) NSString * password;
-@property(retain) NSMutableArray * pendingQueries;
-@property(retain) NSObject<OS_dispatch_queue> * pendingQueryQueue;
-@property(copy,readonly) NSString * persistentUUID;
-@property int port;
-@property(copy) NSString * principalPath;
-@property(copy) NSURL * principalURL;
-@property(readonly) NSString * scheduleIdentifier;
-@property(copy,readonly) NSString * scheme;
-@property(readonly) NSSet * serverComplianceClasses;
-@property(readonly) NSString * serverRoot;
-@property(readonly) BOOL shouldAutodiscoverAccountProperties;
-@property BOOL shouldDoInitialAutodiscovery;
-@property(readonly) BOOL shouldFailAllTasks;
-@property BOOL shouldUseOpportunisticSockets;
-@property(retain) NSData * signingIdentityPersistentReference;
-@property(retain) DAStatusReport * statusReport;
-@property(readonly) DATaskManager * taskManager;
-@property(retain) DATrustHandler * trustHandler;
-@property BOOL useSSL;
-@property(copy) NSString * user;
-@property(readonly) NSString * userAgentHeader;
-@property(copy) NSString * username;
-@property BOOL wasUserInitiated;
+@property (nonatomic, copy) NSString *accountDescription;
+@property (nonatomic, readonly) NSString *accountID;
+@property (nonatomic, readonly) NSArray *appIdsForPasswordPrompt;
+@property (nonatomic, readonly) ACAccount *backingAccountInfo;
+@property (nonatomic, readonly) NSString *changeTrackingID;
+@property (nonatomic, readonly, copy) NSString *clientToken;
+@property (setter=setDAAccountVersion:, nonatomic) int daAccountVersion;
+@property (nonatomic, retain) NSMutableDictionary *dataclassPropertyURLsByDataclass;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSArray *emailAddresses;
+@property (nonatomic, readonly) int enabledDataclassesBitmask;
+@property (nonatomic, retain) NSData *encryptionIdentityPersistentReference;
+@property (nonatomic, copy) NSString *host;
+@property (nonatomic, readonly, copy) NSData *identityPersist;
+@property (nonatomic, readonly) BOOL isChildAccount;
+@property (nonatomic) BOOL isValidating;
+@property (nonatomic, readonly) int keychainAccessibilityType;
+@property (nonatomic) unsigned long long lastQueryStartedTime;
+@property (nonatomic, copy) NSString *password;
+@property (nonatomic, retain) NSMutableArray *pendingQueries;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *pendingQueryQueue;
+@property (nonatomic, readonly, copy) NSString *persistentUUID;
+@property (nonatomic) int port;
+@property (nonatomic, copy) NSString *principalPath;
+@property (nonatomic, copy) NSURL *principalURL;
+@property (nonatomic, readonly) NSString *scheduleIdentifier;
+@property (nonatomic, readonly, copy) NSString *scheme;
+@property (nonatomic, readonly) NSSet *serverComplianceClasses;
+@property (nonatomic, readonly) NSString *serverRoot;
+@property (nonatomic, readonly) BOOL shouldAutodiscoverAccountProperties;
+@property (nonatomic) BOOL shouldDoInitialAutodiscovery;
+@property (nonatomic, readonly) BOOL shouldFailAllTasks;
+@property (nonatomic) BOOL shouldUseOpportunisticSockets;
+@property (nonatomic, retain) NSData *signingIdentityPersistentReference;
+@property (nonatomic, retain) DAStatusReport *statusReport;
+@property (nonatomic, readonly) DATaskManager *taskManager;
+@property (nonatomic, retain) DATrustHandler *trustHandler;
+@property (nonatomic) BOOL useSSL;
+@property (nonatomic, copy) NSString *user;
+@property (nonatomic, readonly) NSString *userAgentHeader;
+@property (nonatomic, copy) NSString *username;
+@property (nonatomic) BOOL wasUserInitiated;
 
 + (id)_leafAccountTypes;
 + (id)daAccountSubclassWithBackingAccountInfo:(id)arg1;
@@ -81,7 +79,7 @@
 - (void)_reallyPerformSearchQuery:(id)arg1;
 - (BOOL)_reallySearchQueriesRunning;
 - (void)_setPersistentUUID:(id)arg1;
-- (void)_webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id)arg3;
+- (void)_webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id /* block */)arg3;
 - (BOOL)accountBoolPropertyForKey:(id)arg1;
 - (BOOL)accountContainsEmailAddress:(id)arg1;
 - (id)accountDescription;
@@ -126,7 +124,7 @@
 - (id)displayName;
 - (id)domainOnly;
 - (id)draftsFolder;
-- (void)dropAssertionsAndRenewCredentialsWithHandler:(id)arg1;
+- (void)dropAssertionsAndRenewCredentialsWithHandler:(id /* block */)arg1;
 - (id)emailAddress;
 - (id)emailAddresses;
 - (int)enabledDataclassesBitmask;
@@ -140,7 +138,7 @@
 - (void)getRootFolderWithConsumer:(id)arg1;
 - (BOOL)handleCertificateError:(id)arg1;
 - (BOOL)handleTrustChallenge:(id)arg1;
-- (void)handleValidationError:(id)arg1 completion:(id)arg2;
+- (void)handleValidationError:(id)arg1 completion:(id /* block */)arg2;
 - (id)host;
 - (id)hostFromDataclassPropertiesForDataclass:(id)arg1;
 - (id)identityPersist;
@@ -198,7 +196,7 @@
 - (void)resumeMonitoringFoldersWithIDs:(id)arg1;
 - (void)retrieveOofSettingsForConsumer:(id)arg1;
 - (void)saveAccountProperties;
-- (void)saveAccountPropertiesWithCompletionHandler:(id)arg1;
+- (void)saveAccountPropertiesWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)saveModifiedPropertiesOnBackingAccount;
 - (id)scheduleIdentifier;
 - (id)scheme;
@@ -279,6 +277,6 @@
 - (id)username;
 - (id)usernameWithoutDomain;
 - (BOOL)wasUserInitiated;
-- (void)webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id)arg3;
+- (void)webLoginRequestedAtURL:(id)arg1 reasonString:(id)arg2 completionBlock:(id /* block */)arg3;
 
 @end

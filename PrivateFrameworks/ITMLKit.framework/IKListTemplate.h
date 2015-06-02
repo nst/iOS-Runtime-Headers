@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKBackgroundElement, IKDocumentBannerElement, IKListElement;
+@interface IKListTemplate : IKViewElement
 
-@interface IKListTemplate : IKViewElement {
-}
-
-@property(retain,readonly) IKBackgroundElement * background;
-@property(retain,readonly) IKDocumentBannerElement * documentBanner;
-@property(retain,readonly) IKListElement * list;
+@property (nonatomic, readonly, retain) IKBackgroundElement *background;
+@property (nonatomic, readonly, retain) IKDocumentBannerElement *documentBanner;
+@property (nonatomic, readonly, retain) IKListElement *list;
 
 - (id)background;
 - (id)documentBanner;

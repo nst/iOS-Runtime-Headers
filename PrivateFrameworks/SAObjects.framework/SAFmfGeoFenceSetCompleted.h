@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, NSURL, SAFmfGeoFence;
+@interface SAFmfGeoFenceSetCompleted : SADomainCommand <SAServerBoundCommand>
 
-@interface SAFmfGeoFenceSetCompleted : SADomainCommand <SAServerBoundCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) SAFmfGeoFence * geoFence;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * refId;
-@property(copy) NSURL * searchContext;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *aceId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) SAFmfGeoFence *geoFence;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *refId;
+@property (nonatomic, copy) NSURL *searchContext;
+@property (readonly) Class superclass;
 
 + (id)geoFenceSetCompleted;
 + (id)geoFenceSetCompletedWithDictionary:(id)arg1 context:(id)arg2;

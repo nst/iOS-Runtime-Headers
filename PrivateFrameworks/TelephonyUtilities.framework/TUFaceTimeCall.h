@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class IMAVChat;
-
 @interface TUFaceTimeCall : TUCall {
     IMAVChat *_chat;
 }
 
-@property(retain) IMAVChat * chat;
+@property (nonatomic, retain) IMAVChat *chat;
 
 + (id)sourceAccount:(BOOL)arg1;
 

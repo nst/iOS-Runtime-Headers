@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class NSString, TKTonePickerController;
-
 @interface TKTonePickerSectionItem : TKPickerSectionItem <TKPickerContainerItem> {
     int _numberOfChildren;
     TKTonePickerController *_parentTonePickerController;
@@ -11,14 +9,14 @@
     unsigned int _sectionHeader;
 }
 
-@property(setter=_setParentTonePickerController:) TKTonePickerController * _parentTonePickerController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int numberOfChildren;
-@property unsigned int regularToneSectionIndex;
-@property unsigned int sectionHeader;
-@property(readonly) Class superclass;
+@property (setter=_setParentTonePickerController:, nonatomic) TKTonePickerController *_parentTonePickerController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int numberOfChildren;
+@property (nonatomic) unsigned int regularToneSectionIndex;
+@property (nonatomic) unsigned int sectionHeader;
+@property (readonly) Class superclass;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (id)_parentTonePickerController;

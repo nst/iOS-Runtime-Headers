@@ -7,8 +7,8 @@
     id _value;
 }
 
-@property(readonly) int comparisonType;
-@property(readonly) id value;
+@property (nonatomic, readonly) int comparisonType;
+@property (nonatomic, readonly) id value;
 
 + (id)predicateWithProperty:(id)arg1 equalToValue:(id)arg2;
 + (id)predicateWithProperty:(id)arg1 greaterThanOrEqualToValue:(id)arg2;

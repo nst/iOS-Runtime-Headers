@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <GEOResourceManifestServerProxyDelegate>, GEOResourceManifestConfiguration, NSHashTable, NSLock, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>, NSString;
-
 @interface GEOResourceManifestServerRemoteProxy : NSObject <GEOResourceManifestServerProxy> {
     NSString *_authToken;
     NSLock *_authTokenLock;
@@ -19,11 +17,11 @@
     NSObject<OS_dispatch_queue> *_serverQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <GEOResourceManifestServerProxyDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <GEOResourceManifestServerProxyDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_handleMessage:(id)arg1 xpcMessage:(id)arg2;
 - (void)_setupConnection;
@@ -32,15 +30,15 @@
 - (id)configuration;
 - (void)dealloc;
 - (id)delegate;
-- (void)forceUpdate:(id)arg1;
-- (void)getResourceManifestWithHandler:(id)arg1;
+- (void)forceUpdate:(id /* block */)arg1;
+- (void)getResourceManifestWithHandler:(id /* block */)arg1;
 - (id)initWithDelegate:(id)arg1 configuration:(id)arg2;
 - (void)openConnection;
 - (oneway void)resetActiveTileGroup;
 - (id)serverQueue;
 - (oneway void)setActiveTileGroupIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setManifestToken:(id)arg1 completionHandler:(id)arg2;
-- (void)updateIfNecessary:(id)arg1;
+- (void)setManifestToken:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateIfNecessary:(id /* block */)arg1;
 
 @end

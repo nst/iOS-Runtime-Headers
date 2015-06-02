@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray;
-
 @interface PLCloudSharedDeleteAlbumsJob : PLCloudSharingJob {
     NSArray *_albumCloudGUIDsToDelete;
 }
 
-@property(retain) NSArray * albumCloudGUIDsToDelete;
+@property (nonatomic, retain) NSArray *albumCloudGUIDsToDelete;
 
 + (void)deleteLocalAlbumsForMSASAlbumGUIDs:(id)arg1;
 

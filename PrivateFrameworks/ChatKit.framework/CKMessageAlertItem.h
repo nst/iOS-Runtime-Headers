@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class BBBulletin, CKIMDBMessage, NCInteractiveNotificationHostViewController, NSString;
-
 @interface CKMessageAlertItem : CKAlertItem <NCInteractiveNotificationHostDelegate> {
     NCInteractiveNotificationHostViewController *_audioPlaybackViewController;
     BBBulletin *_bulletin;
@@ -13,14 +11,14 @@
     BOOL _showingImage;
 }
 
-@property(retain) NCInteractiveNotificationHostViewController * audioPlaybackViewController;
-@property(retain) BBBulletin * bulletin;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NCInteractiveNotificationHostViewController * replyViewController;
-@property BOOL showingImage;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NCInteractiveNotificationHostViewController *audioPlaybackViewController;
+@property (nonatomic, retain) BBBulletin *bulletin;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NCInteractiveNotificationHostViewController *replyViewController;
+@property (nonatomic) BOOL showingImage;
+@property (readonly) Class superclass;
 
 + (int)lastMessageSenderID;
 + (void)playMessageReceived;

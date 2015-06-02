@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSDictionary;
-
 @interface _MPUExtrasShelfCollectionViewLayout : UICollectionViewFlowLayout {
     struct CGSize { 
         float width; 
@@ -12,7 +10,7 @@
     NSDictionary *_rects;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } calculatedContentSize;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } calculatedContentSize;
 
 - (void).cxx_destruct;
 - (void)_calculateSizes;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSInputStream, PBMessageStreamReader;
-
 @interface BRCPackageManifestReader : NSEnumerator {
     PBMessageStreamReader *_reader;
     NSInputStream *_stream;
 }
 
-@property Class itemClass;
+@property (nonatomic) Class itemClass;
 
 - (void).cxx_destruct;
 - (void)dealloc;

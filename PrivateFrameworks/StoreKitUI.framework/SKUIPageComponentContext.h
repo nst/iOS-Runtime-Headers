@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSDictionary, NSMutableSet, NSSet;
-
 @interface SKUIPageComponentContext : NSObject <NSCopying> {
     NSDictionary *_componentDictionary;
     NSArray *_ineligibleGratisIdentifiers;
@@ -14,13 +12,13 @@
     NSMutableSet *_unavailableItems;
 }
 
-@property(copy,readonly) NSSet * allUnavailableItemIdentifiers;
-@property(copy) NSDictionary * componentDictionary;
-@property(copy) NSArray * ineligibleGratisIdentifiers;
-@property(copy) NSDictionary * items;
-@property int layoutStyle;
-@property(readonly) double pageGenerationTime;
-@property(copy) NSDictionary * platformKeyProfileOverrides;
+@property (nonatomic, readonly, copy) NSSet *allUnavailableItemIdentifiers;
+@property (nonatomic, copy) NSDictionary *componentDictionary;
+@property (nonatomic, copy) NSArray *ineligibleGratisIdentifiers;
+@property (nonatomic, copy) NSDictionary *items;
+@property (nonatomic) int layoutStyle;
+@property (nonatomic, readonly) double pageGenerationTime;
+@property (nonatomic, copy) NSDictionary *platformKeyProfileOverrides;
 
 - (void).cxx_destruct;
 - (void)addUnavailableItemIdentifiers:(id)arg1;

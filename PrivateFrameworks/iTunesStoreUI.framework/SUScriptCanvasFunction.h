@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class SUScriptCanvasResult;
-
 @interface SUScriptCanvasFunction : SUScriptFunction {
     SUScriptCanvasResult *_lastResult;
 }

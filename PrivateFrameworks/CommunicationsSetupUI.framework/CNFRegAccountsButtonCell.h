@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegAccountsButtonCell : PSTableCell {
-}
+@interface CNFRegAccountsButtonCell : PSTableCell
 
 - (void)layoutSubviews;
 

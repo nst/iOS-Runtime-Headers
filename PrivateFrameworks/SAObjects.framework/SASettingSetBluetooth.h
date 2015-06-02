@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingSetBluetooth : SASettingSetBool {
-}
+@interface SASettingSetBluetooth : SASettingSetBool
 
 + (id)setBluetooth;
 + (id)setBluetoothWithDictionary:(id)arg1 context:(id)arg2;

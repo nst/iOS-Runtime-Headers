@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class SADomainObject, SAUIDomainObjectPicker;
+@interface SAUIDomainObjectPickerSelection : SAStartRequest
 
-@interface SAUIDomainObjectPickerSelection : SAStartRequest {
-}
-
-@property(retain) SAUIDomainObjectPicker * domainObjectPicker;
-@property(retain) SADomainObject * selectedItem;
+@property (nonatomic, retain) SAUIDomainObjectPicker *domainObjectPicker;
+@property (nonatomic, retain) SADomainObject *selectedItem;
 
 + (id)domainObjectPickerSelection;
 + (id)domainObjectPickerSelectionWithDictionary:(id)arg1 context:(id)arg2;

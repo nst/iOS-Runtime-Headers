@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSCondition, NSMutableArray, NSString, TNChartFormulaStorage, TNMutableChartFormulaStorage, TSCECalculationEngine, TSCEFormulaRewriteSpec, TSUIntToIntDictionary;
-
 @interface TNChartMediator : TSCHChartMediator <TSCECalculationEngineRegistration, TSCEFormulaOwning> {
     TNMutableChartFormulaStorage *mEditingAccumulatedFormulas;
     TNMutableChartFormulaStorage *mEditingActiveFormulas;
@@ -29,19 +22,19 @@
     BOOL mShouldFixAreaFormula;
 }
 
-@property(readonly) TSCECalculationEngine * calculationEngine;
-@property(readonly) BOOL categoryLabelFormulasAreAllStatic;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) int direction;
-@property(readonly) struct __CFUUID { }* entityID;
-@property(readonly) BOOL hasBlittedSinceConditionVarSet;
-@property(readonly) unsigned int hash;
-@property BOOL isEditing;
-@property(readonly) BOOL labelFormulasAreAllStatic;
-@property(readonly) int scatterFormat;
-@property(readonly) BOOL seriesLabelFormulasAreAllStatic;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) TSCECalculationEngine *calculationEngine;
+@property (nonatomic, readonly) BOOL categoryLabelFormulasAreAllStatic;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int direction;
+@property (nonatomic, readonly) struct __CFUUID { }*entityID;
+@property (nonatomic, readonly) BOOL hasBlittedSinceConditionVarSet;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isEditing;
+@property (nonatomic, readonly) BOOL labelFormulasAreAllStatic;
+@property (nonatomic, readonly) int scatterFormat;
+@property (nonatomic, readonly) BOOL seriesLabelFormulasAreAllStatic;
+@property (readonly) Class superclass;
 
 + (id)defaultErrorBarFormulaWrapper;
 + (id)propertiesThatInvalidateMediator;

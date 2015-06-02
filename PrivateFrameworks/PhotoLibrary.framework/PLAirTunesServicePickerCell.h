@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLAirTunesServicePickerCell : UITableViewCell {
-}
+@interface PLAirTunesServicePickerCell : UITableViewCell
 
 - (void)layoutSubviews;
 

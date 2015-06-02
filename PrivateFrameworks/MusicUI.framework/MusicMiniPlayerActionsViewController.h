@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicMiniPlayerActionsViewController : RUMiniPlayerActionsViewController {
-}
+@interface MusicMiniPlayerActionsViewController : RUMiniPlayerActionsViewController
 
 + (id)_actionsForItem:(id)arg1;
 + (id)_imageForAction:(int)arg1;

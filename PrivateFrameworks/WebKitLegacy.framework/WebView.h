@@ -2,59 +2,54 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class DOMCSSStyleDeclaration, DOMDocument, DOMRange, NSData, NSString, NSUndoManager, WAKWindow, WebBackForwardList, WebFrame, WebPreferences, WebScriptObject, WebViewPrivate;
-
 @interface WebView : WAKView {
     WebViewPrivate *_private;
 }
 
-@property id UIDelegate;
-@property(copy) NSString * applicationNameForUserAgent;
-@property(readonly) WebBackForwardList * backForwardList;
-@property(readonly) BOOL canGoBack;
-@property(readonly) BOOL canGoForward;
-@property(readonly) BOOL canMakeTextLarger;
-@property(readonly) BOOL canMakeTextSmaller;
-@property(readonly) BOOL canMakeTextStandardSize;
-@property(getter=isContinuousSpellCheckingEnabled) BOOL continuousSpellCheckingEnabled;
-@property(copy) NSString * customTextEncodingName;
-@property(copy) NSString * customUserAgent;
-@property id downloadDelegate;
-@property BOOL drawsBackground;
-@property(getter=isEditable) BOOL editable;
-@property(retain) id editingDelegate;
-@property(readonly) double estimatedProgress;
-@property id frameLoadDelegate;
-@property(copy) NSString * groupName;
-@property(retain) WAKWindow * hostWindow;
-@property(getter=isLoading,readonly) BOOL loading;
-@property(readonly) WebFrame * mainFrame;
-@property(readonly) DOMDocument * mainFrameDocument;
-@property(copy,readonly) NSString * mainFrameTitle;
-@property(copy) NSString * mainFrameURL;
-@property(readonly) BOOL maintainsInactiveSelection;
-@property(copy) NSString * mediaStyle;
-@property id policyDelegate;
-@property(retain) WebPreferences * preferences;
-@property(copy) NSString * preferencesIdentifier;
-@property id resourceLoadDelegate;
-@property(readonly) DOMRange * selectedDOMRange;
-@property(readonly) WebFrame * selectedFrame;
-@property(readonly) int selectionAffinity;
-@property BOOL shouldCloseWithWindow;
-@property BOOL shouldUpdateWhileOffscreen;
-@property BOOL smartInsertDeleteEnabled;
-@property(getter=_sourceApplicationAuditData,setter=_setSourceApplicationAuditData:,copy) NSData * sourceApplicationAuditData;
-@property(readonly) BOOL supportsTextEncoding;
-@property float textSizeMultiplier;
-@property(retain) DOMCSSStyleDeclaration * typingStyle;
-@property(readonly) NSUndoManager * undoManager;
-@property(readonly) WebScriptObject * windowScriptObject;
+@property (nonatomic) id UIDelegate;
+@property (nonatomic, copy) NSString *applicationNameForUserAgent;
+@property (nonatomic, readonly) WebBackForwardList *backForwardList;
+@property (nonatomic, readonly) BOOL canGoBack;
+@property (nonatomic, readonly) BOOL canGoForward;
+@property (nonatomic, readonly) BOOL canMakeTextLarger;
+@property (nonatomic, readonly) BOOL canMakeTextSmaller;
+@property (nonatomic, readonly) BOOL canMakeTextStandardSize;
+@property (getter=isContinuousSpellCheckingEnabled, nonatomic) BOOL continuousSpellCheckingEnabled;
+@property (nonatomic, copy) NSString *customTextEncodingName;
+@property (nonatomic, copy) NSString *customUserAgent;
+@property (nonatomic) id downloadDelegate;
+@property (nonatomic) BOOL drawsBackground;
+@property (getter=isEditable, nonatomic) BOOL editable;
+@property (nonatomic, retain) id editingDelegate;
+@property (nonatomic, readonly) double estimatedProgress;
+@property (nonatomic) id frameLoadDelegate;
+@property (nonatomic, copy) NSString *groupName;
+@property (nonatomic, retain) WAKWindow *hostWindow;
+@property (getter=isLoading, nonatomic, readonly) BOOL loading;
+@property (nonatomic, readonly) WebFrame *mainFrame;
+@property (nonatomic, readonly) DOMDocument *mainFrameDocument;
+@property (nonatomic, readonly, copy) NSString *mainFrameTitle;
+@property (nonatomic, copy) NSString *mainFrameURL;
+@property (nonatomic, readonly) BOOL maintainsInactiveSelection;
+@property (nonatomic, copy) NSString *mediaStyle;
+@property (nonatomic) id policyDelegate;
+@property (nonatomic, retain) WebPreferences *preferences;
+@property (nonatomic, copy) NSString *preferencesIdentifier;
+@property (nonatomic) id resourceLoadDelegate;
+@property (nonatomic, readonly) DOMRange *selectedDOMRange;
+@property (nonatomic, readonly) WebFrame *selectedFrame;
+@property (nonatomic, readonly) int selectionAffinity;
+@property (nonatomic) BOOL shouldCloseWithWindow;
+@property (nonatomic) BOOL shouldUpdateWhileOffscreen;
+@property (nonatomic) BOOL smartInsertDeleteEnabled;
+@property (getter=_sourceApplicationAuditData, setter=_setSourceApplicationAuditData:, nonatomic, copy) NSData *sourceApplicationAuditData;
+@property (nonatomic, readonly) BOOL supportsTextEncoding;
+@property (nonatomic) float textSizeMultiplier;
+@property (nonatomic, retain) DOMCSSStyleDeclaration *typingStyle;
+@property (nonatomic, readonly) NSUndoManager *undoManager;
+@property (nonatomic, readonly) WebScriptObject *windowScriptObject;
+
+// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 + (id)MIMETypesShownAsHTML;
 + (BOOL)_HTTPPipeliningEnabled;
@@ -143,7 +138,7 @@
 + (void)releaseFastMallocMemoryOnCurrentThread;
 + (void)setMIMETypesShownAsHTML:(id)arg1;
 + (BOOL)shouldIncludeInWebKitStatistics;
-+ (void)willEnterBackgroundWithCompletionHandler:(id)arg1;
++ (void)willEnterBackgroundWithCompletionHandler:(id /* block */)arg1;
 
 - (id)DOMRangeOfString:(id)arg1 relativeTo:(id)arg2 options:(unsigned int)arg3;
 - (id)UIDelegate;
@@ -176,7 +171,6 @@
 - (struct CGPoint { float x1; float x2; })_convertPointFromRootView:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_convertRectFromRootView:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_cookieEnabled;
-- (BOOL)_createSymlinkInDirectory:(id)arg1 pointingToPath:(id)arg2;
 - (void)_destroyAllPlugIns;
 - (void)_detachScriptDebuggerFromAllFrames;
 - (id)_deviceOrientationProvider;
@@ -256,7 +250,6 @@
 - (void)_preferencesChanged:(id)arg1;
 - (void)_preferencesChangedNotification:(id)arg1;
 - (void)_pushPerformingProgrammaticFocus;
-- (id)_quickLookContentFilePath;
 - (float)_realZoomMultiplier;
 - (BOOL)_realZoomMultiplierIsTextOnly;
 - (void)_removeFromAllWebViewsSet;
@@ -335,7 +328,6 @@
 - (id)_webMailDelegate;
 - (id)_webcore_effectiveFirstResponder;
 - (void)_willStartScrollingOrZooming;
-- (BOOL)_writeDataAtPath:(id)arg1 asArchive:(BOOL)arg2;
 - (void)_zoomIn:(id)arg1 isTextOnly:(BOOL)arg2;
 - (float)_zoomMultiplier:(BOOL)arg1;
 - (void)_zoomOut:(id)arg1 isTextOnly:(BOOL)arg2;
@@ -657,5 +649,11 @@
 - (void)yankAndSelect:(id)arg1;
 - (void)zoomPageIn:(id)arg1;
 - (void)zoomPageOut:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
+
+- (BOOL)_createSymlinkInDirectory:(id)arg1 pointingToPath:(id)arg2;
+- (id)_quickLookContentFilePath;
+- (BOOL)_writeDataAtPath:(id)arg1 asArchive:(BOOL)arg2;
 
 @end

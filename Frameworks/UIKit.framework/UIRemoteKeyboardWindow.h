@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface UIRemoteKeyboardWindow : UITextEffectsWindow {
     BOOL _isViewServiceKeyboard;
     UIView *_viewServiceHostView;
 }
 
-@property UIView * viewServiceHostView;
+@property (nonatomic) UIView *viewServiceHostView;
 
 + (id)remoteKeyboardWindowForScreen:(id)arg1 create:(BOOL)arg2 forViewService:(BOOL)arg3;
 

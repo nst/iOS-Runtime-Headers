@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableSet, NSXPCConnection;
-
 @interface WBSSearchHelperConnectionManager : NSObject {
     NSMutableSet *_clients;
     NSXPCConnection *_searchHelperConnection;
 }
 
-@property(retain) NSXPCConnection * searchHelperConnection;
+@property (nonatomic, retain) NSXPCConnection *searchHelperConnection;
 
 + (id)sharedManager;
 

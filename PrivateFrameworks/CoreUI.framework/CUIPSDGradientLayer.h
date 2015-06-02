@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class CUIPSDGradient;
-
 @interface CUIPSDGradientLayer : CUIPSDLayer {
     CUIPSDGradient *_gradient;
 }
 
-@property(readonly) CUIPSDGradient * gradient;
+@property (nonatomic, readonly) CUIPSDGradient *gradient;
 
 - (void)dealloc;
 - (id)gradient;

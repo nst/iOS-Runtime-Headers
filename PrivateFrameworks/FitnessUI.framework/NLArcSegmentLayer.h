@@ -9,10 +9,10 @@
     float _radius;
 }
 
-@property float arcLineWidth;
-@property int numberOfSegments;
-@property float percentageFull;
-@property float radius;
+@property (nonatomic) float arcLineWidth;
+@property (nonatomic) int numberOfSegments;
+@property (nonatomic) float percentageFull;
+@property (nonatomic) float radius;
 
 - (void)_regeneratePath;
 - (id)actionForKey:(id)arg1;

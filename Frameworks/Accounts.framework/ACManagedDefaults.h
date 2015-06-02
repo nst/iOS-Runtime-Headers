@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@interface ACManagedDefaults : NSObject {
-}
+@interface ACManagedDefaults : NSObject
 
 + (id)sharedInstance;
 

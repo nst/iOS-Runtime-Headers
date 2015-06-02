@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIImageLSResourceProxy : UIImage {
-}
+@interface UIImageLSResourceProxy : UIImage
 
 + (id)imageWithCGImage:(struct CGImage { }*)arg1 scale:(float)arg2 orientation:(int)arg3;
 

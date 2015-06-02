@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UITextSelectionRectImpl;
+@interface UITextSelectionRect : NSObject
 
-@interface UITextSelectionRect : NSObject {
-}
-
-@property(readonly) BOOL containsEnd;
-@property(readonly) BOOL containsStart;
-@property(getter=_isImpl,readonly) UITextSelectionRectImpl * isImpl;
-@property(readonly) BOOL isVertical;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
-@property(readonly) int writingDirection;
+@property (nonatomic, readonly) BOOL containsEnd;
+@property (nonatomic, readonly) BOOL containsStart;
+@property (getter=_isImpl, nonatomic, readonly) UITextSelectionRectImpl *isImpl;
+@property (nonatomic, readonly) BOOL isVertical;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
+@property (nonatomic, readonly) int writingDirection;
 
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endEdgeFromRects:(id)arg1;
 + (BOOL)endIsHorizontal:(id)arg1;

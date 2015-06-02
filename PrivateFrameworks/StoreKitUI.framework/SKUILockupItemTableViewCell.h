@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUILockupItemCellLayout;
-
 @interface SKUILockupItemTableViewCell : SKUIItemTableViewCell {
     SKUILockupItemCellLayout *_layout;
 }
 
-@property(readonly) SKUILockupItemCellLayout * layout;
+@property (nonatomic, readonly) SKUILockupItemCellLayout *layout;
 
 - (void).cxx_destruct;
 - (void)configureForItem:(id)arg1 clientContext:(id)arg2 rowIndex:(int)arg3;

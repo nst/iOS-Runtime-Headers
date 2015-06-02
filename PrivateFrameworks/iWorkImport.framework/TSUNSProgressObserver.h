@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSProgress, TSUBasicProgress, TSUProgressContext;
-
 @interface TSUNSProgressObserver : NSObject {
     TSUBasicProgress *_basicProgress;
     double _basicProgressMaxValue;

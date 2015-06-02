@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSArray, NSMutableArray, NSString;
-
 @interface FigCaptureSessionConfiguration : NSObject <FigXPCCoding, NSCopying> {
     long long _configurationID;
     BOOL _configuresAppAudioSession;
@@ -11,16 +9,16 @@
     BOOL _usesAppAudioSession;
 }
 
-@property long long configurationID;
-@property BOOL configuresAppAudioSession;
-@property(readonly) NSArray * connectionConfigurations;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * sinkConfigurations;
-@property(readonly) NSArray * sourceConfigurations;
-@property(readonly) Class superclass;
-@property BOOL usesAppAudioSession;
+@property (nonatomic) long long configurationID;
+@property (nonatomic) BOOL configuresAppAudioSession;
+@property (nonatomic, readonly) NSArray *connectionConfigurations;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *sinkConfigurations;
+@property (nonatomic, readonly) NSArray *sourceConfigurations;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL usesAppAudioSession;
 
 + (void)initialize;
 

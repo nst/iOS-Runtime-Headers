@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
-@class CompassAtlas, CompassShader, EAGLContext, GLKView, NSString;
-
 @interface CompassBackgroundView : CompassRotatingView <GLKViewDelegate> {
     float _bearing;
     struct CGPoint { 
@@ -81,13 +79,13 @@
     unsigned int _ticVertexBuffer;
 }
 
-@property float bearing;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(readonly) float ticLength;
-@property float ticRadius;
+@property (nonatomic) float bearing;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) float ticLength;
+@property (nonatomic) float ticRadius;
 
 - (void).cxx_destruct;
 - (float)bearing;

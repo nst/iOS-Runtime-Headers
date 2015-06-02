@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
  */
 
-@class NSDate, NSString, RTLocationOfInterest;
-
 @interface RTActionCondition : NSObject <NSSecureCoding> {
     NSDate *_date;
     NSString *_depiction;
@@ -11,10 +9,10 @@
     int _locationOfInterestState;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) NSString * depiction;
-@property(readonly) RTLocationOfInterest * locationOfInterest;
-@property(readonly) int locationOfInterestState;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) NSString *depiction;
+@property (nonatomic, readonly) RTLocationOfInterest *locationOfInterest;
+@property (nonatomic, readonly) int locationOfInterestState;
 
 + (id)locationOfInterestStateToString:(int)arg1;
 + (BOOL)supportsSecureCoding;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSDate, NSString, WBSOpenSearchDescription;
-
 @interface WBSQuickWebsiteSearchProvider : NSObject {
     NSDate *_dateAdded;
     NSDate *_dateOfLastSearch;
@@ -14,16 +12,16 @@
     NSString *_sourcePageURLString;
 }
 
-@property(readonly) NSDate * dateAdded;
-@property(copy) NSDate * dateOfLastSearch;
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * hostname;
-@property(readonly) WBSOpenSearchDescription * openSearchDescription;
-@property(copy) NSString * openSearchDescriptionURLString;
-@property(readonly) NSString * searchURLTemplateString;
-@property(copy) NSString * searchURLTemplateStringFromForm;
-@property(readonly) NSString * sourcePageURLString;
-@property(readonly) NSString * urlTemplateStringForSuggestionsInJSON;
+@property (nonatomic, readonly) NSDate *dateAdded;
+@property (nonatomic, copy) NSDate *dateOfLastSearch;
+@property (nonatomic, readonly) NSString *displayName;
+@property (nonatomic, readonly) NSString *hostname;
+@property (nonatomic, readonly) WBSOpenSearchDescription *openSearchDescription;
+@property (nonatomic, copy) NSString *openSearchDescriptionURLString;
+@property (nonatomic, readonly) NSString *searchURLTemplateString;
+@property (nonatomic, copy) NSString *searchURLTemplateStringFromForm;
+@property (nonatomic, readonly) NSString *sourcePageURLString;
+@property (nonatomic, readonly) NSString *urlTemplateStringForSuggestionsInJSON;
 
 - (void).cxx_destruct;
 - (id)dateAdded;

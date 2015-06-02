@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUISwooshCollectionViewLayout : UICollectionViewFlowLayout {
     UIColor *_backgroundColor;
     BOOL _snapsToItemBoundaries;
     BOOL _snapsToItemCenters;
 }
 
-@property(copy) UIColor * backgroundColor;
-@property BOOL snapsToItemBoundaries;
-@property BOOL snapsToItemCenters;
+@property (nonatomic, copy) UIColor *backgroundColor;
+@property (nonatomic) BOOL snapsToItemBoundaries;
+@property (nonatomic) BOOL snapsToItemCenters;
 
 + (Class)layoutAttributesClass;
 + (float)snapToBoundariesDecelerationRate;

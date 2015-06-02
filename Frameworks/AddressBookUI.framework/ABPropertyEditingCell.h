@@ -2,21 +2,19 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABRepeatingGradientSeparatorView, NSString, UIButton;
-
 @interface ABPropertyEditingCell : ABPropertyCell <ABPickerControllerDelegate> {
     UIButton *_labelButton;
     float _labelWidth;
     ABRepeatingGradientSeparatorView *_vseparator;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIButton * labelButton;
-@property(readonly) float leftValueMargin;
-@property(readonly) Class superclass;
-@property(retain) ABRepeatingGradientSeparatorView * vseparator;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIButton *labelButton;
+@property (nonatomic, readonly) float leftValueMargin;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) ABRepeatingGradientSeparatorView *vseparator;
 
 + (id)keyPathsForValuesAffectingEffectiveLabelWidth;
 + (BOOL)wantsChevron;

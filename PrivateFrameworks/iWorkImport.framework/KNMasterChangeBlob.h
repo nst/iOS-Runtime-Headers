@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNBodyPlaceholderInfo, KNMasterSlide, KNSlide, KNSlideStyle, KNTitlePlaceholderInfo, NSArray;
-
 @interface KNMasterChangeBlob : NSObject {
     KNBodyPlaceholderInfo *mBodyPlaceholder;
     NSArray *mChildInfos;
@@ -18,12 +11,12 @@
     KNTitlePlaceholderInfo *mTitlePlaceholder;
 }
 
-@property(retain) KNBodyPlaceholderInfo * bodyPlaceholder;
-@property(retain) NSArray * childInfos;
-@property(retain) KNMasterSlide * master;
-@property(retain) KNSlide * slide;
-@property(retain) KNSlideStyle * slideStyle;
-@property(retain) KNTitlePlaceholderInfo * titlePlaceholder;
+@property (nonatomic, retain) KNBodyPlaceholderInfo *bodyPlaceholder;
+@property (nonatomic, retain) NSArray *childInfos;
+@property (nonatomic, retain) KNMasterSlide *master;
+@property (nonatomic, retain) KNSlide *slide;
+@property (nonatomic, retain) KNSlideStyle *slideStyle;
+@property (nonatomic, retain) KNTitlePlaceholderInfo *titlePlaceholder;
 
 + (id)blobWithSlide:(id)arg1;
 

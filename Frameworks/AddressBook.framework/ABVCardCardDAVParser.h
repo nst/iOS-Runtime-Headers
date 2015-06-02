@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSData, NSMutableDictionary;
-
 @interface ABVCardCardDAVParser : ABVCardParser {
     NSData *_lastCropRectChecksum;
     int _lastCropRectHeight;
@@ -15,12 +13,12 @@
     NSMutableDictionary *_unknownAttributes;
 }
 
-@property(readonly) NSData * lastCropRectChecksum;
-@property(readonly) int lastCropRectHeight;
-@property(readonly) int lastCropRectWidth;
-@property(readonly) int lastCropRectX;
-@property(readonly) int lastCropRectY;
-@property(readonly) BOOL localRecordHasAdditionalProperties;
+@property (readonly) NSData *lastCropRectChecksum;
+@property (readonly) int lastCropRectHeight;
+@property (readonly) int lastCropRectWidth;
+@property (readonly) int lastCropRectX;
+@property (readonly) int lastCropRectY;
+@property (readonly) BOOL localRecordHasAdditionalProperties;
 
 - (BOOL)_handleUnknownTag:(id)arg1 withValue:(id)arg2;
 - (void)cleanUpCardState;

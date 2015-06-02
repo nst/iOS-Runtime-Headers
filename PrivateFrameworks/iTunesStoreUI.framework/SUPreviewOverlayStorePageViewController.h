@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUPreviewOverlayStorePageViewController : SUStorePageViewController {
-}
+@interface SUPreviewOverlayStorePageViewController : SUStorePageViewController
 
 - (void)handleFailureWithError:(id)arg1;
 

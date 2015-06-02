@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaPlaylist;
+@interface MusicQueryQueueFeeder : MPMediaQueryQueueFeeder
 
-@interface MusicQueryQueueFeeder : MPMediaQueryQueueFeeder {
-}
-
-@property(retain) MPMediaPlaylist * mixPlaylist;
+@property (nonatomic, retain) MPMediaPlaylist *mixPlaylist;
 
 - (id)errorResolverForItem:(id)arg1;
 - (Class)itemClass;

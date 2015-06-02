@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_xpc_object>, NSString, NSURLRequest;
-
 @interface IDSRemoteURLConnection : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     NSString *_bundleIdentifierForDataUsage;
     BOOL _cancelled;
     NSObject<OS_xpc_object> *_connection;
@@ -24,7 +14,7 @@
     int _retries;
 }
 
-@property(retain) NSString * bundleIdentifierForDataUsage;
+@property (retain) NSString *bundleIdentifierForDataUsage;
 @property BOOL forceCellularIfPossible;
 @property BOOL requiresIDSHost;
 
@@ -35,7 +25,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (BOOL)forceCellularIfPossible;
-- (id)initWithURLRequest:(id)arg1 completionBlock:(id)arg2;
+- (id)initWithURLRequest:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)load;
 - (BOOL)requiresIDSHost;
 - (void)setBundleIdentifierForDataUsage:(id)arg1;

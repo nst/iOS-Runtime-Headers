@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIAlertControllerDescriptor;
-
 @interface UIAlertControllerVisualStyleActionSheet : UIAlertControllerVisualStyle {
     UIAlertControllerDescriptor *_descriptor;
 }
 
-@property(retain) UIAlertControllerDescriptor * descriptor;
+@property (nonatomic, retain) UIAlertControllerDescriptor *descriptor;
 
 - (float)_systemFontSize;
 - (float)backgroundCornerRadius;

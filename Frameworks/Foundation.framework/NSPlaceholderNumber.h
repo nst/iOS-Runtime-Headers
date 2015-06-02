@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSPlaceholderNumber : NSPlaceholderValue {
-}
+@interface NSPlaceholderNumber : NSPlaceholderValue
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSData, NSNumber, NSString;
+@interface SPTopHit : NSManagedObject
 
-@interface SPTopHit : NSManagedObject {
-}
-
-@property(retain) NSString * category;
-@property(retain) NSNumber * cxid;
-@property(retain) NSString * displayIdentifier;
-@property(retain) NSString * extid;
-@property(retain) NSNumber * lastChosen;
-@property(retain) NSData * letterWeights;
-@property(retain) NSNumber * movingAvg;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, retain) NSNumber *cxid;
+@property (nonatomic, retain) NSString *displayIdentifier;
+@property (nonatomic, retain) NSString *extid;
+@property (nonatomic, retain) NSNumber *lastChosen;
+@property (nonatomic, retain) NSData *letterWeights;
+@property (nonatomic, retain) NSNumber *movingAvg;
 
 @end

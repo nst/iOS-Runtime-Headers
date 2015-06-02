@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFComposeRecipient, MFModernComposeRecipientAtom, NSAttributedString;
-
 @interface _MFAtomTextAttachment : NSTextAttachment {
     MFModernComposeRecipientAtom *_atomView;
     NSAttributedString *_attributedString;
     BOOL _isPlaceholder;
 }
 
-@property(retain) MFModernComposeRecipientAtom * atomView;
-@property BOOL isPlaceholder;
-@property(readonly) MFComposeRecipient * recipient;
+@property (nonatomic, retain) MFModernComposeRecipientAtom *atomView;
+@property (nonatomic) BOOL isPlaceholder;
+@property (nonatomic, readonly) MFComposeRecipient *recipient;
 
 - (id)atomView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 glyphPosition:(struct CGPoint { float x1; float x2; })arg3 characterIndex:(unsigned int)arg4;

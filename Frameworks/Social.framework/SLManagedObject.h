@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLManagedObject : NSManagedObject {
-}
+@interface SLManagedObject : NSManagedObject
 
 - (void)encodeWithCoder:(id)arg1;
 - (id)objectOfClass:(Class)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSUMutableNumberFormat : TSUNumberFormat {
-}
+@interface TSUMutableNumberFormat : TSUNumberFormat
 
 - (void)p_copyIVarsFromNumberFormat:(id)arg1;
 - (void)setBase:(unsigned char)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSString;
-
 @interface CKDShareTokenInfo : NSObject <NSCopying> {
     NSData *_privateTokenData;
     NSData *_publicTokenData;
@@ -11,12 +9,12 @@
     NSData *_shortSharingTokenData;
 }
 
-@property(retain) NSData * privateTokenData;
-@property(retain) NSData * publicTokenData;
-@property(retain) NSString * routingKey;
-@property(readonly) NSString * shortSharingToken;
-@property(retain) NSData * shortSharingTokenData;
-@property(readonly) NSData * shortSharingTokenHashData;
+@property (nonatomic, retain) NSData *privateTokenData;
+@property (nonatomic, retain) NSData *publicTokenData;
+@property (nonatomic, retain) NSString *routingKey;
+@property (nonatomic, readonly) NSString *shortSharingToken;
+@property (nonatomic, retain) NSData *shortSharingTokenData;
+@property (nonatomic, readonly) NSData *shortSharingTokenHashData;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, OADColorMap, OADTextListStyle, OADTheme;
-
 @interface PDSlideMaster : PDSlideBase {
     OADTextListStyle *mBodyTextStyle;
     OADColorMap *mColorMap;
@@ -17,11 +15,11 @@
     OADTextListStyle *mTitleTextStyle;
 }
 
-@property BOOL dateTimePlaceholderIsVisible;
-@property BOOL footerPlaceholderIsVisible;
-@property BOOL headerPlaceholderIsVisible;
-@property(retain) NSMutableArray * slideLayouts;
-@property BOOL slideNumberPlaceholderIsVisible;
+@property (nonatomic) BOOL dateTimePlaceholderIsVisible;
+@property (nonatomic) BOOL footerPlaceholderIsVisible;
+@property (nonatomic) BOOL headerPlaceholderIsVisible;
+@property (nonatomic, retain) NSMutableArray *slideLayouts;
+@property (nonatomic) BOOL slideNumberPlaceholderIsVisible;
 
 - (id)addSlideLayout;
 - (void)addSlideLayout:(id)arg1;

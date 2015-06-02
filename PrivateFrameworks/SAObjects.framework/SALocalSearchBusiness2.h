@@ -2,41 +2,36 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSData, NSDate, NSDictionary, NSString, NSURL, SALocalSearchOperationHours, SALocation;
+@interface SALocalSearchBusiness2 : SADomainObject <SAAceSerializable>
 
-@interface SALocalSearchBusiness2 : SADomainObject <SAAceSerializable> {
-}
+@property (nonatomic, retain) SALocation *address;
+@property (nonatomic, copy) NSURL *businessUrl;
+@property (nonatomic, copy) NSArray *categories;
+@property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, copy) NSString *currencySymbol;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *descriptionText;
+@property (nonatomic, copy) NSString *extSessionGuid;
+@property (nonatomic, copy) NSDate *extSessionGuidCreatedTimestamp;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSDictionary *identifierMap;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSArray *offerLists;
+@property (nonatomic, retain) SALocalSearchOperationHours *operationHours;
+@property (nonatomic, copy) NSString *phoneNumber;
+@property (nonatomic, copy) NSArray *photoList;
+@property (nonatomic, copy) NSData *placeData2;
+@property (nonatomic, copy) NSString *priceRange;
+@property (nonatomic, copy) NSArray *reviewList;
+@property (readonly) Class superclass;
 
-@property(retain) SALocation * address;
-@property(copy) NSURL * businessUrl;
-@property(copy) NSArray * categories;
-@property(copy) NSArray * commands;
-@property(copy) NSString * currencySymbol;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * descriptionText;
-@property(copy) NSString * extSessionGuid;
-@property(copy) NSDate * extSessionGuidCreatedTimestamp;
-@property(readonly) unsigned int hash;
-@property(copy) NSDictionary * identifierMap;
-@property(copy) NSString * name;
-@property(copy) NSArray * offerLists;
-@property(retain) SALocalSearchOperationHours * operationHours;
-@property(copy) NSString * phoneNumber;
-@property(copy) NSArray * photoList;
-@property(copy) NSData * placeData2;
-@property(copy) NSString * priceRange;
-@property(copy) NSArray * reviewList;
-@property(readonly) Class superclass;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
-+ (id)afui_mapsURLForLocalSearchBusiness2s:(id)arg1;
 + (id)business2;
 + (id)business2WithDictionary:(id)arg1 context:(id)arg2;
-+ (id)siriui_mapsURLForLocalSearchBusiness2s:(id)arg1;
 
 - (id)address;
-- (id)afui_mapItemRepresentation;
-- (id)afui_mapsURL;
 - (id)businessUrl;
 - (id)categories;
 - (id)commands;
@@ -72,6 +67,18 @@
 - (void)setPlaceData2:(id)arg1;
 - (void)setPriceRange:(id)arg1;
 - (void)setReviewList:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
++ (id)afui_mapsURLForLocalSearchBusiness2s:(id)arg1;
+
+- (id)afui_mapItemRepresentation;
+- (id)afui_mapsURL;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
++ (id)siriui_mapsURLForLocalSearchBusiness2s:(id)arg1;
+
 - (id)siriui_mapItemRepresentation;
 - (id)siriui_mapsURL;
 

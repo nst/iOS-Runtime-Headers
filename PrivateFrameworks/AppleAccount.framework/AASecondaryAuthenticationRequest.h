@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
-
 @interface AASecondaryAuthenticationRequest : AARequest {
     NSString *_dsid;
     NSString *_primaryToken;

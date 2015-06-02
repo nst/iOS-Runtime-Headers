@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class NSArray;
-
 @interface CoreCECTypesInternal : NSObject {
     NSArray *deckControlConstants;
     NSArray *deckControlStrings;

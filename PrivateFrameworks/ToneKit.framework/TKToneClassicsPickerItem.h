@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class TKTonePickerItem;
-
 @interface TKToneClassicsPickerItem : TKTonePickerItem {
     int _classicToneIndex;
 }
 
-@property int classicToneIndex;
-@property(readonly) TKTonePickerItem * parentItem;
+@property (nonatomic) int classicToneIndex;
+@property (nonatomic, readonly) TKTonePickerItem *parentItem;
 
 - (void)_appendDescriptionOfAttributesToString:(id)arg1;
 - (void)_setClassicToneIndex:(int)arg1;

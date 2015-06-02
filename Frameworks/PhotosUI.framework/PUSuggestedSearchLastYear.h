@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSuggestedSearchLastYear : PUSuggestedSearch {
-}
+@interface PUSuggestedSearchLastYear : PUSuggestedSearch
 
 - (void)_inqRestart;
 - (id)init;

@@ -14,10 +14,10 @@
     BOOL _preferDarkColors;
 }
 
-@property(getter=isActive) BOOL active;
-@property struct AXLogColorTheme { int x1; int x2; int x3; int x4; } colorTheme;
-@property(getter=isManagedBySettings) BOOL managedBySettings;
-@property BOOL preferDarkColors;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic) struct AXLogColorTheme { int x1; int x2; int x3; int x4; } colorTheme;
+@property (getter=isManagedBySettings, nonatomic) BOOL managedBySettings;
+@property (nonatomic) BOOL preferDarkColors;
 
 + (char *)ansiColorSeqForAXLogColor:(int)arg1;
 + (id)coloredString:(id)arg1 withColor:(int)arg2;

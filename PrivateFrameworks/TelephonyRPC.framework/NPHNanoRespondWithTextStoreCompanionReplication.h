@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
  */
 
-@class NPSManager;
-
 @interface NPHNanoRespondWithTextStoreCompanionReplication : NSObject {
     NPSManager *_npsManager;
 }

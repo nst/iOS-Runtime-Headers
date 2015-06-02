@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSLock, NSMutableArray, NSMutableDictionary, NSMutableSet, NSNotificationCenter, NSTimer;
-
 @interface YTImageLoader : NSObject {
     NSLock *_cacheLock;
     NSMutableDictionary *_imageCache;

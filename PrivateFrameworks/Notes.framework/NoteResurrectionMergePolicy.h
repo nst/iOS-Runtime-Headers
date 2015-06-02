@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@interface NoteResurrectionMergePolicy : NSMergePolicy {
-}
+@interface NoteResurrectionMergePolicy : NSMergePolicy
 
 + (id)sharedNoteResurrectionMergePolicy;
 

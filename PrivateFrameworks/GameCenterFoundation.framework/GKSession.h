@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class <GKSessionDelegate>, <GKSessionPrivateDelegate>, GKConnection, NSString;
-
 @interface GKSession : NSObject {
     id _session;
 }
 
-@property(getter=isAvailable) BOOL available;
-@property(getter=isBusy) BOOL busy;
-@property(readonly) GKConnection * connection;
-@property <GKSessionDelegate> * delegate;
+@property (getter=isAvailable) BOOL available;
+@property (getter=isBusy) BOOL busy;
+@property (readonly) GKConnection *connection;
+@property <GKSessionDelegate> *delegate;
 @property double disconnectTimeout;
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * peerID;
-@property <GKSessionPrivateDelegate> * privateDelegate;
-@property(readonly) NSString * sessionID;
-@property(readonly) int sessionMode;
+@property (readonly) NSString *displayName;
+@property (readonly) NSString *peerID;
+@property <GKSessionPrivateDelegate> *privateDelegate;
+@property (readonly) NSString *sessionID;
+@property (readonly) int sessionMode;
 @property BOOL wifiEnabled;
 
 + (void)initialize;

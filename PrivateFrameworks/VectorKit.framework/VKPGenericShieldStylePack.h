@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSMutableArray;
-
 @interface VKPGenericShieldStylePack : PBCodable <NSCopying> {
     NSMutableArray *_genericShields;
     NSMutableArray *_textureAtlas;
 }
 
-@property(retain) NSMutableArray * genericShields;
-@property(retain) NSMutableArray * textureAtlas;
+@property (nonatomic, retain) NSMutableArray *genericShields;
+@property (nonatomic, retain) NSMutableArray *textureAtlas;
 
 - (void)addGenericShield:(id)arg1;
 - (void)addTextureAtlas:(id)arg1;

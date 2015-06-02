@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSOrderedSet, NSString;
-
 @interface MFContactsSearchManager : NSObject <DASearchQueryConsumer> {
     void *_addressBook;
     int _contactSearchAccountChangedToken;
@@ -23,12 +21,12 @@
     struct __CFDictionary { } *_taskIDsBySearchQuery;
 }
 
-@property unsigned int implicitGroupCreationThreshold;
-@property BOOL includeUpcomingEventMembers;
-@property(copy) NSString * recentsBundleIdentifier;
-@property(retain) NSArray * searchAccountIDs;
-@property(readonly) NSArray * searchAccounts;
-@property(copy) NSString * sendingAddress;
+@property (nonatomic) unsigned int implicitGroupCreationThreshold;
+@property (nonatomic) BOOL includeUpcomingEventMembers;
+@property (nonatomic, copy) NSString *recentsBundleIdentifier;
+@property (retain) NSArray *searchAccountIDs;
+@property (nonatomic, readonly) NSArray *searchAccounts;
+@property (nonatomic, copy) NSString *sendingAddress;
 
 - (void)_handleAddressBookChangeNotification;
 - (void)_handleCorecipientSearchResults:(id)arg1 operation:(id)arg2 taskID:(id)arg3;

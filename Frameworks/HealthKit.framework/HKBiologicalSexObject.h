@@ -6,7 +6,7 @@
     int _biologicalSex;
 }
 
-@property(readonly) int biologicalSex;
+@property (readonly) int biologicalSex;
 
 - (id)_initWithBiologicalSex:(int)arg1;
 - (int)biologicalSex;

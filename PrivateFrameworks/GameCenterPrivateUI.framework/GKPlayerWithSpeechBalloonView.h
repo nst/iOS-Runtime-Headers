@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKPlayer, GKSpeechBalloonBackgroundView, NSArray, NSString, UITextView, UIView<GKPlayerPhotoContainer>;
-
 @interface GKPlayerWithSpeechBalloonView : UIView {
     GKSpeechBalloonBackgroundView *_balloonView;
     UIView<GKPlayerPhotoContainer> *_photoView;
@@ -11,14 +9,14 @@
     UITextView *_speechTextView;
 }
 
-@property(retain) GKSpeechBalloonBackgroundView * balloonView;
-@property unsigned char drawStyle;
-@property(retain) UIView<GKPlayerPhotoContainer> * photoView;
-@property(retain) GKPlayer * player;
-@property(retain) NSArray * replaceableConstraints;
-@property(retain) NSString * speechText;
-@property(retain) UITextView * speechTextView;
-@property unsigned char tipDirection;
+@property (nonatomic, retain) GKSpeechBalloonBackgroundView *balloonView;
+@property (nonatomic) unsigned char drawStyle;
+@property (nonatomic, retain) UIView<GKPlayerPhotoContainer> *photoView;
+@property (nonatomic, retain) GKPlayer *player;
+@property (nonatomic, retain) NSArray *replaceableConstraints;
+@property (nonatomic, retain) NSString *speechText;
+@property (nonatomic, retain) UITextView *speechTextView;
+@property (nonatomic) unsigned char tipDirection;
 
 + (id)instantiatePhotoContainer;
 + (BOOL)requiresConstraintBasedLayout;

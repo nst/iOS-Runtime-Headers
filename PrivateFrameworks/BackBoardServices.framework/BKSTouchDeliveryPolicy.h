@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@class NSObject<OS_xpc_object>;
+@interface BKSTouchDeliveryPolicy : NSObject <NSSecureCoding>
 
-@interface BKSTouchDeliveryPolicy : NSObject <NSSecureCoding> {
-}
-
-@property(retain) NSObject<OS_xpc_object> * assertionEndpoint;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *assertionEndpoint;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)policyByCombiningPolicies:(id)arg1;
@@ -21,11 +18,11 @@
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)matchSharingTouchesPolicy:(id)arg1 orCancelTouchesPolicy:(id)arg2 orCombinedPolicy:(id)arg3;
-- (id)policyByMappingContainedPoliciesWithBlock:(id)arg1;
+- (id)matchSharingTouchesPolicy:(id /* block */)arg1 orCancelTouchesPolicy:(id /* block */)arg2 orCombinedPolicy:(id /* block */)arg3;
+- (id)policyByMappingContainedPoliciesWithBlock:(id /* block */)arg1;
 - (id)policyExcludingPolicy:(id)arg1;
 - (id)policyIncludingPolicy:(id)arg1;
-- (id)reducePolicyToObjectWithBlock:(id)arg1;
+- (id)reducePolicyToObjectWithBlock:(id /* block */)arg1;
 - (void)setAssertionEndpoint:(id)arg1;
 
 @end

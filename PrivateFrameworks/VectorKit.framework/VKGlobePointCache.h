@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class VKClassicGlobeCanvas;
-
 @interface VKGlobePointCache : NSObject {
     VKClassicGlobeCanvas *_canvas;
 }
 
-@property VKClassicGlobeCanvas * canvas;
+@property (nonatomic) VKClassicGlobeCanvas *canvas;
 
 - (id)addHandleAtCoordinate:(struct { double x1; double x2; })arg1 withHighPrecision:(BOOL)arg2;
 - (id)canvas;

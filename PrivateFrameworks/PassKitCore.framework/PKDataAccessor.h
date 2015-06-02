@@ -2,39 +2,37 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSBundle, NSData, NSObject<OS_dispatch_queue>, PKRemoteAssetManager;
-
 @interface PKDataAccessor : NSObject {
     NSObject<OS_dispatch_queue> *_processingQueue;
 }
 
-@property(retain,readonly) NSData * archiveData;
-@property(retain,readonly) NSBundle * bundle;
-@property(retain,readonly) NSData * manifestHash;
-@property(retain,readonly) PKRemoteAssetManager * remoteAssetManager;
-@property(readonly) BOOL remoteAssetsDownloaded;
-@property(retain,readonly) NSData * serializedFileWrapper;
+@property (nonatomic, readonly, retain) NSData *archiveData;
+@property (nonatomic, readonly, retain) NSBundle *bundle;
+@property (nonatomic, readonly, retain) NSData *manifestHash;
+@property (nonatomic, readonly, retain) PKRemoteAssetManager *remoteAssetManager;
+@property (nonatomic, readonly) BOOL remoteAssetsDownloaded;
+@property (nonatomic, readonly, retain) NSData *serializedFileWrapper;
 
 - (id)archiveData;
 - (id)bundle;
 - (id)content;
-- (void)contentWithCompletion:(id)arg1;
+- (void)contentWithCompletion:(id /* block */)arg1;
 - (id)dictionary;
-- (void)dictionaryWithCompletion:(id)arg1;
+- (void)dictionaryWithCompletion:(id /* block */)arg1;
 - (id)displayProfileOfType:(int)arg1;
-- (void)downloadRemoteAssetsWithCompletion:(id)arg1;
-- (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id)arg3;
+- (void)downloadRemoteAssetsWithCompletion:(id /* block */)arg1;
+- (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id /* block */)arg3;
 - (id)imageSetForType:(int)arg1 displayProfile:(id)arg2 preheat:(BOOL)arg3;
-- (void)imageSetForType:(int)arg1 displayProfile:(id)arg2 preheat:(BOOL)arg3 withCompletion:(id)arg4;
+- (void)imageSetForType:(int)arg1 displayProfile:(id)arg2 preheat:(BOOL)arg3 withCompletion:(id /* block */)arg4;
 - (id)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5;
-- (void)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5 withCompletion:(id)arg6;
+- (void)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5 withCompletion:(id /* block */)arg6;
 - (id)manifestHash;
 - (void)noteShared;
 - (id)remoteAssetManager;
 - (BOOL)remoteAssetsDownloaded;
-- (void)requestUpdateWithCompletion:(id)arg1;
+- (void)requestUpdateWithCompletion:(id /* block */)arg1;
 - (id)resourceValueForKey:(id)arg1;
-- (void)revocationStatusWithCompletion:(id)arg1;
+- (void)revocationStatusWithCompletion:(id /* block */)arg1;
 - (id)serializedFileWrapper;
 - (void)updateSettings:(int)arg1;
 

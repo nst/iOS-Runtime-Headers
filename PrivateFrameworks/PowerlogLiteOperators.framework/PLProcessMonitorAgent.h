@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, PLEntryNotificationOperatorComposition, PLNSNotificationOperatorComposition;
-
 @interface PLProcessMonitorAgent : PLAgent {
     PLNSNotificationOperatorComposition *_asertionNotifications;
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
@@ -13,12 +11,12 @@
     NSDate *_previousCacheDate;
 }
 
-@property(retain) PLNSNotificationOperatorComposition * asertionNotifications;
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelChanged;
-@property(retain) NSDate * currentCachedDate;
+@property (retain) PLNSNotificationOperatorComposition *asertionNotifications;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
+@property (retain) NSDate *currentCachedDate;
 @property double currentCachedTotalCPUTime;
 @property BOOL firstBoot;
-@property(retain) NSDate * previousCacheDate;
+@property (retain) NSDate *previousCacheDate;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

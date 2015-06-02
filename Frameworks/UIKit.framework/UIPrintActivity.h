@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIViewController;
-
 @interface UIPrintActivity : UIActivity {
     UIViewController *_wrapperViewController;
 }
 
-@property(retain) UIViewController * wrapperViewController;
+@property (retain) UIViewController *wrapperViewController;
 
 - (id)_activityImage;
 - (id)_embeddedActivityViewController;

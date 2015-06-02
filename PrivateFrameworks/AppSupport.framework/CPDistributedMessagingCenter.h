@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class CPDistributedMessagingCallout, NSLock, NSMutableDictionary, NSOperationQueue, NSString;
-
 @interface CPDistributedMessagingCenter : NSObject {
     NSOperationQueue *_asyncQueue;
     NSMutableDictionary *_callouts;

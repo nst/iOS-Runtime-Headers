@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class <NSObject>, CKDClientContext, CKDClientProxy, CKDOperation, CKDURLRequest, CKOperationResult, CKTimeLogger, NSDate, NSError, NSMutableArray, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CKDOperation : NSOperation <CKDFlowControllable> {
     BOOL _allowsCellularAccess;
     BOOL _allowsPowerNapScheduling;
@@ -32,36 +30,36 @@
     BOOL _usesBackgroundSession;
 }
 
-@property(readonly) unsigned int QOSClass;
-@property BOOL allowsCellularAccess;
-@property BOOL allowsPowerNapScheduling;
-@property(retain) NSObject<OS_dispatch_queue> * callbackQueue;
-@property(retain) NSMutableArray * childOperations;
-@property(retain) CKDClientContext * context;
-@property(retain) NSString * deviceIdentifier;
-@property(retain) NSError * error;
-@property(retain) NSMutableArray * finishedChildOperationIDs;
-@property(readonly) NSString * flowControlKey;
-@property BOOL isExecuting;
-@property BOOL isFinished;
-@property(readonly) NSString * operationID;
-@property(readonly) CKOperationResult * operationResult;
-@property CKDOperation * parentOperation;
-@property(retain) NSString * parentSectionID;
-@property(retain) <NSObject> * powerAssertion;
-@property CKDClientProxy * proxy;
-@property(retain) CKDURLRequest * request;
-@property(retain) NSMutableArray * requestUUIDs;
-@property(readonly) NSString * sectionID;
-@property(readonly) BOOL shouldCheckAppVersion;
-@property(retain) NSString * sourceApplicationBundleIdentifier;
-@property(retain) NSString * sourceApplicationSecondaryIdentifier;
-@property(retain) NSDate * startDate;
-@property unsigned int state;
-@property(retain) NSObject<OS_dispatch_group> * stateTransitionGroup;
-@property(retain) CKTimeLogger * timeLogger;
-@property BOOL useEncryption;
-@property BOOL usesBackgroundSession;
+@property (nonatomic, readonly) unsigned int QOSClass;
+@property (nonatomic) BOOL allowsCellularAccess;
+@property (nonatomic) BOOL allowsPowerNapScheduling;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic, retain) NSMutableArray *childOperations;
+@property (nonatomic, retain) CKDClientContext *context;
+@property (nonatomic, retain) NSString *deviceIdentifier;
+@property (retain) NSError *error;
+@property (nonatomic, retain) NSMutableArray *finishedChildOperationIDs;
+@property (nonatomic, readonly) NSString *flowControlKey;
+@property (nonatomic) BOOL isExecuting;
+@property (nonatomic) BOOL isFinished;
+@property (nonatomic, readonly) NSString *operationID;
+@property (nonatomic, readonly) CKOperationResult *operationResult;
+@property (nonatomic) CKDOperation *parentOperation;
+@property (nonatomic, retain) NSString *parentSectionID;
+@property (nonatomic, retain) <NSObject> *powerAssertion;
+@property (nonatomic) CKDClientProxy *proxy;
+@property (nonatomic, retain) CKDURLRequest *request;
+@property (nonatomic, retain) NSMutableArray *requestUUIDs;
+@property (nonatomic, readonly) NSString *sectionID;
+@property (nonatomic, readonly) BOOL shouldCheckAppVersion;
+@property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
+@property (nonatomic, retain) NSString *sourceApplicationSecondaryIdentifier;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic) unsigned int state;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *stateTransitionGroup;
+@property (nonatomic, retain) CKTimeLogger *timeLogger;
+@property (nonatomic) BOOL useEncryption;
+@property (nonatomic) BOOL usesBackgroundSession;
 
 + (id)_globalOperationCallbackQueueForQOS:(int)arg1;
 

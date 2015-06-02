@@ -2,36 +2,26 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSXPCConnection;
-
 @interface MCTeslaConfiguration : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _callback;
-
+    id /* block */ _callback;
     NSXPCConnection *_connection;
     BOOL _fetching;
 }
 
-@property(copy) id callback;
-@property(retain) NSXPCConnection * connection;
-@property(getter=isFetching) BOOL fetching;
+@property (nonatomic, copy) id /* block */ callback;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (getter=isFetching, nonatomic) BOOL fetching;
 
 - (void).cxx_destruct;
-- (id)callback;
+- (id /* block */)callback;
 - (id)connection;
 - (id)connectionError;
 - (void)dealloc;
-- (void)fetchConfigurationWithCompletionBlock:(id)arg1;
+- (void)fetchConfigurationWithCompletionBlock:(id /* block */)arg1;
 - (void)fetchDidFailWithError:(id)arg1;
 - (id)init;
 - (BOOL)isFetching;
-- (void)setCallback:(id)arg1;
+- (void)setCallback:(id /* block */)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setFetching:(BOOL)arg1;
 

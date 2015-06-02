@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NMSMessageCenter, NMSOutgoingResponse, NSData, NSString;
-
 @interface NMSIncomingRequest : NSObject <NMSObfuscatableDescriptionProviding> {
     NSData *_data;
     BOOL _expectsResponse;
@@ -15,18 +13,18 @@
     NMSOutgoingResponse *_response;
 }
 
-@property(retain) NSData * data;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL expectsResponse;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * idsIdentifier;
-@property NMSMessageCenter * messageCenter;
-@property unsigned short messageID;
-@property(retain) id pbRequest;
-@property unsigned int priority;
-@property(retain) NMSOutgoingResponse * response;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL expectsResponse;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *idsIdentifier;
+@property (nonatomic) NMSMessageCenter *messageCenter;
+@property (nonatomic) unsigned short messageID;
+@property (nonatomic, retain) id pbRequest;
+@property (nonatomic) unsigned int priority;
+@property (nonatomic, retain) NMSOutgoingResponse *response;
+@property (readonly) Class superclass;
 
 + (BOOL)allowsUnrepliedRequestsForUnitTesting;
 + (void)setAllowsUnrepliedRequestsForUnitTesting:(BOOL)arg1;

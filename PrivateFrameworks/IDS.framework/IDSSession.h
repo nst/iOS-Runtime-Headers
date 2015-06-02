@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class _IDSSession;
-
 @interface IDSSession : NSObject {
     _IDSSession *_internal;
 }
 
-@property int invitationTimeOut;
-@property BOOL isAudioEnabled;
-@property BOOL isMuted;
-@property(readonly) unsigned int sessionEndedReason;
-@property(readonly) int socket;
+@property (nonatomic) int invitationTimeOut;
+@property (nonatomic) BOOL isAudioEnabled;
+@property (nonatomic) BOOL isMuted;
+@property (nonatomic, readonly) unsigned int sessionEndedReason;
+@property (nonatomic, readonly) int socket;
 
 - (id)_initWithAccount:(id)arg1 destinations:(id)arg2 transportType:(int)arg3 uniqueID:(id)arg4;
 - (id)_internal;

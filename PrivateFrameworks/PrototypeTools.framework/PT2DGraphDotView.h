@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class PT2DGraphView;
-
 @interface PT2DGraphDotView : UIView {
     PT2DGraphView *_graph;
     struct CGPoint { 
@@ -12,8 +10,8 @@
     } _graphPoint;
 }
 
-@property PT2DGraphView * graph;
-@property struct CGPoint { float x1; float x2; } graphPoint;
+@property (nonatomic) PT2DGraphView *graph;
+@property (nonatomic) struct CGPoint { float x1; float x2; } graphPoint;
 
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

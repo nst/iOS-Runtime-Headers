@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPAVRoute, MPAVRoutingController, MPUReportingPlaybackObserver, MPUserNotification, NSDate, NSObject<OS_dispatch_source>, NSString, RUPlaybackTimeoutInfoController, RURadioAVPlayer, RadioStation;
-
 @interface RURadioPlaybackCoordinator : NSObject <MPAVRoutingControllerDelegate> {
     RadioStation *_currentStation;
     BOOL _deviceIsDocked;
@@ -29,13 +27,13 @@
     BOOL _wasUsingBackgroundNetwork;
 }
 
-@property(retain) RadioStation * currentStation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) RURadioAVPlayer * player;
-@property(retain) MPUReportingPlaybackObserver * reportingPlaybackObserver;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) RadioStation *currentStation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) RURadioAVPlayer *player;
+@property (nonatomic, retain) MPUReportingPlaybackObserver *reportingPlaybackObserver;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
@@ -71,6 +69,6 @@
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setCurrentStation:(id)arg1;
 - (void)setReportingPlaybackObserver:(id)arg1;
-- (void)setupPlaybackQueueWithPlaybackContext:(id)arg1 completionHandler:(id)arg2;
+- (void)setupPlaybackQueueWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

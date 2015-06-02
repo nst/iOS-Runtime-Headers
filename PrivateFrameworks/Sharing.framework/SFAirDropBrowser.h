@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class <SFAirDropBrowserDelegate>, NSArray, NSMutableDictionary, NSObject<OS_dispatch_source>;
-
 @interface SFAirDropBrowser : NSObject {
     struct __SFBrowser { } *_browser;
     <SFAirDropBrowserDelegate> *_delegate;
@@ -14,8 +12,8 @@
     NSObject<OS_dispatch_source> *_timer;
 }
 
-@property <SFAirDropBrowserDelegate> * delegate;
-@property(readonly) NSArray * people;
+@property <SFAirDropBrowserDelegate> *delegate;
+@property (nonatomic, readonly) NSArray *people;
 
 - (void).cxx_destruct;
 - (void)dealloc;

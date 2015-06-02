@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSMutableDictionary, NSNumber, NSString;
-
 @interface SSURLBagContext : NSObject <NSCopying, SSXPCCoding> {
     int _allowedRetryCount;
     BOOL _allowsBootstrapCellularData;
@@ -15,19 +13,19 @@
     BOOL _usesCachedBagsOnly;
 }
 
-@property(copy) NSDictionary * allHTTPHeaders;
-@property int allowedRetryCount;
-@property BOOL allowsBootstrapCellularData;
-@property BOOL allowsExpiredBags;
-@property int bagType;
-@property(readonly) NSString * cacheKey;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL ignoresCaches;
-@property(readonly) Class superclass;
-@property(retain) NSNumber * userIdentifier;
-@property BOOL usesCachedBagsOnly;
+@property (nonatomic, copy) NSDictionary *allHTTPHeaders;
+@property (nonatomic) int allowedRetryCount;
+@property (nonatomic) BOOL allowsBootstrapCellularData;
+@property (nonatomic) BOOL allowsExpiredBags;
+@property (nonatomic) int bagType;
+@property (nonatomic, readonly) NSString *cacheKey;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL ignoresCaches;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSNumber *userIdentifier;
+@property (nonatomic) BOOL usesCachedBagsOnly;
 
 + (id)contextWithBagType:(int)arg1;
 

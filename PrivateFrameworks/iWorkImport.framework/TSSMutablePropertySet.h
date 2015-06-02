@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSSMutablePropertySet : TSSPropertySet {
-}
+@interface TSSMutablePropertySet : TSSPropertySet
 
 - (void)addProperties:(id)arg1;
 - (void)addProperty:(int)arg1;

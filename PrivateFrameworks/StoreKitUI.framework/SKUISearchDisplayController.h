@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableString, UILabel;
-
 @interface SKUISearchDisplayController : UISearchDisplayController {
     NSMutableString *_paddingString;
     UILabel *_suffixLabel;

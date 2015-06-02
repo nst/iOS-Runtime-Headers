@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface AXHAXPCClient : NSObject {
     unsigned long long _requestedUpdates;
     NSObject<OS_xpc_object> *_xpcConnection;
 }
 
-@property unsigned long long requestedUpdates;
-@property(retain) NSObject<OS_xpc_object> * xpcConnection;
+@property (nonatomic) unsigned long long requestedUpdates;
+@property (nonatomic, retain) NSObject<OS_xpc_object> *xpcConnection;
 
 + (id)clientWithConnection:(id)arg1;
 

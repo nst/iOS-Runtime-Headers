@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DNormalDirectionMapper;
-
 @interface TSCH3DPieWedgeGeometry : TSCH3DGeometry {
     int mAngleSteps;
     int mBevelEdgeSteps;
@@ -18,17 +16,17 @@
     float mTopZ;
 }
 
-@property int angleSteps;
-@property int bevelEdgeSteps;
-@property float bottomZ;
-@property(readonly) int capCount;
-@property(readonly) int capOffset;
-@property float endAngle;
-@property(readonly) TSCH3DNormalDirectionMapper * normalDirectionMapper;
-@property float radius;
-@property int radiusSteps;
-@property float startAngle;
-@property float topZ;
+@property (nonatomic) int angleSteps;
+@property (nonatomic) int bevelEdgeSteps;
+@property (nonatomic) float bottomZ;
+@property (nonatomic, readonly) int capCount;
+@property (nonatomic, readonly) int capOffset;
+@property (nonatomic) float endAngle;
+@property (nonatomic, readonly) TSCH3DNormalDirectionMapper *normalDirectionMapper;
+@property (nonatomic) float radius;
+@property (nonatomic) int radiusSteps;
+@property (nonatomic) float startAngle;
+@property (nonatomic) float topZ;
 
 - (int)angleSteps;
 - (int)bevelEdgeSteps;

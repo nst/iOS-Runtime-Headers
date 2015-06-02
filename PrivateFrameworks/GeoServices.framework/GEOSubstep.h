@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEONameInfo, NSMutableArray;
-
 @interface GEOSubstep : PBCodable <NSCopying> {
     struct { 
         unsigned int maneuverType : 1; 
@@ -15,13 +13,13 @@
     int _zilchIndex;
 }
 
-@property BOOL hasManeuverType;
-@property(readonly) BOOL hasName;
-@property BOOL hasZilchIndex;
-@property int maneuverType;
-@property(retain) GEONameInfo * name;
-@property(retain) NSMutableArray * signposts;
-@property int zilchIndex;
+@property (nonatomic) BOOL hasManeuverType;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasZilchIndex;
+@property (nonatomic) int maneuverType;
+@property (nonatomic, retain) GEONameInfo *name;
+@property (nonatomic, retain) NSMutableArray *signposts;
+@property (nonatomic) int zilchIndex;
 
 - (void)addSignpost:(id)arg1;
 - (void)clearSignposts;

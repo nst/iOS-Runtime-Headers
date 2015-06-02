@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSObject<OS_xpc_object>;
-
 @interface AFXPCWrapper : NSObject <NSSecureCoding> {
     NSObject<OS_xpc_object> *_xpcObject;
 }

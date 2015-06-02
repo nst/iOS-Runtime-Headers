@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <WBUCreditCardCaptureViewControllerDelegate>, CRCameraReader, NSString, WBSCreditCardData;
-
 @interface WBUCreditCardCaptureViewController : UINavigationController <CRCameraReaderDelegate> {
     CRCameraReader *_reader;
     WBSCreditCardData *_receivedCardData;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <WBUCreditCardCaptureViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WBUCreditCardCaptureViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)canCapture;
 

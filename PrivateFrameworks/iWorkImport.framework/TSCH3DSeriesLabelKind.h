@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DSeriesLabelKind : TSCH3DAxisLabelKind {
-}
+@interface TSCH3DSeriesLabelKind : TSCH3DAxisLabelKind
 
 + (id)_singletonAlloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

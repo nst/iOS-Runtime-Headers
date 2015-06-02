@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLImportFileManager : NSObject {
-}
+@interface PLImportFileManager : NSObject
 
 + (BOOL)isCameraDirectoryFolderName:(id)arg1;
 + (BOOL)isImportDirectoryFolderName:(id)arg1;

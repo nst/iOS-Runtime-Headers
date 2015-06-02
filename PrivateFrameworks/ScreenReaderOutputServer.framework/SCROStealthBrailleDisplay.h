@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderOutputServer.framework/ScreenReaderOutputServer
  */
 
-@interface SCROStealthBrailleDisplay : SCROBrailleDisplay {
-}
+@interface SCROStealthBrailleDisplay : SCROBrailleDisplay
 
 + (id)displayWithDelegate:(id)arg1;
 + (id)displayWithIOElement:(id)arg1 driverIdentifier:(id)arg2 delegate:(id)arg3;

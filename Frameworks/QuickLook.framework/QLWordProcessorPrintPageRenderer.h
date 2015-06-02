@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class UIWebPaginationInfo;
-
 @interface QLWordProcessorPrintPageRenderer : QLWebViewPrintPageHelper {
     UIWebPaginationInfo *_paginationInfo;
 }

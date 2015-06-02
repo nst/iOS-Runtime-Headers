@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSIndexPath, NSString, NSTimer, PLCPLStatus, PUGridMagnifiedImageViewController, PUGridPinchGestureRecognizer, PUGridZoomLevelInfo, PUMomentsZoomLevelManager, PUZoomableGridTransition, PUZoomableGridViewControllerSpec, UITapGestureRecognizer;
-
 @interface PUZoomableGridViewController : PUPhotosGridViewController <PLCPLStatusDelegate, PUMagnfiedViewControllerDelegate> {
     PLCPLStatus *__cplStatus;
     NSTimer *__cplStatusUpdateTimer;
@@ -22,26 +20,26 @@
     PUZoomableGridViewControllerSpec *_zoomableGridSpec;
 }
 
-@property(setter=_setCplStatus:,retain) PLCPLStatus * _cplStatus;
-@property NSTimer * _cplStatusUpdateTimer;
-@property(setter=_setGridPinchGestureRecognizer:,retain) PUGridPinchGestureRecognizer * _gridPinchGestureRecognizer;
-@property(setter=_setHasAppearedOnce:) BOOL _hasAppearedOnce;
-@property(setter=_setLastUpdateWidth:) float _lastUpdateWidth;
-@property(setter=_setLastZoomInTransitionAnchorIndexPath:,retain) NSIndexPath * _lastZoomInTransitionAnchorIndexPath;
-@property(readonly) NSArray * _syncProgressAlbums;
-@property(setter=_setTapGestureRecognizer:,retain) UITapGestureRecognizer * _tapGestureRecognizer;
-@property(setter=_setTransitionExplicitAnchorIndexPath:,retain) NSIndexPath * _transitionExplicitAnchorIndexPath;
-@property(readonly) PUGridZoomLevelInfo * _zoomLevelInfo;
-@property(readonly) PUZoomableGridTransition * currentGridZoomTransitionInfo;
-@property(setter=_setCurrentGridZoomTransitionInfo:,retain) PUZoomableGridTransition * currentGridZoomTransitionInfo;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(setter=_setMagnifiedImageViewController:,retain) PUGridMagnifiedImageViewController * magnifiedImageViewController;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int zoomLevel;
-@property(readonly) PUMomentsZoomLevelManager * zoomLevelManager;
-@property(retain) PUZoomableGridViewControllerSpec * zoomableGridSpec;
+@property (setter=_setCplStatus:, nonatomic, retain) PLCPLStatus *_cplStatus;
+@property (nonatomic) NSTimer *_cplStatusUpdateTimer;
+@property (setter=_setGridPinchGestureRecognizer:, nonatomic, retain) PUGridPinchGestureRecognizer *_gridPinchGestureRecognizer;
+@property (setter=_setHasAppearedOnce:, nonatomic) BOOL _hasAppearedOnce;
+@property (setter=_setLastUpdateWidth:, nonatomic) float _lastUpdateWidth;
+@property (setter=_setLastZoomInTransitionAnchorIndexPath:, nonatomic, retain) NSIndexPath *_lastZoomInTransitionAnchorIndexPath;
+@property (nonatomic, readonly) NSArray *_syncProgressAlbums;
+@property (setter=_setTapGestureRecognizer:, nonatomic, retain) UITapGestureRecognizer *_tapGestureRecognizer;
+@property (setter=_setTransitionExplicitAnchorIndexPath:, nonatomic, retain) NSIndexPath *_transitionExplicitAnchorIndexPath;
+@property (nonatomic, readonly) PUGridZoomLevelInfo *_zoomLevelInfo;
+@property (nonatomic, readonly) PUZoomableGridTransition *currentGridZoomTransitionInfo;
+@property (setter=_setCurrentGridZoomTransitionInfo:, nonatomic, retain) PUZoomableGridTransition *currentGridZoomTransitionInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (setter=_setMagnifiedImageViewController:, nonatomic, retain) PUGridMagnifiedImageViewController *magnifiedImageViewController;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int zoomLevel;
+@property (nonatomic, readonly) PUMomentsZoomLevelManager *zoomLevelManager;
+@property (nonatomic, retain) PUZoomableGridViewControllerSpec *zoomableGridSpec;
 
 - (void).cxx_destruct;
 - (id)_beginInteractiveTransitionWithReferenceItemPath:(id)arg1 zoomingOut:(BOOL)arg2;

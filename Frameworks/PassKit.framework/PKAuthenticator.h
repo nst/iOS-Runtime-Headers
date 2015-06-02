@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKAuthenticatorDelegate>, LAContext, NSObject<OS_dispatch_queue>;
-
 @interface PKAuthenticator : NSObject <LAUIDelegate> {
     LAContext *_context;
     NSObject<OS_dispatch_queue> *_contextMutationQueue;
@@ -12,8 +10,8 @@
     unsigned int _presentationFlag;
 }
 
-@property <PKAuthenticatorDelegate> * delegate;
-@property BOOL fingerPresent;
+@property (nonatomic) <PKAuthenticatorDelegate> *delegate;
+@property (nonatomic) BOOL fingerPresent;
 
 + (unsigned int)currentStateForPolicy:(int)arg1;
 + (void)preheatAuthenticator;
@@ -30,9 +28,9 @@
 - (void)cancelEvaluation;
 - (void)dealloc;
 - (id)delegate;
-- (void)evaluatePolicy:(int)arg1 completion:(id)arg2;
-- (void)evaluateRequest:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)event:(int)arg1 params:(id)arg2 reply:(id)arg3;
+- (void)evaluatePolicy:(int)arg1 completion:(id /* block */)arg2;
+- (void)evaluateRequest:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)event:(int)arg1 params:(id)arg2 reply:(id /* block */)arg3;
 - (void)fallbackToSystemPasscodeUI;
 - (BOOL)fingerPresent;
 - (void)handlePasscodeEvent:(int)arg1 params:(id)arg2;

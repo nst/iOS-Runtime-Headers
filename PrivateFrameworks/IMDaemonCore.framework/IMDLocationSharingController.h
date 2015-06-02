@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class FMFSession;
-
 @interface IMDLocationSharingController : NSObject {
     FMFSession *_session;
 }

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDictionary, NSString, UITextView, UIWindow, _UIRotatingAlertController;
-
 @interface _UITextViewInteractableItem : NSObject <_UIRotatingAlertControllerDelegate> {
     NSArray *_actions;
     NSDictionary *_defaultAction;
@@ -17,13 +15,13 @@
     UIWindow *_windowForActionSheetPresentation;
 }
 
-@property(readonly) NSArray * actions;
-@property(readonly) NSDictionary * defaultAction;
-@property BOOL interactionIsFinished;
-@property(readonly) NSString * localizedTitle;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property UITextView * textView;
-@property(retain) UIWindow * windowForActionSheetPresentation;
+@property (nonatomic, readonly) NSArray *actions;
+@property (nonatomic, readonly) NSDictionary *defaultAction;
+@property (nonatomic) BOOL interactionIsFinished;
+@property (nonatomic, readonly) NSString *localizedTitle;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic) UITextView *textView;
+@property (nonatomic, retain) UIWindow *windowForActionSheetPresentation;
 
 - (id)_actionSheet;
 - (void)_cleanupSheet;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class ODDColorTransform, ODDNodePoint, ODDStyleDefinition;
-
 @interface ODDDiagram : OADDrawable {
     ODDColorTransform *mColorTransform;
     ODDNodePoint *mDocumentPoint;

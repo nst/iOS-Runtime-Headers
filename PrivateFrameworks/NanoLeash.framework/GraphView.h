@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
  */
 
-@class GraphTextView, GraphViewSegment, NSMutableArray;
-
 @interface GraphView : UIView {
     GraphViewSegment *_current;
     NSMutableArray *_segments;
     GraphTextView *_text;
 }
 
-@property GraphViewSegment * current;
-@property(retain) NSMutableArray * segments;
-@property(retain) GraphTextView * text;
+@property (nonatomic) GraphViewSegment *current;
+@property (nonatomic, retain) NSMutableArray *segments;
+@property (nonatomic, retain) GraphTextView *text;
 
 - (void).cxx_destruct;
 - (id)accessibilityValue;

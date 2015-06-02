@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@interface MSPurchaseBatch : SUPurchaseBatch {
-}
+@interface MSPurchaseBatch : SUPurchaseBatch
 
 - (id)copyContinuationsForPurchases:(id)arg1;
 

@@ -16,17 +16,17 @@
     float _targetOffset;
 }
 
-@property(setter=_setAccumulatedOffset:) float _accumulatedOffset;
-@property(setter=_setHasEnteredAttractionThreshold:) BOOL _hasEnteredAttractionThreshold;
-@property(setter=_setHasEnteredRetentionThreshold:) BOOL _hasEnteredRetentionThreshold;
-@property(setter=_setPreviousOffset:) float _previousOffset;
-@property(getter=_isPreviousOffsetInvalid,setter=_setPreviousOffsetInvalid:) BOOL _previousOffsetInvalid;
-@property BOOL accumulateOffsetWhileSnapped;
-@property float attractionOffsetThreshold;
-@property float attractionVelocityThreshold;
-@property float retentionOffsetThreshold;
-@property(getter=isSnappedToTarget,readonly) BOOL snappedToTarget;
-@property float targetOffset;
+@property (setter=_setAccumulatedOffset:, nonatomic) float _accumulatedOffset;
+@property (setter=_setHasEnteredAttractionThreshold:, nonatomic) BOOL _hasEnteredAttractionThreshold;
+@property (setter=_setHasEnteredRetentionThreshold:, nonatomic) BOOL _hasEnteredRetentionThreshold;
+@property (setter=_setPreviousOffset:, nonatomic) float _previousOffset;
+@property (getter=_isPreviousOffsetInvalid, setter=_setPreviousOffsetInvalid:, nonatomic) BOOL _previousOffsetInvalid;
+@property (nonatomic) BOOL accumulateOffsetWhileSnapped;
+@property (nonatomic) float attractionOffsetThreshold;
+@property (nonatomic) float attractionVelocityThreshold;
+@property (nonatomic) float retentionOffsetThreshold;
+@property (getter=isSnappedToTarget, nonatomic, readonly) BOOL snappedToTarget;
+@property (nonatomic) float targetOffset;
 
 - (float)_accumulatedOffset;
 - (BOOL)_hasEnteredAttractionThreshold;

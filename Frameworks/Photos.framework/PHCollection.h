@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSString;
-
 @interface PHCollection : PHObject {
     BOOL _customSortAscending;
     int _customSortKey;
@@ -11,13 +9,13 @@
     unsigned int _estimatedVideosCount;
 }
 
-@property(readonly) BOOL canContainAssets;
-@property(readonly) BOOL canContainCollections;
-@property(readonly) BOOL customSortAscending;
-@property(readonly) int customSortKey;
-@property(readonly) unsigned int estimatedPhotosCount;
-@property(readonly) unsigned int estimatedVideosCount;
-@property(readonly) NSString * localizedTitle;
+@property (nonatomic, readonly) BOOL canContainAssets;
+@property (nonatomic, readonly) BOOL canContainCollections;
+@property (nonatomic, readonly) BOOL customSortAscending;
+@property (nonatomic, readonly) int customSortKey;
+@property (nonatomic, readonly) unsigned int estimatedPhotosCount;
+@property (nonatomic, readonly) unsigned int estimatedVideosCount;
+@property (nonatomic, readonly) NSString *localizedTitle;
 
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;

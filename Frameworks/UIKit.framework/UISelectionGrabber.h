@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UISelectionGrabberDot, UITextRangeView;
-
 @interface UISelectionGrabber : UIView {
     int _applicationDeactivationReason;
     BOOL m_activeFlattened;
@@ -15,13 +13,13 @@
     int m_orientation;
 }
 
-@property BOOL activeFlattened;
-@property BOOL alertFlattened;
-@property BOOL animating;
-@property(readonly) UITextRangeView * hostView;
-@property BOOL isDotted;
-@property BOOL navigationTransitionFlattened;
-@property int orientation;
+@property (nonatomic) BOOL activeFlattened;
+@property (nonatomic) BOOL alertFlattened;
+@property (nonatomic) BOOL animating;
+@property (nonatomic, readonly) UITextRangeView *hostView;
+@property (nonatomic) BOOL isDotted;
+@property (nonatomic) BOOL navigationTransitionFlattened;
+@property (nonatomic) int orientation;
 
 + (id)_grabberDot;
 

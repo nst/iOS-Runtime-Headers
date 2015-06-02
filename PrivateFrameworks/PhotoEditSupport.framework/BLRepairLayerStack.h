@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class UIImage;
-
 @interface BLRepairLayerStack : BLBaseLayerStack {
     UIImage *_analysisImage;
     int _mode;
@@ -20,14 +18,14 @@
     UIImage *_sourceImage;
 }
 
-@property(retain) UIImage * analysisImage;
-@property int mode;
-@property UIImage * redEyeRepairedImage;
-@property(retain) UIImage * redEyeSourceImage;
-@property struct CGSize { float x1; float x2; } redEyeSourceSize;
-@property(retain) UIImage * repairSourceImage;
-@property struct CGSize { float x1; float x2; } repairSourceSize;
-@property(retain) UIImage * sourceImage;
+@property (nonatomic, retain) UIImage *analysisImage;
+@property (nonatomic) int mode;
+@property (nonatomic) UIImage *redEyeRepairedImage;
+@property (nonatomic, retain) UIImage *redEyeSourceImage;
+@property (nonatomic) struct CGSize { float x1; float x2; } redEyeSourceSize;
+@property (nonatomic, retain) UIImage *repairSourceImage;
+@property (nonatomic) struct CGSize { float x1; float x2; } repairSourceSize;
+@property (nonatomic, retain) UIImage *sourceImage;
 
 + (id)addAutoRedEyeCorrection:(id)arg1 toCurrentStrokesDataDictionary:(id)arg2 forSourceSize:(struct CGSize { float x1; float x2; })arg3;
 + (id)layerStack;

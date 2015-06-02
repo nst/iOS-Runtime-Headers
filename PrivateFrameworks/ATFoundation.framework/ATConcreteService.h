@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface ATConcreteService : ATService <ATMessageLinkObserver, ATMessageLinkRequestHandler> {
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_signalSource;
     double _startTime;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addObserver:(id)arg1;

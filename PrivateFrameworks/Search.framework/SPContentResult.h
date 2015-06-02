@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Search.framework/Search
  */
 
-@class NSString;
-
 @interface SPContentResult : SPSearchResult {
     NSString *_content;
     NSString *_extid;
 }
 
-@property(retain) NSString * content;
-@property(retain) NSString * extid;
+@property (nonatomic, retain) NSString *content;
+@property (nonatomic, retain) NSString *extid;
 
 + (id)resultWithIdentifier:(id)arg1 title:(id)arg2 subtitle:(id)arg3 summary:(id)arg4 auxiliaryTitle:(id)arg5 auxiliarySubtitle:(id)arg6 actionURL:(id)arg7 searchableContent:(id)arg8;
 + (id)resultWithRecord:(id)arg1;

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@class NSString;
-
 @interface PRSFeedback : NSObject <NSCoding, NSCopying, NSSecureCoding> {
     NSString *_input;
     int _timestamp;
 }
 
-@property(readonly) NSString * input;
-@property int timestamp;
-@property(readonly) NSString * type;
+@property (nonatomic, readonly) NSString *input;
+@property (nonatomic) int timestamp;
+@property (nonatomic, readonly) NSString *type;
 
 + (id)JSONDictionaryForFeedbackArray:(id)arg1 enableFeedbackDebugLogging:(BOOL)arg2;
 + (BOOL)supportsSecureCoding;

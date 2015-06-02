@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPShapeInfo, TSWPShapeLayout;
-
 @interface TSWPTextHostLayout : TSDDrawableLayout {
     TSWPShapeInfo *_editingShapeInfo;
     TSWPShapeLayout *_editingShapeLayout;
 }
 
-@property(readonly) TSWPShapeLayout * editingShapeLayout;
+@property (nonatomic, readonly) TSWPShapeLayout *editingShapeLayout;
 
 - (void)dealloc;
 - (id)editingShapeLayout;

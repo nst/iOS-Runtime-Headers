@@ -2,32 +2,25 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSSet, NSString;
-
 @interface TPCanvasSelection : TSWPSelection <TSDCanvasSelection> {
     NSSet *mAdditionalInfos;
     NSSet *mExcludedInfos;
     NSSet *mInfos;
 }
 
-@property(readonly) int canvasSelectionKind;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned int infoCount;
-@property(readonly) NSSet * infos;
-@property(readonly) BOOL isEmpty;
-@property(readonly) NSSet * rawAdditionalInfos;
-@property(readonly) NSSet * rawExcludedInfos;
-@property(readonly) NSSet * rawInfos;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int unlockedInfoCount;
-@property(readonly) NSSet * unlockedInfos;
+@property (nonatomic, readonly) int canvasSelectionKind;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int infoCount;
+@property (nonatomic, readonly) NSSet *infos;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly) NSSet *rawAdditionalInfos;
+@property (nonatomic, readonly) NSSet *rawExcludedInfos;
+@property (nonatomic, readonly) NSSet *rawInfos;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int unlockedInfoCount;
+@property (nonatomic, readonly) NSSet *unlockedInfos;
 
 + (Class)archivedSelectionClass;
 + (id)canvasSelectionFromCanvasSelection:(id)arg1 withToggledInfo:(id)arg2;

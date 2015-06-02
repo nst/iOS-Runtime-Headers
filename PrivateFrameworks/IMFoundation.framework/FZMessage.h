@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@interface FZMessage : IMMessageItem <IMRemoteObjectCoding, NSCoding, NSCopying> {
-}
+@interface FZMessage : IMMessageItem <IMRemoteObjectCoding, NSCoding, NSCopying>
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSURL, NSUUID, TSUSafeSaveAssistant;
-
 @interface TSPSupportSaveOperationState : NSObject {
     NSURL *_URL;
     BOOL _didWriteSupportBundleSuccessfuly;
@@ -16,17 +14,17 @@
     int _updateType;
 }
 
-@property(copy) NSURL * URL;
-@property BOOL didWriteSupportBundleSuccessfuly;
-@property(copy) NSUUID * documentUUID;
-@property(readonly) NSUUID * originalDocumentUUID;
-@property(readonly) NSURL * originalURL;
-@property(readonly) NSUUID * originalVersionUUID;
-@property(readonly) BOOL preserveDocumentUUID;
-@property(retain) TSUSafeSaveAssistant * safeSaveAssistant;
-@property BOOL shouldLeavePendingEndSave;
-@property(readonly) BOOL shouldUpdate;
-@property(readonly) int updateType;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic) BOOL didWriteSupportBundleSuccessfuly;
+@property (nonatomic, copy) NSUUID *documentUUID;
+@property (nonatomic, readonly) NSUUID *originalDocumentUUID;
+@property (nonatomic, readonly) NSURL *originalURL;
+@property (nonatomic, readonly) NSUUID *originalVersionUUID;
+@property (nonatomic, readonly) BOOL preserveDocumentUUID;
+@property (nonatomic, retain) TSUSafeSaveAssistant *safeSaveAssistant;
+@property (nonatomic) BOOL shouldLeavePendingEndSave;
+@property (nonatomic, readonly) BOOL shouldUpdate;
+@property (nonatomic, readonly) int updateType;
 
 - (void).cxx_destruct;
 - (id)URL;

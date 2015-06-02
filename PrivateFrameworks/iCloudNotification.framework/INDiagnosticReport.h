@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iCloudNotification.framework/iCloudNotification
  */
 
-@class NSDate, NSString;
-
 @interface INDiagnosticReport : NSObject <NSSecureCoding> {
     BOOL _disabled;
     NSDate *_nextHeartbeatDate;
@@ -12,11 +10,11 @@
     NSString *_pushTopic;
 }
 
-@property BOOL disabled;
-@property(copy) NSDate * nextHeartbeatDate;
-@property(copy) NSString * pushEnvironment;
-@property(copy) NSString * pushToken;
-@property(copy) NSString * pushTopic;
+@property (nonatomic) BOOL disabled;
+@property (nonatomic, copy) NSDate *nextHeartbeatDate;
+@property (nonatomic, copy) NSString *pushEnvironment;
+@property (nonatomic, copy) NSString *pushToken;
+@property (nonatomic, copy) NSString *pushTopic;
 
 + (BOOL)supportsSecureCoding;
 

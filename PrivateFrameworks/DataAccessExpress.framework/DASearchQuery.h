@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class <DASearchQueryConsumer>, NSString;
-
 @interface DASearchQuery : NSObject {
     <DASearchQueryConsumer> *_consumer;
     struct _NSRange { 
@@ -16,13 +14,13 @@
     int _timeLimit;
 }
 
-@property <DASearchQueryConsumer> * consumer;
-@property unsigned int maxResults;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property(copy) NSString * searchID;
-@property(copy) NSString * searchString;
-@property int state;
-@property int timeLimit;
+@property (nonatomic) <DASearchQueryConsumer> *consumer;
+@property (nonatomic) unsigned int maxResults;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic, copy) NSString *searchID;
+@property (nonatomic, copy) NSString *searchString;
+@property (nonatomic) int state;
+@property (nonatomic) int timeLimit;
 
 + (id)searchQueryWithSearchString:(id)arg1 consumer:(id)arg2;
 

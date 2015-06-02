@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIWindow;
-
 @interface _UIWindowAnimationController : NSObject <UIViewControllerAnimatedTransitioning> {
     BOOL _shouldCrossfade;
     UIWindow *_window;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL shouldCrossfade;
-@property(readonly) Class superclass;
-@property UIWindow * window;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL shouldCrossfade;
+@property (readonly) Class superclass;
+@property (nonatomic) UIWindow *window;
 
 + (id)animationControllerWithWindow:(id)arg1;
 
-- (void)_performCrossfadeAnimationWithContext:(id)arg1 windowGeometryUpdatingBlock:(id)arg2;
-- (void)_performLayoutAnimationWithContext:(id)arg1 windowGeometryUpdatingBlock:(id)arg2;
+- (void)_performCrossfadeAnimationWithContext:(id)arg1 windowGeometryUpdatingBlock:(id /* block */)arg2;
+- (void)_performLayoutAnimationWithContext:(id)arg1 windowGeometryUpdatingBlock:(id /* block */)arg2;
 - (void)animateTransition:(id)arg1;
 - (id)initWithWindow:(id)arg1;
 - (void)setShouldCrossfade:(BOOL)arg1;

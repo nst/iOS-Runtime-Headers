@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class MFPhoneBitmap;
-
 @interface MFPhonePatternBrush : MFPhoneBrush {
     MFPhoneBitmap *m_pattern;
     BOOL m_usePaletteForBilevel;

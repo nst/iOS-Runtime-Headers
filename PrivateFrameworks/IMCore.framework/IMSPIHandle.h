@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class NSString;
-
 @interface IMSPIHandle : NSObject {
     NSString *_address;
     NSString *_displayName;
     NSString *_identifier;
 }
 
-@property(retain) NSString * address;
-@property(retain) NSString * displayName;
-@property(retain) NSString * identifier;
+@property (retain) NSString *address;
+@property (retain) NSString *displayName;
+@property (retain) NSString *identifier;
 
 - (id)address;
 - (void)dealloc;

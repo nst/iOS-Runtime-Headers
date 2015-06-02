@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class CKServerChangeToken, NSDate;
-
 @interface BRCServerChangeState : NSObject <NSCopying, NSSecureCoding> {
     CKServerChangeToken *_changeToken;
     unsigned long long _clientRequestID;
@@ -12,13 +10,13 @@
     CKServerChangeToken *_pendingChangeToken;
 }
 
-@property(retain) CKServerChangeToken * changeToken;
-@property unsigned long long clientRequestID;
-@property(readonly) BOOL hasNeverSyncedDown;
-@property(retain) NSDate * lastSyncDownDate;
-@property int lastSyncDownStatus;
-@property(readonly) CKServerChangeToken * nextSyncRequestChangeToken;
-@property(retain) CKServerChangeToken * pendingChangeToken;
+@property (nonatomic, retain) CKServerChangeToken *changeToken;
+@property (nonatomic) unsigned long long clientRequestID;
+@property (nonatomic, readonly) BOOL hasNeverSyncedDown;
+@property (retain) NSDate *lastSyncDownDate;
+@property (nonatomic) int lastSyncDownStatus;
+@property (nonatomic, readonly) CKServerChangeToken *nextSyncRequestChangeToken;
+@property (nonatomic, retain) CKServerChangeToken *pendingChangeToken;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSKWarning;
-
 @interface TSWPCharacterStyleValidateFontResult : NSObject {
     int _bold;
     int _italic;
@@ -11,10 +9,10 @@
     TSKWarning *_warning;
 }
 
-@property int bold;
-@property int italic;
-@property(retain) NSString * mappedName;
-@property(retain) TSKWarning * warning;
+@property (nonatomic) int bold;
+@property (nonatomic) int italic;
+@property (nonatomic, retain) NSString *mappedName;
+@property (nonatomic, retain) TSKWarning *warning;
 
 - (int)bold;
 - (void)dealloc;

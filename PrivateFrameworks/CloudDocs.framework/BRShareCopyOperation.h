@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSURL;
-
 @interface BRShareCopyOperation : BROperation {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareCopyCompletionBlock;
-
+    id /* block */ _shareCopyCompletionBlock;
     NSURL *_url;
 }
 
-@property(copy) id shareCopyCompletionBlock;
-@property(retain) NSURL * url;
+@property (copy) id /* block */ shareCopyCompletionBlock;
+@property (nonatomic, retain) NSURL *url;
 
 - (void)dealloc;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (void)main;
-- (void)setShareCopyCompletionBlock:(id)arg1;
+- (void)setShareCopyCompletionBlock:(id /* block */)arg1;
 - (void)setUrl:(id)arg1;
-- (id)shareCopyCompletionBlock;
+- (id /* block */)shareCopyCompletionBlock;
 - (id)url;
 
 @end

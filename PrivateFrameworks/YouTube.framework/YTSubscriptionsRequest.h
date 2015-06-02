@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSMutableArray;
-
 @interface YTSubscriptionsRequest : YTXMLHTTPRequest {
     id _delegate;
     int _mode;

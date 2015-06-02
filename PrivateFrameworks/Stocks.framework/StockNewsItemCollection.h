@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@class NSArray;
-
 @interface StockNewsItemCollection : NSObject {
     double _expirationTime;
     NSArray *_newsItems;
 }
 
-@property double expirationTime;
-@property(retain) NSArray * newsItems;
+@property (nonatomic) double expirationTime;
+@property (nonatomic, retain) NSArray *newsItems;
 
 - (void).cxx_destruct;
 - (id)archiveArray;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSMutableArray, NSString, SCRCArgumentSubcommand;
-
 @interface SCRCArgumentParser : SCRCArgumentSubcommand {
     NSString *_appName;
     int _argc;

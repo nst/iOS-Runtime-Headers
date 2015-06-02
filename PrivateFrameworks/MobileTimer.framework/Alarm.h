@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@class <AlarmDelegate>, Alarm, NSArray, NSDate, NSDictionary, NSMutableDictionary, NSString, NSURL, UILocalNotification;
-
 @interface Alarm : NSObject {
     BOOL _allowsSnooze;
     unsigned int _daySetting;
@@ -25,30 +23,30 @@
     NSString *_sound;
     int _soundType;
     NSString *_title;
-    UILocalNotification *_weeklyNotifications[7];
+    UILocalNotification *_weeklyNotifications;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property(readonly) NSString * alarmId;
-@property(readonly) NSURL * alarmIdUrl;
-@property BOOL allowsSnooze;
-@property unsigned int daySetting;
-@property <AlarmDelegate> * delegate;
-@property(readonly) Alarm * editingProxy;
-@property unsigned int hour;
-@property(readonly) NSDate * lastModified;
-@property unsigned int minute;
-@property(readonly) NSString * rawTitle;
-@property(readonly) NSArray * repeatDays;
-@property(readonly) BOOL repeats;
-@property(readonly) unsigned int revision;
-@property(readonly) NSDictionary * settings;
-@property(readonly) NSString * snapshotSound;
-@property(readonly) int snapshotSoundType;
-@property(getter=isSnoozed,readonly) BOOL snoozed;
-@property(readonly) NSString * sound;
-@property(readonly) int soundType;
-@property(readonly) NSString * uiTitle;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic, readonly) NSString *alarmId;
+@property (nonatomic, readonly) NSURL *alarmIdUrl;
+@property (nonatomic) BOOL allowsSnooze;
+@property (nonatomic) unsigned int daySetting;
+@property (nonatomic) <AlarmDelegate> *delegate;
+@property (nonatomic, readonly) Alarm *editingProxy;
+@property (nonatomic) unsigned int hour;
+@property (nonatomic, readonly) NSDate *lastModified;
+@property (nonatomic) unsigned int minute;
+@property (nonatomic, readonly) NSString *rawTitle;
+@property (nonatomic, readonly) NSArray *repeatDays;
+@property (nonatomic, readonly) BOOL repeats;
+@property (nonatomic, readonly) unsigned int revision;
+@property (nonatomic, readonly) NSDictionary *settings;
+@property (nonatomic, readonly) NSString *snapshotSound;
+@property (nonatomic, readonly) int snapshotSoundType;
+@property (getter=isSnoozed, nonatomic, readonly) BOOL snoozed;
+@property (nonatomic, readonly) NSString *sound;
+@property (nonatomic, readonly) int soundType;
+@property (nonatomic, readonly) NSString *uiTitle;
 
 + (id)_newSettingsFromNotification:(id)arg1;
 + (BOOL)_verifyNotificationSettings:(id)arg1 againstAlarmSettings:(id)arg2;

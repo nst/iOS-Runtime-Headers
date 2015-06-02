@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iAdDeveloper.framework/iAdDeveloper
  */
 
-@class NSString, NSURL;
-
 @interface HTSHTTPMessageRequest : HTSHTTPMessage {
     NSString *_requestMethod;
     NSURL *_requestURL;
 }
 
-@property(copy) NSString * requestMethod;
-@property(copy) NSURL * requestURL;
+@property (nonatomic, copy) NSString *requestMethod;
+@property (nonatomic, copy) NSURL *requestURL;
 
 - (struct __CFHTTPMessage { }*)copyMessage;
 - (void)dealloc;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLCoreRail : PLCoreOperator {
-}
+@interface PLCoreRail : PLCoreOperator
 
 - (id)getAllRailNames;
 - (id)init;

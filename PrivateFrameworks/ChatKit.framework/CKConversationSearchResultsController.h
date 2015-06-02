@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKConversationResultsControllerDelegate>, CKSpotlightQuery, NSArray, NSString;
-
 @interface CKConversationSearchResultsController : UITableViewController <UISearchResultsUpdating> {
     CKSpotlightQuery *_currentQuery;
     <CKConversationResultsControllerDelegate> *_delegate;
@@ -11,14 +9,14 @@
     NSString *_selectedChatGUID;
 }
 
-@property(retain) CKSpotlightQuery * currentQuery;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKConversationResultsControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * searchResults;
-@property(retain) NSString * selectedChatGUID;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) CKSpotlightQuery *currentQuery;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKConversationResultsControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *searchResults;
+@property (nonatomic, retain) NSString *selectedChatGUID;
+@property (readonly) Class superclass;
 
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_selectChatGUID:(id)arg1;

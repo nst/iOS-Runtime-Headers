@@ -2,23 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CAMAvalancheSessionDelegate>, CAMInflightAsset, CIBurstImageSet, NSDate, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface CAMAvalancheSession : NSObject {
     NSMutableDictionary *__assets;
     CIBurstImageSet *__burstImageSet;
     NSDate *__expirationDate;
     NSObject<OS_dispatch_queue> *__expirationQueue;
     NSObject<OS_dispatch_source> *__expirationTimer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     <CAMAvalancheSessionDelegate> *_delegate;
     unsigned int _numberOfPhotos;
     CAMInflightAsset *_possibleAvalancheAsset;
@@ -27,18 +17,18 @@
     NSString *_uuid;
 }
 
-@property(readonly) NSMutableDictionary * _assets;
-@property(readonly) CIBurstImageSet * _burstImageSet;
-@property(setter=_setExpirationDate:,retain) NSDate * _expirationDate;
-@property(readonly) NSObject<OS_dispatch_queue> * _expirationQueue;
-@property(readonly) NSObject<OS_dispatch_source> * _expirationTimer;
-@property(copy) id completionHandler;
-@property <CAMAvalancheSessionDelegate> * delegate;
-@property(readonly) unsigned int numberOfPhotos;
-@property(retain) CAMInflightAsset * possibleAvalancheAsset;
-@property int state;
-@property(readonly) int type;
-@property(copy,readonly) NSString * uuid;
+@property (nonatomic, readonly) NSMutableDictionary *_assets;
+@property (nonatomic, readonly) CIBurstImageSet *_burstImageSet;
+@property (setter=_setExpirationDate:, nonatomic, retain) NSDate *_expirationDate;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *_expirationQueue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_source> *_expirationTimer;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic) <CAMAvalancheSessionDelegate> *delegate;
+@property (nonatomic, readonly) unsigned int numberOfPhotos;
+@property (nonatomic, retain) CAMInflightAsset *possibleAvalancheAsset;
+@property (nonatomic) int state;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, readonly, copy) NSString *uuid;
 
 - (void).cxx_destruct;
 - (id)_assets;
@@ -55,12 +45,12 @@
 - (void)_setupExpirationTimer;
 - (void)_teardownExpirationTimer;
 - (void)_transitionToState:(int)arg1;
-- (void)addAssetForAnalysis:(id)arg1 withIOSurface:(struct __IOSurface { }*)arg2 metadata:(id)arg3 completionHandler:(id)arg4;
+- (void)addAssetForAnalysis:(id)arg1 withIOSurface:(struct __IOSurface { }*)arg2 metadata:(id)arg3 completionHandler:(id /* block */)arg4;
 - (id)allAssetIdentifiers;
 - (id)assetWithUUID:(id)arg1;
 - (id)assetsWithUUIDs:(id)arg1;
 - (id)bestAssetIndentifiers;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)extend;
@@ -69,7 +59,7 @@
 - (id)initWithType:(int)arg1;
 - (unsigned int)numberOfPhotos;
 - (id)possibleAvalancheAsset;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)stackAssetIdentifier;
 - (int)state;

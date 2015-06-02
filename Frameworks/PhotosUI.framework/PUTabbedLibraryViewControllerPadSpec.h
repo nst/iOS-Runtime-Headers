@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUTabbedLibraryViewControllerPadSpec : PUTabbedLibraryViewControllerSpec {
-}
+@interface PUTabbedLibraryViewControllerPadSpec : PUTabbedLibraryViewControllerSpec
 
 - (id)albumListViewControllerSpec;
 - (id)createAlbumListViewController;

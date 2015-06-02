@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogFullOperators.framework/PowerlogFullOperators
  */
 
-@class NSMutableArray, NSMutableDictionary, PLEntryNotificationOperatorComposition;
-
 @interface PLPMUAgent : PLAgent {
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
     struct __IOHIDEventSystemClient { } *hidEventSystem;
@@ -12,7 +10,7 @@
     NSMutableArray *sensorNamesV;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelChanged;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

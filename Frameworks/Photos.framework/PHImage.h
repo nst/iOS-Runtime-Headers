@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSData, UIImage;
-
 @interface PHImage : NSObject {
     unsigned int _bytesPerRow;
     NSData *_data;
@@ -17,16 +15,16 @@
     unsigned int _width;
 }
 
-@property(readonly) unsigned int bytesPerRow;
-@property(readonly) NSData * data;
-@property(readonly) unsigned int dataHeight;
-@property(readonly) unsigned int dataOffset;
-@property(readonly) unsigned int dataWidth;
-@property(readonly) int format;
-@property(readonly) unsigned int height;
-@property(readonly) BOOL isPlaceholder;
-@property(readonly) UIImage * uiImage;
-@property(readonly) unsigned int width;
+@property (nonatomic, readonly) unsigned int bytesPerRow;
+@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly) unsigned int dataHeight;
+@property (nonatomic, readonly) unsigned int dataOffset;
+@property (nonatomic, readonly) unsigned int dataWidth;
+@property (nonatomic, readonly) int format;
+@property (nonatomic, readonly) unsigned int height;
+@property (nonatomic, readonly) BOOL isPlaceholder;
+@property (nonatomic, readonly) UIImage *uiImage;
+@property (nonatomic, readonly) unsigned int width;
 
 + (id)imageWithData:(id)arg1 width:(unsigned int)arg2 height:(unsigned int)arg3 bytesPerRow:(unsigned int)arg4 dataWidth:(unsigned int)arg5 dataHeight:(unsigned int)arg6 dataOffset:(unsigned int)arg7 format:(int)arg8 isPlaceholder:(BOOL)arg9;
 + (id)imageWithUIImage:(id)arg1 format:(int)arg2 isPlaceholder:(BOOL)arg3;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBDisplay : FBSDisplay {
-}
+@interface FBDisplay : FBSDisplay
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
  */
 
-@class NSArray, NSString;
-
 @interface VSTextPreProcessor : NSObject {
     NSString *_languageID;
     NSArray *_rules;

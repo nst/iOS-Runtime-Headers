@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, NSData, NSMutableArray;
-
 @interface GEOPlaceSearchResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int turnaroundTime : 1; 
@@ -19,20 +17,20 @@
     double _turnaroundTime;
 }
 
-@property(readonly) BOOL hasMapRegion;
-@property BOOL hasStatusCodeInfo;
-@property(readonly) BOOL hasSuggestionMetadata;
-@property BOOL hasTurnaroundTime;
-@property(retain) GEOMapRegion * mapRegion;
-@property(retain) NSMutableArray * namedFeatures;
-@property(retain) NSMutableArray * placeResults;
-@property int status;
-@property int statusCodeInfo;
-@property(retain) NSMutableArray * suggestionEntryLists;
-@property(retain) NSData * suggestionMetadata;
-@property double turnaroundTime;
+@property (nonatomic, readonly) BOOL hasMapRegion;
+@property (nonatomic) BOOL hasStatusCodeInfo;
+@property (nonatomic, readonly) BOOL hasSuggestionMetadata;
+@property (nonatomic) BOOL hasTurnaroundTime;
+@property (nonatomic, retain) GEOMapRegion *mapRegion;
+@property (nonatomic, retain) NSMutableArray *namedFeatures;
+@property (nonatomic, retain) NSMutableArray *placeResults;
+@property (nonatomic) int status;
+@property (nonatomic) int statusCodeInfo;
+@property (nonatomic, retain) NSMutableArray *suggestionEntryLists;
+@property (nonatomic, retain) NSData *suggestionMetadata;
+@property (nonatomic) double turnaroundTime;
 
-- (void)_geoMapItemsWithHandler:(id)arg1;
+- (void)_geoMapItemsWithHandler:(id /* block */)arg1;
 - (void)addNamedFeatures:(id)arg1;
 - (void)addPlaceResult:(id)arg1;
 - (void)addSuggestionEntryLists:(id)arg1;

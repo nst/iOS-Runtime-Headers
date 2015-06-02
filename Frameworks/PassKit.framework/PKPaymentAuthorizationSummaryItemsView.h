@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray, PKPaymentAuthorizationLayout;
-
 @interface PKPaymentAuthorizationSummaryItemsView : UIView {
     NSMutableArray *_constraints;
     NSMutableArray *_labelViews;
@@ -11,7 +9,7 @@
     NSMutableArray *_valueViews;
 }
 
-@property PKPaymentAuthorizationLayout * layout;
+@property (nonatomic) PKPaymentAuthorizationLayout *layout;
 
 - (id)_labelAttributedStringWithString:(id)arg1;
 - (id)_valueAttributedStringWithString:(id)arg1;

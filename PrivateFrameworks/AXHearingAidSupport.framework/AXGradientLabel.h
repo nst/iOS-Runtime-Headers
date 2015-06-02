@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class NSString, UIFont, UIImage;
-
 @interface AXGradientLabel : UIView {
     UIFont *_font;
     UIImage *_gradient;
@@ -11,9 +9,9 @@
     NSString *_text;
 }
 
-@property(retain) UIFont * font;
-@property(retain) UIImage * gradient;
-@property(retain) NSString * text;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) UIImage *gradient;
+@property (nonatomic, retain) NSString *text;
 
 - (struct CGColor { }*)_patternColor;
 - (void)dealloc;

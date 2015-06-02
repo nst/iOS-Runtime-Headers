@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, NSString, SSSQLiteDatabase;
-
 @interface SSPurchasableItem : NSObject {
     SSSQLiteDatabase *_database;
     NSDictionary *_propertyValues;

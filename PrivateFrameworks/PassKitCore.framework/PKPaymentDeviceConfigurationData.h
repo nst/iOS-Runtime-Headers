@@ -6,7 +6,7 @@
     BOOL _devSigned;
 }
 
-@property BOOL devSigned;
+@property (nonatomic) BOOL devSigned;
 
 + (BOOL)supportsSecureCoding;
 

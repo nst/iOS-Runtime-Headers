@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSData, NSDictionary, NSError, NSMutableData, NSMutableURLRequest, NSString, NSURLConnection, NSURLResponse;
-
 @interface CTCellularPlanRequest : NSObject <NSURLConnectionDataDelegate> {
     NSDictionary *_bootstrapSettings;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     NSURLConnection *_connection;
     NSError *_error;
     NSDictionary *_internetSettings;
@@ -27,18 +17,18 @@
     int nextConnectionTypeIndex;
 }
 
-@property(copy) id completionBlock;
-@property(retain) NSURLConnection * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSError * error;
-@property(readonly) unsigned int hash;
-@property struct dispatch_queue_s { }* queue;
-@property(retain) NSMutableData * receivedData;
-@property(retain) NSMutableURLRequest * request;
-@property(retain) NSURLResponse * response;
-@property NSData * serializedCookies;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, retain) NSURLConnection *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct dispatch_queue_s { }*queue;
+@property (nonatomic, retain) NSMutableData *receivedData;
+@property (nonatomic, retain) NSMutableURLRequest *request;
+@property (nonatomic, retain) NSURLResponse *response;
+@property (nonatomic) NSData *serializedCookies;
+@property (readonly) Class superclass;
 
 + (id)connectionSettingsForServiceType:(int)arg1;
 + (id)createSessionRequest;
@@ -61,7 +51,7 @@
 - (BOOL)_isRetryableError:(id)arg1;
 - (void)_startRequestWithNextConnectionTypeOrFail;
 - (void)cancel;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (id)connection;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -79,7 +69,7 @@
 - (id)request;
 - (id)response;
 - (id)serializedCookies;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setQueue:(struct dispatch_queue_s { }*)arg1;
@@ -87,6 +77,6 @@
 - (void)setRequest:(id)arg1;
 - (void)setResponse:(id)arg1;
 - (void)setSerializedCookies:(id)arg1;
-- (void)startRequestWithReplyQueue:(struct dispatch_queue_s { }*)arg1 completion:(id)arg2;
+- (void)startRequestWithReplyQueue:(struct dispatch_queue_s { }*)arg1 completion:(id /* block */)arg2;
 
 @end

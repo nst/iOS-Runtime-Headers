@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSCountedSet, NSMapTable, NSMutableSet;
-
 @interface DAPowerAssertionManager : NSObject {
     NSMapTable *_contextToGroupIdentifier;
     NSMapTable *_contextToPowerAssertionRef;
@@ -13,12 +11,12 @@
     NSMutableSet *_heldAsideGroupIdentifiers;
 }
 
-@property(retain) NSMapTable * contextToGroupIdentifier;
-@property(retain) NSMapTable * contextToPowerAssertionRef;
-@property(retain) NSCountedSet * contexts;
-@property(retain) NSMapTable * groupIdentifierToContexts;
-@property(retain) NSCountedSet * heldAsideContexts;
-@property(retain) NSMutableSet * heldAsideGroupIdentifiers;
+@property (nonatomic, retain) NSMapTable *contextToGroupIdentifier;
+@property (nonatomic, retain) NSMapTable *contextToPowerAssertionRef;
+@property (nonatomic, retain) NSCountedSet *contexts;
+@property (nonatomic, retain) NSMapTable *groupIdentifierToContexts;
+@property (nonatomic, retain) NSCountedSet *heldAsideContexts;
+@property (nonatomic, retain) NSMutableSet *heldAsideGroupIdentifiers;
 
 + (id)sharedPowerAssertionManager;
 + (void)vendDaemons:(Class)arg1;

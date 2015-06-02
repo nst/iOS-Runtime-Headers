@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString;
-
 @interface PUMomentsSettings : PUSettings <UIAlertViewDelegate> {
     BOOL _allowCollectionInfluence;
     unsigned int _order;
 }
 
-@property BOOL allowCollectionInfluence;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int order;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL allowCollectionInfluence;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int order;
+@property (readonly) Class superclass;
 
 + (void)_clearSelection;
 + (id)_currentlySelectedAssets;

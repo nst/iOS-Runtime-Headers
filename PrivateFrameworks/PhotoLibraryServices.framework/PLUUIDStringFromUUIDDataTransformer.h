@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLUUIDStringFromUUIDDataTransformer : NSValueTransformer {
-}
+@interface PLUUIDStringFromUUIDDataTransformer : NSValueTransformer
 
 + (BOOL)allowsReverseTransformation;
 + (Class)transformedValueClass;

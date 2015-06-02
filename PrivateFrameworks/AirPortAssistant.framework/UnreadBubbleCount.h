@@ -11,8 +11,8 @@
     } _textSize;
 }
 
-@property int count;
-@property BOOL isSelected;
+@property (nonatomic) int count;
+@property (nonatomic) BOOL isSelected;
 
 + (void)deallocImageCache;
 + (long)initImageCache;

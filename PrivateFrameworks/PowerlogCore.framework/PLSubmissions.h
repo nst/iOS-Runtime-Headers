@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class PLSQLiteConnection, PLStorageOperator;
-
 @interface PLSubmissions : NSObject {
     PLSQLiteConnection *_connection;
     PLStorageOperator *_storageOperator;
 }
 
-@property(retain) PLSQLiteConnection * connection;
-@property PLStorageOperator * storageOperator;
+@property (retain) PLSQLiteConnection *connection;
+@property PLStorageOperator *storageOperator;
 
 + (id)sharedInstance;
 

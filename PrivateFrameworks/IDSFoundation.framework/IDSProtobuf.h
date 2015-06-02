@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
  */
 
-@class IDSMessageContext, NSData, NSMutableDictionary;
-
 @interface IDSProtobuf : NSObject <NSCoding> {
     NSMutableDictionary *_protoBufParams;
     NSData *_uncompressedData;
 }
 
-@property(retain) IDSMessageContext * context;
-@property(retain) NSData * data;
-@property BOOL isResponse;
-@property unsigned short type;
-@property(retain) NSData * uncompressedData;
+@property (nonatomic, retain) IDSMessageContext *context;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic) BOOL isResponse;
+@property (nonatomic) unsigned short type;
+@property (nonatomic, retain) NSData *uncompressedData;
+
+// Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
 
 + (id)keyRepresentationForType:(unsigned short)arg1 isResponse:(BOOL)arg2;
 
@@ -29,9 +29,6 @@
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithProtobufData:(id)arg1 type:(unsigned short)arg2 isResponse:(BOOL)arg3;
 - (BOOL)isResponse;
-- (id)nfmDescription;
-- (id)npkDescription;
-- (id)pbDescription;
 - (void)setContext:(id)arg1;
 - (void)setData:(id)arg1;
 - (void)setIsResponse:(BOOL)arg1;
@@ -39,5 +36,17 @@
 - (void)setUncompressedData:(id)arg1;
 - (unsigned short)type;
 - (id)uncompressedData;
+
+// Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
+
+- (id)nfmDescription;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (id)npkDescription;
+
+// Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
+
+- (id)pbDescription;
 
 @end

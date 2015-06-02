@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDLayoutController, TSUPointerKeyDictionary;
-
 @interface TSDRootLayout : TSDAbstractLayout <TSDAdaptiveLayout> {
     TSDLayoutController *mLayoutController;
     TSUPointerKeyDictionary *mShiftedObjects;

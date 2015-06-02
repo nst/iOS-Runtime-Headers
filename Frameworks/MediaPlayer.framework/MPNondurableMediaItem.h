@@ -11,7 +11,7 @@
 
 - (BOOL)didSkipWithPlayedToTime:(double)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id)arg2;
+- (void)enumerateValuesForProperties:(id)arg1 usingBlock:(id /* block */)arg2;
 - (BOOL)existsInLibrary;
 - (void)incrementPlayCountForPlayingToEnd;
 - (BOOL)incrementPlayCountForStopTime:(double)arg1;
@@ -23,7 +23,7 @@
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
 - (unsigned long long)persistentID;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
-- (void)updateDateAccessedToCurrentDateWithWriteCompletionBlock:(id)arg1;
+- (void)updateDateAccessedToCurrentDateWithWriteCompletionBlock:(id /* block */)arg1;
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
 

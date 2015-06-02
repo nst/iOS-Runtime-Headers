@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class CAAnimation, NSString;
-
 @interface CAStateAddAnimation : CAStateElement {
     CAAnimation *_animation;
     NSString *_key;
 }
 
-@property(retain) CAAnimation * animation;
-@property(copy) NSString * key;
+@property (nonatomic, retain) CAAnimation *animation;
+@property (nonatomic, copy) NSString *key;
 
 - (id)CAMLTypeForKey:(id)arg1;
 - (id)animation;

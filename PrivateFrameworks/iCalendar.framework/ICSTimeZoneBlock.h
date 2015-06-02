@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class ICSDate, NSArray;
+@interface ICSTimeZoneBlock : ICSComponent
 
-@interface ICSTimeZoneBlock : ICSComponent {
-}
-
-@property(retain) ICSDate * dtstart;
-@property(retain) NSArray * rdate;
-@property(retain) NSArray * rrule;
-@property NSArray * tzname;
-@property int tzoffsetfrom;
-@property int tzoffsetto;
+@property (nonatomic, retain) ICSDate *dtstart;
+@property (nonatomic, retain) NSArray *rdate;
+@property (nonatomic, retain) NSArray *rrule;
+@property (nonatomic) NSArray *tzname;
+@property (nonatomic) int tzoffsetfrom;
+@property (nonatomic) int tzoffsetto;
 
 - (void)addRecurrenceDate:(id)arg1;
 - (int)compare:(id)arg1;

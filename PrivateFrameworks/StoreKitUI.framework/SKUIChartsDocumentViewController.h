@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, NSString, SKUIChartColumnsView, SKUIChartsTemplateViewElement;
-
 @interface SKUIChartsDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
     SKUIChartColumnsView *_chartsView;
     NSMutableArray *_columnViewControllers;
     SKUIChartsTemplateViewElement *_templateElement;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 

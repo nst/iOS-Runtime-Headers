@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKBubbleFlowContainerView, _GKBubbleFlowPathTransitionInfo;
-
 @interface GKStandaloneWiggleRotateAnimator : GKWiggleRotateAnimator {
     GKBubbleFlowContainerView *_containerView;
     int _rotationDirection;
     _GKBubbleFlowPathTransitionInfo *_transitionContext;
 }
 
-@property(retain) GKBubbleFlowContainerView * containerView;
-@property int rotationDirection;
-@property(retain) _GKBubbleFlowPathTransitionInfo * transitionContext;
+@property (nonatomic, retain) GKBubbleFlowContainerView *containerView;
+@property (nonatomic) int rotationDirection;
+@property (nonatomic, retain) _GKBubbleFlowPathTransitionInfo *transitionContext;
 
 - (void)animate;
 - (void)animateForBubbleContainer:(id)arg1 withTransitionCoordinator:(id)arg2;

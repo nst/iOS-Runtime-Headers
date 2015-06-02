@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSDirInfoSerializer : NSAKSerializer {
-}
+@interface NSDirInfoSerializer : NSAKSerializer
 
 - (unsigned int)serializePListValueIn:(id)arg1 key:(id)arg2 value:(id)arg3;
 

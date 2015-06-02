@@ -7,8 +7,8 @@
     BOOL _explicitlyDisableFilters;
 }
 
-@property BOOL UUIDFilterHidesSomeAssets;
-@property BOOL explicitlyDisableFilters;
+@property (nonatomic) BOOL UUIDFilterHidesSomeAssets;
+@property (nonatomic) BOOL explicitlyDisableFilters;
 
 - (BOOL)UUIDFilterHidesSomeAssets;
 - (void)_setExplicitlyDisableFilters:(BOOL)arg1;

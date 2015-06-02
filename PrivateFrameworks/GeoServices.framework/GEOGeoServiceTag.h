@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSString;
-
 @interface GEOGeoServiceTag : PBCodable <NSCopying> {
     struct { 
         unsigned int serviceType : 1; 
@@ -12,9 +10,9 @@
     NSString *_tag;
 }
 
-@property BOOL hasServiceType;
-@property int serviceType;
-@property(retain) NSString * tag;
+@property (nonatomic) BOOL hasServiceType;
+@property (nonatomic) int serviceType;
+@property (nonatomic, retain) NSString *tag;
 
 + (id)defaultTag;
 

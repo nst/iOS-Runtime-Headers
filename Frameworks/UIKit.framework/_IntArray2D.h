@@ -9,9 +9,9 @@
     BOOL _shouldBoundsCheck;
 }
 
-@property(readonly) unsigned int iSize;
-@property(readonly) unsigned int jSize;
-@property BOOL shouldBoundsCheck;
+@property (nonatomic, readonly) unsigned int iSize;
+@property (nonatomic, readonly) unsigned int jSize;
+@property (nonatomic) BOOL shouldBoundsCheck;
 
 + (id)arrayWithISize:(unsigned int)arg1 jSize:(unsigned int)arg2;
 

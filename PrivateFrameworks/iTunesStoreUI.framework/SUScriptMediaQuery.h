@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class MPMediaQuery, NSArray, NSString;
-
 @interface SUScriptMediaQuery : SUScriptObject {
     NSArray *_collections;
     NSArray *_filterPredicates;
@@ -11,21 +9,21 @@
     BOOL _watchingLibrary;
 }
 
-@property(readonly) NSArray * collections;
-@property(readonly) NSString * comparisonTypeContains;
-@property(readonly) NSString * comparisonTypeEquals;
-@property(copy) id filterPredicates;
-@property(copy) NSString * groupingType;
-@property(readonly) NSString * groupingTypeAlbum;
-@property(readonly) NSString * groupingTypeAlbumArtist;
-@property(readonly) NSString * groupingTypeArtist;
-@property(readonly) NSString * groupingTypeComposer;
-@property(readonly) NSString * groupingTypeGenre;
-@property(readonly) NSString * groupingTypePlaylist;
-@property(readonly) NSString * groupingTypePodcastTitle;
-@property(readonly) NSString * groupingTypeTitle;
-@property(readonly) NSArray * items;
-@property(readonly) MPMediaQuery * nativeQuery;
+@property (readonly) NSArray *collections;
+@property (readonly) NSString *comparisonTypeContains;
+@property (readonly) NSString *comparisonTypeEquals;
+@property (copy) id filterPredicates;
+@property (copy) NSString *groupingType;
+@property (readonly) NSString *groupingTypeAlbum;
+@property (readonly) NSString *groupingTypeAlbumArtist;
+@property (readonly) NSString *groupingTypeArtist;
+@property (readonly) NSString *groupingTypeComposer;
+@property (readonly) NSString *groupingTypeGenre;
+@property (readonly) NSString *groupingTypePlaylist;
+@property (readonly) NSString *groupingTypePodcastTitle;
+@property (readonly) NSString *groupingTypeTitle;
+@property (readonly) NSArray *items;
+@property (nonatomic, readonly) MPMediaQuery *nativeQuery;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUITableViewShowAllRow : RUITableViewRow {
-}
+@interface RUITableViewShowAllRow : RUITableViewRow
 
 @end

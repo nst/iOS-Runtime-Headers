@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKContainer, NSOperationQueue;
-
 @interface CKDatabase : NSObject {
     CKContainer *_container;
     NSOperationQueue *_operationQueue;
@@ -11,43 +9,43 @@
     int _statusReportToken;
 }
 
-@property CKContainer * container;
-@property(readonly) NSOperationQueue * operationQueue;
-@property int scope;
-@property int statusReportToken;
+@property (nonatomic) CKContainer *container;
+@property (nonatomic, readonly) NSOperationQueue *operationQueue;
+@property (nonatomic) int scope;
+@property (nonatomic) int statusReportToken;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)_initWithContainer:(id)arg1 scope:(int)arg2;
 - (void)_scheduleOperation:(id)arg1;
-- (void)acceptShareWithURL:(id)arg1 completionHandler:(id)arg2;
+- (void)acceptShareWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addOperation:(id)arg1;
 - (void)clearAssetCache;
 - (void)clearAuthTokensForRecordWithID:(id)arg1;
 - (void)clearRecordCache;
 - (id)container;
-- (id)daemonWithErrorHandler:(id)arg1;
+- (id)daemonWithErrorHandler:(id /* block */)arg1;
 - (void)dealloc;
-- (void)deleteRecordWithID:(id)arg1 completionHandler:(id)arg2;
-- (void)deleteRecordZoneWithID:(id)arg1 completionHandler:(id)arg2;
-- (void)deleteShareWithID:(id)arg1 completionHandler:(id)arg2;
-- (void)deleteSubscriptionWithID:(id)arg1 completionHandler:(id)arg2;
+- (void)deleteRecordWithID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)deleteRecordZoneWithID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)deleteShareWithID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)deleteSubscriptionWithID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)description;
-- (void)fetchAllRecordZonesWithCompletionHandler:(id)arg1;
-- (void)fetchAllSharesWithRecordZoneID:(id)arg1 completionHandler:(id)arg2;
-- (void)fetchAllSubscriptionsWithCompletionHandler:(id)arg1;
-- (void)fetchRecordWithID:(id)arg1 completionHandler:(id)arg2;
-- (void)fetchRecordZoneWithID:(id)arg1 completionHandler:(id)arg2;
-- (void)fetchShareWithID:(id)arg1 completionHandler:(id)arg2;
-- (void)fetchSubscriptionWithID:(id)arg1 completionHandler:(id)arg2;
-- (void)getPCSDiagnosticsForZonesWithCompletionHandler:(id)arg1;
+- (void)fetchAllRecordZonesWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchAllSharesWithRecordZoneID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchAllSubscriptionsWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchRecordWithID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchRecordZoneWithID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchShareWithID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchSubscriptionWithID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)getPCSDiagnosticsForZonesWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)operationQueue;
-- (void)performQuery:(id)arg1 inZoneWithID:(id)arg2 completionHandler:(id)arg3;
-- (void)saveRecord:(id)arg1 completionHandler:(id)arg2;
-- (void)saveRecordZone:(id)arg1 completionHandler:(id)arg2;
-- (void)saveShare:(id)arg1 completionHandler:(id)arg2;
-- (void)saveSubscription:(id)arg1 completionHandler:(id)arg2;
+- (void)performQuery:(id)arg1 inZoneWithID:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)saveRecord:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)saveRecordZone:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)saveShare:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)saveSubscription:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)scope;
 - (void)setContainer:(id)arg1;
 - (void)setScope:(int)arg1;

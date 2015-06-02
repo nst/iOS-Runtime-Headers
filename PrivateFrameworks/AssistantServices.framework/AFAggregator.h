@@ -10,8 +10,8 @@
     unsigned int _type;
 }
 
-@property unsigned int connectionType;
-@property BOOL hasActiveRequest;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) BOOL hasActiveRequest;
 
 + (id)_fullAggDKeyWithPrefix:(id)arg1 error:(id)arg2;
 + (id)_stringForGatekeeperType:(unsigned int)arg1;

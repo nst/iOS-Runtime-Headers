@@ -7,8 +7,8 @@
     int _status;
 }
 
-@property(readonly) int request;
-@property(readonly) int status;
+@property (readonly) int request;
+@property (readonly) int status;
 
 + (BOOL)supportsSecureCoding;
 

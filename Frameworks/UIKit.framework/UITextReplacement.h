@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UITextRange;
-
 @interface UITextReplacement : NSObject {
     NSString *_menuTitle;
     NSString *_originalText;
@@ -12,11 +10,11 @@
     unsigned int _usageTrackingMask;
 }
 
-@property(readonly) NSString * menuTitle;
-@property(readonly) NSString * originalText;
-@property(readonly) UITextRange * range;
-@property(readonly) NSString * replacementText;
-@property unsigned int usageTrackingMask;
+@property (nonatomic, readonly) NSString *menuTitle;
+@property (nonatomic, readonly) NSString *originalText;
+@property (nonatomic, readonly) UITextRange *range;
+@property (nonatomic, readonly) NSString *replacementText;
+@property (nonatomic) unsigned int usageTrackingMask;
 
 + (id)replacementWithRange:(id)arg1 original:(id)arg2 replacement:(id)arg3 menuTitle:(id)arg4;
 

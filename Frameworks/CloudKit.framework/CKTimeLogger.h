@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKTimeLogger, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CKTimeLogger : NSObject <NSCoding> {
     NSMutableArray *_childLoggers;
     NSMutableDictionary *_currentSessions;
@@ -17,15 +15,15 @@
     double _relationTime;
 }
 
-@property(readonly) NSArray * childLoggers;
-@property(retain) NSMutableDictionary * currentSessions;
-@property(readonly) NSDictionary * logs;
-@property(retain) NSString * observedObjectClassName;
-@property(retain) NSString * observedObjectDescription;
-@property CKTimeLogger * parentLogger;
-@property(retain) NSString * parentLoggerDescription;
-@property(retain) NSString * relationMessage;
-@property double relationTime;
+@property (readonly) NSArray *childLoggers;
+@property (retain) NSMutableDictionary *currentSessions;
+@property (readonly) NSDictionary *logs;
+@property (nonatomic, retain) NSString *observedObjectClassName;
+@property (nonatomic, retain) NSString *observedObjectDescription;
+@property (nonatomic) CKTimeLogger *parentLogger;
+@property (nonatomic, retain) NSString *parentLoggerDescription;
+@property (nonatomic, retain) NSString *relationMessage;
+@property (nonatomic) double relationTime;
 
 + (id)loggerForObject:(id)arg1;
 
@@ -69,6 +67,6 @@
 - (void)setRelationTime:(double)arg1;
 - (id)statusReport;
 - (void)togglePauseLoggingSessionOfType:(id)arg1 message:(id)arg2;
-- (void)treeTraversalWithBlock:(id)arg1;
+- (void)treeTraversalWithBlock:(id /* block */)arg1;
 
 @end

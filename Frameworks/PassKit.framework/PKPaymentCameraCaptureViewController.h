@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentCameraCaptureViewControllerDelegate>, <PKPaymentSetupViewControllerDelegate>, NSArray, NSString, PKCameraCaptureInstructionView, PKPaymentCardManualEntryViewController, UIView;
-
 @interface PKPaymentCameraCaptureViewController : CRCameraReader <CRCameraReaderDelegate> {
     <PKPaymentCameraCaptureViewControllerDelegate> *_cameraCaptureDelegate;
     PKCameraCaptureInstructionView *_cameraInstructionView;
@@ -15,11 +13,11 @@
     <PKPaymentSetupViewControllerDelegate> *_setupDelegate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL hideSetupLaterButton;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hideSetupLaterButton;
+@property (readonly) Class superclass;
 
 - (void)_manualEntryButtonPressed:(id)arg1;
 - (void)_pushManualEntryViewControllerAndRemoveSelf;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKRasterTrafficTileSource : VKTileSetBackedTileSource {
-}
+@interface VKRasterTrafficTileSource : VKTileSetBackedTileSource
 
 - (BOOL)expires;
 - (id)initWithTileSet:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3;

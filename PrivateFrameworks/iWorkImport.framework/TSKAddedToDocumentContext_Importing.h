@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSKAddedToDocumentContext_Importing : TSKAddedToDocumentContext {
     NSString *mImporterID;
 }

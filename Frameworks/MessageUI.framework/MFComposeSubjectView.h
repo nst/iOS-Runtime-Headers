@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString, UIButton, UITextField;
-
 @interface MFComposeSubjectView : MFComposeHeaderView <UITextFieldDelegate> {
-    unsigned int _delegateRespondsToTextChange : 1;
+    unsigned int _delegateRespondsToTextChange;
     UIButton *_notifyButton;
-    unsigned int _notifyButtonSelected : 1;
-    unsigned int _showNotifyButton : 1;
+    unsigned int _notifyButtonSelected;
+    unsigned int _showNotifyButton;
     UITextField *_textField;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIButton * notifyButton;
-@property(readonly) Class superclass;
-@property(readonly) UITextField * textField;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIButton *notifyButton;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITextField *textField;
 
 - (BOOL)_canBecomeFirstResponder;
 - (BOOL)becomeFirstResponder;

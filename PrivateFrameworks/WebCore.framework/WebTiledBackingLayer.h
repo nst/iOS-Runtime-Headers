@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface WebTiledBackingLayer : CALayer {
     struct OwnPtr<WebCore::TileController> { 
         struct TileController {} *m_ptr; 

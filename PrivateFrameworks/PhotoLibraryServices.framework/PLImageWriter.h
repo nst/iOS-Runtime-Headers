@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSCountedSet, NSMutableArray, NSMutableDictionary, NSRecursiveLock, PLXPCTransaction;
-
 @interface PLImageWriter : NSObject <PLPhotoBakedThumbnailsDelegate> {
     BOOL _databaseIsCorrupt;
     NSMutableArray *_highPriorityJobs;

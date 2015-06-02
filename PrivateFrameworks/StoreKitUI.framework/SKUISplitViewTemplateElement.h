@@ -2,20 +2,18 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIJSDOMFeatureNavigationDocument, SKUIViewElement;
-
 @interface SKUISplitViewTemplateElement : SKUIViewElement {
     SKUIJSDOMFeatureNavigationDocument *_leftNavigationDocument;
     int _preferredDisplayMode;
     SKUIJSDOMFeatureNavigationDocument *_rightNavigationDocument;
 }
 
-@property(readonly) SKUIJSDOMFeatureNavigationDocument * leftNavigationDocument;
-@property(readonly) SKUIViewElement * leftSplitElement;
-@property(readonly) int preferredDisplayMode;
-@property(readonly) SKUIJSDOMFeatureNavigationDocument * rightNavigationDocument;
-@property(readonly) SKUIViewElement * rightSplitElement;
-@property(readonly) BOOL usesInlineSplitContent;
+@property (readonly) SKUIJSDOMFeatureNavigationDocument *leftNavigationDocument;
+@property (nonatomic, readonly) SKUIViewElement *leftSplitElement;
+@property (nonatomic, readonly) int preferredDisplayMode;
+@property (readonly) SKUIJSDOMFeatureNavigationDocument *rightNavigationDocument;
+@property (nonatomic, readonly) SKUIViewElement *rightSplitElement;
+@property (nonatomic, readonly) BOOL usesInlineSplitContent;
 
 + (id)supportedFeatures;
 

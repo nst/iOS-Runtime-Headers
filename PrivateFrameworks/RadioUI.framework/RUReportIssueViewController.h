@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSArray, NSString, RadioStation, RadioTrack, UIPickerView, UITextView;
-
 @interface RUReportIssueViewController : UIViewController <UIPickerViewDataSource, UIPickerViewDelegate> {
     RadioTrack *_currentTrack;
     BOOL _isLowBitrate;
@@ -14,11 +12,11 @@
     RadioStation *_station;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * issueText;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *issueText;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_descriptionForIssueType:(int)arg1;

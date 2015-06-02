@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OITSULinkedPointerSetEntry;
-
 @interface OITSULinkedPointerSetEntry : NSObject {
     OITSULinkedPointerSetEntry *mNext;
     id mObject;

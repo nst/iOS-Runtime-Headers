@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray;
-
 @interface MFPGradientBrush : MFPBrush {
     NSArray *mBlend;
     NSArray *mColorBlend;

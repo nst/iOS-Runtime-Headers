@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSExpression, NSMutableArray;
-
 @interface NSSQLSimpleWhereIntermediate : NSSQLWhereIntermediate {
     NSMutableArray *_comparisonPredicateScopedItem;
     NSExpression *_effectiveLeftExpression;

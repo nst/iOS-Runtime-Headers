@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@class NSDictionary, NSStream;
-
 @interface ATMessage : NSObject <NSSecureCoding> {
     NSStream *_dataStream;
     unsigned int _messageID;
@@ -12,23 +10,22 @@
     double _timestamp;
 }
 
-@property(retain) NSStream * dataStream;
-@property unsigned int messageID;
-@property unsigned int options;
-@property(retain) NSDictionary * parameters;
-@property unsigned int sessionID;
-@property double timestamp;
+@property (nonatomic, retain) NSStream *dataStream;
+@property (nonatomic) unsigned int messageID;
+@property (nonatomic) unsigned int options;
+@property (nonatomic, retain) NSDictionary *parameters;
+@property (nonatomic) unsigned int sessionID;
+@property (nonatomic) double timestamp;
+
+// Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)ATPMessage;
-- (id)ATPMessageWithPayloadData:(id)arg1;
 - (id)additionalDescription;
 - (id)dataStream;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithATPMessage:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)messageID;
 - (unsigned int)options;
@@ -42,5 +39,11 @@
 - (void)setSessionID:(unsigned int)arg1;
 - (void)setTimestamp:(double)arg1;
 - (double)timestamp;
+
+// Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
+
+- (id)ATPMessage;
+- (id)ATPMessageWithPayloadData:(id)arg1;
+- (id)initWithATPMessage:(id)arg1;
 
 @end

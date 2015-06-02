@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSPUnknownFieldTreeNode : NSObject {
-}
+@interface TSPUnknownFieldTreeNode : NSObject
 
 @end

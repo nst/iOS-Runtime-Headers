@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBBulletin;
-
 @interface BBBulletinUpdate : NSObject {
     BBBulletin *_bulletin;
     unsigned int _feeds;
@@ -11,10 +9,10 @@
     int _type;
 }
 
-@property(retain,readonly) BBBulletin * bulletin;
-@property(readonly) unsigned int feeds;
-@property(readonly) BOOL shouldSync;
-@property(readonly) int type;
+@property (nonatomic, readonly, retain) BBBulletin *bulletin;
+@property (nonatomic, readonly) unsigned int feeds;
+@property (nonatomic, readonly) BOOL shouldSync;
+@property (nonatomic, readonly) int type;
 
 + (id)modifyForBulletin:(id)arg1 feeds:(unsigned int)arg2;
 + (id)removeForBulletin:(id)arg1 feeds:(unsigned int)arg2 shouldSync:(BOOL)arg3;

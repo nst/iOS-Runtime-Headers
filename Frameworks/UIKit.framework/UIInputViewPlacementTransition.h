@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <NSObject>, <UIInputViewAnimationController>, UIInputViewAnimationStyle, UIInputViewSetNotificationInfo, UIInputViewSetPlacement;
-
 @interface UIInputViewPlacementTransition : NSObject {
     <NSObject> *animationContext;
     <UIInputViewAnimationController> *animationController;
@@ -16,15 +14,15 @@
     UIInputViewSetPlacement *toPlacement;
 }
 
-@property(retain) <NSObject> * animationContext;
-@property(retain) <UIInputViewAnimationController> * animationController;
-@property int animationState;
-@property(retain) UIInputViewAnimationStyle * animationStyle;
-@property BOOL cancelled;
-@property(retain) UIInputViewSetPlacement * fromPlacement;
-@property(retain) UIInputViewSetNotificationInfo * notificationInfo;
-@property unsigned int notifications;
-@property(retain) UIInputViewSetPlacement * toPlacement;
+@property (nonatomic, retain) <NSObject> *animationContext;
+@property (nonatomic, retain) <UIInputViewAnimationController> *animationController;
+@property (nonatomic) int animationState;
+@property (nonatomic, retain) UIInputViewAnimationStyle *animationStyle;
+@property (nonatomic) BOOL cancelled;
+@property (nonatomic, retain) UIInputViewSetPlacement *fromPlacement;
+@property (nonatomic, retain) UIInputViewSetNotificationInfo *notificationInfo;
+@property (nonatomic) unsigned int notifications;
+@property (nonatomic, retain) UIInputViewSetPlacement *toPlacement;
 
 + (id)transitionFromPlacement:(id)arg1 toPlacement:(id)arg2 withAnimationStyle:(id)arg3;
 

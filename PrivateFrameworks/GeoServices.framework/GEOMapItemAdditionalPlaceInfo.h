@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, GEOPlace, NSString;
-
 @interface GEOMapItemAdditionalPlaceInfo : NSObject {
     GEOPlace *_place;
 }
 
-@property(readonly) double areaInMeters;
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property(readonly) GEOMapRegion * mapRegion;
-@property(readonly) NSString * name;
-@property(readonly) int placeType;
+@property (nonatomic, readonly) double areaInMeters;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, readonly) GEOMapRegion *mapRegion;
+@property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) int placeType;
 
 - (double)areaInMeters;
 - (struct { double x1; double x2; })coordinate;

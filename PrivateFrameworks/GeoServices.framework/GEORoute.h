@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData, NSMutableArray, NSString;
-
 @interface GEORoute : PBCodable <NSCopying> {
     NSMutableArray *_advisoryNotices;
     struct { 
@@ -61,54 +59,55 @@
     NSData *_zilchPoints;
 }
 
-@property(retain) NSMutableArray * advisoryNotices;
-@property(readonly) int* advisorys;
-@property(readonly) unsigned int advisorysCount;
-@property(retain) NSData * arrivalRouteID;
-@property unsigned int arrivalStepID;
-@property(retain) NSData * basicPoints;
-@property(retain) NSData * departureRouteID;
-@property unsigned int departureStepID;
-@property unsigned int distance;
-@property int drivingSide;
-@property unsigned int expectedTime;
-@property(readonly) BOOL hasArrivalRouteID;
-@property BOOL hasArrivalStepID;
-@property(readonly) BOOL hasBasicPoints;
-@property(readonly) BOOL hasDepartureRouteID;
-@property BOOL hasDepartureStepID;
-@property BOOL hasDistance;
-@property BOOL hasDrivingSide;
-@property BOOL hasExpectedTime;
-@property BOOL hasHistoricTravelTime;
-@property(readonly) BOOL hasName;
-@property(readonly) BOOL hasPhoneticName;
-@property(readonly) BOOL hasRouteID;
-@property BOOL hasRouteType;
-@property BOOL hasTransportType;
-@property(readonly) BOOL hasUnpackedLatLngVertices;
-@property(readonly) BOOL hasZilchPoints;
-@property unsigned int historicTravelTime;
-@property(readonly) unsigned int* incidentEndOffsetsInRoutes;
-@property(readonly) unsigned int incidentEndOffsetsInRoutesCount;
-@property(readonly) unsigned int* incidentIndices;
-@property(readonly) unsigned int incidentIndicesCount;
-@property(retain) NSString * name;
-@property(retain) NSString * phoneticName;
-@property(readonly) unsigned int pointCount;
-@property(retain) NSData * routeID;
-@property(retain) NSMutableArray * routeNames;
-@property int routeType;
-@property(retain) NSMutableArray * steps;
-@property(readonly) unsigned int* trafficColorOffsets;
-@property(readonly) unsigned int trafficColorOffsetsCount;
-@property(readonly) unsigned int* trafficColors;
-@property(readonly) unsigned int trafficColorsCount;
-@property int transportType;
-@property(retain) NSData * unpackedLatLngVertices;
-@property(retain) NSData * zilchPoints;
+@property (nonatomic, retain) NSMutableArray *advisoryNotices;
+@property (nonatomic, readonly) int*advisorys;
+@property (nonatomic, readonly) unsigned int advisorysCount;
+@property (nonatomic, retain) NSData *arrivalRouteID;
+@property (nonatomic) unsigned int arrivalStepID;
+@property (nonatomic, retain) NSData *basicPoints;
+@property (nonatomic, retain) NSData *departureRouteID;
+@property (nonatomic) unsigned int departureStepID;
+@property (nonatomic) unsigned int distance;
+@property (nonatomic) int drivingSide;
+@property (nonatomic) unsigned int expectedTime;
+@property (nonatomic, readonly) BOOL hasArrivalRouteID;
+@property (nonatomic) BOOL hasArrivalStepID;
+@property (nonatomic, readonly) BOOL hasBasicPoints;
+@property (nonatomic, readonly) BOOL hasDepartureRouteID;
+@property (nonatomic) BOOL hasDepartureStepID;
+@property (nonatomic) BOOL hasDistance;
+@property (nonatomic) BOOL hasDrivingSide;
+@property (nonatomic) BOOL hasExpectedTime;
+@property (nonatomic) BOOL hasHistoricTravelTime;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic, readonly) BOOL hasPhoneticName;
+@property (nonatomic, readonly) BOOL hasRouteID;
+@property (nonatomic) BOOL hasRouteType;
+@property (nonatomic) BOOL hasTransportType;
+@property (nonatomic, readonly) BOOL hasUnpackedLatLngVertices;
+@property (nonatomic, readonly) BOOL hasZilchPoints;
+@property (nonatomic) unsigned int historicTravelTime;
+@property (nonatomic, readonly) unsigned int*incidentEndOffsetsInRoutes;
+@property (nonatomic, readonly) unsigned int incidentEndOffsetsInRoutesCount;
+@property (nonatomic, readonly) unsigned int*incidentIndices;
+@property (nonatomic, readonly) unsigned int incidentIndicesCount;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *phoneticName;
+@property (readonly) unsigned int pointCount;
+@property (nonatomic, retain) NSData *routeID;
+@property (nonatomic, retain) NSMutableArray *routeNames;
+@property (nonatomic) int routeType;
+@property (nonatomic, retain) NSMutableArray *steps;
+@property (nonatomic, readonly) unsigned int*trafficColorOffsets;
+@property (nonatomic, readonly) unsigned int trafficColorOffsetsCount;
+@property (nonatomic, readonly) unsigned int*trafficColors;
+@property (nonatomic, readonly) unsigned int trafficColorsCount;
+@property (nonatomic) int transportType;
+@property (nonatomic, retain) NSData *unpackedLatLngVertices;
+@property (nonatomic, retain) NSData *zilchPoints;
 
-- (struct CGImage { }*)_mapKitImage;
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
 - (void)addAdvisory:(int)arg1;
 - (void)addAdvisoryNotice:(id)arg1;
 - (void)addIncidentEndOffsetsInRoute:(unsigned int)arg1;
@@ -173,10 +172,8 @@
 - (unsigned int)incidentIndicesAtIndex:(unsigned int)arg1;
 - (unsigned int)incidentIndicesCount;
 - (unsigned int)indexForStepID:(unsigned int)arg1;
-- (id)instructionsForStep:(id)arg1;
 - (BOOL)isContingentRouteFor:(id)arg1 afterPoint:(unsigned int)arg2 mainRoutes:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (id)maneuverImageForStep:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
 - (id)newETARoute;
@@ -241,5 +238,11 @@
 - (id)unpackedLatLngVertices;
 - (void)writeTo:(id)arg1;
 - (id)zilchPoints;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (struct CGImage { }*)_mapKitImage;
+- (id)instructionsForStep:(id)arg1;
+- (id)maneuverImageForStep:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 
 @end

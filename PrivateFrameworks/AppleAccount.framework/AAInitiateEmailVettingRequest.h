@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AAInitiateEmailVettingRequest : AAEmailVettingRequest {
-}
+@interface AAInitiateEmailVettingRequest : AAEmailVettingRequest
 
 - (id)bodyDictionary;
 - (id)urlString;

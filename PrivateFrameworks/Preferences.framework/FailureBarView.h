@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UILabel;
-
 @interface FailureBarView : UIImageView {
     UILabel *_titleLabel;
 }

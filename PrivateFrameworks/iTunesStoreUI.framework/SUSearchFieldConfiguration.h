@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUClientInterface;
-
 @interface SUSearchFieldConfiguration : NSObject <NSCopying> {
     NSString *_cancelString;
     SUClientInterface *_clientInterface;
@@ -18,12 +16,12 @@
     float _widthPortrait;
 }
 
-@property(readonly) NSString * cancelString;
-@property(readonly) int location;
-@property(readonly) NSString * placeholderString;
-@property(getter=isRootViewOnly,readonly) BOOL rootViewOnly;
-@property(readonly) NSString * userDefaultsKey;
-@property(readonly) float width;
+@property (nonatomic, readonly) NSString *cancelString;
+@property (nonatomic, readonly) int location;
+@property (nonatomic, readonly) NSString *placeholderString;
+@property (getter=isRootViewOnly, nonatomic, readonly) BOOL rootViewOnly;
+@property (nonatomic, readonly) NSString *userDefaultsKey;
+@property (nonatomic, readonly) float width;
 
 + (id)defaultConfiguration;
 + (id)defaultConfigurationWithClientInterface:(id)arg1;

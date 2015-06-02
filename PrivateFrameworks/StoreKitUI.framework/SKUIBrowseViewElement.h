@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUIBrowseViewElement : SKUIViewElement {
     NSString *_title;
 }
 
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSString *title;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

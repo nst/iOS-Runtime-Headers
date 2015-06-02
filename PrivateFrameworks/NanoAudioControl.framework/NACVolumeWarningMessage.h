@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoAudioControl.framework/NanoAudioControl
  */
 
-@class NSString;
-
 @interface NACVolumeWarningMessage : PBCodable <NSCopying> {
     NSString *_category;
     struct { 
@@ -12,10 +10,10 @@
     BOOL _volumeWarningEnabled;
 }
 
-@property(retain) NSString * category;
-@property(readonly) BOOL hasCategory;
-@property BOOL hasVolumeWarningEnabled;
-@property BOOL volumeWarningEnabled;
+@property (nonatomic, retain) NSString *category;
+@property (nonatomic, readonly) BOOL hasCategory;
+@property (nonatomic) BOOL hasVolumeWarningEnabled;
+@property (nonatomic) BOOL volumeWarningEnabled;
 
 - (void).cxx_destruct;
 - (id)category;

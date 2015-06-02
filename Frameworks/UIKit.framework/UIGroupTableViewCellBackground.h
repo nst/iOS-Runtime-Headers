@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIColor, UIView;
-
 @interface UIGroupTableViewCellBackground : UIView {
     int _animationCount;
     UIView *_bottomSeparatorView;
@@ -25,13 +23,13 @@
     UIView *_topSeparatorView;
 }
 
-@property float sectionBorderWidth;
-@property int sectionLocation;
-@property(getter=isSelected) BOOL selected;
-@property int selectionStyle;
-@property(retain) UIColor * selectionTintColor;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
-@property int separatorStyle;
+@property (nonatomic) float sectionBorderWidth;
+@property (nonatomic) int sectionLocation;
+@property (getter=isSelected, nonatomic) BOOL selected;
+@property (nonatomic) int selectionStyle;
+@property (nonatomic, retain) UIColor *selectionTintColor;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
+@property (nonatomic) int separatorStyle;
 
 + (void)_flushCacheOnNotification:(id)arg1;
 + (void)initialize;

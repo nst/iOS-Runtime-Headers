@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class IKAppDocument, NSArray, NSDictionary, NSNumber, NSSet, NSString, NSValue, SKUINavigationBarController, SSVLoadURLOperation, UIView, UIViewController;
-
 @interface SKUIDocumentContainerViewController : SKUIViewController <IKAppDocumentDelegate, SKUIModalSourceViewProvider, SKUINavigationPaletteProvider> {
     UIViewController *_beforeErrorChildViewController;
     UIViewController *_childViewController;
@@ -21,11 +19,11 @@
     NSString *_urlString;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UIView * navigationPaletteView;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UIView *navigationPaletteView;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
@@ -54,7 +52,7 @@
 - (void)documentDidUpdate:(id)arg1;
 - (void)documentNeedsUpdate:(id)arg1;
 - (void)documentScrollToTop:(id)arg1;
-- (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id)arg2;
+- (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)impressionableViewElementsForDocument:(id)arg1;
 - (id)initWithDocument:(id)arg1 options:(id)arg2 clientContext:(id)arg3;
 - (void)loadView;

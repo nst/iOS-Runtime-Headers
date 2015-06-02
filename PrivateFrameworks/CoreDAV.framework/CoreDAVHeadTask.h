@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@interface CoreDAVHeadTask : CoreDAVTask {
-}
+@interface CoreDAVHeadTask : CoreDAVTask
 
 - (unsigned int)cachePolicy;
 - (void)finishCoreDAVTaskWithError:(id)arg1;

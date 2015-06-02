@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@class AFLocation;
-
 @interface STShowMapsSearchResultsRequest : AFSiriRequest {
     AFLocation *_searchResults;
 }

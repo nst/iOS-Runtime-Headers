@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKRecordZoneID, NSArray, NSData, NSMutableArray;
-
 @interface CKDFetchChangedRecordZonesURLRequest : CKDURLRequest {
     NSMutableArray *_changedZoneIDs;
     NSMutableArray *_deletedZoneIDs;
@@ -14,13 +12,13 @@
     int _status;
 }
 
-@property(readonly) NSArray * changedZoneIDs;
-@property(readonly) NSArray * deletedZoneIDs;
-@property(retain) NSData * previousServerChangeTokenData;
-@property(retain) CKRecordZoneID * recordZoneID;
-@property unsigned int resultsLimit;
-@property(retain) NSData * serverChangeTokenData;
-@property int status;
+@property (nonatomic, readonly) NSArray *changedZoneIDs;
+@property (nonatomic, readonly) NSArray *deletedZoneIDs;
+@property (nonatomic, retain) NSData *previousServerChangeTokenData;
+@property (nonatomic, retain) CKRecordZoneID *recordZoneID;
+@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic, retain) NSData *serverChangeTokenData;
+@property (nonatomic) int status;
 
 - (void).cxx_destruct;
 - (id)changedZoneIDs;

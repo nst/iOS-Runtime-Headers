@@ -6,7 +6,7 @@
     BOOL _allowsHeaderAndFooterToFloat;
 }
 
-@property BOOL allowsHeaderAndFooterToFloat;
+@property (nonatomic) BOOL allowsHeaderAndFooterToFloat;
 
 - (BOOL)allowsFooterViewsToFloat;
 - (BOOL)allowsHeaderAndFooterToFloat;

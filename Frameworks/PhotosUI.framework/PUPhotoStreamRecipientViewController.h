@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class ABPeoplePickerNavigationController, IDSBatchIDQueryController, MFComposeRecipientView, MFContactsSearchManager, MFContactsSearchResultsModel, NSArray, NSMutableSet, NSNumber, NSString, UIScrollView, UITableView;
-
 @interface PUPhotoStreamRecipientViewController : UIViewController <ABPeoplePickerNavigationControllerDelegate, IDSBatchIDQueryControllerDelegate, MFComposeRecipientViewDelegate, MFContactsSearchConsumer, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     float _bottomTableOffset;
     NSNumber *_currentSearchTaskID;
@@ -27,13 +25,13 @@
     BOOL _wasFirstResponder;
 }
 
-@property float bottomTableOffset;
-@property(copy,readonly) NSString * debugDescription;
-@property id delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * recipients;
-@property(readonly) Class superclass;
+@property (nonatomic) float bottomTableOffset;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) id delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *recipients;
+@property (readonly) Class superclass;
 
 + (void)recordRecentInvitationRecipient:(id)arg1 displayName:(id)arg2 date:(id)arg3;
 

@@ -2,16 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary;
+@interface UIWatchKitExtensionRequestAction : BSAction
 
-@interface UIWatchKitExtensionRequestAction : BSAction {
-}
-
-@property(retain,readonly) NSDictionary * request;
+@property (nonatomic, readonly, retain) NSDictionary *request;
 
 - (int)UIActionType;
-- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
-- (id)initWithRequest:(id)arg1 withHandler:(id)arg2;
+- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id /* block */)arg4;
+- (id)initWithRequest:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)request;
 - (void)sendResponse:(id)arg1;

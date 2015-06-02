@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSArray, NSMapTable, NSMutableArray, VKVectorTile;
-
 @interface VKOverlayTile : VKTile {
     float _maximumStyleZ;
     NSMutableArray *_overlays;
@@ -11,9 +9,9 @@
     NSMapTable *_tileForOverlay;
 }
 
-@property(readonly) float maximumStyleZ;
-@property(readonly) NSArray * overlays;
-@property(retain) VKVectorTile * roadTile;
+@property (nonatomic, readonly) float maximumStyleZ;
+@property (nonatomic, readonly) NSArray *overlays;
+@property (nonatomic, retain) VKVectorTile *roadTile;
 
 - (void)addOverlay:(id)arg1;
 - (void)dealloc;

@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class RCCompositionController;
-
 @interface RCShareMemoViewController : UIActivityViewController {
     RCCompositionController *_compositionController;
 }
 
-@property(readonly) RCCompositionController * compositionController;
+@property (nonatomic, readonly) RCCompositionController *compositionController;
 
-+ (id)_newPresentedPrepareAlertControllerForComposition:(id)arg1 dismissHandler:(id)arg2;
++ (id)_newPresentedPrepareAlertControllerForComposition:(id)arg1 dismissHandler:(id /* block */)arg2;
 + (id)_newPresentedPrepareFailureAlertControllerForComposition:(id)arg1;
-+ (void)prepareToShareComposition:(id)arg1 ignoringInteraction:(BOOL)arg2 shouldContinuePreparingBlock:(id)arg3 preparedHandler:(id)arg4;
-+ (void)presentInViewController:(id)arg1 composition:(id)arg2 ignoringInteraction:(BOOL)arg3 shouldContinuePreparingBlock:(id)arg4 preparedToPresentBlock:(id)arg5;
++ (void)prepareToShareComposition:(id)arg1 ignoringInteraction:(BOOL)arg2 shouldContinuePreparingBlock:(id /* block */)arg3 preparedHandler:(id /* block */)arg4;
++ (void)presentInViewController:(id)arg1 composition:(id)arg2 ignoringInteraction:(BOOL)arg3 shouldContinuePreparingBlock:(id /* block */)arg4 preparedToPresentBlock:(id /* block */)arg5;
 + (id)unsupportedActivityTypes;
 
 - (void).cxx_destruct;

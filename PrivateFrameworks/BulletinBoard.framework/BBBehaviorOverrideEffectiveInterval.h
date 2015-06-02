@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSCalendar, NSDateComponents, NSString, NSUUID;
-
 @interface BBBehaviorOverrideEffectiveInterval : NSObject <BBBehaviorOverrideEffectivePeriod> {
     NSCalendar *_calendar;
     NSString *_calendarIdentifier;
@@ -13,16 +11,16 @@
     NSDateComponents *_startComponents;
 }
 
-@property(copy) NSCalendar * calendar;
-@property(copy) NSString * calendarIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSDateComponents * endComponents;
-@property(readonly) unsigned int hash;
-@property(copy) NSUUID * identifier;
-@property unsigned int repeatInterval;
-@property(copy) NSDateComponents * startComponents;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSCalendar *calendar;
+@property (nonatomic, copy) NSString *calendarIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSDateComponents *endComponents;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSUUID *identifier;
+@property (nonatomic) unsigned int repeatInterval;
+@property (nonatomic, copy) NSDateComponents *startComponents;
+@property (readonly) Class superclass;
 
 + (int)_dateComponentWithProvidedComponent:(int)arg1 andBaseComponent:(int)arg2;
 + (id)adjustComponentsForRepeatInterval:(unsigned int)arg1 earlier:(BOOL)arg2;

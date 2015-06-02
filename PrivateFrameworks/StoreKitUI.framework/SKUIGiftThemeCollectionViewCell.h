@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIGift, SKUIGiftConfiguration, SKUIGiftItemView, SKUIGiftTheme, UIImage, UIImageView, UILabel;
-
 @interface SKUIGiftThemeCollectionViewCell : UICollectionViewCell {
     SKUIGift *_gift;
     SKUIGiftConfiguration *_giftConfiguration;
@@ -16,10 +14,10 @@
     SKUIGiftTheme *_theme;
 }
 
-@property(retain) SKUIGift * gift;
-@property(retain) SKUIGiftConfiguration * giftConfiguration;
-@property(retain) UIImage * itemImage;
-@property(retain) SKUIGiftTheme * theme;
+@property (nonatomic, retain) SKUIGift *gift;
+@property (nonatomic, retain) SKUIGiftConfiguration *giftConfiguration;
+@property (nonatomic, retain) UIImage *itemImage;
+@property (nonatomic, retain) SKUIGiftTheme *theme;
 
 - (void).cxx_destruct;
 - (id)_itemView;

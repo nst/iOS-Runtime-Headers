@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ODIGear1 : ODICycle5 {
-}
+@interface ODIGear1 : ODICycle5
 
 + (void)mapStyleForTransition:(id)arg1 shape:(id)arg2 state:(id)arg3;
 + (unsigned int)nodeCountWithState:(id)arg1;

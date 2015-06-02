@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class UIImageView, UIView;
-
 @interface PTSImagePreviewRowTableViewCell : PTSRowTableViewCell {
     UIView *_darkBackground;
     UIImageView *_imageViewOnDark;

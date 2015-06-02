@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UILabel;
-
 @interface EKCurrentTimeMarkerView : UIView {
     UILabel *_currentTimeLabel;
     BOOL _showsLine;
     BOOL _showsThumb;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } currentTimeFrame;
-@property(retain) UILabel * currentTimeLabel;
-@property(readonly) float markerMidHeight;
-@property(readonly) float markerWidth;
-@property BOOL showsLine;
-@property BOOL showsThumb;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } currentTimeFrame;
+@property (nonatomic, retain) UILabel *currentTimeLabel;
+@property (nonatomic, readonly) float markerMidHeight;
+@property (nonatomic, readonly) float markerWidth;
+@property (nonatomic) BOOL showsLine;
+@property (nonatomic) BOOL showsThumb;
 
 + (float)_spacingAdjustmentFontSize;
 + (id)timeMarkerFont;

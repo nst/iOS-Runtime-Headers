@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSString;
-
 @interface PLQLSingleEntityAccountingQuery : PLQLAccountingQuery {
     NSString *_entityName;
 }
 
-@property(retain) NSString * entityName;
+@property (retain) NSString *entityName;
 
 - (void).cxx_destruct;
 - (id)entityName;

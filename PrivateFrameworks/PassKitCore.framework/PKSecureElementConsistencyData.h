@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSDictionary;
-
 @interface PKSecureElementConsistencyData : NSObject {
     unsigned int _backoffLevel;
     NSDictionary *_cleanupActionsByAID;
@@ -11,11 +9,11 @@
     NSDictionary *_secureElementCardStateByAID;
 }
 
-@property unsigned int backoffLevel;
-@property(retain) NSDictionary * cleanupActionsByAID;
-@property(readonly) NSDictionary * dictionary;
-@property(retain) NSDictionary * passStateByAID;
-@property(retain) NSDictionary * secureElementCardStateByAID;
+@property (nonatomic) unsigned int backoffLevel;
+@property (nonatomic, retain) NSDictionary *cleanupActionsByAID;
+@property (nonatomic, readonly) NSDictionary *dictionary;
+@property (nonatomic, retain) NSDictionary *passStateByAID;
+@property (nonatomic, retain) NSDictionary *secureElementCardStateByAID;
 
 + (id)consistencyDataWithPaymentApplications:(id)arg1 secureElementCards:(id)arg2 cleanupActions:(id)arg3;
 

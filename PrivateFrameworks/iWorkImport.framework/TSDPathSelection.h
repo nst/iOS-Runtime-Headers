@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSDPathSelection : TSKSelection {
-}
+@interface TSDPathSelection : TSKSelection
 
 + (Class)archivedSelectionClass;
 

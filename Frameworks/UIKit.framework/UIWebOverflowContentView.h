@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIWebOverflowContentView : UIView {
-}
+@interface UIWebOverflowContentView : UIView
 
 - (void)_replaceLayer:(id)arg1;
 - (void)_setCachedSubviews:(id)arg1;

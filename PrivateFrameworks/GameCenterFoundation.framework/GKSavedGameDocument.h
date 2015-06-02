@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSDate, NSFileVersion, NSOperationQueue, NSString, NSURL;
-
 @interface GKSavedGameDocument : NSObject <NSFilePresenter> {
     NSString *_deviceName;
     NSURL *_fileURL;
@@ -14,26 +12,26 @@
     NSString *_name;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSString * deviceName;
-@property(retain) NSURL * fileURL;
-@property(retain) NSFileVersion * fileVersion;
-@property BOOL hasConflict;
-@property(readonly) unsigned int hash;
-@property BOOL isConflictVersion;
-@property(retain) NSDate * modificationDate;
-@property(retain) NSString * name;
-@property(retain,readonly) NSOperationQueue * presentedItemOperationQueue;
-@property(copy,readonly) NSURL * presentedItemURL;
-@property(copy,readonly) NSURL * primaryPresentedItemURL;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSString *deviceName;
+@property (nonatomic, retain) NSURL *fileURL;
+@property (nonatomic, retain) NSFileVersion *fileVersion;
+@property (nonatomic) BOOL hasConflict;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isConflictVersion;
+@property (nonatomic, retain) NSDate *modificationDate;
+@property (nonatomic, retain) NSString *name;
+@property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
+@property (readonly, copy) NSURL *presentedItemURL;
+@property (readonly, copy) NSURL *primaryPresentedItemURL;
+@property (readonly) Class superclass;
 
 + (id)currentDeviceName;
 
 - (void)dealloc;
-- (void)deleteAllVersionsIncludingCurrent:(BOOL)arg1 withCompletionHandler:(id)arg2;
-- (void)deleteConflictVersion:(id)arg1 completionHandler:(id)arg2;
+- (void)deleteAllVersionsIncludingCurrent:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)deleteConflictVersion:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)description;
 - (id)deviceName;
 - (id)fileURL;
@@ -41,9 +39,9 @@
 - (BOOL)hasConflict;
 - (id)initWithFileURL:(id)arg1;
 - (BOOL)isConflictVersion;
-- (void)loadDataWithCompletionHandler:(id)arg1;
-- (void)loadMetadataWithCompletionHandler:(id)arg1;
-- (void)loadWrapperDataWithFilename:(id)arg1 completionHandler:(id)arg2;
+- (void)loadDataWithCompletionHandler:(id /* block */)arg1;
+- (void)loadMetadataWithCompletionHandler:(id /* block */)arg1;
+- (void)loadWrapperDataWithFilename:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)metadata;
 - (id)modificationDate;
 - (id)name;
@@ -53,7 +51,7 @@
 - (void)presentedItemDidResolveConflictVersion:(id)arg1;
 - (id)presentedItemOperationQueue;
 - (id)presentedItemURL;
-- (void)saveData:(id)arg1 completionHandler:(id)arg2;
+- (void)saveData:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setDeviceName:(id)arg1;
 - (void)setFileURL:(id)arg1;
 - (void)setFileVersion:(id)arg1;
@@ -62,7 +60,7 @@
 - (void)setMetadata:(id)arg1;
 - (void)setModificationDate:(id)arg1;
 - (void)setName:(id)arg1;
-- (void)updateConflictStateWithCompletionHandler:(id)arg1;
+- (void)updateConflictStateWithCompletionHandler:(id /* block */)arg1;
 - (void)updateMetadata;
 
 @end

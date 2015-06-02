@@ -2,28 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <NSCopying><NSObject>, NSExtension, NSString, _UISharingViewController;
-
 @interface _UIShareInvitationRemoteViewController : _UIRemoteViewController <_UIShareInvitationViewControllerHost> {
     NSExtension *_extension;
     <NSCopying><NSObject> *_extensionRequestIdentifier;
     _UISharingViewController *_publicController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSExtension * extension;
-@property(copy) <NSCopying><NSObject> * extensionRequestIdentifier;
-@property(readonly) unsigned int hash;
-@property _UISharingViewController * publicController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSExtension *extension;
+@property (nonatomic, copy) <NSCopying><NSObject> *extensionRequestIdentifier;
+@property (readonly) unsigned int hash;
+@property (nonatomic) _UISharingViewController *publicController;
+@property (readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
 - (void)_dismissViewController;
-- (void)_performAuxiliaryActionWithCompletion:(id)arg1;
-- (void)_performHeaderActionWithCompletion:(id)arg1;
+- (void)_performAuxiliaryActionWithCompletion:(id /* block */)arg1;
+- (void)_performHeaderActionWithCompletion:(id /* block */)arg1;
 - (void)_shareDidChange;
 - (void)_shareWasMadePrivate;
 - (void)_tintColorDidChangeToColor:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CADisplayLink, NSOperation, NSString, UITextRange;
-
 @interface UIDictationLandingView : UIView <_UIBasicAnimationFactory> {
     NSOperation *_afterShrinkCompletionInvocation;
     float _angle;
@@ -18,11 +16,11 @@
     BOOL _willInsertResult;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property BOOL willInsertResult;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL willInsertResult;
 
 + (id)activeInstance;
 + (float)diameterForLineHeight:(float)arg1;

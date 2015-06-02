@@ -7,8 +7,8 @@
     int _hue;
 }
 
-@property int count;
-@property int hue;
+@property (nonatomic) int count;
+@property (nonatomic) int hue;
 
 - (int)count;
 - (id)description;

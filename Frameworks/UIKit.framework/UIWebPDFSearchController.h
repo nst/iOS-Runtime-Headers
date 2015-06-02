@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, NSObject<UIWebPDFSearchControllerDelegate>, NSOperationQueue, NSString, UIPDFDocument;
-
 @interface UIWebPDFSearchController : NSObject <UIWebPDFSearchOperationDelegate> {
     UIPDFDocument *_documentToSearch;
     BOOL _notifiedThatSearchBegin;
@@ -18,15 +16,15 @@
     unsigned int startingPageIndex;
 }
 
-@property float documentScale;
-@property(retain) UIPDFDocument * documentToSearch;
-@property(readonly) BOOL paused;
-@property unsigned int resultLimit;
-@property(retain) NSArray * results;
-@property NSObject<UIWebPDFSearchControllerDelegate> * searchDelegate;
-@property(retain) NSString * searchString;
-@property(readonly) BOOL searching;
-@property unsigned int startingPageIndex;
+@property (nonatomic) float documentScale;
+@property (nonatomic, retain) UIPDFDocument *documentToSearch;
+@property (nonatomic, readonly) BOOL paused;
+@property (nonatomic) unsigned int resultLimit;
+@property (nonatomic, retain) NSArray *results;
+@property (nonatomic) NSObject<UIWebPDFSearchControllerDelegate> *searchDelegate;
+@property (nonatomic, retain) NSString *searchString;
+@property (nonatomic, readonly) BOOL searching;
+@property (nonatomic) unsigned int startingPageIndex;
 
 - (unsigned int)_actualStartingPageIndex;
 - (void)_clearSearchQueue;

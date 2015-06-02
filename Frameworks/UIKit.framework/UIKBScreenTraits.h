@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIScreen;
-
 @interface UIKBScreenTraits : NSObject {
     float _keyboardWidth;
     BOOL _knobInput;
@@ -11,11 +9,11 @@
     UIScreen *_screen;
 }
 
-@property(readonly) int idiom;
-@property float keyboardWidth;
-@property(readonly) BOOL knobInput;
-@property int orientation;
-@property(readonly) UIScreen * screen;
+@property (nonatomic, readonly) int idiom;
+@property (nonatomic) float keyboardWidth;
+@property (nonatomic, readonly) BOOL knobInput;
+@property (nonatomic) int orientation;
+@property (nonatomic, readonly) UIScreen *screen;
 
 + (id)traitsWithScreen:(id)arg1 orientation:(int)arg2;
 

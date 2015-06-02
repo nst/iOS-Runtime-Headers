@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLEntryDefinition : NSObject {
-}
+@interface PLEntryDefinition : NSObject
 
 + (id)aggregateBucketDefinitionsForEntryDefinition:(id)arg1;
 + (id)aggregateBucketDefinitionsForEntryKey:(id)arg1;

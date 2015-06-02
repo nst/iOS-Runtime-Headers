@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADBlipRef, OADImageFillTechnique, OADRelativeRect;
-
 @interface OADImageFill : OADFill {
     OADBlipRef *mBlipRef;
     long mDpi;

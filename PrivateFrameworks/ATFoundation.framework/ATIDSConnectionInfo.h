@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class ATIDSSocket, IDSDevice, MSVXPCTransaction;
-
 @interface ATIDSConnectionInfo : NSObject {
     unsigned int _connectionState;
     IDSDevice *_device;
@@ -14,12 +12,12 @@
     MSVXPCTransaction *_xpcTransaction;
 }
 
-@property unsigned int connectionState;
-@property(retain) IDSDevice * device;
-@property unsigned int failureCount;
-@property int priority;
-@property(retain) ATIDSSocket * socket;
-@property double wakeupTimestamp;
+@property (nonatomic) unsigned int connectionState;
+@property (nonatomic, retain) IDSDevice *device;
+@property (nonatomic) unsigned int failureCount;
+@property (nonatomic) int priority;
+@property (nonatomic, retain) ATIDSSocket *socket;
+@property (nonatomic) double wakeupTimestamp;
 
 - (void).cxx_destruct;
 - (unsigned int)connectionState;

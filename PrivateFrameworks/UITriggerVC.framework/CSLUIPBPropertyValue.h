@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UITriggerVC.framework/UITriggerVC
  */
 
-@class CSLUIPBNumber, CSLUIPBPropertyValue, CSLUIPBSize, NSData, NSMutableArray, NSString;
-
 @interface CSLUIPBPropertyValue : PBCodable <NSCopying> {
     NSMutableArray *_arrayValues;
     NSData *_dataValue;
@@ -14,19 +12,19 @@
     NSData *_uUIDValue;
 }
 
-@property(retain) NSMutableArray * arrayValues;
-@property(retain) NSData * dataValue;
-@property(retain) CSLUIPBPropertyValue * dictionaryKey;
-@property(readonly) BOOL hasDataValue;
-@property(readonly) BOOL hasDictionaryKey;
-@property(readonly) BOOL hasNumberValue;
-@property(readonly) BOOL hasSizeValue;
-@property(readonly) BOOL hasStringValue;
-@property(readonly) BOOL hasUUIDValue;
-@property(retain) CSLUIPBNumber * numberValue;
-@property(retain) CSLUIPBSize * sizeValue;
-@property(retain) NSString * stringValue;
-@property(retain) NSData * uUIDValue;
+@property (nonatomic, retain) NSMutableArray *arrayValues;
+@property (nonatomic, retain) NSData *dataValue;
+@property (nonatomic, retain) CSLUIPBPropertyValue *dictionaryKey;
+@property (nonatomic, readonly) BOOL hasDataValue;
+@property (nonatomic, readonly) BOOL hasDictionaryKey;
+@property (nonatomic, readonly) BOOL hasNumberValue;
+@property (nonatomic, readonly) BOOL hasSizeValue;
+@property (nonatomic, readonly) BOOL hasStringValue;
+@property (nonatomic, readonly) BOOL hasUUIDValue;
+@property (nonatomic, retain) CSLUIPBNumber *numberValue;
+@property (nonatomic, retain) CSLUIPBSize *sizeValue;
+@property (nonatomic, retain) NSString *stringValue;
+@property (nonatomic, retain) NSData *uUIDValue;
 
 - (void).cxx_destruct;
 - (void)addArrayValues:(id)arg1;

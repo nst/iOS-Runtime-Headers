@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSMapTable, PLSearchIndexDateFormatter;
-
 @interface PUSuggestedSearchRandomMomentAggreagator : PUSuggestedSearch {
     PLSearchIndexDateFormatter *_dateFormatter;
     NSMapTable *_searches;

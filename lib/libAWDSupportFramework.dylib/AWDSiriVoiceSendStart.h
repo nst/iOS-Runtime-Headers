@@ -9,8 +9,8 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

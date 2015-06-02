@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGAggregateLogging : NSObject {
-}
+@interface SGAggregateLogging : NSObject
 
 + (id)aggregateKeyForKeySuffix:(id)arg1;
 + (id)anonymousHashForEvent:(id)arg1;

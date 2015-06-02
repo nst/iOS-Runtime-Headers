@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMutableVideoCompositionInstructionInternal, NSArray;
-
 @interface AVMutableVideoCompositionInstruction : AVVideoCompositionInstruction {
     AVMutableVideoCompositionInstructionInternal *_mutableInstruction;
 }
 
-@property(retain) struct CGColor { }* backgroundColor;
-@property BOOL enablePostProcessing;
-@property(copy) NSArray * layerInstructions;
-@property struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
+@property (nonatomic, retain) struct CGColor { }*backgroundColor;
+@property (nonatomic) BOOL enablePostProcessing;
+@property (nonatomic, copy) NSArray *layerInstructions;
+@property (nonatomic) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
 
 + (id)videoCompositionInstruction;
 

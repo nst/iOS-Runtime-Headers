@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <HAPAccessoryServerBTLEDelegatePrivate>, CBCharacteristic, CBPeripheral, CBService, HAPAccessoryServerBrowserBTLE, NSData, NSMapTable, NSMutableData, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface HAPAccessoryServerBTLE : HAPAccessoryServer <CBPeripheralDelegate> {
     CBService *_accessoryInfoService;
     NSString *_accessoryPairingUsername;
@@ -28,11 +22,7 @@
     CBCharacteristic *_modelCharacteristic;
     CBCharacteristic *_pairSetupCharacteristic;
     CBCharacteristic *_pairVerifyCharacteristic;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _pairVerifyCompletionBlock;
-
+    id /* block */ _pairVerifyCompletionBlock;
     unsigned long long _pairingFeatureFlags;
     CBCharacteristic *_pairingFeaturesCharacteristic;
     BOOL _pairingFeaturesRead;
@@ -48,61 +38,57 @@
     NSData *_sessionWriteKey;
     BOOL _startPairingRequested;
     unsigned int _state;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _unpairedIdentifyCompletionBlock;
-
+    id /* block */ _unpairedIdentifyCompletionBlock;
     BOOL _unpairedIdentifyRequested;
     NSMutableData *_writeNonce;
 }
 
-@property(retain) CBService * accessoryInfoService;
-@property(retain) NSString * accessoryPairingUsername;
-@property unsigned int availableInstanceID;
-@property HAPAccessoryServerBrowserBTLE * browser;
-@property(retain) NSMapTable * btleCharacteristicToHAPCharacteristicMap;
-@property(retain) NSMapTable * btleServiceToHAPServiceMap;
-@property unsigned int characteristicDiscoveryRequestCount;
-@property(retain) NSObject<OS_dispatch_source> * connectionLifetimeTimer;
-@property(retain) NSString * controllerUsername;
-@property(copy,readonly) NSString * debugDescription;
-@property <HAPAccessoryServerBTLEDelegatePrivate> * delegate;
-@property(retain) NSObject<OS_dispatch_queue> * delegateQueue;
-@property(copy,readonly) NSString * description;
-@property(getter=isDisconnecting) BOOL disconnecting;
-@property(retain) NSMapTable * hapCharacteristicReadCompletionQueues;
-@property(retain) NSMapTable * hapCharacteristicWriteCompletionQueues;
-@property(readonly) unsigned int hash;
-@property(retain) CBCharacteristic * identifyCharacteristic;
-@property(retain) CBCharacteristic * manufacturerCharacteristic;
-@property(retain) CBCharacteristic * modelCharacteristic;
-@property(retain) CBCharacteristic * pairSetupCharacteristic;
-@property(retain) CBCharacteristic * pairVerifyCharacteristic;
-@property(copy) id pairVerifyCompletionBlock;
-@property unsigned long long pairingFeatureFlags;
-@property(retain) CBCharacteristic * pairingFeaturesCharacteristic;
-@property BOOL pairingFeaturesRead;
-@property(retain) CBService * pairingService;
-@property(retain) CBCharacteristic * pairingsCharacteristic;
-@property(retain) CBPeripheral * peripheral;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSMutableData * readNonce;
-@property BOOL removeOnDisconnect;
-@property(retain) CBCharacteristic * serialNumberCharacteristic;
-@property(retain) NSData * sessionReadKey;
-@property(retain) NSData * sessionWriteKey;
-@property BOOL startPairingRequested;
-@property unsigned int state;
-@property(readonly) Class superclass;
-@property(copy) id unpairedIdentifyCompletionBlock;
-@property BOOL unpairedIdentifyRequested;
-@property(retain) NSMutableData * writeNonce;
+@property (nonatomic, retain) CBService *accessoryInfoService;
+@property (nonatomic, retain) NSString *accessoryPairingUsername;
+@property (nonatomic) unsigned int availableInstanceID;
+@property (nonatomic) HAPAccessoryServerBrowserBTLE *browser;
+@property (nonatomic, retain) NSMapTable *btleCharacteristicToHAPCharacteristicMap;
+@property (nonatomic, retain) NSMapTable *btleServiceToHAPServiceMap;
+@property (nonatomic) unsigned int characteristicDiscoveryRequestCount;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *connectionLifetimeTimer;
+@property (nonatomic, retain) NSString *controllerUsername;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HAPAccessoryServerBTLEDelegatePrivate> *delegate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
+@property (readonly, copy) NSString *description;
+@property (getter=isDisconnecting, nonatomic) BOOL disconnecting;
+@property (nonatomic, retain) NSMapTable *hapCharacteristicReadCompletionQueues;
+@property (nonatomic, retain) NSMapTable *hapCharacteristicWriteCompletionQueues;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) CBCharacteristic *identifyCharacteristic;
+@property (nonatomic, retain) CBCharacteristic *manufacturerCharacteristic;
+@property (nonatomic, retain) CBCharacteristic *modelCharacteristic;
+@property (nonatomic, retain) CBCharacteristic *pairSetupCharacteristic;
+@property (nonatomic, retain) CBCharacteristic *pairVerifyCharacteristic;
+@property (nonatomic, copy) id /* block */ pairVerifyCompletionBlock;
+@property (nonatomic) unsigned long long pairingFeatureFlags;
+@property (nonatomic, retain) CBCharacteristic *pairingFeaturesCharacteristic;
+@property (nonatomic) BOOL pairingFeaturesRead;
+@property (nonatomic, retain) CBService *pairingService;
+@property (nonatomic, retain) CBCharacteristic *pairingsCharacteristic;
+@property (nonatomic, retain) CBPeripheral *peripheral;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSMutableData *readNonce;
+@property (nonatomic) BOOL removeOnDisconnect;
+@property (nonatomic, retain) CBCharacteristic *serialNumberCharacteristic;
+@property (nonatomic, retain) NSData *sessionReadKey;
+@property (nonatomic, retain) NSData *sessionWriteKey;
+@property (nonatomic) BOOL startPairingRequested;
+@property (nonatomic) unsigned int state;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ unpairedIdentifyCompletionBlock;
+@property (nonatomic) BOOL unpairedIdentifyRequested;
+@property (nonatomic, retain) NSMutableData *writeNonce;
 
 + (id)_convertFromBTLEToHAPUUID:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
+- (void)_addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (id)_btleCharacteristicForHAPCharacteristic:(id)arg1;
 - (void)_cancelConnectionLifetimeTimer;
 - (void)_checkForAuthPrompt;
@@ -111,23 +97,23 @@
 - (id)_decryptData:(id)arg1 error:(id*)arg2;
 - (BOOL)_delegateRespondsToSelector:(SEL)arg1;
 - (id)_dequeueReadCompletionTupleForCharacteristic:(id)arg1;
-- (id)_dequeueWriteCompletionHandlerForCharacteristic:(id)arg1;
+- (id /* block */)_dequeueWriteCompletionHandlerForCharacteristic:(id)arg1;
 - (id)_encryptDataAndGenerateAuthTag:(id)arg1;
-- (void)_enqueueReadCompletionHandler:(id)arg1 queue:(id)arg2 forCharacteristic:(id)arg3;
-- (void)_enqueueWriteCompletionHandler:(id)arg1 forCharacteristic:(id)arg2;
+- (void)_enqueueReadCompletionHandler:(id /* block */)arg1 queue:(id)arg2 forCharacteristic:(id)arg3;
+- (void)_enqueueWriteCompletionHandler:(id /* block */)arg1 forCharacteristic:(id)arg2;
 - (long)_ensurePairingSessionIsInitializedWithType:(unsigned int)arg1;
 - (void)_establishSecureSession;
 - (void)_getAttributeDatabase;
 - (void)_handleConnectionLifetimeTimeout;
-- (void)_handleDisconnectionWithQueue:(id)arg1 withCompletion:(id)arg2;
+- (void)_handleDisconnectionWithQueue:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_handleHAPCharacteristicDiscoveryForService:(id)arg1 error:(id)arg2;
 - (void)_handleHAPServiceDiscovery;
 - (void)_handleHAPWriteConfirmationForCharacteristic:(id)arg1 error:(id)arg2;
 - (long)_handlePairSetupExchangeWithData:(id)arg1;
 - (long)_handlePairVerifyExchangeWithData:(id)arg1;
 - (void)_handlePairingStateMachine;
-- (void)_handlePairingsReadForCharacteristic:(id)arg1 readError:(id)arg2 removing:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
-- (void)_handlePairingsWriteForCharacteristic:(id)arg1 writeError:(id)arg2 removing:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
+- (void)_handlePairingsReadForCharacteristic:(id)arg1 readError:(id)arg2 removing:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
+- (void)_handlePairingsWriteForCharacteristic:(id)arg1 writeError:(id)arg2 removing:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (void)_handleSuccessfulBTLEConnection;
 - (void)_handleUpdatedValueForBTLECharacteristic:(id)arg1 error:(id)arg2;
 - (id)_hapCharacteristicForBTLECharacteristic:(id)arg1;
@@ -143,20 +129,20 @@
 - (id)_pairVerifyHAPCharacteristic;
 - (long)_pairVerifyStart;
 - (id)_parseBTLEService:(id)arg1;
-- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)_readValueForCharacteristic:(id)arg1 withCompletionHandler:(id)arg2 queue:(id)arg3;
-- (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id)arg4;
+- (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_readValueForCharacteristic:(id)arg1 withCompletionHandler:(id /* block */)arg2 queue:(id)arg3;
+- (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)_resetState;
 - (id)_serverIdentifier;
 - (id)_serverName;
 - (void)_setupBTLEConnectionToPeripheral;
 - (BOOL)_shouldEnableSessionSecurity;
 - (void)_updateConnectionLifetimeTimer;
-- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-- (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 withCompletionHandler:(id)arg4 queue:(id)arg5;
+- (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 withCompletionHandler:(id /* block */)arg4 queue:(id)arg5;
 - (id)accessoryInfoService;
 - (id)accessoryPairingUsername;
-- (BOOL)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id)arg5;
+- (BOOL)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (unsigned int)availableInstanceID;
 - (id)briefDescription;
 - (id)browser;
@@ -171,15 +157,15 @@
 - (id)delegateQueue;
 - (id)description;
 - (void)discoverAccessories;
-- (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id)arg3 queue:(id)arg4;
+- (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (void)handleConnectionWithError:(id)arg1;
-- (void)handleDisconnectionWithError:(id)arg1 withQueue:(id)arg2 withCompletion:(id)arg3;
+- (void)handleDisconnectionWithError:(id)arg1 withQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id)hapCharacteristicReadCompletionQueues;
 - (id)hapCharacteristicWriteCompletionQueues;
 - (BOOL)hasPairings;
 - (id)identifier;
 - (id)identifyCharacteristic;
-- (void)identifyWithCompletion:(id)arg1;
+- (void)identifyWithCompletion:(id /* block */)arg1;
 - (id)initWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 browser:(id)arg5 keyStore:(id)arg6;
 - (BOOL)isDisconnecting;
 - (BOOL)isPaired;
@@ -188,7 +174,7 @@
 - (id)modelCharacteristic;
 - (id)pairSetupCharacteristic;
 - (id)pairVerifyCharacteristic;
-- (id)pairVerifyCompletionBlock;
+- (id /* block */)pairVerifyCompletionBlock;
 - (unsigned long long)pairingFeatureFlags;
 - (id)pairingFeaturesCharacteristic;
 - (BOOL)pairingFeaturesRead;
@@ -201,12 +187,12 @@
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didWriteValueForCharacteristic:(id)arg2 error:(id)arg3;
 - (id)queue;
-- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)readNonce;
-- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)removeOnDisconnect;
-- (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id)arg2;
-- (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id)arg4;
+- (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (id)serialNumberCharacteristic;
 - (id)sessionReadKey;
 - (id)sessionWriteKey;
@@ -230,7 +216,7 @@
 - (void)setModelCharacteristic:(id)arg1;
 - (void)setPairSetupCharacteristic:(id)arg1;
 - (void)setPairVerifyCharacteristic:(id)arg1;
-- (void)setPairVerifyCompletionBlock:(id)arg1;
+- (void)setPairVerifyCompletionBlock:(id /* block */)arg1;
 - (void)setPairingFeatureFlags:(unsigned long long)arg1;
 - (void)setPairingFeaturesCharacteristic:(id)arg1;
 - (void)setPairingFeaturesRead:(BOOL)arg1;
@@ -245,7 +231,7 @@
 - (void)setSessionWriteKey:(id)arg1;
 - (void)setStartPairingRequested:(BOOL)arg1;
 - (void)setState:(unsigned int)arg1;
-- (void)setUnpairedIdentifyCompletionBlock:(id)arg1;
+- (void)setUnpairedIdentifyCompletionBlock:(id /* block */)arg1;
 - (void)setUnpairedIdentifyRequested:(BOOL)arg1;
 - (void)setWriteNonce:(id)arg1;
 - (void)startPairing;
@@ -253,10 +239,10 @@
 - (unsigned int)state;
 - (BOOL)stopPairingWithError:(id*)arg1;
 - (BOOL)tryPairingPassword:(id)arg1 error:(id*)arg2;
-- (id)unpairedIdentifyCompletionBlock;
+- (id /* block */)unpairedIdentifyCompletionBlock;
 - (BOOL)unpairedIdentifyRequested;
-- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
+- (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)writeNonce;
-- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id)arg5;
+- (void)writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 
 @end

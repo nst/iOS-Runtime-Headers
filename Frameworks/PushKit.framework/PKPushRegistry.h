@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PushKit.framework/PushKit
  */
 
-@class <PKPushRegistryDelegate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSSet;
-
 @interface PKPushRegistry : NSObject <PKVoIPXPCClient> {
     <PKPushRegistryDelegate> *_delegate;
     NSSet *_desiredPushTypes;
@@ -12,11 +10,11 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property <PKPushRegistryDelegate> * delegate;
-@property(copy) NSSet * desiredPushTypes;
-@property(retain) NSMutableDictionary * pushTypeToConnection;
-@property(retain) NSMutableDictionary * pushTypeToToken;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
+@property <PKPushRegistryDelegate> *delegate;
+@property (copy) NSSet *desiredPushTypes;
+@property (nonatomic, retain) NSMutableDictionary *pushTypeToConnection;
+@property (nonatomic, retain) NSMutableDictionary *pushTypeToToken;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)pushTypeToMachServiceName;
 

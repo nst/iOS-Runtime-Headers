@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSOperationQueue, NSURLAuthenticationChallenge;
-
 @interface NSURLDownloadInternal : NSObject {
     NSOperationQueue *_targetQueue;
     struct _CFURLDownload { } *cfDownload;

@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SAReminderSmsPayload : AceObject <SAReminderPayload>
 
-@interface SAReminderSmsPayload : AceObject <SAReminderPayload> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * message;
-@property(copy) NSArray * recipients;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSArray *recipients;
+@property (readonly) Class superclass;
 
 + (id)smsPayload;
 + (id)smsPayloadWithDictionary:(id)arg1 context:(id)arg2;

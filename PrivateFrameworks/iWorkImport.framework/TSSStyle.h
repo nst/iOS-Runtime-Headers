@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSSet, NSString, TSSPropertyMap, TSSStyle, TSSStylesheet;
-
 @interface TSSStyle : TSPObject <NSCopying, TSKModel, TSKTransformableObject, TSSPropertySource, TSSPropertyValueValidator, TSSStyleClient, TSSStyleObject> {
     BOOL mIsVariation;
     NSString *mName;
@@ -18,25 +11,25 @@
     TSSStylesheet *mStylesheet;
 }
 
-@property(readonly) TSSStyle * baseStyleForVariation;
-@property(readonly) NSSet * children;
-@property(readonly) NSString * contentTag;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) NSSet * descendants;
-@property(copy,readonly) NSString * description;
-@property(readonly) TSSStyle * firstIdentifiedAncestor;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isIdentified;
-@property(readonly) BOOL isNamed;
-@property(readonly) BOOL isVariation;
-@property(copy) NSString * name;
-@property(readonly) TSSPropertyMap * overridePropertyMap;
-@property(readonly) TSSStyle * parent;
-@property(readonly) TSSStyle * rootAncestor;
-@property(readonly) TSSStyle * rootIdentifiedAncestor;
-@property(readonly) NSString * styleIdentifier;
-@property(readonly) TSSStylesheet * stylesheet;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) TSSStyle *baseStyleForVariation;
+@property (nonatomic, readonly) NSSet *children;
+@property (nonatomic, readonly) NSString *contentTag;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSSet *descendants;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) TSSStyle *firstIdentifiedAncestor;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isIdentified;
+@property (nonatomic, readonly) BOOL isNamed;
+@property (nonatomic, readonly) BOOL isVariation;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) TSSPropertyMap *overridePropertyMap;
+@property (nonatomic, readonly) TSSStyle *parent;
+@property (nonatomic, readonly) TSSStyle *rootAncestor;
+@property (nonatomic, readonly) TSSStyle *rootIdentifiedAncestor;
+@property (nonatomic, readonly) NSString *styleIdentifier;
+@property (nonatomic, readonly) TSSStylesheet *stylesheet;
+@property (readonly) Class superclass;
 
 + (id)boxedDefaultValueForProperty:(int)arg1;
 + (double)defaultDoubleValueForProperty:(int)arg1;
@@ -134,7 +127,7 @@
 - (id)referencedStyles;
 - (void)removeAllValues;
 - (void)removeValueForProperty:(int)arg1;
-- (void)replaceReferencedStylesUsingBlock:(id)arg1;
+- (void)replaceReferencedStylesUsingBlock:(id /* block */)arg1;
 - (id)rootAncestor;
 - (id)rootIdentifiedAncestor;
 - (void)saveCharacterStylePropertiesToArchive:(struct CharacterStylePropertiesArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[2]; float x4; bool x5; bool x6; bool x7; bool x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct Color {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; int x12; int x13; int x14; int x15; float x16; float x17; int x18; bool x19; bool x20; bool x21; bool x22; struct Color {} *x23; struct ShadowArchive {} *x24; float x25; float x26; struct Color {} *x27; struct Color {} *x28; float x29; bool x30; bool x31; bool x32; bool x33; struct Color {} *x34; float x35; int x36; struct RepeatedPtrField<TSWP::FontFeatureArchive> { void **x_37_1_1; int x_37_1_2; int x_37_1_3; int x_37_1_4; } x37; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x38; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x39; bool x40; bool x41; bool x42; int x43; }*)arg1 archiver:(id)arg2;

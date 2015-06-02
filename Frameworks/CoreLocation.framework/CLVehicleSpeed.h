@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
  */
 
-@class NSDate;
-
 @interface CLVehicleSpeed : NSObject <NSCopying, NSSecureCoding> {
     id _internal;
 }
 
-@property(readonly) double speed;
-@property(readonly) NSDate * timestamp;
+@property (nonatomic, readonly) double speed;
+@property (nonatomic, readonly) NSDate *timestamp;
 
 + (BOOL)supportsSecureCoding;
 

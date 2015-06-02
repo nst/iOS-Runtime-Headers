@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class AppLaunchStatsSaveAndRestore, LSApplicationWorkspace, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AppLaunchStatsWhiteListManager : NSObject <DuetLoggerProtocol, LSApplicationWorkspaceObserverProtocol> {
     NSObject<OS_dispatch_queue> *aplsWLMQueue;
     NSMutableArray *defaultsWriteWhiteList;
@@ -14,11 +12,11 @@
     LSApplicationWorkspace *wlmAppWorkSpace;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enableWhiteListCheck;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enableWhiteListCheck;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)instance;
 

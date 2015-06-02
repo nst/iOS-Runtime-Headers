@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@interface ADClient : NSObject {
-}
+@interface ADClient : NSObject
 
 + (id)sharedClient;
 
 - (void)addClientToSegments:(id)arg1 replaceExisting:(BOOL)arg2;
-- (void)determineAppInstallationAttributionWithCompletionHandler:(id)arg1;
-- (void)lookupAdConversionDetails:(id)arg1;
+- (void)determineAppInstallationAttributionWithCompletionHandler:(id /* block */)arg1;
+- (void)lookupAdConversionDetails:(id /* block */)arg1;
 
 @end

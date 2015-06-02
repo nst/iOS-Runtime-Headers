@@ -2,17 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, VKLabelNavRoadGraph, VKPolylineOverlayPainter;
-
 @interface VKLabelNavSupport : NSObject {
     struct vector<std::__1::shared_ptr<vk::NavLabel>, std::__1::allocator<std::__1::shared_ptr<vk::NavLabel> > > { 
         struct shared_ptr<vk::NavLabel> {} *__begin_; 
@@ -67,14 +56,14 @@
     NSMutableDictionary *_visibleLabelsByName;
 }
 
-@property(readonly) const /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<vk::NavLabel>' */ struct * activeSigns; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<vk::NavLabel> > >=^{shared_ptr<vk::NavLabel>}}} */
-@property(retain) NSString * currentLocationText;
-@property(retain) NSString * currentRoadName;
-@property(retain) NSString * currentShieldGroup;
-@property BOOL drawRoadSigns;
-@property(readonly) BOOL needsLayout;
-@property(retain) VKPolylineOverlayPainter * route;
-@property struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
+@property (nonatomic, readonly) const /* Warning: unhandled struct encoding: '{vector<std::__1::shared_ptr<vk::NavLabel>' */ struct *activeSigns; /* unknown property attribute:  std::__1::allocator<std::__1::shared_ptr<vk::NavLabel> > >=^{shared_ptr<vk::NavLabel>}}} */
+@property (nonatomic, retain) NSString *currentLocationText;
+@property (nonatomic, retain) NSString *currentRoadName;
+@property (nonatomic, retain) NSString *currentShieldGroup;
+@property (nonatomic) BOOL drawRoadSigns;
+@property (nonatomic, readonly) BOOL needsLayout;
+@property (nonatomic, retain) VKPolylineOverlayPainter *route;
+@property (nonatomic) struct PolylineCoordinate { unsigned int x1; float x2; } routeUserOffset;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

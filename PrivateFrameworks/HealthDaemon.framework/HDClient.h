@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class NSString, NSXPCConnection, _HKEntitlements;
-
 @interface HDClient : NSObject {
     NSString *_applicationIdentifier;
     NSXPCConnection *_connection;
@@ -12,12 +10,12 @@
     NSString *_sourceBundleIdentifier;
 }
 
-@property(readonly) NSString * applicationIdentifier;
-@property(readonly) NSXPCConnection * connection;
-@property(readonly) _HKEntitlements * entitlements;
-@property(readonly) NSString * name;
-@property(readonly) int processIdentifier;
-@property(readonly) NSString * sourceBundleIdentifier;
+@property (readonly) NSString *applicationIdentifier;
+@property (readonly) NSXPCConnection *connection;
+@property (readonly) _HKEntitlements *entitlements;
+@property (readonly) NSString *name;
+@property (readonly) int processIdentifier;
+@property (readonly) NSString *sourceBundleIdentifier;
 
 - (void).cxx_destruct;
 - (id)_initWithConnection:(id)arg1 entitlements:(id)arg2;

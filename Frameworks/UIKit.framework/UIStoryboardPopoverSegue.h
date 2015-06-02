@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIBarButtonItem, UIPopoverController, UIView;
-
 @interface UIStoryboardPopoverSegue : UIStoryboardSegue {
     UIBarButtonItem *_anchorBarButtonItem;
     struct CGRect { 
@@ -22,12 +20,12 @@
     UIPopoverController *_popoverController;
 }
 
-@property(setter=_setAnchorBarButtonItem:,retain) UIBarButtonItem * _anchorBarButtonItem;
-@property(setter=_setAnchorRect:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _anchorRect;
-@property(setter=_setAnchorView:,retain) UIView * _anchorView;
-@property(setter=_setPassthroughViews:,copy) NSArray * _passthroughViews;
-@property(setter=_setPermittedArrowDirections:) unsigned int _permittedArrowDirections;
-@property(retain,readonly) UIPopoverController * popoverController;
+@property (setter=_setAnchorBarButtonItem:, nonatomic, retain) UIBarButtonItem *_anchorBarButtonItem;
+@property (setter=_setAnchorRect:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _anchorRect;
+@property (setter=_setAnchorView:, nonatomic, retain) UIView *_anchorView;
+@property (setter=_setPassthroughViews:, nonatomic, copy) NSArray *_passthroughViews;
+@property (setter=_setPermittedArrowDirections:, nonatomic) unsigned int _permittedArrowDirections;
+@property (nonatomic, readonly, retain) UIPopoverController *popoverController;
 
 - (id)_anchorBarButtonItem;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_anchorRect;

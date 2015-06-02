@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class <QLPreviewContentDataSource>, <QLPreviewContentDelegate>, <QLRemotePrintPageHelper>, NSMutableDictionary, NSString, QLPreviewContentController, _UIHostedWindow;
-
 @interface QLServicePreviewContentController : UIViewController <QLPreviewContentDataSource, QLPreviewContentDelegate, QLRemotePreviewContentControllerProtocol> {
     BOOL _blockRemoteImages;
     struct CGSize { 
@@ -20,20 +18,20 @@
     int _sourceUUID;
 }
 
-@property <QLPreviewContentDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <QLPreviewContentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property <QLPreviewContentDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property <QLPreviewContentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property int previewMode;
-@property(readonly) int sourceUUID;
-@property(readonly) Class superclass;
+@property (readonly) int sourceUUID;
+@property (readonly) Class superclass;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
-- (void)_getNumberOfPagesForSize:(struct CGSize { float x1; float x2; })arg1 withHandler:(id)arg2;
-- (void)_getPDFPageAtIndex:(int)arg1 handler:(id)arg2;
+- (void)_getNumberOfPagesForSize:(struct CGSize { float x1; float x2; })arg1 withHandler:(id /* block */)arg2;
+- (void)_getPDFPageAtIndex:(int)arg1 handler:(id /* block */)arg2;
 - (void)_prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)_remotePreviewItemAtIndex:(int)arg1;
 - (void)_setNavigationBarVerticalOffset:(float)arg1;
@@ -64,7 +62,7 @@
 - (void)previewContentController:(id)arg1 didLoadItem:(id)arg2 atIndex:(int)arg3 withError:(id)arg4;
 - (void)previewContentController:(id)arg1 didMoveToItem:(id)arg2 atIndex:(int)arg3;
 - (id)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2;
-- (void)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2 completionBlock:(id)arg3;
+- (void)previewContentController:(id)arg1 previewItemAtIndex:(int)arg2 completionBlock:(id /* block */)arg3;
 - (void)previewContentController:(id)arg1 receivedTapOnURL:(id)arg2;
 - (void)previewContentController:(id)arg1 setAVState:(id)arg2 forPreviewItem:(id)arg3;
 - (void)previewContentController:(id)arg1 willEnterFullScreenWithHostedWindow:(id)arg2;
@@ -86,7 +84,7 @@
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewMode:(int)arg1;
-- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id)arg2;
+- (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id /* block */)arg2;
 - (void)showContentsWasTappedInPreviewContentController:(id)arg1;
 - (int)sourceUUID;
 - (void)stopLoadingCurrentPreviewItem;

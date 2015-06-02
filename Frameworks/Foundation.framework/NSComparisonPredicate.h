@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSExpression, NSPredicateOperator;
-
 @interface NSComparisonPredicate : NSPredicate {
     NSExpression *_lhs;
     NSPredicateOperator *_predicateOperator;
@@ -11,12 +9,14 @@
     NSExpression *_rhs;
 }
 
-@property(readonly) unsigned int comparisonPredicateModifier;
-@property(readonly) SEL customSelector;
-@property(retain,readonly) NSExpression * leftExpression;
-@property(readonly) unsigned int options;
-@property(readonly) unsigned int predicateOperatorType;
-@property(retain,readonly) NSExpression * rightExpression;
+@property (readonly) unsigned int comparisonPredicateModifier;
+@property (readonly) SEL customSelector;
+@property (readonly, retain) NSExpression *leftExpression;
+@property (readonly) unsigned int options;
+@property (readonly) unsigned int predicateOperatorType;
+@property (readonly, retain) NSExpression *rightExpression;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)predicateWithLeftExpression:(id)arg1 rightExpression:(id)arg2 customSelector:(SEL)arg3;
 + (id)predicateWithLeftExpression:(id)arg1 rightExpression:(id)arg2 modifier:(unsigned int)arg3 type:(unsigned int)arg4 options:(unsigned int)arg5;
@@ -25,26 +25,10 @@
 + (id)predicateWithPredicateOperator:(id)arg1 leftKeyPath:(id)arg2 rightValue:(id)arg3;
 + (BOOL)supportsSecureCoding;
 
-- (id)CKDPQueryFiltersWithTranslator:(id)arg1 error:(id*)arg2;
 - (void)_acceptExpressions:(id)arg1 flags:(unsigned int)arg2;
 - (void)_acceptOperator:(id)arg1 flags:(unsigned int)arg2;
-- (unsigned int)_comparisonOptionForString:(id)arg1;
-- (unsigned int)_comparisonOptionForString:(id)arg1;
-- (BOOL)_isForeignObjectExpression:(id)arg1 givenContext:(id)arg2;
-- (id)_nearFilterWithKey:(id)arg1 location:(id)arg2 radius:(double)arg3 translator:(id)arg4;
-- (id)_parseBasicOperatorFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
-- (id)_parseBeginsWithFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
-- (id)_parseBetweenFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
-- (id)_parseComparisonPredicateWithKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4 filterClasses:(id)arg5;
-- (id)_parseFullTextSearchFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
-- (id)_parseInFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
-- (id)_parseListContainsAllFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
-- (id)_parseListContainsAnyFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
-- (id)_parseListContainsFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
-- (id)_parseNearFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (void)allowEvaluation;
-- (id)br_watchedURL;
 - (unsigned int)comparisonPredicateModifier;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (SEL)customSelector;
@@ -53,7 +37,6 @@
 - (BOOL)evaluateWithObject:(id)arg1 substitutionVariables:(id)arg2;
 - (id)generateMetadataDescription;
 - (unsigned int)hash;
-- (id)hk_filterRepresentationForDataTypes:(id)arg1 filterClasses:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLeftExpression:(id)arg1 rightExpression:(id)arg2 customSelector:(SEL)arg3;
 - (id)initWithLeftExpression:(id)arg1 rightExpression:(id)arg2 modifier:(unsigned int)arg3 type:(unsigned int)arg4 options:(unsigned int)arg5;
@@ -63,7 +46,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)keyPathExpressionForString:(id)arg1;
 - (id)leftExpression;
-- (id)minimalFormInContext:(id)arg1;
 - (unsigned int)options;
 - (id)predicateFormat;
 - (id)predicateOperator;
@@ -71,6 +53,10 @@
 - (id)predicateWithSubstitutionVariables:(id)arg1;
 - (id)rightExpression;
 - (void)setPredicateOperator:(id)arg1;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
+- (unsigned int)_comparisonOptionForString:(id)arg1;
 - (void)validate;
 - (BOOL)validateBasicOperatorPredicate;
 - (BOOL)validateBeginsWithPredicate;
@@ -81,5 +67,34 @@
 - (BOOL)validateFullTextSearchPredicate;
 - (BOOL)validateInPredicate;
 - (BOOL)validateNearPredicate;
+
+// Image: /System/Library/Frameworks/CoreData.framework/CoreData
+
+- (BOOL)_isForeignObjectExpression:(id)arg1 givenContext:(id)arg2;
+- (id)minimalFormInContext:(id)arg1;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (id)_parseComparisonPredicateWithKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4 filterClasses:(id)arg5;
+- (id)hk_filterRepresentationForDataTypes:(id)arg1 filterClasses:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
+
+- (id)br_watchedURL;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (id)CKDPQueryFiltersWithTranslator:(id)arg1 error:(id*)arg2;
+- (unsigned int)_comparisonOptionForString:(id)arg1;
+- (id)_nearFilterWithKey:(id)arg1 location:(id)arg2 radius:(double)arg3 translator:(id)arg4;
+- (id)_parseBasicOperatorFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
+- (id)_parseBeginsWithFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
+- (id)_parseBetweenFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
+- (id)_parseFullTextSearchFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
+- (id)_parseInFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
+- (id)_parseListContainsAllFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
+- (id)_parseListContainsAnyFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
+- (id)_parseListContainsFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
+- (id)_parseNearFiltersWithTranslator:(id)arg1 withError:(id*)arg2;
 
 @end

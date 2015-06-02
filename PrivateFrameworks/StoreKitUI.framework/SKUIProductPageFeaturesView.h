@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, NSString, SKUIClientContext, SKUIColorScheme, UILabel, UIView;
-
 @interface SKUIProductPageFeaturesView : UIView {
     UIView *_bottomBorderView;
     SKUIClientContext *_clientContext;
@@ -15,11 +13,11 @@
     UIView *_topBorderView;
 }
 
-@property(retain) SKUIClientContext * clientContext;
-@property(retain) SKUIColorScheme * colorScheme;
-@property int features;
-@property unsigned int gameCenterFeatures;
-@property(copy) NSString * title;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic) int features;
+@property (nonatomic) unsigned int gameCenterFeatures;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (id)_gameCenterStringWithFeatures:(unsigned int)arg1;

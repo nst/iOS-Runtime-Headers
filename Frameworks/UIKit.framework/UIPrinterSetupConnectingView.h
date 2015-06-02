@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIActivityIndicatorView, UILabel;
-
 @interface UIPrinterSetupConnectingView : UIView {
     UIActivityIndicatorView *_activityIndicator;
     UILabel *_label;
     double _presentationTime;
 }
 
-@property(retain) UIActivityIndicatorView * activityIndicator;
-@property(retain) UILabel * label;
-@property double presentationTime;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) UILabel *label;
+@property (nonatomic) double presentationTime;
 
 - (id)activityIndicator;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEODBReader, GEODBWriter, NSLock, NSMapTable, NSMutableArray, NSString;
-
 @interface GEOTileServerLocalProxy : GEOTileServerProxy <GEOResourceManifestTileGroupObserver> {
     NSString *_cacheLocation;
     GEODBReader *_dbReader;
@@ -13,10 +11,10 @@
     NSMapTable *_providers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_registerBuiltInProviders;
 - (void)_updateExpiringTilesets;

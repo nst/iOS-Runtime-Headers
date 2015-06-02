@@ -2,25 +2,19 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface _UIDynamicAnimation : NSObject {
-    unsigned int _began : 1;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
-    unsigned int _grouped : 1;
-    unsigned int _running : 1;
+    unsigned int _began;
+    id /* block */ _completion;
+    unsigned int _grouped;
+    unsigned int _running;
     int _state;
-    unsigned int _usesNSTimer : 1;
-    unsigned int _yield : 1;
+    unsigned int _usesNSTimer;
+    unsigned int _yield;
 }
 
-@property(readonly) int state;
+@property (nonatomic, readonly) int state;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (void)_updateAnimations:(id)arg1;
 + (void)_updateAnimations:(id)arg1 timer:(id)arg2;
@@ -30,8 +24,8 @@
 - (BOOL)_animateForInterval:(double)arg1;
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2;
 - (void)_appendSubclassDescription:(id)arg1 atLevel:(int)arg2;
-- (void)_callAppliers:(id)arg1 additionalEndAppliers:(id)arg2 done:(BOOL)arg3;
-- (void)_cancelWithAppliers:(id)arg1;
+- (void)_callAppliers:(id /* block */)arg1 additionalEndAppliers:(id /* block */)arg2 done:(BOOL)arg3;
+- (void)_cancelWithAppliers:(id /* block */)arg1;
 - (BOOL)_isGrouped;
 - (BOOL)_isRunning;
 - (void)_setGrouped:(BOOL)arg1;
@@ -43,10 +37,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)init;
-- (void)pu_setFriction:(double)arg1;
-- (void)runWithCompletion:(id)arg1;
-- (void)runWithCompletion:(id)arg1 forScreen:(id)arg2 runLoopMode:(id)arg3;
+- (void)runWithCompletion:(id /* block */)arg1;
+- (void)runWithCompletion:(id /* block */)arg1 forScreen:(id)arg2 runLoopMode:(id)arg3;
 - (int)state;
 - (void)stop;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (void)pu_setFriction:(double)arg1;
 
 @end

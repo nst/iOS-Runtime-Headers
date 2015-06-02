@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIArtworkList, SKUIColorScheme;
-
 @interface SKUIUber : NSObject {
     SKUIArtworkList *_artworkList;
     SKUIColorScheme *_colorScheme;
     NSString *_text;
 }
 
-@property(readonly) SKUIArtworkList * artworkList;
-@property(readonly) SKUIColorScheme * colorScheme;
-@property(readonly) NSString * text;
+@property (nonatomic, readonly) SKUIArtworkList *artworkList;
+@property (nonatomic, readonly) SKUIColorScheme *colorScheme;
+@property (nonatomic, readonly) NSString *text;
 
 - (void).cxx_destruct;
 - (id)artworkList;

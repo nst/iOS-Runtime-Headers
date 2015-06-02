@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBSSiteIconKeyColorExtractor : NSObject {
-}
+@interface WBSSiteIconKeyColorExtractor : NSObject
 
 + (char *)_createRGBAPixelBufferFromImage:(struct CGImage { }*)arg1;
 + (id)keyColorForIcon:(id)arg1;

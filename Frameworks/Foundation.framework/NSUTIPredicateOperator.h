@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSUTIPredicateOperator : NSPredicateOperator {
-}
+@interface NSUTIPredicateOperator : NSPredicateOperator
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initForVariant:(unsigned int)arg1;

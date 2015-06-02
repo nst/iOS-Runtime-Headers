@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableSet;
-
 @interface CoreDAVCalendarServerPushTransportsItem : CoreDAVItem {
     NSMutableSet *_transports;
 }
 
-@property(retain) NSMutableSet * transports;
+@property (nonatomic, retain) NSMutableSet *transports;
 
 + (id)copyParseRules;
 

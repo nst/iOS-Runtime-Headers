@@ -2,24 +2,16 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
-@interface CABackdropLayer : CALayer {
-}
+@interface CABackdropLayer : CALayer
 
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } backdropRect;
 @property BOOL disablesOccludedBackdropBlurs;
-@property(getter=isEnabled) BOOL enabled;
-@property(copy) NSString * groupName;
+@property (getter=isEnabled) BOOL enabled;
+@property (copy) NSString *groupName;
 @property float marginWidth;
 @property float scale;
 @property double statisticsInterval;
-@property(copy) NSString * statisticsType;
+@property (copy) NSString *statisticsType;
 
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (BOOL)_hasRenderLayerSubclass;

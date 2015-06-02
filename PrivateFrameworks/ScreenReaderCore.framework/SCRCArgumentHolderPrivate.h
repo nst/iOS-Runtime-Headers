@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class NSNumber, NSString;
-
 @interface SCRCArgumentHolderPrivate : NSObject {
     SEL action;
     NSString *argument;

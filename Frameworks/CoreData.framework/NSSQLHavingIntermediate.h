@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSSQLWhereIntermediate;
-
 @interface NSSQLHavingIntermediate : NSSQLIntermediate {
     NSSQLWhereIntermediate *_whereClause;
 }

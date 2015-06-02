@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSNumber;
-
 @interface CIAccordionFoldTransition : CIFilter {
     NSNumber *inputBottomHeight;
     NSNumber *inputFoldShadowAmount;
@@ -13,12 +11,12 @@
     NSNumber *inputTime;
 }
 
-@property(retain) NSNumber * inputBottomHeight;
-@property(retain) NSNumber * inputFoldShadowAmount;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputNumberOfFolds;
-@property(retain) CIImage * inputTargetImage;
-@property(retain) NSNumber * inputTime;
+@property (nonatomic, retain) NSNumber *inputBottomHeight;
+@property (nonatomic, retain) NSNumber *inputFoldShadowAmount;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputNumberOfFolds;
+@property (nonatomic, retain) CIImage *inputTargetImage;
+@property (nonatomic, retain) NSNumber *inputTime;
 
 + (id)customAttributes;
 

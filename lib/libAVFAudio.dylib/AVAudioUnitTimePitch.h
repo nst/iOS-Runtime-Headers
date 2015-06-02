@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@interface AVAudioUnitTimePitch : AVAudioUnitTimeEffect {
-}
+@interface AVAudioUnitTimePitch : AVAudioUnitTimeEffect
 
-@property float overlap;
-@property float pitch;
-@property float rate;
+@property (nonatomic) float overlap;
+@property (nonatomic) float pitch;
+@property (nonatomic) float rate;
 
 - (id)init;
 - (float)overlap;

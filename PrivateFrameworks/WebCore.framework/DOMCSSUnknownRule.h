@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMCSSUnknownRule : DOMCSSRule {
-}
+@interface DOMCSSUnknownRule : DOMCSSRule
 
 @end

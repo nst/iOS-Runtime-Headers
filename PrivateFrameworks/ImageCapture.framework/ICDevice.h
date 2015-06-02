@@ -2,26 +2,26 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class <ICDeviceDelegate>, DeviceManager, NSString;
-
 @interface ICDevice : NSObject {
     void *_deviceProperties;
 }
 
-@property(copy) NSString * UUIDString;
+@property (copy) NSString *UUIDString;
 @property BOOL autoOpenSession;
 @property BOOL closeSessionPending;
-@property <ICDeviceDelegate> * delegate;
-@property DeviceManager * deviceManager;
+@property <ICDeviceDelegate> *delegate;
+@property DeviceManager *deviceManager;
 @property BOOL hasOpenSession;
-@property(readonly) struct CGImage { }* icon;
-@property(copy) NSString * name;
+@property (readonly) struct CGImage { }*icon;
+@property (copy) NSString *name;
 @property BOOL openSessionPending;
-@property(copy) NSString * productKind;
-@property(copy) NSString * transportType;
+@property (copy) NSString *productKind;
+@property (copy) NSString *transportType;
 @property int usbLocationID;
 @property int usbProductID;
 @property int usbVendorID;
+
+// Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
 
 - (id)UUIDString;
 - (BOOL)autoOpenSession;
@@ -36,7 +36,6 @@
 - (BOOL)hasOpenSession;
 - (struct CGImage { }*)icon;
 - (id)init;
-- (BOOL)isCameraDevice;
 - (id)name;
 - (BOOL)openSessionPending;
 - (id)productKind;
@@ -60,5 +59,9 @@
 - (int)usbProductID;
 - (int)usbVendorID;
 - (id)valueForUndefinedKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
+- (BOOL)isCameraDevice;
 
 @end

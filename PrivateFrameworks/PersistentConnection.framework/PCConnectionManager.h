@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PersistentConnection.framework/PersistentConnection
  */
 
-@class <PCConnectionManagerDelegate>, <PCGrowthAlgorithm>, NSObject<OS_dispatch_queue>, NSRunLoop, NSString, PCPersistentTimer;
-
 @interface PCConnectionManager : NSObject <PCInterfaceMonitorDelegate, PCLoggingDelegate> {
     int _connectionClass;
     double _defaultPollingInterval;
@@ -49,21 +47,21 @@
     <PCGrowthAlgorithm> *_wwanGrowthAlgorithm;
 }
 
-@property(readonly) unsigned int countOfGrowthActions;
-@property(readonly) double currentKeepAliveInterval;
-@property(copy,readonly) NSString * debugDescription;
-@property <PCConnectionManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL disableEarlyFire;
-@property(copy) NSString * duetIdentifier;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isRunning;
-@property double keepAliveGracePeriod;
-@property(readonly) NSString * loggingIdentifier;
+@property (nonatomic, readonly) unsigned int countOfGrowthActions;
+@property (nonatomic, readonly) double currentKeepAliveInterval;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PCConnectionManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableEarlyFire;
+@property (nonatomic, copy) NSString *duetIdentifier;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isRunning;
+@property (nonatomic) double keepAliveGracePeriod;
+@property (nonatomic, readonly) NSString *loggingIdentifier;
 @property double maximumKeepAliveInterval;
-@property double minimumKeepAliveInterval;
-@property(readonly) double pollingInterval;
-@property(readonly) Class superclass;
+@property (nonatomic) double minimumKeepAliveInterval;
+@property (nonatomic, readonly) double pollingInterval;
+@property (readonly) Class superclass;
 
 + (BOOL)_isCachedKeepAliveIntervalStillValid:(double)arg1 date:(id)arg2;
 + (id)_keepAliveCachePath;

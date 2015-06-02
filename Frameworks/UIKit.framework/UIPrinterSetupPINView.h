@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIImageView, UILabel, UIPasscodeField, UITextField;
-
 @interface UIPrinterSetupPINView : UIControl <UITextFieldDelegate> {
     UILabel *_enterLabel;
     int _failedAttemptCount;
@@ -14,17 +12,17 @@
     UILabel *_titleLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UILabel * enterLabel;
-@property int failedAttemptCount;
-@property(retain) UIImageView * failedBackground;
-@property(retain) UILabel * failedLabel;
-@property(readonly) unsigned int hash;
-@property(retain) UIPasscodeField * passcodeField;
-@property(readonly) Class superclass;
-@property(retain) UITextField * textEntryField;
-@property(retain) UILabel * titleLabel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UILabel *enterLabel;
+@property (nonatomic) int failedAttemptCount;
+@property (nonatomic, retain) UIImageView *failedBackground;
+@property (nonatomic, retain) UILabel *failedLabel;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIPasscodeField *passcodeField;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITextField *textEntryField;
+@property (nonatomic, retain) UILabel *titleLabel;
 
 - (id)PIN;
 - (void)dealloc;

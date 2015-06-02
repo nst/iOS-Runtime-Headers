@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext, NSString, PQLConnection;
-
 @interface CKDKeyValueDiskCache : NSObject {
     CKDClientContext *_context;
     PQLConnection *_db;
@@ -11,10 +9,10 @@
     NSString *_identifier;
 }
 
-@property CKDClientContext * context;
-@property(retain) PQLConnection * db;
-@property double expirationTimeout;
-@property(retain) NSString * identifier;
+@property (nonatomic) CKDClientContext *context;
+@property (nonatomic, retain) PQLConnection *db;
+@property (nonatomic) double expirationTimeout;
+@property (nonatomic, retain) NSString *identifier;
 
 - (void).cxx_destruct;
 - (void)_garbageCollectExpiredEntries;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class NSString;
-
 @interface SBEmptyButtonView : UIView <TPNumberPadButtonProtocol> {
     unsigned int _char;
 }
 
 @property unsigned int character;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (unsigned int)character;
 - (id)initForCharacter:(unsigned int)arg1;

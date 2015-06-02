@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOPlatform : NSObject {
-}
+@interface GEOPlatform : NSObject
 
 + (id)sharedPlatform;
 

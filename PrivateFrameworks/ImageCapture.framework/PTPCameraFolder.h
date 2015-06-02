@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSString;
-
 @interface PTPCameraFolder : ICCameraFolder {
     NSString *_path;
     void *_ptpCameraFolderProperties;
 }
 
-@property(copy) id info;
-@property(readonly) unsigned long objHandle;
-@property(retain) NSString * path;
-@property(readonly) unsigned long storageID;
-@property(readonly) unsigned int type;
+@property (copy) id info;
+@property (readonly) unsigned long objHandle;
+@property (retain) NSString *path;
+@property (readonly) unsigned long storageID;
+@property (readonly) unsigned int type;
 
 - (void)dealloc;
 - (BOOL)deleteItemFromCamera:(id)arg1;

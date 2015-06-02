@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString;
+@interface WBSFormAutoFillItem : NSObject
 
-@interface WBSFormAutoFillItem : NSObject {
-}
-
-@property(readonly) NSString * completion;
+@property (nonatomic, readonly) NSString *completion;
 
 - (id)completion;
 

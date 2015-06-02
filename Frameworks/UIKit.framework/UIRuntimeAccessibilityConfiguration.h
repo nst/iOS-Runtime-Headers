@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSNumber, NSObject, NSString;
-
 @interface UIRuntimeAccessibilityConfiguration : NSObject {
     NSString *accessibilityConfigurationHint;
     NSString *accessibilityConfigurationLabel;
@@ -12,11 +10,11 @@
     NSObject *object;
 }
 
-@property(retain) NSString * accessibilityConfigurationHint;
-@property(retain) NSString * accessibilityConfigurationLabel;
-@property(retain) NSNumber * accessibilityConfigurationTraits;
-@property(retain) NSNumber * isAccessibilityConfigurationElement;
-@property(retain) NSObject * object;
+@property (nonatomic, retain) NSString *accessibilityConfigurationHint;
+@property (nonatomic, retain) NSString *accessibilityConfigurationLabel;
+@property (nonatomic, retain) NSNumber *accessibilityConfigurationTraits;
+@property (nonatomic, retain) NSNumber *isAccessibilityConfigurationElement;
+@property (nonatomic, retain) NSObject *object;
 
 - (id)accessibilityConfigurationHint;
 - (id)accessibilityConfigurationLabel;

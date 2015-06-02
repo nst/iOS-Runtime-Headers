@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSData, NSString;
-
 @interface BBSectionIconVariant : NSObject <NSCopying, NSSecureCoding> {
     NSString *_bundlePath;
     int _format;
@@ -13,12 +11,12 @@
     BOOL _precomposed;
 }
 
-@property(copy) NSString * bundlePath;
-@property int format;
-@property(copy) NSData * imageData;
-@property(copy) NSString * imageName;
-@property(copy) NSString * imagePath;
-@property(getter=isPrecomposed) BOOL precomposed;
+@property (nonatomic, copy) NSString *bundlePath;
+@property (nonatomic) int format;
+@property (nonatomic, copy) NSData *imageData;
+@property (nonatomic, copy) NSString *imageName;
+@property (nonatomic, copy) NSString *imagePath;
+@property (getter=isPrecomposed, nonatomic) BOOL precomposed;
 
 + (id)_variantWithFormat:(int)arg1;
 + (BOOL)supportsSecureCoding;

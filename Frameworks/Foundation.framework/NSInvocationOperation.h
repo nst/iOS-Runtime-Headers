@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSInvocation;
-
 @interface NSInvocationOperation : NSOperation {
     id _exception;
     id _inv;
     void *_reserved2;
 }
 
-@property(retain,readonly) NSInvocation * invocation;
-@property(retain,readonly) id result;
+@property (readonly, retain) NSInvocation *invocation;
+@property (readonly, retain) id result;
 
 - (void)dealloc;
 - (id)init;

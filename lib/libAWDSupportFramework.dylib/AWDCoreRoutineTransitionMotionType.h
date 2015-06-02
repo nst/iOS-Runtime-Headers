@@ -19,18 +19,18 @@
     } _has;
 }
 
-@property unsigned int coreRoutineTransitionMotionTypeAutomotive;
-@property unsigned int coreRoutineTransitionMotionTypeCycling;
-@property unsigned int coreRoutineTransitionMotionTypeRunning;
-@property unsigned int coreRoutineTransitionMotionTypeStationary;
-@property unsigned int coreRoutineTransitionMotionTypeUnknown;
-@property unsigned int coreRoutineTransitionMotionTypeWalking;
-@property BOOL hasCoreRoutineTransitionMotionTypeAutomotive;
-@property BOOL hasCoreRoutineTransitionMotionTypeCycling;
-@property BOOL hasCoreRoutineTransitionMotionTypeRunning;
-@property BOOL hasCoreRoutineTransitionMotionTypeStationary;
-@property BOOL hasCoreRoutineTransitionMotionTypeUnknown;
-@property BOOL hasCoreRoutineTransitionMotionTypeWalking;
+@property (nonatomic) unsigned int coreRoutineTransitionMotionTypeAutomotive;
+@property (nonatomic) unsigned int coreRoutineTransitionMotionTypeCycling;
+@property (nonatomic) unsigned int coreRoutineTransitionMotionTypeRunning;
+@property (nonatomic) unsigned int coreRoutineTransitionMotionTypeStationary;
+@property (nonatomic) unsigned int coreRoutineTransitionMotionTypeUnknown;
+@property (nonatomic) unsigned int coreRoutineTransitionMotionTypeWalking;
+@property (nonatomic) BOOL hasCoreRoutineTransitionMotionTypeAutomotive;
+@property (nonatomic) BOOL hasCoreRoutineTransitionMotionTypeCycling;
+@property (nonatomic) BOOL hasCoreRoutineTransitionMotionTypeRunning;
+@property (nonatomic) BOOL hasCoreRoutineTransitionMotionTypeStationary;
+@property (nonatomic) BOOL hasCoreRoutineTransitionMotionTypeUnknown;
+@property (nonatomic) BOOL hasCoreRoutineTransitionMotionTypeWalking;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

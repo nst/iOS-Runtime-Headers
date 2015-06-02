@@ -2,35 +2,21 @@
    Image: /System/Library/PrivateFrameworks/AOSNotification.framework/AOSNotification
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface AOSNotifySession : NSObject <AOSXPCClientProtocol> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fmfAppPushMsgHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fmfAppPushTokenHandler;
-
+    id /* block */ _fmfAppPushMsgHandler;
+    id /* block */ _fmfAppPushTokenHandler;
     NSXPCConnection *_xpcConnection;
     NSObject<OS_dispatch_queue> *_xpcConnectionCreationQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id fmfAppPushMsgHandler;
-@property(copy) id fmfAppPushTokenHandler;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(retain) NSXPCConnection * xpcConnection;
-@property(retain) NSObject<OS_dispatch_queue> * xpcConnectionCreationQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ fmfAppPushMsgHandler;
+@property (nonatomic, copy) id /* block */ fmfAppPushTokenHandler;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSXPCConnection *xpcConnection;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *xpcConnectionCreationQueue;
 
 + (id)copyStoreAccount;
 + (id)sharedInstance;
@@ -45,34 +31,34 @@
 - (void)didExitFMFRegion:(id)arg1 atLocation:(id)arg2;
 - (oneway void)didReceiveFMFAppPushMessage:(id)arg1;
 - (oneway void)didReceiveFMFAppPushToken:(id)arg1;
-- (id)fmfAppPushMsgHandler;
-- (id)fmfAppPushTokenHandler;
+- (id /* block */)fmfAppPushMsgHandler;
+- (id /* block */)fmfAppPushTokenHandler;
 - (id)fmfDeviceId;
 - (id)fmipAccount;
 - (id)fmipDeviceId;
 - (id)iCloudAccount;
 - (id)init;
 - (id)initWithDelegate:(id)arg1;
-- (void)locationAuthorizationForShareMyLocationWithCompletion:(id)arg1;
+- (void)locationAuthorizationForShareMyLocationWithCompletion:(id /* block */)arg1;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;
 - (BOOL)performMigration;
 - (id)removeFMFAccountWithUsername:(id)arg1;
-- (void)removeLegacyFMFAccountUsingCallback:(id)arg1;
-- (void)renewFMFAccountCredentialsUsingCallback:(id)arg1;
+- (void)removeLegacyFMFAccountUsingCallback:(id /* block */)arg1;
+- (void)renewFMFAccountCredentialsUsingCallback:(id /* block */)arg1;
 - (id)retrieveAllAccounts:(id*)arg1;
 - (id)retrieveFMFAccount:(id*)arg1;
-- (void)retrieveFMFAccountUsingCallback:(id)arg1;
-- (void)retrieveLegacyFMFAccountUsingCallback:(id)arg1;
-- (void)setFmfAppPushMsgHandler:(id)arg1;
-- (void)setFmfAppPushTokenHandler:(id)arg1;
+- (void)retrieveFMFAccountUsingCallback:(id /* block */)arg1;
+- (void)retrieveLegacyFMFAccountUsingCallback:(id /* block */)arg1;
+- (void)setFmfAppPushMsgHandler:(id /* block */)arg1;
+- (void)setFmfAppPushTokenHandler:(id /* block */)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)setXpcConnectionCreationQueue:(id)arg1;
-- (void)startListeningForFMFAppPushInEnvironment:(id)arg1 withMessageHandler:(id)arg2 tokenHandler:(id)arg3;
+- (void)startListeningForFMFAppPushInEnvironment:(id)arg1 withMessageHandler:(id /* block */)arg2 tokenHandler:(id /* block */)arg3;
 - (void)startListeningOnTopic:(id)arg1;
 - (void)stopListeningForFMFAppPush;
 - (void)stopListeningOnTopic:(id)arg1;
 - (id)storeAccount;
-- (void)willDeleteiCloudAccountWithCompletion:(id)arg1;
+- (void)willDeleteiCloudAccountWithCompletion:(id /* block */)arg1;
 - (id)xpcConnection;
 - (id)xpcConnectionCreationQueue;
 

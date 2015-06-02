@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class WebScriptWorldPrivate;
-
 @interface WebScriptWorld : NSObject {
     WebScriptWorldPrivate *_private;
 }

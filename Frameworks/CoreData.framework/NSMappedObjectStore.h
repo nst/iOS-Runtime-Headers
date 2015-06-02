@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSPersistentStoreMap, NSSet;
-
 @interface NSMappedObjectStore : NSPersistentStore {
     NSSet *_entitiesToFetch;
     NSPersistentStoreMap *_theMap;

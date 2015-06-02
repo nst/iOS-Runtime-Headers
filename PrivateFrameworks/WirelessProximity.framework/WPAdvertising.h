@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/WirelessProximity.framework/WirelessProximity
  */
 
-@class <WPAdvertisingDelegate>, NSString, XPCClient;
-
 @interface WPAdvertising : NSObject <XPCClientDelegate> {
     XPCClient *_connection;
     <WPAdvertisingDelegate> *_delegate;
     int _state;
 }
 
-@property(retain) XPCClient * connection;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) <WPAdvertisingDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (nonatomic, retain) XPCClient *connection;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) <WPAdvertisingDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property int state;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)connection;

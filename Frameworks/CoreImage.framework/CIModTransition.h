@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, CIVector, NSNumber;
-
 @interface CIModTransition : CIFilter {
     NSNumber *inputAngle;
     CIVector *inputCenter;
@@ -14,13 +12,13 @@
     NSNumber *inputTime;
 }
 
-@property(retain) NSNumber * inputAngle;
-@property(retain) CIVector * inputCenter;
-@property(retain) NSNumber * inputCompression;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputRadius;
-@property(retain) CIImage * inputTargetImage;
-@property(retain) NSNumber * inputTime;
+@property (nonatomic, retain) NSNumber *inputAngle;
+@property (nonatomic, retain) CIVector *inputCenter;
+@property (nonatomic, retain) NSNumber *inputCompression;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputRadius;
+@property (nonatomic, retain) CIImage *inputTargetImage;
+@property (nonatomic, retain) NSNumber *inputTime;
 
 + (id)customAttributes;
 

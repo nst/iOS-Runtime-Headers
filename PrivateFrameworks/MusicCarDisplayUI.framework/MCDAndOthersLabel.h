@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class NSArray, NSString, UIColor, UIFont;
-
 @interface MCDAndOthersLabel : UIView {
     NSString *_andOthers;
     UIFont *_font;
@@ -13,13 +11,13 @@
     NSString *_truncatedItemsString;
 }
 
-@property(readonly) float actualHeight;
-@property(retain) NSString * andOthers;
-@property(readonly) float desiredHeight;
-@property(retain) UIFont * font;
-@property(retain) NSArray * items;
-@property(retain) NSString * separator;
-@property(retain) UIColor * textColor;
+@property (nonatomic, readonly) float actualHeight;
+@property (nonatomic, retain) NSString *andOthers;
+@property (nonatomic, readonly) float desiredHeight;
+@property (nonatomic, retain) UIFont *font;
+@property (nonatomic, retain) NSArray *items;
+@property (nonatomic, retain) NSString *separator;
+@property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (int)_stringDrawingOptions;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNJSTimingFunction : CAMediaTimingFunction {
-}
+@interface SCNJSTimingFunction : CAMediaTimingFunction
 
 + (id)SCNJSExportProtocol;
 + (id)functionWithName:(id)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSMutableDictionary;
-
 @interface PLStorageCache : NSObject {
     NSMutableDictionary *_lastEntryCache;
 }
 
-@property(retain) NSMutableDictionary * lastEntryCache;
+@property (nonatomic, retain) NSMutableDictionary *lastEntryCache;
 
 - (void).cxx_destruct;
 - (void)clearLastEntryCache:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDBltPrimaryDevicePublicationToResponseDelay : PBCodable <NSCopying> {
     unsigned int _delayMs;
     struct { 
@@ -14,12 +12,12 @@
     NSString *_uniqueid;
 }
 
-@property unsigned int delayMs;
-@property BOOL hasDelayMs;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasUniqueid;
-@property unsigned long long timestamp;
-@property(retain) NSString * uniqueid;
+@property (nonatomic) unsigned int delayMs;
+@property (nonatomic) BOOL hasDelayMs;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasUniqueid;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSString *uniqueid;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

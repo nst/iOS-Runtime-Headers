@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSString, QLArchiveTableViewController, QLPreviewController, UIDocumentInteractionController, UINavigationController, UIPopoverPresentationController;
-
 @interface QLArchiveViewer : NSObject <UINavigationControllerDelegate, UIPopoverControllerDelegate, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIDocumentInteractionController *_documentInteractionController;
     UINavigationController *_navigationController;
@@ -13,11 +11,11 @@
     BOOL _visible;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(getter=isVisible,readonly) BOOL visible;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (getter=isVisible, readonly) BOOL visible;
 
 - (void)_cancelUpdateThumbnails;
 - (struct CGSize { float x1; float x2; })_imageSize;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSString;
-
 @interface CertInfoBasicTrustDescription : NSObject <CertInfoTrustDescription> {
     int _action;
     struct __SecTrust { } *_trust;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_expirationDate;
 - (unsigned int)certificateCount;

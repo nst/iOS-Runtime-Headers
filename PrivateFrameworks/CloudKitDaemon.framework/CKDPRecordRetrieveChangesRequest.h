@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordZoneIdentifier, CKDPRequestedFields, NSData;
-
 @interface CKDPRecordRetrieveChangesRequest : PBRequest <NSCopying> {
     struct { 
         unsigned int maxChanges : 1; 
@@ -16,16 +14,16 @@
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
-@property BOOL hasMaxChanges;
-@property BOOL hasRequestedChangeTypes;
-@property(readonly) BOOL hasRequestedFields;
-@property(readonly) BOOL hasSyncContinuationToken;
-@property(readonly) BOOL hasZoneIdentifier;
-@property unsigned int maxChanges;
-@property int requestedChangeTypes;
-@property(retain) CKDPRequestedFields * requestedFields;
-@property(retain) NSData * syncContinuationToken;
-@property(retain) CKDPRecordZoneIdentifier * zoneIdentifier;
+@property (nonatomic) BOOL hasMaxChanges;
+@property (nonatomic) BOOL hasRequestedChangeTypes;
+@property (nonatomic, readonly) BOOL hasRequestedFields;
+@property (nonatomic, readonly) BOOL hasSyncContinuationToken;
+@property (nonatomic, readonly) BOOL hasZoneIdentifier;
+@property (nonatomic) unsigned int maxChanges;
+@property (nonatomic) int requestedChangeTypes;
+@property (nonatomic, retain) CKDPRequestedFields *requestedFields;
+@property (nonatomic, retain) NSData *syncContinuationToken;
+@property (nonatomic, retain) CKDPRecordZoneIdentifier *zoneIdentifier;
 
 + (id)options;
 

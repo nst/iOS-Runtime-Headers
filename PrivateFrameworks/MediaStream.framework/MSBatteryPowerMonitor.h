@@ -10,8 +10,8 @@
     BOOL _isExteralPowerConnected;
 }
 
-@property double currentLevel;
-@property BOOL isExternalPowerConnected;
+@property (nonatomic) double currentLevel;
+@property (nonatomic) BOOL isExternalPowerConnected;
 
 + (id)defaultMonitor;
 

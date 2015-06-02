@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAWebSiteSearch : SADomainCommand
 
-@interface SAWebSiteSearch : SADomainCommand {
-}
-
-@property(copy) NSString * provider;
-@property(copy) NSString * query;
+@property (nonatomic, copy) NSString *provider;
+@property (nonatomic, copy) NSString *query;
 
 + (id)siteSearch;
 + (id)siteSearchWithDictionary:(id)arg1 context:(id)arg2;

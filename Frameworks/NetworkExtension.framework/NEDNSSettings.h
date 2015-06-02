@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSArray;
-
 @interface NEDNSSettings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     NSArray *_searchDomains;
     NSArray *_servers;
 }
 
-@property(readonly) NSArray * searchDomains;
-@property(readonly) NSArray * servers;
+@property (readonly) NSArray *searchDomains;
+@property (readonly) NSArray *servers;
 
 + (BOOL)supportsSecureCoding;
 

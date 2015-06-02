@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOClientCapabilities, GEODirectionsRequestFeedback, GEOLocation, GEOMapRegion, GEOOriginalRoute, GEORouteAttributes, NSData, NSMutableArray;
-
 @interface GEODirectionsRequest : PBRequest <NSCopying> {
     GEOClientCapabilities *_clientCapabilities;
     GEOMapRegion *_currentMapRegion;
@@ -41,44 +39,44 @@
     NSMutableArray *_waypointTypeds;
 }
 
-@property(retain) GEOClientCapabilities * clientCapabilities;
-@property(retain) GEOMapRegion * currentMapRegion;
-@property(retain) GEOLocation * currentUserLocation;
-@property int departureTime;
-@property(retain) GEODirectionsRequestFeedback * feedback;
-@property BOOL getRouteForZilchPoints;
-@property(readonly) BOOL hasClientCapabilities;
-@property(readonly) BOOL hasCurrentMapRegion;
-@property(readonly) BOOL hasCurrentUserLocation;
-@property BOOL hasDepartureTime;
-@property(readonly) BOOL hasFeedback;
-@property BOOL hasGetRouteForZilchPoints;
-@property BOOL hasMainTransportTypeMaxRouteCount;
-@property BOOL hasMaxDecoderVersion;
-@property BOOL hasMaxGraphVersion;
-@property(readonly) BOOL hasOriginalDirectionsResponseID;
-@property(readonly) BOOL hasOriginalRoute;
-@property(readonly) BOOL hasOriginalRouteID;
-@property(readonly) BOOL hasOriginalRouteZilchPoints;
-@property(readonly) BOOL hasRouteAttributes;
-@property BOOL hasSequenceNumber;
-@property BOOL hasSessionID;
-@property BOOL hasSharedLibraryVersion;
-@property BOOL hasTimeSinceLastRerouteRequest;
-@property unsigned int mainTransportTypeMaxRouteCount;
-@property unsigned long long maxDecoderVersion;
-@property unsigned long long maxGraphVersion;
-@property(retain) NSData * originalDirectionsResponseID;
-@property(retain) GEOOriginalRoute * originalRoute;
-@property(retain) NSData * originalRouteID;
-@property(retain) NSData * originalRouteZilchPoints;
-@property(retain) GEORouteAttributes * routeAttributes;
-@property unsigned int sequenceNumber;
-@property(retain) NSMutableArray * serviceTags;
-@property struct { unsigned long long x1; unsigned long long x2; } sessionID;
-@property unsigned long long sharedLibraryVersion;
-@property unsigned int timeSinceLastRerouteRequest;
-@property(retain) NSMutableArray * waypointTypeds;
+@property (nonatomic, retain) GEOClientCapabilities *clientCapabilities;
+@property (nonatomic, retain) GEOMapRegion *currentMapRegion;
+@property (nonatomic, retain) GEOLocation *currentUserLocation;
+@property (nonatomic) int departureTime;
+@property (nonatomic, retain) GEODirectionsRequestFeedback *feedback;
+@property (nonatomic) BOOL getRouteForZilchPoints;
+@property (nonatomic, readonly) BOOL hasClientCapabilities;
+@property (nonatomic, readonly) BOOL hasCurrentMapRegion;
+@property (nonatomic, readonly) BOOL hasCurrentUserLocation;
+@property (nonatomic) BOOL hasDepartureTime;
+@property (nonatomic, readonly) BOOL hasFeedback;
+@property (nonatomic) BOOL hasGetRouteForZilchPoints;
+@property (nonatomic) BOOL hasMainTransportTypeMaxRouteCount;
+@property (nonatomic) BOOL hasMaxDecoderVersion;
+@property (nonatomic) BOOL hasMaxGraphVersion;
+@property (nonatomic, readonly) BOOL hasOriginalDirectionsResponseID;
+@property (nonatomic, readonly) BOOL hasOriginalRoute;
+@property (nonatomic, readonly) BOOL hasOriginalRouteID;
+@property (nonatomic, readonly) BOOL hasOriginalRouteZilchPoints;
+@property (nonatomic, readonly) BOOL hasRouteAttributes;
+@property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic) BOOL hasSessionID;
+@property (nonatomic) BOOL hasSharedLibraryVersion;
+@property (nonatomic) BOOL hasTimeSinceLastRerouteRequest;
+@property (nonatomic) unsigned int mainTransportTypeMaxRouteCount;
+@property (nonatomic) unsigned long long maxDecoderVersion;
+@property (nonatomic) unsigned long long maxGraphVersion;
+@property (nonatomic, retain) NSData *originalDirectionsResponseID;
+@property (nonatomic, retain) GEOOriginalRoute *originalRoute;
+@property (nonatomic, retain) NSData *originalRouteID;
+@property (nonatomic, retain) NSData *originalRouteZilchPoints;
+@property (nonatomic, retain) GEORouteAttributes *routeAttributes;
+@property (nonatomic) unsigned int sequenceNumber;
+@property (nonatomic, retain) NSMutableArray *serviceTags;
+@property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionID;
+@property (nonatomic) unsigned long long sharedLibraryVersion;
+@property (nonatomic) unsigned int timeSinceLastRerouteRequest;
+@property (nonatomic, retain) NSMutableArray *waypointTypeds;
 
 - (void)addServiceTag:(id)arg1;
 - (void)addWaypointTyped:(id)arg1;

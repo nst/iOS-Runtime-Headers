@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKCalendarIgnoreSharedCalendarResourceChangeNotificationsEditItem : EKCalendarAbstractSwitchEditItem {
-}
+@interface EKCalendarIgnoreSharedCalendarResourceChangeNotificationsEditItem : EKCalendarAbstractSwitchEditItem
 
 - (id)cellText;
 - (BOOL)configureWithCalendar:(id)arg1;

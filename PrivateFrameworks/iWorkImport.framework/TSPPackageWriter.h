@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSPComponentWriteChannel>, NSError, NSObject<OS_dispatch_queue>, NSProgress, NSString, NSURL, SFUCryptoKey, TSPPackage, TSUZipFileWriter;
-
 @interface TSPPackageWriter : NSObject <TSPPackageDataWriter> {
     NSURL *_URL;
     <TSPComponentWriteChannel> *_componentWriteChannel;
@@ -26,18 +19,18 @@
     TSUZipFileWriter *_zipArchiveWriter;
 }
 
-@property(readonly) NSURL * URL;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSURL * documentTargetURL;
-@property(readonly) SFUCryptoKey * encryptionKey;
-@property(readonly) unsigned int hash;
-@property(readonly) TSPPackage * originalPackage;
-@property(readonly) NSProgress * progress;
-@property(readonly) NSURL * relativeURLForExternalData;
-@property(readonly) Class superclass;
-@property(readonly) int updateType;
-@property(readonly) TSUZipFileWriter * zipArchiveWriter;
+@property (nonatomic, readonly) NSURL *URL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSURL *documentTargetURL;
+@property (nonatomic, readonly) SFUCryptoKey *encryptionKey;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) TSPPackage *originalPackage;
+@property (nonatomic, readonly) NSProgress *progress;
+@property (nonatomic, readonly) NSURL *relativeURLForExternalData;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) int updateType;
+@property (nonatomic, readonly) TSUZipFileWriter *zipArchiveWriter;
 
 + (id)newPackageWriterWithPackageType:(int)arg1 URL:(id)arg2 documentTargetURL:(id)arg3 relativeURLForExternalData:(id)arg4 packageIdentifier:(unsigned char)arg5 documentProperties:(id)arg6 fileFormatVersion:(unsigned long long)arg7 updateType:(int)arg8 encryptionKey:(id)arg9 originalDocumentPackage:(id)arg10 originalSuppportPackage:(id)arg11 fileCoordinatorDelegate:(id)arg12 progress:(id)arg13 error:(id*)arg14;
 
@@ -46,8 +39,8 @@
 - (BOOL)addData:(id)arg1 infoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg2 saveOperationState:(id)arg3;
 - (BOOL)closeAndReturnError:(id*)arg1;
 - (void)closeCurrentChannel;
-- (void)closeWithQueue:(id)arg1 completion:(id)arg2;
-- (void)copyComponent:(id)arg1 locator:(id)arg2 completion:(id)arg3;
+- (void)closeWithQueue:(id)arg1 completion:(id /* block */)arg2;
+- (void)copyComponent:(id)arg1 locator:(id)arg2 completion:(id /* block */)arg3;
 - (id)copyData:(id)arg1 withReadChannel:(id)arg2 decryptionInfo:(id)arg3 size:(unsigned long long)arg4 preferredFilename:(id)arg5 error:(id*)arg6;
 - (void)dealloc;
 - (id)documentTargetURL;

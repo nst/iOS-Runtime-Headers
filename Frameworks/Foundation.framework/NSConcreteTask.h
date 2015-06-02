@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSObject<OS_dispatch_semaphore>, NSObject<OS_dispatch_source>, NSPort;
-
 @interface NSConcreteTask : NSTask {
     NSMutableDictionary *_dictionary;
     NSObject<OS_dispatch_source> *_dsrc;
@@ -19,19 +13,15 @@
     int _platformExitInfo;
     BOOL _qos;
     int _suspendCount;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _terminationHandler;
-
+    id /* block */ _terminationHandler;
     BOOL _terminationRun;
     NSPort *_tmpPort;
 }
 
 - (int)_platformExitInformation;
 - (int)_procid;
-- (void)_setTerminationHandler:(id)arg1;
-- (void)_withTaskDictionary:(id)arg1;
+- (void)_setTerminationHandler:(id /* block */)arg1;
+- (void)_withTaskDictionary:(id /* block */)arg1;
 - (id)arguments;
 - (id)currentDirectoryPath;
 - (void)dealloc;
@@ -58,7 +48,7 @@
 - (void)setStandardOutput:(id)arg1;
 - (void)setStartsNewProcessGroup:(BOOL)arg1;
 - (void)setTaskDictionary:(id)arg1;
-- (void)setTerminationHandler:(id)arg1;
+- (void)setTerminationHandler:(id /* block */)arg1;
 - (id)standardError;
 - (id)standardInput;
 - (id)standardOutput;
@@ -67,7 +57,7 @@
 - (id)taskDictionary;
 - (void)terminate;
 - (void)terminateTask;
-- (id)terminationHandler;
+- (id /* block */)terminationHandler;
 - (int)terminationReason;
 - (int)terminationStatus;
 - (void)waitUntilExit;

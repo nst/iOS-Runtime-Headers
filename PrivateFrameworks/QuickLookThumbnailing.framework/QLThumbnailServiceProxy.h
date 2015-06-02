@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/QuickLookThumbnailing.framework/QuickLookThumbnailing
  */
 
-@class NSObject<QLThumbnailsInterface>, NSXPCConnection;
-
 @interface QLThumbnailServiceProxy : NSObject {
     NSXPCConnection *_connection;
     NSObject<QLThumbnailsInterface> *_proxy;
@@ -11,7 +9,7 @@
 
 + (id)sharedInstance;
 
-- (void)askThumbnailAdditionIndex:(id)arg1;
+- (void)askThumbnailAdditionIndex:(id /* block */)arg1;
 - (void)dealloc;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)init;

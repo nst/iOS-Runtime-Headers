@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString;
-
 @interface SGEmailKey : NSObject <SGEntityKey> {
     NSString *_messageId;
     long long _messageIdHash;
     NSString *_source;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * messageId;
-@property(readonly) long long messageIdHash;
-@property(readonly) NSString * source;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *messageId;
+@property (nonatomic, readonly) long long messageIdHash;
+@property (nonatomic, readonly) NSString *source;
+@property (readonly) Class superclass;
 
 + (BOOL)isSupportedEntityType:(long long)arg1;
 

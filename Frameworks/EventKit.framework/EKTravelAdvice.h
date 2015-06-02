@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSDate, NSString;
-
 @interface EKTravelAdvice : NSObject <EKTravelAdvice> {
     unsigned int _accidentState;
     NSDate *_predictedDepartureTime;
@@ -12,15 +10,15 @@
     double _travelStateScore;
 }
 
-@property(readonly) unsigned int accidentState;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSDate * predictedDepartureTime;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int trafficLevel;
-@property(readonly) unsigned int travelState;
-@property(readonly) double travelStateScore;
+@property (nonatomic, readonly) unsigned int accidentState;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSDate *predictedDepartureTime;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int trafficLevel;
+@property (nonatomic, readonly) unsigned int travelState;
+@property (nonatomic, readonly) double travelStateScore;
 
 - (unsigned int)accidentState;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLPhotoDCIMDirectory;
-
 @interface PLPhotoDCFDirectory : PLPhotoDCFObject {
     BOOL _considerInvalidFileGroups;
     PLPhotoDCIMDirectory *_dcimDirectory;

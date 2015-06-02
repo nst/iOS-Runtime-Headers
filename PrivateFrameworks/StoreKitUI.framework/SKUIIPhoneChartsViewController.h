@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIChartsViewControllerDelegate>, NSArray, NSMutableDictionary, NSOperationQueue, NSString, SKUIClientContext, SKUIResourceLoader, SKUISegmentedTableHeaderView, UISegmentedControl;
-
 @interface SKUIIPhoneChartsViewController : UIViewController <SKUIItemListTableDelegate> {
     SKUIResourceLoader *_artworkLoader;
     NSMutableDictionary *_chartViewControllers;
@@ -23,15 +21,15 @@
     int _selectedChartIndex;
 }
 
-@property(retain) SKUIResourceLoader * artworkLoader;
-@property(copy) NSArray * charts;
-@property(retain) SKUIClientContext * clientContext;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
-@property(copy,readonly) NSString * debugDescription;
-@property <SKUIChartsViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SKUIResourceLoader *artworkLoader;
+@property (nonatomic, copy) NSArray *charts;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIChartsViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_artworkContextForChart:(id)arg1;
@@ -48,7 +46,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (void)dealloc;
 - (id)delegate;
-- (void)enumerateVisibleItemsUsingBlock:(id)arg1;
+- (void)enumerateVisibleItemsUsingBlock:(id /* block */)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForItemIndex:(int)arg1 chartIndex:(int)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)itemList:(id)arg1 didConfirmItemOfferForItem:(id)arg2 atIndexPath:(id)arg3;

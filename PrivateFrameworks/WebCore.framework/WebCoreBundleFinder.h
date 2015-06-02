@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface WebCoreBundleFinder : NSObject {
-}
+@interface WebCoreBundleFinder : NSObject
 
 @end

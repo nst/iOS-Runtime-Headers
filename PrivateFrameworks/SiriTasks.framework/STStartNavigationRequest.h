@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@class AFLocation;
-
 @interface STStartNavigationRequest : AFSiriRequest {
     AFLocation *_destinationLocation;
     int _directionsType;

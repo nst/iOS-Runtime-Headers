@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSString;
-
 @interface CKDPShareTokenSaveResponse : PBCodable <NSCopying> {
     NSString *_routingKey;
 }
 
-@property(readonly) BOOL hasRoutingKey;
-@property(retain) NSString * routingKey;
+@property (nonatomic, readonly) BOOL hasRoutingKey;
+@property (nonatomic, retain) NSString *routingKey;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SASTTemplateRating;
+@interface SASTRatingItem : AceObject <SASTTemplateItem>
 
-@interface SASTRatingItem : AceObject <SASTTemplateItem> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SASTTemplateRating * rating;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SASTTemplateRating *rating;
+@property (readonly) Class superclass;
 
 + (id)ratingItem;
 + (id)ratingItemWithDictionary:(id)arg1 context:(id)arg2;

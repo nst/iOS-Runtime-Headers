@@ -2,47 +2,33 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKDMMCSItemGroupSet, NSMutableArray, NSObject<OS_dispatch_group>;
-
 @interface CKDMMCSItemGroupSetContext : NSObject <CKDCancelling> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _itemGroupCompletionBlock;
-
+    id /* block */ _itemGroupCompletionBlock;
     NSMutableArray *_itemGroupContexts;
     CKDMMCSItemGroupSet *_itemGroupSet;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _itemGroupSetCompletionBlock;
-
+    id /* block */ _itemGroupSetCompletionBlock;
     NSObject<OS_dispatch_group> *_itemGroupSetCompletionGroup;
 }
 
-@property(copy) id itemGroupCompletionBlock;
-@property(retain) NSMutableArray * itemGroupContexts;
-@property(retain) CKDMMCSItemGroupSet * itemGroupSet;
-@property(copy) id itemGroupSetCompletionBlock;
-@property(retain) NSObject<OS_dispatch_group> * itemGroupSetCompletionGroup;
+@property (nonatomic, copy) id /* block */ itemGroupCompletionBlock;
+@property (nonatomic, retain) NSMutableArray *itemGroupContexts;
+@property (nonatomic, retain) CKDMMCSItemGroupSet *itemGroupSet;
+@property (nonatomic, copy) id /* block */ itemGroupSetCompletionBlock;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *itemGroupSetCompletionGroup;
 
 - (void).cxx_destruct;
 - (void)_addItemGroupContext:(id)arg1;
 - (void)cancel;
-- (id)initWithItemGroupSet:(id)arg1 completionHandler:(id)arg2;
-- (id)itemGroupCompletionBlock;
+- (id)initWithItemGroupSet:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id /* block */)itemGroupCompletionBlock;
 - (id)itemGroupContexts;
 - (id)itemGroupSet;
-- (id)itemGroupSetCompletionBlock;
+- (id /* block */)itemGroupSetCompletionBlock;
 - (id)itemGroupSetCompletionGroup;
-- (void)setItemGroupCompletionBlock:(id)arg1;
+- (void)setItemGroupCompletionBlock:(id /* block */)arg1;
 - (void)setItemGroupContexts:(id)arg1;
 - (void)setItemGroupSet:(id)arg1;
-- (void)setItemGroupSetCompletionBlock:(id)arg1;
+- (void)setItemGroupSetCompletionBlock:(id /* block */)arg1;
 - (void)setItemGroupSetCompletionGroup:(id)arg1;
 - (void)start;
 

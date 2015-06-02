@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSError, NSMutableDictionary, NSString, SSPurchase, SSURLConnectionResponse;
-
 @interface SSPurchaseResponse : NSObject <SSXPCCoding> {
     BOOL _cancelsPurchaseBatch;
     NSArray *_downloadIdentifiers;
@@ -16,18 +14,18 @@
     NSMutableDictionary *_transactionIdentifiers;
 }
 
-@property(retain) SSURLConnectionResponse * URLResponse;
-@property BOOL cancelsPurchaseBatch;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSArray * downloadIdentifiers;
-@property(copy) NSError * error;
-@property(readonly) unsigned int hash;
-@property(copy) SSPurchase * purchase;
-@property double requestStartTime;
-@property double responseEndTime;
-@property double responseStartTime;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) SSURLConnectionResponse *URLResponse;
+@property (nonatomic) BOOL cancelsPurchaseBatch;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *downloadIdentifiers;
+@property (nonatomic, copy) NSError *error;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) SSPurchase *purchase;
+@property (nonatomic) double requestStartTime;
+@property (nonatomic) double responseEndTime;
+@property (nonatomic) double responseStartTime;
+@property (readonly) Class superclass;
 
 - (id)URLResponse;
 - (BOOL)cancelsPurchaseBatch;

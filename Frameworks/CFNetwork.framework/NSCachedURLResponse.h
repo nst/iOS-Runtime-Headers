@@ -2,22 +2,21 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSCachedURLResponseInternal, NSData, NSDictionary, NSURLResponse;
-
 @interface NSCachedURLResponse : NSObject <NSCopying, NSSecureCoding> {
     NSCachedURLResponseInternal *_internal;
 }
 
-@property(copy,readonly) NSData * data;
-@property(copy,readonly) NSURLResponse * response;
-@property(readonly) unsigned int storagePolicy;
-@property(copy,readonly) NSDictionary * userInfo;
+@property (readonly, copy) NSData *data;
+@property (readonly, copy) NSURLResponse *response;
+@property (readonly) unsigned int storagePolicy;
+@property (readonly, copy) NSDictionary *userInfo;
+
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 
 - (struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; }*)_CFCachedURLResponse;
-- (id)_cacheTime;
 - (void)_deallocInternalCFCachedURLResponse;
 - (id)_initWithCFCachedURLResponse:(struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; }*)arg1;
 - (void)_private_encodeWithCoder:(id)arg1;
@@ -35,5 +34,9 @@
 - (id)response;
 - (unsigned int)storagePolicy;
 - (id)userInfo;
+
+// Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
+
+- (id)_cacheTime;
 
 @end

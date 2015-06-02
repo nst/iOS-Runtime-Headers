@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactGroupPickerDelegate>;
-
 @interface ABContactAddNewFieldAction : ABContactAction {
     <ABContactGroupPickerDelegate> *_groupPickerDelegate;
 }
 
-@property <ABContactGroupPickerDelegate> * groupPickerDelegate;
+@property (nonatomic) <ABContactGroupPickerDelegate> *groupPickerDelegate;
 
 - (id)groupPickerDelegate;
 - (void)performActionWithSender:(id)arg1;

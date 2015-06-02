@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class GKSessionInternal, NSString;
-
 @interface GKPeerInternal : NSObject <GKTableCleanupWhenRemoved> {
     id *_addrList;
     double _connectTimeout;
@@ -24,22 +22,22 @@
     struct _DNSServiceRef_t { } *_txtRecordService;
 }
 
-@property(getter=isBusy) BOOL busy;
+@property (getter=isBusy) BOOL busy;
 @property double connectTimeout;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSString * displayName;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) NSString *displayName;
+@property (readonly) unsigned int hash;
 @property BOOL moreResolvesComing;
 @property BOOL needsToTimeout;
-@property(readonly) unsigned int pid;
-@property struct _DNSServiceRef_t { }* resolveService;
+@property (readonly) unsigned int pid;
+@property struct _DNSServiceRef_t { }*resolveService;
 @property int serviceCount;
-@property(readonly) NSString * serviceName;
+@property (readonly) NSString *serviceName;
 @property unsigned int servicePort;
-@property(retain) GKSessionInternal * session;
-@property(readonly) Class superclass;
-@property struct _DNSServiceRef_t { }* txtRecordService;
+@property (nonatomic, retain) GKSessionInternal *session;
+@property (readonly) Class superclass;
+@property struct _DNSServiceRef_t { }*txtRecordService;
 
 + (void)freeLookupList:(struct _DNSServiceRef_t {}**)arg1 andAddrList:(id*)arg2 andInterfaceList:(unsigned int*)arg3 count:(int)arg4;
 

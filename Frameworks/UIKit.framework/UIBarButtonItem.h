@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSSet, NSString, UIBarButtonItem, UIColor, UIImage, UINavigationItem, UIToolbarButton, UIView;
-
 @interface UIBarButtonItem : UIBarItem <NSCoding> {
     BOOL __hidden;
     UIBarButtonItem *__itemVariation;
@@ -52,42 +50,39 @@
     float _width;
 }
 
-@property(setter=_setFlexible:) BOOL _flexible;
-@property(setter=_setHidden:) BOOL _hidden;
-@property(setter=_setImageHasEffects:) BOOL _imageHasEffects;
-@property(setter=_setItemVariation:,retain) UIBarButtonItem * _itemVariation;
-@property(setter=_setMaximumWidth:) float _maximumWidth;
-@property(setter=_setMinimumWidth:) float _minimumWidth;
-@property(readonly) BOOL _needsViewUpdateForLetterpressImage;
-@property(setter=_setOwningNavigationItem:) UINavigationItem * _owningNavigationItem;
-@property(setter=_setPossibleItemVariations:,copy) NSSet * _possibleItemVariations;
-@property(setter=_setShowsBackButtonIndicator:) BOOL _showsBackButtonIndicator;
-@property(setter=_setStylesForSizingTitles:,copy) NSDictionary * _stylesForSizingTitles;
-@property(readonly) UIToolbarButton * _toolbarButton;
-@property(setter=_setToolbarCharge:) float _toolbarCharge;
-@property(readonly) BOOL _viewWantsLetterpressImage;
-@property SEL action;
-@property(retain) UIView * customView;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) BOOL isSystemItem;
-@property(getter=_miniImage,setter=_setMiniImage:,retain) UIImage * miniImage;
-@property(getter=_miniImageInsets,setter=_setMiniImageInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } miniImageInsets;
-@property(getter=_possibleSystemItems,setter=_setPossibleSystemItems:,copy) NSSet * possibleSystemItems;
-@property(copy) NSSet * possibleTitles;
-@property BOOL selected;
-@property int style;
-@property(readonly) int systemItem;
-@property id target;
-@property(retain) UIColor * tintColor;
-@property float width;
+@property (setter=_setFlexible:, nonatomic) BOOL _flexible;
+@property (setter=_setHidden:, nonatomic) BOOL _hidden;
+@property (setter=_setImageHasEffects:, nonatomic) BOOL _imageHasEffects;
+@property (setter=_setItemVariation:, nonatomic, retain) UIBarButtonItem *_itemVariation;
+@property (setter=_setMaximumWidth:, nonatomic) float _maximumWidth;
+@property (setter=_setMinimumWidth:, nonatomic) float _minimumWidth;
+@property (nonatomic, readonly) BOOL _needsViewUpdateForLetterpressImage;
+@property (setter=_setOwningNavigationItem:, nonatomic) UINavigationItem *_owningNavigationItem;
+@property (setter=_setPossibleItemVariations:, nonatomic, copy) NSSet *_possibleItemVariations;
+@property (setter=_setShowsBackButtonIndicator:, nonatomic) BOOL _showsBackButtonIndicator;
+@property (setter=_setStylesForSizingTitles:, nonatomic, copy) NSDictionary *_stylesForSizingTitles;
+@property (nonatomic, readonly) UIToolbarButton *_toolbarButton;
+@property (setter=_setToolbarCharge:, nonatomic) float _toolbarCharge;
+@property (nonatomic, readonly) BOOL _viewWantsLetterpressImage;
+@property (nonatomic) SEL action;
+@property (nonatomic, retain) UIView *customView;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) BOOL isSystemItem;
+@property (getter=_miniImage, setter=_setMiniImage:, nonatomic, retain) UIImage *miniImage;
+@property (getter=_miniImageInsets, setter=_setMiniImageInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } miniImageInsets;
+@property (getter=_possibleSystemItems, setter=_setPossibleSystemItems:, nonatomic, copy) NSSet *possibleSystemItems;
+@property (nonatomic, copy) NSSet *possibleTitles;
+@property (nonatomic) BOOL selected;
+@property (nonatomic) int style;
+@property (nonatomic, readonly) int systemItem;
+@property (nonatomic) id target;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (nonatomic) float width;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_appearanceBlindViewClasses;
-+ (id)_ckBarButtonItemWithTitle:(id)arg1 style:(int)arg2;
 + (void)_getSystemItemStyle:(int*)arg1 title:(id*)arg2 image:(id*)arg3 selectedImage:(id*)arg4 action:(SEL*)arg5 forBarStyle:(int)arg6 landscape:(BOOL)arg7 alwaysBordered:(BOOL)arg8 usingSystemItem:(int)arg9 usingItemStyle:(int)arg10;
-+ (id)ckCancelBarButtonItem;
-+ (id)ckDoneBarButtonItem;
-+ (id)ckEditBarButtonItem;
-+ (id)ckEditDoneButtonPossibleItemVariations;
 + (Class)classForNavigationButton;
 + (Class)classForToolbarButton;
 
@@ -145,7 +140,6 @@
 - (id)backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (id)backgroundImageForState:(unsigned int)arg1 style:(int)arg2 barMetrics:(int)arg3;
 - (float)backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
-- (void)configureFromScriptButton:(id)arg1;
 - (id)createViewForNavigationItem:(id)arg1;
 - (id)createViewForToolbar:(id)arg1;
 - (id)customView;
@@ -167,10 +161,6 @@
 - (id)itemVariation;
 - (id)landscapeImagePhone;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })landscapeImagePhoneInsets;
-- (void)mf_setImageOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)mf_setImageVerticalOffset:(float)arg1;
-- (void)mf_setMiniImageOffset:(struct CGPoint { float x1; float x2; })arg1;
-- (void)mf_setMiniImageVerticalOffset:(float)arg1;
 - (id)nextResponder;
 - (id)possibleTitles;
 - (id)scriptingID;
@@ -211,5 +201,24 @@
 - (id)view;
 - (float)width;
 - (id)window;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (void)mf_setImageOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)mf_setImageVerticalOffset:(float)arg1;
+- (void)mf_setMiniImageOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)mf_setMiniImageVerticalOffset:(float)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
++ (id)_ckBarButtonItemWithTitle:(id)arg1 style:(int)arg2;
++ (id)ckCancelBarButtonItem;
++ (id)ckDoneBarButtonItem;
++ (id)ckEditBarButtonItem;
++ (id)ckEditDoneButtonPossibleItemVariations;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)configureFromScriptButton:(id)arg1;
 
 @end

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface UIMovieView : MPVideoView {
-}
+@interface UIMovieView : MPVideoView
 
 - (id)avPlayer;
 - (unsigned int)bufferingStatusMask;

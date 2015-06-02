@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@interface SBKSyncRequest : SBKRequest {
-}
+@interface SBKSyncRequest : SBKRequest
 
 + (id)requestForTransaction:(id)arg1;
 

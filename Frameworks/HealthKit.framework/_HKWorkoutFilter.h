@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSUUID;
-
 @interface _HKWorkoutFilter : _HKFilter {
     NSUUID *_workoutUUID;
 }
 
-@property(readonly) NSUUID * workoutUUID;
+@property (nonatomic, readonly) NSUUID *workoutUUID;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)filterForKeyPath:(id)arg1 predicateOperatorType:(unsigned int)arg2 value:(id)arg3 dataTypes:(id)arg4;
 + (id)filterWithWorkoutUUID:(id)arg1;
@@ -20,7 +20,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)predicateWithHealthDaemon:(id)arg1;
 - (id)workoutUUID;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
+- (id)predicateWithHealthDaemon:(id)arg1;
 
 @end

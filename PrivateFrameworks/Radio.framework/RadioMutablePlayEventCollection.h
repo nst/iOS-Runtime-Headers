@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSString;
+@interface RadioMutablePlayEventCollection : RadioPlayEventCollection
 
-@interface RadioMutablePlayEventCollection : RadioPlayEventCollection {
-}
-
-@property(copy) NSString * deviceName;
+@property (nonatomic, copy) NSString *deviceName;
 
 - (void)addPlayEvents:(id)arg1 forStation:(id)arg2;
 - (void)addPlayEvents:(id)arg1 forStationHash:(id)arg2 stationID:(long long)arg3;

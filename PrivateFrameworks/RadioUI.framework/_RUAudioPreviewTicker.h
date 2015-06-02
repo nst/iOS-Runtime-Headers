@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class RUAudioPreviewView;
-
 @interface _RUAudioPreviewTicker : NSObject {
     RUAudioPreviewView *_audioPreviewView;
 }
 
-@property RUAudioPreviewView * audioPreviewView;
+@property (nonatomic) RUAudioPreviewView *audioPreviewView;
 
 - (void).cxx_destruct;
 - (id)audioPreviewView;

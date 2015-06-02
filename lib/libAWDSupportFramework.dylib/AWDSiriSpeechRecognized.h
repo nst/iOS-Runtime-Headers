@@ -13,12 +13,12 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned long long durationFromVoiceRecordingEnd;
-@property unsigned long long durationFromVoiceSendEnd;
-@property BOOL hasDurationFromVoiceRecordingEnd;
-@property BOOL hasDurationFromVoiceSendEnd;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned long long durationFromVoiceRecordingEnd;
+@property (nonatomic) unsigned long long durationFromVoiceSendEnd;
+@property (nonatomic) BOOL hasDurationFromVoiceRecordingEnd;
+@property (nonatomic) BOOL hasDurationFromVoiceSendEnd;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

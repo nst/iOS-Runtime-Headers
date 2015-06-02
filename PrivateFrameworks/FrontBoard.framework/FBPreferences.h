@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>;
-
 @interface FBPreferences : NSObject {
     NSMutableSet *_enabledLogNames;
     NSObject<OS_dispatch_queue> *_queue;

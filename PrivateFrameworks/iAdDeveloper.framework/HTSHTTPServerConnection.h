@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iAdDeveloper.framework/iAdDeveloper
  */
 
-@class HTSHTTPServer, NSMutableArray, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString, NSTimer;
-
 @interface HTSHTTPServerConnection : NSObject <NSStreamDelegate> {
     BOOL _closeOnEmptyQueue;
     NSObject<OS_dispatch_queue> *_connectionQueue;
@@ -23,13 +21,13 @@
     NSObject<OS_dispatch_source> *_writeSource;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * identifier;
-@property(retain) NSTimer * idleTimer;
-@property double lastActivity;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, retain) NSTimer *idleTimer;
+@property (nonatomic) double lastActivity;
+@property (readonly) Class superclass;
 
 - (void)_closeInputStream;
 - (void)_closeOutputStream;

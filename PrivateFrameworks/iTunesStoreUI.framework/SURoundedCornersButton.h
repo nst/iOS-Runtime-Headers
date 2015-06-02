@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIBezierPath, UIView;
-
 @interface SURoundedCornersButton : SUSubtitledButton {
     UIBezierPath *_bezierPath;
     UIView *_highlightedBackgroundView;

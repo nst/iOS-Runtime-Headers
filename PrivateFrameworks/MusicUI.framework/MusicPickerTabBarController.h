@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicPickerTabBarController : UITabBarController {
-}
+@interface MusicPickerTabBarController : UITabBarController
 
 - (BOOL)MPH_supportsCoverFlow;
 - (unsigned int)supportedInterfaceOrientations;

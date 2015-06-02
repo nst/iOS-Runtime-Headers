@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBSceneBoundsDelegate>, <FBSceneClient>, <FBSceneClientProvider>, <FBSceneDelegate>, FBProcess, FBSDisplay, FBSMutableSceneSettings, FBSSceneClientSettings, FBSSceneSettings, FBWindowContextHostManager, FBWindowContextManager, NSString;
-
 @interface FBScene : NSObject <FBSceneHost> {
     <FBSceneBoundsDelegate> *_boundsDelegate;
     <FBSceneClient> *_client;
@@ -22,26 +20,26 @@
     BOOL _valid;
 }
 
-@property(setter=_setBoundsDelegate:) <FBSceneBoundsDelegate> * _boundsDelegate;
-@property(setter=_setLockedForMutation:) BOOL _lockedForMutation;
-@property(readonly) unsigned int _transactionID;
-@property(retain,readonly) <FBSceneClient> * client;
-@property(retain,readonly) FBProcess * clientProcess;
-@property(retain,readonly) <FBSceneClientProvider> * clientProvider;
-@property(retain,readonly) FBSSceneClientSettings * clientSettings;
-@property(retain,readonly) FBWindowContextHostManager * contextHostManager;
-@property(retain,readonly) FBWindowContextManager * contextManager;
-@property <FBSceneDelegate> * delegate;
-@property(retain,readonly) FBSDisplay * display;
-@property(copy,readonly) NSString * identifier;
-@property(retain,readonly) FBSMutableSceneSettings * mutableSettings;
-@property(retain,readonly) FBSSceneSettings * settings;
-@property(getter=isValid,readonly) BOOL valid;
+@property (setter=_setBoundsDelegate:, nonatomic) <FBSceneBoundsDelegate> *_boundsDelegate;
+@property (setter=_setLockedForMutation:, nonatomic) BOOL _lockedForMutation;
+@property (nonatomic, readonly) unsigned int _transactionID;
+@property (nonatomic, readonly, retain) <FBSceneClient> *client;
+@property (nonatomic, readonly, retain) FBProcess *clientProcess;
+@property (nonatomic, readonly, retain) <FBSceneClientProvider> *clientProvider;
+@property (nonatomic, readonly, retain) FBSSceneClientSettings *clientSettings;
+@property (nonatomic, readonly, retain) FBWindowContextHostManager *contextHostManager;
+@property (nonatomic, readonly, retain) FBWindowContextManager *contextManager;
+@property (nonatomic) <FBSceneDelegate> *delegate;
+@property (nonatomic, readonly, retain) FBSDisplay *display;
+@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly, retain) FBSMutableSceneSettings *mutableSettings;
+@property (nonatomic, readonly, retain) FBSSceneSettings *settings;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
 
-- (void)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id)arg3;
+- (void)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (id)_boundsDelegate;
 - (id)_descriptionWithMultilinePrefix:(id)arg1;
-- (void)_handleSceneClientMessage:(id)arg1 withBlock:(id)arg2;
+- (void)_handleSceneClientMessage:(id)arg1 withBlock:(id /* block */)arg2;
 - (unsigned int)_incrementTransactionID;
 - (void)_invalidateWithTransitionContext:(id)arg1;
 - (BOOL)_lockedForMutation;
@@ -72,6 +70,6 @@
 - (void)setDelegate:(id)arg1;
 - (id)settings;
 - (void)updateSettings:(id)arg1 withTransitionContext:(id)arg2;
-- (void)updateSettingsWithBlock:(id)arg1;
+- (void)updateSettingsWithBlock:(id /* block */)arg1;
 
 @end

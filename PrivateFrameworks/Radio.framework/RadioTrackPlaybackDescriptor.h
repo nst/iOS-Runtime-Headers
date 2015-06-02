@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSDate, NSDictionary;
-
 @interface RadioTrackPlaybackDescriptor : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     BOOL _current;
     NSDate *_expirationDate;
@@ -13,12 +11,12 @@
     NSDictionary *_trackInfo;
 }
 
-@property(getter=isCurrent,readonly) BOOL current;
-@property(readonly) NSDate * expirationDate;
-@property(readonly) double pauseTime;
-@property(readonly) NSDate * skipDate;
-@property(readonly) long long storeID;
-@property(copy,readonly) NSDictionary * trackInfo;
+@property (getter=isCurrent, nonatomic, readonly) BOOL current;
+@property (nonatomic, readonly) NSDate *expirationDate;
+@property (nonatomic, readonly) double pauseTime;
+@property (nonatomic, readonly) NSDate *skipDate;
+@property (nonatomic, readonly) long long storeID;
+@property (nonatomic, readonly, copy) NSDictionary *trackInfo;
 
 + (BOOL)supportsSecureCoding;
 

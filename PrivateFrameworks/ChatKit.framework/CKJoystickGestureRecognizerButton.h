@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKJoystickGestureRecognizerButtonDelegate>, CKJoystickGestureRecognizer, NSDate, UIButton;
-
 @interface CKJoystickGestureRecognizerButton : NSObject {
     UIButton *_button;
     <CKJoystickGestureRecognizerButtonDelegate> *_delegate;
@@ -11,10 +9,10 @@
     CKJoystickGestureRecognizer *_gestureRecognizer;
 }
 
-@property(retain) UIButton * button;
-@property <CKJoystickGestureRecognizerButtonDelegate> * delegate;
-@property(retain) NSDate * gestureDidBeginDate;
-@property(retain) CKJoystickGestureRecognizer * gestureRecognizer;
+@property (nonatomic, retain) UIButton *button;
+@property (nonatomic) <CKJoystickGestureRecognizerButtonDelegate> *delegate;
+@property (nonatomic, retain) NSDate *gestureDidBeginDate;
+@property (nonatomic, retain) CKJoystickGestureRecognizer *gestureRecognizer;
 
 + (id)joystickGestureRecognizerButtonWithButton:(id)arg1;
 

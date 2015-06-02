@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSNumber, NSObject<OS_dispatch_queue>, NSString, NSURL, SSDownload;
-
 @interface ISUDownload : NSObject {
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSDownload *_download;
 }
 
-@property(readonly) NSString * artistName;
-@property(readonly) long long bytesDownloaded;
-@property(readonly) long long bytesTotal;
-@property(getter=isContentRestricted,readonly) BOOL contentRestricted;
-@property(readonly) double estimatedSecondsRemaining;
-@property(retain) SSDownload * managedDownload;
-@property(getter=isPausable,readonly) BOOL pausable;
-@property(readonly) double percentComplete;
-@property(readonly) NSString * phaseIdentifier;
-@property(getter=isPurchase,readonly) BOOL purchase;
-@property(readonly) NSString * statusDescription;
-@property(readonly) NSNumber * storeItemIdentifier;
-@property(readonly) NSNumber * storePreorderIdentifier;
-@property(readonly) NSURL * thumbnailImageURL;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) NSString *artistName;
+@property (nonatomic, readonly) long long bytesDownloaded;
+@property (nonatomic, readonly) long long bytesTotal;
+@property (getter=isContentRestricted, nonatomic, readonly) BOOL contentRestricted;
+@property (nonatomic, readonly) double estimatedSecondsRemaining;
+@property (nonatomic, retain) SSDownload *managedDownload;
+@property (getter=isPausable, nonatomic, readonly) BOOL pausable;
+@property (nonatomic, readonly) double percentComplete;
+@property (nonatomic, readonly) NSString *phaseIdentifier;
+@property (getter=isPurchase, nonatomic, readonly) BOOL purchase;
+@property (nonatomic, readonly) NSString *statusDescription;
+@property (nonatomic, readonly) NSNumber *storeItemIdentifier;
+@property (nonatomic, readonly) NSNumber *storePreorderIdentifier;
+@property (nonatomic, readonly) NSURL *thumbnailImageURL;
+@property (nonatomic, readonly) NSString *title;
 
 + (id)downloadExternalProperties;
 + (id)downloadProperties;

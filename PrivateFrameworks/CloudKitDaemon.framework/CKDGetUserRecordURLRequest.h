@@ -2,31 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKRecord;
-
 @interface CKDGetUserRecordURLRequest : CKDURLRequest {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordFetchedBlock;
-
+    id /* block */ _recordFetchedBlock;
     CKRecord *_userRecord;
 }
 
-@property(copy) id recordFetchedBlock;
-@property(retain) CKRecord * userRecord;
+@property (nonatomic, copy) id /* block */ recordFetchedBlock;
+@property (nonatomic, retain) CKRecord *userRecord;
 
 - (void).cxx_destruct;
 - (int)operationType;
-- (id)recordFetchedBlock;
+- (id /* block */)recordFetchedBlock;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
 - (id)requestOperations;
-- (void)setRecordFetchedBlock:(id)arg1;
+- (void)setRecordFetchedBlock:(id /* block */)arg1;
 - (void)setUserRecord:(id)arg1;
 - (id)userRecord;
 

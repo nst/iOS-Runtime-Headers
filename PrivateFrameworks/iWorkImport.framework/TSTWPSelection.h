@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTWPSelection : TSWPSelection {
-}
+@interface TSTWPSelection : TSWPSelection
 
 @end

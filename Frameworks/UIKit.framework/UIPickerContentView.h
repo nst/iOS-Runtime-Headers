@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel;
-
 @interface UIPickerContentView : UIView {
     UIImageView *_checkView;
     struct { 
@@ -13,8 +11,8 @@
     UILabel *_titleLabel;
 }
 
-@property(getter=isChecked) BOOL checked;
-@property(readonly) UILabel * titleLabel;
+@property (getter=isChecked, nonatomic) BOOL checked;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
 + (float)_checkmarkOffset;
 

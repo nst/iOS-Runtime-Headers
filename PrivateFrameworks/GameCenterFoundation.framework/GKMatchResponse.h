@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKDispatchGroup, GKMatchRequestInternal, NSArray, NSData, NSDictionary, NSString;
-
 @interface GKMatchResponse : GKInternalRepresentation {
     NSData *_cdxTicket;
     GKMatchRequestInternal *_matchRequest;
@@ -17,16 +15,16 @@
     int _state;
 }
 
-@property(retain) NSData * cdxTicket;
-@property(retain) GKMatchRequestInternal * matchRequest;
-@property(retain) NSArray * matches;
-@property GKDispatchGroup * matchingGroup;
-@property(retain) NSArray * relayPushes;
-@property(retain) NSString * rid;
-@property(readonly) int sequence;
-@property(retain) NSDictionary * serverRequest;
-@property(retain) NSData * sessionToken;
-@property int state;
+@property (retain) NSData *cdxTicket;
+@property (retain) GKMatchRequestInternal *matchRequest;
+@property (retain) NSArray *matches;
+@property GKDispatchGroup *matchingGroup;
+@property (retain) NSArray *relayPushes;
+@property (retain) NSString *rid;
+@property (readonly) int sequence;
+@property (retain) NSDictionary *serverRequest;
+@property (retain) NSData *sessionToken;
+@property (nonatomic) int state;
 
 + (id)secureCodedPropertyKeys;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSMutableDictionary, NSSet, NSString, SSDialog, SSItem, SSItemMedia, SSNetworkConstraints;
-
 @interface SSItemOffer : NSObject <NSCopying> {
     SSItem *_item;
     NSMutableDictionary *_offerDictionary;
@@ -11,23 +9,23 @@
     NSArray *_supportedDevices;
 }
 
-@property(getter=_offerItem,setter=_setOfferItem:) SSItem * _offerItem;
-@property(readonly) NSSet * accountIdentifiers;
-@property(readonly) NSString * actionDisplayName;
-@property(readonly) NSString * actionType;
-@property(readonly) NSString * buyParameters;
-@property(readonly) SSDialog * confirmationDialog;
-@property(readonly) long long estimatedDiskSpaceNeeded;
-@property(readonly) SSNetworkConstraints * networkConstraints;
-@property(readonly) NSString * offerIdentifier;
-@property(readonly) SSItemMedia * offerMedia;
-@property(getter=isOneTapOffer,readonly) BOOL oneTapOffer;
-@property(getter=isPreorder,readonly) BOOL preorder;
-@property(readonly) NSString * priceDisplay;
-@property(readonly) id requiredSoftwareCapabilities;
-@property(readonly) BOOL shouldShowPlusIcon;
-@property(readonly) SSDialog * successDialog;
-@property(readonly) NSArray * supportedDevices;
+@property (getter=_offerItem, setter=_setOfferItem:, nonatomic) SSItem *_offerItem;
+@property (nonatomic, readonly) NSSet *accountIdentifiers;
+@property (nonatomic, readonly) NSString *actionDisplayName;
+@property (nonatomic, readonly) NSString *actionType;
+@property (nonatomic, readonly) NSString *buyParameters;
+@property (nonatomic, readonly) SSDialog *confirmationDialog;
+@property (nonatomic, readonly) long long estimatedDiskSpaceNeeded;
+@property (nonatomic, readonly) SSNetworkConstraints *networkConstraints;
+@property (nonatomic, readonly) NSString *offerIdentifier;
+@property (nonatomic, readonly) SSItemMedia *offerMedia;
+@property (getter=isOneTapOffer, nonatomic, readonly) BOOL oneTapOffer;
+@property (getter=isPreorder, nonatomic, readonly) BOOL preorder;
+@property (nonatomic, readonly) NSString *priceDisplay;
+@property (nonatomic, readonly) id requiredSoftwareCapabilities;
+@property (nonatomic, readonly) BOOL shouldShowPlusIcon;
+@property (nonatomic, readonly) SSDialog *successDialog;
+@property (nonatomic, readonly) NSArray *supportedDevices;
 
 + (id)_preferredOfferIdentifiers;
 

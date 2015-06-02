@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSHashTable, NSMapTable, NSString, SKUIImageDataConsumer, SKUIResourceLoader, UIImage;
-
 @interface SKUIContentRatingArtworkResourceLoader : NSObject <SKUIArtworkRequestDelegate> {
     NSMapTable *_artworkRequestIDs;
     SKUIImageDataConsumer *_imageDataConsumer;
@@ -12,14 +10,14 @@
     UIImage *_placeholderImage;
 }
 
-@property(readonly) SKUIResourceLoader * artworkLoader;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIImageDataConsumer * imageDataConsumer;
-@property(readonly) struct CGSize { float x1; float x2; } imageSize;
-@property(readonly) UIImage * placeholderImage;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) SKUIResourceLoader *artworkLoader;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIImageDataConsumer *imageDataConsumer;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
+@property (nonatomic, readonly) UIImage *placeholderImage;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_loadImage:(id)arg1;

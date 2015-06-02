@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@class CAAnimation, NSString, SCNNode;
-
 @interface SCNParticlePropertyController : NSObject <NSCopying, NSSecureCoding> {
     CAAnimation *_animation;
     id _c3dAnimation;
@@ -15,12 +13,12 @@
     id _reserved;
 }
 
-@property(retain) CAAnimation * animation;
-@property float inputBias;
-@property int inputMode;
-@property SCNNode * inputOrigin;
-@property(copy) NSString * inputProperty;
-@property float inputScale;
+@property (nonatomic, retain) CAAnimation *animation;
+@property (nonatomic) float inputBias;
+@property (nonatomic) int inputMode;
+@property (nonatomic) SCNNode *inputOrigin;
+@property (nonatomic, copy) NSString *inputProperty;
+@property (nonatomic) float inputScale;
 
 + (id)SCNJSExportProtocol;
 + (id)controllerWithAnimation:(id)arg1;

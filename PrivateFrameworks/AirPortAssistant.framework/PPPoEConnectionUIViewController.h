@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@interface PPPoEConnectionUIViewController : AssistantSubUIViewController <TableViewManagerDelegate> {
-}
+@interface PPPoEConnectionUIViewController : AssistantSubUIViewController <TableViewManagerDelegate>
 
 - (void)loadView;
 - (void)touchInCellAtIndexPath:(id)arg1;

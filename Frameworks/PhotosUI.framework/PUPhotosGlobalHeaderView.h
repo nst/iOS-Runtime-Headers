@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, UILabel;
-
 @interface PUPhotosGlobalHeaderView : UICollectionReusableView {
     NSString *_title;
     UILabel *_titleLabel;
 }
 
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *title;
 
 + (struct CGSize { float x1; float x2; })_instanceLayoutSubviews:(id)arg1 forTitle:(id)arg2 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 + (id)_newTitleLabel;

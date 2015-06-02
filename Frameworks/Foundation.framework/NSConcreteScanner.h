@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSCharacterSet, NSString;
-
 @interface NSConcreteScanner : NSScanner {
     struct { 
         unsigned int caseSensitive : 1; 

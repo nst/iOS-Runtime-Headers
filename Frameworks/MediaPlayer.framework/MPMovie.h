@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class AVAsset, AVPlayerItem, MPAVItem, NSURL;
-
 @interface MPMovie : NSObject {
     double _endPlaybackTime;
     BOOL _explicitlySetMovieSourceType;
@@ -20,16 +18,16 @@
     NSURL *_url;
 }
 
-@property(readonly) AVAsset * asset;
-@property(readonly) double duration;
-@property double endPlaybackTime;
-@property(readonly) unsigned int movieMediaTypes;
-@property int movieSourceType;
-@property(readonly) struct CGSize { float x1; float x2; } naturalSize;
-@property(readonly) double playableDuration;
-@property(readonly) AVPlayerItem * playerItem;
-@property double startPlaybackTime;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) AVAsset *asset;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic) double endPlaybackTime;
+@property (nonatomic, readonly) unsigned int movieMediaTypes;
+@property (nonatomic) int movieSourceType;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, readonly) double playableDuration;
+@property (nonatomic, readonly) AVPlayerItem *playerItem;
+@property (nonatomic) double startPlaybackTime;
+@property (nonatomic, readonly) NSURL *url;
 
 + (id)movieWithAsset:(id)arg1 error:(id*)arg2;
 + (id)movieWithPlayerItem:(id)arg1 error:(id*)arg2;

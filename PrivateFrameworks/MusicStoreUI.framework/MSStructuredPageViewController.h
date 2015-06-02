@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@class NSIndexPath, SUAudioPlayer, SUPlayerStatus, SUSegmentedControl;
-
 @interface MSStructuredPageViewController : SUStructuredPageGroupedViewController {
     SUSegmentedControl *_inlineSegmentedControl;
     NSIndexPath *_previewIndexPath;

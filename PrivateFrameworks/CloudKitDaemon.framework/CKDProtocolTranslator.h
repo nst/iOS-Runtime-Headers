@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class <CKDProtocolTranslatorIdentityDelegate>, CKDPIdentifier, NSString;
-
 @interface CKDProtocolTranslator : NSObject {
     NSString *_bundleIdentifier;
     NSString *_containerScopedUserID;
@@ -11,11 +9,11 @@
     NSString *_overriddenContainerScopedUserID;
 }
 
-@property(copy,readonly) NSString * bundleIdentifier;
-@property(copy) NSString * containerScopedUserID;
-@property <CKDProtocolTranslatorIdentityDelegate> * identityDelegate;
-@property(copy) NSString * overriddenContainerScopedUserID;
-@property(readonly) CKDPIdentifier * pUserID;
+@property (nonatomic, readonly, copy) NSString *bundleIdentifier;
+@property (nonatomic, copy) NSString *containerScopedUserID;
+@property (nonatomic) <CKDProtocolTranslatorIdentityDelegate> *identityDelegate;
+@property (nonatomic, copy) NSString *overriddenContainerScopedUserID;
+@property (nonatomic, readonly) CKDPIdentifier *pUserID;
 
 + (id)translatorIgnoringUserIDs;
 

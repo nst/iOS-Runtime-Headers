@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSData;
-
 @interface _PFEncodedData : NSData {
     NSData *_aData;
     unsigned int _byteCount;

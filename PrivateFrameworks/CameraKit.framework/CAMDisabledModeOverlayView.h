@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UILabel;
-
 @interface CAMDisabledModeOverlayView : UIView {
     UILabel *__messageLabel;
 }
 
-@property(readonly) UILabel * _messageLabel;
+@property (nonatomic, readonly) UILabel *_messageLabel;
 
 - (void).cxx_destruct;
 - (id)_messageLabel;

@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSFetchRequest, NSManagedObjectID;
-
 @interface _PHFetchRequestWrapper : NSObject <NSCopying> {
     NSManagedObjectID *_containerIdentifier;
     NSFetchRequest *_fetchRequest;
     unsigned int _hash;
 }
 
-@property(readonly) NSManagedObjectID * containerIdentifier;
-@property(readonly) NSFetchRequest * fetchRequest;
-@property(readonly) unsigned int hash;
+@property (nonatomic, readonly) NSManagedObjectID *containerIdentifier;
+@property (nonatomic, readonly) NSFetchRequest *fetchRequest;
+@property (nonatomic, readonly) unsigned int hash;
 
 - (void).cxx_destruct;
 - (id)containerIdentifier;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class <IMChatItemRules>, <IMChatSendProgressDelegate>, IMAccount, IMChatItem, IMChatRegistry, IMHandle, IMMessage, IMMultiDict, IMScheduledUpdater, IMTimingCollection, NSArray, NSDate, NSMutableArray, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSTimer;
-
 @interface IMChat : NSObject {
     IMAccount *_account;
     NSArray *_attachments;
@@ -19,7 +17,7 @@
     NSDate *_dateModified;
     unsigned int _dbFailedCount;
     unsigned int _dbUnreadCount;
-    unsigned int _didSendAFinishedMessage : 1;
+    unsigned int _didSendAFinishedMessage;
     NSString *_displayName;
     BOOL _downgradeState;
     IMScheduledUpdater *_downgradeStateUpdater;
@@ -28,14 +26,14 @@
     NSString *_groupID;
     NSString *_guid;
     NSMutableSet *_guids;
-    unsigned int _hasBeenConfigured : 1;
-    unsigned int _hasPendingMarkRead : 1;
+    unsigned int _hasBeenConfigured;
+    unsigned int _hasPendingMarkRead;
     NSString *_identifier;
     BOOL _ignoreDowngradeStatusUpdates;
     IMMessage *_invitationForPendingParticipants;
-    unsigned int _isFirstMessageInvitation : 1;
-    unsigned int _isRecording : 1;
-    unsigned int _isUpdatingChatItems : 1;
+    unsigned int _isFirstMessageInvitation;
+    unsigned int _isRecording;
+    unsigned int _isUpdatingChatItems;
     NSMutableDictionary *_itemMap;
     int _joinState;
     NSString *_lastAddressedHandleID;
@@ -56,71 +54,66 @@
     NSString *_typingGUID;
     id _typingIndicatorTimer;
     NSMutableDictionary *_unfinishedMessageMap;
-    unsigned int _wasInvitationHandled : 1;
+    unsigned int _wasInvitationHandled;
 }
 
-@property(setter=_setGUIDs:,retain) NSMutableSet * _guids;
-@property(readonly) BOOL _shouldRegisterChat;
-@property(readonly) IMAccount * account;
-@property(readonly) BOOL allRecipientsFollowingLocation;
-@property(readonly) BOOL allRecipientsSharingLocation;
-@property(retain,readonly) NSSet * allSiblingFMFHandles;
-@property(copy,readonly) NSArray * attachments;
-@property(readonly) BOOL canHaveMultipleParticipants;
-@property(readonly) BOOL canLeaveChat;
-@property(readonly) NSString * chatIdentifier;
-@property(retain,readonly) IMChatRegistry * chatRegistry;
-@property(readonly) unsigned char chatStyle;
-@property void* contextInfo;
-@property(readonly) NSDate * dateCreated;
-@property(readonly) NSDate * dateModified;
-@property NSString * displayName;
-@property(retain,readonly) NSSet * fmfHandles;
-@property BOOL forceMMS;
-@property(retain) NSArray * frequentReplies;
-@property(retain) NSString * groupID;
-@property(readonly) NSString * guid;
-@property(readonly) BOOL hasMoreMessagesToLoad;
-@property(readonly) BOOL hasRecipientsFollowingLocation;
-@property(readonly) BOOL hasRecipientsSharingLocation;
-@property(readonly) BOOL hasSiblingRecipientsSharingLocation;
-@property(readonly) BOOL hasUnhandledInvitation;
-@property(retain) IMMessage * invitationForPendingParticipants;
-@property(readonly) int joinState;
-@property(retain,readonly) NSString * lastAddressedHandleID;
-@property(readonly) IMMessage * lastFinishedMessage;
-@property(readonly) IMMessage * lastIncomingFinishedMessage;
-@property(readonly) IMMessage * lastIncomingMessage;
-@property(readonly) IMMessage * lastMessage;
-@property(readonly) NSString * localTypingMessageGUID;
-@property BOOL localUserIsRecording;
-@property BOOL localUserIsTyping;
-@property(readonly) unsigned int messageCount;
-@property(readonly) unsigned int messageFailureCount;
-@property(getter=_nextStaleChatItem,setter=_setNextStaleChatItem:,retain) IMChatItem * nextStaleChatItem;
-@property unsigned int numberOfMessagesToKeepLoaded;
-@property(readonly) unsigned int overallChatStatus;
-@property(readonly) NSArray * participants;
-@property(retain,readonly) NSString * persistentID;
-@property(retain) IMHandle * recipient;
-@property(readonly) NSString * roomName;
-@property(readonly) NSString * roomNameWithoutSuffix;
-@property <IMChatSendProgressDelegate> * sendProgressDelegate;
-@property(readonly) BOOL suppressAccountRetargetingForGroupConversation;
-@property(readonly) unsigned int unreadMessageCount;
+@property (setter=_setGUIDs:, nonatomic, retain) NSMutableSet *_guids;
+@property (nonatomic, readonly) BOOL _shouldRegisterChat;
+@property (nonatomic, readonly) IMAccount *account;
+@property (nonatomic, readonly) BOOL allRecipientsFollowingLocation;
+@property (nonatomic, readonly) BOOL allRecipientsSharingLocation;
+@property (nonatomic, readonly, retain) NSSet *allSiblingFMFHandles;
+@property (nonatomic, readonly, copy) NSArray *attachments;
+@property (nonatomic, readonly) BOOL canHaveMultipleParticipants;
+@property (nonatomic, readonly) BOOL canLeaveChat;
+@property (nonatomic, readonly) NSString *chatIdentifier;
+@property (nonatomic, readonly, retain) IMChatRegistry *chatRegistry;
+@property (nonatomic, readonly) unsigned char chatStyle;
+@property (nonatomic) void*contextInfo;
+@property (nonatomic, readonly) NSDate *dateCreated;
+@property (nonatomic, readonly) NSDate *dateModified;
+@property (nonatomic) NSString *displayName;
+@property (nonatomic, readonly, retain) NSSet *fmfHandles;
+@property (nonatomic) BOOL forceMMS;
+@property (nonatomic, retain) NSArray *frequentReplies;
+@property (nonatomic, retain) NSString *groupID;
+@property (nonatomic, readonly) NSString *guid;
+@property (nonatomic, readonly) BOOL hasMoreMessagesToLoad;
+@property (nonatomic, readonly) BOOL hasRecipientsFollowingLocation;
+@property (nonatomic, readonly) BOOL hasRecipientsSharingLocation;
+@property (nonatomic, readonly) BOOL hasSiblingRecipientsSharingLocation;
+@property (nonatomic, readonly) BOOL hasUnhandledInvitation;
+@property (nonatomic, retain) IMMessage *invitationForPendingParticipants;
+@property (nonatomic, readonly) int joinState;
+@property (nonatomic, readonly, retain) NSString *lastAddressedHandleID;
+@property (nonatomic, readonly) IMMessage *lastFinishedMessage;
+@property (nonatomic, readonly) IMMessage *lastIncomingFinishedMessage;
+@property (nonatomic, readonly) IMMessage *lastIncomingMessage;
+@property (nonatomic, readonly) IMMessage *lastMessage;
+@property (nonatomic, readonly) NSString *localTypingMessageGUID;
+@property (nonatomic) BOOL localUserIsRecording;
+@property (nonatomic) BOOL localUserIsTyping;
+@property (nonatomic, readonly) unsigned int messageCount;
+@property (nonatomic, readonly) unsigned int messageFailureCount;
+@property (getter=_nextStaleChatItem, setter=_setNextStaleChatItem:, nonatomic, retain) IMChatItem *nextStaleChatItem;
+@property (nonatomic) unsigned int numberOfMessagesToKeepLoaded;
+@property (nonatomic, readonly) unsigned int overallChatStatus;
+@property (nonatomic, readonly) NSArray *participants;
+@property (nonatomic, readonly, retain) NSString *persistentID;
+@property (nonatomic, retain) IMHandle *recipient;
+@property (nonatomic, readonly) NSString *roomName;
+@property (nonatomic, readonly) NSString *roomNameWithoutSuffix;
+@property (nonatomic) <IMChatSendProgressDelegate> *sendProgressDelegate;
+@property (nonatomic, readonly) BOOL suppressAccountRetargetingForGroupConversation;
+@property (nonatomic, readonly) unsigned int unreadMessageCount;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
 + (void)_initializeFMF;
 + (Class)chatItemRulesClass;
 + (void)setChatItemRulesClass:(Class)arg1;
 
 - (id)_IMUnfinishedMapSenderGUIDToRemove:(id)arg1 requireFinished:(BOOL)arg2;
-- (BOOL)__ck_isMuted;
-- (id)__ck_muteUntilDate;
-- (void)__ck_saveWatermark;
-- (void)__ck_setMuteUntilDate:(id)arg1;
-- (void)__ck_updateWatermarkToMessageID:(long long)arg1 date:(id)arg2;
-- (id)__ck_watermarkDate;
-- (long long)__ck_watermarkMessageID;
 - (void)__clearReadMessageCache;
 - (void)_accountControllerUpdated:(id)arg1;
 - (BOOL)_accountIsOperational:(id)arg1 forService:(id)arg2;
@@ -170,14 +163,14 @@
 - (id)_nextStaleChatItem;
 - (void)_participant:(id)arg1 statusChanged:(int)arg2;
 - (id)_pendingParticipants;
-- (id)_performQueryWithKey:(id)arg1 loadImmediately:(BOOL)arg2 block:(id)arg3;
-- (id)_performQueryWithKey:(id)arg1 loadImmediately:(BOOL)arg2 block:(id)arg3 completion:(id)arg4;
+- (id)_performQueryWithKey:(id)arg1 loadImmediately:(BOOL)arg2 block:(id /* block */)arg3;
+- (id)_performQueryWithKey:(id)arg1 loadImmediately:(BOOL)arg2 block:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)_postNotification:(id)arg1 userInfo:(id)arg2;
 - (void)_postNotification:(id)arg1 userInfo:(id)arg2 shouldLog:(BOOL)arg3;
 - (id)_previousAccountForService:(id)arg1;
 - (id)_privateInitWithAccount:(id)arg1 style:(unsigned char)arg2 roomName:(id)arg3 messages:(id)arg4 participants:(id)arg5;
 - (float)_progressSending:(unsigned int*)arg1 of:(unsigned int*)arg2;
-- (void)_queueChatItemsUpdate:(id)arg1;
+- (void)_queueChatItemsUpdate:(id /* block */)arg1;
 - (void)_queueReplaceStaleChatItems;
 - (void)_recomputeOverallChatStatusQuietly:(BOOL)arg1;
 - (void)_remapHandle:(id)arg1 toHandle:(id)arg2;
@@ -223,8 +216,8 @@
 - (void)_unmapSendingItem:(id)arg1;
 - (void)_unwatchHandleStatusChangedForHandle:(id)arg1;
 - (void)_updateChatItems;
-- (void)_updateChatItemsWithReason:(id)arg1 block:(id)arg2;
-- (void)_updateChatItemsWithReason:(id)arg1 block:(id)arg2 shouldPost:(BOOL)arg3;
+- (void)_updateChatItemsWithReason:(id)arg1 block:(id /* block */)arg2;
+- (void)_updateChatItemsWithReason:(id)arg1 block:(id /* block */)arg2 shouldPost:(BOOL)arg3;
 - (void)_updateDisplayName:(id)arg1;
 - (void)_updateDowngradeState:(BOOL)arg1 checkAgainInterval:(double)arg2;
 - (void)_updateSendProgress;
@@ -290,7 +283,7 @@
 - (id)lastIncomingMessage;
 - (id)lastMessage;
 - (void)leave;
-- (void)loadAttachments:(id)arg1;
+- (void)loadAttachments:(id /* block */)arg1;
 - (id)loadFrequentRepliesLimit:(unsigned int)arg1 loadImmediately:(BOOL)arg2;
 - (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2;
 - (id)loadMessagesBeforeDate:(id)arg1 limit:(unsigned int)arg2 loadImmediately:(BOOL)arg3;
@@ -354,5 +347,15 @@
 - (void)updateMessage:(id)arg1 flags:(unsigned long long)arg2;
 - (id)valueForChatProperty:(id)arg1;
 - (id)valueForProperty:(id)arg1 ofParticipant:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
+- (BOOL)__ck_isMuted;
+- (id)__ck_muteUntilDate;
+- (void)__ck_saveWatermark;
+- (void)__ck_setMuteUntilDate:(id)arg1;
+- (void)__ck_updateWatermarkToMessageID:(long long)arg1 date:(id)arg2;
+- (id)__ck_watermarkDate;
+- (long long)__ck_watermarkMessageID;
 
 @end

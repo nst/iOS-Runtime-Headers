@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRExternalScreenTypeDidChangeNotificationObserver : MSVDistributedNotificationObserver {
-}
+@interface MRExternalScreenTypeDidChangeNotificationObserver : MSVDistributedNotificationObserver
 
 + (id)observerWithQueue:(id)arg1;
 

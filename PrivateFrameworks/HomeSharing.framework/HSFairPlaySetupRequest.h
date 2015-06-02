@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSFairPlaySetupRequest : HSRequest {
-}
+@interface HSFairPlaySetupRequest : HSRequest
 
 - (id)init;
 

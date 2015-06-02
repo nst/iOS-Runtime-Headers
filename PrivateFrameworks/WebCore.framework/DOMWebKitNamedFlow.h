@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMWebKitNamedFlow : DOMObject
 
-@interface DOMWebKitNamedFlow : DOMObject {
-}
-
-@property(readonly) int firstEmptyRegionIndex;
-@property(copy,readonly) NSString * name;
-@property(readonly) BOOL overset;
+@property (readonly) int firstEmptyRegionIndex;
+@property (readonly, copy) NSString *name;
+@property (readonly) BOOL overset;
 
 - (void)addEventListener:(id)arg1 listener:(id)arg2 useCapture:(BOOL)arg3;
 - (void)dealloc;

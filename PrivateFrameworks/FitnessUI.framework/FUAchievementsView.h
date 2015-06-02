@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class <FUAchievementsViewDelegate>, NSArray, NSMutableArray, NSString, UILabel, UIPageControl, UIScrollView;
-
 @interface FUAchievementsView : UIView <UIScrollViewDelegate> {
     UILabel *_achievementDetailLabel;
     UILabel *_achievementTitleLabel;
@@ -24,16 +22,16 @@
     int _sizeClass;
 }
 
-@property(copy) NSArray * achievements;
-@property(copy,readonly) NSString * debugDescription;
-@property <FUAchievementsViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL pagingEnabled;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollViewContentInset;
-@property BOOL showsAchievementTitles;
-@property int sizeClass;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSArray *achievements;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FUAchievementsViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL pagingEnabled;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } scrollViewContentInset;
+@property (nonatomic) BOOL showsAchievementTitles;
+@property (nonatomic) int sizeClass;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_achievementAtScrollViewPoint:(struct CGPoint { float x1; float x2; })arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSArray, NSDictionary, TIKeyboardCandidate, TIKeyboardIntermediateText;
-
 @interface TIKeyboardCandidateResultSet : NSObject <NSCopying, NSSecureCoding> {
     TIKeyboardCandidate *_acceptedCandidate;
     unsigned int _batchCandidateLocation;
@@ -21,24 +19,26 @@
     TIKeyboardIntermediateText *_uncommittedText;
 }
 
-@property(retain) TIKeyboardCandidate * acceptedCandidate;
-@property unsigned int batchCandidateLocation;
-@property(retain) NSArray * candidates;
-@property(copy) TIKeyboardCandidate * defaultCandidate;
-@property BOOL excludedExtensionCandidates;
-@property(readonly) TIKeyboardCandidate * firstCandidate;
-@property unsigned int generatedCandidateCount;
-@property(readonly) BOOL hasCandidates;
-@property(readonly) BOOL hasMetadata;
-@property(retain) NSDictionary * indexTitles;
-@property unsigned int initialSelectedIndex;
-@property(retain) NSArray * initiallyHiddenCandidates;
-@property(readonly) BOOL isDummySet;
-@property unsigned int selectedHiddenCandidateIndex;
-@property(retain) NSDictionary * showExtensionCandidates;
-@property(retain) NSDictionary * sortMethodGroups;
-@property(retain) NSArray * sortMethods;
-@property(retain) TIKeyboardIntermediateText * uncommittedText;
+@property (nonatomic, retain) TIKeyboardCandidate *acceptedCandidate;
+@property (nonatomic) unsigned int batchCandidateLocation;
+@property (nonatomic, retain) NSArray *candidates;
+@property (nonatomic, copy) TIKeyboardCandidate *defaultCandidate;
+@property (nonatomic) BOOL excludedExtensionCandidates;
+@property (nonatomic, readonly) TIKeyboardCandidate *firstCandidate;
+@property (nonatomic) unsigned int generatedCandidateCount;
+@property (nonatomic, readonly) BOOL hasCandidates;
+@property (nonatomic, readonly) BOOL hasMetadata;
+@property (nonatomic, retain) NSDictionary *indexTitles;
+@property (nonatomic) unsigned int initialSelectedIndex;
+@property (nonatomic, retain) NSArray *initiallyHiddenCandidates;
+@property (nonatomic, readonly) BOOL isDummySet;
+@property (nonatomic) unsigned int selectedHiddenCandidateIndex;
+@property (nonatomic, retain) NSDictionary *showExtensionCandidates;
+@property (nonatomic, retain) NSDictionary *sortMethodGroups;
+@property (nonatomic, retain) NSArray *sortMethods;
+@property (nonatomic, retain) TIKeyboardIntermediateText *uncommittedText;
+
+// Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
 + (id)dummySet;
 + (id)setWithCandidates:(id)arg1;
@@ -47,9 +47,7 @@
 
 - (id)acceptedCandidate;
 - (unsigned int)batchCandidateLocation;
-- (id)candidateGroupsForSortIndex:(int)arg1;
 - (id)candidates;
-- (BOOL)candidatesForSortIndexShowAlternativeText:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)defaultCandidate;
@@ -88,5 +86,10 @@
 - (id)sortMethodGroups;
 - (id)sortMethods;
 - (id)uncommittedText;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (id)candidateGroupsForSortIndex:(int)arg1;
+- (BOOL)candidatesForSortIndexShowAlternativeText:(int)arg1;
 
 @end

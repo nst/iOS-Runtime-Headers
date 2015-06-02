@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PLRoundProgressView;
-
 @interface PUActivityProgressViewController : UIViewController {
     PLRoundProgressView *_progressView;
 }

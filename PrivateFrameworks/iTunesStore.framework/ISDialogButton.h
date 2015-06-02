@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSDictionary, NSString;
-
 @interface ISDialogButton : NSObject <SSXPCCoding> {
     int _actionType;
     NSDictionary *_dictionary;
@@ -14,14 +12,14 @@
 }
 
 @property int actionType;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDictionary * dictionary;
-@property(readonly) unsigned int hash;
-@property(retain) id parameter;
-@property(copy) NSString * subtarget;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) NSDictionary *dictionary;
+@property (readonly) unsigned int hash;
+@property (retain) id parameter;
+@property (copy) NSString *subtarget;
+@property (readonly) Class superclass;
+@property (retain) NSString *title;
 @property int urlType;
 
 + (id)buttonWithTitle:(id)arg1;

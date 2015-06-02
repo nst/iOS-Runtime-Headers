@@ -2,19 +2,17 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventAttachmentEditViewControllerDelegate>, NSArray, NSString, UITableView;
-
 @interface EKEventAttachmentEditViewController : EKEditItemViewController <EKEventAttachmentCellControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSArray *_cellControllers;
     <EKEventAttachmentEditViewControllerDelegate> *_delegate;
     UITableView *_table;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <EKEventAttachmentEditViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKEventAttachmentEditViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)delegate;

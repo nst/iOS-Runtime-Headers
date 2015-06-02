@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsFilter.framework/CommunicationsFilter
  */
 
-@class CommunicationFilterItem;
-
 @interface CommunicationFilterItemCache : NSObject {
     CommunicationFilterItem *_filterItem;
     long long _isInList;
 }
 
-@property long long isInList;
+@property (nonatomic) long long isInList;
 
 - (void)dealloc;
 - (id)initWithFilterItem:(id)arg1 isInList:(long long)arg2;

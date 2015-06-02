@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString, OADParagraphProperties;
-
 @interface OADTextField : OADTextRun {
     NSString *mId;
     OADParagraphProperties *mParagraphProperties;

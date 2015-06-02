@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, NSNotification;
-
 @interface _UIKeyboardLayoutAlignmentView : UIView {
     NSNotification *_keyboardChangeNotificationForUpdateConstraints;
     NSLayoutConstraint *bottomConstraint;

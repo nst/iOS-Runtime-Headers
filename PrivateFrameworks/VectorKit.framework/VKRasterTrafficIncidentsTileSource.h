@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKRasterTrafficIncidentsTileSource : VKRasterTrafficTileSource {
-}
+@interface VKRasterTrafficIncidentsTileSource : VKRasterTrafficTileSource
 
 - (unsigned long long)mapLayerForZoomLevelRange;
 

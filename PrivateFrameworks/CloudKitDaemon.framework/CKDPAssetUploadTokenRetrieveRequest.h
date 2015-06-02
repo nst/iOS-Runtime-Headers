@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecordFieldIdentifier, CKDPRecordType, NSMutableArray;
-
 @interface CKDPAssetUploadTokenRetrieveRequest : PBRequest <NSCopying> {
     NSMutableArray *_assets;
     CKDPRecordFieldIdentifier *_field;
@@ -11,12 +9,12 @@
     NSMutableArray *_uploads;
 }
 
-@property(retain) NSMutableArray * assets;
-@property(retain) CKDPRecordFieldIdentifier * field;
-@property(readonly) BOOL hasField;
-@property(readonly) BOOL hasType;
-@property(retain) CKDPRecordType * type;
-@property(retain) NSMutableArray * uploads;
+@property (nonatomic, retain) NSMutableArray *assets;
+@property (nonatomic, retain) CKDPRecordFieldIdentifier *field;
+@property (nonatomic, readonly) BOOL hasField;
+@property (nonatomic, readonly) BOOL hasType;
+@property (nonatomic, retain) CKDPRecordType *type;
+@property (nonatomic, retain) NSMutableArray *uploads;
 
 + (id)options;
 

@@ -11,10 +11,10 @@
     } _has;
 }
 
-@property unsigned int count;
-@property unsigned long long duration;
-@property BOOL hasCount;
-@property BOOL hasDuration;
+@property (nonatomic) unsigned int count;
+@property (nonatomic) unsigned long long duration;
+@property (nonatomic) BOOL hasCount;
+@property (nonatomic) BOOL hasDuration;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

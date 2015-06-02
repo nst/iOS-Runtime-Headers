@@ -2,41 +2,39 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class CalPreferences, NSArray, NSDate, NSNumber, NSString;
-
 @interface CalendarPreferences : NSObject {
     BOOL _drawDebugViewColors;
     CalPreferences *_preferences;
 }
 
-@property(retain) NSArray * calendarUUIDsExcludedFromNotifications;
-@property(retain) NSNumber * dayViewHourScale;
-@property(retain) NSArray * deselectedCalendarSyncHashes;
-@property BOOL disableContinuity;
-@property BOOL drawDebugViewColors;
-@property BOOL immediateAlarmCreation;
-@property BOOL largeListViewDisclosingEventDetails;
-@property(retain) NSNumber * lastSuspendTime;
-@property(retain) NSNumber * lastViewMode;
-@property(retain) NSNumber * lastViewedDate;
-@property(retain) NSNumber * locationSearchResultLimit;
-@property(retain) NSString * overlayCalendarID;
-@property unsigned int promptForCommentWhenDeclining;
-@property BOOL requestSyncOnApplicationLaunch;
-@property(retain) NSString * searchString;
-@property(getter=isShortResumeToTodayTimeout) BOOL shortResumeToTodayTimeout;
-@property BOOL showDebugGridOverlay;
-@property BOOL showEventsInPhoneMonthView;
-@property BOOL showExperimentalUI;
-@property BOOL showListView;
-@property BOOL showMonthDividedListView;
-@property BOOL showWeekNumbers;
-@property(retain) NSDate * simulatedCurrentDate;
-@property BOOL swipeToDeleteEnabled;
-@property BOOL travelEngineEnabled;
-@property BOOL viewedTimeZoneAutomatic;
-@property(retain) NSNumber * weekStart;
-@property(retain) NSNumber * weekViewHourScale;
+@property (nonatomic, retain) NSArray *calendarUUIDsExcludedFromNotifications;
+@property (nonatomic, retain) NSNumber *dayViewHourScale;
+@property (nonatomic, retain) NSArray *deselectedCalendarSyncHashes;
+@property (nonatomic) BOOL disableContinuity;
+@property (nonatomic) BOOL drawDebugViewColors;
+@property (nonatomic) BOOL immediateAlarmCreation;
+@property (nonatomic) BOOL largeListViewDisclosingEventDetails;
+@property (nonatomic, retain) NSNumber *lastSuspendTime;
+@property (nonatomic, retain) NSNumber *lastViewMode;
+@property (nonatomic, retain) NSNumber *lastViewedDate;
+@property (nonatomic, retain) NSNumber *locationSearchResultLimit;
+@property (nonatomic, retain) NSString *overlayCalendarID;
+@property (nonatomic) unsigned int promptForCommentWhenDeclining;
+@property (nonatomic) BOOL requestSyncOnApplicationLaunch;
+@property (nonatomic, retain) NSString *searchString;
+@property (getter=isShortResumeToTodayTimeout, nonatomic) BOOL shortResumeToTodayTimeout;
+@property (nonatomic) BOOL showDebugGridOverlay;
+@property (nonatomic) BOOL showEventsInPhoneMonthView;
+@property (nonatomic) BOOL showExperimentalUI;
+@property (nonatomic) BOOL showListView;
+@property (nonatomic) BOOL showMonthDividedListView;
+@property (nonatomic) BOOL showWeekNumbers;
+@property (nonatomic, retain) NSDate *simulatedCurrentDate;
+@property (nonatomic) BOOL swipeToDeleteEnabled;
+@property (nonatomic) BOOL travelEngineEnabled;
+@property (nonatomic) BOOL viewedTimeZoneAutomatic;
+@property (nonatomic, retain) NSNumber *weekStart;
+@property (nonatomic, retain) NSNumber *weekViewHourScale;
 
 + (id)sharedPreferences;
 

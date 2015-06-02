@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString, SUGradient;
-
 @interface SUScriptGradient : SUScriptObject {
     SUGradient *_nativeGradient;
 }
 
-@property(readonly) NSString * type;
+@property (readonly) NSString *type;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

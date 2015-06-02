@@ -6,7 +6,7 @@
     struct sqlite3_stmt { } *_stmt;
 }
 
-@property(readonly) struct sqlite3_stmt { }* stmt;
+@property (nonatomic, readonly) struct sqlite3_stmt { }*stmt;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSData, NSString;
-
 @interface SBKGenericKeyValuePair : NSObject <SBKKeyValuePayloadPair> {
     NSString *_kvsKey;
     NSData *_kvsPayload;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSString * kvsKey;
-@property(readonly) NSData * kvsPayload;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSString *kvsKey;
+@property (nonatomic, readonly) NSData *kvsPayload;
+@property (readonly) Class superclass;
 
 + (id)pairWithKVSKey:(id)arg1 kvsPayload:(id)arg2;
 

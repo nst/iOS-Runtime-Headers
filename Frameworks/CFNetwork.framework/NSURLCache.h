@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NSURLCacheInternal;
-
 @interface NSURLCache : NSObject {
     NSURLCacheInternal *_internal;
 }
 
-@property(readonly) unsigned int currentDiskUsage;
-@property(readonly) unsigned int currentMemoryUsage;
+@property (readonly) unsigned int currentDiskUsage;
+@property (readonly) unsigned int currentMemoryUsage;
 @property unsigned int diskCapacity;
 @property unsigned int memoryCapacity;
 
@@ -37,8 +35,8 @@
 - (unsigned int)currentMemoryUsage;
 - (void)dealloc;
 - (unsigned int)diskCapacity;
-- (void)flushWithCompletion:(id)arg1;
-- (void)getCachedResponseForDataTask:(id)arg1 completionHandler:(id)arg2;
+- (void)flushWithCompletion:(id /* block */)arg1;
+- (void)getCachedResponseForDataTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (id)initWithExistingSharedCFURLCache:(struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFURLCache {} *x2; }*)arg1;
 - (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;

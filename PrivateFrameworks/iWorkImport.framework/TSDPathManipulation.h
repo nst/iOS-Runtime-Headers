@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDPathManipulation;
-
 @interface TSDPathManipulation : NSObject {
     TSDPathManipulation *mPrecedingManipulation;
 }

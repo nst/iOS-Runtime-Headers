@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface UIWebSelectionOutline : UIView {
-    UIView *_lineViews[4];
+    UIView *_lineViews;
 }
 
 - (void)dealloc;

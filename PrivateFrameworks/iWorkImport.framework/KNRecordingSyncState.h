@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSUUID;
-
 @interface KNRecordingSyncState : NSObject <NSCopying> {
     BOOL _canClearOutOfSyncToken;
     NSUUID *_outOfSyncToken;
 }
 
-@property(readonly) NSUUID * outOfSyncToken;
-@property(getter=isRecordingOutOfSync,readonly) BOOL recordingOutOfSync;
+@property (nonatomic, readonly) NSUUID *outOfSyncToken;
+@property (getter=isRecordingOutOfSync, nonatomic, readonly) BOOL recordingOutOfSync;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

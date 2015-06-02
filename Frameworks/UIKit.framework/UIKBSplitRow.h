@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSMutableArray, UIKBTree;
-
 @interface UIKBSplitRow : NSObject {
     UIKBTree *_attrlistLeft;
     UIKBTree *_attrlistRight;
@@ -24,9 +22,9 @@
 }
 
 @property struct CGSize { float x1; float x2; } defaultKeySize;
-@property(retain) NSDictionary * hints;
-@property(readonly) NSMutableArray * keys;
-@property unsigned char rowIndex;
+@property (retain) NSDictionary *hints;
+@property (readonly) NSMutableArray *keys;
+@property (nonatomic) unsigned char rowIndex;
 @property float rowOffset;
 @property float rowWidth;
 

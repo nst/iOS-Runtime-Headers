@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLMoviePlayerControllerDelegate>, AVPlayer, AVPlayerItem, NSString, PLMoviePlayerView, PLTVOutWindow, UIAlertView;
-
 @interface PLMoviePlayerController : NSObject {
     BOOL _TVOutEnabled;
     UIAlertView *_alertView;
@@ -30,18 +28,18 @@
     PLMoviePlayerView *_view;
 }
 
-@property BOOL TVOutEnabled;
-@property(readonly) unsigned int bufferingState;
-@property double currentTime;
-@property <PLMoviePlayerControllerDelegate> * delegate;
-@property(readonly) double duration;
-@property(setter=_setForceDisableTVOut:) BOOL forceDisableTVOut;
-@property BOOL isActiveController;
-@property(readonly) BOOL isPreparedForPlayback;
-@property(readonly) float playbackRate;
-@property(readonly) unsigned int playbackState;
-@property(retain,readonly) AVPlayer * player;
-@property(retain,readonly) PLMoviePlayerView * view;
+@property (nonatomic) BOOL TVOutEnabled;
+@property (nonatomic, readonly) unsigned int bufferingState;
+@property (nonatomic) double currentTime;
+@property (nonatomic) <PLMoviePlayerControllerDelegate> *delegate;
+@property (nonatomic, readonly) double duration;
+@property (setter=_setForceDisableTVOut:, nonatomic) BOOL forceDisableTVOut;
+@property (nonatomic) BOOL isActiveController;
+@property (nonatomic, readonly) BOOL isPreparedForPlayback;
+@property (nonatomic, readonly) float playbackRate;
+@property (nonatomic, readonly) unsigned int playbackState;
+@property (nonatomic, readonly, retain) AVPlayer *player;
+@property (nonatomic, readonly, retain) PLMoviePlayerView *view;
 
 + (id)AVAssetURLWithPath:(id)arg1;
 + (BOOL)_isNetworkSupportedPath:(id)arg1;
@@ -53,7 +51,7 @@
 - (void)_delayedUpdateFromPendingTime;
 - (void)_didEnterBackgroundNotification:(id)arg1;
 - (void)_didLoadValueOfKey:(id)arg1 forAsset:(id)arg2;
-- (void)_dispatchOnMainThreadWithBlock:(id)arg1;
+- (void)_dispatchOnMainThreadWithBlock:(id /* block */)arg1;
 - (void)_displayVideoView;
 - (void)_exitPlayer:(int)arg1;
 - (void)_loadAsset:(id)arg1;

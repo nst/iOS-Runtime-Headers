@@ -2,7 +2,7 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface Object {
+@interface Object  {
     Class isa;
 }
 

@@ -2,49 +2,35 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CKRecordZoneID, CKServerChangeToken, NSArray, NSData;
-
 @interface CKDFetchRecordChangesOperation : CKDDatabaseOperation {
     int _changeTypes;
     CKServerChangeToken *_clientChangeToken;
     NSArray *_desiredKeys;
     CKServerChangeToken *_previousServerChangeToken;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordChangedBlock;
-
+    id /* block */ _recordChangedBlock;
     CKRecordZoneID *_recordZoneID;
     NSData *_resultClientChangeToken;
     NSData *_resultClientChangeTokenData;
     CKServerChangeToken *_resultServerChangeToken;
     unsigned int _resultsLimit;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareChangedBlock;
-
+    id /* block */ _shareChangedBlock;
     BOOL _shouldFetchAssetContents;
     int _status;
 }
 
-@property int changeTypes;
-@property(retain) CKServerChangeToken * clientChangeToken;
-@property(retain) NSArray * desiredKeys;
-@property(retain) CKServerChangeToken * previousServerChangeToken;
-@property(copy) id recordChangedBlock;
-@property(retain) CKRecordZoneID * recordZoneID;
-@property(readonly) NSData * resultClientChangeToken;
-@property(retain) NSData * resultClientChangeTokenData;
-@property(retain) CKServerChangeToken * resultServerChangeToken;
-@property unsigned int resultsLimit;
-@property(copy) id shareChangedBlock;
-@property BOOL shouldFetchAssetContents;
-@property int status;
+@property (nonatomic) int changeTypes;
+@property (nonatomic, retain) CKServerChangeToken *clientChangeToken;
+@property (nonatomic, retain) NSArray *desiredKeys;
+@property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
+@property (nonatomic, copy) id /* block */ recordChangedBlock;
+@property (nonatomic, retain) CKRecordZoneID *recordZoneID;
+@property (nonatomic, readonly) NSData *resultClientChangeToken;
+@property (nonatomic, retain) NSData *resultClientChangeTokenData;
+@property (nonatomic, retain) CKServerChangeToken *resultServerChangeToken;
+@property (nonatomic) unsigned int resultsLimit;
+@property (nonatomic, copy) id /* block */ shareChangedBlock;
+@property (nonatomic) BOOL shouldFetchAssetContents;
+@property (nonatomic) int status;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -57,7 +43,7 @@
 - (void)main;
 - (Class)operationResultClass;
 - (id)previousServerChangeToken;
-- (id)recordChangedBlock;
+- (id /* block */)recordChangedBlock;
 - (id)recordZoneID;
 - (id)resultClientChangeToken;
 - (id)resultClientChangeTokenData;
@@ -67,15 +53,15 @@
 - (void)setClientChangeToken:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
-- (void)setRecordChangedBlock:(id)arg1;
+- (void)setRecordChangedBlock:(id /* block */)arg1;
 - (void)setRecordZoneID:(id)arg1;
 - (void)setResultClientChangeTokenData:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
-- (void)setShareChangedBlock:(id)arg1;
+- (void)setShareChangedBlock:(id /* block */)arg1;
 - (void)setShouldFetchAssetContents:(BOOL)arg1;
 - (void)setStatus:(int)arg1;
-- (id)shareChangedBlock;
+- (id /* block */)shareChangedBlock;
 - (BOOL)shouldFetchAssetContents;
 - (int)status;
 

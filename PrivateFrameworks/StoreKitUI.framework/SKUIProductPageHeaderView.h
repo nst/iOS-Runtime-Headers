@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIBadgeLabel, SKUIClientContext, SKUIColorScheme, SKUIContentRatingArtworkResourceLoader, SKUIItemContentRating, SKUIItemOffer, SKUIItemOfferButton, SKUIItemState, SKUIProductPageHeaderLabel, UIButton, UIControl, UIImage, UIImageView, UILabel;
-
 @interface SKUIProductPageHeaderView : UIView <SKUIContentRatingArtworkLoaderObserver, SKUIItemOfferButtonDelegate> {
     UILabel *_ageBandLabel;
     UIButton *_artistButton;
@@ -32,32 +30,32 @@
     UIImageView *_userRatingStarsView;
 }
 
-@property(copy) NSString * ageBandString;
-@property(readonly) UIControl * artistButton;
-@property(copy) NSString * artistName;
-@property(retain) SKUIColorScheme * colorScheme;
-@property(retain) SKUIItemContentRating * contentRating;
-@property(retain) SKUIContentRatingArtworkResourceLoader * contentRatingArtworkLoader;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * editorialBadge;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * headerImage;
-@property float headerImageHeight;
-@property(retain) UIImage * iconImage;
-@property(copy) NSString * inAppPurchasesString;
-@property(retain) SKUIItemOffer * itemOffer;
-@property(readonly) SKUIItemOfferButton * itemOfferButton;
-@property(copy) NSString * itemOfferExplanationText;
-@property(copy) NSString * itemOfferExplanationTitle;
-@property(copy) SKUIItemState * itemState;
-@property int numberOfUserRatings;
-@property(getter=isRestricted) BOOL restricted;
-@property(retain) SKUIItemContentRating * secondaryContentRating;
-@property(readonly) UIControl * shareButton;
-@property(readonly) Class superclass;
-@property(copy) NSString * title;
-@property float userRating;
+@property (nonatomic, copy) NSString *ageBandString;
+@property (nonatomic, readonly) UIControl *artistButton;
+@property (nonatomic, copy) NSString *artistName;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic, retain) SKUIItemContentRating *contentRating;
+@property (nonatomic, retain) SKUIContentRatingArtworkResourceLoader *contentRatingArtworkLoader;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *editorialBadge;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *headerImage;
+@property (nonatomic) float headerImageHeight;
+@property (nonatomic, retain) UIImage *iconImage;
+@property (nonatomic, copy) NSString *inAppPurchasesString;
+@property (nonatomic, retain) SKUIItemOffer *itemOffer;
+@property (nonatomic, readonly) SKUIItemOfferButton *itemOfferButton;
+@property (nonatomic, copy) NSString *itemOfferExplanationText;
+@property (nonatomic, copy) NSString *itemOfferExplanationTitle;
+@property (nonatomic, copy) SKUIItemState *itemState;
+@property (nonatomic) int numberOfUserRatings;
+@property (getter=isRestricted, nonatomic) BOOL restricted;
+@property (nonatomic, retain) SKUIItemContentRating *secondaryContentRating;
+@property (nonatomic, readonly) UIControl *shareButton;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) float userRating;
 
 - (void).cxx_destruct;
 - (void)_cancelConfirmationAction:(id)arg1;

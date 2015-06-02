@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
  */
 
-@interface FMFBezierPath : UIBezierPath {
-}
+@interface FMFBezierPath : UIBezierPath
 
 @end

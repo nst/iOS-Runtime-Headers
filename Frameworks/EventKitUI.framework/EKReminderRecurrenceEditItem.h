@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKReminderRecurrenceEditItem : EKCalendarItemRecurrenceEditItem {
-}
+@interface EKReminderRecurrenceEditItem : EKCalendarItemRecurrenceEditItem
 
 - (id)minRecurrenceEndDate;
 - (id)recurrenceDate;

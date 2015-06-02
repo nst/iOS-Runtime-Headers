@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class UILabel;
-
 @interface RUHistoryTableHeaderView : UIView {
     UILabel *_detailTextLabel;
     UILabel *_textLabel;

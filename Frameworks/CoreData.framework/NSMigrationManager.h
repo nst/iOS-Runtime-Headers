@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSDictionary, NSEntityMapping, NSError, NSManagedObjectContext, NSManagedObjectModel, NSMappingModel, NSMigrationContext;
-
 @interface NSMigrationManager : NSObject {
     NSDictionary *_destinationEntitiesByVersionHash;
     NSManagedObjectContext *_destinationManagedObjectContext;
@@ -26,14 +24,14 @@
     NSDictionary *_userInfo;
 }
 
-@property(readonly) NSEntityMapping * currentEntityMapping;
-@property(readonly) NSManagedObjectContext * destinationContext;
-@property(readonly) NSManagedObjectModel * destinationModel;
-@property(readonly) NSMappingModel * mappingModel;
-@property(readonly) float migrationProgress;
-@property(readonly) NSManagedObjectContext * sourceContext;
-@property(readonly) NSManagedObjectModel * sourceModel;
-@property(retain) NSDictionary * userInfo;
+@property (readonly) NSEntityMapping *currentEntityMapping;
+@property (readonly) NSManagedObjectContext *destinationContext;
+@property (readonly) NSManagedObjectModel *destinationModel;
+@property (readonly) NSMappingModel *mappingModel;
+@property (readonly) float migrationProgress;
+@property (readonly) NSManagedObjectContext *sourceContext;
+@property (readonly) NSManagedObjectModel *sourceModel;
+@property (nonatomic, retain) NSDictionary *userInfo;
 @property BOOL usesStoreSpecificMigrationManager;
 
 + (BOOL)_performSanityCheckForMapping:(id)arg1 fromSourceModel:(id)arg2 toDestinationModel:(id)arg3;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTSwitch : UISwitch {
-}
+@interface PTSwitch : UISwitch
 
 - (id)_labelImage;
 

@@ -8,9 +8,9 @@
     int _updated;
 }
 
-@property int created;
-@property int deleted;
-@property int updated;
+@property (nonatomic) int created;
+@property (nonatomic) int deleted;
+@property (nonatomic) int updated;
 
 - (id)copyParseRules;
 - (int)created;

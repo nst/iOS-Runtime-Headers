@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UITouch;
-
 @interface UIKeyboardWipeGestureRecognizer : UIGestureRecognizer {
     NSMutableArray *_endPoints;
     UITouch *candidateEndpoint;
 }
 
-@property(retain) UITouch * candidateEndpoint;
+@property (nonatomic, retain) UITouch *candidateEndpoint;
 
 - (id)candidateEndpoint;
 - (void)dealloc;

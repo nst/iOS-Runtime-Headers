@@ -2,32 +2,20 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface CAAnimationDelegateBlockHelper : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _animationDidStartBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _animationDidStopBlock;
-
+    id /* block */ _animationDidStartBlock;
+    id /* block */ _animationDidStopBlock;
 }
 
-@property(copy) id animationDidStartBlock;
-@property(copy) id animationDidStopBlock;
+@property (nonatomic, copy) id /* block */ animationDidStartBlock;
+@property (nonatomic, copy) id /* block */ animationDidStopBlock;
 
 - (void)animationDidStart:(id)arg1;
-- (id)animationDidStartBlock;
+- (id /* block */)animationDidStartBlock;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (id)animationDidStopBlock;
+- (id /* block */)animationDidStopBlock;
 - (void)dealloc;
-- (void)setAnimationDidStartBlock:(id)arg1;
-- (void)setAnimationDidStopBlock:(id)arg1;
+- (void)setAnimationDidStartBlock:(id /* block */)arg1;
+- (void)setAnimationDidStopBlock:(id /* block */)arg1;
 
 @end

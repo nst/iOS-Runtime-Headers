@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class BSEventQueueEvent, NSArray, NSHashTable, NSMutableArray, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BSEventQueue : NSObject {
     NSMutableArray *_eventQueue;
     NSHashTable *_eventQueueLocks;
@@ -12,10 +10,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) BSEventQueueEvent * executingEvent;
-@property(copy) NSString * name;
-@property(copy,readonly) NSArray * pendingEvents;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, retain) BSEventQueueEvent *executingEvent;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSArray *pendingEvents;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void)_addEventQueueLock:(id)arg1;
 - (void)_executeOrPendEvents:(id)arg1 position:(int)arg2;

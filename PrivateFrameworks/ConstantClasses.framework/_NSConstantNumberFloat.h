@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ConstantClasses.framework/ConstantClasses
  */
 
-@interface _NSConstantNumberFloat : _NSConstantNumber {
-}
+@interface _NSConstantNumberFloat : _NSConstantNumber
 
 + (void)load;
 

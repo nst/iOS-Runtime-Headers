@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMPhoneImagePickerSpec : CAMImagePickerSpec {
-}
+@interface CAMPhoneImagePickerSpec : CAMImagePickerSpec
 
 - (BOOL)shouldCreateElapsedTimeView;
 - (BOOL)shouldCreateFiltersButton;

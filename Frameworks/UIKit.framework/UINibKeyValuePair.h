@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UINibKeyValuePair : NSObject {
     NSString *keyPath;
     id object;
     id value;
 }
 
-@property(readonly) NSString * keyPath;
-@property(readonly) id object;
-@property(readonly) id value;
+@property (nonatomic, readonly) NSString *keyPath;
+@property (nonatomic, readonly) id object;
+@property (nonatomic, readonly) id value;
 
 - (void)apply;
 - (void)applyForSimulator;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class <CLIntersiloServiceProtocol>, CLSilo;
-
 @interface CLServiceVendorHeartbeatRecord : NSObject {
     int _ackCount;
     <CLIntersiloServiceProtocol> *_service;
@@ -11,10 +9,10 @@
     int _synCount;
 }
 
-@property(readonly) int ackCount;
-@property(readonly) <CLIntersiloServiceProtocol> * service;
-@property(readonly) CLSilo * silo;
-@property(readonly) int synCount;
+@property (nonatomic, readonly) int ackCount;
+@property (nonatomic, readonly) <CLIntersiloServiceProtocol> *service;
+@property (nonatomic, readonly) CLSilo *silo;
+@property (nonatomic, readonly) int synCount;
 
 - (void).cxx_destruct;
 - (void)ack;

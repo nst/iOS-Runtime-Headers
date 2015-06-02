@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIStatusBar, UIStatusBarCorners;
-
 @interface UIStatusBarWindow : UIWindow {
     UIStatusBarCorners *_bottomCorners;
     BOOL _cornersHidden;

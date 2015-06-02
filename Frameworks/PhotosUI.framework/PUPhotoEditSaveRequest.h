@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class PHAsset, PHContentEditingOutput, PLPhotoEditModel;
-
 @interface PUPhotoEditSaveRequest : NSObject {
     double _beginTimestamp;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     PHContentEditingOutput *_contentEditingOutput;
     int _currentState;
     PLPhotoEditModel *_editModel;
@@ -22,11 +12,11 @@
     int _workImageVersion;
 }
 
-@property(readonly) PHContentEditingOutput * contentEditingOutput;
-@property(readonly) int currentState;
-@property(copy,readonly) PLPhotoEditModel * editModel;
-@property(readonly) PHAsset * photo;
-@property(readonly) int workImageVersion;
+@property (nonatomic, readonly) PHContentEditingOutput *contentEditingOutput;
+@property (nonatomic, readonly) int currentState;
+@property (nonatomic, readonly, copy) PLPhotoEditModel *editModel;
+@property (nonatomic, readonly) PHAsset *photo;
+@property (nonatomic, readonly) int workImageVersion;
 
 - (void).cxx_destruct;
 - (void)_finishWithSuccess:(BOOL)arg1 error:(id)arg2;
@@ -35,7 +25,7 @@
 - (void)_performSaveEditsOperation;
 - (void)_renderAndSaveBaseImage:(id)arg1 withOrientation:(int)arg2 orientationForModelData:(int)arg3 baseImageURL:(id)arg4;
 - (void)_transitionToState:(int)arg1;
-- (void)beginSaveOperationWithCompletionHandler:(id)arg1;
+- (void)beginSaveOperationWithCompletionHandler:(id /* block */)arg1;
 - (void)cancelSaveOperation;
 - (id)contentEditingOutput;
 - (int)currentState;

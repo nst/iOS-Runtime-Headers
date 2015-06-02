@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIButton;
-
 @interface PKPaymentOptionGroupItemButtonCell : PKPaymentOptionGroupItemCell {
     UIButton *_button;
 }

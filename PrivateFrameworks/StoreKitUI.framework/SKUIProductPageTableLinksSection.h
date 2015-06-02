@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableArray, SKUIColorScheme, SKUIProductPageItem;
-
 @interface SKUIProductPageTableLinksSection : SKUIProductPageTableSection {
     NSMutableArray *_actions;
     SKUIColorScheme *_colorScheme;
@@ -11,7 +9,7 @@
     NSMutableArray *_titles;
 }
 
-@property(retain) SKUIColorScheme * colorScheme;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
 
 - (void).cxx_destruct;
 - (id)colorScheme;

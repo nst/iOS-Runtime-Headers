@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UITableViewCellDeleteConfirmationControl_Legacy : UIControl {
     NSString *_title;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } size;
-@property(readonly) NSString * title;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) NSString *title;
 
 + (id)_backgroundImage;
 + (id)_highlightedBackgroundImage;

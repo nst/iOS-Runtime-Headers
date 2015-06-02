@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLEntryNotificationOperatorComposition, PLSemaphore, PLXPCListenerOperatorComposition, PLXPCResponderOperatorComposition;
-
 @interface PLDebugService : PLService {
     PLXPCListenerOperatorComposition *_aggregateTestListener;
     PLXPCResponderOperatorComposition *_aggregateTestResponder;
@@ -19,18 +17,18 @@
     PLXPCResponderOperatorComposition *_xpcResponderPLLog;
 }
 
-@property(retain) PLXPCListenerOperatorComposition * aggregateTestListener;
-@property(retain) PLXPCResponderOperatorComposition * aggregateTestResponder;
-@property(retain) PLEntryNotificationOperatorComposition * assertionListener;
-@property(retain) PLEntryNotificationOperatorComposition * assertionNewListener;
-@property(retain) PLEntryNotificationOperatorComposition * assertionUpdateListener;
-@property(retain) PLEntryNotificationOperatorComposition * canSleepNotification;
-@property(retain) PLSemaphore * canSleepSemaphore;
-@property(retain) PLXPCListenerOperatorComposition * schemaTestListener;
-@property(retain) PLEntryNotificationOperatorComposition * sleepNotification;
-@property(retain) PLEntryNotificationOperatorComposition * wakeNotification;
-@property(retain) PLXPCListenerOperatorComposition * xpcListenerPLLog;
-@property(retain) PLXPCResponderOperatorComposition * xpcResponderPLLog;
+@property (retain) PLXPCListenerOperatorComposition *aggregateTestListener;
+@property (retain) PLXPCResponderOperatorComposition *aggregateTestResponder;
+@property (retain) PLEntryNotificationOperatorComposition *assertionListener;
+@property (retain) PLEntryNotificationOperatorComposition *assertionNewListener;
+@property (retain) PLEntryNotificationOperatorComposition *assertionUpdateListener;
+@property (retain) PLEntryNotificationOperatorComposition *canSleepNotification;
+@property (retain) PLSemaphore *canSleepSemaphore;
+@property (retain) PLXPCListenerOperatorComposition *schemaTestListener;
+@property (retain) PLEntryNotificationOperatorComposition *sleepNotification;
+@property (retain) PLEntryNotificationOperatorComposition *wakeNotification;
+@property (retain) PLXPCListenerOperatorComposition *xpcListenerPLLog;
+@property (retain) PLXPCResponderOperatorComposition *xpcResponderPLLog;
 
 + (id)entryAggregateDefinitionAggregateTest;
 + (id)entryAggregateDefinitions;

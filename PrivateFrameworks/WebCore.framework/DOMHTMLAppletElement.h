@@ -2,22 +2,21 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLAppletElement : DOMHTMLElement
 
-@interface DOMHTMLAppletElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * align;
-@property(copy) NSString * alt;
-@property(copy) NSString * archive;
-@property(copy) NSString * code;
-@property(copy) NSString * codeBase;
-@property(copy) NSString * height;
+@property (copy) NSString *align;
+@property (copy) NSString *alt;
+@property (copy) NSString *archive;
+@property (copy) NSString *code;
+@property (copy) NSString *codeBase;
+@property (copy) NSString *height;
 @property int hspace;
-@property(copy) NSString * name;
-@property(copy) NSString * object;
+@property (copy) NSString *name;
+@property (copy) NSString *object;
 @property int vspace;
-@property(copy) NSString * width;
+@property (copy) NSString *width;
+
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
 - (id)align;
 - (id)alt;
@@ -39,8 +38,11 @@
 - (void)setObject:(id)arg1;
 - (void)setVspace:(int)arg1;
 - (void)setWidth:(id)arg1;
-- (BOOL)showsTapHighlight;
 - (int)vspace;
 - (id)width;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (BOOL)showsTapHighlight;
 
 @end

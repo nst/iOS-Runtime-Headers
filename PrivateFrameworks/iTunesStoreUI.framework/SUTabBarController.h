@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class <SUTabBarControllerDelegate>, NSArray, NSMutableArray, NSString, SUClientInterface, SUNavigationBarBackgroundView, SUPreviewOverlayViewController, SUViewController, UIImage, UIViewController;
-
 @interface SUTabBarController : UITabBarController <SUOverlayBackgroundDelegate, _UIBasicAnimationFactory> {
     SUClientInterface *_clientInterface;
     BOOL _ignoreTabReselection;
@@ -22,16 +20,16 @@
     SUNavigationBarBackgroundView *_tabBarBackdropView;
 }
 
-@property(getter=_previewOverlayViewController,readonly) SUPreviewOverlayViewController * _previewOverlayViewController;
-@property(readonly) SUClientInterface * clientInterface;
-@property(copy,readonly) NSString * debugDescription;
-@property <SUTabBarControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * moreListTitle;
-@property(retain) NSArray * sections;
-@property(retain) NSString * selectedIdentifier;
-@property(readonly) Class superclass;
+@property (getter=_previewOverlayViewController, nonatomic, readonly) SUPreviewOverlayViewController *_previewOverlayViewController;
+@property (nonatomic, readonly) SUClientInterface *clientInterface;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SUTabBarControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *moreListTitle;
+@property (nonatomic, retain) NSArray *sections;
+@property (nonatomic, retain) NSString *selectedIdentifier;
+@property (readonly) Class superclass;
 
 + (Class)_moreNavigationControllerClass;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreActivity.framework/CoreActivity
  */
 
-@class <CoreActivityActivityDelegate>, NSTimer;
-
 @interface ActivityCounts : NSObject {
     NSTimer *_calorieComputeTimer;
     <CoreActivityActivityDelegate> *_delegate;
@@ -16,9 +14,9 @@
     } calorieFeature;
 }
 
-@property(retain) NSTimer * calorieComputeTimer;
-@property <CoreActivityActivityDelegate> * delegate;
-@property int epoch_count;
+@property (nonatomic, retain) NSTimer *calorieComputeTimer;
+@property (nonatomic) <CoreActivityActivityDelegate> *delegate;
+@property (nonatomic) int epoch_count;
 
 - (void).cxx_destruct;
 - (id)calorieComputeTimer;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDDrawable;
-
 @interface GQDWrapPoint : NSObject {
     float mDistance;
     GQDDrawable *mDrawable;

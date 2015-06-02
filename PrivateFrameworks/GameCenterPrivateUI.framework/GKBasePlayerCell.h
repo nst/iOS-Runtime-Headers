@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKPlayer, GKPlayerPhotoView, NSDictionary, UILabel;
-
 @interface GKBasePlayerCell : GKCollectionViewCell {
     GKPlayerPhotoView *_iconView;
     NSDictionary *_metricsOverrides;
     UILabel *_nameLabel;
 }
 
-@property(retain) GKPlayerPhotoView * iconView;
-@property(retain) NSDictionary * metricsOverrides;
-@property(retain) UILabel * nameLabel;
-@property(retain) GKPlayer * player;
+@property (nonatomic, retain) GKPlayerPhotoView *iconView;
+@property (nonatomic, retain) NSDictionary *metricsOverrides;
+@property (nonatomic, retain) UILabel *nameLabel;
+@property (nonatomic, retain) GKPlayer *player;
 
 + (float)defaultRowHeight;
 + (void)initialize;

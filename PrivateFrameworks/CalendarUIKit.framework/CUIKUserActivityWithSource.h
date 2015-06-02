@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class NSString;
-
 @interface CUIKUserActivityWithSource : CUIKUserActivity {
     NSString *_sourceHost;
     NSString *_sourceOwner;

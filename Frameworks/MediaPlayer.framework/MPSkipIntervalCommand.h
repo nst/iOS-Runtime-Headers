@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray;
-
 @interface MPSkipIntervalCommand : MPRemoteCommand {
     NSArray *_preferredIntervals;
 }
 
-@property(copy) NSArray * preferredIntervals;
+@property (nonatomic, copy) NSArray *preferredIntervals;
 
 - (void).cxx_destruct;
 - (id)_mediaRemoteCommandInfoOptions;

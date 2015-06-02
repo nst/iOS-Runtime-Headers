@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@interface SKRadialGravityFieldNode : SKFieldNode {
-}
+@interface SKRadialGravityFieldNode : SKFieldNode
 
 - (id)_descriptionClassName;
 - (void)_initialize;

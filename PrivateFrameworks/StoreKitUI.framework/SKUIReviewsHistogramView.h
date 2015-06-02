@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableDictionary, NSString, SKUIClientContext, SKUIColorScheme, SKUIStarRatingControl, UIButton, UIControl, UIImageView, UILabel, UISegmentedControl, UIView;
-
 @interface SKUIReviewsHistogramView : UIView {
     UIButton *_appSupportButton;
     UIView *_bottomSeparatorView;
@@ -24,19 +22,19 @@
     UIButton *_writeAReviewButton;
 }
 
-@property(readonly) UIControl * appSupportButton;
-@property(retain) SKUIColorScheme * colorScheme;
-@property(retain) NSArray * histogramValues;
-@property int numberOfUserRatings;
-@property int personalStarRating;
-@property(readonly) UIControl * segmentedControl;
-@property(copy) NSArray * segmentedControlTitles;
-@property int selectedSegmentIndex;
-@property(readonly) UIControl * starRatingControl;
-@property(copy) NSString * title;
-@property float userRating;
-@property(copy) NSString * versionString;
-@property(readonly) UIControl * writeAReviewButton;
+@property (nonatomic, readonly) UIControl *appSupportButton;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
+@property (nonatomic, retain) NSArray *histogramValues;
+@property (nonatomic) int numberOfUserRatings;
+@property (nonatomic) int personalStarRating;
+@property (nonatomic, readonly) UIControl *segmentedControl;
+@property (nonatomic, copy) NSArray *segmentedControlTitles;
+@property (nonatomic) int selectedSegmentIndex;
+@property (nonatomic, readonly) UIControl *starRatingControl;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic) float userRating;
+@property (nonatomic, copy) NSString *versionString;
+@property (nonatomic, readonly) UIControl *writeAReviewButton;
 
 - (void).cxx_destruct;
 - (id)_countLabelString;

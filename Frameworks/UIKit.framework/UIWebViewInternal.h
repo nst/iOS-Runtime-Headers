@@ -2,24 +2,22 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebViewDelegate>, NSURLRequest, UICheckeredPatternView, UIScrollView, UIWebBrowserView, UIWebPDFViewHandler, UIWebViewWebViewDelegate;
-
 @interface UIWebViewInternal : NSObject {
     UIWebBrowserView *browserView;
     UICheckeredPatternView *checkeredPatternView;
     int clickedAlertButtonIndex;
     <UIWebViewDelegate> *delegate;
-    unsigned int didRotateEnclosingScrollView : 1;
-    unsigned int drawInWebThread : 1;
-    unsigned int drawsCheckeredPattern : 1;
-    unsigned int hasOverriddenOrientationChangeEventHandling : 1;
-    unsigned int inRotation : 1;
-    unsigned int isLoading : 1;
+    unsigned int didRotateEnclosingScrollView;
+    unsigned int drawInWebThread;
+    unsigned int drawsCheckeredPattern;
+    unsigned int hasOverriddenOrientationChangeEventHandling;
+    unsigned int inRotation;
+    unsigned int isLoading;
     UIWebPDFViewHandler *pdfHandler;
     NSURLRequest *request;
-    unsigned int scalesPageToFit : 1;
+    unsigned int scalesPageToFit;
     UIScrollView *scroller;
-    unsigned int webSelectionEnabled : 1;
+    unsigned int webSelectionEnabled;
     UIWebViewWebViewDelegate *webViewDelegate;
 }
 

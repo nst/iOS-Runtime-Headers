@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDClientContext, CKDClientProxy, CKDOperation, NSDate, NSObject<OS_dispatch_group>, NSOperationQueue, NSString;
-
 @interface CKDPlaceholderOperation : NSOperation {
     NSObject<OS_dispatch_group> *_group;
     BOOL _isExecuting;
@@ -13,15 +11,15 @@
     NSOperationQueue *_targetOperationQueue;
 }
 
-@property(readonly) CKDClientContext * context;
-@property BOOL isExecuting;
-@property BOOL isFinished;
-@property(readonly) NSString * operationID;
-@property(readonly) CKDClientProxy * proxy;
-@property(readonly) CKDOperation * realOperation;
-@property(readonly) NSString * sectionID;
-@property(retain) NSDate * startDate;
-@property(readonly) NSOperationQueue * targetOperationQueue;
+@property (nonatomic, readonly) CKDClientContext *context;
+@property (nonatomic) BOOL isExecuting;
+@property (nonatomic) BOOL isFinished;
+@property (nonatomic, readonly) NSString *operationID;
+@property (nonatomic, readonly) CKDClientProxy *proxy;
+@property (nonatomic, readonly) CKDOperation *realOperation;
+@property (nonatomic, readonly) NSString *sectionID;
+@property (nonatomic, retain) NSDate *startDate;
+@property (nonatomic, readonly) NSOperationQueue *targetOperationQueue;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class NSString;
-
 @interface BLTPBCancelBulletinRequest : PBRequest <NSCopying> {
     double _date;
     unsigned int _feed;
@@ -15,14 +13,14 @@
     NSString *_universalSectionID;
 }
 
-@property double date;
-@property unsigned int feed;
-@property BOOL hasDate;
-@property BOOL hasFeed;
-@property(readonly) BOOL hasPublisherMatchID;
-@property(readonly) BOOL hasUniversalSectionID;
-@property(retain) NSString * publisherMatchID;
-@property(retain) NSString * universalSectionID;
+@property (nonatomic) double date;
+@property (nonatomic) unsigned int feed;
+@property (nonatomic) BOOL hasDate;
+@property (nonatomic) BOOL hasFeed;
+@property (nonatomic, readonly) BOOL hasPublisherMatchID;
+@property (nonatomic, readonly) BOOL hasUniversalSectionID;
+@property (nonatomic, retain) NSString *publisherMatchID;
+@property (nonatomic, retain) NSString *universalSectionID;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData, NSString;
-
 @interface CKDPTokenRegistrationBody : PBCodable <NSCopying> {
     int _apnsEnv;
     NSString *_bundleIdentifier;
@@ -13,12 +11,12 @@
     NSData *_token;
 }
 
-@property int apnsEnv;
-@property(retain) NSString * bundleIdentifier;
-@property BOOL hasApnsEnv;
-@property(readonly) BOOL hasBundleIdentifier;
-@property(readonly) BOOL hasToken;
-@property(retain) NSData * token;
+@property (nonatomic) int apnsEnv;
+@property (nonatomic, retain) NSString *bundleIdentifier;
+@property (nonatomic) BOOL hasApnsEnv;
+@property (nonatomic, readonly) BOOL hasBundleIdentifier;
+@property (nonatomic, readonly) BOOL hasToken;
+@property (nonatomic, retain) NSData *token;
 
 - (void).cxx_destruct;
 - (int)apnsEnv;

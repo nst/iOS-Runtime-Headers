@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicGeniusMixQueueFeederDataSource>;
-
 @interface MusicGeniusMixQueueFeeder : MusicQueryQueueFeeder {
     unsigned int _currentPlaylistOffset;
     <MusicGeniusMixQueueFeederDataSource> *_dataSource;
 }
 
-@property(retain) <MusicGeniusMixQueueFeederDataSource> * dataSource;
+@property (nonatomic, retain) <MusicGeniusMixQueueFeederDataSource> *dataSource;
 
 - (void).cxx_destruct;
 - (BOOL)_configureWithMixPlaylist:(id)arg1 playbackContext:(id)arg2 startPlayback:(BOOL)arg3;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class RUStationShareInformationProvider;
-
 @interface RUStationShareURLActivityItemProvider : UIActivityItemProvider {
     RUStationShareInformationProvider *_shareInformationProvider;
 }
 
-@property(readonly) RUStationShareInformationProvider * shareInformationProvider;
+@property (nonatomic, readonly) RUStationShareInformationProvider *shareInformationProvider;
 
 - (void).cxx_destruct;
 - (id)initWithShareInformationProvider:(id)arg1;

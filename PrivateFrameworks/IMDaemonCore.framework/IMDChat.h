@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class IMDAccount, IMDService, IMDServiceSession, IMMessageItem, NSArray, NSDictionary, NSMutableDictionary, NSRecursiveLock, NSString;
-
 @interface IMDChat : NSObject {
     NSString *_accountID;
     NSString *_chatIdentifier;
@@ -25,24 +23,24 @@
     unsigned int _unreadCount;
 }
 
-@property(retain,readonly) IMDAccount * account;
-@property(copy) NSString * accountID;
-@property(copy) NSString * chatIdentifier;
-@property(retain,readonly) NSDictionary * chatProperties;
-@property(retain,readonly) NSDictionary * dictionaryRepresentation;
-@property(copy) NSString * displayName;
-@property(copy) NSString * groupID;
-@property(copy) NSString * guid;
-@property(readonly) BOOL isArchived;
-@property(copy) NSString * lastAddressedLocalHandle;
-@property(retain) IMMessageItem * lastMessage;
-@property(copy) NSArray * participants;
-@property(retain) NSDictionary * properties;
-@property(copy) NSString * roomName;
+@property (readonly, retain) IMDAccount *account;
+@property (copy) NSString *accountID;
+@property (copy) NSString *chatIdentifier;
+@property (readonly, retain) NSDictionary *chatProperties;
+@property (readonly, retain) NSDictionary *dictionaryRepresentation;
+@property (copy) NSString *displayName;
+@property (copy) NSString *groupID;
+@property (copy) NSString *guid;
+@property (readonly) BOOL isArchived;
+@property (copy) NSString *lastAddressedLocalHandle;
+@property (retain) IMMessageItem *lastMessage;
+@property (copy) NSArray *participants;
+@property (retain) NSDictionary *properties;
+@property (copy) NSString *roomName;
 @property long long rowID;
-@property(retain,readonly) IMDService * service;
-@property(copy) NSString * serviceName;
-@property(retain,readonly) IMDServiceSession * serviceSession;
+@property (readonly, retain) IMDService *service;
+@property (copy) NSString *serviceName;
+@property (readonly, retain) IMDServiceSession *serviceSession;
 @property int state;
 @property unsigned char style;
 @property unsigned int unreadCount;

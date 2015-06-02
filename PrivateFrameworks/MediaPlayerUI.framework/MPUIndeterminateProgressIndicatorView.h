@@ -7,8 +7,8 @@
     float _progressLineWidth;
 }
 
-@property float progressGap;
-@property float progressLineWidth;
+@property (nonatomic) float progressGap;
+@property (nonatomic) float progressLineWidth;
 
 - (void)_updateAnimation;
 - (void)_willEnterForeground:(id)arg1;

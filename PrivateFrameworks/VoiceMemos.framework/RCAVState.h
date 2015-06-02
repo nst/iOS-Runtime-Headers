@@ -7,18 +7,18 @@
     int _AVPreviewState;
 }
 
-@property int AVCaptureState;
-@property int AVPreviewState;
-@property(readonly) BOOL isCaptureActive;
-@property(readonly) BOOL isCaptureActiveOrPreparing;
-@property(readonly) BOOL isCaptureActiveOrPreparingOrResumable;
-@property(readonly) BOOL isCaptureInactive;
-@property(readonly) BOOL isCapturePaused;
-@property(readonly) BOOL isCapturePreparing;
-@property(readonly) BOOL isPreviewActive;
-@property(readonly) BOOL isPreviewActiveOrPreparing;
-@property(readonly) BOOL isPreviewInactive;
-@property(readonly) BOOL isPreviewPreparing;
+@property (nonatomic) int AVCaptureState;
+@property (nonatomic) int AVPreviewState;
+@property (nonatomic, readonly) BOOL isCaptureActive;
+@property (nonatomic, readonly) BOOL isCaptureActiveOrPreparing;
+@property (nonatomic, readonly) BOOL isCaptureActiveOrPreparingOrResumable;
+@property (nonatomic, readonly) BOOL isCaptureInactive;
+@property (nonatomic, readonly) BOOL isCapturePaused;
+@property (nonatomic, readonly) BOOL isCapturePreparing;
+@property (nonatomic, readonly) BOOL isPreviewActive;
+@property (nonatomic, readonly) BOOL isPreviewActiveOrPreparing;
+@property (nonatomic, readonly) BOOL isPreviewInactive;
+@property (nonatomic, readonly) BOOL isPreviewPreparing;
 
 + (id)inactiveState;
 + (BOOL)supportsSecureCoding;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@class CLLocation, FMFHandle, NSDate, NSString;
-
 @interface FMFLocation : NSObject <MKAnnotation, NSCopying, NSSecureCoding> {
     double _TTL;
     FMFHandle *_handle;
@@ -16,23 +14,23 @@
     NSDate *_timestamp;
 }
 
-@property double TTL;
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) FMFHandle * handle;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * label;
-@property(getter=isLocatingInProgress) BOOL locatingInProgress;
-@property(retain) CLLocation * location;
-@property(copy) NSString * longAddress;
-@property double maxLocatingInterval;
-@property(copy,readonly) NSString * shortAddress;
-@property(copy) NSString * shortAddressString;
-@property(copy,readonly) NSString * subtitle;
-@property(readonly) Class superclass;
-@property(copy) NSDate * timestamp;
-@property(copy,readonly) NSString * title;
+@property (nonatomic) double TTL;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) FMFHandle *handle;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *label;
+@property (getter=isLocatingInProgress, nonatomic) BOOL locatingInProgress;
+@property (nonatomic, retain) CLLocation *location;
+@property (nonatomic, copy) NSString *longAddress;
+@property (nonatomic) double maxLocatingInterval;
+@property (nonatomic, readonly, copy) NSString *shortAddress;
+@property (nonatomic, copy) NSString *shortAddressString;
+@property (nonatomic, readonly, copy) NSString *subtitle;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSDate *timestamp;
+@property (nonatomic, readonly, copy) NSString *title;
 
 + (BOOL)supportsSecureCoding;
 

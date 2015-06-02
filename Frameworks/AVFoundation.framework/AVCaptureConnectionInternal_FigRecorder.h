@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureInputPort_FigRecorder, AVCaptureOutput_FigRecorder, AVCaptureVideoPreviewLayer_FigRecorder, NSArray, NSMutableArray;
-
 @interface AVCaptureConnectionInternal_FigRecorder : NSObject {
     BOOL active;
     NSArray *audioChannelLevels;

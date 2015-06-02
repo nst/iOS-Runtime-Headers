@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSString;
-
 @interface SGSimpleMailHeaderKeyValue : NSObject <NSCopying, NSSecureCoding> {
     NSString *_key;
     NSString *_value;
 }
 
-@property(readonly) NSString * key;
-@property(readonly) NSString * value;
+@property (nonatomic, readonly) NSString *key;
+@property (nonatomic, readonly) NSString *value;
 
 + (BOOL)supportsSecureCoding;
 

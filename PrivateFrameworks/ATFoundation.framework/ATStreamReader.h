@@ -2,68 +2,45 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSInputStream, NSObject<OS_dispatch_queue>, NSString;
-
 @interface ATStreamReader : NSObject <NSStreamDelegate> {
     BOOL _closeOnStop;
     BOOL _compress;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _didEncounterErrorBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _didFinishReadingBlock;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _didReadDataBlock;
-
+    id /* block */ _didEncounterErrorBlock;
+    id /* block */ _didFinishReadingBlock;
+    id /* block */ _didReadDataBlock;
     unsigned int _maximumBufferSize;
     NSObject<OS_dispatch_queue> *_queue;
     NSInputStream *_stream;
     struct z_stream_s { char *x1; unsigned int x2; unsigned int x3; char *x4; unsigned int x5; unsigned int x6; char *x7; struct internal_state {} *x8; int (*x9)(); int (*x10)(); void *x11; int x12; unsigned int x13; unsigned int x14; } *_zstreamp;
 }
 
-@property(getter=shouldCompress) BOOL compress;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id didEncounterErrorBlock;
-@property(copy) id didFinishReadingBlock;
-@property(copy) id didReadDataBlock;
-@property(readonly) unsigned int hash;
-@property unsigned int maximumBufferSize;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSInputStream * stream;
-@property(readonly) Class superclass;
+@property (getter=shouldCompress, nonatomic) BOOL compress;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ didEncounterErrorBlock;
+@property (nonatomic, copy) id /* block */ didFinishReadingBlock;
+@property (nonatomic, copy) id /* block */ didReadDataBlock;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int maximumBufferSize;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSInputStream *stream;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_compressedDataForData:(id)arg1;
 - (void)dealloc;
-- (id)didEncounterErrorBlock;
-- (id)didFinishReadingBlock;
-- (id)didReadDataBlock;
+- (id /* block */)didEncounterErrorBlock;
+- (id /* block */)didFinishReadingBlock;
+- (id /* block */)didReadDataBlock;
 - (id)initWithInputStream:(id)arg1 queue:(id)arg2;
 - (unsigned int)maximumBufferSize;
 - (id)queue;
-- (void)readAllDataWithCompletion:(id)arg1;
+- (void)readAllDataWithCompletion:(id /* block */)arg1;
 - (id)readAllDataWithError:(id*)arg1;
 - (void)setCompress:(BOOL)arg1;
-- (void)setDidEncounterErrorBlock:(id)arg1;
-- (void)setDidFinishReadingBlock:(id)arg1;
-- (void)setDidReadDataBlock:(id)arg1;
+- (void)setDidEncounterErrorBlock:(id /* block */)arg1;
+- (void)setDidFinishReadingBlock:(id /* block */)arg1;
+- (void)setDidReadDataBlock:(id /* block */)arg1;
 - (void)setMaximumBufferSize:(unsigned int)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setStream:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface _UIPopoverViewArtworkLoader : NSObject {
     NSString *_backgroundSelector;
     int _backgroundStyle;

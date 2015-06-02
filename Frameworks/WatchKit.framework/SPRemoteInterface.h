@@ -2,17 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <SPRemoteInterfaceDataDelegateProtocol>, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface SPRemoteInterface : NSObject <SPRemoteInterfaceProtocol> {
     NSMutableArray *_activeComplicationsConnections;
     <SPRemoteInterfaceDataDelegateProtocol> *_dataDelegate;
@@ -23,27 +12,23 @@
     NSMutableArray *_openParentRequests;
     NSString *_rootViewControllerID;
     id _runLoopObserver;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _textInputCompletion;
-
+    id /* block */ _textInputCompletion;
 }
 
-@property(retain) NSMutableArray * activeComplicationsConnections;
-@property(retain) <SPRemoteInterfaceDataDelegateProtocol> * dataDelegate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSMutableDictionary * interfaceControllers;
-@property(retain) NSObject<OS_dispatch_queue> * interfaceControllersAccessQueue;
-@property(retain) NSMutableDictionary * interfaceControllersOwners;
-@property(retain) NSString * navigatingViewControllerID;
-@property(retain) NSMutableArray * openParentRequests;
-@property(retain) NSString * rootViewControllerID;
-@property(retain) id runLoopObserver;
-@property(readonly) Class superclass;
-@property(copy) id textInputCompletion;
+@property (nonatomic, retain) NSMutableArray *activeComplicationsConnections;
+@property (nonatomic, retain) <SPRemoteInterfaceDataDelegateProtocol> *dataDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSMutableDictionary *interfaceControllers;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *interfaceControllersAccessQueue;
+@property (nonatomic, retain) NSMutableDictionary *interfaceControllersOwners;
+@property (nonatomic, retain) NSString *navigatingViewControllerID;
+@property (nonatomic, retain) NSMutableArray *openParentRequests;
+@property (nonatomic, retain) NSString *rootViewControllerID;
+@property (nonatomic, retain) id runLoopObserver;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ textInputCompletion;
 
 + (id)SerializablePropertyValue:(id)arg1;
 + (void)_logDuplicate:(id)arg1 controller:(id)arg2 key:(id)arg3 property:(id)arg4 value:(id)arg5;
@@ -54,19 +39,19 @@
 + (void)clearStorageForController:(id)arg1;
 + (void)controller:(id)arg1 presentInterfaceController:(id)arg2 context:(id)arg3;
 + (void)controller:(id)arg1 presentInterfaceControllers:(id)arg2 contexts:(id)arg3;
-+ (void)controller:(id)arg1 presentTextInputControllerWithSuggestions:(id)arg2 allowedInputMode:(id)arg3 completion:(id)arg4;
++ (void)controller:(id)arg1 presentTextInputControllerWithSuggestions:(id)arg2 allowedInputMode:(id)arg3 completion:(id /* block */)arg4;
 + (void)controller:(id)arg1 pushInterfaceController:(id)arg2 context:(id)arg3;
-+ (id)controller:(id)arg1 setupProperties:(id)arg2 viewControllerID:(id)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5 classForType:(int (*)())arg6;
++ (id)controller:(id)arg1 setupProperties:(id)arg2 viewControllerID:(id)arg3 tableIndex:(int)arg4 rowIndex:(int)arg5 classForType:(int (*)arg6;
 + (void)controllerBecomeCurrentPage:(id)arg1;
 + (void)controllerDismiss:(id)arg1;
 + (void)controllerDismissTextInputController:(id)arg1;
 + (void)controllerPop:(id)arg1;
 + (void)controllerPopToRoot:(id)arg1;
-+ (void)handleEvent:(id)arg1;
++ (void)handleEvent:(id /* block */)arg1;
 + (void)insertPageControllerAtIndexes:(id)arg1 withNames:(id)arg2 contexts:(id)arg3;
 + (void)movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
 + (void)notificationController:(id)arg1 showNotificationInterfaceType:(int)arg2;
-+ (BOOL)openParentApplication:(id)arg1 reply:(id)arg2;
++ (BOOL)openParentApplication:(id)arg1 reply:(id /* block */)arg2;
 + (void)reloadRootControllersWithNames:(id)arg1 contexts:(id)arg2;
 + (void)removePageControllerAtIndexes:(id)arg1;
 + (void)sendCacheRequest:(id)arg1;
@@ -88,7 +73,7 @@
 - (id)_interfaceControllerWithID:(id)arg1;
 - (void)_registerInterfaceController:(id)arg1 interfaceControllerID:(id)arg2 interfaceControllerClientID:(id)arg3 applicationRootController:(BOOL)arg4;
 - (void)_sendOpenParentApplicationRequest;
-- (id)_setupSignal:(int)arg1 handler:(id)arg2;
+- (id)_setupSignal:(int)arg1 handler:(id /* block */)arg2;
 - (void)_setupSignalHandlers;
 - (id)activeComplicationsConnections;
 - (void)applicationContentsDidReset:(id)arg1;
@@ -111,7 +96,7 @@
 - (void)dataInterfaceDidBecomeActive:(id)arg1;
 - (void)dataInterfaceWillResignActive:(id)arg1;
 - (void)dealloc;
-- (void)fetchNotificationForNotificationID:(id)arg1 completion:(id)arg2;
+- (void)fetchNotificationForNotificationID:(id)arg1 completion:(id /* block */)arg2;
 - (void)getComplicationData:(id)arg1;
 - (id)init;
 - (void)insertPageControllerAtIndexes:(id)arg1 withNames:(id)arg2 initializationContextIDs:(id)arg3;
@@ -122,7 +107,7 @@
 - (void)movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
 - (id)navigatingViewControllerID;
 - (void)notificationController:(id)arg1 showNotificationInterfaceType:(int)arg2;
-- (BOOL)openParentApplication:(id)arg1 reply:(id)arg2;
+- (BOOL)openParentApplication:(id)arg1 reply:(id /* block */)arg2;
 - (id)openParentRequests;
 - (void)receiveData:(id)arg1 fromIdentifier:(id)arg2;
 - (void)receiveProtoData:(id)arg1 fromIdentifier:(id)arg2;
@@ -145,9 +130,9 @@
 - (void)setOpenParentRequests:(id)arg1;
 - (void)setRootViewControllerID:(id)arg1;
 - (void)setRunLoopObserver:(id)arg1;
-- (void)setTextInputCompletion:(id)arg1;
+- (void)setTextInputCompletion:(id /* block */)arg1;
 - (id)storeInterfaceCreationContext:(id)arg1;
-- (id)textInputCompletion;
+- (id /* block */)textInputCompletion;
 - (void)updateUserActivity:(id)arg1 userInfo:(id)arg2 webpageURL:(id)arg3 controller:(id)arg4;
 
 @end

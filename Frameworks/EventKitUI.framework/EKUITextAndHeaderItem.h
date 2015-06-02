@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSDictionary, NSString;
-
 @interface EKUITextAndHeaderItem : NSObject {
     NSString *_header;
     NSString *_text;
 }
 
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(retain) NSString * header;
-@property(retain) NSString * text;
+@property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (nonatomic, retain) NSString *header;
+@property (nonatomic, retain) NSString *text;
 
 + (id)itemWithText:(id)arg1 andHeader:(id)arg2;
 

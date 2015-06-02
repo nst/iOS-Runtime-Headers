@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMAvalancheSession, NSArray, NSCountedSet, NSMutableDictionary, NSMutableSet;
-
 @interface CAMAvalancheCaptureService : CAMCaptureService {
     CAMAvalancheSession *__activeAvalancheSession;
     NSMutableDictionary *__avalancheSessionsByUUID;
@@ -14,13 +12,13 @@
     BOOL _supportsAvalancheAnalysis;
 }
 
-@property(readonly) CAMAvalancheSession * _activeAvalancheSession;
-@property(readonly) NSMutableDictionary * _avalancheSessionsByUUID;
-@property(readonly) NSMutableSet * _avalancheSessionsToBeFinalizedAfterNextResponseCompletion;
-@property(readonly) double _avalancheStartTime;
-@property(readonly) NSCountedSet * _inflightRequestsByUUID;
-@property(copy) NSArray * recentFaceMetadata;
-@property BOOL supportsAvalancheAnalysis;
+@property (nonatomic, readonly) CAMAvalancheSession *_activeAvalancheSession;
+@property (nonatomic, readonly) NSMutableDictionary *_avalancheSessionsByUUID;
+@property (nonatomic, readonly) NSMutableSet *_avalancheSessionsToBeFinalizedAfterNextResponseCompletion;
+@property (nonatomic, readonly) double _avalancheStartTime;
+@property (nonatomic, readonly) NSCountedSet *_inflightRequestsByUUID;
+@property (nonatomic, copy) NSArray *recentFaceMetadata;
+@property (nonatomic) BOOL supportsAvalancheAnalysis;
 
 - (void).cxx_destruct;
 - (id)_activeAvalancheSession;
@@ -36,7 +34,7 @@
 - (BOOL)canContinueAvalancheCapture;
 - (void)cancelAvalancheCapture;
 - (void)finishAvalancheCapture;
-- (void)finishAvalancheCaptureWithCompletion:(id)arg1;
+- (void)finishAvalancheCaptureWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (int)numberOfPhotos;
 - (id)recentFaceMetadata;

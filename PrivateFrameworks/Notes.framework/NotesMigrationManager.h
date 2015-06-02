@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@interface NotesMigrationManager : NSObject {
-}
+@interface NotesMigrationManager : NSObject
 
 - (BOOL)areStoreMetadata:(id)arg1 matchingEntityVersionsInModel:(id)arg2;
 - (BOOL)migrateNotesStoreAtURL:(id)arg1 storeType:(id)arg2 managedObjectModel:(id)arg3 options:(id)arg4 error:(id*)arg5;

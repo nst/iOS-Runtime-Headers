@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSString;
-
 @interface TSDGLFrameBuffer : NSObject {
     int _currentBindingOption;
     int _currentDrawBufferCount;
-    unsigned int _currentDrawBuffers[1];
+    unsigned int _currentDrawBuffers;
     unsigned int _currentReadBuffer;
     NSMutableArray *_currentTextureLookupInfoByAttachment;
     NSMutableArray *_desiredTextureLookupInfoByAttachment;
@@ -26,12 +24,12 @@
     NSArray *_textureLookupInfosByAttachment;
 }
 
-@property(readonly) unsigned int currentGLTexture;
-@property(readonly) NSString * currentGLTextureName;
-@property(readonly) BOOL isBound;
-@property(copy) NSString * name;
-@property BOOL shouldDeleteTexturesOnTeardown;
-@property(readonly) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) unsigned int currentGLTexture;
+@property (nonatomic, readonly) NSString *currentGLTextureName;
+@property (nonatomic, readonly) BOOL isBound;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) BOOL shouldDeleteTexturesOnTeardown;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 + (int)currentGLFramebuffer;
 + (int)currentGLFramebufferWithBindingOption:(int)arg1;

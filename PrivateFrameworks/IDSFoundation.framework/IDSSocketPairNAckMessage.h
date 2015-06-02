@@ -10,10 +10,10 @@
     unsigned short _streamID;
 }
 
-@property(readonly) BOOL fileXfer;
-@property(readonly) unsigned short priority;
-@property(readonly) unsigned int sequenceNumber;
-@property(readonly) unsigned short streamID;
+@property (nonatomic, readonly) BOOL fileXfer;
+@property (nonatomic, readonly) unsigned short priority;
+@property (nonatomic, readonly) unsigned int sequenceNumber;
+@property (nonatomic, readonly) unsigned short streamID;
 
 - (id)_nonHeaderData;
 - (unsigned char)command;

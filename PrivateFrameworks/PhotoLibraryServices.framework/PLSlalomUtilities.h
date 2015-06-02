@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLSlalomUtilities : NSObject {
-}
+@interface PLSlalomUtilities : NSObject
 
 + (double)durationForBaseDuration:(double)arg1 videoAdjustments:(id)arg2;
 + (double)durationForManagedAsset:(id)arg1 applyVideoAdjustments:(BOOL)arg2;

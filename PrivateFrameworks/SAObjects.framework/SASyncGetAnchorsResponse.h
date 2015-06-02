@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SASyncGetAnchorsResponse : SABaseClientBoundCommand
 
-@interface SASyncGetAnchorsResponse : SABaseClientBoundCommand {
-}
-
-@property(copy) NSArray * anchors;
+@property (nonatomic, copy) NSArray *anchors;
 
 + (id)getAnchorsResponse;
 + (id)getAnchorsResponseWithDictionary:(id)arg1 context:(id)arg2;

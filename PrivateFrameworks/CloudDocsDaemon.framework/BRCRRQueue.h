@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSMapTable, NSMutableArray;
-
 @interface BRCRRQueue : NSEnumerator {
     NSMutableArray *_array;
     NSMapTable *_objects;
     unsigned int _pos;
 }
 
-@property(readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned int count;
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;

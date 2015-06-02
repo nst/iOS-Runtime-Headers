@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class DOMNodeList;
+@interface DOMHTMLProgressElement : DOMHTMLElement
 
-@interface DOMHTMLProgressElement : DOMHTMLElement {
-}
-
-@property(readonly) DOMNodeList * labels;
+@property (readonly) DOMNodeList *labels;
 @property double max;
-@property(readonly) double position;
+@property (readonly) double position;
 @property double value;
 
 - (id)labels;

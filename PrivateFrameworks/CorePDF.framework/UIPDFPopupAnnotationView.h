@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIImage;
-
 @interface UIPDFPopupAnnotationView : UIPDFAnnotationView {
     UIImage *_image;
 }

@@ -2,36 +2,34 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSArray, NSNumber, NSString, SUSegmentedControl, SUStorePageViewController;
-
 @interface SUScriptSegmentedControl : SUScriptObject {
     NSArray *_segments;
     int _style;
 }
 
-@property(readonly) SUSegmentedControl * activeSegmentedControl;
-@property(copy) NSString * cancelButtonTitle;
-@property(readonly) unsigned int controlStateDisabled;
-@property(readonly) unsigned int controlStateHighlighted;
-@property(readonly) unsigned int controlStateNormal;
-@property(readonly) unsigned int controlStateSelected;
+@property (nonatomic, readonly) SUSegmentedControl *activeSegmentedControl;
+@property (copy) NSString *cancelButtonTitle;
+@property (readonly) unsigned int controlStateDisabled;
+@property (readonly) unsigned int controlStateHighlighted;
+@property (readonly) unsigned int controlStateNormal;
+@property (readonly) unsigned int controlStateSelected;
 @property int maximumNumberOfItems;
 @property float maximumWidth;
-@property(copy) NSString * moreListTitle;
-@property(retain) SUSegmentedControl * nativeSegmentedControl;
-@property(readonly) int nativeSelectedIndex;
-@property(readonly) NSNumber * noSegmentIndex;
-@property(readonly) NSArray * rawSegments;
-@property(retain) id segments;
-@property(retain) NSNumber * selectedIndex;
-@property(readonly) NSNumber * selectedSegmentIndex;
-@property(copy) id showsMoreListAutomatically;
-@property(readonly) SUStorePageViewController * storePageViewController;
-@property(retain) NSString * style;
-@property(copy) id tintColor;
+@property (copy) NSString *moreListTitle;
+@property (nonatomic, retain) SUSegmentedControl *nativeSegmentedControl;
+@property (nonatomic, readonly) int nativeSelectedIndex;
+@property (readonly) NSNumber *noSegmentIndex;
+@property (nonatomic, readonly) NSArray *rawSegments;
+@property (retain) id segments;
+@property (retain) NSNumber *selectedIndex;
+@property (readonly) NSNumber *selectedSegmentIndex;
+@property (copy) id showsMoreListAutomatically;
+@property (nonatomic, readonly) SUStorePageViewController *storePageViewController;
+@property (retain) NSString *style;
+@property (copy) id tintColor;
 @property int tintStyle;
-@property(readonly) int tintStyleDark;
-@property(readonly) int tintStyleDefault;
+@property (readonly) int tintStyleDark;
+@property (readonly) int tintStyleDefault;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

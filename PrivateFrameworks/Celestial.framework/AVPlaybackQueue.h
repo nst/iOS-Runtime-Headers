@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class AVQueue, NSMutableArray;
-
 @interface AVPlaybackQueue : NSObject {
     AVQueue *_avItemQueue;
     int _avQueueTransactionCount;

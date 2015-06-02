@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSDate, NSDictionary, NSString;
-
 @interface MSASAlbum : NSObject <NSCopying> {
     NSString *_GUID;
     NSString *_URLString;
@@ -22,22 +20,22 @@
     NSDate *_subscriptionDate;
 }
 
-@property(retain) NSString * GUID;
-@property(retain) NSString * URLString;
-@property(retain) id context;
-@property(retain) NSString * ctag;
-@property(retain) NSString * foreignCtag;
-@property BOOL isFamilySharedAlbum;
-@property(retain) NSDictionary * metadata;
-@property(retain) NSString * ownerEmail;
-@property(retain) NSString * ownerFirstName;
-@property(retain) NSString * ownerFullName;
-@property(retain) NSString * ownerLastName;
-@property(retain) NSString * ownerPersonID;
-@property(retain) NSString * publicURLString;
-@property int relationshipState;
-@property(retain) NSDate * subscriptionDate;
-@property(readonly) BOOL useForeignCtag;
+@property (nonatomic, retain) NSString *GUID;
+@property (nonatomic, retain) NSString *URLString;
+@property (nonatomic, retain) id context;
+@property (nonatomic, retain) NSString *ctag;
+@property (nonatomic, retain) NSString *foreignCtag;
+@property (nonatomic) BOOL isFamilySharedAlbum;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (nonatomic, retain) NSString *ownerEmail;
+@property (nonatomic, retain) NSString *ownerFirstName;
+@property (nonatomic, retain) NSString *ownerFullName;
+@property (nonatomic, retain) NSString *ownerLastName;
+@property (nonatomic, retain) NSString *ownerPersonID;
+@property (nonatomic, retain) NSString *publicURLString;
+@property (nonatomic) int relationshipState;
+@property (nonatomic, retain) NSDate *subscriptionDate;
+@property (nonatomic, readonly) BOOL useForeignCtag;
 
 + (id)album;
 + (id)albumWithAlbum:(id)arg1;

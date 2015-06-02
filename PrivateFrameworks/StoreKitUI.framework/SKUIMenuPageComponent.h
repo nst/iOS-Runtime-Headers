@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSMutableArray, NSString, SKUISegmentedControlViewElement;
-
 @interface SKUIMenuPageComponent : SKUIPageComponent {
     NSMutableArray *_childrenComponents;
     int _defaultSelectedIndex;
@@ -16,15 +14,15 @@
     NSMutableArray *_titles;
 }
 
-@property(readonly) NSArray * allTitles;
-@property(readonly) int defaultSelectedIndex;
-@property(readonly) int menuStyle;
-@property(readonly) NSString * menuTitle;
-@property(readonly) float menuTitleFontSize;
-@property(readonly) int menuTitleFontWeight;
-@property(readonly) int numberOfItems;
-@property(readonly) NSString * titleForMoreItem;
-@property(readonly) SKUISegmentedControlViewElement * viewElement;
+@property (nonatomic, readonly) NSArray *allTitles;
+@property (nonatomic, readonly) int defaultSelectedIndex;
+@property (nonatomic, readonly) int menuStyle;
+@property (nonatomic, readonly) NSString *menuTitle;
+@property (nonatomic, readonly) float menuTitleFontSize;
+@property (nonatomic, readonly) int menuTitleFontWeight;
+@property (nonatomic, readonly) int numberOfItems;
+@property (nonatomic, readonly) NSString *titleForMoreItem;
+@property (nonatomic, readonly) SKUISegmentedControlViewElement *viewElement;
 
 - (void).cxx_destruct;
 - (id)_componentWithContext:(id)arg1;

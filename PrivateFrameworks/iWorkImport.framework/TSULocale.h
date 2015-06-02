@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSLocale, NSLock, NSMutableArray, NSMutableDictionary, NSString, NSTimeZone, TSUDateParserLibrary;
-
 @interface TSULocale : NSObject {
     NSString *_activeCurrencyCode;
     NSString *_activeNoMinusSignCurrencyCode;
@@ -41,29 +39,29 @@
     NSArray *_weekdaySymbols;
 }
 
-@property(readonly) NSString * arrayRowSeparator;
-@property(readonly) struct __CFLocale { }* cfGregorianCalendarLocale;
-@property(readonly) struct __CFLocale { }* cfLocale;
-@property(readonly) NSString * currencyCode;
-@property(readonly) NSString * currencyDecimalSeparator;
-@property(readonly) int dateComponentOrdering;
-@property(readonly) TSUDateParserLibrary * dateParserLibrary;
-@property(readonly) NSString * decimalSeparator;
-@property(readonly) NSString * documentLanguageIdentifier;
-@property(readonly) NSLocale * gregorianCalendarLocale;
-@property(readonly) NSString * groupingSeparator;
-@property(readonly) unsigned int groupingSize;
-@property(readonly) NSString * languageCode;
-@property(readonly) NSString * listSeparator;
-@property(readonly) NSLocale * locale;
-@property(readonly) NSString * localeIdentifier;
-@property(readonly) NSArray * shortMonthSymbols;
-@property(readonly) NSArray * shortStandaloneMonthSymbols;
-@property(readonly) NSArray * shortStandaloneWeekdaySymbols;
-@property(readonly) NSArray * standaloneMonthSymbols;
-@property(readonly) NSArray * standaloneWeekdaySymbols;
-@property(readonly) NSTimeZone * timeZone;
-@property(readonly) NSArray * weekdaySymbols;
+@property (readonly) NSString *arrayRowSeparator;
+@property (readonly) struct __CFLocale { }*cfGregorianCalendarLocale;
+@property (readonly) struct __CFLocale { }*cfLocale;
+@property (readonly) NSString *currencyCode;
+@property (readonly) NSString *currencyDecimalSeparator;
+@property (readonly) int dateComponentOrdering;
+@property (readonly) TSUDateParserLibrary *dateParserLibrary;
+@property (readonly) NSString *decimalSeparator;
+@property (readonly) NSString *documentLanguageIdentifier;
+@property (readonly) NSLocale *gregorianCalendarLocale;
+@property (readonly) NSString *groupingSeparator;
+@property (readonly) unsigned int groupingSize;
+@property (readonly) NSString *languageCode;
+@property (readonly) NSString *listSeparator;
+@property (readonly) NSLocale *locale;
+@property (readonly) NSString *localeIdentifier;
+@property (readonly) NSArray *shortMonthSymbols;
+@property (readonly) NSArray *shortStandaloneMonthSymbols;
+@property (readonly) NSArray *shortStandaloneWeekdaySymbols;
+@property (readonly) NSArray *standaloneMonthSymbols;
+@property (readonly) NSArray *standaloneWeekdaySymbols;
+@property (readonly) NSTimeZone *timeZone;
+@property (readonly) NSArray *weekdaySymbols;
 
 + (id)canonicalizeLocaleIdentifier:(id)arg1;
 + (id)canonicalizeLocaleIdentifierWithLanguageAndRegionOnly:(id)arg1;

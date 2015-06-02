@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPlaceSearchResponse, NSMutableArray;
-
 @interface GEOETAResult : PBCodable <NSCopying> {
     unsigned int _distance;
     struct { 
@@ -19,17 +17,17 @@
     int _status;
 }
 
-@property unsigned int distance;
-@property BOOL hasDistance;
-@property BOOL hasHistoricTravelTime;
-@property BOOL hasLiveTravelTime;
-@property(readonly) BOOL hasPlaceSearchResponse;
-@property BOOL hasStatus;
-@property unsigned int historicTravelTime;
-@property unsigned int liveTravelTime;
-@property(retain) GEOPlaceSearchResponse * placeSearchResponse;
-@property(retain) NSMutableArray * sortedETAs;
-@property int status;
+@property (nonatomic) unsigned int distance;
+@property (nonatomic) BOOL hasDistance;
+@property (nonatomic) BOOL hasHistoricTravelTime;
+@property (nonatomic) BOOL hasLiveTravelTime;
+@property (nonatomic, readonly) BOOL hasPlaceSearchResponse;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) unsigned int historicTravelTime;
+@property (nonatomic) unsigned int liveTravelTime;
+@property (nonatomic, retain) GEOPlaceSearchResponse *placeSearchResponse;
+@property (nonatomic, retain) NSMutableArray *sortedETAs;
+@property (nonatomic) int status;
 
 - (void)addSortedETA:(id)arg1;
 - (void)clearSortedETAs;

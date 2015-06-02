@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@class NSString;
-
 @interface SBSUICarDisplayNowPlayingStateContext : NSObject <NSSecureCoding> {
     NSString *_animationName;
     NSString *_associatedBundleID;
     NSString *_stateName;
 }
 
-@property(copy) NSString * animationName;
-@property(copy) NSString * associatedBundleID;
-@property(copy) NSString * stateName;
+@property (nonatomic, copy) NSString *animationName;
+@property (nonatomic, copy) NSString *associatedBundleID;
+@property (nonatomic, copy) NSString *stateName;
 
 + (id)contextWithState:(id)arg1 animationName:(id)arg2;
 + (BOOL)supportsSecureCoding;

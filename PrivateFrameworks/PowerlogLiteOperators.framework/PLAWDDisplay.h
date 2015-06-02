@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableSet, PLEntryNotificationOperatorComposition, PLOperator;
-
 @interface PLAWDDisplay : PLAWDAuxMetrics {
     PLEntryNotificationOperatorComposition *_alsEnabledEventCallback;
     PLEntryNotificationOperatorComposition *_alsUserPreferencesEventCallback;
@@ -30,20 +28,20 @@
     long _touchSubmitCnt;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * alsEnabledEventCallback;
-@property(retain) PLEntryNotificationOperatorComposition * alsUserPreferencesEventCallback;
-@property(retain) PLEntryNotificationOperatorComposition * backlightEventCallback;
-@property(retain) PLEntryNotificationOperatorComposition * backlightRailCallback;
-@property(retain) PLEntryNotificationOperatorComposition * batteryEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *alsEnabledEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *alsUserPreferencesEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *backlightEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *backlightRailCallback;
+@property (retain) PLEntryNotificationOperatorComposition *batteryEventCallback;
 @property double bklPowerRailTimeStamp;
 @property double bklTimeStamp;
 @property long dispSubmitCnt;
-@property(retain) PLEntryNotificationOperatorComposition * displayEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *displayEventCallback;
 @property double displayOnTimeStamp;
 @property BOOL filterFirstEntry;
-@property(retain) PLEntryNotificationOperatorComposition * ioReportEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *ioReportEventCallback;
 @property double mieOnTimeStamp;
-@property PLOperator * operator;
+@property PLOperator *operator;
 @property BOOL prevAlsOn;
 @property long prevBklBucketIdx;
 @property double prevBklChgTimeStamp;
@@ -51,9 +49,9 @@
 @property BOOL prevDeviceCharging;
 @property BOOL prevDisplayOn;
 @property BOOL prevMieOn;
-@property(retain) NSMutableSet * runningMetrics;
+@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property long long startTouchEntryId;
-@property(retain) PLEntryNotificationOperatorComposition * touchEventCallback;
+@property (retain) PLEntryNotificationOperatorComposition *touchEventCallback;
 @property long touchSubmitCnt;
 
 + (id)entryAggregateDefinitionAwdDisplayAndAls;

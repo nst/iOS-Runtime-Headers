@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUContentSizeLayoutConstraint, MPUExtrasZoomableImageView, MPUExtrasZoomingImageInteractiveTransitionSourceContext, NSArray, NSAttributedString, NSString, UIActivityIndicatorView, UIImage, UILabel, UIView;
-
 @interface MPUExtrasImageViewController : UIViewController <MPUExtrasZoomingImageTransitionParticipant> {
     UIActivityIndicatorView *_activityIndicatorView;
     BOOL _allowsPinchingImageForInteractiveZoomingImageTransition;
@@ -23,30 +21,30 @@
     NSString *_zoomingImageTransitionIdentifier;
 }
 
-@property(retain) UIActivityIndicatorView * activityIndicatorView;
-@property BOOL allowsPinchingImageForInteractiveZoomingImageTransition;
-@property(retain) MPUContentSizeLayoutConstraint * bottomLabelConstraint;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UILabel * descriptionLabel;
-@property(retain) MPUContentSizeLayoutConstraint * descriptionLeadingConstraint;
-@property(retain) NSAttributedString * descriptionString;
-@property(copy) NSArray * gestureRecognizers;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * image;
-@property unsigned int imageIndex;
-@property(retain) MPUExtrasZoomingImageInteractiveTransitionSourceContext * interactiveTransitionSourceContext;
-@property BOOL overlayHidden;
-@property(retain) UILabel * subtitleLabel;
-@property(retain) MPUContentSizeLayoutConstraint * subtitleLeadingConstraint;
-@property(retain) NSAttributedString * subtitleString;
-@property(readonly) Class superclass;
-@property(retain) UIView * textContainmentView;
-@property(retain) UILabel * titleLabel;
-@property(retain) NSAttributedString * titleString;
-@property(retain) MPUContentSizeLayoutConstraint * topLabelConstraint;
-@property(retain) MPUExtrasZoomableImageView * zoomableImageView;
-@property(copy) NSString * zoomingImageTransitionIdentifier;
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic) BOOL allowsPinchingImageForInteractiveZoomingImageTransition;
+@property (nonatomic, retain) MPUContentSizeLayoutConstraint *bottomLabelConstraint;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UILabel *descriptionLabel;
+@property (nonatomic, retain) MPUContentSizeLayoutConstraint *descriptionLeadingConstraint;
+@property (nonatomic, retain) NSAttributedString *descriptionString;
+@property (nonatomic, copy) NSArray *gestureRecognizers;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic) unsigned int imageIndex;
+@property (nonatomic, retain) MPUExtrasZoomingImageInteractiveTransitionSourceContext *interactiveTransitionSourceContext;
+@property (nonatomic) BOOL overlayHidden;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (nonatomic, retain) MPUContentSizeLayoutConstraint *subtitleLeadingConstraint;
+@property (nonatomic, retain) NSAttributedString *subtitleString;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIView *textContainmentView;
+@property (nonatomic, retain) UILabel *titleLabel;
+@property (nonatomic, retain) NSAttributedString *titleString;
+@property (nonatomic, retain) MPUContentSizeLayoutConstraint *topLabelConstraint;
+@property (nonatomic, retain) MPUExtrasZoomableImageView *zoomableImageView;
+@property (nonatomic, copy) NSString *zoomingImageTransitionIdentifier;
 
 - (void).cxx_destruct;
 - (void)_handleDoubleTap:(id)arg1;

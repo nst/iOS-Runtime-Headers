@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class <RCGLWaveformRendererDelegate>, CADisplayLink, CALayer, EAGLContext, NSString, NSTimer, RCUIConfiguration, RCWaveformDataSource, UIView;
-
 @interface RCGLWaveformRenderer : UIViewController <GLKViewDelegate, RCWaveformDataSourceObserver> {
     RCUIConfiguration *_UIConfiguration;
     BOOL _activeDisplayLinkRequired;
@@ -53,7 +51,7 @@
     unsigned int _shaderProgram;
     BOOL _shadersInitialized;
     float _spacingWidth;
-    unsigned int _vertexBuffers[2];
+    unsigned int _vertexBuffers;
     struct { 
         double beginTime; 
         double endTime; 
@@ -67,22 +65,22 @@
     } _waveformVertexData;
 }
 
-@property(copy) RCUIConfiguration * UIConfiguration;
-@property(getter=isActiveDisplayLinkRequired) BOOL activeDisplayLinkRequired;
-@property(readonly) float contentWidth;
-@property float dataPointWidth;
-@property(retain) RCWaveformDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL frequentUpdatesSegmentUpdatesExpectedHint;
-@property(readonly) unsigned int hash;
-@property struct { double x1; double x2; } highlightTimeRange;
-@property(getter=isPaused) BOOL paused;
-@property <RCGLWaveformRendererDelegate> * rendererDelegate;
-@property float spacingWidth;
-@property(readonly) Class superclass;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
-@property struct { double x1; double x2; } visibleTimeRange;
+@property (nonatomic, copy) RCUIConfiguration *UIConfiguration;
+@property (getter=isActiveDisplayLinkRequired, nonatomic) BOOL activeDisplayLinkRequired;
+@property (nonatomic, readonly) float contentWidth;
+@property (nonatomic) float dataPointWidth;
+@property (nonatomic, retain) RCWaveformDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL frequentUpdatesSegmentUpdatesExpectedHint;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct { double x1; double x2; } highlightTimeRange;
+@property (getter=isPaused, nonatomic) BOOL paused;
+@property (nonatomic) <RCGLWaveformRendererDelegate> *rendererDelegate;
+@property (nonatomic) float spacingWidth;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
+@property (nonatomic) struct { double x1; double x2; } visibleTimeRange;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -97,7 +95,7 @@
 - (struct { double x1; double x2; })_highlightTimeRange;
 - (float)_nonCachedContentWidth;
 - (id)_pathForShader:(id)arg1;
-- (void)_performOrDispatchToMainThread:(id)arg1;
+- (void)_performOrDispatchToMainThread:(id /* block */)arg1;
 - (void)_performScheduledTerminateDisplayLink;
 - (float)_pixelOffsetForTime:(double)arg1;
 - (float)_pixelsPerSecond;

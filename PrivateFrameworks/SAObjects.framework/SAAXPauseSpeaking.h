@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAAXPauseSpeaking : SADomainCommand {
-}
+@interface SAAXPauseSpeaking : SADomainCommand
 
 + (id)pauseSpeaking;
 + (id)pauseSpeakingWithDictionary:(id)arg1 context:(id)arg2;

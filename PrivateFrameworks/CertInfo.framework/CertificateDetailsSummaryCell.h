@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSArray;
-
 @interface CertificateDetailsSummaryCell : CertUIItemDetailsSummaryCell {
     NSArray *_details;
 }
 
-@property(retain) NSArray * details;
+@property (nonatomic, retain) NSArray *details;
 
 - (void).cxx_destruct;
 - (id)details;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSCH3DChartType, TSCHChartAxis, TSCHChartInfo, TSCHChartModel, TSCHChartSeries, TSCHChartSeriesType;
-
 @interface TSCH3DChartModelEnumerator : NSObject {
     TSCH3DChartType *mChartType;
     struct ValueEnumerator { 
@@ -42,12 +40,12 @@
     TSCHChartAxis *mValueAxis;
 }
 
-@property(readonly) TSCH3DChartType * chartType;
-@property(readonly) TSCHChartInfo * info;
-@property(readonly) TSCHChartModel * model;
-@property(readonly) TSCHChartSeries * series;
-@property(readonly) TSCHChartSeriesType * seriesType;
-@property(readonly) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } size;
+@property (nonatomic, readonly) TSCH3DChartType *chartType;
+@property (nonatomic, readonly) TSCHChartInfo *info;
+@property (nonatomic, readonly) TSCHChartModel *model;
+@property (nonatomic, readonly) TSCHChartSeries *series;
+@property (nonatomic, readonly) TSCHChartSeriesType *seriesType;
+@property (nonatomic, readonly) struct tvec2<int> { union { int x_1_1_1; int x_1_1_2; int x_1_1_3; } x1; union { int x_2_1_1; int x_2_1_2; int x_2_1_3; } x2; } size;
 
 + (id)enumeratorWithModel:(id)arg1 chartType:(id)arg2 seriesType:(id)arg3;
 

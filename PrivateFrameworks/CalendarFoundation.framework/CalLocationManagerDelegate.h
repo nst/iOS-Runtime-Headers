@@ -2,34 +2,24 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CLLocation, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface CalLocationManagerDelegate : NSObject <CLLocationManagerDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionBlock;
-
+    id /* block */ _completionBlock;
     CLLocation *_currentLocation;
     BOOL _didFinish;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_timer;
 }
 
-@property(copy) id completionBlock;
-@property(retain) CLLocation * currentLocation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (copy) id /* block */ completionBlock;
+@property (retain) CLLocation *currentLocation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL didFinish;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)completionBlock;
+- (id /* block */)completionBlock;
 - (id)currentLocation;
 - (void)dealloc;
 - (BOOL)didFinish;
@@ -38,7 +28,7 @@
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateToLocation:(id)arg2 fromLocation:(id)arg3;
-- (void)setCompletionBlock:(id)arg1;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setCurrentLocation:(id)arg1;
 - (void)setDidFinish:(BOOL)arg1;
 - (void)startTimer;

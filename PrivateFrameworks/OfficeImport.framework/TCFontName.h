@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface TCFontName : NSObject {
     NSString *_fullName;
     NSString *_styleName;
 }
 
-@property(readonly) NSString * fullName;
-@property(readonly) NSString * styleName;
+@property (nonatomic, readonly) NSString *fullName;
+@property (nonatomic, readonly) NSString *styleName;
 
 - (void)dealloc;
 - (id)description;

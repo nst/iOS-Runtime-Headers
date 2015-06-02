@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class AVPlayerController, AVValueTiming, NSArray, NSString, WebAVMediaSelectionOption;
-
 @interface WebAVPlayerController : NSObject <AVPlayerViewControllerDelegate> {
     NSArray *_audioMediaSelectionOptions;
     BOOL _canPause;
@@ -41,44 +34,44 @@
     AVValueTiming *_timing;
 }
 
-@property(retain) NSArray * audioMediaSelectionOptions;
+@property (retain) NSArray *audioMediaSelectionOptions;
 @property BOOL canPause;
 @property BOOL canPlay;
 @property BOOL canScanBackward;
-@property(readonly) BOOL canScanForward;
+@property (readonly) BOOL canScanForward;
 @property BOOL canSeek;
-@property(readonly) BOOL canSeekToBeginning;
-@property(readonly) BOOL canSeekToEnd;
+@property (readonly) BOOL canSeekToBeginning;
+@property (readonly) BOOL canSeekToEnd;
 @property BOOL canTogglePlayback;
 @property struct CGSize { float x1; float x2; } contentDimensions;
 @property double contentDuration;
 @property double contentDurationWithinEndTimes;
-@property(retain) WebAVMediaSelectionOption * currentAudioMediaSelectionOption;
-@property(retain) WebAVMediaSelectionOption * currentLegibleMediaSelectionOption;
-@property(copy,readonly) NSString * debugDescription;
-@property struct WebVideoFullscreenModel { int (**x1)(); }* delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isExternalPlaybackActive) BOOL externalPlaybackActive;
-@property(retain) NSString * externalPlaybackAirPlayDeviceLocalizedName;
+@property (retain) WebAVMediaSelectionOption *currentAudioMediaSelectionOption;
+@property (retain) WebAVMediaSelectionOption *currentLegibleMediaSelectionOption;
+@property (readonly, copy) NSString *debugDescription;
+@property struct WebVideoFullscreenModel { int (**x1)(); }*delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isExternalPlaybackActive) BOOL externalPlaybackActive;
+@property (retain) NSString *externalPlaybackAirPlayDeviceLocalizedName;
 @property int externalPlaybackType;
-@property(readonly) BOOL hasAudioMediaSelectionOptions;
+@property (readonly) BOOL hasAudioMediaSelectionOptions;
 @property BOOL hasEnabledAudio;
 @property BOOL hasEnabledVideo;
-@property(readonly) BOOL hasLegibleMediaSelectionOptions;
-@property(readonly) BOOL hasMediaSelectionOptions;
-@property(readonly) unsigned int hash;
-@property(retain) NSArray * legibleMediaSelectionOptions;
-@property(retain) NSArray * loadedTimeRanges;
+@property (readonly) BOOL hasLegibleMediaSelectionOptions;
+@property (readonly) BOOL hasMediaSelectionOptions;
+@property (readonly) unsigned int hash;
+@property (retain) NSArray *legibleMediaSelectionOptions;
+@property (retain) NSArray *loadedTimeRanges;
 @property double maxTime;
 @property double minTime;
-@property(retain) AVPlayerController * playerControllerProxy;
-@property(getter=isPlaying) BOOL playing;
-@property(getter=isPlayingOnExternalScreen,readonly) BOOL playingOnExternalScreen;
+@property (retain) AVPlayerController *playerControllerProxy;
+@property (getter=isPlaying) BOOL playing;
+@property (getter=isPlayingOnExternalScreen, readonly) BOOL playingOnExternalScreen;
 @property double rate;
-@property(retain) NSArray * seekableTimeRanges;
+@property (retain) NSArray *seekableTimeRanges;
 @property int status;
-@property(readonly) Class superclass;
-@property(retain) AVValueTiming * timing;
+@property (readonly) Class superclass;
+@property (retain) AVValueTiming *timing;
 
 + (id)keyPathsForValuesAffectingCanScanForward;
 + (id)keyPathsForValuesAffectingCanSeekToBeginning;

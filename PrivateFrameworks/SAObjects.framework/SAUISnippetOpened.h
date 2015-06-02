@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAUISnippetOpened : SAUISnippetObjectInteraction {
-}
+@interface SAUISnippetOpened : SAUISnippetObjectInteraction
 
 + (id)snippetOpened;
 + (id)snippetOpenedWithDictionary:(id)arg1 context:(id)arg2;

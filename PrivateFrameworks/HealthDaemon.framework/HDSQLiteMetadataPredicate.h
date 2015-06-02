@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDSQLitePredicate;
-
 @interface HDSQLiteMetadataPredicate : HDSQLitePredicate <NSCopying> {
     BOOL _includeNullPredicate;
     HDSQLitePredicate *_keyPredicate;

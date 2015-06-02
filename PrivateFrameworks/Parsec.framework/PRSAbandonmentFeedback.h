@@ -6,7 +6,7 @@
     unsigned int _method;
 }
 
-@property(readonly) unsigned int method;
+@property (nonatomic, readonly) unsigned int method;
 
 + (BOOL)supportsSecureCoding;
 

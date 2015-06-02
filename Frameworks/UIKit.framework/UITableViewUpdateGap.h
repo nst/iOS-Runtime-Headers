@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMutableArray, UIUpdateItem;
-
 @interface UITableViewUpdateGap : NSObject {
     NSMutableArray *_deleteItems;
     UIUpdateItem *_firstUpdateItem;
@@ -14,15 +12,15 @@
     UIUpdateItem *_lastUpdateItem;
 }
 
-@property(readonly) NSArray * deleteItems;
-@property(retain) UIUpdateItem * firstUpdateItem;
-@property(readonly) BOOL hasAutomaticAnimationItems;
-@property(readonly) BOOL hasInserts;
-@property(readonly) NSArray * insertItems;
-@property(readonly) BOOL isDeleteBasedGap;
-@property(readonly) BOOL isSectionBasedGap;
-@property(retain) UIUpdateItem * lastUpdateItem;
-@property(readonly) NSArray * updateItems;
+@property (nonatomic, readonly) NSArray *deleteItems;
+@property (nonatomic, retain) UIUpdateItem *firstUpdateItem;
+@property (nonatomic, readonly) BOOL hasAutomaticAnimationItems;
+@property (nonatomic, readonly) BOOL hasInserts;
+@property (nonatomic, readonly) NSArray *insertItems;
+@property (nonatomic, readonly) BOOL isDeleteBasedGap;
+@property (nonatomic, readonly) BOOL isSectionBasedGap;
+@property (nonatomic, retain) UIUpdateItem *lastUpdateItem;
+@property (nonatomic, readonly) NSArray *updateItems;
 
 + (id)gapWithUpdateItem:(id)arg1;
 

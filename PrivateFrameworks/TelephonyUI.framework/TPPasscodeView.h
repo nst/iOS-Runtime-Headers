@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSMutableString, NSString;
-
 @interface TPPasscodeView : UIView {
     NSMutableString *_passcodeMutableString;
 }
 
-@property(retain) NSMutableString * passcodeMutableString;
-@property(readonly) NSString * passcodeString;
+@property (retain) NSMutableString *passcodeMutableString;
+@property (readonly) NSString *passcodeString;
 
 - (void)appendCharacter:(id)arg1;
 - (void)clear;

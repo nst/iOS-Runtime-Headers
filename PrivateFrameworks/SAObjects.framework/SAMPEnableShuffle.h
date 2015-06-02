@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMPEnableShuffle : SADomainCommand {
-}
+@interface SAMPEnableShuffle : SADomainCommand
 
-@property BOOL enable;
+@property (nonatomic) BOOL enable;
 
 + (id)enableShuffle;
 + (id)enableShuffleWithDictionary:(id)arg1 context:(id)arg2;

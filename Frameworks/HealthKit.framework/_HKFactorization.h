@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSMapTable;
-
 @interface _HKFactorization : NSObject <NSCopying, NSSecureCoding> {
     NSMapTable *_factors;
 }
@@ -25,7 +23,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateFactorsWithHandler:(id)arg1;
+- (void)enumerateFactorsWithHandler:(id /* block */)arg1;
 - (int)exponentForFactor:(id)arg1;
 - (unsigned int)factorCount;
 - (id)factorizationByDividing:(id)arg1;

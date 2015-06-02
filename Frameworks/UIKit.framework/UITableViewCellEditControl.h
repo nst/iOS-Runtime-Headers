@@ -2,22 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UITableViewCell, _UITableViewCellEditControlMinusView;
-
 @interface UITableViewCellEditControl : UIControl {
     UITableViewCell *_cell;
-    unsigned int _hiding : 1;
+    unsigned int _hiding;
     UIImageView *_imageView;
     _UITableViewCellEditControlMinusView *_minusView;
-    unsigned int _reserved : 27;
-    unsigned int _rotated : 1;
-    unsigned int _rotating : 1;
+    unsigned int _reserved;
+    unsigned int _rotated;
+    unsigned int _rotating;
     UIImageView *_shadowView;
-    unsigned int _style : 2;
+    unsigned int _style;
 }
 
-@property(getter=isHiding) BOOL hiding;
-@property(getter=isRotated) BOOL rotated;
+@property (getter=isHiding, nonatomic) BOOL hiding;
+@property (getter=isRotated, nonatomic) BOOL rotated;
 
 + (id)_deleteImage:(float)arg1;
 + (id)_deleteImageBackground:(float)arg1;

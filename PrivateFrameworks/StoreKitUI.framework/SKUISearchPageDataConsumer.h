@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUIClientContext;
-
 @interface SKUISearchPageDataConsumer : SSVURLDataConsumer {
     SKUIClientContext *_clientContext;
     NSString *_searchTerm;
 }
 
-@property(copy) NSString * searchTerm;
+@property (nonatomic, copy) NSString *searchTerm;
 
 + (id)consumerWithClientContext:(id)arg1;
 

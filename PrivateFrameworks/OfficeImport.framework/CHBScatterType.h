@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHBScatterType : NSObject {
-}
+@interface CHBScatterType : NSObject
 
 + (id)chdChartTypeWithState:(id)arg1;
 

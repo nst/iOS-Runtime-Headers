@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray;
-
 @interface KNSoundtrack : TSPObject <NSCopying> {
     NSArray *mMedia;
     int mMode;
     float mVolume;
 }
 
-@property(copy) NSArray * media;
-@property int mode;
-@property float volume;
+@property (nonatomic, copy) NSArray *media;
+@property (nonatomic) int mode;
+@property (nonatomic) float volume;
 
 + (BOOL)needsObjectUUID;
 

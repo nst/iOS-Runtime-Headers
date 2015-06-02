@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class NSCountedSet, NSMutableDictionary;
-
 @interface BBAttachments : NSObject <NSCopying, NSSecureCoding> {
     NSCountedSet *_additionalAttachments;
     NSMutableDictionary *_clientSideComposedImageInfos;
     int primaryType;
 }
 
-@property(retain) NSCountedSet * additionalAttachments;
-@property(retain) NSMutableDictionary * clientSideComposedImageInfos;
-@property int primaryType;
+@property (nonatomic, retain) NSCountedSet *additionalAttachments;
+@property (nonatomic, retain) NSMutableDictionary *clientSideComposedImageInfos;
+@property (nonatomic) int primaryType;
 
 + (BOOL)supportsSecureCoding;
 

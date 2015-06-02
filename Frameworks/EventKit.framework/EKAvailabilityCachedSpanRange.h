@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSMutableArray;
-
 @interface EKAvailabilityCachedSpanRange : NSObject {
     NSMutableArray *_cachedSpans;
 }

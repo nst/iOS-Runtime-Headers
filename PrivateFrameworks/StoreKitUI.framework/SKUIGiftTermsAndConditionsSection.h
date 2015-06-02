@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIView;
-
 @interface SKUIGiftTermsAndConditionsSection : SKUIGiftTableViewSection {
     UIView *_headerView;
 }

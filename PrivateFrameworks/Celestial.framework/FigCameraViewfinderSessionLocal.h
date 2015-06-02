@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigCameraViewfinderLocal, FigCameraViewfinderStream, FigCaptureSessionProxy, FigStateMachine, NSObject<OS_dispatch_queue>, NSString;
-
 @interface FigCameraViewfinderSessionLocal : FigCameraViewfinderSession <FigCameraViewfinderStreamDelegate, FigCaptureSessionPreviewTapDelegate> {
     FigCaptureSessionProxy *_captureSessionProxy;
     BOOL _ended;
@@ -16,10 +14,10 @@
     FigCameraViewfinderLocal *_viewfinder;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_captureSessionDidCapturePhotoWithStatus:(long)arg1 thumbnailData:(id)arg2 timestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (void)_captureSessionDidStop;

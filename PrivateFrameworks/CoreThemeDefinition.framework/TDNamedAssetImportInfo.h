@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSDate, NSString, NSURL;
-
 @interface TDNamedAssetImportInfo : NSObject {
     struct CGRect { 
         struct CGPoint { 
@@ -41,24 +39,24 @@
     int _templateRenderingMode;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
-@property(copy) NSURL * fileURL;
-@property unsigned int graphicsClass;
-@property int idiom;
-@property BOOL isTemplate;
-@property unsigned int memoryClass;
-@property(copy) NSDate * modificationDate;
-@property(copy) NSString * name;
-@property int nameIdentifier;
-@property int renditionType;
-@property struct CGSize { float x1; float x2; } resizableSliceSize;
-@property int resizingMode;
-@property unsigned int scaleFactor;
-@property int sizeClassHorizontal;
-@property int sizeClassVertical;
-@property struct { float x1; float x2; float x3; float x4; } sliceInsets;
-@property int subtype;
-@property int templateRenderingMode;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alignmentRect;
+@property (nonatomic, copy) NSURL *fileURL;
+@property (nonatomic) unsigned int graphicsClass;
+@property (nonatomic) int idiom;
+@property (nonatomic) BOOL isTemplate;
+@property (nonatomic) unsigned int memoryClass;
+@property (nonatomic, copy) NSDate *modificationDate;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic) int nameIdentifier;
+@property (nonatomic) int renditionType;
+@property (nonatomic) struct CGSize { float x1; float x2; } resizableSliceSize;
+@property (nonatomic) int resizingMode;
+@property (nonatomic) unsigned int scaleFactor;
+@property (nonatomic) int sizeClassHorizontal;
+@property (nonatomic) int sizeClassVertical;
+@property (nonatomic) struct { float x1; float x2; float x3; float x4; } sliceInsets;
+@property (nonatomic) int subtype;
+@property (nonatomic) int templateRenderingMode;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
 - (void)dealloc;

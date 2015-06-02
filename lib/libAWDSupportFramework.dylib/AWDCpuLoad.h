@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDCpuLoad : PBCodable <NSCopying> {
     unsigned int _duration;
     struct { 
@@ -12,10 +10,10 @@
     NSString *_procName;
 }
 
-@property unsigned int duration;
-@property BOOL hasDuration;
-@property(readonly) BOOL hasProcName;
-@property(retain) NSString * procName;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic, readonly) BOOL hasProcName;
+@property (nonatomic, retain) NSString *procName;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

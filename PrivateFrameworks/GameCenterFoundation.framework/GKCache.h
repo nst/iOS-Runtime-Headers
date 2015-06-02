@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKLinkedList, NSMutableDictionary, NSString;
-
 @interface GKCache : NSObject <GKCache> {
     GKLinkedList *_cacheList;
     unsigned int _count;
@@ -11,14 +9,14 @@
     unsigned int _maxCount;
 }
 
-@property(retain) GKLinkedList * cacheList;
-@property unsigned int count;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableDictionary * dictionary;
-@property(readonly) unsigned int hash;
-@property unsigned int maxCount;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) GKLinkedList *cacheList;
+@property (nonatomic) unsigned int count;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableDictionary *dictionary;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int maxCount;
+@property (readonly) Class superclass;
 
 - (id)cacheList;
 - (unsigned int)count;

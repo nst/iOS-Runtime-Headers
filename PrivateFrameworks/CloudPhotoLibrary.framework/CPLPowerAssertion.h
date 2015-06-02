@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLPowerAssertion : NSObject {
-}
+@interface CPLPowerAssertion : NSObject
 
-+ (void)_doProtected:(id)arg1;
++ (void)_doProtected:(id /* block */)arg1;
 + (void)_releaseAssertion;
 + (void)_retainAssertion;
 + (void)disableSleep;

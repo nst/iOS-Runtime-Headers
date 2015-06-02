@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
-
 @interface UITableViewCountView : UILabel {
     int _count;
     NSString *_countString;

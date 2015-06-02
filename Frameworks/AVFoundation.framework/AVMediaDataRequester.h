@@ -2,32 +2,22 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <AVMediaDataRequesterConsumer>, NSObject<OS_dispatch_queue>;
-
 @interface AVMediaDataRequester : NSObject {
     <AVMediaDataRequesterConsumer> *_mediaDataConsumer;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _requestBlock;
-
+    id /* block */ _requestBlock;
     NSObject<OS_dispatch_queue> *_requestQueue;
 }
 
-@property(readonly) id requestBlock;
-@property(readonly) NSObject<OS_dispatch_queue> * requestQueue;
+@property (nonatomic, readonly) id /* block */ requestBlock;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *requestQueue;
 
 - (void)_requestMediaDataIfReady;
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
-- (id)initWithMediaDataConsumer:(id)arg1 requestQueue:(id)arg2 requestBlock:(id)arg3;
+- (id)initWithMediaDataConsumer:(id)arg1 requestQueue:(id)arg2 requestBlock:(id /* block */)arg3;
 - (void)invalidate;
-- (id)requestBlock;
+- (id /* block */)requestBlock;
 - (id)requestQueue;
 - (void)startRequestingMediaData;
 

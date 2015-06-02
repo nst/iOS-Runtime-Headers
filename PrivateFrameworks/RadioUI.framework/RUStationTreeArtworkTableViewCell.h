@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RUStationTreeArtworkTableViewCell : RUStationTreeTableViewCell {
-}
+@interface RUStationTreeArtworkTableViewCell : RUStationTreeTableViewCell
 
 + (BOOL)_audioPreviewViewShowsFaceWhenNotPlaying;
 + (struct CGSize { float x1; float x2; })_audioPreviewViewSize;

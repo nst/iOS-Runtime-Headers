@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class FigCaptureSinkConfiguration, FigCaptureSourceConfiguration, NSString;
-
 @interface FigCaptureConnectionConfiguration : NSObject <FigXPCCoding, NSCopying> {
     NSString *_connectionID;
     BOOL _enabled;
@@ -12,15 +10,15 @@
     FigCaptureSourceConfiguration *_sourceConfiguration;
 }
 
-@property(copy) NSString * connectionID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL enabled;
-@property(readonly) unsigned int hash;
-@property unsigned long mediaType;
-@property(retain) FigCaptureSinkConfiguration * sinkConfiguration;
-@property(retain) FigCaptureSourceConfiguration * sourceConfiguration;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *connectionID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned long mediaType;
+@property (nonatomic, retain) FigCaptureSinkConfiguration *sinkConfiguration;
+@property (nonatomic, retain) FigCaptureSourceConfiguration *sourceConfiguration;
+@property (readonly) Class superclass;
 
 + (void)initialize;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMManualUpdater, UIImage;
-
 @interface CKWaveformProgressView : CKBalloonImageView {
     BOOL _color;
     double _currentTime;
@@ -14,13 +12,13 @@
     UIImage *_waveform;
 }
 
-@property BOOL color;
-@property double currentTime;
-@property(retain) IMManualUpdater * displayUpdater;
-@property double duration;
-@property(getter=isPlayed) BOOL played;
-@property(getter=isPlaying) BOOL playing;
-@property(retain) UIImage * waveform;
+@property (nonatomic) BOOL color;
+@property (nonatomic) double currentTime;
+@property (nonatomic, retain) IMManualUpdater *displayUpdater;
+@property (nonatomic) double duration;
+@property (getter=isPlayed, nonatomic) BOOL played;
+@property (getter=isPlaying, nonatomic) BOOL playing;
+@property (nonatomic, retain) UIImage *waveform;
 
 - (BOOL)color;
 - (double)currentTime;

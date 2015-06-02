@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSString;
-
 @interface TSWPCitationSmartField : TSWPSmartField <TSWPCitationRecordHosting> {
     NSArray *_citationRecords;
     BOOL _isLocalizable;
 }
 
-@property(copy) NSArray * citationRecords;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL isLocalizable;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSArray *citationRecords;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isLocalizable;
+@property (readonly) Class superclass;
 
 + (BOOL)isValidCitationField:(id)arg1;
 

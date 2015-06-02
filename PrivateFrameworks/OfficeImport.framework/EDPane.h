@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDReference;
-
 @interface EDPane : NSObject {
     int mActivePane;
     int mPaneState;

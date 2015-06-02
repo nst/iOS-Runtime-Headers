@@ -6,7 +6,7 @@
     struct __IOSurface { } *_surface;
 }
 
-@property(readonly) struct __IOSurface { }* surface;
+@property (nonatomic, readonly) struct __IOSurface { }*surface;
 
 - (void)bindToXPCDictionary:(id)arg1;
 - (id)copyImageData;

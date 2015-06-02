@@ -3,19 +3,19 @@
  */
 
 @interface NSDecimalNumber : NSNumber {
-    unsigned int _exponent : 8;
-    unsigned int _hasExternalRefCount : 1;
-    unsigned int _isCompact : 1;
-    unsigned int _isNegative : 1;
-    unsigned int _length : 4;
-    unsigned short _mantissa[0];
-    unsigned int _refs : 16;
-    unsigned int _reserved : 1;
+    unsigned int _exponent;
+    unsigned int _hasExternalRefCount;
+    unsigned int _isCompact;
+    unsigned int _isNegative;
+    unsigned int _length;
+    unsigned short _mantissa;
+    unsigned int _refs;
+    unsigned int _reserved;
 }
 
-@property(readonly) struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; } decimalValue;
-@property(readonly) double doubleValue;
-@property(readonly) const char * objCType;
+@property (readonly) struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; } decimalValue;
+@property (readonly) double doubleValue;
+@property (readonly) const char *objCType;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)decimalNumberWithDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; })arg1;
@@ -44,7 +44,6 @@
 + (id)one;
 + (void)setDefaultBehavior:(id)arg1;
 + (BOOL)supportsSecureCoding;
-+ (id)two;
 + (id)zero;
 
 - (BOOL)_allowsDirectEncoding;

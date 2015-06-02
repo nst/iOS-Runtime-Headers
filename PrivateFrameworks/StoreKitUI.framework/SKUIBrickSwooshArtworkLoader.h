@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIBrickSwooshViewController;
-
 @interface SKUIBrickSwooshArtworkLoader : SKUISwooshArtworkLoader {
     int _artworkSize;
 }
 
-@property(readonly) SKUIBrickSwooshViewController * swooshViewController;
+@property (nonatomic, readonly) SKUIBrickSwooshViewController *swooshViewController;
 
 - (id)cachedImageForBrick:(id)arg1;
 - (id)initWithArtworkLoader:(id)arg1 swoosh:(id)arg2;

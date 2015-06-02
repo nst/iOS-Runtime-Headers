@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMapTable, NSMutableSet, NSSet, WBSHistorySQLiteStore;
-
 @interface WBSHistoryDeletionPlan : NSObject {
     NSMutableSet *_discoveredItemsToDelete;
     NSSet *_discoveredVisitsToDelete;
@@ -15,18 +13,18 @@
     NSMapTable *_updatedLastVisitsByItem;
 }
 
-@property(readonly) NSSet * allItemsToDelete;
-@property(readonly) NSMapTable * allVisitsToDeleteByItemExcludingItemsBeingDeleted;
-@property(readonly) NSSet * allVisitsToDeleteExcludingVisitsFromItemsBeingDeleted;
-@property(readonly) NSSet * discoveredItemsToDelete;
-@property(readonly) NSSet * discoveredVisitsToDelete;
-@property(readonly) NSSet * triggeringItems;
-@property(readonly) NSSet * triggeringVisits;
-@property(readonly) NSMapTable * updatedLastVisitsByItem;
+@property (nonatomic, readonly) NSSet *allItemsToDelete;
+@property (nonatomic, readonly) NSMapTable *allVisitsToDeleteByItemExcludingItemsBeingDeleted;
+@property (nonatomic, readonly) NSSet *allVisitsToDeleteExcludingVisitsFromItemsBeingDeleted;
+@property (nonatomic, readonly) NSSet *discoveredItemsToDelete;
+@property (nonatomic, readonly) NSSet *discoveredVisitsToDelete;
+@property (nonatomic, readonly) NSSet *triggeringItems;
+@property (nonatomic, readonly) NSSet *triggeringVisits;
+@property (nonatomic, readonly) NSMapTable *updatedLastVisitsByItem;
 
 - (void).cxx_destruct;
 - (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2;
-- (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2 relatedVisitKey:(id)arg3 relatedVisitsQueryFactory:(id)arg4;
+- (id)_extraVisitsToDeleteWhenDeletingItems:(id)arg1 visits:(id)arg2 relatedVisitKey:(id)arg3 relatedVisitsQueryFactory:(id /* block */)arg4;
 - (void)_prepareWithTriggeringItems:(id)arg1 triggeringVisits:(id)arg2;
 - (id)_visitsForItems:(id)arg1;
 - (id)allItemsToDelete;

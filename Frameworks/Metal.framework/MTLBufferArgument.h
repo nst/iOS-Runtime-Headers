@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLStructType;
-
 @interface MTLBufferArgument : MTLArgument {
     unsigned short _alignment;
     unsigned int _dataSize;

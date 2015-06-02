@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, TSPObjectContext, TSPPersistedObjectUUIDMap;
-
 @interface TSPObjectUUIDMap : NSObject {
     NSMutableSet *_UUIDsWithSuppressedAssertions;
     NSObject<OS_dispatch_queue> *_accessQueue;

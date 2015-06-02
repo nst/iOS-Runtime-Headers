@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSMapTable, NSMutableArray, NSMutableDictionary, NSMutableIndexSet, UICollectionView, UICollectionViewLayout;
-
 @interface UICollectionViewData : NSObject {
     NSMutableArray *_clonedCellAttributes;
     NSMutableArray *_clonedDecorationAttributes;
@@ -44,11 +42,11 @@
     } _validLayoutRect;
 }
 
-@property(readonly) NSArray * clonedCellAttributes;
-@property(readonly) NSArray * clonedDecorationAttributes;
-@property(readonly) NSArray * clonedSupplementaryAttributes;
-@property(readonly) BOOL layoutIsPrepared;
-@property(getter=isLayoutLocked) BOOL layoutLocked;
+@property (nonatomic, readonly) NSArray *clonedCellAttributes;
+@property (nonatomic, readonly) NSArray *clonedDecorationAttributes;
+@property (nonatomic, readonly) NSArray *clonedSupplementaryAttributes;
+@property (nonatomic, readonly) BOOL layoutIsPrepared;
+@property (getter=isLayoutLocked, nonatomic) BOOL layoutLocked;
 
 + (void)initialize;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface MFPhoneNullBrush : MFPhoneBrush {
-}
+@interface MFPhoneNullBrush : MFPhoneBrush
 
 + (id)nullBrush;
 

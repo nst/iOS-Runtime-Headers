@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, UIImageView, UILabel;
-
 @interface MPVideoPlaybackBackgroundView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -17,8 +15,8 @@
     UILabel *_titleLabel;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(retain) MPAVController * player;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic, retain) MPAVController *player;
 
 - (void).cxx_destruct;
 - (void)_activeAudioRouteDidChange:(id)arg1;

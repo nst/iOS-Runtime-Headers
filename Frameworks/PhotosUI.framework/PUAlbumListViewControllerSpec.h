@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUAlbumListViewControllerSpec, PUFeedViewControllerSpec, PUPhotoDecoration, PUPhotosGridViewControllerSpec, PUPhotosPanoramaViewControllerSpec, PUPhotosPickerViewControllerSpec, UIImage;
-
 @interface PUAlbumListViewControllerSpec : NSObject {
     UIImage *_addSharedAlbumPlaceholderImage;
     int _albumDeletionConfirmationStyle;
@@ -54,43 +52,43 @@
     BOOL _usesStackTransitionToGrid;
 }
 
-@property(readonly) UIImage * addSharedAlbumPlaceholderImage;
-@property(readonly) int albumDeletionConfirmationStyle;
-@property(readonly) BOOL allowsAlbumCountSubtitle;
-@property(readonly) BOOL canDisplaySearchActionInNavigationBar;
-@property(readonly) int cellContentViewLayout;
-@property(readonly) int collageFastImageFormat;
-@property(readonly) int collageQualityImageFormat;
-@property(readonly) float collageSpacing;
-@property(readonly) struct CGSize { float x1; float x2; } contentSizeForViewInPopover;
-@property(readonly) BOOL displaysSearchInPopover;
-@property(readonly) UIImage * emptyAlbumPlaceholderImage;
-@property(readonly) UIImage * emptySharedAlbumPlaceholderImage;
-@property(readonly) PUPhotoDecoration * emptyStackPhotoDecoration;
-@property(readonly) int fastImageFormat;
-@property(readonly) PUFeedViewControllerSpec * feedViewControllerSpec;
-@property(readonly) PUPhotosGridViewControllerSpec * gridViewControllerSpec;
-@property(readonly) UIImage * hiddenAlbumPlaceholderImage;
-@property(readonly) float maxSearchBarWidth;
-@property(readonly) PUPhotosPanoramaViewControllerSpec * panoramaViewControllerSpec;
-@property(readonly) PUPhotosPickerViewControllerSpec * photosPickerViewControllerSpec;
-@property(readonly) int qualityImageFormat;
-@property(readonly) float sectionFooterHeight;
-@property(readonly) float sectionHeaderHeight;
-@property(readonly) BOOL shouldUseCollageForCloudFeedPlaceholder;
-@property(readonly) BOOL shouldUseShortTitleForStandInAlbumList;
-@property(readonly) BOOL shouldUseTableView;
-@property(readonly) BOOL showsAlbumBadgeOnCellContentView;
-@property(readonly) BOOL showsAlbumBadgeOnStackView;
-@property(readonly) BOOL showsDeleteButtonOnCellContentView;
-@property(readonly) struct UIOffset { float x1; float x2; } stackOffset;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } stackPerspectiveInsets;
-@property(readonly) struct UIOffset { float x1; float x2; } stackPerspectiveOffset;
-@property(readonly) PUPhotoDecoration * stackPhotoDecoration;
-@property(readonly) struct CGSize { float x1; float x2; } stackSize;
-@property(readonly) unsigned int stackViewStyle;
-@property(readonly) PUAlbumListViewControllerSpec * standInAlbumListViewControllerSpec;
-@property(readonly) BOOL usesStackTransitionToGrid;
+@property (nonatomic, readonly) UIImage *addSharedAlbumPlaceholderImage;
+@property (nonatomic, readonly) int albumDeletionConfirmationStyle;
+@property (nonatomic, readonly) BOOL allowsAlbumCountSubtitle;
+@property (nonatomic, readonly) BOOL canDisplaySearchActionInNavigationBar;
+@property (nonatomic, readonly) int cellContentViewLayout;
+@property (nonatomic, readonly) int collageFastImageFormat;
+@property (nonatomic, readonly) int collageQualityImageFormat;
+@property (nonatomic, readonly) float collageSpacing;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSizeForViewInPopover;
+@property (nonatomic, readonly) BOOL displaysSearchInPopover;
+@property (nonatomic, readonly) UIImage *emptyAlbumPlaceholderImage;
+@property (nonatomic, readonly) UIImage *emptySharedAlbumPlaceholderImage;
+@property (nonatomic, readonly) PUPhotoDecoration *emptyStackPhotoDecoration;
+@property (nonatomic, readonly) int fastImageFormat;
+@property (nonatomic, readonly) PUFeedViewControllerSpec *feedViewControllerSpec;
+@property (nonatomic, readonly) PUPhotosGridViewControllerSpec *gridViewControllerSpec;
+@property (nonatomic, readonly) UIImage *hiddenAlbumPlaceholderImage;
+@property (nonatomic, readonly) float maxSearchBarWidth;
+@property (nonatomic, readonly) PUPhotosPanoramaViewControllerSpec *panoramaViewControllerSpec;
+@property (nonatomic, readonly) PUPhotosPickerViewControllerSpec *photosPickerViewControllerSpec;
+@property (nonatomic, readonly) int qualityImageFormat;
+@property (nonatomic, readonly) float sectionFooterHeight;
+@property (nonatomic, readonly) float sectionHeaderHeight;
+@property (nonatomic, readonly) BOOL shouldUseCollageForCloudFeedPlaceholder;
+@property (nonatomic, readonly) BOOL shouldUseShortTitleForStandInAlbumList;
+@property (readonly) BOOL shouldUseTableView;
+@property (nonatomic, readonly) BOOL showsAlbumBadgeOnCellContentView;
+@property (nonatomic, readonly) BOOL showsAlbumBadgeOnStackView;
+@property (nonatomic, readonly) BOOL showsDeleteButtonOnCellContentView;
+@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } stackOffset;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } stackPerspectiveInsets;
+@property (nonatomic, readonly) struct UIOffset { float x1; float x2; } stackPerspectiveOffset;
+@property (nonatomic, readonly) PUPhotoDecoration *stackPhotoDecoration;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } stackSize;
+@property (nonatomic, readonly) unsigned int stackViewStyle;
+@property (nonatomic, readonly) PUAlbumListViewControllerSpec *standInAlbumListViewControllerSpec;
+@property (nonatomic, readonly) BOOL usesStackTransitionToGrid;
 
 - (void).cxx_destruct;
 - (id)_centeredGlyphImage:(id)arg1 withBackgroundColor:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 imageAlpha:(float)arg4;

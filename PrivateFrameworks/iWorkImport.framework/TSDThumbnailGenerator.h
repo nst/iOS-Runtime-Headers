@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDImager, TSKDocumentRoot;
-
 @interface TSDThumbnailGenerator : NSObject {
     TSKDocumentRoot *_documentRoot;
     TSDImager *_imager;
 }
 
-@property struct CGColor { }* backgroundColor;
+@property (nonatomic) struct CGColor { }*backgroundColor;
 
 - (struct CGColor { }*)backgroundColor;
 - (void)dealloc;

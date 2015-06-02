@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/RemoteMediaServices.framework/RemoteMediaServices
  */
 
-@class NSData, NSString;
-
 @interface _RMSNowPlayingArtworkCacheItem : NSObject <NSDiscardableContent> {
     NSData *_artworkData;
     NSString *_artworkIdentifier;
     BOOL _keepAlive;
 }
 
-@property(retain) NSData * artworkData;
-@property(retain) NSString * artworkIdentifier;
+@property (nonatomic, retain) NSData *artworkData;
+@property (nonatomic, retain) NSString *artworkIdentifier;
 
 - (void).cxx_destruct;
 - (id)artworkData;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOBusinessOptions : PBCodable <NSCopying> {
     NSMutableArray *_attributeKeys;
     struct { 
@@ -17,14 +15,14 @@
     NSMutableArray *_photoOptions;
 }
 
-@property(retain) NSMutableArray * attributeKeys;
-@property BOOL hasIncludeBusinessHours;
-@property BOOL hasIncludeCenter;
-@property BOOL hasMaxBusinessResults;
-@property BOOL includeBusinessHours;
-@property BOOL includeCenter;
-@property int maxBusinessResults;
-@property(retain) NSMutableArray * photoOptions;
+@property (nonatomic, retain) NSMutableArray *attributeKeys;
+@property (nonatomic) BOOL hasIncludeBusinessHours;
+@property (nonatomic) BOOL hasIncludeCenter;
+@property (nonatomic) BOOL hasMaxBusinessResults;
+@property (nonatomic) BOOL includeBusinessHours;
+@property (nonatomic) BOOL includeCenter;
+@property (nonatomic) int maxBusinessResults;
+@property (nonatomic, retain) NSMutableArray *photoOptions;
 
 - (void)addAttributeKey:(id)arg1;
 - (void)addPhotoOptions:(id)arg1;

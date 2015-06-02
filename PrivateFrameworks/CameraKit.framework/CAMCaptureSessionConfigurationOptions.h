@@ -9,10 +9,10 @@
     BOOL _useAlternateSlomoRear;
 }
 
-@property(readonly) BOOL HDRDetectionEnabled;
-@property(readonly) BOOL use60FPSVideo;
-@property(readonly) BOOL useAlternateSlomoFront;
-@property(readonly) BOOL useAlternateSlomoRear;
+@property (nonatomic, readonly) BOOL HDRDetectionEnabled;
+@property (nonatomic, readonly) BOOL use60FPSVideo;
+@property (nonatomic, readonly) BOOL useAlternateSlomoFront;
+@property (nonatomic, readonly) BOOL useAlternateSlomoRear;
 
 - (BOOL)HDRDetectionEnabled;
 - (id)init;

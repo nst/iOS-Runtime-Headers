@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
-@class UIView;
-
 @interface CalibrationBallView : UIView {
     float _ballRadius;
     UIView *_ballView;
@@ -11,8 +9,8 @@
     float _trackRadius;
 }
 
-@property(setter=setAngle:) float currentAngle;
-@property float trackRadius;
+@property (setter=setAngle:, nonatomic) float currentAngle;
+@property (nonatomic) float trackRadius;
 
 - (void).cxx_destruct;
 - (id)ballView;

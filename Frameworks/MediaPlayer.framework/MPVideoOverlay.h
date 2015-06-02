@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoControllerProtocol>, <MPVideoOverlayDelegate>, MPAVController, MPAVItem, MPDetailSlider, NSMutableDictionary, NSString, UINavigationBar;
-
 @interface MPVideoOverlay : UIView <MPDetailSliderDelegate, MPVideoOverlay> {
     BOOL _controlsAutohideDisabled;
     <MPVideoOverlayDelegate> *_delegate;
@@ -20,20 +18,20 @@
     BOOL _wantsTick;
 }
 
-@property BOOL allowsWirelessPlayback;
-@property(copy,readonly) NSString * debugDescription;
-@property <MPVideoOverlayDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property unsigned long long desiredParts;
-@property unsigned long long disabledParts;
-@property(readonly) unsigned int hash;
-@property(retain) MPAVItem * item;
-@property(retain,readonly) UINavigationBar * navigationBar;
-@property BOOL navigationBarHidden;
-@property(retain) MPAVController * player;
-@property(readonly) Class superclass;
-@property <MPVideoControllerProtocol> * videoViewController;
-@property unsigned long long visibleParts;
+@property (nonatomic) BOOL allowsWirelessPlayback;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPVideoOverlayDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned long long desiredParts;
+@property (nonatomic) unsigned long long disabledParts;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPAVItem *item;
+@property (nonatomic, readonly, retain) UINavigationBar *navigationBar;
+@property (nonatomic) BOOL navigationBarHidden;
+@property (nonatomic, retain) MPAVController *player;
+@property (readonly) Class superclass;
+@property (nonatomic) <MPVideoControllerProtocol> *videoViewController;
+@property (nonatomic) unsigned long long visibleParts;
 
 - (void).cxx_destruct;
 - (double)_duration;

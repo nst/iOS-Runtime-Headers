@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class CIFilter, CIImage, NSNumber;
-
 @interface BLDuotoneFilter : CIFilter {
     CIFilter *_colorCubeFilter;
     NSNumber *_inputAddColor;
@@ -18,12 +16,12 @@
     BOOL _needsReprocess;
 }
 
-@property(retain) CIFilter * colorCubeFilter;
-@property(copy) NSNumber * inputAddColor;
-@property(copy) NSNumber * inputAmount;
-@property(retain) CIImage * inputImage;
-@property(copy) NSNumber * inputStrength;
-@property(copy) NSNumber * inputVersion;
+@property (nonatomic, retain) CIFilter *colorCubeFilter;
+@property (nonatomic, copy) NSNumber *inputAddColor;
+@property (nonatomic, copy) NSNumber *inputAmount;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, copy) NSNumber *inputStrength;
+@property (nonatomic, copy) NSNumber *inputVersion;
 
 - (void).cxx_destruct;
 - (id)colorCubeFilter;

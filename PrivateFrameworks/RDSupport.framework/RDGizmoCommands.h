@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RDSupport.framework/RDSupport
  */
 
-@interface RDGizmoCommands : NSObject {
-}
+@interface RDGizmoCommands : NSObject
 
 - (void)disableCalendarSync;
 - (void)disableMessageExpiration;

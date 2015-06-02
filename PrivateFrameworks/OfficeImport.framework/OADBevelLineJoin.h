@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OADBevelLineJoin : OADLineJoin {
-}
+@interface OADBevelLineJoin : OADLineJoin
 
 + (id)defaultProperties;
 

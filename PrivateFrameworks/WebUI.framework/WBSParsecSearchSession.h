@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class <WBSCompletionListItem>, <WBSParsecSearchSessionDelegate>, NSMutableArray, NSMutableDictionary, NSURLSession, WBSCompletionQuery, WBSParsecSearchClient, WBSParsecSearchResult, WBSParsecSearchResultCache;
-
 @interface WBSParsecSearchSession : NSObject {
     WBSParsecSearchClient *_client;
     WBSCompletionQuery *_currentQuery;
@@ -24,11 +22,11 @@
     BOOL _valid;
 }
 
-@property(readonly) WBSParsecSearchClient * client;
-@property(retain) WBSCompletionQuery * currentQuery;
-@property <WBSParsecSearchSessionDelegate> * delegate;
-@property(setter=setUIScale:) float uiScale;
-@property(getter=isValid,readonly) BOOL valid;
+@property (nonatomic, readonly) WBSParsecSearchClient *client;
+@property (nonatomic, retain) WBSCompletionQuery *currentQuery;
+@property (nonatomic) <WBSParsecSearchSessionDelegate> *delegate;
+@property (setter=setUIScale:, nonatomic) float uiScale;
+@property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

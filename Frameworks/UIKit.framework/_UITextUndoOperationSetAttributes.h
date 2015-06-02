@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _NSAttributeRun;
-
 @interface _UITextUndoOperationSetAttributes : NSUndoTextOperation {
     _NSAttributeRun *_attributes;
 }

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SALocalSearchNavigationPromptManeuver : SADomainCommand
 
-@interface SALocalSearchNavigationPromptManeuver : SADomainCommand {
-}
-
-@property(copy) NSNumber * maneuverIndex;
+@property (nonatomic, copy) NSNumber *maneuverIndex;
 
 + (id)navigationPromptManeuver;
 + (id)navigationPromptManeuverWithDictionary:(id)arg1 context:(id)arg2;

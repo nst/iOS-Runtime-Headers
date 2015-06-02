@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSString;
-
 @interface _MFEmailSetEmail : NSObject {
     NSString *_comment;
     NSString *_encodedAddress;
     unsigned long _hash;
 }
 
-@property(retain) NSString * address;
-@property(readonly) NSString * commentedAddress;
-@property(readonly) unsigned long hash;
+@property (nonatomic, retain) NSString *address;
+@property (nonatomic, readonly) NSString *commentedAddress;
+@property (nonatomic, readonly) unsigned long hash;
 
 - (id)address;
 - (id)commentedAddress;

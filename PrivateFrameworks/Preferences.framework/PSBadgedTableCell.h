@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIImageView, UILabel;
-
 @interface PSBadgedTableCell : PSTableCell {
     UIImageView *_badgeImageView;
     int _badgeInt;

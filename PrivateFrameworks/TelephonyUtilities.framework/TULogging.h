@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TULogging : NSObject {
-}
+@interface TULogging : NSObject
 
 + (void)beginLoggingSessionAsInitiator:(BOOL)arg1;
 + (void)checkpointLoggingSession:(id)arg1;

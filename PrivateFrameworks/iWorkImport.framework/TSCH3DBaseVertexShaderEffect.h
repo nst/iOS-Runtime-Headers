@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DBaseVertexShaderEffect : TSCH3DShaderEffect {
-}
+@interface TSCH3DBaseVertexShaderEffect : TSCH3DShaderEffect
 
 + (id)stateSharingID;
 

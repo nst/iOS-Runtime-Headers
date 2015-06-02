@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKEventDetailAlarmCell : EKEventDetailTwoValueCell {
-}
+@interface EKEventDetailAlarmCell : EKEventDetailTwoValueCell
 
 - (id)initWithEvent:(id)arg1 editable:(BOOL)arg2 platformStyle:(int)arg3;
 - (BOOL)isEditable;

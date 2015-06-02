@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class UIView;
-
 @interface ABContentController : NSObject <ABContentControllerProtocol> {
     void *_addressBook;
     id _contentControllerDelegate;
     UIView *_contentLayer;
 }
 
-@property void* addressBook;
+@property (nonatomic) void*addressBook;
 
 - (void*)addressBook;
 - (void)back:(BOOL)arg1 save:(BOOL)arg2;

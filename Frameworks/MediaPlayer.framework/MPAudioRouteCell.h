@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIImageView;
-
 @interface MPAudioRouteCell : _UIAlertTableViewCell {
     UIImageView *_pickedImage;
 }

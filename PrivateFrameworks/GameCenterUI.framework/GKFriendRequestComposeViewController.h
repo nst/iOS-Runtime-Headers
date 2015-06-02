@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class <GKFriendRequestComposeViewControllerDelegate>, GKComposeHostedViewController, NSString, UIAlertController;
-
 @interface GKFriendRequestComposeViewController : UINavigationController {
     UIAlertController *_alertController;
     GKComposeHostedViewController *_composeController;
@@ -12,12 +10,12 @@
     unsigned int _recipientCount;
 }
 
-@property(retain) UIAlertController * alertController;
-@property(retain) GKComposeHostedViewController * composeController;
-@property <GKFriendRequestComposeViewControllerDelegate> * composeViewDelegate;
-@property(retain) NSString * message;
-@property unsigned int recipientCount;
-@property unsigned int rid;
+@property (nonatomic, retain) UIAlertController *alertController;
+@property (nonatomic, retain) GKComposeHostedViewController *composeController;
+@property (nonatomic) <GKFriendRequestComposeViewControllerDelegate> *composeViewDelegate;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic) unsigned int recipientCount;
+@property (nonatomic) unsigned int rid;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
 + (unsigned int)maxNumberOfRecipients;

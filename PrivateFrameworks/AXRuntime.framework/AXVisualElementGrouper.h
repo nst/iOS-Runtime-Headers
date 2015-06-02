@@ -7,8 +7,8 @@
     float _maximumNeighbourDistance;
 }
 
-@property float maximumDistanceForAligningEdges;
-@property float maximumNeighbourDistance;
+@property (nonatomic) float maximumDistanceForAligningEdges;
+@property (nonatomic) float maximumNeighbourDistance;
 
 - (id)_groupablesForItems:(id)arg1;
 - (id)init;

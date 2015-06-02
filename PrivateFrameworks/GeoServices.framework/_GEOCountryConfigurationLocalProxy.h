@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class <_GEOCountryConfigurationServerProxyDelegate>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface _GEOCountryConfigurationLocalProxy : NSObject <_GEOCountryConfigurationServerProxy> {
     <_GEOCountryConfigurationServerProxyDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_queue;
@@ -11,20 +9,20 @@
     struct __CTServerConnection { } *_telephonyServerConnection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <_GEOCountryConfigurationServerProxyDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <_GEOCountryConfigurationServerProxyDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
-- (void)_determineCurrentCountryCode:(id)arg1;
+- (void)_determineCurrentCountryCode:(id /* block */)arg1;
 - (void)_reachabilityChanged:(id)arg1;
 - (void)_scheduleUpdate;
-- (void)_updateCountryCode:(id)arg1;
+- (void)_updateCountryCode:(id /* block */)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (void)setDelegate:(id)arg1;
-- (void)updateCountryCode:(id)arg1;
+- (void)updateCountryCode:(id /* block */)arg1;
 
 @end

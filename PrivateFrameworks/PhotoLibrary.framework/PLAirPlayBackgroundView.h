@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSString;
-
 @interface PLAirPlayBackgroundView : PLPlayingExternallyBackgroundView {
     NSString *_deviceName;
 }
 
-@property(retain) NSString * deviceName;
+@property (nonatomic, retain) NSString *deviceName;
 
 - (void)dealloc;
 - (id)deviceName;

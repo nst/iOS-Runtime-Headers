@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDLineEnd, TSDStroke;
-
 @interface TSDLinePreset : NSObject {
     TSDLineEnd *mHeadLineEnd;
     TSDStroke *mStroke;
     TSDLineEnd *mTailLineEnd;
 }
 
-@property(copy,readonly) TSDLineEnd * headLineEnd;
-@property(copy,readonly) TSDStroke * stroke;
-@property(copy,readonly) TSDLineEnd * tailLineEnd;
+@property (nonatomic, readonly, copy) TSDLineEnd *headLineEnd;
+@property (nonatomic, readonly, copy) TSDStroke *stroke;
+@property (nonatomic, readonly, copy) TSDLineEnd *tailLineEnd;
 
 + (id)lineWithStroke:(id)arg1 headLineEnd:(id)arg2 tailLineEnd:(id)arg3;
 

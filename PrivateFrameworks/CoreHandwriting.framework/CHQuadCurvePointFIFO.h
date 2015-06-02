@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHandwriting.framework/CoreHandwriting
  */
 
-@class NSMutableArray, UIView;
-
 @interface CHQuadCurvePointFIFO : CHPointFIFO {
     float _lineWidth;
     struct CGPath { } *_path;
@@ -11,10 +9,10 @@
     UIView *_view;
 }
 
-@property float lineWidth;
-@property struct CGPath { }* path;
-@property(retain) NSMutableArray * prevPoints;
-@property(retain) UIView * view;
+@property (nonatomic) float lineWidth;
+@property (nonatomic) struct CGPath { }*path;
+@property (nonatomic, retain) NSMutableArray *prevPoints;
+@property (nonatomic, retain) UIView *view;
 
 - (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)clear;

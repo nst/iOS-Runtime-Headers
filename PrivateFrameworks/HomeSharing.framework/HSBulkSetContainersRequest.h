@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSBulkSetContainersRequest : HSRequest {
-}
+@interface HSBulkSetContainersRequest : HSRequest
 
 + (id)requestWithDatabaseID:(unsigned int)arg1 sessionID:(unsigned int)arg2 containerID:(unsigned int)arg3 itemIDs:(id)arg4;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSString, SFUCryptoKey;
-
 @interface TSPCryptoInfoInternal : NSObject <TSPCryptoInfo> {
     NSArray *_blockInfos;
     SFUCryptoKey *_cryptoKey;
@@ -11,14 +9,14 @@
     unsigned long _preferredBlockSize;
 }
 
-@property(retain) NSArray * blockInfos;
-@property(readonly) SFUCryptoKey * cryptoKey;
-@property(copy,readonly) NSString * debugDescription;
-@property unsigned long decodedLength;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) unsigned long preferredBlockSize;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSArray *blockInfos;
+@property (nonatomic, readonly) SFUCryptoKey *cryptoKey;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned long decodedLength;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned long preferredBlockSize;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)blockInfos;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSArray;
-
 @interface SuggestedAppsController : NSObject {
     NSArray *_specifiers;
 }
 
-@property(retain,readonly) NSArray * specifiers;
+@property (nonatomic, readonly, retain) NSArray *specifiers;
 
 - (id)appStore:(id)arg1;
 - (void)dealloc;

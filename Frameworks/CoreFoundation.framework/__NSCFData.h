@@ -6,7 +6,7 @@
     char *_bytes;
     struct __CFAllocator { } *_bytesDeallocator;
     long _capacity;
-    unsigned char _cfinfo[4];
+    unsigned char _cfinfo;
     long _length;
 }
 

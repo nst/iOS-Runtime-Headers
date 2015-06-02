@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <NEConfigurationManagerDelegate>, NEHelper, NSData, NSDictionary, NSKeyedUnarchiver, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSUUID;
-
 @interface NEConfigurationManager : NSObject {
     NSData *_SCPreferencesSignature;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _changedHandler;
-
+    id /* block */ _changedHandler;
     int _changedNotifyToken;
     NSObject<OS_dispatch_queue> *_changedQueue;
     NSDictionary *_currentIndex;
@@ -34,24 +24,24 @@
     NSUUID *_userUUID;
 }
 
-@property(retain) NSData * SCPreferencesSignature;
-@property(copy) id changedHandler;
+@property (retain) NSData *SCPreferencesSignature;
+@property (copy) id /* block */ changedHandler;
 @property int changedNotifyToken;
-@property(retain) NSObject<OS_dispatch_queue> * changedQueue;
-@property(retain) NSDictionary * currentIndex;
-@property(retain) NSKeyedUnarchiver * decoder;
-@property(retain) <NEConfigurationManagerDelegate> * delegate;
+@property (retain) NSObject<OS_dispatch_queue> *changedQueue;
+@property (retain) NSDictionary *currentIndex;
+@property (retain) NSKeyedUnarchiver *decoder;
+@property (retain) <NEConfigurationManagerDelegate> *delegate;
 @property long long generation;
 @property BOOL hasReadPermission;
 @property BOOL hasVPNAPIEntitlement;
-@property(readonly) NEHelper * helper;
+@property (readonly) NEHelper *helper;
 @property BOOL isNEHelper;
 @property BOOL isVPNPublicAPI;
-@property(retain) NSMutableDictionary * loadedConfigurations;
-@property(retain) NSMutableDictionary * loadedIndex;
-@property(readonly) NSString * pluginType;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) NSUUID * userUUID;
+@property (retain) NSMutableDictionary *loadedConfigurations;
+@property (retain) NSMutableDictionary *loadedIndex;
+@property (readonly) NSString *pluginType;
+@property (readonly) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) NSUUID *userUUID;
 
 + (int)configuration:(id)arg1 overlapsWithOtherConfiguration:(id)arg2;
 + (BOOL)configurationIsEnabled:(id)arg1;
@@ -62,13 +52,13 @@
 
 - (void).cxx_destruct;
 - (id)SCPreferencesSignature;
-- (id)changedHandler;
+- (id /* block */)changedHandler;
 - (int)changedNotifyToken;
 - (id)changedQueue;
 - (void)clearLoadedConfigurationsWithIDs:(id)arg1;
 - (BOOL)configurationHasChanged:(id)arg1;
 - (id)copyChangedConfigurationIDs:(id)arg1;
-- (void)copyIdentities:(id)arg1 fromDomain:(int)arg2 withCompletionQueue:(id)arg3 handler:(id)arg4;
+- (void)copyIdentities:(id)arg1 fromDomain:(int)arg2 withCompletionQueue:(id)arg3 handler:(id /* block */)arg4;
 - (id)currentIndex;
 - (void)dealloc;
 - (id)decodeConfigurationWithIdentifier:(id)arg1;
@@ -80,9 +70,9 @@
 - (id)errorWithCode:(int)arg1 specifics:(id)arg2;
 - (id)filterIndexWithFilter:(id)arg1;
 - (long long)generation;
-- (void)getCurrentIndexWithCompletionHandler:(id)arg1;
-- (void)handleApplicationsRemoved:(id)arg1 pluginTypesRemoved:(id)arg2 withCompletionHandler:(id)arg3;
-- (void)handleFileRemovedWithCompletionHandler:(id)arg1;
+- (void)getCurrentIndexWithCompletionHandler:(id /* block */)arg1;
+- (void)handleApplicationsRemoved:(id)arg1 pluginTypesRemoved:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)handleFileRemovedWithCompletionHandler:(id /* block */)arg1;
 - (void)handlePluginTypesRemoved:(id)arg1 configuration:(id)arg2 vpn:(id)arg3 updateSCPreferences:(struct __SCPreferences { }*)arg4;
 - (BOOL)hasReadPermission;
 - (BOOL)hasVPNAPIEntitlement;
@@ -92,11 +82,11 @@
 - (id)initWithUserUUID:(id)arg1;
 - (BOOL)isNEHelper;
 - (BOOL)isVPNPublicAPI;
-- (void)loadConfigurationWithID:(id)arg1 withCompletionQueue:(id)arg2 handler:(id)arg3;
-- (void)loadConfigurations:(id)arg1 withFilter:(id)arg2 completionQueue:(id)arg3 completionHandler:(id)arg4;
-- (void)loadConfigurationsInternal:(id)arg1 withCompletionHandler:(id)arg2;
-- (void)loadConfigurationsWithCompletionQueue:(id)arg1 handler:(id)arg2;
-- (void)loadIndexWithFilter:(id)arg1 completionQueue:(id)arg2 handler:(id)arg3;
+- (void)loadConfigurationWithID:(id)arg1 withCompletionQueue:(id)arg2 handler:(id /* block */)arg3;
+- (void)loadConfigurations:(id)arg1 withFilter:(id)arg2 completionQueue:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)loadConfigurationsInternal:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)loadConfigurationsWithCompletionQueue:(id)arg1 handler:(id /* block */)arg2;
+- (void)loadIndexWithFilter:(id)arg1 completionQueue:(id)arg2 handler:(id /* block */)arg3;
 - (id)loadedConfigurations;
 - (id)loadedIndex;
 - (id)makeMutableCopyOfIndex:(id)arg1;
@@ -108,18 +98,18 @@
 - (id)readIndexFromDiskWithError:(id*)arg1;
 - (void)registerForChangeNotifications;
 - (BOOL)reloadFromDisk;
-- (void)removeConfiguration:(id)arg1 withCompletionQueue:(id)arg2 handler:(id)arg3;
-- (void)removeConfigurationFromDisk:(id)arg1 completionQueue:(id)arg2 completionHandler:(id)arg3;
+- (void)removeConfiguration:(id)arg1 withCompletionQueue:(id)arg2 handler:(id /* block */)arg3;
+- (void)removeConfigurationFromDisk:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)removeConfigurationFromDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences { }*)arg2;
 - (BOOL)resetKeychainItemsAfterProtocolChange:(id)arg1 newConfiguration:(id)arg2;
-- (void)saveConfiguration:(id)arg1 withCompletionQueue:(id)arg2 handler:(id)arg3;
-- (void)saveConfigurationToDisk:(id)arg1 currentSignature:(id)arg2 userUUID:(id)arg3 completionQueue:(id)arg4 completionHandler:(id)arg5;
+- (void)saveConfiguration:(id)arg1 withCompletionQueue:(id)arg2 handler:(id /* block */)arg3;
+- (void)saveConfigurationToDisk:(id)arg1 currentSignature:(id)arg2 userUUID:(id)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)saveConfigurationToDisk:(id)arg1 updateSCPreferences:(struct __SCPreferences { }*)arg2 currentSignature:(id)arg3 userUUID:(id)arg4;
-- (void)sendRequest:(id)arg1 responseHandler:(id)arg2;
-- (void)setChangedHandler:(id)arg1;
+- (void)sendRequest:(id)arg1 responseHandler:(id /* block */)arg2;
+- (void)setChangedHandler:(id /* block */)arg1;
 - (void)setChangedNotifyToken:(int)arg1;
 - (void)setChangedQueue:(id)arg1;
-- (void)setChangedQueue:(id)arg1 andHandler:(id)arg2;
+- (void)setChangedQueue:(id)arg1 andHandler:(id /* block */)arg2;
 - (void)setCurrentIndex:(id)arg1;
 - (void)setDecoder:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -131,7 +121,7 @@
 - (void)setLoadedConfigurations:(id)arg1;
 - (void)setLoadedIndex:(id)arg1;
 - (void)setSCPreferencesSignature:(id)arg1;
-- (void)syncWithSystemConfigurationWithAppNameCallback:(id)arg1 completionHandler:(id)arg2;
+- (void)syncWithSystemConfigurationWithAppNameCallback:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (void)updateSCPreferencesSignatureOnDisk;
 - (id)userUUID;
 

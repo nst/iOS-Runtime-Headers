@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ToneLibrary.framework/ToneLibrary
  */
 
-@class NPSDomainAccessor, NSDictionary, TLAccessQueue;
-
 @interface TLVibrationManager : NSObject {
     TLAccessQueue *_accessQueue;
     BOOL _allowsAutoRefresh;
@@ -14,20 +12,20 @@
     NPSDomainAccessor *_transientNanoPreferencesDomainAccessor;
 }
 
-@property(setter=_setAccessQueue:,retain) TLAccessQueue * _accessQueue;
-@property(setter=_setAllowsAutoRefresh:) BOOL _allowsAutoRefresh;
-@property(setter=_setCachedSystemVibrationPatterns:,retain) NSDictionary * _cachedSystemVibrationPatterns;
-@property(setter=_setCachedUserGeneratedVibrationPatterns:,retain) NSDictionary * _cachedUserGeneratedVibrationPatterns;
-@property(setter=_setSpecialBehaviors:) unsigned int _specialBehaviors;
-@property(readonly) NSDictionary * _systemVibrationPatterns;
-@property(setter=_setTransientNanoPreferencesDomainAccessor:,retain) NPSDomainAccessor * _transientNanoPreferencesDomainAccessor;
-@property(getter=_isUnitTestingModeEnabled,readonly) BOOL _unitTestingModeEnabled;
-@property(readonly) NSDictionary * _userGeneratedVibrationPatterns;
-@property BOOL allowsAutoRefresh;
-@property BOOL needsRefresh;
-@property(readonly) BOOL shouldVibrateForCurrentRingerSwitchState;
-@property(readonly) BOOL shouldVibrateOnRing;
-@property(readonly) BOOL shouldVibrateOnSilent;
+@property (setter=_setAccessQueue:, retain) TLAccessQueue *_accessQueue;
+@property (setter=_setAllowsAutoRefresh:, nonatomic) BOOL _allowsAutoRefresh;
+@property (setter=_setCachedSystemVibrationPatterns:, nonatomic, retain) NSDictionary *_cachedSystemVibrationPatterns;
+@property (setter=_setCachedUserGeneratedVibrationPatterns:, nonatomic, retain) NSDictionary *_cachedUserGeneratedVibrationPatterns;
+@property (setter=_setSpecialBehaviors:, nonatomic) unsigned int _specialBehaviors;
+@property (nonatomic, readonly) NSDictionary *_systemVibrationPatterns;
+@property (setter=_setTransientNanoPreferencesDomainAccessor:, nonatomic, retain) NPSDomainAccessor *_transientNanoPreferencesDomainAccessor;
+@property (getter=_isUnitTestingModeEnabled, nonatomic, readonly) BOOL _unitTestingModeEnabled;
+@property (nonatomic, readonly) NSDictionary *_userGeneratedVibrationPatterns;
+@property (nonatomic) BOOL allowsAutoRefresh;
+@property (nonatomic) BOOL needsRefresh;
+@property (nonatomic, readonly) BOOL shouldVibrateForCurrentRingerSwitchState;
+@property (nonatomic, readonly) BOOL shouldVibrateOnRing;
+@property (nonatomic, readonly) BOOL shouldVibrateOnSilent;
 
 + (void)_handleVibrateOnRingOrSilentDidChangeNotification;
 + (void)_handleVibrationPreferencesDidChangeNotificationForPreferencesKinds:(unsigned int)arg1 atInitiativeOfVibrationManager:(id)arg2;
@@ -55,7 +53,7 @@
 - (id)_newServiceConnection;
 - (unsigned int)_numberOfUserGeneratedVibrations;
 - (id)_patternForSystemVibrationWithIdentifier:(id)arg1;
-- (void)_performBlockInAccessQueue:(id)arg1;
+- (void)_performBlockInAccessQueue:(id /* block */)arg1;
 - (BOOL)_removeAllUserGeneratedVibrationPatternsUsingServiceWithError:(id*)arg1;
 - (BOOL)_removeAllUserGeneratedVibrationsWithError:(id*)arg1;
 - (id)_retrieveUserGeneratedVibrationPatternsUsingService;

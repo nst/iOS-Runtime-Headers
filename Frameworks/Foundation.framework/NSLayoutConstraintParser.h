@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class <NSLayoutItem>, NSDictionary, NSMutableArray, NSString;
-
 @interface NSLayoutConstraintParser : NSObject {
     NSMutableArray *_alignmentConstraints;
     NSMutableArray *_constraints;

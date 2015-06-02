@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIApplicationController;
-
 @interface _SKUIApplicationShutdownHelper : NSObject {
     SKUIApplicationController *_applicationController;
     unsigned int _taskID;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCHLegendModelCache;
-
 @interface TSCHLegendViewCache : NSObject <TSCHUnretainedParent> {
     unsigned int mCellCount;
     struct CGPoint { float x1; float x2; } *mCellOrigins;
@@ -16,9 +14,9 @@
     unsigned int mNumberOfRows;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } legendSize;
-@property(readonly) unsigned int numberOfColumns;
-@property(readonly) unsigned int numberOfRows;
+@property (readonly) struct CGSize { float x1; float x2; } legendSize;
+@property (readonly) unsigned int numberOfColumns;
+@property (readonly) unsigned int numberOfRows;
 
 - (void)clearParent;
 - (void)dealloc;

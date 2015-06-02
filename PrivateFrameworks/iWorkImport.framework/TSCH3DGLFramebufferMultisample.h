@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSCH3DGLResolveFramebuffer>, TSCH3DGLFBO;
-
 @interface TSCH3DGLFramebufferMultisample : NSObject <TSCHUnretainedParent> {
     struct FramebufferAttributes { 
         int type; 
@@ -20,9 +18,9 @@
     BOOL mResolved;
 }
 
-@property(readonly) struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; } attributes;
-@property(readonly) BOOL resolved;
-@property(readonly) BOOL usingMultisample;
+@property (nonatomic, readonly) struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; } attributes;
+@property (nonatomic, readonly) BOOL resolved;
+@property (nonatomic, readonly) BOOL usingMultisample;
 
 + (id)multisampleWithParent:(id)arg1 framebufferAttributes:(const struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; }*)arg2;
 
@@ -37,7 +35,7 @@
 - (id)multisampleFBOResource;
 - (struct FramebufferAttributes { int x1; int x2; int x3; int x4; int x5; BOOL x6; BOOL x7; })p_clampedAttributes;
 - (BOOL)p_createMultisampleFBOOnDemandInsideSession:(id)arg1 returningResolveFramebufferActivated:(BOOL*)arg2;
-- (struct SessionLoadResourceResult { BOOL x1; BOOL x2; BOOL x3; id x4; id x5; })p_loadFramebufferInSession:(id)arg1;
+- (struct SessionLoadResourceResult { BOOL x1; BOOL x2; BOOL x3; id x4; })p_loadFramebufferInSession:(id)arg1;
 - (BOOL)p_supportsMultisample;
 - (void)resolveInSession:(id)arg1;
 - (BOOL)resolved;

@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, SAUIAppPunchOut;
+@interface SAAnswerDomainObjectSnippet : SAUISnippet
 
-@interface SAAnswerDomainObjectSnippet : SAUISnippet {
-}
-
-@property(retain) SAUIAppPunchOut * answerPunchOut;
-@property(copy) NSArray * answers;
+@property (nonatomic, retain) SAUIAppPunchOut *answerPunchOut;
+@property (nonatomic, copy) NSArray *answers;
 
 + (id)domainObjectSnippet;
 + (id)domainObjectSnippetWithDictionary:(id)arg1 context:(id)arg2;

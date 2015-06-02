@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKPaymentSetupViewControllerDelegate>, ACAccountStore, NSArray, PKPaymentWebService;
-
 @interface PKPaymentSetupViewController : UIViewController <PKPaymentSetupPrivacyFooterViewDelegate> {
     ACAccountStore *_accountStore;
     int _context;
@@ -12,10 +10,10 @@
     PKPaymentWebService *_webService;
 }
 
-@property int context;
-@property <PKPaymentSetupViewControllerDelegate> * delegate;
-@property(retain) NSArray * eligibleCards;
-@property(retain) PKPaymentWebService * webService;
+@property (nonatomic) int context;
+@property (nonatomic) <PKPaymentSetupViewControllerDelegate> *delegate;
+@property (nonatomic, retain) NSArray *eligibleCards;
+@property (nonatomic, retain) PKPaymentWebService *webService;
 
 - (id)_contextSpecificStringForAggdKey:(id)arg1;
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;

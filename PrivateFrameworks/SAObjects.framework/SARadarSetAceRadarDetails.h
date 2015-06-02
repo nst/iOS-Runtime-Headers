@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SARadarSetAceRadarDetails : SABaseCommand <SAServerBoundCommand>
 
-@interface SARadarSetAceRadarDetails : SABaseCommand <SAServerBoundCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property(copy) NSArray * attachments;
-@property(copy) NSString * clientConfiguration;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * radarTitle;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic, copy) NSArray *attachments;
+@property (nonatomic, copy) NSString *clientConfiguration;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *radarTitle;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
 
 + (id)setAceRadarDetails;
 + (id)setAceRadarDetailsWithDictionary:(id)arg1 context:(id)arg2;

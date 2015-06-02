@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSValue;
-
 @interface PDTimeAnimateValue : NSObject {
     double mPercentTime;
     NSValue *mTimeValue;

@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSString;
+@interface SASettingSetAppService : SASettingSetBool <SASettingAppSettingCommand>
 
-@interface SASettingSetAppService : SASettingSetBool <SASettingAppSettingCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property(copy) NSString * appId;
-@property(copy) NSString * appWithSettingsId;
-@property(copy) NSArray * callbacks;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * location;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic, copy) NSString *appId;
+@property (nonatomic, copy) NSString *appWithSettingsId;
+@property (nonatomic, copy) NSArray *callbacks;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *location;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
 
 + (id)setAppService;
 + (id)setAppServiceWithDictionary:(id)arg1 context:(id)arg2;

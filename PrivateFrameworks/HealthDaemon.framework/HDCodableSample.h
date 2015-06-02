@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDCodableObject;
-
 @interface HDCodableSample : PBCodable <NSCopying> {
     long long _dataType;
     double _endDate;
@@ -16,14 +14,14 @@
     double _startDate;
 }
 
-@property long long dataType;
-@property double endDate;
-@property BOOL hasDataType;
-@property BOOL hasEndDate;
-@property(readonly) BOOL hasObject;
-@property BOOL hasStartDate;
-@property(retain) HDCodableObject * object;
-@property double startDate;
+@property (nonatomic) long long dataType;
+@property (nonatomic) double endDate;
+@property (nonatomic) BOOL hasDataType;
+@property (nonatomic) BOOL hasEndDate;
+@property (nonatomic, readonly) BOOL hasObject;
+@property (nonatomic) BOOL hasStartDate;
+@property (nonatomic, retain) HDCodableObject *object;
+@property (nonatomic) double startDate;
 
 - (void).cxx_destruct;
 - (id)_decodedObjectTypeOfClass:(Class)arg1;

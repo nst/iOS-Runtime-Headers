@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSData;
-
 @interface ICSTokenizer : NSObject {
     int _cursor;
     NSData *_data;

@@ -9,8 +9,8 @@
     } _has;
 }
 
-@property BOOL discoverable;
-@property BOOL hasDiscoverable;
+@property (nonatomic) BOOL discoverable;
+@property (nonatomic) BOOL hasDiscoverable;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

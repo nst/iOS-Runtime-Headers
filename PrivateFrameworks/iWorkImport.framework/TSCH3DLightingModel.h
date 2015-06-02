@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSCH3DEnvironmentPackage, TSCH3DLightingPackage, TSCH3DMaterialPackage;
-
 @interface TSCH3DLightingModel : NSObject <NSCopying> {
     TSCH3DEnvironmentPackage *_environment;
     TSCH3DLightingPackage *_lightings;
     TSCH3DMaterialPackage *_materials;
 }
 
-@property(retain) TSCH3DEnvironmentPackage * environment;
-@property(retain) TSCH3DLightingPackage * lightings;
-@property(retain) TSCH3DMaterialPackage * materials;
+@property (nonatomic, retain) TSCH3DEnvironmentPackage *environment;
+@property (nonatomic, retain) TSCH3DLightingPackage *lightings;
+@property (nonatomic, retain) TSCH3DMaterialPackage *materials;
 
 + (id)instanceWithArchive:(const struct Chart3DLightingModelArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Chart3DPhongLightingModelArchive {} *x5; struct Chart3DFixedFunctionLightingModelArchive {} *x6; struct Chart3DEnvironmentPackageArchive {} *x7; }*)arg1 unarchiver:(id)arg2;
 + (id)lightingModel;

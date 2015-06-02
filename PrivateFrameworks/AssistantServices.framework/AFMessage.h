@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class AFContactAddress, NSArray, NSDate, NSString, NSURL;
-
 @interface AFMessage : AFSiriModelObject {
     NSURL *_attachmentURL;
     NSString *_bodyText;

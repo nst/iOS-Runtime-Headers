@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
  */
 
-@class NPSDomainAccessor, NPSManager;
-
 @interface NPHCarrierInfoCompanionReplication : NSObject {
     NPSDomainAccessor *_mobilePhoneDomainAccessor;
     NPSManager *_npsManager;

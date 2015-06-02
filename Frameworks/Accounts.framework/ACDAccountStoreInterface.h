@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@interface ACDAccountStoreInterface : NSObject {
-}
+@interface ACDAccountStoreInterface : NSObject
 
 + (id)XPCInterface;
 + (id)_buildXPCInterface;

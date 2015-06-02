@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SANPSkipTimeInterval : SADomainCommand
 
-@interface SANPSkipTimeInterval : SADomainCommand {
-}
-
-@property(copy) NSNumber * adjustmentInMilliseconds;
+@property (nonatomic, copy) NSNumber *adjustmentInMilliseconds;
 
 + (id)skipTimeInterval;
 + (id)skipTimeIntervalWithDictionary:(id)arg1 context:(id)arg2;

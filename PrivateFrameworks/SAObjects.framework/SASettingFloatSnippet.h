@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSNumber;
+@interface SASettingFloatSnippet : SASettingNumericSnippet
 
-@interface SASettingFloatSnippet : SASettingNumericSnippet {
-}
-
-@property(copy) NSNumber * value;
+@property (nonatomic, copy) NSNumber *value;
 
 + (id)floatSnippet;
 + (id)floatSnippetWithDictionary:(id)arg1 context:(id)arg2;

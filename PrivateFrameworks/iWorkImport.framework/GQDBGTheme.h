@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class GQDSStylesheet;
-
 @interface GQDBGTheme : NSObject {
     struct __CFArray { } *mMasterSlides;
     GQDSStylesheet *mStylesheet;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class <BLTSectionInfoListDelegate>, BLTSectionInfoListBBProvider, BLTSectionInfoListBridgeProvider, NSMutableDictionary, NSString;
-
 @interface BLTSectionInfoList : NSObject <BLTSectionInfoListProviderDelegate> {
     <BLTSectionInfoListDelegate> *_delegate;
     struct _opaque_pthread_mutex_t { 
@@ -15,13 +13,13 @@
     BLTSectionInfoListBBProvider *_sectionInfoProvider;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <BLTSectionInfoListDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) BLTSectionInfoListBridgeProvider * overrideProvider;
-@property(retain) BLTSectionInfoListBBProvider * sectionInfoProvider;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <BLTSectionInfoListDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) BLTSectionInfoListBridgeProvider *overrideProvider;
+@property (nonatomic, retain) BLTSectionInfoListBBProvider *sectionInfoProvider;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)delegate;
@@ -30,7 +28,7 @@
 - (id)init;
 - (id)overriddenSectionInfoForSectionID:(id)arg1;
 - (id)overrideProvider;
-- (void)reloadWithCompletion:(id)arg1;
+- (void)reloadWithCompletion:(id /* block */)arg1;
 - (id)sectionInfoForSectionID:(id)arg1;
 - (id)sectionInfoProvider;
 - (void)setDelegate:(id)arg1;

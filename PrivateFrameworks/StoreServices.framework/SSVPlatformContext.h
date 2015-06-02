@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class <SSVSAPContext>, NSArray, NSDictionary, NSString;
-
 @interface SSVPlatformContext : NSObject <NSCopying> {
     NSString *_lookupURLString;
     <SSVSAPContext> *_sapContext;
@@ -12,12 +10,12 @@
     NSString *_unpersonalizedLookupURLString;
 }
 
-@property(retain) <SSVSAPContext> * SAPContext;
-@property(readonly) NSDictionary * bagDictionary;
-@property(readonly) NSString * lookupURLString;
-@property(readonly) NSArray * signedHeaders;
-@property(readonly) NSArray * signedQueryParameters;
-@property(readonly) NSString * unpersonalizedLookupURLString;
+@property (nonatomic, retain) <SSVSAPContext> *SAPContext;
+@property (nonatomic, readonly) NSDictionary *bagDictionary;
+@property (nonatomic, readonly) NSString *lookupURLString;
+@property (nonatomic, readonly) NSArray *signedHeaders;
+@property (nonatomic, readonly) NSArray *signedQueryParameters;
+@property (nonatomic, readonly) NSString *unpersonalizedLookupURLString;
 
 - (void).cxx_destruct;
 - (id)SAPContext;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaLibrary, MPMediaPlaylist;
-
 @interface MusicPlaylistSongsDataSource : MusicQueryDataSource {
     MPMediaLibrary *_mediaLibrary;
 }
 
-@property(readonly) MPMediaPlaylist * playlist;
+@property (nonatomic, readonly) MPMediaPlaylist *playlist;
 
 - (void).cxx_destruct;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;

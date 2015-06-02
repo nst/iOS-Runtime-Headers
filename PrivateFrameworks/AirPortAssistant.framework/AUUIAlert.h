@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class <AUUIAlertDelegate>, NSString, UIAlertAction;
-
 @interface AUUIAlert : NSObject <UIAlertViewDelegate> {
     id alert;
     UIAlertAction *alternateAction;
@@ -29,26 +27,26 @@
     id viewController;
 }
 
-@property(retain) id alert;
-@property(retain) UIAlertAction * alternateAction;
-@property(retain) NSString * alternateButtonTitle;
-@property(retain) UIAlertAction * cancelAction;
-@property(retain) NSString * cancelButtonTitle;
-@property(retain) id context;
-@property(copy,readonly) NSString * debugDescription;
-@property <AUUIAlertDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIAlertAction * destructiveAction;
-@property(retain) NSString * destructiveButtonTitle;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * message;
-@property(retain) UIAlertAction * okAction;
-@property(retain) NSString * okButtonTitle;
-@property BOOL stackButtons;
-@property(readonly) Class superclass;
-@property int tag;
-@property(retain) NSString * title;
-@property(retain) id viewController;
+@property (nonatomic, retain) id alert;
+@property (nonatomic, retain) UIAlertAction *alternateAction;
+@property (nonatomic, retain) NSString *alternateButtonTitle;
+@property (nonatomic, retain) UIAlertAction *cancelAction;
+@property (nonatomic, retain) NSString *cancelButtonTitle;
+@property (nonatomic, retain) id context;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AUUIAlertDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIAlertAction *destructiveAction;
+@property (nonatomic, retain) NSString *destructiveButtonTitle;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic, retain) UIAlertAction *okAction;
+@property (nonatomic, retain) NSString *okButtonTitle;
+@property (nonatomic) BOOL stackButtons;
+@property (readonly) Class superclass;
+@property (nonatomic) int tag;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) id viewController;
 
 - (id)alert;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;

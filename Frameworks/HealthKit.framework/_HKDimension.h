@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class _HKFactorization;
-
 @interface _HKDimension : NSObject {
     _HKFactorization *_reduction;
     long _reductionToken;

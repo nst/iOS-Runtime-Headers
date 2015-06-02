@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSString;
-
 @interface CPLPersonChange : CPLRecordChange {
     NSString *_fullName;
 }
 
-@property(copy) NSString * fullName;
+@property (nonatomic, copy) NSString *fullName;
 
 - (void).cxx_destruct;
 - (id)fullName;

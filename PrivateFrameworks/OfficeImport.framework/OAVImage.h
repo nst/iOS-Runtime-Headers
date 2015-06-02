@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OAVImage : NSObject {
-}
+@interface OAVImage : NSObject
 
 + (void)readFromManager:(id)arg1 toImage:(id)arg2 state:(id)arg3;
 

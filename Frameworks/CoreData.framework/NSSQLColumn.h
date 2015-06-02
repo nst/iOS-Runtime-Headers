@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSString;
-
 @interface NSSQLColumn : NSSQLProperty {
     unsigned int _allowAliasing;
     NSString *_columnName;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class WebSelectionRect;
-
 @interface UITextSelectionRectImpl : UITextSelectionRect {
     WebSelectionRect *webRect;
 }
 
-@property(retain) WebSelectionRect * webRect;
+@property (nonatomic, retain) WebSelectionRect *webRect;
 
 + (id)rectWithWebRect:(id)arg1;
 + (id)rectsWithWebRects:(id)arg1;

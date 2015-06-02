@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface LTEConferenceXPCServer : NSObject {
     NSMutableArray *clientConnections;
     NSObject<OS_dispatch_queue> *clientConnectionsQueue;
@@ -13,8 +11,8 @@
     NSMutableDictionary *registeredBlocks;
 }
 
-@property(readonly) NSObject<OS_xpc_object> * listener;
-@property(readonly) NSMutableDictionary * registeredBlocks;
+@property (readonly) NSObject<OS_xpc_object> *listener;
+@property (readonly) NSMutableDictionary *registeredBlocks;
 
 + (id)LTEConferenceXPCServerSingleton;
 + (id)createAudioSessionConfigFromDictionary:(id)arg1;
@@ -41,8 +39,8 @@
 - (void)deregisterFromService:(char *)arg1;
 - (id)init;
 - (id)listener;
-- (void)registerBlockForService:(char *)arg1 block:(id)arg2;
-- (void)registerBlockForService:(char *)arg1 block:(id)arg2 queue:(id)arg3;
+- (void)registerBlockForService:(char *)arg1 block:(id /* block */)arg2;
+- (void)registerBlockForService:(char *)arg1 block:(id /* block */)arg2 queue:(id)arg3;
 - (id)registeredBlocks;
 - (oneway void)release;
 - (id)retain;

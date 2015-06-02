@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/Accounts.framework/Accounts
  */
 
-@class NSSet, NSString;
+@interface ACDManagedAccessOptionsKey : NSManagedObject
 
-@interface ACDManagedAccessOptionsKey : NSManagedObject {
-}
-
-@property(retain) NSString * name;
-@property(retain) NSSet * owningAccountTypes;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSSet *owningAccountTypes;
 
 @end

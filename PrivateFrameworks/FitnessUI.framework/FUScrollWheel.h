@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class <FUScrollWheelDataSource>, <FUScrollWheelDelegate>, NSMutableArray, NSMutableDictionary, NSString, UIFont, UIImageView, UIScrollView, UIView;
-
 @interface FUScrollWheel : UIView <UIScrollViewDelegate> {
     UIView *_bottomDividerView;
     unsigned int _currentIndex;
@@ -28,18 +26,18 @@
     NSMutableDictionary *_usedLabels;
 }
 
-@property unsigned int currentIndex;
-@property <FUScrollWheelDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <FUScrollWheelDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIFont * font;
-@property(readonly) unsigned int hash;
-@property int itemTitleAligmnent;
-@property(retain) UIScrollView * scrollView;
-@property float scrollWheelLabelPageSize;
-@property BOOL showsSelectionIndicator;
-@property(readonly) Class superclass;
+@property (nonatomic) unsigned int currentIndex;
+@property (nonatomic) <FUScrollWheelDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FUScrollWheelDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIFont *font;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int itemTitleAligmnent;
+@property (nonatomic, retain) UIScrollView *scrollView;
+@property (nonatomic) float scrollWheelLabelPageSize;
+@property (nonatomic) BOOL showsSelectionIndicator;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_alertDidChangeToCurrentIndex:(unsigned int)arg1;

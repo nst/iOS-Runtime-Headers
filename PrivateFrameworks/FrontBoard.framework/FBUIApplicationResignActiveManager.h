@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class NSCountedSet, NSHashTable, NSMutableSet, NSString;
-
 @interface FBUIApplicationResignActiveManager : NSObject <FBProcessManagerObserver, FBSceneManagerObserver> {
     NSHashTable *_activeAssertions;
     NSCountedSet *_activeReasons;
     NSMutableSet *_eligibleProcesses;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedInstance;
 

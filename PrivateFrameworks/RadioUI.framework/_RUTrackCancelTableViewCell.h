@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class UILabel;
-
 @interface _RUTrackCancelTableViewCell : RUTableViewCell {
     UILabel *_lastConfiguredTextLabel;
 }

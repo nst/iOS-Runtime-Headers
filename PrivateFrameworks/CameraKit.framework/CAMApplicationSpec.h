@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMApplicationSpec : CAMCameraSpec {
-}
+@interface CAMApplicationSpec : CAMCameraSpec
 
 + (id)specForPad;
 + (id)specForPhone;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@interface TDCursorPhotoshopProduction : TDPhotoshopElementProduction {
-}
+@interface TDCursorPhotoshopProduction : TDPhotoshopElementProduction
 
 @end

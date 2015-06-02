@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSString;
-
 @interface SKUISearchFacet : NSObject <NSCopying> {
     NSArray *_labels;
     NSString *_queryParameter;
     NSArray *_values;
 }
 
-@property(copy) NSArray * labels;
-@property(copy) NSString * queryParameter;
-@property(copy) NSArray * values;
+@property (nonatomic, copy) NSArray *labels;
+@property (nonatomic, copy) NSString *queryParameter;
+@property (nonatomic, copy) NSArray *values;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

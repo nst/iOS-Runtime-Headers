@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSNumber;
-
 @interface MPCloudAssetDownloadSessionIdentifier : NSObject <NSCopying> {
     NSNumber *_persistentID;
     NSNumber *_storeID;
 }
 
-@property(copy) NSNumber * persistentID;
-@property(copy) NSNumber * storeID;
+@property (nonatomic, copy) NSNumber *persistentID;
+@property (nonatomic, copy) NSNumber *storeID;
 
 + (id)identifierForContext:(id)arg1;
 

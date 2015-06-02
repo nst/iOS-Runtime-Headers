@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPreferencesSync.framework/NanoPreferencesSync
  */
 
-@class NPSDomainAccessor, NSString;
-
 @interface NPSSettingAccessor : NSObject {
     NSString *_container;
     NSString *_containerPath;
@@ -13,12 +11,12 @@
     int _type;
 }
 
-@property(retain) NSString * container;
-@property(retain) NSString * containerPath;
-@property(retain) NSString * domain;
-@property BOOL hasChangesToWrite;
-@property(retain) NPSDomainAccessor * nanoDomainAccessor;
-@property int type;
+@property (nonatomic, retain) NSString *container;
+@property (nonatomic, retain) NSString *containerPath;
+@property (nonatomic, retain) NSString *domain;
+@property (nonatomic) BOOL hasChangesToWrite;
+@property (nonatomic, retain) NPSDomainAccessor *nanoDomainAccessor;
+@property (nonatomic) int type;
 
 + (id)serializeObject:(id)arg1 error:(id*)arg2;
 + (id)unserializeObject:(id)arg1 error:(id*)arg2;

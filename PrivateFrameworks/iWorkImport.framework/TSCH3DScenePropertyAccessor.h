@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DScene;
-
 @interface TSCH3DScenePropertyAccessor : NSObject <TSCHUnretainedParent> {
     TSCH3DScene *mScene;
 }
 
-@property(readonly) TSCH3DScene * scene;
+@property (nonatomic, readonly) TSCH3DScene *scene;
 
 + (id)accessorWithScene:(id)arg1;
 

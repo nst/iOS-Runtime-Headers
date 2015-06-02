@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapCamera;
-
 @interface MKMapSnapshotOptions : NSObject <NSCopying> {
     MKMapCamera *_camera;
     struct { 
@@ -39,16 +37,16 @@
     BOOL _usingRect;
 }
 
-@property(copy) MKMapCamera * camera;
-@property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } mapRect;
-@property unsigned int mapType;
-@property struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
-@property(getter=_rendersInBackground,setter=_setRendersInBackground:) BOOL rendersInBackground;
-@property float scale;
-@property BOOL showsBuildings;
-@property BOOL showsPointsOfInterest;
-@property struct CGSize { float x1; float x2; } size;
-@property(readonly) BOOL usingRect;
+@property (nonatomic, copy) MKMapCamera *camera;
+@property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } mapRect;
+@property (nonatomic) unsigned int mapType;
+@property (nonatomic) struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; } region;
+@property (getter=_rendersInBackground, setter=_setRendersInBackground:, nonatomic) BOOL rendersInBackground;
+@property (nonatomic) float scale;
+@property (nonatomic) BOOL showsBuildings;
+@property (nonatomic) BOOL showsPointsOfInterest;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) BOOL usingRect;
 
 - (void).cxx_destruct;
 - (BOOL)_rendersInBackground;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicFlipsideAlbumTrackTableViewCellContentView : MusicCollectionTrackTableViewCellContentView {
-}
+@interface MusicFlipsideAlbumTrackTableViewCellContentView : MusicCollectionTrackTableViewCellContentView
 
 - (void)layoutSubviews;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDViewportInfo, GEOStructuredAddress, NSString;
-
 @interface GEOPDGeocodingParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int maxResults : 1; 
@@ -14,14 +12,14 @@
     GEOPDViewportInfo *_viewportInfo;
 }
 
-@property BOOL hasMaxResults;
-@property(readonly) BOOL hasQueryString;
-@property(readonly) BOOL hasStructuredAddress;
-@property(readonly) BOOL hasViewportInfo;
-@property unsigned int maxResults;
-@property(retain) NSString * queryString;
-@property(retain) GEOStructuredAddress * structuredAddress;
-@property(retain) GEOPDViewportInfo * viewportInfo;
+@property (nonatomic) BOOL hasMaxResults;
+@property (nonatomic, readonly) BOOL hasQueryString;
+@property (nonatomic, readonly) BOOL hasStructuredAddress;
+@property (nonatomic, readonly) BOOL hasViewportInfo;
+@property (nonatomic) unsigned int maxResults;
+@property (nonatomic, retain) NSString *queryString;
+@property (nonatomic, retain) GEOStructuredAddress *structuredAddress;
+@property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

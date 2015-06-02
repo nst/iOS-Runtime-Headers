@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NSArray;
-
 @interface NEOnDemandRuleEvaluateConnection : NEOnDemandRule {
     NSArray *_connectionRules;
 }
 
-@property(copy) NSArray * connectionRules;
+@property (copy) NSArray *connectionRules;
 
 + (BOOL)supportsSecureCoding;
 

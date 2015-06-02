@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@interface TIKeyEventMapWubi : TIKeyEventMapChinese {
-}
+@interface TIKeyEventMapWubi : TIKeyEventMapChinese
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAHAStringValue : SAHAAttributeValue
 
-@interface SAHAStringValue : SAHAAttributeValue {
-}
-
-@property(copy) NSString * value;
+@property (nonatomic, copy) NSString *value;
 
 + (id)stringValue;
 + (id)stringValueWithDictionary:(id)arg1 context:(id)arg2;

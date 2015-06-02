@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKPhotoPickerCollectionViewDelegate>, CKPhotoPickerCollectionViewLayout, NSArray, NSMutableDictionary, NSString, PHCachingImageManager, PHFetchResult, UICollectionView;
-
 @interface CKPhotoPickerCollectionViewController : CKViewController <CKPhotoPickerItemForSendingDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     PHFetchResult *_assets;
     UICollectionView *_collectionView;
@@ -15,19 +13,19 @@
     BOOL _zoomed;
 }
 
-@property(retain) PHFetchResult * assets;
-@property(retain,readonly) NSArray * assetsToSend;
-@property(retain) UICollectionView * collectionView;
-@property(retain) CKPhotoPickerCollectionViewLayout * collectionViewLayout;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKPhotoPickerCollectionViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) PHCachingImageManager * imageManager;
-@property int maxAssetsToDisplay;
-@property(retain) NSMutableDictionary * selectedFullAssets;
-@property(readonly) Class superclass;
-@property(getter=isZoomed) BOOL zoomed;
+@property (nonatomic, retain) PHFetchResult *assets;
+@property (nonatomic, readonly, retain) NSArray *assetsToSend;
+@property (nonatomic, retain) UICollectionView *collectionView;
+@property (nonatomic, retain) CKPhotoPickerCollectionViewLayout *collectionViewLayout;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKPhotoPickerCollectionViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) PHCachingImageManager *imageManager;
+@property (nonatomic) int maxAssetsToDisplay;
+@property (nonatomic, retain) NSMutableDictionary *selectedFullAssets;
+@property (readonly) Class superclass;
+@property (getter=isZoomed, nonatomic) BOOL zoomed;
 
 - (id)_imageRequestOptions;
 - (void)_populatePreviewForSendingItem:(id)arg1 withAsset:(id)arg2;

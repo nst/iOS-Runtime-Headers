@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIShapeView, UIImageView;
-
 @interface SKUIPreviewProgressIndicator : UIControl {
     SKUIShapeView *_backgroundView;
     UIImageView *_cancelImageView;
@@ -12,8 +10,8 @@
     float _progress;
 }
 
-@property(getter=isIndeterminate,readonly) BOOL indeterminate;
-@property float progress;
+@property (getter=isIndeterminate, nonatomic, readonly) BOOL indeterminate;
+@property (nonatomic) float progress;
 
 - (void).cxx_destruct;
 - (void)_beginIndeterminateAnimation;

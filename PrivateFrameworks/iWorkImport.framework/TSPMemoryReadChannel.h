@@ -2,28 +2,26 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<OS_dispatch_data>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface TSPMemoryReadChannel : NSObject <TSUReadChannel> {
     NSObject<OS_dispatch_data> *_dispatchData;
     NSObject<OS_dispatch_queue> *_readQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isValid;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isValid;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)addBarrier:(id)arg1;
+- (void)addBarrier:(id /* block */)arg1;
 - (void)close;
 - (id)init;
 - (id)initWithDispatchData:(id)arg1;
 - (id)initWithNSData:(id)arg1;
 - (BOOL)isValid;
-- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 handler:(id)arg3;
-- (void)readWithHandler:(id)arg1;
+- (void)readFromOffset:(long long)arg1 length:(unsigned long)arg2 handler:(id /* block */)arg3;
+- (void)readWithHandler:(id /* block */)arg1;
 - (void)setLowWater:(unsigned long)arg1;
 
 @end

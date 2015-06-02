@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKCategoryType : HKSampleType {
-}
+@interface HKCategoryType : HKSampleType
 
 + (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
 

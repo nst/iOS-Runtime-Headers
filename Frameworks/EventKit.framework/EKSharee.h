@@ -2,24 +2,21 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKCalendar, NSString;
+@interface EKSharee : EKObject <EKIdentityProtocol, NSCopying>
 
-@interface EKSharee : EKObject <EKIdentityProtocol, NSCopying> {
-}
-
-@property(readonly) NSString * UUID;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * emailAddress;
-@property(copy) NSString * externalID;
-@property(copy) NSString * firstName;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * lastName;
-@property(copy) NSString * name;
-@property(readonly) EKCalendar * owner;
-@property int shareeAccessLevel;
-@property int shareeStatus;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSString *UUID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *emailAddress;
+@property (nonatomic, copy) NSString *externalID;
+@property (nonatomic, copy) NSString *firstName;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *lastName;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, readonly) EKCalendar *owner;
+@property (nonatomic) int shareeAccessLevel;
+@property (nonatomic) int shareeStatus;
+@property (readonly) Class superclass;
 
 + (id)shareeWithEmailAddress:(id)arg1 name:(id)arg2;
 + (id)shareeWithName:(id)arg1 emailAddress:(id)arg2 externalID:(id)arg3;

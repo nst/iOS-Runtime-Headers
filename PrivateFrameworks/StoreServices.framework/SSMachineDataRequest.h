@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSData, NSNumber, NSString;
-
 @interface SSMachineDataRequest : SSRequest <SSXPCCoding> {
     NSNumber *_accountID;
     NSData *_actionData;
@@ -13,15 +11,15 @@
     BOOL _waitsForPurchaseOperations;
 }
 
-@property(copy) NSNumber * accountIdentifier;
-@property(copy) NSData * actionData;
-@property(copy) NSString * actionName;
+@property (copy) NSNumber *accountIdentifier;
+@property (copy) NSData *actionData;
+@property (copy) NSString *actionName;
 @property BOOL allowsBootstrapCellularData;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property int protocolVersion;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 @property BOOL waitsForPurchaseOperations;
 
 - (id)accountIdentifier;
@@ -39,7 +37,7 @@
 - (void)setAllowsBootstrapCellularData:(BOOL)arg1;
 - (void)setProtocolVersion:(int)arg1;
 - (void)setWaitsForPurchaseOperations:(BOOL)arg1;
-- (void)startWithCompletionBlock:(id)arg1;
+- (void)startWithCompletionBlock:(id /* block */)arg1;
 - (BOOL)waitsForPurchaseOperations;
 
 @end

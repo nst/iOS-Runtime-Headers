@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSMutableArray;
-
 @interface PKLinkedAppUserRatingView : UIView {
     NSMutableArray *_starViews;
     float _userRating;
 }
 
-@property float userRating;
+@property (nonatomic) float userRating;
 
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

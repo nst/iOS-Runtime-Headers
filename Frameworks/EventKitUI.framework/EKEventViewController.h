@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKEventViewDelegate>, EKEvent, EKEventDetailItem, EKEventEditViewController, EKUIEventStatusButtonsView, EKUIRecurrenceAlertController, NSArray, NSString, SingleToolbarItemContainerView, UITableView, UIView, UIViewController, _UIAccessDeniedView;
-
 @interface EKEventViewController : UIViewController <EKEventTitleDetailItemDelegate, EKUIEventStatusButtonsViewDelegate, UIAlertViewDelegate> {
     BOOL _ICSPreview;
     _UIAccessDeniedView *_accessDeniedView;
@@ -57,33 +55,33 @@
     BOOL _viewIsVisible;
 }
 
-@property(getter=isICSPreview) BOOL ICSPreview;
-@property(retain) EKEventEditViewController * activeEventEditor;
-@property BOOL allowsCalendarPreview;
-@property BOOL allowsEditing;
-@property BOOL allowsInviteResponses;
-@property BOOL allowsSubitems;
-@property BOOL alwaysShowsCalendarPreview;
-@property(copy,readonly) NSString * debugDescription;
-@property <EKEventViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property int editorHideTransition;
-@property int editorShowTransition;
-@property(retain) EKEvent * event;
-@property UIViewController * eventDetailContainer;
-@property(readonly) unsigned int hash;
-@property BOOL hideNavigationBar;
-@property float leftInset;
-@property BOOL minimalMode;
-@property float rightInset;
-@property int scrollToSection;
-@property BOOL showsAddToCalendar;
-@property BOOL showsDelegateMessage;
-@property BOOL showsDelegatorMessage;
-@property BOOL showsDoneButton;
-@property BOOL showsOutOfDateMessage;
-@property(readonly) Class superclass;
-@property float topInset;
+@property (getter=isICSPreview, nonatomic) BOOL ICSPreview;
+@property (nonatomic, retain) EKEventEditViewController *activeEventEditor;
+@property (nonatomic) BOOL allowsCalendarPreview;
+@property (nonatomic) BOOL allowsEditing;
+@property (nonatomic) BOOL allowsInviteResponses;
+@property (nonatomic) BOOL allowsSubitems;
+@property (nonatomic) BOOL alwaysShowsCalendarPreview;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <EKEventViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) int editorHideTransition;
+@property (nonatomic) int editorShowTransition;
+@property (nonatomic, retain) EKEvent *event;
+@property (nonatomic) UIViewController *eventDetailContainer;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hideNavigationBar;
+@property (nonatomic) float leftInset;
+@property (nonatomic) BOOL minimalMode;
+@property (nonatomic) float rightInset;
+@property (nonatomic) int scrollToSection;
+@property (nonatomic) BOOL showsAddToCalendar;
+@property (nonatomic) BOOL showsDelegateMessage;
+@property (nonatomic) BOOL showsDelegatorMessage;
+@property (nonatomic) BOOL showsDoneButton;
+@property (nonatomic) BOOL showsOutOfDateMessage;
+@property (readonly) Class superclass;
+@property (nonatomic) float topInset;
 
 + (void)adjustLayoutForCell:(id)arg1 tableViewWidth:(float)arg2 numRowsInSection:(unsigned int)arg3 cellRow:(unsigned int)arg4 forceLayout:(BOOL)arg5;
 + (void)setDefaultDatesForEvent:(id)arg1;
@@ -148,7 +146,7 @@
 - (void)completeWithAction:(int)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)detailItem:(id)arg1 performActionsOnCellAtIndexPath:(id)arg2 actions:(id)arg3;
+- (void)detailItem:(id)arg1 performActionsOnCellAtIndexPath:(id)arg2 actions:(id /* block */)arg3;
 - (void)detailItem:(id)arg1 wantsIndexPathsScrolledToVisible:(id)arg2;
 - (void)detailItem:(id)arg1 wantsRowInsertions:(id)arg2 rowDeletions:(id)arg3 rowReloads:(id)arg4;
 - (void)detailItem:(id)arg1 wantsRowReload:(id)arg2;

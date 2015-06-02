@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CellularPlanManager.framework/CellularPlanManager
  */
 
-@class <CellularPlanVinylTest>, NSMutableArray, NSString, NSXPCListener;
-
 @interface CellularPlanVinylTestXPCServer : NSObject <NSXPCListenerDelegate> {
     <CellularPlanVinylTest> *fDelegate;
     NSMutableArray *fXpcConnections;
     NSXPCListener *fXpcListener;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithQueue:(struct dispatch_queue_s { }*)arg1 andDelegate:(id)arg2;

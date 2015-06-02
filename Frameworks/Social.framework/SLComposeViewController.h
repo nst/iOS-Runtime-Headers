@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSExtension, NSLayoutConstraint, NSString, UIView, UIViewController;
-
 @interface SLComposeViewController : UIViewController <SLRemoteComposeViewControllerDelegateProtocol> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     BOOL _didCompleteSheet;
     BOOL _didFailLoadingRemoteViewController;
     NSExtension *_extension;
@@ -34,9 +24,9 @@
     BOOL _wasPresented;
 }
 
-@property(copy) id completionHandler;
-@property(retain) UIViewController * remoteViewController;
-@property(readonly) NSString * serviceType;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (retain) UIViewController *remoteViewController;
+@property (nonatomic, readonly) NSString *serviceType;
 
 + (id)_extensionIdentifierForServiceType:(id)arg1;
 + (BOOL)_isAvailableForService:(id)arg1;
@@ -62,7 +52,7 @@
 - (id)_urlForUntypedAsset:(id)arg1;
 - (BOOL)_useCustomDimmingView;
 - (BOOL)addAttachment:(id)arg1;
-- (id)addDownSampledImageDataByProxyWithPreviewImage:(id)arg1;
+- (id /* block */)addDownSampledImageDataByProxyWithPreviewImage:(id)arg1;
 - (BOOL)addExtensionItem:(id)arg1;
 - (BOOL)addImage:(id)arg1;
 - (BOOL)addImageAsset:(id)arg1;
@@ -72,7 +62,7 @@
 - (BOOL)canAddContent;
 - (BOOL)canSendTweet;
 - (void)completeWithResult:(int)arg1;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (void)didLoadSheetViewController;
 - (id)initWithExtension:(id)arg1 requestedServiceType:(id)arg2;
@@ -85,7 +75,7 @@
 - (BOOL)removeAllImages;
 - (BOOL)removeAllURLs;
 - (id)serviceType;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (BOOL)setInitialText:(id)arg1;
 - (void)setLongitude:(double)arg1 latitude:(double)arg2 name:(id)arg3;
 - (void)setRemoteViewController:(id)arg1;

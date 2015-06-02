@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class PSSpecifier;
-
 @interface PSListItemsController : PSListController {
     BOOL _deferItemSelection;
     PSSpecifier *_lastSelectedSpecifier;

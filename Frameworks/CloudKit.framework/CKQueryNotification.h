@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class CKRecordID, NSDictionary;
-
 @interface CKQueryNotification : CKNotification <NSSecureCoding> {
     int _databaseScope;
     int _queryNotificationReason;
@@ -11,11 +9,11 @@
     CKRecordID *_recordID;
 }
 
-@property int databaseScope;
-@property(readonly) BOOL isPublicDatabase;
-@property int queryNotificationReason;
-@property(copy) NSDictionary * recordFields;
-@property(copy) CKRecordID * recordID;
+@property (nonatomic) int databaseScope;
+@property (nonatomic, readonly) BOOL isPublicDatabase;
+@property (nonatomic) int queryNotificationReason;
+@property (nonatomic, copy) NSDictionary *recordFields;
+@property (nonatomic, copy) CKRecordID *recordID;
 
 + (BOOL)supportsSecureCoding;
 

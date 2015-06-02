@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@interface AAUIFamilyPaymentCardUIRequest : AAAppleIDSettingsRequest {
-}
+@interface AAUIFamilyPaymentCardUIRequest : AAAppleIDSettingsRequest
 
 - (id)urlString;
 

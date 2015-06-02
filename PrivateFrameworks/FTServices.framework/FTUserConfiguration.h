@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
  */
 
-@interface FTUserConfiguration : NSObject {
-}
+@interface FTUserConfiguration : NSObject
 
-@property(readonly) BOOL _nonWifiFaceTimeEntitled;
-@property BOOL allowAnyNetwork;
-@property BOOL cellularFaceTimeEnabled;
+@property (nonatomic, readonly) BOOL _nonWifiFaceTimeEntitled;
+@property (nonatomic) BOOL allowAnyNetwork;
+@property (nonatomic) BOOL cellularFaceTimeEnabled;
 
 + (id)sharedInstance;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
-
 @interface _UITableViewIndexEntry : NSObject {
     struct CGPoint { 
         float x; 
@@ -33,11 +31,11 @@
     } _typeBounds;
 }
 
-@property struct CGPoint { float x1; float x2; } baselinePoint;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
-@property(retain) UIImage * image;
-@property(retain) id line;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } typeBounds;
+@property (nonatomic) struct CGPoint { float x1; float x2; } baselinePoint;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, retain) id line;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } typeBounds;
 
 - (struct CGPoint { float x1; float x2; })baselinePoint;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;

@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAirPlayAudioSessionEndedOnClient : PBCodable <NSCopying> {
     unsigned int _duration;
     unsigned int _futileRetransmits;
@@ -22,20 +20,20 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned int duration;
-@property unsigned int futileRetransmits;
-@property BOOL hasDuration;
-@property BOOL hasFutileRetransmits;
-@property BOOL hasReason;
-@property BOOL hasRetransmits;
-@property(readonly) BOOL hasSessionUUID;
-@property BOOL hasSlowKeepAlives;
-@property BOOL hasTimestamp;
-@property int reason;
-@property unsigned int retransmits;
-@property(retain) NSString * sessionUUID;
-@property unsigned int slowKeepAlives;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) unsigned int futileRetransmits;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasFutileRetransmits;
+@property (nonatomic) BOOL hasReason;
+@property (nonatomic) BOOL hasRetransmits;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasSlowKeepAlives;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) int reason;
+@property (nonatomic) unsigned int retransmits;
+@property (nonatomic, retain) NSString *sessionUUID;
+@property (nonatomic) unsigned int slowKeepAlives;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

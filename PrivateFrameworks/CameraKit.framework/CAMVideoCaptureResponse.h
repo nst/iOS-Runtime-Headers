@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class NSString, UIImage;
-
 @interface CAMVideoCaptureResponse : CAMCaptureResponse {
     short _assetSubtype;
     BOOL _didCompleteUnexpectedly;
@@ -14,14 +12,14 @@
     UIImage *_videoPreviewImage;
 }
 
-@property short assetSubtype;
-@property BOOL didCompleteUnexpectedly;
-@property double duration;
-@property int recordingStoppedReason;
-@property(getter=isSuccessful,readonly) BOOL successful;
-@property(getter=isUnplayable) BOOL unplayable;
-@property(copy) NSString * videoCapturePath;
-@property(retain) UIImage * videoPreviewImage;
+@property (nonatomic) short assetSubtype;
+@property (nonatomic) BOOL didCompleteUnexpectedly;
+@property (nonatomic) double duration;
+@property (nonatomic) int recordingStoppedReason;
+@property (getter=isSuccessful, nonatomic, readonly) BOOL successful;
+@property (getter=isUnplayable, nonatomic) BOOL unplayable;
+@property (nonatomic, copy) NSString *videoCapturePath;
+@property (nonatomic, retain) UIImage *videoPreviewImage;
 
 + (double)minimumVideoCaptureDuration;
 

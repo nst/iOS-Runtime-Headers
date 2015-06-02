@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString;
-
 @interface SSDownloadMonitorItem : NSObject <SSXPCCoding> {
     NSString *_clientIdentifier;
     int _itemState;
@@ -13,16 +11,16 @@
     unsigned int _transferTypes;
 }
 
-@property(copy) NSString * clientIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int itemState;
-@property(copy) NSString * representativeTitle;
-@property(copy) NSString * statusString;
-@property(readonly) Class superclass;
-@property int totalNumberOfItems;
-@property unsigned int transferTypes;
+@property (nonatomic, copy) NSString *clientIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int itemState;
+@property (nonatomic, copy) NSString *representativeTitle;
+@property (nonatomic, copy) NSString *statusString;
+@property (readonly) Class superclass;
+@property (nonatomic) int totalNumberOfItems;
+@property (nonatomic) unsigned int transferTypes;
 
 - (id)clientIdentifier;
 - (id)copyXPCEncoding;

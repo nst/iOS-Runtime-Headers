@@ -2,19 +2,9 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSLock, NSMutableArray, NSObject, NSString, NSXPCConnection, NSXPCInterface;
-
 @interface SLRemoteSessionProxy : NSObject {
     NSXPCConnection *_connection;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _connectionResetBlock;
-
+    id /* block */ _connectionResetBlock;
     NSXPCInterface *_exportedInterface;
     NSObject *_exportedObject;
     NSMutableArray *_guaranteedRemoteCalls;
@@ -24,14 +14,14 @@
     NSString *_serviceName;
 }
 
-@property(copy) id connectionResetBlock;
-@property(retain) NSXPCInterface * exportedInterface;
-@property NSObject * exportedObject;
+@property (copy) id /* block */ connectionResetBlock;
+@property (retain) NSXPCInterface *exportedInterface;
+@property NSObject *exportedObject;
 
 - (void).cxx_destruct;
 - (void)_remoteSessionConnectionWasInterrupted;
 - (void)_setupConnection;
-- (id)connectionResetBlock;
+- (id /* block */)connectionResetBlock;
 - (void)dealloc;
 - (void)disconnect;
 - (void)dropGuaraneteedRemoteCall:(id)arg1;
@@ -41,7 +31,7 @@
 - (id)initForRemoteServiceName:(id)arg1 remoteInterface:(id)arg2;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (void)registerGuaranteedRemoteCall:(id)arg1;
-- (void)setConnectionResetBlock:(id)arg1;
+- (void)setConnectionResetBlock:(id /* block */)arg1;
 - (void)setExportedInterface:(id)arg1;
 - (void)setExportedObject:(id)arg1;
 

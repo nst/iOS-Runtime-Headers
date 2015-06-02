@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@class <HSControlConnectionDelegate>, NSOutputStream, NSString;
-
 @interface HSControlConnection : NSObject <NSStreamDelegate> {
     <HSControlConnectionDelegate> *_delegate;
     unsigned int _key;
@@ -12,12 +10,12 @@
     double _timestamp;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <HSControlConnectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property unsigned int protocolVersion;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HSControlConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int protocolVersion;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_newDataForControlEventMessage:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg1;

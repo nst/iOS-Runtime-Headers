@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBProcessState;
-
 @interface FBApplicationProcessExitContext : NSObject {
     unsigned int _exitReason;
     unsigned long long _launchdExitReason;
@@ -11,13 +9,13 @@
     int _terminationReason;
 }
 
-@property(readonly) int exitCode;
-@property(readonly) unsigned int exitReason;
-@property(readonly) long long exitStatus;
-@property(readonly) BOOL exitedNormally;
-@property(copy,readonly) FBProcessState * stateBeforeExiting;
-@property(readonly) int terminationReason;
-@property(readonly) int terminationSignal;
+@property (nonatomic, readonly) int exitCode;
+@property (nonatomic, readonly) unsigned int exitReason;
+@property (nonatomic, readonly) long long exitStatus;
+@property (nonatomic, readonly) BOOL exitedNormally;
+@property (nonatomic, readonly, copy) FBProcessState *stateBeforeExiting;
+@property (nonatomic, readonly) int terminationReason;
+@property (nonatomic, readonly) int terminationSignal;
 
 + (id)descriptionForExitReason:(unsigned int)arg1;
 + (unsigned int)exitReasonForLaunchdExitReason:(unsigned long long)arg1;

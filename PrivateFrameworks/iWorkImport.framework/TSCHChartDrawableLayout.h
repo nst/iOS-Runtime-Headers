@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSDictionary, NSIndexSet, TSCHChartDrawableLayoutLegendResizer, TSCHChartInfo, TSCHChartLayout, TSCHChartModel, TSDLayoutGeometry;
-
 @interface TSCHChartDrawableLayout : TSWPTextHostLayout {
     struct { 
         unsigned int chartLayoutState : 1; 
@@ -23,22 +21,22 @@
     BOOL mSuppressChartLayoutInvalidation;
 }
 
-@property(readonly) TSCHChartInfo * chartInfo;
-@property(retain,readonly) TSCHChartLayout * chartLayout;
-@property unsigned int dataSetIndex;
-@property(readonly) BOOL is3DChart;
-@property(copy) TSDLayoutGeometry * legendGeometry;
-@property(copy) TSDLayoutGeometry * legendModelGeometry;
-@property(readonly) TSCHChartModel * model;
-@property(retain,readonly) TSCHChartLayout * p_chartLayout;
-@property(retain) TSCHChartLayout * p_chartLayoutNoCreate;
-@property(copy) TSDLayoutGeometry * p_lastChartAreaGeometry;
-@property(copy) TSDLayoutGeometry * p_lastPureGeometry;
-@property(copy) TSDLayoutGeometry * p_legendGeometryForResize;
-@property(retain) TSCHChartDrawableLayoutLegendResizer * p_legendResizer;
-@property(readonly) NSIndexSet * pieWedgeExplosionSeriesIndices;
-@property(copy) NSArray * pieWedgeExplosions;
-@property(copy) NSDictionary * seriesIndexedPieWedgeExplosions;
+@property (nonatomic, readonly) TSCHChartInfo *chartInfo;
+@property (nonatomic, readonly, retain) TSCHChartLayout *chartLayout;
+@property (nonatomic) unsigned int dataSetIndex;
+@property (nonatomic, readonly) BOOL is3DChart;
+@property (nonatomic, copy) TSDLayoutGeometry *legendGeometry;
+@property (nonatomic, copy) TSDLayoutGeometry *legendModelGeometry;
+@property (nonatomic, readonly) TSCHChartModel *model;
+@property (nonatomic, readonly, retain) TSCHChartLayout *p_chartLayout;
+@property (nonatomic, retain) TSCHChartLayout *p_chartLayoutNoCreate;
+@property (nonatomic, copy) TSDLayoutGeometry *p_lastChartAreaGeometry;
+@property (nonatomic, copy) TSDLayoutGeometry *p_lastPureGeometry;
+@property (nonatomic, copy) TSDLayoutGeometry *p_legendGeometryForResize;
+@property (nonatomic, retain) TSCHChartDrawableLayoutLegendResizer *p_legendResizer;
+@property (nonatomic, readonly) NSIndexSet *pieWedgeExplosionSeriesIndices;
+@property (nonatomic, copy) NSArray *pieWedgeExplosions;
+@property (nonatomic, copy) NSDictionary *seriesIndexedPieWedgeExplosions;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrameForProvidingGuidesInRoot;

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class NSAttributedString, NSString, UILabel;
-
 @interface SiriUIReusableSubtitledHeaderView : SiriUIReusableHeaderView {
     NSAttributedString *_attributedSubtitleText;
     UILabel *_subtitleLabel;
 }
 
-@property(copy) NSAttributedString * attributedSubtitleText;
-@property(retain) UILabel * subtitleLabel;
-@property(copy) NSString * subtitleText;
+@property (nonatomic, copy) NSAttributedString *attributedSubtitleText;
+@property (nonatomic, retain) UILabel *subtitleLabel;
+@property (nonatomic, copy) NSString *subtitleText;
 
 + (float)defaultHeight;
 

@@ -9,8 +9,8 @@
     int _type;
 }
 
-@property BOOL hasType;
-@property int type;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) int type;
 
 - (id)_prettyDictionaryRepresentation;
 - (void)copyTo:(id)arg1;

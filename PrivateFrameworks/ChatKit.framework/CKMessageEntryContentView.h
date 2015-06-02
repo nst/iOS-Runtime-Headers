@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKComposition, CKMessageEntryRichTextView, CKMessageEntryTextView, NSString, UIView;
-
 @interface CKMessageEntryContentView : UIScrollView <UITextViewDelegate> {
     UIView *_activeView;
     CKComposition *_composition;
@@ -30,29 +28,29 @@
     CKMessageEntryRichTextView *_textView;
 }
 
-@property(getter=isActive,readonly) BOOL active;
-@property UIView * activeView;
-@property BOOL balloonColor;
-@property(retain) CKComposition * composition;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentTextAlignmentInsets;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) UIView * dividerLine;
-@property(readonly) unsigned int hash;
-@property BOOL ignoreEndEditing;
-@property BOOL needsEnsureSelectionVisible;
-@property BOOL needsTextLayout;
-@property float placeholderHeight;
-@property(copy) NSString * placeholderText;
-@property BOOL shouldShowCharacterCount;
-@property BOOL shouldShowSubject;
-@property(getter=isShowingDictationPlaceholder,readonly) BOOL showingDictationPlaceholder;
-@property(getter=isSingleLine,readonly) BOOL singleLine;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } subjectAlignmentInsets;
-@property(retain) CKMessageEntryTextView * subjectView;
-@property(readonly) Class superclass;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAlignmentInsets;
-@property(retain) CKMessageEntryRichTextView * textView;
+@property (getter=isActive, nonatomic, readonly) BOOL active;
+@property (nonatomic) UIView *activeView;
+@property (nonatomic) BOOL balloonColor;
+@property (nonatomic, retain) CKComposition *composition;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentTextAlignmentInsets;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIView *dividerLine;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL ignoreEndEditing;
+@property (nonatomic) BOOL needsEnsureSelectionVisible;
+@property (nonatomic) BOOL needsTextLayout;
+@property (nonatomic) float placeholderHeight;
+@property (nonatomic, copy) NSString *placeholderText;
+@property (nonatomic) BOOL shouldShowCharacterCount;
+@property (nonatomic) BOOL shouldShowSubject;
+@property (getter=isShowingDictationPlaceholder, nonatomic, readonly) BOOL showingDictationPlaceholder;
+@property (getter=isSingleLine, nonatomic, readonly) BOOL singleLine;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } subjectAlignmentInsets;
+@property (nonatomic, retain) CKMessageEntryTextView *subjectView;
+@property (readonly) Class superclass;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } textAlignmentInsets;
+@property (nonatomic, retain) CKMessageEntryRichTextView *textView;
 
 - (void)acceptAutocorrection;
 - (id)activeView;

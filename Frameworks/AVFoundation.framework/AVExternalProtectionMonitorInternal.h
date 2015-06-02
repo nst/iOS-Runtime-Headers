@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVExternalProtectionMonitor, NSObject<OS_dispatch_queue>;
-
 @interface AVExternalProtectionMonitorInternal : NSObject {
     struct OpaqueFigCPEProtector { } *_protector;
     AVExternalProtectionMonitor *_publicMonitor;

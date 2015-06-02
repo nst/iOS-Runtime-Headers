@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@class NSData, NSDictionary, NSString, SFPeerDevice;
-
 @interface SFActivityAdvertisement : NSObject <NSSecureCoding> {
     NSData *_activityPayload;
     NSData *_advertisementPayload;
@@ -11,13 +9,13 @@
     NSDictionary *_options;
 }
 
-@property(copy) NSData * activityPayload;
-@property(copy,readonly) NSData * advertisementPayload;
-@property(retain,readonly) SFPeerDevice * device;
-@property(copy,readonly) NSString * deviceIdentifier;
-@property(copy,readonly) NSString * deviceModelIdentifier;
-@property(copy,readonly) NSString * deviceName;
-@property(copy,readonly) NSDictionary * options;
+@property (copy) NSData *activityPayload;
+@property (readonly, copy) NSData *advertisementPayload;
+@property (readonly, retain) SFPeerDevice *device;
+@property (readonly, copy) NSString *deviceIdentifier;
+@property (readonly, copy) NSString *deviceModelIdentifier;
+@property (readonly, copy) NSString *deviceName;
+@property (readonly, copy) NSDictionary *options;
 
 + (BOOL)supportsSecureCoding;
 

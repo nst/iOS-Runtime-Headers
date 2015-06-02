@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDCallHistoryEntitlementRejection : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -14,12 +12,12 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasPid;
-@property(readonly) BOOL hasProcname;
-@property BOOL hasTimestamp;
-@property unsigned int pid;
-@property(retain) NSString * procname;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasPid;
+@property (nonatomic, readonly) BOOL hasProcname;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int pid;
+@property (nonatomic, retain) NSString *procname;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

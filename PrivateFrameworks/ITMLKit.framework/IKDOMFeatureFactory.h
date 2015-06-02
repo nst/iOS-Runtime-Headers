@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMFeatureFactory : NSObject {
-}
+@interface IKDOMFeatureFactory : NSObject
 
 + (id)featureForName:(id)arg1;
 + (void)initialize;

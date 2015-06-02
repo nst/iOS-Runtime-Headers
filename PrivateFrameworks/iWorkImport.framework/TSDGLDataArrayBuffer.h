@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
-
 @interface TSDGLDataArrayBuffer : NSObject <TSDGLDataBufferAccessor> {
     unsigned int _GLDataBufferEntrySize;
     unsigned int _bufferCount;
@@ -20,14 +18,14 @@
     unsigned int mVertexCount;
 }
 
-@property(readonly) unsigned int GLDataBufferEntrySize;
-@property(readonly) unsigned int bufferCount;
-@property unsigned int currentBufferIndex;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BOOL hasUpdatedData;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int GLDataBufferEntrySize;
+@property (nonatomic, readonly) unsigned int bufferCount;
+@property (nonatomic) unsigned int currentBufferIndex;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasUpdatedData;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (unsigned int)GLDataBufferEntrySize;
 - (char *)GLDataPointer;

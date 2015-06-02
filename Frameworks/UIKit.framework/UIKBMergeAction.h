@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIKBGeometry;
-
 @interface UIKBMergeAction : NSObject <NSCopying> {
     NSString *_disappearingKeyName;
     UIKBGeometry *_factors;
@@ -11,10 +9,10 @@
     NSString *_remainingKeyName;
 }
 
-@property(retain) NSString * disappearingKeyName;
-@property(retain) UIKBGeometry * factors;
-@property(retain) NSArray * orderedKeyList;
-@property(retain) NSString * remainingKeyName;
+@property (nonatomic, retain) NSString *disappearingKeyName;
+@property (nonatomic, retain) UIKBGeometry *factors;
+@property (nonatomic, retain) NSArray *orderedKeyList;
+@property (nonatomic, retain) NSString *remainingKeyName;
 
 + (id)mergeActionWithOrderedKeyList:(id)arg1 factors:(id)arg2;
 + (id)mergeActionWithRemainingKeyName:(id)arg1 disappearingKeyName:(id)arg2 factors:(id)arg3;

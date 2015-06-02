@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSString;
-
 @interface HMUIndent : NSObject {
     unsigned int _factor;
     NSString *_level;
     NSString *_step;
 }
 
-@property(readonly) unsigned int factor;
-@property(readonly) NSString * level;
-@property(readonly) NSString * step;
+@property (nonatomic, readonly) unsigned int factor;
+@property (nonatomic, readonly) NSString *level;
+@property (nonatomic, readonly) NSString *step;
 
 + (id)indentWithLevel:(id)arg1;
 + (id)indentWithLevel:(id)arg1 step:(id)arg2 factor:(unsigned int)arg3;

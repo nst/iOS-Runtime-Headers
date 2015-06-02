@@ -2,41 +2,31 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class AVMediaSelectionOption, AVPlayerController, NSString, UITableView;
-
 @interface AVMediaSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _doneButtonHandler;
-
+    id /* block */ _doneButtonHandler;
     AVPlayerController *_playerController;
     AVMediaSelectionOption *_selectedAudioMediaSelectionOption;
     AVMediaSelectionOption *_selectedLegibleMediaSelectionOption;
     UITableView *_tableView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id doneButtonHandler;
-@property(readonly) unsigned int hash;
-@property(retain) AVPlayerController * playerController;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ doneButtonHandler;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) AVPlayerController *playerController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_doneButtonTapped:(id)arg1;
 - (BOOL)_isSelectedOrCurrentAudioMediaSelectionOption:(id)arg1;
 - (BOOL)_isSelectedOrCurrentLegibleMediaSelectionOption:(id)arg1;
-- (id)doneButtonHandler;
+- (id /* block */)doneButtonHandler;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)playerController;
 - (BOOL)prefersStatusBarHidden;
-- (void)setDoneButtonHandler:(id)arg1;
+- (void)setDoneButtonHandler:(id /* block */)arg1;
 - (void)setPlayerController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class MCProfileServiceProfile, NSArray;
-
 @interface MCConfigurationProfile : MCProfile {
     MCProfileServiceProfile *_OTAProfile;
     BOOL _isCloudLocked;
@@ -13,10 +11,10 @@
     NSArray *_payloads;
 }
 
-@property(retain) MCProfileServiceProfile * OTAProfile;
-@property BOOL isCloudLocked;
-@property BOOL isCloudProfile;
-@property BOOL isMDMProfile;
+@property (nonatomic, retain) MCProfileServiceProfile *OTAProfile;
+@property (nonatomic) BOOL isCloudLocked;
+@property (nonatomic) BOOL isCloudProfile;
+@property (nonatomic) BOOL isMDMProfile;
 
 - (void).cxx_destruct;
 - (id)OTAProfile;

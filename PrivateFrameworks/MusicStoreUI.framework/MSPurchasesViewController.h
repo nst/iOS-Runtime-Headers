@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@class NSArray, SUSegmentedControl, UIView;
-
 @interface MSPurchasesViewController : SUViewController {
     int _activeViewControllerIndex;
     UIView *_containerView;

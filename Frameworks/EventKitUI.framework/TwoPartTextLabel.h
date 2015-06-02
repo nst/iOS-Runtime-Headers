@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class NSString;
-
 @interface TwoPartTextLabel : UILabel {
     float _minPart2Width;
     struct CGSize { 
@@ -15,8 +13,8 @@
     BOOL _strikethroughPart2;
 }
 
-@property BOOL strikethroughPart1;
-@property BOOL strikethroughPart2;
+@property (nonatomic) BOOL strikethroughPart1;
+@property (nonatomic) BOOL strikethroughPart2;
 
 - (void).cxx_destruct;
 - (id)description;

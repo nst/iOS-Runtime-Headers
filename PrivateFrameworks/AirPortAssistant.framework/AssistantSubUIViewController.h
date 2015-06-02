@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
  */
 
-@class AssistantUIViewController, NSDictionary, NSMutableDictionary;
-
 @interface AssistantSubUIViewController : AUUITableViewController {
     NSDictionary *_inParamDict;
     NSMutableDictionary *_outResultsDict;
     AssistantUIViewController *_parentController;
 }
 
-@property(retain) NSDictionary * inParamDict;
-@property(readonly) NSDictionary * outResultsDict;
-@property AssistantUIViewController * parentController;
+@property (nonatomic, retain) NSDictionary *inParamDict;
+@property (nonatomic, readonly) NSDictionary *outResultsDict;
+@property (nonatomic) AssistantUIViewController *parentController;
 
 + (id)containerViewWithWidth:(float)arg1;
 + (id)labelViewInContainer:(id*)arg1 width:(float)arg2;

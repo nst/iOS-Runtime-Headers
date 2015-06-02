@@ -2,17 +2,14 @@
    Image: /System/Library/Frameworks/GameController.framework/GameController
  */
 
-@class GCControllerButtonInput;
+@interface GCControllerAxisInput : GCControllerElement
 
-@interface GCControllerAxisInput : GCControllerElement {
-}
-
-@property(getter=isDigital,readonly) BOOL digital;
-@property(getter=isFlipped,readonly) BOOL flipped;
-@property(readonly) GCControllerButtonInput * negative;
-@property(readonly) GCControllerButtonInput * positive;
-@property(readonly) float value;
-@property(copy) id valueChangedHandler;
+@property (getter=isDigital, nonatomic, readonly) BOOL digital;
+@property (getter=isFlipped, nonatomic, readonly) BOOL flipped;
+@property (nonatomic, readonly) GCControllerButtonInput *negative;
+@property (nonatomic, readonly) GCControllerButtonInput *positive;
+@property (readonly) float value;
+@property (copy) id /* block */ valueChangedHandler;
 
 - (BOOL)_setValue:(float)arg1;
 - (id)description;
@@ -22,8 +19,8 @@
 - (id)negative;
 - (id)positive;
 - (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
-- (void)setValueChangedHandler:(id)arg1;
+- (void)setValueChangedHandler:(id /* block */)arg1;
 - (float)value;
-- (id)valueChangedHandler;
+- (id /* block */)valueChangedHandler;
 
 @end

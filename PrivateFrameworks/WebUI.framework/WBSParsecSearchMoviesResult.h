@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSMutableArray, NSString;
-
 @interface WBSParsecSearchMoviesResult : WBSParsecSearchResult {
     NSString *_descriptionLeadInText;
     NSMutableArray *_posterRepresentations;
 }
 
-@property(readonly) NSString * descriptionLeadInText;
+@property (nonatomic, readonly) NSString *descriptionLeadInText;
 
 - (void).cxx_destruct;
 - (id)descriptionLeadInText;

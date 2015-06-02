@@ -2,26 +2,16 @@
    Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <SKComposeReviewDelegate>, NSURL, SKInvocationQueueProxy<SKUIServiceComposeReviewViewController>, SKRemoteComposeReviewViewController, _UIAsyncInvocation;
-
 @interface SKComposeReviewViewController : UIViewController {
     _UIAsyncInvocation *_cancelRequest;
     NSURL *_compositionURL;
     <SKComposeReviewDelegate> *_delegate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _prepareBlock;
-
+    id /* block */ _prepareBlock;
     SKRemoteComposeReviewViewController *_remoteViewController;
     SKInvocationQueueProxy<SKUIServiceComposeReviewViewController> *_serviceProxy;
 }
 
-@property <SKComposeReviewDelegate> * delegate;
+@property (nonatomic) <SKComposeReviewDelegate> *delegate;
 
 - (void)_addRemoteView;
 - (void)_didFinishWithResult:(BOOL)arg1 error:(id)arg2;
@@ -33,7 +23,7 @@
 - (id)initWithCompositionURL:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
-- (void)prepareWithCompletionBlock:(id)arg1;
+- (void)prepareWithCompletionBlock:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 

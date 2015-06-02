@@ -2,18 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSWPRuleOffset : NSObject <NSCopying> {
     float _dX;
     float _dY;
 }
 
-@property(readonly) float dX;
-@property(readonly) float dY;
+@property (nonatomic, readonly) float dX;
+@property (nonatomic, readonly) float dY;
 
 + (id)ruleOffset;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKStyleFactory, IKViewElementStyle, NSDictionary, NSMutableDictionary;
-
 @interface IKTemplateStyleSheet : NSObject {
     IKViewElementStyle *_globalStyle;
     IKStyleFactory *_styleFactory;
@@ -11,10 +9,10 @@
     NSDictionary *_templateTree;
 }
 
-@property(retain,readonly) IKViewElementStyle * globalStyle;
-@property(retain,readonly) IKStyleFactory * styleFactory;
-@property(retain,readonly) NSMutableDictionary * templateKeyPathMap;
-@property(copy,readonly) NSDictionary * templateTree;
+@property (nonatomic, readonly, retain) IKViewElementStyle *globalStyle;
+@property (nonatomic, readonly, retain) IKStyleFactory *styleFactory;
+@property (nonatomic, readonly, retain) NSMutableDictionary *templateKeyPathMap;
+@property (nonatomic, readonly, copy) NSDictionary *templateTree;
 
 + (id)_templateTreeNodeWithXMLNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
 + (void)registerStyleSheetURL:(id)arg1 forTemplateName:(id)arg2;

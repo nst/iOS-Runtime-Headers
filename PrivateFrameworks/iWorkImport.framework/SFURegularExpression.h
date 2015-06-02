@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface SFURegularExpression : NSObject <NSCoding, NSCopying> {
     NSString *_expressionString;
     void *_reserved;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSWPRuleOffset;
-
 @interface TSWPSpecSetRuleOffset : TSWPSpecRuleOffset {
     TSWPRuleOffset *_ruleOffset;
     BOOL _unset;

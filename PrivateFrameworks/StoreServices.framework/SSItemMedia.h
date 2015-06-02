@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSString, NSURL;
-
 @interface SSItemMedia : NSObject {
     int _duration;
     int _fullDuration;
@@ -13,12 +11,12 @@
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
-@property(readonly) int durationInMilliseconds;
-@property(readonly) int fullDurationInMilliseconds;
-@property(readonly) long long mediaFileSize;
-@property(copy) NSString * mediaKind;
-@property(getter=isProtectedMedia,readonly) BOOL protectedMedia;
+@property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) int durationInMilliseconds;
+@property (nonatomic, readonly) int fullDurationInMilliseconds;
+@property (nonatomic, readonly) long long mediaFileSize;
+@property (nonatomic, copy) NSString *mediaKind;
+@property (getter=isProtectedMedia, nonatomic, readonly) BOOL protectedMedia;
 
 - (id)URL;
 - (void)dealloc;

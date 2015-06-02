@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSCHPrefixSuffixCustomDataFormatter : TSCHCustomDataFormatter {
     NSString *mPrefixString;
     NSString *mSuffixString;

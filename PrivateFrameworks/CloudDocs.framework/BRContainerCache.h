@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class <NSObject>, NSMutableDictionary;
-
 @interface BRContainerCache : NSObject {
     <NSObject> *_containerStatusObserver;
     NSMutableDictionary *_containersByID;

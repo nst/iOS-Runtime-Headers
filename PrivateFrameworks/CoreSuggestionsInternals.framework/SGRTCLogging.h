@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSMutableArray, NSNumber, NSString, NSThread, NSTimer;
-
 @interface SGRTCLogging : NSObject <NSCoding> {
     struct _opaque_pthread_mutex_t { 
         long __sig; 
@@ -25,7 +23,7 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateLoggedEvents:(id)arg1;
+- (void)enumerateLoggedEvents:(id /* block */)arg1;
 - (id)getLoggingString;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPickerViewControllerDelegate>, <ABPickerViewControllerDismissDelegate>, <ABStyleProvider>, UIBarButtonItem;
-
 @interface ABPickerViewController : UITableViewController {
     void *_context;
     id _defaultValue;
@@ -13,14 +11,14 @@
     <ABStyleProvider> *_styleProvider;
 }
 
-@property(readonly) UIBarButtonItem * cancelBarButtonItem;
-@property void* context;
-@property(retain) id defaultValue;
-@property <ABPickerViewControllerDelegate> * delegate;
-@property <ABPickerViewControllerDismissDelegate> * dismissDelegate;
-@property(readonly) UIBarButtonItem * doneBarButtonItem;
-@property SEL selectionAction;
-@property(retain) <ABStyleProvider> * styleProvider;
+@property (nonatomic, readonly) UIBarButtonItem *cancelBarButtonItem;
+@property (nonatomic) void*context;
+@property (nonatomic, retain) id defaultValue;
+@property (nonatomic) <ABPickerViewControllerDelegate> *delegate;
+@property (nonatomic) <ABPickerViewControllerDismissDelegate> *dismissDelegate;
+@property (nonatomic, readonly) UIBarButtonItem *doneBarButtonItem;
+@property (nonatomic) SEL selectionAction;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
 
 - (BOOL)_allowsAutorotation;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;

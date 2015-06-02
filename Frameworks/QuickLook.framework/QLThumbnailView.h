@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class QLThumbnailOperation, UIImage;
-
 @interface QLThumbnailView : UIView {
     BOOL _alwaysVisible;
     UIImage *_image;
@@ -32,9 +30,9 @@
 }
 
 @property BOOL alwaysVisible;
-@property(retain) UIImage * image;
+@property (retain) UIImage *image;
 @property int pageNumber;
-@property(retain) QLThumbnailOperation * thumbnailOperation;
+@property (retain) QLThumbnailOperation *thumbnailOperation;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } unselectedFrame;
 
 - (BOOL)alwaysVisible;

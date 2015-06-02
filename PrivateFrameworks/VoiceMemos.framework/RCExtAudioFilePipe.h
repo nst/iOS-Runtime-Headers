@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
  */
 
-@class NSObject<OS_dispatch_queue>, NSURL;
-
 @interface RCExtAudioFilePipe : NSObject {
     NSObject<OS_dispatch_queue> *_accessQueue;
     unsigned long _accessQueueID;
@@ -34,17 +32,17 @@
     NSURL *_sourceURL;
 }
 
-@property(readonly) struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }* outputFormatDescription;
-@property(readonly) unsigned long long sourceFileSize;
-@property(readonly) struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }* sourceFormatDescription;
-@property(readonly) NSURL * sourceURL;
+@property (nonatomic, readonly) struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*outputFormatDescription;
+@property (nonatomic, readonly) unsigned long long sourceFileSize;
+@property (nonatomic, readonly) struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*sourceFormatDescription;
+@property (nonatomic, readonly) NSURL *sourceURL;
 
 - (void).cxx_destruct;
-- (void)_accessExtAudioFileWithBlock:(id)arg1;
+- (void)_accessExtAudioFileWithBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (id)initWithURL:(id)arg1 outputFrameRate:(double)arg2 outputFormatID:(unsigned long)arg3;
 - (struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)outputFormatDescription;
-- (void)performTransactionWithBlock:(id)arg1;
+- (void)performTransactionWithBlock:(id /* block */)arg1;
 - (long)readConvertedFramesIntoBuffer:(id)arg1 requestedFrameCount:(long)arg2;
 - (BOOL)seekToSourceFrameIndex:(long long)arg1;
 - (long long)sourceCurrentFrameIndex;

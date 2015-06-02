@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UISearchDisplayController, UIView;
-
 @interface UISearchResultsTableView : UITableView {
     UISearchDisplayController *_controller;
     float _offsetForNoResultsMessage;
     UIView *_topShadowView;
 }
 
-@property(getter=_topShadowView,setter=_setTopShadowView:,retain) UIView * _topShadowView;
-@property UISearchDisplayController * controller;
+@property (getter=_topShadowView, setter=_setTopShadowView:, nonatomic, retain) UIView *_topShadowView;
+@property (nonatomic) UISearchDisplayController *controller;
 
 - (void)_numberOfRowsDidChange;
 - (float)_offsetForNoResultsMessage;

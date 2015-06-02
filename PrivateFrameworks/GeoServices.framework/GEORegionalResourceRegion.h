@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEORegionalResourceRegion : PBCodable <NSCopying> {
     NSMutableArray *_attributions;
     NSMutableArray *_iconChecksums;
@@ -13,11 +11,11 @@
     unsigned int _tileRangesSpace;
 }
 
-@property(retain) NSMutableArray * attributions;
-@property(retain) NSMutableArray * iconChecksums;
-@property(retain) NSMutableArray * icons;
-@property(readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }* tileRanges;
-@property(readonly) unsigned int tileRangesCount;
+@property (nonatomic, retain) NSMutableArray *attributions;
+@property (nonatomic, retain) NSMutableArray *iconChecksums;
+@property (nonatomic, retain) NSMutableArray *icons;
+@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*tileRanges;
+@property (nonatomic, readonly) unsigned int tileRangesCount;
 
 - (void)addAttribution:(id)arg1;
 - (void)addIcon:(id)arg1;

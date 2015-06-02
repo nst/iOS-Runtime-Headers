@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarExternalNavigationForegroundStyleAttributes : UIStatusBarExternalForegroundStyleAttributes {
-}
+@interface UIStatusBarExternalNavigationForegroundStyleAttributes : UIStatusBarExternalForegroundStyleAttributes
 
 @end

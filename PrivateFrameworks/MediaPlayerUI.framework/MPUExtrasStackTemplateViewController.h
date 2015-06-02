@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUExtrasBannerController, NSMutableDictionary, NSString, UICollectionView, UICollectionViewFlowLayout;
-
 @interface MPUExtrasStackTemplateViewController : MPUExtrasTemplateViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     MPUExtrasBannerController *_bannerViewController;
     UICollectionView *_collectionView;
@@ -12,10 +10,10 @@
     NSMutableDictionary *_viewControllers;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_dynamicTypeDidChange;

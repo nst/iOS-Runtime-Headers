@@ -6,13 +6,13 @@
     id _notificationObservationToken;
 }
 
-@property(retain) id notificationObservationToken;
+@property (nonatomic, retain) id notificationObservationToken;
 
-+ (id)observerWithName:(id)arg1 object:(id)arg2 queue:(id)arg3 observationHandler:(id)arg4;
++ (id)observerWithName:(id)arg1 object:(id)arg2 queue:(id)arg3 observationHandler:(id /* block */)arg4;
 
 - (void).cxx_destruct;
 - (void)dealloc;
-- (id)initWithName:(id)arg1 object:(id)arg2 queue:(id)arg3 observationHandler:(id)arg4;
+- (id)initWithName:(id)arg1 object:(id)arg2 queue:(id)arg3 observationHandler:(id /* block */)arg4;
 - (id)notificationObservationToken;
 - (void)setNotificationObservationToken:(id)arg1;
 

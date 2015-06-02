@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@class CalDAVUpdateOwnerItem, NSURL;
-
 @interface CalDAVCalendarServerResourceChangeElement : CoreDAVItemWithHrefChildItem {
     CalDAVUpdateOwnerItem *_changedBy;
 }
 
-@property(retain) CalDAVUpdateOwnerItem * changedBy;
-@property(readonly) NSURL * fullHrefURL;
+@property (nonatomic, retain) CalDAVUpdateOwnerItem *changedBy;
+@property (nonatomic, readonly) NSURL *fullHrefURL;
 
 - (id)changedBy;
 - (id)copyParseRules;

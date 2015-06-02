@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOMapRegion, GEOPDFlyover, NSString;
-
 @interface GEOAnnouncement : PBCodable <NSCopying> {
     unsigned int _announcementID;
     NSString *_buttonOneAppURI;
@@ -23,28 +21,28 @@
     NSString *_userMessage;
 }
 
-@property unsigned int announcementID;
-@property(retain) NSString * buttonOneAppURI;
-@property(retain) NSString * buttonOneMessage;
-@property(retain) NSString * buttonTwoAppURI;
-@property(retain) NSString * buttonTwoMessage;
-@property unsigned int displayDestinations;
-@property(retain) GEOPDFlyover * flyoverInfo;
-@property BOOL hasAnnouncementID;
-@property(readonly) BOOL hasButtonOneAppURI;
-@property(readonly) BOOL hasButtonOneMessage;
-@property(readonly) BOOL hasButtonTwoAppURI;
-@property(readonly) BOOL hasButtonTwoMessage;
-@property BOOL hasDisplayDestinations;
-@property(readonly) BOOL hasFlyoverInfo;
-@property(readonly) BOOL hasMapRegion;
-@property BOOL hasReleasePhase;
-@property(readonly) BOOL hasTitle;
-@property(readonly) BOOL hasUserMessage;
-@property(retain) GEOMapRegion * mapRegion;
-@property int releasePhase;
-@property(retain) NSString * title;
-@property(retain) NSString * userMessage;
+@property (nonatomic) unsigned int announcementID;
+@property (nonatomic, retain) NSString *buttonOneAppURI;
+@property (nonatomic, retain) NSString *buttonOneMessage;
+@property (nonatomic, retain) NSString *buttonTwoAppURI;
+@property (nonatomic, retain) NSString *buttonTwoMessage;
+@property (nonatomic) unsigned int displayDestinations;
+@property (nonatomic, retain) GEOPDFlyover *flyoverInfo;
+@property (nonatomic) BOOL hasAnnouncementID;
+@property (nonatomic, readonly) BOOL hasButtonOneAppURI;
+@property (nonatomic, readonly) BOOL hasButtonOneMessage;
+@property (nonatomic, readonly) BOOL hasButtonTwoAppURI;
+@property (nonatomic, readonly) BOOL hasButtonTwoMessage;
+@property (nonatomic) BOOL hasDisplayDestinations;
+@property (nonatomic, readonly) BOOL hasFlyoverInfo;
+@property (nonatomic, readonly) BOOL hasMapRegion;
+@property (nonatomic) BOOL hasReleasePhase;
+@property (nonatomic, readonly) BOOL hasTitle;
+@property (nonatomic, readonly) BOOL hasUserMessage;
+@property (nonatomic, retain) GEOMapRegion *mapRegion;
+@property (nonatomic) int releasePhase;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *userMessage;
 
 - (unsigned int)announcementID;
 - (id)buttonOneAppURI;

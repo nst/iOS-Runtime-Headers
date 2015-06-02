@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKAlarm;
-
 @interface EKUIAlarm : NSObject {
     EKAlarm *_alarm;
     BOOL _isLeaveNowAlarm;
 }
 
-@property(readonly) EKAlarm * alarm;
-@property(readonly) BOOL isLeaveNowAlarm;
+@property (nonatomic, readonly) EKAlarm *alarm;
+@property (nonatomic, readonly) BOOL isLeaveNowAlarm;
 
 - (void).cxx_destruct;
 - (id)alarm;

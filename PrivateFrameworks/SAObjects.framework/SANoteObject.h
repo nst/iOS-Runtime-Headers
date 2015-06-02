@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDate, NSString;
+@interface SANoteObject : SADomainObject
 
-@interface SANoteObject : SADomainObject {
-}
-
-@property(copy) NSString * contents;
-@property(copy) NSDate * createdDate;
-@property(copy) NSDate * lastModifiedDate;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *contents;
+@property (nonatomic, copy) NSDate *createdDate;
+@property (nonatomic, copy) NSDate *lastModifiedDate;
+@property (nonatomic, copy) NSString *title;
 
 + (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;

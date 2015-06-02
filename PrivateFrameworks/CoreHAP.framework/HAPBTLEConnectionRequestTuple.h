@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSObject<OS_dispatch_source>, NSString;
-
 @interface HAPBTLEConnectionRequestTuple : NSObject {
     NSObject<OS_dispatch_source> *_connectionRequestTimer;
     NSString *_identifier;
 }
 
-@property(retain) NSObject<OS_dispatch_source> * connectionRequestTimer;
-@property(retain) NSString * identifier;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *connectionRequestTimer;
+@property (nonatomic, retain) NSString *identifier;
 
 + (id)connectionRequestTupleWithTimer:(id)arg1 identifier:(id)arg2;
 

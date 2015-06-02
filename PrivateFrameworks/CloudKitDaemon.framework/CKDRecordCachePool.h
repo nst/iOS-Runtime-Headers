@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>;
-
 @interface CKDRecordCachePool : NSObject {
     NSObject<OS_dispatch_source> *_expiryTimer;
     NSMutableDictionary *_pools;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) NSObject<OS_dispatch_source> * expiryTimer;
-@property(retain) NSMutableDictionary * pools;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *expiryTimer;
+@property (nonatomic, retain) NSMutableDictionary *pools;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)sharedPool;
 

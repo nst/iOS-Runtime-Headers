@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, UILabel, UIView;
-
 @interface SKUIGroupedHeaderView : UIView {
     UIView *_botBorder;
     UILabel *_titleLabel;
     UIView *_topBorder;
 }
 
-@property BOOL hasBottomBorder;
-@property BOOL hasTopBorder;
-@property(copy) NSString * title;
+@property (nonatomic) BOOL hasBottomBorder;
+@property (nonatomic) BOOL hasTopBorder;
+@property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (BOOL)hasBottomBorder;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class UIButton, _UIBackdropView;
-
 @interface PLHighFidelityVideoOverlayButton : UIView <PLVideoOverlayButton> {
     SEL _action;
     _UIBackdropView *_backdropView;

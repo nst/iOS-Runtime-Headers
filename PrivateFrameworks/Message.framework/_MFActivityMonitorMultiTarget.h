@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableSet;
-
 @interface _MFActivityMonitorMultiTarget : NSObject {
     NSMutableSet *_allTargets;
     id _primaryTarget;

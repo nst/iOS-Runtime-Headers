@@ -2,35 +2,25 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface PHAssetUUIDRequestJob : PLDaemonJob {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     NSString *_uuid;
 }
 
-@property(copy) id completionHandler;
-@property(copy) NSString * uuid;
+@property (nonatomic, copy) id /* block */ completionHandler;
+@property (nonatomic, copy) NSString *uuid;
 
-+ (void)requestUUIDWithCustomUUID:(id)arg1 completionHandler:(id)arg2;
++ (void)requestUUIDWithCustomUUID:(id)arg1 completionHandler:(id /* block */)arg2;
 
 - (void).cxx_destruct;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (long long)daemonOperation;
 - (void)encodeToXPCObject:(id)arg1;
 - (void)handleReply;
 - (id)initFromXPCObject:(id)arg1 connection:(id)arg2;
 - (void)run;
 - (void)runDaemonSide;
-- (void)setCompletionHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setUuid:(id)arg1;
 - (id)uuid;
 

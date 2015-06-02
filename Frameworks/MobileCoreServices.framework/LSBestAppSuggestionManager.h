@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class <LSBestAppSuggestionManagerDelegate>, LSBestAppSuggestion, NSXPCConnection;
-
 @interface LSBestAppSuggestionManager : NSObject {
     int _bestAppNotificationCount;
     NSXPCConnection *_connection;
@@ -12,8 +10,8 @@
     BOOL _listeningForBestAppSuggestions;
 }
 
-@property(retain) NSXPCConnection * connection;
-@property <LSBestAppSuggestionManagerDelegate> * delegate;
+@property (retain) NSXPCConnection *connection;
+@property <LSBestAppSuggestionManagerDelegate> *delegate;
 
 - (id)bestAppSuggestion;
 - (void)bestAppSuggestionLaunchWasCancelled:(id)arg1;
@@ -22,7 +20,7 @@
 - (id)connection;
 - (void)dealloc;
 - (id)delegate;
-- (BOOL)determineBestAppWithDelay:(double)arg1 withBlock:(id)arg2;
+- (BOOL)determineBestAppWithDelay:(double)arg1 withBlock:(id /* block */)arg2;
 - (id)init;
 - (void)launchAppWithBestAppSuggestion:(id)arg1;
 - (void)launchAppWithBundleIdentifier:(id)arg1 taskContinuationIdentifier:(id)arg2;

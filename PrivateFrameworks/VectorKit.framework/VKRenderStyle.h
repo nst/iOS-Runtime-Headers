@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class NSString;
-
 @interface VKRenderStyle : NSObject {
     struct RenderStyle { 
         float *_blendFactor; 
@@ -13,11 +11,11 @@
     void *_query;
 }
 
-@property(readonly) float blendFactor;
-@property(readonly) BOOL hasTargetStyle;
-@property void* query;
-@property(readonly) NSString * sourceName;
-@property(readonly) NSString * targetName;
+@property (nonatomic, readonly) float blendFactor;
+@property (nonatomic, readonly) BOOL hasTargetStyle;
+@property (nonatomic) void*query;
+@property (nonatomic, readonly) NSString *sourceName;
+@property (nonatomic, readonly) NSString *targetName;
 
 - (id).cxx_construct;
 - (float)blendFactor;

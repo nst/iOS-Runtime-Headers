@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertUI.framework/CertUI
  */
 
-@class NSString;
-
 @interface CertUITrustManager : NSObject {
     NSString *_access;
 }

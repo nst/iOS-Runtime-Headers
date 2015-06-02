@@ -2,22 +2,17 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface BLTPBSelectorItem : NSObject {
-    int (*_method)();
+    int (*_method;
     SEL _selector;
 }
 
-@property int (* method;
-@property SEL selector;
+@property (nonatomic) int (*method;
+@property (nonatomic) SEL selector;
 
-- (int (*)())method;
+- (int (*)method;
 - (SEL)selector;
-- (void)setMethod:(int (*)())arg1;
+- (void)setMethod:(int (*)arg1;
 - (void)setSelector:(SEL)arg1;
 
 @end

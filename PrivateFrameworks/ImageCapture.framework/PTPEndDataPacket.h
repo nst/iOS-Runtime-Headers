@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSData;
-
 @interface PTPEndDataPacket : NSObject {
     NSData *_data;
     unsigned short _operationCode;

@@ -2,27 +2,22 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@class NKAssetDownload, NSString, NSURLConnectionInternal, NSURLRequest;
-
 @interface NSURLConnection : NSObject <NSURLAuthenticationChallengeSender> {
     NSURLConnectionInternal *_internal;
 }
 
-@property(copy,readonly) NSURLRequest * currentRequest;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NKAssetDownload * newsstandAssetDownload;
-@property(copy,readonly) NSURLRequest * originalRequest;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSURLRequest *currentRequest;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) NKAssetDownload *newsstandAssetDownload;
+@property (readonly, copy) NSURLRequest *originalRequest;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 + (void)_collectTimingDataWithOptions:(unsigned int)arg1;
 + (BOOL)_collectsTimingData;
-+ (void)_geo_sendAsynchronousRequest:(id)arg1 connectionProperties:(id)arg2 completionHandler:(id)arg3;
-+ (void)_geo_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 connectionProperties:(id)arg3 completionHandler:(id)arg4;
-+ (void)_geo_sendAttributedAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-+ (id)_geo_sendAttributedSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
-+ (id)_geo_sendSynchronousRequest:(id)arg1 connectionProperties:(id)arg2 returningResponse:(id*)arg3 error:(id*)arg4;
 + (void)_resourceLoadLoop:(id)arg1;
 + (void)_setCollectsTimingData:(BOOL)arg1;
 + (void)_setLoaderThreadPriority:(int)arg1;
@@ -33,13 +28,11 @@
 + (BOOL)canHandleRequest:(id)arg1;
 + (id)connectionWithRequest:(id)arg1 delegate:(id)arg2;
 + (struct __CFRunLoop { }*)resourceLoaderRunLoop;
-+ (void)safari_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
-+ (void)sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id)arg3;
++ (void)sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 + (id)sendSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
 
 - (id)_cfInternal;
 - (id)_dlInternal;
-- (id)_geo_initWithAttributedRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
 - (void)_resumeLoading;
 - (void)_suspendLoading;
@@ -55,7 +48,6 @@
 - (void)download;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2;
 - (id)initWithRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
-- (id)newsstandAssetDownload;
 - (id)originalRequest;
 - (void)performDefaultHandlingForAuthenticationChallenge:(id)arg1;
 - (void)rejectProtectionSpaceAndContinueWithChallenge:(id)arg1;
@@ -65,5 +57,23 @@
 - (void)start;
 - (void)unscheduleFromRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)useCredential:(id)arg1 forAuthenticationChallenge:(id)arg2;
+
+// Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
+
+- (id)newsstandAssetDownload;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (void)_geo_sendAsynchronousRequest:(id)arg1 connectionProperties:(id)arg2 completionHandler:(id /* block */)arg3;
++ (void)_geo_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 connectionProperties:(id)arg3 completionHandler:(id /* block */)arg4;
++ (void)_geo_sendAttributedAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
++ (id)_geo_sendAttributedSynchronousRequest:(id)arg1 returningResponse:(id*)arg2 error:(id*)arg3;
++ (id)_geo_sendSynchronousRequest:(id)arg1 connectionProperties:(id)arg2 returningResponse:(id*)arg3 error:(id*)arg4;
+
+- (id)_geo_initWithAttributedRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
+
+// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+
++ (void)safari_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 
 @end

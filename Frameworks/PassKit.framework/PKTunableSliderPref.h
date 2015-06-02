@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UISlider, UIView;
-
 @interface PKTunableSliderPref : PKTunablePref {
     float _maxVal;
     float _minVal;
@@ -13,8 +11,8 @@
 
 @property float maxVal;
 @property float minVal;
-@property(retain) UISlider * slider;
-@property(retain) UIView * view;
+@property (retain) UISlider *slider;
+@property (retain) UIView *view;
 
 - (void)dealloc;
 - (id)initWithPrefName:(id)arg1 defaultValue:(id)arg2 minimumValue:(float)arg3 maximumValue:(float)arg4;

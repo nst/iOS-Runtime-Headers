@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKHostedTurnBasedViewController : GKHostedViewController {
-}
+@interface GKHostedTurnBasedViewController : GKHostedViewController
 
 - (id)_presentingViewController;
 - (void)didGetRemoteViewController;

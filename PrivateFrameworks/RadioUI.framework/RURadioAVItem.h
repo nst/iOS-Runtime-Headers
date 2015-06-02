@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSArray, NSString, RadioStation, RadioTrack;
-
 @interface RURadioAVItem : MPAVItem {
     NSArray *_buyOffers;
     BOOL _heartbeatInvalid;
@@ -17,14 +15,14 @@
     NSString *_stationName;
 }
 
-@property(getter=isHeartbeatInvalid) BOOL heartbeatInvalid;
-@property BOOL isBanned;
-@property BOOL isInWishList;
-@property BOOL isLiked;
-@property(retain) RadioStation * station;
-@property(readonly) NSString * stationHash;
-@property(readonly) long long stationID;
-@property(readonly) NSString * stationName;
+@property (getter=isHeartbeatInvalid, nonatomic) BOOL heartbeatInvalid;
+@property (nonatomic) BOOL isBanned;
+@property (nonatomic) BOOL isInWishList;
+@property (nonatomic) BOOL isLiked;
+@property (nonatomic, retain) RadioStation *station;
+@property (nonatomic, readonly) NSString *stationHash;
+@property (nonatomic, readonly) long long stationID;
+@property (nonatomic, readonly) NSString *stationName;
 
 - (void).cxx_destruct;
 - (void)_applyLoudnessInfoForVolumeNormalization;
@@ -32,7 +30,7 @@
 - (void)_internalIsInWishlistDidChangeNotification:(id)arg1;
 - (void)_internalIsLikedDidChangeNotification:(id)arg1;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
-- (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id)arg2;
+- (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)aggregateDictionaryItemType;
 - (id)album;
 - (long long)albumStoreID;

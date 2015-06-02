@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSCH3DSelectionPathRenderInfo : NSObject {
     float mRotation;
     NSString *mString;
     unsigned int mStyleIndex;
 }
 
-@property(readonly) float rotation;
-@property(readonly) NSString * string;
-@property(readonly) unsigned int styleIndex;
+@property (nonatomic, readonly) float rotation;
+@property (nonatomic, readonly) NSString *string;
+@property (nonatomic, readonly) unsigned int styleIndex;
 
 + (id)renderInfoWithString:(id)arg1 styleIndex:(unsigned int)arg2 rotation:(float)arg3;
 

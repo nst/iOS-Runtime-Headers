@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKHostedMatchmakerViewController : GKHostedViewController {
-}
+@interface GKHostedMatchmakerViewController : GKHostedViewController
 
 - (id)_presentingViewController;
 - (void)didGetRemoteViewController;

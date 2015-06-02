@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
  */
 
-@class NSData, NSMutableData;
-
 @interface TIKeyboardCandidateResultSetCoder : NSObject {
     NSData *_data;
     NSMutableData *_mutableData;
     unsigned int _offset;
 }
 
-@property(readonly) const char * bytes;
-@property(readonly) const char * currentPosition;
-@property(retain) NSData * data;
-@property(retain) NSMutableData * mutableData;
-@property unsigned int offset;
+@property (nonatomic, readonly) const char *bytes;
+@property (nonatomic, readonly) const char *currentPosition;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, retain) NSMutableData *mutableData;
+@property (nonatomic) unsigned int offset;
 
 + (id)candidateTypeToClassNameMap;
 + (Class)classFromCandidateType:(int)arg1;

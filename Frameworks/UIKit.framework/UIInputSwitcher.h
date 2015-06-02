@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIDelayedAction, UIInputSwitcherView;
-
 @interface UIInputSwitcher : NSObject {
     NSString *_newMode;
     int m_state;

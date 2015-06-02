@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WBUCreditCardDataController : WBSCreditCardDataController {
-}
+@interface WBUCreditCardDataController : WBSCreditCardDataController
 
 + (id)sharedCreditCardDataController;
 

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface _GKSplitViewDetailPlaceholderViewController : GKViewController {
-}
+@interface _GKSplitViewDetailPlaceholderViewController : GKViewController
 
 @end

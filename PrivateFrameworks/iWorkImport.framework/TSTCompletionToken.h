@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSTCanvasReferenceProvider>, NSString, TSTReferenceNode, TSUColor;
-
 @interface TSTCompletionToken : TSTWPTokenAttachment {
     <TSTCanvasReferenceProvider> *mCanvasReferenceProvider;
     NSString *mCompletionText;
@@ -21,12 +14,12 @@
     int mRenderAsTokenType;
 }
 
-@property <TSTCanvasReferenceProvider> * canvasReferenceProvider;
-@property(retain) NSString * completionText;
-@property(retain) TSTReferenceNode * editingReferenceNode;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } prefixRange;
-@property(retain) TSUColor * referenceColor;
-@property(readonly) int renderAsTokenType;
+@property (nonatomic) <TSTCanvasReferenceProvider> *canvasReferenceProvider;
+@property (nonatomic, retain) NSString *completionText;
+@property (nonatomic, retain) TSTReferenceNode *editingReferenceNode;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } prefixRange;
+@property (nonatomic, retain) TSUColor *referenceColor;
+@property (nonatomic, readonly) int renderAsTokenType;
 
 - (id).cxx_construct;
 - (id)canvasReferenceProvider;

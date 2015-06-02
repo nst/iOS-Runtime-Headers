@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSHashTable, NSObject<OS_dispatch_queue>;
-
 @interface BRReachabilityMonitor : NSObject {
     BOOL _isNetworkReachable;
     NSObject<OS_dispatch_queue> *_queue;
@@ -11,7 +9,7 @@
     struct __SCNetworkReachability { } *_reachabilityRef;
 }
 
-@property BOOL isNetworkReachable;
+@property (nonatomic) BOOL isNetworkReachable;
 
 + (id)sharedReachabilityMonitor;
 

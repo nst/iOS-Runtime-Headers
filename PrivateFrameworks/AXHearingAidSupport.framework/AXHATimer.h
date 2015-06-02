@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class AXHAAccessQueue, NSObject<OS_dispatch_source>, NSString;
-
 @interface AXHATimer : NSObject {
     AXHAAccessQueue *_accessQueue;
     BOOL _accessQueueIsExternal;
@@ -14,28 +12,28 @@
     int _state;
 }
 
-@property(retain) AXHAAccessQueue * accessQueue;
-@property BOOL accessQueueIsExternal;
-@property(getter=isActive) BOOL active;
-@property BOOL automaticallyCancelPendingBlockUponSchedulingNewBlock;
-@property(retain) NSObject<OS_dispatch_source> * dispatchTimer;
-@property(copy) NSString * label;
-@property(getter=isPending,readonly) BOOL pending;
-@property int state;
+@property (nonatomic, retain) AXHAAccessQueue *accessQueue;
+@property (nonatomic) BOOL accessQueueIsExternal;
+@property (getter=isActive, nonatomic) BOOL active;
+@property (nonatomic) BOOL automaticallyCancelPendingBlockUponSchedulingNewBlock;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *dispatchTimer;
+@property (copy) NSString *label;
+@property (getter=isPending, nonatomic, readonly) BOOL pending;
+@property (nonatomic) int state;
 
 + (id)timerTargettingMainAccessQueue;
 
-- (void)_afterDelay:(double)arg1 processBlock:(id)arg2 shouldTreatAsWritingBlock:(BOOL)arg3;
+- (void)_afterDelay:(double)arg1 processBlock:(id /* block */)arg2 shouldTreatAsWritingBlock:(BOOL)arg3;
 - (void)_didFinishProcessingBlock;
-- (void)_performEnqueuedWritingBlock:(id)arg1 asynchronousExecutionWarningHandler:(SEL)arg2;
+- (void)_performEnqueuedWritingBlock:(id /* block */)arg1 asynchronousExecutionWarningHandler:(SEL)arg2;
 - (void)_reallyCancel;
 - (void)_warnAboutAsynchronousCancelling;
 - (void)_warnAboutAsynchronousScheduling;
 - (id)accessQueue;
 - (BOOL)accessQueueIsExternal;
-- (void)afterDelay:(double)arg1 processBlock:(id)arg2;
-- (void)afterDelay:(double)arg1 processReadingBlock:(id)arg2;
-- (void)afterDelay:(double)arg1 processWritingBlock:(id)arg2;
+- (void)afterDelay:(double)arg1 processBlock:(id /* block */)arg2;
+- (void)afterDelay:(double)arg1 processReadingBlock:(id /* block */)arg2;
+- (void)afterDelay:(double)arg1 processWritingBlock:(id /* block */)arg2;
 - (BOOL)automaticallyCancelPendingBlockUponSchedulingNewBlock;
 - (void)cancel;
 - (void)dealloc;

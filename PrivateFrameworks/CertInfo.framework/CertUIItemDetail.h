@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSString, UIColor;
-
 @interface CertUIItemDetail : NSObject {
     UIColor *_checkmarkHighlightColor;
     NSString *_checkmarkText;
@@ -14,13 +12,13 @@
     BOOL _showCheckmarkView;
 }
 
-@property(retain) UIColor * checkmarkHighlightColor;
-@property(retain) NSString * checkmarkText;
-@property(retain) NSString * detail;
-@property(retain) UIColor * detailHighlightColor;
-@property(retain) NSString * detailTitle;
-@property BOOL showCheckmark;
-@property BOOL showCheckmarkView;
+@property (nonatomic, retain) UIColor *checkmarkHighlightColor;
+@property (nonatomic, retain) NSString *checkmarkText;
+@property (nonatomic, retain) NSString *detail;
+@property (nonatomic, retain) UIColor *detailHighlightColor;
+@property (nonatomic, retain) NSString *detailTitle;
+@property (nonatomic) BOOL showCheckmark;
+@property (nonatomic) BOOL showCheckmarkView;
 
 + (id)itemDetailWithDetailTitle:(id)arg1 detail:(id)arg2;
 + (id)itemDetailWithDetailTitle:(id)arg1 detail:(id)arg2 detailHighlightColor:(id)arg3;

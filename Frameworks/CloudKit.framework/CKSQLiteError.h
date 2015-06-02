@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKSQLiteError : NSObject {
-}
+@interface CKSQLiteError : NSObject
 
 + (void)ABORT:(id)arg1;
 + (void)ABORT_ROLLBACK:(id)arg1;

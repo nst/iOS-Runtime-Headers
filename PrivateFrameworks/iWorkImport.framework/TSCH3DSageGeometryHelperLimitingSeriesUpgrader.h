@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DChartBoundsLayout, TSCH3DChartResizerHelper;
-
 @interface TSCH3DSageGeometryHelperLimitingSeriesUpgrader : TSCH3DAbstractLimitingSeriesUpgrader {
     TSCH3DChartBoundsLayout *mBoundsLayout;
     TSCH3DChartResizerHelper *mResizerHelper;
 }
 
-@property(readonly) TSCH3DChartBoundsLayout * boundsLayout;
-@property(readonly) TSCH3DChartResizerHelper * resizerHelper;
+@property (nonatomic, readonly) TSCH3DChartBoundsLayout *boundsLayout;
+@property (nonatomic, readonly) TSCH3DChartResizerHelper *resizerHelper;
 
 - (id)boundsLayout;
 - (id)boundsLayoutByResizingToLayoutSize:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;

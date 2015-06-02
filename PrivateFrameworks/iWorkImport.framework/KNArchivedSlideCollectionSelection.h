@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class KNSlideCollectionSelection, NSString, TSKSelection;
-
 @interface KNArchivedSlideCollectionSelection : TSPObject <TSKArchivedSelection> {
     KNSlideCollectionSelection *mSelection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) TSKSelection * selection;
-@property(readonly) KNSlideCollectionSelection * slideCollectionSelection;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) TSKSelection *selection;
+@property (nonatomic, readonly) KNSlideCollectionSelection *slideCollectionSelection;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initFromUnarchiver:(id)arg1;

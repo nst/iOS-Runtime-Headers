@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSData, NSDictionary, NSObject<OS_dispatch_queue>;
-
 @interface SBKStoreClampsController : NSObject <NSCoding> {
     double _accountIdentifierCheckTimestamp;
     double _authenticationNeededTimestamp;
@@ -22,9 +20,9 @@
 @property double backOffUntil;
 @property double networkingBlockedUntil;
 @property double nextUserCancelBackOffInterval;
-@property(retain) NSData * pendingUserDefaultArchivedData;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(retain) NSDictionary * transactionClamps;
+@property (retain) NSData *pendingUserDefaultArchivedData;
+@property (retain) NSObject<OS_dispatch_queue> *queue;
+@property (retain) NSDictionary *transactionClamps;
 @property double userAcceptedSyncTimestamp;
 @property double userCancelledSignInBackOffUntil;
 
@@ -38,7 +36,7 @@
 - (BOOL)_canScheduleTransactionBasedOnUserCancelledSignIn:(id)arg1 error:(id*)arg2;
 - (id)_keyForTransaction:(id)arg1;
 - (double)_rightNow;
-- (void)accessTransactionClampsWithBlock:(id)arg1;
+- (void)accessTransactionClampsWithBlock:(id /* block */)arg1;
 - (double)accountIdentifierCheckTimestamp;
 - (double)authenticationNeededTimestamp;
 - (void)backOffForTimeInterval:(double)arg1;

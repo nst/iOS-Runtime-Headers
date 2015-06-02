@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HealthKitExtensions.framework/HealthKitExtensions
  */
 
-@class HKExtendedHealthStore;
-
 @interface _HKExtendedHealthStoreProxy : NSObject {
     HKExtendedHealthStore *_extendedHealthStore;
 }
 
-@property HKExtendedHealthStore * extendedHealthStore;
+@property (nonatomic) HKExtendedHealthStore *extendedHealthStore;
 
 - (void).cxx_destruct;
 - (id)extendedHealthStore;

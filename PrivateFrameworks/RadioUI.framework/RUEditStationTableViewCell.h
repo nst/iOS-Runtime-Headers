@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class MPUBorderConfiguration, MPUBorderDrawingCache, MPUStackView, NSString, UIImage, UILabel, UIView;
-
 @interface RUEditStationTableViewCell : RUTableViewCell <MPUStackViewDataSource> {
     UIImage *_image;
     MPUBorderConfiguration *_stackItemBorderConfiguration;
@@ -12,14 +10,14 @@
     UILabel *_titleLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property UIView * perspectiveTargetView;
-@property(retain) MPUBorderDrawingCache * stackItemBorderDrawingCache;
-@property(copy) NSString * stationName;
-@property(readonly) Class superclass;
-@property struct CGPoint { float x1; float x2; } vanishingPoint;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) UIView *perspectiveTargetView;
+@property (nonatomic, retain) MPUBorderDrawingCache *stackItemBorderDrawingCache;
+@property (nonatomic, copy) NSString *stationName;
+@property (readonly) Class superclass;
+@property (nonatomic) struct CGPoint { float x1; float x2; } vanishingPoint;
 
 + (id)_titleLabelFontWithEmphasis:(BOOL)arg1;
 + (float)artworkMidXForTraitCollection:(id)arg1;

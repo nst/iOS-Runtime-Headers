@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSLock;
-
 @interface SUScriptNotificationObserver : NSObject {
     NSLock *_lock;
     struct __CFSet { } *_receivers;
@@ -19,7 +17,7 @@
 - (void)_dispatchEvent:(id)arg1 forName:(id)arg2;
 - (void)_dispatchEventWithDictionary:(id)arg1 forName:(id)arg2;
 - (void)_endObservingNotifications;
-- (void)_enumerateReceiversUsingBlock:(id)arg1;
+- (void)_enumerateReceiversUsingBlock:(id /* block */)arg1;
 - (void)_memoryWarningNotification:(id)arg1;
 - (void)_networkTypeChangedNotification:(id)arg1;
 - (void)_purchaseRequestDidSucceedNotification:(id)arg1;

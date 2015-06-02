@@ -2,20 +2,8 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface SKMove : SKAction {
-
-  /* Error parsing encoded ivar type info: ^{SKCMove=^^?If@?@BddffdBB@?ifffff{?=ff}{?=ff}{?=ff}cccc} */
-    struct SKCMove { int (**x1)(); unsigned int x2; float x3; id x4; /* Warning: Unrecognized filer type: '?' using 'void*' */ void*x5; id x6; bool x7; double x8; double x9; float x10; float x11; double x12; bool x13; bool x14; id x15; void*x16; int x17; float x18; float x19; float x20; float x21; float x22; struct { float x_23_1_1; float x_23_1_2; } x23; struct { float x_24_1_1; float x_24_1_2; } x24; struct { float x_25_1_1; float x_25_1_2; } x25; BOOL x26; BOOL x27; BOOL x28; BOOL x29; } *_mycaction;
-
+    struct SKCMove { int (**x1)(); unsigned int x2; float x3; id /* block */ x4; id x5; double x6; double x7; float x8; float x9; double x10; bool x11; bool x12; id /* block */ x13; int x14; float x15; float x16; float x17; float x18; float x19; struct { float x_20_1_1; float x_20_1_2; } x20; struct { float x_21_1_1; float x_21_1_2; } x21; struct { float x_22_1_1; float x_22_1_2; } x22; BOOL x23; BOOL x24; BOOL x25; BOOL x26; } *_mycaction;
 }
 
 + (id)moveBy:(struct CGPoint { float x1; float x2; })arg1 duration:(double)arg2;

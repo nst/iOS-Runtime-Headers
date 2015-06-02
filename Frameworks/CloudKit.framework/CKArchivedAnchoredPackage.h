@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSArray, NSString;
-
 @interface CKArchivedAnchoredPackage : NSObject <NSSecureCoding> {
     NSString *_UUID;
     NSString *_anchorPath;
@@ -11,10 +9,10 @@
     NSString *_packagePath;
 }
 
-@property(retain) NSString * UUID;
-@property(retain) NSString * anchorPath;
-@property(retain) NSArray * assets;
-@property(retain) NSString * packagePath;
+@property (nonatomic, retain) NSString *UUID;
+@property (nonatomic, retain) NSString *anchorPath;
+@property (nonatomic, retain) NSArray *assets;
+@property (nonatomic, retain) NSString *packagePath;
 
 + (BOOL)supportsSecureCoding;
 

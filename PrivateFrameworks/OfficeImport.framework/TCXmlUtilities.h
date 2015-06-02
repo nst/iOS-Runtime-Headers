@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface TCXmlUtilities : NSObject {
-}
+@interface TCXmlUtilities : NSObject
 
 + (id)bundlePathForXmlResource:(id)arg1;
 + (void)checkStreamName:(struct _xmlTextReader { }*)arg1 name:(const char *)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSString, UITraitCollection, UIViewController;
-
 @interface PKPaymentAuthorizationLayout : NSObject <UITraitEnvironment> {
     float _contentHeightPadding;
     float _contentMargin;
@@ -12,16 +10,16 @@
     float _valueLeftMargin;
 }
 
-@property(readonly) float contentHeightPadding;
-@property(readonly) float contentMargin;
-@property UIViewController * controller;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) float headerMargin;
-@property(readonly) Class superclass;
-@property(readonly) UITraitCollection * traitCollection;
-@property(readonly) float valueLeftMargin;
+@property (nonatomic, readonly) float contentHeightPadding;
+@property (nonatomic, readonly) float contentMargin;
+@property (nonatomic) UIViewController *controller;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) float headerMargin;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITraitCollection *traitCollection;
+@property (nonatomic, readonly) float valueLeftMargin;
 
 - (float)contentHeightPadding;
 - (float)contentMargin;

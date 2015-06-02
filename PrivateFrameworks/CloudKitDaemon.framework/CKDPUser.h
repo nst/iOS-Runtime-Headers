@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPIdentifier, CKDPProtectionInfo, CKDPUserAlias, NSString;
-
 @interface CKDPUser : PBCodable <NSCopying> {
     CKDPUserAlias *_alias;
     NSString *_firstName;
@@ -12,16 +10,16 @@
     CKDPProtectionInfo *_protectionInfo;
 }
 
-@property(retain) CKDPUserAlias * alias;
-@property(retain) NSString * firstName;
-@property(readonly) BOOL hasAlias;
-@property(readonly) BOOL hasFirstName;
-@property(readonly) BOOL hasIdentifier;
-@property(readonly) BOOL hasLastName;
-@property(readonly) BOOL hasProtectionInfo;
-@property(retain) CKDPIdentifier * identifier;
-@property(retain) NSString * lastName;
-@property(retain) CKDPProtectionInfo * protectionInfo;
+@property (nonatomic, retain) CKDPUserAlias *alias;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, readonly) BOOL hasAlias;
+@property (nonatomic, readonly) BOOL hasFirstName;
+@property (nonatomic, readonly) BOOL hasIdentifier;
+@property (nonatomic, readonly) BOOL hasLastName;
+@property (nonatomic, readonly) BOOL hasProtectionInfo;
+@property (nonatomic, retain) CKDPIdentifier *identifier;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) CKDPProtectionInfo *protectionInfo;
 
 - (void).cxx_destruct;
 - (id)alias;

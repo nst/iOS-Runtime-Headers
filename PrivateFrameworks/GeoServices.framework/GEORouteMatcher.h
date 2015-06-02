@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOComposedRoute;
-
 @interface GEORouteMatcher : NSObject {
     GEOComposedRoute *_route;
 }

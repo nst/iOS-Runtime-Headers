@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSKeyValueMutatingCollectionMethodSet, NSKeyValueNonmutatingCollectionMethodSet;
-
 @interface NSKeyValueFastMutableCollection1Getter : NSKeyValueProxyGetter {
     NSKeyValueMutatingCollectionMethodSet *_mutatingMethods;
     NSKeyValueNonmutatingCollectionMethodSet *_nonmutatingMethods;

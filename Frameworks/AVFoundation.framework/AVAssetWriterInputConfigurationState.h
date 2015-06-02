@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVOutputSettings, NSArray, NSDictionary, NSString, NSURL;
-
 @interface AVAssetWriterInputConfigurationState : NSObject {
     short _alternateGroupID;
     BOOL _attachedToPixelBufferAdaptor;
@@ -44,28 +42,28 @@
     } _transform;
 }
 
-@property short alternateGroupID;
-@property BOOL attachedToPixelBufferAdaptor;
-@property BOOL expectsMediaDataInRealTime;
-@property(copy) NSString * extendedLanguageTag;
-@property(copy) NSString * languageCode;
-@property int layer;
-@property BOOL marksOutputTrackAsEnabled;
-@property int mediaTimeScale;
-@property(copy) NSString * mediaType;
-@property(copy) NSArray * metadataItems;
-@property struct CGSize { float x1; float x2; } naturalSize;
-@property(copy) AVOutputSettings * outputSettings;
-@property BOOL performsMultiPassEncodingIfSupported;
-@property int preferredMediaChunkAlignment;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } preferredMediaChunkDuration;
-@property int preferredMediaChunkSize;
-@property float preferredVolume;
-@property(copy) NSURL * sampleReferenceBaseURL;
-@property(retain) struct opaqueCMFormatDescription { }* sourceFormatHint;
-@property(copy) NSDictionary * sourcePixelBufferAttributes;
-@property(copy) NSDictionary * trackReferences;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (nonatomic) short alternateGroupID;
+@property (nonatomic) BOOL attachedToPixelBufferAdaptor;
+@property (nonatomic) BOOL expectsMediaDataInRealTime;
+@property (nonatomic, copy) NSString *extendedLanguageTag;
+@property (nonatomic, copy) NSString *languageCode;
+@property (nonatomic) int layer;
+@property (nonatomic) BOOL marksOutputTrackAsEnabled;
+@property (nonatomic) int mediaTimeScale;
+@property (nonatomic, copy) NSString *mediaType;
+@property (nonatomic, copy) NSArray *metadataItems;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, copy) AVOutputSettings *outputSettings;
+@property (nonatomic) BOOL performsMultiPassEncodingIfSupported;
+@property (nonatomic) int preferredMediaChunkAlignment;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } preferredMediaChunkDuration;
+@property (nonatomic) int preferredMediaChunkSize;
+@property (nonatomic) float preferredVolume;
+@property (nonatomic, copy) NSURL *sampleReferenceBaseURL;
+@property (nonatomic, retain) struct opaqueCMFormatDescription { }*sourceFormatHint;
+@property (nonatomic, copy) NSDictionary *sourcePixelBufferAttributes;
+@property (nonatomic, copy) NSDictionary *trackReferences;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 
 - (short)alternateGroupID;
 - (BOOL)attachedToPixelBufferAdaptor;

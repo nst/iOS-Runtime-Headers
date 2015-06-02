@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@class NSData;
-
 @interface CKPackageSection : NSObject {
     int _index;
     NSData *_signature;
     unsigned long long _size;
 }
 
-@property(readonly) int index;
-@property(readonly) NSData * signature;
-@property unsigned long long size;
+@property (nonatomic, readonly) int index;
+@property (nonatomic, readonly) NSData *signature;
+@property (nonatomic) unsigned long long size;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;

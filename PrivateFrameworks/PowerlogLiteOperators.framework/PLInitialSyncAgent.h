@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLXPCListenerOperatorComposition;
-
 @interface PLInitialSyncAgent : PLAgent {
     PLXPCListenerOperatorComposition *_xpcHandler;
 }
 
-@property(retain) PLXPCListenerOperatorComposition * xpcHandler;
+@property (retain) PLXPCListenerOperatorComposition *xpcHandler;
 
 + (id)entryEventIntervalDefinitions;
 + (void)load;

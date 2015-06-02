@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, PFUbiquityContainerMonitor, PFUbiquityFilePresenter, PFUbiquityLocation, PFUbiquitySetupAssistant, PFUbiquitySwitchboardEntryMetadata;
-
 @interface PFUbiquitySwitchboardEntry : NSObject {
     unsigned int _activeStoreCount;
     int _finishLock;
@@ -24,19 +22,19 @@
 }
 
 @property unsigned int activeStoreCount;
-@property(readonly) PFUbiquityFilePresenter * filePresenter;
-@property(readonly) PFUbiquitySetupAssistant * finishingSetupAssistant;
-@property(readonly) PFUbiquityFilePresenter * localFilePresenter;
-@property(readonly) NSString * localPeerID;
-@property(readonly) PFUbiquityLocation * localRootLocation;
-@property(retain) PFUbiquitySwitchboardEntryMetadata * metadata;
-@property(readonly) PFUbiquityContainerMonitor * monitor;
-@property(readonly) NSString * storeName;
-@property(retain) PFUbiquityLocation * ubiquityRootLocation;
+@property (readonly) PFUbiquityFilePresenter *filePresenter;
+@property (readonly) PFUbiquitySetupAssistant *finishingSetupAssistant;
+@property (readonly) PFUbiquityFilePresenter *localFilePresenter;
+@property (nonatomic, readonly) NSString *localPeerID;
+@property (readonly) PFUbiquityLocation *localRootLocation;
+@property (nonatomic, retain) PFUbiquitySwitchboardEntryMetadata *metadata;
+@property (readonly) PFUbiquityContainerMonitor *monitor;
+@property (nonatomic, readonly) NSString *storeName;
+@property (nonatomic, retain) PFUbiquityLocation *ubiquityRootLocation;
 
 - (unsigned int)activeStoreCount;
-- (void)afterDelay:(double)arg1 executeBlockOnGlobalConcurrentQueue:(id)arg2;
-- (void)afterDelay:(double)arg1 executeBlockOnPrivateQueue:(id)arg2;
+- (void)afterDelay:(double)arg1 executeBlockOnGlobalConcurrentQueue:(id /* block */)arg2;
+- (void)afterDelay:(double)arg1 executeBlockOnPrivateQueue:(id /* block */)arg2;
 - (id)cacheWrapperForStoreName:(id)arg1;
 - (void)containerIdentifierChanged:(id)arg1;
 - (void)containerStateChanged:(id)arg1;
@@ -45,11 +43,11 @@
 - (void)dealloc;
 - (id)description;
 - (void)entryWillBeRemovedFromSwitchboard;
-- (void)executeBlockOnPrivateQueue:(id)arg1;
+- (void)executeBlockOnPrivateQueue:(id /* block */)arg1;
 - (id)filePresenter;
 - (void)filePresenterNoticedBaselineFileChange:(id)arg1;
 - (void)filePresenterWasNotifiedTransactionLogs:(id)arg1;
-- (BOOL)finishSetupForStore:(id)arg1 withSetupAssistant:(id)arg2 synchronously:(BOOL)arg3 error:(id*)arg4 finishBlock:(id)arg5;
+- (BOOL)finishSetupForStore:(id)arg1 withSetupAssistant:(id)arg2 synchronously:(BOOL)arg3 error:(id*)arg4 finishBlock:(id /* block */)arg5;
 - (id)finishingSetupAssistant;
 - (id)init;
 - (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 ubiquityRootLocation:(id)arg3 andLocalRootLocation:(id)arg4;
@@ -66,7 +64,7 @@
 - (void)setUbiquityRootLocation:(id)arg1;
 - (void)setupFinished;
 - (id)storeName;
-- (void)synchronouslyExecuteBlockOnPrivateQueue:(id)arg1;
+- (void)synchronouslyExecuteBlockOnPrivateQueue:(id /* block */)arg1;
 - (id)ubiquityRootLocation;
 - (void)unregisterPersistentStore:(id)arg1;
 - (void)unregisterPersistentStoreCoordinator:(id)arg1;

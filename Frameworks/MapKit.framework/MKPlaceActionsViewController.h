@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceActionsViewControllerDelegate>, MKMapItem, NSArray, NSString;
-
 @interface MKPlaceActionsViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse> {
     <MKPlaceActionsViewControllerDelegate> *_actionDelegate;
     NSArray *_actions;
@@ -17,21 +15,21 @@
     BOOL _showSimulateLocation;
 }
 
-@property <MKPlaceActionsViewControllerDelegate> * actionDelegate;
-@property(retain) NSArray * actions;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MKMapItem * mapItem;
-@property(readonly) BOOL requiresPreferredContentSizeInStackingView;
-@property BOOL showContactActions;
-@property BOOL showCreateReminder;
-@property BOOL showOpenInSkyline;
-@property BOOL showRemovePin;
-@property BOOL showReportAProblem;
-@property BOOL showSharing;
-@property BOOL showSimulateLocation;
-@property(readonly) Class superclass;
+@property (nonatomic) <MKPlaceActionsViewControllerDelegate> *actionDelegate;
+@property (nonatomic, retain) NSArray *actions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (nonatomic) BOOL showContactActions;
+@property (nonatomic) BOOL showCreateReminder;
+@property (nonatomic) BOOL showOpenInSkyline;
+@property (nonatomic) BOOL showRemovePin;
+@property (nonatomic) BOOL showReportAProblem;
+@property (nonatomic) BOOL showSharing;
+@property (nonatomic) BOOL showSimulateLocation;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)actionDelegate;

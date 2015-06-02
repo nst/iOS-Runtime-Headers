@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSData, NSString;
-
 @interface NPKProtoRegistrationDataResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int pending : 1; 
@@ -13,12 +11,12 @@
     NSData *_registrationDataBytes;
 }
 
-@property BOOL hasPending;
-@property(readonly) BOOL hasPushToken;
-@property(readonly) BOOL hasRegistrationDataBytes;
-@property BOOL pending;
-@property(retain) NSString * pushToken;
-@property(retain) NSData * registrationDataBytes;
+@property (nonatomic) BOOL hasPending;
+@property (nonatomic, readonly) BOOL hasPushToken;
+@property (nonatomic, readonly) BOOL hasRegistrationDataBytes;
+@property (nonatomic) BOOL pending;
+@property (nonatomic, retain) NSString *pushToken;
+@property (nonatomic, retain) NSData *registrationDataBytes;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

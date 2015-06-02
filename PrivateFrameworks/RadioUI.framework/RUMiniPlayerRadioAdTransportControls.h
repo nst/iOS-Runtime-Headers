@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class UIImageView;
-
 @interface RUMiniPlayerRadioAdTransportControls : MPUMiniPlayerTransportControls {
     UIImageView *_artworkImageView;
 }

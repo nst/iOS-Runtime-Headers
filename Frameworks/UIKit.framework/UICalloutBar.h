@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSString, UICalloutBarBackground, UICalloutBarButton, UIResponder;
-
 @interface UICalloutBar : UIView {
     int m_arrowDirection;
     struct CGRect { 
@@ -85,26 +83,26 @@
     NSString *m_untruncatedString;
 }
 
-@property int arrowDirection;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } controlFrame;
-@property(retain) NSDictionary * currentAppearOrFadeContext;
-@property id delegate;
-@property(copy) NSArray * extraItems;
-@property struct CGPoint { float x1; float x2; } pointAboveControls;
-@property struct CGPoint { float x1; float x2; } pointBelowControls;
-@property struct CGPoint { float x1; float x2; } pointLeftOfControls;
-@property struct CGPoint { float x1; float x2; } pointRightOfControls;
-@property(readonly) NSArray * rectsToEvade;
-@property(copy) NSArray * replacements;
-@property UIResponder * responderTarget;
-@property BOOL showAllReplacements;
-@property BOOL supressesHorizontalMovement;
-@property int targetDirection;
-@property BOOL targetHorizontal;
-@property struct CGPoint { float x1; float x2; } targetPoint;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
-@property(copy) NSString * untruncatedString;
-@property(readonly) BOOL visible;
+@property (nonatomic) int arrowDirection;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } controlFrame;
+@property (nonatomic, retain) NSDictionary *currentAppearOrFadeContext;
+@property (nonatomic) id delegate;
+@property (nonatomic, copy) NSArray *extraItems;
+@property (nonatomic) struct CGPoint { float x1; float x2; } pointAboveControls;
+@property (nonatomic) struct CGPoint { float x1; float x2; } pointBelowControls;
+@property (nonatomic) struct CGPoint { float x1; float x2; } pointLeftOfControls;
+@property (nonatomic) struct CGPoint { float x1; float x2; } pointRightOfControls;
+@property (nonatomic, readonly) NSArray *rectsToEvade;
+@property (nonatomic, copy) NSArray *replacements;
+@property (nonatomic) UIResponder *responderTarget;
+@property (nonatomic) BOOL showAllReplacements;
+@property (nonatomic) BOOL supressesHorizontalMovement;
+@property (nonatomic) int targetDirection;
+@property (nonatomic) BOOL targetHorizontal;
+@property (nonatomic) struct CGPoint { float x1; float x2; } targetPoint;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetRect;
+@property (nonatomic, copy) NSString *untruncatedString;
+@property (nonatomic, readonly) BOOL visible;
 
 + (void)_releaseSharedInstance;
 + (id)activeCalloutBar;

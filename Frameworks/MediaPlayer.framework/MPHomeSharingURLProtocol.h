@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPHomeSharingURLProtocol : NSURLProtocol {
-}
+@interface MPHomeSharingURLProtocol : NSURLProtocol
 
 + (BOOL)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;

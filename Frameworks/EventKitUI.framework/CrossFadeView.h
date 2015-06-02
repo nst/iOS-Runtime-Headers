@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIView;
-
 @interface CrossFadeView : UIView {
     struct CGRect { 
         struct CGPoint { 
@@ -30,15 +28,15 @@
     UIView *_startView;
 }
 
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
-@property(readonly) UIView * endView;
-@property BOOL scaleSize;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startFrame;
-@property(readonly) UIView * startView;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
+@property (nonatomic, readonly) UIView *endView;
+@property (nonatomic) BOOL scaleSize;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startFrame;
+@property (nonatomic, readonly) UIView *startView;
 
 - (void).cxx_destruct;
-- (void)animateToEndStateWithDuration:(double)arg1 completion:(id)arg2;
-- (void)animateToStartStateWithDuration:(double)arg1 completion:(id)arg2;
+- (void)animateToEndStateWithDuration:(double)arg1 completion:(id /* block */)arg2;
+- (void)animateToStartStateWithDuration:(double)arg1 completion:(id /* block */)arg2;
 - (id)description;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrame;
 - (id)endView;
@@ -52,9 +50,9 @@
 - (void)setToEndState;
 - (void)setToStartState;
 - (void)springAnimateToEndStateWithTimingFunction:(int)arg1;
-- (void)springAnimateToEndStateWithTimingFunction:(int)arg1 completion:(id)arg2;
+- (void)springAnimateToEndStateWithTimingFunction:(int)arg1 completion:(id /* block */)arg2;
 - (void)springAnimateToStartStateWithTimingFunction:(int)arg1;
-- (void)springAnimateToStartStateWithTimingFunction:(int)arg1 completion:(id)arg2;
+- (void)springAnimateToStartStateWithTimingFunction:(int)arg1 completion:(id /* block */)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })startFrame;
 - (id)startView;
 

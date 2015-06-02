@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@class UIImage;
-
 @interface SiriUIImageMaskView : UIView {
     UIImage *_maskImage;
 }
 
-@property(retain) UIImage * maskImage;
+@property (nonatomic, retain) UIImage *maskImage;
 
 + (id)imageMaskViewWithDefaultChevron;
 + (id)imageMaskViewWithImage:(id)arg1;

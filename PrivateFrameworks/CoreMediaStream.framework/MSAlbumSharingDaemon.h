@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <MSAlbumSharingDaemonDelegate>, MSASDaemonModel, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface MSAlbumSharingDaemon : MSDaemon {
     int _busyCount;
     MSASDaemonModel *_daemonModel;
@@ -16,23 +14,23 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property int busyCount;
-@property(retain) MSASDaemonModel * daemonModel;
-@property <MSAlbumSharingDaemonDelegate> * delegate;
-@property BOOL isRetryingOutstandingActivities;
-@property(retain) NSObject<OS_dispatch_queue> * mapQueue;
-@property(retain) NSMutableDictionary * nextUpdateDateByPersonID;
-@property(retain) NSMutableDictionary * personIDToDelegateMap;
-@property(retain) NSMutableDictionary * personIDToStateMachineMap;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic) int busyCount;
+@property (nonatomic, retain) MSASDaemonModel *daemonModel;
+@property (nonatomic) <MSAlbumSharingDaemonDelegate> *delegate;
+@property (nonatomic) BOOL isRetryingOutstandingActivities;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *mapQueue;
+@property (nonatomic, retain) NSMutableDictionary *nextUpdateDateByPersonID;
+@property (nonatomic, retain) NSMutableDictionary *personIDToDelegateMap;
+@property (nonatomic, retain) NSMutableDictionary *personIDToStateMachineMap;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
 - (id)_delegateForPersonID:(id)arg1;
-- (void)_postModelShutdownForPersonID:(id)arg1 completionBlock:(id)arg2;
+- (void)_postModelShutdownForPersonID:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)acceptInvitationWithGUID:(id)arg1 personID:(id)arg2;
 - (void)acceptInvitationWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
-- (void)acceptInvitationWithToken:(id)arg1 personID:(id)arg2 completionBlock:(id)arg3;
-- (void)acceptInvitationWithToken:(id)arg1 personID:(id)arg2 info:(id)arg3 completionBlock:(id)arg4;
+- (void)acceptInvitationWithToken:(id)arg1 personID:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)acceptInvitationWithToken:(id)arg1 personID:(id)arg2 info:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)addAccessControlEntries:(id)arg1 toAlbumWithGUID:(id)arg2 personID:(id)arg3;
 - (void)addAccessControlEntries:(id)arg1 toAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4;
 - (void)addAlbum:(id)arg1;
@@ -73,15 +71,15 @@
 - (id)existingModelForPersonID:(id)arg1;
 - (id)existingStateMachineForPersonID:(id)arg1;
 - (void)forgetEverythingAboutPersonID:(id)arg1;
-- (void)forgetEverythingAboutPersonID:(id)arg1 completionBlock:(id)arg2;
-- (void)forgetEverythingCompletionBlock:(id)arg1;
+- (void)forgetEverythingAboutPersonID:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)forgetEverythingCompletionBlock:(id /* block */)arg1;
 - (BOOL)hasCommandsInGroupedCommandQueue;
 - (id)init;
 - (BOOL)isInRetryState;
 - (BOOL)isRetryingOutstandingActivities;
 - (BOOL)isWaitingForAuth;
 - (id)mapQueue;
-- (void)mapQueueShutDownStateMachineInMap:(id)arg1 personIDs:(id)arg2 index:(unsigned int)arg3 forDestruction:(BOOL)arg4 completionBlock:(id)arg5;
+- (void)mapQueueShutDownStateMachineInMap:(id)arg1 personIDs:(id)arg2 index:(unsigned int)arg3 forDestruction:(BOOL)arg4 completionBlock:(id /* block */)arg5;
 - (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2;
 - (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)markAlbumGUIDAsViewed:(id)arg1 personID:(id)arg2 moveLastViewedAssetCollectionMarker:(BOOL)arg3 info:(id)arg4;
@@ -123,19 +121,19 @@
 - (void)setFocusAssetCollectionGUID:(id)arg1 forPersonID:(id)arg2;
 - (void)setIsRetryingOutstandingActivities:(BOOL)arg1;
 - (void)setMapQueue:(id)arg1;
-- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id)arg4;
-- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id)arg5;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)setMultipleContributorsEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id /* block */)arg5;
 - (void)setNextActivityDate:(id)arg1 forPersonID:(id)arg2;
 - (void)setNextUpdateDateByPersonID:(id)arg1;
 - (void)setPersistentObject:(id)arg1 forKey:(id)arg2 personID:(id)arg3;
 - (void)setPersonIDToDelegateMap:(id)arg1;
 - (void)setPersonIDToStateMachineMap:(id)arg1;
-- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id)arg4;
-- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id)arg5;
+- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 completionBlock:(id /* block */)arg4;
+- (void)setPublicAccessEnabled:(BOOL)arg1 forAlbumWithGUID:(id)arg2 personID:(id)arg3 info:(id)arg4 completionBlock:(id /* block */)arg5;
 - (void)setWorkQueue:(id)arg1;
 - (void)shutDown;
-- (void)shutDownCompletionBlock:(id)arg1;
-- (void)shutDownStateMachine:(id)arg1 forDestruction:(BOOL)arg2 completionBlock:(id)arg3;
+- (void)shutDownCompletionBlock:(id /* block */)arg1;
+- (void)shutDownStateMachine:(id)arg1 forDestruction:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (void)start;
 - (void)stopAssetDownloadsForPersonID:(id)arg1;
 - (void)subscribeToAlbumWithGUID:(id)arg1 personID:(id)arg2;
@@ -144,7 +142,7 @@
 - (void)unsubscribeFromAlbumWithGUID:(id)arg1 personID:(id)arg2 info:(id)arg3;
 - (void)willDestroyStateMachineForPersonID:(id)arg1;
 - (id)workQueue;
-- (void)workQueueForgetEverythingAboutPersonID:(id)arg1 completionBlock:(id)arg2;
-- (void)workQueueForgetEverythingAboutPersonIDs:(id)arg1 index:(unsigned int)arg2 completionBlock:(id)arg3;
+- (void)workQueueForgetEverythingAboutPersonID:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)workQueueForgetEverythingAboutPersonIDs:(id)arg1 index:(unsigned int)arg2 completionBlock:(id /* block */)arg3;
 
 @end

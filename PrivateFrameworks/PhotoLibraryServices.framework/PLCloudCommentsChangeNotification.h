@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary, PLManagedAsset;
-
 @interface PLCloudCommentsChangeNotification : PLContainerChangeNotification {
     NSDictionary *_userInfo;
 }
 
-@property(retain,readonly) PLManagedAsset * asset;
+@property (nonatomic, readonly, retain) PLManagedAsset *asset;
 
 + (id)notificationWithAsset:(id)arg1 snapshot:(id)arg2;
 

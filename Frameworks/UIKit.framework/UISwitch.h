@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UIColor, UIImage, UILongPressGestureRecognizer, UIPanGestureRecognizer, UIView<_UISwitchInternalViewProtocol>;
-
 @interface UISwitch : UIControl <NSCoding, UIGestureRecognizerDelegate> {
     UIView<_UISwitchInternalViewProtocol> *_control;
     float _enabledAlpha;
@@ -14,19 +12,19 @@
     UILongPressGestureRecognizer *_pressGesture;
 }
 
-@property(getter=_alwaysShowOnOffLabel,setter=_setAlwaysShowsOnOffLabel:) BOOL alwaysShowOnOffLabel;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property float enabledAlpha;
-@property(readonly) unsigned int hash;
-@property(retain) UIImage * offImage;
-@property(getter=isOn) BOOL on;
-@property(getter=_onColor,setter=_setOnColor:,retain) UIColor * onColor;
-@property(retain) UIImage * onImage;
-@property(retain) UIColor * onTintColor;
-@property(readonly) Class superclass;
-@property(retain) UIColor * thumbTintColor;
-@property(retain) UIColor * tintColor;
+@property (getter=_alwaysShowOnOffLabel, setter=_setAlwaysShowsOnOffLabel:, nonatomic) BOOL alwaysShowOnOffLabel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float enabledAlpha;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *offImage;
+@property (getter=isOn, nonatomic) BOOL on;
+@property (getter=_onColor, setter=_setOnColor:, nonatomic, retain) UIColor *onColor;
+@property (nonatomic, retain) UIImage *onImage;
+@property (nonatomic, retain) UIColor *onTintColor;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *thumbTintColor;
+@property (nonatomic, retain) UIColor *tintColor;
 
 + (Class)_internalViewClass;
 
@@ -59,7 +57,7 @@
 - (void)_setKnobBounceStiffness:(float)arg1;
 - (void)_setOnColor:(id)arg1;
 - (void)_setOnTintColor:(id)arg1;
-- (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 completion:(id)arg4;
+- (void)_setPressed:(BOOL)arg1 on:(BOOL)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (BOOL)_shouldAlterCodedFrame;
 - (BOOL)_useOldSize;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;

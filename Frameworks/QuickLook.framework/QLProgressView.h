@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@class NSString, UIActivityIndicatorView, UILabel;
-
 @interface QLProgressView : UIView {
     int _backgroundColorType;
     UILabel *_loadingTextLabel;
@@ -11,7 +9,7 @@
 }
 
 @property int backgroundColorType;
-@property(copy) NSString * loadingText;
+@property (copy) NSString *loadingText;
 
 - (void)_update;
 - (int)backgroundColorType;

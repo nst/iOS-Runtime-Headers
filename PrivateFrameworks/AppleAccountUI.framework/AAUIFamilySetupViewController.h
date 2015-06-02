@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-@class <AAUIFamilySetupDelegate>, AAGrandSlamSigner, ACAccount, ACAccountStore, NSMutableURLRequest, NSString, RemoteUIController, UIActivityIndicatorView, UIBarButtonItem, UINavigationItem;
-
 @interface AAUIFamilySetupViewController : AAUIBleachedNavigationController <AAUIFamilySetupPageDelegate, RemoteUIControllerDelegate> {
     ACAccount *_account;
     ACAccountStore *_accountStore;
@@ -17,11 +15,11 @@
     NSMutableURLRequest *_startRemoteUIRequest;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIFamilySetupDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIFamilySetupDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_closeButtonWasTapped:(id)arg1;

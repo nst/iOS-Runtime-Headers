@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class GEOLatLng, GEOMapRegion, PBUnknownFields;
-
 @interface MSPDroppedPin : PBCodable <NSCopying> {
     GEOLatLng *_latLng;
     GEOMapRegion *_mapRegion;
     PBUnknownFields *_unknownFields;
 }
 
-@property(readonly) BOOL hasLatLng;
-@property(readonly) BOOL hasMapRegion;
-@property(retain) GEOLatLng * latLng;
-@property(retain) GEOMapRegion * mapRegion;
-@property(readonly) PBUnknownFields * unknownFields;
+@property (nonatomic, readonly) BOOL hasLatLng;
+@property (nonatomic, readonly) BOOL hasMapRegion;
+@property (nonatomic, retain) GEOLatLng *latLng;
+@property (nonatomic, retain) GEOMapRegion *mapRegion;
+@property (nonatomic, readonly) PBUnknownFields *unknownFields;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITableViewCellLayoutManager : NSObject {
-}
+@interface UITableViewCellLayoutManager : NSObject
 
 + (id)_alternateExternalDetailTextColor;
 + (id)_alternateExternalTextColor;

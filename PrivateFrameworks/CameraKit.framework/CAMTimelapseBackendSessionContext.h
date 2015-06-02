@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMTimelapseState, NSArray, NSString;
-
 @interface CAMTimelapseBackendSessionContext : NSObject {
     NSArray *_filesToDelete;
     NSArray *_filesToWrite;
@@ -11,10 +9,10 @@
     NSString *_timelapseUUID;
 }
 
-@property(retain) NSArray * filesToDelete;
-@property(retain) NSArray * filesToWrite;
-@property(retain) CAMTimelapseState * state;
-@property(readonly) NSString * timelapseUUID;
+@property (nonatomic, retain) NSArray *filesToDelete;
+@property (nonatomic, retain) NSArray *filesToWrite;
+@property (nonatomic, retain) CAMTimelapseState *state;
+@property (nonatomic, readonly) NSString *timelapseUUID;
 
 - (void).cxx_destruct;
 - (id)description;

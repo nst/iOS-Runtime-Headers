@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class <MPVideoControllerProtocol>, MPInlineAudioTransportControls, NSString, UILabel, UIView;
-
 @interface MPInlineAudioOverlay : MPPlaybackControlsView {
     UIView *_backgroundView;
     NSString *_playbackErrorDescription;
@@ -14,9 +12,9 @@
     <MPVideoControllerProtocol> *_videoViewController;
 }
 
-@property(copy) NSString * playbackErrorDescription;
-@property int style;
-@property <MPVideoControllerProtocol> * videoViewController;
+@property (nonatomic, copy) NSString *playbackErrorDescription;
+@property (nonatomic) int style;
+@property (nonatomic) <MPVideoControllerProtocol> *videoViewController;
 
 - (void).cxx_destruct;
 - (void)_availableRoutesDidChangeNotification:(id)arg1;
@@ -33,7 +31,7 @@
 - (void)reloadView;
 - (void)setCurrentTime:(double)arg1;
 - (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id)arg3;
+- (void)setHidden:(BOOL)arg1 animated:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 - (void)setItem:(id)arg1;
 - (void)setPlaybackErrorDescription:(id)arg1;
 - (void)setPlayer:(id)arg1;

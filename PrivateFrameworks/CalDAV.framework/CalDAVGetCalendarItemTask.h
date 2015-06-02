@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@interface CalDAVGetCalendarItemTask : CoreDAVGetTask {
-}
+@interface CalDAVGetCalendarItemTask : CoreDAVGetTask
 
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 

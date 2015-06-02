@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSData;
-
 @interface NSSubrangeData : NSData {
     NSData *_data;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
     } _range;
-    unsigned int _reserved : 3;
-    unsigned int _retainCount : 29;
+    unsigned int _reserved;
+    unsigned int _retainCount;
 }
 
 - (BOOL)_isCompact;

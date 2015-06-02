@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKAppMenuBarDocumentDelegate>, IKAppContext, IKJSMenuBarDocument, IKViewElement, NSMutableDictionary, NSString;
-
 @interface IKAppMenuBarDocument : NSObject <IKDOMFeature, IKJSMenuBarDocumentAppBridge> {
     IKAppContext *_appContext;
     <IKAppMenuBarDocumentDelegate> *_delegate;
@@ -14,13 +12,13 @@
     IKViewElement *_menuBarElement;
 }
 
-@property IKAppContext * appContext;
-@property(copy,readonly) NSString * debugDescription;
-@property <IKAppMenuBarDocumentDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain,readonly) NSString * featureName;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property IKAppContext *appContext;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <IKAppMenuBarDocumentDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) NSString *featureName;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)appContext;

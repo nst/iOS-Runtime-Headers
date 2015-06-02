@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, NSString, TNTheme, TNUIState, TSKTreeNode, TSSStylesheet;
-
 @interface TNDocumentRoot : TSADocumentRoot <TSTResolverContainerNameProvider> {
     struct CGSize { 
         float width; 
@@ -21,22 +19,22 @@
     TNUIState *mUIState;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct CGSize { float x1; float x2; } pageSize;
-@property(copy) NSString * paperID;
-@property(copy) NSString * printerID;
-@property(getter=isPrintingAllSheets) BOOL printingAllSheets;
-@property BOOL removedAllQuickCalcFunctions;
-@property(copy) NSArray * selectedQuickCalcFunctions;
-@property(readonly) NSArray * sheets;
-@property(retain,readonly) TSKTreeNode * sidebarOrder;
-@property(readonly) TSSStylesheet * stylesheet;
-@property(readonly) Class superclass;
-@property(readonly) unsigned int tableCount;
-@property(retain) TNTheme * theme;
-@property(retain) TNUIState * uiState;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGSize { float x1; float x2; } pageSize;
+@property (nonatomic, copy) NSString *paperID;
+@property (nonatomic, copy) NSString *printerID;
+@property (getter=isPrintingAllSheets, nonatomic) BOOL printingAllSheets;
+@property (nonatomic) BOOL removedAllQuickCalcFunctions;
+@property (nonatomic, copy) NSArray *selectedQuickCalcFunctions;
+@property (nonatomic, readonly) NSArray *sheets;
+@property (nonatomic, readonly, retain) TSKTreeNode *sidebarOrder;
+@property (nonatomic, readonly) TSSStylesheet *stylesheet;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int tableCount;
+@property (nonatomic, retain) TNTheme *theme;
+@property (nonatomic, retain) TNUIState *uiState;
 
 + (struct CGSize { float x1; float x2; })previewImageMaxSizeForType:(unsigned int)arg1;
 + (struct CGSize { float x1; float x2; })previewImageSizeForType:(unsigned int)arg1;

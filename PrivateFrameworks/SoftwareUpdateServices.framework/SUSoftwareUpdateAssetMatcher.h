@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class NSString, SUPreferences;
-
 @interface SUSoftwareUpdateAssetMatcher : SUAssetStateMatcher {
     BOOL _checkTatsu;
     NSString *_fromBuild;
@@ -13,12 +11,12 @@
     SUPreferences *_preferences;
 }
 
-@property BOOL compareWithTatsuForEligibility;
-@property(readonly) NSString * fromBuild;
-@property(readonly) NSString * fromProductType;
-@property(readonly) NSString * fromReleaseType;
-@property(readonly) NSString * fromVersion;
-@property(retain) SUPreferences * preferences;
+@property (nonatomic) BOOL compareWithTatsuForEligibility;
+@property (nonatomic, readonly) NSString *fromBuild;
+@property (nonatomic, readonly) NSString *fromProductType;
+@property (nonatomic, readonly) NSString *fromReleaseType;
+@property (nonatomic, readonly) NSString *fromVersion;
+@property (nonatomic, retain) SUPreferences *preferences;
 
 + (id)matcherForCurrentDevice;
 + (id)matcherForCurrentDeviceWithInterestedStates:(int)arg1;

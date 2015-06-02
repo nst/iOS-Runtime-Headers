@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccessExpress.framework/DataAccessExpress
  */
 
-@class NSDate, NSNumber, NSString;
-
 @interface DAStatusReport : NSObject {
     NSString *_accountType;
     NSNumber *_averageHBI;
@@ -23,22 +21,22 @@
     NSNumber *_uploadedElements;
 }
 
-@property(retain) NSString * accountType;
-@property(retain) NSNumber * averageHBI;
-@property(retain) NSDate * creationDate;
-@property(retain) NSString * displayName;
-@property(retain) NSNumber * downloadedElements;
-@property(retain) NSNumber * failedNetworkRequests;
-@property(retain) NSNumber * failedProtocolRequests;
-@property(retain) NSNumber * falseMoreAvailableCount;
-@property int numHBIDataPoints;
-@property(retain) NSString * persistentUUID;
-@property(retain) NSString * protocolVersion;
-@property(retain) NSNumber * successfulRequests;
-@property BOOL syncingAllowed;
-@property(retain) NSNumber * timeInNetworking;
-@property(retain) NSNumber * timeSpan;
-@property(retain) NSNumber * uploadedElements;
+@property (nonatomic, retain) NSString *accountType;
+@property (nonatomic, retain) NSNumber *averageHBI;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSNumber *downloadedElements;
+@property (nonatomic, retain) NSNumber *failedNetworkRequests;
+@property (nonatomic, retain) NSNumber *failedProtocolRequests;
+@property (nonatomic, retain) NSNumber *falseMoreAvailableCount;
+@property (nonatomic) int numHBIDataPoints;
+@property (nonatomic, retain) NSString *persistentUUID;
+@property (nonatomic, retain) NSString *protocolVersion;
+@property (nonatomic, retain) NSNumber *successfulRequests;
+@property (nonatomic) BOOL syncingAllowed;
+@property (nonatomic, retain) NSNumber *timeInNetworking;
+@property (nonatomic, retain) NSNumber *timeSpan;
+@property (nonatomic, retain) NSNumber *uploadedElements;
 
 - (void).cxx_destruct;
 - (id)accountType;

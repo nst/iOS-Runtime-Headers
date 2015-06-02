@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-@class <GKVoiceChatSessionDelegate>, NSArray, NSString;
-
 @interface GKVoiceChatSession : NSObject {
     id opaqueSession;
 }
 
-@property(getter=isActiveSession) BOOL activeSession;
-@property <GKVoiceChatSessionDelegate> * delegate;
-@property(readonly) float inputMeter;
-@property(readonly) NSArray * peerList;
-@property(readonly) NSString * sessionName;
+@property (getter=isActiveSession) BOOL activeSession;
+@property <GKVoiceChatSessionDelegate> *delegate;
+@property (readonly) float inputMeter;
+@property (readonly) NSArray *peerList;
+@property (readonly) NSString *sessionName;
 @property float sessionVolume;
 
 - (void)dealloc;

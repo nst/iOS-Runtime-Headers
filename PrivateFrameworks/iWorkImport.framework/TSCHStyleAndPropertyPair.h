@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSSStyle;
-
 @interface TSCHStyleAndPropertyPair : NSObject <NSCopying> {
     int mProperty;
     TSSStyle *mStyle;

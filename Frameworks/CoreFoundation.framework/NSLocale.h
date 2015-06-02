@@ -2,77 +2,107 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSLocale : NSObject <NSCopying, NSSecureCoding> {
-}
+@interface NSLocale : NSObject <NSCopying, NSSecureCoding>
+
+// Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
 
 + (id)ISOCountryCodes;
 + (id)ISOCurrencyCodes;
 + (id)ISOLanguageCodes;
-+ (id)__ck_currentLocale;
-+ (void)__ck_setTestLocale:(id)arg1;
-+ (id)_localeOverridesForLocaleWithIdentifier:(id)arg1;
-+ (void)_mapkit_overrideDistanceUnit:(int)arg1;
-+ (void)_mapkit_overrideGuidanceUnit:(int)arg1;
-+ (int)_vk_indexForLocale:(id)arg1;
-+ (id)addLikelySubtagsForLocaleIdentifier:(id)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
-+ (id)autoupdatingCurrentLocale;
 + (id)availableLocaleIdentifiers;
-+ (id)canonicalLanguageAndScriptCodeIdentifierForIdentifier:(id)arg1;
 + (id)canonicalLanguageIdentifierFromString:(id)arg1;
-+ (id)canonicalLocaleIdentifier:(id)arg1 withNewLanguageIdentifier:(id)arg2;
-+ (id)canonicalLocaleIdentifierFromComponents:(id)arg1;
 + (id)canonicalLocaleIdentifierFromString:(id)arg1;
 + (unsigned int)characterDirectionForLanguage:(id)arg1;
 + (id)commonISOCurrencyCodes;
 + (id)componentsFromLocaleIdentifier:(id)arg1;
-+ (id)currentDeviceLanguageForFacebook;
 + (id)currentLocale;
-+ (id)deviceLanguageIdentifier;
-+ (id)deviceLanguageLocale;
-+ (id)firstPreferredLanguage;
 + (id)internetServicesRegion;
 + (unsigned int)lineDirectionForLanguage:(id)arg1;
-+ (id)localeForBundleLanguage:(id)arg1;
 + (id)localeIdentifierFromComponents:(id)arg1;
 + (id)localeIdentifierFromWindowsLocaleCode:(unsigned int)arg1;
 + (id)localeWithLocaleIdentifier:(id)arg1;
-+ (id)mostPreferredLanguageOf:(id)arg1 forUsage:(unsigned int)arg2 options:(unsigned int)arg3;
-+ (id)mostPreferredLanguageOf:(id)arg1 withPreferredLanguages:(id)arg2 forUsage:(unsigned int)arg3 options:(unsigned int)arg4;
 + (id)preferredLanguages;
-+ (unsigned int)pu_currentCharacterDirection;
-+ (void)registerPreferredLanguage:(id)arg1 usage:(unsigned int)arg2 confidence:(float)arg3;
-+ (void)setPreferredLanguages:(id)arg1;
-+ (id)string:(id)arg1 withCapitalizedDisplayNamesForFirstLanguageIdentifier:(id)arg2 secondLanguageIdentifier:(id)arg3 thirdLanguageIdentifier:(id)arg4;
-+ (id)supportedCJLanguageIdentifiers;
 + (BOOL)supportsSecureCoding;
-+ (id)systemLanguages;
 + (id)systemLocale;
 + (unsigned int)windowsLocaleCodeFromLocaleIdentifier:(id)arg1;
 
 - (unsigned long)_cfTypeID;
 - (id)_copyDisplayNameForKey:(id)arg1 value:(id)arg2;
-- (BOOL)_mapkit_distanceUsesMetricSystem;
-- (BOOL)_mapkit_guidanceUsesMetricSystem;
-- (id)_mapkit_objectForKey:(id)arg1;
-- (BOOL)_mapkit_useYardsForShortDistances;
 - (unsigned char)_nullLocale;
 - (id)_prefs;
 - (void)_setNullLocale;
-- (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)debugDescription;
 - (id)displayNameForKey:(id)arg1 value:(id)arg2;
-- (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithCoder:(id)arg1;
 - (id)initWithLocaleIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)localeIdentifier;
 - (id)objectForKey:(id)arg1;
+
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
++ (id)autoupdatingCurrentLocale;
++ (id)mostPreferredLanguageOf:(id)arg1 forUsage:(unsigned int)arg2 options:(unsigned int)arg3;
++ (id)mostPreferredLanguageOf:(id)arg1 withPreferredLanguages:(id)arg2 forUsage:(unsigned int)arg3 options:(unsigned int)arg4;
++ (void)registerPreferredLanguage:(id)arg1 usage:(unsigned int)arg2 confidence:(float)arg3;
++ (void)setPreferredLanguages:(id)arg1;
++ (id)systemLanguages;
+
+- (Class)classForCoder;
+- (id)debugDescription;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
++ (id)_localeOverridesForLocaleWithIdentifier:(id)arg1;
++ (void)_mapkit_overrideDistanceUnit:(int)arg1;
++ (void)_mapkit_overrideGuidanceUnit:(int)arg1;
+
+- (BOOL)_mapkit_distanceUsesMetricSystem;
+- (BOOL)_mapkit_guidanceUsesMetricSystem;
+- (id)_mapkit_objectForKey:(id)arg1;
+- (BOOL)_mapkit_useYardsForShortDistances;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (unsigned int)pu_currentCharacterDirection;
+
+// Image: /System/Library/Frameworks/Social.framework/Social
+
++ (id)currentDeviceLanguageForFacebook;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
++ (id)__ck_currentLocale;
++ (void)__ck_setTestLocale:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IntlPreferences.framework/IntlPreferences
+
++ (id)addLikelySubtagsForLocaleIdentifier:(id)arg1;
++ (id)canonicalLanguageAndScriptCodeIdentifierForIdentifier:(id)arg1;
++ (id)canonicalLocaleIdentifier:(id)arg1 withNewLanguageIdentifier:(id)arg2;
++ (id)canonicalLocaleIdentifierFromComponents:(id)arg1;
++ (id)deviceLanguageIdentifier;
++ (id)deviceLanguageLocale;
++ (id)string:(id)arg1 withCapitalizedDisplayNamesForFirstLanguageIdentifier:(id)arg2 secondLanguageIdentifier:(id)arg3 thirdLanguageIdentifier:(id)arg4;
++ (id)supportedCJLanguageIdentifiers;
+
+// Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
+
++ (id)localeForBundleLanguage:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
+
++ (int)_vk_indexForLocale:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
++ (id)firstPreferredLanguage;
 
 @end

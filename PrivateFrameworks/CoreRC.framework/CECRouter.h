@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@class CECInterface, NSDictionary, NSMutableSet, NSString;
-
 @interface CECRouter : NSObject <CECInterfaceDelegate> {
     NSMutableSet *_interfaces;
     NSDictionary *_properties;
     CECInterface *_sinkInterface;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)routerWithSinkInterface:(id)arg1;
 

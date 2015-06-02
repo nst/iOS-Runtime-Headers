@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKBubbleSet, NSString;
-
 @interface GKBubbleFlowAnimator : NSObject <UINavigationControllerDelegate, UITabBarControllerDelegate> {
     GKBubbleSet *_mostRecentOverlayBubbleSet;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) GKBubbleSet * mostRecentOverlayBubbleSet;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) GKBubbleSet *mostRecentOverlayBubbleSet;
+@property (readonly) Class superclass;
 
 + (id)sharedAnimator;
 
@@ -27,7 +25,7 @@
 - (void)_addKeyframesForSubviewsToFadeInForTransitionWithInfo:(id)arg1;
 - (void)_addKeyframesForSubviewsToFadeOutForTransitionWithInfo:(id)arg1;
 - (void)_addKeyframesForViewCrossfadeForTransitionWithInfo:(id)arg1;
-- (void)_animateBubblesTransitionWithInfo:(id)arg1 completion:(id)arg2;
+- (void)_animateBubblesTransitionWithInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)_cleanupSubviewsWeFadedOutForTransitionWithInfo:(id)arg1;
 - (void)_finalPreparationsBeforeBeginningTransitionWithInfo:(id)arg1;
 - (void)_finishTransitionWithInfo:(id)arg1;
@@ -42,9 +40,9 @@
 - (void)_syncBubbleVisibilityWithInfo:(id)arg1;
 - (id)_transitionInfoForBubbleFlowInvalidationOfViewController:(id)arg1;
 - (id)_transitionInfoForBubbleFlowSimpleUpdateOfViewController:(id)arg1;
-- (void)animateBubblesFromViewController:(id)arg1 toViewController:(id)arg2 completion:(id)arg3;
+- (void)animateBubblesFromViewController:(id)arg1 toViewController:(id)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;
-- (void)invalidateBubblePositionsForViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)invalidateBubblePositionsForViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id)mostRecentOverlayBubbleSet;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;

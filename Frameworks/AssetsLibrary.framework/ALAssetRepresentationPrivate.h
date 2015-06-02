@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsLibrary, NSString, PLManagedAsset, PLPhotoLibrary, PLSidecarFile;
-
 @interface ALAssetRepresentationPrivate : NSObject <ALAssetsLibraryAsset> {
     NSString *_extension;
     BOOL _isValid;
@@ -13,16 +11,16 @@
     PLSidecarFile *_sidecar;
 }
 
-@property(retain) PLPhotoLibrary * _photoLibrary;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * extension;
-@property(readonly) unsigned int hash;
-@property BOOL isValid;
-@property ALAssetsLibrary * library;
-@property(retain) PLManagedAsset * photo;
-@property(retain) PLSidecarFile * sidecar;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) PLPhotoLibrary *_photoLibrary;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *extension;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isValid;
+@property (nonatomic) ALAssetsLibrary *library;
+@property (nonatomic, retain) PLManagedAsset *photo;
+@property (nonatomic, retain) PLSidecarFile *sidecar;
+@property (readonly) Class superclass;
 
 + (void)_clearFileDescriptorQueue;
 + (int)_fileDescriptorForPersistentURL:(id)arg1;
@@ -31,7 +29,7 @@
 
 - (BOOL)_isImage;
 - (BOOL)_isVideo;
-- (void)_performBlockAndWait:(id)arg1;
+- (void)_performBlockAndWait:(id /* block */)arg1;
 - (id)_photoLibrary;
 - (void)dealloc;
 - (id)extension;

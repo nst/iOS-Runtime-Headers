@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSArray, NSCache, NSObject<OS_dispatch_queue>, NSSet, PHPhotoLibrary;
-
 @interface PHBatchFetchingArray : NSArray {
     unsigned int _batchSize;
     NSCache *_cache;
@@ -17,9 +15,9 @@
     unsigned int _propertyHint;
 }
 
-@property(readonly) NSArray * oids;
-@property(readonly) NSSet * oidsSet;
-@property(readonly) PHPhotoLibrary * photoLibrary;
+@property (readonly) NSArray *oids;
+@property (readonly) NSSet *oidsSet;
+@property (readonly) PHPhotoLibrary *photoLibrary;
 
 + (BOOL)accessInstanceVariablesDirectly;
 
@@ -30,7 +28,7 @@
 - (unsigned int)batchSize;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
-- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long *x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
+- (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (id)description;
 - (void)getObjects:(id*)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (unsigned int)indexOfObject:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSAttributedString, NSString, UIColor, UILabel;
-
 @interface MFRecipientTableViewCellTitleView : UIView <MFTinting> {
     NSAttributedString *_deselectedAttributedString;
     BOOL _highlighted;
@@ -12,13 +10,13 @@
     UILabel *_titleLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL highlighted;
-@property BOOL shouldDim;
-@property(readonly) Class superclass;
-@property(readonly) UILabel * titleLabel;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL highlighted;
+@property (nonatomic) BOOL shouldDim;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UILabel *titleLabel;
 
 + (id)defaultStringAttributes;
 + (float)height;

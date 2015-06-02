@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class NSString;
-
 @interface HAPMetadataTuple : NSObject {
     NSString *_characteristicName;
     NSString *_serviceName;
 }
 
-@property(readonly) NSString * characteristicName;
-@property(readonly) NSString * serviceName;
+@property (nonatomic, readonly) NSString *characteristicName;
+@property (nonatomic, readonly) NSString *serviceName;
 
 - (void).cxx_destruct;
 - (id)characteristicName;

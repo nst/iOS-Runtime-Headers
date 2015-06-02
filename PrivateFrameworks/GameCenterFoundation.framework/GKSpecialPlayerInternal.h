@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKSpecialPlayerInternal : GKPlayerInternal {
-}
+@interface GKSpecialPlayerInternal : GKPlayerInternal
 
 - (id)alias;
 - (id)compositeName;

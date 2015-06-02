@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPPage, NSMutableArray;
-
 @interface CPHitTest : NSObject {
     float mapTemp;
     NSMutableArray *objectsOnPage;

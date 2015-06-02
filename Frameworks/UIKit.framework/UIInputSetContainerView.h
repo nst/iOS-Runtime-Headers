@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIKBRenderConfig;
-
 @interface UIInputSetContainerView : UIInputSetHostView {
     BOOL _disableGeometryObserverNotifications;
     UIKBRenderConfig *_renderConfig;
@@ -20,7 +18,7 @@
 - (void)_setRenderConfig:(id)arg1;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)performWithoutGeometryObserverNotifications:(id)arg1;
+- (void)performWithoutGeometryObserverNotifications:(id /* block */)arg1;
 - (int)textEffectsVisibilityLevel;
 
 @end

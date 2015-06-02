@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLTransaction : NSObject {
-}
+@interface CPLTransaction : NSObject
 
 + (void)beginTransactionWithReason:(id)arg1 keepPower:(BOOL)arg2;
 + (void)endTransactionWithReason:(id)arg1;

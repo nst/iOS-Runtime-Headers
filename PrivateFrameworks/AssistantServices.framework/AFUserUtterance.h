@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSArray, NSDictionary, NSMutableArray, NSString;
-
 @interface AFUserUtterance : NSObject {
     NSDictionary *_correctionIdentifier;
     NSMutableArray *_phrases;
@@ -11,8 +9,8 @@
     NSMutableArray *_tokens;
 }
 
-@property(readonly) NSDictionary * correctionIdentifier;
-@property(readonly) NSArray * dictationResult;
+@property (nonatomic, readonly) NSDictionary *correctionIdentifier;
+@property (nonatomic, readonly) NSArray *dictationResult;
 
 - (void).cxx_destruct;
 - (id)bestTextInterpretation;

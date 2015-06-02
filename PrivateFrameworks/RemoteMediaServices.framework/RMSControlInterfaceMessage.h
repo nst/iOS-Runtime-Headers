@@ -13,12 +13,12 @@
     BOOL _supportsVolumeControl;
 }
 
-@property BOOL hasSupportsDirectionalControl;
-@property BOOL hasSupportsSpeakerSelection;
-@property BOOL hasSupportsVolumeControl;
-@property BOOL supportsDirectionalControl;
-@property BOOL supportsSpeakerSelection;
-@property BOOL supportsVolumeControl;
+@property (nonatomic) BOOL hasSupportsDirectionalControl;
+@property (nonatomic) BOOL hasSupportsSpeakerSelection;
+@property (nonatomic) BOOL hasSupportsVolumeControl;
+@property (nonatomic) BOOL supportsDirectionalControl;
+@property (nonatomic) BOOL supportsSpeakerSelection;
+@property (nonatomic) BOOL supportsVolumeControl;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class CIImage, NSMutableArray, UIImage;
-
 @interface BLRetouchRedEyeLayer : BLRetouchLayer {
     CIImage *_ciSourceImage;
     NSMutableArray *_eyePoints;
@@ -11,9 +9,9 @@
     UIImage *_repairedImage;
 }
 
-@property(copy) NSMutableArray * eyePoints;
-@property(retain) UIImage * repairSourceImage;
-@property(retain) UIImage * repairedImage;
+@property (nonatomic, copy) NSMutableArray *eyePoints;
+@property (nonatomic, retain) UIImage *repairSourceImage;
+@property (nonatomic, retain) UIImage *repairedImage;
 
 + (id)addAutoRedEyeCorrection:(id)arg1 toLayerData:(id)arg2 maskSize:(struct CGSize { float x1; float x2; })arg3 newTimestampIncrement:(double*)arg4;
 + (int)indexOfPointNear:(struct CGPoint { float x1; float x2; })arg1 inEyePoints:(id)arg2 andMaskSize:(struct CGSize { float x1; float x2; })arg3;

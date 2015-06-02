@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ECUtils : NSObject {
-}
+@interface ECUtils : NSObject
 
 + (id)dateFromXlDateTimeNumber:(double)arg1 edWorkbook:(id)arg2;
 + (double)dateTimeNumberFromNSDate:(id)arg1 edWorkbook:(id)arg2;

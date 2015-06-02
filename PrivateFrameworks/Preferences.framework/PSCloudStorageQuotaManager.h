@@ -2,11 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSCloudStorageQuotaManager : NSObject {
-}
+@interface PSCloudStorageQuotaManager : NSObject
 
 + (id)sharedManager;
 
-- (void)getQuotaInfoForPrimaryAccountCompletion:(id)arg1;
+- (void)getQuotaInfoForPrimaryAccountCompletion:(id /* block */)arg1;
 
 @end

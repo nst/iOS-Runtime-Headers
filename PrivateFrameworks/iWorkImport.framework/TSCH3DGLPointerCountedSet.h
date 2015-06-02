@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUPointerKeyDictionary;
-
 @interface TSCH3DGLPointerCountedSet : NSObject {
     unsigned int mByteCount;
     unsigned int mCount;
     TSUPointerKeyDictionary *mSet;
 }
 
-@property(readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned int count;
 
 - (void)addObject:(id)arg1;
 - (unsigned int)count;

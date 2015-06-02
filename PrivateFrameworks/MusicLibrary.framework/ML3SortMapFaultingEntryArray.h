@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class ML3DatabaseConnection, NSMutableDictionary;
-
 @interface ML3SortMapFaultingEntryArray : NSMutableArray {
     ML3DatabaseConnection *_connection;
     NSMutableDictionary *_dirtyInserts;
@@ -12,7 +10,7 @@
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
 - (unsigned int)count;
-- (void)enumerateDirtyObjectsUsingBlock:(id)arg1;
+- (void)enumerateDirtyObjectsUsingBlock:(id /* block */)arg1;
 - (id)initWithConnection:(id)arg1;
 - (void)insertObject:(id)arg1 atIndex:(unsigned int)arg2;
 - (id)objectAtIndex:(unsigned int)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSString;
-
 @interface GKMacGameIconBrush : GKImageBrush <GKBrushIdentification> {
     struct CGSize { 
         float width; 
@@ -11,11 +9,11 @@
     } _outputSize;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct CGSize { float x1; float x2; } outputSize;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct CGSize { float x1; float x2; } outputSize;
+@property (readonly) Class superclass;
 
 - (struct CGSize { float x1; float x2; })outputSize;
 - (id)renderedImageIdentifier;

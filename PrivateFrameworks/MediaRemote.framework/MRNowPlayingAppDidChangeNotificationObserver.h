@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
  */
 
-@interface MRNowPlayingAppDidChangeNotificationObserver : MSVDistributedNotificationObserver {
-}
+@interface MRNowPlayingAppDidChangeNotificationObserver : MSVDistributedNotificationObserver
 
 + (id)observerWithQueue:(id)arg1;
 

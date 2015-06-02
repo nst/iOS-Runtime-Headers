@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TPFootnoteRep : TSWPRep {
-}
+@interface TPFootnoteRep : TSWPRep
 
 @end

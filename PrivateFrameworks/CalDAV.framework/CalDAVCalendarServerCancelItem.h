@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
  */
 
-@interface CalDAVCalendarServerCancelItem : CalDAVItemWithRecurrenceChildren {
-}
+@interface CalDAVCalendarServerCancelItem : CalDAVItemWithRecurrenceChildren
 
 - (id)init;
 

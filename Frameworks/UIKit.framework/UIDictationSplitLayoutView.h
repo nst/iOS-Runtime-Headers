@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDictationSplitLayoutView : UIDictationView {
-}
+@interface UIDictationSplitLayoutView : UIDictationView
 
 - (BOOL)drawsOwnBackground;
 - (void)finishReturnToKeyboard;

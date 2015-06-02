@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@class NSString, VMUSourceInfo;
-
 @interface VMUSymbol : NSObject {
     NSString *_name;
     VMUSourceInfo *_sourceInfo;

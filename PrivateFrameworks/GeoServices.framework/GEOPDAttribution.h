@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray, NSString;
-
 @interface GEOPDAttribution : PBCodable <NSCopying> {
     NSMutableArray *_attributionUrls;
     NSString *_externalComponentId;
@@ -11,13 +9,13 @@
     NSString *_vendorId;
 }
 
-@property(retain) NSMutableArray * attributionUrls;
-@property(retain) NSString * externalComponentId;
-@property(retain) NSString * externalItemId;
-@property(readonly) BOOL hasExternalComponentId;
-@property(readonly) BOOL hasExternalItemId;
-@property(readonly) BOOL hasVendorId;
-@property(retain) NSString * vendorId;
+@property (nonatomic, retain) NSMutableArray *attributionUrls;
+@property (nonatomic, retain) NSString *externalComponentId;
+@property (nonatomic, retain) NSString *externalItemId;
+@property (nonatomic, readonly) BOOL hasExternalComponentId;
+@property (nonatomic, readonly) BOOL hasExternalItemId;
+@property (nonatomic, readonly) BOOL hasVendorId;
+@property (nonatomic, retain) NSString *vendorId;
 
 + (id)attributionForPlaceDataEntity:(id)arg1;
 + (id)attributionForPlaceDataPhotos:(id)arg1;

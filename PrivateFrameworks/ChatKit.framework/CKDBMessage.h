@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class NSArray, NSAttributedString, NSDate, NSMutableArray, NSString;
-
 @interface CKDBMessage : NSObject {
     NSString *_address;
     NSDate *_date;
@@ -32,32 +30,32 @@
     NSString *_voicemailString;
 }
 
-@property(retain,readonly) NSString * address;
-@property(copy,readonly) NSString * attachmentText;
-@property(retain,readonly) NSDate * date;
-@property(retain,readonly) NSString * formattedAddress;
-@property(retain,readonly) NSString * groupID;
-@property(retain,readonly) NSString * guid;
-@property(readonly) BOOL hasAttachments;
-@property(readonly) BOOL hasBeenRead;
-@property int identifier;
-@property(readonly) BOOL isAudioMessage;
-@property(readonly) BOOL isMadrid;
-@property(readonly) BOOL isOutgoing;
-@property(readonly) BOOL isVisibleByDefault;
-@property(retain,readonly) NSString * madridAccountGUID;
-@property(retain,readonly) NSString * madridAccountLogin;
-@property(retain,readonly) NSAttributedString * madridAttributedBody;
-@property(readonly) NSString * madridChatGUID;
-@property(retain,readonly) NSString * madridChatIdentifier;
-@property(retain,readonly) NSString * madridRoomname;
-@property(retain,readonly) NSString * madridService;
-@property(readonly) long long madridType;
-@property(retain,readonly) NSArray * mediaObjects;
-@property(retain,readonly) NSString * plainBody;
-@property(copy,readonly) NSArray * recipients;
-@property(retain,readonly) NSString * subject;
-@property(retain,readonly) NSString * text;
+@property (nonatomic, readonly, retain) NSString *address;
+@property (nonatomic, readonly, copy) NSString *attachmentText;
+@property (nonatomic, readonly, retain) NSDate *date;
+@property (nonatomic, readonly, retain) NSString *formattedAddress;
+@property (nonatomic, readonly, retain) NSString *groupID;
+@property (nonatomic, readonly, retain) NSString *guid;
+@property (nonatomic, readonly) BOOL hasAttachments;
+@property (nonatomic, readonly) BOOL hasBeenRead;
+@property (nonatomic) int identifier;
+@property (nonatomic, readonly) BOOL isAudioMessage;
+@property (nonatomic, readonly) BOOL isMadrid;
+@property (nonatomic, readonly) BOOL isOutgoing;
+@property (nonatomic, readonly) BOOL isVisibleByDefault;
+@property (nonatomic, readonly, retain) NSString *madridAccountGUID;
+@property (nonatomic, readonly, retain) NSString *madridAccountLogin;
+@property (nonatomic, readonly, retain) NSAttributedString *madridAttributedBody;
+@property (nonatomic, readonly) NSString *madridChatGUID;
+@property (nonatomic, readonly, retain) NSString *madridChatIdentifier;
+@property (nonatomic, readonly, retain) NSString *madridRoomname;
+@property (nonatomic, readonly, retain) NSString *madridService;
+@property (nonatomic, readonly) long long madridType;
+@property (nonatomic, readonly, retain) NSArray *mediaObjects;
+@property (nonatomic, readonly, retain) NSString *plainBody;
+@property (nonatomic, readonly, copy) NSArray *recipients;
+@property (nonatomic, readonly, retain) NSString *subject;
+@property (nonatomic, readonly, retain) NSString *text;
 
 - (id)address;
 - (id)alertImage;

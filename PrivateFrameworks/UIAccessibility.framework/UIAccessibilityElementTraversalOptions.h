@@ -2,31 +2,23 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface UIAccessibilityElementTraversalOptions : NSObject {
     int _direction;
     BOOL _forSpeakScreen;
     BOOL _includeHiddenViews;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _leafNodePredicate;
-
+    id /* block */ _leafNodePredicate;
     BOOL _shouldOnlyIncludeElementsWithVisibleFrame;
     BOOL _shouldReturnScannerGroups;
     BOOL _shouldUseAllSubviews;
 }
 
-@property int direction;
-@property BOOL forSpeakScreen;
-@property BOOL includeHiddenViews;
-@property(copy) id leafNodePredicate;
-@property BOOL shouldOnlyIncludeElementsWithVisibleFrame;
-@property BOOL shouldReturnScannerGroups;
-@property BOOL shouldUseAllSubviews;
+@property (nonatomic) int direction;
+@property (nonatomic) BOOL forSpeakScreen;
+@property (nonatomic) BOOL includeHiddenViews;
+@property (nonatomic, copy) id /* block */ leafNodePredicate;
+@property (nonatomic) BOOL shouldOnlyIncludeElementsWithVisibleFrame;
+@property (nonatomic) BOOL shouldReturnScannerGroups;
+@property (nonatomic) BOOL shouldUseAllSubviews;
 
 + (id)defaultSpeakScreenOptions;
 + (id)defaultSwitchControlOptions;
@@ -39,11 +31,11 @@
 - (BOOL)forSpeakScreen;
 - (BOOL)includeHiddenViews;
 - (id)init;
-- (id)leafNodePredicate;
+- (id /* block */)leafNodePredicate;
 - (void)setDirection:(int)arg1;
 - (void)setForSpeakScreen:(BOOL)arg1;
 - (void)setIncludeHiddenViews:(BOOL)arg1;
-- (void)setLeafNodePredicate:(id)arg1;
+- (void)setLeafNodePredicate:(id /* block */)arg1;
 - (void)setShouldOnlyIncludeElementsWithVisibleFrame:(BOOL)arg1;
 - (void)setShouldReturnScannerGroups:(BOOL)arg1;
 - (void)setShouldUseAllSubviews:(BOOL)arg1;

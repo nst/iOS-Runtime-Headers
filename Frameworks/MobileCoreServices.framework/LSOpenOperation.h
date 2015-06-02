@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@class NSDictionary, NSString, NSURL;
-
 @interface LSOpenOperation : NSOperation {
     NSString *_applicationIdentifier;
     id _delegate;

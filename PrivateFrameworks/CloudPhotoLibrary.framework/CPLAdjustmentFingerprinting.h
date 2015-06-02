@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class CPLAdjustments, CPLResource;
-
 @interface CPLAdjustmentFingerprinting : NSObject {
     CPLResource *_baseImage;
     BOOL _hasAutoEnhance;
@@ -15,14 +13,14 @@
     CPLResource *_secondaryAdjustmentData;
 }
 
-@property(retain) CPLResource * baseImage;
-@property BOOL hasAutoEnhance;
-@property BOOL hasOtherAdjustments;
-@property BOOL hasRedEye;
-@property BOOL hasSimpleLightenDarken;
-@property(retain) CPLResource * largeAdjustmentData;
-@property(retain) CPLAdjustments * otherAdjustments;
-@property(retain) CPLResource * secondaryAdjustmentData;
+@property (nonatomic, retain) CPLResource *baseImage;
+@property (nonatomic) BOOL hasAutoEnhance;
+@property (nonatomic) BOOL hasOtherAdjustments;
+@property (nonatomic) BOOL hasRedEye;
+@property (nonatomic) BOOL hasSimpleLightenDarken;
+@property (nonatomic, retain) CPLResource *largeAdjustmentData;
+@property (nonatomic, retain) CPLAdjustments *otherAdjustments;
+@property (nonatomic, retain) CPLResource *secondaryAdjustmentData;
 
 - (void).cxx_destruct;
 - (id)baseImage;

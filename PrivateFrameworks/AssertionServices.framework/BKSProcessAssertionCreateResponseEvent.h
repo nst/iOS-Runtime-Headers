@@ -6,7 +6,7 @@
     BOOL _success;
 }
 
-@property BOOL success;
+@property (nonatomic) BOOL success;
 
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;

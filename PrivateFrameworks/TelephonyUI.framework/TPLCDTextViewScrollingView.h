@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPLCDTextView;
-
 @interface TPLCDTextViewScrollingView : UIView {
     TPLCDTextView *_owner;
 }

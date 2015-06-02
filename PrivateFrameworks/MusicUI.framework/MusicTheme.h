@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicTheme : MPUTheme {
-}
+@interface MusicTheme : MPUTheme
 
 + (id)addAccessoryImage;
 + (id)addPlaylistImage;

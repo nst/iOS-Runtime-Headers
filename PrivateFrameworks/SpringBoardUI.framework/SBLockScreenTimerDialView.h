@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class NSString, _UILegibilityView;
-
 @interface SBLockScreenTimerDialView : UIView <SBLegibility> {
     _UILegibilityView *_dialView;
     float _strength;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property float strength;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float strength;
+@property (readonly) Class superclass;
 
 - (id)_imageNameForCurrentContentSize:(id)arg1;
 - (id)_newDialViewForSettings:(id)arg1;

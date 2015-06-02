@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLCloudPhotoLibraryError : NSObject {
-}
+@interface PLCloudPhotoLibraryError : NSObject
 
 + (id)createErrorWithType:(int)arg1;
 + (id)createErrorWithType:(int)arg1 withDebugMessage:(id)arg2;

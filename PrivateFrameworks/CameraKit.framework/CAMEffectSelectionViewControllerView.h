@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class UICollectionView;
-
 @interface CAMEffectSelectionViewControllerView : UIView {
     UICollectionView *_collectionView;
 }
 
-@property(retain) UICollectionView * collectionView;
+@property (nonatomic, retain) UICollectionView *collectionView;
 
 - (void).cxx_destruct;
 - (id)collectionView;

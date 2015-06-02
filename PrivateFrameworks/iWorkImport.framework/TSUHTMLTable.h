@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableArray, NSMutableDictionary;
-
 @interface TSUHTMLTable : NSObject {
     NSMutableDictionary *_cellAttributes;
     NSMutableDictionary *_columnAttributes;
@@ -13,9 +11,9 @@
     NSMutableArray *_rows;
 }
 
-@property(readonly) unsigned int count;
-@property(readonly) unsigned int lastRowIndex;
-@property unsigned int rowClassStride;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned int lastRowIndex;
+@property (nonatomic) unsigned int rowClassStride;
 
 + (id)_attributesStringFromAttributes:(id)arg1;
 + (id)_keyForCell:(unsigned int)arg1 :(unsigned int)arg2;
@@ -26,7 +24,7 @@
 - (unsigned int)count;
 - (void)dealloc;
 - (void)deleteColumnWithTitle:(id)arg1;
-- (void)enumerateRowsUsingBlock:(id)arg1;
+- (void)enumerateRowsUsingBlock:(id /* block */)arg1;
 - (unsigned int)indexOfColumnWithTitle:(id)arg1;
 - (id)init;
 - (unsigned int)lastRowIndex;

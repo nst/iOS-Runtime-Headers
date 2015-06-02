@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class <NSObject><NSCopying><NSCoding>, NSObject<OS_dispatch_queue>, NSString, PFUbiquityContainerIdentifier, PFUbiquityLocation;
-
 @interface PFUbiquityContainerMonitor : NSObject {
     PFUbiquityContainerIdentifier *_containerIdentifier;
     int _containerState;
@@ -18,10 +16,10 @@
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
-@property(readonly) PFUbiquityContainerIdentifier * containerIdentifier;
-@property int containerState;
-@property(readonly) <NSObject><NSCopying><NSCoding> * currentIdentityToken;
-@property int monitorState;
+@property (nonatomic, readonly) PFUbiquityContainerIdentifier *containerIdentifier;
+@property (nonatomic) int containerState;
+@property (nonatomic, readonly) <NSObject><NSCopying><NSCoding> *currentIdentityToken;
+@property (nonatomic) int monitorState;
 
 - (void)_applicationResumed:(id)arg1;
 - (void)checkStoresAndContainer:(id)arg1;

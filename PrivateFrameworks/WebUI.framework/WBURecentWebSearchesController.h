@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString;
-
 @interface WBURecentWebSearchesController : WBSRecentWebSearchesController {
     NSString *_pathToLegacySearchesFile;
     NSString *_preferencesDomain;

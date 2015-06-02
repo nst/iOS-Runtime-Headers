@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class CPZone, NSMutableArray;
-
 @interface CPColumnMaker : NSObject {
     NSMutableArray *allParagraphs;
     NSMutableArray *columns;

@@ -2,15 +2,13 @@
    Image: /usr/lib/libmecabra.dylib
  */
 
-@class NSString;
-
 @interface MecabraFacemarkCandidate : NSObject {
     NSString *_category;
     NSString *_string;
 }
 
-@property(readonly) NSString * category;
-@property(readonly) NSString * string;
+@property (readonly) NSString *category;
+@property (readonly) NSString *string;
 
 + (id)copyFacemarkCandidatesForLocale:(id)arg1;
 

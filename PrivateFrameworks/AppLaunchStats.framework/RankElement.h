@@ -7,8 +7,8 @@
     unsigned long long timeIndex;
 }
 
-@property double score;
-@property unsigned long long timeIndex;
+@property (nonatomic) double score;
+@property (nonatomic) unsigned long long timeIndex;
 
 - (double)score;
 - (void)setScore:(double)arg1;

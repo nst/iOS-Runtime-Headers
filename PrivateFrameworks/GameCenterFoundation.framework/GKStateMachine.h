@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class <GKStateMachineDelegate>, NSDictionary, NSString;
-
 @interface GKStateMachine : NSObject {
     NSString *_currentState;
     <GKStateMachineDelegate> *_delegate;
@@ -12,10 +10,10 @@
     NSDictionary *_validTransitions;
 }
 
-@property(retain) NSString * currentState;
-@property <GKStateMachineDelegate> * delegate;
-@property BOOL shouldLogStateTransitions;
-@property(retain) NSDictionary * validTransitions;
+@property (retain) NSString *currentState;
+@property <GKStateMachineDelegate> *delegate;
+@property (nonatomic) BOOL shouldLogStateTransitions;
+@property (retain) NSDictionary *validTransitions;
 
 - (void)_performTransitionFromState:(id)arg1 toState:(id)arg2;
 - (BOOL)_setCurrentState:(id)arg1;

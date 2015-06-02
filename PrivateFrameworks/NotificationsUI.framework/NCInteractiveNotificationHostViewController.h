@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NotificationsUI.framework/NotificationsUI
  */
 
-@class <NCInteractiveNotificationHostDelegate>, NCViewServiceDescriptor, NSString;
-
 @interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHostDelegate, NCInteractiveNotificationHostInterface> {
     NCViewServiceDescriptor *_accessoryViewService;
     float _bottomOverhangHeight;
@@ -15,21 +13,21 @@
     BOOL _showsKeyboard;
 }
 
-@property(retain) NCViewServiceDescriptor * accessoryViewService;
-@property float bottomOverhangHeight;
-@property(copy,readonly) NSString * debugDescription;
-@property <NCInteractiveNotificationHostDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NCViewServiceDescriptor * inlayViewService;
-@property float maximumHeight;
-@property(getter=isModal) BOOL modal;
-@property BOOL showsKeyboard;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NCViewServiceDescriptor *accessoryViewService;
+@property (nonatomic) float bottomOverhangHeight;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <NCInteractiveNotificationHostDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NCViewServiceDescriptor *inlayViewService;
+@property (nonatomic) float maximumHeight;
+@property (getter=isModal, nonatomic) BOOL modal;
+@property (nonatomic) BOOL showsKeyboard;
+@property (readonly) Class superclass;
 
 + (id)exportedInterface;
 + (void)initialize;
-+ (void)requestInteractiveNotificationControllerWithName:(id)arg1 bundleIdentifier:(id)arg2 context:(id)arg3 completion:(id)arg4;
++ (void)requestInteractiveNotificationControllerWithName:(id)arg1 bundleIdentifier:(id)arg2 context:(id)arg3 completion:(id /* block */)arg4;
 + (id)serviceViewControllerInterface;
 
 - (void)_dismissWithContext:(id)arg1;
@@ -44,7 +42,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didChangeRevealPercent:(float)arg1;
-- (void)getActionContextWithCompletion:(id)arg1;
+- (void)getActionContextWithCompletion:(id /* block */)arg1;
 - (void)handleActionAtIndex:(int)arg1;
 - (void)handleActionIdentifier:(id)arg1;
 - (id)inlayViewService;

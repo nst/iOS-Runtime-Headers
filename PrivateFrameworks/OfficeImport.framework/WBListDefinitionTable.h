@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WBListDefinitionTable : NSObject {
-}
+@interface WBListDefinitionTable : NSObject
 
 + (void)readFrom:(id)arg1 listDefinitionTable:(id)arg2;
 

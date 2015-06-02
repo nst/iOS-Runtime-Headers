@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory10Key_Landscape : UIKBRenderFactory10Key_Portrait {
-}
+@interface UIKBRenderFactory10Key_Landscape : UIKBRenderFactory10Key_Portrait
 
 - (struct CGPoint { float x1; float x2; })abcKeyTextOffset;
 - (float)controlColumnWidthFactor;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface WBRevisionAuthorTable : NSObject {
-}
+@interface WBRevisionAuthorTable : NSObject
 
 + (void)readFrom:(id)arg1 revisionAuthorTable:(id)arg2;
 

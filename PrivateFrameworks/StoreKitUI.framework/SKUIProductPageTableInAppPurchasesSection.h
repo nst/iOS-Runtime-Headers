@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSNumberFormatter, SKUIClientContext, SKUIColorScheme, SKUIProductPageTableExpandableHeaderView;
-
 @interface SKUIProductPageTableInAppPurchasesSection : SKUIProductPageTableSection {
     SKUIClientContext *_clientContext;
     SKUIColorScheme *_colorScheme;
@@ -12,7 +10,7 @@
     NSNumberFormatter *_numberFormatter;
 }
 
-@property(retain) SKUIColorScheme * colorScheme;
+@property (nonatomic, retain) SKUIColorScheme *colorScheme;
 
 - (void).cxx_destruct;
 - (void)_reloadHeaderView;

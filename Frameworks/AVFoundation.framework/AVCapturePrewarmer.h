@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVCapturePrewarmer : NSObject {
-}
+@interface AVCapturePrewarmer : NSObject
 
 + (void)cancel;
 + (void)prewarm;

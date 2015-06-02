@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface FigVideoLayerInternal : NSObject {
     BOOL isPresentationLayer;
     NSObject<OS_dispatch_queue> *notificationSerialQueue;

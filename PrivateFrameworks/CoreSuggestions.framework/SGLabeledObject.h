@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSString;
-
 @interface SGLabeledObject : NSObject <SGObject> {
     NSString *_label;
 }
 
-@property(readonly) NSString * label;
+@property (nonatomic, readonly) NSString *label;
 
 + (BOOL)supportsSecureCoding;
 

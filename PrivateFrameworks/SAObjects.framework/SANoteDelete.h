@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSURL;
+@interface SANoteDelete : SADomainCommand
 
-@interface SANoteDelete : SADomainCommand {
-}
-
-@property(copy) NSURL * identifier;
+@property (nonatomic, copy) NSURL *identifier;
 
 + (id)delete;
 + (id)deleteWithDictionary:(id)arg1 context:(id)arg2;

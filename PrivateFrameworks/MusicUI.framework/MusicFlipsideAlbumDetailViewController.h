@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MPURatingControlDelegate>, NSIndexPath, NSString;
-
 @interface MusicFlipsideAlbumDetailViewController : MusicAlbumsDetailViewController <MPURatingControlDelegate, MusicFlipsideRating> {
     <MPURatingControlDelegate> *_ratingDelegate;
     NSIndexPath *_ratingItemIndexPath;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property <MPURatingControlDelegate> * ratingDelegate;
-@property BOOL showingRating;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <MPURatingControlDelegate> *ratingDelegate;
+@property (nonatomic) BOOL showingRating;
+@property (readonly) Class superclass;
 
 + (BOOL)_supportsSearch;
 + (BOOL)shouldPushNowPlayingOnSelection;

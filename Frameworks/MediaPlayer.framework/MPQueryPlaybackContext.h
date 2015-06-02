@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPMediaQuery, NSArray;
-
 @interface MPQueryPlaybackContext : MPPlaybackContext {
     NSArray *_prefixMediaItems;
     MPMediaQuery *_query;
@@ -11,10 +9,10 @@
     unsigned int _startIndex;
 }
 
-@property(copy) NSArray * prefixMediaItems;
-@property(readonly) MPMediaQuery * query;
-@property BOOL shouldRestartPlaybackIfQueueChanges;
-@property unsigned int startIndex;
+@property (nonatomic, copy) NSArray *prefixMediaItems;
+@property (nonatomic, readonly) MPMediaQuery *query;
+@property (nonatomic) BOOL shouldRestartPlaybackIfQueueChanges;
+@property (nonatomic) unsigned int startIndex;
 
 - (void).cxx_destruct;
 - (id)initWithQuery:(id)arg1;

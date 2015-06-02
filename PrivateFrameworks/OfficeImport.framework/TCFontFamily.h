@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSArray, NSDictionary;
-
 @interface TCFontFamily : NSObject {
     NSArray *_members;
     NSDictionary *_namesByLanguage;
 }
 
-@property(readonly) NSArray * members;
-@property(readonly) NSDictionary * namesByLanguage;
+@property (nonatomic, readonly) NSArray *members;
+@property (nonatomic, readonly) NSDictionary *namesByLanguage;
 
 - (id)bestMatchForStyling:(struct TCFontStyling { int x1; unsigned int x2; BOOL x3; BOOL x4; int x5; })arg1;
 - (void)dealloc;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIColorBlendMode : CIBlendModeFilter {
-}
+@interface CIColorBlendMode : CIBlendModeFilter
 
 + (id)_filter_display_name;
 + (id)_kernel;

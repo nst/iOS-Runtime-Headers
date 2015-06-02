@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UICollectionView, UIView;
-
 @interface SKUIIPhoneSearchView : UIView {
     UICollectionView *_collectionView;
     UIView *_noResultsView;
     UIView *_relatedView;
 }
 
-@property(retain) UICollectionView * collectionView;
-@property(retain) UIView * noResultsView;
-@property(retain) UIView * relatedView;
+@property (nonatomic, retain) UICollectionView *collectionView;
+@property (nonatomic, retain) UIView *noResultsView;
+@property (nonatomic, retain) UIView *relatedView;
 
 - (void).cxx_destruct;
 - (id)collectionView;

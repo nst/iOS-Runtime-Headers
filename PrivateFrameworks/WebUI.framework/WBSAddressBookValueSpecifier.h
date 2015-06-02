@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@class NSString;
-
 @interface WBSAddressBookValueSpecifier : NSObject {
     NSString *_component;
     NSString *_label;
     NSString *_property;
 }
 
-@property(readonly) NSString * component;
-@property(readonly) NSString * label;
-@property(readonly) NSString * property;
+@property (nonatomic, readonly) NSString *component;
+@property (nonatomic, readonly) NSString *label;
+@property (nonatomic, readonly) NSString *property;
 
 - (void).cxx_destruct;
 - (id)component;

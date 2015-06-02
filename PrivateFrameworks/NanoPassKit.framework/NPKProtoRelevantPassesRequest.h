@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSMutableArray;
-
 @interface NPKProtoRelevantPassesRequest : PBRequest <NSCopying> {
     NSMutableArray *_passRelevancyTuples;
 }
 
-@property(retain) NSMutableArray * passRelevancyTuples;
+@property (nonatomic, retain) NSMutableArray *passRelevancyTuples;
 
 - (void).cxx_destruct;
 - (void)addPassRelevancyTuples:(id)arg1;

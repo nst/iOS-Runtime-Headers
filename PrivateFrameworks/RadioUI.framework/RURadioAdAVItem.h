@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class NSString, RURadioAdTrack, RadioStation;
-
 @interface RURadioAdAVItem : MPAVAdItem {
     RURadioAdTrack *_adTrack;
     RadioStation *_station;
@@ -12,10 +10,10 @@
     NSString *_stationName;
 }
 
-@property(retain) RadioStation * station;
-@property(readonly) NSString * stationHash;
-@property(readonly) long long stationID;
-@property(readonly) NSString * stationName;
+@property (nonatomic, retain) RadioStation *station;
+@property (nonatomic, readonly) NSString *stationHash;
+@property (nonatomic, readonly) long long stationID;
+@property (nonatomic, readonly) NSString *stationName;
 
 - (void).cxx_destruct;
 - (void)_applyLoudnessInfo;

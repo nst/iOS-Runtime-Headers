@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTTableNameSelection : TSKSelection {
-}
+@interface TSTTableNameSelection : TSKSelection
 
 + (Class)archivedSelectionClass;
 + (id)tableNameSelection;

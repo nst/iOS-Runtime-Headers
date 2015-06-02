@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTObjectSerializer : NSObject {
-}
+@interface BLTObjectSerializer : NSObject
 
 + (id)serializeObject:(id)arg1 error:(id*)arg2;
 + (id)unserializeObject:(id)arg1 error:(id*)arg2;

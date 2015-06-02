@@ -2,20 +2,17 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSData, NSDate, NSDictionary, NSString;
+@interface RadioMutablePlayEvent : RadioPlayEvent
 
-@interface RadioMutablePlayEvent : RadioPlayEvent {
-}
-
-@property(retain) NSDate * datePlayed;
-@property int endReason;
-@property double endTimeInTrack;
-@property(copy) NSString * externalIdentifier;
-@property double startTimeInTrack;
-@property long long storeID;
-@property(copy) NSData * timedMetadata;
-@property(copy) NSDictionary * trackInfo;
-@property int type;
+@property (nonatomic, retain) NSDate *datePlayed;
+@property (nonatomic) int endReason;
+@property (nonatomic) double endTimeInTrack;
+@property (nonatomic, copy) NSString *externalIdentifier;
+@property (nonatomic) double startTimeInTrack;
+@property (nonatomic) long long storeID;
+@property (nonatomic, copy) NSData *timedMetadata;
+@property (nonatomic, copy) NSDictionary *trackInfo;
+@property (nonatomic) int type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setDatePlayed:(id)arg1;

@@ -12,13 +12,13 @@
     double ratioOnSuccess;
 }
 
-@property double inactivityKickbackDelay;
-@property double inactivityKickbackRatio;
-@property double maxWait;
-@property double minWait;
-@property double ratioOnFailure;
-@property double ratioOnQuotaErrorClear;
-@property double ratioOnSuccess;
+@property (nonatomic) double inactivityKickbackDelay;
+@property (nonatomic) double inactivityKickbackRatio;
+@property (nonatomic) double maxWait;
+@property (nonatomic) double minWait;
+@property (nonatomic) double ratioOnFailure;
+@property (nonatomic) double ratioOnQuotaErrorClear;
+@property (nonatomic) double ratioOnSuccess;
 
 - (BOOL)check;
 - (double)doubleForKey:(id)arg1 inParams:(id)arg2 defaults:(id)arg3;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSBundle, NSDictionary, NSMutableDictionary, NSString;
-
 @interface UIStoryboard : NSObject {
     NSBundle *bundle;
     NSString *designatedEntryPointIdentifier;
@@ -12,12 +10,12 @@
     NSString *storyboardFileName;
 }
 
-@property(readonly) NSBundle * bundle;
-@property(readonly) NSString * designatedEntryPointIdentifier;
-@property(readonly) NSDictionary * identifierToNibNameMap;
-@property(readonly) NSMutableDictionary * identifierToUINibMap;
-@property(readonly) NSString * name;
-@property(readonly) NSString * storyboardFileName;
+@property (nonatomic, readonly) NSBundle *bundle;
+@property (nonatomic, readonly) NSString *designatedEntryPointIdentifier;
+@property (nonatomic, readonly) NSDictionary *identifierToNibNameMap;
+@property (nonatomic, readonly) NSMutableDictionary *identifierToUINibMap;
+@property (readonly) NSString *name;
+@property (nonatomic, readonly) NSString *storyboardFileName;
 
 + (id)storyboardWithName:(id)arg1 bundle:(id)arg2;
 

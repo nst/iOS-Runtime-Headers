@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSArray;
-
 @interface CPLItemChange : CPLRecordChange <NSCopying, NSSecureCoding> {
     NSArray *_containerRelations;
 }
 
-@property(copy) NSArray * containerRelations;
+@property (nonatomic, copy) NSArray *containerRelations;
 
 + (BOOL)cplShouldIgnorePropertyForCoding:(id)arg1;
 

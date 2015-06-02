@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKGame, GKGameCenterViewController, NSString;
-
 @interface GKRemoteGameCenterViewController : GKActivityProxyRemoteViewController <GameCenterUIServiceViewControllerDelegate> {
     GKGameCenterViewController *_delegateWeak;
     NSString *_leaderboardIdentifier;
@@ -12,16 +10,16 @@
     int _viewState;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property GKGameCenterViewController * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) GKGame * game;
-@property(readonly) unsigned int hash;
-@property(retain) NSString * leaderboardIdentifier;
-@property int leaderboardTimeScope;
-@property BOOL shouldDisplayChallengePlayButton;
-@property(readonly) Class superclass;
-@property int viewState;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) GKGameCenterViewController *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) GKGame *game;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *leaderboardIdentifier;
+@property (nonatomic) int leaderboardTimeScope;
+@property (nonatomic) BOOL shouldDisplayChallengePlayButton;
+@property (readonly) Class superclass;
+@property (nonatomic) int viewState;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
@@ -29,7 +27,7 @@
 - (BOOL)_dismissSelfAfterGettingShouldFinish;
 - (void)dealloc;
 - (id)delegate;
-- (void)getMethodsImplementedByChallengeEventHandlerDelegate:(id)arg1;
+- (void)getMethodsImplementedByChallengeEventHandlerDelegate:(id /* block */)arg1;
 - (id)leaderboardIdentifier;
 - (int)leaderboardTimeScope;
 - (id)observedKeyPaths;

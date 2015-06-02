@@ -6,7 +6,7 @@
     unsigned int _hidEventType;
 }
 
-@property(readonly) unsigned int hidEventType;
+@property (readonly) unsigned int hidEventType;
 
 + (id)descriptorWithEventType:(unsigned int)arg1;
 + (id)reusableDescriptorWithEventType:(unsigned int)arg1;

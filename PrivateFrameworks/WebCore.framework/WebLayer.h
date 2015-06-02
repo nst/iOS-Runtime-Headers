@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface WebLayer : WebSimpleLayer {
-}
+@interface WebLayer : WebSimpleLayer
 
 - (void)drawInContext:(struct CGContext { }*)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAKeyframeAnimation;
-
 @interface CAMFocusLockView : CAMFocusView {
     CAKeyframeAnimation *_lockBoundsAnimation;
 }
@@ -12,7 +10,7 @@
 - (id)_createBoundsAnimation;
 - (id)_createLockBoundsAnimation;
 - (void)animateLock;
-- (void)animateScaleDownWithCompletion:(id)arg1;
+- (void)animateScaleDownWithCompletion:(id /* block */)arg1;
 - (double)fadeInDuration;
 - (void)startAnimatingContents:(BOOL)arg1 bounds:(BOOL)arg2 fadeIn:(BOOL)arg3;
 

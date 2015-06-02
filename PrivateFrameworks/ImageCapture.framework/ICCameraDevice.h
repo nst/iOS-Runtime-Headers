@@ -2,27 +2,25 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSArray, NSString;
-
 @interface ICCameraDevice : ICDevice {
     void *_cameraProperties;
 }
 
-@property(getter=isAccessRestrictedAppleDevice) BOOL accessRestrictedAppleDevice;
+@property (getter=isAccessRestrictedAppleDevice) BOOL accessRestrictedAppleDevice;
 @property BOOL allowsSyncingClock;
-@property(readonly) unsigned int batteryLevel;
-@property(readonly) BOOL batteryLevelAvailable;
+@property (readonly) unsigned int batteryLevel;
+@property (readonly) BOOL batteryLevelAvailable;
 @property BOOL beingEjected;
 @property unsigned int contentCatalogPercentCompleted;
-@property(readonly) NSArray * contents;
-@property(getter=isEjectable) BOOL ejectable;
+@property (readonly) NSArray *contents;
+@property (getter=isEjectable) BOOL ejectable;
 @property unsigned int estimatedNumberOfDownloadableItems;
-@property(getter=isLocked) BOOL locked;
-@property(readonly) NSArray * mediaFiles;
-@property(readonly) NSArray * notifyArray;
+@property (getter=isLocked) BOOL locked;
+@property (readonly) NSArray *mediaFiles;
+@property (readonly) NSArray *notifyArray;
 @property unsigned int numberOfDownloadableItems;
-@property(readonly) double timeOffset;
-@property(copy) NSString * volumePath;
+@property (readonly) double timeOffset;
+@property (copy) NSString *volumePath;
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 

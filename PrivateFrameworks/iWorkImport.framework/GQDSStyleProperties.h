@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQDSStyleProperties : NSObject {
-}
+@interface GQDSStyleProperties : NSObject
 
 + (int)propertyFromString:(const char *)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, UIDelayedAction, UIView, _UIScreenEdgePanRecognizer;
-
 @interface _UIScreenEdgePanRecognizerAnalysisWindow : UIWindow {
     UIView *_backgroundView;
     NSMutableArray *_failureMessageLabels;
@@ -12,8 +10,8 @@
     _UIScreenEdgePanRecognizer *_recognizer;
 }
 
-@property long maximumVisibleOverlayItems;
-@property _UIScreenEdgePanRecognizer * recognizer;
+@property (nonatomic) long maximumVisibleOverlayItems;
+@property (nonatomic) _UIScreenEdgePanRecognizer *recognizer;
 
 - (BOOL)_isWindowServerHostingManaged;
 - (void)dealloc;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@class UIBezierPath, UIImage;
-
 @interface CNFRegShadowView : UIView {
     struct CGRect { 
         struct CGPoint { 
@@ -19,9 +17,9 @@
     UIImage *_shadowImage;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedBounds;
-@property(retain) UIBezierPath * cachedPath;
-@property(retain) UIImage * shadowImage;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedBounds;
+@property (nonatomic, retain) UIBezierPath *cachedPath;
+@property (nonatomic, retain) UIImage *shadowImage;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cachedBounds;
 - (id)cachedPath;

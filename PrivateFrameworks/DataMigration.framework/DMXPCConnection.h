@@ -2,31 +2,17 @@
    Image: /System/Library/PrivateFrameworks/DataMigration.framework/DataMigration
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSObject<OS_xpc_object>;
-
 @interface DMXPCConnection : NSObject {
     NSObject<OS_xpc_object> *_connection;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _interruptionHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _invalidationHandler;
-
+    id /* block */ _interruptionHandler;
+    id /* block */ _invalidationHandler;
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_queue> *_replyQueue;
 }
 
-@property(readonly) NSObject<OS_xpc_object> * connection;
-@property(copy) id interruptionHandler;
-@property(copy) id invalidationHandler;
+@property (nonatomic, readonly) NSObject<OS_xpc_object> *connection;
+@property (copy) id /* block */ interruptionHandler;
+@property (copy) id /* block */ invalidationHandler;
 
 - (void).cxx_destruct;
 - (void)_handleMessage:(id)arg1;
@@ -34,12 +20,12 @@
 - (void)handleMessage:(id)arg1;
 - (id)initWithConnection:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
-- (id)interruptionHandler;
+- (id /* block */)interruptionHandler;
 - (void)invalidate;
-- (id)invalidationHandler;
+- (id /* block */)invalidationHandler;
 - (void)resume;
-- (void)sendMessage:(id)arg1 replyHandler:(id)arg2;
-- (void)setInterruptionHandler:(id)arg1;
-- (void)setInvalidationHandler:(id)arg1;
+- (void)sendMessage:(id)arg1 replyHandler:(id /* block */)arg2;
+- (void)setInterruptionHandler:(id /* block */)arg1;
+- (void)setInvalidationHandler:(id /* block */)arg1;
 
 @end

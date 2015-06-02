@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NewsstandKit.framework/NewsstandKit
  */
 
-@class NKLibrary, NSArray, NSDate, NSMapTable, NSMutableArray, NSMutableSet, NSString, NSURL;
-
 @interface NKIssue : NSObject {
     NSMutableArray *_assets;
     NSMapTable *_assetsByRequest;
@@ -16,12 +14,12 @@
     NSMutableSet *_resolvedAssets;
 }
 
-@property(copy,readonly) NSURL * contentURL;
-@property(copy) NSDate * date;
-@property(copy) NSString * directory;
-@property(copy,readonly) NSArray * downloadingAssets;
-@property(copy) NSString * name;
-@property(readonly) int status;
+@property (readonly, copy) NSURL *contentURL;
+@property (copy) NSDate *date;
+@property (copy) NSString *directory;
+@property (readonly, copy) NSArray *downloadingAssets;
+@property (copy) NSString *name;
+@property (readonly) int status;
 
 - (void)_assetChanged:(id)arg1;
 - (id)_assetsForRequest:(id)arg1;

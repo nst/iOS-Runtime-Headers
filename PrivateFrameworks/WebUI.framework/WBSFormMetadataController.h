@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface WBSFormMetadataController : NSObject {
     struct HashMap<OpaqueFormAutoFillFrame *, WTF::OwnPtr<FrameMetadata>, WTF::PtrHash<OpaqueFormAutoFillFrame *>, WTF::HashTraits<OpaqueFormAutoFillFrame *>, WTF::HashTraits<WTF::OwnPtr<FrameMetadata> > > { 
         struct HashTable<OpaqueFormAutoFillFrame *, WTF::KeyValuePair<OpaqueFormAutoFillFrame *, WTF::OwnPtr<FrameMetadata> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<OpaqueFormAutoFillFrame *, WTF::OwnPtr<FrameMetadata> > >, WTF::PtrHash<OpaqueFormAutoFillFrame *>, WTF::HashMap<OpaqueFormAutoFillFrame *, WTF::OwnPtr<FrameMetadata>, WTF::PtrHash<OpaqueFormAutoFillFrame *>, WTF::HashTraits<OpaqueFormAutoFillFrame *>, WTF::HashTraits<WTF::OwnPtr<FrameMetadata> > >::KeyValuePairTraits, WTF::HashTraits<OpaqueFormAutoFillFrame *> > { 
@@ -41,7 +36,7 @@
 - (void)getMetadataForTextField:(id)arg1 inFrame:(id)arg2 textFieldMetadata:(id*)arg3 formMetadata:(id*)arg4;
 - (id)init;
 - (id)metadataForForm:(id)arg1 inFrame:(id)arg2 requestType:(unsigned int)arg3;
-- (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; id x6; id x7; }*)metadataForFrame:(id)arg1 requestType:(unsigned int)arg2;
+- (struct FrameMetadata { int (**x1)(); struct Vector<OpaqueJSValue *, 0, WTF::CrashOnOverflow> { struct OpaqueJSValue {} **x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct OpaqueJSValue {} *x3; struct OpaqueJSValue {} *x4; struct OpaqueJSContext {} *x5; id x6; }*)metadataForFrame:(id)arg1 requestType:(unsigned int)arg2;
 - (BOOL)pageWithMainFrameMeetsEditedFormTextWarningCriteria:(id)arg1;
 - (void)passwordFieldBlurredInFrame:(id)arg1;
 - (void)passwordFieldFocused:(id)arg1 inFrame:(id)arg2;

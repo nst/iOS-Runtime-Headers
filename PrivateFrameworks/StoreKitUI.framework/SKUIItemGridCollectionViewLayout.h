@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIColor;
-
 @interface SKUIItemGridCollectionViewLayout : UICollectionViewFlowLayout {
     UIColor *_evenColor;
     int _numberOfColumns;
     UIColor *_oddColor;
 }
 
-@property(copy) UIColor * evenRowBackgroundColor;
-@property int numberOfColumns;
-@property(copy) UIColor * oddRowBackgroundColor;
+@property (nonatomic, copy) UIColor *evenRowBackgroundColor;
+@property (nonatomic) int numberOfColumns;
+@property (nonatomic, copy) UIColor *oddRowBackgroundColor;
 
 + (Class)layoutAttributesClass;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class NSMutableSet, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSString;
-
 @interface _ML3DatabaseConnectionSubPool : NSObject {
     NSMutableSet *_availableConnections;
     NSMutableSet *_busyConnections;
@@ -21,12 +19,12 @@
     int _willDeleteDatabaseNotifyToken;
 }
 
-@property unsigned int connectionsJournalingMode;
-@property int connectionsProfilingLevel;
-@property(readonly) NSString * databasePath;
-@property(readonly) unsigned int maxConcurrentConnections;
-@property BOOL useDistantConnections;
-@property BOOL useReadOnlyConnections;
+@property (nonatomic) unsigned int connectionsJournalingMode;
+@property (nonatomic) int connectionsProfilingLevel;
+@property (nonatomic, readonly) NSString *databasePath;
+@property (nonatomic, readonly) unsigned int maxConcurrentConnections;
+@property (nonatomic) BOOL useDistantConnections;
+@property (nonatomic) BOOL useReadOnlyConnections;
 
 - (void).cxx_destruct;
 - (void)_handleDatabaseDeletion;

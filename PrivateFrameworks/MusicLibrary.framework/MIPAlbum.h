@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@class MIPArtist, NSString;
-
 @interface MIPAlbum : PBCodable <NSCopying> {
     MIPArtist *_artist;
     NSString *_artworkId;
@@ -25,26 +23,26 @@
     int _userRating;
 }
 
-@property(retain) MIPArtist * artist;
-@property(retain) NSString * artworkId;
-@property BOOL compilation;
-@property(readonly) BOOL hasArtist;
-@property(readonly) BOOL hasArtworkId;
-@property BOOL hasCompilation;
-@property(readonly) BOOL hasName;
-@property BOOL hasNumDiscs;
-@property BOOL hasNumTracks;
-@property BOOL hasPersistentId;
-@property(readonly) BOOL hasSortName;
-@property BOOL hasStoreId;
-@property BOOL hasUserRating;
-@property(retain) NSString * name;
-@property int numDiscs;
-@property int numTracks;
-@property long long persistentId;
-@property(retain) NSString * sortName;
-@property long long storeId;
-@property int userRating;
+@property (nonatomic, retain) MIPArtist *artist;
+@property (nonatomic, retain) NSString *artworkId;
+@property (nonatomic) BOOL compilation;
+@property (nonatomic, readonly) BOOL hasArtist;
+@property (nonatomic, readonly) BOOL hasArtworkId;
+@property (nonatomic) BOOL hasCompilation;
+@property (nonatomic, readonly) BOOL hasName;
+@property (nonatomic) BOOL hasNumDiscs;
+@property (nonatomic) BOOL hasNumTracks;
+@property (nonatomic) BOOL hasPersistentId;
+@property (nonatomic, readonly) BOOL hasSortName;
+@property (nonatomic) BOOL hasStoreId;
+@property (nonatomic) BOOL hasUserRating;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) int numDiscs;
+@property (nonatomic) int numTracks;
+@property (nonatomic) long long persistentId;
+@property (nonatomic, retain) NSString *sortName;
+@property (nonatomic) long long storeId;
+@property (nonatomic) int userRating;
 
 - (void).cxx_destruct;
 - (id)artist;

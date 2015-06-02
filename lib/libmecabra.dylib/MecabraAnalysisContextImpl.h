@@ -2,8 +2,6 @@
    Image: /usr/lib/libmecabra.dylib
  */
 
-@class NSArray, NSMutableArray, NSMutableString, NSString;
-
 @interface MecabraAnalysisContextImpl : NSObject {
     NSMutableArray *_candidateContext;
     NSMutableString *_candidateContextString;
@@ -12,13 +10,13 @@
     NSString *_stringContext;
 }
 
-@property(retain) NSMutableArray * candidateContext;
-@property(readonly) NSArray * candidateContextForAnalysis;
-@property(retain) NSMutableString * candidateContextString;
-@property BOOL rebuildCandidateContextString;
-@property(retain) NSString * stringBeforeCaret;
-@property(retain) NSString * stringContext;
-@property(readonly) NSString * stringContextForAnalysis;
+@property (nonatomic, retain) NSMutableArray *candidateContext;
+@property (nonatomic, readonly) NSArray *candidateContextForAnalysis;
+@property (nonatomic, retain) NSMutableString *candidateContextString;
+@property (nonatomic) BOOL rebuildCandidateContextString;
+@property (nonatomic, retain) NSString *stringBeforeCaret;
+@property (nonatomic, retain) NSString *stringContext;
+@property (nonatomic, readonly) NSString *stringContextForAnalysis;
 
 - (void)addCandidate:(id)arg1;
 - (void)adjustCandidateContext;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
  */
 
-@class NSString;
+@interface ICSDate : ICSProperty
 
-@interface ICSDate : ICSProperty {
-}
-
-@property(retain) NSString * tzid;
+@property (nonatomic, retain) NSString *tzid;
 
 - (id)components;
 - (id)description;

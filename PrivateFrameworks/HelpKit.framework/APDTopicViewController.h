@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class <APDTopicViewControllerDelegate>, APDAsyncURLConnection, APDDataManager, APDKVOManager, NSMutableArray, NSString, UIActivityIndicatorView, UIImageView, UILabel, UIView, UIWebView;
-
 @interface APDTopicViewController : UIViewController <UIWebViewDelegate> {
     APDKVOManager *_KVOManager;
     UIActivityIndicatorView *_activityIndicatorView;
@@ -28,23 +26,23 @@
     BOOL _webViewStartedLoading;
 }
 
-@property(retain) APDKVOManager * KVOManager;
-@property UIActivityIndicatorView * activityIndicatorView;
-@property(retain) APDDataManager * dataManager;
-@property(copy,readonly) NSString * debugDescription;
-@property <APDTopicViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property BOOL displayAsPopover;
-@property UIImageView * errorImageView;
-@property UILabel * errorMessageLabel;
-@property UILabel * errorTitleLabel;
-@property(retain) UIView * errorView;
-@property(readonly) unsigned int hash;
-@property BOOL showWithManualInset;
-@property(readonly) Class superclass;
-@property UIWebView * topicWebView;
-@property int topicWebViewDisplayIndex;
-@property BOOL updateDataManagerWithCurrentTopic;
+@property (nonatomic, retain) APDKVOManager *KVOManager;
+@property (nonatomic) UIActivityIndicatorView *activityIndicatorView;
+@property (nonatomic, retain) APDDataManager *dataManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <APDTopicViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL displayAsPopover;
+@property (nonatomic) UIImageView *errorImageView;
+@property (nonatomic) UILabel *errorMessageLabel;
+@property (nonatomic) UILabel *errorTitleLabel;
+@property (nonatomic, retain) UIView *errorView;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL showWithManualInset;
+@property (readonly) Class superclass;
+@property (nonatomic) UIWebView *topicWebView;
+@property (nonatomic) int topicWebViewDisplayIndex;
+@property (nonatomic) BOOL updateDataManagerWithCurrentTopic;
 
 - (void).cxx_destruct;
 - (id)KVOManager;

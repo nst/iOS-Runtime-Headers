@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVPlayerLayerIntermediateLayer : CALayer {
-}
+@interface AVPlayerLayerIntermediateLayer : CALayer
 
 + (id)defaultActionForKey:(id)arg1;
 

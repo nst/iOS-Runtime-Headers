@@ -2,8 +2,6 @@
    Image: /usr/lib/libtzupdate.dylib
  */
 
-@class NSString, NSURL, TZVersionInfo;
-
 @interface TZFileSystemInterface : NSObject {
     NSURL *_ICUDestinationDirectoryURL;
     NSURL *_ICUDestinationFileURL;
@@ -21,25 +19,25 @@
     NSURL *_zoneinfoDestinationURL;
 }
 
-@property(retain) NSURL * ICUDestinationDirectoryURL;
-@property(retain) NSURL * ICUDestinationFileURL;
-@property(retain) NSURL * cachedTZDataLocation;
-@property(readonly) TZVersionInfo * currentVersionInfo;
-@property(readonly) NSURL * currentZoneinfoLinkURL;
-@property(readonly) NSURL * dataExpansionParentURL;
-@property(retain) NSURL * dataExpansionVersionDirectory;
-@property(readonly) TZVersionInfo * lastInstalledVersionInfo;
-@property(readonly) NSURL * latestLinkDestinationAtStartup;
-@property(retain) NSURL * latestTZDataLink;
-@property(readonly) NSURL * latestTZLinkURL;
-@property(readonly) TZVersionInfo * latestVersionInfo;
-@property(readonly) NSString * systemICUChecksum;
-@property(readonly) NSURL * systemICUDataFileURL;
-@property(readonly) NSURL * systemICUDirectoryURL;
-@property(readonly) TZVersionInfo * systemVersionInfo;
-@property(readonly) NSURL * systemZoneinfoDirectoryURL;
-@property(retain) NSURL * temporaryDirectory;
-@property(retain) NSURL * zoneinfoDestinationURL;
+@property (retain) NSURL *ICUDestinationDirectoryURL;
+@property (retain) NSURL *ICUDestinationFileURL;
+@property (retain) NSURL *cachedTZDataLocation;
+@property (readonly) TZVersionInfo *currentVersionInfo;
+@property (readonly) NSURL *currentZoneinfoLinkURL;
+@property (readonly) NSURL *dataExpansionParentURL;
+@property (retain) NSURL *dataExpansionVersionDirectory;
+@property (readonly) TZVersionInfo *lastInstalledVersionInfo;
+@property (readonly) NSURL *latestLinkDestinationAtStartup;
+@property (retain) NSURL *latestTZDataLink;
+@property (readonly) NSURL *latestTZLinkURL;
+@property (readonly) TZVersionInfo *latestVersionInfo;
+@property (readonly) NSString *systemICUChecksum;
+@property (readonly) NSURL *systemICUDataFileURL;
+@property (readonly) NSURL *systemICUDirectoryURL;
+@property (readonly) TZVersionInfo *systemVersionInfo;
+@property (readonly) NSURL *systemZoneinfoDirectoryURL;
+@property (retain) NSURL *temporaryDirectory;
+@property (retain) NSURL *zoneinfoDestinationURL;
 
 + (id)sharedInstance;
 

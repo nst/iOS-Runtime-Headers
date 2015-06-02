@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, GEOLocation, NSData;
-
 @interface GEOCompanionRouteStatus : PBCodable <NSCopying> {
     unsigned int _distanceRemainingOnRoute;
     unsigned int _distanceToManeuver;
@@ -30,36 +28,36 @@
     double _timestamp;
 }
 
-@property unsigned int distanceRemainingOnRoute;
-@property unsigned int distanceToManeuver;
-@property unsigned int distanceToRoute;
-@property(readonly) unsigned int effectiveDistanceToManeuver;
-@property(readonly) unsigned int effectiveStepID;
-@property int feedbackType;
-@property BOOL hasDistanceRemainingOnRoute;
-@property BOOL hasDistanceToManeuver;
-@property BOOL hasDistanceToRoute;
-@property(readonly) BOOL hasEffectiveDistanceToManeuver;
-@property(readonly) BOOL hasEffectiveStepID;
-@property BOOL hasFeedbackType;
-@property(readonly) BOOL hasLocation;
-@property BOOL hasRemainingTime;
-@property(readonly) BOOL hasRouteID;
-@property BOOL hasRouteLocationIndex;
-@property BOOL hasRouteLocationOffset;
-@property(readonly) BOOL hasRouteMatchCoordinate;
-@property BOOL hasStepID;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL isNavigating;
-@property(readonly) BOOL isPreviewingNavigation;
-@property(retain) GEOLocation * location;
-@property unsigned int remainingTime;
-@property(retain) NSData * routeID;
-@property unsigned int routeLocationIndex;
-@property float routeLocationOffset;
-@property(retain) GEOLatLng * routeMatchCoordinate;
-@property unsigned int stepID;
-@property double timestamp;
+@property (nonatomic) unsigned int distanceRemainingOnRoute;
+@property (nonatomic) unsigned int distanceToManeuver;
+@property (nonatomic) unsigned int distanceToRoute;
+@property (nonatomic, readonly) unsigned int effectiveDistanceToManeuver;
+@property (nonatomic, readonly) unsigned int effectiveStepID;
+@property (nonatomic) int feedbackType;
+@property (nonatomic) BOOL hasDistanceRemainingOnRoute;
+@property (nonatomic) BOOL hasDistanceToManeuver;
+@property (nonatomic) BOOL hasDistanceToRoute;
+@property (nonatomic, readonly) BOOL hasEffectiveDistanceToManeuver;
+@property (nonatomic, readonly) BOOL hasEffectiveStepID;
+@property (nonatomic) BOOL hasFeedbackType;
+@property (nonatomic, readonly) BOOL hasLocation;
+@property (nonatomic) BOOL hasRemainingTime;
+@property (nonatomic, readonly) BOOL hasRouteID;
+@property (nonatomic) BOOL hasRouteLocationIndex;
+@property (nonatomic) BOOL hasRouteLocationOffset;
+@property (nonatomic, readonly) BOOL hasRouteMatchCoordinate;
+@property (nonatomic) BOOL hasStepID;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL isNavigating;
+@property (nonatomic, readonly) BOOL isPreviewingNavigation;
+@property (nonatomic, retain) GEOLocation *location;
+@property (nonatomic) unsigned int remainingTime;
+@property (nonatomic, retain) NSData *routeID;
+@property (nonatomic) unsigned int routeLocationIndex;
+@property (nonatomic) float routeLocationOffset;
+@property (nonatomic, retain) GEOLatLng *routeMatchCoordinate;
+@property (nonatomic) unsigned int stepID;
+@property (nonatomic) double timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UILabel;
-
 @interface _SKUICounterTimeFieldView : UIView {
     UILabel *_labelLabel;
     UILabel *_valueLabel;
     unsigned int _visibilityField;
 }
 
-@property(readonly) UILabel * labelLabel;
-@property(readonly) UILabel * valueLabel;
-@property unsigned int visibilityField;
+@property (nonatomic, readonly) UILabel *labelLabel;
+@property (nonatomic, readonly) UILabel *valueLabel;
+@property (nonatomic) unsigned int visibilityField;
 
 - (void).cxx_destruct;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface UIKeyboardSquishTransition : UIKeyboardKeyplaneTransition {
     unsigned int _animationType;
     NSArray *_commonVisibleKeys;
@@ -16,13 +14,13 @@
     float _widthRatio;
 }
 
-@property unsigned int animationType;
-@property(retain) NSArray * commonVisibleKeys;
-@property BOOL disableMeshOptimization;
-@property(retain) NSArray * endGeometries;
-@property BOOL nonoverlappingCrossfade;
-@property(retain) NSArray * startGeometries;
-@property(readonly) float transitionOverlapDelta;
+@property (nonatomic) unsigned int animationType;
+@property (nonatomic, retain) NSArray *commonVisibleKeys;
+@property (nonatomic) BOOL disableMeshOptimization;
+@property (nonatomic, retain) NSArray *endGeometries;
+@property (nonatomic) BOOL nonoverlappingCrossfade;
+@property (nonatomic, retain) NSArray *startGeometries;
+@property (nonatomic, readonly) float transitionOverlapDelta;
 
 - (void)_updateTransition;
 - (unsigned int)animationType;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
  */
 
-@class <CLIntersiloProxyDelegateProtocol>, CLIntersiloInterface, CLIntersiloInterfaceSelectorInfo, CLIntersiloProxy, CLSilo;
-
 @interface CLIntersiloProxy : NSProxy <CLIntersiloServiceProtocol> {
     CLIntersiloProxy *_asymStrongPeer;
     <CLIntersiloProxyDelegateProtocol> *_delegate;
@@ -14,11 +12,11 @@
     CLIntersiloInterface *_proxiedInterface;
 }
 
-@property(readonly) <CLIntersiloProxyDelegateProtocol> * delegate;
-@property(copy,readonly) CLIntersiloInterface * delegateInterface;
-@property(readonly) CLSilo * delegateSilo;
-@property(copy,readonly) CLIntersiloInterface * proxiedInterface;
-@property BOOL valid;
+@property (nonatomic, readonly) <CLIntersiloProxyDelegateProtocol> *delegate;
+@property (nonatomic, readonly, copy) CLIntersiloInterface *delegateInterface;
+@property (nonatomic, readonly) CLSilo *delegateSilo;
+@property (nonatomic, readonly, copy) CLIntersiloInterface *proxiedInterface;
+@property (nonatomic) BOOL valid;
 
 + (void)becameFatallyBlocked:(id)arg1;
 + (id)getSilo;

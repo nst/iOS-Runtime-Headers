@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class TPLegacyButton, UIView;
-
 @interface TPLegacyBottomDoubleButtonBar : TPLegacyBottomSingleButtonBar {
     TPLegacyButton *_button2;
     UIView *_well1;

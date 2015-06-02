@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface IMRemoteObjectBroadcaster : NSObject {
     NSObject<OS_dispatch_queue> *_queue;
 }

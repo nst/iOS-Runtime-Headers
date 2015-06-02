@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class NSMutableArray, NSMutableString;
-
 @interface MFPlainTextDocument : NSObject {
     NSMutableArray *_fragments;
     NSMutableString *_text;

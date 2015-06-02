@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKICSPreviewControllerDelegate>, EKEventStore, EKEventViewController, EKICSPreviewModel, UIViewController;
-
 @interface EKICSPreviewController : NSObject {
     int _actionsState;
     BOOL _allowsEditing;
@@ -21,16 +19,16 @@
     <EKICSPreviewControllerDelegate> *_previewDelegate;
 }
 
-@property int actionsState;
-@property BOOL allowsEditing;
-@property BOOL allowsImport;
-@property BOOL allowsInvalidProperties;
-@property BOOL allowsSubitems;
-@property BOOL allowsToDos;
-@property(readonly) BOOL isImporting;
-@property <EKICSPreviewControllerDelegate> * previewDelegate;
-@property(readonly) unsigned int totalEventCount;
-@property(readonly) unsigned int unimportedEventCount;
+@property (nonatomic) int actionsState;
+@property (nonatomic) BOOL allowsEditing;
+@property (nonatomic) BOOL allowsImport;
+@property (nonatomic) BOOL allowsInvalidProperties;
+@property (nonatomic) BOOL allowsSubitems;
+@property (nonatomic) BOOL allowsToDos;
+@property (nonatomic, readonly) BOOL isImporting;
+@property (nonatomic) <EKICSPreviewControllerDelegate> *previewDelegate;
+@property (nonatomic, readonly) unsigned int totalEventCount;
+@property (nonatomic, readonly) unsigned int unimportedEventCount;
 
 - (void).cxx_destruct;
 - (void)_createCancelButtonWithType:(int)arg1 target:(id)arg2 action:(SEL)arg3;

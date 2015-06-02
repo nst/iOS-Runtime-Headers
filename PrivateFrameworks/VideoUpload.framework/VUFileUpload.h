@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VideoUpload.framework/VideoUpload
  */
 
-@class NSData, NSString;
-
 @interface VUFileUpload : NSObject {
     NSData *_data;
     NSString *_name;
 }
 
-@property(retain) NSData * data;
-@property(retain) NSString * name;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, retain) NSString *name;
 
 - (void).cxx_destruct;
 - (id)data;

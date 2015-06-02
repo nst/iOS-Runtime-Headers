@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SALocalSearchProtobufAttribute : AceObject <SAAceSerializable>
 
-@interface SALocalSearchProtobufAttribute : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * name;
-@property(readonly) Class superclass;
-@property(copy) NSString * value;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *name;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *value;
 
 + (id)protobufAttribute;
 + (id)protobufAttributeWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, NSMutableSet, NSString;
-
 @interface UIKeyboardSliceSet : NSObject {
     NSMutableDictionary *_controlKeys;
     struct CGRect { 
@@ -33,13 +31,13 @@
     } _startRect;
 }
 
-@property NSMutableDictionary * controlKeys;
+@property NSMutableDictionary *controlKeys;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endRect;
 @property float leftWidth;
 @property float mergePoint;
 @property float rightWidth;
-@property(retain) NSString * sliceSetID;
-@property(readonly) NSMutableSet * slices;
+@property (retain) NSString *sliceSetID;
+@property (readonly) NSMutableSet *slices;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } startRect;
 
 + (id)sliceSetWithDictionaryRepresenation:(id)arg1;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIBrowseItemComponent;
+@interface SKUIBrowseItemPageSection : SKUIStorePageSection
 
-@interface SKUIBrowseItemPageSection : SKUIStorePageSection {
-}
-
-@property(readonly) SKUIBrowseItemComponent * pageComponent;
+@property (nonatomic, readonly) SKUIBrowseItemComponent *pageComponent;
 
 - (id)_imageForImageViewElement:(id)arg1 styleColor:(id)arg2;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;

@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSInvocation, NSObject<OS_dispatch_source>;
-
 @interface _UIDelayedPresentationContext : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancellationHandler;
-
+    id /* block */ _cancellationHandler;
     BOOL _enableUserInteraction;
     NSInvocation *_presentInvocation;
     int _reqcnt;
@@ -21,22 +11,22 @@
     NSObject<OS_dispatch_source> *_timerSource;
 }
 
-@property(copy) id cancellationHandler;
-@property(retain) NSInvocation * presentInvocation;
+@property (nonatomic, copy) id /* block */ cancellationHandler;
+@property (nonatomic, retain) NSInvocation *presentInvocation;
 
 - (void)beginDelayedPresentation;
 - (void)cancelDelayedPresentation:(BOOL)arg1;
-- (id)cancellationHandler;
+- (id /* block */)cancellationHandler;
 - (void)dealloc;
 - (int)decrementRequestCount;
 - (id)delayingController;
 - (void)finishDelayedPresentation:(id)arg1;
 - (int)incrementRequestCount;
-- (id)initWithTimeout:(double)arg1 cancellationHandler:(id)arg2;
+- (id)initWithTimeout:(double)arg1 cancellationHandler:(id /* block */)arg2;
 - (id)invocationTarget;
 - (id)presentInvocation;
 - (int)requestCount;
-- (void)setCancellationHandler:(id)arg1;
+- (void)setCancellationHandler:(id /* block */)arg1;
 - (void)setPresentInvocation:(id)arg1;
 
 @end

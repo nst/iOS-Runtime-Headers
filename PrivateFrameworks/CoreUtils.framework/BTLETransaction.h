@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
  */
 
-@class CBATTRequest, NSData, NSString;
-
 @interface BTLETransaction : NSObject {
     NSString *_identifier;
     NSString *_replyCharacteristic;
@@ -12,13 +10,13 @@
     BOOL _waitingToUpdate;
 }
 
-@property(copy) NSString * identifier;
-@property(copy) NSString * replyCharacteristic;
-@property(copy) NSData * replyData;
-@property(retain) CBATTRequest * request;
-@property(readonly) NSString * requestCharacteristic;
-@property(copy) NSData * requestData;
-@property BOOL waitingToUpdate;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *replyCharacteristic;
+@property (nonatomic, copy) NSData *replyData;
+@property (nonatomic, retain) CBATTRequest *request;
+@property (nonatomic, readonly) NSString *requestCharacteristic;
+@property (nonatomic, copy) NSData *requestData;
+@property (nonatomic) BOOL waitingToUpdate;
 
 - (void)dealloc;
 - (id)identifier;

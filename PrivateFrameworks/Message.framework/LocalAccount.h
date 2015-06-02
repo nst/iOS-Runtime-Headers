@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface LocalAccount : MailAccount {
-}
+@interface LocalAccount : MailAccount
 
 + (id)accountTypeIdentifier;
 + (id)accountTypeString;

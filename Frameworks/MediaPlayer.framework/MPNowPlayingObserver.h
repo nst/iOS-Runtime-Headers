@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVController, MPImageCache, MPStoreDownload, NSData, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, UIImage;
-
 @interface MPNowPlayingObserver : NSObject <MPStoreDownloadManagerObserver> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     MPStoreDownload *_activeDownload;
@@ -18,13 +16,13 @@
     NSObject<OS_dispatch_queue> *_statusBarQueue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(getter=isEnabled) BOOL enabled;
-@property(readonly) unsigned int hash;
-@property(readonly) MPImageCache * imageCache;
-@property(retain) MPAVController * player;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MPImageCache *imageCache;
+@property (nonatomic, retain) MPAVController *player;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)_MPNowPlayingDownloadStateForDownload:(id)arg1;
@@ -36,7 +34,7 @@
 - (void)_bufferingStateDidChangeNotification:(id)arg1;
 - (void)_coalescedUpdateLastUsedDateForCurrentItem;
 - (void)_contentsDidChangeNotification:(id)arg1;
-- (void)_createNowPlayingInfoForItem:(id)arg1 completionHandler:(id)arg2;
+- (void)_createNowPlayingInfoForItem:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_crossedTimeMarkerNotification:(id)arg1;
 - (BOOL)_hasProperConditionsToLoadArtwork;
 - (void)_itemDidChangeNotification:(id)arg1;

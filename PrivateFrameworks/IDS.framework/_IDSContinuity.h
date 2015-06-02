@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
  */
 
-@class CUTWeakReference, NSObject<OS_dispatch_queue>, NSString;
-
 @interface _IDSContinuity : NSObject <IDSDaemonListenerProtocol> {
     CUTWeakReference *_delegate;
     id _delegateContext;
@@ -11,13 +9,13 @@
     int _state;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int state;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) int state;
+@property (readonly) Class superclass;
 
-- (void)_callDelegateWithBlock:(id)arg1;
+- (void)_callDelegateWithBlock:(id /* block */)arg1;
 - (void)_daemonDied:(id)arg1;
 - (void)_handleReconnect;
 - (void)continuityDidDiscoverType:(int)arg1 withData:(id)arg2 fromPeer:(id)arg3;

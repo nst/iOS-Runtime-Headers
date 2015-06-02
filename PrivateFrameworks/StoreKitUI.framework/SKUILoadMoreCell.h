@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class UIActivityIndicatorView;
-
 @interface SKUILoadMoreCell : SKUITableViewCell {
     UIActivityIndicatorView *_indicator;
 }

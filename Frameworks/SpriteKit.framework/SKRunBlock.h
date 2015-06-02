@@ -2,22 +2,12 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>;
-
 @interface SKRunBlock : SKAction {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-+ (id)runBlock:(id)arg1 queue:(id)arg2;
++ (id)runBlock:(id /* block */)arg1 queue:(id)arg2;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

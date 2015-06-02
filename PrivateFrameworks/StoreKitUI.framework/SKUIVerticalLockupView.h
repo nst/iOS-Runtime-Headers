@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, NSString, SKUILockupViewElement, SKUISizeValue, UIView;
-
 @interface SKUIVerticalLockupView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIPerspectiveView, SKUIViewElementView> {
     struct UIEdgeInsets { 
         float top; 
@@ -20,11 +18,11 @@
     NSMapTable *_viewElementViews;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int sizingStyle;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int sizingStyle;
+@property (readonly) Class superclass;
 
 + (id)_attributedStringForButton:(id)arg1;
 + (id)_attributedStringForLabel:(id)arg1;

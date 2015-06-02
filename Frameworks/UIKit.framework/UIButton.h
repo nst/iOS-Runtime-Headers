@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSAttributedString, NSDictionary, NSString, UIColor, UIFont, UIImage, UIImageView, UILabel, UITapGestureRecognizer, UIView, _UIButtonMaskAnimationView;
-
 @interface UIButton : UIControl <ABText, NSCoding> {
     UIImageView *_backgroundView;
     struct { 
@@ -55,33 +53,35 @@
     UILabel *_titleView;
 }
 
-@property(setter=_setContentConstraints:,copy) NSArray * _contentConstraints;
-@property(retain,readonly) UIColor * _currentImageColor;
-@property(setter=_setExternalFlatEdge:) unsigned int _externalFlatEdge;
-@property(setter=_setInternalTitlePaddingInsets:) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _internalTitlePaddingInsets;
-@property(copy) NSString * ab_text;
-@property(copy) NSDictionary * ab_textAttributes;
-@property BOOL adjustsImageWhenDisabled;
-@property BOOL adjustsImageWhenHighlighted;
-@property(readonly) int buttonType;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
-@property(retain,readonly) NSAttributedString * currentAttributedTitle;
-@property(retain,readonly) UIImage * currentBackgroundImage;
-@property(retain,readonly) UIImage * currentImage;
-@property(retain,readonly) NSString * currentTitle;
-@property(retain,readonly) UIColor * currentTitleColor;
-@property(retain,readonly) UIColor * currentTitleShadowColor;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageEdgeInsets;
-@property(retain,readonly) UIImageView * imageView;
-@property BOOL reversesTitleShadowWhenHighlighted;
-@property BOOL showsTouchWhenHighlighted;
-@property(readonly) Class superclass;
-@property(retain) UIColor * tintColor;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleEdgeInsets;
-@property(retain,readonly) UILabel * titleLabel;
+@property (setter=_setContentConstraints:, nonatomic, copy) NSArray *_contentConstraints;
+@property (nonatomic, readonly, retain) UIColor *_currentImageColor;
+@property (setter=_setExternalFlatEdge:) unsigned int _externalFlatEdge;
+@property (setter=_setInternalTitlePaddingInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _internalTitlePaddingInsets;
+@property (nonatomic, copy) NSString *ab_text;
+@property (nonatomic, copy) NSDictionary *ab_textAttributes;
+@property (nonatomic) BOOL adjustsImageWhenDisabled;
+@property (nonatomic) BOOL adjustsImageWhenHighlighted;
+@property (nonatomic, readonly) int buttonType;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
+@property (nonatomic, readonly, retain) NSAttributedString *currentAttributedTitle;
+@property (nonatomic, readonly, retain) UIImage *currentBackgroundImage;
+@property (nonatomic, readonly, retain) UIImage *currentImage;
+@property (nonatomic, readonly, retain) NSString *currentTitle;
+@property (nonatomic, readonly, retain) UIColor *currentTitleColor;
+@property (nonatomic, readonly, retain) UIColor *currentTitleShadowColor;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageEdgeInsets;
+@property (nonatomic, readonly, retain) UIImageView *imageView;
+@property (nonatomic) BOOL reversesTitleShadowWhenHighlighted;
+@property (nonatomic) BOOL showsTouchWhenHighlighted;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *tintColor;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } titleEdgeInsets;
+@property (nonatomic, readonly, retain) UILabel *titleLabel;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_checkmarkImage;
 + (id)_defaultBackgroundImageForType:(int)arg1 andState:(unsigned int)arg2;
@@ -102,7 +102,6 @@
 + (void)_setVisuallyHighlighted:(BOOL)arg1 forViews:(id)arg2 initialPress:(BOOL)arg3 baseAlpha:(float)arg4;
 + (id)_xImage;
 + (id)buttonWithType:(int)arg1;
-+ (id)mediaControlsBuyButtonWithStyle:(int)arg1;
 
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_applyAppropriateChargeForButtonType;
@@ -166,9 +165,6 @@
 - (id)_letterpressStyleForState:(unsigned int)arg1;
 - (BOOL)_likelyToHaveTitle;
 - (int)_lineBreakMode;
-- (id)_mapkit_accessoryControlToExtendWithCallout;
-- (void)_mediaControlsBuyButtonTouchDown:(id)arg1;
-- (void)_mediaControlsBuyButtonTouchUp:(id)arg1;
 - (id)_newImageViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_newLabelWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_outsetInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -232,9 +228,6 @@
 - (void)_updateSelectionViewForState:(unsigned int)arg1;
 - (void)_updateTitleView;
 - (void)_willMoveToWindow:(id)arg1;
-- (void)ab_addConferenceIcon;
-- (id)ab_text;
-- (id)ab_textAttributes;
 - (BOOL)adjustsImageWhenDisabled;
 - (BOOL)adjustsImageWhenHighlighted;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
@@ -243,9 +236,7 @@
 - (id)backgroundImageForState:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })backgroundRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)buttonType;
-- (void)cam_updateContentInsetsToCenterImageWithinMinimumSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)canBecomeFocused;
-- (void)configureFromScriptButton:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)crossfadeToImage:(id)arg1 forState:(unsigned int)arg2;
@@ -274,11 +265,7 @@
 - (void)layoutSubviews;
 - (int)lineBreakMode;
 - (struct CGPoint { float x1; float x2; })pressFeedbackPosition;
-- (void)pu_setRTLAwareContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)pu_setTitle:(id)arg1 withFallback:(id)arg2 forState:(unsigned int)arg3;
 - (BOOL)reversesTitleShadowWhenHighlighted;
-- (void)setAb_text:(id)arg1;
-- (void)setAb_textAttributes:(id)arg1;
 - (void)setAdjustsImageWhenDisabled:(BOOL)arg1;
 - (void)setAdjustsImageWhenHighlighted:(BOOL)arg1;
 - (void)setAttributedTitle:(id)arg1 forState:(unsigned int)arg2;
@@ -326,5 +313,37 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (id)viewForBaselineLayout;
+
+// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+
+- (void)ab_addConferenceIcon;
+- (id)ab_text;
+- (id)ab_textAttributes;
+- (void)setAb_text:(id)arg1;
+- (void)setAb_textAttributes:(id)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (id)_mapkit_accessoryControlToExtendWithCallout;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (void)pu_setRTLAwareContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)pu_setTitle:(id)arg1 withFallback:(id /* block */)arg2 forState:(unsigned int)arg3;
+
+// Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
+
+- (void)cam_updateContentInsetsToCenterImageWithinMinimumSize:(struct CGSize { float x1; float x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+
++ (id)mediaControlsBuyButtonWithStyle:(int)arg1;
+
+- (void)_mediaControlsBuyButtonTouchDown:(id)arg1;
+- (void)_mediaControlsBuyButtonTouchUp:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)configureFromScriptButton:(id)arg1;
 
 @end

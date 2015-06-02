@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CacheDelete.framework/CacheDelete
  */
 
-@class NSSet, NSString, NSXPCConnection, NSXPCListenerEndpoint;
-
 @interface CDService : NSObject {
     NSString *_ID;
     NSSet *_desiredNotifications;
@@ -13,12 +11,12 @@
     NSXPCConnection *_xpcConn;
 }
 
-@property(retain) NSString * ID;
-@property(retain) NSSet * desiredNotifications;
+@property (nonatomic, retain) NSString *ID;
+@property (nonatomic, retain) NSSet *desiredNotifications;
 @property BOOL doesPeriodic;
 @property BOOL doesPurge;
-@property(retain) NSXPCListenerEndpoint * endpoint;
-@property(retain) NSXPCConnection * xpcConn;
+@property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
+@property (nonatomic, retain) NSXPCConnection *xpcConn;
 
 - (void).cxx_destruct;
 - (id)ID;

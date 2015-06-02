@@ -2,71 +2,71 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class EKSource, NSArray, NSData, NSString, NSURL;
-
 @interface EKCalendar : EKObject {
     struct CGColor { } *_color;
     BOOL _isMain;
     unsigned long _loadFlags;
 }
 
-@property struct CGColor { }* CGColor;
-@property(readonly) unsigned int allowedEntityTypes;
-@property(readonly) BOOL allowsContentModifications;
-@property(readonly) BOOL allowsEvents;
-@property(readonly) BOOL allowsIgnoringSharedEventChangeNotifications;
-@property(readonly) BOOL allowsTasks;
-@property(readonly) NSString * calendarIdentifier;
-@property(readonly) BOOL canBePublished;
-@property(readonly) BOOL canBeShared;
-@property(readonly) NSString * colorString;
-@property(copy) NSData * digest;
-@property int displayOrder;
-@property(copy) NSString * externalID;
-@property(copy) NSString * externalModificationTag;
-@property(readonly) NSURL * externalURI;
-@property(readonly) BOOL hasEvents;
-@property(readonly) BOOL hasTasks;
-@property(getter=isImmutable,readonly) BOOL immutable;
-@property unsigned int invitationStatus;
-@property(readonly) BOOL isDefaultCalendarForSource;
-@property(readonly) BOOL isFacebookBirthdayCalendar;
-@property(readonly) BOOL isFamilyCalendar;
-@property(readonly) BOOL isHidden;
-@property(readonly) BOOL isHolidaySubscribedCalendar;
-@property BOOL isIgnoringEventAlerts;
-@property BOOL isIgnoringSharedCalendarNotifications;
-@property BOOL isMainCalendarForSource;
-@property(readonly) BOOL isMarkedImmutableSharees;
-@property(readonly) BOOL isMarkedUndeletable;
-@property BOOL isPublished;
-@property(readonly) BOOL isSharingInvitation;
-@property unsigned long loadFlags;
-@property(copy) NSURL * ownerIdentityAddress;
-@property(copy) NSString * ownerIdentityDisplayName;
-@property(copy) NSString * ownerIdentityEmail;
-@property(copy) NSString * ownerIdentityFirstName;
-@property(copy) NSString * ownerIdentityLastName;
-@property(readonly) BOOL prohibitsScheduling;
-@property(readonly) NSString * publishedURL;
-@property(readonly) BOOL schedulingProhibited;
-@property(copy) NSURL * selfIdentityAddress;
-@property(copy) NSString * selfIdentityDisplayName;
-@property(copy) NSString * selfIdentityEmail;
-@property(copy) NSString * selfIdentityFirstName;
-@property(copy) NSString * selfIdentityLastName;
-@property(copy) NSURL * sharedOwnerAddress;
-@property(readonly) NSString * sharedOwnerEmail;
-@property(copy) NSString * sharedOwnerName;
-@property(copy) NSArray * sharees;
-@property int sharingInvitationResponse;
-@property int sharingStatus;
-@property(retain) EKSource * source;
-@property(getter=isSubscribed,readonly) BOOL subscribed;
-@property(readonly) unsigned int supportedEventAvailabilities;
-@property(copy) NSString * symbolicColorName;
-@property(copy) NSString * title;
-@property(readonly) int type;
+@property (nonatomic) struct CGColor { }*CGColor;
+@property (nonatomic, readonly) unsigned int allowedEntityTypes;
+@property (nonatomic, readonly) BOOL allowsContentModifications;
+@property (readonly) BOOL allowsEvents;
+@property (nonatomic, readonly) BOOL allowsIgnoringSharedEventChangeNotifications;
+@property (readonly) BOOL allowsTasks;
+@property (nonatomic, readonly) NSString *calendarIdentifier;
+@property (nonatomic, readonly) BOOL canBePublished;
+@property (nonatomic, readonly) BOOL canBeShared;
+@property (nonatomic, readonly) NSString *colorString;
+@property (nonatomic, copy) NSData *digest;
+@property (nonatomic) int displayOrder;
+@property (nonatomic, copy) NSString *externalID;
+@property (nonatomic, copy) NSString *externalModificationTag;
+@property (nonatomic, readonly) NSURL *externalURI;
+@property (nonatomic, readonly) BOOL hasEvents;
+@property (nonatomic, readonly) BOOL hasTasks;
+@property (getter=isImmutable, nonatomic, readonly) BOOL immutable;
+@property (nonatomic) unsigned int invitationStatus;
+@property (nonatomic, readonly) BOOL isDefaultCalendarForSource;
+@property (nonatomic, readonly) BOOL isFacebookBirthdayCalendar;
+@property (nonatomic, readonly) BOOL isFamilyCalendar;
+@property (nonatomic, readonly) BOOL isHidden;
+@property (nonatomic, readonly) BOOL isHolidaySubscribedCalendar;
+@property (nonatomic) BOOL isIgnoringEventAlerts;
+@property (nonatomic) BOOL isIgnoringSharedCalendarNotifications;
+@property (nonatomic) BOOL isMainCalendarForSource;
+@property (nonatomic, readonly) BOOL isMarkedImmutableSharees;
+@property (nonatomic, readonly) BOOL isMarkedUndeletable;
+@property (nonatomic) BOOL isPublished;
+@property (nonatomic, readonly) BOOL isSharingInvitation;
+@property (nonatomic) unsigned long loadFlags;
+@property (nonatomic, copy) NSURL *ownerIdentityAddress;
+@property (nonatomic, copy) NSString *ownerIdentityDisplayName;
+@property (nonatomic, copy) NSString *ownerIdentityEmail;
+@property (nonatomic, copy) NSString *ownerIdentityFirstName;
+@property (nonatomic, copy) NSString *ownerIdentityLastName;
+@property (nonatomic, readonly) BOOL prohibitsScheduling;
+@property (nonatomic, readonly) NSString *publishedURL;
+@property (nonatomic, readonly) BOOL schedulingProhibited;
+@property (nonatomic, copy) NSURL *selfIdentityAddress;
+@property (nonatomic, copy) NSString *selfIdentityDisplayName;
+@property (nonatomic, copy) NSString *selfIdentityEmail;
+@property (nonatomic, copy) NSString *selfIdentityFirstName;
+@property (nonatomic, copy) NSString *selfIdentityLastName;
+@property (nonatomic, copy) NSURL *sharedOwnerAddress;
+@property (nonatomic, readonly) NSString *sharedOwnerEmail;
+@property (nonatomic, copy) NSString *sharedOwnerName;
+@property (nonatomic, copy) NSArray *sharees;
+@property (nonatomic) int sharingInvitationResponse;
+@property (nonatomic) int sharingStatus;
+@property (nonatomic, retain) EKSource *source;
+@property (getter=isSubscribed, nonatomic, readonly) BOOL subscribed;
+@property (nonatomic, readonly) unsigned int supportedEventAvailabilities;
+@property (nonatomic, copy) NSString *symbolicColorName;
+@property (nonatomic, copy) NSString *title;
+@property (nonatomic, readonly) int type;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 + (id)calendarForEntityType:(unsigned int)arg1 eventStore:(id)arg2;
 + (id)calendarWithEventStore:(id)arg1;
@@ -181,7 +181,10 @@
 - (id)symbolicColorName;
 - (id)title;
 - (int)type;
-- (id)uiColor;
 - (BOOL)validate:(id*)arg1;
+
+// Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
+
+- (id)uiColor;
 
 @end

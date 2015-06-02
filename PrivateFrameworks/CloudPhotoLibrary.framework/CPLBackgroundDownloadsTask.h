@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@class NSError, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface CPLBackgroundDownloadsTask : CPLEngineSyncTask {
     NSError *_badError;
     NSMutableArray *_downloadTaskGroups;

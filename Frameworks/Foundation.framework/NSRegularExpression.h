@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSString;
-
 @interface NSRegularExpression : NSObject <NSCoding, NSCopying> {
     int _checkout;
     void *_internal;
@@ -13,9 +11,9 @@
     int _reserved2;
 }
 
-@property(readonly) unsigned int numberOfCaptureGroups;
-@property(readonly) unsigned int options;
-@property(copy,readonly) NSString * pattern;
+@property (readonly) unsigned int numberOfCaptureGroups;
+@property (readonly) unsigned int options;
+@property (readonly, copy) NSString *pattern;
 
 + (id)escapedPatternForString:(id)arg1;
 + (id)escapedTemplateForString:(id)arg1;
@@ -26,7 +24,7 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (void)enumerateMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id)arg4;
+- (void)enumerateMatchesInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id /* block */)arg4;
 - (void)finalize;
 - (id)firstMatchInString:(id)arg1 options:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (unsigned int)hash;

@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class CNContact;
-
 @interface ABCardLinkedCardsGroupItem : ABCardGroupItem {
     CNContact *_contact;
 }
 
-@property(retain) CNContact * contact;
+@property (nonatomic, retain) CNContact *contact;
 
 - (id)contact;
 - (id)initWithContact:(id)arg1;

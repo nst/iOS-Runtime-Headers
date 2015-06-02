@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, SKUIImageViewElement;
-
 @interface SKUIBrowseItemViewElement : SKUIItemViewElement {
     BOOL _expands;
 }
 
-@property(readonly) SKUIImageViewElement * decorationImage;
-@property(readonly) BOOL expands;
-@property(readonly) NSArray * metadata;
+@property (nonatomic, readonly) SKUIImageViewElement *decorationImage;
+@property (nonatomic, readonly) BOOL expands;
+@property (nonatomic, readonly) NSArray *metadata;
 
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)decorationImage;

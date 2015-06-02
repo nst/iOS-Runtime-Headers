@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMXmlUtils : NSObject {
-}
+@interface CMXmlUtils : NSObject
 
 + (id)copyFilteredString:(id)arg1;
 + (id)copyHeadElement;

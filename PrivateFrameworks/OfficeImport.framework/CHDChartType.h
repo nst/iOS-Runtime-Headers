@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CHDChart, CHDDataLabel, CHDSeriesCollection, EDCollection;
-
 @interface CHDChartType : NSObject {
     EDCollection *mAxisIds;
     CHDChart *mChart;

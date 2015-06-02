@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKPhysicsBody;
-
 @interface SKPhysicsContact : NSObject {
     SKPhysicsBody *_bodyA;
     SKPhysicsBody *_bodyB;
@@ -18,11 +16,11 @@
     } _contactPoint;
 }
 
-@property(readonly) SKPhysicsBody * bodyA;
-@property(readonly) SKPhysicsBody * bodyB;
-@property(readonly) float collisionImpulse;
-@property(readonly) struct CGVector { float x1; float x2; } contactNormal;
-@property(readonly) struct CGPoint { float x1; float x2; } contactPoint;
+@property (nonatomic, readonly) SKPhysicsBody *bodyA;
+@property (nonatomic, readonly) SKPhysicsBody *bodyB;
+@property (nonatomic, readonly) float collisionImpulse;
+@property (nonatomic, readonly) struct CGVector { float x1; float x2; } contactNormal;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contactPoint;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;

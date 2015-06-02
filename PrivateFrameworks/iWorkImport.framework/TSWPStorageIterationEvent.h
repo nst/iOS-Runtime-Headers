@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject, NSString, TSWPStorage;
-
 @interface TSWPStorageIterationEvent : NSObject {
     NSObject *_object;
     NSString *_providerIdentifier;
@@ -15,11 +13,11 @@
     int _type;
 }
 
-@property(readonly) NSString * identifier;
-@property(readonly) NSObject * object;
-@property(readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
-@property TSWPStorage * storage;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) NSObject *object;
+@property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
+@property (nonatomic) TSWPStorage *storage;
+@property (nonatomic, readonly) int type;
 
 + (id)characterEventWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)eventWithType:(int)arg1 providerIdentifier:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 object:(id)arg4;

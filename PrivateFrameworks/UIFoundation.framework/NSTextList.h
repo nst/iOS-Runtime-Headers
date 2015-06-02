@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSString;
-
 @interface NSTextList : NSObject <NSCoding, NSCopying> {
     unsigned int _listFlags;
     void *_listSecondary;

@@ -2,17 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMHTMLEmbedElement : DOMHTMLElement
 
-@interface DOMHTMLEmbedElement : DOMHTMLElement {
-}
-
-@property(copy) NSString * align;
+@property (copy) NSString *align;
 @property int height;
-@property(copy) NSString * name;
-@property(copy) NSString * src;
-@property(copy) NSString * type;
+@property (copy) NSString *name;
+@property (copy) NSString *src;
+@property (copy) NSString *type;
 @property int width;
+
+// Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 
 - (id)align;
 - (int)height;
@@ -23,9 +22,12 @@
 - (void)setSrc:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setWidth:(int)arg1;
-- (BOOL)showsTapHighlight;
 - (id)src;
 - (id)type;
 - (int)width;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (BOOL)showsTapHighlight;
 
 @end

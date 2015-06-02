@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SASportsMatchupLineScore : AceObject <SAAceSerializable>
 
-@interface SASportsMatchupLineScore : AceObject <SAAceSerializable> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * period;
-@property(copy) NSString * score;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *period;
+@property (nonatomic, copy) NSString *score;
+@property (readonly) Class superclass;
 
 + (id)matchupLineScore;
 + (id)matchupLineScoreWithDictionary:(id)arg1 context:(id)arg2;

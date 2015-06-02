@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ODIPyramid : NSObject {
-}
+@interface ODIPyramid : NSObject
 
 + (void)addTrapezoidForNode:(id)arg1 top:(float)arg2 height:(float)arg3 topBase:(float)arg4 bottomBase:(float)arg5 state:(id)arg6;
 + (BOOL)mapIdentifier:(id)arg1 state:(id)arg2;

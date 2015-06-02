@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class UIImageView;
-
 @interface CKEditableCollectionViewCell : UICollectionViewCell {
     UIImageView *_checkmark;
     struct CGRect { 
@@ -31,12 +29,12 @@
     } _marginInsets;
 }
 
-@property(retain) UIImageView * checkmark;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentAlignmentInsets;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentAlignmentRect;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property(getter=isEditing) BOOL editing;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (nonatomic, retain) UIImageView *checkmark;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentAlignmentInsets;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } contentAlignmentRect;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
 
 - (id)checkmark;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentAlignmentInsets;

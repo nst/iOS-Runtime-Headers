@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSMutableSet;
-
 @interface CoreDAVMkcolResponseItem : CoreDAVItem {
     NSMutableSet *_propStats;
 }
 
-@property(retain) NSMutableSet * propStats;
+@property (nonatomic, retain) NSMutableSet *propStats;
 
 + (id)copyParseRules;
 

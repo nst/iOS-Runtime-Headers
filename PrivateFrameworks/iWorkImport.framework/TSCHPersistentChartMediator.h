@@ -2,22 +2,15 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSCHChartMediator;
-
 @interface TSCHPersistentChartMediator : TSPObject <TSCHMediatorProvider, TSCHNotifyOnModify> {
     TSCHChartMediator *mMediator;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) TSCHChartMediator * mediator;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) TSCHChartMediator *mediator;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithContext:(id)arg1 andMediator:(id)arg2;

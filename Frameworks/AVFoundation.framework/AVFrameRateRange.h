@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVFrameRateRangeInternal;
-
 @interface AVFrameRateRange : NSObject {
     AVFrameRateRangeInternal *_internal;
 }
 
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxFrameDuration;
-@property(readonly) double maxFrameRate;
-@property(readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minFrameDuration;
-@property(readonly) double minFrameRate;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxFrameDuration;
+@property (readonly) double maxFrameRate;
+@property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } minFrameDuration;
+@property (readonly) double minFrameRate;
 
 + (id)frameRateRangeWithMinRate:(int)arg1 maxFrameRate:(int)arg2;
 

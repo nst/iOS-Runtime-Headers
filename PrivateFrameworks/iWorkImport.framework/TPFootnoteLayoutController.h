@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <TSWPFootnoteMarkProvider>, TPDocumentRoot;
-
 @interface TPFootnoteLayoutController : NSObject {
     BOOL _bumpedDocumentEndnotesForPageBreak;
     TPDocumentRoot *_documentRoot;
 }
 
-@property(readonly) <TSWPFootnoteMarkProvider> * footnoteMarkProvider;
+@property (nonatomic, readonly) <TSWPFootnoteMarkProvider> *footnoteMarkProvider;
 
 - (struct _NSRange { unsigned int x1; unsigned int x2; })endnoteRangeForSectionCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 isLastSection:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })footnoteLayoutRangeForPageCharRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

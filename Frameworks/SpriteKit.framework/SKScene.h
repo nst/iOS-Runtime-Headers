@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class <SKSceneDelegate>, NSMutableArray, NSMutableDictionary, PKPhysicsWorld, SKPhysicsBody, SKPhysicsWorld, SKView, UIColor;
-
 @interface SKScene : SKEffectNode {
     BOOL __needsRender;
     BOOL __needsUpdate;
@@ -44,19 +42,19 @@
 
 @property BOOL _needsRender;
 @property BOOL _needsUpdate;
-@property(retain) PKPhysicsWorld * _pkPhysicsWorld;
+@property (nonatomic, retain) PKPhysicsWorld *_pkPhysicsWorld;
 @property BOOL _usesExplicitRender;
 @property BOOL _usesExplicitUpdate;
-@property struct CGPoint { float x1; float x2; } anchorPoint;
-@property(retain) UIColor * backgroundColor;
-@property <SKSceneDelegate> * delegate;
-@property(readonly) SKPhysicsWorld * physicsWorld;
-@property int scaleMode;
-@property struct CGSize { float x1; float x2; } size;
-@property(readonly) SKView * view;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
-@property struct CGPoint { float x1; float x2; } visibleRectCenter;
-@property struct CGSize { float x1; float x2; } visibleRectSize;
+@property (nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
+@property (nonatomic, retain) UIColor *backgroundColor;
+@property (nonatomic) <SKSceneDelegate> *delegate;
+@property (nonatomic, readonly) SKPhysicsWorld *physicsWorld;
+@property (nonatomic) int scaleMode;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (nonatomic, readonly) SKView *view;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleRect;
+@property (nonatomic) struct CGPoint { float x1; float x2; } visibleRectCenter;
+@property (nonatomic) struct CGSize { float x1; float x2; } visibleRectSize;
 
 + (id)sceneWithContentsOfFile:(id)arg1;
 + (id)sceneWithContentsOfFile:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;

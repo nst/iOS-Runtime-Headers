@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUTransitionViewAnimatorDelegate>, CADisplayLink, PUValueFilter, UIView;
-
 @interface PUTransitionViewAnimator : NSObject {
     CADisplayLink *__autoUpdateDisplayLink;
     float __currentRotation;
@@ -77,35 +75,35 @@
     UIView *_view;
 }
 
-@property(setter=_setAutoUpdateDisplayLink:,retain) CADisplayLink * _autoUpdateDisplayLink;
-@property(setter=_setCurrentRotation:) float _currentRotation;
-@property(setter=_setCurrentScale:) float _currentScale;
-@property(setter=_setCurrentSizeMixFactor:) float _currentSizeMixFactor;
-@property(setter=_setDesiredRotation:) float _desiredRotation;
-@property(setter=_setDesiredScale:) float _desiredScale;
-@property(setter=_setDesiredSizeMixFactor:) float _desiredSizeMixFactor;
-@property(setter=_setDesiredTranslation:) struct CGPoint { float x1; float x2; } _desiredTranslation;
-@property(setter=_setAutoUpdating:) BOOL _isAutoUpdating;
-@property(setter=_setEnding:) BOOL _isEnding;
-@property(setter=_setProgressFilter:,retain) PUValueFilter * _progressFilter;
-@property(setter=_setRampUpFilter:,retain) PUValueFilter * _rampUpFilter;
-@property(setter=_setShouldFinishFilter:,retain) PUValueFilter * _shouldFinishFilter;
-@property(setter=_setTargetAspectRatioSourceFrame:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _targetAspectRatioSourceFrame;
-@property(setter=_setTargetScale:) float _targetScale;
-@property(setter=_setAnchorPoint:) struct CGPoint { float x1; float x2; } anchorPoint;
-@property BOOL appliesScaleViaTransform;
-@property BOOL autoUpdates;
-@property struct CGPoint { float x1; float x2; } currentTranslation;
-@property <PUTransitionViewAnimatorDelegate> * delegate;
-@property unsigned int direction;
-@property float progress;
-@property(setter=_setRampUpDuration:) double rampUpDuration;
-@property BOOL shouldFinish;
-@property(setter=_setShouldUseTargetAspectRatio:) BOOL shouldUseTargetAspectRatio;
-@property(setter=_setSourceFrame:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceFrame;
-@property(setter=_setTargetFrame:) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetFrame;
-@property float unfilteredProgress;
-@property(setter=_setView:,retain) UIView * view;
+@property (setter=_setAutoUpdateDisplayLink:, nonatomic, retain) CADisplayLink *_autoUpdateDisplayLink;
+@property (setter=_setCurrentRotation:, nonatomic) float _currentRotation;
+@property (setter=_setCurrentScale:, nonatomic) float _currentScale;
+@property (setter=_setCurrentSizeMixFactor:, nonatomic) float _currentSizeMixFactor;
+@property (setter=_setDesiredRotation:, nonatomic) float _desiredRotation;
+@property (setter=_setDesiredScale:, nonatomic) float _desiredScale;
+@property (setter=_setDesiredSizeMixFactor:, nonatomic) float _desiredSizeMixFactor;
+@property (setter=_setDesiredTranslation:, nonatomic) struct CGPoint { float x1; float x2; } _desiredTranslation;
+@property (setter=_setAutoUpdating:, nonatomic) BOOL _isAutoUpdating;
+@property (setter=_setEnding:, nonatomic) BOOL _isEnding;
+@property (setter=_setProgressFilter:, nonatomic, retain) PUValueFilter *_progressFilter;
+@property (setter=_setRampUpFilter:, nonatomic, retain) PUValueFilter *_rampUpFilter;
+@property (setter=_setShouldFinishFilter:, nonatomic, retain) PUValueFilter *_shouldFinishFilter;
+@property (setter=_setTargetAspectRatioSourceFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } _targetAspectRatioSourceFrame;
+@property (setter=_setTargetScale:, nonatomic) float _targetScale;
+@property (setter=_setAnchorPoint:, nonatomic) struct CGPoint { float x1; float x2; } anchorPoint;
+@property (nonatomic) BOOL appliesScaleViaTransform;
+@property (nonatomic) BOOL autoUpdates;
+@property (nonatomic) struct CGPoint { float x1; float x2; } currentTranslation;
+@property (nonatomic) <PUTransitionViewAnimatorDelegate> *delegate;
+@property (nonatomic) unsigned int direction;
+@property (nonatomic) float progress;
+@property (setter=_setRampUpDuration:, nonatomic) double rampUpDuration;
+@property (nonatomic) BOOL shouldFinish;
+@property (setter=_setShouldUseTargetAspectRatio:, nonatomic) BOOL shouldUseTargetAspectRatio;
+@property (setter=_setSourceFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceFrame;
+@property (setter=_setTargetFrame:, nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } targetFrame;
+@property (nonatomic) float unfilteredProgress;
+@property (setter=_setView:, nonatomic, retain) UIView *view;
 
 - (void).cxx_destruct;
 - (void)_autoUpdate:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMapTable;
-
 @interface CKDGetAuthTokensForPutURLRequest : CKDURLRequest {
     NSMapTable *_MMCSItemsByRecordIDs;
     NSMapTable *_recordIDsByRequestIDs;
 }
 
-@property(readonly) NSMapTable * MMCSItemsByRecordIDs;
-@property(retain) NSMapTable * recordIDsByRequestIDs;
+@property (nonatomic, readonly) NSMapTable *MMCSItemsByRecordIDs;
+@property (nonatomic, retain) NSMapTable *recordIDsByRequestIDs;
 
 - (void).cxx_destruct;
 - (id)MMCSItemsByRecordIDs;

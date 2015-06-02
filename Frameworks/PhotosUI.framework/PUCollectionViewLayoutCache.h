@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class <PUCollectionViewLayoutProvider>, NSMutableDictionary;
-
 @interface PUCollectionViewLayoutCache : UICollectionViewLayout {
     BOOL _cachesResults;
     NSMutableDictionary *_decorationViewLayoutAttributesByKind;
@@ -16,8 +14,8 @@
     NSMutableDictionary *_supplementaryViewLayoutAttributesByKind;
 }
 
-@property BOOL cachesResults;
-@property(readonly) <PUCollectionViewLayoutProvider> * layoutProvider;
+@property (nonatomic) BOOL cachesResults;
+@property (nonatomic, readonly) <PUCollectionViewLayoutProvider> *layoutProvider;
 
 - (void).cxx_destruct;
 - (BOOL)cachesResults;

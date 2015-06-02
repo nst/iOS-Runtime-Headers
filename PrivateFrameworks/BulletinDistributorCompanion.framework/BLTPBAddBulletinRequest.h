@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@class BLTPBBulletin;
-
 @interface BLTPBAddBulletinRequest : PBRequest <NSCopying> {
     BLTPBBulletin *_bulletin;
     double _date;
@@ -16,14 +14,14 @@
     unsigned int _updateType;
 }
 
-@property(retain) BLTPBBulletin * bulletin;
-@property double date;
-@property(readonly) BOOL hasBulletin;
-@property BOOL hasDate;
-@property BOOL hasShouldPlayLightsAndSirens;
-@property BOOL hasUpdateType;
-@property BOOL shouldPlayLightsAndSirens;
-@property unsigned int updateType;
+@property (nonatomic, retain) BLTPBBulletin *bulletin;
+@property (nonatomic) double date;
+@property (nonatomic, readonly) BOOL hasBulletin;
+@property (nonatomic) BOOL hasDate;
+@property (nonatomic) BOOL hasShouldPlayLightsAndSirens;
+@property (nonatomic) BOOL hasUpdateType;
+@property (nonatomic) BOOL shouldPlayLightsAndSirens;
+@property (nonatomic) unsigned int updateType;
 
 - (void).cxx_destruct;
 - (id)bulletin;

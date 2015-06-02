@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableIndexSet, UITableViewRowData;
-
 @interface UISectionRowData : NSObject <NSCopying> {
     unsigned int _arrayLength;
     BOOL _estimatesRowHeights;

@@ -10,11 +10,11 @@
     unsigned int _size;
 }
 
-@property(readonly) struct { /* ? */ }** colorBoxes;
-@property(readonly) unsigned int columnCount;
-@property(readonly) float contrast;
-@property(readonly) unsigned int rowCount;
-@property(readonly) unsigned int size;
+@property (nonatomic, readonly) struct { /* ? */ }**colorBoxes;
+@property (nonatomic, readonly) unsigned int columnCount;
+@property (nonatomic, readonly) float contrast;
+@property (nonatomic, readonly) unsigned int rowCount;
+@property (nonatomic, readonly) unsigned int size;
 
 - (void)_freeColorBoxes;
 - (struct { /* ? */ }**)colorBoxes;

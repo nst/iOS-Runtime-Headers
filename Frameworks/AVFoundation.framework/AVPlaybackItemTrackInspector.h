@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference;
-
 @interface AVPlaybackItemTrackInspector : AVAssetTrackInspector {
     unsigned long _mediaType;
     struct OpaqueFigPlaybackItem { } *_playbackItem;

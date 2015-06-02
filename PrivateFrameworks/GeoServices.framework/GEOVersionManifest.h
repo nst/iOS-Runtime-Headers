@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOVersionManifest : PBCodable <NSCopying> {
     NSMutableArray *_serviceVersions;
 }
 
-@property(retain) NSMutableArray * serviceVersions;
+@property (nonatomic, retain) NSMutableArray *serviceVersions;
 
 - (void)addServiceVersion:(id)arg1;
 - (void)clearServiceVersions;

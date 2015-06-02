@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLDebugFunction : MTLToolsFunction {
-}
+@interface MTLDebugFunction : MTLToolsFunction
 
 @end

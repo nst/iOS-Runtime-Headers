@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSAppPurchaseHistoryAccount : SSSQLiteEntity {
-}
+@interface SSAppPurchaseHistoryAccount : SSSQLiteEntity
 
 + (id)databaseTable;
 

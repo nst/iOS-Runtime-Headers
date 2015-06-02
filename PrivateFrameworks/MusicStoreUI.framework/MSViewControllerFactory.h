@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicStoreUI.framework/MusicStoreUI
  */
 
-@interface MSViewControllerFactory : SUViewControllerFactory {
-}
+@interface MSViewControllerFactory : SUViewControllerFactory
 
 - (id)newDownloadManagerOptions;
 - (id)newDownloadsViewController;

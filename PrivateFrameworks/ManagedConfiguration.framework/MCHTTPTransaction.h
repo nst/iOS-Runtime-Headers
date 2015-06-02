@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ManagedConfiguration.framework/ManagedConfiguration
  */
 
-@class NSData, NSError, NSMutableData, NSObject<OS_dispatch_semaphore>, NSString, NSURL, NSURLConnection;
-
 @interface MCHTTPTransaction : NSObject {
     NSString *_CMSSignatureHeaderName;
     NSURLConnection *_connection;
@@ -23,17 +21,17 @@
     NSString *_userAgent;
 }
 
-@property(retain) NSString * CMSSignatureHeaderName;
-@property(retain) NSString * contentType;
-@property(retain) NSData * data;
-@property(retain,readonly) NSError * error;
-@property(retain) NSString * method;
-@property(retain,readonly) NSURL * permanentlyRedirectedURL;
-@property(retain,readonly) NSData * responseData;
-@property(readonly) int statusCode;
-@property double timeout;
-@property(retain) NSURL * url;
-@property(retain) NSString * userAgent;
+@property (nonatomic, retain) NSString *CMSSignatureHeaderName;
+@property (nonatomic, retain) NSString *contentType;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic, readonly, retain) NSError *error;
+@property (nonatomic, retain) NSString *method;
+@property (nonatomic, readonly, retain) NSURL *permanentlyRedirectedURL;
+@property (nonatomic, readonly, retain) NSData *responseData;
+@property (nonatomic, readonly) int statusCode;
+@property (nonatomic) double timeout;
+@property (nonatomic, retain) NSURL *url;
+@property (nonatomic, retain) NSString *userAgent;
 
 + (id)performRequestURL:(id)arg1 method:(id)arg2 timeout:(double)arg3 userAgent:(id)arg4 contentType:(id)arg5 data:(id)arg6 identity:(struct __SecIdentity { }*)arg7 outPermanentlyRedirectedURL:(id*)arg8 outError:(id*)arg9;
 + (id)transactionWithURL:(id)arg1 method:(id)arg2;
@@ -57,7 +55,7 @@
 - (id)error;
 - (id)initWithURL:(id)arg1 method:(id)arg2;
 - (id)method;
-- (void)performCompletionBlock:(id)arg1;
+- (void)performCompletionBlock:(id /* block */)arg1;
 - (void)performSynchronously;
 - (id)permanentlyRedirectedURL;
 - (id)responseData;

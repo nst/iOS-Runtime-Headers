@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DFrustumLens : TSCH3DRectangleLens {
-}
+@interface TSCH3DFrustumLens : TSCH3DRectangleLens
 
 - (void)calculateCullingPlanes:(struct vector<TSCH3D::Math::ExtendedTypesDetails::plane<glm::detail::tvec3<float> >, std::__1::allocator<TSCH3D::Math::ExtendedTypesDetails::plane<glm::detail::tvec3<float> > > > { struct plane<glm::detail::tvec3<float> > {} *x1; struct plane<glm::detail::tvec3<float> > {} *x2; struct __compressed_pair<TSCH3D::Math::ExtendedTypesDetails::plane<glm::detail::tvec3<float> > *, std::__1::allocator<TSCH3D::Math::ExtendedTypesDetails::plane<glm::detail::tvec3<float> > > > { struct plane<glm::detail::tvec3<float> > {} *x_3_1_1; } x3; }*)arg1;
 - (struct FrustumRect { float x1; float x2; float x3; float x4; })frustumRectAtDistance:(float)arg1;

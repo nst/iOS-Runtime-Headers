@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
+@interface _UIKBCompatInputView : UIView
 
-@interface _UIKBCompatInputView : UIView {
-}
-
-@property(readonly) UIView * touchableView;
+@property (nonatomic, readonly) UIView *touchableView;
 
 + (BOOL)_retroactivelyRequiresConstraintBasedLayout;
 

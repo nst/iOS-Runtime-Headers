@@ -2,21 +2,14 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class WAKView<WebDocumentView>, WebFrame, WebFrameViewPrivate;
-
 @interface WebFrameView : WAKView <WebCoreFrameView> {
     WebFrameViewPrivate *_private;
 }
 
-@property BOOL allowsScrolling;
-@property(readonly) WAKView<WebDocumentView> * documentView;
-@property(readonly) BOOL documentViewShouldHandlePrint;
-@property(readonly) WebFrame * webFrame;
+@property (nonatomic) BOOL allowsScrolling;
+@property (nonatomic, readonly) WAKView<WebDocumentView> *documentView;
+@property (nonatomic, readonly) BOOL documentViewShouldHandlePrint;
+@property (nonatomic, readonly) WebFrame *webFrame;
 
 + (BOOL)_canShowMIMETypeAsHTML:(id)arg1;
 + (Class)_viewClassForMIMEType:(id)arg1 allowingPlugins:(BOOL)arg2;

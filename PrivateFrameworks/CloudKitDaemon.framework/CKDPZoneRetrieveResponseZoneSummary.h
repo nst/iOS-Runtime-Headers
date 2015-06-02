@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPZone, NSData;
-
 @interface CKDPZoneRetrieveResponseZoneSummary : PBCodable <NSCopying> {
     long long _assetQuotaUsage;
     NSData *_clientChangeToken;
@@ -18,18 +16,18 @@
     CKDPZone *_targetZone;
 }
 
-@property long long assetQuotaUsage;
-@property(retain) NSData * clientChangeToken;
-@property(retain) NSData * currentServerContinuationToken;
-@property int deviceCount;
-@property BOOL hasAssetQuotaUsage;
-@property(readonly) BOOL hasClientChangeToken;
-@property(readonly) BOOL hasCurrentServerContinuationToken;
-@property BOOL hasDeviceCount;
-@property BOOL hasMetadataQuotaUsage;
-@property(readonly) BOOL hasTargetZone;
-@property long long metadataQuotaUsage;
-@property(retain) CKDPZone * targetZone;
+@property (nonatomic) long long assetQuotaUsage;
+@property (nonatomic, retain) NSData *clientChangeToken;
+@property (nonatomic, retain) NSData *currentServerContinuationToken;
+@property (nonatomic) int deviceCount;
+@property (nonatomic) BOOL hasAssetQuotaUsage;
+@property (nonatomic, readonly) BOOL hasClientChangeToken;
+@property (nonatomic, readonly) BOOL hasCurrentServerContinuationToken;
+@property (nonatomic) BOOL hasDeviceCount;
+@property (nonatomic) BOOL hasMetadataQuotaUsage;
+@property (nonatomic, readonly) BOOL hasTargetZone;
+@property (nonatomic) long long metadataQuotaUsage;
+@property (nonatomic, retain) CKDPZone *targetZone;
 
 - (void).cxx_destruct;
 - (long long)assetQuotaUsage;

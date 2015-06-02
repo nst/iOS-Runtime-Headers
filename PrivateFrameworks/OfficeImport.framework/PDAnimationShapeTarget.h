@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADDrawable;
-
 @interface PDAnimationShapeTarget : PDAnimationTarget {
     OADDrawable *mDrawable;
 }

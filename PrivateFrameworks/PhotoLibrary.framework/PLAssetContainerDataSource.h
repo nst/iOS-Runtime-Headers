@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSMutableDictionary, NSString, PHFetchResult;
-
 @interface PLAssetContainerDataSource : NSObject <PHAssetCollectionDataSource> {
     unsigned int _allAssetsCount;
     PHFetchResult *_assetCollectionsFetchResult;
@@ -13,11 +11,11 @@
     unsigned int _lastAssetCollectionIndex;
 }
 
-@property(readonly) PHFetchResult * assetCollectionsFetchResult;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) PHFetchResult *assetCollectionsFetchResult;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (unsigned int)_indexOfNextNonEmptyAssetContainerAfterContainerIndex:(unsigned int)arg1 wrap:(BOOL)arg2;
 - (unsigned int)_indexOfPreviousNonEmptyAssetContainerBeforeContainerIndex:(unsigned int)arg1 wrap:(BOOL)arg2;

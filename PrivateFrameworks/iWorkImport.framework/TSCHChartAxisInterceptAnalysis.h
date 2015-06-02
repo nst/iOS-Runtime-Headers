@@ -7,8 +7,8 @@
     int _gridValueType;
 }
 
-@property double axisInterceptPosition;
-@property int gridValueType;
+@property (nonatomic) double axisInterceptPosition;
+@property (nonatomic) int gridValueType;
 
 - (double)axisInterceptPosition;
 - (int)gridValueType;

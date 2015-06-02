@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUStructuredPageGroupedTableDataSource : SUStructuredPageTableDataSource {
-}
+@interface SUStructuredPageGroupedTableDataSource : SUStructuredPageTableDataSource
 
 - (id)_subtitleForSectionIndex:(int)arg1;
 - (BOOL)canShowItemOfferButtonForItem:(id)arg1;

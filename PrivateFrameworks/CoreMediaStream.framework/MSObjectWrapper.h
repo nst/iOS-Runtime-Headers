@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <NSCoding>, <NSObject><NSCoding>;
-
 @interface MSObjectWrapper : NSObject {
     int _errorCount;
     <NSObject><NSCoding> *_object;
@@ -11,10 +9,10 @@
     long long _uniqueID;
 }
 
-@property int errorCount;
-@property(readonly) <NSCoding> * object;
-@property long long size;
-@property long long uniqueID;
+@property (nonatomic) int errorCount;
+@property (nonatomic, readonly) <NSCoding> *object;
+@property (nonatomic) long long size;
+@property (nonatomic) long long uniqueID;
 
 + (int)indexOfObject:(id)arg1 inWrapperArray:(id)arg2;
 + (id)objectsFromWrappers:(id)arg1;

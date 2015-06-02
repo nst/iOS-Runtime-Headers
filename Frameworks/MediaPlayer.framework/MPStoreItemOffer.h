@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary, NSNumber, NSString;
-
 @interface MPStoreItemOffer : NSObject <NSSecureCoding> {
     NSString *_buyParameters;
     NSString *_formattedPrice;
@@ -12,10 +10,10 @@
     NSDictionary *_typeToActionText;
 }
 
-@property(readonly) NSString * buyParameters;
-@property(readonly) NSString * formattedPrice;
-@property(readonly) NSString * offerType;
-@property(readonly) NSNumber * price;
+@property (nonatomic, readonly) NSString *buyParameters;
+@property (nonatomic, readonly) NSString *formattedPrice;
+@property (nonatomic, readonly) NSString *offerType;
+@property (nonatomic, readonly) NSNumber *price;
 
 + (BOOL)supportsSecureCoding;
 

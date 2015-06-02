@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class <EKTravelAdvisorWorld>, <EKTravelRoutePredictor>, EKTravelAgendaItem, EKTravelPrediction, NSMutableArray;
-
 @interface EKTravelAdvisor : NSObject {
     BOOL _invalidated;
     EKTravelAgendaItem *_nextAgendaItem;
@@ -27,6 +25,6 @@
 - (id)initWithWorld:(id)arg1 routePredictorClass:(Class)arg2;
 - (void)invalidate;
 - (void)removeAgendaItem:(id)arg1;
-- (void)setLocationAuthorizationCallback:(id)arg1;
+- (void)setLocationAuthorizationCallback:(id /* block */)arg1;
 
 @end

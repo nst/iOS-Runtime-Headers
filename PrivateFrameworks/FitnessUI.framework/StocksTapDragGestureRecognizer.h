@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class NSMutableSet, NSSet, NSTimer;
-
 @interface StocksTapDragGestureRecognizer : UIGestureRecognizer {
     unsigned int _maximumNumberOfTouches;
     unsigned int _minimumNumberOfTouches;
@@ -22,11 +20,11 @@
     NSMutableSet *_touches;
 }
 
-@property unsigned int maximumNumberOfTouches;
-@property unsigned int minimumNumberOfTouches;
-@property float requiredPressDelay;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } touchableBounds;
-@property(readonly) NSSet * touches;
+@property (nonatomic) unsigned int maximumNumberOfTouches;
+@property (nonatomic) unsigned int minimumNumberOfTouches;
+@property (nonatomic) float requiredPressDelay;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } touchableBounds;
+@property (nonatomic, readonly) NSSet *touches;
 
 - (void).cxx_destruct;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;

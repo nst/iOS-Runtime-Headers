@@ -2,18 +2,8 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CAMediaTimingFunction, NSString;
-
 @interface PKUISpringAnimationFactory : NSObject <_UIBasicAnimationFactory> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _animationDelayHandler;
-
+    id /* block */ _animationDelayHandler;
     float _damping;
     double _duration;
     float _mass;
@@ -24,17 +14,17 @@
     float _velocity;
 }
 
-@property float damping;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) double duration;
-@property(readonly) unsigned int hash;
-@property float mass;
-@property(readonly) double maximumVendedDelay;
-@property float stiffness;
-@property(readonly) Class superclass;
-@property(retain) CAMediaTimingFunction * timing;
-@property float velocity;
+@property (nonatomic) float damping;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) double duration;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float mass;
+@property (nonatomic, readonly) double maximumVendedDelay;
+@property (nonatomic) float stiffness;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) CAMediaTimingFunction *timing;
+@property (nonatomic) float velocity;
 
 + (id)defaultTimingFunction;
 + (id)springAnimationWithKeyPath:(id)arg1;
@@ -45,7 +35,7 @@
 - (id)_springAnimationWithKeyPath:(id)arg1;
 - (id)_timingFunctionForAnimation;
 - (void)_updateDurationIfNecessary;
-- (id)animationDelayHandler;
+- (id /* block */)animationDelayHandler;
 - (float)damping;
 - (void)dealloc;
 - (double)duration;
@@ -56,7 +46,7 @@
 - (id)initWithVelocity:(float)arg1 timing:(id)arg2;
 - (float)mass;
 - (double)maximumVendedDelay;
-- (void)setAnimationDelayHandler:(id)arg1;
+- (void)setAnimationDelayHandler:(id /* block */)arg1;
 - (void)setDamping:(float)arg1;
 - (void)setMass:(float)arg1;
 - (void)setStiffness:(float)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class <EKDayAllDayViewDelegate>, EKEvent, NSMutableArray, UILabel, UIScrollView, UIView;
-
 @interface EKDayAllDayView : UIView {
     UILabel *_allDay;
     BOOL _allDayLabelHighlighted;
@@ -25,15 +23,15 @@
     BOOL _usesSmallText;
 }
 
-@property BOOL allowsOccurrenceSelection;
-@property <EKDayAllDayViewDelegate> * delegate;
-@property(retain) EKEvent * dimmedOccurrence;
-@property float fixedHeight;
-@property int maxVisibleRows;
-@property(readonly) float naturalHeight;
-@property BOOL showsBorderLines;
-@property BOOL showsLabel;
-@property BOOL showsSelection;
+@property (nonatomic) BOOL allowsOccurrenceSelection;
+@property (nonatomic) <EKDayAllDayViewDelegate> *delegate;
+@property (nonatomic, retain) EKEvent *dimmedOccurrence;
+@property (nonatomic) float fixedHeight;
+@property (nonatomic) int maxVisibleRows;
+@property (nonatomic, readonly) float naturalHeight;
+@property (nonatomic) BOOL showsBorderLines;
+@property (nonatomic) BOOL showsLabel;
+@property (nonatomic) BOOL showsSelection;
 
 + (id)allDayLabelBoldFont;
 + (id)allDayLabelFont;

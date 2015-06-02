@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSError, NSMutableArray, NSMutableDictionary, NSMutableOrderedSet, NSMutableSet, NSObject<OS_dispatch_semaphore>, NSObject<OS_xpc_object>, NSString;
-
 @interface NSFileAccessClaim : NSObject {
     unsigned int _blockageCount;
     NSMutableSet *_blockingClaims;
@@ -39,7 +37,7 @@
 - (BOOL)cameFromSuperarbiter;
 - (BOOL)canAccessLocations:(id)arg1 forReading:(BOOL)arg2 error:(id*)arg3;
 - (void)cancelled;
-- (BOOL)checkIfSymbolicLinkAtURL:(id)arg1 withResolutionCount:(int*)arg2 andIfSoThenReevaluateSelf:(id)arg3;
+- (BOOL)checkIfSymbolicLinkAtURL:(id)arg1 withResolutionCount:(int*)arg2 andIfSoThenReevaluateSelf:(id /* block */)arg3;
 - (id)claimID;
 - (id)claimerError;
 - (BOOL)claimerInvokingIsBlockedByReactorWithID:(id)arg1;
@@ -54,10 +52,10 @@
 - (BOOL)evaluateSelfWithRootNode:(id)arg1 checkSubarbitrability:(BOOL)arg2;
 - (void)finalize;
 - (void)finished;
-- (void)forwardUsingMessageSender:(id)arg1 crashHandler:(id)arg2;
+- (void)forwardUsingMessageSender:(id /* block */)arg1 crashHandler:(id /* block */)arg2;
 - (void)granted;
 - (id)initWithClient:(id)arg1 claimID:(id)arg2 purposeID:(id)arg3;
-- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id)arg3;
+- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id /* block */)arg3;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByClaimWithPurposeID:(id)arg1;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;
@@ -65,12 +63,12 @@
 - (BOOL)isGranted;
 - (BOOL)isRevoked;
 - (void)itemAtLocation:(id)arg1 wasReplacedByItemAtLocation:(id)arg2;
-- (void)makePresentersOfItemAtLocation:(id)arg1 orContainedItem:(BOOL)arg2 relinquishUsingProcedureGetter:(id)arg3;
-- (void)makeProviderOfItemAtLocation:(id)arg1 providePhysicalURLThenContinue:(id)arg2;
-- (void)makeProviderOfItemAtLocation:(id)arg1 provideThenContinue:(id)arg2;
+- (void)makePresentersOfItemAtLocation:(id)arg1 orContainedItem:(BOOL)arg2 relinquishUsingProcedureGetter:(id /* block */)arg3;
+- (void)makeProviderOfItemAtLocation:(id)arg1 providePhysicalURLThenContinue:(id /* block */)arg2;
+- (void)makeProviderOfItemAtLocation:(id)arg1 provideThenContinue:(id /* block */)arg2;
 - (id)newClaimerWaiter;
 - (id)pendingClaims;
-- (void)prepareItemForUploadingFromURL:(id)arg1 thenContinue:(id)arg2;
+- (void)prepareItemForUploadingFromURL:(id)arg1 thenContinue:(id /* block */)arg2;
 - (id)purposeID;
 - (id)purposeIDOfClaimOnItemAtLocation:(id)arg1 forMessagingPresenter:(id)arg2;
 - (void)removePendingClaims:(id)arg1;
@@ -80,8 +78,8 @@
 - (BOOL)shouldBeRevokedPriorToInvokingAccessor;
 - (void)unblock;
 - (void)unblockClaimerForReason:(id)arg1;
-- (void)whenDevaluedPerformProcedure:(id)arg1;
-- (void)whenFinishedPerformProcedure:(id)arg1;
-- (void)whenRevokedPerformProcedure:(id)arg1;
+- (void)whenDevaluedPerformProcedure:(id /* block */)arg1;
+- (void)whenFinishedPerformProcedure:(id /* block */)arg1;
+- (void)whenRevokedPerformProcedure:(id /* block */)arg1;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class CLLocation, NSArray, NSCountedSet, NSDate, NSMutableArray, NSMutableSet, NSObject<NSCopying>, NSString;
-
 @interface PLMomentCluster : NSObject {
     CLLocation *__approximateLocation;
     NSDate *__endingDate;
@@ -17,17 +15,17 @@
     short _generationType;
 }
 
-@property(setter=_setMergeTags:,retain) NSCountedSet * _mergeTags;
-@property(setter=_setNodes:,copy) NSMutableArray * _mutableNodes;
-@property(readonly) NSMutableSet * _nodesWithLocation;
-@property(setter=_setSplitTags:,retain) NSCountedSet * _splitTags;
-@property(readonly) CLLocation * approximateLocation;
-@property(retain) NSDate * endingDate;
-@property short generationType;
-@property(copy,readonly) NSArray * nodes;
-@property(readonly) NSObject<NSCopying> * objectID;
-@property(retain) NSDate * startingDate;
-@property(retain) NSString * title;
+@property (setter=_setMergeTags:, nonatomic, retain) NSCountedSet *_mergeTags;
+@property (setter=_setNodes:, nonatomic, copy) NSMutableArray *_mutableNodes;
+@property (nonatomic, readonly) NSMutableSet *_nodesWithLocation;
+@property (setter=_setSplitTags:, nonatomic, retain) NSCountedSet *_splitTags;
+@property (nonatomic, readonly) CLLocation *approximateLocation;
+@property (nonatomic, retain) NSDate *endingDate;
+@property (nonatomic) short generationType;
+@property (nonatomic, readonly, copy) NSArray *nodes;
+@property (nonatomic, readonly) NSObject<NSCopying> *objectID;
+@property (nonatomic, retain) NSDate *startingDate;
+@property (nonatomic, retain) NSString *title;
 
 + (double)nameOccurrenceCutoff;
 

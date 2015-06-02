@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class ICCameraFile, NSDictionary, NSString;
-
 @interface PLCameraImportItemRepresentation : NSObject {
     ICCameraFile *_cameraFile;
     BOOL _canRequestMetadata;
@@ -13,12 +11,12 @@
     NSString *_path;
 }
 
-@property(retain) ICCameraFile * cameraFile;
-@property BOOL canRequestMetadata;
-@property BOOL canRequestThumbnail;
-@property BOOL inDatabase;
-@property(retain) NSDictionary * metadata;
-@property(copy) NSString * path;
+@property (nonatomic, retain) ICCameraFile *cameraFile;
+@property (nonatomic) BOOL canRequestMetadata;
+@property (nonatomic) BOOL canRequestThumbnail;
+@property (nonatomic) BOOL inDatabase;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (nonatomic, copy) NSString *path;
 
 - (id)cameraFile;
 - (BOOL)canRequestMetadata;

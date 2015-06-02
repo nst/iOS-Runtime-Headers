@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDAppRRCConnectionStats : PBCodable <NSCopying> {
     unsigned int _bundleBGDuration;
     unsigned int _bundleFGDuration;
@@ -22,20 +20,20 @@
     unsigned int _totalBytesTransferred;
 }
 
-@property unsigned int bundleBGDuration;
-@property unsigned int bundleFGDuration;
-@property(retain) NSString * bundleName;
-@property BOOL hasBundleBGDuration;
-@property BOOL hasBundleFGDuration;
-@property(readonly) BOOL hasBundleName;
-@property BOOL hasNumMOConnectionTriggered;
-@property BOOL hasNumMTConnectionTriggered;
-@property BOOL hasRAT;
-@property BOOL hasTotalBytesTransferred;
-@property unsigned int numMOConnectionTriggered;
-@property unsigned int numMTConnectionTriggered;
-@property int rAT;
-@property unsigned int totalBytesTransferred;
+@property (nonatomic) unsigned int bundleBGDuration;
+@property (nonatomic) unsigned int bundleFGDuration;
+@property (nonatomic, retain) NSString *bundleName;
+@property (nonatomic) BOOL hasBundleBGDuration;
+@property (nonatomic) BOOL hasBundleFGDuration;
+@property (nonatomic, readonly) BOOL hasBundleName;
+@property (nonatomic) BOOL hasNumMOConnectionTriggered;
+@property (nonatomic) BOOL hasNumMTConnectionTriggered;
+@property (nonatomic) BOOL hasRAT;
+@property (nonatomic) BOOL hasTotalBytesTransferred;
+@property (nonatomic) unsigned int numMOConnectionTriggered;
+@property (nonatomic) unsigned int numMTConnectionTriggered;
+@property (nonatomic) int rAT;
+@property (nonatomic) unsigned int totalBytesTransferred;
 
 - (unsigned int)bundleBGDuration;
 - (unsigned int)bundleFGDuration;

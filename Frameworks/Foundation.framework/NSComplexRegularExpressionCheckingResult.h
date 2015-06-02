@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSArray, NSRegularExpression;
-
 @interface NSComplexRegularExpressionCheckingResult : NSRegularExpressionCheckingResult {
     NSArray *_rangeArray;
     NSRegularExpression *_regularExpression;

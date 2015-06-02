@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@interface EKOrganizer : EKParticipant {
-}
+@interface EKOrganizer : EKParticipant
 
-@property(getter=isCurrentUser) BOOL currentUser;
+@property (getter=isCurrentUser, nonatomic) BOOL currentUser;
 
 + (id)organizerWithName:(id)arg1 emailAddress:(id)arg2 address:(id)arg3 isCurrentUser:(BOOL)arg4;
 

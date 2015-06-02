@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@interface CATransaction : NSObject {
-}
+@interface CATransaction : NSObject
 
 + (id)_implicitAnimationForLayer:(id)arg1 keyPath:(id)arg2;
 + (void)activate;
@@ -11,25 +10,25 @@
 + (BOOL)animatesFromModelValues;
 + (double)animationDuration;
 + (id)animationTimingFunction;
-+ (id)animator;
++ (id /* block */)animator;
 + (void)assertInactive;
 + (void)begin;
 + (void)commit;
 + (double)commitTime;
-+ (id)completionBlock;
++ (id /* block */)completionBlock;
 + (unsigned int)currentState;
 + (BOOL)disableActions;
 + (void)flush;
 + (double)inputTime;
 + (void)lock;
 + (void)popAnimator;
-+ (void)pushAnimator:(id)arg1;
++ (void)pushAnimator:(id /* block */)arg1;
 + (void)setAnimatesFromModelValues:(BOOL)arg1;
 + (void)setAnimationDuration:(double)arg1;
 + (void)setAnimationTimingFunction:(id)arg1;
-+ (void)setCommitHandler:(id)arg1;
++ (void)setCommitHandler:(id /* block */)arg1;
 + (void)setCommitTime:(double)arg1;
-+ (void)setCompletionBlock:(id)arg1;
++ (void)setCompletionBlock:(id /* block */)arg1;
 + (void)setDisableActions:(BOOL)arg1;
 + (void)setInputTime:(double)arg1;
 + (void)setValue:(id)arg1 forKey:(id)arg2;

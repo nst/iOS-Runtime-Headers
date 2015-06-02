@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKJoystickGestureVelocitySample;
-
 @interface CKJoystickGestureRecognizer : UILongPressGestureRecognizer {
     struct CGPoint { 
         float x; 

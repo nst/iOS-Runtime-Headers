@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <SFUOutputStream>, NSString, SFUCryptor;
-
 @interface SFUCryptoOutputStream : NSObject <SFUOutputStream> {
     <SFUOutputStream> *mBaseStream;
     BOOL mComputeCrc32;
@@ -12,10 +10,10 @@
     BOOL mIsClosed;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (unsigned long long)encodedLengthForDataLength:(unsigned long long)arg1 key:(id)arg2;
 

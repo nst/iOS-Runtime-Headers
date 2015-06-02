@@ -2,36 +2,26 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class UIView;
-
 @interface UIInputViewAnimationStyleExtraView : NSObject {
     int _alignment;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _animation;
-
+    id /* block */ _animation;
     int _clipContainerType;
     UIView *_view;
 }
 
-@property int alignment;
-@property(copy) id animation;
-@property int clipContainerType;
-@property(retain) UIView * view;
+@property (nonatomic) int alignment;
+@property (nonatomic, copy) id /* block */ animation;
+@property (nonatomic) int clipContainerType;
+@property (nonatomic, retain) UIView *view;
 
-+ (id)extraView:(id)arg1 withAlignment:(int)arg2 animation:(id)arg3 onSnapshot:(BOOL)arg4;
++ (id)extraView:(id)arg1 withAlignment:(int)arg2 animation:(id /* block */)arg3 onSnapshot:(BOOL)arg4;
 
 - (int)alignment;
-- (id)animation;
+- (id /* block */)animation;
 - (int)clipContainerType;
 - (void)dealloc;
 - (void)setAlignment:(int)arg1;
-- (void)setAnimation:(id)arg1;
+- (void)setAnimation:(id /* block */)arg1;
 - (void)setClipContainerType:(int)arg1;
 - (void)setView:(id)arg1;
 - (id)view;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBWorkspaceEventQueueLock : BSEventQueueLock {
-}
+@interface FBWorkspaceEventQueueLock : BSEventQueueLock
 
 - (id)initWithReason:(id)arg1;
 

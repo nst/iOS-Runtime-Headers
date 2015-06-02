@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXSubsystemZoom : AXSubsystem {
-}
+@interface AXSubsystemZoom : AXSubsystem
 
 + (int)defaultLogLevel;
 + (id)identifier;

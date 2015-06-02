@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class TUFaceTimeAudioCallModel, TUProxyCallModel, TUTelephonyCallModel;
+@interface TUCallCenterCallModelState : TUCallModelState
 
-@interface TUCallCenterCallModelState : TUCallModelState {
-}
-
-@property(retain,readonly) TUFaceTimeAudioCallModel * faceTimeAudioCallModel;
-@property(retain,readonly) TUProxyCallModel * proxyCallModel;
-@property(retain,readonly) TUTelephonyCallModel * telephonyCallModel;
+@property (nonatomic, readonly, retain) TUFaceTimeAudioCallModel *faceTimeAudioCallModel;
+@property (nonatomic, readonly, retain) TUProxyCallModel *proxyCallModel;
+@property (nonatomic, readonly, retain) TUTelephonyCallModel *telephonyCallModel;
 
 - (BOOL)_allCallsSupportCallModelType:(int)arg1;
 - (BOOL)_anyCallsSupportCallModelType:(int)arg1;

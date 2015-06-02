@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPlaceResult;
-
 @interface GEOCluster : PBCodable <NSCopying> {
     GEOPlaceResult *_container;
     struct { 
@@ -13,10 +11,10 @@
     } _indexs;
 }
 
-@property(retain) GEOPlaceResult * container;
-@property(readonly) BOOL hasContainer;
-@property(readonly) int* indexs;
-@property(readonly) unsigned int indexsCount;
+@property (nonatomic, retain) GEOPlaceResult *container;
+@property (nonatomic, readonly) BOOL hasContainer;
+@property (nonatomic, readonly) int*indexs;
+@property (nonatomic, readonly) unsigned int indexsCount;
 
 - (void)addIndex:(int)arg1;
 - (void)clearIndexs;

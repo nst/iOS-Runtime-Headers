@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@class NEAOVPN, NEContentFilter, NEProfileIngestionPayloadInfo, NEVPN, NEVPNApp, NSString, NSUUID;
-
 @interface NEConfiguration : NSObject <NEConfigurationValidating, NEProfilePayloadHandlerDelegate, NSCopying, NSSecureCoding> {
     NEVPN *_VPN;
     NEAOVPN *_alwaysOnVPN;
@@ -19,19 +17,19 @@
     NEProfileIngestionPayloadInfo *_payloadInfo;
 }
 
-@property(copy) NEVPN * VPN;
-@property(copy) NEAOVPN * alwaysOnVPN;
-@property(copy) NEVPNApp * appVPN;
-@property(copy) NSString * application;
-@property(copy) NSString * applicationIdentifier;
-@property(copy) NSString * applicationName;
-@property(copy) NEContentFilter * contentFilter;
-@property(copy) NSString * externalIdentifier;
-@property(readonly) int grade;
-@property(readonly) NSUUID * identifier;
-@property(copy) NSString * name;
-@property(copy) NEProfileIngestionPayloadInfo * payloadInfo;
-@property(readonly) NSString * pluginType;
+@property (copy) NEVPN *VPN;
+@property (copy) NEAOVPN *alwaysOnVPN;
+@property (copy) NEVPNApp *appVPN;
+@property (copy) NSString *application;
+@property (copy) NSString *applicationIdentifier;
+@property (copy) NSString *applicationName;
+@property (copy) NEContentFilter *contentFilter;
+@property (copy) NSString *externalIdentifier;
+@property (readonly) int grade;
+@property (readonly) NSUUID *identifier;
+@property (copy) NSString *name;
+@property (copy) NEProfileIngestionPayloadInfo *payloadInfo;
+@property (readonly) NSString *pluginType;
 
 + (BOOL)SCServiceWithIdentifier:(id)arg1 existsInPreferences:(struct __SCPreferences { }*)arg2;
 + (void)addError:(id)arg1 toList:(id)arg2;

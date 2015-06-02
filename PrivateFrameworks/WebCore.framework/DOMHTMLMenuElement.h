@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMHTMLMenuElement : DOMHTMLElement {
-}
+@interface DOMHTMLMenuElement : DOMHTMLElement
 
 @property BOOL compact;
 

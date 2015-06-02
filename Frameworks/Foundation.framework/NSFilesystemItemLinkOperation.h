@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSFilesystemItemLinkOperation : NSFilesystemItemCopyOperation {
-}
+@interface NSFilesystemItemLinkOperation : NSFilesystemItemCopyOperation
 
 + (id)_errorWithErrno:(int)arg1 sourcePath:(id)arg2 destinationPath:(id)arg3;
 + (BOOL)_needsStatInfo;

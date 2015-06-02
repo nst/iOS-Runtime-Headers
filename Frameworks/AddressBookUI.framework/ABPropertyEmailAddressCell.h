@@ -6,7 +6,7 @@
     BOOL _VIP;
 }
 
-@property(getter=isVIP) BOOL VIP;
+@property (getter=isVIP, nonatomic) BOOL VIP;
 
 - (BOOL)isVIP;
 - (void)setVIP:(BOOL)arg1;

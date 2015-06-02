@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ESDDibFileBlipContext : ESDBlipContext {
-}
+@interface ESDDibFileBlipContext : ESDBlipContext
 
 - (bool)loadDelayedNode:(id)arg1;
 

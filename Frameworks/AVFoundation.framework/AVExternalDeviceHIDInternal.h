@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVWeakReference, NSNumber, NSString;
-
 @interface AVExternalDeviceHIDInternal : NSObject {
     NSString *UUID;
     NSNumber *inputMode;

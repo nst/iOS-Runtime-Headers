@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <UIKeyInput>, <UIKeyboardCandidateList>, <UIKeyboardImplGeometryDelegate>, <UIKeyboardInput>, <UIKeyboardRecording><UIApplicationEventRecording>, NSDictionary, NSMutableArray, NSMutableDictionary, NSObject<UIKeyboardRecording><UIApplicationEventRecording>, NSString, TIKeyboardCandidateResultSet, TIKeyboardInputManagerState, TIKeyboardInputManagerStub, TIKeyboardLayout, TIKeyboardState, TIKeyboardTouchEvent, UIAlertView, UIAutocorrectInlinePrompt, UIDelayedAction, UIKeyboardAutocorrectionController, UIKeyboardLayout, UIKeyboardScheduledTask, UIKeyboardTaskQueue, UIPhysicalKeyboardEvent, UIResponder, UIResponder<UIKeyInput>, UIResponder<UITextInput>, UIResponder<UITextInputPrivate>, UIResponder<UIWKInteractionViewProtocol>, UITextInputArrowKeyHistory, UITextInputTraits, UIView, WebEvent, _UIActionWhenIdle;
-
 @interface UIKeyboardImpl : UIView <UIKeyboardCandidateListDelegate, _UIIVCResponseDelegateImpl> {
     UIKeyboardScheduledTask *_autocorrectPromptTask;
     NSDictionary *_candidateRequestInfo;
@@ -56,11 +50,7 @@
     BOOL m_didSyncDocumentStateToInputDelegate;
     BOOL m_doubleSpacePeriodPreference;
     BOOL m_doubleSpacePeriodWasAppliedInCurrentContext;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id m_externalTask;
-
+    id /* block */ m_externalTask;
     <UIKeyboardImplGeometryDelegate> *m_geometryDelegate;
     BOOL m_hardwareKeyboardAttached;
     UIPhysicalKeyboardEvent *m_hardwareRepeatEvent;
@@ -74,11 +64,7 @@
         float y; 
     } m_inputPoint;
     BOOL m_insideKeyInputDelegateCall;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id m_keyInputCompletionHandler;
-
+    id /* block */ m_keyInputCompletionHandler;
     TIKeyboardState *m_keyboardState;
     NSMutableDictionary *m_keyedLayouts;
     NSMutableArray *m_keyplaneNamesCurrentDelegate;
@@ -141,51 +127,51 @@
     BOOL m_usesCandidateSelection;
 }
 
-@property(retain) UITextInputArrowKeyHistory * arrowKeyHistory;
-@property(readonly) UIResponder<UIWKInteractionViewProtocol> * asynchronousInputDelegate;
-@property(retain) UIKeyboardScheduledTask * autocorrectPromptTask;
-@property(readonly) UIKeyboardAutocorrectionController * autocorrectionController;
-@property(retain) NSDictionary * candidateRequestInfo;
-@property(readonly) BOOL centerFilled;
-@property(retain) id changedDelegate;
-@property BOOL committingCandidate;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) _UIActionWhenIdle * deferredDidSetDelegateAction;
-@property(retain) _UIActionWhenIdle * delayedCandidateRequest;
-@property(retain) UIResponder<UIKeyInput> * delegate;
-@property(readonly) UIResponder * delegateAsResponder;
-@property(copy,readonly) NSString * description;
-@property(copy) id externalTask;
-@property <UIKeyboardImplGeometryDelegate> * geometryDelegate;
-@property BOOL geometryIsChanging;
-@property BOOL handlingKeyCommandFromHardwareKeyboard;
-@property BOOL hardwareKeyboardIsSeen;
-@property(retain) UIPhysicalKeyboardEvent * hardwareRepeatEvent;
-@property(retain) UIKeyboardScheduledTask * hardwareRepeatTask;
-@property(readonly) unsigned int hash;
-@property(getter=isInHardwareKeyboardMode) BOOL inHardwareKeyboardMode;
-@property(readonly) UIResponder<UITextInput> * inputDelegate;
-@property(readonly) TIKeyboardInputManagerStub * inputManager;
-@property(retain) TIKeyboardInputManagerState * inputManagerState;
-@property(retain) UIAlertView * keyboardAlertView;
-@property(retain) TIKeyboardLayout * layoutForKeyHitTest;
-@property(readonly) <UIKeyboardInput> * legacyInputDelegate;
-@property(readonly) unsigned int minimumTouchesForTranslation;
-@property(readonly) UIResponder<UITextInputPrivate> * privateInputDelegate;
-@property BOOL receivedCandidatesInCurrentInputMode;
-@property(retain) <UIKeyboardRecording><UIApplicationEventRecording> * recorder;
+@property (nonatomic, retain) UITextInputArrowKeyHistory *arrowKeyHistory;
+@property (nonatomic, readonly) UIResponder<UIWKInteractionViewProtocol> *asynchronousInputDelegate;
+@property (nonatomic, retain) UIKeyboardScheduledTask *autocorrectPromptTask;
+@property (nonatomic, readonly) UIKeyboardAutocorrectionController *autocorrectionController;
+@property (nonatomic, retain) NSDictionary *candidateRequestInfo;
+@property (readonly) BOOL centerFilled;
+@property (nonatomic, retain) id changedDelegate;
+@property (nonatomic) BOOL committingCandidate;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) _UIActionWhenIdle *deferredDidSetDelegateAction;
+@property (nonatomic, retain) _UIActionWhenIdle *delayedCandidateRequest;
+@property (nonatomic, retain) UIResponder<UIKeyInput> *delegate;
+@property (nonatomic, readonly) UIResponder *delegateAsResponder;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ externalTask;
+@property (nonatomic) <UIKeyboardImplGeometryDelegate> *geometryDelegate;
+@property (nonatomic) BOOL geometryIsChanging;
+@property (nonatomic) BOOL handlingKeyCommandFromHardwareKeyboard;
+@property (nonatomic) BOOL hardwareKeyboardIsSeen;
+@property (nonatomic, retain) UIPhysicalKeyboardEvent *hardwareRepeatEvent;
+@property (nonatomic, retain) UIKeyboardScheduledTask *hardwareRepeatTask;
+@property (readonly) unsigned int hash;
+@property (getter=isInHardwareKeyboardMode, nonatomic) BOOL inHardwareKeyboardMode;
+@property (nonatomic, readonly) UIResponder<UITextInput> *inputDelegate;
+@property (nonatomic, readonly) TIKeyboardInputManagerStub *inputManager;
+@property (nonatomic, retain) TIKeyboardInputManagerState *inputManagerState;
+@property (nonatomic, retain) UIAlertView *keyboardAlertView;
+@property (nonatomic, retain) TIKeyboardLayout *layoutForKeyHitTest;
+@property (nonatomic, readonly) <UIKeyboardInput> *legacyInputDelegate;
+@property (readonly) unsigned int minimumTouchesForTranslation;
+@property (nonatomic, readonly) UIResponder<UITextInputPrivate> *privateInputDelegate;
+@property (nonatomic) BOOL receivedCandidatesInCurrentInputMode;
+@property (nonatomic, retain) <UIKeyboardRecording><UIApplicationEventRecording> *recorder;
 @property BOOL rivenSplitLock;
-@property BOOL shouldSetInputModeInNextRun;
-@property(readonly) BOOL shouldShowCandidateBar;
-@property BOOL shouldSkipCandidateSelection;
-@property BOOL showInputModeIndicator;
-@property BOOL showsCandidateBar;
-@property BOOL showsCandidateInline;
-@property BOOL softwareKeyboardShownByTouch;
-@property(readonly) BOOL splitTransitionInProgress;
-@property(readonly) Class superclass;
-@property(readonly) UIKeyboardTaskQueue * taskQueue;
-@property(retain) TIKeyboardTouchEvent * touchEventWaitingForKeyInputEvent;
+@property (nonatomic) BOOL shouldSetInputModeInNextRun;
+@property (nonatomic, readonly) BOOL shouldShowCandidateBar;
+@property (nonatomic) BOOL shouldSkipCandidateSelection;
+@property (nonatomic) BOOL showInputModeIndicator;
+@property (nonatomic) BOOL showsCandidateBar;
+@property (nonatomic) BOOL showsCandidateInline;
+@property (nonatomic) BOOL softwareKeyboardShownByTouch;
+@property (nonatomic, readonly) BOOL splitTransitionInProgress;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UIKeyboardTaskQueue *taskQueue;
+@property (nonatomic, retain) TIKeyboardTouchEvent *touchEventWaitingForKeyInputEvent;
 
 + (void)_clearHardwareKeyboardMinimizationPreference;
 + (struct CGSize { float x1; float x2; })_defaultSizeForInterfaceOrientation:(int)arg1;
@@ -236,7 +222,7 @@
 - (id)UILanguagePreference;
 - (int)_clipCornersOfView:(id)arg1;
 - (void)_completePerformInputViewControllerOutput:(id)arg1 executionContext:(id)arg2;
-- (void)_continueHandleWebKeyEventWithTask:(id)arg1 executionContext:(id)arg2;
+- (void)_continueHandleWebKeyEventWithTask:(id /* block */)arg1 executionContext:(id)arg2;
 - (id)_getAutocorrection;
 - (id)_getCurrentKeyboardName;
 - (id)_getCurrentKeyplaneName;
@@ -420,7 +406,7 @@
 - (id)dynamicCaretList;
 - (void)ejectKeyDown;
 - (void)enable;
-- (id)externalTask;
+- (id /* block */)externalTask;
 - (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (void)fadeAutocorrectPrompt;
 - (void)finishLayoutChangeWithArguments:(id)arg1;
@@ -438,13 +424,13 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForKeylayoutName:(id)arg1;
 - (id)generateAutocorrectionReplacements:(id)arg1;
 - (void)generateAutocorrectionWithExecutionContext:(id)arg1;
-- (void)generateAutocorrectionsWithCompletionHandler:(id)arg1;
+- (void)generateAutocorrectionsWithCompletionHandler:(id /* block */)arg1;
 - (void)generateCandidates;
 - (void)generateCandidatesAsynchronously;
 - (void)generateCandidatesAsynchronouslyWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 selectedCandidate:(id)arg2;
 - (void)generateCandidatesFromReplacements;
 - (void)generateCandidatesWithOptions:(int)arg1;
-- (void)generateReplacementsForString:(id)arg1 candidatesHandler:(id)arg2 executionContext:(id)arg3;
+- (void)generateReplacementsForString:(id)arg1 candidatesHandler:(id /* block */)arg2 executionContext:(id)arg3;
 - (void)geometryChangeDone:(BOOL)arg1;
 - (id)geometryDelegate;
 - (BOOL)geometryIsChanging;
@@ -605,7 +591,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 force:(BOOL)arg2;
 - (void)setDocumentStateForAutocorrection:(id)arg1;
-- (void)setExternalTask:(id)arg1;
+- (void)setExternalTask:(id /* block */)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGeometryDelegate:(id)arg1;
 - (void)setGeometryIsChanging:(BOOL)arg1;

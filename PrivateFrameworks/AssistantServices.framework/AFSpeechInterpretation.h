@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSArray;
-
 @interface AFSpeechInterpretation : NSObject <NSSecureCoding> {
     NSArray *_tokens;
 }
 
-@property(copy) NSArray * tokens;
+@property (nonatomic, copy) NSArray *tokens;
 
 + (BOOL)supportsSecureCoding;
 

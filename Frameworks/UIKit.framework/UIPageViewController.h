@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIPageViewControllerDataSource>, <UIPageViewControllerDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, UIPanGestureRecognizer, UITapGestureRecognizer, _UIPageCurl, _UIPageViewControllerContentView, _UIQueuingScrollView;
-
 @interface UIPageViewController : UIViewController <UIGestureRecognizerDelegate, _UIQueuingScrollViewDataSource, _UIQueuingScrollViewDelegate> {
     NSMutableDictionary *_cachedViewControllersForCurl;
     NSMutableArray *_cachedViewControllersForScroll;
@@ -62,27 +60,27 @@
     NSArray *_viewControllersStashedForRotation;
 }
 
-@property(readonly) _UIPageViewControllerContentView * _contentView;
-@property(getter=_isInterfaceRotating,readonly) BOOL _interfaceRotating;
-@property(readonly) int _navigationOrientation;
-@property(getter=_isPageControlVisible,readonly) BOOL _pageControlVisible;
-@property(setter=_setPageSpacing:) float _pageSpacing;
-@property(readonly) _UIQueuingScrollView * _scrollView;
-@property(readonly) int _transitionStyle;
-@property(setter=_setViewControllers:,retain) NSArray * _viewControllers;
-@property(setter=_setViewControllersStashedForRotation:,retain) NSArray * _viewControllersStashedForRotation;
-@property <UIPageViewControllerDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property <UIPageViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(getter=isDoubleSided) BOOL doubleSided;
-@property(readonly) NSArray * gestureRecognizers;
-@property(readonly) unsigned int hash;
-@property(readonly) int navigationOrientation;
-@property(readonly) int spineLocation;
-@property(readonly) Class superclass;
-@property(readonly) int transitionStyle;
-@property(readonly) NSArray * viewControllers;
+@property (nonatomic, readonly) _UIPageViewControllerContentView *_contentView;
+@property (getter=_isInterfaceRotating, nonatomic, readonly) BOOL _interfaceRotating;
+@property (nonatomic, readonly) int _navigationOrientation;
+@property (getter=_isPageControlVisible, nonatomic, readonly) BOOL _pageControlVisible;
+@property (setter=_setPageSpacing:, nonatomic) float _pageSpacing;
+@property (nonatomic, readonly) _UIQueuingScrollView *_scrollView;
+@property (nonatomic, readonly) int _transitionStyle;
+@property (setter=_setViewControllers:, nonatomic, retain) NSArray *_viewControllers;
+@property (setter=_setViewControllersStashedForRotation:, nonatomic, retain) NSArray *_viewControllersStashedForRotation;
+@property (nonatomic) <UIPageViewControllerDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UIPageViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isDoubleSided, nonatomic) BOOL doubleSided;
+@property (nonatomic, readonly) NSArray *gestureRecognizers;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int navigationOrientation;
+@property (nonatomic, readonly) int spineLocation;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) int transitionStyle;
+@property (nonatomic, readonly) NSArray *viewControllers;
 
 + (id)_incomingViewControllerKeys;
 + (BOOL)_isNavigationOrientation:(int)arg1 supportedForTransitionStyle:(int)arg2;
@@ -140,8 +138,8 @@
 - (void)_setTapRegionBreadths:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setTapRegionInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setViewControllers:(id)arg1;
-- (void)_setViewControllers:(id)arg1 withCurlOfType:(int)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 direction:(int)arg4 animated:(BOOL)arg5 notifyDelegate:(BOOL)arg6 completion:(id)arg7;
-- (void)_setViewControllers:(id)arg1 withScrollInDirection:(int)arg2 animated:(BOOL)arg3 completion:(id)arg4;
+- (void)_setViewControllers:(id)arg1 withCurlOfType:(int)arg2 fromLocation:(struct CGPoint { float x1; float x2; })arg3 direction:(int)arg4 animated:(BOOL)arg5 notifyDelegate:(BOOL)arg6 completion:(id /* block */)arg7;
+- (void)_setViewControllers:(id)arg1 withScrollInDirection:(int)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)_setViewControllersStashedForRotation:(id)arg1;
 - (BOOL)_shouldBeginNavigationInDirection:(int*)arg1 inResponseToPanGestureRecognizer:(id)arg2;
 - (BOOL)_shouldCompleteManualCurlWithSuggestedVelocity:(float*)arg1;
@@ -189,7 +187,7 @@
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDoubleSided:(BOOL)arg1;
-- (void)setViewControllers:(id)arg1 direction:(int)arg2 animated:(BOOL)arg3 completion:(id)arg4;
+- (void)setViewControllers:(id)arg1 direction:(int)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;

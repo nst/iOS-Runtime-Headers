@@ -2,23 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface BRShareCopyWebAuthTokenOperation : BROperation {
     NSString *_containerIdentifier;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _shareCopyWebAuthTokenCompletionBlock;
-
+    id /* block */ _shareCopyWebAuthTokenCompletionBlock;
 }
 
-@property(retain) NSString * containerIdentifier;
-@property(copy) id shareCopyWebAuthTokenCompletionBlock;
+@property (nonatomic, retain) NSString *containerIdentifier;
+@property (copy) id /* block */ shareCopyWebAuthTokenCompletionBlock;
 
 - (id)containerIdentifier;
 - (void)dealloc;
@@ -26,7 +16,7 @@
 - (id)initWithContainerIdentifier:(id)arg1;
 - (void)main;
 - (void)setContainerIdentifier:(id)arg1;
-- (void)setShareCopyWebAuthTokenCompletionBlock:(id)arg1;
-- (id)shareCopyWebAuthTokenCompletionBlock;
+- (void)setShareCopyWebAuthTokenCompletionBlock:(id /* block */)arg1;
+- (id /* block */)shareCopyWebAuthTokenCompletionBlock;
 
 @end

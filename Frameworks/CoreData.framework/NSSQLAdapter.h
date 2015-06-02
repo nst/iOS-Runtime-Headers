@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSMutableArray, NSSQLCore;
-
 @interface NSSQLAdapter : NSObject {
     NSMutableArray *_connections;
     NSSQLCore *_sqlCore;

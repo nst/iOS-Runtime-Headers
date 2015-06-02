@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DiagnosticExtensions.framework/DiagnosticExtensions
  */
 
-@interface DEUtils : NSObject {
-}
+@interface DEUtils : NSObject
 
 + (id)copyPath:(id)arg1 toDestinationDir:(id)arg2 zipped:(BOOL)arg3;
 + (id)copyPaths:(id)arg1 toDestinationDir:(id)arg2 withZipName:(id)arg3;

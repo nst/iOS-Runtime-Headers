@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@class MFError, NSArray, NSString;
-
 @interface MFMessageSigner : NSObject {
     NSString *_sender;
     int _status;
@@ -11,12 +9,12 @@
     NSString *_uncommentedSender;
 }
 
-@property(readonly) int action;
-@property(readonly) NSArray * certificates;
-@property(readonly) NSString * commonName;
-@property(readonly) NSString * emailAddress;
-@property(readonly) MFError * error;
-@property(readonly) NSString * sender;
+@property (nonatomic, readonly) int action;
+@property (nonatomic, readonly) NSArray *certificates;
+@property (nonatomic, readonly) NSString *commonName;
+@property (nonatomic, readonly) NSString *emailAddress;
+@property (nonatomic, readonly) MFError *error;
+@property (nonatomic, readonly) NSString *sender;
 
 - (int)action;
 - (void)addTrustException;

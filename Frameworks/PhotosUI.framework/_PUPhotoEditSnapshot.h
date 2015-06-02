@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSData, PHAdjustmentData;
-
 @interface _PUPhotoEditSnapshot : NSObject {
     PHAdjustmentData *_adjustmentData;
     NSData *_baseImageData;
@@ -11,10 +9,10 @@
     int _workImageVersion;
 }
 
-@property(retain) PHAdjustmentData * adjustmentData;
-@property(retain) NSData * baseImageData;
-@property(retain) NSData * imageData;
-@property int workImageVersion;
+@property (nonatomic, retain) PHAdjustmentData *adjustmentData;
+@property (nonatomic, retain) NSData *baseImageData;
+@property (nonatomic, retain) NSData *imageData;
+@property (nonatomic) int workImageVersion;
 
 - (void).cxx_destruct;
 - (id)_copyData:(id)arg1;

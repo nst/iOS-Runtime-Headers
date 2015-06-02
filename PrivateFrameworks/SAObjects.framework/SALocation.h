@@ -2,36 +2,33 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSData, NSNumber, NSString, SADistance;
+@interface SALocation : SADomainObject
 
-@interface SALocation : SADomainObject {
-}
+@property (nonatomic, copy) NSNumber *accuracy;
+@property (nonatomic, copy) NSString *city;
+@property (nonatomic, copy) NSString *countryCode;
+@property (nonatomic, copy) NSArray *entryPoints;
+@property (nonatomic, copy) NSData *forwardGeoData;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSNumber *latitude;
+@property (nonatomic, copy) NSNumber *longitude;
+@property (nonatomic, copy) NSString *postalCode;
+@property (nonatomic, copy) NSString *regionType;
+@property (nonatomic, retain) SADistance *relativeDistance;
+@property (nonatomic, copy) NSString *stateCode;
+@property (nonatomic, copy) NSString *street;
+@property (nonatomic, copy) NSString *subThoroughfare;
+@property (nonatomic, copy) NSString *thoroughfare;
+@property (nonatomic, copy) NSString *timezoneId;
+@property (nonatomic, copy) NSNumber *travelDistance;
+@property (nonatomic, copy) NSNumber *travelTime;
 
-@property(copy) NSNumber * accuracy;
-@property(copy) NSString * city;
-@property(copy) NSString * countryCode;
-@property(copy) NSArray * entryPoints;
-@property(copy) NSData * forwardGeoData;
-@property(copy) NSString * label;
-@property(copy) NSNumber * latitude;
-@property(copy) NSNumber * longitude;
-@property(copy) NSString * postalCode;
-@property(copy) NSString * regionType;
-@property(retain) SADistance * relativeDistance;
-@property(copy) NSString * stateCode;
-@property(copy) NSString * street;
-@property(copy) NSString * subThoroughfare;
-@property(copy) NSString * thoroughfare;
-@property(copy) NSString * timezoneId;
-@property(copy) NSNumber * travelDistance;
-@property(copy) NSNumber * travelTime;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)location;
 + (id)locationWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)accuracy;
-- (id)afui_coreLocationRepresentation;
-- (id)afui_mapKitAddressDictionaryRepresentation;
 - (id)city;
 - (id)countryCode;
 - (id)encodedClassName;
@@ -62,8 +59,6 @@
 - (void)setTimezoneId:(id)arg1;
 - (void)setTravelDistance:(id)arg1;
 - (void)setTravelTime:(id)arg1;
-- (id)siriui_coreLocationRepresentation;
-- (id)siriui_mapKitAddressDictionaryRepresentation;
 - (id)stateCode;
 - (id)street;
 - (id)subThoroughfare;
@@ -72,5 +67,15 @@
 - (id)travelDistance;
 - (id)travelTime;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (id)afui_coreLocationRepresentation;
+- (id)afui_mapKitAddressDictionaryRepresentation;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
+- (id)siriui_coreLocationRepresentation;
+- (id)siriui_mapKitAddressDictionaryRepresentation;
 
 @end

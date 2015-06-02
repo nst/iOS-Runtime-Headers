@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBDismissalItem, NSString;
-
 @interface BBDismissalSyncBulletinMatch : NSObject {
     NSString *_dismissalID;
     BBDismissalItem *_dismissalItem;
@@ -11,10 +9,10 @@
     NSString *_sectionID;
 }
 
-@property(copy) NSString * dismissalID;
-@property(retain) BBDismissalItem * dismissalItem;
-@property unsigned int feeds;
-@property(copy) NSString * sectionID;
+@property (nonatomic, copy) NSString *dismissalID;
+@property (nonatomic, retain) BBDismissalItem *dismissalItem;
+@property (nonatomic) unsigned int feeds;
+@property (nonatomic, copy) NSString *sectionID;
 
 - (void)dealloc;
 - (id)description;

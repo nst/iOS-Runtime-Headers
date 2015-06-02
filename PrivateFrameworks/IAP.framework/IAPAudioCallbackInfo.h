@@ -2,25 +2,18 @@
    Image: /System/Library/PrivateFrameworks/IAP.framework/IAP
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class CPDistributedNotificationCenter, NSLock;
-
 @interface IAPAudioCallbackInfo : NSObject {
-    int (*_deviceStateChangedCallback)();
+    int (*_deviceStateChangedCallback;
     void *_deviceStateChangedContext;
     CPDistributedNotificationCenter *_dnCenter;
     struct __CFRunLoop { } *_dnCenterRunLoop;
     CPDistributedNotificationCenter *_dnCenteriAP2;
     NSLock *_lock;
-    int (*_pauseOnHeadphoneDisconnectChangedCallback)();
+    int (*_pauseOnHeadphoneDisconnectChangedCallback;
     void *_pauseOnHeadphoneDisconnectChangedContext;
-    int (*_volumeChangedCallback)();
+    int (*_volumeChangedCallback;
     void *_volumeChangedContext;
-    int (*_volumeControlSupportChangedCallback)();
+    int (*_volumeControlSupportChangedCallback;
     void *_volumeControlSupportChangedContext;
 }
 
@@ -36,10 +29,10 @@
 - (void)clearVolumeControlSupportChangedCallback;
 - (void)dealloc;
 - (id)init;
-- (void)setupDeviceStateChangedCallback:(int (*)())arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
-- (void)setupPauseOnHeadphoneDisconnectChangedCallback:(int (*)())arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
-- (void)setupVolumeChangedCallback:(int (*)())arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
-- (void)setupVolumeControlSupportChangedCallback:(int (*)())arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
+- (void)setupDeviceStateChangedCallback:(int (*)arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
+- (void)setupPauseOnHeadphoneDisconnectChangedCallback:(int (*)arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
+- (void)setupVolumeChangedCallback:(int (*)arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
+- (void)setupVolumeControlSupportChangedCallback:(int (*)arg1 withContext:(void*)arg2 andRunLoop:(struct __CFRunLoop { }*)arg3;
 - (void)startNotificationCenterOnRunLoop:(struct __CFRunLoop { }*)arg1;
 
 @end

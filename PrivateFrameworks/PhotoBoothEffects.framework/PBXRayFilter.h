@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoBoothEffects.framework/PhotoBoothEffects
  */
 
-@interface PBXRayFilter : PBFilter {
-}
+@interface PBXRayFilter : PBFilter
 
 - (id)ciFilterName;
 

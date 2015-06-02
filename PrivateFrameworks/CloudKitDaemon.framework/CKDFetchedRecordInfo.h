@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKRecord, NSError;
-
 @interface CKDFetchedRecordInfo : NSObject {
     NSError *_error;
     CKRecord *_record;
 }
 
-@property(retain) NSError * error;
-@property(retain) CKRecord * record;
+@property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) CKRecord *record;
 
 + (id)infoWithRecord:(id)arg1;
 + (id)infoWithRecord:(id)arg1 error:(id)arg2;

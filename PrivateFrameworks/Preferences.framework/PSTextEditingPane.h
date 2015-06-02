@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class NSString, PSTextEditingCell, UITableView, UITextField;
-
 @interface PSTextEditingPane : PSEditingPane <UITableViewDataSource, UITableViewDelegate> {
     PSTextEditingCell *_cell;
     UITableView *_table;
     UITextField *_textField;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)becomeFirstResponder;
 - (void)dealloc;

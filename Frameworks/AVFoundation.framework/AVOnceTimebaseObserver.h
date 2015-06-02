@@ -2,16 +2,8 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
 @interface AVOnceTimebaseObserver : AVTimebaseObserver {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     BOOL _didFire;
     struct { 
         long long value; 
@@ -21,7 +13,7 @@
     } _fireTime;
 }
 
-@property(readonly) BOOL didFire;
+@property (nonatomic, readonly) BOOL didFire;
 
 - (void)_effectiveRateChanged;
 - (void)_fireBlock;
@@ -29,7 +21,7 @@
 - (void)_resetNextFireTime;
 - (void)dealloc;
 - (BOOL)didFire;
-- (id)initWithTimebase:(struct OpaqueCMTimebase { }*)arg1 fireTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(id)arg3 block:(id)arg4;
+- (id)initWithTimebase:(struct OpaqueCMTimebase { }*)arg1 fireTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 queue:(id)arg3 block:(id /* block */)arg4;
 - (void)invalidate;
 
 @end

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccessUI.framework/DataAccessUI
  */
 
-@class UITextView;
-
 @interface DADiagnosticsNotesPane : PSEditingPane {
     UITextView *_notesView;
 }

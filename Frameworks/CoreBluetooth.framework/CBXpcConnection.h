@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
  */
 
-@class <CBXpcConnectionDelegate>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_semaphore>, NSObject<OS_xpc_object>;
-
 @interface CBXpcConnection : NSObject {
     BOOL _appIsBackgrounded;
     NSObject<OS_dispatch_queue> *_clientQueue;
@@ -16,7 +14,7 @@
     NSObject<OS_dispatch_semaphore> *_xpcSendBarrier;
 }
 
-@property(getter=isSetupOnUIThread,readonly) BOOL setupOnUIThread;
+@property (getter=isSetupOnUIThread, nonatomic, readonly) BOOL setupOnUIThread;
 
 - (id)allocXpcArrayWithNSArray:(id)arg1;
 - (id)allocXpcDictionaryWithNSDictionary:(id)arg1;

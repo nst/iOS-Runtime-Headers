@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CIFilter;
-
 @interface CAMEffectsFullsizeView : CAMGLView {
     unsigned int _filterIndex;
     CIFilter *_selectedFilter;

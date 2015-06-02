@@ -2,23 +2,16 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString;
-
 @interface CAMeshTransform : NSObject <NSCoding, NSCopying, NSMutableCopying> {
     void *_impl;
     unsigned long _normalization;
     long _subdivisionSteps;
 }
 
-@property(copy,readonly) NSString * depthNormalization;
-@property(readonly) unsigned long faceCount;
-@property(readonly) int subdivisionSteps;
-@property(readonly) unsigned long vertexCount;
+@property (readonly, copy) NSString *depthNormalization;
+@property (readonly) unsigned long faceCount;
+@property (readonly) int subdivisionSteps;
+@property (readonly) unsigned long vertexCount;
 
 + (void)CAMLParserEndElement:(id)arg1 content:(id)arg2;
 + (void)CAMLParserStartElement:(id)arg1;

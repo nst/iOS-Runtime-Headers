@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <NFMLLeashBreakDelegate>, CBCentralManager, CBPeripheral, CBScalablePipe, CBScalablePipeManager, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface NFMLeashManager : NSObject <CBCentralManagerDelegate, CBPeripheralDelegate, CBScalablePipeManagerDelegate> {
     CBCentralManager *_centralManager;
     int _centralPhase;
@@ -23,34 +17,30 @@
     CBPeripheral *_peripheral;
     CBScalablePipe *_pipe;
     CBScalablePipeManager *_pipeManager;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _proximityChangeHandler;
-
+    id /* block */ _proximityChangeHandler;
     NSString *_serviceUUID;
     BOOL _testMode;
 }
 
-@property(retain) CBCentralManager * centralManager;
-@property int centralPhase;
-@property BOOL connected;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) CBPeripheral * discoveredPeripheral;
-@property(retain) NSObject<OS_dispatch_queue> * externalQueue;
-@property(readonly) unsigned int hash;
-@property <NFMLLeashBreakDelegate> * leashDelegate;
-@property(retain) NSObject<OS_dispatch_source> * leashDispatchSourceTimer;
-@property(copy) NSString * leashIdentifier;
-@property int leashMode;
-@property BOOL needsToScanForPeripheral;
-@property(retain) CBPeripheral * peripheral;
-@property(retain) CBScalablePipe * pipe;
-@property(retain) CBScalablePipeManager * pipeManager;
-@property(copy) NSString * serviceUUID;
-@property(readonly) Class superclass;
-@property BOOL testMode;
+@property (nonatomic, retain) CBCentralManager *centralManager;
+@property (nonatomic) int centralPhase;
+@property (nonatomic) BOOL connected;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CBPeripheral *discoveredPeripheral;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *externalQueue;
+@property (readonly) unsigned int hash;
+@property (nonatomic) <NFMLLeashBreakDelegate> *leashDelegate;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *leashDispatchSourceTimer;
+@property (nonatomic, copy) NSString *leashIdentifier;
+@property (nonatomic) int leashMode;
+@property (nonatomic) BOOL needsToScanForPeripheral;
+@property (nonatomic, retain) CBPeripheral *peripheral;
+@property (nonatomic, retain) CBScalablePipe *pipe;
+@property (nonatomic, retain) CBScalablePipeManager *pipeManager;
+@property (nonatomic, copy) NSString *serviceUUID;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL testMode;
 
 - (void).cxx_destruct;
 - (void)beginMonitoringLeash;
@@ -96,7 +86,7 @@
 - (void)setPeripheral:(id)arg1;
 - (void)setPipe:(id)arg1;
 - (void)setPipeManager:(id)arg1;
-- (void)setProximityChangeHandler:(id)arg1;
+- (void)setProximityChangeHandler:(id /* block */)arg1;
 - (void)setServiceUUID:(id)arg1;
 - (void)setTestMode:(BOOL)arg1;
 - (void)stopMonitoringLeash;

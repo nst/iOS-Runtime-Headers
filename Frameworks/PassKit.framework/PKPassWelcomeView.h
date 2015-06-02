@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIButton;
-
 @interface PKPassWelcomeView : PKWelcomeView {
     UIButton *_appStoreButton;
 }

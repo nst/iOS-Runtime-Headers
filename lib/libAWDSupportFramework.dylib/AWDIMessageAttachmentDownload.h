@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIMessageAttachmentDownload : PBCodable <NSCopying> {
     unsigned int _attachmentSize;
     unsigned int _connectionType;
@@ -28,26 +26,26 @@
     unsigned int _tokenError;
 }
 
-@property unsigned int attachmentSize;
-@property unsigned int connectionType;
-@property unsigned int downloadDuration;
-@property int fzError;
-@property int genericError;
-@property(retain) NSString * guid;
-@property BOOL hasAttachmentSize;
-@property BOOL hasConnectionType;
-@property BOOL hasDownloadDuration;
-@property BOOL hasFzError;
-@property BOOL hasGenericError;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasLinkQuality;
-@property BOOL hasMessageError;
-@property BOOL hasTimestamp;
-@property BOOL hasTokenError;
-@property int linkQuality;
-@property unsigned int messageError;
-@property unsigned long long timestamp;
-@property unsigned int tokenError;
+@property (nonatomic) unsigned int attachmentSize;
+@property (nonatomic) unsigned int connectionType;
+@property (nonatomic) unsigned int downloadDuration;
+@property (nonatomic) int fzError;
+@property (nonatomic) int genericError;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasAttachmentSize;
+@property (nonatomic) BOOL hasConnectionType;
+@property (nonatomic) BOOL hasDownloadDuration;
+@property (nonatomic) BOOL hasFzError;
+@property (nonatomic) BOOL hasGenericError;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasLinkQuality;
+@property (nonatomic) BOOL hasMessageError;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTokenError;
+@property (nonatomic) int linkQuality;
+@property (nonatomic) unsigned int messageError;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int tokenError;
 
 - (unsigned int)attachmentSize;
 - (unsigned int)connectionType;

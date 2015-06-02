@@ -9,8 +9,8 @@
     } _has;
 }
 
-@property int discoveryTypes;
-@property BOOL hasDiscoveryTypes;
+@property (nonatomic) int discoveryTypes;
+@property (nonatomic) BOOL hasDiscoveryTypes;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

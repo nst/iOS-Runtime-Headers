@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class IMManualUpdater;
-
 @interface CKAudioProgressView : CKBalloonImageView {
     BOOL _color;
     IMManualUpdater *_displayUpdater;
@@ -13,12 +11,12 @@
     int _style;
 }
 
-@property BOOL color;
-@property(retain) IMManualUpdater * displayUpdater;
-@property(getter=isPlayed) BOOL played;
-@property(getter=isPlaying) BOOL playing;
-@property float progress;
-@property int style;
+@property (nonatomic) BOOL color;
+@property (nonatomic, retain) IMManualUpdater *displayUpdater;
+@property (getter=isPlayed, nonatomic) BOOL played;
+@property (getter=isPlaying, nonatomic) BOOL playing;
+@property (nonatomic) float progress;
+@property (nonatomic) int style;
 
 + (id)imageWithType:(unsigned char)arg1 color:(BOOL)arg2;
 + (float)progressForTime:(double)arg1 duration:(double)arg2;

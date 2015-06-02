@@ -7,8 +7,8 @@
     unsigned int _resultType;
 }
 
-@property(readonly) id result;
-@property(readonly) unsigned int resultType;
+@property (readonly) id result;
+@property (readonly) unsigned int resultType;
 
 - (void)dealloc;
 - (id)initWithResult:(id)arg1 type:(unsigned int)arg2;

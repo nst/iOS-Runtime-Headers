@@ -10,11 +10,11 @@
     int _highestSequenceNumber;
 }
 
-@property int calAlarmChangeId;
-@property int calAttendeeChangeId;
-@property int calEventChangeId;
-@property int calRecurrenceChangeId;
-@property int highestSequenceNumber;
+@property (nonatomic) int calAlarmChangeId;
+@property (nonatomic) int calAttendeeChangeId;
+@property (nonatomic) int calEventChangeId;
+@property (nonatomic) int calRecurrenceChangeId;
+@property (nonatomic) int highestSequenceNumber;
 
 - (int)calAlarmChangeId;
 - (int)calAttendeeChangeId;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLAgent : PLOperator {
-}
+@interface PLAgent : PLOperator
 
 + (void)load;
 

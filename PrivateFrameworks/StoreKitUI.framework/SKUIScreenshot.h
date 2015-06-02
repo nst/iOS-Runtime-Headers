@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMutableDictionary, NSString;
-
 @interface SKUIScreenshot : NSObject <NSCopying, SKUICacheCoding> {
     NSString *_orientation;
     NSMutableDictionary *_sizes;
@@ -11,14 +9,14 @@
     NSMutableDictionary *_urls;
 }
 
-@property(readonly) NSMutableDictionary * cacheRepresentation;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) int numberOfVariants;
-@property(readonly) NSString * orientationString;
-@property(readonly) Class superclass;
-@property(readonly) long long uniqueIdentifier;
+@property (nonatomic, readonly) NSMutableDictionary *cacheRepresentation;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int numberOfVariants;
+@property (nonatomic, readonly) NSString *orientationString;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) long long uniqueIdentifier;
 
 - (void).cxx_destruct;
 - (id)URLForVariant:(id)arg1;

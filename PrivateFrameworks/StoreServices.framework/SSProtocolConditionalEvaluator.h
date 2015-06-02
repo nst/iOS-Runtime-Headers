@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSDictionary, SSProtocolConditionalContext;
-
 @interface SSProtocolConditionalEvaluator : NSObject {
     SSProtocolConditionalContext *_context;
     NSDictionary *_dictionary;

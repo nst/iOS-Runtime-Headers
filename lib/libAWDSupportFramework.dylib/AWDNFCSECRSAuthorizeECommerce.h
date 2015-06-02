@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSData;
-
 @interface AWDNFCSECRSAuthorizeECommerce : PBCodable <NSCopying> {
     NSData *_aid;
     unsigned int _countryCode;
@@ -33,34 +31,34 @@
     NSData *_uuidReference;
 }
 
-@property(retain) NSData * aid;
-@property unsigned int countryCode;
-@property unsigned int currencyCode;
-@property(readonly) BOOL hasAid;
-@property BOOL hasCountryCode;
-@property BOOL hasCurrencyCode;
-@property BOOL hasMerchantCapabilities;
-@property(readonly) BOOL hasMerchantId;
-@property BOOL hasMethod;
-@property BOOL hasOtherAmount;
-@property BOOL hasStatus;
-@property BOOL hasTimeDeltaFromReference;
-@property BOOL hasTimestamp;
-@property(readonly) BOOL hasTransactionId;
-@property BOOL hasTransactionTotal;
-@property BOOL hasTransactionType;
-@property(readonly) BOOL hasUuidReference;
-@property unsigned int merchantCapabilities;
-@property(retain) NSData * merchantId;
-@property unsigned int method;
-@property unsigned long long otherAmount;
-@property unsigned int status;
-@property unsigned long long timeDeltaFromReference;
-@property unsigned long long timestamp;
-@property(retain) NSData * transactionId;
-@property unsigned long long transactionTotal;
-@property unsigned int transactionType;
-@property(retain) NSData * uuidReference;
+@property (nonatomic, retain) NSData *aid;
+@property (nonatomic) unsigned int countryCode;
+@property (nonatomic) unsigned int currencyCode;
+@property (nonatomic, readonly) BOOL hasAid;
+@property (nonatomic) BOOL hasCountryCode;
+@property (nonatomic) BOOL hasCurrencyCode;
+@property (nonatomic) BOOL hasMerchantCapabilities;
+@property (nonatomic, readonly) BOOL hasMerchantId;
+@property (nonatomic) BOOL hasMethod;
+@property (nonatomic) BOOL hasOtherAmount;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic) BOOL hasTimeDeltaFromReference;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, readonly) BOOL hasTransactionId;
+@property (nonatomic) BOOL hasTransactionTotal;
+@property (nonatomic) BOOL hasTransactionType;
+@property (nonatomic, readonly) BOOL hasUuidReference;
+@property (nonatomic) unsigned int merchantCapabilities;
+@property (nonatomic, retain) NSData *merchantId;
+@property (nonatomic) unsigned int method;
+@property (nonatomic) unsigned long long otherAmount;
+@property (nonatomic) unsigned int status;
+@property (nonatomic) unsigned long long timeDeltaFromReference;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, retain) NSData *transactionId;
+@property (nonatomic) unsigned long long transactionTotal;
+@property (nonatomic) unsigned int transactionType;
+@property (nonatomic, retain) NSData *uuidReference;
 
 - (id)aid;
 - (void)copyTo:(id)arg1;

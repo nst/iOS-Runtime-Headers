@@ -19,18 +19,18 @@
     double _searchResponseRelativeTimestamp;
 }
 
-@property unsigned long long animationID;
-@property unsigned long long businessID;
-@property BOOL hasAnimationID;
-@property BOOL hasBusinessID;
-@property BOOL hasLocalSearchProviderID;
-@property BOOL hasPlaceID;
-@property BOOL hasResultIndex;
-@property BOOL hasSearchResponseRelativeTimestamp;
-@property int localSearchProviderID;
-@property long long placeID;
-@property int resultIndex;
-@property double searchResponseRelativeTimestamp;
+@property (nonatomic) unsigned long long animationID;
+@property (nonatomic) unsigned long long businessID;
+@property (nonatomic) BOOL hasAnimationID;
+@property (nonatomic) BOOL hasBusinessID;
+@property (nonatomic) BOOL hasLocalSearchProviderID;
+@property (nonatomic) BOOL hasPlaceID;
+@property (nonatomic) BOOL hasResultIndex;
+@property (nonatomic) BOOL hasSearchResponseRelativeTimestamp;
+@property (nonatomic) int localSearchProviderID;
+@property (nonatomic) long long placeID;
+@property (nonatomic) int resultIndex;
+@property (nonatomic) double searchResponseRelativeTimestamp;
 
 + (id)actionDetailsWithMapItem:(id)arg1 timestamp:(double)arg2 resultIndex:(int)arg3;
 

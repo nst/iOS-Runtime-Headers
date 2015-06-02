@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSDate, NSDictionary, NSString;
-
 @interface IMItem : NSObject <IMRemoteObjectCoding, NSCoding, NSCopying> {
     NSString *_account;
     NSString *_accountID;
@@ -20,32 +18,27 @@
     NSString *_unformattedID;
 }
 
-@property(retain) NSString * account;
-@property(retain) NSString * accountID;
-@property(retain) id context;
-@property(retain) NSString * countryCode;
-@property(retain) NSString * guid;
-@property(retain) NSString * handle;
-@property(readonly) BOOL isFromMe;
-@property long long messageID;
-@property(retain) NSString * roomName;
-@property(retain) NSString * sender;
-@property(retain) NSDictionary * senderInfo;
-@property(retain) NSString * service;
-@property(retain) NSDate * time;
-@property long long type;
-@property(retain) NSString * unformattedID;
+@property (nonatomic, retain) NSString *account;
+@property (nonatomic, retain) NSString *accountID;
+@property (nonatomic, retain) id context;
+@property (nonatomic, retain) NSString *countryCode;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic, retain) NSString *handle;
+@property (nonatomic, readonly) BOOL isFromMe;
+@property (nonatomic) long long messageID;
+@property (nonatomic, retain) NSString *roomName;
+@property (nonatomic, retain) NSString *sender;
+@property (nonatomic, retain) NSDictionary *senderInfo;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic, retain) NSDate *time;
+@property (nonatomic) long long type;
+@property (nonatomic, retain) NSString *unformattedID;
+
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 + (Class)classForIMItemType:(long long)arg1;
 
-- (BOOL)_hasMessageChatItem;
-- (id)_newChatItems;
-- (id)_otherHandle;
-- (id)_senderHandle;
-- (id)_service;
-- (id)_serviceHandle;
 - (void)_setMessageID:(long long)arg1;
-- (void)_updateContextWithSenderHandle:(id)arg1 otherHandle:(id)arg2;
 - (id)account;
 - (id)accountID;
 - (id)context;
@@ -67,7 +60,6 @@
 - (id)initWithSenderInfo:(id)arg1 time:(id)arg2 guid:(id)arg3 messageID:(long long)arg4 account:(id)arg5 accountID:(id)arg6 service:(id)arg7 handle:(id)arg8 roomName:(id)arg9 unformattedID:(id)arg10 countryCode:(id)arg11 type:(long long)arg12;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFromMe;
-- (id)message;
 - (long long)messageID;
 - (id)roomName;
 - (id)sender;
@@ -89,5 +81,16 @@
 - (id)time;
 - (long long)type;
 - (id)unformattedID;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
+- (BOOL)_hasMessageChatItem;
+- (id)_newChatItems;
+- (id)_otherHandle;
+- (id)_senderHandle;
+- (id)_service;
+- (id)_serviceHandle;
+- (void)_updateContextWithSenderHandle:(id)arg1 otherHandle:(id)arg2;
+- (id)message;
 
 @end

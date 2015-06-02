@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSDictionary, NSString;
-
 @interface MPStoreOfferContentRating : NSObject <NSCoding> {
     NSDictionary *_dictionary;
     NSString *_ratingDescription;
@@ -12,14 +10,14 @@
     unsigned int _ratingSystem;
 }
 
-@property(getter=isExplicitContent,readonly) BOOL explicitContent;
-@property(readonly) id mediaPropertyContentRatingValue;
-@property(copy) NSString * ratingDescription;
-@property(copy) NSString * ratingLabel;
-@property int ratingLevel;
-@property unsigned int ratingSystem;
-@property(getter=isRestrictedContent,readonly) BOOL restrictedContent;
-@property(getter=isRestrictedPurchase,readonly) BOOL restrictedPurchase;
+@property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
+@property (nonatomic, readonly) id mediaPropertyContentRatingValue;
+@property (nonatomic, copy) NSString *ratingDescription;
+@property (nonatomic, copy) NSString *ratingLabel;
+@property (nonatomic) int ratingLevel;
+@property (nonatomic) unsigned int ratingSystem;
+@property (getter=isRestrictedContent, nonatomic, readonly) BOOL restrictedContent;
+@property (getter=isRestrictedPurchase, nonatomic, readonly) BOOL restrictedPurchase;
 
 + (unsigned int)ratingSystemFromString:(id)arg1;
 + (BOOL)supportsSecureCoding;

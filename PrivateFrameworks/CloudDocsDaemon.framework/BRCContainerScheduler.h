@@ -2,36 +2,34 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class APSConnection, BRCAccountSession, BRCContainerMetadataSyncPersistedState, BRCDeadlineScheduler, BRCDeadlineToken, BRCSyncBudgetThrottle, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface BRCContainerScheduler : NSObject <APSConnectionDelegate, BRCLocalContainerDelegate> {
     BRCContainerMetadataSyncPersistedState *_containerMetadataPersistedState;
-    struct _BRCOperation { Class x1; id x2; int x3; id x4; unsigned char x5[16]; } *_containerMetadataSyncOperation;
+    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } *_containerMetadataSyncOperation;
     unsigned int _containerMetadataSyncState;
     BRCDeadlineToken *_containerMetadataSyncToken;
     NSString *_environmentName;
     NSObject<OS_dispatch_group> *_initialSyncDownGroup;
-    struct _BRCOperation { Class x1; id x2; int x3; id x4; unsigned char x5[16]; } *_periodicSyncOperation;
+    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } *_periodicSyncOperation;
     APSConnection *_pushConnection;
     NSObject<OS_dispatch_queue> *_pushQueue;
     NSObject<OS_dispatch_source> *_pushSource;
     BRCAccountSession *_session;
-    struct _BRCOperation { Class x1; id x2; int x3; id x4; unsigned char x5[16]; } *_sharedDatabaseSyncOperation;
+    struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } *_sharedDatabaseSyncOperation;
     BRCDeadlineToken *_sharedDatabaseSyncToken;
     NSObject<OS_dispatch_group> *_syncGroup;
     BRCDeadlineScheduler *_syncScheduler;
     BRCSyncBudgetThrottle *_syncUpBudget;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSObject<OS_dispatch_group> * initialSyncDownGroup;
-@property(readonly) BRCAccountSession * session;
-@property(readonly) Class superclass;
-@property(readonly) NSObject<OS_dispatch_group> * syncGroup;
-@property(readonly) BRCDeadlineScheduler * syncScheduler;
-@property(readonly) BRCSyncBudgetThrottle * syncUpBudget;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *initialSyncDownGroup;
+@property (nonatomic, readonly) BRCAccountSession *session;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *syncGroup;
+@property (nonatomic, readonly) BRCDeadlineScheduler *syncScheduler;
+@property (nonatomic, readonly) BRCSyncBudgetThrottle *syncUpBudget;
 
 - (void).cxx_destruct;
 - (void)_automaticSyncSchedule:(id)arg1;

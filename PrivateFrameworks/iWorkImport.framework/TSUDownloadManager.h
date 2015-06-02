@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSHashTable, NSMapTable, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSOperationQueue, NSString, NSURL, NSURLSession;
-
 @interface TSUDownloadManager : NSObject <NSURLSessionDownloadDelegate> {
     NSMutableDictionary *_activeTasks;
     NSObject<OS_dispatch_queue> *_activeTasksQueue;
@@ -16,11 +14,11 @@
     NSMutableDictionary *_inProgressDownloadItems;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSURL * downloadInboxDirectory;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSURL *downloadInboxDirectory;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)newFilteredDownloadItems:(id)arg1;
 + (void)registerDownloadItemClass:(Class)arg1;
@@ -37,11 +35,11 @@
 - (void)cancelTasksWithDescriptions:(id)arg1 forDownloadSession:(id)arg2;
 - (id)downloadInboxDirectory;
 - (id)downloadItems:(id)arg1 description:(id)arg2 delegate:(id)arg3;
-- (id)downloadSessionForItems:(id)arg1 description:(id)arg2 willRequestDownload:(BOOL)arg3 delegate:(id)arg4 taskHandler:(id)arg5;
-- (void)handleEventsForBackgroundURLSession:(id)arg1 completionHandler:(id)arg2;
+- (id)downloadSessionForItems:(id)arg1 description:(id)arg2 willRequestDownload:(BOOL)arg3 delegate:(id)arg4 taskHandler:(id /* block */)arg5;
+- (void)handleEventsForBackgroundURLSession:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (id)initPrivate;
-- (void)notifyWhenAllTasksAreCompletedWithCompletionHandler:(id)arg1;
+- (void)notifyWhenAllTasksAreCompletedWithCompletionHandler:(id /* block */)arg1;
 - (id)outstandingDownloadSessionForItems:(id)arg1 description:(id)arg2 delegate:(id)arg3;
 
 @end

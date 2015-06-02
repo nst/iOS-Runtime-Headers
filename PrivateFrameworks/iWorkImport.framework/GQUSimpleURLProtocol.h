@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQUSimpleURLProtocol : NSURLProtocol {
-}
+@interface GQUSimpleURLProtocol : NSURLProtocol
 
 + (BOOL)canInitWithRequest:(id)arg1;
 + (id)canonicalRequestForRequest:(id)arg1;

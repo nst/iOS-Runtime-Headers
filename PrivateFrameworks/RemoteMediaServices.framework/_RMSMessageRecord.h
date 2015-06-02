@@ -7,8 +7,8 @@
     id _responseBlock;
 }
 
-@property unsigned short messageType;
-@property(retain) id responseBlock;
+@property (nonatomic) unsigned short messageType;
+@property (nonatomic, retain) id responseBlock;
 
 - (void).cxx_destruct;
 - (unsigned short)messageType;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FaceCore.framework/FaceCore
  */
 
-@class NSString;
-
 @interface FCRLandmark : NSObject {
     unsigned int pointCount;
     struct CGPoint { float x1; float x2; } *points;
     NSString *type;
 }
 
-@property(readonly) unsigned int pointCount;
-@property(readonly) struct CGPoint { float x1; float x2; }* points;
-@property(readonly) NSString * type;
+@property (readonly) unsigned int pointCount;
+@property (readonly) struct CGPoint { float x1; float x2; }*points;
+@property (readonly) NSString *type;
 
 + (id)landmarkWithType:(id)arg1 pointCount:(unsigned int)arg2 points:(struct CGPoint { float x1; float x2; }*)arg3;
 

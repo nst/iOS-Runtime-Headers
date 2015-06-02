@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImageView, UILabel, UIProgressIndicator, UIWindow;
-
 @interface UIProgressHUD : UIView {
     UIImageView *_doneView;
     UIWindow *_parentWindow;

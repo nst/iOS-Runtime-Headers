@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebDefaultEditingDelegate : NSObject {
-}
+@interface WebDefaultEditingDelegate : NSObject
 
 + (id)sharedEditingDelegate;
 

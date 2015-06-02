@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
  */
 
-@class <PBRequesterDelegate>, NSArray, NSDictionary, NSMutableArray, NSMutableData, NSMutableDictionary, NSRunLoop, NSString, NSThread, NSURL, NSURLConnection, PBDataReader;
-
 @interface PBRequester : NSObject <NSURLConnectionDelegate> {
     NSURL *_URL;
     NSArray *_clientCertificates;
@@ -47,27 +45,29 @@
     unsigned int _uploadPayloadSize;
 }
 
-@property(retain) NSURL * URL;
-@property(retain) NSArray * clientCertificates;
-@property(retain) NSURLConnection * connection;
-@property(retain) NSRunLoop * connectionRunLoop;
-@property(copy,readonly) NSString * debugDescription;
-@property <PBRequesterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int downloadPayloadSize;
-@property(readonly) unsigned int hash;
-@property(copy) NSDictionary * httpRequestHeaders;
-@property(retain) NSDictionary * httpResponseHeaders;
-@property BOOL ignoresResponse;
-@property(retain) NSString * logRequestToFile;
-@property(retain) NSString * logResponseToFile;
+@property (nonatomic, retain) NSURL *URL;
+@property (nonatomic, retain) NSArray *clientCertificates;
+@property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic, retain) NSRunLoop *connectionRunLoop;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PBRequesterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned int downloadPayloadSize;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSDictionary *httpRequestHeaders;
+@property (nonatomic, retain) NSDictionary *httpResponseHeaders;
+@property (nonatomic) BOOL ignoresResponse;
+@property (nonatomic, retain) NSString *logRequestToFile;
+@property (nonatomic, retain) NSString *logResponseToFile;
 @property BOOL needsCancel;
-@property(readonly) unsigned int requestResponseTime;
-@property(readonly) NSArray * requests;
-@property BOOL shouldHandleCookies;
-@property(readonly) Class superclass;
-@property double timeoutSeconds;
-@property(readonly) unsigned int uploadPayloadSize;
+@property (nonatomic, readonly) unsigned int requestResponseTime;
+@property (nonatomic, readonly) NSArray *requests;
+@property (nonatomic) BOOL shouldHandleCookies;
+@property (readonly) Class superclass;
+@property (nonatomic) double timeoutSeconds;
+@property (nonatomic, readonly) unsigned int uploadPayloadSize;
+
+// Image: /System/Library/PrivateFrameworks/ProtocolBuffer.framework/ProtocolBuffer
 
 + (BOOL)usesEncodedMessages;
 
@@ -86,9 +86,8 @@
 - (id)_osVersion;
 - (void)_removeTimeoutTimer;
 - (void)_resetTimeoutTimer;
-- (void)_scheduleThrottlingError;
 - (BOOL)_sendPayload:(id)arg1 error:(id*)arg2;
-- (void)_serializePayload:(id)arg1;
+- (void)_serializePayload:(id /* block */)arg1;
 - (void)_start;
 - (void)_startTimeoutTimer;
 - (void)_timeoutTimerFired;
@@ -110,7 +109,7 @@
 - (id)decodeResponseData:(id)arg1;
 - (id)delegate;
 - (unsigned int)downloadPayloadSize;
-- (void)encodeRequestData:(id)arg1 startRequestCallback:(id)arg2;
+- (void)encodeRequestData:(id)arg1 startRequestCallback:(id /* block */)arg2;
 - (void)handleResponse:(id)arg1 forInternalRequest:(id)arg2;
 - (id)httpRequestHeaders;
 - (id)httpResponseHeaders;
@@ -154,5 +153,9 @@
 - (id)tryReadResponseData:(id)arg1 forRequest:(id)arg2 forResponseClass:(Class)arg3;
 - (unsigned int)uploadPayloadSize;
 - (void)writeRequest:(id)arg1 into:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
+- (void)_scheduleThrottlingError;
 
 @end

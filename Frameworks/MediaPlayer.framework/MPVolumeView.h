@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class MPAVRoutingController, MPAVRoutingSheet, MPAudioVideoRoutingPopoverController, MPVolumeSlider, NSString, UIButton, UIImage, UILabel;
-
 @interface MPVolumeView : UIView <MPAVRoutingControllerDelegate, NSCoding> {
     BOOL _hasNonDefaultMaxVolumeSliderImage;
     BOOL _hasNonDefaultMinVolumeSliderImage;
@@ -30,23 +28,23 @@
     BOOL _wirelessRoutesAvailable;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL hidesRouteLabelWhenNoRouteChoice;
-@property(readonly) BOOL isShowingRouteButton;
-@property(readonly) BOOL isVisible;
-@property BOOL routeButtonShowsTouchWhenHighlighted;
-@property unsigned int routePopoverPermittedArrowDirections;
-@property BOOL showsRouteButton;
-@property BOOL showsVolumeSlider;
-@property(readonly) int style;
-@property(readonly) Class superclass;
-@property(readonly) MPVolumeSlider * volumeSlider;
-@property BOOL volumeSliderShrinksFromBothEnds;
-@property(retain) UIImage * volumeWarningSliderImage;
-@property(getter=isWirelessRouteActive,readonly) BOOL wirelessRouteActive;
-@property(getter=areWirelessRoutesAvailable,readonly) BOOL wirelessRoutesAvailable;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hidesRouteLabelWhenNoRouteChoice;
+@property (nonatomic, readonly) BOOL isShowingRouteButton;
+@property (nonatomic, readonly) BOOL isVisible;
+@property (nonatomic) BOOL routeButtonShowsTouchWhenHighlighted;
+@property (nonatomic) unsigned int routePopoverPermittedArrowDirections;
+@property (nonatomic) BOOL showsRouteButton;
+@property (nonatomic) BOOL showsVolumeSlider;
+@property (nonatomic, readonly) int style;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) MPVolumeSlider *volumeSlider;
+@property (nonatomic) BOOL volumeSliderShrinksFromBothEnds;
+@property (nonatomic, retain) UIImage *volumeWarningSliderImage;
+@property (getter=isWirelessRouteActive, nonatomic, readonly) BOOL wirelessRouteActive;
+@property (getter=areWirelessRoutesAvailable, nonatomic, readonly) BOOL wirelessRoutesAvailable;
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;

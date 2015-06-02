@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@interface YTSearchRequest : YTFeedRequest {
-}
+@interface YTSearchRequest : YTFeedRequest
 
 + (id)_formatFilter;
 + (id)feedCountryCode;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@class NSString;
-
 @interface CUIKUserActivityRemindersListCategory : CUIKUserActivityWithSource {
     NSString *_externalID;
     NSString *_title;

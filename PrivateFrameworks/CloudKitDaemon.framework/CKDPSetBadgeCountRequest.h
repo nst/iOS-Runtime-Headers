@@ -11,10 +11,10 @@
     } _has;
 }
 
-@property unsigned int badgeCount;
-@property BOOL forDevice;
-@property BOOL hasBadgeCount;
-@property BOOL hasForDevice;
+@property (nonatomic) unsigned int badgeCount;
+@property (nonatomic) BOOL forDevice;
+@property (nonatomic) BOOL hasBadgeCount;
+@property (nonatomic) BOOL hasForDevice;
 
 + (id)options;
 

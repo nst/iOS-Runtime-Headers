@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMCameraRollSpec, DeferredFrameworkLoader;
-
 @interface DeferredCAMCameraRollSpec : CAMCameraRollSpec {
     BOOL _isPad;
     DeferredFrameworkLoader *_loader;
     CAMCameraRollSpec *_spec;
 }
 
-@property BOOL isPad;
-@property(retain) DeferredFrameworkLoader * loader;
-@property(retain) CAMCameraRollSpec * spec;
+@property (nonatomic) BOOL isPad;
+@property (nonatomic, retain) DeferredFrameworkLoader *loader;
+@property (nonatomic, retain) CAMCameraRollSpec *spec;
 
 - (void).cxx_destruct;
 - (void)dealloc;

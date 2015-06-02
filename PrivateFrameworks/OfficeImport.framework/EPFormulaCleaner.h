@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class EDFormula, EDName, EDRowBlocks, EDSheet, OITSUIntDictionary;
-
 @interface EPFormulaCleaner : EDProcessor {
     EDRowBlocks *mBaseFormulaRowBlocks;
     int mColumnOffset;

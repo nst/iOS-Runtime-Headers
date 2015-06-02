@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString;
-
 @interface PUCropAspect : NSObject {
     float _height;
     NSString *_localizedName;
     float _width;
 }
 
-@property(readonly) float height;
-@property(readonly) NSString * localizedName;
-@property(readonly) float ratio;
-@property(readonly) float width;
+@property (nonatomic, readonly) float height;
+@property (nonatomic, readonly) NSString *localizedName;
+@property (nonatomic, readonly) float ratio;
+@property (nonatomic, readonly) float width;
 
 + (id)allAspectsWithOriginalSize:(struct CGSize { float x1; float x2; })arg1 currentSize:(struct CGSize { float x1; float x2; })arg2;
 

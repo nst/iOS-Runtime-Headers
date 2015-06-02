@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary, NSNumber, NSString;
-
 @interface PLBBMavHwRfGSMLogMsg : PLBasebandMessage {
     NSMutableDictionary *_commonInfo;
     NSArray *_connState;
@@ -16,15 +14,15 @@
     NSNumber *_logDuration;
 }
 
-@property(retain) NSMutableDictionary * commonInfo;
-@property(retain) NSArray * connState;
-@property(retain) NSString * error;
-@property(retain) NSMutableArray * groupArrEntries;
-@property(retain) NSString * groupEntryKey;
-@property(retain) NSString * groupID;
-@property unsigned char inited;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSNumber * logDuration;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (retain) NSArray *connState;
+@property (retain) NSString *error;
+@property (retain) NSMutableArray *groupArrEntries;
+@property (retain) NSString *groupEntryKey;
+@property (retain) NSString *groupID;
+@property (nonatomic) unsigned char inited;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (retain) NSNumber *logDuration;
 
 + (id)entryEventBackwardDefinitionBBMavHwRfGSM;
 

@@ -14,9 +14,9 @@
     unsigned int _curve;
 }
 
-@property struct CGPoint { float x1; float x2; } controlPoint1;
-@property struct CGPoint { float x1; float x2; } controlPoint2;
-@property unsigned int curve;
+@property (nonatomic) struct CGPoint { float x1; float x2; } controlPoint1;
+@property (nonatomic) struct CGPoint { float x1; float x2; } controlPoint2;
+@property (nonatomic) unsigned int curve;
 
 + (id)_rowsRelativeToKeyPath:(id)arg1;
 + (id)settingsControllerModule;

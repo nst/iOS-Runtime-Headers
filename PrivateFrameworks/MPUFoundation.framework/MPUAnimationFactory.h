@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class CAMediaTimingFunction, NSArray, NSString;
-
 @interface MPUAnimationFactory : NSObject <_UIBasicAnimationFactory> {
     NSArray *_allowedKeyPaths;
     NSString *_fillMode;
@@ -12,15 +10,15 @@
     CAMediaTimingFunction *_timingFunction;
 }
 
-@property(copy) NSArray * allowedKeyPaths;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) NSString * fillMode;
-@property(readonly) unsigned int hash;
-@property(getter=isRemovedOnCompletion) BOOL removedOnCompletion;
-@property(readonly) Class superclass;
-@property double timeOffset;
-@property(retain) CAMediaTimingFunction * timingFunction;
+@property (nonatomic, copy) NSArray *allowedKeyPaths;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *fillMode;
+@property (readonly) unsigned int hash;
+@property (getter=isRemovedOnCompletion, nonatomic) BOOL removedOnCompletion;
+@property (readonly) Class superclass;
+@property (nonatomic) double timeOffset;
+@property (nonatomic, retain) CAMediaTimingFunction *timingFunction;
 
 - (void).cxx_destruct;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;

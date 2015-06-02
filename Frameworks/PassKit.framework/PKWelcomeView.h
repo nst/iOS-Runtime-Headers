@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSAttributedString, UIActivityIndicatorView, UIButton, UIImage, UIImageView, UITextView;
-
 @interface PKWelcomeView : UIView {
     UIButton *_actionButton;
     UIActivityIndicatorView *_activityIndicator;
@@ -18,11 +16,11 @@
     UITextView *_titleView;
 }
 
-@property(retain) UIButton * actionButton;
-@property(retain) UIImage * headerImage;
-@property(copy) NSAttributedString * message;
-@property BOOL showActivityIndicator;
-@property(copy) NSAttributedString * title;
+@property (nonatomic, retain) UIButton *actionButton;
+@property (nonatomic, retain) UIImage *headerImage;
+@property (nonatomic, copy) NSAttributedString *message;
+@property (nonatomic) BOOL showActivityIndicator;
+@property (nonatomic, copy) NSAttributedString *title;
 
 + (float)bodySeparation;
 + (float)defaultHeight;

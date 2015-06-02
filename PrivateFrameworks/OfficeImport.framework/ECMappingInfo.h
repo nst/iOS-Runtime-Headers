@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface ECMappingInfo : NSObject {
     NSString *mSheetName;
 }
 
-@property(readonly) int columnOffset;
-@property(readonly) int rowOffset;
-@property(readonly) NSString * sheetName;
+@property (nonatomic, readonly) int columnOffset;
+@property (nonatomic, readonly) int rowOffset;
+@property (nonatomic, readonly) NSString *sheetName;
 
 + (id)mappingInfoWithSheetName:(id)arg1;
 

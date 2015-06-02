@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@class NSArray, NSString;
+@interface RadioMutableHistoryCategory : RadioHistoryCategory
 
-@interface RadioMutableHistoryCategory : RadioHistoryCategory {
-}
-
-@property(copy) NSString * categoryDescription;
-@property(copy) NSArray * items;
-@property(copy) NSString * name;
-@property(copy) NSString * stationHash;
-@property long long stationID;
-@property int type;
+@property (nonatomic, copy) NSString *categoryDescription;
+@property (nonatomic, copy) NSArray *items;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, copy) NSString *stationHash;
+@property (nonatomic) long long stationID;
+@property (nonatomic) int type;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)setCategoryDescription:(id)arg1;

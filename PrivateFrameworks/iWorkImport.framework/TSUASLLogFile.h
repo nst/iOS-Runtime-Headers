@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSUASLClient;
-
 @interface TSUASLLogFile : NSObject {
     TSUASLClient *_client;
     int _fileDescriptor;
 }
 
-@property(readonly) int fileDescriptor;
+@property (nonatomic, readonly) int fileDescriptor;
 
 - (void).cxx_destruct;
 - (void)close;

@@ -9,7 +9,7 @@
         double latitude; 
         double longitude; 
     } _originalCoordinate;
-    double _params[9];
+    double _params;
     double _radius;
     struct { 
         double latitude; 
@@ -18,7 +18,7 @@
     BOOL _shouldUsePolyShiftFunction;
 }
 
-@property struct { double x1; double x2; } originalCoordinate;
+@property (nonatomic) struct { double x1; double x2; } originalCoordinate;
 
 - (id)initWithLocationShiftResponse:(id)arg1 originalCoordinate:(struct { double x1; double x2; })arg2;
 - (id)initWithPolyLocationShiftResponse:(id)arg1 originalCoordinate:(struct { double x1; double x2; })arg2;

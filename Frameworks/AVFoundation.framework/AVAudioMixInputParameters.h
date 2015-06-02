@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAudioMixInputParametersInternal, NSString;
-
 @interface AVAudioMixInputParameters : NSObject <NSCopying, NSMutableCopying> {
     AVAudioMixInputParametersInternal *_inputParameters;
 }
 
-@property(retain,readonly) struct opaqueMTAudioProcessingTap { }* audioTapProcessor;
-@property(copy,readonly) NSString * audioTimePitchAlgorithm;
-@property(readonly) int trackID;
+@property (nonatomic, readonly, retain) struct opaqueMTAudioProcessingTap { }*audioTapProcessor;
+@property (nonatomic, readonly, copy) NSString *audioTimePitchAlgorithm;
+@property (nonatomic, readonly) int trackID;
 
 - (id)_audioVolumeCurve;
 - (void)_setScheduledAudioParameters:(id)arg1;

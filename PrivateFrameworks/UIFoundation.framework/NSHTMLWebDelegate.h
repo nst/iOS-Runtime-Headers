@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSURL;
-
 @interface NSHTMLWebDelegate : NSObject {
     NSURL *_baseURL;
     BOOL _loadDidFinish;

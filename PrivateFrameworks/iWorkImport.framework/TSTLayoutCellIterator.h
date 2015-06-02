@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSTCell, TSTMasterLayout, TSTTableModel;
-
 @interface TSTLayoutCellIterator : TSTCellIterator {
     TSTCell *mLayoutCell;
     struct { 
@@ -60,8 +58,8 @@
     BOOL mQueriedModel;
 }
 
-@property(readonly) TSTMasterLayout * masterLayout;
-@property(readonly) TSTTableModel * tableModel;
+@property (nonatomic, readonly) TSTMasterLayout *masterLayout;
+@property (nonatomic, readonly) TSTTableModel *tableModel;
 
 - (id).cxx_construct;
 - (void)dealloc;

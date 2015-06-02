@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSData, NSString, NSURL;
-
 @interface CoreDAVPostOrPutTask : CoreDAVActionBackedTask {
     int _absoluteOrder;
     BOOL _forceToServer;
@@ -14,12 +12,12 @@
     BOOL _sendOrder;
 }
 
-@property int absoluteOrder;
-@property BOOL forceToServer;
-@property(retain) NSString * previousETag;
-@property(retain) NSURL * priorOrderedURL;
-@property(retain) NSString * requestDataContentType;
-@property(retain) NSData * requestDataPayload;
+@property (nonatomic) int absoluteOrder;
+@property (nonatomic) BOOL forceToServer;
+@property (nonatomic, retain) NSString *previousETag;
+@property (nonatomic, retain) NSURL *priorOrderedURL;
+@property (nonatomic, retain) NSString *requestDataContentType;
+@property (nonatomic, retain) NSData *requestDataPayload;
 
 - (int)absoluteOrder;
 - (id)additionalHeaderValues;

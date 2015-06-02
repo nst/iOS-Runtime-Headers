@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSString;
-
 @interface PLUserActivityDaemonJob : PLDaemonJob {
     long long _actionType;
     NSString *_albumUUID;
@@ -12,9 +10,9 @@
 }
 
 @property long long actionType;
-@property(copy) NSString * albumUUID;
-@property(retain) NSArray * assetUUIDs;
-@property int cloudFeedContent;
+@property (nonatomic, copy) NSString *albumUUID;
+@property (nonatomic, retain) NSArray *assetUUIDs;
+@property (nonatomic) int cloudFeedContent;
 
 + (void)userDidDeleteSharedAlbum:(id)arg1;
 + (void)userDidDeleteSharedAssets:(id)arg1;

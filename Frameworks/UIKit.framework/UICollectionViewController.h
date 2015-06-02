@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UICollectionView, UICollectionViewLayout;
-
 @interface UICollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *_collectionView;
     struct { 
@@ -13,14 +11,14 @@
     UICollectionViewLayout *_layout;
 }
 
-@property BOOL clearsSelectionOnViewWillAppear;
-@property(retain) UICollectionView * collectionView;
-@property(readonly) UICollectionViewLayout * collectionViewLayout;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property BOOL useLayoutToLayoutNavigationTransitions;
+@property (nonatomic) BOOL clearsSelectionOnViewWillAppear;
+@property (nonatomic, retain) UICollectionView *collectionView;
+@property (nonatomic, readonly) UICollectionViewLayout *collectionViewLayout;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useLayoutToLayoutNavigationTransitions;
 
 - (void)__viewWillAppear:(BOOL)arg1;
 - (id)_animatorForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;

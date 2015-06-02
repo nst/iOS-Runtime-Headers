@@ -9,9 +9,9 @@
     id _target;
 }
 
-@property(readonly) BOOL returnsVoid;
-@property(readonly) SEL selector;
-@property(retain,readonly) id target;
+@property (nonatomic, readonly) BOOL returnsVoid;
+@property (nonatomic, readonly) SEL selector;
+@property (nonatomic, readonly, retain) id target;
 
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;

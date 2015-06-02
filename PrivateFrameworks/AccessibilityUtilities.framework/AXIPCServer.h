@@ -2,27 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSMutableDictionary, NSMutableSet, NSString;
-
 @interface AXIPCServer : NSObject {
     unsigned int _assignedServerPort;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _clientInvalidationHandler;
-
+    id /* block */ _clientInvalidationHandler;
     unsigned int _clientInvalidationPort;
     struct __CFRunLoopSource { } *_clientInvalidationSource;
     NSMutableSet *_connectedClients;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _defaultHandler;
-
+    id /* block */ _defaultHandler;
     NSMutableDictionary *_entitlements;
     NSMutableDictionary *_handlers;
     BOOL _perPidService;
@@ -33,13 +19,13 @@
     NSMutableDictionary *_validSecurityTokens;
 }
 
-@property(copy) id clientInvalidationCallback;
-@property(copy) id defaultHandler;
-@property(retain) NSMutableDictionary * handlers;
-@property(readonly) unsigned int machPort;
-@property BOOL perPidService;
-@property(getter=isRunning) BOOL running;
-@property(retain) NSString * serviceName;
+@property (nonatomic, copy) id /* block */ clientInvalidationCallback;
+@property (nonatomic, copy) id /* block */ defaultHandler;
+@property (nonatomic, retain) NSMutableDictionary *handlers;
+@property (nonatomic, readonly) unsigned int machPort;
+@property (nonatomic) BOOL perPidService;
+@property (getter=isRunning, nonatomic) BOOL running;
+@property (nonatomic, retain) NSString *serviceName;
 
 - (id)_clientIdentificationForAuditToken:(struct { unsigned int x1[8]; })arg1;
 - (BOOL)_clientWithPort:(unsigned int)arg1 auditToken:(struct { unsigned int x1[8]; })arg2 hasAnyEntitlementRequiredForMessage:(id)arg3;
@@ -49,9 +35,9 @@
 - (id)_handleIncomingMessage:(id)arg1 securityToken:(struct { unsigned int x1[2]; })arg2 auditToken:(struct { unsigned int x1[8]; })arg3 clientPort:(unsigned int)arg4;
 - (void)_startServerThread;
 - (void)addPossibleRequiredEntitlement:(id)arg1 forMessageWithKey:(int)arg2;
-- (id)clientInvalidationCallback;
+- (id /* block */)clientInvalidationCallback;
 - (void)dealloc;
-- (id)defaultHandler;
+- (id /* block */)defaultHandler;
 - (id)description;
 - (id)handlers;
 - (id)initWithPort:(unsigned int)arg1 serviceRunLoopSource:(struct __CFRunLoopSource { }*)arg2;
@@ -63,9 +49,9 @@
 - (void)removeHandlerForKey:(int)arg1;
 - (void)removePossibleRequiredEntitlement:(id)arg1 forMessageWithKey:(int)arg2;
 - (id)serviceName;
-- (void)setClientInvalidationCallback:(id)arg1;
-- (void)setDefaultHandler:(id)arg1;
-- (void)setHandler:(id)arg1 forKey:(int)arg2;
+- (void)setClientInvalidationCallback:(id /* block */)arg1;
+- (void)setDefaultHandler:(id /* block */)arg1;
+- (void)setHandler:(id /* block */)arg1 forKey:(int)arg2;
 - (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3;
 - (void)setHandlerWithTarget:(id)arg1 selector:(SEL)arg2 forKey:(int)arg3 possibleRequiredEntitlements:(id)arg4;
 - (void)setHandlers:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEODirectionsRouteResponse : GEODirectionsResponse {
-}
+@interface GEODirectionsRouteResponse : GEODirectionsResponse
 
 - (id)description;
 - (id)dictionaryRepresentation;

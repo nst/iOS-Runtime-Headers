@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIContext, CIImage, NSNumber;
-
 @interface CISmartColorFilter : CIFilter {
     CIContext *_cubeContext;
     CIImage *_cubeImage;
@@ -14,11 +12,11 @@
     NSNumber *inputVibrancy;
 }
 
-@property(retain) NSNumber * inputCast;
-@property(retain) NSNumber * inputContrast;
-@property(retain) CIImage * inputImage;
-@property(retain) NSNumber * inputUseCube;
-@property(retain) NSNumber * inputVibrancy;
+@property (nonatomic, retain) NSNumber *inputCast;
+@property (nonatomic, retain) NSNumber *inputContrast;
+@property (nonatomic, retain) CIImage *inputImage;
+@property (nonatomic, retain) NSNumber *inputUseCube;
+@property (nonatomic, retain) NSNumber *inputVibrancy;
 
 + (id)customAttributes;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class EKDirectoryLocation;
-
 @interface EKUIConferenceRoom : NSObject {
     int _availability;
     BOOL _availabilityRequestInProgress;
@@ -11,10 +9,10 @@
     BOOL _supportsAvailability;
 }
 
-@property int availability;
-@property BOOL availabilityRequestInProgress;
-@property(retain) EKDirectoryLocation * location;
-@property BOOL supportsAvailability;
+@property (nonatomic) int availability;
+@property (nonatomic) BOOL availabilityRequestInProgress;
+@property (nonatomic, retain) EKDirectoryLocation *location;
+@property (nonatomic) BOOL supportsAvailability;
 
 - (void).cxx_destruct;
 - (int)availability;

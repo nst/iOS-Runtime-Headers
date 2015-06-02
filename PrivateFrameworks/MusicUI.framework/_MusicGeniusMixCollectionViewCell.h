@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSLayoutConstraint, NSMutableArray, NSString, UIButton, UILabel;
-
 @interface _MusicGeniusMixCollectionViewCell : UICollectionViewCell {
     UILabel *_artistsLabel;
     NSLayoutConstraint *_artistsLabelBaselineConstraint;
@@ -17,11 +15,11 @@
     NSLayoutConstraint *_titleLabelBaselineConstraint;
 }
 
-@property(copy) NSString * artistsText;
-@property(getter=isOffline) BOOL offline;
-@property(readonly) UIButton * playButton;
-@property(getter=isPlaying) BOOL playing;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSString *artistsText;
+@property (getter=isOffline, nonatomic) BOOL offline;
+@property (nonatomic, readonly) UIButton *playButton;
+@property (getter=isPlaying, nonatomic) BOOL playing;
+@property (nonatomic, copy) NSString *title;
 
 + (int)numberOfArtworkImages;
 

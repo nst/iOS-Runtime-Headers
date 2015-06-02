@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class ISOperation, MFMailComposeViewController, NSArray, NSDictionary, NSString, NSURL, SUClient, SUSectionsResponse, SUTabBarController, UINavigationController, UIWindow;
-
 @interface SUStoreController : NSObject <MFMailComposeViewControllerDelegate, SUClientDelegate, SUPurchaseManagerDelegate, SUTabBarControllerDelegate, UIApplicationDelegate> {
     SUClient *_client;
     SUSectionsResponse *_lastBackgroundSectionsResponse;
@@ -21,17 +19,17 @@
     SUTabBarController *_tabBarController;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) NSString * defaultPNGNameForSuspend;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSURL * launchURL;
-@property(getter=isStoreEnabled,readonly) BOOL storeEnabled;
-@property(readonly) Class superclass;
-@property(readonly) SUTabBarController * tabBarController;
-@property(getter=isTabBarControllerLoaded,readonly) BOOL tabBarControllerLoaded;
-@property(readonly) UINavigationController * topNavigationController;
-@property(retain) UIWindow * window;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) NSString *defaultPNGNameForSuspend;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSURL *launchURL;
+@property (getter=isStoreEnabled, nonatomic, readonly) BOOL storeEnabled;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SUTabBarController *tabBarController;
+@property (getter=isTabBarControllerLoaded, nonatomic, readonly) BOOL tabBarControllerLoaded;
+@property (nonatomic, readonly) UINavigationController *topNavigationController;
+@property (nonatomic, retain) UIWindow *window;
 
 + (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
@@ -48,7 +46,7 @@
 - (void)_handleSearchURL:(id)arg1;
 - (void)_handleSectionsLoadFailedWithError:(id)arg1;
 - (BOOL)_isAccountViewControllerVisible;
-- (BOOL)_loadSectionsAllowingCache:(BOOL)arg1 withCompletionBlock:(id)arg2;
+- (BOOL)_loadSectionsAllowingCache:(BOOL)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)_mainThreadStoreFrontChangedNotification:(id)arg1;
 - (void)_presentSectionFetchUI;
 - (void)_reloadForNetworkTypeChange:(id)arg1;

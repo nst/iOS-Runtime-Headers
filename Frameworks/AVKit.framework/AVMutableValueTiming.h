@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVMutableValueTiming : AVValueTiming {
-}
+@interface AVMutableValueTiming : AVValueTiming
 
-@property double anchorTimeStamp;
-@property double anchorValue;
-@property double rate;
+@property (nonatomic) double anchorTimeStamp;
+@property (nonatomic) double anchorValue;
+@property (nonatomic) double rate;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 

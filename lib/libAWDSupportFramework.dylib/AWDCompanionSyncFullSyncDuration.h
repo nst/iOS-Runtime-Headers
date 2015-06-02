@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDCompanionSyncFullSyncDuration : PBCodable <NSCopying> {
     struct { 
         unsigned int syncDuration : 1; 
@@ -16,14 +14,14 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasIsMaster;
-@property(readonly) BOOL hasService;
-@property BOOL hasSyncDuration;
-@property BOOL hasTimestamp;
-@property BOOL isMaster;
-@property(retain) NSString * service;
-@property unsigned long long syncDuration;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasIsMaster;
+@property (nonatomic, readonly) BOOL hasService;
+@property (nonatomic) BOOL hasSyncDuration;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL isMaster;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic) unsigned long long syncDuration;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

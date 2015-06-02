@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSPredicate;
-
 @interface BRCSyncThrottle : BRCThrottle {
     NSPredicate *_predicate;
 }
 
-@property(retain) NSPredicate * predicate;
+@property (nonatomic, retain) NSPredicate *predicate;
 
 - (void).cxx_destruct;
 - (BOOL)_validateThrottleParams:(id)arg1;

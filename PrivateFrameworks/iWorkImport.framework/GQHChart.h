@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQHChart : NSObject {
-}
+@interface GQHChart : NSObject
 
 + (struct __CFString { }*)createChartImageUrlString:(id)arg1 state:(id)arg2;
 + (id)geometry:(id)arg1;

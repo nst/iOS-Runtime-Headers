@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class NSArray, NSString;
-
 @interface PLAccountingGroup : PLOperator <PLQLAccountingGroupProtocol> {
     NSString *_accountingGroupName;
     short _accountingGroupType;
@@ -16,16 +14,16 @@
     } _eventCacheTimeRange;
 }
 
-@property(retain,readonly) NSString * accountingGroupName;
-@property(readonly) short accountingGroupType;
+@property (readonly, retain) NSString *accountingGroupName;
+@property (readonly) short accountingGroupType;
 @property BOOL closeAllAccountingEventsAtBoot;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL eventCacheOn;
-@property(retain) NSArray * eventCacheResults;
+@property (retain) NSArray *eventCacheResults;
 @property struct _PLTimeIntervalRange { double x1; double x2; } eventCacheTimeRange;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)accountingGroupFromAGName:(id)arg1;
 + (id)entryEventNoneDefinitionAccountingGroup;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CMDiagramNodeLayout : NSObject {
-}
+@interface CMDiagramNodeLayout : NSObject
 
 @end

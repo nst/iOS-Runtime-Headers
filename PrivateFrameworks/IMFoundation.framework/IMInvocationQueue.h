@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSMutableArray, NSProtocolChecker, Protocol;
-
 @interface IMInvocationQueue : NSObject {
     id _delegate;
     double _dequeueRate;
@@ -14,15 +12,15 @@
     id _target;
 }
 
-@property(readonly) unsigned int count;
+@property (nonatomic, readonly) unsigned int count;
 @property id delegate;
-@property double dequeueRate;
-@property(readonly) BOOL holdQueue;
-@property(readonly) BOOL isEmpty;
-@property(retain,readonly) NSMutableArray * options;
-@property(retain) Protocol * protocol;
-@property(retain,readonly) NSProtocolChecker * protocolChecker;
-@property(retain,readonly) NSMutableArray * queue;
+@property (nonatomic) double dequeueRate;
+@property (nonatomic, readonly) BOOL holdQueue;
+@property (nonatomic, readonly) BOOL isEmpty;
+@property (nonatomic, readonly, retain) NSMutableArray *options;
+@property (nonatomic, retain) Protocol *protocol;
+@property (nonatomic, readonly, retain) NSProtocolChecker *protocolChecker;
+@property (nonatomic, readonly, retain) NSMutableArray *queue;
 @property id target;
 
 - (BOOL)_acceptsOptions:(unsigned int)arg1;

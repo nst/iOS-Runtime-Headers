@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSArray, NSDate, NSMutableDictionary, NSNumber, NSString;
-
 @interface PLBBMavHwRf1xLogMsg : PLBasebandMessage {
     NSDate *_bbDate;
     NSNumber *_bbSeqnum;
@@ -18,17 +16,17 @@
     NSNumber *_logDuration;
 }
 
-@property(retain) NSDate * bbDate;
-@property(retain) NSNumber * bbSeqnum;
-@property double* bbTimeCal;
-@property(retain) NSArray * callTypeDur;
-@property(retain) NSMutableDictionary * commonInfo;
-@property(retain) NSNumber * dtxOff;
-@property(retain) NSNumber * dtxOn;
-@property(retain) NSString * error;
-@property unsigned char inited;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSNumber * logDuration;
+@property (retain) NSDate *bbDate;
+@property (retain) NSNumber *bbSeqnum;
+@property double*bbTimeCal;
+@property (retain) NSArray *callTypeDur;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (retain) NSNumber *dtxOff;
+@property (retain) NSNumber *dtxOn;
+@property (retain) NSString *error;
+@property (nonatomic) unsigned char inited;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (retain) NSNumber *logDuration;
 
 + (id)entryEventBackwardDefinitionBBMavHwRf1x;
 

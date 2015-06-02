@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSPDataDownloadObserverInfo : TSPDataObserverInfo {
-}
+@interface TSPDataDownloadObserverInfo : TSPDataObserverInfo
 
-- (id)initWithDownloadObserver:(id)arg1 data:(id)arg2 options:(unsigned int)arg3 isInternalObserver:(BOOL)arg4 completionHandler:(id)arg5;
+- (id)initWithDownloadObserver:(id)arg1 data:(id)arg2 options:(unsigned int)arg3 isInternalObserver:(BOOL)arg4 completionHandler:(id /* block */)arg5;
 - (BOOL)shouldClearObserverForStatus:(int)arg1;
 - (BOOL)shouldNotifyStatus:(int)arg1;
 

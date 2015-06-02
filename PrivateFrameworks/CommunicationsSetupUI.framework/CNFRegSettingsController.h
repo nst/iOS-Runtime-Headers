@@ -2,22 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSNumber, NSString, PSSpecifier, TUAccountsController;
-
 @interface CNFRegSettingsController : CNFRegListController <CNFRegFirstRunDelegate, CNFRegViewAccountControllerDelegate, CNFRegWizardControllerDelegate> {
     NSArray *_accountGroupSpecifiers;
     TUAccountsController *_accountsController;
     PSSpecifier *_addAddressButtonSpecifier;
     NSMutableArray *_addresses;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _alertHandler;
-
+    id /* block */ _alertHandler;
     NSArray *_aliasGroupSpecifiers;
     NSArray *_blacklistGroupSpecifiers;
     PSSpecifier *_blankAddressSpecifier;
@@ -38,15 +28,15 @@
     BOOL _showReceiveRelayCalls;
 }
 
-@property(retain) TUAccountsController * accountsController;
-@property(copy) id alertHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * pendingAddress;
-@property BOOL showEnableSwitch;
-@property(readonly) BOOL showReceiveRelayCalls;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) TUAccountsController *accountsController;
+@property (nonatomic, copy) id /* block */ alertHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *pendingAddress;
+@property (nonatomic) BOOL showEnableSwitch;
+@property (nonatomic, readonly) BOOL showReceiveRelayCalls;
+@property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
@@ -71,7 +61,7 @@
 - (id)_operationalAccountsForService:(int)arg1;
 - (BOOL)_popFromSettingsAnimated:(BOOL)arg1;
 - (void)_refreshFaceTimeSettingsDelayed:(id)arg1;
-- (void)_reloadSpecifier:(id)arg1 withBlock:(id)arg2;
+- (void)_reloadSpecifier:(id)arg1 withBlock:(id /* block */)arg2;
 - (void)_setupAccountHandlers;
 - (void)_setupAccountHandlersForDisabledOperation;
 - (void)_setupAccountHandlersForDisabling;
@@ -97,7 +87,7 @@
 - (id)accountsController;
 - (void)addAddressTapped:(id)arg1;
 - (BOOL)additionalAliasesAvailable;
-- (id)alertHandler;
+- (id /* block */)alertHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)aliasDetailControllerForSpecifier:(id)arg1;
 - (id)aliasForSpecifier:(id)arg1;
@@ -146,7 +136,7 @@
 - (void)refreshReceiveRelayCallsSettingsAnimated:(BOOL)arg1;
 - (void)returnKeyPressed:(id)arg1;
 - (void)setAccountsController:(id)arg1;
-- (void)setAlertHandler:(id)arg1;
+- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAliasSelected:(id)arg1;
 - (void)setCallerId:(id)arg1;
 - (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2;

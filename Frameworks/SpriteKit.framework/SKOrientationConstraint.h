@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKNode, SKRange;
-
 @interface SKOrientationConstraint : SKConstraint {
     SKNode *_node;
     SKRange *_offset;
@@ -13,8 +11,8 @@
     } _point;
 }
 
-@property SKNode * node;
-@property(copy) SKRange * offset;
+@property SKNode *node;
+@property (copy) SKRange *offset;
 @property struct CGPoint { float x1; float x2; } point;
 
 + (id)constraintOrientingToNode:(id)arg1 offset:(id)arg2;

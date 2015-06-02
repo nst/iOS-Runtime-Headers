@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLCloudOperationResource, PLCloudPhotoLibraryManager, PLCloudScenario;
-
 @interface PLCloudOperation : NSObject {
     PLCloudPhotoLibraryManager *_connection;
     unsigned int _cost;
@@ -13,12 +11,12 @@
     PLCloudScenario *_scenario;
 }
 
-@property(readonly) PLCloudPhotoLibraryManager * connection;
-@property(readonly) unsigned int cost;
-@property(readonly) long createdAt;
-@property(retain) PLCloudOperationResource * operationResource;
+@property (nonatomic, readonly) PLCloudPhotoLibraryManager *connection;
+@property (nonatomic, readonly) unsigned int cost;
+@property (nonatomic, readonly) long createdAt;
+@property (nonatomic, retain) PLCloudOperationResource *operationResource;
 @property BOOL running;
-@property(readonly) PLCloudScenario * scenario;
+@property (nonatomic, readonly) PLCloudScenario *scenario;
 
 - (id)connection;
 - (unsigned int)cost;
@@ -30,7 +28,7 @@
 - (id)operationResource;
 - (void)requestCancel;
 - (id)resource;
-- (void)runOperationWithCompletionHandler:(id)arg1;
+- (void)runOperationWithCompletionHandler:(id /* block */)arg1;
 - (BOOL)running;
 - (id)scenario;
 - (void)setOperationResource:(id)arg1;

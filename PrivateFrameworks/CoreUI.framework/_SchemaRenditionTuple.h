@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreUI.framework/CoreUI
  */
 
-@class NSMutableDictionary;
-
 @interface _SchemaRenditionTuple : NSObject {
     NSMutableDictionary *info;
     struct _renditionkeytoken { 
         unsigned short identifier; 
         unsigned short value; 
-    } key[16];
+    } key;
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

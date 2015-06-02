@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSNumber;
-
 @interface _HKAnchoredObjectQueryServerDataObject : _HKQueryServerDataObject {
     NSNumber *_anchor;
     unsigned int _limit;
 }
 
-@property(retain) NSNumber * anchor;
-@property unsigned int limit;
+@property (nonatomic, retain) NSNumber *anchor;
+@property (nonatomic) unsigned int limit;
 
 + (BOOL)supportsSecureCoding;
 

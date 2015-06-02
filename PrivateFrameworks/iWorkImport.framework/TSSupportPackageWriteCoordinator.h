@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSPPackageWriteCoordinator;
-
 @interface TSSupportPackageWriteCoordinator : TSPPackageWriteCoordinator {
     TSPPackageWriteCoordinator *_packageWriteCoordinator;
 }

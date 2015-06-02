@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRFieldPkgItem;
-
 @interface BRFieldPkgLocalItem : PBCodable <NSCopying> {
     long long _fileID;
     unsigned int _generationID;
@@ -15,12 +13,12 @@
     long long _size;
 }
 
-@property long long fileID;
-@property unsigned int generationID;
-@property BOOL hasGenerationID;
-@property BOOL hasSize;
-@property(retain) BRFieldPkgItem * item;
-@property long long size;
+@property (nonatomic) long long fileID;
+@property (nonatomic) unsigned int generationID;
+@property (nonatomic) BOOL hasGenerationID;
+@property (nonatomic) BOOL hasSize;
+@property (nonatomic, retain) BRFieldPkgItem *item;
+@property (nonatomic) long long size;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

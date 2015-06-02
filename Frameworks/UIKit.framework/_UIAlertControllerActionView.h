@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSLayoutConstraint, NSMutableArray, NSString, UIAlertAction, UIAlertControllerVisualStyle, UIImageView, UILabel, UITapGestureRecognizer, UIView, UIView<UIAlertControllerBackgroundView>;
-
 @interface _UIAlertControllerActionView : UIView <UIGestureRecognizerDelegate, _UIAlertActionRepresenting> {
     UIAlertAction *_action;
     NSMutableArray *_contentViewControllerConstraints;
@@ -32,16 +30,16 @@
     id selectedTarget;
 }
 
-@property(copy) UIAlertAction * action;
+@property (nonatomic, copy) UIAlertAction *action;
 @property float alignedDescriptiveLabelTextWidth;
-@property(readonly) float currentDescriptiveLabelTextWidth;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (readonly) float currentDescriptiveLabelTextWidth;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL discrete;
-@property(readonly) unsigned int hash;
-@property(getter=isHighlighted) BOOL highlighted;
-@property(readonly) Class superclass;
-@property UIAlertControllerVisualStyle * visualStyle;
+@property (readonly) unsigned int hash;
+@property (getter=isHighlighted, nonatomic) BOOL highlighted;
+@property (readonly) Class superclass;
+@property UIAlertControllerVisualStyle *visualStyle;
 
 - (void)_action:(id)arg1 changedToBeDefault:(BOOL)arg2;
 - (void)_action:(id)arg1 changedToChecked:(BOOL)arg2;

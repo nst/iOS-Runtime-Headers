@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOPDAnalyticMetadata, GEOPDClientMetadata, GEORPProblem, GEORPUserCredentials;
-
 @interface GEORPProblemRequest : PBRequest <NSCopying> {
     GEOPDAnalyticMetadata *_analyticMetadata;
     GEOPDClientMetadata *_clientMetadata;
@@ -11,14 +9,14 @@
     GEORPUserCredentials *_userCredentials;
 }
 
-@property(retain) GEOPDAnalyticMetadata * analyticMetadata;
-@property(retain) GEOPDClientMetadata * clientMetadata;
-@property(readonly) BOOL hasAnalyticMetadata;
-@property(readonly) BOOL hasClientMetadata;
-@property(readonly) BOOL hasProblem;
-@property(readonly) BOOL hasUserCredentials;
-@property(retain) GEORPProblem * problem;
-@property(retain) GEORPUserCredentials * userCredentials;
+@property (nonatomic, retain) GEOPDAnalyticMetadata *analyticMetadata;
+@property (nonatomic, retain) GEOPDClientMetadata *clientMetadata;
+@property (nonatomic, readonly) BOOL hasAnalyticMetadata;
+@property (nonatomic, readonly) BOOL hasClientMetadata;
+@property (nonatomic, readonly) BOOL hasProblem;
+@property (nonatomic, readonly) BOOL hasUserCredentials;
+@property (nonatomic, retain) GEORPProblem *problem;
+@property (nonatomic, retain) GEORPUserCredentials *userCredentials;
 
 - (id)analyticMetadata;
 - (id)clientMetadata;

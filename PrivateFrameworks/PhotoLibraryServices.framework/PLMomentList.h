@@ -2,37 +2,35 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSData, NSDate, NSObject<NSCopying>, NSOrderedSet, NSString, PLMomentNameInfo;
-
 @interface PLMomentList : PLManagedObject <PLAssetContainerList, PLMomentListData> {
     PLMomentNameInfo *_cachedNameInfo;
     BOOL _loadedNameInfo;
 }
 
-@property(readonly) unsigned int containersCount;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSDate * endDate;
-@property short generationType;
-@property short granularityLevel;
-@property(readonly) unsigned int hash;
-@property(retain,readonly) NSArray * localizedLocationNames;
-@property(retain,readonly) NSString * localizedTitle;
-@property(retain) NSOrderedSet * moments;
-@property(retain) NSOrderedSet * momentsForMegaMoment;
-@property(retain) NSOrderedSet * momentsForYear;
-@property(retain) NSDate * representativeDate;
-@property(retain) NSData * reverseLocationData;
-@property BOOL reverseLocationDataIsValid;
-@property int sortIndex;
-@property(retain) NSDate * startDate;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
-@property(retain) NSString * title2;
-@property(retain) NSString * title3;
-@property(retain,readonly) NSObject<NSCopying> * uniqueObjectID;
-@property(retain) NSArray * userTitles;
-@property(retain) NSString * uuid;
+@property (nonatomic, readonly) unsigned int containersCount;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSDate *endDate;
+@property (nonatomic) short generationType;
+@property (nonatomic) short granularityLevel;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) NSArray *localizedLocationNames;
+@property (nonatomic, readonly, retain) NSString *localizedTitle;
+@property (nonatomic, retain) NSOrderedSet *moments;
+@property (nonatomic, retain) NSOrderedSet *momentsForMegaMoment;
+@property (nonatomic, retain) NSOrderedSet *momentsForYear;
+@property (nonatomic, retain) NSDate *representativeDate;
+@property (nonatomic, retain) NSData *reverseLocationData;
+@property (nonatomic) BOOL reverseLocationDataIsValid;
+@property (nonatomic) int sortIndex;
+@property (nonatomic, retain) NSDate *startDate;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *title2;
+@property (nonatomic, retain) NSString *title3;
+@property (nonatomic, readonly, retain) NSObject<NSCopying> *uniqueObjectID;
+@property (nonatomic, retain) NSArray *userTitles;
+@property (nonatomic, retain) NSString *uuid;
 
 + (id)allMomentListsInLibrary:(id)arg1 forLevel:(short)arg2;
 + (id)allMomentListsInLibrary:(id)arg1 forLevel:(short)arg2 returnsObjectsAsFaults:(BOOL)arg3;

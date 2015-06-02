@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class AVConference, NSMutableArray;
-
 @interface TUAVConferenceInterface : NSObject <AVConferenceDelegate> {
     NSMutableArray *_activeConferenceConnections;
     int _callID;
@@ -11,10 +9,10 @@
     BOOL _hasActiveConference;
 }
 
-@property(retain) NSMutableArray * activeConferenceConnections;
-@property int callID;
-@property(retain) AVConference * conference;
-@property BOOL hasActiveConference;
+@property (nonatomic, retain) NSMutableArray *activeConferenceConnections;
+@property (nonatomic) int callID;
+@property (nonatomic, retain) AVConference *conference;
+@property (nonatomic) BOOL hasActiveConference;
 
 + (id)sharedInstance;
 
@@ -61,7 +59,7 @@
 - (void)setHasActiveConference:(BOOL)arg1;
 - (void)setMuted:(BOOL)arg1 forIdentifier:(id)arg2;
 - (void)setSendingAudio:(BOOL)arg1 forIdentifier:(id)arg2;
-- (void)startConferenceForIdentifier:(id)arg1 withSocket:(int)arg2 asHost:(BOOL)arg3 didStartHandler:(id)arg4 didStopHandler:(id)arg5;
+- (void)startConferenceForIdentifier:(id)arg1 withSocket:(int)arg2 asHost:(BOOL)arg3 didStartHandler:(id /* block */)arg4 didStopHandler:(id /* block */)arg5;
 - (void)stopConferenceForIdentifier:(id)arg1;
 
 @end

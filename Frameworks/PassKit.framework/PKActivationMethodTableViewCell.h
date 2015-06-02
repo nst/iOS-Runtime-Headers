@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKActivationMethodTableViewCell : UITableViewCell {
-}
+@interface PKActivationMethodTableViewCell : UITableViewCell
 
 - (void)layoutSubviews;
 

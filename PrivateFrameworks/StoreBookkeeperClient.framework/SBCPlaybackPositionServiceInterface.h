@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeperClient.framework/StoreBookkeeperClient
  */
 
-@interface SBCPlaybackPositionServiceInterface : SBCXPCServiceInterface {
-}
+@interface SBCPlaybackPositionServiceInterface : SBCXPCServiceInterface
 
 + (id)serviceClientInterface;
 + (id)serviceInterface;

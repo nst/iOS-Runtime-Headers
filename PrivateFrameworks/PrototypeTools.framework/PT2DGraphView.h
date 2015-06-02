@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSArray, NSMutableArray, PT2DGraphAxisStyle, UIColor;
-
 @interface PT2DGraphView : UIView {
     NSArray *_data;
     UIColor *_dataColor;
@@ -33,21 +31,21 @@
     float _yminimum;
 }
 
-@property(retain) NSArray * data;
-@property(retain) UIColor * dataColor;
-@property struct CGSize { float x1; float x2; } datumSize;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
-@property(retain) UIColor * groundColor;
-@property struct CGPoint { float x1; float x2; } origin;
-@property(retain) NSArray * provisionalData;
-@property(retain) UIColor * provisionalDataColor;
-@property(retain) NSMutableArray * provisionalDataSubviews;
-@property(retain) PT2DGraphAxisStyle * xaxisStyle;
-@property float xmaximum;
-@property float xminimum;
-@property(retain) PT2DGraphAxisStyle * yaxisStyle;
-@property float ymaximum;
-@property float yminimum;
+@property (nonatomic, retain) NSArray *data;
+@property (nonatomic, retain) UIColor *dataColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } datumSize;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (nonatomic, retain) UIColor *groundColor;
+@property (nonatomic) struct CGPoint { float x1; float x2; } origin;
+@property (nonatomic, retain) NSArray *provisionalData;
+@property (nonatomic, retain) UIColor *provisionalDataColor;
+@property (nonatomic, retain) NSMutableArray *provisionalDataSubviews;
+@property (nonatomic, retain) PT2DGraphAxisStyle *xaxisStyle;
+@property (nonatomic) float xmaximum;
+@property (nonatomic) float xminimum;
+@property (nonatomic, retain) PT2DGraphAxisStyle *yaxisStyle;
+@property (nonatomic) float ymaximum;
+@property (nonatomic) float yminimum;
 
 - (void).cxx_destruct;
 - (id)data;

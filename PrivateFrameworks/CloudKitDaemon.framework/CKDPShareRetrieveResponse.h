@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray;
-
 @interface CKDPShareRetrieveResponse : PBCodable <NSCopying> {
     NSMutableArray *_shares;
 }
 
-@property(retain) NSMutableArray * shares;
+@property (nonatomic, retain) NSMutableArray *shares;
 
 - (void).cxx_destruct;
 - (void)addShare:(id)arg1;

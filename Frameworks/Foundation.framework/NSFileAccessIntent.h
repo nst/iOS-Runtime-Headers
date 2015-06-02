@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURL;
-
 @interface NSFileAccessIntent : NSObject {
     BOOL _isRead;
     int _options;
     NSURL *_url;
 }
 
-@property(copy) NSURL * URL;
-@property(readonly) BOOL isRead;
-@property(readonly) unsigned int readingOptions;
-@property(readonly) unsigned int writingOptions;
+@property (copy) NSURL *URL;
+@property (readonly) BOOL isRead;
+@property (readonly) unsigned int readingOptions;
+@property (readonly) unsigned int writingOptions;
 
 + (id)readingIntentWithURL:(id)arg1 options:(unsigned int)arg2;
 + (id)writingIntentWithURL:(id)arg1 options:(unsigned int)arg2;

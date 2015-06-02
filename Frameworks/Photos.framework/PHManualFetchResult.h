@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Photos.framework/Photos
  */
 
-@class NSArray, NSOrderedSet, NSString;
-
 @interface PHManualFetchResult : PHFetchResult {
     NSString *_identifier;
     NSOrderedSet *_objectIDs;
     NSArray *_objects;
 }
 
-@property(readonly) NSString * identifier;
-@property(readonly) NSOrderedSet * objectIDs;
-@property(readonly) NSArray * objects;
+@property (readonly) NSString *identifier;
+@property (readonly) NSOrderedSet *objectIDs;
+@property (readonly) NSArray *objects;
 
 - (void).cxx_destruct;
 - (id)changeHandlingKey;

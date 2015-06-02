@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ETPeople.framework/ETPeople
  */
 
-@class NSNumber, NSSet, NSString;
-
 @interface ETPerson : NSObject {
     NSString *_abDatabaseUID;
     NSString *_abRecordGUID;
     int _abRecordID;
     NSSet *_allValues;
-    unsigned int _dirty : 1;
+    unsigned int _dirty;
     NSNumber *_emailAddressCount;
     BOOL _hasImage;
     BOOL _hasUnreadMessages;
@@ -20,7 +18,7 @@
     double _unreadMessageIndicatorUpdateTime;
 }
 
-@property(readonly) BOOL hasUnreadMessages;
+@property (nonatomic, readonly) BOOL hasUnreadMessages;
 
 + (id)_allEmailValuesForRecord:(void*)arg1;
 + (id)_allEmailValuesInSet:(id)arg1;

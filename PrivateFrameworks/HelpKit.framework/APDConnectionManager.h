@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@class APDReachability;
-
 @interface APDConnectionManager : NSObject {
     BOOL _connected;
     BOOL _hostActive;
@@ -13,9 +11,9 @@
     BOOL _reachabilityInitialized;
 }
 
-@property(getter=connected) BOOL connected;
-@property BOOL internetActive;
-@property BOOL reachabilityInitialized;
+@property (getter=connected, nonatomic) BOOL connected;
+@property (nonatomic) BOOL internetActive;
+@property (nonatomic) BOOL reachabilityInitialized;
 
 - (void).cxx_destruct;
 - (BOOL)connected;

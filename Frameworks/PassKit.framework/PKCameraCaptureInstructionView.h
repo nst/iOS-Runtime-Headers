@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class PKTableHeaderView, UIButton;
-
 @interface PKCameraCaptureInstructionView : UIView {
     int _context;
     PKTableHeaderView *_headerView;
@@ -11,8 +9,8 @@
     UIButton *_setupLaterButton;
 }
 
-@property(retain) UIButton * manualEntryButton;
-@property(retain) UIButton * setupLaterButton;
+@property (nonatomic, retain) UIButton *manualEntryButton;
+@property (nonatomic, retain) UIButton *setupLaterButton;
 
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 context:(int)arg2;

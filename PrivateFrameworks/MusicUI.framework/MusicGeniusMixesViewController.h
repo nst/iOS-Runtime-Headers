@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class NSString, UICollectionView, UIPageControl, UIView;
-
 @interface MusicGeniusMixesViewController : MPUDataSourceViewController <MPUMiniPlayerParticipant, UICollectionViewDataSource, UICollectionViewDelegate> {
     UICollectionView *_collectionView;
     struct UIEdgeInsets { 
@@ -17,10 +15,10 @@
     UIView *_pageControlSpacingView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)MPU_beginPlaybackForVisibleContent;

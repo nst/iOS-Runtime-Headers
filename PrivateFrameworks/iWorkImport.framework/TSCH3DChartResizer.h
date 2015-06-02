@@ -2,10 +2,8 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSCH3DChartBoundsLayout, TSCH3DChartType, TSCH3DScene;
-
 @interface TSCH3DChartResizer : NSObject {
-    struct ChartScenePropertyAccessor { id x1; id x2; } *mAccessor;
+    struct ChartScenePropertyAccessor { id x1; } *mAccessor;
     TSCH3DChartType *mChartType;
     struct ResizeData { 
         struct tvec2<float> { 
@@ -193,8 +191,8 @@
     } mTarget;
 }
 
-@property float minStep;
-@property float precision;
+@property (nonatomic) float minStep;
+@property (nonatomic) float precision;
 
 + (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })adjustLabelWrapSize:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1;
 + (struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; })adjustLabelWrapSize:(const struct tvec2<float> { union { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; union { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; }*)arg1 forScene:(id)arg2;

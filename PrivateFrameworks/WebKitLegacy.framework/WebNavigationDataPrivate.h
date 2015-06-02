@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class NSString, NSURLRequest, NSURLResponse;
-
 @interface WebNavigationDataPrivate : NSObject {
     NSString *clientRedirectSource;
     BOOL hasSubstituteData;

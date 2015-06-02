@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSMutableDictionary;
-
 @interface NSDirInfo : NSMutableDictionary {
     NSMutableDictionary *dict;
 }

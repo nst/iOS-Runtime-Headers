@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@class NSString;
-
 @interface BSZeroingWeakReference : NSObject {
     NSString *_debug;
     id _object;

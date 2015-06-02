@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSDictionary, NSString;
+@interface SAPunchoutOutcome : SABaseCommand <SAServerBoundCommand>
 
-@interface SAPunchoutOutcome : SABaseCommand <SAServerBoundCommand> {
-}
-
-@property(copy) NSString * aceId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * originalCommandId;
-@property(copy) NSDictionary * outcomes;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *aceId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *originalCommandId;
+@property (nonatomic, copy) NSDictionary *outcomes;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
 
 + (id)punchoutOutcome;
 + (id)punchoutOutcomeWithDictionary:(id)arg1 context:(id)arg2;

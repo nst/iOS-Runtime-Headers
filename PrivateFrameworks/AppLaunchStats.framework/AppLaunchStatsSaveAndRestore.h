@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppLaunchStats.framework/AppLaunchStats
  */
 
-@class NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_queue>;
-
 @interface AppLaunchStatsSaveAndRestore : NSObject {
     bool allowSave;
     NSObject<OS_dispatch_queue> *aplsSaveAndRestoreQueue;
@@ -12,8 +10,8 @@
     NSMutableDictionary *saveState;
 }
 
-@property bool allowSave;
-@property(readonly) bool hasSavedData;
+@property (nonatomic) bool allowSave;
+@property (nonatomic, readonly) bool hasSavedData;
 
 - (void).cxx_destruct;
 - (void)addDataSource:(id)arg1;

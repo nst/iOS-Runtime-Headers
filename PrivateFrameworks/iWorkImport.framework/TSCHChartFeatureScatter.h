@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartFeatureScatter : TSCHChartFeature {
-}
+@interface TSCHChartFeatureScatter : TSCHChartFeature
 
 - (id)defaultDataFileName;
 - (id)genericToSpecificPropertyMap;

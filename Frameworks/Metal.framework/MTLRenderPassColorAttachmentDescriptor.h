@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLRenderPassColorAttachmentDescriptor : MTLRenderPassAttachmentDescriptor {
-}
+@interface MTLRenderPassColorAttachmentDescriptor : MTLRenderPassAttachmentDescriptor
 
-@property struct { double x1; double x2; double x3; double x4; } clearColor;
+@property (nonatomic) struct { double x1; double x2; double x3; double x4; } clearColor;
 
 - (struct { double x1; double x2; double x3; double x4; })clearColor;
 - (id)description;

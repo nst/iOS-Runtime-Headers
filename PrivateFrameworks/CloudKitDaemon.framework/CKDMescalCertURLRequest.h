@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDMescalCertURLRequest : CKDURLRequest {
     NSData *_mescalCert;
 }
 
-@property(retain) NSData * mescalCert;
+@property (nonatomic, retain) NSData *mescalCert;
 
 - (void).cxx_destruct;
 - (BOOL)allowsAnonymousAccount;

@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSString;
+@interface GKABRecord : GKABObject
 
-@interface GKABRecord : GKABObject {
-}
-
-@property(readonly) void* ABRecord;
-@property(readonly) int recordID;
-@property(readonly) NSString * uniqueID;
+@property (readonly) void*ABRecord;
+@property (readonly) int recordID;
+@property (readonly) NSString *uniqueID;
 
 - (void*)ABRecord;
 - (id)initWithABRecord:(void*)arg1;

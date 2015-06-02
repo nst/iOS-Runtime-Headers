@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAStockDelete : SADomainCommand
 
-@interface SAStockDelete : SADomainCommand {
-}
-
-@property(copy) NSArray * stocks;
+@property (nonatomic, copy) NSArray *stocks;
 
 + (id)delete;
 + (id)deleteWithDictionary:(id)arg1 context:(id)arg2;

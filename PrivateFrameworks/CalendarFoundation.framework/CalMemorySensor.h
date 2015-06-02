@@ -2,35 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CalendarFoundation.framework/CalendarFoundation
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_source>;
-
 @interface CalMemorySensor : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _fireBlock;
-
+    id /* block */ _fireBlock;
     unsigned int _interval;
     NSObject<OS_dispatch_source> *_timer;
     unsigned int _usage;
 }
 
-@property(copy) id fireBlock;
-@property(readonly) unsigned int usage;
+@property (nonatomic, copy) id /* block */ fireBlock;
+@property (nonatomic, readonly) unsigned int usage;
 
 - (void).cxx_destruct;
 - (void)_monitorMemory;
 - (void)_setupTimer;
 - (void)dealloc;
 - (void)defaultMessageTraceForApp:(id)arg1;
-- (id)fireBlock;
+- (id /* block */)fireBlock;
 - (id)init;
 - (id)initWithMonitorInterval:(unsigned int)arg1;
-- (void)setFireBlock:(id)arg1;
+- (void)setFireBlock:(id /* block */)arg1;
 - (void)startMonitoringMemory;
 - (void)stopMonitoringMemory;
 - (unsigned int)usage;

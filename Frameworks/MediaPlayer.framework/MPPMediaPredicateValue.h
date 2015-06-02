@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSData, NSString;
-
 @interface MPPMediaPredicateValue : PBCodable <NSCopying> {
     BOOL _boolPredicateValue;
     NSData *_bytesPredicateValue;
@@ -20,19 +18,19 @@
     int _type;
 }
 
-@property BOOL boolPredicateValue;
-@property(retain) NSData * bytesPredicateValue;
-@property double doublePredicateValue;
-@property float floatPredicateValue;
-@property BOOL hasBoolPredicateValue;
-@property(readonly) BOOL hasBytesPredicateValue;
-@property BOOL hasDoublePredicateValue;
-@property BOOL hasFloatPredicateValue;
-@property BOOL hasIntegerPredicateValue;
-@property(readonly) BOOL hasStringPredicateValue;
-@property long long integerPredicateValue;
-@property(retain) NSString * stringPredicateValue;
-@property int type;
+@property (nonatomic) BOOL boolPredicateValue;
+@property (nonatomic, retain) NSData *bytesPredicateValue;
+@property (nonatomic) double doublePredicateValue;
+@property (nonatomic) float floatPredicateValue;
+@property (nonatomic) BOOL hasBoolPredicateValue;
+@property (nonatomic, readonly) BOOL hasBytesPredicateValue;
+@property (nonatomic) BOOL hasDoublePredicateValue;
+@property (nonatomic) BOOL hasFloatPredicateValue;
+@property (nonatomic) BOOL hasIntegerPredicateValue;
+@property (nonatomic, readonly) BOOL hasStringPredicateValue;
+@property (nonatomic) long long integerPredicateValue;
+@property (nonatomic, retain) NSString *stringPredicateValue;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (BOOL)boolPredicateValue;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class FBApplicationProcessLaunchTransaction, FBProcess, FBProcessManager, FBSceneManager, FBWorkspace, NSArray, NSMutableArray;
-
 @interface FBUpdateWorkspaceScenesTransaction : FBTransaction {
     FBProcess *_process;
     FBApplicationProcessLaunchTransaction *_processLaunchTransaction;
@@ -13,16 +11,16 @@
     FBWorkspace *_workspace;
 }
 
-@property(retain,readonly) FBProcess * process;
-@property(readonly) BOOL processExited;
-@property(readonly) BOOL processLaunchFailed;
-@property(retain,readonly) NSArray * updateSceneTransactions;
-@property(retain,readonly) FBWorkspace * workspace;
+@property (nonatomic, readonly, retain) FBProcess *process;
+@property (nonatomic, readonly) BOOL processExited;
+@property (nonatomic, readonly) BOOL processLaunchFailed;
+@property (nonatomic, readonly, retain) NSArray *updateSceneTransactions;
+@property (nonatomic, readonly, retain) FBWorkspace *workspace;
 
 - (void)_childTransactionDidComplete:(id)arg1;
 - (void)_didRemoveChildTransaction:(id)arg1;
 - (void)_willAddChildTransaction:(id)arg1;
-- (id)addUpdateSceneTransactionForSceneIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 initialClientSettingsProvider:(id)arg5;
+- (id)addUpdateSceneTransactionForSceneIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 initialClientSettingsProvider:(id /* block */)arg5;
 - (void)dealloc;
 - (id)initWithWorkspace:(id)arg1;
 - (id)process;

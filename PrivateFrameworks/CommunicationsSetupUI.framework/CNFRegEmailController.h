@@ -2,19 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSString, NSTimer, PSSpecifier;
-
 @interface CNFRegEmailController : CNFRegFirstRunController {
     PSSpecifier *_actionGroupSpecifier;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _alertHandler;
-
+    id /* block */ _alertHandler;
     NSArray *_checkMailSpecifiers;
     PSSpecifier *_currentActionSpecifier;
     PSSpecifier *_emailSpecifier;
@@ -23,8 +13,8 @@
     NSTimer *_validationTimeoutTimer;
 }
 
-@property(copy) id alertHandler;
-@property(copy) NSString * pendingAlias;
+@property (nonatomic, copy) id /* block */ alertHandler;
+@property (nonatomic, copy) NSString *pendingAlias;
 
 - (void)_buildActionGroupSpecifierCache:(id)arg1;
 - (void)_buildCheckMailSpecifierCache:(id)arg1;
@@ -44,7 +34,7 @@
 - (void)_stopValidationModeAnimated:(BOOL)arg1;
 - (void)_updateControllerState;
 - (void)_updateUI;
-- (id)alertHandler;
+- (id /* block */)alertHandler;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)aliasSpecifiers;
 - (id)bundle;
@@ -59,7 +49,7 @@
 - (id)pendingAlias;
 - (id)pendingAliasForSpecifier:(id)arg1;
 - (id)selectedAliases;
-- (void)setAlertHandler:(id)arg1;
+- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAliasSelected:(id)arg1;
 - (void)setPendingAlias:(id)arg1;
 - (void)setPendingAlias:(id)arg1 forSpecifier:(id)arg2;

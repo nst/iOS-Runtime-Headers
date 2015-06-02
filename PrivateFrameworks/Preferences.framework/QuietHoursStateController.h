@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class BBSettingsGateway, NSArray, NSDateComponents;
-
 @interface QuietHoursStateController : NSObject {
     BBSettingsGateway *_bbGateway;
     NSArray *_behaviorOverrides;
@@ -19,18 +17,18 @@
     BOOL _valid;
 }
 
-@property(readonly) BBSettingsGateway * bbGateway;
-@property(copy) NSArray * behaviorOverrides;
-@property(retain) NSDateComponents * fromComponents;
-@property BOOL isEffectiveWhileUnlocked;
-@property unsigned int mode;
-@property int overrideStatus;
-@property unsigned int overrideType;
-@property(copy) NSArray * overrides;
-@property unsigned int privilegeTypes;
-@property int recordID;
-@property(retain) NSDateComponents * toComponents;
-@property BOOL valid;
+@property (nonatomic, readonly) BBSettingsGateway *bbGateway;
+@property (nonatomic, copy) NSArray *behaviorOverrides;
+@property (nonatomic, retain) NSDateComponents *fromComponents;
+@property (nonatomic) BOOL isEffectiveWhileUnlocked;
+@property (nonatomic) unsigned int mode;
+@property (nonatomic) int overrideStatus;
+@property (nonatomic) unsigned int overrideType;
+@property (nonatomic, copy) NSArray *overrides;
+@property (nonatomic) unsigned int privilegeTypes;
+@property (nonatomic) int recordID;
+@property (nonatomic, retain) NSDateComponents *toComponents;
+@property (nonatomic) BOOL valid;
 
 + (BOOL)isDNDScheduled;
 + (void)setManualEnabled:(BOOL)arg1;

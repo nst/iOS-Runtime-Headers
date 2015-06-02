@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAUIDomainObjectPicker : SAUISnippet {
-}
+@interface SAUIDomainObjectPicker : SAUISnippet
 
 + (id)domainObjectPicker;
 + (id)domainObjectPickerWithDictionary:(id)arg1 context:(id)arg2;

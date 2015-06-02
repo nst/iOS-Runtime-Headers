@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUNavigationBar : UINavigationBar {
-}
+@interface SUNavigationBar : UINavigationBar
 
 @end

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class <SFUOutputStream>, NSString;
-
 @interface OISFUOffsetOutputStream : NSObject <SFUOutputStream> {
     long long mInitialOffset;
     <SFUOutputStream> *mOutputStream;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (BOOL)canCreateInputStream;
 - (BOOL)canSeek;

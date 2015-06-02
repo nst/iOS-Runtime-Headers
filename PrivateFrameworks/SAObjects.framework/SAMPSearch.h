@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAMPSearch : SADomainCommand
 
-@interface SAMPSearch : SADomainCommand {
-}
-
-@property(copy) NSArray * constraints;
-@property int maxResults;
-@property(copy) NSArray * searchTypes;
-@property BOOL strict;
+@property (nonatomic, copy) NSArray *constraints;
+@property (nonatomic) int maxResults;
+@property (nonatomic, copy) NSArray *searchTypes;
+@property (nonatomic) BOOL strict;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;

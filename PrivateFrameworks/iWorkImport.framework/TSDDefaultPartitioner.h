@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSObject<TSDInfo>, NSString, TSDCanvas, TSDLayout, TSUPointerKeyDictionary;
-
 @interface TSDDefaultPartitioner : NSObject <TSDCanvasDelegate, TSDPartitioner> {
     TSUPointerKeyDictionary *mCachedImagesByCanvas;
     TSDCanvas *mCanvas;
@@ -13,10 +11,10 @@
     TSUPointerKeyDictionary *mPartialRepsByCanvas;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (BOOL)didHint:(id)arg1 syncWithNextHint:(id)arg2 horizontally:(BOOL)arg3 delta:(int)arg4;

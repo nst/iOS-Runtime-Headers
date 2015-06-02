@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIDocumentInteractionController;
-
 @interface _UIOpenInTableViewController : UITableViewController {
     UIDocumentInteractionController *_documentInteractionController;
 }

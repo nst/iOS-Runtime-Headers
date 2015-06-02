@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKDPRecord;
-
 @interface CKDPOplockFailure : PBCodable <NSCopying> {
     CKDPRecord *_recordForOplockFailure;
 }
 
-@property(readonly) BOOL hasRecordForOplockFailure;
-@property(retain) CKDPRecord * recordForOplockFailure;
+@property (nonatomic, readonly) BOOL hasRecordForOplockFailure;
+@property (nonatomic, retain) CKDPRecord *recordForOplockFailure;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

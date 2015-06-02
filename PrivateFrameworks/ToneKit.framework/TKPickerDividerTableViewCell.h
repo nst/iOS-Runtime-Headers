@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@class UIColor, UIView;
-
 @interface TKPickerDividerTableViewCell : UITableViewCell {
     int _contentBackdropOverlayBlendMode;
     UIView *_dividerView;
 }
 
-@property(setter=_setContentBackdropOverlayBlendMode:) int _contentBackdropOverlayBlendMode;
-@property(setter=_setDividerView:,retain) UIView * _dividerView;
-@property int contentBackdropOverlayBlendMode;
-@property(retain) UIColor * contentBackgroundColor;
+@property (setter=_setContentBackdropOverlayBlendMode:, nonatomic) int _contentBackdropOverlayBlendMode;
+@property (setter=_setDividerView:, nonatomic, retain) UIView *_dividerView;
+@property (nonatomic) int contentBackdropOverlayBlendMode;
+@property (nonatomic, retain) UIColor *contentBackgroundColor;
 
 - (int)_contentBackdropOverlayBlendMode;
 - (id)_dividerView;

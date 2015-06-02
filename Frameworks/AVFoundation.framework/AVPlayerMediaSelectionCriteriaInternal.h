@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray;
-
 @interface AVPlayerMediaSelectionCriteriaInternal : NSObject {
     BOOL _precludeMultichannelAudio;
     NSArray *_precludedMediaCharacteristics;
@@ -15,14 +13,14 @@
     NSArray *_requiredMediaCharacteristics;
 }
 
-@property BOOL precludeMultichannelAudio;
-@property(retain) NSArray * precludedMediaCharacteristics;
-@property(retain) NSArray * precludedMediaSubTypes;
-@property BOOL preferMultichannelAudio;
-@property(retain) NSArray * preferredLanguages;
-@property(retain) NSArray * preferredMediaCharacteristics;
-@property(retain) NSArray * preferredMediaSubTypes;
-@property(retain) NSArray * requiredMediaCharacteristics;
+@property (nonatomic) BOOL precludeMultichannelAudio;
+@property (nonatomic, retain) NSArray *precludedMediaCharacteristics;
+@property (nonatomic, retain) NSArray *precludedMediaSubTypes;
+@property (nonatomic) BOOL preferMultichannelAudio;
+@property (nonatomic, retain) NSArray *preferredLanguages;
+@property (nonatomic, retain) NSArray *preferredMediaCharacteristics;
+@property (nonatomic, retain) NSArray *preferredMediaSubTypes;
+@property (nonatomic, retain) NSArray *requiredMediaCharacteristics;
 
 - (void)dealloc;
 - (BOOL)precludeMultichannelAudio;

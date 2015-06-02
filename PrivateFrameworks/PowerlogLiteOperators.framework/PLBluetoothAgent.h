@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSString, PLEntryNotificationOperatorComposition;
-
 @interface PLBluetoothAgent : PLAgent {
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
     NSString *_btHardwareChipset;
@@ -12,8 +10,8 @@
     struct BTSessionImpl { } *session;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelChanged;
-@property(readonly) NSString * btHardwareChipset;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
+@property (readonly) NSString *btHardwareChipset;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

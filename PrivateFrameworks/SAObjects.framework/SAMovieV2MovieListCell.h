@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSNumber, NSString, SAMovieV2MovieDetailSnippet;
+@interface SAMovieV2MovieListCell : SADomainObject
 
-@interface SAMovieV2MovieListCell : SADomainObject {
-}
-
-@property(copy) NSArray * displayableShowtimes;
-@property(retain) SAMovieV2MovieDetailSnippet * movieDetailSnippet;
-@property(copy) NSString * movieName;
-@property(copy) NSArray * posterImages;
-@property(copy) NSNumber * qualityRating;
-@property(copy) NSString * rating;
-@property(copy) NSDate * theatricalReleaseDate;
+@property (nonatomic, copy) NSArray *displayableShowtimes;
+@property (nonatomic, retain) SAMovieV2MovieDetailSnippet *movieDetailSnippet;
+@property (nonatomic, copy) NSString *movieName;
+@property (nonatomic, copy) NSArray *posterImages;
+@property (nonatomic, copy) NSNumber *qualityRating;
+@property (nonatomic, copy) NSString *rating;
+@property (nonatomic, copy) NSDate *theatricalReleaseDate;
 
 + (id)movieListCell;
 + (id)movieListCellWithDictionary:(id)arg1 context:(id)arg2;

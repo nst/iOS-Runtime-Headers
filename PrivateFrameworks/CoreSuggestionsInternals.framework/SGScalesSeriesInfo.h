@@ -8,9 +8,9 @@
     double _n;
 }
 
-@property double m2;
-@property double mean;
-@property double n;
+@property (nonatomic) double m2;
+@property (nonatomic) double mean;
+@property (nonatomic) double n;
 
 - (double)m2;
 - (double)mean;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, NSTimer;
-
 @interface IMDFileTransferCenter : NSObject <IMFileCopierDelegate> {
     NSMutableSet *_activeTransfers;
     NSString *_contextStamp;
@@ -14,8 +12,8 @@
     NSMutableArray *_transferringTransfers;
 }
 
-@property(retain) NSString * contextStamp;
-@property(readonly) BOOL hasActiveFileTransfers;
+@property (nonatomic, retain) NSString *contextStamp;
+@property (nonatomic, readonly) BOOL hasActiveFileTransfers;
 
 + (id)sharedInstance;
 

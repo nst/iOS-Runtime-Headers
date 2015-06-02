@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class <GQZArchiveInputStream>, NSString;
-
 @interface GQZEntryUncompressedInputStream : NSObject <GQZEntryInputStream> {
     long long mEnd;
     <GQZArchiveInputStream> *mInput;
     long long mOffset;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithOffset:(long long)arg1 end:(long long)arg2 input:(id)arg3;

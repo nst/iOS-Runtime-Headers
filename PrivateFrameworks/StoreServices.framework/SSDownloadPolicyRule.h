@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSSet, NSString;
-
 @interface SSDownloadPolicyRule : NSObject <NSCoding, NSCopying, SSXPCCoding> {
     NSSet *_applicationStates;
     float _batteryLevel;
@@ -15,20 +13,20 @@
     int _timeLimitStates;
 }
 
-@property(copy) NSSet * applicationStates;
-@property float batteryLevel;
-@property(getter=isCellularAllowed,readonly) BOOL cellularAllowed;
-@property int cellularDataStates;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property long long downloadSizeLimit;
-@property(readonly) unsigned int hash;
-@property(copy) NSSet * networkTypes;
-@property int powerStates;
-@property int registrationStates;
-@property(readonly) Class superclass;
-@property int timeLimitStates;
-@property(getter=isWiFiAllowed,readonly) BOOL wiFiAllowed;
+@property (nonatomic, copy) NSSet *applicationStates;
+@property (nonatomic) float batteryLevel;
+@property (getter=isCellularAllowed, nonatomic, readonly) BOOL cellularAllowed;
+@property (nonatomic) int cellularDataStates;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) long long downloadSizeLimit;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSSet *networkTypes;
+@property (nonatomic) int powerStates;
+@property (nonatomic) int registrationStates;
+@property (readonly) Class superclass;
+@property (nonatomic) int timeLimitStates;
+@property (getter=isWiFiAllowed, nonatomic, readonly) BOOL wiFiAllowed;
 
 - (void)addApplicationState:(id)arg1;
 - (void)addNetworkType:(int)arg1;

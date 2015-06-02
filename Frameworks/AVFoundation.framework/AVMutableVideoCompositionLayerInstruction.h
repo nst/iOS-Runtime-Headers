@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMutableVideoCompositionLayerInstructionInternal;
-
 @interface AVMutableVideoCompositionLayerInstruction : AVVideoCompositionLayerInstruction {
     AVMutableVideoCompositionLayerInstructionInternal *_mutableLayerInstruction;
 }
 
-@property int trackID;
+@property (nonatomic) int trackID;
 
 + (id)videoCompositionLayerInstruction;
 + (id)videoCompositionLayerInstructionWithAssetTrack:(id)arg1;

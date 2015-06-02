@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIImage;
-
 @interface _UIPickerViewTopFrame : UIView {
     float _inset;
     UIImage *_leftImage;

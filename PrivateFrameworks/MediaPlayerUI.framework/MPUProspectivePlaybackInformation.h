@@ -2,17 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class RadioStation;
+@interface MPUProspectivePlaybackInformation : NSObject <NSCopying>
 
-@interface MPUProspectivePlaybackInformation : NSObject <NSCopying> {
-}
+@property (nonatomic, readonly) BOOL isRadioProspectivePlaybackInformation;
+@property (nonatomic, readonly) RadioStation *radioStation;
 
-@property(readonly) BOOL isRadioProspectivePlaybackInformation;
-@property(readonly) RadioStation * radioStation;
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
+
 - (BOOL)isRadioProspectivePlaybackInformation;
 - (id)radioStation;
 

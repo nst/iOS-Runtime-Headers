@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCItemID, BRCProgress, CKRecord, CKRecordID, NSNumber, NSString;
-
 @interface BRCDownloadEntry : NSObject <BRCTransferEntry> {
     unsigned long long _doneSize;
     NSString *_etag;
@@ -16,18 +14,18 @@
     unsigned long long _totalSize;
 }
 
-@property unsigned long long doneSize;
-@property(readonly) NSString * etag;
-@property(readonly) BRCItemID * itemID;
-@property(readonly) int kind;
-@property(readonly) BRCProgress * progress;
-@property(retain) CKRecord * record;
-@property(readonly) CKRecordID * recordID;
-@property(retain) CKRecord * secondaryRecord;
-@property(readonly) CKRecordID * secondaryRecordID;
-@property(readonly) NSString * stageID;
-@property(readonly) unsigned long long totalSize;
-@property(readonly) NSNumber * transferID;
+@property (nonatomic) unsigned long long doneSize;
+@property (nonatomic, readonly) NSString *etag;
+@property (nonatomic, readonly) BRCItemID *itemID;
+@property (nonatomic, readonly) int kind;
+@property (nonatomic, readonly) BRCProgress *progress;
+@property (nonatomic, retain) CKRecord *record;
+@property (nonatomic, readonly) CKRecordID *recordID;
+@property (nonatomic, retain) CKRecord *secondaryRecord;
+@property (nonatomic, readonly) CKRecordID *secondaryRecordID;
+@property (nonatomic, readonly) NSString *stageID;
+@property (nonatomic, readonly) unsigned long long totalSize;
+@property (nonatomic, readonly) NSNumber *transferID;
 
 - (void).cxx_destruct;
 - (unsigned long long)doneSize;

@@ -6,7 +6,7 @@
     int _tag;
 }
 
-@property(readonly) int tag;
+@property (readonly) int tag;
 
 - (id)init;
 - (int)tag;

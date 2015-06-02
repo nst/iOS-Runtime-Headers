@@ -2,22 +2,20 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSString, SBKTransaction;
-
 @interface SBKStoreError : NSError {
     SBKTransaction *_transaction;
 }
 
-@property(copy,readonly) NSString * currentStoreAccountName;
-@property(readonly) BOOL isAccountsChangedError;
-@property(readonly) BOOL isAuthenticationError;
-@property(readonly) BOOL isClampError;
-@property(readonly) BOOL isRecoverableError;
-@property(readonly) BOOL isTransactionCancelledError;
-@property(readonly) BOOL isTransactionMissingInformationError;
-@property(copy,readonly) NSString * previousStoreAccountName;
-@property(readonly) double retrySeconds;
-@property(retain) SBKTransaction * transaction;
+@property (readonly, copy) NSString *currentStoreAccountName;
+@property (readonly) BOOL isAccountsChangedError;
+@property (readonly) BOOL isAuthenticationError;
+@property (readonly) BOOL isClampError;
+@property (readonly) BOOL isRecoverableError;
+@property (readonly) BOOL isTransactionCancelledError;
+@property (readonly) BOOL isTransactionMissingInformationError;
+@property (readonly, copy) NSString *previousStoreAccountName;
+@property (readonly) double retrySeconds;
+@property (retain) SBKTransaction *transaction;
 
 + (id)delegateCancelledErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;
 + (id)keyValueStoreDisabledErrorWithTransaction:(id)arg1 underlyingError:(id)arg2;

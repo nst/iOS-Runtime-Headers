@@ -15,14 +15,14 @@
     unsigned int _version;
 }
 
-@property unsigned int errorCode;
-@property BOOL hasErrorCode;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
-@property BOOL hasVersion;
-@property unsigned long long timestamp;
-@property unsigned int type;
-@property unsigned int version;
+@property (nonatomic) unsigned int errorCode;
+@property (nonatomic) BOOL hasErrorCode;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) BOOL hasVersion;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int type;
+@property (nonatomic) unsigned int version;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

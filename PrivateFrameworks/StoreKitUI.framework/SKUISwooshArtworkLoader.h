@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSMapTable, NSMutableIndexSet, NSString, SKUIImageDataConsumer, SKUIResourceLoader, SKUISwooshViewController, UIImage;
-
 @interface SKUISwooshArtworkLoader : NSObject <SKUIArtworkRequestDelegate> {
     SKUIResourceLoader *_artworkLoader;
     NSMapTable *_artworkRequestIDs;
@@ -13,14 +11,14 @@
     SKUISwooshViewController *_swooshViewController;
 }
 
-@property(readonly) SKUIResourceLoader * artworkLoader;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) SKUIImageDataConsumer * imageDataConsumer;
-@property(readonly) UIImage * placeholderImage;
-@property(readonly) Class superclass;
-@property(readonly) SKUISwooshViewController * swooshViewController;
+@property (nonatomic, readonly) SKUIResourceLoader *artworkLoader;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) SKUIImageDataConsumer *imageDataConsumer;
+@property (nonatomic, readonly) UIImage *placeholderImage;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SKUISwooshViewController *swooshViewController;
 
 - (void).cxx_destruct;
 - (id)artworkLoader;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/BackBoardServices.framework/BackBoardServices
  */
 
-@interface BKSRestartAction : BSAction {
-}
+@interface BKSRestartAction : BSAction
 
-@property(readonly) BOOL shouldShowAppleLogo;
+@property (nonatomic, readonly) BOOL shouldShowAppleLogo;
 
 + (id)restartActionWithAppleLogoDesired:(BOOL)arg1;
 

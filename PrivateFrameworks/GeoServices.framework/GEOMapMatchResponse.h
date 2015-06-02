@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSData;
-
 @interface GEOMapMatchResponse : PBCodable <NSCopying> {
     struct { 
         unsigned int matchingStatus : 1; 
@@ -14,12 +12,12 @@
     NSData *_zilchPoints;
 }
 
-@property BOOL hasMatchingStatus;
-@property BOOL hasStatus;
-@property(readonly) BOOL hasZilchPoints;
-@property int matchingStatus;
-@property int status;
-@property(retain) NSData * zilchPoints;
+@property (nonatomic) BOOL hasMatchingStatus;
+@property (nonatomic) BOOL hasStatus;
+@property (nonatomic, readonly) BOOL hasZilchPoints;
+@property (nonatomic) int matchingStatus;
+@property (nonatomic) int status;
+@property (nonatomic, retain) NSData *zilchPoints;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

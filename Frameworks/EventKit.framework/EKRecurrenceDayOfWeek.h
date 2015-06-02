@@ -7,8 +7,8 @@
     int _weekNumber;
 }
 
-@property(readonly) int dayOfTheWeek;
-@property(readonly) int weekNumber;
+@property (nonatomic, readonly) int dayOfTheWeek;
+@property (nonatomic, readonly) int weekNumber;
 
 + (id)dayOfWeek:(int)arg1;
 + (id)dayOfWeek:(int)arg1 weekNumber:(int)arg2;

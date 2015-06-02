@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPUExtrasContext, MPUExtrasLoadingView, MPUExtrasMainTemplateViewController, NSString, UIViewController;
-
 @interface MPUExtrasNavigationController : UINavigationController <IKAppNavigationController, MPUExtrasLoadingViewDelegate> {
     BOOL _clearStackOnPush;
     MPUExtrasContext *_context;
@@ -11,12 +9,12 @@
     MPUExtrasLoadingView *_loadingView;
 }
 
-@property(readonly) MPUExtrasContext * context;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) MPUExtrasMainTemplateViewController * mainTemplateViewController;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) MPUExtrasContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) MPUExtrasMainTemplateViewController *mainTemplateViewController;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_dismissViewController:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
  */
 
-@class NSArray;
-
 @interface CertUICertificatePropertiesInfo : NSObject {
     NSArray *_sectionTitles;
     NSArray *_sections;
 }
 
-@property(retain) NSArray * sectionTitles;
-@property(retain) NSArray * sections;
+@property (nonatomic, retain) NSArray *sectionTitles;
+@property (nonatomic, retain) NSArray *sections;
 
 - (void).cxx_destruct;
 - (id)_cellInfosForSection:(id)arg1;

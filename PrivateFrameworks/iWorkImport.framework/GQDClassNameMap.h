@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface GQDClassNameMap : NSObject {
-}
+@interface GQDClassNameMap : NSObject
 
 + (Class)classForName:(const char *)arg1 inRootType:(Class)arg2;
 + (void)initialize;

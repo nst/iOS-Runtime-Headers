@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@class NSString, NSXPCConnection;
-
 @interface ATStatusObserverConnection : NSObject <ATStatusMonitorObserver, ATStatusObserverConnectionProtocol> {
     NSXPCConnection *_connection;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)connection:(id)arg1 updatedAssets:(id)arg2;
 - (void)connection:(id)arg1 updatedProgress:(id)arg2;
-- (void)fetchAllStatusWithCompletion:(id)arg1;
+- (void)fetchAllStatusWithCompletion:(id /* block */)arg1;
 - (id)initWithConnection:(id)arg1;
 - (void)monitor:(id)arg1 didUpdateWithStatus:(id)arg2;
 - (void)resume;

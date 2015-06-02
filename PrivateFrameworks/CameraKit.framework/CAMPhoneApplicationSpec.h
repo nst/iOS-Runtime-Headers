@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMPhoneApplicationSpec : CAMApplicationSpec {
-}
+@interface CAMPhoneApplicationSpec : CAMApplicationSpec
 
 - (BOOL)shouldCreateAvalancheIndicator;
 - (BOOL)shouldCreateElapsedTimeView;

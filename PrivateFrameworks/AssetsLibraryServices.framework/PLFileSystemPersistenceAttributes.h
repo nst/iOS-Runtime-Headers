@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
-@class NSDictionary;
-
 @interface PLFileSystemPersistenceAttributes : NSObject {
     NSDictionary *_attributes;
 }

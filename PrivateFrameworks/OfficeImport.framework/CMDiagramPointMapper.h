@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class CMDrawingContext, NSString, OADOrientedBounds, ODDPoint;
-
 @interface CMDiagramPointMapper : CMMapper {
     CMDrawingContext *mDrawingContext;
     OADOrientedBounds *mOrientedBounds;

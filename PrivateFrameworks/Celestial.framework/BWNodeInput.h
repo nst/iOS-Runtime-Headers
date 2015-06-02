@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class BWFormat, BWFormatRequirements, BWNode, BWNodeConnection, BWVideoFormat;
-
 @interface BWNodeInput : NSObject {
     long long _configurationID;
     BWNodeConnection *_connection;
@@ -24,24 +22,24 @@
     int _retainedBufferCount;
 }
 
-@property long long configurationID;
-@property BWNodeConnection * connection;
-@property int delayedBufferCount;
-@property(getter=isEnabled) BOOL enabled;
-@property(copy) BWFormat * format;
-@property(copy) BWFormatRequirements * formatRequirements;
-@property int indefinitelyHeldBufferCount;
-@property(readonly) unsigned int index;
-@property(readonly) long long liveConfigurationID;
-@property(retain) BWFormat * liveFormat;
-@property(readonly) unsigned long mediaType;
-@property(readonly) BWNode * node;
-@property(readonly) unsigned int numberOfBuffersDropped;
-@property(readonly) unsigned int numberOfBuffersReceived;
-@property BOOL passesBuffersDownstream;
-@property int passthroughMode;
-@property int retainedBufferCount;
-@property(readonly) BWVideoFormat * videoFormat;
+@property (nonatomic) long long configurationID;
+@property (nonatomic) BWNodeConnection *connection;
+@property (nonatomic) int delayedBufferCount;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, copy) BWFormat *format;
+@property (nonatomic, copy) BWFormatRequirements *formatRequirements;
+@property (nonatomic) int indefinitelyHeldBufferCount;
+@property (nonatomic, readonly) unsigned int index;
+@property (nonatomic, readonly) long long liveConfigurationID;
+@property (nonatomic, retain) BWFormat *liveFormat;
+@property (nonatomic, readonly) unsigned long mediaType;
+@property (nonatomic, readonly) BWNode *node;
+@property (nonatomic, readonly) unsigned int numberOfBuffersDropped;
+@property (nonatomic, readonly) unsigned int numberOfBuffersReceived;
+@property (nonatomic) BOOL passesBuffersDownstream;
+@property (nonatomic) int passthroughMode;
+@property (nonatomic) int retainedBufferCount;
+@property (nonatomic, readonly) BWVideoFormat *videoFormat;
 
 + (void)initialize;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSArray, NSIndexPath, NSString, SKUIPageComponent, SKUIProductPageOverlayController, SKUIStorePageSectionContext;
-
 @interface SKUIStorePageSection : NSObject <SKUIProductPageOverlayDelegate> {
     BOOL _bottomSection;
     SKUIPageComponent *_component;
@@ -13,27 +11,27 @@
     BOOL _topSection;
 }
 
-@property(getter=isBottomSection) BOOL bottomSection;
-@property(readonly) SKUIStorePageSectionContext * context;
-@property(copy,readonly) NSString * debugDescription;
-@property(readonly) int defaultItemPinningStyle;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSIndexPath * firstAppearanceIndexPath;
-@property(readonly) BOOL fitsToHeight;
-@property(readonly) unsigned int hash;
-@property(readonly) NSArray * indexPathsForPinningItems;
-@property(readonly) int numberOfCells;
-@property(readonly) SKUIPageComponent * pageComponent;
-@property(readonly) struct CGSize { float x1; float x2; } preferredContentSize;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
-@property int sectionIndex;
-@property(readonly) Class superclass;
-@property(getter=isTopSection) BOOL topSection;
+@property (getter=isBottomSection, nonatomic) BOOL bottomSection;
+@property (nonatomic, readonly) SKUIStorePageSectionContext *context;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) int defaultItemPinningStyle;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSIndexPath *firstAppearanceIndexPath;
+@property (nonatomic, readonly) BOOL fitsToHeight;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSArray *indexPathsForPinningItems;
+@property (nonatomic, readonly) int numberOfCells;
+@property (nonatomic, readonly) SKUIPageComponent *pageComponent;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } preferredContentSize;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
+@property (nonatomic) int sectionIndex;
+@property (readonly) Class superclass;
+@property (getter=isTopSection, nonatomic) BOOL topSection;
 
 - (void).cxx_destruct;
 - (id)_clickEventWithElementName:(id)arg1 index:(int)arg2 fieldData:(id)arg3;
 - (int)_itemPinningStyle;
-- (void)_sendXEventWithDictionary:(id)arg1 completionBlock:(id)arg2;
+- (void)_sendXEventWithDictionary:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)_setContext:(id)arg1;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (int)applyUpdateType:(int)arg1;
@@ -63,7 +61,7 @@
 - (void)expandEditorialForLabelElement:(id)arg1 indexPath:(id)arg2;
 - (id)firstAppearanceIndexPath;
 - (BOOL)fitsToHeight;
-- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
+- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)indexPathsForPinningItems;
 - (id)initWithPageComponent:(id)arg1;
 - (void)invalidateCachedLayoutInformation;
@@ -88,8 +86,8 @@
 - (BOOL)requestLayoutWithReloadReason:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
 - (int)sectionIndex;
-- (void)sendXEventWithItem:(id)arg1 completionBlock:(id)arg2;
-- (void)sendXEventWithLink:(id)arg1 completionBlock:(id)arg2;
+- (void)sendXEventWithItem:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)sendXEventWithLink:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setBottomSection:(BOOL)arg1;
 - (void)setSectionIndex:(int)arg1;
 - (void)setTopSection:(BOOL)arg1;

@@ -20,7 +20,7 @@
     BOOL mUnionRangeValid;
 }
 
-@property(readonly) struct __CFUUID { }* tableID;
+@property (nonatomic, readonly) struct __CFUUID { }*tableID;
 
 + (id)rangeListWithRangeRef:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;
 + (id)rangeListWithTableID:(struct __CFUUID { }*)arg1;
@@ -31,7 +31,7 @@
 - (BOOL)containsRange:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg1;
 - (void)dealloc;
 - (id)description;
-- (void)enumerateRangesUsingBlock:(id)arg1;
+- (void)enumerateRangesUsingBlock:(id /* block */)arg1;
 - (id)initWithTableID:(struct __CFUUID { }*)arg1;
 - (id)initWithTableID:(struct __CFUUID { }*)arg1 range:(struct TSCERangeCoordinate { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; })arg2;
 - (unsigned int)numberOfRanges;

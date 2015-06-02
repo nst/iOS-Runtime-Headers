@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
-
 @interface SUScriptCalloutView : SUScriptObject {
     BOOL _isVisible;
     NSString *_subtitle;
     NSString *_title;
 }
 
-@property(copy) NSString * subtitle;
-@property(copy) NSString * title;
+@property (copy) NSString *subtitle;
+@property (copy) NSString *title;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

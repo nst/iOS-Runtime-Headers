@@ -13,7 +13,7 @@
     } _originalTableInsets;
 }
 
-@property(readonly) unsigned long long itemIdentifier;
+@property (nonatomic, readonly) unsigned long long itemIdentifier;
 
 - (void)_cancel:(id)arg1;
 - (void)_fetchConcerns;

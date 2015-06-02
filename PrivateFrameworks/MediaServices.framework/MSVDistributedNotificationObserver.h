@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaServices.framework/MediaServices
  */
 
-@class <MSVDistributedNotificationObserverDelegate>, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MSVDistributedNotificationObserver : NSObject {
     <MSVDistributedNotificationObserverDelegate> *_delegate;
     NSString *_distributedName;
@@ -13,11 +11,11 @@
     NSDictionary *_userInfoForLocalNotification;
 }
 
-@property <MSVDistributedNotificationObserverDelegate> * delegate;
-@property(readonly) NSString * distributedName;
-@property(readonly) NSString * localName;
-@property(readonly) NSObject<OS_dispatch_queue> * queue;
-@property(copy) NSDictionary * userInfoForLocalNotification;
+@property (nonatomic) <MSVDistributedNotificationObserverDelegate> *delegate;
+@property (nonatomic, readonly) NSString *distributedName;
+@property (nonatomic, readonly) NSString *localName;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, copy) NSDictionary *userInfoForLocalNotification;
 
 + (id)observerWithDistributedName:(id)arg1 localName:(id)arg2 queue:(id)arg3;
 

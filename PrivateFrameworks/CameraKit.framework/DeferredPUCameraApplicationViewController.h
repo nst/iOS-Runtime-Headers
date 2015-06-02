@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAMCameraRollSpec, DeferredFrameworkLoader;
-
 @interface DeferredPUCameraApplicationViewController : CAMApplicationViewController {
     DeferredFrameworkLoader *_deferredLoader;
     CAMCameraRollSpec *_spec;
 }
 
-@property(retain) DeferredFrameworkLoader * deferredLoader;
-@property(retain) CAMCameraRollSpec * spec;
+@property (nonatomic, retain) DeferredFrameworkLoader *deferredLoader;
+@property (nonatomic, retain) CAMCameraRollSpec *spec;
 
 - (void).cxx_destruct;
 - (id)_initWithSessionID:(id)arg1 usesCameraLocationBundleID:(BOOL)arg2 startPreviewImmediately:(BOOL)arg3;
@@ -23,7 +21,7 @@
 - (id)navigationController:(id)arg1 interactionControllerUsingAnimator:(id)arg2;
 - (id)newAlbumNavigationControllerForCameraRoll:(id)arg1;
 - (void)prepareAlbumNavigationControllerForReuse:(id)arg1 withCameraRoll:(id)arg2;
-- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id)arg3;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)reloadAlbumNavigationController:(id)arg1 withCameraRoll:(id)arg2;
 - (void)setDeferredLoader:(id)arg1;
 - (void)setSpec:(id)arg1;

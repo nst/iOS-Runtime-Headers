@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class UIViewController;
-
 @interface _MKUIViewControllerRootView : UIView {
     UIViewController *_viewController;
 }
 
-@property UIViewController * viewController;
+@property (nonatomic) UIViewController *viewController;
 
 - (void).cxx_destruct;
 - (void)commonInit;

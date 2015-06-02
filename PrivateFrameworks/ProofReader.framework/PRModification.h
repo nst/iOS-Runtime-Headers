@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ProofReader.framework/ProofReader
  */
 
-@interface PRModification : NSObject {
-}
+@interface PRModification : NSObject
 
 - (struct _NSRange { unsigned int x1; unsigned int x2; })additionalSyllableRange;
 - (double)modificationScore;

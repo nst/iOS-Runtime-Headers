@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSDate, PLEntryNotificationOperatorComposition, PLProcessPortMap, PLSemaphore;
-
 @interface PLNetworkAgent : PLAgent {
     PLEntryNotificationOperatorComposition *_batteryLevelChanged;
     PLEntryNotificationOperatorComposition *_canSleep;
@@ -12,11 +10,11 @@
     NSDate *_priorLogEventPointPortMappingTimestamp;
 }
 
-@property(retain) PLEntryNotificationOperatorComposition * batteryLevelChanged;
-@property(retain) PLEntryNotificationOperatorComposition * canSleep;
-@property(retain) PLSemaphore * canSleepSemaphore;
-@property(retain) PLProcessPortMap * portMapper;
-@property(retain) NSDate * priorLogEventPointPortMappingTimestamp;
+@property (retain) PLEntryNotificationOperatorComposition *batteryLevelChanged;
+@property (retain) PLEntryNotificationOperatorComposition *canSleep;
+@property (retain) PLSemaphore *canSleepSemaphore;
+@property (retain) PLProcessPortMap *portMapper;
+@property (retain) NSDate *priorLogEventPointPortMappingTimestamp;
 
 + (id)accountingGroupDefinitions;
 + (id)defaults;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
  */
 
-@class NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface DTMFEventHandler : NSObject {
     unsigned int currentDurationCounter;
     unsigned int currentEndTimestamp;

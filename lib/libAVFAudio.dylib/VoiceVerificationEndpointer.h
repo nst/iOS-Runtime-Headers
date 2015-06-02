@@ -2,19 +2,16 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
  */
 
-@class NSString;
+@interface VoiceVerificationEndpointer : NSObject <Endpointer>
 
-@interface VoiceVerificationEndpointer : NSObject <Endpointer> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property double endWaitTime;
 @property int endpointMode;
-@property(readonly) unsigned int hash;
+@property (readonly) unsigned int hash;
 @property double interspeechWaitTime;
 @property double startWaitTime;
-@property(readonly) Class superclass;
+@property (readonly) Class superclass;
 
 - (BOOL)configureWithASBD:(struct AudioStreamBasicDescription { double x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; }*)arg1 andFrameRate:(unsigned long)arg2;
 - (BOOL)configureWithSampleRate:(double)arg1 andFrameRate:(unsigned long)arg2;

@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@interface CPAggregateDictionary : NSObject {
-}
+@interface CPAggregateDictionary : NSObject
 
-@property(getter=isEnabled,readonly) BOOL enabled;
+@property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
 
 + (id)sharedAggregateDictionary;
 

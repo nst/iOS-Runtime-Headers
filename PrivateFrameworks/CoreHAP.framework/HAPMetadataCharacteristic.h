@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@class HAPMetadataCharacteristicValue, NSNumber, NSString;
-
 @interface HAPMetadataCharacteristic : NSObject {
     NSString *_chrDescription;
     NSString *_format;
@@ -15,14 +13,14 @@
     HAPMetadataCharacteristicValue *_valueMetadata;
 }
 
-@property(retain) NSString * chrDescription;
-@property(retain) NSString * format;
-@property(retain) NSString * localizationKey;
-@property(retain) NSString * name;
-@property(retain) NSNumber * properties;
-@property(retain) NSString * units;
-@property(retain) NSString * uuidStr;
-@property(retain) HAPMetadataCharacteristicValue * valueMetadata;
+@property (nonatomic, retain) NSString *chrDescription;
+@property (nonatomic, retain) NSString *format;
+@property (nonatomic, retain) NSString *localizationKey;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSNumber *properties;
+@property (nonatomic, retain) NSString *units;
+@property (nonatomic, retain) NSString *uuidStr;
+@property (nonatomic, retain) HAPMetadataCharacteristicValue *valueMetadata;
 
 - (void).cxx_destruct;
 - (id)chrDescription;

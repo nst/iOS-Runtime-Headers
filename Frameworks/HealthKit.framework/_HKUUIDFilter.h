@@ -2,13 +2,13 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@class NSSet;
-
 @interface _HKUUIDFilter : _HKFilter {
     NSSet *_UUIDs;
 }
 
-@property(readonly) NSSet * UUIDs;
+@property (nonatomic, readonly) NSSet *UUIDs;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_filterForComparisonWithKeyPath:(id)arg1 value:(id)arg2 dataTypes:(id)arg3;
 + (id)_filterForInOperatorWithKeyPath:(id)arg1 value:(id)arg2 dataTypes:(id)arg3;
@@ -23,6 +23,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
 - (id)predicateWithHealthDaemon:(id)arg1;
 
 @end

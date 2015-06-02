@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class <IKAppDeviceConfig>, NSNumber, NSString;
-
 @interface IKJSDevice : IKJSObject <IKJSDevice> {
     <IKAppDeviceConfig> *_deviceConfig;
 }
 
-@property(readonly) NSString * appIdentifier;
-@property(readonly) NSString * appVersion;
-@property <IKAppDeviceConfig> * deviceConfig;
-@property(readonly) BOOL isInRetailDemoMode;
-@property(readonly) NSString * model;
-@property(readonly) NSNumber * pixelRatio;
-@property(readonly) NSString * productType;
-@property(readonly) NSString * systemVersion;
-@property(readonly) NSString * vendorID;
+@property (nonatomic, readonly) NSString *appIdentifier;
+@property (nonatomic, readonly) NSString *appVersion;
+@property (nonatomic) <IKAppDeviceConfig> *deviceConfig;
+@property (nonatomic, readonly) BOOL isInRetailDemoMode;
+@property (nonatomic, readonly) NSString *model;
+@property (nonatomic, readonly) NSNumber *pixelRatio;
+@property (nonatomic, readonly) NSString *productType;
+@property (nonatomic, readonly) NSString *systemVersion;
+@property (nonatomic, readonly) NSString *vendorID;
 
 + (id)getMobileGestaltString:(struct __CFString { }*)arg1;
 

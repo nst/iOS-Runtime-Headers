@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSSet;
-
 @interface TPArchivedLayoutState : TSPObject <TPArchivedLayoutStateProtocol> {
     unsigned int _bodyLength;
     unsigned int _documentPageIndex;

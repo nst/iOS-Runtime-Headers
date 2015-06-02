@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
  */
 
-@class SKRange;
-
 @interface SKScaleConstraint : SKConstraint {
     SKRange *_xRange;
     SKRange *_yRange;
 }
 
-@property(copy) SKRange * xRange;
-@property(copy) SKRange * yRange;
+@property (copy) SKRange *xRange;
+@property (copy) SKRange *yRange;
 
 + (id)constraintWithScaleRange:(id)arg1;
 + (id)constraintWithXRange:(id)arg1;

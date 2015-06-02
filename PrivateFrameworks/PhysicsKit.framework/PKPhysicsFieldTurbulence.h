@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
  */
 
-@interface PKPhysicsFieldTurbulence : PKPhysicsFieldNoise {
-}
+@interface PKPhysicsFieldTurbulence : PKPhysicsFieldNoise
 
 + (id)field;
 

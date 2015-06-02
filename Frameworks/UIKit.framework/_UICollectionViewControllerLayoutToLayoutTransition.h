@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UICollectionViewLayout, UIPercentDrivenInteractiveTransition;
-
 @interface _UICollectionViewControllerLayoutToLayoutTransition : NSObject <UIViewControllerAnimatedTransitioning> {
     BOOL _crossFadeBottomBars;
     BOOL _crossFadeNavigationBar;
@@ -13,16 +11,16 @@
     UICollectionViewLayout *_toLayout;
 }
 
-@property BOOL crossFadeBottomBars;
-@property BOOL crossFadeNavigationBar;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property BOOL interactionAborted;
-@property UIPercentDrivenInteractiveTransition * interactionController;
-@property int operation;
-@property(readonly) Class superclass;
-@property(retain) UICollectionViewLayout * toLayout;
+@property (nonatomic) BOOL crossFadeBottomBars;
+@property (nonatomic) BOOL crossFadeNavigationBar;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL interactionAborted;
+@property (nonatomic) UIPercentDrivenInteractiveTransition *interactionController;
+@property (nonatomic) int operation;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UICollectionViewLayout *toLayout;
 
 + (id)transitionForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 

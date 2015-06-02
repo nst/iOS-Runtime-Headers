@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@class NSDictionary, NSError, NSString;
-
 @interface SLGoogleUserInfoResponse : NSObject {
     NSString *_displayName;
     NSString *_emailAddress;
@@ -13,12 +11,12 @@
     NSDictionary *_userInfo;
 }
 
-@property(readonly) NSString * displayName;
-@property(readonly) NSString * emailAddress;
-@property(readonly) NSError * error;
-@property(readonly) NSString * errorMessage;
-@property(readonly) int statusCode;
-@property(readonly) NSDictionary * userInfo;
+@property (readonly) NSString *displayName;
+@property (readonly) NSString *emailAddress;
+@property (readonly) NSError *error;
+@property (readonly) NSString *errorMessage;
+@property (readonly) int statusCode;
+@property (readonly) NSDictionary *userInfo;
 
 - (void).cxx_destruct;
 - (id)displayName;

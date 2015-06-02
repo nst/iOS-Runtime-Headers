@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class UILabel;
-
 @interface HKTableViewHeaderFooterView : UIView {
     struct UIEdgeInsets { 
         float top; 
@@ -15,9 +13,9 @@
     float _preferredMaxLayoutWidth;
 }
 
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
-@property(readonly) UILabel * label;
-@property float preferredMaxLayoutWidth;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
+@property (nonatomic, readonly) UILabel *label;
+@property (nonatomic) float preferredMaxLayoutWidth;
 
 - (void).cxx_destruct;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;

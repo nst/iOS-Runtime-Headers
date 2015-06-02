@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@interface BLCGImage : BLImage {
-}
+@interface BLCGImage : BLImage
 
 - (id)CIImage;
 - (id)UIImage;

@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
  */
 
-@class NSString;
+@interface CAScrollLayer : CALayer
 
-@interface CAScrollLayer : CALayer {
-}
-
-@property(copy) NSString * scrollMode;
+@property (copy) NSString *scrollMode;
 
 + (BOOL)CA_automaticallyNotifiesObservers:(Class)arg1;
 + (id)defaultValueForKey:(id)arg1;

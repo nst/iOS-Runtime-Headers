@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSString, TUPhoneNumber;
-
 @interface TUPrivacyRule : NSObject <NSCoding> {
     NSString *_email;
     TUPhoneNumber *_phoneNumber;
     int _type;
 }
 
-@property(readonly) NSString * email;
-@property(readonly) TUPhoneNumber * phoneNumber;
-@property(readonly) int type;
+@property (nonatomic, readonly) NSString *email;
+@property (nonatomic, readonly) TUPhoneNumber *phoneNumber;
+@property (nonatomic, readonly) int type;
 
 + (id)ruleForEmail:(id)arg1;
 + (id)ruleForPhoneNumber:(id)arg1;

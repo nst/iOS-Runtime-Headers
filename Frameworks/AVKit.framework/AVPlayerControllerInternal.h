@@ -2,18 +2,16 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@class AVPlayer, AVValueTiming, CALayer<AVPlayerLayer>, NSArray, NSDictionary, NSObject<OS_dispatch_queue>;
-
 @interface AVPlayerControllerInternal : AVPlayerController {
     int _actionAtItemEnd;
     NSArray *_audioMediaSelectionOptions;
-    unsigned int _audioSessionInterrupted : 1;
+    unsigned int _audioSessionInterrupted;
     id _audioSessionInterruptionObserver;
     NSArray *_availableMetadataFormats;
     BOOL _composable;
     NSArray *_contentChapters;
-    unsigned int _deviceBatteryChargingOrFull : 1;
-    unsigned int _deviceBatteryMonitoringWasEnabled : 1;
+    unsigned int _deviceBatteryChargingOrFull;
+    unsigned int _deviceBatteryMonitoringWasEnabled;
     id _deviceBatteryStateDidChangeObserver;
     BOOL _disablingAutomaticTermination;
     BOOL _hasProtectedContent;
@@ -22,20 +20,20 @@
     BOOL _isScanningBackward;
     BOOL _isScanningForward;
     BOOL _isSeeking;
-    unsigned int _jKeyDown : 1;
-    unsigned int _kKeyDown : 1;
-    unsigned int _lKeyDown : 1;
+    unsigned int _jKeyDown;
+    unsigned int _kKeyDown;
+    unsigned int _lKeyDown;
     NSArray *_legibleMediaSelectionOptions;
     BOOL _looping;
     NSDictionary *_metadata;
-    unsigned int _pausedDuringAudioSessionInterruption : 1;
+    unsigned int _pausedDuringAudioSessionInterruption;
     BOOL _pendingSeek;
     BOOL _pendingSetRateWithThrottling;
     AVPlayer *_player;
     id _playerItemDidPlayToEndTimeObserver;
     id _playerItemTimeJumpedObserver;
     CALayer<AVPlayerLayer> *_playerLayer;
-    unsigned int _playingOnSecondScreen : 1;
+    unsigned int _playingOnSecondScreen;
     double _preScanningRate;
     BOOL _preventingIdleDisplaySleep;
     BOOL _preventingIdleSystemSleep;
@@ -52,7 +50,7 @@
     } _seekToTime;
     NSObject<OS_dispatch_queue> *_setRateWithThrottlingQueue;
     double _setToRate;
-    unsigned int _shouldPlayWhenLikelyToKeepUp : 1;
+    unsigned int _shouldPlayWhenLikelyToKeepUp;
     id _timeObserverToken;
     AVValueTiming *_timing;
     struct { 
@@ -69,20 +67,20 @@
     } _toleranceBefore;
 }
 
-@property(retain) NSArray * availableMetadataFormats;
-@property(getter=isComposable) BOOL composable;
-@property(retain) NSArray * contentChapters;
-@property(getter=isDeviceBatteryChargingOrFull) BOOL deviceBatteryChargingOrFull;
-@property(getter=isDisablingAutomaticTermination) BOOL disablingAutomaticTermination;
-@property BOOL hasProtectedContent;
-@property(retain) NSDictionary * metadata;
-@property(retain) AVPlayer * player;
-@property(getter=isPreventingIdleDisplaySleep) BOOL preventingIdleDisplaySleep;
-@property(getter=isPreventingIdleSystemSleep) BOOL preventingIdleSystemSleep;
-@property double rateBeforeScrubBegan;
-@property(getter=isScrubbing) BOOL scrubbing;
-@property(readonly) BOOL shouldPreventIdleDisplaySleep;
-@property(retain) AVValueTiming * timing;
+@property (nonatomic, retain) NSArray *availableMetadataFormats;
+@property (getter=isComposable, nonatomic) BOOL composable;
+@property (nonatomic, retain) NSArray *contentChapters;
+@property (getter=isDeviceBatteryChargingOrFull, nonatomic) BOOL deviceBatteryChargingOrFull;
+@property (getter=isDisablingAutomaticTermination, nonatomic) BOOL disablingAutomaticTermination;
+@property (nonatomic) BOOL hasProtectedContent;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (nonatomic, retain) AVPlayer *player;
+@property (getter=isPreventingIdleDisplaySleep, nonatomic) BOOL preventingIdleDisplaySleep;
+@property (getter=isPreventingIdleSystemSleep, nonatomic) BOOL preventingIdleSystemSleep;
+@property (nonatomic) double rateBeforeScrubBegan;
+@property (getter=isScrubbing, nonatomic) BOOL scrubbing;
+@property (nonatomic, readonly) BOOL shouldPreventIdleDisplaySleep;
+@property (nonatomic, retain) AVValueTiming *timing;
 
 + (id)keyPathsForValuesAffectingAllowsExternalPlayback;
 + (id)keyPathsForValuesAffectingCanPause;

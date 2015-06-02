@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class <HDIDSMessageCenterDelegate>, HDIDSPersistentDictionary, IDSService, NSDate, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface HDIDSMessageCenter : NSObject <IDSServiceDelegate> {
     NSString *_cacheDirectoryPath;
     <HDIDSMessageCenterDelegate> *_delegate;
@@ -20,14 +18,14 @@
     NSString *_serviceIdentifier;
 }
 
-@property(copy,readonly) NSString * cacheDirectoryPath;
-@property(copy,readonly) NSString * debugDescription;
-@property <HDIDSMessageCenterDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) IDSService * idsService;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSString *cacheDirectoryPath;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HDIDSMessageCenterDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) IDSService *idsService;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_expireMessages;

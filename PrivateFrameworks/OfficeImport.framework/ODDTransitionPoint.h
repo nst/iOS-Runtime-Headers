@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface ODDTransitionPoint : ODDDataPoint {
-}
+@interface ODDTransitionPoint : ODDDataPoint
 
 - (void)setType:(int)arg1;
 

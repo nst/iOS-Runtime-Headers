@@ -2,7 +2,6 @@
    Image: /usr/lib/libtzupdate.dylib
  */
 
-@interface TZXPCConstants : NSObject {
-}
+@interface TZXPCConstants : NSObject
 
 @end

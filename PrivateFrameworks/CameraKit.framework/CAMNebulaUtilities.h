@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMNebulaUtilities : NSObject {
-}
+@interface CAMNebulaUtilities : NSObject
 
 + (id)locationFromJPEGAtPath:(id)arg1;
 

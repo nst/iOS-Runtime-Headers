@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSMutableArray, NSString;
-
 @interface AWDMPTCPConnectionReport : PBCodable <NSCopying> {
     NSString *_clientId;
     BOOL _establishmentCellularFallback;
@@ -41,40 +39,40 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSString * clientId;
-@property BOOL establishmentCellularFallback;
-@property int establishmentFailureError;
-@property BOOL establishmentForcedTcpFallback;
-@property(retain) NSString * establishmentInterfaceName;
-@property BOOL establishmentSuccess;
-@property int establishmentSynRetransmits;
-@property BOOL establishmentTcpFallback;
-@property double establishmentTime;
-@property(readonly) BOOL hasClientId;
-@property BOOL hasEstablishmentCellularFallback;
-@property BOOL hasEstablishmentFailureError;
-@property BOOL hasEstablishmentForcedTcpFallback;
-@property(readonly) BOOL hasEstablishmentInterfaceName;
-@property BOOL hasEstablishmentSuccess;
-@property BOOL hasEstablishmentSynRetransmits;
-@property BOOL hasEstablishmentTcpFallback;
-@property BOOL hasEstablishmentTime;
-@property BOOL hasPostConnectMultiHomed;
-@property BOOL hasPostConnectSessionLifetime;
-@property BOOL hasPostConnectSingleHomed;
-@property BOOL hasPostConnectSubflowAttemptCount;
-@property BOOL hasPostConnectSubflowMaxSubflowCount;
-@property BOOL hasSubflowSwitchingCount;
-@property BOOL hasTimestamp;
-@property(retain) NSMutableArray * interfaceReports;
-@property BOOL postConnectMultiHomed;
-@property double postConnectSessionLifetime;
-@property BOOL postConnectSingleHomed;
-@property int postConnectSubflowAttemptCount;
-@property int postConnectSubflowMaxSubflowCount;
-@property int subflowSwitchingCount;
-@property(retain) NSMutableArray * subflowSwitchingReports;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSString *clientId;
+@property (nonatomic) BOOL establishmentCellularFallback;
+@property (nonatomic) int establishmentFailureError;
+@property (nonatomic) BOOL establishmentForcedTcpFallback;
+@property (nonatomic, retain) NSString *establishmentInterfaceName;
+@property (nonatomic) BOOL establishmentSuccess;
+@property (nonatomic) int establishmentSynRetransmits;
+@property (nonatomic) BOOL establishmentTcpFallback;
+@property (nonatomic) double establishmentTime;
+@property (nonatomic, readonly) BOOL hasClientId;
+@property (nonatomic) BOOL hasEstablishmentCellularFallback;
+@property (nonatomic) BOOL hasEstablishmentFailureError;
+@property (nonatomic) BOOL hasEstablishmentForcedTcpFallback;
+@property (nonatomic, readonly) BOOL hasEstablishmentInterfaceName;
+@property (nonatomic) BOOL hasEstablishmentSuccess;
+@property (nonatomic) BOOL hasEstablishmentSynRetransmits;
+@property (nonatomic) BOOL hasEstablishmentTcpFallback;
+@property (nonatomic) BOOL hasEstablishmentTime;
+@property (nonatomic) BOOL hasPostConnectMultiHomed;
+@property (nonatomic) BOOL hasPostConnectSessionLifetime;
+@property (nonatomic) BOOL hasPostConnectSingleHomed;
+@property (nonatomic) BOOL hasPostConnectSubflowAttemptCount;
+@property (nonatomic) BOOL hasPostConnectSubflowMaxSubflowCount;
+@property (nonatomic) BOOL hasSubflowSwitchingCount;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) NSMutableArray *interfaceReports;
+@property (nonatomic) BOOL postConnectMultiHomed;
+@property (nonatomic) double postConnectSessionLifetime;
+@property (nonatomic) BOOL postConnectSingleHomed;
+@property (nonatomic) int postConnectSubflowAttemptCount;
+@property (nonatomic) int postConnectSubflowMaxSubflowCount;
+@property (nonatomic) int subflowSwitchingCount;
+@property (nonatomic, retain) NSMutableArray *subflowSwitchingReports;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)addInterfaceReports:(id)arg1;
 - (void)addSubflowSwitchingReports:(id)arg1;

@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString, UILabel, UITableView, UITapGestureRecognizer;
-
 @interface UITableViewIndexOverlayIndicatorView : UIView {
     UILabel *_label;
     UITableView *_table;
     UITapGestureRecognizer *_tapGestureRecognizer;
 }
 
-@property(copy) NSString * currentText;
+@property (nonatomic, copy) NSString *currentText;
 
 - (void)_invalidateTable;
 - (void)_tapGestureChanged:(id)arg1;

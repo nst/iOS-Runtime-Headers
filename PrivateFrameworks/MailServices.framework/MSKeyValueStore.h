@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@interface MSKeyValueStore : MSMailDefaultService {
-}
+@interface MSKeyValueStore : MSMailDefaultService
 
 + (id)valueForKey:(id)arg1;
 
-- (void)_simulateServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id)arg3;
-- (void)_valueForKey:(id)arg1 handler:(id)arg2;
+- (void)_simulateServicesMethod:(id)arg1 arguments:(id)arg2 callback:(id /* block */)arg3;
+- (void)_valueForKey:(id)arg1 handler:(id /* block */)arg2;
 
 @end

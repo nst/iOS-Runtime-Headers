@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSBulkSetItemPropertiesRequest : HSRequest {
-}
+@interface HSBulkSetItemPropertiesRequest : HSRequest
 
 + (BOOL)isSupportedItemProperty:(id)arg1;
 + (id)requestWithDatabaseID:(unsigned int)arg1 sessionID:(unsigned int)arg2 itemID:(unsigned int)arg3 properties:(id)arg4;

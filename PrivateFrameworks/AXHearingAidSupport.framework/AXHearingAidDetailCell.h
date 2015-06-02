@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AXHearingAidSupport.framework/AXHearingAidSupport
  */
 
-@class AXRemoteHearingAidDevice, NSNumberFormatter, UIActivityIndicatorView, UIImageView, UILabel;
-
 @interface AXHearingAidDetailCell : PSTableCell {
     BOOL _bluetoothAvailable;
     AXRemoteHearingAidDevice *_device;
@@ -15,7 +13,7 @@
     UILabel *_rightLabel;
 }
 
-@property(retain) AXRemoteHearingAidDevice * device;
+@property (nonatomic, retain) AXRemoteHearingAidDevice *device;
 
 - (unsigned long long)accessibilityTraits;
 - (id)accessibilityValue;

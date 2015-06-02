@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
  */
 
-@class <FUChartDataGroupDataSource>, NSArray, NSString;
-
 @interface FUChartDataGroup : NSObject <FUChartDataSetDataSource> {
     NSArray *_dataSets;
     <FUChartDataGroupDataSource> *_dataSource;
 }
 
-@property(retain) NSArray * dataSets;
-@property <FUChartDataGroupDataSource> * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSArray *dataSets;
+@property (nonatomic) <FUChartDataGroupDataSource> *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_dataSetAtIndexCreateIfNecessary:(unsigned int)arg1;

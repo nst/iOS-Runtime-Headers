@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSMutableArray, NSMutableDictionary, NSString;
-
 @interface OCXRelationships : NSObject {
     unsigned int mNextId;
     NSString *mPath;

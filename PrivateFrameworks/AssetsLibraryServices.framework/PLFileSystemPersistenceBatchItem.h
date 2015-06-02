@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AssetsLibraryServices.framework/AssetsLibraryServices
  */
 
-@class NSMutableDictionary, NSURL;
-
 @interface PLFileSystemPersistenceBatchItem : NSObject {
     NSMutableDictionary *attributes;
     NSURL *fileURL;
 }
 
-@property(retain) NSMutableDictionary * attributes;
-@property(retain) NSURL * fileURL;
+@property (nonatomic, retain) NSMutableDictionary *attributes;
+@property (nonatomic, retain) NSURL *fileURL;
 
 - (id)attributes;
 - (void)dealloc;

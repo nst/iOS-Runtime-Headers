@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
-
 @interface SKUICharityTemplateViewElement : SKUIViewElement {
     NSString *_campaignIdentifier;
     NSString *_charityMetadataURLString;
 }
 
-@property(readonly) NSString * campaignIdentifier;
-@property(readonly) NSString * charityMetadataURLString;
+@property (nonatomic, readonly) NSString *campaignIdentifier;
+@property (nonatomic, readonly) NSString *charityMetadataURLString;
 
 - (void).cxx_destruct;
 - (id)applyUpdatesWithElement:(id)arg1;

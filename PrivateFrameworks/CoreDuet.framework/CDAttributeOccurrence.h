@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
  */
 
-@class NSDate, NSObject;
-
 @interface CDAttributeOccurrence : NSObject {
     NSDate *_date;
     NSObject *_value;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) NSObject * value;
+@property (readonly) NSDate *date;
+@property (readonly) NSObject *value;
 
 + (id)attributeOccurrenceWithValue:(id)arg1 date:(id)arg2;
 

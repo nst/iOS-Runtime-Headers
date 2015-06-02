@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSDMagicMoveMatchObject, TSDTextureContext;
-
 @interface TSDMagicMoveMatch : NSObject <TSDMatchingAlgorithmMatch> {
     float _attributeMatchPercent;
     float _distance;
@@ -16,18 +14,18 @@
     float _zOrderDistance;
 }
 
-@property float attributeMatchPercent;
-@property float distance;
-@property(readonly) id incomingMatchObject;
-@property(readonly) TSDMagicMoveMatchObject * incomingObject;
-@property(readonly) BOOL isTextMatch;
-@property(readonly) int matchCost;
-@property int matchType;
-@property(retain) NSString * name;
-@property(readonly) id outgoingMatchObject;
-@property(readonly) TSDMagicMoveMatchObject * outgoingObject;
-@property(retain) TSDTextureContext * textureContext;
-@property float zOrderDistance;
+@property (nonatomic) float attributeMatchPercent;
+@property (nonatomic) float distance;
+@property (nonatomic, readonly) id incomingMatchObject;
+@property (nonatomic, readonly) TSDMagicMoveMatchObject *incomingObject;
+@property (nonatomic, readonly) BOOL isTextMatch;
+@property (nonatomic, readonly) int matchCost;
+@property (nonatomic) int matchType;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, readonly) id outgoingMatchObject;
+@property (nonatomic, readonly) TSDMagicMoveMatchObject *outgoingObject;
+@property (nonatomic, retain) TSDTextureContext *textureContext;
+@property (nonatomic) float zOrderDistance;
 
 + (id)matchWithOutgoingObject:(id)arg1 incomingObject:(id)arg2 matchType:(int)arg3 attributeMatchPercent:(float)arg4 textureContext:(id)arg5;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@class <HKMedicalIDViewControllerDelegate>, HKEmergencyCardContactsTableItem, HKEmergencyCardGroupTableItem, HKHealthStore, NSArray, NSString, _HKMedicalIDData;
-
 @interface HKMedicalIDViewController : UITableViewController <HKEmergencyCardDeletionDelegate, HKEmergencyCardEnabledDelegate, HKEmergencyCardRowHeightChangeDelegate, HKMedicalIDViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     void *_addressBook;
     BOOL _allowsEditing;
@@ -21,16 +19,16 @@
     NSArray *_tableItems;
 }
 
-@property BOOL allowsEditing;
-@property(copy,readonly) NSString * debugDescription;
-@property <HKMedicalIDViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) HKHealthStore * healthStore;
-@property(retain) _HKMedicalIDData * medicalID;
-@property BOOL showsDeleteButton;
-@property BOOL showsDismissButton;
-@property(readonly) Class superclass;
+@property (nonatomic) BOOL allowsEditing;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <HKMedicalIDViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) HKHealthStore *healthStore;
+@property (nonatomic, retain) _HKMedicalIDData *medicalID;
+@property (nonatomic) BOOL showsDeleteButton;
+@property (nonatomic) BOOL showsDismissButton;
+@property (readonly) Class superclass;
 
 + (BOOL)isSupportedOnThisDevice;
 

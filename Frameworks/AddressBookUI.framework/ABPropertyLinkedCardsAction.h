@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABContactViewControllerDelegate>, ABContactViewController, CNMutableContact;
-
 @interface ABPropertyLinkedCardsAction : ABPropertyAction {
     ABContactViewController *_contactController;
     <ABContactViewControllerDelegate> *_contactDelegate;
     CNMutableContact *_linkedContact;
 }
 
-@property(retain) ABContactViewController * contactController;
-@property <ABContactViewControllerDelegate> * contactDelegate;
-@property(retain) CNMutableContact * linkedContact;
+@property (retain) ABContactViewController *contactController;
+@property <ABContactViewControllerDelegate> *contactDelegate;
+@property (retain) CNMutableContact *linkedContact;
 
 - (id)contactController;
 - (id)contactDelegate;

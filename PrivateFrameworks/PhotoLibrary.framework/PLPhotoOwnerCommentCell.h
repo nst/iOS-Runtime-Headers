@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSAttributedString, UILabel, UIView;
-
 @interface PLPhotoOwnerCommentCell : UITableViewCell {
     UILabel *_ownerContentLabel;
     NSAttributedString *_ownerString;
     UIView *_styledSeparatorView;
 }
 
-@property(retain,readonly) UILabel * ownerContentLabel;
-@property(copy) NSAttributedString * ownerString;
-@property(retain,readonly) UIView * styledSeparatorView;
+@property (nonatomic, readonly, retain) UILabel *ownerContentLabel;
+@property (nonatomic, copy) NSAttributedString *ownerString;
+@property (nonatomic, readonly, retain) UIView *styledSeparatorView;
 
 + (id)_ownerStringForAsset:(id)arg1;
 + (float)heightOfOwnerCellWithAsset:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;

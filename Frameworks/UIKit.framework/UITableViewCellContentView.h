@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CALayer;
-
 @interface UITableViewCellContentView : UIView {
     CALayer *_mask;
 }
 
-@property(retain) CALayer * mask;
+@property (nonatomic, retain) CALayer *mask;
 
 + (id)classFallbacksForKeyedArchiver;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class <MusicTabBarControllerDelegate>, <UINavigationControllerDelegate>, MusicRadioViewController, NSArray, UINavigationController;
-
 @interface MusicTabBarController : UITabBarController {
     NSArray *_customizableViewControllerIdentifiers;
     BOOL _displayEmptyTabs;
@@ -17,15 +15,15 @@
     NSArray *_visibleViewControllerIdentifiers;
 }
 
-@property(copy) NSArray * customizableViewControllerIdentifiers;
-@property <MusicTabBarControllerDelegate> * delegate;
-@property BOOL displayEmptyTabs;
-@property <UINavigationControllerDelegate> * navigationControllerDelegate;
-@property(copy) NSArray * orderedViewControllerIdentifiers;
-@property(readonly) UINavigationController * radioNavigationController;
-@property(readonly) MusicRadioViewController * radioViewController;
-@property BOOL supportsTransiency;
-@property(readonly) NSArray * visibleViewControllerIdentifiers;
+@property (nonatomic, copy) NSArray *customizableViewControllerIdentifiers;
+@property (nonatomic) <MusicTabBarControllerDelegate> *delegate;
+@property (nonatomic) BOOL displayEmptyTabs;
+@property (nonatomic) <UINavigationControllerDelegate> *navigationControllerDelegate;
+@property (nonatomic, copy) NSArray *orderedViewControllerIdentifiers;
+@property (nonatomic, readonly) UINavigationController *radioNavigationController;
+@property (nonatomic, readonly) MusicRadioViewController *radioViewController;
+@property (nonatomic) BOOL supportsTransiency;
+@property (nonatomic, readonly) NSArray *visibleViewControllerIdentifiers;
 
 + (Class)_moreNavigationControllerClass;
 

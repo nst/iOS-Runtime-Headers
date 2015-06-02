@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
  */
 
-@interface ML3Collection : ML3Entity {
-}
+@interface ML3Collection : ML3Entity
+
+// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 + (id)artworkCacheIDProperty;
 + (BOOL)canonicalizeCollectionRepresentativeItemsWithWriteConnection:(id)arg1;
@@ -13,7 +14,6 @@
 + (BOOL)libraryContentsChangeForProperty:(id)arg1;
 + (id)propertiesForGroupingKey;
 + (id)propertiesForGroupingUniqueCollections;
-+ (id)propertyForMPMediaEntityProperty:(id)arg1;
 + (id)trackForeignPersistentID;
 + (BOOL)updateRepresentativeItemPersistentIDsInLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
 + (BOOL)updateRepresentativeItemPersistentIDsInLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3 usingConnection:(id)arg4;
@@ -23,5 +23,9 @@
 - (void)updateRepresentativeCollectionValues:(id)arg1 existingRepresentativePersistentID:(unsigned long long)arg2 forUpdateTrackValues:(id)arg3;
 - (void)updateRepresentativeItem:(id)arg1 inLibrary:(id)arg2 withArtworkToken:(id)arg3;
 - (void)updateTrackValues:(id)arg1;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (id)propertyForMPMediaEntityProperty:(id)arg1;
 
 @end

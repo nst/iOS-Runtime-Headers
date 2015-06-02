@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/CoreAudioKit.framework/CoreAudioKit
  */
 
-@interface BTLEBundleUtilities : NSObject {
-}
+@interface BTLEBundleUtilities : NSObject
 
 + (id)getLocalizedString:(id)arg1 expectedResult:(id)arg2;
 

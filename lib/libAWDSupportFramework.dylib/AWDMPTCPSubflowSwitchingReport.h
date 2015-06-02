@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDMPTCPSubflowSwitchingReport : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -15,14 +13,14 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasSwitchCount;
-@property(readonly) BOOL hasSwitchFromInterfaceName;
-@property(readonly) BOOL hasSwitchToInterfaceName;
-@property BOOL hasTimestamp;
-@property int switchCount;
-@property(retain) NSString * switchFromInterfaceName;
-@property(retain) NSString * switchToInterfaceName;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasSwitchCount;
+@property (nonatomic, readonly) BOOL hasSwitchFromInterfaceName;
+@property (nonatomic, readonly) BOOL hasSwitchToInterfaceName;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) int switchCount;
+@property (nonatomic, retain) NSString *switchFromInterfaceName;
+@property (nonatomic, retain) NSString *switchToInterfaceName;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

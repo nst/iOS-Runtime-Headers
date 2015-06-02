@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFPage;
-
 @interface UIPDFSelection : NSObject {
     int _cachedEndIndex;
     int _cachedStartIndex;
@@ -17,7 +15,7 @@
     } stringRange;
 }
 
-@property struct { int x1; int x2; } stringRange;
+@property (nonatomic) struct { int x1; int x2; } stringRange;
 
 - (struct CGPDFSelection { }*)CGSelection;
 - (id)archive;

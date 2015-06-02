@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class SYPeer, SYVectorClock;
-
 @interface SYMessageHeader : PBCodable <NSCopying> {
     SYPeer *_sender;
     unsigned long long _sequenceNumber;
@@ -12,11 +10,11 @@
     unsigned int _version;
 }
 
-@property(retain) SYPeer * sender;
-@property unsigned long long sequenceNumber;
-@property(retain) SYVectorClock * state;
-@property double timestamp;
-@property unsigned int version;
+@property (nonatomic, retain) SYPeer *sender;
+@property (nonatomic) unsigned long long sequenceNumber;
+@property (nonatomic, retain) SYVectorClock *state;
+@property (nonatomic) double timestamp;
+@property (nonatomic) unsigned int version;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIArtworkRequestDelegate>, NSHashTable, NSMapTable, NSMutableDictionary, NSMutableSet, SKUIBadgeTextAttachmentLoader, SKUIClientContext, SKUIItemOfferButton, SKUIResourceLoader, SKUIViewElementTextLayoutCache, UIColor, UIViewController;
-
 @interface SKUIViewElementLayoutContext : NSObject {
     float _activePageWidth;
     NSMutableDictionary *_aggregateValues;
@@ -24,16 +22,16 @@
     UIColor *_tintColor;
 }
 
-@property float activePageWidth;
-@property <SKUIArtworkRequestDelegate> * artworkRequestDelegate;
-@property(readonly) SKUIBadgeTextAttachmentLoader * badgeImageLoader;
-@property(retain) SKUIClientContext * clientContext;
-@property unsigned int containerViewElementType;
-@property(retain) SKUIViewElementTextLayoutCache * labelLayoutCache;
-@property UIViewController * parentViewController;
-@property(retain) UIColor * placeholderColor;
-@property(retain) SKUIResourceLoader * resourceLoader;
-@property(retain) UIColor * tintColor;
+@property (nonatomic) float activePageWidth;
+@property (nonatomic) <SKUIArtworkRequestDelegate> *artworkRequestDelegate;
+@property (nonatomic, readonly) SKUIBadgeTextAttachmentLoader *badgeImageLoader;
+@property (nonatomic, retain) SKUIClientContext *clientContext;
+@property (nonatomic) unsigned int containerViewElementType;
+@property (nonatomic, retain) SKUIViewElementTextLayoutCache *labelLayoutCache;
+@property (nonatomic) UIViewController *parentViewController;
+@property (nonatomic, retain) UIColor *placeholderColor;
+@property (nonatomic, retain) SKUIResourceLoader *resourceLoader;
+@property (nonatomic, retain) UIColor *tintColor;
 
 - (void).cxx_destruct;
 - (void)_artworkRequestDidLoadImageNotification:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class NSOrderedSet, UIButton, UILabel;
-
 @interface PLPhotoSmilesCommentCell : UITableViewCell {
     BOOL _isVideo;
     BOOL _showUserLikes;
@@ -12,11 +10,11 @@
     NSOrderedSet *_userLikes;
 }
 
-@property BOOL isVideo;
-@property BOOL showUserLikes;
-@property(retain,readonly) UILabel * smileContentLabel;
-@property(retain,readonly) UIButton * smileImageButton;
-@property(copy) NSOrderedSet * userLikes;
+@property (nonatomic) BOOL isVideo;
+@property (nonatomic) BOOL showUserLikes;
+@property (nonatomic, readonly, retain) UILabel *smileContentLabel;
+@property (nonatomic, readonly, retain) UIButton *smileImageButton;
+@property (nonatomic, copy) NSOrderedSet *userLikes;
 
 + (id)_attributedStringForComments:(id)arg1 color:(id)arg2 isVideo:(BOOL)arg3;
 + (id)_smileStringForComments:(id)arg1;

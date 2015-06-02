@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@class NSString;
-
 @interface MFMimeCharset : NSObject {
-    unsigned int _canBeUsedForOutgoingMessages : 1;
+    unsigned int _canBeUsedForOutgoingMessages;
     NSString *_charsetName;
-    unsigned int _coversLargeUnicodeSubset : 1;
+    unsigned int _coversLargeUnicodeSubset;
     unsigned long _encoding;
     NSString *_primaryLanguage;
-    unsigned int _useBase64InHeaders : 1;
+    unsigned int _useBase64InHeaders;
 }
 
 + (id)allMimeCharsets;

@@ -2,18 +2,15 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString, SADynamiteClientState;
+@interface SASetDynamiteClientState : SABaseCommand <SAServerBoundCommand, SASetSingleClientState>
 
-@interface SASetDynamiteClientState : SABaseCommand <SAServerBoundCommand, SASetSingleClientState> {
-}
-
-@property(copy) NSString * aceId;
-@property(retain) SADynamiteClientState * clientState;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *aceId;
+@property (nonatomic, retain) SADynamiteClientState *clientState;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
 
 + (id)setDynamiteClientState;
 + (id)setDynamiteClientStateWithDictionary:(id)arg1 context:(id)arg2;

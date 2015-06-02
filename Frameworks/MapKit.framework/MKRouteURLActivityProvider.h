@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKRouteURLActivityProvider : MKRouteActivityProvider {
-}
+@interface MKRouteURLActivityProvider : MKRouteActivityProvider
 
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 subjectForActivityType:(id)arg2;

@@ -2,39 +2,25 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class HKStatisticsCollection, NSDate, NSDateComponents, NSNumber;
-
 @interface HKStatisticsCollectionQuery : HKQuery {
     NSDate *_anchorDate;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _initialResultsHandler;
-
+    id /* block */ _initialResultsHandler;
     NSDateComponents *_intervalComponents;
     NSNumber *_lastAnchor;
     unsigned int _mergeStrategy;
     unsigned int _options;
     HKStatisticsCollection *_statisticsCollection;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _statisticsUpdateHandler;
-
+    id /* block */ _statisticsUpdateHandler;
 }
 
-@property(readonly) NSDate * anchorDate;
-@property(copy) id initialResultsHandler;
-@property(copy,readonly) NSDateComponents * intervalComponents;
-@property(retain) NSNumber * lastAnchor;
-@property unsigned int mergeStrategy;
-@property(readonly) unsigned int options;
-@property(retain) HKStatisticsCollection * statisticsCollection;
-@property(copy) id statisticsUpdateHandler;
+@property (readonly) NSDate *anchorDate;
+@property (nonatomic, copy) id /* block */ initialResultsHandler;
+@property (readonly, copy) NSDateComponents *intervalComponents;
+@property (retain) NSNumber *lastAnchor;
+@property (nonatomic) unsigned int mergeStrategy;
+@property (readonly) unsigned int options;
+@property (retain) HKStatisticsCollection *statisticsCollection;
+@property (nonatomic, copy) id /* block */ statisticsUpdateHandler;
 
 + (Class)_queryServerDataObjectClass;
 
@@ -45,7 +31,7 @@
 - (void)_queue_deliverInitialStatisticsObjects:(id)arg1 anchor:(id)arg2 queryUUID:(id)arg3;
 - (void)_queue_deliverResetStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (void)_queue_deliverStatisticsObjects:(id)arg1 forQuery:(id)arg2;
-- (id)_queue_errorHandler;
+- (id /* block */)_queue_errorHandler;
 - (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
 - (id)anchorDate;
@@ -53,17 +39,17 @@
 - (void)deliverResetStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (void)deliverUpdatedStatistics:(id)arg1 anchor:(id)arg2 forQuery:(id)arg3;
 - (id)initWithQuantityType:(id)arg1 quantitySamplePredicate:(id)arg2 options:(unsigned int)arg3 anchorDate:(id)arg4 intervalComponents:(id)arg5;
-- (id)initialResultsHandler;
+- (id /* block */)initialResultsHandler;
 - (id)intervalComponents;
 - (id)lastAnchor;
 - (unsigned int)mergeStrategy;
 - (unsigned int)options;
-- (void)setInitialResultsHandler:(id)arg1;
+- (void)setInitialResultsHandler:(id /* block */)arg1;
 - (void)setLastAnchor:(id)arg1;
 - (void)setMergeStrategy:(unsigned int)arg1;
 - (void)setStatisticsCollection:(id)arg1;
-- (void)setStatisticsUpdateHandler:(id)arg1;
+- (void)setStatisticsUpdateHandler:(id /* block */)arg1;
 - (id)statisticsCollection;
-- (id)statisticsUpdateHandler;
+- (id /* block */)statisticsUpdateHandler;
 
 @end

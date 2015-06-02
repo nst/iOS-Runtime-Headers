@@ -2,18 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayer, AVPlayerLayerInternal, NSString;
-
 @interface AVPlayerLayer : CALayer {
     AVPlayerLayerInternal *_playerLayer;
 }
 
-@property(retain) AVPlayer * player;
-@property(getter=isReadyForDisplay,readonly) BOOL readyForDisplay;
-@property(copy) NSString * videoGravity;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
+@property (nonatomic, retain) AVPlayer *player;
+@property (getter=isReadyForDisplay, nonatomic, readonly) BOOL readyForDisplay;
+@property (copy) NSString *videoGravity;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
 
-+ (id)keyPathsForValuesAffectingVideoLayerGravity;
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 + (id)keyPathsForValuesAffectingVideoRect;
 + (id)playerLayerWithPlayer:(id)arg1;
 
@@ -21,7 +20,7 @@
 - (void)_addAnimationsForMaskLayer:(id)arg1;
 - (void)_addAnimationsForVideoLayer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 gravity:(id)arg3;
 - (id)_closedCaptionLayer;
-- (void)_forBoundsAnimations:(id)arg1 applyBlock:(id)arg2;
+- (void)_forBoundsAnimations:(id)arg1 applyBlock:(id /* block */)arg2;
 - (struct CGSize { float x1; float x2; })_getAVPlayerCurrentItemPresentationSizeKeyFromPlayer:(id)arg1;
 - (void)_notifyPlayerOfDisplaySize;
 - (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
@@ -50,11 +49,16 @@
 - (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
 - (void)setPixelBufferAttributes:(id)arg1;
 - (void)setPlayer:(id)arg1;
-- (void)setPlayerController:(id)arg1;
 - (void)setVideoGravity:(id)arg1;
-- (void)setVideoLayerGravity:(int)arg1;
 - (id)videoGravity;
-- (int)videoLayerGravity;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoRect;
+
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
++ (id)keyPathsForValuesAffectingVideoLayerGravity;
+
+- (void)setPlayerController:(id)arg1;
+- (void)setVideoLayerGravity:(int)arg1;
+- (int)videoLayerGravity;
 
 @end

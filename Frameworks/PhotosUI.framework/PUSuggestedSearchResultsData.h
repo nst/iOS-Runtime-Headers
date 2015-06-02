@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSString;
-
 @interface PUSuggestedSearchResultsData : NSObject {
     NSString *_displayTitle;
     NSString *_searchString;
     NSArray *_uuids;
 }
 
-@property(copy) NSString * displayTitle;
-@property(copy) NSString * searchString;
-@property(retain) NSArray * uuids;
+@property (nonatomic, copy) NSString *displayTitle;
+@property (nonatomic, copy) NSString *searchString;
+@property (nonatomic, retain) NSArray *uuids;
 
 - (void).cxx_destruct;
 - (id)displayTitle;

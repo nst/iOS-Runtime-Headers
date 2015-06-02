@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class _UILabelContentLayer;
-
 @interface _UILabelLayer : CALayer {
     struct UIEdgeInsets { 
         float top; 

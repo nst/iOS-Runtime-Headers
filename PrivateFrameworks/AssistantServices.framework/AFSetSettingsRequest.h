@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSArray;
-
 @interface AFSetSettingsRequest : AFSiriRequest {
     BOOL _applyChanges;
     NSArray *_settings;
 }
 
-@property BOOL applyChanges;
-@property(copy) NSArray * settings;
+@property (nonatomic) BOOL applyChanges;
+@property (nonatomic, copy) NSArray *settings;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class PLNSNotificationOperatorComposition, PLXPCListenerOperatorComposition, PLXPCResponderOperatorComposition;
-
 @interface PLXPCAgent : PLAgent {
     PLXPCListenerOperatorComposition *_AccessoriesXPCListener;
     PLXPCListenerOperatorComposition *_AirDropXPCListener;
@@ -30,29 +28,29 @@
     PLXPCListenerOperatorComposition *_testMarkerXPCListener;
 }
 
-@property(retain) PLXPCListenerOperatorComposition * AccessoriesXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * AirDropXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * AppAccessoriesXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * ApsdXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * BackgroundTransfer;
-@property(retain) PLXPCListenerOperatorComposition * DACalendarItemsDownloadedXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * DACalendarItemsUploadedXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * DASyncStartXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * InCallServiceXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * MailFetchXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * MediaServerdRTCXPCListener;
-@property(retain) PLNSNotificationOperatorComposition * MemoryWarningListener;
-@property(retain) PLXPCListenerOperatorComposition * Push;
-@property(retain) PLXPCListenerOperatorComposition * SafariFetcherXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * SiriXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * SymptomsNetworkAdvisory;
-@property(retain) PLXPCListenerOperatorComposition * UIKitActivityXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * UIKitAlertXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * UIKitKeyboardXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * WebAppXPCListener;
-@property(retain) PLXPCResponderOperatorComposition * entryRequestResponder;
-@property(retain) PLXPCListenerOperatorComposition * telNotificationXPCListener;
-@property(retain) PLXPCListenerOperatorComposition * testMarkerXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *AccessoriesXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *AirDropXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *AppAccessoriesXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *ApsdXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *BackgroundTransfer;
+@property (retain) PLXPCListenerOperatorComposition *DACalendarItemsDownloadedXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *DACalendarItemsUploadedXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *DASyncStartXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *InCallServiceXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *MailFetchXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *MediaServerdRTCXPCListener;
+@property (retain) PLNSNotificationOperatorComposition *MemoryWarningListener;
+@property (retain) PLXPCListenerOperatorComposition *Push;
+@property (retain) PLXPCListenerOperatorComposition *SafariFetcherXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *SiriXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *SymptomsNetworkAdvisory;
+@property (retain) PLXPCListenerOperatorComposition *UIKitActivityXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *UIKitAlertXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *UIKitKeyboardXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *WebAppXPCListener;
+@property (retain) PLXPCResponderOperatorComposition *entryRequestResponder;
+@property (retain) PLXPCListenerOperatorComposition *telNotificationXPCListener;
+@property (retain) PLXPCListenerOperatorComposition *testMarkerXPCListener;
 
 + (id)accountingGroupDefinitions;
 + (id)bundleIdFromTopic:(id)arg1;

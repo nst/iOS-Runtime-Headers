@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetResourceLoadingDataRequestInternal;
-
 @interface AVAssetResourceLoadingDataRequest : NSObject {
     AVAssetResourceLoadingDataRequestInternal *_dataRequest;
 }
 
-@property(readonly) long long currentOffset;
-@property(readonly) int requestedLength;
-@property(readonly) long long requestedOffset;
+@property (nonatomic, readonly) long long currentOffset;
+@property (nonatomic, readonly) int requestedLength;
+@property (nonatomic, readonly) long long requestedOffset;
 
 - (id)_loadingRequest;
 - (long long)currentOffset;

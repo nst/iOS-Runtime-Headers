@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableDictionary;
-
 @interface TSPPasteboardUIPasteboard : TSPPasteboard {
     int _cachedChangeCount;
     NSArray *_cachedPasteboardTypes;

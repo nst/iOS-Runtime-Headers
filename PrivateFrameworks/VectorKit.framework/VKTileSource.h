@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class <VKTileSourceClient>, GEOResourceManifestConfiguration, NSError, NSLocale, NSString, VKSharedResources, VKStyleManager, VKTileKeyList, VKTileKeyMap, VKTilePool;
-
 @interface VKTileSource : NSObject {
     <VKTileSourceClient> *_client;
     float _contentScale;
@@ -22,21 +20,21 @@
     int loadingTiles;
 }
 
-@property <VKTileSourceClient> * client;
-@property float contentScale;
-@property(readonly) struct Device { }* device;
-@property(readonly) unsigned int maximumDownloadZoomLevel;
-@property(readonly) int maximumZoomLevel;
-@property(readonly) BOOL maximumZoomLevelBoundsCamera;
-@property(readonly) unsigned int minimumDownloadZoomLevel;
-@property(readonly) int minimumZoomLevel;
-@property(readonly) BOOL minimumZoomLevelBoundsCamera;
-@property BOOL preloadOnly;
-@property BOOL requireWiFi;
-@property(retain) VKSharedResources * sharedResources;
-@property(retain) VKStyleManager * styleManager;
-@property(readonly) int tileSize;
-@property(readonly) int zEquivalenceClass;
+@property (nonatomic) <VKTileSourceClient> *client;
+@property (nonatomic) float contentScale;
+@property (nonatomic, readonly) struct Device { }*device;
+@property (nonatomic, readonly) unsigned int maximumDownloadZoomLevel;
+@property (nonatomic, readonly) int maximumZoomLevel;
+@property (nonatomic, readonly) BOOL maximumZoomLevelBoundsCamera;
+@property (nonatomic, readonly) unsigned int minimumDownloadZoomLevel;
+@property (nonatomic, readonly) int minimumZoomLevel;
+@property (nonatomic, readonly) BOOL minimumZoomLevelBoundsCamera;
+@property (nonatomic) BOOL preloadOnly;
+@property (nonatomic) BOOL requireWiFi;
+@property (nonatomic, retain) VKSharedResources *sharedResources;
+@property (nonatomic, retain) VKStyleManager *styleManager;
+@property (nonatomic, readonly) int tileSize;
+@property (nonatomic, readonly) int zEquivalenceClass;
 
 - (id)_extraInfoForPendingSourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)_failedToLoadSourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 error:(id)arg3;
@@ -65,7 +63,7 @@
 - (void)fetchTileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 sourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)fetchedTile:(id)arg1 forKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2;
 - (void)forceDownload;
-- (void)foreachTileInPool:(id)arg1;
+- (void)foreachTileInPool:(id /* block */)arg1;
 - (id)init;
 - (id)initWithResourceManifestConfiguration:(id)arg1 locale:(id)arg2;
 - (unsigned int)maximumDownloadZoomLevel;

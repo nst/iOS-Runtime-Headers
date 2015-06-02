@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHPChangeDirection : EDProcessor {
-}
+@interface CHPChangeDirection : EDProcessor
 
 - (void)addDataValue:(id)arg1 to:(id)arg2 withIndex:(unsigned int)arg3;
 - (void)applyProcessorToObject:(id)arg1 sheet:(id)arg2;

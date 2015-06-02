@@ -2,38 +2,28 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSString;
-
 @interface _CKDispatchQueueBlock : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _block;
-
+    id /* block */ _block;
     unsigned int _fifo;
     NSString *_key;
     int _priority;
 }
 
-@property(copy) id block;
-@property unsigned int fifo;
-@property(copy) NSString * key;
-@property int priority;
+@property (nonatomic, copy) id /* block */ block;
+@property (nonatomic) unsigned int fifo;
+@property (nonatomic, copy) NSString *key;
+@property (nonatomic) int priority;
 
-- (id)block;
+- (id /* block */)block;
 - (void)cancel;
 - (int)compare:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)fifo;
-- (id)initWithBlock:(id)arg1 key:(id)arg2 priority:(int)arg3 fifo:(unsigned int)arg4;
+- (id)initWithBlock:(id /* block */)arg1 key:(id)arg2 priority:(int)arg3 fifo:(unsigned int)arg4;
 - (id)key;
 - (int)priority;
-- (void)setBlock:(id)arg1;
+- (void)setBlock:(id /* block */)arg1;
 - (void)setFIFO:(unsigned int)arg1;
 - (void)setKey:(id)arg1;
 - (void)setPriority:(int)arg1;

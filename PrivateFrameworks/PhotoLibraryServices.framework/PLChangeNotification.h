@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLChangeNotificationCenter;
+@interface PLChangeNotification : NSNotification
 
-@interface PLChangeNotification : NSNotification {
-}
-
-@property(retain,readonly) PLChangeNotificationCenter * changeNotificationCenter;
+@property (nonatomic, readonly, retain) PLChangeNotificationCenter *changeNotificationCenter;
 
 + (id)notificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 

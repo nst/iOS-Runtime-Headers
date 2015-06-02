@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableDictionary, NSString, NSTimer, UIKBCacheToken, UIKBKeyView, UIKBRenderConfig, UIKBSplitImageView, UIKBTree;
-
 @interface UIKBKeyplaneView : UIKBSplitImageView <UIKBCacheableView> {
     NSTimer *_activatedTimer;
     NSMutableDictionary *_activeViewIndex;
@@ -22,18 +20,18 @@
     NSMutableDictionary *_subviewIndex;
 }
 
-@property(readonly) BOOL cacheDeferable;
-@property(readonly) NSString * cacheKey;
-@property(retain) UIKBCacheToken * cacheToken;
-@property(readonly) float cachedWidth;
-@property(copy,readonly) NSString * debugDescription;
-@property(retain) UIKBTree * defaultKeyplane;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL keepNonPersistent;
-@property(retain) UIKBTree * keyplane;
-@property(retain) UIKBRenderConfig * renderConfig;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) BOOL cacheDeferable;
+@property (nonatomic, readonly) NSString *cacheKey;
+@property (nonatomic, retain) UIKBCacheToken *cacheToken;
+@property (nonatomic, readonly) float cachedWidth;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) UIKBTree *defaultKeyplane;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL keepNonPersistent;
+@property (nonatomic, retain) UIKBTree *keyplane;
+@property (nonatomic, retain) UIKBRenderConfig *renderConfig;
+@property (readonly) Class superclass;
 
 - (BOOL)_shouldAllowKey:(id)arg1;
 - (void)activateKeys;

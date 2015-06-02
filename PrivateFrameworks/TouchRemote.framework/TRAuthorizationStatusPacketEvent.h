@@ -6,7 +6,7 @@
     int _authorizationStatus;
 }
 
-@property(readonly) int authorizationStatus;
+@property (nonatomic, readonly) int authorizationStatus;
 
 + (unsigned int)_packetEventType;
 

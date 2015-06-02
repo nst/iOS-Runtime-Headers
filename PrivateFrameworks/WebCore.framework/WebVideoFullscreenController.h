@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class WebVideoFullscreenController;
-
 @interface WebVideoFullscreenController : NSObject {
     struct WebVideoFullscreenControllerChangeObserver { 
         int (**_vptr$WebVideoFullscreenChangeObserver)(); 

@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSSet;
-
 @interface _SBSDisplayIdentifiersCache : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _changedBlock;
-
+    id /* block */ _changedBlock;
     int _changedToken;
     NSSet *_displayIdentifiers;
     NSObject<OS_dispatch_queue> *_queue;
@@ -25,6 +15,6 @@
 - (void)dealloc;
 - (id)displayIdentifiers;
 - (id)init;
-- (void)registerChangedBlock:(id)arg1;
+- (void)registerChangedBlock:(id /* block */)arg1;
 
 @end

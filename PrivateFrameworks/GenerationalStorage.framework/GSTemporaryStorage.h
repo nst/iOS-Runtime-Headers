@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GenerationalStorage.framework/GenerationalStorage
  */
 
-@class <NSCopying><NSSecureCoding>, NSURL;
-
 @interface GSTemporaryStorage : NSObject <GSAdditionStoring, GSAdditionStoringPrivate> {
     NSURL *_documentURL;
     NSURL *_libraryURL;
@@ -11,9 +9,9 @@
     NSURL *_stagingURL;
 }
 
-@property(retain) NSURL * documentURL;
-@property(readonly) NSURL * libraryURL;
-@property(readonly) <NSCopying><NSSecureCoding> * persistentIdentifier;
+@property (retain) NSURL *documentURL;
+@property (nonatomic, readonly) NSURL *libraryURL;
+@property (nonatomic, readonly) <NSCopying><NSSecureCoding> *persistentIdentifier;
 
 - (id)URLforReplacingItemWithError:(id*)arg1;
 - (id)_URLForNameSpace:(id)arg1 createIfNeeded:(BOOL)arg2 allowMissing:(BOOL)arg3 error:(id*)arg4;
@@ -27,7 +25,7 @@
 - (id)additionWithName:(id)arg1 inNameSpace:(id)arg2 error:(id*)arg3;
 - (id)additionsWithNames:(id)arg1 inNameSpace:(id)arg2 error:(id*)arg3;
 - (void)cleanupStagingURL:(id)arg1;
-- (void)createAdditionStagedAtURL:(id)arg1 creationInfo:(id)arg2 completionHandler:(id)arg3;
+- (void)createAdditionStagedAtURL:(id)arg1 creationInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)description;
 - (id)documentURL;
@@ -42,8 +40,8 @@
 - (BOOL)mergeAdditionUserInfo:(id)arg1 value:(id)arg2 error:(id*)arg3;
 - (id)persistentIdentifier;
 - (id)prepareAdditionCreationWithItemAtURL:(id)arg1 byMoving:(BOOL)arg2 creationInfo:(id)arg3 error:(id*)arg4;
-- (void)removeAdditions:(id)arg1 completionHandler:(id)arg2;
-- (void)removeAllAdditionsForNamespaces:(id)arg1 completionHandler:(id)arg2;
+- (void)removeAdditions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)removeAllAdditionsForNamespaces:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)replaceDocumentWithContentsOfAddition:(id)arg1 preservingCurrentVersionWithCreationInfo:(id)arg2 createdAddition:(id*)arg3 error:(id*)arg4;
 - (BOOL)replaceDocumentWithContentsOfItemAtURL:(id)arg1 preservingCurrentVersionWithCreationInfo:(id)arg2 createdAddition:(id*)arg3 error:(id*)arg4;
 - (BOOL)setAdditionDisplayName:(id)arg1 value:(id)arg2 error:(id*)arg3;

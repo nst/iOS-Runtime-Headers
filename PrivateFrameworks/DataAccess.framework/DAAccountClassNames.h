@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
  */
 
-@class NSString;
-
 @interface DAAccountClassNames : NSObject {
     NSString *_accountClassName;
     NSString *_agentClassName;
@@ -11,10 +9,10 @@
     NSString *_daemonAccountClassName;
 }
 
-@property(retain) NSString * accountClassName;
-@property(retain) NSString * agentClassName;
-@property(retain) NSString * clientAccountClassName;
-@property(retain) NSString * daemonAccountClassName;
+@property (nonatomic, retain) NSString *accountClassName;
+@property (nonatomic, retain) NSString *agentClassName;
+@property (nonatomic, retain) NSString *clientAccountClassName;
+@property (nonatomic, retain) NSString *daemonAccountClassName;
 
 - (void).cxx_destruct;
 - (id)accountClassName;

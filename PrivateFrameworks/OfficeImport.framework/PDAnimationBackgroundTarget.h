@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface PDAnimationBackgroundTarget : PDAnimationShapeTarget {
-}
+@interface PDAnimationBackgroundTarget : PDAnimationShapeTarget
 
 - (id)init;
 

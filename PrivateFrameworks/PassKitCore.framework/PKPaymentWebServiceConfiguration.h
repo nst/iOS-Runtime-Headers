@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSDictionary, NSNumber, NSObject<OS_dispatch_queue>, NSURL;
-
 @interface PKPaymentWebServiceConfiguration : NSObject <NSSecureCoding> {
     NSDictionary *_configuration;
     NSURL *_configurationURL;
@@ -11,9 +9,9 @@
     NSNumber *_version;
 }
 
-@property(copy) NSDictionary * configuration;
-@property(copy) NSURL * configurationURL;
-@property(readonly) NSNumber * version;
+@property (copy) NSDictionary *configuration;
+@property (copy) NSURL *configurationURL;
+@property (readonly) NSNumber *version;
 
 + (BOOL)supportsSecureCoding;
 

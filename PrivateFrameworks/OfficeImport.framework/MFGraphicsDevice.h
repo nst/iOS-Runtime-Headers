@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class MFDeviceContext, MFObjectTable, NSDictionary, NSMutableArray, NSObject<MFDeviceDriver>;
-
 @interface MFGraphicsDevice : NSObject {
     NSDictionary *m_colorMap;
     MFDeviceContext *m_currentDC;

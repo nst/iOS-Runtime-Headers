@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class MFConditionLock, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface MFGenericAttachmentStore : MFWebAttachmentSource {
     struct __CFDictionary { } *_attachmentSizes;
     NSMutableArray *_attachmentsOrder;
@@ -17,8 +15,8 @@
     unsigned int _size;
 }
 
-@property(readonly) NSArray * attachments;
-@property BOOL scalingThrottled;
+@property (nonatomic, readonly) NSArray *attachments;
+@property (nonatomic) BOOL scalingThrottled;
 
 + (void)addAttachmentUniqueIdentifierStore:(id)arg1;
 + (void)beginPreventingInlinePDFs;
@@ -30,7 +28,7 @@
 - (void)_inrementPendingImageScalingOperations;
 - (void)_notifyAttachmentCachedSizesChanged;
 - (BOOL)addAttachment:(id)arg1;
-- (BOOL)addAttachment:(id)arg1 allowingOverride:(id)arg2;
+- (BOOL)addAttachment:(id)arg1 allowingOverride:(id /* block */)arg2;
 - (id)attachments;
 - (void)cancelImageScalingOperations;
 - (void)dealloc;

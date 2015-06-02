@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
  */
 
-@interface WebReadingList : NSObject {
-}
+@interface WebReadingList : NSObject
 
 + (BOOL)_isSupportedReadingListURL:(id)arg1;
 

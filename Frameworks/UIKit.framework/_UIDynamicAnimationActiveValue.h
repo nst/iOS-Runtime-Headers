@@ -5,25 +5,25 @@
 @interface _UIDynamicAnimationActiveValue : NSObject {
     id _applier;
     double _boundaryPull;
-    unsigned int _lowerBoundary : 1;
+    unsigned int _lowerBoundary;
     double _maximumActiveValue;
     double _minimumActiveValue;
     int _type;
-    unsigned int _upperBoundary : 1;
+    unsigned int _upperBoundary;
     double _value;
 }
 
-@property double maximumActiveValue;
-@property double minimumActiveValue;
-@property int type;
-@property double value;
+@property (nonatomic) double maximumActiveValue;
+@property (nonatomic) double minimumActiveValue;
+@property (nonatomic) int type;
+@property (nonatomic) double value;
 
 + (id)activeValue:(double)arg1 ofType:(int)arg2;
 + (id)lowerBoundary:(double)arg1 ofType:(int)arg2;
 + (id)upperBoundary:(double)arg1 ofType:(int)arg2;
 
 - (void)_appendDescriptionToString:(id)arg1 atLevel:(int)arg2;
-- (id)_applier;
+- (id /* block */)_applier;
 - (double)_boundaryPull;
 - (BOOL)_isLowerBoundary;
 - (BOOL)_isUpperBoundary;

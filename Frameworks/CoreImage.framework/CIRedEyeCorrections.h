@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class CIImage, NSArray, NSString;
-
 @interface CIRedEyeCorrections : CIFilter <_CIFilterProperties> {
     NSString *inputCameraModel;
     NSArray *inputCorrectionInfo;
     CIImage *inputImage;
 }
 
-@property(copy) NSString * inputCameraModel;
-@property(copy) NSArray * inputCorrectionInfo;
-@property(retain) CIImage * inputImage;
+@property (nonatomic, copy) NSString *inputCameraModel;
+@property (nonatomic, copy) NSArray *inputCorrectionInfo;
+@property (nonatomic, retain) CIImage *inputImage;
 
 - (id)_initFromProperties:(id)arg1;
 - (BOOL)_isIdentity;

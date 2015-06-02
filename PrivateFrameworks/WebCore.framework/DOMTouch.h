@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class <DOMEventTarget>;
+@interface DOMTouch : DOMObject
 
-@interface DOMTouch : DOMObject {
-}
-
-@property(readonly) int clientX;
-@property(readonly) int clientY;
-@property(readonly) unsigned int identifier;
-@property(readonly) int pageX;
-@property(readonly) int pageY;
-@property(readonly) int screenX;
-@property(readonly) int screenY;
-@property(readonly) <DOMEventTarget> * target;
+@property (readonly) int clientX;
+@property (readonly) int clientY;
+@property (readonly) unsigned int identifier;
+@property (readonly) int pageX;
+@property (readonly) int pageY;
+@property (readonly) int screenX;
+@property (readonly) int screenY;
+@property (readonly) <DOMEventTarget> *target;
 
 - (int)clientX;
 - (int)clientY;

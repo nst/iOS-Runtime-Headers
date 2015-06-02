@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData;
+@interface SALocalSearchShowLocalSearchResult : SADomainCommand
 
-@interface SALocalSearchShowLocalSearchResult : SADomainCommand {
-}
-
-@property(copy) NSData * rawData;
+@property (nonatomic, copy) NSData *rawData;
 
 + (id)showLocalSearchResult;
 + (id)showLocalSearchResultWithDictionary:(id)arg1 context:(id)arg2;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSMutableDictionary, TSCH3DTextureAtlas;
-
 @interface TSCH3DLabelResources : TSCH3DStringIndexedResources {
     TSCH3DTextureAtlas *mAtlas;
     NSMutableDictionary *mCache;
 }
 
-@property(readonly) TSCH3DTextureAtlas * atlas;
+@property (nonatomic, readonly) TSCH3DTextureAtlas *atlas;
 
 - (id)atlas;
 - (void)dealloc;

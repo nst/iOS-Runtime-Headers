@@ -2,18 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CNFRegWizardControllerDelegate>, CNFRegController, NSString, _UIBackdropView;
-
 @interface CNFRegWizardController : PSSetupController <CNFRegFirstRunDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _alertHandler;
-
+    id /* block */ _alertHandler;
     _UIBackdropView *_backdropView;
     <CNFRegWizardControllerDelegate> *_firstRunDelegate;
     CNFRegController *_regController;
@@ -35,23 +25,23 @@
     } _wizardFlags;
 }
 
-@property(copy) id alertHandler;
-@property BOOL allowCancel;
-@property BOOL allowSMS;
-@property(retain) _UIBackdropView * backdropView;
-@property BOOL canShowDisabledScreen;
-@property BOOL canShowSplashScreen;
-@property BOOL canStartNested;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <CNFRegWizardControllerDelegate> * firstRunDelegate;
-@property(readonly) unsigned int hash;
-@property BOOL hideLearnMoreButton;
-@property(retain) CNFRegController * regController;
-@property BOOL shouldListenForSuspension;
-@property BOOL shouldTerminateInBackground;
-@property BOOL showSplashOnSignin;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ alertHandler;
+@property (nonatomic) BOOL allowCancel;
+@property (nonatomic) BOOL allowSMS;
+@property (nonatomic, retain) _UIBackdropView *backdropView;
+@property (nonatomic) BOOL canShowDisabledScreen;
+@property (nonatomic) BOOL canShowSplashScreen;
+@property (nonatomic) BOOL canStartNested;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <CNFRegWizardControllerDelegate> *firstRunDelegate;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL hideLearnMoreButton;
+@property (nonatomic, retain) CNFRegController *regController;
+@property (nonatomic) BOOL shouldListenForSuspension;
+@property (nonatomic) BOOL shouldTerminateInBackground;
+@property (nonatomic) BOOL showSplashOnSignin;
+@property (readonly) Class superclass;
 
 + (void)setGlobalAppearanceStyle:(int)arg1;
 + (void)setSupportsAutoRotation:(BOOL)arg1;
@@ -68,7 +58,7 @@
 - (void)_updateNavigationBarHiddenForPop;
 - (void)_updateNavigationBarHiddenForPush;
 - (void)_updateNavigationBarTitle;
-- (id)alertHandler;
+- (id /* block */)alertHandler;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowCancel;
 - (BOOL)allowSMS;
@@ -95,7 +85,7 @@
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1 transition:(int)arg2;
 - (id)regController;
-- (void)setAlertHandler:(id)arg1;
+- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAllowCancel:(BOOL)arg1;
 - (void)setAllowSMS:(BOOL)arg1;
 - (void)setBackdropView:(id)arg1;

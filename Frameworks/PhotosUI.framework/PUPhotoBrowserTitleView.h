@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSArray, NSDate, NSString, PLDateRangeFormatter, UILabel;
-
 @interface PUPhotoBrowserTitleView : UIView {
     NSDate *_creationDate;
     NSString *_geoDateString;
@@ -19,9 +17,9 @@
     BOOL _wantsSubtitle;
 }
 
-@property(retain) NSDate * creationDate;
-@property(retain) NSString * geoDescription;
-@property BOOL wantsSubtitle;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSString *geoDescription;
+@property (nonatomic) BOOL wantsSubtitle;
 
 - (void).cxx_destruct;
 - (void)_dateFormatterChanged:(id)arg1;

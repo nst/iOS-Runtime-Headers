@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class PLNSNotificationOperatorComposition;
-
 @interface PLTimeReferenceBaseband : PLTimeReferenceDynamic {
     PLNSNotificationOperatorComposition *_basebandTimeNotification;
     BOOL _followupCurrentTimeRunning;
 }
 
-@property(retain) PLNSNotificationOperatorComposition * basebandTimeNotification;
+@property (retain) PLNSNotificationOperatorComposition *basebandTimeNotification;
 @property BOOL followupCurrentTimeRunning;
 
 - (void).cxx_destruct;

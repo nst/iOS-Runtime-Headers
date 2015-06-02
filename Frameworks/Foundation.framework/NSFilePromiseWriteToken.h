@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSURL;
-
 @interface NSFilePromiseWriteToken : NSObject {
     NSURL *logicalURL;
     NSURL *promiseURL;
 }
 
-@property(copy) NSURL * logicalURL;
-@property(copy) NSURL * promiseURL;
+@property (copy) NSURL *logicalURL;
+@property (copy) NSURL *promiseURL;
 
 - (void)dealloc;
 - (id)logicalURL;

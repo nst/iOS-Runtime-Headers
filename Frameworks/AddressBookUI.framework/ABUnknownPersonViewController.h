@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABStyleProvider>, <ABUnknownPersonViewControllerDelegate>, ABContactViewController, ABPersonTableViewActionsDelegate, ABPersonTableViewDataSource, ABPersonTableViewSharingDelegate, ABPersonViewControllerHelper, ABUIPerson, NSArray, NSString, UIFont, UIImage, UIView;
-
 @interface ABUnknownPersonViewController : UIViewController <UIActionSheetDelegate> {
     ABPersonTableViewActionsDelegate *_actionsDelegate;
     BOOL _allowsContactBlocking;
@@ -17,50 +15,52 @@
     <ABUnknownPersonViewControllerDelegate> *_unknownPersonViewDelegate;
 }
 
-@property(readonly) ABPersonTableViewActionsDelegate * actionsDelegate;
-@property void* addressBook;
-@property BOOL allowsActions;
-@property BOOL allowsAddingToAddressBook;
-@property BOOL allowsConferencing;
-@property BOOL allowsContactBlocking;
-@property BOOL allowsOnlyFaceTimeActions;
-@property BOOL allowsOnlyPhoneActions;
-@property BOOL allowsSharing;
-@property(copy) NSString * alternateName;
-@property(copy) NSString * attribution;
-@property BOOL badgeEmailPropertiesForMailVIP;
-@property(readonly) BOOL canShareContact;
-@property(retain) ABContactViewController * contactViewController;
-@property(retain) UIView * customFooterView;
-@property(retain) UIView * customHeaderView;
-@property(retain) UIView * customMessageView;
-@property(readonly) ABPersonTableViewDataSource * dataSource;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property void* displayedPerson;
-@property(copy) NSArray * displayedProperties;
-@property(retain) ABUIPerson * displayedUIPerson;
-@property(readonly) unsigned int hash;
-@property(readonly) ABPersonViewControllerHelper * helper;
-@property BOOL isLocation;
-@property(copy) NSString * message;
-@property(copy) NSString * messageDetail;
-@property(retain) UIFont * messageDetailFont;
-@property(retain) UIFont * messageFont;
-@property(retain) UIView * personHeaderView;
-@property BOOL savesNewContactOnSuspend;
-@property(retain) UIImage * shareLocationSnapshotImage;
-@property(copy) NSString * shareLocationURL;
-@property(copy) NSString * shareMessageBody;
-@property BOOL shareMessageBodyIsHTML;
-@property(copy) NSString * shareMessageSubject;
-@property(readonly) ABPersonTableViewSharingDelegate * sharingDelegate;
-@property BOOL shouldAlignPersonHeaderViewToImage;
-@property(retain) <ABStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
-@property <ABUnknownPersonViewControllerDelegate> * unknownPersonViewDelegate;
-@property(copy) id willTweetLocationCallback;
-@property(copy) id willWeiboLocationCallback;
+@property (nonatomic, readonly) ABPersonTableViewActionsDelegate *actionsDelegate;
+@property (nonatomic) void*addressBook;
+@property (nonatomic) BOOL allowsActions;
+@property (nonatomic) BOOL allowsAddingToAddressBook;
+@property (nonatomic) BOOL allowsConferencing;
+@property (nonatomic) BOOL allowsContactBlocking;
+@property (nonatomic) BOOL allowsOnlyFaceTimeActions;
+@property (nonatomic) BOOL allowsOnlyPhoneActions;
+@property (nonatomic) BOOL allowsSharing;
+@property (nonatomic, copy) NSString *alternateName;
+@property (nonatomic, copy) NSString *attribution;
+@property (nonatomic) BOOL badgeEmailPropertiesForMailVIP;
+@property (nonatomic, readonly) BOOL canShareContact;
+@property (nonatomic, retain) ABContactViewController *contactViewController;
+@property (nonatomic, retain) UIView *customFooterView;
+@property (nonatomic, retain) UIView *customHeaderView;
+@property (nonatomic, retain) UIView *customMessageView;
+@property (nonatomic, readonly) ABPersonTableViewDataSource *dataSource;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) void*displayedPerson;
+@property (nonatomic, copy) NSArray *displayedProperties;
+@property (nonatomic, retain) ABUIPerson *displayedUIPerson;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) ABPersonViewControllerHelper *helper;
+@property (nonatomic) BOOL isLocation;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, copy) NSString *messageDetail;
+@property (nonatomic, retain) UIFont *messageDetailFont;
+@property (nonatomic, retain) UIFont *messageFont;
+@property (nonatomic, retain) UIView *personHeaderView;
+@property (nonatomic) BOOL savesNewContactOnSuspend;
+@property (nonatomic, retain) UIImage *shareLocationSnapshotImage;
+@property (nonatomic, copy) NSString *shareLocationURL;
+@property (nonatomic, copy) NSString *shareMessageBody;
+@property (nonatomic) BOOL shareMessageBodyIsHTML;
+@property (nonatomic, copy) NSString *shareMessageSubject;
+@property (nonatomic, readonly) ABPersonTableViewSharingDelegate *sharingDelegate;
+@property (nonatomic) BOOL shouldAlignPersonHeaderViewToImage;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
+@property (nonatomic) <ABUnknownPersonViewControllerDelegate> *unknownPersonViewDelegate;
+@property (nonatomic, copy) id /* block */ willTweetLocationCallback;
+@property (nonatomic, copy) id /* block */ willWeiboLocationCallback;
+
+// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
 
 + (id)defaultLabelsForProperty:(int)arg1 person:(void*)arg2 addressBook:(void*)arg3;
 
@@ -72,8 +72,6 @@
 - (id)_findMatchingCardsForRecord:(void*)arg1;
 - (id)_forwarder;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
-- (id)_mf_initWithEmailAddress:(id)arg1;
-- (id)_mf_initWithRecentGroup:(id)arg1;
 - (void)_showCardViewerForIndex:(int)arg1;
 - (void)_showUnmergedContactsAlert;
 - (id)_unmergedAlertSheet;
@@ -184,8 +182,8 @@
 - (void)setShouldAlignPersonHeaderViewToImage:(BOOL)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)setUnknownPersonViewDelegate:(id)arg1;
-- (void)setWillTweetLocationCallback:(id)arg1;
-- (void)setWillWeiboLocationCallback:(id)arg1;
+- (void)setWillTweetLocationCallback:(id /* block */)arg1;
+- (void)setWillWeiboLocationCallback:(id /* block */)arg1;
 - (id)shareLocationSnapshotImage;
 - (id)shareLocationURL;
 - (id)shareMessageBody;
@@ -207,7 +205,12 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (id)willTweetLocationCallback;
-- (id)willWeiboLocationCallback;
+- (id /* block */)willTweetLocationCallback;
+- (id /* block */)willWeiboLocationCallback;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (id)_mf_initWithEmailAddress:(id)arg1;
+- (id)_mf_initWithRecentGroup:(id)arg1;
 
 @end

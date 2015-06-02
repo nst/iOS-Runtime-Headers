@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@class <RUSignInViewControllerDelegate>, MPUShapeView, NSString, SKUICircleProgressIndicator, UIBarButtonItem, UIButton, UILabel, UITapGestureRecognizer, UITextField;
-
 @interface RUSignInViewController : UIViewController <UIGestureRecognizerDelegate, UITextFieldDelegate> {
     int _accountChangeIgnoreCount;
     SKUICircleProgressIndicator *_activityIndicatorView;
@@ -34,11 +32,11 @@
     UILabel *_titleLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <RUSignInViewControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <RUSignInViewControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification:(id)arg1;

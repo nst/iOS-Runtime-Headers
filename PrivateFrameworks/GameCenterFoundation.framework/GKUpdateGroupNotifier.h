@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class GKUpdateGroup, NSError, NSLock, NSMutableArray;
-
 @interface GKUpdateGroupNotifier : NSObject {
     NSError *_error;
     GKUpdateGroup *_group;
@@ -11,12 +9,12 @@
     NSMutableArray *_updateQueue;
 }
 
-@property(retain) NSError * error;
-@property GKUpdateGroup * group;
-@property(retain) NSLock * lock;
-@property(retain) NSMutableArray * updateQueue;
+@property (retain) NSError *error;
+@property (nonatomic) GKUpdateGroup *group;
+@property (retain) NSLock *lock;
+@property (nonatomic, retain) NSMutableArray *updateQueue;
 
-- (void)addUpdate:(id)arg1 error:(id)arg2;
+- (void)addUpdate:(id /* block */)arg1 error:(id)arg2;
 - (void)addUpdatesFromGroup:(id)arg1;
 - (void)dealloc;
 - (id)error;

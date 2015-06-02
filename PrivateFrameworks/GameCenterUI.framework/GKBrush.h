@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKBrush : NSObject <NSCopying> {
-}
+@interface GKBrush : NSObject <NSCopying>
 
 + (id)brush;
 

@@ -7,8 +7,8 @@
     unsigned int mStyleIndex;
 }
 
-@property(readonly) Class sceneObjectClass;
-@property(readonly) unsigned int styleIndex;
+@property (nonatomic, readonly) Class sceneObjectClass;
+@property (nonatomic, readonly) unsigned int styleIndex;
 
 + (id)selectionPathWithClass:(Class)arg1 styleIndex:(unsigned int)arg2 selectionPath:(id)arg3;
 + (id)selectionPathWithClass:(Class)arg1 styleIndex:(unsigned int)arg2 type:(id)arg3 name:(id)arg4 arguments:(id)arg5;

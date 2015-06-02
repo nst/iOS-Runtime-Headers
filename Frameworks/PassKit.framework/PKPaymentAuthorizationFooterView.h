@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class NSLayoutConstraint, NSString, PKGlyphView, PKPaymentAuthorizationLayout, UIButton, UILabel, UIView;
-
 @interface PKPaymentAuthorizationFooterView : UIView {
     PKGlyphView *_glyphView;
     UILabel *_labelView;
@@ -18,9 +16,9 @@
     NSString *_title;
 }
 
-@property PKPaymentAuthorizationLayout * layout;
-@property(readonly) UIButton * payWithPasscodeButton;
-@property int state;
+@property (nonatomic) PKPaymentAuthorizationLayout *layout;
+@property (nonatomic, readonly) UIButton *payWithPasscodeButton;
+@property (nonatomic) int state;
 
 - (void)_createSubviews;
 - (void)_prepareConstraints;

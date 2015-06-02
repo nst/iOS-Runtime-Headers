@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSURL;
-
 @interface SKUIURLViewElement : SKUIViewElement {
     NSURL *_url;
 }
 
-@property(readonly) NSURL * URL;
+@property (nonatomic, readonly) NSURL *URL;
 
 - (void).cxx_destruct;
 - (id)URL;

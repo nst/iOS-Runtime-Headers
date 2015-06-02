@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
  */
 
-@class NSLock, NSString;
-
 @interface _ReachabilityRequest : NSObject {
     unsigned int _flags;
     NSString *_hostname;
@@ -14,7 +12,7 @@
     BOOL _receivedAtLeastOneCallback;
 }
 
-@property NSString * hostname;
+@property (nonatomic) NSString *hostname;
 
 - (void)addObserver:(id)arg1 selector:(SEL)arg2;
 - (void)dealloc;

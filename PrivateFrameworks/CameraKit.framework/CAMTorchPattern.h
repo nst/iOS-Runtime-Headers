@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@class CAAnimationGroup;
-
 @interface CAMTorchPattern : NSObject {
     CAAnimationGroup *__animationGroup;
     double __lastUpdateTime;
@@ -12,11 +10,11 @@
     float _torchLevel;
 }
 
-@property(readonly) CAAnimationGroup * _animationGroup;
-@property(readonly) double _lastUpdateTime;
-@property(readonly) int _type;
-@property double startTime;
-@property(readonly) float torchLevel;
+@property (nonatomic, readonly) CAAnimationGroup *_animationGroup;
+@property (nonatomic, readonly) double _lastUpdateTime;
+@property (nonatomic, readonly) int _type;
+@property (nonatomic) double startTime;
+@property (nonatomic, readonly) float torchLevel;
 
 - (void).cxx_destruct;
 - (id)_animationGroup;

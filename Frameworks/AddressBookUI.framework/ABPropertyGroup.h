@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABActionsController, ABCapabilitiesManager, NSMutableArray, NSMutableDictionary, NSString;
-
 @interface ABPropertyGroup : ABAbstractPropertyGroup {
     ABActionsController *_actionsController;
     BOOL _allowsVibrations;

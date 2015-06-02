@@ -9,7 +9,7 @@
     } _rangeOfString;
 }
 
-@property struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfString;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } rangeOfString;
 
 - (id)evaluate;
 - (id)initWithRangeOfString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

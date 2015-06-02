@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class NSString;
+@interface SUScriptPreviewOverlay : SUScriptObject
 
-@interface SUScriptPreviewOverlay : SUScriptObject {
-}
-
-@property(copy) id height;
-@property(copy) id right;
-@property(copy) id top;
-@property(copy) NSString * userInfo;
-@property(getter=isVisible,readonly) id visible;
-@property(copy) id width;
+@property (copy) id height;
+@property (copy) id right;
+@property (copy) id top;
+@property (copy) NSString *userInfo;
+@property (getter=isVisible, readonly) id visible;
+@property (copy) id width;
 
 + (void)initialize;
 + (id)webScriptNameForKeyName:(id)arg1;

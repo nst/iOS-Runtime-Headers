@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class UIActivityIndicatorView, UIButton, UIImageView, UILabel;
-
 @interface PKTableHeaderView : UIView {
     UIButton *_actionButton;
     UIActivityIndicatorView *_activityIndicator;
@@ -16,15 +14,15 @@
     float _topPadding;
 }
 
-@property(retain,readonly) UIButton * actionButton;
-@property(retain,readonly) UIActivityIndicatorView * activityIndicator;
-@property float bottomPadding;
-@property(getter=isBuddyPad) BOOL buddyPad;
-@property(retain,readonly) UIImageView * checkmarkView;
-@property(retain) UIImageView * imageView;
-@property(retain,readonly) UILabel * subtitleLabel;
-@property(retain,readonly) UILabel * titleLabel;
-@property float topPadding;
+@property (nonatomic, readonly, retain) UIButton *actionButton;
+@property (nonatomic, readonly, retain) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic) float bottomPadding;
+@property (getter=isBuddyPad, nonatomic) BOOL buddyPad;
+@property (nonatomic, readonly, retain) UIImageView *checkmarkView;
+@property (nonatomic, retain) UIImageView *imageView;
+@property (nonatomic, readonly, retain) UILabel *subtitleLabel;
+@property (nonatomic, readonly, retain) UILabel *titleLabel;
+@property (nonatomic) float topPadding;
 
 - (id)_subtitleFont;
 - (id)_titleFont;

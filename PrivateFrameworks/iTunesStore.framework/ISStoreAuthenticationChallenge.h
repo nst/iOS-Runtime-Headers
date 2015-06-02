@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class <NSURLAuthenticationChallengeSender>, NSString;
-
 @interface ISStoreAuthenticationChallenge : ISAuthenticationChallenge {
     int _failureCount;
     BOOL _hasPassword;
@@ -15,9 +13,9 @@
 
 @property int failureCount;
 @property BOOL hasPassword;
-@property(retain) NSString * password;
-@property <NSURLAuthenticationChallengeSender> * sender;
-@property(retain) NSString * user;
+@property (retain) NSString *password;
+@property <NSURLAuthenticationChallengeSender> *sender;
+@property (retain) NSString *user;
 @property BOOL userNameIsEditable;
 
 - (void)dealloc;

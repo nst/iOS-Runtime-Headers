@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHPresetImager : NSObject {
-}
+@interface TSCHPresetImager : NSObject
 
 + (void)drawGenericImageIntoContext:(struct CGContext { }*)arg1 size:(struct CGSize { float x1; float x2; })arg2 preset:(id)arg3 usingRepresentativeSpecificSeriesFillProperties:(id)arg4 outShouldCache:(BOOL*)arg5;
 + (id)presetImagerForChartType:(id)arg1;

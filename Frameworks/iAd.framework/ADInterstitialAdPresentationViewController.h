@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/iAd.framework/iAd
  */
 
-@class ADCountdownButton, ADInterstitialAd;
-
 @interface ADInterstitialAdPresentationViewController : UIViewController {
     ADCountdownButton *_closeButton;
     ADInterstitialAd *_interstitialAd;
 }
 
-@property(retain) ADCountdownButton * closeButton;
-@property(readonly) ADInterstitialAd * interstitialAd;
+@property (nonatomic, retain) ADCountdownButton *closeButton;
+@property (nonatomic, readonly) ADInterstitialAd *interstitialAd;
 
 - (id)closeButton;
 - (void)dealloc;

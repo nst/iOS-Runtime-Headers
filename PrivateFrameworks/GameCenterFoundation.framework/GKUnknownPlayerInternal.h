@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKUnknownPlayerInternal : GKSpecialPlayerInternal {
-}
+@interface GKUnknownPlayerInternal : GKSpecialPlayerInternal
 
 - (BOOL)isUnknownPlayer;
 - (id)playerID;

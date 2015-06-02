@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBProcessDelegate>, BSProcessDeathWatcher, FBProcessState, FBWorkspace, NSHashTable, NSObject<OS_dispatch_queue>, NSString;
-
 @interface FBProcess : NSObject {
     NSString *_bundleIdentifier;
     NSObject<OS_dispatch_queue> *_callOutQueue;
@@ -19,25 +17,25 @@
     FBWorkspace *_workspace;
 }
 
-@property(copy,readonly) NSString * bundleIdentifier;
-@property(getter=_queue_delegate) <FBProcessDelegate> * delegate;
-@property(copy,readonly) NSString * jobLabel;
-@property(copy,readonly) NSString * name;
-@property(getter=_queue_jobLabel,setter=_queue_setJobLabel:,copy) NSString * queue_jobLabel;
-@property(getter=_queue_name,setter=_queue_setName:,copy) NSString * queue_name;
-@property(getter=_queue_pid,setter=_queue_setPid:) int queue_pid;
-@property(getter=_queue_isRunning,setter=_queue_setRunning:) BOOL queue_running;
-@property(getter=_queue_taskState,setter=_queue_setTaskState:) int queue_taskState;
-@property(getter=_queue_visibility,setter=_queue_setVisibility:) int queue_visibility;
-@property(copy,readonly) FBProcessState * state;
-@property(retain,readonly) FBWorkspace * workspace;
+@property (nonatomic, readonly, copy) NSString *bundleIdentifier;
+@property (getter=_queue_delegate, nonatomic) <FBProcessDelegate> *delegate;
+@property (nonatomic, readonly, copy) NSString *jobLabel;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (getter=_queue_jobLabel, setter=_queue_setJobLabel:, nonatomic, copy) NSString *queue_jobLabel;
+@property (getter=_queue_name, setter=_queue_setName:, nonatomic, copy) NSString *queue_name;
+@property (getter=_queue_pid, setter=_queue_setPid:, nonatomic) int queue_pid;
+@property (getter=_queue_isRunning, setter=_queue_setRunning:, nonatomic) BOOL queue_running;
+@property (getter=_queue_taskState, setter=_queue_setTaskState:, nonatomic) int queue_taskState;
+@property (getter=_queue_visibility, setter=_queue_setVisibility:, nonatomic) int queue_visibility;
+@property (nonatomic, readonly, copy) FBProcessState *state;
+@property (nonatomic, readonly, retain) FBWorkspace *workspace;
 
 - (id)_createWorkspace;
 - (id)_queue;
 - (void)_queue_callExitObservers;
 - (id)_queue_delegate;
 - (int)_queue_effectiveVisibilityForVisibility:(int)arg1;
-- (void)_queue_enumerateObserversWithBlock:(id)arg1;
+- (void)_queue_enumerateObserversWithBlock:(id /* block */)arg1;
 - (BOOL)_queue_isForeground;
 - (BOOL)_queue_isRunning;
 - (id)_queue_jobLabel;
@@ -52,7 +50,7 @@
 - (void)_queue_setVisibility:(int)arg1;
 - (int)_queue_taskState;
 - (void)_queue_toggleProcessDeathObserver:(BOOL)arg1;
-- (void)_queue_updateStateWithBlock:(id)arg1;
+- (void)_queue_updateStateWithBlock:(id /* block */)arg1;
 - (int)_queue_visibility;
 - (id)_workspace;
 - (void)addObserver:(id)arg1;

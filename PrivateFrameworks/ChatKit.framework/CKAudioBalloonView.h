@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class CKAudioProgressView, CKWaveformProgressView, NSString, UILabel;
-
 @interface CKAudioBalloonView : CKColoredBalloonView <CKAudioBalloonView> {
     double _duration;
     BOOL _played;
@@ -15,20 +13,20 @@
     CKWaveformProgressView *_waveformProgressView;
 }
 
-@property(getter=isControlHidden) BOOL controlHidden;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property double duration;
-@property(readonly) unsigned int hash;
-@property(getter=isPlayed) BOOL played;
-@property(getter=isPlaying) BOOL playing;
-@property(retain) CKAudioProgressView * progressView;
-@property(readonly) Class superclass;
-@property double time;
-@property(copy) NSString * timeFormat;
-@property(retain) UILabel * timeLabel;
-@property int waveformContentMode;
-@property(retain) CKWaveformProgressView * waveformProgressView;
+@property (getter=isControlHidden, nonatomic) BOOL controlHidden;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double duration;
+@property (readonly) unsigned int hash;
+@property (getter=isPlayed, nonatomic) BOOL played;
+@property (getter=isPlaying, nonatomic) BOOL playing;
+@property (nonatomic, retain) CKAudioProgressView *progressView;
+@property (readonly) Class superclass;
+@property (nonatomic) double time;
+@property (nonatomic, copy) NSString *timeFormat;
+@property (nonatomic, retain) UILabel *timeLabel;
+@property (nonatomic) int waveformContentMode;
+@property (nonatomic, retain) CKWaveformProgressView *waveformProgressView;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)configureForMediaObject:(id)arg1 previewWidth:(float)arg2 orientation:(BOOL)arg3;

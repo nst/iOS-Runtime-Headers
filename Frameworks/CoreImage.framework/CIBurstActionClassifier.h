@@ -15,10 +15,10 @@
     float testMaxRegistrationErrorSkewness;
     float testMeanPeakRegistrationError;
     float testMinRegionOfInterestSize;
-    double testVector[7];
+    double testVector;
 }
 
-@property struct __SVMParameters { struct __SVMScaleOffset { float x_1_1_1; float x_1_1_2; } x1[7]; double x2; double x3; int x4; int x5; struct CIBurstSupportVector {} *x6; struct CIBurstSupportVector {} *x7; }* svmParameters;
+@property struct __SVMParameters { struct __SVMScaleOffset { float x_1_1_1; float x_1_1_2; } x1[7]; double x2; double x3; int x4; int x5; struct CIBurstSupportVector {} *x6; struct CIBurstSupportVector {} *x7; }*svmParameters;
 @property float testAverageCameraTravelDistance;
 @property float testAverageRegistrationErrorSkewness;
 @property float testBeginningVsEndAEMatrixVsAverageAdjacentAEMatrix;

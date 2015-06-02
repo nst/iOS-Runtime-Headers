@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDVPNSession : PBCodable <NSCopying> {
     BOOL _appVpnUsed;
     BOOL _connectFailed;
@@ -40,38 +38,38 @@
     unsigned int _userAuthenMethod;
 }
 
-@property BOOL appVpnUsed;
-@property BOOL connectFailed;
-@property unsigned int disconnectReason;
-@property unsigned int duration;
-@property BOOL hasAppVpnUsed;
-@property BOOL hasConnectFailed;
-@property BOOL hasDisconnectReason;
-@property BOOL hasDuration;
-@property BOOL hasInBytes;
-@property BOOL hasIpv4Installed;
-@property BOOL hasIpv6Installed;
-@property BOOL hasOutBytes;
-@property(readonly) BOOL hasProtocol;
-@property BOOL hasProxyInstalled;
-@property BOOL hasReassertCount;
-@property BOOL hasSystemAuthenMethod;
-@property BOOL hasTimestamp;
-@property BOOL hasTriggerTrafficClass;
-@property BOOL hasTriggerType;
-@property BOOL hasUserAuthenMethod;
-@property unsigned long long inBytes;
-@property unsigned int ipv4Installed;
-@property unsigned int ipv6Installed;
-@property unsigned long long outBytes;
-@property(retain) NSString * protocol;
-@property BOOL proxyInstalled;
-@property unsigned int reassertCount;
-@property unsigned int systemAuthenMethod;
-@property unsigned long long timestamp;
-@property unsigned int triggerTrafficClass;
-@property unsigned int triggerType;
-@property unsigned int userAuthenMethod;
+@property (nonatomic) BOOL appVpnUsed;
+@property (nonatomic) BOOL connectFailed;
+@property (nonatomic) unsigned int disconnectReason;
+@property (nonatomic) unsigned int duration;
+@property (nonatomic) BOOL hasAppVpnUsed;
+@property (nonatomic) BOOL hasConnectFailed;
+@property (nonatomic) BOOL hasDisconnectReason;
+@property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasInBytes;
+@property (nonatomic) BOOL hasIpv4Installed;
+@property (nonatomic) BOOL hasIpv6Installed;
+@property (nonatomic) BOOL hasOutBytes;
+@property (nonatomic, readonly) BOOL hasProtocol;
+@property (nonatomic) BOOL hasProxyInstalled;
+@property (nonatomic) BOOL hasReassertCount;
+@property (nonatomic) BOOL hasSystemAuthenMethod;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTriggerTrafficClass;
+@property (nonatomic) BOOL hasTriggerType;
+@property (nonatomic) BOOL hasUserAuthenMethod;
+@property (nonatomic) unsigned long long inBytes;
+@property (nonatomic) unsigned int ipv4Installed;
+@property (nonatomic) unsigned int ipv6Installed;
+@property (nonatomic) unsigned long long outBytes;
+@property (nonatomic, retain) NSString *protocol;
+@property (nonatomic) BOOL proxyInstalled;
+@property (nonatomic) unsigned int reassertCount;
+@property (nonatomic) unsigned int systemAuthenMethod;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int triggerTrafficClass;
+@property (nonatomic) unsigned int triggerType;
+@property (nonatomic) unsigned int userAuthenMethod;
 
 - (BOOL)appVpnUsed;
 - (BOOL)connectFailed;

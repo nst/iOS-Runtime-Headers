@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMutableArray, NSString, UIColor, UIView;
-
 @interface UISegmentedControl : UIControl <NSCoding, _UIBasicAnimationFactory> {
     BOOL __hasTranslucentOptionsBackground;
     id _appearanceStorage;
@@ -30,17 +28,19 @@
     int _selectedSegment;
 }
 
-@property(setter=_setTranslucentOptionsBackground:) BOOL _hasTranslucentOptionsBackground;
-@property BOOL apportionsSegmentWidthsByContent;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(getter=isMomentary) BOOL momentary;
-@property(readonly) unsigned int numberOfSegments;
-@property int segmentedControlStyle;
-@property int selectedSegmentIndex;
-@property(readonly) Class superclass;
-@property(retain) UIColor * tintColor;
+@property (setter=_setTranslucentOptionsBackground:, nonatomic) BOOL _hasTranslucentOptionsBackground;
+@property (nonatomic) BOOL apportionsSegmentWidthsByContent;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (getter=isMomentary, nonatomic) BOOL momentary;
+@property (nonatomic, readonly) unsigned int numberOfSegments;
+@property (nonatomic) int segmentedControlStyle;
+@property (nonatomic) int selectedSegmentIndex;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *tintColor;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_modernBackgroundSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
 + (id)_modernDividerImage;
@@ -49,7 +49,7 @@
 + (float)defaultHeightForStyle:(int)arg1;
 + (float)defaultHeightForStyle:(int)arg1 size:(int)arg2;
 
-- (void)_animateContentChangeWithAnimations:(id)arg1 completion:(id)arg2;
+- (void)_animateContentChangeWithAnimations:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)_attributedTitleForSegmentAtIndex:(unsigned int)arg1;
 - (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
 - (id)_badgeValueForSegmentAtIndex:(unsigned int)arg1;
@@ -67,7 +67,6 @@
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)_isInMiniBar;
 - (BOOL)_isInTranslucentToolbar;
-- (void)_mk_setItems:(id)arg1;
 - (id)_optionsBackgroundImage;
 - (BOOL)_optionsShadowHidden;
 - (void)_populateArchivedSubviews:(id)arg1;
@@ -87,7 +86,7 @@
 - (void)_setNeedsAppearanceUpdate;
 - (void)_setOptionsBackgroundImage:(id)arg1;
 - (void)_setOptionsShadowHidden:(BOOL)arg1;
-- (void)_setSegmentedControlAppearance:(struct { id x1; float x2; float x3; struct { id x_4_1_1; id x_4_1_2; id x_4_1_3; id x_4_1_4; id x_4_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_4_1_6; } x4; struct { id x_5_1_1; id x_5_1_2; id x_5_1_3; id x_5_1_4; id x_5_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_5_1_6; } x5; struct { id x_6_1_1; id x_6_1_2; id x_6_1_3; id x_6_1_4; id x_6_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_6_1_6; } x6; struct { id x_7_1_1; id x_7_1_2; id x_7_1_3; id x_7_1_4; id x_7_1_5; struct CGSize { float x_6_2_1; float x_6_2_2; } x_7_1_6; } x7; BOOL x8; }*)arg1;
+- (void)_setSegmentedControlAppearance:(struct { id x1; float x2; struct { id x_3_1_1; id x_3_1_2; id x_3_1_3; unsigned char x_3_1_4; /* Warning: Unrecognized filer type: 'G' using 'void*' */ void*x_3_1_5; unsigned short x_3_1_6; int x_3_1_7; void*x_3_1_8; void*x_3_1_9; void*x_3_1_10; float x_3_1_11; float x_3_1_12; } x3; }*)arg1;
 - (void)_setSelected:(BOOL)arg1 forSegmentAtIndex:(int)arg2 forceInfoDisplay:(BOOL)arg3;
 - (void)_setSelectedSegmentIndex:(int)arg1 notify:(BOOL)arg2;
 - (void)_setSelectedSegmentIndex:(int)arg1 notify:(BOOL)arg2 animate:(BOOL)arg3;
@@ -178,7 +177,6 @@
 - (BOOL)shouldTrack;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;
-- (void)sizeToFitWithMinimumSegmentWidth:(float)arg1 maximumTotalWidth:(float)arg2;
 - (id)titleForSegment:(unsigned int)arg1;
 - (id)titleForSegmentAtIndex:(unsigned int)arg1;
 - (id)titleTextAttributesForState:(unsigned int)arg1;
@@ -192,5 +190,13 @@
 - (id)viewForBaselineLayout;
 - (float)widthForSegment:(unsigned int)arg1;
 - (float)widthForSegmentAtIndex:(unsigned int)arg1;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (void)_mk_setItems:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (void)sizeToFitWithMinimumSegmentWidth:(float)arg1 maximumTotalWidth:(float)arg2;
 
 @end

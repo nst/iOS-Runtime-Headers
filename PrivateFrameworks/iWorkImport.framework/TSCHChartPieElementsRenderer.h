@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSIndexSet;
-
 @interface TSCHChartPieElementsRenderer : TSCHRenderer {
     BOOL mDidMoveDuringTouchIfNotThenRotateChartForDemo;
     float mHitExplosion;

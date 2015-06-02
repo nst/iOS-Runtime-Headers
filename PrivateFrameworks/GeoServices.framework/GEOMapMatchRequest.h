@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEOMapMatchRequest : PBRequest <NSCopying> {
     NSMutableArray *_locations;
     NSMutableArray *_waypoints;
 }
 
-@property(retain) NSMutableArray * locations;
-@property(retain) NSMutableArray * waypoints;
+@property (nonatomic, retain) NSMutableArray *locations;
+@property (nonatomic, retain) NSMutableArray *waypoints;
 
 - (void)addLocation:(id)arg1;
 - (void)addWaypoint:(id)arg1;

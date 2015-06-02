@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABMembersControllerDelegate>, <ABMembersControllerSearchCompletionDelegate>, <ABStyleProvider>, ABMembersDataSource, ABMembersFilteredDataSource, NSIndexPath, NSOperationQueue, NSString, UISearchBar, UISearchController, UISearchDisplayController, UITableView, UITableViewController, UIViewController, _UIContentUnavailableView, _UINavigationControllerPalette;
-
 @interface ABMembersController : ABContentController <ABMembersDataSourceDelegate, ABSearchOperationDelegate, UISearchBarDelegate, UISearchControllerDelegate, UISearchDisplayDelegate, UISearchResultsUpdating, UITextFieldDelegate> {
     unsigned int _cellsCreated;
     _UIContentUnavailableView *_contentUnavailableView;
@@ -29,20 +27,20 @@
     UITableView *_tableView;
 }
 
-@property(readonly) NSString * currentSearchText;
-@property(readonly) UITableView * currentTableView;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isServerSearchGroup;
-@property <ABMembersControllerDelegate> * membersControllerDelegate;
-@property(readonly) UISearchBar * searchBar;
-@property <ABMembersControllerSearchCompletionDelegate> * searchCompletionDelegate;
-@property(getter=isSearchEnabled) BOOL searchEnabled;
-@property(retain) _UINavigationControllerPalette * searchPalette;
-@property(readonly) UITableView * searchResultsTableView;
-@property(retain) <ABStyleProvider> * styleProvider;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) NSString *currentSearchText;
+@property (nonatomic, readonly) UITableView *currentTableView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isServerSearchGroup;
+@property (nonatomic) <ABMembersControllerDelegate> *membersControllerDelegate;
+@property (nonatomic, readonly) UISearchBar *searchBar;
+@property (nonatomic) <ABMembersControllerSearchCompletionDelegate> *searchCompletionDelegate;
+@property (getter=isSearchEnabled, nonatomic) BOOL searchEnabled;
+@property (nonatomic, retain) _UINavigationControllerPalette *searchPalette;
+@property (readonly) UITableView *searchResultsTableView;
+@property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 + (id)newNameSearchOperationWithString:(id)arg1 contactsFilter:(id)arg2 addressBook:(void*)arg3 delegate:(id)arg4 inOutSequenceNumber:(unsigned int*)arg5;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDSourceEntity : HDHealthEntity {
-}
+@interface HDSourceEntity : HDHealthEntity
 
 + (id)_insertSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(BOOL)arg4 productType:(id)arg5 provenance:(int)arg6 syncAnchor:(id)arg7 database:(id)arg8;
 + (id)_predicateForSourceRepresentingCurrentDevice;

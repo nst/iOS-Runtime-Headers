@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@class NSNumber;
-
 @interface CICode128BarcodeGenerator : CICodeGenerator {
     NSNumber *inputQuietSpace;
 }
 
-@property(copy) NSNumber * inputQuietSpace;
+@property (nonatomic, copy) NSNumber *inputQuietSpace;
 
 + (id)customAttributes;
 

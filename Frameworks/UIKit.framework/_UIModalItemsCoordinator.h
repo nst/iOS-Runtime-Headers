@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMapTable, _UIModalItemAppViewController, _UIModalItemHostingWindow, _UIModalItemSBViewController;
-
 @interface _UIModalItemsCoordinator : NSObject {
     _UIModalItemHostingWindow *__hostingWindowForAlerts;
     _UIModalItemHostingWindow *__hostingWindowForSBAlerts;
@@ -13,12 +11,12 @@
     NSMapTable *_sessionForItemMapTable;
 }
 
-@property(retain) _UIModalItemHostingWindow * _hostingWindowForAlerts;
-@property(retain) _UIModalItemHostingWindow * _hostingWindowForSBAlerts;
-@property(retain) _UIModalItemAppViewController * _viewControllerForAlerts;
-@property(retain) _UIModalItemSBViewController * _viewControllerForSBAlerts;
-@property(retain) NSMapTable * presentingSessionsMapTable;
-@property(retain) NSMapTable * sessionForItemMapTable;
+@property (nonatomic, retain) _UIModalItemHostingWindow *_hostingWindowForAlerts;
+@property (nonatomic, retain) _UIModalItemHostingWindow *_hostingWindowForSBAlerts;
+@property (nonatomic, retain) _UIModalItemAppViewController *_viewControllerForAlerts;
+@property (nonatomic, retain) _UIModalItemSBViewController *_viewControllerForSBAlerts;
+@property (nonatomic, retain) NSMapTable *presentingSessionsMapTable;
+@property (nonatomic, retain) NSMapTable *sessionForItemMapTable;
 
 + (void)_desaturateUIForSB;
 + (void)_getRidOfViewControllerForAlerts;

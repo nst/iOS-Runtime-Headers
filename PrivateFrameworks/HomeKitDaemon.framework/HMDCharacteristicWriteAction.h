@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@class HMDActionSet, HMDCharacteristic, NSUUID;
-
 @interface HMDCharacteristicWriteAction : NSObject <NSSecureCoding> {
     HMDActionSet *_actionSet;
     HMDCharacteristic *_characteristic;
@@ -11,10 +9,10 @@
     NSUUID *_uuid;
 }
 
-@property(readonly) HMDActionSet * actionSet;
-@property(readonly) HMDCharacteristic * characteristic;
-@property(copy) id targetValue;
-@property(copy,readonly) NSUUID * uuid;
+@property (nonatomic, readonly) HMDActionSet *actionSet;
+@property (nonatomic, readonly) HMDCharacteristic *characteristic;
+@property (nonatomic, copy) id targetValue;
+@property (nonatomic, readonly, copy) NSUUID *uuid;
 
 + (BOOL)supportsSecureCoding;
 

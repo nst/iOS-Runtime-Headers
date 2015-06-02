@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class APSConnection, NSMapTable, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_queue>, NSString;
-
 @interface CKDPushConnection : NSObject <APSConnectionDelegate> {
     APSConnection *_apsConnection;
     NSString *_apsEnvironmentString;
@@ -17,20 +15,20 @@
     NSMutableDictionary *_topicsToWaitingAppContainerTuples;
 }
 
-@property(retain) APSConnection * apsConnection;
-@property(retain) NSString * apsEnvironmentString;
-@property(retain) NSMapTable * callbacks;
-@property BOOL darkWakeEnabled;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) NSMutableSet * enabledTopics;
-@property(readonly) unsigned int hash;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
-@property(readonly) Class superclass;
-@property(retain) NSMutableDictionary * tokensCache;
-@property(retain) NSMutableSet * topicsAwaitingPrivateToken;
-@property(retain) NSMutableSet * topicsAwaitingPublicToken;
-@property(retain) NSMutableDictionary * topicsToWaitingAppContainerTuples;
+@property (nonatomic, retain) APSConnection *apsConnection;
+@property (nonatomic, retain) NSString *apsEnvironmentString;
+@property (nonatomic, retain) NSMapTable *callbacks;
+@property (nonatomic) BOOL darkWakeEnabled;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableSet *enabledTopics;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableDictionary *tokensCache;
+@property (nonatomic, retain) NSMutableSet *topicsAwaitingPrivateToken;
+@property (nonatomic, retain) NSMutableSet *topicsAwaitingPublicToken;
+@property (nonatomic, retain) NSMutableDictionary *topicsToWaitingAppContainerTuples;
 
 + (id)sharedConnectionForAPSEnvironmentString:(id)arg1 darkWakeEnabled:(BOOL)arg2;
 

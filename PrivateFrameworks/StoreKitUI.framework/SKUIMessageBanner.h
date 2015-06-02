@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class <SKUIMessageBannerDelegate>, NSAttributedString, NSString, UIButton, UILabel, UIView;
-
 @interface SKUIMessageBanner : UIView {
     NSAttributedString *_attributedMessage;
     UIView *_borderView;
@@ -13,10 +11,10 @@
     UILabel *_label;
 }
 
-@property(retain) NSAttributedString * attributedMessage;
-@property <SKUIMessageBannerDelegate> * delegate;
-@property(retain) NSString * message;
-@property BOOL showsClearButton;
+@property (nonatomic, retain) NSAttributedString *attributedMessage;
+@property (nonatomic) <SKUIMessageBannerDelegate> *delegate;
+@property (nonatomic, retain) NSString *message;
+@property (nonatomic) BOOL showsClearButton;
 
 - (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;

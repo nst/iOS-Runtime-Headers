@@ -6,7 +6,7 @@
     id _internal;
 }
 
-@property(readonly) struct { double x1; double x2; } ambientPressure;
+@property (nonatomic, readonly) struct { double x1; double x2; } ambientPressure;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class NSString;
-
 @interface YTTimeQualifiedVideoDataSource : YTVideoDataSource {
     NSString *_timeQualifier;
 }

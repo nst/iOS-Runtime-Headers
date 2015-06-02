@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIAlertControllerAlertPresentationController : _UIAlertControllerPresentationController {
-}
+@interface _UIAlertControllerAlertPresentationController : _UIAlertControllerPresentationController
 
 - (id)_presentationControllerForTraitCollection:(id)arg1;
 - (int)attributeToAlignAlertControllerViewBy;

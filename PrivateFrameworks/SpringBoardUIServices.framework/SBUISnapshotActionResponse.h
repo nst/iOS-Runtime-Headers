@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBUISnapshotActionResponse : BSActionResponse {
-}
+@interface SBUISnapshotActionResponse : BSActionResponse
 
 - (id)_initWithIOSurfaceAssertion:(id)arg1;
 - (id)initWithIOSurfaceRef:(struct __IOSurface { }*)arg1;

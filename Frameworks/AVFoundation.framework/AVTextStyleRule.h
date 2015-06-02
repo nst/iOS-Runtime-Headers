@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVTextStyleRuleInternal, NSDictionary, NSString;
-
 @interface AVTextStyleRule : NSObject <NSCopying> {
     AVTextStyleRuleInternal *_textStyleRule;
 }
 
-@property(readonly) NSDictionary * textMarkupAttributes;
-@property(readonly) NSString * textSelector;
+@property (nonatomic, readonly) NSDictionary *textMarkupAttributes;
+@property (nonatomic, readonly) NSString *textSelector;
 
 + (id)propertyListForTextStyleRules:(id)arg1;
 + (id)textStyleRuleWithTextMarkupAttributes:(id)arg1;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSData, NSHashTable, NSMutableArray, NSMutableIndexSet, NSMutableString;
-
 @interface SGHtmlParserDissectorTask : NSObject {
     NSMutableArray *_activeRegionIndexSetStack;
     NSMutableArray *_activeRegionStartPositionStack;

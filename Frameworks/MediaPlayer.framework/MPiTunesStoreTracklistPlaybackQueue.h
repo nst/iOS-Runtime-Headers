@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray;
-
 @interface MPiTunesStoreTracklistPlaybackQueue : MPRemotePlaybackQueue {
     unsigned int _shuffleType;
     NSArray *_storeIDs;
 }
 
-@property(readonly) unsigned int shuffleType;
-@property(readonly) NSArray * storeIDs;
+@property (nonatomic, readonly) unsigned int shuffleType;
+@property (nonatomic, readonly) NSArray *storeIDs;
 
 - (void).cxx_destruct;
 - (id)description;

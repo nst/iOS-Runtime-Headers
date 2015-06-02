@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class NSPointerArray;
-
 @interface GKConstraintUpdateController : NSObject {
     NSPointerArray *_constraintsToUpdate;
 }
 
-@property(retain) NSPointerArray * constraintsToUpdate;
+@property (nonatomic, retain) NSPointerArray *constraintsToUpdate;
 
 + (id)sharedController;
 

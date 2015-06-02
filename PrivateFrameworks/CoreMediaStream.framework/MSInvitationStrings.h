@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSString;
-
 @interface MSInvitationStrings : NSObject {
     NSString *_body;
     NSString *_title;
 }
 
-@property(retain) NSString * body;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSString *body;
+@property (nonatomic, retain) NSString *title;
 
 + (id)invitationStringsWithTitle:(id)arg1 body:(id)arg2;
 

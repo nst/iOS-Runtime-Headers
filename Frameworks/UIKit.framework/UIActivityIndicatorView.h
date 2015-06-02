@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, NSString, UIColor, UIImageView;
-
 @interface UIActivityIndicatorView : UIView <NSCoding> {
     int _activityIndicatorViewStyle;
     int _actualActivityIndicatorViewStyle;
@@ -31,24 +29,24 @@
     float _width;
 }
 
-@property int activityIndicatorViewStyle;
-@property(readonly) NSString * artBackupKeyString;
-@property BOOL clockWise;
-@property(retain) UIColor * color;
+@property (nonatomic) int activityIndicatorViewStyle;
+@property (nonatomic, readonly) NSString *artBackupKeyString;
+@property (nonatomic) BOOL clockWise;
+@property (nonatomic, retain) UIColor *color;
 @property BOOL hasShadow;
-@property BOOL hidesWhenStopped;
-@property float innerRadius;
-@property(readonly) UIImageView * internalView;
-@property(retain) UIColor * shadowColor;
-@property struct CGSize { float x1; float x2; } shadowOffset;
+@property (nonatomic) BOOL hidesWhenStopped;
+@property (nonatomic) float innerRadius;
+@property (nonatomic, readonly) UIImageView *internalView;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
 @property BOOL spinning;
-@property float spinningDuration;
-@property int spokeCount;
-@property int spokeFrameRatio;
-@property(readonly) NSArray * spokeImages;
-@property BOOL useArtwork;
-@property BOOL useOutlineShadow;
-@property float width;
+@property (nonatomic) float spinningDuration;
+@property (nonatomic) int spokeCount;
+@property (nonatomic) int spokeFrameRatio;
+@property (readonly) NSArray *spokeImages;
+@property (nonatomic) BOOL useArtwork;
+@property (nonatomic) BOOL useOutlineShadow;
+@property (nonatomic) float width;
 
 + (BOOL)_isModernStyle:(int)arg1;
 + (id)_loadResourcesForStyle:(int)arg1;

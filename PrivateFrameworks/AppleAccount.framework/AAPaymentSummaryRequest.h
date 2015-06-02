@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@class NSString;
-
 @interface AAPaymentSummaryRequest : AAAppleIDSettingsRequest {
     NSString *_secondaryAuthToken;
 }
 
-@property(copy) NSString * secondaryAuthToken;
+@property (nonatomic, copy) NSString *secondaryAuthToken;
 
 + (Class)responseClass;
 

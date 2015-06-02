@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@interface _MPUMarqueeContentView : UIView {
-}
+@interface _MPUMarqueeContentView : UIView
 
 + (Class)layerClass;
 

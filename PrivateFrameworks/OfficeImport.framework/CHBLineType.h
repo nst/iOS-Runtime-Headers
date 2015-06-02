@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface CHBLineType : NSObject {
-}
+@interface CHBLineType : NSObject
 
 + (void)readWithState:(id)arg1 chartType:(id)arg2;
 

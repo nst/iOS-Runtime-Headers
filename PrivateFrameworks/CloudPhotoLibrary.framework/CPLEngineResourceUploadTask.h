@@ -2,63 +2,37 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <CPLEngineTransportTask>, CPLResource;
-
 @interface CPLEngineResourceUploadTask : CPLResourceTransferTask {
     BOOL _backgroundTask;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _cancelHandler;
-
+    id /* block */ _cancelHandler;
     CPLResource *_cloudResource;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _didStartHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _launchHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressHandler;
-
+    id /* block */ _completionHandler;
+    id /* block */ _didStartHandler;
+    id /* block */ _launchHandler;
+    id /* block */ _progressHandler;
     <CPLEngineTransportTask> *_transportTask;
 }
 
-@property(getter=isBackgroundTask) BOOL backgroundTask;
-@property(readonly) id cancelHandler;
-@property(retain) CPLResource * cloudResource;
-@property(readonly) id completionHandler;
-@property(readonly) id didStartHandler;
-@property(readonly) id launchHandler;
-@property(readonly) id progressHandler;
-@property(retain) <CPLEngineTransportTask> * transportTask;
+@property (getter=isBackgroundTask, nonatomic) BOOL backgroundTask;
+@property (nonatomic, readonly) id /* block */ cancelHandler;
+@property (nonatomic, retain) CPLResource *cloudResource;
+@property (nonatomic, readonly) id /* block */ completionHandler;
+@property (nonatomic, readonly) id /* block */ didStartHandler;
+@property (nonatomic, readonly) id /* block */ launchHandler;
+@property (nonatomic, readonly) id /* block */ progressHandler;
+@property (nonatomic, retain) <CPLEngineTransportTask> *transportTask;
 
 - (void).cxx_destruct;
-- (id)cancelHandler;
+- (id /* block */)cancelHandler;
 - (void)cancelTask;
 - (id)cloudResource;
-- (id)completionHandler;
-- (id)didStartHandler;
-- (id)initWithLaunchHandler:(id)arg1 cancelHandler:(id)arg2 didStartHandler:(id)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
+- (id /* block */)completionHandler;
+- (id /* block */)didStartHandler;
+- (id)initWithLaunchHandler:(id /* block */)arg1 cancelHandler:(id /* block */)arg2 didStartHandler:(id /* block */)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (BOOL)isBackgroundTask;
 - (void)launch;
-- (id)launchHandler;
-- (id)progressHandler;
+- (id /* block */)launchHandler;
+- (id /* block */)progressHandler;
 - (void)setBackgroundTask:(BOOL)arg1;
 - (void)setCloudResource:(id)arg1;
 - (void)setTransportTask:(id)arg1;

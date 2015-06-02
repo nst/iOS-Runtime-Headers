@@ -7,8 +7,8 @@
     long long _value;
 }
 
-@property long long mask;
-@property long long value;
+@property (nonatomic) long long mask;
+@property (nonatomic) long long value;
 
 + (id)predicateWithProperty:(id)arg1 mask:(long long)arg2 value:(long long)arg3;
 

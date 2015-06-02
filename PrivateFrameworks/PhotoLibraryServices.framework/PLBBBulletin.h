@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSArray, NSDate, NSDictionary, NSMutableSet, NSString;
-
 @interface PLBBBulletin : NSObject {
     NSString *_albumCloudGUID;
     NSString *_albumTitle;
@@ -39,28 +37,28 @@
     BOOL _suppressAlert;
 }
 
-@property(readonly) NSString * albumCloudGUID;
-@property(readonly) NSString * albumUUID;
-@property(readonly) BOOL allAssetsAreFullResolution;
-@property(readonly) long long bulletinType;
-@property(readonly) BOOL canMergeWithPersistedBulletins;
-@property(readonly) double completionPercentage;
-@property(readonly) NSDate * date;
-@property(readonly) NSString * destinationURLString;
-@property(readonly) NSDictionary * dictionaryRepresentation;
-@property(readonly) NSDate * expirationDate;
-@property(readonly) BOOL hasThumbnail;
-@property(readonly) NSString * mainAssetUUID;
-@property(readonly) NSString * message;
-@property(copy) NSDate * originalDate;
+@property (readonly) NSString *albumCloudGUID;
+@property (readonly) NSString *albumUUID;
+@property (readonly) BOOL allAssetsAreFullResolution;
+@property (readonly) long long bulletinType;
+@property (readonly) BOOL canMergeWithPersistedBulletins;
+@property (readonly) double completionPercentage;
+@property (readonly) NSDate *date;
+@property (readonly) NSString *destinationURLString;
+@property (readonly) NSDictionary *dictionaryRepresentation;
+@property (readonly) NSDate *expirationDate;
+@property (readonly) BOOL hasThumbnail;
+@property (readonly) NSString *mainAssetUUID;
+@property (readonly) NSString *message;
+@property (copy) NSDate *originalDate;
 @property unsigned int originalRecordID;
 @property unsigned int recordID;
 @property unsigned int replacedBulletinRecordID;
-@property(readonly) NSString * senderEmailAddress;
+@property (readonly) NSString *senderEmailAddress;
 @property BOOL suppressAlert;
-@property(readonly) NSArray * suppressionContexts;
-@property(readonly) BOOL thumbnailAssetIsPlaceholder;
-@property(readonly) NSString * title;
+@property (readonly) NSArray *suppressionContexts;
+@property (readonly) BOOL thumbnailAssetIsPlaceholder;
+@property (readonly) NSString *title;
 
 - (id)_initWithCommentsCount:(int)arg1 commentDate:(id)arg2 firstCommentGUID:(id)arg3 toAssetWithUUID:(id)arg4 photosBatchID:(id)arg5 mainAssetIsMine:(BOOL)arg6 mainAssetIsVideo:(BOOL)arg7 inAlbumWithTitle:(id)arg8 albumUUID:(id)arg9 albumCloudGUID:(id)arg10 assetUUIDs:(id)arg11 placeholderAssetUUIDs:(id)arg12 lowResThumbAssetUUIDs:(id)arg13;
 - (id)_initWithLikesCount:(int)arg1 commentDate:(id)arg2 firstCommentGUID:(id)arg3 toAssetWithUUID:(id)arg4 photosBatchID:(id)arg5 mainAssetIsMine:(BOOL)arg6 mainAssetIsVideo:(BOOL)arg7 inAlbumWithTitle:(id)arg8 albumUUID:(id)arg9 albumCloudGUID:(id)arg10 assetUUIDs:(id)arg11 placeholderAssetUUIDs:(id)arg12 lowResThumbAssetUUIDs:(id)arg13 senderNames:(id)arg14 forMultipleAsset:(BOOL)arg15 allMultipleAssetIsMine:(BOOL)arg16 isMixedType:(BOOL)arg17;

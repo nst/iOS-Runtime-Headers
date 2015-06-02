@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@class <PLTimeReferenceManager>, NSString;
-
 @interface PLTimeReference : NSObject {
     NSString *_entryDefinitionKey;
     double _offset;
@@ -11,9 +9,9 @@
     int _timeReferenceType;
 }
 
-@property(retain) NSString * entryDefinitionKey;
-@property double offset;
-@property(retain) <PLTimeReferenceManager> * timeManager;
+@property (retain) NSString *entryDefinitionKey;
+@property (nonatomic) double offset;
+@property (retain) <PLTimeReferenceManager> *timeManager;
 @property int timeReferenceType;
 
 + (id)defaultsKeyFromEntryDefinitionKey:(id)arg1;

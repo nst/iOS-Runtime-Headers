@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCH3DMaterial : NSObject <NSCopying> {
-}
+@interface TSCH3DMaterial : NSObject <NSCopying>
 
 + (id)material;
 

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
  */
 
-@interface APDCardinalEncryptionUtils : NSObject {
-}
+@interface APDCardinalEncryptionUtils : NSObject
 
 + (id)crypotgraphyKey;
 + (id)decryptData:(id)arg1;

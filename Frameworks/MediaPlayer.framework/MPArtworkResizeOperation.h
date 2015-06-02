@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSError, NSObject<OS_dispatch_group>, NSURL, UIImage;
-
 @interface MPArtworkResizeOperation : NSOperation {
     NSURL *_destinationURL;
     NSError *_error;
@@ -17,13 +15,13 @@
     BOOL _usesExactFittingSizeAsDestinationSize;
 }
 
-@property(readonly) NSURL * destinationURL;
-@property(readonly) NSError * error;
-@property(retain) UIImage * image;
-@property(readonly) NSObject<OS_dispatch_group> * operationGroup;
-@property(readonly) UIImage * resizedImage;
-@property struct CGSize { float x1; float x2; } scaledFittingSize;
-@property BOOL usesExactFittingSizeAsDestinationSize;
+@property (nonatomic, readonly) NSURL *destinationURL;
+@property (nonatomic, readonly) NSError *error;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, readonly) NSObject<OS_dispatch_group> *operationGroup;
+@property (nonatomic, readonly) UIImage *resizedImage;
+@property (nonatomic) struct CGSize { float x1; float x2; } scaledFittingSize;
+@property (nonatomic) BOOL usesExactFittingSizeAsDestinationSize;
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_resizedScaledSizeForScaledImageSize:(struct CGSize { float x1; float x2; })arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;

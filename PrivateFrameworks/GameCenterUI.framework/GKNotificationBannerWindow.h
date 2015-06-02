@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKNotificationBannerView, NSObject<OS_dispatch_semaphore>;
-
 @interface GKNotificationBannerWindow : UIWindow {
     BOOL _bannerAnimating;
     NSObject<OS_dispatch_semaphore> *_bannerSemaphore;
@@ -12,11 +10,11 @@
     int _initialInterfaceOrientation;
 }
 
-@property BOOL bannerAnimating;
-@property(readonly) NSObject<OS_dispatch_semaphore> * bannerSemaphore;
-@property BOOL bannerVisible;
-@property(retain) GKNotificationBannerView * currentBanner;
-@property int initialInterfaceOrientation;
+@property (nonatomic) BOOL bannerAnimating;
+@property (nonatomic, readonly) NSObject<OS_dispatch_semaphore> *bannerSemaphore;
+@property (nonatomic) BOOL bannerVisible;
+@property (nonatomic, retain) GKNotificationBannerView *currentBanner;
+@property (nonatomic) int initialInterfaceOrientation;
 
 + (id)bannerWindow;
 + (void)enqueBanner:(id)arg1;

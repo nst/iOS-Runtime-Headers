@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class UIBezierPath;
-
 @interface MPAlternateTrackCellBackgroundView : UIView {
     UIBezierPath *_fillPath;
     int _sectionLocation;
     UIBezierPath *_strokePath;
 }
 
-@property int sectionLocation;
+@property (nonatomic) int sectionLocation;
 
 - (void).cxx_destruct;
 - (void)_createBezierPathWithCornerRadius:(float)arg1 bottomRadius:(float)arg2 animating:(BOOL)arg3;

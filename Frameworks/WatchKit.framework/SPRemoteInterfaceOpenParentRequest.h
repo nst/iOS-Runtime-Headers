@@ -2,29 +2,19 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSData;
-
 @interface SPRemoteInterfaceOpenParentRequest : NSObject {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _reply;
-
+    id /* block */ _reply;
     NSData *_userInfoData;
     BOOL _waitingForReply;
 }
 
-@property(copy) id reply;
-@property(copy) NSData * userInfoData;
-@property BOOL waitingForReply;
+@property (nonatomic, copy) id /* block */ reply;
+@property (nonatomic, copy) NSData *userInfoData;
+@property (nonatomic) BOOL waitingForReply;
 
 - (void).cxx_destruct;
-- (id)reply;
-- (void)setReply:(id)arg1;
+- (id /* block */)reply;
+- (void)setReply:(id /* block */)arg1;
 - (void)setUserInfoData:(id)arg1;
 - (void)setWaitingForReply:(BOOL)arg1;
 - (id)userInfoData;

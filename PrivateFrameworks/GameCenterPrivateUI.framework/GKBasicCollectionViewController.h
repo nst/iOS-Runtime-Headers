@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class GKCollectionViewDataSource, NSArray;
-
 @interface GKBasicCollectionViewController : GKCollectionViewController {
     GKCollectionViewDataSource *_initialDataSource;
     NSArray *_metricsForSections;
     id _target;
 }
 
-@property(retain) GKCollectionViewDataSource * initialDataSource;
-@property(retain) NSArray * metricsForSections;
-@property(retain) id target;
+@property (nonatomic, retain) GKCollectionViewDataSource *initialDataSource;
+@property (nonatomic, retain) NSArray *metricsForSections;
+@property (nonatomic, retain) id target;
 
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (void)configureDataSource;

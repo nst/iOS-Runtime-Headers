@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, TPPageLayout, TSDAbstractLayout, TSDLayoutGeometry;
-
 @interface TSDAbstractLayout : NSObject {
     NSMutableArray *mChildren;
     TSDLayoutGeometry *mGeometry;
@@ -22,15 +20,15 @@
     TSDAbstractLayout *mParent;
 }
 
-@property(copy) NSArray * children;
-@property(copy) TSDLayoutGeometry * geometry;
-@property float interimPositionX;
-@property float interimPositionY;
-@property(readonly) struct CGPoint { float x1; float x2; } lastInterimPosition;
-@property(readonly) unsigned int pageIndex;
-@property(readonly) TPPageLayout * pageLayout;
-@property TSDAbstractLayout * parent;
-@property(readonly) TSDAbstractLayout * root;
+@property (nonatomic, copy) NSArray *children;
+@property (nonatomic, copy) TSDLayoutGeometry *geometry;
+@property (nonatomic) float interimPositionX;
+@property (nonatomic) float interimPositionY;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } lastInterimPosition;
+@property (nonatomic, readonly) unsigned int pageIndex;
+@property (nonatomic, readonly) TPPageLayout *pageLayout;
+@property (nonatomic) TSDAbstractLayout *parent;
+@property (nonatomic, readonly) TSDAbstractLayout *root;
 
 - (void)addChild:(id)arg1;
 - (void)addLayoutsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toArray:(id)arg2 deep:(BOOL)arg3;

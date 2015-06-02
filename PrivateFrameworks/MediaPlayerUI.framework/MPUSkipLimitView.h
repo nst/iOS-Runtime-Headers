@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class NSDictionary, NSTimer, UILabel;
-
 @interface MPUSkipLimitView : UIView {
     NSTimer *_hideTimer;
     UILabel *_informationLabel;
@@ -15,9 +13,9 @@
     NSDictionary *_textAttributes;
 }
 
-@property int maximumNumberOfLines;
-@property struct { int x1; int x2; double x3; } skipLimit;
-@property(copy) NSDictionary * textAttributes;
+@property (nonatomic) int maximumNumberOfLines;
+@property (nonatomic) struct { int x1; int x2; double x3; } skipLimit;
+@property (nonatomic, copy) NSDictionary *textAttributes;
 
 - (void).cxx_destruct;
 - (void)_hideSkipInformationForTimer:(id)arg1;

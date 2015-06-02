@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicAudiobookTableViewCell : MusicPartialPlaybackTableViewCell {
-}
+@interface MusicAudiobookTableViewCell : MusicPartialPlaybackTableViewCell
 
 + (Class)contentViewClass;
 

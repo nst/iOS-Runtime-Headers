@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKMessageEntryRecordedAudioViewDelegate>, CKAudioController, CKAudioMediaObject, CKAudioProgressView, NSString, UIImage, UIImageView, UILabel;
-
 @interface CKMessageEntryRecordedAudioView : UIView <CKAudioControllerDelegate> {
     CKAudioController *_audioController;
     CKAudioMediaObject *_audioMediaObject;
@@ -17,21 +15,21 @@
     UIImageView *_waveformImageView;
 }
 
-@property(retain) CKAudioController * audioController;
-@property(retain) CKAudioMediaObject * audioMediaObject;
-@property(retain) UIImageView * balloonImageView;
-@property(copy,readonly) NSString * debugDescription;
-@property <CKMessageEntryRecordedAudioViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isPlaying;
-@property(retain) CKAudioProgressView * progressView;
-@property(readonly) Class superclass;
-@property double time;
-@property(copy) NSString * timeFormat;
-@property(retain) UILabel * timeLabel;
-@property(retain) UIImage * waveformImage;
-@property(retain) UIImageView * waveformImageView;
+@property (nonatomic, retain) CKAudioController *audioController;
+@property (nonatomic, retain) CKAudioMediaObject *audioMediaObject;
+@property (nonatomic, retain) UIImageView *balloonImageView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <CKMessageEntryRecordedAudioViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isPlaying;
+@property (nonatomic, retain) CKAudioProgressView *progressView;
+@property (readonly) Class superclass;
+@property (nonatomic) double time;
+@property (nonatomic, copy) NSString *timeFormat;
+@property (nonatomic, retain) UILabel *timeLabel;
+@property (nonatomic, retain) UIImage *waveformImage;
+@property (nonatomic, retain) UIImageView *waveformImageView;
 
 - (id)audioController;
 - (void)audioController:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;

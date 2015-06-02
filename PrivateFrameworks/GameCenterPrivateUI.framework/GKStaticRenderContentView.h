@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@class UIView;
-
 @interface GKStaticRenderContentView : UIView {
     UIView *_contentView;
 }
 
-@property(retain) UIView * contentView;
+@property (nonatomic, retain) UIView *contentView;
 
 - (id)contentView;
 - (void)dealloc;

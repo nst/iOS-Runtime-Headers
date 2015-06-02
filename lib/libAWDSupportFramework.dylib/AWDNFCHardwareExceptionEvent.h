@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDNFCHardwareExceptionEvent : PBCodable <NSCopying> {
     NSString *_exceptionData;
     struct { 
@@ -14,12 +12,12 @@
     unsigned int _type;
 }
 
-@property(retain) NSString * exceptionData;
-@property(readonly) BOOL hasExceptionData;
-@property BOOL hasTimestamp;
-@property BOOL hasType;
-@property unsigned long long timestamp;
-@property unsigned int type;
+@property (nonatomic, retain) NSString *exceptionData;
+@property (nonatomic, readonly) BOOL hasExceptionData;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasType;
+@property (nonatomic) unsigned long long timestamp;
+@property (nonatomic) unsigned int type;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

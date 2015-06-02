@@ -2,35 +2,25 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSArray, NSMutableArray, NSMutableDictionary, NSObject<OS_dispatch_group>, NSSet;
-
 @interface CKDRecordFetcher : CKDDatabaseOperation {
     NSSet *_desiredKeys;
     BOOL _fetchAssetContents;
     NSObject<OS_dispatch_group> *_fetchGroup;
     NSMutableDictionary *_fetchedRecordInfoByRecordID;
     BOOL _preserveOrdering;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _recordFetchedBlock;
-
+    id /* block */ _recordFetchedBlock;
     NSMutableArray *_recordIDsToFetch;
     NSArray *_recordResponsesToFetch;
 }
 
-@property(retain) NSSet * desiredKeys;
-@property BOOL fetchAssetContents;
-@property(retain) NSObject<OS_dispatch_group> * fetchGroup;
-@property(retain) NSMutableDictionary * fetchedRecordInfoByRecordID;
-@property BOOL preserveOrdering;
-@property(copy) id recordFetchedBlock;
-@property(retain) NSMutableArray * recordIDsToFetch;
-@property(retain) NSArray * recordResponsesToFetch;
+@property (nonatomic, retain) NSSet *desiredKeys;
+@property (nonatomic) BOOL fetchAssetContents;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *fetchGroup;
+@property (nonatomic, retain) NSMutableDictionary *fetchedRecordInfoByRecordID;
+@property (nonatomic) BOOL preserveOrdering;
+@property (nonatomic, copy) id /* block */ recordFetchedBlock;
+@property (nonatomic, retain) NSMutableArray *recordIDsToFetch;
+@property (nonatomic, retain) NSArray *recordResponsesToFetch;
 
 - (void).cxx_destruct;
 - (void)_fetchRecordsFromServer:(id)arg1 fullRecords:(id)arg2;
@@ -43,7 +33,7 @@
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (BOOL)preserveOrdering;
-- (id)recordFetchedBlock;
+- (id /* block */)recordFetchedBlock;
 - (id)recordIDsToFetch;
 - (id)recordResponsesToFetch;
 - (void)setDesiredKeys:(id)arg1;
@@ -51,7 +41,7 @@
 - (void)setFetchGroup:(id)arg1;
 - (void)setFetchedRecordInfoByRecordID:(id)arg1;
 - (void)setPreserveOrdering:(BOOL)arg1;
-- (void)setRecordFetchedBlock:(id)arg1;
+- (void)setRecordFetchedBlock:(id /* block */)arg1;
 - (void)setRecordIDsToFetch:(id)arg1;
 - (void)setRecordResponsesToFetch:(id)arg1;
 - (BOOL)shouldCheckAppVersion;

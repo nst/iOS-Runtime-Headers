@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSObject<OS_dispatch_queue>;
-
 @interface CKDMetadataCache : CKSQLite {
     NSObject<OS_dispatch_queue> *_cacheQueue;
 }
 
-@property(retain) NSObject<OS_dispatch_queue> * cacheQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *cacheQueue;
 
 + (id)dbFileName;
 + (id)sharedCache;

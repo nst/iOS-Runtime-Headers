@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUCollectionViewLayoutCache;
-
 @interface PUStackedAlbumTransitionLayout : UICollectionViewTransitionLayout {
     struct CGPoint { 
         float x; 
@@ -35,12 +33,12 @@
     PUCollectionViewLayoutCache *_nextLayoutCache;
 }
 
-@property struct CGPoint { float x1; float x2; } currentCollapsedStackCenter;
-@property(readonly) struct CGPoint { float x1; float x2; } expandedStackFinalDelta;
-@property struct CGPoint { float x1; float x2; } finalCollapsedStackCenter;
-@property struct CGPoint { float x1; float x2; } initialCollapsedStackCenter;
-@property struct CGPoint { float x1; float x2; } interactionOffset;
-@property(readonly) BOOL isExpanding;
+@property (nonatomic) struct CGPoint { float x1; float x2; } currentCollapsedStackCenter;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } expandedStackFinalDelta;
+@property (nonatomic) struct CGPoint { float x1; float x2; } finalCollapsedStackCenter;
+@property (nonatomic) struct CGPoint { float x1; float x2; } initialCollapsedStackCenter;
+@property (nonatomic) struct CGPoint { float x1; float x2; } interactionOffset;
+@property (nonatomic, readonly) BOOL isExpanding;
 
 - (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_centerOfLayoutAttributes:(id)arg1;

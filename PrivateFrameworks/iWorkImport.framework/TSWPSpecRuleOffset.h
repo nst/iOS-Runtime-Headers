@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSWPSpecRuleOffset : TSSSpec {
-}
+@interface TSWPSpecRuleOffset : TSSSpec
 
 - (id)getUnsetSpec;
 

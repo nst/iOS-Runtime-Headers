@@ -2,43 +2,41 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVAssetWriterInputConfigurationState, AVAssetWriterInputPassDescription, AVOutputSettings, AVWeakReference, NSArray, NSDictionary, NSString, NSURL;
-
 @interface AVAssetWriterInputHelper : NSObject {
     AVAssetWriterInputConfigurationState *_configurationState;
     AVWeakReference *_weakReferenceToAssetWriterInput;
 }
 
-@property short alternateGroupID;
-@property(readonly) BOOL canPerformMultiplePasses;
-@property(readonly) AVAssetWriterInputConfigurationState * configurationState;
-@property(readonly) AVAssetWriterInputPassDescription * currentPassDescription;
-@property BOOL expectsMediaDataInRealTime;
-@property(copy) NSString * extendedLanguageTag;
-@property(copy) NSString * languageCode;
-@property int layer;
-@property BOOL marksOutputTrackAsEnabled;
-@property int mediaTimeScale;
-@property(readonly) NSString * mediaType;
-@property(copy) NSArray * metadata;
-@property struct CGSize { float x1; float x2; } naturalSize;
-@property(readonly) AVOutputSettings * outputSettings;
-@property BOOL performsMultiPassEncodingIfSupported;
-@property(readonly) struct __CVPixelBufferPool { }* pixelBufferPool;
-@property int preferredMediaChunkAlignment;
-@property struct { long long x1; int x2; unsigned int x3; long long x4; } preferredMediaChunkDuration;
-@property int preferredMediaChunkSize;
-@property float preferredVolume;
-@property(getter=isReadyForMoreMediaData,readonly) BOOL readyForMoreMediaData;
-@property(copy) NSURL * sampleReferenceBaseURL;
-@property(readonly) BOOL shouldRespondToInitialPassDescription;
-@property(readonly) struct opaqueCMFormatDescription { }* sourceFormatHint;
-@property(copy) NSDictionary * sourcePixelBufferAttributes;
-@property(readonly) int status;
-@property(readonly) int trackID;
-@property(readonly) NSDictionary * trackReferences;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
-@property(retain) AVWeakReference * weakReferenceToAssetWriterInput;
+@property (nonatomic) short alternateGroupID;
+@property (nonatomic, readonly) BOOL canPerformMultiplePasses;
+@property (nonatomic, readonly) AVAssetWriterInputConfigurationState *configurationState;
+@property (nonatomic, readonly) AVAssetWriterInputPassDescription *currentPassDescription;
+@property (nonatomic) BOOL expectsMediaDataInRealTime;
+@property (nonatomic, copy) NSString *extendedLanguageTag;
+@property (nonatomic, copy) NSString *languageCode;
+@property (nonatomic) int layer;
+@property (nonatomic) BOOL marksOutputTrackAsEnabled;
+@property (nonatomic) int mediaTimeScale;
+@property (nonatomic, readonly) NSString *mediaType;
+@property (nonatomic, copy) NSArray *metadata;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, readonly) AVOutputSettings *outputSettings;
+@property (nonatomic) BOOL performsMultiPassEncodingIfSupported;
+@property (nonatomic, readonly) struct __CVPixelBufferPool { }*pixelBufferPool;
+@property (nonatomic) int preferredMediaChunkAlignment;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } preferredMediaChunkDuration;
+@property (nonatomic) int preferredMediaChunkSize;
+@property (nonatomic) float preferredVolume;
+@property (getter=isReadyForMoreMediaData, nonatomic, readonly) BOOL readyForMoreMediaData;
+@property (nonatomic, copy) NSURL *sampleReferenceBaseURL;
+@property (nonatomic, readonly) BOOL shouldRespondToInitialPassDescription;
+@property (nonatomic, readonly) struct opaqueCMFormatDescription { }*sourceFormatHint;
+@property (nonatomic, copy) NSDictionary *sourcePixelBufferAttributes;
+@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) int trackID;
+@property (nonatomic, readonly) NSDictionary *trackReferences;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (retain) AVWeakReference *weakReferenceToAssetWriterInput;
 
 - (void)addTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2;
 - (short)alternateGroupID;
@@ -76,7 +74,7 @@
 - (float)preferredVolume;
 - (void)prepareToEndSession;
 - (BOOL)prepareToFinishWritingReturningError:(id*)arg1;
-- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id)arg2;
+- (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)sampleReferenceBaseURL;
 - (void)setAlternateGroupID:(short)arg1;
 - (void)setExpectsMediaDataInRealTime:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@class ASAsset;
-
 @interface SUDocumentationAssetMatcher : SUAssetStateMatcher {
     ASAsset *_suAsset;
 }

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PairedUnlock.framework/PairedUnlock
  */
 
-@interface PUKeyStore : NSObject {
-}
+@interface PUKeyStore : NSObject
 
 - (id)_attributesForPasscodeBlobWithLabel:(id)arg1;
 - (id)decryptBlob:(id)arg1 withKeyLabel:(id)arg2;

@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@class UIView;
-
 @interface SUPreviewOverlayView : UIView {
     UIView *_borderView;
     UIView *_storePageView;
 }
 
-@property(retain) UIView * storePageView;
+@property (nonatomic, retain) UIView *storePageView;
 
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;

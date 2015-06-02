@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class NSString;
-
 @interface PDCommentAuthor : NSObject {
     unsigned int mColorIndex;
     unsigned int mId;

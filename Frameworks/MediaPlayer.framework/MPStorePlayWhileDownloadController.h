@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSMutableArray, NSMutableSet, NSObject<OS_dispatch_queue>, NSString, SSDownloadHandler, SSDownloadManager;
-
 @interface MPStorePlayWhileDownloadController : NSObject <SSDownloadHandlerDelegate, UIAlertViewDelegate> {
     NSMutableSet *_cellularRestrictedAlertViews;
     SSDownloadHandler *_downloadHandler;
@@ -12,10 +10,10 @@
     NSMutableArray *_downloadSessions;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedController;
 

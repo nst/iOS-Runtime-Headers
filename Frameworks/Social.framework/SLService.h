@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLService : NSObject {
-}
+@interface SLService : NSObject
 
 + (id)allServices;
 + (id)serviceForServiceType:(id)arg1;

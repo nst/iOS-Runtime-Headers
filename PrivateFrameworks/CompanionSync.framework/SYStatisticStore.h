@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@class NSObject<OS_dispatch_queue>, NSString;
-
 @interface SYStatisticStore : NSObject {
     struct sqlite3_stmt { } *_addErrorIncoming;
     struct sqlite3_stmt { } *_addProcessingTimeIncoming;

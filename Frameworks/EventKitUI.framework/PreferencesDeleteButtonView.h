@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@class UIButton;
-
 @interface PreferencesDeleteButtonView : UIView {
     UIButton *_button;
 }
 
-@property(retain,readonly) UIButton * button;
+@property (nonatomic, readonly, retain) UIButton *button;
 
 - (void).cxx_destruct;
 - (id)button;

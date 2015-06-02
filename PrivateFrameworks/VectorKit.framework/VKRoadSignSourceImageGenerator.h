@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@interface VKRoadSignSourceImageGenerator : NSObject {
-}
+@interface VKRoadSignSourceImageGenerator : NSObject
 
 + (void)_drawSign:(int)arg1 context:(struct CGContext { }*)arg2 scale:(float)arg3 contentScale:(float)arg4 signColor:(int)arg5;
 + (struct CGSize { float x1; float x2; })_sizeForSignType:(int)arg1 scale:(float)arg2 contentScale:(float)arg3;

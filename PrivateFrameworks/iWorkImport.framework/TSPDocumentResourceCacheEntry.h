@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSDate, NSString, NSURL;
-
 @interface TSPDocumentResourceCacheEntry : NSObject {
     NSURL *_URL;
     int _accessCount;
@@ -13,12 +11,12 @@
     BOOL _wasDownloaded;
 }
 
-@property(copy) NSURL * URL;
-@property int accessCount;
-@property(retain) NSDate * contentAccessDate;
-@property(readonly) NSString * digestString;
-@property long long fileSize;
-@property BOOL wasDownloaded;
+@property (nonatomic, copy) NSURL *URL;
+@property (nonatomic) int accessCount;
+@property (nonatomic, retain) NSDate *contentAccessDate;
+@property (nonatomic, readonly) NSString *digestString;
+@property (nonatomic) long long fileSize;
+@property (nonatomic) BOOL wasDownloaded;
 
 - (void).cxx_destruct;
 - (id)URL;

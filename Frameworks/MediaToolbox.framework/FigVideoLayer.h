@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@class FigVideoLayerInternal;
-
 @interface FigVideoLayer : CALayer {
     FigVideoLayerInternal *_videoLayer;
 }

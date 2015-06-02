@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSArray;
-
 @interface PTSHUDRow : NSObject {
     NSArray *_controls;
     float _height;
 }
 
-@property(retain) NSArray * controls;
-@property float height;
+@property (nonatomic, retain) NSArray *controls;
+@property (nonatomic) float height;
 
 + (id)controlsModeFooterRow;
 + (id)controlsModeHeaderRow;

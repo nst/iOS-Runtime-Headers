@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceReviewsViewCheckInWriteCellDelegate>, NSArray, NSAttributedString, NSMutableArray, UILabel;
-
 @interface MKPlaceReviewsViewCheckInWriteCell : UITableViewCell {
     UILabel *_checkInLabel;
     <MKPlaceReviewsViewCheckInWriteCellDelegate> *_delegate;
@@ -12,11 +10,11 @@
     UILabel *_writeReviewLabel;
 }
 
-@property(retain) NSAttributedString * checkInTitle;
-@property <MKPlaceReviewsViewCheckInWriteCellDelegate> * delegate;
-@property(retain) NSArray * marginConstraints;
-@property(retain) NSMutableArray * scaledConstraints;
-@property(retain) NSAttributedString * writeReviewTitle;
+@property (nonatomic, retain) NSAttributedString *checkInTitle;
+@property (nonatomic) <MKPlaceReviewsViewCheckInWriteCellDelegate> *delegate;
+@property (nonatomic, retain) NSArray *marginConstraints;
+@property (nonatomic, retain) NSMutableArray *scaledConstraints;
+@property (nonatomic, retain) NSAttributedString *writeReviewTitle;
 
 + (float)intrinsicContentHeight;
 + (id)reuseIdentifier;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class BRCChecksummingOutputStream, NSData;
-
 @interface BRCPackageChecksummer : NSObject {
     BRCChecksummingOutputStream *_stream;
 }
 
-@property(readonly) NSData * signature;
+@property (nonatomic, readonly) NSData *signature;
 
 - (void).cxx_destruct;
 - (void)addItem:(id)arg1;

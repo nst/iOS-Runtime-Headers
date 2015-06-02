@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface UITextViewPrintFormatter : UIViewPrintFormatter {
     NSArray *_pageData;
     struct { 

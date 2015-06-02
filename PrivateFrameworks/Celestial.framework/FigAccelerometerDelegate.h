@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@class NSString, SBSAccelerometer;
-
 @interface FigAccelerometerDelegate : NSObject <SBSAccelerometerDelegate> {
     int ringIndex;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
     } ringMutex;
-    double ringTime[64];
-    float ringX[64];
-    float ringY[64];
-    float ringZ[64];
+    double ringTime;
+    float ringX;
+    float ringY;
+    float ringZ;
     SBSAccelerometer *sbsaccel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)accelerometer:(id)arg1 didAccelerateWithTimeStamp:(double)arg2 x:(float)arg3 y:(float)arg4 z:(float)arg5 eventType:(int)arg6;
 - (void)dealloc;

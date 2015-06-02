@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BluetoothManager.framework/BluetoothManager
  */
 
-@class NSString;
-
 @interface BluetoothDevice : NSObject {
     NSString *_address;
     struct BTDeviceImpl { } *_device;

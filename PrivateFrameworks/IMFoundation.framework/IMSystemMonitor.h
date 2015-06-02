@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@class NSDate, NSMutableArray, NSString, NSTimer;
-
 @interface IMSystemMonitor : NSObject {
     BOOL _active;
     BOOL _backingUp;
@@ -34,39 +32,39 @@
     BOOL _willSleep;
 }
 
-@property int _dataProtectionState;
-@property double _delayTime;
-@property(retain) NSMutableArray * _earlyListeners;
-@property BOOL _idleOverride;
-@property(retain) NSDate * _idleStart;
-@property(retain) NSMutableArray * _listeners;
-@property(retain) NSTimer * _timer;
-@property BOOL _underFirstLock;
-@property(retain) NSString * _userID;
-@property(retain,readonly) NSDate * dateScreenLightLastChanged;
-@property(retain,readonly) NSDate * dateSystemLockLastChanged;
-@property(setter=setActive:) BOOL isActive;
-@property(readonly) BOOL isBackingUp;
-@property BOOL isFastUserSwitched;
-@property(readonly) BOOL isInBackground;
-@property(readonly) BOOL isScreenLit;
-@property(readonly) BOOL isScreenLocked;
-@property(readonly) BOOL isScreenSaverActive;
-@property(readonly) BOOL isSetup;
-@property(readonly) BOOL isSystemIdle;
-@property(readonly) BOOL isSystemLocked;
-@property(readonly) BOOL isUnderDataProtectionLock;
-@property(readonly) BOOL isUnderFirstDataProtectionLock;
-@property BOOL receivesMemoryWarnings;
-@property(readonly) double systemIdleTime;
-@property(readonly) BOOL systemIsShuttingDown;
-@property(readonly) BOOL systemIsSleeping;
-@property int userIdleToken;
-@property BOOL usesPowerNotifications;
-@property BOOL usesSystemIdleState;
-@property BOOL watchesDataProtectionLockState;
-@property BOOL watchesScreenLightState;
-@property BOOL watchesSystemLockState;
+@property (nonatomic) int _dataProtectionState;
+@property (nonatomic) double _delayTime;
+@property (nonatomic, retain) NSMutableArray *_earlyListeners;
+@property (nonatomic) BOOL _idleOverride;
+@property (nonatomic, retain) NSDate *_idleStart;
+@property (nonatomic, retain) NSMutableArray *_listeners;
+@property (nonatomic, retain) NSTimer *_timer;
+@property (nonatomic) BOOL _underFirstLock;
+@property (nonatomic, retain) NSString *_userID;
+@property (nonatomic, readonly, retain) NSDate *dateScreenLightLastChanged;
+@property (nonatomic, readonly, retain) NSDate *dateSystemLockLastChanged;
+@property (setter=setActive:, nonatomic) BOOL isActive;
+@property (nonatomic, readonly) BOOL isBackingUp;
+@property (nonatomic) BOOL isFastUserSwitched;
+@property (nonatomic, readonly) BOOL isInBackground;
+@property (nonatomic, readonly) BOOL isScreenLit;
+@property (nonatomic, readonly) BOOL isScreenLocked;
+@property (nonatomic, readonly) BOOL isScreenSaverActive;
+@property (nonatomic, readonly) BOOL isSetup;
+@property (nonatomic, readonly) BOOL isSystemIdle;
+@property (nonatomic, readonly) BOOL isSystemLocked;
+@property (nonatomic, readonly) BOOL isUnderDataProtectionLock;
+@property (nonatomic, readonly) BOOL isUnderFirstDataProtectionLock;
+@property (nonatomic) BOOL receivesMemoryWarnings;
+@property (nonatomic, readonly) double systemIdleTime;
+@property (nonatomic, readonly) BOOL systemIsShuttingDown;
+@property (nonatomic, readonly) BOOL systemIsSleeping;
+@property (nonatomic) int userIdleToken;
+@property (nonatomic) BOOL usesPowerNotifications;
+@property (nonatomic) BOOL usesSystemIdleState;
+@property (nonatomic) BOOL watchesDataProtectionLockState;
+@property (nonatomic) BOOL watchesScreenLightState;
+@property (nonatomic) BOOL watchesSystemLockState;
 
 + (id)sharedInstance;
 

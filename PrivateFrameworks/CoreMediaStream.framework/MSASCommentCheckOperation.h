@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class NSString;
-
 @interface MSASCommentCheckOperation : NSObject {
     NSString *_albumGUID;
     NSString *_assetCollectionGUID;
 }
 
-@property(retain) NSString * albumGUID;
-@property(retain) NSString * assetCollectionGUID;
+@property (nonatomic, retain) NSString *albumGUID;
+@property (nonatomic, retain) NSString *assetCollectionGUID;
 
 - (void).cxx_destruct;
 - (id)albumGUID;

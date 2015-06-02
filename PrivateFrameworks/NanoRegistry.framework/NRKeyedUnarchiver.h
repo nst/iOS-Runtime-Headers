@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
  */
 
-@interface NRKeyedUnarchiver : NSKeyedUnarchiver {
-}
+@interface NRKeyedUnarchiver : NSKeyedUnarchiver
 
 @end

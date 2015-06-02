@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDictionary, NSManagedObjectContext, NSString, PLMomentAnalyzer, PLMomentGeneration, PLPhotoLibrary, PLXPCTransaction;
-
 @interface PLMomentGenerationDataManager : NSObject <PLMomentGenerationDataManagement_Private> {
     void *_addressBook;
     PLMomentAnalyzer *_analyzer;
@@ -18,20 +12,16 @@
     NSManagedObjectContext *_managedObjectContext;
     PLPhotoLibrary *_momentGenerationLibrary;
     BOOL _observingReachability;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _reachabilityBlock;
-
+    id /* block */ _reachabilityBlock;
 }
 
-@property(readonly) void* _addressBook;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) NSManagedObjectContext * managedObjectContext;
-@property(retain) PLPhotoLibrary * momentGenerationLibrary;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) void*_addressBook;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, retain) PLPhotoLibrary *momentGenerationLibrary;
+@property (readonly) Class superclass;
 
 + (BOOL)isManagedObjectContextMomentarilyBlessed:(id)arg1;
 + (BOOL)isManagerMomentarilyBlessed:(id)arg1;
@@ -58,7 +48,7 @@
 - (id)analyzer;
 - (id)assetWithUniqueID:(id)arg1 error:(id*)arg2;
 - (id)assetsWithUniqueIDs:(id)arg1 error:(id*)arg2;
-- (void)beginObservingNetworkReachabilityChangesWithBlock:(id)arg1;
+- (void)beginObservingNetworkReachabilityChangesWithBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (id)deletedObjects;
 - (id)findOrCreateYearMomentListForYear:(int)arg1;
@@ -88,8 +78,8 @@
 - (id)momentsSinceDate:(id)arg1;
 - (id)orphanedAssetIDsWithError:(id*)arg1;
 - (void)pendingChangesUpdated:(unsigned int)arg1;
-- (void)performBlock:(id)arg1 synchronously:(BOOL)arg2 completionHandler:(id)arg3;
-- (void)performDataTransaction:(id)arg1 synchronously:(BOOL)arg2 completionHandler:(id)arg3;
+- (void)performBlock:(id /* block */)arg1 synchronously:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void)performDataTransaction:(id /* block */)arg1 synchronously:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)refreshAllObjects;
 - (void)refreshObject:(id)arg1 mergeChanges:(BOOL)arg2;
 - (void)reloadGenerationOptions;

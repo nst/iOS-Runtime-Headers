@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PBBridgeSupport.framework/PBBridgeSupport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <PBBridgeConnectionDelegate>, <RUILoaderDelegate>, NSMutableData, NSMutableURLRequest, NSString, NSTimer, NSURLConnection, RUILoader;
-
 @interface PBBridgeCompanionController : PBBridgeIDSServiceDelegate <IDSServiceDelegate, NSURLConnectionDelegate, PBBridgeCompanionProtocol, RUILoaderDelegate> {
     NSURLConnection *_activationConnection;
     NSMutableData *_activationData;
@@ -19,18 +13,10 @@
     NSString *_contentType;
     <PBBridgeConnectionDelegate> *_delegate;
     unsigned short _granularActivationState;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _initialSyncPrepCompletion;
-
+    id /* block */ _initialSyncPrepCompletion;
     NSString *_internalLastSendMessageID;
     BOOL _isEstablishingPairing;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _lockedOnAnimationCompletion;
-
+    id /* block */ _lockedOnAnimationCompletion;
     BOOL _nonSilentActivation;
     BOOL _passcodeSet;
     <RUILoaderDelegate> *_ruiDelegate;
@@ -39,29 +25,29 @@
     struct __MKBAssertion { } *_unlockPairingAssertion;
 }
 
-@property(retain) NSURLConnection * activationConnection;
-@property(retain) NSMutableData * activationData;
-@property(retain) NSMutableURLRequest * activationRequest;
-@property int activationState;
-@property(retain) NSTimer * activationTimeout;
-@property BOOL allowAnyHTTPSCertificate;
-@property BOOL connectionFailed;
-@property(copy) NSString * contentType;
-@property(copy,readonly) NSString * debugDescription;
-@property <PBBridgeConnectionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property unsigned short granularActivationState;
-@property(readonly) unsigned int hash;
-@property(copy) id initialSyncPrepCompletion;
-@property(retain) NSString * internalLastSendMessageID;
-@property BOOL isEstablishingPairing;
-@property(copy) id lockedOnAnimationCompletion;
-@property BOOL nonSilentActivation;
-@property BOOL passcodeSet;
-@property <RUILoaderDelegate> * ruiDelegate;
-@property(retain) RUILoader * ruiLoader;
-@property BOOL selectedPairedUnlock;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) NSURLConnection *activationConnection;
+@property (nonatomic, retain) NSMutableData *activationData;
+@property (nonatomic, retain) NSMutableURLRequest *activationRequest;
+@property (nonatomic) int activationState;
+@property (nonatomic, retain) NSTimer *activationTimeout;
+@property (nonatomic) BOOL allowAnyHTTPSCertificate;
+@property (nonatomic) BOOL connectionFailed;
+@property (nonatomic, copy) NSString *contentType;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PBBridgeConnectionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) unsigned short granularActivationState;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ initialSyncPrepCompletion;
+@property (nonatomic, retain) NSString *internalLastSendMessageID;
+@property (nonatomic) BOOL isEstablishingPairing;
+@property (nonatomic, copy) id /* block */ lockedOnAnimationCompletion;
+@property (nonatomic) BOOL nonSilentActivation;
+@property (nonatomic) BOOL passcodeSet;
+@property (nonatomic) <RUILoaderDelegate> *ruiDelegate;
+@property (nonatomic, retain) RUILoader *ruiLoader;
+@property (nonatomic) BOOL selectedPairedUnlock;
+@property (readonly) Class superclass;
 
 + (id)displayNameWithFirstName:(id)arg1 lastName:(id)arg2;
 + (void)iCloudFirstName:(id*)arg1 lastName:(id*)arg2;
@@ -107,14 +93,14 @@
 - (void)handlePerformanceResults:(id)arg1;
 - (void)handleWarrantySentinelResponse:(id)arg1;
 - (id)init;
-- (id)initialSyncPrepCompletion;
+- (id /* block */)initialSyncPrepCompletion;
 - (id)internalLastSendMessageID;
 - (void)invalidateTimeoutTimer;
 - (BOOL)isEstablishingPairing;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
-- (id)lockedOnAnimationCompletion;
+- (id /* block */)lockedOnAnimationCompletion;
 - (BOOL)nonSilentActivation;
 - (void)objectModel:(id)arg1 pressedButton:(id)arg2 attributes:(id)arg3;
 - (double)offsetEventTime;
@@ -138,10 +124,10 @@
 - (void)setContentType:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setGranularActivationState:(unsigned short)arg1;
-- (void)setInitialSyncPrepCompletion:(id)arg1;
+- (void)setInitialSyncPrepCompletion:(id /* block */)arg1;
 - (void)setInternalLastSendMessageID:(id)arg1;
 - (void)setIsEstablishingPairing:(BOOL)arg1;
-- (void)setLockedOnAnimationCompletion:(id)arg1;
+- (void)setLockedOnAnimationCompletion:(id /* block */)arg1;
 - (void)setNonSilentActivation:(BOOL)arg1;
 - (void)setPasscodeSet:(BOOL)arg1;
 - (void)setRuiDelegate:(id)arg1;
@@ -152,13 +138,13 @@
 - (void)tellGizmoToBeginActivation;
 - (void)tellGizmoToDeleteWarrantySentinel;
 - (void)tellGizmoToPopToControllerType:(unsigned int)arg1;
-- (void)tellGizmoToPrepareForInitialSyncWithCompletion:(id)arg1;
+- (void)tellGizmoToPrepareForInitialSyncWithCompletion:(id /* block */)arg1;
 - (void)tellGizmoToPushControllerType:(unsigned int)arg1;
 - (void)tellGizmoToRetryActivation;
 - (void)tellGizmoToSeCrownOrientationRight:(BOOL)arg1;
 - (void)tellGizmoToSetDiagnosticsEnabled:(BOOL)arg1;
 - (void)tellGizmoToSetLocationEnabled:(BOOL)arg1;
-- (void)tellGizmoToShowLockedOnAnimationTimeToFlash:(double)arg1 animationCompletion:(id)arg2;
+- (void)tellGizmoToShowLockedOnAnimationTimeToFlash:(double)arg1 animationCompletion:(id /* block */)arg2;
 - (void)tellGizmoToUpdateSyncProgressTo:(float)arg1 withState:(int)arg2;
 - (void)transportBecameReachable;
 - (void)transportBecameUnreachable;

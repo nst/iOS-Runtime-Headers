@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
  */
 
-@class NSArray, NSMutableDictionary, NSString, SBKSyncTransaction;
-
 @interface SBKSyncResponseData : NSObject {
     NSArray *_conflictedKeys;
     NSArray *_deletedKeys;
@@ -15,14 +13,14 @@
     NSArray *_updatedKeys;
 }
 
-@property(readonly) NSArray * conflictedKeys;
-@property(readonly) NSArray * deletedKeys;
-@property(retain) NSMutableDictionary * responseOpEntiesByKey;
-@property(readonly) NSArray * successfullyDeletedKeys;
-@property(readonly) NSArray * successfullyUpdatedKeys;
-@property(copy,readonly) NSString * syncAnchor;
-@property(readonly) SBKSyncTransaction * transaction;
-@property(readonly) NSArray * updatedKeys;
+@property (readonly) NSArray *conflictedKeys;
+@property (readonly) NSArray *deletedKeys;
+@property (retain) NSMutableDictionary *responseOpEntiesByKey;
+@property (readonly) NSArray *successfullyDeletedKeys;
+@property (readonly) NSArray *successfullyUpdatedKeys;
+@property (readonly, copy) NSString *syncAnchor;
+@property (readonly) SBKSyncTransaction *transaction;
+@property (readonly) NSArray *updatedKeys;
 
 + (id)deserializedResponseBodyWithTransaction:(id)arg1 responseDictionary:(id)arg2 response:(id)arg3;
 

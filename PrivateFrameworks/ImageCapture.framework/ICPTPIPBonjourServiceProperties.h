@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ImageCapture.framework/ImageCapture
  */
 
-@class NSDictionary, NSMutableArray, NSString;
-
 @interface ICPTPIPBonjourServiceProperties : NSObject {
     int _clientSpinLock;
     NSMutableArray *_clients;
@@ -20,18 +18,18 @@
     NSDictionary *_txtRecordsDict;
 }
 
-@property(retain) NSMutableArray * clients;
+@property (retain) NSMutableArray *clients;
 @property int clientsSpinLock;
 @property id delegate;
-@property(retain) NSString * hostGUID;
+@property (retain) NSString *hostGUID;
 @property unsigned long hostMaxConnections;
-@property(retain) NSString * hostName;
+@property (retain) NSString *hostName;
 @property unsigned short hostPort;
 @property int hostSecurityLevel;
-@property struct __CFSocket { }* hostSocket;
-@property struct __CFNetService { }* publishedService;
-@property(retain) NSString * serviceType;
-@property(retain) NSDictionary * txtRecordsDict;
+@property struct __CFSocket { }*hostSocket;
+@property struct __CFNetService { }*publishedService;
+@property (retain) NSString *serviceType;
+@property (retain) NSDictionary *txtRecordsDict;
 
 - (id)clients;
 - (int)clientsSpinLock;

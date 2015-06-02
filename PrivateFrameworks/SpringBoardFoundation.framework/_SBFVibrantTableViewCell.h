@@ -6,8 +6,8 @@
     int _graphicsQuality;
 }
 
-@property int graphicsQuality;
-@property BOOL usesVibrantSelection;
+@property (nonatomic) int graphicsQuality;
+@property (nonatomic) BOOL usesVibrantSelection;
 
 - (int)graphicsQuality;
 - (void)setGraphicsQuality:(int)arg1;

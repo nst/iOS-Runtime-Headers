@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIBadgeLabel : UILabel {
-}
+@interface SKUIBadgeLabel : UILabel
 
 + (id)defaultBackgroundColor;
 + (id)defaultTextColor;

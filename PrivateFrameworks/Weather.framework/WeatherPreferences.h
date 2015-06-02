@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
  */
 
-@class <SynchronizedDefaultsDelegate>, NSArray, NSString, NSUserDefaults;
-
 @interface WeatherPreferences : NSObject <NSURLConnectionDelegate> {
     NSString *_UUID;
     BOOL _isCelsius;
@@ -16,14 +14,14 @@
     BOOL _userGroupPrefsLockedWhenInit;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property <SynchronizedDefaultsDelegate> * syncDelegate;
-@property(copy) NSString * twcURLString;
-@property BOOL userGroupPrefsLockedWhenInit;
-@property(copy) NSString * yahooWeatherURLString;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic) <SynchronizedDefaultsDelegate> *syncDelegate;
+@property (nonatomic, copy) NSString *twcURLString;
+@property (nonatomic) BOOL userGroupPrefsLockedWhenInit;
+@property (nonatomic, copy) NSString *yahooWeatherURLString;
 
 + (void)clearSharedPreferences;
 + (id)serviceDebuggingPath;

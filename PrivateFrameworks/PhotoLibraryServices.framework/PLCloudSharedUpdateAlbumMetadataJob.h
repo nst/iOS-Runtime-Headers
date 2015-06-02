@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class NSDictionary;
-
 @interface PLCloudSharedUpdateAlbumMetadataJob : PLCloudSharingJob {
     NSDictionary *_metadata;
 }
 
-@property(retain) NSDictionary * metadata;
+@property (nonatomic, retain) NSDictionary *metadata;
 
 + (void)updateAlbumMetadata:(id)arg1;
 

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
  */
 
-@class NSData;
-
 @interface NanoPhoneVoicemailBody : PBCodable <NSCopying> {
     long long _voicemailNumber;
     NSData *_voicemailRecording;
 }
 
-@property(readonly) BOOL hasVoicemailRecording;
-@property long long voicemailNumber;
-@property(retain) NSData * voicemailRecording;
+@property (nonatomic, readonly) BOOL hasVoicemailRecording;
+@property (nonatomic) long long voicemailNumber;
+@property (nonatomic, retain) NSData *voicemailRecording;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIStatusBarLockScreenStyleAttributes : UIStatusBarNewUIStyleAttributes {
-}
+@interface UIStatusBarLockScreenStyleAttributes : UIStatusBarNewUIStyleAttributes
 
 - (Class)foregroundStyleClass;
 - (float)heightForMetrics:(int)arg1;

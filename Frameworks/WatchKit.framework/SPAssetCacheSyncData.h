@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class NSString, SPAssetCacheAssets;
-
 @interface SPAssetCacheSyncData : NSObject {
     NSString *_cacheIdentifier;
     SPAssetCacheAssets *_permanentCache;
     SPAssetCacheAssets *_transientCache;
 }
 
-@property(retain) NSString * cacheIdentifier;
-@property(retain) SPAssetCacheAssets * permanentCache;
-@property(retain) SPAssetCacheAssets * transientCache;
+@property (nonatomic, retain) NSString *cacheIdentifier;
+@property (nonatomic, retain) SPAssetCacheAssets *permanentCache;
+@property (nonatomic, retain) SPAssetCacheAssets *transientCache;
 
 + (id)fromProto:(id)arg1;
 + (id)toProto:(id)arg1;

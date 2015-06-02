@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@interface ACUILocalization : NSObject {
-}
+@interface ACUILocalization : NSObject
 
 + (id)locKeyForDataclass:(id)arg1 withSuffix:(id)arg2;
 + (id)localizedReferenceToLocalSourceOfDataclass:(id)arg1;

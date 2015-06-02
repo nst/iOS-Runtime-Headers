@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSCountedSet, NSMutableDictionary;
-
 @interface ABDataCollection : NSObject {
     void *_addressBook;
     bool _isLocalSourceOnly;
@@ -22,20 +20,20 @@
     int _totalGroups;
 }
 
-@property bool isLocalSourceOnly;
-@property bool isLocalSourceRemaining;
-@property bool isMeCardHomeAddressSet;
-@property bool isMeCardSet;
-@property bool isMeCardWorkAddressSet;
-@property(retain) NSMutableDictionary * propertyCountForRecordID;
-@property bool runningUnitTests;
-@property(retain) NSCountedSet * sourceTypeScalarKeys;
-@property int totalContacts;
-@property int totalContactsWithAnniversaries;
-@property int totalContactsWithBirthdays;
-@property int totalContactsWithPhotos;
-@property int totalContactsWithYearOnBirthday;
-@property int totalGroups;
+@property (nonatomic) bool isLocalSourceOnly;
+@property (nonatomic) bool isLocalSourceRemaining;
+@property (nonatomic) bool isMeCardHomeAddressSet;
+@property (nonatomic) bool isMeCardSet;
+@property (nonatomic) bool isMeCardWorkAddressSet;
+@property (nonatomic, retain) NSMutableDictionary *propertyCountForRecordID;
+@property (nonatomic) bool runningUnitTests;
+@property (nonatomic, retain) NSCountedSet *sourceTypeScalarKeys;
+@property (nonatomic) int totalContacts;
+@property (nonatomic) int totalContactsWithAnniversaries;
+@property (nonatomic) int totalContactsWithBirthdays;
+@property (nonatomic) int totalContactsWithPhotos;
+@property (nonatomic) int totalContactsWithYearOnBirthday;
+@property (nonatomic) int totalGroups;
 
 + (BOOL)isEnabled;
 + (void)logContactCreation:(long long)arg1;

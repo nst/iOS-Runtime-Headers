@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@class NSSet;
-
 @interface FMFSessionDataManager : NSObject {
     NSSet *_followers;
     NSSet *_following;
     NSSet *_locations;
 }
 
-@property(retain) NSSet * followers;
-@property(retain) NSSet * following;
-@property(retain) NSSet * locations;
+@property (nonatomic, retain) NSSet *followers;
+@property (nonatomic, retain) NSSet *following;
+@property (nonatomic, retain) NSSet *locations;
 
 + (id)sharedInstance;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSArray, NSDictionary, NSManagedObjectModel, NSMappingModel, NSMigrationManager, NSPersistentStoreCoordinator, NSString, NSURL;
-
 @interface NSStoreMigrationPolicy : NSObject {
     NSPersistentStoreCoordinator *_coordinator;
     NSString *_destinationConfiguration;

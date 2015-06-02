@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface WKInterfaceMap : WKInterfaceObject {
-}
+@interface WKInterfaceMap : WKInterfaceObject
 
 - (void)addAnnotation:(struct { double x1; double x2; })arg1 withImage:(id)arg2 centerOffset:(struct CGPoint { float x1; float x2; })arg3;
 - (void)addAnnotation:(struct { double x1; double x2; })arg1 withImageNamed:(id)arg2 centerOffset:(struct CGPoint { float x1; float x2; })arg3;

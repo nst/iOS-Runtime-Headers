@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVMutableCompositionInternal, NSArray;
-
 @interface AVMutableComposition : AVComposition {
     AVMutableCompositionInternal *_mutablePriv;
 }
 
-@property struct CGSize { float x1; float x2; } naturalSize;
-@property(readonly) NSArray * tracks;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic, readonly) NSArray *tracks;
 
 + (id)composition;
 

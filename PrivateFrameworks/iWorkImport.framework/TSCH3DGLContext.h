@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSIndexSet, NSMutableDictionary, NSMutableIndexSet, NSMutableSet, NSSet, TSCH3DGLContext, TSCH3DGLVersion;
-
 @interface TSCH3DGLContext : TSCH3DContext <TSCHUnretainedParent> {
     struct GLSingleState { 
         unsigned int target; 
@@ -86,9 +84,9 @@
     NSMutableDictionary *mVirtualScreenToCapabilitiesMap;
 }
 
-@property(readonly) NSSet * childrenContexts;
-@property(readonly) BOOL isSharable;
-@property(readonly) TSCH3DGLVersion * version;
+@property (nonatomic, readonly) NSSet *childrenContexts;
+@property (nonatomic, readonly) BOOL isSharable;
+@property (nonatomic, readonly) TSCH3DGLVersion *version;
 
 - (id).cxx_construct;
 - (void)activateTextureUnit:(unsigned int)arg1;

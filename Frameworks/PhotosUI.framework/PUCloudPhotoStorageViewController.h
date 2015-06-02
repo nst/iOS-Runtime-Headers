@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class UIBarButtonItem, UILabel;
-
 @interface PUCloudPhotoStorageViewController : UITableViewController {
     UIBarButtonItem *_buyBarButtonItem;
     UILabel *_footerLabel;

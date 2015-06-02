@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class <PSPINEntryViewDelegate>, FailureBarView, NSString, UILabel;
-
 @interface PINView : UIView <PINEntryView> {
     <PSPINEntryViewDelegate> *_delegate;
     BOOL _error;
@@ -13,10 +11,10 @@
     UILabel *_titleLabel;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)appendString:(id)arg1;
 - (BOOL)becomeFirstResponder;

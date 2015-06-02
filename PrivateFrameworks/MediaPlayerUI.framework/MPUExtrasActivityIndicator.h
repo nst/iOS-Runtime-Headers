@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class UIActivityIndicatorView, UILabel;
-
 @interface MPUExtrasActivityIndicator : UIView {
     UIActivityIndicatorView *_spinner;
     UILabel *_titleLabel;

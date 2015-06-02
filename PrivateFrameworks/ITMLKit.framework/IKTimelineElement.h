@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@class IKTextElement, NSArray, NSURL;
+@interface IKTimelineElement : IKViewElement
 
-@interface IKTimelineElement : IKViewElement {
-}
-
-@property(retain,readonly) NSArray * events;
-@property(readonly) double refreshInterval;
-@property(readonly) unsigned int timelineType;
-@property(retain,readonly) IKTextElement * title;
-@property(retain,readonly) NSURL * url;
+@property (nonatomic, readonly, retain) NSArray *events;
+@property (nonatomic, readonly) double refreshInterval;
+@property (nonatomic, readonly) unsigned int timelineType;
+@property (nonatomic, readonly, retain) IKTextElement *title;
+@property (nonatomic, readonly, retain) NSURL *url;
 
 - (id)events;
 - (double)refreshInterval;

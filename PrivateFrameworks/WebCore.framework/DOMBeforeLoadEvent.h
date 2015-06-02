@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@class NSString;
+@interface DOMBeforeLoadEvent : DOMEvent
 
-@interface DOMBeforeLoadEvent : DOMEvent {
-}
-
-@property(copy,readonly) NSString * url;
+@property (readonly, copy) NSString *url;
 
 - (id)url;
 

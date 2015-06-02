@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VUSocialUpload.framework/VUSocialUpload
  */
 
-@class ACAccount, ACAccountStore, FlickrAudienceController, FlickrPhotoSetController, FlickrPhotoSetManager, FlickrUploadSession, NSString, SLComposeSheetConfigurationItem, UIImageView;
-
 @interface FlickrComposeViewController : SLComposeServiceViewController <FlickrComposeOptionViewDelegate> {
     ACAccountStore *_accountStore;
     int _audience;
@@ -20,12 +18,12 @@
     FlickrUploadSession *_session;
 }
 
-@property(retain) ACAccountStore * accountStore;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) ACAccount * flickrAccount;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) ACAccountStore *accountStore;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) ACAccount *flickrAccount;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)accountStore;

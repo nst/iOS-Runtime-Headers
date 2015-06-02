@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class <CADInterface>, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString, NSXPCConnection;
-
 @interface EKDaemonConnection : NSObject <CADClientInterface> {
     NSMutableDictionary *_cancellableOperations;
     NSObject<OS_dispatch_queue> *_connectionLock;
@@ -17,11 +15,11 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property(retain,readonly) <CADInterface> * CADOperationProxy;
+@property (readonly, retain) <CADInterface> *CADOperationProxy;
 @property id delegate;
-@property(retain,readonly) NSXPCConnection * xpcConnection;
+@property (readonly, retain) NSXPCConnection *xpcConnection;
 
-+ (void)waitOnSemaphoreWithBlock:(id)arg1;
++ (void)waitOnSemaphoreWithBlock:(id /* block */)arg1;
 
 - (void)CADClientReceiveOccurrenceCacheSearchResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(BOOL)arg3;
 - (id)CADOperationProxy;

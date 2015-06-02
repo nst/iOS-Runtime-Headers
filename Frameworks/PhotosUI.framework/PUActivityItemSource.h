@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSDictionary, NSString, NSURL, PHAsset, PLVideoRemaker, _PUActivityItemSourceOperation;
-
 @interface PUActivityItemSource : NSObject <UIActivityItemDeferredSource, UIActivityItemSource> {
     NSURL *__assetURL;
     NSURL *__assetsLibraryURL;
@@ -16,46 +10,30 @@
     int __remakerWasCancelled;
     NSURL *__videoRemakerURL;
     PHAsset *_asset;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completionHandler;
-
+    id /* block */ _completionHandler;
     _PUActivityItemSourceOperation *_currentOperation;
     BOOL _hasRecognizedVideoAdjustments;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _postCompletionHandler;
-
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressHandler;
-
+    id /* block */ _postCompletionHandler;
+    id /* block */ _progressHandler;
     PLVideoRemaker *_remaker;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _remakerCompletionHandler;
-
+    id /* block */ _remakerCompletionHandler;
     id _strongSelf;
 }
 
-@property(setter=_setAssetURL:,retain) NSURL * _assetURL;
-@property(setter=_setAssetsLibraryURL:,retain) NSURL * _assetsLibraryURL;
-@property(setter=_setImageManagerRequestID:) int _imageManagerRequestID;
-@property(setter=_setPasteboardRepresentation:,retain) NSDictionary * _pasteboardRepresentation;
-@property(setter=_setRemakerWasCancelled:) int _remakerWasCancelled;
-@property(setter=_setVideoRemakerURL:,retain) NSURL * _videoRemakerURL;
-@property(readonly) PHAsset * asset;
-@property(copy) id completionHandler;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) id postCompletionHandler;
-@property(copy) id progressHandler;
-@property(readonly) Class superclass;
+@property (setter=_setAssetURL:, retain) NSURL *_assetURL;
+@property (setter=_setAssetsLibraryURL:, retain) NSURL *_assetsLibraryURL;
+@property (setter=_setImageManagerRequestID:) int _imageManagerRequestID;
+@property (setter=_setPasteboardRepresentation:, retain) NSDictionary *_pasteboardRepresentation;
+@property (setter=_setRemakerWasCancelled:) int _remakerWasCancelled;
+@property (setter=_setVideoRemakerURL:, retain) NSURL *_videoRemakerURL;
+@property (nonatomic, readonly) PHAsset *asset;
+@property (copy) id /* block */ completionHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (copy) id /* block */ postCompletionHandler;
+@property (copy) id /* block */ progressHandler;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_assetURL;
@@ -86,16 +64,16 @@
 - (id)asset;
 - (void)cancel;
 - (void)cancelRemaking;
-- (id)completionHandler;
+- (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)initWithAsset:(id)arg1;
-- (id)postCompletionHandler;
-- (id)progressHandler;
-- (void)remakeVideoWithTrimStartTime:(double)arg1 endTime:(double)arg2 forMail:(BOOL)arg3 progressHandler:(id)arg4 completionHandler:(id)arg5;
+- (id /* block */)postCompletionHandler;
+- (id /* block */)progressHandler;
+- (void)remakeVideoWithTrimStartTime:(double)arg1 endTime:(double)arg2 forMail:(BOOL)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (void)runWithActivityType:(id)arg1;
-- (void)setCompletionHandler:(id)arg1;
-- (void)setPostCompletionHandler:(id)arg1;
-- (void)setProgressHandler:(id)arg1;
+- (void)setCompletionHandler:(id /* block */)arg1;
+- (void)setPostCompletionHandler:(id /* block */)arg1;
+- (void)setProgressHandler:(id /* block */)arg1;
 - (void)videoRemakerDidBeginRemaking:(id)arg1;
 - (void)videoRemakerDidEndRemaking:(id)arg1 temporaryPath:(id)arg2;
 

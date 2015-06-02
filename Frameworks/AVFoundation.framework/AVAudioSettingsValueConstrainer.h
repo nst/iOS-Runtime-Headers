@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class NSArray, NSMutableArray;
-
 @interface AVAudioSettingsValueConstrainer : NSObject {
     NSMutableArray *_applicableOutputDataRatesForSampleRate;
     NSMutableArray *_applicableOutputSampleRatesForDataRate;
@@ -38,12 +36,12 @@
     unsigned long _outputDataRate;
 }
 
-@property unsigned long outputBitsPerChannel;
-@property unsigned long outputChannelCount;
-@property unsigned long outputDataRate;
-@property unsigned long outputFormat;
-@property unsigned long outputFormatFlags;
-@property float outputSampleRate;
+@property (nonatomic) unsigned long outputBitsPerChannel;
+@property (nonatomic) unsigned long outputChannelCount;
+@property (nonatomic) unsigned long outputDataRate;
+@property (nonatomic) unsigned long outputFormat;
+@property (nonatomic) unsigned long outputFormatFlags;
+@property (nonatomic) float outputSampleRate;
 
 - (void)_bringUpToDate;
 - (void)_buildApplicableDataRatesForSampleRates;

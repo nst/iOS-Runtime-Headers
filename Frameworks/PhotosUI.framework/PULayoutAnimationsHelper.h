@@ -2,15 +2,13 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class PUSectionedGridLayout;
-
 @interface PULayoutAnimationsHelper : NSObject {
     PUSectionedGridLayout *_layout;
     BOOL _shouldAnimateTemporaryImageView;
 }
 
-@property(readonly) PUSectionedGridLayout * layout;
-@property BOOL shouldAnimateTemporaryImageView;
+@property (nonatomic, readonly) PUSectionedGridLayout *layout;
+@property (nonatomic) BOOL shouldAnimateTemporaryImageView;
 
 - (void).cxx_destruct;
 - (id)_adjustAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
@@ -19,11 +17,11 @@
 - (id)_adjustRenderedStripAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_adjustSectionHeaderAnimation:(id)arg1 forReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (void)_applyDefaultLayoutAttributes:(id)arg1 toView:(id)arg2;
-- (void)_configureAnimationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 withCompletionBlock:(id)arg3;
+- (void)_configureAnimationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 withCompletionBlock:(id /* block */)arg3;
 - (id)_createDefaultZoomingInAnimationForKeyPath:(id)arg1 ofReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_createDefaultZoomingOutAnimationForKeyPath:(id)arg1 ofReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
 - (id)_defaultAnimationForKeyPath:(id)arg1 ofReusableView:(id)arg2 toLayoutAttributes:(id)arg3;
-- (id)animationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2;
+- (id /* block */)animationsForReusableView:(id)arg1 toLayoutAttributes:(id)arg2;
 - (void)didFinishLayoutTransitionAnimations:(BOOL)arg1 transitionIsAppearing:(BOOL)arg2;
 - (id)initWithSectionedGridLayout:(id)arg1;
 - (id)layout;

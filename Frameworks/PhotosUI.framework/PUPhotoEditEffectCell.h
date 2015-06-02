@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@class NSString, UIImage, UIImageView, UILabel, UIView;
-
 @interface PUPhotoEditEffectCell : UICollectionViewCell {
     UIView *__highlightView;
     UIImageView *__imageView;
@@ -13,12 +11,12 @@
     NSString *_name;
 }
 
-@property(setter=_setHighlightView:,retain) UIView * _highlightView;
-@property(setter=_setImageView:,retain) UIImageView * _imageView;
-@property(setter=_setNameLabel:,retain) UILabel * _nameLabel;
-@property(setter=_setSelectionView:,retain) UIImageView * _selectionView;
-@property(retain) UIImage * image;
-@property(copy) NSString * name;
+@property (setter=_setHighlightView:, nonatomic, retain) UIView *_highlightView;
+@property (setter=_setImageView:, nonatomic, retain) UIImageView *_imageView;
+@property (setter=_setNameLabel:, nonatomic, retain) UILabel *_nameLabel;
+@property (setter=_setSelectionView:, nonatomic, retain) UIImageView *_selectionView;
+@property (nonatomic, retain) UIImage *image;
+@property (nonatomic, copy) NSString *name;
 
 + (id)selectionOutlineImage;
 

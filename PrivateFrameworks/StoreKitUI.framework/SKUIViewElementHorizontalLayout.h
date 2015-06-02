@@ -8,12 +8,12 @@
     int _maximumElementsPerLine;
 }
 
-@property float elementSpacing;
-@property float layoutWidth;
-@property int maximumElementsPerLine;
+@property (nonatomic) float elementSpacing;
+@property (nonatomic) float layoutWidth;
+@property (nonatomic) int maximumElementsPerLine;
 
 - (float)elementSpacing;
-- (id)layoutViewElements:(id)arg1 usingSizingBlock:(id)arg2;
+- (id)layoutViewElements:(id)arg1 usingSizingBlock:(id /* block */)arg2;
 - (float)layoutWidth;
 - (int)maximumElementsPerLine;
 - (void)setElementSpacing:(float)arg1;

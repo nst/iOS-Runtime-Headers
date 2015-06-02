@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASettingOpenICloudSettings : SASettingOpenSettings {
-}
+@interface SASettingOpenICloudSettings : SASettingOpenSettings
 
 + (id)openICloudSettings;
 + (id)openICloudSettingsWithDictionary:(id)arg1 context:(id)arg2;

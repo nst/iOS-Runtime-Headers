@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@class UIView;
-
 @interface PSSliderTableCell : PSControlTableCell {
     UIView *_disabledView;
 }

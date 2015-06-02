@@ -2,12 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSString;
+@interface UITextInputMode : NSObject <NSSecureCoding>
 
-@interface UITextInputMode : NSObject <NSSecureCoding> {
-}
-
-@property(retain,readonly) NSString * primaryLanguage;
+@property (nonatomic, readonly, retain) NSString *primaryLanguage;
 
 + (id)activeInputModes;
 + (id)currentInputMode;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
  */
 
-@class IMItem;
-
 @interface IMChatItem : NSObject <NSCopying> {
     IMItem *_item;
 }
 
-@property(readonly) BOOL canDelete;
+@property (nonatomic, readonly) BOOL canDelete;
 
 - (id)_initWithItem:(id)arg1;
 - (id)_item;

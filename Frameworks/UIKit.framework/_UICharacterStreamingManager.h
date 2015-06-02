@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CADisplayLink, NSMutableArray, NSString, UITextView;
-
 @interface _UICharacterStreamingManager : NSObject {
     BOOL _committingFinalResults;
     BOOL _discardNextHypothesis;
@@ -19,13 +17,13 @@
     UITextView *_textView;
 }
 
-@property BOOL discardNextHypothesis;
-@property(copy) NSString * lastHypothesis;
-@property double minDurationBetweenHypotheses;
-@property(retain) NSMutableArray * pendingEdits;
-@property(copy) NSString * previousHypothesis;
-@property double streamingCharacterInsertionRate;
-@property(copy) NSString * targetHypothesis;
+@property (nonatomic) BOOL discardNextHypothesis;
+@property (nonatomic, copy) NSString *lastHypothesis;
+@property (nonatomic) double minDurationBetweenHypotheses;
+@property (nonatomic, retain) NSMutableArray *pendingEdits;
+@property (nonatomic, copy) NSString *previousHypothesis;
+@property (nonatomic) double streamingCharacterInsertionRate;
+@property (nonatomic, copy) NSString *targetHypothesis;
 
 - (void)_displayLinkFired:(id)arg1;
 - (void)_startStreamingAnimations;

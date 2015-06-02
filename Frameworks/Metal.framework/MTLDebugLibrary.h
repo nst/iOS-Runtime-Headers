@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@class MTLCompileOptions;
-
 @interface MTLDebugLibrary : MTLToolsLibrary {
     id _code;
     MTLCompileOptions *_compileOptions;
     unsigned int _type;
 }
 
-@property(copy) id code;
-@property(copy) MTLCompileOptions * compileOptions;
-@property unsigned int type;
+@property (nonatomic, copy) id code;
+@property (nonatomic, copy) MTLCompileOptions *compileOptions;
+@property (nonatomic) unsigned int type;
 
 - (void).cxx_destruct;
 - (id)code;

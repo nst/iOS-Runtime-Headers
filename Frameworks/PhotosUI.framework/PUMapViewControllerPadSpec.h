@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUMapViewControllerPadSpec : PUMapViewControllerSpec {
-}
+@interface PUMapViewControllerPadSpec : PUMapViewControllerSpec
 
 - (BOOL)alwaysFadeRemoves;
 - (float)borderAnnotationPadding;

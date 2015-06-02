@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSDictionary, NSString, UIScreen;
-
 @interface UITextEffectsWindow : UIAutoRotatingWindow <_UIScreenBasedObject> {
     unsigned int _activeEffectsCount;
     unsigned int _activeRemoteViewCount;
@@ -16,20 +14,20 @@
     BOOL _inDealloc;
     NSDictionary *_perScreenOptions;
     unsigned int _windowLevelCount;
-    float _windowLevelStack[5];
+    float _windowLevelStack;
 }
 
-@property(readonly) UIScreen * _intendedScreen;
-@property(readonly) NSDictionary * _options;
-@property(readonly) unsigned int contextID;
-@property(copy,readonly) NSString * debugDescription;
-@property float defaultWindowLevel;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } hostedFrame;
-@property struct CGPoint { float x1; float x2; } hostedWindowOffset;
-@property(readonly) Class superclass;
-@property BOOL useHostedInstance;
+@property (readonly) UIScreen *_intendedScreen;
+@property (readonly) NSDictionary *_options;
+@property (readonly) unsigned int contextID;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) float defaultWindowLevel;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } hostedFrame;
+@property (nonatomic) struct CGPoint { float x1; float x2; } hostedWindowOffset;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL useHostedInstance;
 
 + (BOOL)_isSystemWindow;
 + (id)_sharedTextEffectsWindowforScreen:(id)arg1 aboveStatusBar:(BOOL)arg2 allowHosted:(BOOL)arg3 matchesStatusBarOrientationOnAccess:(BOOL)arg4;

@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface WebCoreRenderThemeBundle : NSObject {
-}
+@interface WebCoreRenderThemeBundle : NSObject
 
 @end

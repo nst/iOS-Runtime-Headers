@@ -20,8 +20,8 @@
     BOOL unused2;
 }
 
-@property(getter=isAtEnd,readonly) BOOL atEnd;
-@property(readonly) unsigned int systemVersion;
+@property (getter=isAtEnd, readonly) BOOL atEnd;
+@property (readonly) unsigned int systemVersion;
 
 + (id)classNameDecodedForArchiveClassName:(id)arg1;
 + (void)decodeClassName:(id)arg1 asClassName:(id)arg2;

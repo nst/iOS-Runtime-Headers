@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
  */
 
-@interface DOMHTMLDirectoryElement : DOMHTMLElement {
-}
+@interface DOMHTMLDirectoryElement : DOMHTMLElement
 
 @property BOOL compact;
 

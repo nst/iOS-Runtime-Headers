@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@class HDSQLiteDatabase;
-
 @interface HDDatabaseMigrator : NSObject {
     HDSQLiteDatabase *_database;
 }
 
-@property(readonly) HDSQLiteDatabase * database;
+@property (nonatomic, readonly) HDSQLiteDatabase *database;
 
 - (void).cxx_destruct;
 - (id)database;

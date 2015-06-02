@@ -2,20 +2,18 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSString;
-
 @interface MPAbstractFullScreenVideoViewController : MPVideoViewController <MPSwipableViewDelegate> {
-    unsigned int _autoHidingForItemChange : 1;
-    unsigned int _requestExitAfterHidingControls : 1;
-    unsigned int _rotateAfterHidingControls : 1;
-    unsigned int _scheduledAutoHide : 1;
-    unsigned int _showControlsAfterRotate : 1;
+    unsigned int _autoHidingForItemChange;
+    unsigned int _requestExitAfterHidingControls;
+    unsigned int _rotateAfterHidingControls;
+    unsigned int _scheduledAutoHide;
+    unsigned int _showControlsAfterRotate;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_autohideControlsOverlay;

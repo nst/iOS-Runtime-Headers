@@ -2,18 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAUIShowHelp : SABaseClientBoundCommand
 
-@interface SAUIShowHelp : SABaseClientBoundCommand {
-}
+@property (nonatomic, copy) NSString *speakableText;
+@property (nonatomic, copy) NSString *text;
 
-@property(copy) NSString * speakableText;
-@property(copy) NSString * text;
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)showHelp;
 + (id)showHelpWithDictionary:(id)arg1 context:(id)arg2;
 
-- (BOOL)_afui_isUsefulUserResultCommand;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
@@ -21,5 +19,9 @@
 - (void)setText:(id)arg1;
 - (id)speakableText;
 - (id)text;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (BOOL)_afui_isUsefulUserResultCommand;
 
 @end

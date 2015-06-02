@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@class <PKCodeAcquisitionDelegate>, NSMutableData, NSSet, NSString, NSURLConnection, PKCaptureSession, PKReticleView, UILabel, UINavigationBar, UIProgressView;
-
 @interface PKCodeAcquisitionViewController : UIViewController <NSURLConnectionDataDelegate, PKCaptureDelegate, UIGestureRecognizerDelegate> {
     UILabel *_captionLabel;
     PKCaptureSession *_captureSession;
@@ -19,11 +17,11 @@
     NSSet *_supportedBarcodeTypes;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <PKCodeAcquisitionDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKCodeAcquisitionDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_cleanupDownload;
 - (void)_handleDownloadFailureWithReason:(id)arg1;

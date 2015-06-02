@@ -2,19 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SALocalSearchRating : AceObject <SAAceSerializable>
 
-@interface SALocalSearchRating : AceObject <SAAceSerializable> {
-}
-
-@property int count;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property double maxValue;
-@property(copy) NSString * providerId;
-@property(readonly) Class superclass;
-@property double value;
+@property (nonatomic) int count;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) double maxValue;
+@property (nonatomic, copy) NSString *providerId;
+@property (readonly) Class superclass;
+@property (nonatomic) double value;
 
 + (id)rating;
 + (id)ratingWithDictionary:(id)arg1 context:(id)arg2;

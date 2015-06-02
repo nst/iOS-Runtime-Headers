@@ -2,11 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSPRegistry : NSObject {
     struct hash_map<const google::protobuf::Descriptor *, unsigned int, TSP::DescriptorHash, std::__1::equal_to<const google::protobuf::Descriptor *>, std::__1::allocator<std::__1::pair<const google::protobuf::Descriptor *const, unsigned int> > > { 
         struct __hash_table<std::__1::pair<const google::protobuf::Descriptor *, unsigned int>, __gnu_cxx::__hash_map_hasher<std::__1::pair<const google::protobuf::Descriptor *, unsigned int>, TSP::DescriptorHash, true>, __gnu_cxx::__hash_map_equal<std::__1::pair<const google::protobuf::Descriptor *, unsigned int>, std::__1::equal_to<const google::protobuf::Descriptor *>, true>, std::__1::allocator<std::__1::pair<const google::protobuf::Descriptor *, unsigned int> > > { 
@@ -110,7 +105,7 @@
     } _messageTypeToPrototypeMap;
 }
 
-+ (void)setInitializationHandler:(id)arg1;
++ (void)setInitializationHandler:(id /* block */)arg1;
 + (id)sharedRegistry;
 
 - (id).cxx_construct;

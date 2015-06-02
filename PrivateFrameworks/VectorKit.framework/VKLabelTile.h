@@ -9,7 +9,7 @@
     } _labelTile;
 }
 
-@property(readonly) struct shared_ptr<vk::LabelTile> { struct LabelTile {} *x1; struct __shared_weak_count {} *x2; } labelTile;
+@property (nonatomic, readonly) struct shared_ptr<vk::LabelTile> { struct LabelTile {} *x1; struct __shared_weak_count {} *x2; } labelTile;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

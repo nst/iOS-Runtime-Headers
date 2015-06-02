@@ -2,24 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDataModel.framework/CoreDuetDataModel
  */
 
-@class NSDate, NSNumber, NSString;
+@interface CDDMDeviceEvent : NSManagedObject
 
-@interface CDDMDeviceEvent : NSManagedObject {
-}
-
-@property(retain) NSNumber * anonymizedBeacon;
-@property(retain) NSNumber * anonymizedLocation;
-@property(retain) NSDate * creationDate;
-@property(retain) NSDate * exchangeDate;
-@property(retain) NSNumber * integerId;
-@property(retain) NSNumber * isDefaultPairedDevice;
-@property(retain) NSNumber * localDaysSinceSunday;
-@property(retain) NSNumber * localTime;
-@property(retain) NSNumber * localTimeQuarterHourSlot;
-@property(retain) NSNumber * locallyPresent;
-@property(retain) NSNumber * networkQuality;
-@property(retain) NSString * service;
-@property(retain) NSNumber * state;
-@property(retain) NSNumber * userId;
+@property (nonatomic, retain) NSNumber *anonymizedBeacon;
+@property (nonatomic, retain) NSNumber *anonymizedLocation;
+@property (nonatomic, retain) NSDate *creationDate;
+@property (nonatomic, retain) NSDate *exchangeDate;
+@property (nonatomic, retain) NSNumber *integerId;
+@property (nonatomic, retain) NSNumber *isDefaultPairedDevice;
+@property (nonatomic, retain) NSNumber *localDaysSinceSunday;
+@property (nonatomic, retain) NSNumber *localTime;
+@property (nonatomic, retain) NSNumber *localTimeQuarterHourSlot;
+@property (nonatomic, retain) NSNumber *locallyPresent;
+@property (nonatomic, retain) NSNumber *networkQuality;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic, retain) NSNumber *state;
+@property (nonatomic, retain) NSNumber *userId;
 
 @end

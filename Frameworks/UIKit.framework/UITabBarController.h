@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UITabBarControllerDelegate>, <UITabBarControllerDelegate><UITabBarControllerDelegate_Private>, <UIViewControllerAnimatedTransitioning>, <UIViewControllerInteractiveTransitioning>, NSArray, NSMutableArray, NSString, UIMoreNavigationController, UINavigationController, UITabBar, UITapGestureRecognizer, UIView, UIViewController;
-
 @interface UITabBarController : UIViewController <GKContentRefresh, GKURLHandling, NSCoding, UIGestureRecognizerDelegate, UITabBarDelegate> {
     <UIViewControllerAnimatedTransitioning> *__animator;
     NSString *__backdropGroupName;
@@ -38,22 +36,24 @@
     UIView *_viewControllerTransitionView;
 }
 
-@property(setter=_setAccessoryView:,retain) UIView * _accessoryView;
-@property(setter=_setAnimator:,retain) <UIViewControllerAnimatedTransitioning> * _animator;
-@property(getter=_backdropGroupName,setter=_setBackdropGroupName:,retain) NSString * _backdropGroupName;
-@property(setter=_setInteractor:,retain) <UIViewControllerInteractiveTransitioning> * _interactor;
-@property(copy) NSArray * customizableViewControllers;
-@property(copy,readonly) NSString * debugDescription;
-@property <UITabBarControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property NSMutableArray * moreChildViewControllers;
-@property(readonly) UINavigationController * moreNavigationController;
-@property unsigned int selectedIndex;
-@property UIViewController * selectedViewController;
-@property(readonly) Class superclass;
-@property(readonly) UITabBar * tabBar;
-@property(copy) NSArray * viewControllers;
+@property (setter=_setAccessoryView:, nonatomic, retain) UIView *_accessoryView;
+@property (setter=_setAnimator:, nonatomic, retain) <UIViewControllerAnimatedTransitioning> *_animator;
+@property (getter=_backdropGroupName, setter=_setBackdropGroupName:, nonatomic, retain) NSString *_backdropGroupName;
+@property (setter=_setInteractor:, nonatomic, retain) <UIViewControllerInteractiveTransitioning> *_interactor;
+@property (nonatomic, copy) NSArray *customizableViewControllers;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <UITabBarControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) NSMutableArray *moreChildViewControllers;
+@property (nonatomic, readonly) UINavigationController *moreNavigationController;
+@property (nonatomic) unsigned int selectedIndex;
+@property (nonatomic) UIViewController *selectedViewController;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) UITabBar *tabBar;
+@property (nonatomic, copy) NSArray *viewControllers;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_directlySetsContentOverlayInsetsForChildren;
 + (Class)_moreNavigationControllerClass;
@@ -85,13 +85,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForWrapperViewForViewController:(id)arg1;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
-- (void)_gkForceNextContentUpdate;
-- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
-- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
-- (void)_gkResetContents;
-- (void)_gkSetContentsNeedUpdateWithHandler:(id)arg1;
-- (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
-- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id)arg1;
 - (void)_hideBarWithTransition:(int)arg1 isExplicit:(BOOL)arg2;
 - (BOOL)_ignoreUnselectedTabsForStateRestoration;
 - (id)_interactor;
@@ -167,7 +160,6 @@
 - (id)rotatingHeaderView;
 - (id)rotatingSnapshotViewForWindow:(id)arg1;
 - (unsigned int)selectedIndex;
-- (id)selectedNavigationController;
 - (id)selectedViewController;
 - (void)setCustomizableViewControllers:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -209,5 +201,19 @@
 - (void)willAnimateSecondHalfOfRotationFromInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
+
+- (void)_gkForceNextContentUpdate;
+- (void)_gkHandleURLPathComponents:(id)arg1 query:(id)arg2;
+- (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)_gkResetContents;
+- (void)_gkSetContentsNeedUpdateWithHandler:(id /* block */)arg1;
+- (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)_gkUpdateContentsWithCompletionHandlerAndError:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
+
+- (id)selectedNavigationController;
 
 @end

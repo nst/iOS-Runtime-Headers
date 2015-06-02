@@ -2,21 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class NSString, SSVPlayActivityEvent;
-
 @interface MPUReportingPlaybackActivityEvent : NSObject <MPUReportingEvent> {
     SSVPlayActivityEvent *_playActivityEvent;
     NSString *_playbackSessionID;
     BOOL _shouldReportToStore;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) SSVPlayActivityEvent * playActivityEvent;
-@property(copy) NSString * playbackSessionID;
-@property BOOL shouldReportToStore;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) SSVPlayActivityEvent *playActivityEvent;
+@property (nonatomic, copy) NSString *playbackSessionID;
+@property (nonatomic) BOOL shouldReportToStore;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)description;

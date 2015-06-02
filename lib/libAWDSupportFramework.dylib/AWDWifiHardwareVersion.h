@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDWifiHardwareVersion : PBCodable <NSCopying> {
     NSString *_hardwareVersion;
     struct { 
@@ -12,10 +10,10 @@
     unsigned long long _timestamp;
 }
 
-@property(retain) NSString * hardwareVersion;
-@property(readonly) BOOL hasHardwareVersion;
-@property BOOL hasTimestamp;
-@property unsigned long long timestamp;
+@property (nonatomic, retain) NSString *hardwareVersion;
+@property (nonatomic, readonly) BOOL hasHardwareVersion;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

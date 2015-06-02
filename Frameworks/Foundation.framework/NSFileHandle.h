@@ -2,13 +2,12 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSData;
+@interface NSFileHandle : NSObject <NSSecureCoding>
 
-@interface NSFileHandle : NSObject <NSSecureCoding> {
-}
+@property (readonly, copy) NSData *availableData;
+@property (readonly) unsigned long long offsetInFile;
 
-@property(copy,readonly) NSData * availableData;
-@property(readonly) unsigned long long offsetInFile;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)fileHandleForReadingAtPath:(id)arg1;
@@ -32,27 +31,33 @@
 - (void)closeFile;
 - (void)encodeWithCoder:(id)arg1;
 - (int)fileDescriptor;
-- (BOOL)hk_readValue:(void*)arg1 ofSize:(unsigned long)arg2;
-- (BOOL)hk_writeValue:(const void*)arg1 size:(unsigned long)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFileDescriptor:(int)arg1;
 - (id)initWithFileDescriptor:(int)arg1 closeOnDealloc:(BOOL)arg2;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3;
 - (id)initWithPath:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
 - (id)initWithURL:(id)arg1 flags:(int)arg2 createMode:(int)arg3 error:(id*)arg4;
-- (void)ml_lock;
-- (void)ml_unlock;
 - (unsigned long long)offsetInFile;
 - (id)readDataOfLength:(unsigned int)arg1;
 - (id)readDataToEndOfFile;
-- (id)readabilityHandler;
+- (id /* block */)readabilityHandler;
 - (unsigned long long)seekToEndOfFile;
 - (void)seekToFileOffset:(unsigned long long)arg1;
-- (void)setReadabilityHandler:(id)arg1;
-- (void)setWriteabilityHandler:(id)arg1;
+- (void)setReadabilityHandler:(id /* block */)arg1;
+- (void)setWriteabilityHandler:(id /* block */)arg1;
 - (void)synchronizeFile;
 - (void)truncateFileAtOffset:(unsigned long long)arg1;
 - (void)writeData:(id)arg1;
-- (id)writeabilityHandler;
+- (id /* block */)writeabilityHandler;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (BOOL)hk_readValue:(void*)arg1 ofSize:(unsigned long)arg2;
+- (BOOL)hk_writeValue:(const void*)arg1 size:(unsigned long)arg2;
+
+// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
+
+- (void)ml_lock;
+- (void)ml_unlock;
 
 @end

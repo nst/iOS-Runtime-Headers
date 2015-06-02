@@ -9,8 +9,8 @@
     BOOL _includeSpokenNames;
 }
 
-@property BOOL hasIncludeSpokenNames;
-@property BOOL includeSpokenNames;
+@property (nonatomic) BOOL hasIncludeSpokenNames;
+@property (nonatomic) BOOL includeSpokenNames;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

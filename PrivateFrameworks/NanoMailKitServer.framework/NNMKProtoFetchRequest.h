@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
  */
 
-@class NSString;
-
 @interface NNMKProtoFetchRequest : PBRequest <NSCopying> {
     NSString *_conversationId;
     unsigned int _fullSyncVersion;
@@ -14,12 +12,12 @@
     BOOL _manuallyTriggered;
 }
 
-@property(retain) NSString * conversationId;
-@property unsigned int fullSyncVersion;
-@property(readonly) BOOL hasConversationId;
-@property BOOL hasFullSyncVersion;
-@property BOOL hasManuallyTriggered;
-@property BOOL manuallyTriggered;
+@property (nonatomic, retain) NSString *conversationId;
+@property (nonatomic) unsigned int fullSyncVersion;
+@property (nonatomic, readonly) BOOL hasConversationId;
+@property (nonatomic) BOOL hasFullSyncVersion;
+@property (nonatomic) BOOL hasManuallyTriggered;
+@property (nonatomic) BOOL manuallyTriggered;
 
 - (void).cxx_destruct;
 - (id)conversationId;

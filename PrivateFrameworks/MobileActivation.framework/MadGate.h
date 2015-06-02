@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileActivation.framework/MobileActivation
  */
 
-@interface MadGate : NSObject {
-}
+@interface MadGate : NSObject
 
 - (id)copyActivationRecord;
 - (id)copyRegulatoryImages;
@@ -16,7 +15,7 @@
 - (id)handleReCertInfo:(id)arg1;
 - (unsigned char)hasActivationTicket;
 - (unsigned char)isDeviceABrick;
-- (void)performSelectorOnRemoteObject:(SEL)arg1 withParam:(id)arg2 completionBlock:(id)arg3 waitBlock:(id)arg4;
+- (void)performSelectorOnRemoteObject:(SEL)arg1 withParam:(id)arg2 completionBlock:(id /* block */)arg3 waitBlock:(id /* block */)arg4;
 - (void)reactivateDevice;
 - (bool)recertifyDevice;
 - (bool)recertifyDeviceSB;

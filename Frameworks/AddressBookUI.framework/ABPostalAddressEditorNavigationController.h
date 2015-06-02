@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class <ABPostalAddressEditorDelegate>;
-
 @interface ABPostalAddressEditorNavigationController : UINavigationController {
     <ABPostalAddressEditorDelegate> *_addressEditorDelegate;
 }
 
-@property <ABPostalAddressEditorDelegate> * addressEditorDelegate;
+@property (nonatomic) <ABPostalAddressEditorDelegate> *addressEditorDelegate;
 
 - (id)addressEditorDelegate;
 - (id)initWithContact:(id)arg1 property:(int)arg2 editNames:(BOOL)arg3;

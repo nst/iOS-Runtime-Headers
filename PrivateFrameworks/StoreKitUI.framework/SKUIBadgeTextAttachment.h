@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSURL;
-
 @interface SKUIBadgeTextAttachment : NSTextAttachment {
     NSURL *_imageURL;
 }
 
-@property(readonly) struct CGSize { float x1; float x2; } badgeSize;
-@property(readonly) NSURL * imageURL;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } badgeSize;
+@property (nonatomic, readonly) NSURL *imageURL;
 
 - (void).cxx_destruct;
 - (void)_loadImageWithResourceName:(id)arg1 fallbackImage:(id)arg2 styleColor:(id)arg3;

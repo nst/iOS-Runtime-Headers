@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@class NSData, NSString;
-
 @interface BRFieldPkgItem : PBCodable <NSCopying> {
     struct { 
         unsigned int mtime : 1; 
@@ -20,21 +18,21 @@
     int _type;
 }
 
-@property BOOL hasIsExecutable;
-@property BOOL hasIsWritable;
-@property BOOL hasMtime;
-@property(readonly) BOOL hasPath;
-@property(readonly) BOOL hasQuarantineInfo;
-@property(readonly) BOOL hasSignature;
-@property(readonly) BOOL hasSymlinkContent;
-@property BOOL isExecutable;
-@property BOOL isWritable;
-@property long long mtime;
-@property(retain) NSString * path;
-@property(retain) NSData * quarantineInfo;
-@property(retain) NSData * signature;
-@property(retain) NSString * symlinkContent;
-@property int type;
+@property (nonatomic) BOOL hasIsExecutable;
+@property (nonatomic) BOOL hasIsWritable;
+@property (nonatomic) BOOL hasMtime;
+@property (nonatomic, readonly) BOOL hasPath;
+@property (nonatomic, readonly) BOOL hasQuarantineInfo;
+@property (nonatomic, readonly) BOOL hasSignature;
+@property (nonatomic, readonly) BOOL hasSymlinkContent;
+@property (nonatomic) BOOL isExecutable;
+@property (nonatomic) BOOL isWritable;
+@property (nonatomic) long long mtime;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSData *quarantineInfo;
+@property (nonatomic, retain) NSData *signature;
+@property (nonatomic, retain) NSString *symlinkContent;
+@property (nonatomic) int type;
 
 - (void).cxx_destruct;
 - (void)clear;

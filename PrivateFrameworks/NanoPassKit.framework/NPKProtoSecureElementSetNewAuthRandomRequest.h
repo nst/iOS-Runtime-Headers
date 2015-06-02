@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@interface NPKProtoSecureElementSetNewAuthRandomRequest : PBRequest <NSCopying> {
-}
+@interface NPKProtoSecureElementSetNewAuthRandomRequest : PBRequest <NSCopying>
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

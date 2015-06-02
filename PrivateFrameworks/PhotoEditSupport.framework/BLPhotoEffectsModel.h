@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
  */
 
-@class BLPEModel, NSDictionary, NSMutableDictionary;
-
 @interface BLPhotoEffectsModel : NSObject {
     NSMutableDictionary *_adjustments;
     NSDictionary *_analysis;

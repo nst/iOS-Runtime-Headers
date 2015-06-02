@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSMutableArray, NSString;
-
 @interface CKDPSubscriptionNotificationAlert : PBCodable <NSCopying> {
     NSString *_actionLocKey;
     NSString *_launchImage;
@@ -13,17 +11,17 @@
     NSString *_text;
 }
 
-@property(retain) NSString * actionLocKey;
-@property(readonly) BOOL hasActionLocKey;
-@property(readonly) BOOL hasLaunchImage;
-@property(readonly) BOOL hasLocalizedKey;
-@property(readonly) BOOL hasSoundName;
-@property(readonly) BOOL hasText;
-@property(retain) NSString * launchImage;
-@property(retain) NSMutableArray * localizedArguments;
-@property(retain) NSString * localizedKey;
-@property(retain) NSString * soundName;
-@property(retain) NSString * text;
+@property (nonatomic, retain) NSString *actionLocKey;
+@property (nonatomic, readonly) BOOL hasActionLocKey;
+@property (nonatomic, readonly) BOOL hasLaunchImage;
+@property (nonatomic, readonly) BOOL hasLocalizedKey;
+@property (nonatomic, readonly) BOOL hasSoundName;
+@property (nonatomic, readonly) BOOL hasText;
+@property (nonatomic, retain) NSString *launchImage;
+@property (nonatomic, retain) NSMutableArray *localizedArguments;
+@property (nonatomic, retain) NSString *localizedKey;
+@property (nonatomic, retain) NSString *soundName;
+@property (nonatomic, retain) NSString *text;
 
 - (void).cxx_destruct;
 - (id)actionLocKey;

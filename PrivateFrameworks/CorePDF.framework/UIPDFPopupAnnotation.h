@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@class UIPDFAnnotation;
-
 @interface UIPDFPopupAnnotation : UIPDFAnnotation {
     struct CGRect { 
         struct CGPoint { 
@@ -18,8 +16,8 @@
     UIPDFAnnotation *parent;
 }
 
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } adjustedBounds;
-@property UIPDFAnnotation * parent;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } adjustedBounds;
+@property (nonatomic) UIPDFAnnotation *parent;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustedBounds;
 - (int)annotationType;

@@ -2,23 +2,21 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString, SKUITracklistColumnData, SKUITracklistPageComponent, SKUIViewElementLayoutContext;
-
 @interface SKUITracklistPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
     SKUITracklistColumnData *_columnData;
     int _lastNeedsMoreCount;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) SKUITracklistPageComponent * pageComponent;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) SKUITracklistPageComponent *pageComponent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_columnData;
-- (void)_enumerateVisibleViewElementsUsingBlock:(id)arg1;
+- (void)_enumerateVisibleViewElementsUsingBlock:(id /* block */)arg1;
 - (id)_mediaURLWithTrack:(id)arg1;
 - (id)_representativeStringForViewElement:(id)arg1;
 - (void)_requestCellLayoutWithColumnData:(id)arg1;
@@ -35,7 +33,7 @@
 - (void)collectionViewWillScrollToOffset:(struct CGPoint { float x1; float x2; })arg1 visibleRange:(struct SKUIIndexPathRange { int x1; int x2; int x3; int x4; })arg2;
 - (void)dealloc;
 - (id)firstAppearanceIndexPath;
-- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id)arg2;
+- (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithPageComponent:(id)arg1;
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;

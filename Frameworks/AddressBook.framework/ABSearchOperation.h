@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <ABSearchOperationDelegate>, NSArray, NSPredicate, NSThread;
-
 @interface ABSearchOperation : NSOperation {
     void *_addressBook;
     void *_context;
@@ -17,23 +11,19 @@
     void *_internalSearchAddressBook;
     NSPredicate *_predicate;
     NSArray *_prefetchProperties;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _progressBlock;
-
+    id /* block */ _progressBlock;
     NSThread *_progressBlockThread;
     unsigned int _sortOrdering;
 }
 
-@property void* addressBook;
-@property void* context;
-@property <ABSearchOperationDelegate> * delegate;
-@property void* internalSearchAddressBook;
-@property(retain) NSPredicate * predicate;
-@property(copy) NSArray * prefetchProperties;
-@property(copy) id progressBlock;
-@property unsigned int sortOrdering;
+@property (nonatomic) void*addressBook;
+@property (nonatomic) void*context;
+@property (nonatomic) <ABSearchOperationDelegate> *delegate;
+@property (nonatomic) void*internalSearchAddressBook;
+@property (nonatomic, retain) NSPredicate *predicate;
+@property (nonatomic, copy) NSArray *prefetchProperties;
+@property (nonatomic, copy) id /* block */ progressBlock;
+@property (nonatomic) unsigned int sortOrdering;
 
 + (id)personPredicateWithAnyValueForProperty:(int)arg1 addressBook:(void*)arg2;
 + (id)personPredicateWithGroup:(void*)arg1 addressBook:(void*)arg2;
@@ -63,14 +53,14 @@
 - (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
 - (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2 moreComing:(BOOL)arg3;
 - (id)prefetchProperties;
-- (id)progressBlock;
+- (id /* block */)progressBlock;
 - (void)setAddressBook:(void*)arg1;
 - (void)setContext:(void*)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalSearchAddressBook:(void*)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setPrefetchProperties:(id)arg1;
-- (void)setProgressBlock:(id)arg1;
+- (void)setProgressBlock:(id /* block */)arg1;
 - (void)setSortOrdering:(unsigned int)arg1;
 - (unsigned int)sortOrdering;
 

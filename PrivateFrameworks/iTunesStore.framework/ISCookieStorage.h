@@ -2,7 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISCookieStorage : SSVCookieStorage {
-}
+@interface ISCookieStorage : SSVCookieStorage
 
 @end

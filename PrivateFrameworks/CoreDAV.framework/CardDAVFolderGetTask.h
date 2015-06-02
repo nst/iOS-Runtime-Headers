@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@interface CardDAVFolderGetTask : CoreDAVGetTask {
-}
+@interface CardDAVFolderGetTask : CoreDAVGetTask
 
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 

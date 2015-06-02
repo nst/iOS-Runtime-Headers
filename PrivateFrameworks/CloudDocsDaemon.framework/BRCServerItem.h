@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class BRCAccountSession, BRCItemID, BRCLocalContainer, BRCServerZone, BRCStatInfo, BRCVersion, NSNumber, NSString;
-
 @interface BRCServerItem : NSObject <BRCItem> {
     BRCLocalContainer *_container;
     BRCItemID *_itemID;
@@ -24,22 +17,22 @@
     BRCServerZone *_zone;
 }
 
-@property(readonly) BRCLocalContainer * container;
-@property(readonly) BOOL isAlias;
-@property(readonly) BOOL isDead;
-@property(readonly) BOOL isDirectory;
-@property(readonly) BOOL isDocument;
-@property(readonly) BOOL isLive;
-@property(readonly) BOOL isPackage;
-@property(readonly) BRCItemID * itemID;
-@property(readonly) BRCVersion * latestVersion;
-@property(readonly) NSString * originalName;
-@property(readonly) NSNumber * ownerKey;
-@property(readonly) long long rank;
-@property(readonly) BRCServerZone * serverZone;
-@property(readonly) BRCAccountSession * session;
-@property unsigned int sharingOptions;
-@property(readonly) BRCStatInfo * st;
+@property (nonatomic, readonly) BRCLocalContainer *container;
+@property (nonatomic, readonly) BOOL isAlias;
+@property (nonatomic, readonly) BOOL isDead;
+@property (nonatomic, readonly) BOOL isDirectory;
+@property (nonatomic, readonly) BOOL isDocument;
+@property (nonatomic, readonly) BOOL isLive;
+@property (nonatomic, readonly) BOOL isPackage;
+@property (nonatomic, readonly) BRCItemID *itemID;
+@property (nonatomic, readonly) BRCVersion *latestVersion;
+@property (nonatomic, readonly) NSString *originalName;
+@property (nonatomic, readonly) NSNumber *ownerKey;
+@property (nonatomic, readonly) long long rank;
+@property (nonatomic, readonly) BRCServerZone *serverZone;
+@property (nonatomic, readonly) BRCAccountSession *session;
+@property (nonatomic) unsigned int sharingOptions;
+@property (nonatomic, readonly) BRCStatInfo *st;
 
 + (BOOL)supportsSecureCoding;
 

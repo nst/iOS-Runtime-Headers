@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSCache, NSMutableDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface MPStoreCompletionOfferingController : NSObject <MCProfileConnectionObserver> {
     NSMutableDictionary *_lookupItemsByStoreLookupID;
     NSMutableDictionary *_lookupItemsByTokenID;
@@ -12,10 +10,10 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (void)_getIsCMCDisabled:(BOOL*)arg1 disabledReason:(id*)arg2;
 + (BOOL)_isCmcEnabled;
@@ -29,12 +27,12 @@
 - (void)_onQueueCancelCompletionOfferingLookupTokenID:(unsigned int)arg1;
 - (void)_onQueueClearCache;
 - (id)_onQueueCompletionOfferingForAlbumItemsQuery:(id)arg1;
-- (id)_onQueueGetInsertedLookupItemForAlbumItemsQuery:(id)arg1 requestAlreadyIssued:(BOOL*)arg2 responseBlock:(id)arg3;
+- (id)_onQueueGetInsertedLookupItemForAlbumItemsQuery:(id)arg1 requestAlreadyIssued:(BOOL*)arg2 responseBlock:(id /* block */)arg3;
 - (void)_onQueuePostLookupCompletedForLookupItem:(id)arg1 offering:(id)arg2 error:(id)arg3;
 - (void)_onQueueRemoveLookupItem:(id)arg1;
 - (void)_onQueueRemoveLookupItemsForStoreLookupID:(id)arg1;
 - (void)_onQueueSetCachedCompletionOffering:(id)arg1 forStoreLookupID:(id)arg2;
-- (id)_onQueueStartCompletionOfferingLookupForAlbumItemsQuery:(id)arg1 responseBlock:(id)arg2;
+- (id)_onQueueStartCompletionOfferingLookupForAlbumItemsQuery:(id)arg1 responseBlock:(id /* block */)arg2;
 - (id)_sanitizedQuery:(id)arg1;
 - (void)_storeAccountsDidChangeNotification:(id)arg1;
 - (void)cancelCompletionOfferingLookup:(unsigned int)arg1;
@@ -43,6 +41,6 @@
 - (id)init;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
-- (unsigned int)startCompletionOfferingLookupForAlbumItemsQuery:(id)arg1 responseBlock:(id)arg2;
+- (unsigned int)startCompletionOfferingLookupForAlbumItemsQuery:(id)arg1 responseBlock:(id /* block */)arg2;
 
 @end

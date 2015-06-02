@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicPlaylistTableViewCellContentView : MusicStandardMediaTableViewCellContentView {
-}
+@interface MusicPlaylistTableViewCellContentView : MusicStandardMediaTableViewCellContentView
 
 + (struct CGSize { float x1; float x2; })artworkSize;
 

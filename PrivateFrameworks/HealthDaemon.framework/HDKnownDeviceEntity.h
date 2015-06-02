@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDKnownDeviceEntity : HDHealthEntity {
-}
+@interface HDKnownDeviceEntity : HDHealthEntity
 
 + (id)_propertySettersForService;
 + (id)_servicePredicate:(id)arg1;

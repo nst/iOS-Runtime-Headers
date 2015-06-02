@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDComposerCellConfiguration : MCDArtistCellConfiguration {
-}
+@interface MCDComposerCellConfiguration : MCDArtistCellConfiguration
 
 + (id)itemPersistentIDProperty;
 + (id)mediaEntityPropertiesToFetch;

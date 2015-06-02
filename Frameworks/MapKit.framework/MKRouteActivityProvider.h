@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class MKMapItem;
-
 @interface MKRouteActivityProvider : MKPlaceActivityProvider {
     MKMapItem *_sourceMapItem;
 }
 
-@property(retain) MKMapItem * destinationMapItem;
-@property(retain) MKMapItem * sourceMapItem;
+@property (nonatomic, retain) MKMapItem *destinationMapItem;
+@property (nonatomic, retain) MKMapItem *sourceMapItem;
 
 - (void).cxx_destruct;
 - (id)activitySourceTitle;

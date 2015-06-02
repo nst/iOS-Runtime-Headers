@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAGKWebLinkPod : SAGKPodView
 
-@interface SAGKWebLinkPod : SAGKPodView {
-}
-
-@property(copy) NSArray * links;
+@property (nonatomic, copy) NSArray *links;
 
 + (id)webLinkPod;
 + (id)webLinkPodWithDictionary:(id)arg1 context:(id)arg2;

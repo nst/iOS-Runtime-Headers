@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@class NSArray, NSDictionary, NSString, WFWhitelistSiteBuffer;
-
 @interface WFUserSettings : NSObject {
     WFWhitelistSiteBuffer *_contentFilterOverriddenBlackListedSitesBuffer;
     WFWhitelistSiteBuffer *_contentFilterOverriddenWhiteListedSitesBuffer;
@@ -12,17 +10,17 @@
     WFWhitelistSiteBuffer *_whiteListedSitesBuffer;
 }
 
-@property(readonly) BOOL canEditContentFilterOverriddenBlackListedSites;
-@property(readonly) BOOL canEditContentFilterOverriddenWhiteListedSites;
-@property(readonly) BOOL canEditOverridesAllowed;
-@property(readonly) BOOL canEditRestrictionType;
-@property(readonly) BOOL canEditWhiteListAllowedSites;
-@property(retain) NSArray * contentFilterOverriddenBlackListedSites;
-@property(retain) NSArray * contentFilterOverriddenWhiteListedSites;
-@property BOOL overridesAllowed;
-@property int restrictionType;
-@property(copy) NSString * userName;
-@property(retain) NSArray * whiteListAllowedSites;
+@property (nonatomic, readonly) BOOL canEditContentFilterOverriddenBlackListedSites;
+@property (nonatomic, readonly) BOOL canEditContentFilterOverriddenWhiteListedSites;
+@property (nonatomic, readonly) BOOL canEditOverridesAllowed;
+@property (nonatomic, readonly) BOOL canEditRestrictionType;
+@property (nonatomic, readonly) BOOL canEditWhiteListAllowedSites;
+@property (nonatomic, retain) NSArray *contentFilterOverriddenBlackListedSites;
+@property (nonatomic, retain) NSArray *contentFilterOverriddenWhiteListedSites;
+@property (nonatomic) BOOL overridesAllowed;
+@property (nonatomic) int restrictionType;
+@property (nonatomic, copy) NSString *userName;
+@property (nonatomic, retain) NSArray *whiteListAllowedSites;
 
 + (id)_arrayByConvertingLinesInStringsAtPath:(id)arg1;
 + (BOOL)_isURLMetasite:(id)arg1;

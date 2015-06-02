@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSUndoManager;
-
 @interface NSUndoManagerProxy : NSProxy {
     NSUndoManager *_manager;
     Class _targetClass;

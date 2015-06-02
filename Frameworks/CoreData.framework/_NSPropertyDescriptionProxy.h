@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSEntityDescription, NSPropertyDescription;
-
 @interface _NSPropertyDescriptionProxy : NSObject {
     NSEntityDescription *_entityDescription;
     unsigned int _entitysReferenceIDForProperty;

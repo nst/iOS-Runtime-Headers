@@ -2,44 +2,29 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSCharacterSet, NSString;
-
-@interface NSScanner : NSObject <NSCopying> {
-}
+@interface NSScanner : NSObject <NSCopying>
 
 @property BOOL caseSensitive;
-@property(copy) NSCharacterSet * charactersToBeSkipped;
-@property(retain) id locale;
+@property (copy) NSCharacterSet *charactersToBeSkipped;
+@property (retain) id locale;
 @property unsigned int scanLocation;
-@property(copy,readonly) NSString * string;
+@property (readonly, copy) NSString *string;
 
-+ (id)SQLParsingScannerWithSQL:(id)arg1;
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)localizedScannerWithString:(id)arg1;
 + (id)scannerWithString:(id)arg1;
 
 - (id)_invertedSkipSet;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfFirstMatchWithRegularExpression:(id)arg1;
 - (id)_remainingString;
-- (BOOL)_scanBalancedSubstringFromCharacter:(unsigned short)arg1 appendToString:(id)arg2;
 - (BOOL)_scanDecimal:(unsigned int)arg1 into:(int*)arg2;
-- (BOOL)_scanSQLiteIdentifierCharactersIntoString:(id*)arg1;
-- (BOOL)_scanSQLiteIdentifierIntoString:(id*)arg1;
-- (BOOL)_scanTableSQLColumn:(id*)arg1;
-- (BOOL)_scanTableSQLConstraint:(id*)arg1;
-- (BOOL)_scanThroughQuoteWithDelimiter:(id)arg1 appendToString:(id)arg2;
-- (BOOL)_scanUpToTopLevelDelimiters:(id)arg1 intoString:(id*)arg2;
 - (BOOL)caseSensitive;
 - (id)charactersToBeSkipped;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithString:(id)arg1;
 - (BOOL)isAtEnd;
 - (id)locale;
-- (id)mf_nextTokenWithPunctuation:(struct __CFCharacterSet { }*)arg1;
-- (id)mf_remainingString;
-- (BOOL)mf_scanUpAndOverString:(id)arg1;
-- (BOOL)mf_scanUpToRegularExpression:(id)arg1;
-- (BOOL)scanCGFloat:(float*)arg1;
 - (BOOL)scanCharactersFromSet:(id)arg1 intoString:(id*)arg2;
 - (BOOL)scanDecimal:(struct { unsigned int x1 : 8; unsigned int x2 : 4; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 18; unsigned short x6[8]; }*)arg1;
 - (BOOL)scanDouble:(double*)arg1;
@@ -53,8 +38,6 @@
 - (unsigned int)scanLocation;
 - (BOOL)scanLongLong:(long long*)arg1;
 - (BOOL)scanString:(id)arg1 intoString:(id*)arg2;
-- (BOOL)scanTableSQLColumns:(id*)arg1 constraints:(id*)arg2;
-- (BOOL)scanTableSQLPreambleAndTableName:(id*)arg1;
 - (BOOL)scanUnsignedInteger:(unsigned int*)arg1;
 - (BOOL)scanUnsignedLongLong:(unsigned long long*)arg1;
 - (BOOL)scanUpToCharactersFromSet:(id)arg1 intoString:(id*)arg2;
@@ -64,6 +47,38 @@
 - (void)setLocale:(id)arg1;
 - (void)setScanLocation:(unsigned int)arg1;
 - (id)string;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfFirstMatchWithRegularExpression:(id)arg1;
+- (id)mf_remainingString;
+- (BOOL)mf_scanUpToRegularExpression:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (id)SQLParsingScannerWithSQL:(id)arg1;
+
+- (BOOL)_scanBalancedSubstringFromCharacter:(unsigned short)arg1 appendToString:(id)arg2;
+- (BOOL)_scanSQLiteIdentifierCharactersIntoString:(id*)arg1;
+- (BOOL)_scanSQLiteIdentifierIntoString:(id*)arg1;
+- (BOOL)_scanTableSQLColumn:(id*)arg1;
+- (BOOL)_scanTableSQLConstraint:(id*)arg1;
+- (BOOL)_scanThroughQuoteWithDelimiter:(id)arg1 appendToString:(id)arg2;
+- (BOOL)_scanUpToTopLevelDelimiters:(id)arg1 intoString:(id*)arg2;
+- (BOOL)scanTableSQLColumns:(id*)arg1 constraints:(id*)arg2;
+- (BOOL)scanTableSQLPreambleAndTableName:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
+
+- (id)mf_nextTokenWithPunctuation:(struct __CFCharacterSet { }*)arg1;
+- (BOOL)mf_scanUpAndOverString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
+- (BOOL)scanCGFloat:(float*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
+
 - (BOOL)tsu_scanCGFloat:(float*)arg1;
 
 @end

@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSNumber;
+@interface SAPhoneSearch : SADomainCommand
 
-@interface SAPhoneSearch : SADomainCommand {
-}
-
-@property(copy) NSArray * contacts;
-@property(copy) NSDate * end;
-@property(copy) NSNumber * faceTime;
-@property(copy) NSNumber * faceTimeAudio;
-@property(copy) NSNumber * isNew;
-@property(copy) NSNumber * last;
-@property(copy) NSNumber * missed;
-@property(copy) NSNumber * outgoing;
-@property(copy) NSDate * start;
-@property(copy) NSNumber * voiceMail;
+@property (nonatomic, copy) NSArray *contacts;
+@property (nonatomic, copy) NSDate *end;
+@property (nonatomic, copy) NSNumber *faceTime;
+@property (nonatomic, copy) NSNumber *faceTimeAudio;
+@property (nonatomic, copy) NSNumber *isNew;
+@property (nonatomic, copy) NSNumber *last;
+@property (nonatomic, copy) NSNumber *missed;
+@property (nonatomic, copy) NSNumber *outgoing;
+@property (nonatomic, copy) NSDate *start;
+@property (nonatomic, copy) NSNumber *voiceMail;
 
 + (id)search;
 + (id)searchWithDictionary:(id)arg1 context:(id)arg2;

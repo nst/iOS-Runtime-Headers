@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPVolumeController, NSString, NSTimer, UISlider, UIView;
-
 @interface MPUMediaControlsVolumeView : UIView <MPVolumeControllerDelegate> {
     UISlider *_slider;
     int _style;
@@ -15,13 +13,13 @@
     UIView *_warningView;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) UISlider * slider;
-@property(readonly) int style;
-@property(readonly) Class superclass;
-@property(readonly) MPVolumeController * volumeController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) UISlider *slider;
+@property (nonatomic, readonly) int style;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) MPVolumeController *volumeController;
 
 - (void).cxx_destruct;
 - (void)_beginBlinkingWarningView;

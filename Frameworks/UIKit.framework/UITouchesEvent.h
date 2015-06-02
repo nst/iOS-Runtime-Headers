@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSMapTable, NSMutableSet;
-
 @interface UITouchesEvent : UIInternalEvent {
     struct __CFDictionary { } *_gestureRecognizersByWindow;
     struct __CFDictionary { } *_keyedTouches;
@@ -12,8 +10,8 @@
     NSMutableSet *_touches;
 }
 
-@property(readonly) double _initialTouchTimestamp;
-@property(readonly) unsigned int _windowServerHitTestContextId;
+@property (nonatomic, readonly) double _initialTouchTimestamp;
+@property (nonatomic, readonly) unsigned int _windowServerHitTestContextId;
 
 - (BOOL)_addGestureRecognizersForView:(id)arg1 toTouch:(id)arg2 currentTouchMap:(struct __CFDictionary { }*)arg3 newTouchMap:(struct __CFDictionary { }*)arg4;
 - (void)_addTouch:(id)arg1 forDelayedDelivery:(BOOL)arg2;

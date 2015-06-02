@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartTypeMultiDataScatter : TSCHMultiDataChartType {
-}
+@interface TSCHChartTypeMultiDataScatter : TSCHMultiDataChartType
 
 - (id)allCDESectionLabels;
 - (id)defaultDataFileName;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface _NSZombie_ {
+@interface _NSZombie_  {
     Class isa;
 }
 

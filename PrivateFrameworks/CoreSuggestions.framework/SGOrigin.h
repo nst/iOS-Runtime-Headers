@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@class NSDate, NSString, NSURL;
-
 @interface SGOrigin : NSObject <NSCopying, NSSecureCoding> {
     NSString *_contextSnippet;
     struct _NSRange { 
@@ -18,21 +16,20 @@
     unsigned int _type;
 }
 
-@property(readonly) NSDate * date;
-@property(readonly) NSString * externalKey;
-@property(getter=isFromForwardedMessage,readonly) BOOL fromForwardedMessage;
-@property(readonly) NSString * sourceKey;
-@property(readonly) NSString * title;
-@property(readonly) unsigned int type;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) NSDate *date;
+@property (nonatomic, readonly) NSString *externalKey;
+@property (getter=isFromForwardedMessage, readonly) BOOL fromForwardedMessage;
+@property (nonatomic, readonly) NSString *sourceKey;
+@property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) unsigned int type;
+@property (nonatomic, readonly) NSURL *url;
 
-+ (id)originForDuplicateKey:(id)arg1 sourceKey:(id)arg2 store:(id)arg3;
+// Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
+
 + (id)originWithType:(unsigned int)arg1 sourceKey:(id)arg2 externalKey:(id)arg3 fromForwardedMessage:(BOOL)arg4;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addDetailsFromOriginatingContactEntity:(id)arg1 store:(id)arg2;
-- (void)addDetailsFromOriginatingGenericEntity:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)description;
@@ -49,5 +46,12 @@
 - (id)title;
 - (unsigned int)type;
 - (id)url;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
++ (id)originForDuplicateKey:(id)arg1 sourceKey:(id)arg2 store:(id)arg3;
+
+- (void)addDetailsFromOriginatingContactEntity:(id)arg1 store:(id)arg2;
+- (void)addDetailsFromOriginatingGenericEntity:(id)arg1;
 
 @end

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class KNAbstractSlide, KNSlideNode, KNSlideTree, NSArray, NSDictionary, NSMutableDictionary, NSString, TSPLazyReference;
-
 @interface KNSlideNode : TSPObject <TSCEResolverContainer, TSKDocumentObject, TSKModel, TSKSearchTarget> {
     unsigned int _eventCount;
     BOOL _eventCountIsUpToDate;
@@ -35,38 +28,38 @@
     BOOL mThumbnailsAreDirty;
 }
 
-@property(readonly) NSArray * children;
-@property NSString * classicUniqueID;
-@property(getter=isCollapsed) BOOL collapsed;
-@property(getter=isCollapsedInOutlineView) BOOL collapsedInOutlineView;
-@property(retain) NSString * copiedFromSlideIdentifier;
-@property(copy,readonly) NSString * debugDescription;
-@property unsigned int depth;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int eventCount;
-@property BOOL hasBodyInOutlineView;
-@property(readonly) BOOL hasBuildEvents;
-@property(readonly) BOOL hasChildren;
-@property(readonly) BOOL hasExplicitBuilds;
-@property BOOL hasNote;
-@property BOOL hasTransition;
-@property(readonly) unsigned int hash;
-@property(getter=isHidden) BOOL hidden;
-@property BOOL isSlideNumberVisible;
-@property(readonly) KNSlideNode * next;
-@property(readonly) KNSlideNode * nextSkippingCollapsed;
-@property(readonly) KNSlideNode * nextSkippingHidden;
-@property(readonly) KNSlideNode * previous;
-@property(readonly) KNSlideNode * previousSkippingCollapsed;
-@property(readonly) KNSlideNode * previousSkippingHidden;
-@property(retain) KNAbstractSlide * slide;
-@property(readonly) KNAbstractSlide * slideIfLoaded;
-@property(readonly) NSDictionary * slideSpecificHyperlinkMap;
-@property KNSlideTree * slideTree;
-@property(readonly) Class superclass;
-@property(readonly) NSDictionary * thumbnails;
-@property BOOL thumbnailsAreDirty;
-@property(readonly) NSString * uniqueIdentifier;
+@property (nonatomic, readonly) NSArray *children;
+@property (nonatomic) NSString *classicUniqueID;
+@property (getter=isCollapsed, nonatomic) BOOL collapsed;
+@property (getter=isCollapsedInOutlineView, nonatomic) BOOL collapsedInOutlineView;
+@property (nonatomic, retain) NSString *copiedFromSlideIdentifier;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) unsigned int depth;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) unsigned int eventCount;
+@property (nonatomic) BOOL hasBodyInOutlineView;
+@property (nonatomic, readonly) BOOL hasBuildEvents;
+@property (nonatomic, readonly) BOOL hasChildren;
+@property (nonatomic, readonly) BOOL hasExplicitBuilds;
+@property (nonatomic) BOOL hasNote;
+@property (nonatomic) BOOL hasTransition;
+@property (readonly) unsigned int hash;
+@property (getter=isHidden, nonatomic) BOOL hidden;
+@property (nonatomic) BOOL isSlideNumberVisible;
+@property (nonatomic, readonly) KNSlideNode *next;
+@property (nonatomic, readonly) KNSlideNode *nextSkippingCollapsed;
+@property (nonatomic, readonly) KNSlideNode *nextSkippingHidden;
+@property (nonatomic, readonly) KNSlideNode *previous;
+@property (nonatomic, readonly) KNSlideNode *previousSkippingCollapsed;
+@property (nonatomic, readonly) KNSlideNode *previousSkippingHidden;
+@property (nonatomic, retain) KNAbstractSlide *slide;
+@property (nonatomic, readonly) KNAbstractSlide *slideIfLoaded;
+@property (nonatomic, readonly) NSDictionary *slideSpecificHyperlinkMap;
+@property (nonatomic) KNSlideTree *slideTree;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) NSDictionary *thumbnails;
+@property (nonatomic) BOOL thumbnailsAreDirty;
+@property (nonatomic, readonly) NSString *uniqueIdentifier;
 
 + (BOOL)needsObjectUUID;
 + (id)parentSlideNodeForInfo:(id)arg1;

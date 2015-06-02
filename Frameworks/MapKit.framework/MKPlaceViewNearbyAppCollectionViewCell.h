@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class NSDictionary, UIImageView, UILabel;
-
 @interface MKPlaceViewNearbyAppCollectionViewCell : UICollectionViewCell {
     UILabel *_categoryLabel;
     UIImageView *_icon;
@@ -12,7 +10,7 @@
     UILabel *_titleLabel;
 }
 
-@property(retain) NSDictionary * storeData;
+@property (nonatomic, retain) NSDictionary *storeData;
 
 + (float)heightWithIconSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)reuseIdentifier;

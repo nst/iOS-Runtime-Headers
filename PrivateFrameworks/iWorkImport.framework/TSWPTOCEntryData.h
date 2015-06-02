@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSString, TSWPListStyle, TSWPParagraphStyle;
-
 @interface TSWPTOCEntryData : TSPObject <TSPCopying> {
     NSString *_heading;
     unsigned int _indexedListStart;
@@ -20,14 +13,14 @@
     unsigned int _paragraphIndex;
 }
 
-@property(readonly) NSString * heading;
-@property(readonly) unsigned int indexedListStart;
-@property(readonly) TSWPListStyle * indexedListStyle;
-@property(readonly) unsigned int indexedParagraphLevel;
-@property(readonly) TSWPParagraphStyle * indexedStyle;
-@property(readonly) int numberFormat;
-@property(readonly) unsigned int pageNumber;
-@property(readonly) unsigned int paragraphIndex;
+@property (nonatomic, readonly) NSString *heading;
+@property (nonatomic, readonly) unsigned int indexedListStart;
+@property (nonatomic, readonly) TSWPListStyle *indexedListStyle;
+@property (nonatomic, readonly) unsigned int indexedParagraphLevel;
+@property (nonatomic, readonly) TSWPParagraphStyle *indexedStyle;
+@property (nonatomic, readonly) int numberFormat;
+@property (nonatomic, readonly) unsigned int pageNumber;
+@property (nonatomic, readonly) unsigned int paragraphIndex;
 
 + (id)tocEntryDataWithParagraphIndex:(unsigned int)arg1 pageNumber:(unsigned int)arg2 numberFormat:(int)arg3 heading:(id)arg4 indexedStyle:(id)arg5 indexedListStyle:(id)arg6 indexedListStart:(unsigned int)arg7 indexedParagraphLevel:(unsigned int)arg8;
 

@@ -2,16 +2,14 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class IMAVMicrophone, NSArray, NSMutableArray, NSObject<OS_dispatch_queue>;
-
 @interface IMAVMicrophoneController : NSObject {
     id _internal;
     NSMutableArray *_microphones;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) IMAVMicrophone * currentMicrophone;
-@property(retain,readonly) NSArray * microphones;
+@property (nonatomic, retain) IMAVMicrophone *currentMicrophone;
+@property (nonatomic, readonly, retain) NSArray *microphones;
 
 + (id)sharedInstance;
 

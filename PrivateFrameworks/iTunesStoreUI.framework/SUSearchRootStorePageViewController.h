@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUSearchRootStorePageViewController : SUStorePageViewController {
-}
+@interface SUSearchRootStorePageViewController : SUStorePageViewController
 
 - (id)copyArchivableContext;
 - (void)reloadCancelBarButtonItem;

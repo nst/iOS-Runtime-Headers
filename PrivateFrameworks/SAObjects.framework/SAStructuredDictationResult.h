@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAStructuredDictationResult : SABaseClientBoundCommand
 
-@interface SAStructuredDictationResult : SABaseClientBoundCommand {
-}
-
-@property(copy) NSArray * items;
+@property (nonatomic, copy) NSArray *items;
 
 + (id)structuredDictationResult;
 + (id)structuredDictationResultWithDictionary:(id)arg1 context:(id)arg2;

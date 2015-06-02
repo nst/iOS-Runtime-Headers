@@ -2,36 +2,18 @@
    Image: /System/Library/PrivateFrameworks/RDSupport.framework/RDSupport
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class NSObject<OS_dispatch_queue>, NSObject<OS_dispatch_source>, NSString;
-
 @interface RDMulticastService : NSObject {
     int _connectionState;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _connectionStateChangedBlock;
-
+    id /* block */ _connectionStateChangedBlock;
     BOOL _continueAfterHandshake;
     BOOL _didCompleteHandshake;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _handshakeCompletionBlock;
-
+    id /* block */ _handshakeCompletionBlock;
     NSObject<OS_dispatch_queue> *_handshakeWorkQueue;
     NSString *_lastKnownIDSPairingRecordsState;
     NSString *_localIP;
     NSString *_localInterfaceName;
     struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; } *_multicastAddr;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _multicastPayloadCallback;
-
+    id /* block */ _multicastPayloadCallback;
     NSObject<OS_dispatch_source> *_multicastSendTimer;
     NSObject<OS_dispatch_source> *_readSource;
     int _receiveSocketFd;
@@ -45,49 +27,49 @@
     int _unansweredMulticastCount;
 }
 
-@property int connectionState;
-@property(copy) id connectionStateChangedBlock;
-@property BOOL continueAfterHandshake;
-@property BOOL didCompleteHandshake;
-@property(copy) id handshakeCompletionBlock;
-@property(retain) NSObject<OS_dispatch_queue> * handshakeWorkQueue;
-@property(copy) NSString * lastKnownIDSPairingRecordsState;
-@property(retain) NSString * localIP;
-@property(retain) NSString * localInterfaceName;
-@property struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; }* multicastAddr;
-@property(copy) id multicastPayloadCallback;
-@property(retain) NSObject<OS_dispatch_source> * multicastSendTimer;
-@property(retain) NSObject<OS_dispatch_source> * readSource;
-@property int receiveSocketFd;
-@property(retain) NSString * remoteIP;
-@property int repeatedSendFailureBails;
-@property int repeatedSendFailureCount;
-@property int sendSocketFd;
-@property double senderTime;
-@property BOOL shouldAllowIDSReset;
-@property BOOL shouldRefetchIDSPairingState;
-@property int unansweredMulticastCount;
+@property (nonatomic) int connectionState;
+@property (nonatomic, copy) id /* block */ connectionStateChangedBlock;
+@property (nonatomic) BOOL continueAfterHandshake;
+@property (nonatomic) BOOL didCompleteHandshake;
+@property (nonatomic, copy) id /* block */ handshakeCompletionBlock;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *handshakeWorkQueue;
+@property (nonatomic, copy) NSString *lastKnownIDSPairingRecordsState;
+@property (nonatomic, retain) NSString *localIP;
+@property (nonatomic, retain) NSString *localInterfaceName;
+@property (nonatomic) struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; }*multicastAddr;
+@property (nonatomic, copy) id /* block */ multicastPayloadCallback;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *multicastSendTimer;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *readSource;
+@property (nonatomic) int receiveSocketFd;
+@property (nonatomic, retain) NSString *remoteIP;
+@property (nonatomic) int repeatedSendFailureBails;
+@property (nonatomic) int repeatedSendFailureCount;
+@property (nonatomic) int sendSocketFd;
+@property (nonatomic) double senderTime;
+@property (nonatomic) BOOL shouldAllowIDSReset;
+@property (nonatomic) BOOL shouldRefetchIDSPairingState;
+@property (nonatomic) int unansweredMulticastCount;
 
 + (id)ipv4AddressForInterface:(id)arg1;
 + (id)localEthernetInterfaceName;
 
 - (void).cxx_destruct;
-- (void)beginMulticastConnectionWithPayloadCallBack:(id)arg1;
+- (void)beginMulticastConnectionWithPayloadCallBack:(id /* block */)arg1;
 - (int)connectionState;
-- (id)connectionStateChangedBlock;
+- (id /* block */)connectionStateChangedBlock;
 - (BOOL)continueAfterHandshake;
 - (BOOL)didCompleteHandshake;
 - (BOOL)discoverLocalInterface;
-- (id)handshakeCompletionBlock;
+- (id /* block */)handshakeCompletionBlock;
 - (id)handshakeWorkQueue;
 - (id)init;
 - (id)lastKnownIDSPairingRecordsState;
 - (id)localIP;
 - (id)localInterfaceName;
 - (struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; }*)multicastAddr;
-- (id)multicastPayloadCallback;
+- (id /* block */)multicastPayloadCallback;
 - (id)multicastSendTimer;
-- (void)performHandshakeWithCompletionBlock:(id)arg1;
+- (void)performHandshakeWithCompletionBlock:(id /* block */)arg1;
 - (id)readSource;
 - (BOOL)receiveHandshakeMulticast;
 - (int)receiveSocketFd;
@@ -100,16 +82,16 @@
 - (int)sendSocketFd;
 - (double)senderTime;
 - (void)setConnectionState:(int)arg1;
-- (void)setConnectionStateChangedBlock:(id)arg1;
+- (void)setConnectionStateChangedBlock:(id /* block */)arg1;
 - (void)setContinueAfterHandshake:(BOOL)arg1;
 - (void)setDidCompleteHandshake:(BOOL)arg1;
-- (void)setHandshakeCompletionBlock:(id)arg1;
+- (void)setHandshakeCompletionBlock:(id /* block */)arg1;
 - (void)setHandshakeWorkQueue:(id)arg1;
 - (void)setLastKnownIDSPairingRecordsState:(id)arg1;
 - (void)setLocalIP:(id)arg1;
 - (void)setLocalInterfaceName:(id)arg1;
 - (void)setMulticastAddr:(struct addrinfo { int x1; int x2; int x3; int x4; unsigned int x5; char *x6; struct sockaddr {} *x7; struct addrinfo {} *x8; }*)arg1;
-- (void)setMulticastPayloadCallback:(id)arg1;
+- (void)setMulticastPayloadCallback:(id /* block */)arg1;
 - (void)setMulticastSendTimer:(id)arg1;
 - (void)setReadSource:(id)arg1;
 - (void)setReceiveSocketFd:(int)arg1;

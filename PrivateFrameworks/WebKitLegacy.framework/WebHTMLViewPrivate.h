@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@class NSArray, NSString, NSTimer, WAKView, WebDataSource, WebEvent, WebPluginController;
-
 @interface WebHTMLViewPrivate : NSObject {
     NSTimer *autoscrollTimer;
     WebEvent *autoscrollTriggerEvent;

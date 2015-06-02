@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OADTableCellStyle, OADTableTextStyle;
-
 @interface OADTablePartStyle : NSObject {
     OADTableCellStyle *mCellStyle;
     OADTableTextStyle *mTextStyle;

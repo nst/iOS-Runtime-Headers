@@ -2,42 +2,32 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <ABPickerControllerDelegate>, CNContactStyle, NSArray, NSIndexPath, NSString, UITableViewController;
-
 @interface ABPickerController : UINavigationController <UITableViewDataSource, UITableViewDelegate, UITextFieldDelegate> {
     BOOL _allowsCustomItems;
     NSArray *_builtinItems;
     CNContactStyle *_contactStyle;
     NSArray *_customItems;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _itemLocalizationBlock;
-
+    id /* block */ _itemLocalizationBlock;
     NSString *_itemLocalizationKey;
     NSIndexPath *_selectedIndexPath;
     NSString *_selectedItem;
     UITableViewController *_tableViewController;
 }
 
-@property BOOL allowsCustomItems;
-@property(copy) NSArray * builtinItems;
-@property(retain) CNContactStyle * contactStyle;
-@property(copy) NSArray * customItems;
-@property(copy,readonly) NSString * debugDescription;
-@property <ABPickerControllerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) id itemLocalizationBlock;
-@property(copy) NSString * itemLocalizationKey;
-@property(retain) NSIndexPath * selectedIndexPath;
-@property(retain) NSString * selectedItem;
-@property(readonly) Class superclass;
-@property(retain) UITableViewController * tableViewController;
+@property (nonatomic) BOOL allowsCustomItems;
+@property (nonatomic, copy) NSArray *builtinItems;
+@property (nonatomic, retain) CNContactStyle *contactStyle;
+@property (nonatomic, copy) NSArray *customItems;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ABPickerControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ itemLocalizationBlock;
+@property (nonatomic, copy) NSString *itemLocalizationKey;
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
+@property (nonatomic, retain) NSString *selectedItem;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UITableViewController *tableViewController;
 
 - (id)_itemAtIndexPath:(id)arg1;
 - (void)_updateRightButtonItem;
@@ -51,7 +41,7 @@
 - (void)donePicker:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isEditing;
-- (id)itemLocalizationBlock;
+- (id /* block */)itemLocalizationBlock;
 - (id)itemLocalizationKey;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)removeCustomItem:(id)arg1;
@@ -61,7 +51,7 @@
 - (void)setBuiltinItems:(id)arg1;
 - (void)setContactStyle:(id)arg1;
 - (void)setCustomItems:(id)arg1;
-- (void)setItemLocalizationBlock:(id)arg1;
+- (void)setItemLocalizationBlock:(id /* block */)arg1;
 - (void)setItemLocalizationKey:(id)arg1;
 - (void)setSelectedIndexPath:(id)arg1;
 - (void)setSelectedItem:(id)arg1;

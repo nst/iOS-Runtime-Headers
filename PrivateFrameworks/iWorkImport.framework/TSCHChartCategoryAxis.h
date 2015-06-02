@@ -16,7 +16,7 @@
 - (unsigned int)indexForSelectionPathLabelIndex:(unsigned int)arg1;
 - (BOOL)isCategory;
 - (BOOL)isRangeContinuous;
-- (struct pair<TSCH3DAxisLabelEnumerator *, TSCH3DAxisLabelEnumerator *> { id x1; id x2; })labelEnumeratorPair;
+- (struct pair<TSCH3DAxisLabelEnumerator *, TSCH3DAxisLabelEnumerator *> { id x1; })labelEnumeratorPair;
 - (id)p_getGenericToCategoryPropertyMap;
 - (id)p_getGenericToCategoryPropertyMapForMultiData;
 - (id)p_getGenericToCategoryPropertyMapForNonMultiData;

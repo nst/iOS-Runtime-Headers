@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVVideoComposition, NSDictionary, NSObject<OS_dispatch_queue>, NSString;
-
 @interface AVVideoCompositionRenderContextInternal : NSObject {
     NSDictionary *_basisProperties;
     struct __CFDictionary { } *_cleanApertureDict;

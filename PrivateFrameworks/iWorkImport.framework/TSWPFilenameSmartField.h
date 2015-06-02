@@ -2,16 +2,11 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
 @interface TSWPFilenameSmartField : TSWPPlaceholderSmartField {
     unsigned int _displayFlags;
 }
 
-@property unsigned int displayFlags;
+@property (nonatomic) unsigned int displayFlags;
 
 - (BOOL)allowsPasteAsSmartField;
 - (id)copyWithContext:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CIColor, UIColor;
-
 @interface UICIColor : UIColor {
     CIColor *_ciColor;
     UIColor *_rgbColor;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class SKUIClientContext, SKUIPreviewDocumentController, SKUIPreviewOverlayViewController, UINavigationController, UIView, _UINavigationControllerPalette;
-
 @interface SKUINavigationControllerAssistant : NSObject {
     UIView *_childPaletteView;
     SKUIClientContext *_clientContext;
@@ -13,9 +11,9 @@
     SKUIPreviewOverlayViewController *_previewOverlayViewController;
 }
 
-@property(readonly) SKUIClientContext * clientContext;
-@property BOOL hidesShadow;
-@property(readonly) UINavigationController * navigationController;
+@property (nonatomic, readonly) SKUIClientContext *clientContext;
+@property (nonatomic) BOOL hidesShadow;
+@property (nonatomic, readonly) UINavigationController *navigationController;
 
 + (id)assistantForNavigationController:(id)arg1 clientContext:(id)arg2;
 + (id)existingAssistantForNavigationController:(id)arg1;

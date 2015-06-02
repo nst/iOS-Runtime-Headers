@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@class NSString;
-
 @interface GKPlayerEmailInternal : GKInternalRepresentation {
     NSString *_address;
     NSString *_addressPrefix;
@@ -11,10 +9,10 @@
     BOOL _verified;
 }
 
-@property(retain) NSString * address;
-@property(retain) NSString * addressPrefix;
-@property(retain) NSString * addressSHA1;
-@property BOOL verified;
+@property (nonatomic, retain) NSString *address;
+@property (nonatomic, retain) NSString *addressPrefix;
+@property (nonatomic, retain) NSString *addressSHA1;
+@property (nonatomic) BOOL verified;
 
 + (id)secureCodedPropertyKeys;
 

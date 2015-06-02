@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@class NSLayoutManagerTextBlockRowArrayCache, NSMutableArray, NSRunStorage, NSTextContainer;
-
 @interface NSExtraLMData : NSObject {
     NSRunStorage *_attachmentSizesRun;
     NSMutableArray *_blockRunsArray;

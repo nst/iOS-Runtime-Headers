@@ -2,41 +2,27 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BWNode, NSString;
-
 @interface FigBWNodeRenderObserver : NSObject <BWNodeRenderDelegate> {
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _formatDidBecomeLiveHandler;
-
+    id /* block */ _formatDidBecomeLiveHandler;
     BWNode *_node;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _willRenderSampleBufferHandler;
-
+    id /* block */ _willRenderSampleBufferHandler;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(copy) id formatDidBecomeLiveHandler;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
-@property(copy) id willRenderSampleBufferHandler;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ formatDidBecomeLiveHandler;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) id /* block */ willRenderSampleBufferHandler;
 
 - (void)dealloc;
-- (id)formatDidBecomeLiveHandler;
+- (id /* block */)formatDidBecomeLiveHandler;
 - (id)initWithBWNode:(id)arg1;
 - (void)node:(id)arg1 format:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)node:(id)arg1 format:(id)arg2 didBecomeLiveForOutput:(id)arg3;
 - (void)node:(id)arg1 willRenderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 forInput:(id)arg3;
-- (void)setFormatDidBecomeLiveHandler:(id)arg1;
-- (void)setWillRenderSampleBufferHandler:(id)arg1;
-- (id)willRenderSampleBufferHandler;
+- (void)setFormatDidBecomeLiveHandler:(id /* block */)arg1;
+- (void)setWillRenderSampleBufferHandler:(id /* block */)arg1;
+- (id /* block */)willRenderSampleBufferHandler;
 
 @end

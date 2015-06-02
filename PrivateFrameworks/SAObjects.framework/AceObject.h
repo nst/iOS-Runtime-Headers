@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSData, NSMutableDictionary, NSNumber, NSString;
-
 @interface AceObject : NSObject <AceObject> {
     NSString *_aceId;
     NSNumber *_deserializationDuration;
@@ -12,14 +10,16 @@
     NSString *_refId;
 }
 
-@property(copy) NSString * aceId;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSMutableDictionary * dict;
-@property(readonly) unsigned int hash;
-@property(readonly) NSData * plistData;
-@property(copy) NSString * refId;
-@property(readonly) Class superclass;
+@property (nonatomic, copy) NSString *aceId;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSMutableDictionary *dict;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSData *plistData;
+@property (nonatomic, copy) NSString *refId;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)_aceObjectWithMutableDictionary:(id)arg1 context:(id)arg2;
 + (id)_filteredDictionaryForKeySet:(struct __CFSet { }*)arg1 plistData:(id)arg2;
@@ -37,7 +37,6 @@
 + (id)newAceObjectWithGenericCommand:(id)arg1 context:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
-- (BOOL)_afui_isUsefulUserResultCommand;
 - (void)_appendDescriptionOfObject:(id)arg1 toString:(id)arg2 atDepth:(int)arg3 withPrefixes:(id)arg4;
 - (void)_deserializeFromPlistData;
 - (id)_dict;
@@ -74,5 +73,9 @@
 - (void)setTopLevelProperty:(id)arg1 forKey:(id)arg2;
 - (id)topLevelPropertyForKey:(id)arg1;
 - (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (BOOL)_afui_isUsefulUserResultCommand;
 
 @end

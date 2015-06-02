@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class UIView;
-
 @interface UIStatusBarCorners : UIView {
     int _cornerAlignment;
     int _cornerStyle;

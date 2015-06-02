@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CompassUI.framework/CompassUI
  */
 
-@class CompassImageNode, NSString;
-
 @interface CompassImageNode : NSObject {
     NSString *_imageKey;
     CompassImageNode *_leftChild;
@@ -20,10 +18,10 @@
     CompassImageNode *_rightChild;
 }
 
-@property(copy) NSString * imageKey;
-@property(retain) CompassImageNode * leftChild;
-@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
-@property(retain) CompassImageNode * rightChild;
+@property (nonatomic, copy) NSString *imageKey;
+@property (nonatomic, retain) CompassImageNode *leftChild;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rect;
+@property (nonatomic, retain) CompassImageNode *rightChild;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;

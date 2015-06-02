@@ -6,8 +6,8 @@
     float _normalizedExposureValue;
 }
 
-@property(readonly) float maxRadius;
-@property float normalizedExposureValue;
+@property (nonatomic, readonly) float maxRadius;
+@property (nonatomic) float normalizedExposureValue;
 
 - (float)_interpolatedValueWithMin:(float)arg1 mid:(float)arg2 max:(float)arg3;
 - (float)_sunRadius;

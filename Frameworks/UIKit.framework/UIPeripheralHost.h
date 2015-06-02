@@ -2,12 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CADisplayLink, NSMutableArray, NSMutableDictionary, NSMutableSet, NSString, UIInputViewPostPinningReloadState, UIInputViewSet, UIInputViewTransition, UIKeyboard, UIKeyboardAutomatic, UIKeyboardRotationState, UIPanGestureRecognizer, UIPeripheralHostState, UIPeripheralHostView, UIResponder, UIScrollView, UITextEffectsWindow, UIView;
-
 @interface UIPeripheralHost : NSObject <UIGestureRecognizerDelegate, UIKeyboardKeyplaneTransitionDelegate, UIScrollViewIntersectionDelegate> {
     double __transitionStartTime;
     float _ambiguousControlCenterActivationMargin;
@@ -21,11 +15,7 @@
     BOOL _automaticKeyboardAnimatingOut;
     int _automaticKeyboardState;
     BOOL _blockedReloadInputViewsForDictation;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _bounceCompletionBlock;
-
+    id /* block */ _bounceCompletionBlock;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -165,36 +155,36 @@
     float m_keyboardAttachedViewHeight;
 }
 
-@property(retain) UIInputViewSet * _inputViews;
-@property UIInputViewSet * _transientInputViews;
-@property double _transitionStartTime;
-@property float ambiguousControlCenterActivationMargin;
-@property BOOL animationFencingEnabled;
-@property(readonly) BOOL animationsEnabled;
-@property BOOL automaticAppearanceEnabled;
-@property BOOL automaticAppearanceInternalEnabled;
-@property(readonly) BOOL automaticAppearanceReallyEnabled;
-@property(readonly) UIKeyboard * automaticKeyboard;
-@property(readonly) UIKeyboardAutomatic * automaticKeyboard;
-@property int currentState;
-@property(retain) UIInputViewTransition * currentTransition;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) NSMutableArray * dropShadowViews;
-@property(readonly) unsigned int hash;
-@property BOOL ignoresPinning;
-@property(getter=_isIgnoringReloadInputViews,readonly) BOOL ignoringReloadInputViews;
-@property(retain) UIInputViewSet * inputViews;
-@property(readonly) BOOL keyClicksEnabled;
-@property(readonly) UIInputViewSet * loadAwareInputViews;
-@property(retain) UIInputViewPostPinningReloadState * postPinningReloadState;
-@property(retain,readonly) UIResponder * responder;
-@property(retain) UIResponder * responder;
-@property(retain) UIKeyboardRotationState * rotationState;
-@property(retain) UIResponder * selfHostingTrigger;
-@property(readonly) Class superclass;
-@property(retain) UIPeripheralHostState * targetState;
-@property(readonly) UIView * view;
+@property (nonatomic, retain) UIInputViewSet *_inputViews;
+@property (nonatomic) UIInputViewSet *_transientInputViews;
+@property (nonatomic) double _transitionStartTime;
+@property (nonatomic) float ambiguousControlCenterActivationMargin;
+@property (nonatomic) BOOL animationFencingEnabled;
+@property (nonatomic, readonly) BOOL animationsEnabled;
+@property (nonatomic) BOOL automaticAppearanceEnabled;
+@property (nonatomic) BOOL automaticAppearanceInternalEnabled;
+@property (nonatomic, readonly) BOOL automaticAppearanceReallyEnabled;
+@property (nonatomic, readonly) UIKeyboard *automaticKeyboard;
+@property (nonatomic, readonly) UIKeyboardAutomatic *automaticKeyboard;
+@property (nonatomic) int currentState;
+@property (nonatomic, retain) UIInputViewTransition *currentTransition;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSMutableArray *dropShadowViews;
+@property (readonly) unsigned int hash;
+@property (nonatomic) BOOL ignoresPinning;
+@property (getter=_isIgnoringReloadInputViews, nonatomic, readonly) BOOL ignoringReloadInputViews;
+@property (nonatomic, retain) UIInputViewSet *inputViews;
+@property (nonatomic, readonly) BOOL keyClicksEnabled;
+@property (nonatomic, readonly) UIInputViewSet *loadAwareInputViews;
+@property (nonatomic, retain) UIInputViewPostPinningReloadState *postPinningReloadState;
+@property (nonatomic, readonly, retain) UIResponder *responder;
+@property (nonatomic, retain) UIResponder *responder;
+@property (nonatomic, retain) UIKeyboardRotationState *rotationState;
+@property (nonatomic, retain) UIResponder *selfHostingTrigger;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) UIPeripheralHostState *targetState;
+@property (nonatomic, readonly) UIView *view;
 
 + (void)_releaseSharedInstance;
 + (id)activeInstance;
@@ -300,7 +290,7 @@
 - (void)finishRotation;
 - (void)finishRotationOfKeyboard:(id)arg1;
 - (void)finishScrollViewTransition;
-- (void)finishTransitionWithCompletion:(id)arg1;
+- (void)finishTransitionWithCompletion:(id /* block */)arg1;
 - (void)forceOrderInAutomatic;
 - (void)forceOrderInAutomaticAnimated:(BOOL)arg1;
 - (void)forceOrderInAutomaticFromDirection:(int)arg1 withDuration:(double)arg2;
@@ -360,7 +350,7 @@
 - (void)orderOutAutomaticToDirection:(int)arg1 withDuration:(double)arg2;
 - (void)orderOutWithAnimation:(BOOL)arg1 toDirection:(int)arg2 duration:(double)arg3;
 - (void)orderOutWithAnimationStyle:(id)arg1;
-- (void)performMultipleOperations:(id)arg1 withAnimationStyle:(id)arg2;
+- (void)performMultipleOperations:(id /* block */)arg1 withAnimationStyle:(id)arg2;
 - (void)peripheralHostDidEnterBackground:(id)arg1;
 - (void)peripheralHostWillResume:(id)arg1;
 - (void)peripheralViewMinMaximized:(id)arg1 finished:(id)arg2 context:(id)arg3;

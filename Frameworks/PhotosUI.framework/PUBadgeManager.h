@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUBadgeManager : NSObject {
-}
+@interface PUBadgeManager : NSObject
 
 + (id)defaultManager;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class TSDSpecShadow, TSSSpecColor, TSSSpecInteger, TSSSpecString, TSWPSpecListStyleBoolArray, TSWPSpecListStyleFloatArray, TSWPSpecListStyleImageDataArray, TSWPSpecListStyleListLabelGeometryArray, TSWPSpecListStyleListLabelTypeArray, TSWPSpecListStyleListNumberTypeArray, TSWPSpecListStyleStringArray;
-
 @interface TSWPListStylePropertyChangeSet : TSSStylePropertyChangeSet {
     BOOL _definedFontColor;
     BOOL _definedFontName;
@@ -33,7 +31,7 @@
     TSSSpecInteger *_writingDirection;
 }
 
-- (void)enumerateDefinedPropertiesWithBlock:(id)arg1;
+- (void)enumerateDefinedPropertiesWithBlock:(id /* block */)arg1;
 - (void)setBoxedValue:(id)arg1 forProperty:(int)arg2;
 - (void)setSpec:(id)arg1 forProperty:(int)arg2;
 - (void)setUnsetSpecForProperty:(int)arg1;

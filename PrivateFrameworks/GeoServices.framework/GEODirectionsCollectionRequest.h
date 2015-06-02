@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class NSMutableArray;
-
 @interface GEODirectionsCollectionRequest : PBRequest <NSCopying> {
     NSMutableArray *_requestElements;
 }
 
-@property(retain) NSMutableArray * requestElements;
+@property (nonatomic, retain) NSMutableArray *requestElements;
 
 - (void)addRequestElements:(id)arg1;
 - (void)clearRequestElements;

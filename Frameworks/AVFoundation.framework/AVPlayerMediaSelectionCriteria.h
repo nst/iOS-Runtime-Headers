@@ -2,14 +2,12 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVPlayerMediaSelectionCriteriaInternal, NSArray;
-
 @interface AVPlayerMediaSelectionCriteria : NSObject {
     AVPlayerMediaSelectionCriteriaInternal *_criteria;
 }
 
-@property(readonly) NSArray * preferredLanguages;
-@property(readonly) NSArray * preferredMediaCharacteristics;
+@property (nonatomic, readonly) NSArray *preferredLanguages;
+@property (nonatomic, readonly) NSArray *preferredMediaCharacteristics;
 
 - (void)dealloc;
 - (id)description;

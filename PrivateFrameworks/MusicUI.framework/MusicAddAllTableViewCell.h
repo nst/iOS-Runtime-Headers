@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicAddAllTableViewCell : MusicActionTableViewCell {
-}
+@interface MusicAddAllTableViewCell : MusicActionTableViewCell
 
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)setDisplayAsDisabled:(BOOL)arg1;

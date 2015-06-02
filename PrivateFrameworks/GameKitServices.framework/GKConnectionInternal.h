@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GameKitServices.framework/GameKitServices
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CDXClient, NSData, NSMutableArray, NSMutableDictionary, NSMutableSet, NSObject<OS_dispatch_source>, NSString, TimingCollection;
-
 @interface GKConnectionInternal : GKConnection <CDXClientDelegate, CDXClientSessionDelegate> {
     NSMutableArray *_allowRelayPIDList;
     struct _opaque_pthread_cond_t { 
@@ -45,11 +39,7 @@
     NSMutableDictionary *_pidToRelayUpdateInfoMap;
     NSMutableSet *_pidsPreparedForConnection;
     NSData *_preblob;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _preblobCallback;
-
+    id /* block */ _preblobCallback;
     double _preblobCallbackCancelTime;
     NSMutableDictionary *_preblobToPIDMap;
     struct opaqueRTCReporting { } *_reportingAgent;
@@ -70,9 +60,9 @@
     } _xRelay;
 }
 
-@property(retain) CDXClient * cdxClient;
-@property(retain) NSMutableDictionary * cdxSessions;
-@property(retain) NSMutableDictionary * pidToConnectTimeoutSource;
+@property (nonatomic, retain) CDXClient *cdxClient;
+@property (retain) NSMutableDictionary *cdxSessions;
+@property (retain) NSMutableDictionary *pidToConnectTimeoutSource;
 
 - (void)CDXClient:(id)arg1 error:(id)arg2;
 - (void)CDXClient:(id)arg1 preblob:(id)arg2;
@@ -95,7 +85,7 @@
 - (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
 - (id)getLocalConnectionDataForLocalGaming;
-- (void)getLocalConnectionDataWithCompletionHandler:(id)arg1;
+- (void)getLocalConnectionDataWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithParticipantID:(id)arg1;
 - (void)initiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;
 - (void)internalInitiateRelayWithParticipant:(id)arg1 withConnectionData:(id)arg2 withRelayInfo:(id)arg3 didInitiate:(BOOL)arg4;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class NSLayoutConstraint, TPStarkInCallButtonRing, UIColor, UILabel;
-
 @interface TPStarkInCallButton : UIButton {
     UILabel *_buttonLabel;
     NSLayoutConstraint *_horizontalPositioningConstraint;
@@ -14,13 +12,13 @@
     UIColor *_unhighlightedBackgroundColor;
 }
 
-@property(retain) UILabel * buttonLabel;
-@property(retain) NSLayoutConstraint * horizontalPositioningConstraint;
-@property(readonly) int inCallButtonType;
-@property(retain) TPStarkInCallButtonRing * ringView;
-@property int specialLayoutType;
-@property BOOL toggledOn;
-@property(retain) UIColor * unhighlightedBackgroundColor;
+@property (retain) UILabel *buttonLabel;
+@property (retain) NSLayoutConstraint *horizontalPositioningConstraint;
+@property (readonly) int inCallButtonType;
+@property (retain) TPStarkInCallButtonRing *ringView;
+@property (nonatomic) int specialLayoutType;
+@property (nonatomic) BOOL toggledOn;
+@property (retain) UIColor *unhighlightedBackgroundColor;
 
 - (id)buttonLabel;
 - (void)dealloc;

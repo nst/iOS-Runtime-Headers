@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@class <AFUISnippetPaperViewDelegate>, UIColor, UIImage, UIImageView;
-
 @interface AFUISnippetPaperView : UIView {
     <AFUISnippetPaperViewDelegate> *_delegate;
     struct { 
@@ -11,7 +9,7 @@
         float g; 
         float b; 
         float a; 
-    } _gradientValues[5];
+    } _gradientValues;
     BOOL _hasBeveledEdge;
     UIImage *_paperImage;
     UIImageView *_paperImageView;
@@ -19,11 +17,11 @@
     BOOL _usingProvidedPaper;
 }
 
-@property BOOL hasBeveledEdge;
-@property(retain) UIColor * paperColor;
-@property(retain) UIImage * paperImage;
-@property float paperImageAlpha;
-@property BOOL usesGradient;
+@property (nonatomic) BOOL hasBeveledEdge;
+@property (nonatomic, retain) UIColor *paperColor;
+@property (nonatomic, retain) UIImage *paperImage;
+@property (nonatomic) float paperImageAlpha;
+@property (nonatomic) BOOL usesGradient;
 
 - (void).cxx_destruct;
 - (struct { float x1; float x2; float x3; float x4; float x5; })_uiGradientValueForValue:(struct { float x1; float x2; float x3; float x4; })arg1;

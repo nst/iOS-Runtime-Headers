@@ -2,17 +2,15 @@
    Image: /System/Library/Frameworks/EventKit.framework/EventKit
  */
 
-@class NSString;
-
 @interface EKPersistentChangeStoreInfo : NSObject {
     NSString *_minConsumedClientIdentifier;
     int _minConsumedSequenceNumber;
     int _secondMinConsumedSequenceNumber;
 }
 
-@property(retain) NSString * minConsumedClientIdentifier;
-@property int minConsumedSequenceNumber;
-@property int secondMinConsumedSequenceNumber;
+@property (nonatomic, retain) NSString *minConsumedClientIdentifier;
+@property (nonatomic) int minConsumedSequenceNumber;
+@property (nonatomic) int secondMinConsumedSequenceNumber;
 
 - (void)dealloc;
 - (id)description;

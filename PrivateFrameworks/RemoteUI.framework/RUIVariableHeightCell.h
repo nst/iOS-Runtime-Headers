@@ -6,7 +6,7 @@
     BOOL _supportsAccessory;
 }
 
-@property BOOL supportsAccessory;
+@property (nonatomic) BOOL supportsAccessory;
 
 - (float)contentWidth;
 - (struct CGSize { float x1; float x2; })detailLabelSizeForWidth:(float)arg1;

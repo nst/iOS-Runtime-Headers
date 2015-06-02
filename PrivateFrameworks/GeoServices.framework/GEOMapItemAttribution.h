@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOSearchAttributionInfo, NSArray, NSString;
-
 @interface GEOMapItemAttribution : NSObject {
     NSArray *_attributionURLs;
     GEOSearchAttributionInfo *_info;
@@ -11,12 +9,12 @@
     NSString *_yelpID;
 }
 
-@property(readonly) NSArray * attributionApps;
-@property(readonly) NSArray * attributionURLs;
-@property(readonly) NSString * providerID;
-@property(readonly) NSString * providerName;
-@property(readonly) BOOL requiresAttributionInCallout;
-@property(readonly) NSString * webBaseActionURL;
+@property (nonatomic, readonly) NSArray *attributionApps;
+@property (nonatomic, readonly) NSArray *attributionURLs;
+@property (nonatomic, readonly) NSString *providerID;
+@property (nonatomic, readonly) NSString *providerName;
+@property (nonatomic, readonly) BOOL requiresAttributionInCallout;
+@property (nonatomic, readonly) NSString *webBaseActionURL;
 
 - (id)_yelpHTTPURLForRequirement:(int)arg1 withUID:(id)arg2 writeAReview:(BOOL)arg3;
 - (id)attributionApps;

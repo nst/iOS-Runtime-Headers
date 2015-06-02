@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
  */
 
-@class CALayer, NSString, TPRevealingRingView, UIColor;
-
 @interface TPNumberPadButton : UIControl <TPNumberPadButtonProtocol> {
     UIColor *_color;
     CALayer *_glyphLayer;
@@ -12,16 +10,16 @@
     unsigned int character;
 }
 
-@property float alphaOutsideAndInsideRing;
+@property (nonatomic) float alphaOutsideAndInsideRing;
 @property unsigned int character;
-@property(retain) UIColor * color;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) CALayer * glyphLayer;
-@property(readonly) unsigned int hash;
-@property(retain) CALayer * highlightedGlyphLayer;
-@property(readonly) TPRevealingRingView * revealingRingView;
-@property(readonly) Class superclass;
+@property (nonatomic, retain) UIColor *color;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (retain) CALayer *glyphLayer;
+@property (readonly) unsigned int hash;
+@property (retain) CALayer *highlightedGlyphLayer;
+@property (nonatomic, readonly) TPRevealingRingView *revealingRingView;
+@property (readonly) Class superclass;
 
 + (struct CGSize { float x1; float x2; })defaultSize;
 + (float)highlightCrossfadeHighlightBeginTime;

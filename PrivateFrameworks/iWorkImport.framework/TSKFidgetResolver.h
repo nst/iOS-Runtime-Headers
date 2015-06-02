@@ -9,8 +9,8 @@
     id *_values;
 }
 
-@property double fidgetThreshold;
-@property(readonly) id nonFidgetValue;
+@property (nonatomic) double fidgetThreshold;
+@property (nonatomic, readonly) id nonFidgetValue;
 
 - (void)dealloc;
 - (double)fidgetThreshold;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@class ABUIPerson, NSString;
-
 @interface ABActionsController : NSObject {
     struct __CFArray { } *_actionsForProperty;
     void *_context;
@@ -15,7 +13,7 @@
     id _value;
 }
 
-@property(retain) ABUIPerson * person;
+@property (nonatomic, retain) ABUIPerson *person;
 
 + (int)defaultActionForProperty:(int)arg1;
 + (id)newActionsControllerForProperty:(int)arg1;

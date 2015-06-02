@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@class NSString;
-
 @interface AFSpeechCorrectionInfo : NSObject <NSSecureCoding> {
     int _alternativeSelectionCount;
     int _characterModificationCount;
     NSString *_correctedText;
 }
 
-@property int alternativeSelectionCount;
-@property int characterModificationCount;
-@property(copy) NSString * correctedText;
+@property (nonatomic) int alternativeSelectionCount;
+@property (nonatomic) int characterModificationCount;
+@property (nonatomic, copy) NSString *correctedText;
 
 + (BOOL)supportsSecureCoding;
 

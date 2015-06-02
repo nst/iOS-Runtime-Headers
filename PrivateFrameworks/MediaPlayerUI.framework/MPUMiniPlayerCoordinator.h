@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPAVController, MPQueueFeeder, MPUMiniPlayerPlaybackControlsView, NSString, NSTimer, UINavigationController, UIViewController, _UINavigationControllerPalette;
-
 @interface MPUMiniPlayerCoordinator : NSObject <MPPlaybackControlsDelegate, MPTransportControlsTarget, MPUMiniPlayerActionsViewControllerDelegate> {
     MPQueueFeeder *_feeder;
     _UINavigationControllerPalette *_miniPlayerPalette;
@@ -14,14 +12,14 @@
     UIViewController *_viewController;
 }
 
-@property(readonly) UINavigationController * _navigationController;
-@property(readonly) MPUMiniPlayerPlaybackControlsView * _playbackControlsView;
-@property(readonly) UIViewController * _viewController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) MPAVController * player;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) UINavigationController *_navigationController;
+@property (nonatomic, readonly) MPUMiniPlayerPlaybackControlsView *_playbackControlsView;
+@property (nonatomic, readonly) UIViewController *_viewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MPAVController *player;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)_currentProspectivePlaybackInformation;

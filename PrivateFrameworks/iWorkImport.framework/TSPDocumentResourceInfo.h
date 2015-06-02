@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString;
-
 @interface TSPDocumentResourceInfo : NSObject {
     NSString *_digestString;
     NSString *_extension;
@@ -12,11 +10,11 @@
     NSString *_locator;
 }
 
-@property(readonly) NSString * digestString;
-@property(readonly) NSString * extension;
-@property(readonly) long long fileSize;
-@property(readonly) BOOL isDownloadable;
-@property(readonly) NSString * locator;
+@property (nonatomic, readonly) NSString *digestString;
+@property (nonatomic, readonly) NSString *extension;
+@property (nonatomic, readonly) long long fileSize;
+@property (nonatomic, readonly) BOOL isDownloadable;
+@property (nonatomic, readonly) NSString *locator;
 
 - (void).cxx_destruct;
 - (id)digestString;

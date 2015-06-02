@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSAttributedString, NSString;
-
 @interface SKUITextLayoutRequest : NSObject <SKUILayoutRequest> {
     NSAttributedString *_attributedText;
     float _fontSize;
@@ -14,18 +12,18 @@
     float _width;
 }
 
-@property(copy) NSAttributedString * attributedText;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property float fontSize;
-@property int fontWeight;
-@property(readonly) unsigned int hash;
-@property(readonly) Class layoutClass;
-@property int numberOfLines;
-@property(readonly) Class superclass;
-@property(copy) NSString * text;
-@property unsigned char textAlignment;
-@property float width;
+@property (nonatomic, copy) NSAttributedString *attributedText;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) float fontSize;
+@property (nonatomic) int fontWeight;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) Class layoutClass;
+@property (nonatomic) int numberOfLines;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *text;
+@property (nonatomic) unsigned char textAlignment;
+@property (nonatomic) float width;
 
 - (void).cxx_destruct;
 - (id)attributedText;

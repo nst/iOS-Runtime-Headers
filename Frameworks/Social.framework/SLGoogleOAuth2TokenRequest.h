@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLGoogleOAuth2TokenRequest : NSObject {
-}
+@interface SLGoogleOAuth2TokenRequest : NSObject
 
 + (id)_urlRequestForParams:(id)arg1;
 + (id)urlRequestForClientID:(id)arg1 secret:(id)arg2 redirectURI:(id)arg3 authCode:(id)arg4;

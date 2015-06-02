@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
  */
 
-@class NSString;
-
 @interface ABFavoritesLookupChangeRecord : NSObject {
     NSString *abDatabaseUUID;
     int identifier;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@class <FBWindowContextHostManagerDelegate>, FBOrderedRequesters, FBScene, FBWindowContextHostView, FBWindowContextManager, NSHashTable, NSMutableDictionary, NSString, UIColor;
-
 @interface FBWindowContextHostManager : NSObject <FBWindowContextHostViewDelegate> {
     FBWindowContextManager *_contextManager;
     UIColor *_defaultBackgroundColorWhileHosting;
@@ -23,15 +21,15 @@
     BOOL _suspended;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy) UIColor * defaultBackgroundColorWhileHosting;
-@property(copy) UIColor * defaultBackgroundColorWhileNotHosting;
-@property <FBWindowContextHostManagerDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(copy) NSString * identifier;
-@property(readonly) FBScene * scene;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, copy) UIColor *defaultBackgroundColorWhileHosting;
+@property (nonatomic, copy) UIColor *defaultBackgroundColorWhileNotHosting;
+@property (nonatomic) <FBWindowContextHostManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, readonly) FBScene *scene;
+@property (readonly) Class superclass;
 
 - (void)_applyRequesterInfo:(id)arg1;
 - (id)_hostViewForRequester:(id)arg1;

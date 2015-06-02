@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSCondition, NSMutableArray, TSULocale;
-
 @interface TSUDateParserLibrary : NSObject {
     NSMutableArray *mAvailableDateParsers;
     TSULocale *mLocale;

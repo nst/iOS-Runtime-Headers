@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AssetsLibrary.framework/AssetsLibrary
  */
 
-@class ALAssetsLibrary, NSHashTable, NSMutableDictionary, PLPhotoLibrary;
-
 @interface ALAssetsLibraryPrivate : NSObject {
     NSHashTable *_assetGroupInternals;
     ALAssetsLibrary *_assetsLibrary;
@@ -12,9 +10,9 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property ALAssetsLibrary * assetsLibrary;
-@property BOOL isValid;
-@property(retain,readonly) PLPhotoLibrary * photoLibrary;
+@property (nonatomic) ALAssetsLibrary *assetsLibrary;
+@property (nonatomic) BOOL isValid;
+@property (nonatomic, readonly, retain) PLPhotoLibrary *photoLibrary;
 
 - (id)assetsLibrary;
 - (void)dealloc;

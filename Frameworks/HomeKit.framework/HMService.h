@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@class HMAccessory, HMMessageDispatcher, NSArray, NSNumber, NSObject<OS_dispatch_queue>, NSString;
-
 @interface HMService : NSObject <NSSecureCoding> {
     HMAccessory *_accessory;
     NSString *_associatedServiceType;
@@ -15,14 +13,14 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property(readonly) HMAccessory * accessory;
-@property(copy,readonly) NSString * associatedServiceType;
-@property(copy) NSArray * characteristics;
-@property(readonly) NSNumber * instanceID;
-@property(retain) HMMessageDispatcher * msgDispatcher;
-@property(copy,readonly) NSString * name;
-@property(copy,readonly) NSString * serviceType;
-@property(retain) NSObject<OS_dispatch_queue> * workQueue;
+@property (nonatomic, readonly) HMAccessory *accessory;
+@property (nonatomic, readonly, copy) NSString *associatedServiceType;
+@property (nonatomic, copy) NSArray *characteristics;
+@property (nonatomic, readonly) NSNumber *instanceID;
+@property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
+@property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly, copy) NSString *serviceType;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)serviceTypeAsString:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -47,8 +45,8 @@
 - (void)setCharacteristics:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
-- (void)updateAssociatedServiceType:(id)arg1 completionHandler:(id)arg2;
-- (void)updateName:(id)arg1 completionHandler:(id)arg2;
+- (void)updateAssociatedServiceType:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)workQueue;
 
 @end

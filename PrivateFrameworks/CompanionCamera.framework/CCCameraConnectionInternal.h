@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CompanionCamera.framework/CompanionCamera
  */
 
-@class CCCameraConnection;
-
 @interface CCCameraConnectionInternal : NSObject <CCCameraConnectionProtocol> {
     CCCameraConnection *_parent;
 }
 
-@property CCCameraConnection * parent;
+@property (nonatomic) CCCameraConnection *parent;
 
 - (void).cxx_destruct;
 - (id)parent;
@@ -17,8 +15,8 @@
 - (oneway void)xpc_beginVideo;
 - (oneway void)xpc_cancelCountdown;
 - (oneway void)xpc_endVideo;
-- (oneway void)xpc_fetchCurrentOrientationAndMirroring:(id)arg1;
-- (oneway void)xpc_setCameraMode:(int)arg1 interruptCapture:(BOOL)arg2 completion:(id)arg3;
+- (oneway void)xpc_fetchCurrentOrientationAndMirroring:(id /* block */)arg1;
+- (oneway void)xpc_setCameraMode:(int)arg1 interruptCapture:(BOOL)arg2 completion:(id /* block */)arg3;
 - (oneway void)xpc_setFocusPoint:(id)arg1;
 - (oneway void)xpc_setPreviewEndpoint:(id)arg1;
 

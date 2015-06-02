@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@class <CKJoystickControllerDelegate>, CKJoystickButtonItem, CKJoystickView, NSArray, UIColor;
-
 @interface CKJoystickController : NSObject {
     BOOL _autoDismiss;
     <CKJoystickControllerDelegate> *_delegate;
@@ -14,19 +12,19 @@
     BOOL _radialButtonRotationEnabled;
 }
 
-@property BOOL autoDismiss;
-@property(retain,readonly) CKJoystickButtonItem * centerButtonItem;
-@property <CKJoystickControllerDelegate> * delegate;
-@property int deviceOrientation;
-@property(readonly) unsigned int highlightStyle;
-@property CKJoystickButtonItem * highlightedButtonItem;
-@property(getter=isJoystickCollapsed,readonly) BOOL joystickCollapsed;
-@property(retain) CKJoystickView * joystickView;
-@property(getter=isJoystickVisible,readonly) BOOL joystickVisible;
-@property(copy) NSArray * passthroughViews;
-@property(copy,readonly) NSArray * radialButtonItems;
-@property BOOL radialButtonRotationEnabled;
-@property(retain) UIColor * tintColor;
+@property (nonatomic) BOOL autoDismiss;
+@property (nonatomic, readonly, retain) CKJoystickButtonItem *centerButtonItem;
+@property (nonatomic) <CKJoystickControllerDelegate> *delegate;
+@property (nonatomic) int deviceOrientation;
+@property (nonatomic, readonly) unsigned int highlightStyle;
+@property (nonatomic) CKJoystickButtonItem *highlightedButtonItem;
+@property (getter=isJoystickCollapsed, nonatomic, readonly) BOOL joystickCollapsed;
+@property (nonatomic, retain) CKJoystickView *joystickView;
+@property (getter=isJoystickVisible, nonatomic, readonly) BOOL joystickVisible;
+@property (nonatomic, copy) NSArray *passthroughViews;
+@property (nonatomic, readonly, copy) NSArray *radialButtonItems;
+@property (nonatomic) BOOL radialButtonRotationEnabled;
+@property (nonatomic, retain) UIColor *tintColor;
 
 + (double)joystickExpandAnimationDuration;
 + (float)joystickExpandedRadius;

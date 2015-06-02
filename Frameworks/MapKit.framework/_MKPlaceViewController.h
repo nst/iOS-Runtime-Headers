@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <_MKPlaceViewControllerDelegate>, <_MKPlaceViewControllerFeedbackDelegate>, ABPeoplePickerNavigationController<ABContactViewControllerDelegate>, CNContact, MKDistanceDetailProvider, MKMapItem, MKPlaceActionsViewController, MKPlaceHeaderView, MKPlaceInfoViewController, MKPlaceNearbyAppsMetricsCoordinator, MKSegmentedControlTabBarView, NSArray, NSMapTable, NSMutableArray, NSString, SKProductPageViewController, UITapGestureRecognizer;
-
 @interface _MKPlaceViewController : MKStackingViewController <ABContactViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, MKActivityViewControllerDelegate, MKPlaceActionsViewControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceHeaderViewDelegate, MKPlaceInfoViewControllerDelegate, MKPlaceNearbyAppsViewControllerDelegate, MKPlaceSharedAttributionDelegate, MKStackingViewControllerDelegate, SKProductPageViewControllerDelegate> {
     MKPlaceActionsViewController *_actionsViewController;
     NSMapTable *_additionalViewControllers;
@@ -34,40 +32,40 @@
     NSMutableArray *_viewDidAppearBlocks;
 }
 
-@property(readonly) CNContact * contact;
-@property ABPeoplePickerNavigationController<ABContactViewControllerDelegate> * contactsNavigationController;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL disableReportAProblem;
-@property(retain) MKDistanceDetailProvider * distanceMonitor;
-@property BOOL hasCheckedDistanceAvailability;
-@property(readonly) unsigned int hash;
-@property float headerHeight;
-@property(copy) NSString * headerTitle;
-@property BOOL hideDirectionsButtons;
-@property BOOL hideInlineMap;
-@property(retain) MKMapItem * mapItem;
-@property(readonly) MKPlaceNearbyAppsMetricsCoordinator * metricsCoordinator;
-@property unsigned int options;
-@property(retain) CNContact * originalContact;
-@property(retain) MKPlaceHeaderView * placeHeaderView;
-@property <_MKPlaceViewControllerDelegate> * placeViewControllerDelegate;
-@property <_MKPlaceViewControllerFeedbackDelegate> * placeViewFeedbackDelegate;
-@property BOOL showContactActions;
-@property BOOL showCreateReminder;
-@property BOOL showEditButton;
-@property BOOL showFlyoverTour;
-@property BOOL showInlineMapInHeader;
-@property BOOL showNearbyApps;
-@property BOOL showOpenInSkyline;
-@property BOOL showRemovePin;
-@property BOOL showReportAProblem;
-@property BOOL showShareActionsButton;
-@property BOOL showSimulateLocation;
-@property BOOL showTitleBar;
-@property(readonly) Class superclass;
-@property(retain) MKSegmentedControlTabBarView * tabBar;
-@property(retain) NSMutableArray * viewDidAppearBlocks;
+@property (nonatomic, readonly) CNContact *contact;
+@property (nonatomic) ABPeoplePickerNavigationController<ABContactViewControllerDelegate> *contactsNavigationController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL disableReportAProblem;
+@property (nonatomic, retain) MKDistanceDetailProvider *distanceMonitor;
+@property (nonatomic) BOOL hasCheckedDistanceAvailability;
+@property (readonly) unsigned int hash;
+@property (nonatomic) float headerHeight;
+@property (nonatomic, copy) NSString *headerTitle;
+@property (nonatomic) BOOL hideDirectionsButtons;
+@property (nonatomic) BOOL hideInlineMap;
+@property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic, readonly) MKPlaceNearbyAppsMetricsCoordinator *metricsCoordinator;
+@property (nonatomic) unsigned int options;
+@property (nonatomic, retain) CNContact *originalContact;
+@property (nonatomic, retain) MKPlaceHeaderView *placeHeaderView;
+@property (nonatomic) <_MKPlaceViewControllerDelegate> *placeViewControllerDelegate;
+@property (nonatomic) <_MKPlaceViewControllerFeedbackDelegate> *placeViewFeedbackDelegate;
+@property (nonatomic) BOOL showContactActions;
+@property (nonatomic) BOOL showCreateReminder;
+@property (nonatomic) BOOL showEditButton;
+@property (nonatomic) BOOL showFlyoverTour;
+@property (nonatomic) BOOL showInlineMapInHeader;
+@property (nonatomic) BOOL showNearbyApps;
+@property (nonatomic) BOOL showOpenInSkyline;
+@property (nonatomic) BOOL showRemovePin;
+@property (nonatomic) BOOL showReportAProblem;
+@property (nonatomic) BOOL showShareActionsButton;
+@property (nonatomic) BOOL showSimulateLocation;
+@property (nonatomic) BOOL showTitleBar;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) MKSegmentedControlTabBarView *tabBar;
+@property (nonatomic, retain) NSMutableArray *viewDidAppearBlocks;
 
 - (void).cxx_destruct;
 - (void)_commonInit;

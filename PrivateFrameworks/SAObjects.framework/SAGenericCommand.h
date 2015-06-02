@@ -2,13 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSString;
+@interface SAGenericCommand : SABaseCommand
 
-@interface SAGenericCommand : SABaseCommand {
-}
-
-@property(readonly) NSString * className;
-@property(readonly) NSString * group;
+@property (nonatomic, readonly) NSString *className;
+@property (nonatomic, readonly) NSString *group;
 
 - (id)className;
 - (id)encodedClassName;

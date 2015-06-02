@@ -2,23 +2,20 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSDate, NSDictionary, NSNumber, NSString, NSURL, SALocation, SAPersonAttribute;
+@interface SAMicroblogObject : SADomainObject
 
-@interface SAMicroblogObject : SADomainObject {
-}
-
-@property(copy) NSURL * attachment;
-@property(copy) NSString * content;
-@property(copy) NSDate * dateSent;
-@property(copy) NSDictionary * hashtagAlternatives;
-@property(retain) SALocation * location;
-@property(copy) NSNumber * outgoing;
-@property(copy) NSArray * recipients;
-@property(copy) NSURL * refereceId;
-@property(retain) SAPersonAttribute * sender;
-@property(copy) NSString * serviceType;
-@property(copy) NSDictionary * socialProfileReferences;
-@property(copy) NSNumber * useLocation;
+@property (nonatomic, copy) NSURL *attachment;
+@property (nonatomic, copy) NSString *content;
+@property (nonatomic, copy) NSDate *dateSent;
+@property (nonatomic, copy) NSDictionary *hashtagAlternatives;
+@property (nonatomic, retain) SALocation *location;
+@property (nonatomic, copy) NSNumber *outgoing;
+@property (nonatomic, copy) NSArray *recipients;
+@property (nonatomic, copy) NSURL *refereceId;
+@property (nonatomic, retain) SAPersonAttribute *sender;
+@property (nonatomic, copy) NSString *serviceType;
+@property (nonatomic, copy) NSDictionary *socialProfileReferences;
+@property (nonatomic, copy) NSNumber *useLocation;
 
 + (id)object;
 + (id)objectWithDictionary:(id)arg1 context:(id)arg2;

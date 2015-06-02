@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@class NSXPCConnection;
-
 @interface CallDBManagerClient : CallDBManager {
     NSXPCConnection *_helperConnection;
     int _retryCount;
     id _syncHelperReadyNotificationRef;
 }
 
-@property(retain) NSXPCConnection * helperConnection;
+@property (retain) NSXPCConnection *helperConnection;
 @property int retryCount;
-@property(retain) id syncHelperReadyNotificationRef;
+@property (retain) id syncHelperReadyNotificationRef;
 
 - (void).cxx_destruct;
 - (void)createHelperConnection;

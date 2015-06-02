@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
  */
 
-@class IMConnectionMonitor, IMDAccount, IMDService, IMSystemProxySettingsFetcher, IMTimer, NSArray, NSDictionary, NSMutableDictionary, NSMutableSet, NSRecursiveLock, NSString, NSTimer;
-
 @interface IMDServiceSession : NSObject <IMConnectionMonitorDelegate, IMServiceSessionProtocol, IMSystemMonitorListener> {
     IMDAccount *_account;
     BOOL _activated;
@@ -47,36 +45,36 @@
     BOOL _useSSL;
 }
 
-@property(retain,readonly) IMDAccount * account;
-@property(retain,readonly) NSDictionary * accountDefaults;
-@property(retain,readonly) NSString * accountID;
-@property(readonly) BOOL accountNeedsLogin;
-@property(readonly) BOOL accountNeedsPassword;
-@property(readonly) BOOL accountShouldBeAlwaysLoggedIn;
-@property(retain,readonly) NSArray * allBuddies;
-@property(readonly) BOOL allowedAsChild;
-@property(retain,readonly) NSDictionary * buddyPictures;
-@property(retain,readonly) NSDictionary * buddyProperties;
-@property(retain,readonly) NSString * displayName;
-@property(readonly) BOOL isActive;
-@property(readonly) BOOL networkConditionsAllowLogin;
-@property(readonly) BOOL overrideNetworkAvailability;
-@property(retain,readonly) NSString * password;
-@property(retain,readonly) NSString * proxyAccount;
-@property(retain,readonly) NSString * proxyHost;
-@property(retain,readonly) NSString * proxyPassword;
-@property(readonly) unsigned short proxyPort;
-@property(readonly) int proxyType;
-@property(retain,readonly) NSDictionary * registrationAlertInfo;
-@property(readonly) int registrationError;
-@property(readonly) int registrationStatus;
-@property(retain,readonly) NSString * serverHost;
-@property(readonly) unsigned short serverPort;
-@property(retain,readonly) IMDService * service;
-@property(readonly) int serviceDisconnectReason;
-@property(readonly) unsigned int serviceLoginStatus;
-@property(retain,readonly) NSString * serviceLoginStatusMessage;
-@property(readonly) BOOL useSSL;
+@property (nonatomic, readonly, retain) IMDAccount *account;
+@property (nonatomic, readonly, retain) NSDictionary *accountDefaults;
+@property (nonatomic, readonly, retain) NSString *accountID;
+@property (nonatomic, readonly) BOOL accountNeedsLogin;
+@property (nonatomic, readonly) BOOL accountNeedsPassword;
+@property (nonatomic, readonly) BOOL accountShouldBeAlwaysLoggedIn;
+@property (nonatomic, readonly, retain) NSArray *allBuddies;
+@property (nonatomic, readonly) BOOL allowedAsChild;
+@property (nonatomic, readonly, retain) NSDictionary *buddyPictures;
+@property (readonly, retain) NSDictionary *buddyProperties;
+@property (nonatomic, readonly, retain) NSString *displayName;
+@property (nonatomic, readonly) BOOL isActive;
+@property (nonatomic, readonly) BOOL networkConditionsAllowLogin;
+@property (nonatomic, readonly) BOOL overrideNetworkAvailability;
+@property (nonatomic, readonly, retain) NSString *password;
+@property (nonatomic, readonly, retain) NSString *proxyAccount;
+@property (nonatomic, readonly, retain) NSString *proxyHost;
+@property (nonatomic, readonly, retain) NSString *proxyPassword;
+@property (nonatomic, readonly) unsigned short proxyPort;
+@property (nonatomic, readonly) int proxyType;
+@property (nonatomic, readonly, retain) NSDictionary *registrationAlertInfo;
+@property (nonatomic, readonly) int registrationError;
+@property (nonatomic, readonly) int registrationStatus;
+@property (nonatomic, readonly, retain) NSString *serverHost;
+@property (nonatomic, readonly) unsigned short serverPort;
+@property (nonatomic, readonly, retain) IMDService *service;
+@property (nonatomic, readonly) int serviceDisconnectReason;
+@property (nonatomic, readonly) unsigned int serviceLoginStatus;
+@property (nonatomic, readonly, retain) NSString *serviceLoginStatusMessage;
+@property (nonatomic, readonly) BOOL useSSL;
 
 + (id)_firewallUserNotificationForService:(id)arg1;
 + (void)initialize;
@@ -90,11 +88,11 @@
 - (void)_clearDowngradeMarkersForChat:(id)arg1;
 - (void)_data_connection_ready;
 - (BOOL)_didReceiveMessageDeliveryReceiptForMessageID:(id)arg1 attempts:(int)arg2 date:(id)arg3;
-- (void)_didReceiveMessagePlayedForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 useMessageSuppression:(BOOL)arg4 completionBlock:(id)arg5;
-- (void)_didReceiveMessagePlayedReceiptForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 completionBlock:(id)arg4;
-- (void)_didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 useMessageSuppression:(BOOL)arg4 completionBlock:(id)arg5;
-- (void)_didReceiveMessageReadReceiptForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 completionBlock:(id)arg4;
-- (void)_didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 attempts:(int)arg7 useMessageSuppression:(BOOL)arg8 completionBlock:(id)arg9;
+- (void)_didReceiveMessagePlayedForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 useMessageSuppression:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (void)_didReceiveMessagePlayedReceiptForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 completionBlock:(id /* block */)arg4;
+- (void)_didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 useMessageSuppression:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (void)_didReceiveMessageReadReceiptForMessageID:(id)arg1 date:(id)arg2 attempts:(int)arg3 completionBlock:(id /* block */)arg4;
+- (void)_didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 attempts:(int)arg7 useMessageSuppression:(BOOL)arg8 completionBlock:(id /* block */)arg9;
 - (void)_doLoginIgnoringProxy:(BOOL)arg1;
 - (void)_endMessageSuppressionForChatGUID:(id)arg1;
 - (void)_expireStateTimerFired;
@@ -191,14 +189,14 @@
 - (void)didReceiveInvitation:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
 - (void)didReceiveMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
 - (BOOL)didReceiveMessageDeliveryReceiptForMessageID:(id)arg1 date:(id)arg2;
-- (void)didReceiveMessagePlayedForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id)arg3;
-- (void)didReceiveMessagePlayedForMessageID:(id)arg1 date:(id)arg2 useMessageSuppression:(BOOL)arg3 completionBlock:(id)arg4;
-- (void)didReceiveMessagePlayedReceiptForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id)arg3;
-- (void)didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id)arg3;
-- (void)didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 useMessageSuppression:(BOOL)arg3 completionBlock:(id)arg4;
-- (void)didReceiveMessageReadReceiptForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id)arg3;
-- (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 completionBlock:(id)arg7;
-- (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 useMessageSuppression:(BOOL)arg7 completionBlock:(id)arg8;
+- (void)didReceiveMessagePlayedForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)didReceiveMessagePlayedForMessageID:(id)arg1 date:(id)arg2 useMessageSuppression:(BOOL)arg3 completionBlock:(id /* block */)arg4;
+- (void)didReceiveMessagePlayedReceiptForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)didReceiveMessageReadForMessageID:(id)arg1 date:(id)arg2 useMessageSuppression:(BOOL)arg3 completionBlock:(id /* block */)arg4;
+- (void)didReceiveMessageReadReceiptForMessageID:(id)arg1 date:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 completionBlock:(id /* block */)arg7;
+- (void)didReceiveMessageSavedForMessageID:(id)arg1 ofType:(long long)arg2 forChat:(id)arg3 fromHandle:(id)arg4 fromMe:(BOOL)arg5 date:(id)arg6 useMessageSuppression:(BOOL)arg7 completionBlock:(id /* block */)arg8;
 - (void)didReceiveReplaceMessageID:(int)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
 - (void)didSendMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3;
 - (void)didSendMessage:(id)arg1 forChat:(id)arg2 style:(unsigned char)arg3 forceDate:(id)arg4;
@@ -254,7 +252,7 @@
 - (unsigned int)pendingReadReceiptFromStorageCount;
 - (id)pictureKeyForBuddy:(id)arg1;
 - (id)pictureOfBuddy:(id)arg1;
-- (void)processMessageForSending:(id)arg1 toChat:(id)arg2 style:(unsigned char)arg3 completionBlock:(id)arg4;
+- (void)processMessageForSending:(id)arg1 toChat:(id)arg2 style:(unsigned char)arg3 completionBlock:(id /* block */)arg4;
 - (id)property:(id)arg1 ofBuddy:(id)arg2;
 - (id)proxyAccount;
 - (id)proxyHost;
@@ -288,7 +286,7 @@
 - (void)sendCommand:(id)arg1 withProperties:(id)arg2 toPerson:(id)arg3;
 - (void)sendCounterProposalToPerson:(id)arg1 properties:(id)arg2 conference:(id)arg3;
 - (void)sendFileTransfer:(id)arg1 toPerson:(id)arg2;
-- (void)sendLocationSharingInfo:(id)arg1 toID:(id)arg2 completionBlock:(id)arg3;
+- (void)sendLocationSharingInfo:(id)arg1 toID:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)sendMessage:(id)arg1 toChat:(id)arg2 style:(unsigned char)arg3;
 - (void)sendMessage:(id)arg1 toChatID:(id)arg2 identifier:(id)arg3 style:(unsigned char)arg4;
 - (void)sendPlayedReceiptForMessage:(id)arg1 toChatID:(id)arg2 identifier:(id)arg3 style:(unsigned char)arg4;

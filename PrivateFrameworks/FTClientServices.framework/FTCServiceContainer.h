@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FTClientServices.framework/FTClientServices
  */
 
-@class FTCServiceMonitor, NSMutableSet;
-
 @interface FTCServiceContainer : NSObject {
     NSMutableSet *_listeners;
     FTCServiceMonitor *_monitor;
 }
 
-@property(retain,readonly) NSMutableSet * listeners;
-@property(retain) FTCServiceMonitor * monitor;
+@property (nonatomic, readonly, retain) NSMutableSet *listeners;
+@property (nonatomic, retain) FTCServiceMonitor *monitor;
 
 - (BOOL)addListenerID:(id)arg1;
 - (void)dealloc;

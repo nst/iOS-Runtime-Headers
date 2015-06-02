@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@class NSString;
-
 @interface SGStorageLocation : NSObject <NSCopying, NSSecureCoding> {
     double _accuracy;
     NSString *_address;
@@ -14,13 +12,13 @@
     double _quality;
 }
 
-@property(readonly) double accuracy;
-@property(readonly) NSString * address;
-@property(readonly) NSString * label;
-@property(readonly) double latitude;
-@property(readonly) unsigned int locationType;
-@property(readonly) double longitude;
-@property(readonly) double quality;
+@property (nonatomic, readonly) double accuracy;
+@property (nonatomic, readonly) NSString *address;
+@property (nonatomic, readonly) NSString *label;
+@property (nonatomic, readonly) double latitude;
+@property (nonatomic, readonly) unsigned int locationType;
+@property (nonatomic, readonly) double longitude;
+@property (nonatomic, readonly) double quality;
 
 + (BOOL)supportsSecureCoding;
 

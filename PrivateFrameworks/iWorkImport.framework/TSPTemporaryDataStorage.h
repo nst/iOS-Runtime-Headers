@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class <TSPCryptoInfo>, NSURL;
-
 @interface TSPTemporaryDataStorage : TSPFileDataStorage {
     NSURL *_URL;
     <TSPCryptoInfo> *_decryptionInfo;
@@ -17,8 +10,8 @@
     BOOL _isMissingOriginalData;
 }
 
-@property BOOL isMissingData;
-@property BOOL isMissingOriginalData;
+@property (nonatomic) BOOL isMissingData;
+@property (nonatomic) BOOL isMissingOriginalData;
 
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -28,8 +21,8 @@
 - (BOOL)isMissingData;
 - (BOOL)isMissingOriginalData;
 - (unsigned long long)length;
-- (void)performIOChannelReadWithAccessor:(id)arg1;
-- (void)performReadWithAccessor:(id)arg1;
+- (void)performIOChannelReadWithAccessor:(id /* block */)arg1;
+- (void)performReadWithAccessor:(id /* block */)arg1;
 - (void)setGilligan_isRemote:(BOOL)arg1;
 - (void)setIsMissingData:(BOOL)arg1;
 - (void)setIsMissingOriginalData:(BOOL)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@class NSLock;
-
 @interface _NSXPCConnectionImportInfo : NSObject {
     unsigned long long _generationCount;
     struct __CFSet { } *_knownProxies;

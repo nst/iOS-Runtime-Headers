@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/IMAVCore.framework/IMAVCore
  */
 
-@class NSMutableArray;
-
 @interface IMAVHandler : NSObject {
     NSMutableArray *_pendingChats;
     NSMutableArray *_pendingLookups;

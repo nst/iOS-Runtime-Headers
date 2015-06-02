@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class CALayer, NSObject<TSDContainerInfo>, NSString, TSWPRep, TSWPStorage;
-
 @interface TSWPShapeRep : TSDShapeRep <TSDContainerRep, TSDMagicMoveMatching, TSWPShapeLayoutDelegate> {
     TSWPRep *_containedRep;
     BOOL _editingContainedRep;
@@ -14,14 +12,14 @@
     CALayer *_overflowGlyphLayer;
 }
 
-@property(readonly) TSWPRep * containedRep;
-@property(readonly) NSObject<TSDContainerInfo> * containerInfo;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) BOOL isShapeInvisible;
-@property(readonly) Class superclass;
-@property(readonly) TSWPStorage * textStorageForTexture;
+@property (nonatomic, readonly) TSWPRep *containedRep;
+@property (nonatomic, readonly) NSObject<TSDContainerInfo> *containerInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isShapeInvisible;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) TSWPStorage *textStorageForTexture;
 
 + (id)magicMoveAnimationMatchesFromMatches:(id)arg1;
 + (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;

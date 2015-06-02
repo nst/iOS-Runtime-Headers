@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
  */
 
-@class MPAVController, MPAVItem, MPNowPlayingObserver, MPQueueFeeder, MPUApplicationDefaults, MPULyricsView, MPUNowPlayingPlaybackControlsView, MPUNowPlayingTitlesView, MPURatingControl, NSString, NSTimer, UINavigationBar, UINavigationItem, UITapGestureRecognizer, UIView, UIViewController;
-
 @interface MPUNowPlayingViewController : UIViewController <MPTransportControlsTarget, MPUNowPlayingPlaybackControlsViewDelegate, MPURatingControlDelegate, UIGestureRecognizerDelegate, UINavigationBarDelegate> {
     MPUApplicationDefaults *_applicationDefaults;
     BOOL _canMarqueeText;
@@ -31,19 +29,19 @@
     BOOL _wantsVideoLayer;
 }
 
-@property(readonly) UIView * _contentView;
-@property(readonly) UIViewController * _contentViewController;
-@property(getter=_isDetailScrubbing,readonly) BOOL _detailScrubbing;
-@property(readonly) UINavigationItem * _effectiveNavigationItem;
-@property(readonly) MPAVItem * _item;
-@property(readonly) MPUNowPlayingPlaybackControlsView * _playbackControlsView;
-@property(retain) MPUApplicationDefaults * applicationDefaults;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) MPNowPlayingObserver * nowPlayingObserver;
-@property(retain) MPAVController * player;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) UIView *_contentView;
+@property (nonatomic, readonly) UIViewController *_contentViewController;
+@property (getter=_isDetailScrubbing, nonatomic, readonly) BOOL _detailScrubbing;
+@property (nonatomic, readonly) UINavigationItem *_effectiveNavigationItem;
+@property (nonatomic, readonly) MPAVItem *_item;
+@property (nonatomic, readonly) MPUNowPlayingPlaybackControlsView *_playbackControlsView;
+@property (nonatomic, retain) MPUApplicationDefaults *applicationDefaults;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPNowPlayingObserver *nowPlayingObserver;
+@property (nonatomic, retain) MPAVController *player;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (BOOL)MPU_supportsMiniPlayer;

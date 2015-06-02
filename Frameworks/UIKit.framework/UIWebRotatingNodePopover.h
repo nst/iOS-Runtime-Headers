@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class <UIWebRotatingNodePopoverDelegate>, DOMNode, NSString, UIPopoverController;
-
 @interface UIWebRotatingNodePopover : NSObject <UIPopoverControllerDelegate> {
     <UIWebRotatingNodePopoverDelegate> *_dismissDelegate;
     BOOL _isRotating;
@@ -15,14 +13,14 @@
     } _presentationPoint;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property <UIWebRotatingNodePopoverDelegate> * dismissDelegate;
-@property(readonly) unsigned int hash;
-@property(retain) DOMNode * node;
-@property(retain) UIPopoverController * popoverController;
-@property struct CGPoint { float x1; float x2; } presentationPoint;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) <UIWebRotatingNodePopoverDelegate> *dismissDelegate;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) DOMNode *node;
+@property (nonatomic, retain) UIPopoverController *popoverController;
+@property (nonatomic) struct CGPoint { float x1; float x2; } presentationPoint;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (void)didRotate:(id)arg1;

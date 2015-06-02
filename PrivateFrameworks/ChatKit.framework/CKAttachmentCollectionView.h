@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKAttachmentCollectionView : UICollectionView {
-}
+@interface CKAttachmentCollectionView : UICollectionView
 
 - (void)dealloc;
 - (void)layoutSubviews;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKShareID, NSData, NSString, NSURL;
-
 @interface CKDAcceptShareInfo : NSObject {
     NSString *_etag;
     NSData *_publicKey;
@@ -13,12 +11,12 @@
     NSURL *_shareURL;
 }
 
-@property(retain) NSString * etag;
-@property(retain) NSData * publicKey;
-@property(retain) NSData * publicPCSData;
-@property(retain) NSString * publicPCSEtag;
-@property(retain) CKShareID * shareID;
-@property(retain) NSURL * shareURL;
+@property (nonatomic, retain) NSString *etag;
+@property (nonatomic, retain) NSData *publicKey;
+@property (nonatomic, retain) NSData *publicPCSData;
+@property (nonatomic, retain) NSString *publicPCSEtag;
+@property (nonatomic, retain) CKShareID *shareID;
+@property (nonatomic, retain) NSURL *shareURL;
 
 - (void).cxx_destruct;
 - (id)etag;

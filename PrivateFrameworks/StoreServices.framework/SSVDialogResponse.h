@@ -2,19 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@class NSArray, NSString;
-
 @interface SSVDialogResponse : NSObject <NSCopying, SSXPCCoding> {
     int _selectedButtonIndex;
     NSArray *_textFieldValues;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property int selectedButtonIndex;
-@property(readonly) Class superclass;
-@property(copy) NSArray * textFieldValues;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) int selectedButtonIndex;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) NSArray *textFieldValues;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDuetDaemonProtocol.framework/CoreDuetDaemonProtocol
  */
 
-@class CDDebug;
-
 @interface CDDPluginResponder : NSObject {
     CDDebug *_debug;
 }
 
-@property(readonly) CDDebug * debug;
+@property (readonly) CDDebug *debug;
 
 - (void).cxx_destruct;
 - (id)debug;

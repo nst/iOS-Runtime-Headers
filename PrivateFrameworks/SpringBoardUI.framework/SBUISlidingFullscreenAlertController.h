@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUI.framework/SpringBoardUI
  */
 
-@class UIView;
-
 @interface SBUISlidingFullscreenAlertController : SBUIFullscreenAlertController {
     BOOL _animatingIn;
     BOOL _animatingOut;
@@ -11,8 +9,8 @@
     UIView *_topBar;
 }
 
-@property(readonly) UIView * bottomBar;
-@property(readonly) UIView * topBar;
+@property (nonatomic, readonly) UIView *bottomBar;
+@property (nonatomic, readonly) UIView *topBar;
 
 - (BOOL)_animatingToHomescreenWallpaper;
 - (float)_animationDelayForOthersActivation;

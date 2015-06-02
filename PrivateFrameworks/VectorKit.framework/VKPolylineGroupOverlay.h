@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
  */
 
-@class GEOMapRegion, NSMutableSet, NSSet, NSString, VKPolylineOverlay;
-
 @interface VKPolylineGroupOverlay : NSObject <VKOverlay> {
     GEOMapRegion *_boundingMapRegion;
     struct __CFSet { } *_observers;
@@ -11,14 +9,14 @@
     VKPolylineOverlay *_selectedPolyline;
 }
 
-@property(readonly) GEOMapRegion * boundingMapRegion;
-@property(readonly) struct { double x1; double x2; } coordinate;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) NSSet * polylines;
-@property(retain) VKPolylineOverlay * selectedPolyline;
-@property(readonly) Class superclass;
+@property (nonatomic, readonly) GEOMapRegion *boundingMapRegion;
+@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSSet *polylines;
+@property (nonatomic, retain) VKPolylineOverlay *selectedPolyline;
+@property (readonly) Class superclass;
 
 - (void)_updateBoundingMapRegion;
 - (void)addObserver:(id)arg1;

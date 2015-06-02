@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@class NSManagedObjectContext;
-
 @interface NSMemoryStoreInPredicateOperator : NSInPredicateOperator {
     NSManagedObjectContext *_context;
 }

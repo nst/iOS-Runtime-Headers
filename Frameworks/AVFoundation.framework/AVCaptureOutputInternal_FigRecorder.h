@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@class AVCaptureSession_FigRecorder, NSMutableArray;
-
 @interface AVCaptureOutputInternal_FigRecorder : NSObject {
     int changeSeed;
     NSMutableArray *connections;

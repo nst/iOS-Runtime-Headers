@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class NSData;
-
 @interface CKDPMescalSignatureRequest : PBRequest <NSCopying> {
     NSData *_mescalData;
 }
 
-@property(readonly) BOOL hasMescalData;
-@property(retain) NSData * mescalData;
+@property (nonatomic, readonly) BOOL hasMescalData;
+@property (nonatomic, retain) NSData *mescalData;
 
 + (id)options;
 

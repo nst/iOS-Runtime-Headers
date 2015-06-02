@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDIDSLocalDeliverySocketClosed : PBCodable <NSCopying> {
     unsigned long long _bytesReceived;
     unsigned long long _bytesSent;
@@ -30,30 +28,30 @@
     unsigned long long _timestamp;
 }
 
-@property unsigned long long bytesReceived;
-@property unsigned long long bytesSent;
-@property unsigned long long closeError;
-@property(retain) NSString * guid;
-@property BOOL hasBytesReceived;
-@property BOOL hasBytesSent;
-@property BOOL hasCloseError;
-@property(readonly) BOOL hasGuid;
-@property BOOL hasIsToDefaultPairedDevice;
-@property BOOL hasPacketsReceived;
-@property BOOL hasPacketsSent;
-@property BOOL hasPriority;
-@property(readonly) BOOL hasService;
-@property BOOL hasSocketError;
-@property(readonly) BOOL hasStreamName;
-@property BOOL hasTimestamp;
-@property unsigned long long isToDefaultPairedDevice;
-@property unsigned long long packetsReceived;
-@property unsigned long long packetsSent;
-@property unsigned long long priority;
-@property(retain) NSString * service;
-@property unsigned long long socketError;
-@property(retain) NSString * streamName;
-@property unsigned long long timestamp;
+@property (nonatomic) unsigned long long bytesReceived;
+@property (nonatomic) unsigned long long bytesSent;
+@property (nonatomic) unsigned long long closeError;
+@property (nonatomic, retain) NSString *guid;
+@property (nonatomic) BOOL hasBytesReceived;
+@property (nonatomic) BOOL hasBytesSent;
+@property (nonatomic) BOOL hasCloseError;
+@property (nonatomic, readonly) BOOL hasGuid;
+@property (nonatomic) BOOL hasIsToDefaultPairedDevice;
+@property (nonatomic) BOOL hasPacketsReceived;
+@property (nonatomic) BOOL hasPacketsSent;
+@property (nonatomic) BOOL hasPriority;
+@property (nonatomic, readonly) BOOL hasService;
+@property (nonatomic) BOOL hasSocketError;
+@property (nonatomic, readonly) BOOL hasStreamName;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long isToDefaultPairedDevice;
+@property (nonatomic) unsigned long long packetsReceived;
+@property (nonatomic) unsigned long long packetsSent;
+@property (nonatomic) unsigned long long priority;
+@property (nonatomic, retain) NSString *service;
+@property (nonatomic) unsigned long long socketError;
+@property (nonatomic, retain) NSString *streamName;
+@property (nonatomic) unsigned long long timestamp;
 
 - (unsigned long long)bytesReceived;
 - (unsigned long long)bytesSent;

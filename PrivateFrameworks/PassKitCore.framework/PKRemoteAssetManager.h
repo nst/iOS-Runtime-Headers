@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@class NSMutableDictionary, NSObject<OS_dispatch_queue>, NSURL, NSURLSession;
-
 @interface PKRemoteAssetManager : NSObject {
     NSURL *_directoryURL;
     NSMutableDictionary *_manifestItemsByRelativeURL;
@@ -18,8 +16,8 @@
 - (void)dealloc;
 - (id)deviceSpecificItems;
 - (id)deviceSpecificItemsForScreenScale:(float)arg1 suffix:(id)arg2;
-- (void)downloadRemoteAssetsWithCompletion:(id)arg1;
-- (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id)arg3;
+- (void)downloadRemoteAssetsWithCompletion:(id /* block */)arg1;
+- (void)downloadRemoteAssetsWithScreenScale:(float)arg1 suffix:(id)arg2 completion:(id /* block */)arg3;
 - (id)initWithFileURL:(id)arg1 queue:(id)arg2;
 - (id)itemWithRelativePath:(id)arg1;
 - (id)remoteAssetManifests;

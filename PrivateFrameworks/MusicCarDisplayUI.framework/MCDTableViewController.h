@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@class UIView;
-
 @interface MCDTableViewController : MPUTableViewController {
     UIView *_nowPlayingButton;
     BOOL _shouldHideIndexTitles;
 }
 
-@property BOOL shouldHideIndexTitles;
+@property (nonatomic) BOOL shouldHideIndexTitles;
 
 + (Class)_tableViewClass;
 

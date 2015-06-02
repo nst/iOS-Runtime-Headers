@@ -2,10 +2,9 @@
    Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
  */
 
-@interface AACompleteEmailVettingResponse : AAResponse {
-}
+@interface AACompleteEmailVettingResponse : AAResponse
 
-@property(readonly) int vettingStatus;
+@property (nonatomic, readonly) int vettingStatus;
 
 - (int)vettingStatus;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray;
-
 @interface UITapGestureRecognizer : UIGestureRecognizer {
     int _buttonType;
     unsigned int _delaysRecognitionForGreaterTapCounts;
@@ -14,12 +12,12 @@
     } _locationInView;
 }
 
-@property(setter=_setButtonType:) int _buttonType;
-@property(readonly) struct CGPoint { float x1; float x2; } centroid;
-@property(readonly) struct CGPoint { float x1; float x2; } location;
-@property unsigned int numberOfTapsRequired;
-@property unsigned int numberOfTouchesRequired;
-@property(readonly) NSArray * touches;
+@property (setter=_setButtonType:, nonatomic) int _buttonType;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } centroid;
+@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } location;
+@property (nonatomic) unsigned int numberOfTapsRequired;
+@property (nonatomic) unsigned int numberOfTouchesRequired;
+@property (nonatomic, readonly) NSArray *touches;
 
 - (void)_appendSubclassDescription:(id)arg1;
 - (int)_buttonType;

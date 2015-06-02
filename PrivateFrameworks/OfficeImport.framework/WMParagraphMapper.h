@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class OIXMLElement, WDParagraph, WMParagraphMapper;
-
 @interface WMParagraphMapper : CMMapper {
     OIXMLElement *mActiveNode;
     WMParagraphMapper *mCurrentMapper;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class <YTFavoritesControllerDelegate>, NSMutableArray, NSURL, YTAccountFeedRequest, YTAuthenticatedAccountPost;
-
 @interface YTFavoritesController : NSObject {
     YTAccountFeedRequest *_accountFeedRequest;
     YTAuthenticatedAccountPost *_accountPost;

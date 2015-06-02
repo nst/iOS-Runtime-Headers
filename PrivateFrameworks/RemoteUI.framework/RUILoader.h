@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@class <RUIParserDelegate>, NSURL, RUIParser;
-
 @interface RUILoader : RUIHTTPRequest {
     BOOL _allowNonSecureHTTP;
     RUIParser *_parser;
@@ -11,8 +9,8 @@
     NSURL *_url;
 }
 
-@property BOOL allowNonSecureHTTP;
-@property <RUIParserDelegate> * parserDelegate;
+@property (nonatomic) BOOL allowNonSecureHTTP;
+@property (nonatomic) <RUIParserDelegate> *parserDelegate;
 
 - (void).cxx_destruct;
 - (id)URL;

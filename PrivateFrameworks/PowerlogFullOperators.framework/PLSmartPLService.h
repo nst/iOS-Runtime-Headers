@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PowerlogFullOperators.framework/PowerlogFullOperators
  */
 
-@class NSMutableDictionary;
-
 @interface PLSmartPLService : PLService {
     NSMutableDictionary *_smartPLHelpers;
 }
 
-@property(retain) NSMutableDictionary * smartPLHelpers;
+@property (retain) NSMutableDictionary *smartPLHelpers;
 
 + (id)entryEventPointDefinitionSmartTrigger;
 + (id)entryEventPointDefinitions;

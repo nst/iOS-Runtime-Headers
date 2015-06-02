@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicViewControllerFactory : MPUViewControllerFactory {
-}
+@interface MusicViewControllerFactory : MPUViewControllerFactory
 
 + (id)_sanitizedQueryForQuery:(id)arg1;
 + (void)registerViewControllerIdentifiers;

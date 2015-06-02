@@ -17,16 +17,16 @@
     double _pitch;
 }
 
-@property double altitude;
-@property BOOL hasAltitude;
-@property BOOL hasHeading;
-@property BOOL hasLatitude;
-@property BOOL hasLongitude;
-@property BOOL hasPitch;
-@property double heading;
-@property double latitude;
-@property double longitude;
-@property double pitch;
+@property (nonatomic) double altitude;
+@property (nonatomic) BOOL hasAltitude;
+@property (nonatomic) BOOL hasHeading;
+@property (nonatomic) BOOL hasLatitude;
+@property (nonatomic) BOOL hasLongitude;
+@property (nonatomic) BOOL hasPitch;
+@property (nonatomic) double heading;
+@property (nonatomic) double latitude;
+@property (nonatomic) double longitude;
+@property (nonatomic) double pitch;
 
 - (double)altitude;
 - (void)copyTo:(id)arg1;

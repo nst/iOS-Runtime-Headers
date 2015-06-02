@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@class NSArray;
-
 @interface MPArrayQueueFeeder : MPQueueFeeder {
     NSArray *_queueItems;
 }
 
-@property(readonly) NSArray * items;
+@property (nonatomic, readonly) NSArray *items;
 
 - (void).cxx_destruct;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;

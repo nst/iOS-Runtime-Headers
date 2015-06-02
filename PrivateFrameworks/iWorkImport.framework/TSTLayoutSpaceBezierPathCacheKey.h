@@ -25,10 +25,10 @@
     } _transform;
 }
 
-@property struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; } gridRange;
-@property float inset;
-@property BOOL reoriginToZero;
-@property struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (nonatomic) struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; } x2; } gridRange;
+@property (nonatomic) float inset;
+@property (nonatomic) BOOL reoriginToZero;
+@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

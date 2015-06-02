@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSCHChartCategoryAxisRenderer : TSCHChartAxisRenderer {
-}
+@interface TSCHChartCategoryAxisRenderer : TSCHChartAxisRenderer
 
 - (void)addSelection:(id)arg1 toCGPath:(struct CGPath { }*)arg2;
 - (BOOL)canEditTextForSelectionPath:(id)arg1;

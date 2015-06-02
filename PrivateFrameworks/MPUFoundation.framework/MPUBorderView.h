@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@class MPUBorderConfiguration;
-
 @interface MPUBorderView : UIView {
     MPUBorderConfiguration *_borderConfiguration;
     BOOL _hidesWhenFullyTransparent;
 }
 
-@property(copy) MPUBorderConfiguration * borderConfiguration;
-@property BOOL hidesWhenFullyTransparent;
-@property(readonly) float requiredOutsetForDropShadow;
-@property(readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } resizableImageCapInsets;
+@property (nonatomic, copy) MPUBorderConfiguration *borderConfiguration;
+@property (nonatomic) BOOL hidesWhenFullyTransparent;
+@property (nonatomic, readonly) float requiredOutsetForDropShadow;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } resizableImageCapInsets;
 
 + (float)requiredOutsetForDropShadow;
 

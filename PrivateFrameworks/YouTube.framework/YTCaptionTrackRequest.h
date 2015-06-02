@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
  */
 
-@class <YTCaptionTrackRequestDelegate>, YTCaptionTrack;
-
 @interface YTCaptionTrackRequest : YTXMLHTTPRequest {
     YTCaptionTrack *_captionTrack;
     <YTCaptionTrackRequestDelegate> *_delegate;

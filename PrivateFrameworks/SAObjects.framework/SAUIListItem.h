@@ -2,17 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class <SAAceSerializable>, NSArray, NSString;
+@interface SAUIListItem : SAAceView
 
-@interface SAUIListItem : SAAceView {
-}
-
-@property(copy) NSArray * commands;
-@property(retain) <SAAceSerializable> * object;
-@property(copy) NSString * selectionResponse;
-@property(copy) NSString * selectionText;
-@property(copy) NSString * speakableSelectionResponse;
-@property(copy) NSString * title;
+@property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, retain) <SAAceSerializable> *object;
+@property (nonatomic, copy) NSString *selectionResponse;
+@property (nonatomic, copy) NSString *selectionText;
+@property (nonatomic, copy) NSString *speakableSelectionResponse;
+@property (nonatomic, copy) NSString *title;
 
 + (id)listItem;
 + (id)listItemWithDictionary:(id)arg1 context:(id)arg2;

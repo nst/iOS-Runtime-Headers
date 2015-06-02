@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@class NSString;
-
 @interface MFReformattedAddress : NSObject {
     NSString *_address;
     struct _NSRange { 
@@ -12,9 +10,9 @@
     } _middleTruncationRange;
 }
 
-@property(readonly) NSString * domainPart;
-@property(readonly) NSString * localPart;
-@property struct _NSRange { unsigned int x1; unsigned int x2; } middleTruncationRange;
+@property (nonatomic, readonly) NSString *domainPart;
+@property (nonatomic, readonly) NSString *localPart;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } middleTruncationRange;
 
 - (id)attributedStringWithFontSize:(float)arg1 maximumWidth:(float)arg2 options:(unsigned int)arg3;
 - (void)dealloc;

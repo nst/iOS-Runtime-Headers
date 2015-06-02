@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
  */
 
-@interface HSAuthorizedDSIDsUpdateRequest : HSRequest {
-}
+@interface HSAuthorizedDSIDsUpdateRequest : HSRequest
 
 - (id)canonicalResponseForResponse:(id)arg1;
 - (id)init;

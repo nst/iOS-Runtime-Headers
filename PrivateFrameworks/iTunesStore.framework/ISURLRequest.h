@@ -2,25 +2,23 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@class NSArray, NSData, NSDictionary, NSInputStream, NSLock, NSString, NSURL, SSMutableURLRequestProperties;
-
 @interface ISURLRequest : NSObject <NSCoding, NSCopying> {
     NSLock *_lock;
     SSMutableURLRequestProperties *_properties;
 }
 
-@property(retain) NSData * HTTPBody;
-@property(retain) NSInputStream * HTTPBodyStream;
-@property(retain) NSString * HTTPMethod;
+@property (retain) NSData *HTTPBody;
+@property (retain) NSInputStream *HTTPBodyStream;
+@property (retain) NSString *HTTPMethod;
 @property int URLBagType;
-@property(retain) NSArray * URLs;
+@property (retain) NSArray *URLs;
 @property int allowedRetryCount;
-@property(retain) NSString * appleClientApplication;
+@property (retain) NSString *appleClientApplication;
 @property unsigned int cachePolicy;
-@property(retain) NSDictionary * customHeaders;
+@property (retain) NSDictionary *customHeaders;
 @property long long expectedContentLength;
-@property(readonly) NSURL * primaryURL;
-@property(retain) NSDictionary * queryStringDictionary;
+@property (readonly) NSURL *primaryURL;
+@property (retain) NSDictionary *queryStringDictionary;
 @property double timeoutInterval;
 
 + (id)requestWithURL:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
  */
 
-@class BBObserver, NSObject<OS_dispatch_queue>, NSXPCConnection;
-
 @interface BBObserverServerProxy : NSObject <BBObserverClientInterface, BBObserverServerInterface> {
     NSXPCConnection *_connection;
     BOOL _isEstablished;
@@ -12,9 +10,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
-@property(retain) NSXPCConnection * connection;
-@property BBObserver * observerWeak;
-@property(retain) NSObject<OS_dispatch_queue> * queue;
+@property (nonatomic, retain) NSXPCConnection *connection;
+@property (nonatomic) BBObserver *observerWeak;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)xpcInterface;
 
@@ -24,19 +22,19 @@
 - (void)dealloc;
 - (BOOL)established;
 - (void)finishedWithBulletinID:(id)arg1 transactionID:(unsigned int)arg2;
-- (void)getActiveAlertBehaviorOverridesWithHandler:(id)arg1;
-- (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id)arg2;
-- (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id)arg3;
-- (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id)arg3;
-- (void)getObserverDebugInfo:(id)arg1;
-- (void)getPrimaryAttachmentDataForBulletinID:(id)arg1 withHandler:(id)arg2;
-- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id)arg1;
-- (void)getPrivilegedSenderTypesWithHandler:(id)arg1;
-- (void)getSectionInfoForCategory:(int)arg1 withHandler:(id)arg2;
-- (void)getSectionOrderRuleWithHandler:(id)arg1;
-- (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id)arg2;
-- (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id)arg2;
-- (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id)arg2;
+- (void)getActiveAlertBehaviorOverridesWithHandler:(id /* block */)arg1;
+- (void)getAttachmentAspectRatioForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getAttachmentPNGDataForBulletinID:(id)arg1 sizeConstraints:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)getObserverDebugInfo:(id /* block */)arg1;
+- (void)getPrimaryAttachmentDataForBulletinID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithHandler:(id /* block */)arg1;
+- (void)getPrivilegedSenderTypesWithHandler:(id /* block */)arg1;
+- (void)getSectionInfoForCategory:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)getSectionOrderRuleWithHandler:(id /* block */)arg1;
+- (void)getSectionParametersForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getSortDescriptorsForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)getUniversalSectionIDForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)handleResponse:(id)arg1;
 - (id)initWithObserver:(id)arg1 queue:(id)arg2;
 - (void)invalidate;
@@ -57,7 +55,7 @@
 - (void)setObserverWeak:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
-- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id)arg3;
+- (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id /* block */)arg3;
 - (void)updateSectionInfo:(id)arg1 inCategory:(int)arg2;
 - (void)updateSectionOrder:(id)arg1 forCategory:(int)arg2;
 - (void)updateSectionOrderRule:(id)arg1;

@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosGridViewControllerPadCameraSpec : PUPhotosGridViewControllerPadSpec {
-}
+@interface PUPhotosGridViewControllerPadCameraSpec : PUPhotosGridViewControllerPadSpec
 
 - (BOOL)canDisplaySlideshowButton;
 - (id)photoBrowserSpec;

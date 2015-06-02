@@ -13,13 +13,13 @@
         struct __CFDictionary {} *metadataDict; 
         short useCount; 
         short age; 
-    } _cache[5];
+    } _cache;
     struct OpaqueFigSimpleMutex { } *_lock;
     int _numberOfExpectedSampleBuffersForEachPTS;
     struct OpaqueFigCaptureStream { } *_stream;
 }
 
-@property int numberOfExpectedSampleBuffersForEachPTS;
+@property (nonatomic) int numberOfExpectedSampleBuffersForEachPTS;
 
 - (void)addMetadataAttachmentToSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 withDutyCycleMetadataCache:(id)arg2;
 - (void)dealloc;

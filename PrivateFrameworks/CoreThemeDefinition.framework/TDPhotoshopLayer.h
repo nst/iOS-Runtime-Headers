@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
  */
 
-@class NSString, TDPhotoshopLayer, TDPhotoshopRenditionSpec;
+@interface TDPhotoshopLayer : NSManagedObject
 
-@interface TDPhotoshopLayer : NSManagedObject {
-}
-
-@property(retain) TDPhotoshopLayer * childLayer;
-@property(retain) NSString * name;
-@property(retain) TDPhotoshopLayer * parentLayer;
-@property(retain) TDPhotoshopRenditionSpec * rendition;
+@property (nonatomic, retain) TDPhotoshopLayer *childLayer;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) TDPhotoshopLayer *parentLayer;
+@property (nonatomic, retain) TDPhotoshopRenditionSpec *rendition;
 
 - (id)hierarchicalLayerNames;
 

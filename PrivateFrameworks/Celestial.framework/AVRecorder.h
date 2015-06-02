@@ -3,7 +3,7 @@
  */
 
 @interface AVRecorder : NSObject {
-    struct AVRecorderPrivate { id x1; id x2; } *_priv;
+    struct AVRecorderPrivate { id x1; } *_priv;
 }
 
 - (BOOL)activate:(id*)arg1;

@@ -2,13 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class TSCHChartDrawableInfo;
-
 @interface TNChartSelection : TSDDrawableSelection {
     TSCHChartDrawableInfo *mChart;
     struct { 
@@ -28,8 +21,8 @@
     } mReference;
 }
 
-@property(readonly) TSCHChartDrawableInfo * chart;
-@property(readonly) struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; } reference;
+@property (nonatomic, readonly) TSCHChartDrawableInfo *chart;
+@property (nonatomic, readonly) struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; } reference;
 
 + (Class)archivedSelectionClass;
 

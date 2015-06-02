@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
  */
 
-@class NSString;
+@interface MSPSerializer : NSObject <SYSerialization>
 
-@interface MSPSerializer : NSObject <SYSerialization> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)SYObjectWithData:(id)arg1;
 - (id)dataWithSYObject:(id)arg1;

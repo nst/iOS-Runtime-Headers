@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@class <PLImageAdjustmentViewDelegate>, NSString, NSTimer, PLCropModel, PLCropOverlayLayer, UIImage, UIImageView;
-
 @interface PLImageAdjustmentView : UIView <UIGestureRecognizerDelegate> {
     double _animationDuration;
     float _autoCropScale;
-    unsigned int _canRotate : 1;
+    unsigned int _canRotate;
     float _cropAngle;
     struct UIEdgeInsets { 
         float top; 
@@ -18,9 +16,9 @@
     PLCropModel *_cropModel;
     unsigned int _currentCropAction;
     <PLImageAdjustmentViewDelegate> *_delegate;
-    unsigned int _delegateDidCropImage : 1;
-    unsigned int _delegateDidTouchImage : 1;
-    unsigned int _delegateWillCropImage : 1;
+    unsigned int _delegateDidCropImage;
+    unsigned int _delegateDidTouchImage;
+    unsigned int _delegateWillCropImage;
     UIImage *_editedImage;
     int _gestureCount;
     struct CGRect { 
@@ -34,11 +32,11 @@
         } size; 
     } _imageCropRect;
     UIImageView *_imageView;
-    unsigned int _isAdjustingCropRect : 1;
-    unsigned int _isAnimating : 1;
-    unsigned int _isCropMode : 1;
+    unsigned int _isAdjustingCropRect;
+    unsigned int _isAnimating;
+    unsigned int _isCropMode;
     NSTimer *_manualCropTimer;
-    unsigned int _needsRecenterImage : 1;
+    unsigned int _needsRecenterImage;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -63,15 +61,15 @@
     float _sourceAspectRatio;
 }
 
-@property struct CGSize { float x1; float x2; } aspectRatio;
-@property struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cropInsets;
-@property(getter=isCropMode) BOOL cropMode;
-@property(copy,readonly) NSString * debugDescription;
-@property <PLImageAdjustmentViewDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(retain) UIImage * editedImage;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (nonatomic) struct CGSize { float x1; float x2; } aspectRatio;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } cropInsets;
+@property (getter=isCropMode, nonatomic) BOOL cropMode;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PLImageAdjustmentViewDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) UIImage *editedImage;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)_beginCropGesture:(id)arg1;
 - (void)_cropTimer:(id)arg1;

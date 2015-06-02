@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@class NSData;
-
 @interface NPKProtoHash : PBCodable <NSCopying> {
     NSData *_hashData;
 }
 
-@property(readonly) BOOL hasHashData;
-@property(retain) NSData * hashData;
+@property (nonatomic, readonly) BOOL hasHashData;
+@property (nonatomic, retain) NSData *hashData;
 
 - (void).cxx_destruct;
 - (void)copyTo:(id)arg1;

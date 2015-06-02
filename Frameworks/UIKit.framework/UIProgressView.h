@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSArray, UIColor, UIImage, UIImageView;
-
 @interface UIProgressView : UIView <NSCoding> {
     int _barStyle;
     BOOL _isAnimating;
@@ -19,15 +17,15 @@
     UIImageView *_trackView;
 }
 
-@property float progress;
-@property(retain) UIImage * progressImage;
-@property(retain) UIColor * progressTintColor;
-@property int progressViewStyle;
-@property(retain) UIImage * trackImage;
-@property(retain) UIColor * trackTintColor;
+@property (nonatomic) float progress;
+@property (nonatomic, retain) UIImage *progressImage;
+@property (nonatomic, retain) UIColor *progressTintColor;
+@property (nonatomic) int progressViewStyle;
+@property (nonatomic, retain) UIImage *trackImage;
+@property (nonatomic, retain) UIColor *trackTintColor;
 
 + (int)_indexForStyle:(int)arg1 barStyle:(int)arg2;
-+ (struct { id x1; id x2; })_standardImagesForStyle:(int)arg1 barStyle:(int)arg2;
++ (struct { id x1; })_standardImagesForStyle:(int)arg1 barStyle:(int)arg2;
 + (id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2;
 + (id)_tintedImageForHeight:(float)arg1 andColors:(id)arg2 roundingRectCorners:(unsigned int)arg3;
 + (struct CGSize { float x1; float x2; })defaultSize;

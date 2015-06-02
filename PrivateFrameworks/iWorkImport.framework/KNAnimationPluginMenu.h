@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, NSMutableArray, NSMutableDictionary;
-
 @interface KNAnimationPluginMenu : NSObject {
     unsigned int mDefaultDirection;
     NSMutableDictionary *mDirectionToLocalizedStringMap;
@@ -12,10 +10,10 @@
     NSMutableDictionary *mLocalizedStringToDirectionMap;
 }
 
-@property(readonly) unsigned int count;
-@property unsigned int defaultDirection;
-@property(readonly) NSArray * directions;
-@property(readonly) NSArray * localizedDirections;
+@property (nonatomic, readonly) unsigned int count;
+@property (nonatomic) unsigned int defaultDirection;
+@property (nonatomic, readonly) NSArray *directions;
+@property (nonatomic, readonly) NSArray *localizedDirections;
 
 + (id)animationPluginMenu;
 + (id)localizedStringForDirection:(unsigned int)arg1 shortVersion:(BOOL)arg2;

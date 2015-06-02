@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
  */
 
-@class <NSCoding>, NSArray, NSDate, NSDictionary, NSString;
-
 @interface MSASAssetCollection : NSObject <NSCopying> {
     NSString *_GUID;
     NSString *_albumGUID;
@@ -25,24 +23,24 @@
     <NSCoding> *_userInfo;
 }
 
-@property(retain) NSString * GUID;
-@property(retain) NSString * albumGUID;
-@property(retain) NSArray * assets;
-@property(retain) NSString * ctag;
-@property(retain) NSString * email;
-@property(retain) NSString * fileName;
-@property(retain) NSString * firstName;
-@property(retain) NSString * fullName;
-@property BOOL hasComments;
-@property BOOL isDeletable;
-@property BOOL isMine;
-@property(retain) NSString * lastName;
-@property(retain) NSDictionary * metadata;
-@property(retain) NSString * path;
-@property(retain) NSString * personID;
-@property long long photoNumber;
-@property(retain) NSDate * timestamp;
-@property(retain) <NSCoding> * userInfo;
+@property (nonatomic, retain) NSString *GUID;
+@property (nonatomic, retain) NSString *albumGUID;
+@property (nonatomic, retain) NSArray *assets;
+@property (nonatomic, retain) NSString *ctag;
+@property (nonatomic, retain) NSString *email;
+@property (nonatomic, retain) NSString *fileName;
+@property (nonatomic, retain) NSString *firstName;
+@property (nonatomic, retain) NSString *fullName;
+@property (nonatomic) BOOL hasComments;
+@property (nonatomic) BOOL isDeletable;
+@property (nonatomic) BOOL isMine;
+@property (nonatomic, retain) NSString *lastName;
+@property (nonatomic, retain) NSDictionary *metadata;
+@property (nonatomic, retain) NSString *path;
+@property (nonatomic, retain) NSString *personID;
+@property (nonatomic) long long photoNumber;
+@property (nonatomic, retain) NSDate *timestamp;
+@property (nonatomic, retain) <NSCoding> *userInfo;
 
 + (id)MSASPAssetCollectionFromProtocolDictionary:(id)arg1;
 + (id)assetCollectionWithAssetCollection:(id)arg1;

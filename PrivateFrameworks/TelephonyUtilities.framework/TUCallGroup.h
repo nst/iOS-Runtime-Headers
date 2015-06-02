@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@class NSArray;
-
 @interface TUCallGroup : NSObject {
     NSArray *_calls;
 }
 
-@property(retain) NSArray * calls;
+@property (retain) NSArray *calls;
 
 - (id)calls;
 - (void)dealloc;

@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSArray, NSDictionary, NSMutableArray, NSMutableDictionary, NSString, SCNGeometryElement, SCNGeometrySource, SCNMaterial, SCNOrderedDictionary, SCNProgram, SCNShadableHelper;
-
 @interface SCNGeometry : NSObject <NSCopying, NSSecureCoding, SCNAnimatable, SCNBoundingVolume, SCNShadable> {
     SCNOrderedDictionary *_animations;
     SCNGeometryElement *_edgeCreasesElement;
@@ -16,7 +9,7 @@
     struct SCNVector3 { float x1; float x2; float x3; } *_fixedBoundingBoxExtrema;
     struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __C3DMesh {} *x2; struct __C3DMaterial {} *x3; struct __CFArray {} *x4; struct __CFArray {} *x5; struct __CFSet {} *x6; struct __CFArray {} *x7; struct __C3DAABB {} *x8; int (*x9)(); struct { bool x_10_1_1; bool x_10_1_2; unsigned short x_10_1_3; unsigned short x_10_1_4; float x_10_1_5; float x_10_1_6; unsigned char x_10_1_7; unsigned char x_10_1_8; unsigned char x_10_1_9; unsigned char x_10_1_10; struct __C3DMeshElement {} *x_10_1_11; struct __C3DMeshSource {} *x_10_1_12; struct __C3DMesh {} *x_10_1_13; bool x_10_1_14; bool x_10_1_15; void *x_10_1_16; void *x_10_1_17; } x10; } *_geometry;
     id _geometryReserved;
-    unsigned int _isPresentationInstance : 1;
+    unsigned int _isPresentationInstance;
     NSArray *_levelsOfDetail;
     NSMutableArray *_materials;
     NSString *_name;
@@ -25,20 +18,20 @@
     NSMutableDictionary *_valuesForUndefinedKeys;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(retain) SCNGeometryElement * edgeCreasesElement;
-@property(retain) SCNGeometrySource * edgeCreasesSource;
-@property(retain) SCNMaterial * firstMaterial;
-@property(readonly) int geometryElementCount;
-@property(readonly) unsigned int hash;
-@property(copy) NSArray * levelsOfDetail;
-@property(copy) NSArray * materials;
-@property(copy) NSString * name;
-@property(retain) SCNProgram * program;
-@property(copy) NSDictionary * shaderModifiers;
-@property unsigned int subdivisionLevel;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) SCNGeometryElement *edgeCreasesElement;
+@property (nonatomic, retain) SCNGeometrySource *edgeCreasesSource;
+@property (nonatomic, retain) SCNMaterial *firstMaterial;
+@property (nonatomic, readonly) int geometryElementCount;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSArray *levelsOfDetail;
+@property (nonatomic, copy) NSArray *materials;
+@property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) SCNProgram *program;
+@property (nonatomic, copy) NSDictionary *shaderModifiers;
+@property (nonatomic) unsigned int subdivisionLevel;
+@property (readonly) Class superclass;
 
 + (id)SCNJSExportProtocol;
 + (id)boxWithWidth:(float)arg1 height:(float)arg2 length:(float)arg3 cornerRadius:(float)arg4 options:(id)arg5;
@@ -98,8 +91,8 @@
 - (BOOL)getBoundingBoxMin:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 max:(struct SCNVector3 { float x1; float x2; float x3; }*)arg2;
 - (id)getBoundingSphere;
 - (BOOL)getBoundingSphereCenter:(struct SCNVector3 { float x1; float x2; float x3; }*)arg1 radius:(float*)arg2;
-- (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id)arg2;
-- (void)handleUnbindingOfSymbol:(id)arg1 usingBlock:(id)arg2;
+- (void)handleBindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)handleUnbindingOfSymbol:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)identifier;
 - (id)init;
 - (id)initPresentationGeometryWithGeometryRef:(struct __C3DGeometry { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct __C3DMesh {} *x2; struct __C3DMaterial {} *x3; struct __CFArray {} *x4; struct __CFArray {} *x5; struct __CFSet {} *x6; struct __CFArray {} *x7; struct __C3DAABB {} *x8; int (*x9)(); struct { bool x_10_1_1; bool x_10_1_2; unsigned short x_10_1_3; unsigned short x_10_1_4; float x_10_1_5; float x_10_1_6; unsigned char x_10_1_7; unsigned char x_10_1_8; unsigned char x_10_1_9; unsigned char x_10_1_10; struct __C3DMeshElement {} *x_10_1_11; struct __C3DMeshSource {} *x_10_1_12; struct __C3DMesh {} *x_10_1_13; bool x_10_1_14; bool x_10_1_15; void *x_10_1_16; void *x_10_1_17; } x10; }*)arg1;

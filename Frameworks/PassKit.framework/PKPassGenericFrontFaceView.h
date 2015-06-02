@@ -2,8 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPassGenericFrontFaceView : PKPassFrontFaceView {
-}
+@interface PKPassGenericFrontFaceView : PKPassFrontFaceView
 
 - (id)shortFaceTemplate;
 - (id)shortScrunchedFaceTemplate;

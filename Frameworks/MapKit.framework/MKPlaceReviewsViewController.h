@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@class <MKPlaceCardReviewsControllerDelegate>, ABMonogrammer, GEORating, MKMapItem, NSMutableArray, NSMutableDictionary, NSString, _MKPlaceViewController;
-
 @interface MKPlaceReviewsViewController : UITableViewController <MKPlaceAttributionCellProvider, MKPlaceReviewsViewCheckInWriteCellDelegate, MKStackingViewControllerPreferredSizeUse> {
     NSMutableDictionary *_cachedMaskedImages;
     BOOL _hasAttribution;
@@ -18,22 +16,22 @@
     NSMutableArray *_viewDidAppearBlocks;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property BOOL hasAttribution;
-@property(readonly) unsigned int hash;
-@property(retain) MKMapItem * mapItem;
-@property(retain) ABMonogrammer * monogrammer;
-@property _MKPlaceViewController * owner;
-@property(retain) GEORating * rating;
-@property(readonly) BOOL requiresPreferredContentSizeInStackingView;
-@property <MKPlaceCardReviewsControllerDelegate> * reviewsControllerDelegate;
-@property BOOL showAttribution;
-@property(readonly) BOOL showAttributionButtons;
-@property BOOL showCheckInAndWriteReviewButtons;
-@property BOOL showMoreReviewsButton;
-@property(readonly) Class superclass;
-@property(retain) NSMutableArray * viewDidAppearBlocks;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasAttribution;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic, retain) ABMonogrammer *monogrammer;
+@property (nonatomic) _MKPlaceViewController *owner;
+@property (nonatomic, retain) GEORating *rating;
+@property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (nonatomic) <MKPlaceCardReviewsControllerDelegate> *reviewsControllerDelegate;
+@property (nonatomic) BOOL showAttribution;
+@property (nonatomic, readonly) BOOL showAttributionButtons;
+@property (nonatomic) BOOL showCheckInAndWriteReviewButtons;
+@property (nonatomic) BOOL showMoreReviewsButton;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSMutableArray *viewDidAppearBlocks;
 
 - (void).cxx_destruct;
 - (void)_showReviewWithID:(id)arg1;

@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class NSIndexPath;
-
 @interface UIKeyboardCandidateGridCellAttributes : UICollectionViewLayoutAttributes {
     NSIndexPath *_candidateIndexPath;
     unsigned int _candidateNumber;
@@ -29,19 +27,19 @@
     } _visualStyling;
 }
 
-@property(retain) NSIndexPath * candidateIndexPath;
-@property unsigned int candidateNumber;
-@property int candidatesVisualStyle;
-@property BOOL dummy;
-@property unsigned int edges;
-@property BOOL emphasizedAppearance;
-@property BOOL groupHeader;
-@property BOOL groupShowsAlternativeText;
-@property BOOL needsPaddingForIndexScrubber;
-@property unsigned int rowIndex;
-@property struct CGSize { float x1; float x2; } rowSize;
-@property BOOL secondaryCandidateAppearance;
-@property struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
+@property (nonatomic, retain) NSIndexPath *candidateIndexPath;
+@property (nonatomic) unsigned int candidateNumber;
+@property (nonatomic) int candidatesVisualStyle;
+@property (nonatomic) BOOL dummy;
+@property (nonatomic) unsigned int edges;
+@property (nonatomic) BOOL emphasizedAppearance;
+@property (nonatomic) BOOL groupHeader;
+@property (nonatomic) BOOL groupShowsAlternativeText;
+@property (nonatomic) BOOL needsPaddingForIndexScrubber;
+@property (nonatomic) unsigned int rowIndex;
+@property (nonatomic) struct CGSize { float x1; float x2; } rowSize;
+@property (nonatomic) BOOL secondaryCandidateAppearance;
+@property (nonatomic) struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; } visualStyling;
 
 - (id)candidateIndexPath;
 - (unsigned int)candidateNumber;

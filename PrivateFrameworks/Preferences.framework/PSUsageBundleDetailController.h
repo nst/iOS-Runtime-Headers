@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSUsageBundleDetailController : PSEditableListController {
-}
+@interface PSUsageBundleDetailController : PSEditableListController
 
 + (id)mediaGroups;
 + (void)setupSpecifier:(id)arg1 forMediaGroups:(id)arg2;

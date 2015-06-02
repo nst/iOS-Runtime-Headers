@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@interface PTSChoiceCell : UITableViewCell {
-}
+@interface PTSChoiceCell : UITableViewCell
 
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)prepareForReuse;

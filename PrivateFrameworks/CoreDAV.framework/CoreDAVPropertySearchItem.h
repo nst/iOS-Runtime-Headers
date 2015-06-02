@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVLeafItem, NSString;
-
 @interface CoreDAVPropertySearchItem : CoreDAVItem {
     NSString *_match;
     NSString *_matchTypeAttribute;
     CoreDAVLeafItem *_prop;
 }
 
-@property(retain) NSString * match;
-@property(retain) NSString * matchTypeAttribute;
-@property(retain) CoreDAVLeafItem * prop;
+@property (nonatomic, retain) NSString *match;
+@property (nonatomic, retain) NSString *matchTypeAttribute;
+@property (nonatomic, retain) CoreDAVLeafItem *prop;
+
+// Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
 - (void)dealloc;
 - (id)description;
@@ -24,7 +24,10 @@
 - (void)setMatch:(id)arg1;
 - (void)setMatchTypeAttribute:(id)arg1;
 - (void)setProp:(id)arg1;
-- (int)wellKnownPrincipalSearchType;
 - (void)write:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
+
+- (int)wellKnownPrincipalSearchType;
 
 @end

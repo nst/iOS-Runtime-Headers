@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@class CKRecordZoneID;
-
 @interface CKDZonePCSData : CKDPCSData {
     CKRecordZoneID *_zoneID;
 }
 
-@property(retain) CKRecordZoneID * zoneID;
+@property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 + (id)dataWithZoneID:(id)arg1 pcsData:(id)arg2;
 + (BOOL)supportsSecureCoding;

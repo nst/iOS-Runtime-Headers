@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
  */
 
-@interface UIAccessibilityMathWebView : UIWebView {
-}
+@interface UIAccessibilityMathWebView : UIWebView
 
 - (BOOL)_accessibilityIsMathTouchExplorationView;
 

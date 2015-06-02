@@ -2,15 +2,13 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@class MPMediaPlaylist, NSArray;
-
 @interface MusicPlaylistEditingPickerOverlay : MusicPickerOverlay {
     NSArray *_pickedEntities;
     MPMediaPlaylist *_playlist;
 }
 
-@property(readonly) NSArray * pickedEntities;
-@property(readonly) MPMediaPlaylist * playlist;
+@property (nonatomic, readonly) NSArray *pickedEntities;
+@property (nonatomic, readonly) MPMediaPlaylist *playlist;
 
 - (void).cxx_destruct;
 - (BOOL)allowsMultipleSelections;

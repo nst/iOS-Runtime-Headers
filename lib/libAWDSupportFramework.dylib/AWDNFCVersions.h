@@ -2,8 +2,6 @@
    Image: /usr/lib/libAWDSupportFramework.dylib
  */
 
-@class NSString;
-
 @interface AWDNFCVersions : PBCodable <NSCopying> {
     struct { 
         unsigned int timestamp : 1; 
@@ -44,42 +42,42 @@
     unsigned long long _timestamp;
 }
 
-@property BOOL hasMiddlewareVersion;
-@property BOOL hasNfccFWRevision;
-@property BOOL hasNfccFWVersion;
-@property BOOL hasNfccHWVersion;
-@property BOOL hasNfccROMVersion;
-@property(readonly) BOOL hasPlatformVersion;
-@property BOOL hasSeDeviceType;
-@property BOOL hasSeFWVersion;
-@property BOOL hasSeHWVersion;
-@property BOOL hasSeMigrationInst;
-@property BOOL hasSeMigrationPkgs;
-@property BOOL hasSeMigrationState;
-@property BOOL hasSeOSMode;
-@property BOOL hasSeReferenceCounter;
-@property BOOL hasSeRestrictedMode;
-@property BOOL hasSeSequenceCounter;
-@property BOOL hasSeSignKeyType;
-@property BOOL hasTimestamp;
-@property unsigned int middlewareVersion;
-@property unsigned int nfccFWRevision;
-@property unsigned int nfccFWVersion;
-@property unsigned int nfccHWVersion;
-@property unsigned int nfccROMVersion;
-@property(retain) NSString * platformVersion;
-@property unsigned int seDeviceType;
-@property unsigned int seFWVersion;
-@property unsigned int seHWVersion;
-@property unsigned int seMigrationInst;
-@property unsigned int seMigrationPkgs;
-@property unsigned int seMigrationState;
-@property unsigned int seOSMode;
-@property unsigned int seReferenceCounter;
-@property unsigned int seRestrictedMode;
-@property unsigned int seSequenceCounter;
-@property unsigned int seSignKeyType;
-@property unsigned long long timestamp;
+@property (nonatomic) BOOL hasMiddlewareVersion;
+@property (nonatomic) BOOL hasNfccFWRevision;
+@property (nonatomic) BOOL hasNfccFWVersion;
+@property (nonatomic) BOOL hasNfccHWVersion;
+@property (nonatomic) BOOL hasNfccROMVersion;
+@property (nonatomic, readonly) BOOL hasPlatformVersion;
+@property (nonatomic) BOOL hasSeDeviceType;
+@property (nonatomic) BOOL hasSeFWVersion;
+@property (nonatomic) BOOL hasSeHWVersion;
+@property (nonatomic) BOOL hasSeMigrationInst;
+@property (nonatomic) BOOL hasSeMigrationPkgs;
+@property (nonatomic) BOOL hasSeMigrationState;
+@property (nonatomic) BOOL hasSeOSMode;
+@property (nonatomic) BOOL hasSeReferenceCounter;
+@property (nonatomic) BOOL hasSeRestrictedMode;
+@property (nonatomic) BOOL hasSeSequenceCounter;
+@property (nonatomic) BOOL hasSeSignKeyType;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned int middlewareVersion;
+@property (nonatomic) unsigned int nfccFWRevision;
+@property (nonatomic) unsigned int nfccFWVersion;
+@property (nonatomic) unsigned int nfccHWVersion;
+@property (nonatomic) unsigned int nfccROMVersion;
+@property (nonatomic, retain) NSString *platformVersion;
+@property (nonatomic) unsigned int seDeviceType;
+@property (nonatomic) unsigned int seFWVersion;
+@property (nonatomic) unsigned int seHWVersion;
+@property (nonatomic) unsigned int seMigrationInst;
+@property (nonatomic) unsigned int seMigrationPkgs;
+@property (nonatomic) unsigned int seMigrationState;
+@property (nonatomic) unsigned int seOSMode;
+@property (nonatomic) unsigned int seReferenceCounter;
+@property (nonatomic) unsigned int seRestrictedMode;
+@property (nonatomic) unsigned int seSequenceCounter;
+@property (nonatomic) unsigned int seSignKeyType;
+@property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

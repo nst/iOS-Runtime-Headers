@@ -7,8 +7,8 @@
     int fResult;
 }
 
-@property(readonly) int confidence;
-@property(readonly) int result;
+@property (nonatomic, readonly) int confidence;
+@property (nonatomic, readonly) int result;
 
 + (BOOL)supportsSecureCoding;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@class PLImageTable;
-
 @interface PLImageTableSegment : NSObject {
     BOOL _dying;
     PLImageTable *_imageTable;

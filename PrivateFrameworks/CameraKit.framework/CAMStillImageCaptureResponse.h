@@ -2,21 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class CIFilter, NSData, NSDictionary, NSMutableDictionary, NSString, UIImage;
-
 @interface CAMStillImageCaptureResponse : CAMCaptureResponse {
     NSString *_avalancheUUID;
     CIFilter *_effectFilter;
     BOOL _finalResponse;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _stillImageCompletionBlock;
-
+    id /* block */ _stillImageCompletionBlock;
     UIImage *_stillImageFilteredPreviewImage;
     struct __IOSurface { } *_stillImageFilteredPreviewSurface;
     NSData *_stillImageJPEGData;
@@ -25,36 +15,32 @@
     struct opaqueCMSampleBuffer { } *_stillImageOriginalSampleBuffer;
     struct __IOSurface { } *_stillImageOriginalSurface;
     unsigned long _stillImageOriginalSurfaceSize;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _stillImageRequestEnqueuedBlock;
-
+    id /* block */ _stillImageRequestEnqueuedBlock;
     UIImage *_stillImageUnfilteredPreviewImage;
     struct __IOSurface { } *_stillImageUnfilteredPreviewSurface;
     NSString *_timelapseDestinationPath;
     BOOL _transient;
 }
 
-@property(copy) NSString * avalancheUUID;
-@property(copy) CIFilter * effectFilter;
-@property(getter=isFinalResponse) BOOL finalResponse;
-@property(copy) id stillImageCompletionBlock;
-@property(retain) UIImage * stillImageFilteredPreviewImage;
-@property struct __IOSurface { }* stillImageFilteredPreviewSurface;
-@property(retain) NSData * stillImageJPEGData;
-@property(retain) NSMutableDictionary * stillImageJob;
-@property(copy,readonly) NSDictionary * stillImageMetadata;
-@property(retain) UIImage * stillImageOriginalImage;
-@property struct opaqueCMSampleBuffer { }* stillImageOriginalSampleBuffer;
-@property struct __IOSurface { }* stillImageOriginalSurface;
-@property unsigned long stillImageOriginalSurfaceSize;
-@property(copy) id stillImageRequestEnqueuedBlock;
-@property(retain) UIImage * stillImageUnfilteredPreviewImage;
-@property struct __IOSurface { }* stillImageUnfilteredPreviewSurface;
-@property(readonly) UIImage * thumbnailImage;
-@property(copy) NSString * timelapseDestinationPath;
-@property(getter=isTransient) BOOL transient;
+@property (nonatomic, copy) NSString *avalancheUUID;
+@property (nonatomic, copy) CIFilter *effectFilter;
+@property (getter=isFinalResponse, nonatomic) BOOL finalResponse;
+@property (nonatomic, copy) id /* block */ stillImageCompletionBlock;
+@property (nonatomic, retain) UIImage *stillImageFilteredPreviewImage;
+@property (nonatomic) struct __IOSurface { }*stillImageFilteredPreviewSurface;
+@property (nonatomic, retain) NSData *stillImageJPEGData;
+@property (nonatomic, retain) NSMutableDictionary *stillImageJob;
+@property (nonatomic, readonly, copy) NSDictionary *stillImageMetadata;
+@property (nonatomic, retain) UIImage *stillImageOriginalImage;
+@property (nonatomic) struct opaqueCMSampleBuffer { }*stillImageOriginalSampleBuffer;
+@property (nonatomic) struct __IOSurface { }*stillImageOriginalSurface;
+@property (nonatomic) unsigned long stillImageOriginalSurfaceSize;
+@property (nonatomic, copy) id /* block */ stillImageRequestEnqueuedBlock;
+@property (nonatomic, retain) UIImage *stillImageUnfilteredPreviewImage;
+@property (nonatomic) struct __IOSurface { }*stillImageUnfilteredPreviewSurface;
+@property (nonatomic, readonly) UIImage *thumbnailImage;
+@property (nonatomic, copy) NSString *timelapseDestinationPath;
+@property (getter=isTransient, nonatomic) BOOL transient;
 
 - (void).cxx_destruct;
 - (id)avalancheUUID;
@@ -67,7 +53,7 @@
 - (void)setAvalancheUUID:(id)arg1;
 - (void)setEffectFilter:(id)arg1;
 - (void)setFinalResponse:(BOOL)arg1;
-- (void)setStillImageCompletionBlock:(id)arg1;
+- (void)setStillImageCompletionBlock:(id /* block */)arg1;
 - (void)setStillImageFilteredPreviewImage:(id)arg1;
 - (void)setStillImageFilteredPreviewSurface:(struct __IOSurface { }*)arg1;
 - (void)setStillImageJPEGData:(id)arg1;
@@ -76,12 +62,12 @@
 - (void)setStillImageOriginalSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)setStillImageOriginalSurface:(struct __IOSurface { }*)arg1;
 - (void)setStillImageOriginalSurfaceSize:(unsigned long)arg1;
-- (void)setStillImageRequestEnqueuedBlock:(id)arg1;
+- (void)setStillImageRequestEnqueuedBlock:(id /* block */)arg1;
 - (void)setStillImageUnfilteredPreviewImage:(id)arg1;
 - (void)setStillImageUnfilteredPreviewSurface:(struct __IOSurface { }*)arg1;
 - (void)setTimelapseDestinationPath:(id)arg1;
 - (void)setTransient:(BOOL)arg1;
-- (id)stillImageCompletionBlock;
+- (id /* block */)stillImageCompletionBlock;
 - (id)stillImageFilteredPreviewImage;
 - (struct __IOSurface { }*)stillImageFilteredPreviewSurface;
 - (id)stillImageJPEGData;
@@ -91,7 +77,7 @@
 - (struct opaqueCMSampleBuffer { }*)stillImageOriginalSampleBuffer;
 - (struct __IOSurface { }*)stillImageOriginalSurface;
 - (unsigned long)stillImageOriginalSurfaceSize;
-- (id)stillImageRequestEnqueuedBlock;
+- (id /* block */)stillImageRequestEnqueuedBlock;
 - (id)stillImageUnfilteredPreviewImage;
 - (struct __IOSurface { }*)stillImageUnfilteredPreviewSurface;
 - (id)thumbnailImage;

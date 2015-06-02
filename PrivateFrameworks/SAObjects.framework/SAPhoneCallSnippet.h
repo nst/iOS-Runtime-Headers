@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray;
+@interface SAPhoneCallSnippet : SAUISnippet
 
-@interface SAPhoneCallSnippet : SAUISnippet {
-}
-
-@property(copy) NSArray * calls;
+@property (nonatomic, copy) NSArray *calls;
 
 + (id)callSnippet;
 + (id)callSnippetWithDictionary:(id)arg1 context:(id)arg2;

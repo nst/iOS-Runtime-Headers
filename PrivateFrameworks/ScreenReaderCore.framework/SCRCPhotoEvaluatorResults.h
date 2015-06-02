@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
  */
 
-@class SCRCPhotoEvaluatorResult, SCRCPhotoEvaluatorResultPeople;
-
 @interface SCRCPhotoEvaluatorResults : NSObject {
     SCRCPhotoEvaluatorResult *_blurResult;
     SCRCPhotoEvaluatorResult *_colorResult;
@@ -11,10 +9,10 @@
     SCRCPhotoEvaluatorResultPeople *_peopleResult;
 }
 
-@property(readonly) SCRCPhotoEvaluatorResult * blurResult;
-@property(readonly) SCRCPhotoEvaluatorResult * colorResult;
-@property(readonly) SCRCPhotoEvaluatorResult * luminanceResult;
-@property(readonly) SCRCPhotoEvaluatorResultPeople * peopleResult;
+@property (nonatomic, readonly) SCRCPhotoEvaluatorResult *blurResult;
+@property (nonatomic, readonly) SCRCPhotoEvaluatorResult *colorResult;
+@property (nonatomic, readonly) SCRCPhotoEvaluatorResult *luminanceResult;
+@property (nonatomic, readonly) SCRCPhotoEvaluatorResultPeople *peopleResult;
 
 - (id)blurResult;
 - (id)colorResult;

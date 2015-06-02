@@ -2,15 +2,12 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@class NSString;
+@interface SKUIDismissingProductViewController : SKStoreProductViewController <SKStoreProductViewControllerDelegate>
 
-@interface SKUIDismissingProductViewController : SKStoreProductViewController <SKStoreProductViewControllerDelegate> {
-}
-
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)productViewControllerDidFinish:(id)arg1;

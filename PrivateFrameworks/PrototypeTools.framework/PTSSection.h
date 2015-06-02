@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
  */
 
-@class NSArray, NSHashTable, NSMutableArray, NSMutableDictionary, NSString, _UISettings;
-
 @interface PTSSection : NSObject <_UISettingsGroupObserver, _UISettingsKeyPathObserver> {
     NSMutableArray *_allConcreteRows;
     NSArray *_appearanceConditions;
@@ -17,14 +15,14 @@
     NSString *_title;
 }
 
-@property(retain) NSArray * appearanceConditions;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(retain) _UISettings * settings;
-@property(retain) NSString * submoduleKeyPath;
-@property(readonly) Class superclass;
-@property(retain) NSString * title;
+@property (nonatomic, retain) NSArray *appearanceConditions;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _UISettings *settings;
+@property (nonatomic, retain) NSString *submoduleKeyPath;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_assertNoGroupTemplateProperties:(id)arg1;
@@ -38,8 +36,8 @@
 - (id)appearanceConditions;
 - (void)dealloc;
 - (unsigned int)destinationForRowAtIndex:(unsigned int)arg1 withProposedDestination:(unsigned int)arg2;
-- (void)enumerateAllRowsUsingBlock:(id)arg1;
-- (void)enumerateEnabledRowsUsingBlock:(id)arg1;
+- (void)enumerateAllRowsUsingBlock:(id /* block */)arg1;
+- (void)enumerateEnabledRowsUsingBlock:(id /* block */)arg1;
 - (BOOL)hasEnabledEditableRows;
 - (unsigned int)indexOfRow:(id)arg1;
 - (id)initWithRows:(id)arg1;

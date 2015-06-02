@@ -2,28 +2,18 @@
    Image: /System/Library/PrivateFrameworks/AppleAccountUI.framework/AppleAccountUI
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class <AAUIRemoteUIRepairFlowDelegate>, AAUIAccountRepairRemoteUI, ACAccount, NSString;
-
 @interface AAUIRemoteUIRepairFlow : NSObject <AAUIAccountRepairRemoteUIDelegate> {
     ACAccount *_account;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _completion;
-
+    id /* block */ _completion;
     <AAUIRemoteUIRepairFlowDelegate> *_delegate;
     AAUIAccountRepairRemoteUI *_remoteUI;
 }
 
-@property(copy,readonly) NSString * debugDescription;
-@property <AAUIRemoteUIRepairFlowDelegate> * delegate;
-@property(copy,readonly) NSString * description;
-@property(readonly) unsigned int hash;
-@property(readonly) Class superclass;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <AAUIRemoteUIRepairFlowDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)accountRepairRemoteUI:(id)arg1 account:(id)arg2 didFinishWithSuccess:(BOOL)arg3;
@@ -31,7 +21,7 @@
 - (void)accountRepairRemoteUIWillDismiss:(id)arg1;
 - (id)delegate;
 - (id)initWithAccount:(id)arg1;
-- (void)presentFlowFromViewController:(id)arg1 modal:(BOOL)arg2 completion:(id)arg3;
+- (void)presentFlowFromViewController:(id)arg1 modal:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)setDelegate:(id)arg1;
 
 @end

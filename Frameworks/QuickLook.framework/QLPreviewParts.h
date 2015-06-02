@@ -2,13 +2,6 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-/* RuntimeBrowser encountered one or more ivar type encodings for a function pointer. 
-   The runtime does not encode function signature information.  We use a signature of: 
-           "int (*funcName)()",  where funcName might be null. 
- */
-
-@class NSData, NSError, NSMutableDictionary, NSMutableSet, NSSet, NSString, NSThread, NSURL, NSURLConnection, NSURLRequest, NSURLResponse;
-
 @interface QLPreviewParts : NSObject {
     NSURLConnection *_connection;
     void *_convertFunction;
@@ -43,24 +36,24 @@
     long representedObjectProtection;
 }
 
-@property(readonly) NSSet * attachmentURLs;
-@property(getter=isCancelled,readonly) BOOL cancelled;
-@property(getter=isComputed,readonly) BOOL computed;
-@property(retain) NSURLConnection * connection;
-@property(retain) NSData * data;
-@property id delegate;
-@property(retain) NSString * fileName;
+@property (nonatomic, readonly) NSSet *attachmentURLs;
+@property (getter=isCancelled, readonly) BOOL cancelled;
+@property (getter=isComputed, readonly) BOOL computed;
+@property (nonatomic, retain) NSURLConnection *connection;
+@property (nonatomic, retain) NSData *data;
+@property (nonatomic) id delegate;
+@property (nonatomic, retain) NSString *fileName;
 @property BOOL htmlErrorDisabled;
-@property(readonly) int pageCount;
-@property(readonly) float pageHeight;
-@property(readonly) float pageWidth;
-@property(retain) NSString * password;
-@property(readonly) NSURLRequest * previewRequest;
-@property(readonly) NSURLResponse * previewResponse;
-@property(readonly) NSURL * previewURL;
-@property BOOL progressive;
-@property(retain) NSURL * url;
-@property(retain) NSString * uti;
+@property (readonly) int pageCount;
+@property (readonly) float pageHeight;
+@property (readonly) float pageWidth;
+@property (nonatomic, retain) NSString *password;
+@property (nonatomic, readonly) NSURLRequest *previewRequest;
+@property (nonatomic, readonly) NSURLResponse *previewResponse;
+@property (nonatomic, readonly) NSURL *previewURL;
+@property (nonatomic) BOOL progressive;
+@property (nonatomic, retain) NSURL *url;
+@property (nonatomic, retain) NSString *uti;
 
 + (BOOL)isSafeRequest:(id)arg1;
 + (BOOL)isSafeURL:(id)arg1;

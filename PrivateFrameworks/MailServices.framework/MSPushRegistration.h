@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MailServices.framework/MailServices
  */
 
-@class NSArray, NSString;
-
 @interface MSPushRegistration : MSMailDefaultService {
     NSString *_accountIdentifier;
     NSString *_bundleIdentifier;
@@ -11,10 +9,10 @@
     NSString *_notificationNamePrefix;
 }
 
-@property(copy) NSString * accountIdentifier;
-@property(copy) NSString * bundleIdentifier;
-@property(copy) NSArray * mailboxNames;
-@property(copy) NSString * notificationNamePrefix;
+@property (nonatomic, copy) NSString *accountIdentifier;
+@property (nonatomic, copy) NSString *bundleIdentifier;
+@property (nonatomic, copy) NSArray *mailboxNames;
+@property (nonatomic, copy) NSString *notificationNamePrefix;
 
 - (id)accountIdentifier;
 - (id)bundleIdentifier;
@@ -22,7 +20,7 @@
 - (id)init;
 - (id)mailboxNames;
 - (id)notificationNamePrefix;
-- (void)registerForPush:(id)arg1;
+- (void)registerForPush:(id /* block */)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setMailboxNames:(id)arg1;

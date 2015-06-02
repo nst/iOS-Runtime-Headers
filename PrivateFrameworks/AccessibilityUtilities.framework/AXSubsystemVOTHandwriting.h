@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXSubsystemVOTHandwriting : AXSubsystem {
-}
+@interface AXSubsystemVOTHandwriting : AXSubsystem
 
 + (int)defaultLogLevel;
 + (id)identifier;

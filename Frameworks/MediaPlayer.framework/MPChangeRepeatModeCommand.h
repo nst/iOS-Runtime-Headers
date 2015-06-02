@@ -6,7 +6,7 @@
     unsigned int _currentRepeatType;
 }
 
-@property unsigned int currentRepeatType;
+@property (nonatomic) unsigned int currentRepeatType;
 
 - (id)_mediaRemoteCommandInfoOptions;
 - (unsigned int)currentRepeatType;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EXFormula : NSObject {
-}
+@interface EXFormula : NSObject
 
 + (void)applyArrayedFormula:(id)arg1 edReference:(id)arg2 edWorksheet:(id)arg3 state:(id)arg4;
 + (void)applyArrayedFormulasToSheet:(id)arg1 state:(id)arg2;

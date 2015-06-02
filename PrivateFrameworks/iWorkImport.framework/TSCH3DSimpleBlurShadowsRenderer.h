@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSArray, TSCH3DFBOResource;
-
 @interface TSCH3DSimpleBlurShadowsRenderer : NSObject <TSCH3DShadowsRenderer> {
     TSCH3DFBOResource *mBlurFBOResource;
     NSArray *mBlurParametersArray;
@@ -28,7 +26,7 @@
 - (void)dealloc;
 - (id)initWithBlurParametersArray:(id)arg1;
 - (void)invalidate;
-- (void)protectShadowForQuality:(float)arg1 pipeline:(id)arg2 renderBlock:(id)arg3;
+- (void)protectShadowForQuality:(float)arg1 pipeline:(id)arg2 renderBlock:(id /* block */)arg3;
 - (id)shadowsFBOForContext:(id)arg1;
 - (void)unprotectShadowInSession:(id)arg1;
 

@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@class NSString, TSARenderingExporter;
-
 @interface TSAPdfRenderingExporterDelegate : NSObject <TSARenderingExporterDelegate> {
     NSString *mPassphraseOpen;
     NSString *mPassphrasePrintCopy;

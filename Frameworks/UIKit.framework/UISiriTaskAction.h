@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class AFSiriTask;
+@interface UISiriTaskAction : BSAction
 
-@interface UISiriTaskAction : BSAction {
-}
-
-@property(retain,readonly) AFSiriTask * payload;
+@property (nonatomic, readonly, retain) AFSiriTask *payload;
 
 - (int)UIActionType;
-- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id)arg4;
+- (id)initWithInfo:(id)arg1 timeout:(double)arg2 forResponseOnQueue:(id)arg3 withHandler:(id /* block */)arg4;
 - (id)initWithPayload:(id)arg1;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)payload;

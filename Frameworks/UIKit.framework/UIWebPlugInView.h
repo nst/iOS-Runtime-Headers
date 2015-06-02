@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@class CALayer, UIView, UIWebDocumentView;
-
 @interface UIWebPlugInView : WAKView {
     CALayer *_hostingLayer;
     BOOL _isFullScreen;
@@ -16,10 +14,10 @@
     UIWebDocumentView *_webView;
 }
 
-@property BOOL isMapViewPlugIn;
-@property BOOL isQuickTimePlugIn;
-@property BOOL isiAdPlugIn;
-@property(getter=isParentedInLayer) BOOL parentedInLayer;
+@property (nonatomic) BOOL isMapViewPlugIn;
+@property (nonatomic) BOOL isQuickTimePlugIn;
+@property (nonatomic) BOOL isiAdPlugIn;
+@property (getter=isParentedInLayer, nonatomic) BOOL parentedInLayer;
 
 - (void)_attachPluginLayerOnMainThread;
 - (void)_connectPluginLayers;

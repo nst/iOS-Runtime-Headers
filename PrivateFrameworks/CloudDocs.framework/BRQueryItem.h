@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
  */
 
-@class NSMutableDictionary, NSNumber, NSString, NSURL;
-
 @interface BRQueryItem : NSObject <NSCopying, NSSecureCoding> {
     NSMutableDictionary *_attrs;
     NSString *_containerID;
@@ -38,33 +36,35 @@
     NSURL *_url;
 }
 
-@property(readonly) NSString * containerID;
-@property(readonly) unsigned short diffs;
-@property(readonly) unsigned int downloadStatus;
-@property(readonly) NSNumber * fileObjectID;
-@property(readonly) BOOL hasTransferStatuses;
-@property(readonly) BOOL isAlias;
-@property(readonly) BOOL isConflicted;
-@property(readonly) BOOL isDead;
-@property(readonly) BOOL isDocument;
-@property(readonly) BOOL isDownloadActive;
-@property(readonly) BOOL isDownloadRequested;
-@property(readonly) BOOL isInTransfer;
-@property(readonly) BOOL isLive;
-@property BOOL isNetworkOffline;
-@property BOOL isPreCrash;
-@property(readonly) BOOL isUploadActive;
-@property(readonly) NSURL * localRepresentationURL;
-@property(readonly) NSString * logicalName;
-@property(readonly) NSNumber * mtime;
-@property(readonly) NSString * parentPath;
-@property(readonly) NSString * path;
-@property(readonly) NSString * physicalName;
-@property id replacement;
-@property(readonly) unsigned int shareOptions;
-@property(readonly) NSNumber * size;
-@property(readonly) unsigned int uploadStatus;
-@property(readonly) NSURL * url;
+@property (nonatomic, readonly) NSString *containerID;
+@property (nonatomic, readonly) unsigned short diffs;
+@property (nonatomic, readonly) unsigned int downloadStatus;
+@property (nonatomic, readonly) NSNumber *fileObjectID;
+@property (nonatomic, readonly) BOOL hasTransferStatuses;
+@property (nonatomic, readonly) BOOL isAlias;
+@property (nonatomic, readonly) BOOL isConflicted;
+@property (nonatomic, readonly) BOOL isDead;
+@property (nonatomic, readonly) BOOL isDocument;
+@property (nonatomic, readonly) BOOL isDownloadActive;
+@property (nonatomic, readonly) BOOL isDownloadRequested;
+@property (nonatomic, readonly) BOOL isInTransfer;
+@property (nonatomic, readonly) BOOL isLive;
+@property (nonatomic) BOOL isNetworkOffline;
+@property (nonatomic) BOOL isPreCrash;
+@property (nonatomic, readonly) BOOL isUploadActive;
+@property (nonatomic, readonly) NSURL *localRepresentationURL;
+@property (nonatomic, readonly) NSString *logicalName;
+@property (nonatomic, readonly) NSNumber *mtime;
+@property (nonatomic, readonly) NSString *parentPath;
+@property (nonatomic, readonly) NSString *path;
+@property (nonatomic, readonly) NSString *physicalName;
+@property (nonatomic) id replacement;
+@property (nonatomic, readonly) unsigned int shareOptions;
+@property (nonatomic, readonly) NSNumber *size;
+@property (nonatomic, readonly) unsigned int uploadStatus;
+@property (nonatomic, readonly) NSURL *url;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
 + (id)askDaemonQueryItemForURL:(id)arg1;
 + (void)initialize;
@@ -90,7 +90,6 @@
 - (BOOL)hasTransferStatuses;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithQueryItem:(id)arg1;
-- (id)initWithRelPath:(id)arg1 error:(id*)arg2;
 - (BOOL)isAlias;
 - (BOOL)isConflicted;
 - (BOOL)isDead;
@@ -125,5 +124,9 @@
 - (unsigned int)uploadStatus;
 - (id)url;
 - (id)valueForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+
+- (id)initWithRelPath:(id)arg1 error:(id*)arg2;
 
 @end

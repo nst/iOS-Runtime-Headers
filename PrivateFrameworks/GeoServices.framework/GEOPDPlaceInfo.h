@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@class GEOLatLng, GEOTimezone;
-
 @interface GEOPDPlaceInfo : PBCodable <NSCopying> {
     double _area;
     GEOLatLng *_center;
@@ -15,14 +13,14 @@
     GEOTimezone *_timezone;
 }
 
-@property double area;
-@property(retain) GEOLatLng * center;
-@property BOOL hasArea;
-@property(readonly) BOOL hasCenter;
-@property BOOL hasIsApproximateCenter;
-@property(readonly) BOOL hasTimezone;
-@property BOOL isApproximateCenter;
-@property(retain) GEOTimezone * timezone;
+@property (nonatomic) double area;
+@property (nonatomic, retain) GEOLatLng *center;
+@property (nonatomic) BOOL hasArea;
+@property (nonatomic, readonly) BOOL hasCenter;
+@property (nonatomic) BOOL hasIsApproximateCenter;
+@property (nonatomic, readonly) BOOL hasTimezone;
+@property (nonatomic) BOOL isApproximateCenter;
+@property (nonatomic, retain) GEOTimezone *timezone;
 
 + (id)placeInfoForPlaceData:(id)arg1;
 

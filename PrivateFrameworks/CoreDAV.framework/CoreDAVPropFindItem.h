@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class CoreDAVItem, CoreDAVItemWithNoChildren;
-
 @interface CoreDAVPropFindItem : CoreDAVItem {
     CoreDAVItemWithNoChildren *_allProp;
     CoreDAVItem *_include;
@@ -11,10 +9,10 @@
     CoreDAVItemWithNoChildren *_propName;
 }
 
-@property(retain) CoreDAVItemWithNoChildren * allProp;
-@property(retain) CoreDAVItem * include;
-@property(retain) CoreDAVItem * prop;
-@property(retain) CoreDAVItemWithNoChildren * propName;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *allProp;
+@property (nonatomic, retain) CoreDAVItem *include;
+@property (nonatomic, retain) CoreDAVItem *prop;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *propName;
 
 + (id)copyParseRules;
 

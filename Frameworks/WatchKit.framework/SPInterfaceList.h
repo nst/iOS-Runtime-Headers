@@ -2,8 +2,6 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@class <SPInterfaceController>, NSArray, NSDictionary;
-
 @interface SPInterfaceList : SPInterfaceObject {
     <SPInterfaceController> *_controller;
     NSArray *_rowControllerProperties;
@@ -11,11 +9,11 @@
     NSDictionary *_rowDescriptions;
 }
 
-@property <SPInterfaceController> * controller;
-@property(readonly) int numberOfRows;
-@property(retain) NSArray * rowControllerProperties;
-@property(copy) NSArray * rowControllers;
-@property(copy) NSDictionary * rowDescriptions;
+@property (nonatomic) <SPInterfaceController> *controller;
+@property (nonatomic, readonly) int numberOfRows;
+@property (nonatomic, retain) NSArray *rowControllerProperties;
+@property (nonatomic, copy) NSArray *rowControllers;
+@property (nonatomic, copy) NSDictionary *rowDescriptions;
 
 - (void).cxx_destruct;
 - (void)_setupWithDescription:(id)arg1 forController:(id)arg2;

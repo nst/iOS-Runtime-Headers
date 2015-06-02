@@ -2,12 +2,6 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-/* RuntimeBrowser encountered an ivar type encoding it does not handle. 
-   See Warning(s) below.
- */
-
-@class BWFigVideoCaptureDevice, BWNodeOutput, NSObject<OS_dispatch_group>, NSObject<OS_dispatch_queue>, NSString;
-
 @interface BWFigCaptureDeviceSourceNode : BWSourceNode <BWFigCameraSourceNode> {
     float _aeMaxGain;
     BOOL _automaticallyEnablesLowLightBoostWhenAvailable;
@@ -44,11 +38,7 @@
     } _sensorOverscanDimensions;
     unsigned long _sensorPixelFormat;
     BWNodeOutput *_stillImageOutput;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _stillImageSBufHandler;
-
+    id /* block */ _stillImageSBufHandler;
     NSObject<OS_dispatch_queue> *_streamEventDispatchQueue;
     NSObject<OS_dispatch_group> *_streamEventNotificationGroup;
     BOOL _streamFormatChangeInFlight;
@@ -65,21 +55,17 @@
     unsigned long _streamSensorPixelFormatAfterFormatChange;
     BOOL _temporalNoiseReductionEnabled;
     BWNodeOutput *_videoCaptureOutput;
-
-  /* Unexpected information at end of encoded ivar type: ? */
-  /* Error parsing encoded ivar type info: @? */
-    id _videoSBufHandler;
-
+    id /* block */ _videoSBufHandler;
 }
 
-@property(readonly) BWFigVideoCaptureDevice * captureDevice;
-@property(copy,readonly) NSString * debugDescription;
-@property(copy,readonly) NSString * description;
-@property(readonly) BWNodeOutput * detectedFacesOutput;
-@property(readonly) unsigned int hash;
-@property(readonly) BWNodeOutput * stillImageOutput;
-@property(readonly) Class superclass;
-@property(readonly) BWNodeOutput * videoCaptureOutput;
+@property (readonly) BWFigVideoCaptureDevice *captureDevice;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) BWNodeOutput *detectedFacesOutput;
+@property (readonly) unsigned int hash;
+@property (readonly) BWNodeOutput *stillImageOutput;
+@property (readonly) Class superclass;
+@property (readonly) BWNodeOutput *videoCaptureOutput;
 
 + (int)_indexOfFormatInFormatsArray:(id)arg1 matchingSensorDimensions:(struct { int x1; int x2; })arg2 sensorPixelFormat:(unsigned long)arg3 sensorFormatIndex:(int)arg4;
 + (id)captureDeviceSourceNodeWithCaptureDevice:(id)arg1;

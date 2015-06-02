@@ -3,7 +3,7 @@
  */
 
 @interface UINibStringIDTable : NSObject {
-    struct UIStringIDTableBucket { id x1; unsigned int x2; struct UIStringIDTableBucket {} *x3; } *buckets;
+    struct UIStringIDTableBucket { id x1; struct UIStringIDTableBucket {} *x2; } *buckets;
     unsigned int count;
     unsigned int hashMask;
     struct UIStringIDTableBucket {} **table;

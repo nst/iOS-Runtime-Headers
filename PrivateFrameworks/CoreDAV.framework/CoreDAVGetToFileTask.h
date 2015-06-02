@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
  */
 
-@class NSFileHandle;
-
 @interface CoreDAVGetToFileTask : CoreDAVGetTask {
     NSFileHandle *_destinationFile;
 }
 
-@property(retain) NSFileHandle * destinationFile;
+@property (nonatomic, retain) NSFileHandle *destinationFile;
 
 - (id)copyDefaultParserForContentType:(id)arg1;
 - (void)dealloc;

@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@class GKBrush, NSPredicate;
-
 @interface GKConditionBrush : GKBrush {
     GKBrush *_noBrush;
     NSPredicate *_predicate;
     GKBrush *_yesBrush;
 }
 
-@property(retain) GKBrush * noBrush;
-@property(retain) NSPredicate * predicate;
-@property(retain) GKBrush * yesBrush;
+@property (nonatomic, retain) GKBrush *noBrush;
+@property (nonatomic, retain) NSPredicate *predicate;
+@property (nonatomic, retain) GKBrush *yesBrush;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

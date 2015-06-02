@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/PowerlogLiteOperators.framework/PowerlogLiteOperators
  */
 
-@class NSMutableDictionary, NSNumber, NSString;
-
 @interface PLBBMavHwRfHDRLogMsg : PLBasebandMessage {
     NSMutableDictionary *_commonInfo;
     NSString *_error;
@@ -18,17 +16,17 @@
     NSNumber *_tDTXOnFrame;
 }
 
-@property(retain) NSMutableDictionary * commonInfo;
-@property(retain) NSString * error;
-@property unsigned char inited;
-@property(retain) NSMutableDictionary * kvPairs;
-@property(retain) NSNumber * lDTXOffFrame;
-@property(retain) NSNumber * lDTXOnFrame;
-@property(retain) NSNumber * logDuration;
-@property(retain) NSNumber * sDTXOffFrame;
-@property(retain) NSNumber * sDTXOnFrame;
-@property(retain) NSNumber * tDTXOffFrame;
-@property(retain) NSNumber * tDTXOnFrame;
+@property (nonatomic, retain) NSMutableDictionary *commonInfo;
+@property (retain) NSString *error;
+@property (nonatomic) unsigned char inited;
+@property (nonatomic, retain) NSMutableDictionary *kvPairs;
+@property (retain) NSNumber *lDTXOffFrame;
+@property (retain) NSNumber *lDTXOnFrame;
+@property (retain) NSNumber *logDuration;
+@property (retain) NSNumber *sDTXOffFrame;
+@property (retain) NSNumber *sDTXOnFrame;
+@property (retain) NSNumber *tDTXOffFrame;
+@property (retain) NSNumber *tDTXOnFrame;
 
 + (id)entryEventBackwardDefinitionBBMavHwRfHDR;
 

@@ -2,14 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@class NSArray, NSNumber;
+@interface SAUIRequestUpdateViews : SABaseClientBoundCommand
 
-@interface SAUIRequestUpdateViews : SABaseClientBoundCommand {
-}
-
-@property(copy) NSArray * commands;
-@property(copy) NSNumber * timeInSeconds;
-@property(copy) NSArray * viewIds;
+@property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, copy) NSNumber *timeInSeconds;
+@property (nonatomic, copy) NSArray *viewIds;
 
 + (id)requestUpdateViews;
 + (id)requestUpdateViewsWithDictionary:(id)arg1 context:(id)arg2;

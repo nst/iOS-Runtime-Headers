@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
  */
 
-@interface CPPreformatter : NSObject {
-}
+@interface CPPreformatter : NSObject
 
 + (void)preformatInPage:(id)arg1;
 

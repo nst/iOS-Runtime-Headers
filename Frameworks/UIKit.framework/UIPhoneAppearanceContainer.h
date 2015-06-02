@@ -2,7 +2,6 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIPhoneAppearanceContainer : UIDeviceAppearanceContainer {
-}
+@interface UIPhoneAppearanceContainer : UIDeviceAppearanceContainer
 
 @end

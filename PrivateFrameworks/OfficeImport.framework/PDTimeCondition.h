@@ -2,8 +2,6 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@class PDAnimationTarget;
-
 @interface PDTimeCondition : NSObject {
     int mDelay;
     BOOL mHasDelay;

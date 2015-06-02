@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
  */
 
-@interface MusicCompletionFooterView : MPUCompletionFooterView {
-}
+@interface MusicCompletionFooterView : MPUCompletionFooterView
 
 - (id)initWithReuseIdentifier:(id)arg1;
 

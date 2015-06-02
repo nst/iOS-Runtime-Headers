@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NanoSetupUISupport.framework/NanoSetupUISupport
  */
 
-@interface NSUIDeviceTintedLabel : UILabel {
-}
+@interface NSUIDeviceTintedLabel : UILabel
 
 - (id)gradientImage;
 - (void)layoutSubviews;

@@ -5,33 +5,44 @@
 @interface IKAppMenuBarDocument : NSObject <IKDOMFeature, IKJSMenuBarDocumentAppBridge> {
     IKAppContext *_appContext;
     <IKAppMenuBarDocumentDelegate> *_delegate;
-    NSMutableDictionary *_documentOptionsByMenuItemElementID;
-    NSMutableDictionary *_documentsByMenuItemElementID;
+    NSMutableDictionary *_documentOptionsByEntityUniqueIdentifier;
+    NSMutableDictionary *_documentsByEntityUniqueIdentifier;
     NSString *_featureName;
-    IKJSMenuBarDocument *_jsMenuBarDocument;
+    NSMutableDictionary *_jsDocumentsByEntityUniqueIdentifier;
     IKViewElement *_menuBarElement;
+    IKDOMNode *_parentDOMNode;
+    <NSCopying> *_selectedEntityUniqueIdentifier;
 }
 
-@property IKAppContext *appContext;
+@property (nonatomic, readonly) IKAppContext *appContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <IKAppMenuBarDocumentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) NSString *featureName;
+@property (nonatomic, readonly, copy) NSString *featureName;
 @property (readonly) unsigned int hash;
+@property (nonatomic) IKViewElement *menuBarElement;
+@property (nonatomic, readonly) IKViewElement *selectedMenuItem;
 @property (readonly) Class superclass;
 
++ (id)makeFeatureJSObjectForFeature:(id)arg1;
+
 - (void).cxx_destruct;
+- (id)_menuItemElementForEntityUniqueIdentifier:(id)arg1;
 - (id)appContext;
 - (id)delegate;
+- (id)documentForEntityUniqueIdentifier:(id)arg1;
 - (id)documentForMenuItem:(id)arg1;
-- (id)documentForMenuItemWithElementID:(id)arg1;
+- (id)documentOptionsForEntityUniqueIdentifier:(id)arg1;
 - (id)documentOptionsForMenuItem:(id)arg1;
-- (id)featureJSObject;
 - (id)featureName;
-- (id)initWithFeatureName:(id)arg1;
+- (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
+- (id)jsMenuBarDocument:(id)arg1 documentForEntityUniqueIdentifier:(id)arg2;
+- (void)jsMenuBarDocument:(id)arg1 setDocument:(id)arg2 forEntityUniqueIdentifier:(id)arg3 withOptions:(id)arg4;
+- (void)jsMenuBarDocument:(id)arg1 setSelectedEntityUniqueIdentifier:(id)arg2 withOptions:(id)arg3;
+- (id)menuBarElement;
 - (void)migrateToViewElement:(id)arg1;
-- (void)setAppContext:(id)arg1;
+- (id)selectedMenuItem;
 - (void)setDelegate:(id)arg1;
-- (void)setDocument:(id)arg1 forMenuItemWithElementID:(id)arg2 withOptions:(id)arg3;
+- (void)setMenuBarElement:(id)arg1;
 
 @end

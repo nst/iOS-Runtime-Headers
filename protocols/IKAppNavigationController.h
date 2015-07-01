@@ -17,6 +17,5 @@
 @optional
 
 - (void)clear;
-- (IKJSNavigationDocument *)navigationDocumentForDocument:(IKAppDocument *)arg1 inContext:(JSContext *)arg2;
 
 @end

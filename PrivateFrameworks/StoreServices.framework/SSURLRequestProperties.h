@@ -18,8 +18,10 @@
     BOOL _isITunesStoreRequest;
     int _kbsyncType;
     BOOL _largeDownload;
+    int _machineDataStyle;
     unsigned int _networkServiceType;
     NSDictionary *_requestParameters;
+    BOOL _requiresCellularDataNetwork;
     BOOL _requiresExtendedValidationCertificates;
     BOOL _requiresHTTPS;
     BOOL _shouldDecodeResponse;
@@ -59,8 +61,10 @@
 @property (readonly) long long expectedContentLength;
 @property (readonly) unsigned int hash;
 @property (getter=isLargeDownload, readonly) BOOL largeDownload;
+@property (readonly) int machineDataStyle;
 @property (readonly) unsigned int networkServiceType;
 @property (readonly, copy) NSDictionary *requestParameters;
+@property (readonly) BOOL requiresCellularDataNetwork;
 @property (readonly) BOOL requiresExtendedValidationCertificates;
 @property (readonly) BOOL requiresHTTPS;
 @property (readonly) BOOL shouldAddKBSyncData;
@@ -107,9 +111,11 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isITunesStoreRequest;
 - (BOOL)isLargeDownload;
+- (int)machineDataStyle;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)networkServiceType;
 - (id)requestParameters;
+- (BOOL)requiresCellularDataNetwork;
 - (BOOL)requiresExtendedValidationCertificates;
 - (BOOL)requiresHTTPS;
 - (BOOL)shouldAddKBSyncData;

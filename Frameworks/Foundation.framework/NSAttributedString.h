@@ -43,10 +43,6 @@
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1;
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2;
 
-// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
-
-- (id)MP_attributedStringByAddingAttributes:(id)arg1 toOccurrencesOfSubstring:(id)arg2 options:(unsigned int)arg3;
-
 // Image: /System/Library/Frameworks/PassKit.framework/PassKit
 
 - (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

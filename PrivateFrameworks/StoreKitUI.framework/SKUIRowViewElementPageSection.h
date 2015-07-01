@@ -36,6 +36,7 @@
 - (BOOL)collectionViewShouldSelectItemAtIndexPath:(id)arg1;
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (void)dealloc;
+- (void)entityProvider:(id)arg1 didInvalidateWithContext:(id)arg2;
 - (id)initWithPageComponent:(id)arg1;
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;

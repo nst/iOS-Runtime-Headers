@@ -14,6 +14,8 @@
 @property (nonatomic, readonly) unsigned int repeatType;
 @property (nonatomic, readonly) unsigned int shuffleType;
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
 - (void).cxx_destruct;
 - (id)description;
 - (id)firstItem;
@@ -21,5 +23,10 @@
 - (id)mediaQuery;
 - (unsigned int)repeatType;
 - (unsigned int)shuffleType;
+- (BOOL)verifyWithError:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (id)createPlaybackContext;
 
 @end

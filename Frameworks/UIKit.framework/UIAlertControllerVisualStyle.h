@@ -10,6 +10,8 @@
 @property (nonatomic, retain) UIAlertControllerDescriptor *descriptor;
 @property (nonatomic, retain) UITraitCollection *traitCollection;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (id)_detailMessageFont;
 - (float)_scaledMarginAboveMessageLabelFirstBaseline;
 - (float)_scaledMarginAboveTitleLabelFirstBaseline;
@@ -51,5 +53,9 @@
 - (id)traitCollection;
 - (float)verticalContentMargin;
 - (float)visualAltitude;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (BOOL)isEqual:(id)arg1;
 
 @end

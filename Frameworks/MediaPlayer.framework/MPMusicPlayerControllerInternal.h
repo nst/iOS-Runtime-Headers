@@ -18,6 +18,7 @@
     struct __CFRunLoopSource { } *_runLoopSource;
     unsigned int _useApplicationSpecificQueue;
     unsigned int _useCachedPlaybackState;
+    unsigned int _wantsQueueModificationsDisabled;
 }
 
 @property BOOL inBlockHandlingPlaybackStateChangedMessageFromServer;

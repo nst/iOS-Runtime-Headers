@@ -4,6 +4,8 @@
 
 @interface SUDescriptor : NSObject <NSCopying, NSSecureCoding> {
     BOOL _autoDownloadAllowableForCellular;
+    BOOL _disableCDLevel4;
+    BOOL _disableSiriVoiceDeletion;
     SUDocumentation *_documentation;
     BOOL _downloadAllowableForCellular;
     unsigned long long _downloadSize;
@@ -22,6 +24,8 @@
 }
 
 @property (nonatomic) BOOL autoDownloadAllowableForCellular;
+@property (getter=cdLevel4Disabled, setter=_setDisableCDLevel4:, nonatomic) BOOL disableCDLevel4;
+@property (getter=siriVoiceDeletionDisabled, setter=_setDisableSiriVoiceDeletion:, nonatomic) BOOL disableSiriVoiceDeletion;
 @property (nonatomic, retain) SUDocumentation *documentation;
 @property (nonatomic) unsigned long long downloadSize;
 @property (getter=isDownloadable, nonatomic) BOOL downloadable;
@@ -42,11 +46,14 @@
 - (BOOL)_hasValue:(id)arg1;
 - (BOOL)_isStreamingZipCapable;
 - (unsigned long long)_msuPrepareSize;
+- (void)_setDisableCDLevel4:(BOOL)arg1;
+- (void)_setDisableSiriVoiceDeletion:(BOOL)arg1;
 - (void)_setMsuPrepareSize:(unsigned long long)arg1;
 - (void)_setStreamingZipCapable:(BOOL)arg1;
 - (void)_setUnarchiveSize:(unsigned long long)arg1;
 - (unsigned long long)_unarchiveSize;
 - (BOOL)autoDownloadAllowableForCellular;
+- (BOOL)cdLevel4Disabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -78,6 +85,7 @@
 - (void)setProductVersion:(id)arg1;
 - (void)setPublisher:(id)arg1;
 - (void)setUpdateType:(int)arg1;
+- (BOOL)siriVoiceDeletionDisabled;
 - (unsigned long long)totalRequiredFreeSpace;
 - (int)updateType;
 

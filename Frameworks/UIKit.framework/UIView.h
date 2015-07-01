@@ -1378,6 +1378,7 @@
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
+- (id)MPU_vibrantContentEffectView;
 - (id)initForAutolayout;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
@@ -1465,6 +1466,7 @@
 - (BOOL)_accessibilityObscuresScreen;
 - (BOOL)_accessibilityOverridesInvalidFrames;
 - (void)_accessibilitySetAllowsSiblingsWhenOvergrown:(BOOL)arg1;
+- (void)_accessibilitySetFrameExpansion:(struct CGSize { float x1; float x2; })arg1;
 - (void)_accessibilitySetObscuresScreen:(BOOL)arg1;
 - (void)_accessibilitySetStoredObscuresScreen:(id)arg1;
 - (void)_accessibilitySetViewIsVisible:(BOOL)arg1;

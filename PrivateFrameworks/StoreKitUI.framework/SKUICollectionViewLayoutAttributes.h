@@ -5,17 +5,33 @@
 @interface SKUICollectionViewLayoutAttributes : UICollectionViewLayoutAttributes <NSCopying> {
     UIColor *_backgroundColor;
     int _position;
+    float _zoomingImageAlpha;
+    float _zoomingImageImposedAlphaOfOtherViews;
+    float _zoomingImageLambda;
+    float _zoomingImageWidth;
 }
 
 @property (nonatomic, copy) UIColor *backgroundColor;
 @property (nonatomic) int position;
+@property (nonatomic) float zoomingImageAlpha;
+@property (nonatomic) float zoomingImageImposedAlphaOfOtherViews;
+@property (getter=_zoomingImageLambda, setter=_setZoomingImageLambda:, nonatomic) float zoomingImageLambda;
+@property (nonatomic) float zoomingImageWidth;
 
 - (void).cxx_destruct;
+- (void)_setZoomingImageLambda:(float)arg1;
+- (float)_zoomingImageLambda;
 - (id)backgroundColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (int)position;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setPosition:(int)arg1;
+- (void)setZoomingImageAlpha:(float)arg1;
+- (void)setZoomingImageImposedAlphaOfOtherViews:(float)arg1;
+- (void)setZoomingImageWidth:(float)arg1;
+- (float)zoomingImageAlpha;
+- (float)zoomingImageImposedAlphaOfOtherViews;
+- (float)zoomingImageWidth;
 
 @end

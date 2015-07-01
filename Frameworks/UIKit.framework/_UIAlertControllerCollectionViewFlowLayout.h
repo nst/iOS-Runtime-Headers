@@ -16,6 +16,8 @@
 @property BOOL shouldRoundFirstCell;
 @property (nonatomic) UIAlertControllerVisualStyle *visualStyle;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (Class)layoutAttributesClass;
 
 - (BOOL)_collectionViewIsLayingOutHorizontallyWithCellHeight:(float)arg1;
@@ -34,8 +36,11 @@
 - (void)setAlignedDescriptiveLabelTextWidth:(float)arg1;
 - (void)setHideSeparators:(BOOL)arg1;
 - (void)setShouldRoundFirstCell:(BOOL)arg1;
-- (void)setVisualStyle:(id)arg1;
 - (BOOL)shouldRoundFirstCell;
 - (id)visualStyle;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)setVisualStyle:(id)arg1;
 
 @end

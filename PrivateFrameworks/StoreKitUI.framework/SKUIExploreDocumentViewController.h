@@ -3,6 +3,7 @@
  */
 
 @interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIDocumentViewController, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate> {
+    SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
     NSArray *_contentOffsets;
     SKUIContentInsetScrollView *_contentScrollView;
     SKUIExploreTemplateElement *_exploreTemplate;
@@ -22,7 +23,9 @@
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
 - (void).cxx_destruct;
+- (void)_beginActiveImpressionsForImpressionableViewElements;
 - (void)_contentInsetDidChange:(id)arg1;
+- (void)_endAllPendingActiveImpression;
 - (void)_getPageComponents:(id*)arg1 title:(id*)arg2 forViewControllerAtIndex:(int)arg3;
 - (id)_leftPageComponentsAtIndex:(int)arg1;
 - (id)_newSectionsViewControllerAtIndex:(int)arg1;
@@ -38,10 +41,12 @@
 - (id)contentScrollView;
 - (void)dealloc;
 - (void)documentDidUpdate:(id)arg1;
+- (void)documentMediaQueriesDidUpdate:(id)arg1;
 - (id)impressionableViewElements;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
+- (BOOL)managesNavigationBarContents;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;

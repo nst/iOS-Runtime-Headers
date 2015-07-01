@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) BOOL compilation;
 @property (nonatomic, readonly) NSString *feedURL;
 @property (nonatomic, readonly) NSData *groupingKey;
+@property (nonatomic, readonly) NSData *keyValue;
 @property (nonatomic, readonly) int seasonNumber;
 
 - (void).cxx_destruct;
@@ -26,6 +27,7 @@
 - (unsigned int)hash;
 - (id)initWithAlbumArtistPersistentID:(long long)arg1 groupingKey:(id)arg2 feedURL:(id)arg3 seasonNumber:(int)arg4 compilation:(BOOL)arg5;
 - (BOOL)isEqual:(id)arg1;
+- (id)keyValue;
 - (int)seasonNumber;
 
 @end

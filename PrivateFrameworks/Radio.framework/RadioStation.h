@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioStation : NSObject <RadioManagedObjectWrapperProtocol> {
+@interface RadioStation : NSObject <MusicEntityValueProviding, RadioManagedObjectWrapperProtocol> {
     NSData *_adData;
     long long _adamID;
     NSURL *_artworkURL;
@@ -14,6 +14,7 @@
     NSArray *_editableFields;
     BOOL _featured;
     BOOL _gatewayVideoAdEnabled;
+    BOOL _hasSkipRules;
     unsigned int _impressionThreshold;
     BOOL _isExplicit;
     BOOL _likesEnabled;
@@ -38,6 +39,7 @@
     NSString *_stationDescription;
     NSString *_stationHash;
     long long _stationID;
+    NSString *_stationStringID;
     NSURL *_streamCertificateURL;
     NSURL *_streamKeyURL;
     NSURL *_streamURL;
@@ -63,6 +65,7 @@
 @property (getter=isFeatured, nonatomic) BOOL featured;
 @property (nonatomic, readonly, copy) NSDictionary *feedbackDictionaryRepresentation;
 @property (getter=isGatewayVideoAdEnabled, nonatomic) BOOL gatewayVideoAdEnabled;
+@property (nonatomic) BOOL hasSkipRules;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int impressionThreshold;
 @property (nonatomic) BOOL isExplicit;
@@ -89,6 +92,7 @@
 @property (nonatomic, copy) NSString *stationDescription;
 @property (nonatomic, copy) NSString *stationHash;
 @property (nonatomic) long long stationID;
+@property (nonatomic, copy) NSString *stationStringID;
 @property (nonatomic, retain) NSURL *streamCertificateURL;
 @property (nonatomic, retain) NSURL *streamKeyURL;
 @property (nonatomic, retain) NSURL *streamURL;
@@ -97,6 +101,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *trackPlaybackDescriptorQueue;
 @property (nonatomic) BOOL virtualPlayEnabled;
+
+// Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
 
 - (void).cxx_destruct;
 - (void)_radioModelWasDeletedNotification:(id)arg1;
@@ -113,6 +119,7 @@
 - (BOOL)editEnabled;
 - (id)editableFields;
 - (id)feedbackDictionaryRepresentation;
+- (BOOL)hasSkipRules;
 - (unsigned int)hash;
 - (unsigned int)impressionThreshold;
 - (id)initWithModel:(id)arg1 managedObject:(id)arg2;
@@ -144,6 +151,7 @@
 - (void)setEditableFields:(id)arg1;
 - (void)setFeatured:(BOOL)arg1;
 - (void)setGatewayVideoAdEnabled:(BOOL)arg1;
+- (void)setHasSkipRules:(BOOL)arg1;
 - (void)setImpressionThreshold:(unsigned int)arg1;
 - (void)setIsExplicit:(BOOL)arg1;
 - (void)setLikesEnabled:(BOOL)arg1;
@@ -166,6 +174,7 @@
 - (void)setStationDescription:(id)arg1;
 - (void)setStationHash:(id)arg1;
 - (void)setStationID:(long long)arg1;
+- (void)setStationStringID:(id)arg1;
 - (void)setStreamCertificateURL:(id)arg1;
 - (void)setStreamKeyURL:(id)arg1;
 - (void)setStreamURL:(id)arg1;
@@ -184,11 +193,19 @@
 - (id)stationDescription;
 - (id)stationHash;
 - (long long)stationID;
+- (id)stationStringID;
 - (id)streamCertificateURL;
 - (id)streamKeyURL;
 - (id)streamURL;
 - (int)subscriberCount;
 - (id)trackPlaybackDescriptorQueue;
 - (BOOL)virtualPlayEnabled;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (id)entityUniqueIdentifier;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)valueForEntityProperty:(id)arg1;
+- (id)valuesForEntityProperties:(id)arg1;
 
 @end

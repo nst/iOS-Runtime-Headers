@@ -41,6 +41,7 @@
 
 // Image: /System/Library/Frameworks/StoreKit.framework/StoreKit
 
++ (id)_defaultIXStoreSheetDictionary;
 + (void)_validateURL:(id)arg1 withSheetInfo:(id)arg2 completionBlock:(id /* block */)arg3;
 + (void)getCanLoadURL:(id)arg1 completionBlock:(id /* block */)arg2;
 + (void)getCanLoadURL:(id)arg1 withURLBag:(id)arg2 completionBlock:(id /* block */)arg3;
@@ -96,6 +97,7 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 

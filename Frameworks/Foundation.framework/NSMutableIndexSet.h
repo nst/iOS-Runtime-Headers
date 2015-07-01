@@ -50,11 +50,6 @@
 - (void)pl_adjustIndexesForDeletions:(id)arg1;
 - (void)pl_adjustIndexesForInsertions:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
-
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (void)tsu_intersectionWithIndexSet:(id)arg1;

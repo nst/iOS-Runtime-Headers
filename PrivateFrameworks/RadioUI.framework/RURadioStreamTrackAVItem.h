@@ -7,6 +7,8 @@
     long long _albumStoreID;
     NSArray *_buyOffers;
     _MPRadioStreamMetadata *_effectiveMetadata;
+    NSData *_jingleTimedMetadata;
+    double _playStartDateTimeSinceReferenceDate;
     NSData *_previousAdamIDBlob;
     _MPRadioStreamMetadata *_radioStreamTrackMetadata;
     long long _storeID;
@@ -19,8 +21,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (BOOL)_canUseStoreAdamIDForSubscriptionAdamID;
 - (id)_createMetadataForRadioStreamTrack;
-- (void)_getCurrentTimedMetadata:(id*)arg1 pings:(id*)arg2 adamIDBlob:(id*)arg3;
+- (void)_getCurrentTimedMetadata:(id*)arg1 pings:(id*)arg2 adamIDBlob:(id*)arg3 jingleTimedMetadata:(id*)arg4;
 - (float)_maximumBitRateForNetworkType:(int)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_reloadMetadataAndPostNotificationsIfNeeded:(BOOL)arg1;
@@ -37,13 +40,16 @@
 - (id)initWithStreamTrack:(id)arg1;
 - (BOOL)isAlwaysLive;
 - (BOOL)isExplicitTrack;
+- (BOOL)isLikedStateEnabled;
 - (void)loadAssetAndPlayerItem;
 - (id)mainTitle;
+- (id)mpuReporting_jingleTimedMetadata;
+- (BOOL)mpuReporting_shouldUseRelativeTimePositions;
 - (id)mpuReporting_storeItemID;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)resourceLoader:(id)arg1 shouldWaitForLoadingOfRequestedResource:(id)arg2;
 - (void)setPlayerItem:(id)arg1;
-- (long long)storeID;
+- (long long)storeItemInt64ID;
 - (id)streamTrack;
 - (BOOL)supportsRadioTrackActions;
 

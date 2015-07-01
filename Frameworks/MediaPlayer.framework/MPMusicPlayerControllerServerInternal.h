@@ -82,6 +82,7 @@
 - (void)setRepeatMode:(id)arg1;
 - (void)setShuffleMode:(id)arg1;
 - (void)setUseApplicationSpecificQueue:(id)arg1;
+- (void)setUserQueueModificationsDisabled:(id)arg1;
 - (void)shuffle;
 - (id)shuffleMode;
 - (id)skipInDirection:(id)arg1;
@@ -94,5 +95,6 @@
 - (void)stop;
 - (id)unshuffledIndexOfNowPlayingItem;
 - (BOOL)useApplicationSpecificQueue;
+- (id)userQueueModificationsDisabled;
 
 @end

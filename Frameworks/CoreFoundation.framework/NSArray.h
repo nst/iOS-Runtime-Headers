@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) AXEventPathInfoRepresentation *firstPath;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isQueryResultSetInvalidated;
 @property (nonatomic, readonly, retain) IMMessage *lastFinishedMessage;
 @property (nonatomic, readonly, retain) IMMessage *lastIncomingFinishedMessage;
 @property (nonatomic, readonly, retain) IMMessage *lastIncomingMessage;
@@ -191,6 +192,7 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (BOOL)MPIsEmpty;
+- (BOOL)isQueryResultSetInvalidated;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 

@@ -23,7 +23,6 @@
 + (id)_mediaTypesForTracksInContainerWithPersistentID:(long long)arg1 connection:(id)arg2;
 + (id)_mediaTypesForTracksWithSwappedPersistentIDs:(const long long*)arg1 count:(int)arg2 connection:(id)arg3;
 + (id)_mediaTypesForTracksWithSwappedPersistentIDsInArray:(id)arg1 connection:(id)arg2;
-+ (void)_reloadContainedMediaTypesForContainerWithPersistID:(long long)arg1 connection:(id)arg2;
 + (void)_removeMediaTypesFromContainerWithPersistentID:(long long)arg1 mediaTypes:(id)arg2 connection:(id)arg3;
 + (void)_updateContainedMediaTypeInContainerWithPersistentID:(long long)arg1 connection:(id)arg2 itemUpdateBlock:(id /* block */)arg3;
 + (id)autoCreatedBuiltInSmartPlaylistsPIDs:(id)arg1;
@@ -39,6 +38,8 @@
 + (BOOL)hasCriterionInCriteriaList:(struct SearchCriteriaList { }*)arg1 forITDBTrackField:(int)arg2;
 + (void)initialize;
 + (id)joinClausesForProperty:(id)arg1;
++ (BOOL)libraryContentsChangeForProperty:(id)arg1;
++ (BOOL)libraryDynamicChangeForProperty:(id)arg1;
 + (id)nextFilepathForPlaylistType:(int)arg1 withPersistentID:(unsigned long long)arg2 inLibrary:(id)arg3;
 + (id)persistentIDColumnForTable:(id)arg1;
 + (void)populateDynamicContainersInLibrary:(id)arg1;
@@ -51,6 +52,7 @@
 + (void)populateStaticItemsOfDynamicContainersInLibrary:(id)arg1;
 + (id)predicateForCriteriaList:(struct SearchCriteriaList { }*)arg1 dynamicCriteria:(BOOL)arg2 parentMatchedAny:(BOOL)arg3;
 + (int)protocolSortTypeFromTrackOrder:(unsigned long)arg1;
++ (void)reloadContainedMediaTypesForContainerWithPersistID:(long long)arg1 connection:(id)arg2;
 + (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (BOOL)smartCriteriaCanBeEvaluated:(id)arg1;
@@ -101,6 +103,7 @@
 - (id)populateStatementParametersWithStaticTrackPersistentID:(id)arg1;
 - (id)protocolItem;
 - (BOOL)removeAllTracks;
+- (BOOL)removeFirstTrack;
 - (BOOL)removeTracksAtIndexes:(id)arg1;
 - (BOOL)removeTracksAtIndexes:(id)arg1 notify:(BOOL)arg2;
 - (BOOL)removeTracksAtIndexes:(id)arg1 notify:(BOOL)arg2 indexesTransformBlock:(id /* block */)arg3;

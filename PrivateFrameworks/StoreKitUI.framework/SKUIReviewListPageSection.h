@@ -18,6 +18,7 @@
 - (void)collectionViewDidSelectItemAtIndexPath:(id)arg1;
 - (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
+- (void)entityProvider:(id)arg1 didInvalidateWithContext:(id)arg2;
 - (id)initWithPageComponent:(id)arg1;
 - (int)numberOfCells;
 - (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;

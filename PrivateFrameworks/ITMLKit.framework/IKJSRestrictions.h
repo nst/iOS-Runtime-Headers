@@ -4,6 +4,7 @@
 
 @interface IKJSRestrictions : IKJSObject <IKJSRestrictions>
 
+@property (nonatomic, readonly) BOOL allowArtistActivity;
 @property (nonatomic, readonly) BOOL allowsErotica;
 @property (nonatomic, readonly) BOOL allowsExplicit;
 @property (nonatomic, readonly) BOOL appInstallationAllowed;
@@ -16,6 +17,7 @@
 
 - (id)_contentRestrictionsCountryCode;
 - (id)_ratingForSetting:(id)arg1 domain:(id)arg2 countryCode:(id)arg3;
+- (BOOL)allowArtistActivity;
 - (BOOL)allowsErotica;
 - (BOOL)allowsExplicit;
 - (BOOL)appInstallationAllowed;

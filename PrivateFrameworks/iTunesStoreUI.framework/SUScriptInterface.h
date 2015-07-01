@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUScriptInterface : SUScriptObject {
+@interface SUScriptInterface : SUScriptObject <SUScriptXMLHTTPRequestDelegate> {
     SUScriptAccountManager *_accountManager;
     SUScriptKeyValueStore *_applicationLocalStorage;
     SSAuthenticationContext *_authenticationContext;
@@ -15,6 +15,7 @@
     SUScriptNotificationObserver *_notificationObserver;
     SUScriptPreviewOverlay *_previewOverlay;
     SUScriptPurchaseManager *_purchaseManager;
+    NSMutableSet *_requireCellularURLs;
     SUScriptOperationDelegate *_scriptOperationDelegate;
     SUScriptWindowContext *_scriptWindowContext;
     id _threadSafeDelegate;
@@ -34,10 +35,13 @@
 @property (readonly) NSString *clientIdentifier;
 @property (retain) SUClientInterface *clientInterface;
 @property (copy) NSString *cookie;
+@property (readonly, copy) NSString *debugDescription;
 @property <SUScriptInterfaceDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (readonly) SUScriptDevice *device;
 @property (readonly) SUScriptKeyValueStore *deviceLocalStorage;
 @property (readonly) id globalRootObject;
+@property (readonly) unsigned int hash;
 @property (readonly) NSArray *installedSoftwareApplications;
 @property (readonly) id loggingEnabled;
 @property (readonly) SUScriptMediaLibrary *mediaLibrary;
@@ -56,6 +60,8 @@
 @property (readonly) int storeSheetType;
 @property (readonly) int storeSheetTypeAskToBuy;
 @property (readonly) int storeSheetTypeDefault;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) SUScriptTelephony *telephony;
 @property (readonly) <SUScriptInterfaceDelegate> *threadSafeDelegate;
 @property (readonly) SUScriptViewController *viewController;
 @property (retain) WebFrame *webFrame;
@@ -188,6 +194,7 @@
 - (id)makeURLRequestWithURLs:(id)arg1 timeoutInterval:(id)arg2;
 - (id)makeVolumeViewController;
 - (id)makeWindow;
+- (id)makeXMLHTTPRequest;
 - (id)mediaLibrary;
 - (id)navigationBar;
 - (void)openURL:(id)arg1;
@@ -208,10 +215,12 @@
 - (void)reloadFooterSection:(id)arg1 withURL:(id)arg2;
 - (void)reportAProblemForIdentifier:(id)arg1;
 - (id)requestInfo;
+- (void)requireCellularForResourceWithURL:(id)arg1;
 - (void)retryAllRestoreDownloads;
 - (id)screenReaderRunning;
 - (id)scriptAttributeKeys;
 - (id)scriptWindowContext;
+- (BOOL)scriptXMLHTTPRequest:(id)arg1 requiresCellularForURL:(id)arg2;
 - (id)sectionsController;
 - (void)selectSectionWithIdentifier:(id)arg1;
 - (void)selectTrackListItemWithIdentifier:(id)arg1;
@@ -271,6 +280,7 @@
 - (id)systemItemTrash;
 - (id)systemItemUndo;
 - (id)systemVersion;
+- (id)telephony;
 - (id)threadSafeDelegate;
 - (id)viewController;
 - (id)webFrame;

@@ -17,6 +17,7 @@
     id _token;
 }
 
+@property (nonatomic, readonly) int MP_artworkType;
 @property (nonatomic, readonly) NSCache *cache;
 @property (nonatomic, copy) NSString *cacheIdentifier;
 @property (nonatomic, copy) id /* block */ configurationBlock;
@@ -28,12 +29,16 @@
 @property (nonatomic) id requestingContext;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } scaledFittingSize;
 @property (nonatomic, retain) id token;
+@property (nonatomic, readonly) <NSCopying> *visualIdenticalityIdentifier;
 
 + (id)_artworkCacheForIdentifier:(id)arg1 requestingContext:(id)arg2;
++ (id)_artworkLoadQueue;
 + (void)setCacheLimit:(unsigned int)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
 + (void)setCachePurgesWhenEnteringBackground:(BOOL)arg1 forCacheIdentifier:(id)arg2 requestingContext:(id)arg3;
++ (id)staticArtworkCatalogWithImage:(id)arg1;
 
 - (void).cxx_destruct;
+- (int)MP_artworkType;
 - (void)_loadBestRepresentationIfNeeded;
 - (void)_updateRepresentation;
 - (void)_updateWithRepresentation:(id)arg1;
@@ -52,6 +57,8 @@
 - (BOOL)isArtworkVisuallyIdenticalToCatalog:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLoadingRepresentation;
+- (void)requestColorAnalysisWithAlgorithm:(int)arg1 completionHandler:(id /* block */)arg2;
+- (void)requestFocusRegionsWithCompletionHandler:(id /* block */)arg1;
 - (void)requestImageWithCompletionHandler:(id /* block */)arg1;
 - (id)requestingContext;
 - (struct CGSize { float x1; float x2; })scaledFittingSize;
@@ -67,5 +74,6 @@
 - (void)setRequestingContext:(id)arg1;
 - (void)setToken:(id)arg1;
 - (id)token;
+- (id)visualIdenticalityIdentifier;
 
 @end

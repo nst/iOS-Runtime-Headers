@@ -12,10 +12,12 @@
     unsigned int _nonCatalogSourceType;
     unsigned long long _nonCatalogStoreAccountID;
     SSVPlayActivityController *_playActivityController;
+    BOOL _shouldReportAggregateTimePlayActivityEvents;
     BOOL _shouldReportPlayActivityEvents;
 }
 
 @property (nonatomic, readonly) SSVPlayActivityController *playActivityController;
+@property (nonatomic) BOOL shouldReportAggregateTimePlayActivityEvents;
 @property (nonatomic) BOOL shouldReportPlayActivityEvents;
 
 - (void).cxx_destruct;
@@ -23,11 +25,15 @@
 - (id)_captureNonCatalogAggregatePlayActivityEvent;
 - (void)_clearNonCatalogAggregatePlayActivityEventData;
 - (void)_recordReportingEvents:(id)arg1;
+- (void)acquirePendingPlayActivityEventsForStoreAccountID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;
+- (void)completePendingPlayActivityEvents:(id)arg1 forSessionToken:(unsigned long long)arg2 withResult:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 - (void)dealloc;
 - (id)init;
 - (id)initWithWritingStyle:(unsigned int)arg1;
 - (id)playActivityController;
+- (void)setShouldReportAggregateTimePlayActivityEvents:(BOOL)arg1;
 - (void)setShouldReportPlayActivityEvents:(BOOL)arg1;
+- (BOOL)shouldReportAggregateTimePlayActivityEvents;
 - (BOOL)shouldReportPlayActivityEvents;
 
 @end

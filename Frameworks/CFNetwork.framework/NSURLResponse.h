@@ -9,6 +9,7 @@
 @property (readonly, copy) NSString *MIMEType;
 @property (readonly, copy) NSURL *URL;
 @property (readonly) long long expectedContentLength;
+@property (nonatomic, readonly) BOOL ssv_isExpiredResponse;
 @property (readonly, copy) NSString *suggestedFilename;
 @property (readonly, copy) NSString *textEncodingName;
 @property (readonly) BOOL tsu_isHTTPSuccess;
@@ -44,6 +45,12 @@
 // Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
 
 - (id)_cacheTime;
+
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
+- (BOOL)ssv_isExpiredResponse;
 
 // Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
 

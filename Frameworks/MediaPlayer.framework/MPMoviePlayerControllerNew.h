@@ -41,7 +41,7 @@
     BOOL _setUseApplicationAudioSessionWhenPlaybackEnds;
     BOOL _shouldAutoplay;
     BOOL _shouldRestartPlaybackFromBeginning;
-    unsigned int _stateBeforeSettingPlaybackTime;
+    int _stateBeforeSettingPlaybackTime;
     double _timeWhenResignedActive;
     NSMutableDictionary *_timedMetadataForUniqueKey;
     BOOL _useApplicationAudioSession;

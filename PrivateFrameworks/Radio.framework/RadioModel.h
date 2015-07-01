@@ -115,6 +115,7 @@
 - (id)stationWithHash:(id)arg1;
 - (id)stationWithID:(long long)arg1;
 - (id)stationWithPersistentID:(long long)arg1;
+- (id)stationWithStationStringID:(id)arg1;
 - (id)stations;
 - (id)userStations;
 

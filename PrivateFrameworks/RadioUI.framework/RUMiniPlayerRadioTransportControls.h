@@ -27,7 +27,7 @@
 - (void)_avItemStoreIDDidChangeNotification:(id)arg1;
 - (float)_expectedInfoButtonAlpha;
 - (void)_infoButtonAction:(id)arg1;
-- (void)_isLikedDidChangeNotification:(id)arg1;
+- (void)_likedStateDidChangeNotification:(id)arg1;
 - (void)_playbackContentsDidChangeNotification:(id)arg1;
 - (void)_prospectivePlaybackInformationDidChangeAnimated:(BOOL)arg1;
 - (void)_registerForAVItemNotifications;

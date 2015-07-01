@@ -25,7 +25,7 @@
 - (void)_dataSourceInvalidated:(id)arg1;
 - (void)_finishLoadingNotification:(id)arg1;
 - (void)_notifyLoadOfIndexPath:(id)arg1;
-- (void)_nowPlayingDidChangeNotifiction:(id)arg1;
+- (void)_nowPlayingDidChangeNotification:(id)arg1;
 - (void)_playbackInitiatedNotification:(id)arg1;
 - (void)_populateImageForItem:(id)arg1;
 - (id)_updateFectedItemForIndexPath:(id)arg1 withContentItem:(struct _MRContentItem { }*)arg2;
@@ -36,13 +36,13 @@
 - (id)description;
 - (void)fetchChildrenAtIndexPath:(id)arg1 forRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 completionHandler:(id /* block */)arg3;
 - (void)getCountOfItemsForIndexPath:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)getRemoteAppIsPlaying:(id /* block */)arg1;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithBundleID:(id)arg1;
 - (void)initiatePlaybackAtIndexPath:(id)arg1;
 - (id)listenerForIndexPath:(id)arg1;
 - (void)loadBrowsableContentForIndexPath:(id)arg1;
 - (void)registerListener:(id)arg1 forIndexPath:(id)arg2;
-- (BOOL)remoteAppIsPlaying;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)unregisterListenerAtIndexPath:(id)arg1;
 

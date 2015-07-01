@@ -4,7 +4,10 @@
 
 @interface SKUIButtonCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
     UIControl *_button;
+    id _buttonImageResourceCacheKey;
+    SKUIBuyButtonDescriptor *_buyButtonDescriptor;
     SKUIButtonViewElement *_viewElement;
+    IKViewElementStyle *_viewElementStyle;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,9 +23,11 @@
 
 - (void).cxx_destruct;
 - (void)_buttonAction:(id)arg1;
+- (BOOL)_usesBackgroundWithAlpha;
 - (void)dealloc;
 - (void)layoutSubviews;
 - (void)reloadWithViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
+- (void)setBackgroundColor:(id)arg1;
 - (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
 - (BOOL)updateWithItemState:(id)arg1 context:(id)arg2 animated:(BOOL)arg3;
 - (id)viewForElementIdentifier:(id)arg1;

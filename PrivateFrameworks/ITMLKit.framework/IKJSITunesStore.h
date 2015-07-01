@@ -5,9 +5,12 @@
 @interface IKJSITunesStore : IKJSObject <IKJSITunesStore> {
     int _bagOperationLock;
     NSString *_cookieURL;
+    id _isURLBagDidLoadToken;
     NSNumber *_lastAccountDSID;
     SSMetricsController *_metricsController;
     ISLoadURLBagOperation *_pendingBagOperation;
+    id _ssAccountStoreChangedToken;
+    NSString *_storeFrontSuffix;
 }
 
 @property (nonatomic, readonly) NSString *DSID;
@@ -27,6 +30,7 @@
 - (id)DSID;
 - (void)_accountStoreChanged;
 - (void)_bagDidLoadNotification:(id)arg1;
+- (id)_subscriptionStatusDictionaryWithStatus:(id)arg1 isFinal:(BOOL)arg2;
 - (void)_updateBag:(BOOL)arg1;
 - (void)_updateWithBag:(id)arg1;
 - (id)accountInfo;
@@ -35,9 +39,11 @@
 - (id)cookie;
 - (id)cookieURL;
 - (void)dealloc;
+- (id)eligibilityForService:(id)arg1;
 - (void)evaluateScripts:(id)arg1 :(id)arg2;
 - (void)flushUnreportedEvents;
 - (id)getBag;
+- (void)getServiceEligibility:(id)arg1 :(id)arg2;
 - (id)initWithAppContext:(id)arg1;
 - (void)invalidateBag;
 - (void)loadStoreContent:(id)arg1 :(id)arg2;
@@ -51,6 +57,7 @@
 - (void)setStorefront:(id)arg1;
 - (void)signOut;
 - (id)storefront;
+- (void)updateServiceEligibility:(id)arg1;
 - (id)userAgent;
 
 @end

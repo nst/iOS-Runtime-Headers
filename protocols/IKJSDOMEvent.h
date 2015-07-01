@@ -10,6 +10,7 @@
 - (IKDOMNode *)currentTarget;
 - (BOOL)defaultPrevented;
 - (int)eventPhase;
+- (id)initWithType:(NSString *)arg1 eventInit:(NSDictionary *)arg2;
 - (void)preventDefault;
 - (void)stopImmediatePropagation;
 - (void)stopPropagation;

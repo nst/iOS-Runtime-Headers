@@ -38,5 +38,6 @@
 - (void)setHitTestEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setRating:(float)arg1;
 - (void)setRating:(float)arg1 animated:(BOOL)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

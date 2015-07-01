@@ -165,6 +165,10 @@
 + (id)_coreroutineBundle;
 + (id)_coreroutine_LocalizedStringForKey:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (id)fuseUIBundle;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)_gkBundleWithIdentifier:(id)arg1;
@@ -210,13 +214,13 @@
 
 + (id)mediaPlayerUIBundle;
 
+// Image: /System/Library/PrivateFrameworks/MediaSocial.framework/MediaSocial
+
++ (id)mediaSocialBundle;
+
 // Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
 
 + (id)MCD_bundle;
-
-// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
-
-+ (id)musicUIBundle;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 

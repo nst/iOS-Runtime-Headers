@@ -4,11 +4,19 @@
 
 @interface RURadioAudioClipAVItem : RURadioAVItem
 
+// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
+
+- (BOOL)_canUseStoreAdamIDForSubscriptionAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)audioClip;
 - (id)initWithAudioClip:(id)arg1;
+- (BOOL)isLikedStateEnabled;
 - (void)loadAssetAndPlayerItem;
 - (BOOL)supportsSkip;
 - (unsigned int)type;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (void)initialize;
 
 @end

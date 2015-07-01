@@ -139,6 +139,7 @@
     } _overscanPercentage;
     struct __CFString { } *_portType;
     int _position;
+    BOOL _providesPreBracketedEV0;
     int _receivedImagesForCaptureStillImageNow;
     BOOL _retryCaptureStillImageNow;
     BOOL _retryCaptureUsesFlash;
@@ -275,6 +276,7 @@
 - (int)minimumFrameRate;
 - (id)moduleInfo;
 - (int)position;
+- (BOOL)providesPreBracketedEV0;
 - (void)rampToVideoZoomFactor:(float)arg1 withRate:(float)arg2 commandID:(int)arg3;
 - (void)registerForAEMatrixMetadata;
 - (void)registerForFaceDetectionMetadata;

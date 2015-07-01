@@ -7,14 +7,12 @@
     NSString *_path;
     double _startTime;
     double _stopTime;
-    NSString *_videoID;
 }
 
 @property (nonatomic, readonly) MPAVItem *item;
 @property (nonatomic, copy) NSString *path;
 @property (nonatomic) double startTime;
 @property (nonatomic) double stopTime;
-@property (nonatomic, copy) NSString *videoID;
 
 - (void).cxx_destruct;
 - (id)init;
@@ -24,9 +22,7 @@
 - (void)setPath:(id)arg1;
 - (void)setStartTime:(double)arg1;
 - (void)setStopTime:(double)arg1;
-- (void)setVideoID:(id)arg1;
 - (double)startTime;
 - (double)stopTime;
-- (id)videoID;
 
 @end

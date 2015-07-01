@@ -32,8 +32,7 @@
 - (id)init;
 - (oneway void)lockDatabaseForReason:(id)arg1 withCompletion:(id /* block */)arg2;
 - (oneway void)performDatabaseOperation:(unsigned int)arg1 withAttributes:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)performImportFromSource:(unsigned int)arg1 intoDatabaseAtPath:(id)arg2 withTrackData:(id)arg3 withPlaylistData:(id)arg4 options:(id)arg5 completionHandler:(id /* block */)arg6;
-- (oneway void)performImportFromSource:(unsigned int)arg1 intoDatabaseAtPath:(id)arg2 withTrackData:(id)arg3 withPlaylistData:(id)arg4 withFileHandle:(id)arg5 options:(id)arg6 progressBlock:(id /* block */)arg7 completionHandler:(id /* block */)arg8;
+- (void)performImport:(id)arg1 fromSource:(unsigned int)arg2 withProgressBlock:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (oneway void)pollCurrentImportStatus:(id /* block */)arg1;
 - (oneway void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (oneway void)serviceTerminatedTransactionWithIdentifier:(id)arg1 error:(id)arg2;

@@ -13,6 +13,7 @@
     id _originalPolicyDelegate;
     id _originalResourceLoadDelegate;
     id _originalUIDelegate;
+    NSMutableSet *_requireCellularURLs;
     NSMapTable *_scriptInterfaces;
     SUScriptWindowContext *_scriptWindowContext;
     NSSet *_suppressCookiesHosts;
@@ -65,6 +66,7 @@
 - (id)parentViewControllerForScriptInterface:(id)arg1;
 - (id)performanceMetricsForScriptInterface:(id)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;
+- (void)scriptInterface:(id)arg1 requireCellularForResourceWithURL:(id)arg2;
 - (id)scriptWindowContext;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -74,6 +76,7 @@
 - (void)setOriginalResourceLoadDelegate:(id)arg1;
 - (void)setOriginalUIDelegate:(id)arg1;
 - (void)setScriptWindowContext:(id)arg1;
+- (id)uiWebView:(id)arg1 connectionPropertiesForResource:(id)arg2 dataSource:(id)arg3;
 - (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (id)uiWebView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;
 - (void)uiWebView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;

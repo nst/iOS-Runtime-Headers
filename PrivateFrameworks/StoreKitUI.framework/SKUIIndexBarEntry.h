@@ -21,6 +21,8 @@
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentEdgeInsets;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
+@property (nonatomic, readonly) NSAttributedString *entryAttributedString;
+@property (nonatomic, readonly) UIImage *entryImage;
 @property (nonatomic) int entryType;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 @property (nonatomic, copy) UIColor *tintColor;
@@ -35,9 +37,11 @@
 - (struct CGSize { float x1; float x2; })_calculatedContentSize;
 - (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)_effectiveTintColor;
+- (void)_tintColorDidChange;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentEdgeInsets;
 - (struct CGSize { float x1; float x2; })contentSize;
+- (id)entryAttributedString;
+- (id)entryImage;
 - (int)entryType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

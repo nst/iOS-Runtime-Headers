@@ -5,6 +5,7 @@
 
 @required
 
+- (BOOL)allowArtistActivity;
 - (BOOL)allowsErotica;
 - (BOOL)allowsExplicit;
 - (BOOL)appInstallationAllowed;

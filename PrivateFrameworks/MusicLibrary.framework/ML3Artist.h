@@ -12,9 +12,9 @@
 + (id)defaultOrderingTerms;
 + (id)foreignPropertyForProperty:(id)arg1 entityClass:(Class)arg2;
 + (void)initialize;
-+ (id)joinClausesForProperty:(id)arg1;
 + (id)predisambiguatedProperties;
 + (id)propertiesForGroupingKey;
++ (id)propertiesForGroupingUniqueCollections;
 + (BOOL)propertyIsCountProperty:(id)arg1;
 + (id)protocolItemWithProperties:(id)arg1 inLibrary:(id)arg2;
 + (int)revisionTrackingCode;

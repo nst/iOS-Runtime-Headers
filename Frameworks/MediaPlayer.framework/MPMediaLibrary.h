@@ -132,17 +132,27 @@
 - (void)_scheduleLibraryChangeNotificationPostingBlock:(id /* block */)arg1;
 - (void)_stopConnectionProgressDisplayLink;
 - (id)_syncValidity;
+- (void)addAdvertisementItemWithDictionary:(id)arg1 completion:(id /* block */)arg2;
+- (void)addGlobalPlaylistWithID:(id)arg1 andAddToCloudLibrary:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)addLibraryFilterPredicate:(id)arg1;
+- (void)addNonLibraryOwnedPlaylistWithGlobalID:(id)arg1 completion:(id /* block */)arg2;
+- (void)addPlaylistStoreItemsWithMetadata:(id)arg1 completion:(id /* block */)arg2;
 - (id)addPlaylistWithName:(id)arg1;
 - (id)addPlaylistWithName:(id)arg1 activeGeniusPlaylist:(BOOL)arg2;
+- (void)addStoreItem:(long long)arg1 andAddTracksToCloudLibrary:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)addStoreItemIDs:(id)arg1 andAddTracksToCloudLibrary:(BOOL)arg2 withCompletion:(id /* block */)arg3;
+- (void)addTracksToMyLibrary:(id)arg1;
 - (id)additionalLibraryFilterPredicates;
 - (id)artworkDataSource;
 - (void)beginGeneratingLibraryChangeNotifications;
+- (void)clearLocationPropertiesOfItem:(id)arg1;
 - (int)cloudFilteringType;
 - (BOOL)collectionExistsContainedWithinPersistentIDs:(const unsigned long long*)arg1 count:(unsigned long)arg2 groupingType:(int)arg3 existentPID:(unsigned long long*)arg4;
 - (BOOL)collectionExistsWithName:(id)arg1 groupingType:(int)arg2 existentPID:(unsigned long long*)arg3;
 - (BOOL)collectionExistsWithPersistentID:(unsigned long long)arg1 groupingType:(int)arg2;
 - (BOOL)collectionExistsWithStoreID:(long long)arg1 groupingType:(int)arg2 existentPID:(unsigned long long*)arg3;
+- (id)collectionWithPersistentID:(unsigned long long)arg1 groupingType:(int)arg2;
+- (id)collectionWithPersistentID:(unsigned long long)arg1 groupingType:(int)arg2 verifyExistence:(BOOL)arg3;
 - (BOOL)companionDeviceActiveStoreAccountIsDynamiteEligible;
 - (id)completeMyCollectionArtworkDataSource;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id /* block */)arg2;
@@ -152,6 +162,7 @@
 - (unsigned long long)currentEntityRevision;
 - (id)databasePath;
 - (void)dealloc;
+- (BOOL)deleteItems:(id)arg1;
 - (id)description;
 - (void)disconnect;
 - (void)downloadAsset:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -159,9 +170,10 @@
 - (void)endGeneratingLibraryChangeNotifications;
 - (id)entityCache;
 - (id)entityWithMultiverseIdentifier:(id)arg1;
+- (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(int)arg2 inUsersLibrary:(BOOL)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(int)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id /* block */)arg2;
-- (id)errorResolverForMediaItem:(id)arg1;
+- (id)errorResolverForItem:(id)arg1;
 - (BOOL)hasAlbums;
 - (BOOL)hasArtists;
 - (BOOL)hasAudibleAudioBooks;
@@ -187,12 +199,15 @@
 - (BOOL)hasVideoPodcasts;
 - (BOOL)hasVideos;
 - (unsigned int)hash;
+- (void)importArtworkTokenForEntityPersistentID:(unsigned long long)arg1 entityType:(int)arg2 artworkToken:(id)arg3 artworkType:(int)arg4 sourceType:(int)arg5;
+- (BOOL)importOriginalArtworkFromImageData:(id)arg1 withArtworkToken:(id)arg2 artworkType:(int)arg3 sourceType:(int)arg4 mediaType:(unsigned int)arg5;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCurrentThreadInTransaction;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGeniusEnabled;
 - (BOOL)isValidAssetURL:(id)arg1;
+- (BOOL)itemExistsInDatabaseWithPersistentID:(unsigned long long)arg1;
 - (BOOL)itemExistsWithPersistentID:(unsigned long long)arg1;
 - (id)itemWithPersistentID:(unsigned long long)arg1;
 - (id)itemWithPersistentID:(unsigned long long)arg1 verifyExistence:(BOOL)arg2;
@@ -209,17 +224,18 @@
 - (id)newPlaylistWithPersistentID:(unsigned long long)arg1;
 - (id)pathForAssetURL:(id)arg1;
 - (void)performReadTransactionWithBlock:(id /* block */)arg1;
+- (void)performStoreItemLibraryImport:(id)arg1 withCompletion:(id /* block */)arg2;
 - (BOOL)performTransactionWithBlock:(id /* block */)arg1;
+- (id)playbackHistoryPlaylist;
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
 - (long long)playlistGeneration;
 - (id)playlistWithPersistentID:(unsigned long long)arg1;
-- (void)populateLocationPropertiesOfItem:(id)arg1 withPath:(id)arg2;
+- (void)populateLocationPropertiesOfItem:(id)arg1 withPath:(id)arg2 assetProtectionType:(int)arg3;
 - (id)preferredAudioLanguages;
 - (id)preferredSubtitleLanguages;
 - (id)protectedContentSupportStorageURL;
 - (int)removalReason;
 - (BOOL)removeItems:(id)arg1;
-- (BOOL)removeItems:(id)arg1 hideFromPurchaseHistory:(BOOL)arg2;
 - (void)removeLibraryFilterPredicate:(id)arg1;
 - (BOOL)removePlaylist:(id)arg1;
 - (BOOL)requiresAuthentication;
@@ -236,8 +252,9 @@
 - (id)valueForDatabaseProperty:(id)arg1;
 - (BOOL)writable;
 
-// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
-- (int)music_compareMediaLibrary:(id)arg1;
+- (id)MPU_entityWithContentItemIdentifierCollection:(id)arg1 options:(unsigned int)arg2;
+- (id)_MPU_ML3QueryWithEntityClass:(Class)arg1 predicate:(id)arg2 options:(unsigned int)arg3;
 
 @end

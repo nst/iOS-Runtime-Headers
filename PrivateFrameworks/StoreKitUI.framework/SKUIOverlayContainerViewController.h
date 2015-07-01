@@ -4,6 +4,7 @@
 
 @interface SKUIOverlayContainerViewController : UIViewController <UIGestureRecognizerDelegate> {
     UIControl *_backstopView;
+    <SKUIOverlayContainerDelegate> *_delegate;
     BOOL _isAdjustingViewsForDismiss;
     int _popViewControllerCount;
     int _selectedViewControllerIndex;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, readonly) UIControl *backstopControl;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <SKUIOverlayContainerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
@@ -34,13 +36,16 @@
 - (id)_viewControllerForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)backstopControl;
 - (void)dealloc;
+- (id)delegate;
 - (void)dismissWithFadeTransitionCompletionBlock:(id /* block */)arg1;
 - (void)dismissWithFlipTransition:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (void)popViewControllerAnimated:(BOOL)arg1;
+- (void)popViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)replaceViewController:(id)arg1 withViewController:(id)arg2;
+- (void)setDelegate:(id)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (void)showViewController:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)showViewController:(id)arg1 withFlipTransition:(id)arg2 completionBlock:(id /* block */)arg3;

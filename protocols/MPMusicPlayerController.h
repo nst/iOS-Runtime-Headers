@@ -47,6 +47,7 @@
 - (void)setRepeatMode:(NSNumber *)arg1;
 - (void)setShuffleMode:(NSNumber *)arg1;
 - (void)setUseApplicationSpecificQueue:(NSNumber *)arg1;
+- (void)setUserQueueModificationsDisabled:(NSNumber *)arg1;
 - (void)shuffle;
 - (NSNumber *)shuffleMode;
 - (NSData *)skipInDirection:(NSNumber *)arg1;
@@ -58,5 +59,6 @@
 - (void)skipToPreviousItem;
 - (void)stop;
 - (NSNumber *)unshuffledIndexOfNowPlayingItem;
+- (NSNumber *)userQueueModificationsDisabled;
 
 @end

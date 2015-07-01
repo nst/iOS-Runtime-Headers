@@ -9,6 +9,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (id)_attributedStringForTitleLabel:(id)arg1 context:(id)arg2;
 + (id)expandableLabelElementForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
 + (struct CGSize { float x1; float x2; })preferredSizeForViewElement:(id)arg1 context:(id)arg2;
 + (BOOL)prefetchResourcesForViewElement:(id)arg1 reason:(int)arg2 context:(id)arg3;

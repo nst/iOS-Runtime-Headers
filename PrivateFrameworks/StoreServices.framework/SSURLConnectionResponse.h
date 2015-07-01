@@ -3,19 +3,14 @@
  */
 
 @interface SSURLConnectionResponse : NSObject <SSXPCCoding> {
-    NSDictionary *_allHeaderFields;
-    NSData *_body;
-    long long _expectedContentLength;
+    NSData *_bodyData;
     SSMetricsPageEvent *_metricsPageEvent;
-    NSString *_mimeType;
-    int _statusCode;
-    NSString *_suggestedFilename;
-    NSString *_textEncodingName;
-    NSURL *_url;
+    NSHTTPURLResponse *_urlResponse;
 }
 
 @property (nonatomic, readonly) NSString *MIMEType;
 @property (nonatomic, readonly) NSURL *URL;
+@property (nonatomic, readonly) NSHTTPURLResponse *URLResponse;
 @property (nonatomic, readonly) NSData *bodyData;
 @property (nonatomic, readonly) NSData *databaseEncoding;
 @property (readonly, copy) NSString *debugDescription;
@@ -24,6 +19,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) SSMetricsPageEvent *metricsPageEvent;
 @property (nonatomic, readonly) NSData *radio_decompressedBodyData;
+@property (nonatomic, readonly) BOOL ssv_isExpiredResponse;
 @property (nonatomic, readonly) NSString *suggestedFilename;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *textEncodingName;
@@ -32,6 +28,7 @@
 
 - (id)MIMEType;
 - (id)URL;
+- (id)URLResponse;
 - (id)allHeaderFields;
 - (id)bodyData;
 - (id)copyXPCEncoding;
@@ -43,6 +40,7 @@
 - (id)initWithXPCEncoding:(id)arg1;
 - (id)metricsPageEvent;
 - (void)setMetricsPageEvent:(id)arg1;
+- (BOOL)ssv_isExpiredResponse;
 - (int)statusCode;
 - (id)suggestedFilename;
 - (id)textEncodingName;
@@ -50,6 +48,5 @@
 // Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
 
 - (id)radio_decompressedBodyData;
-- (void)radio_mescalVerifyDataWithCompletionHandler:(id /* block */)arg1;
 
 @end

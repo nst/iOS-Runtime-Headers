@@ -9,5 +9,7 @@
 - (MPMediaItem *)geniusMixQueueFeeder:(MusicGeniusMixQueueFeeder *)arg1 mediaItemAtIndex:(unsigned int)arg2;
 - (MPMediaQuery *)geniusMixQueueFeeder:(MusicGeniusMixQueueFeeder *)arg1 queryForMediaItemAtIndex:(unsigned int)arg2;
 - (unsigned int)geniusMixQueueFeederMediaItemCount:(MusicGeniusMixQueueFeeder *)arg1;
+- (MPMediaPlaylist *)mixPlaylist;
+- (MPMediaItem *)requiredInitialMediaItem;
 
 @end

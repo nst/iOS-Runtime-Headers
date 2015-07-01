@@ -4,13 +4,16 @@
 
 @interface SKUIActivityIndicatorView : SKUIViewReuseView <SKUIViewElementView> {
     unsigned int _alignment;
+    BOOL _animating;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
     } _contentInset;
+    UIImageView *_imageView;
     UIActivityIndicatorView *_indicatorView;
+    double _period;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,6 +29,9 @@
 + (struct CGSize { float x1; float x2; })sizeThatFitsWidth:(float)arg1 viewElement:(id)arg2 context:(id)arg3;
 
 - (void).cxx_destruct;
+- (BOOL)_isAnimating;
+- (void)_startAnimating;
+- (void)_stopAnimating;
 - (void)_updateSpinnerAnimation;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;

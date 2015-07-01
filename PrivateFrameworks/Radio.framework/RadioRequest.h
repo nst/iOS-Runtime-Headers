@@ -21,6 +21,7 @@
 @property (readonly) int status;
 @property (readonly, copy) NSDictionary *unparsedResponseDictionary;
 
++ (id)defaultURLCache;
 + (void)loadServiceConfigurationWithCompletionHandler:(id /* block */)arg1;
 
 - (void).cxx_destruct;

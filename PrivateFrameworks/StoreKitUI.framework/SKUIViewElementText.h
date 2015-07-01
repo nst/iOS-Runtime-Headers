@@ -2,30 +2,11 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIViewElementText : NSObject {
-    NSMutableAttributedString *_attributedString;
-    NSArray *_badges;
-    NSMutableArray *_styledRanges;
-    NSArray *_trailingBadges;
-}
+@interface SKUIViewElementText : IKTextParser
 
-@property (nonatomic, readonly) NSArray *badges;
-@property (nonatomic, readonly) NSString *string;
-@property (nonatomic, readonly) NSArray *trailingBadges;
-
-- (void).cxx_destruct;
-- (void)_enumerateTextStylesUsingBlock:(id /* block */)arg1;
-- (id)_spanAttributeValueForDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (id)_stringFromDateElement:(id)arg1;
-- (id)_stringFromDurationElement:(id)arg1;
-- (id)_stringFromNumberElement:(id)arg1;
 - (id)attributedStringWithDefaultFont:(id)arg1 foregroundColor:(id)arg2;
+- (id)attributedStringWithDefaultFont:(id)arg1 foregroundColor:(id)arg2 style:(id)arg3;
 - (id)attributedStringWithDefaultFont:(id)arg1 foregroundColor:(id)arg2 textAlignment:(int)arg3;
-- (id)badges;
-- (id)initWithString:(id)arg1;
-- (id)initWithXMLNodes:(id)arg1;
-- (id)initWithXMLNodes:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
-- (id)string;
-- (id)trailingBadges;
+- (id)attributedStringWithDefaultFont:(id)arg1 foregroundColor:(id)arg2 textAlignment:(int)arg3 style:(id)arg4;
 
 @end

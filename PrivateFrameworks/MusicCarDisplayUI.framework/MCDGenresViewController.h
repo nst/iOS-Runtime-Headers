@@ -4,6 +4,9 @@
 
 @interface MCDGenresViewController : MCDTableViewController
 
++ (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
+
+- (void)_limitedUIDidChange;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

@@ -3,12 +3,14 @@
  */
 
 @interface SKUINavigationPaletteView : SKUIViewReuseView <SKUIViewElementView> {
+    NSHashTable *_artworkRelatedChildViewElementViews;
     struct UIEdgeInsets { 
         float top; 
         float left; 
         float bottom; 
         float right; 
     } _contentInset;
+    NSMapTable *_imageViewToImageResourceCacheKey;
     NSMutableArray *_segmentedControls;
     NSMutableArray *_stretchViews;
     int _verticalAlignment;

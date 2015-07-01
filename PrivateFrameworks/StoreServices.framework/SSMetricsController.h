@@ -6,6 +6,7 @@
     SSMetricsConfiguration *_configuration;
     SSXPCConnection *_connection;
     NSTimer *_flushEventsTimer;
+    BOOL _flushOnForeground;
     NSObject<OS_dispatch_queue> *_flushSerialQueue;
     BOOL _flushTimerEnabled;
     NSObject<OS_dispatch_queue> *_serialQueue;
@@ -13,12 +14,15 @@
 
 @property (getter=isFlushTimerEnabled, nonatomic) BOOL flushTimerEnabled;
 
+- (void)_applicationWillEnterForeground;
 - (id)_connection;
 - (id)_cookieValuesForConfiguration:(id)arg1;
 - (void)_enumerateFieldValuesWithMap:(id)arg1 fieldData:(id)arg2 block:(id /* block */)arg3;
+- (void)_flushUnreportedEventsIfEnabled;
 - (void)_handleFlushTimer;
 - (void)_serialQueueInsertEvents:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)_setupFlushTimer;
+- (id)_userType;
 - (id)_valueForField:(id)arg1 withFieldData:(id)arg2;
 - (id)configuration;
 - (void)dealloc;

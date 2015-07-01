@@ -6,6 +6,7 @@
     BOOL _active;
     NSString *_localizedShortTitle;
     NSString *_localizedTitle;
+    int _presentationStyle;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
@@ -17,8 +18,10 @@
 - (BOOL)isActive;
 - (id)localizedShortTitle;
 - (id)localizedTitle;
+- (int)presentationStyle;
 - (void)setActive:(BOOL)arg1;
 - (void)setLocalizedShortTitle:(id)arg1;
 - (void)setLocalizedTitle:(id)arg1;
+- (void)setPresentationStyle:(int)arg1;
 
 @end

@@ -11,7 +11,6 @@
 - (id)_artistPageComponentsForDictionary:(id)arg1 items:(id)arg2;
 - (id)_backgroundArtworkWithDictionary:(id)arg1;
 - (id)_bannerRoomComponentsForDictionary:(id)arg1 items:(id)arg2;
-- (id)_chartPageComponentsForDictionary:(id)arg1 items:(id)arg2;
 - (id)_customPageComponentsForDictionary:(id)arg1 items:(id)arg2;
 - (id)_groupingPageComponentsForDictionary:(id)arg1 items:(id)arg2;
 - (id)_multiRoomComponentsForDictionary:(id)arg1 items:(id)arg2;

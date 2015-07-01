@@ -3,8 +3,10 @@
  */
 
 @interface SKUITracklistLockupCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIItemOfferButtonDelegate, SKUIPreviewContainerView, SKUIViewElementView> {
+    NSMapTable *_buyButtonDescriptorToButton;
     SKUITracklistColumnData *_columnData;
     NSMutableDictionary *_columnViewsByIndex;
+    NSMapTable *_imageViewToImageResourceCacheKey;
     SUPlayerStatus *_lastPlayerStatus;
     SKUIGradientView *_offerConfirmationGradientView;
     SKUIPreviewProgressIndicator *_previewProgressIndicator;

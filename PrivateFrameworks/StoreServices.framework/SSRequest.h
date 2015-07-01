@@ -3,6 +3,7 @@
  */
 
 @interface SSRequest : NSObject <SSXPCCoding> {
+    NSObject<OS_dispatch_source> *_backgroundTaskExpirationTimer;
     int _backgroundTaskIdentifier;
     BOOL _cancelAfterTaskExpiration;
     <SSRequestDelegate> *_delegate;
@@ -22,7 +23,9 @@
 - (void)__endBackgroundTask;
 - (BOOL)__shouldUseBackgroundTaskAssertions;
 - (void)_beginBackgroundTask;
+- (void)_cancelBackgroundTaskExpirationTimer;
 - (void)_endBackgroundTask;
+- (void)_expireBackgroundTask;
 - (id)_initSSRequest;
 - (void)_shutdownRequest;
 - (void)_shutdownRequestWithMessageID:(long long)arg1;

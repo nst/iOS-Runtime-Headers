@@ -4,6 +4,8 @@
 
 @interface MCDPlaylistsViewController : MCDTableViewController
 
++ (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
+
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 

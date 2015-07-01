@@ -3,11 +3,15 @@
  */
 
 @interface SKUIProductLockupCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIItemOfferButtonDelegate, SKUIOfferViewDelegate, SKUIPerspectiveView, SKUIViewElementView> {
+    NSHashTable *_artworkRelatedChildViewElementViews;
+    NSMapTable *_buyButtonDescriptorToButton;
     NSMapTable *_elementViews;
+    NSMapTable *_imageViewToImageResourceCacheKey;
     SKUIProductLockupLayout *_layout;
     SKUILockupViewElement *_lockup;
     SKUIGradientView *_offerConfirmationGradientView;
     int _offerMetadataPosition;
+    NSHashTable *_offerViews;
     NSMutableArray *_segmentedControlControllers;
 }
 

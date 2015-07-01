@@ -20,6 +20,8 @@
 - (id)initWithPersistentID:(unsigned long long)arg1;
 - (BOOL)isUsableAsRepresentativeItem;
 - (void)markNominalAmountHasBeenPlayed;
+- (id)mediaLibrary;
+- (double)nominalHasBeenPlayedThreshold;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
 - (unsigned long long)persistentID;
 - (void)setValue:(id)arg1 forKey:(id)arg2;

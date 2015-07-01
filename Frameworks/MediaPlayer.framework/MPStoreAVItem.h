@@ -4,24 +4,118 @@
 
 @interface MPStoreAVItem : MPAVItem {
     NSString *_aggregateDictionaryItemIdentifier;
-    MPMediaItem *_mediaItem;
+    unsigned int _assetQuality;
+    BOOL _hasEverPrioritizedPlayerItem;
+    BOOL _hasPrioritizedPlayWhileDownloadSession;
+    BOOL _hasPrioritizedStreamingDownloadSession;
+    BOOL _hasValidAggregateDictionaryItemIdentifier;
+    BOOL _hasValidAssetQuality;
+    BOOL _isActivePlayerItem;
     unsigned int _options;
-    MPStoreItemContext *_storeItemContext;
+    MPStorePlayWhileDownloadSession *_playWhileDownloadSession;
+    MPMediaPlaybackItemMetadata *_playbackItemMetadata;
+    MPStreamingDownloadSession *_streamingDownloadSession;
 }
 
 @property (nonatomic, readonly) unsigned int options;
+@property (nonatomic, readonly) MPMediaPlaybackItemMetadata *playbackItemMetadata;
 
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (id)_assetURLForCachedLocalPlaybackAssetFilePathForPlaybackItemMetadata:(id)arg1 withMinimumAssetQuality:(unsigned int)arg2 assetOptions:(id)arg3 returningProtectionType:(unsigned int*)arg4 assetQuality:(unsigned int*)arg5 usesPurchaseBundle:(BOOL*)arg6;
++ (unsigned int)_preferredAssetQualityForCurrentNetworkConditions;
 + (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
-+ (void)setShouldAlwaysAirplayFromCloud:(BOOL)arg1;
++ (BOOL)isPlaybackItemMetadataStreamingForAssetCreation:(id)arg1 returningProtectionType:(unsigned int*)arg2;
++ (BOOL)isPlaybackItemMetadataValidForAssetCreation:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_applyLoudnessInfo;
+- (id)_chapterTitleForTime:(double)arg1;
+- (void)_currentPlaybackRateDidChange:(float)arg1;
+- (BOOL)_getAssetURL:(id*)arg1 playWhileDownloadSession:(id*)arg2 assetQuality:(unsigned int*)arg3 error:(id*)arg4 usingStoreDownload:(id)arg5 assetOptions:(id)arg6 shouldStartDownload:(BOOL)arg7;
+- (void)_handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
+- (void)_handleUpdatedLikedState:(int)arg1 completion:(id /* block */)arg2;
+- (void)_loadMediaItemWithCompletionHandler:(id /* block */)arg1;
+- (void)_mediaPlaybackItemMetadataDidChangeNotification:(id)arg1;
+- (void)_mediaPlaybackItemMetadataLikedStateDidChangeNotification:(id)arg1;
+- (id)_newTimeMarkersForChapterType:(int)arg1;
+- (int)_persistedLikedState;
+- (void)_prioritizeDownloadSessionsIfNeeded;
+- (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(BOOL)arg2;
+- (void)_willBecomeActivePlayerItem;
+- (void)_willResignActivePlayerItem;
 - (id)aggregateDictionaryItemIdentifier;
+- (id)album;
+- (id)albumArtist;
+- (long long)albumStoreID;
+- (unsigned int)albumTrackCount;
+- (unsigned int)albumTrackNumber;
+- (BOOL)allowsAirPlayFromCloud;
+- (BOOL)allowsEQ;
+- (BOOL)allowsExternalPlayback;
 - (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1;
-- (id)initWithMediaItem:(id)arg1 options:(unsigned int)arg2;
-- (id)initWithStoreID:(long long)arg1 buyParameters:(id)arg2 mediaType:(unsigned int)arg3 options:(unsigned int)arg4;
+- (id)artist;
+- (id)artworkCatalogForPlaybackTime:(double)arg1;
+- (id)artworkTimeMarkers;
+- (BOOL)canSeedGenius;
+- (id)chapterTimeMarkers;
+- (id)composer;
+- (id)copyrightText;
+- (int)customAVEQPreset;
+- (void)dealloc;
+- (id)description;
+- (unsigned int)discCount;
+- (unsigned int)discNumber;
+- (id)displayableText;
+- (double)durationFromExternalMetadata;
+- (id)genre;
+- (void)handlePlaybackFinishedTime:(double)arg1 finishedByHittingEnd:(BOOL)arg2;
+- (BOOL)hasAlternatesForTypes:(unsigned int)arg1;
+- (id)initWithPlaybackItemMetadata:(id)arg1 options:(unsigned int)arg2;
+- (BOOL)isAssetURLValid;
+- (BOOL)isCloudItem;
+- (BOOL)isExplicitTrack;
+- (BOOL)isLikedStateEnabled;
+- (BOOL)isStreamable;
+- (BOOL)isStreamingLowQualityAsset;
+- (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
+- (id)mainTitle;
 - (id)mediaItem;
+- (void)notePlaybackFinishedByHittingEnd;
 - (unsigned int)options;
+- (unsigned long long)persistentID;
+- (double)playbackCheckpointCurrentTime;
+- (id)playbackItemMetadata;
+- (void)prepareForRate:(float)arg1 completionHandler:(id /* block */)arg2;
+- (void)reevaluateType;
+- (void)setAlternateAudioTrackID:(int)arg1;
+- (void)setLoudnessInfoVolumeNormalization:(float)arg1;
+- (void)setPlaybackCheckpointCurrentTime:(double)arg1;
+- (void)setPlaybackFinishedTime:(double)arg1;
+- (void)setPlaybackStoppedTime:(double)arg1;
+- (void)setRating:(float)arg1;
+- (id)storeDownload;
+- (long long)storeItemInt64ID;
+- (long long)storeSubscriptionAdamID;
+- (BOOL)supportsLikedState;
+- (BOOL)supportsRewindAndFastForward15Seconds;
+- (id)titlesForTime:(double)arg1;
 - (unsigned int)type;
+- (id)urlTimeMarkers;
+- (BOOL)useEmbeddedChapterData;
+- (float)userRating;
+- (BOOL)usesSubscriptionLease;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (id)MPU_contentItemIdentifierCollection;
+- (long long)_mpuReporting_storeItemInt64ID;
+- (long long)_mpuReporting_storeItemInt64IDFromIdentifierCollection:(id)arg1;
+- (BOOL)mpuReporting_isValidReportingItem;
+- (unsigned int)mpuReporting_itemType;
+- (BOOL)mpuReporting_shouldReportPlayEventsToStore;
+- (id)mpuReporting_storeItemID;
 
 @end

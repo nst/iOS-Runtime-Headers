@@ -9,23 +9,26 @@
     NSArray *_featuredStations;
     NSArray *_myStations;
     MCDNoContentView *_placeholderView;
+    RadioRecentStationsController *_recentStationsController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) RadioRecentStationsController *recentStationsController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_categorizeStations;
 - (BOOL)_isNetworkTypeAllowed:(int)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
-- (void)_radioDataSourceDidInvalidate:(id)arg1;
 - (id)_stationFromIndexPath:(id)arg1;
 - (void)_updateViewForNetworkType:(int)arg1;
 - (void)dealloc;
 - (id)initWithPlayer:(id)arg1 serviceProvider:(id)arg2;
 - (void)radioDataSourceDidInvalidate:(id)arg1;
+- (id)recentStationsController;
+- (void)setRecentStationsController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

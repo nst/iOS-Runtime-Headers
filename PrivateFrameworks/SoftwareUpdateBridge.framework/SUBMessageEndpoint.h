@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> *_messageQueue;
     NSMutableDictionary *_pendingMessageCompletions;
     NSMutableDictionary *_pendingMessageReplies;
+    NSObject<OS_dispatch_queue> *_processingQueue;
     NSObject<OS_dispatch_queue> *_queue;
     IDSService *_service;
 }
@@ -18,6 +19,7 @@
 @property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *messageQueue;
 @property (nonatomic, retain) NSMutableDictionary *pendingMessageCompletions;
 @property (nonatomic, retain) NSMutableDictionary *pendingMessageReplies;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *processingQueue;
 @property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic, readonly, retain) IDSService *service;
 @property (readonly) Class superclass;
@@ -30,6 +32,7 @@
 - (id)messageQueue;
 - (id)pendingMessageCompletions;
 - (id)pendingMessageReplies;
+- (id)processingQueue;
 - (id)queue;
 - (void)resume;
 - (void)sendErrorReply:(id)arg1 toMessage:(id)arg2;

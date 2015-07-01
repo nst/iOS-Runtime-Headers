@@ -4,8 +4,9 @@
 
 @interface MCDSongsViewController : MCDTableViewController
 
-+ (id)actionCellConfigurationClasses;
++ (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
 
+- (void)_limitedUIDidChange;
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 

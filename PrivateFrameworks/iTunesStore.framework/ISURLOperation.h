@@ -10,6 +10,7 @@
     ISDataProvider *_dataProvider;
     BOOL _loadsHTTPFailures;
     int _networkRetryCount;
+    NSArray *_passThroughErrors;
     ISURLRequestPerformance *_performanceMetrics;
     NSCountedSet *_redirectURLs;
     SSMutableURLRequestProperties *_requestProperties;
@@ -25,6 +26,7 @@
 @property (retain) SSAuthenticationContext *authenticationContext;
 @property (retain) ISDataProvider *dataProvider;
 @property <ISURLOperationDelegate> *delegate;
+@property (nonatomic, retain) NSArray *passThroughErrors;
 @property (readonly) ISURLRequestPerformance *performanceMetrics;
 @property (copy) SSURLRequestProperties *requestProperties;
 @property (retain) NSURLResponse *response;
@@ -38,6 +40,7 @@
 
 - (id)_accountIdentifier;
 - (id)_activeURL;
+- (id)_activeURLRequest;
 - (id)_copyAcceptLanguageString;
 - (id)_copyAuthenticationContext;
 - (id)_copyConnectionPropertiesWithDataConnectionServiceType:(struct __CFString { }*)arg1;
@@ -49,11 +52,12 @@
 - (void)_handleReceivedData:(id)arg1;
 - (void)_handleReceivedResponse:(id)arg1;
 - (id)_handleRedirectRequest:(id)arg1 response:(id)arg2;
-- (BOOL)_isTrustExtendedValidation:(struct __SecTrust { }*)arg1;
+- (BOOL)_isPassThroughStatus:(int)arg1;
 - (BOOL)_loadsHTTPFailures;
 - (void)_logRequest:(id)arg1;
 - (void)_logResponseBody:(id)arg1;
 - (void)_performDefaultHandlingForAuthenticationChallenge:(id)arg1;
+- (BOOL)_processResponseData:(id)arg1 error:(id*)arg2;
 - (id)_requestProperties;
 - (void)_retry;
 - (void)_run;
@@ -76,6 +80,7 @@
 - (void)_updateProgress;
 - (BOOL)_usesPrivateCookieStore;
 - (BOOL)_validateContentLength:(long long)arg1 error:(id*)arg2;
+- (void)_willSendRequest:(id)arg1;
 - (id)authenticationContext;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -92,6 +97,7 @@
 - (id)init;
 - (BOOL)isUploadProgressRequested;
 - (id)newRequestWithURL:(id)arg1;
+- (id)passThroughErrors;
 - (id)performanceMetrics;
 - (id)request;
 - (id)requestProperties;
@@ -99,6 +105,7 @@
 - (void)run;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setDataProvider:(id)arg1;
+- (void)setPassThroughErrors:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setRequestProperties:(id)arg1;
 - (void)setResponse:(id)arg1;

@@ -30,6 +30,7 @@
     BOOL _prerenderedArtwork;
     NSString *_productPageURLString;
     NSArray *_requiredCapabilities;
+    SKUIStoreIdentifier *_storeIdentifier;
     NSString *_title;
     float _userRating;
     long long _versionIdentifier;
@@ -68,6 +69,7 @@
 @property (nonatomic, readonly) SKUIItemOffer *primaryItemOffer;
 @property (nonatomic, readonly) NSString *productPageURLString;
 @property (nonatomic, readonly) NSArray *requiredCapabilities;
+@property (nonatomic, copy) SKUIStoreIdentifier *storeIdentifier;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) float userRating;
@@ -114,6 +116,8 @@
 - (id)primaryItemOffer;
 - (id)productPageURLString;
 - (id)requiredCapabilities;
+- (void)setStoreIdentifier:(id)arg1;
+- (id)storeIdentifier;
 - (id)title;
 - (float)userRating;
 - (id)valueForMetricsField:(id)arg1;

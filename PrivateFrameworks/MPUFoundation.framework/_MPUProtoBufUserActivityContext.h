@@ -32,6 +32,7 @@
 - (BOOL)hasOriginatorVersion;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (int)originatorType;
 - (int)originatorVersion;
 - (BOOL)readFrom:(id)arg1;

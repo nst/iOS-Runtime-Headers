@@ -67,6 +67,7 @@
 - (void)setCurrentChapterIndex:(unsigned int)arg1;
 - (void)setCurrentPlaybackRate:(float)arg1;
 - (void)setCurrentPlaybackTime:(double)arg1;
+- (void)setNowPlayingItem:(id)arg1;
 - (void)setPlaybackSpeed:(int)arg1;
 - (void)setQueueWithGeniusMixPlaylist:(id)arg1;
 - (void)setQueueWithItemCollection:(id)arg1;
@@ -77,12 +78,14 @@
 - (void)setRepeatMode:(int)arg1;
 - (void)setShuffleMode:(int)arg1;
 - (void)setUseCachedPlaybackState:(BOOL)arg1;
+- (void)setUserQueueModificationsDisabled:(BOOL)arg1;
 - (void)setVolume:(float)arg1;
 - (void)setVolumePrivate:(float)arg1;
 - (int)shuffleMode;
 - (BOOL)skipInDirection:(int)arg1 error:(id*)arg2;
 - (void)stop;
 - (unsigned int)unshuffledIndexOfNowPlayingItem;
+- (BOOL)userQueueModificationsDisabled;
 - (float)volume;
 
 @end

@@ -18,7 +18,6 @@
         BOOL hidden; 
     } _savedStatusBarState;
     BOOL _shouldCancelDelayedOverlayVisibilityChange;
-    UIPercentDrivenInteractiveTransition *_transition;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -50,7 +49,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)interactionControllerForDismissal:(id)arg1;
 - (void)loadView;
 - (void)pageViewController:(id)arg1 didFinishAnimating:(BOOL)arg2 previousViewControllers:(id)arg3 transitionCompleted:(BOOL)arg4;
 - (id)pageViewController:(id)arg1 viewControllerAfterViewController:(id)arg2;

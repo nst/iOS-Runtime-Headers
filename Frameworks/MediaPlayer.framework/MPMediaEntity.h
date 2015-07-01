@@ -2,11 +2,14 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMediaEntity : NSObject <NSCopying, NSSecureCoding> {
+@interface MPMediaEntity : NSObject <MusicEntityValueProviding, NSCopying, NSSecureCoding> {
     MIPMultiverseIdentifier *_multiverseIdentifier;
 }
 
-@property (nonatomic, readonly) BOOL hasDeletableContent;
+@property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isDownloadable;
 @property (nonatomic, readonly) BOOL isDownloadableStoreOffer;
 @property (nonatomic, readonly) BOOL isPurchasableStoreOffer;
@@ -15,6 +18,7 @@
 @property (nonatomic, readonly) unsigned long long persistentID;
 @property (nonatomic, readonly) int preferredStoreOfferVariant;
 @property (nonatomic, readonly) MPMediaItem *representativeItem;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -24,7 +28,7 @@
 - (void).cxx_destruct;
 - (id)buyOffer;
 - (id)buyOfferForVariant:(int)arg1;
-- (id)cachedValueForProperty:(id)arg1;
+- (id)cachedValueForProperty:(id)arg1 isCached:(BOOL*)arg2;
 - (id)completionOfferForVariant:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
@@ -46,8 +50,20 @@
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
-- (BOOL)hasDeletableContent;
++ (id)_customPropertyHandlersCollection;
++ (void)registerCustomProperty:(id)arg1 withValueHandler:(id /* block */)arg2;
++ (void)registerSupportedCustomProperties;
+
+- (id)_valuesForRegularEntityProperties:(id)arg1;
+- (id)entityUniqueIdentifier;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)valueForEntityProperty:(id)arg1;
+- (id)valuesForEntityProperties:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (id)MPU_contentItemIdentifierCollection;
 
 @end

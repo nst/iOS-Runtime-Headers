@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKDOMElement : IKDOMNode <IKJSDOMElement, IKJSDOMParentNode>
+@interface IKDOMElement : IKDOMNode <IKJDOMParsingElement, IKJSDOMElement, IKJSDOMParentNode>
 
 @property (nonatomic, readonly) unsigned long childElementCount;
 @property (nonatomic, readonly) IKDOMHTMLCollection *children;
 @property (nonatomic, readonly) IKDOMElement *firstElementChild;
+@property (nonatomic, retain) NSString *innerHTML;
 @property (nonatomic, readonly) IKDOMElement *lastElementChild;
+@property (nonatomic, retain) NSString *outerHTML;
 @property (nonatomic, readonly, retain) NSString *tagName;
 
 - (id)attributes;
@@ -20,12 +22,17 @@
 - (id)getAttribute:(id)arg1;
 - (id)getElementsByTagName:(id)arg1;
 - (BOOL)hasAttribute:(id)arg1;
+- (id)innerHTML;
+- (void)insertAdjacentHTML:(id)arg1 :(id)arg2;
 - (id)lastElementChild;
 - (id)nodeName;
 - (int)nodeType;
+- (id)outerHTML;
 - (void)removeAttribute:(id)arg1;
 - (void)setAttribute:(id)arg1 :(id)arg2;
 - (void)setAttributeValue:(id)arg1 withName:(id)arg2;
+- (void)setInnerHTML:(id)arg1;
+- (void)setOuterHTML:(id)arg1;
 - (void)setTextContent:(id)arg1;
 - (id)tagName;
 - (id)textContent;

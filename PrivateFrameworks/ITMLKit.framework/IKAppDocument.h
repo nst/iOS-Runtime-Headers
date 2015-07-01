@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridge> {
+@interface IKAppDocument : NSObject <IKJSDOMDocumentAppBridge, IKStyleMediaQueryEvaluator> {
     IKAppContext *_appContext;
     <IKAppDocumentDelegate> *_delegate;
     NSError *_error;
@@ -15,8 +15,10 @@
     JSManagedValue *_jsManagedDocument;
     IKViewElement *_navigationBarElement;
     IKJSObject *_owner;
+    IKViewElementStyleFactory *_styleFactory;
     BOOL _subtreeUpdated;
     IKViewElement *_templateElement;
+    IKViewElement *_toolbarElement;
     BOOL _updated;
 }
 
@@ -36,9 +38,11 @@
 @property (nonatomic, retain) IKViewElement *navigationBarElement;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic, readonly) IKJSObject *owner;
+@property (nonatomic, retain) IKViewElementStyleFactory *styleFactory;
 @property (getter=isSubtreeUpdated) BOOL subtreeUpdated;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) IKViewElement *templateElement;
+@property (nonatomic, retain) IKViewElement *toolbarElement;
 @property (getter=isUpdated, nonatomic) BOOL updated;
 
 - (void).cxx_destruct;
@@ -49,6 +53,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)error;
+- (BOOL)evaluateStyleMediaQueryList:(id)arg1;
 - (id)headElement;
 - (id)identifier;
 - (double)impressionThreshold;
@@ -84,11 +89,16 @@
 - (void)setJsManagedDocument:(id)arg1;
 - (void)setNavigationBarElement:(id)arg1;
 - (void)setNeedsUpdateForDocument:(id)arg1;
+- (void)setStyleFactory:(id)arg1;
 - (void)setSubtreeUpdated:(BOOL)arg1;
 - (void)setTemplateElement:(id)arg1;
+- (void)setToolbarElement:(id)arg1;
 - (void)setUpdated:(BOOL)arg1;
+- (void)setViewElementStylesDirty;
 - (id)snapshotImpressions;
+- (id)styleFactory;
 - (id)templateElement;
+- (id)toolbarElement;
 - (void)updateForDocument:(id)arg1;
 
 @end

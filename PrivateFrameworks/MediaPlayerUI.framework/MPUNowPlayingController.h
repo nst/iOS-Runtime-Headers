@@ -11,6 +11,7 @@
     BOOL _currentNowPlayingAppIsRunning;
     NSDictionary *_currentNowPlayingInfo;
     <MPUNowPlayingDelegate> *_delegate;
+    BOOL _hasValidCurrentNowPlayingAppDisplayID;
     int _isPlaying;
     BOOL _isRegisteredForNowPlayingNotifications;
     BOOL _isUpdatingNowPlayingApp;
@@ -28,6 +29,7 @@
 @property (nonatomic) <MPUNowPlayingDelegate> *delegate;
 @property (nonatomic, readonly) BOOL isPlaying;
 @property (nonatomic, readonly) NSString *nowPlayingAppDisplayID;
+@property (nonatomic, readonly) BOOL nowPlayingAppIsSystemMediaApp;
 @property (nonatomic) BOOL shouldUpdateNowPlayingArtwork;
 @property (nonatomic) double timeInformationUpdateInterval;
 
@@ -39,7 +41,7 @@
 - (void)_updateCurrentNowPlaying;
 - (void)_updateNowPlayingAppDisplayID;
 - (void)_updatePlaybackState;
-- (void)_updateTimeInformation;
+- (void)_updateTimeInformationAndCallDelegate:(BOOL)arg1;
 - (double)currentDuration;
 - (double)currentElapsed;
 - (id)currentNowPlayingArtwork;
@@ -49,6 +51,7 @@
 - (id)init;
 - (BOOL)isPlaying;
 - (id)nowPlayingAppDisplayID;
+- (BOOL)nowPlayingAppIsSystemMediaApp;
 - (void)setDelegate:(id)arg1;
 - (void)setShouldUpdateNowPlayingArtwork:(BOOL)arg1;
 - (void)setTimeInformationUpdateInterval:(double)arg1;

@@ -5,7 +5,8 @@
 
 @required
 
-- (IKDOMDocument *)getDocumentForElement:(IKDOMElement *)arg1;
-- (void)setDocument:(IKDOMDocument *)arg1 forElement:(IKDOMElement *)arg2 :(NSDictionary *)arg3;
+- (IKDOMDocument *)getDocument:(IKJSObject *)arg1;
+- (void)setDocument:(IKDOMDocument *)arg1 :(IKJSObject *)arg2 :(NSDictionary *)arg3;
+- (void)setSelectedItem:(IKJSObject *)arg1 :(NSDictionary *)arg2;
 
 @end

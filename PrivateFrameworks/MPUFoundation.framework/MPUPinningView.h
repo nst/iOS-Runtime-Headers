@@ -6,10 +6,12 @@
     UIView *_containerView;
     UIView *_contentView;
     CALayer *_effectivePinningSourceLayer;
+    CALayer *_pinningSourceLayer;
     UIView *_pinningSourceView;
 }
 
 @property (nonatomic, retain) UIView *contentView;
+@property (nonatomic, retain) CALayer *pinningSourceLayer;
 @property (nonatomic, retain) UIView *pinningSourceView;
 
 - (void).cxx_destruct;
@@ -23,11 +25,15 @@
 - (id)contentView;
 - (void)dealloc;
 - (void)didMoveToWindow;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)pinningSourceLayer;
 - (id)pinningSourceView;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setContentView:(id)arg1;
+- (void)setPinningSourceLayer:(id)arg1;
 - (void)setPinningSourceView:(id)arg1;
 
 @end

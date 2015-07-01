@@ -8,6 +8,8 @@
 @property (nonatomic, copy) NSString *appName;
 @property (nonatomic, copy) NSDictionary *appNameMap;
 @property (nonatomic, copy) NSString *appVersion;
+@property (nonatomic, copy) NSString *carPlayAlternativeDisplayName;
+@property (nonatomic, copy) NSDictionary *carPlayAlternativeDisplayNameMap;
 @property (nonatomic, copy) NSString *displayAppName;
 @property (nonatomic, copy) NSDictionary *displayAppNameMap;
 @property (nonatomic, copy) NSNumber *isNanoApp;
@@ -27,6 +29,8 @@
 - (id)appName;
 - (id)appNameMap;
 - (id)appVersion;
+- (id)carPlayAlternativeDisplayName;
+- (id)carPlayAlternativeDisplayNameMap;
 - (id)displayAppName;
 - (id)displayAppNameMap;
 - (id)encodedClassName;
@@ -38,6 +42,8 @@
 - (void)setAppName:(id)arg1;
 - (void)setAppNameMap:(id)arg1;
 - (void)setAppVersion:(id)arg1;
+- (void)setCarPlayAlternativeDisplayName:(id)arg1;
+- (void)setCarPlayAlternativeDisplayNameMap:(id)arg1;
 - (void)setDisplayAppName:(id)arg1;
 - (void)setDisplayAppNameMap:(id)arg1;
 - (void)setIsNanoApp:(id)arg1;
@@ -55,6 +61,5 @@
 - (id)starkSupport;
 - (id)supportedCommands;
 - (id)supportedSchemes;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

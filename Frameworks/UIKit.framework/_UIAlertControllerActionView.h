@@ -41,8 +41,9 @@
 @property (readonly) Class superclass;
 @property UIAlertControllerVisualStyle *visualStyle;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void)_action:(id)arg1 changedToBeDefault:(BOOL)arg2;
-- (void)_action:(id)arg1 changedToChecked:(BOOL)arg2;
 - (void)_action:(id)arg1 changedToEnabled:(BOOL)arg2;
 - (void)_action:(id)arg1 changedToTitle:(id)arg2;
 - (void)_action:(id)arg1 changedToTitleTextAlignment:(int)arg2;
@@ -59,7 +60,6 @@
 - (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
-- (void)_prepareConstraints;
 - (void)_prepareConstraintsForDescriptiveText:(BOOL)arg1;
 - (void)_recomputeBackgroundColor;
 - (void)_recomputeTextColor;
@@ -68,9 +68,7 @@
 - (id)_touchForEvent:(id)arg1;
 - (void)_triggerSelect;
 - (void)_uninstallSelectGestureRecognizer;
-- (void)_updateBackgroundView;
 - (void)_updateFontSize;
-- (void)_updateLabelContainerConstraints;
 - (void)_updateMinimumHeight;
 - (void)_updateStyle;
 - (void)_updateTextAlignmentForDescriptiveText:(BOOL)arg1 titleTextAlignment:(int)arg2;
@@ -91,7 +89,6 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelectedTarget:(id)arg1 action:(SEL)arg2;
-- (void)setVisualStyle:(id)arg1;
 - (id)tintColor;
 - (void)tintColorDidChange;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
@@ -100,5 +97,18 @@
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (id)visualStyle;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)_action:(id)arg1 changedToChecked:(BOOL)arg2;
+- (void)_addCheckViewIfNeeded;
+- (void)_prepareConstraints;
+- (void)_setAction:(id)arg1;
+- (void)_updateBackgroundView;
+- (void)_updateLabelContainerConstraints;
+- (id)initWithAction:(id)arg1;
+- (void)layoutSubviews;
+- (id)reuseIdentifier;
+- (void)setVisualStyle:(id)arg1;
 
 @end

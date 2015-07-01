@@ -3,7 +3,6 @@
  */
 
 @interface SKUIEditorialComponent : SKUIPageComponent {
-    NSAttributedString *_bodyAttributedText;
     NSString *_bodyText;
     NSArray *_links;
     int _maximumBodyLines;

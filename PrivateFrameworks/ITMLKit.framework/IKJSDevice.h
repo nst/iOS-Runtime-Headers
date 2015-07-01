@@ -4,6 +4,7 @@
 
 @interface IKJSDevice : IKJSObject <IKJSDevice> {
     <IKAppDeviceConfig> *_deviceConfig;
+    id _isNetworkTypeChangedToken;
 }
 
 @property (nonatomic, readonly) NSString *appIdentifier;

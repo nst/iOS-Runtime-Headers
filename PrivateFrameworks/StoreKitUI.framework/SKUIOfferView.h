@@ -5,6 +5,7 @@
 @interface SKUIOfferView : SKUIViewReuseView <SKUIItemOfferButtonDelegate, SKUIViewElementView> {
     unsigned int _alignment;
     NSMapTable *_buttonElements;
+    NSMapTable *_buyButtonDescriptorToButton;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -39,7 +40,7 @@
 - (void)_cancelConfirmationAction:(id)arg1;
 - (void)_positionNoticeForItemOfferButton:(id)arg1;
 - (void)_sendWillAnimate;
-- (BOOL)_shouldHideNotices:(id)arg1 context:(id)arg2;
+- (BOOL)_shouldHideNoticesWithBuyButtonDescriptor:(id)arg1 context:(id)arg2;
 - (void)_showConfirmationAction:(id)arg1;
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

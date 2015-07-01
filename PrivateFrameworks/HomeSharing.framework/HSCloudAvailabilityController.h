@@ -15,11 +15,12 @@
     BOOL _isShowingAllVideo;
     BOOL _isUpdateInProgress;
     BOOL _isWiFiEnabled;
+    unsigned int _networkReachabilityObservationCount;
     int _networkType;
     int _preferencesChangedNotifyToken;
     BOOL _preferencesChangedNotifyTokenIsValid;
     RadiosPreferences *_radiosPreferences;
-    struct __SCNetworkReachability { } *reachabilityRef;
+    struct __SCNetworkReachability { } *_reachabilityRef;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -36,6 +37,8 @@
 - (BOOL)_hasWiFiCapability;
 - (BOOL)_isAutoDownloadOnCellularAllowed;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
+- (void)_onQueue_beginObservingReachabilityChanges;
+- (void)_onQueue_endObservingReachabilityChanges;
 - (void)_onQueue_updateCanShowCloudDownloadButtonsWithNotification:(BOOL)arg1;
 - (void)_onQueue_updateCanShowCloudTracksWithNotification:(BOOL)arg1;
 - (void)_setNewIsNetworkReachable:(BOOL)arg1;
@@ -44,10 +47,12 @@
 - (BOOL)_uncachedIsShowingAllVideo;
 - (void)_wifiEnabledDidChangeNotification:(id)arg1;
 - (void)airplaneModeChanged;
+- (void)beginObservingNetworkReachability;
 - (BOOL)canShowCloudDownloadButtons;
 - (BOOL)canShowCloudMusic;
 - (BOOL)canShowCloudVideo;
 - (void)dealloc;
+- (void)endObservingNetworkReachability;
 - (BOOL)hasProperNetworkConditionsToPlayMedia;
 - (id)init;
 - (BOOL)isCellularDataRestricted;

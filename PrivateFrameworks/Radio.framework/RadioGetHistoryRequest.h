@@ -3,10 +3,12 @@
  */
 
 @interface RadioGetHistoryRequest : RadioRequest {
+    NSNumber *_accountUniqueIdentifier;
     BOOL _aggregateSessions;
     BOOL _fetchForAccount;
     BOOL _includesAds;
     unsigned int _maxNumberOfTracks;
+    NSArray *_playActivityFeedEvents;
     RadioPlayEventCollection *_playEventCollection;
     SSURLConnectionRequest *_request;
     BOOL _shouldProcessCategories;
@@ -14,10 +16,12 @@
     long long _stationID;
 }
 
+@property (nonatomic, readonly, copy) NSNumber *accountUniqueIdentifier;
 @property (nonatomic) BOOL aggregateSessions;
 @property (nonatomic) BOOL fetchForAccount;
 @property (nonatomic) BOOL includesAds;
 @property (nonatomic) unsigned int maxNumberOfTracks;
+@property (nonatomic, copy) NSArray *playActivityFeedEvents;
 @property (nonatomic, copy) RadioPlayEventCollection *playEventCollection;
 @property (nonatomic) BOOL shouldProcessCategories;
 @property (nonatomic, copy) NSString *stationHash;
@@ -26,17 +30,20 @@
 - (void).cxx_destruct;
 - (id)_newHistoryCategoryWithDictionary:(id)arg1;
 - (id)_newHistoryItemWithDictionary:(id)arg1;
+- (id)accountUniqueIdentifier;
 - (BOOL)aggregateSessions;
 - (void)cancel;
 - (BOOL)fetchForAccount;
 - (BOOL)includesAds;
 - (id)init;
 - (unsigned int)maxNumberOfTracks;
+- (id)playActivityFeedEvents;
 - (id)playEventCollection;
 - (void)setAggregateSessions:(BOOL)arg1;
 - (void)setFetchForAccount:(BOOL)arg1;
 - (void)setIncludesAds:(BOOL)arg1;
 - (void)setMaxNumberOfTracks:(unsigned int)arg1;
+- (void)setPlayActivityFeedEvents:(id)arg1;
 - (void)setPlayEventCollection:(id)arg1;
 - (void)setShouldProcessCategories:(BOOL)arg1;
 - (void)setStationHash:(id)arg1;

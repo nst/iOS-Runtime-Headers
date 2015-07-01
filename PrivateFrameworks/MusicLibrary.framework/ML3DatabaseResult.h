@@ -25,6 +25,7 @@
 - (id)limitProperty;
 - (long long)limitValue;
 - (id)objectForFirstRowAndColumn;
+- (id)objectsInColumn:(unsigned int)arg1;
 - (id)rows;
 - (void)setLimitProperty:(id)arg1;
 - (void)setLimitProperty:(id)arg1 limitValue:(long long)arg2;

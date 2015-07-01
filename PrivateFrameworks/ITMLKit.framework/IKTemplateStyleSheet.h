@@ -3,13 +3,13 @@
  */
 
 @interface IKTemplateStyleSheet : NSObject {
-    IKViewElementStyle *_globalStyle;
+    NSMutableDictionary *_styleComposersByKeypath;
     IKStyleFactory *_styleFactory;
     NSMutableDictionary *_templateKeyPathMap;
     NSDictionary *_templateTree;
 }
 
-@property (nonatomic, readonly, retain) IKViewElementStyle *globalStyle;
+@property (nonatomic, readonly, retain) NSMutableDictionary *styleComposersByKeypath;
 @property (nonatomic, readonly, retain) IKStyleFactory *styleFactory;
 @property (nonatomic, readonly, retain) NSMutableDictionary *templateKeyPathMap;
 @property (nonatomic, readonly, copy) NSDictionary *templateTree;
@@ -19,10 +19,10 @@
 + (id)styleSheetForTemplateName:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)globalStyle;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
+- (id)styleComposerForElement:(id)arg1;
+- (id)styleComposersByKeypath;
 - (id)styleFactory;
-- (id)styleForElement:(id)arg1;
 - (id)templateKeyPathMap;
 - (id)templateTree;
 

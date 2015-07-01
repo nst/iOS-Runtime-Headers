@@ -2,8 +2,17 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDAlbumsViewController : MCDTableViewController
+@interface MCDAlbumsViewController : MCDTableViewController {
+    MPMediaPredicate *_compilationPredicate;
+}
 
++ (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
+
+- (void).cxx_destruct;
+- (void)_limitedUIDidChange;
+- (void)_updateQuery;
+- (void)dealloc;
+- (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 
 @end

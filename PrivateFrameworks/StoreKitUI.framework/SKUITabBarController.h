@@ -10,7 +10,6 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) UIViewController *floatingOverlayViewController;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
@@ -28,7 +27,6 @@
 - (void)setFloatingOverlayViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setTabBarBackdropStyle:(int)arg1;
 - (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
-- (id)skui_activeNavigationController;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 

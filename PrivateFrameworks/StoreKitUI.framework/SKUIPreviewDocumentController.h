@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIPreviewDocumentController : NSObject <IKAppDocumentDelegate> {
+@interface SKUIPreviewDocumentController : NSObject <IKAppDocumentDelegate, SKUIStatusOverlayProvider> {
     SUAudioPlayer *_audioPlayer;
     SKUIClientContext *_clientContext;
     IKAppDocument *_document;
@@ -29,7 +29,7 @@
 - (void)documentNeedsUpdate:(id)arg1;
 - (id)initWithDocument:(id)arg1;
 - (BOOL)isPreviewActive;
-- (id)newPreviewOverlayViewControllerWithBackgroundStyle:(int)arg1;
+- (id)overlayViewControllerWithBackgroundStyle:(int)arg1;
 - (void)setClientContext:(id)arg1;
 
 @end

@@ -51,7 +51,7 @@
 - (void)setThumbnailImageAccessibilityText:(id)arg1;
 - (void)setThumbnailImagePlaceholder:(id)arg1;
 - (void)setThumbnailMaxSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)setThumbnailOverlayImage:(id)arg1 position:(unsigned int)arg2;
+- (void)setThumbnailOverlayImage:(id)arg1;
 - (void)setTitleText:(id)arg1;
 - (void)setZoomingImageTransitionIdentifier:(id)arg1;
 - (id)subtitleTextStyle;

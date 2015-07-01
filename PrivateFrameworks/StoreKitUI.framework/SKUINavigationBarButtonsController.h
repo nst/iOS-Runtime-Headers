@@ -4,6 +4,7 @@
 
 @interface SKUINavigationBarButtonsController : SKUINavigationBarSectionController <SKUIItemOfferButtonDelegate> {
     NSMapTable *_buttonItemElements;
+    NSMapTable *_buttonItemToImageResourceCacheKey;
     SKUINavigationBarViewElement *_navigationBarElement;
 }
 

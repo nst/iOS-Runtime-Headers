@@ -49,8 +49,11 @@
 - (id)_tableCellsBackgroundColor;
 - (id)_tableCellsContentColor;
 - (id)_tableView;
+- (float)_tableViewFooterViewHeight;
+- (float)_tableViewHeaderViewHeight;
 - (float)_tableViewHeightAccordingToDataSource;
 - (unsigned int)_tableViewIndexForRouteIndex:(unsigned int)arg1;
+- (unsigned int)_tableViewNumberOfRows;
 - (void)_updateDisplayedRoutes;
 - (BOOL)allowMirroring;
 - (unsigned int)avItemType;

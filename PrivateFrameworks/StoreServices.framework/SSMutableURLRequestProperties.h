@@ -23,8 +23,10 @@
 @property (copy) NSString *clientIdentifier;
 @property long long expectedContentLength;
 @property (getter=isLargeDownload) BOOL largeDownload;
+@property int machineDataStyle;
 @property unsigned int networkServiceType;
 @property (copy) NSDictionary *requestParameters;
+@property BOOL requiresCellularDataNetwork;
 @property BOOL requiresExtendedValidationCertificates;
 @property BOOL requiresHTTPS;
 @property BOOL shouldAddKBSyncData;
@@ -54,9 +56,11 @@
 - (void)setITunesStoreRequest:(BOOL)arg1;
 - (void)setKBSyncType:(int)arg1;
 - (void)setLargeDownload:(BOOL)arg1;
+- (void)setMachineDataStyle:(int)arg1;
 - (void)setMultiPartFormDataWithDictionary:(id)arg1;
 - (void)setNetworkServiceType:(unsigned int)arg1;
 - (void)setRequestParameters:(id)arg1;
+- (void)setRequiresCellularDataNetwork:(BOOL)arg1;
 - (void)setRequiresExtendedValidationCertificates:(BOOL)arg1;
 - (void)setRequiresHTTPS:(BOOL)arg1;
 - (void)setShouldAddKBSyncData:(BOOL)arg1;
@@ -79,7 +83,6 @@
 // Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
 
 + (id)newForRadioRequestURL:(id)arg1;
-
-- (void)radio_mescalSignWithCompletionHandler:(id /* block */)arg1;
++ (id)newForRadioRequestURL:(id)arg1 accountUniqueIdentifier:(id)arg2;
 
 @end

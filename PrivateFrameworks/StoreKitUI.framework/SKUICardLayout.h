@@ -4,6 +4,7 @@
 
 @interface SKUICardLayout : NSObject {
     SKUICardViewElement *_cardViewElement;
+    BOOL _hasBackground;
     SKUIViewElementLayoutContext *_layoutContext;
 }
 

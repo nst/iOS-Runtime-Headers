@@ -5,7 +5,8 @@
 
 @required
 
-- (IKAppDocument *)documentForMenuItemWithElementID:(NSString *)arg1;
-- (void)setDocument:(IKAppDocument *)arg1 forMenuItemWithElementID:(NSString *)arg2 withOptions:(NSDictionary *)arg3;
+- (IKAppDocument *)jsMenuBarDocument:(IKJSMenuBarDocument *)arg1 documentForEntityUniqueIdentifier:(id <NSCopying>)arg2;
+- (void)jsMenuBarDocument:(IKJSMenuBarDocument *)arg1 setDocument:(IKAppDocument *)arg2 forEntityUniqueIdentifier:(id <NSCopying>)arg3 withOptions:(NSDictionary *)arg4;
+- (void)jsMenuBarDocument:(IKJSMenuBarDocument *)arg1 setSelectedEntityUniqueIdentifier:(id <NSCopying>)arg2 withOptions:(NSDictionary *)arg3;
 
 @end

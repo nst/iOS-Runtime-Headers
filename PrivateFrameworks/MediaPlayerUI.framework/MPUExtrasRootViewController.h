@@ -33,8 +33,10 @@
 
 - (void).cxx_destruct;
 - (void)_applyMainTemplateOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (void)_attemptRestart;
 - (id)_createDataStorageForIdentifier:(id)arg1;
 - (void)_finalizeMainTemplateOffset:(BOOL)arg1;
+- (void)_registerIKStylesAndElements;
 - (BOOL)_setMainDocumentWithViewController:(id)arg1;
 - (void)_setNavigationController:(id)arg1;
 - (void)_setUpForApplication;

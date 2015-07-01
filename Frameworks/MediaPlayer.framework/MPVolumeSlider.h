@@ -30,10 +30,12 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitRectInsets;
 @property (nonatomic, retain) MPAVController *player;
+@property (nonatomic, readonly) MPAVRoutingController *routingController;
 @property (nonatomic, readonly) int style;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *volumeAudioCategory;
 @property (nonatomic, retain) UIImage *volumeWarningTrackImage;
+@property (nonatomic, readonly) UIView *volumeWarningView;
 
 - (void).cxx_destruct;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
@@ -71,6 +73,7 @@
 - (float)minimumValue;
 - (id)player;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)routingController;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
 - (void)setAlpha:(float)arg1;
 - (void)setHidden:(BOOL)arg1;
@@ -88,5 +91,6 @@
 - (void)volumeController:(id)arg1 EUVolumeLimitEnforcedDidChange:(BOOL)arg2;
 - (void)volumeController:(id)arg1 volumeValueDidChange:(float)arg2;
 - (id)volumeWarningTrackImage;
+- (id)volumeWarningView;
 
 @end

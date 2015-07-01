@@ -3,10 +3,13 @@
  */
 
 @interface SKUIStackedImageView : SKUIImageView <MPUStackViewDataSource> {
+    MPUBorderConfiguration *_borderConfiguration;
+    MPUBorderDrawingCache *_borderDrawingCache;
     int _stackDepth;
     MPUStackView *_stackView;
 }
 
+@property (nonatomic, retain) MPUBorderDrawingCache *borderDrawingCache;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -18,12 +21,16 @@
 + (float)maximumPerspectiveHeightForSize:(struct CGSize { float x1; float x2; })arg1;
 
 - (void).cxx_destruct;
+- (id)borderDrawingCache;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (int)numberOfItemsInStackView:(id)arg1;
 - (void)performCompressionAnimationWithCompletionHandler:(id /* block */)arg1;
 - (id)perspectiveTargetView;
+- (void)setBorderDrawingCache:(id)arg1;
+- (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPerspectiveTargetView:(id)arg1;

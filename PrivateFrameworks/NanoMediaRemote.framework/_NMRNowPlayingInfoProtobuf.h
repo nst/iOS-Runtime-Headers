@@ -17,10 +17,12 @@
         unsigned int playbackRate : 1; 
         unsigned int repeatMode : 1; 
         unsigned int shuffleMode : 1; 
+        unsigned int isAdvertisement : 1; 
         unsigned int isAlwaysLive : 1; 
         unsigned int isExplicitTrack : 1; 
         unsigned int isMusicApp : 1; 
     } _has;
+    BOOL _isAdvertisement;
     BOOL _isAlwaysLive;
     BOOL _isExplicitTrack;
     BOOL _isMusicApp;
@@ -45,6 +47,7 @@
 @property (nonatomic, readonly) BOOL hasArtworkDataDigest;
 @property (nonatomic) BOOL hasDuration;
 @property (nonatomic) BOOL hasElapsedTime;
+@property (nonatomic) BOOL hasIsAdvertisement;
 @property (nonatomic) BOOL hasIsAlwaysLive;
 @property (nonatomic) BOOL hasIsExplicitTrack;
 @property (nonatomic) BOOL hasIsMusicApp;
@@ -57,6 +60,7 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, readonly) BOOL hasTitle;
 @property (nonatomic) BOOL hasUniqueIdentifier;
+@property (nonatomic) BOOL isAdvertisement;
 @property (nonatomic) BOOL isAlwaysLive;
 @property (nonatomic) BOOL isExplicitTrack;
 @property (nonatomic) BOOL isMusicApp;
@@ -85,6 +89,7 @@
 - (BOOL)hasArtworkDataDigest;
 - (BOOL)hasDuration;
 - (BOOL)hasElapsedTime;
+- (BOOL)hasIsAdvertisement;
 - (BOOL)hasIsAlwaysLive;
 - (BOOL)hasIsExplicitTrack;
 - (BOOL)hasIsMusicApp;
@@ -98,6 +103,7 @@
 - (BOOL)hasTitle;
 - (BOOL)hasUniqueIdentifier;
 - (unsigned int)hash;
+- (BOOL)isAdvertisement;
 - (BOOL)isAlwaysLive;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExplicitTrack;
@@ -116,6 +122,7 @@
 - (void)setElapsedTime:(double)arg1;
 - (void)setHasDuration:(BOOL)arg1;
 - (void)setHasElapsedTime:(BOOL)arg1;
+- (void)setHasIsAdvertisement:(BOOL)arg1;
 - (void)setHasIsAlwaysLive:(BOOL)arg1;
 - (void)setHasIsExplicitTrack:(BOOL)arg1;
 - (void)setHasIsMusicApp:(BOOL)arg1;
@@ -125,6 +132,7 @@
 - (void)setHasShuffleMode:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setHasUniqueIdentifier:(BOOL)arg1;
+- (void)setIsAdvertisement:(BOOL)arg1;
 - (void)setIsAlwaysLive:(BOOL)arg1;
 - (void)setIsExplicitTrack:(BOOL)arg1;
 - (void)setIsMusicApp:(BOOL)arg1;

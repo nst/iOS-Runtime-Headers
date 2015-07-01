@@ -10,6 +10,7 @@
     unsigned int _libraryContentFlags;
     int _mediaCategory;
     unsigned int _state;
+    SKUIStoreIdentifier *_storeIdentifier;
     NSString *_variantIdentifier;
 }
 
@@ -22,6 +23,7 @@
 @property (nonatomic) unsigned int libraryContentFlags;
 @property (nonatomic) int mediaCategory;
 @property (nonatomic) unsigned int state;
+@property (nonatomic, copy) SKUIStoreIdentifier *storeIdentifier;
 @property (nonatomic, copy) NSString *variantIdentifier;
 
 - (void).cxx_destruct;
@@ -42,8 +44,10 @@
 - (void)setLibraryContentFlags:(unsigned int)arg1;
 - (void)setMediaCategory:(int)arg1;
 - (void)setState:(unsigned int)arg1;
+- (void)setStoreIdentifier:(id)arg1;
 - (void)setVariantIdentifier:(id)arg1;
 - (unsigned int)state;
+- (id)storeIdentifier;
 - (id)variantIdentifier;
 
 @end

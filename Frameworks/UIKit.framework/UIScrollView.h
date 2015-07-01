@@ -595,6 +595,11 @@
 - (void)__ck_scrollToTop:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })__ck_scrollToTopContentOffset;
 
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)music_beginHidingVerticalScrollIndicator;
+- (void)music_endHidingVerticalScrollIndicator;
+
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 
 - (id)keyForContentMode:(int)arg1;

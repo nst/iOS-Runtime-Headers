@@ -15,6 +15,7 @@
     NSString *_localStoreFrontIdentifier;
     BOOL _localStoreFrontIsTransient;
     id _mediaLibraryIdentifier;
+    NSString *_phoneNumber;
     BOOL _pluggedIn;
     int _pluggedInToken;
     int _powerMonitorCount;
@@ -22,6 +23,8 @@
     NSString *_productVersion;
     id _softwareLibraryIdentifier;
     NSString *_synchedStoreFrontIdentifier;
+    int _telephonyCapability;
+    NSString *_udid;
     SSURLBag *_urlBag;
     NSString *_userAgent;
 }
@@ -36,14 +39,17 @@
 @property (readonly) unsigned int hash;
 @property (readonly) NSString *legacyUserAgent;
 @property (copy) NSString *mediaLibraryIdentifier;
+@property (readonly) NSString *phoneNumber;
 @property (getter=isPluggedIn, readonly) BOOL pluggedIn;
 @property (readonly) NSString *productType;
 @property (readonly) NSString *productVersion;
+@property (readonly) NSString *serialNumber;
 @property (copy) NSString *softwareLibraryIdentifier;
 @property (readonly) NSString *storeFrontIdentifier;
 @property (getter=isStoreFrontIdentifierTransient, readonly) BOOL storeFrontIdentifierTransient;
 @property (readonly) Class superclass;
 @property (readonly) NSString *synchedStoreFrontIdentifier;
+@property (readonly) NSString *uniqueDeviceIdentifier;
 @property (readonly) NSString *userAgent;
 
 + (id)copyCachedAvailableItemKinds;
@@ -55,6 +61,7 @@
 
 - (id)_appleTVProductVersion;
 - (void)_cacheKeyValueStoreValues;
+- (id)_copyCarrierBundleEligibilityWithStatus:(id)arg1;
 - (id)_copyKeyValueStoreValueForDomain:(id)arg1 key:(id)arg2;
 - (id)_copyProductType;
 - (int)_deviceClass;
@@ -67,6 +74,7 @@
 - (id)_diskCapacityString;
 - (id)_fairPlayDeviceTypeString;
 - (BOOL)_getDeviceType:(unsigned int*)arg1 error:(id*)arg2;
+- (void)_invalidatePhoneNumber;
 - (void)_invalidateSoftwareCUID;
 - (BOOL)_is1080pCapable;
 - (BOOL)_is720pCapable;
@@ -84,6 +92,7 @@
 - (id)_userAgentClientNameForInfoPlist:(id)arg1;
 - (id)automaticDownloadKinds;
 - (double)batteryLevel;
+- (id)carrierBundleStatusForService:(int)arg1;
 - (id)cloudMediaLibraryIdentifier;
 - (id)copyStoreFrontRequestHeaders;
 - (void)dealloc;
@@ -91,7 +100,9 @@
 - (unsigned long)deviceTypeIdentifier;
 - (void)enableAllAutomaticDownloadKindsWithCompletionBlock:(id /* block */)arg1;
 - (void)getAvailableItemKindsWithBlock:(id /* block */)arg1;
+- (void)getCarrierBundleStatusForService:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)getCellularNetworkingAllowedWithBlock:(id /* block */)arg1;
+- (BOOL)getMachineIdentifier:(id*)arg1 otp:(id*)arg2 forAccountIdentifier:(id)arg3;
 - (id)init;
 - (BOOL)isPluggedIn;
 - (BOOL)isStoreFrontIdentifierTransient;
@@ -99,10 +110,12 @@
 - (void)loadStoreFrontWithCompletionHandler:(id /* block */)arg1;
 - (id)mediaLibraryIdentifier;
 - (void)minusAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (id)phoneNumber;
 - (id)productType;
 - (id)productVersion;
 - (void)reloadStoreFrontIdentifier;
 - (void)resetStoreFrontForSignOut;
+- (id)serialNumber;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)setCellularNetworkingAllowed:(BOOL)arg1;
 - (void)setCloudMediaLibraryIdentifier:(id)arg1;
@@ -121,6 +134,7 @@
 - (id)synchedStoreFrontIdentifier;
 - (void)synchronizeAutomaticDownloadKinds;
 - (void)unionAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id /* block */)arg2;
+- (id)uniqueDeviceIdentifier;
 - (id)userAgent;
 - (id)userAgentWithBundleIdentifier:(id)arg1 version:(id)arg2;
 - (id)userAgentWithClientName:(id)arg1 version:(id)arg2;

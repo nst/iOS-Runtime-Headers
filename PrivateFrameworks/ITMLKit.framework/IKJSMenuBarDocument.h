@@ -9,9 +9,11 @@
 @property (nonatomic) <IKJSMenuBarDocumentAppBridge> *appBridge;
 
 - (void).cxx_destruct;
+- (id)_entityUniqueIdentifierForObject:(id)arg1;
 - (id)appBridge;
-- (id)getDocumentForElement:(id)arg1;
+- (id)getDocument:(id)arg1;
 - (void)setAppBridge:(id)arg1;
-- (void)setDocument:(id)arg1 forElement:(id)arg2 :(id)arg3;
+- (void)setDocument:(id)arg1 :(id)arg2 :(id)arg3;
+- (void)setSelectedItem:(id)arg1 :(id)arg2;
 
 @end

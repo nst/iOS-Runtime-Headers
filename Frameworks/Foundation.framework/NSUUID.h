@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSUUID : NSObject <NSCopying, NSSecureCoding, PQLValuable>
+@interface NSUUID : NSObject <NSCopying, NSSecureCoding, PASerializable, PQLValuable>
 
 @property (readonly, copy) NSString *UUIDString;
 @property (readonly, copy) NSString *debugDescription;
@@ -59,6 +59,16 @@
 // Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
 - (id)description;
+
+// Image: /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/PerformanceAnalysis
+
++ (id)classDictionaryKey;
++ (id)newInstanceWithoutReferencesFromBufferPosition:(const void*)arg1;
+
+- (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
+- (unsigned long)sizeInBytesForSerializedVersion;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

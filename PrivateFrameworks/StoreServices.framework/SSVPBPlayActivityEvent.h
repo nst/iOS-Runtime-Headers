@@ -35,6 +35,7 @@
     BOOL _offline;
     long long _persistentID;
     NSString *_personalizedContainerID;
+    NSData *_recommendationData;
     BOOL _sBEnabled;
     int _sourceType;
     unsigned long long _storeAccountID;
@@ -67,6 +68,7 @@
 @property (nonatomic) BOOL hasOffline;
 @property (nonatomic) BOOL hasPersistentID;
 @property (nonatomic, readonly) BOOL hasPersonalizedContainerID;
+@property (nonatomic, readonly) BOOL hasRecommendationData;
 @property (nonatomic) BOOL hasSBEnabled;
 @property (nonatomic) BOOL hasSourceType;
 @property (nonatomic) BOOL hasStoreAccountID;
@@ -81,6 +83,7 @@
 @property (nonatomic) BOOL offline;
 @property (nonatomic) long long persistentID;
 @property (nonatomic, retain) NSString *personalizedContainerID;
+@property (nonatomic, retain) NSData *recommendationData;
 @property (nonatomic) BOOL sBEnabled;
 @property (nonatomic) int sourceType;
 @property (nonatomic) unsigned long long storeAccountID;
@@ -117,6 +120,7 @@
 - (BOOL)hasOffline;
 - (BOOL)hasPersistentID;
 - (BOOL)hasPersonalizedContainerID;
+- (BOOL)hasRecommendationData;
 - (BOOL)hasSBEnabled;
 - (BOOL)hasSourceType;
 - (BOOL)hasStoreAccountID;
@@ -135,6 +139,7 @@
 - (long long)persistentID;
 - (id)personalizedContainerID;
 - (BOOL)readFrom:(id)arg1;
+- (id)recommendationData;
 - (BOOL)sBEnabled;
 - (void)setContainerID:(id)arg1;
 - (void)setContainerType:(int)arg1;
@@ -166,6 +171,7 @@
 - (void)setOffline:(BOOL)arg1;
 - (void)setPersistentID:(long long)arg1;
 - (void)setPersonalizedContainerID:(id)arg1;
+- (void)setRecommendationData:(id)arg1;
 - (void)setSBEnabled:(BOOL)arg1;
 - (void)setSourceType:(int)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;

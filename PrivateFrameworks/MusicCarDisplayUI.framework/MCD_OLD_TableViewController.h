@@ -4,6 +4,8 @@
 
 @interface MCD_OLD_TableViewController : UITableViewController {
     BOOL _alwaysShowNavBar;
+    AVExternalDevice *_externalDevice;
+    BOOL _limitedUI;
     UIView *_nowPlayingButton;
     MPAVController *_player;
     MPMediaQuery *_query;
@@ -12,6 +14,7 @@
 }
 
 @property (nonatomic) BOOL alwaysShowNavBar;
+@property (nonatomic) BOOL limitedUI;
 @property (nonatomic, readonly) MPAVController *player;
 @property (nonatomic, readonly) MPMediaQuery *query;
 @property (nonatomic, readonly) <MCDCarDisplayServiceProvider> *serviceProvider;
@@ -29,11 +32,13 @@
 - (id)dequeueReusableCarDisplayCellForTableView:(id)arg1 indexPath:(id)arg2;
 - (BOOL)hasRowsToDisplay;
 - (id)initWithQuery:(id)arg1 player:(id)arg2 serviceProvider:(id)arg3;
+- (BOOL)limitedUI;
 - (id)player;
 - (id)preferredFocusedItem;
 - (id)query;
 - (id)serviceProvider;
 - (void)setAlwaysShowNavBar:(BOOL)arg1;
+- (void)setLimitedUI:(BOOL)arg1;
 - (void)setViewHasAppeared:(BOOL)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

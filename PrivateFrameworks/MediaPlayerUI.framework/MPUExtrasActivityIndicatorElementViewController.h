@@ -6,8 +6,6 @@
     MPUExtrasActivityIndicator *_activityView;
 }
 
-@property (nonatomic, readonly) IKActivityIndicatorElement *viewElement;
-
 - (void).cxx_destruct;
 - (void)_prepareLayout;
 - (BOOL)matchParentHeight;

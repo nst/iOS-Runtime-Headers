@@ -2,31 +2,40 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPAVItem : NSObject {
+@interface MPAVItem : NSObject <MPAVMetadataItem, MusicEntityValueProviding, RURadioItemIdentifier> {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     unsigned int _advancedDuringPlayback;
     long long _albumStoreID;
+    BOOL _allowsAirPlayFromCloud;
+    BOOL _allowsExternalPlayback;
     MPAlternateTracks *_alternateTracks;
     NSArray *_artworkTimeMarkers;
     AVAsset *_asset;
+    NSError *_assetError;
     NSObject<OS_dispatch_queue> *_assetQueue;
     AVPlayerItem *_avPlayerItem;
     NSArray *_buyOffers;
     double _cachedDuration;
     double _cachedPlayableDuration;
     NSArray *_cachedSeekableTimeRanges;
+    BOOL _canReusePlayerItem;
     NSArray *_chapterTimeMarkers;
     NSArray *_closedCaptionTimeMarkers;
     NSString *_copyrightText;
+    float _currentPlaybackRate;
     float _defaultPlaybackRate;
     BOOL _didAttemptToLoadAsset;
     MPQueueFeeder *_feeder;
     unsigned int _handledFinishTime;
     unsigned int _hasPlayedThisSession;
     BOOL _hasPostedNaturalSizeChange;
+    BOOL _hasRegisteredForCaptionsAppearanceChanged;
     BOOL _hasValidPlayerItemDuration;
     unsigned int _indexInQueueFeeder;
     BOOL _isAssetLoaded;
     unsigned int _isStreamable;
+    int _likedState;
+    BOOL _likedStateEnabled;
     BOOL _limitReadAhead;
     float _loudnessInfoVolumeNormalization;
     unsigned int _lyricsAvailable;
@@ -38,9 +47,13 @@
         unsigned int flags; 
         long long epoch; 
     } _playerItemDuration;
+    <MPAVItemPlaylistIdentifier> *_playlistIdentifier;
+    <MPAVItemQueueIdentifier> *_queueIdentifier;
     double _seekableTimeRangesCacheTime;
     float _soundCheckVolumeNormalization;
-    long long _storeID;
+    long long _storeItemInt64ID;
+    long long _storeSubscriptionAdamID;
+    BOOL _supportsLikedState;
     unsigned int _timeMarkersNeedLoading;
     unsigned int _type;
     NSArray *_urlTimeMarkers;
@@ -49,8 +62,12 @@
     unsigned int _watchingAttributes;
 }
 
+@property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;
+@property (getter=_currentPlaybackRate, setter=_setCurrentPlaybackRate:, nonatomic) float _currentPlaybackRate;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } _playerItemDurationIfAvailable;
 @property (nonatomic, readonly) AVPlayerItemAccessLog *accessLog;
 @property (nonatomic, readonly) RURadioAdTrack *adTrack;
+@property (nonatomic, readonly, copy) NSString *aggregateDictionaryItemIdentifier;
 @property (nonatomic, readonly) NSString *album;
 @property (nonatomic, readonly) NSString *albumArtist;
 @property (nonatomic, readonly, copy) NSString *albumBuyButtonText;
@@ -58,23 +75,28 @@
 @property (nonatomic, readonly) long long albumStoreID;
 @property (nonatomic, readonly) unsigned int albumTrackCount;
 @property (nonatomic, readonly) unsigned int albumTrackNumber;
+@property (nonatomic, readonly) BOOL allowsAirPlayFromCloud;
 @property (nonatomic, readonly) BOOL allowsEQ;
+@property (nonatomic, readonly) BOOL allowsExternalPlayback;
 @property (nonatomic, readonly) MPAlternateTracks *alternateTracks;
 @property (nonatomic, readonly) NSString *artist;
 @property (nonatomic, retain) NSArray *artworkTimeMarkers;
 @property (nonatomic, readonly) AVAsset *asset;
+@property (nonatomic, retain) NSError *assetError;
 @property (nonatomic, readonly, copy) NSString *assetFlavor;
 @property (nonatomic, readonly) RadioAudioClip *audioClip;
 @property (nonatomic, readonly, copy) NSArray *buyOffers;
+@property (nonatomic, readonly) BOOL canReusePlayerItem;
 @property (nonatomic, readonly) BOOL canSeedGenius;
 @property (nonatomic, retain) NSArray *chapterTimeMarkers;
 @property (nonatomic, retain) NSArray *closedCaptionTimeMarkers;
 @property (nonatomic, readonly) NSString *composer;
 @property (nonatomic, readonly, copy) NSString *copyrightText;
-@property (nonatomic, readonly) unsigned int countForQueueFeeder;
 @property (nonatomic, readonly) double currentTimeDisplayOverride;
 @property (nonatomic, readonly) int customAVEQPreset;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) float defaultPlaybackRate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL didAttemptToLoadAsset;
 @property (nonatomic, readonly) unsigned int discCount;
 @property (nonatomic, readonly) unsigned int discNumber;
@@ -91,23 +113,28 @@
 @property (nonatomic, readonly) NSString *genre;
 @property (nonatomic, readonly) BOOL hasDisplayableText;
 @property (nonatomic) BOOL hasPlayedThisSession;
+@property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int indexInQueueFeeder;
 @property (nonatomic, readonly) BOOL isAd;
 @property (nonatomic, readonly) BOOL isAlwaysLive;
 @property BOOL isAssetLoaded;
 @property (nonatomic, readonly) BOOL isCloudItem;
 @property (nonatomic, readonly) BOOL isRadioItem;
-@property (nonatomic, readonly) BOOL isStreamingQuality;
+@property (nonatomic, readonly) BOOL isStreamingLowQualityAsset;
+@property (nonatomic) int likedState;
+@property (getter=isLikedStateEnabled, nonatomic, readonly) BOOL likedStateEnabled;
+@property (nonatomic) BOOL limitReadAhead;
 @property (nonatomic, readonly) NSString *localizedPositionInPlaylistString;
 @property (nonatomic) float loudnessInfoVolumeNormalization;
 @property (nonatomic, readonly) NSString *lyrics;
 @property (nonatomic, readonly) NSString *mainTitle;
 @property (nonatomic, readonly, retain) MPMediaItem *mediaItem;
 @property (nonatomic, readonly, copy) NSString *mpuReporting_externalID;
-@property (nonatomic, readonly, copy) NSString *mpuReporting_featureName;
 @property (nonatomic, readonly) BOOL mpuReporting_isValidReportingItem;
 @property (nonatomic, readonly) unsigned int mpuReporting_itemType;
+@property (nonatomic, readonly, copy) NSData *mpuReporting_jingleTimedMetadata;
 @property (nonatomic, readonly) BOOL mpuReporting_shouldReportPlayEventsToStore;
+@property (nonatomic, readonly) BOOL mpuReporting_shouldUseRelativeTimePositions;
 @property (nonatomic, readonly, copy) NSString *mpuReporting_storeItemID;
 @property (nonatomic, readonly, copy) NSData *mpuReporting_trackInfo;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } naturalSize;
@@ -116,16 +143,23 @@
 @property (nonatomic, readonly) double playableDurationIfAvailable;
 @property (nonatomic) double playbackCheckpointCurrentTime;
 @property (nonatomic) MPAVController *player;
-@property (nonatomic, readonly) AVPlayerItem *playerItem;
+@property (nonatomic, retain) AVPlayerItem *playerItem;
+@property (nonatomic, retain) <MPAVItemPlaylistIdentifier> *playlistIdentifier;
 @property (nonatomic, readonly) NSURL *podcastURL;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } presentationSize;
+@property (nonatomic, retain) <MPAVItemQueueIdentifier> *queueIdentifier;
 @property (nonatomic, readonly) RadioTrack *radioTrack;
 @property (nonatomic, retain) MPAlternateTextTrack *selectedAlternateTextTrack;
 @property (nonatomic) float soundCheckVolumeNormalization;
 @property (nonatomic, readonly) int status;
-@property (nonatomic, readonly) long long storeID;
+@property (nonatomic, readonly) MPStoreDownload *storeDownload;
+@property (nonatomic, readonly) NSString *storeItemID;
+@property (nonatomic, readonly) long long storeItemInt64ID;
+@property (nonatomic, readonly) long long storeSubscriptionAdamID;
 @property (nonatomic, readonly) RadioStreamTrack *streamTrack;
 @property (getter=isStreamable, nonatomic, readonly) BOOL streamable;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL supportsLikedState;
 @property (nonatomic, readonly) BOOL supportsRadioTrackActions;
 @property (nonatomic, readonly) BOOL supportsRewindAndFastForward15Seconds;
 @property (nonatomic, readonly) BOOL supportsSettingCurrentTime;
@@ -139,7 +173,8 @@
 @property (nonatomic) BOOL userAdvancedDuringPlayback;
 @property (nonatomic) BOOL userChangedItemsDuringPlayback;
 @property (nonatomic, readonly) float userRating;
-@property (nonatomic, copy) NSString *videoID;
+@property (nonatomic) BOOL userSkippedPlayback;
+@property (nonatomic, readonly) BOOL usesSubscriptionLease;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -149,27 +184,38 @@
 + (void)setDefaultScaleMode:(unsigned int)arg1;
 
 - (void).cxx_destruct;
-- (void)MPSPWD_prioritizeDownloadSession;
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_captionAppearanceSettingsChanged;
 - (void)_checkAllowsBlockingDurationCall;
 - (void)_clearAsset;
+- (float)_currentPlaybackRate;
+- (void)_currentPlaybackRateDidChange:(float)arg1;
 - (double)_durationFromExternalMetadataIfAvailable;
 - (double)_durationInSeconds;
+- (void)_handleUpdatedLikedState:(int)arg1 completion:(id /* block */)arg2;
 - (id)_imageChapterTrackIDsForAsset:(id)arg1;
+- (void)_internalLikedStateDidChangeNotification:(id)arg1;
 - (void)_itemAttributeAvailableKey:(id)arg1;
+- (void)_likedStateDidChange;
 - (void)_loadAssetAndPlayerItem;
 - (void)_loadAssetProperties;
+- (void)_loadMediaItemWithCompletionHandler:(id /* block */)arg1;
 - (void)_loadTimeMarkersAsync;
 - (void)_loadTimeMarkersBlocking;
+- (int)_persistedLikedState;
 - (double)_playableDurationForLoadedTimeRanges:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_playerItemDurationIfAvailable;
 - (void)_playerItemNewAccessLogEntryNotification:(id)arg1;
 - (void)_realoadEmbeddedTimeMarkers;
 - (void)_releaseAllTimeMarkers;
 - (id)_seekableTimeRanges;
+- (void)_setCurrentPlaybackRate:(float)arg1;
+- (void)_setListeningForCaptionsAppearanceSettingsChanged:(BOOL)arg1;
+- (void)_setNeedsPersistedLikedStateUpdate;
 - (id)_timeMarkerFromMarkers:(id)arg1 forTime:(double)arg2;
 - (void)_updateSoundCheckVolumeNormalizationForPlayerItem;
+- (void)_willBecomeActivePlayerItem;
+- (void)_willResignActivePlayerItem;
 - (id)accessLog;
 - (id)aggregateDictionaryItemIdentifier;
 - (id)album;
@@ -177,16 +223,21 @@
 - (long long)albumStoreID;
 - (unsigned int)albumTrackCount;
 - (unsigned int)albumTrackNumber;
+- (BOOL)allowsAirPlayFromCloud;
 - (BOOL)allowsEQ;
+- (BOOL)allowsExternalPlayback;
 - (id)alternateTracks;
 - (unsigned int)alternatesCountForTypes:(unsigned int)arg1;
+- (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1;
 - (id)artist;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)artworkTimeMarkerForTime:(double)arg1;
 - (id)artworkTimeMarkers;
 - (id)asset;
+- (id)assetError;
 - (id /* block */)blockForDirectAVControllerNotificationReferencingItem:(id)arg1;
 - (id)buyOffers;
+- (BOOL)canReusePlayerItem;
 - (BOOL)canSeedGenius;
 - (id)chapterTimeMarkerForTime:(double)arg1;
 - (id)chapterTimeMarkers;
@@ -194,7 +245,6 @@
 - (id)closedCaptionTimeMarkers;
 - (id)composer;
 - (id)copyrightText;
-- (unsigned int)countForQueueFeeder;
 - (double)currentTimeDisplayOverride;
 - (int)customAVEQPreset;
 - (void)dealloc;
@@ -230,10 +280,12 @@
 - (BOOL)isAssetURLValid;
 - (BOOL)isCloudItem;
 - (BOOL)isExplicitTrack;
+- (BOOL)isLikedStateEnabled;
 - (BOOL)isStreamable;
-- (BOOL)isStreamingQuality;
+- (BOOL)isStreamingLowQualityAsset;
 - (BOOL)isSupportedDefaultPlaybackSpeed:(unsigned int)arg1;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
+- (int)likedState;
 - (BOOL)limitReadAhead;
 - (void)loadAssetAndPlayerItem;
 - (id)localeForAssetTrack:(id)arg1;
@@ -254,8 +306,11 @@
 - (float)playbackRateForLevel:(unsigned int)arg1 direction:(int)arg2 paused:(BOOL)arg3;
 - (id)player;
 - (id)playerItem;
+- (id)playlistIdentifier;
 - (id)podcastURL;
+- (void)prepareForRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (struct CGSize { float x1; float x2; })presentationSize;
+- (id)queueIdentifier;
 - (void)reevaluateType;
 - (void)replaceOutOfBandAlternateTextTracksWithArray:(id)arg1;
 - (void)replacePlayerItemWithPlayerItem:(id)arg1;
@@ -264,6 +319,7 @@
 - (id)selectedAlternateTextTrack;
 - (void)setAlternateAudioTrackID:(int)arg1;
 - (void)setArtworkTimeMarkers:(id)arg1;
+- (void)setAssetError:(id)arg1;
 - (void)setChapterTimeMarkers:(id)arg1;
 - (void)setClosedCaptionTimeMarkers:(id)arg1;
 - (void)setDefaultPlaybackRate:(float)arg1;
@@ -272,6 +328,7 @@
 - (void)setHasPlayedThisSession:(BOOL)arg1;
 - (void)setIndexInQueueFeeder:(unsigned int)arg1;
 - (void)setIsAssetLoaded:(BOOL)arg1;
+- (void)setLikedState:(int)arg1;
 - (void)setLimitReadAhead:(BOOL)arg1;
 - (void)setLoudnessInfoVolumeNormalization:(float)arg1;
 - (void)setOverrideDuration:(double)arg1;
@@ -280,6 +337,8 @@
 - (void)setPlaybackStoppedTime:(double)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setPlayerItem:(id)arg1;
+- (void)setPlaylistIdentifier:(id)arg1;
+- (void)setQueueIdentifier:(id)arg1;
 - (void)setRating:(float)arg1;
 - (void)setSelectedAlternateTextTrack:(id)arg1;
 - (void)setSoundCheckVolumeNormalization:(float)arg1;
@@ -288,13 +347,16 @@
 - (void)setUserAdvancedDuringPlayback:(BOOL)arg1;
 - (void)setUserChangedItemsDuringPlayback:(BOOL)arg1;
 - (void)setUserSkippedPlayback:(BOOL)arg1;
-- (void)setVideoID:(id)arg1;
 - (void)setupEQPresetWithDefaultPreset:(int)arg1;
 - (void)setupPlaybackInfo;
 - (float)soundCheckVolumeNormalization;
 - (int)status;
-- (long long)storeID;
+- (id)storeDownload;
+- (id)storeItemID;
+- (long long)storeItemInt64ID;
+- (long long)storeSubscriptionAdamID;
 - (int)subtitleTrackID;
+- (BOOL)supportsLikedState;
 - (BOOL)supportsRewindAndFastForward15Seconds;
 - (BOOL)supportsSettingCurrentTime;
 - (BOOL)supportsSkip;
@@ -311,17 +373,28 @@
 - (BOOL)userChangedItemsDuringPlayback;
 - (float)userRating;
 - (BOOL)userSkippedPlayback;
-- (id)videoID;
+- (BOOL)usesSubscriptionLease;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (id /* block */)_music_entityValueHandlerForProperty:(id)arg1;
++ (void)_registerEntityValueHandler:(id /* block */)arg1 forProperty:(id)arg2;
++ (void)initialize;
+
+- (id)entityUniqueIdentifier;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)valueForEntityProperty:(id)arg1;
+- (id)valuesForEntityProperties:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
-+ (id)mpuReporting_allMediaItemProperties;
-
+- (id)MPU_contentItemIdentifierCollection;
 - (id)mpuReporting_externalID;
-- (id)mpuReporting_featureName;
 - (BOOL)mpuReporting_isValidReportingItem;
 - (unsigned int)mpuReporting_itemType;
+- (id)mpuReporting_jingleTimedMetadata;
 - (BOOL)mpuReporting_shouldReportPlayEventsToStore;
+- (BOOL)mpuReporting_shouldUseRelativeTimePositions;
 - (id)mpuReporting_storeItemID;
 - (id)mpuReporting_trackInfo;
 
@@ -336,6 +409,7 @@
 - (id)audioClip;
 - (id)effectiveArtworkCollection;
 - (BOOL)isRadioItem;
+- (id)radioIdentifier;
 - (id)radioTrack;
 - (id)streamTrack;
 - (BOOL)supportsRadioTrackActions;

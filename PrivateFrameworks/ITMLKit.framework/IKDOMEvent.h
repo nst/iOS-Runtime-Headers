@@ -36,6 +36,7 @@
 - (int)dispatchState;
 - (int)eventPhase;
 - (id)initWithAppContext:(id)arg1 type:(id)arg2 xmlAttribute:(id)arg3 canBubble:(BOOL)arg4 isCancelable:(BOOL)arg5;
+- (id)initWithType:(id)arg1 eventInit:(id)arg2;
 - (BOOL)isImmediatePropagationStopped;
 - (BOOL)isInUse;
 - (BOOL)isPropagationStopped;

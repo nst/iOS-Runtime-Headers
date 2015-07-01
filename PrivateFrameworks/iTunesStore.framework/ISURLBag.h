@@ -41,6 +41,7 @@
 - (id)_copyGUIDSchemesFromDictionary:(id)arg1;
 - (id)_copyHeaderPatternsFromDictionary:(id)arg1;
 - (id)_networkConstraintsCachePath;
+- (void)_preprocessURLResolutionCacheDictionary:(id)arg1;
 - (void)_setDictionary:(id)arg1;
 - (void)_writeNetworkConstraintsCacheFile;
 - (void)_writeURLResolutionCacheFile;

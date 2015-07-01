@@ -2,17 +2,25 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIBadgeTextAttachment : NSTextAttachment {
+@interface SKUIBadgeTextAttachment : NSTextAttachment <NSCopying> {
+    NSObject<OS_dispatch_semaphore> *_imageLoadingSemaphore;
     NSURL *_imageURL;
 }
 
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } badgeSize;
+@property (retain) NSObject<OS_dispatch_semaphore> *imageLoadingSemaphore;
 @property (nonatomic, readonly) NSURL *imageURL;
 
 - (void).cxx_destruct;
+- (void)_ensureImageIsLoaded;
 - (void)_loadImageWithResourceName:(id)arg1 fallbackImage:(id)arg2 styleColor:(id)arg3;
 - (struct CGSize { float x1; float x2; })badgeSize;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (unsigned int)hash;
+- (id)imageLoadingSemaphore;
 - (id)imageURL;
 - (id)initWithViewElement:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
+- (void)setImageLoadingSemaphore:(id)arg1;
 
 @end

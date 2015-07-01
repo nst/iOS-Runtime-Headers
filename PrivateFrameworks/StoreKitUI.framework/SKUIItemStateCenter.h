@@ -108,5 +108,6 @@
 - (void)removeMediaLibrary:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (id)stateForItemWithIdentifier:(long long)arg1;
+- (id)stateForItemWithStoreIdentifier:(id)arg1;
 
 @end

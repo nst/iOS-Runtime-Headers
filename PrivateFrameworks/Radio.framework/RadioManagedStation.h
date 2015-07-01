@@ -15,6 +15,7 @@
 @property (nonatomic, retain) NSArray *editableFields;
 @property (getter=isFeatured, nonatomic) BOOL featured;
 @property (getter=isGatewayVideoAdEnabled, nonatomic) BOOL gatewayVideoAdEnabled;
+@property (nonatomic) BOOL hasSkipRules;
 @property (nonatomic) unsigned int impressionThreshold;
 @property (nonatomic) BOOL isExplicit;
 @property (nonatomic) BOOL likesEnabled;
@@ -38,6 +39,7 @@
 @property (nonatomic, copy) NSString *stationDescription;
 @property (nonatomic, copy) NSString *stationHash;
 @property (nonatomic) long long stationID;
+@property (nonatomic, copy) NSString *stationStringID;
 @property (nonatomic, retain) NSURL *streamURL;
 @property (getter=isSubscribed, nonatomic) BOOL subscribed;
 @property (nonatomic) int subscriberCount;
@@ -57,6 +59,7 @@
 - (BOOL)editEnabled;
 - (id)editableFields;
 - (id)feedbackDictionaryRepresentation;
+- (BOOL)hasSkipRules;
 - (unsigned int)impressionThreshold;
 - (BOOL)isExplicit;
 - (BOOL)isFeatured;
@@ -82,6 +85,7 @@
 - (void)setEditableFields:(id)arg1;
 - (void)setFeatured:(BOOL)arg1;
 - (void)setGatewayVideoAdEnabled:(BOOL)arg1;
+- (void)setHasSkipRules:(BOOL)arg1;
 - (void)setImpressionThreshold:(unsigned int)arg1;
 - (void)setIsExplicit:(BOOL)arg1;
 - (void)setLikesEnabled:(BOOL)arg1;
@@ -104,6 +108,7 @@
 - (void)setStationDescription:(id)arg1;
 - (void)setStationHash:(id)arg1;
 - (void)setStationID:(long long)arg1;
+- (void)setStationStringID:(id)arg1;
 - (void)setStreamCertificateURL:(id)arg1;
 - (void)setStreamKeyURL:(id)arg1;
 - (void)setStreamURL:(id)arg1;
@@ -122,6 +127,7 @@
 - (id)stationDescription;
 - (id)stationHash;
 - (long long)stationID;
+- (id)stationStringID;
 - (id)streamCertificateURL;
 - (id)streamKeyURL;
 - (id)streamURL;

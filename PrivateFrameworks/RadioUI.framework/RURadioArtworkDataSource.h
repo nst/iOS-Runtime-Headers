@@ -25,12 +25,12 @@
 - (void)_handleWillEnterForegroundNotification:(id)arg1;
 - (void)_setCacheSize:(unsigned int)arg1 preserveExisting:(BOOL)arg2;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
-- (BOOL)areRepresentationsForCatalog:(id)arg1 visuallyIdenticalToRepresentationsForCatalog:(id)arg2;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
 - (void)dealloc;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (id)init;
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)visualIdenticalityIdentifierForCatalog:(id)arg1;
 
 @end

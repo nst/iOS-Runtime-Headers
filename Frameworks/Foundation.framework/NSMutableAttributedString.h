@@ -23,10 +23,6 @@
 - (void)setAttributedString:(id)arg1;
 - (void)setAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 
-// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
-
-- (void)MP_addAttributes:(id)arg1 toOccurrencesOfSubstring:(id)arg2 options:(unsigned int)arg3;
-
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 - (void)mf_addAttribute:(id)arg1 value:(id)arg2;

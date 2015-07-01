@@ -3,14 +3,13 @@
  */
 
 @interface HSContainersResponse : HSResponse {
-    NSArray *containers;
+    NSArray *_containers;
 }
 
 @property (nonatomic, copy) NSArray *containers;
 
 - (void).cxx_destruct;
 - (id)containers;
-- (void)dealloc;
 - (void)setContainers:(id)arg1;
 
 @end

@@ -3,22 +3,28 @@
  */
 
 @interface ISStoreURLOperation : ISURLOperation {
+    int _activeMachineDataStyle;
     NSNumber *_authenticatedDSID;
     BOOL _canSendGUIDParameter;
     BOOL _ignorePreexistingSecureToken;
+    BOOL _isURLBagRequest;
+    int _machineDataStyle;
     BOOL _needsAuthentication;
     BOOL _needsURLBag;
-    BOOL _performsMachineDataActions;
+    SSVFairPlaySAPSession *_sapSession;
     BOOL _shouldSendXTokenHeader;
     BOOL _urlKnownToBeTrusted;
     BOOL _useUserSpecificURLBag;
 }
 
+@property (retain) SSVFairPlaySAPSession *SAPSession;
 @property (readonly) SSURLBagContext *URLBagContext;
+@property (getter=isURLBagRequest, nonatomic) BOOL URLBagRequest;
 @property (retain) NSNumber *authenticatedDSID;
 @property BOOL canSendGUIDParameter;
 @property <ISStoreURLOperationDelegate> *delegate;
 @property (nonatomic) BOOL ignorePreexistingSecureToken;
+@property int machineDataStyle;
 @property BOOL needsAuthentication;
 @property BOOL needsURLBag;
 @property BOOL performsMachineDataActions;
@@ -35,6 +41,7 @@
 + (id)pingOperationWithUrl:(id)arg1;
 + (id)propertyListOperationWithURLBagKey:(id)arg1;
 
+- (id)SAPSession;
 - (id)URLBagContext;
 - (id)_account;
 - (void)_addStandardQueryParametersForURL:(id)arg1;
@@ -43,10 +50,14 @@
 - (id)_copyAuthenticationContext;
 - (id)_copyAuthenticationContextForAttemptNumber:(int)arg1;
 - (BOOL)_isErrorTokenError:(id)arg1;
+- (id)_loadURLBagInterpreterWithRequest:(id)arg1 requestProperties:(id)arg2;
+- (BOOL)_performMachineDataRequest:(id)arg1;
+- (BOOL)_processResponseData:(id)arg1 error:(id*)arg2;
 - (id)_resolvedURLInBagContext:(id)arg1 URLBag:(id*)arg2;
 - (void)_runURLOperation;
 - (void)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (id)_urlBagForContext:(id)arg1;
+- (void)_willSendRequest:(id)arg1;
 - (id)authenticatedAccountDSID;
 - (id)authenticatedDSID;
 - (BOOL)canSendGUIDParameter;
@@ -55,6 +66,8 @@
 - (void)handleResponse:(id)arg1;
 - (BOOL)ignorePreexistingSecureToken;
 - (id)init;
+- (BOOL)isURLBagRequest;
+- (int)machineDataStyle;
 - (BOOL)needsAuthentication;
 - (BOOL)needsURLBag;
 - (id)newRequestWithURL:(id)arg1;
@@ -63,10 +76,13 @@
 - (void)setAuthenticatedDSID:(id)arg1;
 - (void)setCanSendGUIDParameter:(BOOL)arg1;
 - (void)setIgnorePreexistingSecureToken:(BOOL)arg1;
+- (void)setMachineDataStyle:(int)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
 - (void)setNeedsURLBag:(BOOL)arg1;
 - (void)setPerformsMachineDataActions:(BOOL)arg1;
+- (void)setSAPSession:(id)arg1;
 - (void)setShouldSendXTokenHeader:(BOOL)arg1;
+- (void)setURLBagRequest:(BOOL)arg1;
 - (void)setUrlKnownToBeTrusted:(BOOL)arg1;
 - (void)setUseUserSpecificURLBag:(BOOL)arg1;
 - (BOOL)shouldFollowRedirectWithRequest:(id)arg1 returningError:(id*)arg2;

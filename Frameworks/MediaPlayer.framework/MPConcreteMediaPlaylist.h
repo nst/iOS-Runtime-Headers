@@ -33,6 +33,7 @@
 - (void)populateWithSeedItem:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)populateWithSeedItem:(id)arg1 queue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)removeAllItems;
+- (void)removeFirstItem;
 - (void)removeItems:(id)arg1 atFilteredIndexes:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)representativeItem;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;

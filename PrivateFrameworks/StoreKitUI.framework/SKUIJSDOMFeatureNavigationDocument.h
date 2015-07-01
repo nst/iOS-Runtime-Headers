@@ -10,23 +10,23 @@
     NSMutableArray *_stackItems;
 }
 
-@property IKAppContext *appContext;
+@property (nonatomic, readonly) IKAppContext *appContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) NSString *featureName;
+@property (nonatomic, readonly, copy) NSString *featureName;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) SKUINavigationDocumentController *navigationDocumentController;
 @property (readonly) Class superclass;
 
++ (id)makeFeatureJSObjectForFeature:(id)arg1;
 + (id)possibleFeatureNames;
 
 - (void).cxx_destruct;
 - (id)appContext;
 - (void)clear;
 - (id)documents;
-- (id)featureJSObject;
 - (id)featureName;
-- (id)initWithFeatureName:(id)arg1;
+- (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
 - (void)insertDocument:(id)arg1 beforeDocument:(id)arg2 options:(id)arg3;
 - (id)navigationDocumentController;
 - (void)popDocument;
@@ -35,7 +35,6 @@
 - (void)pushDocument:(id)arg1 options:(id)arg2;
 - (void)removeDocument:(id)arg1;
 - (void)replaceDocument:(id)arg1 withDocument:(id)arg2 options:(id)arg3;
-- (void)setAppContext:(id)arg1;
 - (void)setNavigationDocumentController:(id)arg1;
 
 @end

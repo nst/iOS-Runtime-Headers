@@ -72,6 +72,7 @@
 - (void)_adjustViewOrderingForProperties:(id)arg1;
 - (id)_buttonPropertiesForState:(id)arg1;
 - (void)_cancelGestureAction:(id)arg1;
+- (float)_horizontalInsetForTitleStyle:(int)arg1;
 - (void)_insertBorderView;
 - (void)_insertCancelGestureRecognizer;
 - (void)_insertImageView;
@@ -134,8 +135,8 @@
 - (BOOL)setTitle:(id)arg1 confirmationTitle:(id)arg2 itemState:(id)arg3 clientContext:(id)arg4 animated:(BOOL)arg5;
 - (void)setTitleStyle:(int)arg1;
 - (void)setUniversal:(BOOL)arg1;
+- (BOOL)setValuesUsingBuyButtonDescriptor:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(BOOL)arg4;
 - (BOOL)setValuesUsingItemOffer:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(BOOL)arg4;
-- (BOOL)setValuesUsingViewElement:(id)arg1 itemState:(id)arg2 clientContext:(id)arg3 animated:(BOOL)arg4;
 - (void)showCloudImage;
 - (BOOL)showsConfirmationState;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

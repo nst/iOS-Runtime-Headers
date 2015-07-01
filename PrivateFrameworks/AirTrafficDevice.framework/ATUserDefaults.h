@@ -10,6 +10,7 @@
 @property (nonatomic) BOOL hasCompletedDataMigration;
 
 + (id)readOnlyDefaults;
++ (id)sharedInstance;
 + (void)synchronize;
 
 - (void).cxx_destruct;

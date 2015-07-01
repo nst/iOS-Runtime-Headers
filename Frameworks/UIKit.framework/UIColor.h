@@ -8,6 +8,7 @@
 
 @property (nonatomic, readonly) struct CGColor { }*CGColor;
 @property (nonatomic, readonly) CIColor *CIColor;
+@property (nonatomic, readonly) float MP_lightness;
 @property (getter=_systemColorName, setter=_setSystemColorName:, nonatomic, retain) NSString *systemColorName;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
@@ -277,6 +278,14 @@
 - (id)_mapkit_blendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
 - (BOOL)_mapkit_getRed:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 - (BOOL)_mapkit_isWhite;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+
++ (id)colorWithITColor:(struct ITColor { float x1; float x2; float x3; float x4; })arg1;
+
+- (struct ITColor { float x1; float x2; float x3; float x4; })ITColor;
+- (BOOL)MP_isArtworkColorAnalyzerLightColorForAlgorithm:(int)arg1;
+- (float)MP_lightness;
 
 // Image: /System/Library/Frameworks/PassKit.framework/PassKit
 

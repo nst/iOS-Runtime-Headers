@@ -602,10 +602,6 @@
 - (void)MPU_pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_MPUExtras_replaceViewController:(id)arg1 withViewController:(id)arg2 animated:(BOOL)arg3;
 
-// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
-
-- (void)music_pushNowPlayingViewControllerAnimated:(BOOL)arg1;
-
 // Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
 
 - (void)popRecursivelyToRootController;

@@ -5,7 +5,7 @@
 @interface MPStoreOffer : NSObject {
     unsigned long long _entityPersistentID;
     NSString *_entityTitle;
-    unsigned int _entityType;
+    int _entityType;
     NSDictionary *_mediaAssetDictionary;
     NSDictionary *_offerDictionary;
     int _passType;
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) unsigned long long downloadSize;
 @property (nonatomic, readonly) unsigned long long entityPersistentID;
 @property (nonatomic, readonly, copy) NSString *entityTitle;
-@property (nonatomic, readonly) unsigned int entityType;
+@property (nonatomic, readonly) int entityType;
 @property (nonatomic, readonly) int passType;
 @property (nonatomic, readonly) double previewDuration;
 @property (nonatomic, readonly, copy) NSURL *previewURL;
@@ -46,8 +46,8 @@
 - (unsigned long long)downloadSize;
 - (unsigned long long)entityPersistentID;
 - (id)entityTitle;
-- (unsigned int)entityType;
-- (id)initWithStoreOfferDictionary:(id)arg1 regularPriceOfferDictionary:(id)arg2 passType:(int)arg3 entityType:(unsigned int)arg4 persistentID:(unsigned long long)arg5 title:(id)arg6;
+- (int)entityType;
+- (id)initWithStoreOfferDictionary:(id)arg1 regularPriceOfferDictionary:(id)arg2 passType:(int)arg3 entityType:(int)arg4 persistentID:(unsigned long long)arg5 title:(id)arg6;
 - (int)passType;
 - (double)previewDuration;
 - (id)previewURL;

@@ -3,17 +3,19 @@
  */
 
 @interface IKViewElementStyleFactory : NSObject {
-    NSMutableDictionary *_styleByITMLID;
     IKStyleFactory *_styleFactory;
+    IKTemplateStyleSheet *_styleSheet;
 }
 
-@property (nonatomic, readonly, retain) NSMutableDictionary *styleByITMLID;
 @property (nonatomic, readonly, retain) IKStyleFactory *styleFactory;
+@property (nonatomic, readonly, retain) IKTemplateStyleSheet *styleSheet;
+
++ (id)styleFactoryWithMarkup:(id)arg1 styleSheet:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)initWithDocumentStyles:(id)arg1;
-- (id)styleByITMLID;
+- (id)initWithMarkup:(id)arg1 styleSheet:(id)arg2;
+- (id)styleComposerForElement:(id)arg1 elementStyleOverrides:(id)arg2;
 - (id)styleFactory;
-- (id)styleForElement:(id)arg1 classSelector:(id)arg2 inlineStyle:(id)arg3;
+- (id)styleSheet;
 
 @end

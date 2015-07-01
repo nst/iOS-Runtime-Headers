@@ -2,11 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSSoftwareLibrary : NSObject
+@interface SSSoftwareLibrary : NSObject {
+    SSXPCConnection *_connection;
+}
 
 - (void)_getItemsWithMessage:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)_sendDemotionMessage:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)dealloc;
 - (void)getLibraryItemForBundleIdentifiers:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)getLibraryItemsForITunesStoreItemIdentifiers:(id)arg1 completionBlock:(id /* block */)arg2;
+- (id)init;
 - (void)refreshReceiptsWithCompletionBlock:(id /* block */)arg1;
+- (void)restoreDemotedApplicationWithBundleIdentifier:(id)arg1 options:(id)arg2 completionBlock:(id /* block */)arg3;
 
 @end

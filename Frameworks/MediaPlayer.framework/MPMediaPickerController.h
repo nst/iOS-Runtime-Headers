@@ -36,7 +36,6 @@
 - (id)delegate;
 - (id)init;
 - (id)initWithMediaTypes:(unsigned int)arg1;
-- (void)loadView;
 - (unsigned int)mediaTypes;
 - (id)prompt;
 - (void)remoteMediaPickerDidCancel;
@@ -47,6 +46,7 @@
 - (void)setShowsCloudItems:(BOOL)arg1;
 - (BOOL)showsCloudItems;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
 

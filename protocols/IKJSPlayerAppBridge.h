@@ -5,6 +5,6 @@
 
 @required
 
-- (IKDOMElement *)currentAVMediaElementForPlayer:(IKJSPlayer *)arg1;
+- (IKDOMElement *)currentAVMediaElementForPlayer:(IKJSLegacyPlayer *)arg1;
 
 @end

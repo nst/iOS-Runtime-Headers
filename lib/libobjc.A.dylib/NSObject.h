@@ -272,6 +272,7 @@
 + (void)performSelectorWithNonRetainedTarget:(id)arg1 selector:(SEL)arg2 withObject:(id)arg3 afterDelay:(double)arg4;
 
 - (id)MPMediaLibraryDataProviderSystemML3CoercedString;
+- (id)MP_shortDescription;
 - (id)_MPCancellableDispatchAccessQueue;
 - (void)__crossedTimeMarkerNotification:(id)arg1;
 - (void)_nonRetainingPerformSelector:(SEL)arg1 withObject:(id)arg2 afterDelay:(double)arg3 inModes:(id)arg4;
@@ -606,6 +607,7 @@
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
+- (BOOL)ml_matchesValue:(id)arg1 usingComparison:(int)arg2;
 - (id)ml_stringValueForSQL;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
@@ -665,6 +667,10 @@
 + (id)sbs_valueFromData:(id)arg1 ofType:(const char *)arg2;
 
 - (BOOL)sbs_isPlistableType;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
+- (BOOL)__isSKUIDynamicGridSizeCacheKey;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 
@@ -782,6 +788,7 @@
 - (id)_accessibilityFirstElementForFocus;
 - (id)_accessibilityFirstOpaqueElement;
 - (id)_accessibilityFirstVisibleItem;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityFrameForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityFrameForSorting;
 - (id)_accessibilityFuzzyHitTestElements;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityGesturePracticeRegion;
@@ -905,6 +912,7 @@
 - (void)_accessibilityOpaqueElementScrollToDirection:(int)arg1;
 - (BOOL)_accessibilityOpaqueElementScrollsContentIntoView;
 - (id)_accessibilityOpaqueElementsFrom:(id)arg1 direction:(int)arg2 searchTraits:(unsigned long long)arg3;
+- (BOOL)_accessibilityOpaqueScrollViewSupportsLastResortScrollBeyondBounds;
 - (id)_accessibilityOrderedChildrenContainer;
 - (BOOL)_accessibilityOverridesInstructionsHint;
 - (BOOL)_accessibilityOverridesInvalidFrames;
@@ -1042,6 +1050,7 @@
 - (id)_accessibilitySupportGesturesAttributes;
 - (id)_accessibilitySupportedLanguages;
 - (BOOL)_accessibilitySupportsActivateAction;
+- (BOOL)_accessibilitySupportsFrameForRange;
 - (BOOL)_accessibilitySupportsHandwriting;
 - (BOOL)_accessibilitySupportsMultipleCustomRotorTitles;
 - (void)_accessibilitySwitchOrderedChildrenFrom:(id)arg1;
@@ -1107,6 +1116,8 @@
 - (BOOL)_allowCustomActionHintSpeakOverride;
 - (id)_axDebugTraits;
 - (id)_axElementsDescription;
+- (id)_axOpaqueElementFetchDirection;
+- (void)_axSetOpaqueElementFetchDirection:(id)arg1;
 - (id)_axSuperviews;
 - (void)_handleRotatingFirstFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 secondFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 toOrientation:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_handleRotatingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toOrientation:(int)arg2;

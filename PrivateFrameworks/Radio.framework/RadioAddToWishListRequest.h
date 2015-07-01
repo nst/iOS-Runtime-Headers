@@ -7,6 +7,7 @@
     SSURLConnectionRequest *_request;
     NSString *_stationHash;
     long long _stationID;
+    NSString *_stationStringID;
     RadioTrack *_track;
     long long _trackStoreID;
 }
@@ -20,6 +21,7 @@
 - (id)init;
 - (id)initWithTrack:(id)arg1 station:(id)arg2;
 - (id)initWithTrackStoreID:(long long)arg1 stationID:(long long)arg2 stationHash:(id)arg3;
+- (id)initWithTrackStoreID:(long long)arg1 stationID:(long long)arg2 stationHash:(id)arg3 stationStringID:(id)arg4;
 - (void)setAction:(int)arg1;
 - (void)startWithCompletionHandler:(id /* block */)arg1;
 - (long long)trackStoreID;

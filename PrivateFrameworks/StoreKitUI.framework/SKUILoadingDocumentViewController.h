@@ -3,6 +3,7 @@
  */
 
 @interface SKUILoadingDocumentViewController : SKUIViewController <SKUIDocumentViewController> {
+    SKUIActivityIndicatorViewElement *_activityIndicatorElement;
     SKUIActivityIndicatorView *_activityIndicatorView;
     NSObject<OS_dispatch_source> *_delayTimer;
     SKUILayoutCache *_layoutCache;
@@ -16,12 +17,14 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_activityIndicator;
 - (id)_layoutCache;
 - (void)_reloadViewStyling;
 - (void)_showActivityIndicator;
 - (id)_viewLayoutContext;
 - (void)dealloc;
 - (void)documentDidUpdate:(id)arg1;
+- (id)initWithActivityIndicatorElement:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;
 - (void)viewDidAppear:(BOOL)arg1;

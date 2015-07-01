@@ -335,6 +335,10 @@
 
 - (void)cam_updateContentInsetsToCenterImageWithinMinimumSize:(struct CGSize { float x1; float x2; })arg1;
 
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (void)mpu_configureButtonWithTextDrawingContext:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
 
 + (id)mediaControlsBuyButtonWithStyle:(int)arg1;

@@ -2,37 +2,29 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIShelfPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIViewElementSlideshowDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface SKUIShelfPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate, SKUIObservableScrollViewDelegate, SKUIShelfPageSection, SKUIShelfPageSectionConfigurationDataSource, SKUIViewElementSlideshowDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
+    SKUIShelfPageSectionConfiguration *_configuration;
     int _lastNeedsMoreCount;
-    int _lockupType;
-    BOOL _needsLayout;
-    BOOL _needsReload;
-    BOOL _rendersWithPerspective;
-    UICollectionView *_shelfCollectionView;
-    SKUIShelfLayoutData *_shelfLayoutData;
+    <SKUIScrollViewDelegateObserver> *_scrollViewDelegateObserver;
     SKUIShelfViewElement *_shelfViewElement;
     SKUIViewElementSlideshowController *_slideshowController;
     NSArray *_viewElements;
 }
 
+@property (nonatomic, readonly) SKUIShelfPageSectionConfiguration *configuration;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) SKUIShelfPageComponent *pageComponent;
+@property (nonatomic) <SKUIScrollViewDelegateObserver> *scrollViewDelegateObserver;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (Class)_cellClassForLockup:(id)arg1;
-- (Class)_cellClassForViewElement:(id)arg1;
-- (float)_columnSpacingForViewElements:(id)arg1;
-- (id)_dequeueCellForLockup:(id)arg1 collectionView:(id)arg2 indexPath:(id)arg3;
-- (int)_lockupTypeForLockup:(id)arg1;
-- (void)_performDefaultSelectActionForViewElement:(id)arg1;
-- (float)_perspectiveHeightForContentSize:(float)arg1;
-- (void)_reloadShelfLayoutData;
+- (id)_normalizedShelfItemIndexPathFromActualIndexPath:(id)arg1;
+- (void)_performDefaultSelectActionForEffectiveViewElement:(id)arg1;
 - (void)_reloadViewElementProperties;
-- (id)_shelfCollectionView;
+- (void)_setContext:(id)arg1;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
 - (int)applyUpdateType:(int)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
@@ -48,16 +40,28 @@
 - (BOOL)collectionView:(id)arg1 shouldHighlightItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionViewDidEndDisplayingCellForItemAtIndexPath:(id)arg1;
+- (void)collectionViewWillApplyLayoutAttributes:(id)arg1;
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
+- (id)configuration;
 - (void)dealloc;
 - (void)deselectItemsAnimated:(BOOL)arg1;
+- (void)entityProvider:(id)arg1 didInvalidateWithContext:(id)arg2;
 - (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithPageComponent:(id)arg1;
+- (id)initWithPageComponent:(id)arg1 configuration:(id)arg2;
 - (void)invalidateCachedLayoutInformation;
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;
+- (id)scrollViewDelegateObserver;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewWillBeginDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
+- (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
+- (void)setScrollViewDelegateObserver:(id)arg1;
+- (void)setTopSection:(BOOL)arg1;
+- (id)shelfPageSectionConfiguration:(id)arg1 viewElementAtIndex:(int)arg2;
 - (BOOL)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(BOOL)arg3;
 - (void)viewElementSlideshowWillDismiss:(id)arg1;
 - (void)willAppearInContext:(id)arg1;

@@ -13,6 +13,8 @@
     UIButton *_learnMoreButton;
     UILabel *_locationSharingLabel;
     UILabel *_lostDeviceHelpLabel;
+    UIImageView *_musicIcon;
+    UILabel *_musicSharingLabel;
     UILabel *_photoSharingLabel;
     UIImageView *_photosIcon;
     UILabel *_purchaseShaingLabel;

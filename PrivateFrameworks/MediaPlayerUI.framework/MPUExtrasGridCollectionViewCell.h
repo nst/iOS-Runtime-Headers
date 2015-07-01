@@ -7,7 +7,7 @@
     NSLayoutConstraint *_artworkContainerHeightConstraint;
     NSLayoutConstraint *_artworkContainerWidthConstraint;
     IKLockupElement *_lockupElement;
-    MPUContentSizeLayoutConstraint *_spacerHeight;
+    NSLayoutConstraint *_spacerHeight;
     NSLayoutConstraint *_spacerTop;
     UIView *_spacerView;
     UILabel *_subtitleLabel;

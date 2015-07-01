@@ -22,7 +22,7 @@
 - (id)_initWithPersistentID:(unsigned long long)arg1 library:(id)arg2 propertiesCache:(id)arg3;
 - (id)_nonBatchableOrCachedValueForProperty:(id)arg1 needsFetch:(BOOL*)arg2;
 - (id)cachedPropertyValues;
-- (id)cachedValueForProperty:(id)arg1;
+- (id)cachedValueForProperty:(id)arg1 isCached:(BOOL*)arg2;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

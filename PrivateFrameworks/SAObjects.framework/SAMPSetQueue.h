@@ -6,6 +6,7 @@
 
 @property (nonatomic, copy) NSArray *filters;
 @property (nonatomic, retain) SAMPCollection *mediaItems;
+@property (nonatomic) BOOL shouldOverrideManuallyCuratedUpNext;
 @property (nonatomic) BOOL shouldShuffle;
 @property (nonatomic, copy) NSArray *sort;
 
@@ -19,8 +20,10 @@
 - (BOOL)requiresResponse;
 - (void)setFilters:(id)arg1;
 - (void)setMediaItems:(id)arg1;
+- (void)setShouldOverrideManuallyCuratedUpNext:(BOOL)arg1;
 - (void)setShouldShuffle:(BOOL)arg1;
 - (void)setSort:(id)arg1;
+- (BOOL)shouldOverrideManuallyCuratedUpNext;
 - (BOOL)shouldShuffle;
 - (id)sort;
 

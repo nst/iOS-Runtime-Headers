@@ -8,6 +8,5 @@
 + (id)predicateByMergingContainmentPredicatesAllCompoundPredicate:(id)arg1;
 
 - (id)compoundOperatorJoiner;
-- (id)predicateOptimizedForEntityClass:(Class)arg1;
 
 @end

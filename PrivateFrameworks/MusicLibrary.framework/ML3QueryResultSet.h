@@ -5,6 +5,7 @@
 @interface ML3QueryResultSet : NSObject <NSCopying> {
     ML3QueryResultSet_BackingStore *_backingStore;
     NSObject<OS_dispatch_queue> *_fixedPriorityQueue;
+    long long _localRevision;
     ML3Query *_query;
     NSObject<OS_dispatch_queue> *_queue;
     long long _revision;
@@ -13,6 +14,7 @@
 }
 
 @property (nonatomic, readonly) unsigned int count;
+@property (nonatomic, readonly) long long localRevision;
 @property (nonatomic, readonly) ML3Query *query;
 @property (nonatomic, readonly) long long revision;
 
@@ -31,6 +33,7 @@
 - (void)enumeratePersistentIDsUsingBlock:(id /* block */)arg1;
 - (void)enumerateSectionsUsingBlock:(id /* block */)arg1;
 - (id)initWithQuery:(id)arg1;
+- (long long)localRevision;
 - (long long)persistentIDAtIndex:(unsigned int)arg1;
 - (id)query;
 - (long long)revision;

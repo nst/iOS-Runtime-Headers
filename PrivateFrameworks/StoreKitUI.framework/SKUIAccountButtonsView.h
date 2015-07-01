@@ -29,8 +29,10 @@
 - (void)_layoutOneRow;
 - (void)_layoutTwoRows;
 - (id)_newLinkButtonWithTitle:(id)arg1;
+- (void)_reloadFonts;
 - (id)accountCredits;
 - (id)appleIDButton;
+- (void)dealloc;
 - (id)giftingButton;
 - (id)initWithClientContext:(id)arg1;
 - (BOOL)isGiftingHidden;

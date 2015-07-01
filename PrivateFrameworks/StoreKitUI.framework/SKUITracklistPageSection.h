@@ -5,6 +5,7 @@
 @interface SKUITracklistPageSection : SKUIStorePageSection <SKUIArtworkRequestDelegate> {
     SKUIViewElementLayoutContext *_cellLayoutContext;
     SKUITracklistColumnData *_columnData;
+    <SKUIEntityProviding> *_entityProvider;
     int _lastNeedsMoreCount;
 }
 
@@ -17,12 +18,14 @@
 - (void).cxx_destruct;
 - (id)_columnData;
 - (void)_enumerateVisibleViewElementsUsingBlock:(id /* block */)arg1;
-- (id)_mediaURLWithTrack:(id)arg1;
+- (BOOL)_isDynamicTracklist;
+- (void)_reloadEntityProvider;
 - (id)_representativeStringForViewElement:(id)arg1;
 - (void)_requestCellLayoutWithColumnData:(id)arg1;
 - (id)_viewElementForIndex:(int)arg1;
 - (float)_widthForButtonElements:(id)arg1;
 - (void)addImpressionsForIndexPath:(id)arg1 toSession:(id)arg2;
+- (int)applyUpdateType:(int)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (id)backgroundColorForIndexPath:(id)arg1;
 - (id)cellForIndexPath:(id)arg1;
@@ -32,11 +35,13 @@
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (void)collectionViewWillScrollToOffset:(struct CGPoint { float x1; float x2; })arg1 visibleRange:(struct SKUIIndexPathRange { int x1; int x2; int x3; int x4; })arg2;
 - (void)dealloc;
+- (void)entityProvider:(id)arg1 didInvalidateWithContext:(id)arg2;
 - (id)firstAppearanceIndexPath;
 - (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithPageComponent:(id)arg1;
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;
+- (id)relevantEntityProviders;
 - (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;
 - (BOOL)requestLayoutWithReloadReason:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;

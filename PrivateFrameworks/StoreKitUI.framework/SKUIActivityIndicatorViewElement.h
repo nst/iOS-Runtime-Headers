@@ -2,12 +2,19 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIActivityIndicatorViewElement : SKUIViewElement
+@interface SKUIActivityIndicatorViewElement : SKUIViewElement {
+    double _period;
+}
 
+@property (nonatomic, readonly) SKUIImageViewElement *image;
+@property (nonatomic, readonly) double period;
 @property (nonatomic, readonly) SKUILabelViewElement *text;
 
+- (id)image;
+- (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (BOOL)isDisabled;
 - (int)pageComponentType;
+- (double)period;
 - (id)text;
 
 @end

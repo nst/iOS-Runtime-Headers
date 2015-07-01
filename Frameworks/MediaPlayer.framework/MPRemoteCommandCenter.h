@@ -4,6 +4,7 @@
 
 @interface MPRemoteCommandCenter : NSObject <MPRemoteCommandDelegate> {
     NSMutableArray *_activeCommands;
+    MPFeedbackCommand *_addNowPlayingItemToLibraryCommand;
     MPRemoteCommand *_advanceRepeatModeCommand;
     MPRemoteCommand *_advanceShuffleModeCommand;
     MPFeedbackCommand *_bookmarkCommand;
@@ -17,6 +18,7 @@
     MPChangeShuffleModeCommand *_changeShuffleModeCommand;
     MPRemoteCommand *_createRadioStationCommand;
     MPFeedbackCommand *_dislikeCommand;
+    MPRemoteCommand *_insertIntoPlaybackQueueCommand;
     MPFeedbackCommand *_likeCommand;
     void *_mediaRemoteCommandHandler;
     MPRemoteCommand *_nextTrackCommand;
@@ -74,6 +76,7 @@
 - (void)_teardownMediaRemoteCommandHandler;
 - (void)_teardownMediaRemoteControlClient;
 - (void)_teardownNotifications;
+- (id)addNowPlayingItemToLibraryCommand;
 - (id)advanceRepeatModeCommand;
 - (id)advanceShuffleModeCommand;
 - (id)bookmarkCommand;
@@ -88,6 +91,7 @@
 - (void)dealloc;
 - (id)dislikeCommand;
 - (id)init;
+- (id)insertIntoPlaybackQueueCommand;
 - (id)likeCommand;
 - (id)nextTrackCommand;
 - (id)pauseCommand;

@@ -8,10 +8,16 @@
     NSURL *_destinationFileURL;
     SSURLRequestProperties *_requestProperties;
     BOOL _runsInProcess;
+    SSVFairPlaySAPSession *_sapSession;
+    SSVSAPSignaturePolicy *_sapSignaturePolicy;
     BOOL _sendsResponseForHTTPFailures;
     BOOL _shouldMescalSign;
+    SSURLBag *_urlBag;
+    SSVURLBagInterpreter *_urlBagInterpreter;
 }
 
+@property (retain) SSVFairPlaySAPSession *SAPSession;
+@property (copy) SSVSAPSignaturePolicy *SAPSignaturePolicy;
 @property (readonly) NSURLRequest *URLRequest;
 @property (copy) SSAuthenticationContext *authenticationContext;
 @property (retain) SSVURLDataConsumer *dataConsumer;
@@ -28,9 +34,13 @@
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
+- (id)SAPSession;
+- (id)SAPSignaturePolicy;
 - (id)URLRequest;
 - (BOOL)_canRunInProcess;
 - (id)authenticationContext;
+- (void)configureWithURLBag:(id)arg1;
+- (void)configureWithURLBagDictionary:(id)arg1;
 - (id)copyXPCEncoding;
 - (id)dataConsumer;
 - (void)dealloc;
@@ -46,6 +56,8 @@
 - (void)setDataConsumer:(id)arg1;
 - (void)setDestinationFileURL:(id)arg1;
 - (void)setRunsInProcess:(BOOL)arg1;
+- (void)setSAPSession:(id)arg1;
+- (void)setSAPSignaturePolicy:(id)arg1;
 - (void)setSendsResponseForHTTPFailures:(BOOL)arg1;
 - (void)setShouldMescalSign:(BOOL)arg1;
 - (BOOL)shouldMescalSign;
@@ -55,6 +67,6 @@
 
 // Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
 
-+ (id)newRadioRequestWithRequestProperties:(id)arg1;
++ (id)newRadioRequestWithRequestContext:(id)arg1 requestProperties:(id)arg2 storeBag:(id)arg3;
 
 @end

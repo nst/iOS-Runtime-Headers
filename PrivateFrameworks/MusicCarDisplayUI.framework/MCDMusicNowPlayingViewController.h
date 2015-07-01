@@ -19,7 +19,6 @@
     <MCDCarDisplayServiceProvider> *_serviceProvider;
     NSTimer *_updateTimer;
     int _viewMode;
-    MCDButton *_wishlistButton;
 }
 
 @property (nonatomic, retain) NSArray *controlPages;
@@ -42,9 +41,6 @@
 - (void)_registerForNotifications;
 - (void)_setPlayerRepeatType:(unsigned int)arg1;
 - (void)_unregisterForNotifications;
-- (void)_updatePlaymodesForRadio;
-- (void)_updateWishlistString;
-- (void)_wishlistPressed:(id)arg1;
 - (id)albumTextForNowPlayingController:(id)arg1;
 - (BOOL)allowContextProvider:(id)arg1;
 - (id)artistTextForNowPlayingController:(id)arg1;

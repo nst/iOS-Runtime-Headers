@@ -11,6 +11,7 @@
 @property (readonly) NSArray *AVCaptureSessionPresets;
 @property (readonly) float aeMaxGain;
 @property (readonly) int autoFocusSystem;
+@property (readonly) BOOL capturesStillsFromVideoStream;
 @property (readonly, copy) NSString *debugDescription;
 @property (getter=isDefaultActiveFormat, readonly) BOOL defaultActiveFormat;
 @property (readonly, copy) NSString *description;
@@ -69,6 +70,7 @@
 - (struct { int x1; int x2; })_visibleSensorDimensionsIncludingCinematic:(BOOL)arg1;
 - (float)aeMaxGain;
 - (int)autoFocusSystem;
+- (BOOL)capturesStillsFromVideoStream;
 - (id)copyWithNewVideoPixelFormat:(unsigned long)arg1;
 - (id)copyXPCEncoding;
 - (void)dealloc;

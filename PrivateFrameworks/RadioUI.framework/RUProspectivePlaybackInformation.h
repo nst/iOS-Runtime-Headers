@@ -3,18 +3,18 @@
  */
 
 @interface RUProspectivePlaybackInformation : MPUProspectivePlaybackInformation {
-    RadioStation *_radioStation;
+    RURadioStationPlaybackMetadata *_stationMetadata;
 }
 
-@property (nonatomic, readonly) RadioStation *radioStation;
+@property (nonatomic, readonly) RURadioStationPlaybackMetadata *stationMetadata;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithRadioStation:(id)arg1;
+- (id)initWithStationMetadata:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isRadioProspectivePlaybackInformation;
-- (id)radioStation;
+- (id)stationMetadata;
 
 @end

@@ -10,6 +10,7 @@
         unsigned int command : 1; 
         unsigned int maximumRating : 1; 
         unsigned int minimumRating : 1; 
+        unsigned int presentationStyle : 1; 
         unsigned int repeatMode : 1; 
         unsigned int shuffleMode : 1; 
         unsigned int active : 1; 
@@ -24,6 +25,7 @@
         unsigned int count; 
         unsigned int size; 
     } _preferredIntervals;
+    int _presentationStyle;
     int _repeatMode;
     int _shuffleMode;
     struct { 
@@ -43,6 +45,7 @@
 @property (nonatomic, readonly) BOOL hasLocalizedTitle;
 @property (nonatomic) BOOL hasMaximumRating;
 @property (nonatomic) BOOL hasMinimumRating;
+@property (nonatomic) BOOL hasPresentationStyle;
 @property (nonatomic) BOOL hasRepeatMode;
 @property (nonatomic) BOOL hasShuffleMode;
 @property (nonatomic, retain) NSString *localizedShortTitle;
@@ -51,6 +54,7 @@
 @property (nonatomic) float minimumRating;
 @property (nonatomic, readonly) double*preferredIntervals;
 @property (nonatomic, readonly) unsigned int preferredIntervalsCount;
+@property (nonatomic) int presentationStyle;
 @property (nonatomic) int repeatMode;
 @property (nonatomic) int shuffleMode;
 @property (nonatomic, readonly) float*supportedRates;
@@ -76,6 +80,7 @@
 - (BOOL)hasLocalizedTitle;
 - (BOOL)hasMaximumRating;
 - (BOOL)hasMinimumRating;
+- (BOOL)hasPresentationStyle;
 - (BOOL)hasRepeatMode;
 - (BOOL)hasShuffleMode;
 - (unsigned int)hash;
@@ -88,6 +93,7 @@
 - (double)preferredIntervalAtIndex:(unsigned int)arg1;
 - (double*)preferredIntervals;
 - (unsigned int)preferredIntervalsCount;
+- (int)presentationStyle;
 - (BOOL)readFrom:(id)arg1;
 - (int)repeatMode;
 - (void)setActive:(BOOL)arg1;
@@ -98,6 +104,7 @@
 - (void)setHasEnabled:(BOOL)arg1;
 - (void)setHasMaximumRating:(BOOL)arg1;
 - (void)setHasMinimumRating:(BOOL)arg1;
+- (void)setHasPresentationStyle:(BOOL)arg1;
 - (void)setHasRepeatMode:(BOOL)arg1;
 - (void)setHasShuffleMode:(BOOL)arg1;
 - (void)setLocalizedShortTitle:(id)arg1;
@@ -105,6 +112,7 @@
 - (void)setMaximumRating:(float)arg1;
 - (void)setMinimumRating:(float)arg1;
 - (void)setPreferredIntervals:(double*)arg1 count:(unsigned int)arg2;
+- (void)setPresentationStyle:(int)arg1;
 - (void)setRepeatMode:(int)arg1;
 - (void)setShuffleMode:(int)arg1;
 - (void)setSupportedRates:(float*)arg1 count:(unsigned int)arg2;

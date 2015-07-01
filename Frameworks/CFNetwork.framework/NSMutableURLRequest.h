@@ -83,11 +83,6 @@
 - (void)setSAPversion:(id)arg1;
 - (void)setStoreMode:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
-
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 - (void)_web_setHTTPContentType:(id)arg1;

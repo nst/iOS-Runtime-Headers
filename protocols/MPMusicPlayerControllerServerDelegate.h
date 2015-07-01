@@ -18,9 +18,11 @@
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setNowPlayingItem:(MPMediaItem *)arg2;
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setPlaybackSpeed:(int)arg2;
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setShuffleMode:(int)arg2;
+- (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setUserQueueModificationsDisabled:(BOOL)arg2;
 - (MPMediaItem *)nowPlayingItemForMusicPlayerServer:(MPMusicPlayerControllerServer *)arg1;
 - (int)playbackSpeedForMusicPlayerServer:(MPMusicPlayerControllerServer *)arg1;
 - (MPAVController *)playerForMusicPlayerServer:(MPMusicPlayerControllerServer *)arg1 usingApplicationSpecificQueue:(BOOL)arg2;
 - (unsigned int)unshuffledIndexOfNowPlayingItemForMusicPlayerServer:(MPMusicPlayerControllerServer *)arg1;
+- (BOOL)userQueueModificationsDisabledForMusicPlayerServer:(MPMusicPlayerControllerServer *)arg1;
 
 @end

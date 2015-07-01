@@ -6,7 +6,6 @@
     BOOL _adjustsArtworkImageWhenHighlighted;
     UIImage *_artworkImage;
     BOOL _displaysAsStack;
-    MPImageCacheRequest *_imageRequest;
     UIView *_imageTintView;
     BOOL _nowPlaying;
     RURadioStationsCollectionViewTemplate *_radioStationsCollectionViewTemplate;
@@ -22,7 +21,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL displaysAsStack;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) MPImageCacheRequest *imageRequest;
 @property (getter=isNowPlaying, nonatomic) BOOL nowPlaying;
 @property (nonatomic, retain) RURadioStationsCollectionViewTemplate *radioStationsCollectionViewTemplate;
 @property (nonatomic) UIView *stackPerspectiveTargetView;
@@ -42,7 +40,6 @@
 - (void)dealloc;
 - (BOOL)displaysAsStack;
 - (void)endIgnoringDistanceUpdatesForStack;
-- (id)imageRequest;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isNowPlaying;
 - (void)layoutSubviews;
@@ -58,7 +55,6 @@
 - (void)setDisplaysAsStack:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setImageRequest:(id)arg1;
 - (void)setNowPlaying:(BOOL)arg1;
 - (void)setRadioStationsCollectionViewTemplate:(id)arg1;
 - (void)setSelected:(BOOL)arg1;

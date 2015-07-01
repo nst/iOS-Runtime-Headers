@@ -440,10 +440,6 @@
 - (BOOL)mf_boolForKey:(id)arg1;
 - (int)mf_integerForKey:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
-
-- (id)ML3StringForKey:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/NanoGlanceSettings.framework/NanoGlanceSettings
 
 + (id)dictionaryWithGlance:(id)arg1;

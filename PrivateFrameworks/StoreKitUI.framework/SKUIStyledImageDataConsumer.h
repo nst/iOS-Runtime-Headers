@@ -10,19 +10,44 @@
         float left; 
         float bottom; 
         float right; 
+    } _borderRadii;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _borderWidths;
+    IKColor *_iKBackgroundColor;
+    int _imageContentMode;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _imagePadding;
     struct CGSize { 
         float width; 
         float height; 
     } _imageSize;
     int _imageTreatment;
+    UIColor *_shadowColor;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _shadowOffset;
+    float _shadowRadius;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) UIColor *borderColor;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderWidths;
+@property (nonatomic) int imageContentMode;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imagePadding;
 @property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic) int imageTreatment;
+@property (nonatomic, retain) UIColor *shadowColor;
+@property (nonatomic) struct CGSize { float x1; float x2; } shadowOffset;
+@property (nonatomic) float shadowRadius;
 
 + (id)appIconConsumerWithSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)applePackIconConsumer;
@@ -66,23 +91,37 @@
 - (BOOL)_backgroundIsOpaque;
 - (id)_defaultPlaceholderColor;
 - (void)_drawBordersWithImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)_leftToRightGradient:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 drawBlock:(id /* block */)arg3;
 - (id)_outputImageWithInputSize:(struct CGSize { float x1; float x2; })arg1 outputSize:(struct CGSize { float x1; float x2; })arg2 drawBlock:(id /* block */)arg3;
+- (id)_radialBlurImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 drawBlock:(id /* block */)arg3;
+- (id)_roundedBorderWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 drawBlock:(id /* block */)arg3;
 - (id)_scaledImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 drawBlock:(id /* block */)arg3;
 - (id)_uberImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputSize:(struct CGSize { float x1; float x2; })arg2 drawBlock:(id /* block */)arg3;
 - (id)backgroundColor;
 - (id)borderColor;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderWidths;
+- (int)imageContentMode;
 - (id)imageForColor:(id)arg1;
 - (id)imageForColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (id)imageForImage:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })imagePadding;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (int)imageTreatment;
+- (id)init;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 treatment:(int)arg2;
 - (id)initWithViewElement:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBorderColor:(id)arg1;
 - (void)setBorderWidths:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setImageContentMode:(int)arg1;
+- (void)setImagePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setImageTreatment:(int)arg1;
+- (void)setShadowColor:(id)arg1;
+- (void)setShadowOffset:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShadowRadius:(float)arg1;
+- (id)shadowColor;
+- (struct CGSize { float x1; float x2; })shadowOffset;
+- (float)shadowRadius;
 
 @end

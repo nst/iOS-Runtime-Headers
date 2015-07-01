@@ -181,6 +181,7 @@
 - (BOOL)isLockScreenTodayViewAllowed;
 - (BOOL)isLockScreenWiFiModificationAllowed;
 - (BOOL)isMUAllowed;
+- (BOOL)isMusicArtistActivityAllowed;
 - (BOOL)isOTAPKIUpdatesAllowed;
 - (BOOL)isOpenInRestrictionInEffect;
 - (BOOL)isParentalControlsAllowPasscodeAccessToNonWhitelistedAppsUIForcedByRestrictions;

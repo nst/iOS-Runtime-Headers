@@ -3,27 +3,44 @@
  */
 
 @interface MPPlaybackContext : NSObject {
-    BOOL _keepPlayingCurrentItemIfPossible;
     unsigned int _repeatType;
+    BOOL _shouldRestartPlayback;
     BOOL _shouldStartPlayback;
     unsigned int _shuffleType;
+    int _startIndex;
 }
 
-@property (nonatomic) BOOL keepPlayingCurrentItemIfPossible;
+@property (setter=mpuReporting_setFeatureName:, nonatomic, copy) NSString *mpuReporting_featureName;
+@property (setter=mpuReporting_setRecommendationData:, nonatomic, copy) NSData *mpuReporting_recommendationData;
 @property (nonatomic) unsigned int repeatType;
+@property (nonatomic) BOOL shouldRestartPlayback;
 @property (nonatomic) BOOL shouldStartPlayback;
 @property (nonatomic) unsigned int shuffleType;
+@property (nonatomic) int startIndex;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (Class)queueFeederClass;
 
+- (id)description;
+- (id)descriptionComponents;
 - (id)init;
-- (BOOL)keepPlayingCurrentItemIfPossible;
 - (unsigned int)repeatType;
-- (void)setKeepPlayingCurrentItemIfPossible:(BOOL)arg1;
 - (void)setRepeatType:(unsigned int)arg1;
+- (void)setShouldRestartPlayback:(BOOL)arg1;
 - (void)setShouldStartPlayback:(BOOL)arg1;
 - (void)setShuffleType:(unsigned int)arg1;
+- (void)setStartIndex:(int)arg1;
+- (BOOL)shouldRestartPlayback;
 - (BOOL)shouldStartPlayback;
 - (unsigned int)shuffleType;
+- (int)startIndex;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (id)mpuReporting_featureName;
+- (id)mpuReporting_recommendationData;
+- (void)mpuReporting_setFeatureName:(id)arg1;
+- (void)mpuReporting_setRecommendationData:(id)arg1;
 
 @end

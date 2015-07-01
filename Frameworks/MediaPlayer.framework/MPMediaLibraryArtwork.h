@@ -10,24 +10,27 @@
 
 @property (nonatomic, retain) ML3Artwork *artwork;
 @property (nonatomic) MPMediaLibraryArtworkRequest *artworkRequest;
-@property (nonatomic, readonly) NSURL *originalFileURL;
-@property (nonatomic, retain) NSArray *validSizes;
+@property (nonatomic, copy) NSDictionary *effectsMetadata;
+@property (nonatomic, readonly, copy) NSURL *originalFileURL;
+@property (nonatomic, readonly) NSArray *validSizes;
 
 + (BOOL)artworkExistsForRequest:(id)arg1;
-+ (void)cancelLoadingArtworkForRequest:(id)arg1;
-+ (id)existingArtworkWithRequest:(id)arg1;
-+ (void)loadArtworkForRequest:(id)arg1 completionHandler:(id /* block */)arg2;
++ (id)availableArtworkWithRequest:(id)arg1;
++ (void)cancelFetchingArtworkForRequest:(id)arg1;
++ (void)fetchArtworkForRequest:(id)arg1 completionHandler:(id /* block */)arg2;
++ (BOOL)needsToFetchArtworkForRequest:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)artwork;
 - (id)artworkRequest;
+- (id)effectsMetadata;
 - (unsigned int)hash;
 - (id)imageFileURLForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)originalFileURL;
 - (void)setArtwork:(id)arg1;
 - (void)setArtworkRequest:(id)arg1;
-- (void)setValidSizes:(id)arg1;
+- (void)setEffectsMetadata:(id)arg1;
 - (id)validSizes;
 
 @end

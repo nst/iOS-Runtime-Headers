@@ -74,6 +74,7 @@
 
 - (BOOL)MPSD_isDownloadInProgress;
 - (BOOL)MPSD_isDownloadable;
+- (id)_artworkCatalogWithArtworkType:(int)arg1;
 - (id)_bestStoreURL;
 - (id)_directStoreURL;
 - (id)_libraryLinkArtist;
@@ -97,6 +98,7 @@
 - (id)chapterOfType:(int)arg1 atTime:(double)arg2;
 - (id)chapters;
 - (id)chaptersOfType:(int)arg1;
+- (void)clearLocationProperties;
 - (id)comments;
 - (id)composer;
 - (unsigned long long)composerPersistentID;
@@ -135,6 +137,7 @@
 - (unsigned int)mediaType;
 - (BOOL)mediaTypeCanSeedGenius;
 - (id)multiverseIdentifier;
+- (double)nominalHasBeenPlayedThreshold;
 - (void)noteWasPlayedToTime:(double)arg1 skipped:(BOOL)arg2;
 - (unsigned int)playCount;
 - (unsigned int)playCountSinceSync;
@@ -142,6 +145,7 @@
 - (unsigned long long)podcastPersistentID;
 - (id)podcastTitle;
 - (void)populateLocationPropertiesWithPath:(id)arg1;
+- (void)populateLocationPropertiesWithPath:(id)arg1 assetProtectionType:(int)arg2;
 - (id)predicateForProperty:(id)arg1;
 - (unsigned int)rating;
 - (id)releaseDate;
@@ -167,6 +171,14 @@
 - (id)valueForProperty:(id)arg1;
 - (id)valuesForProperties:(id)arg1;
 - (unsigned int)year;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (void)registerSupportedCustomProperties;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (id)MPU_contentItemIdentifierCollection;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
 

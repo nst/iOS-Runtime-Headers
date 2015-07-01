@@ -21,6 +21,7 @@
 - (void)dealloc;
 - (id)entities;
 - (void)filterResultsUsingSearchString:(id)arg1;
+- (void)filterResultsUsingSearchString:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithDataSource:(id)arg1 operationQueue:(id)arg2;
 - (id)searchString;

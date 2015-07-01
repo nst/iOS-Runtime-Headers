@@ -4,38 +4,40 @@
 
 @interface MPMediaLibraryArtworkDataSource : NSObject <MPArtworkDataSource> {
     MPArtworkResizeUtility *_artworkResizeUtility;
-    BOOL _canUseSurfaceBackedImages;
     NSCache *_fallbackCache;
+    BOOL _usesFallbackCache;
 }
 
 @property (nonatomic, retain) MPArtworkResizeUtility *artworkResizeUtility;
-@property (nonatomic) BOOL canUseSurfaceBackedImages;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSCache *fallbackCache;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL usesFallbackCache;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_bestSizeForArtworkCatalog:(id)arg1;
 - (void)_cacheRepresentation:(id)arg1 forCatalog:(id)arg2;
 - (id)_cachedRepresentationForCatalog:(id)arg1;
 - (BOOL)_isRepresentation:(id)arg1 validForCatalog:(id)arg2;
 - (BOOL)_isRepresentationSize:(struct CGSize { float x1; float x2; })arg1 validForFittingSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)_representationAtSize:(struct CGSize { float x1; float x2; })arg1 forCatalog:(id)arg2;
 - (id)_resizeArtwork:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2 completionHandler:(id /* block */)arg3;
+- (void)_resizeOriginalArtworkForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
-- (BOOL)areRepresentationsForCatalog:(id)arg1 visuallyIdenticalToRepresentationsForCatalog:(id)arg2;
 - (id)artworkResizeUtility;
-- (BOOL)canUseSurfaceBackedImages;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
+- (id)existingArtworkEffectResultForEffectType:(unsigned int)arg1 catalog:(id)arg2 options:(id)arg3;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (id)fallbackCache;
 - (id)init;
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
+- (void)loadArtworkEffectResultForEffectType:(unsigned int)arg1 catalog:(id)arg2 options:(id)arg3 systemEffectHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (void)loadRepresentationForArtworkCatalog:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setArtworkResizeUtility:(id)arg1;
-- (void)setCanUseSurfaceBackedImages:(BOOL)arg1;
 - (void)setFallbackCache:(id)arg1;
+- (void)setUsesFallbackCache:(BOOL)arg1;
+- (BOOL)usesFallbackCache;
+- (id)visualIdenticalityIdentifierForCatalog:(id)arg1;
 
 @end

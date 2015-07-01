@@ -7,6 +7,7 @@
     <SKUINavigationDocumentDelegate> *_delegate;
     UINavigationController *_navigationController;
     UINavigationController *_overrideNavigationController;
+    NSMutableArray *_pendingNavigationStackEnsureConsistencyRequests;
     NSMutableArray *_stackItems;
 }
 
@@ -22,14 +23,17 @@
 
 - (void).cxx_destruct;
 - (id)_activeNavigationController;
+- (void)_applyDocumentReplacementForOldStackItem:(id)arg1 atOldIndex:(int)arg2 withStackItem:(id)arg3;
+- (void)_ensureStackConsistencyForNavigationControllerOperation:(int)arg1 operationDidComplete:(BOOL)arg2;
 - (void)_handleStackDidChange;
+- (void)_scheduleFlushingPendingNavigationStackEnsureConsistencyRequestsWithTransitionCoordinator:(id)arg1;
 - (void)_unloadAllStackItems;
 - (void)clear;
 - (id)clientContext;
 - (id)delegate;
 - (id)documentStackItems;
 - (id)documents;
-- (void)garbageCollectDocuments;
+- (void)ensureStackConsistencyForNavigationControllerOperation:(int)arg1 operationDidComplete:(BOOL)arg2;
 - (id)initWithNavigationController:(id)arg1;
 - (void)insertDocument:(id)arg1 beforeDocument:(id)arg2 options:(id)arg3;
 - (id)navigationController;

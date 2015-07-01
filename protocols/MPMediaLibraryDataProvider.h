@@ -25,12 +25,14 @@
 - (void)connectWithAuthenticationData:(void *)arg1 completionBlock:(void *)arg2 progressHandler:(void *)arg3; // needs 3 arg types, found 14: NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*, id /* block */, void*, void, id /* block */, float, void*
 - (void)disconnect;
 - (void)enumerateCollectionIdentifiersForQueryCriteria:(void *)arg1 ordered:(void *)arg2 cancelBlock:(void *)arg3 usingBlock:(void *)arg4; // needs 4 arg types, found 15: MPMediaQueryCriteria *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, BOOL, id /* block */, void*, id /* block */, void*, void, id /* block */, long long, NSDictionary *, BOOL*, void*
-- (void)enumerateEntityChangesAfterSyncAnchor:(void *)arg1 maximumRevisionType:(void *)arg2 itemBlock:(void *)arg3 collectionBlock:(void *)arg4; // needs 4 arg types, found 21: NSString *, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, NSString *, int, BOOL*, void*, id /* block */, void*, void, id /* block */, long long, int, NSString *, int, BOOL*, void*
+- (void)enumerateEntityChangesAfterSyncAnchor:(void *)arg1 maximumRevisionType:(void *)arg2 inUsersLibrary:(void *)arg3 itemBlock:(void *)arg4 collectionBlock:(void *)arg5; // needs 5 arg types, found 22: NSString *, int, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, NSString *, int, BOOL*, void*, id /* block */, void*, void, id /* block */, long long, int, NSString *, int, BOOL*, void*
 - (void)enumerateItemIdentifiersForQueryCriteria:(void *)arg1 ordered:(void *)arg2 cancelBlock:(void *)arg3 usingBlock:(void *)arg4; // needs 4 arg types, found 14: MPMediaQueryCriteria *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, BOOL, id /* block */, void*, id /* block */, void*, void, id /* block */, long long, BOOL*, void*
 - (NSSet *)propertiesToCache;
 - (BOOL)requiresAuthentication;
 - (void)setLibraryContainerFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(NSArray *)arg2;
 - (void)setLibraryEntityFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(NSArray *)arg2;
+- (void)setLibraryPublicContainerFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(NSArray *)arg2;
+- (void)setLibraryPublicEntityFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(NSArray *)arg2;
 - (NSString *)syncValidity;
 
 @end

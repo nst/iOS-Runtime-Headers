@@ -11,9 +11,15 @@
 
 - (void).cxx_destruct;
 - (void)_addRequest:(id)arg1 forViewElement:(id)arg2;
+- (id)_bestGuessCache;
 - (struct CGSize { float x1; float x2; })_bestGuessSizeForButton:(id)arg1 width:(float)arg2;
 - (struct CGSize { float x1; float x2; })_bestGuessSizeForLabel:(id)arg1 width:(float)arg2;
 - (struct CGSize { float x1; float x2; })_bestGuessSizeForOrdinal:(id)arg1 width:(float)arg2;
+- (id)_createLayoutRequestForBadge:(id)arg1 width:(int)arg2;
+- (id)_createLayoutRequestForButton:(id)arg1 attributedString:(id)arg2 width:(int)arg3;
+- (id)_createLayoutRequestForLabel:(id)arg1 attributedString:(id)arg2 width:(int)arg3;
+- (id)_createLayoutRequestForOrdinal:(id)arg1 attributedString:(id)arg2 width:(int)arg3;
+- (id)_createLayoutRequestForViewElement:(id)arg1 attributedString:(id)arg2 width:(int)arg3;
 - (id)_existingLayoutForViewElement:(id)arg1 width:(int)arg2;
 - (id)_layoutIndexForViewElement:(id)arg1 width:(int)arg2;
 - (struct CGSize { float x1; float x2; })estimatedSizeForButton:(id)arg1 width:(float)arg2;

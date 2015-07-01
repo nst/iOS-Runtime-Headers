@@ -16,6 +16,7 @@
 }
 
 @property (nonatomic, readonly) SKUIEditorialComponent *editorialComponent;
+@property (nonatomic, readonly) SKUILayoutCache *layoutCache;
 
 - (void).cxx_destruct;
 - (id)_bodyTextLayoutRequestWithTotalWidth:(float)arg1;
@@ -25,6 +26,7 @@
 - (id)editorialComponent;
 - (void)enqueueLayoutRequests;
 - (id)initWithEditorial:(id)arg1 layoutCache:(id)arg2;
+- (id)layoutCache;
 - (float)layoutHeightForOrientation:(int)arg1 expanded:(BOOL)arg2;
 - (id)linkLayoutForOrientation:(int)arg1;
 - (void)setLayoutWidth:(float)arg1 forOrientation:(int)arg2;

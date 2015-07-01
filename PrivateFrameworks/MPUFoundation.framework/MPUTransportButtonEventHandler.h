@@ -3,7 +3,7 @@
  */
 
 @interface MPUTransportButtonEventHandler : NSObject {
-    UIButton *_button;
+    UIControl *_button;
     BOOL _longPress;
     NSObject<OS_dispatch_source> *_longPressTimer;
     double _minimumLongPressDuration;
@@ -11,7 +11,7 @@
     BOOL _supportsTapWhenDisabled;
 }
 
-@property (nonatomic) UIButton *button;
+@property (nonatomic) UIControl *button;
 @property (nonatomic) double minimumLongPressDuration;
 @property (nonatomic) BOOL supportsTapWhenDisabled;
 

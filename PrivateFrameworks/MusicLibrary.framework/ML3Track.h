@@ -8,13 +8,17 @@
 
 + (id)TVShowEpisodesDefaultOrderingTerms;
 + (id)_normalizedImportChapters:(id)arg1 trackPersistentID:(long long)arg2;
++ (BOOL)_writeSyncDeletesToPlistWithLibrary:(id)arg1 forPersistentIDs:(id)arg2;
 + (id)albumAllArtistsDefaultOrderingTerms;
 + (id)albumAndArtistDefaultOrderingTerms;
++ (id)albumsByAlbumArtistDefaultOrderingTerms;
 + (id)albumsDefaultOrderingTerms;
 + (id)allProperties;
 + (id)artistAllAlbumsDefaultOrderingTerms;
 + (id)artistsDefaultOrderingTerms;
 + (BOOL)clearLocationFromLibrary:(id)arg1 persistentIDs:(id)arg2;
++ (BOOL)clearLocationFromLibrary:(id)arg1 persistentIDs:(id)arg2 disableKeepLocal:(BOOL)arg3;
++ (BOOL)clearLocationFromLibrary:(id)arg1 persistentIDs:(id)arg2 disableKeepLocal:(BOOL)arg3 usingConnection:(id)arg4;
 + (BOOL)clearLocationFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingConnection:(id)arg3;
 + (id)collectionClassesToUpdateBeforeDelete;
 + (id)composersDefaultOrderingTerms;
@@ -26,6 +30,7 @@
 + (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4;
 + (BOOL)deleteFromLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4 usingConnection:(id)arg5;
 + (void)enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingBlock:(id /* block */)arg3;
++ (void)enumeratePathsToDeleteFromLibrary:(id)arg1 persistentIDs:(id)arg2 usingConnection:(id)arg3 usingBlock:(id /* block */)arg4;
 + (id)extraTablesToDelete;
 + (id)extraTablesToInsert;
 + (id)flattenedChapterDataFromDAAPInfoDictionary:(id)arg1 trackPersistentID:(long long)arg2;
@@ -47,6 +52,7 @@
 + (id)predicateByOptimizingComparisonPredicate:(id)arg1;
 + (id)predisambiguatedProperties;
 + (BOOL)registerBookmarkMetadataIdentifierFunctionOnConnection:(id)arg1;
++ (BOOL)removeFromMyLibrary:(id)arg1 deletionType:(int)arg2 persistentIDs:(const long long*)arg3 count:(unsigned int)arg4;
 + (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (id)subselectPropertyForProperty:(id)arg1;
@@ -76,6 +82,7 @@
 - (void)populateChapterDataWithImportChapters:(id)arg1;
 - (void)populateLocationPropertiesWithPath:(id)arg1;
 - (void)populateLocationPropertiesWithPath:(id)arg1 isProtected:(BOOL)arg2;
+- (void)populateLocationPropertiesWithPath:(id)arg1 protectionType:(int)arg2;
 - (id)protocolItem;
 - (id)rawIntegrity;
 - (void)updateCollectionCloudStatus;

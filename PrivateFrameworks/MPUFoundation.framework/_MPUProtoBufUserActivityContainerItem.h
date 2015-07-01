@@ -29,6 +29,7 @@
 - (BOOL)hasVisualReferenceMultiverseIdentifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)selectedMultiverseIdentifier;
 - (void)setContainerItemType:(int)arg1;

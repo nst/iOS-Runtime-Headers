@@ -6,11 +6,13 @@
     SKUIGiftDashView *_dashView;
     UILabel *_labelLabel;
     int _style;
+    UILabel *_subtitleLabel;
     UILabel *_valueLabel;
 }
 
 @property (nonatomic, readonly) int giftConfirmLabelStyle;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic, copy) NSString *subtitleLabel;
 @property (nonatomic, copy) NSString *value;
 
 - (void).cxx_destruct;
@@ -19,8 +21,10 @@
 - (id)label;
 - (void)layoutSubviews;
 - (void)setLabel:(id)arg1;
+- (void)setSubtitleLabel:(id)arg1;
 - (void)setValue:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (id)subtitleLabel;
 - (id)value;
 
 @end

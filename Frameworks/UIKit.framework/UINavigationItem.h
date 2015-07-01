@@ -53,6 +53,7 @@
 @property (nonatomic, retain) UIBarButtonItem *leftBarButtonItem;
 @property (nonatomic, copy) NSArray *leftBarButtonItems;
 @property (nonatomic) BOOL leftItemsSupplementBackButton;
+@property (setter=music_setTitleViewAlpha:, nonatomic) float music_titleViewAlpha;
 @property (nonatomic, copy) NSString *prompt;
 @property (setter=pu_setBanner:, nonatomic, retain) PUAbstractNavigationBanner *pu_banner;
 @property (nonatomic, retain) UIBarButtonItem *rightBarButtonItem;
@@ -208,6 +209,11 @@
 
 - (id)pu_banner;
 - (void)pu_setBanner:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)music_setTitleViewAlpha:(float)arg1;
+- (float)music_titleViewAlpha;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

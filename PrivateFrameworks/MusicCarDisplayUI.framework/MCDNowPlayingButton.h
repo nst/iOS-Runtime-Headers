@@ -11,6 +11,7 @@
 @property (nonatomic) BOOL hidesLeftBorder;
 
 + (id)buttonWithHeight:(float)arg1;
++ (id)wrappingViewForButton:(id)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)canBecomeFocused;

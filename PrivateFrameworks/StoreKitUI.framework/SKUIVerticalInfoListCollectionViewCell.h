@@ -3,6 +3,7 @@
  */
 
 @interface SKUIVerticalInfoListCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
+    NSMapTable *_imageViewToImageResourceCacheKey;
     NSHashTable *_titleViews;
     NSMapTable *_valueViews;
 }

@@ -5,11 +5,13 @@
 @interface MPUTableViewController : MPUDataSourceViewController <MPStoreDownloadManagerObserver, MPUActionTableViewDataSource, UITableViewDelegate> {
     Class _cellConfigurationClass;
     BOOL _hasAppearedOnce;
-    int _numberOfActionRows;
+    int _numberOfBottomActionRows;
+    int _numberOfTopActionRows;
     BOOL _shouldDeselectImmediately;
     BOOL _shouldUpdateVisibleCellsWhenVisible;
     UITableView *_tableView;
-    NSMutableArray *_visibleActionRows;
+    NSMutableArray *_visibleBottomActionRows;
+    NSMutableArray *_visibleTopActionRows;
 }
 
 @property (nonatomic, readonly) Class cellConfigurationClass;
@@ -24,6 +26,8 @@
 
 + (Class)_tableViewClass;
 + (id)actionCellConfigurationClasses;
++ (id)actionCellConfigurationClassesForLocation:(unsigned int)arg1;
++ (id)allActionCellConfigurationClasses;
 + (Class)invalidationContextClass;
 + (BOOL)usesCellConfigurations;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
@@ -55,7 +59,9 @@
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (BOOL)isTableViewLoaded;
 - (int)numberOfActionRowsInTableView:(id)arg1;
+- (int)numberOfBottomActionRowsInTableView:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (int)numberOfTopActionRowsInTableView:(id)arg1;
 - (void)reloadActionRowsAnimated:(BOOL)arg1;
 - (void)reloadData;
 - (BOOL)respondsToSelector:(SEL)arg1;

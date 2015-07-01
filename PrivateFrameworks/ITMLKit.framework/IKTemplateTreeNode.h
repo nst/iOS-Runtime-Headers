@@ -4,22 +4,15 @@
 
 @interface IKTemplateTreeNode : NSObject {
     NSDictionary *_childNodes;
-    NSString *_inlineStyle;
-    NSString *_selector;
-    IKViewElementStyle *_style;
+    IKViewElementStyle *_elementStyleOverrides;
 }
 
 @property (nonatomic, readonly, copy) NSDictionary *childNodes;
-@property (nonatomic, readonly, copy) NSString *inlineStyle;
-@property (nonatomic, readonly, copy) NSString *selector;
-@property (nonatomic, retain) IKViewElementStyle *style;
+@property (nonatomic, readonly, copy) IKViewElementStyle *elementStyleOverrides;
 
 - (void).cxx_destruct;
 - (id)childNodes;
-- (id)initWithSelector:(id)arg1 inlineStyle:(id)arg2 childNodes:(id)arg3;
-- (id)inlineStyle;
-- (id)selector;
-- (void)setStyle:(id)arg1;
-- (id)style;
+- (id)elementStyleOverrides;
+- (id)initWithElementStyleOverrides:(id)arg1 childNodes:(id)arg2;
 
 @end

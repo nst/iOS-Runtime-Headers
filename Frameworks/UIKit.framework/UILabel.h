@@ -276,6 +276,10 @@
 - (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })pkui_sizeThatFits:(struct CGSize { float x1; float x2; })arg1 forceWordWrap:(BOOL)arg2;
 
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)transitionToTextColor:(id)arg1 duration:(double)arg2;
+
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (BOOL)MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
@@ -288,10 +292,6 @@
 - (int)_textAlignmentFromElementAlignment:(unsigned int)arg1;
 - (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3;
 - (void)configureForIKTextElement:(id)arg1 fontDescriptor:(id)arg2 textStyle:(id)arg3 capitalize:(BOOL)arg4;
-
-// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
-
-- (void)transitionToTextColor:(id)arg1 duration:(double)arg2;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUI.framework/TelephonyUI
 

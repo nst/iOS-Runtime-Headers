@@ -31,6 +31,7 @@
 @property (readonly) int _gkImageOrientation;
 @property (readonly) float _gkScale;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } alignmentRectInsets;
+@property (nonatomic, readonly) MPArtworkCatalog *artworkCatalog;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } capInsets;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, retain) UIImageAsset *imageAsset;
@@ -243,6 +244,7 @@
 
 - (id)MP_flatImageWithLinearGradientFromTopColor:(id)arg1 toBottomColor:(id)arg2;
 - (id)MP_imageByOverlayingColor:(id)arg1;
+- (id)artworkCatalog;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bitmapRectFromImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)imageWithEtchedBorderOfColor:(id)arg1 radius:(float)arg2;
 - (id)imageWithShadow:(id)arg1;
@@ -284,6 +286,11 @@
 // Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
 
 - (id)tintedImageWithColor:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (id)imageByCroppingToUniformCenter;
+- (id)imageWithCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 

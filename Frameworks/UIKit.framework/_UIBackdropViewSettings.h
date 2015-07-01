@@ -111,6 +111,8 @@
 @property (nonatomic) unsigned int version;
 @property (nonatomic) BOOL zoomsBack;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)darkeningTintColor;
 + (id)settingsForPrivateStyle:(int)arg1;
 + (id)settingsForPrivateStyle:(int)arg1 graphicsQuality:(int)arg2;
@@ -239,5 +241,10 @@
 - (BOOL)usesGrayscaleTintView;
 - (unsigned int)version;
 - (BOOL)zoomsBack;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
++ (id)MPU_settingsForNowPlayingBackdrop;
++ (id)MPU_settingsForNowPlayingVibrantContent;
 
 @end

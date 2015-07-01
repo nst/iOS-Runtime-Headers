@@ -5,6 +5,7 @@
 @interface SKUIGiftThemePickerViewController : SKUIGiftStepViewController <SKUIGiftConfigurationObserver, UICollectionViewDataSource, UICollectionViewDelegate> {
     BOOL _animatingScrollView;
     SKUIGiftThemeCollectionView *_collectionView;
+    SKUIGiftThemePickerFlowLayout *_flowLayout;
     UIImage *_itemImage;
     UIPageControl *_pageControl;
     int _selectedThemeIndex;
@@ -19,8 +20,13 @@
 
 - (void).cxx_destruct;
 - (void)_backgroundTapAction:(id)arg1;
+- (float)_cardHeight:(id)arg1;
 - (id)_collectionView;
+- (float)_collectionViewWidth:(id)arg1;
+- (id)_flowLayout;
+- (void)_layoutCollectionViewWithTraits:(id)arg1;
 - (void)_nextAction:(id)arg1;
+- (float)_scrollInsetHorizontal:(id)arg1;
 - (void)_setItemImage:(id)arg1 error:(id)arg2;
 - (void)_setSelectedThemeIndex:(int)arg1 animated:(BOOL)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -34,5 +40,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillLayoutSubviews;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIViewController : UIResponder <GKContentRefresh, GKURLHandling, MPUMiniPlayerParticipant, NSCoding, NSExtensionRequestHandling, UIAppearanceContainer, UIContentContainer, UIFocusContainer, UITraitEnvironment, UIViewControllerPresenting, _UIContentContainerInternal, _UITraitEnvironmentInternal, _UIViewServiceDeputy> {
+@interface UIViewController : UIResponder <GKContentRefresh, GKURLHandling, NSCoding, NSExtensionRequestHandling, UIAppearanceContainer, UIContentContainer, UIFocusContainer, UITraitEnvironment, UIViewControllerPresenting, _UIContentContainerInternal, _UITraitEnvironmentInternal, _UIViewServiceDeputy> {
     UIViewController *__childControllerToIgnoreWhileLookingForTransitionCoordinator;
     <_UIViewControllerContentViewEmbedding> *__embeddedDelegate;
     UIView *__embeddedView;
@@ -246,11 +246,17 @@
 @property (nonatomic) int modalTransitionStyle;
 @property (nonatomic, retain) UITransitionView *modalTransitionView;
 @property (nonatomic, readonly) UIViewController *modalViewController;
-@property (getter=music_representativeSelectedMediaEntity, setter=music_setRepresentativeSelectedMediaEntity:, nonatomic) MPMediaEntity *music_representativeSelectedMediaEntity;
-@property (getter=music_showsMatchLoading, setter=music_setShowsMatchLoading:, nonatomic) BOOL music_showsMatchLoading;
-@property (getter=music_showsNoContent, setter=music_setShowsNoContent:, nonatomic) BOOL music_showsNoContent;
-@property (getter=music_showsNowPlayingNavigationItem, setter=music_setShowsNowPlayingNavigationItem:, nonatomic) BOOL music_showsNowPlayingNavigationItem;
-@property (getter=music_showsStoreNavigationItem, setter=music_setShowsStoreNavigationItem:, nonatomic) BOOL music_showsStoreNavigationItem;
+@property (nonatomic, readonly) UIBarButtonItem *music_accountEntryLeftBarButtonItem;
+@property (nonatomic, readonly, copy) NSString *music_effectiveReportingFeatureName;
+@property (nonatomic, readonly, copy) NSData *music_effectiveReportingRecommendationData;
+@property (setter=music_setReportingFeatureName:, nonatomic, copy) NSString *music_reportingFeatureName;
+@property (setter=music_setReportingRecommendationData:, nonatomic, copy) NSData *music_reportingRecommendationData;
+@property (nonatomic, readonly) UIBarButtonItem *music_searchEntryRightBarButtonItem;
+@property (setter=music_setSearchOptions:, nonatomic) unsigned int music_searchOptions;
+@property (setter=music_setWantsAccountEntryLeftBarButtonItem:, nonatomic) BOOL music_wantsAccountEntryLeftBarButtonItem;
+@property (setter=music_setWantsDefaultIndexBar:, nonatomic) BOOL music_wantsDefaultIndexBar;
+@property (setter=music_setWantsSearchEntryRightBarButtonItem:, nonatomic) BOOL music_wantsSearchEntryRightBarButtonItem;
+@property (setter=music_setWantsToOverrideRightBarButtonItem:, nonatomic) BOOL music_wantsToOverrideRightBarButtonItem;
 @property (nonatomic) NSMutableArray *mutableChildViewControllers;
 @property (nonatomic, readonly, retain) UINavigationController *navigationController;
 @property (nonatomic, readonly, retain) UINavigationItem *navigationItem;
@@ -261,7 +267,6 @@
 @property (getter=_originalPresentationController, setter=_setOriginalPresentationController:, nonatomic, retain) UIPresentationController *originalPresentationController;
 @property (nonatomic) UIViewController *parentModalViewController;
 @property (nonatomic) UIViewController *parentViewController;
-@property (nonatomic, retain) MusicPickerOverlay *pickerOverlay;
 @property (nonatomic, readonly) BOOL pl_isInPopover;
 @property (nonatomic) struct CGSize { float x1; float x2; } preferedContentSizeInModalItem;
 @property (nonatomic) struct CGSize { float x1; float x2; } preferredContentSize;
@@ -282,6 +287,8 @@
 @property (nonatomic, readonly) BOOL pu_wantsTabBarVisible;
 @property (nonatomic, readonly) BOOL pu_wantsToolbarVisible;
 @property (nonatomic, readonly) UIView *savedHeaderSuperview;
+@property (nonatomic, readonly) SKUIScrollingSegmentedController *scrollingSegmentedController;
+@property (nonatomic, readonly) SKUIScrollingTabBarController *scrollingTabBarController;
 @property (nonatomic) BOOL searchBarHidNavBar;
 @property (nonatomic, retain) UISearchDisplayController *searchDisplayController;
 @property (nonatomic, readonly) BOOL shouldInvalidateForMemoryPurge;
@@ -1119,6 +1126,35 @@
 - (void)fmf_dismissModalViewController:(id)arg1;
 - (void)fmf_presentModalViewController:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)_music_handleAccountButtonTapped:(id)arg1;
+- (void)_music_handleSearchButtonTapped:(id)arg1;
+- (void)dismissDetailViewController:(id)arg1;
+- (id)music_accountEntryLeftBarButtonItem;
+- (void)music_configureWithJSReportingInformation:(id)arg1;
+- (void)music_dismissViewController:(id)arg1 animated:(BOOL)arg2;
+- (id)music_effectiveReportingFeatureName;
+- (id)music_effectiveReportingRecommendationData;
+- (id)music_furthestPresentingViewController;
+- (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (void)music_presentSearchViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (id)music_reportingFeatureName;
+- (id)music_reportingRecommendationData;
+- (id)music_searchEntryRightBarButtonItem;
+- (unsigned int)music_searchOptions;
+- (void)music_setReportingFeatureName:(id)arg1;
+- (void)music_setReportingRecommendationData:(id)arg1;
+- (void)music_setSearchOptions:(unsigned int)arg1;
+- (void)music_setWantsAccountEntryLeftBarButtonItem:(BOOL)arg1;
+- (void)music_setWantsDefaultIndexBar:(BOOL)arg1;
+- (void)music_setWantsSearchEntryRightBarButtonItem:(BOOL)arg1;
+- (void)music_setWantsToOverrideRightBarButtonItem:(BOOL)arg1;
+- (BOOL)music_wantsAccountEntryLeftBarButtonItem;
+- (BOOL)music_wantsDefaultIndexBar;
+- (BOOL)music_wantsSearchEntryRightBarButtonItem;
+- (BOOL)music_wantsToOverrideRightBarButtonItem;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
 
 - (void)_gkAddPositionConstraintsForOverlayBubble:(id)arg1 center:(struct CGPoint { float x1; float x2; })arg2 movingFromView:(id)arg3 toView:(id)arg4;
@@ -1213,49 +1249,8 @@
 + (id)MCD_carDisplayIdentifierForIdentifier:(id)arg1;
 + (id)MCD_queryForIdentifier:(id)arg1;
 + (void)MCD_registerViewControllerIdentifiers;
-+ (id)MCD_sanitizedQueryForQuery:(id)arg1;
 
 - (void)MCD_setShowsNowPlayingNavigationItem:(BOOL)arg1;
-
-// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
-
-+ (id)music_queryForIdentifier:(id)arg1;
-+ (id)music_sanitizedQueryForQuery:(id)arg1;
-
-- (BOOL)MPH_supportsCoverFlow;
-- (void)MPH_supportsCoverFlowDidChange;
-- (BOOL)MPU_beginPlaybackForVisibleContent;
-- (id)MPU_prospectivePlaybackInformation;
-- (void)_music_cloudControllerIsUpdateInProgressDidChangeNotification:(id)arg1;
-- (id)_music_cloudLoadingView;
-- (id)_music_noContentView;
-- (void)_music_setCloudLoadingView:(id)arg1;
-- (void)_music_setNoContentView:(id)arg1;
-- (void)_music_storeButtonAction:(id)arg1;
-- (void)_music_storeClientRestrictionsDidChangeNotification:(id)arg1;
-- (void)_music_updateForContentChangeForInitialViewLoad:(BOOL)arg1;
-- (void)dismissPickerOverlay;
-- (BOOL)music_appendCurrentUserActivityContainerItems:(id)arg1 previousViewController:(id)arg2 nextViewController:(id)arg3;
-- (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
-- (BOOL)music_hasContent;
-- (void)music_loadNoContentOrMatchLoadingViewIfAppropriate;
-- (id)music_representativeSelectedMediaEntity;
-- (void)music_setRepresentativeSelectedMediaEntity:(id)arg1;
-- (void)music_setShowsMatchLoading:(BOOL)arg1;
-- (void)music_setShowsNoContent:(BOOL)arg1;
-- (void)music_setShowsNowPlayingNavigationItem:(BOOL)arg1;
-- (void)music_setShowsStoreNavigationItem:(BOOL)arg1;
-- (BOOL)music_shouldPresentModallyInMoreList;
-- (BOOL)music_showsMatchLoading;
-- (BOOL)music_showsNoContent;
-- (BOOL)music_showsNowPlayingNavigationItem;
-- (BOOL)music_showsStoreNavigationItem;
-- (void)music_updateForContentChange;
-- (void)music_updateStoreNavigationItem;
-- (id)pickerOverlay;
-- (void)presentPickerOverlay:(id)arg1;
-- (void)presentPickerOverlay:(id)arg1 completion:(id /* block */)arg2;
-- (void)setPickerOverlay:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 
@@ -1288,6 +1283,11 @@
 - (id)SKUIPinnedHeaderView;
 - (id)SKUIStackedBar;
 - (float)SKUIStackedBarSplit;
+- (id)scrollingSegmentedController;
+- (id)scrollingTabBarController;
+- (void)setNeedsNavigationBarAppearanceUpdate;
+- (void)setNeedsNestedPagingScrollViewUpdate;
+- (void)setNeedsScrollingSegmentContentScrollViewUpdate;
 - (void)setSKUIStackedBarSplit:(float)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos

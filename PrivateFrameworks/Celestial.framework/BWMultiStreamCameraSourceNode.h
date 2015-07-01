@@ -22,7 +22,6 @@
     BOOL _discardUnstableSphereVideoFrames;
     NSMutableDictionary *_dutyCycleMetadataCache;
     int _firmwareStillImageOutputRetainedBufferCountOverride;
-    BOOL _highResStillImageCaptureEnabled;
     float _lastRequestedZoomFactor;
     float _maxFrameRate;
     float _maxISPZoomFactor;
@@ -63,6 +62,7 @@
     int _streamFormatIndex;
     NSArray *_supportedFormats;
     BOOL _temporalNoiseReductionEnabled;
+    BOOL _usesFirmwareStillImageOutput;
     struct { 
         int width; 
         int height; 
@@ -121,7 +121,6 @@
 - (int)firmwareStillImageOutputRetainedBufferCountOverride;
 - (int)formatIndex;
 - (BOOL)hasNonLiveConfigurationChanges;
-- (BOOL)highResStillImageCaptureEnabled;
 - (void)makeCurrentConfigurationLive;
 - (float)maxFrameRate;
 - (int)maxIntegrationTimeOverride;
@@ -143,7 +142,6 @@
 - (void)setDiscardUnstableSphereVideoFrames:(BOOL)arg1;
 - (void)setFirmwareStillImageOutputRetainedBufferCountOverride:(int)arg1;
 - (void)setFormatIndex:(int)arg1;
-- (void)setHighResStillImageCaptureEnabled:(BOOL)arg1;
 - (void)setMaxFrameRate:(float)arg1;
 - (void)setMaxIntegrationTimeOverride:(int)arg1;
 - (void)setMinFrameRate:(float)arg1;
@@ -154,6 +152,7 @@
 - (void)setSensorCropDimensions:(struct { int x1; int x2; })arg1;
 - (void)setStillImageOutputEnabled:(BOOL)arg1;
 - (void)setTemporalNoiseReductionEnabled:(BOOL)arg1;
+- (void)setUsesFirmwareStillImageOutput:(BOOL)arg1;
 - (void)setVideoCaptureDimensions:(struct { int x1; int x2; })arg1;
 - (void)setVideoCaptureOutputEnabled:(BOOL)arg1;
 - (void)setVideoPixelFormat:(unsigned long)arg1;
@@ -164,6 +163,7 @@
 - (BOOL)stop:(id*)arg1;
 - (BOOL)temporalNoiseReductionEnabled;
 - (void)updateOutputRequirements;
+- (BOOL)usesFirmwareStillImageOutput;
 - (struct { int x1; int x2; })videoCaptureDimensions;
 - (id)videoCaptureOutput;
 - (BOOL)videoCaptureOutputEnabled;

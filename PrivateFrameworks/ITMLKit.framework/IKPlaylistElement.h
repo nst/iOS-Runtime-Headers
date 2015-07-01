@@ -5,7 +5,7 @@
 @interface IKPlaylistElement : IKViewElement
 
 @property (nonatomic, readonly, retain) NSArray *items;
-@property (nonatomic, readonly, retain) IKAppPlayer *player;
+@property (nonatomic, readonly, retain) IKAppDOMPlayer *player;
 
 + (id)supportedFeatures;
 

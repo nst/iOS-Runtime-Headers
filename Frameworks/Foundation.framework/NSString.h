@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSString : NSObject <CKRecordValue, CKShortDescription, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable>
+@interface NSString : NSObject <CKRecordValue, CKShortDescription, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable>
 
 @property (nonatomic, readonly) NSData *_FTDataFromBase64String;
 @property (nonatomic, readonly) NSData *_FTDataFromHexString;
@@ -956,11 +956,13 @@
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (id)MLSortString;
+- (id)MLSortStringWithPrefix;
 - (id)_copyWithoutInsignificantPrefix:(BOOL)arg1 andCharacters:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeWithoutInsignificantPrefix:(BOOL)arg1 andCharacters:(BOOL)arg2;
 - (id)copyWithoutInsignificantCharacters;
 - (id)copyWithoutInsignificantPrefixAndCharacters;
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
+- (BOOL)ml_matchesValue:(id)arg1 usingComparison:(int)arg2;
 - (id)ml_stringValueForSQL;
 - (id)sanitizedString;
 
@@ -1119,6 +1121,16 @@
 - (id)decodeHexadecimal;
 - (id)pk_uppercaseStringForPreferredLocale;
 
+// Image: /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/PerformanceAnalysis
+
++ (id)classDictionaryKey;
++ (id)newInstanceWithoutReferencesFromBufferPosition:(const void*)arg1;
+
+- (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
+- (void)addSelfToSerializationDictionary:(id)arg1;
+- (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
+- (unsigned long)sizeInBytesForSerializedVersion;
+
 // Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
 
 - (id)setterName;
@@ -1144,7 +1156,9 @@
 
 // Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
 
+- (id)RU_attributedStringByEmphasizingStationNameWithRegularTextAttributes:(id)arg1 emphasizedTextAttributes:(id)arg2;
 - (id)RU_emphasizedTextByEmphasizingStationName;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_RU_stationNameRange;
 - (BOOL)_RU_stationTitleRadioIsSuffix;
 - (id)_RU_stationTitleRadioSubstring;
 

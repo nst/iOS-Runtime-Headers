@@ -111,7 +111,7 @@
 - (id)ruiDelegate;
 - (id)ruiLoader;
 - (BOOL)selectedPairedUnlock;
-- (void)sendGizmoPasscodeRestrictions:(id)arg1;
+- (void)sendGizmoPasscodeRestrictions;
 - (void)sendProxyActivationRequest:(id)arg1;
 - (id)serviceIdentifier;
 - (void)setActivationConnection:(id)arg1;

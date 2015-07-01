@@ -26,7 +26,6 @@
 + (id)newObserverForMediaItem:(id)arg1;
 + (id)newObserverForMediaItemPersistentID:(unsigned long long)arg1 isPendingSync:(BOOL)arg2 storeID:(long long)arg3;
 + (id)newObserverForStoreID:(long long)arg1;
-+ (id)sharedITunesStoreDownloadManager;
 
 - (void).cxx_destruct;
 - (void)_onQueue_invalidate;

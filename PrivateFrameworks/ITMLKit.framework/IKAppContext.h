@@ -11,6 +11,7 @@
     IKJSFoundation *_jsFoundation;
     struct __CFRunLoop { } *_jsThreadRunLoop;
     struct __CFRunLoopSource { } *_jsThreadRunLoopSource;
+    BOOL _mescalPrimeEnabledForXHRRequests;
     unsigned int _mode;
     NSMutableArray *_pendingQueue;
     NSMutableArray *_postEvaluationBlocks;
@@ -29,6 +30,7 @@
 @property BOOL isValid;
 @property (nonatomic, retain) JSContext *jsContext;
 @property (nonatomic, retain) IKJSFoundation *jsFoundation;
+@property (nonatomic) BOOL mescalPrimeEnabledForXHRRequests;
 @property (nonatomic, readonly) unsigned int mode;
 @property (nonatomic, retain) NSMutableArray *pendingQueue;
 @property (nonatomic, retain) NSMutableArray *postEvaluationBlocks;
@@ -47,6 +49,7 @@
 - (void)_evaluate:(id /* block */)arg1;
 - (void)_evaluateFoundationWithDeviceConfig:(id)arg1;
 - (void)_jsThreadMain;
+- (id)_preferredLaunchURL;
 - (void)_sourceCanceledOnRunLoop:(struct __CFRunLoop { }*)arg1;
 - (void)_sourcePerform;
 - (void)_sourceScheduledOnRunLoop:(struct __CFRunLoop { }*)arg1;
@@ -62,12 +65,15 @@
 - (void)evaluateFoundationJS;
 - (void)exitAppWithOptions:(id)arg1;
 - (void)handleReloadWithUrgencyType:(unsigned int)arg1 data:(id)arg2;
+- (void)handleRestart;
 - (id)initWithApplication:(id)arg1 mode:(unsigned int)arg2 delegate:(id)arg3;
 - (BOOL)isValid;
 - (id)jsContext;
 - (id)jsFoundation;
 - (void)launchAppWithOptions:(id)arg1;
+- (BOOL)mescalPrimeEnabledForXHRRequests;
 - (unsigned int)mode;
+- (void)openURLWithOptions:(id)arg1;
 - (void)operation:(id)arg1 failedWithError:(id)arg2;
 - (void)operation:(id)arg1 finishedWithOutput:(id)arg2;
 - (id)pendingQueue;
@@ -83,6 +89,7 @@
 - (void)setIsValid:(BOOL)arg1;
 - (void)setJsContext:(id)arg1;
 - (void)setJsFoundation:(id)arg1;
+- (void)setMescalPrimeEnabledForXHRRequests:(BOOL)arg1;
 - (void)setPendingQueue:(id)arg1;
 - (void)setPostEvaluationBlocks:(id)arg1;
 - (void)setReloadData:(id)arg1;

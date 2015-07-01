@@ -14,10 +14,14 @@
     NSDictionary *_clientDefinedTraits;
 }
 
+@property (nonatomic, readonly) BOOL MPU_hasCompactHeight;
 @property (nonatomic, readonly) BOOL MPU_hasCompactWidth;
+@property (nonatomic, readonly) BOOL MPU_hasRegularHeight;
 @property (nonatomic, readonly) BOOL MPU_hasRegularWidth;
 @property (nonatomic, readonly) float displayScale;
 @property (nonatomic, readonly) int horizontalSizeClass;
+@property (getter=music_isContainedWithinSplitViewDetail, nonatomic, readonly) BOOL music_containedWithinSplitViewDetail;
+@property (getter=music_isContainedWithinSplitViewPrimary, nonatomic, readonly) BOOL music_containedWithinSplitViewPrimary;
 @property (nonatomic, readonly) int userInterfaceIdiom;
 @property (nonatomic, readonly) int verticalSizeClass;
 
@@ -55,9 +59,19 @@
 - (int)userInterfaceIdiom;
 - (int)verticalSizeClass;
 
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (id)music_traitCollectionWithContainedWithinSplitViewDetail:(BOOL)arg1;
++ (id)music_traitCollectionWithContainedWithinSplitViewPrimary:(BOOL)arg1;
+
+- (BOOL)music_isContainedWithinSplitViewDetail;
+- (BOOL)music_isContainedWithinSplitViewPrimary;
+
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
+- (BOOL)MPU_hasCompactHeight;
 - (BOOL)MPU_hasCompactWidth;
+- (BOOL)MPU_hasRegularHeight;
 - (BOOL)MPU_hasRegularWidth;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport

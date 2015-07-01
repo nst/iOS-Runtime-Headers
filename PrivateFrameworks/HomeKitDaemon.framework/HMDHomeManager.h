@@ -20,6 +20,7 @@
     NSMutableArray *_homes;
     HMDIdentityRegistry *_identityRegistry;
     HMDIDSMessageDispatcher *_idsMessageDispatcher;
+    BOOL _ignoreFirstTimeReachabilityChanged;
     BOOL _lastAnswerForShouldCloudSyncData;
     HMMessageDispatcher *_messageDispatcher;
     HMDMessageFilterChain *_msgFilterChain;
@@ -66,6 +67,7 @@
 @property (nonatomic, retain) NSMutableArray *homes;
 @property (nonatomic, retain) HMDIdentityRegistry *identityRegistry;
 @property (nonatomic, retain) HMDIDSMessageDispatcher *idsMessageDispatcher;
+@property (nonatomic) BOOL ignoreFirstTimeReachabilityChanged;
 @property (nonatomic) BOOL lastAnswerForShouldCloudSyncData;
 @property (nonatomic, retain) HMMessageDispatcher *messageDispatcher;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
@@ -110,7 +112,8 @@
 - (void)_checkForRemotePeers;
 - (void)_configureHomes:(id)arg1;
 - (void)_detectGuestHomesAddedAndRemovedWithCloudHomes:(id)arg1;
-- (void)_electRemoteAccessPeerForHome:(id)arg1;
+- (void)_electRemoteAccessPeerForHome:(id)arg1 retryCount:(unsigned int)arg2;
+- (void)_electRemoteGatewayForHomesAfterReachabilityChanges;
 - (void)_eraseConfiguration:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)_eraseLocalHomeConfiguration:(BOOL)arg1 deleteMetadata:(BOOL)arg2;
 - (void)_eraseLocalMetadata;
@@ -222,6 +225,7 @@
 - (void)identifiersOfAccessoriesFromLocalAccessoryTransactions:(id*)arg1 accessoriesRemoved:(id*)arg2;
 - (id)identityRegistry;
 - (id)idsMessageDispatcher;
+- (BOOL)ignoreFirstTimeReachabilityChanged;
 - (id)initWithMessageDispatcher:(id)arg1 idsMessageDispatcher:(id)arg2 accessoryManager:(id)arg3 messageFilterChain:(id)arg4 homeData:(id)arg5 identityRegistry:(id)arg6 store:(id)arg7;
 - (void)installAvailableAsset:(id)arg1 version:(unsigned int)arg2;
 - (BOOL)isThisDeviceAdminOfHome:(id)arg1;
@@ -277,6 +281,7 @@
 - (void)setHomesConfigured:(BOOL)arg1;
 - (void)setIdentityRegistry:(id)arg1;
 - (void)setIdsMessageDispatcher:(id)arg1;
+- (void)setIgnoreFirstTimeReachabilityChanged:(BOOL)arg1;
 - (void)setLastAnswerForShouldCloudSyncData:(BOOL)arg1;
 - (void)setMessageDispatcher:(id)arg1;
 - (void)setMsgFilterChain:(id)arg1;

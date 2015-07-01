@@ -8,13 +8,13 @@
 
 - (void).cxx_destruct;
 - (id)_bestRadioTrackAssetWithAvailableAssets:(id)arg1;
+- (void)_handleUpdatedLikedState:(int)arg1 completion:(id /* block */)arg2;
+- (int)_persistedLikedState;
 - (void)_saveDownloadKeyCookie:(id)arg1 forURL:(id)arg2;
-- (void)_sendLikeOrBanRequestWithStatus:(int)arg1;
+- (void)_sendLikeOrBanRequestWithStatus:(int)arg1 completion:(id /* block */)arg2;
 - (id)_sinfsByRemovingEmptyPinfsFromSinfs:(id)arg1;
 - (id)assetFlavor;
 - (void)loadAssetAndPlayerItem;
-- (void)setIsBanned:(BOOL)arg1;
-- (void)setIsLiked:(BOOL)arg1;
 - (BOOL)supportsRadioTrackActions;
 
 @end

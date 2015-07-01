@@ -33,7 +33,7 @@
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id /* block */)arg2 progressHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (void)disconnect;
-- (id)errorResolverForMediaItem:(id)arg1;
+- (id)errorResolverForItem:(id)arg1;
 - (BOOL)hasArtworkImageForItemWithIdentifier:(long long)arg1;
 - (BOOL)hasGeniusMixes;
 - (id)homeSharingLibrary;

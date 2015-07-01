@@ -13,7 +13,6 @@
     MRNowPlayingArtwork *_nowPlayingArtwork;
     NSDictionary *_nowPlayingInfo;
     struct _MROrigin { } *_origin;
-    id /* block */ _playbackStateRequestHandler;
     unsigned int _routeDiscoveryMode;
 }
 
@@ -24,7 +23,6 @@
 @property (nonatomic, retain) MRNowPlayingArtwork *nowPlayingArtwork;
 @property (nonatomic, retain) NSDictionary *nowPlayingInfo;
 @property (nonatomic, readonly) struct _MROrigin { }*origin;
-@property (nonatomic, copy) id /* block */ playbackStateRequestHandler;
 @property (nonatomic) unsigned int routeDiscoveryMode;
 
 - (void)_avSystemControllerServerConnectionDiedNotification:(id)arg1;
@@ -38,7 +36,6 @@
 - (id)nowPlayingArtwork;
 - (id)nowPlayingInfo;
 - (struct _MROrigin { }*)origin;
-- (id /* block */)playbackStateRequestHandler;
 - (void)removeCommandHandlerBlockForKey:(id)arg1;
 - (unsigned int)routeDiscoveryMode;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
@@ -46,7 +43,6 @@
 - (void)setKeepAlive:(BOOL)arg1;
 - (void)setNowPlayingArtwork:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
-- (void)setPlaybackStateRequestHandler:(id /* block */)arg1;
 - (void)setRouteDiscoveryMode:(unsigned int)arg1;
 
 @end

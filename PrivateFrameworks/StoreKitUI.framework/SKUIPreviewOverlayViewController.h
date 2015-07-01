@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIPreviewOverlayViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUILayoutCacheDelegate, UIGestureRecognizerDelegate> {
+@interface SKUIPreviewOverlayViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUIItemStateCenterObserver, SKUILayoutCacheDelegate, UIGestureRecognizerDelegate> {
     int _backgroundStyle;
     IKAppDocument *_document;
     SKUILayoutCache *_layoutCache;
@@ -28,6 +28,7 @@
 - (void)documentDidUpdate:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)initWithDocument:(id)arg1;
+- (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;
 - (void)layoutCacheDidFinishBatch:(id)arg1;
 - (void)loadView;
 - (void)prepareOverlayView;

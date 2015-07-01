@@ -19,7 +19,6 @@
 - (id)initWithPredicate:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicate;
-- (id)predicateOptimizedForEntityClass:(Class)arg1;
 - (void)setPredicate:(id)arg1;
 
 @end

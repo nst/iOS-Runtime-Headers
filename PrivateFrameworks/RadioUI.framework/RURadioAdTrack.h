@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RURadioAdTrack : NSObject <ADBannerViewDelegate, NSCopying> {
+@interface RURadioAdTrack : NSObject <ADBannerViewDelegate, NSCopying, RURadioItemIdentifier> {
     NSURL *_URL;
     int _adType;
     ADBannerView *_adView;
@@ -40,6 +40,7 @@
 - (id)initWithAdView:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)loudnessInfo;
+- (id)radioIdentifier;
 - (void)triggerAdAction;
 - (id)uniqueIdentifier;
 

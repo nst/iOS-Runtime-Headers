@@ -349,6 +349,7 @@
 // Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
 
 + (id)hs_cloudErrorWithCode:(int)arg1 userInfo:(id)arg2;
++ (id)hs_cloudLibraryUploadErrorWithCode:(int)arg1 userInfo:(id)arg2;
 + (id)hs_homeSharingErrorWithCode:(int)arg1 userInfo:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation

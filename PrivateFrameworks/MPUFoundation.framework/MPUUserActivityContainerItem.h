@@ -8,12 +8,17 @@
     MPMediaEntity *_visualReferenceMediaEntity;
 }
 
+@property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_selectedContentItemIdentifierCollection;
+@property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_visualReferenceContentItemIdentifierCollection;
 @property (nonatomic, readonly) int containerItemType;
 @property (nonatomic, readonly) _MPUProtoBufUserActivityContainerItem *protoBufUserActivityContainerItem;
 @property (nonatomic, readonly) MPMediaEntity *selectedMediaEntity;
 @property (nonatomic, readonly) MPMediaEntity *visualReferenceMediaEntity;
 
 - (void).cxx_destruct;
+- (id)MPU_selectedContentItemIdentifierCollection;
+- (id)MPU_visualReferenceContentItemIdentifierCollection;
+- (id)_MPU_contentItemIdentifierCollectionWithMediaEntity:(id)arg1;
 - (int)containerItemType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

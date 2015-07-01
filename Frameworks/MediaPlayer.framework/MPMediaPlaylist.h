@@ -7,7 +7,6 @@
     MPMediaQuery *_seedTracksQuery;
 }
 
-@property (getter=music_seedItem, nonatomic, readonly) MPMediaItem *music_seedItem;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) unsigned long long persistentID;
 @property (nonatomic, readonly) unsigned int playlistAttributes;
@@ -20,6 +19,7 @@
 + (BOOL)canFilterByProperty:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)artworkCatalog;
 - (id)artworkCatalogsWithMaximumCount:(unsigned int)arg1;
 - (BOOL)canPlayUsingNetworkType:(int)arg1;
 - (unsigned int)count;
@@ -37,22 +37,25 @@
 - (id)name;
 - (unsigned long long)persistentID;
 - (unsigned int)playlistAttributes;
+- (void)removeFirstItem;
 - (id)representativeArtists;
 - (id)representativeItem;
 - (id)seedItems;
 - (id)seedTracksQuery;
+- (void)setUserSelectedArtworkImage:(id)arg1;
+- (id)tiledArtworkCatalogWithRows:(unsigned int)arg1 columns:(unsigned int)arg2;
 - (id)valueForProperty:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (void)registerSupportedCustomProperties;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (id)MPU_contentItemIdentifierCollection;
 
 // Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
 
 - (int)MCD_sortPlaylistByName:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
-
-+ (id)activeGeniusPlaylist;
-
-- (int)_sortPlaylistByName:(id)arg1;
-- (void)generateGeniusArtworkWithImageSize:(struct CGSize { float x1; float x2; })arg1 completionHandler:(id /* block */)arg2 queue:(id)arg3;
-- (id)music_seedItem;
 
 @end

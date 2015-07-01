@@ -6,4 +6,6 @@
 
 + (BOOL)_isSecure;
 
+- (BOOL)_canAffectStatusBarAppearance;
+
 @end

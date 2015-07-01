@@ -7,10 +7,17 @@
     BOOL _showsEditMode;
 }
 
+@property (nonatomic, readonly) BOOL allowsMultipleSelectionDuringEditing;
+@property (nonatomic, readonly) SKUICollectionDOMFeature *collectionFeature;
 @property (nonatomic, readonly) BOOL showsEditMode;
 
++ (id)supportedFeatures;
+
 - (void).cxx_destruct;
+- (int)_countOfInputCheckboxesWithBaseElement:(id)arg1 limit:(int)arg2;
+- (BOOL)allowsMultipleSelectionDuringEditing;
 - (id)applyUpdatesWithElement:(id)arg1;
+- (id)collectionFeature;
 - (void)enumerateChildrenUsingBlock:(id /* block */)arg1;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (int)pageComponentType;

@@ -24,7 +24,6 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
-- (void)_addSortStrings;
 - (id)artworkData;
 - (id)assetFilePath;
 - (BOOL)assignArtworkCacheIDFromAlbum;
@@ -36,7 +35,6 @@
 - (id)init;
 - (unsigned long)mediaType;
 - (id)movieProperties;
-- (void)normalizeEntityProperties;
 - (void)setArtworkData:(id)arg1;
 - (void)setAssetFilePath:(id)arg1;
 - (void)setAssignArtworkCacheIDFromAlbum:(BOOL)arg1;

@@ -7,9 +7,11 @@
     NSIndexPath *_containerIndexPath;
     int _count;
     _UIFilteredDataSource *_dataSource;
+    AVExternalDevice *_externalDevice;
     NSMutableSet *_indexesToUpdate;
     BOOL _isFetchingGuard;
     NSArray *_items;
+    BOOL _limited;
     MCDBrowsableContentModel *_model;
     UIView *_nowPlayingButton;
     NSIndexPath *_reselectIndexPath;
@@ -18,6 +20,7 @@
     NSObject<OS_dispatch_queue> *_serialQueue;
     BOOL _shouldReloadOnAppear;
     UITableView *_tableView;
+    BOOL _visible;
     BOOL _wasPreloaded;
 }
 
@@ -25,6 +28,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (getter=isVisible, nonatomic) BOOL visible;
 
 - (void).cxx_destruct;
 - (void)_actuallyUpdate;
@@ -32,6 +36,7 @@
 - (void)_clearTableViewSelectionAnimated:(BOOL)arg1;
 - (void)_configureCell:(id)arg1 forIndexPath:(id)arg2;
 - (void)_displayLoadingActivity;
+- (void)_limitedUIChanged:(id)arg1;
 - (id)_modelIndexPathForRow:(int)arg1;
 - (void)_nowPlayingButtonTapped:(id)arg1;
 - (void)_nowPlayingDidChange:(id)arg1;
@@ -43,10 +48,12 @@
 - (id)initWithModel:(id)arg1 indexPath:(id)arg2;
 - (id)initWithModel:(id)arg1 indexPath:(id)arg2 preloaded:(BOOL)arg3;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)isVisible;
 - (void)model:(id)arg1 didInitiatePlaybackOfItemAtIndexPath:(id)arg2 error:(id)arg3;
 - (void)model:(id)arg1 didUpdateContainerAtIndexPath:(id)arg2;
 - (void)model:(id)arg1 didUpdateContentItemsAtIndexPaths:(id)arg2;
 - (id)preferredFocusedItem;
+- (void)setVisible:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;

@@ -23,9 +23,13 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) double lastNetworkTypeChangeTime;
+@property (readonly) NSString *mobileSubscriberCountryCode;
+@property (readonly) NSString *mobileSubscriberNetworkCode;
 @property (readonly) NSString *modemRegistrationStatus;
 @property int networkType;
 @property (readonly) NSString *operatorName;
+@property (readonly) NSString *phoneNumber;
+@property (readonly) NSString *providerName;
 @property (readonly) BOOL shouldShowCellularAutomaticDownloadsSwitch;
 @property (readonly) Class superclass;
 @property (getter=isUsingNetwork, readonly) BOOL usingNetwork;
@@ -64,9 +68,13 @@
 - (BOOL)isUsingNetwork;
 - (BOOL)isWiFiEnabled;
 - (double)lastNetworkTypeChangeTime;
+- (id)mobileSubscriberCountryCode;
+- (id)mobileSubscriberNetworkCode;
 - (id)modemRegistrationStatus;
 - (int)networkType;
 - (id)operatorName;
+- (id)phoneNumber;
+- (id)providerName;
 - (void)reloadNetworkType;
 - (void)setNetworkType:(int)arg1;
 - (BOOL)shouldShowCellularAutomaticDownloadsSwitch;

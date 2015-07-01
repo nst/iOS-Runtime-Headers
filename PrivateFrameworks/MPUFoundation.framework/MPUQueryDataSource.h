@@ -5,9 +5,11 @@
 @interface MPUQueryDataSource : MPUDataSource {
     NSMutableSet *_additionalUniqueItemPropertiesToFetch;
     NSArray *_entities;
+    BOOL _hasValidRepresentativeCollection;
     BOOL _ignoringInvalidationDueToBackgroundApplicationState;
     BOOL _invalidateWhenEnteringForeground;
     MPMediaQuery *_query;
+    MPMediaItemCollection *_representativeCollection;
     MPMediaQuerySectionInfo *_sectionInfo;
 }
 
@@ -20,12 +22,13 @@
 - (void)_defaultMediaLibraryDidChangeNotification:(id)arg1;
 - (BOOL)_deleteHidesFromCloudForIndex:(unsigned int)arg1 hidesAll:(out BOOL*)arg2;
 - (void)_invalidateCalculatedEntities;
+- (void)_invalidateForDisplayValuesChangeIfNeeded;
 - (void)_invalidateIfNeeded;
 - (void)_isCloudEnabledDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDisplayValuesDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
-- (void)_postInvalidationNotificationIfNeeded;
+- (id)_representativeCollection;
 - (id)_sectionInfo;
 - (void)addAdditionalMediaEntityPropertiesToFetch:(id)arg1;
 - (BOOL)canEditEntityAtIndex:(unsigned int)arg1;

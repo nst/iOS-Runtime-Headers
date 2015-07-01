@@ -16,6 +16,7 @@
     UIImageView *_editModeControl;
     UIView *_highlightBackgroundView;
     SKUIHorizontalLockupView *_lockupView;
+    UIColor *_lockupViewBackgroundColor;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInset;

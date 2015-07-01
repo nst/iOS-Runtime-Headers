@@ -28,8 +28,8 @@
 - (void).cxx_destruct;
 - (BOOL)MPSD_hasDownloadableItem;
 - (BOOL)MPSD_hasDownloadingItem;
-- (id)__albumArtistArtworkCatalog;
-- (id)__artistArtworkCatalog;
+- (id)albumArtistArtworkCatalog;
+- (id)artistArtworkCatalog;
 - (id)artworkCatalog;
 - (unsigned int)count;
 - (void)encodeWithCoder:(id)arg1;
@@ -44,9 +44,15 @@
 - (unsigned int)mediaTypes;
 - (id)multiverseIdentifier;
 - (id)representativeItem;
+- (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (void)setValue:(id)arg1 forProperty:(id)arg2 withCompletionBlock:(id /* block */)arg3;
 
-// Image: /System/Library/PrivateFrameworks/MusicUI.framework/MusicUI
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
-- (BOOL)hasDeletableContent;
++ (void)registerSupportedCustomProperties;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (id)MPU_contentItemIdentifierCollection;
 
 @end

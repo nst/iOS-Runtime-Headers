@@ -8,7 +8,6 @@
     BOOL _displaysSearchBarInNavigationBar;
     UIViewController *_parentViewController;
     UISearchBar *_searchBar;
-    SKUISearchBarViewElement *_searchBarViewElement;
     SKUISearchFieldController *_searchFieldController;
     BOOL _showsResultsForEmptyField;
     BOOL _usesSearchFieldController;

@@ -3,10 +3,12 @@
  */
 
 @interface MPMediaLibraryArtworkRequest : NSObject {
-    int _artistType;
     int _artworkType;
-    NSNumber *_cachedArtworkSourceType;
-    NSString *_cachedArtworkToken;
+    NSString *_availableArtworkToken;
+    int _entityType;
+    NSNumber *_fetchableArtworkSource;
+    NSString *_fetchableArtworkToken;
+    BOOL _hasRetrievedTokens;
     ML3MusicLibrary *_library;
     MPMediaLibraryArtwork *_libraryArtwork;
     unsigned long long _libraryID;
@@ -14,10 +16,11 @@
     double _retrievalTime;
 }
 
-@property (nonatomic) int artistType;
 @property (nonatomic, readonly) int artworkType;
-@property (nonatomic, copy) NSNumber *cachedArtworkSourceType;
-@property (nonatomic, copy) NSString *cachedArtworkToken;
+@property (nonatomic, copy) NSString *availableArtworkToken;
+@property (nonatomic, readonly) int entityType;
+@property (nonatomic, copy) NSNumber *fetchableArtworkSource;
+@property (nonatomic, copy) NSString *fetchableArtworkToken;
 @property (nonatomic, readonly) ML3MusicLibrary *library;
 @property (nonatomic, retain) MPMediaLibraryArtwork *libraryArtwork;
 @property (nonatomic, readonly) unsigned long long libraryID;
@@ -25,24 +28,25 @@
 @property (nonatomic) double retrievalTime;
 
 - (void).cxx_destruct;
-- (int)artistType;
+- (void)_updateTokens;
 - (int)artworkType;
-- (id)cachedArtworkSourceType;
-- (id)cachedArtworkToken;
+- (id)availableArtworkToken;
 - (id)description;
+- (int)entityType;
+- (id)fetchableArtworkSource;
+- (id)fetchableArtworkToken;
 - (unsigned int)hash;
-- (id)init;
-- (id)initWithLibrary:(id)arg1 identifier:(unsigned long long)arg2 artworkType:(int)arg3;
-- (id)initWithML3Library:(id)arg1 identifier:(unsigned long long)arg2 artworkType:(int)arg3;
+- (id)initWithLibrary:(id)arg1 identifier:(unsigned long long)arg2 entityType:(int)arg3 artworkType:(int)arg4;
+- (id)initWithML3Library:(id)arg1 identifier:(unsigned long long)arg2 entityType:(int)arg3 artworkType:(int)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (id)library;
 - (id)libraryArtwork;
 - (unsigned long long)libraryID;
 - (unsigned int)mediaType;
 - (double)retrievalTime;
-- (void)setArtistType:(int)arg1;
-- (void)setCachedArtworkSourceType:(id)arg1;
-- (void)setCachedArtworkToken:(id)arg1;
+- (void)setAvailableArtworkToken:(id)arg1;
+- (void)setFetchableArtworkSource:(id)arg1;
+- (void)setFetchableArtworkToken:(id)arg1;
 - (void)setLibraryArtwork:(id)arg1;
 - (void)setRetrievalTime:(double)arg1;
 

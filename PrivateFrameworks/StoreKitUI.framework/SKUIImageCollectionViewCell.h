@@ -4,7 +4,7 @@
 
 @interface SKUIImageCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
     SKUIImageView *_highlightImageView;
-    id _modelObject;
+    id _imageRequestCacheKey;
     BOOL _showsReflectionImage;
 }
 

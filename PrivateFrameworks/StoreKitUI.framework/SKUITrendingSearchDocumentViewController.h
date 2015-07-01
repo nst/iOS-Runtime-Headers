@@ -16,6 +16,7 @@
 - (void)_reloadResultsView;
 - (void)_resultButtonAction:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_resultsViewContentInset;
+- (void)_tapAction:(id)arg1;
 - (void)documentDidUpdate:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;

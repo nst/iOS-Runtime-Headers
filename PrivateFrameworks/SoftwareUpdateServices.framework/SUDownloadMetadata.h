@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
  */
 
-@interface SUDownloadMetadata : NSObject <NSCopying, NSSecureCoding> {
+@interface SUDownloadMetadata : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     int _activeDownloadPolicyType;
     BOOL _autoDownload;
     int _downloadFeeAgreementStatus;
@@ -54,6 +54,7 @@
 - (BOOL)isEnabledOnBatteryPower;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)matchesDownloadPolicy:(id)arg1;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setActiveDownloadPolicyType:(int)arg1;
 - (void)setAutoDownload:(BOOL)arg1;
 - (void)setDownloadFeeAgreementStatus:(int)arg1;

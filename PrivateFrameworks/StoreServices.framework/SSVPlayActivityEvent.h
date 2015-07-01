@@ -20,6 +20,7 @@
     BOOL _offline;
     long long _persistentID;
     NSString *_personalizedContainerID;
+    NSData *_recommendationData;
     unsigned int _sourceType;
     unsigned long long _storeAccountID;
     NSString *_storeID;
@@ -45,6 +46,7 @@
 @property (getter=isOffline, nonatomic, readonly) BOOL offline;
 @property (nonatomic, readonly) long long persistentID;
 @property (nonatomic, readonly, copy) NSString *personalizedContainerID;
+@property (nonatomic, readonly, copy) NSData *recommendationData;
 @property (nonatomic, readonly) unsigned int sourceType;
 @property (nonatomic, readonly) unsigned long long storeAccountID;
 @property (nonatomic, readonly, copy) NSString *storeID;
@@ -81,6 +83,7 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (long long)persistentID;
 - (id)personalizedContainerID;
+- (id)recommendationData;
 - (unsigned int)sourceType;
 - (unsigned long long)storeAccountID;
 - (id)storeID;

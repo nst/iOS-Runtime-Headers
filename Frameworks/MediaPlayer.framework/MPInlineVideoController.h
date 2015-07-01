@@ -190,7 +190,7 @@
 - (void)_updateBackgroundViewInformation;
 - (void)_updateDisableAirPlayMirroringDuringPlayback;
 - (void)_updateDoubleTapGestureRecognizer;
-- (void)_updateIdleTimerDisabledFromPlaybackState:(unsigned int)arg1;
+- (void)_updateIdleTimerDisabledFromPlaybackState:(int)arg1;
 - (void)_updateProgressControlForItem:(id)arg1;
 - (void)_updateTVOutEnabled;
 - (BOOL)_useInlineControls;

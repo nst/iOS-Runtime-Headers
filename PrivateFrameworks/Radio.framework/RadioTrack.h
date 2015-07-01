@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioTrack : NSObject <NSSecureCoding> {
+@interface RadioTrack : NSObject <NSSecureCoding, RURadioItemIdentifier> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     NSDictionary *_bestOfferDictionary;
     NSDate *_expirationDate;
@@ -24,10 +24,13 @@
 @property (nonatomic, readonly) RadioAudioClip *beforePromoAudioClip;
 @property (nonatomic, readonly, copy) NSString *copyrightText;
 @property (nonatomic, readonly) long long dateFetched;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, copy) NSString *debugMessage;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) double duration;
 @property (nonatomic, retain) NSDate *expirationDate;
 @property (nonatomic, readonly, copy) NSDictionary *feedbackDictionaryRepresentation;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL inWishList;
 @property (nonatomic, readonly) BOOL isExplicit;
 @property (nonatomic, readonly) BOOL isPreorderAlbum;
@@ -38,9 +41,12 @@
 @property (nonatomic, readonly) long long shuffleSeed;
 @property (nonatomic, readonly) double startTime;
 @property (nonatomic, readonly) long long storeID;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSString *title;
 @property (nonatomic, readonly, copy) NSDictionary *trackDictionary;
 @property (nonatomic, readonly, copy) NSDictionary *trackInfo;
+
+// Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
 
 + (BOOL)supportsSecureCoding;
 
@@ -92,5 +98,9 @@
 - (id)title;
 - (id)trackDictionary;
 - (id)trackInfo;
+
+// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
+
+- (id)radioIdentifier;
 
 @end

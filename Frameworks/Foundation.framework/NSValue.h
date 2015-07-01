@@ -142,10 +142,8 @@
 
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
-+ (id)valueWithML3CollectionInfo:(struct { long long x1; long long x2; unsigned char x3; })arg1;
 + (id)valueWithML3NameOrder:(struct { long long x1; int x2; })arg1;
 
-- (struct { long long x1; long long x2; unsigned char x3; })ML3CollectionInfoValue;
 - (struct { long long x1; int x2; })ML3NameOrderValue;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport

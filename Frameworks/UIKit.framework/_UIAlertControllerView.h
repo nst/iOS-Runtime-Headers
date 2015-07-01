@@ -115,6 +115,8 @@
 @property (retain) NSLayoutConstraint *titleLabelTopAlignmentConstraint;
 @property (retain) NSLayoutConstraint *widthConstraint;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (BOOL)_retroactivelyRequiresConstraintBasedLayout;
 + (void)initialize;
 
@@ -126,7 +128,6 @@
 - (void)_actionLayoutDirectionChanged;
 - (BOOL)_actionLayoutIsVertical;
 - (id)_actionViewsForCollectionView;
-- (void)_actionsChanged;
 - (void)_applyContentViewControllerContainerViewConstraints;
 - (void)_applyDetailMessageConstraints;
 - (void)_applyKeyboardAlignmentViewsConstraints;
@@ -219,7 +220,6 @@
 - (id)centerXConstraint;
 - (id)centerYConstraint;
 - (BOOL)collectionView:(id)arg1 canFocusItemAtIndexPath:(id)arg2;
-- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionViewHeightConstraint;
 - (id)collectionViewHorizontalAlignmentConstraint;
@@ -299,5 +299,11 @@
 - (id)titleLabelTopAlignmentConstraint;
 - (id)widthConstraint;
 - (void)willMoveToSuperview:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (void)_actionsChanged;
+- (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)setVisualStyle:(id)arg1;
 
 @end

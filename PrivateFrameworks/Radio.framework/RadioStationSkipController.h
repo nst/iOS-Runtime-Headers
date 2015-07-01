@@ -5,6 +5,7 @@
 @interface RadioStationSkipController : NSObject {
     NSObject<OS_dispatch_queue> *_accessSerialQueue;
     NSObject<OS_dispatch_source> *_availableSkipsInvalidationTimer;
+    BOOL _hasValidNumberOfAvailableSkips;
     BOOL _hasValidSkipInvalidationDate;
     unsigned int _monitoringCount;
     int _numberOfAvailableSkips;

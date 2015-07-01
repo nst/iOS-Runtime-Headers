@@ -3,7 +3,6 @@
  */
 
 @interface MPAVRoutingTableViewCell : UITableViewCell {
-    UIColor *_contentTintColor;
     BOOL _debugCell;
     <MPAVRoutingTableViewCellDelegate> *_delegate;
     UILabel *_mirroringLabel;
@@ -32,6 +31,5 @@
 - (void)setMirroringSwitchVisible:(BOOL)arg1;
 - (void)setMirroringSwitchVisible:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setRoute:(id)arg1;
-- (void)setTintColor:(id)arg1;
 
 @end

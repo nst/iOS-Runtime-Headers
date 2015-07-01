@@ -7,6 +7,7 @@
 }
 
 @property (nonatomic, retain) MPAVItem *MPAVItem;
+@property (nonatomic) MPQueuePlayer *MP_associatedQueuePlayer;
 @property (getter=_isExternalProtectionRequiredForPlayback, setter=_setExternalProtectionRequiredForPlayback:, nonatomic) BOOL _externalProtectionRequiredForPlayback;
 @property (getter=_isRental, nonatomic, readonly) BOOL _rental;
 @property (nonatomic, readonly) NSDate *_rentalExpirationDate;
@@ -366,7 +367,10 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (id)MPAVItem;
+- (id)MP_associatedQueuePlayer;
+- (id)MP_shortDescription;
 - (void)setMPAVItem:(id)arg1;
+- (void)setMP_associatedQueuePlayer:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

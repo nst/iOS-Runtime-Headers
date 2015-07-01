@@ -9,6 +9,7 @@
     id /* block */ _leafNodePredicate;
     BOOL _shouldOnlyIncludeElementsWithVisibleFrame;
     BOOL _shouldReturnScannerGroups;
+    BOOL _shouldReturnTouchContainers;
     BOOL _shouldUseAllSubviews;
 }
 
@@ -18,6 +19,7 @@
 @property (nonatomic, copy) id /* block */ leafNodePredicate;
 @property (nonatomic) BOOL shouldOnlyIncludeElementsWithVisibleFrame;
 @property (nonatomic) BOOL shouldReturnScannerGroups;
+@property (nonatomic) BOOL shouldReturnTouchContainers;
 @property (nonatomic) BOOL shouldUseAllSubviews;
 
 + (id)defaultSpeakScreenOptions;
@@ -38,9 +40,11 @@
 - (void)setLeafNodePredicate:(id /* block */)arg1;
 - (void)setShouldOnlyIncludeElementsWithVisibleFrame:(BOOL)arg1;
 - (void)setShouldReturnScannerGroups:(BOOL)arg1;
+- (void)setShouldReturnTouchContainers:(BOOL)arg1;
 - (void)setShouldUseAllSubviews:(BOOL)arg1;
 - (BOOL)shouldOnlyIncludeElementsWithVisibleFrame;
 - (BOOL)shouldReturnScannerGroups;
+- (BOOL)shouldReturnTouchContainers;
 - (BOOL)shouldUseAllSubviews;
 
 @end

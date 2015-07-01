@@ -31,7 +31,6 @@
     NSMutableArray *_optInCompletionHandlers;
     RUPlaceholderView *_placeholderView;
     RURadioPlaybackCoordinator *_playbackCoordinator;
-    RadioStation *_prospectiveStation;
     UIScrollView *_scrollView;
     UISearchDisplayController *_searchDisplayController;
     RUSearchViewController *_searchResultsViewController;
@@ -65,8 +64,10 @@
 - (void)_applicationDidBecomeActiveNotification:(id)arg1;
 - (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_attemptToPlayStation:(id)arg1 withPlaybackContext:(id)arg2;
 - (void)_attemptToPlayStation:(id)arg1 withPrefixItem:(id)arg2 keepPlayingCurrentItemIfPossible:(BOOL)arg3;
 - (void)_authenticateForActiveAccountWithResponseHandler:(id /* block */)arg1;
+- (void)_beginShowingNowPlayingNavigationItem;
 - (void)_cancelHeartbeatInvalidTimer;
 - (void)_cellularNetworkingAllowedDidChangeNotification:(id)arg1;
 - (void)_completeStationAdditionTransactionWithContext:(id)arg1 stationDidExistBeforeAdding:(BOOL)arg2;
@@ -76,6 +77,7 @@
 - (void)_displayServiceUnavailable;
 - (void)_doneAction:(id)arg1;
 - (void)_editAction:(id)arg1;
+- (void)_endShowingNowPlayingNavigationItem;
 - (void)_heartbeatDidChangeNotification:(id)arg1;
 - (void)_historyAction:(id)arg1;
 - (BOOL)_isNetworkTypeAllowed:(int)arg1;
@@ -88,11 +90,11 @@
 - (void)_newAction:(id)arg1;
 - (Class)_nowPlayingViewControllerClass;
 - (id)_placeholderStationArtworkImage;
-- (void)_playbackCoordinatorStationDidChangeNotification:(id)arg1;
 - (void)_preHeatTextDrawingCacheForNamesOfFeaturedStations;
 - (void)_preHeatTextDrawingCacheForNamesOfMyStations;
 - (void)_preHeatTextDrawingCacheForSubscriptionSummariesOfMyStations;
 - (void)_preHeatTextDrawingCaches;
+- (void)_presentNowPlayingViewControllerAnimated:(BOOL)arg1;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
 - (void)_refreshFeaturedStations;
 - (void)_reloadImpressionTimersForVisibleStations;
@@ -138,11 +140,9 @@
 - (void)createStationViewController:(id)arg1 didSelectStation:(id)arg2;
 - (void)createStationViewControllerDidFinish:(id)arg1;
 - (void)dealloc;
-- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)editStationsViewControllerDidFinish:(id)arg1;
-- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)historyViewControllerDidFinish:(id)arg1;
 - (id)initWithDataSource:(id)arg1;
 - (id)metricsPageDescriptionForSearchViewController:(id)arg1;

@@ -5,10 +5,10 @@
 @interface ML3Query : NSObject <NSCoding, NSCopying> {
     Class _entityClass;
     BOOL _filtersOnDynamicProperties;
-    BOOL _ignoreRestrictionsPredicates;
-    BOOL _ignoreSystemFilterPredicates;
     ML3MusicLibrary *_library;
+    unsigned int _limit;
     ML3AggregateQuery *_nonDirectAggregateQuery;
+    long long _options;
     NSArray *_orderingTerms;
     ML3Predicate *_predicate;
     NSString *_propertyToCount;
@@ -23,7 +23,9 @@
 @property (nonatomic) BOOL ignoreRestrictionsPredicates;
 @property (nonatomic) BOOL ignoreSystemFilterPredicates;
 @property (nonatomic, readonly) ML3MusicLibrary *library;
+@property (nonatomic) unsigned int limit;
 @property (nonatomic, readonly) ML3AggregateQuery *nonDirectAggregateQuery;
+@property (nonatomic, readonly) long long options;
 @property (nonatomic, readonly) NSArray *orderingTerms;
 @property (nonatomic, readonly) NSString *persistentIDProperty;
 @property (nonatomic, readonly) ML3Predicate *predicate;
@@ -60,13 +62,15 @@
 - (BOOL)ignoreRestrictionsPredicates;
 - (BOOL)ignoreSystemFilterPredicates;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingTerms:(id)arg4 usingSections:(BOOL)arg5 nonDirectAggregateQuery:(id)arg6 propertyToCount:(id)arg7;
+- (id)initWithLibrary:(id)arg1 entityClass:(Class)arg2 predicate:(id)arg3 orderingTerms:(id)arg4 usingSections:(BOOL)arg5 nonDirectAggregateQuery:(id)arg6 propertyToCount:(id)arg7 options:(long long)arg8;
 - (BOOL)isEqual:(id)arg1;
 - (id)library;
+- (unsigned int)limit;
 - (void)loadNamesFromLibrary:(id)arg1 onConnection:(id)arg2 forPredicate:(id)arg3 loadAllNames:(BOOL)arg4 cancelHandler:(id /* block */)arg5;
 - (id)lowerBoundParametersForOrderingTerms:(id)arg1 lowerBoundPersistentID:(long long)arg2;
 - (id)nameOrderPropertyForProperty:(id)arg1;
 - (id)nonDirectAggregateQuery;
+- (long long)options;
 - (id)orderingTerms;
 - (id)persistentIDParameters;
 - (id)persistentIDProperty;
@@ -87,6 +91,7 @@
 - (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingTerms:(id)arg3;
 - (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingTerms:(id)arg3 directionality:(id)arg4 usingLowerBound:(BOOL)arg5;
 - (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingTerms:(id)arg3 directionality:(id)arg4 usingLowerBound:(BOOL)arg5 distinct:(BOOL)arg6 limit:(unsigned int)arg7;
+- (id)selectSQLWithColumns:(id)arg1 groupBy:(id)arg2 orderingTerms:(id)arg3 limit:(unsigned int)arg4;
 - (id)selectSQLWithColumns:(id)arg1 orderingTerms:(id)arg2;
 - (id)selectSQLWithColumns:(id)arg1 orderingTerms:(id)arg2 directionality:(id)arg3;
 - (id)selectSQLWithColumns:(id)arg1 orderingTerms:(id)arg2 distinct:(BOOL)arg3;
@@ -95,6 +100,7 @@
 - (id)selectUnorderedPersistentIDsSQL;
 - (void)setIgnoreRestrictionsPredicates:(BOOL)arg1;
 - (void)setIgnoreSystemFilterPredicates:(BOOL)arg1;
+- (void)setLimit:(unsigned int)arg1;
 - (BOOL)usingSections;
 - (id)valueForAggregateFunction:(id)arg1 onEntitiesForProperty:(id)arg2;
 

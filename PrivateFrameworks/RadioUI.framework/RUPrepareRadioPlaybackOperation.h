@@ -6,21 +6,32 @@
     id /* block */ _firstTrackBlock;
     RURadioGetTracksOperation *_getTracksOperation;
     NSLock *_lock;
+    SSVPlaybackLease *_playbackLease;
     id /* block */ _preparedBlock;
     RadioRequestContext *_requestContext;
     RadioStation *_station;
+    RadioStationMatchContext *_stationMatchContext;
 }
 
+@property (retain) SSVPlaybackLease *playbackLease;
 @property (copy) id /* block */ preparedBlock;
 @property (copy) RadioRequestContext *requestContext;
+@property (retain) RadioStation *station;
+@property (retain) RadioStationMatchContext *stationMatchContext;
 
 - (void).cxx_destruct;
 - (void)cancel;
-- (id)initWithStation:(id)arg1;
+- (id)init;
 - (void)main;
+- (id)playbackLease;
 - (id /* block */)preparedBlock;
 - (id)requestContext;
+- (void)setPlaybackLease:(id)arg1;
 - (void)setPreparedBlock:(id /* block */)arg1;
 - (void)setRequestContext:(id)arg1;
+- (void)setStation:(id)arg1;
+- (void)setStationMatchContext:(id)arg1;
+- (id)station;
+- (id)stationMatchContext;
 
 @end

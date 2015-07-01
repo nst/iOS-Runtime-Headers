@@ -22,6 +22,8 @@
 @property (nonatomic, readonly) float userRating;
 @property (nonatomic, readonly) float userRatingForCurrentVersion;
 
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
 - (id)ITunesStoreIdentifier;
 - (id)artistName;
 - (id)artwork;
@@ -39,5 +41,12 @@
 - (id)productPageURL;
 - (float)userRating;
 - (float)userRatingForCurrentVersion;
+
+// Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
+
+- (BOOL)ml_isAUCAudio;
+- (BOOL)ml_isAUCItemKind;
+- (BOOL)ml_isAUCVideo;
+- (BOOL)ml_isMusicItemKind;
 
 @end

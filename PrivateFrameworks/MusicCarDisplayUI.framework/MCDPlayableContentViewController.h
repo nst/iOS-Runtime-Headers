@@ -13,6 +13,7 @@
 
 - (void).cxx_destruct;
 - (void)_embedAppropriateViewController;
+- (void)_updateStackForPlaying:(BOOL)arg1 launching:(BOOL)arg2;
 - (id)bundleID;
 - (id)initWithBundleID:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

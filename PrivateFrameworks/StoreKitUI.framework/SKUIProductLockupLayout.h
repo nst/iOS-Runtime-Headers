@@ -6,6 +6,7 @@
     int _bottomLeftLayoutStyle;
     NSMutableArray *_bottomLeftViewElements;
     NSMutableArray *_bottomRightViewElements;
+    SKUIViewElementLayoutContext *_layoutContext;
     NSMutableArray *_middleLeftViewElements;
     SKUIViewElement *_productImageElement;
     NSMutableArray *_topLeftViewElements;
@@ -16,15 +17,15 @@
 
 - (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_sizeForSegmentedControl:(id)arg1 width:(float)arg2;
-- (struct CGSize { float x1; float x2; })_sizeForVerticalViewElements:(id)arg1 width:(float)arg2 context:(id)arg3;
-- (struct CGSize { float x1; float x2; })_sizeForViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
+- (struct CGSize { float x1; float x2; })_sizeForVerticalViewElements:(id)arg1 width:(float)arg2;
+- (struct CGSize { float x1; float x2; })_sizeForViewElement:(id)arg1 width:(float)arg2;
 - (int)bottomLeftLayoutStyle;
 - (float)bottomPaddingForViewElement:(id)arg1;
-- (void)enumerateViewElementsForWidth:(float)arg1 context:(id)arg2 usingBlock:(id /* block */)arg3;
+- (void)enumerateViewElementsForWidth:(float)arg1 usingBlock:(id /* block */)arg2;
 - (id)initWithLockup:(id)arg1 width:(float)arg2 context:(id)arg3;
-- (struct SKUIProductLockupLayoutSizing { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGSize { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; })layoutWidthsForWidth:(float)arg1 context:(id)arg2;
-- (float)metadataWidthForWidth:(float)arg1 context:(id)arg2;
-- (struct SKUIProductLockupLayoutSizing { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGSize { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; })sizingToFitWidth:(float)arg1 context:(id)arg2;
+- (struct SKUIProductLockupLayoutSizing { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGSize { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; })layoutWidthsForWidth:(float)arg1;
+- (float)metadataWidthForWidth:(float)arg1;
+- (struct SKUIProductLockupLayoutSizing { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; struct CGSize { float x_4_1_1; float x_4_1_2; } x4; struct CGSize { float x_5_1_1; float x_5_1_2; } x5; })sizingToFitWidth:(float)arg1;
 - (float)topPaddingForViewElement:(id)arg1;
 - (id)viewElementsForSection:(int)arg1;
 

@@ -2,16 +2,41 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSPlayer : IKJSObject <IKJSPlayer> {
-    <IKJSPlayerAppBridge> *_appBridge;
+@interface IKJSPlayer : IKJSEventListenerObject <IKJSPlayer> {
+    IKAppPlayerBridge *_bridge;
+    BOOL _holdingSelfReference;
+    NSMutableDictionary *_observedMetadataKeys;
+    int _playerState;
+    IKJSPlaylist *_playlist;
 }
 
-@property (nonatomic) <IKJSPlayerAppBridge> *appBridge;
-@property (nonatomic, readonly) IKDOMElement *currentAVMediaElement;
+@property (nonatomic, readonly) IKAppPlayerBridge *bridge;
+@property (nonatomic, readonly) IKJSMediaItem *currentMediaItem;
+@property (nonatomic, readonly) BOOL ended;
+@property (nonatomic, readonly) BOOL paused;
+@property (nonatomic, readonly) BOOL playing;
+@property (nonatomic, retain) IKJSPlaylist *playlist;
+@property (nonatomic, readonly) BOOL seeking;
 
 - (void).cxx_destruct;
-- (id)appBridge;
-- (id)currentAVMediaElement;
-- (void)setAppBridge:(id)arg1;
+- (void)addEventListener:(id)arg1 :(id)arg2 :(id)arg3;
+- (id)bridge;
+- (id)currentMediaItem;
+- (BOOL)ended;
+- (id)init;
+- (void)pause;
+- (BOOL)paused;
+- (void)play;
+- (BOOL)playing;
+- (id)playlist;
+- (void)removeEventListener:(id)arg1 :(id)arg2;
+- (BOOL)seeking;
+- (void)setCurrentTime:(double)arg1;
+- (void)setPlaybackRate:(double)arg1;
+- (void)setPlaylist:(id)arg1;
+- (int)state;
+- (void)stateDidChange:(id)arg1;
+- (void)stop;
+- (void)timedMetadataDidChange:(id)arg1 value:(id)arg2;
 
 @end

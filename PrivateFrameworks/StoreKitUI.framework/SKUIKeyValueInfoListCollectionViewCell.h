@@ -3,6 +3,7 @@
  */
 
 @interface SKUIKeyValueInfoListCollectionViewCell : SKUIViewReuseCollectionViewCell <SKUIViewElementView> {
+    NSMapTable *_imageViewToImageResourceCacheKey;
     float _titleColumnWidth;
     SKUIAttributedStringView *_titleView;
     NSMapTable *_valueViews;

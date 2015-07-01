@@ -16,4 +16,8 @@
 - (BOOL)updateWithItemState:(SKUIItemState *)arg1 context:(SKUIViewElementLayoutContext *)arg2 animated:(BOOL)arg3;
 - (UIView *)viewForElementIdentifier:(NSString *)arg1;
 
+@optional
+
++ (SKUIViewTextProperties *)textPropertiesForViewElement:(SKUIViewElement *)arg1 width:(float)arg2 context:(SKUIViewElementLayoutContext *)arg3;
+
 @end

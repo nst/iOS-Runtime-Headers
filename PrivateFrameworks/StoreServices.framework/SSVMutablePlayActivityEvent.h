@@ -21,6 +21,7 @@
 @property (getter=isOffline, nonatomic) BOOL offline;
 @property (nonatomic) long long persistentID;
 @property (nonatomic, copy) NSString *personalizedContainerID;
+@property (nonatomic, copy) NSData *recommendationData;
 @property (nonatomic) unsigned int sourceType;
 @property (nonatomic) unsigned long long storeAccountID;
 @property (nonatomic, copy) NSString *storeID;
@@ -45,6 +46,7 @@
 - (void)setOffline:(BOOL)arg1;
 - (void)setPersistentID:(long long)arg1;
 - (void)setPersonalizedContainerID:(id)arg1;
+- (void)setRecommendationData:(id)arg1;
 - (void)setSBEnabled:(BOOL)arg1;
 - (void)setSourceType:(unsigned int)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;

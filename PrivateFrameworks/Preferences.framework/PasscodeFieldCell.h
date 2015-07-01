@@ -2,27 +2,19 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PasscodeFieldCell : PSTableCell <PSPasscodeFieldDelegate, UIKeyInput> {
+@interface PasscodeFieldCell : PSTableCell <PSPasscodeFieldDelegate> {
     BOOL _convertsNumeralsToASCII;
     <KeychainSyncPasscodeFieldDelegate> *_delegate;
     BOOL _denyFirstResponder;
     PSPasscodeField *_passcodeField;
 }
 
-@property (nonatomic) int autocapitalizationType;
-@property (nonatomic) int autocorrectionType;
 @property (nonatomic) BOOL convertsNumeralsToASCII;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <KeychainSyncPasscodeFieldDelegate> *delegate;
 @property (nonatomic) BOOL denyFirstResponder;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enablesReturnKeyAutomatically;
 @property (readonly) unsigned int hash;
-@property (nonatomic) int keyboardAppearance;
-@property (nonatomic) int keyboardType;
-@property (nonatomic) int returnKeyType;
-@property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
-@property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
 
 - (void)_setSecureTextEntry:(BOOL)arg1;
@@ -34,10 +26,10 @@
 - (BOOL)denyFirstResponder;
 - (BOOL)hasText;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
-- (void)insertText:(id)arg1;
 - (int)keyboardType;
 - (void)layoutSubviews;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
+- (id)passcodeField:(id)arg1 shouldInsertText:(id)arg2;
 - (id)passcodeText;
 - (void)setConvertsNumeralsToASCII:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;

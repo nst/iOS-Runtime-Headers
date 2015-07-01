@@ -8,7 +8,10 @@
 }
 
 @property (getter=isRequestingImmediatePlayback, nonatomic, readonly) BOOL requestingImmediatePlayback;
+@property (nonatomic, readonly) BOOL shouldOverrideManuallyCuratedQueue;
 @property (nonatomic, readonly) NSDictionary *userInfo;
+
+// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)queueWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 
@@ -17,6 +20,12 @@
 - (id)init;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 - (BOOL)isRequestingImmediatePlayback;
+- (BOOL)shouldOverrideManuallyCuratedQueue;
 - (id)userInfo;
+- (BOOL)verifyWithError:(id*)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (id)createPlaybackContext;
 
 @end

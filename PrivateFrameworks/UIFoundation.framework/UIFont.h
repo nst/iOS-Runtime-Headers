@@ -202,6 +202,10 @@
 + (id)fu_sausageFontOfSize:(float)arg1 centeredColons:(BOOL)arg2;
 + (id)fu_systemFontOfSize:(float)arg1 centeredColons:(BOOL)arg2;
 
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (float)MPU_scaledValueForValue:(float)arg1;
+
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
 + (id)siriui_headerFont;

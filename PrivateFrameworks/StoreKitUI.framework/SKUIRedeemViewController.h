@@ -7,6 +7,7 @@
     BOOL _cameraRedeemEnabled;
     int _category;
     SKUIClientContext *_clientContext;
+    int _initialBarStyle;
     NSString *_initialCode;
     NSOperationQueue *_operationQueue;
     SKUIRedeemPreflightOperation *_preflightOperation;
@@ -39,6 +40,8 @@
 - (void)setInitialCode:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

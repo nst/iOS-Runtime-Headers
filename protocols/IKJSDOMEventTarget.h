@@ -6,6 +6,7 @@
 @required
 
 - (void)addEventListener:(NSString *)arg1 :(JSValue *)arg2 :(BOOL)arg3;
+- (BOOL)dispatchEvent:(IKDOMEvent *)arg1;
 - (void)removeEventListener:(NSString *)arg1 :(JSValue *)arg2 :(BOOL)arg3;
 
 @end

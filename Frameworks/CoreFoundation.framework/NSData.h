@@ -253,13 +253,6 @@
 - (id)_geo_newXPCData;
 - (id)_geo_uppercaseMD5HashString;
 
-// Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
-
-+ (id)mappedDataWithContentsOfTemporaryFile:(id)arg1 error:(id*)arg2;
-
-- (id)decompressedGzipData;
-- (id)decompressedGzipDataUsingTemporaryFile;
-
 // Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
 
 - (id)subdataWithRangeNoCopy:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

@@ -22,6 +22,7 @@
 - (int)_visibleColumnCountForWidth:(float)arg1;
 - (id)contentScrollView;
 - (void)documentDidUpdate:(id)arg1;
+- (void)documentMediaQueriesDidUpdate:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
 - (void)loadView;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;

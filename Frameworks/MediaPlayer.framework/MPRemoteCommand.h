@@ -3,6 +3,7 @@
  */
 
 @interface MPRemoteCommand : NSObject {
+    NSString *_contextID;
     <MPRemoteCommandDelegate> *_delegate;
     BOOL _enabled;
     unsigned int _mediaRemoteCommandType;

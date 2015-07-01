@@ -29,7 +29,6 @@
 - (void)_updateConfigurationForCellularDataRestriction:(id)arg1;
 - (id)accessQueue;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
-- (BOOL)areRepresentationsForCatalog:(id)arg1 visuallyIdenticalToRepresentationsForCatalog:(id)arg2;
 - (id)artworkRepresentationCache;
 - (id)cacheKeyForCatalog:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;
@@ -47,6 +46,7 @@
 - (BOOL)shouldLookForLargerRepresentationsWhenBestRepresentationIsUnavailable;
 - (id)sortedSupportedSizesForCatalog:(id)arg1;
 - (id)supportedSizesForCatalog:(id)arg1;
+- (id)visualIdenticalityIdentifierForCatalog:(id)arg1;
 - (BOOL)wantsBackgroundImageDecompression;
 
 @end

@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> *_accessQueue;
     BOOL _hasDirtyVisualEngagement;
     BOOL _isSlotAcquisitionInProgress;
+    MPUJinglePlayActivityReportingController *_jinglePlayActivityReportingController;
     RUJingleTiltReportingController *_jingleTiltReportingController;
     int _lastApplicationState;
     double _minDurationToCountAsPlayed;
@@ -14,7 +15,6 @@
     MPAVController *_player;
     int _policyEngineEnabledCount;
     MPUReportingPlaybackObserver *_reportingPlaybackObserver;
-    NSDate *_sapSessionLoadBeginDate;
     double _skipThreshold;
     ISDialogOperation *_slotAcquisitionDialogOperation;
     int _visualEngagementCount;
@@ -25,6 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) MPUJinglePlayActivityReportingController *jinglePlayActivityReportingController;
 @property (nonatomic, retain) RUJingleTiltReportingController *jingleTiltReportingController;
 @property (nonatomic, readonly) unsigned int numberOfSkippedTracks;
 @property (nonatomic, retain) MPAVController *player;
@@ -53,9 +54,8 @@
 - (void)_itemDidFinishLoadingNotification:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_loadMinDurationToCountAsPlayedFromURLBag;
+- (id)_playActivityFeedEventsForPendingPlayActivityEvents:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
-- (void)_radioFairPlayControllerSAPSessionDidFinishLoadingNotification:(id)arg1;
-- (void)_radioFairPlayControllerSAPSessionWillBeginLoadingNotification:(id)arg1;
 - (void)_radioStreamTrackAVItemDidReceiveTimedMetadataPingsNotification:(id)arg1;
 - (void)_registerForPlayerNotifications;
 - (void)_reportPlaybackEndedForAdTrack:(id)arg1 withItem:(id)arg2;
@@ -78,6 +78,7 @@
 - (void)historyDidEndPlayingAdTrack:(id)arg1 withItem:(id)arg2;
 - (id)init;
 - (BOOL)isVisuallyEngaged;
+- (id)jinglePlayActivityReportingController;
 - (id)jingleTiltReportingController;
 - (void)noteDidEnterStation:(id)arg1;
 - (unsigned int)numberOfSkippedTracks;
@@ -86,6 +87,7 @@
 - (id)player;
 - (id)reportingPlaybackObserver;
 - (void)requestAdsForSlot:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)setJinglePlayActivityReportingController:(id)arg1;
 - (void)setJingleTiltReportingController:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setRTCReportingController:(id)arg1;

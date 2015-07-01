@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) NSArray *downloads;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (getter=isUsingNetwork, nonatomic, readonly) BOOL usingNetwork;
 
 + (id)sharedManager;
 
@@ -46,7 +47,7 @@
 - (void)_unregisterBlockObserver:(id)arg1;
 - (void)_updateDownloadsWithAdditions:(id)arg1 removals:(id)arg2;
 - (void)_updateMediaItemPropertiesForFinishedStoreDownload:(id)arg1 SSDownload:(id)arg2;
-- (void)addDownloads:(id)arg1;
+- (id)addDownloads:(id)arg1;
 - (void)addFinishHandler:(id /* block */)arg1 forDownloads:(id)arg2;
 - (void)addObserver:(id)arg1 forDownloads:(id)arg2;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
@@ -55,10 +56,13 @@
 - (id)downloadForDownloadPersistentIdentifier:(long long)arg1;
 - (id)downloadForMediaItem:(id)arg1;
 - (id)downloadForMediaItemPersistentID:(unsigned long long)arg1;
+- (id)downloadForMediaPlaybackItemMetadata:(id)arg1;
 - (id)downloadForStoreID:(long long)arg1;
 - (void)downloadManager:(id)arg1 downloadStatesDidChange:(id)arg2;
+- (void)downloadManagerNetworkUsageDidChange:(id)arg1;
 - (id)downloads;
 - (id)init;
+- (BOOL)isUsingNetwork;
 - (void)pauseDownloads:(id)arg1;
 - (void)prioritizeDownloads:(id)arg1;
 - (void)purchaseManager:(id)arg1 didFinishPurchasesWithResponses:(id)arg2;

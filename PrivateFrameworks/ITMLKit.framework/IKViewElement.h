@@ -18,7 +18,7 @@
     NSString *_itmlID;
     NSMutableDictionary *_metadataDict;
     IKViewElement *_parent;
-    IKViewElementStyle *_style;
+    IKViewElementStyleComposer *_styleComposer;
     unsigned int _updateType;
 }
 
@@ -32,21 +32,28 @@
 @property (nonatomic, readonly, copy) NSString *elementID;
 @property (nonatomic, readonly, copy) NSString *elementName;
 @property (nonatomic, readonly) unsigned int elementType;
+@property (nonatomic, readonly) SKUIEntityProviderListViewElement *entityProviderList;
 @property (nonatomic, readonly, copy) NSArray *features;
 @property (getter=isImpressionable, nonatomic) BOOL impressionable;
 @property (nonatomic, readonly, retain) NSString *itmlID;
 @property (nonatomic, retain) NSMutableDictionary *metadataDict;
 @property (nonatomic) IKViewElement *parent;
 @property (nonatomic, readonly, retain) IKViewElementStyle *style;
+@property (nonatomic, readonly, retain) IKViewElementStyleComposer *styleComposer;
 @property (nonatomic) unsigned int updateType;
 
+// Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
+
 + (unsigned int)evaluateElementUpdateTypeAndReset:(id)arg1;
++ (BOOL)shouldParseChildDOMElement:(id)arg1;
 + (BOOL)shouldParseChildDOMElements;
 + (id)supportedFeatures;
 
 - (void).cxx_destruct;
+- (void)_appDocumentDidMarkStylesDirty:(id)arg1;
 - (void)_applyUpdatesToChildrenWithElements:(id)arg1;
 - (void)_reorderAndUpdateChildrenWithElements:(id)arg1;
+- (void)_setAppDocument:(id)arg1;
 - (id)accessibilityText;
 - (id)activeSingularEvents;
 - (id)appDocument;
@@ -58,6 +65,7 @@
 - (id)childImageElementWithType:(unsigned int)arg1;
 - (id)childTextElementWithStyle:(unsigned int)arg1;
 - (id)children;
+- (void)dealloc;
 - (void)dispatchEventOfType:(unsigned int)arg1 canBubble:(BOOL)arg2 isCancelable:(BOOL)arg3 extraInfo:(id)arg4 completionBlock:(id /* block */)arg5;
 - (id)elementID;
 - (id)elementName;
@@ -81,6 +89,11 @@
 - (void)setParent:(id)arg1;
 - (void)setUpdateType:(unsigned int)arg1;
 - (id)style;
+- (id)styleComposer;
 - (unsigned int)updateType;
+
+// Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
+
+- (id)entityProviderList;
 
 @end

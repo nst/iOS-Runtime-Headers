@@ -5,9 +5,14 @@
 
 @optional
 
+- (void)addGlobalPlaylistWithID:(void *)arg1 andAddToCloudLibrary:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: NSString *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)addItemWithIdentifier:(void *)arg1 toPlaylistWithIdentifier:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 8: long long, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)addItemsWithIdentifiers:(void *)arg1 count:(void *)arg2 toPlaylistWithIdentifier:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 9: long long*, unsigned int, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)addItemsWithIdentifiers:(void *)arg1 toPlaylistWithIdentifier:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 8: NSArray *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)addNonLibraryOwnedPlaylistWithGlobalID:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, long long, NSError *, void*
+- (void)addPlaylistStoreItemsForLookupItems:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (long long)addPlaylistWithValuesForProperties:(NSDictionary *)arg1;
+- (void)addTracksToMyLibrary:(NSArray *)arg1;
+- (void)clearLocationPropertiesOfItemWithIdentifier:(long long)arg1;
 - (BOOL)collectionExistsContainedWithinPersistentIDs:(const unsigned long long*)arg1 count:(unsigned long)arg2 groupingType:(int)arg3 existentPID:(unsigned long long*)arg4;
 - (BOOL)collectionExistsWithName:(NSString *)arg1 groupingType:(int)arg2 existentPID:(unsigned long long*)arg3;
 - (BOOL)collectionExistsWithPersistentID:(unsigned long long)arg1 groupingType:(int)arg2;
@@ -16,10 +21,13 @@
 - (<MPArtworkDataSource> *)completeMyCollectionArtworkDataSource;
 - (void*)createGeniusClusterPlaylistWithSeedItemIdentifiers:(long long*)arg1 count:(unsigned int)arg2 error:(id*)arg3;
 - (NSString *)databasePath;
+- (BOOL)deleteItemsWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2;
 - (long long*)generateItemIdentifiersForGeniusClusterPlaylist:(void*)arg1 count:(unsigned int*)arg2 error:(id*)arg3;
 - (BOOL)hasGeniusMixes;
 - (BOOL)hasMediaOfType:(unsigned int)arg1;
 - (BOOL)hasUbiquitousBookmarkableItems;
+- (void)importArtworkTokenForEntityPersistentID:(unsigned long long)arg1 entityType:(int)arg2 artworkToken:(NSString *)arg3 artworkType:(int)arg4 sourceType:(int)arg5;
+- (BOOL)importOriginalArtworkFromImageData:(NSData *)arg1 withArtworkToken:(NSString *)arg2 artworkType:(int)arg3 sourceType:(int)arg4 mediaType:(unsigned int)arg5;
 - (BOOL)isCurrentThreadInTransaction;
 - (BOOL)isGeniusEnabled;
 - (BOOL)itemExistsWithPersistentID:(unsigned long long)arg1;
@@ -31,22 +39,25 @@
 - (MIPMultiverseIdentifier *)multiverseIdentifierForCollectionWithPersistentID:(long long)arg1 groupingType:(int)arg2;
 - (MIPMultiverseIdentifier *)multiverseIdentifierForTrackWithPersistentID:(long long)arg1;
 - (void)performReadTransactionWithBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)performStoreItemLibraryImport:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: MPStoreItemLibraryImport *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (BOOL)performTransactionWithBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, BOOL, id /* block */, void*
+- (long long)playbackHistoryPlaylistPersistentID;
 - (BOOL)playlistExistsWithPersistentID:(unsigned long long)arg1;
-- (void)populateLocationPropertiesOfItemWithIdentifier:(long long)arg1 withPath:(NSString *)arg2;
+- (void)populateLocationPropertiesOfItemWithIdentifier:(long long)arg1 withPath:(NSString *)arg2 assetProtectionType:(int)arg3;
 - (NSArray *)preferredAudioLanguages;
 - (NSArray *)preferredSubtitleLanguages;
 - (void)releaseGeniusClusterPlaylist:(void*)arg1;
 - (void)removeAllItemsInPlaylistWithIdentifier:(long long)arg1;
-- (void)removeItemsWithIdentifiers:(void *)arg1 atFilteredIndexes:(void *)arg2 inPlaylistWithIdentifier:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 9: long long*, NSIndexSet *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (BOOL)removeItemsWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2 hideFromPurchaseHistory:(BOOL)arg3;
+- (void)removeFirstItemFromPlaylistWithIdentifier:(long long)arg1;
+- (void)removeItemsWithIdentifiers:(void *)arg1 atFilteredIndexes:(void *)arg2 inPlaylistWithIdentifier:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 9: NSArray *, NSIndexSet *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (BOOL)removeItemsWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2;
 - (BOOL)removePlaylistWithIdentifier:(long long)arg1;
 - (void)seedPlaylistWithIdentifier:(void *)arg1 withItemWithIdentifier:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 9: long long, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (BOOL)setValue:(id)arg1 forDatabaseProperty:(NSString *)arg2;
 - (void)setValue:(void *)arg1 forProperty:(void *)arg2 ofCollectionWithIdentifier:(void *)arg3 groupingType:(void *)arg4 completionBlock:(void *)arg5; // needs 5 arg types, found 11: id, NSString *, long long, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)setValue:(void *)arg1 forProperty:(void *)arg2 ofItemWithIdentifier:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 10: id, NSString *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)setValue:(void *)arg1 forProperty:(void *)arg2 ofPlaylistWithIdentifier:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 10: id, NSString *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
-- (BOOL)supportsEntityChangeTrackingForMediaEntityType:(unsigned int)arg1 collectionGroupingType:(int)arg2 dataProviderClass:(out Class*)arg3;
+- (BOOL)supportsEntityChangeTrackingForMediaEntityType:(int)arg1 collectionGroupingType:(int)arg2 dataProviderClass:(out Class*)arg3;
 - (void)updateEntitesToCurrentRevision;
 - (id)valueForDatabaseProperty:(NSString *)arg1;
 

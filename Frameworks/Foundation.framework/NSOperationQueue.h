@@ -45,10 +45,6 @@
 - (id)underlyingQueue;
 - (void)waitUntilAllOperationsAreFinished;
 
-// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
-
-- (void)executeAndWaitForBlock:(id /* block */)arg1;
-
 // Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
 - (void)cancelAllOperationsWithError:(id)arg1;

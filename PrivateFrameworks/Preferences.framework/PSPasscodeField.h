@@ -41,6 +41,7 @@
 - (int)keyboardType;
 - (void)layoutSubviews;
 - (unsigned int)numberOfEntryFields;
+- (void)passcodeFieldTapped:(id)arg1;
 - (BOOL)securePasscodeEntry;
 - (void)setDelegate:(id)arg1;
 - (void)setSecurePasscodeEntry:(BOOL)arg1;

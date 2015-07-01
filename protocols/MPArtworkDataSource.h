@@ -6,10 +6,15 @@
 @required
 
 - (BOOL)areRepresentationsAvailableForCatalog:(MPArtworkCatalog *)arg1;
-- (BOOL)areRepresentationsForCatalog:(MPArtworkCatalog *)arg1 visuallyIdenticalToRepresentationsForCatalog:(MPArtworkCatalog *)arg2;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(MPArtworkCatalog *)arg1;
 - (MPArtworkRepresentation *)existingRepresentationForArtworkCatalog:(MPArtworkCatalog *)arg1;
 - (BOOL)isRepresentation:(MPArtworkRepresentation *)arg1 bestRepresentationForArtworkCatalog:(MPArtworkCatalog *)arg2;
 - (void)loadRepresentationForArtworkCatalog:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: MPArtworkCatalog *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, MPArtworkRepresentation *, NSError *, void*
+- (<NSCopying> *)visualIdenticalityIdentifierForCatalog:(MPArtworkCatalog *)arg1;
+
+@optional
+
+- (id)existingArtworkEffectResultForEffectType:(unsigned int)arg1 catalog:(MPArtworkCatalog *)arg2 options:(NSDictionary *)arg3;
+- (void)loadArtworkEffectResultForEffectType:(void *)arg1 catalog:(void *)arg2 options:(void *)arg3 systemEffectHandler:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 28: unsigned int, MPArtworkCatalog *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id /* block */, void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*, void*, id /* block */, void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*
 
 @end

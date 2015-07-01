@@ -4,6 +4,7 @@
 
 @interface SKUIBadgeViewElement : SKUIViewElement {
     UIImage *_fallbackImage;
+    BOOL _hasValidFallbackImage;
     NSString *_resourceName;
     struct CGSize { 
         float width; 

@@ -42,12 +42,15 @@
 - (id)_createBuyButtonWithTitle:(id)arg1 style:(int)arg2;
 - (void)_layoutBuyButtons;
 - (void)_layoutBuyButtonsControlCenteriPad;
+- (void)_layoutSkipLimitView;
 - (void)_layoutSubviewsControlCenteriPad;
+- (BOOL)_needsFullWidthTransportControls;
 - (void)_setBuyButtonVisibility:(BOOL)arg1 forButton:(id)arg2;
 - (void)_setConfirmationState:(BOOL)arg1 forBuyButton:(id)arg2;
 - (void)_setDownloadProgress:(float)arg1 forBuyButton:(id)arg2;
 - (void)_setProgressType:(unsigned int)arg1 forBuyButton:(id)arg2;
 - (BOOL)_systemwideBuyButtonsEnabled;
+- (float)_transportControlsFullWidthPaddingForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateBuyButton:(id)arg1 withOffer:(id)arg2;
 - (id)buyAlbumConfiguration;
 - (id)buyTrackConfiguration;

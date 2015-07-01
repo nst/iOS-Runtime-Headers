@@ -2,13 +2,11 @@
    Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
  */
 
-@interface RUMiniPlayerCoordinator : MPUMiniPlayerCoordinator <RUMiniPlayerRadioTransportControlsTarget, RUStationActionsViewControllerDelegate, RUTrackActionsDelegate, UIModalItemDelegate, UIPopoverPresentationControllerDelegate> {
+@interface RUMiniPlayerCoordinator : MPUMiniPlayerCoordinator <RUMiniPlayerRadioTransportControlsTarget, RUStationActionsViewControllerDelegate, RUTrackActionsDelegate, UIPopoverPresentationControllerDelegate> {
     <RUMiniPlayerCoordinatorDelegate> *_delegate;
     RURadioPlaybackCoordinator *_playbackCoordinator;
-    RadioStation *_prospectiveStation;
     UIPopoverPresentationController *_stationActionsPresentationController;
     RUStationActionsViewController *_stationActionsViewController;
-    RUTrackActionsModalItem *_trackActionsModalItem;
     UIPopoverPresentationController *_trackActionsPresentationController;
     RUTrackActionsViewController *_trackActionsViewController;
 }
@@ -28,7 +26,6 @@
 - (id)_currentProspectivePlaybackInformation;
 - (void)_makeStationVisible:(id)arg1;
 - (Class)_miniPlayerPlaybackControlsViewClass;
-- (void)_playbackCoordinatorCurrentStationDidChangeNotification:(id)arg1;
 - (void)_prepareToAddStation;
 - (void)_presentAddStation;
 - (void)_presentStationActionsFromView:(id)arg1;
@@ -39,7 +36,6 @@
 - (id)initWithPlaybackCoordinator:(id)arg1;
 - (id)initWithPlayer:(id)arg1;
 - (void)miniPlayerActionsViewController:(id)arg1 didSelectAction:(int)arg2;
-- (void)modalItem:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)navigationController:(id)arg1 traitCollectionDidChange:(id)arg2;
 - (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;

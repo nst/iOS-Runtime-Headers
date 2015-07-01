@@ -8,6 +8,7 @@
 + (id)addToDate:(id)arg1 numberOfDays:(int)arg2;
 + (void)assignError:(id*)arg1 withCode:(int)arg2;
 + (void)assignError:(id*)arg1 withError:(id)arg2 translate:(BOOL)arg3;
++ (unsigned long long)cacheDelete:(id)arg1;
 + (BOOL)cellularDataIsEnabled;
 + (BOOL)createInstallationKeybag:(id)arg1;
 + (id)currentProductBuild;
@@ -18,10 +19,15 @@
 + (id)errorWithCode:(int)arg1;
 + (id)errorWithCode:(int)arg1 originalError:(id)arg2;
 + (BOOL)freeCachedSpaceSynchronous:(unsigned long long)arg1 timeout:(double)arg2;
++ (BOOL)freeCachedSpaceSynchronous:(unsigned long long)arg1 timeout:(double)arg2 isAutoDownload:(BOOL)arg3;
++ (BOOL)freeCachedSpaceSynchronous:(unsigned long long)arg1 timeout:(double)arg2 isAutoDownload:(BOOL)arg3 disableCDLevelFour:(BOOL)arg4 disableSiriDeletion:(BOOL)arg5;
 + (id)gregorianCalendar;
 + (BOOL)hasCellularRadio;
 + (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1;
 + (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2;
++ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2 isAutoDownload:(BOOL)arg3;
++ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2 isAutoDownload:(BOOL)arg3 disableCDLevelFour:(BOOL)arg4 disableSiriDeletion:(BOOL)arg5;
++ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2 isAutoDownload:(BOOL)arg3 includePurging:(BOOL)arg4;
 + (int)installationKeybagState;
 + (BOOL)isCellularDataCapable;
 + (BOOL)isDaemon;
@@ -33,6 +39,7 @@
 + (id)serialNumber;
 + (void)setIsDaemon:(BOOL)arg1;
 + (id)taskQueue;
++ (unsigned long long)totalPurgeableSpace:(id)arg1;
 + (id)translateError:(id)arg1;
 + (id)translateError:(id)arg1 withAddedUserInfo:(id)arg2;
 + (int)translateErrorCodeFromError:(id)arg1;

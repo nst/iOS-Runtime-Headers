@@ -23,6 +23,7 @@
 @property (nonatomic, retain) PLPhotoLibrary *momentGenerationLibrary;
 @property (readonly) Class superclass;
 
++ (void)_setManagedObjectContextMomentarilyBlessed:(id)arg1;
 + (BOOL)isManagedObjectContextMomentarilyBlessed:(id)arg1;
 + (BOOL)isManagerMomentarilyBlessed:(id)arg1;
 + (void)setManagerMomentarilyBlessed:(id)arg1;

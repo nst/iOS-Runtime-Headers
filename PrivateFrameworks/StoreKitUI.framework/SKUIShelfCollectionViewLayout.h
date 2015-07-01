@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIShelfCollectionViewLayout : UICollectionViewLayout {
+@interface SKUIShelfCollectionViewLayout : UICollectionViewLayout <SKUIShelfCollectionViewLayout> {
     SKUIShelfLayoutData *_layoutData;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) SKUIShelfLayoutData *layoutData;
+@property (readonly) Class superclass;
 
++ (BOOL)collectionViewCanClipToBounds;
 + (Class)layoutAttributesClass;
 + (float)snapToBoundariesDecelerationRate;
 

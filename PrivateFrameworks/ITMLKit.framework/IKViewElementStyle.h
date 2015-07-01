@@ -4,12 +4,15 @@
 
 @interface IKViewElementStyle : NSObject {
     NSString *_classSelector;
+    NSArray *_mediaQueryList;
     NSMutableDictionary *_styleDict;
 }
 
 @property (nonatomic, readonly) UIColor *backgroundColor;
 @property (nonatomic, readonly) NSString *badgeTreatment;
 @property (nonatomic, readonly) UIColor *borderColor;
+@property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderMargins;
+@property (nonatomic, readonly) IKFourTuple *borderRadius;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderWidths;
 @property (nonatomic, readonly) NSString *cardType;
 @property (nonatomic, retain) NSString *classSelector;
@@ -25,19 +28,32 @@
 @property (nonatomic, readonly) int fillImage;
 @property (nonatomic, readonly) float fontSize;
 @property (nonatomic, readonly) NSString *fontWeight;
+@property (nonatomic, readonly) IKColor *ikBackgroundColor;
+@property (nonatomic, readonly) IKColor *ikBorderColor;
+@property (nonatomic, readonly) IKColor *ikColor;
+@property (nonatomic, readonly) IKColor *ikHighlightColor;
+@property (nonatomic, readonly) IKColor *imageMaskColor;
+@property (nonatomic, readonly) IKColor *imagePlaceholderBackgroundColor;
 @property (nonatomic, readonly) NSURL *imagePlaceholderURL;
 @property (nonatomic, readonly) unsigned int imagePosition;
 @property (nonatomic, readonly) NSString *imageTreatment;
 @property (nonatomic, readonly) NSString *itemHeight;
 @property (nonatomic, readonly) NSString *itemWidth;
 @property (nonatomic, readonly) NSString *labelsState;
+@property (nonatomic, readonly) NSNumber *letterSpacing;
 @property (nonatomic, readonly) NSString *lockupType;
+@property (nonatomic, readonly) NSString *maxHeight;
 @property (nonatomic, readonly) int maxTextLines;
+@property (nonatomic, readonly) NSString *maxWidth;
+@property (nonatomic, retain) NSArray *mediaQueryList;
 @property (nonatomic, readonly) unsigned int ordinalMaxLength;
 @property (nonatomic, readonly) int reflectImage;
 @property (nonatomic, readonly) NSString *rowHeight;
 @property (nonatomic, retain) NSMutableDictionary *styleDict;
 @property (nonatomic, readonly) unsigned int textAlignment;
+@property (nonatomic, readonly) NSString *textScale;
+@property (nonatomic, readonly) NSShadow *textShadow;
+@property (nonatomic, readonly) NSString *textStyle;
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 @property (nonatomic, readonly) NSString *transition;
 @property (nonatomic, readonly) NSNumber *transitionInterval;
@@ -46,9 +62,10 @@
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
 + (unsigned int)alignmentFromString:(id)arg1;
-+ (id)elementStyleWithParentStyle:(id)arg1 elementStyle:(id)arg2 inlineStyle:(id)arg3;
++ (id)elementStyleWithParentStyle:(id)arg1 elementStyle:(id)arg2 elementStyleOverrides:(id)arg3;
 + (id)elementStyleWithSelector:(id)arg1 aggregatingStyles:(id)arg2;
-+ (id)elementStylesFromString:(id)arg1;
++ (id)elementStyleWithSelector:(id)arg1 styleString:(id)arg2;
++ (unsigned int)imageTreatmentFromString:(id)arg1;
 + (void)initialize;
 + (unsigned int)positionFromString:(id)arg1;
 + (void)registerStyle:(id)arg1 withType:(unsigned int)arg2 inherited:(BOOL)arg3;
@@ -58,8 +75,10 @@
 - (void)_addElementStyle:(id)arg1;
 - (void)_addParentStyle:(id)arg1;
 - (id)_doubleFromString:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForStyleKey:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsFromString:(id)arg1;
 - (id)_fontSizeFromString:(id)arg1;
+- (id)_gradientFromString:(id)arg1;
 - (id)_newColorFromString:(id)arg1;
 - (id)_numberFromString:(id)arg1;
 - (void)_parse:(id)arg1;
@@ -69,6 +88,8 @@
 - (id)backgroundColor;
 - (id)badgeTreatment;
 - (id)borderColor;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderMargins;
+- (id)borderRadius;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderWidths;
 - (id)cardType;
 - (id)classSelector;
@@ -85,6 +106,12 @@
 - (int)fillImage;
 - (float)fontSize;
 - (id)fontWeight;
+- (id)ikBackgroundColor;
+- (id)ikBorderColor;
+- (id)ikColor;
+- (id)ikHighlightColor;
+- (id)imageMaskColor;
+- (id)imagePlaceholderBackgroundColor;
 - (id)imagePlaceholderURL;
 - (unsigned int)imagePosition;
 - (id)imageTreatment;
@@ -94,18 +121,27 @@
 - (id)itemHeight;
 - (id)itemWidth;
 - (id)labelsState;
+- (id)letterSpacing;
 - (id)lockupType;
+- (id)maxHeight;
 - (int)maxTextLines;
+- (id)maxWidth;
+- (id)mediaQueryList;
 - (unsigned int)ordinalMaxLength;
 - (int)reflectImage;
 - (id)rowHeight;
 - (void)setClassSelector:(id)arg1;
+- (void)setMediaQueryList:(id)arg1;
 - (void)setStyleDict:(id)arg1;
 - (id)styleDict;
 - (unsigned int)textAlignment;
+- (id)textScale;
+- (id)textShadow;
+- (id)textStyle;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (id)transition;
 - (id)transitionInterval;
+- (unsigned int)typeForStyle:(id)arg1;
 - (id)valueForStyle:(id)arg1;
 - (id)visibility;
 

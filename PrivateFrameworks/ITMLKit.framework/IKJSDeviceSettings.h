@@ -4,6 +4,7 @@
 
 @interface IKJSDeviceSettings : IKJSObject <IKJSDeviceSettings> {
     <IKAppDeviceConfig> *_deviceConfig;
+    id _restrictionDidChangeToken;
 }
 
 @property (nonatomic, readonly) IKJSRestrictions *Restrictions;

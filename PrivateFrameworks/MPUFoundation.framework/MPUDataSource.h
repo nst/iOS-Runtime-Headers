@@ -18,10 +18,13 @@
 @property (nonatomic, readonly) BOOL showsIndexBar;
 @property (nonatomic, readonly) BOOL usesSections;
 
-- (void)_didInvalidate;
++ (Class)invalidationContextClass;
+
+- (void)_didInvalidateWithContext:(id)arg1;
 - (unsigned int)_globalIndexForIndexPath:(id)arg1;
+- (id)_indexPathForGlobalIndex:(unsigned int)arg1;
 - (void)_invalidateCalculatedEntities;
-- (void)_willInvalidate;
+- (void)_willInvalidateWithContext:(id)arg1;
 - (id)anyEntity;
 - (void)beginIgnoringInvalidation;
 - (BOOL)canEditEntityAtIndex:(unsigned int)arg1;
@@ -46,6 +49,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEntityType:(int)arg1;
 - (void)invalidate;
+- (void)invalidateWithContext:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isIgnoringInvalidation;
 - (id)localizedSectionIndexTitles;

@@ -19,6 +19,7 @@
     int _purchaseURLBagType;
     IKAppContext *_scriptAppContext;
     NSString *_storeFrontIdentifier;
+    SSUpdatableAssetController *_updatableAssetController;
     SKUIURLBag *_urlBag;
     int _userInterfaceIdiomOverride;
 }
@@ -37,13 +38,16 @@
 @property (nonatomic, copy) SKUIURL *purchaseReferrerURL;
 @property (nonatomic, readonly) NSString *storeFrontIdentifier;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) SSUpdatableAssetController *updatableAssetController;
 @property (nonatomic) int userInterfaceIdiomOverride;
 
 + (id)_cachePathForStoreFrontIdentifier:(id)arg1;
 + (id)_configurationDictionaryWithBagDictionary:(id)arg1;
++ (id)_fallbackConfigurationDictionary;
 + (id)defaultContext;
 
 - (void).cxx_destruct;
+- (id)SAPSessionForVersion:(int)arg1;
 - (id)URLBag;
 - (id)_applicationController;
 - (id)_navigationHistory;
@@ -54,6 +58,8 @@
 - (void)_setPurchaseURLBagType:(int)arg1;
 - (void)_setScriptAppContext:(id)arg1;
 - (void)_setValue:(id)arg1 forConfigurationKey:(id)arg2;
+- (id)additionalLeftBarButtonItemForDocumentContainerViewController:(id)arg1;
+- (id)additionalRightBarButtonItemForDocumentContainerViewController:(id)arg1;
 - (id)clientInterface;
 - (void)clientInterface:(id)arg1 dispatchOnPageResponseWithData:(id)arg2 response:(id)arg3;
 - (void)clientInterface:(id)arg1 dispatchXEvent:(id)arg2 completionBlock:(id /* block */)arg3;
@@ -61,6 +67,7 @@
 - (void)customizePurchase:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)documentViewControllerForTemplateViewElement:(id)arg1;
 - (void)getDefaultMetricsControllerWithCompletionBlock:(id /* block */)arg1;
 - (id)initWithConfigurationDictionary:(id)arg1;
 - (void)loadValueForConfigurationKey:(id)arg1 completionBlock:(id /* block */)arg2;
@@ -69,9 +76,12 @@
 - (id)localizedStringForKey:(id)arg1 inTable:(id)arg2;
 - (id)metricsConfigurationIdentifier;
 - (id)metricsPageContextForViewController:(id)arg1;
+- (id)modalDocumentViewControllerForDocument:(id)arg1 options:(id)arg2;
 - (id)navigationHistory;
 - (id)navigationHistoryPersistenceKey;
 - (id)newLegacyStorePageViewControllerForURLResponse:(id)arg1;
+- (id)newLoadStoreURLOperationWithURL:(id)arg1;
+- (id)newLoadStoreURLOperationWithURLRequest:(id)arg1;
 - (id)platformContext;
 - (id)purchaseReferrerURL;
 - (void)pushNavigationHistoryPageIdentifier:(id)arg1;
@@ -82,9 +92,12 @@
 - (void)setMetricsPageContext:(id)arg1 forViewController:(id)arg2;
 - (void)setNavigationHistoryPersistenceKey:(id)arg1;
 - (void)setPurchaseReferrerURL:(id)arg1;
+- (void)setUpdatableAssetController:(id)arg1;
 - (void)setUserInterfaceIdiomOverride:(int)arg1;
 - (id)storeFrontIdentifier;
+- (BOOL)supportsRenderingVersion:(unsigned int)arg1;
 - (id)tabBarItemsForStyle:(int)arg1;
+- (id)updatableAssetController;
 - (int)userInterfaceIdiomOverride;
 - (id)valueForConfigurationKey:(id)arg1;
 

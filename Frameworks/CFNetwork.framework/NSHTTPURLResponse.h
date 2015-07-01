@@ -44,7 +44,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
 
-- (void)radio_mescalVerifyData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (id)radio_decompressedDataWithBodyData:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 

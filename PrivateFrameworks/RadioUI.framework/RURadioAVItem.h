@@ -5,30 +5,31 @@
 @interface RURadioAVItem : MPAVItem {
     NSArray *_buyOffers;
     BOOL _heartbeatInvalid;
-    BOOL _isBanned;
     BOOL _isInWishList;
-    BOOL _isLiked;
     RadioTrack *_radioTrack;
     RadioStation *_station;
     NSString *_stationHash;
     long long _stationID;
     NSString *_stationName;
+    NSString *_stationStringID;
 }
 
+@property (nonatomic, readonly) BOOL _canUseStoreAdamIDForSubscriptionAdamID;
 @property (getter=isHeartbeatInvalid, nonatomic) BOOL heartbeatInvalid;
-@property (nonatomic) BOOL isBanned;
 @property (nonatomic) BOOL isInWishList;
-@property (nonatomic) BOOL isLiked;
 @property (nonatomic, retain) RadioStation *station;
 @property (nonatomic, readonly) NSString *stationHash;
 @property (nonatomic, readonly) long long stationID;
 @property (nonatomic, readonly) NSString *stationName;
+@property (nonatomic, readonly) NSString *stationStringID;
 
 - (void).cxx_destruct;
+- (id)MPU_contentItemIdentifierCollection;
 - (void)_applyLoudnessInfoForVolumeNormalization;
-- (void)_internalIsBannedDidChangeNotification:(id)arg1;
+- (void)_beginUsingPlaybackLease;
+- (BOOL)_canUseStoreAdamIDForSubscriptionAdamID;
 - (void)_internalIsInWishlistDidChangeNotification:(id)arg1;
-- (void)_internalIsLikedDidChangeNotification:(id)arg1;
+- (void)_loadMediaItemWithCompletionHandler:(id /* block */)arg1;
 - (void)_radioRequestDidFinishNotification:(id)arg1;
 - (void)addDerivedStationForArtist:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)aggregateDictionaryItemType;
@@ -41,18 +42,16 @@
 - (id)chapterTimeMarkerForTime:(double)arg1;
 - (id)chapterTimeMarkers;
 - (id)copyrightText;
-- (unsigned int)countForQueueFeeder;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)initWithRadioTrack:(id)arg1;
-- (BOOL)isBanned;
 - (BOOL)isCloudItem;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExplicitTrack;
 - (BOOL)isHeartbeatInvalid;
 - (BOOL)isInWishList;
-- (BOOL)isLiked;
+- (BOOL)isLikedStateEnabled;
 - (BOOL)isRadioItem;
 - (BOOL)isStreamable;
 - (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
@@ -60,29 +59,28 @@
 - (id)localizedPositionInPlaylistString;
 - (id)mainTitle;
 - (id)mediaItem;
-- (id)mpuReporting_containerID;
-- (unsigned int)mpuReporting_containerType;
 - (unsigned int)mpuReporting_itemType;
-- (id)mpuReporting_personalizedContainerID;
 - (BOOL)mpuReporting_shouldReportPlayEventsToStore;
 - (id)mpuReporting_trackInfo;
 - (unsigned long long)persistentID;
 - (id)radioTrack;
 - (void)reevaluateType;
 - (void)setHeartbeatInvalid:(BOOL)arg1;
-- (void)setIsBanned:(BOOL)arg1;
 - (void)setIsInWishList:(BOOL)arg1;
-- (void)setIsLiked:(BOOL)arg1;
 - (void)setStation:(id)arg1;
 - (id)station;
 - (id)stationHash;
 - (long long)stationID;
 - (id)stationName;
-- (long long)storeID;
+- (id)stationStringID;
+- (long long)storeItemInt64ID;
+- (long long)storeSubscriptionAdamID;
+- (BOOL)supportsLikedState;
 - (BOOL)supportsSettingCurrentTime;
 - (id)title;
 - (id)titlesForTime:(double)arg1;
 - (unsigned int)type;
 - (id)urlTimeMarkers;
+- (BOOL)usesSubscriptionLease;
 
 @end

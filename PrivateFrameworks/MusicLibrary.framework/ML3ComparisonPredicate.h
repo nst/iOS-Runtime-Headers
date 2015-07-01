@@ -29,6 +29,7 @@
 - (void)appendSQLToMutableString:(id)arg1 entityClass:(Class)arg2;
 - (BOOL)caseInsensitive;
 - (int)comparison;
+- (BOOL)containsPropertyPredicate:(id)arg1 matchingValue:(id)arg2 usingComparison:(int)arg3;
 - (id)databaseStatementParameters;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

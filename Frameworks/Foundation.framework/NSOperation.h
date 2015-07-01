@@ -18,10 +18,7 @@
 @property int qualityOfService;
 @property int queuePriority;
 @property (getter=isReady, readonly) BOOL ready;
-@property (nonatomic) unsigned int tag;
 @property double threadPriority;
-
-// Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentOperation;
@@ -60,10 +57,5 @@
 - (double)threadPriority;
 - (void)waitUntilFinished;
 - (void)waitUntilFinishedOrTimeout:(double)arg1;
-
-// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
-
-- (void)setTag:(unsigned int)arg1;
-- (unsigned int)tag;
 
 @end

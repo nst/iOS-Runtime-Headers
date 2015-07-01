@@ -3,6 +3,7 @@
  */
 
 @interface SKUIViewReuseCollectionViewCell : SKUICollectionViewCell {
+    NSMapTable *_allViewTextProperties;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -29,5 +30,6 @@
 - (void)registerClass:(Class)arg1 forViewWithReuseIdentifier:(id)arg2;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (id)textPropertiesForView:(id)arg1;
 
 @end

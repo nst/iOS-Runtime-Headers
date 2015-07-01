@@ -5,7 +5,7 @@
 @interface MPUProspectivePlaybackInformation : NSObject <NSCopying>
 
 @property (nonatomic, readonly) BOOL isRadioProspectivePlaybackInformation;
-@property (nonatomic, readonly) RadioStation *radioStation;
+@property (nonatomic, readonly) RURadioStationPlaybackMetadata *stationMetadata;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
 
@@ -16,6 +16,6 @@
 // Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
 
 - (BOOL)isRadioProspectivePlaybackInformation;
-- (id)radioStation;
+- (id)stationMetadata;
 
 @end

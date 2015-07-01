@@ -10,9 +10,15 @@
 @property BOOL hasMessage;
 @property BOOL hasTitle;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (BOOL)hasMessage;
 - (BOOL)hasTitle;
 - (void)setHasMessage:(BOOL)arg1;
 - (void)setHasTitle:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (BOOL)isEqual:(id)arg1;
 
 @end

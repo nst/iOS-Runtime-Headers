@@ -9,6 +9,8 @@
     <ATMessageLink> *_messageLink;
     BOOL _open;
     NSMutableArray *_outstandingAssets;
+    int _pendingWriteAmount;
+    NSObject<OS_dispatch_semaphore> *_pendingWriteSemaphore;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableSet *_readers;
 }

@@ -2,112 +2,128 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPQueueFeeder : NSObject <MPAVPlaylistFeeder> {
+@interface MPQueueFeeder : NSObject <MPQueueBehaviorManaging, MusicEntityValueProviding, NSCoding> {
     unsigned int _activeShuffleType;
-    MPAVController *_avController;
-    BOOL _deallocating;
-    BOOL _fullScreenPlaybackQueue;
-    BOOL _isSourceChangeInProgress;
-    struct __CFSet { } *_itemsWithReferencesToClear;
-    struct __CFDictionary { } *_nextStartTimes;
+    <MPQueueFeederDelegate> *_delegate;
+    NSMutableDictionary *_nextStartTimes;
     unsigned int _repeatType;
-    id _representedObject;
+    BOOL _requiresQueueChangeVerification;
     unsigned int _shuffleType;
-    BOOL _wantsAirPlayVideo;
+    struct { 
+        int numberOfAvailableSkips; 
+        int skipFrequency; 
+        double skipInterval; 
+    } _skipLimit;
+    unsigned int _state;
 }
 
-@property (nonatomic) MPAVController *AVController;
+@property (nonatomic, readonly) MPUContentItemIdentifierCollection *MPU_contentItemIdentifierCollection;
 @property (nonatomic) unsigned int activeShuffleType;
 @property (nonatomic, readonly) BOOL allowsUserVisibleUpcomingItems;
+@property (nonatomic, readonly) BOOL canReorder;
+@property (nonatomic, readonly) BOOL canSeek;
+@property (nonatomic, readonly) BOOL canSkipToPreviousItem;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MPQueueFeederDelegate> *delegate;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL fullScreenPlaybackQueue;
 @property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isSourceChangeInProgress;
 @property (nonatomic, readonly) Class itemClass;
 @property (nonatomic, readonly) unsigned int itemCount;
+@property (setter=mpuReporting_setFeatureName:, nonatomic, copy) NSString *mpuReporting_featureName;
+@property (setter=mpuReporting_setRecommendationData:, nonatomic, copy) NSData *mpuReporting_recommendationData;
 @property (nonatomic, readonly) int playbackMode;
 @property (nonatomic, readonly) BOOL playerPreparesItemsForPlaybackAsynchronously;
-@property (nonatomic, readonly) NSDictionary *preferredLanguages;
 @property (nonatomic, readonly) unsigned int realRepeatType;
 @property (nonatomic, readonly) unsigned int realShuffleType;
 @property (nonatomic) unsigned int repeatType;
-@property (nonatomic, retain) <NSObject> *representedObject;
+@property (nonatomic) BOOL requiresQueueChangeVerification;
 @property (nonatomic) unsigned int shuffleType;
+@property (nonatomic) struct { int x1; int x2; double x3; } skipLimit;
+@property (nonatomic) unsigned int state;
 @property (nonatomic, readonly) RadioStation *station;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL trackChangesCanEndPlayback;
 @property (nonatomic, readonly) BOOL userCanChangeShuffleAndRepeatType;
-@property (nonatomic, readonly) BOOL wantsAirPlayVideo;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
-+ (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2 feederClass:(Class)arg3;
++ (BOOL)supportsStateRestoration;
 
 - (void).cxx_destruct;
-- (id)AVController;
 - (BOOL)_canPurgeNextStartTimes;
-- (void)_fixNextStartTimesByInsertingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)_fixNextStartTimesByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)activeShuffleType;
-- (void)addReferenceToItem:(id)arg1;
 - (BOOL)allowsUserVisibleUpcomingItems;
-- (void)archiveAVControllerPlaybackQueue:(id)arg1 toArchiver:(id)arg2;
-- (void)assumeOwnershipOfItems:(id)arg1;
-- (void)beginSourceChange;
+- (id)audioSessionModeForItemAtIndex:(unsigned int)arg1;
+- (BOOL)canReorder;
 - (BOOL)canSeek;
 - (BOOL)canSkipItem:(id)arg1;
 - (BOOL)canSkipToPreviousItem;
-- (void)clearReferencesToItem:(id)arg1;
-- (void)commitSourceChangeWithStartQueueIndex:(unsigned int)arg1;
-- (void)contentInvalidated;
-- (void)contentInvalidatedWithCurrentItemMovedToIndex:(unsigned int)arg1;
-- (void)contentsDidChangeByRemovingRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (void)controller:(id)arg1 willChangePlaybackIndexBy:(int)arg2 deltaType:(int)arg3 ignoreElapsedTime:(BOOL)arg4 allowSkippingUnskippableContent:(BOOL)arg5;
+- (void)contentsDidChangeWithPreferredStartIndex:(unsigned int)arg1;
+- (void)contentsDidChangeWithPreferredStartIndex:(unsigned int)arg1 error:(id)arg2;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
-- (void)dealloc;
+- (id)delegate;
+- (void)encodeWithCoder:(id)arg1;
 - (id)errorResolverForItem:(id)arg1;
-- (BOOL)fullScreenPlaybackQueue;
-- (void)getContainerType:(unsigned int*)arg1 mediaLibraryContainerPersistentID:(long long*)arg2 storeContainerID:(id*)arg3 storePersonalizedContainerID:(id*)arg4;
 - (BOOL)hasItemForIndex:(unsigned int)arg1;
 - (BOOL)hasValidItemAtIndex:(unsigned int)arg1;
+- (id)identifierAtIndex:(unsigned int)arg1;
+- (unsigned int)indexOfItemWithIdentifier:(id)arg1;
+- (unsigned int)indexOfMediaItem:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (unsigned int)initialPlaybackQueueDepthForStartingIndex:(unsigned int)arg1;
-- (void)invalidateQueueCaches;
-- (BOOL)isSourceChangeInProgress;
 - (Class)itemClass;
 - (unsigned int)itemCount;
+- (id)itemForIdentifier:(id)arg1;
 - (id)itemForIndex:(unsigned int)arg1;
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
 - (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
+- (id)mediaItemAtIndex:(unsigned int)arg1;
+- (id)metadataItemForIdentifier:(id)arg1;
 - (id)pathAtIndex:(unsigned int)arg1;
-- (id)playbackInfoAtIndex:(unsigned int)arg1;
+- (id)playbackInfoForIdentifier:(id)arg1;
 - (int)playbackMode;
+- (void)player:(id)arg1 currentItemDidChangeToItem:(id)arg2;
+- (void)player:(id)arg1 currentItemWillChangeFromItem:(id)arg2;
+- (BOOL)player:(id)arg1 shouldContinuePlaybackForNetworkType:(int)arg2 returningError:(id*)arg3;
 - (BOOL)playerPreparesItemsForPlaybackAsynchronously;
 - (id)preferredLanguages;
 - (unsigned int)realRepeatType;
 - (unsigned int)realShuffleType;
-- (BOOL)reloadWithDataSource:(id)arg1;
-- (BOOL)reloadWithDataSource:(id)arg1 keepPlayingCurrentItemIfPossible:(BOOL)arg2;
+- (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)repeatType;
-- (id)representedObject;
-- (void)restoreAVControllerPlaybackQueue:(id)arg1 fromUnarchiver:(id)arg2;
-- (void)setAVController:(id)arg1;
+- (BOOL)requiresQueueChangeVerification;
 - (void)setActiveShuffleType:(unsigned int)arg1;
-- (void)setFullScreenPlaybackQueue:(BOOL)arg1;
-- (void)setIsSourceChangeInProgress:(BOOL)arg1;
-- (void)setNextStartTime:(double)arg1 forIndex:(unsigned int)arg2;
+- (void)setDelegate:(id)arg1;
+- (void)setNextStartTime:(double)arg1 forIndentifier:(id)arg2;
 - (void)setRepeatType:(unsigned int)arg1;
-- (void)setRepresentedObject:(id)arg1;
+- (void)setRequiresQueueChangeVerification:(BOOL)arg1;
 - (void)setShuffleType:(unsigned int)arg1;
+- (void)setSkipLimit:(struct { int x1; int x2; double x3; })arg1;
+- (void)setState:(unsigned int)arg1;
 - (BOOL)shouldBeginPlaybackOfItem:(id)arg1 error:(id*)arg2;
-- (BOOL)shouldReloadForChangeFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
+- (BOOL)shouldReuseQueueFeederForPlaybackContext:(id)arg1;
 - (void)shuffleItemsWithAnchor:(unsigned int*)arg1;
 - (unsigned int)shuffleType;
 - (struct { int x1; int x2; double x3; })skipLimit;
+- (unsigned int)state;
 - (BOOL)trackChangesCanEndPlayback;
 - (BOOL)userCanChangeShuffleAndRepeatType;
-- (BOOL)wantsAirPlayVideo;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
+- (id)entityUniqueIdentifier;
+- (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
+- (id)valueForEntityProperty:(id)arg1;
+- (id)valuesForEntityProperties:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (id)MPU_contentItemIdentifierCollection;
+- (id)mpuReporting_featureName;
+- (id)mpuReporting_recommendationData;
+- (void)mpuReporting_setFeatureName:(id)arg1;
+- (void)mpuReporting_setRecommendationData:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
 

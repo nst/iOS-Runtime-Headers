@@ -7,6 +7,7 @@
 - (id)nodeName;
 - (int)nodeType;
 - (id)nodeValue;
+- (void)setNodeValue:(id)arg1;
 - (void)setTextContent:(id)arg1;
 - (id)textContent;
 

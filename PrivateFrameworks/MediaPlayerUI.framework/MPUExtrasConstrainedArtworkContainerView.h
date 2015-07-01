@@ -5,8 +5,6 @@
 @interface MPUExtrasConstrainedArtworkContainerView : UIView {
     MPUArtworkView *_artworkView;
     UIImage *_overlayImage;
-    unsigned int _overlayPosition;
-    NSArray *_overlayPositionConstraints;
     float _overlayScale;
     NSArray *_overlaySizeConstraints;
     UIImageView *_overlayView;
@@ -16,8 +14,6 @@
 
 @property (nonatomic, retain) MPUArtworkView *artworkView;
 @property (nonatomic, retain) UIImage *overlayImage;
-@property (nonatomic) unsigned int overlayPosition;
-@property (nonatomic, retain) NSArray *overlayPositionConstraints;
 @property (nonatomic) float overlayScale;
 @property (nonatomic, retain) NSArray *overlaySizeConstraints;
 @property (nonatomic, retain) UIImageView *overlayView;
@@ -29,15 +25,11 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)overlayImage;
-- (unsigned int)overlayPosition;
-- (id)overlayPositionConstraints;
 - (float)overlayScale;
 - (id)overlaySizeConstraints;
 - (id)overlayView;
 - (void)setArtworkView:(id)arg1;
 - (void)setOverlayImage:(id)arg1;
-- (void)setOverlayPosition:(unsigned int)arg1;
-- (void)setOverlayPositionConstraints:(id)arg1;
 - (void)setOverlayScale:(float)arg1;
 - (void)setOverlaySizeConstraints:(id)arg1;
 - (void)setOverlayView:(id)arg1;

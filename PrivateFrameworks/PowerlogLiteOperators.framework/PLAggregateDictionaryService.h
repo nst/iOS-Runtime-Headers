@@ -10,6 +10,8 @@
         double timestamp; 
     } _last_state;
     NSMutableArray *_registeredNotifications;
+    double remainderUnpluggedEnergy;
+    double remainderUnpluggedTime;
 }
 
 @property (retain) PLNSTimerOperatorComposition *dailyTaskTimer;

@@ -27,7 +27,6 @@
 - (id)initWithConditionPredicate:(id)arg1 thenPredicate:(id)arg2 elsePredicate:(id)arg3;
 - (BOOL)isDynamicForEntityClass:(Class)arg1;
 - (BOOL)isEqual:(id)arg1;
-- (id)predicateOptimizedForEntityClass:(Class)arg1;
 - (id)spotlightPredicate;
 - (id)thenPredicate;
 

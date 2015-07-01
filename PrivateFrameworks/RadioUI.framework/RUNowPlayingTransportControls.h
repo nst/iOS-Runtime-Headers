@@ -7,7 +7,7 @@
 + (unsigned long long)defaultVisibleParts;
 
 - (void)_avItemStoreIDDidChangeNotification:(id)arg1;
-- (void)_isLikedDidChangeNotification:(id)arg1;
+- (void)_likedStateDidChangeNotification:(id)arg1;
 - (float)_nextButtonVInset;
 - (float)_playPauseBottomVInset;
 - (void)_registerForAVItemNotifications;

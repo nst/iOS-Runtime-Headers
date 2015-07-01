@@ -46,6 +46,7 @@
 - (id)_resultImageViewSection;
 - (void)_setHeaderImage:(id)arg1;
 - (void)_setItemImage:(id)arg1;
+- (float)_tableWidth;
 - (void)dealloc;
 - (id)initWithRedeem:(id)arg1;
 - (void)itemStateCenter:(id)arg1 itemStatesChanged:(id)arg2;

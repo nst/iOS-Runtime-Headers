@@ -23,6 +23,7 @@
     BOOL _newCustomer;
     int _paidPurchasesPasswordSetting;
     NSString *_secureToken;
+    NSMutableDictionary *_serviceEligibility;
     NSString *_storeFrontID;
     NSNumber *_uniqueIdentifier;
 }
@@ -55,6 +56,7 @@
 
 - (id)ITunesPassSerialNumber;
 - (void)_sendBlockingXPCMessage:(id)arg1;
+- (void)_sendMessage:(id)arg1 withReply:(id /* block */)arg2;
 - (void)acceptTermsAndConditions:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (int)accountKind;
 - (id)accountName;
@@ -70,10 +72,12 @@
 - (void)dealloc;
 - (id)description;
 - (BOOL)didFallbackToPassword;
+- (id)eligibilityForService:(int)arg1;
 - (int)enabledServiceTypes;
 - (id)firstName;
 - (int)freeDownloadsPasswordSetting;
 - (void)getDownloadKindsEligibleForContentRestoreWithBlock:(id /* block */)arg1;
+- (void)getEligibilityForService:(int)arg1 completionBlock:(id /* block */)arg2;
 - (void)getITunesMatchStatusWithCompletionBlock:(id /* block */)arg1;
 - (void)getKeybagSyncDataWithType:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)getPurchasedItemsForItems:(id)arg1 completionBlock:(id /* block */)arg2;
@@ -108,6 +112,7 @@
 - (void)setCreditsString:(id)arg1;
 - (void)setDemoAccount:(BOOL)arg1;
 - (void)setDidFallbackToPassword:(BOOL)arg1;
+- (void)setEligibility:(id)arg1 forServiceType:(int)arg2;
 - (void)setEnabledServiceTypes:(int)arg1;
 - (void)setFirstName:(id)arg1;
 - (void)setFreeDownloadsPasswordSetting:(int)arg1;

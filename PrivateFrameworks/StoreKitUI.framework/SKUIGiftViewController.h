@@ -7,6 +7,7 @@
     SKUIGift *_gift;
     SKUIGiftConfiguration *_giftConfiguration;
     <SKUIGiftViewControllerDelegate> *_giftDelegate;
+    int _initialBarStyle;
     NSOperationQueue *_operationQueue;
     UIViewController *_placeholderViewController;
     SKUIGiftComposeViewController *_rootViewController;
@@ -34,6 +35,8 @@
 - (void)setGiftDelegate:(id)arg1;
 - (void)setOperationQueue:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

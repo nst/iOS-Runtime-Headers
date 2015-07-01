@@ -81,6 +81,7 @@
 - (int)_migrateToSchemaVersion_4;
 - (int)_migrateToSchemaVersion_5;
 - (int)_migrateToSchemaVersion_6;
+- (int)_migrateToSchemaVersion_7;
 - (void)_openDatabase:(id)arg1 andCheckIntegrity:(BOOL)arg2;
 - (void)_performMaintenance;
 - (void)_processPendingDeletes;

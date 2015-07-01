@@ -2,37 +2,53 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPStorePlayWhileDownloadController : NSObject <SSDownloadHandlerDelegate, UIAlertViewDelegate> {
-    NSMutableSet *_cellularRestrictedAlertViews;
+@interface MPStorePlayWhileDownloadController : NSObject <MPStoreDownloadManagerObserver, SSDownloadHandlerDelegate> {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     SSDownloadHandler *_downloadHandler;
-    SSDownloadManager *_downloadManager;
-    NSObject<OS_dispatch_queue> *_downloadSessionQueue;
-    NSMutableArray *_downloadSessions;
+    NSMapTable *_downloadToActiveSessions;
+    NSMapTable *_downloadToDownloadTokenPendingCompletionHandlers;
+    NSMapTable *_downloadToObservationTransactionCount;
+    NSMapTable *_downloadToProcessingDownloadHandlerSessions;
+    NSMapTable *_downloadToValidStatePendingCompletionHandlers;
+    NSMutableArray *_pausedDownloads;
+    NSMutableArray *_prioritizedDownloads;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) long long downloadHandlerIdentifier;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
 + (id)sharedController;
 
 - (void).cxx_destruct;
-- (void)_closeSessionForAsset:(id)arg1;
-- (id)_downloadSessionWithID:(id)arg1;
-- (id)_init;
-- (id)_openSessionWithProperties:(id)arg1 assetOptions:(id)arg2;
-- (id)_openSessionWithProperties:(id)arg1 style:(int*)arg2;
-- (BOOL)_showCellularRestrictedDialogForContext:(id)arg1;
-- (BOOL)_showNoNetworkDialogForContext:(id)arg1;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (BOOL)canOpenSessionWithContext:(id)arg1;
+- (void)_beginDownloadObservationForDownload:(id)arg1;
+- (void)_beginPrioritizingDownload:(id)arg1;
+- (void)_beginPrioritizingDownloadSession:(id)arg1;
+- (void)_endDownloadObservationForDownload:(id)arg1;
+- (void)_endPrioritizingDownload:(id)arg1;
+- (void)_endPrioritizingDownloadSession:(id)arg1;
+- (void)_getDownloadPropertiesForStoreDownload:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_getDownloadTokenForStoreDownload:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_handleDownloadPrioritization;
+- (BOOL)_isStoreDownloadValidForPlayWhileDownload:(id)arg1;
+- (void)_postActiveSessionsDidFinishForStoreDownload:(id)arg1;
+- (void)_suspendUntilValidDownloadStateForStoreDownload:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_updateActiveSessionsForDownload:(id)arg1;
+- (void)_updateForDownloadStateRefreshWithDownload:(id)arg1;
+- (void)_updateForDownloadTokenRefreshWithDownload:(id)arg1;
+- (void)acquirePlayWhileDownloadSessionForDownload:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)beginPrioritizingDownloadSession:(id)arg1;
 - (void)dealloc;
 - (void)downloadHandler:(id)arg1 cancelSession:(id)arg2;
 - (void)downloadHandler:(id)arg1 handleSession:(id)arg2;
+- (long long)downloadHandlerIdentifier;
+- (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadDidProgress:(id)arg2;
+- (void)downloadManager:(id)arg1 downloadPurchaseDidFinish:(id)arg2;
+- (void)endPrioritizingDownloadSession:(id)arg1;
 - (id)init;
-- (BOOL)isSessionRequiredToPlayContext:(id)arg1;
-- (id)openSessionWithContext:(id)arg1 attributes:(id)arg2;
-- (BOOL)showNetworkConstraintDialogForContext:(id)arg1;
+- (void)releasePlayWhileDownloadSession:(id)arg1;
 
 @end

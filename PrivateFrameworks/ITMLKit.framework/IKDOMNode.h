@@ -3,6 +3,7 @@
  */
 
 @interface IKDOMNode : IKJSObject <IKJSDOMEventTarget, IKJSDOMNode> {
+    int _ITMLID;
     NSHashTable *_domObservers;
     NSMutableDictionary *_eventListenersMap;
     JSManagedValue *_managedChildNodeList;
@@ -12,6 +13,7 @@
     struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; } *_nodePtr;
 }
 
+@property (nonatomic) int ITMLID;
 @property (nonatomic, readonly, retain) IKDOMNodeList *childNodes;
 @property (nonatomic, retain) NSHashTable *domObservers;
 @property (nonatomic, retain) NSMutableDictionary *eventListenersMap;
@@ -37,6 +39,7 @@
 + (id)nodeWithAppContext:(id)arg1 nodePtr:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg2;
 
 - (void).cxx_destruct;
+- (int)ITMLID;
 - (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)_appendNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
 - (struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)_insertNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 refNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg2 operation:(unsigned int)arg3;
 - (void)_linkManagedObjects;
@@ -54,6 +57,7 @@
 - (id)cloneNode:(BOOL)arg1;
 - (void)dealloc;
 - (id)description;
+- (BOOL)dispatchEvent:(id)arg1;
 - (id)domObservers;
 - (void)enumerateEventListernersForType:(id)arg1 xmlAttribute:(id)arg2 phase:(int)arg3 usingBlock:(id /* block */)arg4;
 - (id)eventListenersMap;
@@ -90,6 +94,7 @@
 - (id)replaceChild:(id)arg1 :(id)arg2;
 - (void)setDomObservers:(id)arg1;
 - (void)setEventListenersMap:(id)arg1;
+- (void)setITMLID:(int)arg1;
 - (void)setManagedChildNodeList:(id)arg1;
 - (void)setManagedOwnerDocument:(id)arg1;
 - (void)setManagedParent:(id)arg1;

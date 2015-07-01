@@ -4,14 +4,12 @@
 
 @interface MPVideoView : UIView {
     NSDictionary *_AVURLAssetOptions;
-    NSString *_moviePath;
     NSString *_movieSubtitle;
     NSString *_movieTitle;
     MPAVController *_player;
     unsigned int _scaleMode;
     double _startTime;
     double _stopTime;
-    NSString *_videoID;
 }
 
 @property (nonatomic, retain) NSDictionary *AVURLAssetOptions;
@@ -25,7 +23,6 @@
 @property (nonatomic) unsigned int scaleMode;
 @property (nonatomic) double startTime;
 @property (nonatomic) double stopTime;
-@property (nonatomic, copy) NSString *videoID;
 
 + (Class)layerClass;
 
@@ -40,29 +37,21 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieContentFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })movieFrame;
-- (id)moviePath;
 - (id)movieSubtitle;
 - (id)movieTitle;
-- (void)play;
-- (void)playFromBeginning;
-- (void)playWhenLikelyToKeepUp;
 - (id)player;
-- (void)prepareAVControllerQueue;
 - (unsigned int)scaleMode;
 - (void)setAVURLAssetOptions:(id)arg1;
 - (void)setMovieSubtitle:(id)arg1;
 - (void)setMovieTitle:(id)arg1;
-- (void)setMovieWithPath:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setScaleMode:(unsigned int)arg1;
 - (void)setScaleMode:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setScaleMode:(unsigned int)arg1 duration:(float)arg2;
 - (void)setStartTime:(double)arg1;
 - (void)setStopTime:(double)arg1;
-- (void)setVideoID:(id)arg1;
 - (double)startTime;
 - (double)stopTime;
 - (void)toggleScaleMode:(BOOL)arg1;
-- (id)videoID;
 
 @end

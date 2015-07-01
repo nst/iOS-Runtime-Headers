@@ -5,11 +5,11 @@
 
 @required
 
++ (IKJSObject *)makeFeatureJSObjectForFeature:(id <IKDOMFeature>)arg1;
+
 - (IKAppContext *)appContext;
-- (IKJSObject *)featureJSObject;
 - (NSString *)featureName;
-- (id)initWithFeatureName:(NSString *)arg1;
-- (void)setAppContext:(IKAppContext *)arg1;
+- (id)initWithDOMNode:(IKDOMNode *)arg1 featureName:(NSString *)arg2;
 
 @optional
 

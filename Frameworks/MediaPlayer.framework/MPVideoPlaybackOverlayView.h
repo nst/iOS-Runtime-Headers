@@ -2,11 +2,10 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPVideoPlaybackOverlayView : UIView <MPAudioAndSubtitlesControllerDelegate, MPDetailSliderDelegate, MPVideoOverlay, UIPopoverControllerDelegate> {
+@interface MPVideoPlaybackOverlayView : UIView <MPDetailSliderDelegate, MPVideoOverlay, UIPopoverPresentationControllerDelegate> {
     BOOL _allowsExitFromFullscreen;
     UIButton *_audioAndSubtitlesButton;
     MPAudioAndSubtitlesController *_audioAndSubtitlesController;
-    UIPopoverController *_audioAndSubtitlesPopover;
     BOOL _automaticallyHandleTransportControls;
     _UIBackdropView *_bottomBarBackdropView;
     UIView *_bottomBarBottomLayoutGuide;
@@ -56,6 +55,7 @@
 
 @property (nonatomic) BOOL allowsDetailScrubbing;
 @property (nonatomic) BOOL allowsExitFromFullscreen;
+@property (nonatomic) BOOL allowsScrubbing;
 @property (nonatomic) BOOL allowsWirelessPlayback;
 @property (nonatomic) BOOL automaticallyHandleTransportControls;
 @property (nonatomic, readonly) float bottomBarHeight;
@@ -87,6 +87,7 @@
 - (void)_durationAvailable:(id)arg1;
 - (void)_effectiveScaleModeDidChange:(id)arg1;
 - (void)_fullscreenButtonTapped:(id)arg1;
+- (void)_handleDismissAudioAndSubtitlesController;
 - (void)_hideScrubInstructions;
 - (id)_imageNamed:(id)arg1;
 - (void)_itemChanged:(id)arg1;
@@ -117,10 +118,11 @@
 - (void)_updateScaleButton;
 - (void)_updateVolumeSlider;
 - (void)_videoViewDidMoveToWindow:(id)arg1;
+- (int)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (BOOL)allowsDetailScrubbing;
 - (BOOL)allowsExitFromFullscreen;
+- (BOOL)allowsScrubbing;
 - (BOOL)allowsWirelessPlayback;
-- (void)audioAndSubtitleControllerRequestsDismissal:(id)arg1;
 - (BOOL)automaticallyHandleTransportControls;
 - (float)bottomBarHeight;
 - (void)dealloc;
@@ -142,10 +144,11 @@
 - (BOOL)navigationBarHidden;
 - (id)player;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)removeFromSuperview;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setAllowsExitFromFullscreen:(BOOL)arg1;
+- (void)setAllowsScrubbing:(BOOL)arg1;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAutomaticallyHandleTransportControls:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

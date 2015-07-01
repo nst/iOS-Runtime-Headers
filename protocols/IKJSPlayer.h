@@ -5,6 +5,18 @@
 
 @required
 
-- (IKDOMElement *)currentAVMediaElement;
+- (IKJSMediaItem *)currentMediaItem;
+- (BOOL)ended;
+- (id)init;
+- (void)pause;
+- (BOOL)paused;
+- (void)play;
+- (BOOL)playing;
+- (IKJSPlaylist *)playlist;
+- (BOOL)seeking;
+- (void)setCurrentTime:(double)arg1;
+- (void)setPlaybackRate:(double)arg1;
+- (void)setPlaylist:(IKJSPlaylist *)arg1;
+- (void)stop;
 
 @end

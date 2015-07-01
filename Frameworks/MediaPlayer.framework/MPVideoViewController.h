@@ -109,7 +109,7 @@
 - (void)_updateAlwaysPlayWheneverPossible;
 - (void)_updateBackgroundView:(BOOL)arg1;
 - (void)_updateClosedCaptionDisplay;
-- (void)_updateIdleTimerDisabledFromPlaybackState:(unsigned int)arg1;
+- (void)_updateIdleTimerDisabledFromPlaybackState:(int)arg1;
 - (void)_updateProgressControlForItem:(id)arg1;
 - (void)_videoView_applicationSuspendedNotification:(id)arg1;
 - (void)_videoView_applicationWillEnterForegroundNotification:(id)arg1;

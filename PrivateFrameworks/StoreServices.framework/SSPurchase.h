@@ -13,6 +13,7 @@
     BOOL _displaysOnLockScreen;
     SSDownloadPolicy *_downloadPolicy;
     NSMutableDictionary *_downloadProperties;
+    NSNumber *_enabledServiceType;
     long long _expectedDownloadFileSize;
     NSArray *_filteredAssetTypes;
     NSArray *_gratisIdentifiers;
@@ -40,6 +41,7 @@
 @property BOOL displaysOnLockScreen;
 @property (copy) SSDownloadPolicy *downloadPolicy;
 @property (copy) NSDictionary *downloadProperties;
+@property (copy) NSNumber *enabledServiceType;
 @property long long expectedDownloadFileSize;
 @property (copy) NSArray *filteredAssetTypes;
 @property (copy) NSArray *gratisIdentifiers;
@@ -74,6 +76,7 @@
 - (id)downloadMetadata;
 - (id)downloadPolicy;
 - (id)downloadProperties;
+- (id)enabledServiceType;
 - (void)encodeWithCoder:(id)arg1;
 - (long long)expectedDownloadFileSize;
 - (id)filteredAssetTypes;
@@ -106,6 +109,7 @@
 - (void)setDownloadMetadata:(id)arg1;
 - (void)setDownloadPolicy:(id)arg1;
 - (void)setDownloadProperties:(id)arg1;
+- (void)setEnabledServiceType:(id)arg1;
 - (void)setExpectedDownloadFileSize:(long long)arg1;
 - (void)setFilteredAssetTypes:(id)arg1;
 - (void)setGratisIdentifiers:(id)arg1;

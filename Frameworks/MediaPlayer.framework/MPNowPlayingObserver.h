@@ -9,7 +9,6 @@
     UIImage *_currentArtworkImage;
     BOOL _enabled;
     BOOL _hasSeenAnyItem;
-    MPImageCache *_imageCache;
     NSMutableDictionary *_mediaItemCoalescedUpdateDateAccessedTimers;
     MPAVController *_player;
     BOOL _scheduledNowPlayingInfoUpdate;
@@ -20,16 +19,17 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) MPImageCache *imageCache;
 @property (nonatomic, retain) MPAVController *player;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)_MPNowPlayingDownloadStateForDownload:(id)arg1;
 - (id)_activeDownloadForItemWithStoreID:(long long)arg1;
+- (id)_additionalKeysForNowPlayingItem:(id)arg1;
 - (void)_avItemArtworkDidChangeNotification:(id)arg1;
 - (void)_avItemDurationDidChangeNotification:(id)arg1;
 - (void)_avItemIsExplicitDidChangeNotification:(id)arg1;
+- (void)_avItemLikedStateDidChangeNotification:(id)arg1;
 - (void)_avItemTitlesDidChangeNotification:(id)arg1;
 - (void)_bufferingStateDidChangeNotification:(id)arg1;
 - (void)_coalescedUpdateLastUsedDateForCurrentItem;
@@ -56,12 +56,12 @@
 - (void)_timeDidJumpNotification:(id)arg1;
 - (void)_unregisterForNotificationsForPlayer:(id)arg1;
 - (void)_updateProgressForDownload:(id)arg1;
+- (void)configureArtworkCatalog:(id)arg1;
 - (void)dealloc;
 - (void)downloadManager:(id)arg1 didAddDownloads:(id)arg2 removeDownloads:(id)arg3;
 - (void)downloadManager:(id)arg1 downloadDidFinish:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadDidProgress:(id)arg2;
 - (void)downloadManager:(id)arg1 downloadPurchaseDidFinish:(id)arg2;
-- (id)imageCache;
 - (id)init;
 - (id)initWithPlayer:(id)arg1;
 - (BOOL)isEnabled;

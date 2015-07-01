@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
  */
 
-@interface RadioArtworkCollection : NSObject {
+@interface RadioArtworkCollection : NSObject <NSCopying> {
     NSArray *_artworks;
 }
 
@@ -15,6 +15,7 @@
 - (id)artworks;
 - (id)bestArtworkForPixelSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)bestArtworkForPointSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned int)hash;
 - (id)initWithArtworkVariants:(id)arg1;

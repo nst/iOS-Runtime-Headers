@@ -3,6 +3,13 @@
  */
 
 @interface SKUIHorizontalListView : SKUIViewReuseView <SKUIMenuPopoverDelegate, SKUIViewElementView> {
+    NSMutableArray *_artworkRequestPassthroughViews;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _bigHitInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -11,9 +18,11 @@
     } _contentInset;
     float _elementSpacing;
     UIControl *_focusedMenuButton;
+    NSMapTable *_imageViewToImageResourceCacheKey;
     NSArray *_lines;
     SKUIListViewElement *_listElement;
     SKUIMenuPopoverController *_popoverController;
+    BOOL _useBigHitTarget;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -42,11 +51,13 @@
 - (void)_menuButtonAction:(id)arg1;
 - (id)_viewElementForView:(id)arg1;
 - (void)dealloc;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)menuPopover:(id)arg1 didSelectMenuItemAtIndex:(int)arg2;
 - (void)menuPopover:(id)arg1 willRepositionToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)menuPopoverDidCancel:(id)arg1;
+- (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)reloadWithViewElement:(id)arg1 width:(float)arg2 context:(id)arg3;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;

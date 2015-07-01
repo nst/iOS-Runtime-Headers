@@ -15,6 +15,7 @@
     NSNumber *_localNATType;
     NSData *_localSKEData;
     NSString *_peerCN;
+    NSNumber *_peerProtocolVersion;
     NSDictionary *_relayCancel;
     NSDictionary *_relayInitiate;
     NSDictionary *_relayUpdate;
@@ -39,6 +40,7 @@
 @property (nonatomic, retain) NSNumber *localNATType;
 @property (nonatomic, retain) NSData *localSKEData;
 @property (nonatomic, retain) NSString *peerCN;
+@property (nonatomic, retain) NSNumber *peerProtocolVersion;
 @property (nonatomic, retain) NSDictionary *relayCancel;
 @property (nonatomic, retain) NSDictionary *relayInitiate;
 @property (nonatomic, retain) NSDictionary *relayUpdate;
@@ -65,6 +67,7 @@
 - (id)localNATType;
 - (id)localSKEData;
 - (id)peerCN;
+- (id)peerProtocolVersion;
 - (id)relayCancel;
 - (id)relayInitiate;
 - (id)relayUpdate;
@@ -84,6 +87,7 @@
 - (void)setLocalNATType:(id)arg1;
 - (void)setLocalSKEData:(id)arg1;
 - (void)setPeerCN:(id)arg1;
+- (void)setPeerProtocolVersion:(id)arg1;
 - (void)setRelayCancel:(id)arg1;
 - (void)setRelayInitiate:(id)arg1;
 - (void)setRelayUpdate:(id)arg1;

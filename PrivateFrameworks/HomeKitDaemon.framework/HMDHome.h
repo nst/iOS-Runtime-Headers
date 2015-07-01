@@ -15,6 +15,7 @@
     int _lastKnownReachableIPAccessoryCount;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
+    BOOL _remoteAccessIsEnabled;
     HMDRoom *_roomForEntireHome;
     NSMutableArray *_rooms;
     NSMutableArray *_serviceGroups;
@@ -43,6 +44,7 @@
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic) BOOL remoteAccessIsEnabled;
 @property (nonatomic, retain) HMDRoom *roomForEntireHome;
 @property (nonatomic, retain) NSMutableArray *rooms;
 @property (nonatomic, retain) NSMutableArray *serviceGroups;
@@ -130,6 +132,7 @@
 - (void)configure:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)electRemoteAccessIfRequired;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fixupBridgeForBridgedAccessories:(id)arg1 potentialBridgeAccessories:(id)arg2;
 - (void)fixupReplacementAccessories:(id)arg1 commonAccessories:(id)arg2 idsDataSync:(BOOL)arg3;
@@ -155,6 +158,7 @@
 - (int)reachableAccessories;
 - (int)reachableIPAccessories;
 - (void)remoteAccessEnabled:(BOOL)arg1;
+- (BOOL)remoteAccessIsEnabled;
 - (void)removeAllAccessoriesWithCompletionHandler:(id /* block */)arg1 queue:(id)arg2;
 - (void)removeCharacteristic:(id)arg1;
 - (id)removeName:(id)arg1;
@@ -183,6 +187,7 @@
 - (void)setLastKnownReachableIPAccessoryCount:(int)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setRemoteAccessIsEnabled:(BOOL)arg1;
 - (void)setRoomForEntireHome:(id)arg1;
 - (void)setRooms:(id)arg1;
 - (void)setServiceGroups:(id)arg1;

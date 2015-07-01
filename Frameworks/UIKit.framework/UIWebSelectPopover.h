@@ -3,7 +3,6 @@
  */
 
 @interface UIWebSelectPopover : UIWebFormRotatingAccessoryPopover <UIWebFormControl> {
-    UIKeyboard *_keyboard;
     UIWebSelectTableViewController *_tableViewController;
 }
 

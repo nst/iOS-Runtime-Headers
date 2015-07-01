@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPRadioStation : NSObject <NSCopying> {
+@interface MPRadioStation : NSObject <NSCopying, NSSecureCoding> {
     RadioStation *_station;
 }
 

@@ -40,7 +40,6 @@
 - (void).cxx_destruct;
 - (id)_brickItemsWithChildren:(id)arg1 customPageContext:(id)arg2;
 - (id)_brickItemsWithChildren:(id)arg1 featuredPageContext:(id)arg2;
-- (struct SKUILockupStyle { int x1; int x2; unsigned int x3; })_defaultLockupStyleWithSwooshType:(int)arg1;
 - (unsigned int)_defaultVisibleFieldsForItemKind:(int)arg1;
 - (BOOL)_isBrickAvailable:(id)arg1 withPageContext:(id)arg2;
 - (struct SKUILockupStyle { int x1; int x2; unsigned int x3; })_lockupStyleWithLockups:(id)arg1;

@@ -47,6 +47,7 @@
 @property (nonatomic, readonly) BOOL outputObscuredDueToInsufficientExternalProtection;
 @property (nonatomic, copy) id /* block */ playbackQueueCommitHandler;
 @property (nonatomic, readonly) id playerAVAudioSession;
+@property (nonatomic, readonly) float playerRate;
 @property (nonatomic) float rate;
 @property (nonatomic, readonly) int status;
 @property (readonly) Class superclass;
@@ -95,8 +96,10 @@
 - (void)play;
 - (id /* block */)playbackQueueCommitHandler;
 - (id)playerAVAudioSession;
+- (float)playerRate;
 - (void)prepareItem:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (float)rate;
+- (void)removeAllItems;
 - (void)removeItem:(id)arg1;
 - (void)removeTimeObserver:(id)arg1;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;

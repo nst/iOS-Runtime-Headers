@@ -19,6 +19,7 @@
     NSLock *_lock;
     int _maxDisplayCount;
     NSString *_message;
+    BOOL _noDefaultButton;
     BOOL _oneButtonPerLine;
     BOOL _shouldDismissAfterUnlock;
     BOOL _shouldDisplayAsTopMost;
@@ -49,6 +50,7 @@
 @property int kind;
 @property int maximumDisplayCount;
 @property (retain) NSString *message;
+@property BOOL noDefaultButton;
 @property BOOL oneButtonPerLine;
 @property BOOL shouldDismissAfterUnlock;
 @property BOOL shouldDisplayAsTopMost;
@@ -92,11 +94,13 @@
 - (int)kind;
 - (int)maximumDisplayCount;
 - (id)message;
+- (BOOL)noDefaultButton;
 - (BOOL)oneButtonPerLine;
 - (void)setAllowDuplicates:(BOOL)arg1;
 - (void)setAuthenticationContext:(id)arg1;
 - (void)setAuthorizationIsForced:(BOOL)arg1;
 - (void)setButtons:(id)arg1;
+- (void)setButtonsWithTitles:(id)arg1;
 - (void)setDefaultButtonIndex:(int)arg1;
 - (void)setDismissOnHomeButton:(BOOL)arg1;
 - (void)setDismissOnLock:(BOOL)arg1;
@@ -107,6 +111,7 @@
 - (void)setKind:(int)arg1;
 - (void)setMaximumDisplayCount:(int)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setNoDefaultButton:(BOOL)arg1;
 - (void)setOneButtonPerLine:(BOOL)arg1;
 - (void)setShouldDismissAfterUnlock:(BOOL)arg1;
 - (void)setShouldDisplayAsTopMost:(BOOL)arg1;

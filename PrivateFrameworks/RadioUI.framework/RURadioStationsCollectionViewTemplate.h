@@ -61,7 +61,6 @@
 + (int)numberOfStackItems;
 
 - (void).cxx_destruct;
-- (id)_textAttributesByReplacingForegroundColorInTextAttributes:(id)arg1 withColor:(id)arg2;
 - (void)_updateForLayoutChange;
 - (void)addTextElement:(id)arg1 withName:(id)arg2;
 - (struct CGSize { float x1; float x2; })artworkSize;

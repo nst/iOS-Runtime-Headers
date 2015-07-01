@@ -18,5 +18,6 @@
 - (void)setRemoteSupportedInterfaceOrientations:(unsigned int)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)updateInterfaceOrientationIfNeeded;
 
 @end

@@ -17,10 +17,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_existingSharedResultsViewController;
-- (void)_requestSearch:(id)arg1;
 - (id)_searchFieldController;
-- (id)_sharedResultsViewController;
 - (void)_termDidChangeNotification:(id)arg1;
 - (id)clientContext;
 - (void)dealloc;
@@ -30,7 +27,6 @@
 - (void)reloadSearchField;
 - (id)searchFieldController;
 - (void)searchFieldController:(id)arg1 requestSearch:(id)arg2;
-- (BOOL)searchFieldControllerShouldBeginEditing:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setNumberOfSearchResults:(int)arg1;
 - (void)setSearchFieldPlaceholderText:(id)arg1;

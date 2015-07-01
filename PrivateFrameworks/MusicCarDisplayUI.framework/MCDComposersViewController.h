@@ -8,6 +8,7 @@
 + (id)itemPersistentIDProperty;
 + (id)persistentIDProperty;
 
+- (void)_limitedUIDidChange;
 - (void)defaultsDidChange;
 
 @end

@@ -3,6 +3,8 @@
  */
 
 @interface RadioStoreBag : NSObject {
+    NSArray *_amdDomains;
+    NSString *_leaseCertificateURLString;
     NSDictionary *_mescalRequestWhitelist;
     NSDictionary *_mescalResponseWhitelist;
     NSString *_mescalSetupCertURLString;
@@ -10,11 +12,14 @@
     SSVPlatformContext *_platformContext;
     NSNumber *_shouldSendKBSyncDataValue;
     NSString *_srdnldURLString;
+    NSString *_storeFrontSuffix;
     NSDictionary *_tiltDictionary;
 }
 
+@property (nonatomic, readonly, copy) NSDictionary *URLBagDictionary;
 @property (getter=isAdFreeRadioEnabled, nonatomic, readonly) BOOL adFreeRadioEnabled;
 @property (nonatomic, readonly) NSURL *baseURL;
+@property (nonatomic, readonly) NSString *leaseCertificateURLString;
 @property (nonatomic, readonly) NSString *mescalCertificateURLString;
 @property (nonatomic, readonly) NSString *mescalSetupURLString;
 @property (nonatomic, readonly) NSString *platformLookupURLString;
@@ -23,12 +28,14 @@
 @property (nonatomic, readonly) NSString *streamingDownloadURLString;
 
 - (void).cxx_destruct;
+- (id)URLBagDictionary;
 - (id)_cacheRepresentation;
 - (id)_initWithCacheRepresentation:(id)arg1;
 - (id)_initWithURLBagDictionary:(id)arg1;
 - (id)_platformContext;
 - (id)baseURL;
 - (BOOL)isAdFreeRadioEnabled;
+- (id)leaseCertificateURLString;
 - (id)mescalCertificateURLString;
 - (id)mescalSetupURLString;
 - (id)platformLookupURLString;

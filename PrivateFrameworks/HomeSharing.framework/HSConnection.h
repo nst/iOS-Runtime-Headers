@@ -4,34 +4,27 @@
 
 @interface HSConnection : NSObject {
     NSObject<OS_dispatch_source> *_activityTimerSource;
-    HSConnectionConfiguration *_configuration;
+    unsigned int _basePlaylistContainerID;
+    NSURL *_baseURL;
     NSURLSession *_connectionSession;
     int _connectionState;
-    HSConnectionStream *_connectionStream;
     int _connectionType;
     unsigned int _controlKey;
     unsigned int _controlPort;
+    unsigned int _databaseID;
+    unsigned int _databaseRevision;
+    HSFairPlayInfo *_fairPlayInfo;
+    NSString *_homeSharingGroupID;
     unsigned int _interfaceID;
     unsigned int _promptID;
     NSObject<OS_dispatch_queue> *_serialQueue;
-    BOOL _tokenCheckRequred;
-    BOOL authenticationRequired;
-    unsigned int basePlaylistContainerID;
-    unsigned int databaseID;
-    unsigned int databaseRevision;
-    HSFairPlayInfo *fairPlayInfo;
-    NSString *homeSharingGroupID;
-    NSString *password;
-    unsigned int sessionID;
-    BOOL tokenCheckRequired;
-    NSString *username;
+    unsigned int _sessionID;
 }
 
-@property (getter=isAuthenticationRequired) BOOL authenticationRequired;
 @property unsigned int basePlaylistContainerID;
-@property (readonly) NSURL *baseURL;
-@property int connectionState;
-@property (readonly) int connectionType;
+@property (nonatomic, readonly) NSURL *baseURL;
+@property (nonatomic) int connectionState;
+@property (nonatomic, readonly) int connectionType;
 @property unsigned int controlKey;
 @property unsigned int controlPort;
 @property unsigned int databaseID;
@@ -39,14 +32,8 @@
 @property (retain) HSFairPlayInfo *fairPlayInfo;
 @property (copy) NSString *homeSharingGroupID;
 @property unsigned int interfaceID;
-@property (copy) NSString *password;
 @property (nonatomic) unsigned int promptID;
 @property unsigned int sessionID;
-@property BOOL tokenCheckRequired;
-@property (getter=isTokenCheckRequired, readonly) BOOL tokenCheckRequred;
-@property (copy) NSString *username;
-
-+ (void)_scheduleDialogResetIfNeeded;
 
 - (void).cxx_destruct;
 - (void)_continueFPSetupNegotiationWithData:(id)arg1 internalConnectionCompletionHandler:(id /* block */)arg2;
@@ -72,16 +59,11 @@
 - (id)homeSharingGroupID;
 - (id)initWithBaseURL:(id)arg1;
 - (id)initWithBaseURL:(id)arg1 connectionType:(int)arg2;
-- (id)initWithConfiguration:(id)arg1 connectionType:(int)arg2;
 - (unsigned int)interfaceID;
-- (BOOL)isAuthenticationRequired;
-- (BOOL)isTokenCheckRequired;
 - (id)newControlConnection;
-- (id)password;
 - (unsigned int)promptID;
 - (void)sendRequest:(id)arg1 withResponseHandler:(id /* block */)arg2;
 - (unsigned int)sessionID;
-- (void)setAuthenticationRequired:(BOOL)arg1;
 - (void)setBasePlaylistContainerID:(unsigned int)arg1;
 - (void)setConnectionState:(int)arg1;
 - (void)setControlKey:(unsigned int)arg1;
@@ -91,13 +73,8 @@
 - (void)setFairPlayInfo:(id)arg1;
 - (void)setHomeSharingGroupID:(id)arg1;
 - (void)setInterfaceID:(unsigned int)arg1;
-- (void)setPassword:(id)arg1;
 - (void)setPromptID:(unsigned int)arg1;
 - (void)setSessionID:(unsigned int)arg1;
-- (void)setTokenCheckRequired:(BOOL)arg1;
-- (void)setUsername:(id)arg1;
 - (id)signedRequestFromURLRequest:(id)arg1;
-- (BOOL)tokenCheckRequired;
-- (id)username;
 
 @end

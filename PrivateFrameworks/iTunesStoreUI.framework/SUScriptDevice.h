@@ -138,6 +138,7 @@
 - (int)freeSpaceEffortLevelManualSpaceManagement;
 - (int)freeSpaceEffortLevelPromptUser;
 - (id)freeSpaceOptionEffortLevel;
+- (id)getMachineIdentifierForAccountIdentifier:(id)arg1;
 - (int)hardwareType;
 - (int)hardwareTypeAppleTVJ33;
 - (int)hardwareTypeAppleTVK66;

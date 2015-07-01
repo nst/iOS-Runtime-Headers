@@ -46,12 +46,14 @@
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 
 - (void).cxx_destruct;
+- (BOOL)_alterTableNamed:(id)arg1 withNewColumnDefinitions:(id)arg2 newColumnNames:(id)arg3 oldColumnNames:(id)arg4;
 - (void)_createDatabaseDirectoryIfNonexistent;
 - (void)_createDatabaseFileIfNonexistent;
 - (BOOL)_databaseFileExists;
 - (id)_databaseFilePaths;
 - (BOOL)_databaseFilesAreWritable;
 - (void)_ensureConnectionIsOpen;
+- (void)_enumerateTableColumnNamesAndDefinitionsFromTable:(id)arg1 usingBlock:(id /* block */)arg2;
 - (BOOL)_executeStatement:(id)arg1 withError:(id*)arg2;
 - (void)_executeTransactionCommitBlocks:(BOOL)arg1;
 - (void)_finalizeAllStatements;
@@ -124,6 +126,12 @@
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)arg3 userData:(void*)arg4;
 - (BOOL)registerModule:(id)arg1;
 - (BOOL)registerModuleName:(id)arg1 moduleMethods:(struct sqlite3_module { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg2;
+- (BOOL)schemaAddColumnDefinition:(id)arg1 toTable:(id)arg2;
+- (BOOL)schemaDeleteColumn:(id)arg1 inTable:(id)arg2;
+- (BOOL)schemaDeleteColumns:(id)arg1 inTable:(id)arg2;
+- (BOOL)schemaInsertColumnDefinition:(id)arg1 intoTable:(id)arg2 atIndex:(unsigned int)arg3;
+- (BOOL)schemaInsertColumnDefinitions:(id)arg1 intoTable:(id)arg2 atIndex:(unsigned int)arg3;
+- (BOOL)schemaRenameColumn:(id)arg1 inTable:(id)arg2 toNewColumnName:(id)arg3;
 - (void)setAutomaticCheckpointingEnabled:(BOOL)arg1;
 - (void)setCheckpointStatementThreshold:(unsigned int)arg1;
 - (void)setConnectionDelegate:(id)arg1;

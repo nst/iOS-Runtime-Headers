@@ -13,6 +13,9 @@
 
 @property (nonatomic) BOOL shouldDeferEventFlushing;
 
++ (unsigned int)reportingEnableFlag;
++ (void)setRTCReportingEnableFlag:(unsigned int)arg1;
+
 - (void).cxx_destruct;
 - (BOOL)_getMethod:(unsigned short*)arg1 respCode:(unsigned short*)arg2 infoDictionary:(id*)arg3 fromReportingEvent:(id)arg4;
 - (void)_recordReportingEvents:(id)arg1;

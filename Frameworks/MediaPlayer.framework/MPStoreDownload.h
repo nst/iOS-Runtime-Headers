@@ -31,12 +31,13 @@
 @property (nonatomic, readonly) long long storeItemIdentifier;
 @property (nonatomic, readonly) int type;
 
-+ (id)_SSPurchaseForType:(int)arg1 attributes:(id)arg2 buyParameters:(id)arg3 purchaseValuesForDownloadProperties:(id)arg4 URLBagKeyOverride:(id)arg5;
-+ (id)_storeDownloadForCompletionOffer:(id)arg1 type:(int)arg2 attributes:(id)arg3;
-+ (id)_storeDownloadForContext:(id)arg1 type:(int)arg2 attributes:(id)arg3;
-+ (id)storeDownloadForCompletionOffering:(id)arg1 type:(int)arg2 attributes:(id)arg3;
++ (id)_SSPurchaseForType:(int)arg1 attributes:(id)arg2;
++ (BOOL)_getEffectiveStoreDownloadAttributes:(id*)arg1 forPlaybackItemMetadata:(id)arg2 attributes:(id)arg3;
++ (BOOL)canCreateStoreDownloadForPlaybackItemMetadata:(id)arg1 type:(int)arg2 attributes:(id)arg3;
++ (id)storeDownloadForMediaItem:(id)arg1 type:(int)arg2 attributes:(id)arg3;
++ (id)storeDownloadForPlaybackItemMetadata:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)storeDownloadForStoreItemOffer:(id)arg1 attributes:(id)arg2;
-+ (id)storeDownloadsForContexts:(id)arg1 type:(int)arg2 attributes:(id)arg3;
++ (id)storeDownloadForStoreOffer:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)_SSDownload;

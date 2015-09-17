@@ -19,11 +19,11 @@
 + (id)dialerNumberPadFullCharacters;
 + (id)dialerNumberPadNumericCharacters;
 
+- (void).cxx_destruct;
 - (void)buttonDown:(id)arg1;
 - (void)buttonLongPressed:(id)arg1;
 - (void)buttonTapped:(id)arg1;
 - (void)buttonUp:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (void)highlightKeyAtIndex:(int)arg1;
 - (int)indexForHighlightedKey;

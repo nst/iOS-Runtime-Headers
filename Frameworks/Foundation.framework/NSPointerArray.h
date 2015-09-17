@@ -36,6 +36,10 @@
 - (void)replacePointerAtIndex:(unsigned int)arg1 withPointer:(void*)arg2;
 - (void)setCount:(unsigned int)arg1;
 
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
+- (void)tsu_enumerateNonNullPointersUsingBlock:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
 
 - (id)bl_firstObject;

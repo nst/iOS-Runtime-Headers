@@ -5,9 +5,12 @@
 
 @required
 
+- (void)getExtendedPropertyAsyncForKey:(void *)arg1 ofDevice:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 12: NSString *, CoreRCDevice *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*
 - (void)getPropertyAsyncForKey:(void *)arg1 ofBus:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 12: NSString *, CoreRCBus *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*
 - (void)queryBusesAsync:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSSet *, NSError *, void*
+- (void)sendCommandAsync:(void *)arg1 fromDevice:(void *)arg2 toDevice:(void *)arg3 withDuration:(void *)arg4 reply:(void *)arg5; // needs 5 arg types, found 10: unsigned int, CoreRCDevice *, CoreRCDevice *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)sendHIDEventAsync:(void *)arg1 fromDevice:(void *)arg2 toDevice:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 9: CoreRCHIDEvent *, CoreRCDevice *, CoreRCDevice *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (void)setExtendedPropertyAsync:(void *)arg1 forKey:(void *)arg2 ofDevice:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 9: id, NSString *, CoreRCDevice *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)setPropertyAsync:(void *)arg1 forKey:(void *)arg2 ofBus:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 9: id, NSString *, CoreRCBus *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 
 @end

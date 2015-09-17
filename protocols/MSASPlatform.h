@@ -27,6 +27,7 @@
 - (NSDictionary *)metadataSocketOptionsForPersonID:(NSString *)arg1;
 - (BOOL)personIDEnabledForAlbumSharing:(NSString *)arg1;
 - (void)setSuppressCellular:(BOOL)arg1;
+- (NSString *)sharedStreamsProtocolVersionString;
 - (BOOL)shouldDownloadEarliestPhotosFirst;
 - (BOOL)shouldEnableNewFeatures;
 

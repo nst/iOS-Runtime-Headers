@@ -4,6 +4,7 @@
 
 @interface GEODirectionsRouteResponse : GEODirectionsResponse
 
+- (id)_destinationMapItem;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)initWithDictionaryRepresentation:(id)arg1;

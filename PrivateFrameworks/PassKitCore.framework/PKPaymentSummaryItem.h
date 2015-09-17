@@ -5,12 +5,15 @@
 @interface PKPaymentSummaryItem : NSObject <NSCopying, NSSecureCoding> {
     NSDecimalNumber *_amount;
     NSString *_label;
+    unsigned int _type;
 }
 
 @property (nonatomic, copy) NSDecimalNumber *amount;
 @property (nonatomic, copy) NSString *label;
+@property (nonatomic) unsigned int type;
 
 + (id)summaryItemWithLabel:(id)arg1 amount:(id)arg2;
++ (id)summaryItemWithLabel:(id)arg1 amount:(id)arg2 type:(unsigned int)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (id)amount;
@@ -24,5 +27,7 @@
 - (id)label;
 - (void)setAmount:(id)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setType:(unsigned int)arg1;
+- (unsigned int)type;
 
 @end

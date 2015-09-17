@@ -19,7 +19,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_finalizeBlockForClosing:(BOOL)arg1;
 - (BOOL)_initializeBlock;

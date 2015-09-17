@@ -10,7 +10,7 @@
 @property (nonatomic, copy) UIKeyboardEmoji *emoji;
 @property (nonatomic) int emojiFontSize;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)debugDescription;
 - (id)emoji;
 - (int)emojiFontSize;

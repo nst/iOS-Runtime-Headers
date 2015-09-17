@@ -8,7 +8,9 @@
 @property (nonatomic, copy) NSString *addressBookEntityID;
 @property (nonatomic, copy) NSNumber *latitude;
 @property (nonatomic, copy) NSNumber *longitude;
+@property (nonatomic, copy) NSData *mapKitHandle;
 @property (nonatomic, copy) NSNumber *radius;
+@property (nonatomic, copy) NSNumber *referenceFrame;
 @property (nonatomic, copy) NSString *routing;
 @property (nonatomic, copy) NSString *title;
 
@@ -25,7 +27,9 @@
 - (id)init;
 - (id)latitude;
 - (id)longitude;
+- (id)mapKitHandle;
 - (id)radius;
+- (id)referenceFrame;
 - (id)routing;
 - (void)setAddress:(id)arg1;
 - (void)setAddressBookEntityID:(id)arg1;
@@ -33,7 +37,9 @@
 - (void)setCalendarItemOwner:(id)arg1;
 - (void)setLatitude:(id)arg1;
 - (void)setLongitude:(id)arg1;
+- (void)setMapKitHandle:(id)arg1;
 - (void)setRadius:(id)arg1;
+- (void)setReferenceFrame:(id)arg1;
 - (void)setRouting:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;

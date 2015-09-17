@@ -19,7 +19,6 @@
 - (id)inputColor1;
 - (id)inputImage;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputColor0:(id)arg1;
 - (void)setInputColor1:(id)arg1;
 - (void)setInputImage:(id)arg1;

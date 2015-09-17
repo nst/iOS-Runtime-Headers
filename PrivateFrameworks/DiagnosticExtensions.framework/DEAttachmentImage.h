@@ -8,8 +8,8 @@
 
 @property (nonatomic, retain) UIImage *thumbnail;
 
-+ (id)newAttachmentImageWithAssetURL:(id)arg1 andThumbnail:(id)arg2;
-+ (id)newAttachmentImageWithURL:(id)arg1;
++ (id)attachmentImageWithAssetURL:(id)arg1 andThumbnail:(id)arg2;
++ (id)attachmentImageWithURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)generateThumbnailFromURL:(id)arg1;

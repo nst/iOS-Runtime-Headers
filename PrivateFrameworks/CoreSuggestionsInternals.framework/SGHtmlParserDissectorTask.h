@@ -7,6 +7,8 @@
     NSMutableArray *_activeRegionStartPositionStack;
     NSHashTable *_activeRegions;
     unsigned int _bytesConsumedInPreviousPasses;
+    unsigned int _chunkLength;
+    const char *_chunkStart;
     BOOL _currentLineIsCollapsed;
     NSMutableString *_currentLineText;
     unsigned int _depth;
@@ -15,21 +17,25 @@
     NSMutableArray *_plainTextLineToHTMLOffset;
     NSMutableArray *_plainTextLines;
     unsigned int _plainTextLinesTotalLength;
+    BOOL _preBlockDepth;
     unsigned int _quoteToEndFromPosition;
     NSMutableIndexSet *_quotedRegions;
     BOOL _renderingSuspended;
+    NSMutableIndexSet *_sigHtmlBlockRegions;
     NSMutableIndexSet *_tabularRegions;
-    NSData *_utf8;
 }
 
 - (void).cxx_destruct;
+- (void)endPreBlock;
 - (void)enterRegion:(id)arg1;
 - (void)newBlock;
 - (void)process:(id)arg1;
 - (void)processCurrentLineOfText;
 - (void)quoteToEnd;
 - (void)resumeRendering;
+- (void)startPreBlock;
 - (void)startQuotedRegion;
+- (void)startSigHtmlBlock;
 - (void)startTable;
 - (void)suspendRendering;
 - (void)tagEnd;

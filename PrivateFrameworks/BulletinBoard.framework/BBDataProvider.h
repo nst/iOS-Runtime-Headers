@@ -17,9 +17,11 @@
 - (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id /* block */)arg3;
 - (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)canClearAllBulletins;
+- (BOOL)canClearBulletinsByDate;
 - (BOOL)canPerformMigration;
-- (void)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
 - (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
+- (void)clearedInfoForClearingAllBulletinsWithLastClearedInfo:(id)arg1 completion:(id /* block */)arg2;
+- (void)clearedInfoForClearingBulletinsFromDate:(id)arg1 toDate:(id)arg2 lastClearedInfo:(id)arg3 completion:(id /* block */)arg4;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
 - (id)debugDescription;
@@ -29,6 +31,7 @@
 - (void)deliverMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)deliverResponse:(id)arg1 forBulletinRequest:(id)arg2;
 - (id)description;
+- (id)displayNameForFilterID:(id)arg1;
 - (id)displayNameForSubsectionID:(id)arg1;
 - (id)identity;
 - (id)init;

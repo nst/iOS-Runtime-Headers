@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) id topLevelObject;
 @property (nonatomic, readonly) NSArray *traitStorages;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)descendants;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

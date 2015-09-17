@@ -3,17 +3,7 @@
  */
 
 @interface UIKeyboardCandidateView_iPhone_Floating : UIKeyboardCandidateView_iPhone <UIKeyboardCandidateViewInline> {
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _collapsedRect;
-    BOOL _withKeyboard;
+    BOOL _handleShowHide;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -22,6 +12,7 @@
 @property (readonly) Class superclass;
 
 - (void)_collapse:(id)arg1;
+- (void)_handleKeyboardShowOrHide:(id)arg1;
 - (unsigned int)_numberOfColumns:(BOOL)arg1;
 - (BOOL)_shouldShowHideKeyboard;
 - (BOOL)_shouldUseFullMetrics;

@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) BOOL logEmitUserNotifications;
 @property (nonatomic, readonly) NSString *logFilePath;
 @property (nonatomic, readonly) NSArray *logSimpleConfiguration;
+@property (nonatomic, readonly) double simulatedDateForNowOffset;
 
 + (id)shared;
 
@@ -19,5 +20,6 @@
 - (BOOL)logEmitUserNotifications;
 - (id)logFilePath;
 - (id)logSimpleConfiguration;
+- (double)simulatedDateForNowOffset;
 
 @end

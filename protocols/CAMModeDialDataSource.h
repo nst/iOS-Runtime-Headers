@@ -5,7 +5,6 @@
 
 @required
 
-- (NSString *)modeDial:(CAMModeDial *)arg1 titleForItemAtIndex:(unsigned int)arg2;
-- (int)numberOfItemsInModeDial:(CAMModeDial *)arg1;
+- (NSArray *)modesForModeDial:(CAMModeDial *)arg1;
 
 @end

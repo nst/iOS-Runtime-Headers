@@ -17,6 +17,7 @@
 @property (nonatomic, copy) NSURL *previewItemURL;
 @property (nonatomic, copy) NSURL *previewItemURLOverride;
 
+- (void).cxx_destruct;
 - (id)URLToDeleteOnDealloc;
 - (id)_primitive_previewItemContentType;
 - (void)dealloc;

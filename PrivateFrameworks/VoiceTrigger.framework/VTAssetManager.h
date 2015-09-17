@@ -24,6 +24,7 @@
 - (BOOL)_updateCachesIfNecessary:(id)arg1;
 - (id)_voiceAssetQueryForLanguage:(id)arg1 contentVersion:(id)arg2 localOnly:(BOOL)arg3;
 - (id)assetForLanguage:(id)arg1 forceCacheUpdate:(BOOL)arg2;
+- (id)getLocalAssetForLanguage:(id)arg1;
 - (id)init;
 - (void)invalidateAsset:(id)arg1;
 

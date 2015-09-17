@@ -26,7 +26,6 @@
 - (int)annotationType;
 - (id)author;
 - (void)commentWillBeAddedToDocumentRoot;
-- (void)commitText:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (void)dealloc;

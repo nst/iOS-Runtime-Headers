@@ -15,6 +15,7 @@
 }
 
 - (int)depthPercent;
+- (id)description;
 - (int)gapDepthPercent;
 - (int)heightPercent;
 - (id)init;

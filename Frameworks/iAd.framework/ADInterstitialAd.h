@@ -8,6 +8,7 @@
     BOOL _canLoadMoreThanOnce;
     int _creativeType;
     <ADInterstitialAdDelegate> *_delegate;
+    BOOL _dimmingEnabled;
     BOOL _hasLoadedFirstAd;
     <ADInterstitialAdDelegate> *_internalDelegate;
     UIViewController *_internalPresentingViewController;
@@ -21,11 +22,11 @@
 @property (nonatomic, retain) ADAdSpace *adSpace;
 @property (nonatomic, readonly) UIView *adSpaceView;
 @property (nonatomic) BOOL canLoadMoreThanOnce;
-@property (nonatomic, copy) NSSet *context;
 @property (nonatomic) int creativeType;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ADInterstitialAdDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL dimmingEnabled;
 @property (nonatomic) BOOL hasLoadedFirstAd;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int internalAdType;
@@ -51,6 +52,7 @@
 - (int)creativeType;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)dimmingEnabled;
 - (BOOL)hasLoadedFirstAd;
 - (id)identifier;
 - (id)init;
@@ -80,6 +82,7 @@
 - (void)setContext:(id)arg1;
 - (void)setCreativeType:(int)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDimmingEnabled:(BOOL)arg1;
 - (void)setHasLoadedFirstAd:(BOOL)arg1;
 - (void)setInternalDelegate:(id)arg1;
 - (void)setInternalPresentingViewController:(id)arg1;
@@ -88,6 +91,7 @@
 - (void)setPresentationViewController:(id)arg1;
 - (void)setSection:(id)arg1;
 - (void)setServerURL:(id)arg1;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)storyboardViewControllerDidPresent;
 
 @end

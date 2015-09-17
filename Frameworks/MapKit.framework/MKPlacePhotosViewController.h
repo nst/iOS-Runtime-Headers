@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlacePhotosViewController : UITableViewController <MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse, UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface MKPlacePhotosViewController : UITableViewController <MKPlaceAttributionCellProvider, MKPlacePhotosViewDelegate, MKStackingViewControllerPreferredSizeUse, UICollectionViewDataSource, UICollectionViewDelegate> {
     BOOL _hasAttribution;
     MKMapItem *_mapItem;
     _MKPlaceViewController *_owner;
@@ -37,6 +37,7 @@
 - (void)_calculatePhotoSizeForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_morePhotos;
 - (float)_photoCellHeight;
+- (void)_photoTappedAtIndex:(unsigned int)arg1 fromLincense:(BOOL)arg2;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
@@ -55,6 +56,9 @@
 - (id)photos;
 - (id)photosControllerDelegate;
 - (unsigned int)photosCount;
+- (void)placePhotoViewer:(id)arg1 attributionTappedForPhotoAtIndex:(unsigned int)arg2;
+- (id)placePhotoViewer:(id)arg1 viewForPhotoAtIndex:(unsigned int)arg2;
+- (id)placePhotoViewerGetDelegatesMapItem:(id)arg1;
 - (BOOL)requiresPreferredContentSizeInStackingView;
 - (void)setHasAttribution:(BOOL)arg1;
 - (void)setMapItem:(id)arg1;

@@ -5,6 +5,12 @@
 
 @required
 
+- (BOOL)canShowAlerts;
+- (unsigned int)deactivationReasons;
+- (BOOL)deviceOrientationEventsEnabled;
+- (NSNumber *)forcedStatusBarHidden;
+- (NSNumber *)forcedStatusBarStyle;
+- (BOOL)idleModeEnabled;
 - (int)statusBarStyleOverridesToSuppress;
 - (BOOL)underLock;
 

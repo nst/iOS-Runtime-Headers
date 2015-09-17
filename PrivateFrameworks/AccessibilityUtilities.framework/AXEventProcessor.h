@@ -3,6 +3,7 @@
  */
 
 @interface AXEventProcessor : NSObject {
+    unsigned int _HIDEventFilterMask;
     id /* block */ _HIDEventHandler;
     NSThread *_HIDEventReceiveThread;
     NSString *_HIDEventTapIdentifier;
@@ -10,7 +11,6 @@
     BOOL _handlingHIDEvents;
     BOOL _handlingSystemEvents;
     NSMutableArray *_hidActualEventTapEnabledReasons;
-    BOOL _ignoreAllHIDEvents;
     BOOL _ignoreAllSystemEvents;
     BOOL _shouldNotifyUserEventOccurred;
     BOOL _shouldRunHIDReceiveThreadRunloop;
@@ -20,6 +20,7 @@
     int _systemEventTapPriority;
 }
 
+@property (nonatomic) unsigned int HIDEventFilterMask;
 @property (nonatomic, copy) id /* block */ HIDEventHandler;
 @property (nonatomic, retain) NSThread *HIDEventReceiveThread;
 @property (nonatomic, retain) NSString *HIDEventTapIdentifier;
@@ -28,7 +29,6 @@
 @property (getter=isHandlingSystemEvents, nonatomic) BOOL handlingSystemEvents;
 @property (nonatomic, retain) NSMutableArray *hidActualEventTapEnabledReasons;
 @property (nonatomic, readonly) NSArray *hidEventTapEnabledReasons;
-@property (nonatomic) BOOL ignoreAllHIDEvents;
 @property (nonatomic) BOOL ignoreAllSystemEvents;
 @property (nonatomic) BOOL shouldNotifyUserEventOccurred;
 @property (nonatomic, retain) NSMutableArray *systemActualEventTapEnabledReasons;
@@ -37,6 +37,7 @@
 @property (nonatomic, retain) NSString *systemEventTapIdentifier;
 @property (nonatomic) int systemEventTapPriority;
 
+- (unsigned int)HIDEventFilterMask;
 - (id /* block */)HIDEventHandler;
 - (id)HIDEventReceiveThread;
 - (id)HIDEventTapIdentifier;
@@ -53,8 +54,8 @@
 - (void)endHandlingSystemEventsForReason:(id)arg1;
 - (id)hidActualEventTapEnabledReasons;
 - (id)hidEventTapEnabledReasons;
-- (BOOL)ignoreAllHIDEvents;
 - (BOOL)ignoreAllSystemEvents;
+- (id)init;
 - (id)initWithHIDTapIdentifier:(id)arg1 HIDEventTapPriority:(int)arg2 systemEventTapIdentifier:(id)arg3 systemEventTapPriority:(int)arg4;
 - (BOOL)isHandlingHIDEvents;
 - (BOOL)isHandlingSystemEvents;
@@ -62,6 +63,7 @@
 - (void)raiseSystemEventTapPriorityToMaximum;
 - (void)restoreHIDEventTapPriorityToDefault;
 - (void)restoreSystemEventTapPriorityToDefault;
+- (void)setHIDEventFilterMask:(unsigned int)arg1;
 - (void)setHIDEventHandler:(id /* block */)arg1;
 - (void)setHIDEventReceiveThread:(id)arg1;
 - (void)setHIDEventTapIdentifier:(id)arg1;
@@ -69,7 +71,6 @@
 - (void)setHandlingHIDEvents:(BOOL)arg1;
 - (void)setHandlingSystemEvents:(BOOL)arg1;
 - (void)setHidActualEventTapEnabledReasons:(id)arg1;
-- (void)setIgnoreAllHIDEvents:(BOOL)arg1;
 - (void)setIgnoreAllSystemEvents:(BOOL)arg1;
 - (void)setShouldNotifyUserEventOccurred:(BOOL)arg1;
 - (void)setSystemActualEventTapEnabledReasons:(id)arg1;

@@ -26,10 +26,10 @@
 
 + (id)vibrantSettingsWithReferenceColor:(id)arg1 referenceContrast:(float)arg2 legibilitySettings:(id)arg3;
 
+- (void).cxx_destruct;
 - (id)_computeSourceColorDodgeColorForDestinationColor:(id)arg1 producingLuminanceChange:(float)arg2;
 - (int)_style;
 - (id)chevronShimmerColor;
-- (void)dealloc;
 - (unsigned int)hash;
 - (id)highlightColor;
 - (id)highlightLimitingColor;

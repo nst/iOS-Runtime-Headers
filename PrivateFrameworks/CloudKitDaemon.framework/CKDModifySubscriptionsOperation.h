@@ -21,6 +21,7 @@
 - (void)_handleSubscriptionDeleted:(id)arg1 responseCode:(id)arg2;
 - (void)_handleSubscriptionSaved:(id)arg1 error:(id)arg2;
 - (void)_handleSubscriptionSaved:(id)arg1 responseCode:(id)arg2;
+- (unsigned long long)activityStart;
 - (id /* block */)deleteCompletionBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

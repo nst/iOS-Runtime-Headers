@@ -8,7 +8,7 @@
     BOOL _usesDarkTheme;
     BOOL _usesStraightLeftEdge;
     UIDimmingView *m_dimmingView;
-    int m_firstVisibleRow;
+    unsigned int m_firstVisibleRow;
     int m_mode;
     struct CGPoint { 
         float x; 
@@ -35,7 +35,7 @@
     BOOL m_shouldFade;
     BOOL m_startAutoscroll;
     UIInputSwitcherTableView *m_table;
-    int m_visibleRows;
+    unsigned int m_visibleRows;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -54,11 +54,12 @@
 - (void)_delayedFade;
 - (int)_internationalKeyRoundedCornerInLayout:(id)arg1;
 - (void)applicationWillSuspend:(id)arg1;
+- (id)assistantSwitch;
 - (void)autoscrollTimerFired:(id)arg1;
 - (BOOL)centerPopUpOverKey;
 - (void)dealloc;
-- (int)defaultSelectedIndex;
-- (void)didSelectItemAtIndex:(int)arg1;
+- (unsigned int)defaultSelectedIndex;
+- (void)didSelectItemAtIndex:(unsigned int)arg1;
 - (id)dimmingView;
 - (void)dimmingViewWasTapped:(id)arg1;
 - (void)endScrolling:(id)arg1;
@@ -66,19 +67,19 @@
 - (void)fadeAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)fadeWithDelay:(double)arg1;
 - (id)font;
-- (id)fontForItemAtIndex:(int)arg1;
+- (id)fontForItemAtIndex:(unsigned int)arg1;
 - (void)hide;
-- (void)highlightRow:(int)arg1;
-- (int)indexForIndexPath:(id)arg1;
+- (void)highlightRow:(unsigned int)arg1;
+- (unsigned int)indexForIndexPath:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertSelExtraView;
 - (BOOL)isVisible;
 - (id)layout;
-- (id)localizedTitleForItemAtIndex:(int)arg1;
+- (id)localizedTitleForItemAtIndex:(unsigned int)arg1;
 - (id)maskForShadowViewBlurredBackground;
 - (float)minYOfLastTableCellForSelectionExtraView;
 - (int)mode;
-- (int)numberOfItems;
+- (unsigned int)numberOfItems;
 - (void)performShowAnimation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popupRect;
 - (id)predictiveSwitch;
@@ -105,8 +106,8 @@
 - (void)showAsPopupForKey:(id)arg1 inLayout:(id)arg2;
 - (void)stopAnyAutoscrolling;
 - (id)subtitleFont;
-- (id)subtitleFontForItemAtIndex:(int)arg1;
-- (id)subtitleForItemAtIndex:(int)arg1;
+- (id)subtitleFontForItemAtIndex:(unsigned int)arg1;
+- (id)subtitleForItemAtIndex:(unsigned int)arg1;
 - (id)table;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
@@ -115,7 +116,8 @@
 - (id)tableView:(id)arg1 willDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
-- (id)titleForItemAtIndex:(int)arg1;
+- (id)titleForItemAtIndex:(unsigned int)arg1;
+- (void)toggleKeyboardAssistantPreference;
 - (void)toggleKeyboardPredictionPreference;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;

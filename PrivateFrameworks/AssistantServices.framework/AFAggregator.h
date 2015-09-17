@@ -20,9 +20,16 @@
 + (void)logDictationStarted;
 + (void)logDictationSucceeded;
 + (void)logHomeButtonPressToActivationDuration:(double)arg1;
++ (void)logLocalFinalSpeechRecognitionWithDuration:(double)arg1;
++ (void)logLocalRecognitionAssetEvictedForLanguage:(id)arg1;
++ (void)logLocalRecognitionLoadedForLanguage:(id)arg1 duration:(double)arg2;
++ (void)logLocalRecognitionLostForLanguage:(id)arg1;
++ (void)logLocalRecognitionWonForLanguage:(id)arg1;
++ (void)logLocalSpeechStartedWithDuration:(double)arg1;
 + (void)logPingTimeout;
 + (void)logRequestCancelAfterSeconds:(double)arg1;
 + (void)logRequestCompletedWithDuration:(double)arg1;
++ (void)logRequestLaunchedApp;
 + (void)logSiriOtherRequestStarted;
 + (void)logSiriRequestCancelled;
 + (void)logSiriRequestFailedWithError:(id)arg1;

@@ -35,6 +35,7 @@
 - (id)changedIndexes;
 - (id)changedObjects;
 - (id)currentItems;
+- (void)dealloc;
 - (id)description;
 - (void)enumerateMovesWithBlock:(id /* block */)arg1;
 - (id)fetchResultAfterChanges;

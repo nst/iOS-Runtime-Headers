@@ -6,6 +6,7 @@
 
 @property (nonatomic, readonly) unsigned int annotationCount;
 @property (nonatomic, readonly) NSString *annotationNavigationString;
+@property (nonatomic, readonly) unsigned int filteredAnnotationCount;
 @property (nonatomic, readonly) BOOL hasAnnotations;
 @property (nonatomic) BOOL textSelectionChangeShouldDismissAnnotations;
 
@@ -19,6 +20,7 @@
 - (id)annotationToolTipTextGoToPrevious;
 - (void)commitCommentText:(id)arg1 forAnnotation:(id)arg2;
 - (void)didShowAnnotation:(id)arg1;
+- (unsigned int)filteredAnnotationCount;
 - (BOOL)hasAnnotations;
 - (void)invalidateAnnotationAuthors;
 - (void)nextAnnotation:(id)arg1;

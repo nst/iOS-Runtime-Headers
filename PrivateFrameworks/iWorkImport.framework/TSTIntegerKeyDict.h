@@ -11,6 +11,7 @@
 - (void)applyFunction:(int (*)arg1 withState:(void*)arg2 andState:(void*)arg3;
 - (int)count;
 - (void)dealloc;
+- (id)description;
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
 - (id)init;
 - (void)makeObjectsPerformSelector:(SEL)arg1;

@@ -10,6 +10,7 @@
 + (id)headerFooter;
 
 - (void)dealloc;
+- (id)description;
 - (id)footerString;
 - (id)headerString;
 - (void)setFooterString:(id)arg1;

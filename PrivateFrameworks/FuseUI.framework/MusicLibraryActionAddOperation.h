@@ -3,16 +3,24 @@
  */
 
 @interface MusicLibraryActionAddOperation : NSOperation {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     MPUContentItemIdentifierCollection *_contentItemIdentifierCollection;
+    NSArray *_resultingItems;
+    BOOL _success;
 }
 
 @property (readonly, copy) MPUContentItemIdentifierCollection *contentItemIdentifierCollection;
+@property (nonatomic, readonly, copy) NSArray *resultingItems;
+@property (readonly) BOOL success;
 
 + (BOOL)canLibraryAddWithContentItemIdentifierCollection:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)contentItemIdentifierCollection;
+- (id)init;
 - (id)initWithContentItemIdentifierCollection:(id)arg1;
 - (void)main;
+- (id)resultingItems;
+- (BOOL)success;
 
 @end

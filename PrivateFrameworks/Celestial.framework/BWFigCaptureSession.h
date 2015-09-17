@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWFigCaptureSession : NSObject <BWGraphStatusDelegate, BWImageQueueSinkNodePreviewTapDelegate, BWNodeFileWriterStatusDelegate, BWNodeRenderDelegate, BWRemoteQueueSinkNodeDelegate, BWSourceNodeErrorDelegate, BWStillImageCaptureStatusDelegate> {
+@interface BWFigCaptureSession : NSObject <BWGraphStatusDelegate, BWImageQueueSinkNodePreviewTapDelegate, BWIrisStagingNodeUpdateStopPTSDelegate, BWNodeFileWriterStatusDelegate, BWNodeRenderDelegate, BWRemoteQueueSinkNodeDelegate, BWSourceNodeErrorDelegate, BWStillImageCaptureStatusDelegate> {
     struct OpaqueFigCaptureSession { } *_captureSession;
 }
 
@@ -14,7 +14,7 @@
 - (void)fileWriter:(id)arg1 pausedRecordingForSettingsID:(unsigned long long)arg2;
 - (void)fileWriter:(id)arg1 resumedRecordingForSettingsID:(unsigned long long)arg2;
 - (void)fileWriter:(id)arg1 startedRecordingForSettingsID:(unsigned long long)arg2;
-- (void)fileWriter:(id)arg1 stoppedRecordingForSettingsID:(unsigned long long)arg2 withError:(long)arg3 thumbnailSurface:(struct __IOSurface { }*)arg4;
+- (void)fileWriter:(id)arg1 stoppedRecordingForSettings:(id)arg2 withError:(long)arg3 thumbnailSurface:(struct __IOSurface { }*)arg4 irisMovieInfo:(id)arg5 recordingSucceeded:(BOOL)arg6;
 - (void)graph:(id)arg1 didFinishStartingWithError:(long)arg2;
 - (void)imageQueueSinkNode:(id)arg1 didEnqueuePreviewSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
 - (id)initWithFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
@@ -23,8 +23,11 @@
 - (void)node:(id)arg1 willRenderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 forInput:(id)arg3;
 - (void)remoteQueueSinkNode:(id)arg1 queueBecameReady:(struct remoteQueueSenderOpaque { }*)arg2;
 - (void)sourceNode:(id)arg1 didEncounterError:(long)arg2;
-- (void)stillImageCoordinator:(id)arg1 didCapturePhotoForSettingsID:(unsigned long long)arg2;
-- (void)stillImageCoordinator:(id)arg1 willCapturePhotoForSettingsID:(unsigned long long)arg2 sisActive:(BOOL)arg3;
+- (void)stagingNode:(id)arg1 choseNewMovieCoordinatorStopPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)stillImageCoordinator:(id)arg1 didCapturePhotoForSettings:(id)arg2 resolvedCaptureType:(int)arg3 pts:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
+- (void)stillImageCoordinator:(id)arg1 didCapturePreBracketedEV0ImageForSettings:(id)arg2 resolvedCaptureType:(int)arg3 pts:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
+- (void)stillImageCoordinator:(id)arg1 willBeginCaptureForSettings:(id)arg2 resolvedCaptureType:(int)arg3;
+- (void)stillImageCoordinator:(id)arg1 willCapturePhotoForSettings:(id)arg2 sisActive:(BOOL)arg3;
 - (void)stillImageCoordinator:(id)arg1 willPrepareStillImageBracketWithSettings:(id)arg2 clientInitiated:(BOOL)arg3;
 
 @end

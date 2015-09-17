@@ -3,8 +3,10 @@
  */
 
 @interface _UISharingViewController : UIViewController {
+    <_UISharingViewControllerDelegate> *__privateDelegate;
     NSString *_appName;
     NSString *_auxiliaryActionTitle;
+    _UIResilientRemoteViewContainerViewController *_childViewController;
     BOOL _collaborationUIEnabled;
     NSString *_headerActionTitle;
     NSString *_headerSubtitle;
@@ -12,15 +14,13 @@
     NSString *_mailSubject;
     NSString *_mailTemplate;
     NSString *_messageTemplate;
-    _UIShareInvitationRemoteViewController *_remoteViewController;
-    _UIRemoteViewService *_remoteViewService;
     UIImage *_thumbnail;
-    <_UISharingViewControllerDelegatePrivate> *_weak_delegate;
 }
 
 @property (getter=_privateDelegate, setter=_setPrivateDelegate:, nonatomic) <_UISharingViewControllerDelegate> *_privateDelegate;
 @property (getter=_appName, setter=_setAppName:, nonatomic, copy) NSString *appName;
 @property (getter=_auxiliaryActionTitle, setter=_setAuxiliaryActionTitle:, nonatomic, copy) NSString *auxiliaryActionTitle;
+@property (getter=_childViewController, setter=_setChildViewController:, nonatomic, retain) _UIResilientRemoteViewContainerViewController *childViewController;
 @property (getter=_collaborationUIEnabled, setter=_setCollaborationUIEnabled:, nonatomic) BOOL collaborationUIEnabled;
 @property (nonatomic) <_UISharingViewControllerDelegate> *delegate;
 @property (getter=_headerActionTitle, setter=_setHeaderActionTitle:, nonatomic, copy) NSString *headerActionTitle;
@@ -29,12 +29,13 @@
 @property (getter=_mailSubject, setter=_setMailSubject:, nonatomic, copy) NSString *mailSubject;
 @property (getter=_mailTemplate, setter=_setMailTemplate:, nonatomic, copy) NSString *mailTemplate;
 @property (getter=_messageTemplate, setter=_setMessageTemplate:, nonatomic, copy) NSString *messageTemplate;
-@property (getter=_remoteViewController, setter=_setRemoteViewController:, nonatomic, retain) _UIShareInvitationRemoteViewController *remoteViewController;
-@property (nonatomic, retain) _UIRemoteViewService *remoteViewService;
+@property (getter=_remoteViewController, nonatomic, readonly) _UIShareInvitationRemoteViewController *remoteViewController;
 @property (getter=_thumbnail, setter=_setThumbnail:, nonatomic, copy) UIImage *thumbnail;
 
+- (void).cxx_destruct;
 - (id)_appName;
 - (id)_auxiliaryActionTitle;
+- (id)_childViewController;
 - (BOOL)_collaborationUIEnabled;
 - (id)_headerActionTitle;
 - (id)_headerSubtitle;
@@ -48,6 +49,7 @@
 - (id)_remoteViewController;
 - (void)_setAppName:(id)arg1;
 - (void)_setAuxiliaryActionTitle:(id)arg1;
+- (void)_setChildViewController:(id)arg1;
 - (void)_setCollaborationUIEnabled:(BOOL)arg1;
 - (void)_setHeaderActionTitle:(id)arg1;
 - (void)_setHeaderSubtitle:(id)arg1;
@@ -57,17 +59,13 @@
 - (void)_setMailTemplate:(id)arg1;
 - (void)_setMessageTemplate:(id)arg1;
 - (void)_setPrivateDelegate:(id)arg1;
-- (void)_setRemoteViewController:(id)arg1;
 - (void)_setThumbnail:(id)arg1;
 - (void)_shareDidChange;
 - (void)_shareWasMadePrivate;
 - (id)_thumbnail;
 - (void)dealloc;
 - (id)delegate;
-- (void)didMoveToParentViewController:(id)arg1;
 - (id)initWithURL:(id)arg1;
-- (id)remoteViewService;
 - (void)setDelegate:(id)arg1;
-- (void)setRemoteViewService:(id)arg1;
 
 @end

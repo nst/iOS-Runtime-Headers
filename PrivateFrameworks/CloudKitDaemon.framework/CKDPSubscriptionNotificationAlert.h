@@ -4,6 +4,7 @@
 
 @interface CKDPSubscriptionNotificationAlert : PBCodable <NSCopying> {
     NSString *_actionLocKey;
+    NSString *_category;
     NSString *_launchImage;
     NSMutableArray *_localizedArguments;
     NSString *_localizedKey;
@@ -12,7 +13,9 @@
 }
 
 @property (nonatomic, retain) NSString *actionLocKey;
+@property (nonatomic, retain) NSString *category;
 @property (nonatomic, readonly) BOOL hasActionLocKey;
+@property (nonatomic, readonly) BOOL hasCategory;
 @property (nonatomic, readonly) BOOL hasLaunchImage;
 @property (nonatomic, readonly) BOOL hasLocalizedKey;
 @property (nonatomic, readonly) BOOL hasSoundName;
@@ -26,12 +29,14 @@
 - (void).cxx_destruct;
 - (id)actionLocKey;
 - (void)addLocalizedArguments:(id)arg1;
+- (id)category;
 - (void)clearLocalizedArguments;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasActionLocKey;
+- (BOOL)hasCategory;
 - (BOOL)hasLaunchImage;
 - (BOOL)hasLocalizedKey;
 - (BOOL)hasSoundName;
@@ -46,6 +51,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setActionLocKey:(id)arg1;
+- (void)setCategory:(id)arg1;
 - (void)setLaunchImage:(id)arg1;
 - (void)setLocalizedArguments:(id)arg1;
 - (void)setLocalizedKey:(id)arg1;

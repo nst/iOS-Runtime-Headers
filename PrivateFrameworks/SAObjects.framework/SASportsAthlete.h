@@ -22,6 +22,8 @@
 @property (nonatomic, copy) NSArray *statistics;
 @property (nonatomic, copy) NSString *weight;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)athlete;
 + (id)athleteWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -60,7 +62,10 @@
 - (void)setStatistics:(id)arg1;
 - (void)setWeight:(id)arg1;
 - (id)statistics;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)weight;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
+- (void)siriui_enumerateEntitiesWithGroupHandler:(id /* block */)arg1 teamHandler:(id /* block */)arg2 athleteHandler:(id /* block */)arg3;
 
 @end

@@ -36,6 +36,7 @@
 - (id)currentRat;
 - (id)dataStatus;
 - (void)logPointIntervalTelephonyActivity;
+- (void)logPointIntervalTelephonyActivityAirplaneModeChange;
 - (id)preferredRat;
 - (void)refreshTelephonyActivity;
 - (void)sendAndLogPLEntry:(id)arg1 withName:(id)arg2 withType:(id)arg3;

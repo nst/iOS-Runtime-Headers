@@ -25,6 +25,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (float)getKeyframeTimeForIndex:(unsigned int)arg1;
 - (id)getKeyframeValueForIndex:(unsigned int)arg1;
+- (id)init;
 - (id)initWithCapacity:(unsigned int)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCount:(unsigned int)arg1;

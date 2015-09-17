@@ -6,104 +6,84 @@
     int _cellState;
     SFCircleProgressView *_circleProgressView;
     BOOL _darkStyleOnLegacyApp;
-    UILabel *_declinedLabel;
     NSObject<SFPersonCollectionViewCellDelegate> *_delegate;
-    UILabel *_failedLabel;
+    UIColor *_fadedSecondLabelColor;
+    SFPersonImageView *_imageView;
     UILabel *_nameLabel;
-    CALayer *_nameLabelMaskLayer;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _nameLabelOneLineFrame;
-    float _nameLabelOriginY;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _nameLabelTwoLinesFrame;
     SFAirDropNode *_person;
-    _SFPersonImageView *_personImageView;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _personViewFrame;
     NSProgress *_progress;
     NSArray *_progressKeyPaths;
     id _progressToken;
-    UILabel *_secondaryNameLabel;
-    UILabel *_sendingLabel;
-    UILabel *_sentLabel;
+    UILabel *_secondLabel;
+    NSArray *_secondLabelVisibleConstraintsArray;
     NSString *_sessionID;
     BOOL _stateBeingRestored;
-    UIColor *_textColor;
-    UILabel *_waitingLabel;
 }
 
 @property (nonatomic) int cellState;
+@property (nonatomic, retain) SFCircleProgressView *circleProgressView;
 @property (nonatomic) BOOL darkStyleOnLegacyApp;
 @property (nonatomic) NSObject<SFPersonCollectionViewCellDelegate> *delegate;
+@property (nonatomic, retain) UIColor *fadedSecondLabelColor;
+@property (nonatomic, retain) SFPersonImageView *imageView;
+@property (nonatomic, retain) UILabel *nameLabel;
 @property (nonatomic, retain) SFAirDropNode *person;
 @property (nonatomic, retain) NSProgress *progress;
+@property (nonatomic, retain) NSArray *progressKeyPaths;
+@property (nonatomic, retain) id progressToken;
+@property (nonatomic, retain) UILabel *secondLabel;
+@property (nonatomic, retain) NSArray *secondLabelVisibleConstraintsArray;
 @property (nonatomic, retain) NSString *sessionID;
 @property (nonatomic) BOOL stateBeingRestored;
-@property (nonatomic, retain) UIColor *textColor;
 
 - (void).cxx_destruct;
 - (void)addObserverOfValuesForKeyPaths:(id)arg1 ofObject:(id)arg2;
-- (void)animateCellShow:(BOOL)arg1 delay:(double)arg2 completion:(id /* block */)arg3;
 - (int)cellState;
-- (id)createLabelWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)circleProgressView;
 - (BOOL)darkStyleOnLegacyApp;
 - (void)dealloc;
 - (id)delegate;
-- (void)didMoveToWindow;
+- (id)fadedSecondLabelColor;
 - (void)handleKVOUpdateForPerson:(id)arg1 keyPath:(id)arg2;
 - (void)handleKVOUpdateForProgress:(id)arg1 keyPath:(id)arg2;
+- (id)imageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
+- (id)nameLabel;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)person;
 - (void)prepareForReuse;
 - (id)progress;
+- (id)progressKeyPaths;
+- (id)progressToken;
 - (void)removeObserverOfValuesForKeyPaths:(id)arg1 ofObject:(id)arg2;
-- (void)resetNameLabel;
-- (void)resetPersonIconView;
 - (void)restoreCellStateFromFinalTransferState:(int)arg1;
+- (id)secondLabel;
+- (id)secondLabelVisibleConstraintsArray;
 - (id)sessionID;
 - (void)setCellState:(int)arg1;
 - (void)setCellState:(int)arg1 animated:(BOOL)arg2;
+- (void)setCircleProgressView:(id)arg1;
 - (void)setDarkStyleOnLegacyApp:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setHighlighted:(BOOL)arg1;
+- (void)setFadedSecondLabelColor:(id)arg1;
+- (void)setImageView:(id)arg1;
+- (void)setNameLabel:(id)arg1;
 - (void)setPerson:(id)arg1;
 - (void)setProgress:(id)arg1;
+- (void)setProgressKeyPaths:(id)arg1;
+- (void)setProgressToken:(id)arg1;
+- (void)setSecondLabel:(id)arg1;
+- (void)setSecondLabelText:(id)arg1 withTextColor:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)setSecondLabelVisibleConstraintsArray:(id)arg1;
+- (void)setSelected:(BOOL)arg1;
 - (void)setSessionID:(id)arg1;
 - (void)setStateBeingRestored:(BOOL)arg1;
-- (void)setTextColor:(id)arg1;
 - (BOOL)stateBeingRestored;
-- (void)switchToStatusLabel:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (id)textColor;
 - (void)triggerKVOForKeyPaths:(id)arg1 ofObject:(id)arg2;
 - (void)updateNameLabel;
 - (void)updatePersonIconView;
 - (void)userDidCancel;
 - (void)userDidSelect;
-- (id)visibleStatusLabel;
 
 @end

@@ -13,6 +13,7 @@
 - (void)appendFormat:(id)arg1;
 - (void)appendString:(id)arg1;
 - (void)appendStringOrAXAttributedString:(id)arg1;
+- (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
 - (id)attributeValueForKey:(id)arg1;
 - (id)attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)attributesAtIndex:(int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
@@ -38,6 +39,7 @@
 - (void)setAttributes:(id)arg1;
 - (void)setAttributes:(id)arg1 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)string;
+- (id)stringByReplacingOccurrencesOfString:(id)arg1 withString:(id)arg2 options:(unsigned int)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (id)substringFromIndex:(unsigned int)arg1;
 - (id)uppercaseString;
 

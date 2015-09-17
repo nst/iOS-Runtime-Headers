@@ -17,6 +17,9 @@
 - (struct { int x1; int x2; })_cfStreamError;
 - (unsigned long)_cfTypeID;
 - (BOOL)hasSpaceAvailable;
+- (id)initToBuffer:(char *)arg1 capacity:(unsigned int)arg2;
+- (id)initToMemory;
+- (id)initWithURL:(id)arg1 append:(BOOL)arg2;
 - (int)write:(const char *)arg1 maxLength:(unsigned int)arg2;
 
 @end

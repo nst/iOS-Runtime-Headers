@@ -7,6 +7,7 @@
     NSHashTable *_internal_groupObservers;
 }
 
+- (void).cxx_destruct;
 - (void)_addInternalEntriesToArchiveDictionary:(id)arg1;
 - (void)_completeInitByApplyingArchiveDictionary:(id)arg1;
 - (void)_continueInitBySettingDefaultValues;
@@ -23,7 +24,6 @@
 - (BOOL)containsSettings:(id)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
-- (void)dealloc;
 - (void)enumerateSettingsUsingBlock:(id /* block */)arg1;
 - (unsigned int)indexOfSettings:(id)arg1;
 - (void)insertSettings:(id)arg1 atIndex:(unsigned int)arg2;

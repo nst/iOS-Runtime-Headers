@@ -3,7 +3,7 @@
  */
 
 @interface EAGLSharegroup : NSObject {
-    struct _EAGLSharegroupPrivate { unsigned int x1; int x2; bool x3; struct __GLDPixelFormatRec { struct __GLDPixelFormatRec {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; unsigned int x_4_1_5; unsigned int x_4_1_6; unsigned int x_4_1_7; unsigned int x_4_1_8; short x_4_1_9; short x_4_1_10; short x_4_1_11; short x_4_1_12; unsigned int x_4_1_13; unsigned char x_4_1_14; unsigned char x_4_1_15; unsigned char x_4_1_16; unsigned char x_4_1_17; unsigned int x_4_1_18; } x4; struct __GLISharedRec {} *x5; } *_private;
+    struct _EAGLSharegroupPrivate { unsigned int x1; int x2; bool x3; struct __GLDPixelFormatRec {} *x4; struct __GLISharedRec {} *x5; } *_private;
     NSString *debugLabel;
 }
 

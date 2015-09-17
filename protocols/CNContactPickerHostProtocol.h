@@ -6,6 +6,7 @@
 @required
 
 - (void)pickerDidCancel;
-- (void)pickerDidSelectContactWithRecordID:(int)arg1 vCardData:(NSData *)arg2 propertyKey:(NSString *)arg3 propertyIdentifier:(int)arg4;
+- (void)pickerDidSelectContact:(CNContact *)arg1 property:(CNContactProperty *)arg2;
+- (void)pickerDidSelectContacts:(NSArray *)arg1 properties:(NSArray *)arg2;
 
 @end

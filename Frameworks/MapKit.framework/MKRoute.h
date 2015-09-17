@@ -3,7 +3,7 @@
  */
 
 @interface MKRoute : NSObject {
-    GEORoute *_geoRoute;
+    GEOComposedRoute *_geoComposedRoute;
     MKRoutePolyline *_polyline;
     NSArray *_steps;
 }
@@ -11,15 +11,15 @@
 @property (nonatomic, readonly) NSArray *advisoryNotices;
 @property (nonatomic, readonly) double distance;
 @property (nonatomic, readonly) double expectedTravelTime;
-@property (getter=_geoRoute, nonatomic, readonly) GEORoute *geoRoute;
+@property (getter=_geoComposedRoute, nonatomic, readonly) GEOComposedRoute *geoComposedRoute;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) MKPolyline *polyline;
 @property (nonatomic, readonly) NSArray *steps;
 @property (nonatomic, readonly) unsigned int transportType;
 
 - (void).cxx_destruct;
-- (id)_geoRoute;
-- (id)_initWithGEORoute:(id)arg1;
+- (id)_geoComposedRoute;
+- (id)_initWithGEOComposedRoute:(id)arg1;
 - (id)_maneuverImageForStep:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 - (id)advisoryNotices;
 - (double)distance;

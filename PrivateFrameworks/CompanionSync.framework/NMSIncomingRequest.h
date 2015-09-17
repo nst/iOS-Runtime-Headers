@@ -37,6 +37,7 @@
 - (id)description;
 - (BOOL)expectsResponse;
 - (id)idsIdentifier;
+- (id)init;
 - (id)messageCenter;
 - (unsigned short)messageID;
 - (id)pbRequest;

@@ -2,20 +2,21 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUISiriStatusView : UIView <SiriUISiriStatusViewProtocol, UIGestureRecognizerDelegate, _UISiriWaveyViewDelegate> {
+@interface SiriUISiriStatusView : UIView <SUICFlamesViewDelegate, SiriUISiriStatusViewProtocol, UIGestureRecognizerDelegate> {
     <SiriUISiriStatusViewAnimationDelegate> *_animationDelegate;
     UIButton *_button;
+    int _deferredFlamesViewState;
     <SiriUISiriStatusViewDelegate> *_delegate;
     float _disabledMicOpacity;
-    int _imageSet;
+    UIView *_flamesContainerView;
+    SUICFlamesView *_flamesView;
+    BOOL _flamesViewDeferred;
+    float _flamesViewWidth;
     double _lastStateChangeTime;
     UILongPressGestureRecognizer *_longPressRecognizer;
-    UIView *_micOutlineLineView;
+    UIImageView *_micGlyphImageView;
     int _mode;
     UIScreen *_screen;
-    UIImageView *_siriMicGlyphView;
-    _UISiriWaveyView *_waveyView;
-    float _waveyViewWidth;
 }
 
 @property (nonatomic) <SiriUISiriStatusViewAnimationDelegate> *animationDelegate;
@@ -23,53 +24,46 @@
 @property (nonatomic) <SiriUISiriStatusViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) float disabledMicOpacity;
+@property (nonatomic, readonly) UIView *flamesContainerView;
+@property (nonatomic) BOOL flamesViewDeferred;
+@property (nonatomic) float flamesViewWidth;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int mode;
 @property (readonly) Class superclass;
-@property (nonatomic) float waveyViewWidth;
 
 + (float)statusViewHeightForWidthSizeClass:(BOOL)arg1;
 
 - (void).cxx_destruct;
-- (id)_animationForCGImages:(id)arg1;
-- (void)_cancelWhileListening;
-- (id)_defaultMicImage;
-- (void)_hideWaveform;
-- (id)_lastToThinkingCGImage;
+- (void)_animateMicGlyphHidden:(BOOL)arg1;
+- (void)_attachFlamesViewIfNeeded;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_flamesFrame;
+- (id)_flamesView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_flamesViewFrame;
+- (void)_layoutFlamesViewIfNeeded;
 - (void)_micButtonHeld:(id)arg1;
 - (void)_micButtonTapped:(id)arg1;
-- (float)_micGlyphYAdjustment;
-- (void)_setMicOutlineLayerContents:(struct CGImage { }*)arg1;
-- (void)_setPressedImageEnabled:(BOOL)arg1;
-- (void)_showWaveform;
-- (void)_startListening;
-- (void)_startThinkingFromListening;
-- (void)_stopThinking;
-- (id)_thinkingSpinningAnimation;
-- (id)_transitionFromListeningToIdleAnimation;
-- (id)_transitionToListeningAnimation;
-- (id)_transitionToThinkingAnimation;
-- (id)_transitionToThinkingCompleteAnimation;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_waveyViewFrame;
-- (void)_zoomInMicGlyphForAnimationDuration:(double)arg1;
-- (void)_zoomOutMicGlyph;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_micGlyphTappableRect;
+- (void)_setFlamesViewState:(int)arg1;
 - (id)animationDelegate;
-- (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (float)audioLevelForWaveyView:(id)arg1;
+- (float)audioLevelForFlamesView:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (float)disabledMicOpacity;
+- (id)flamesContainerView;
+- (BOOL)flamesViewDeferred;
+- (float)flamesViewWidth;
+- (void)forceMicVisible:(BOOL)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forImageSet:(int)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 screen:(id)arg2;
 - (void)layoutSubviews;
 - (int)mode;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setAnimationDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisabledMicOpacity:(float)arg1;
+- (void)setFlamesViewDeferred:(BOOL)arg1;
+- (void)setFlamesViewWidth:(float)arg1;
 - (void)setMode:(int)arg1;
-- (void)setWaveyViewWidth:(float)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (float)waveyViewWidth;
 
 @end

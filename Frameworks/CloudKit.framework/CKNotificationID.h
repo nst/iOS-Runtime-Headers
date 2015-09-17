@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKNotificationID : NSObject <NSCopying, NSSecureCoding> {
+@interface CKNotificationID : NSObject <CKXPCSuitableString, NSCopying, NSSecureCoding> {
     NSString *_notificationUUID;
 }
 
@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (id)CKXPCSuitableString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

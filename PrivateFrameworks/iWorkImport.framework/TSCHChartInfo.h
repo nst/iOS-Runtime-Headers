@@ -162,6 +162,7 @@
 - (BOOL)hasSetDefaultLayoutSettings;
 - (id)infoGeometryForDesiredCircumscribingGeometry:(id)arg1;
 - (id)infoGeometryForDesiredPureLayoutGeometry:(id)arg1;
+- (id)infoGeometryForVisiblePositioningInfoGeometry:(id)arg1;
 - (id)infoGeometryForVisuallyCenteringOnUnscaledCanvasPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (double)informationalMessageDuration;
 - (id)informationalMessageString;

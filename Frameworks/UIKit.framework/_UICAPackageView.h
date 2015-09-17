@@ -7,13 +7,13 @@
     NSArray *_rootViews;
 }
 
-+ (id)_buildViewHierarchyFrom:(id)arg1 publishedObjectViewClassMap:(id)arg2 into:(id)arg3;
++ (id)_newViewHierarchyFrom:(id)arg1 publishedObjectViewClassMap:(id)arg2 into:(id)arg3;
 + (BOOL)_shouldCatchDecodingExceptions;
 + (void)loadPackageViewWithContentsOfURL:(id)arg1 publishedObjectViewClassMap:(id)arg2 completion:(id /* block */)arg3;
 + (void)loadPackageViewWithData:(id)arg1 publishedObjectViewClassMap:(id)arg2 completion:(id /* block */)arg3;
 + (void)loadPackageViewWithObject:(id)arg1 publishedObjectViewClassMap:(id)arg2 completion:(id /* block */)arg3;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithContentsOfURL:(id)arg1 publishedObjectViewClassMap:(id)arg2;
 - (id)initWithData:(id)arg1 publishedObjectViewClassMap:(id)arg2;
 - (id)publishedObjectWithName:(id)arg1;

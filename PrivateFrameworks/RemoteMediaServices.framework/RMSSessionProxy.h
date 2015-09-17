@@ -21,6 +21,7 @@
 - (void)endHeartbeat;
 - (void)heartbeatDidFail;
 - (int)heartbeatTime;
+- (id)init;
 - (id)initWithTimeout:(double)arg1;
 - (int)sessionIdentifier;
 - (BOOL)sessionMatchesNotification:(id)arg1;

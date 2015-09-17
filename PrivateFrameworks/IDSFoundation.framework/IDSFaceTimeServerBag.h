@@ -5,6 +5,7 @@
 @interface IDSFaceTimeServerBag : IDSServerBag
 
 + (id)_bagCreationLock;
++ (id)defaultBag;
 
 - (id)_bagDefaultsDomain;
 - (id)init;

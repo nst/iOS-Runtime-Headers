@@ -14,7 +14,6 @@
     float _scale;
 }
 
-- (id).cxx_construct;
 - (void)_updateLayoutSize;
 - (void)dealloc;
 - (id)image;

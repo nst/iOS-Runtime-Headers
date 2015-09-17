@@ -4,7 +4,7 @@
 
 @interface MCDTableViewCell : UITableViewCell {
     UIImageView *_artworkImageView;
-    float _originalLeftInset;
+    float _originalLeadingInset;
 }
 
 @property (nonatomic, retain) UIImage *artworkImage;

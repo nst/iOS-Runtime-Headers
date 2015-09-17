@@ -10,6 +10,7 @@
 + (BOOL)shouldShadePreview;
 
 - (id)backgroundColorOverride;
+- (id)icon;
 - (id)pasteboardItem;
 - (Class)previewBalloonViewClass;
 - (id)previewForWidth:(float)arg1 orientation:(BOOL)arg2;

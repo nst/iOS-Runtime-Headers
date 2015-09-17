@@ -7,12 +7,14 @@
     UILabel *_commentBylineLabel;
     UILabel *_commentContentLabel;
     UIView *_styledSeparatorView;
+    BOOL _usesCompactSeparators;
 }
 
 @property (nonatomic, copy) PLCloudSharedComment *comment;
 @property (nonatomic, readonly, retain) UILabel *commentBylineLabel;
 @property (nonatomic, readonly, retain) UILabel *commentContentLabel;
 @property (nonatomic, readonly, retain) UIView *styledSeparatorView;
+@property (nonatomic) BOOL usesCompactSeparators;
 
 + (id)_attributionStringForComment:(id)arg1;
 + (id)_commentStringForComment:(id)arg1;
@@ -30,6 +32,8 @@
 - (void)layoutSubviews;
 - (void)prepareForReuse;
 - (void)setComment:(id)arg1;
+- (void)setUsesCompactSeparators:(BOOL)arg1;
 - (id)styledSeparatorView;
+- (BOOL)usesCompactSeparators;
 
 @end

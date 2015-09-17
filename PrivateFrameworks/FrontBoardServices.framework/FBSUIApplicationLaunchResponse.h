@@ -5,12 +5,12 @@
 @interface FBSUIApplicationLaunchResponse : FBSWorkspaceResponse {
     BOOL _supportsTaskSuspension;
     BOOL _supportsTaskSuspensionOnLock;
-    BSMachSendRight *_taskPort;
+    BSMachPortSendRight *_taskPort;
 }
 
 @property (nonatomic) BOOL supportsTaskSuspension;
 @property (nonatomic) BOOL supportsTaskSuspensionOnLock;
-@property (nonatomic, retain) BSMachSendRight *taskPort;
+@property (nonatomic, retain) BSMachPortSendRight *taskPort;
 
 - (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;

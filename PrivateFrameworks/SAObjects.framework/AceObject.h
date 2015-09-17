@@ -76,6 +76,6 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (BOOL)_afui_isUsefulUserResultCommand;
+- (int)_afui_usefulUserResultType;
 
 @end

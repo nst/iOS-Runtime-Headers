@@ -3,40 +3,45 @@
  */
 
 @interface _UIDocumentPickerSortOrderView : UIControl {
-    NSArray *_compactConstraints;
+    NSArray *_centeredConstraints;
+    NSArray *_leftAlignedConstraints;
     int _listMode;
     UIButton *_listModeToggle;
-    NSArray *_regularConstraints;
+    BOOL _listModeToggleHidden;
     <_UIDocumentPickerViewServiceViewController> *_serviceViewController;
     UISegmentedControl *_sortOrder;
 }
 
-@property (nonatomic, copy) NSArray *compactConstraints;
+@property (nonatomic, copy) NSArray *centeredConstraints;
+@property (nonatomic, copy) NSArray *leftAlignedConstraints;
 @property (nonatomic) int listMode;
 @property (nonatomic, retain) UIButton *listModeToggle;
-@property (nonatomic, copy) NSArray *regularConstraints;
+@property (nonatomic) BOOL listModeToggleHidden;
 @property (nonatomic) <_UIDocumentPickerViewServiceViewController> *serviceViewController;
 @property (nonatomic, retain) UISegmentedControl *sortOrder;
 @property (nonatomic) int value;
 
+- (void).cxx_destruct;
 - (void)_toggleListMode:(id)arg1;
-- (id)compactConstraints;
-- (void)dealloc;
+- (id)centeredConstraints;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)leftAlignedConstraints;
 - (int)listMode;
 - (id)listModeToggle;
-- (id)regularConstraints;
+- (BOOL)listModeToggleHidden;
 - (id)serviceViewController;
-- (void)setCompactConstraints:(id)arg1;
+- (void)setCenteredConstraints:(id)arg1;
+- (void)setLeftAlignedConstraints:(id)arg1;
 - (void)setListMode:(int)arg1;
 - (void)setListModeToggle:(id)arg1;
-- (void)setRegularConstraints:(id)arg1;
+- (void)setListModeToggleHidden:(BOOL)arg1;
 - (void)setServiceViewController:(id)arg1;
 - (void)setSortOrder:(id)arg1;
 - (void)setValue:(int)arg1;
 - (id)sortOrder;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)updateForListMode;
+- (void)updateLayout;
 - (int)value;
 - (void)valueChanged:(id)arg1;
 

@@ -26,6 +26,7 @@
 - (void).cxx_destruct;
 - (void)_setDocument:(id)arg1;
 - (id)document;
+- (id)init;
 - (id)initWithDocument:(id)arg1 presentationOptions:(id)arg2;
 - (BOOL)isAnimated;
 - (id)navigationDocumentController;

@@ -2,16 +2,42 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOWalkingOptions : PBCodable <NSCopying>
+@interface GEOWalkingOptions : PBCodable <NSCopying> {
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _avoidedModes;
+    struct { 
+        unsigned int preferredSpeed : 1; 
+    } _has;
+    double _preferredSpeed;
+}
 
+@property (nonatomic, readonly) int*avoidedModes;
+@property (nonatomic, readonly) unsigned int avoidedModesCount;
+@property (nonatomic) BOOL hasPreferredSpeed;
+@property (nonatomic) double preferredSpeed;
+
+- (void)addAvoidedMode:(int)arg1;
+- (int)avoidedModeAtIndex:(unsigned int)arg1;
+- (int*)avoidedModes;
+- (unsigned int)avoidedModesCount;
+- (void)clearAvoidedModes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasPreferredSpeed;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (double)preferredSpeed;
 - (BOOL)readFrom:(id)arg1;
+- (void)setAvoidedModes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setHasPreferredSpeed:(BOOL)arg1;
+- (void)setPreferredSpeed:(double)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

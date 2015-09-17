@@ -10,6 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSDictionary *responseUserInfo;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
@@ -18,6 +19,7 @@
 - (id)description;
 - (id)initWithAutoCompleteRequest:(id)arg1 traits:(id)arg2;
 - (BOOL)matchesFragment:(id)arg1;
+- (id)responseUserInfo;
 - (void)submitWithAutoCompletionHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 - (id)traits;
 

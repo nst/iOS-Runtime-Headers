@@ -31,7 +31,6 @@
 - (id)inputTargetImage;
 - (id)inputTime;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputMaskImage:(id)arg1;
 - (void)setInputShadowDensity:(id)arg1;

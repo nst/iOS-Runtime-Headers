@@ -2,10 +2,14 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSMapTable : NSObject <NSCoding, NSCopying, NSFastEnumeration>
+@interface NSMapTable : NSObject <NSCoding, NSCopying, NSFastEnumeration, SGHeaderCollection>
 
 @property (readonly) unsigned int count;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (readonly, copy) NSPointerFunctions *keyPointerFunctions;
+@property (readonly) Class superclass;
 @property (readonly, copy) NSPointerFunctions *valuePointerFunctions;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -22,6 +26,7 @@
 + (id)weakToStrongObjectsMapTable;
 + (id)weakToWeakObjectsMapTable;
 
+- (unsigned int)__capacity;
 - (id)allKeys;
 - (id)allValues;
 - (id)copy;
@@ -55,23 +60,36 @@
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (id)valuePointerFunctions;
 
-// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
-- (id)CKAllKeys;
-- (id)CKAllValues;
+- (id)allKeys;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
 - (id)bs_takeObjectForKey:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
+
+- (id)allKeys;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
++ (id)sg_headerKeyFunctions;
++ (id)sg_headerValueFunctions;
+
+- (void)sg_addEntriesFromHeadersDictionary:(id)arg1;
+- (id)sg_firstHeaderForKey:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
+- (void)_gkEnumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 + (id)newTspStrongObjectsMapTable;
++ (id)newTspStrongObjectsMapTableWithCapacity:(unsigned int)arg1;
 + (id)newTspWeakObjectsMapTable;
 
 - (void)tsp_enumerateIdentifiersAndObjectsUsingBlock:(id /* block */)arg1;

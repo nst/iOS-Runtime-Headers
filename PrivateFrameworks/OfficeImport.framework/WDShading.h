@@ -15,6 +15,7 @@
 - (id)background;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)foreground;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

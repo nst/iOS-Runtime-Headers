@@ -6,6 +6,7 @@
     BOOL _hasAutocorrection;
     BOOL _showsCandidatesInLayout;
     BOOL followsZhuyin;
+    BOOL hardwareKeyboardMode;
     BOOL hasCandidateSelected;
     BOOL hasCandidates;
     BOOL hasInput;
@@ -15,6 +16,7 @@
 }
 
 @property (nonatomic) BOOL followsZhuyin;
+@property (nonatomic) BOOL hardwareKeyboardMode;
 @property (nonatomic) BOOL hasAutocorrection;
 @property (nonatomic) BOOL hasCandidateSelected;
 @property (nonatomic) BOOL hasCandidates;
@@ -25,12 +27,14 @@
 @property (nonatomic) BOOL spaceConfirmation;
 
 - (BOOL)followsZhuyin;
+- (BOOL)hardwareKeyboardMode;
 - (BOOL)hasAutocorrection;
 - (BOOL)hasCandidateSelected;
 - (BOOL)hasCandidates;
 - (BOOL)hasInput;
 - (BOOL)hasNextPage;
 - (void)setFollowsZhuyin:(BOOL)arg1;
+- (void)setHardwareKeyboardMode:(BOOL)arg1;
 - (void)setHasAutocorrection:(BOOL)arg1;
 - (void)setHasCandidateSelected:(BOOL)arg1;
 - (void)setHasCandidates:(BOOL)arg1;

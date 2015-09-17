@@ -7,7 +7,6 @@
     double _batchingDelay;
     <BRNotificationReceiverDelegate> *_delegate;
     int _gatherDones;
-    NSObject<OS_dispatch_queue> *_invalidationQueue;
     NSObject<OS_dispatch_queue> *_ipcQueue;
     BOOL _isNetworkReachable;
     NSMutableDictionary *_itemInTransferByID;
@@ -35,6 +34,7 @@
 - (id)_getSender;
 - (void)_receiveUpdates:(id)arg1;
 - (void)_signalSourceIfNeeded;
+- (void)_watchUbiquitousScopes:(id)arg1 bundleID:(id)arg2 predicate:(id)arg3;
 - (unsigned int)batchingChanges;
 - (double)batchingDelay;
 - (void)dealloc;
@@ -57,6 +57,6 @@
 - (void)setBatchingDelay:(double)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)suspend;
-- (BOOL)watchUbiquitousScopes:(id)arg1 bundleID:(id)arg2 predicate:(id)arg3;
+- (void)watchUbiquitousScopes:(id)arg1 bundleID:(id)arg2 predicate:(id)arg3;
 
 @end

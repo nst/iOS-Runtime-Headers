@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIRedeemCameraViewController : SKUIRedeemStepViewController <CRCodeRedeemerControllerDelegate, SKUIRedeemCameraViewControllerDelegate, SKUIRedeemCameraViewDelegate, UIAlertViewDelegate> {
+@interface SKUIRedeemCameraViewController : SKUIRedeemStepViewController <CRCodeRedeemerControllerDelegate, SKUIRedeemCameraViewControllerDelegate, SKUIRedeemCameraViewDelegate> {
     BOOL _alreadyPushed;
     CRCodeRedeemerController *_camera;
     int _category;
@@ -33,7 +33,6 @@
 - (void)_redeemAction:(id)arg1;
 - (void)_redeemDidFinish:(id)arg1 error:(id)arg2;
 - (void)_setEnabled:(BOOL)arg1;
-- (void)alertView:(id)arg1 willDismissWithButtonIndex:(int)arg2;
 - (void)cancelRedeemerViewForSKUIRedeemCameraView:(id)arg1;
 - (int)category;
 - (void)codeRedeemerController:(id)arg1 didEndWithInfo:(id)arg2;

@@ -8,7 +8,5 @@
 }
 
 - (void)dealloc;
-- (id)sender;
-- (id)subject;
 
 @end

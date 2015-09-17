@@ -7,7 +7,7 @@
 }
 
 - (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
-- (BOOL)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (int)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
 - (BOOL)canPerformMultiplePasses;
 - (id)currentPassDescription;
 - (void)dealloc;

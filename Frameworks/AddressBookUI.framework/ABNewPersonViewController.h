@@ -12,23 +12,23 @@
     <ABNewPersonViewControllerDelegate> *_newPersonViewDelegate;
     id _parentGroup;
     void *_parentSource;
-    <ABPresenterDelegate> *_presentingDelegate;
+    <CNPresenterDelegate> *_presentingDelegate;
     void *_recordForNewPerson;
 }
 
 @property (nonatomic, readonly) _UIAccessDeniedView *accessDeniedView;
-@property (nonatomic) void*addressBook;
+@property (nonatomic) const void*addressBook;
 @property (nonatomic, readonly) ABContactViewController *contactViewController;
 @property (nonatomic, readonly) ABPersonTableViewDataSource *dataSource;
-@property (nonatomic) void*displayedPerson;
+@property (nonatomic) const void*displayedPerson;
 @property (nonatomic, readonly) ABPersonViewControllerHelper *helper;
 @property (nonatomic) BOOL isRealViewLoaded;
 @property (nonatomic, retain) CNContact *mergeContact;
 @property (nonatomic) <ABNewPersonViewControllerDelegate> *newPersonViewDelegate;
 @property (nonatomic, retain) ABContactsFilter *parentContactsFilter;
-@property (nonatomic) void*parentGroup;
+@property (nonatomic) const void*parentGroup;
 @property (nonatomic) void*parentSource;
-@property (nonatomic) <ABPresenterDelegate> *presentingDelegate;
+@property (nonatomic) <CNPresenterDelegate> *presentingDelegate;
 @property (nonatomic) BOOL savesNewContactOnSuspend;
 @property (nonatomic) BOOL showsCancelButton;
 @property (nonatomic, retain) <ABStyleProvider> *styleProvider;
@@ -41,7 +41,7 @@
 - (float)ab_heightToFitForViewInPopoverView;
 - (void)accessChanged;
 - (id)accessDeniedView;
-- (void*)addressBook;
+- (const void*)addressBook;
 - (void)applicationDidResume;
 - (void)applicationWillSuspend;
 - (void)applicationWillTerminate:(id)arg1;
@@ -51,7 +51,7 @@
 - (id)dataSource;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
-- (void*)displayedPerson;
+- (const void*)displayedPerson;
 - (id)displayedUIPerson;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)helper;
@@ -64,7 +64,7 @@
 - (id)mergeContact;
 - (id)newPersonViewDelegate;
 - (id)parentContactsFilter;
-- (void*)parentGroup;
+- (const void*)parentGroup;
 - (void*)parentSource;
 - (id)presentingDelegate;
 - (void*)recordForNewPerson;

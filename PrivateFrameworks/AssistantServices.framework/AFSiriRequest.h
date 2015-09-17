@@ -3,9 +3,13 @@
  */
 
 @interface AFSiriRequest : NSObject <NSSecureCoding> {
+    NSString *__refId;
     NSUUID *_identifier;
     NSString *_originatingAceID;
 }
+
+@property (setter=_setOriginatingAceID:, nonatomic, copy) NSString *_originatingAceID;
+@property (setter=_setRefId:, nonatomic, copy) NSString *_refId;
 
 + (BOOL)supportsSecureCoding;
 
@@ -16,6 +20,9 @@
 - (id)_initWithOriginatingAceID:(id)arg1 identifier:(id)arg2;
 - (BOOL)_makeAppFrontmost;
 - (id)_originatingAceID;
+- (id)_refId;
+- (void)_setOriginatingAceID:(id)arg1;
+- (void)_setRefId:(id)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;

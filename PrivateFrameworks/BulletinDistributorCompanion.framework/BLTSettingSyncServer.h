@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (void)_handleResponse:(id)arg1;
+- (void)clearSectionInfoSentCache;
 - (id)delegate;
 - (void)handleSetSectionInfoRequest:(id)arg1;
 - (void)handleSetSectionInfoResponse:(id)arg1;
@@ -28,7 +29,6 @@
 - (id)sectionInfoPreviouslySentMessageStore;
 - (id)sectionSubtypeParametersIconsPreviouslySentMessageStore;
 - (void)setDelegate:(id)arg1;
-- (void)setSectionInfo:(id)arg1;
 - (void)setSectionInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)setSectionInfo:(id)arg1 withQueue:(id)arg2 withSent:(id /* block */)arg3 withAcknowledgement:(id /* block */)arg4;
 - (void)setSectionInfoPreviouslySentMessageStore:(id)arg1;

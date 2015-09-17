@@ -13,6 +13,7 @@
 @property (retain) NSString *userAgent;
 
 - (void).cxx_destruct;
+- (BOOL)allowLocation;
 - (id)initWithLocaleIdentifier:(id)arg1 userAgent:(id)arg2 reply:(id /* block */)arg3;
 - (id)localeIdentifier;
 - (id /* block */)reply;

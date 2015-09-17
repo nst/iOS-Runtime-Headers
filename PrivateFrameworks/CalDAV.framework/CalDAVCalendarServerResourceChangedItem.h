@@ -18,6 +18,7 @@
 @property (nonatomic, retain) ICSDateValue *dtstamp;
 @property (nonatomic, retain) NSMutableSet *updated;
 
+- (void).cxx_destruct;
 - (void)addCollectionChanges:(id)arg1;
 - (void)addCollectionUpdates:(id)arg1;
 - (void)addCreated:(id)arg1;
@@ -27,7 +28,6 @@
 - (id)collectionUpdates;
 - (id)copyParseRules;
 - (id)created;
-- (void)dealloc;
 - (id)deleted;
 - (id)dtstamp;
 - (id)init;

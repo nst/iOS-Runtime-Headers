@@ -9,6 +9,7 @@
 
 @property (nonatomic, retain) IMAccount *account;
 
+- (void).cxx_destruct;
 - (void)_handleAccountNotification:(id)arg1;
 - (void)_handleDaemonConnected:(id)arg1;
 - (void)_handleDaemonDisconnected:(id)arg1;
@@ -21,7 +22,6 @@
 - (id)accountLoginStatus:(id)arg1;
 - (id)accountType:(id)arg1;
 - (id)bundle;
-- (void)dealloc;
 - (id)initWithAccount:(id)arg1;
 - (BOOL)isConnectedToDaemon;
 - (id)registrationFailureReason:(id)arg1;

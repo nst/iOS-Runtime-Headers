@@ -9,12 +9,10 @@
 - (NSDictionary *)defaultBillingAddresses;
 - (CNContact *)defaultContactEmail;
 - (CNContact *)defaultContactPhone;
-- (NSString *)defaultPaymentPassIdentifier;
 - (CNContact *)defaultShippingAddress;
 - (void)setDefaultBillingAddress:(CNContact *)arg1 forPaymentPass:(PKPaymentPass *)arg2;
 - (void)setDefaultContactEmail:(CNContact *)arg1;
 - (void)setDefaultContactPhone:(CNContact *)arg1;
-- (void)setDefaultPaymentPassIdentifier:(NSString *)arg1;
 - (void)setDefaultShippingAddress:(CNContact *)arg1;
 
 @end

@@ -11,6 +11,7 @@
 
 + (id)backgroundTaskAssertionQueue;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)fireExpirationHandler;
 - (id)initWithProcessAssertion:(id)arg1 expirationHandler:(id /* block */)arg2;

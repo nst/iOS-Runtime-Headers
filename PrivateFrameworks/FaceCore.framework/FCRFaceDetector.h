@@ -7,6 +7,8 @@
     NSObject *lock;
 }
 
+// Image: /System/Library/PrivateFrameworks/FaceCore.framework/FaceCore
+
 + (id)faceDetector;
 + (id)faceDetectorWithOptions:(id)arg1;
 + (id)fastFaceDetector;
@@ -45,5 +47,11 @@
 - (void)updateExtractionParamsValues:(id)arg1;
 - (void)updateFCRFace:(id)arg1 from:(struct face { int x1; struct coord { int x_2_1_1; int x_2_1_2; } x2; struct coord { int x_3_1_1; int x_3_1_2; } x3; struct coord { int x_4_1_1; int x_4_1_2; } x4; struct coord { int x_5_1_1; int x_5_1_2; } x5; float x6; int x7; int x8; struct vector<double, std::__1::allocator<double> > { double *x_9_1_1; double *x_9_1_2; struct __compressed_pair<double *, std::__1::allocator<double> > { double *x_3_2_1; } x_9_1_3; } x9; int x10; struct vector<vision::lib::coord, std::__1::allocator<vision::lib::coord> > { struct coord {} *x_11_1_1; struct coord {} *x_11_1_2; struct __compressed_pair<vision::lib::coord *, std::__1::allocator<vision::lib::coord> > { struct coord {} *x_3_2_1; } x_11_1_3; } x11; int x12; bool x13; bool x14; float x15; float x16; bool x17; float x18; bool x19; float x20; struct naturalSmileData {} *x21; }*)arg2 image:(id)arg3;
 - (id)version;
+
+// Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
+
++ (int)angleForTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+
+- (long)detectFacesAndFeaturesInPixelBuffer:(struct __CVBuffer { }*)arg1 detectOptions:(id)arg2 detailOptions:(id)arg3 faces:(id*)arg4;
 
 @end

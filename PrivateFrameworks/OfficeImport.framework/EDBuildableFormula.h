@@ -43,10 +43,12 @@
 - (unsigned int)removeOptionalPtgArgs:(unsigned int)arg1 minArgs:(unsigned int)arg2;
 - (void)removeTokenAtIndex:(unsigned int)arg1;
 - (BOOL)replaceArgPtgAtIndex:(unsigned int)arg1 withFormula:(id)arg2;
+- (void)replaceStringInStringTokenAtIndex:(unsigned int)arg1 content:(id)arg2;
 - (char *)setExtendedDataForLastTokenAtIndex:(unsigned int)arg1 length:(unsigned int)arg2;
 - (void)setWarning:(int)arg1;
 - (BOOL)shrinkSpanningRef:(struct EDBuildablePtg { int (**x1)(); char *x2; int x3; unsigned int x4; unsigned short x5; struct EDBuildablePtg {} *x6; struct EDBuildablePtg {} *x7; bool x8; int x9; unsigned short x10; unsigned short x11; }*)arg1;
 - (BOOL)shrinkSpanningRefAtArgIndex:(unsigned int)arg1;
+- (id)stringFromStringTokenAtIndex:(unsigned int)arg1;
 - (struct EDBuildablePtg { int (**x1)(); char *x2; int x3; unsigned int x4; unsigned short x5; struct EDBuildablePtg {} *x6; struct EDBuildablePtg {} *x7; bool x8; int x9; unsigned short x10; unsigned short x11; }*)tokenAtIndex:(unsigned int)arg1;
 - (struct EDBuildablePtg { int (**x1)(); char *x2; int x3; unsigned int x4; unsigned short x5; struct EDBuildablePtg {} *x6; struct EDBuildablePtg {} *x7; bool x8; int x9; unsigned short x10; unsigned short x11; }*)tokenAtIndex:(unsigned int)arg1 previousToken:(struct EDBuildablePtg {}**)arg2;
 - (int)tokenTypeAtIndex:(unsigned int)arg1;

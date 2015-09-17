@@ -19,13 +19,13 @@
 }
 
 @property (nonatomic, retain) _UIBackdropView *backdropView;
-@property (nonatomic, readonly) PLWallpaperButton *doCancelButton;
-@property (nonatomic, readonly) PLWallpaperButton *doSetBothScreenButton;
-@property (nonatomic, readonly) PLWallpaperButton *doSetButton;
-@property (nonatomic, readonly) PLWallpaperButton *doSetHomeScreenButton;
-@property (nonatomic, readonly) PLWallpaperButton *doSetLockScreenButton;
+@property (nonatomic, readonly, retain) PLWallpaperButton *doCancelButton;
+@property (nonatomic, readonly, retain) PLWallpaperButton *doSetBothScreenButton;
+@property (nonatomic, readonly, retain) PLWallpaperButton *doSetButton;
+@property (nonatomic, readonly, retain) PLWallpaperButton *doSetHomeScreenButton;
+@property (nonatomic, readonly, retain) PLWallpaperButton *doSetLockScreenButton;
 @property (nonatomic) float maxToggleWidth;
-@property (nonatomic, readonly) PLWallpaperButton *motionToggle;
+@property (nonatomic, readonly, retain) PLWallpaperButton *motionToggle;
 @property (nonatomic) BOOL motionToggleHidden;
 @property (nonatomic, retain) UIView *separatorLine;
 @property (nonatomic) BOOL shouldOnlyShowHomeScreenButton;

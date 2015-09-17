@@ -102,8 +102,6 @@
 - (BOOL)moveItemAtPath:(id)arg1 toPath:(id)arg2 error:(id*)arg3;
 - (BOOL)moveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (id)pathContentOfSymbolicLinkAtPath:(id)arg1;
-- (int)relationshipOfDirectory:(unsigned int)arg1 inDomain:(unsigned int)arg2 toURL:(id)arg3 error:(id*)arg4;
-- (int)relationshipOfURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (BOOL)removeExtendedAttributeForKey:(id)arg1 atPath:(id)arg2 error:(id*)arg3;
 - (BOOL)removeFileAtPath:(id)arg1 handler:(id)arg2;
 - (BOOL)removeItemAtPath:(id)arg1 error:(id*)arg2;
@@ -120,12 +118,27 @@
 - (BOOL)trashItemAtURL:(id)arg1 resultingItemURL:(id*)arg2 error:(id*)arg3;
 - (id)ubiquityIdentityToken;
 
+// Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
+
+- (long long)_srDeleteAllTempFiles;
+- (long long)_srDeleteFilesOlderThanTimeToLiveInSeconds:(double)arg1;
+- (void)_srDeleteFilesWithPrefix:(id)arg1;
+- (unsigned long long)_srDeviceFreeDiskSpace;
+- (BOOL)_srDeviceHasSufficientFreeSpaceForRecording;
+- (id)_srGetCreationDateForFile:(id)arg1;
+- (void)_srMoveFileFromURL:(id)arg1 toURL:(id)arg2 completion:(id /* block */)arg3;
+- (void)_srRemoveFile:(id)arg1 completion:(id /* block */)arg2;
+- (void)_srSetupTempDirectory;
+- (long long)_srSizeOfTempDir:(id*)arg1;
+- (id)_srTempPath;
+
 // Image: /System/Library/Frameworks/WebKit.framework/WebKit
 
 + (id)_web_createTemporaryFileForQuickLook:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
+- (BOOL)br_movePromisedItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (int)brc_createTemporaryFdInDirectory:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
 - (id)brc_createTemporaryFileInDirectory:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
 - (id)brc_createTemporarySubdirectoryOfItem:(id)arg1 withTemplate:(id)arg2 error:(id*)arg3;
@@ -146,6 +159,13 @@
 - (id)cutCreateUniqueDirectoryWithName:(id)arg1 atPath:(id)arg2 ofType:(id)arg3;
 - (id)cutRandomTemporaryPathWithFileName:(id)arg1;
 - (id)cutUniqueFilename:(id)arg1 atPath:(id)arg2 ofType:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
+
+- (id)dataForExtendedAttribute:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
+- (BOOL)setExtendedAttributeData:(id)arg1 forKey:(id)arg2 atURL:(id)arg3 error:(id*)arg4;
+- (BOOL)setExtendedAttributeValue:(id)arg1 forKey:(id)arg2 atURL:(id)arg3 error:(id*)arg4;
+- (id)stringForExtendedAttribute:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
 
 // Image: /System/Library/PrivateFrameworks/DCIMServices.framework/DCIMServices
 
@@ -188,35 +208,54 @@
 - (id)mf_makeUniqueFileInDirectory:(id)arg1;
 - (id)mf_pathsAtDirectory:(id)arg1 beginningWithString:(id)arg2;
 - (BOOL)mf_protectFileAtPath:(id)arg1 withClass:(int)arg2 error:(id*)arg3;
-- (BOOL)mf_setValue:(id)arg1 forAttribute:(id)arg2 ofItemAtPath:(id)arg3 error:(id*)arg4;
 - (BOOL)mf_setValue:(id)arg1 forExtendedAttribute:(id)arg2 ofItemAtPath:(id)arg3 error:(id*)arg4;
+- (id)mf_valueForExtendedAttribute:(id)arg1 ofItemAtPath:(id)arg2 error:(id*)arg3;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-- (BOOL)_changeFileProtectionAtURL:(id)arg1 fromProtection:(id)arg2 toProtection:(id)arg3 recursively:(BOOL)arg4 error:(id*)arg5;
-- (BOOL)_fileProtection:(id)arg1 isGreaterThan:(id)arg2;
-- (BOOL)_fileProtectionAtURL:(id)arg1 recursively:(BOOL)arg2 passesTest:(id /* block */)arg3;
-- (void)_logFileProtectionAtURL:(id)arg1 recursively:(BOOL)arg2 indent:(id)arg3;
-- (BOOL)_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4 shouldUpdateAttributesHandler:(id /* block */)arg5;
-- (BOOL)applyFileAttributesFromDocumentAtURL:(id)arg1 toDocumentAtURL:(id)arg2 error:(id*)arg3;
-- (BOOL)changeFileProtectionAtURL:(id)arg1 fromProtection:(id)arg2 toProtection:(id)arg3 recursively:(BOOL)arg4 error:(id*)arg5;
-- (BOOL)changeFileProtectionAtURL:(id)arg1 toProtection:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
-- (unsigned long long)directoryUsage:(id)arg1;
-- (BOOL)grantUserWritePosixPermissionAtPath:(id)arg1 error:(id*)arg2;
-- (BOOL)hasAtLeastFileProtection:(id)arg1 atURL:(id)arg2 recursively:(BOOL)arg3;
-- (BOOL)hasAtMostFileProtection:(id)arg1 atURL:(id)arg2 recursively:(BOOL)arg3;
-- (void)logFileProtectionAtURL:(id)arg1 recursively:(BOOL)arg2;
-- (unsigned long long)pathUsage:(id)arg1;
-- (BOOL)setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
+- (BOOL)sfu_applyFileAttributesFromDocumentAtURL:(id)arg1 toDocumentAtURL:(id)arg2 error:(id*)arg3;
+- (BOOL)sfu_changeFileProtectionAtURL:(id)arg1 fromProtection:(id)arg2 toProtection:(id)arg3 recursively:(BOOL)arg4 error:(id*)arg5;
+- (BOOL)sfu_changeFileProtectionAtURL:(id)arg1 toProtection:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
+- (unsigned long long)sfu_directoryUsage:(id)arg1;
+- (BOOL)sfu_hasAtLeastFileProtection:(id)arg1 atURL:(id)arg2 recursively:(BOOL)arg3;
+- (BOOL)sfu_hasAtMostFileProtection:(id)arg1 atURL:(id)arg2 recursively:(BOOL)arg3;
+- (BOOL)sfu_increaseFileProtectionAtURL:(id)arg1 toProtection:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
+- (void)sfu_logFileProtectionAtURL:(id)arg1 recursively:(BOOL)arg2;
+- (unsigned long long)sfu_pathUsage:(id)arg1;
+- (BOOL)sfu_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4;
+- (BOOL)sfup_changeFileProtectionAtURL:(id)arg1 fromProtection:(id)arg2 toProtection:(id)arg3 onlyIncreaseProtection:(BOOL)arg4 recursively:(BOOL)arg5 error:(id*)arg6;
+- (BOOL)sfup_fileProtection:(id)arg1 isGreaterThan:(id)arg2;
+- (BOOL)sfup_fileProtectionAtURL:(id)arg1 recursively:(BOOL)arg2 passesTest:(id /* block */)arg3;
+- (void)sfup_logFileProtectionAtURL:(id)arg1 recursively:(BOOL)arg2 indent:(id)arg3;
+- (BOOL)sfup_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4 shouldUpdateAttributesHandler:(id /* block */)arg5;
+- (BOOL)tsu_grantUserWritePosixPermissionAtPath:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 
+- (BOOL)createDirectoryIfNeededAtPath:(id)arg1 error:(id*)arg2;
 - (BOOL)directoryExistsAtPath:(id)arg1;
-- (BOOL)ensureDirectoryExistsAtPath:(id)arg1;
-- (id)pathsAtDirectory:(id)arg1 withNameFamily:(id)arg2;
 - (BOOL)removeDirectoryAtPathIfEmpty:(id)arg1 ancestors:(int)arg2;
-- (BOOL)removeItemsAtPaths:(id)arg1;
-- (id)tmpFileForVideoTranscodeWithExtension:(id)arg1;
+- (id)tmpFileForVideoTranscodeToPhotoDataDirectory:(BOOL)arg1 withExtension:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
+- (id)_safari_containerDirectory;
+- (id)_safari_safariLibraryDirectory;
+- (id)safari_ensureDirectoryExists:(id)arg1;
+- (BOOL)safari_removeFileAtURL:(id)arg1 error:(id*)arg2;
+- (id)safari_settingsDirectory;
+- (id)safari_subdirectoryWithName:(id)arg1 inUserDomainOfDirectory:(unsigned int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
++ (id)temporaryFilePathWithExtension:(id)arg1;
++ (id)temporaryFileURLWithExtension:(id)arg1;
+
+- (BOOL)copySource:(id)arg1 toDestination:(id)arg2 withProgressionBlock:(id /* block */)arg3;
+- (id)createTemporaryDirectoryAppropriateForForPath:(id)arg1 error:(id*)arg2;
+- (id)incrementalPathInDirectory:(id)arg1 withFilename:(id)arg2 andExtension:(id)arg3;
+- (id)incrementalURLInDirectory:(id)arg1 withFilename:(id)arg2 andExtension:(id)arg3;
+- (id)unarchiveItemAtPath:(id)arg1 toDirectory:(id)arg2 withProgressionBlock:(id /* block */)arg3;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
@@ -231,15 +270,6 @@
 
 - (id)_webkit_createTemporaryDirectoryWithTemplatePrefix:(id)arg1;
 - (id)_webkit_pathWithUniqueFilenameForPath:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
-
-- (id)_safari_containerDirectory;
-- (id)_safari_safariLibraryDirectory;
-- (id)safari_ensureDirectoryExists:(id)arg1;
-- (BOOL)safari_removeFileAtURL:(id)arg1 error:(id*)arg2;
-- (id)safari_settingsDirectory;
-- (id)safari_subdirectoryWithName:(id)arg1 inUserDomainOfDirectory:(unsigned int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 
@@ -265,6 +295,9 @@
 - (void)sfup_logFileProtectionAtURL:(id)arg1 recursively:(BOOL)arg2 indent:(id)arg3;
 - (BOOL)sfup_setAttributes:(id)arg1 ofItemAtURL:(id)arg2 recursively:(BOOL)arg3 error:(id*)arg4 shouldUpdateAttributesHandler:(id /* block */)arg5;
 - (void)tsp_assertDefaultFileProtectionAtDocumentURL:(id)arg1;
+- (BOOL)tsp_copyDocumentAtURL:(id)arg1 toURL:(id)arg2 linkingData:(BOOL)arg3 error:(id*)arg4;
+- (BOOL)tsp_linkDirectoryContentsAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
+- (BOOL)tsp_linkOrCopyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (BOOL)tsp_setDefaultFileProtectionAtDocumentURL:(id)arg1 error:(id*)arg2;
 - (BOOL)tsp_setDefaultFileProtectionForDirectoryPath:(id)arg1 error:(id*)arg2;
 - (BOOL)tsu_grantUserWritePosixPermissionAtPath:(id)arg1 error:(id*)arg2;

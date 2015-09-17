@@ -27,6 +27,7 @@
 - (unsigned int)contentFormatId;
 - (id)contentFormatWithResources:(id)arg1;
 - (struct CHDDataPoint { unsigned int x1; struct EDValue { int x_2_1_1; union { bool x_2_2_1; double x_2_2_2; id x_2_2_3; int x_2_2_4; } x_2_1_2; } x2; unsigned int x3; }*)dataPoint;
+- (id)description;
 - (int)index;
 - (id)init;
 - (id)initWithIndex:(int)arg1 value:(struct EDValue { int x1; union { bool x_2_1_1; double x_2_1_2; id x_2_1_3; int x_2_1_4; } x2; }*)arg2;

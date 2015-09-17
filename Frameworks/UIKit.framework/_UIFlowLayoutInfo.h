@@ -48,10 +48,10 @@
 @property (nonatomic, readonly) NSMutableArray *sections;
 @property (nonatomic) BOOL usesFloatingHeaderFooter;
 
+- (void).cxx_destruct;
 - (id)addSection;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (id)copy;
-- (void)dealloc;
 - (void)didUpdateSizeForSection:(int)arg1 withDelta:(float)arg2;
 - (float)dimension;
 - (BOOL)estimatesSizes;

@@ -5,11 +5,17 @@
 @interface GEOPDSearchResult : PBCodable <NSCopying> {
     NSMutableArray *_disambiguationLabels;
     GEOMapRegion *_displayMapRegion;
+    struct { 
+        unsigned int isChainResultSet : 1; 
+    } _has;
+    BOOL _isChainResultSet;
 }
 
 @property (nonatomic, retain) NSMutableArray *disambiguationLabels;
 @property (nonatomic, retain) GEOMapRegion *displayMapRegion;
 @property (nonatomic, readonly) BOOL hasDisplayMapRegion;
+@property (nonatomic) BOOL hasIsChainResultSet;
+@property (nonatomic) BOOL isChainResultSet;
 
 - (void)addDisambiguationLabel:(id)arg1;
 - (void)clearDisambiguationLabels;
@@ -23,12 +29,16 @@
 - (unsigned int)disambiguationLabelsCount;
 - (id)displayMapRegion;
 - (BOOL)hasDisplayMapRegion;
+- (BOOL)hasIsChainResultSet;
 - (unsigned int)hash;
+- (BOOL)isChainResultSet;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDisambiguationLabels:(id)arg1;
 - (void)setDisplayMapRegion:(id)arg1;
+- (void)setHasIsChainResultSet:(BOOL)arg1;
+- (void)setIsChainResultSet:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

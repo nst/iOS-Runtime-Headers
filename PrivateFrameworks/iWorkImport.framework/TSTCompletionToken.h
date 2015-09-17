@@ -21,7 +21,6 @@
 @property (nonatomic, retain) TSUColor *referenceColor;
 @property (nonatomic, readonly) int renderAsTokenType;
 
-- (id).cxx_construct;
 - (id)canvasReferenceProvider;
 - (id)completionText;
 - (id)copyIntoContext:(id)arg1 bakeModes:(BOOL)arg2;

@@ -12,8 +12,11 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)effectConfig;
+- (id)effectConfigForQuality:(int)arg1;
+- (id)effectForUserInterfaceStyle:(int)arg1;
 - (id)effectSettings;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

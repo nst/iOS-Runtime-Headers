@@ -23,13 +23,14 @@
 + (id)sharedScheduler;
 
 - (void).cxx_destruct;
-- (void)_refreshToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(int)arg4 darkWakeEnabled:(BOOL)arg5 completionBlock:(id /* block */)arg6;
-- (void)_removeToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(int)arg4 darkWakeEnabled:(BOOL)arg5 completionBlock:(id /* block */)arg6;
+- (void)_refreshToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(int)arg4 darkWakeEnabled:(BOOL)arg5 isCKSystemService:(BOOL)arg6 completionBlock:(id /* block */)arg7;
+- (void)_removeToken:(id)arg1 appContainerTuple:(id)arg2 apsEnvironmentString:(id)arg3 usesAPSPublicToken:(int)arg4 darkWakeEnabled:(BOOL)arg5 isCKSystemService:(BOOL)arg6 completionBlock:(id /* block */)arg7;
 - (void)_scheduleTokenRefresh;
 - (id)callbackBlocks;
 - (id)callbackTimers;
+- (BOOL)canRunGivenAvailabilityState:(unsigned int)arg1;
 - (void)dealloc;
-- (void)ensureTokenRefreshForAppContainerTuple:(id)arg1 apsEnvironmentString:(id)arg2 useAPSPublicToken:(BOOL)arg3 darkWakeEnabled:(BOOL)arg4 completionBlock:(id /* block */)arg5;
+- (void)ensureTokenRefreshForAppContainerTuple:(id)arg1 apsEnvironmentString:(id)arg2 useAPSPublicToken:(BOOL)arg3 darkWakeEnabled:(BOOL)arg4 isCKSystemService:(BOOL)arg5 completionBlock:(id /* block */)arg6;
 - (void)forceTokenRefreshForAllClients;
 - (void)handlePublicPushTokenDidUpdate:(id)arg1;
 - (void)handlePushTokenDidUpdate:(id)arg1;
@@ -44,7 +45,8 @@
 - (void)setQueue:(id)arg1;
 - (void)setRequests:(id)arg1;
 - (void)setScheduleTimer:(id)arg1;
-- (void)systemAvailabilityChanged:(BOOL)arg1;
+- (void)setSchedulerAvailable:(BOOL)arg1;
+- (void)systemAvailabilityChanged:(unsigned int)arg1;
 - (void)tokenRefreshChanged;
 - (void)unregisterAllTokensWithCompletionHandler:(id /* block */)arg1;
 - (void)unregisterTokenForAppContainerTuple:(id)arg1;

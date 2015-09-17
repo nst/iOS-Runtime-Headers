@@ -21,6 +21,7 @@
 @property (nonatomic) int scrollLength;
 @property (nonatomic) float startOffset;
 
+- (void).cxx_destruct;
 - (int)axis;
 - (id)currentTest;
 - (void)dealloc;

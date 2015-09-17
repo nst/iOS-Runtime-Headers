@@ -123,6 +123,7 @@
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } validItemRange;
 @property (nonatomic) float verticalInterstice;
 
+- (void).cxx_destruct;
 - (float)actualGap;
 - (void)addInvalidatedIndexPath:(id)arg1;
 - (id)addItem;
@@ -131,7 +132,6 @@
 - (void)computeLayout;
 - (void)computeLayoutInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSection:(int)arg2 invalidating:(BOOL)arg3;
 - (id)copyFromLayoutInfo:(id)arg1;
-- (void)dealloc;
 - (float)endMargin;
 - (int)estimatedIndexOfItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)fixedItemSize;
@@ -156,6 +156,7 @@
 - (BOOL)lastRowIncomplete;
 - (id)layoutInfo;
 - (void)logInvalidSizes;
+- (void)logInvalidSizesForHorizontalDirection:(BOOL)arg1 warnAboutDelegateValues:(BOOL)arg2;
 - (float)otherMargin;
 - (struct { int x1; int x2; int x3; })rowAlignmentOptions;
 - (id)rows;

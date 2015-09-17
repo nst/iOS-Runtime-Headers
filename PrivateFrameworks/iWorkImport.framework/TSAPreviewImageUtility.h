@@ -7,6 +7,7 @@
 + (void)drawInContext:(struct CGContext { }*)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 image:(struct CGImage { }*)arg3 imageSize:(struct CGSize { float x1; float x2; })arg4 scaledSize:(struct CGSize { float x1; float x2; })arg5 scale:(float)arg6 flip:(BOOL)arg7;
 + (BOOL)imageIsOpaque:(struct CGImage { }*)arg1;
 + (struct CGImage { }*)newPrerenderedImageFromImage:(struct CGImage { }*)arg1;
++ (struct CGImage { }*)newPrerenderedImageFromImage:(struct CGImage { }*)arg1 preserveAlpha:(BOOL)arg2;
 + (id)scaleImage:(struct CGImage { }*)arg1 toSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 
 @end

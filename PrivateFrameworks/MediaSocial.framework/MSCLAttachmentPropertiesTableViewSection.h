@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/MediaSocial.framework/MediaSocial
  */
 
-@interface MSCLAttachmentPropertiesTableViewSection : NSObject <MSCLTokenTextViewDelegate, UITextFieldDelegate> {
+@interface MSCLAttachmentPropertiesTableViewSection : NSObject <MSCLSettingsTableViewCellDelegate, MSCLTokenTextViewDelegate, UITextFieldDelegate> {
     SKUIClientContext *_clientContext;
+    BOOL _isExplicit;
     <MSCLAttachmentPropertiesTableViewSectionDelegate> *_sectionDelegate;
     float _sectionHeaderHeight;
     int _sectionType;
@@ -25,6 +26,7 @@
 - (id)_newTableViewCellWithContentView:(id)arg1;
 - (id)_newTextFieldCellWithTitle:(id)arg1 placeholder:(id)arg2 value:(id)arg3;
 - (id)_newTextViewCellWithTitle:(id)arg1 placeholder:(id)arg2 artists:(id)arg3;
+- (id)_newTextViewCellWithTitle:(id)arg1 placeholder:(id)arg2 artists:(id)arg3 changeDelegate:(id)arg4;
 - (id)clientContext;
 - (void)commitValuesToAttachment:(id)arg1;
 - (id)initWithSectionType:(int)arg1 clientContext:(id)arg2;
@@ -40,6 +42,7 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)tableViewCell:(id)arg1 valueChanged:(BOOL)arg2;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (void)textView:(id)arg1 didChange:(int)arg2;
 - (id)tokenTextViewForRowAtIndexPath:(id)arg1;

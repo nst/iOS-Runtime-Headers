@@ -37,24 +37,24 @@
     BOOL _suppressAlert;
 }
 
-@property (readonly) NSString *albumCloudGUID;
-@property (readonly) NSString *albumUUID;
+@property (readonly, copy) NSString *albumCloudGUID;
+@property (readonly, copy) NSString *albumUUID;
 @property (readonly) BOOL allAssetsAreFullResolution;
 @property (readonly) long long bulletinType;
 @property (readonly) BOOL canMergeWithPersistedBulletins;
 @property (readonly) double completionPercentage;
-@property (readonly) NSDate *date;
+@property (readonly, copy) NSDate *date;
 @property (readonly) NSString *destinationURLString;
 @property (readonly) NSDictionary *dictionaryRepresentation;
-@property (readonly) NSDate *expirationDate;
+@property (readonly, copy) NSDate *expirationDate;
 @property (readonly) BOOL hasThumbnail;
-@property (readonly) NSString *mainAssetUUID;
+@property (readonly, copy) NSString *mainAssetUUID;
 @property (readonly) NSString *message;
 @property (copy) NSDate *originalDate;
 @property unsigned int originalRecordID;
 @property unsigned int recordID;
 @property unsigned int replacedBulletinRecordID;
-@property (readonly) NSString *senderEmailAddress;
+@property (readonly, copy) NSString *senderEmailAddress;
 @property BOOL suppressAlert;
 @property (readonly) NSArray *suppressionContexts;
 @property (readonly) BOOL thumbnailAssetIsPlaceholder;

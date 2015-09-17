@@ -39,6 +39,7 @@
 - (void)dealloc;
 - (id)deliverSynchronously;
 - (int)deliveryStatus;
+- (id)init;
 - (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;
 - (id)initWithHeaders:(id)arg1 mixedContent:(id)arg2 textPartsAreHTML:(BOOL)arg3;
 - (id)initWithMessage:(id)arg1;

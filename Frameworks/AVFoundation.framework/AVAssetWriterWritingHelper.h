@@ -7,7 +7,6 @@
     NSObject<OS_dispatch_queue> *_figAssetWriterAccessQueue;
     AVAssetWriterFigAssetWriterNotificationHandler *_notificationHandler;
     BOOL _startSessionCalled;
-    AVWeakReference *_weakReference;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +14,12 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (id)finalStepWorkaroundOperationWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1;
++ (id)prepareInputsOperationsWithInputs:(id)arg1;
+
+- (id)_makeFinishWritingOperationsWithCustomFigAssetWriterFinishOperation:(id)arg1;
 - (struct OpaqueFigAssetWriter { }*)_retainedFigAssetWriter;
+- (id)_transitionToFinishWritingHelperWithFinishWritingOperations:(id)arg1;
 - (void)cancelWriting;
 - (void)dealloc;
 - (void)didReceiveFigAssetWriterNotificationWithSuccess:(BOOL)arg1 error:(id)arg2;

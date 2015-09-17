@@ -14,7 +14,6 @@
 @property unsigned int count;
 @property struct { unsigned short x1; unsigned char x2; unsigned char x3; } idOfFirstOccurence;
 
-- (id).cxx_construct;
 - (unsigned int)count;
 - (id)description;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })idOfFirstOccurence;

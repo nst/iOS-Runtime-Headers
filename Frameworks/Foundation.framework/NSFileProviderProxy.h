@@ -11,7 +11,7 @@
 - (void)forwardUsingMessageSender:(id /* block */)arg1;
 - (void)observeEndOfWriteAtLocation:(id)arg1 forAccessClaim:(id)arg2;
 - (void)observePresentationChangeOfKind:(id)arg1 withPresenter:(id)arg2 url:(id)arg3 newURL:(id)arg4;
-- (id /* block */)provideItemAtURL:(id)arg1 forAccessClaim:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id /* block */)provideItemAtURL:(id)arg1 recursively:(BOOL)arg2 forAccessClaim:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)provideLogicalURLForURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)providePhysicalURLForURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setItemLocation:(id)arg1;

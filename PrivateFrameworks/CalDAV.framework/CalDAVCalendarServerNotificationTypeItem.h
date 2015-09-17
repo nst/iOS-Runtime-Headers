@@ -15,8 +15,8 @@
 @property (nonatomic, readonly) BOOL isResourceChanged;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *resourceChanged;
 
+- (void).cxx_destruct;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)description;
 - (id)inviteNotification;
 - (id)inviteReply;

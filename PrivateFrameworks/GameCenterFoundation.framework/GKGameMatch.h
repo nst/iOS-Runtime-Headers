@@ -9,9 +9,9 @@
 }
 
 @property (nonatomic, retain) NSDate *date;
-@property (nonatomic, readonly) GKGame *game;
+@property (nonatomic, retain) GKGame *game;
 @property (retain) GKRecentMatchInternal *internal;
-@property (nonatomic, readonly) GKPlayer *player;
+@property (nonatomic, retain) GKPlayer *player;
 
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
@@ -28,7 +28,9 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (id)player;
 - (BOOL)respondsToSelector:(SEL)arg1;
+- (void)setGame:(id)arg1;
 - (void)setInternal:(id)arg1;
+- (void)setPlayer:(id)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (id)valueForUndefinedKey:(id)arg1;
 

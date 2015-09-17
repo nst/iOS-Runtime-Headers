@@ -12,11 +12,13 @@
     NSString *_carHeadunitModel;
     double _carHeadunitPixelHeight;
     double _carHeadunitPixelWidth;
-    NSString *_deviceDisplayLocale;
-    NSMutableArray *_deviceInstalledKeyboardLocales;
+    int _deviceBatteryState;
+    NSMutableArray *_deviceDisplayLanguages;
+    int _deviceInterfaceOrientation;
     NSString *_deviceKeyboardLocale;
     GEOLocation *_deviceLocation;
     NSString *_deviceSpokenLocale;
+    NSString *_displayRegion;
     struct { 
         unsigned int sessionId : 1; 
         unsigned int carHeadunitPixelHeight : 1; 
@@ -24,6 +26,8 @@
         unsigned int mapZoomLevel : 1; 
         unsigned int action : 1; 
         unsigned int carHeadunitInteractionModel : 1; 
+        unsigned int deviceBatteryState : 1; 
+        unsigned int deviceInterfaceOrientation : 1; 
         unsigned int mode : 1; 
         unsigned int photosCount : 1; 
         unsigned int reviewUserPhotosCount : 1; 
@@ -50,6 +54,7 @@
     int _source;
     unsigned int _timeSinceMapEnteredForeground;
     unsigned int _timeSinceMapViewportChanged;
+    GEOTraitsTransitScheduleFilter *_transitScheduleFilter;
     struct { 
         int *list; 
         unsigned int count; 
@@ -66,11 +71,13 @@
 @property (nonatomic, retain) NSString *carHeadunitModel;
 @property (nonatomic) double carHeadunitPixelHeight;
 @property (nonatomic) double carHeadunitPixelWidth;
-@property (nonatomic, retain) NSString *deviceDisplayLocale;
-@property (nonatomic, retain) NSMutableArray *deviceInstalledKeyboardLocales;
+@property (nonatomic) int deviceBatteryState;
+@property (nonatomic, retain) NSMutableArray *deviceDisplayLanguages;
+@property (nonatomic) int deviceInterfaceOrientation;
 @property (nonatomic, retain) NSString *deviceKeyboardLocale;
 @property (nonatomic, retain) GEOLocation *deviceLocation;
 @property (nonatomic, retain) NSString *deviceSpokenLocale;
+@property (nonatomic, retain) NSString *displayRegion;
 @property (nonatomic) BOOL hasAction;
 @property (nonatomic, readonly) BOOL hasAppIdentifier;
 @property (nonatomic, readonly) BOOL hasAppMajorVersion;
@@ -80,10 +87,12 @@
 @property (nonatomic, readonly) BOOL hasCarHeadunitModel;
 @property (nonatomic) BOOL hasCarHeadunitPixelHeight;
 @property (nonatomic) BOOL hasCarHeadunitPixelWidth;
-@property (nonatomic, readonly) BOOL hasDeviceDisplayLocale;
+@property (nonatomic) BOOL hasDeviceBatteryState;
+@property (nonatomic) BOOL hasDeviceInterfaceOrientation;
 @property (nonatomic, readonly) BOOL hasDeviceKeyboardLocale;
 @property (nonatomic, readonly) BOOL hasDeviceLocation;
 @property (nonatomic, readonly) BOOL hasDeviceSpokenLocale;
+@property (nonatomic, readonly) BOOL hasDisplayRegion;
 @property (nonatomic) BOOL hasIsAPICall;
 @property (nonatomic, readonly) BOOL hasMapRegion;
 @property (nonatomic) BOOL hasMapZoomLevel;
@@ -96,6 +105,7 @@
 @property (nonatomic) BOOL hasSource;
 @property (nonatomic) BOOL hasTimeSinceMapEnteredForeground;
 @property (nonatomic) BOOL hasTimeSinceMapViewportChanged;
+@property (nonatomic, readonly) BOOL hasTransitScheduleFilter;
 @property (nonatomic) BOOL isAPICall;
 @property (nonatomic, retain) GEOMapRegion *mapRegion;
 @property (nonatomic) double mapZoomLevel;
@@ -110,12 +120,12 @@
 @property (nonatomic) int source;
 @property (nonatomic) unsigned int timeSinceMapEnteredForeground;
 @property (nonatomic) unsigned int timeSinceMapViewportChanged;
+@property (nonatomic, retain) GEOTraitsTransitScheduleFilter *transitScheduleFilter;
 @property (nonatomic, readonly) int*transportTypes;
 @property (nonatomic, readonly) unsigned int transportTypesCount;
 
-- (int)_uiActionType;
 - (int)action;
-- (void)addDeviceInstalledKeyboardLocale:(id)arg1;
+- (void)addDeviceDisplayLanguage:(id)arg1;
 - (void)addPhotoSizes:(id)arg1;
 - (void)addReviewUserPhotoSizes:(id)arg1;
 - (void)addTransportType:(int)arg1;
@@ -127,7 +137,7 @@
 - (id)carHeadunitModel;
 - (double)carHeadunitPixelHeight;
 - (double)carHeadunitPixelWidth;
-- (void)clearDeviceInstalledKeyboardLocales;
+- (void)clearDeviceDisplayLanguages;
 - (void)clearPhotoSizes;
 - (void)clearReviewUserPhotoSizes;
 - (void)clearTransportTypes;
@@ -135,14 +145,16 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)deviceDisplayLocale;
-- (id)deviceInstalledKeyboardLocaleAtIndex:(unsigned int)arg1;
-- (id)deviceInstalledKeyboardLocales;
-- (unsigned int)deviceInstalledKeyboardLocalesCount;
+- (int)deviceBatteryState;
+- (id)deviceDisplayLanguageAtIndex:(unsigned int)arg1;
+- (id)deviceDisplayLanguages;
+- (unsigned int)deviceDisplayLanguagesCount;
+- (int)deviceInterfaceOrientation;
 - (id)deviceKeyboardLocale;
 - (id)deviceLocation;
 - (id)deviceSpokenLocale;
 - (id)dictionaryRepresentation;
+- (id)displayRegion;
 - (BOOL)hasAction;
 - (BOOL)hasAppIdentifier;
 - (BOOL)hasAppMajorVersion;
@@ -152,10 +164,12 @@
 - (BOOL)hasCarHeadunitModel;
 - (BOOL)hasCarHeadunitPixelHeight;
 - (BOOL)hasCarHeadunitPixelWidth;
-- (BOOL)hasDeviceDisplayLocale;
+- (BOOL)hasDeviceBatteryState;
+- (BOOL)hasDeviceInterfaceOrientation;
 - (BOOL)hasDeviceKeyboardLocale;
 - (BOOL)hasDeviceLocation;
 - (BOOL)hasDeviceSpokenLocale;
+- (BOOL)hasDisplayRegion;
 - (BOOL)hasIsAPICall;
 - (BOOL)hasMapRegion;
 - (BOOL)hasMapZoomLevel;
@@ -168,6 +182,7 @@
 - (BOOL)hasSource;
 - (BOOL)hasTimeSinceMapEnteredForeground;
 - (BOOL)hasTimeSinceMapViewportChanged;
+- (BOOL)hasTransitScheduleFilter;
 - (unsigned int)hash;
 - (BOOL)isAPICall;
 - (BOOL)isEqual:(id)arg1;
@@ -196,15 +211,19 @@
 - (void)setCarHeadunitModel:(id)arg1;
 - (void)setCarHeadunitPixelHeight:(double)arg1;
 - (void)setCarHeadunitPixelWidth:(double)arg1;
-- (void)setDeviceDisplayLocale:(id)arg1;
-- (void)setDeviceInstalledKeyboardLocales:(id)arg1;
+- (void)setDeviceBatteryState:(int)arg1;
+- (void)setDeviceDisplayLanguages:(id)arg1;
+- (void)setDeviceInterfaceOrientation:(int)arg1;
 - (void)setDeviceKeyboardLocale:(id)arg1;
 - (void)setDeviceLocation:(id)arg1;
 - (void)setDeviceSpokenLocale:(id)arg1;
+- (void)setDisplayRegion:(id)arg1;
 - (void)setHasAction:(BOOL)arg1;
 - (void)setHasCarHeadunitInteractionModel:(BOOL)arg1;
 - (void)setHasCarHeadunitPixelHeight:(BOOL)arg1;
 - (void)setHasCarHeadunitPixelWidth:(BOOL)arg1;
+- (void)setHasDeviceBatteryState:(BOOL)arg1;
+- (void)setHasDeviceInterfaceOrientation:(BOOL)arg1;
 - (void)setHasIsAPICall:(BOOL)arg1;
 - (void)setHasMapZoomLevel:(BOOL)arg1;
 - (void)setHasMode:(BOOL)arg1;
@@ -229,13 +248,16 @@
 - (void)setSource:(int)arg1;
 - (void)setTimeSinceMapEnteredForeground:(unsigned int)arg1;
 - (void)setTimeSinceMapViewportChanged:(unsigned int)arg1;
+- (void)setTransitScheduleFilter:(id)arg1;
 - (void)setTransportTypes:(int*)arg1 count:(unsigned int)arg2;
 - (int)source;
 - (unsigned int)timeSinceMapEnteredForeground;
 - (unsigned int)timeSinceMapViewportChanged;
+- (id)transitScheduleFilter;
 - (int)transportTypeAtIndex:(unsigned int)arg1;
 - (int*)transportTypes;
 - (unsigned int)transportTypesCount;
+- (int)uiActionType;
 - (void)writeTo:(id)arg1;
 
 @end

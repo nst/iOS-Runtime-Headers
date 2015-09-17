@@ -13,6 +13,9 @@
 
 @property (nonatomic, retain) MusicStoreItemMetadataContext *storeItemMetadataContext;
 
++ (BOOL)_shouldRespectMusicCellularDataSetting;
++ (BOOL)_shouldRespectStoreCellularDataSetting;
+
 - (void).cxx_destruct;
 - (void)_registerForNotificationsForStoreItemMetadataContext:(id)arg1;
 - (id)_storeItemMetadata;
@@ -23,6 +26,7 @@
 - (id)albumTitle;
 - (BOOL)allowsAssetCaching;
 - (id)artistName;
+- (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)contentTitle;
 - (unsigned int)contentType;

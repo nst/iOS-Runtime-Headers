@@ -15,7 +15,7 @@
 - (void).cxx_destruct;
 - (id)fetchError;
 - (id)fetchGroup;
-- (id)initWithFetchGroup:(id)arg1;
+- (id)init;
 - (id)pcsData;
 - (void)setFetchError:(id)arg1;
 - (void)setFetchGroup:(id)arg1;

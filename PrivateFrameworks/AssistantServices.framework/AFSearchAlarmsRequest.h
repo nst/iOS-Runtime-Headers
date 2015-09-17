@@ -3,11 +3,11 @@
  */
 
 @interface AFSearchAlarmsRequest : AFSiriRequest {
-    AFAlarm *_criteria;
+    STAlarm *_criteria;
     int _options;
 }
 
-@property (nonatomic, retain) AFAlarm *criteria;
+@property (nonatomic, retain) STAlarm *criteria;
 @property (nonatomic) int options;
 
 + (BOOL)supportsSecureCoding;

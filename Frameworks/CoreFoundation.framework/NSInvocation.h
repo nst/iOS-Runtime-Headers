@@ -84,8 +84,8 @@
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (void)executeBlock:(id /* block */)arg1;
-+ (id)invocationWithBlock:(id /* block */)arg1;
++ (void)tsu_executeBlock:(id /* block */)arg1;
++ (id)tsu_invocationWithBlock:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

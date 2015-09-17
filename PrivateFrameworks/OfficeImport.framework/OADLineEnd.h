@@ -12,24 +12,27 @@
 }
 
 + (id)defaultProperties;
-+ (id)stringForLineEndLength:(int)arg1;
-+ (id)stringForLineEndType:(int)arg1;
-+ (id)stringForLineEndWidth:(int)arg1;
++ (id)stringForLineEndLength:(unsigned char)arg1;
++ (id)stringForLineEndType:(unsigned char)arg1;
++ (id)stringForLineEndWidth:(unsigned char)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithDefaults;
-- (id)initWithType:(int)arg1 width:(int)arg2 length:(int)arg3;
+- (id)initWithType:(unsigned char)arg1 width:(unsigned char)arg2 length:(unsigned char)arg3;
+- (BOOL)isAnythingOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLengthOverridden;
 - (BOOL)isTypeOverridden;
 - (BOOL)isWidthOverridden;
-- (int)length;
-- (void)setLength:(int)arg1;
-- (void)setType:(int)arg1;
-- (void)setWidth:(int)arg1;
-- (int)type;
-- (int)width;
+- (unsigned char)length;
+- (void)removeUnnecessaryOverrides;
+- (void)setLength:(unsigned char)arg1;
+- (void)setType:(unsigned char)arg1;
+- (void)setWidth:(unsigned char)arg1;
+- (unsigned char)type;
+- (unsigned char)width;
 
 @end

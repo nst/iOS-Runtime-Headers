@@ -6,7 +6,6 @@
     NSEntityDescription *_entity;
     long _entitysReferenceIDForProperty;
     void *_extraIvars;
-    BOOL _indexedBySpotlight;
     NSString *_name;
     struct __propertyDescriptionFlags { 
         unsigned int _isReadOnly : 1; 
@@ -20,7 +19,6 @@
         unsigned int _isOrdered : 1; 
         unsigned int _reservedPropertyDescription : 23; 
     } _propertyDescriptionFlags;
-    BOOL _storedInExternalRecord;
     id _underlyingProperty;
     NSMutableDictionary *_userInfo;
     NSArray *_validationPredicates;
@@ -82,11 +80,9 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isIndexed;
 - (BOOL)isIndexedBySpotlight;
-- (BOOL)isIndexedBySpotlight;
 - (BOOL)isOptional;
 - (BOOL)isReadOnly;
 - (BOOL)isSpotlightIndexed;
-- (BOOL)isStoredInExternalRecord;
 - (BOOL)isStoredInExternalRecord;
 - (BOOL)isStoredInTruth;
 - (BOOL)isStoredInTruthFile;
@@ -96,13 +92,11 @@
 - (void)setElementID:(id)arg1;
 - (void)setIndexed:(BOOL)arg1;
 - (void)setIndexedBySpotlight:(BOOL)arg1;
-- (void)setIndexedBySpotlight:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setOptional:(BOOL)arg1;
 - (void)setReadOnly:(BOOL)arg1;
 - (void)setRenamingIdentifier:(id)arg1;
 - (void)setSpotlightIndexed:(BOOL)arg1;
-- (void)setStoredInExternalRecord:(BOOL)arg1;
 - (void)setStoredInExternalRecord:(BOOL)arg1;
 - (void)setStoredInTruth:(BOOL)arg1;
 - (void)setStoredInTruthFile:(BOOL)arg1;

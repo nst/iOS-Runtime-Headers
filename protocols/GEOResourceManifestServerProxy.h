@@ -5,6 +5,7 @@
 
 @required
 
+- (GEOActiveTileGroup *)activeTileGroup;
 - (NSString *)authToken;
 - (void)closeConnection;
 - (GEOResourceManifestConfiguration *)configuration;

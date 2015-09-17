@@ -2,7 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAClockObject : SADomainObject
+@interface SAClockObject : SADomainObject {
+    NSNumber *_latitude;
+    NSNumber *_longitude;
+}
 
 @property (nonatomic, copy) NSNumber *alCityId;
 @property (nonatomic, copy) NSString *cityName;
@@ -37,6 +40,5 @@
 - (id)timezoneId;
 - (id)unlocalizedCityName;
 - (id)unlocalizedCountryName;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

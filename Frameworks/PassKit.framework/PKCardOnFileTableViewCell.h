@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKCardOnFileTableViewCell : UITableViewCell
+@interface PKCardOnFileTableViewCell : PKTableViewCell
 
 - (void)layoutSubviews;
 

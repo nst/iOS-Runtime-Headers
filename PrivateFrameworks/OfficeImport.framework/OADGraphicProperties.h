@@ -19,13 +19,16 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
+- (id)description;
 - (id)effects;
 - (id)exts;
 - (id)fill;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (BOOL)hasEffects;
 - (BOOL)hasExts;
 - (BOOL)hasFill;
 - (BOOL)hasIsBehindText;
+- (BOOL)hasNonEmptyFill;
 - (BOOL)hasScene3D;
 - (BOOL)hasShape3D;
 - (BOOL)hasStroke;

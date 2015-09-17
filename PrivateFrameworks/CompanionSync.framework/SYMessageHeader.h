@@ -3,16 +3,22 @@
  */
 
 @interface SYMessageHeader : PBCodable <NSCopying> {
+    struct { 
+        unsigned int timeout : 1; 
+    } _has;
     SYPeer *_sender;
     unsigned long long _sequenceNumber;
     SYVectorClock *_state;
+    double _timeout;
     double _timestamp;
     unsigned int _version;
 }
 
+@property (nonatomic) BOOL hasTimeout;
 @property (nonatomic, retain) SYPeer *sender;
 @property (nonatomic) unsigned long long sequenceNumber;
 @property (nonatomic, retain) SYVectorClock *state;
+@property (nonatomic) double timeout;
 @property (nonatomic) double timestamp;
 @property (nonatomic) unsigned int version;
 
@@ -21,18 +27,22 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasTimeout;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (id)sender;
 - (unsigned long long)sequenceNumber;
+- (void)setHasTimeout:(BOOL)arg1;
 - (void)setSender:(id)arg1;
 - (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)setState:(id)arg1;
+- (void)setTimeout:(double)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setVersion:(unsigned int)arg1;
 - (id)state;
+- (double)timeout;
 - (double)timestamp;
 - (unsigned int)version;
 - (void)writeTo:(id)arg1;

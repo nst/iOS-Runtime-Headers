@@ -55,6 +55,7 @@
 - (void)_beginInteractiveObscuredInsetsChange;
 - (void)_commonInitializationWithContextRef:(struct OpaqueWKContext { }*)arg1 pageGroupRef:(struct OpaqueWKPageGroup { }*)arg2 relatedToPage:(struct OpaqueWKPage { }*)arg3;
 - (void)_didFinishScrolling;
+- (void)_didRelaunchProcess;
 - (void)_endInteractiveObscuredInsetsChange;
 - (void)_frameOrBoundsChanged;
 - (void)_keyboardChangedWithInfo:(id)arg1 adjustScrollView:(BOOL)arg2;
@@ -70,6 +71,7 @@
 - (BOOL)allowsBackForwardNavigationGestures;
 - (id)browsingContextController;
 - (void)dealloc;
+- (void)didMoveToWindow;
 - (BOOL)drawsBackground;
 - (BOOL)drawsTransparentBackground;
 - (id)initWithCoder:(id)arg1;

@@ -37,6 +37,7 @@
 - (void)setHidesSearchableSources:(BOOL)arg1;
 - (void)setModel:(id)arg1;
 - (void)setPeoplePickerNavigationController:(id)arg1;
+- (void)setStyleProvider:(id)arg1;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;

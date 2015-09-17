@@ -23,7 +23,9 @@
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
 + (id)_cf2nsCookies:(struct __CFArray { }*)arg1;
++ (id)_cookiesWithResponseHeaderFields:(id)arg1 forURL:(id)arg2 singleCookie:(BOOL)arg3;
 + (struct __CFArray { }*)_ns2cfCookies:(id)arg1;
++ (id)_parsedCookiesWithResponseHeaderFields:(id)arg1 forURL:(id)arg2;
 + (id)cookieWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;
 + (id)cookieWithProperties:(id)arg1;
 + (id)cookiesWithResponseHeaderFields:(id)arg1 forURL:(id)arg2;
@@ -54,7 +56,6 @@
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)expiresDate;
-- (void)finalize;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithCFHTTPCookie:(struct OpaqueCFHTTPCookie { }*)arg1;

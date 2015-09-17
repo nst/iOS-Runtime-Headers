@@ -32,6 +32,7 @@
 @property (nonatomic) struct CGPoint { float x1; float x2; } startPosition;
 @property (nonatomic, retain) UITouch *touch;
 
+- (void).cxx_destruct;
 - (void)_resetGestureRecognizer;
 - (double)angle;
 - (BOOL)canBeginDrag;

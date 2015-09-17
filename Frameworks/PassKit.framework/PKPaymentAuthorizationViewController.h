@@ -18,6 +18,7 @@
 
 + (BOOL)canMakePayments;
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1;
++ (BOOL)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned int)arg2;
 
 - (void)_addDeactivationReason:(id)arg1;
 - (void)_registerForApplicationLifeCycleNotifications;
@@ -25,10 +26,13 @@
 - (void)_unregisterForApplicationLifeCycleNotifications;
 - (void)dealloc;
 - (id)delegate;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithPaymentRequest:(id)arg1;
 - (int)modalPresentationStyle;
 - (void)paymentAuthorizationController:(id)arg1 didAuthorizePayment:(id)arg2 completion:(id /* block */)arg3;
-- (void)paymentAuthorizationController:(id)arg1 didSelectShippingAddress:(void*)arg2 completion:(id /* block */)arg3;
+- (void)paymentAuthorizationController:(id)arg1 didSelectPaymentMethod:(id)arg2 completion:(id /* block */)arg3;
+- (void)paymentAuthorizationController:(id)arg1 didSelectShippingAddress:(id)arg2 completion:(id /* block */)arg3;
 - (void)paymentAuthorizationController:(id)arg1 didSelectShippingMethod:(id)arg2 completion:(id /* block */)arg3;
 - (void)paymentAuthorizationController:(id)arg1 willFinishWithError:(id)arg2;
 - (void)paymentAuthorizationControllerDidFinish:(id)arg1;

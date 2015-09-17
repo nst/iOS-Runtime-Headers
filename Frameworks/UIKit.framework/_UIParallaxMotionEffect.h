@@ -20,12 +20,12 @@
 @property (nonatomic) struct UIOffset { float x1; float x2; } slideMagnitude;
 @property (nonatomic) float verticalSlideAccelerationBoostFactor;
 
+- (void).cxx_destruct;
 - (void)_activateTiltEffectIfNecessary;
 - (id)_keyPathsAndRelativeValuesForPose:(id)arg1;
 - (void)_updateGroupMotionEffect;
 - (void)_updateSlideEffectsWithCurrentSlideMagnitude;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (float)horizontalSlideAccelerationBoostFactor;

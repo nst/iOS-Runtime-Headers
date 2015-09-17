@@ -28,7 +28,6 @@
 - (id)inputStrength;
 - (id)inputWarmth;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputOrigI:(id)arg1;
 - (void)setInputOrigQ:(id)arg1;

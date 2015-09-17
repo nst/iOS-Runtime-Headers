@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUWebViewManager : NSObject <SUScriptInterfaceDelegate, UIWebViewDelegate> {
+@interface SUWebViewManager : NSObject <SUScriptInterfaceDelegate, UIWebViewDelegate, WebFrameLoadDelegate, WebPolicyDelegate, WebResourceLoadDelegate, WebUIDelegate> {
     SSAuthenticationContext *_authenticationContext;
     SUClientInterface *_clientInterface;
     <SUWebViewManagerDelegate> *_delegate;

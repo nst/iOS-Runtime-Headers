@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCSECRSAuthInit *metric;
+@property (nonatomic, retain) AWDNFCSECRSAuthInit *metric;
 @property (nonatomic) unsigned int status;
 @property (readonly) Class superclass;
 
@@ -22,6 +22,7 @@
 - (void)setMetric:(id)arg1;
 - (void)setStatus:(unsigned int)arg1;
 - (unsigned int)status;
-- (unsigned int)updateTransactionStateInfoPreviousState:(unsigned int)arg1 withUUID:(id)arg2 withUUIDRefTimestamp:(unsigned long long)arg3;
+- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 
 @end

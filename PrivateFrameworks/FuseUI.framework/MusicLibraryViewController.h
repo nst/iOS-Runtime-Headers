@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicLibraryViewController : UIViewController <MusicActionableHeaderViewDelegate, MusicClientContextConsuming, MusicLayoutMarginProxyViewDelegate, MusicLibraryBrowseCollectionViewControllerDelegate, MusicSplitInitialStateProviding, MusicVerticalScrollingContainerViewControllerDelegate, SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate, SKUIProxyScrollViewDelegate, SKUITabBarItemRootViewController> {
+@interface MusicLibraryViewController : UIViewController <MusicActionableHeaderViewDelegate, MusicClientContextConsuming, MusicLayoutMarginProxyViewDelegate, MusicLibraryBrowseCollectionViewControllerDelegate, MusicSplitInitialStateProviding, MusicVerticalScrollingContainerViewControllerDelegate, SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate, SKUIProxyScrollViewDelegate, SKUITabBarItemRootViewController, UIViewControllerRestoration> {
     MusicLibraryArtistsViewConfiguration *_artistsViewConfiguration;
     MusicClientContext *_clientContext;
     NSMutableArray *_entityProviderNotificationObservers;
@@ -11,8 +11,8 @@
     SKUIIndexBarControl *_indexBarControl;
     int _indexBarControlVisibleTransactionCount;
     MusicVerticalScrollingContainerItem *_indexBarMinimumVerticalScrollingContainerItem;
-    float _indexBarRightLayoutMarginAddition;
     <MusicIndexBarDataSource><MusicIndexBarScrollDelegate> *_indexBarSupportDataSource;
+    float _indexBarTrailingLayoutMarginAddition;
     BOOL _isContainedWithinSplitViewPrimary;
     BOOL _isIgnoringLayoutMarginsChange;
     BOOL _isIndexBarTracking;
@@ -30,6 +30,7 @@
     MusicLibraryBrowseCollectionViewController *_recentlyAddedViewController;
     MusicLibraryViewConfiguration *_selectedViewConfiguration;
     BOOL _shouldAnimatePendingIndexBarVisibilityUpdate;
+    MusicStandaloneShuffleViewController *_shuffleAllViewController;
     MusicSwitcherButtonContainerView *_switcherButtonContainerView;
     MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
     NSMutableDictionary *_viewConfigurationIdentifierToHasContentNumber;
@@ -46,6 +47,9 @@
 @property (nonatomic, readonly) UIViewController *selectedViewConfigurationViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) MusicSwitcherButtonContainerView *switcherButtonContainerView;
+
++ (id)_recentlyAddedViewControllerWithClientContext:(id)arg1;
++ (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void).cxx_destruct;
 - (float)_calculateHairlineViewHeight;
@@ -81,6 +85,8 @@
 - (void)collectionViewFlowLayoutLayoutMetricsWereUpdatedForLibraryBrowseCollectionViewController:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)indexBarControl:(id)arg1 didSelectEntryAtIndexPath:(id)arg2;
 - (id)indexBarControl:(id)arg1 entryAtIndexPath:(id)arg2;
 - (int)indexBarControl:(id)arg1 numberOfEntriesInSection:(int)arg2;

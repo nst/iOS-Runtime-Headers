@@ -33,6 +33,7 @@
 @property (nonatomic, retain) UIColor *insertionPointColor;
 @property (nonatomic) unsigned int insertionPointWidth;
 @property (nonatomic, readonly) UITextInteractionAssistant *interactionAssistant;
+@property (nonatomic) BOOL isCarPlayIdiom;
 @property (readonly) BOOL isContentEditable;
 @property (nonatomic) BOOL isSingleLineDocument;
 @property (nonatomic) int keyboardAppearance;
@@ -54,6 +55,7 @@
 @property (readonly) DOMNode *parentNode;
 @property (copy) NSString *prefix;
 @property (readonly) DOMNode *previousSibling;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic, copy) NSString *responseContext;
 @property (nonatomic) BOOL returnKeyGoesToNextResponder;
 @property (nonatomic) int returnKeyType;
@@ -109,6 +111,7 @@
 - (void)finalize;
 - (id)findExplodedTextNodeAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)firstChild;
+- (void)getPreviewSnapshotImage:(struct CGImage {}**)arg1 andRects:(id*)arg2;
 - (BOOL)hasAttributes;
 - (BOOL)hasChildNodes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hrefFrame;
@@ -232,15 +235,21 @@
 - (id)_newPhraseBoundaryGestureRecognizer;
 - (id)_nextAssistedNode;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_nsrangeForTextRange:(id)arg1;
+- (int)_opposingDirectionFromDirection:(int)arg1;
 - (void)_phraseBoundaryGesture:(id)arg1;
 - (id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2;
 - (id)_positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4;
+- (id)_positionFromPosition:(id)arg1 pastTextUnit:(int)arg2 inDirection:(int)arg3;
+- (id)_positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
 - (id)_previousAssistedNode;
 - (id)_proxyTextInput;
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (id)_rangeOfLineEnclosingPosition:(id)arg1;
 - (id)_rangeOfParagraphEnclosingPosition:(id)arg1;
+- (id)_rangeOfSentenceEnclosingPosition:(id)arg1;
 - (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
+- (id)_rangeOfTextUnit:(int)arg1 enclosingPosition:(id)arg2;
+- (id)_rangeSpanningTextUnit:(int)arg1 andPosition:(id)arg2;
 - (id)_realNode;
 - (void)_replaceCurrentWordWithText:(id)arg1;
 - (BOOL)_requiresAccessoryView;
@@ -281,6 +290,7 @@
 - (id)automaticallySelectedOverlay;
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;
 - (BOOL)becomesEditableWithGestures;
+- (void)beginFloatingCursorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)beginSelectionChange;
 - (id)beginningOfDocument;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRect;
@@ -315,6 +325,7 @@
 - (BOOL)editing;
 - (id)enclosingDocument;
 - (id)enclosingElementIncludingSelf;
+- (void)endFloatingCursor;
 - (id)endOfDocument;
 - (void)endSelectionChange;
 - (void)extendCurrentSelection:(int)arg1;
@@ -427,6 +438,7 @@
 - (id)uiWebDocumentView;
 - (void)unmarkText;
 - (void)updateAutoscroll:(id)arg1;
+- (void)updateFloatingCursorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateSelection;
 - (id)urlScheme;
 - (id)webFrame;
@@ -435,7 +447,7 @@
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
 
 - (void)dd_removeResultLinks;
-- (BOOL)dd_searchForLinkEndNode:(id)arg1;
+- (BOOL)dd_searchForLinkRemovingExistingDDLinksWithEndNode:(id)arg1 didModifyDOM:(BOOL*)arg2;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

@@ -6,14 +6,15 @@
 
 - (struct CGSize { float x1; float x2; })attachmentBrowserDefaultSizeForSquare;
 - (float)attachmentBrowserGridInterItemSpacing;
+- (BOOL)canPresentOverKeyboard;
+- (BOOL)canShowContactPhotosInConversationList;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contactPhotoTranscriptInsets;
+- (float)conversationListMinimumWidthForHiddenContactImage;
 - (unsigned int)defaultConversationViewingMessageCount;
 - (struct CGSize { float x1; float x2; })documentIconSize;
-- (float)leftSplitPaneMaximumWidth;
-- (float)leftSplitPaneMinimumWidth;
-- (float)leftSplitPaneWidthForUIInterfaceOrientation:(int)arg1;
-- (float)leftSplitPaneWidthFraction;
 - (BOOL)lowClearanceInLandscape;
+- (float)maxPrimaryColumnWidthForInterfaceOrientation:(int)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })minTranscriptMarginInsets;
 - (unsigned int)numberOfButtonsInPhotoPicker;
 - (float)photoPickerMaxPopoverPhotoHeight;
 - (float)photoPickerPopoverWidth;
@@ -22,9 +23,10 @@
 - (BOOL)presentsFullscreenInViewService;
 - (BOOL)presentsQuickLookController;
 - (BOOL)presentsReaderController;
-- (BOOL)shouldReconfigureNewComposeOnRotation;
+- (double)resumeToConversationListTimeInterval;
+- (BOOL)shouldAlignRecipientGlyphsWithMargins;
+- (BOOL)shouldOnlyResumeToConversationListAfterTimeout;
 - (BOOL)shouldRefreshAlternateAddressesSheet;
-- (BOOL)shouldShowContactPhotosInConversationList;
 - (BOOL)shouldShowDisclosureChevronInRecipientAtoms;
 - (BOOL)shouldSuppressRotationInNewCompose;
 - (BOOL)showMMSSetup;
@@ -33,7 +35,6 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (float)transcriptContactImageDiameter;
 - (float)transcriptHeaderViewMaxRows;
-- (BOOL)usesCustomSplitViewMasterColumnWidth;
 - (BOOL)usesPopovers;
 - (BOOL)usesUncollapsedSplitview;
 

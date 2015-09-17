@@ -2,21 +2,30 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKCustomSeparatorTableViewCell : UITableViewCell {
-    MKViewWithHairline *_separatorView;
+@interface MKCustomSeparatorTableViewCell : MKTableViewCell {
+    float _leftSeparatorInset;
+    float _rightSeparatorInset;
+    BOOL _separatorHidden;
 }
 
+@property (nonatomic) float leadingSeparatorInset;
 @property (nonatomic) float leftSeparatorInset;
-@property (nonatomic, retain) UIColor *separatorColor;
+@property (nonatomic) float rightSeparatorInset;
 @property (getter=isSeparatorHidden, nonatomic) BOOL separatorHidden;
+@property (nonatomic) float trailingSeparatorInset;
 
-- (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_separatorFrame;
+- (void)_updateSeparatorInset;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isSeparatorHidden;
+- (float)leadingSeparatorInset;
 - (float)leftSeparatorInset;
-- (id)separatorColor;
+- (float)rightSeparatorInset;
+- (void)setLeadingSeparatorInset:(float)arg1;
 - (void)setLeftSeparatorInset:(float)arg1;
-- (void)setSeparatorColor:(id)arg1;
+- (void)setRightSeparatorInset:(float)arg1;
 - (void)setSeparatorHidden:(BOOL)arg1;
+- (void)setTrailingSeparatorInset:(float)arg1;
+- (float)trailingSeparatorInset;
 
 @end

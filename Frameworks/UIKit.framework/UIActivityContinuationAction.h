@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) NSDate *lastUpdateTime;
 @property (nonatomic, readonly) NSString *originatingDeviceName;
 @property (nonatomic, readonly) NSString *originatingDeviceType;
+@property (nonatomic, readonly) NSData *userActivityData;
 
 - (int)UIActionType;
 - (id)activityType;
@@ -20,5 +21,6 @@
 - (id)lastUpdateTime;
 - (id)originatingDeviceName;
 - (id)originatingDeviceType;
+- (id)userActivityData;
 
 @end

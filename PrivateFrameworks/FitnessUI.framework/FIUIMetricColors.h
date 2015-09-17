@@ -10,6 +10,7 @@
     UIColor *_gradientLightColor;
     UIColor *_nonGradientTextColor;
     UIColor *_valueDisplayColor;
+    NSString *_workoutRingColorIdentifier;
 }
 
 @property (nonatomic, retain) UIColor *adjustmentButtonBackgroundColor;
@@ -19,12 +20,13 @@
 @property (nonatomic, retain) UIColor *gradientLightColor;
 @property (nonatomic, retain) UIColor *nonGradientTextColor;
 @property (nonatomic, retain) UIColor *valueDisplayColor;
+@property (nonatomic, retain) NSString *workoutRingColorIdentifier;
 
 + (id)briskColors;
-+ (id)calorieColors;
 + (id)clockColors;
 + (id)distanceColors;
 + (id)elapsedTimeColors;
++ (id)energyColors;
 + (id)heartRateColors;
 + (id)keyColors;
 + (id)metricColorsForGoalTypeIdentifier:(unsigned int)arg1;
@@ -48,6 +50,8 @@
 - (void)setGradientLightColor:(id)arg1;
 - (void)setNonGradientTextColor:(id)arg1;
 - (void)setValueDisplayColor:(id)arg1;
+- (void)setWorkoutRingColorIdentifier:(id)arg1;
 - (id)valueDisplayColor;
+- (id)workoutRingColorIdentifier;
 
 @end

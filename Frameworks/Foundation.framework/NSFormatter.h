@@ -6,6 +6,10 @@
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
+- (int)_cacheGenerationCount;
+- (void)_invalidateCache;
+- (BOOL)_mayDecorateAttributedStringForObjectValue:(id)arg1;
+- (BOOL)_tracksCacheGenerationCount;
 - (id)attributedStringForObjectValue:(id)arg1 withDefaultAttributes:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)editingStringForObjectValue:(id)arg1;

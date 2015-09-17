@@ -8,6 +8,7 @@
 
 @property (nonatomic) UITableViewCell *tableCell;
 
+- (void).cxx_destruct;
 - (void)setTableCell:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)tableCell;

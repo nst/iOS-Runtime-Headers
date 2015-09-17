@@ -7,18 +7,22 @@
     ACAccount *_appleAccount;
     ACAccount *_grandSlamAccount;
     ACAccountStore *_store;
+    BOOL _useAltDSID;
 }
 
 @property (nonatomic, readonly) ACAccountStore *accountStore;
 @property (nonatomic, readonly) ACAccount *appleAccount;
 @property (nonatomic, readonly) ACAccount *grandSlamAccount;
+@property (nonatomic) BOOL useAltDSID;
 
 - (void).cxx_destruct;
 - (id)accountStore;
 - (id)appleAccount;
 - (id)grandSlamAccount;
 - (id)initWithAppleAccount:(id)arg1 grandSlamAccount:(id)arg2 accountStore:(id)arg3 appTokenID:(id)arg4;
+- (void)setUseAltDSID:(BOOL)arg1;
 - (BOOL)signURLRequest:(id)arg1;
 - (BOOL)signURLRequest:(id)arg1 isUserInitiated:(BOOL)arg2;
+- (BOOL)useAltDSID;
 
 @end

@@ -13,6 +13,7 @@
     NSMapTable *_registrationDelegateToInfo;
     NSString *_service;
     NSString *_serviceToken;
+    NSMutableArray *_suppressedDevices;
     NSString *_uniqueID;
 }
 
@@ -45,6 +46,7 @@
 @property (nonatomic, readonly) int registrationStatus;
 @property (nonatomic, readonly, retain) NSString *serviceName;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) NSArray *suppressedDevices;
 @property (nonatomic, readonly, retain) NSString *uniqueID;
 @property (nonatomic, readonly, retain) NSArray *vettedAliases;
 
@@ -120,6 +122,7 @@
 - (void)setAuthToken:(id)arg1;
 - (void)setLoginID:(id)arg1;
 - (void)setPassword:(id)arg1;
+- (id)suppressedDevices;
 - (id)uniqueID;
 - (void)unregisterAccount;
 - (void)unvalidateAliases:(id)arg1;

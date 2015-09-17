@@ -27,6 +27,7 @@
     BOOL _didAttemptToLoadAsset;
     MPQueueFeeder *_feeder;
     unsigned int _handledFinishTime;
+    BOOL _hasLoadedPlaybackMode;
     unsigned int _hasPlayedThisSession;
     BOOL _hasPostedNaturalSizeChange;
     BOOL _hasRegisteredForCaptionsAppearanceChanged;
@@ -40,6 +41,7 @@
     float _loudnessInfoVolumeNormalization;
     unsigned int _lyricsAvailable;
     MPMediaItem *_mediaItem;
+    int _playbackMode;
     MPAVController *_player;
     struct { 
         long long value; 
@@ -80,6 +82,7 @@
 @property (nonatomic, readonly) BOOL allowsExternalPlayback;
 @property (nonatomic, readonly) MPAlternateTracks *alternateTracks;
 @property (nonatomic, readonly) NSString *artist;
+@property (nonatomic, readonly) long long artistStoreID;
 @property (nonatomic, retain) NSArray *artworkTimeMarkers;
 @property (nonatomic, readonly) AVAsset *asset;
 @property (nonatomic, retain) NSError *assetError;
@@ -142,6 +145,7 @@
 @property (nonatomic, readonly) double playableDuration;
 @property (nonatomic, readonly) double playableDurationIfAvailable;
 @property (nonatomic) double playbackCheckpointCurrentTime;
+@property (nonatomic, readonly) int playbackMode;
 @property (nonatomic) MPAVController *player;
 @property (nonatomic, retain) AVPlayerItem *playerItem;
 @property (nonatomic, retain) <MPAVItemPlaylistIdentifier> *playlistIdentifier;
@@ -192,6 +196,7 @@
 - (void)_currentPlaybackRateDidChange:(float)arg1;
 - (double)_durationFromExternalMetadataIfAvailable;
 - (double)_durationInSeconds;
+- (int)_expectedPlaybackMode;
 - (void)_handleUpdatedLikedState:(int)arg1 completion:(id /* block */)arg2;
 - (id)_imageChapterTrackIDsForAsset:(id)arg1;
 - (void)_internalLikedStateDidChangeNotification:(id)arg1;
@@ -230,6 +235,7 @@
 - (unsigned int)alternatesCountForTypes:(unsigned int)arg1;
 - (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1;
 - (id)artist;
+- (long long)artistStoreID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)artworkTimeMarkerForTime:(double)arg1;
 - (id)artworkTimeMarkers;
@@ -303,6 +309,7 @@
 - (double)playableDuration;
 - (double)playableDurationIfAvailable;
 - (double)playbackCheckpointCurrentTime;
+- (int)playbackMode;
 - (float)playbackRateForLevel:(unsigned int)arg1 direction:(int)arg2 paused:(BOOL)arg3;
 - (id)player;
 - (id)playerItem;
@@ -311,6 +318,7 @@
 - (void)prepareForRate:(float)arg1 completionHandler:(id /* block */)arg2;
 - (struct CGSize { float x1; float x2; })presentationSize;
 - (id)queueIdentifier;
+- (void)reevaluatePlaybackMode;
 - (void)reevaluateType;
 - (void)replaceOutOfBandAlternateTextTracksWithArray:(id)arg1;
 - (void)replacePlayerItemWithPlayerItem:(id)arg1;

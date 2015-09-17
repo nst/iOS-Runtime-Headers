@@ -7,6 +7,9 @@
     NSPersistentStoreMap *_theMap;
 }
 
++ (id)metadataForPersistentStoreWithURL:(id)arg1 options:(id)arg2 error:(id*)arg3;
++ (BOOL)setMetadata:(id)arg1 forPersistentStoreWithURL:(id)arg2 options:(id)arg3 error:(id*)arg4;
+
 - (void)_addObject:(id)arg1 objectIDMap:(id)arg2;
 - (id)_pathFromURI:(id)arg1;
 - (id)_rawMetadata__;

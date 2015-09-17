@@ -7,13 +7,13 @@
     BWNodeOutput *_boxedMetadataOutput;
     BOOL _boxedMetadataOutputEnabled;
     struct OpaqueCMBlockBuffer { } *_emptyMetadataSampleData;
-    BOOL _lastBoxedFaceCount;
+    int _lastBoxedFaceCount;
     int _lastObjectFaceCount;
-    unsigned long _localIDOfDetectedFace;
-    unsigned long _localIDOfDetectedFaceBounds;
-    unsigned long _localIDOfDetectedFaceFaceID;
-    unsigned long _localIDOfDetectedFaceRoll;
-    unsigned long _localIDOfDetectedFaceYaw;
+    unsigned long _localIDOfDetectedFaceBounds_BE;
+    unsigned long _localIDOfDetectedFaceFaceID_BE;
+    unsigned long _localIDOfDetectedFaceRoll_BE;
+    unsigned long _localIDOfDetectedFaceYaw_BE;
+    unsigned long _localIDOfDetectedFace_BE;
     BWNodeOutput *_metadataObjectOutput;
     BOOL _metadataObjectOutputEnabled;
     struct { 

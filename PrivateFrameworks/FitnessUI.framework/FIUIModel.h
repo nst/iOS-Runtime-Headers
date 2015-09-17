@@ -27,25 +27,24 @@
 
 + (id)_dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id /* block */)arg6;
 + (void)_fakeActiveAndGoalHoursDataWithCompletion:(id /* block */)arg1;
-+ (id)_fakeCollectionForUnit:(id)arg1;
-+ (id)_statisticsCollectionQueryFromDate:(id)arg1 toDate:(id)arg2 intervalSize:(id)arg3 dataType:(id)arg4 predicate:(id)arg5 sendUpdates:(BOOL)arg6 handler:(id /* block */)arg7;
++ (id)_fakeCollectionForDataTypeIdentifier:(id)arg1 unit:(id)arg2;
++ (id)_statisticsCollectionQueryFromDate:(id)arg1 toDate:(id)arg2 intervalSize:(id)arg3 dataType:(id)arg4 predicate:(id)arg5 sendUpdates:(BOOL)arg6 seperateBySource:(BOOL)arg7 handler:(id /* block */)arg8;
 + (id)_unitForDataType:(id)arg1;
 + (id)activeAndIdleAndGoalHoursSampleQueryForDate:(id)arg1 predicate:(id)arg2 needsHourlyChartInfo:(BOOL)arg3 withCompletion:(id /* block */)arg4;
 + (id)activeAndIdleAndGoalHoursSampleQueryFromDate:(id)arg1 toDate:(id)arg2 predicate:(id)arg3 needsHourlyChartInfo:(BOOL)arg4 withCompletion:(id /* block */)arg5;
 + (id)activeAndIdleHoursObserverQueryForDate:(id)arg1 predicate:(id)arg2 withCompletion:(id /* block */)arg3;
 + (id)activeAndIdleHoursObserverQueryFromDate:(id)arg1 toDate:(id)arg2 predicate:(id)arg3 withCompletion:(id /* block */)arg4;
-+ (id)activeHourQuantityType;
-+ (id)activeHourUnit;
++ (id)activeEnergyQuantityType;
++ (id)activeHourCategoryType;
 + (id)briskActivityQuantityType;
 + (id)briskActivityUnit;
-+ (id)calorieQuantityType;
 + (id)calorieUnit;
 + (id)dailyTotalQueryForDate:(id)arg1 dataType:(id)arg2 predicate:(id)arg3 sendUpdates:(BOOL)arg4 handler:(id /* block */)arg5;
 + (id)dailyTotalsQueryFromDate:(id)arg1 toDate:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id /* block */)arg6;
 + (id)distanceQuantityType;
 + (id)distanceUnit;
-+ (id)statisticsCollectionQueryForDate:(id)arg1 intervalSize:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 handler:(id /* block */)arg6;
-+ (id)statisticsCollectionQueryFromDate:(id)arg1 toDate:(id)arg2 intervalSize:(id)arg3 dataType:(id)arg4 predicate:(id)arg5 sendUpdates:(BOOL)arg6 handler:(id /* block */)arg7;
++ (id)statisticsCollectionQueryForDate:(id)arg1 intervalSize:(id)arg2 dataType:(id)arg3 predicate:(id)arg4 sendUpdates:(BOOL)arg5 seperateBySource:(BOOL)arg6 handler:(id /* block */)arg7;
++ (id)statisticsCollectionQueryFromDate:(id)arg1 toDate:(id)arg2 intervalSize:(id)arg3 dataType:(id)arg4 predicate:(id)arg5 sendUpdates:(BOOL)arg6 seperateBySource:(BOOL)arg7 handler:(id /* block */)arg8;
 + (id)stepQuantityType;
 + (id)stepUnit;
 
@@ -70,5 +69,6 @@
 - (void)stopCurrentActivityCacheQueryForClientToken:(id)arg1;
 - (void)stopQuery:(id)arg1;
 - (id)weeklyGoalModel;
+- (void)weeklySummaryInfoForDate:(id)arg1 withCompletion:(id /* block */)arg2;
 
 @end

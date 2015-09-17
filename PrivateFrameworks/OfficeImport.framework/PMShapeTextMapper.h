@@ -14,6 +14,6 @@
 - (BOOL)isTableCellContent;
 - (void)mapAt:(id)arg1 withState:(id)arg2;
 - (void)setRectangular:(BOOL)arg1;
-- (int)textAnchor;
+- (unsigned char)textAnchor;
 
 @end

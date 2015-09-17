@@ -20,6 +20,7 @@
         unsigned int isDithered : 1; 
         unsigned int reserved : 3; 
     } pgeFlags;
+    float singlePixelDistance;
     float smoothingCoefficient;
 }
 
@@ -41,6 +42,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (float)fillCoefficient;
 - (struct _psdGradientColor { double x1; double x2; double x3; double x4; })fillColor;
+- (BOOL)hasDoubleColorStops;
+- (BOOL)hasDoubleOpacityStops;
 - (BOOL)hasEdgePixel;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithColorStops:(id)arg1 colorMidpoints:(id)arg2 opacityStops:(id)arg3 opacityMidpoints:(id)arg4 smoothingCoefficient:(float)arg5 fillCoefficient:(float)arg6;

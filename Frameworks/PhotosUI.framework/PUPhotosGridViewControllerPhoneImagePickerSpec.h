@@ -4,6 +4,7 @@
 
 @interface PUPhotosGridViewControllerPhoneImagePickerSpec : PUPhotosGridViewControllerPhoneSpec
 
+- (BOOL)canCommitPreview;
 - (BOOL)canDisplaySearchActionInNavigationBar;
 - (BOOL)displaysAvalancheStacks;
 

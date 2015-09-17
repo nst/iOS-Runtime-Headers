@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STTemperature : AFSiriModelObject {
+@interface STTemperature : STSiriModelObject {
     int _units;
     double _value;
 }

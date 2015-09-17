@@ -2,39 +2,46 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@interface SGContact : NSObject <SGObject> {
+@interface SGContact : NSObject <NSCopying, NSSecureCoding> {
     NSArray *_emailAddresses;
     SGName *_name;
     NSArray *_phones;
     NSArray *_postalAddresses;
+    SGRecordId *_recordId;
 }
 
-@property (nonatomic, readonly) NSArray *addresses;
 @property (nonatomic, readonly) NSArray *emailAddresses;
 @property (nonatomic, readonly) SGName *name;
 @property (nonatomic, readonly) NSArray *phones;
 @property (nonatomic, readonly) NSArray *postalAddresses;
+@property (nonatomic, readonly) SGRecordId *recordId;
 
-+ (id)contactWithName:(id)arg1 emailAddresses:(id)arg2 phones:(id)arg3 addresses:(id)arg4;
-+ (id)contactWithName:(id)arg1 emailAddresses:(id)arg2 phones:(id)arg3 postalAddresses:(id)arg4;
++ (id)contactWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)addresses;
+- (id)cnContact;
+- (BOOL)containsSuggestions;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)detailForRecordId:(id)arg1;
 - (id)emailAddresses;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasNonTrivialInfo;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 emailAddresses:(id)arg2 phones:(id)arg3 postalAddresses:(id)arg4;
+- (id)initWithId:(id)arg1 name:(id)arg2 emailAddresses:(id)arg3 phones:(id)arg4 postalAddresses:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToContact:(id)arg1;
 - (id)name;
 - (id)phones;
 - (id)postalAddresses;
+- (id)recordId;
 - (unsigned int)richness;
 - (void)setEmailAddresses:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setPhones:(id)arg1;
+- (void)setPostalAddresses:(id)arg1;
 
 @end

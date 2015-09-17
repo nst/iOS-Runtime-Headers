@@ -3,19 +3,19 @@
  */
 
 @interface PUFiltersToolController : PUPhotoEditToolController <UICollectionViewDataSource, UICollectionViewDelegate> {
+    unsigned int __cachedSelectionIndex;
     UICollectionView *__collectionView;
     UICollectionViewFlowLayout *__collectionViewLayout;
     BOOL __needsThumbnails;
-    unsigned int __selectedFilterIndex;
     NSMutableDictionary *__thumbnailImages;
     NSArray *_collectionViewConstraints;
     BOOL _didPerformInitialScrollToReveal;
 }
 
+@property (setter=_setCachedSelectionIndex:, nonatomic) unsigned int _cachedSelectionIndex;
 @property (setter=_setCollectionView:, nonatomic, retain) UICollectionView *_collectionView;
 @property (setter=_setCollectionViewLayout:, nonatomic, retain) UICollectionViewFlowLayout *_collectionViewLayout;
 @property (nonatomic, readonly) BOOL _needsThumbnails;
-@property (setter=_setSelectedFilterIndex:, nonatomic) unsigned int _selectedFilterIndex;
 @property (setter=_setThumbnailImages:, nonatomic, retain) NSMutableDictionary *_thumbnailImages;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -24,23 +24,21 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (unsigned int)_cachedSelectionIndex;
+- (void)_changeModelEffect:(id)arg1 explicitly:(BOOL)arg2;
 - (id)_collectionView;
 - (id)_collectionViewLayout;
-- (BOOL)_filterIdentifierIsNoneEffect:(id)arg1;
-- (BOOL)_filterWithIdentifier:(id)arg1 isEqualToFilterWithIdentifier:(id)arg2;
 - (void)_loadStateFromModelAnimated:(BOOL)arg1;
 - (BOOL)_needsThumbnails;
 - (void)_prepareThumbnailImagesIfNeeded;
 - (void)_saveThumbnail:(id)arg1 forIndex:(unsigned int)arg2;
-- (void)_scrollToNextEffectIfNecessaryIncludingOffscreen:(BOOL)arg1;
+- (void)_scrollToNextEffectIfNecessaryIncludingOffscreen:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_scrollToSelectedEffectAnimated:(BOOL)arg1;
-- (unsigned int)_selectedFilterIndex;
 - (id)_selectedIndexPath;
+- (void)_setCachedSelectionIndex:(unsigned int)arg1;
 - (void)_setCollectionView:(id)arg1;
 - (void)_setCollectionViewLayout:(id)arg1;
 - (void)_setNeedsThumbnails;
-- (void)_setSelectedFilterIndex:(unsigned int)arg1;
-- (void)_setSelectedFilterIndex:(unsigned int)arg1 animated:(BOOL)arg2 explicitly:(BOOL)arg3;
 - (void)_setThumbnailImages:(id)arg1;
 - (id)_thumbnailImageForIndex:(unsigned int)arg1;
 - (id)_thumbnailImages;

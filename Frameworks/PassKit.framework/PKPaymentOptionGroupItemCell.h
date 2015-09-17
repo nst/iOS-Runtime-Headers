@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentOptionGroupItemCell : UITableViewCell {
+@interface PKPaymentOptionGroupItemCell : PKTableViewCell {
     PKPaymentOptionGroupItem *_optionGroupItem;
 }
 

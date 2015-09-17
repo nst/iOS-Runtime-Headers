@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDDataEntity : HDHealthEntity <HDDataEntity>
+@interface HDDataEntity : HDHealthEntity <HDSQLiteEntity>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -13,47 +13,57 @@
 + (id)_aggregatedPropertySettersForDataObjectWithOrderedProperties:(id*)arg1;
 + (Class)_ancestorWithProperty:(id)arg1;
 + (Class)_associatedDataObjectClass;
-+ (id)_columnsSQL;
-+ (id)_dataObjectWithEntity:(id)arg1 type:(int)arg2 propertyApplier:(id)arg3 values:(id*)arg4 healthDaemon:(id)arg5;
++ (id)_dataObjectWithEntity:(id)arg1 type:(int)arg2 propertyApplier:(id)arg3 row:(struct HDSQLiteRow { }*)arg4 healthDaemon:(id)arg5;
 + (id)_databaseTable;
-+ (BOOL)_deleteDataEntityWithPredicate:(id)arg1 failIfNotFound:(BOOL)arg2 deletionContext:(id)arg3 error:(id*)arg4;
-+ (BOOL)_deleteDataObjectWithUUID:(id)arg1 sourceEntity:(id)arg2 failIfNotFound:(BOOL)arg3 deletionContext:(id)arg4 error:(id*)arg5;
-+ (id)_insertDataObject:(id)arg1 withProvenance:(int)arg2 sourceEntity:(id)arg3 inDatabase:(id)arg4 error:(id*)arg5;
++ (BOOL)_deleteDataEntityWithPredicate:(id)arg1 restrictedSourceEntity:(id)arg2 failIfNotFound:(BOOL)arg3 deletionContext:(id)arg4 provenanceIdentifier:(id*)arg5 error:(id*)arg6;
++ (BOOL)_deleteDataObjectWithUUID:(id)arg1 type:(int)arg2 restrictedSourceEntity:(id)arg3 failIfNotFound:(BOOL)arg4 deletionContext:(id)arg5 provenanceIdentifier:(id*)arg6 error:(id*)arg7;
++ (Class)_deletedEntityClass;
++ (id)_insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 error:(id*)arg4;
 + (id)_propertiesForFetchingDataObjectsWithAssociations:(id)arg1;
 + (id)_propertySettersForDataObject;
 + (void)_removeObjectWithPersistentID:(long long)arg1 database:(id)arg2;
-+ (id)_tableValuesFromDataObject:(id)arg1;
 + (BOOL)acceptsObject:(id)arg1;
++ (BOOL)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (BOOL)addCodableObjectsToCollections:(id)arg1 excludedSyncStore:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 lastSyncAnchor:(long long*)arg4 predicate:(id)arg5 limit:(unsigned int)arg6 healthDaemon:(id)arg7 error:(id*)arg8;
++ (id)anyInDatabase:(id)arg1 predicate:(id)arg2;
 + (id)associationPropertyForEntityClass:(Class)arg1;
-+ (id)codableObjectCollectionsWithExcludedSyncStore:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 limit:(unsigned int)arg4 healthDaemon:(id)arg5 error:(id*)arg6;
++ (id)codableObjectCollectionsWithExcludedSyncStore:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 predicate:(id)arg4 limit:(unsigned int)arg5 healthDaemon:(id)arg6 error:(id*)arg7;
 + (id)codableObjectsFromObjectCollection:(id)arg1;
++ (id)codableRepresentationEncoderForHealthDaemon:(id)arg1 database:(id)arg2;
 + (id)columnNameForSortIdentifier:(id)arg1;
++ (id)columnsDefinition;
 + (int)countOfObjectsOfType:(int)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 withError:(id*)arg4;
-+ (id)createTableSQL;
 + (id)dataEntityForObject:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (id)databaseTable;
-+ (BOOL)deleteDataObjects:(id)arg1 sourceEntity:(id)arg2 failIfNotFound:(BOOL)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
-+ (BOOL)deleteDataObjects:(id)arg1 sourceEntity:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (void)deleteDataObjects:(id)arg1 restrictedSourceEntity:(id)arg2 failIfNotFound:(BOOL)arg3 healthDaemon:(id)arg4 completionHandler:(id /* block */)arg5;
++ (BOOL)deleteDataObjects:(id)arg1 restrictedSourceEntity:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)deleteStatementsForRelatedEntitiesInDatabase:(id)arg1;
 + (id)disambiguatedSQLForProperty:(id)arg1;
-+ (id)entitiesToDeleteBeforeInsertingObject:(id)arg1 sourceEntity:(id)arg2 database:(id)arg3;
++ (id)entitiesToDeleteBeforeInsertingObject:(id)arg1 provenance:(id)arg2 error:(id*)arg3 database:(id)arg4;
 + (void)enumerateObjectsOfType:(int)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id /* block */)arg5 limit:(unsigned int)arg6 anchor:(id*)arg7 handler:(id /* block */)arg8;
 + (void)enumerateObjectsOfType:(int)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id /* block */)arg5 orderBy:(id)arg6 directions:(id)arg7 limit:(unsigned int)arg8 handler:(id /* block */)arg9;
 + (void)enumerateObjectsWithHealthDaemon:(id)arg1 predicate:(id)arg2 sourceIdentifier:(id)arg3 authorizationFilter:(id /* block */)arg4 orderBy:(id)arg5 directions:(id)arg6 limit:(unsigned int)arg7 handler:(id /* block */)arg8;
-+ (id)insertDataObject:(id)arg1 withProvenance:(int)arg2 sourceEntity:(id)arg3 creationDate:(id)arg4 healthDaemon:(id)arg5 error:(id*)arg6;
-+ (void)insertDataObjects:(id)arg1 withProvenance:(int)arg2 sourceEntity:(id)arg3 creationDate:(id)arg4 healthDaemon:(id)arg5 completionHandler:(id /* block */)arg6;
++ (id)foreignDatabaseColumnForProperty:(id)arg1;
++ (id)foreignDatabaseTableForProperty:(id)arg1;
++ (id)foreignKeyColumnForTable:(id)arg1;
++ (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 creationDate:(double)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id*)arg5;
++ (void)insertDataObjects:(id)arg1 withProvenance:(id)arg2 creationDate:(double)arg3 healthDaemon:(id)arg4 skipInsertionFilter:(BOOL)arg5 completionHandler:(id /* block */)arg6;
 + (BOOL)isBackedByTable;
-+ (id)joinClauseForProperty:(id)arg1;
++ (id)joinClausesForProperty:(id)arg1;
++ (BOOL)journalObjects:(id)arg1 withProvenance:(id)arg2 creationDate:(double)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (id /* block */)objectInsertionFilter;
 + (id)objectWithUUID:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (int)preferredEntityType;
 + (Class)propertyApplierClass;
 + (id)propertyApplierWithProperties:(id)arg1 propertySetters:(id)arg2 authorizationFilter:(id /* block */)arg3 database:(id)arg4;
 + (id)propertyForSyncProvenance;
++ (id)propertySettersAndOrderedProperties:(id*)arg1;
 + (int)protectionClass;
++ (BOOL)requiresSampleTypePredicate;
 + (id)sourceIDsForObjectsOfType:(int)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
 
-- (id)_dataID;
-- (id)dataAnchor;
+- (long long)_dataID;
+- (long long)dataAnchor;
 
 @end

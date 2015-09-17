@@ -40,6 +40,9 @@
 @property (nonatomic, retain) SKUIResourceLoader *resourceLoader;
 @property (nonatomic, retain) UIColor *tintColor;
 
++ (float)_calculateValueFromString:(id)arg1 withDefault:(float)arg2 coefficent:(float)arg3;
++ (float)itemWidthForElement:(id)arg1 withDefaultWidth:(float)arg2 fitWidth:(float)arg3;
+
 - (void).cxx_destruct;
 - (void)_artworkRequestDidLoadImageNotification:(id)arg1;
 - (id)_initSKUIViewElementLayoutContext;

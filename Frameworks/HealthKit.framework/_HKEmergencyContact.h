@@ -4,34 +4,44 @@
 
 @interface _HKEmergencyContact : NSObject <NSCopying, NSSecureCoding> {
     NSString *_name;
+    NSString *_nameContactIdentifier;
     NSNumber *_nameRecordID;
     NSString *_phoneNumber;
+    NSString *_phoneNumberContactIdentifier;
     NSNumber *_phoneNumberPropertyID;
     NSString *_relationship;
 }
 
 @property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *nameContactIdentifier;
 @property (nonatomic, retain) NSNumber *nameRecordID;
 @property (nonatomic, retain) NSString *phoneNumber;
+@property (nonatomic, retain) NSString *phoneNumberContactIdentifier;
 @property (nonatomic, retain) NSNumber *phoneNumberPropertyID;
 @property (nonatomic, retain) NSString *relationship;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_migrateToAddressBook:(void*)arg1;
+- (void)_migrateToContactsWithAddressBook:(void*)arg1;
 - (void)_migrateToSchemaVersion:(int)arg1 withAddressBook:(void*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)name;
+- (id)nameContactIdentifier;
 - (id)nameRecordID;
 - (id)phoneNumber;
+- (id)phoneNumberContactIdentifier;
 - (id)phoneNumberPropertyID;
 - (id)relationship;
 - (void)setName:(id)arg1;
+- (void)setNameContactIdentifier:(id)arg1;
 - (void)setNameRecordID:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
+- (void)setPhoneNumberContactIdentifier:(id)arg1;
 - (void)setPhoneNumberPropertyID:(id)arg1;
 - (void)setRelationship:(id)arg1;
 

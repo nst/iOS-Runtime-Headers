@@ -77,6 +77,7 @@
 - (void)_setCachedLocationsByMoment:(id)arg1;
 - (BOOL)_shouldMegaMomentList:(id)arg1 includeMoment:(id)arg2 withPeakMoment:(id)arg3 recentMoment:(id)arg4 recentMomentWithLocation:(id)arg5 forwards:(BOOL)arg6 haveRejectedMomentsForDistance:(BOOL)arg7;
 - (BOOL)_updateMegaMomentList:(id)arg1 withRejectedMoments:(id)arg2;
+- (void)_updateMomentList:(id)arg1 withStartDate:(id)arg2 endDate:(id)arg3;
 - (void)_verifyMomentsAreSorted:(id)arg1;
 - (id)_visitedMoments;
 - (BOOL)allowsCollectionAccumulation;

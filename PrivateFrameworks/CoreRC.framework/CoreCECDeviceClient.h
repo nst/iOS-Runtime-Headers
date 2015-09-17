@@ -6,7 +6,6 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)activeSourceStatusUpdated:(BOOL)arg1;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)deckControlCommandWithMode:(unsigned int)arg1 target:(id)arg2 error:(id*)arg3;
@@ -21,6 +20,7 @@
 - (BOOL)refreshProperties:(id)arg1 ofDevice:(id)arg2 error:(id*)arg3;
 - (BOOL)requestActiveSource:(id*)arg1;
 - (BOOL)resignActiveSource:(id*)arg1;
+- (BOOL)setPowerStatus:(unsigned int)arg1 error:(id*)arg2;
 - (BOOL)setSystemAudioControlEnabled:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)systemAudioModeRequest:(unsigned int)arg1 error:(id*)arg2;
 

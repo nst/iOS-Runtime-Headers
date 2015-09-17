@@ -3,6 +3,10 @@
  */
 
 @interface VKSkyModel : VKModelObject <VKMapLayer, VKStyleManagerObserver> {
+    struct shared_ptr<ggl::ConstantDataTyped<ggl::Sky::Style> > { 
+        struct ConstantDataTyped<ggl::Sky::Style> {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _constantData;
     struct Matrix<float, 4, 1> { 
         float _e[4]; 
     } _fillColor;
@@ -29,17 +33,13 @@
         struct __shared_weak_count {} *__cntrl_; 
     } _shaderSetup;
     float _skyStartOffset;
-    struct shared_ptr<ggl::Sky::SkyUniformData> { 
-        struct SkyUniformData {} *__ptr_; 
-        struct __shared_weak_count {} *__cntrl_; 
-    } _uniformData;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) VKMapModel *mapModel;
-@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 
 + (BOOL)reloadOnStylesheetChange;
@@ -57,7 +57,7 @@
 - (void)setHorizonColor:(struct Matrix<float, 4, 1> { float x1[4]; })arg1;
 - (void)setMapModel:(id)arg1;
 - (BOOL)shouldLayoutWithoutStyleManager;
-- (id)styleManager;
+- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (void)stylesheetDidChange;
 - (void)updateStyle;
 

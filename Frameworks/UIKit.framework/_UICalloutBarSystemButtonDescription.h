@@ -16,9 +16,9 @@
 + (id)buttonDescriptionWithImage:(id)arg1 action:(SEL)arg2 type:(int)arg3;
 + (id)buttonDescriptionWithTitle:(id)arg1 action:(SEL)arg2 type:(int)arg3;
 
+- (void).cxx_destruct;
 - (SEL)action;
 - (id /* block */)configurationBlock;
-- (void)dealloc;
 - (id)initWithTitle:(id)arg1 orImage:(id)arg2 action:(SEL)arg3 type:(int)arg4;
 - (id)materializeButtonInView:(id)arg1;
 - (void)setConfigurationBlock:(id /* block */)arg1;

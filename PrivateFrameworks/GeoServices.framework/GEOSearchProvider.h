@@ -11,7 +11,7 @@
 - (void)cancel;
 - (void)dealloc;
 - (id /* block */)error;
-- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id /* block */)arg4 refinement:(id /* block */)arg5 error:(id /* block */)arg6 isCompletions:(BOOL)arg7;
+- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id /* block */)arg4 error:(id /* block */)arg5;
 - (void)setError:(id /* block */)arg1;
 
 @end

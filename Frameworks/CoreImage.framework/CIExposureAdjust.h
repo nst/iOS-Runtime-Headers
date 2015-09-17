@@ -16,7 +16,6 @@
 - (id)inputEV;
 - (id)inputImage;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputEV:(id)arg1;
 - (void)setInputImage:(id)arg1;
 

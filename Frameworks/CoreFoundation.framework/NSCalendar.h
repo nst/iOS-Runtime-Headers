@@ -143,18 +143,21 @@
 - (id)hk_startOfDateByAddingDays:(int)arg1 toDate:(id)arg2;
 - (id)hk_startOfDateBySubtractingDays:(int)arg1 fromDate:(id)arg2;
 - (id)hk_startOfFitnessWeekBeforeDate:(id)arg1;
+- (id)hk_startOfWeekWithFirstWeekday:(int)arg1 beforeDate:(id)arg2;
+- (id)hk_weekendDays;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
-+ (id)_mapkit_gregorianCalendar;
-
+- (id)_maps_dateStringForDate:(id)arg1 withStyle:(unsigned int)arg2 useRelativeFormatting:(BOOL)arg3 inTimeZone:(id)arg4;
 - (BOOL)_maps_isDateInToday:(id)arg1 inTimeZone:(id)arg2;
+- (BOOL)_maps_isDateInTomorrow:(id)arg1 inTimeZone:(id)arg2;
 - (id)_maps_offsetDate:(id)arg1 toTimeZone:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
 - (id)_dateOnlyComponentsForDate:(id)arg1;
 - (id)_timeOnlyComponentsForDate:(id)arg1;
+- (unsigned int)bs_dayPeriodForDate:(id)arg1 inLocale:(id)arg2;
 - (BOOL)date:(id)arg1 isSameDayAsDate:(id)arg2;
 - (BOOL)date:(id)arg1 isSameYearAsDate:(id)arg2;
 
@@ -166,6 +169,7 @@
 + (id)overlayCalendarForCalendarIdentifier:(id)arg1 timezone:(id)arg2;
 + (id)sharedAutoupdatingCurrentCalendar;
 
+- (id)CalDateBySubtractingComponents:(id)arg1 fromDate:(id)arg2;
 - (id)CalDateFromComponents:(id)arg1 inTimeZone:(id)arg2;
 - (id)CalOccurrencesForBirthday:(id)arg1 inDateRange:(id)arg2;
 - (int)calendarDaysFromDate:(id)arg1 toDate:(id)arg2;
@@ -187,11 +191,14 @@
 
 - (unsigned int)__ck_unitOfDisambiguityFromDate:(id)arg1 toDate:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
+// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 
-- (id)_dateOnlyComponentsForDate:(id)arg1;
-- (id)_timeOnlyComponentsForDate:(id)arg1;
-- (BOOL)date:(id)arg1 isSameDayAsDate:(id)arg2;
-- (BOOL)date:(id)arg1 isSameYearAsDate:(id)arg2;
+- (int)_cd_daysFromDate:(id)arg1 toDate:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
+- (id)hk_startOfMonthForDate:(id)arg1;
+- (id)hk_startOfTomorrowForDate:(id)arg1;
+- (id)hk_yesterdayAtNoonForDate:(id)arg1;
 
 @end

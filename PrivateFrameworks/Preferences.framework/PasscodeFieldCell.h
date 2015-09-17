@@ -15,12 +15,14 @@
 @property (nonatomic) BOOL denyFirstResponder;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PSPasscodeField *passcodeField;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_setSecureTextEntry:(BOOL)arg1;
 - (BOOL)becomeFirstResponder;
+- (void)cellTapped:(id)arg1;
 - (BOOL)convertsNumeralsToASCII;
-- (void)dealloc;
 - (id)delegate;
 - (void)deleteBackward;
 - (BOOL)denyFirstResponder;
@@ -28,6 +30,7 @@
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
 - (int)keyboardType;
 - (void)layoutSubviews;
+- (id)passcodeField;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
 - (id)passcodeField:(id)arg1 shouldInsertText:(id)arg2;
 - (id)passcodeText;

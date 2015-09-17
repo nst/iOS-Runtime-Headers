@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleSubscriptionFetched:(id)arg1 withID:(id)arg2 responseCode:(id)arg3;
+- (unsigned long long)activityStart;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (BOOL)isFetchAllSubscriptionsOperation;
 - (void)main;

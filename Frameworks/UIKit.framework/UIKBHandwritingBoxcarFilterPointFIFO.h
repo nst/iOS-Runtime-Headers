@@ -10,7 +10,7 @@
 @property (nonatomic, retain) NSMutableArray *prevPoints;
 @property (nonatomic) unsigned int width;
 
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addPoint:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
 - (void)clear;
 - (void)dealloc;
 - (void)emitAveragedPoint;

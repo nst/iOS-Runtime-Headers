@@ -106,6 +106,6 @@
 - (void)setDrawRoadSigns:(BOOL)arg1;
 - (void)setRoute:(id)arg1;
 - (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
-- (void)setStyleManager:(id)arg1;
+- (void)setStyleManager:(struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })arg1;
 
 @end

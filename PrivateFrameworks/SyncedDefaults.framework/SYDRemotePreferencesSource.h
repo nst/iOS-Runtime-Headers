@@ -5,6 +5,7 @@
 @interface SYDRemotePreferencesSource : NSObject {
     BOOL _forceNextSynchronization;
     long _generationCount;
+    NSObject<OS_os_transaction> *_isExecutingForClient;
     double _lastAccess;
     long _lastGenerationFromDisk;
     NSObject<OS_dispatch_source> *_memoryWarningSource;
@@ -34,6 +35,8 @@
 - (void)_createMemoryWarningSource;
 - (void)_didReceiveMemoryWarning;
 - (void)_forceRegistrationNow;
+- (void)_locked_syd_end_transaction;
+- (void)_locked_syd_start_transaction;
 - (void)_storeConfiguration:(struct __CFDictionary { }*)arg1;
 - (unsigned char)_synchronizeForced:(unsigned char)arg1;
 - (id)_warningSource;
@@ -56,6 +59,7 @@
 - (long)maximumKeyCount;
 - (long)maximumKeyLength;
 - (long)maximumTotalDataLength;
+- (void)ping;
 - (void)registerForSynchronizedDefaults;
 - (void)scheduleRemoteSynchronization;
 - (id)serverSideDebugDescription;

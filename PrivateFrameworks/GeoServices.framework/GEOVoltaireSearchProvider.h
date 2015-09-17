@@ -5,7 +5,6 @@
 @interface GEOVoltaireSearchProvider : GEOSearchProvider <PBRequesterDelegate> {
     BOOL _cancelled;
     id /* block */ _finished;
-    id /* block */ _refinement;
     GEORequester *_requester;
 }
 
@@ -14,13 +13,11 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (id)_searchURLForRequest:(id)arg1;
-
 - (void)cancel;
 - (void)dealloc;
 - (void)requester:(id)arg1 didFailWithError:(id)arg2;
 - (void)requesterDidCancel:(id)arg1;
 - (void)requesterDidFinish:(id)arg1;
-- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id /* block */)arg4 refinement:(id /* block */)arg5 error:(id /* block */)arg6 isCompletions:(BOOL)arg7;
+- (void)search:(id)arg1 timeout:(int)arg2 useBackgroundConnection:(BOOL)arg3 finished:(id /* block */)arg4 error:(id /* block */)arg5;
 
 @end

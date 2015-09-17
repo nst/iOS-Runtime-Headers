@@ -5,13 +5,16 @@
 @interface _MKSearchTicket : _MKTicket <MKMapServiceSearchTicket>
 
 @property (nonatomic, readonly) GEOMapRegion *boundingRegion;
+@property (getter=isChainResultSet, nonatomic, readonly) BOOL chainResultSet;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSError *error;
 @property (nonatomic, readonly) NSArray *exactMapItems;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *refinedMapItems;
+@property (nonatomic, readonly) double requestResponseTime;
 @property (nonatomic, readonly) NSString *searchQuery;
+@property (nonatomic, readonly) NSString *sectionHeader;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 

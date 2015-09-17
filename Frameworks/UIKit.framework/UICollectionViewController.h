@@ -2,13 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface UICollectionViewController : UIViewController <UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewFocusDelegate_Legacy, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Deprecated, _UIKeyboardAutoRespondingScrollViewController> {
     UICollectionView *_collectionView;
     struct { 
         unsigned int clearsSelectionOnViewWillAppear : 1; 
         unsigned int useLayoutToLayoutNavigationTransitions : 1; 
+        unsigned int installsStandardReorderingGesture : 1; 
     } _collectionViewControllerFlags;
+    UIAutoRespondingScrollViewControllerKeyboardSupport *_keyboardSupport;
     UICollectionViewLayout *_layout;
+    UILongPressGestureRecognizer *_reorderingGesture;
 }
 
 @property (nonatomic) BOOL clearsSelectionOnViewWillAppear;
@@ -17,16 +20,25 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL installsStandardGestureForInteractiveMovement;
+@property (getter=_scrollView, nonatomic, readonly, retain) UIScrollView<_UIKeyboardAutoRespondingScrollView> *scrollView;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL useLayoutToLayoutNavigationTransitions;
 
+- (void).cxx_destruct;
+- (void)__viewDidAppear:(BOOL)arg1;
 - (void)__viewWillAppear:(BOOL)arg1;
 - (id)_animatorForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 - (void)_clearSharedView;
+- (void)_handleReorderingGesture:(id)arg1;
+- (void)_installReorderingGestureIfNecessary;
 - (id)_newCollectionViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 collectionViewLayout:(id)arg2;
+- (id)_scrollView;
 - (void)_setSharedCollectionView:(id)arg1;
 - (void)_setUseLayoutToLayoutNavigationTransitions:(BOOL)arg1 withCheck:(BOOL)arg2;
+- (BOOL)_shouldRespondToPreviewingMethods;
 - (id)_uiCollectionView;
+- (void)_updateCollectionViewLayoutAndDelegate:(id)arg1;
 - (id)_wrappingView;
 - (BOOL)clearsSelectionOnViewWillAppear;
 - (id)collectionView;
@@ -40,15 +52,27 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCollectionViewLayout:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)installsStandardGestureForInteractiveMovement;
 - (void)loadView;
 - (id)preferredFocusedItem;
+- (id)previewViewControllerForItemAtIndexPath:(id)arg1;
+- (id)previewViewControllerForLocation:(struct CGPoint { float x1; float x2; })arg1 inSourceView:(id)arg2;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
 - (void)setCollectionView:(id)arg1;
+- (void)setInstallsStandardGestureForInteractiveMovement:(BOOL)arg1;
 - (void)setUseLayoutToLayoutNavigationTransitions:(BOOL)arg1;
 - (void)setView:(id)arg1;
 - (BOOL)shouldCrossFadeBottomBars;
 - (BOOL)shouldCrossFadeNavigationBar;
 - (BOOL)useLayoutToLayoutNavigationTransitions;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillUnload;
+- (void)willPresentPreviewViewController:(id)arg1 forItemAtIndexPath:(id)arg2;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forPosition:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

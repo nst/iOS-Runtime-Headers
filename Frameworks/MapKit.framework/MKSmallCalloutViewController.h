@@ -16,7 +16,7 @@
 @property (nonatomic, retain) UIView *detailView;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *leftView;
-@property (nonatomic) unsigned int mapDisplayStyle;
+@property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; } mapDisplayStyle;
 @property (nonatomic) float maximumWidth;
 @property (nonatomic, retain) UIView *rightView;
 @property (readonly) Class superclass;
@@ -35,7 +35,7 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)leftView;
 - (void)loadView;
-- (unsigned int)mapDisplayStyle;
+- (struct { unsigned char x1; unsigned char x2; unsigned char x3; })mapDisplayStyle;
 - (float)maximumWidth;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)reset;
@@ -49,7 +49,7 @@
 - (void)setDetailView:(id)arg1 animated:(BOOL)arg2;
 - (void)setLeftView:(id)arg1;
 - (void)setLeftView:(id)arg1 animated:(BOOL)arg2;
-- (void)setMapDisplayStyle:(unsigned int)arg1;
+- (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setMaximumWidth:(float)arg1;
 - (void)setRightView:(id)arg1;
 - (void)setRightView:(id)arg1 animated:(BOOL)arg2;

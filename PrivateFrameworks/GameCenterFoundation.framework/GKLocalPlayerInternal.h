@@ -7,10 +7,13 @@
     NSArray *_emailAddresses;
     NSString *_facebookUserID;
     NSNumber *_iCloudUserID;
+    unsigned int _loginStatus;
     unsigned short _numberOfChallenges;
     unsigned short _numberOfRequests;
     unsigned short _numberOfTurns;
 }
+
+@property unsigned int loginStatus;
 
 + (id)secureCodedPropertyKeys;
 
@@ -26,6 +29,7 @@
 - (BOOL)isPhotoPending;
 - (BOOL)isPurpleBuddyAccount;
 - (BOOL)isUnderage;
+- (unsigned int)loginStatus;
 - (unsigned short)numberOfChallenges;
 - (unsigned short)numberOfRequests;
 - (unsigned short)numberOfTurns;
@@ -34,6 +38,7 @@
 - (void)setFacebookUserID:(id)arg1;
 - (void)setFindable:(BOOL)arg1;
 - (void)setICloudUserID:(id)arg1;
+- (void)setLoginStatus:(unsigned int)arg1;
 - (void)setNumberOfChallenges:(unsigned short)arg1;
 - (void)setNumberOfRequests:(unsigned short)arg1;
 - (void)setNumberOfTurns:(unsigned short)arg1;

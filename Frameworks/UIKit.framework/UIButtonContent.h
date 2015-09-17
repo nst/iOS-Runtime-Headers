@@ -24,10 +24,10 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) UIColor *titleColor;
 
+- (void).cxx_destruct;
 - (id)attributedTitle;
 - (id)background;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)drawingStroke;
 - (void)encodeWithCoder:(id)arg1;

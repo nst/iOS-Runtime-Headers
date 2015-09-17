@@ -4,16 +4,27 @@
 
 @interface _UIDocumentPickerManagementViewController : UITableViewController {
     NSArray *_allPickers;
+    NSArray *_fileTypes;
+    unsigned int _mode;
 }
 
 @property (nonatomic, retain) NSArray *allPickers;
+@property (nonatomic, retain) NSArray *fileTypes;
+@property (nonatomic) unsigned int mode;
 
+- (void).cxx_destruct;
 - (void)_doneButtonPressed;
 - (id)allPickers;
-- (id)init;
+- (id)fileTypes;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFileTypes:(id)arg1 mode:(unsigned int)arg2;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithStyle:(int)arg1;
+- (unsigned int)mode;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)setAllPickers:(id)arg1;
+- (void)setFileTypes:(id)arg1;
+- (void)setMode:(unsigned int)arg1;
 - (void)switchToggled:(id)arg1;
 - (BOOL)tableView:(id)arg1 canMoveRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

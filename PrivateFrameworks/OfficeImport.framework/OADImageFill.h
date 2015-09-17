@@ -8,8 +8,6 @@
     BOOL mIsBlipRefOverridden;
     BOOL mIsDpiOverridden;
     BOOL mIsRotateWithShapeOverridden;
-    BOOL mIsSourceRectOverridden;
-    BOOL mIsTechniqueOverridden;
     BOOL mRotateWithShape;
     OADRelativeRect *mSourceRect;
     OADImageFillTechnique *mTechnique;
@@ -22,14 +20,17 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (long)dpi;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithDefaults;
+- (BOOL)isAnythingOverridden;
 - (BOOL)isBlipRefOverridden;
 - (BOOL)isDpiOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isRotateWithShapeOverridden;
 - (BOOL)isSourceRectOverridden;
 - (BOOL)isTechniqueOverridden;
+- (void)removeUnnecessaryOverrides;
 - (BOOL)rotateWithShape;
 - (void)setBlipRef:(id)arg1;
 - (void)setDpi:(long)arg1;

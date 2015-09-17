@@ -26,6 +26,7 @@
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 
+- (void)_closeOnDealloc;
 - (id)availableData;
 - (Class)classForCoder;
 - (void)closeFile;
@@ -50,7 +51,7 @@
 - (void)writeData:(id)arg1;
 - (id /* block */)writeabilityHandler;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 - (BOOL)hk_readValue:(void*)arg1 ofSize:(unsigned long)arg2;
 - (BOOL)hk_writeValue:(const void*)arg1 size:(unsigned long)arg2;

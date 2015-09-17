@@ -8,6 +8,7 @@
 @property (nonatomic, copy) NSString *category;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSDictionary *eventInformation;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *originalCommandId;
 @property (nonatomic, copy) NSString *refId;
@@ -19,9 +20,11 @@
 
 - (id)category;
 - (id)encodedClassName;
+- (id)eventInformation;
 - (id)groupIdentifier;
 - (id)originalCommandId;
 - (void)setCategory:(id)arg1;
+- (void)setEventInformation:(id)arg1;
 - (void)setOriginalCommandId:(id)arg1;
 - (void)setTimings:(id)arg1;
 - (id)timings;

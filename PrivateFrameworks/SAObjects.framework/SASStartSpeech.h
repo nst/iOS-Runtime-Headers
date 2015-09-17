@@ -26,6 +26,7 @@
 @property (nonatomic, copy) NSString *origin;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSDictionary *voiceTriggerEventInfo;
 
 + (id)startSpeech;
 + (id)startSpeechWithDictionary:(id)arg1 context:(id)arg2;
@@ -64,5 +65,7 @@
 - (void)setMotionConfidence:(id)arg1;
 - (void)setNoiseReductionLevel:(id)arg1;
 - (void)setOrigin:(id)arg1;
+- (void)setVoiceTriggerEventInfo:(id)arg1;
+- (id)voiceTriggerEventInfo;
 
 @end

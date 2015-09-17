@@ -10,7 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (copy) NSData *snapshotData;
+@property (nonatomic, copy) NSData *snapshotData;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;

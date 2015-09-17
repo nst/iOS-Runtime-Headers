@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSSceneOcclusion : NSObject <BSXPCCoding> {
+@interface FBSSceneOcclusion : NSObject <BSDescriptionProviding, BSXPCCoding> {
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -26,11 +26,15 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRect;
 - (id)_initWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithXPCDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToOcclusion:(id)arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 
 @end

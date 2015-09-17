@@ -11,6 +11,7 @@
 @property (nonatomic) int statusBarStyle;
 @property (nonatomic) WebAppController *webAppController;
 
+- (void).cxx_destruct;
 - (int)preferredStatusBarStyle;
 - (void)setStatusBarStyle:(int)arg1;
 - (void)setWebAppController:(id)arg1;

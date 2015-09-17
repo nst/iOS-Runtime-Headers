@@ -21,6 +21,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIScrollView *targetScrollView;
 
+- (void).cxx_destruct;
 - (void)_didScroll;
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
 - (id)autoscroll;

@@ -4,12 +4,11 @@
 
 @interface VKMapSnapshotServer : NSObject {
     NSObject<OS_dispatch_queue> *_homeQueue;
-    BOOL _softwareRendering;
 }
 
 - (void)_renderRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)dealloc;
-- (id)initWithSoftwareRendering:(BOOL)arg1 homeQueue:(id)arg2;
+- (id)initWithHomeQueue:(id)arg1;
 - (void)renderRequest:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -8,13 +8,16 @@
 
 @property (nonatomic, copy) NSString *action;
 
-- (void)_perform:(id)arg1;
-- (id)_unwindExecutorForTarget:(id)arg1;
-- (id)_unwindTargetForSelector:(SEL)arg1 withSender:(id)arg2;
+- (void).cxx_destruct;
+- (id)_legacyUnwindExecutorForTarget:(id)arg1;
+- (id)_perform:(id)arg1;
+- (id)_performWithDestinationViewController:(id)arg1 sender:(id)arg2;
 - (id)action;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)instantiateOrFindDestinationViewControllerWithSender:(id)arg1;
+- (id /* block */)newDefaultPerformHandlerForSegue:(id)arg1;
+- (id)segueWithDestinationViewController:(id)arg1;
 - (void)setAction:(id)arg1;
 
 @end

@@ -16,6 +16,7 @@
 - (void)tableView:(MusicTableView *)arg1 willDeselectHeaderViewForSection:(int)arg2;
 - (void)tableView:(MusicTableView *)arg1 willSelectHeaderViewForSection:(int)arg2;
 - (void)tableViewDidLayoutSubviews:(MusicTableView *)arg1;
+- (void)tableViewLayoutMarginsDidChange:(MusicTableView *)arg1;
 - (void)tableViewTintColorDidChange:(MusicTableView *)arg1;
 
 @end

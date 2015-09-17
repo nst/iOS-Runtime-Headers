@@ -7,14 +7,19 @@
     float _contentScale;
     VKTileKeyList *_decoding;
     VKTileKeyList *_failedTiles;
+    NSObject<OS_dispatch_queue> *_homeQueue;
     NSLocale *_locale;
     GEOResourceManifestConfiguration *_manifestConfiguration;
+    int _mapType;
     VKTileKeyMap *_pendingLoads;
     BOOL _preloadOnly;
     NSError *_recentError;
     BOOL _requireWiFi;
     VKSharedResources *_sharedResources;
-    VKStyleManager *_styleManager;
+    struct shared_ptr<gss::StyleManager> { 
+        struct StyleManager {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _styleManager;
     NSString *_tileLoaderClientIdentifier;
     VKTilePool *_tilePool;
     int loadingTiles;
@@ -23,6 +28,7 @@
 @property (nonatomic) <VKTileSourceClient> *client;
 @property (nonatomic) float contentScale;
 @property (nonatomic, readonly) struct Device { }*device;
+@property (nonatomic) int mapType;
 @property (nonatomic, readonly) unsigned int maximumDownloadZoomLevel;
 @property (nonatomic, readonly) int maximumZoomLevel;
 @property (nonatomic, readonly) BOOL maximumZoomLevelBoundsCamera;
@@ -32,10 +38,12 @@
 @property (nonatomic) BOOL preloadOnly;
 @property (nonatomic) BOOL requireWiFi;
 @property (nonatomic, retain) VKSharedResources *sharedResources;
-@property (nonatomic, retain) VKStyleManager *styleManager;
+@property (nonatomic) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (nonatomic, readonly) int tileSize;
 @property (nonatomic, readonly) int zEquivalenceClass;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (id)_extraInfoForPendingSourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (void)_failedToLoadSourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 error:(id)arg3;
 - (void)_fetchedTile:(id)arg1;
@@ -66,6 +74,7 @@
 - (void)foreachTileInPool:(id /* block */)arg1;
 - (id)init;
 - (id)initWithResourceManifestConfiguration:(id)arg1 locale:(id)arg2;
+- (int)mapType;
 - (unsigned int)maximumDownloadZoomLevel;
 - (int)maximumZoomLevel;
 - (BOOL)maximumZoomLevelBoundsCamera;
@@ -80,14 +89,15 @@
 - (BOOL)requireWiFi;
 - (void)setClient:(id)arg1;
 - (void)setContentScale:(float)arg1;
+- (void)setMapType:(int)arg1;
 - (void)setPreloadOnly:(BOOL)arg1;
 - (void)setRequireWiFi:(BOOL)arg1;
 - (void)setSharedResources:(id)arg1;
-- (void)setStyleManager:(id)arg1;
+- (void)setStyleManager:(struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (id)sharedResources;
 - (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })sourceKeyForDownloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; })sourceKeyForRenderKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
-- (id)styleManager;
+- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (void)tileAvailabilityChanged:(id)arg1;
 - (id)tileForData:(id)arg1 downloadKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 sourceKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3;
 - (id)tileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;

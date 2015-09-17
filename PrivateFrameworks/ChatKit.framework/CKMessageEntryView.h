@@ -2,7 +2,19 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKMessageEntryView : UIView <CKAudioRecorderDelegate, CKInlineAudioReplyButtonDelegate, CKJoystickControllerDelegate, CKJoystickGestureRecognizerButtonDelegate, CKMessageEntryContentViewDelegate, CKMessageEntryRecordedAudioViewDelegate> {
+@interface CKMessageEntryView : UIView <CKActionMenuControllerDelegate, CKActionMenuGestureRecognizerButtonDelegate, CKAudioRecorderDelegate, CKInlineAudioReplyButtonDelegate, CKMessageEntryContentViewDelegate, CKMessageEntryRecordedAudioViewDelegate> {
+    CKActionMenuController *_audioActionMenuController;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _audioActionMenuFrame;
+    CKActionMenuGestureRecognizerButton *_audioActionMenuGestureRecognizerButton;
     UIButton *_audioButton;
     struct CGSize { 
         float width; 
@@ -10,8 +22,6 @@
     } _audioButtonSize;
     CKComposition *_audioComposition;
     CKMessageEntryAudioHintView *_audioHintView;
-    CKJoystickController *_audioJoystickController;
-    CKJoystickGestureRecognizerButton *_audioJoystickGestureRecognizerButton;
     CKInlineAudioReplyButtonController *_audioReplyButton;
     _UIBackdropView *_backdropView;
     BOOL _characterCountHidden;
@@ -24,19 +34,27 @@
     UIView *_contentClipView;
     CKMessageEntryContentView *_contentView;
     CKConversation *_conversation;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _coverInsets;
     _UITextFieldRoundedRectBackgroundViewNeue *_coverView;
     <CKMessageEntryViewDelegate> *_delegate;
-    UIButton *_deleteAudioRecordingButton;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _deleteAudioRecordingButtonSize;
     unsigned int _displayMode;
     UIView *_dividerLine;
     BOOL _failedRecipients;
+    NSArray *_keyCommands;
     BOOL _keyboardVisible;
     UIView *_knockoutCoverView;
-    BOOL _performingJoystickSendAction;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _marginInsets;
+    BOOL _performingActionMenuSend;
     UIButton *_photoButton;
     struct CGSize { 
         float width; 
@@ -56,6 +74,7 @@
         float right; 
     } _sendTextAlignmentInsets;
     BOOL _sendingMessage;
+    BOOL _shouldCenterCharacterCount;
     BOOL _shouldKnockoutCoverView;
     BOOL _shouldShowCharacterCount;
     BOOL _shouldShowPhotoButton;
@@ -63,9 +82,7 @@
     BOOL _shouldShowSubject;
     CAMShutterButton *_shutterButton;
     BOOL _unreachableEmergencyRecipient;
-    BOOL _usesDeleteAudioRecordingButton;
-    <CKJoystickGestureRecognizerButtonDelegate> *_videoDelegate;
-    CKJoystickGestureRecognizerButton *_videoJoystickGestureRecognizerButton;
+    CKActionMenuGestureRecognizerButton *_videoActionMenuGestureRecognizerButton;
     CKMessageEntryWaveformView *_waveformView;
     struct CGSize { 
         float width; 
@@ -73,12 +90,13 @@
     } _waveformViewSize;
 }
 
+@property (nonatomic, retain) CKActionMenuController *audioActionMenuController;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } audioActionMenuFrame;
+@property (nonatomic, retain) CKActionMenuGestureRecognizerButton *audioActionMenuGestureRecognizerButton;
 @property (nonatomic, retain) UIButton *audioButton;
 @property (nonatomic) struct CGSize { float x1; float x2; } audioButtonSize;
 @property (nonatomic, retain) CKComposition *audioComposition;
 @property (nonatomic, retain) CKMessageEntryAudioHintView *audioHintView;
-@property (nonatomic, retain) CKJoystickController *audioJoystickController;
-@property (nonatomic, retain) CKJoystickGestureRecognizerButton *audioJoystickGestureRecognizerButton;
 @property (nonatomic, retain) CKInlineAudioReplyButtonController *audioReplyButton;
 @property (nonatomic, retain) _UIBackdropView *backdropView;
 @property (getter=isCharacterCountHidden, nonatomic) BOOL characterCountHidden;
@@ -90,20 +108,22 @@
 @property (nonatomic, retain) UIView *contentClipView;
 @property (nonatomic, retain) CKMessageEntryContentView *contentView;
 @property (nonatomic, retain) CKConversation *conversation;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } coverInsets;
 @property (nonatomic, retain) _UITextFieldRoundedRectBackgroundViewNeue *coverView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKMessageEntryViewDelegate> *delegate;
-@property (nonatomic, retain) UIButton *deleteAudioRecordingButton;
-@property (nonatomic) struct CGSize { float x1; float x2; } deleteAudioRecordingButtonSize;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int displayMode;
 @property (nonatomic, retain) UIView *dividerLine;
 @property (getter=hasFailedRecipients, nonatomic) BOOL failedRecipients;
+@property (nonatomic, readonly) BOOL hasRecording;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isAudioJoystickVisible;
+@property (nonatomic, readonly) BOOL isAudioActionMenuVisible;
+@property (nonatomic, copy) NSArray *keyCommands;
 @property (getter=isKeyboardVisible, nonatomic) BOOL keyboardVisible;
 @property (nonatomic, retain) UIView *knockoutCoverView;
-@property (getter=isPerformingJoystickSendAction, nonatomic) BOOL performingJoystickSendAction;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
+@property (getter=isPerformingActionMenuSend, nonatomic) BOOL performingActionMenuSend;
 @property (nonatomic, retain) UIButton *photoButton;
 @property (nonatomic) struct CGSize { float x1; float x2; } photoButtonSize;
 @property (nonatomic, retain) CKMessageEntryRecordedAudioView *recordedAudioView;
@@ -113,6 +133,7 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } sendButtonSize;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sendTextAlignmentInsets;
 @property (getter=isSendingMessage, nonatomic) BOOL sendingMessage;
+@property (nonatomic) BOOL shouldCenterCharacterCount;
 @property (nonatomic) BOOL shouldKnockoutCoverView;
 @property (nonatomic) BOOL shouldShowCharacterCount;
 @property (nonatomic) BOOL shouldShowPhotoButton;
@@ -121,24 +142,37 @@
 @property (nonatomic, retain) CAMShutterButton *shutterButton;
 @property (readonly) Class superclass;
 @property (getter=hasUnreachableEmergencyRecipient, nonatomic) BOOL unreachableEmergencyRecipient;
-@property (nonatomic) BOOL usesDeleteAudioRecordingButton;
-@property (nonatomic) <CKJoystickGestureRecognizerButtonDelegate> *videoDelegate;
-@property (nonatomic, retain) CKJoystickGestureRecognizerButton *videoJoystickGestureRecognizerButton;
+@property (nonatomic, retain) CKActionMenuGestureRecognizerButton *videoActionMenuGestureRecognizerButton;
+@property (nonatomic) <CKActionMenuGestureRecognizerButtonDelegate> *videoDelegate;
 @property (nonatomic, retain) CKMessageEntryWaveformView *waveformView;
 @property (nonatomic) struct CGSize { float x1; float x2; } waveformViewSize;
 
 + (id)audioButtonImage;
-+ (float)contentViewPortraitWidth:(BOOL)arg1;
-+ (float)coverViewPortraitWidth:(BOOL)arg1;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsetsForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 shouldShowPhotoButton:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })coverViewInsetsForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 shouldShowPhotoButton:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })coverViewInsetsForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 shouldShowPhotoButton:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3 shouldCenterCharacterCount:(BOOL*)arg4;
 
 - (float)_accessoryViewFadeDuration;
-- (void)_toggleAudioPlaybackJoystickIsPlaying:(BOOL)arg1;
+- (void)_setupWaveformView;
+- (void)actionMenuControllerDidDismissActionMenu:(id)arg1;
+- (void)actionMenuControllerWillDismissActionMenu:(id)arg1 animated:(BOOL)arg2;
+- (void)actionMenuControllerWillPresentActionMenu:(id)arg1 animated:(BOOL)arg2;
+- (void)actionMenuGestureRecognizerButtonDidTouchDownButton:(id)arg1;
+- (void)actionMenuGestureRecognizerButtonDidTouchUpInsideButton:(id)arg1;
+- (void)actionMenuGestureRecognizerButtonGestureDidBegin:(id)arg1;
+- (void)actionMenuGestureRecognizerButtonGestureDidEnd:(id)arg1;
+- (BOOL)actionMenuGestureRecognizerButtonIsShowingHint:(id)arg1;
+- (BOOL)actionMenuGestureRecognizerButtonShouldRecognizeGesture:(id)arg1;
+- (BOOL)actionMenuGestureRecognizerButtonShouldShowHint:(id)arg1;
+- (void)actionMenuGestureRecognizerButtonShowHint:(id)arg1;
+- (id)audioActionMenuController;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })audioActionMenuFrame;
+- (id)audioActionMenuGestureRecognizerButton;
 - (id)audioButton;
 - (struct CGSize { float x1; float x2; })audioButtonSize;
 - (id)audioComposition;
 - (id)audioHintView;
-- (id)audioJoystickController;
-- (id)audioJoystickGestureRecognizerButton;
+- (void)audioMenuItemAction:(id)arg1;
 - (void)audioRecorderDidUpdateAveragePower:(float)arg1;
 - (void)audioRecorderRecordingDidChange:(id)arg1;
 - (void)audioRecorderRecordingDidFail:(id)arg1;
@@ -153,50 +187,38 @@
 - (void)clearResponseContext;
 - (id)composition;
 - (id)compositionWithAcceptedAutocorrection;
+- (void)configureAudioActionMenuControllerForPlayback:(BOOL)arg1;
 - (void)configureForDisplayMode:(unsigned int)arg1;
 - (id)contentClipView;
 - (id)contentView;
 - (id)conversation;
 - (void)conversationPreferredServiceChanged:(id)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })coverInsets;
 - (id)coverView;
 - (void)dealloc;
 - (id)delegate;
-- (id)deleteAudioRecordingButton;
-- (struct CGSize { float x1; float x2; })deleteAudioRecordingButtonSize;
+- (void)dismissAudioActionMenuAnimated:(BOOL)arg1;
 - (unsigned int)displayMode;
 - (id)dividerLine;
 - (BOOL)hasFailedRecipients;
+- (BOOL)hasRecording;
 - (BOOL)hasUnreachableEmergencyRecipient;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 shouldShowSendButton:(BOOL)arg2 shouldShowSubject:(BOOL)arg3 shouldShowPhotoButton:(BOOL)arg4 shouldShowCharacterCount:(BOOL)arg5;
-- (BOOL)isAudioJoystickVisible;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 shouldShowSendButton:(BOOL)arg3 shouldShowSubject:(BOOL)arg4 shouldShowPhotoButton:(BOOL)arg5 shouldShowCharacterCount:(BOOL)arg6;
+- (BOOL)isAudioActionMenuVisible;
 - (BOOL)isCharacterCountHidden;
 - (BOOL)isComposingRecipient;
 - (BOOL)isKeyboardVisible;
-- (BOOL)isPerformingJoystickSendAction;
+- (BOOL)isPerformingActionMenuSend;
 - (BOOL)isRecording;
 - (BOOL)isSendingMessage;
-- (void)joystickCancelAction:(id)arg1;
-- (void)joystickControllerDidDismissJoystick:(id)arg1;
-- (void)joystickControllerWillDismissJoystick:(id)arg1 animated:(BOOL)arg2;
-- (void)joystickControllerWillExpandJoystick:(id)arg1 animated:(BOOL)arg2;
-- (void)joystickControllerWillPresentJoystick:(id)arg1 animated:(BOOL)arg2;
-- (void)joystickControllerWillShrinkJoystick:(id)arg1 animated:(BOOL)arg2;
-- (void)joystickGestureRecognizerButtonDidTouchDownButton:(id)arg1;
-- (void)joystickGestureRecognizerButtonDidTouchUpInsideButton:(id)arg1;
-- (void)joystickGestureRecognizerButtonGestureDidBegin:(id)arg1;
-- (void)joystickGestureRecognizerButtonGestureDidEnd:(id)arg1;
-- (BOOL)joystickGestureRecognizerButtonIsShowingHint:(id)arg1;
-- (BOOL)joystickGestureRecognizerButtonShouldRecognizeGesture:(id)arg1;
-- (BOOL)joystickGestureRecognizerButtonShouldShowHint:(id)arg1;
-- (void)joystickGestureRecognizerButtonShowHint:(id)arg1;
-- (void)joystickPlaybackButtonUpAction:(id)arg1;
-- (void)joystickSendAction:(id)arg1;
-- (void)joystickShutterButtonDownAction:(id)arg1;
-- (void)joystickShutterButtonUpAction:(id)arg1;
+- (void)keyCommandSend:(id)arg1;
+- (id)keyCommands;
 - (id)knockoutCoverView;
 - (void)layoutSubviews;
 - (void)loadRecordedAudioViewsIfNeeded;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
+- (void)messageEntryContentView:(id)arg1 didTapMediaObject:(id)arg2;
 - (BOOL)messageEntryContentView:(id)arg1 shouldInsertMediaObjects:(id)arg2;
 - (void)messageEntryContentViewDidBeginEditing:(id)arg1;
 - (void)messageEntryContentViewDidChange:(id)arg1;
@@ -204,23 +226,27 @@
 - (BOOL)messageEntryContentViewShouldBeginEditing:(id)arg1;
 - (void)messageEntryRecordedAudioView:(id)arg1 mediaObjectDidFinishPlaying:(id)arg2;
 - (void)messageReceived:(id)arg1;
+- (void)pauseMenuItemAction:(id)arg1;
 - (id)photoButton;
 - (BOOL)photoButtonEnabled;
 - (struct CGSize { float x1; float x2; })photoButtonSize;
 - (float)placeholderHeight;
-- (void)presentAudioJoystick;
+- (void)playMenuItemAction:(id)arg1;
+- (void)presentAudioActionMenu;
 - (id)recordedAudioView;
 - (id)recorder;
 - (id)sendButton;
 - (BOOL)sendButtonEnabled;
 - (struct CGSize { float x1; float x2; })sendButtonSize;
+- (void)sendMenuItemAction:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sendTextAlignmentInsets;
+- (void)setAudioActionMenuController:(id)arg1;
+- (void)setAudioActionMenuFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAudioActionMenuGestureRecognizerButton:(id)arg1;
 - (void)setAudioButton:(id)arg1;
 - (void)setAudioButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setAudioComposition:(id)arg1;
 - (void)setAudioHintView:(id)arg1;
-- (void)setAudioJoystickController:(id)arg1;
-- (void)setAudioJoystickGestureRecognizerButton:(id)arg1;
 - (void)setAudioReplyButton:(id)arg1;
 - (void)setBackdropView:(id)arg1;
 - (void)setCharacterCountHidden:(BOOL)arg1;
@@ -231,17 +257,18 @@
 - (void)setContentClipView:(id)arg1;
 - (void)setContentView:(id)arg1;
 - (void)setConversation:(id)arg1;
+- (void)setCoverInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setCoverView:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setDeleteAudioRecordingButton:(id)arg1;
-- (void)setDeleteAudioRecordingButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setDisplayMode:(unsigned int)arg1;
 - (void)setDividerLine:(id)arg1;
 - (void)setFailedRecipients:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setKeyCommands:(id)arg1;
 - (void)setKeyboardVisible:(BOOL)arg1;
 - (void)setKnockoutCoverView:(id)arg1;
-- (void)setPerformingJoystickSendAction:(BOOL)arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPerformingActionMenuSend:(BOOL)arg1;
 - (void)setPhotoButton:(id)arg1;
 - (void)setPhotoButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setRecordedAudioView:(id)arg1;
@@ -250,6 +277,7 @@
 - (void)setSendButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSendTextAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSendingMessage:(BOOL)arg1;
+- (void)setShouldCenterCharacterCount:(BOOL)arg1;
 - (void)setShouldKnockoutCoverView:(BOOL)arg1;
 - (void)setShouldShowCharacterCount:(BOOL)arg1;
 - (void)setShouldShowPhotoButton:(BOOL)arg1;
@@ -257,11 +285,11 @@
 - (void)setShouldShowSubject:(BOOL)arg1;
 - (void)setShutterButton:(id)arg1;
 - (void)setUnreachableEmergencyRecipient:(BOOL)arg1;
-- (void)setUsesDeleteAudioRecordingButton:(BOOL)arg1;
+- (void)setVideoActionMenuGestureRecognizerButton:(id)arg1;
 - (void)setVideoDelegate:(id)arg1;
-- (void)setVideoJoystickGestureRecognizerButton:(id)arg1;
 - (void)setWaveformView:(id)arg1;
 - (void)setWaveformViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)shouldCenterCharacterCount;
 - (BOOL)shouldKnockoutCoverView;
 - (BOOL)shouldRecordForService:(id)arg1;
 - (BOOL)shouldShowCharacterCount;
@@ -276,9 +304,8 @@
 - (void)touchUpInsideSendButton:(id)arg1;
 - (void)updateEntryView;
 - (void)updateResponseContext;
-- (BOOL)usesDeleteAudioRecordingButton;
+- (id)videoActionMenuGestureRecognizerButton;
 - (id)videoDelegate;
-- (id)videoJoystickGestureRecognizerButton;
 - (id)waveformView;
 - (struct CGSize { float x1; float x2; })waveformViewSize;
 

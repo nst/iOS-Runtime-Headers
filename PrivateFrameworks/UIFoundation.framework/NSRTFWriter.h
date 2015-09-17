@@ -3,6 +3,7 @@
  */
 
 @interface NSRTFWriter : NSObject {
+    NSMapTable *_attachmentData;
     NSAttributedString *_attrString;
     unsigned int _attrStringLength;
     NSMutableDictionary *_colors;
@@ -39,6 +40,7 @@
 - (id)RTFD;
 - (id)RTFDFileWrapper;
 - (id)_RTFDFileWrapper;
+- (id)_attachmentData;
 - (int)_mostCompatibleCharset:(id)arg1;
 - (id)_plainFontNameForFont:(id)arg1;
 - (void)_setPreserveNaturalAlignment:(BOOL)arg1;

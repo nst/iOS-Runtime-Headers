@@ -29,7 +29,6 @@
     float mWidth;
 }
 
-- (id).cxx_construct;
 - (int)alignment;
 - (void)applyDashCapToPath:(id)arg1;
 - (void)applyDashPatternToPath:(id)arg1;

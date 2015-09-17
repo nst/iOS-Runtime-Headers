@@ -7,6 +7,7 @@
     BOOL _dismissed;
     UINavigationController *_navigationController;
     BOOL _observingRotation;
+    id _originalNavControllerDelegate;
     UIViewController *_originalViewControllerInNav;
     UIViewController *_parentController;
     BOOL _parentHasNoPopover;
@@ -25,6 +26,7 @@
 @property (readonly) Class superclass;
 @property BOOL userSelectedPrinter;
 
+- (void).cxx_destruct;
 - (void)_keyWindowWillRotate:(id)arg1;
 - (void)_presentInParentAnimated:(BOOL)arg1;
 - (void)_presentWindow;

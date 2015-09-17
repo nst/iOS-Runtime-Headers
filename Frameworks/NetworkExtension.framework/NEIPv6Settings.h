@@ -3,35 +3,43 @@
  */
 
 @interface NEIPv6Settings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSString *_address;
+    NSArray *_addresses;
     int _configMethod;
-    int _prefixLength;
+    NSArray *_excludedRoutes;
+    NSArray *_includedRoutes;
+    NSArray *_networkPrefixLengths;
     NSString *_router;
 }
 
-@property (copy) NSString *address;
+@property (readonly) NSArray *addresses;
 @property int configMethod;
-@property int prefixLength;
+@property (copy) NSArray *excludedRoutes;
+@property (copy) NSArray *includedRoutes;
+@property (readonly) NSArray *networkPrefixLengths;
 @property (copy) NSString *router;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)address;
+- (id)addresses;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (int)configMethod;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (id)excludedRoutes;
+- (BOOL)hasDefaultRoute;
+- (id)includedRoutes;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
+- (id)initWithAddresses:(id)arg1 networkPrefixLengths:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (int)prefixLength;
+- (id)networkPrefixLengths;
 - (id)router;
-- (void)setAddress:(id)arg1;
 - (void)setConfigMethod:(int)arg1;
-- (void)setPrefixLength:(int)arg1;
+- (void)setExcludedRoutes:(id)arg1;
+- (void)setIncludedRoutes:(id)arg1;
 - (void)setRouter:(id)arg1;
 
 @end

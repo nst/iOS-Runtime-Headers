@@ -3,7 +3,7 @@
  */
 
 @interface MIDINetworkHost : NSObject {
-    struct _MIDINetworkHostImpl { id x1; unsigned int x2; id x3; } *_impl;
+    void *_imp;
 }
 
 @property (nonatomic, readonly, retain) NSString *address;

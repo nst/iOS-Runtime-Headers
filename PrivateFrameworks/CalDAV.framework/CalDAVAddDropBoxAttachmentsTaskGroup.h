@@ -12,6 +12,7 @@
     NSDictionary *_putFailureSizes;
     NSMutableDictionary *_sentAttachmentURLsToETags;
     int _state;
+    CoreDAVUpdateACLTaskGroup *_updateACLTaskGroup;
 }
 
 @property (nonatomic, retain) NSSet *aceItems;
@@ -29,9 +30,11 @@
 @property (nonatomic, retain) NSMutableDictionary *sentAttachmentURLsToETags;
 @property (nonatomic) int state;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) CoreDAVUpdateACLTaskGroup *updateACLTaskGroup;
 
 + (id)dropboxACEItemsForPrincipalURLs:(id)arg1 baseURL:(id)arg2 writable:(BOOL)arg3;
 
+- (void).cxx_destruct;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)_makeDropBox;
 - (void)_sendAttachments;
@@ -41,7 +44,6 @@
 - (id)attendeePrincipalURLs;
 - (BOOL)attendeesCanManageDropBox;
 - (id)contentTypes;
-- (void)dealloc;
 - (id)dropboxURL;
 - (id)etags;
 - (id)initWithAccountInfoProvider:(id)arg1 dropboxURL:(id)arg2 attachments:(id)arg3 contentTypes:(id)arg4 attendeePrincipalURLs:(id)arg5 attendeesCanManageDropBox:(BOOL)arg6 taskManager:(id)arg7;
@@ -56,9 +58,11 @@
 - (void)setPutFailureSizes:(id)arg1;
 - (void)setSentAttachmentURLsToETags:(id)arg1;
 - (void)setState:(int)arg1;
+- (void)setUpdateACLTaskGroup:(id)arg1;
 - (void)startTaskGroup;
 - (int)state;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)taskGroup:(id)arg1 didFinishWithError:(id)arg2;
+- (id)updateACLTaskGroup;
 
 @end

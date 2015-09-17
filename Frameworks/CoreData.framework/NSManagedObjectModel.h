@@ -12,7 +12,8 @@
         unsigned int _isInUse : 1; 
         unsigned int _isImmutable : 1; 
         unsigned int _isOptimizedForEncoding : 1; 
-        unsigned int _reservedEntityDescription : 29; 
+        unsigned int _hasEntityWithConstraints : 1; 
+        unsigned int _reservedEntityDescription : 28; 
     } _managedObjectModelFlags;
     id *_optimizationHints;
     NSSet *_versionIdentifiers;
@@ -44,6 +45,7 @@
 - (id)_entityForName:(id)arg1;
 - (id)_entityVersionHashesByNameInStyle:(unsigned int)arg1;
 - (void)_flattenProperties;
+- (BOOL)_hasEntityWithUniquenessConstraints;
 - (BOOL)_hasPrecomputedKeyOrder;
 - (id)_initWithEntities:(id)arg1;
 - (BOOL)_isConfiguration:(id)arg1 inStyle:(unsigned int)arg2 compatibleWithStoreMetadata:(id)arg3;

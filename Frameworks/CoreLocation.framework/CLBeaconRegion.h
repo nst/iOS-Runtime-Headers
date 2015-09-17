@@ -22,7 +22,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
-- (id)initWithClientRegion:(struct { BOOL x1[512]; int x2; bool x3; bool x4; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; bool x_1_2_5; } x_5_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; } x_5_1_2; } x5; })arg1;
+- (id)initWithClientRegion:(struct { BOOL x1[512]; BOOL x2[512]; int x3; bool x4; bool x5; bool x6; union { struct { BOOL x_1_2_1[512]; unsigned short x_1_2_2; unsigned short x_1_2_3; int x_1_2_4; bool x_1_2_5; } x_7_1_1; struct { struct { double x_1_3_1; double x_1_3_2; } x_2_2_1; double x_2_2_2; double x_2_2_3; int x_2_2_4; } x_7_1_2; } x7; })arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithProximityUUID:(id)arg1 identifier:(id)arg2;

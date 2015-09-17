@@ -29,6 +29,7 @@
 - (id)propertyIndex;
 - (int)rowIndex;
 - (void)setAccessibilityHint:(id)arg1;
+- (void)setAccessibilityIdentifier:(id)arg1;
 - (void)setAccessibilityImageRegions:(id)arg1;
 - (void)setAccessibilityLabel:(id)arg1;
 - (void)setAccessibilityTraits:(unsigned long long)arg1;
@@ -36,14 +37,20 @@
 - (void)setAlpha:(float)arg1;
 - (void)setHeight:(float)arg1;
 - (void)setHidden:(BOOL)arg1;
+- (void)setHorizontalAlignment:(int)arg1;
 - (void)setInterfaceProperty:(id)arg1;
 - (void)setIsAccessibilityElement:(BOOL)arg1;
 - (void)setPropertyIndex:(id)arg1;
+- (void)setRelativeHeight:(float)arg1 withAdjustment:(float)arg2;
+- (void)setRelativeWidth:(float)arg1 withAdjustment:(float)arg2;
 - (void)setRotation:(float)arg1;
 - (void)setRowIndex:(int)arg1;
 - (void)setTableIndex:(int)arg1;
+- (void)setVerticalAlignment:(int)arg1;
 - (void)setViewControllerID:(id)arg1;
 - (void)setWidth:(float)arg1;
+- (void)sizeToFitHeight;
+- (void)sizeToFitWidth;
 - (int)tableIndex;
 - (id)viewControllerID;
 

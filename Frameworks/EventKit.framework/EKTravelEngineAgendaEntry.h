@@ -3,27 +3,80 @@
  */
 
 @interface EKTravelEngineAgendaEntry : NSObject {
-    EKTravelAdvisor *_advisor;
-    EKTravelAgendaItem *_agendaItem;
+    NSObject<OS_dispatch_queue> *_callbackQueue;
     BOOL _dismissed;
-    NSString *_eventExternalURL;
+    id /* block */ _entrySignificantlyChangedBlock;
+    CLLocation *_geoLocation;
+    BOOL _geocodedEventEncountered;
+    CalGeocoder *_geocoder;
+    GEORouteHypothesizer *_hypothesizer;
+    EKTravelEngineHypothesis *_latestHypothesis;
+    NSData *_mapKitHandle;
+    EKTravelEngineOriginalEvent *_originalEventInternal;
+    EKTravelEngineThrottle *_throttle;
+    id /* block */ _updateBlock;
+    NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property (nonatomic, retain) EKTravelAdvisor *advisor;
-@property (nonatomic, retain) EKTravelAgendaItem *agendaItem;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (nonatomic) BOOL dismissed;
-@property (nonatomic, retain) NSString *eventExternalURL;
+@property (nonatomic, copy) id /* block */ entrySignificantlyChangedBlock;
+@property (nonatomic, retain) CLLocation *geoLocation;
+@property (nonatomic) BOOL geocodedEventEncountered;
+@property (nonatomic, retain) CalGeocoder *geocoder;
+@property (nonatomic, retain) GEORouteHypothesizer *hypothesizer;
+@property (nonatomic, retain) EKTravelEngineHypothesis *latestHypothesis;
+@property (nonatomic, retain) NSData *mapKitHandle;
+@property (nonatomic, readonly) EKTravelEngineOriginalEvent *originalEvent;
+@property (nonatomic, retain) EKTravelEngineOriginalEvent *originalEventInternal;
+@property (nonatomic, retain) EKTravelEngineThrottle *throttle;
+@property (nonatomic, copy) id /* block */ updateBlock;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
-- (id)advisor;
-- (id)agendaItem;
-- (void)dealloc;
-- (id)description;
++ (double)_maximumAllowableTravelTime;
++ (double)fuzzyMaximumInitialUpdateIntervalBeforeStartDate;
+
+- (void).cxx_destruct;
+- (void)_accountForGeocodedEventEncounter;
+- (void)_clearEverything;
+- (void)_createHypothesizerForDestination:(id)arg1;
+- (void)_createSyntheticHypothesis;
+- (void)_enhanceLocation;
+- (id)_generateDestination;
+- (void)_sendFeedbackToHypothesizerForPostingNotification:(unsigned int)arg1;
+- (void)_setUpRouteMonitoring;
+- (void)_updateWithHypothesis:(id)arg1;
+- (id)callbackQueue;
 - (BOOL)dismissed;
-- (id)eventExternalURL;
+- (id /* block */)entrySignificantlyChangedBlock;
+- (id)geoLocation;
+- (BOOL)geocodedEventEncountered;
+- (id)geocoder;
+- (id)hypothesizer;
 - (id)init;
-- (void)setAdvisor:(id)arg1;
-- (void)setAgendaItem:(id)arg1;
+- (id)latestHypothesis;
+- (id)mapKitHandle;
+- (id)originalEvent;
+- (id)originalEventInternal;
+- (void)reset;
+- (void)sendFeedbackForPostingLeaveByNotification;
+- (void)sendFeedbackForPostingLeaveNowNotification;
+- (void)setCallbackQueue:(id)arg1;
 - (void)setDismissed:(BOOL)arg1;
-- (void)setEventExternalURL:(id)arg1;
+- (void)setEntrySignificantlyChangedBlock:(id /* block */)arg1;
+- (void)setGeoLocation:(id)arg1;
+- (void)setGeocodedEventEncountered:(BOOL)arg1;
+- (void)setGeocoder:(id)arg1;
+- (void)setHypothesizer:(id)arg1;
+- (void)setLatestHypothesis:(id)arg1;
+- (void)setMapKitHandle:(id)arg1;
+- (void)setOriginalEventInternal:(id)arg1;
+- (void)setThrottle:(id)arg1;
+- (void)setUpdateBlock:(id /* block */)arg1;
+- (void)setWorkQueue:(id)arg1;
+- (id)throttle;
+- (id /* block */)updateBlock;
+- (void)updateWithOriginalEvent:(id)arg1;
+- (id)workQueue;
 
 @end

@@ -2,15 +2,9 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CKKeepMessagesSelectionList : PSListItemsController {
-    id /* block */ _sheetHandler;
-}
-
-@property (nonatomic, copy) id /* block */ sheetHandler;
+@interface CKKeepMessagesSelectionList : PSListItemsController
 
 - (void)_warnAboutDeletingMessagesForSelectedListItem:(id)arg1;
 - (void)listItemSelected:(id)arg1;
-- (void)setSheetHandler:(id /* block */)arg1;
-- (id /* block */)sheetHandler;
 
 @end

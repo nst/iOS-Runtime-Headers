@@ -3,7 +3,7 @@
  */
 
 @interface MFPhonePath : MFPath {
-    OITSDBezierPath *m_path;
+    TSUBezierPath *m_path;
     int m_state;
 }
 

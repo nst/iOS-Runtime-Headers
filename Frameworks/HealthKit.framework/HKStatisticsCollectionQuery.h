@@ -22,6 +22,8 @@
 @property (retain) HKStatisticsCollection *statisticsCollection;
 @property (nonatomic, copy) id /* block */ statisticsUpdateHandler;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
 + (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
@@ -51,5 +53,9 @@
 - (void)setStatisticsUpdateHandler:(id /* block */)arg1;
 - (id)statisticsCollection;
 - (id /* block */)statisticsUpdateHandler;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (Class)hd_queryServerClass;
 
 @end

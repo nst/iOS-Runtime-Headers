@@ -3,11 +3,13 @@
  */
 
 @interface _GEOPlaceSearchCompletionItem : NSObject <GEOCompletionItemPrivate> {
+    GEOSearchCategory *_category;
     NSArray *_displayLines;
     GEOPDAutocompleteEntry *_entry;
     int _entryIndex;
     int _entryListIndex;
     NSArray *_lineHighlights;
+    <GEOMapItem> *_mapItem;
     GEOMapServiceTraits *_traits;
 }
 
@@ -20,6 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSData *metadata;
 @property (getter=_placeDataAutocompleteEntry, nonatomic, readonly) GEOPDAutocompleteEntry *placeDataAutocompleteEntry;
+@property (nonatomic, readonly) GEOSearchCategory *searchCategory;
 @property (readonly) Class superclass;
 
 - (id)_placeDataAutocompleteEntry;
@@ -32,10 +35,11 @@
 - (BOOL)getCoordinate:(struct { double x1; double x2; }*)arg1;
 - (unsigned int)hash;
 - (id)highlightsForLine:(unsigned int)arg1;
-- (id)initWithEntry:(id)arg1 traits:(id)arg2 entryListIndex:(int)arg3 entryIndex:(int)arg4;
+- (id)initWithEntry:(id)arg1 traits:(id)arg2 entryListIndex:(int)arg3 entryIndex:(int)arg4 mapItems:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (id)metadata;
 - (id)queryLine;
+- (id)searchCategory;
 - (void)sendFeedback;
 
 @end

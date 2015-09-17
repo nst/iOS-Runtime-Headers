@@ -9,8 +9,7 @@
 + (id)shortNameFromServiceCode:(id)arg1;
 
 - (void)dealloc;
-- (id)getBasebandTime;
-- (id)getBasebandTimeWithAPTimestamp:(id*)arg1;
+- (id)getBasebandTimeAndLatency;
 - (id)getLTESleepManagerStats;
 - (id)init;
 

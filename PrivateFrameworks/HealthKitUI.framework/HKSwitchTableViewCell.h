@@ -11,6 +11,7 @@
     UISwitch *_switch;
 }
 
+@property (nonatomic) BOOL adjustsFontSizeToFitWidth;
 @property (nonatomic) BOOL centersIcon;
 @property (nonatomic) <HKSwitchTableViewCellDelegate> *delegate;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
@@ -18,14 +19,19 @@
 @property (getter=isOn, nonatomic) BOOL on;
 
 - (void).cxx_destruct;
+- (void)_contextSizeCategoryChanged;
+- (id)_displayLabelFont;
 - (void)_setupUI;
+- (BOOL)adjustsFontSizeToFitWidth;
 - (BOOL)centersIcon;
+- (void)dealloc;
 - (id)delegate;
 - (struct CGSize { float x1; float x2; })iconSize;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isEnabled;
 - (BOOL)isOn;
 - (void)layoutSubviews;
+- (void)setAdjustsFontSizeToFitWidth:(BOOL)arg1;
 - (void)setCentersIcon:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisplayText:(id)arg1;

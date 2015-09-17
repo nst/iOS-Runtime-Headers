@@ -2,30 +2,43 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCDiskSpaceReclaimer : NSObject {
+@interface BRCDiskSpaceReclaimer : NSObject <BRCLowDiskDelegate> {
     BOOL _isClosed;
+    struct br_pacer_t { } *_purgePacer;
+    struct CacheDeleteToken { } *_purgeRequest;
     NSObject<OS_dispatch_queue> *_queue;
     BRCAccountSession *_session;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
+
++ (int)urgencyForCacheDeleteUrgency:(int)arg1;
 
 - (void).cxx_destruct;
 - (void)_enumerateItemsForEvictSyncWithBlock:(id /* block */)arg1 withUrgency:(int)arg2;
 - (long long)_purgeSpaceUnderQueue:(long long)arg1 withUrgency:(int)arg2;
+- (void)_requestPurgeSpace;
+- (double)accessTimeDeltaForUrgency:(int)arg1;
+- (id)accessTimestampForDocument:(id)arg1;
 - (void)close;
 - (long long)computePurgableSpaceWithUrgency:(int)arg1;
 - (id)descriptionForItem:(id)arg1 context:(id)arg2;
 - (void)didAccessDocument:(id)arg1;
-- (BOOL)documentChangedEvictability:(id)arg1;
-- (BOOL)documentWasAccessed:(id)arg1;
+- (BOOL)documentUpdateEvictability:(id)arg1;
+- (BOOL)documentWasAccessedRecently:(id)arg1;
 - (BOOL)documentWasCreated:(id)arg1;
 - (BOOL)documentWasDeleted:(id)arg1;
 - (id)initWithAccountSession:(id)arg1;
+- (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(BOOL)arg2;
 - (long long)periodicReclaimSpace:(long long)arg1 withUrgency:(int)arg2;
 - (long long)purgeSpace:(long long)arg1 withUrgency:(int)arg2;
 - (id)queue;
-- (BOOL)renameAndUnlinkInBackgroundItemAtPath:(id)arg1;
-- (void)unlinkInBackgroundItemsRenamedBeforeRestart;
+- (BOOL)renameAndUnlinkInBackgroundItemAt:(int)arg1 path:(id)arg2;
+- (BOOL)renameAndUnlinkInBackgroundItemAtRelpath:(id)arg1;
+- (void)requestPurgeSpace;
 
 @end

@@ -32,11 +32,11 @@
 + (BOOL)isCachedLanguageStaleForProperties:(id)arg1 systemLanguage:(id)arg2;
 + (BOOL)isWorldClockCityProperties:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)alCity;
 - (id)alCityId;
 - (id)countryCode;
 - (id)countryName;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)idUrl;

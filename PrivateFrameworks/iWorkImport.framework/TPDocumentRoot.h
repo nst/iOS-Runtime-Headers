@@ -96,7 +96,6 @@
 + (struct CGSize { float x1; float x2; })pageSizeFromPaperSize:(struct CGSize { float x1; float x2; })arg1 pageScale:(float)arg2 orientation:(unsigned int)arg3;
 + (struct CGSize { float x1; float x2; })previewImageSizeForType:(unsigned int)arg1;
 
-- (id).cxx_construct;
 - (id)UIStateForChart:(id)arg1;
 - (id)activeChangeSession;
 - (unsigned int)applicationType;
@@ -168,6 +167,7 @@
 - (id)p_realTOCEntryStyleFromFakeTOCEntryStyle:(id)arg1 context:(id)arg2;
 - (void)p_uniquifyTableNames;
 - (void)p_upgradeBodyTOC;
+- (void)p_upgradeTOCModelForUnity20;
 - (void)p_upgradeTOCStyles;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pageBoundsWithinMargins;
 - (void)pageCountDidChangeForPageController:(id)arg1;

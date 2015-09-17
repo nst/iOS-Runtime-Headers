@@ -9,8 +9,7 @@
 
 @optional
 
-- (void)handleDownloadedPasses:(void *)arg1 fromViewController:(void *)arg2 withCompletion:(void *)arg3; // needs 3 arg types, found 7: NSArray *, UIViewController *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
-- (void)handlePassAlreadyProvisionedError;
-- (void)handleProvisioningError:(NSError *)arg1 forApplicationIdentifier:(NSString *)arg2;
+- (void)viewController:(UIViewController *)arg1 didShowProvisioningError:(NSError *)arg2;
+- (void)viewControllerDidShowEligibilityIssue:(UIViewController *)arg1;
 
 @end

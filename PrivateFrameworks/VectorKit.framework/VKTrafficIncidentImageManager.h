@@ -4,9 +4,9 @@
 
 @interface VKTrafficIncidentImageManager : NSObject <GEOResourceManifestTileGroupObserver> {
     NSCache *_imageCache;
+    GEOResourceManifestConfiguration *_manifestConfiguration;
     VKResourceManager *_resourceManager;
     NSMapTable *_targetDisplayToProvider;
-    unsigned int _tileGroupIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,7 +19,7 @@
 - (void)dealloc;
 - (id)imageForIncidentType:(int)arg1 contentScale:(float)arg2;
 - (id)imageForIncidentType:(int)arg1 contentScale:(float)arg2 targetDisplay:(int)arg3;
-- (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2;
+- (id)initWithConfiguration:(id)arg1 resourceManager:(id)arg2;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
 - (void)setIncidentIconProvider:(id /* block */)arg1 forTargetDisplay:(int)arg2;

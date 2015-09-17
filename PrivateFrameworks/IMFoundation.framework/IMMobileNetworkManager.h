@@ -2,17 +2,15 @@
    Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
  */
 
-@interface IMMobileNetworkManager : IMNetworkManager {
+@interface IMMobileNetworkManager : IMNetworkManager <RadiosPreferencesDelegate> {
     int _applySkipCount;
-    BOOL _cachedAirplaneMode;
     void *_cellAssertion;
     NSMutableSet *_cellAutoAssociationTokens;
     struct __CTServerConnection { } *_ctServerConnection;
     BOOL _dataContextActive;
     NSMutableSet *_disableFastDormancyTokens;
-    BOOL _isCachedAirplaneModeValid;
     NSRecursiveLock *_lock;
-    struct __SCPreferences { } *_prefs;
+    RadiosPreferences *_radiosPreferences;
     BOOL _registered;
     void *_serverConnection;
     BOOL _shouldBringUpDataContext;
@@ -21,11 +19,9 @@
 }
 
 @property (nonatomic) int _applySkipCount;
-@property (nonatomic) BOOL _cachedAirplaneMode;
 @property (nonatomic) void*_cellAssertion;
 @property (nonatomic) struct __CTServerConnection { }*_ctServerConnection;
-@property (nonatomic) BOOL _isCachedAirplaneModeValid;
-@property (nonatomic) struct __SCPreferences { }*_prefs;
+@property (nonatomic, retain) RadiosPreferences *_radiosPreferences;
 @property (nonatomic) void*_serverConnection;
 @property (nonatomic) void*_suspendDormancyAssertion;
 @property (nonatomic, readonly) BOOL autoAssociateCellular;
@@ -64,26 +60,21 @@
 - (void)_adjustCellularAutoAssociation;
 - (void)_adjustFastDormancyTokens;
 - (int)_applySkipCount;
-- (BOOL)_cachedAirplaneMode;
 - (void*)_cellAssertion;
 - (void)_createCTServerConnection;
 - (void)_ctServerCallBack:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (struct __CTServerConnection { }*)_ctServerConnection;
-- (void*)_getValueForKey:(id)arg1;
-- (void)_initializeSCPrefs:(id)arg1;
-- (BOOL)_isCachedAirplaneModeValid;
 - (BOOL)_isDataConnectionAvailable;
 - (void)_makeDataConnectionAvailable:(BOOL)arg1;
-- (void)_notifyTarget:(unsigned int)arg1;
-- (struct __SCPreferences { }*)_prefs;
+- (id)_radiosPreferences;
 - (void)_releaseCTServerConnection;
 - (void*)_serverConnection;
 - (void)_setFastDormancySuspended:(BOOL)arg1;
 - (void*)_suspendDormancyAssertion;
-- (void)_synchronize;
 - (void)addCellularAutoAssociationClientToken:(id)arg1;
 - (void)addFastDormancyDisableToken:(id)arg1;
 - (void)addWiFiAutoAssociationClientToken:(id)arg1;
+- (void)airplaneModeChanged;
 - (BOOL)autoAssociateCellular;
 - (BOOL)autoAssociateWiFi;
 - (id)cellularAutoAssociationTokens;
@@ -108,7 +99,6 @@
 - (BOOL)isWiFiEnabled;
 - (BOOL)isWiFiUsable;
 - (id)lock;
-- (void)refresh;
 - (BOOL)registered;
 - (void)removeCellularAutoAssociationClientToken:(id)arg1;
 - (void)removeFastDormancyDisableToken:(id)arg1;
@@ -123,11 +113,9 @@
 - (void)setShouldBringUpDataContext:(BOOL)arg1;
 - (void)setWiFiAutoAssociationTokens:(id)arg1;
 - (void)set_applySkipCount:(int)arg1;
-- (void)set_cachedAirplaneMode:(BOOL)arg1;
 - (void)set_cellAssertion:(void*)arg1;
 - (void)set_ctServerConnection:(struct __CTServerConnection { }*)arg1;
-- (void)set_isCachedAirplaneModeValid:(BOOL)arg1;
-- (void)set_prefs:(struct __SCPreferences { }*)arg1;
+- (void)set_radiosPreferences:(id)arg1;
 - (void)set_serverConnection:(void*)arg1;
 - (void)set_suspendDormancyAssertion:(void*)arg1;
 - (BOOL)shouldBringUpDataContext;

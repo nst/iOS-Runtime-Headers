@@ -49,6 +49,7 @@
 - (id)description;
 - (id)discoveryInfo;
 - (id)frameworkBundle;
+- (id)init;
 - (id)initWithServiceType:(id)arg1 discoveryInfo:(id)arg2 session:(id)arg3;
 - (id /* block */)invitationHandlerForPresentedAlert;
 - (id)invitationsBuffer;

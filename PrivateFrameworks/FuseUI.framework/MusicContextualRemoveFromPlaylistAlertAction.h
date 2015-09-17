@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualRemoveFromPlaylistAlertAction : UIAlertAction
+@interface MusicContextualRemoveFromPlaylistAlertAction : MusicContextualAlertAction
 
 + (id)contextualRemoveFromPlaylistActionWithEntityValueContext:(id)arg1;
 

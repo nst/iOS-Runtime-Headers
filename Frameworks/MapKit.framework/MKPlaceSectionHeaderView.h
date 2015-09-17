@@ -5,9 +5,9 @@
 @interface MKPlaceSectionHeaderView : UIView {
     SEL _action;
     NSArray *_marginConstraints;
+    NSString *_providerName;
     NSMutableArray *_scaledConstraints;
     UILabel *_sectionHeaderLabel;
-    NSString *_sectionHeaderText;
     _MKRightImageButton *_seeMoreButton;
     NSArray *_seeMoreButtonConstraints;
     UIView *_separator;
@@ -18,38 +18,38 @@
 
 @property (nonatomic) SEL action;
 @property (nonatomic, retain) NSArray *marginConstraints;
+@property (nonatomic, retain) NSString *providerName;
 @property (nonatomic, retain) NSMutableArray *scaledConstraints;
 @property (nonatomic, retain) UILabel *sectionHeaderLabel;
-@property (nonatomic, copy) NSString *sectionHeaderText;
 @property (nonatomic, retain) _MKRightImageButton *seeMoreButton;
 @property (nonatomic, retain) NSArray *seeMoreButtonConstraints;
 @property (nonatomic, retain) UIView *separator;
 @property (nonatomic) BOOL showSeeMoreButton;
 @property (nonatomic) BOOL showSeparator;
 @property (nonatomic) id target;
+@property (nonatomic, retain) NSString *title;
 
-+ (float)intrinsicContentHeight;
++ (float)intrinsicContentHeightForFont:(id)arg1;
 
 - (void).cxx_destruct;
 - (SEL)action;
-- (id)chevronImage;
 - (void)contentSizeDidChange;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutMarginsDidChange;
 - (id)marginConstraints;
+- (id)providerName;
 - (void)refreshMarginConstraints;
 - (id)scaledConstraints;
 - (id)sectionHeaderLabel;
-- (id)sectionHeaderText;
 - (id)seeMoreButton;
 - (id)seeMoreButtonConstraints;
 - (id)separator;
 - (void)setAction:(SEL)arg1;
 - (void)setMarginConstraints:(id)arg1;
+- (void)setProviderName:(id)arg1;
 - (void)setScaledConstraints:(id)arg1;
 - (void)setSectionHeaderLabel:(id)arg1;
-- (void)setSectionHeaderText:(id)arg1;
 - (void)setSeeMoreButton:(id)arg1;
 - (void)setSeeMoreButtonConstraints:(id)arg1;
 - (void)setSeparator:(id)arg1;
@@ -57,9 +57,11 @@
 - (void)setShowSeparator:(BOOL)arg1;
 - (void)setTarget:(id)arg1;
 - (void)setTarget:(id)arg1 action:(SEL)arg2;
+- (void)setTitle:(id)arg1;
 - (BOOL)showSeeMoreButton;
 - (BOOL)showSeparator;
 - (id)target;
+- (id)title;
 - (void)updateConstraints;
 
 @end

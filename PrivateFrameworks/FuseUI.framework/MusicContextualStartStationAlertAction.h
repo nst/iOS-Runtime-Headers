@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualStartStationAlertAction : UIAlertAction
+@interface MusicContextualStartStationAlertAction : MusicContextualAlertAction
 
 + (id)contextualStartStationActionWithEntityValueContext:(id)arg1;
 

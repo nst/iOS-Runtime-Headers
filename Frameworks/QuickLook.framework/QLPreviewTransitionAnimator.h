@@ -2,29 +2,49 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLPreviewTransitionAnimator : NSObject <UIViewControllerAnimatedTransitioning, UIViewControllerInteractiveTransitioning> {
+@interface QLPreviewTransitionAnimator : NSObject {
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _realSize;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _sourceFrame;
+    UIView *_sourceView;
+    UIView *_sourceViewToFade;
     <UIViewControllerContextTransitioning> *_transitionContext;
     BOOL showing;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
 @property (readonly) QLPreviewController *previewController;
+@property struct CGSize { float x1; float x2; } realSize;
 @property BOOL showing;
-@property (readonly) Class superclass;
+@property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceFrame;
+@property (retain) UIView *sourceView;
 @property <UIViewControllerContextTransitioning> *transitionContext;
 
 - (int)_transitionStateForAnimationEnding:(BOOL)arg1;
-- (void)animateTransition:(id)arg1;
+- (void)dealloc;
 - (void)didTransitionWithAnimationEnding:(BOOL)arg1;
 - (id)previewController;
+- (struct CGSize { float x1; float x2; })realSize;
+- (void)setRealSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShowing:(BOOL)arg1;
+- (void)setSourceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setSourceView:(id)arg1;
+- (void)setStatusBarHidden:(BOOL)arg1 withDuration:(double)arg2;
 - (void)setTransitionContext:(id)arg1;
 - (BOOL)showing;
-- (void)startInteractiveTransition:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceFrame;
+- (id)sourceView;
 - (id)transitionContext;
-- (double)transitionDuration:(id)arg1;
 - (void)updateStatusBarWithDuration:(double)arg1;
 - (void)willTransitionWithAnimationEnding:(BOOL)arg1;
 

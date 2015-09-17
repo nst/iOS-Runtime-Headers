@@ -12,7 +12,6 @@
 @property (nonatomic, copy) NSString *fullName;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *preferredPageIdentifier;
-@property (getter=isRegistered, nonatomic) BOOL registered;
 @property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic, copy) NSString *userName;
 
@@ -28,7 +27,6 @@
 - (id)initWithACAccount:(id)arg1;
 - (BOOL)isEnabled;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isRegistered;
 - (id)password;
 - (id)preferredPageIdentifier;
 - (BOOL)removeFromKeychain;
@@ -40,11 +38,11 @@
 - (void)setFullName:(id)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPreferredPageIdentifier:(id)arg1;
-- (void)setRegistered:(BOOL)arg1;
 - (void)setServiceIdentifier:(id)arg1;
 - (void)setUserName:(id)arg1;
 - (void)setValue:(id)arg1 forProperty:(id)arg2;
 - (void)updateWithACAccount:(id)arg1;
+- (void)updateWithMSCLAccount:(id)arg1;
 - (id)userName;
 - (id)valueForProperty:(id)arg1;
 

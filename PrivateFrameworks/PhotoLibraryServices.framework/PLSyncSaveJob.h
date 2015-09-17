@@ -9,6 +9,7 @@
     NSSet *albumURIs;
     NSDate *creationDate;
     NSArray *facesInfo;
+    BOOL hasVideoComplement;
     BOOL isSyncComplete;
     BOOL isVideo;
     CLLocation *location;
@@ -17,6 +18,7 @@
     NSString *originalFileName;
     NSNumber *sortToken;
     NSString *uuid;
+    NSURL *videoComplementURL;
 }
 
 @property (nonatomic, copy) NSSet *albumURIs;
@@ -25,6 +27,7 @@
 @property (nonatomic, copy) NSDate *creationDate;
 @property (nonatomic, retain) NSArray *facesInfo;
 @property (nonatomic, copy) id /* block */ finishedBlock;
+@property (nonatomic) BOOL hasVideoComplement;
 @property (nonatomic) BOOL isSyncComplete;
 @property (nonatomic) BOOL isVideo;
 @property (nonatomic, copy) CLLocation *location;
@@ -33,6 +36,7 @@
 @property (nonatomic, retain) NSString *originalFileName;
 @property (nonatomic, retain) NSNumber *sortToken;
 @property (nonatomic, copy) NSString *uuid;
+@property (nonatomic, retain) NSURL *videoComplementURL;
 
 - (id)albumURIs;
 - (id)cleanupBeforeDate;
@@ -42,6 +46,7 @@
 - (id)description;
 - (id)facesInfo;
 - (id /* block */)finishedBlock;
+- (BOOL)hasVideoComplement;
 - (id)initFromSerializedData:(id)arg1;
 - (BOOL)isSyncComplete;
 - (BOOL)isVideo;
@@ -57,6 +62,7 @@
 - (void)setCreationDate:(id)arg1;
 - (void)setFacesInfo:(id)arg1;
 - (void)setFinishedBlock:(id /* block */)arg1;
+- (void)setHasVideoComplement:(BOOL)arg1;
 - (void)setIsSyncComplete:(BOOL)arg1;
 - (void)setIsVideo:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
@@ -65,7 +71,9 @@
 - (void)setOriginalFileName:(id)arg1;
 - (void)setSortToken:(id)arg1;
 - (void)setUuid:(id)arg1;
+- (void)setVideoComplementURL:(id)arg1;
 - (id)sortToken;
 - (id)uuid;
+- (id)videoComplementURL;
 
 @end

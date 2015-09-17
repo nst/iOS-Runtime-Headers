@@ -26,7 +26,6 @@
 - (void)setScreenName:(id)arg1;
 - (void)setUserId:(id)arg1;
 - (void)setVerified:(BOOL)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)userId;
 - (BOOL)verified;
 

@@ -14,6 +14,7 @@
 - (id)date;
 - (id)dictionary;
 - (id)initWithDate:(id)arg1 view:(unsigned int)arg2;
+- (id)initWithDate:(id)arg1 view:(unsigned int)arg2 calendar:(id)arg3;
 - (id)initWithDictionary:(id)arg1;
 - (unsigned int)view;
 

@@ -11,7 +11,7 @@
 @property (nonatomic) unsigned long long totalStorage;
 @property (nonatomic) unsigned long long usedStorage;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (void)setStorageInUse:(unsigned int)arg1 forMediaKind:(int)arg2;
 - (void)setTotalStorage:(unsigned long long)arg1;

@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (id)_currentChooser;
 - (void)_selectRow:(int)arg1;
+- (id)backgroundColor;
 - (id)cellForRow:(int)arg1;
 - (BOOL)drawBackgroundForRow:(int)arg1;
 - (int)frequency;
@@ -24,6 +25,7 @@
 - (int)numberOfRows;
 - (BOOL)prohibitsMultipleDaysInMonthlyRecurrence;
 - (void)rowTapped:(int)arg1;
+- (void)setBackgroundColor:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setProhibitsMultipleDaysInMonthlyRecurrence:(BOOL)arg1;
 - (void)updateFromRecurrenceRule:(id)arg1;

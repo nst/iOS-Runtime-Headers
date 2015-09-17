@@ -18,10 +18,13 @@
 @property (nonatomic, retain) CKServerChangeToken *resultServerChangeToken;
 @property (nonatomic) unsigned int resultsLimit;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id /* block */)fetchNotificationChangesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithPreviousServerChangeToken:(id)arg1;
@@ -37,5 +40,9 @@
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (void)ic_removeAllCompletionBlocks;
 
 @end

@@ -3,12 +3,15 @@
  */
 
 @interface CPMLTrainer : NSObject {
+    struct CPMLDelegate { void *x1; void *x2; } *_cpmlDelegate;
+    CPMLStorageManager *_storageManager;
+    <CPMLAlgorithmProtocol> *_theDelegate;
     struct CPMLCDB { struct CPMLStatistics {} *x1; struct sqlite3 {} *x2; struct sqlite3 {} *x3; struct CPMLIterator {} *x4; struct CPMLRemapper {} *x5; struct CPMLTunableData {} *x6; } *cpCDB;
-    struct CPMLAlgorithm { int (**x1)(); BOOL x2[32]; struct CPMLCDB {} *x3; struct CPMLTunableData {} *x4; struct CPMLIterator {} *x5; struct CPMLSerialization {} *x6; } *cpMLAlgo;
+    struct CPMLAlgorithm { int (**x1)(); BOOL x2[32]; void *x3; struct CPMLCDB {} *x4; struct CPMLDelegate {} *x5; struct CPMLDelegateEngine {} *x6; struct CPMLTunableData {} *x7; struct CPMLIterator {} *x8; struct CPMLSerialization {} *x9; } *cpMLAlgo;
+    struct CPMLRemapper { bool x1; bool x2; bool x3; struct sqlite3 {} *x4; struct CPMLStatistics {} *x5; struct vector<int, std::__1::allocator<int> > {} *x6; struct vector<int, std::__1::allocator<int> > {} *x7; } *cpRemapper;
     struct CPMLTunableData { int x1; void *x2; void *x3; } *cpTuneableData;
     CPMLDB *cpmlDB;
     CPMLSchema *cpmlSchema;
-    struct sqlite3 { } *db;
     int mapFunction;
     struct sqlite3 { } *modelDB;
     NSDictionary *modelPlist;

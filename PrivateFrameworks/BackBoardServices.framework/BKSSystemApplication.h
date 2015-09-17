@@ -14,9 +14,11 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void)bootstrap;
 - (BOOL)clientIsAliveForWatchdog:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)finishBooting;
 - (id)initWithQueue:(id)arg1;
 - (void)restart;
 - (void)sendActions:(id)arg1;

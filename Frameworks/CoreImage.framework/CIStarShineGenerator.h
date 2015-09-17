@@ -34,7 +34,6 @@
 - (id)inputEpsilon;
 - (id)inputRadius;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputColor:(id)arg1;
 - (void)setInputCrossAngle:(id)arg1;

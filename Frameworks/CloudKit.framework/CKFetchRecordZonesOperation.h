@@ -28,6 +28,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)fetchAllRecordZonesError;
 - (id /* block */)fetchRecordZonesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;

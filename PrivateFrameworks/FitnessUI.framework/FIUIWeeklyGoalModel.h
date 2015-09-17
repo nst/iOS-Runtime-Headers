@@ -11,6 +11,6 @@
 - (void)fetchMostRecentWeeklyGoalWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (id)initWithHealthStore:(id)arg1;
-- (void)saveNewWeeklyCalorieGoal:(double)arg1 forDate:(id)arg2;
+- (void)saveNewWeeklyGoal:(id)arg1 forDate:(id)arg2;
 
 @end

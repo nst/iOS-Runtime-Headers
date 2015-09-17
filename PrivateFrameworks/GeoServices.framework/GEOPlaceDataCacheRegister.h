@@ -4,10 +4,12 @@
 
 @interface GEOPlaceDataCacheRegister : NSObject {
     NSMutableDictionary *_caches;
+    NSMutableDictionary *_freeable;
 }
 
 + (void)setDiskCachePath:(id)arg1;
 
+- (id)_cacheKeysPerSize;
 - (id)allCacheEntries;
 - (id)allCaches;
 - (id)cacheForProviderID:(int)arg1;
@@ -16,6 +18,6 @@
 - (void)deletePhoneNumberMapping;
 - (void)evictAllEntries;
 - (id)init;
-- (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2;
+- (void)shrinkBySize:(unsigned long long)arg1 finished:(id /* block */)arg2;
 
 @end

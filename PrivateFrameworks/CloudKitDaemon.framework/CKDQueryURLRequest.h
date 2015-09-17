@@ -9,6 +9,7 @@
     NSMutableArray *_queryResponses;
     NSArray *_requestedFields;
     NSData *_resultsCursor;
+    BOOL _shouldFetchAssetContent;
     CKRecordZoneID *_zoneID;
 }
 
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) NSArray *queryResponses;
 @property (nonatomic, retain) NSArray *requestedFields;
 @property (nonatomic, retain) NSData *resultsCursor;
+@property (nonatomic) BOOL shouldFetchAssetContent;
 @property (nonatomic, retain) CKRecordZoneID *zoneID;
 
 - (void).cxx_destruct;
@@ -40,7 +42,9 @@
 - (void)setQueryResponses:(id)arg1;
 - (void)setRequestedFields:(id)arg1;
 - (void)setResultsCursor:(id)arg1;
+- (void)setShouldFetchAssetContent:(BOOL)arg1;
 - (void)setZoneID:(id)arg1;
+- (BOOL)shouldFetchAssetContent;
 - (id)zoneID;
 - (id)zoneIDsToLock;
 

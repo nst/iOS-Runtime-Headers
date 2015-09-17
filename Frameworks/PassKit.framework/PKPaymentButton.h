@@ -3,33 +3,32 @@
  */
 
 @interface PKPaymentButton : UIButton {
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _boundsSize;
     UILabel *_buyLabel;
     UIView *_container;
-    UIView *_highlightView;
-    PKPaymentButtonPDFView *_pdfView;
+    CAFilter *_highlightFilter;
+    BOOL _highlighted;
+    CAShapeLayer *_layer;
+    PKShapeView *_maskView;
+    PKPDFView *_pdfView;
     int _style;
     int _type;
 }
 
-@property (nonatomic, retain) UILabel *buyLabel;
-@property (nonatomic, retain) UIView *container;
-@property (nonatomic, retain) UIView *highlightView;
-@property (nonatomic, retain) PKPaymentButtonPDFView *pdfView;
-
 + (id)buttonWithType:(int)arg1 style:(int)arg2;
++ (Class)layerClass;
 
-- (id)buyLabel;
-- (id)container;
+- (void)_createHighlightFilterIfNecessary;
+- (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)dealloc;
-- (id)highlightView;
-- (id)initWithType:(int)arg1 style:(int)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithPaymentButtonType:(int)arg1 paymentButtonStyle:(int)arg2;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)layoutSubviews;
-- (id)pdfView;
-- (void)setBuyLabel:(id)arg1;
-- (void)setContainer:(id)arg1;
-- (void)setHighlightView:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setPdfView:(id)arg1;
 
 @end

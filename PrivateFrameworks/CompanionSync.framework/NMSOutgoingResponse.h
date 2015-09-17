@@ -30,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;
+- (id)_makePBResponse;
 - (id)data;
 - (void)dealloc;
 - (id)description;

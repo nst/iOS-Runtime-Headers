@@ -5,7 +5,6 @@
 @interface CKDServerConfigurationManager : NSObject {
     BOOL _allowsCellularAccess;
     NSOperationQueue *_configurationQueue;
-    NSMutableDictionary *_containerOperations;
     NSMutableDictionary *_containerSpecificInfoOperations;
     NSOperationQueue *_containerSpecificInfoQueue;
     NSMutableDictionary *_containerSpecificInfos;
@@ -18,7 +17,6 @@
 
 @property (nonatomic) BOOL allowsCellularAccess;
 @property (nonatomic, retain) NSOperationQueue *configurationQueue;
-@property (nonatomic, retain) NSMutableDictionary *containerOperations;
 @property (nonatomic, retain) NSMutableDictionary *containerSpecificInfoOperations;
 @property (nonatomic, retain) NSOperationQueue *containerSpecificInfoQueue;
 @property (nonatomic, retain) NSMutableDictionary *containerSpecificInfos;
@@ -41,7 +39,6 @@
 - (BOOL)allowsCellularAccess;
 - (void)configurationForContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)configurationQueue;
-- (id)containerOperations;
 - (void)containerScopedUserIDForContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)containerSpecificInfoOperations;
 - (id)containerSpecificInfoQueue;
@@ -57,7 +54,6 @@
 - (id)queue;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
 - (void)setConfigurationQueue:(id)arg1;
-- (void)setContainerOperations:(id)arg1;
 - (void)setContainerSpecificInfoOperations:(id)arg1;
 - (void)setContainerSpecificInfoQueue:(id)arg1;
 - (void)setContainerSpecificInfos:(id)arg1;

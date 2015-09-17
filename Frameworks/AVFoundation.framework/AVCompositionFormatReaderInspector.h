@@ -4,6 +4,7 @@
 
 @interface AVCompositionFormatReaderInspector : AVFormatReaderInspector
 
+- (BOOL)isCompatibleWithAirPlayVideo;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;
 - (BOOL)isExportable;

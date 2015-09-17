@@ -65,7 +65,6 @@
     NSString *_vcPartyID;
     BOOL _videoDegraded;
     BOOL _videoPaused;
-    float _volumeMeter;
 }
 
 @property (nonatomic, readonly) int _activeCallID;
@@ -109,10 +108,10 @@
 @property (setter=setVCPartyID:, retain) NSString *vcPartyID;
 @property (nonatomic) void*videoBackLayer;
 @property (nonatomic) void*videoLayer;
-@property (nonatomic) float volumeMeter;
 
 - (int)_activeCallID;
 - (id)_callInfoForCallID:(int)arg1;
+- (id)_callInfoForReinitiate;
 - (id)_callInfoWithState:(int)arg1;
 - (id)_callInfosWaitingForAcceptAction;
 - (id)_callInfosWaitingForResponse;
@@ -122,7 +121,7 @@
 - (id)_connectTimeoutTimer;
 - (BOOL)_generateCallInfo:(id)arg1;
 - (void)_handleIMAVResponse:(unsigned int)arg1;
-- (void)_hangupCallLaterIfReinitiateFails:(id)arg1;
+- (void)_hangupCallLaterIfReinitiateFailsForCallInfo:(id)arg1;
 - (id)_initAs:(id)arg1 invitedBy:(id)arg2 sendingAudio:(BOOL)arg3 sendingVideo:(BOOL)arg4 usingICE:(BOOL)arg5 toChat:(id)arg6 inState:(unsigned int)arg7 withError:(int)arg8 andReason:(unsigned int)arg9 andVCPartyID:(id)arg10 account:(id)arg11;
 - (BOOL)_inviteDelivered;
 - (id)_natType;
@@ -132,7 +131,7 @@
 - (void)_processPropertyUpdate:(id)arg1;
 - (BOOL)_processResponseDictionary:(id)arg1 allowSecondConnection:(BOOL)arg2;
 - (id)_proxyRepresentation;
-- (void)_reInitiate;
+- (void)_reInitiateWithCallInfo:(id)arg1;
 - (void)_registerCallInfo:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_remoteLandscapeContentRect;
 - (struct CGSize { float x1; float x2; })_remoteLandscapeOrientation;
@@ -214,14 +213,11 @@
 - (void)setVideoDegraded:(BOOL)arg1;
 - (void)setVideoLayer:(void*)arg1;
 - (void)setVideoPaused:(BOOL)arg1;
-- (void)setVolumeMeter:(float)arg1;
 - (void)setWaitingToConnect:(BOOL)arg1;
 - (void)set_participantsCallInfo:(id)arg1;
 - (unsigned int)state;
-- (void)updateStateForCurrentCallInfo:(unsigned int)arg1;
 - (id)vcPartyID;
 - (void*)videoBackLayer;
 - (void*)videoLayer;
-- (float)volumeMeter;
 
 @end

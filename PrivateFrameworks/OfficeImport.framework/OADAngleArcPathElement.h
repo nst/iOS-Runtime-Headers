@@ -34,7 +34,6 @@
     } mStartAngle;
 }
 
-- (id).cxx_construct;
 - (struct OADAdjustCoord { BOOL x1; int x2; })angleLength;
 - (struct OADAdjustPoint { struct OADAdjustCoord { BOOL x_1_1_1; int x_1_1_2; } x1; struct OADAdjustCoord { BOOL x_2_1_1; int x_2_1_2; } x2; })center;
 - (BOOL)connectedToPrevious;

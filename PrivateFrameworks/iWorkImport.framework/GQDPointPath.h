@@ -14,7 +14,6 @@
     int mType;
 }
 
-- (id).cxx_construct;
 - (struct CGPath { }*)createBezierPath;
 - (int)mapStrType:(struct __CFString { }*)arg1;
 - (struct CGPoint { float x1; float x2; })point;

@@ -18,6 +18,7 @@
 @property (nonatomic, retain) CNFRegController *regController;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_getStartedPressed:(id)arg1;
 - (void)_learnMorePressed:(id)arg1;
 - (int)currentAppearanceStyle;

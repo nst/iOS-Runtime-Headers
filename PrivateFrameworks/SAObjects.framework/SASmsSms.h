@@ -7,6 +7,8 @@
 @property (nonatomic, copy) NSURL *attachment;
 @property (nonatomic, copy) NSString *chatIdentifier;
 @property (nonatomic, copy) NSDate *dateSent;
+@property (nonatomic, copy) NSString *groupNameId;
+@property (nonatomic, copy) NSNumber *isAudioMessage;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSArray *msgRecipients;
 @property (nonatomic, retain) SAPersonAttribute *msgSender;
@@ -26,6 +28,8 @@
 - (id)dateSent;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)groupNameId;
+- (id)isAudioMessage;
 - (id)message;
 - (id)msgRecipients;
 - (id)msgSender;
@@ -35,6 +39,8 @@
 - (void)setAttachment:(id)arg1;
 - (void)setChatIdentifier:(id)arg1;
 - (void)setDateSent:(id)arg1;
+- (void)setGroupNameId:(id)arg1;
+- (void)setIsAudioMessage:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMsgRecipients:(id)arg1;
 - (void)setMsgSender:(id)arg1;
@@ -45,7 +51,6 @@
 - (void)setTimezoneId:(id)arg1;
 - (id)subject;
 - (id)timezoneId;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 

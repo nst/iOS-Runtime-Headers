@@ -7,7 +7,7 @@
     unsigned int _depthFromRoute;
     float _distanceFromPreviousShieldLabel;
     BOOL _foundRoads;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; } *_geoJunction;
+    struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; } *_geoJunction;
     BOOL _hasSharedRouteDirection;
     VKLabelNavRoad *_incomingRoad;
     BOOL _isOnDualCarriageway;
@@ -15,7 +15,7 @@
     BOOL _isRouteOverpass;
     BOOL _isRouteRefineJunction;
     VKLabelNavRoadLabel *_junctionSign;
-    struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; struct { float x_3_1_1; float x_3_1_2; } x3; unsigned char x4; unsigned char x5; unsigned char x6; struct { /* ? */ } *x7; BOOL x8; } *_labelFeature;
+    struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; struct { float x_3_1_1; float x_3_1_2; } x3; struct { /* ? */ } *x4; float x5; unsigned int x6; unsigned char x7; BOOL x8; BOOL x9; } *_labelFeature;
     int _largestRoadClass;
     NSString *_name;
     VKLabelNavRoad *_outgoingRoad;
@@ -44,7 +44,7 @@
 
 @property (nonatomic) unsigned int depthFromRoute;
 @property (nonatomic) float distanceFromPreviousShieldLabel;
-@property (nonatomic, readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*geoJunction;
+@property (nonatomic, readonly) const struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*geoJunction;
 @property (nonatomic, readonly) BOOL hasSharedRouteDirection;
 @property (nonatomic, readonly) VKLabelNavRoad *incomingRoad;
 @property (nonatomic, readonly) int intraRoadPriority;
@@ -91,10 +91,10 @@
 - (void)evaluateCrossStreets;
 - (void)evaluateCrossStreetsUsingRouteJunction:(id)arg1;
 - (void)findRoads;
-- (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)geoJunction;
+- (const struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*)geoJunction;
 - (BOOL)hasSharedRouteDirection;
 - (id)incomingRoad;
-- (id)initWithGEOJunction:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)arg1 routeOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2 tile:(id)arg3;
+- (id)initWithGEOJunction:(struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*)arg1 routeOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg2 tile:(id)arg3;
 - (id)initWithRoadEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg1 atA:(BOOL)arg2 routeOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg3 tile:(id)arg4;
 - (int)intraRoadPriority;
 - (BOOL)isAwayFromRoute;

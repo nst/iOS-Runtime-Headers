@@ -22,12 +22,12 @@
 @property (nonatomic) BOOL instantiatingForSimulator;
 @property (nonatomic, retain) UINibDecoder *nibDecoder;
 
+- (void).cxx_destruct;
 - (id)archiveData;
 - (id)bundle;
 - (id)bundleDirectoryName;
 - (id)bundleResourceName;
 - (BOOL)captureImplicitLoadingContextOnDecode;
-- (void)dealloc;
 - (id)identifierForStringsFile;
 - (BOOL)instantiatingForSimulator;
 - (id)nibDecoder;

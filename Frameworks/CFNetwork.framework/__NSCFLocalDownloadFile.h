@@ -6,7 +6,7 @@
     int _error;
     <__NSCFLocalDownloadFileOpener> *_fileProvider;
     id /* block */ _finishCompletion;
-    bool _finished;
+    BOOL _finished;
     NSString *_path;
     BOOL _skipUnlink;
     struct stat { 
@@ -41,7 +41,7 @@
         int st_lspare; 
         long long st_qspare[2]; 
     } _stat;
-    bool _truncateFile;
+    BOOL _truncateFile;
     NSObject<OS_dispatch_queue> *_workQueue;
     NSObject<OS_dispatch_io> *_writeIO;
 }
@@ -49,14 +49,10 @@
 @property int error;
 @property <__NSCFLocalDownloadFileOpener> *fileProvider;
 @property (copy) id /* block */ finishCompletion;
-@property bool finished;
 @property (retain) NSString *path;
 @property BOOL skipUnlink;
-@property bool truncateFile;
-@property NSObject<OS_dispatch_queue> *workQueue;
-@property NSObject<OS_dispatch_io> *writeIO;
+@property BOOL truncateFile;
 
-- (id).cxx_construct;
 - (void)captureFile:(id*)arg1 outStat:(struct stat { int x1; unsigned short x2; unsigned short x3; unsigned long long x4; unsigned int x5; unsigned int x6; int x7; struct timespec { int x_8_1_1; long x_8_1_2; } x8; struct timespec { int x_9_1_1; long x_9_1_2; } x9; struct timespec { int x_10_1_1; long x_10_1_2; } x10; struct timespec { int x_11_1_1; long x_11_1_2; } x11; long long x12; long long x13; int x14; unsigned int x15; unsigned int x16; int x17; long long x18[2]; }*)arg2;
 - (void)dealloc;
 - (int)error;
@@ -64,7 +60,6 @@
 - (id)fileURL;
 - (id /* block */)finishCompletion;
 - (void)finishOnQueue:(id)arg1 completion:(id /* block */)arg2;
-- (bool)finished;
 - (id)initQueues;
 - (id)initTempFileWithDirectory:(id)arg1;
 - (id)initWithExistingFile:(id)arg1 expectedSize:(long long)arg2;
@@ -74,17 +69,12 @@
 - (void)setError:(int)arg1;
 - (void)setFileProvider:(id)arg1;
 - (void)setFinishCompletion:(id /* block */)arg1;
-- (void)setFinished:(bool)arg1;
 - (void)setPath:(id)arg1;
 - (void)setSkipUnlink:(BOOL)arg1;
-- (void)setTruncateFile:(bool)arg1;
-- (void)setWorkQueue:(id)arg1;
-- (void)setWriteIO:(id)arg1;
+- (void)setTruncateFile:(BOOL)arg1;
 - (BOOL)skipUnlink;
 - (void)truncate;
-- (bool)truncateFile;
-- (id)workQueue;
+- (BOOL)truncateFile;
 - (void)writeBytes:(id)arg1 completionQueue:(id)arg2 completion:(id /* block */)arg3;
-- (id)writeIO;
 
 @end

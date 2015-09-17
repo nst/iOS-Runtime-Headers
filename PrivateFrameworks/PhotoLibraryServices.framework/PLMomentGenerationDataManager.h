@@ -38,6 +38,7 @@
 - (void)_removeKeepAlive;
 - (id)_serverVersionInfoFilePath;
 - (void)_updateKeepAlive;
+- (id)allAssetIDsNeedingLocationShiftWithError:(id*)arg1;
 - (id)allAssetIDsToBeIncludedInMomentsWithError:(id*)arg1;
 - (id)allAssetsToBeIncludedInMomentsWithError:(id*)arg1;
 - (id)allMomentListsForLevel:(short)arg1;
@@ -52,6 +53,7 @@
 - (void)beginObservingNetworkReachabilityChangesWithBlock:(id /* block */)arg1;
 - (void)dealloc;
 - (id)deletedObjects;
+- (void)enumerateAssetsWithIDs:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)findOrCreateYearMomentListForYear:(int)arg1;
 - (id)generationOptions;
 - (id)generator;
@@ -64,10 +66,13 @@
 - (id)insertNewMomentListForGranularityLevel:(short)arg1;
 - (id)insertedObjects;
 - (void)invalidateLocationDataForAssetsInMoment:(id)arg1;
+- (void)invalidateShiftedLocationForAllAssetsInMoments;
 - (BOOL)isMomentAnalysisNeeded;
 - (BOOL)isMomentsSupportedOnPlatform;
 - (BOOL)isNetworkReachable;
+- (id)locationCoordinatesForAssetIDs:(id)arg1;
 - (id)managedObjectContext;
+- (id)momentAnalysisTransactionWithName:(const char *)arg1;
 - (Class)momentAssetDataClass;
 - (Class)momentDataClass;
 - (id)momentGenerationLibrary;
@@ -76,6 +81,7 @@
 - (id)momentListWithUniqueID:(id)arg1 forLevel:(short)arg2 error:(id*)arg3;
 - (id)momentWithUniqueID:(id)arg1 error:(id*)arg2;
 - (id)momentsBetweenDate:(id)arg1 andDate:(id)arg2 sorted:(BOOL)arg3;
+- (id)momentsBetweenDateRanges:(id)arg1;
 - (id)momentsSinceDate:(id)arg1;
 - (id)orphanedAssetIDsWithError:(id*)arg1;
 - (void)pendingChangesUpdated:(unsigned int)arg1;

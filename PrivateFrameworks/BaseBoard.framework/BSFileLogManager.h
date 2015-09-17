@@ -20,6 +20,7 @@
 - (BOOL)_queue_isClass:(Class)arg1 aKindOfClass:(Class)arg2;
 - (void)_queue_registerLogger:(id)arg1;
 - (void)dealloc;
+- (id)debugDescription;
 - (void)flush;
 - (id)init;
 - (void)loggerEnabledStateChanged:(id)arg1;

@@ -18,9 +18,9 @@
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic, retain) NSString *lastName;
 
+- (void).cxx_destruct;
 - (id)address;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (id)dtstamp;

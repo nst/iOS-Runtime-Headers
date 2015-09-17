@@ -6,6 +6,8 @@
     NSString *_headerNote;
     unsigned long long _idleWorkQueueFrameAddress;
     unsigned long long _stackshotFrameAddress;
+    unsigned int _startingTSDSIndex;
+    unsigned int _timestampIndexWhenTransitionedToSamplingAllProcesses;
     unsigned int _timestampsDisplayOffset;
 }
 
@@ -15,6 +17,7 @@
 @property BOOL printHeavyStacks;
 @property BOOL printSpinSignatureStack;
 @property unsigned long long stackshotFrameAddress;
+@property (readonly) unsigned int timestampIndexWhenTransitionedToSamplingAllProcesses;
 
 - (void)dealloc;
 - (int)displayTimeIndexForTimestampIndex:(unsigned int)arg1;
@@ -37,8 +40,10 @@
 - (void)setIdleWorkQueueFrameAddress:(unsigned long long)arg1;
 - (void)setPrintHeavyStacks:(BOOL)arg1;
 - (void)setPrintSpinSignatureStack:(BOOL)arg1;
+- (void)setSamples:(id)arg1;
 - (void)setStackshotFrameAddress:(unsigned long long)arg1;
 - (id)sortedTasks;
 - (unsigned long long)stackshotFrameAddress;
+- (unsigned int)timestampIndexWhenTransitionedToSamplingAllProcesses;
 
 @end

@@ -6,14 +6,16 @@
     NSString *_buildVersion;
     NSString *_deviceName;
     GKEventEmitter<GKLockStatusObserver> *_emitter;
+    BOOL _gameKitAvailable;
     NSString *_gameKitVersion;
     NSString *_osVersion;
     NSString *_udid;
 }
 
 @property (nonatomic, readonly) NSString *buildVersion;
-@property (nonatomic, readonly) NSString *deviceName;
+@property (nonatomic, retain) NSString *deviceName;
 @property (nonatomic, retain) GKEventEmitter<GKLockStatusObserver> *emitter;
+@property (getter=isGameKitAvailable, nonatomic, readonly) BOOL gameKitAvailable;
 @property (nonatomic, readonly) NSString *gameKitVersion;
 @property (nonatomic, readonly) NSString *osVersion;
 @property (nonatomic, readonly) NSString *udid;
@@ -32,10 +34,13 @@
 - (id)gameKitVersion;
 - (id)init;
 - (BOOL)isDevelopmentDevice;
+- (BOOL)isFocusDevice;
+- (BOOL)isGameKitAvailable;
 - (id)osVersion;
 - (id)processNameHeader;
 - (id)protocolVersionHeader;
 - (void)removeLockStatusObserver:(id)arg1;
+- (void)setDeviceName:(id)arg1;
 - (void)setEmitter:(id)arg1;
 - (void)stopObservingKeyBagStatus;
 - (id)storeUserAgent;

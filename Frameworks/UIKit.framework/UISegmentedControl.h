@@ -8,6 +8,7 @@
     UIView *_backgroundBarView;
     int _barStyle;
     float _enabledAlpha;
+    UISegment *_focusedSegment;
     int _highlightedSegment;
     UIView *_removedSegment;
     struct { 
@@ -35,6 +36,7 @@
 @property (readonly) unsigned int hash;
 @property (getter=isMomentary, nonatomic) BOOL momentary;
 @property (nonatomic, readonly) unsigned int numberOfSegments;
+@property (nonatomic, retain) UIView *removedSegment;
 @property (nonatomic) int segmentedControlStyle;
 @property (nonatomic) int selectedSegmentIndex;
 @property (readonly) Class superclass;
@@ -42,25 +44,33 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (id)_modernBackgroundSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
-+ (id)_modernDividerImage;
++ (float)_cornerRadiusForTraitCollection:(id)arg1;
++ (float)_dividerWidthForTraitCollection:(id)arg1;
++ (float)_lineWidthForTraitCollection:(id)arg1;
++ (id)_modernBackgroundSelected:(BOOL)arg1 highlighted:(BOOL)arg2 traitCollection:(id)arg3;
++ (id)_modernDividerImageForTraitCollection:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (float)defaultHeight;
 + (float)defaultHeightForStyle:(int)arg1;
 + (float)defaultHeightForStyle:(int)arg1 size:(int)arg2;
 
+- (void).cxx_destruct;
 - (void)_animateContentChangeWithAnimations:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)_attributedTitleForSegmentAtIndex:(unsigned int)arg1;
 - (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;
 - (id)_badgeValueForSegmentAtIndex:(unsigned int)arg1;
 - (float)_barHeight;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
+- (void)_cancelDelayedFocusAction;
 - (void)_clearSelectedSegment;
 - (void)_commonSegmentedControlInit;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (unsigned int)_controlEventsForActionTriggered;
 - (id)_createAndAddSegmentAtIndex:(int)arg1 position:(unsigned int)arg2 withInfo:(id)arg3;
 - (id)_createSegmentAtIndex:(int)arg1 position:(unsigned int)arg2 withInfo:(id)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (id)_firstEnabledSegment;
+- (BOOL)_hasEnabledSegment;
 - (BOOL)_hasTranslucentOptionsBackground;
 - (void)_insertSegment:(int)arg1 withInfo:(id)arg2 animated:(BOOL)arg3;
 - (void)_insertSegmentWithAttributedTitle:(id)arg1 atIndex:(unsigned int)arg2 animated:(BOOL)arg3;
@@ -72,6 +82,8 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_removeSegmentAnimationFinished:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_resetForAppearanceChange;
+- (void)_selectFocusedSegment;
+- (void)_sendFocusAction;
 - (void)_setAppearanceIsTiled:(BOOL)arg1 leftCapWidth:(unsigned int)arg2 rightCapWidth:(unsigned int)arg3;
 - (void)_setAttributedTitle:(id)arg1 forSegmentAtIndex:(unsigned int)arg2;
 - (void)_setAutosizeText:(BOOL)arg1;
@@ -93,6 +105,7 @@
 - (void)_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (void)_setTranslucentOptionsBackground:(BOOL)arg1;
 - (void)_setUsesNewAnimations:(BOOL)arg1;
+- (BOOL)_shouldConsumeEventWithPresses:(id)arg1;
 - (BOOL)_shouldSelectSegmentAtIndex:(int)arg1;
 - (void)_tapSegmentAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_tintColorArchivingKey;
@@ -105,11 +118,13 @@
 - (id)backgroundImageForState:(unsigned int)arg1 barMetrics:(int)arg2;
 - (int)barStyle;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
+- (BOOL)canBecomeFocused;
 - (struct CGSize { float x1; float x2; })contentOffsetForSegment:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })contentOffsetForSegmentAtIndex:(unsigned int)arg1;
 - (struct UIOffset { float x1; float x2; })contentPositionAdjustmentForSegmentType:(int)arg1 barMetrics:(int)arg2;
 - (int)controlSize;
 - (void)dealloc;
+- (void)didUpdateFocusFromView:(id)arg1;
 - (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)encodeWithCoder:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
@@ -132,6 +147,11 @@
 - (void)layoutSubviews;
 - (unsigned int)numberOfSegments;
 - (BOOL)pointMostlyInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)preferredFocusedView;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)removeAllSegments;
 - (void)removeSegment:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)removeSegmentAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
@@ -187,13 +207,10 @@
 - (BOOL)transparentBackground;
 - (void)updateForMiniBarState:(BOOL)arg1;
 - (BOOL)useBlockyMagnificationInClassic;
-- (id)viewForBaselineLayout;
+- (id)viewForLastBaselineLayout;
 - (float)widthForSegment:(unsigned int)arg1;
 - (float)widthForSegmentAtIndex:(unsigned int)arg1;
-
-// Image: /System/Library/Frameworks/MapKit.framework/MapKit
-
-- (void)_mk_setItems:(id)arg1;
+- (void)willUpdateFocusToView:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
 

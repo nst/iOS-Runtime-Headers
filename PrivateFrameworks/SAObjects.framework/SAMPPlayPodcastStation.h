@@ -4,7 +4,7 @@
 
 @interface SAMPPlayPodcastStation : SADomainCommand
 
-@property (nonatomic, retain) SAMPPodcast *station;
+@property (nonatomic, retain) SAMPPodcastStation *station;
 
 + (id)playPodcastStation;
 + (id)playPodcastStationWithDictionary:(id)arg1 context:(id)arg2;

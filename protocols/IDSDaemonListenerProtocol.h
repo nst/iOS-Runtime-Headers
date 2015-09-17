@@ -6,6 +6,9 @@
 @optional
 
 - (void)IDQueryCompletedWithFromURI:(NSString *)arg1 idStatusUpdates:(NSDictionary *)arg2 service:(NSString *)arg3 success:(BOOL)arg4 error:(NSError *)arg5;
+- (void)OTRTestCallback:(NSString *)arg1 time:(double)arg2 error:(NSError *)arg3;
+- (void)accessoryDataReceived:(NSData *)arg1 withGUID:(NSString *)arg2 forTopic:(NSString *)arg3 toIdentifier:(NSString *)arg4 fromID:(NSString *)arg5 context:(NSDictionary *)arg6;
+- (void)accessoryReportMessageReceived:(NSString *)arg1 accessoryID:(NSString *)arg2 controllerID:(NSString *)arg3 withGUID:(NSString *)arg4 forTopic:(NSString *)arg5 toIdentifier:(NSString *)arg6 fromID:(NSString *)arg7 context:(NSDictionary *)arg8;
 - (void)account:(NSString *)arg1 accountInfoChanged:(NSDictionary *)arg2;
 - (void)account:(NSString *)arg1 aliasesChanged:(NSDictionary *)arg2;
 - (void)account:(NSString *)arg1 dependentDevicesUpdated:(NSArray *)arg2;
@@ -23,6 +26,8 @@
 - (void)accountRemoved:(NSDictionary *)arg1;
 - (void)accountUpdated:(NSDictionary *)arg1;
 - (void)accountsChanged:(NSArray *)arg1 forTopic:(NSString *)arg2;
+- (void)adminAccessTokens:(NSArray *)arg1 error:(NSError *)arg2;
+- (void)consentTokens:(NSArray *)arg1 error:(NSError *)arg2;
 - (void)continuityDidConnectToPeer:(NSString *)arg1 withError:(NSError *)arg2;
 - (void)continuityDidDisconnectFromPeer:(NSString *)arg1 withError:(NSError *)arg2;
 - (void)continuityDidDiscoverPeerWithData:(NSData *)arg1 fromPeer:(NSString *)arg2;
@@ -47,8 +52,9 @@
 - (void)device:(NSString *)arg1 nsuuidChanged:(NSString *)arg2;
 - (void)device:(NSString *)arg1 pairingAdded:(BOOL)arg2;
 - (void)device:(NSString *)arg1 pairingDeleted:(BOOL)arg2;
+- (void)deviceIdentifierDidChange:(NSString *)arg1;
 - (void)localDeviceInfo:(NSDictionary *)arg1;
-- (void)messageIdentifier:(NSString *)arg1 alternateCallbackID:(NSString *)arg2 forAccount:(NSString *)arg3 updatedWithResponseCode:(int)arg4 error:(NSError *)arg5 lastCall:(BOOL)arg6;
+- (void)messageIdentifier:(NSString *)arg1 alternateCallbackID:(NSString *)arg2 forAccount:(NSString *)arg3 updatedWithResponseCode:(int)arg4 error:(NSError *)arg5 lastCall:(BOOL)arg6 context:(NSDictionary *)arg7;
 - (void)messageIdentifier:(NSString *)arg1 alternateCallbackID:(NSString *)arg2 forAccount:(NSString *)arg3 willSendToDestinations:(NSArray *)arg4 skippedDestinations:(NSArray *)arg5 registrationPropertyToDestinations:(NSDictionary *)arg6;
 - (void)messageIdentifier:(NSString *)arg1 forTopic:(NSString *)arg2 toIdentifier:(NSString *)arg3 hasBeenDeliveredWithContext:(id)arg4;
 - (void)messageReceived:(NSDictionary *)arg1 withGUID:(NSString *)arg2 withPayload:(NSDictionary *)arg3 forTopic:(NSString *)arg4 toIdentifier:(NSString *)arg5 fromID:(NSString *)arg6 context:(NSDictionary *)arg7;
@@ -56,7 +62,9 @@
 - (void)pairedDeviceInfo:(NSDictionary *)arg1;
 - (void)protobufReceived:(NSDictionary *)arg1 withGUID:(NSString *)arg2 forTopic:(NSString *)arg3 toIdentifier:(NSString *)arg4 fromID:(NSString *)arg5 context:(NSDictionary *)arg6;
 - (void)refreshRegistrationForAccount:(NSString *)arg1;
+- (void)refreshUserAccessTokens:(NSArray *)arg1 error:(NSError *)arg2;
 - (void)registrationFailedForAccount:(NSString *)arg1 needsDeletion:(NSNumber *)arg2;
+- (void)serviceUserIDs:(NSArray *)arg1 error:(NSError *)arg2;
 - (void)session:(NSString *)arg1 audioEnabled:(BOOL)arg2;
 - (void)session:(NSString *)arg1 muted:(BOOL)arg2;
 - (void)sessionAcceptReceived:(NSString *)arg1 fromID:(NSString *)arg2 withData:(NSData *)arg3;
@@ -69,6 +77,7 @@
 - (void)sessionStarted:(NSString *)arg1;
 - (void)setupComplete:(BOOL)arg1 info:(NSDictionary *)arg2;
 - (void)setupCompleteForAccount:(NSString *)arg1 transactionID:(NSString *)arg2 setupError:(NSError *)arg3;
+- (void)userAccessTokens:(NSArray *)arg1 error:(NSError *)arg2;
 - (void)xpcObject:(NSObject<OS_xpc_object> *)arg1 objectContext:(NSDictionary *)arg2;
 
 @end

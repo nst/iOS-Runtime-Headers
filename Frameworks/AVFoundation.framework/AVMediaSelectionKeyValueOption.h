@@ -18,7 +18,6 @@
 - (void)dealloc;
 - (id)dictionary;
 - (id)group;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3;
 - (BOOL)isEqual:(id)arg1;

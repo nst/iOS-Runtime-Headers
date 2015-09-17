@@ -8,6 +8,7 @@
     OADOle *mOle;
 }
 
+- (void)changeParentTextListStylePreservingEffectiveValues:(id)arg1;
 - (id)createImageFill;
 - (void)createPictureFramePresetGeometry;
 - (void)dealloc;

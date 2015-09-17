@@ -11,6 +11,7 @@
     BOOL _shouldValidateValueAfterReading;
     NSString *_type;
     id _value;
+    unsigned long long _valueUpdateTime;
 }
 
 @property (nonatomic) BOOL eventNotificationsEnabled;
@@ -21,7 +22,8 @@
 @property (nonatomic) BOOL shouldValidateValueAfterReading;
 @property (nonatomic, readonly) BOOL supportsAdditionalAuthorizationData;
 @property (nonatomic, copy) NSString *type;
-@property (nonatomic, copy) id value;
+@property (setter=setValue:, nonatomic, copy) id value;
+@property (nonatomic) unsigned long long valueUpdateTime;
 
 - (void).cxx_destruct;
 - (id)_generateValidMetadata:(id)arg1;
@@ -43,10 +45,12 @@
 - (void)setShouldValidateValueAfterReading:(BOOL)arg1;
 - (void)setType:(id)arg1;
 - (void)setValue:(id)arg1;
+- (void)setValueUpdateTime:(unsigned long long)arg1;
 - (BOOL)shouldValidateValueAfterReading;
 - (BOOL)supportsAdditionalAuthorizationData;
 - (id)type;
 - (id)validateValue:(id)arg1 outValue:(id*)arg2;
 - (id)value;
+- (unsigned long long)valueUpdateTime;
 
 @end

@@ -22,7 +22,6 @@
 - (id)inputColor1;
 - (id)inputRadius;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputColor0:(id)arg1;
 - (void)setInputColor1:(id)arg1;

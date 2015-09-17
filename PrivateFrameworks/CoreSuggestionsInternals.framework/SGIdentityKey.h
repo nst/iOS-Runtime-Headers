@@ -13,8 +13,10 @@
 + (unsigned int)identityTypeForKeyPart:(id)arg1;
 + (BOOL)isSupportedEntityType:(long long)arg1;
 + (id)keyForContactExternalId:(int)arg1;
++ (id)keyForContactUniqueId:(id)arg1;
 + (id)keyForEmail:(id)arg1;
 + (id)keyForNormalizedEmail:(id)arg1;
++ (id)keyForNormalizedPhone:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -22,12 +24,14 @@
 - (id)emailAddress;
 - (id)externalId;
 - (BOOL)hasEmailAddress;
+- (BOOL)hasPhone;
 - (unsigned int)hash;
 - (id)identityKey;
 - (id)initWithSerialized:(id)arg1;
 - (id)initWithType:(unsigned int)arg1 content:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToIdentityKey:(id)arg1;
+- (id)phone;
 - (id)serialize;
 - (unsigned int)type;
 

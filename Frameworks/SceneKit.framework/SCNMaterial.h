@@ -4,8 +4,10 @@
 
 @interface SCNMaterial : NSObject <NSCopying, NSSecureCoding, SCNAnimatable, SCNShadable> {
     SCNMaterialProperty *_ambient;
+    SCNMaterialProperty *_ambientOcclusion;
     SCNOrderedDictionary *_animations;
     BOOL _avoidsOverLighting;
+    int _blendMode;
     int _cullMode;
     SCNMaterialProperty *_diffuse;
     BOOL _doubleSided;
@@ -23,7 +25,7 @@
     SCNMaterialProperty *_normal;
     BOOL _readsFromDepthBuffer;
     SCNMaterialProperty *_reflective;
-    id _reserved;
+    SCNMaterialProperty *_selfIllumination;
     SCNShadableHelper *_shadableHelper;
     float _shininess;
     SCNMaterialProperty *_specular;
@@ -35,6 +37,9 @@
 }
 
 @property (nonatomic, readonly) SCNMaterialProperty *ambient;
+@property (nonatomic, readonly) SCNMaterialProperty *ambientOcclusion;
+@property (readonly) NSArray *animationKeys;
+@property (nonatomic) int blendMode;
 @property (nonatomic) int cullMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -52,6 +57,7 @@
 @property (nonatomic, retain) SCNProgram *program;
 @property (nonatomic) BOOL readsFromDepthBuffer;
 @property (nonatomic, readonly) SCNMaterialProperty *reflective;
+@property (nonatomic, readonly) SCNMaterialProperty *selfIllumination;
 @property (nonatomic, copy) NSDictionary *shaderModifiers;
 @property (nonatomic) float shininess;
 @property (nonatomic, readonly) SCNMaterialProperty *specular;
@@ -61,18 +67,21 @@
 @property (nonatomic, readonly) SCNMaterialProperty *transparent;
 @property (nonatomic) BOOL writesToDepthBuffer;
 
-+ (id)SCNJSExportProtocol;
 + (BOOL)accessInstanceVariablesDirectly;
 + (id)material;
++ (id)materialNamed:(id)arg1;
 + (id)materialWithColor:(id)arg1;
 + (id)materialWithContents:(id)arg1;
++ (id)materialWithMDLMaterial:(id)arg1;
 + (id)materialWithMaterialRef:(struct __C3DMaterial { }*)arg1;
++ (BOOL)resolveInstanceMethod:(SEL)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void*)__CFObject;
 - (void)__removeAnimation:(id)arg1 forKey:(id)arg2;
 - (void)_customDecodingOfSCNMaterial:(id)arg1;
 - (void)_customEncodingOfSCNMaterial:(id)arg1;
+- (id)_integrateModelKitComputedMaps:(id)arg1 withGeometry:(id)arg2 node:(id)arg3 texturePathProvider:(id /* block */)arg4 vertexAttributeNamed:(id)arg5 materialPropertyNamed:(id)arg6 filePath:(id)arg7;
 - (Class)_materialPropertyClass;
 - (void)_pauseAnimation:(BOOL)arg1 forKey:(id)arg2;
 - (id)_property:(id*)arg1;
@@ -85,20 +94,24 @@
 - (void)addAnimation:(id)arg1;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (id)ambient;
+- (id)ambientOcclusion;
 - (id)animationForKey:(id)arg1;
 - (id)animationKeys;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long x_16_1_1; BOOL x_16_1_2[40]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; double x16; struct _opaque_pthread_mutex_t { long x_17_1_1; BOOL x_17_1_2[40]; } x17; int x18; int x19; int x20; int x21; }*)animationManager;
 - (BOOL)avoidsOverLighting;
+- (int)blendMode;
 - (id)color;
-- (struct __C3DEffectCommonProfile { struct __C3DEffectProfile { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; long x_1_1_2; } x1; struct __C3DMaterial {} *x2; long x3; struct __C3DEffectSlot {} *x4; struct __C3DEffectSlot {} *x5; struct __C3DEffectSlot {} *x6; struct __C3DEffectSlot {} *x7; struct __C3DEffectSlot {} *x8; struct __C3DEffectSlot {} *x9; struct __C3DEffectSlot {} *x10; struct __C3DEffectSlot {} *x11; float x12; float x13; float x14; float x15; float x16; BOOL x17; int x18; bool x19; bool x20; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 10; struct __C3DFXProgram {} *x31; }*)commonProfile;
+- (struct __C3DEffectCommonProfile { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DMaterial {} *x2; long x3; struct __C3DEffectSlot {} *x4; struct __C3DEffectSlot {} *x5; struct __C3DEffectSlot {} *x6; struct __C3DEffectSlot {} *x7; struct __C3DEffectSlot {} *x8; struct __C3DEffectSlot {} *x9; struct __C3DEffectSlot {} *x10; struct __C3DEffectSlot {} *x11; struct __C3DEffectSlot {} *x12; struct __C3DEffectSlot {} *x13; float x14; float x15; float x16; float x17; BOOL x18; int x19; bool x20; bool x21; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 11; }*)commonProfile;
 - (id)content;
 - (id)contents;
 - (id)copy;
-- (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1;
+- (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 property:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)cullMode;
 - (void)dealloc;
+- (id)debugQuickLookData;
+- (id)debugQuickLookObject;
 - (id)description;
 - (id)diffuse;
 - (id)emission;
@@ -137,7 +150,9 @@
 - (void)resumeAnimationForKey:(id)arg1;
 - (id)scene;
 - (struct __C3DScene { }*)sceneRef;
+- (id)selfIllumination;
 - (void)setAvoidsOverLighting:(BOOL)arg1;
+- (void)setBlendMode:(int)arg1;
 - (void)setColor:(id)arg1;
 - (void)setContent:(id)arg1;
 - (void)setContents:(id)arg1;
@@ -160,7 +175,6 @@
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (void)setWritesToDepthBuffer:(BOOL)arg1;
 - (id)shaderModifiers;
-- (id)shaderModifiersUniformNames;
 - (float)shininess;
 - (id)specular;
 - (float)transparency;

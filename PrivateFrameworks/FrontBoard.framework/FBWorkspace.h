@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBWorkspace : NSObject <FBSceneClientProvider> {
+@interface FBWorkspace : NSObject <FBSceneClientProvider, FBWorkspaceServerDelegate> {
     NSObject<OS_dispatch_queue> *_callOutQueue;
     NSMapTable *_hostToClientMap;
     BOOL _invalidated;
@@ -22,7 +22,7 @@
 @property (nonatomic, readonly) FBProcess *process;
 @property (readonly) Class superclass;
 
-- (id)_newSceneWithHost:(id)arg1 initialClientSettings:(id)arg2;
+- (id)_newSceneWithHost:(id)arg1;
 - (id)_newWorkspaceServer;
 - (id)_queue;
 - (void)_queue_enumerateScenes:(id /* block */)arg1;
@@ -38,7 +38,7 @@
 - (void)endTransaction;
 - (id)initWithParentProcess:(id)arg1 queue:(id)arg2 callOutQueue:(id)arg3;
 - (id)process;
-- (id)registerHost:(id)arg1 withInitialClientSettings:(id)arg2;
+- (id)registerHost:(id)arg1;
 - (void)registerInvalidationAction:(id)arg1;
 - (void)sendActions:(id)arg1;
 - (void)server:(id)arg1 handleCreateSceneRequest:(id)arg2 withCompletion:(id /* block */)arg3;

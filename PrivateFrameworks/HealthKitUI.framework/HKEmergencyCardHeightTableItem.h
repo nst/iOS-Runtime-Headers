@@ -5,11 +5,12 @@
 @interface HKEmergencyCardHeightTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate> {
     _HKMedicalIDMultilineStringCell *_displayCell;
     HKMedicalIDEditorHeightCell *_editableCell;
+    _HKCustomInsetCellLayoutManager *_layoutManager;
 }
 
 - (void).cxx_destruct;
+- (id)_createEditableCell;
 - (id)_displayCell;
-- (id)_editableCell;
 - (BOOL)canEditRowAtIndex:(int)arg1;
 - (void)commitEditing;
 - (int)commitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;

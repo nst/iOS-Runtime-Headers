@@ -16,6 +16,7 @@
 - (void)serverBannerViewDidLoad;
 - (void)serverBannerViewWillLoad;
 - (void)serverStoryboardDidTransitionOut;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)storyboardViewControllerDidPresent;
 
 @end

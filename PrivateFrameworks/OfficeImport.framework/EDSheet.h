@@ -30,6 +30,7 @@
 - (void)dealloc;
 - (id)defaultGridlineColor;
 - (id)defaultGridlineColorReference;
+- (id)description;
 - (void)doneWithNonRowContent;
 - (id)drawableAtIndex:(unsigned int)arg1;
 - (unsigned int)drawableCount;

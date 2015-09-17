@@ -28,6 +28,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithRecordIDsToWebShare:(id)arg1 recordIDsToUnshare:(id)arg2;
 - (void)performCKOperation;

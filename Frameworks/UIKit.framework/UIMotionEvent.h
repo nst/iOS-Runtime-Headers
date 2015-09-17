@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIMotionEvent : UIInternalEvent {
+@interface UIMotionEvent : UIEvent {
     double _highLevelTime;
     float _highPassState;
     unsigned int _highPassStateIndex;
@@ -22,6 +22,7 @@
 
 @property (nonatomic) int shakeState;
 
+- (void).cxx_destruct;
 - (void)_accelerometerDidDetectMovementWithTimestamp:(double)arg1;
 - (BOOL)_detectWhenNotActive;
 - (float)_determineShakeLevelX:(float)arg1 y:(float)arg2 z:(float)arg3 currentState:(int)arg4;

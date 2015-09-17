@@ -7,4 +7,8 @@
 
 - (NSString *)parsecDomainIdentifier;
 
+@optional
+
+- (NSString *)lastSearchQuery;
+
 @end

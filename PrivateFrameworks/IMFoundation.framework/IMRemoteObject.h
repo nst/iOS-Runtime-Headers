@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) BOOL isValid;
 @property (nonatomic) int pid;
 @property (nonatomic, readonly) NSString *portName;
+@property (nonatomic, retain) NSString *processName;
 
 + (void)_registerIMRemoteObject:(id)arg1;
 + (id)_remoteObjects;
@@ -35,7 +36,9 @@
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (int)pid;
 - (id)portName;
+- (id)processName;
 - (void)setPid:(int)arg1;
 - (void)setPortName:(id)arg1;
+- (void)setProcessName:(id)arg1;
 
 @end

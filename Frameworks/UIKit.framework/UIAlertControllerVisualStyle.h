@@ -10,52 +10,72 @@
 @property (nonatomic, retain) UIAlertControllerDescriptor *descriptor;
 @property (nonatomic, retain) UITraitCollection *traitCollection;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
+- (void).cxx_destruct;
 - (id)_detailMessageFont;
+- (float)_marginAboveDetailMessageFirstBaseline;
+- (float)_scaledMarginAboveDetailMessageFirstBaseline;
 - (float)_scaledMarginAboveMessageLabelFirstBaseline;
 - (float)_scaledMarginAboveTitleLabelFirstBaseline;
 - (float)_scaledMarginBelowLastLabelLastBaseline;
 - (float)_scaledMarginBelowMessageLabelLastBaseline;
 - (float)_scaledMarginBelowTitleLabelLastBaseline;
-- (id)actionHighlightedBackgroundView;
+- (BOOL)_shouldReverseActions;
+- (id)actionContentColorForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
+- (BOOL)actionContentInheritsTextColor;
+- (float)actionHorizontalContentMargin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionImageMarginForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
+- (BOOL)actionLabelsMayAdjustFontsToFit;
+- (BOOL)actionLabelsMayUseMarqueeWhenFocused;
 - (float)actionWidthForMinimumActionWidth:(float)arg1;
+- (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(BOOL)arg3 inContainerView:(id)arg4 descendantOfContainerView:(id)arg5 duration:(double)arg6 completionBlock:(id /* block */)arg7;
+- (void)animateRevealOfAlertControllerView:(id)arg1 alertController:(id)arg2 inContainerView:(id)arg3 duration:(double)arg4 completionBlock:(id /* block */)arg5;
 - (float)backgroundCornerRadius;
 - (id)backgroundView;
+- (id)backgroundViewForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionViewContentInsets;
 - (struct CGSize { float x1; float x2; })collectionViewOutsetSize;
-- (id)defaultActionBackgroundColorWhenSeparate;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)defaultActionFont;
+- (id)descriptiveFontForAction:(id)arg1 inAlertController:(id)arg2;
 - (id)descriptor;
-- (id)dimmingView;
-- (id)disabledActionContentColor;
+- (id)dimmingViewForAlertController:(id)arg1;
 - (BOOL)focusedActionAnimatesOnPresentationAndDismissal;
 - (BOOL)hideActionSeparators;
-- (id)highlightedActionContentColor;
-- (float)horizontalContentMargin;
+- (BOOL)hideCancelAction:(id)arg1 inAlertController:(id)arg2;
+- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })highlightedActionTransformForActionSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)interactionProgressForTransitionOfType:(int)arg1 forAlertController:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (float)marginAboveMessageLabelFirstBaseline;
 - (float)marginAboveTitleLabelFirstBaseline;
 - (float)marginBelowLastLabelLastBaseline;
 - (float)marginBelowMessageLabelLastBaseline;
 - (float)marginBelowTitleLabelLastBaseline;
+- (float)maximumHeightForDisplayOnScreen:(id)arg1;
 - (int)maximumNumberOfLinesInMessageLabel;
 - (int)maximumNumberOfLinesInTitleLabel;
 - (float)maximumWidth;
+- (float)maximumWidthForTitleAndMessageContentView;
 - (id)messageLabelColor;
 - (id)messageLabelFont;
 - (float)minimumActionHeight;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })presentationAnimationStartTransform;
+- (float)minimumWidth;
+- (int)permittedActionLayoutDirection;
+- (void)positionAlertControllerView:(id)arg1 ofAlertController:(id)arg2 inAvailableSpaceView:(id)arg3;
+- (id)preferredActionFont;
 - (id)regularActionFont;
 - (float)sectionDelimitingSeparatorDimension;
 - (void)setDescriptor:(id)arg1;
 - (void)setTraitCollection:(id)arg1;
+- (BOOL)shouldOccludeDuringPresentation;
+- (BOOL)shouldPreserveRespondersAcrossWindows;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textFieldCollectionViewContentInset;
+- (id)textFieldContainingViewWithTextField:(id)arg1;
+- (float)textFieldHorizontalMargin;
+- (id)tintColorForAlertController:(id)arg1;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
 - (id)traitCollection;
-- (float)verticalContentMargin;
-- (float)visualAltitude;
-
-// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
-
-- (BOOL)isEqual:(id)arg1;
+- (double)transitionDurationForPresentation:(BOOL)arg1 ofAlertController:(id)arg2;
+- (BOOL)transitionOfType:(int)arg1 shouldBeInteractiveForAlertController:(id)arg2;
 
 @end

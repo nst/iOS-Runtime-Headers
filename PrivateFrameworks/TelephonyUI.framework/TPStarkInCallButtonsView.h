@@ -21,6 +21,7 @@
 @property (nonatomic) int highlightedControlIndex;
 @property (readonly) int numberOfControls;
 
+- (void).cxx_destruct;
 - (void)applyHorizontalPositioningConstraintWithFraction:(float)arg1 forButton:(id)arg2;
 - (void)applyHorizontalPositioningConstraintWithFraction:(float)arg1 forDividerView:(id)arg2;
 - (float)buttonDistributionScalingFactor;

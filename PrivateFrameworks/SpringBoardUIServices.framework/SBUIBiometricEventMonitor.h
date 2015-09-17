@@ -7,20 +7,27 @@
     BiometricKit *_biometricKit;
     <SBUIBiometricEventMonitorDelegate> *_delegate;
     BOOL _deviceLocked;
+    unsigned long long _enrolledIdentitiesCount;
     NSCountedSet *_fingerDetectRequesters;
     BOOL _fingerDetectionEnabled;
     unsigned int _lastEvent;
+    BOOL _lockScreenInStack;
     BOOL _lockScreenTopmost;
+    unsigned int _matchMode;
+    NSString *_matchModeReason;
+    NSCountedSet *_matchingCancelationDisabledRequesters;
     NSCountedSet *_matchingDisabledRequesters;
     BOOL _matchingEnabled;
+    int _notifyToken;
     NSHashTable *_observers;
-    BOOL _screenIsOff;
+    BOOL _screenIsOn;
     BOOL _shouldSendFingerOffNotification;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIBiometricEventMonitorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=isFingerprintUnlockAllowedAndEnabled, nonatomic, readonly) BOOL fingerprintUnlockAllowedAndEnabled;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) unsigned int lockoutState;
 @property (getter=isMatchingEnabled, nonatomic, readonly) BOOL matchingEnabled;
@@ -28,11 +35,14 @@
 
 + (id)sharedInstance;
 
+- (id)_descriptionForMatchMode:(unsigned int)arg1;
 - (void)_deviceWillWake;
+- (id)_matchOptionForMode:(unsigned int)arg1;
 - (void)_profileSettingsChanged:(id)arg1;
 - (void)_reevaluateMatching;
 - (void)_setDeviceLocked:(BOOL)arg1;
 - (void)_setMatchingEnabled:(BOOL)arg1;
+- (BOOL)_shouldSignpost;
 - (void)_startFingerDetection;
 - (void)_startMatching;
 - (void)_stopFingerDetection;
@@ -45,8 +55,11 @@
 - (void)enableMatchingForPasscodeView:(id)arg1;
 - (BOOL)hasEnrolledIdentities;
 - (id)init;
+- (BOOL)isFingerOn;
+- (BOOL)isFingerprintUnlockAllowedAndEnabled;
 - (BOOL)isMatchingEnabled;
 - (unsigned int)lockoutState;
+- (unsigned int)matchMode;
 - (void)matchResult:(id)arg1 withDetails:(id)arg2;
 - (void)noteScreenDidTurnOff;
 - (void)noteScreenWillTurnOff;
@@ -54,7 +67,11 @@
 - (void)removeObserver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFingerDetectEnabled:(BOOL)arg1 requester:(id)arg2;
+- (void)setLockScreenInAlertStack:(BOOL)arg1;
 - (void)setLockScreenTopmost:(BOOL)arg1;
+- (void)setMatchMode:(unsigned int)arg1 force:(BOOL)arg2 reason:(id)arg3;
+- (void)setMatchMode:(unsigned int)arg1 reason:(id)arg2;
+- (void)setMatchingCancelationDisabled:(BOOL)arg1 requester:(id)arg2;
 - (void)setMatchingDisabled:(BOOL)arg1 requester:(id)arg2;
 - (void)statusMessage:(unsigned int)arg1;
 - (id)stringForEvent:(unsigned int)arg1;

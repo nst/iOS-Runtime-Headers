@@ -4,7 +4,6 @@
 
 @interface SKUICommentDocumentViewController : SKUIViewController <SKUIArtworkRequestDelegate, SKUICommentDelegate, SKUIDocumentViewController, SKUILayoutCacheDelegate> {
     SKUIMediaSocialAuthor *_authorForActiveAccount;
-    UIActionSheet *_changeCommenterActionSheet;
     SKUIStackDocumentViewController *_childViewController;
     NSArray *_commenters;
     BOOL _didShowKeyboard;

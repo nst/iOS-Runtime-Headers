@@ -8,12 +8,17 @@
     int mQuality;
 }
 
+@property (nonatomic, readonly) float canvasScale;
 @property (nonatomic, readonly) int quality;
 
 - (void)cacheProvider:(id)arg1 ofSize:(struct CGSize { float x1; float x2; })arg2;
+- (float)canvasScale;
 - (void)dealloc;
 - (struct CGImage { }*)degradedImageRefForProvider:(id)arg1 ofSize:(struct CGSize { float x1; float x2; })arg2;
+- (void)doneCaching:(id)arg1 forProvider:(id)arg2;
+- (Class)imageMapValueClass;
 - (id)initWithQuality:(int)arg1 canvasScale:(float)arg2;
 - (int)quality;
+- (float)qualityScaleForSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

@@ -19,7 +19,6 @@
 @property (nonatomic) VKCacheNode *previous;
 @property (nonatomic, retain) id value;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (struct VKCacheKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })key;
 - (id)next;

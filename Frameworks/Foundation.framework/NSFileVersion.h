@@ -4,7 +4,6 @@
 
 @interface NSFileVersion : NSObject {
     id _addition;
-    NSString *_clientID;
     NSURL *_contentsURL;
     BOOL _contentsURLIsAccessed;
     id _deadVersionIdentifier;
@@ -17,6 +16,7 @@
     NSDate *_modificationDate;
     NSString *_name;
     id _nonLocalVersion;
+    id _reserved;
 }
 
 @property (readonly, copy) NSURL *URL;
@@ -57,7 +57,6 @@
 + (id)_supportedGenerationalStorageClientIDs;
 + (id)_temporaryDirectoryURLForNewVersionOfItemAtURL:(id)arg1 temporaryStorageIdentifier:(id)arg2;
 + (id)_temporaryStorageLocationForIdentifier:(id)arg1;
-+ (id)_ubiquityOnlyVersionsOfItemAtURL:(id)arg1 includeSaved:(BOOL)arg2;
 + (id)_versionOfItemAtURL:(id)arg1 forClientID:(id)arg2 name:(id)arg3 temporaryStorageIdentifier:(id)arg4 evenIfDeleted:(BOOL)arg5;
 + (id)_versionOfItemAtURL:(id)arg1 forPersistentIdentifier:(id)arg2 temporaryStorageIdentifier:(id)arg3;
 + (id)addVersionOfItemAtURL:(id)arg1 withContentsOfURL:(id)arg2 options:(unsigned int)arg3 error:(id*)arg4;
@@ -80,7 +79,6 @@
 - (id)_initWithFileURL:(id)arg1 library:(id)arg2 clientID:(id)arg3 name:(id)arg4 contentsURL:(id)arg5 isBackup:(BOOL)arg6 revision:(id)arg7;
 - (id)_initWithFileURL:(id)arg1 nonLocalVersion:(id)arg2;
 - (BOOL)_isBackup;
-- (id)_oldReplaceItemAtURL:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
 - (void)_overrideModificationDateWithDate:(id)arg1;
 - (BOOL)_preserveConflictVersionLocally;
 - (BOOL)_setDocumentInfo:(id)arg1;

@@ -3,6 +3,8 @@
  */
 
 @interface MFMailComposeContactsSearchController : NSObject <MFContactsSearchConsumer> {
+    NSMutableArray *_autocompleteSearchResults;
+    NSMutableArray *_corecipientSearchResults;
     NSNumber *_corecipientSearchTaskID;
     <MFMailComposeContactsSearchControllerDelegate> *_delegate;
     BOOL _foundAnySearchResults;
@@ -21,18 +23,25 @@
 
 - (void)_cancelSearchAndNotify:(BOOL)arg1;
 - (void)_finishSearch;
+- (void)_reset;
 - (void)beganNetworkActivity;
 - (void)cancelSearch;
+- (void)consumeAutocompleteSearchResults:(id)arg1 taskID:(id)arg2;
+- (void)consumeCorecipientSearchResults:(id)arg1 taskID:(id)arg2;
 - (void)consumeSearchResults:(id)arg1 type:(unsigned int)arg2 taskID:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
+- (void)didSelectRecipient:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)endedNetworkActivity;
 - (void)findCorecipientsWithRecipients:(id)arg1;
+- (void)finishedSearchingForAutocompleteResults;
+- (void)finishedSearchingForCorecipients;
 - (void)finishedSearchingForType:(unsigned int)arg1;
 - (void)finishedTaskWithID:(id)arg1;
 - (id)init;
+- (void)removeRecipient:(id)arg1;
 - (void)searchWithString:(id)arg1;
-- (void)searchWithString:(id)arg1 enteredRecipients:(id)arg2;
+- (void)searchWithString:(id)arg1 enteredRecipients:(id)arg2 title:(id)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setTaskID:(id)arg1;
 - (id)taskID;

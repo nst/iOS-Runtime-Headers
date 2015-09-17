@@ -32,6 +32,9 @@
 - (id)MMCSItemsToUpload;
 - (void)_closeAllPackages;
 - (void)_closePackage:(id)arg1;
+- (void)_collectMetricsFromCompletedItemGroup:(id)arg1;
+- (void)_collectMetricsFromCompletedItemGroupSet:(id)arg1;
+- (void)_collectMetricsFromMMCSOperationMetrics:(id)arg1;
 - (void)_didFechUploadTokensForMMCSItems:(id)arg1 error:(id)arg2;
 - (void)_didMakeProgressForAsset:(id)arg1 progress:(double)arg2;
 - (void)_didMakeProgressForMMCSItem:(id)arg1;

@@ -25,8 +25,10 @@
 + (void)registerCapabilities:(unsigned int)arg1;
 + (id)sharedAccessoryManager;
 
+- (void)_OOBBTPairingCompletionStatusReceived:(id)arg1;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
+- (void)_cameraInfoUpdated:(id)arg1;
 - (void)_checkForConnectedAccessories;
 - (void)_cleanUpForTaskSuspend;
 - (id)_connectedAccessories;

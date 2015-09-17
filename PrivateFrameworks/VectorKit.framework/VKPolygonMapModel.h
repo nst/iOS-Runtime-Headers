@@ -3,6 +3,7 @@
  */
 
 @interface VKPolygonMapModel : VKVectorMapModel <VKStyleManagerObserver> {
+    int _aboveRoadsSourceTileZToStencilOffset;
     struct unique_ptr<ggl::FragmentedPool<ggl::PolygonAnimatableFill::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonAnimatableFill::Shader::Setup> > > { 
         struct __compressed_pair<ggl::FragmentedPool<ggl::PolygonAnimatableFill::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonAnimatableFill::Shader::Setup> > > { 
             struct FragmentedPool<ggl::PolygonAnimatableFill::Shader::Setup> {} *__first_; 
@@ -64,11 +65,27 @@
             } __end_cap_; 
         } _rangePool; 
     } _batcher;
+    int _belowRoadsSourceTileZtoStencilOffset;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
         } __ptr_; 
-    } _coastlineGlowRenderState;
+    } _coastlineGlowAlphaRenderStateBack;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    } _coastlineGlowAlphaRenderStateFront;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    } _coastlineGlowRenderStateBack;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    } _coastlineGlowRenderStateFront;
     struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
         struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
             struct FragmentedPool<ggl::RenderItem> {} *__first_; 
@@ -89,6 +106,29 @@
             struct FragmentedPool<ggl::PolygonShadowedStroke::Shader::Setup> {} *__first_; 
         } __ptr_; 
     } _coastlineShaderSetupPool;
+    int _coastlineSourceTileZtoStencilOffset;
+    struct vector<std::__1::pair<std::__1::unique_ptr<ggl::PolygonSolidFill::Shader::Setup, std::__1::default_delete<ggl::PolygonSolidFill::Shader::Setup> >, std::__1::unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > >, std::__1::allocator<std::__1::pair<std::__1::unique_ptr<ggl::PolygonSolidFill::Shader::Setup, std::__1::default_delete<ggl::PolygonSolidFill::Shader::Setup> >, std::__1::unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > > > > { 
+        struct pair<std::__1::unique_ptr<ggl::PolygonSolidFill::Shader::Setup, std::__1::default_delete<ggl::PolygonSolidFill::Shader::Setup> >, std::__1::unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > > {} *__begin_; 
+        struct pair<std::__1::unique_ptr<ggl::PolygonSolidFill::Shader::Setup, std::__1::default_delete<ggl::PolygonSolidFill::Shader::Setup> >, std::__1::unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > > {} *__end_; 
+        struct __compressed_pair<std::__1::pair<std::__1::unique_ptr<ggl::PolygonSolidFill::Shader::Setup, std::__1::default_delete<ggl::PolygonSolidFill::Shader::Setup> >, std::__1::unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > > *, std::__1::allocator<std::__1::pair<std::__1::unique_ptr<ggl::PolygonSolidFill::Shader::Setup, std::__1::default_delete<ggl::PolygonSolidFill::Shader::Setup> >, std::__1::unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > > > > { 
+            struct pair<std::__1::unique_ptr<ggl::PolygonSolidFill::Shader::Setup, std::__1::default_delete<ggl::PolygonSolidFill::Shader::Setup> >, std::__1::unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > > {} *__first_; 
+        } __end_cap_; 
+    } _coastlineStencilItems;
+    struct unique_ptr<ggl::FragmentedPool<ggl::RenderItem>, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::RenderItem> *, std::__1::default_delete<ggl::FragmentedPool<ggl::RenderItem> > > { 
+            struct FragmentedPool<ggl::RenderItem> {} *__first_; 
+        } __ptr_; 
+    } _coastlineStencilRenderItemPool;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    } _coastlineStencilRenderState;
+    struct unique_ptr<ggl::FragmentedPool<ggl::PolygonFill::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonFill::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::PolygonFill::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::PolygonFill::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::PolygonFill::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    } _coastlineStencilShaderSetupPool;
     BOOL _drawShapes;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
@@ -115,6 +155,11 @@
             struct FragmentedPool<ggl::PolygonFill::Shader::Setup> {} *__first_; 
         } __ptr_; 
     } _fillShaderSetupPool;
+    struct unique_ptr<ggl::FragmentedPool<ggl::GlowAlpha::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::GlowAlpha::Shader::Setup> > > { 
+        struct __compressed_pair<ggl::FragmentedPool<ggl::GlowAlpha::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::GlowAlpha::Shader::Setup> > > { 
+            struct FragmentedPool<ggl::GlowAlpha::Shader::Setup> {} *__first_; 
+        } __ptr_; 
+    } _glowAlphaShaderSetupPool;
     struct unique_ptr<ggl::FragmentedPool<ggl::Glow::Shader::Setup>, std::__1::default_delete<ggl::FragmentedPool<ggl::Glow::Shader::Setup> > > { 
         struct __compressed_pair<ggl::FragmentedPool<ggl::Glow::Shader::Setup> *, std::__1::default_delete<ggl::FragmentedPool<ggl::Glow::Shader::Setup> > > { 
             struct FragmentedPool<ggl::Glow::Shader::Setup> {} *__first_; 
@@ -124,10 +169,10 @@
         struct MeshMesh {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     } _groundCoverMesh;
-    struct shared_ptr<ggl::PolygonFill::FillUniformData> { 
-        struct FillUniformData {} *__ptr_; 
+    struct shared_ptr<ggl::ConstantDataTyped<ggl::PolygonFill::Fill> > { 
+        struct ConstantDataTyped<ggl::PolygonFill::Fill> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _groundCoverPolygonUniformData;
+    } _groundCoverPolygonConstantData;
     struct unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > { 
         struct __compressed_pair<ggl::RenderItem *, std::__1::default_delete<ggl::RenderItem> > { 
             struct RenderItem {} *__first_; 
@@ -143,14 +188,40 @@
             struct Setup {} *__first_; 
         } __ptr_; 
     } _groundCoverShaderSetup;
-    struct shared_ptr<md::StyleQuery> { 
+    struct shared_ptr<gss::StyleQuery> { 
         struct StyleQuery {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     } _groundCoverStyle;
-    struct shared_ptr<ggl::Tile::ViewUniformData> { 
-        struct ViewUniformData {} *__ptr_; 
+    struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { 
+        struct ConstantDataTyped<ggl::Tile::View> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _groundCoverViewUniformData;
+    } _groundCoverViewConstantData;
+    VKRouteContext *_routeContext;
+    struct unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > { 
+        struct __compressed_pair<ggl::RenderItem *, std::__1::default_delete<ggl::RenderItem> > { 
+            struct RenderItem {} *__first_; 
+        } __ptr_; 
+    } _stencilEraseWaterRenderItem;
+    struct unique_ptr<ggl::RenderItem, std::__1::default_delete<ggl::RenderItem> > { 
+        struct __compressed_pair<ggl::RenderItem *, std::__1::default_delete<ggl::RenderItem> > { 
+            struct RenderItem {} *__first_; 
+        } __ptr_; 
+    } _stencilInvertRenderItem;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    } _stencilInvertRenderState;
+    struct unique_ptr<ggl::PolygonFill::Shader::Setup, std::__1::default_delete<ggl::PolygonFill::Shader::Setup> > { 
+        struct __compressed_pair<ggl::PolygonFill::Shader::Setup *, std::__1::default_delete<ggl::PolygonFill::Shader::Setup> > { 
+            struct Setup {} *__first_; 
+        } __ptr_; 
+    } _stencilInvertShaderSetup;
+    struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
+        struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
+            struct RenderState {} *__first_; 
+        } __ptr_; 
+    } _stencilWaterEraseRenderState;
     struct unique_ptr<ggl::RenderState, std::__1::default_delete<ggl::RenderState> > { 
         struct __compressed_pair<ggl::RenderState *, std::__1::default_delete<ggl::RenderState> > { 
             struct RenderState {} *__first_; 
@@ -176,8 +247,33 @@
             struct FragmentedPool<ggl::PolygonStroke::Shader::Setup> {} *__first_; 
         } __ptr_; 
     } _strokeShaderSetupPool;
-    struct shared_ptr<ggl::AnimatableTexture::VariantUniformData> { 
-        struct VariantUniformData {} *__ptr_; 
+    struct unordered_map<unsigned long long, vk::PolygonRouteAttributes, std::__1::hash<unsigned long long>, std::__1::equal_to<unsigned long long>, std::__1::allocator<std::__1::pair<const unsigned long long, vk::PolygonRouteAttributes> > > { 
+        struct __hash_table<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, std::__1::hash<unsigned long long>, true>, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, std::__1::equal_to<unsigned long long>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned long long, std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, std::__1::hash<unsigned long long>, true> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned long long, std::__1::__hash_value_type<unsigned long long, vk::PolygonRouteAttributes>, std::__1::equal_to<unsigned long long>, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
+    } _transitNodesRouteAttributesMap;
+    struct shared_ptr<ggl::ConstantDataTyped<ggl::AnimatableTexture::Variant> > { 
+        struct ConstantDataTyped<ggl::AnimatableTexture::Variant> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     } _variantData;
 }
@@ -186,18 +282,22 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL drawShapes;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) VKRouteContext *routeContext;
 @property (nonatomic, readonly) BOOL shouldEverShowVegetation;
-@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (struct CommandBuffer { int (**x1)(); char *x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned int x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned int x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long x_3_2_1; } x_9_1_3; } x9; id x10; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; BOOL x20; void*x21; void*x22; void*x23; void*x24; in void*x25; void*x26; void*x27; struct x28; void*x29; void*x30; const void*x31; in void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; int x53; in void*x54; void*x55; void*x56; void*x57; BOOL x58; BOOL x59; void*x60; short x61; short x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; int x82; in void*x83; void*x84; void*x85; short x86; void*x87; in BOOL x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; BOOL x108; void*x109; void*x110; const void*x111; char *x112; void*x113; double x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; }*)commandBufferInRenderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg1 forFeatureWithAttributes:(id)arg2;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning:(BOOL)arg1;
 - (BOOL)drawShapes;
+- (id)featureMarkerInTile:(id)arg1 atPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg2;
+- (bool)featureWithQueryIsAboveRoads:(const struct shared_ptr<gss::StyleQuery> { struct StyleQuery {} *x1; struct __shared_weak_count {} *x2; }*)arg1;
 - (void)flushPools;
-- (void)generateCoastlineRenderItemsWithContext:(id)arg1 commandBuffer:(struct CommandBuffer { int (**x1)(); char *x2; struct RenderQueue {} *x3; struct ClearItem {} *x4; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_5_1_1; struct RenderItem {} **x_5_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_5_1_3; } x5; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_6_1_1; struct Texture2DLoadItem {} *x_6_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_7_1_1; struct BufferLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_8_1_1; unsigned int x_8_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long x_3_2_1; } x_8_1_3; } x8; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned int x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long x_3_2_1; } x_9_1_3; } x9; id x10; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; const void*x21; double x22; void*x23; void*x24; void*x25; const void*x26; void*x27; void*x28; long x29; SEL x30; SEL x31; unsigned long long x32; void*x33; void*x34; const void*x35; unsigned int x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; struct  unsigned long x_3_2_1;  {} x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; }*)arg2;
+- (void)generateCoastlineRenderItemsWithContext:(id)arg1 commandBuffer:(struct CommandBuffer { int (**x1)(); char *x2; unsigned char x3; struct RenderQueue {} *x4; struct ClearItem {} *x5; struct vector<ggl::RenderItem *, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_6_1_1; struct RenderItem {} **x_6_1_2; struct __compressed_pair<ggl::RenderItem **, std::__1::allocator<ggl::RenderItem *> > { struct RenderItem {} **x_3_2_1; } x_6_1_3; } x6; struct vector<ggl::Texture2DLoadItem, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_7_1_1; struct Texture2DLoadItem {} *x_7_1_2; struct __compressed_pair<ggl::Texture2DLoadItem *, std::__1::allocator<ggl::Texture2DLoadItem> > { struct Texture2DLoadItem {} *x_3_2_1; } x_7_1_3; } x7; struct vector<ggl::BufferLoadItem, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_8_1_1; struct BufferLoadItem {} *x_8_1_2; struct __compressed_pair<ggl::BufferLoadItem *, std::__1::allocator<ggl::BufferLoadItem> > { struct BufferLoadItem {} *x_3_2_1; } x_8_1_3; } x8; struct deque<geo::fast_shared_ptr<ggl::QueryItem>, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { struct __split_buffer<geo::fast_shared_ptr<ggl::QueryItem> *, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_1; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_2; struct fast_shared_ptr<ggl::QueryItem> {} **x_1_2_3; struct __compressed_pair<geo::fast_shared_ptr<ggl::QueryItem> **, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> *> > { struct fast_shared_ptr<ggl::QueryItem> {} **x_4_3_1; } x_1_2_4; } x_9_1_1; unsigned int x_9_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<geo::fast_shared_ptr<ggl::QueryItem> > > { unsigned long x_3_2_1; } x_9_1_3; } x9; struct deque<ggl::PendingQuery, std::__1::allocator<ggl::PendingQuery> > { struct __split_buffer<ggl::PendingQuery *, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_1_2_1; struct PendingQuery {} **x_1_2_2; struct PendingQuery {} **x_1_2_3; struct __compressed_pair<ggl::PendingQuery **, std::__1::allocator<ggl::PendingQuery *> > { struct PendingQuery {} **x_4_3_1; } x_1_2_4; } x_10_1_1; unsigned int x_10_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<ggl::PendingQuery> > { unsigned long x_3_2_1; } x_10_1_3; } x10; id x11; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; in short x23; int x24; void*x25; in void*x26; double x27; void*x28; int x29; in void*x30; void*x31; void*x32; const void*x33; in void*x34; void*x35; void*x36; out out long x37; unsigned char x38; out void*x39; in void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; short x52; void*x53; const void*x54; BOOL x55; void*x56; void*x57; void x58; void*x59; BOOL x60; void*x61; out const void*x62; void*x63; void*x64; long x65; SEL x66; SEL x67; void*x68; void*x69; long x70; void*x71; int x72; void*x73; void*x74; in void*x75; void*x76; void*x77; void*x78; short x79; void*x80; double x81; SEL x82; SEL x83; void*x84; void*x85; void*x86; SEL x87; SEL x88; void*x89; long x90; long x91; out BOOL x92; void*x93; void*x94; out const void*x95; void*x96; void*x97; long x98; SEL x99; SEL x100; void*x101; void*x102; long x103; void*x104; int x105; void*x106; void*x107; in void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; struct  
+            struct MultiRange { {} x114; void*x115; char *x116; void*x117; void*x118; unsigned int x119/* : ? */; void*x120; void*x121; int x122; in void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; short x139; void*x140; const void*x141; BOOL x142; void*x143; void*x144; void*x145; void*x146; long x147; void*x148; int x149; void*x150; void*x151; in void*x152; void*x153; void*x154; struct  {} x155; void*x156; char *x157; void*x158; void*x159; void*x160; in double x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; short x178; void*x179; const void*x180; BOOL x181; void*x182; void*x183; void*x184; void*x185; BOOL x186; out void*x187; void*x188; const void*x189; short x190; short x191; void*x192; double x193; void*x194; void*x195; void*x196; int x197; const void*x198; void*x199; void*x200; long x201; SEL x202; SEL x203; void*x204; void*x205; long x206; void*x207; int x208; void*x209; void*x210; in void*x211; void*x212; void*x213; char *x214; void*x215; void*x216; short x217; void*x218; double x219; SEL x220; SEL x221; void*x222; void*x223; void*x224; SEL x225; SEL x226; void*x227; long x228; long x229; out BOOL x230; void*x231; void*x232; out const void*x233; void*x234; void*x235; long x236; SEL x237; SEL x238; void*x239; void*x240; long x241; void*x242; int x243; void*x244; void*x245; in void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; struct  
+                struct MultiRange { {} x252; void*x253; char *x254; void*x255; void*x256; float x257; int x258; const short x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; }*)arg2;
 - (void)generateGroundCoverRenderItemsForScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (void)generateRenderItemsForOpaquePolygonsInScene:(id)arg1 context:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (void)generateRenderItemsForScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
@@ -207,15 +307,19 @@
 - (unsigned long long)mapLayerPosition;
 - (void)reset;
 - (void)resetPools;
+- (id)routeContext;
 - (void)setDrawShapes:(BOOL)arg1;
+- (void)setRouteContext:(id)arg1;
 - (BOOL)shouldEverShowVegetation;
 - (void)stylesheetDidChange;
 - (void)stylesheetDoneChanging;
+- (void)stylesheetTransitionDidProgress;
 - (void)stylesheetWillChange;
 - (unsigned int)textureSize;
 - (void)updateGroundCoverStyle;
 - (void)updateStylesInTiles:(id)arg1 updateTextures:(BOOL)arg2;
 - (BOOL)wantsCategorizedSourceTiles;
+- (id)waterFeatureAttributes;
 - (void)willStartDrawingTiles:(id)arg1;
 - (struct Matrix<float, 4, 4> { float x1[16]; })worldTransformForPolygonGroup:(id)arg1 atZoom:(float)arg2;
 

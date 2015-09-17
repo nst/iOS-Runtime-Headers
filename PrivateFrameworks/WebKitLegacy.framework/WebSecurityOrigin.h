@@ -8,8 +8,6 @@
     WebSecurityOriginPrivate *_private;
 }
 
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
-
 + (id)webSecurityOriginFromDatabaseIdentifier:(id)arg1;
 
 - (struct SecurityOrigin { struct atomic<int> { int x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; unsigned short x6; bool x7; bool x8; bool x9; bool x10; int x11; bool x12; bool x13; }*)_core;
@@ -29,9 +27,5 @@
 - (id)stringValue;
 - (id)toString;
 - (unsigned long long)usage;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
-
-- (id)webui_userVisibleName;
 
 @end

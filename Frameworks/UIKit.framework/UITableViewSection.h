@@ -18,7 +18,7 @@
 
 + (id)sectionWithRows:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)footerTitle;
 - (id)footerView;

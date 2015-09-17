@@ -3,17 +3,29 @@
  */
 
 @interface _UIAlertControllerAnimatedTransitioning : NSObject <UIViewControllerAnimatedTransitioning> {
+    UIAlertController *_alertController;
+    UIInteractionProgress *_interactionProgress;
     BOOL _presentation;
 }
 
+@property (nonatomic, retain) UIAlertController *alertController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIInteractionProgress *interactionProgress;
 @property (getter=isPresentation) BOOL presentation;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
+- (id)_alertControllerForContext:(id)arg1;
+- (void)_animateTransition:(id)arg1 completionBlock:(id /* block */)arg2;
+- (id)alertController;
 - (void)animateTransition:(id)arg1;
+- (id)initWithInteractionProgress:(id)arg1;
+- (id)interactionProgress;
 - (BOOL)isPresentation;
+- (void)setAlertController:(id)arg1;
+- (void)setInteractionProgress:(id)arg1;
 - (void)setPresentation:(BOOL)arg1;
 - (double)transitionDuration:(id)arg1;
 

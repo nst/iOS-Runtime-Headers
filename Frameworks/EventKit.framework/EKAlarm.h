@@ -3,23 +3,33 @@
  */
 
 @interface EKAlarm : EKObject <NSCopying> {
+    NSString *_emailAddress;
     EKObjectToOneRelation *_locationRelation;
+    NSString *_soundName;
+    int _type;
+    NSURL *_url;
 }
 
 @property (nonatomic, readonly) NSString *UUID;
 @property (nonatomic, copy) NSDate *absoluteDate;
 @property (nonatomic, copy) NSDate *acknowledgedDate;
+@property (nonatomic, retain) EKCalendarItem *calendarItemOwner;
+@property (nonatomic, retain) EKCalendar *calendarOwner;
 @property (getter=isDefaultAlarm, nonatomic) BOOL defaultAlarm;
+@property (nonatomic, copy) NSString *emailAddress;
 @property (nonatomic, readonly) NSString *externalID;
-@property (readonly) BOOL isAbsolute;
+@property (nonatomic, readonly) BOOL isAbsolute;
 @property (nonatomic, readonly) BOOL isSnoozedAlarm;
 @property (nonatomic, retain) EKObjectToOneRelation *locationRelation;
 @property (nonatomic, retain) EKAlarm *originalAlarm;
-@property (nonatomic, retain) EKCalendarItem *owner;
+@property (nonatomic, readonly) EKObject *owner;
 @property (nonatomic) int proximity;
 @property (nonatomic) double relativeOffset;
 @property (nonatomic, copy) NSArray *snoozedAlarms;
+@property (nonatomic, copy) NSString *soundName;
 @property (nonatomic, copy) EKStructuredLocation *structuredLocation;
+@property (nonatomic, readonly) int type;
+@property (nonatomic, copy) NSURL *url;
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
@@ -31,6 +41,7 @@
 + (BOOL)areLocationsAvailable;
 + (BOOL)areLocationsCurrentlyEnabled;
 + (double)defaultGeofencedReminderRadius;
++ (int)maxPublicProximity;
 
 - (id)UUID;
 - (id)_locationRelation;
@@ -39,9 +50,13 @@
 - (id)absoluteDate;
 - (id)acknowledgedDate;
 - (void)addSnoozedAlarm:(id)arg1;
+- (id)calendarItemOwner;
+- (id)calendarOwner;
+- (int)compare:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)emailAddress;
 - (id)externalID;
 - (id)init;
 - (id)initWithAbsoluteDate:(id)arg1;
@@ -61,22 +76,27 @@
 - (void)setAbsoluteDate:(id)arg1;
 - (void)setAcknowledgedDate:(id)arg1;
 - (void)setDefaultAlarm:(BOOL)arg1;
+- (void)setEmailAddress:(id)arg1;
 - (void)setLocationRelation:(id)arg1;
 - (void)setOriginalAlarm:(id)arg1;
 - (void)setProximity:(int)arg1;
 - (void)setRelativeOffset:(double)arg1;
 - (void)setSnoozedAlarms:(id)arg1;
+- (void)setSoundName:(id)arg1;
 - (void)setStructuredLocation:(id)arg1;
+- (void)setUrl:(id)arg1;
 - (id)snoozedAlarms;
+- (id)soundName;
 - (id)structuredLocation;
+- (int)type;
+- (id)url;
 - (BOOL)validate:(id*)arg1;
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 
-- (id)_localizedDescription:(BOOL)arg1 forEvent:(BOOL)arg2 isAllDay:(BOOL)arg3;
+- (id)_localizedDescription:(BOOL)arg1 isAllDay:(BOOL)arg2;
 - (id)localizedAllDayDescription;
 - (id)localizedDescription;
-- (id)localizedDescriptionForReminder;
 - (id)longLocalizedAllDayDescription;
 - (id)longLocalizedDescription;
 

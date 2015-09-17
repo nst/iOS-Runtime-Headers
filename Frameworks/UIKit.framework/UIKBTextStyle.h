@@ -10,6 +10,8 @@
     } _etchOffset;
     NSString *_fontName;
     float _fontSize;
+    float _fontWeight;
+    BOOL _ignoreTextMarginOnKey;
     float _kerning;
     float _minFontSize;
     float _pathWeight;
@@ -26,6 +28,8 @@
 @property (nonatomic) struct CGPoint { float x1; float x2; } etchOffset;
 @property (nonatomic, retain) NSString *fontName;
 @property (nonatomic) float fontSize;
+@property (nonatomic) float fontWeight;
+@property (nonatomic) BOOL ignoreTextMarginOnKey;
 @property (nonatomic) float kerning;
 @property (nonatomic) float minFontSize;
 @property (nonatomic) float pathWeight;
@@ -44,6 +48,8 @@
 - (struct CGPoint { float x1; float x2; })etchOffset;
 - (id)fontName;
 - (float)fontSize;
+- (float)fontWeight;
+- (BOOL)ignoreTextMarginOnKey;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (float)kerning;
@@ -55,6 +61,8 @@
 - (void)setEtchOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFontName:(id)arg1;
 - (void)setFontSize:(float)arg1;
+- (void)setFontWeight:(float)arg1;
+- (void)setIgnoreTextMarginOnKey:(BOOL)arg1;
 - (void)setKerning:(float)arg1;
 - (void)setMinFontSize:(float)arg1;
 - (void)setPathWeight:(float)arg1;

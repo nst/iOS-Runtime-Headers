@@ -4,7 +4,22 @@
 
 @interface MKIconManager : NSObject
 
++ (id)_iconManager;
 + (id)imageForMapItem:(id)arg1 forScale:(float)arg2;
++ (id)imageForMapItem:(id)arg1 forScale:(float)arg2 fallbackToBundleIcon:(BOOL)arg3;
 + (id)imageForMapItem:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4;
++ (id)imageForMapItem:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 fallbackToBundleIcon:(BOOL)arg5;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(BOOL)arg6;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(BOOL)arg6 transparent:(BOOL)arg7;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(BOOL)arg6 transparent:(BOOL)arg7 transitmode:(BOOL)arg8;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 customIconID:(unsigned long long)arg5 fallbackToBundleIcon:(BOOL)arg6 transparent:(BOOL)arg7 transitmode:(BOOL)arg8 interactive:(BOOL)arg9;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(BOOL)arg5;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(BOOL)arg5 transitMode:(BOOL)arg6;
++ (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(BOOL)arg5 transitMode:(BOOL)arg6 interactive:(BOOL)arg7;
++ (struct CGColor { }*)newFillColorForStyleAttributes:(id)arg1 forScale:(float)arg2;
++ (struct CGColor { }*)newGlyphColorForStyleAttributes:(id)arg1 forScale:(float)arg2;
++ (void)setUseSharedCaches;
 
 @end

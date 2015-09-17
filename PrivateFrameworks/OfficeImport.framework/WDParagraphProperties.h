@@ -28,6 +28,7 @@
 - (void)copyPropertiesInto:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)document;
 - (struct { unsigned char x1; unsigned char x2; })dropCap;
 - (short)firstLineIndent;

@@ -19,6 +19,7 @@
 - (id)initWithGraphicsDevice:(id)arg1;
 - (int)play:(unsigned int)arg1 :(const char *)arg2;
 - (int)playAbortPath:(unsigned int)arg1 :(const char *)arg2;
+- (int)playAlphaBlend:(unsigned int)arg1 :(const char *)arg2;
 - (int)playAngleArc:(unsigned int)arg1 :(const char *)arg2 :(BOOL)arg3;
 - (int)playArc:(unsigned int)arg1 :(const char *)arg2;
 - (int)playArcTo:(unsigned int)arg1 :(const char *)arg2;
@@ -48,6 +49,7 @@
 - (int)playMaskBlt:(unsigned int)arg1 :(const char *)arg2;
 - (int)playModifyWorldTransform:(unsigned int)arg1 :(const char *)arg2;
 - (int)playMoveToEx:(unsigned int)arg1 :(const char *)arg2;
+- (int)playOffsetClipRegion:(unsigned int)arg1 :(const char *)arg2;
 - (int)playPaintRgn:(unsigned int)arg1 :(const char *)arg2;
 - (int)playPie:(unsigned int)arg1 :(const char *)arg2;
 - (int)playPlgBlt:(unsigned int)arg1 :(const char *)arg2;

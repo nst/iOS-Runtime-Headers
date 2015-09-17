@@ -133,6 +133,7 @@
 - (void)setShowOuterBorder:(BOOL)arg1;
 - (BOOL)showOuterBorder;
 - (void)showPlayIndicator:(BOOL)arg1;
+- (void)showPlayIndicator:(BOOL)arg1 force:(BOOL)arg2;
 - (BOOL)showingPlayIndicator;
 - (BOOL)showingProgress;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

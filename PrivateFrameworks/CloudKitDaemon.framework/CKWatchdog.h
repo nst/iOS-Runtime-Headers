@@ -33,6 +33,7 @@
 - (void)_invokeCallback;
 - (void)_scheduleTest;
 - (void)_scheduleTimeout;
+- (void)dealloc;
 - (id)dispatchQueue;
 - (id)init;
 - (double)interval;

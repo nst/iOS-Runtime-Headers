@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout, UIPopoverPresentationControllerDelegate> {
+@interface CKTranscriptCollectionViewController : CKViewController <CKAudioControllerDelegate, CKLocationShareBalloonViewDelegate, CKMovieBalloonViewDelegate, CKTitledImageBalloonViewDelegate, CKTranscriptCollectionViewDelegate, CNAvatarViewDelegate, UIAlertViewDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UICollectionViewDelegateFlowLayout> {
     id /* block */ _alertHandler;
     CKAudioController *_audioController;
+    float _balloonMaxWidth;
     NSArray *_chatItems;
     CKTranscriptCollectionView *_collectionView;
     CKConversation *_conversation;
@@ -16,15 +17,21 @@
     NSIndexSet *_hiddenItems;
     BOOL _initialLoad;
     BOOL _isLoadingEarlierMessages;
-    float _leftBalloonMaxWidth;
     UITapGestureRecognizer *_loggingTapGestureRecognizer;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _marginInsets;
     struct CGPoint { 
         float x; 
         float y; 
     } _peekSampleTranslation;
     BOOL _peeking;
-    float _rightBalloonMaxWidth;
     BOOL _shouldLoadDefaultConversationViewingMessageCountOnAppear;
+    BOOL _sizedFullTranscript;
+    NSString *_speakerTransferGUID;
     BOOL _transcriptUpdateAnimated;
     id /* block */ _transcriptUpdateCompletion;
     NSObject<OS_dispatch_group> *_updateAnimationGroup;
@@ -32,6 +39,7 @@
 
 @property (nonatomic, copy) id /* block */ alertHandler;
 @property (nonatomic, retain) CKAudioController *audioController;
+@property (nonatomic) float balloonMaxWidth;
 @property (nonatomic, readonly, retain) IMChat *chat;
 @property (nonatomic, copy) NSArray *chatItems;
 @property (nonatomic, retain) CKTranscriptCollectionView *collectionView;
@@ -47,12 +55,13 @@
 @property (nonatomic, copy) NSIndexSet *hiddenItems;
 @property (getter=isInitialLoad, nonatomic) BOOL initialLoad;
 @property (nonatomic) BOOL isLoadingEarlierMessages;
-@property (nonatomic, readonly) float leftBalloonMaxWidth;
 @property (nonatomic, retain) UITapGestureRecognizer *loggingTapGestureRecognizer;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } marginInsets;
 @property (nonatomic) struct CGPoint { float x1; float x2; } peekSampleTranslation;
 @property (getter=isPeeking, nonatomic) BOOL peeking;
-@property (nonatomic, readonly) float rightBalloonMaxWidth;
 @property (nonatomic) BOOL shouldLoadDefaultConversationViewingMessageCountOnAppear;
+@property (nonatomic) BOOL sizedFullTranscript;
+@property (nonatomic, copy) NSString *speakerTransferGUID;
 @property (readonly) Class superclass;
 @property (getter=isTranscriptUpdateAnimated, nonatomic) BOOL transcriptUpdateAnimated;
 @property (nonatomic, copy) id /* block */ transcriptUpdateCompletion;
@@ -66,6 +75,7 @@
 - (void)_refreshLocationsForRecipientsIfNecessary;
 - (id)_remoteLogDumpButtonTitle;
 - (void)_resendMessageAtIndexPath:(id)arg1;
+- (void)_setIsFirstChatItemOnFirstChatItem:(BOOL)arg1;
 - (void)_setupLoggingTapGestureRecognizer;
 - (BOOL)_shouldShowInternalUILogging;
 - (BOOL)_shouldShowUILogging;
@@ -80,6 +90,8 @@
 - (void)audioControllerDidPause:(id)arg1;
 - (void)audioControllerDidStop:(id)arg1;
 - (void)audioControllerPlayingDidChange:(id)arg1;
+- (id)avatarView:(id)arg1 orderedPropertiesForProperties:(id)arg2 category:(id)arg3;
+- (float)balloonMaxWidth;
 - (BOOL)balloonView:(id)arg1 canPerformAction:(SEL)arg2 withSender:(id)arg3;
 - (void)balloonView:(id)arg1 copy:(id)arg2;
 - (void)balloonView:(id)arg1 export:(id)arg2;
@@ -98,6 +110,7 @@
 - (id)chatItemWithIMChatItem:(id)arg1;
 - (id)chatItems;
 - (void)chatItemsDidChange:(id)arg1;
+- (id)chatItemsWithIMChatItems:(id)arg1;
 - (void)chatRegistryDidLoad:(id)arg1;
 - (id)collectionView;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -116,6 +129,7 @@
 - (void)collectionViewWillProgrammaticallyScroll:(id)arg1;
 - (void)collectionViewWillScroll:(id)arg1 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg2;
 - (void)configureCell:(id)arg1 forItemAtIndexPath:(id)arg2;
+- (void)configureSpeakerButtonCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (id)conversation;
 - (void)dealloc;
 - (id)delegate;
@@ -127,12 +141,14 @@
 - (BOOL)hasHiddenItems;
 - (id)hiddenItems;
 - (id)indexPathForBalloonView:(id)arg1;
-- (id)initWithConversation:(id)arg1 rightBalloonMaxWidth:(float)arg2 leftBalloonMaxWidth:(float)arg3;
+- (id)initWithConversation:(id)arg1 balloonMaxWidth:(float)arg2 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
+- (void)interactionStartedFromPreviewItemControllerInBalloonView:(id)arg1;
+- (void)interactionStoppedFromPreviewItemControllerInBalloonView:(id)arg1;
+- (void)invalidateChatItemLayoutWithBalloonMaxWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (BOOL)isInitialLoad;
 - (BOOL)isLoadingEarlierMessages;
 - (BOOL)isPeeking;
 - (BOOL)isTranscriptUpdateAnimated;
-- (float)leftBalloonMaxWidth;
 - (void)loadEarlierMessages;
 - (void)loadEarlierMessagesIfNeeded;
 - (void)loadView;
@@ -140,16 +156,17 @@
 - (void)locationShareBalloonViewShareButtonTapped:(id)arg1;
 - (void)locationStringDidChange:(id)arg1;
 - (id)loggingTapGestureRecognizer;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })marginInsets;
 - (id)menuItemsForBalloonView:(id)arg1;
 - (id)messagePartForBalloonView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })peekSampleTranslation;
 - (void)performResumeDeferredSetup;
-- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)prepareForSuspend;
+- (id)presentingViewControllerForAvatarView:(id)arg1;
 - (void)previewDidChange:(id)arg1;
 - (void)raiseGestureRecognized:(id)arg1;
+- (void)reconfigureVisibleSpeakerButtonCells;
 - (void)reloadData;
-- (float)rightBalloonMaxWidth;
 - (void)scrollToTopOfLastBubbleCellAnimated:(BOOL)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
@@ -161,6 +178,7 @@
 - (id)selectedItems;
 - (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAudioController:(id)arg1;
+- (void)setBalloonMaxWidth:(float)arg1;
 - (void)setChatItems:(id)arg1;
 - (void)setCollectionView:(id)arg1;
 - (void)setConversation:(id)arg1;
@@ -174,19 +192,28 @@
 - (void)setInitialLoad:(BOOL)arg1;
 - (void)setIsLoadingEarlierMessages:(BOOL)arg1;
 - (void)setLoggingTapGestureRecognizer:(id)arg1;
+- (void)setMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPeekSampleTranslation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPeeking:(BOOL)arg1;
 - (void)setScrollAnchor:(float)arg1;
+- (void)setSelectedItems:(id)arg1;
 - (void)setShouldLoadDefaultConversationViewingMessageCountOnAppear:(BOOL)arg1;
+- (void)setSizedFullTranscript:(BOOL)arg1;
+- (void)setSpeakerTransferGUID:(id)arg1;
 - (void)setTranscriptUpdateAnimated:(BOOL)arg1;
 - (void)setTranscriptUpdateCompletion:(id /* block */)arg1;
 - (void)setUpdateAnimationGroup:(id)arg1;
 - (BOOL)shouldLoadDefaultConversationViewingMessageCountOnAppear;
 - (BOOL)shouldShowMenuForBalloonView:(id)arg1;
+- (void)sizeFullTranscriptIfNecessary;
+- (BOOL)sizedFullTranscript;
+- (void)snapshotTaken:(id)arg1;
+- (id)speakerTransferGUID;
 - (void)stopPlayingAudio;
-- (void)touchUpInsideMessageCellFailureButton:(id)arg1;
-- (void)touchUpInsideReportSpamCellButton:(id)arg1;
-- (void)touchUpInsideStatusCellButton:(id)arg1;
+- (void)touchUpInsideCellFailureButton:(id)arg1;
+- (void)touchUpInsideCellReportSpamButton:(id)arg1;
+- (void)touchUpInsideCellSpeakerButton:(id)arg1;
+- (void)touchUpInsideCellStatusButton:(id)arg1;
 - (id /* block */)transcriptUpdateCompletion;
 - (void)transferRestored:(id)arg1;
 - (void)transferUpdated:(id)arg1;

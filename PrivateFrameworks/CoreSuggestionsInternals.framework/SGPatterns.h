@@ -27,10 +27,12 @@
 - (void)_becomeImmuneToDeath;
 - (id)_calculateLangResolutionOrder;
 - (void)_clearRegexCache;
+- (void)dealloc;
 - (id)init;
 - (id)rawValueForKey:(id)arg1;
 - (id)rawValuesForKey:(id)arg1;
 - (id)regex2ForKey:(id)arg1;
 - (void)reset;
+- (id)stringSetMatcherForKey:(id)arg1;
 
 @end

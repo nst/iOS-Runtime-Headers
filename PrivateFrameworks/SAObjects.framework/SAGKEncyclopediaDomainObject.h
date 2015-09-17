@@ -22,6 +22,5 @@
 - (void)setNameAnnotation:(id)arg1;
 - (void)setStructuredAnswers:(id)arg1;
 - (id)structuredAnswers;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

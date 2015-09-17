@@ -12,10 +12,8 @@
     NSMutableArray *_pendingBatches;
     NSMutableArray *_pendingBulletins;
     NSObject<OS_dispatch_source> *_pendingChangesTimerSource;
-    PLXPCTransaction *_pendingChangesTimerTransaction;
     NSMutableIndexSet *_pendingDeleteRecordIDs;
     NSObject<OS_dispatch_source> *_saveTimerSource;
-    PLXPCTransaction *_saveTimerTransaction;
 }
 
 @property (readonly) NSArray *currentBulletinDictionaries;

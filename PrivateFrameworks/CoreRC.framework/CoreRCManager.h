@@ -5,11 +5,13 @@
 @interface CoreRCManager : NSObject {
     NSMutableSet *_busesInternal;
     <CoreRCManagerDelegate> *_delegate;
+    CoreIRLearningSession *_learningSessionInternal;
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
 @property (nonatomic, readonly) NSSet *buses;
 @property (nonatomic, readonly) NSMutableSet *busesInternal;
+@property (nonatomic, readonly) CoreIRLearningSession *learningSessionInternal;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialQueue;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
@@ -19,8 +21,10 @@
 - (id)busesInternal;
 - (void)dealloc;
 - (id)delegate;
+- (id)extendedPropertyForKey:(id)arg1 ofDevice:(id)arg2 error:(id*)arg3;
 - (id)init;
 - (id)initWithSerialQueue:(id)arg1;
+- (id)learningSessionInternal;
 - (id)managedBusEquivalentTo:(id)arg1;
 - (id)managedBusForDevice:(id)arg1;
 - (id)managedDeviceEquivalentTo:(id)arg1;
@@ -29,9 +33,11 @@
 - (void)notifyDelegateUpdateBus:(id)arg1;
 - (id)propertyForKey:(id)arg1 ofBus:(id)arg2 error:(id*)arg3;
 - (void)removeBus:(id)arg1;
+- (BOOL)sendCommand:(unsigned int)arg1 fromDevice:(id)arg2 toDevice:(id)arg3 withDuration:(unsigned int)arg4 error:(id*)arg5;
 - (BOOL)sendHIDEvent:(id)arg1 fromDevice:(id)arg2 toDevice:(id)arg3 error:(id*)arg4;
 - (id)serialQueue;
 - (void)setDelegate:(id)arg1;
+- (BOOL)setExtendedProperty:(id)arg1 forKey:(id)arg2 ofDevice:(id)arg3 error:(id*)arg4;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2 ofBus:(id)arg3 error:(id*)arg4;
 
 @end

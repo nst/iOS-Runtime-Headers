@@ -11,7 +11,6 @@
     } mSlideSize;
 }
 
-- (id).cxx_construct;
 - (int)currentSlide;
 - (void)incrementCurrentSlide;
 - (int)progressiveIndex;

@@ -16,6 +16,8 @@
 @property (nonatomic, retain) NSMutableDictionary *cachedProperties;
 @property (nonatomic, retain) NSMutableDictionary *dirtyProperties;
 @property (nonatomic) unsigned long flags;
+@property (nonatomic, readonly) BOOL hasChanges;
+@property (getter=isNew, nonatomic, readonly) BOOL new;
 @property (nonatomic) EKObjectRelation *owningRelation;
 @property (nonatomic, retain) EKPersistentObject *persistentObject;
 @property (nonatomic, copy) NSString *propertyName;

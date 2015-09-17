@@ -17,11 +17,11 @@
 @property (nonatomic) int transition;
 @property (nonatomic) UIViewController *viewController;
 
+- (void).cxx_destruct;
 - (float)_curlUpRevealedHeight;
 - (void)_setCurlUpRevealedHeight:(float)arg1;
 - (BOOL)animated;
 - (id /* block */)completion;
-- (void)dealloc;
 - (id)initWithViewController:(id)arg1 name:(id)arg2 transition:(int)arg3;
 - (id)name;
 - (void)setCompletion:(id /* block */)arg1;

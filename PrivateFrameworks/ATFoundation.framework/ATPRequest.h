@@ -23,6 +23,7 @@
 - (BOOL)hasDataClass;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCommand:(id)arg1;
 - (void)setDataClass:(id)arg1;

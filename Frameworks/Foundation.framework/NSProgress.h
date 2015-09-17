@@ -5,25 +5,26 @@
 @interface NSProgress : NSObject <NSProgressPublisher> {
     NSMutableDictionary *_acknowledgementHandlersByBundleID;
     id /* block */ _cancellationHandler;
-    NSMutableSet *_childrenGroups;
+    NSMutableSet *_children;
     NSXPCConnection *_connection;
     int _disconnectingBlockageCount;
     unsigned long long _flags;
-    id _group;
     NSMutableDictionary *_lastNotificationTimesByKey;
     NSLock *_lock;
+    NSProgress *_parent;
     id /* block */ _pausingHandler;
     id /* block */ _prioritizationHandler;
     NSString *_publisherID;
     int _remoteObserverCount;
     long long _reserved4;
-    id _reserved5;
+    id /* block */ _resumingHandler;
     int _unpublishingBlockageCount;
     NSMutableDictionary *_userInfoLastNotificationTimesByKey;
     id _userInfoProxy;
     id _values;
 }
 
+@property BOOL _adoptChildUserInfo;
 @property (getter=isCancellable) BOOL cancellable;
 @property (copy) id /* block */ cancellationHandler;
 @property (getter=isCancelled, readonly) BOOL cancelled;
@@ -42,6 +43,7 @@
 @property (getter=isPausable) BOOL pausable;
 @property (getter=isPaused, readonly) BOOL paused;
 @property (copy) id /* block */ pausingHandler;
+@property (copy) id /* block */ resumingHandler;
 @property (nonatomic, readonly) NSString *sf_bundleID;
 @property (nonatomic, readonly) NSString *sf_error;
 @property (nonatomic, readonly) NSString *sf_personRealName;
@@ -65,36 +67,43 @@
 + (id)addSubscriberForFileURL:(id)arg1 withPublishingHandler:(id /* block */)arg2;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentProgress;
++ (id)discreteProgressWithTotalUnitCount:(long long)arg1;
 + (id)keyPathsForValuesAffectingLocalizedAdditionalDescription;
 + (id)keyPathsForValuesAffectingLocalizedDescription;
 + (id)progressWithTotalUnitCount:(long long)arg1;
++ (id)progressWithTotalUnitCount:(long long)arg1 parent:(id)arg2 pendingUnitCount:(long long)arg3;
 + (void)removeSubscriber:(id)arg1;
 
 - (void)__notifyRemoteObserversOfValueForKey:(id)arg1 inUserInfo:(BOOL)arg2;
 - (id /* block */)_acknowledgementHandlerForAppBundleIdentifier:(id)arg1;
-- (void)_addChild:(id)arg1 toGroup:(id)arg2 isPaused:(BOOL*)arg3 isCancelled:(BOOL*)arg4;
+- (void)_addCompletedUnitCount:(long long)arg1;
+- (void)_addImplicitChild:(id)arg1;
+- (BOOL)_adoptChildUserInfo;
 - (id)_indentedDescription:(unsigned int)arg1;
 - (id)_initWithValues:(id)arg1;
 - (void)_notifyRemoteObserversOfValueForKey:(id)arg1 inUserInfo:(BOOL)arg2;
+- (id)_parent;
 - (void)_publish;
 - (id)_publishingAppBundleIdentifier;
-- (void)_removeGroup:(id)arg1 fraction:(id)arg2 portion:(long long)arg3;
+- (void)_receiveProgressMessage:(id)arg1 forSequence:(unsigned long long)arg2;
 - (void)_setAcknowledgementHandler:(id /* block */)arg1 forAppBundleIdentifier:(id)arg2;
 - (void)_setCompletedUnitCount:(long long)arg1 totalUnitCount:(long long)arg2;
-- (void)_setGroup:(id)arg1;
+- (void)_setParent:(id)arg1 portion:(long long)arg2;
 - (void)_setRemoteValue:(id)arg1 forKey:(id)arg2 inUserInfo:(BOOL)arg3;
-- (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2;
-- (void)_setValueForKeys:(id /* block */)arg1 settingBlock:(id /* block */)arg2;
+- (void)_setUserInfoValue:(id)arg1 forKey:(id)arg2 fromChild:(BOOL)arg3;
+- (id)_setValueForKeys:(id /* block */)arg1 settingBlock:(id /* block */)arg2;
 - (void)_unblockDisconnecting;
 - (void)_unblockUnpublishing;
 - (void)_unpublish;
-- (void)_updateFractionCompletedFromOldFraction:(id)arg1 toNewFraction:(id)arg2;
-- (void)_updateGroup:(id)arg1 oldFraction:(id)arg2 newFraction:(id)arg3 portion:(long long)arg4;
+- (void)_updateChild:(id)arg1 fraction:(id)arg2 portion:(long long)arg3;
+- (void)_updateFractionCompleted:(id)arg1;
 - (void)acknowledge;
 - (void)acknowledgeWithSuccess:(BOOL)arg1;
 - (id /* block */)acknowledgementHandlerForAppBundleIdentifier:(id)arg1;
+- (void)addChild:(id)arg1 withPendingUnitCount:(long long)arg2;
 - (oneway void)appWithBundleID:(id)arg1 didAcknowledgeWithSuccess:(BOOL)arg2;
 - (void)becomeCurrentWithPendingUnitCount:(long long)arg1;
+- (void)becomeCurrentWithPendingUnitCount:(long long)arg1 inBlock:(id /* block */)arg2;
 - (void)cancel;
 - (id /* block */)cancellationHandler;
 - (long long)completedUnitCount;
@@ -125,6 +134,8 @@
 - (oneway void)prioritize;
 - (void)publish;
 - (void)resignCurrent;
+- (void)resume;
+- (id /* block */)resumingHandler;
 - (void)setAcknowledgementHandler:(id /* block */)arg1 forAppBundleIdentifier:(id)arg2;
 - (void)setCancellable:(BOOL)arg1;
 - (void)setCancellationHandler:(id /* block */)arg1;
@@ -136,8 +147,10 @@
 - (void)setPausingHandler:(id /* block */)arg1;
 - (void)setPrioritizable:(BOOL)arg1;
 - (void)setPrioritizationHandler:(id /* block */)arg1;
+- (void)setResumingHandler:(id /* block */)arg1;
 - (void)setTotalUnitCount:(long long)arg1;
 - (void)setUserInfoObject:(id)arg1 forKey:(id)arg2;
+- (void)set_adoptChildUserInfo:(BOOL)arg1;
 - (oneway void)startProvidingValuesWithInitialAcceptor:(id /* block */)arg1;
 - (oneway void)stopProvidingValues;
 - (long long)totalUnitCount;
@@ -152,15 +165,16 @@
 + (id)publishingKeyForApp:(id)arg1 withPhase:(unsigned int)arg2;
 
 - (id)_LSDescription;
+- (void)_LSResume;
 - (id)initWithParent:(id)arg1 bundleID:(id)arg2 andPhase:(unsigned int)arg3;
 - (unsigned int)installPhase;
 - (unsigned int)installState;
-- (void)resume;
 - (void)setInstallPhase:(unsigned int)arg1;
 - (void)setInstallState:(unsigned int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
+- (id)brc_dumpDescription;
 - (void)brc_publish;
 - (void)brc_unpublish;
 

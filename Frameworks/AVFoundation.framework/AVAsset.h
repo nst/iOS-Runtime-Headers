@@ -16,6 +16,8 @@
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property (nonatomic, readonly) float preferredVolume;
 @property (nonatomic, readonly) id propertyListForProxy;
+@property (nonatomic, readonly) NSValue *pu_cachedDuration;
+@property (setter=rc_setComposedAVURL:, nonatomic, retain) NSURL *rc_composedAVURL;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
@@ -29,7 +31,9 @@
 - (id)_assetInspector;
 - (id)_assetInspectorLoader;
 - (id)_chapterDataTypeForMediaSubType:(long)arg1;
-- (id)_chapterMetadataGroupsWithFigChapterGroups:(id)arg1 titleLocale:(id)arg2 containingItemsWithCommonKeys:(id)arg3;
+- (id)_chapterMetadataGroupsBestMatchingPreferredLanguages:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
+- (id)_chapterMetadataGroupsWithFigChapterGroups:(id)arg1 titleLanguage:(id)arg2 containingItemsWithCommonKeys:(id)arg3;
+- (id)_chapterMetadataGroupsWithTitleLanguage:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
 - (id)_chapterTracks;
 - (Class)_classForTrackInspectors;
 - (id)_comparisonToken;
@@ -39,26 +43,35 @@
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (id)_firstTrackGroupWithMediaType:(id)arg1;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
+- (double)_fragmentMindingInterval;
+- (void)_handleURLRequest:(id)arg1;
 - (BOOL)_hasResourceLoaderDelegate;
 - (BOOL)_isStreaming;
 - (void)_loadChapterInfo;
+- (void)_loadValuesSynchronouslyForKeys:(id)arg1 trackKeys:(id)arg2;
+- (id)_mediaSelectionGroupDictionaries;
+- (BOOL)_mindsFragments;
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
+- (BOOL)_needsLegacyChangeNotifications;
 - (struct OpaqueFigPlaybackItem { }*)_playbackItem;
 - (void)_serverHasDied;
+- (void)_setFragmentMindingInterval:(double)arg1;
+- (void)_setIsAssociatedWithFragmentMinder:(BOOL)arg1;
 - (void)_tracksDidChange;
 - (id)_weakReference;
 - (id)alternateTrackGroups;
 - (id)audioAlternatesTrackGroup;
+- (id)availableChapterLanguages;
 - (id)availableChapterLocales;
 - (id)availableMediaCharacteristicsWithMediaSelectionOptions;
 - (id)availableMetadataFormats;
-- (BOOL)canContainMovieFragments;
+- (BOOL)canContainFragments;
 - (void)cancelLoading;
 - (id)chapterMetadataGroupsBestMatchingPreferredLanguages:(id)arg1;
 - (id)chapterMetadataGroupsWithTitleLocale:(id)arg1 containingItemsWithCommonKeys:(id)arg2;
 - (id)commonMetadata;
 - (id)compatibleTrackForCompositionTrack:(id)arg1;
-- (BOOL)containsMovieFragments;
+- (BOOL)containsFragments;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (void)dealloc;
@@ -66,6 +79,8 @@
 - (BOOL)hasProtectedContent;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithURL:(id)arg1 options:(id)arg2;
+- (BOOL)isCompatibleWithAirPlayVideo;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;
 - (BOOL)isEqual:(id)arg1;
@@ -76,13 +91,14 @@
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)lyrics;
+- (id)makePropertyListForProxyWithOptions:(id)arg1;
 - (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
 - (id)mediaSelectionGroupForPropertyList:(id)arg1 mediaSelectionOption:(id*)arg2;
-- (id)mediaSelectionGroups;
 - (id)metadata;
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
+- (id)preferredMediaSelection;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
@@ -107,7 +123,24 @@
 
 - (BOOL)MP_canAffectNetworkPlayability;
 - (void)MP_setCanAffectNetworkPlayability:(BOOL)arg1;
+- (id)createLanguageOptionGroups;
 - (void)mpLoadValuesAsynchronouslyForKeys:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (void)_pu_setCachedDuration:(id)arg1;
+- (id)pu_cachedDuration;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })pu_duration;
+- (void)pu_loadDurationWithCompletionHandler:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (struct UIImage { Class x1; }*)previewImage;
+
+// Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
+
+- (id)rc_composedAVURL;
+- (void)rc_setComposedAVURL:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

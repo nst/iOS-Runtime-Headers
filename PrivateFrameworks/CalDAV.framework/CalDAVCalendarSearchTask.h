@@ -11,8 +11,8 @@
 
 @property (nonatomic, readonly, retain) NSDictionary *urlsToResults;
 
+- (void).cxx_destruct;
 - (id)copyDefaultParserForContentType:(id)arg1;
-- (void)dealloc;
 - (void)finishCoreDAVTaskWithError:(id)arg1;
 - (id)httpMethod;
 - (id)initWithLanguages:(id)arg1 location:(id)arg2 calendarType:(id)arg3 url:(id)arg4;

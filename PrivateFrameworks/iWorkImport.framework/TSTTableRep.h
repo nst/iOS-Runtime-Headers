@@ -115,9 +115,10 @@
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformFromCanvas;
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToCanvas;
 
++ (float)magicMoveAttributeMatchPercentBetweenOutgoingObject:(id)arg1 incomingObject:(id)arg2 mixingTypeContext:(id)arg3;
++ (unsigned int)p_countOfIdenticalCellsBetweenOutgoingTableModel:(id)arg1 incomingTableModel:(id)arg2;
 + (Class)tableRepDelegateClass;
 
-- (id).cxx_construct;
 - (id)actionForLayer:(id)arg1 forKey:(id)arg2;
 - (void)addAdditionalChildLayersToArray:(id)arg1;
 - (id)animationController;
@@ -176,10 +177,12 @@
 - (void)setChildTextReps:(id)arg1;
 - (void)setRatingsDragCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setTableNameValid:(BOOL)arg1;
+- (void)setTextureStage:(unsigned int)arg1;
 - (id)tableChrome;
 - (id)tableInfo;
 - (id)tableLayout;
 - (id)tableModel;
+- (id)textureForContext:(id)arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformFromCanvas;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transformToCanvas;
 - (void)updateChildrenFromLayout;

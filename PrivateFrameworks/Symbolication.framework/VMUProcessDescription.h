@@ -12,6 +12,7 @@
     unsigned long long _executableLoadAddress;
     NSString *_executablePath;
     BOOL _executablePathNeedsCorrection;
+    NSString *_hardwareModel;
     BOOL _is64Bit;
     _VMULibraryLoadObserver *_loadUnloadObserver;
     NSDictionary *_lsApplicationInformation;
@@ -21,6 +22,10 @@
     NSString *_parentProcessName;
     int _pid;
     int _ppid;
+    struct timeval { 
+        int tv_sec; 
+        int tv_usec; 
+    } _proc_starttime;
     NSString *_processName;
     BOOL _processNameNeedsCorrection;
     NSArray *_sortedBinaryImages;

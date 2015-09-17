@@ -16,9 +16,7 @@
 - (void)conference:(AVConference *)arg1 remoteVideoPaused:(BOOL)arg2 callID:(int)arg3;
 - (void)conference:(AVConference *)arg1 sendRelayUpdate:(int)arg2 updateDict:(NSDictionary *)arg3;
 - (void)conference:(AVConference *)arg1 updateInputFrequencyLevel:(NSData *)arg2;
-- (void)conference:(AVConference *)arg1 updateInputMeterLevel:(float)arg2;
 - (void)conference:(AVConference *)arg1 updateOutputFrequencyLevel:(NSData *)arg2;
-- (void)conference:(AVConference *)arg1 updateOutputMeterLevel:(float)arg2;
 - (void)conference:(AVConference *)arg1 videoQualityNotificationForCallID:(int)arg2 isDegraded:(BOOL)arg3 isRemote:(BOOL)arg4;
 - (void)conference:(AVConference *)arg1 withCallID:(int)arg2 networkHint:(BOOL)arg3;
 - (void)conference:(AVConference *)arg1 withCallID:(int)arg2 remoteMediaStalled:(BOOL)arg3;
@@ -36,5 +34,9 @@
 - (void)conference:(AVConference *)arg1 localIPChange:(NSData *)arg2 withCallID:(int)arg3;
 - (void)conference:(AVConference *)arg1 reinitializeCallForCallID:(unsigned long)arg2;
 - (void)conference:(AVConference *)arg1 remoteAudioEnabled:(BOOL)arg2 forCallID:(unsigned long)arg3;
+- (void)conference:(AVConference *)arg1 remoteCallingModeChanged:(unsigned long)arg2 forCallID:(unsigned long)arg3;
+- (void)conference:(AVConference *)arg1 updateInputMeterLevel:(float)arg2;
+- (void)conference:(AVConference *)arg1 updateOutputMeterLevel:(float)arg2;
+- (void)conference:(AVConference *)arg1 withCallID:(int)arg2 didPauseAudio:(BOOL)arg3 error:(NSError *)arg4;
 
 @end

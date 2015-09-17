@@ -23,7 +23,6 @@
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } sizeInPixels;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (float)contentScale;
 - (void)dealloc;
 - (id)description;

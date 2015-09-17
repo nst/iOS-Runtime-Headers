@@ -25,6 +25,7 @@
         unsigned int tollPrior : 1; 
     } _has;
     int _hintFirstAnnouncementZilchIndex;
+    GEOInstructionSet *_instructionSet;
     NSString *_instructions;
     struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } *_junctionElements;
     unsigned int _junctionElementsCount;
@@ -60,6 +61,7 @@
 @property (nonatomic) BOOL hasExpectedTime;
 @property (nonatomic, readonly) BOOL hasHintFirstAnnouncementIndex;
 @property (nonatomic) BOOL hasHintFirstAnnouncementZilchIndex;
+@property (nonatomic, readonly) BOOL hasInstructionSet;
 @property (nonatomic, readonly) BOOL hasInstructions;
 @property (nonatomic) BOOL hasJunctionType;
 @property (nonatomic) BOOL hasManeuverEndBasicIndex;
@@ -76,6 +78,7 @@
 @property (nonatomic) BOOL hasTollPrior;
 @property (nonatomic, readonly) int hintFirstAnnouncementIndex;
 @property (nonatomic) int hintFirstAnnouncementZilchIndex;
+@property (nonatomic, retain) GEOInstructionSet *instructionSet;
 @property (nonatomic, retain) NSString *instructions;
 @property (nonatomic, readonly) struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*junctionElements;
 @property (nonatomic, readonly) unsigned int junctionElementsCount;
@@ -126,6 +129,7 @@
 - (BOOL)hasExpectedTime;
 - (BOOL)hasHintFirstAnnouncementIndex;
 - (BOOL)hasHintFirstAnnouncementZilchIndex;
+- (BOOL)hasInstructionSet;
 - (BOOL)hasInstructions;
 - (BOOL)hasJunctionType;
 - (BOOL)hasManeuverEndBasicIndex;
@@ -143,6 +147,7 @@
 - (unsigned int)hash;
 - (int)hintFirstAnnouncementIndex;
 - (int)hintFirstAnnouncementZilchIndex;
+- (id)instructionSet;
 - (id)instructions;
 - (id)intersectionNameInfo;
 - (BOOL)isEqual:(id)arg1;
@@ -190,6 +195,7 @@
 - (void)setHasTollAhead:(BOOL)arg1;
 - (void)setHasTollPrior:(BOOL)arg1;
 - (void)setHintFirstAnnouncementZilchIndex:(int)arg1;
+- (void)setInstructionSet:(id)arg1;
 - (void)setInstructions:(id)arg1;
 - (void)setJunctionElements:(struct { int x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; }*)arg1 count:(unsigned int)arg2;
 - (void)setJunctionType:(int)arg1;

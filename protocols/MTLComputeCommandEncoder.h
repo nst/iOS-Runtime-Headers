@@ -6,6 +6,7 @@
 @required
 
 - (void)dispatchThreadgroups:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg1 threadsPerThreadgroup:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg2;
+- (void)dispatchThreadgroupsWithIndirectBuffer:(id <MTLBuffer>)arg1 indirectBufferOffset:(unsigned int)arg2 threadsPerThreadgroup:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg3;
 - (void)setBuffer:(id <MTLBuffer>)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;
 - (void)setBuffers:(const id*)arg1 offsets:(const unsigned int*)arg2 withRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;

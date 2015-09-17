@@ -48,7 +48,7 @@
 - (void)_sendMessage:(id)arg1 type:(unsigned short)arg2 timeout:(int)arg3 queueOneID:(id)arg4 priority:(int)arg5 responseBlock:(id)arg6;
 - (void)_updateCompanionAvailability;
 - (void)addToWishlist:(unsigned long long)arg1 databaseID:(unsigned long long)arg2 sessionIdentifier:(int)arg3 completionHandler:(id /* block */)arg4;
-- (void)beginDiscoverySessionWithDiscoveryTypes:(int)arg1 completionHandler:(id /* block */)arg2;
+- (void)beginDiscoverySessionWithDiscoveryTypes:(int)arg1 pairedNetworkNames:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)beginObservingNowPlayingWithSessionIdentifier:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)beginPairingSessionWithPasscode:(id)arg1 appName:(id)arg2 deviceName:(id)arg3 deviceModel:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)connectToService:(id)arg1 pairingGUID:(id)arg2 completionHandler:(id /* block */)arg3;
@@ -72,5 +72,6 @@
 - (void)setCompanionAvailable:(BOOL)arg1;
 - (void)setLikedState:(int)arg1 itemID:(unsigned long long)arg2 databaseID:(unsigned long long)arg3 sessionIdentifier:(int)arg4 completionHandler:(id /* block */)arg5;
 - (void)setVolume:(float)arg1 sessionIdentifier:(int)arg2;
+- (void)updatePairedNetworkNames:(id)arg1 sessionIdentifier:(int)arg2;
 
 @end

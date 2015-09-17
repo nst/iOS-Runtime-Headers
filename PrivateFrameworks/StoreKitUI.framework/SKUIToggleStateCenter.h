@@ -12,8 +12,11 @@
 + (id)defaultCenter;
 
 - (void).cxx_destruct;
+- (void)_accountStoreChangeNotification:(id)arg1;
 - (void)_notifyObserversOfStateChanges:(id)arg1;
 - (void)addObserver:(id)arg1;
+- (void)clearAll;
+- (void)dealloc;
 - (id)init;
 - (id)itemForIdentifier:(id)arg1;
 - (void)removeObserver:(id)arg1;

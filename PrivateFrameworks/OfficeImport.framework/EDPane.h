@@ -14,6 +14,7 @@
 
 - (int)activePane;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (int)paneState;
 - (void)setActivePane:(int)arg1;

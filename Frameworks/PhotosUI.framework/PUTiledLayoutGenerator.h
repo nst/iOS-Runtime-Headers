@@ -6,7 +6,7 @@
     int _cacheHeadLocation;
     int _cacheTailLocation;
     /* Warning: unhandled array encoding: '[20@]' */ id _cachedBatchID;
-    struct { 
+    struct PUTileInfo { 
         int index; 
         struct CGSize { 
             float width; 
@@ -84,17 +84,17 @@
 - (void)parsedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 type:(int)arg2 forTileAtIndex:(int)arg3;
 - (id /* block */)parsedFrameBlock;
 - (float)roundingScale;
-- (BOOL)scanAnyTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanAnyTile:(struct PUTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
 - (int)scanLocation;
 - (int)scanSpecialSequenceCount;
 - (id)scanState;
-- (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 ofType:(int)arg2;
-- (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 passingTest:(id /* block */)arg2;
-- (BOOL)scanTile:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 type:(int*)arg2;
-- (BOOL)scanTileWithHorizontalPanorama:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)scanTileWithLandscapeImage:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)scanTileWithPortraitImage:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
-- (BOOL)scanTileWithSquareImage:(struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanTile:(struct PUTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 ofType:(int)arg2;
+- (BOOL)scanTile:(struct PUTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 passingTest:(id /* block */)arg2;
+- (BOOL)scanTile:(struct PUTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1 type:(int*)arg2;
+- (BOOL)scanTileWithHorizontalPanorama:(struct PUTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanTileWithLandscapeImage:(struct PUTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanTileWithPortraitImage:(struct PUTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
+- (BOOL)scanTileWithSquareImage:(struct PUTileInfo { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; BOOL x4; BOOL x5; }*)arg1;
 - (BOOL)scannedBatchHasCaption;
 - (id)scannedBatchID;
 - (void)setCaptionPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

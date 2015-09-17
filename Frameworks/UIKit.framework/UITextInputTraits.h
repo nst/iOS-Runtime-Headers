@@ -19,10 +19,12 @@
     BOOL forceEnableDictation;
     UIColor *insertionPointColor;
     unsigned int insertionPointWidth;
+    BOOL isCarPlayIdiom;
     BOOL isSingleLineDocument;
     unsigned int keyboardAppearance;
     unsigned int keyboardType;
     BOOL learnsCorrections;
+    NSString *recentInputIdentifier;
     NSString *responseContext;
     BOOL returnKeyGoesToNextResponder;
     int returnKeyType;
@@ -59,10 +61,12 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIColor *insertionPointColor;
 @property (nonatomic) unsigned int insertionPointWidth;
+@property (nonatomic) BOOL isCarPlayIdiom;
 @property (nonatomic) BOOL isSingleLineDocument;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
 @property (nonatomic) BOOL learnsCorrections;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic, copy) NSString *responseContext;
 @property (nonatomic) BOOL returnKeyGoesToNextResponder;
 @property (nonatomic) int returnKeyType;
@@ -81,10 +85,12 @@
 @property (nonatomic) BOOL useInterfaceLanguageForLocalization;
 
 + (int)accessibleAppearanceForAppearance:(int)arg1;
++ (int)configuredAppearanceForAppearance:(int)arg1 withTraitEnvironment:(id)arg2;
 + (id)defaultTextInputTraits;
 + (BOOL)keyboardTypeRequiresASCIICapable:(int)arg1;
 + (id)traitsByAdoptingTraits:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_setColorsToMatchTintColor:(id)arg1;
 - (BOOL)acceptsEmoji;
 - (BOOL)acceptsFloatingKeyboard;
@@ -107,6 +113,7 @@
 - (id)init;
 - (id)insertionPointColor;
 - (unsigned int)insertionPointWidth;
+- (BOOL)isCarPlayIdiom;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSecureTextEntry;
 - (BOOL)isSingleLineDocument;
@@ -114,6 +121,7 @@
 - (int)keyboardType;
 - (BOOL)learnsCorrections;
 - (BOOL)publicTraitsMatchTraits:(id)arg1;
+- (id)recentInputIdentifier;
 - (id)responseContext;
 - (BOOL)returnKeyGoesToNextResponder;
 - (int)returnKeyType;
@@ -136,10 +144,12 @@
 - (void)setForceEnableDictation:(BOOL)arg1;
 - (void)setInsertionPointColor:(id)arg1;
 - (void)setInsertionPointWidth:(unsigned int)arg1;
+- (void)setIsCarPlayIdiom:(BOOL)arg1;
 - (void)setIsSingleLineDocument:(BOOL)arg1;
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setKeyboardType:(int)arg1;
 - (void)setLearnsCorrections:(BOOL)arg1;
+- (void)setRecentInputIdentifier:(id)arg1;
 - (void)setResponseContext:(id)arg1;
 - (void)setReturnKeyGoesToNextResponder:(BOOL)arg1;
 - (void)setReturnKeyType:(int)arg1;

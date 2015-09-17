@@ -24,10 +24,10 @@
 @property id target;
 @property (retain) NSString *text;
 
+- (void).cxx_destruct;
 - (id)URL;
 - (void)_linkify;
 - (SEL)action;
-- (void)dealloc;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })linkRange;

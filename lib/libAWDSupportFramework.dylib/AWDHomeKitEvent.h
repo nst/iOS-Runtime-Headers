@@ -4,7 +4,6 @@
 
 @interface AWDHomeKitEvent : PBCodable <NSCopying> {
     unsigned int _eventType;
-    NSString *_guid;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int eventType : 1; 
@@ -13,28 +12,22 @@
 }
 
 @property (nonatomic) unsigned int eventType;
-@property (nonatomic, retain) NSString *guid;
 @property (nonatomic) BOOL hasEventType;
-@property (nonatomic, readonly) BOOL hasGuid;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)eventType;
-- (id)guid;
 - (BOOL)hasEventType;
-- (BOOL)hasGuid;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setEventType:(unsigned int)arg1;
-- (void)setGuid:(id)arg1;
 - (void)setHasEventType:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

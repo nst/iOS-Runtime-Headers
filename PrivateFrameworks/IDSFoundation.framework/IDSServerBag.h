@@ -32,7 +32,7 @@
 @property (retain) NSData *_certData;
 @property (retain) IMConnectionMonitor *_connectionMonitor;
 @property (retain) NSDate *_loadDate;
-@property IDSRemoteURLConnection *_remoteURLConnection;
+@property (retain) IDSRemoteURLConnection *_remoteURLConnection;
 @property (setter=_setTrustStatus:) int _trustStatus;
 @property (retain) NSMutableURLRequest *_urlRequest;
 @property BOOL allowSelfSignedCertificates;
@@ -49,6 +49,7 @@
 + (id)_bagCreationLock;
 + (id)_sharedInstance;
 + (id)_sharedInstanceForClass:(Class)arg1;
++ (id)defaultBag;
 + (id)sharedInstance;
 + (id)sharedInstanceForBagType:(int)arg1;
 

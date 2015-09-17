@@ -8,9 +8,6 @@
     int _addToLibraryButtonState;
     UIView *_artworkEditingOverlayView;
     _UIBackdropView *_backdropView;
-    UIImage *_backgroundImage;
-    UIImageView *_backgroundImageView;
-    UIView *_backgroundOverlayView;
     UIView *_bottomHairlineView;
     MusicNowPlayingFloatingButton *_cameraButton;
     UIButton *_contextualActionsButton;
@@ -26,7 +23,6 @@
     BOOL _editing;
     UIButton *_likeDislikeButton;
     int _likeDislikeButtonState;
-    UIView *_placeholderBackgroundView;
     MusicEntityViewProductHeaderLockupContentDescriptor *_productHeaderLockupContentDescriptor;
     UIActivityIndicatorView *_refreshActivityIndicatorView;
     UIButton *_refreshButton;

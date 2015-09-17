@@ -23,8 +23,8 @@
 + (id)defaultSupportDirectoryURL;
 + (void)garbageCollectDocumentSupportWithKnownDocumentUUIDs:(id)arg1 delegate:(id)arg2;
 + (BOOL)isSupportAtURLValid:(id)arg1 documentUUID:(id)arg2 versionUUID:(id)arg3 documentProperties:(id*)arg4;
-+ (id)supportBundleURLForUUID:(id)arg1 delegate:(id)arg2;
-+ (id)supportDirectoryURLWithDelegate:(id)arg1;
++ (id)supportBundleURLForDocumentUUID:(id)arg1 delegate:(id)arg2;
++ (id)supportDirectoryURLWithDelegate:(id)arg1 isUnique:(BOOL*)arg2;
 
 - (void).cxx_destruct;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;

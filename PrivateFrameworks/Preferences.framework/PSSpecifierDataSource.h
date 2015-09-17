@@ -17,11 +17,11 @@
 + (id)loadSpecifiersFromPlist:(id)arg1 inBundle:(id)arg2 target:(id)arg3 stringsTable:(id)arg4;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_clearAllSpecifiers;
 - (void)_invalidateSpecifiersForObservers;
 - (void)addObserver:(id)arg1;
 - (BOOL)areSpecifiersLoaded;
-- (void)dealloc;
 - (void)enumerateObserversOfClass:(Class)arg1 usingBlock:(id /* block */)arg2;
 - (void)enumerateObserversUsingBlock:(id /* block */)arg1;
 - (id)init;

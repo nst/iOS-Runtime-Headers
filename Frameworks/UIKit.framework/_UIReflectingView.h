@@ -12,6 +12,7 @@
 @property (nonatomic) float reflectionAlpha;
 @property (nonatomic) float reflectionFraction;
 
+- (void).cxx_destruct;
 - (id)_gradientLayer;
 - (void)_updateGradientColors;
 - (id)containerView;

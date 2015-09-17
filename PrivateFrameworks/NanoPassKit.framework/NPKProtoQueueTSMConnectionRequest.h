@@ -2,16 +2,25 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@interface NPKProtoQueueTSMConnectionRequest : PBRequest <NSCopying>
+@interface NPKProtoQueueTSMConnectionRequest : PBRequest <NSCopying> {
+    NSString *_pushTopic;
+}
 
+@property (nonatomic, readonly) BOOL hasPushTopic;
+@property (nonatomic, retain) NSString *pushTopic;
+
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasPushTopic;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)pushTopic;
 - (BOOL)readFrom:(id)arg1;
+- (void)setPushTopic:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

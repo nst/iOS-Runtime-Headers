@@ -14,8 +14,9 @@
         unsigned int flags; 
         long long epoch; 
     } duration;
+    NSString *extendedLanguageTag;
     struct OpaqueFigAsset { } *figAsset;
-    NSLocale *locale;
+    NSString *languageCode;
     NSObject<OS_dispatch_queue> *readWriteQueue;
     struct { 
         long long value; 

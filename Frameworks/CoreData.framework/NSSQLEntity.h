@@ -23,6 +23,7 @@
     NSSQLStoreMappingGenerator *_mappingGenerator;
     long long _maxPK;
     NSSQLModel *_model;
+    NSMutableArray *_multicolumnUniquenessConstraints;
     void *_odiousHashHackStorage;
     NSSQLOptLockKey *_optLockKey;
     unsigned int _pkCount;
@@ -46,6 +47,7 @@
         unsigned int location; 
         unsigned int length; 
     } _toOneRange;
+    NSMutableArray *_uniqueAttributes;
     NSMutableArray *_virtualFKs;
 }
 
@@ -59,8 +61,10 @@
 - (BOOL)_entityIsBroken:(id*)arg1;
 - (unsigned int)_generateIDWithSuperEntity:(id)arg1 nextID:(unsigned int)arg2;
 - (void)_generateInverseRelationshipsAndMore;
+- (void)_generateMulticolumnUniquenessConstraints;
 - (void)_generateProperties;
 - (void*)_odiousHashHack;
+- (void)_organizeConstraints;
 - (unsigned int)_pkCount;
 - (id)_propertySearchMapping;
 - (void)_resetPKCount;
@@ -69,6 +73,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_toOneRange;
 - (void)addInsertedObject:(id)arg1 toArray:(id)arg2;
 - (BOOL)addPropertiesForReadOnlyFetch:(id)arg1 keys:(id)arg2 context:(id)arg3;
+- (void)addUniqueAttribute:(id)arg1;
 - (id)attributeColumns;
 - (id)attributeNamed:(id)arg1;
 - (id)attributes;
@@ -114,6 +119,7 @@
 - (id)manyToManyRelationships;
 - (id)mappingGenerator;
 - (id)model;
+- (id)multicolumnUniquenessConstraints;
 - (id)name;
 - (long long)nextPrimaryKey64;
 - (id)optLockKey;
@@ -133,6 +139,7 @@
 - (id)superentity;
 - (id)tableName;
 - (id)toManyRelationships;
+- (id)uniqueAttributes;
 - (id)virtualForeignKeyColumns;
 
 @end

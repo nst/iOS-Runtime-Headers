@@ -3,6 +3,7 @@
  */
 
 @interface BRCPackageManifestReader : NSEnumerator {
+    NSError *_error;
     PBMessageStreamReader *_reader;
     NSInputStream *_stream;
 }
@@ -12,6 +13,8 @@
 - (void).cxx_destruct;
 - (void)dealloc;
 - (void)done;
+- (id)error;
+- (id)init;
 - (id)initWithAsset:(id)arg1;
 - (id)initWithDeviceID:(int)arg1 fileID:(unsigned long long)arg2;
 - (id)initWithInputStream:(id)arg1;

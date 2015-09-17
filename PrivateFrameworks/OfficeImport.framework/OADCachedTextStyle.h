@@ -27,7 +27,6 @@
     unsigned int mHash;
 }
 
-- (id).cxx_construct;
 - (void)applyToParagraphProperties:(id)arg1 graphicStyleCache:(id)arg2;
 - (void)applyToTextBodyProperties:(id)arg1 graphicStyleCache:(id)arg2;
 - (unsigned int)hash;

@@ -10,11 +10,8 @@
     struct { 
         unsigned int timeToLiveSeconds : 1; 
         unsigned int updateBehavior : 1; 
-        unsigned int multiTileURLUsesStatusCodes : 1; 
     } _has;
     NSString *_localizationURL;
-    NSString *_multiTileURL;
-    BOOL _multiTileURLUsesStatusCodes;
     int _scale;
     NSMutableArray *_sentinelTiles;
     int _size;
@@ -30,13 +27,9 @@
 @property (nonatomic, retain) NSString *baseURL;
 @property (nonatomic, readonly) BOOL hasBaseURL;
 @property (nonatomic, readonly) BOOL hasLocalizationURL;
-@property (nonatomic, readonly) BOOL hasMultiTileURL;
-@property (nonatomic) BOOL hasMultiTileURLUsesStatusCodes;
 @property (nonatomic) BOOL hasTimeToLiveSeconds;
 @property (nonatomic) BOOL hasUpdateBehavior;
 @property (nonatomic, retain) NSString *localizationURL;
-@property (nonatomic, retain) NSString *multiTileURL;
-@property (nonatomic) BOOL multiTileURLUsesStatusCodes;
 @property (nonatomic) int scale;
 @property (nonatomic, retain) NSMutableArray *sentinelTiles;
 @property (nonatomic) int size;
@@ -60,14 +53,12 @@
 - (void)clearSupportedLanguages;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)dataForGenericTileType:(int)arg1 tileGroupIdentifier:(unsigned int)arg2;
+- (id)dataForGenericTileType:(int)arg1 configuration:(id)arg2;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBaseURL;
 - (BOOL)hasLocalizationURL;
-- (BOOL)hasMultiTileURL;
-- (BOOL)hasMultiTileURLUsesStatusCodes;
 - (BOOL)hasTimeToLiveSeconds;
 - (BOOL)hasUpdateBehavior;
 - (unsigned int)hash;
@@ -76,11 +67,10 @@
 - (BOOL)isEquivalentTileSet:(id)arg1;
 - (unsigned int)largestZoomLevelLEQ:(unsigned int)arg1 inRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg2;
 - (id)localizationURL;
+- (unsigned int)maximumZoomLevelForMapPoint:(struct { double x1; double x2; })arg1;
 - (unsigned int)maximumZoomLevelInRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)minimumZoomLevelInRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
-- (id)multiTileURL;
-- (BOOL)multiTileURLUsesStatusCodes;
 - (BOOL)readFrom:(id)arg1;
 - (int)scale;
 - (id)sentinelTileAtIndex:(unsigned int)arg1;
@@ -88,12 +78,9 @@
 - (unsigned int)sentinelTilesCount;
 - (void)setAvailableTiles:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg1 count:(unsigned int)arg2;
 - (void)setBaseURL:(id)arg1;
-- (void)setHasMultiTileURLUsesStatusCodes:(BOOL)arg1;
 - (void)setHasTimeToLiveSeconds:(BOOL)arg1;
 - (void)setHasUpdateBehavior:(BOOL)arg1;
 - (void)setLocalizationURL:(id)arg1;
-- (void)setMultiTileURL:(id)arg1;
-- (void)setMultiTileURLUsesStatusCodes:(BOOL)arg1;
 - (void)setScale:(int)arg1;
 - (void)setSentinelTiles:(id)arg1;
 - (void)setSize:(int)arg1;

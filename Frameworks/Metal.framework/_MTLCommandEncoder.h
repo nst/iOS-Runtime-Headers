@@ -3,24 +3,39 @@
  */
 
 @interface _MTLCommandEncoder : NSObject {
+    BOOL _StatEnabled;
+    unsigned long long _StatLocations;
+    unsigned long long _StatOptions;
     _MTLCommandBuffer<MTLCommandBuffer> *_commandBuffer;
     <MTLDevice> *_device;
+    unsigned long long _globalTraceObjectID;
     NSString *_label;
+    unsigned long long _labelTraceID;
+    unsigned int _numCommands;
+    unsigned int _numThisEncoder;
+    unsigned int _type;
 }
 
 @property (nonatomic, readonly) <MTLDevice> *device;
+@property unsigned long long globalTraceObjectID;
 @property (copy) NSString *label;
+@property (nonatomic, readonly) unsigned int type;
 
 - (id)commandBuffer;
 - (void)dealloc;
 - (id)description;
 - (id)device;
 - (void)endEncoding;
+- (unsigned long long)globalTraceObjectID;
+- (void)incNumCommands;
 - (id)initWithCommandBuffer:(id)arg1;
 - (void)insertDebugSignpost:(id)arg1;
 - (id)label;
+- (struct MTLStatSampleRec { void *x1; unsigned long long x2; unsigned long long x3[0]; }*)newSample;
 - (void)popDebugGroup;
 - (void)pushDebugGroup:(id)arg1;
+- (void)setGlobalTraceObjectID:(unsigned long long)arg1;
 - (void)setLabel:(id)arg1;
+- (unsigned int)type;
 
 @end

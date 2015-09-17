@@ -16,6 +16,7 @@
     BOOL *_writingURLsDidChange;
 }
 
+- (id)allURLs;
 - (BOOL)blocksClaim:(id)arg1;
 - (void)dealloc;
 - (void)devalueSelf;
@@ -23,7 +24,7 @@
 - (void)finalize;
 - (void)forwardUsingMessageSender:(id /* block */)arg1 crashHandler:(id /* block */)arg2;
 - (void)granted;
-- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id /* block */)arg3;
+- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 arbiterQueue:(id)arg3 replySender:(id /* block */)arg4;
 - (id)initWithPurposeID:(id)arg1 intents:(id)arg2 claimer:(id /* block */)arg3;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;

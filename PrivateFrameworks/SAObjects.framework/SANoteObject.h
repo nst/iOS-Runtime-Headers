@@ -22,6 +22,5 @@
 - (void)setLastModifiedDate:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

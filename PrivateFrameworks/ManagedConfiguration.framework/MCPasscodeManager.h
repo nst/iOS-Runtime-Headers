@@ -6,6 +6,7 @@
 
 + (BOOL)_passcodeCharacteristics:(id)arg1 compliesWithPolicyFromRestrictions:(id)arg2 outError:(id*)arg3;
 + (id)characteristicsDictionaryFromPasscode:(id)arg1;
++ (int)defaultNewPasscodeEntrySimplePasscodeType;
 + (id)deviceLockedError;
 + (id)generateSalt;
 + (id)hashForPasscode:(id)arg1 usingMethod:(int)arg2 salt:(id)arg3;
@@ -14,7 +15,9 @@
 + (BOOL)passcode:(id)arg1 compliesWithPolicyFromRestrictions:(id)arg2 checkHistory:(BOOL)arg3 outError:(id*)arg4;
 + (id)sharedManager;
 + (int)unlockScreenTypeForPasscodeCharacteristics:(id)arg1;
++ (int)unlockScreenTypeForPasscodeCharacteristics:(id)arg1 outSimplePasscodeType:(int*)arg2;
 + (int)unlockScreenTypeForRestrictions:(id)arg1;
++ (int)unlockScreenTypeForRestrictions:(id)arg1 outSimplePasscodeType:(int*)arg2;
 
 - (BOOL)_checkPasscode:(id)arg1 againstHistoryWithRestrictions:(id)arg2 outError:(id*)arg3;
 - (id)_passcodeCharacteristics;
@@ -23,6 +26,7 @@
 - (id)_wrongPasscodeError;
 - (BOOL)currentPasscodeCompliesWithPolicyFromRestrictions:(id)arg1 outError:(id*)arg2;
 - (int)currentUnlockScreenType;
+- (int)currentUnlockSimplePasscodeType;
 - (BOOL)isCurrentPasscodeCompliantOutError:(id*)arg1;
 - (BOOL)isDeviceLocked;
 - (BOOL)isPasscodeSet;
@@ -30,6 +34,7 @@
 - (void)lockDevice;
 - (void)lockDeviceImmediately:(BOOL)arg1;
 - (int)newPasscodeEntryScreenType;
+- (int)newPasscodeEntryScreenTypeWithOutSimplePasscodeType:(int*)arg1;
 - (BOOL)passcode:(id)arg1 compliesWithPolicyCheckHistory:(BOOL)arg2 outError:(id*)arg3;
 - (void)passcodeExpiryDateCompletionBlock:(id /* block */)arg1;
 - (id)passcodeExpiryDateOutError:(id*)arg1;

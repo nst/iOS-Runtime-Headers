@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIDocumentViewController, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate> {
+@interface SKUIExploreDocumentViewController : SKUIViewController <CLLocationManagerDelegate, SKUIDocumentViewController, SKUINavigationBarDisplayConfiguring, SKUIStackedBarDelegate, UINavigationControllerDelegate, UISplitViewControllerDelegate> {
     SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
     NSArray *_contentOffsets;
     SKUIContentInsetScrollView *_contentScrollView;
@@ -47,9 +47,12 @@
 - (void)loadView;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (BOOL)managesNavigationBarContents;
+- (id)navigationBarTintColor;
 - (id)navigationController:(id)arg1 animationControllerForOperation:(int)arg2 fromViewController:(id)arg3 toViewController:(id)arg4;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
+- (BOOL)prefersNavigationBarBackgroundViewHidden;
+- (BOOL)prefersNavigationBarHidden;
 - (void)selectGenreListComponent:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;

@@ -59,17 +59,17 @@
 - (unsigned int)deliveryGroupIndex;
 - (id)description;
 - (void)didInitFromSOS;
-- (void)didLoadBuild:(id)arg1;
 - (double)duration;
 - (unsigned int)eventTrigger;
 - (BOOL)hasComplement;
 - (id)i_buildId;
 - (void)i_clearChunkIdentifier;
-- (void)i_correctChunkIdentifierToPointAtBuild:(id)arg1;
+- (void)i_didLoadBuild:(id)arg1;
 - (void)i_invalidateChunkIndexInBuildCache;
-- (void)i_setBuild:(id)arg1;
 - (void)i_setBuildId:(id)arg1;
+- (void)i_setBuildPointer:(id)arg1;
 - (void)i_setChunkIdentifier:(id)arg1;
+- (void)i_updateChunkUUIDReferencesToBuild:(id)arg1;
 - (unsigned int)indexInBuild;
 - (unsigned int)indexOnSlide;
 - (id)initFromUnarchiver:(id)arg1;
@@ -90,6 +90,7 @@
 - (BOOL)p_canBuildWithChunk:(id)arg1 checkOtherChunksBuildingWithThisChunk:(BOOL)arg2;
 - (id)p_chunksBuildingWithThisChunk;
 - (BOOL)p_chunksBuildingWithThisChunkCanBuildWithChunk:(id)arg1;
+- (id)p_previousActiveChunkOnSlide;
 - (void)p_setDelayFromBuildAttributes:(id)arg1 withReferent:(unsigned int)arg2 automatic:(BOOL)arg3;
 - (void)p_setDurationFromBuildAttributes:(id)arg1;
 - (id)p_stringForReferent:(unsigned int)arg1;

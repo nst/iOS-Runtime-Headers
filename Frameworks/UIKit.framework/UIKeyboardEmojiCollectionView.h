@@ -24,6 +24,7 @@
 @property (retain) UIKeyboardEmojiView *touched;
 
 - (float)_currentScreenScale;
+- (BOOL)_shouldReverseLayoutDirection;
 - (id)activeTouch;
 - (id)closestCellForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;

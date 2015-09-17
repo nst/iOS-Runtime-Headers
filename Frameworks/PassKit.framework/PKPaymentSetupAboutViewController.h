@@ -2,16 +2,26 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentSetupAboutViewController : UIViewController {
-    NSString *_aboutText;
-    NSString *_privacyText;
-    PKPaymentSetupAboutView *_privacyView;
+@interface PKPaymentSetupAboutViewController : UIViewController <UIScrollViewDelegate> {
+    PKPaymentSetupAboutView *_aboutView;
+    NSString *_bodyText;
+    void *_navigationController;
+    BOOL _navigationControllerHidesShadow;
+    BOOL _requiresPrivacy;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+- (void)_done:(id)arg1;
+- (void)_setupNavigationItemWithTitle:(id)arg1 isPresented:(BOOL)arg2;
 - (void)_showPrivacyView:(id)arg1;
 - (void)dealloc;
-- (void)done:(id)arg1;
-- (id)initWithAboutText:(id)arg1 privacyText:(id)arg2 presentedInModal:(BOOL)arg3;
+- (id)initForPrivacyPresented:(BOOL)arg1;
+- (id)initWithAboutText:(id)arg1 isPresented:(BOOL)arg2;
 - (void)loadView;
+- (void)scrollViewDidScroll:(id)arg1;
 
 @end

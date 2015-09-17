@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualUpNextAlertAction : UIAlertAction {
+@interface MusicContextualUpNextAlertAction : MusicContextualAlertAction {
     int _insertionType;
     MPPlaybackContext *_playbackContext;
     MPAVController *_player;

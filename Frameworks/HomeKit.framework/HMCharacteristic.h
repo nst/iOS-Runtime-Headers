@@ -2,48 +2,76 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristic : NSObject <NSSecureCoding> {
+@interface HMCharacteristic : NSObject <HMObjectMerge, NSSecureCoding> {
     NSString *_characteristicType;
+    NSObject<OS_dispatch_queue> *_clientQueue;
+    HMDelegateCaller *_delegateCaller;
     NSNumber *_instanceID;
     HMCharacteristicMetadata *_metadata;
     BOOL _notificationEnabled;
     NSArray *_properties;
+    NSObject<OS_dispatch_queue> *_propertyQueue;
     HMService *_service;
+    NSUUID *_uniqueIdentifier;
     id _value;
 }
 
-@property (nonatomic, readonly, copy) NSString *characteristicType;
-@property (nonatomic, retain) NSNumber *instanceID;
+@property (nonatomic, copy) NSString *characteristicType;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSNumber *instanceID;
+@property (nonatomic, readonly, copy) NSString *localizedDescription;
 @property (nonatomic, readonly) HMCharacteristicMetadata *metadata;
 @property (getter=isNotificationEnabled, nonatomic) BOOL notificationEnabled;
-@property (nonatomic, readonly, copy) NSArray *properties;
+@property (nonatomic, copy) NSArray *properties;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic) HMService *service;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, copy) id value;
 
-+ (id)characteristicTypeAsString:(id)arg1;
++ (id)_characteristicTypeAsString:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_characteristicTypeDescription;
+- (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
+- (void)_enableNotification:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (void)_readValueWithCompletionHandler:(id /* block */)arg1;
+- (void)_updateAuthorizationData:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateValue:(id)arg1;
+- (void)_writeValue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)characteristicType;
-- (id)characteristicTypeDescription;
-- (void)configure:(id)arg1;
+- (id)clientQueue;
+- (id)delegateCaller;
 - (void)enableNotification:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)instanceID;
 - (BOOL)isNotificationEnabled;
+- (id)localizedDescription;
 - (id)mapCuapProperties:(int)arg1;
 - (int)mapToCuapProperties:(id)arg1;
 - (id)metadata;
 - (id)properties;
+- (id)propertyQueue;
 - (void)readValueWithCompletionHandler:(id /* block */)arg1;
 - (id)service;
-- (void)setInstanceID:(id)arg1;
+- (void)setCharacteristicType:(id)arg1;
+- (void)setClientQueue:(id)arg1;
+- (void)setDelegateCaller:(id)arg1;
 - (void)setNotificationEnabled:(BOOL)arg1;
+- (void)setProperties:(id)arg1;
+- (void)setPropertyQueue:(id)arg1;
 - (void)setService:(id)arg1;
 - (void)setValue:(id)arg1;
+- (id)uniqueIdentifier;
 - (void)updateAuthorizationData:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)updateValue:(id)arg1;
 - (id)value;
 - (void)writeValue:(id)arg1 completionHandler:(id /* block */)arg2;
 

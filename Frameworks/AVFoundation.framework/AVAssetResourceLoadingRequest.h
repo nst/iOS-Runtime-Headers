@@ -21,11 +21,13 @@
 + (SEL)_selectorForInformingDelegateOfCancellationByFig;
 
 - (void)_addFigAssetImageGeneratorListeners;
+- (void)_addFigAssetListeners;
 - (void)_addFigPlaybackItemListeners;
 - (void)_appendToCachedData:(id)arg1;
 - (id)_getAndClearCachedData;
 - (void)_performCancellationByClient;
 - (void)_removeFigAssetImageGeneratorListeners;
+- (void)_removeFigAssetListeners;
 - (void)_removeFigPlaybackItemListeners;
 - (id)_requestDictionary;
 - (id)_resourceLoader;
@@ -50,6 +52,7 @@
 - (id)initWithResourceLoader:(id)arg1 requestDictionary:(id)arg2;
 - (BOOL)isCancelled;
 - (BOOL)isFinished;
+- (id)persistentContentKeyFromKeyVendorResponse:(id)arg1 options:(id)arg2 error:(id*)arg3;
 - (id)redirect;
 - (id)request;
 - (id)response;

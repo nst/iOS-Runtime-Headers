@@ -29,18 +29,18 @@
                 struct StringImpl {} *m_ptr; 
             } m_impl; 
         } desc; 
-        struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow> { 
+        struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow, 16> { 
             struct MimeClassInfo {} *m_buffer; 
             unsigned int m_capacity; 
             unsigned int m_size; 
         } mimes; 
         bool isApplicationPlugin; 
+        unsigned char clientLoadPolicy; 
     } pluginInfo;
 }
 
 + (void)initialize;
 + (id)pluginWithPath:(id)arg1;
-+ (id)preferredLocalizationName;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -59,7 +59,7 @@
 - (BOOL)load;
 - (id)pListForPath:(id)arg1 createFile:(BOOL)arg2;
 - (const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)path;
-- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow> { struct MimeClassInfo {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; bool x5; }*)pluginInfo;
+- (const struct PluginInfo { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct Vector<WebCore::MimeClassInfo, 0, WTF::CrashOnOverflow, 16> { struct MimeClassInfo {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; bool x5; unsigned char x6; }*)pluginInfo;
 - (BOOL)supportsExtension:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (BOOL)supportsMIMEType:(const struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_1_1; } x1; }*)arg1;
 - (void)unload;

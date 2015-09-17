@@ -17,13 +17,13 @@
 
 - (BOOL)_checkInputs;
 - (id)_kernel;
+- (id)_kernelOpaque;
 - (id)cubeImage;
 - (void)dealloc;
 - (id)inputCubeData;
 - (id)inputCubeDimension;
 - (id)inputImage;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputCubeData:(id)arg1;
 - (void)setInputCubeDimension:(id)arg1;
 - (void)setInputImage:(id)arg1;

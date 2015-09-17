@@ -21,9 +21,12 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (BOOL)_canUseStoreAdamIDForSubscriptionAdamID;
 - (id)_createMetadataForRadioStreamTrack;
+- (int)_expectedPlaybackMode;
 - (void)_getCurrentTimedMetadata:(id*)arg1 pings:(id*)arg2 adamIDBlob:(id*)arg3 jingleTimedMetadata:(id*)arg4;
+- (void)_handleStoreIDDidChange;
 - (float)_maximumBitRateForNetworkType:(int)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)_reloadMetadataAndPostNotificationsIfNeeded:(BOOL)arg1;

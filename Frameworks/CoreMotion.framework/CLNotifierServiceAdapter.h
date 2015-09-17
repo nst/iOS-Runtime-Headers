@@ -19,7 +19,11 @@
     struct CLNotifierBase { int (**x1)(); } *_notifier;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) struct CLNotifierBase { int (**x1)(); }*notifier;
+@property (readonly) Class superclass;
 @property (nonatomic) BOOL valid;
 
 - (id).cxx_construct;

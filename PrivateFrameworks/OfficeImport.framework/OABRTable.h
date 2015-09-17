@@ -19,7 +19,6 @@
     OABTableSortedIntArray *mYCoords;
 }
 
-- (id).cxx_construct;
 - (void)createTargetTableContents;
 - (void)dealloc;
 - (id)initWithSourceTable:(id)arg1 targetTable:(id)arg2 state:(id)arg3;

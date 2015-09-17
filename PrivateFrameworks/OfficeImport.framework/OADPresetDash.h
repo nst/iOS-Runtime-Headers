@@ -4,18 +4,20 @@
 
 @interface OADPresetDash : OADDash {
     unsigned int mIsTypeOverridden;
-    unsigned char mType;
+    BOOL mType;
 }
 
 + (id)defaultProperties;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)equivalentCustomDash;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithDefaults;
+- (BOOL)isAnythingOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTypeOverridden;
-- (void)setType:(int)arg1;
-- (int)type;
+- (void)setType:(BOOL)arg1;
+- (BOOL)type;
 
 @end

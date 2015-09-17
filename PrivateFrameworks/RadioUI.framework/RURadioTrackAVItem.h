@@ -4,16 +4,17 @@
 
 @interface RURadioTrackAVItem : RURadioAVItem {
     NSString *_assetFlavor;
+    NSString *_preferredAssetFlavor;
 }
 
++ (id)_currentPreferredAssetFlavor;
+
 - (void).cxx_destruct;
-- (id)_bestRadioTrackAssetWithAvailableAssets:(id)arg1;
-- (void)_handleUpdatedLikedState:(int)arg1 completion:(id /* block */)arg2;
-- (int)_persistedLikedState;
+- (id)_bestRadioTrackAssetWithPreferredAssetFlavor:(id)arg1 availableAssets:(id)arg2;
 - (void)_saveDownloadKeyCookie:(id)arg1 forURL:(id)arg2;
-- (void)_sendLikeOrBanRequestWithStatus:(int)arg1 completion:(id /* block */)arg2;
 - (id)_sinfsByRemovingEmptyPinfsFromSinfs:(id)arg1;
 - (id)assetFlavor;
+- (BOOL)isValidPlayerSubstituteForItem:(id)arg1;
 - (void)loadAssetAndPlayerItem;
 - (BOOL)supportsRadioTrackActions;
 

@@ -10,11 +10,11 @@
 @property (nonatomic, retain) SFAirDropActivityViewController *airDropViewController;
 @property (nonatomic, copy) id /* block */ airdropCompletion;
 
+- (void).cxx_destruct;
 - (struct CGSize { float x1; float x2; })_thumbnailSize;
 - (id)activityType;
 - (id)airDropViewController;
 - (id /* block */)airdropCompletion;
-- (void)dealloc;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setAirDropViewController:(id)arg1;

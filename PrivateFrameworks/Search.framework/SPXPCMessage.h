@@ -18,9 +18,9 @@
 @property (nonatomic) unsigned long sharedMemoryLength;
 @property (nonatomic) unsigned int sharedMemoryRegion;
 
+- (void).cxx_destruct;
 - (id)_createXPCMessage;
 - (id)_initWithXPCMessage:(id)arg1 onConnection:(id)arg2;
-- (void)dealloc;
 - (id)info;
 - (id)initWithName:(id)arg1;
 - (id)name;

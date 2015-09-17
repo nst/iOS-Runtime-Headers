@@ -5,6 +5,6 @@
 
 @required
 
-- (BOOL)personViewController:(ABPersonViewController *)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
+- (BOOL)personViewController:(ABPersonViewController *)arg1 shouldPerformDefaultActionForPerson:(const void*)arg2 property:(int)arg3 identifier:(int)arg4;
 
 @end

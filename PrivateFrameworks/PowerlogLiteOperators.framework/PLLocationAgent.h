@@ -4,14 +4,14 @@
 
 @interface PLLocationAgent : PLAgent {
     PLCFNotificationOperatorComposition *_appStatusChangedNotification;
+    NSMutableSet *_processes;
     PLCFNotificationOperatorComposition *_techStatusChangedNotification;
 }
 
 @property (retain) PLCFNotificationOperatorComposition *appStatusChangedNotification;
+@property (retain) NSMutableSet *processes;
 @property (retain) PLCFNotificationOperatorComposition *techStatusChangedNotification;
 
-+ (id)accountingGroupDefinitions;
-+ (id)bundleIdFromBundlePath:(id)arg1;
 + (id)defaults;
 + (id)entryAggregateDefinitions;
 + (id)entryEventBackwardDefinitions;
@@ -21,26 +21,30 @@
 + (id)entryEventIntervalDefinitions;
 + (id)entryEventNoneDefinitionClientStatusDebug;
 + (id)entryEventNoneDefinitions;
++ (id)entryEventPointDefinitionClientStatus;
 + (id)entryEventPointDefinitions;
 + (void)load;
-+ (id)railDefinitions;
 
 - (void).cxx_destruct;
 - (id)appStatusChangedNotification;
-- (void)createLocationAccountingGroups:(id)arg1;
+- (void)createLocationDistributionEventsWithClientToOpenEntry:(id)arg1;
 - (id)humanReadableNameForTechnology:(id)arg1;
 - (id)init;
 - (void)initOperatorDependancies;
+- (id)lastEntryWithClient:(id)arg1 withType:(id)arg2 withEntryKey:(id)arg3;
 - (void)log;
 - (void)logEventForwardClientStatus;
 - (void)logEventForwardTechStatus;
 - (void)logEventNoneClientStatus;
 - (void)logEventNoneClientStatusDebugWithClients:(id)arg1;
+- (void)logEventPointClientStatus;
 - (void)modelGPSICEPower:(id)arg1;
-- (id)readClientCacheForClient:(id)arg1 andType:(id)arg2 forEntryKey:(id)arg3;
+- (id)processes;
+- (void)processesOfInterest:(id)arg1;
 - (void)setAppStatusChangedNotification:(id)arg1;
+- (void)setProcesses:(id)arg1;
 - (void)setTechStatusChangedNotification:(id)arg1;
 - (id)techStatusChangedNotification;
-- (void)updateClientCacheForClient:(id)arg1 andType:(id)arg2 forEntry:(id)arg3;
+- (void)updateLocalCacheWithClient:(id)arg1 withType:(id)arg2 withEntry:(id)arg3;
 
 @end

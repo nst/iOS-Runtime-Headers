@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (id)appContext;
 - (void)dealloc;
+- (id)init;
 - (id)initWithObject:(id)arg1 owner:(id)arg2 appContext:(id)arg3;
 - (id)object;
 - (id)owner;

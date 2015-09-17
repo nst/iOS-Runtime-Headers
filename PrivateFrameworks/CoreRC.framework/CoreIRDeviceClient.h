@@ -6,6 +6,15 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (BOOL)changeButtonCombination:(id)arg1 delay:(double)arg2 enabled:(BOOL)arg3 error:(id*)arg4;
 - (Class)classForCoder;
+- (BOOL)clearAllStoredCommands:(id*)arg1;
+- (BOOL)disableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
+- (BOOL)enableButtonCombination:(id)arg1 delay:(double)arg2 error:(id*)arg3;
+- (BOOL)sendCommand:(id)arg1 error:(id*)arg2;
+- (BOOL)setCommand:(unsigned int)arg1 target:(id)arg2 forButtonCombination:(id)arg3 delay:(double)arg4 error:(id*)arg5;
+- (BOOL)setOSDName:(id)arg1 error:(id*)arg2;
+- (id)startLearningSessionWithReason:(unsigned int)arg1 error:(id*)arg2;
+- (BOOL)updateMappingWithSession:(id)arg1 error:(id*)arg2;
 
 @end

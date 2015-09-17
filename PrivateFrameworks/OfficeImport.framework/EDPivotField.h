@@ -21,6 +21,7 @@
 - (bool)compact;
 - (bool)dataField;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (bool)insertBlankRow;
 - (unsigned long)numFmtId;

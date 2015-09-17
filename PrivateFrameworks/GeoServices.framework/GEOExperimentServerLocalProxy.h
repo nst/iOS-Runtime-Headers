@@ -21,6 +21,7 @@
 
 - (void)_debug_setQuerySubstring:(id)arg1 forExperimentType:(int)arg2 dispatcherRequestType:(int)arg3;
 - (void)_invalidateTileCache:(BOOL)arg1 placesCache:(BOOL)arg2;
+- (void)_loadExperimentsConfiguration:(id /* block */)arg1;
 - (BOOL)_removeOldExperimentsInfoIfNecessary;
 - (void)_scheduleUpdateTimer:(double)arg1;
 - (double)_timeToNextUpdate;

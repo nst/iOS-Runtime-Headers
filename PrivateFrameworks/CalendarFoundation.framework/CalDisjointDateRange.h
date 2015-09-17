@@ -23,6 +23,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDistinctRanges:(id)arg1;
+- (id)intersectionWithDisjointRange:(id)arg1;
+- (id)intersectionWithRange:(id)arg1;
+- (BOOL)intersectsRange:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (void)setDistinctRanges:(id)arg1;
 - (id)sortedDistinctRanges;
 - (id)subtractDisjointRange:(id)arg1;

@@ -77,6 +77,8 @@
 - (id)parentViewControllerForMSCLComposeImagePicker:(id)arg1;
 - (int)preferredStatusBarStyle;
 - (void)setDelegate:(id)arg1;
+- (BOOL)shouldAutorotate;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)tagList:(id)arg1 didSelectTag:(id)arg2;
 - (void)viewControllerDidCompleteRecording:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

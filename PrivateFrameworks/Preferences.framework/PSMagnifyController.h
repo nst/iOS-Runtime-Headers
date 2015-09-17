@@ -4,6 +4,7 @@
 
 @interface PSMagnifyController : PSListController <UIScrollViewDelegate, UIWebViewDelegate> {
     NSURL *_HTMLResourceBaseURL;
+    BOOL _alwaysShowCancelButton;
     <PSMagnifyControllerDelegate> *_delegate;
     UIView *_dividerLine;
     BOOL _doneButtonCommits;
@@ -14,10 +15,12 @@
     PSMagnifyMode *_originalMagnifyMode;
     UIPageControl *_pageControl;
     UIScrollView *_previewsScroller;
+    int _scrolledPreviewPage;
     PSMagnifyMode *_selectedMagnifyMode;
     NSMutableDictionary *_webViewsForMagnifyMode;
 }
 
+@property (nonatomic) BOOL alwaysShowCancelButton;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSMagnifyControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -31,9 +34,10 @@
 + (id)localizedMagnifyModeName;
 + (BOOL)shouldShowMagnify;
 
+- (void).cxx_destruct;
+- (BOOL)alwaysShowCancelButton;
 - (id)arrayOfWebViewsWithCount:(unsigned int)arg1;
 - (id)currentWebViewSet;
-- (void)dealloc;
 - (id)delegate;
 - (BOOL)doneButtonCommits;
 - (void)finishCancel:(id)arg1;
@@ -45,6 +49,7 @@
 - (void)magnifyModeConfirmed:(id)arg1;
 - (void)magnifyModeSelectionChanged:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)setAlwaysShowCancelButton:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDoneButtonCommits:(BOOL)arg1;
 - (void)setSelectedMagnifyMode:(id)arg1;
@@ -54,5 +59,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)webViewDidFinishLoad:(id)arg1;
+- (float)xOriginForPage:(int)arg1;
 
 @end

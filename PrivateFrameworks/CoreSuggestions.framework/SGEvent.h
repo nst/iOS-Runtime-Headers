@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@interface SGEvent : NSObject <SGObject> {
+@interface SGEvent : SGObject <SGEventForGeocode> {
     NSDate *_creationDate;
     NSDate *_end;
     NSTimeZone *_endTimeZone;
@@ -11,62 +11,74 @@
     BOOL _isAllDay;
     NSDate *_lastModifiedDate;
     NSArray *_locations;
-    NSString *_messageId;
     NSString *_notes;
     NSString *_opaqueKey;
     NSDate *_start;
     NSTimeZone *_startTimeZone;
     NSArray *_tags;
     NSString *_title;
+    NSString *_uniqueKey;
 }
 
 @property (nonatomic, readonly) NSDate *creationDate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSDate *end;
 @property (nonatomic, readonly) NSTimeZone *endTimeZone;
 @property (getter=isGeocodeCandidate, nonatomic, readonly) BOOL geocodeCandidate;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isAllDay;
 @property (nonatomic, readonly) NSDate *lastModifiedDate;
 @property (nonatomic, readonly) NSArray *locations;
-@property (nonatomic, readonly) NSString *messageId;
 @property (nonatomic, readonly) NSString *notes;
 @property (nonatomic, readonly) NSString *opaqueKey;
 @property (nonatomic, readonly) NSDate *start;
 @property (nonatomic, readonly) NSTimeZone *startTimeZone;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *tags;
 @property (nonatomic, readonly) NSString *title;
+@property (nonatomic, readonly) NSString *uniqueKey;
 
-+ (id)eventWithOpaqueKey:(id)arg1 title:(id)arg2 notes:(id)arg3 start:(id)arg4 startTimeZone:(id)arg5 end:(id)arg6 endTimeZone:(id)arg7 isAllDay:(BOOL)arg8 creationDate:(id)arg9 lastModifiedDate:(id)arg10 locations:(id)arg11 tags:(id)arg12 messageId:(id)arg13;
++ (id)eventWithRecordId:(id)arg1 origin:(id)arg2 uniqueKey:(id)arg3 opaqueKey:(id)arg4 title:(id)arg5 notes:(id)arg6 start:(id)arg7 startTimeZone:(id)arg8 end:(id)arg9 endTimeZone:(id)arg10 isAllDay:(BOOL)arg11 creationDate:(id)arg12 lastModifiedDate:(id)arg13 locations:(id)arg14 tags:(id)arg15;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)_applyTimeRangeToEKEvent:(id)arg1;
+- (id)_componentsForDate:(id)arg1 timeZone:(id)arg2 isEnd:(BOOL)arg3;
 - (id)creationDate;
 - (id)dateForUTCDate:(id)arg1 withTimeZone:(id)arg2;
-- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)end;
+- (id)endDateComponents;
 - (id)endTimeZone;
 - (id)firstLocationForType:(unsigned int)arg1;
-- (void)geocodeLocation:(id)arg1 withCallback:(id /* block */)arg2;
+- (id)geocodeEndDate;
+- (id)geocodeEndTimeZone;
+- (id)geocodeLocations;
+- (id)geocodeStartDate;
+- (id)geocodeStartTimeZone;
 - (void)geocodeWithCallback:(id /* block */)arg1;
+- (id)geocodedEventWithStartDate:(id)arg1 startTimeZone:(id)arg2 endDate:(id)arg3 endTimeZone:(id)arg4 locations:(id)arg5;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOpaqueKey:(id)arg1 messageId:(id)arg2 title:(id)arg3 notes:(id)arg4 start:(id)arg5 startTimeZone:(id)arg6 end:(id)arg7 endTimeZone:(id)arg8 isAllDay:(BOOL)arg9 creationDate:(id)arg10 lastModifiedDate:(id)arg11 locations:(id)arg12 tags:(id)arg13;
+- (id)initWithRecordId:(id)arg1 origin:(id)arg2 uniqueKey:(id)arg3 opaqueKey:(id)arg4 title:(id)arg5 notes:(id)arg6 start:(id)arg7 startTimeZone:(id)arg8 end:(id)arg9 endTimeZone:(id)arg10 isAllDay:(BOOL)arg11 creationDate:(id)arg12 lastModifiedDate:(id)arg13 locations:(id)arg14 tags:(id)arg15;
 - (BOOL)isAllDay;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEvent:(id)arg1;
 - (BOOL)isGeocodeCandidate;
-- (BOOL)isGeocodeCandidateLocation:(id)arg1;
 - (id)lastModifiedDate;
 - (id)locations;
 - (void)mergeIntoEKEvent:(id)arg1;
-- (id)messageId;
+- (void)mergeIntoEKEvent:(id)arg1 withStore:(id)arg2;
+- (void)mergeIntoEKEvent:(id)arg1 withStore:(id)arg2 preservingValuesDifferentFrom:(id)arg3;
 - (id)notes;
 - (id)opaqueKey;
 - (id)start;
+- (id)startDateComponents;
 - (id)startTimeZone;
 - (id)tags;
 - (id)title;
 - (id)toEKEventWithStore:(id)arg1;
+- (id)uniqueKey;
 
 @end

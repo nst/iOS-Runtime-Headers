@@ -4,12 +4,11 @@
 
 @interface MKURLSerializer : NSObject
 
-- (id)_urlForDirectionsFromMapItem:(id)arg1 toMapItem:(id)arg2 transportType:(unsigned int)arg3 options:(id)arg4 precision:(BOOL)arg5;
-- (id)_urlForOpeningMapItems:(id)arg1 options:(id)arg2 precision:(BOOL)arg3;
++ (id)stringForDirectionsType:(unsigned int)arg1;
++ (id)stringForMapType:(unsigned int)arg1;
+
 - (id)mapItemsFromUrl:(id)arg1 options:(id*)arg2;
 - (id)urlForDirectionsFromMapItem:(id)arg1 toMapItem:(id)arg2 transportType:(unsigned int)arg3 options:(id)arg4;
 - (id)urlForOpeningMapItems:(id)arg1 options:(id)arg2;
-- (id)urlToPresentDirectionsFromMapItem:(id)arg1 toMapItem:(id)arg2 transportType:(unsigned int)arg3 options:(id)arg4;
-- (id)urlToPresentMapItems:(id)arg1 options:(id)arg2;
 
 @end

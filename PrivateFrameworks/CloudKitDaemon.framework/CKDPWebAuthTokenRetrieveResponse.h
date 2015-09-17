@@ -3,22 +3,28 @@
  */
 
 @interface CKDPWebAuthTokenRetrieveResponse : PBCodable <NSCopying> {
+    NSString *_containerScopedUserId;
     NSString *_token;
 }
 
+@property (nonatomic, retain) NSString *containerScopedUserId;
+@property (nonatomic, readonly) BOOL hasContainerScopedUserId;
 @property (nonatomic, readonly) BOOL hasToken;
 @property (nonatomic, retain) NSString *token;
 
 - (void).cxx_destruct;
+- (id)containerScopedUserId;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasContainerScopedUserId;
 - (BOOL)hasToken;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setContainerScopedUserId:(id)arg1;
 - (void)setToken:(id)arg1;
 - (id)token;
 - (void)writeTo:(id)arg1;

@@ -2,16 +2,19 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAPerson : SADomainObject
+@interface SAPerson : SADomainObject <SAAceComparable>
 
 @property (nonatomic, copy) NSArray *addresses;
 @property (nonatomic, copy) NSDate *birthday;
 @property (nonatomic, copy) NSString *company;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *emails;
 @property (nonatomic, copy) NSString *firstName;
 @property (nonatomic, copy) NSDictionary *firstNameAPGs;
 @property (nonatomic, copy) NSString *firstNamePhonetic;
 @property (nonatomic, copy) NSString *fullName;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *internalGUID;
 @property (nonatomic, copy) NSNumber *isBlocked;
 @property (nonatomic, copy) NSString *lastName;
@@ -28,6 +31,7 @@
 @property (nonatomic, copy) NSArray *relatedNames;
 @property (nonatomic, copy) NSArray *socialProfiles;
 @property (nonatomic, copy) NSString *suffix;
+@property (readonly) Class superclass;
 
 + (id)person;
 + (id)personWithDictionary:(id)arg1 context:(id)arg2;
@@ -82,6 +86,5 @@
 - (void)setSuffix:(id)arg1;
 - (id)socialProfiles;
 - (id)suffix;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

@@ -3,33 +3,41 @@
  */
 
 @interface _UIDocumentPickerDocumentCollectionViewController : UICollectionViewController <UICollectionViewDataSource, UICollectionViewDelegate, _UIDocumentPickerContainedViewController> {
+    BOOL _editing;
     UIActivityIndicatorView *_initialActivityView;
     _UIDocumentPickerContainerModel *_model;
     NSArray *_modelObjects;
-    id _monitoringToken;
+    BOOL _monitoring;
+    UIView *_pinnedHeaderView;
+    <_UIDocumentPickerServiceViewController> *_serviceViewController;
     BOOL _shouldHideSortBar;
     _UIDocumentPickerSortOrderView *_sortView;
     BOOL _updatesMayAnimate;
-    <_UIDocumentPickerServiceViewController> *_weak_serviceViewController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isEditing, nonatomic) BOOL editing;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *indexPathsForSelectedItems;
 @property (nonatomic, retain) UIActivityIndicatorView *initialActivityView;
 @property (nonatomic, retain) _UIDocumentPickerContainerModel *model;
 @property (nonatomic, copy) NSArray *modelObjects;
-@property (nonatomic, retain) id monitoringToken;
+@property (nonatomic) BOOL monitoring;
+@property (nonatomic, retain) UIView *pinnedHeaderView;
+@property (nonatomic, readonly) UIScrollView *scrollView;
 @property (nonatomic) <_UIDocumentPickerServiceViewController> *serviceViewController;
 @property (nonatomic) BOOL shouldHideSortBar;
 @property (nonatomic, retain) _UIDocumentPickerSortOrderView *sortView;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL updatesMayAnimate;
 
+- (void).cxx_destruct;
 - (void)_dynamicTypeSizeChanged:(id)arg1;
 - (void)_unlockAnimations;
 - (void)_updateIconSpacing;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
+- (void)collectionView:(id)arg1 didDeselectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 didEndDisplayingCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
@@ -37,28 +45,48 @@
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
 - (void)dealloc;
+- (void)didDismissSearchController:(id)arg1;
+- (int)displayMode;
+- (void)ensureSortViewInvisible;
+- (id)indexPathsForSelectedItems;
 - (id)initWithModel:(id)arg1;
 - (id)initialActivityView;
+- (BOOL)isEditing;
 - (id)model;
+- (void)modelChanged:(id)arg1;
 - (id)modelObjects;
-- (id)monitoringToken;
+- (BOOL)monitoring;
+- (id)pinnedHeaderView;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)scrollSortViewToVisible;
+- (id)scrollView;
+- (void)scrollViewDidScroll:(id)arg1;
 - (id)serviceViewController;
+- (void)setContentSizeAdjustment:(float)arg1;
+- (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setIndexPathsForSelectedItems:(id)arg1;
 - (void)setInitialActivityView:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setModelObjects:(id)arg1;
 - (void)setMonitoring:(BOOL)arg1;
-- (void)setMonitoringToken:(id)arg1;
+- (void)setPinnedHeaderView:(id)arg1;
+- (void)setPinnedHeaderView:(id)arg1 animated:(BOOL)arg2;
 - (void)setServiceViewController:(id)arg1;
 - (void)setShouldHideSortBar:(BOOL)arg1;
 - (void)setSortView:(id)arg1;
 - (void)setUpdatesMayAnimate:(BOOL)arg1;
 - (BOOL)shouldHideSortBar;
 - (id)sortView;
+- (void)updateContentInset;
+- (void)updatePinnedHeader;
 - (BOOL)updatesMayAnimate;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
+- (void)willDismissSearchController:(id)arg1;
 - (void)willMoveToParentViewController:(id)arg1;
+- (void)willPresentSearchController:(id)arg1;
 
 @end

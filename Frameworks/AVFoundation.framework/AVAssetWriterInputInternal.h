@@ -8,6 +8,7 @@
     BOOL attachedToPixelBufferAdaptor;
     AVAssetWriterInputHelper *helper;
     NSObject<OS_dispatch_queue> *helperQueue;
+    AVKeyPathDependencyManager *keyPathDependencyManager;
     int numberOfAppendFailures;
     AVAssetWriterInputPassDescriptionResponder *passDescriptionResponder;
     AVWeakReference *weakReference;

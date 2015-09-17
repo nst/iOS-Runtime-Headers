@@ -8,6 +8,7 @@
 
 @property (nonatomic, retain) UIControl *control;
 
+- (void).cxx_destruct;
 - (BOOL)canReload;
 - (id)control;
 - (void)controlChanged:(id)arg1;

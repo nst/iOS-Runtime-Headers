@@ -4,6 +4,7 @@
 
 @interface UIKeyboardInputModeController : NSObject {
     NSArray *_allExtensions;
+    BOOL _allExtensionsNeedRefresh;
     NSArray *_allowedExtensions;
     BOOL _cacheNeedsRefresh;
     UIKeyboardInputMode *_currentInputMode;
@@ -14,6 +15,7 @@
     NSArray *_inputModesWithoutHardwareSupport;
     UIKeyboardInputMode *_lastUsedInputMode;
     UIKeyboardInputMode *_nextInputModeToUse;
+    int _notifyPasscodeChangedToken;
     BOOL _shouldRunContinuousDiscovery;
     BOOL _skipExtensionInputModes;
     NSArray *defaultInputModes;
@@ -31,6 +33,7 @@
 @property (nonatomic, readonly) BOOL containsDictationSupportedInputMode;
 @property (retain) UIKeyboardInputMode *currentInputMode;
 @property (nonatomic) UIKeyboardInputMode *currentInputModeInPreference;
+@property (nonatomic, readonly) UIKeyboardInputMode *currentLinguisticInputMode;
 @property (nonatomic, readonly) UIKeyboardInputMode *currentPublicInputMode;
 @property (nonatomic, readonly) UIKeyboardInputMode *currentSystemInputMode;
 @property (nonatomic, retain) UIKeyboardInputMode *currentUsedInputMode;
@@ -58,8 +61,10 @@
 + (id)sharedInputModeController;
 
 - (id)_MCFilteredExtensionIdentifiers;
+- (id)_allExtensionsFromMatchingExtensions:(id)arg1;
 - (void)_beginContinuousDiscoveryIfNeeded;
 - (void)_clearAllExtensionIfNeeded;
+- (BOOL)_mayContainExtensionInputModes;
 - (void)_removeExtensions:(id)arg1;
 - (void)_setCurrentAndNextInputModePreference;
 - (void)_setCurrentInputMode:(id)arg1 force:(BOOL)arg2;
@@ -67,9 +72,11 @@
 - (id)activeInputModeIdentifiers;
 - (id)activeInputModes;
 - (id)allowedExtensions;
+- (id)appendPasscodeInputModes:(id)arg1;
 - (BOOL)containsDictationSupportedInputMode;
 - (id)currentInputMode;
 - (id)currentInputModeInPreference;
+- (id)currentLinguisticInputMode;
 - (BOOL)currentLocaleRequiresExtendedSetup;
 - (id)currentPublicInputMode;
 - (id)currentSystemInputMode;
@@ -89,25 +96,30 @@
 - (id)enabledInputModes;
 - (id)extensionInputModes;
 - (id)extensionMatchingContext;
+- (id)filteredTVInputModesFromInputModes:(id)arg1;
 - (id)hardwareInputMode;
 - (BOOL)identifierIsValidSystemInputMode:(id)arg1;
 - (id)identifiersFromInputModes:(id)arg1;
 - (id)init;
 - (id)inputModeContextIdentifier;
 - (id)inputModeWithIdentifier:(id)arg1;
+- (id)inputModesFromIdentifiers:(id)arg1;
 - (id)inputModesWithoutHardwareSupport;
 - (id)keyboardInputModeIdentifiers;
 - (id)keyboardInputModes;
+- (void)keyboardsPreferencesChanged:(id)arg1;
 - (id)lastUsedInputMode;
 - (id)nextInputModeFromList:(id)arg1 withFilter:(unsigned int)arg2 withTraits:(id)arg3;
 - (id)nextInputModeInPreferenceListForTraits:(id)arg1;
+- (id)nextInputModeInPreferenceListForTraits:(id)arg1 updatePreference:(BOOL)arg2;
 - (id)nextInputModeToUse;
 - (id)nextInputModeToUseForTraits:(id)arg1;
+- (id)nextInputModeToUseForTraits:(id)arg1 updatePreference:(BOOL)arg2;
 - (id)normalizedEnabledInputModeIdentifiers;
 - (id)normalizedInputModes;
 - (void)performWithForcedExtensionInputModes:(id /* block */)arg1;
 - (void)performWithoutExtensionInputModes:(id /* block */)arg1;
-- (id)preferredLanguages;
+- (void)saveDeviceUnlockPasscodeInputModes;
 - (void)setCurrentInputMode:(id)arg1;
 - (void)setCurrentInputModeInPreference:(id)arg1;
 - (void)setCurrentUsedInputMode:(id)arg1;
@@ -135,6 +147,7 @@
 - (void)switchToCurrentSystemInputMode;
 - (void)updateCurrentAndNextInputModes;
 - (void)updateCurrentInputMode:(id)arg1;
+- (void)updateDefaultInputModesIfNecessaryForIdiom;
 - (void)updateLastUsedInputMode:(id)arg1;
 - (BOOL)verifyKeyboardExtensionsWithApp;
 - (void)willEnterForeground:(id)arg1;

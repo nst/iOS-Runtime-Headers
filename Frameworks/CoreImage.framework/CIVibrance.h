@@ -20,7 +20,6 @@
 - (id)inputAmount;
 - (id)inputImage;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAmount:(id)arg1;
 - (void)setInputImage:(id)arg1;
 

@@ -10,14 +10,17 @@
     } _has;
     unsigned long long _timestamp;
     unsigned int _type;
+    NSData *_uuidReference;
 }
 
 @property (nonatomic, retain) NSString *exceptionData;
 @property (nonatomic, readonly) BOOL hasExceptionData;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasType;
+@property (nonatomic, readonly) BOOL hasUuidReference;
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int type;
+@property (nonatomic, retain) NSData *uuidReference;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,6 +31,7 @@
 - (BOOL)hasExceptionData;
 - (BOOL)hasTimestamp;
 - (BOOL)hasType;
+- (BOOL)hasUuidReference;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -37,8 +41,10 @@
 - (void)setHasType:(BOOL)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
 - (void)setType:(unsigned int)arg1;
+- (void)setUuidReference:(id)arg1;
 - (unsigned long long)timestamp;
 - (unsigned int)type;
+- (id)uuidReference;
 - (void)writeTo:(id)arg1;
 
 @end

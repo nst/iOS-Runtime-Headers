@@ -10,12 +10,15 @@
 - (struct CGSize { float x1; float x2; })baseInterItemSpacing;
 - (BOOL)canDisplayOptionsInPopover;
 - (BOOL)canDisplaySearchActionInNavigationBar;
+- (BOOL)canDisplaySlideshowButton;
 - (int)cellFillMode;
 - (void)configureCollectionViewGridLayout:(id)arg1 forWidth:(float)arg2;
 - (int)forceLoadInitialSectionCount;
 - (float)globalFooterHeight;
 - (id)photoBrowserSpec;
 - (id)photosPickerViewControllerSpec;
+- (float)sectionHeaderHeight;
+- (BOOL)shouldPlaceSelectAllButtonInRightNavigationBar;
 - (unsigned int)supportedInterfaceOrientations;
 - (int)thumbnailImageFormat;
 

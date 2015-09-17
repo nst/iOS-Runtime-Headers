@@ -102,6 +102,7 @@
 - (void)setStartTime:(double)arg1;
 - (void)setVolume:(float)arg1;
 - (double)startTime;
+- (void)stopSynchronously;
 - (void)teardown;
 - (float)volume;
 

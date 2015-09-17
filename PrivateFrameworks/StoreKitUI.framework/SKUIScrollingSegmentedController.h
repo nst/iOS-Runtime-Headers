@@ -83,7 +83,9 @@
 - (id)contentScrollView;
 - (void)contentScrollViewDidChangeForScrollingSegmentedControllerItemContext:(id)arg1;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)focusedViewController;
 - (unsigned int)focusedViewControllerIndex;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

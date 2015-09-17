@@ -22,10 +22,12 @@
     BRCGenerationID *_generationID;
     unsigned int _hasFinderTags;
     unsigned int _isAlias;
+    unsigned int _isBundle;
     unsigned int _isBusy;
     unsigned int _isExcluded;
     unsigned int _isInPackage;
     unsigned int _isPackageRoot;
+    unsigned char _itemScope;
     unsigned short _mode;
     struct timespec { 
         int tv_sec; 
@@ -49,7 +51,6 @@
     long long _size;
     NSString *_symlinkContent;
     unsigned short _type;
-    NSNumber *_volumeID;
 }
 
 @property (nonatomic, readonly) NSString *absolutePath;
@@ -70,6 +71,7 @@
 @property (nonatomic, readonly) BOOL hasFinderTags;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isAlias;
+@property (nonatomic, readonly) BOOL isBundle;
 @property (nonatomic, readonly) BOOL isBusy;
 @property (nonatomic, readonly) BOOL isDocument;
 @property (nonatomic, readonly) BOOL isExcluded;
@@ -84,6 +86,8 @@
 @property (nonatomic, readonly) BOOL isSymLink;
 @property (nonatomic, readonly) BOOL isUnixDir;
 @property (nonatomic, readonly) BOOL isWritable;
+@property (nonatomic, readonly) unsigned char itemScope;
+@property (nonatomic, readonly) NSString *logicalName;
 @property (nonatomic, readonly) long modificationTime;
 @property (nonatomic, readonly) unsigned long long parentFileID;
 @property (readonly) unsigned int parentHash;
@@ -99,7 +103,6 @@
 @property (nonatomic, readonly) NSString *symlinkContent;
 @property (nonatomic, readonly) unsigned short type;
 @property (nonatomic, readonly) NSURL *url;
-@property (nonatomic, readonly) NSNumber *volumeID;
 
 + (int)locateByFileID:(unsigned long long)arg1 zone:(id)arg2;
 + (BOOL)supportsSecureCoding;
@@ -144,6 +147,7 @@
 - (id)initWithPath:(id)arg1 zone:(id)arg2;
 - (id)initWithRootPath:(id)arg1 session:(id)arg2;
 - (BOOL)isAlias;
+- (BOOL)isBundle;
 - (BOOL)isBusy;
 - (BOOL)isDocument;
 - (BOOL)isEqual:(id)arg1;
@@ -161,6 +165,8 @@
 - (BOOL)isSymLink;
 - (BOOL)isUnixDir;
 - (BOOL)isWritable;
+- (unsigned char)itemScope;
+- (id)logicalName;
 - (id)logicalURLWithLogicalName:(id)arg1;
 - (long)modificationTime;
 - (id)nextChild;
@@ -188,6 +194,5 @@
 - (id)symlinkContent;
 - (unsigned short)type;
 - (id)url;
-- (id)volumeID;
 
 @end

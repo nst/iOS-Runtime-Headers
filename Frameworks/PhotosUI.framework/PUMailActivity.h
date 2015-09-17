@@ -5,7 +5,9 @@
 @interface PUMailActivity : UIMailActivity <MFMailComposeViewControllerDelegate, PUActivity> {
     PLManagedAsset *_currentVideo;
     PUActivityItemSource *_currentVideoItemSource;
+    BOOL _didCheckMailDropAvailable;
     PLUIEditVideoViewController *_editVideoViewController;
+    BOOL _isMailDropAvailable;
     BOOL _isSharingSingleVideo;
     PUActivityItemSourceController *_itemSourceController;
     MFMailComposeViewController *_mailComposeController;
@@ -22,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (void)_composeMailForVideo:(id)arg1 trimmedFilePath:(id)arg2;
+- (BOOL)_isMailDropEnabled;
 - (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)_pu_cleanup;
 - (void)_remakeAndSendVideoWithTrimStartTime:(double)arg1 endTime:(double)arg2;

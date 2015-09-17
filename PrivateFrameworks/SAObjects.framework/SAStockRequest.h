@@ -19,6 +19,5 @@
 - (void)setRequestType:(id)arg1;
 - (void)setStartDate:(id)arg1;
 - (id)startDate;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

@@ -30,7 +30,6 @@
 - (id)author;
 - (id)commentStorage;
 - (void)commentWillBeAddedToDocumentRoot;
-- (void)commitText:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;

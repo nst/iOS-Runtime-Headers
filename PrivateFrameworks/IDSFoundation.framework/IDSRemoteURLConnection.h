@@ -6,30 +6,56 @@
     id /* block */ _block;
     NSString *_bundleIdentifierForDataUsage;
     BOOL _cancelled;
+    int _concurrentConnections;
     NSObject<OS_xpc_object> *_connection;
+    BOOL _disableKeepAlive;
     BOOL _forceCellularIfPossible;
+    int _keepAliveCell;
+    int _keepAliveWifi;
     BOOL _loading;
     NSURLRequest *_request;
-    BOOL _requiresIDSHost;
+    BOOL _requireIDSHost;
     int _retries;
+    BOOL _shouldUsePipelining;
 }
 
+@property (copy) id /* block */ block;
 @property (retain) NSString *bundleIdentifierForDataUsage;
+@property int concurrentConnections;
+@property BOOL disableKeepAlive;
 @property BOOL forceCellularIfPossible;
-@property BOOL requiresIDSHost;
+@property int keepAliveCell;
+@property int keepAliveWifi;
+@property (retain) NSURLRequest *request;
+@property BOOL requireIDSHost;
+@property BOOL shouldUsePipelining;
 
 - (BOOL)_connect;
 - (BOOL)_disconnect;
 - (void)_disconnected;
+- (id /* block */)block;
 - (id)bundleIdentifierForDataUsage;
 - (void)cancel;
+- (int)concurrentConnections;
 - (void)dealloc;
+- (BOOL)disableKeepAlive;
 - (BOOL)forceCellularIfPossible;
 - (id)initWithURLRequest:(id)arg1 completionBlock:(id /* block */)arg2;
+- (int)keepAliveCell;
+- (int)keepAliveWifi;
 - (void)load;
-- (BOOL)requiresIDSHost;
+- (id)request;
+- (BOOL)requireIDSHost;
+- (void)setBlock:(id /* block */)arg1;
 - (void)setBundleIdentifierForDataUsage:(id)arg1;
+- (void)setConcurrentConnections:(int)arg1;
+- (void)setDisableKeepAlive:(BOOL)arg1;
 - (void)setForceCellularIfPossible:(BOOL)arg1;
-- (void)setRequiresIDSHost:(BOOL)arg1;
+- (void)setKeepAliveCell:(int)arg1;
+- (void)setKeepAliveWifi:(int)arg1;
+- (void)setRequest:(id)arg1;
+- (void)setRequireIDSHost:(BOOL)arg1;
+- (void)setShouldUsePipelining:(BOOL)arg1;
+- (BOOL)shouldUsePipelining;
 
 @end

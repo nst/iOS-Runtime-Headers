@@ -5,9 +5,9 @@
 
 @required
 
-- (void)xpcConnection:(CBXpcConnection *)arg1 didReceiveMsg:(unsigned short)arg2 args:(NSDictionary *)arg3;
-- (void)xpcConnectionDidFinalize:(CBXpcConnection *)arg1;
-- (void)xpcConnectionDidReset:(CBXpcConnection *)arg1;
-- (void)xpcConnectionIsInvalid:(CBXpcConnection *)arg1;
+- (void)xpcConnectionDidFinalize;
+- (void)xpcConnectionDidReceiveMsg:(void *)arg1 args:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 8: unsigned short, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
+- (void)xpcConnectionDidReset;
+- (void)xpcConnectionIsInvalid;
 
 @end

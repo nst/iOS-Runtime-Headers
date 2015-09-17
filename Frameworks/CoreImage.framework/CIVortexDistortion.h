@@ -23,7 +23,6 @@
 - (id)inputImage;
 - (id)inputRadius;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAngle:(id)arg1;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputImage:(id)arg1;

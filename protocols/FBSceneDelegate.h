@@ -7,7 +7,6 @@
 
 - (void)scene:(FBScene *)arg1 didReceiveActions:(NSSet *)arg2;
 - (void)scene:(FBScene *)arg1 didUpdateClientSettingsWithDiff:(FBSSceneClientSettingsDiff *)arg2 oldClientSettings:(FBSSceneClientSettings *)arg3 transitionContext:(FBSSceneTransitionContext *)arg4;
-- (void)scene:(void *)arg1 handleUpdateSettingsWithBlock:(void *)arg2; // needs 2 arg types, found 7: FBScene *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, FBSSceneTransitionContext *, id /* block */, FBSMutableSceneSettings *, void*
 - (void)scene:(FBScene *)arg1 handleUpdateToSettings:(FBSSceneSettings *)arg2 withTransitionContext:(FBSSceneTransitionContext *)arg3;
 
 @end

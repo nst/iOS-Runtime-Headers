@@ -25,7 +25,6 @@
 @property (nonatomic, copy) NSString *stringValue;
 @property (nonatomic, retain) NSMutableIndexSet *unhandledIndexSet;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasListLabel;

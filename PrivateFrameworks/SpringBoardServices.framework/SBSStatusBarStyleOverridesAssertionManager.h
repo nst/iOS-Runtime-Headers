@@ -3,12 +3,12 @@
  */
 
 @interface SBSStatusBarStyleOverridesAssertionManager : NSObject <SBSStatusBarStyleOverridesAssertionClient> {
-    NSHashTable *_assertions;
+    NSMapTable *_assertionsByIdentifier;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSXPCConnection *_sbXPCConnection;
 }
 
-@property (nonatomic, retain) NSHashTable *assertions;
+@property (nonatomic, retain) NSMapTable *assertionsByIdentifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -18,20 +18,20 @@
 
 + (id)sharedInstance;
 
-- (void)_internalQueue_removeStatusBarStyleOverridesAssertionMatchingData:(id)arg1 invalidate:(BOOL)arg2;
-- (void)_invalidateStatusBarStyleOverridesAssertionsWithData:(id)arg1;
+- (void)_internalQueue_removeStatusBarStyleOverridesAssertionWithIdentifier:(id)arg1 invalidate:(BOOL)arg2;
 - (void)_reactivateAssertions;
 - (void)_tearDownXPCConnection;
 - (void)addStatusBarStyleOverridesAssertion:(id)arg1 withHandler:(id /* block */)arg2 onQueue:(id)arg3;
-- (id)assertions;
+- (id)assertionsByIdentifier;
 - (void)dealloc;
 - (id)init;
 - (id)internalQueue;
 - (void)invalidateStatusBarStyleOverridesAssertionsWithIdentifiers:(id)arg1;
 - (void)removeStatusBarStyleOverridesAssertion:(id)arg1;
 - (id)sbXPCConnection;
-- (void)setAssertions:(id)arg1;
+- (void)setAssertionsByIdentifier:(id)arg1;
 - (void)setInternalQueue:(id)arg1;
 - (void)setSbXPCConnection:(id)arg1;
+- (void)updateStatusStringForAssertion:(id)arg1;
 
 @end

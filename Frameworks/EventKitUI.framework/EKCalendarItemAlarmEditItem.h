@@ -12,6 +12,8 @@
     BOOL _userChangedAlarm;
 }
 
++ (id)_labelTextForIndex:(unsigned int)arg1;
+
 - (void).cxx_destruct;
 - (BOOL)_alarmsMatchCalendarItem;
 - (BOOL)_calendarItemHasLeaveNowAlarm;

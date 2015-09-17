@@ -4,6 +4,7 @@
 
 @interface SUDescriptor : NSObject <NSCopying, NSSecureCoding> {
     BOOL _autoDownloadAllowableForCellular;
+    BOOL _disableAppDemotion;
     BOOL _disableCDLevel4;
     BOOL _disableSiriVoiceDeletion;
     SUDocumentation *_documentation;
@@ -24,6 +25,7 @@
 }
 
 @property (nonatomic) BOOL autoDownloadAllowableForCellular;
+@property (getter=appDemotionDisabled, setter=_setDisableAppDemotion:, nonatomic) BOOL disableAppDemotion;
 @property (getter=cdLevel4Disabled, setter=_setDisableCDLevel4:, nonatomic) BOOL disableCDLevel4;
 @property (getter=siriVoiceDeletionDisabled, setter=_setDisableSiriVoiceDeletion:, nonatomic) BOOL disableSiriVoiceDeletion;
 @property (nonatomic, retain) SUDocumentation *documentation;
@@ -46,12 +48,14 @@
 - (BOOL)_hasValue:(id)arg1;
 - (BOOL)_isStreamingZipCapable;
 - (unsigned long long)_msuPrepareSize;
+- (void)_setDisableAppDemotion:(BOOL)arg1;
 - (void)_setDisableCDLevel4:(BOOL)arg1;
 - (void)_setDisableSiriVoiceDeletion:(BOOL)arg1;
 - (void)_setMsuPrepareSize:(unsigned long long)arg1;
 - (void)_setStreamingZipCapable:(BOOL)arg1;
 - (void)_setUnarchiveSize:(unsigned long long)arg1;
 - (unsigned long long)_unarchiveSize;
+- (BOOL)appDemotionDisabled;
 - (BOOL)autoDownloadAllowableForCellular;
 - (BOOL)cdLevel4Disabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

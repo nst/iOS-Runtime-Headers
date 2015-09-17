@@ -5,8 +5,16 @@
 @interface CollectionCellAnalogClockLandscapeView : CollectionCellAnalogClockView
 
 + (float)faceRadius;
-+ (struct CGPoint { float x1; float x2; })handRotationalCenterForHand:(int)arg1;
++ (float)hourHandLength;
++ (float)hourHandWidth;
++ (float)minuteHandLength;
++ (float)minuteHandWidth;
++ (float)overHourHandDotSize;
++ (float)overSecondHandDotSize;
 + (id)resourcePath;
++ (float)secondHandMainLength;
++ (float)secondHandOverhangLength;
++ (float)secondHandWidth;
 + (int)style;
 
 @end

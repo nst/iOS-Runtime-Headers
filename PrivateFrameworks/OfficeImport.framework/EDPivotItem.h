@@ -11,6 +11,7 @@
 + (id)pivotItem;
 
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)itemIndexes;
 - (unsigned int)repeatedItemCounts;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPPlaybackContext : NSObject {
+@interface MPPlaybackContext : NSObject <NSCoding> {
     unsigned int _repeatType;
     BOOL _shouldRestartPlayback;
     BOOL _shouldStartPlayback;
@@ -24,7 +24,9 @@
 
 - (id)description;
 - (id)descriptionComponents;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (unsigned int)repeatType;
 - (void)setRepeatType:(unsigned int)arg1;
 - (void)setShouldRestartPlayback:(BOOL)arg1;

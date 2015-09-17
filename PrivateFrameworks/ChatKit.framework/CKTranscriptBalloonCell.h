@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKTranscriptBalloonCell : CKTranscriptMessageCell {
+@interface CKTranscriptBalloonCell : CKPhoneTranscriptMessageCell {
     CKBalloonView *_balloonView;
     UILabel *_drawerLabel;
     NSAttributedString *_drawerText;

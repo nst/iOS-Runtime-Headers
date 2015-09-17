@@ -8,8 +8,8 @@
 
 + (id)weakReferenceWithObject:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (unsigned int)hash;
 - (id)initWithObject:(id)arg1;

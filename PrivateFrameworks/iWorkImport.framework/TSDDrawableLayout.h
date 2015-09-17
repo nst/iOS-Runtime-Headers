@@ -29,6 +29,8 @@
 - (void)invalidateExteriorWrap;
 - (void)invalidateParentForWrap;
 - (BOOL)isHTMLWrap;
+- (unsigned int)pageNumber;
+- (unsigned int)pageNumberForAttachment:(id)arg1;
 - (void)parentDidChange;
 - (void)processChangedProperty:(int)arg1;
 - (void)setGeometry:(id)arg1;

@@ -12,6 +12,7 @@
 @property (nonatomic, copy) NSDictionary *carPlayAlternativeDisplayNameMap;
 @property (nonatomic, copy) NSString *displayAppName;
 @property (nonatomic, copy) NSDictionary *displayAppNameMap;
+@property (nonatomic, retain) SAGlance *glance;
 @property (nonatomic, copy) NSNumber *isNanoApp;
 @property (nonatomic, copy) NSNumber *nowPlayingAppWithBrowsableContent;
 @property (nonatomic, copy) NSString *providerName;
@@ -34,6 +35,7 @@
 - (id)displayAppName;
 - (id)displayAppNameMap;
 - (id)encodedClassName;
+- (id)glance;
 - (id)groupIdentifier;
 - (id)isNanoApp;
 - (id)nowPlayingAppWithBrowsableContent;
@@ -46,6 +48,7 @@
 - (void)setCarPlayAlternativeDisplayNameMap:(id)arg1;
 - (void)setDisplayAppName:(id)arg1;
 - (void)setDisplayAppNameMap:(id)arg1;
+- (void)setGlance:(id)arg1;
 - (void)setIsNanoApp:(id)arg1;
 - (void)setNowPlayingAppWithBrowsableContent:(id)arg1;
 - (void)setProviderName:(id)arg1;

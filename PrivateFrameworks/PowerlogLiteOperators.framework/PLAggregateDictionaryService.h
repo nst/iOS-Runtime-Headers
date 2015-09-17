@@ -3,7 +3,7 @@
  */
 
 @interface PLAggregateDictionaryService : PLService {
-    PLNSTimerOperatorComposition *_dailyTaskTimer;
+    PLTimer *_dailyTaskTimer;
     struct AggState { 
         int state; 
         double level; 
@@ -14,7 +14,7 @@
     double remainderUnpluggedTime;
 }
 
-@property (retain) PLNSTimerOperatorComposition *dailyTaskTimer;
+@property (retain) PLTimer *dailyTaskTimer;
 @property struct AggState { int x1; double x2; double x3; } last_state;
 @property (retain) NSMutableArray *registeredNotifications;
 

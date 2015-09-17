@@ -46,11 +46,12 @@
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (void)errnoRaise:(id)arg1 format:(id)arg2;
-+ (void)raiseWithError:(id)arg1;
++ (void)sfu_errnoRaise:(id)arg1 format:(id)arg2;
++ (void)tsu_raiseWithError:(id)arg1;
 
-- (id)error;
-- (int)localErrno;
+- (id)gsu_descriptionWithStacktrace;
+- (int)sfu_localErrno;
+- (id)tsu_error;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

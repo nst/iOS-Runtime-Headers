@@ -5,7 +5,6 @@
 @interface IKPreference : NSObject
 
 + (BOOL)ignoreHTTPCache;
-+ (BOOL)jsContextInspectable;
 + (BOOL)logDocumentXML;
 + (unsigned int)logLevel;
 + (void)setupJSCoreConsoleLogging;

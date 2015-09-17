@@ -4,12 +4,10 @@
 
 @interface BRShareCopyAccessTokenOperation : BROperation {
     id /* block */ _shareCopyAccessTokenCompletionBlock;
-    id /* block */ _shareCopyAccessTokenCompletionBlockWithPermissions;
     NSURL *_url;
 }
 
 @property (copy) id /* block */ shareCopyAccessTokenCompletionBlock;
-@property (copy) id /* block */ shareCopyAccessTokenCompletionBlockWithPermissions;
 @property (nonatomic, retain) NSURL *url;
 
 - (void)dealloc;
@@ -17,10 +15,8 @@
 - (id)initWithURL:(id)arg1;
 - (void)main;
 - (void)setShareCopyAccessTokenCompletionBlock:(id /* block */)arg1;
-- (void)setShareCopyAccessTokenCompletionBlockWithPermissions:(id /* block */)arg1;
 - (void)setUrl:(id)arg1;
 - (id /* block */)shareCopyAccessTokenCompletionBlock;
-- (id /* block */)shareCopyAccessTokenCompletionBlockWithPermissions;
 - (id)url;
 
 @end

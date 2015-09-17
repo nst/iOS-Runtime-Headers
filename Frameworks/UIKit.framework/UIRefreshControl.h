@@ -35,12 +35,14 @@
 + (Class)_contentViewClassForStyle:(int)arg1;
 + (id)_defaultColor;
 
+- (void).cxx_destruct;
 - (void)_addInsetHeight:(float)arg1;
 - (void)_addInsets;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_appliedInsets;
 - (id)_attributedTitle;
 - (BOOL)_canTransitionFromState:(int)arg1 toState:(int)arg2;
 - (id)_contentView;
+- (unsigned int)_controlEventsForActionTriggered;
 - (void)_didScroll;
 - (BOOL)_isApplyingInsets;
 - (struct CGPoint { float x1; float x2; })_originForContentOffset:(struct CGPoint { float x1; float x2; })arg1;

@@ -10,19 +10,22 @@
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, retain) NSUserDefaults *userDefaults;
 
++ (id)builtinActivityOrder;
 + (id)updatedActivityIdentifiersUserOrderWithPreviousOrder:(id)arg1 someSortedActivityIdentifiers:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)activitiesSortedByActivityIdentifierOrder:(id)arg1 forActivities:(id)arg2;
 - (id)activitiesSortedByUserOrderForActivities:(id)arg1;
 - (id)activityIdentifiersInUserOrder;
 - (BOOL)activityIsHidden:(id)arg1;
 - (id)applicationExtensionForActivity:(id)arg1;
 - (BOOL)canHideActivity:(id)arg1;
-- (void)dealloc;
 - (id)defaultsValueForKey:(id)arg1 activity:(id)arg2;
 - (id)identifier;
 - (id)identifierForActivity:(id)arg1;
+- (id)init;
 - (id)initWithIdentifier:(id)arg1 userDefaults:(id)arg2;
+- (id)migrateSortOrderIfNeededForBuiltInActivityType:(id)arg1 activityIdentifierOrder:(id)arg2;
 - (id)mutableActivityIdentifiersArrayForActivitiesArray:(id)arg1;
 - (void)postActivityUserDefaultsDidChangeNotification;
 - (void)setActivity:(id)arg1 asHidden:(BOOL)arg2;

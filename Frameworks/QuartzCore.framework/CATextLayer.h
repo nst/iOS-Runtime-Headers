@@ -8,7 +8,7 @@
 
 @property (copy) NSString *alignmentMode;
 @property BOOL allowsFontSubpixelQuantization;
-@property void*font;
+@property const void*font;
 @property float fontSize;
 @property struct CGColor { }*foregroundColor;
 @property (copy) id string;
@@ -32,7 +32,7 @@
 - (void)dealloc;
 - (void)didChangeValueForKey:(id)arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
-- (void*)font;
+- (const void*)font;
 - (float)fontSize;
 - (struct CGColor { }*)foregroundColor;
 - (id)implicitAnimationForKeyPath:(id)arg1;

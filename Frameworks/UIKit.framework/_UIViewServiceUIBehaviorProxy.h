@@ -14,7 +14,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (id)activeFencePort;
 + (id)proxyWrappingExportedObject:(id)arg1 forCommunicationWithPID:(int)arg2 exportedProtocol:(id)arg3;
 
 - (int)__automatic_invalidation_logic;

@@ -34,6 +34,7 @@
 - (void)removeAllDisplays;
 - (void)removeDisplay:(id)arg1;
 - (unsigned int)rendererFlags;
+- (id)secureModeViolations;
 - (void)setMirroringEnabled:(BOOL)arg1;
 - (void)setRendererFlags:(unsigned int)arg1;
 - (void)setSecure:(BOOL)arg1;

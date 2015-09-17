@@ -17,6 +17,7 @@
 + (id)_workQueue;
 + (id)alertHelperWithHandler:(id /* block */)arg1 style:(int)arg2 title:(id)arg3 message:(id)arg4 cancelButtonTitle:(id)arg5 otherButtonTitles:(id)arg6;
 
+- (void).cxx_destruct;
 - (id)_initWithTitle:(id)arg1 style:(int)arg2 message:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
 - (id)_underlyingAlertView;
 - (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;

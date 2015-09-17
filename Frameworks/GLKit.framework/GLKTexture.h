@@ -3,43 +3,43 @@
  */
 
 @interface GLKTexture : NSObject {
-    unsigned int GLTextureName;
+    unsigned int _GLTextureName;
+    unsigned int _bindTarget;
+    unsigned int _bitsPerPixel;
     struct CGImageBlockSet { } *_blockSet;
     struct __CFData { } *_cfData;
     int _dataCategory;
+    unsigned int _format;
+    BOOL _hasAlpha;
     BOOL _hasPremultipliedAlpha;
     unsigned int _height;
+    NSData *_imageData;
     unsigned int _index;
+    unsigned int _internalFormat;
     BOOL _isCubeMap;
+    BOOL _isMipmapped;
+    BOOL _isPowerOfTwo;
+    BOOL _isVerticalFlipped;
     NSString *_label;
+    int _loadMode;
+    unsigned int _nComponents;
+    unsigned int _nPrimarySurfaces;
+    unsigned int _nSurfaces;
+    unsigned int _numMipMapLevels;
+    unsigned int _orientation;
     unsigned int _primarySurfaceLength;
+    BOOL _reOrient;
     BOOL _requestIssuedForAlphaPremultiplication;
     BOOL _requestIssuedForMipmapGeneration;
     BOOL _requestIssuedForSRGB;
     BOOL _requestIssuedToInterpretGrayAsAlpha;
     BOOL _requestIssuedToReorientToGL;
     unsigned int _rowBytes;
+    int _texelFormat;
+    unsigned int _textureTarget;
+    unsigned int _type;
     int _unpackAlignment;
     unsigned int _width;
-    unsigned int bindTarget;
-    unsigned int bitsPerPixel;
-    unsigned int format;
-    BOOL hasAlpha;
-    NSData *imageData;
-    unsigned int internalFormat;
-    BOOL isMipmapped;
-    BOOL isPowerOfTwo;
-    BOOL isVerticalFlipped;
-    int loadMode;
-    unsigned int nComponents;
-    unsigned int nPrimarySurfaces;
-    unsigned int nSurfaces;
-    unsigned int numMipMapLevels;
-    unsigned int orientation;
-    BOOL reOrient;
-    int texelFormat;
-    unsigned int textureTarget;
-    unsigned int type;
 }
 
 @property (nonatomic) unsigned int GLTextureName;

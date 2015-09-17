@@ -2,61 +2,33 @@
    Image: /System/Library/PrivateFrameworks/AOSNotification.framework/AOSNotification
  */
 
-@interface AOSNotifySession : NSObject <AOSXPCClientProtocol> {
-    id /* block */ _fmfAppPushMsgHandler;
-    id /* block */ _fmfAppPushTokenHandler;
+@interface AOSNotifySession : NSObject {
     NSXPCConnection *_xpcConnection;
     NSObject<OS_dispatch_queue> *_xpcConnectionCreationQueue;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ fmfAppPushMsgHandler;
-@property (nonatomic, copy) id /* block */ fmfAppPushTokenHandler;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *xpcConnectionCreationQueue;
 
-+ (id)copyStoreAccount;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (void)_destroyXPCConnection;
-- (id)addFMFAccount:(id)arg1;
 - (id)currentXPCConnection;
 - (void)dealloc;
 - (void)didChangeFMFAccountInfo:(id)arg1;
-- (void)didEnterFMFRegion:(id)arg1 atLocation:(id)arg2;
-- (void)didExitFMFRegion:(id)arg1 atLocation:(id)arg2;
-- (oneway void)didReceiveFMFAppPushMessage:(id)arg1;
-- (oneway void)didReceiveFMFAppPushToken:(id)arg1;
-- (id /* block */)fmfAppPushMsgHandler;
-- (id /* block */)fmfAppPushTokenHandler;
 - (id)fmfDeviceId;
 - (id)fmipAccount;
 - (id)fmipDeviceId;
 - (id)iCloudAccount;
 - (id)init;
-- (id)initWithDelegate:(id)arg1;
 - (void)locationAuthorizationForShareMyLocationWithCompletion:(id /* block */)arg1;
 - (id)newErrorForCode:(int)arg1 message:(id)arg2;
 - (BOOL)performMigration;
-- (id)removeFMFAccountWithUsername:(id)arg1;
-- (void)removeLegacyFMFAccountUsingCallback:(id /* block */)arg1;
-- (void)renewFMFAccountCredentialsUsingCallback:(id /* block */)arg1;
-- (id)retrieveAllAccounts:(id*)arg1;
-- (id)retrieveFMFAccount:(id*)arg1;
 - (void)retrieveFMFAccountUsingCallback:(id /* block */)arg1;
-- (void)retrieveLegacyFMFAccountUsingCallback:(id /* block */)arg1;
-- (void)setFmfAppPushMsgHandler:(id /* block */)arg1;
-- (void)setFmfAppPushTokenHandler:(id /* block */)arg1;
 - (void)setXpcConnection:(id)arg1;
 - (void)setXpcConnectionCreationQueue:(id)arg1;
-- (void)startListeningForFMFAppPushInEnvironment:(id)arg1 withMessageHandler:(id /* block */)arg2 tokenHandler:(id /* block */)arg3;
 - (void)startListeningOnTopic:(id)arg1;
-- (void)stopListeningForFMFAppPush;
-- (void)stopListeningOnTopic:(id)arg1;
 - (id)storeAccount;
 - (void)willDeleteiCloudAccountWithCompletion:(id /* block */)arg1;
 - (id)xpcConnection;

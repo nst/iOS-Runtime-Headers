@@ -31,7 +31,7 @@
 - (void)setPixelData:(id)arg1;
 - (void)setPixelFormat:(unsigned int)arg1;
 - (void)setSourceAlphaInfo:(unsigned int)arg1;
-- (unsigned int)sourceImageAlpha;
+- (unsigned int)sourceAlphaInfo;
 - (unsigned int)width;
 
 @end

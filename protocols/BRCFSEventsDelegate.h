@@ -6,5 +6,6 @@
 @required
 
 - (void)fseventAtPath:(BRCRelativePath *)arg1 flags:(unsigned long)arg2;
+- (void)fseventAtPath:(BRCRelativePath *)arg1 flags:(unsigned long)arg2 unresolvedLastPathComponent:(NSString *)arg3;
 
 @end

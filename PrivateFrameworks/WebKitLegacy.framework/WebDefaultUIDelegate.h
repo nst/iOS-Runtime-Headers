@@ -2,7 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebDefaultUIDelegate : NSObject
+@interface WebDefaultUIDelegate : NSObject <WebUIDelegate>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedUIDelegate;
 

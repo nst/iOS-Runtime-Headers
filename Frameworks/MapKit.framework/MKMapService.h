@@ -2,43 +2,63 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKMapService : NSObject {
-    NSArray *_activeInputModeLanguages;
-    NSLock *_activeInputModesLock;
-}
+@interface MKMapService : NSObject
 
 + (id)sharedService;
 
-- (void).cxx_destruct;
-- (id)_activeInputModeLanguages;
-- (void)_invalidateActiveInputModeLanguages;
 - (void)_mapItemsForResponseData:(id)arg1 handler:(id /* block */)arg2;
 - (id)_mk_ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 traits:(id)arg3;
 - (id)_ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(BOOL)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
-- (void)dealloc;
 - (id)defaultTraits;
 - (id)defaultTraitsWithTraits:(id)arg1;
-- (id)init;
-- (id)mapItemsForUpdatedPlacesInResolution:(id)arg1;
+- (id)defaultTraitsWithTransportType:(unsigned int)arg1;
+- (id)mapItemsForPlacesInDetails:(id)arg1;
 - (void)submitUsageForTraits:(id)arg1;
+- (void)submitUsageForTraits:(id)arg1 actionDetails:(id)arg2 routeDetails:(id)arg3;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
+- (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5;
 - (void)submitUsageForTraitsWithAction:(int)arg1;
+- (void)submitUsageForTraitsWithAction:(int)arg1 actionDetails:(id)arg2 uiTarget:(int)arg3;
+- (void)submitUsageForTraitsWithAction:(int)arg1 categoriesDisplayed:(id)arg2 categorySelected:(id)arg3;
 - (void)submitUsageForTraitsWithAction:(int)arg1 flyoverAnimationID:(unsigned long long)arg2;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 providerID:(id)arg3;
+- (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 providerID:(id)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6;
+- (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 providerID:(id)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7;
+- (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 providerID:(id)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7 transitDepartureSequence:(id)arg8;
+- (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 providerID:(id)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7 transitIncident:(id)arg8;
+- (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 providerID:(id)arg3 targetID:(unsigned long long)arg4;
+- (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 targetID:(unsigned long long)arg3;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapRegion:(id)arg2 zoomLevel:(double)arg3;
+- (void)submitUsageForTraitsWithAction:(int)arg1 uiTarget:(int)arg2;
+- (void)submitUserAction:(id)arg1 eventKey:(int)arg2;
+- (void)submitUserAction:(id)arg1 eventKey:(int)arg2 eventValue:(id)arg3;
+- (void)submitUserAction:(id)arg1 eventKey:(int)arg2 selectedIndex:(unsigned int)arg3 uniqueID:(id)arg4;
+- (void)submitUserAction:(id)arg1 eventKey:(int)arg2 uniqueURL:(id)arg3;
+- (void)submitUserAction:(id)arg1 sharingType:(id)arg2;
+- (id)ticketForBatchPopularNearbyForSearchCategories:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
+- (id)ticketForCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
+- (id)ticketForCategoryListWithTraits:(id)arg1;
+- (id)ticketForExternalBusinessID:(id)arg1 contentProvider:(id)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
 - (id)ticketForForwardGeocodeAddress:(id)arg1 traits:(id)arg2;
 - (id)ticketForForwardGeocodeString:(id)arg1 traits:(id)arg2;
+- (id)ticketForFreshBusinessClaimComponentWithMUID:(unsigned long long)arg1 resultProviderID:(int)arg2 traits:(id)arg3;
+- (id)ticketForFreshMUIDs:(id)arg1 resultProviderID:(int)arg2 contentProvider:(id)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;
 - (id)ticketForMUIDs:(id)arg1 includeETA:(BOOL)arg2 traits:(id)arg3;
-- (id)ticketForMUIDs:(id)arg1 resultProviderID:(int)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
+- (id)ticketForMUIDs:(id)arg1 resultProviderID:(int)arg2 contentProvider:(id)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;
 - (id)ticketForMapItemToRefine:(id)arg1 traits:(id)arg2;
 - (id)ticketForMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 paymentNetwork:(id)arg3 transactionDate:(id)arg4 transactionLocation:(id)arg5 traits:(id)arg6;
 - (id)ticketForPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3;
-- (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2 mapItemForStartDirectionsSearchInput:(id)arg3 mapitemForEndDirectionsSearchInput:(id)arg4 traits:(id)arg5;
+- (id)ticketForPlaceRefinementRequestWithCoordinate:(struct { double x1; double x2; }*)arg1 addressLine:(id)arg2 placeName:(id)arg3 traits:(id)arg4;
+- (id)ticketForPopularNearbyForSearchCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
+- (id)ticketForProblem:(id)arg1 mapItemForProblemContext:(id)arg2 mapItemForStartDirectionsSearchInput:(id)arg3 mapitemForEndDirectionsSearchInput:(id)arg4 pushToken:(id)arg5 allowContactBackAtEmailAddress:(id)arg6 traits:(id)arg7;
+- (id)ticketForProblemResubmission:(id)arg1 traits:(id)arg2;
 - (id)ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeETA:(BOOL)arg2 traits:(id)arg3;
 - (id)ticketForReverseGeocodeDroppedPinCoordinate:(struct { double x1; double x2; })arg1 traits:(id)arg2;
+- (id)ticketForSearchCategory:(id)arg1 searchString:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
+- (id)ticketForSearchFieldPlaceholderWithTraits:(id)arg1;
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;
-- (id)ticketForURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
+- (id)ticketForURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 contentProvider:(id)arg5 maxResults:(unsigned int)arg6 traits:(id)arg7;
 
 @end

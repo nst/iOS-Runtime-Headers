@@ -6,7 +6,9 @@
     _MKUserTrackingButtonController *_controller;
     NSMutableDictionary *_customImages;
     NSMutableDictionary *_customLandscapeImagePhones;
+    BOOL _explicitlyEnabled;
     BOOL _inMiniBar;
+    BOOL _internallyEnabled;
     BOOL _selectsWhenTracking;
 }
 
@@ -14,6 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL inMiniBar;
 @property (nonatomic, retain) MKMapView *mapView;
 @property (getter=_selectsWhenTracking, setter=_setSelectsWhenTracking:, nonatomic) BOOL selectsWhenTracking;
 @property (readonly) Class superclass;
@@ -35,16 +38,20 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectedIndicatorBounds;
 - (BOOL)_selectsWhenTracking;
 - (void)_setImage:(id)arg1 forUserTrackingMode:(int)arg2 controlState:(unsigned int)arg3;
+- (void)_setInternallyEnabled:(BOOL)arg1;
 - (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(int)arg2 controlState:(unsigned int)arg3;
 - (void)_setSelectsWhenTracking:(BOOL)arg1;
+- (void)_setSkip:(BOOL)arg1 forUserTrackingMode:(int)arg2;
 - (void)_setState:(int)arg1;
 - (int)_state;
 - (void)_updateForState:(int)arg1;
 - (id)controller;
+- (BOOL)inMiniBar;
 - (id)mapView;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setMapView:(id)arg1;
 - (void)setUserTrackingView:(id)arg1;
-- (void)sizeToFit;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)updateForMiniBarState:(BOOL)arg1;
 - (id)userTrackingView;
 

@@ -32,7 +32,6 @@
     UIColor *_thumbTintColor;
     UIImageView *_thumbView;
     UIView *_thumbViewNeue;
-    CAShapeLayer *_thumbViewNeueShape;
     NSArray *_trackColors;
     BOOL _trackIsArtworkBased;
     BOOL _useLookNeue;
@@ -52,10 +51,12 @@
 @property (nonatomic, retain) UIColor *thumbTintColor;
 @property (nonatomic) float value;
 
+- (void).cxx_destruct;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_buildTrackArtwork;
 - (id)_contentForState:(unsigned int)arg1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
+- (unsigned int)_controlEventsForActionTriggered;
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchMoved:(id)arg1 withEvent:(id)arg2;

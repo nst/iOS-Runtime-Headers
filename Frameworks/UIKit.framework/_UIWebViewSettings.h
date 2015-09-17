@@ -20,13 +20,13 @@
 
 + (id)defaultSettings;
 
+- (void).cxx_destruct;
 - (id)_encodeAsDictionary;
 - (id)_initWithDictionary:(id)arg1;
 - (BOOL)allowsInlineMediaPlayback;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customUserAgent;
 - (unsigned int)dataDetectorTypes;
-- (void)dealloc;
 - (id)init;
 - (BOOL)mediaPlaybackAllowsAirPlay;
 - (BOOL)mediaPlaybackRequiresUserAction;

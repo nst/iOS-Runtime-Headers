@@ -6,7 +6,6 @@
     BOOL _applyCountReachedMax;
     BRCCountedSet *_coordinatedWriters;
     NSMutableSet *_watchingFaults;
-    NSObject<OS_dispatch_group> *_writerGroup;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,7 +13,6 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isCancelled;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSObject<OS_dispatch_group> *writerGroup;
 
 - (void).cxx_destruct;
 - (void)_close;
@@ -37,6 +35,5 @@
 - (BOOL)startWriteCoordinationInZone:(id)arg1;
 - (void)updateThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;
 - (void)updateThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3 kind:(unsigned int)arg4;
-- (id)writerGroup;
 
 @end

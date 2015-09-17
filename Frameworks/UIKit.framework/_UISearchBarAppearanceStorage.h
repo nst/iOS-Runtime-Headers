@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSValue *searchFieldPositionAdjustment;
 @property (nonatomic, retain) UIImage *separatorImage;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)imageForIcon:(int)arg1 state:(unsigned int)arg2;
 - (id)scopeBarBackgroundImage;
 - (id)searchFieldBackgroundImageForState:(unsigned int)arg1;

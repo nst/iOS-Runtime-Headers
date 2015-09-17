@@ -11,7 +11,7 @@
     BRCLocalItem *_byPathLocalItem;
     BRCServerItem *_byPathServerItem;
     unsigned long long _faultedDiffs;
-    BRCLocalItem *_faultedLocalItem;
+    BRCDocumentItem *_faultedLocalItem;
     BRCRelativePath *_faultedRelpath;
     BRCServerItem *_faultedServerItem;
     NSString *_filename;
@@ -46,7 +46,7 @@
 @property (nonatomic, readonly) BRCServerItem *byPathServerItem;
 @property (nonatomic, readonly) BRCDocumentItem *bySharedEnclosureDocItem;
 @property (nonatomic, readonly) unsigned long long faultedDiffs;
-@property (nonatomic, readonly) BRCLocalItem *faultedLocalItem;
+@property (nonatomic, readonly) BRCDocumentItem *faultedLocalItem;
 @property (nonatomic, readonly) struct { id x1; id x2; unsigned long long x3; } faultedMatch;
 @property (nonatomic, readonly) BRCRelativePath *faultedRelpath;
 @property (nonatomic, readonly) BRCServerItem *faultedServerItem;

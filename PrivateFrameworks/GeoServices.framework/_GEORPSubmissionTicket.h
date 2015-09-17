@@ -4,11 +4,15 @@
 
 @interface _GEORPSubmissionTicket : NSObject <GEOMapServiceProblemReportTicket> {
     BOOL _canceled;
+    NSString *_emailAddress;
     <GEOMapItemPrivate> *_endPlace;
     <GEOMapItemPrivate> *_place;
     GEORPProblem *_problem;
     GEORPProblemRequest *_problemRequest;
+    NSData *_pushToken;
+    NSData *_resubmissionData;
     <GEOMapItemPrivate> *_startPlace;
+    BOOL _started;
     GEOMapServiceTraits *_traits;
 }
 
@@ -20,7 +24,8 @@
 
 - (void)cancel;
 - (void)dealloc;
-- (id)initWithProblem:(id)arg1 placeForProblemContext:(id)arg2 placeForStartDirectionsSearchInput:(id)arg3 placeForEndDirectionsSearchInput:(id)arg4 traits:(id)arg5;
+- (id)initWithProblem:(id)arg1 placeForProblemContext:(id)arg2 placeForStartDirectionsSearchInput:(id)arg3 placeForEndDirectionsSearchInput:(id)arg4 pushToken:(id)arg5 allowContactBackAtEmailAddress:(id)arg6 traits:(id)arg7;
+- (id)initWithResubmissionData:(id)arg1 traits:(id)arg2;
 - (void)submitWithHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;
 - (id)traits;
 

@@ -36,6 +36,7 @@
 @property (nonatomic, readonly) NSString *selectedSectionTitle;
 @property (nonatomic, retain) NSArray *titles;
 
+- (void).cxx_destruct;
 - (void)_cacheAndMeasureTitles;
 - (id)_displayTitles;
 - (id)_dotImage;
@@ -51,7 +52,6 @@
 - (BOOL)canBecomeFocused;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (id)font;

@@ -5,7 +5,6 @@
 @interface BBSystemStateProvider : NSObject {
     NSXPCConnection *_connection;
     unsigned int _currentState;
-    NSSet *_sectionIDs;
 }
 
 + (id)clientInterface;
@@ -17,6 +16,5 @@
 - (void)invalidate;
 - (void)noteChangeOfState:(unsigned int)arg1 newValue:(BOOL)arg2;
 - (void)noteOccurrenceOfEvent:(unsigned int)arg1;
-- (void)noteRestrictedSectionIDsDidChange:(id)arg1;
 
 @end

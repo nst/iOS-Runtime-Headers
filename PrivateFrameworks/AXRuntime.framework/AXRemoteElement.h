@@ -31,6 +31,7 @@
 + (id)remoteElementForBlock:(id /* block */)arg1;
 + (id)remoteElementForContextId:(unsigned int)arg1;
 
+- (id)_accessibilityActiveKeyboard;
 - (id)_accessibilityFirstElement;
 - (void)_accessibilityIncreaseSelection:(id)arg1;
 - (id)_accessibilityLastElement;
@@ -68,6 +69,9 @@
 
 - (void)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id /* block */)arg3;
 - (BOOL)_accessibilityIsRemoteElement;
+- (id)_ancestorElementThatSupportsActivationAction;
+- (BOOL)accessibilityActivate;
+- (id)accessibilityAttributeValue:(int)arg1;
 - (id)accessibilityAttributeValue:(int)arg1 forParameter:(id)arg2;
 - (BOOL)accessibilityViewIsModal;
 - (void)platformCleanup;

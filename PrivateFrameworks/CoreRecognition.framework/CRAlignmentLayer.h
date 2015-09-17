@@ -25,7 +25,7 @@
 - (void).cxx_destruct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentRect;
 - (void)animateFoundCardRect:(id)arg1;
-- (void)animateFoundCode:(id)arg1 cardHolder:(id)arg2 cardholderPosition:(struct CGPoint { float x1; float x2; })arg3 expDate:(id)arg4 expdatePosition:(struct CGPoint { float x1; float x2; })arg5 completionBlock:(id /* block */)arg6;
+- (void)animateFoundCode:(id)arg1 codePosition:(struct CGPoint { float x1; float x2; })arg2 codeFrameIndex:(unsigned int)arg3 cardHolder:(id)arg4 cardholderPosition:(struct CGPoint { float x1; float x2; })arg5 cardholderFrameIndex:(unsigned int)arg6 expDate:(id)arg7 expdatePosition:(struct CGPoint { float x1; float x2; })arg8 expDateFrameIndex:(unsigned int)arg9 completionBlock:(id /* block */)arg10;
 - (id)cardNumberLayer;
 - (id)cardholderNameLayer;
 - (id)expirationDateLayer;
@@ -36,6 +36,7 @@
 - (void)layoutSublayers;
 - (id)maskLayer;
 - (id)outlineLayer;
+- (void)propogateMaskColor:(id)arg1 outlineColor:(id)arg2 placementTextColor:(id)arg3 capturedTextColor:(id)arg4;
 - (void)resetLayer;
 - (void)setCardNumberLayer:(id)arg1;
 - (void)setCardholderNameLayer:(id)arg1;

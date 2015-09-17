@@ -28,6 +28,7 @@
 + (id)secureCodedPropertyKeys;
 
 - (void)dealloc;
+- (id)descriptionSubstitutionMap;
 - (unsigned int)hash;
 - (id)inviteMessage;
 - (id)invitedBy;

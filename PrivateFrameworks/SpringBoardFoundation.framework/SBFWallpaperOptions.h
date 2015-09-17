@@ -13,30 +13,37 @@
             float height; 
         } size; 
     } _cropRect;
+    BOOL _hasVideo;
     BOOL _isPortrait;
     NSString *_name;
     float _parallaxFactor;
+    double _stillTimeInVideo;
     BOOL _supportsCropping;
     float _zoomScale;
 }
 
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cropRect;
+@property (nonatomic, readonly) BOOL hasVideo;
 @property (nonatomic, readonly) BOOL isPortrait;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) BOOL parallaxEnabled;
 @property (nonatomic, readonly) float parallaxFactor;
+@property (nonatomic, readonly) double stillTimeInVideo;
 @property (nonatomic, readonly) BOOL supportsCropping;
 @property (nonatomic, readonly) float zoomScale;
 
 + (id)optionsWithName:(id)arg1 parallaxFactor:(float)arg2 zoomScale:(float)arg3 supportsCropping:(BOOL)arg4 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 portrait:(BOOL)arg6;
++ (id)optionsWithName:(id)arg1 parallaxFactor:(float)arg2 zoomScale:(float)arg3 supportsCropping:(BOOL)arg4 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 portrait:(BOOL)arg6 hasVideo:(BOOL)arg7 stillTimeInVideo:(double)arg8;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cropRect;
 - (void)dealloc;
-- (id)initWithName:(id)arg1 parallaxFactor:(float)arg2 zoomScale:(float)arg3 supportsCropping:(BOOL)arg4 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 portrait:(BOOL)arg6;
+- (BOOL)hasVideo;
+- (id)initWithName:(id)arg1 parallaxFactor:(float)arg2 zoomScale:(float)arg3 supportsCropping:(BOOL)arg4 cropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5 portrait:(BOOL)arg6 hasVideo:(BOOL)arg7 stillTimeInVideo:(double)arg8;
 - (BOOL)isPortrait;
 - (id)name;
 - (BOOL)parallaxEnabled;
 - (float)parallaxFactor;
+- (double)stillTimeInVideo;
 - (BOOL)supportsCropping;
 - (float)zoomScale;
 

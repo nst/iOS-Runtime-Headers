@@ -17,8 +17,8 @@
 - (void).cxx_destruct;
 - (id)compositionController;
 - (id)initWithCompositionController:(id)arg1;
-- (BOOL)prefersStatusBarHidden;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 
 @end

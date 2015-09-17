@@ -20,7 +20,7 @@
 - (BOOL)drawBottomDivider;
 - (BOOL)drawsTopDivider;
 - (id)gridViewController;
-- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 gridViewType:(int)arg3 buttonTitles:(id)arg4;
+- (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 gridViewType:(int)arg3 buttonTitles:(id)arg4 cellBackgroundColor:(id)arg5;
 - (void)layoutSubviews;
 - (void)setBottomDivider:(id)arg1;
 - (void)setDrawBottomDivider:(BOOL)arg1;

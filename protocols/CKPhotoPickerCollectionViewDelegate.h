@@ -6,6 +6,5 @@
 @required
 
 - (void)photoPickerCollectionViewAssetSelectionDidChange:(CKPhotoPickerCollectionViewController *)arg1;
-- (void)photoPickerCollectionViewPreferredContentSizeDidChange:(CKPhotoPickerCollectionViewController *)arg1;
 
 @end

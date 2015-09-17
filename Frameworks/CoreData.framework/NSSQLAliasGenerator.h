@@ -14,6 +14,7 @@
 - (id)generateSubqueryVariableAlias;
 - (id)generateTableAlias;
 - (id)generateTempTableName;
+- (id)generateVariableAlias;
 - (id)init;
 - (id)initWithNestingLevel:(unsigned int)arg1;
 

@@ -26,8 +26,9 @@
 - (void)attachmentAspectRatioForRecordID:(id)arg1 completion:(id /* block */)arg2;
 - (void)attachmentPNGDataForRecordID:(id)arg1 sizeConstraints:(id)arg2 completion:(id /* block */)arg3;
 - (void)bulletinsWithRequestParameters:(id)arg1 lastCleared:(id)arg2 completion:(id /* block */)arg3;
-- (void)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
 - (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
+- (void)clearedInfoForClearingAllBulletinsWithLastClearedInfo:(id)arg1 completion:(id /* block */)arg2;
+- (void)clearedInfoForClearingBulletinsFromDate:(id)arg1 toDate:(id)arg2 lastClearedInfo:(id)arg3 completion:(id /* block */)arg4;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
 - (void)deliverBulletinActionResponse:(id)arg1;
@@ -45,7 +46,6 @@
 - (void)setServerProxy:(id)arg1;
 - (void)updateClearedInfoWithHandler:(id /* block */)arg1;
 - (void)updateIdentity:(id /* block */)arg1;
-- (void)updateSectionInfoInCategory:(int)arg1 withHandler:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (void)updateSectionInfoWithHandler:(id /* block */)arg1;
 - (void)updateSectionInfoWithHandler:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)withdrawBulletinWithPublisherBulletinID:(id)arg1;

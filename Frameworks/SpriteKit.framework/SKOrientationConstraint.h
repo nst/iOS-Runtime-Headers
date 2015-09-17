@@ -19,7 +19,6 @@
 + (id)constraintOrientingToPoint:(struct CGPoint { float x1; float x2; })arg1 inNode:(id)arg2 offset:(id)arg3;
 + (id)constraintOrientingToPoint:(struct CGPoint { float x1; float x2; })arg1 offset:(id)arg2;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;

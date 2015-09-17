@@ -47,7 +47,7 @@
 - (id)parentOfSlideNode:(id)arg1;
 - (void)reloadDisplayedNodes;
 - (void)removeAll;
-- (void)removeSlideNodes:(id)arg1 slideNodesChangingDepths:(id)arg2 depthsOfSlideNodesChangingDepths:(id)arg3;
+- (void)removeSlideNodesAtIndexes:(id)arg1 slideNodesChangingDepths:(id)arg2 depthsOfSlideNodesChangingDepths:(id)arg3;
 - (void)saveToArchive:(struct SlideTreeArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Reference {} *x5; struct RepeatedPtrField<TSP::Reference> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; }*)arg1 archiver:(id)arg2;
 - (void)setDisplayedSlideNodes:(id)arg1;
 - (void)slideIndex:(unsigned int*)arg1 andEventIndex:(unsigned int*)arg2 forByBuildPageIndex:(unsigned int)arg3;

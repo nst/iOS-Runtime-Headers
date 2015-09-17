@@ -7,6 +7,7 @@
 + (BOOL)_performWriteTransaction:(BOOL)arg1 withHealthDatabase:(id)arg2 error:(id*)arg3 usingBlock:(id /* block */)arg4 inaccessibilityHandler:(id /* block */)arg5;
 + (id)_syncQueryDescriptorWithPredicate:(id)arg1 orderingProperties:(id)arg2 orderingDirections:(id)arg3 limit:(unsigned int)arg4 anchorProperty:(id)arg5;
 + (id)_syncQueryWithDatabase:(id)arg1 predicate:(id)arg2 orderingProperties:(id)arg3 orderingDirections:(id)arg4 limit:(unsigned int)arg5 anchorProperty:(id)arg6;
++ (id)allDatabaseColumnNames;
 + (id)anyWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (int)countOfObjectsWithPredicate:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (id)createNonUniqueIndicesForColumns;
@@ -35,8 +36,11 @@
 + (id)protectedDatabaseName;
 + (int)protectionClass;
 + (BOOL)setValuesWithDictionary:(id)arg1 predicate:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
++ (id)uniquedColumns;
 
+- (BOOL)getValuesForProperties:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3 handler:(id /* block */)arg4;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
+- (BOOL)setValuesWithDictionary:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 - (id)valueForProperty:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 
 @end

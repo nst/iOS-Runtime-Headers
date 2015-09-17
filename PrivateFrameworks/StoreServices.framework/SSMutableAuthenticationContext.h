@@ -11,6 +11,7 @@
 @property (nonatomic) BOOL allowsBioAuthentication;
 @property (nonatomic) BOOL allowsBootstrapCellularData;
 @property (nonatomic) BOOL allowsRetry;
+@property (nonatomic, copy) NSString *altDSID;
 @property (nonatomic) BOOL canCreateNewAccount;
 @property (nonatomic) BOOL canSetActiveAccount;
 @property (nonatomic, copy) NSString *clientIdentifierHeader;
@@ -44,6 +45,7 @@
 - (void)setAllowsBioAuthentication:(BOOL)arg1;
 - (void)setAllowsBootstrapCellularData:(BOOL)arg1;
 - (void)setAllowsRetry:(BOOL)arg1;
+- (void)setAltDSID:(id)arg1;
 - (void)setCanCreateNewAccount:(BOOL)arg1;
 - (void)setCanSetActiveAccount:(BOOL)arg1;
 - (void)setClientIdentifierHeader:(id)arg1;

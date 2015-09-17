@@ -2,7 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputViewSetPlacementOnScreen : UIInputViewSetPlacement
+@interface UIInputViewSetPlacementOnScreen : UIInputViewSetPlacement <NSSecureCoding>
+
++ (BOOL)supportsSecureCoding;
 
 - (BOOL)inputViewWillAppear;
 - (BOOL)showsInputViews;

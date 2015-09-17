@@ -7,9 +7,9 @@
     unsigned int _memSize;
     int _numCPUs;
     BOOL _proceduralRoadAlpha;
-    BOOL _shouldUseTrafficAlphaHack;
     BOOL _supports3DBuildingStrokes;
     BOOL _supportsBuildingStrokes;
+    BOOL _supportsCoastlineGlows;
     BOOL _useCheapTrafficShader;
 }
 
@@ -24,16 +24,17 @@
 @property (nonatomic, readonly) BOOL roadsWithSimpleLineMeshesAvailable;
 @property (nonatomic, readonly) double routeLineSimplificationEpsilon;
 @property (nonatomic, readonly) BOOL shouldDrawWhenReady;
+@property (nonatomic, readonly) BOOL shouldLayoutLabelsInParallel;
 @property (nonatomic, readonly) BOOL shouldPregenerateLabelGlyphs;
 @property (nonatomic, readonly) BOOL shouldStyleLabelsInParallel;
-@property (nonatomic, readonly) BOOL shouldUseTrafficAlphaHack;
 @property (nonatomic, readonly) BOOL supports3DBuildingStrokes;
 @property (nonatomic, readonly) BOOL supports3DBuildings;
 @property (nonatomic, readonly) BOOL supportsBuildingShadows;
 @property (nonatomic, readonly) BOOL supportsBuildingStrokes;
+@property (nonatomic, readonly) BOOL supportsCoastlineGlows;
 @property (nonatomic, readonly) BOOL supportsHiResBuildings;
 @property (nonatomic, readonly) BOOL supportsHiResRTT;
-@property (nonatomic, readonly) unsigned int tileDecodeQueueWidth;
+@property (nonatomic, readonly) unsigned char tileDecodeQueueWidth;
 @property (nonatomic, readonly) unsigned int tileMaximumLimit;
 @property (nonatomic, readonly) unsigned int tilePrefetchNumberOfScreens;
 @property (nonatomic, readonly) BOOL useCheapTrafficShader;
@@ -55,16 +56,17 @@
 - (BOOL)roadsWithSimpleLineMeshesAvailable;
 - (double)routeLineSimplificationEpsilon;
 - (BOOL)shouldDrawWhenReady;
+- (BOOL)shouldLayoutLabelsInParallel;
 - (BOOL)shouldPregenerateLabelGlyphs;
 - (BOOL)shouldStyleLabelsInParallel;
-- (BOOL)shouldUseTrafficAlphaHack;
 - (BOOL)supports3DBuildingStrokes;
 - (BOOL)supports3DBuildings;
 - (BOOL)supportsBuildingShadows;
 - (BOOL)supportsBuildingStrokes;
+- (BOOL)supportsCoastlineGlows;
 - (BOOL)supportsHiResBuildings;
 - (BOOL)supportsHiResRTT;
-- (unsigned int)tileDecodeQueueWidth;
+- (unsigned char)tileDecodeQueueWidth;
 - (unsigned int)tileMaximumLimit;
 - (unsigned int)tilePrefetchNumberOfScreens;
 - (unsigned int)tileReserveLimit:(BOOL)arg1;

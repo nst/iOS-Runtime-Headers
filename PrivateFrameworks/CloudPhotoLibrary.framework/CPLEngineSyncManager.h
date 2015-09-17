@@ -50,9 +50,10 @@
 - (void)_cancelAllTasksForManagement;
 - (void)_cancelAllTasksForPrePull;
 - (void)_cancelAllTasksForPull;
-- (void)_cancelAllTasksForPush;
+- (void)_cancelAllTasksForPush:(BOOL)arg1;
 - (void)_cancelAllTasksForSetup;
 - (void)_cancelAllTasksLocked;
+- (void)_cancelAllTasksLockedDeferringPushTaskCancellationIfCurrentlyUploadingForeground:(BOOL)arg1;
 - (id)_descriptionForBackgroundDownloadsTasks;
 - (id)_descriptionForBackgroundUploadsTasks;
 - (id)_descriptionForCurrentState;
@@ -86,8 +87,10 @@
 - (float)_progressForPrePullTask:(id)arg1 progress:(float)arg2;
 - (float)_progressForPullTask:(id)arg1 progress:(float)arg2;
 - (float)_progressForPushTask:(id)arg1 progress:(float)arg2;
+- (void)_releasePowerAssertionForMingleTaskIfNecessary;
 - (void)_resetErrorForSyncSession;
 - (void)_restartSyncSessionFromStateLocked:(unsigned int)arg1 cancelIfNecessary:(BOOL)arg2;
+- (void)_retainPowerAssertionForMingleTaskIfNecessary;
 - (void)_saveManagementTasks;
 - (void)_setErrorForSyncSession:(id)arg1;
 - (void)_setState:(unsigned int)arg1;
@@ -113,7 +116,7 @@
 - (unsigned int)state;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)task:(id)arg1 didProgress:(float)arg2 userInfo:(id)arg3;
-- (id)task:(id)arg1 wantsToDownloadBatchesFromSyncAnchor:(id)arg2 completionHandler:(id /* block */)arg3;
-- (id)task:(id)arg1 wantsToPushBatch:(id)arg2 continuationBlock:(id /* block */)arg3;
+- (id)task:(id)arg1 wantsToDownloadBatchesFromSyncAnchor:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
+- (id)task:(id)arg1 wantsToPushBatch:(id)arg2 progressBlock:(id /* block */)arg3 continuationBlock:(id /* block */)arg4;
 
 @end

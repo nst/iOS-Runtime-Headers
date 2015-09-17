@@ -2,27 +2,22 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBApplicationController : NSObject <FBApplicationLibraryPreInstallClient> {
-    FBApplicationLibrary *_applicationLibrary;
-}
-
-@property (nonatomic, retain) FBApplicationLibrary *applicationLibrary;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
+@interface XBApplicationController : NSObject
 
 + (id)sharedInstance;
 
+- (id)_allApplications;
+- (id)_allApplicationsFilteredBySystem:(BOOL)arg1 bySplashBoard:(BOOL)arg2;
+- (void)_captureLaunchImageForApplication:(id)arg1 withCompatibilityInfo:(id)arg2 firstImageIsReady:(id /* block */)arg3 withCompletion:(id /* block */)arg4;
 - (void)_captureOrUpdateLaunchImagesForApplications:(id)arg1 firstImageIsReady:(id /* block */)arg2;
-- (void)_removeAllCachedLaunchImages;
-- (void)_removeCachedLaunchImagesForApplications:(id)arg1 forgetApp:(BOOL)arg2;
-- (id)applicationLibrary;
-- (void)applicationLibrary:(id)arg1 _willNotify_didAddApplications:(id)arg2 completion:(id /* block */)arg3;
-- (void)applicationLibrary:(id)arg1 _willNotify_didReplaceApplications:(id)arg2 withApplications:(id)arg3 completion:(id /* block */)arg4;
-- (void)applicationLibrary:(id)arg1 didRemoveApplications:(id)arg2 completion:(id /* block */)arg3;
-- (void)dealloc;
-- (id)init;
-- (void)setApplicationLibrary:(id)arg1;
+- (void)_migrateDataIfNeeded;
+- (void)_removeCachedLaunchImagesForApplications:(id)arg1 forgettingApps:(BOOL)arg2;
+- (void)_removeLaunchImagesMatchingPredicate:(id)arg1 forApplications:(id)arg2 forgettingApps:(BOOL)arg3;
+- (id)allSplashBoardApplications;
+- (id)allSplashBoardSystemApplications;
+- (id)launchRequestsForApplication:(id)arg1 withCompatibilityInfo:(id)arg2;
+- (void)removeAllGeneratedLaunchImages;
+- (void)removeAllGeneratedLaunchImagesAndSnapshots;
+- (void)resetEverything;
 
 @end

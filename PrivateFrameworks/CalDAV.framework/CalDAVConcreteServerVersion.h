@@ -10,7 +10,7 @@
 
 + (id)prototypes;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)regularExpression;
 - (void)setRegularExpression:(id)arg1;
 

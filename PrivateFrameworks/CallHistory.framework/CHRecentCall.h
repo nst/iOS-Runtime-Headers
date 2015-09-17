@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
  */
 
-@interface CHRecentCall : CHSynchronizedLoggable <NSCopying, NSSecureCoding> {
+@interface CHRecentCall : CHSynchronizable <NSCopying, NSSecureCoding> {
     NSString *_addressBookCallerIDMultiValueId;
     NSString *_addressBookRecordId;
+    NSValue *_addressBookRecordRef;
     BOOL _answered;
     NSNumber *_bytesOfDataUsed;
     NSMutableArray *_callOccurrences;
@@ -12,14 +13,15 @@
     unsigned int _callType;
     NSString *_callerId;
     unsigned int _callerIdAvailability;
+    NSString *_callerIdFormatted;
     BOOL _callerIdIsBlocked;
-    BOOL _callerIdIsFormatted;
     NSString *_callerIdLabel;
     NSString *_callerIdLocation;
     NSString *_callerName;
     NSString *_callerNetworkFirstName;
     NSString *_callerNetworkName;
     NSString *_callerNetworkSecondName;
+    NSString *_clientAddressBookRecordId;
     NSDate *_date;
     NSString *_devicePhoneId;
     NSNumber *_disconnectedCause;
@@ -37,24 +39,26 @@
 
 @property (nonatomic, copy) NSString *addressBookCallerIDMultiValueId;
 @property (nonatomic, copy) NSString *addressBookRecordId;
+@property (copy) NSValue *addressBookRecordRef;
 @property BOOL answered;
-@property (nonatomic, copy) NSNumber *bytesOfDataUsed;
+@property (copy) NSNumber *bytesOfDataUsed;
 @property (nonatomic, retain) NSMutableArray *callOccurrences;
 @property unsigned int callStatus;
 @property unsigned int callType;
 @property (copy) NSString *callerId;
 @property (nonatomic) unsigned int callerIdAvailability;
+@property (getter=callerIdForDisplay, nonatomic, copy) NSString *callerIdFormatted;
 @property BOOL callerIdIsBlocked;
-@property BOOL callerIdIsFormatted;
 @property (nonatomic, copy) NSString *callerIdLabel;
 @property (nonatomic, copy) NSString *callerIdLocation;
 @property (nonatomic, copy) NSString *callerName;
 @property (copy) NSString *callerNetworkFirstName;
 @property (nonatomic, copy) NSString *callerNetworkName;
 @property (copy) NSString *callerNetworkSecondName;
+@property (copy) NSString *clientAddressBookRecordId;
 @property (copy) NSDate *date;
 @property (copy) NSString *devicePhoneId;
-@property (nonatomic, copy) NSNumber *disconnectedCause;
+@property (copy) NSNumber *disconnectedCause;
 @property double duration;
 @property (copy) NSString *isoCountryCode;
 @property (copy) NSString *mobileCountryCode;
@@ -68,6 +72,7 @@
 
 + (id)callStatusAsString:(unsigned int)arg1;
 + (id)callTypeAsString:(unsigned int)arg1;
++ (id)getLocationForCallerId:(id)arg1 andIsoCountryCode:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -77,6 +82,8 @@
 - (void)addressBookChanged;
 - (id)addressBookRecordId;
 - (id)addressBookRecordIdSync;
+- (id)addressBookRecordRef;
+- (id)addressBookRecordRefSync;
 - (BOOL)answered;
 - (id)bytesOfDataUsed;
 - (id)callOccurrences;
@@ -91,7 +98,6 @@
 - (BOOL)callerIdIsBlocked;
 - (BOOL)callerIdIsEmailAddress;
 - (BOOL)callerIdIsEmailAddressSync;
-- (BOOL)callerIdIsFormatted;
 - (id)callerIdLabel;
 - (id)callerIdLabelSync;
 - (id)callerIdLocation;
@@ -108,12 +114,14 @@
 - (BOOL)canCoalesceSyncWithCollapseIfEqualStrategyWithCall:(id)arg1;
 - (BOOL)canCoalesceSyncWithRecentsStrategyWithCall:(id)arg1;
 - (BOOL)canCoalesceWithCall:(id)arg1 withStrategy:(id)arg2;
+- (id)clientAddressBookRecordId;
 - (BOOL)coalesceWithCall:(id)arg1 withStrategy:(id)arg2;
 - (id)coalescingHash;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)createOccurrenceArraySync;
 - (id)date;
 - (id)description;
+- (id)descriptionInDepth;
 - (id)devicePhoneId;
 - (id)disconnectedCause;
 - (double)duration;
@@ -138,6 +146,7 @@
 - (BOOL)representsCallAtDate:(id)arg1;
 - (void)setAddressBookCallerIDMultiValueId:(id)arg1;
 - (void)setAddressBookRecordId:(id)arg1;
+- (void)setAddressBookRecordRef:(id)arg1;
 - (void)setAnswered:(BOOL)arg1;
 - (void)setBytesOfDataUsed:(id)arg1;
 - (void)setCallOccurrences:(id)arg1;
@@ -145,14 +154,15 @@
 - (void)setCallType:(unsigned int)arg1;
 - (void)setCallerId:(id)arg1;
 - (void)setCallerIdAvailability:(unsigned int)arg1;
+- (void)setCallerIdFormatted:(id)arg1;
 - (void)setCallerIdIsBlocked:(BOOL)arg1;
-- (void)setCallerIdIsFormatted:(BOOL)arg1;
 - (void)setCallerIdLabel:(id)arg1;
 - (void)setCallerIdLocation:(id)arg1;
 - (void)setCallerName:(id)arg1;
 - (void)setCallerNetworkFirstName:(id)arg1;
 - (void)setCallerNetworkName:(id)arg1;
 - (void)setCallerNetworkSecondName:(id)arg1;
+- (void)setClientAddressBookRecordId:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setDevicePhoneId:(id)arg1;
 - (void)setDisconnectedCause:(id)arg1;

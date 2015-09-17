@@ -4,6 +4,7 @@
 
 @interface PagingLandscapeAnalogClockView : AnalogClockView
 
++ (float)antialiasPaddingRatio;
 + (float)faceRadius;
 + (BOOL)shouldCacheImageOnDiskForType:(int)arg1 dayTime:(BOOL)arg2;
 + (int)style;

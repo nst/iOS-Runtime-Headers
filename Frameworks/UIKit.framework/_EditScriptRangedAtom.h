@@ -15,7 +15,7 @@
 
 + (id)atomWithEditRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementText:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })editRange;
 - (id)initWithEditRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementText:(id)arg2;

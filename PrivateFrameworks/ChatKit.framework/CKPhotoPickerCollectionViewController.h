@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKPhotoPickerCollectionViewController : CKViewController <CKPhotoPickerItemForSendingDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
+@interface CKPhotoPickerCollectionViewController : CKViewController <CKPhotoPickerCellDelegate, CKPhotoPickerCollectionViewLayoutDelegate, CKPhotoPickerItemForSendingDelegate, UICollectionViewDataSource, UICollectionViewDelegate> {
     PHFetchResult *_assets;
     UICollectionView *_collectionView;
     CKPhotoPickerCollectionViewLayout *_collectionViewLayout;
+    BOOL _defaultStateSelected;
     <CKPhotoPickerCollectionViewDelegate> *_delegate;
     PHCachingImageManager *_imageManager;
+    NSMutableSet *_irisAssetsToSend;
     int _maxAssetsToDisplay;
     NSMutableDictionary *_selectedFullAssets;
     BOOL _zoomed;
@@ -18,16 +20,21 @@
 @property (nonatomic, retain) UICollectionView *collectionView;
 @property (nonatomic, retain) CKPhotoPickerCollectionViewLayout *collectionViewLayout;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL defaultStateSelected;
 @property (nonatomic) <CKPhotoPickerCollectionViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) PHCachingImageManager *imageManager;
+@property (nonatomic, retain) NSMutableSet *irisAssetsToSend;
 @property (nonatomic) int maxAssetsToDisplay;
 @property (nonatomic, retain) NSMutableDictionary *selectedFullAssets;
 @property (readonly) Class superclass;
 @property (getter=isZoomed, nonatomic) BOOL zoomed;
 
+- (id)_appendedVideoURL:(id)arg1;
+- (id)_assetForIndexPath:(id)arg1 collectionView:(id)arg2;
 - (id)_imageRequestOptions;
+- (void)_loadIrisPlayerItem:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 cell:(id)arg3;
 - (void)_populatePreviewForSendingItem:(id)arg1 withAsset:(id)arg2;
 - (struct CGSize { float x1; float x2; })_targetSizeForAsset:(id)arg1;
 - (id)assets;
@@ -41,26 +48,33 @@
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (id)collectionViewLayout;
 - (void)dealloc;
+- (BOOL)defaultStateSelected;
 - (id)delegate;
 - (id)imageManager;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)irisAssetsToSend;
 - (BOOL)isZoomed;
 - (void)item:(id)arg1 encounteredError:(id)arg2 forAsset:(id)arg3;
 - (void)item:(id)arg1 requiresCloudDownloadForAsset:(id)arg2;
+- (void)layout:(id)arg1 collectionView:(id)arg2 didUpdateVisibleFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 indexPath:(id)arg4;
 - (void)loadView;
 - (int)maxAssetsToDisplay;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
+- (void)photoPickerCellBadgeStateDidChange:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)selectedFullAssets;
 - (void)setAssets:(id)arg1;
 - (void)setCollectionView:(id)arg1;
 - (void)setCollectionViewLayout:(id)arg1;
+- (void)setDefaultStateSelected:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setImageManager:(id)arg1;
+- (void)setIrisAssetsToSend:(id)arg1;
 - (void)setMaxAssetsToDisplay:(int)arg1;
 - (void)setSelectedFullAssets:(id)arg1;
 - (void)setZoomed:(BOOL)arg1;
 - (void)updatePreferredContentSize;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

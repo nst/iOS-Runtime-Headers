@@ -21,6 +21,7 @@
 @property (getter=isFault, nonatomic, readonly) BOOL fault;
 @property (nonatomic, readonly) unsigned int faultingState;
 @property (nonatomic, readonly) BOOL hasChanges;
+@property (nonatomic, readonly) BOOL hasPersistentChangedValues;
 @property (getter=isInserted, nonatomic, readonly) BOOL inserted;
 @property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
 @property (nonatomic, readonly) NSManagedObjectID *objectID;
@@ -186,7 +187,7 @@
 - (id)mutableSetValueForKey:(id)arg1;
 - (id)objectID;
 - (id)objectIDsForRelationshipNamed:(id)arg1;
-- (id)observationInfo;
+- (void*)observationInfo;
 - (void)prepareForDeletion;
 - (id)primitiveValueForKey:(id)arg1;
 - (oneway void)release;
@@ -194,7 +195,7 @@
 - (id)retain;
 - (unsigned int)retainCount;
 - (void)setNilValueForKey:(id)arg1;
-- (void)setObservationInfo:(id)arg1;
+- (void)setObservationInfo:(void*)arg1;
 - (void)setPrimitiveValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
@@ -226,5 +227,9 @@
 // Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
 
 + (BOOL)isTracked;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
+- (id)uri;
 
 @end

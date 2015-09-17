@@ -3,6 +3,7 @@
  */
 
 @interface WDFieldMarker : WDRun {
+    NSData *mData;
     int mFieldPosition;
     unsigned char mFieldType;
     unsigned int mHasSeparator;
@@ -17,7 +18,9 @@
 }
 
 - (void)clearProperties;
+- (id)data;
 - (void)dealloc;
+- (id)description;
 - (int)fieldMarkerType;
 - (int)fieldPosition;
 - (unsigned char)fieldType;
@@ -30,6 +33,7 @@
 - (BOOL)resultDirty;
 - (BOOL)resultEdited;
 - (int)runType;
+- (void)setData:(id)arg1;
 - (void)setFieldMarkerType:(int)arg1;
 - (void)setFieldPosition:(int)arg1;
 - (void)setFieldType:(unsigned char)arg1;

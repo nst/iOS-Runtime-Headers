@@ -62,10 +62,8 @@
 
 + (id)_localeOverridesForLocaleWithIdentifier:(id)arg1;
 + (void)_mapkit_overrideDistanceUnit:(int)arg1;
-+ (void)_mapkit_overrideGuidanceUnit:(int)arg1;
 
 - (BOOL)_mapkit_distanceUsesMetricSystem;
-- (BOOL)_mapkit_guidanceUsesMetricSystem;
 - (id)_mapkit_objectForKey:(id)arg1;
 - (BOOL)_mapkit_useYardsForShortDistances;
 
@@ -88,10 +86,31 @@
 + (id)canonicalLanguageAndScriptCodeIdentifierForIdentifier:(id)arg1;
 + (id)canonicalLocaleIdentifier:(id)arg1 withNewLanguageIdentifier:(id)arg2;
 + (id)canonicalLocaleIdentifierFromComponents:(id)arg1;
++ (id)canonicalLocaleIdentifierWithValidCalendarForComponents:(id)arg1;
 + (id)deviceLanguageIdentifier;
 + (id)deviceLanguageLocale;
++ (void)enableDefaultKeyboardForPreferredLanguages;
++ (id)languageArrayAfterSettingLanguage:(id)arg1 fallback:(id)arg2 toLanguageArray:(id)arg3;
++ (BOOL)localeLanguageMatchesPrimaryLanguage;
++ (void)registerPreferredLanguageForAddedKeyboardLanguage:(id)arg1;
++ (id)renderableLanguagesFromList:(id)arg1;
++ (id)renderableLocaleLanguages;
++ (id)renderableUILanguages;
++ (void)resetTimeFormat;
++ (void)setLanguageToPreferredLanguages:(id)arg1 fallback:(id)arg2;
++ (void)setLocaleAfterLanguageChange:(id)arg1;
++ (void)setLocaleAfterRegionChange:(id)arg1;
++ (void)setLocaleAndResetTimeFormat:(id)arg1;
++ (void)setLocaleOnly:(id)arg1;
++ (BOOL)shouldShowPreferredLanguages;
 + (id)string:(id)arg1 withCapitalizedDisplayNamesForFirstLanguageIdentifier:(id)arg2 secondLanguageIdentifier:(id)arg3 thirdLanguageIdentifier:(id)arg4;
 + (id)supportedCJLanguageIdentifiers;
++ (void)updateShouldShowPreferredLanguages:(BOOL)arg1;
++ (id)validateLocale:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
++ (id)firstPreferredLanguage;
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 

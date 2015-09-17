@@ -4,4 +4,6 @@
 
 @interface FBSceneEventQueue : BSEventQueue
 
+- (void)_noteQueueDidDrain;
+
 @end

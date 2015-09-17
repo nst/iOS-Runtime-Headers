@@ -16,6 +16,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct IKCornerRadii { float x1; float x2; float x3; float x4; })cornerRadiiValue;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsValue;
+- (id)initWithCornerRadii:(struct IKCornerRadii { float x1; float x2; float x3; float x4; })arg1;
 - (id)initWithStyleString:(id)arg1;
 - (id)namedStyle;
 

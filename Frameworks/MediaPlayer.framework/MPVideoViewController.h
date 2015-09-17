@@ -3,7 +3,7 @@
  */
 
 @interface MPVideoViewController : MPViewController <MPSwipableViewDelegate, MPVideoControllerProtocol, UIModalViewDelegate> {
-    UIAlertView *_alertSheet;
+    UIAlertController *_alertController;
     unsigned int _allowsDetailScrubbing;
     unsigned int _allowsTVOutInBackground;
     unsigned int _allowsWirelessPlayback;
@@ -123,7 +123,6 @@
 - (void)_videoView_sizeChangedNotification:(id)arg1;
 - (void)_videoView_timedImageMetadataAvailableNotification:(id)arg1;
 - (void)_videoView_validityChangedNotification:(id)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowsDetailScrubbing;
 - (BOOL)allowsTVOutInBackground;
 - (BOOL)allowsWirelessPlayback;

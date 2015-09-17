@@ -3,16 +3,19 @@
  */
 
 @interface EKEventMapCell : UITableViewCell {
+    EKEventMapDetailItem *_detailItem;
     UIView *_mapView;
 }
 
-@property (retain) UIView *mapView;
+@property (nonatomic) EKEventMapDetailItem *detailItem;
+@property (nonatomic, retain) UIView *mapView;
 
 - (void).cxx_destruct;
 - (void)_drawContentInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selected:(BOOL)arg2;
 - (void)_drawSeparatorInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
+- (id)detailItem;
 - (id)mapView;
+- (void)setDetailItem:(id)arg1;
 - (void)setMapView:(id)arg1;
 
 @end

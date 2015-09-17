@@ -18,7 +18,8 @@
 + (id)instanceWithModelURL:(id)arg1;
 + (int)isDataStoreAtURLInitialized:(id)arg1 withModelAtURL:(id)arg2;
 + (id)mangedObjectWithURI:(id)arg1 inContext:(id)arg2;
-+ (BOOL)migrateDataStoreAtLocation:(id)arg1 withGetDestinationModel:(id /* block */)arg2 isEncrypted:(BOOL)arg3;
++ (int)mapToDBMErrorCode:(id)arg1;
++ (id)migrateDataStoreAtLocation:(id)arg1 withGetDestinationModel:(id /* block */)arg2 isEncrypted:(BOOL)arg3;
 + (BOOL)moveDBAtLocation:(id)arg1 toLocation:(id)arg2 withModelAtLocation:(id)arg3;
 + (BOOL)replacePersistentStore:(id)arg1 withURL:(id)arg2;
 + (void)setPropertyValue:(id)arg1 forKey:(id)arg2 forContext:(id)arg3;

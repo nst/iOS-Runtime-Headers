@@ -19,7 +19,6 @@
 
 + (struct _xmlNs { struct _xmlNs {} *x1; int x2; char *x3; char *x4; void *x5; struct _xmlDoc {} *x6; }*)appNamespace;
 
-- (id).cxx_construct;
 - (struct __CFString { }*)createFixedPathForOldAppBundleResourcePath:(struct __CFString { }*)arg1;
 - (struct __CFArray { }*)createUpgradedPathComponentsFromOldTemplatePathComponents:(struct __CFArray { }*)arg1;
 - (struct __CFString { }*)createUpgradedPathForOldAssetPath:(struct __CFString { }*)arg1;

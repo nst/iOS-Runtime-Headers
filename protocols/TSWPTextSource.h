@@ -5,7 +5,7 @@
 
 @required
 
-- (BOOL)adjustRangesByDelta:(int)arg1;
+- (BOOL)adjustRangesByDelta:(int)arg1 startingAt:(unsigned int)arg2;
 - (TSWPAttachment *)attachmentAtCharIndex:(unsigned int)arg1;
 - (TSWPAttachment *)attachmentOrFootnoteAtCharIndex:(unsigned int)arg1;
 - (void)attributesAtCharIndex:(void *)arg1 attributesOfInterest:(void *)arg2 attributesTable:(void *)arg3 effectiveRange:(void *)arg4; // needs 4 arg types, found 3: unsigned int, BOOL, /* Warning: unhandled array encoding: '[19@]16^{_NSRange=II}20' */ id

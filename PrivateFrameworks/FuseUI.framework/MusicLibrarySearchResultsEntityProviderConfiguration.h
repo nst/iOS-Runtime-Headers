@@ -19,6 +19,7 @@
 - (id)_collectionViewDescriptorForEntityViewDescriptor:(id)arg1;
 - (id)collectionViewDescriptorForSection:(unsigned int)arg1 traitCollection:(id)arg2;
 - (id)entityProvider;
+- (void)handleCommitPreviewViewController:(id)arg1 fromViewController:(id)arg2;
 - (id)initWithLibraryViewConfigurations:(id)arg1;
 - (id)loadEntityViewDescriptor;
 

@@ -15,7 +15,7 @@
 + (id)deferredInvalidationUpdatesWithEntries:(id)arg1;
 + (id)deferredUpdatesWithEntries:(id)arg1 specifierUpdates:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithSearchEntries:(id)arg1 specifierUpdates:(id)arg2 invalidatedSpecifiers:(BOOL)arg3;
 - (BOOL)invalidatedSpecifiers;
 - (id)searchEntries;

@@ -9,7 +9,6 @@
     float _autoCompletionTextViewHeight;
     UIView *_bottomSeparator;
     NSMutableArray *_constraints;
-    int _currentVerticalSizeClass;
     NSMutableDictionary *_intrinsicSizes;
     float _previewTopMargin;
     UIView *_previewView;
@@ -41,10 +40,10 @@
 - (id)previewView;
 - (void)resetPreview;
 - (void)setAccessoryView:(id)arg1;
-- (void)setCurrentVerticalSizeClass:(int)arg1;
 - (void)setIntrinsicSize:(struct CGSize { float x1; float x2; })arg1 forVerticalSizeClass:(int)arg2;
 - (void)setPreviewView:(id)arg1;
 - (id)textView;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateConstraints;
 - (void)updatePreviewMargin;
 - (void)updateTextViewMargin;

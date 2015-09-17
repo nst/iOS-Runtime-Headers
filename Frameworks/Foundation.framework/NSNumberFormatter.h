@@ -2,9 +2,10 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSNumberFormatter : NSFormatter {
+@interface NSNumberFormatter : NSFormatter <NSObservable, NSObserver> {
     NSMutableDictionary *_attributes;
     unsigned int _behavior;
+    int _cacheGeneration;
     unsigned int _counter;
     struct __CFNumberFormatter { } *_formatter;
     NSRecursiveLock *_lock;
@@ -18,7 +19,9 @@
 @property (copy) NSString *currencyDecimalSeparator;
 @property (copy) NSString *currencyGroupingSeparator;
 @property (copy) NSString *currencySymbol;
+@property (readonly, copy) NSString *debugDescription;
 @property (copy) NSString *decimalSeparator;
+@property (readonly, copy) NSString *description;
 @property (copy) NSString *exponentSymbol;
 @property unsigned int formatWidth;
 @property unsigned int formatterBehavior;
@@ -26,6 +29,7 @@
 @property BOOL generatesDecimalNumbers;
 @property (copy) NSString *groupingSeparator;
 @property unsigned int groupingSize;
+@property (readonly) unsigned int hash;
 @property (copy) NSString *internationalCurrencySymbol;
 @property (getter=isLenient) BOOL lenient;
 @property (copy) NSLocale *locale;
@@ -59,6 +63,7 @@
 @property (copy) NSNumber *roundingIncrement;
 @property unsigned int roundingMode;
 @property unsigned int secondaryGroupingSize;
+@property (readonly) Class superclass;
 @property (copy) NSDictionary *textAttributesForNegativeInfinity;
 @property (copy) NSDictionary *textAttributesForNegativeValues;
 @property (copy) NSDictionary *textAttributesForNil;
@@ -78,13 +83,17 @@
 + (void)setDefaultFormatterBehavior:(unsigned int)arg1;
 
 - (void*)__Keynote_NOOP;
+- (int)_cacheGenerationCount;
 - (void)_clearFormatter;
 - (BOOL)_hasSetCurrencyCode;
 - (BOOL)_hasSetCurrencySymbol;
 - (BOOL)_hasSetInternationalCurrencySymbol;
+- (void)_invalidateCache;
+- (BOOL)_mayDecorateAttributedStringForObjectValue:(id)arg1;
 - (void)_regenerateFormatter;
 - (void)_reset;
 - (void)_setUsesCharacterDirection:(BOOL)arg1;
+- (BOOL)_tracksCacheGenerationCount;
 - (BOOL)_usesCharacterDirection;
 - (BOOL)allowsFloats;
 - (BOOL)alwaysShowsDecimalSeparator;
@@ -144,6 +153,7 @@
 - (id)positiveInfinitySymbol;
 - (id)positivePrefix;
 - (id)positiveSuffix;
+- (void)receiveObservedValue:(id)arg1;
 - (void)resetCheckLocaleChange;
 - (void)resetCheckModify;
 - (id)roundingIncrement;
@@ -227,42 +237,54 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
-+ (id)FU_adaptiveLocalizedDistanceStringWithDistance:(double)arg1 unitStyle:(int)arg2 usedUnit:(int*)arg3;
++ (id)FU_adaptiveLocalizedDistanceStringWithDistance:(double)arg1 distanceType:(int)arg2 unitStyle:(int)arg3 usedUnit:(int*)arg4;
++ (double)FU_caloriesForEnergyBurnedInUserUnit:(double)arg1;
 + (id)FU_decimalSeparator;
 + (double)FU_distanceInDistanceUnit:(int)arg1 forDistanceInMeters:(double)arg2;
-+ (double)FU_distanceInMetersForDistanceInUserUnit:(double)arg1;
-+ (double)FU_distanceInUserDistanceUnitForDistanceInMeters:(double)arg1;
-+ (int)FU_lengthUnitForCurrentLocale;
++ (double)FU_distanceInMetersForDistanceInUserUnit:(double)arg1 distanceType:(int)arg2;
++ (double)FU_distanceInUserDistanceUnitForDistanceInMeters:(double)arg1 distanceType:(int)arg2;
++ (double)FU_energyBurnedInUserUnitForCalories:(double)arg1;
 + (BOOL)FU_localeUsesMetricForPersonHeight;
-+ (id)FU_localizedDisplayStringForDistanceUnit:(int)arg1;
++ (id)FU_localizedLongActiveEnergyUnitString;
++ (id)FU_localizedLongActiveEnergyUnitStringCapitalized:(BOOL)arg1;
++ (id)FU_localizedPaceStringForDuration:(double)arg1 distance:(id)arg2 useCyclingFormat:(BOOL)arg3;
++ (id)FU_localizedShortActiveEnergyUnitString;
 + (id)FU_localizedShortUnitStringWithDistanceUnit:(int)arg1;
++ (id)FU_localizedShortUnitStringWithDistanceUnit:(int)arg1 uppercase:(BOOL)arg2;
 + (id)FU_localizedSpeedUnit;
 + (id)FU_localizedSpeedValueForDistance:(id)arg1 overTime:(double)arg2;
-+ (id)FU_localizedStringWithCalories:(double)arg1 unitStyle:(int)arg2;
-+ (id)FU_localizedStringWithDistance:(double)arg1 distanceUnit:(int)arg2 unitStyle:(int)arg3 withDecimalPrecision:(int)arg4;
-+ (id)FU_localizedStringWithDistance:(double)arg1 unitStyle:(int)arg2;
++ (id)FU_localizedStringForPaceAsTimeInterval:(double)arg1 gateInvalidPaceValues:(BOOL)arg2;
++ (id)FU_localizedStringWithActiveEnergy:(id)arg1;
++ (id)FU_localizedStringWithActiveEnergy:(id)arg1 unitStyle:(int)arg2;
++ (id)FU_localizedStringWithDistance:(double)arg1 distanceType:(int)arg2 unitStyle:(int)arg3;
++ (id)FU_localizedStringWithDistance:(double)arg1 distanceUnit:(int)arg2 unitStyle:(int)arg3 decimalPrecision:(int)arg4;
++ (id)FU_localizedStringWithEnergy:(id)arg1 energyType:(int)arg2 unitStyle:(int)arg3;
++ (id)FU_localizedStringWithEnergyInCalories:(double)arg1 energyType:(int)arg2 unitStyle:(int)arg3;
 + (id)FU_percentStringWithNumber:(id)arg1;
-+ (void)FU_setUserDistanceUnit:(int)arg1;
++ (double)FU_roundCaloriesForDailyGoal:(double)arg1;
 + (id)FU_stringForHeight:(long)arg1 withUnitString:(id)arg2;
 + (id)FU_stringForHeightInInches:(long)arg1;
 + (id)FU_stringWithNumber:(id)arg1 decimalPrecision:(int)arg2;
 + (id)FU_stringWithTimeInterval:(double)arg1 formatType:(unsigned int)arg2;
-+ (int)FU_userDistanceUnit;
 + (id)_FU_doubleFractionNumberFormatter;
++ (id)_FU_energyFormatter;
 + (id)_FU_integerNumberFormatter;
 + (id)_FU_integerPercentNumberFormatter;
++ (id)_FU_lengthFormatterWithDecimalPrecision:(int)arg1 unitStyle:(int)arg2;
 + (id)_FU_singleFractionNumberFormatter;
 + (id)_FU_zeroPaddedIntegerNumberFormatter;
-+ (int)_defaultPrecisionForDistanceUnit:(int)arg1;
-+ (id)_formatDoubleValue:(double)arg1 withFormatString:(id)arg2 withDecimalPrecision:(int)arg3;
-+ (id)_longStyleStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 withDecimalPrecision:(int)arg3;
-+ (id)_longStyleTitleStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 withDecimalPrecision:(int)arg3;
-+ (id)_shortStyleStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 withDecimalPrecision:(int)arg3;
++ (id)_durationSeperator;
++ (id)_energyBurnedUnitStringForUnit:(id)arg1 useShortString:(BOOL)arg2;
++ (id)_localizedStringWithDistanceUnit:(int)arg1 distanceInDistanceUnit:(double)arg2 unitStyle:(int)arg3 withDecimalPrecision:(int)arg4;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)gkRankFormatter;
 + (id)gk_formatInteger:(int)arg1 withGrouping:(BOOL)arg2;
 + (id)gk_formatUnsignedInteger:(unsigned int)arg1 withGrouping:(BOOL)arg2;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
++ (id)localizedSiriUIStringFromNumber:(id)arg1;
 
 @end

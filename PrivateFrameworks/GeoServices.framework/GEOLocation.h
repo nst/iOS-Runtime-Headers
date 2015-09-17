@@ -14,8 +14,10 @@
         unsigned int speed : 1; 
         unsigned int speedAccuracy : 1; 
         unsigned int timestamp : 1; 
+        unsigned int transitID : 1; 
         unsigned int verticalAccuracy : 1; 
         unsigned int altitude : 1; 
+        unsigned int referenceFrame : 1; 
         unsigned int type : 1; 
         unsigned int isMatchedLocation : 1; 
         unsigned int isShifted : 1; 
@@ -25,9 +27,11 @@
     BOOL _isMatchedLocation;
     BOOL _isShifted;
     GEOLatLng *_latLng;
+    int _referenceFrame;
     double _speed;
     double _speedAccuracy;
     double _timestamp;
+    unsigned long long _transitID;
     int _type;
     double _verticalAccuracy;
 }
@@ -44,9 +48,11 @@
 @property (nonatomic) BOOL hasHorizontalAccuracy;
 @property (nonatomic) BOOL hasIsMatchedLocation;
 @property (nonatomic) BOOL hasIsShifted;
+@property (nonatomic) BOOL hasReferenceFrame;
 @property (nonatomic) BOOL hasSpeed;
 @property (nonatomic) BOOL hasSpeedAccuracy;
 @property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) BOOL hasTransitID;
 @property (nonatomic) BOOL hasType;
 @property (nonatomic) BOOL hasVerticalAccuracy;
 @property (nonatomic) double heading;
@@ -54,9 +60,11 @@
 @property (nonatomic) BOOL isMatchedLocation;
 @property (nonatomic) BOOL isShifted;
 @property (nonatomic, retain) GEOLatLng *latLng;
+@property (nonatomic) int referenceFrame;
 @property (nonatomic) double speed;
 @property (nonatomic) double speedAccuracy;
 @property (nonatomic) double timestamp;
+@property (nonatomic) unsigned long long transitID;
 @property (nonatomic) int type;
 @property (nonatomic) double verticalAccuracy;
 
@@ -79,9 +87,11 @@
 - (BOOL)hasHorizontalAccuracy;
 - (BOOL)hasIsMatchedLocation;
 - (BOOL)hasIsShifted;
+- (BOOL)hasReferenceFrame;
 - (BOOL)hasSpeed;
 - (BOOL)hasSpeedAccuracy;
 - (BOOL)hasTimestamp;
+- (BOOL)hasTransitID;
 - (BOOL)hasType;
 - (BOOL)hasVerticalAccuracy;
 - (unsigned int)hash;
@@ -96,6 +106,7 @@
 - (id)latLng;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (int)referenceFrame;
 - (void)setAltitude:(int)arg1;
 - (void)setCourse:(double)arg1;
 - (void)setCourseAccuracy:(double)arg1;
@@ -106,9 +117,11 @@
 - (void)setHasHorizontalAccuracy:(BOOL)arg1;
 - (void)setHasIsMatchedLocation:(BOOL)arg1;
 - (void)setHasIsShifted:(BOOL)arg1;
+- (void)setHasReferenceFrame:(BOOL)arg1;
 - (void)setHasSpeed:(BOOL)arg1;
 - (void)setHasSpeedAccuracy:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
+- (void)setHasTransitID:(BOOL)arg1;
 - (void)setHasType:(BOOL)arg1;
 - (void)setHasVerticalAccuracy:(BOOL)arg1;
 - (void)setHeading:(double)arg1;
@@ -116,21 +129,24 @@
 - (void)setIsMatchedLocation:(BOOL)arg1;
 - (void)setIsShifted:(BOOL)arg1;
 - (void)setLatLng:(id)arg1;
+- (void)setReferenceFrame:(int)arg1;
 - (void)setSpeed:(double)arg1;
 - (void)setSpeedAccuracy:(double)arg1;
 - (void)setTimestamp:(double)arg1;
+- (void)setTransitID:(unsigned long long)arg1;
 - (void)setType:(int)arg1;
 - (void)setVerticalAccuracy:(double)arg1;
 - (double)speed;
 - (double)speedAccuracy;
 - (double)timestamp;
+- (unsigned long long)transitID;
 - (int)type;
 - (double)verticalAccuracy;
 - (void)writeTo:(id)arg1;
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
-- (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; }*)arg1;
+- (id)_initWithCLClientLocation:(const struct { int x1; struct { double x_2_1_1; double x_2_1_2; } x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; int x11; double x12; int x13; struct { double x_14_1_1; double x_14_1_2; } x14; double x15; int x16; unsigned int x17; int x18; }*)arg1;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
@@ -139,9 +155,5 @@
 - (id)initWithCLLocation:(id)arg1;
 - (id)initWithCLLocation:(id)arg1 course:(double)arg2;
 - (id)initWithCLLocation:(id)arg1 useMatchInfo:(BOOL)arg2;
-
-// Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
-
-- (id)initWithCoreLocation:(id)arg1;
 
 @end

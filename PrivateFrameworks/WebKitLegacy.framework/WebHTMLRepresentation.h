@@ -13,6 +13,7 @@
 
 + (id)supportedImageMIMETypes;
 + (id)supportedMIMETypes;
++ (id)supportedMediaMIMETypes;
 + (id)supportedNonImageMIMETypes;
 + (id)unsupportedTextMIMETypes;
 

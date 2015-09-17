@@ -66,6 +66,7 @@
     QueryCriteriaResultsCache *_itemsForCriteriaCache;
     int _libraryChangeObservers;
     <MPMediaLibraryDataProviderPrivate> *_libraryDataProvider;
+    NSArray *_notificationObservers;
     unsigned char _originalCellNetworkFlags;
     unsigned char _originalWiFiNetworkFlags;
     int _removalReason;
@@ -83,6 +84,7 @@
 + (id)_mediaLibraries;
 + (void)addLibraryDataProvider:(id)arg1;
 + (void)beginDiscoveringMediaLibraries;
++ (BOOL)companionDeviceActiveStoreAccountIsSubscriber;
 + (id)defaultMediaLibrary;
 + (id)deviceMediaLibrary;
 + (void)endDiscoveringMediaLibraries;
@@ -130,8 +132,10 @@
 - (void)_reloadLibraryForRestrictionsChange;
 - (void)_removeConnectionAssertion:(id)arg1;
 - (void)_scheduleLibraryChangeNotificationPostingBlock:(id /* block */)arg1;
+- (void)_setupNotifications;
 - (void)_stopConnectionProgressDisplayLink;
 - (id)_syncValidity;
+- (void)_tearDownNotifications;
 - (void)addAdvertisementItemWithDictionary:(id)arg1 completion:(id /* block */)arg2;
 - (void)addGlobalPlaylistWithID:(id)arg1 andAddToCloudLibrary:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)addLibraryFilterPredicate:(id)arg1;
@@ -153,7 +157,6 @@
 - (BOOL)collectionExistsWithStoreID:(long long)arg1 groupingType:(int)arg2 existentPID:(unsigned long long*)arg3;
 - (id)collectionWithPersistentID:(unsigned long long)arg1 groupingType:(int)arg2;
 - (id)collectionWithPersistentID:(unsigned long long)arg1 groupingType:(int)arg2 verifyExistence:(BOOL)arg3;
-- (BOOL)companionDeviceActiveStoreAccountIsDynamiteEligible;
 - (id)completeMyCollectionArtworkDataSource;
 - (void)connectWithAuthenticationData:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)connectWithCompletionHandler:(id /* block */)arg1;
@@ -162,6 +165,7 @@
 - (unsigned long long)currentEntityRevision;
 - (id)databasePath;
 - (void)dealloc;
+- (id)decodeItemWithCoder:(id)arg1;
 - (BOOL)deleteItems:(id)arg1;
 - (id)description;
 - (void)disconnect;
@@ -169,7 +173,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)endGeneratingLibraryChangeNotifications;
 - (id)entityCache;
+- (id)entityWithLibraryURL:(id)arg1;
 - (id)entityWithMultiverseIdentifier:(id)arg1;
+- (id)entityWithSpotlightIdentifier:(id)arg1;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(int)arg2 inUsersLibrary:(BOOL)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(int)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id /* block */)arg2;

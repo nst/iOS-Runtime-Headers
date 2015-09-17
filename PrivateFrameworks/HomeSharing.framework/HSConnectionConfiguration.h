@@ -15,7 +15,7 @@
 @property (nonatomic, retain) SSAccount *account;
 @property (nonatomic, copy) NSURL *baseURL;
 @property (nonatomic, copy) NSString *buildIdentifier;
-@property (nonatomic, retain) NSNumber *familyMemberStoreID;
+@property (nonatomic, copy) NSNumber *familyMemberStoreID;
 @property (nonatomic, copy) NSString *libraryBagKey;
 @property (nonatomic, copy) NSString *purchaseClientIdentifier;
 @property (nonatomic) long long requestReason;

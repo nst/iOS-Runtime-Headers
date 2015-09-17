@@ -13,7 +13,7 @@
 - (void).cxx_destruct;
 - (id)completionCallbacks;
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;
-- (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
+- (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(id /* block */)arg3;
 - (id)init;
 - (id)progressCallbacks;
 - (void)registerCompletionCallback:(id /* block */)arg1 forOperation:(id)arg2;

@@ -60,6 +60,7 @@
 @property (getter=_toView, setter=_setToView:, nonatomic, retain) UIView *toView;
 @property (setter=_setToViewController:, nonatomic, retain) UIViewController *toViewController;
 
+- (void).cxx_destruct;
 - (id)_fromView;
 - (void)_setFromEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_setFromStartFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -3,16 +3,17 @@
  */
 
 @interface VMUObjectIdentifier : NSObject {
-    VMUClassInfoMap *_cfTypeIDtoClassInfo;
+    unsigned int _cfClassCount;
     unsigned long _coreFoundationCFTypeIsa;
     unsigned long _foundationCFTypeIsa;
-    VMUClassInfoMap *_isaToClassInfo;
     NSMapTable *_isaToObjectLabelHandlerMap;
     id /* block */ _isaTranslator;
     NSMapTable *_itemCountToLabelStringUniquingMap;
     id /* block */ _memoryReader;
     unsigned int *_nonPointerIndexMapping;
+    NSMutableDictionary *_nonobjectClassInfosDict;
     NSHashTable *_objcRuntimeMallocBlocksHash;
+    VMUClassInfoMap *_realizedIsaToClassInfo;
     void *_remoteObjectBuffer;
     unsigned long _remoteObjectBufferSize;
     struct VMULabelUniquingDataForStringType { id x1; } *_stringToLabelStringUniquingData;
@@ -27,9 +28,12 @@
     VMUClassInfoMap *_unrealizedClassInfos;
 }
 
+@property (nonatomic, readonly) VMUClassInfoMap *realizedClasses;
+
 - (unsigned int)CFTypeCount;
 - (unsigned int)ObjCclassCount;
 - (unsigned int)SwiftClassCount;
+- (id)_classInfoWithNonobjectType:(id)arg1 binaryPath:(id)arg2;
 - (id)_faultClass:(unsigned long long)arg1 ofType:(int)arg2;
 - (void)buildIsaToObjectLabelHandlerMap;
 - (id)classInfoForCFType:(struct __CFRuntimeBase { unsigned int x1; unsigned char x2[4]; }*)arg1;
@@ -68,10 +72,12 @@
 - (id)labelForNSString:(id)arg1;
 - (id)labelForNSString:(id)arg1 mappedSize:(unsigned int)arg2 remoteAddress:(unsigned int)arg3 printDetail:(BOOL)arg4;
 - (id)labelForNSURL:(id)arg1;
+- (id)labelForOSTransaction:(id)arg1;
 - (id)nullClassInfo;
 - (id)objcRuntimeMallocBlocksHash;
 - (id)objectLabelHandlerForRemoteIsa:(unsigned int)arg1;
 - (id)osMajorMinorVersionString;
+- (id)realizedClasses;
 - (id)uniquifyStringLabel:(id)arg1 stringType:(int)arg2 printDetail:(BOOL)arg3;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })vmRegionRangeForAddress:(unsigned long long)arg1;
 

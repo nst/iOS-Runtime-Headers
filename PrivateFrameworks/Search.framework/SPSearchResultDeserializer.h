@@ -7,10 +7,18 @@
     BOOL _munmapAtDealloc;
 }
 
+@property unsigned int byteVector;
+@property BOOL munmapAtDealloc;
+
+- (unsigned int)byteVector;
 - (void)dealloc;
+- (BOOL)deserializeNextDomain:(unsigned int*)arg1;
 - (BOOL)deserializeNextSection:(id*)arg1;
 - (id)initWithMallocRegion:(unsigned int)arg1 length:(unsigned long)arg2;
 - (id)initWithMappedRegion:(unsigned int)arg1 length:(unsigned long)arg2;
 - (id)initWithSerializer:(id)arg1;
+- (BOOL)munmapAtDealloc;
+- (void)setByteVector:(unsigned int)arg1;
+- (void)setMunmapAtDealloc:(BOOL)arg1;
 
 @end

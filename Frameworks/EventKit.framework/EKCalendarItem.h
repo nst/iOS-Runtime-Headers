@@ -3,14 +3,14 @@
  */
 
 @interface EKCalendarItem : EKObject {
-    int _actionsStateCachedValue;
+    unsigned int _actionsStateCachedValue;
     BOOL _haveCachedActionsState;
 }
 
 @property (nonatomic, copy) NSURL *URL;
 @property (nonatomic, readonly) NSString *UUID;
 @property (nonatomic, copy) NSURL *action;
-@property (nonatomic, readonly) int actionsState;
+@property (nonatomic, readonly) unsigned int actionsState;
 @property (nonatomic, copy) NSArray *alarms;
 @property (nonatomic, copy) NSArray *allAlarms;
 @property (getter=isAllDay, nonatomic) BOOL allDay;
@@ -18,12 +18,14 @@
 @property (nonatomic, readonly) BOOL allowsAttendeeModifications;
 @property (nonatomic, readonly) BOOL allowsCalendarModifications;
 @property (nonatomic, readonly) BOOL allowsRecurrenceModifications;
+@property (nonatomic, retain) NSUserActivity *appLink;
 @property (nonatomic, readonly) NSArray *attachments;
 @property (nonatomic, readonly) NSArray *attendees;
 @property (nonatomic, retain) EKCalendar *calendar;
 @property (nonatomic, readonly) NSString *calendarItemExternalIdentifier;
 @property (nonatomic, readonly) NSString *calendarItemIdentifier;
 @property (nonatomic) NSString *calendarScale;
+@property (nonatomic, copy) EKStructuredLocation *clientLocation;
 @property (nonatomic, readonly) NSDate *creationDate;
 @property (getter=isDefaultAlarmRemoved, nonatomic) BOOL defaultAlarmRemoved;
 @property (nonatomic, copy) NSTimeZone *endTimeZone;
@@ -45,7 +47,8 @@
 @property (nonatomic, copy) NSString *notes;
 @property (nonatomic, retain) EKOrganizer *organizer;
 @property (nonatomic, readonly, retain) EKCalendarItem *originalItem;
-@property (nonatomic) int priority;
+@property (nonatomic, readonly) EKStructuredLocation *preferredLocation;
+@property (nonatomic) unsigned int priority;
 @property (nonatomic, copy) NSArray *recurrenceRules;
 @property (nonatomic, readonly) BOOL requiresDetach;
 @property (nonatomic, retain) EKAttendee *selfAttendee;
@@ -73,6 +76,8 @@
 - (id)_alarmsRelation;
 - (id)_attachmentsRelation;
 - (id)_attendeesRelation;
+- (id)_clientLocationRelation;
+- (BOOL)_excludeAlarmDueToConnectionTrigger:(id)arg1;
 - (id)_locationRelation;
 - (void)_moveToCalendarInternal:(id)arg1;
 - (id)_organizerRelation;
@@ -81,7 +86,7 @@
 - (id)_selfAttendeeRelation;
 - (id)_startLocationRelation;
 - (id)action;
-- (int)actionsState;
+- (unsigned int)actionsState;
 - (void)addAlarm:(id)arg1;
 - (void)addAttendee:(id)arg1;
 - (void)addRecurrenceRule:(id)arg1;
@@ -91,6 +96,8 @@
 - (BOOL)allowsAttendeeModifications;
 - (BOOL)allowsCalendarModifications;
 - (BOOL)allowsRecurrenceModifications;
+- (BOOL)allowsSpansOtherThanThisEvent;
+- (id)appLink;
 - (id)attachments;
 - (id)attendees;
 - (id)calendar;
@@ -98,6 +105,7 @@
 - (id)calendarItemIdentifier;
 - (id)calendarScale;
 - (BOOL)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id*)arg3;
+- (id)clientLocation;
 - (id)creationDate;
 - (id)description;
 - (id)endTimeZone;
@@ -125,7 +133,8 @@
 - (id)notes;
 - (id)organizer;
 - (id)originalItem;
-- (int)priority;
+- (id)preferredLocation;
+- (unsigned int)priority;
 - (BOOL)rebase;
 - (id)recurrenceRules;
 - (void)removeAcknowledgedSnoozedAlarms;
@@ -136,13 +145,16 @@
 - (BOOL)requiresDetach;
 - (id)selfAttendee;
 - (int)selfParticipantStatus;
+- (int)sequenceNumber;
 - (void)setAction:(id)arg1;
 - (void)setAlarms:(id)arg1;
 - (void)setAllAlarms:(id)arg1;
 - (void)setAllDay:(BOOL)arg1;
+- (void)setAppLink:(id)arg1;
 - (void)setAttendees:(id)arg1;
 - (void)setCalendar:(id)arg1;
 - (void)setCalendarScale:(id)arg1;
+- (void)setClientLocation:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setDefaultAlarmRemoved:(BOOL)arg1;
 - (void)setEndTimeZone:(id)arg1;
@@ -152,7 +164,7 @@
 - (void)setLocation:(id)arg1;
 - (void)setNotes:(id)arg1;
 - (void)setOrganizer:(id)arg1;
-- (void)setPriority:(int)arg1;
+- (void)setPriority:(unsigned int)arg1;
 - (void)setRecurrenceRules:(id)arg1;
 - (void)setSharedItemCreatedByAddress:(id)arg1;
 - (void)setSharedItemCreatedByDisplayName:(id)arg1;
@@ -190,10 +202,12 @@
 - (id)startLocation;
 - (id)startTimeZone;
 - (id)structuredLocation;
+- (id)suggestionInfo;
 - (id)timeZone;
 - (id)title;
 - (void)updatePersistentObject;
 - (void)updatePersistentObjectSkippingProperties:(id)arg1;
+- (void)updateWithAppLink:(id)arg1 usedSelectedText:(BOOL*)arg2;
 - (BOOL)validate:(id*)arg1;
 
 @end

@@ -10,6 +10,7 @@
 - (<NACVolumeControllerDelegate> *)delegate;
 - (void)endObservingVolume;
 - (float)hapticIntensity;
+- (id)init;
 - (id)initWithAudioCategory:(NSString *)arg1;
 - (BOOL)isMuted;
 - (BOOL)isSystemMuted;

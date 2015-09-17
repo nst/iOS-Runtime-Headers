@@ -29,6 +29,7 @@
 + (void)main;
 
 - (void).cxx_destruct;
+- (BOOL)_processDefaultSubsystemName:(id)arg1;
 - (id)_sync;
 - (void)checkEnvironment:(id)arg1;
 - (id)configuredSubsystemList;

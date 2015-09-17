@@ -23,6 +23,7 @@
 - (void).cxx_destruct;
 - (id)delegate;
 - (id)initWithPhotoSetManager:(id)arg1;
+- (void)loadView;
 - (id)manager;
 - (long long)photoSetID;
 - (id)photoSetTitle;

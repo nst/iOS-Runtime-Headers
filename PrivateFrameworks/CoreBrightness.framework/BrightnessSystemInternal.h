@@ -3,6 +3,7 @@
  */
 
 @interface BrightnessSystemInternal : NSThread <NSXPCListenerDelegate> {
+    NSRunLoop *_NS_rl;
     id /* block */ _callback;
     NSMutableDictionary *_clients;
     NSMutableDictionary *_clientsProps;
@@ -19,17 +20,19 @@
 
 - (void)clientConnectedWithExpObj:(id)arg1;
 - (void)clientDisconnectedWithExpObj:(id)arg1;
-- (id)copyPropertyForKey:(id)arg1;
+- (id)copyPropertyForKey:(id)arg1 client:(id)arg2;
 - (void)dealloc;
 - (void)destroyServer;
 - (id)init;
+- (void)initializationCompleted;
 - (BOOL)isAlsSupported;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)main;
 - (void)notifyClientsForProperty:(id)arg1 key:(id)arg2;
 - (void)registerNotificationBlock:(id /* block */)arg1;
 - (void)runXPCServer;
-- (BOOL)setProperty:(id)arg1 forKey:(id)arg2;
+- (BOOL)setProperty:(id)arg1 forKey:(id)arg2 client:(id)arg3;
+- (void)stopRL;
 - (void)timerFire:(id)arg1;
 
 @end

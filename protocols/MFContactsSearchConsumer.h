@@ -3,11 +3,15 @@
 
 @protocol MFContactsSearchConsumer <NSObject>
 
-@required
+@optional
 
 - (void)beganNetworkActivity;
+- (void)consumeAutocompleteSearchResults:(NSArray *)arg1 taskID:(NSNumber *)arg2;
+- (void)consumeCorecipientSearchResults:(NSArray *)arg1 taskID:(NSNumber *)arg2;
 - (void)consumeSearchResults:(NSArray *)arg1 type:(unsigned int)arg2 taskID:(NSNumber *)arg3;
 - (void)endedNetworkActivity;
+- (void)finishedSearchingForAutocompleteResults;
+- (void)finishedSearchingForCorecipients;
 - (void)finishedSearchingForType:(unsigned int)arg1;
 - (void)finishedTaskWithID:(NSNumber *)arg1;
 

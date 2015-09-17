@@ -3,12 +3,15 @@
  */
 
 @interface _MFMailCompositionContext : NSObject {
+    NSString *_attachmentToMarkupContentID;
     id _autosaveIdentifier;
     NSArray *_bccRecipients;
+    MFComposeBodyField *_bodyField;
     unsigned int _caretPosition;
     NSArray *_ccRecipients;
     int _composeType;
     NSString *_contextID;
+    NSMutableArray *_deferredAttachments;
     BOOL _includeAttachments;
     BOOL _loadRest;
     MFMessageViewingContext *_loadingContext;
@@ -17,6 +20,7 @@
     MFMailMessage *_originalMessage;
     NSString *_originatingBundleID;
     BOOL _prefersFirstLineSelection;
+    BOOL _registeredForDraw;
     NSString *_sendingAddress;
     BOOL _showContentImmediately;
     BOOL _showKeyboardImmediately;
@@ -26,8 +30,10 @@
     BOOL _usingDefaultAccount;
 }
 
+@property (nonatomic, retain) NSString *attachmentToMarkupContentID;
 @property (nonatomic, readonly) id autosaveIdentifier;
 @property (nonatomic, copy) NSArray *bccRecipients;
+@property MFComposeBodyField *bodyField;
 @property (nonatomic) unsigned int caretPosition;
 @property (nonatomic, copy) NSArray *ccRecipients;
 @property (nonatomic, readonly) int composeType;
@@ -47,13 +53,19 @@
 @property (nonatomic, copy) NSArray *toRecipients;
 @property (nonatomic) BOOL usingDefaultAccount;
 
+- (void)_contextRegisterForDrawNotification;
+- (void)_contextUnregisterForDrawNotification;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3 contentID:(id)arg4;
+- (id)attachmentToMarkupContentID;
 - (id)attachments;
 - (id)autosaveIdentifier;
 - (id)bccRecipients;
+- (id)bodyField;
 - (unsigned int)caretPosition;
 - (id)ccRecipients;
 - (int)composeType;
+- (void)contextDidDraw:(id)arg1;
 - (id)contextID;
 - (void)dealloc;
 - (BOOL)includeAttachments;
@@ -70,6 +82,9 @@
 - (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3;
+- (void)insertAttachmentWithData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3;
+- (void)insertAttachmentWithData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
+- (void)insertAttachmentWithURL:(id)arg1;
 - (BOOL)loadRest;
 - (id)loadingContext;
 - (id)messageBody;
@@ -81,7 +96,9 @@
 - (void)recordUndoAttachmentsForURLs:(id)arg1;
 - (void)removeAttachment:(id)arg1;
 - (id)sendingAddress;
+- (void)setAttachmentToMarkupContentID:(id)arg1;
 - (void)setBccRecipients:(id)arg1;
+- (void)setBodyField:(id)arg1;
 - (void)setCaretPosition:(unsigned int)arg1;
 - (void)setCcRecipients:(id)arg1;
 - (void)setIncludeAttachments:(BOOL)arg1;

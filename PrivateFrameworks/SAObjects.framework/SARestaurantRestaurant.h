@@ -5,32 +5,25 @@
 @interface SARestaurantRestaurant : SALocalSearchBusiness2
 
 @property (nonatomic, copy) NSArray *attributeSet;
-@property (nonatomic, copy) NSString *currencySymbol;
 @property (nonatomic, copy) NSArray *makeReservationPunchOuts;
 @property (nonatomic, copy) NSURL *menuLink;
 @property (nonatomic, copy) NSArray *openings;
 @property (nonatomic, copy) NSArray *orderDeliveryPunchOuts;
-@property (nonatomic, copy) NSString *priceRange;
 
 + (id)restaurant;
 + (id)restaurantWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)attributeSet;
-- (id)currencySymbol;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)makeReservationPunchOuts;
 - (id)menuLink;
 - (id)openings;
 - (id)orderDeliveryPunchOuts;
-- (id)priceRange;
 - (void)setAttributeSet:(id)arg1;
-- (void)setCurrencySymbol:(id)arg1;
 - (void)setMakeReservationPunchOuts:(id)arg1;
 - (void)setMenuLink:(id)arg1;
 - (void)setOpenings:(id)arg1;
 - (void)setOrderDeliveryPunchOuts:(id)arg1;
-- (void)setPriceRange:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

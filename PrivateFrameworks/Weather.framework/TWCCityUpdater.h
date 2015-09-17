@@ -14,9 +14,9 @@
 + (void)clearSharedCityUpdater;
 + (id)sharedCityUpdater;
 
+- (void).cxx_destruct;
 - (void)_failed:(unsigned int)arg1;
 - (id)aggregateDictionaryDomain;
-- (void)dealloc;
 - (void)handleCompletionForCity:(id)arg1 withUpdateDetail:(unsigned int)arg2;
 - (id)parsedCities;
 - (id)requestedCities;

@@ -3,7 +3,7 @@
  */
 
 @interface PLCropOverlayBottomBar : UIView {
-    CAMBottomBar *_cameraBottomBar;
+    CMKBottomBar *_cameraBottomBar;
     BOOL _inPopover;
     BOOL _playingVideo;
     PLCropOverlayPreviewBottomBar *_previewBottomBar;
@@ -11,7 +11,7 @@
     PLCropOverlayWallpaperBottomBar *_wallpaperBottomBar;
 }
 
-@property (nonatomic, retain) CAMBottomBar *cameraBottomBar;
+@property (nonatomic, retain) CMKBottomBar *cameraBottomBar;
 @property (getter=isInPopover, nonatomic) BOOL inPopover;
 @property (getter=isPlayingVideo, nonatomic) BOOL playingVideo;
 @property (nonatomic, retain) PLCropOverlayPreviewBottomBar *previewBottomBar;

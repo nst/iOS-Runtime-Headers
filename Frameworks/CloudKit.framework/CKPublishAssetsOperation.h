@@ -23,6 +23,7 @@
 - (unsigned int)URLOptions;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id /* block */)assetPublishedBlock;
 - (id)fileNamesByAssetFieldNames;
 - (void)fillOutOperationInfo:(id)arg1;

@@ -22,6 +22,7 @@
 @property (nonatomic, readonly) double uncertainty;
 @property (nonatomic, readonly) NSArray *visits;
 
++ (id)locationOfInterestSourceToString:(int)arg1;
 + (id)locationOfInterestTypeToString:(int)arg1;
 + (BOOL)supportsSecureCoding;
 

@@ -38,10 +38,16 @@
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
++ (void)_handleFormattingError:(id)arg1 forString:(id)arg2;
 + (id)_mapkit_attributedStringWithBindingFormat:(id)arg1 replacements:(id)arg2 attributes:(id)arg3;
++ (id)_mapkit_attributedStringWithBindingFormat:(id)arg1 replacements:(id)arg2 attributes:(id)arg3 error:(id*)arg4;
++ (id)_mapkit_attributedStringWithBindingFormat:(id)arg1 replacements:(id)arg2 defaultReplacementAttributes:(id)arg3 startTokenDelimiter:(id)arg4 endTokenDelimiter:(id)arg5 error:(id*)arg6;
 
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1;
 - (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2;
+- (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2 error:(id*)arg3;
+- (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 defaultReplacementAttributes:(id)arg2 startTokenDelimiter:(id)arg3 endTokenDelimiter:(id)arg4 error:(id*)arg5;
+- (id)_mapkit_attributedStringByApplyingBindingFormatReplacements:(id)arg1 error:(id*)arg2;
 
 // Image: /System/Library/Frameworks/PassKit.framework/PassKit
 
@@ -51,6 +57,7 @@
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
++ (id)pu_attributedStringWithHTMLString:(id)arg1 defaultAttributes:(id)arg2;
 + (id)pu_localizedAttributedStringForCommentWithCommenterFullName:(id)arg1 text:(id)arg2 defaultTextAttributes:(id)arg3 emphasizedTextAttributes:(id)arg4;
 + (id)pu_localizedAttributedStringForInvitationResponseReceivedWithInviteeFullName:(id)arg1 streamName:(id)arg2 accepted:(BOOL)arg3 defaultTextAttributes:(id)arg4 emphasizedTextAttributes:(id)arg5;
 + (id)pu_localizedAttributedStringForLikesFromUser:(BOOL)arg1 orPersonFullName:(id)arg2 photoCount:(int)arg3 videoCount:(int)arg4 streamName:(id)arg5 defaultTextAttributes:(id)arg6 emphasizedTextAttributes:(id)arg7;
@@ -67,6 +74,7 @@
 - (id)_ui_attributedStringWithOriginalFontAttributes;
 - (id)_ui_fontsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultFont:(id)arg2;
 - (int)_ui_resolvedTextAlignment;
+- (int)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(int)arg1;
 - (id)_ui_secureStringWithPointSize:(float)arg1;
 - (id)_ui_synthesizeAttributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingDefaultAttributes:(id)arg2;
 
@@ -78,6 +86,15 @@
 
 - (id)dd_attributedStringByAppendingAttributedString:(id)arg1;
 - (id)dd_attributedSubstringFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+
+// Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
+
+- (id)dd_contextAtLocation:(int)arg1;
+- (struct __DDResult { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __DDQueryRange { struct __DDQueryOffset { int x_1_2_1; int x_1_2_2; } x_2_1_1; struct __DDQueryOffset { int x_2_2_1; int x_2_2_2; } x_2_1_2; } x2; struct { int x_3_1_1; int x_3_1_2; } x3; int x4; struct __CFArray {} *x5; struct __CFString {} *x6; struct __CFString {} *x7; void *x8; void *x9; int x10; }*)dd_resultAtLocation:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
+
+- (id)FU_uppercaseAttributedString;
 
 // Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
 
@@ -97,6 +114,14 @@
 // Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
 
 + (id)attributedStringWithTextElement:(id)arg1 baseFont:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)TT_attributedStringWithArchive:(const struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg1 createNewAttachmentsInNote:(id)arg2 error:(id*)arg3;
++ (id)TT_attributedStringWithData:(id)arg1 createNewAttachmentsInNote:(id)arg2 error:(id*)arg3;
+
+- (void)TT_saveToArchive:(struct String { int (**x1)(); struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_5_1; unsigned int x_1_5_2; char *x_1_5_3; } x_1_4_1; struct __short { union { unsigned char x_1_6_1; BOOL x_1_6_2; } x_2_5_1; BOOL x_2_5_2[11]; } x_1_4_2; struct __raw { unsigned long x_3_5_1[3]; } x_1_4_3; } x_1_3_1; } x_1_2_1; } x_2_1_1; } x2; unsigned int x3[1]; int x4; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x5; struct RepeatedPtrField<topotext::Substring> { void **x_6_1_1; int x_6_1_2; int x_6_1_3; int x_6_1_4; } x6; struct VectorTimestamp {} *x7; struct RepeatedPtrField<topotext::AttributeRun> { void **x_8_1_1; int x_8_1_2; int x_8_1_3; int x_8_1_4; } x8; struct RepeatedPtrField<topotext::Attachment> { void **x_9_1_1; int x_9_1_2; int x_9_1_3; int x_9_1_4; } x9; }*)arg1 saveAttachments:(BOOL)arg2;
+- (id)TT_serializeWithAttachments:(BOOL)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 
@@ -169,6 +194,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundingRectWithSize:(struct CGSize { float x1; float x2; })arg1 options:(int)arg2 context:(id)arg3;
 - (BOOL)containsAttachments;
+- (BOOL)containsAttachmentsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)dataFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
 - (id)defaultLanguage;
 - (id)docFormatFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2;

@@ -8,7 +8,7 @@
 }
 
 @property (readonly) int destination;
-@property (readonly) NSSet *hidEventDescriptors;
+@property (readonly, retain) NSSet *hidEventDescriptors;
 
 + (id)defaultEventRouters;
 + (id)defaultFocusedAppEventRouter;

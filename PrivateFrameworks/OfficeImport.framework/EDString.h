@@ -22,6 +22,8 @@
 - (bool)areThereRuns;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
+- (id)firstRunEffects;
 - (id)firstRunFont;
 - (unsigned int)hash;
 - (id)init;
@@ -33,6 +35,8 @@
 - (BOOL)isEqualToString:(id)arg1;
 - (id)phoneticInfo;
 - (void)prependString:(id)arg1;
+- (void)removeCharacterAtIndex:(unsigned int)arg1;
+- (void)removeCharactersInSet:(id)arg1;
 - (id)runs;
 - (void)setDoNotModify:(bool)arg1;
 - (void)setPhoneticInfo:(id)arg1;

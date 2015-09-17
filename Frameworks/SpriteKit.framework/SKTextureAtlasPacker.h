@@ -9,7 +9,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })calcNonAlphaArea:(struct CGImage { }*)arg1;
 - (struct CGImage { }*)copyRotateCGImage:(struct CGImage { }*)arg1 direction:(BOOL)arg2;
 - (id)generateMetaData;
-- (void)generateTextureAtlasImages:(id)arg1 outputDictionary:(id*)arg2;
+- (void)generateTextureAtlasImages:(id)arg1 outputDictionary:(id*)arg2 forcePOT:(BOOL)arg3;
 - (id)getTextureFileList:(id)arg1 modDate:(id*)arg2;
 - (BOOL)isFullyOpaque:(struct CGImage { }*)arg1;
 - (id)partitionTextureFilesByResolution:(id)arg1;

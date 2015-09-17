@@ -23,6 +23,7 @@
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
+- (void).cxx_destruct;
 - (void)_documentPickerDidDismiss;
 - (void)_prepareWithExtensionInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_setDocumentStorageURL:(id)arg1;
@@ -32,7 +33,6 @@
 - (void)_setTintColor:(id)arg1;
 - (void)_setUploadURL:(id)arg1;
 - (void)_setUploadURLWrapper:(id)arg1;
-- (void)dealloc;
 - (void)dismissGrantingAccessToURL:(id)arg1;
 - (unsigned int)documentPickerMode;
 - (id)documentStorageURL;

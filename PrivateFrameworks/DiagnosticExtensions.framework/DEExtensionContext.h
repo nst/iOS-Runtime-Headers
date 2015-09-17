@@ -13,12 +13,7 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void)attachmentListWithHandler:(id /* block */)arg1;
-- (void)attachmentsWithParams:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)canEnableLoggingWithHandler:(id /* block */)arg1;
-- (void)disableLoggingWithHandler:(id /* block */)arg1;
-- (void)enableLoggingWithHandler:(id /* block */)arg1;
+- (void)attachmentsForParameters:(id)arg1 withHandler:(id /* block */)arg2;
 - (BOOL)hasEntitlement;
-- (void)initExtensionWithHandler:(id /* block */)arg1;
-- (void)isLoggingEnabledHandler:(id /* block */)arg1;
 
 @end

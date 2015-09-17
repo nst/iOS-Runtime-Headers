@@ -21,9 +21,8 @@
 @property (nonatomic, retain) NSString *summary;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)calendarURL;
-- (void)dealloc;
-- (id)description;
 - (id)generateModificationMessageBody;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)initWithShareesToSet:(id)arg1 shareesToRemove:(id)arg2 summary:(id)arg3 atCalendarURL:(id)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6;

@@ -13,6 +13,7 @@
     NSMapTable *_peripheralsWithConnectionRequestTuples;
     NSMutableArray *_powerOnCentralManagerCompletions;
     id /* block */ _reachabilityCompletion;
+    NSMapTable *_recentlySeenPairedPeripherals;
     NSMutableArray *_targetedScanAccessoryIdentifiers;
     NSObject<OS_dispatch_source> *_targetedScanTimer;
 }
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) NSMapTable *peripheralsWithConnectionRequestTuples;
 @property (nonatomic, retain) NSMutableArray *powerOnCentralManagerCompletions;
 @property (nonatomic, copy) id /* block */ reachabilityCompletion;
+@property (nonatomic, retain) NSMapTable *recentlySeenPairedPeripherals;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSMutableArray *targetedScanAccessoryIdentifiers;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *targetedScanTimer;
@@ -37,13 +39,16 @@
 - (void).cxx_destruct;
 - (void)_callPowerOnCompletionsWithError:(id)arg1;
 - (void)_cancelLostAccessoryServerTimer;
-- (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4;
+- (void)_clearCachedDescriptorsForIdentifier:(id)arg1;
+- (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 category:(id)arg6 version:(unsigned int)arg7;
 - (BOOL)_delegateRespondsToSelector:(SEL)arg1;
 - (void)_discoverAccessoryServerWithIdentifier:(id)arg1;
+- (void)_forgetPairedAccesoryWithIdentifier:(id)arg1;
 - (void)_handleConnectionRequestCompletionForPeripheral:(id)arg1;
 - (void)_handleTargetedScanTimeout;
 - (void)_notifyDelegatesOfRemovedAccessoryServer:(id)arg1;
-- (BOOL)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2 name:(id*)arg3 pairingUsername:(id*)arg4 statusFlags:(id*)arg5;
+- (unsigned int)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2 name:(id*)arg3 pairingUsername:(id*)arg4 statusFlags:(id*)arg5 stateNumber:(id*)arg6 category:(id*)arg7 configNumber:(id*)arg8;
+- (unsigned int)_parseManufacturerSpecificData:(id)arg1 reservedByte:(id*)arg2 configNumber:(id*)arg3 pairingStatusFlag:(id*)arg4 stateNumber:(id*)arg5 uniqueIdentifier:(id*)arg6 category:(id*)arg7;
 - (void)_performTargetedScanForAccessoryWithIdentifier:(id)arg1;
 - (void)_performTimedConnectionRequestForIdentifier:(id)arg1;
 - (void)_performTimedScanForIdentifiers:(id)arg1 workQueue:(id)arg2 withCompletion:(id /* block */)arg3;
@@ -52,11 +57,12 @@
 - (void)_removeIdentifiersForReachabilityScan;
 - (void)_removeLostAccessoryServers;
 - (void)_setupLostAccessoryServerTimer;
-- (BOOL)_shouldCreateHAPAccessoryServerWithIdentifier:(id)arg1;
+- (BOOL)_shouldCreateHAPAccessoryServerWithIdentifier:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 forPeripheral:(id)arg6;
 - (void)_startDiscoveringAccessoryServers;
 - (void)_startScanningForPairingPeers;
 - (void)_stopActiveScan;
 - (void)_updateTargetedScanTimer;
+- (id)cachedDescriptorsForCharacteristic:(id)arg1;
 - (id)centralManager;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
@@ -69,14 +75,18 @@
 - (void)disconnectFromBTLEAccessoryServer:(id)arg1;
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;
 - (id)discoveredPeripheralsWithAccessories;
+- (void)forgetPairedAccesoryWithIdentifier:(id)arg1;
 - (id)identifersWithReachabilityScanTuples;
 - (id)initWithQueue:(id)arg1;
 - (BOOL)isPerformingGeneralScan;
+- (int)linkType;
 - (id)lostAccessoryServerTimer;
+- (void)markNotifyingCharacteristicUpdatedOnPeripheral:(id)arg1;
 - (id)peripheralsWithConnectionRequestTuples;
 - (id)powerOnCentralManagerCompletions;
 - (void)probeReachabilityForAccessoryServersWithIdentifiers:(id)arg1 onQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (id /* block */)reachabilityCompletion;
+- (id)recentlySeenPairedPeripherals;
 - (void)setCentralManager:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
@@ -89,11 +99,13 @@
 - (void)setPowerOnCentralManagerCompletions:(id)arg1;
 - (void)setReachabilityCompletion:(id /* block */)arg1;
 - (void)setReachabilityCompletionHandler:(id /* block */)arg1;
+- (void)setRecentlySeenPairedPeripherals:(id)arg1;
 - (void)setTargetedScanAccessoryIdentifiers:(id)arg1;
 - (void)setTargetedScanTimer:(id)arg1;
 - (void)startDiscoveringAccessoryServers;
 - (void)stopDiscoveringAccessoryServers;
 - (id)targetedScanAccessoryIdentifiers;
 - (id)targetedScanTimer;
+- (void)updateCacheWithDescriptor:(id)arg1;
 
 @end

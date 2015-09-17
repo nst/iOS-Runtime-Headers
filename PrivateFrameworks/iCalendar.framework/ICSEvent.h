@@ -32,6 +32,7 @@
 @property (retain) NSURL *url;
 @property (nonatomic) BOOL x_apple_dontschedule;
 @property (retain) NSString *x_apple_dropbox;
+@property (retain) ICSStructuredLocation *x_apple_end_location;
 @property (nonatomic) int x_apple_ews_busystatus;
 @property (retain) NSString *x_apple_ews_changekey;
 @property (retain) NSString *x_apple_ews_itemid;

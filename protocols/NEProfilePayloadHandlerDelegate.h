@@ -5,7 +5,9 @@
 
 @required
 
+- (NSArray *)getCertificates;
 - (NSString *)getConfigurationIdentifier;
+- (NSDictionary *)getPendingCertificateInfo:(id <NEProfilePayloadBaseDelegate>)arg1;
 - (NSDictionary *)getPendingCertificateUUIDs:(id <NEProfilePayloadBaseDelegate>)arg1;
 - (BOOL)setAppLayerVPNRuleSettings:(NSDictionary *)arg1 withAppIdentifier:(NSString *)arg2;
 - (BOOL)setAppLayerVPNUUID:(NSString *)arg1 andSafariDomains:(NSArray *)arg2;

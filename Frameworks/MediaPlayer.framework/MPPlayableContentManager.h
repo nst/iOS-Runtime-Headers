@@ -11,6 +11,7 @@
     <MPPlayableContentDelegate> *_delegate;
     AVExternalDevice *_externalDevice;
     NSMutableSet *_mutatedContentItems;
+    BOOL _scheduledSupportedAPIsChange;
     NSObject<OS_dispatch_queue> *_serialQueue;
 }
 
@@ -21,7 +22,7 @@
 + (id)sharedContentManager;
 
 - (void).cxx_destruct;
-- (BOOL)_areContentLimitsEnabled;
+- (BOOL)_areContentLimitsEnforced;
 - (void)_browsableContentEndpointChanged:(id)arg1;
 - (void)_contentItemChangedNotification:(id)arg1;
 - (BOOL)_contentItemWasSentToMediaRemote:(id)arg1;
@@ -31,12 +32,15 @@
 - (id)_init;
 - (void)_limitedUIChanged:(id)arg1;
 - (void)_markContentItemsAsSentToMediaRemote:(id)arg1;
+- (BOOL)_musicListsLimited;
 - (BOOL)_onQueueContentItemWasSentToMediaRemote:(id)arg1;
 - (void)_pushContentItemsUpdate;
+- (void)_scheduleUpdateSupportedAPIs;
 - (void)_setupMediaRemoteEndpoint;
 - (void)_setupNotifications;
 - (void)_tearDownMediaRemoteEndpoint;
 - (void)_tearDownNotifications;
+- (void)_updateSupportedAPIs;
 - (void)beginUpdates;
 - (id)context;
 - (id)dataSource;

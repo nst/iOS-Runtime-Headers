@@ -22,6 +22,7 @@
     UILabel *_profileLabel;
     UITapGestureRecognizer *_profileLabelTapGestureRecognizer;
     UIButton *_shareActionsButton;
+    BOOL _sharingHidden;
     int _tintStyle;
     NSString *_title;
     BOOL _titleShouldAllowSelection;
@@ -40,6 +41,7 @@
 @property (getter=isFollowing, nonatomic) BOOL following;
 @property (nonatomic, copy) NSString *followingText;
 @property (nonatomic, readonly) UIButton *shareActionsButton;
+@property (getter=isFollowHidden, nonatomic) BOOL sharingHidden;
 @property (nonatomic) int tintStyle;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) BOOL titleShouldAllowSelection;
@@ -68,6 +70,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAdminEnabled;
 - (BOOL)isFollowHidden;
+- (BOOL)isFollowHidden;
 - (BOOL)isFollowing;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
 - (void)layoutMarginsDidChange;
@@ -83,6 +86,7 @@
 - (void)setFollowing:(BOOL)arg1;
 - (void)setFollowing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setFollowingText:(id)arg1;
+- (void)setSharingHidden:(BOOL)arg1;
 - (void)setTintStyle:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleShouldAllowSelection:(BOOL)arg1;

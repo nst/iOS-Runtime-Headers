@@ -10,17 +10,20 @@
     AVWeakReference *_weakReferenceToSelf;
 }
 
-@property (retain) AVWeakReference *weakReferenceToDelegate;
+@property <AVAssetWriterFigAssetWriterNotificationHandlerDelegate> *delegate;
+@property (getter=_weakReferenceToDelegate, setter=_setWeakReferenceToDelegate:, retain) AVWeakReference *weakReferenceToDelegate;
 
 - (void)_callDelegateIfNotCalledWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)_handleCompletedWritingNotification;
 - (void)_handleFailedNotificationWithError:(id)arg1;
 - (void)_handleServerDiedNotification;
+- (void)_setWeakReferenceToDelegate:(id)arg1;
 - (void)_teardownNotificationHandlers;
+- (id)_weakReferenceToDelegate;
 - (void)dealloc;
+- (id)delegate;
 - (void)finalize;
-- (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 weakReferenceToDelegate:(id)arg2;
-- (void)setWeakReferenceToDelegate:(id)arg1;
-- (id)weakReferenceToDelegate;
+- (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1;
+- (void)setDelegate:(id)arg1;
 
 @end

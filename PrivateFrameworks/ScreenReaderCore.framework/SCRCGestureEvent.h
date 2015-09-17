@@ -13,7 +13,7 @@
     double _time;
 }
 
-- (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2;
+- (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 orbValue:(float)arg3;
 - (struct CGPoint { float x1; float x2; })averageLocation;
 - (struct CGPoint { float x1; float x2; })balancedLocation;
 - (void)dealloc;

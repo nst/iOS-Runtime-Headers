@@ -12,5 +12,7 @@
 - (void)messagesSyncServiceServer:(NNMKMessagesSyncServiceServer *)arg1 didSendProtobufSuccessfullyWithIDSIdentifier:(NSString *)arg2;
 - (void)messagesSyncServiceServer:(NNMKMessagesSyncServiceServer *)arg1 didUpdateMessagesStatus:(NNMKProtoMessageStatusUpdates *)arg2;
 - (void)messagesSyncServiceServer:(NNMKMessagesSyncServiceServer *)arg1 didWarnMessagesFilteredOut:(NNMKProtoMessagesFilteredOutWarning *)arg2;
+- (void)messagesSyncServiceServerConnectivityChanged:(NNMKMessagesSyncServiceServer *)arg1;
+- (void)messagesSyncServiceServerSpaceBecameAvailable:(NNMKMessagesSyncServiceServer *)arg1;
 
 @end

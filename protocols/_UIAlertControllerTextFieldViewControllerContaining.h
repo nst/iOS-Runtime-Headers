@@ -6,5 +6,6 @@
 @required
 
 - (void)_returnKeyPressedInLastTextField;
+- (UIView *)_textFieldContainingViewWithTextField:(UITextField *)arg1;
 
 @end

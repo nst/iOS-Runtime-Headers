@@ -15,12 +15,14 @@
 @property (readonly, retain) id constantValue;
 @property (readonly, copy) id /* block */ expressionBlock;
 @property (readonly) unsigned int expressionType;
+@property (readonly, copy) NSExpression *falseExpression;
 @property (readonly, copy) NSString *function;
 @property (readonly, copy) NSString *keyPath;
 @property (readonly, copy) NSExpression *leftExpression;
 @property (readonly, copy) NSExpression *operand;
 @property (readonly, copy) NSPredicate *predicate;
 @property (readonly, copy) NSExpression *rightExpression;
+@property (readonly, copy) NSExpression *trueExpression;
 @property (readonly, copy) NSString *variable;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -29,6 +31,7 @@
 + (id)expressionForAggregate:(id)arg1;
 + (id)expressionForAnyKey;
 + (id)expressionForBlock:(id /* block */)arg1 arguments:(id)arg2;
++ (id)expressionForConditional:(id)arg1 trueExpression:(id)arg2 falseExpression:(id)arg3;
 + (id)expressionForConstantValue:(id)arg1;
 + (id)expressionForEvaluatedObject;
 + (id)expressionForFunction:(id)arg1 arguments:(id)arg2;

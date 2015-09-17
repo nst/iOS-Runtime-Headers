@@ -2,21 +2,27 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSWebContainerView : UIView {
+@interface PSWebContainerView : UIView <UIWebViewDelegate> {
     NSData *_content;
     UIWebView *_webView;
 }
 
 @property (nonatomic, retain) NSData *content;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) UIWebView *webView;
 
+- (void).cxx_destruct;
 - (id)content;
-- (void)dealloc;
 - (float)heightForWidth:(float)arg1;
 - (id)init;
 - (void)layoutSubviews;
 - (void)setContent:(id)arg1;
 - (void)setUserStyleSheet:(id)arg1;
+- (BOOL)uiWebView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint { float x1; float x2; })arg2;
 - (id)webView;
+- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 
 @end

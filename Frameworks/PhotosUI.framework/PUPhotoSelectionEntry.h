@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoSelectionEntry : NSObject {
+@interface PUPhotoSelectionEntry : NSObject <NSCopying> {
     PHAssetCollection *_assetCollection;
     PHFetchResult *_fetchResult;
     BOOL _hasValidAssetIndexes;
@@ -18,6 +18,7 @@
 - (void).cxx_destruct;
 - (void)_ensureValidAssetIndexes;
 - (id)assetCollection;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)deselectAssetsAtIndexes:(id)arg1;
 - (void)enumerateSelectedAssetsWithBlock:(id /* block */)arg1;
 - (id)fetchResult;

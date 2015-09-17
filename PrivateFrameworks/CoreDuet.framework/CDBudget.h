@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)childBudgetWithName:(id)arg1 maxFraction:(double)arg2 type:(int)arg3 error:(id*)arg4;
+- (id)childBudgetWithName:(id)arg1 maxFraction:(double)arg2 type:(int)arg3 withOptions:(unsigned int)arg4 error:(id*)arg5;
 - (BOOL)compareValueTo:(long long)arg1 swapOnMatchWithValue:(long long)arg2 error:(id*)arg3;
 - (long long)creditsRemainingWithError:(id*)arg1;
 - (BOOL)decrementByValue:(long long)arg1 error:(id*)arg2;

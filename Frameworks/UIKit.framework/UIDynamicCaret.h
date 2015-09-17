@@ -24,6 +24,7 @@
 @property (nonatomic, retain) _UIDynamicCaretNoContentView *noContentView;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)alternativeTappedAtIndex:(int)arg1;
 - (id)alternativesView;
 - (id)backgroundImage;
@@ -31,7 +32,6 @@
 - (id)candidateSet;
 - (id)currentCandidate;
 - (unsigned int)currentIndex;
-- (void)dealloc;
 - (void)didMoveToSuperview;
 - (void)displayAlternatives:(BOOL)arg1;
 - (BOOL)hasCandidates;

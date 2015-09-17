@@ -33,6 +33,7 @@
 
 + (void)adjustNumberalCenter:(struct CGPoint { float x1; float x2; }*)arg1 forNumeralIndex:(int)arg2;
 + (id)analogClockWithStyle:(int)arg1;
++ (float)antialiasPaddingRatio;
 + (id)cacheTopLevelPath;
 + (id)cacheVersionHash;
 + (id)cacheVersionedPath;
@@ -41,7 +42,10 @@
 + (id)clockHand:(int)arg1 daytime:(BOOL)arg2;
 + (struct CGSize { float x1; float x2; })clockSize;
 + (id)dayTimeFaceColor;
++ (id)dayTimeHourHandColor;
++ (id)dayTimeMinuteHandColor;
 + (id)dayTimeOverHourHandDotColor;
++ (id)dayTimeSecondHandColor;
 + (id)dayTimeTextColor;
 + (BOOL)doesFaceHaveShadow;
 + (float)faceRadius;
@@ -63,7 +67,10 @@
 + (float)minuteHandLength;
 + (float)minuteHandWidth;
 + (id)nightTimeFaceColor;
++ (id)nightTimeHourHandColor;
++ (id)nightTimeMinuteHandColor;
 + (id)nightTimeOverHourHandDotColor;
++ (id)nightTimeSecondHandColor;
 + (id)nightTimeTextColor;
 + (id)numeralFont;
 + (float)numeralInset;
@@ -78,8 +85,10 @@
 + (void)registerTickingClock:(id)arg1;
 + (id)resourcePath;
 + (float)secondHandLength;
++ (float)secondHandMainLength;
++ (float)secondHandOverhangLength;
 + (float)secondHandWidth;
-+ (struct ShadowInfo { id x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; float x3; })shadowInfoAtIndex:(unsigned int)arg1;
++ (id)shadowInfoAtIndex:(unsigned int)arg1;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })shadowInsets;
 + (struct CGPoint { float x1; float x2; })shadowRotationalCenterForHand:(int)arg1;
 + (BOOL)shouldCacheImageOnDiskForType:(int)arg1 dayTime:(BOOL)arg2;
@@ -92,8 +101,8 @@
 + (void)updateTimeForAllSweeping;
 + (void)updateTimeForAllTicking;
 
+- (void).cxx_destruct;
 - (double)coarseUpdateInterval;
-- (void)dealloc;
 - (id)faceView;
 - (int)hour;
 - (id)init;

@@ -24,9 +24,7 @@
 - (BOOL)_updateSwappable;
 - (BOOL)_updateTakingCallsPrivateAllowed;
 - (void)dealloc;
-- (id)description;
 - (id)faceTimeAudioCallModel;
-- (void)faceTimeAudioCallModelDidChange:(id)arg1;
 - (void)handlePossibleStateChange;
 - (id)init;
 - (BOOL)isAmbiguous;

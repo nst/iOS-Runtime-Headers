@@ -20,6 +20,7 @@
 - (id)_cachedBodyForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeaderDataForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
 - (id)_cachedHeadersForMessage:(id)arg1 valueIfNotPresent:(id)arg2;
+- (void)_deleteCachedBodyForMessage:(id)arg1;
 - (id)_fetchBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 downloadIfNecessary:(BOOL)arg3 partial:(BOOL*)arg4;
 - (void)_flushAllCaches;
 - (void)_flushAllMessageData;
@@ -37,6 +38,7 @@
 - (void)dealloc;
 - (id)decryptedTopLevelPartForPart:(id)arg1;
 - (id)defaultAlternativeForPart:(id)arg1;
+- (void)deleteBodyDataForMessage:(id)arg1;
 - (id)fullBodyDataForMessage:(id)arg1 andHeaderDataIfReadilyAvailable:(id*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
 - (BOOL)hasCompleteDataForMimePart:(id)arg1;
 - (id)headerDataForMessage:(id)arg1 downloadIfNecessary:(BOOL)arg2;

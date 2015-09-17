@@ -10,8 +10,8 @@
 - (id)background;
 - (void)dealloc;
 - (id)defaultTheme;
+- (id)description;
 - (void)doneWithContent;
-- (BOOL)hasMappableSlideNumberShape;
 - (id)initWithSlideMaster:(id)arg1;
 - (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
 - (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
@@ -23,5 +23,6 @@
 - (void)setSlideMaster:(id)arg1;
 - (int)slideLayoutType;
 - (id)slideMaster;
+- (id)transition;
 
 @end

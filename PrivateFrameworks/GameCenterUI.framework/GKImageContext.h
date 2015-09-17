@@ -16,7 +16,8 @@
 @property (nonatomic, readonly) float scale;
 @property (nonatomic) struct CGSize { float x1; float x2; } size;
 
-+ (id)drawWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
++ (id)contextDrawnWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
++ (id)imageDrawnWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 + (id)imageFromRawPixelsAtURL:(id)arg1;
 
 - (struct CGContext { }*)CGContext;

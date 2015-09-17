@@ -8,6 +8,7 @@
 
 @property (retain) UIViewController *wrapperViewController;
 
+- (void).cxx_destruct;
 - (id)_activityImage;
 - (id)_embeddedActivityViewController;
 - (void)activityDidFinish:(BOOL)arg1;
@@ -15,7 +16,6 @@
 - (id)activityType;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (void)cancelPrintOptions;
-- (void)dealloc;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (id)printInteractionController;

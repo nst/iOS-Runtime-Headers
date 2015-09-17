@@ -22,14 +22,12 @@
 - (void)callbackAskUserForPasswordResult:(long)arg1 password:(id)arg2 remember:(int)arg3;
 - (void)callbackAskUserToChooseFromStringListResult:(long)arg1 selectedString:(id)arg2;
 - (void)dealloc;
-- (void)directedScanDone:(id)arg1;
 - (id)init;
 - (void)joinNetworkDone:(id)arg1;
 - (void)scanForNetworksDone:(id)arg1;
 - (void)setUiDelegate:(id)arg1;
-- (long)startDirectedScan:(id)arg1 wifiType:(int)arg2 retries:(int)arg3;
 - (long)startJoinNetwork:(id)arg1 password:(id)arg2 rememberChoice:(int)arg3;
-- (long)startScanForNetworks;
+- (long)startScanForNetworks:(id)arg1 wifiType:(int)arg2 mergeResults:(BOOL)arg3 maxAge:(unsigned int)arg4;
 - (long)subclassAssistantCallback:(struct AssistantCallbackContext { unsigned int x1; struct AssistantContext {} *x2; int x3; struct __CFDictionary {} *x4; int x5; id x6; struct _opaque_pthread_mutex_t { long x_7_1_1; BOOL x_7_1_2[40]; } x7; void *x8; int x9; }*)arg1;
 - (id)uiDelegate;
 - (void)userResponseToJoinNetwork:(long)arg1;

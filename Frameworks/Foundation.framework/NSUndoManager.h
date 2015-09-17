@@ -29,6 +29,8 @@
 @property (getter=isUndoRegistrationEnabled, readonly) BOOL undoRegistrationEnabled;
 @property (getter=isUndoing, readonly) BOOL undoing;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (void)_endTopLevelGroupings;
 + (void)_setEndsTopLevelGroupingsAfterRunLoopIterations:(BOOL)arg1;
 
@@ -68,6 +70,7 @@
 - (id)redoActionName;
 - (id)redoMenuItemTitle;
 - (id)redoMenuTitleForUndoActionName:(id)arg1;
+- (void)registerUndoWithTarget:(id)arg1 handler:(id /* block */)arg2;
 - (void)registerUndoWithTarget:(id)arg1 selector:(SEL)arg2 object:(id)arg3;
 - (void)removeAllActions;
 - (void)removeAllActionsWithTarget:(id)arg1;
@@ -83,5 +86,9 @@
 - (id)undoMenuItemTitle;
 - (id)undoMenuTitleForUndoActionName:(id)arg1;
 - (void)undoNestedGroup;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (BOOL)ic_isUndoingOrRedoing;
 
 @end

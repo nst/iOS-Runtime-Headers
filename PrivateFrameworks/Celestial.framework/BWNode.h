@@ -44,6 +44,7 @@
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (id)graph;
 - (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
+- (void)handleIrisReferenceMovieRequest:(id)arg1 forInput:(id)arg2;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
 - (BOOL)hasNonLiveConfigurationChanges;
 - (id)init;

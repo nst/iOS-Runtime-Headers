@@ -12,16 +12,19 @@
     NSURL *_url;
 }
 
+@property (nonatomic, retain) NSSet *fallbackElements;
 @property (nonatomic, retain) NSDictionary *headersToOverride;
 @property (nonatomic, retain) NSDictionary *responseHeaders;
 @property (nonatomic) BOOL shouldSupportVEVENT;
 @property (nonatomic) BOOL shouldSupportVTODO;
 
+- (void).cxx_destruct;
 - (void)_mkcalendarAfterFailureCount:(unsigned int)arg1;
-- (void)dealloc;
+- (id)fallbackElements;
 - (id)headersToOverride;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2 primaryPropertiesToSet:(id)arg3 fallbackPropertiesToSet:(id)arg4 atURL:(id)arg5;
 - (id)responseHeaders;
+- (void)setFallbackElements:(id)arg1;
 - (void)setHeadersToOverride:(id)arg1;
 - (void)setResponseHeaders:(id)arg1;
 - (void)setShouldSupportVEVENT:(BOOL)arg1;

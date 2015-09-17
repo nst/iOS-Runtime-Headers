@@ -3,7 +3,7 @@
  */
 
 @interface AFContextResponse : AFSiriResponse {
-    AFSiriContext *_context;
+    STSiriContext *_context;
 }
 
 + (BOOL)supportsSecureCoding;

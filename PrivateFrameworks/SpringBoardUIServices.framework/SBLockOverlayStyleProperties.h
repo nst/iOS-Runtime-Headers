@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) int graphicsQuality;
 @property (nonatomic, readonly) unsigned int style;
 @property (nonatomic, readonly) float tintAlpha;
-@property (nonatomic, readonly) UIColor *tintColor;
+@property (nonatomic, readonly, retain) UIColor *tintColor;
 
 - (void)_configure;
 - (id)_settingsForStyle;

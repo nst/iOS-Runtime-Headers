@@ -14,6 +14,7 @@
 + (void)initialize;
 + (id)newWithDictionary:(id)arg1;
 
+- (void)__apply:(int (*)arg1 context:(void*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;
 - (void)dealloc;

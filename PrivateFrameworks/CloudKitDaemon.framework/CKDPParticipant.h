@@ -3,9 +3,11 @@
  */
 
 @interface CKDPParticipant : PBCodable <NSCopying> {
+    long long _acceptTimestamp;
     CKDPContactInformation *_contactInformation;
     BOOL _createdOutOfProcess;
     struct { 
+        unsigned int acceptTimestamp : 1; 
         unsigned int participantType : 1; 
         unsigned int permission : 1; 
         unsigned int state : 1; 
@@ -20,8 +22,10 @@
     CKDPIdentifier *_userId;
 }
 
+@property (nonatomic) long long acceptTimestamp;
 @property (nonatomic, retain) CKDPContactInformation *contactInformation;
 @property (nonatomic) BOOL createdOutOfProcess;
+@property (nonatomic) BOOL hasAcceptTimestamp;
 @property (nonatomic, readonly) BOOL hasContactInformation;
 @property (nonatomic) BOOL hasCreatedOutOfProcess;
 @property (nonatomic, readonly) BOOL hasInviterId;
@@ -40,12 +44,14 @@
 @property (nonatomic, retain) CKDPIdentifier *userId;
 
 - (void).cxx_destruct;
+- (long long)acceptTimestamp;
 - (id)contactInformation;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)createdOutOfProcess;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAcceptTimestamp;
 - (BOOL)hasContactInformation;
 - (BOOL)hasCreatedOutOfProcess;
 - (BOOL)hasInviterId;
@@ -64,8 +70,10 @@
 - (int)permission;
 - (id)publicKey;
 - (BOOL)readFrom:(id)arg1;
+- (void)setAcceptTimestamp:(long long)arg1;
 - (void)setContactInformation:(id)arg1;
 - (void)setCreatedOutOfProcess:(BOOL)arg1;
+- (void)setHasAcceptTimestamp:(BOOL)arg1;
 - (void)setHasCreatedOutOfProcess:(BOOL)arg1;
 - (void)setHasParticipantType:(BOOL)arg1;
 - (void)setHasPermission:(BOOL)arg1;

@@ -21,6 +21,8 @@
 @property (nonatomic, copy) NSString *temperature;
 @property (nonatomic, copy) NSString *timeOfObservation;
 @property (nonatomic, copy) NSString *timeZone;
+@property (nonatomic, copy) NSString *totalDailyPrecipitation;
+@property (nonatomic, copy) NSNumber *uvIndex;
 @property (nonatomic, copy) NSString *visibility;
 @property (nonatomic, copy) NSString *windChill;
 @property (nonatomic, retain) SAWeatherWindSpeed *windSpeed;
@@ -51,6 +53,8 @@
 - (void)setTemperature:(id)arg1;
 - (void)setTimeOfObservation:(id)arg1;
 - (void)setTimeZone:(id)arg1;
+- (void)setTotalDailyPrecipitation:(id)arg1;
+- (void)setUvIndex:(id)arg1;
 - (void)setVisibility:(id)arg1;
 - (void)setWindChill:(id)arg1;
 - (void)setWindSpeed:(id)arg1;
@@ -59,6 +63,8 @@
 - (id)temperature;
 - (id)timeOfObservation;
 - (id)timeZone;
+- (id)totalDailyPrecipitation;
+- (id)uvIndex;
 - (id)visibility;
 - (id)windChill;
 - (id)windSpeed;

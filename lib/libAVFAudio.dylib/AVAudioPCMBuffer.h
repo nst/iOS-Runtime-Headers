@@ -20,6 +20,7 @@
 - (short**)int16ChannelData;
 - (int**)int32ChannelData;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (void)setByteLength:(unsigned int)arg1;
 - (void)setFrameLength:(unsigned int)arg1;
 - (unsigned int)stride;
 

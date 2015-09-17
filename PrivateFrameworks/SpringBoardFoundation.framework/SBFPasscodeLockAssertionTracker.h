@@ -12,6 +12,7 @@
 - (id)description;
 - (BOOL)hasActiveAssertions;
 - (id)init;
+- (BOOL)isAssertionValid:(id)arg1;
 - (id)mkbAssertionOptions;
 - (void)removeAssertion:(id)arg1;
 

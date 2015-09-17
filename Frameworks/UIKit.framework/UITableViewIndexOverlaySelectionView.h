@@ -13,6 +13,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_cellTapped:(id)arg1;
 - (void)_doneTapped;
 - (void)_invalidateTable;

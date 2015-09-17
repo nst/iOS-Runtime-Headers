@@ -47,6 +47,7 @@
 - (void)_addDependency:(id)arg1 outer:(id)arg2;
 - (void)_cancel:(id)arg1;
 - (id /* block */)_completionBlock;
+- (id /* block */)_copyCompletionBlock;
 - (id)_dependencies;
 - (void)_invalidate;
 - (BOOL)_isCancelled;

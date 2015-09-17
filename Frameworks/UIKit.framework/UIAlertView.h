@@ -11,17 +11,18 @@
     int _cancelIndex;
     id _context;
     int _defaultButtonIndex;
+    id _delegate;
     BOOL _dismissingAlertController;
+    UIViewController *_externalViewControllerForPresentation;
     int _firstOtherButtonIndex;
     BOOL _handlingAlertActionShouldDismiss;
     BOOL _hasPreparedAlertActions;
     BOOL _isPresented;
     NSString *_message;
     _UIAlertControllerShimPresenter *_presenter;
+    UIAlertView *_retainedSelf;
     BOOL _runsModal;
     NSString *_subtitle;
-    _UIWeakRef *_weakDelegate;
-    UIViewController *externalViewControllerForPresentation;
 }
 
 @property (setter=_setCurrentlyRunningModal:, nonatomic) BOOL _currentlyRunningModal;
@@ -36,7 +37,6 @@
 @property (nonatomic) BOOL showsOverSpringBoardAlerts;
 @property (nonatomic, copy) NSString *title;
 @property (getter=isVisible, nonatomic, readonly) BOOL visible;
-@property (nonatomic, retain) _UIWeakRef *weakDelegate;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -50,6 +50,7 @@
 + (void)applyTransformToAllAlerts:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (struct CGSize { float x1; float x2; })minimumSize;
 
+- (void).cxx_destruct;
 - (id)_addButtonWithTitle:(id)arg1;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2 buttonClass:(Class)arg3;
 - (id)_addButtonWithTitleText:(id)arg1;
@@ -130,6 +131,7 @@
 - (int)firstOtherButtonIndex;
 - (BOOL)forceHorizontalButtonsLayout;
 - (BOOL)groupsTextFields;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithTitle:(id)arg1 buttons:(id)arg2 defaultButtonIndex:(int)arg3 delegate:(id)arg4 context:(id)arg5;
 - (id)initWithTitle:(id)arg1 message:(id)arg2 delegate:(id)arg3 cancelButtonTitle:(id)arg4 otherButtonTitles:(id)arg5;
@@ -178,7 +180,6 @@
 - (void)setTaglineText:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleMaxLineCount:(int)arg1;
-- (void)setWeakDelegate:(id)arg1;
 - (void)show;
 - (void)showWithAnimationType:(int)arg1;
 - (BOOL)showsOverSpringBoardAlerts;
@@ -194,7 +195,6 @@
 - (id)titleLabel;
 - (int)titleMaxLineCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })titleRect;
-- (id)weakDelegate;
 - (id)window;
 
 // Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI

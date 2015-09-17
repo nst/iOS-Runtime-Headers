@@ -9,6 +9,7 @@
 }
 
 - (void)dealloc;
+- (id)description;
 - (unsigned int)entryIndex;
 - (id)font;
 - (unsigned int)fontIndex;

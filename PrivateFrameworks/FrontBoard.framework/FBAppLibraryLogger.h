@@ -5,7 +5,8 @@
 @interface FBAppLibraryLogger : FBFileLogger
 
 - (void)_setEnabled:(BOOL)arg1;
-- (BOOL)isEnabled;
+- (void)_setLevel:(int)arg1;
+- (int)level;
 - (int)maxLogSize;
 - (id)name;
 - (BOOL)shouldEnableOnInternalBuilds;

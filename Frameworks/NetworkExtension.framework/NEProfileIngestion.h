@@ -31,6 +31,8 @@
 - (id)findConfigurationByConfigurationID:(id)arg1;
 - (id)findConfigurationByName:(id)arg1;
 - (id)findConfigurationByPayloadUUID:(id)arg1;
+- (id)findMostSpecificAppRuleForBundleID:(id)arg1 config:(id)arg2;
+- (id)getCertificatesForConfigurationWithIdentifier:(id)arg1;
 - (id)ingestedConfiguration;
 - (id)initWithName:(id)arg1;
 - (id)initWithNameAndType:(id)arg1 payloadType:(id)arg2;
@@ -53,5 +55,6 @@
 - (BOOL)updateAppLayerVPNMappingRules:(id)arg1;
 - (BOOL)updateDefaultAfterAddingConfiguration;
 - (BOOL)updateDefaultAfterDeletingConfiguration;
+- (BOOL)updateManagedAppRules:(id)arg1;
 
 @end

@@ -46,6 +46,7 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)stringValue;
 - (id)textView;
+- (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })textViewExtraMargins;

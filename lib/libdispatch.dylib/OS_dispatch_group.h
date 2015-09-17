@@ -4,6 +4,11 @@
 
 @interface OS_dispatch_group : OS_dispatch_object <OS_dispatch_group>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
 + (void)load;
 
 @end

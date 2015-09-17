@@ -17,6 +17,8 @@
 - (unsigned long)_cfTypeID;
 - (BOOL)getBuffer:(char **)arg1 length:(unsigned int*)arg2;
 - (BOOL)hasBytesAvailable;
+- (id)initWithData:(id)arg1;
+- (id)initWithURL:(id)arg1;
 - (int)read:(char *)arg1 maxLength:(unsigned int)arg2;
 
 @end

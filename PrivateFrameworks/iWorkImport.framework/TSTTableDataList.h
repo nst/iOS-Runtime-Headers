@@ -17,6 +17,7 @@
 - (id)allRichTextPayloadStorages;
 - (id)data;
 - (void)dealloc;
+- (id)description;
 - (void)enumerateCustomFormatsUsingBlock:(id /* block */)arg1;
 - (unsigned long)flushableSize;
 - (id)initFromUnarchiver:(id)arg1;

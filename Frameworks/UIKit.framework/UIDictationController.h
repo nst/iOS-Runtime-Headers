@@ -37,6 +37,7 @@
     UIDictationStreamingOperations *_streamingOperations;
     NSString *_targetHypothesis;
     int _updatingDocument;
+    BOOL _wantsAvailabilityMonitoringWhenAppActive;
     BOOL _wasDisabledDueToTelephonyActivity;
     BOOL cancelledByWaitingForLocalResults;
     BOOL dictationStartedFromGesture;
@@ -58,6 +59,7 @@
 @property (nonatomic, copy) NSString *previousHypothesis;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *targetHypothesis;
+@property (nonatomic) BOOL wantsAvailabilityMonitoringWhenAppActive;
 
 + (id)activeConnection;
 + (id)activeInstance;
@@ -106,8 +108,9 @@
 + (id)streamingHypothesisForPhrases:(id)arg1;
 + (id)stringForState:(int)arg1;
 + (id)stringForViewMode:(int)arg1;
-+ (BOOL)takesPhysicalButtonsBegan:(id)arg1 forTextView:(id)arg2;
-+ (BOOL)takesPhysicalButtonsEnded:(id)arg1 forTextView:(id)arg2;
++ (BOOL)takesPressesBegan:(id)arg1 forTextView:(id)arg2;
++ (BOOL)takesPressesChanged:(id)arg1 forTextView:(id)arg2;
++ (BOOL)takesPressesEnded:(id)arg1 forTextView:(id)arg2;
 + (void)updateLandingView;
 + (BOOL)usingServerManualEndpointingThreshold;
 + (BOOL)usingTypeAndTalk;
@@ -134,7 +137,7 @@
 - (id)assistantCompatibleLanguageCodeForInputMode:(id)arg1;
 - (float)audioLevel;
 - (void)cancelDictation;
-- (void)cancelDictationForTextStoreChanges;
+- (void)cancelDictationForTextStoreChangesInResponder:(id)arg1;
 - (void)cancelRecordingLimitTimer;
 - (void)completeStartConnectionForFileAtURL:(id)arg1 forInputModeIdentifier:(id)arg2;
 - (void)completeStartConnectionForReason:(int)arg1;
@@ -210,6 +213,7 @@
 - (void)setPreviousHypothesis:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setTargetHypothesis:(id)arg1;
+- (void)setWantsAvailabilityMonitoringWhenAppActive:(BOOL)arg1;
 - (void)setupConnectionOptions;
 - (void)setupForDictationStartForReason:(int)arg1;
 - (void)setupForStreamingDictationStart;
@@ -228,6 +232,7 @@
 - (void)switchToDictationInputMode;
 - (void)switchToDictationInputModeWithTouch:(id)arg1;
 - (id)targetHypothesis;
+- (BOOL)wantsAvailabilityMonitoringWhenAppActive;
 - (BOOL)wasDisabledDueToTelephonyActivity;
 
 @end

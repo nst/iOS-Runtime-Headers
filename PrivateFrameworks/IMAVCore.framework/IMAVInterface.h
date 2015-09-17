@@ -52,6 +52,7 @@
 - (unsigned long long)capabilities;
 - (unsigned long long)capabilitiesOfCPU;
 - (unsigned long long)capabilitiesOfNetwork;
+- (void)chatRelayedStatusChanged:(id)arg1;
 - (void)chatStateUpdated;
 - (void)cleanupAVInterface;
 - (id)controller;
@@ -87,9 +88,12 @@
 - (void)setRemoteVideoBackLayer:(void*)arg1 forChat:(id)arg2;
 - (void)setRemoteVideoLayer:(void*)arg1 forChat:(id)arg2;
 - (void)setRemoteVideoLayersFromChat:(id)arg1 toChat:(id)arg2;
+- (void)setRemoteVideoPresentationSize:(struct CGSize { float x1; float x2; })arg1 forChat:(id)arg2;
+- (void)setRemoteVideoPresentationState:(unsigned int)arg1 forChat:(id)arg2;
 - (void)setShouldKeepCameraRunning:(BOOL)arg1;
 - (BOOL)shouldKeepCameraRunning;
 - (void)startInterruptionForChat:(id)arg1;
+- (void)startInterruptionForChat:(id)arg1 withSource:(id)arg2;
 - (BOOL)startPreviewWithError:(id*)arg1;
 - (BOOL)stopPreview;
 - (BOOL)supportsLayers;

@@ -4,7 +4,4 @@
 
 @interface _UIAlertControllerAlertPresentationController : _UIAlertControllerPresentationController
 
-- (id)_presentationControllerForTraitCollection:(id)arg1;
-- (int)attributeToAlignAlertControllerViewBy;
-
 @end

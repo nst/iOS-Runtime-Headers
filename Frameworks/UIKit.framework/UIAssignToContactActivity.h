@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIAssignToContactActivity : UIActivity <ABPeoplePickerNavigationControllerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface UIAssignToContactActivity : UIActivity <CNContactPickerDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImage *_image;
     UIImagePickerController *_imagePickerController;
-    ABPeoplePickerNavigationController *_peoplePicker;
-    void *_person;
+    CNContactPickerViewController *_peoplePicker;
+    CNContact *_person;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,10 +14,11 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, retain) UIImagePickerController *imagePickerController;
-@property (nonatomic, retain) ABPeoplePickerNavigationController *peoplePicker;
-@property (nonatomic) void*person;
+@property (nonatomic, retain) CNContactPickerViewController *peoplePicker;
+@property (nonatomic, retain) CNContact *person;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_activityImage;
 - (void)_cleanup;
 - (id)_embeddedActivityViewController;
@@ -26,20 +27,18 @@
 - (id)activityType;
 - (id)activityViewController;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
-- (void)dealloc;
+- (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
+- (void)contactPickerDidCancel:(id)arg1;
 - (id)image;
 - (id)imagePickerController;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (id)peoplePicker;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2;
-- (BOOL)peoplePickerNavigationController:(id)arg1 shouldContinueAfterSelectingPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4;
-- (void)peoplePickerNavigationControllerDidCancel:(id)arg1;
-- (void*)person;
+- (id)person;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImagePickerController:(id)arg1;
 - (void)setPeoplePicker:(id)arg1;
-- (void)setPerson:(void*)arg1;
+- (void)setPerson:(id)arg1;
 
 @end

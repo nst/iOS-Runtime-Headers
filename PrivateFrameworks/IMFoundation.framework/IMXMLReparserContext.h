@@ -11,10 +11,10 @@
 }
 
 @property (readonly, retain) NSString *_inContent;
-@property (nonatomic, readonly) NSDictionary *attributesToMerge;
-@property (nonatomic, readonly) NSArray *attributesToPreserve;
-@property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) NSString *outContent;
+@property (nonatomic, readonly, retain) NSDictionary *attributesToMerge;
+@property (nonatomic, readonly, retain) NSArray *attributesToPreserve;
+@property (nonatomic, readonly, retain) NSError *error;
+@property (nonatomic, readonly, retain) NSString *outContent;
 
 - (id)_inContent;
 - (void)_setOutContent:(id)arg1 error:(id)arg2;

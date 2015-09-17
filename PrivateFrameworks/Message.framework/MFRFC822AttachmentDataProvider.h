@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFRFC822AttachmentDataProvider : NSObject <MFAttachmentDataProvider> {
+@interface MFRFC822AttachmentDataProvider : NSObject <MFAttachmentDataProviderProtocol> {
     MFMailMessage *_message;
     NSData *_messageData;
     MFMimePart *_parentPart;

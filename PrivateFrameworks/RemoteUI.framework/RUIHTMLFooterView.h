@@ -23,6 +23,7 @@
 - (void)setBaseURL:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setText:(id)arg1 attributes:(id)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)webContainerView:(id)arg1 didClickLinkWithURL:(id)arg2;
 
 @end

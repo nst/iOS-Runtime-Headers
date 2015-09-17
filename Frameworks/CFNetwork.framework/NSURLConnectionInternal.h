@@ -20,6 +20,7 @@
 
 - (id)_connectionProperties;
 - (void)_invalidate;
+- (void)_reportTimingDataToAWD;
 - (void)_setDelegateQueue:(id)arg1;
 - (id)_timingData;
 - (void)_withActiveConnectionAndDelegate:(id /* block */)arg1;

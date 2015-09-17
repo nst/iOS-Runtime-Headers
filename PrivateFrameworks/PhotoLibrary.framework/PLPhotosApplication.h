@@ -35,12 +35,12 @@
 
 - (void)_applicationDidBecomeActive:(id)arg1;
 - (void)_applicationDidResignActive:(id)arg1;
+- (void)_cleanUpOutboundSharingAssets;
 - (void)_finishExtendedTest;
 - (void)_networkReachabilityDidChange:(id)arg1;
 - (void)_registerForPhotoStreamActivityNotifications;
 - (void)_setImageOptions;
 - (void)_startObservingReachabilityChanges;
-- (void)_statusBarDoubleTap:(id)arg1;
 - (void)_stopObservingReachabilityChanges;
 - (void)_unregisterForPhotoStreamActivityNotifications;
 - (void)_updateNetworkActivityIndicatorAsync;
@@ -62,7 +62,6 @@
 - (BOOL)isReachable;
 - (id)mainWindow;
 - (void)photosPreferencesChanged;
-- (void)presentInternalSettingsController;
 - (id)rootViewController;
 - (void)setCurrentTestName:(id)arg1;
 - (void)setCurrentTestOptions:(id)arg1;

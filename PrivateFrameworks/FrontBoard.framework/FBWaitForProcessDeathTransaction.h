@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) double timeout;
 
 - (void)_begin;
+- (BOOL)_canBeInterrupted;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;
 - (void)dealloc;

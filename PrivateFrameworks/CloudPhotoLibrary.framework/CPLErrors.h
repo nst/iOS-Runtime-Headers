@@ -12,8 +12,8 @@
 + (id)cplErrorWithCode:(int)arg1 underlyingError:(id)arg2 userInfo:(id)arg3 description:(id)arg4 arguments:(void*)arg5;
 + (id)incorrectMachineStateErrorWithReason:(id)arg1;
 + (id)incorrectParametersErrorForParameter:(id)arg1;
-+ (id)invalidClientCacheError;
-+ (id)invalidCloudCacheError;
++ (id)invalidClientCacheErrorWithReason:(id)arg1;
++ (id)invalidCloudCacheErrorWithReason:(id)arg1;
 + (id)invalidDaemonErrorWithConnectionError:(id)arg1;
 + (id)libraryClosedError;
 + (id)missingError;

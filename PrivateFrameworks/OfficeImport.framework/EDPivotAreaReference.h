@@ -14,6 +14,7 @@
 
 - (bool)byPosition;
 - (unsigned long)count;
+- (id)description;
 - (unsigned long)fieldId;
 - (id)init;
 - (bool)relative;

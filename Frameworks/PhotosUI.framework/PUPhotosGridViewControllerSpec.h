@@ -19,6 +19,7 @@
 
 @property (nonatomic, readonly) PUAlbumPickerViewControllerSpec *albumPickerViewControllerSpec;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } baseInterItemSpacing;
+@property (nonatomic, readonly) BOOL canCommitPreview;
 @property (nonatomic, readonly) BOOL canDisplayEditActionsInNavigationBar;
 @property (nonatomic, readonly) BOOL canDisplayOptionsInPopover;
 @property (nonatomic, readonly) BOOL canDisplaySearchActionInNavigationBar;
@@ -32,7 +33,10 @@
 @property (nonatomic, readonly) int layoutVariant;
 @property (nonatomic, readonly) float maxSearchBarWidth;
 @property (nonatomic, readonly) PUPhotosPickerViewControllerSpec *photosPickerViewControllerSpec;
+@property (nonatomic, readonly) float sectionHeaderHeight;
+@property (nonatomic, readonly) int sectionHeaderStyle;
 @property (nonatomic, readonly) BOOL shouldPlaceDeleteInCenterToolbarPosition;
+@property (nonatomic, readonly) BOOL shouldPlaceSelectAllButtonInRightNavigationBar;
 @property (nonatomic, readonly) int thumbnailImageFormat;
 @property (nonatomic, readonly) BOOL usesStackPopTransition;
 @property (nonatomic, readonly) BOOL wantsBackButtonTitleForPhotoBrowser;
@@ -41,6 +45,7 @@
 - (void).cxx_destruct;
 - (id)albumPickerViewControllerSpec;
 - (struct CGSize { float x1; float x2; })baseInterItemSpacing;
+- (BOOL)canCommitPreview;
 - (BOOL)canDisplayEditActionsInNavigationBar;
 - (BOOL)canDisplayOptionsInPopover;
 - (BOOL)canDisplaySearchActionInNavigationBar;
@@ -57,7 +62,10 @@
 - (float)maxSearchBarWidth;
 - (id)photoBrowserSpec;
 - (id)photosPickerViewControllerSpec;
+- (float)sectionHeaderHeight;
+- (int)sectionHeaderStyle;
 - (BOOL)shouldPlaceDeleteInCenterToolbarPosition;
+- (BOOL)shouldPlaceSelectAllButtonInRightNavigationBar;
 - (unsigned int)supportedInterfaceOrientations;
 - (int)thumbnailImageFormat;
 - (BOOL)usesStackPopTransition;

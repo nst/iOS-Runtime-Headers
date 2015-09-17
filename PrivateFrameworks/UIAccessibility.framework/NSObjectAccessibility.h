@@ -4,7 +4,7 @@
 
 @interface NSObjectAccessibility : __NSObjectAccessibility_super
 
-+ (Class)safeCategoryTargetClass;
++ (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
 - (id)accessibilityElementAtIndex:(int)arg1;

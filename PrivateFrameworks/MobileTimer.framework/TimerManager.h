@@ -20,8 +20,10 @@
 + (id)newNotificationAt:(double)arg1 withSound:(id)arg2;
 + (void)setSoundID:(id)arg1 forNotification:(id)arg2;
 + (id)sharedManager;
++ (void)updateTimerShortcutItem;
 + (BOOL)upgrade;
 
+- (void).cxx_destruct;
 - (BOOL)cancel;
 - (void)changeSound:(id)arg1;
 - (double)defaultDuration;
@@ -29,6 +31,7 @@
 - (double)fireTime;
 - (BOOL)pause;
 - (void)reloadState;
+- (void)reloadStateAndRefreshLocalNotifications;
 - (double)remainingTime;
 - (BOOL)resume;
 - (void)scheduleAt:(double)arg1 withSound:(id)arg2;

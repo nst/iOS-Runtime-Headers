@@ -2,18 +2,18 @@
    Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
  */
 
-@interface ATConcreteMessageLink : NSObject <ATMessageLink, ATSocketDelegate> {
+@interface ATConcreteMessageLink : ATMessageLink <ATSocketDelegate> {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableDictionary *_completionHandlersByRequestID;
     NSMutableDictionary *_completionHandlersByResponseID;
     int _endpointType;
     NSString *_guid;
     NSObject<OS_dispatch_queue> *_handlerAccessQueue;
+    NSString *_identifier;
     int _idleTimeoutExceptionCount;
     BOOL _initialized;
     int _keepAliveExceptionCount;
     double _lastActivityTime;
-    NSString *_libraryIdentifier;
     unsigned int _nextMessageID;
     NSHashTable *_observers;
     BOOL _open;
@@ -38,16 +38,16 @@
 @property (nonatomic) int endpointType;
 @property (nonatomic, readonly, copy) NSString *guid;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *identifier;
 @property (getter=isInitialized, nonatomic) BOOL initialized;
 @property (nonatomic) double lastActivityTime;
-@property (nonatomic, copy) NSString *libraryIdentifier;
 @property (nonatomic, retain) NSHashTable *observers;
-@property (getter=isOpen, nonatomic, readonly) BOOL open;
 @property (nonatomic, retain) ATSignatureProvider *signatureProvider;
 @property (nonatomic, readonly) ATSocket *socket;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_checkMessageTimeouts;
 - (void)_invokeCompletionHandlerForResponseID:(unsigned int)arg1 withError:(id)arg2;
 - (unsigned int)_nextRequestID;
 - (void)_prepareStreamReaderForMessage:(id)arg1;
@@ -57,7 +57,6 @@
 - (void)_processIncomingPartialResponse:(id)arg1;
 - (void)_processIncomingRequest:(id)arg1;
 - (void)_processIncomingResponse:(id)arg1;
-- (void)_queue_checkMessageTimeouts;
 - (BOOL)_sendMessage:(id)arg1 error:(id*)arg2;
 - (void)addKeepAliveException;
 - (void)addObserver:(id)arg1;
@@ -68,12 +67,12 @@
 - (id)description;
 - (int)endpointType;
 - (id)guid;
+- (id)identifier;
 - (BOOL)idleTimeoutEnabled;
 - (id)initWithSocket:(id)arg1;
 - (BOOL)isInitialized;
 - (BOOL)isOpen;
 - (double)lastActivityTime;
-- (id)libraryIdentifier;
 - (id)observers;
 - (BOOL)open;
 - (void)removeKeepAliveException;
@@ -84,9 +83,9 @@
 - (void)sendRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)sendResponse:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setEndpointType:(int)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setInitialized:(BOOL)arg1;
 - (void)setLastActivityTime:(double)arg1;
-- (void)setLibraryIdentifier:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setSignatureProvider:(id)arg1;
 - (id)signatureProvider;

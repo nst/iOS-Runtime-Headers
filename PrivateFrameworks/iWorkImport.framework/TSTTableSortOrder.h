@@ -18,6 +18,7 @@
 + (id)sortOrderWithRules:(id)arg1 type:(int)arg2;
 
 - (id)columnIndices;
+- (BOOL)containsAnyRulesInColumns:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)empty;
@@ -30,6 +31,7 @@
 - (id)rules;
 - (id)sortOrderByAddingRule:(id)arg1;
 - (id)sortOrderByChangingTypeTo:(int)arg1;
+- (id)sortOrderByRemovingColumnIndices:(id)arg1;
 - (id)sortOrderByRemovingRuleAtIndex:(unsigned int)arg1;
 - (id)sortOrderByReplacingRuleAtIndex:(unsigned int)arg1 withRule:(id)arg2;
 - (id)sortOrderByReplacingRulesWithRules:(id)arg1;

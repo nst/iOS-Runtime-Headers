@@ -31,6 +31,7 @@
 - (id)queue;
 - (void)recordAppAction:(id)arg1;
 - (void)recordUserActivityEvent:(id)arg1;
+- (void)recordUserActivityEventForCollection:(id)arg1;
 - (void)recordUserActivityEvents:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setPreviousActivityType:(id)arg1;

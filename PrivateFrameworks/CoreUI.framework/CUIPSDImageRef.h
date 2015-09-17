@@ -56,6 +56,7 @@
 - (struct CGImage { }*)createCGImageAtLayer:(unsigned int)arg1;
 - (struct CGImage { }*)createCompositeCGImage;
 - (void)dealloc;
+- (void)enumerateLayersUsingBlock:(id /* block */)arg1;
 - (id)fillSampleAtLayer:(unsigned int)arg1;
 - (void)finalize;
 - (id)gradientAtLayer:(unsigned int)arg1;
@@ -67,6 +68,7 @@
 - (id)imageFromSlice:(unsigned int)arg1 atLayer:(unsigned int)arg2 isEmptyImage:(BOOL*)arg3;
 - (struct _PSDImageInfo { unsigned int x1; unsigned int x2; unsigned short x3; unsigned short x4; unsigned short x5; int x6; })imageInfo;
 - (id)initWithPath:(id)arg1;
+- (id)layerEnumerator;
 - (id)layerNames;
 - (id)layerRefAtIndex:(unsigned int)arg1;
 - (BOOL)loadPSDFileWithLayers:(BOOL)arg1;

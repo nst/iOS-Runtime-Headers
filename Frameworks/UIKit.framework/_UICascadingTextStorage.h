@@ -17,6 +17,7 @@
 
 + (id)defaultFont;
 
+- (void).cxx_destruct;
 - (id)_defaultAttributes;
 - (void)_restoreOriginalFontAttribute;
 - (void)_setShadow:(id)arg1;
@@ -27,7 +28,6 @@
 - (id)attribute:(id)arg1 atIndex:(unsigned int)arg2 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (id)attributesAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)attributesAtIndex:(unsigned int)arg1 longestEffectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (void)dealloc;
 - (id)defaultAttributes;
 - (id)font;
 - (int)lineBreakMode;

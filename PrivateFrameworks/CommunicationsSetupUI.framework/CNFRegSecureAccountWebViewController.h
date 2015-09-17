@@ -11,6 +11,7 @@
 
 @property (nonatomic, retain) IMAccount *account;
 
+- (void).cxx_destruct;
 - (void)_handleTimeout;
 - (void)_incrementSigninFailureCount;
 - (void)_launchForgotPasswordUrl;
@@ -23,7 +24,6 @@
 - (id)account;
 - (id)authIdHeaderValue;
 - (id)authTokenHeaderValue;
-- (void)dealloc;
 - (void)doHandoffWithStatus:(int)arg1 appleID:(id)arg2 authID:(id)arg3 authToken:(id)arg4;
 - (id)initWithRegController:(id)arg1 account:(id)arg2;
 - (void)setAccount:(id)arg1;

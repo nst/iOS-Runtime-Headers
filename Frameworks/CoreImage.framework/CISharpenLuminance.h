@@ -17,7 +17,6 @@
 - (id)inputImage;
 - (id)inputSharpness;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputSharpness:(id)arg1;
 

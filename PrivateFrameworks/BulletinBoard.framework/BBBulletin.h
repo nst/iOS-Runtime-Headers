@@ -57,12 +57,13 @@
 @property (nonatomic, readonly) NSSet *alertSuppressionAppIDs;
 @property (nonatomic, copy) NSSet *alertSuppressionAppIDs_deprecated;
 @property (nonatomic, copy) NSSet *alertSuppressionContexts;
+@property (nonatomic, readonly) BOOL allowsAddingToLockScreenWhenUnlocked;
+@property (nonatomic, readonly) BOOL allowsAutomaticRemovalFromLockScreen;
 @property (nonatomic, copy) BBAction *alternateAction;
 @property (nonatomic, readonly) NSString *alternateActionLabel;
 @property (nonatomic, retain) BBAttachments *attachments;
 @property (nonatomic, readonly) NSString *bannerAccessoryRemoteServiceBundleIdentifier;
 @property (nonatomic, readonly) NSString *bannerAccessoryRemoteViewControllerClassName;
-@property (nonatomic, readonly) BOOL bannerShowsSubtitle;
 @property (nonatomic, copy) NSString *bulletinID;
 @property (nonatomic, copy) NSString *bulletinVersionID;
 @property (nonatomic, copy) NSArray *buttons;
@@ -151,6 +152,7 @@
 // Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
 
 + (id)addBulletinToCache:(id)arg1;
++ (id)bulletinReferenceDateFromDate:(id)arg1;
 + (id)bulletinWithBulletin:(id)arg1;
 + (id)copyCachedBulletinWithBulletinID:(id)arg1;
 + (void)removeBulletinFromCache:(id)arg1;
@@ -178,13 +180,14 @@
 - (id)alertSuppressionAppIDs;
 - (id)alertSuppressionAppIDs_deprecated;
 - (id)alertSuppressionContexts;
+- (BOOL)allowsAddingToLockScreenWhenUnlocked;
+- (BOOL)allowsAutomaticRemovalFromLockScreen;
 - (id)alternateAction;
 - (id)alternateActionLabel;
 - (id)attachments;
 - (id)attachmentsCreatingIfNecessary:(BOOL)arg1;
 - (id)bannerAccessoryRemoteServiceBundleIdentifier;
 - (id)bannerAccessoryRemoteViewControllerClassName;
-- (BOOL)bannerShowsSubtitle;
 - (id)bulletinID;
 - (id)bulletinVersionID;
 - (id)buttons;
@@ -357,7 +360,9 @@
 
 // Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
 
+- (id)dateOrRecencyDate;
 - (BOOL)matchesPublisherBulletinID:(id)arg1 andRecordID:(id)arg2;
+- (id)publishDate;
 - (id)publisherMatchID;
 - (id)sectionMatchID;
 
@@ -373,10 +378,12 @@
 - (id /* block */)actionBlockForAction:(id)arg1 withOrigin:(int)arg2;
 - (id /* block */)actionBlockForAction:(id)arg1 withOrigin:(int)arg2 context:(id)arg3;
 - (id /* block */)actionBlockForButton:(id)arg1;
+- (BOOL)bulletinAlertShouldOverridePocketMode;
 - (BOOL)bulletinAlertShouldOverrideQuietMode;
 - (BOOL)isPlayingSound;
 - (void)killSound;
 - (BOOL)playSound;
+- (BOOL)sb_hasCustomSecondaryContent;
 - (id)sb_minimalSupplementaryActions;
 - (id)sb_nonPluginDefaultAction;
 - (BOOL)sb_shouldSuppressMessageForPrivacy;

@@ -18,7 +18,6 @@
     BOOL _autosizesToFitSuperview;
     _UIBackdropEffectView *_backdropEffectView;
     BOOL _backdropVisibilitySetOnce;
-    int _blurHardEdges;
     BOOL _blurRadiusSetOnce;
     BOOL _blursBackground;
     UIImage *_colorBurnTintMaskImage;
@@ -29,6 +28,7 @@
     float _colorMatrixColorTintAlpha;
     float _colorMatrixGrayscaleTintAlpha;
     float _colorMatrixGrayscaleTintLevel;
+    CAFilter *_colorOffsetFilter;
     CAFilter *_colorSaturateFilter;
     UIImage *_colorTintMaskImage;
     UIView *_colorTintMaskViewContainer;
@@ -70,7 +70,6 @@
     BOOL _simulatesMasks;
     int _style;
     CAFilter *_tintFilter;
-    struct __CFRunLoopObserver { } *_updateInputBoundsRunLoopObserver;
     BOOL _updateMaskViewsForViewReentrancyGuard;
     BOOL _wantsColorSettings;
 }
@@ -90,7 +89,6 @@
 @property (nonatomic) BOOL autosizesToFitSuperview;
 @property (nonatomic, retain) _UIBackdropEffectView *backdropEffectView;
 @property (nonatomic) BOOL backdropVisibilitySetOnce;
-@property (nonatomic) int blurHardEdges;
 @property (nonatomic) BOOL blurRadiusSetOnce;
 @property (nonatomic) BOOL blursBackground;
 @property (nonatomic, retain) UIImage *colorBurnTintMaskImage;
@@ -101,6 +99,7 @@
 @property (nonatomic) float colorMatrixColorTintAlpha;
 @property (nonatomic) float colorMatrixGrayscaleTintAlpha;
 @property (nonatomic) float colorMatrixGrayscaleTintLevel;
+@property (nonatomic, retain) CAFilter *colorOffsetFilter;
 @property (nonatomic, retain) CAFilter *colorSaturateFilter;
 @property (nonatomic, retain) UIImage *colorTintMaskImage;
 @property (nonatomic, retain) UIView *colorTintMaskViewContainer;
@@ -143,7 +142,6 @@
 @property (nonatomic) BOOL simulatesMasks;
 @property (nonatomic) int style;
 @property (nonatomic, retain) CAFilter *tintFilter;
-@property (nonatomic) struct __CFRunLoopObserver { }*updateInputBoundsRunLoopObserver;
 @property (nonatomic) BOOL updateMaskViewsForViewReentrancyGuard;
 @property (nonatomic) BOOL wantsColorSettings;
 
@@ -159,13 +157,14 @@
 + (void)suppressColorSettingsForRunLoopModePush:(id)arg1;
 + (void)suppressColorSettingsForWillResignActive:(id)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)_backdropVisible;
 - (id)_blurQuality;
 - (float)_blurRadius;
 - (float)_saturationDeltaFactor;
 - (void)_setBlursBackground:(BOOL)arg1;
+- (void)_transitionToGraphicsQuality:(int)arg1;
 - (void)_updateFilters;
-- (void)_updateInputBounds;
 - (BOOL)_zoomsBack;
 - (void)addBackdropEffectViewIfNeededForSettings:(id)arg1;
 - (void)addColorBurnTintViewIfNeededForSettings:(id)arg1;
@@ -191,13 +190,10 @@
 - (void)backdropLayerStatisticsDidChange:(id)arg1;
 - (id)backdropViewLayer;
 - (BOOL)backdropVisibilitySetOnce;
-- (int)blurHardEdges;
 - (id)blurQuality;
 - (float)blurRadius;
 - (BOOL)blurRadiusSetOnce;
 - (BOOL)blursBackground;
-- (BOOL)blursWithHardEdges;
-- (void)clearUpdateInputBoundsRunLoopObserver;
 - (id)colorBurnTintMaskImage;
 - (id)colorBurnTintMaskViewContainer;
 - (id)colorBurnTintMaskViewMap;
@@ -206,6 +202,7 @@
 - (float)colorMatrixColorTintAlpha;
 - (float)colorMatrixGrayscaleTintAlpha;
 - (float)colorMatrixGrayscaleTintLevel;
+- (id)colorOffsetFilter;
 - (id)colorSaturateFilter;
 - (id)colorTintMaskImage;
 - (id)colorTintMaskViewContainer;
@@ -269,7 +266,6 @@
 - (BOOL)requiresTintViews;
 - (float)saturationDeltaFactor;
 - (id)savedInputSettingsDuringRenderInContext;
-- (void)scheduleUpdateInputBoundsIfNeeded;
 - (void)setAllowsColorSettingsSuppression:(BOOL)arg1;
 - (void)setAppliesOutputSettingsAnimationDuration:(double)arg1;
 - (void)setAppliesOutputSettingsAutomatically:(BOOL)arg1;
@@ -282,14 +278,10 @@
 - (void)setBackdropVisibilitySetOnce:(BOOL)arg1;
 - (void)setBackdropVisible:(BOOL)arg1;
 - (void)setBlurFilterWithRadius:(float)arg1 blurQuality:(id)arg2;
-- (void)setBlurFilterWithRadius:(float)arg1 blurQuality:(id)arg2 blurHardEdges:(int)arg3;
-- (void)setBlurHardEdges:(int)arg1;
 - (void)setBlurQuality:(id)arg1;
 - (void)setBlurRadius:(float)arg1;
 - (void)setBlurRadiusSetOnce:(BOOL)arg1;
 - (void)setBlursBackground:(BOOL)arg1;
-- (void)setBlursWithHardEdges:(BOOL)arg1;
-- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setColorBurnTintMaskImage:(id)arg1;
 - (void)setColorBurnTintMaskViewContainer:(id)arg1;
 - (void)setColorBurnTintMaskViewMap:(id)arg1;
@@ -298,6 +290,8 @@
 - (void)setColorMatrixColorTintAlpha:(float)arg1;
 - (void)setColorMatrixGrayscaleTintAlpha:(float)arg1;
 - (void)setColorMatrixGrayscaleTintLevel:(float)arg1;
+- (void)setColorOffsetFilter:(id)arg1;
+- (void)setColorOffsetFilterForSettings:(id)arg1;
 - (void)setColorSaturateFilter:(id)arg1;
 - (void)setColorTintMaskImage:(id)arg1;
 - (void)setColorTintMaskViewContainer:(id)arg1;
@@ -317,7 +311,6 @@
 - (void)setFilterMaskImage:(id)arg1;
 - (void)setFilterMaskViewContainer:(id)arg1;
 - (void)setFilterMaskViewMap:(id)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGaussianBlurFilter:(id)arg1;
 - (void)setGraphicsQualityChangeDelegate:(id)arg1;
 - (void)setGrayscaleTintMaskImage:(id)arg1;
@@ -344,7 +337,7 @@
 - (void)setStyle:(int)arg1;
 - (void)setTintFilter:(id)arg1;
 - (void)setTintFilterForSettings:(id)arg1;
-- (void)setUpdateInputBoundsRunLoopObserver:(struct __CFRunLoopObserver { }*)arg1;
+- (void)setTintOpacity:(float)arg1;
 - (void)setUpdateMaskViewsForViewReentrancyGuard:(BOOL)arg1;
 - (void)setUsesZoom;
 - (void)setWantsColorSettings:(BOOL)arg1;
@@ -365,7 +358,6 @@
 - (void)transitionToPrivateStyle:(int)arg1;
 - (void)transitionToSettings:(id)arg1;
 - (void)transitionToStyle:(int)arg1;
-- (struct __CFRunLoopObserver { }*)updateInputBoundsRunLoopObserver;
 - (void)updateMaskViewForView:(id)arg1 flag:(int)arg2;
 - (void)updateMaskViewsForView:(id)arg1;
 - (BOOL)updateMaskViewsForViewReentrancyGuard;

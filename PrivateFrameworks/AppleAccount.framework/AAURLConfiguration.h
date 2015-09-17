@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) NSString *declineFamilyInviteURL;
 @property (nonatomic, readonly) NSString *deviceListURL;
 @property (nonatomic, readonly) NSString *devicesUIURL;
+@property (nonatomic, readonly) NSString *dismissAlertURL;
 @property (nonatomic, readonly) NSString *emailLookupURL;
 @property (nonatomic, readonly) NSString *existingAppleIDTermsUIURL;
 @property (nonatomic, readonly) NSString *familyEligibilityURL;
@@ -39,6 +40,8 @@
 @property (nonatomic, readonly) NSString *finishProvisioningURL;
 @property (nonatomic, readonly) NSString *fmipAuthenticate;
 @property (nonatomic, readonly) NSString *genericTermsURL;
+@property (nonatomic, readonly) NSString *getAccountEventDetailsURL;
+@property (nonatomic, readonly) NSString *getDeviceListURL;
 @property (nonatomic, readonly) NSString *getFamilyDetailsURL;
 @property (nonatomic, readonly) NSString *getFamilyMemberPhotoURL;
 @property (nonatomic, readonly) NSString *getFamilyPushDetailsURL;
@@ -57,6 +60,7 @@
 @property (nonatomic, readonly) NSString *registerDeviceURL;
 @property (nonatomic, readonly) NSString *registerURL;
 @property (nonatomic, readonly) NSString *rejectChildTransferURL;
+@property (nonatomic, readonly) NSString *repairCloudAccountUIURL;
 @property (nonatomic, readonly) NSString *secondaryAuthenticationURL;
 @property (nonatomic, readonly) NSString *sendCodeURL;
 @property (nonatomic, readonly) NSString *signInURL;
@@ -98,6 +102,7 @@
 - (id)declineFamilyInviteURL;
 - (id)deviceListURL;
 - (id)devicesUIURL;
+- (id)dismissAlertURL;
 - (id)emailLookupURL;
 - (id)existingAppleIDTermsUIURL;
 - (id)familyEligibilityURL;
@@ -111,6 +116,8 @@
 - (id)finishProvisioningURL;
 - (id)fmipAuthenticate;
 - (id)genericTermsURL;
+- (id)getAccountEventDetailsURL;
+- (id)getDeviceListURL;
 - (id)getFamilyDetailsURL;
 - (id)getFamilyMemberPhotoURL;
 - (id)getFamilyPushDetailsURL;
@@ -130,6 +137,7 @@
 - (id)registerDeviceURL;
 - (id)registerURL;
 - (id)rejectChildTransferURL;
+- (id)repairCloudAccountUIURL;
 - (id)secondaryAuthenticationURL;
 - (id)sendCodeURL;
 - (id)signInURL;

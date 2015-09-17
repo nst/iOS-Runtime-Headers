@@ -8,7 +8,7 @@
     SGDuplicateKey *_parentKey;
 }
 
-@property (nonatomic, readonly) NSString *compositeHash;
+@property (nonatomic, readonly) NSData *compositeHash;
 @property (nonatomic, readonly) NSObject<SGEntityKey> *entityKey;
 @property (nonatomic, readonly) long long entityType;
 @property (nonatomic, readonly) SGDuplicateKey *parentKey;
@@ -16,8 +16,11 @@
 + (id)duplicateKeyForCuratedContactWithExternalId:(int)arg1;
 + (id)duplicateKeyForCuratedEventWithExternalID:(id)arg1;
 + (id)duplicateKeyForEmailWithSource:(id)arg1 messageId:(id)arg2;
++ (id)duplicateKeyForNaturalLanguageEventWithStartDate:(id)arg1 endDate:(id)arg2 title:(id)arg3 parentKey:(id)arg4;
 + (id)duplicateKeyForPseudoContactWithIdentity:(id)arg1 parentKey:(id)arg2;
 + (id)duplicateKeyForPseudoEventWithDomain:(id)arg1 groupId:(id)arg2 parentKey:(id)arg3;
++ (id)duplicateKeyForSearchableItem:(id)arg1;
++ (id)duplicateKeyForUnrecognizedContactWithIdentity:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)compositeHash;
@@ -32,6 +35,7 @@
 - (unsigned int)hash;
 - (id)identityKey;
 - (id)initWithEntityKey:(id)arg1 entityType:(long long)arg2 parentKey:(id)arg3;
+- (id)initWithSearchableItem:(id)arg1;
 - (id)initWithSerialized:(id)arg1;
 - (id)initWithSerializedEntityKey:(id)arg1 entityType:(long long)arg2 serializedParentKey:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
@@ -40,5 +44,6 @@
 - (id)pseudoContactKey;
 - (id)pseudoEventKey;
 - (id)serialize;
+- (id)unrecognizedContactKey;
 
 @end

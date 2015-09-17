@@ -14,6 +14,9 @@
 
 - (void).cxx_destruct;
 - (id)initWithRoutineManager:(id)arg1;
+- (void)onNextPredictedLocationsOfInterest:(id)arg1 withError:(id)arg2;
+- (void)onPredictedApplications:(id)arg1 error:(id)arg2;
+- (void)onScenarioTrigger:(id)arg1 withError:(id)arg2;
 - (void)onVisit:(id)arg1 withError:(id)arg2;
 - (id)routineManager;
 - (void)setRoutineManager:(id)arg1;

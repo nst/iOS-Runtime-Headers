@@ -53,5 +53,6 @@
 - (void)p_drawReflectionGradientIntoMovieReflectionLayer:(struct CGContext { }*)arg1 reflectionSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)p_updateMovieReflectionMaskLayer;
 - (void)setAlternatePosterImage:(struct CGImage { }*)arg1;
+- (BOOL)shouldShowCheckerboard;
 
 @end

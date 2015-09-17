@@ -2,8 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualAddToPlaylistAlertAction : UIAlertAction
+@interface MusicContextualAddToPlaylistAlertAction : MusicContextualAlertAction
 
-+ (id)contextualAddToPlaylistActionForEntityValueContext:(id)arg1 alertController:(id)arg2 didDismissHandler:(id /* block */)arg3;
++ (id)contextualAddToPlaylistActionForEntityValueContext:(id)arg1 shouldDismissHandler:(id /* block */)arg2 additionalPresentationHandler:(id /* block */)arg3 didDismissHandler:(id /* block */)arg4;
 
 @end

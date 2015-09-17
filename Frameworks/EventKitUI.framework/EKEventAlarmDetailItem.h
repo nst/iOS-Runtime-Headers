@@ -9,6 +9,8 @@
     BOOL _hasLeaveNowAlarm;
 }
 
++ (id)_textLabelForIndex:(unsigned int)arg1;
+
 - (void).cxx_destruct;
 - (BOOL)_alarmsAreCreatable;
 - (BOOL)_alarmsAreEditable;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKMapSnapshotOptions : NSObject <NSCopying> {
+@interface MKMapSnapshotOptions : NSObject <NSCopying, NSSecureCoding> {
     MKMapCamera *_camera;
     struct { 
         struct { 
@@ -34,6 +34,7 @@
         float width; 
         float height; 
     } _size;
+    BOOL _useSnapshotService;
     BOOL _usingRect;
 }
 
@@ -46,14 +47,21 @@
 @property (nonatomic) BOOL showsBuildings;
 @property (nonatomic) BOOL showsPointsOfInterest;
 @property (nonatomic) struct CGSize { float x1; float x2; } size;
+@property (getter=_useSnapshotService, setter=_setUseSnapshotService:, nonatomic) BOOL useSnapshotService;
 @property (nonatomic, readonly) BOOL usingRect;
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (BOOL)_rendersInBackground;
 - (void)_setRendersInBackground:(BOOL)arg1;
+- (void)_setUseSnapshotService:(BOOL)arg1;
+- (BOOL)_useSnapshotService;
 - (id)camera;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })mapRect;
 - (unsigned int)mapType;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;

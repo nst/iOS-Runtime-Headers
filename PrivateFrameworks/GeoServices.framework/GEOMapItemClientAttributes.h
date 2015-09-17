@@ -14,8 +14,6 @@
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
-+ (id)clientAttributesCopyForSharing:(id)arg1;
-
 - (id)addressBookAttributes;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

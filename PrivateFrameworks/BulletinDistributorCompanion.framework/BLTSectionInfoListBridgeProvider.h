@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTSectionInfoListBridgeProvider : NSObject <LSApplicationWorkspaceObserverProtocol> {
+@interface BLTSectionInfoListBridgeProvider : NSObject <BLTSectionInfoListProvider, LSApplicationWorkspaceObserverProtocol> {
     <BLTSectionInfoListProviderDelegate> *_delegate;
     NSDate *_lastKnownBridgeSettingsChangeDate;
     struct _opaque_pthread_mutex_t { 

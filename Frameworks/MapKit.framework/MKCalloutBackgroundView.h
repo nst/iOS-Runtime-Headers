@@ -9,12 +9,16 @@
     UIView *_containerView;
     UIImageView *_currentArrowShadow;
     _MKCalloutBackgroundMaskView *_mainMaskView;
-    unsigned int _mapDisplayStyle;
+    struct { 
+        unsigned char timePeriod; 
+        unsigned char overlayType; 
+        unsigned char applicationState; 
+    } _mapDisplayStyle;
     NSMutableArray *_vendedMaskViews;
 }
 
 @property (nonatomic, readonly) UIColor *calloutBackgroundColor;
-@property (nonatomic) unsigned int mapDisplayStyle;
+@property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; } mapDisplayStyle;
 
 + (float)_contentViewCornerRadiusForArrowDirection:(unsigned int)arg1;
 + (float)arrowBase;
@@ -37,10 +41,10 @@
 - (id)calloutBackgroundColor;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (unsigned int)mapDisplayStyle;
+- (struct { unsigned char x1; unsigned char x2; unsigned char x3; })mapDisplayStyle;
 - (id)newMaskLayer;
 - (void)setArrowDirection:(unsigned int)arg1;
 - (void)setArrowOffset:(float)arg1;
-- (void)setMapDisplayStyle:(unsigned int)arg1;
+- (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
 
 @end

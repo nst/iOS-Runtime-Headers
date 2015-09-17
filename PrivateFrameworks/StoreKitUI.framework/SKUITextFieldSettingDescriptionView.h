@@ -34,6 +34,7 @@
 - (void)layoutSubviews;
 - (void)reloadWithSettingDescription:(id)arg1 width:(float)arg2 context:(id)arg3;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (void)textFieldDidEndEditing:(id)arg1;

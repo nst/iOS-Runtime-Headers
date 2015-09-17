@@ -18,6 +18,7 @@
 + (id)_activitySettingsImageForApplication:(id)arg1;
 + (int)activityCategory;
 
+- (void).cxx_destruct;
 - (id)_activityImage;
 - (id)_activitySettingsImage;
 - (id)_attachmentNameForActivityItem:(id)arg1;
@@ -48,7 +49,6 @@
 - (id)activityViewController;
 - (id)applicationExtension;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
-- (void)dealloc;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setActivityCompletionHandler:(id /* block */)arg1;

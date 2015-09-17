@@ -6,8 +6,6 @@
     BOOL isAudioOnly;
 }
 
-@property (nonatomic) BOOL isAudioOnly;
-
 - (id)description;
 - (BOOL)isAudioOnly;
 - (void)setIsAudioOnly:(BOOL)arg1;

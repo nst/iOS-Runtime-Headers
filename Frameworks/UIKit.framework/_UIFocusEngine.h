@@ -3,52 +3,86 @@
  */
 
 @interface _UIFocusEngine : NSObject <UIGestureRecognizerDelegate> {
-    NSMapTable *_activeScrollViewBounds;
+    NSMapTable *_activeScrollViewAnimatingBounds;
+    NSMapTable *_activeScrollViewLoadingBounds;
+    NSMapTable *_cachedViewSearchResults;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _currentFocusDirection;
     unsigned int _currentGestureID;
     BOOL _enabled;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _firstMomentumTouchPoint;
     struct { 
         unsigned int isSettingFocusedView : 1; 
-        unsigned int isTrackingTouch : 1; 
+        unsigned int isEligibleToCrossSpeedBump : 1; 
         unsigned int isContinuingTouchWithMomentum : 1; 
         unsigned int isAnimatingFocusDirectionRollback : 1; 
+        unsigned int isPeekingScrollView : 1; 
+        unsigned int shouldApplyAcceleration : 1; 
         unsigned int shouldShowDebugOverlays : 1; 
     } _flags;
-    _UIFocusEngineTargetedDynamicAnimation *_focusDirectionRollbackAnimation;
+    NSMapTable *_focusRollbackAnimations;
+    unsigned int _focusUpdateCountSinceLastPanBegan;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _gameControllerVirtualTrackpadLocation;
+    unsigned int _inputType;
     float _lastEdgeScrollEdgeValue;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _lastKnownTouchPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _lastMomentumTouchPoint;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _lastReadGameControllerStickLocation;
     UIScrollView *_lastScrolledScroll;
+    double _lastSoundStartTime;
+    CADisplayLink *_momentumDisplayLink;
+    float _momentumFriction;
     struct CGPoint { 
         float x; 
         float y; 
-    } _lastTouchPointNormalized;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _momentumNormalized;
+    } _momentumVelocity;
     UIMoveEvent *_moveEvent;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _movementOriginPoint;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _originalTouchPointNormalized;
-    UIPanGestureRecognizer *_panGestureRecognizer;
+    _UIFocusEnginePanGestureRecognizer *_panGestureRecognizer;
+    unsigned int _peekingHeading;
+    UIScrollView *_peekingScrollView;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _peekingScrollViewPeekSize;
     BOOL _playsSoundOnFocusChange;
+    struct CGVector { 
+        float dx; 
+        float dy; 
+    } _progressAccumulator;
     NSArray *_remoteGestures;
-    _UIFocusEngineTargetedDynamicAnimation *_scrollAnimationAxisX;
-    _UIFocusEngineTargetedDynamicAnimation *_scrollAnimationAxisY;
-    _UIDynamicAnimationGroup *_scrollAnimationGroup;
+    <_UIFocusScrollAnimator> *_scrollViewAnimator;
     BOOL _sendsFocusDirection;
     BOOL _shouldShowDebugOverlays;
-    _UIFocusEngineTapGestureRecognizer *_tapGestureRecognizer;
+    CADisplayLink *_stickDisplayLink;
+    UITapGestureRecognizer *_tapGestureRecognizer;
     UIWindow *_targetWindow;
-    unsigned long _tickSoundID;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _touchBeganPoint;
     _UIFocusTouchDebugView *_touchIndicatorView;
-    _UIDynamicAnimationGroup *_touchMomentumAnimationGroup;
-    NSUserDefaults *_userDefaults;
+    UIView *_viewForTouchDeferredFocus;
+    BOOL _wantsScrollPeeking;
 }
 
+@property (nonatomic, readonly) float _animationCoefficient;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
@@ -59,57 +93,97 @@
 @property (nonatomic) BOOL shouldShowDebugOverlays;
 @property (readonly) Class superclass;
 @property (nonatomic) UIWindow *targetWindow;
+@property (nonatomic) UIView *viewForTouchDeferredFocus;
+@property (nonatomic) BOOL wantsScrollPeeking;
 
-+ (id)defaultTuningValues;
-+ (void)initialize;
-+ (void)resetTuningValues;
-+ (void)resetTuningValuesIfNecessary;
-
+- (void).cxx_destruct;
+- (void)_activateControllerDisplayLink;
 - (void)_addGestureRecognizers;
-- (id)_bestFocusCandidateForFocusHeading:(unsigned int)arg1 currentFocusView:(id)arg2 direction:(struct CGSize { float x1; float x2; })arg3 inView:(id)arg4;
-- (id)_bestFocusCandidateStartingAtView:(id)arg1 inDirection:(struct CGSize { float x1; float x2; })arg2 inView:(id)arg3;
-- (void)_cleanupTickSound;
+- (void)_addVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toScrollViewForAnimation:(id)arg2;
+- (float)_animationCoefficient;
+- (BOOL)_attemptToMoveFocusAlongVector:(struct CGVector { float x1; float x2; })arg1 reportedVelocity:(struct CGVector { float x1; float x2; })arg2 startingView:(id)arg3;
+- (id)_bestFocusCandidateForFocusHeading:(unsigned int)arg1 currentFocusView:(id)arg2 direction:(struct CGVector { float x1; float x2; })arg3;
+- (id)_bestFocusCandidateStartingAtView:(id)arg1 inDirection:(struct CGVector { float x1; float x2; })arg2;
+- (id)_cachedSearchResultForHeading:(unsigned int)arg1;
+- (void)_cancelScrollingForScrollView:(id)arg1;
+- (void)_cleanUpSounds;
+- (void)_clearVisibleRectForLoadingScrollViewContent:(id)arg1;
 - (id)_closestFocusableViewToPoint:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
 - (id)_closestFocusableViewToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForScrollView:(id)arg1 toFocusView:(id)arg2;
+- (struct CGPoint { float x1; float x2; })_contentOffsetForScrollView:(id)arg1 toFocusView:(id)arg2 targetOffset:(struct CGPoint { float x1; float x2; })arg3 targetBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)_continueTouchWithMomentum;
+- (id)_defaultFocusAnimationCoordinatorForContext:(id)arg1;
+- (float)_effortRequiredToMoveInDirection:(struct CGVector { float x1; float x2; })arg1;
+- (void)_ensureFocusedViewIsOnscreen:(id)arg1;
+- (id)_findFocusCandidateByExhaustivelySearchingScrollView:(id)arg1 directionVector:(struct CGVector { float x1; float x2; })arg2 startingView:(id)arg3;
+- (id)_findFocusCandidateStartingInRegionWithoutLoadingScrollViewContent:(id)arg1 directionVector:(struct CGVector { float x1; float x2; })arg2 startingView:(id)arg3 minimumSearchArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (id)_focusedView;
+- (float)_frictionInterpolationForMomentumSpeed:(float)arg1 totalDistance:(float)arg2 slope:(float)arg3 shortDistance:(float)arg4 longDistance:(float)arg5;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (void)_handleButtonGesture:(id)arg1;
 - (void)_handlePanGesture:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;
-- (void)_loadScrollViewContentInDirection:(struct CGSize { float x1; float x2; })arg1 fromView:(id)arg2;
-- (BOOL)_moveFocusAlongVector:(struct CGSize { float x1; float x2; })arg1;
+- (float)_horizontalFrictionInterpolationForMomentumSpeed:(float)arg1 totalDistance:(float)arg2;
+- (void)_invalidateControllerDisplayLink;
+- (BOOL)_isContinuingTouchWithMomentum;
+- (BOOL)_isScrollingScrollView:(id)arg1;
+- (void)_loadScrollViewContentInDirection:(struct CGVector { float x1; float x2; })arg1 fromView:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minimumSearchAreaForContainerView:(id)arg1;
+- (void)_momentumHeartbeat:(id)arg1;
+- (BOOL)_moveFocusAlongVector:(struct CGVector { float x1; float x2; })arg1 withVelocity:(struct CGVector { float x1; float x2; })arg2;
 - (void)_panGestureEnd:(id)arg1;
+- (id)_panGestureRecognizer;
 - (void)_panGestureStart:(id)arg1;
-- (void)_panGestureUpdate:(id)arg1 atLocation:(struct CGPoint { float x1; float x2; })arg2 reportedVelocity:(struct CGPoint { float x1; float x2; })arg3;
-- (void)_playTickSound;
+- (void)_peekScrollViewStartingAtFocusedView:(id)arg1 progress:(struct CGVector { float x1; float x2; })arg2;
+- (void)_playFocusSound:(int)arg1 withPan:(float)arg2 volume:(float)arg3;
 - (BOOL)_playsSoundOnFocusChange;
 - (void)_recordMomentumForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_removeGestureRecognizers;
-- (void)_resetFocusDirectionRollback;
+- (void)_removeVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromScrollViewForAnimation:(id)arg2;
+- (void)_resetFocusDirectionRollbackForAllViews;
+- (void)_resetFocusDirectionRollbackForView:(id)arg1;
 - (void)_resetMomentum;
+- (void)_resetScrollViewPeek:(BOOL)arg1;
+- (void)_resetViewSearchCache;
+- (void)_runPerformanceTestWithName:(id)arg1 bySwipingAlongAxis:(int)arg2;
+- (void)_runPerformanceTestWithName:(id)arg1 fakeEvents:(struct { double x1; int x2; float x3; float x4; float x5; float x6; }*)arg2 count:(int)arg3;
 - (void)_scrollFromView:(id)arg1 toView:(id)arg2;
+- (void)_scrollView:(id)arg1 toOffset:(struct CGPoint { float x1; float x2; })arg2;
+- (id)_scrollViewToPeekStartingAtFocusedView:(id)arg1 directionVector:(struct CGVector { float x1; float x2; })arg2;
+- (void)_sendDelayedPressEventWithType:(int)arg1 timestamp:(double)arg2;
+- (void)_sendFocusDirectionNotificationWithDirection:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_sendGestureBeginNotification;
 - (void)_sendGestureEndNotification;
+- (void)_sendMomentumEndNotificationsAndAnimateRollback:(BOOL)arg1;
 - (BOOL)_sendsFocusDirection;
-- (void)_setFocusedView:(id)arg1;
+- (void)_setCachedSearchResult:(id)arg1 forHeading:(unsigned int)arg2;
+- (void)_setPanGestureRecognizer:(id)arg1;
 - (void)_setPlaysSoundOnFocusChange:(BOOL)arg1;
 - (void)_setSendsFocusDirection:(BOOL)arg1;
+- (void)_setUpSounds;
+- (void)_setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forLoadingScrollViewContent:(id)arg2;
 - (void)_setupDebugOverlays;
-- (void)_setupTickSound;
-- (void)_startFocusDirectionRollback;
+- (BOOL)_shouldEagerlyValidateFocusCandidates;
+- (BOOL)_speedBumpsAllowFocusToMoveInDirection:(struct CGVector { float x1; float x2; })arg1;
+- (void)_startFocusDirectionRollbackForView:(id)arg1;
+- (void)_stickDrivenGestureEnd:(id)arg1;
+- (void)_stickDrivenGestureStart:(id)arg1;
 - (void)_teardownDebugOverlays;
 - (int)_touchRegionForDigitizerLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })_touchSensitivityForView:(id)arg1;
+- (void)_updateControllerState:(id)arg1;
 - (void)_updateDebugOverlayByRemovingTouchIndicators;
 - (void)_updateDebugOverlayWithTouchAtNormalizedPoint:(struct CGPoint { float x1; float x2; })arg1 navigationBoundary:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)_updateFocusedViewAndScroll:(id)arg1;
-- (void)_updateScrollView:(id)arg1 visibleBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (struct CGSize { float x1; float x2; })_vectorForFocusHeading:(unsigned int)arg1;
+- (BOOL)_updateFocusWithContext:(id)arg1;
+- (BOOL)_updateFocusWithContext:(id)arg1 animationCoordinator:(id)arg2;
+- (BOOL)_updateFocusedViewAndScroll:(id)arg1 withSoundVolume:(float)arg2;
+- (void)_updatePanLocation:(struct CGPoint { float x1; float x2; })arg1 reportedVelocity:(struct CGVector { float x1; float x2; })arg2 wantsFocusDirection:(BOOL)arg3;
+- (float)_verticalFrictionInterpolationForMomentumSpeed:(float)arg1 totalDistance:(float)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_visibleBoundsForScrollView:(id)arg1;
+- (BOOL)_wouldCrossSpeedBumpWhenMovingInDirection:(struct CGVector { float x1; float x2; })arg1;
+- (BOOL)_wouldCrossSpeedBumpWhenMovingInDirection:(struct CGVector { float x1; float x2; })arg1 fromView:(id)arg2 toView:(id)arg3;
 - (void)dealloc;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)init;
 - (BOOL)isEnabled;
@@ -121,7 +195,12 @@
 - (void)setMoveEvent:(id)arg1;
 - (void)setShouldShowDebugOverlays:(BOOL)arg1;
 - (void)setTargetWindow:(id)arg1;
+- (void)setViewForTouchDeferredFocus:(id)arg1;
+- (void)setWantsScrollPeeking:(BOOL)arg1;
 - (BOOL)shouldShowDebugOverlays;
 - (id)targetWindow;
+- (id)viewForFocusHeading:(unsigned int)arg1 fromView:(id)arg2;
+- (id)viewForTouchDeferredFocus;
+- (BOOL)wantsScrollPeeking;
 
 @end

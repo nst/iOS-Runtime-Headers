@@ -22,7 +22,6 @@
 - (id)diagnosticsProviderForVisualSection:(int)arg1;
 - (id)displayTitle;
 - (int)imageDeliveryMode;
-- (int)imageFormat;
 - (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
 - (int)maxRowsPerSection;
 - (void)modelDidChange:(id)arg1;
@@ -33,6 +32,7 @@
 - (id)sectionHeaderElementKind;
 - (id)sectionedGridLayout:(id)arg1 sectionsForVisualSection:(int)arg2;
 - (BOOL)supportsIncrementalChangeNotifications;
+- (struct CGSize { float x1; float x2; })thumbnailImageSize;
 - (void)updateLayoutMetricsForWidth:(float)arg1;
 
 @end

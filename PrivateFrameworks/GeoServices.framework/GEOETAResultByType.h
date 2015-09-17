@@ -4,58 +4,82 @@
 
 @interface GEOETAResultByType : PBCodable <NSCopying> {
     unsigned int _distance;
+    double _expectedTimeOfDeparture;
     struct { 
+        unsigned int expectedTimeOfDeparture : 1; 
         unsigned int distance : 1; 
         unsigned int historicTravelTime : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
+        unsigned int travelTimeAggressiveEstimate : 1; 
         unsigned int travelTimeBestEstimate : 1; 
+        unsigned int travelTimeConservativeEstimate : 1; 
     } _has;
     unsigned int _historicTravelTime;
     int _status;
     int _transportType;
+    unsigned int _travelTimeAggressiveEstimate;
     unsigned int _travelTimeBestEstimate;
+    unsigned int _travelTimeConservativeEstimate;
 }
 
 @property (nonatomic) unsigned int distance;
+@property (nonatomic) double expectedTimeOfDeparture;
 @property (nonatomic) BOOL hasDistance;
+@property (nonatomic) BOOL hasExpectedTimeOfDeparture;
 @property (nonatomic) BOOL hasHistoricTravelTime;
 @property (nonatomic) BOOL hasStatus;
 @property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) BOOL hasTravelTimeAggressiveEstimate;
 @property (nonatomic) BOOL hasTravelTimeBestEstimate;
+@property (nonatomic) BOOL hasTravelTimeConservativeEstimate;
 @property (nonatomic) unsigned int historicTravelTime;
 @property (nonatomic) int status;
 @property (nonatomic) int transportType;
+@property (nonatomic) unsigned int travelTimeAggressiveEstimate;
 @property (nonatomic) unsigned int travelTimeBestEstimate;
+@property (nonatomic) unsigned int travelTimeConservativeEstimate;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)distance;
+- (double)expectedTimeOfDeparture;
 - (BOOL)hasDistance;
+- (BOOL)hasExpectedTimeOfDeparture;
 - (BOOL)hasHistoricTravelTime;
 - (BOOL)hasStatus;
 - (BOOL)hasTransportType;
+- (BOOL)hasTravelTimeAggressiveEstimate;
 - (BOOL)hasTravelTimeBestEstimate;
+- (BOOL)hasTravelTimeConservativeEstimate;
 - (unsigned int)hash;
 - (unsigned int)historicTravelTime;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDistance:(unsigned int)arg1;
+- (void)setExpectedTimeOfDeparture:(double)arg1;
 - (void)setHasDistance:(BOOL)arg1;
+- (void)setHasExpectedTimeOfDeparture:(BOOL)arg1;
 - (void)setHasHistoricTravelTime:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setHasTransportType:(BOOL)arg1;
+- (void)setHasTravelTimeAggressiveEstimate:(BOOL)arg1;
 - (void)setHasTravelTimeBestEstimate:(BOOL)arg1;
+- (void)setHasTravelTimeConservativeEstimate:(BOOL)arg1;
 - (void)setHistoricTravelTime:(unsigned int)arg1;
 - (void)setStatus:(int)arg1;
 - (void)setTransportType:(int)arg1;
+- (void)setTravelTimeAggressiveEstimate:(unsigned int)arg1;
 - (void)setTravelTimeBestEstimate:(unsigned int)arg1;
+- (void)setTravelTimeConservativeEstimate:(unsigned int)arg1;
 - (int)status;
 - (int)transportType;
+- (unsigned int)travelTimeAggressiveEstimate;
 - (unsigned int)travelTimeBestEstimate;
+- (unsigned int)travelTimeConservativeEstimate;
 - (void)writeTo:(id)arg1;
 
 @end

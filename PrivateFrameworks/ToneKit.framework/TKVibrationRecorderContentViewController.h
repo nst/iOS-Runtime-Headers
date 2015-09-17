@@ -103,8 +103,8 @@
 - (void)vibrationRecorderViewDidReachVibrationRecordingMaximumDuration:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

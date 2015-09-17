@@ -25,5 +25,6 @@
 - (void)setLineInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setMaxValue:(id)arg1;
 - (void)setMinValue:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

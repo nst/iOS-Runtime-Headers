@@ -44,6 +44,7 @@
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } textRange;
 
+- (void).cxx_destruct;
 - (void)animateOut;
 - (id)animatedView;
 - (id /* block */)animationCompletionHandler;

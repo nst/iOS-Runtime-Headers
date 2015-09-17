@@ -6,6 +6,8 @@
 @required
 
 - (void)assistantUpdateProgress:(NSString *)arg1 forState:(int)arg2;
+- (void)assistantWaitingForResourcesComplete;
+- (void)assistantWaitingForResourcesStart;
 - (void)connectionVerificationSucceededForSelector:(int)arg1;
 - (void)doneWithAssistantResult:(long)arg1;
 - (void)presentUIForRecommendationResult:(long)arg1 paramDict:(NSDictionary *)arg2;

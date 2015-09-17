@@ -6,10 +6,12 @@
     MFMessageInfo *_info;
     unsigned long long _messageFlags;
     unsigned long long _modSequenceNumber;
+    BOOL _shouldUseMailDrop;
     unsigned char _subjectPrefixLength;
 }
 
 @property unsigned long long modSequenceNumber;
+@property (nonatomic) BOOL shouldUseMailDrop;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
@@ -20,6 +22,8 @@
 
 - (id)URL;
 - (id)account;
+- (id)bestAlternativePart;
+- (id)bestAlternativePart:(BOOL*)arg1;
 - (unsigned long long)conversationFlags;
 - (id)copyMessageInfo;
 - (void)dealloc;
@@ -49,15 +53,19 @@
 - (void)setModSequenceNumber:(unsigned long long)arg1;
 - (void)setMutableInfoFromMessage:(id)arg1;
 - (void)setPriorityFromHeaders:(id)arg1;
+- (void)setShouldUseMailDrop:(BOOL)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setSubject:(id)arg1 to:(id)arg2 cc:(id)arg3 bcc:(id)arg4 sender:(id)arg5 dateReceived:(double)arg6 dateSent:(double)arg7 messageIDHash:(long long)arg8 conversationIDHash:(long long)arg9 summary:(id)arg10 withOptions:(unsigned int)arg11;
 - (void)setSummary:(id)arg1;
 - (BOOL)shouldSetSummary;
+- (BOOL)shouldUseMailDrop;
 - (id)subject;
 - (id)subjectAndPrefixLength:(unsigned int*)arg1;
 - (id)subjectNotIncludingReAndFwdPrefix;
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
++ (id)sg_messageWithRFC822Data:(id)arg1;
 
 - (id)sg_bestAlternativePart;
 

@@ -16,6 +16,8 @@
 @property (nonatomic, copy) NSString *serviceId;
 @property (nonatomic, readonly) int type;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -37,5 +39,9 @@
 - (void)setLastConnection:(double)arg1;
 - (void)setServiceId:(id)arg1;
 - (int)type;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
+- (id)initWithType:(int)arg1 peripheral:(id)arg2;
 
 @end

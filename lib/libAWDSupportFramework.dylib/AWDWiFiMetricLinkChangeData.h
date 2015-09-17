@@ -4,10 +4,31 @@
 
 @interface AWDWiFiMetricLinkChangeData : PBCodable <NSCopying> {
     unsigned int _akmSuites;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _bcnFrmsHistorys;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _bcnPerHistorys;
     unsigned int _capabilities;
     unsigned int _channel;
     unsigned int _channelWidth;
     unsigned int _flags;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _fwTxFrmsHistorys;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _fwTxPerHistorys;
+    unsigned int _gatewayARPHistory;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int akmSuites : 1; 
@@ -15,6 +36,7 @@
         unsigned int channel : 1; 
         unsigned int channelWidth : 1; 
         unsigned int flags : 1; 
+        unsigned int gatewayARPHistory : 1; 
         unsigned int htASel : 1; 
         unsigned int htAmpduParams : 1; 
         unsigned int htExtended : 1; 
@@ -51,6 +73,16 @@
     unsigned int _securityType;
     unsigned int _subreason;
     unsigned long long _timestamp;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _txFrmsHistorys;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _txPerHistorys;
     unsigned int _ucastCipher;
     unsigned int _vhtInfo;
     NSData *_vhtSupportedMcsSet;
@@ -58,15 +90,25 @@
 }
 
 @property (nonatomic) unsigned int akmSuites;
+@property (nonatomic, readonly) int*bcnFrmsHistorys;
+@property (nonatomic, readonly) unsigned int bcnFrmsHistorysCount;
+@property (nonatomic, readonly) int*bcnPerHistorys;
+@property (nonatomic, readonly) unsigned int bcnPerHistorysCount;
 @property (nonatomic) unsigned int capabilities;
 @property (nonatomic) unsigned int channel;
 @property (nonatomic) unsigned int channelWidth;
 @property (nonatomic) unsigned int flags;
+@property (nonatomic, readonly) int*fwTxFrmsHistorys;
+@property (nonatomic, readonly) unsigned int fwTxFrmsHistorysCount;
+@property (nonatomic, readonly) int*fwTxPerHistorys;
+@property (nonatomic, readonly) unsigned int fwTxPerHistorysCount;
+@property (nonatomic) unsigned int gatewayARPHistory;
 @property (nonatomic) BOOL hasAkmSuites;
 @property (nonatomic) BOOL hasCapabilities;
 @property (nonatomic) BOOL hasChannel;
 @property (nonatomic) BOOL hasChannelWidth;
 @property (nonatomic) BOOL hasFlags;
+@property (nonatomic) BOOL hasGatewayARPHistory;
 @property (nonatomic) BOOL hasHtASel;
 @property (nonatomic) BOOL hasHtAmpduParams;
 @property (nonatomic) BOOL hasHtExtended;
@@ -103,28 +145,58 @@
 @property (nonatomic) unsigned int securityType;
 @property (nonatomic) unsigned int subreason;
 @property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, readonly) int*txFrmsHistorys;
+@property (nonatomic, readonly) unsigned int txFrmsHistorysCount;
+@property (nonatomic, readonly) int*txPerHistorys;
+@property (nonatomic, readonly) unsigned int txPerHistorysCount;
 @property (nonatomic) unsigned int ucastCipher;
 @property (nonatomic) unsigned int vhtInfo;
 @property (nonatomic, retain) NSData *vhtSupportedMcsSet;
 @property (nonatomic) unsigned int wpaProtocol;
 
+- (void)addBcnFrmsHistory:(int)arg1;
+- (void)addBcnPerHistory:(int)arg1;
+- (void)addFwTxFrmsHistory:(int)arg1;
+- (void)addFwTxPerHistory:(int)arg1;
 - (void)addRssiHistory:(int)arg1;
+- (void)addTxFrmsHistory:(int)arg1;
+- (void)addTxPerHistory:(int)arg1;
 - (unsigned int)akmSuites;
+- (int)bcnFrmsHistoryAtIndex:(unsigned int)arg1;
+- (int*)bcnFrmsHistorys;
+- (unsigned int)bcnFrmsHistorysCount;
+- (int)bcnPerHistoryAtIndex:(unsigned int)arg1;
+- (int*)bcnPerHistorys;
+- (unsigned int)bcnPerHistorysCount;
 - (unsigned int)capabilities;
 - (unsigned int)channel;
 - (unsigned int)channelWidth;
+- (void)clearBcnFrmsHistorys;
+- (void)clearBcnPerHistorys;
+- (void)clearFwTxFrmsHistorys;
+- (void)clearFwTxPerHistorys;
 - (void)clearRssiHistorys;
+- (void)clearTxFrmsHistorys;
+- (void)clearTxPerHistorys;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (unsigned int)flags;
+- (int)fwTxFrmsHistoryAtIndex:(unsigned int)arg1;
+- (int*)fwTxFrmsHistorys;
+- (unsigned int)fwTxFrmsHistorysCount;
+- (int)fwTxPerHistoryAtIndex:(unsigned int)arg1;
+- (int*)fwTxPerHistorys;
+- (unsigned int)fwTxPerHistorysCount;
+- (unsigned int)gatewayARPHistory;
 - (BOOL)hasAkmSuites;
 - (BOOL)hasCapabilities;
 - (BOOL)hasChannel;
 - (BOOL)hasChannelWidth;
 - (BOOL)hasFlags;
+- (BOOL)hasGatewayARPHistory;
 - (BOOL)hasHtASel;
 - (BOOL)hasHtAmpduParams;
 - (BOOL)hasHtExtended;
@@ -165,15 +237,21 @@
 - (unsigned int)rssiHistorysCount;
 - (unsigned int)securityType;
 - (void)setAkmSuites:(unsigned int)arg1;
+- (void)setBcnFrmsHistorys:(int*)arg1 count:(unsigned int)arg2;
+- (void)setBcnPerHistorys:(int*)arg1 count:(unsigned int)arg2;
 - (void)setCapabilities:(unsigned int)arg1;
 - (void)setChannel:(unsigned int)arg1;
 - (void)setChannelWidth:(unsigned int)arg1;
 - (void)setFlags:(unsigned int)arg1;
+- (void)setFwTxFrmsHistorys:(int*)arg1 count:(unsigned int)arg2;
+- (void)setFwTxPerHistorys:(int*)arg1 count:(unsigned int)arg2;
+- (void)setGatewayARPHistory:(unsigned int)arg1;
 - (void)setHasAkmSuites:(BOOL)arg1;
 - (void)setHasCapabilities:(BOOL)arg1;
 - (void)setHasChannel:(BOOL)arg1;
 - (void)setHasChannelWidth:(BOOL)arg1;
 - (void)setHasFlags:(BOOL)arg1;
+- (void)setHasGatewayARPHistory:(BOOL)arg1;
 - (void)setHasHtASel:(BOOL)arg1;
 - (void)setHasHtAmpduParams:(BOOL)arg1;
 - (void)setHasHtExtended:(BOOL)arg1;
@@ -206,12 +284,20 @@
 - (void)setSecurityType:(unsigned int)arg1;
 - (void)setSubreason:(unsigned int)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;
+- (void)setTxFrmsHistorys:(int*)arg1 count:(unsigned int)arg2;
+- (void)setTxPerHistorys:(int*)arg1 count:(unsigned int)arg2;
 - (void)setUcastCipher:(unsigned int)arg1;
 - (void)setVhtInfo:(unsigned int)arg1;
 - (void)setVhtSupportedMcsSet:(id)arg1;
 - (void)setWpaProtocol:(unsigned int)arg1;
 - (unsigned int)subreason;
 - (unsigned long long)timestamp;
+- (int)txFrmsHistoryAtIndex:(unsigned int)arg1;
+- (int*)txFrmsHistorys;
+- (unsigned int)txFrmsHistorysCount;
+- (int)txPerHistoryAtIndex:(unsigned int)arg1;
+- (int*)txPerHistorys;
+- (unsigned int)txPerHistorysCount;
 - (unsigned int)ucastCipher;
 - (unsigned int)vhtInfo;
 - (id)vhtSupportedMcsSet;

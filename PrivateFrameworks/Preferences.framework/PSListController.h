@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSListController : PSViewController <PSSpecifierObserver, PSViewControllerOffsetProtocol, UIActionSheetDelegate, UIAlertViewDelegate, UIAppearance, UIPopoverControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIActionSheet *_actionSheet;
-    UIAlertView *_alertView;
+@interface PSListController : PSViewController <PSSpecifierObserver, PSViewControllerOffsetProtocol, UIAlertViewDelegate, UIAppearance, UIPopoverPresentationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIColor *_altTextColor;
     UIColor *_backgroundColor;
     NSMutableArray *_bundleControllers;
@@ -15,7 +13,7 @@
     UIColor *_cellAccessoryHighlightColor;
     UIColor *_cellHighlightColor;
     NSMutableDictionary *_cells;
-    UIView *_containerView;
+    PSListContainerView *_containerView;
     struct CGPoint { 
         float x; 
         float y; 
@@ -40,12 +38,11 @@
     NSDictionary *_pendingURLResourceDictionary;
     BOOL _popupIsDismissing;
     BOOL _popupIsModal;
-    UIPopoverController *_popupStylePopoverController;
-    BOOL _popupStylePopoverShouldRePresent;
     NSMutableArray *_prequeuedReusablePSTableCells;
     BOOL _requestingSpecifiersFromDataSource;
     BOOL _reusesCells;
     NSIndexPath *_savedSelectedIndexPath;
+    BOOL _sectionContentInsetInitialized;
     UIColor *_segmentedSliderTrackColor;
     UIColor *_separatorColor;
     BOOL _showingSetupController;
@@ -53,7 +50,6 @@
     NSString *_specifierIDPendingPush;
     NSArray *_specifiers;
     NSMutableDictionary *_specifiersByID;
-    BOOL _swapAlertButtons;
     UITableView *_table;
     UIColor *_textColor;
     BOOL _usesDarkTheme;
@@ -74,7 +70,6 @@
 @property (nonatomic, retain) UIColor *editableSelectionBarColor;
 @property (nonatomic, retain) UIColor *editableSelectionHighlightColor;
 @property (nonatomic, retain) UIColor *editableTextColor;
-@property (nonatomic) BOOL extendedLayoutIncludesOpaqueBars;
 @property (nonatomic, retain) UIColor *footerHyperlinkColor;
 @property (nonatomic) BOOL forceSynchronousIconLoadForCreatedCells;
 @property (nonatomic, retain) UIColor *foregroundColor;
@@ -89,15 +84,19 @@
 @property (nonatomic) BOOL usesDarkTheme;
 
 + (id)appearance;
++ (id)appearanceForTraitCollection:(id)arg1;
++ (id)appearanceForTraitCollection:(id)arg1 whenContainedIn:(Class)arg2;
++ (id)appearanceForTraitCollection:(id)arg1 whenContainedInInstancesOfClasses:(id)arg2;
 + (id)appearanceWhenContainedIn:(Class)arg1;
++ (id)appearanceWhenContainedInInstancesOfClasses:(id)arg1;
 + (BOOL)displaysButtonBar;
 
+- (void).cxx_destruct;
 - (void)_addIdentifierForSpecifier:(id)arg1;
 - (id)_createGroupIndices:(id)arg1;
 - (id)_customViewForSpecifier:(id)arg1 class:(Class)arg2 isHeader:(BOOL)arg3;
 - (BOOL)_getGroup:(int*)arg1 row:(int*)arg2 ofSpecifierAtIndex:(int)arg3 groups:(id)arg4;
 - (float)_getKeyboardIntersectionHeightFromUserInfo:(id)arg1;
-- (void)_handleActionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)_insertContiguousSpecifiers:(id)arg1 atIndex:(int)arg2 animated:(BOOL)arg3;
 - (BOOL)_isRegularWidth;
 - (void)_keyboardDidHide:(id)arg1;
@@ -112,18 +111,17 @@
 - (void)_removeIdentifierForSpecifier:(id)arg1;
 - (void)_returnKeyPressed:(id)arg1;
 - (void)_scrollToSpecifierNamed:(id)arg1;
+- (void)_scrollToSpecifierWithID:(id)arg1 animated:(BOOL)arg2;
 - (void)_setContentInset:(float)arg1;
 - (void)_setNotShowingSetupController;
 - (float)_tableView:(id)arg1 heightForCustomInSection:(int)arg2 isHeader:(BOOL)arg3;
 - (id)_tableView:(id)arg1 viewForCustomInSection:(int)arg2 isHeader:(BOOL)arg3;
 - (void)_unloadBundleControllers;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)_updateSectionContentInsetWithAnimation:(BOOL)arg1;
 - (void)addSpecifier:(id)arg1;
 - (void)addSpecifier:(id)arg1 animated:(BOOL)arg2;
 - (void)addSpecifiersFromArray:(id)arg1;
 - (void)addSpecifiersFromArray:(id)arg1 animated:(BOOL)arg2;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)altTextColor;
 - (id)backgroundColor;
 - (void)beginUpdates;
@@ -148,8 +146,7 @@
 - (void)dataSource:(id)arg1 performUpdates:(id)arg2;
 - (void)dealloc;
 - (id)description;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
-- (void)dismissConfirmationViewForSpecifier:(id)arg1 animated:(BOOL)arg2;
+- (void)dismissConfirmationViewAnimated:(BOOL)arg1;
 - (void)dismissPopover;
 - (void)dismissPopoverAnimated:(BOOL)arg1;
 - (BOOL)edgeToEdgeCells;
@@ -212,12 +209,13 @@
 - (BOOL)performConfirmationCancelActionForSpecifier:(id)arg1;
 - (BOOL)performLoadActionForSpecifier:(id)arg1;
 - (void)performSpecifierUpdates:(id)arg1;
-- (void)popoverController:(id)arg1 animationCompleted:(int)arg2;
-- (BOOL)popoverControllerShouldDismissPopover:(id)arg1;
+- (BOOL)popoverPresentationControllerShouldDismissPopover:(id)arg1;
 - (id)popupStylePopoverController;
 - (void)popupViewWillDisappear;
 - (BOOL)prepareHandlingURLForSpecifierID:(id)arg1 resourceDictionary:(id)arg2 animatePush:(BOOL*)arg3;
 - (void)prepareSpecifiersMetadata;
+- (void)pushController:(id)arg1 animate:(BOOL)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSpecifiersInGroupID:(id)arg1;
 - (void)reload;
 - (void)reloadIconForSpecifierForBundle:(id)arg1;
 - (void)reloadSpecifier:(id)arg1;
@@ -271,7 +269,6 @@
 - (void)setSpecifierIDPendingPush:(id)arg1;
 - (void)setSpecifiers:(id)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTitle:(id)arg1;
 - (void)setUsesDarkTheme:(BOOL)arg1;
 - (BOOL)shouldDeferPushForSpecifierID:(id)arg1;
 - (BOOL)shouldReloadSpecifiersOnResume;
@@ -282,8 +279,10 @@
 - (void)showController:(id)arg1;
 - (void)showController:(id)arg1 animate:(BOOL)arg2;
 - (void)showPINSheet:(id)arg1;
+- (void)showPINSheet:(id)arg1 allowOptionsButton:(BOOL)arg2;
 - (id)specifier;
 - (id)specifierAtIndex:(int)arg1;
+- (id)specifierAtIndexPath:(id)arg1;
 - (id)specifierDataSource;
 - (id)specifierForID:(id)arg1;
 - (id)specifierID;
@@ -309,8 +308,8 @@
 - (id)tableView:(id)arg1 viewForFooterInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (Class)tableViewClass;
+- (int)tableViewStyle;
 - (id)textColor;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateSpecifiers:(id)arg1 withSpecifiers:(id)arg2;
 - (void)updateSpecifiersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withSpecifiers:(id)arg2;
 - (BOOL)usesDarkTheme;
@@ -322,6 +321,5 @@
 - (void)viewDidUnload;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 
 @end

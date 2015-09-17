@@ -3,12 +3,19 @@
  */
 
 @interface CKImageMediaObject : CKMediaObject {
+    NSURL *_appendedBundleURL;
     CKImageData *_backgroundImageData;
     CKImageData *_imageData;
+    BOOL _isIrisAsset;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _originalSize;
     UIImage *_thumbnail;
 }
 
 @property (nonatomic, readonly, retain) CKImageData *imageData;
+@property (nonatomic) BOOL isIrisAsset;
 @property (nonatomic, retain) UIImage *thumbnail;
 
 + (id)UTITypes;
@@ -18,6 +25,11 @@
 + (Class)imageDataClass;
 + (BOOL)isPreviewable;
 
+- (id)_getIrisBundleURL;
+- (id)_getIrisVideoPath;
+- (id)_getTempIrisBundleLocation;
+- (id)_getTempIrisFolder;
+- (void)_removeAppendedBundle;
 - (struct CGSize { float x1; float x2; })bbSize;
 - (BOOL)canExport;
 - (void)dealloc;
@@ -25,8 +37,15 @@
 - (id)generateThumbnailFillToSize:(struct CGSize { float x1; float x2; })arg1 contentAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)imageData;
+- (id)initWithTransfer:(id)arg1;
+- (BOOL)isIrisAsset;
 - (id)location;
 - (int)mediaType;
+- (struct CGSize { float x1; float x2; })originalSize;
+- (id)pasteboardItem;
+- (id)previewItemTitle;
+- (id)previewItemURL;
+- (void)setIsIrisAsset:(BOOL)arg1;
 - (void)setThumbnail:(id)arg1;
 - (id)thumbnail;
 

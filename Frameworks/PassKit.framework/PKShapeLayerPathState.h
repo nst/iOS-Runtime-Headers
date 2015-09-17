@@ -10,6 +10,7 @@
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)initWithShapeLayer:(id)arg1;
 - (id)initWithShapeLayer:(id)arg1 reverse:(BOOL)arg2;

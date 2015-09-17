@@ -3,8 +3,15 @@
  */
 
 @interface AVPlayerItemInternal : NSObject {
+    <NSObject><NSCopying> *AVKitData;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } IFramePrefetchTargetDimensions;
     unsigned int RTCReportingFlags;
     NSURL *URL;
+    BOOL aggressivelyCachesVideoFrames;
+    BOOL aggressivelyCachesVideoFramesWasSet;
     BOOL allowProgressiveSwitchUp;
     BOOL allowsExtendedReadAhead;
     AVAsset *asset;
@@ -12,10 +19,12 @@
     NSDictionary *audibleDRMInfo;
     AVAudioMix *audioMix;
     NSArray *automaticallyLoadedAssetKeys;
+    BOOL blendsVideoFrames;
+    BOOL blendsVideoFramesWasSet;
     NSArray *cachedTracks;
+    BOOL canUseExtraNetworking;
     AVWeakReference *clientsOriginalVideoComposition;
     AVCustomVideoCompositorSession *customVideoCompositorSession;
-    NSString *dataYouTubeID;
     <AVPlayerItemDelegate> *delegate;
     BOOL didBecomeReadyForBasicInspection;
     BOOL didBecomeReadyForInspectionOfDuration;
@@ -28,7 +37,6 @@
     int eqPreset;
     NSError *error;
     BOOL externalProtectionRequested;
-    BOOL externalSubtitlesEnabled;
     struct OpaqueFigCPEProtector { } *figCPEProtector;
     NSObject<OS_dispatch_queue> *figConfigurationQueue;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
@@ -44,6 +52,8 @@
     NSMutableArray *handlersToCallWhenReadyForEnqueueing;
     BOOL haveCPEProtector;
     BOOL haveInitialSamples;
+    NSArray *imageQueueInterpolationCurve;
+    BOOL imageQueueInterpolationCurveWasSet;
     BOOL initialAlwaysMonitorsPlayability;
     BOOL initialContinuesPlayingDuringPrerollForRateChange;
     BOOL initialContinuesPlayingDuringPrerollForSeek;
@@ -51,33 +61,39 @@
     NSDate *initialEstimatedDate;
     struct __CFString { } *initialFigTimePitchAlgorithm;
     BOOL initialLimitReadAhead;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } initialMaxSnapTime;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } initialMinSnapTime;
     int initialPlaybackLikelyToKeepUpTrigger;
+    unsigned int initialSetTimeFlags;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
     } initialTime;
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    } initialToleranceAfter;
-    struct { 
-        long long value; 
-        int timescale; 
-        unsigned int flags; 
-        long long epoch; 
-    } initialToleranceBefore;
     int initialVariantIndex;
     BOOL initialWillNeverSeekBackwardsHint;
-    BOOL isCurrentPlayerItem;
     NSMutableDictionary *itemLegibleOutputsForKeys;
     NSMutableDictionary *itemMetadataOutputsForKeys;
     NSArray *itemOutputs;
     NSMutableArray *itemVideoOutputs;
     NSObject<OS_dispatch_queue> *ivarAccessQueue;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } maximumForwardBufferDuration;
     struct { 
         long long value; 
         int timescale; 
@@ -93,7 +109,9 @@
         long long epoch; 
     } minimumIntervalForIFrameOnlyPlayback;
     BOOL minimumIntervalForIFrameOnlyPlaybackWasSet;
+    AVAudioMix *mostRecentlyAppliedAudioMix;
     BOOL needTimedMetadataNotification;
+    BOOL needToSeekAfterCreatingFigPlaybackItem;
     BOOL networkUsuallyExceedsMaxBitRate;
     AVPlayerItem *nextItem;
     unsigned int nextSeekIDToGenerate;
@@ -115,9 +133,12 @@
         unsigned int flags; 
         long long epoch; 
     } reversePlaybackEndTime;
+    BOOL reversesMoreVideoFramesInMemory;
+    BOOL reversesMoreVideoFramesInMemoryWasSet;
     BOOL savesDownloadedDataToDiskWhenDone;
     id /* block */ seekCompletionHandler;
     struct OpaqueFigSimpleMutex { } *seekIDMutex;
+    NSObject<OS_dispatch_queue> *seekQueue;
     BOOL seekingWaitsForVideoCompositionRendering;
     NSString *serviceIdentifier;
     float soundCheckVolumeNormalization;
@@ -132,6 +153,7 @@
     NSArray *trackIDsForAssetWithFigPlaybackItem;
     BOOL usesIFrameOnlyPlaybackForHighRateScaledEdits;
     BOOL usesIFrameOnlyPlaybackForHighRateScaledEditsWasSet;
+    BOOL usesMinimalLatencyForVideoCompositionRendering;
     AVVideoComposition *videoComposition;
     float volumeAdjustment;
     BOOL wasInitializedWithURL;

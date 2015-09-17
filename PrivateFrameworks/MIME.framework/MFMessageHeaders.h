@@ -2,10 +2,19 @@
    Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
  */
 
-@interface MFMessageHeaders : NSObject <NSCopying> {
+@interface MFMessageHeaders : NSObject <NSCopying, SGHeaderCollection> {
     NSData *_data;
     unsigned long _preferredEncoding;
 }
+
+@property (nonatomic, retain) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned long preferredEncoding;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
 + (id)addressListFromEncodedString:(id)arg1;
 + (id)basicHeaders;
@@ -39,6 +48,7 @@
 - (id)copyFirstStringValueForKey:(id)arg1;
 - (id)copyHeadersForKey:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)data;
 - (void)dealloc;
 - (id)description;
 - (id)encodedHeaders;
@@ -46,6 +56,7 @@
 - (id)firstSenderAddress;
 - (BOOL)hasHeaderForKey:(id)arg1;
 - (id)headerData;
+- (id)headersDictionary;
 - (id)headersForKey:(id)arg1;
 - (id)init;
 - (id)initWithHeaderData:(id)arg1 encoding:(unsigned long)arg2;
@@ -53,6 +64,11 @@
 - (id)mutableCopy;
 - (unsigned long)preferredEncoding;
 - (id)references;
+- (void)setData:(id)arg1;
 - (void)setPreferredEncoding:(unsigned long)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
+
+- (id)sg_firstHeaderForKey:(id)arg1;
 
 @end

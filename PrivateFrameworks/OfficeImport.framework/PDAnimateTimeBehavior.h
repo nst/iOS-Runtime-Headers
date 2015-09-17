@@ -3,13 +3,28 @@
  */
 
 @interface PDAnimateTimeBehavior : PDAnimateBehavior {
-    NSMutableArray *mTimeAnimateValues;
+    NSString *mBy;
+    int mCalcMode;
+    NSString *mFrom;
+    BOOL mHasCalcMode;
+    BOOL mHasValueType;
+    NSString *mTo;
+    int mValueType;
 }
 
-- (void)addTimeAnimateValue:(id)arg1;
+- (id)by;
+- (int)calcMode;
 - (void)dealloc;
+- (id)from;
+- (BOOL)hasCalcMode;
+- (BOOL)hasValueType;
 - (id)init;
-- (id)timeAnimateValueAtIndex:(unsigned int)arg1;
-- (unsigned int)timeAnimateValueCount;
+- (void)setBy:(id)arg1;
+- (void)setCalcMode:(int)arg1;
+- (void)setFrom:(id)arg1;
+- (void)setTo:(id)arg1;
+- (void)setValueType:(int)arg1;
+- (id)to;
+- (int)valueType;
 
 @end

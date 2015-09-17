@@ -10,7 +10,7 @@
 }
 
 @property (readonly, retain) <BSXPCConnectionListenerHandler> *handler;
-@property (readonly) NSObject<OS_dispatch_queue> *queue;
+@property (readonly, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly, copy) NSString *service;
 
 - (void)dealloc;

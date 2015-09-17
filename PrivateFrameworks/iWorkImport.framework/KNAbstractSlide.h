@@ -181,6 +181,7 @@
 - (void)p_updateChartBuildChunksImmediatelyWithoutUndoHistory;
 - (void)p_updateOverlappingBuildEventTriggers;
 - (void)p_updatePreUFFBuildEffects;
+- (void)p_updateStartAndEndOffsetsIfNecessaryForFileVersion:(unsigned long long)arg1;
 - (id)parentInfo;
 - (id)pdfDataUsingDocumentRoot:(id)arg1;
 - (void)performBlockOnInfos:(id /* block */)arg1;

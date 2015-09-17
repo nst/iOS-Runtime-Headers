@@ -3,40 +3,56 @@
  */
 
 @interface IKJSPlayer : IKJSEventListenerObject <IKJSPlayer> {
+    NSMutableDictionary *_boundaryListeners;
     IKAppPlayerBridge *_bridge;
     BOOL _holdingSelfReference;
     NSMutableDictionary *_observedMetadataKeys;
     int _playerState;
     IKJSPlaylist *_playlist;
+    JSManagedValue *_requestSeekToTimeListener;
+    JSManagedValue *_shouldHandleStateChangeListener;
+    NSMutableDictionary *_timeListeners;
 }
 
 @property (nonatomic, readonly) IKAppPlayerBridge *bridge;
 @property (nonatomic, readonly) IKJSMediaItem *currentMediaItem;
-@property (nonatomic, readonly) BOOL ended;
-@property (nonatomic, readonly) BOOL paused;
-@property (nonatomic, readonly) BOOL playing;
+@property (nonatomic, readonly) IKJSMediaItem *nextMediaItem;
+@property (nonatomic, retain) IKDOMDocument *overlayDocument;
+@property (nonatomic, readonly) NSString *playbackState;
 @property (nonatomic, retain) IKJSPlaylist *playlist;
-@property (nonatomic, readonly) BOOL seeking;
+@property (nonatomic, readonly) IKJSMediaItem *previousMediaItem;
 
 - (void).cxx_destruct;
+- (void)_addManagedReference;
+- (void)_removeManagedReference;
 - (void)addEventListener:(id)arg1 :(id)arg2 :(id)arg3;
 - (id)bridge;
 - (id)currentMediaItem;
-- (BOOL)ended;
+- (void)dealloc;
 - (id)init;
+- (void)mediaItemDidChange:(int)arg1;
+- (void)mediaItemWillChange:(int)arg1;
+- (id)nextMediaItem;
+- (id)overlayDocument;
 - (void)pause;
-- (BOOL)paused;
 - (void)play;
-- (BOOL)playing;
+- (id)playbackState;
 - (id)playlist;
+- (void)present;
+- (id)previousMediaItem;
 - (void)removeEventListener:(id)arg1 :(id)arg2;
-- (BOOL)seeking;
-- (void)setCurrentTime:(double)arg1;
+- (BOOL)requestSeekToTime:(double*)arg1 currentTime:(double)arg2;
+- (void)seekToTime:(double)arg1;
+- (void)setOverlayDocument:(id)arg1;
 - (void)setPlaybackRate:(double)arg1;
 - (void)setPlaylist:(id)arg1;
+- (BOOL)shouldHandleStateEvent:(id)arg1;
 - (int)state;
 - (void)stateDidChange:(id)arg1;
+- (void)stateWillChange:(id)arg1;
 - (void)stop;
+- (void)timeBoundaryDidCross:(double)arg1;
+- (void)timeIntervalElapsed:(double)arg1 time:(double)arg2;
 - (void)timedMetadataDidChange:(id)arg1 value:(id)arg2;
 
 @end

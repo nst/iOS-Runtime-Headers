@@ -8,8 +8,9 @@
     BOOL _hasBusyBackground;
 }
 
+- (void).cxx_destruct;
 - (id)backgroundColorWithTintColor:(id)arg1;
-- (void)dealloc;
+- (id)foregroundColor;
 - (Class)foregroundStyleClass;
 - (id)initWithRequest:(id)arg1;
 - (id)initWithRequest:(id)arg1 backgroundColor:(id)arg2 foregroundColor:(id)arg3;

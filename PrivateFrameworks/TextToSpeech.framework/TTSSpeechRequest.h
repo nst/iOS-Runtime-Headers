@@ -21,6 +21,7 @@
     TTSSpeechChannel *_speechChannel;
     NSString *_text;
     BOOL _useCustomVoice;
+    BOOL _useMonarchStyleRate;
     BOOL _useVoiceBooster;
     double _volume;
 }
@@ -42,6 +43,7 @@
 @property (nonatomic, retain) TTSSpeechChannel *speechChannel;
 @property (nonatomic, copy) NSString *text;
 @property (nonatomic) BOOL useCustomVoice;
+@property (nonatomic) BOOL useMonarchStyleRate;
 @property (nonatomic) BOOL useVoiceBooster;
 @property (nonatomic) double volume;
 
@@ -85,6 +87,7 @@
 - (void)setSpeechChannel:(id)arg1;
 - (void)setText:(id)arg1;
 - (void)setUseCustomVoice:(BOOL)arg1;
+- (void)setUseMonarchStyleRate:(BOOL)arg1;
 - (void)setUseVoiceBooster:(BOOL)arg1;
 - (void)setVolume:(double)arg1;
 - (id)speechChannel;
@@ -95,6 +98,7 @@
 - (void)speechRequestMark:(int)arg1 didStartForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 forService:(id)arg3;
 - (id)text;
 - (BOOL)useCustomVoice;
+- (BOOL)useMonarchStyleRate;
 - (BOOL)useVoiceBooster;
 - (long)vocalizerFootprint;
 - (long)vocalizerGender;

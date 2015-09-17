@@ -5,7 +5,7 @@
 @interface ABPropertyGroup : ABAbstractPropertyGroup {
     ABActionsController *_actionsController;
     BOOL _allowsVibrations;
-    ABCapabilitiesManager *_capabilitiesManager;
+    CNCapabilitiesManager *_capabilitiesManager;
     void *_context;
     void *_defaultPolicy;
     NSString *_insertionLabel;

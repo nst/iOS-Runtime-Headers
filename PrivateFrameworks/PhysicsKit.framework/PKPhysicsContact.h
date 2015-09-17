@@ -26,7 +26,6 @@
 @property BOOL didBegin;
 @property BOOL didEnd;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)bodyA;
 - (id)bodyB;

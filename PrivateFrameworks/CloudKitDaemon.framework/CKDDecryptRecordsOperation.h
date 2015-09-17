@@ -28,6 +28,7 @@
 - (id)_unwrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 forField:(id)arg3;
 - (id)_unwrapEncryptedPropertiesOnRecord:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2;
 - (id)_unwrapPackageAssets:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2;
+- (unsigned long long)activityStart;
 - (BOOL)forcePCSDecrypt;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

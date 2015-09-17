@@ -14,7 +14,7 @@
 
 + (id)categoryNamed:(id)arg1 withIdentifier:(id)arg2 forUsageBundleApp:(id)arg3;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)identifier;
 - (id)name;

@@ -67,7 +67,7 @@
 - (void)sendAndLogPLEntry:(id)arg1;
 - (void)setCommonInfo:(id)arg1;
 - (void)setError:(id)arg1;
-- (void)setEventCode:(id)arg1;
+- (void)setEventCode:(unsigned int)arg1;
 - (void)setHeaderWithSeqNum:(id)arg1 andDate:(id)arg2 andTimeCal:(double)arg3;
 - (void)setInited:(unsigned char)arg1;
 - (void)setKvPairs:(id)arg1;

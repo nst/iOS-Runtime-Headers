@@ -33,6 +33,8 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic) int type;
 
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
+
 - (id)URI;
 - (BOOL)alerted;
 - (void)dealloc;
@@ -58,5 +60,12 @@
 - (void)setURI:(id)arg1;
 - (id)title;
 - (int)type;
+
+// Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
+
+- (id)messageStringForDescriptionWithOptions:(unsigned int)arg1;
+- (id)messageStringsForDescriptionWithOptions:(unsigned int)arg1;
+- (BOOL)supportsDisplay;
+- (id)titleStringWithOptions:(unsigned int)arg1;
 
 @end

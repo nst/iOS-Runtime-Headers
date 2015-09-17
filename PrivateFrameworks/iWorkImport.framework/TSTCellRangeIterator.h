@@ -41,7 +41,6 @@
 
 @property (nonatomic, readonly) BOOL cellValid;
 
-- (id).cxx_construct;
 - (BOOL)cellValid;
 - (void)dealloc;
 - (id)initWithTableModel:(id)arg1 delegate:(id)arg2;

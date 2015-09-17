@@ -4,29 +4,40 @@
 
 @interface AFSettingsConnection : NSObject {
     NSXPCConnection *_connection;
+    <AFSettingsDelegate> *_delegate;
     AFVoiceInfo *_selectedVoice;
     NSArray *_voices;
     NSObject<OS_dispatch_queue> *_voicesQueue;
 }
 
+@property (setter=_setDelegate:, nonatomic) <AFSettingsDelegate> *_delegate;
+
 - (void).cxx_destruct;
 - (void)_clearConnection;
 - (id)_connection;
+- (id)_delegate;
 - (void)_fetchPeerData:(id /* block */)arg1;
 - (id)_filterVoices:(id)arg1 forLanguage:(id)arg2;
+- (void)_setDelegate:(id)arg1;
+- (void)_setSyncVerificationNeededAndFullReportNeeded:(BOOL)arg1 shouldPostNotification:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)_setVoices:(id)arg1;
 - (id)_settingsService;
 - (id)_settingsServiceWithErrorHandler:(id /* block */)arg1;
-- (void)_syncDataWithAnchorKeys:(id)arg1 forceReset:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)_updateVoicesSync;
-- (void)_updateVoicesWithCompletion:(id /* block */)arg1;
+- (void)_syncDataWithAnchorKeys:(id)arg1 forceReset:(BOOL)arg2 reason:(id)arg3 completion:(id /* block */)arg4;
+- (void)_tellDelegatePartialVerificationResult:(id)arg1;
+- (void)_tellDelegateServerVerificationReport:(id)arg1;
+- (void)_updateVoicesIncludingAssetInfo:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)_voices;
 - (id)accounts;
 - (void)barrier;
 - (void)dealloc;
 - (void)deleteAccountWithIdentifier:(id)arg1;
 - (void)fetchSupportedLanguageCodes:(id /* block */)arg1;
+- (void)getAvailableVoicesForLanguage:(id)arg1 includeAssetInfo:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)getAvailableVoicesForRecognitionLanguage:(id)arg1 completion:(id /* block */)arg2;
+- (void)getAvailableVoicesForRecognitionLanguage:(id)arg1 includeAssetInfo:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)getAvailableVoicesForSynthesisLanguage:(id)arg1 completion:(id /* block */)arg2;
+- (void)getOfflineDictationStatusWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (void)killDaemon;
 - (void)saveAccount:(id)arg1 setActive:(BOOL)arg2;
@@ -37,5 +48,7 @@
 - (void)setLanguage:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setOutputVoice:(id)arg1;
 - (void)setOutputVoice:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)startRemoteRequest:(id)arg1 completion:(id /* block */)arg2;
+- (void)startUIRequest:(id)arg1;
 
 @end

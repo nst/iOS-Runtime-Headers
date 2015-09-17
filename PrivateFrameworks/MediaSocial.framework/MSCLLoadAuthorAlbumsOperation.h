@@ -17,6 +17,7 @@
 - (id)_loadAlbumsWithLookupResponse:(id)arg1 platformContext:(id)arg2 error:(id*)arg3;
 - (id)_loadArtistContentWithPlatformContext:(id)arg1 error:(id*)arg2;
 - (id)authorIdentifier;
+- (id)init;
 - (id)initWithAuthorIdentifier:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (id /* block */)outputBlock;

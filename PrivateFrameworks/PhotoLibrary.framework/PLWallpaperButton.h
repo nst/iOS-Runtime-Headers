@@ -10,6 +10,9 @@
 @property (nonatomic, retain) _UIBackdropView *backdropView;
 @property (nonatomic, retain) UIImageView *titleMaskImageView;
 
++ (id)autoLayoutCommonWallpaperButton;
++ (id)autoLayoutCommonWallpaperButtonWithStyle:(int)arg1;
+
 - (void)_setupBackdropView;
 - (id)backdropView;
 - (void)backdropViewDidChange:(id)arg1;

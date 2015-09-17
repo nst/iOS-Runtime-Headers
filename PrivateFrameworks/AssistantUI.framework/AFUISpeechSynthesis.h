@@ -34,7 +34,7 @@
 - (void)cancel;
 - (id)delegate;
 - (void)enqueueText:(id)arg1 completion:(id /* block */)arg2;
-- (void)enqueueText:(id)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 preparationIdentifier:(id)arg4 completion:(id /* block */)arg5 animationIdentifier:(id)arg6;
+- (void)enqueueText:(id)arg1 isPhonetic:(BOOL)arg2 provisionally:(BOOL)arg3 eligibleAfterDuration:(double)arg4 preparationIdentifier:(id)arg5 completion:(id /* block */)arg6 animationIdentifier:(id)arg7;
 - (id)init;
 - (void)invalidate;
 - (BOOL)isSpeaking;

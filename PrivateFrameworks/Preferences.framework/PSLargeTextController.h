@@ -14,6 +14,7 @@
 
 @property (nonatomic) BOOL showsExtendedRangeSwitch;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)getDynamicTypeValueForSpecifier:(id)arg1;
 - (void)loadView;

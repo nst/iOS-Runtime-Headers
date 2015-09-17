@@ -10,9 +10,9 @@
 @property (nonatomic, retain) NSString *filename;
 @property (nonatomic, retain) NSString *previousScheduleTag;
 
+- (void).cxx_destruct;
 - (id)additionalHeaderValues;
 - (id)copyDefaultParserForContentType:(id)arg1;
-- (void)dealloc;
 - (id)filename;
 - (id)lossyAsciiFilename;
 - (id)previousScheduleTag;

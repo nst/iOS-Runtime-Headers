@@ -14,15 +14,16 @@
 
 - (void).cxx_destruct;
 - (id)URL;
+- (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_finishLoad;
 - (void)allWebViewsFinishedLoading;
 - (BOOL)allowNonSecureHTTP;
 - (BOOL)anyWebViewLoading;
 - (void)cancel;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)dealloc;
 - (void)didParseData;
 - (void)failWithError:(id)arg1;
+- (id)handleWillLoadRequest:(id)arg1;
 - (void)loadRequest:(id)arg1;
 - (void)loadXMLUIWithData:(id)arg1 baseURL:(id)arg2;
 - (void)loadXMLUIWithRequest:(id)arg1;
@@ -30,6 +31,7 @@
 - (void)parseData:(id)arg1;
 - (id)parserDelegate;
 - (BOOL)receivedValidResponse:(id)arg1;
+- (id)sessionConfiguration;
 - (void)setAllowNonSecureHTTP:(BOOL)arg1;
 - (void)setParserDelegate:(id)arg1;
 - (void)webViewFinishedLoading;

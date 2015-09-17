@@ -24,6 +24,7 @@
 
 @property <NSKeyedArchiverDelegate> *delegate;
 @property unsigned int outputFormat;
+@property BOOL requiresSecureCoding;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 

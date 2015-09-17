@@ -22,9 +22,15 @@
     NSMutableArray *_fontChecksums;
     NSMutableArray *_fonts;
     NSString *_forwardGeocoderURL;
+    struct { 
+        unsigned int locationShiftVersion : 1; 
+    } _has;
     NSMutableArray *_iconChecksums;
     NSMutableArray *_icons;
+    NSMutableArray *_locationShiftEnabledRegions;
     NSString *_locationShiftURL;
+    unsigned int _locationShiftVersion;
+    NSString *_logMessageUsageURL;
     NSString *_mapMatchURL;
     NSString *_polyLocationShiftURL;
     NSString *_problemCategoriesURL;
@@ -86,6 +92,8 @@
 @property (nonatomic, readonly) BOOL hasEtaURL;
 @property (nonatomic, readonly) BOOL hasForwardGeocoderURL;
 @property (nonatomic, readonly) BOOL hasLocationShiftURL;
+@property (nonatomic) BOOL hasLocationShiftVersion;
+@property (nonatomic, readonly) BOOL hasLogMessageUsageURL;
 @property (nonatomic, readonly) BOOL hasMapMatchURL;
 @property (nonatomic, readonly) BOOL hasPolyLocationShiftURL;
 @property (nonatomic, readonly) BOOL hasProblemCategoriesURL;
@@ -104,7 +112,10 @@
 @property (nonatomic, readonly) BOOL hasVersionManifest;
 @property (nonatomic, retain) NSMutableArray *iconChecksums;
 @property (nonatomic, retain) NSMutableArray *icons;
+@property (nonatomic, retain) NSMutableArray *locationShiftEnabledRegions;
 @property (nonatomic, retain) NSString *locationShiftURL;
+@property (nonatomic) unsigned int locationShiftVersion;
+@property (nonatomic, retain) NSString *logMessageUsageURL;
 @property (nonatomic, retain) NSString *mapMatchURL;
 @property (nonatomic, retain) NSString *polyLocationShiftURL;
 @property (nonatomic, retain) NSString *problemCategoriesURL;
@@ -139,6 +150,7 @@
 - (void)addFontChecksum:(id)arg1;
 - (void)addIcon:(id)arg1;
 - (void)addIconChecksum:(id)arg1;
+- (void)addLocationShiftEnabledRegion:(id)arg1;
 - (void)addRegionalResource:(id)arg1;
 - (void)addStyleSheet:(id)arg1;
 - (void)addStyleSheetChecksum:(id)arg1;
@@ -173,6 +185,7 @@
 - (void)clearFonts;
 - (void)clearIconChecksums;
 - (void)clearIcons;
+- (void)clearLocationShiftEnabledRegions;
 - (void)clearRegionalResources;
 - (void)clearStyleSheetChecksums;
 - (void)clearStyleSheets;
@@ -212,6 +225,8 @@
 - (BOOL)hasEtaURL;
 - (BOOL)hasForwardGeocoderURL;
 - (BOOL)hasLocationShiftURL;
+- (BOOL)hasLocationShiftVersion;
+- (BOOL)hasLogMessageUsageURL;
 - (BOOL)hasMapMatchURL;
 - (BOOL)hasPolyLocationShiftURL;
 - (BOOL)hasProblemCategoriesURL;
@@ -236,7 +251,12 @@
 - (id)icons;
 - (unsigned int)iconsCount;
 - (BOOL)isEqual:(id)arg1;
+- (id)locationShiftEnabledRegionAtIndex:(unsigned int)arg1;
+- (id)locationShiftEnabledRegions;
+- (unsigned int)locationShiftEnabledRegionsCount;
 - (id)locationShiftURL;
+- (unsigned int)locationShiftVersion;
+- (id)logMessageUsageURL;
 - (id)mapMatchURL;
 - (void)mergeFrom:(id)arg1;
 - (id)polyLocationShiftURL;
@@ -274,9 +294,13 @@
 - (void)setFontChecksums:(id)arg1;
 - (void)setFonts:(id)arg1;
 - (void)setForwardGeocoderURL:(id)arg1;
+- (void)setHasLocationShiftVersion:(BOOL)arg1;
 - (void)setIconChecksums:(id)arg1;
 - (void)setIcons:(id)arg1;
+- (void)setLocationShiftEnabledRegions:(id)arg1;
 - (void)setLocationShiftURL:(id)arg1;
+- (void)setLocationShiftVersion:(unsigned int)arg1;
+- (void)setLogMessageUsageURL:(id)arg1;
 - (void)setMapMatchURL:(id)arg1;
 - (void)setPolyLocationShiftURL:(id)arg1;
 - (void)setProblemCategoriesURL:(id)arg1;

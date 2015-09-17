@@ -4,16 +4,20 @@
 
 @interface CKMapViewController : UIViewController <MKMapViewDelegate> {
     <MKAnnotation> *_annotation;
+    MKLocalSearch *_localSearch;
     MKMapItem *_mapItem;
     MKMapView *_mapView;
+    _MKPlaceViewController *_mapViewController;
 }
 
 @property (nonatomic, retain) <MKAnnotation> *annotation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) MKLocalSearch *localSearch;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic, retain) MKMapView *mapView;
+@property (nonatomic, retain) _MKPlaceViewController *mapViewController;
 @property (readonly) Class superclass;
 
 - (void)_toolbarItemPressed:(id)arg1;
@@ -21,15 +25,19 @@
 - (void)dealloc;
 - (id)initWithAnnotation:(id)arg1;
 - (void)loadView;
+- (id)localSearch;
 - (id)mapItem;
 - (id)mapView;
 - (void)mapView:(id)arg1 annotationView:(id)arg2 calloutAccessoryControlTapped:(id)arg3;
 - (void)mapView:(id)arg1 didAddAnnotationViews:(id)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
+- (id)mapViewController;
 - (void)selectPin;
 - (void)setAnnotation:(id)arg1;
+- (void)setLocalSearch:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setMapView:(id)arg1;
+- (void)setMapViewController:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (BOOL)wantsFullScreenLayout;

@@ -17,6 +17,5 @@
 - (void)xpcHasNewOOBKey:(NSData *)arg1;
 - (void)xpcLastUnpairReasonDidChange:(unsigned int)arg1;
 - (void)xpcRemoteUnpairingDidBegin;
-- (void)xpcStatusDidChange:(unsigned int)arg1;
 
 @end

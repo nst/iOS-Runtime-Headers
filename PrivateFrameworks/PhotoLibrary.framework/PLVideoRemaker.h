@@ -12,6 +12,7 @@
     id /* block */ _progressHandler;
     NSTimer *_progressTimer;
     PLProgressView *_progressView;
+    BOOL _shouldExportToPhotoDataDirectory;
     double _trimEndTime;
     double _trimStartTime;
     NSString *_trimmedPath;
@@ -19,6 +20,7 @@
 
 @property (nonatomic, readonly, retain) PFVideoAVObjectBuilder *_videoAVObjectBuilder;
 @property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic) BOOL shouldExportToPhotoDataDirectory;
 
 + (long long)approximateByteSizeForMode:(int)arg1 duration:(double)arg2;
 + (long long)fileLengthLimitForRemakerMode:(int)arg1;
@@ -48,8 +50,10 @@
 - (void)setDuration:(double)arg1;
 - (void)setMode:(int)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
+- (void)setShouldExportToPhotoDataDirectory:(BOOL)arg1;
 - (void)setTrimEndTime:(double)arg1;
 - (void)setTrimStartTime:(double)arg1;
+- (BOOL)shouldExportToPhotoDataDirectory;
 - (double)trimEndTime;
 - (double)trimStartTime;
 

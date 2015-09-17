@@ -8,8 +8,8 @@
 
 @property (retain) NSArray *calls;
 
+- (void).cxx_destruct;
 - (id)calls;
-- (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (void)forwardInvocation:(id)arg1;

@@ -12,7 +12,9 @@
     NSString *_path;
     NSString *_schema;
     NSString *_schemaVersion;
+    BOOL _shouldVacuum;
     NSMutableDictionary *_statementsBySQL;
+    int _synchronousMode;
     long _userVersion;
 }
 
@@ -26,7 +28,9 @@
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic, readonly) NSString *schema;
 @property (nonatomic, readonly) NSString *schemaVersion;
+@property (nonatomic) BOOL shouldVacuum;
 @property (nonatomic, readonly) NSMutableDictionary *statementsBySQL;
+@property (nonatomic) int synchronousMode;
 @property (nonatomic) long userVersion;
 
 - (void).cxx_destruct;
@@ -34,6 +38,7 @@
 - (id)_boxedValue:(id)arg1 forObjcCProperty:(id)arg2;
 - (id)_createSchemaHash;
 - (void)_periodicVacuum;
+- (id)_synchronousModeString;
 - (id)_tableNameForClass:(Class)arg1;
 - (id)allTableNames;
 - (void)analyze;
@@ -86,9 +91,13 @@
 - (void)setObjectClassPrefix:(id)arg1;
 - (void)setOpenCount:(unsigned int)arg1;
 - (void)setProperty:(id)arg1 forKey:(id)arg2;
+- (void)setShouldVacuum:(BOOL)arg1;
+- (void)setSynchronousMode:(int)arg1;
 - (void)setUserVersion:(long)arg1;
+- (BOOL)shouldVacuum;
 - (id)statementForSQL:(id)arg1;
 - (id)statementsBySQL;
+- (int)synchronousMode;
 - (long)userVersion;
 - (void)vacuum;
 

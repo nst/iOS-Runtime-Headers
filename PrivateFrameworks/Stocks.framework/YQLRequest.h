@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
  */
 
-@interface YQLRequest : NSObject <NSURLConnectionDelegate> {
-    NSURLConnection *_connection;
+@interface YQLRequest : NSObject <NSURLSessionDataDelegate> {
+    NSURLSessionDataTask *_dataTask;
+    NSURLSession *_defaultSession;
     NSMutableData *_rawData;
     NSURLRequest *_request;
 }
@@ -19,24 +20,25 @@
 + (BOOL)shouldGenerateOfflineData;
 
 - (void).cxx_destruct;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (id)YQLCountryCode;
 - (id)YQLLanguageCode;
-- (id)_yahooDoppelganger_connectionForRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
+- (id)_yahooDoppelganger_taskForRequest:(id)arg1 delegate:(id)arg2;
 - (id)aggregateDictionaryDomain;
 - (id)arrayWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2 wrapResultIfDictionary:(BOOL)arg3;
 - (void)cancel;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (id)connectionForRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 - (id)dictionaryWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2;
 - (void)didParseData;
 - (void)failToParseWithData:(id)arg1;
+- (void)failToParseWithDataSeriesDictionary:(id)arg1;
 - (void)failWithError:(id)arg1;
+- (id)init;
 - (BOOL)isLoading;
 - (void)loadRequest:(id)arg1;
 - (id)objectOfClass:(Class)arg1 withDictionaryKeyPath:(id)arg2 inJSONObject:(id)arg3;
 - (id)objectWithDictionaryKeyPath:(id)arg1 inJSONObject:(id)arg2;
 - (void)parseData:(id)arg1;
+- (id)taskForRequest:(id)arg1 delegate:(id)arg2;
 
 @end

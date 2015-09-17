@@ -16,9 +16,9 @@
 + (id)slowTimeZoneNames;
 + (id)timeZoneWithSystemTimeZoneName:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_previousDSTTransitionForDate:(id)arg1 timezone:(id)arg2;
 - (id)computeTimeZoneChangeListFromDate:(id)arg1 toDate:(id)arg2;
-- (void)dealloc;
 - (id)getNSTimeZone:(id)arg1;
 - (id)getNSTimeZoneFromDate:(id)arg1 toDate:(id)arg2;
 - (id)initWithSystemTimeZone:(id)arg1;

@@ -19,6 +19,7 @@
     double dGyroUpdateInterval;
     double dLatestFusedMotionCopied;
     double dLatestTimestamp;
+    double dStartOfLogging;
     struct OpaqueFigSemaphore { } *dataSemaphore;
     struct { 
         float x; 
@@ -87,6 +88,7 @@
 - (void)getCurrentQuaternion:(struct { double x1; double x2; double x3; double x4; }*)arg1;
 - (long)getFusedVectorX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (long)getGravityX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
+- (long)getLatestMotionDataTime:(double*)arg1;
 - (void)getPositionX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (long)getVectorX:(float*)arg1 y:(float*)arg2 z:(float*)arg3 forTimeStamp:(double)arg4;
 - (id)init;

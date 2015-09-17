@@ -37,11 +37,11 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } rowSize;
 @property (nonatomic) _UIFlowLayoutSection *section;
 
+- (void).cxx_destruct;
 - (void)addItem:(id)arg1 atEnd:(BOOL)arg2;
 - (float)availableSpace;
 - (BOOL)complete;
 - (id)copyFromSection:(id)arg1;
-- (void)dealloc;
 - (BOOL)fixedItemSize;
 - (int)index;
 - (int)indexOfNearestItemAtPoint:(struct CGPoint { float x1; float x2; })arg1;

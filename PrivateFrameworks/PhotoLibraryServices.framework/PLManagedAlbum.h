@@ -77,14 +77,11 @@
 
 - (unsigned int)_albumStandInCount;
 - (id)_assetOrderByAssetUUID;
-- (unsigned int)_cachedCountForMigration;
 - (id)_expectedKeyAssets:(id)arg1;
 - (id)_keysToBeObserved;
 - (id)_orderComparisonValueForAsset:(id)arg1 iTunesLookupOrder:(id)arg2;
 - (void)_recalculateCachedCounts;
 - (BOOL)_shouldCopyAssetToCameraRollBeforeAdding:(id)arg1;
-- (void)_updateCountsIfNeeded:(id)arg1;
-- (void)_updateKeyAssetsAndCountsIfNeeded;
 - (void)_updateKeyAssetsIfNeeded:(id)arg1;
 - (void)addAssetUsingiTunesAlbumOrder:(id)arg1;
 - (BOOL)albumShouldBeAutomaticallyDeleted;
@@ -104,8 +101,6 @@
 - (id)internalUserEditableAssetsAtIndexes:(id)arg1;
 - (BOOL)isEmpty;
 - (BOOL)isValidKindForPersistence;
-- (id)migration_newOrderKeyChild:(id)arg1;
-- (id)migration_sortedOrderKeysForChildrenUsingMap:(id)arg1;
 - (id)mutableAssets;
 - (BOOL)needsPersistenceUpdate;
 - (id)objectInInternalUserEditableAssetsAtIndex:(unsigned int)arg1;
@@ -127,6 +122,7 @@
 - (void)sortAssetsUsingiTunesAlbumOrder;
 - (BOOL)supportsAssetOrderKeys;
 - (void)unregisterForChanges;
+- (void)updateKeyAssetsIfNeeded;
 - (id)userEditableAssets;
 - (unsigned int)videosCount;
 - (void)willSave;

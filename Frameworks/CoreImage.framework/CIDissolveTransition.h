@@ -20,7 +20,6 @@
 - (id)inputTargetImage;
 - (id)inputTime;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputTargetImage:(id)arg1;
 - (void)setInputTime:(id)arg1;

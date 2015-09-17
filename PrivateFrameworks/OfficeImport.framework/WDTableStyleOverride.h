@@ -19,6 +19,7 @@
 - (id)characterProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)initWithDocument:(id)arg1;
 - (BOOL)isCharacterPropertiesOverridden;
 - (BOOL)isParagraphPropertiesOverridden;

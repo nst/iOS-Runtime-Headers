@@ -11,6 +11,8 @@
 - (BOOL)isAncestorOfItem:(id <UIFocusContainer>)arg1;
 - (<UIFocusContainer> *)preferredFocusedItem;
 - (void)setNeedsPreferredFocusedItemUpdate;
+- (BOOL)shouldChangeFocusedItem:(id <UIFocusContainer>)arg1;
 - (BOOL)shouldChangeFocusedItem:(id <UIFocusContainer>)arg1 heading:(unsigned int)arg2;
+- (void)updatePreferredFocusedItemIfNeeded;
 
 @end

@@ -14,6 +14,7 @@
     double _currentOverallProgress;
     unsigned int _currentStage;
     NSString *_currentStatus;
+    NSDictionary *_currentSyncHostInfo;
     double _currentSyncProgress;
     NSMutableDictionary *_dataclassTimers;
     NSMutableArray *_dataclasses;
@@ -28,6 +29,7 @@
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+@property (nonatomic, copy) NSDictionary *currentSyncHostInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -53,6 +55,7 @@
 - (void)_sendSyncAllowed;
 - (void)assetLink:(id)arg1 didUpdateOverallProgress:(double)arg2;
 - (void)cancelSyncOnMessageLink:(id)arg1;
+- (id)currentSyncHostInfo;
 - (void)environmentMonitorDidChangePower:(id)arg1;
 - (id)init;
 - (void)initiateSyncForLibrary:(id)arg1 onMessageLink:(id)arg2;
@@ -64,6 +67,7 @@
 - (void)session:(id)arg1 willBeginSessionTask:(id)arg2;
 - (void)sessionDidFinish:(id)arg1;
 - (void)sessionWillBegin:(id)arg1;
+- (void)setCurrentSyncHostInfo:(id)arg1;
 - (void)setSyncSession:(id)arg1;
 - (id)syncSession;
 

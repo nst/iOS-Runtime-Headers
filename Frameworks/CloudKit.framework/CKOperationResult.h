@@ -4,11 +4,13 @@
 
 @interface CKOperationResult : NSObject <NSSecureCoding> {
     NSError *_error;
+    CKOperationMetrics *_metrics;
     NSString *_operationID;
     NSArray *_requestUUIDs;
 }
 
 @property (nonatomic, retain) NSError *error;
+@property (nonatomic, retain) CKOperationMetrics *metrics;
 @property (nonatomic, retain) NSString *operationID;
 @property (nonatomic, retain) NSArray *requestUUIDs;
 
@@ -20,9 +22,11 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)error;
 - (id)initWithCoder:(id)arg1;
+- (id)metrics;
 - (id)operationID;
 - (id)requestUUIDs;
 - (void)setError:(id)arg1;
+- (void)setMetrics:(id)arg1;
 - (void)setOperationID:(id)arg1;
 - (void)setRequestUUIDs:(id)arg1;
 

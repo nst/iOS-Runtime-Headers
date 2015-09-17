@@ -15,6 +15,7 @@
 - (const struct { char *x1; char *x2; BOOL x3; int x4; struct { char *x_5_1_1; char *x_5_1_2; struct _renditionkeytoken { unsigned short x_3_2_1; unsigned short x_3_2_2; } x_5_1_3[5]; int x_5_1_4; int x_5_1_5; struct { char *x_6_2_1; char *x_6_2_2; int x_6_2_3; unsigned int x_6_2_4; } x_5_1_6[12]; } x5[7]; }*)elementDefinitionAtIndex:(unsigned int)arg1;
 - (unsigned int)elementDefinitionCount;
 - (const struct { char *x1; char *x2; BOOL x3; int x4; struct { char *x_5_1_1; char *x_5_1_2; struct _renditionkeytoken { unsigned short x_3_2_1; unsigned short x_3_2_2; } x_5_1_3[5]; int x_5_1_4; int x_5_1_5; struct { char *x_6_2_1; char *x_6_2_2; int x_6_2_3; unsigned int x_6_2_4; } x_5_1_6[12]; } x5[7]; }*)elementDefinitionWithName:(id)arg1;
+- (unsigned int)materialDefinitionCount;
 - (id)schemaEffectRenditionsForPartDefinition:(const struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; }*)arg1;
 - (id)schemaRenditionsForPartDefinition:(const struct { char *x1; char *x2; struct _renditionkeytoken { unsigned short x_3_1_1; unsigned short x_3_1_2; } x3[5]; int x4; int x5; struct { char *x_6_1_1; char *x_6_1_2; int x_6_1_3; unsigned int x_6_1_4; } x6[12]; }*)arg1;
 - (int)schemaVersion;

@@ -20,10 +20,12 @@
     BOOL _shouldUpdateNowPlayingArtwork;
     NSObject<OS_dispatch_source> *_timeInformationTimer;
     double _timeInformationUpdateInterval;
+    BOOL _wantsTimeInformationUpdates;
 }
 
 @property (nonatomic, readonly) double currentDuration;
 @property (nonatomic, readonly) double currentElapsed;
+@property (nonatomic, readonly) BOOL currentNowPlayingAppIsRunning;
 @property (nonatomic, readonly) UIImage *currentNowPlayingArtwork;
 @property (nonatomic, readonly) NSDictionary *currentNowPlayingInfo;
 @property (nonatomic) <MPUNowPlayingDelegate> *delegate;
@@ -34,6 +36,7 @@
 @property (nonatomic) double timeInformationUpdateInterval;
 
 - (void).cxx_destruct;
+- (BOOL)_isUpdatingTimeInformation;
 - (void)_registerForNotifications;
 - (void)_startUpdatingTimeInformation;
 - (void)_stopUpdatingTimeInformation;
@@ -44,6 +47,7 @@
 - (void)_updateTimeInformationAndCallDelegate:(BOOL)arg1;
 - (double)currentDuration;
 - (double)currentElapsed;
+- (BOOL)currentNowPlayingAppIsRunning;
 - (id)currentNowPlayingArtwork;
 - (id)currentNowPlayingInfo;
 - (void)dealloc;

@@ -19,6 +19,7 @@
 - (id)description;
 - (id)fetchableArtworkToken;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithArtworkType:(int)arg1 availableArtworkToken:(id)arg2 fetchableArtworkToken:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 

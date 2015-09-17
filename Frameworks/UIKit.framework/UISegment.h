@@ -42,6 +42,7 @@
 
 + (id)_backgroundImageWithStorage:(id)arg1 style:(int)arg2 mini:(BOOL)arg3 state:(unsigned int)arg4 position:(unsigned int)arg5 drawMode:(int*)arg6 defaultBlock:(id /* block */)arg7;
 
+- (void).cxx_destruct;
 - (id)_attributedTextForState:(unsigned int)arg1 selected:(BOOL)arg2;
 - (float)_barHeight;
 - (void)_commonSegmentInit;
@@ -50,6 +51,8 @@
 - (id)_currentOptionsStyleTextShadowColor;
 - (id)_dividerImage;
 - (id)_dividerImageIsCustom:(BOOL*)arg1;
+- (id)_effectiveContentView;
+- (id)_encodableSubviews;
 - (void)_forceInfoDisplay;
 - (BOOL)_hasSelectedColor;
 - (float)_idealWidth;
@@ -61,8 +64,10 @@
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_positionInfo;
 - (void)_positionInfoWithoutAnimation;
+- (id)_preferredConfigurationForFocusAnimation:(int)arg1 inContext:(id)arg2;
 - (unsigned int)_segmentState;
 - (void)_setEnabledAppearance:(BOOL)arg1;
+- (void)_setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setInfoConstraints:(id)arg1;
 - (BOOL)_shouldUsePadMomentaryAppearance;
 - (id)_tintColorArchivingKey;
@@ -73,10 +78,12 @@
 - (void)animateRemoveForWidth:(float)arg1;
 - (id)badgeValue;
 - (id)badgeView;
+- (BOOL)canBecomeFocused;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })contentRect;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (int)controlSize;
 - (void)dealloc;
+- (void)didUpdateFocusFromView:(id)arg1;
 - (id)disabledTextColor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
@@ -117,6 +124,7 @@
 - (void)updateForAppearance:(id)arg1 style:(int)arg2;
 - (void)updateMasking;
 - (BOOL)useBlockyMagnificationInClassic;
-- (id)viewForBaselineLayout;
+- (id)viewForLastBaselineLayout;
+- (void)willUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 
 @end

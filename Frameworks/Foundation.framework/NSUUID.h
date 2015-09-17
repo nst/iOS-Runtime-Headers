@@ -37,19 +37,21 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
++ (id)deriveUUIDForAssistantFromBaseUUID:(id)arg1;
++ (id)deriveUUIDForAssistantFromBaseUUID:(id)arg1 withSalts:(id)arg2;
++ (id)deriveUUIDFromBaseUUID:(id)arg1;
++ (id)deriveUUIDFromBaseUUID:(id)arg1 identifierSalt:(id)arg2;
++ (id)deriveUUIDFromBaseUUID:(id)arg1 identifierSalt:(id)arg2 withSalts:(id)arg3;
++ (id)deriveUUIDFromBaseUUID:(id)arg1 withSalts:(id)arg2;
++ (void)setIdentifierSalt:(id)arg1 assistantIdentifierSalt:(id)arg2;
++ (id)uuid:(id)arg1 identifierSalt:(id)arg2 withSalts:(id)arg3;
+
+- (id)convertToData;
 - (id)description;
 
-// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
++ (id)_LS_UUIDWithData:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -58,7 +60,24 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
++ (id)deriveUUIDForAssistantFromBaseUUID:(id)arg1;
++ (id)deriveUUIDForAssistantFromBaseUUID:(id)arg1 withSalts:(id)arg2;
++ (id)deriveUUIDFromBaseUUID:(id)arg1;
++ (id)deriveUUIDFromBaseUUID:(id)arg1 identifierSalt:(id)arg2;
++ (id)deriveUUIDFromBaseUUID:(id)arg1 identifierSalt:(id)arg2 withSalts:(id)arg3;
++ (id)deriveUUIDFromBaseUUID:(id)arg1 withSalts:(id)arg2;
++ (void)setIdentifierSalt:(id)arg1 assistantIdentifierSalt:(id)arg2;
++ (id)uuid:(id)arg1 identifierSalt:(id)arg2 withSalts:(id)arg3;
+
+- (id)convertToData;
 - (id)description;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)TTZero;
+
+- (int)TTCompare:(id)arg1;
+- (id)TTShortDescription;
 
 // Image: /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/PerformanceAnalysis
 
@@ -70,9 +89,21 @@
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (unsigned long)sizeInBytesForSerializedVersion;
 
+// Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
+
++ (id)_siri_UUIDWithDomainObjectIdentifier:(id)arg1;
+
+- (id)_siri_domainObjectIdentifier;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (id)tsp_initWithMessage:(const struct UUID { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; unsigned long long x6; }*)arg1;
 - (void)tsp_saveToMessage:(struct UUID { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; unsigned long long x6; }*)arg1;
+
+// Image: /usr/lib/libprequelite.dylib
+
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

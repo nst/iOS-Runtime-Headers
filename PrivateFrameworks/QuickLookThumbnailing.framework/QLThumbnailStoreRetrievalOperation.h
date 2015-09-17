@@ -5,26 +5,41 @@
 @interface QLThumbnailStoreRetrievalOperation : NSOperation {
     QLThumbnailAddition *_addition;
     BOOL _allowsThumbnailGeneration;
+    NSURL *_destinationURL;
     NSURL *_documentURL;
     NSError *_error;
     BOOL _executing;
     BOOL _finished;
+    BOOL _generateThumbnailsAtBackgroundPriority;
+    <QLThumbnailGenerationRequest> *_thumbnailRequest;
 }
 
 @property BOOL allowsThumbnailGeneration;
 @property (retain) NSError *error;
 @property (getter=isExecuting, nonatomic) BOOL executing;
 @property (getter=isFinished, nonatomic) BOOL finished;
+@property (readonly) GSAddition *genStoreAddition;
+@property BOOL generateThumbnailsAtBackgroundPriority;
 @property (readonly) NSData *serializedQuickLookMetadataDictionary;
 @property (readonly) NSDictionary *thumbnailImagesDictionary;
+@property (readonly) BOOL thumbnailWasAutomaticallyGenerated;
 
++ (BOOL)canMostRecentClientsGenerateThumbnailsForUTI:(id)arg1;
+
+- (void)_afterThumbnailIsGenerated;
+- (void)_finishBecauseGenerationFailedWithUnderlyingError:(id)arg1;
 - (BOOL)_finishIfCancelled;
 - (void)_finishWithError:(id)arg1;
+- (void)_generateThumbnail;
+- (void)afterThumbnailIsPutInGenstore;
 - (BOOL)allowsThumbnailGeneration;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
 - (id)error;
+- (id)genStoreAddition;
+- (BOOL)generateThumbnailsAtBackgroundPriority;
+- (id)init;
 - (id)initWithDocumentAtURL:(id)arg1;
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
@@ -35,7 +50,9 @@
 - (void)setError:(id)arg1;
 - (void)setExecuting:(BOOL)arg1;
 - (void)setFinished:(BOOL)arg1;
+- (void)setGenerateThumbnailsAtBackgroundPriority:(BOOL)arg1;
 - (void)start;
 - (id)thumbnailImagesDictionary;
+- (BOOL)thumbnailWasAutomaticallyGenerated;
 
 @end

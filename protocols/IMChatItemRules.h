@@ -5,11 +5,16 @@
 
 @required
 
+- (NSMutableArray *)_chatItems;
 - (NSArray *)_chatItemsForItem:(IMItem *)arg1 previousItem:(IMItem *)arg2;
 - (void)_didProcessChatItems:(NSMutableArray *)arg1;
 - (id)_initWithChat:(IMChat *)arg1;
 - (void)_invalidate;
 - (IMItem *)_itemWithChatItemsDeleted:(NSArray *)arg1 fromItem:(IMItem *)arg2;
+- (NSArray *)_items;
+- (IMChatItem *)_nextStaleChatItem;
+- (void)_setItems:(NSArray *)arg1;
+- (void)_setNextStaleChatItem:(IMChatItem *)arg1;
 - (BOOL)_shouldRegenerateChatItemsForItem:(IMItem *)arg1 previousItem:(IMItem *)arg2 oldPreviousItem:(IMItem *)arg3;
 - (BOOL)_shouldReloadChatItem:(IMChatItem *)arg1 oldChatItem:(IMChatItem *)arg2;
 

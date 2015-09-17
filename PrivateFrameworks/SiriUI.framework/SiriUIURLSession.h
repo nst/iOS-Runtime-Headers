@@ -25,7 +25,9 @@
 - (id)imageTaskWithHTTPGetRequest:(id)arg1 client:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)imageTaskWithHTTPGetRequest:(id)arg1 client:(id)arg2 fitToSize:(struct CGSize { float x1; float x2; })arg3 completionHandler:(id /* block */)arg4;
 - (id)imageTaskWithHTTPGetRequest:(id)arg1 client:(id)arg2 fitToSize:(struct CGSize { float x1; float x2; })arg3 fillColor:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)imageTaskWithHTTPGetRequest:(id)arg1 client:(id)arg2 fitToSize:(struct CGSize { float x1; float x2; })arg3 fillColor:(id)arg4 userAgent:(id)arg5 completionHandler:(id /* block */)arg6;
 - (id)imageTaskWithHTTPGetRequest:(id)arg1 client:(id)arg2 fitToSize:(struct CGSize { float x1; float x2; })arg3 incremental:(BOOL)arg4 progressHandler:(id /* block */)arg5 fillColor:(id)arg6;
+- (id)imageTaskWithHTTPGetRequest:(id)arg1 client:(id)arg2 fitToSize:(struct CGSize { float x1; float x2; })arg3 incremental:(BOOL)arg4 progressHandler:(id /* block */)arg5 fillColor:(id)arg6 userAgent:(id)arg7;
 - (id)init;
 
 @end

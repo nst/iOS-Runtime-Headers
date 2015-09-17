@@ -10,7 +10,6 @@
     float _dateAlphaPercentage;
     UILabel *_dateLabel;
     float _dateStrength;
-    <SBFLockScreenDateFormatter> *_formatter;
     _UILegibilityLabel *_legibilityDateLabel;
     _UILegibilitySettings *_legibilitySettings;
     _UILegibilityLabel *_legibilityTimeLabel;
@@ -25,7 +24,6 @@
 @property (nonatomic) float dateAlphaPercentage;
 @property (getter=isDateHidden, nonatomic) BOOL dateHidden;
 @property (nonatomic) float dateStrength;
-@property (nonatomic, retain) <SBFLockScreenDateFormatter> *formatter;
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic) float timeStrength;
@@ -50,7 +48,6 @@
 - (float)dateBaselineOffsetFromOrigin;
 - (float)dateStrength;
 - (void)dealloc;
-- (id)formatter;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isDateHidden;
 - (void)layoutSubviews;
@@ -61,7 +58,6 @@
 - (void)setDateAlphaPercentage:(float)arg1;
 - (void)setDateHidden:(BOOL)arg1;
 - (void)setDateStrength:(float)arg1;
-- (void)setFormatter:(id)arg1;
 - (void)setLegibilitySettings:(id)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTimeStrength:(float)arg1;

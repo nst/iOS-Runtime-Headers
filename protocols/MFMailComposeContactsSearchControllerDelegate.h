@@ -8,6 +8,6 @@
 - (void)composeContactsSearchController:(MFMailComposeContactsSearchController *)arg1 didFindCorecipients:(NSArray *)arg2;
 - (void)composeContactsSearchController:(MFMailComposeContactsSearchController *)arg1 didSortResults:(NSArray *)arg2;
 - (void)composeContactsSearchController:(MFMailComposeContactsSearchController *)arg1 finishedWithResults:(BOOL)arg2;
-- (NSString *)sendingAddressForComposeContactsSearchController:(MFMailComposeContactsSearchController *)arg1;
+- (MFMailAccountProxy *)sendingAccountProxyForComposeContactsSearchController:(MFMailComposeContactsSearchController *)arg1;
 
 @end

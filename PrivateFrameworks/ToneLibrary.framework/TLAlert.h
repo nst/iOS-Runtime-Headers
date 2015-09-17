@@ -4,19 +4,21 @@
 
 @interface TLAlert : NSObject {
     NSString *_accountIdentifier;
+    NSArray *_alertCompletions;
     NSTimer *_completionFallbackTimer;
-    id /* block */ _completionHandler;
+    long long _instanceIndex;
+    BOOL _repeatedlyPlaying;
     BOOL _shouldOverrideMasterSwitches;
-    NSObject<OS_dispatch_queue> *_targetQueue;
     NSString *_toneIdentifier;
     int _type;
     NSString *_vibrationIdentifier;
 }
 
+@property (setter=_setAlertCompletions:, nonatomic, copy) NSArray *_alertCompletions;
 @property (setter=_setCompletionFallbackTimer:, nonatomic, retain) NSTimer *_completionFallbackTimer;
-@property (setter=_setCompletionHandler:, nonatomic, copy) id /* block */ _completionHandler;
+@property (setter=_setInstanceIndex:, nonatomic) long long _instanceIndex;
+@property (getter=_isRepeatedlyPlaying, setter=_setRepeatedlyPlaying:, nonatomic) BOOL _repeatedlyPlaying;
 @property (setter=_setShouldOverrideMasterSwitches:, nonatomic) BOOL _shouldOverrideMasterSwitches;
-@property (setter=_setTargetQueue:, nonatomic) NSObject<OS_dispatch_queue> *_targetQueue;
 @property (nonatomic, copy) NSString *accountIdentifier;
 @property (nonatomic, copy) NSString *toneIdentifier;
 @property (nonatomic) int type;
@@ -29,18 +31,21 @@
 + (void)playToneAndVibrationForType:(int)arg1 accountIdentifier:(id)arg2;
 + (void)playToneAndVibrationForType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3;
 
+- (id)_alertCompletions;
 - (id)_completionFallbackTimer;
-- (id /* block */)_completionHandler;
+- (id)_initWithType:(int)arg1 toneIdentifier:(id)arg2 vibrationIdentifier:(id)arg3 shouldOverrideMasterSwitches:(BOOL)arg4;
+- (long long)_instanceIndex;
+- (BOOL)_isRepeatedlyPlaying;
 - (void)_setAccountIdentifier:(id)arg1;
+- (void)_setAlertCompletions:(id)arg1;
 - (void)_setCompletionFallbackTimer:(id)arg1;
-- (void)_setCompletionHandler:(id /* block */)arg1;
+- (void)_setInstanceIndex:(long long)arg1;
+- (void)_setRepeatedlyPlaying:(BOOL)arg1;
 - (void)_setShouldOverrideMasterSwitches:(BOOL)arg1;
-- (void)_setTargetQueue:(id)arg1;
 - (void)_setToneIdentifier:(id)arg1;
 - (void)_setType:(int)arg1;
 - (void)_setVibrationIdentifier:(id)arg1;
 - (BOOL)_shouldOverrideMasterSwitches;
-- (id)_targetQueue;
 - (id)accountIdentifier;
 - (void)dealloc;
 - (id)description;

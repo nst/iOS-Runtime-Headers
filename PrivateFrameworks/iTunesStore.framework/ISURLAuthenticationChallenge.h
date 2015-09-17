@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
  */
 
-@interface ISURLAuthenticationChallenge : ISAuthenticationChallenge {
-    NSURLAuthenticationChallenge *_challenge;
-}
+@interface ISURLAuthenticationChallenge : ISAuthenticationChallenge
 
 - (void)cancelAuthentication;
-- (void)dealloc;
 - (int)failureCount;
 - (BOOL)hasPassword;
 - (id)initWithAuthenticationChallenge:(id)arg1;

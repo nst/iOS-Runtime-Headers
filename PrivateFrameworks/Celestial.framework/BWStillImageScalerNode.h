@@ -4,6 +4,10 @@
 
 @interface BWStillImageScalerNode : BWNode {
     BOOL _defersCropToJPEGEncoderWhenPossible;
+    struct { 
+        int width; 
+        int height; 
+    } _nativeOutputDimensions;
     BWVideoFormat *_outputFormat;
     struct opaqueCMFormatDescription { } *_outputFormatDescription;
     BWPixelBufferPool *_pool;
@@ -23,9 +27,11 @@
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
 - (id)init;
 - (id)initWithPoolCapacity:(int)arg1;
+- (struct { int x1; int x2; })nativeOutputDimensions;
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setDefersCropToJPEGEncoderWhenPossible:(BOOL)arg1;
+- (void)setNativeOutputDimensions:(struct { int x1; int x2; })arg1;
 
 @end

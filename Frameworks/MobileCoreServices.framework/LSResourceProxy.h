@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface LSResourceProxy : NSObject {
+@interface LSResourceProxy : NSObject <NSCopying, NSSecureCoding> {
     NSString *_boundApplicationIdentifier;
     NSURL *_boundContainerURL;
     NSURL *_boundDataContainerURL;
@@ -22,6 +22,9 @@
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
++ (id)allowedClasses;
++ (BOOL)supportsSecureCoding;
+
 - (id)_initWithLocalizedName:(id)arg1;
 - (id)_initWithLocalizedName:(id)arg1 boundApplicationIdentifier:(id)arg2 boundContainerURL:(id)arg3 dataContainerURL:(id)arg4 boundResourcesDirectoryURL:(id)arg5 boundIconsDictionary:(id)arg6 boundIconCacheKey:(id)arg7 boundIconFileNames:(id)arg8 typeOwner:(id)arg9 boundIconIsPrerendered:(BOOL)arg10 boundIconIsBadge:(BOOL)arg11;
 - (id)boundApplicationIdentifier;
@@ -33,11 +36,14 @@
 - (BOOL)boundIconIsPrerendered;
 - (id)boundIconsDictionary;
 - (id)boundResourcesDirectoryURL;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)iconDataForStyle:(id)arg1 width:(int)arg2 height:(int)arg3 options:(unsigned int)arg4;
 - (id)iconDataForVariant:(int)arg1;
 - (id)iconStyleDomain;
 - (id)iconsDictionary;
+- (id)initWithCoder:(id)arg1;
 - (id)localizedName;
 - (void)setBoundApplicationIdentifier:(id)arg1;
 - (void)setBoundContainerURL:(id)arg1;
@@ -51,6 +57,7 @@
 - (void)setLocalizedName:(id)arg1;
 - (void)setTypeOwner:(id)arg1;
 - (id)typeOwner;
+- (id)uniqueIdentifier;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 

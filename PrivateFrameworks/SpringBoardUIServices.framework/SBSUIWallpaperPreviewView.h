@@ -2,29 +2,52 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBSUIWallpaperPreviewView : UIView {
+@interface SBSUIWallpaperPreviewView : UIView <ISPlayerViewDelegate> {
+    int _batterySaverModeNotificationToken;
     SBFLockScreenDateView *_dateView;
-    SBSUIWallpaperMotionButton *_motionButton;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    _UILegibilityLabel *_irisInstructionsLabel1;
+    _UILegibilityLabel *_irisInstructionsLabel2;
+    BOOL _irisPossible;
+    BOOL _observingParallaxChanges;
+    SBSUIEffectsSegmentedControl *_segmentedControl;
+    BOOL _usingSegmentedControl;
     SBFWallpaperView *_wallpaperView;
 }
 
 @property (nonatomic, retain) SBFLockScreenDateView *dateView;
-@property (nonatomic, retain) SBFWallpaperView *wallpaperView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) _UILegibilityLabel *irisInstructionsLabel1;
+@property (nonatomic, retain) _UILegibilityLabel *irisInstructionsLabel2;
+@property (nonatomic) SBSUIEffectsSegmentedControl *segmentedControl;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) SBFWallpaperView *wallpaperView;
 
+- (void)_batterySaverModeChanged;
+- (void)_effectChanged:(id)arg1;
 - (void)_layoutDateView;
-- (void)_layoutMotionButton;
+- (void)_layoutIrisInstructionLabels;
+- (void)_layoutSegmentedControl;
 - (void)_layoutWallpaperView;
-- (float)_motionButtonInset;
+- (float)_segmentedControlInset;
 - (void)_toggleMotion;
-- (void)_updateMotionEffectsButton;
+- (void)_updateSegmentedControl;
 - (id)dateView;
 - (void)dealloc;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)fadeOutIrisInstructions;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperView:(id)arg2;
+- (id)irisInstructionsLabel1;
+- (id)irisInstructionsLabel2;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)playerViewPlaybackStateDidChange:(id)arg1;
+- (id)segmentedControl;
 - (void)setDateView:(id)arg1;
-- (void)setWallpaperView:(id)arg1;
+- (void)setIrisInstructionsLabel1:(id)arg1;
+- (void)setIrisInstructionsLabel2:(id)arg1;
+- (void)setIrisInstructionsVisible:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSegmentedControl:(id)arg1;
 - (id)wallpaperView;
 
 @end

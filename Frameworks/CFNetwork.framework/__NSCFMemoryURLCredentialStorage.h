@@ -2,17 +2,9 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface __NSCFMemoryURLCredentialStorage : NSObject
+@interface __NSCFMemoryURLCredentialStorage : NSURLCredentialStorage
 
-+ (void)initialize;
-
-- (id)allCredentials;
-- (id)credentialsForProtectionSpace:(id)arg1;
-- (id)defaultCredentialForProtectionSpace:(id)arg1;
 - (id)description;
 - (id)init;
-- (void)removeCredential:(id)arg1 forProtectionSpace:(id)arg2;
-- (void)setCredential:(id)arg1 forProtectionSpace:(id)arg2;
-- (void)setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2;
 
 @end

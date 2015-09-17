@@ -6,6 +6,7 @@
     char *_buf;
     unsigned int _bufLen;
     unsigned int _bufSpace;
+    unsigned int _recursionDepth;
 }
 
 - (void)dealloc;

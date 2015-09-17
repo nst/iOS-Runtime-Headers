@@ -7,6 +7,7 @@
 }
 
 - (void).cxx_destruct;
+- (BOOL)_validActivityType:(id)arg1;
 - (id)initWithTemplateElement:(id)arg1;
 - (id)item;
 

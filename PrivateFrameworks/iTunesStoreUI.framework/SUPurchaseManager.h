@@ -31,7 +31,6 @@
 
 - (id)_accountForPurchase:(id)arg1;
 - (void)_addBatchForPurchases:(id)arg1 options:(id)arg2;
-- (void)_addDownloadingIconForPurchases:(id)arg1;
 - (void)_dialogDidFinish:(id)arg1;
 - (id)_downloadManagerForDownloadKind:(id)arg1;
 - (void)_enqueueContinuations:(id)arg1;

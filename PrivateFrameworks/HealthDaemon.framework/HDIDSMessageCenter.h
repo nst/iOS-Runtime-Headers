@@ -41,7 +41,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
-- (void)dropExtantMessages;
 - (id)idsService;
 - (id)initWithIDSServiceIdentifier:(id)arg1 launchOnDemandNotification:(id)arg2 cacheDirectoryPath:(id)arg3;
 - (void)mapPBRequest:(Class)arg1 toResponse:(Class)arg2 messageID:(unsigned short)arg3;

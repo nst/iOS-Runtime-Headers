@@ -12,9 +12,9 @@
 @property (nonatomic, retain) UIImage *placeholderImage;
 @property (nonatomic, retain) _UIActivityUserDefaults *userDefaults;
 
+- (void).cxx_destruct;
 - (id)activities;
 - (id)activityForRowAtIndexPath:(id)arg1;
-- (void)dealloc;
 - (id)initWithActivities:(id)arg1 userDefaults:(id)arg2;
 - (id)placeholderImage;
 - (int)preferredActivityCategory;

@@ -11,6 +11,7 @@
 @property (getter=_topShadowView, setter=_setTopShadowView:, nonatomic, retain) UIView *_topShadowView;
 @property (nonatomic) UISearchDisplayController *controller;
 
+- (void).cxx_destruct;
 - (void)_numberOfRowsDidChange;
 - (float)_offsetForNoResultsMessage;
 - (void)_setOffsetForNoResultsMessage:(float)arg1;

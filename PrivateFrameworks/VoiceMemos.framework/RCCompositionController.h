@@ -6,8 +6,10 @@
     NSMutableDictionary *_accessTokensByName;
     RCCaptureSession *_activeCaptureSession;
     RCComposition *_composition;
+    BOOL _hasLoggedUsageStatisticRecordingEvent;
     BOOL _hasStartedRecording;
     NSMutableArray *_undoableCompositionItemStack;
+    unsigned int _usageHistoryMask;
 }
 
 @property (nonatomic, readonly) RCCaptureSession *activeCaptureSession;
@@ -49,6 +51,7 @@
 - (void)finalizingComposedAssetWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithComposition:(id)arg1;
+- (BOOL)isCaptureSessionActive;
 - (BOOL)isTopUndoableCompositionFromCapture;
 - (void)performCompositionRedoWithRedoItem:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)performCompositionUndoWithCompletionBlock:(id /* block */)arg1;

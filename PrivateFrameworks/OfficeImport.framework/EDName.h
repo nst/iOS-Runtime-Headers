@@ -20,6 +20,7 @@
 + (id)name;
 
 - (void)dealloc;
+- (id)description;
 - (id)formula;
 - (id)formulaString;
 - (unsigned int)hash;

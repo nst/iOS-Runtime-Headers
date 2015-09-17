@@ -17,6 +17,8 @@
 @property (nonatomic, readonly) struct CGVector { float x1; float x2; } reactionForce;
 @property (nonatomic, readonly) float reactionTorque;
 
+// Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
+
 - (void).cxx_destruct;
 - (BOOL)_implicit;
 - (BOOL)_inUse;
@@ -35,5 +37,9 @@
 - (void)set_implicit:(BOOL)arg1;
 - (void)set_inUse:(BOOL)arg1;
 - (void)set_joint:(struct b2Joint { int (**x1)(); int x2; struct b2Joint {} *x3; struct b2Joint {} *x4; struct b2JointEdge { struct b2Body {} *x_5_1_1; struct b2Joint {} *x_5_1_2; struct b2JointEdge {} *x_5_1_3; struct b2JointEdge {} *x_5_1_4; } x5; struct b2JointEdge { struct b2Body {} *x_6_1_1; struct b2Joint {} *x_6_1_2; struct b2JointEdge {} *x_6_1_3; struct b2JointEdge {} *x_6_1_4; } x6; struct b2Body {} *x7; struct b2Body {} *x8; bool x9; bool x10; void *x11; }*)arg1;
+
+// Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
+
+- (BOOL)isKindOfClass:(Class)arg1;
 
 @end

@@ -18,7 +18,6 @@
     int _maximumGetTracksRetryCount;
     MPPlaceholderAVItem *_placeholderAVItem;
     SSVPlaybackLease *_playbackLease;
-    int _playbackMode;
     NSArray *_previousDatabaseTrackPlaybackDescriptorQueue;
     NSMapTable *_radioTrackToAdSlot;
     RadioStation *_station;
@@ -40,7 +39,6 @@
 @property (nonatomic, retain) RadioStation *station;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *tracks;
-@property (nonatomic, readonly) NSArray *tracksForNextPlaybackGroup;
 @property (nonatomic, readonly) BOOL userCanChangeShuffleAndRepeatType;
 
 // Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
@@ -63,6 +61,7 @@
 - (void)_adTrackActionDidFinishNotification:(id)arg1;
 - (void)_adTrackActionWillBeginNotification:(id)arg1;
 - (void)_adTrackDidFailToLoadNotification:(id)arg1;
+- (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_applicationWillTerminateNotification:(id)arg1;
 - (void)_applyTracksForAdSlot:(id)arg1 radioTrack:(id)arg2 currentPlayingItem:(id)arg3 toTracks:(id)arg4;
 - (BOOL)_canHavePlaceholderTrack;
@@ -78,7 +77,6 @@
 - (void)_isExplicitTracksEnabledDidChangeNotification:(id)arg1;
 - (void)_numberOfAvailableSkipsDidChangeNotification:(id)arg1;
 - (void)_performGetTracksOperationForStation:(id)arg1 withNumberOfTracks:(int)arg2;
-- (int)_playbackModeForTrack:(id)arg1;
 - (void)_radioModelDidChangeNotification:(id)arg1;
 - (void)_removeAllTracks;
 - (void)_sendContentsDidChangeWithCurrentItem;
@@ -112,7 +110,6 @@
 - (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
 - (id)playbackInfoForIdentifier:(id)arg1;
-- (int)playbackMode;
 - (void)player:(id)arg1 currentItemDidChangeToItem:(id)arg2;
 - (BOOL)player:(id)arg1 shouldContinuePlaybackForNetworkType:(int)arg2 returningError:(id*)arg3;
 - (BOOL)playerPreparesItemsForPlaybackAsynchronously;
@@ -127,7 +124,6 @@
 - (struct { int x1; int x2; double x3; })skipLimit;
 - (id)station;
 - (id)tracks;
-- (id)tracksForNextPlaybackGroup;
 - (BOOL)userCanChangeShuffleAndRepeatType;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI

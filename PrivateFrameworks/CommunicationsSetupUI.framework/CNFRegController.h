@@ -10,7 +10,6 @@
     id /* block */ _accountRegistrationBlock;
     id /* block */ _accountRemovedBlock;
     NSArray *_accounts;
-    id /* block */ _alertHandler;
     id /* block */ _aliasAddedBlock;
     id /* block */ _aliasRemovedBlock;
     id /* block */ _aliasStatusChangedBlock;
@@ -51,7 +50,6 @@
 @property (nonatomic, copy) id /* block */ accountRegistrationBlock;
 @property (nonatomic, copy) id /* block */ accountRemovedBlock;
 @property (nonatomic, readonly, copy) NSArray *accounts;
-@property (nonatomic, copy) id /* block */ alertHandler;
 @property (nonatomic, copy) id /* block */ aliasAddedBlock;
 @property (nonatomic, copy) id /* block */ aliasRemovedBlock;
 @property (nonatomic, copy) id /* block */ aliasStatusChangedBlock;
@@ -82,6 +80,7 @@
 
 + (id)controllerForServiceType:(int)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)__ensureSingleAppleIDAccountExistsWithLogin:(id)arg1;
 - (id /* block */)__filter_activeAccountsPredicate;
 - (id /* block */)__filter_appleIDAccountPredicate;
@@ -121,7 +120,7 @@
 - (id)_predicatesWithFilter:(int)arg1;
 - (void)_purgeExcessAccounts;
 - (BOOL)_shouldFilterOutAlias:(id)arg1 onAccount:(id)arg2;
-- (void)_showNetworkAlertWithMessage:(id)arg1;
+- (void)_showNetworkAlertWithMessage:(id)arg1 andViewController:(id)arg2;
 - (void)_signOutAccount:(id)arg1 delete:(BOOL)arg2;
 - (void)_startListeningForCallerIDChanges;
 - (void)_startWiFiAlertWatchTimer;
@@ -135,6 +134,7 @@
 - (id /* block */)accountAddedBlock;
 - (id /* block */)accountAuthorizationChangedBlock;
 - (id)accountForAlias:(id)arg1;
+- (BOOL)accountIsAuthenticating;
 - (id /* block */)accountRegistrationBlock;
 - (void)accountRegistrationChanged:(id)arg1;
 - (void)accountRemoved:(id)arg1;
@@ -151,8 +151,6 @@
 - (id)activeAccounts;
 - (BOOL)addAlias:(id)arg1;
 - (BOOL)addAlias:(id)arg1 toAccount:(id)arg2;
-- (id /* block */)alertHandler;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id /* block */)aliasAddedBlock;
 - (id)aliasNamed:(id)arg1;
 - (id /* block */)aliasRemovedBlock;
@@ -228,7 +226,6 @@
 - (void)setAccountAuthorizationChangedBlock:(id /* block */)arg1;
 - (void)setAccountRegistrationBlock:(id /* block */)arg1;
 - (void)setAccountRemovedBlock:(id /* block */)arg1;
-- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAliasAddedBlock:(id /* block */)arg1;
 - (void)setAliasRemovedBlock:(id /* block */)arg1;
 - (void)setAliasStatusChangedBlock:(id /* block */)arg1;
@@ -247,9 +244,9 @@
 - (void)setWillLaunchURLBlock:(id /* block */)arg1;
 - (BOOL)shouldHandleAccountNotification:(id)arg1;
 - (BOOL)shouldShowAlertForError:(id)arg1;
-- (void)showNetworkAlert;
-- (void)showNetworkAlertIfNecessary;
-- (void)showNetworkFirstRunAlert;
+- (void)showNetworkAlert:(id)arg1;
+- (void)showNetworkAlertIfNecessary:(id)arg1;
+- (void)showNetworkFirstRunAlert:(id)arg1;
 - (void)showSetupFaceTimeOverCellularAlertWithCompletion:(id /* block */)arg1;
 - (void)signoutAccount:(id)arg1;
 - (void)startListeningForAccountChanges;

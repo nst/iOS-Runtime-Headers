@@ -8,6 +8,7 @@
 - (BOOL)canDismiss;
 - (void)implBoundsHeightChangeDone:(float)arg1 suppressNotification:(BOOL)arg2;
 - (BOOL)isActive;
+- (BOOL)isAutomatic;
 - (BOOL)isMinimized;
 - (void)prepareForImplBoundsHeightChange:(float)arg1 suppressNotification:(BOOL)arg2;
 - (void)setMinimized:(BOOL)arg1;

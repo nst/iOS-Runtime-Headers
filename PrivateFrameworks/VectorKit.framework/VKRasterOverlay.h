@@ -4,6 +4,10 @@
 
 @interface VKRasterOverlay : NSObject {
     <VKRasterOverlayDelegate> *_delegate;
+    struct weak_ptr<md::GlobeOverlayContainer> { 
+        struct GlobeOverlayContainer {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _flyoverContainer;
     unsigned int _level;
     VKRasterOverlayTileSource *_mapModel;
     struct { 
@@ -25,13 +29,16 @@
 @property (nonatomic) VKRasterOverlayTileSource *tileSource;
 
 - (id).cxx_construct;
+- (void).cxx_destruct;
 - (BOOL)canDrawKey:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1;
 - (id)delegate;
 - (void)drawKey:(const struct { unsigned int x1; unsigned int x2; unsigned int x3; }*)arg1 inContext:(struct CGContext { }*)arg2;
+- (struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x1; struct __shared_weak_count {} *x2; })flyoverContainer;
 - (id)init;
 - (unsigned int)level;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })replaceMapContentInRect;
 - (void)setDelegate:(id)arg1;
+- (void)setFlyoverContainer:(struct weak_ptr<md::GlobeOverlayContainer> { struct GlobeOverlayContainer {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setLevel:(unsigned int)arg1;
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg1 level:(int)arg2;

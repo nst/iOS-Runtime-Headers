@@ -14,6 +14,7 @@
 + (void)clearSharedLocationUpdater;
 + (id)sharedLocationUpdater;
 
+- (void).cxx_destruct;
 - (void)_failed:(unsigned int)arg1;
 - (void)_geocodeLocation:(id)arg1;
 - (id)aggregateDictionaryDomain;

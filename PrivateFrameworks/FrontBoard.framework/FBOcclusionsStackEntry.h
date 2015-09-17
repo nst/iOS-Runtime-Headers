@@ -16,6 +16,8 @@
 
 - (void)dealloc;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)initWithKey:(id)arg1;
 - (id)key;
 - (float)level;
@@ -23,5 +25,7 @@
 - (id)orderedOcclusions;
 - (void)setLevel:(float)arg1;
 - (void)setOcclusions:(id)arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 
 @end

@@ -63,6 +63,7 @@
 - (void)_localeChanged;
 - (id)_nameForDeleteButton;
 - (id)_orderedEditItems;
+- (void)_performCloseKeyCommand;
 - (void)_performDelete:(int)arg1;
 - (BOOL)_performSave:(int)arg1 animated:(BOOL)arg2;
 - (void)_pinKeyboard:(BOOL)arg1;
@@ -72,6 +73,7 @@
 - (void)_setCalendarItemOnEditItems;
 - (void)_setDoneAndCancelButtonVisible:(BOOL)arg1;
 - (void)_setShowingAccessDeniedView:(BOOL)arg1 showSettingsInstructions:(BOOL)arg2;
+- (void)_setUpKeyCommands;
 - (void)_setWantsToEnableDoneButton:(BOOL)arg1;
 - (void)_setWantsToEnableDoneButtonAfterTextChanged;
 - (void)_tableViewDidUpdateHeights;
@@ -82,6 +84,7 @@
 - (BOOL)allowsDeletingFutureOccurrences;
 - (void)applicationDidResume;
 - (id)calendarItem;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)canHideDoneAndCancelButtons;
 - (void)cancel:(id)arg1;
 - (void)cancelEditingWithDelegateNotification:(BOOL)arg1;
@@ -115,6 +118,7 @@
 - (unsigned int)entityType;
 - (int)firstTableRowForEditItem:(id)arg1;
 - (void)handleTapOutside;
+- (BOOL)hasUnsavedChanges;
 - (id)init;
 - (void)loadView;
 - (float)navBarLeftContentInset;

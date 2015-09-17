@@ -4,8 +4,8 @@
 
 @interface PKPassbookSettingsDefaultBehavior : NSObject <PKPassbookSettingsDataSource> {
     PKPaymentOptionsDefaults *_options;
-    PKPassLibraryDefaultDataProvider *_passDataProvider;
-    PKPaymentService *_paymentService;
+    PKPassLibraryDefaultDataProvider *_passLibraryDataProvider;
+    PKPaymentDefaultDataProvider *_paymentDataProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +18,8 @@
 - (BOOL)deviceSupportsInAppPayments;
 - (id)init;
 - (id)optionsDelegate;
-- (id)passDataProvider;
+- (id)passLibraryDataProvider;
+- (id)paymentDataProvider;
 - (id)secureElementID;
 - (id)setupDelegate;
 - (BOOL)showPassState;

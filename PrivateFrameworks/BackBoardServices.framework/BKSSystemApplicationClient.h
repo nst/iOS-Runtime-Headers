@@ -21,7 +21,9 @@
 - (void)connect;
 - (void)dealloc;
 - (id)delegate;
+- (void)finishBooting;
 - (id)initWithCalloutQueue:(id)arg1;
+- (BOOL)ping;
 - (void)queue_connectionWasInterrupted;
 - (void)queue_connectionWasInvalidated;
 - (void)queue_connectionWasResumed;

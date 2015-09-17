@@ -10,6 +10,7 @@
 - (int)characterType;
 - (void)clearProperties;
 - (void)dealloc;
+- (id)description;
 - (id)initWithParagraph:(id)arg1;
 - (id)properties;
 - (int)runType;

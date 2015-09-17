@@ -13,7 +13,9 @@
 - (void*)bytes;
 - (void)dealloc;
 - (void)endAccessing;
+- (id)initWithFileDescriptor:(int)arg1 size:(unsigned long)arg2;
 - (id)initWithPropertyList:(void*)arg1;
 - (unsigned long)length;
+- (BOOL)purgable;
 
 @end

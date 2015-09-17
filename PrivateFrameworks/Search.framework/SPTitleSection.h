@@ -5,7 +5,9 @@
 @interface SPTitleSection : SPSection <PRSTitleSection>
 
 @property (nonatomic, retain) NSURL *attribution_url;
-@property (nonatomic, retain) NSString *subtitle;
+@property (nonatomic) BOOL card_padding_bottom;
+@property (nonatomic) BOOL card_padding_top;
+@property (nonatomic) BOOL hide_divider;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *type;
 @property (nonatomic, retain) NSURL *url;

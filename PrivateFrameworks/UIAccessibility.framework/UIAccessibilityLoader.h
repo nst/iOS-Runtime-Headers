@@ -6,11 +6,13 @@
 
 + (id)_accessibilityBundlesForBundle:(id)arg1;
 + (void)_accessibilityInitializeRuntimeOverrides;
++ (void)_accessibilityInitializeSubclassRuntimeOverrides;
 + (void)_accessibilityLoadSubbundles:(id)arg1;
 + (void)_accessibilityReenabled;
 + (BOOL)_accessibilityServerStarted;
 + (void)_accessibilityStartServer;
 + (void)_accessibilityStopServer;
++ (void)_axAssertCheckNoOneHasTheirAccessibilityCategoriesInstalled;
 + (id)_axBundleForBundle:(id)arg1;
 + (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2;
 + (id)_loadAXBundleForBundle:(id)arg1 didLoad:(BOOL*)arg2 forceLoad:(BOOL)arg3 loadSubbundles:(BOOL)arg4;

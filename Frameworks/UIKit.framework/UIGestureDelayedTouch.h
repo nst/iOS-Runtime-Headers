@@ -17,9 +17,9 @@
 @property (retain) UITouch *stateWhenDelivered;
 @property (retain) UITouch *touch;
 
+- (void).cxx_destruct;
 - (BOOL)cloneForSecondDelivery;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (int)decrementDelayCount;
 - (int)delayCount;
 - (id)description;

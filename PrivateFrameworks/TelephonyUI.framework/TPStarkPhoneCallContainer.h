@@ -16,6 +16,7 @@
 @property BOOL shouldMerge;
 @property (retain) NSMutableArray *visibleCells;
 
+- (void).cxx_destruct;
 - (id)_reloadQueue;
 - (void)addConstraintsForNewCell:(id)arg1;
 - (void)addRelationForLeftOfCell:(id)arg1;

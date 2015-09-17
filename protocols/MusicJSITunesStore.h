@@ -8,6 +8,7 @@
 - (void)displayTermsAndConditions:(JSValue *)arg1;
 - (BOOL)isCloudLibraryEnabled;
 - (void)playMedia:(NSDictionary *)arg1 :(JSValue *)arg2;
+- (void)quickPlay:(NSDictionary *)arg1 :(JSValue *)arg2;
 - (void)setCloudLibraryEnabled:(BOOL)arg1 :(BOOL)arg2 :(JSValue *)arg3;
 
 @end

@@ -3,6 +3,7 @@
  */
 
 @interface PUPhotoStreamCreateTitleViewController : UIViewController <UITextViewDelegate> {
+    NSArray *_constraints;
     UILabel *_descriptionLabel;
     UILabel *_instructionLabel;
     UINavigationItem *_navItem;

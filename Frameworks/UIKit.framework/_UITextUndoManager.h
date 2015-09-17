@@ -8,6 +8,7 @@
 
 @property (nonatomic) UITextInputController *inputController;
 
+- (void).cxx_destruct;
 - (id)inputController;
 - (void)removeAllActions;
 - (void)setInputController:(id)arg1;

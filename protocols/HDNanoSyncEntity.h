@@ -5,9 +5,12 @@
 
 @required
 
-+ (long long)finalAnchorForNanoSyncRestoreWithStore:(id <HDSyncStore>)arg1 deviceSourceIdentifier:(NSString *)arg2 nowDate:(NSDate *)arg3 healthDaemon:(id <HDHealthDaemon>)arg4 error:(id*)arg5;
 + (int)nanoSyncObjectType;
-+ (NSArray *)objectsForNanoSyncRestoreWithStore:(id <HDSyncStore>)arg1 deviceSourceIdentifier:(NSString *)arg2 nowDate:(NSDate *)arg3 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg4 lastSyncAnchor:(long long*)arg5 healthDaemon:(id <HDHealthDaemon>)arg6 error:(id*)arg7;
+
+@optional
+
++ (long long)finalAnchorForNanoSyncRestoreWithStore:(id <HDSyncStore>)arg1 nowDate:(NSDate *)arg2 healthDaemon:(id <HDHealthDaemon>)arg3 error:(id*)arg4;
++ (NSArray *)objectsForNanoSyncRestoreWithStore:(id <HDSyncStore>)arg1 nowDate:(NSDate *)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 lastSyncAnchor:(long long*)arg4 healthDaemon:(id <HDHealthDaemon>)arg5 error:(id*)arg6;
 + (unsigned int)syncObjectLimitForNanoSyncMessage;
 
 @end

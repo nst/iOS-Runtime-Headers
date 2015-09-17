@@ -10,7 +10,6 @@
     int mType;
 }
 
-- (id).cxx_construct;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

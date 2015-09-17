@@ -56,6 +56,8 @@
 @property (nonatomic) float alpha;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (nonatomic) struct CGPoint { float x1; float x2; } center;
+@property (nonatomic, readonly) UIBezierPath *collisionBoundingPath;
+@property (nonatomic, readonly) unsigned int collisionBoundsType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
@@ -74,6 +76,9 @@
 + (id)layoutAttributesForDecorationViewOfKind:(id)arg1 withIndexPath:(id)arg2;
 + (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 withIndexPath:(id)arg2;
 
+- (void).cxx_destruct;
+- (id)__elementKind;
+- (id)__indexPath;
 - (id)_elementKind;
 - (BOOL)_isCell;
 - (BOOL)_isClone;
@@ -89,7 +94,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (struct CGPoint { float x1; float x2; })center;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (unsigned int)hash;

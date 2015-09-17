@@ -8,12 +8,12 @@
     unsigned int _isPresentationInstance;
     struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; bool x6; } *_morpher;
     NSString *_name;
-    id _reserved;
     BOOL _shouldMorphNormals;
     NSArray *_targets;
     NSMutableArray *_weights;
 }
 
+@property (readonly) NSArray *animationKeys;
 @property (nonatomic) int calculationMode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -21,7 +21,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSArray *targets;
 
-+ (id)SCNJSExportProtocol;
 + (id)morpher;
 + (id)morpherWithMorphRef:(struct __C3DMorph { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; long x2; struct __CFArray {} *x3; struct __C3DGenericSource {} *x4; unsigned int x5; bool x6; }*)arg1;
 + (BOOL)supportsSecureCoding;
@@ -39,10 +38,10 @@
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (id)animationForKey:(id)arg1;
 - (id)animationKeys;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long x_16_1_1; BOOL x_16_1_2[40]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; double x16; struct _opaque_pthread_mutex_t { long x_17_1_1; BOOL x_17_1_2[40]; } x17; int x18; int x19; int x20; int x21; }*)animationManager;
 - (int)calculationMode;
 - (id)copy;
-- (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1;
+- (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

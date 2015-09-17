@@ -38,10 +38,12 @@
 - (void)_loadContentViewControllerForcingPlaceholder:(BOOL)arg1;
 - (void)_notifyBodyDidFinishLoadingWithResult:(BOOL)arg1;
 - (void)_notifyCompositionDidFinish;
+- (void)_processAttachmentsViaProxy:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)_serviceViewControllerReady:(id)arg1 error:(id)arg2;
 - (void)_setCompositionValue:(id)arg1 forKey:(id)arg2;
 - (void)_setPlaceHolderSubject:(id)arg1;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (id)addAttachmentFileURL:(id)arg1 mimeType:(id)arg2;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (id)autorotationDelegate;
 - (void)autosaveWithHandler:(id /* block */)arg1;
@@ -52,7 +54,9 @@
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)mailComposeDelegate;
+- (id)placeholderForFileName:(id)arg1 fileSize:(int)arg2 mimeType:(id)arg3 contentID:(id)arg4 proxy:(id)arg5;
 - (void)requestFramesForAttachmentsWithIdentifiers:(id)arg1 resultHandler:(id /* block */)arg2;
+- (id)securityScopeForURL:(id)arg1 proxy:(id)arg2;
 - (void)setAutorotationDelegate:(id)arg1;
 - (void)setAutosaveIdentifier:(id)arg1;
 - (void)setBccRecipients:(id)arg1;

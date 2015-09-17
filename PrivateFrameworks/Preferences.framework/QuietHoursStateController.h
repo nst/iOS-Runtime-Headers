@@ -36,6 +36,7 @@
 + (void)setScheduledRangeFrom:(id)arg1 to:(id)arg2;
 + (id)sharedController;
 
+- (void).cxx_destruct;
 - (unsigned int)allowedGroupType;
 - (id)bbGateway;
 - (id)behaviorOverrides;

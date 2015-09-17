@@ -6,9 +6,11 @@
     WKScrollViewDelegateForwarder *_delegateForwarder;
     <UIScrollViewDelegate> *_externalDelegate;
     WKWebView<UIScrollViewDelegate> *_internalDelegate;
+    float _preferredScrollDecelerationFactor;
 }
 
 @property (nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate;
+@property (nonatomic, readonly) float preferredScrollDecelerationFactor;
 
 - (struct CGSize { float x1; float x2; })_currentTopLeftRubberbandAmount;
 - (void)_restoreContentOffsetWithRubberbandAmount:(struct CGSize { float x1; float x2; })arg1;
@@ -17,7 +19,9 @@
 - (void)_updateDelegate;
 - (void)dealloc;
 - (id)delegate;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)internalDelegate;
+- (float)preferredScrollDecelerationFactor;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalDelegate:(id)arg1;

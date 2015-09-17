@@ -38,6 +38,7 @@
 - (void)stockUpdater:(id)arg1 didUpdateStocks:(id)arg2 isComprehensive:(BOOL)arg3;
 - (void)stocksDidUpdateRemotely;
 - (void)updateAllStocksBasic;
+- (void)updateAllStocksBasic:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)updateAllStocksBasicWithCompletion:(id /* block */)arg1;
 - (void)updateStaleStocksBasicWithCompletion:(id /* block */)arg1;
 - (void)updateStockBasicWithCompletion:(id)arg1 withCompletion:(id /* block */)arg2;

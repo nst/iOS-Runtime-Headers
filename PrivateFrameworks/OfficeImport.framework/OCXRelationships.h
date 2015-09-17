@@ -16,6 +16,7 @@
 - (id)initWithPath:(id)arg1;
 - (BOOL)isEmpty;
 - (id)path;
+- (id)targetForKey:(id)arg1;
 - (void)writeRelationshipsToFilename:(id)arg1 stream:(id)arg2;
 
 @end

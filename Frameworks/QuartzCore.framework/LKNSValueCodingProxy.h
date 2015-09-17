@@ -89,7 +89,6 @@
     } _u;
 }
 
-- (id).cxx_construct;
 - (id)decodedObject;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

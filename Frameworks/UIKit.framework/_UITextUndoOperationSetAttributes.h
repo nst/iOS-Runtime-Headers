@@ -6,7 +6,7 @@
     _NSAttributeRun *_attributes;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithAffectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inputController:(id)arg2;
 - (void)undoRedo;
 

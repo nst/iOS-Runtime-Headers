@@ -12,6 +12,7 @@
     EKCalendar *_defaultCalendarForNewEvents;
     EKCalendar *_defaultCalendarForNewReminders;
     NSNumber *_defaultTimedAlarmOffset;
+    NSArray *_delegateSources;
     NSMutableSet *_deletedObjects;
     unsigned long _flags;
     NSMutableSet *_insertedObjects;
@@ -21,6 +22,7 @@
     NSMutableDictionary *_registeredObjects;
     NSObject<OS_dispatch_queue> *_registeredQueue;
     NSMutableDictionary *_sources;
+    EKCalendar *_suggestedEventCalendar;
     NSTimeZone *_timeZone;
     NSObject<OS_dispatch_queue> *_unsavedChangesQueue;
     NSMutableSet *_updatedObjects;
@@ -31,6 +33,8 @@
 @property (nonatomic, retain) EKCalendar *_defaultCalendarForNewEvents;
 @property (nonatomic, retain) EKCalendar *_defaultCalendarForNewReminders;
 @property (nonatomic, retain) NSMutableDictionary *_sources;
+@property (nonatomic, retain) EKCalendar *_suggestedEventCalendar;
+@property (nonatomic) BOOL automaticLocationGeocodingAllowed;
 @property (nonatomic) NSObject<OS_dispatch_queue> *calendarQueue;
 @property (nonatomic, readonly) NSArray *calendars;
 @property (readonly) EKDaemonConnection *connection;
@@ -42,6 +46,7 @@
 @property (nonatomic, readonly) EKCalendar *defaultCalendarForNewEvents;
 @property (nonatomic, readonly) EKAlarm *defaultTimedAlarm;
 @property (nonatomic, retain) NSNumber *defaultTimedAlarmOffset;
+@property (nonatomic, readonly) NSArray *delegateSources;
 @property (nonatomic) NSMutableSet *deletedObjects;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *eventNotifications;
@@ -58,6 +63,8 @@
 @property (nonatomic) NSObject<OS_dispatch_queue> *registeredQueue;
 @property (nonatomic, readonly) NSArray *reminderNotifications;
 @property (nonatomic) BOOL showDeclinedEvents;
+@property (nonatomic, readonly) NSArray *sources;
+@property (nonatomic, readonly) EKCalendar *suggestedEventCalendar;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic, readonly) int unacknowledgedEventCount;
@@ -70,6 +77,7 @@
 + (Class)classForEntityName:(id)arg1;
 + (Class)publicClassForEntityName:(id)arg1;
 
+- (Class)_SGSuggestionsServiceClass;
 - (void)_accessStatusChanged;
 - (id)_addFetchedObjectWithID:(id)arg1;
 - (void)_addObjectToPendingCommits:(id)arg1;
@@ -97,13 +105,17 @@
 - (void)_reregisterObject:(id)arg1 oldID:(id)arg2;
 - (void)_saveWithoutNotify;
 - (id)_sources;
+- (id)_suggestedEventCalendar;
 - (void)_trackModifiedObject:(id)arg1;
 - (void)_unregisterObject:(id)arg1;
 - (void)_validateObjectIDs:(id)arg1 completion:(id /* block */)arg2;
 - (void)_waitOnSemaphore:(id)arg1;
+- (void)acceptSuggestedEvent:(id)arg1;
 - (void)alarmOccurrencesBetweenStartDate:(id)arg1 endDate:(id)arg2 inCalendars:(id)arg3 completion:(id /* block */)arg4;
 - (id)alarmWithUUID:(id)arg1;
-- (void)cacheValidationStatusForEmail:(id)arg1 status:(int)arg2;
+- (BOOL)automaticLocationGeocodingAllowed;
+- (id)birthdayContactIdentifierForEvent:(id)arg1;
+- (void)cacheValidationStatusForEmail:(id)arg1 status:(unsigned int)arg2;
 - (id)calendarItemWithIdentifier:(id)arg1;
 - (id)calendarItemsWithExternalIdentifier:(id)arg1;
 - (id)calendarQueue;
@@ -112,6 +124,8 @@
 - (id)calendarWithIdentifier:(id)arg1;
 - (id)calendars;
 - (id)calendarsForEntityType:(unsigned int)arg1;
+- (BOOL)canModifyCalendarDatabase;
+- (BOOL)canModifySuggestedEventCalendar;
 - (void)cancelFetchRequest:(id)arg1;
 - (id)changesSinceSequenceNumber:(int)arg1;
 - (id)closestCachedOccurrenceToDate:(double)arg1 forEventUID:(int)arg2;
@@ -129,11 +143,13 @@
 - (id)defaultCalendarForNewReminders;
 - (id)defaultTimedAlarm;
 - (id)defaultTimedAlarmOffset;
+- (id)delegateSources;
 - (BOOL)deleteCalendar:(id)arg1 forEntityType:(int)arg2 error:(id*)arg3;
+- (void)deleteSuggestedEvent:(id)arg1;
 - (id)deletedObjects;
 - (id)doEvents:(id)arg1 haveOccurrencesAfterDate:(id)arg2;
 - (id)earliestExpiringNotifiableEventEndDateAfterDate:(id)arg1 timeZone:(id)arg2;
-- (int)emailAddressValidationStatus:(id)arg1;
+- (unsigned int)emailAddressValidationStatus:(id)arg1;
 - (void)enumerateEventsMatchingPredicate:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)eventForUID:(id)arg1 occurrenceDate:(id)arg2;
 - (id)eventForUID:(id)arg1 occurrenceDate:(id)arg2 checkValid:(BOOL)arg3;
@@ -149,6 +165,7 @@
 - (BOOL)fetchProperties:(id)arg1 forReminders:(id)arg2;
 - (id)fetchRemindersMatchingPredicate:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned long)flags;
+- (id)gatherLogs;
 - (BOOL)hideCalendarsFromNotificationCenter:(id)arg1 error:(id*)arg2;
 - (id)importICS:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3;
 - (id)importICSData:(id)arg1 intoCalendar:(id)arg2 options:(unsigned int)arg3;
@@ -159,6 +176,7 @@
 - (id)insertNewEvent;
 - (id)insertNewExceptionDateWithDate:(id)arg1;
 - (id)insertNewReminder;
+- (void)insertSuggestedEventCalendar;
 - (id)insertedObjects;
 - (id)inviteReplyNotifications;
 - (BOOL)isDataProtected;
@@ -208,6 +226,7 @@
 - (id)publicObjectWithObjectID:(id)arg1;
 - (id)publicObjectWithPersistentObject:(id)arg1;
 - (id)publicRegisteredObjects;
+- (void)pushSpotlightUpdatesForCalendarItemUUIDs:(id)arg1;
 - (int)readWriteCalendarCountForEntityType:(unsigned int)arg1;
 - (id)readWriteCalendarsForEntityType:(unsigned int)arg1;
 - (void)refreshSourcesIfNecessary;
@@ -231,7 +250,9 @@
 - (BOOL)removeReminder:(id)arg1 error:(id*)arg2;
 - (BOOL)removeResourceChange:(id)arg1 error:(id*)arg2;
 - (BOOL)removeResourceChanges:(id)arg1 error:(id*)arg2;
+- (BOOL)removeResourceChangesForCalendarItem:(id)arg1 error:(id*)arg2;
 - (BOOL)removeSource:(id)arg1 error:(id*)arg2;
+- (void)removeSuggestedEventCalendar;
 - (void)requestAccessToEntityType:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (void)reset;
 - (id)resourceChangesForEntityTypes:(unsigned int)arg1;
@@ -246,6 +267,7 @@
 - (id)scheduledTaskCacheFetchDaysAndTaskCounts;
 - (id)scheduledTaskCacheFetchTasksOnDay:(id)arg1;
 - (int)sequenceNumber;
+- (void)setAutomaticLocationGeocodingAllowed:(BOOL)arg1;
 - (void)setCalendarQueue:(id)arg1;
 - (void)setDatabase:(id)arg1;
 - (void)setDbChangedQueue:(id)arg1;
@@ -273,14 +295,17 @@
 - (void)set_defaultCalendarForNewEvents:(id)arg1;
 - (void)set_defaultCalendarForNewReminders:(id)arg1;
 - (void)set_sources:(id)arg1;
+- (void)set_suggestedEventCalendar:(id)arg1;
 - (id)sharedCalendarInvitationsForEntityTypes:(unsigned int)arg1;
 - (BOOL)showDeclinedEvents;
 - (id)sourceWithIdentifier:(id)arg1;
 - (id)sources;
+- (id)suggestedEventCalendar;
 - (id)timeZone;
 - (int)unacknowledgedEventCount;
 - (id)unsavedChangesQueue;
 - (id)updatedObjects;
+- (void)vehicleTriggerAlarmOccurrencesWithCompletion:(id /* block */)arg1;
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 

@@ -11,8 +11,9 @@
 @property (nonatomic) BOOL haveCGCacheImages;
 @property (nonatomic, copy) NSArray *imagePaths;
 
+- (void).cxx_destruct;
 - (void)_clearResolvedImageResources;
-- (void)dealloc;
+- (BOOL)_containsImagesInPath:(id)arg1;
 - (BOOL)haveCGCacheImages;
 - (id)imagePaths;
 - (id)imageWithTraitCollection:(id)arg1;

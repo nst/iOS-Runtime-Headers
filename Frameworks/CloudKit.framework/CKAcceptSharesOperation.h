@@ -19,6 +19,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (id /* block */)acceptSharesCompletionBlock;
+- (unsigned long long)activityStart;
 - (id)errorsByShareURL;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;

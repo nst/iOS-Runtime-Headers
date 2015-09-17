@@ -30,6 +30,7 @@
 - (void)_registerToDaemon;
 - (void)_rethrowException:(id)arg1;
 - (void)_scheduleRemoteSynchronization;
+- (void)_sendPingToDaemon;
 - (void)_setHasPendingSynchronize:(BOOL)arg1;
 - (void)_setShouldAvoidSynchronize:(BOOL)arg1;
 - (BOOL)_shouldAvoidSynchronize;

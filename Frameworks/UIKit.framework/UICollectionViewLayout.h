@@ -68,6 +68,7 @@
 + (Class)invalidationContextClass;
 + (Class)layoutAttributesClass;
 
+- (void).cxx_destruct;
 - (id /* block */)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2;
 - (id /* block */)_animationForReusableView:(id)arg1 toLayoutAttributes:(id)arg2 type:(unsigned int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_bounds;
@@ -112,6 +113,7 @@
 - (void)_setSections:(id)arg1;
 - (void)_setSiblingLayout:(id)arg1;
 - (void)_setSublayoutType:(int)arg1;
+- (BOOL)_shouldScrollToContentBeginningInRightToLeft;
 - (id)_siblingLayout;
 - (int)_sublayoutType;
 - (BOOL)_supportsAdvancedTransitionAnimations;
@@ -119,7 +121,6 @@
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromLayout:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toLayout:(id)arg2;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)finalLayoutAttributesForDisappearingDecorationElementOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)finalLayoutAttributesForDisappearingItemAtIndexPath:(id)arg1;
@@ -139,9 +140,12 @@
 - (void)invalidateLayout;
 - (void)invalidateLayoutWithContext:(id)arg1;
 - (id)invalidationContextForBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)invalidationContextForEndingInteractiveMovementOfItemsToFinalIndexPaths:(id)arg1 previousIndexPaths:(id)arg2 movementCancelled:(BOOL)arg3;
+- (id)invalidationContextForInteractivelyMovingItems:(id)arg1 withTargetPosition:(struct CGPoint { float x1; float x2; })arg2 previousIndexPaths:(id)arg3 previousPosition:(struct CGPoint { float x1; float x2; })arg4;
 - (id)invalidationContextForPreferredLayoutAttributes:(id)arg1 withOriginalAttributes:(id)arg2;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)layoutAttributesForInteractivelyMovingItemAtIndexPath:(id)arg1 withTargetPosition:(struct CGPoint { float x1; float x2; })arg2;
 - (id)layoutAttributesForItemAtIndexPath:(id)arg1;
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (void)prepareForAnimatedBoundsChange:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -156,6 +160,7 @@
 - (id)snapshottedLayoutAttributeForItemAtIndexPath:(id)arg1;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 withScrollingVelocity:(struct CGPoint { float x1; float x2; })arg2;
+- (id)targetIndexPathForInteractivelyMovingItem:(id)arg1 withPosition:(struct CGPoint { float x1; float x2; })arg2;
 - (struct CGPoint { float x1; float x2; })transitionContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1 keyItemIndexPath:(id)arg2;
 - (struct CGPoint { float x1; float x2; })updatesContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 

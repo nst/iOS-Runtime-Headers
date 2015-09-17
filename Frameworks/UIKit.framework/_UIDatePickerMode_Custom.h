@@ -10,13 +10,13 @@
     NSArray *_sortedComponents;
 }
 
+- (void).cxx_destruct;
 - (id)_componentForCalendarUnit:(unsigned int)arg1;
 - (unsigned int)calendarUnitForComponent:(int)arg1;
 - (int)componentForCalendarUnit:(unsigned int)arg1;
 - (id)components;
 - (id)dateForRow:(int)arg1 inCalendarUnit:(unsigned int)arg2;
 - (id)dateFormatForCalendarUnit:(unsigned int)arg1;
-- (void)dealloc;
 - (int)displayedCalendarUnits;
 - (unsigned int)extractableCalendarUnits;
 - (id)initWithFormatString:(id)arg1 datePickerView:(id)arg2;

@@ -16,6 +16,7 @@
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (void)initialize;
 
+- (void)__apply:(int (*)arg1 context:(void*)arg2;
 - (void)__setObject:(id)arg1 forKey:(id)arg2;
 - (double)_clumpingFactor;
 - (double)_clumpingInterestingThreshold;

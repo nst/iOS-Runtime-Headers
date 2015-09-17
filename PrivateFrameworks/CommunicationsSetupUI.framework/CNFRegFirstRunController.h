@@ -32,6 +32,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL timedOut;
 
+- (void).cxx_destruct;
 - (void)_cancelValidationMode;
 - (void)_executeDismissBlock:(id /* block */)arg1;
 - (void)_handleReturnKeyTapped:(id)arg1;

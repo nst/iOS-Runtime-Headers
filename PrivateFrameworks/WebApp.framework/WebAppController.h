@@ -2,12 +2,11 @@
    Image: /System/Library/PrivateFrameworks/WebApp.framework/WebApp
  */
 
-@interface WebAppController : WebUIDelegate <UIApplicationDelegate, UIWebViewDelegate, UIWebViewPrivateDelegate> {
+@interface WebAppController : WebUIDelegate <UIApplicationDelegate, UIWebViewDelegate, UIWebViewPrivateDelegate, WebPolicyDelegate> {
     NSMutableArray *_alerts;
     WebUIAuthenticationManager *_authenticationManager;
     NSDictionary *_connectionProperties;
     WebUIDownloadManager *_downloadManager;
-    float _endScale;
     NSArray *_fallbackURLs;
     struct CGRect { 
         struct CGPoint { 
@@ -34,8 +33,6 @@
         } size; 
     } _rotationRect;
     WBUSheetController *_sheetController;
-    float _startScale;
-    UIViewController *_viewControllerToWorkaround14804109;
     UIWindow *_window;
     BOOL snapshotHideTimeHasExpired;
     NSTimer *snapshotHideTimer;
@@ -49,12 +46,13 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
-@property (retain) UIWebClip *webClip;
-@property (readonly) UIWebView *webView;
+@property (nonatomic, retain) UIWebClip *webClip;
+@property (nonatomic, readonly) UIWebView *webView;
 @property (nonatomic, retain) UIWindow *window;
 
 + (id)contentBackgroundColor;
 
+- (void).cxx_destruct;
 - (void)_cancelSnapshotHideTimer;
 - (void)_handleStatusBarHeightChanged:(id)arg1;
 - (void)_ignorePolicyListener:(id)arg1;
@@ -65,7 +63,6 @@
 - (void)_setPersistentStoragePathDefaults;
 - (void)_setTopScrollIndicatorInset:(float)arg1;
 - (id)_sheetController;
-- (id)_viewControllerForSupportedInterfaceOrientations;
 - (void)addAlert:(id)arg1;
 - (void)addAlertWithTitle:(id)arg1 bodyText:(id)arg2 context:(id)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })browserFrameForOrientation:(int)arg1;

@@ -3,6 +3,7 @@
  */
 
 @interface IMFileTransfer : NSObject {
+    NSDictionary *_AuxTranscoderUserInfo;
     NSString *_accountID;
     unsigned long long _averageTransferRate;
     NSDate *_createdDate;
@@ -14,6 +15,8 @@
     unsigned long _hfsCreator;
     unsigned short _hfsFlags;
     unsigned long _hfsType;
+    BOOL _isAuxImage;
+    BOOL _isAuxVideo;
     BOOL _isDirectory;
     BOOL _isIncoming;
     unsigned long long _lastAveragedBytes;
@@ -38,6 +41,7 @@
     BOOL _wasRegisteredAsStandalone;
 }
 
+@property (nonatomic, retain) NSDictionary *AuxTranscoderUserInfo;
 @property (nonatomic, readonly) unsigned long long _lastAveragedBytes;
 @property (setter=_setLastAveragedInterval:, nonatomic) double _lastAveragedInterval;
 @property (setter=_setLastUpdatedInterval:, nonatomic) double _lastUpdatedInterval;
@@ -56,6 +60,8 @@
 @property (nonatomic) unsigned long hfsCreator;
 @property (nonatomic) unsigned short hfsFlags;
 @property (nonatomic) unsigned long hfsType;
+@property (nonatomic) BOOL isAuxImage;
+@property (nonatomic) BOOL isAuxVideo;
 @property (nonatomic) BOOL isDirectory;
 @property (nonatomic, readonly) BOOL isFinished;
 @property (nonatomic) BOOL isIncoming;
@@ -78,9 +84,12 @@
 @property (nonatomic, retain) NSDictionary *userInfo;
 @property (setter=setRegisteredAsStandalone:, nonatomic) BOOL wasRegisteredAsStandalone;
 
++ (id)AuxGUIDFromFileTransferGUID:(id)arg1;
 + (BOOL)_doesLocalURLRequireArchiving:(id)arg1;
 + (id)_invalidCharactersForFileTransferName;
++ (id)guidByStrippingAuxPrefix:(id)arg1;
 
+- (id)AuxTranscoderUserInfo;
 - (void)_calculateTypeInformation;
 - (void)_clear;
 - (id)_dictionaryRepresentation;
@@ -122,6 +131,8 @@
 - (unsigned short)hfsFlags;
 - (unsigned long)hfsType;
 - (id)init;
+- (BOOL)isAuxImage;
+- (BOOL)isAuxVideo;
 - (BOOL)isDirectory;
 - (BOOL)isFinished;
 - (BOOL)isIncoming;
@@ -133,6 +144,7 @@
 - (id)mimeType;
 - (id)otherPerson;
 - (void)setAccountID:(id)arg1;
+- (void)setAuxTranscoderUserInfo:(id)arg1;
 - (void)setAverageTransferRate:(unsigned long long)arg1;
 - (void)setCreatedDate:(id)arg1;
 - (void)setCurrentBytes:(unsigned long long)arg1;
@@ -141,6 +153,8 @@
 - (void)setHfsCreator:(unsigned long)arg1;
 - (void)setHfsFlags:(unsigned short)arg1;
 - (void)setHfsType:(unsigned long)arg1;
+- (void)setIsAuxImage:(BOOL)arg1;
+- (void)setIsAuxVideo:(BOOL)arg1;
 - (void)setIsDirectory:(BOOL)arg1;
 - (void)setIsIncoming:(BOOL)arg1;
 - (void)setLocalBookmark:(id)arg1;

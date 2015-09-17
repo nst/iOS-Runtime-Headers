@@ -4,6 +4,7 @@
 
 @interface _UINavigationBarAppearanceStorage : _UIBarAppearanceStorage {
     NSString *_backdropViewGroupName;
+    UIImage *_condensedBackgroundImage;
     BOOL _deferShadowToSearchBar;
     int activeBarMetrics;
     UIImage *backIndicatorImage;
@@ -27,7 +28,6 @@
 @property (nonatomic, retain) NSString *backdropViewGroupName;
 @property (nonatomic, readonly) UIImage *backgroundImage;
 @property (nonatomic, readonly) _UIBarButtonItemAppearanceStorage *barButtonAppearanceStorage;
-@property (nonatomic, readonly) UIImage *cardBackgroundImage;
 @property (nonatomic, readonly) UIImage *condensedBackgroundImage;
 @property (nonatomic) int defaultBarMetrics;
 @property (nonatomic) BOOL deferShadowToSearchBar;
@@ -41,6 +41,7 @@
 
 + (int)typicalBarPosition;
 
+- (void).cxx_destruct;
 - (id)_barButtonAppearanceStorage;
 - (int)activeBarMetrics;
 - (id)backIndicatorImage;
@@ -49,9 +50,7 @@
 - (id)backdropViewGroupName;
 - (id)backgroundImage;
 - (id)barButtonAppearanceStorage;
-- (id)cardBackgroundImage;
 - (id)condensedBackgroundImage;
-- (void)dealloc;
 - (int)defaultBarMetrics;
 - (BOOL)deferShadowToSearchBar;
 - (BOOL)hidesShadow;

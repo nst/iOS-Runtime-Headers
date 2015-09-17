@@ -36,6 +36,7 @@
 + (id)_fillImage;
 + (id)_indeterminateImage;
 
+- (void).cxx_destruct;
 - (void)_animateValueOnDisplayLink:(id)arg1;
 - (void)_setHidesBorderView:(BOOL)arg1;
 - (void)_startIndeterminateAnimation;

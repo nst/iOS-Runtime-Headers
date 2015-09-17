@@ -10,6 +10,7 @@
     TSWPLayoutManager *_bodyLayoutManager;
     BOOL _checkedForBackUp;
     unsigned int _completePageCount;
+    unsigned int _currentPageBeingLaidOut;
     unsigned int _didLayOutPageIndex;
     TPDocumentRoot *_documentRoot;
     TPFootnoteLayoutController *_footnoteLayoutController;
@@ -91,6 +92,7 @@
 - (id)initWithDocumentRoot:(id)arg1;
 - (BOOL)isLayoutComplete;
 - (BOOL)isLayoutCompleteThroughPageIndex:(unsigned int)arg1;
+- (BOOL)isLayoutInProgress;
 - (BOOL)isSectionInfo:(id)arg1 onPage:(unsigned int)arg2;
 - (unsigned int)lastPageCountForArchivedLayoutState:(id)arg1;
 - (void)layoutManager:(id)arg1 didClearDirtyRangeWithDelta:(int)arg2 afterCharIndex:(unsigned int)arg3;
@@ -126,7 +128,8 @@
 - (unsigned int)p_layoutEndFootnoteIndex;
 - (void)p_layoutFootnotesIntoPageLayout:(id)arg1;
 - (void)p_layoutIntoPageLayout:(id)arg1 outDidSync:(BOOL*)arg2;
-- (void)p_layoutNextPageForLayoutController:(id)arg1;
+- (void)p_layoutNextPageForLayoutController:(id)arg1 dirtyRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)p_layoutNextPageOnce;
 - (void)p_layoutTextIntoPageLayout:(id)arg1 outDidSync:(BOOL*)arg2;
 - (void)p_layoutThroughPageIndex:(unsigned int)arg1 forLayoutController:(id)arg2 clearOffscreenInfos:(BOOL)arg3;
 - (void)p_notifyObserversDidInvalidate;
@@ -140,8 +143,9 @@
 - (unsigned int)p_pageIndexForCharIndex:(unsigned int)arg1 caretAffinity:(int)arg2 forceLayout:(BOOL)arg3 searchAfterLayoutPoint:(BOOL)arg4;
 - (unsigned int)p_pageIndexForFootnoteIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2 searchAfterLayoutPoint:(BOOL)arg3;
 - (id)p_pageIndexPathForPageIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2 allowAfterLayoutPoint:(BOOL)arg3;
-- (id)p_pageInfoForBodySelection:(id)arg1;
 - (id)p_pageInfoForPageAtIndex:(unsigned int)arg1;
+- (id)p_pageInfosForAttachmentAtBodyCharIndex:(unsigned int)arg1 selectionPath:(id)arg2;
+- (id)p_pageInfosForBodySelection:(id)arg1;
 - (id)p_pageMasterForPageIndex:(unsigned int)arg1 inSection:(id)arg2 sectionHint:(id)arg3;
 - (void)p_prepareLayoutStateForNextPage;
 - (void)p_preparePageHintForNextPage;
@@ -158,7 +162,7 @@
 - (void)p_setBackgroundLayoutStartDate:(id)arg1;
 - (void)p_setNeedsLayoutFromSectionIndexToEnd:(unsigned int)arg1;
 - (void)p_setNeedsLayoutOnPageIndex:(unsigned int)arg1;
-- (void)p_syncFromNextPage;
+- (void)p_syncFromNextPageWithDirtyRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)p_textPageHintFollowingPageIndexPath:(id)arg1;
 - (id)p_textPageHintPrecedingPageIndex:(unsigned int)arg1;
 - (id)p_textPageHintPrecedingPageIndexPath:(id)arg1;
@@ -176,7 +180,6 @@
 - (unsigned int)pageIndexForAnchoredCharIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2;
 - (unsigned int)pageIndexForCharIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2;
 - (unsigned int)pageIndexForFootnoteIndex:(unsigned int)arg1 forceLayout:(BOOL)arg2;
-- (id)pageInfoForAttachmentAtBodyCharIndex:(unsigned int)arg1 selection:(id)arg2;
 - (id)pageInfoForPageIndex:(unsigned int)arg1;
 - (id)pageInfosForInfo:(id)arg1 withSelectionPath:(id)arg2;
 - (unsigned int)pageNumberForPageIndex:(unsigned int)arg1;

@@ -7,10 +7,10 @@
     int mPosition;
 }
 
-- (int)align;
+- (unsigned char)align;
 - (unsigned int)hash;
 - (int)position;
-- (void)setAlign:(int)arg1;
+- (void)setAlign:(unsigned char)arg1;
 - (void)setPosition:(int)arg1;
 
 @end

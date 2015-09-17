@@ -3,6 +3,7 @@
  */
 
 @interface CKDPQueryRetrieveRequest : PBRequest <NSCopying> {
+    CKDPAssetsToDownload *_assetsToDownload;
     NSData *_continuationMarker;
     struct { 
         unsigned int limit : 1; 
@@ -13,7 +14,9 @@
     CKDPRecordZoneIdentifier *_zoneIdentifier;
 }
 
+@property (nonatomic, retain) CKDPAssetsToDownload *assetsToDownload;
 @property (nonatomic, retain) NSData *continuationMarker;
+@property (nonatomic, readonly) BOOL hasAssetsToDownload;
 @property (nonatomic, readonly) BOOL hasContinuationMarker;
 @property (nonatomic) BOOL hasLimit;
 @property (nonatomic, readonly) BOOL hasQuery;
@@ -27,11 +30,13 @@
 + (id)options;
 
 - (void).cxx_destruct;
+- (id)assetsToDownload;
 - (id)continuationMarker;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAssetsToDownload;
 - (BOOL)hasContinuationMarker;
 - (BOOL)hasLimit;
 - (BOOL)hasQuery;
@@ -46,6 +51,7 @@
 - (unsigned int)requestTypeCode;
 - (id)requestedFields;
 - (Class)responseClass;
+- (void)setAssetsToDownload:(id)arg1;
 - (void)setContinuationMarker:(id)arg1;
 - (void)setHasLimit:(BOOL)arg1;
 - (void)setLimit:(unsigned int)arg1;

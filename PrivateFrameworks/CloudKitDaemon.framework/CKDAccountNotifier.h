@@ -3,28 +3,28 @@
  */
 
 @interface CKDAccountNotifier : NSObject {
+    NSOperationQueue *_accountChangeHandlerQueue;
     int _accountChangedToken;
-    NSMapTable *_notificationObservers;
-    NSOperationQueue *_notifyQueue;
+    NSMapTable *_notificationHandlers;
 }
 
+@property (nonatomic, retain) NSOperationQueue *accountChangeHandlerQueue;
 @property (nonatomic) int accountChangedToken;
-@property (nonatomic, retain) NSMapTable *notificationObservers;
-@property (nonatomic, retain) NSOperationQueue *notifyQueue;
+@property (nonatomic, retain) NSMapTable *notificationHandlers;
 
 + (id)sharedNotifier;
 
 - (void).cxx_destruct;
+- (id)accountChangeHandlerQueue;
 - (int)accountChangedToken;
 - (void)dealloc;
 - (id)init;
-- (id)notificationObservers;
-- (id)notifyQueue;
+- (id)notificationHandlers;
 - (void)postAccountChangedNotification:(id)arg1;
 - (void)registerObserver:(id)arg1 forAccountChangeNotification:(id /* block */)arg2;
+- (void)setAccountChangeHandlerQueue:(id)arg1;
 - (void)setAccountChangedToken:(int)arg1;
-- (void)setNotificationObservers:(id)arg1;
-- (void)setNotifyQueue:(id)arg1;
+- (void)setNotificationHandlers:(id)arg1;
 - (void)unregisterObserverForAccountChangeNotification:(id)arg1;
 
 @end

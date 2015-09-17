@@ -2,31 +2,21 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVAssetWriterInputFigAssetWriterEndPassOperation : NSObject {
-    id /* block */ _completionBlock;
-    NSError *_error;
+@interface AVAssetWriterInputFigAssetWriterEndPassOperation : AVOperation {
     struct OpaqueFigAssetWriter { } *_figAssetWriter;
     AVAssetWriterInputPassDescription *_nextPassDescription;
-    BOOL _succeeded;
     int _trackID;
 }
 
-@property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, readonly) AVAssetWriterInputPassDescription *descriptionForNextPass;
-@property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) BOOL succeeded;
 
-- (void)_markOperationAsCompletedWithSuccess:(BOOL)arg1 error:(id)arg2;
 - (void)_notifyWhetherMorePassesAreNeeded:(BOOL)arg1 timeRanges:(id)arg2 forTrackWithID:(int)arg3;
-- (id /* block */)completionBlock;
 - (void)dealloc;
 - (id)descriptionForNextPass;
-- (id)error;
 - (void)finalize;
 - (id)init;
 - (id)initWithFigAssetWriter:(struct OpaqueFigAssetWriter { }*)arg1 trackID:(int)arg2;
-- (void)setCompletionBlock:(id /* block */)arg1;
+- (BOOL)isAsynchronous;
 - (void)start;
-- (BOOL)succeeded;
 
 @end

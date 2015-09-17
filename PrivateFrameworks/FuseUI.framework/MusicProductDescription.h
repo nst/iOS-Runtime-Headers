@@ -17,6 +17,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)format;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithStoreEditorNotes:(id)arg1;
 - (id)initWithText:(id)arg1;
 - (BOOL)isEmpty;

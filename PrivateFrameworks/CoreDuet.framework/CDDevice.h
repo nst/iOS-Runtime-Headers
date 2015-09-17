@@ -3,13 +3,16 @@
  */
 
 @interface CDDevice : NSObject {
+    BOOL _defaultPaired;
     unsigned int _identifier;
+    BOOL _isDefaultPaired;
     NSString *_modelIdentifier;
     CDSession *_session;
     int remoteDataNotificationToken;
 }
 
 @property (readonly) unsigned int identifier;
+@property BOOL isDefaultPaired;
 @property (readonly) NSString *modelIdentifier;
 @property (readonly) CDSession *session;
 
@@ -18,7 +21,9 @@
 - (id)description;
 - (unsigned int)hash;
 - (unsigned int)identifier;
+- (id)initWithSession:(id)arg1 identifier:(unsigned int)arg2 modelIdentifier:(id)arg3 defaultPaired:(BOOL)arg4 error:(id*)arg5;
 - (id)initWithSession:(id)arg1 identifier:(unsigned int)arg2 modelIdentifier:(id)arg3 error:(id*)arg4;
+- (BOOL)isDefaultPaired;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToDevice:(id)arg1;
 - (id)modelIdentifier;
@@ -27,6 +32,7 @@
 - (BOOL)requestLogDataWithError:(id*)arg1;
 - (BOOL)requestSystemDataWithError:(id*)arg1;
 - (id)session;
+- (void)setIsDefaultPaired:(BOOL)arg1;
 - (BOOL)setLogDataHandlerWithError:(id*)arg1 handler:(id /* block */)arg2;
 - (BOOL)setSystemDataHandlerWithError:(id*)arg1 handler:(id /* block */)arg2;
 

@@ -3,10 +3,14 @@
  */
 
 @interface GEOMapService : NSObject {
+    int _overriddenResultProviderID;
+    NSObject<OS_dispatch_queue> *_placeDataObserverQueue;
+    NSMutableArray *_placeDataObservers;
     NSArray *_preferredLanguages;
     NSLock *_preferredLanguagesLock;
 }
 
++ (void)_attributedGeoMapItemsForPlaceDatasWithType:(int)arg1 placeDatas:(id)arg2 disambiguationLabels:(id)arg3 handler:(id /* block */)arg4;
 + (id)sharedService;
 
 - (id)_cl_ticketForForwardGeocodeAddressDictionary:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
@@ -14,55 +18,80 @@
 - (id)_cl_ticketForReverseGeocodeLocation:(id)arg1 traits:(id)arg2;
 - (id)_geoMapItemForData:(id)arg1;
 - (id)_geoMapItemForData:(id)arg1 withSource:(unsigned int)arg2;
+- (id)_geoMapItemsForPlacesInDetails:(id)arg1;
 - (void)_geoMapItemsForResponseData:(id)arg1 handler:(id /* block */)arg2;
-- (id)_geoMapItemsForUpdatedPlacesInResolution:(id)arg1;
+- (int)_loadOverriddenResultProviderID;
 - (void)_localeChanged:(id)arg1;
 - (id)_preferredLanguages;
 - (id)_searchable_ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(BOOL)arg2 shiftLocationsIfNeeded:(BOOL)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;
 - (id)_ticketForAutoCompleteFragment:(id)arg1 entriesType:(int)arg2 listType:(int)arg3 traits:(id)arg4;
-- (id)_ticketForAutocompleteFragment:(id)arg1 type:(int)arg2 traits:(id)arg3;
+- (id)_ticketForAutocompleteFragment:(id)arg1 type:(int)arg2 traits:(id)arg3 categoryFilter:(id)arg4;
 - (id)_ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 additionalPlaceTypes:(int*)arg3 additionalPlaceTypesCount:(unsigned int)arg4 traits:(id)arg5;
-- (id)_ticketForForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)_ticketForFragment:(id)arg1 entriesType:(int)arg2 listType:(int)arg3 traits:(id)arg4;
-- (id)_ticketForMUIDs:(id)arg1 traits:(id)arg2;
-- (id)_ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(BOOL)arg2 shiftLocationsIfNeeded:(BOOL)arg3 traits:(id)arg4;
-- (id)_ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 suppressResultsRequiringAttribution:(BOOL)arg4 traits:(id)arg5;
-- (id)_ticketForSearchQuery:(id)arg1 hint:(id)arg2 maxResults:(unsigned int)arg3 suppressResultsRequiringAttribution:(BOOL)arg4 traits:(id)arg5;
+- (void)addPlaceDataRequestObserver:(id)arg1;
 - (void)applyRAPUpdatedMapItems:(id)arg1;
 - (void)dealloc;
 - (id)defaultTraits;
 - (id)directionsURL;
+- (id)handleForMapItem:(id)arg1;
 - (id)init;
 - (int)localSearchProviderID;
-- (id)searchURL;
+- (void)notifyPlaceDataRequestObserversThatTicket:(id)arg1 didCompleteWithMapItems:(id)arg2;
+- (void)removePlaceDataRequestObserver:(id)arg1;
+- (void)resolveMapItemFromHandle:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)submitUsageForTraits:(id)arg1;
+- (void)submitUsageForTraits:(id)arg1 actionDetails:(id)arg2 routeDetails:(id)arg3;
+- (void)submitUsageForTraits:(id)arg1 actionDetails:(id)arg2 uiTarget:(int)arg3;
 - (void)submitUsageForTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
+- (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5;
+- (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7 transitDepartureSequence:(id)arg8;
+- (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7 transitIncident:(id)arg8;
+- (void)submitUsageForTraits:(id)arg1 suggestionEntryMetadatasDisplayed:(id)arg2 categorySelected:(id)arg3;
+- (void)submitUsageForTraits:(id)arg1 uiTarget:(int)arg2;
+- (void)submitUsageForTraits:(id)arg1 userActionsUsageLogMessage:(id)arg2 eventKey:(int)arg3;
+- (id)ticketForBatchPopularNearbyForSearchCategories:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 additionalPlaceTypes:(int*)arg3 additionalPlaceTypesCount:(unsigned int)arg4 traits:(id)arg5;
 - (id)ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;
 - (id)ticketForCanonicalLocationSearchQueryString:(id)arg1 traits:(id)arg2;
+- (id)ticketForCategoryListWithTraits:(id)arg1;
+- (id)ticketForExternalBusinessID:(id)arg1 contentProvider:(id)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
 - (id)ticketForForwardGeocodeAddress:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForForwardGeocodeAddressDictionary:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForForwardGeocodeString:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
+- (id)ticketForFreshBusinessClaimComponentWithMUID:(unsigned long long)arg1 resultProviderID:(int)arg2 traits:(id)arg3;
+- (id)ticketForFreshComponents:(id)arg1 muid:(unsigned long long)arg2 resultProviderID:(int)arg3 contentProvider:(id)arg4 traits:(id)arg5;
+- (id)ticketForFreshMUIDs:(id)arg1 resultProviderID:(int)arg2 contentProvider:(id)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;
 - (id)ticketForInterleavedAutoCompleteSearchFragment:(id)arg1 traits:(id)arg2;
+- (id)ticketForInterleavedAutoCompleteWithBrowseSearchFragment:(id)arg1 categoryFilter:(id)arg2 traits:(id)arg3;
 - (id)ticketForInterleavedInstantSearchFragment:(id)arg1 traits:(id)arg2;
 - (id)ticketForInterleavedLocalitiesAndLandmarksSearchFragment:(id)arg1 traits:(id)arg2;
 - (id)ticketForMUIDs:(id)arg1 includeETA:(BOOL)arg2 traits:(id)arg3;
-- (id)ticketForMUIDs:(id)arg1 resultProviderID:(int)arg2 includeETA:(BOOL)arg3 traits:(id)arg4;
+- (id)ticketForMUIDs:(id)arg1 resultProviderID:(int)arg2 contentProvider:(id)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;
 - (id)ticketForMapItemToRefine:(id)arg1 traits:(id)arg2;
 - (id)ticketForMerchantCode:(id)arg1 rawMerchantCode:(id)arg2 paymentNetwork:(id)arg3 transactionDate:(id)arg4 transactionLocation:(id)arg5 traits:(id)arg6;
-- (id)ticketForOptInToProblemSubmissionID:(id)arg1 allowNotificationsAtPushToken:(id)arg2 allowContactBackAtEmailAddress:(id)arg3 traits:(id)arg4;
+- (id)ticketForOptInToProblemSubmissionID:(id)arg1 allowContactBackAtEmailAddress:(id)arg2 traits:(id)arg3;
 - (id)ticketForPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3;
-- (id)ticketForProblem:(id)arg1 placeForProblemContext:(id)arg2 placeForStartDirectionsSearchInput:(id)arg3 placeForEndDirectionsSearchInput:(id)arg4 traits:(id)arg5;
-- (id)ticketForRefinementFromCoordinate:(struct { double x1; double x2; })arg1 address:(id)arg2 placeName:(id)arg3 traits:(id)arg4;
+- (id)ticketForPlaceRefinementRequestForContentProvider:(id)arg1 coordinate:(struct { double x1; double x2; }*)arg2 addressLine:(id)arg3 placeName:(id)arg4 traits:(id)arg5;
+- (id)ticketForPlaceRefinementRequestParameters:(id)arg1 traits:(id)arg2;
+- (id)ticketForPlaceRefinementRequestWithCoordinate:(struct { double x1; double x2; }*)arg1 addressLine:(id)arg2 placeName:(id)arg3 traits:(id)arg4;
+- (id)ticketForPopularNearbyForSearchCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
+- (id)ticketForProblem:(id)arg1 placeForProblemContext:(id)arg2 placeForStartDirectionsSearchInput:(id)arg3 placeForEndDirectionsSearchInput:(id)arg4 pushToken:(id)arg5 allowContactBackAtEmailAddress:(id)arg6 traits:(id)arg7;
+- (id)ticketForProblemResubmission:(id)arg1 traits:(id)arg2;
 - (id)ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeETA:(BOOL)arg2 shiftLocationsIfNeeded:(BOOL)arg3 traits:(id)arg4;
 - (id)ticketForReverseGeocodeCoordinate:(struct { double x1; double x2; })arg1 includeEntryPoints:(BOOL)arg2 shiftLocationsIfNeeded:(BOOL)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;
+- (id)ticketForSearchCategory:(id)arg1 searchString:(id)arg2 maxResults:(unsigned int)arg3 traits:(id)arg4;
+- (id)ticketForSearchFieldPlaceholderWithTraits:(id)arg1;
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 includeETA:(BOOL)arg4 traits:(id)arg5;
 - (id)ticketForSearchQuery:(id)arg1 completionItem:(id)arg2 maxResults:(unsigned int)arg3 suppressResultsRequiringAttribution:(BOOL)arg4 includeETA:(BOOL)arg5 traits:(id)arg6;
 - (id)ticketForSectionedAutoCompleteSearchFragment:(id)arg1 traits:(id)arg2;
 - (id)ticketForSectionedInstantSearchFragment:(id)arg1 traits:(id)arg2;
 - (id)ticketForSectionedLocalitiesAndLandmarksSearchFragment:(id)arg1 traits:(id)arg2;
-- (id)ticketForURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 maxResults:(unsigned int)arg5 traits:(id)arg6;
+- (id)ticketForSpotlightCategoryListWithTraits:(id)arg1;
+- (id)ticketForTransitMUIDs:(id)arg1 includeETA:(BOOL)arg2 endDateForPlacecardSchedulesForThisBatch:(id)arg3 traits:(id)arg4;
+- (id)ticketForURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4 contentProvider:(id)arg5 maxResults:(unsigned int)arg6 traits:(id)arg7;
+- (id)ticketForVendorSpecificPlaceRefinementRequestParameters:(id)arg1 traits:(id)arg2;
+- (id)ticketforCategory:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (void)trackMapItem:(id)arg1;
 
 @end

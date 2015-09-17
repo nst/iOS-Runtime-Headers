@@ -5,6 +5,7 @@
 
 @optional
 
+- (void)beginInterruptionFromInterruptor:(NSString *)arg1;
 - (void)endInterruptionFromInterruptor:(NSString *)arg1 category:(NSString *)arg2 flags:(unsigned int)arg3;
 
 @end

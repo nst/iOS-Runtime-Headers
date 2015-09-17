@@ -4,7 +4,7 @@
 
 @interface NSBundleAccessibility : __NSBundleAccessibility_super
 
-+ (Class)safeCategoryTargetClass;
++ (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
 - (void)_loadAXBundleForBundleOffMainThread;

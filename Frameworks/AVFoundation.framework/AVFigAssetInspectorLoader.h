@@ -9,9 +9,11 @@
     NSObject<OS_dispatch_queue> *_completionHandlerQueue;
     struct OpaqueFigAsset { } *_figAsset;
     long _figAssetCreationStatus;
+    int _fragmentMinderAssociationCount;
     NSMutableArray *_loadingBatches;
     BOOL _loadingCanceled;
     struct OpaqueFigSimpleMutex { } *_loadingMutex;
+    BOOL _registeredForFigAssetNotifications;
     AVWeakReference *_weakReferenceToAsset;
 }
 
@@ -26,12 +28,15 @@
 - (void)_ensureAllDependenciesOfKeyAreLoaded:(id)arg1;
 - (struct OpaqueFigAsset { }*)_figAsset;
 - (struct OpaqueFigFormatReader { }*)_formatReader;
+- (double)_fragmentMindingInterval;
 - (void)_invokeCompletionHandlerForLoadingBatches:(id)arg1;
 - (BOOL)_isStreaming;
-- (int)_loadStatusForProperty:(id)arg1 figAsset:(struct OpaqueFigAsset { }*)arg2 returningError:(int*)arg3;
+- (int)_loadStatusForProperty:(id)arg1 figAsset:(struct OpaqueFigAsset { }*)arg2 error:(id*)arg3;
 - (id)_loadingBatches;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
 - (void)_removeFigAssetNotifications;
+- (void)_setFragmentMindingInterval:(double)arg1;
+- (void)_setIsAssociatedWithFragmentMinder:(BOOL)arg1;
 - (id)assetInspector;
 - (void)cancelLoading;
 - (void)dealloc;
@@ -43,6 +48,7 @@
 - (BOOL)hasProtectedContent;
 - (id)initWithFigAsset:(struct OpaqueFigAsset { }*)arg1 forAsset:(id)arg2;
 - (id)initWithURL:(id)arg1 figAssetCreationFlags:(unsigned long long)arg2 figAssetCreationOptions:(id)arg3 forAsset:(id)arg4;
+- (BOOL)isAssociatedWithFragmentMinder;
 - (BOOL)isCompatibleWithSavedPhotosAlbum;
 - (BOOL)isComposable;
 - (BOOL)isExportable;

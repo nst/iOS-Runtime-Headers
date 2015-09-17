@@ -25,6 +25,7 @@
 - (id)hreflang;
 - (id)media;
 - (id)rel;
+- (id)relList;
 - (id)rev;
 - (void)setCharset:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;

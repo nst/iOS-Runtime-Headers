@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSPPackageWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPExternalReferenceDelegate, TSPObjectModifyDelegate> {
+@interface TSPPackageWriteCoordinator : NSObject <TSPArchiverManagerDelegate, TSPComponentWriterDelegate, TSPDataArchiver, TSPExternalReferenceDelegate, TSPObjectModifyDelegate, TSPPersistedObjectUUIDMapDelegate> {
     TSPArchiverManager *_archiverManager;
     BOOL _captureSnapshots;
     NSObject<OS_dispatch_group> *_completionGroup;
@@ -56,6 +56,7 @@
     unsigned char _packageIdentifier;
     TSUPathSet *_packageLocatorPathSet;
     TSPPackageMetadata *_packageMetadata;
+    TSPPersistedObjectUUIDMap *_persistedUUIDMap;
     int _preferredPackageType;
     unsigned long long _readVersion;
     NSHashTable *_referencedDatas;
@@ -215,8 +216,9 @@
 - (id)objectContainerImpl;
 - (id)objectForIdentifier:(long long)arg1;
 - (id)packageMetadata;
+- (id)persistedObjectUUIDMap:(id)arg1 needsDescriptionForComponentIdentifier:(long long)arg2 objectIdentifier:(long long)arg3;
 - (id)relativeURLForExternalData;
-- (void)setArchivedObjects:(id)arg1 objectUUIDToIdentifierDictionary:(id)arg2 externalStrongReferences:(id)arg3 externalWeakReferences:(id)arg4 readVersion:(unsigned long long)arg5 writeVersion:(unsigned long long)arg6 dataReferences:(id)arg7 forComponent:(id)arg8;
+- (void)setArchivedObjects:(id)arg1 componentObjectUUIDMap:(id)arg2 externalStrongReferences:(id)arg3 externalWeakReferences:(id)arg4 readVersion:(unsigned long long)arg5 writeVersion:(unsigned long long)arg6 dataReferences:(id)arg7 forComponent:(id)arg8;
 - (BOOL)shouldArchiveComponent:(id)arg1;
 - (BOOL)shouldArchiveComponent:(id)arg1 checkForceArchive:(BOOL)arg2;
 - (BOOL)shouldEnqueueComponent:(id)arg1;
@@ -224,7 +226,7 @@
 - (void)stopCapturingSnapshots;
 - (void)updateExternalReferencesForLinkedComponent:(id)arg1;
 - (void)updateObjectContextForSuccessfulSaveWithPackageWriter:(id)arg1 packageURL:(id)arg2;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2 shouldCaptureSnapshot:(BOOL)arg3;
 - (void)writeComponent:(id)arg1 rootObjectOrNil:(id)arg2 forceArchive:(BOOL)arg3 withPackageWriter:(id)arg4;
 - (void)writeExternalReferences:(id)arg1 andUpdateLazyReferences:(id)arg2 withPackageWriter:(id)arg3 forComponent:(id)arg4 locator:(id)arg5;
 - (void)writeRemainingComponentsWithPackageWriter:(id)arg1 completionQueue:(id)arg2 completion:(id /* block */)arg3;

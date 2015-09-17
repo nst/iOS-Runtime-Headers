@@ -16,6 +16,5 @@
 - (void)setCompanyName:(id)arg1;
 - (void)setSymbol:(id)arg1;
 - (id)symbol;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

@@ -6,6 +6,7 @@
 
 @property (nonatomic, retain) MPMediaPlaylist *mixPlaylist;
 
++ (Class)playbackItemMetadataClass;
 + (BOOL)supportsStateRestoration;
 
 - (id)errorResolverForItem:(id)arg1;

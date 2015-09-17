@@ -23,14 +23,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *userStations;
 
-+ (void)_accountStoreDidChangeNotification:(id)arg1;
-+ (void)_networkReachabilityDidChangeNotification:(id)arg1;
-+ (void)_reloadRadioAvailability;
-+ (void)_storeBagDidLoadNotification:(id)arg1;
-+ (void)_updateRadioAvailabilityWithStoreBag:(id)arg1 error:(id)arg2;
-+ (void)initialize;
 + (BOOL)isOptedInToRadio;
-+ (BOOL)isRadioAvailable;
 
 - (void).cxx_destruct;
 - (void)_accountStoreDidChangeNotification:(id)arg1;

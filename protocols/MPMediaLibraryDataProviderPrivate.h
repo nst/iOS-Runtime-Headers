@@ -17,7 +17,6 @@
 - (BOOL)collectionExistsWithName:(NSString *)arg1 groupingType:(int)arg2 existentPID:(unsigned long long*)arg3;
 - (BOOL)collectionExistsWithPersistentID:(unsigned long long)arg1 groupingType:(int)arg2;
 - (BOOL)collectionExistsWithStoreID:(long long)arg1 groupingType:(int)arg2 existentPID:(unsigned long long*)arg3;
-- (BOOL)companionDeviceActiveStoreAccountIsDynamiteEligible;
 - (<MPArtworkDataSource> *)completeMyCollectionArtworkDataSource;
 - (void*)createGeniusClusterPlaylistWithSeedItemIdentifiers:(long long*)arg1 count:(unsigned int)arg2 error:(id*)arg3;
 - (NSString *)databasePath;

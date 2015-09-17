@@ -24,7 +24,6 @@
 @property (nonatomic, retain) NSNumber *schemaVersion;
 @property (nonatomic, retain) NSNumber *version;
 
-+ (id)expandHAPType:(id)arg1 baseUUIDSuffix:(id)arg2;
 + (id)getBuiltinInstance;
 + (id)getSharedInstance;
 + (BOOL)setSharedInstance:(id)arg1 version:(id)arg2 schemaVersion:(id)arg3;
@@ -33,9 +32,10 @@
 - (void).cxx_destruct;
 - (BOOL)allowAssociatedService:(id)arg1;
 - (id)btleToServiceType:(id)arg1;
-- (id)characteristicDescription:(id)arg1;
-- (id)characteristicName:(id)arg1;
-- (id)characteristicType:(id)arg1;
+- (id)characteristicTypeFromUTI:(id)arg1;
+- (id)characteristicUTIFromType:(id)arg1;
+- (id)descriptionFromCharacteristicType:(id)arg1;
+- (id)descriptionFromServiceType:(id)arg1;
 - (id)generateDictionary;
 - (id)generateHAPMetadataTuplesDictionary:(id)arg1;
 - (id)getDefaultCharacteristicMetadata:(id)arg1;
@@ -54,7 +54,6 @@
 - (BOOL)isStandardHAPService:(id)arg1;
 - (BOOL)isStandardHAPServiceName:(id)arg1;
 - (BOOL)isStandardHAPUnitName:(id)arg1;
-- (id)mandatoryCharacteristics:(id)arg1;
 - (id)parseCharacteristicServiceTuples:(id)arg1;
 - (id)parseCharacteristicValue:(id)arg1;
 - (id)parseCharacteristics:(id)arg1;
@@ -66,10 +65,8 @@
 - (BOOL)parseVersion:(id)arg1;
 - (id)parsedUUIDs;
 - (id)schemaVersion;
-- (id)serviceDescription:(id)arg1;
-- (id)serviceName:(id)arg1;
-- (id)serviceType:(id)arg1;
 - (id)serviceTypeToBTLE:(id)arg1;
+- (id)serviceUTIFromType:(id)arg1;
 - (void)setHapBaseUUIDSuffix:(id)arg1;
 - (void)setHapCharacteristics:(id)arg1;
 - (void)setHapProperties:(id)arg1;
@@ -79,6 +76,7 @@
 - (void)setParsedUUIDs:(id)arg1;
 - (void)setSchemaVersion:(id)arg1;
 - (void)setVersion:(id)arg1;
+- (id)shouldFilterServiceOfType:(id)arg1;
 - (BOOL)supportsAdditionalAuthorizationData:(id)arg1 forService:(id)arg2;
 - (BOOL)validateMandatoryCharacteristics:(id)arg1 forService:(id)arg2;
 - (id)version;

@@ -17,6 +17,7 @@
 - (BOOL)isScaled;
 - (id)maskForSliceIndex:(int)arg1;
 - (id)metrics;
+- (int)pixelFormat;
 - (id)sliceInformation;
 - (struct CGImage { }*)unslicedImage;
 

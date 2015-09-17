@@ -4,7 +4,6 @@
 
 @interface PTSGraphView : PT2DGraphView <PTSHUDControl, _UISettingsKeyPathObserver> {
     int _alignment;
-    BOOL _enabled;
     _UISettings *_settings;
     _UISettingsGroup *_settingsGroup;
     NSString *_valueKeyPath;
@@ -15,7 +14,7 @@
 @property (nonatomic) int alignment;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
 @property (nonatomic) _UISettings *settings;
 @property (nonatomic) _UISettingsGroup *settingsGroup;
@@ -30,8 +29,8 @@
 - (void).cxx_destruct;
 - (int)alignment;
 - (void)dealloc;
-- (BOOL)enabled;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isEnabled;
 - (void)setAlignment:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setSettings:(id)arg1;

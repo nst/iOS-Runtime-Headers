@@ -20,7 +20,6 @@
 - (id)inputIntensity;
 - (id)inputRadius;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputIntensity:(id)arg1;
 - (void)setInputRadius:(id)arg1;

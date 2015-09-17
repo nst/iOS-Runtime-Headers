@@ -2,76 +2,136 @@
    Image: /System/Library/PrivateFrameworks/FMF.framework/FMF
  */
 
-@interface FMFLocation : NSObject <MKAnnotation, NSCopying, NSSecureCoding> {
+@interface FMFLocation : NSObject <FMAnnotation, NSCopying, NSSecureCoding> {
     double _TTL;
+    NSString *_age;
+    struct { 
+        double latitude; 
+        double longitude; 
+    } _coordinate;
+    double _distance;
+    NSString *_distanceDescription;
+    double _distanceFromUser;
     FMFHandle *_handle;
+    double _horizontalAccuracy;
+    BOOL _isBorderEnabled;
     NSString *_label;
+    UIImage *_largeAnnotationIcon;
+    UIImage *_largeOverlayIcon;
     BOOL _locatingInProgress;
     CLLocation *_location;
     NSString *_longAddress;
     double _maxLocatingInterval;
+    FMAccuracyOverlay *_overlay;
     NSString *_shortAddressString;
+    UIImage *_smallAnnotationIcon;
+    UIImage *_smallOverlayIcon;
     NSDate *_timestamp;
+    UIColor *_tintColor;
 }
 
 @property (nonatomic) double TTL;
-@property (nonatomic, readonly) struct { double x1; double x2; } coordinate;
+@property (nonatomic, retain) NSString *age;
+@property (nonatomic) struct { double x1; double x2; } coordinate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) double distance;
+@property (nonatomic, retain) NSString *distanceDescription;
+@property (nonatomic) double distanceFromUser;
 @property (nonatomic, retain) FMFHandle *handle;
 @property (readonly) unsigned int hash;
+@property (nonatomic) double horizontalAccuracy;
+@property (nonatomic) BOOL isBorderEnabled;
 @property (nonatomic, retain) NSString *label;
+@property (nonatomic, retain) UIImage *largeAnnotationIcon;
+@property (nonatomic, retain) UIImage *largeOverlayIcon;
 @property (getter=isLocatingInProgress, nonatomic) BOOL locatingInProgress;
 @property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, copy) NSString *longAddress;
 @property (nonatomic) double maxLocatingInterval;
+@property (nonatomic, retain) FMAccuracyOverlay *overlay;
 @property (nonatomic, readonly, copy) NSString *shortAddress;
 @property (nonatomic, copy) NSString *shortAddressString;
+@property (nonatomic, retain) UIImage *smallAnnotationIcon;
+@property (nonatomic, retain) UIImage *smallOverlayIcon;
 @property (nonatomic, readonly, copy) NSString *subtitle;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSDate *timestamp;
+@property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic, readonly, copy) NSString *title;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (double)TTL;
+- (void)_updateLocation:(id)arg1;
+- (id)age;
+- (id)agingItemTimestamp;
+- (BOOL)conformsToProtocol:(id)arg1;
 - (struct { double x1; double x2; })coordinate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (double)distance;
+- (id)distanceDescription;
+- (double)distanceFromUser;
+- (int)distanceThenNameCompare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)handle;
+- (BOOL)hasKnownLocation;
 - (unsigned int)hash;
+- (double)horizontalAccuracy;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1 forHandle:(id)arg2 maxLocatingInterval:(double)arg3 TTL:(double)arg4;
 - (id)initWithLatitude:(double)arg1 longitude:(double)arg2;
+- (BOOL)isBorderEnabled;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isLocatingInProgress;
+- (BOOL)isThisDevice;
 - (BOOL)isValid;
 - (id)label;
+- (id)largeAnnotationIcon;
+- (id)largeOverlayIcon;
 - (id)location;
 - (id)locationAge;
 - (id)locationShortAddressWithAge;
 - (id)locationShortAddressWithAgeIncludeLocating;
 - (id)longAddress;
 - (double)maxLocatingInterval;
+- (id)overlay;
 - (void)resetLocateInProgress:(id)arg1;
 - (void)resetLocateInProgressTimer;
+- (void)setAge:(id)arg1;
+- (void)setCoordinate:(struct { double x1; double x2; })arg1;
+- (void)setDistance:(double)arg1;
+- (void)setDistanceDescription:(id)arg1;
+- (void)setDistanceFromUser:(double)arg1;
 - (void)setHandle:(id)arg1;
+- (void)setHorizontalAccuracy:(double)arg1;
+- (void)setIsBorderEnabled:(BOOL)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setLargeAnnotationIcon:(id)arg1;
+- (void)setLargeOverlayIcon:(id)arg1;
 - (void)setLocatingInProgress:(BOOL)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLongAddress:(id)arg1;
 - (void)setMaxLocatingInterval:(double)arg1;
+- (void)setOverlay:(id)arg1;
 - (void)setShortAddressString:(id)arg1;
+- (void)setSmallAnnotationIcon:(id)arg1;
+- (void)setSmallOverlayIcon:(id)arg1;
 - (void)setTTL:(double)arg1;
 - (void)setTimestamp:(id)arg1;
+- (void)setTintColor:(id)arg1;
 - (id)shortAddress;
 - (id)shortAddressString;
+- (id)smallAnnotationIcon;
+- (id)smallOverlayIcon;
 - (id)subtitle;
 - (id)timestamp;
+- (id)tintColor;
 - (id)title;
 - (void)updateHandle:(id)arg1;
 - (void)updateLocation:(id)arg1;
+- (void)updateLocationForCache:(id)arg1;
 
 @end

@@ -28,6 +28,7 @@
 - (void)setUserPanoAlbum:(id)arg1;
 - (void)updateLayoutMetrics;
 - (void)updatePhotoViewContent:(id)arg1 withThumbnailImage:(id)arg2;
+- (BOOL)updateSpec;
 - (id)userPanoAlbum;
 - (void)viewWillAppear:(BOOL)arg1;
 - (BOOL)wantsGlobalFooter;

@@ -10,12 +10,16 @@
 @property (nonatomic, readonly) NSString *emailAddress;
 @property (nonatomic, readonly) NSString *name;
 
++ (id)emailToNameDictionaryWithNamedEmailAddresses:(id)arg1;
++ (id)namedEmailAddressWithCSPerson:(id)arg1;
 + (id)namedEmailAddressWithFieldValue:(id)arg1;
++ (id)namedEmailAddressesWithEmailToNameDictionary:(id)arg1;
 + (id)namedEmailAddressesWithFieldValues:(id)arg1;
 + (id)serializeAll:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)asCSPerson;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)emailAddress;

@@ -14,7 +14,9 @@
 
 @optional
 
+- (NSString *)label;
 - (NSURL *)punchout_uri;
+- (void)setLabel:(NSString *)arg1;
 - (void)setPunchout_uri:(NSURL *)arg1;
 
 @end

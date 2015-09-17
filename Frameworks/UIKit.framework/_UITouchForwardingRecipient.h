@@ -14,6 +14,7 @@
 @property (nonatomic) int recordedPhase;
 @property (nonatomic) UIResponder *responder;
 
+- (void).cxx_destruct;
 - (int)autocompletedPhase;
 - (id)description;
 - (id)fromResponder;

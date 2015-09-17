@@ -10,6 +10,8 @@
         unsigned int interactionModel; 
         int horizontalSizeClass; 
         int verticalSizeClass; 
+        int userInterfaceStyle; 
+        int forceTouchCapability; 
     } _builtinTraits;
     NSDictionary *_clientDefinedTraits;
 }
@@ -18,7 +20,10 @@
 @property (nonatomic, readonly) BOOL MPU_hasCompactWidth;
 @property (nonatomic, readonly) BOOL MPU_hasRegularHeight;
 @property (nonatomic, readonly) BOOL MPU_hasRegularWidth;
+@property (nonatomic, readonly) int barMetrics;
+@property (nonatomic, readonly) int barPosition;
 @property (nonatomic, readonly) float displayScale;
+@property (nonatomic, readonly) int forceTouchCapability;
 @property (nonatomic, readonly) int horizontalSizeClass;
 @property (getter=music_isContainedWithinSplitViewDetail, nonatomic, readonly) BOOL music_containedWithinSplitViewDetail;
 @property (getter=music_isContainedWithinSplitViewPrimary, nonatomic, readonly) BOOL music_containedWithinSplitViewPrimary;
@@ -30,25 +35,32 @@
 + (id)_emptyTraitCollection;
 + (id)_traitCollectionWithValue:(id)arg1 forTraitNamed:(id)arg2;
 + (BOOL)supportsSecureCoding;
++ (id)traitCollectionWithBarMetrics:(int)arg1;
++ (id)traitCollectionWithBarPosition:(int)arg1;
 + (id)traitCollectionWithDisplayScale:(float)arg1;
++ (id)traitCollectionWithForceTouchCapability:(int)arg1;
 + (id)traitCollectionWithHorizontalSizeClass:(int)arg1;
 + (id)traitCollectionWithInteractionModel:(unsigned int)arg1;
 + (id)traitCollectionWithTouchLevel:(int)arg1;
 + (id)traitCollectionWithTraitsFromCollections:(id)arg1;
 + (id)traitCollectionWithUserInterfaceIdiom:(int)arg1;
++ (id)traitCollectionWithUserInterfaceStyle:(int)arg1;
 + (id)traitCollectionWithVerticalSizeClass:(int)arg1;
 
 - (int)_compare:(id)arg1;
-- (id)_initWithBuiltinTraitStorage:(struct { int x1; float x2; int x3; unsigned int x4; int x5; int x6; }*)arg1 clientDefinedTraits:(id)arg2;
+- (id)_initWithBuiltinTraitStorage:(struct { int x1; float x2; int x3; unsigned int x4; int x5; int x6; int x7; int x8; }*)arg1 clientDefinedTraits:(id)arg2;
 - (BOOL)_matchesIntersectionWithTraitCollection:(id)arg1;
 - (id)_namedImageDescription;
 - (id)_valueForTraitNamed:(id)arg1;
+- (int)barMetrics;
+- (int)barPosition;
 - (BOOL)containsTraitsInCollection:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (float)displayScale;
 - (void)encodeWithCoder:(id)arg1;
+- (int)forceTouchCapability;
 - (unsigned int)hash;
 - (int)horizontalSizeClass;
 - (id)init;
@@ -57,7 +69,12 @@
 - (BOOL)isEqual:(id)arg1;
 - (int)touchLevel;
 - (int)userInterfaceIdiom;
+- (int)userInterfaceStyle;
 - (int)verticalSizeClass;
+
+// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
+
+- (BOOL)mf_supportsPopoverPresentation;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
@@ -73,6 +90,11 @@
 - (BOOL)MPU_hasCompactWidth;
 - (BOOL)MPU_hasRegularHeight;
 - (BOOL)MPU_hasRegularWidth;
+
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
+- (BOOL)tsu_isCompactHeight;
+- (BOOL)tsu_isCompactWidth;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

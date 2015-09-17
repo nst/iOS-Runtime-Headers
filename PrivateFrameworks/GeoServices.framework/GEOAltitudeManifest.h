@@ -16,7 +16,9 @@
 - (void)_reloadManifest;
 - (id)availableRegions;
 - (void)commonInit;
+- (unsigned int)dataVersionForRegion:(unsigned int)arg1;
 - (void)dealloc;
+- (BOOL)hasDataVersionForRegion:(unsigned int)arg1;
 - (id)init;
 - (id)initWithoutObserver;
 - (BOOL)isValidTourId:(unsigned long long)arg1;

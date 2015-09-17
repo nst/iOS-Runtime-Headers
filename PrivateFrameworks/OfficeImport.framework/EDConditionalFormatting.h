@@ -13,6 +13,7 @@
 - (void)addRange:(id)arg1;
 - (void)addRule:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (bool)isApplyToDate;
 - (id)rangeAtIndex:(unsigned int)arg1;

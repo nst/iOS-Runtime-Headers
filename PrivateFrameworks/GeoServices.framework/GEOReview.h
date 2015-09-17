@@ -7,6 +7,7 @@
         unsigned int reviewTime : 1; 
         unsigned int score : 1; 
     } _has;
+    NSString *_languageCode;
     double _reviewTime;
     GEOUser *_reviewer;
     double _score;
@@ -14,11 +15,13 @@
     NSString *_uid;
 }
 
+@property (nonatomic, readonly) BOOL hasLanguageCode;
 @property (nonatomic) BOOL hasReviewTime;
 @property (nonatomic, readonly) BOOL hasReviewer;
 @property (nonatomic) BOOL hasScore;
 @property (nonatomic, readonly) BOOL hasSnippet;
 @property (nonatomic, readonly) BOOL hasUid;
+@property (nonatomic, retain) NSString *languageCode;
 @property (nonatomic) double reviewTime;
 @property (nonatomic, retain) GEOUser *reviewer;
 @property (nonatomic) double score;
@@ -30,14 +33,15 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasLanguageCode;
 - (BOOL)hasReviewTime;
 - (BOOL)hasReviewer;
 - (BOOL)hasScore;
 - (BOOL)hasSnippet;
 - (BOOL)hasUid;
 - (unsigned int)hash;
-- (id)initWithPlaceDataReview:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (id)languageCode;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (double)reviewTime;
@@ -45,6 +49,7 @@
 - (double)score;
 - (void)setHasReviewTime:(BOOL)arg1;
 - (void)setHasScore:(BOOL)arg1;
+- (void)setLanguageCode:(id)arg1;
 - (void)setReviewTime:(double)arg1;
 - (void)setReviewer:(id)arg1;
 - (void)setScore:(double)arg1;

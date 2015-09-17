@@ -15,7 +15,7 @@
 @property (readonly) NSString *label;
 @property (readonly) FTRegion *parentRegion;
 @property (readonly) NSString *regionID;
-@property (readonly) NSArray *subRegions;
+@property (readonly, retain) NSArray *subRegions;
 
 // Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
 

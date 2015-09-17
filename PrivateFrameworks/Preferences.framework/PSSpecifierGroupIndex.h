@@ -16,6 +16,7 @@
 + (BOOL)_wantsDebuggingCallbacks;
 + (id)groupIndexWithSpecifiers:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_appendDescriptionOfArray:(id)arg1 toString:(id)arg2 withTabLevel:(unsigned int)arg3;
 - (void)_createGroupIndex;
 - (void)_didPerformOperation:(id)arg1 forSpecifierUpdates:(id)arg2;
@@ -31,7 +32,6 @@
 - (id)_ungroupedPrefixSpecifiers;
 - (void)_willPerformOperation:(id)arg1 forSpecifierUpdates:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (BOOL)getGroup:(out unsigned int*)arg1 row:(out unsigned int*)arg2 ofSpecifier:(id)arg3;
 - (BOOL)getGroup:(out unsigned int*)arg1 row:(out unsigned int*)arg2 ofSpecifierAtIndex:(unsigned int)arg3;

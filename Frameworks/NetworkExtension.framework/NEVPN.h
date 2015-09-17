@@ -4,12 +4,14 @@
 
 @interface NEVPN : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _enabled;
+    NSArray *_exceptionApps;
     BOOL _onDemandEnabled;
     NSArray *_onDemandRules;
     NEVPNProtocol *_protocol;
 }
 
 @property (getter=isEnabled) BOOL enabled;
+@property (copy) NSArray *exceptionApps;
 @property (getter=isOnDemandEnabled) BOOL onDemandEnabled;
 @property (copy) NSArray *onDemandRules;
 @property (copy) NEVPNProtocol *protocol;
@@ -22,8 +24,9 @@
 - (id)copyProfileDictionaryWithCertificateUUID:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (id)exceptionApps;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -32,6 +35,7 @@
 - (id)onDemandRules;
 - (id)protocol;
 - (void)setEnabled:(BOOL)arg1;
+- (void)setExceptionApps:(id)arg1;
 - (void)setOnDemandEnabled:(BOOL)arg1;
 - (void)setOnDemandRules:(id)arg1;
 - (void)setProtocol:(id)arg1;

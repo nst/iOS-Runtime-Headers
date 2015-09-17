@@ -11,9 +11,11 @@
     BOOL _everHadDelegate;
     NSMutableSet *_lastIsActiveSet;
     unsigned int _listenerCaps;
+    BOOL _manuallyAckMessages;
     BOOL _pretendingToBeFull;
     NSMutableDictionary *_protobufSelectors;
     NSString *_rerouteService;
+    NSArray *_subServices;
     NSMutableDictionary *_uniqueIDToConnection;
 }
 
@@ -23,10 +25,12 @@
 @property (nonatomic, readonly, copy) NSArray *devices;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, retain) IDSAccount *iCloudAccount;
+@property (nonatomic) BOOL manuallyAckMessages;
 @property (getter=isPretendingToBeFull, nonatomic) BOOL pretendingToBeFull;
 @property (nonatomic, readonly, copy) NSString *serviceDomain;
 @property (readonly) Class superclass;
 
+- (void)OTRTestCallback:(id)arg1 time:(double)arg2 error:(id)arg3;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1 group:(id)arg2;
 - (void)_callIsActiveChanged;
@@ -47,8 +51,10 @@
 - (void)connection:(id)arg1 account:(id)arg2 sessionInviteReceived:(id)arg3 fromID:(id)arg4 transportType:(id)arg5 options:(id)arg6 context:(id)arg7 messageContext:(id)arg8;
 - (void)connection:(id)arg1 devicesChanged:(id)arg2;
 - (void)connection:(id)arg1 identifier:(id)arg2 alternateCallbackID:(id)arg3 willSendToDestinations:(id)arg4 skippedDestinations:(id)arg5 registrationPropertyToDestinations:(id)arg6;
-- (void)connection:(id)arg1 identifier:(id)arg2 didSendWithSuccess:(BOOL)arg3 error:(id)arg4;
+- (void)connection:(id)arg1 identifier:(id)arg2 didSendWithSuccess:(BOOL)arg3 error:(id)arg4 context:(id)arg5;
 - (void)connection:(id)arg1 identifier:(id)arg2 hasBeenDeliveredWithContext:(id)arg3;
+- (void)connection:(id)arg1 incomingAccessoryData:(id)arg2 fromID:(id)arg3 context:(id)arg4;
+- (void)connection:(id)arg1 incomingAccessoryReportMessage:(id)arg2 accessoryID:(id)arg3 controllerID:(id)arg4 context:(id)arg5;
 - (void)connection:(id)arg1 incomingData:(id)arg2 fromID:(id)arg3 context:(id)arg4;
 - (void)connection:(id)arg1 incomingMessage:(id)arg2 fromID:(id)arg3 context:(id)arg4;
 - (void)connection:(id)arg1 incomingProtobuf:(id)arg2 fromID:(id)arg3 context:(id)arg4;
@@ -60,12 +66,16 @@
 - (void)dealloc;
 - (id)deviceForFromID:(id)arg1;
 - (id)devices;
+- (id)devicesForBTUUID:(id)arg1;
 - (id)iCloudAccount;
 - (id)initWithService:(id)arg1 commands:(id)arg2 delegateContext:(id)arg3;
 - (id)initWithService:(id)arg1 serviceDomain:(id)arg2 delegateContext:(id)arg3;
 - (BOOL)isPretendingToBeFull;
+- (BOOL)manuallyAckMessages;
 - (SEL)protobufActionForType:(unsigned short)arg1 isResponse:(BOOL)arg2;
 - (void)removeDelegate:(id)arg1;
+- (BOOL)sendAccessoryData:(id)arg1 toAccessoryID:(id)arg2 accessToken:(id)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
+- (void)sendAckForMessageWithContext:(id)arg1;
 - (BOOL)sendData:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(int)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
 - (BOOL)sendData:(id)arg1 priority:(int)arg2 options:(id)arg3 identifier:(id*)arg4 error:(id*)arg5;
 - (BOOL)sendMessage:(id)arg1 fromAccount:(id)arg2 toDestinations:(id)arg3 priority:(int)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
@@ -73,9 +83,13 @@
 - (BOOL)sendResourceAtURL:(id)arg1 metadata:(id)arg2 fromAccount:(id)arg3 toDestinations:(id)arg4 priority:(int)arg5 options:(id)arg6 identifier:(id*)arg7 error:(id*)arg8;
 - (BOOL)sendServerMessage:(id)arg1 command:(id)arg2 fromAccount:(id)arg3;
 - (id)serviceDomain;
+- (void)setLinkPreferences:(id)arg1;
+- (void)setManuallyAckMessages:(BOOL)arg1;
 - (void)setPreferInfraWiFi:(BOOL)arg1;
 - (void)setPretendingToBeFull:(BOOL)arg1;
 - (void)setProtobufAction:(SEL)arg1 forProtobufType:(unsigned short)arg2 isResponse:(BOOL)arg3;
+- (void)startOTRTest:(int)arg1;
+- (void)updateSubServices:(id)arg1;
 - (id)uriForFromID:(id)arg1;
 
 @end

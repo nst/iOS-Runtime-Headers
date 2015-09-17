@@ -21,6 +21,7 @@
 - (id)characterProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (BOOL)hidden;
 - (id)id;
 - (id)initWithStyleSheet:(id)arg1 id:(id)arg2 type:(int)arg3;

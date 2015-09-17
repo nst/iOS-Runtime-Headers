@@ -5,6 +5,7 @@
 @interface CKBalloonTextView : UITextView <NSLayoutManagerDelegate> {
     NSAttributedString *_attributedText;
     float _capOffsetFromBoundsTop;
+    <CKBalloonTextViewInteractionDelegate> *_interactionDelegate;
     float _lastLineBaselineOffsetFromBoundsTop;
     BOOL _singleLine;
 }
@@ -14,19 +15,25 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) <CKBalloonTextViewInteractionDelegate> *interactionDelegate;
 @property (nonatomic) float lastLineBaselineOffsetFromBoundsTop;
 @property (getter=isSingleLine, nonatomic) BOOL singleLine;
 @property (readonly) Class superclass;
 
+- (void)_interactionStartedFromPreviewItemController:(id)arg1;
+- (void)_interactionStoppedFromPreviewItemController:(id)arg1;
 - (id)attributedText;
 - (float)capOffsetFromBoundsTop;
 - (void)dealloc;
+- (id)description;
 - (void)didMoveToWindow;
 - (id)initReadonlyAndUnselectableWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2;
+- (id)interactionDelegate;
 - (BOOL)isSingleLine;
 - (float)lastLineBaselineOffsetFromBoundsTop;
 - (void)setAttributedText:(id)arg1;
 - (void)setCapOffsetFromBoundsTop:(float)arg1;
+- (void)setInteractionDelegate:(id)arg1;
 - (void)setLastLineBaselineOffsetFromBoundsTop:(float)arg1;
 - (void)setSingleLine:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1 textAlignmentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 isSingleLine:(BOOL*)arg3;

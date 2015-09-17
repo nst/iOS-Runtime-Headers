@@ -15,6 +15,7 @@
 @property (getter=_mapkit_isCLLocationUnknown, nonatomic, readonly) BOOL _mapkit_CLLocationUnknown;
 @property (nonatomic, readonly, retain) NSURL *_mapkit_locationErrorSettingsURL;
 @property (readonly) int code;
+@property (getter=isComparisonError, nonatomic, readonly) BOOL comparisonError;
 @property (readonly, copy) NSString *domain;
 @property (getter=isFromRequest, nonatomic, readonly) BOOL fromRequest;
 @property (getter=hd_isFromRequest, nonatomic, readonly) BOOL hd_fromRequest;
@@ -31,7 +32,7 @@
 @property (nonatomic, readonly) unsigned short messageID;
 @property (nonatomic, readonly) NSDate *messageSent;
 @property (nonatomic, readonly) NSDictionary *persistentUserInfo;
-@property (readonly, retain) id recoveryAttempter;
+@property (readonly) id recoveryAttempter;
 @property (readonly, copy) NSDictionary *userInfo;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
@@ -42,7 +43,9 @@
 + (id)_web_errorWithDomain:(id)arg1 code:(int)arg2 URL:(id)arg3;
 + (id)_web_errorWithDomain:(id)arg1 code:(int)arg2 failingURL:(id)arg3;
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 userInfo:(id)arg3;
++ (void)setUserInfoValueProviderForDomain:(id)arg1 provider:(id /* block */)arg2;
 + (BOOL)supportsSecureCoding;
++ (id /* block */)userInfoValueProviderForDomain:(id)arg1;
 
 - (unsigned long)_cfTypeID;
 - (id)_cocoaErrorString:(id)arg1;
@@ -57,15 +60,16 @@
 - (id)_web_initWithDomain:(id)arg1 code:(int)arg2 failingURL:(id)arg3;
 - (id)_web_initWithDomain_nowarn:(id)arg1 code:(int)arg2 URL:(id)arg3;
 - (id)_web_localizedDescription;
+- (id)brc_description;
 - (int)code;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
-- (id)description;
 - (id)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (void)finalize;
 - (unsigned int)hash;
 - (id)helpAnchor;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDomain:(id)arg1 code:(int)arg2 userInfo:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
@@ -79,6 +83,7 @@
 
 // Image: /System/Library/Frameworks/Accounts.framework/Accounts
 
+- (id)_sanitizeObject:(id)arg1;
 - (id)ac_secureCodingError;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
@@ -88,11 +93,20 @@
 
 - (id)CKClientSuitableError;
 - (BOOL)CKIsNotFoundError;
+- (BOOL)isComparisonError;
 - (BOOL)isPOSIXErrorCode:(int)arg1;
 
 // Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
 
 + (id)errorWithBTResult:(id)arg1;
+
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
+
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
+// Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
+
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
 
 // Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
@@ -119,6 +133,14 @@
 - (void)hk_logWithDatabaseAccessibilityAtLogLevel:(int)arg1 format:(id)arg2;
 - (void)hk_logWithoutDatabaseAccessibiityErrors:(id)arg1;
 
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (id)hmErrorWithCode:(int)arg1;
++ (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
++ (id)hmErrorWithCode:(int)arg1 userInfo:(id)arg2;
+
+- (id)shortDescription;
+
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (int)_mapkit_directionsErrorCode;
@@ -134,7 +156,14 @@
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
++ (id)_ph_genericErrorWithUnderlyingError:(id)arg1 localizedDescription:(id)arg2;
 + (id)ph_errorWithDomain:(id)arg1 code:(int)arg2 userInfo:(id)arg3;
++ (id)ph_genericErrorWithLocalizedDescription:(id)arg1;
++ (id)ph_genericErrorWithUnderlyingError:(id)arg1 localizedDescription:(id)arg2;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (id)failingURL;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
@@ -151,6 +180,16 @@
 - (id)encodeableError;
 - (id)encodeableError;
 - (id)encodeableError;
+
+// Image: /System/Library/Frameworks/WatchConnectivity.framework/WatchConnectivity
+
++ (id)userInfoDictionaryWithErrorStringsForErrorCode:(int)arg1;
++ (id)wcErrorFromInternalError:(id)arg1;
++ (id)wcErrorWithCode:(int)arg1;
++ (id)wcErrorWithCode:(int)arg1 underlyingError:(id)arg2;
++ (id)wcErrorWithCode:(int)arg1 underlyingWCErrorWithCode:(int)arg2;
++ (id)wcErrorWithCode:(int)arg1 userInfo:(id)arg2;
++ (id)wcInternalErrorWithCode:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation
 
@@ -169,6 +208,11 @@
 
 - (id)userReadableError;
 
+// Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
+
++ (id)ak_errorWithCode:(int)arg1;
++ (id)ak_wrappedAnisetteError:(long)arg1;
+
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
 + (id)bs_timeoutError;
@@ -183,6 +227,8 @@
 + (id)brc_errorContainerNotFound:(id)arg1;
 + (id)brc_errorDaemonShouldBeLoggedOut;
 + (id)brc_errorDocumentAtURL:(id)arg1 isNotExternalToContainer:(id)arg2;
++ (id)brc_errorDocumentIsNoLongerSharedAtURL:(id)arg1;
++ (id)brc_errorDocumentIsNotShared;
 + (id)brc_errorDocumentIsNotSharedAtURL:(id)arg1;
 + (id)brc_errorDocumentWithFilename:(id)arg1 size:(long long)arg2 isTooLargeToUpload:(long long)arg3;
 + (id)brc_errorInvalidParameter:(id)arg1 value:(id)arg2;
@@ -191,6 +237,7 @@
 + (id)brc_errorNoContainerForBundle:(id)arg1;
 + (id)brc_errorNoDocumentAtURL:(id)arg1 underlyingPOSIXError:(int)arg2;
 + (id)brc_errorNotInCloud:(id)arg1;
++ (id)brc_errorOperationCancelled;
 + (id)brc_errorPathOutsideAnyCloudDocsContainerAtURL:(id)arg1;
 + (id)brc_errorPermissionErrorAtURL:(id)arg1;
 + (id)errorFromErrno;
@@ -205,44 +252,30 @@
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
 + (id)brc_daemonAccessDisabledError;
-+ (id)errorForDB:(struct sqlite3 { }*)arg1;
-+ (id)errorForDB:(struct sqlite3 { }*)arg1 SQL:(id)arg2;
-+ (id)errorForDB:(struct sqlite3 { }*)arg1 stmt:(struct sqlite3_stmt { }*)arg2;
-+ (id)errorWithSqliteCode:(int)arg1 andMessage:(id)arg2;
++ (void)load;
 
-- (BOOL)br_checkErrorsFromCloudKit:(id /* block */)arg1;
 - (id)br_cloudKitErrorForIdentifier:(id)arg1;
-- (id)br_cloudKitErrorForRecordID:(id)arg1;
-- (id)br_cloudKitErrorForSubscriptionID:(id)arg1;
-- (unsigned int)br_containerResetErrorForSharedZone:(BOOL)arg1 resetReason:(const char **)arg2;
-- (BOOL)br_isBlacklistError;
-- (BOOL)br_isCloudKitCancellationError;
-- (BOOL)br_isCloudKitErrorCode:(int)arg1;
-- (BOOL)br_isCloudKitErrorRequiringAssetRescan;
-- (BOOL)br_isCloudKitErrorRequiringAssetReupload;
-- (BOOL)br_isCloudKitErrorRequiringSyncDownFirst;
-- (BOOL)br_isCloudKitInternalErrorCode:(int)arg1;
-- (BOOL)br_isCloudKitOutOfQuota;
-- (BOOL)br_isCloudKitUnknownItemError;
-- (BOOL)br_isResetError;
-- (BOOL)br_isRetriable;
 - (double)br_suggestedRetryTimeInterval;
-- (id)br_wrappedError;
+- (BOOL)brc_checkErrorsFromCloudKit:(id /* block */)arg1;
+- (id)brc_cloudKitErrorForRecordID:(id)arg1;
+- (id)brc_cloudKitErrorForSubscriptionID:(id)arg1;
+- (unsigned int)brc_containerResetErrorForSharedZone:(BOOL)arg1 resetReason:(const char **)arg2;
+- (BOOL)brc_isBlacklistError;
+- (BOOL)brc_isCloudKitCancellationError;
+- (BOOL)brc_isCloudKitErrorCode:(int)arg1;
+- (BOOL)brc_isCloudKitErrorRequiringAssetRescan;
+- (BOOL)brc_isCloudKitErrorRequiringAssetReupload;
+- (BOOL)brc_isCloudKitErrorRequiringSkipThrottling;
+- (BOOL)brc_isCloudKitErrorRequiringSyncDownFirst;
+- (BOOL)brc_isCloudKitInternalErrorCode:(int)arg1;
+- (BOOL)brc_isCloudKitOutOfQuota;
+- (BOOL)brc_isCloudKitUnknownItemError;
+- (BOOL)brc_isOutOfSpaceError;
+- (BOOL)brc_isResetError;
+- (BOOL)brc_isRetriable;
 - (int)brc_syncOperationErrorKind;
-- (int)extendedSqliteCode;
-- (BOOL)isSqliteErrorCode:(int)arg1;
-- (id)sqliteStatement;
-
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-+ (id)errorForDB:(struct sqlite3 { }*)arg1;
-+ (id)errorForDB:(struct sqlite3 { }*)arg1 SQL:(id)arg2;
-+ (id)errorForDB:(struct sqlite3 { }*)arg1 stmt:(struct sqlite3_stmt { }*)arg2;
-+ (id)errorWithSqliteCode:(int)arg1 andMessage:(id)arg2;
-
-- (int)extendedSqliteCode;
-- (BOOL)isSqliteErrorCode:(int)arg1;
-- (id)sqliteStatement;
+- (id)brc_wrappedError;
+- (id)description;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -265,6 +298,18 @@
 - (unsigned short)messageID;
 - (id)messageSent;
 - (id)persistentUserInfo;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
+
+- (BOOL)shouldDisplayToUser;
+
+// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
+
++ (id)hmErrorWithCode:(int)arg1;
++ (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
++ (id)hmErrorWithCode:(int)arg1 userInfo:(id)arg2;
+
+- (id)shortDescription;
 
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
@@ -340,11 +385,21 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 - (BOOL)hd_isFromRequest;
+- (BOOL)hd_isResponseTimeout;
 - (unsigned short)hd_messageID;
 - (id)hd_messageIDSIdentifier;
 - (id)hd_messageSent;
 - (id)hd_persistentMessage;
 - (id)hd_persistentUserInfo;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
++ (id)hmErrorWithCode:(int)arg1;
++ (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
++ (id)hmErrorWithCode:(int)arg1 userInfo:(id)arg2;
+
+- (id)conciseCKError;
+- (id)hmErrorFromCKError;
 
 // Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
 
@@ -356,14 +411,9 @@
 
 + (id)genericErrorWithFile:(const char *)arg1 function:(const char *)arg2 lineNumber:(int)arg3;
 
-// Image: /System/Library/PrivateFrameworks/LatteRTC.framework/LatteRTC
-
-+ (id)AVConferenceServiceError:(int)arg1 detailCode:(int)arg2 description:(id)arg3;
-+ (id)AVConferenceServiceError:(int)arg1 detailedCode:(int)arg2 filePath:(id)arg3 description:(id)arg4 reason:(id)arg5;
-+ (id)AVConferenceServiceError:(int)arg1 detailedCode:(int)arg2 returnCode:(int)arg3 filePath:(id)arg4 description:(id)arg5 reason:(id)arg6;
-
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
++ (id)mf_cancelledError;
 + (id)mf_timeoutError;
 
 - (BOOL)mf_isCancelledError;
@@ -392,6 +442,7 @@
 - (id)mf_moreInfo;
 - (id)mf_shortDescription;
 - (BOOL)mf_shouldBeReportedToUser;
+- (BOOL)mf_shouldFailDownload;
 
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
@@ -400,19 +451,41 @@
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)errorWithDomain:(id)arg1 code:(int)arg2 alertTitle:(id)arg3 alertMessage:(id)arg4;
-+ (id)errorWithDomain:(id)arg1 code:(int)arg2 alertTitle:(id)arg3 alertMessage:(id)arg4 userInfo:(id)arg5;
-+ (id)errorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 recoverySuggestion:(id)arg4;
-+ (id)tsuErrorWithCode:(int)arg1;
++ (id)tsu_errorWithCode:(int)arg1 userInfo:(id)arg2;
++ (id)tsu_errorWithDomain:(id)arg1 code:(int)arg2 alertTitle:(id)arg3 alertMessage:(id)arg4;
++ (id)tsu_errorWithDomain:(id)arg1 code:(int)arg2 alertTitle:(id)arg3 alertMessage:(id)arg4 userInfo:(id)arg5;
++ (id)tsu_errorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 recoverySuggestion:(id)arg4;
++ (id)tsu_errorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3 underlyingError:(id)arg4;
 
-- (BOOL)isCancelError;
-- (BOOL)isOutOfSpaceError;
-- (id)localizedAlertMessage;
-- (id)localizedAlertTitle;
+- (BOOL)tsu_isCancelError;
+- (BOOL)tsu_isOutOfSpaceError;
+- (id)tsu_localizedAlertMessage;
+- (id)tsu_localizedAlertTitle;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
+- (void)_safari_enumerateCloudKitErrorsWithBlock:(id /* block */)arg1;
+- (BOOL)safari_errorOrAnyPartialErrorHasCloudKitErrorCode:(int)arg1;
+- (BOOL)safari_errorOrAnyPartialErrorHasCloudKitInternalErrorCode:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
+
+- (BOOL)pc_isDCErrorWithCode:(int)arg1;
+- (BOOL)pc_isNSCocoaErrorWithCode:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
+
++ (id)st_startWorkoutErrorWithCode:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
 - (BOOL)isSiriUISnippetPluginError;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
++ (id)errorWithDescription:(id)arg1;
++ (id)errorWithDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;
++ (id)errorWithDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3 userInfo:(id)arg4;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
@@ -460,9 +533,9 @@
 
 + (id)_webUI_WebUIErrorWithCode:(unsigned int)arg1 URL:(id)arg2;
 
-- (void)_safari_enumerateCloudKitErrorsWithBlock:(id /* block */)arg1;
-- (BOOL)safari_errorOrAnyPartialErrorHasCloudKitErrorCode:(int)arg1;
-- (BOOL)safari_errorOrAnyPartialErrorHasCloudKitInternalErrorCode:(int)arg1;
+// Image: /System/Library/PrivateFrameworks/WelcomeKitCore.framework/WelcomeKitCore
+
+- (BOOL)wk_representsTransientConnectivityIssueForAttempt:(unsigned int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 
@@ -495,5 +568,16 @@
 - (BOOL)tsu_isOutOfSpaceError;
 - (id)tsu_localizedAlertMessage;
 - (id)tsu_localizedAlertTitle;
+
+// Image: /usr/lib/libprequelite.dylib
+
++ (id)errorForDB:(struct sqlite3 { }*)arg1;
++ (id)errorForDB:(struct sqlite3 { }*)arg1 SQL:(id)arg2;
++ (id)errorForDB:(struct sqlite3 { }*)arg1 stmt:(struct sqlite3_stmt { }*)arg2;
++ (id)errorWithSqliteCode:(int)arg1 andMessage:(id)arg2;
+
+- (int)extendedSqliteCode;
+- (BOOL)isSqliteErrorCode:(int)arg1;
+- (id)sqliteStatement;
 
 @end

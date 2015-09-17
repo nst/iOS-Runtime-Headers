@@ -4,9 +4,7 @@
 
 @interface PHQuery : NSObject <NSCopying, NSPredicateVisitor> {
     BOOL __includesCameraRoll;
-    BOOL __includesCloudSharedAssets;
     BOOL __includesTrashedObjects;
-    BOOL __includesiTunesSyncAssets;
     NSPredicate *_basePredicate;
     NSPredicate *_cachedFetchOptionsPredicate;
     int _collectionFetchType;
@@ -34,9 +32,7 @@
 }
 
 @property (setter=_setIncludesCameraRoll:, nonatomic) BOOL _includesCameraRoll;
-@property (setter=_setIncludesCloudSharedAssets:, nonatomic) BOOL _includesCloudSharedAssets;
 @property (setter=_setIncludesTrashedObjects:, nonatomic) BOOL _includesTrashedObjects;
-@property (setter=_setIncludesiTunesSyncAssets:, nonatomic) BOOL _includesiTunesSyncAssets;
 @property (readonly) NSPredicate *basePredicate;
 @property (readonly) id combinedQueryGroupKey;
 @property (readonly) NSString *combinedQueryKeyPath;
@@ -97,17 +93,15 @@
 - (id)_createFetchRequestIncludingBasePredicate:(BOOL)arg1;
 - (id)_effectiveSortDescriptors;
 - (BOOL)_includesCameraRoll;
-- (BOOL)_includesCloudSharedAssets;
 - (BOOL)_includesTrashedObjects;
-- (BOOL)_includesiTunesSyncAssets;
+- (BOOL)_isAlbumContentSort;
+- (BOOL)_isAlbumContentTitleSort;
 - (void)_prepareCombinedQueryKeys;
 - (void)_prepareContainerInfo;
 - (void)_prepareFilteringAttributes;
 - (void)_setContainerCollection:(id)arg1;
 - (void)_setIncludesCameraRoll:(BOOL)arg1;
-- (void)_setIncludesCloudSharedAssets:(BOOL)arg1;
 - (void)_setIncludesTrashedObjects:(BOOL)arg1;
-- (void)_setIncludesiTunesSyncAssets:(BOOL)arg1;
 - (id)basePredicate;
 - (int)collectionFetchType;
 - (id)combinedQueryGroupKey;

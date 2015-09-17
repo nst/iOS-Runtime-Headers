@@ -106,6 +106,7 @@
 
 + (id)timeStringForSeconds:(int)arg1 forceFullWidthComponents:(BOOL)arg2 isElapsed:(BOOL)arg3;
 
+- (void).cxx_destruct;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_animateAfterEdit:(BOOL)arg1;
 - (void)_beginTrackPressWithTouch:(id)arg1 touchesBegan:(BOOL)arg2;

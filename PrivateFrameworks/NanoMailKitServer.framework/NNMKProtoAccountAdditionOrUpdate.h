@@ -5,6 +5,7 @@
 @interface NNMKProtoAccountAdditionOrUpdate : PBCodable <NSCopying> {
     NSString *_accountId;
     NSString *_displayName;
+    NSMutableArray *_emails;
     struct { 
         unsigned int shouldArchive : 1; 
     } _has;
@@ -13,6 +14,7 @@
 
 @property (nonatomic, retain) NSString *accountId;
 @property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSMutableArray *emails;
 @property (nonatomic, readonly) BOOL hasAccountId;
 @property (nonatomic, readonly) BOOL hasDisplayName;
 @property (nonatomic) BOOL hasShouldArchive;
@@ -20,11 +22,16 @@
 
 - (void).cxx_destruct;
 - (id)accountId;
+- (void)addEmail:(id)arg1;
+- (void)clearEmails;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)displayName;
+- (id)emailAtIndex:(unsigned int)arg1;
+- (id)emails;
+- (unsigned int)emailsCount;
 - (BOOL)hasAccountId;
 - (BOOL)hasDisplayName;
 - (BOOL)hasShouldArchive;
@@ -34,6 +41,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setAccountId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setEmails:(id)arg1;
 - (void)setHasShouldArchive:(BOOL)arg1;
 - (void)setShouldArchive:(BOOL)arg1;
 - (BOOL)shouldArchive;

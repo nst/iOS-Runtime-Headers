@@ -15,7 +15,7 @@
 + (id)ruleForEmail:(id)arg1;
 + (id)ruleForPhoneNumber:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)email;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initForEmail:(id)arg1;

@@ -67,6 +67,7 @@
 @property (nonatomic) BOOL serializeProtectionData;
 @property (nonatomic, retain) CKShareID *shareID;
 @property (nonatomic, retain) NSString *shareProtectionEtag;
+@property (nonatomic, readonly) unsigned int size;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL trackChanges;
 @property (nonatomic, retain) NSDictionary *values;
@@ -84,6 +85,8 @@
 - (id)_allStrings;
 - (BOOL)_checkProperties:(BOOL)arg1 withValueCheckBlock:(id /* block */)arg2;
 - (id)_initSkippingValidationWithRecordType:(id)arg1 recordID:(id)arg2;
+- (unsigned int)_sizeOfRecordID:(id)arg1;
+- (unsigned int)_sizeOfRecordValue:(id)arg1 forKey:(id)arg2;
 - (void)_validateRecordKey:(id)arg1;
 - (void)_validateRecordName:(id)arg1;
 - (void)_validateRecordValue:(id)arg1;
@@ -165,6 +168,7 @@
 - (void)setZoneProtectionEtag:(id)arg1;
 - (id)shareID;
 - (id)shareProtectionEtag;
+- (unsigned int)size;
 - (BOOL)trackChanges;
 - (id)valueForKey:(id)arg1;
 - (id)values;
@@ -175,6 +179,7 @@
 
 + (id)brc_containerMetadataRecordWithContainer:(id)arg1;
 + (id)brc_containerMetadataZoneID;
++ (id)brc_fakeRecordWithErrorMarkerFor20716676;
 + (id)desiredKeysWithMask:(unsigned short)arg1;
 + (id)documentContentsRecordForItemID:(id)arg1 zoneID:(id)arg2;
 + (id)rootDirectoryRecordForZoneID:(id)arg1;
@@ -185,6 +190,7 @@
 - (id)brc_containerMetadataIconPaths;
 - (id)brc_containerMetadataPropertiesData;
 - (BOOL)brc_isInterestingRecordForSyncDown;
+- (BOOL)brc_isfakeRecordWithErrorMarkerFor20716676;
 - (id)brc_oplockMergeEtag;
 - (id)brc_updateDroppedReason;
 - (BOOL)deserializeAliasInfo:(id*)arg1 error:(id*)arg2;
@@ -198,7 +204,7 @@
 - (void)serializeVersion:(id)arg1 diffs:(unsigned long long)arg2 deadInServerTruth:(BOOL)arg3;
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 - (id)safari_arrayForKey:(id)arg1;
 - (BOOL)safari_boolForKey:(id)arg1;

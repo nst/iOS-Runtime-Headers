@@ -11,5 +11,6 @@
 - (struct OpaqueFormAutoFillFrame { }*)frameRef;
 - (struct OpaqueJSContext { }*)jsContextForMetadataControllerScriptWorld;
 - (struct OpaqueJSValue { }*)jsWrapperInMetadataControllerScriptWorldForNode:(id <WBSFormAutoFillNode>)arg1;
+- (<WBSFormAutoFillFrame> *)pageMainFrame;
 
 @end

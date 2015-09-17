@@ -12,6 +12,7 @@
 
 + (id)sharedWebFilterSettings;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)init;
 - (BOOL)isWebFilterEnabled;

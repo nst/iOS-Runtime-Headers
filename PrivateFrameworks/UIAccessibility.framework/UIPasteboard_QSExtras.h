@@ -10,7 +10,7 @@
 + (id)generalPasteboard;
 + (id)pasteboardWithName:(id)arg1 create:(BOOL)arg2;
 + (id)pasteboardWithUniqueName;
-+ (Class)safeCategoryTargetClass;
++ (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
 - (id)URL;

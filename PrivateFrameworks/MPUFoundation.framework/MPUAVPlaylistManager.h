@@ -96,6 +96,7 @@
 - (void)queueCoordinator:(id)arg1 failedToLoadItem:(id)arg2;
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithPreferredStartIndex:(unsigned int)arg2 error:(id)arg3;
+- (void)queueFeeder:(id)arg1 didChangeContentsWithReplacementPlaybackContext:(id)arg2;
 - (void)removeItemAtPlaybackIndex:(int)arg1;
 - (int)repeatStartIndex;
 - (void)setCurrentIndex:(int)arg1 selectionDirection:(int)arg2;

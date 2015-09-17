@@ -30,8 +30,8 @@
 - (void)_populateCSSymbolOwnerCacheWithLivingProcesses;
 - (void)_populateSharedCacheMappingsDictionaryWithSharedCachesInLivingProcesses;
 - (id)_sharedCacheMappingsForSharedCacheUUID:(id)arg1;
-- (id)_symbolHandleForAddress:(unsigned long long)arg1 inImageUUID:(id)arg2 andImageMappingSlide:(unsigned long long)arg3 andPidHint:(int)arg4;
 - (id)_symbolHandleForAddress:(unsigned long long)arg1 withImageUUIDMappings:(id)arg2 andImageMappingSlide:(unsigned long long)arg3 andPidHint:(int)arg4;
+- (id)_symbolHandleForOffsetInBinary:(unsigned long long)arg1 inImageUUID:(id)arg2 andImageMappingSlide:(unsigned long long)arg3 andPidHint:(int)arg4;
 - (id)_symbolHandleForOffsetIntoSymbolOwner:(unsigned long long)arg1 withSymbolOwner:(id)arg2 andSymbolOwnerBaseAddress:(unsigned long long)arg3 andPidHint:(int)arg4;
 - (BOOL)addSelfToBufferAtPosition:(void*)arg1 withCompletedSerializationDictionary:(id)arg2;
 - (void)addSelfToSerializationDictionary:(id)arg1;
@@ -54,6 +54,7 @@
 - (id)symbolHandleForAddress:(unsigned long long)arg1 inSampleTask:(id)arg2 isLiving:(BOOL)arg3;
 - (id)symbolHandleForAddress:(unsigned long long)arg1 withSymbolicator:(struct _CSTypeRef { unsigned int x1; unsigned int x2; })arg2;
 - (id)symbolHandleForOffset:(unsigned long long)arg1 inBinaryWithUUID:(id)arg2 inLivingPid:(int)arg3;
+- (id)symbolHandleForOffset:(unsigned long long)arg1 inBinaryWithUUID:(id)arg2 inSampleTask:(id)arg3 isLiving:(BOOL)arg4;
 - (id)symbolHandleForOffset:(unsigned long long)arg1 inBinaryWithUUID:(id)arg2 withBinaryOffsetInTask:(unsigned long long)arg3 inLivingPid:(int)arg4;
 
 @end

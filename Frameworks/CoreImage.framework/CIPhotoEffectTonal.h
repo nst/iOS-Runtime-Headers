@@ -4,8 +4,7 @@
 
 @interface CIPhotoEffectTonal : CIPhotoEffect
 
-+ (id)customAttributes;
-
-- (void)setDefaults;
+- (int)_defaultVersion;
+- (int)_maxVersion;
 
 @end

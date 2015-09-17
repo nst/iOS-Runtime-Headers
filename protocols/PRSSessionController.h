@@ -18,6 +18,7 @@
 - (NSArray *)excludedDomainIdentifiers;
 - (NSString *)parsecBaseURL;
 - (void)sessionReceivedBagWithEnabledDomains:(NSArray *)arg1;
+- (void)setCepServerValues:(NSDictionary *)arg1;
 - (void)setUserId:(NSString *)arg1;
 - (BOOL)useGUID;
 - (NSString *)userId;

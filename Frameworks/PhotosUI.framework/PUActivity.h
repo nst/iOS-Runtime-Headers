@@ -19,5 +19,7 @@
 - (id)pu_activityImageNamed:(id)arg1;
 - (id)pu_activitySettingsImageNamed:(id)arg1;
 - (void)setItemSourceController:(id)arg1;
+- (void)tearDownForCompletion;
+- (void)updateActivityViewControllerVisibileShareActions;
 
 @end

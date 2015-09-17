@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualCustomJSAlertAction : UIAlertAction
+@interface MusicContextualCustomJSAlertAction : MusicContextualAlertAction
 
 + (id)actionsForTitles:(id)arg1 entityValueContext:(id)arg2 extraInfo:(id)arg3 alertController:(id)arg4;
 + (id)contextualCustomJSActionWithTitle:(id)arg1 entityValueProvider:(id)arg2 extraInfo:(id)arg3 alertController:(id)arg4;

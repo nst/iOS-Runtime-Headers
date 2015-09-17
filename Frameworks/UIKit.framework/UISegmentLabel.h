@@ -8,8 +8,10 @@
 
 @property (nonatomic) UILabel *associatedLabel;
 
+- (void).cxx_destruct;
 - (id)_associatedScalingLabel;
 - (id)_disabledFontColor;
+- (id)_parentSegment;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)associatedLabel;
 - (id)init;

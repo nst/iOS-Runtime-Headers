@@ -11,6 +11,7 @@
 
 - (unsigned int)addObject:(id)arg1;
 - (void)coalesce;
+- (void)coalesceProgressiveCellReferencesCollection;
 - (bool)coalesceReferenceAtIndex1:(unsigned int)arg1 index2:(unsigned int)arg2;
 - (unsigned int)countOfCellsBeingReferenced;
 - (id)init;

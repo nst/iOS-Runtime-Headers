@@ -11,6 +11,7 @@
         float right; 
     } _cachedEdgeInsetsForEffects;
     BOOL _edgeInsetsForEffectsAreValid;
+    UITraitCollection *_lastResolvedTraitCollection;
     id _storage;
     BOOL _templateSettingsAreInvalid;
 }
@@ -35,8 +36,10 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
+- (void).cxx_destruct;
 - (id)_activeImage;
 - (id)_adaptiveImageForImage:(id)arg1 assignedImage:(id)arg2 currentImage:(id)arg3 hasAdapted:(BOOL*)arg4;
+- (void)_ancestorWillUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)_animatesContents;
 - (void)_applySettingsForLegibilityStyle:(int)arg1;
 - (id)_cachedPretiledImageForImage:(id)arg1;
@@ -44,11 +47,13 @@
 - (id)_checkHighlightedImageForAdaptation:(id)arg1 hadAdapted:(BOOL*)arg2;
 - (id)_checkImageForAdaptation:(id)arg1 hasAdapted:(BOOL*)arg2;
 - (void)_clearPretiledImageCacheForImage:(id)arg1;
+- (void)_configureForLayeredImage:(id)arg1;
 - (id)_currentHighlightedImage;
 - (id)_currentImage;
 - (id)_decompressingImageForType:(unsigned int)arg1;
 - (int)_defaultRenderingMode;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (BOOL)_displayImageAsLayered:(id)arg1;
 - (void)_drawImageEffectsForImage:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForEffects;
 - (BOOL)_edgeInsetsForEffectsAreValid;
@@ -72,6 +77,7 @@
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (BOOL)_shouldDrawImage:(id)arg1;
 - (BOOL)_shouldTreatImageAsTemplate:(id)arg1;
+- (void)_teardownLayeredImage;
 - (unsigned int)_templateImageRenderingEffects;
 - (BOOL)_templateSettingsAreInvalid;
 - (void)_templateSettingsDidChange;
@@ -117,6 +123,7 @@
 - (void)setHighlightedAnimationImages:(id)arg1;
 - (void)setHighlightedImage:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (void)setTranslatesAutoresizingMaskIntoConstraints:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAnimating;

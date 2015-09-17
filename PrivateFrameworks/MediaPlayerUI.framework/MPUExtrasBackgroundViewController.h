@@ -19,6 +19,7 @@
 
 - (void).cxx_destruct;
 - (void)_didReceiveImage:(id)arg1;
+- (void)_initVignette;
 - (void)_invalidateTimer;
 - (void)_scheduleTimerIfNeeded;
 - (void)_updateConstraintsForImageSize:(struct CGSize { float x1; float x2; })arg1 position:(unsigned int)arg2;

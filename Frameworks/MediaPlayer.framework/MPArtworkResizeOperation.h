@@ -28,6 +28,7 @@
 - (id)destinationURL;
 - (id)error;
 - (id)image;
+- (id)init;
 - (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 destinationURL:(id)arg3;
 - (id)initWithImage:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2 useExactFittingSizeAsDestinationSize:(BOOL)arg3 destinationURL:(id)arg4;

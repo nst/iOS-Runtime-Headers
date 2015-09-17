@@ -4,11 +4,11 @@
 
 @interface FBUIApplicationService : NSObject {
     <FBUIApplicationServiceDelegate> *_delegate;
-    NSObject<OS_dispatch_queue> *_queue;
+    FBSSerialQueue *_queue;
 }
 
 @property (nonatomic) <FBUIApplicationServiceDelegate> *delegate;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly, retain) FBSSerialQueue *queue;
 
 + (id)sharedInstance;
 
@@ -18,9 +18,11 @@
 - (void)handleApplication:(id)arg1 setBadgeValue:(id)arg2;
 - (void)handleApplicationProcess:(id)arg1 requestBrightness:(float)arg2 completion:(id /* block */)arg3;
 - (BOOL)handleApplicationProcess:(id)arg1 setNextWakeInterval:(double)arg2;
+- (void)handleDeleteAllSnapshotsForApplication:(id)arg1;
+- (void)handleGetActiveInterfaceOrientationWithCompletion:(id /* block */)arg1;
+- (void)handleSuspendApplicationProcess:(id)arg1;
 - (id)initWithQueue:(id)arg1;
 - (id)queue;
 - (void)setDelegate:(id)arg1;
-- (void)setQueue:(id)arg1;
 
 @end

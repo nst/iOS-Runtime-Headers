@@ -6,16 +6,19 @@
     BOOL _indexed;
     NSString *_name;
     BOOL _stored;
+    BOOL _tracked;
 }
 
 @property (nonatomic, readonly) BOOL indexed;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) BOOL stored;
+@property (nonatomic, readonly) BOOL tracked;
 
 + (id)allDay;
 + (id)contactDetail:(id)arg1;
 + (id)containsEntityExtraction:(long long)arg1;
 + (id)defaultDuration;
++ (id)eventHash:(id)arg1;
 + (id)extraKey:(id)arg1;
 + (id)extractedBus;
 + (id)extractedCarRental;
@@ -37,12 +40,18 @@
 + (id)identity:(id)arg1;
 + (id)inhuman;
 + (void)initialize;
-+ (id)messageWithMessageIdHash:(long long)arg1 fromSource:(id)arg2;
++ (id)isPartiallyDownloaded;
++ (id)mailingListId:(id)arg1;
++ (id)messageWithEmailKey:(id)arg1;
++ (id)messageWithMailMessageKey:(id)arg1;
++ (id)messageWithMessageId:(id)arg1 fromSource:(id)arg2;
++ (id)naturalLanguageEvent;
 + (id)remember:(id)arg1;
-+ (void)rememberPrefix:(id)arg1 stored:(BOOL)arg2 indexed:(BOOL)arg3;
++ (void)rememberPrefix:(id)arg1 stored:(BOOL)arg2 indexed:(BOOL)arg3 tracked:(BOOL)arg4;
 + (id)resolveName:(id)arg1;
 + (id)tagForPrefix:(id)arg1 value:(id)arg2;
 + (id)testTag:(int)arg1;
++ (void)tombstonePrefix:(id)arg1;
 + (id)url:(id)arg1;
 
 - (void).cxx_destruct;
@@ -50,15 +59,19 @@
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)indexed;
-- (id)initWithName:(id)arg1 stored:(BOOL)arg2 indexed:(BOOL)arg3;
+- (id)initWithName:(id)arg1 stored:(BOOL)arg2 indexed:(BOOL)arg3 tracked:(BOOL)arg4;
 - (BOOL)isContactDetail;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEntityTag:(id)arg1;
+- (BOOL)isEventHash;
 - (BOOL)isExtraKey;
+- (BOOL)isExtractedEventCategory;
+- (BOOL)isMailingListId;
 - (BOOL)isTemplateShortName;
 - (BOOL)isUrl;
 - (id)name;
 - (BOOL)stored;
+- (BOOL)tracked;
 - (id)value;
 
 @end

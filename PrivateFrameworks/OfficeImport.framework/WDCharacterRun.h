@@ -14,6 +14,7 @@
 - (void)clearString;
 - (void)copyPropertiesFrom:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)initWithParagraph:(id)arg1;
 - (id)initWithParagraph:(id)arg1 string:(id)arg2;
 - (BOOL)isEmpty;

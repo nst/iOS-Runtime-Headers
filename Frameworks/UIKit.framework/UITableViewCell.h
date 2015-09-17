@@ -19,6 +19,7 @@
     UIView *_bottomShadowAnimationView;
     UIColor *_bottomShadowColor;
     UIView *_clearBlendingView;
+    <UITableViewConstants> *_constants;
     UIView *_contentView;
     UIView *_customAccessoryView;
     UIView *_customEditingAccessoryView;
@@ -26,22 +27,24 @@
     NSTimer *_deselectTimer;
     UILabel *_detailTextLabel;
     SEL _editAction;
+    UIFocusGuide *_editControlFocusGuide;
     UITextField *_editableTextField;
     UIControl *_editingAccessoryView;
     id _editingData;
     UIView *_floatingSeparatorView;
+    int _focusStyle;
     BOOL _focusable;
     id _highlightingSupport;
     UIImageView *_imageView;
     int _indentationLevel;
     float _indentationWidth;
     float _indexBarWidth;
-    BOOL _isPigglyWigglyCell;
     double _lastSelectionTime;
     id _layoutManager;
     UILongPressGestureRecognizer *_menuGesture;
     UIView *_multipleSelectionBackgroundView;
     _UITableViewCellOldEditingData *_oldEditingData;
+    UIFocusGuide *_reorderControlFocusGuide;
     UIImage *_reorderControlImage;
     NSIndexPath *_representedIndexPath;
     SEL _returnAction;
@@ -103,7 +106,7 @@
         unsigned int dontDrawTopShadow : 1; 
         unsigned int usingMultiselectbackgroundView : 1; 
         unsigned int layoutLoopCounter : 2; 
-        unsigned int isPigglyWigglyCell; 
+        unsigned int isCarPlayCell : 1; 
         unsigned int deleteAnimationInProgress : 1; 
         unsigned int deleteCancelationAnimationInProgress : 1; 
         unsigned int animating : 1; 
@@ -118,6 +121,8 @@
         unsigned int clippedBeforeSwiping : 1; 
         unsigned int allowsReorderingWhenNotEditing : 1; 
         unsigned int needsHeightCalculation : 1; 
+        unsigned int reordering : 1; 
+        unsigned int doesNotOverrideDidUpdateFocus : 1; 
     } _tableCellFlags;
     UITableView *_tableView;
     id _target;
@@ -133,20 +138,23 @@
 @property (nonatomic) int accessoryType;
 @property (nonatomic, retain) UIView *accessoryView;
 @property (nonatomic, retain) UIView *backgroundView;
-@property (nonatomic, readonly, retain) UIView *contentView;
+@property (nonatomic, readonly) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) UILabel *detailTextLabel;
+@property (nonatomic, readonly) UILabel *detailTextLabel;
+@property (getter=_editControlFocusGuide, setter=_setEditControlFocusGuide:, nonatomic, retain) UIFocusGuide *editControlFocusGuide;
 @property (getter=isEditing, nonatomic) BOOL editing;
 @property (nonatomic) int editingAccessoryType;
 @property (nonatomic, retain) UIView *editingAccessoryView;
 @property (nonatomic, readonly) int editingStyle;
+@property (nonatomic) int focusStyle;
 @property (readonly) unsigned int hash;
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
-@property (nonatomic, readonly, retain) UIImageView *imageView;
+@property (nonatomic, readonly) UIImageView *imageView;
 @property (nonatomic) int indentationLevel;
 @property (nonatomic) float indentationWidth;
 @property (nonatomic, retain) UIView *multipleSelectionBackgroundView;
+@property (getter=_reorderControlFocusGuide, setter=_setReorderControlFocusGuide:, nonatomic, retain) UIFocusGuide *reorderControlFocusGuide;
 @property (nonatomic, readonly, copy) NSString *reuseIdentifier;
 @property (getter=isSelected, nonatomic) BOOL selected;
 @property (nonatomic, retain) UIView *selectedBackgroundView;
@@ -156,7 +164,7 @@
 @property (nonatomic, readonly) BOOL showingDeleteConfirmation;
 @property (nonatomic) BOOL showsReorderControl;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, retain) UILabel *textLabel;
+@property (nonatomic, readonly) UILabel *textLabel;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -164,6 +172,7 @@
 + (void)_initializeForIdiom:(int)arg1;
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (SEL)_accessoryAction;
 - (id)_accessoryTintColor;
 - (id)_accessoryView:(BOOL)arg1;
@@ -182,6 +191,7 @@
 - (void)_cancelInternalPerformRequests;
 - (id)_checkmarkImage:(BOOL)arg1;
 - (void)_clearOpaqueViewState:(id)arg1;
+- (id)_constants;
 - (id)_contentBackgroundColor;
 - (void)_contentViewLabelTextDidChange:(id)arg1;
 - (id)_createRemoveControlForStyle:(int)arg1;
@@ -203,6 +213,7 @@
 - (id)_detailTextLabel:(BOOL)arg1;
 - (void)_didCreateContentView;
 - (void)_didTransitionToState:(unsigned int)arg1;
+- (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)_disclosureChevronImage:(BOOL)arg1;
 - (id)_disclosureImage:(BOOL)arg1;
 - (id)_disclosurePressedImage:(BOOL)arg1;
@@ -212,14 +223,15 @@
 - (BOOL)_drawsSeparatorAtTopOfSection;
 - (BOOL)_drawsTopSeparatorDuringReordering;
 - (BOOL)_drawsTopShadow;
+- (id)_editControlFocusGuide;
 - (id)_editableTextField;
 - (id)_editableTextField:(BOOL)arg1;
 - (id)_editingAccessoryView:(BOOL)arg1;
 - (float)_editingButtonOffset;
-- (void)_editingTransitionAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (id)_encodableSubviews;
 - (void)_endSwiping:(BOOL)arg1;
+- (void)_finishTransitioningToReorderingAppearance:(BOOL)arg1;
 - (void)_finishedFadingGrabber:(id)arg1 finished:(BOOL)arg2;
-- (void)_focusedViewDidChange:(id)arg1;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_grabberBeganReorder:(id)arg1;
 - (void)_grabberDragged:(id)arg1 yDelta:(float)arg2;
@@ -234,14 +246,13 @@
 - (id)_indexPath;
 - (BOOL)_insetsBackground;
 - (BOOL)_isAnimating;
+- (BOOL)_isCarPlayCell;
 - (BOOL)_isCurrentlyConsideredHighlighted;
 - (BOOL)_isDeleteAnimationInProgress;
 - (BOOL)_isDeleteCancelationAnimationInProgress;
-- (BOOL)_isFocusable;
 - (BOOL)_isHighlighted;
 - (BOOL)_isInModalViewController;
 - (BOOL)_isMultiselecting;
-- (BOOL)_isPigglyWigglyCell;
 - (BOOL)_isReorderable;
 - (BOOL)_isUsingOldStyleMultiselection;
 - (id)_layoutDebuggingTitle;
@@ -257,6 +268,8 @@
 - (void)_performAction:(SEL)arg1 sender:(id)arg2;
 - (int)_popoverControllerStyle;
 - (void)_populateArchivedSubviews:(id)arg1;
+- (id)_preferredConfigurationForFocusAnimation:(int)arg1 inContext:(id)arg2;
+- (void)_prepareToEnterReuseQueue;
 - (void)_releaseDetailTextLabel;
 - (void)_releaseRemoveControl;
 - (void)_releaseReorderingControl;
@@ -265,6 +278,7 @@
 - (void)_removeFloatingSeparator;
 - (void)_removeInnerShadow;
 - (void)_removeRemoveControl;
+- (id)_reorderControlFocusGuide;
 - (id)_reorderControlImage;
 - (id)_reorderingControl;
 - (id)_reorderingSeparatorView;
@@ -287,6 +301,8 @@
 - (void)_setAnimating:(BOOL)arg1 clippingAdjacentCells:(BOOL)arg2;
 - (void)_setBackgroundInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setBadgeText:(id)arg1;
+- (void)_setConstants:(id)arg1;
+- (void)_setCurrentScreenScale:(float)arg1;
 - (void)_setDefaultMarginWidth:(float)arg1;
 - (void)_setDeleteAnimationInProgress:(BOOL)arg1;
 - (void)_setDeleteCancelationAnimationInProgress:(BOOL)arg1;
@@ -295,19 +311,21 @@
 - (void)_setDrawsTopSeparator:(BOOL)arg1;
 - (void)_setDrawsTopSeparatorDuringReordering:(BOOL)arg1;
 - (void)_setDrawsTopShadow:(BOOL)arg1;
+- (void)_setEditControlFocusGuide:(id)arg1;
 - (void)_setEditingStyle:(int)arg1;
-- (void)_setFocusable:(BOOL)arg1;
 - (void)_setFont:(id)arg1 layout:(BOOL)arg2;
+- (void)_setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 skipLayout:(BOOL)arg2;
 - (void)_setGrabberHidden:(BOOL)arg1;
 - (void)_setHiddenForReuse:(BOOL)arg1;
 - (void)_setIndexBarWidth:(float)arg1;
 - (void)_setIndexPath:(id)arg1;
-- (void)_setIsPigglyWigglyCell:(BOOL)arg1;
+- (void)_setIsCarPlayCell:(BOOL)arg1;
 - (void)_setMarginWidth:(float)arg1;
 - (void)_setMultiselecting:(BOOL)arg1;
 - (void)_setNeedsHeightCalculation:(BOOL)arg1;
 - (void)_setNeedsSetup:(BOOL)arg1;
 - (void)_setOpaque:(BOOL)arg1 forSubview:(id)arg2;
+- (void)_setReorderControlFocusGuide:(id)arg1;
 - (void)_setReorderControlImage:(id)arg1;
 - (void)_setReordering:(BOOL)arg1;
 - (void)_setRightMarginWidth:(float)arg1;
@@ -333,6 +351,7 @@
 - (BOOL)_shouldHaveFullLengthBottomSeparator;
 - (BOOL)_shouldHaveFullLengthTopSeparator;
 - (BOOL)_shouldHideSeparator;
+- (BOOL)_shouldMaskToBoundsWhileAnimating;
 - (BOOL)_shouldSaveOpaqueStateForView:(id)arg1;
 - (BOOL)_showFullLengthTopSeparatorForTopOfSection;
 - (void)_showReorderControl;
@@ -354,6 +373,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_topSeparatorFrame;
 - (void)_topShadowDidFadeOut;
 - (id)_topShadowView:(BOOL)arg1;
+- (void)_transitionToReorderingAppearance:(BOOL)arg1;
 - (void)_uiRemoveControlMinusButtonHideAnimationDone:(id)arg1;
 - (void)_updateAndCacheBackgroundColorForHighlightIgnoringSelection:(BOOL)arg1;
 - (void)_updateCellMaskViewsForView:(id)arg1 backdropView:(id)arg2;
@@ -395,6 +415,7 @@
 - (id)detailTextLabel;
 - (void)didMoveToSuperview;
 - (void)didTransitionToState:(unsigned int)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)drawingEnabled;
 - (SEL)editAction;
 - (void)editControlWasClicked:(id)arg1;
@@ -405,6 +426,7 @@
 - (id)editingData:(BOOL)arg1;
 - (int)editingStyle;
 - (void)encodeWithCoder:(id)arg1;
+- (int)focusStyle;
 - (void)focusedViewDidChange;
 - (id)font;
 - (BOOL)hidesAccessoryWhenEditing;
@@ -432,6 +454,7 @@
 - (id)oldEditingData;
 - (void)paste:(id)arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (id)preferredFocusedView;
 - (void)prepareForReuse;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeControl:(id)arg1 endFrameForTarget:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })removeControl:(id)arg1 startFrameForTarget:(id)arg2;
@@ -446,7 +469,6 @@
 - (id)sectionBorderColor;
 - (int)sectionLocation;
 - (id)selectedBackgroundView;
-- (void)selectedBackgroundViewChange:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (id)selectedImage;
 - (id)selectedOverlayView;
 - (id)selectedTextColor;
@@ -473,6 +495,7 @@
 - (void)setEditingAccessoryType:(int)arg1;
 - (void)setEditingAccessoryView:(id)arg1;
 - (void)setEditingStyle:(int)arg1;
+- (void)setFocusStyle:(int)arg1;
 - (void)setFont:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHidesAccessoryWhenEditing:(BOOL)arg1;
@@ -502,6 +525,7 @@
 - (void)setSelectionSegueTemplate:(id)arg1;
 - (void)setSelectionStyle:(int)arg1;
 - (void)setSelectionTintColor:(id)arg1;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (void)setSeparatorColor:(id)arg1;
 - (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSeparatorStyle:(int)arg1;
@@ -517,7 +541,6 @@
 - (void)setTextFieldOffset:(float)arg1;
 - (void)setTopShadowColor:(id)arg1;
 - (void)setWasSwiped:(BOOL)arg1;
-- (BOOL)shouldChangeFocusedItem:(id)arg1 heading:(unsigned int)arg2;
 - (BOOL)shouldIndentWhileEditing;
 - (void)showSelectedBackgroundView:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)showingDeleteConfirmation;
@@ -543,6 +566,34 @@
 - (BOOL)wasSwiped;
 - (void)willMoveToSuperview:(id)arg1;
 - (void)willTransitionToState:(unsigned int)arg1;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_applyContactStyle;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+- (void)_mk_setSeparatorHidden:(BOOL)arg1 visibleSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
+
+// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+
+- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; unsigned int x60; unsigned char x61; BOOL x62; BOOL x63; out void*x64; in void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; unsigned char x88; void*x89; unsigned short x90; void*x91; short x92; void*x93; void*x94; void*x95; void*x96; unsigned long x97; int x98; unsigned int x99/* : ? */; const void*x100; const void*x101; void*x102; void*x103; const int x104; void x105; void*x106; void*x107; void*x108; void*x109; const void*x110; void*x111; void*x112; void*x113; out const void*x114; short x115; void*x116; inout out void*x117; void*x118; short x119; unsigned short x120; void*x121; void*x122; const void*x123; double x124; void*x125; float x126; const void*x127; void*x128; void*x129; void*x130; out const void*x131; void*x132; inout out void*x133; void*x134; short x135; unsigned short x136; void*x137; void*x138; const void*x139; double x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; id x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; id x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void*x285; void*x286; void*x287; void*x288; void*x289; long long x290; inout void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; union x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; void*x314; void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; void*x328; void*x329; void*x330; void*x331; void*x332; void*x333; void*x334; void*x335; void*x336; void*x337; void*x338; void*x339; void*x340; void*x341; void*x342; void*x343; void*x344; void*x345; void*x346; void*x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; void*x358; void*x359; void*x360; void*x361; void*x362; void*x363; void*x364; void*x365; void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; unsigned int x387; in void*x388; void*x389; const float x390; void*x391; BOOL x392; void*x393; unsigned short x394; void*x395; void*x396; void*x397; const void*x398; void*x399; out const void*x400; void*x401; void*x402; void*x403; void*x404; void*x405; void*x406; void*x407; void*x408; void*x409; void*x410; void*x411; void*x412; unsigned short x413; void*x414; short x415; void*x416; void*x417; void*x418; void*x419; unsigned long x420; int x421; unsigned int x422/* : ? */; const void*x423; const void*x424; void*x425; void*x426; const void*x427; void*x428; void*x429; void*x430; out const void*x431; short x432; void*x433; void*x434; void*x435; void*x436; BOOL x437; void*x438; void*x439; int x440; void*x441; void*x442; float x443; const void*x444; void*x445; void*x446; void*x447; out const void*x448; void*x449; void*x450; void*x451; void*x452; BOOL x453; void*x454; void*x455; int x456; void*x457; void*x458; void*x459; void*x460; void*x461; void*x462; void*x463; void*x464; void*x465; void*x466; void*x467; void*x468; void*x469; void*x470; void*x471; void*x472; void*x473; void*x474; void*x475; void*x476; void*x477; void*x478; void*x479; void*x480; void*x481; void*x482; void*x483; void*x484; void*x485; void*x486; void*x487; void*x488; void*x489; void*x490; void*x491; void*x492; void*x493; void*x494; void*x495; void*x496; void*x497; void*x498; void*x499; unsigned short x500; void*x501; void*x502; unsigned int x503; unsigned short x504; void*x505; void*x506; void*x507; void*x508; oneway int x509; void*x510; void*x511; void*x512; void*x513; void*x514; void*x515; void*x516; void*x517; void*x518; void*x519; void*x520; void*x521; void*x522; void*x523; void*x524; void*x525; void*x526; void*x527; long long x528; void*x529; void*x530; void*x531; void*x532; void*x533; void*x534; void*x535; void*x536; void*x537; void*x538; void*x539; void*x540; void*x541; void*x542; void*x543; void*x544; void*x545; void*x546; void*x547; void*x548; void*x549; void*x550; void*x551; void*x552; void*x553; void*x554; void*x555; void*x556; void*x557; void*x558; void*x559; void*x560; void*x561; void*x562; void*x563; void*x564; void*x565; void*x566; void*x567; void*x568; void*x569; void*x570; void*x571; void*x572; void*x573; void*x574; void*x575; void*x576; void*x577; void*x578; void*x579; void*x580; void*x581; void*x582; void*x583; void*x584; void*x585; void*x586; void*x587; void*x588; void*x589; void*x590; void*x591; void*x592; void*x593; void*x594; void*x595; unsigned short x596; void*x597; void*x598; in void*x599; void*x600; void*x601; const void*x602; void*x603; void*x604; void*x605; void*x606; void*x607; void*x608; void*x609; void*x610; void*x611; void*x612; void*x613; void*x614; void*x615; void*x616; void*x617; void*x618; void*x619; void*x620; void*x621; void*x622; unsigned short x623; void*x624; short x625; void*x626; void*x627; void*x628; void*x629; unsigned long x630; int x631; unsigned int x632/* : ? */; const void*x633; const void*x634; void*x635; void*x636; const int x637; void x638; void*x639; void*x640; void*x641; void*x642; const void*x643; void*x644; void*x645; void*x646; out const void*x647; short x648; void*x649; void*x650; void*x651; short x652; short x653; void*x654; void*x655; void*x656; void*x657; float x658; const void*x659; void*x660; void*x661; void*x662; out const void*x663; void*x664; void*x665; void*x666; int x667; long x668; unsigned short x669; void*x670; const void x671; int x672; BOOL x673; void*x674; short x675; void*x676; unsigned int x677; void*x678; void*x679; void*x680; float x681; const void*x682; void*x683; void*x684; void*x685; out const void*x686; void*x687; unsigned int x688; void*x689; void*x690; void*x691; void*x692; void*x693; void*x694; void*x695; void*x696; void*x697; void*x698; void*x699; void*x700; void*x701; void*x702; void*x703; void*x704; void*x705; void*x706; void*x707; void*x708; void*x709; void*x710; void*x711; void*x712; void*x713; void*x714; void*x715; void*x716; void*x717; void*x718; void*x719; void*x720; void*x721; void*x722; void*x723; void*x724; void*x725; void*x726; void*x727; void*x728; void*x729; void*x730; void*x731; void*x732; void*x733; void*x734; void*x735; void*x736; void*x737; void*x738; unsigned char x739; void*x740; void*x741; void*x742; void*x743; const void*x744; void*x745; void*x746; in void*x747; short x748; void*x749; float x750; void*x751; out void*x752; const void*x753; void*x754; void*x755; void*x756; void*x757; long doublex758; void*x759; void*x760; void*x761; struct x762; void*x763; void*x764; void*x765; float x766; void*x767; long x768; void*x769; out void*x770; void*x771; void*x772; void*x773; void*x774; void*x775; void*x776; void*x777; void*x778; void*x779; void*x780; void*x781; void*x782; void*x783; void*x784; float x785; void*x786; long x787; void*x788; out void*x789; void*x790; void*x791; void*x792; void*x793; void*x794; void*x795; void*x796; void*x797; void*x798; void*x799; void*x800; void*x801; void*x802; void*x803; float x804; void*x805; long x806; void*x807; out void*x808; void*x809; void*x810; void*x811; void*x812; void*x813; void*x814; void*x815; void*x816; void*x817; void*x818; void*x819; void*x820; void*x821; void*x822; float x823; void*x824; long x825; void*x826; out void*x827; void*x828; void*x829; void*x830; void*x831; void*x832; void*x833; void*x834; void*x835; void*x836; void*x837; void*x838; void*x839; void*x840; void*x841; float x842; void*x843; long x844; void*x845; out void*x846; void*x847; void*x848; void*x849; void*x850; void*x851; void*x852; void*x853; void*x854; void*x855; void*x856; void*x857; void*x858; void*x859; void*x860; float x861; void*x862; long x863; void*x864; out void*x865; void*x866; void*x867; void*x868; void*x869; void*x870; void*x871; void*x872; void*x873; void*x874; void*x875; void*x876; void*x877; void*x878; void*x879; float x880; void*x881; long x882; void*x883; out void*x884; void*x885; void*x886; void*x887; void*x888; void*x889; void*x890; void*x891; void*x892; void*x893; void*x894; void*x895; void*x896; void*x897; void*x898; float x899; void*x900; long x901; void*x902; out void*x903; void*x904; void*x905; void*x906; void*x907; void*x908; void*x909; void*x910; void*x911; void*x912; void*x913; void*x914; void*x915; void*x916; void*x917; float x918; void*x919; long x920; void*x921; out void*x922; void*x923; void*x924; void*x925; void*x926; void*x927; void*x928; void*x929; void*x930; void*x931; void*x932; void*x933; void*x934; void*x935; void*x936; float x937; void*x938; long x939; void*x940; out void*x941; void*x942; void*x943; void*x944; void*x945; void*x946; void*x947; void*x948; void*x949; void*x950; void*x951; void*x952; void*x953; void*x954; void*x955; void*x956; void*x957; float x958; void*x959; long x960; void*x961; out void*x962; void*x963; void*x964; void*x965; void*x966; void*x967; void*x968; void*x969; void*x970; void*x971; void*x972; void*x973; void*x974; void*x975; void*x976; void*x977; void*x978; float x979; void*x980; long x981; void*x982; out void*x983; void*x984; void*x985; void*x986; void*x987; void*x988; void*x989; void*x990; void*x991; void*x992; void*x993; void*x994; void*x995; void*x996; void*x997; void*x998; void*x999; float x1000; void*x1001; long x1002; void*x1003; out void*x1004; void*x1005; void*x1006; void*x1007; void*x1008; void*x1009; void*x1010; void*x1011; void*x1012; void*x1013; void*x1014; void*x1015; void*x1016; void*x1017; void*x1018; void*x1019; void*x1020; float x1021; void*x1022; long x1023; void*x1024; out void*x1025; void*x1026; void*x1027; void*x1028; void*x1029; void*x1030; void*x1031; void*x1032; void*x1033; void*x1034; void*x1035; void*x1036; void*x1037; void*x1038; void*x1039; void*x1040; void*x1041; float x1042; void*x1043; long x1044; void*x1045; out void*x1046; void*x1047; void*x1048; void*x1049; void*x1050; void*x1051; void*x1052; void*x1053; void*x1054; void*x1055; void*x1056; void*x1057; void*x1058; void*x1059; void*x1060; void*x1061; void*x1062; float x1063; void*x1064; long x1065; void*x1066; out void*x1067; void*x1068; void*x1069; void*x1070; void*x1071; void*x1072; void*x1073; void*x1074; void*x1075; void*x1076; void*x1077; void*x1078; void*x1079; void*x1080; void*x1081; void*x1082; void*x1083; }*)arg1;
+- (id)pk_childrenForAppearance;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (void)sf_setUsesVibrantSelection:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
++ (float)naui_estimatedTableRowHeight;
++ (id)naui_prototypeCell;
++ (BOOL)naui_supportsAutoLayout;
++ (float)naui_tableRowHeight;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

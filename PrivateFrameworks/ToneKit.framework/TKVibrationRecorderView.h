@@ -16,6 +16,7 @@
     BOOL _replayModeEnabled;
     int _rightButtonIdentifier;
     <TKVibrationRecorderStyleProvider> *_styleProvider;
+    <UILayoutSupport> *_topLayoutGuide;
     TKVibrationRecorderTouchSurface *_touchSurface;
     NSLayoutConstraint *_touchSurfaceTopConstraint;
     double _vibrationPatternMaximumDuration;
@@ -34,6 +35,7 @@
 @property (getter=_isReplayModeEnabled, setter=_setReplayModeEnabled:, nonatomic) BOOL _replayModeEnabled;
 @property (setter=_setRightButtonIdentifier:, nonatomic) int _rightButtonIdentifier;
 @property (setter=_setStyleProvider:, nonatomic, retain) <TKVibrationRecorderStyleProvider> *_styleProvider;
+@property (setter=_setTopLayoutGuide:, nonatomic, retain) <UILayoutSupport> *_topLayoutGuide;
 @property (setter=_setTouchSurface:, nonatomic, retain) TKVibrationRecorderTouchSurface *_touchSurface;
 @property (setter=_setTouchSurfaceTopConstraint:, nonatomic, retain) NSLayoutConstraint *_touchSurfaceTopConstraint;
 @property (setter=_setVibrationPatternMaximumDuration:, nonatomic) double _vibrationPatternMaximumDuration;
@@ -43,6 +45,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) <UILayoutSupport> *topLayoutGuide;
 
 - (id)_controlsToolbar;
 - (id)_controlsToolbarTopConstraint;
@@ -73,12 +76,14 @@
 - (void)_setReplayModeEnabled:(BOOL)arg1;
 - (void)_setRightButtonIdentifier:(int)arg1;
 - (void)_setStyleProvider:(id)arg1;
+- (void)_setTopLayoutGuide:(id)arg1;
 - (void)_setTouchSurface:(id)arg1;
 - (void)_setTouchSurfaceTopConstraint:(id)arg1;
 - (void)_setVibrationPatternMaximumDuration:(double)arg1;
 - (void)_setWaitingForEndOfCurrentVibrationComponent:(BOOL)arg1;
 - (id)_styleProvider;
 - (id)_titleForControlsToolbarButtonWithIdentifier:(int)arg1;
+- (id)_topLayoutGuide;
 - (id)_touchSurface;
 - (id)_touchSurfaceTopConstraint;
 - (void)_updateProgress:(id)arg1;
@@ -91,15 +96,15 @@
 - (void)exitRecordingModeWithPlayButtonEnabled:(BOOL)arg1;
 - (void)exitReplayMode;
 - (id)initWithVibrationPatternMaximumDuration:(double)arg1;
-- (void)navigationController:(id)arg1 willRotateToInterfaceOrientation:(int)arg2 duration:(double)arg3;
 - (void)setDelegate:(id)arg1;
+- (void)setTopLayoutGuide:(id)arg1;
 - (void)startAnimatingProgress;
 - (void)stopAnimatingProgress;
+- (id)topLayoutGuide;
 - (void)vibrationComponentDidEndForVibrationRecorderTouchSurface:(id)arg1;
 - (void)vibrationComponentDidStartForVibrationRecorderTouchSurface:(id)arg1;
 - (void)vibrationRecorderTouchSurface:(id)arg1 didExitRecordingModeWithContextObject:(id)arg2;
 - (BOOL)vibrationRecorderTouchSurfaceDidEnterRecordingMode:(id)arg1;
 - (void)vibrationRecorderTouchSurfaceDidFinishReplayingVibration:(id)arg1;
-- (void)wasAddedToNavigationController:(id)arg1;
 
 @end

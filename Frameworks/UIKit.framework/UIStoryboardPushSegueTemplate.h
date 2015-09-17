@@ -10,11 +10,10 @@
 @property (nonatomic) int destinationContainmentContext;
 @property (nonatomic) int splitViewControllerIndex;
 
-- (id)defaultSegueClassName;
 - (int)destinationContainmentContext;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)segueWithDestinationViewController:(id)arg1;
+- (id /* block */)newDefaultPerformHandlerForSegue:(id)arg1;
 - (void)setDestinationContainmentContext:(int)arg1;
 - (void)setSplitViewControllerIndex:(int)arg1;
 - (int)splitViewControllerIndex;

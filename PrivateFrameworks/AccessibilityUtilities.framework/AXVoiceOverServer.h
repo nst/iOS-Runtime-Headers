@@ -10,9 +10,11 @@
 - (id)_serviceName;
 - (id)currentFocusedElement;
 - (id)currentRotorName;
+- (BOOL)isBrailleInputUIShowing;
 - (id)lastScreenChange;
 - (id)lastSoundsPlayed;
 - (id)lastSpokenPhrases;
 - (BOOL)triggerCommand:(int)arg1;
+- (BOOL)triggerCommand:(int)arg1 withArgument:(id)arg2;
 
 @end

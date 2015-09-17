@@ -28,6 +28,7 @@
 - (void)_deleteDuetAttributesForAccountWithUniqueId:(id)arg1;
 - (id)_duetAttributeForAccountWithUniqueId:(id)arg1 discretionary:(BOOL)arg2;
 - (void)_initDuet;
+- (void)_lowPowerModeChangedNotification:(id)arg1;
 - (void)_releaseAssertion_nts;
 - (void)_retainAssertion_nts;
 - (void)_setPluggedIn:(unsigned int)arg1;
@@ -36,10 +37,12 @@
 - (void)dealloc;
 - (id)duetIdentifier;
 - (id)init;
+- (BOOL)isBatterySaverModeEnabled;
 - (BOOL)isPluggedIn;
 - (void)recordDuetEventForAccount:(id)arg1 event:(id)arg2;
 - (void)releaseAssertionWithIdentifier:(id)arg1;
 - (void)retainAssertionWithIdentifier:(id)arg1;
 - (void)retainAssertionWithIdentifier:(id)arg1 withAccount:(id)arg2;
+- (void)startListeningForBatterySaverNotifications;
 
 @end

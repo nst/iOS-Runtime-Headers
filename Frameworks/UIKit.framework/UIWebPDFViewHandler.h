@@ -55,6 +55,7 @@
 
 - (id)_absoluteUrlRelativeToDocumentURL:(id)arg1;
 - (id)_actionForType:(int)arg1;
+- (id)_actionForType:(int)arg1 withActionInfo:(id)arg2;
 - (id)_actionsForInteractionInfo:(id)arg1;
 - (void)_adjustContentOffsetForKeyboardIfNeeded;
 - (void)_adjustZoomScalesForScrollViewInternal:(id)arg1;

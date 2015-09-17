@@ -5,10 +5,10 @@
 @interface AVFigAssetWriterTrack : NSObject {
     BOOL _aboveHighWaterLevel;
     NSObject<OS_dispatch_queue> *_aboveHighWaterLevelQueue;
-    AVAssetWriterInputFigAssetWriterEndPassOperation *_endPassOperation;
     struct OpaqueFigAssetWriter { } *_figAssetWriter;
     AVMediaFileType *_mediaFileType;
     NSString *_mediaType;
+    NSOperationQueue *_operationQueue;
     struct { 
         long long value; 
         int timescale; 
@@ -56,6 +56,7 @@
 - (void)setFigDimensions:(id)arg1;
 - (void)setFigMetadata:(id)arg1;
 - (void)setFigTrackMatrix:(id)arg1;
+- (void)setFormatDescriptions:(id)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setLayer:(int)arg1;
 - (void)setMarksOutputTrackAsEnabled:(BOOL)arg1;

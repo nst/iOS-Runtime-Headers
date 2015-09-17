@@ -16,7 +16,9 @@
     double _locationLongitude;
     double _locationVerticalAccuracy;
     PKMerchant *_merchant;
-    NSNumber *_persistentIdentifier;
+    BOOL _processedForLocation;
+    BOOL _processedForMerchantCleanup;
+    NSString *_serviceIdentifier;
     int _technologyType;
     NSDate *_transactionDate;
     NSString *_transactionIdentifier;
@@ -42,7 +44,9 @@
 @property (nonatomic) double locationLongitude;
 @property (nonatomic) double locationVerticalAccuracy;
 @property (nonatomic, retain) PKMerchant *merchant;
-@property (nonatomic, copy) NSNumber *persistentIdentifier;
+@property (nonatomic) BOOL processedForLocation;
+@property (nonatomic) BOOL processedForMerchantCleanup;
+@property (nonatomic, copy) NSString *serviceIdentifier;
 @property (nonatomic) int technologyType;
 @property (nonatomic, copy) NSDate *transactionDate;
 @property (nonatomic, copy) NSString *transactionIdentifier;
@@ -79,7 +83,9 @@
 - (double)locationLongitude;
 - (double)locationVerticalAccuracy;
 - (id)merchant;
-- (id)persistentIdentifier;
+- (BOOL)processedForLocation;
+- (BOOL)processedForMerchantCleanup;
+- (id)serviceIdentifier;
 - (void)setAdministrativeArea:(id)arg1;
 - (void)setAmount:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
@@ -94,7 +100,9 @@
 - (void)setLocationLongitude:(double)arg1;
 - (void)setLocationVerticalAccuracy:(double)arg1;
 - (void)setMerchant:(id)arg1;
-- (void)setPersistentIdentifier:(id)arg1;
+- (void)setProcessedForLocation:(BOOL)arg1;
+- (void)setProcessedForMerchantCleanup:(BOOL)arg1;
+- (void)setServiceIdentifier:(id)arg1;
 - (void)setTechnologyType:(int)arg1;
 - (void)setTransactionDate:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;

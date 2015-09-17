@@ -11,7 +11,6 @@
     } stats;
 }
 
-- (id).cxx_construct;
 - (id)description;
 - (id)initWithStats:(const struct { double x1; double x2; double x3; unsigned int x4; }*)arg1;
 

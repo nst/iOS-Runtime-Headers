@@ -21,7 +21,7 @@
 - (void)addMessageLink:(id)arg1;
 - (void)addObserver:(id)arg1;
 - (id)init;
-- (id)messageLinkForLibrary:(id)arg1;
+- (id)messageLinkForIdentifier:(id)arg1;
 - (id)messageLinks;
 - (id)observers;
 - (void)removeMessageLink:(id)arg1;

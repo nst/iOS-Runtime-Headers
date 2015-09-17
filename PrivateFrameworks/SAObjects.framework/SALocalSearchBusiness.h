@@ -11,6 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *extSessionGuid;
+@property (nonatomic, copy) NSDate *extSessionGuidCreatedTimestamp;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *openingHours;
@@ -30,6 +31,7 @@
 - (id)categories;
 - (id)encodedClassName;
 - (id)extSessionGuid;
+- (id)extSessionGuidCreatedTimestamp;
 - (id)groupIdentifier;
 - (id)name;
 - (id)openingHours;
@@ -42,6 +44,7 @@
 - (void)setBusinessUrl:(id)arg1;
 - (void)setCategories:(id)arg1;
 - (void)setExtSessionGuid:(id)arg1;
+- (void)setExtSessionGuidCreatedTimestamp:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setOpeningHours:(id)arg1;
 - (void)setPhoneNumbers:(id)arg1;

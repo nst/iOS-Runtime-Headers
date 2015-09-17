@@ -6,6 +6,7 @@
     NSXPCConnection *_connection;
     <PUConnectionDelegate> *_delegate;
     id /* block */ _getRemoteDevicePasscodeStateHandler;
+    BOOL _invalidated;
     id /* block */ _remoteDeviceRemoveLockoutHandler;
 }
 
@@ -14,6 +15,8 @@
 @property (nonatomic) <PUConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property BOOL invalidated;
+@property (nonatomic, readonly) BOOL isInvalid;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,6 +32,8 @@
 - (void)enableOnlyRemoteUnlockWithPasscode:(id)arg1;
 - (void)getRemoteDeviceState:(id /* block */)arg1;
 - (id)init;
+- (BOOL)invalidated;
+- (BOOL)isInvalid;
 - (void)pairForUnlockWithPasscode:(id)arg1;
 - (void)remoteDeviceDidCompletePasscodeAction:(BOOL)arg1 error:(id)arg2;
 - (void)remoteDeviceDidRemoveLockout:(BOOL)arg1 error:(id)arg2;
@@ -37,6 +42,7 @@
 - (void)requestRemoteDeviceRemoveLockout:(id /* block */)arg1;
 - (void)requestRemoteDeviceUnlockNotification;
 - (void)setDelegate:(id)arg1;
+- (void)setInvalidated:(BOOL)arg1;
 - (void)unpairForUnlock;
 
 @end

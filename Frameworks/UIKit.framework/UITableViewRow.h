@@ -13,8 +13,8 @@
 
 + (id)row;
 
+- (void).cxx_destruct;
 - (id)cell;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (float)height;
 - (int)indentationLevel;

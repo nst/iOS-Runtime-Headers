@@ -11,10 +11,12 @@
     NSArray *_cachedRoutes;
     BOOL _cachedShowAirPlayDebugButton;
     <MPAVRoutingViewControllerDelegate> *_delegate;
+    int _discoveryModeBeforeEnteringBackground;
     BOOL _hasCachedAirPlayDebugButtonStatus;
     BOOL _needsDisplayedRoutesUpdate;
     MPAVRoutingController *_routingController;
     unsigned int _style;
+    BOOL _suspendedDiscoveryModeDueToApplicationState;
     UIColor *_tableCellsBackgroundColor;
     UIColor *_tableCellsContentColor;
     UITableView *_tableView;
@@ -31,11 +33,16 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
+- (void)_applicationWillEnterForegroundNotification:(id)arg1;
+- (void)_beginRouteDiscovery;
 - (unsigned int)_debugButtonTableViewIndex;
 - (id)_displayedRoutes;
+- (void)_endRouteDiscovery;
 - (float)_expandedCellHeight;
 - (float)_normalCellHeight;
 - (void)_pickRoute:(id)arg1;
+- (void)_registerNotifications;
 - (unsigned int)_routeIndexForTableViewIndex:(unsigned int)arg1;
 - (id)_routesWhereMirroringIsPreferred;
 - (void)_serviceWillPresentAuthenticationPromptNotification:(id)arg1;
@@ -54,6 +61,7 @@
 - (float)_tableViewHeightAccordingToDataSource;
 - (unsigned int)_tableViewIndexForRouteIndex:(unsigned int)arg1;
 - (unsigned int)_tableViewNumberOfRows;
+- (void)_unregisterNotifications;
 - (void)_updateDisplayedRoutes;
 - (BOOL)allowMirroring;
 - (unsigned int)avItemType;

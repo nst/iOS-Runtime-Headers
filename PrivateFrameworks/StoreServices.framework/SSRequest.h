@@ -10,6 +10,7 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     SSXPCConnection *_requestConnection;
     SSXPCConnection *_responseConnection;
+    int _taskAssertionState;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,10 +19,10 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL shouldCancelAfterTaskExpiration;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL usesTaskCompletionAssertions;
 
 - (void)__beginBackgroundTask;
 - (void)__endBackgroundTask;
-- (BOOL)__shouldUseBackgroundTaskAssertions;
 - (void)_beginBackgroundTask;
 - (void)_cancelBackgroundTaskExpirationTimer;
 - (void)_endBackgroundTask;
@@ -37,8 +38,10 @@
 - (id)init;
 - (void)setDelegate:(id)arg1;
 - (void)setShouldCancelAfterTaskExpiration:(BOOL)arg1;
+- (void)setUsesTaskCompletionAssertions:(BOOL)arg1;
 - (BOOL)shouldCancelAfterTaskExpiration;
 - (BOOL)start;
 - (void)startWithCompletionBlock:(id /* block */)arg1;
+- (BOOL)usesTaskCompletionAssertions;
 
 @end

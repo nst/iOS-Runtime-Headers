@@ -4,12 +4,19 @@
 
 @interface _HKBehavior : NSObject
 
++ (id)currentDeviceClass;
 + (id)currentDeviceDisplayName;
++ (id)currentDeviceManufacturer;
++ (id)currentDeviceName;
 + (id)currentDeviceProductType;
 + (unsigned long long)currentDiskSpaceAvailable;
 + (id)currentDiskUsage;
++ (id)currentInternalDeviceModel;
 + (id)currentOSBuild;
++ (id)currentOSVersion;
 + (BOOL)isAppleInternalInstall;
++ (BOOL)isCoachingEventLoggingEnabled;
++ (BOOL)isCompanionCapable;
 + (BOOL)isDeviceSupported;
 + (BOOL)isNano;
 + (unsigned long long)totalDiskCapacity;

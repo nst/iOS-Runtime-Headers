@@ -26,7 +26,7 @@
 - (void)dealloc;
 - (void)deletePhotoStreamAssetsWithUUIDs:(id)arg1 streamID:(id)arg2;
 - (void)deletePhotoStreamDataForStreamID:(id)arg1;
-- (void)importFilesWithMasterPath:(id)arg1 sidecarFileInfo:(id)arg2 intoEventWithName:(id)arg3 importSessionIdentifier:(id)arg4 isPhotoStreamsPublishCandidate:(BOOL)arg5;
+- (void)importFilesWithMasterPath:(id)arg1 sidecarFileInfo:(id)arg2 intoEventWithName:(id)arg3 importSessionIdentifier:(id)arg4 isPhotoStreamsPublishCandidate:(BOOL)arg5 avalancheUUID:(id)arg6;
 - (id)init;
 - (id)pathForNewAssetOfType:(short)arg1 extension:(id)arg2;
 - (void)queueJobDictionary:(id)arg1 asset:(id)arg2 requestEnqueuedBlock:(id /* block */)arg3 completionBlock:(id /* block */)arg4 imageSurface:(struct __IOSurface { }*)arg5 previewImageSurface:(struct __IOSurface { }*)arg6;
@@ -51,5 +51,6 @@
 - (void)saveVideoAtPath:(id)arg1 properties:(id)arg2 completionTarget:(id)arg3 completionSelector:(SEL)arg4 contextInfo:(void*)arg5;
 - (void)setAvalancheInProgress:(BOOL)arg1 uuid:(id)arg2;
 - (void)set_pendingSaveAssetJobs:(id)arg1;
+- (void)validateAvalanches:(id)arg1;
 
 @end

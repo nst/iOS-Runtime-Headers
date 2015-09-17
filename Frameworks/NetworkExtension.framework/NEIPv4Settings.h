@@ -3,39 +3,47 @@
  */
 
 @interface NEIPv4Settings : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
-    NSString *_address;
+    NSArray *_addresses;
     int _configMethod;
+    NSArray *_excludedRoutes;
+    NSArray *_includedRoutes;
     BOOL _overridePrimary;
     NSString *_router;
-    NSString *_subnetMask;
+    NSArray *_subnetMasks;
 }
 
-@property (copy) NSString *address;
+@property (readonly) NSArray *addresses;
 @property int configMethod;
+@property (copy) NSArray *excludedRoutes;
+@property (copy) NSArray *includedRoutes;
 @property BOOL overridePrimary;
 @property (copy) NSString *router;
-@property (copy) NSString *subnetMask;
+@property (readonly) NSArray *subnetMasks;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)address;
+- (id)addresses;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (int)configMethod;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (id)excludedRoutes;
+- (BOOL)hasDefaultRoute;
+- (id)includedRoutes;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
+- (id)initWithAddresses:(id)arg1 subnetMasks:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)overridePrimary;
 - (id)router;
-- (void)setAddress:(id)arg1;
 - (void)setConfigMethod:(int)arg1;
+- (void)setExcludedRoutes:(id)arg1;
+- (void)setIncludedRoutes:(id)arg1;
 - (void)setOverridePrimary:(BOOL)arg1;
 - (void)setRouter:(id)arg1;
-- (void)setSubnetMask:(id)arg1;
-- (id)subnetMask;
+- (id)subnetMasks;
 
 @end

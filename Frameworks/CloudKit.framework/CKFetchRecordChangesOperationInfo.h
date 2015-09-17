@@ -5,6 +5,7 @@
 @interface CKFetchRecordChangesOperationInfo : CKDatabaseOperationInfo <NSSecureCoding> {
     int _changeTypes;
     NSArray *_desiredKeys;
+    BOOL _fetchAllChanges;
     CKServerChangeToken *_previousServerChangeToken;
     CKRecordZoneID *_recordZoneID;
     unsigned int _resultsLimit;
@@ -13,6 +14,7 @@
 
 @property (nonatomic) int changeTypes;
 @property (nonatomic, retain) NSArray *desiredKeys;
+@property (nonatomic) BOOL fetchAllChanges;
 @property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
 @property (nonatomic, retain) CKRecordZoneID *recordZoneID;
 @property (nonatomic) unsigned int resultsLimit;
@@ -24,12 +26,14 @@
 - (int)changeTypes;
 - (id)desiredKeys;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)fetchAllChanges;
 - (id)initWithCoder:(id)arg1;
 - (id)previousServerChangeToken;
 - (id)recordZoneID;
 - (unsigned int)resultsLimit;
 - (void)setChangeTypes:(int)arg1;
 - (void)setDesiredKeys:(id)arg1;
+- (void)setFetchAllChanges:(BOOL)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setRecordZoneID:(id)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;

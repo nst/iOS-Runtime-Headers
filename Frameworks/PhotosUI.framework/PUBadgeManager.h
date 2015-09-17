@@ -13,6 +13,7 @@
 - (int)badgeTypeForAsset:(id)arg1 size:(int)arg2;
 - (int)badgeTypeForCollection:(id)arg1;
 - (int)badgeTypeForCollection:(id)arg1 size:(int)arg2;
+- (BOOL)fallBackToAssetBadgeTypeForCollection:(id)arg1;
 - (id)imageForBadgeType:(int)arg1;
 - (struct UIOffset { float x1; float x2; })imageOffsetForBadgeType:(int)arg1;
 - (BOOL)isSmallBadge:(int)arg1;

@@ -5,6 +5,9 @@
 
 @required
 
+- (NSLayoutYAxisAnchor *)bottomAnchor;
+- (NSLayoutDimension *)heightAnchor;
 - (float)length;
+- (NSLayoutYAxisAnchor *)topAnchor;
 
 @end

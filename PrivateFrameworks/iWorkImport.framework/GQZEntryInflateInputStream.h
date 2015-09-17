@@ -33,7 +33,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithOffset:(long long)arg1 end:(long long)arg2 uncompressedSize:(unsigned long long)arg3 crc:(unsigned long)arg4 input:(id)arg5;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;

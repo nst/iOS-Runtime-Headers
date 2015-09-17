@@ -50,6 +50,7 @@
 - (void).cxx_destruct;
 - (id)URLForKey:(id)arg1;
 - (id)_copyKeyList;
+- (id)_dictionaryRepresentation;
 - (void)_invalidatePresenter;
 - (id)_objectForKey:(id)arg1 error:(id*)arg2;
 - (void)_setObject:(id)arg1 forKey:(id)arg2;
@@ -64,6 +65,7 @@
 - (id)dataForKey:(id)arg1;
 - (void)dealloc;
 - (id)dictionaryForKey:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)dirtyKeysForWriting;
 - (id)domain;
 - (id)domainURL;

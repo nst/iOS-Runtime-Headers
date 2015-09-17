@@ -46,7 +46,7 @@
 @property (nonatomic, readonly, retain) NSString *madridAccountGUID;
 @property (nonatomic, readonly, retain) NSString *madridAccountLogin;
 @property (nonatomic, readonly, retain) NSAttributedString *madridAttributedBody;
-@property (nonatomic, readonly) NSString *madridChatGUID;
+@property (nonatomic, readonly, copy) NSString *madridChatGUID;
 @property (nonatomic, readonly, retain) NSString *madridChatIdentifier;
 @property (nonatomic, readonly, retain) NSString *madridRoomname;
 @property (nonatomic, readonly, retain) NSString *madridService;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)sectionInfoList:(BLTSectionInfoList *)arg1 receivedEffectiveSectionInfo:(BLTPBSectionInfo *)arg2;
+- (void)sectionInfoList:(BLTSectionInfoList *)arg1 receivedUpdatedSectionInfoForSectionID:(NSString *)arg2;
 
 @end

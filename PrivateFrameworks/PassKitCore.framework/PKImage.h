@@ -34,6 +34,8 @@
 + (id)hashOfImageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2;
 + (id)imageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
++ (id)newImageNamed:(id)arg1 inBundle:(id)arg2;
++ (id)newImageNamed:(id)arg1 inBundle:(id)arg2 screenScale:(float)arg3 suffix:(id)arg4;
 + (id)passesImageNamed:(id)arg1;
 + (BOOL)supportsSecureCoding;
 

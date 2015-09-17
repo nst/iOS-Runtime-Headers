@@ -13,6 +13,7 @@
 - (float)blurRadius;
 - (id)color;
 - (void)dealloc;
+- (id)description;
 - (float)distance;
 - (unsigned int)hash;
 - (id)initWithShadowEffect:(id)arg1 type:(int)arg2;

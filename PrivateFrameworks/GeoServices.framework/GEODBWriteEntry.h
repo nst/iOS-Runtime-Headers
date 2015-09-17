@@ -29,7 +29,6 @@
 @property (nonatomic, readonly) unsigned int provider;
 @property (nonatomic, readonly) unsigned int set;
 
-- (id).cxx_construct;
 - (id)data;
 - (void)dealloc;
 - (unsigned int)edition;

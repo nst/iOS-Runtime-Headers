@@ -55,6 +55,7 @@
         } __tree_; 
     } _lastIntervalSources;
     unsigned int _mergeStrategy;
+    double _mergedSum;
     NSArray *_orderedSourceIds;
 }
 
@@ -71,6 +72,7 @@
 @property (nonatomic) BOOL lastBucket;
 @property (nonatomic, readonly) HDLastIntervalInfo *lastIntervalInfo;
 @property (nonatomic) unsigned int mergeStrategy;
+@property (nonatomic, readonly) double mergedSum;
 @property (nonatomic, retain) NSArray *orderedSourceIds;
 @property (nonatomic, readonly) NSDictionary *sumsBySource;
 
@@ -80,6 +82,7 @@
 - (double)addCurrentBucket;
 - (void)addCurrentValue:(double)arg1 sourceId:(long long)arg2;
 - (void)addSumsBySource:(id)arg1 lastInterval:(id)arg2 currentAligned:(long long)arg3 unit:(id)arg4;
+- (void)addValue:(double)arg1 startDate:(double)arg2 endDate:(double)arg3 valuePerSecond:(double)arg4 seconds:(double)arg5 sourceId:(long long)arg6 sum:(double*)arg7 bucketLength:(double)arg8 bucketStartTime:(double)arg9 bucketEndTime:(double)arg10;
 - (void)advanceBucket;
 - (double)advanceUntilInterval:(long long)arg1;
 - (unsigned int)bucketIndex;
@@ -99,6 +102,7 @@
 - (BOOL)lastBucket;
 - (id)lastIntervalInfo;
 - (unsigned int)mergeStrategy;
+- (double)mergedSum;
 - (id)orderedSourceIds;
 - (void)setBucketIndex:(unsigned int)arg1;
 - (void)setBucketPeriods:(id)arg1;

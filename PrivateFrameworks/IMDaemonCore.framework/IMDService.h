@@ -32,6 +32,7 @@
 @property (nonatomic, readonly) BOOL serviceRequiresHost;
 @property (nonatomic, readonly) BOOL serviceRequiresSingleAccount;
 @property (nonatomic, readonly) BOOL serviceShouldBeAlwaysLoggedIn;
+@property (nonatomic, readonly) BOOL serviceSupportsOneSessionForAllAccounts;
 @property (nonatomic, readonly) BOOL serviceSupportsPresence;
 @property (nonatomic, readonly) BOOL serviceSupportsRegistration;
 @property (nonatomic, readonly) BOOL serviceWantsNullHostReachability;
@@ -79,6 +80,7 @@
 - (BOOL)serviceRequiresHost;
 - (BOOL)serviceRequiresSingleAccount;
 - (BOOL)serviceShouldBeAlwaysLoggedIn;
+- (BOOL)serviceSupportsOneSessionForAllAccounts;
 - (BOOL)serviceSupportsPresence;
 - (BOOL)serviceSupportsRegistration;
 - (BOOL)serviceWantsNullHostReachability;

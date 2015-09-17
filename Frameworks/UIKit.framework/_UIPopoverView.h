@@ -28,6 +28,7 @@
 
 + (id)popoverViewContainingView:(id)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)_allowsCustomizationOfContent;
 - (float)_dimmingViewTopEdgeInset;
 - (void)_hideArrow;
@@ -52,7 +53,6 @@
 - (int)backgroundStyle;
 - (id)backgroundView;
 - (id)contentView;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundViewClass:(Class)arg2 embeddedInView:(BOOL)arg3;
@@ -80,6 +80,7 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)viewController;
 - (void)willMoveToWindow:(id)arg1;
 

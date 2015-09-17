@@ -10,13 +10,11 @@
 @property (nonatomic, retain) CoreDAVItem *content;
 @property (nonatomic, retain) CoreDAVLeafItem *dtstamp;
 
+- (void).cxx_destruct;
 - (id)content;
 - (id)copyParseRules;
-- (void)dealloc;
-- (id)description;
 - (id)dtstamp;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setContent:(id)arg1;
 - (void)setDtstamp:(id)arg1;
 

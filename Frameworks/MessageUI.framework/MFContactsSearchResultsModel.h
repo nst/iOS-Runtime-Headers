@@ -3,7 +3,6 @@
  */
 
 @interface MFContactsSearchResultsModel : NSObject <_MFSearchResultsConsumer> {
-    NSMutableDictionary *_corecipientsByAddress;
     NSArray *_enteredRecipients;
     BOOL _favorMobileNumbers;
     struct __CFSet { } *_finishedResultTypes;

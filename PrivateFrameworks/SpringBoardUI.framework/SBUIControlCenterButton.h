@@ -47,7 +47,9 @@
 + (void)controlAppearanceDidChangeForState:(int)arg1;
 + (id)roundRectButton;
 
+- (id)_backgroundImage;
 - (id)_backgroundImageWithGlyphImage:(id)arg1 state:(int)arg2;
+- (id)_controlStateStringFromState:(int)arg1;
 - (int)_currentState;
 - (BOOL)_drawingAsSelected;
 - (id)_glyphImageForState:(int)arg1;
@@ -57,6 +59,7 @@
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (void)_updateBackgroundForStateChange;
 - (void)_updateEffects;
+- (void)_updateForReduceTransparencyChange;
 - (void)_updateForStateChange;
 - (void)_updateGlyphForStateChange;
 - (void)dealloc;

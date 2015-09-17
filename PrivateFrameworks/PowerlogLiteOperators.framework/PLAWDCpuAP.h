@@ -17,8 +17,6 @@
 @property (retain) PLEntryNotificationOperatorComposition *ioreportEnergyEventCallback;
 @property BOOL isIoreportEnergy;
 @property (retain) PLEntryNotificationOperatorComposition *monitorEventCallback;
-@property PLOperator *operator;
-@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property (retain) NSDate *sleepStartTime;
 @property (retain) PLEntryNotificationOperatorComposition *wakeEventCallback;
 

@@ -5,30 +5,43 @@
 @interface SGContactDetail : NSObject <NSCopying> {
     NSString *_context;
     SGDuplicateKey *_duplicateKey;
+    unsigned int _extractionType;
     NSString *_label;
+    NSString *_normalizedValue;
+    SGRecordId *_recordId;
     NSString *_sourceKey;
+    unsigned int _type;
     NSString *_value;
 }
 
 @property (nonatomic, readonly) NSString *context;
 @property (nonatomic, readonly) SGDuplicateKey *duplicateKey;
+@property (nonatomic, readonly) unsigned int extractionType;
 @property (nonatomic, readonly) NSString *label;
+@property (nonatomic, readonly) NSString *normalizedValue;
+@property (nonatomic, readonly) SGRecordId *recordId;
 @property (nonatomic, readonly) NSString *sourceKey;
+@property (nonatomic, readonly) unsigned int type;
 @property (nonatomic, readonly) NSString *value;
 
-+ (id)contactDetail:(id)arg1 label:(id)arg2 duplicateKey:(id)arg3 sourceKey:(id)arg4 context:(id)arg5;
++ (id)contactDetail:(id)arg1 label:(id)arg2 type:(unsigned int)arg3 recordId:(id)arg4 duplicateKey:(id)arg5 sourceKey:(id)arg6 context:(id)arg7 extractionType:(unsigned int)arg8;
++ (id)contactDetailFromEntity:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)duplicateKey;
+- (unsigned int)extractionType;
 - (unsigned int)hash;
-- (id)initWithValue:(id)arg1 label:(id)arg2 duplicateKey:(id)arg3 sourceKey:(id)arg4 context:(id)arg5;
+- (id)initWithValue:(id)arg1 label:(id)arg2 type:(unsigned int)arg3 recordId:(id)arg4 duplicateKey:(id)arg5 sourceKey:(id)arg6 context:(id)arg7 extractionType:(unsigned int)arg8;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToContactDetail:(id)arg1;
 - (id)label;
 - (id)loadOrigin:(id)arg1;
+- (id)normalizedValue;
+- (id)recordId;
 - (id)sourceKey;
+- (unsigned int)type;
 - (id)value;
 
 @end

@@ -20,6 +20,7 @@
     double _lastUserLocationMatchTimestamp;
     BOOL _matchToRoads;
     double _metersPerPoint;
+    <VKRouteLineObserverProtocol> *_observer;
     VKPolylineOverlay *_overlay;
     VKPolylineOverlayRenderRegion *_renderRegion;
     NSSet *_retainedTiles;
@@ -50,7 +51,9 @@
 @property BOOL hasNewRoadMatches;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL needsUpdate;
+@property (nonatomic) <VKRouteLineObserverProtocol> *observer;
 @property (nonatomic) VKPolylineOverlay *overlay;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{vector<geo::fast_shared_ptr<vk::RouteLineSection>' */ struct  sections; /* unknown property attribute:  std::__1::allocator<geo::fast_shared_ptr<vk::RouteLineSection> > >=^{fast_shared_ptr<vk::RouteLineSection>}}} */
 @property (nonatomic) double simplificationEpsilonPoints;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) struct PolylineCoordinate { unsigned int x1; float x2; }*userLocationIndex;
@@ -71,8 +74,11 @@
 - (BOOL)isTrafficUpToDate;
 - (BOOL)isTrafficUptoDate:(double)arg1;
 - (BOOL)needsUpdate;
+- (id)observer;
 - (id)overlay;
+- (struct vector<geo::fast_shared_ptr<vk::RouteLineSection>, std::__1::allocator<geo::fast_shared_ptr<vk::RouteLineSection> > > { struct fast_shared_ptr<vk::RouteLineSection> {} *x1; struct fast_shared_ptr<vk::RouteLineSection> {} *x2; struct __compressed_pair<geo::fast_shared_ptr<vk::RouteLineSection> *, std::__1::allocator<geo::fast_shared_ptr<vk::RouteLineSection> > > { struct fast_shared_ptr<vk::RouteLineSection> {} *x_3_1_1; } x3; })sections;
 - (void)setHasNewRoadMatches:(BOOL)arg1;
+- (void)setObserver:(id)arg1;
 - (void)setOverlay:(id)arg1;
 - (void)setSimplificationEpsilonPoints:(double)arg1;
 - (double)simplificationEpsilonPoints;

@@ -10,6 +10,8 @@
 @property (nonatomic, readonly) IKAppContext *appContext;
 @property (nonatomic, retain) NSMutableDictionary *managedProperties;
 
++ (void)initialize;
+
 - (void).cxx_destruct;
 - (id)appContext;
 - (id)init;

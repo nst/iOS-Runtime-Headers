@@ -6,6 +6,7 @@
     UIDocumentInteractionController *_documentInteractionController;
 }
 
+- (void).cxx_destruct;
 - (void)_cleanup;
 - (id)activityImage;
 - (id)activityTitle;

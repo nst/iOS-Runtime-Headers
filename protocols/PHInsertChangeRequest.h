@@ -9,6 +9,7 @@
 - (NSManagedObject *)createManagedObjectForInsertIntoPhotoLibrary:(PLPhotoLibrary *)arg1 error:(id*)arg2;
 - (id)initForNewObject;
 - (BOOL)isNew;
+- (void)performTransactionCompletionHandlingInPhotoLibrary:(PLPhotoLibrary *)arg1;
 - (BOOL)validateInsertIntoPhotoLibrary:(PLPhotoLibrary *)arg1 error:(id*)arg2;
 
 @end

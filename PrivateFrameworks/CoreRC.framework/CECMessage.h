@@ -36,6 +36,7 @@
 + (id)giveSystemAudioModeStatusFrom:(unsigned char)arg1 to:(unsigned char)arg2;
 + (id)imageViewOnFrom:(unsigned char)arg1 to:(unsigned char)arg2;
 + (id)inactiveSourceFrom:(unsigned char)arg1 to:(unsigned char)arg2 physicalAddress:(unsigned short)arg3;
++ (id)menuStatus:(unsigned char)arg1 from:(unsigned char)arg2 to:(unsigned char)arg3;
 + (id)messageWithFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg1;
 + (id)playWithMode:(unsigned char)arg1 from:(unsigned char)arg2 to:(unsigned char)arg3;
 + (id)pollFrom:(unsigned char)arg1 to:(unsigned char)arg2;
@@ -73,6 +74,7 @@
 - (BOOL)parseFeatureAbortOpcode:(char *)arg1 reason:(unsigned char*)arg2;
 - (BOOL)parseGiveDeckStatusRequest:(unsigned char*)arg1;
 - (BOOL)parseInactiveSourcePhysicalAddress:(unsigned int*)arg1;
+- (BOOL)parseMenuRequest:(unsigned char*)arg1;
 - (BOOL)parsePlayMode:(unsigned int*)arg1;
 - (BOOL)parseReportPhysicalAddress:(unsigned int*)arg1 deviceType:(unsigned int*)arg2;
 - (BOOL)parseReportPowerStatus:(unsigned int*)arg1;

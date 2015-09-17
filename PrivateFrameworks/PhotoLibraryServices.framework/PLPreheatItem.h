@@ -24,9 +24,9 @@
 }
 
 @property (nonatomic, readonly) BOOL CPLPrefetching;
-@property (nonatomic, readonly) NSObject<OS_dispatch_group> *CPLPrefetchingWaitGroup;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_group> *CPLPrefetchingWaitGroup;
 @property BOOL CPLPrefetchingWasCancelled;
-@property (nonatomic, readonly) NSString *assetUUID;
+@property (nonatomic, readonly, copy) NSString *assetUUID;
 @property (nonatomic) int bestFormat;
 @property BOOL didCompleteCPLPrefetchingWithSuccessOrError;
 @property (nonatomic, readonly) int format;

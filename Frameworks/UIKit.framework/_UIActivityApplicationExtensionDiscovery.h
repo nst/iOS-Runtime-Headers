@@ -16,6 +16,7 @@
 @property BOOL performsInitialMatching;
 @property (nonatomic) BOOL sourceIsManaged;
 
+- (void).cxx_destruct;
 - (id)activitiesMatchingInputItems:(id)arg1 error:(id*)arg2 updateBlock:(id /* block */)arg3;
 - (void)cancelUpdatesIfNeeded;
 - (void)dealloc;

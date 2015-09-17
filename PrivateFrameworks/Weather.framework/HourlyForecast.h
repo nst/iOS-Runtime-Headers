@@ -20,9 +20,9 @@
 
 + (int)TimeValueFromString:(id)arg1;
 
+- (void).cxx_destruct;
 - (int)conditionCode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)detail;
 - (unsigned int)eventType;

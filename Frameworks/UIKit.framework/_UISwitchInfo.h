@@ -18,7 +18,7 @@
     UIView *rightEdgeView;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)setMinimumTrackImage:(id)arg1 forStates:(unsigned int)arg2;
 
 @end

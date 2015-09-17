@@ -5,7 +5,7 @@
 @interface MusicStoreQueueFeeder : MPQueueFeeder <MPShuffleControllerDataSource, MPStoreAVItemDownloadMetadataConsuming> {
     MusicEntityValueContext *_containerEntityValueContext;
     unsigned int _feederRevisionID;
-    BOOL _hasValidContainerEntityValueContext;
+    MusicStorePlaybackContext *_pendingLoadPlaybackContext;
     MPPlaceholderAVItem *_placeholderAVItem;
     BOOL _shouldIgnoreEntityProviderInvalidationForContentsChange;
     MPShuffleController *_shuffleController;
@@ -19,9 +19,11 @@
 @property (readonly) Class superclass;
 
 + (id)_operationQueue;
++ (BOOL)supportsStateRestoration;
 
 - (void).cxx_destruct;
 - (id)MPU_contentItemIdentifierCollection;
+- (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_configurePlaceholderItem;
 - (BOOL)_hasPlaceholderItemAtIndex:(unsigned int)arg1;
 - (BOOL)_reloadStoreMetadataContexts;
@@ -33,19 +35,20 @@
 - (BOOL)canSkipToPreviousItem;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)errorResolverForItem:(id)arg1;
 - (BOOL)hasValidItemAtIndex:(unsigned int)arg1;
 - (id)identifierAtIndex:(unsigned int)arg1;
 - (unsigned int)indexOfItemWithIdentifier:(id)arg1;
 - (unsigned int)indexOfMediaItem:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (unsigned int)initialPlaybackQueueDepthForStartingIndex:(unsigned int)arg1;
 - (Class)itemClass;
 - (unsigned int)itemCount;
 - (unsigned int)itemCountForShuffleController:(id)arg1;
 - (unsigned int)itemTypeForIndex:(unsigned int)arg1;
 - (id)mediaItemAtIndex:(unsigned int)arg1;
-- (int)playbackMode;
 - (BOOL)playerPreparesItemsForPlaybackAsynchronously;
 - (unsigned int)realRepeatType;
 - (unsigned int)realShuffleType;

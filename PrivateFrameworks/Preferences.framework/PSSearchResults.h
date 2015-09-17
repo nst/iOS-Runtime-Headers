@@ -16,12 +16,12 @@
 @property (nonatomic, copy) id /* block */ sectionComparator;
 @property (nonatomic) BOOL treatSectionEntriesAsRegularEntries;
 
+- (void).cxx_destruct;
 - (id)_initForCopyWithSectionEntries:(id)arg1 entriesBySection:(id)arg2 explicitlyAddedSectionEntries:(id)arg3;
 - (void)addEntries:(id)arg1;
 - (void)addEntry:(id)arg1;
 - (id)allSectionEntries;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)entriesInSectionAtIndex:(unsigned int)arg1;
 - (id)entryAtIndexPath:(id)arg1;

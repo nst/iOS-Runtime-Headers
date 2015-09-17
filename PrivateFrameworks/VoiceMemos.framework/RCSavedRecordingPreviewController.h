@@ -20,8 +20,7 @@
 - (id)compositionController;
 - (double)currentTime;
 - (void)pause;
-- (void)playOrRestart;
-- (void)playWithTimeRange:(struct { double x1; double x2; })arg1 startTime:(double)arg2;
+- (void)playWithTimeRange:(struct { double x1; double x2; })arg1 startTime:(double)arg2 playbackContextName:(id)arg3;
 - (struct { double x1; double x2; })playableTimeRange;
 - (void)playerCurrentRateDidChange:(id)arg1;
 - (void)setCompositionController:(id)arg1;

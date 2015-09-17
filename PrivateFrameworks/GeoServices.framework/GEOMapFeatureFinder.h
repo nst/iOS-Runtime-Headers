@@ -20,7 +20,6 @@
 @property (nonatomic, copy) id /* block */ polygonHandler;
 @property (nonatomic, copy) id /* block */ roadHandler;
 
-- (id).cxx_construct;
 - (void)_pickRoadInTile:(id)arg1 tileRect:(const struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; }*)arg2 localPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg3;
 - (void)cancel;
 - (void)dealloc;

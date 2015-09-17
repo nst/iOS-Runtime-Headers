@@ -25,6 +25,7 @@
 @property (nonatomic) _UIFlowLayoutRow *rowObject;
 @property (nonatomic) _UIFlowLayoutSection *section;
 
+- (void).cxx_destruct;
 - (id)copy;
 - (BOOL)isPositionEstimated;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })itemFrame;

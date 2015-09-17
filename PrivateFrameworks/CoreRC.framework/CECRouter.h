@@ -15,7 +15,9 @@
 
 + (id)routerWithSinkInterface:(id)arg1;
 
+- (void)dealloc;
 - (id)initWithSinkInterface:(id)arg1;
+- (void)interface:(id)arg1 hibernationChanged:(BOOL)arg2;
 - (void)interface:(id)arg1 receivedFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg2;
 - (BOOL)interface:(id)arg1 sendFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg2 withRetryCount:(unsigned char)arg3 error:(id*)arg4;
 - (BOOL)interface:(id)arg1 setAddressMask:(unsigned short)arg2 error:(id*)arg3;

@@ -12,13 +12,13 @@
     BOOL _importingSelection;
 }
 
-@property (nonatomic, readonly) NSIndexSet *completedIndexes;
-@property (nonatomic, readonly) NSIndexSet *errorIndexes;
+@property (nonatomic, readonly, retain) NSIndexSet *completedIndexes;
+@property (nonatomic, readonly, retain) NSIndexSet *errorIndexes;
 @property (nonatomic) BOOL importComplete;
-@property (nonatomic, readonly) NSIndexSet *importIndexes;
+@property (nonatomic, readonly, retain) NSIndexSet *importIndexes;
 @property (nonatomic) BOOL importStopped;
 @property (nonatomic) BOOL importingSelection;
-@property (nonatomic, readonly) NSIndexSet *inProgressIndexes;
+@property (nonatomic, readonly, retain) NSIndexSet *inProgressIndexes;
 
 - (BOOL)_isImportCompleteForIndex:(unsigned int)arg1;
 - (void)addIndexToImport:(unsigned int)arg1;

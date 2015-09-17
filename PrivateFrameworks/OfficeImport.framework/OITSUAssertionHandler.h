@@ -2,16 +2,10 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface OITSUAssertionHandler : NSAssertionHandler
+@interface OITSUAssertionHandler : NSObject
 
-+ (id)currentHandler;
-+ (void)installAsNSHandler;
++ (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(int)arg3 description:(id)arg4;
++ (void)logBacktrace;
 + (id)performBlockIgnoringAssertions:(id /* block */)arg1;
-+ (void)testCaseStarted:(id)arg1;
-+ (void)testCaseStopped:(id)arg1;
-
-- (void)handleFailureInFunction:(id)arg1 file:(id)arg2 lineNumber:(int)arg3 description:(id)arg4;
-- (void)handleFailureInMethod:(SEL)arg1 object:(id)arg2 file:(id)arg3 lineNumber:(int)arg4 description:(id)arg5;
-- (void)handleFailureWithLocation:(id)arg1 file:(id)arg2 lineNumber:(int)arg3 description:(id)arg4 arguments:(void*)arg5;
 
 @end

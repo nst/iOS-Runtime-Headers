@@ -12,7 +12,6 @@
 
 - (void).cxx_destruct;
 - (id)basebandTimeNotification;
-- (id)currentBasebandTimeAndLatency;
 - (id)currentTime;
 - (void)dealloc;
 - (BOOL)followupCurrentTimeRunning;

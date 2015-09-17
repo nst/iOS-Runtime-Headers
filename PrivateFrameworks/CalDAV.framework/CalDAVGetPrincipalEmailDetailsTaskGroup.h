@@ -16,10 +16,10 @@
 @property (nonatomic, retain) NSURL *principalURL;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_finishWithError:(id)arg1;
 - (void)_processPropFind:(id)arg1;
 - (id)addresses;
-- (void)dealloc;
 - (id)displayName;
 - (id)initWithAccountInfoProvider:(id)arg1 principalURL:(id)arg2 taskManager:(id)arg3;
 - (id)principalResult;

@@ -17,7 +17,6 @@
 - (id)inputImage;
 - (id)inputRectangle;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputRectangle:(id)arg1;
 

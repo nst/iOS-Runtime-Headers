@@ -18,7 +18,7 @@
 @property (nonatomic) unsigned int memoryPersistent;
 @property (nonatomic) unsigned int memoryTransientDeselect;
 @property (nonatomic) unsigned int memoryTransientReset;
-@property AWDNFCTSMStartEvent *metric;
+@property (nonatomic, retain) AWDNFCTSMStartEvent *metric;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *url;
 
@@ -37,7 +37,7 @@
 - (void)setMemoryTransientReset:(unsigned int)arg1;
 - (void)setMetric:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (void)updateTSMTransactionStateWithUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
+- (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 - (id)url;
 
 @end

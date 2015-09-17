@@ -29,6 +29,7 @@
 + (void)setHostBundleID:(id)arg1;
 + (void)setOrderFromPickers:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_extensionValueOfClass:(Class)arg1 forKey:(id)arg2;
 - (id)_ownBundle;
 - (id)_parentApp;
@@ -45,6 +46,7 @@
 - (id)localizedName;
 - (id)nonUIBundle;
 - (id)nonUIIdentifier;
+- (BOOL)pickerEnabledForMode:(unsigned int)arg1 documentTypes:(id)arg2 reason:(id*)arg3;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setExtension:(id)arg1;
 - (void)setNewlyAdded:(BOOL)arg1;

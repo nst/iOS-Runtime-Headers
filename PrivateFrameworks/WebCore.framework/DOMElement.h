@@ -11,6 +11,7 @@
 @property (readonly) int clientTop;
 @property (readonly) int clientWidth;
 @property (readonly) DOMElement *firstElementChild;
+@property (copy) NSString *innerHTML;
 @property (readonly, copy) NSString *innerText;
 @property (readonly) DOMElement *lastElementChild;
 @property (readonly) DOMElement *mf_containingQuoteBlockElement;
@@ -22,6 +23,7 @@
 @property (readonly) DOMElement *offsetParent;
 @property (readonly) int offsetTop;
 @property (readonly) int offsetWidth;
+@property (copy) NSString *outerHTML;
 @property (readonly) DOMElement *previousElementSibling;
 @property (readonly) int scrollHeight;
 @property int scrollLeft;
@@ -36,12 +38,14 @@
 - (id)_getURLAttribute:(id)arg1;
 - (void)blur;
 - (unsigned int)childElementCount;
+- (id)children;
 - (id)classList;
 - (id)className;
 - (int)clientHeight;
 - (int)clientLeft;
 - (int)clientTop;
 - (int)clientWidth;
+- (id)closest:(id)arg1;
 - (id)firstElementChild;
 - (void)focus;
 - (id)getAttribute:(id)arg1;
@@ -57,6 +61,7 @@
 - (BOOL)hasAttribute:(id)arg1;
 - (BOOL)hasAttributeNS:(id)arg1 :(id)arg2;
 - (BOOL)hasAttributeNS:(id)arg1 localName:(id)arg2;
+- (id)innerHTML;
 - (id)innerText;
 - (BOOL)isFocused;
 - (id)lastElementChild;
@@ -67,6 +72,7 @@
 - (id)offsetParent;
 - (int)offsetTop;
 - (int)offsetWidth;
+- (id)outerHTML;
 - (id)previousElementSibling;
 - (id)querySelector:(id)arg1;
 - (id)querySelectorAll:(id)arg1;
@@ -90,6 +96,8 @@
 - (id)setAttributeNode:(id)arg1;
 - (id)setAttributeNodeNS:(id)arg1;
 - (void)setClassName:(id)arg1;
+- (void)setInnerHTML:(id)arg1;
+- (void)setOuterHTML:(id)arg1;
 - (void)setScrollLeft:(int)arg1;
 - (void)setScrollTop:(int)arg1;
 - (int)structuralComplexityContribution;

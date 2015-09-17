@@ -22,18 +22,17 @@
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) CoreDAVLeafItem *summary;
 
+- (void).cxx_destruct;
 - (id)acceptedURL;
 - (id)access;
 - (id)commonName;
 - (int)compare:(id)arg1;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)description;
 - (id)firstName;
 - (id)href;
 - (id)init;
 - (id)initWithHREF:(id)arg1 commonName:(id)arg2 inviteStatus:(int)arg3 access:(int)arg4;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)inviteStatus;
 - (id)lastName;
 - (void)setAcceptedURL:(id)arg1;

@@ -28,6 +28,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *titleToTextConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *topConstraint;
 
+- (void).cxx_destruct;
 - (id)_buttonBackgroundImageForState:(unsigned int)arg1 traits:(id)arg2;
 - (void)_buttonPressed:(id)arg1;
 - (void)_fontSizeDidChange:(id)arg1;

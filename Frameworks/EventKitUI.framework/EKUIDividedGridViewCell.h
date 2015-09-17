@@ -3,6 +3,7 @@
  */
 
 @interface EKUIDividedGridViewCell : UIView {
+    UIColor *_bgColor;
     UITextLabel *_label;
     BOOL _selected;
     EKUIDividedGridViewController *_viewController;
@@ -16,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (id)init;
+- (id)initWithBackgroundColor:(id)arg1;
 - (id)label;
 - (BOOL)selected;
 - (void)setLabel:(id)arg1;

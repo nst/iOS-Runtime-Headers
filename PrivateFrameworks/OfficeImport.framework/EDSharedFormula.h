@@ -23,6 +23,7 @@
 - (int)columnBaseOrOffset;
 - (bool)convertTokensToShared;
 - (void)dealloc;
+- (id)description;
 - (bool)forceNonBaseFormula;
 - (id)init;
 - (id)initWithFormula:(id)arg1;

@@ -20,8 +20,6 @@
 @property (nonatomic, readonly) int passwordType;
 @property (nonatomic, readonly) int pickableRouteType;
 @property (getter=isPicked, nonatomic, readonly) BOOL picked;
-@property (nonatomic, readonly) int rc_audioRouteType;
-@property (nonatomic, readonly) BOOL rc_shouldExpectFaceContact;
 @property (nonatomic, readonly) BOOL requiresPassword;
 @property (nonatomic, readonly) NSString *routeName;
 @property (nonatomic, readonly) int routeSubtype;

@@ -14,6 +14,7 @@
 - (id)collectionInfo;
 - (unsigned int)maximumServerIntId;
 - (unsigned long long)minimumSequenceNumberForServerIntIds:(id)arg1;
+- (id)noteVisibilityTestingForSearchingAccount;
 - (id)notesForGUIDs:(id)arg1;
 - (id)notesForIntegerIds:(id)arg1;
 - (id)notesForServerIds:(id)arg1;

@@ -45,7 +45,6 @@
 - (void)setRetweetAuthor:(id)arg1;
 - (void)setRetweetCount:(int)arg1;
 - (void)setWebAddress:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)webAddress;
 
 @end

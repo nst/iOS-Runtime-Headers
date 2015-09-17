@@ -65,10 +65,10 @@
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)bodyWithRectangleOfSize:(struct CGSize { float x1; float x2; })arg1 center:(struct CGPoint { float x1; float x2; })arg2;
 + (id)bodyWithTexture:(id)arg1 alphaThreshold:(float)arg2 size:(struct CGSize { float x1; float x2; })arg3;
++ (id)bodyWithTexture:(id)arg1 alphaThreshold:(float)arg2 size:(struct CGSize { float x1; float x2; })arg3 accuracy:(float)arg4;
 + (id)bodyWithTexture:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)affectedByGravity;
 - (id)allContactedBodies;

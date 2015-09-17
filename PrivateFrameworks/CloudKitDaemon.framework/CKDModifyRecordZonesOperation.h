@@ -6,8 +6,8 @@
     BOOL _allowDefaultZoneSave;
     id /* block */ _deleteCompletionBlock;
     BOOL _markZonesAsUserPurged;
+    int _maxZoneSaveAttempts;
     int _numZoneSaveAttempts;
-    NSMutableDictionary *_pcsOplockFailureCountByZoneID;
     NSArray *_recordZoneIDsToDelete;
     NSMutableDictionary *_recordZonesByZoneID;
     NSMutableArray *_recordZonesToSave;
@@ -17,8 +17,8 @@
 @property (nonatomic) BOOL allowDefaultZoneSave;
 @property (nonatomic, copy) id /* block */ deleteCompletionBlock;
 @property (nonatomic) BOOL markZonesAsUserPurged;
+@property (nonatomic) int maxZoneSaveAttempts;
 @property (nonatomic) int numZoneSaveAttempts;
-@property (nonatomic, retain) NSMutableDictionary *pcsOplockFailureCountByZoneID;
 @property (nonatomic, retain) NSArray *recordZoneIDsToDelete;
 @property (nonatomic, retain) NSMutableDictionary *recordZonesByZoneID;
 @property (nonatomic, retain) NSMutableArray *recordZonesToSave;
@@ -33,15 +33,16 @@
 - (void)_handleRecordZoneSaved:(id)arg1 responseCode:(id)arg2;
 - (BOOL)_saveZonesToServer;
 - (void)_sendErrorForFailedZones;
+- (unsigned long long)activityStart;
 - (BOOL)allowDefaultZoneSave;
 - (id /* block */)deleteCompletionBlock;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;
 - (BOOL)makeStateTransition;
 - (BOOL)markZonesAsUserPurged;
+- (int)maxZoneSaveAttempts;
 - (id)nameForState:(unsigned int)arg1;
 - (int)numZoneSaveAttempts;
-- (id)pcsOplockFailureCountByZoneID;
 - (id)recordZoneIDsToDelete;
 - (id)recordZonesByZoneID;
 - (id)recordZonesToSave;
@@ -49,8 +50,8 @@
 - (void)setAllowDefaultZoneSave:(BOOL)arg1;
 - (void)setDeleteCompletionBlock:(id /* block */)arg1;
 - (void)setMarkZonesAsUserPurged:(BOOL)arg1;
+- (void)setMaxZoneSaveAttempts:(int)arg1;
 - (void)setNumZoneSaveAttempts:(int)arg1;
-- (void)setPcsOplockFailureCountByZoneID:(id)arg1;
 - (void)setRecordZoneIDsToDelete:(id)arg1;
 - (void)setRecordZonesByZoneID:(id)arg1;
 - (void)setRecordZonesToSave:(id)arg1;

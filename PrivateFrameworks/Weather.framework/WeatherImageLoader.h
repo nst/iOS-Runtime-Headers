@@ -19,9 +19,9 @@
 + (id)conditionImageWithConditionIndex:(int)arg1;
 + (id)sharedImageLoader;
 
+- (void).cxx_destruct;
 - (id)cachedImageForKey:(id)arg1;
 - (id)conditionImagesCache;
-- (void)dealloc;
 - (id)init;
 - (void)setConditionImagesCache:(id)arg1;
 - (void)setImage:(id)arg1 forKey:(id)arg2;

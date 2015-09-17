@@ -5,7 +5,8 @@
 
 @required
 
-- (BOOL)speechSynthesisShouldStartSpeaking:(AFUISpeechSynthesis *)arg1;
+- (BOOL)speechSynthesisConnectionIsRecording:(AFUISpeechSynthesis *)arg1;
 - (void)speechSynthesisWillStartSpeaking:(AFUISpeechSynthesis *)arg1;
+- (void)stopCurrentRecordingForSpeechSynthesis:(AFUISpeechSynthesis *)arg1;
 
 @end

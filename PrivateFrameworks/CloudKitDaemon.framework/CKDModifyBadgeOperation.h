@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDModifyBadgeOperation : CKDDatabaseOperation {
+@interface CKDModifyBadgeOperation : CKDOperation {
     unsigned int _badgeValue;
 }
 
 @property (nonatomic, readonly) unsigned int badgeValue;
 
+- (unsigned long long)activityStart;
 - (unsigned int)badgeValue;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

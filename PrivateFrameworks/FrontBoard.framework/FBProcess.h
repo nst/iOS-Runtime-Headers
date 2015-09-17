@@ -2,32 +2,40 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBProcess : NSObject {
+@interface FBProcess : NSObject <BSDescriptionProviding> {
     NSString *_bundleIdentifier;
     NSObject<OS_dispatch_queue> *_callOutQueue;
     <FBProcessDelegate> *_delegate;
     NSString *_jobLabel;
     NSString *_name;
     NSHashTable *_observers;
+    int _pid;
     BSProcessDeathWatcher *_processDeathObserver;
     NSObject<OS_dispatch_queue> *_queue;
+    BOOL _running;
     FBProcessState *_state;
-    int _unsafe_pid;
     BOOL _updatingState;
     FBWorkspace *_workspace;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
+@property (readonly, copy) NSString *debugDescription;
 @property (getter=_queue_delegate, nonatomic) <FBProcessDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (getter=isForeground, nonatomic, readonly) BOOL foreground;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSString *jobLabel;
 @property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, readonly) int pid;
 @property (getter=_queue_jobLabel, setter=_queue_setJobLabel:, nonatomic, copy) NSString *queue_jobLabel;
 @property (getter=_queue_name, setter=_queue_setName:, nonatomic, copy) NSString *queue_name;
 @property (getter=_queue_pid, setter=_queue_setPid:, nonatomic) int queue_pid;
 @property (getter=_queue_isRunning, setter=_queue_setRunning:, nonatomic) BOOL queue_running;
 @property (getter=_queue_taskState, setter=_queue_setTaskState:, nonatomic) int queue_taskState;
 @property (getter=_queue_visibility, setter=_queue_setVisibility:, nonatomic) int queue_visibility;
+@property (getter=isRunning, nonatomic, readonly) BOOL running;
 @property (nonatomic, readonly, copy) FBProcessState *state;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly, retain) FBWorkspace *workspace;
 
 - (id)_createWorkspace;
@@ -40,6 +48,7 @@
 - (BOOL)_queue_isRunning;
 - (id)_queue_jobLabel;
 - (id)_queue_name;
+- (id)_queue_newWatchdogForContext:(struct { int x1; id x2; })arg1 completion:(id /* block */)arg2;
 - (int)_queue_pid;
 - (void)_queue_processDidExit;
 - (void)_queue_setJobLabel:(id)arg1;
@@ -56,16 +65,24 @@
 - (void)addObserver:(id)arg1;
 - (id)bundleIdentifier;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)initWithBundleID:(id)arg1 pid:(int)arg2 callOutQueue:(id)arg3;
 - (BOOL)isApplicationProcess;
 - (BOOL)isExtensionProcess;
+- (BOOL)isForeground;
+- (BOOL)isRunning;
 - (BOOL)isSystemApplicationProcess;
 - (id)jobLabel;
 - (id)name;
+- (int)pid;
 - (void)removeObserver:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)state;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 - (id)workspace;
 
 @end

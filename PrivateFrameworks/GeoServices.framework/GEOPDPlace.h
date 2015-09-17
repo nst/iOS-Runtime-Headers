@@ -7,11 +7,13 @@
     struct { 
         unsigned int muid : 1; 
         unsigned int preferredMuid : 1; 
+        unsigned int referenceFrame : 1; 
         unsigned int resultProviderId : 1; 
         unsigned int status : 1; 
     } _has;
     unsigned long long _muid;
     unsigned long long _preferredMuid;
+    int _referenceFrame;
     int _resultProviderId;
     int _status;
 }
@@ -19,10 +21,12 @@
 @property (nonatomic, retain) NSMutableArray *components;
 @property (nonatomic) BOOL hasMuid;
 @property (nonatomic) BOOL hasPreferredMuid;
+@property (nonatomic) BOOL hasReferenceFrame;
 @property (nonatomic) BOOL hasResultProviderId;
 @property (nonatomic) BOOL hasStatus;
 @property (nonatomic) unsigned long long muid;
 @property (nonatomic) unsigned long long preferredMuid;
+@property (nonatomic) int referenceFrame;
 @property (nonatomic) int resultProviderId;
 @property (nonatomic) int status;
 
@@ -52,6 +56,7 @@
 - (BOOL)hasExpiredComponentsAsOf:(double)arg1;
 - (BOOL)hasMuid;
 - (BOOL)hasPreferredMuid;
+- (BOOL)hasReferenceFrame;
 - (BOOL)hasResultProviderId;
 - (BOOL)hasStatus;
 - (unsigned int)hash;
@@ -63,15 +68,18 @@
 - (id)phoneNumbers;
 - (unsigned long long)preferredMuid;
 - (BOOL)readFrom:(id)arg1;
+- (int)referenceFrame;
 - (int)resultProviderId;
 - (void)setComponents:(id)arg1;
 - (void)setFirstSeenTimestamp:(double)arg1;
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setHasPreferredMuid:(BOOL)arg1;
+- (void)setHasReferenceFrame:(BOOL)arg1;
 - (void)setHasResultProviderId:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setMuid:(unsigned long long)arg1;
 - (void)setPreferredMuid:(unsigned long long)arg1;
+- (void)setReferenceFrame:(int)arg1;
 - (void)setResultProviderId:(int)arg1;
 - (void)setStatus:(int)arg1;
 - (id)spokenNameForLocale:(id)arg1;

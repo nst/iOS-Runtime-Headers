@@ -53,7 +53,9 @@
 + (id)fetchRequestWithEntityName:(id)arg1;
 + (void)initialize;
 
+- (id)_XPCEncodedFlags;
 - (id)_asyncResultHandle;
+- (id)_copyForDirtyContext;
 - (BOOL)_disablePersistentStoreResultCaching;
 - (void)_incrementInUseCounter;
 - (BOOL)_isEditable;
@@ -61,6 +63,7 @@
 - (void)_resolveEntityWithContext:(id)arg1;
 - (void)_setAsyncResultHandle:(id)arg1;
 - (void)_setDisablePersistentStoreResultCaching:(BOOL)arg1;
+- (void)_setFlagsFromXPCEncoding:(id)arg1;
 - (void)_throwIfNotEditable;
 - (void)_writeIntoData:(id)arg1 propertiesDict:(id)arg2 uniquedPropertyNames:(id)arg3 uniquedStrings:(id)arg4 uniquedData:(id)arg5 uniquedMappings:(id)arg6 entities:(id)arg7;
 - (id)affectedStores;

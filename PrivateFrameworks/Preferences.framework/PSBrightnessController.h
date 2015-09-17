@@ -12,6 +12,7 @@
 
 + (id)sharedController;
 
+- (void).cxx_destruct;
 - (id /* block */)brightnessChangedExternally;
 - (id /* block */)isTracking;
 - (void)setBrightnessChangedExternally:(id /* block */)arg1;

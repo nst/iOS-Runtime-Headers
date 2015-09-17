@@ -14,11 +14,13 @@
 - (id)connections;
 - (id)createConnection;
 - (void)dealloc;
+- (id)generateDeleteStatementsForRequest:(id)arg1 resultObject:(id*)arg2 inContext:(id)arg3 error:(id*)arg4;
 - (id)generateSQLStatmentForSourcesAndOrderKeysForDestination:(id)arg1 inManyToMany:(id)arg2;
 - (id)generateSQLStatmentForSourcesAndOrderKeysForDestination:(id)arg1 inToMany:(id)arg2;
 - (Class)generatorClass;
 - (BOOL)hasOpenConnections;
 - (id)initWithSQLCore:(id)arg1;
+- (id)newConstrainedValuesUpdateStatementWithRow:(id)arg1;
 - (id)newCopyAndInsertStatementForManyToMany:(id)arg1 toManyToMany:(id)arg2 intermediateTableName:(id)arg3 invertColumns:(BOOL)arg4;
 - (id)newCorrelationDeleteStatementForRelationship:(id)arg1;
 - (id)newCorrelationInsertStatementForRelationship:(id)arg1;
@@ -29,6 +31,7 @@
 - (id)newCreateIndexStatementForColumn:(id)arg1;
 - (id)newCreateIndexStatementForColumnWithName:(id)arg1 inTableWithName:(id)arg2;
 - (id)newCreateIndexStatementForColumns:(id)arg1;
+- (id)newCreateIndexStatementForCorrelationTable:(id)arg1;
 - (id)newCreatePrimaryKeyTableStatement;
 - (id)newCreateTableStatementForEntity:(id)arg1;
 - (id)newCreateTableStatementForManyToMany:(id)arg1;

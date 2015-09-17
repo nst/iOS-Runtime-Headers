@@ -22,9 +22,9 @@
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2;
 + (id)componentsFromDateFormatString:(id)arg1 locale:(id)arg2 desiredUnits:(int)arg3;
 
+- (void).cxx_destruct;
 - (id)_initWithFormatString:(id)arg1 calendarUnit:(unsigned int)arg2;
 - (unsigned int)calendarUnit;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)equivalentUnit;
 - (id)formatString;

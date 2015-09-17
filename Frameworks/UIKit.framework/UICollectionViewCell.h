@@ -12,6 +12,7 @@
         unsigned int waitingForSelectionAnimationHalfwayPoint : 1; 
     } _collectionCellFlags;
     UIView *_contentView;
+    int _focusStyle;
     BOOL _highlighted;
     id _highlightingSupport;
     UILongPressGestureRecognizer *_menuGesture;
@@ -24,24 +25,35 @@
 @property (nonatomic, readonly) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=_focusStyle, setter=_setFocusStyle:, nonatomic) int focusStyle;
 @property (readonly) unsigned int hash;
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
 @property (getter=isSelected, nonatomic) BOOL selected;
 @property (nonatomic, retain) UIView *selectedBackgroundView;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (Class)_contentViewClass;
 
+- (void).cxx_destruct;
+- (BOOL)_canFocusProgrammatically;
+- (BOOL)_descendantsShouldHighlight;
 - (void)_descendent:(id)arg1 didMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
-- (void)_focusedViewDidChange:(id)arg1;
+- (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
+- (id)_encodableSubviews;
+- (int)_focusStyle;
 - (BOOL)_forwardsSystemLayoutFittingSizeToContentView:(id)arg1;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_handleMenuGesture:(id)arg1;
+- (BOOL)_highlightDescendantsWhenSelected;
 - (BOOL)_isUsingOldStyleMultiselection;
 - (void)_menuDismissed:(id)arg1;
 - (void)_performAction:(SEL)arg1 sender:(id)arg2;
+- (id)_preferredConfigurationForFocusAnimation:(int)arg1 inContext:(id)arg2;
 - (id)_selectionSegueTemplate;
+- (void)_setFocusStyle:(int)arg1;
 - (void)_setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setOpaque:(BOOL)arg1 forSubview:(id)arg2;
 - (void)_setSelected:(BOOL)arg1 animated:(BOOL)arg2;
@@ -72,8 +84,11 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setSelected:(BOOL)arg1;
 - (void)setSelectedBackgroundView:(id)arg1;
-- (BOOL)shouldChangeFocusedItem:(id)arg1 heading:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })systemLayoutSizeFittingSize:(struct CGSize { float x1; float x2; })arg1 withHorizontalFittingPriority:(float)arg2 verticalFittingPriority:(float)arg3;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
+- (void)unloadExpensiveViews;
 
 @end

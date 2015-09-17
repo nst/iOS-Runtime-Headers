@@ -43,12 +43,13 @@
 
 - (void)_addPassphraseViewControllerToHierarchy:(id)arg1 withCompletion:(id /* block */)arg2;
 - (int)_authenticatorPolicy;
-- (void)_authorizeTransactionWithCredential:(id)arg1;
+- (void)_authorizePayment:(id)arg1;
 - (void)_createSubviews;
 - (void)_didAuthorizePaymentWithToken:(id)arg1;
 - (void)_didCancelWithParam:(id)arg1;
 - (void)_didFailWithError:(id)arg1;
 - (void)_didFailWithFatalError:(id)arg1;
+- (void)_didSelectPaymentPass:(id)arg1;
 - (void)_didSelectShippingAddress:(id)arg1;
 - (void)_didSelectShippingMethod:(id)arg1;
 - (void)_didSucceed;
@@ -69,7 +70,8 @@
 - (void)_resumeWithNextState;
 - (void)_rewrapPayment:(id)arg1;
 - (void)_selectOptionsForDataItem:(id)arg1;
-- (void)_setupWithPaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2;
+- (void)_setupWithPaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 andApplicationIdentifier:(id)arg3;
+- (void)_simulatePayment;
 - (void)_startEvaluation;
 - (void)_suspendAuthentication;
 - (Class)_tableViewClassForDataItem:(id)arg1;
@@ -85,6 +87,7 @@
 - (void)authenticatorDidEncounterFingerOn:(id)arg1;
 - (void)authenticatorDidEncounterMatchMiss:(id)arg1;
 - (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
+- (void)authorizationDidSelectPaymentMethodCompleteWithPaymentSummaryItems:(id)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;
 - (void)authorizationDidSelectShippingMethodCompleteWithStatus:(int)arg1 paymentSummaryItems:(id)arg2;
 - (void)cancelPressed:(id)arg1;
@@ -95,7 +98,7 @@
 - (void)handleHostApplicationDidBecomeActive;
 - (void)handleHostApplicationDidCancel;
 - (void)handleHostApplicationWillResignActive:(BOOL)arg1;
-- (id)handlePaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2;
+- (id)handlePaymentRequest:(id)arg1 fromAppWithLocalizedName:(id)arg2 andApplicationIdentifier:(id)arg3;
 - (id)initWithLayout:(id)arg1;
 - (id)model;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;

@@ -26,6 +26,7 @@
 - (id)displayName;
 - (id)initWithOption:(id)arg1;
 - (BOOL)isDVS;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isMainProgram;
 - (id)option;
 - (void)setDisplayName:(id)arg1;

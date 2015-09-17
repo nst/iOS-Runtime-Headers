@@ -12,8 +12,7 @@
     struct { 
         unsigned int _directionState : 2; 
         unsigned int _drawsOutside : 1; 
-        unsigned int _isLineArray : 1; 
-        unsigned int _reserved : 28; 
+        unsigned int _reserved : 29; 
     } _flags;
     struct _NSRange { 
         unsigned int location; 
@@ -41,6 +40,7 @@
 - (void)justifyWithFactor:(float)arg1;
 - (void)layoutForStartingGlyphAtIndex:(unsigned int)arg1 characterIndex:(unsigned int)arg2 minPosition:(float)arg3 maxPosition:(float)arg4 lineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg5;
 - (float)lineWidthForType:(int)arg1;
+- (void)resolveOpticalAlignmentUpdatingMinPosition:(float*)arg1 maxPosition:(float*)arg2;
 - (int)resolvedLineBreakMode:(BOOL)arg1;
 - (void)saveMorphedGlyphs:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1;
 - (void)saveWithGlyphOrigin:(float)arg1;

@@ -108,4 +108,10 @@
 - (unsigned int)_accessibilityUnsignedIntegerValueForKey:(id)arg1;
 - (id)_accessibilityValueForKey:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (BOOL)ICLogging_isLoggingEnabledAtLevel:(int)arg1;
+
+- (BOOL)ICLogging_isLoggingEnabledAtLevel:(int)arg1;
+
 @end

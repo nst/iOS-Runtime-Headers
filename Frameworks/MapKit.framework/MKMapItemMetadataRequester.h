@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKMapItemMetadataRequester : NSObject <NSURLConnectionDelegate> {
+@interface MKMapItemMetadataRequester : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate, NSURLSessionTaskDelegate> {
     ACAccountStore *_accountStore;
-    NSMapTable *_connectionsForURLs;
-    NSMapTable *_dataForConnections;
+    NSMapTable *_dataForTasks;
     BOOL _hasCheckedYelpAccountCredentials;
     NSMapTable *_requestsForURLs;
+    NSURLSession *_session;
     OAURLRequestSigner *_signer;
+    NSMapTable *_tasksForURLs;
     ACAccountCredential *_yelpAccountCredentials;
 }
 
@@ -22,14 +23,13 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (id)accountStore;
 - (void)accountStoreDidChange:(id)arg1;
 - (void)cancelRequestsForMapItem:(id)arg1;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
 - (void)dealloc;
-- (void)handleConnection:(id)arg1 withData:(id)arg2 error:(id)arg3;
+- (void)handleTask:(id)arg1 withData:(id)arg2 error:(id)arg3;
 - (id)init;
 - (void)sendRequest:(id)arg1;
 - (id)signer;

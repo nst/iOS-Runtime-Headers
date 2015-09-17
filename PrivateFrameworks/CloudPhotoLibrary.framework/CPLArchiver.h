@@ -9,8 +9,10 @@
     id _rootObject;
 }
 
+@property (nonatomic, retain) id archiveCursor;
 @property (nonatomic, readonly) BOOL forDisplay;
 
++ (void)_initializeSmallKeyMapping;
 + (id)archivedDataWithRootObject:(id)arg1;
 + (id)archivedDataWithRootObject:(id)arg1 usingBlock:(id /* block */)arg2;
 + (id)archivedPropertyListWithRootObject:(id)arg1;
@@ -21,6 +23,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)allowsKeyedCoding;
+- (id)archiveCursor;
 - (id)archivedPropertyList;
 - (BOOL)containsValueForKey:(id)arg1;
 - (void)decodeArrayOfObjCType:(const char *)arg1 count:(unsigned int)arg2 at:(void*)arg3;
@@ -71,6 +74,7 @@
 - (id)initWithRootObject:(id)arg1 forDisplay:(BOOL)arg2 block:(id /* block */)arg3;
 - (struct _NSZone { }*)objectZone;
 - (id)rootObject;
+- (void)setArchiveCursor:(id)arg1;
 - (void)setObjectZone:(struct _NSZone { }*)arg1;
 
 @end

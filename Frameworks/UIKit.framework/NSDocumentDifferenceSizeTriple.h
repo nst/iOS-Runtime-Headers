@@ -12,9 +12,9 @@
 @property (nonatomic, readonly) NSDocumentDifferenceSize *betweenPreviousSavingAndSaving;
 @property (nonatomic, readonly) NSDocumentDifferenceSize *dueToRecentChangesBeforeSaving;
 
+- (void).cxx_destruct;
 - (id)betweenPreservingPreviousVersionAndSaving;
 - (id)betweenPreviousSavingAndSaving;
-- (void)dealloc;
 - (id)description;
 - (id)dueToRecentChangesBeforeSaving;
 - (id)init;

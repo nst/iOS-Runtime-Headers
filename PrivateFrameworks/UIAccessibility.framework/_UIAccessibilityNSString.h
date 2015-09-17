@@ -4,7 +4,7 @@
 
 @interface _UIAccessibilityNSString : ___UIAccessibilityNSString_super
 
-+ (Class)safeCategoryTargetClass;
++ (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
 - (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 withAttributes:(id)arg2;

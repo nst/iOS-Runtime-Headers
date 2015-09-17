@@ -16,6 +16,12 @@
         long long epoch; 
     } _movieFragmentInterval;
     int _movieTimeScale;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } _overallDurationHint;
     float _preferredRate;
     struct CGAffineTransform { 
         float a; 
@@ -37,6 +43,7 @@
 @property (nonatomic, copy) NSArray *metadataItems;
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } movieFragmentInterval;
 @property (nonatomic) int movieTimeScale;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } overallDurationHint;
 @property (nonatomic) float preferredRate;
 @property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } preferredTransform;
 @property (nonatomic) float preferredVolume;
@@ -51,6 +58,7 @@
 - (id)metadataItems;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })movieFragmentInterval;
 - (int)movieTimeScale;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })overallDurationHint;
 - (float)preferredRate;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;
 - (float)preferredVolume;
@@ -61,6 +69,7 @@
 - (void)setMetadataItems:(id)arg1;
 - (void)setMovieFragmentInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMovieTimeScale:(int)arg1;
+- (void)setOverallDurationHint:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setPreferredRate:(float)arg1;
 - (void)setPreferredTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setPreferredVolume:(float)arg1;

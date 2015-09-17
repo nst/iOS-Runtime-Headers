@@ -20,11 +20,13 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_alongsideAnimationViews;
 - (id)_alongsideAnimations;
 - (id)_alongsideAnimations:(BOOL)arg1;
 - (id)_alongsideCompletions;
 - (id)_alongsideCompletions:(BOOL)arg1;
+- (BOOL)_animateAlongsideTransitionInView:(id)arg1 systemCompletion:(BOOL)arg2 animation:(id /* block */)arg3 completion:(id /* block */)arg4;
 - (void)_applyBlocks:(id)arg1 releaseBlocks:(id /* block */)arg2;
 - (id)_interactiveChangeHandlers;
 - (id)_interactiveChangeHandlers:(BOOL)arg1;
@@ -40,7 +42,6 @@
 - (int)completionCurve;
 - (float)completionVelocity;
 - (id)containerView;
-- (void)dealloc;
 - (void)handlerToInvokeOnInteractivityChanges:(id /* block */)arg1;
 - (id)initWithMainContext:(id)arg1;
 - (BOOL)initiallyInteractive;

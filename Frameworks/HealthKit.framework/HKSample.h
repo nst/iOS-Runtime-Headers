@@ -2,26 +2,34 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKSample : HKObject {
-    NSDate *_endDate;
+@interface HKSample : HKObject <HKTimePeriod> {
+    double _endTimestamp;
     HKSampleType *_sampleType;
-    NSDate *_startDate;
+    double _startTimestamp;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (readonly) NSDate *endDate;
+@property (getter=_endTimestamp, setter=_setEndTimestamp:, nonatomic) double endTimestamp;
+@property (readonly) unsigned int hash;
 @property (readonly) HKSampleType *sampleType;
 @property (readonly) NSDate *startDate;
+@property (getter=_startTimestamp, setter=_setStartTimestamp:, nonatomic) double startTimestamp;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)_newSampleWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 metadata:(id)arg4 config:(id /* block */)arg5;
-+ (id)_sampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 sampleType:(id)arg5 startDate:(id)arg6 endDate:(id)arg7;
++ (id)_newSampleWithType:(id)arg1 startDate:(double)arg2 endDate:(double)arg3 device:(id)arg4 metadata:(id)arg5 config:(id /* block */)arg6;
++ (id)_sampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(double)arg4 sampleType:(id)arg5 startDate:(double)arg6 endDate:(double)arg7;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_setEndDate:(id)arg1;
+- (double)_endTimestamp;
+- (void)_setEndTimestamp:(double)arg1;
 - (void)_setSampleType:(id)arg1;
-- (void)_setStartDate:(id)arg1;
+- (void)_setStartTimestamp:(double)arg1;
+- (double)_startTimestamp;
 - (id)_validateConfiguration;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -32,7 +40,15 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
++ (id)hd_sampleTypesForObjects:(id)arg1;
+
 - (id)codableRepresentationForSync;
 - (int)entityType;
+- (id)hd_associatedSampleTypes;
+- (id)hd_sampleType;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
+- (id)hk_timePeriods;
 
 @end

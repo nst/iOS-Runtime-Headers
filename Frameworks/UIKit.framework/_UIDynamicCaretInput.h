@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDynamicCaretInput : UIView <UIKBHandwritingStrokeEnabled> {
+@interface _UIDynamicCaretInput : UIView {
     TIHandwritingStrokes *_accumulatedStrokes;
     struct CGContext { } *_bitmapContext;
     UIDelayedAction *_committedAction;
@@ -30,9 +30,9 @@
 @property (nonatomic, retain) _UIDynamicCaretDot *dotView;
 @property (nonatomic, retain) NSTimer *fadeTimer;
 @property (nonatomic, readonly) BOOL hasInk;
-@property (nonatomic, readonly) float inkWidth;
 @property (nonatomic, readonly) BOOL isInking;
 
+- (void).cxx_destruct;
 - (void)_fadeInk;
 - (id)accumulatedStrokes;
 - (void)addInkPoint:(struct CGPoint { float x1; float x2; })arg1 fromLastPoint:(BOOL)arg2;

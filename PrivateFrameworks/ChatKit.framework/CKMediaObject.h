@@ -15,8 +15,8 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int mediaType;
 @property (nonatomic, readonly, copy) NSString *mimeType;
-@property (readonly) NSString *previewItemTitle;
-@property (readonly) NSURL *previewItemURL;
+@property (nonatomic, readonly) NSString *previewItemTitle;
+@property (nonatomic, readonly) NSURL *previewItemURL;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSDictionary *transcoderUserInfo;
 @property (nonatomic, retain) <CKFileTransfer> *transfer;
@@ -37,9 +37,10 @@
 - (Class)balloonViewClassForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)bbPreviewFillToSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })bbSize;
+- (void)cacheAndPersistPreview:(id)arg1 orientation:(BOOL)arg2;
 - (BOOL)canExport;
 - (Class)coloredBalloonViewClass;
-- (id)composeImages;
+- (id)composeImagesForEntryContentViewWidth:(float)arg1;
 - (id)data;
 - (void)dealloc;
 - (id)description;
@@ -55,7 +56,9 @@
 - (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
 - (id)icon;
 - (id)initWithTransfer:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isPreviewable;
+- (BOOL)isPromisedItem;
 - (id)location;
 - (int)mediaType;
 - (id)mimeType;
@@ -70,6 +73,7 @@
 - (id)savedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (void)setTransfer:(id)arg1;
 - (BOOL)shouldBeQuickLooked;
+- (BOOL)shouldBeQuickLookedFromEntryView;
 - (BOOL)shouldShowDisclosure;
 - (BOOL)shouldShowViewer;
 - (id)subtitle;

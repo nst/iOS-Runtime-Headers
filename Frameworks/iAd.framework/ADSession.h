@@ -22,7 +22,6 @@
 + (id)sharedInstance;
 
 - (void)_appDidBecomeActive;
-- (void)_appWillResignActive;
 - (id)_linkedOnVersion;
 - (void)_remote_heartbeatTokenDidChange:(id)arg1 expirationDate:(double)arg2 error:(id)arg3;
 - (void)_remote_policyEngineDidIdleDisable;
@@ -31,6 +30,7 @@
 - (id)adSheetMachServiceName;
 - (id)adSpaces;
 - (void)addClientToSegments:(id)arg1 replaceExisting:(BOOL)arg2;
+- (void)addClientToSegments:(id)arg1 replaceExisting:(BOOL)arg2 privateSegment:(BOOL)arg3;
 - (id)additionalAdSheetLaunchOptions;
 - (BOOL)applicationCanReceiveBackgroundAds;
 - (int)classicUnavailableToken;
@@ -41,6 +41,10 @@
 - (void)lookupAdConversionDetails:(id /* block */)arg1;
 - (void)performWhenConnected:(id /* block */)arg1;
 - (void)registerAdSpace:(id)arg1;
+- (void)reportPrerollRequest;
+- (void)requestAdsForContext:(id)arg1 creativeTypes:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)requestAdsForContext:(id)arg1 serverURL:(id)arg2 creativeTypes:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)requestAttributionDetailsWithBlock:(id /* block */)arg1;
 - (id)rpcProxy;
 - (id)rpcProxyWithErrorHandler:(id /* block */)arg1;
 - (void)setAdSpaces:(id)arg1;

@@ -5,6 +5,7 @@
 @interface ML3DatabaseImport : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSFileHandle *_fileHandle;
     unsigned int _homeSharingBasePlaylistID;
+    BOOL _isServerImport;
     NSString *_libraryPath;
     BOOL _pendingMatch;
     NSData *_playlistData;
@@ -14,12 +15,14 @@
     BOOL _sagaEnabled;
     long long _storeAccountID;
     NSString *_syncAnchor;
+    NSString *_syncLibraryID;
     NSData *_trackData;
     BOOL _tracksAreLibraryOwnedContent;
 }
 
 @property (nonatomic, readonly) NSFileHandle *fileHandle;
 @property (nonatomic, readonly) unsigned int homeSharingBasePlaylistID;
+@property (nonatomic, readonly) BOOL isServerImport;
 @property (nonatomic, readonly) NSString *libraryPath;
 @property (getter=isPendingMatch, nonatomic, readonly) BOOL pendingMatch;
 @property (nonatomic, readonly) NSData *playlistData;
@@ -29,6 +32,7 @@
 @property (getter=isSagaEnabled, nonatomic, readonly) BOOL sagaEnabled;
 @property (nonatomic, readonly) long long storeAccountID;
 @property (nonatomic, readonly) NSString *syncAnchor;
+@property (nonatomic, readonly) NSString *syncLibraryID;
 @property (nonatomic, readonly) NSData *trackData;
 @property (nonatomic, readonly) BOOL tracksAreLibraryOwnedContent;
 
@@ -37,6 +41,7 @@
 - (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 usingConcreteClass:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fileHandle;
 - (unsigned int)homeSharingBasePlaylistID;
@@ -46,6 +51,7 @@
 - (BOOL)isPendingMatch;
 - (BOOL)isResetSync;
 - (BOOL)isSagaEnabled;
+- (BOOL)isServerImport;
 - (id)libraryPath;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)playlistData;
@@ -53,6 +59,7 @@
 - (long long)preferredVideoQuality;
 - (long long)storeAccountID;
 - (id)syncAnchor;
+- (id)syncLibraryID;
 - (id)trackData;
 - (BOOL)tracksAreLibraryOwnedContent;
 

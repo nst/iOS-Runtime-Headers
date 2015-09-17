@@ -2,17 +2,10 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLCloudPruneOperation : PLCloudOperation {
-    BOOL _cancelled;
-}
+@interface PLCloudPruneOperation : PLCloudOperation
 
-- (id)_cloudResourceForCPLResource:(id)arg1 inPhotoLibrary:(id)arg2 outAssetsAffected:(id)arg3;
 - (void)_resetCloudPlaceholderKindForAsset:(id)arg1;
-- (BOOL)canPruneResource;
-- (unsigned int)cost;
-- (BOOL)keepOriginalsEnabled;
-- (void)markAsNotLocallyAvailable;
-- (void)requestCancel;
-- (void)runOperationWithCompletionHandler:(id /* block */)arg1;
+- (void)executeWithRemoteLibrary:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (id)initWithCPLResource:(id)arg1 assetUuid:(id)arg2 filePath:(id)arg3;
 
 @end

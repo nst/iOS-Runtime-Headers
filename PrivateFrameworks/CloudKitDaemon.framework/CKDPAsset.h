@@ -9,8 +9,10 @@
     NSString *_downloadBaseURL;
     NSData *_downloadRequest;
     NSString *_downloadToken;
+    long long _downloadTokenExpiration;
     long long _downloadURLExpiration;
     struct { 
+        unsigned int downloadTokenExpiration : 1; 
         unsigned int downloadURLExpiration : 1; 
         unsigned int size : 1; 
     } _has;
@@ -31,6 +33,7 @@
 @property (nonatomic, retain) NSString *downloadBaseURL;
 @property (nonatomic, retain) NSData *downloadRequest;
 @property (nonatomic, retain) NSString *downloadToken;
+@property (nonatomic) long long downloadTokenExpiration;
 @property (nonatomic) long long downloadURLExpiration;
 @property (nonatomic, readonly) BOOL hasContentBaseURL;
 @property (nonatomic, readonly) BOOL hasData;
@@ -38,6 +41,7 @@
 @property (nonatomic, readonly) BOOL hasDownloadBaseURL;
 @property (nonatomic, readonly) BOOL hasDownloadRequest;
 @property (nonatomic, readonly) BOOL hasDownloadToken;
+@property (nonatomic) BOOL hasDownloadTokenExpiration;
 @property (nonatomic) BOOL hasDownloadURLExpiration;
 @property (nonatomic, readonly) BOOL hasHeader;
 @property (nonatomic, readonly) BOOL hasOwner;
@@ -69,6 +73,7 @@
 - (id)downloadBaseURL;
 - (id)downloadRequest;
 - (id)downloadToken;
+- (long long)downloadTokenExpiration;
 - (long long)downloadURLExpiration;
 - (BOOL)hasContentBaseURL;
 - (BOOL)hasData;
@@ -76,6 +81,7 @@
 - (BOOL)hasDownloadBaseURL;
 - (BOOL)hasDownloadRequest;
 - (BOOL)hasDownloadToken;
+- (BOOL)hasDownloadTokenExpiration;
 - (BOOL)hasDownloadURLExpiration;
 - (BOOL)hasHeader;
 - (BOOL)hasOwner;
@@ -102,7 +108,9 @@
 - (void)setDownloadBaseURL:(id)arg1;
 - (void)setDownloadRequest:(id)arg1;
 - (void)setDownloadToken:(id)arg1;
+- (void)setDownloadTokenExpiration:(long long)arg1;
 - (void)setDownloadURLExpiration:(long long)arg1;
+- (void)setHasDownloadTokenExpiration:(BOOL)arg1;
 - (void)setHasDownloadURLExpiration:(BOOL)arg1;
 - (void)setHasSize:(BOOL)arg1;
 - (void)setHeader:(id)arg1;

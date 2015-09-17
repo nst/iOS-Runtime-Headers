@@ -11,6 +11,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
+- (void)__apply:(int (*)arg1 context:(void*)arg2;
 - (double)_clumpingFactor;
 - (double)_clumpingInterestingThreshold;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

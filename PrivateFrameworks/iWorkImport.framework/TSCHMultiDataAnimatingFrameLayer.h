@@ -22,7 +22,6 @@
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } presentationBounds;
 @property (nonatomic) struct CGPoint { float x1; float x2; } presentationPosition;
 
-- (id).cxx_construct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })currentFrame;
 - (id)init;
 - (id)initWithLayer:(id)arg1;

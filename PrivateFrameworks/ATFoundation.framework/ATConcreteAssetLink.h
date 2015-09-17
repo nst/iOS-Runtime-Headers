@@ -6,7 +6,7 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     <ATAssetLinkDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_fileIOQueue;
-    <ATMessageLink> *_messageLink;
+    ATMessageLink *_messageLink;
     BOOL _open;
     NSMutableArray *_outstandingAssets;
     int _pendingWriteAmount;

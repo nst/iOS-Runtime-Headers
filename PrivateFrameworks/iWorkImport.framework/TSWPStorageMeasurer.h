@@ -60,7 +60,6 @@
 @property (nonatomic, readonly) int verticalAlignment;
 @property (nonatomic, readonly) BOOL wantsLineFragments;
 
-- (id).cxx_construct;
 - (void)addAttachmentLayout:(id)arg1;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
 - (BOOL)alwaysStartsNewTarget;

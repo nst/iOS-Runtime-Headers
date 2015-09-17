@@ -5,9 +5,9 @@
 @interface AXVisualAlertSBLockScreenNotificationListController : __AXVisualAlertSBLockScreenNotificationListController_super
 
 + (void)_accessibilityPerformValidations:(id)arg1;
-+ (Class)safeCategoryTargetClass;
++ (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
-- (void)turnOnScreenIfNecessaryForItem:(id)arg1;
+- (void)turnOnScreenIfNecessaryForItem:(id)arg1 withCompletion:(id /* block */)arg2;
 
 @end

@@ -82,6 +82,7 @@
 - (id)_wrapAssetKey:(id)arg1 forRecord:(id)arg2 withError:(id*)arg3;
 - (BOOL)_wrapEncryptedData:(id)arg1 withPCS:(struct _OpaquePCSShareProtection { }*)arg2 forField:(id)arg3;
 - (BOOL)_wrapEncryptedDataOnRecord:(id)arg1;
+- (unsigned long long)activityStart;
 - (BOOL)atomic;
 - (id)cache;
 - (BOOL)canSetPreviousProtectionEtag;

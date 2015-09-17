@@ -5,6 +5,8 @@
 @interface SAMovieV2MovieDetailSnippet : SAUISnippet
 
 @property (nonatomic, copy) NSArray *actors;
+@property (nonatomic, copy) NSString *adamId;
+@property (nonatomic, copy) NSArray *alternateProviderPunchouts;
 @property (nonatomic, copy) NSNumber *availableOnItunesForPurchase;
 @property (nonatomic, copy) NSNumber *availableOnItunesForRent;
 @property (nonatomic, copy) NSArray *directors;
@@ -16,6 +18,7 @@
 @property (nonatomic, copy) NSURL *movieIdentifier;
 @property (nonatomic, retain) SAMovieV2ReviewListSnippet *movieReviewListSnippet;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic, retain) SAUIAppPunchOut *playOnItunesPunchout;
 @property (nonatomic, copy) NSNumber *playTrailer;
 @property (nonatomic, copy) NSArray *posterImages;
 @property (nonatomic, copy) NSNumber *qualityRating;
@@ -32,6 +35,8 @@
 + (id)movieDetailSnippetWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)actors;
+- (id)adamId;
+- (id)alternateProviderPunchouts;
 - (id)availableOnItunesForPurchase;
 - (id)availableOnItunesForRent;
 - (id)directors;
@@ -45,12 +50,15 @@
 - (id)movieIdentifier;
 - (id)movieReviewListSnippet;
 - (id)name;
+- (id)playOnItunesPunchout;
 - (id)playTrailer;
 - (id)posterImages;
 - (id)qualityRating;
 - (id)rating;
 - (int)runtimeInMinutes;
 - (void)setActors:(id)arg1;
+- (void)setAdamId:(id)arg1;
+- (void)setAlternateProviderPunchouts:(id)arg1;
 - (void)setAvailableOnItunesForPurchase:(id)arg1;
 - (void)setAvailableOnItunesForRent:(id)arg1;
 - (void)setDirectors:(id)arg1;
@@ -62,6 +70,7 @@
 - (void)setMovieIdentifier:(id)arg1;
 - (void)setMovieReviewListSnippet:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setPlayOnItunesPunchout:(id)arg1;
 - (void)setPlayTrailer:(id)arg1;
 - (void)setPosterImages:(id)arg1;
 - (void)setQualityRating:(id)arg1;

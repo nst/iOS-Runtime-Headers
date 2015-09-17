@@ -6,6 +6,10 @@
     struct { /* ? */ } **_colorBoxes;
     unsigned int _columnCount;
     float _contrast;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _imageSize;
     unsigned int _rowCount;
     unsigned int _size;
 }
@@ -13,8 +17,11 @@
 @property (nonatomic, readonly) struct { /* ? */ }**colorBoxes;
 @property (nonatomic, readonly) unsigned int columnCount;
 @property (nonatomic, readonly) float contrast;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } imageSize;
 @property (nonatomic, readonly) unsigned int rowCount;
 @property (nonatomic, readonly) unsigned int size;
+
++ (id)colorBoxesForImage:(id)arg1 colorBoxSize:(unsigned int)arg2;
 
 - (void)_freeColorBoxes;
 - (struct { /* ? */ }**)colorBoxes;
@@ -22,7 +29,8 @@
 - (float)contrast;
 - (void)dealloc;
 - (id)description;
-- (id)initWithColorBoxes:(struct { /* ? */ }**)arg1 size:(unsigned int)arg2 rowCount:(unsigned int)arg3 columnCount:(unsigned int)arg4 contrast:(float)arg5;
+- (struct CGSize { float x1; float x2; })imageSize;
+- (id)initWithColorBoxes:(struct { /* ? */ }**)arg1 size:(unsigned int)arg2 rowCount:(unsigned int)arg3 columnCount:(unsigned int)arg4 contrast:(float)arg5 imageSize:(struct CGSize { float x1; float x2; })arg6;
 - (unsigned int)rowCount;
 - (unsigned int)size;
 

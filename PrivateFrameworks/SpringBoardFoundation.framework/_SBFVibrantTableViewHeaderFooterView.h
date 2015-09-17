@@ -19,7 +19,8 @@
 - (id)backdropGroupName;
 - (void)dealloc;
 - (int)graphicsQuality;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithReuseIdentifier:(id)arg1;
 - (int)initialGraphicsQuality;
 - (void)setBackdropGroupName:(id)arg1;
 - (void)setFloating:(BOOL)arg1;

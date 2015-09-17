@@ -17,6 +17,7 @@
 
 - (bool)calculatedMember;
 - (bool)childItems;
+- (id)description;
 - (bool)detailsHidden;
 - (bool)expanded;
 - (bool)hidden;

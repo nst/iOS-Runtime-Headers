@@ -5,14 +5,16 @@
 @interface UIAlertAction : NSObject <NSCopying> {
     UIAlertController *__alertController;
     NSString *__descriptiveText;
-    <_UIAlertActionRepresenting> *__representer;
+    <UIAlertActionViewRepresentation_Internal> *__representer;
     BOOL _checked;
     UIViewController *_contentViewController;
     BOOL _enabled;
     id /* block */ _handler;
     UIImage *_image;
     UIColor *_imageTintColor;
-    BOOL _isDefault;
+    BOOL _isPreferred;
+    NSString *_keyCommandInput;
+    int _keyCommandModifierFlags;
     id /* block */ _shouldDismissHandler;
     id /* block */ _simpleHandler;
     int _style;
@@ -23,36 +25,45 @@
 
 @property (setter=_setAlertController:, nonatomic) UIAlertController *_alertController;
 @property (setter=_setDescriptiveText:, nonatomic, copy) NSString *_descriptiveText;
-@property (setter=_setIsDefault:) BOOL _isDefault;
-@property (setter=_setRepresenter:) <_UIAlertActionRepresenting> *_representer;
+@property (setter=_setIsPreferred:) BOOL _isPreferred;
+@property (setter=_setRepresenter:) <UIAlertActionViewRepresentation_Internal> *_representer;
 @property (getter=_contentViewController, setter=_setContentViewController:, nonatomic, retain) UIViewController *contentViewController;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (nonatomic, copy) id /* block */ handler;
 @property (nonatomic, retain) UIImage *image;
+@property (getter=_keyCommandInput, setter=_setKeyCommandInput:, nonatomic, copy) NSString *keyCommandInput;
+@property (getter=_keyCommandModifierFlags, setter=_setKeyCommandModifierFlags:, nonatomic) int keyCommandModifierFlags;
 @property (nonatomic, copy) id /* block */ shouldDismissHandler;
 @property (nonatomic, copy) id /* block */ simpleHandler;
 @property (nonatomic) int style;
 @property (nonatomic, copy) NSString *title;
 
 + (id)_actionWithContentViewController:(id)arg1 style:(int)arg2;
++ (id)_actionWithContentViewController:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3;
 + (id)_actionWithTitle:(id)arg1 descriptiveText:(id)arg2 image:(id)arg3 style:(int)arg4 handler:(id /* block */)arg5 shouldDismissHandler:(id /* block */)arg6;
 + (id)_actionWithTitle:(id)arg1 image:(id)arg2 style:(int)arg3 handler:(id /* block */)arg4 shouldDismissHandler:(id /* block */)arg5;
 + (id)actionWithTitle:(id)arg1 style:(int)arg2 handler:(id /* block */)arg3;
 
+- (void).cxx_destruct;
 - (id)_alertController;
 - (id)_contentViewController;
 - (id)_descriptiveText;
 - (void)_didAddContentViewController;
 - (id)_imageTintColor;
 - (BOOL)_isChecked;
-- (BOOL)_isDefault;
+- (BOOL)_isPreferred;
+- (id)_keyCommandInput;
+- (int)_keyCommandModifierFlags;
 - (id)_representer;
 - (void)_setAlertController:(id)arg1;
 - (void)_setChecked:(BOOL)arg1;
 - (void)_setContentViewController:(id)arg1;
 - (void)_setDescriptiveText:(id)arg1;
 - (void)_setImageTintColor:(id)arg1;
-- (void)_setIsDefault:(BOOL)arg1;
+- (void)_setIsPreferred:(BOOL)arg1;
+- (void)_setKeyCommandInput:(id)arg1;
+- (void)_setKeyCommandInput:(id)arg1 modifierFlags:(int)arg2;
+- (void)_setKeyCommandModifierFlags:(int)arg1;
 - (void)_setRepresenter:(id)arg1;
 - (void)_setTitleTextAlignment:(int)arg1;
 - (void)_setTitleTextColor:(id)arg1;
@@ -60,7 +71,6 @@
 - (id)_titleTextColor;
 - (void)_willAddContentViewController;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id /* block */)handler;
 - (id)image;

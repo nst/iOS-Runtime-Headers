@@ -29,6 +29,7 @@
 + (float)arrowHeight;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentViewInsets;
 
+- (void).cxx_destruct;
 - (void)_layoutArrowViewsLeftOrRight;
 - (void)_layoutArrowViewsNone;
 - (void)_layoutArrowViewsUpOrDown;
@@ -41,7 +42,6 @@
 - (unsigned int)arrowDirection;
 - (float)arrowOffset;
 - (int)backgroundStyle;
-- (void)dealloc;
 - (void)didMoveToWindow;
 - (float)dimmingViewTopEdgeInset;
 - (BOOL)hasComponentViews;

@@ -14,7 +14,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_description;
+- (id)descriptionAdditionalStringWithContext:(id)arg1;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (oneway void)invalidate;
 - (id)remoteClientProxy;

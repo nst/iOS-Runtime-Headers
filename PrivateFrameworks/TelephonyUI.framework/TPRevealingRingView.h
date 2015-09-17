@@ -47,6 +47,7 @@
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } ringSize;
 @property (nonatomic) float unrevealAnimationDuration;
 
+- (void).cxx_destruct;
 - (void)_adjustGammaBoostIfNecessary;
 - (void)_animateForReveal:(BOOL)arg1 withDuration:(float)arg2 delay:(double)arg3;
 - (id)_bezierPathForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cornerRadius:(float)arg2;
@@ -63,7 +64,6 @@
 - (id)colorInsideRing;
 - (id)colorOutsideRing;
 - (float)cornerRadius;
-- (void)dealloc;
 - (float)defaultRingStrokeWidth;
 - (float)gammaBoost;
 - (BOOL)gammaBoostInside;

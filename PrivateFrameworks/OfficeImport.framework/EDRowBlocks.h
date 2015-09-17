@@ -21,8 +21,10 @@
 - (struct EDCellHeader { unsigned int x1; unsigned int x2; }*)cellWithRowNumber:(unsigned int)arg1 columnNumber:(int)arg2;
 - (Class)classForFormulaType:(unsigned char)arg1;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)expectedIndexOfRowBlockForRowNumber:(unsigned int)arg1;
 - (id)fileNameForPersistingRowBlocks;
+- (id)fileNameForPersistingRowBlocksWithIndex:(unsigned int)arg1;
 - (void)flush;
 - (unsigned char)formulaTypeForFormula:(id)arg1;
 - (id)formulas;

@@ -20,25 +20,27 @@
 
 - (void).cxx_destruct;
 - (id)_serviceConnection;
-- (oneway void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned int)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
-- (oneway void)cancelImportOperation:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
+- (void)beginTransactionForDatabaseAtPath:(id)arg1 withPriorityLevel:(unsigned int)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
+- (void)cancelImportOperation:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (void)dealloc;
-- (oneway void)endTransaction:(id)arg1 shouldCommit:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
-- (oneway void)executeQuery:(id)arg1 withParameters:(id)arg2 options:(id)arg3 onTransaction:(id)arg4 withCompletionHandler:(id /* block */)arg5;
-- (oneway void)executeUpdate:(id)arg1 withParameters:(id)arg2 onTransaction:(id)arg3 withCompletionHandler:(id /* block */)arg4;
-- (oneway void)getDeviceSharedLibraryPath:(id /* block */)arg1;
-- (oneway void)getLanguageResourcesWithCompletion:(id /* block */)arg1;
-- (oneway void)importOperationWithIdentifier:(id)arg1 didUpdateWithProgress:(float)arg2;
+- (void)endTransaction:(id)arg1 shouldCommit:(BOOL)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)executeQuery:(id)arg1 withParameters:(id)arg2 options:(id)arg3 onTransaction:(id)arg4 withCompletionHandler:(id /* block */)arg5;
+- (void)executeUpdate:(id)arg1 withParameters:(id)arg2 onTransaction:(id)arg3 withCompletionHandler:(id /* block */)arg4;
+- (void)getDeviceSharedLibraryPath:(id /* block */)arg1;
+- (void)getLanguageResourcesWithCompletion:(id /* block */)arg1;
+- (void)importOperationWithIdentifier:(id)arg1 didUpdateWithProgress:(float)arg2;
 - (id)init;
-- (oneway void)lockDatabaseForReason:(id)arg1 withCompletion:(id /* block */)arg2;
-- (oneway void)performDatabaseOperation:(unsigned int)arg1 withAttributes:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)lockDatabaseForReason:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)performDatabaseOperation:(unsigned int)arg1 withAttributes:(id)arg2 options:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)performImport:(id)arg1 fromSource:(unsigned int)arg2 withProgressBlock:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (oneway void)pollCurrentImportStatus:(id /* block */)arg1;
-- (oneway void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (oneway void)serviceTerminatedTransactionWithIdentifier:(id)arg1 error:(id)arg2;
-- (oneway void)setDeviceSharedLibraryPath:(id)arg1 withCompletion:(id /* block */)arg2;
-- (oneway void)setOptions:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (oneway void)unlockDatabaseWithCompletion:(id /* block */)arg1;
-- (oneway void)validateDatabaseAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)pollCurrentImportStatus:(id /* block */)arg1;
+- (void)recreateDatabaseAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)serviceTerminatedTransactionWithIdentifier:(id)arg1 error:(id)arg2;
+- (void)setDeviceSharedLibraryPath:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setOptions:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)unlockDatabaseWithCompletion:(id /* block */)arg1;
+- (void)updateSpotlightIndexForBundleID:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)updateSpotlightIndexMetadataForItemsWithIdentifiers:(id)arg1 bundleID:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)validateDatabaseAtPath:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 
 @end

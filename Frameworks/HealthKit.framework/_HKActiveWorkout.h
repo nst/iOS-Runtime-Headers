@@ -30,7 +30,7 @@
 
 + (id)_clientInterface;
 + (id)_serverInterface;
-+ (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalEnergyBurned:(id)arg6 totalDistance:(id)arg7 goalType:(unsigned int)arg8 goal:(id)arg9 shouldUseDeviceData:(BOOL)arg10 metadata:(id)arg11;
++ (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned int)arg9 goal:(id)arg10 shouldUseDeviceData:(BOOL)arg11 metadata:(id)arg12;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -44,18 +44,21 @@
 - (id)_lifecycleDelegate;
 - (BOOL)_objectCanBeSaved:(id*)arg1;
 - (id)_propertyQueue_serverConfiguration;
+- (void)_queue_addActiveEnergyBurned:(id)arg1;
 - (void)_queue_addAssociatedObjectUUIDs:(id)arg1;
+- (void)_queue_addBasalEnergyBurned:(id)arg1;
 - (void)_queue_addDistance:(id)arg1;
-- (void)_queue_addEnergyBurned:(id)arg1;
 - (void)_queue_alertDelegateDidEncounterError:(id)arg1;
 - (void)_queue_alertDelegateDidUpdateState:(int)arg1 date:(id)arg2;
+- (void)_queue_alertDelegateWorkoutDidUpdateTotalActiveEnergyBurned;
+- (void)_queue_alertDelegateWorkoutDidUpdateTotalBasalEnergyBurned;
 - (void)_queue_alertDelegateWorkoutDidUpdateTotalDistance;
-- (void)_queue_alertDelegateWorkoutDidUpdateTotalEnergyBurned;
 - (void)_queue_deactivate;
 - (id)_queue_endDate;
 - (BOOL)_queue_serverAttached;
 - (void)_queue_setEndDate:(id)arg1;
 - (void)_queue_transitionToServerState:(int)arg1;
+- (void)_queue_updateTotalsWithQuantity:(id)arg1 quantityType:(id)arg2;
 - (BOOL)_serverAttached;
 - (id)_serverProxy;
 - (void)_setEndDate:(id)arg1;
@@ -77,12 +80,14 @@
 - (void)pauseWorkoutWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (id)resumeDataByType;
 - (void)resumeWorkoutFromDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)serverFailedWithError:(id)arg1;
 - (void)serverPausedWithDate:(id)arg1 completion:(id /* block */)arg2;
 - (int)serverState;
+- (void)serverStoppedWithDate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)totalDistance;
 - (id)totalEnergyBurned;
-- (void)updateTotalsWithEnergyBurned:(id)arg1 distance:(id)arg2 resumeData:(id)arg3 UUIDs:(id)arg4;
+- (void)updateTotalsWithQuantities:(id)arg1 resumeData:(id)arg2 UUIDs:(id)arg3;
 - (int)workoutState;
 
 @end

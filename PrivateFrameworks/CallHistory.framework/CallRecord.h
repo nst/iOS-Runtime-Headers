@@ -13,6 +13,7 @@
 @property (nonatomic, retain) NSNumber *duration;
 @property (nonatomic, retain) NSNumber *face_time_data;
 @property (nonatomic, retain) NSString *iso_country_code;
+@property (nonatomic, retain) NSString *location;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, retain) NSNumber *number_availability;
 @property (nonatomic, retain) NSNumber *originated;

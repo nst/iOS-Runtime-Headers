@@ -6,6 +6,7 @@
 
 + (Class)CalendarComposeRecipientClass;
 + (Class)ComposeRecipientViewClass;
++ (Class)MFAutocompleteResultsTableViewController;
 + (Class)MFContactsSearchManagerClass;
 + (Class)MFContactsSearchResultsModelClass;
 + (Class)MFMailComposeViewControllerClass;

@@ -5,17 +5,18 @@
 @interface TDDistillRunner : NSObject {
     int _assetStoreVersionNumber;
     NSString *_assetStoreVersionString;
-    int _capabilities;
     NSURL *_carScratchURL;
     TDDistiller *_distiller;
     TDLogger *_logger;
     NSURL *_outputURL;
+    BOOL _packDocument;
 }
 
 @property int assetStoreVersionNumber;
 @property (copy) NSString *assetStoreVersionString;
 @property (nonatomic, retain) TDLogger *logger;
 @property (nonatomic, copy) NSURL *outputURL;
+@property (nonatomic) BOOL packImagesInDocument;
 
 - (BOOL)_isDistillUnnecessaryForDocument:(id)arg1;
 - (void)_moveScratchToOutputPath;
@@ -27,11 +28,12 @@
 - (id)init;
 - (id)logger;
 - (id)outputURL;
+- (BOOL)packImagesInDocument;
 - (BOOL)runDistillWithDocumentURL:(id)arg1 outputURL:(id)arg2 attemptIncremental:(BOOL)arg3 forceDistill:(BOOL)arg4;
 - (void)setAssetStoreVersionNumber:(int)arg1;
 - (void)setAssetStoreVersionString:(id)arg1;
-- (void)setDocumentCapabilities:(int)arg1;
 - (void)setLogger:(id)arg1;
 - (void)setOutputURL:(id)arg1;
+- (void)setPackImagesInDocument:(BOOL)arg1;
 
 @end

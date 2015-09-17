@@ -20,6 +20,7 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) int serviceType;
 
+- (void).cxx_destruct;
 - (void)_disconnectFromDaemon;
 - (void)_handleDaemonConnected:(id)arg1;
 - (void)_handleDaemonDisconnected:(id)arg1;

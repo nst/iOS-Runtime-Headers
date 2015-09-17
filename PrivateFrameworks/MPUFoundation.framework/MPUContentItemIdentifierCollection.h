@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
  */
 
-@interface MPUContentItemIdentifierCollection : NSObject <NSCopying, NSMutableCopying> {
+@interface MPUContentItemIdentifierCollection : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     NSMapTable *_identifierTypeToIdentifier;
     unsigned int _itemType;
 }
@@ -10,14 +10,19 @@
 @property (nonatomic, readonly) unsigned int identifierCount;
 @property (nonatomic, readonly) unsigned int itemType;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 class:(Class)arg2;
+- (void)_setIdentifier:(id)arg1 forIdentifierType:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (void)enumerateIdentifiersUsingBlock:(id /* block */)arg1;
 - (unsigned int)hash;
 - (unsigned int)identifierCount;
 - (id)identifierForIdentifierType:(unsigned int)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithItemType:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)itemType;

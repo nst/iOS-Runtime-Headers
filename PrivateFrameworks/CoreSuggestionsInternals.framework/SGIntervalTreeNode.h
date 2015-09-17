@@ -3,9 +3,6 @@
  */
 
 @interface SGIntervalTreeNode : NSObject {
-    BOOL _hasIndex;
-    BOOL _hasLeftIndex;
-    BOOL _hasRightIndex;
     unsigned int _index;
     NSMutableSet *_keys;
     SGIntervalTreeNode *_left;

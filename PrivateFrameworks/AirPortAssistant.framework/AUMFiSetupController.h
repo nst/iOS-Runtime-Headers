@@ -65,6 +65,7 @@
 - (void)callbackAskUserForPasswordResult:(long)arg1 password:(id)arg2 remember:(int)arg3;
 - (void)callbackAskUserForSetupCodeResult:(long)arg1 password:(id)arg2;
 - (void)callbackAskUserForUncertifiedResult:(long)arg1;
+- (long)cancelSetup;
 - (void)createEasyConfigDeviceConfiguration;
 - (void)dealloc;
 - (id)destinationNetworkPassword;

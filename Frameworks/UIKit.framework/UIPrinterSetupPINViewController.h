@@ -14,6 +14,7 @@
 @property (nonatomic, retain) PKPrinter *printer;
 @property (nonatomic, retain) UIScrollView *scrollView;
 
+- (void).cxx_destruct;
 - (id)PINView;
 - (void)connectToPrinter;
 - (void)connected:(BOOL)arg1;

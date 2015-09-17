@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (id)connection;
 - (void)dealloc;
+- (id)init;
 - (id)initWithConnection:(id)arg1;
 - (void)pingSubscriberDidLoad;
 - (void)pingWithBulletin:(id)arg1;

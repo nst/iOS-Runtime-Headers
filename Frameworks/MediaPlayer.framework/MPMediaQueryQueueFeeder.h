@@ -32,9 +32,11 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)audioSessionModeForMediaType:(unsigned int)arg1;
++ (Class)playbackItemMetadataClass;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_commonInit;
 - (void)_handleMediaLibraryDidChange;
 - (id)_identifierAtIndex:(unsigned int)arg1;

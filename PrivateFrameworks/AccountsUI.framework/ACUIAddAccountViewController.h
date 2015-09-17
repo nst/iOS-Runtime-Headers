@@ -17,8 +17,9 @@
 @property (nonatomic, readonly) ACUIAccountViewProvidersManager *viewProvidersManager;
 
 - (void).cxx_destruct;
-- (void)_createGmailAccountTapped:(id)arg1;
+- (void)_createCustomControlledAccountTapped:(id)arg1;
 - (id)_specifierForAOLAccount;
+- (id)_specifierForCustomControlledAccountWithName:(id)arg1 accountTypeID:(id)arg2;
 - (id)_specifierForExchangeAccount;
 - (id)_specifierForGmailAccount;
 - (id)_specifierForOutlookAccount;

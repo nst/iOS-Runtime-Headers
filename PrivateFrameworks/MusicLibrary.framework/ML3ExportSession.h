@@ -17,6 +17,7 @@
 - (id)exportPlaylistDeleted:(unsigned long long)arg1;
 - (id)exportTrackAdded:(unsigned long long)arg1;
 - (id)exportTrackDeleted:(unsigned long long)arg1;
+- (id)exportTrackUpdated:(unsigned long long)arg1;
 - (id)initWithLibrary:(id)arg1 outputStream:(id)arg2;
 - (id)library;
 - (id)outputStream;

@@ -135,7 +135,7 @@
 @property (nonatomic) BOOL loadMediaImmediately;
 @property (nonatomic, readonly, retain) NSString *pathForVideoFile;
 @property (nonatomic, readonly) UIImage *posterFrameImage;
-@property (nonatomic, readonly) PLVideoPosterFrameView *posterFrameView;
+@property (nonatomic, readonly, retain) PLVideoPosterFrameView *posterFrameView;
 @property (nonatomic) BOOL prepareMoviePlayerForScrubberAutomatically;
 @property (nonatomic, readonly) UIImageView *previewImageView;
 @property (nonatomic, readonly) UIView *scrubberBackgroundView;

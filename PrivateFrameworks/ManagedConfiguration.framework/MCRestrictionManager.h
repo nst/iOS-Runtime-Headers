@@ -31,8 +31,10 @@
 + (id)allowedOpenInAppBundleIDsWithOriginalAppBundleIDs:(id)arg1 managedAppBundleIDs:(id)arg2 localAppBundleID:(id)arg3 localAccountIsManaged:(BOOL)arg4 mayOpenFromUnmanagedToManaged:(BOOL)arg5 mayOpenFromManagedToUnmanaged:(BOOL)arg6 isAppBundleIDExemptBlock:(id /* block */)arg7 isAppBundleIDAccountBasedBlock:(id /* block */)arg8;
 + (int)appWhitelistStateWithSettingsDictionary:(id)arg1;
 + (BOOL)boolSetting:(id)arg1 valueChangedBetweenOldSettings:(id)arg2 andNewSettings:(id)arg3;
++ (int)boolSettingForFeature:(id)arg1 outAsk:(BOOL*)arg2 withUserSettingDictionary:(id)arg3;
 + (int)boolSettingForFeature:(id)arg1 withUserSettingDictionary:(id)arg2;
 + (int)defaultBoolValueForSetting:(id)arg1;
++ (int)defaultBoolValueForSetting:(id)arg1 outAsk:(BOOL*)arg2;
 + (id)defaultIntersectedValuesForSetting:(id)arg1;
 + (id)defaultParametersForBoolSetting:(id)arg1;
 + (id)defaultParametersForIntersectedValuesSetting:(id)arg1;

@@ -26,12 +26,13 @@
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManager:(id)arg1 didRetrievePeripherals:(id)arg2;
 - (void)centralManagerDidUpdateState:(id)arg1;
+- (void)checkAlreadyConnectedPeripherals;
 - (void)createPeripheralList;
 - (void)dealloc;
 - (id)initWithUIController:(id)arg1;
 - (BOOL)isLECapableHardware;
 - (void)killTimer;
-- (struct OpaqueMIDIDevice { }*)midiDeviceForUUID:(id)arg1;
+- (unsigned long)midiDeviceForUUID:(id)arg1;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristicsForService:(id)arg2 error:(id)arg3;
 - (void)peripheral:(id)arg1 didDiscoverServices:(id)arg2;
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;

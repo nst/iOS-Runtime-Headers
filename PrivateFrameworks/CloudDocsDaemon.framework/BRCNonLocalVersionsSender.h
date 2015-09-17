@@ -42,5 +42,6 @@
 - (id)physicalURL;
 - (void)setIncludeCachedVersions:(BOOL)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

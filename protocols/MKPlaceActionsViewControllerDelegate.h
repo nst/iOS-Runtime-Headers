@@ -7,7 +7,6 @@
 
 - (void)actionsViewControllerAddContactToExistingContact:(MKPlaceActionsViewController *)arg1;
 - (void)actionsViewControllerCreateNewContact:(MKPlaceActionsViewController *)arg1;
-- (void)actionsViewControllerCreateReminder:(MKPlaceActionsViewController *)arg1;
 - (void)actionsViewControllerOpenInSkyline:(MKPlaceActionsViewController *)arg1;
 - (void)actionsViewControllerRemovePin:(MKPlaceActionsViewController *)arg1;
 - (void)actionsViewControllerReportAProblem:(MKPlaceActionsViewController *)arg1;

@@ -3,7 +3,6 @@
  */
 
 @interface UIPopoverController : NSObject <UIAppearanceContainer, UIDimmingViewDelegate, UIGestureRecognizerDelegatePrivate> {
-    BOOL _allowResizePastTargetRect;
     UIColor *_backgroundColor;
     UIViewController *_contentViewController;
     unsigned int _currentArrowDirection;
@@ -70,6 +69,7 @@
     int _presentationState;
     UIView *_presentingView;
     unsigned int _requestedArrowDirections;
+    UIPopoverController *_retainedSelf;
     BOOL _retainsSelfWhilePresented;
     BOOL _showsOrientationMarker;
     BOOL _showsPresentationArea;
@@ -105,7 +105,6 @@
 }
 
 @property (setter=_setIgnoresKeyboardNotifications:, nonatomic) BOOL _ignoresKeyboardNotifications;
-@property (nonatomic) BOOL allowResizePastTargetRect;
 @property (nonatomic, copy) UIColor *backgroundColor;
 @property (nonatomic, retain) UIViewController *contentViewController;
 @property (readonly, copy) NSString *debugDescription;
@@ -140,6 +139,7 @@
 + (BOOL)_showTargetRectPref;
 + (BOOL)_useLegacyPopoverControllers;
 
+- (void).cxx_destruct;
 - (void)_adjustPopoverForNewContentSizeFromViewController:(id)arg1 allowShrink:(BOOL)arg2;
 - (BOOL)_attemptsToAvoidKeyboard;
 - (void)_beginMapsTransitionToNewViewController:(id)arg1 arrowDirections:(unsigned int)arg2 slideDuration:(double)arg3 expandDuration:(double)arg4;
@@ -228,7 +228,6 @@
 - (void)_swipe:(id)arg1;
 - (void)_transitionFromViewController:(id)arg1 toViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)_updateDimmingViewTransformForInterfaceOrientationOfHostingWindow:(id)arg1;
-- (BOOL)allowResizePastTargetRect;
 - (id)backgroundColor;
 - (id)contentViewController;
 - (void)dealloc;
@@ -253,7 +252,6 @@
 - (id)preferredLayoutInfo;
 - (void)presentPopoverFromBarButtonItem:(id)arg1 permittedArrowDirections:(unsigned int)arg2 animated:(BOOL)arg3;
 - (void)presentPopoverFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 permittedArrowDirections:(unsigned int)arg3 animated:(BOOL)arg4;
-- (void)setAllowResizePastTargetRect:(BOOL)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentViewController:(id)arg1;
 - (void)setContentViewController:(id)arg1 animated:(BOOL)arg2;

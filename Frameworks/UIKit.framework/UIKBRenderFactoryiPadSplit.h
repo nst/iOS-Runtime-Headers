@@ -12,6 +12,7 @@
 - (float)defaultPathWeight;
 - (id)deleteKeyImageName;
 - (struct CGPoint { float x1; float x2; })deleteKeyOffset;
+- (id)deleteOnKeyImageName;
 - (id)dictationKeyImageName;
 - (id)dismissKeyImageName;
 - (struct CGPoint { float x1; float x2; })dismissKeyOffset;

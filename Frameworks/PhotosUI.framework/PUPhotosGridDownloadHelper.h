@@ -18,6 +18,7 @@
 - (void)cancelCurrentAssetDownload;
 - (id)gridViewController;
 - (void)handleDownloadOfAsset:(id)arg1 inCollection:(id)arg2 withSuccessHandler:(id /* block */)arg3;
+- (id)init;
 - (id)initWithGridViewController:(id)arg1;
 
 @end

@@ -47,6 +47,7 @@
     } _suppressedMisspellingRange;
     TSWPEditingController *_textEditor;
     CALayer *_textLayers;
+    BOOL _tornDown;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -75,7 +76,6 @@
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToConvertNaturalToScaledRoot;
 @property (nonatomic) BOOL useKeyboardWhenEditing;
 
-- (id).cxx_construct;
 - (id)activeSearchReference;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectForCharIndex:(unsigned int)arg1 caretAffinity:(int)arg2;

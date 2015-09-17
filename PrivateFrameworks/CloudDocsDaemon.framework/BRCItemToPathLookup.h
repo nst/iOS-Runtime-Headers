@@ -25,7 +25,8 @@
 
 @property (nonatomic, readonly) BRCRelativePath *byFileSystemID;
 @property (nonatomic, readonly) BRCRelativePath *byPath;
-@property (nonatomic, readonly) NSURL *coordinationURL;
+@property (nonatomic, readonly) NSURL *coordinatedReadURL;
+@property (nonatomic, readonly) NSURL *coordinatedWriteURL;
 @property (nonatomic, readonly) BOOL fileSystemIDMayStillExist;
 @property (nonatomic, readonly) BRCRelativePath *parentPath;
 
@@ -44,7 +45,8 @@
 - (id)byPath;
 - (void)closePaths;
 - (BOOL)computeLogicalPath:(id*)arg1 physicalPath:(id*)arg2 isDirectory:(BOOL*)arg3;
-- (id)coordinationURL;
+- (id)coordinatedReadURL;
+- (id)coordinatedWriteURL;
 - (void)dealloc;
 - (id)description;
 - (BOOL)fileSystemIDMayStillExist;

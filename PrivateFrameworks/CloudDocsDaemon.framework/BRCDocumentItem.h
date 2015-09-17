@@ -9,6 +9,7 @@
     NSMutableSet *_resolvedConflictLoserEtags;
 }
 
+@property (nonatomic, readonly) NSString *UTI;
 @property (nonatomic, readonly) BRCItemID *aliasItemID;
 @property (nonatomic, readonly) BRCAliasItem *asAlias;
 @property (nonatomic, readonly) BRCDirectoryItem *asDirectory;
@@ -19,12 +20,17 @@
 @property (nonatomic, readonly) BRCDesiredVersion *desiredVersion;
 @property (nonatomic, readonly) unsigned int downloadStatus;
 @property (nonatomic, readonly) BOOL hasLocalContent;
+@property (nonatomic, readonly) BOOL isAutomaticallyEvictable;
 @property (nonatomic, readonly) BOOL isDownloadRequested;
+@property (nonatomic, readonly) BOOL isEvictable;
 @property (nonatomic, readonly) BOOL isInTransfer;
-@property (nonatomic, readonly) BOOL isOfEvictableSize;
+@property (nonatomic, readonly) BOOL isVisibleIniCloudDrive;
 @property (nonatomic, retain) NSSet *liveConflictLoserEtags;
 @property (nonatomic, readonly) unsigned int queryItemStatus;
 @property (nonatomic, readonly) NSSet *resolvedConflictLoserEtags;
+@property (nonatomic, readonly) BOOL shouldBeGreedy;
+@property (nonatomic, readonly) BOOL shouldHaveThumbnail;
+@property (nonatomic, readonly) BOOL shouldTransferThumbnail;
 @property (nonatomic, readonly) NSString *unsaltedBookmarkData;
 @property (nonatomic, readonly) unsigned int uploadStatus;
 
@@ -39,6 +45,7 @@
 + (id)unsaltedBookmarkDataWithRelativePath:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)UTI;
 - (BOOL)_deleteFromDB:(id)arg1 diffs:(unsigned long long)arg2 keepAliases:(BOOL)arg3;
 - (id)_initFromPQLResultSet:(id)arg1 container:(id)arg2 error:(id*)arg3;
 - (id)_initWithLocalItem:(id)arg1;
@@ -46,6 +53,7 @@
 - (id)_initWithServerItem:(id)arg1 dbRowID:(unsigned long long)arg2;
 - (BOOL)_insertInDB:(id)arg1 dbRowID:(unsigned long long)arg2;
 - (BOOL)_isInterestingUpdateForNotifs;
+- (BOOL)_isSmallAndMostRecentClientsGenerateThumbnails;
 - (BOOL)_nukeVersionsFromDB:(id)arg1;
 - (BOOL)_updateInDB:(id)arg1 diffs:(unsigned long long)arg2;
 - (void)_updateLiveConflictLoserFromFSAtPath:(id)arg1;
@@ -75,14 +83,16 @@
 - (void)handleUnknownItemError;
 - (BOOL)hasLocalContent;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isAutomaticallyEvictable;
 - (BOOL)isDocument;
 - (BOOL)isDownloadRequested;
+- (BOOL)isEvictable;
 - (BOOL)isFault;
 - (BOOL)isInTransfer;
-- (BOOL)isOfEvictableSize;
 - (BOOL)isPackage;
 - (BOOL)isSharedByMe;
 - (BOOL)isSharedByMeWithAShareID;
+- (BOOL)isVisibleIniCloudDrive;
 - (id)itemResolutionString;
 - (void)learnItemID:(id)arg1 ownerKey:(id)arg2 path:(id)arg3 markLost:(BOOL)arg4;
 - (void)learnThumbnailSignatureFromVersion:(id)arg1;
@@ -107,6 +117,9 @@
 - (void)setLiveConflictLoserEtags:(id)arg1;
 - (id)setOfContainersIDsWithReverseAliases;
 - (int)setVersionToStage:(id)arg1 diffsWithServerItem:(unsigned long long)arg2 options:(unsigned int)arg3 needsSave:(BOOL*)arg4;
+- (BOOL)shouldBeGreedy;
+- (BOOL)shouldHaveThumbnail;
+- (BOOL)shouldTransferThumbnail;
 - (void)stageFaultForCreation:(BOOL)arg1 serverItem:(id)arg2;
 - (void)startDownloadWithOptions:(unsigned int)arg1 group:(id)arg2;
 - (id)unsaltedBookmarkData;

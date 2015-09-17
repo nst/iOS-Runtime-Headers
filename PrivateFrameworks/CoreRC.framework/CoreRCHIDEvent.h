@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CoreRCHIDEvent : NSObject <NSSecureCoding> {
+@interface CoreRCHIDEvent : NSObject <NSCopying, NSSecureCoding> {
+    struct __IOHIDEvent { } *_3rdPartyChildEvent;
     struct __IOHIDEvent { } *_event;
 }
 
 + (BOOL)supportsSecureCoding;
 
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
@@ -21,6 +23,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCommand:(unsigned int)arg1 pressed:(BOOL)arg2;
 - (id)initWithIOHIDEvent:(struct __IOHIDEvent { }*)arg1;
+- (BOOL)isEqualToRCHIDEvent:(id)arg1;
 - (BOOL)isRepeat;
 
 @end

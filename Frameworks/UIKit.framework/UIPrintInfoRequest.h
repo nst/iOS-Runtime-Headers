@@ -13,8 +13,8 @@
 
 + (id)requestInfoForPrinter:(id)arg1;
 
+- (void).cxx_destruct;
 - (id /* block */)completionHandler;
-- (void)dealloc;
 - (void)requestPrintInfo;
 - (int)requestState;
 - (void)setCompletionHandler:(id /* block */)arg1;

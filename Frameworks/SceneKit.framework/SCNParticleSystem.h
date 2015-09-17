@@ -75,8 +75,8 @@
     float _particleVelocityVariation;
     BOOL _physicsCollisionsEnabled;
     NSDictionary *_propertyControllers;
+    NSString *_referenceName;
     int _renderingMode;
-    id _reserved;
     int _seed;
     BOOL _softParticlesEnabled;
     int _sortingMode;
@@ -92,6 +92,7 @@
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } acceleration;
 @property (nonatomic) BOOL affectedByGravity;
 @property (nonatomic) BOOL affectedByPhysicsFields;
+@property (readonly) NSArray *animationKeys;
 @property (nonatomic) int birthDirection;
 @property (nonatomic) int birthLocation;
 @property (nonatomic) float birthRate;
@@ -154,7 +155,6 @@
 @property (nonatomic, retain) SCNParticleSystem *systemSpawnedOnLiving;
 @property (nonatomic) float warmupDuration;
 
-+ (id)SCNJSExportProtocol;
 + (id)particleSystem;
 + (id)particleSystemNamed:(id)arg1 inDirectory:(id)arg2;
 + (id)particleSystemWithParticleSystemRef:(struct __C3DParticleSystem { }*)arg1;
@@ -164,6 +164,7 @@
 - (void)__removeAnimation:(id)arg1 forKey:(id)arg2;
 - (void)_customDecodingOfSCNParticleSystem:(id)arg1;
 - (void)_customEncodingOfSCNParticleSystem:(id)arg1;
+- (BOOL)_isAReference;
 - (void)_pauseAnimation:(BOOL)arg1 forKey:(id)arg2;
 - (void)_syncEntityObjCModel;
 - (void)_syncObjCAnimations;
@@ -176,7 +177,7 @@
 - (BOOL)affectedByPhysicsFields;
 - (id)animationForKey:(id)arg1;
 - (id)animationKeys;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long x_16_1_1; BOOL x_16_1_2[40]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; double x16; struct _opaque_pthread_mutex_t { long x_17_1_1; BOOL x_17_1_2[40]; } x17; int x18; int x19; int x20; int x21; }*)animationManager;
 - (BOOL)areSoftParticlesEnabled;
 - (int)birthDirection;
 - (int)birthLocation;
@@ -248,6 +249,7 @@
 - (BOOL)physicsCollisionsEnabled;
 - (id)presentationInstance;
 - (id)propertyControllers;
+- (id)referenceName;
 - (void)removeAllAnimations;
 - (void)removeAllModifiers;
 - (void)removeAnimationForKey:(id)arg1;
@@ -269,7 +271,6 @@
 - (void)setBlackPassEnabled:(BOOL)arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setColliderNodes:(id)arg1;
-- (void)setConstraintRef:(struct __C3DParticleSystem { }*)arg1;
 - (void)setDampingFactor:(float)arg1;
 - (void)setEmissionDuration:(float)arg1;
 - (void)setEmissionDurationVariation:(float)arg1;
@@ -318,6 +319,7 @@
 - (void)setParticleVelocityVariation:(float)arg1;
 - (void)setPhysicsCollisionsEnabled:(BOOL)arg1;
 - (void)setPropertyControllers:(id)arg1;
+- (void)setReferenceName:(id)arg1;
 - (void)setRenderingMode:(int)arg1;
 - (void)setSeed:(int)arg1;
 - (void)setSoftParticlesEnabled:(BOOL)arg1;

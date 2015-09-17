@@ -6,6 +6,7 @@
 @required
 
 - (void)authorizationDidAuthorizePaymentCompleteWithStatus:(int)arg1;
+- (void)authorizationDidSelectPaymentMethodCompleteWithPaymentSummaryItems:(NSArray *)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(NSArray *)arg2 paymentSummaryItems:(NSArray *)arg3;
 - (void)authorizationDidSelectShippingMethodCompleteWithStatus:(int)arg1 paymentSummaryItems:(NSArray *)arg2;
 - (void)handleHostApplicationDidBecomeActive;

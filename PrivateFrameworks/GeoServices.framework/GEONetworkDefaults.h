@@ -2,24 +2,28 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEONetworkDefaults : NSObject {
-    NSString *_cacheFilePath;
+@interface GEONetworkDefaults : NSObject <_GEONetworkDefaultsServerProxyDelegate> {
     NSMutableArray *_completionHandlers;
-    int _configChangedToken;
-    BOOL _isRegistering;
     NSDictionary *_networkDefaults;
     NSLock *_networkDefaultsLock;
+    <_GEONetworkDefaultsServerProxy> *_serverProxy;
 }
 
-+ (void)setRunningInDaemon:(BOOL)arg1;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
++ (void)setUseLocalProxy:(BOOL)arg1;
 + (id)sharedNetworkDefaults;
 
-- (void)_registrationComplete;
+- (BOOL)_needsUpdate;
+- (id)allKeys;
 - (void)dealloc;
 - (id)init;
-- (BOOL)needsUpdate;
-- (void)refreshNetworkDefaults;
-- (void)registerNetworkDefaults:(id /* block */)arg1;
+- (void)serverProxy:(id)arg1 networkDefaultsDidChange:(id)arg2;
+- (void)updateIfNecessary:(id /* block */)arg1;
+- (void)updateNetworkDefaults:(id /* block */)arg1;
 - (id)valueForKey:(id)arg1;
 
 @end

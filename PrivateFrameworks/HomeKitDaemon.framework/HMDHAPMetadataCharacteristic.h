@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hapCharacteristicMetadata;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHAPCharacteristic:(id)arg1;
 - (void)setHapCharacteristicMetadata:(id)arg1;

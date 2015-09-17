@@ -12,6 +12,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) GEOABExperimentResponse *experimentsInfo;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
@@ -26,8 +27,11 @@
 - (void)_debug_setCustomQuerySubstring:(id)arg1 forExperimentType:(int)arg2 dispatcherRequestType:(int)arg3;
 - (void)addExperimentObserver:(id)arg1 queue:(id)arg2;
 - (void)dealloc;
+- (id)detailedDescription;
+- (id)experimentAssignmentForType:(int)arg1 dispatcherRequestType:(int)arg2;
 - (id)experimentAssignments;
 - (id)experimentURLForURL:(id)arg1 type:(int)arg2 dispatcherRequestType:(int)arg3;
+- (id)experimentsInfo;
 - (id)init;
 - (void)removeExperimentObserver:(id)arg1;
 - (void)serverProxy:(id)arg1 didChangeExperimentsInfo:(id)arg2;

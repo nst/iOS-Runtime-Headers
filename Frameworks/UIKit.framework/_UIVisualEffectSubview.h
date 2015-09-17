@@ -2,10 +2,13 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIVisualEffectSubview : UIView
+@interface _UIVisualEffectSubview : UIView {
+    _UIVisualEffectLayerConfig *_layerConfig;
+}
 
 @property (setter=_setGroupName:, nonatomic, copy) NSString *_groupName;
 
+- (void).cxx_destruct;
 - (id)_groupName;
 - (void)_setGroupName:(id)arg1;
 - (void)_setLayerConfig:(id)arg1;

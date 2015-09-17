@@ -10,7 +10,7 @@
     NSString *_status;
 }
 
-@property (nonatomic, readonly) NSString *activityType;
+@property (nonatomic, copy) NSString *activityType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -20,11 +20,12 @@
 @property (nonatomic, copy) NSString *status;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_setActivityType:(id)arg1;
 - (id)activityType;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
-- (void)dealloc;
+- (id)init;
 - (id)initWithPlaceholderItem:(id)arg1;
 - (id)item;
 - (void)main;

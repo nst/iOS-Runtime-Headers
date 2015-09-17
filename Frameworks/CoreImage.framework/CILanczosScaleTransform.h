@@ -14,12 +14,14 @@
 
 + (id)customAttributes;
 
+- (id)_CILanczosDownBy2;
+- (id)_CILanczosHorizontalUpsample;
+- (id)_CILanczosVerticalUpsample;
 - (BOOL)_isIdentity;
 - (id)inputAspectRatio;
 - (id)inputImage;
 - (id)inputScale;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAspectRatio:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (void)setInputScale:(id)arg1;

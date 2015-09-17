@@ -12,11 +12,11 @@
 @property (nonatomic, readonly) int changeType;
 @property (nonatomic, readonly) WebBookmarkCollection *collection;
 
+- (void).cxx_destruct;
 - (id)bookmark;
 - (int)changeType;
 - (id)changeTypeDescription;
 - (id)collection;
-- (void)dealloc;
 - (id)description;
 - (id)initWithBookmarkCollection:(id)arg1 bookmark:(id)arg2 changeType:(int)arg3;
 

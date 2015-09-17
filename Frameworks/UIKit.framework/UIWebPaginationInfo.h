@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) unsigned int pageCount;
 @property (nonatomic, retain) UIWebDocumentView *webDocumentView;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)documentView;
 - (id)initWithDocumentView:(id)arg1 scaleFactor:(float)arg2 layoutSize:(struct CGSize { float x1; float x2; })arg3 pageRects:(id)arg4;

@@ -8,8 +8,9 @@
 + (struct __CFString { }*)facility;
 + (void)initialize;
 + (id)logFolder;
-+ (id)setupLogging:(id)arg1;
++ (void)setupLogging:(id)arg1;
 + (BOOL)shouldDisplaySyncErrorMessage;
++ (BOOL)shouldDumpIDSOnSyncError;
 + (BOOL)shouldLogBubblesToAggD;
 
 @end

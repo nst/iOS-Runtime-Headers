@@ -7,6 +7,7 @@
     NSObject<QLThumbnailsInterface> *_proxy;
 }
 
++ (id)interface;
 + (id)sharedInstance;
 
 - (void)askThumbnailAdditionIndex:(id /* block */)arg1;

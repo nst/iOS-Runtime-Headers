@@ -10,6 +10,8 @@
 
 @optional
 
+- (BOOL)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2 metadata:(NSDictionary *)arg3;
+- (BOOL)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2 metadata:(NSDictionary *)arg3 moreComing:(BOOL)arg4;
 - (BOOL)predicateShouldContinue:(NSPredicate *)arg1 afterFindingRecord:(void*)arg2 moreComing:(BOOL)arg3;
 
 @end

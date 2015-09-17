@@ -5,7 +5,7 @@
 @interface BSStackFrameInfo : NSObject {
     unsigned long _address;
     NSString *_className;
-    NSString *_executableName;
+    NSString *_executablePath;
     NSString *_functionName;
     NSString *_realFunctionName;
 }
@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) unsigned long address;
 @property (nonatomic, readonly, retain) NSString *className;
 @property (nonatomic, readonly, retain) NSString *executableName;
+@property (nonatomic, readonly, retain) NSString *executablePath;
 @property (nonatomic, readonly, retain) NSString *functionName;
 
 - (unsigned long)address;
@@ -20,6 +21,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)executableName;
+- (id)executablePath;
 - (id)functionName;
 - (id)initWithReturnAddress:(unsigned long)arg1;
 

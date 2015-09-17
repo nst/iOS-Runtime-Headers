@@ -4,11 +4,20 @@
 
 @interface GEOSearchAttributionManifest : PBCodable <NSCopying> {
     NSMutableArray *_actionComponentMapEntries;
+    struct { 
+        unsigned int timestamp : 1; 
+    } _has;
     NSMutableArray *_searchAttributionSources;
+    NSString *_sourceURL;
+    double _timestamp;
 }
 
 @property (nonatomic, retain) NSMutableArray *actionComponentMapEntries;
+@property (nonatomic, readonly) BOOL hasSourceURL;
+@property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, retain) NSMutableArray *searchAttributionSources;
+@property (nonatomic, retain) NSString *sourceURL;
+@property (nonatomic) double timestamp;
 
 - (id)actionComponentMapEntries;
 - (id)actionComponentMapEntriesAtIndex:(unsigned int)arg1;
@@ -22,6 +31,8 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasSourceURL;
+- (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
@@ -30,7 +41,12 @@
 - (id)searchAttributionSourcesAtIndex:(unsigned int)arg1;
 - (unsigned int)searchAttributionSourcesCount;
 - (void)setActionComponentMapEntries:(id)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
 - (void)setSearchAttributionSources:(id)arg1;
+- (void)setSourceURL:(id)arg1;
+- (void)setTimestamp:(double)arg1;
+- (id)sourceURL;
+- (double)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

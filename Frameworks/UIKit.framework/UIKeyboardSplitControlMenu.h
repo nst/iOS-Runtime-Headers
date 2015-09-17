@@ -17,15 +17,15 @@
 + (id)sharedInstance;
 
 - (void)dealloc;
-- (int)defaultSelectedIndex;
+- (unsigned int)defaultSelectedIndex;
 - (void)didFinishSplitTransition;
-- (void)didSelectItemAtIndex:(int)arg1;
+- (void)didSelectItemAtIndex:(unsigned int)arg1;
 - (id /* block */)finishSplitTransitionBlock;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)numberOfItems;
+- (unsigned int)numberOfItems;
 - (struct CGSize { float x1; float x2; })preferredSize;
 - (void)setFinishSplitTransitionBlock:(id /* block */)arg1;
 - (void)setSplitAndUndocked:(BOOL)arg1;
-- (id)titleForItemAtIndex:(int)arg1;
+- (id)titleForItemAtIndex:(unsigned int)arg1;
 
 @end

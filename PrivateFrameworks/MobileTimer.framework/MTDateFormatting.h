@@ -16,9 +16,9 @@
 @property (nonatomic, readonly) BOOL timeDesignatorAppearsBeforeTime;
 @property (nonatomic, readonly) BOOL use24HourTime;
 
-+ (void)load;
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_clearLocaleDependentState;
 - (id)_dateOnlyFormatter;
 - (void)_reloadLocaleInfo;

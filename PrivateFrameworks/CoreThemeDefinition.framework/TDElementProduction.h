@@ -9,11 +9,14 @@
 @property (nonatomic, retain) NSString *comment;
 @property (nonatomic, retain) NSDate *dateOfLastChange;
 @property (nonatomic, retain) NSNumber *isExcludedFromFilter;
+@property (nonatomic) BOOL makeOpaqueIfPossible;
 @property (nonatomic, retain) TDNamedElement *name;
 @property (nonatomic, retain) TDSchemaPartDefinition *partDefinition;
 @property (nonatomic, retain) TDThemeConstant *renditionSubtype;
 @property (nonatomic, retain) TDRenditionType *renditionType;
 @property (nonatomic, retain) NSSet *renditions;
+@property (nonatomic, retain) NSSet *tags;
+@property (nonatomic, retain) NSString *universalTypeIdentifier;
 @property (nonatomic, retain) TDThemeConstant *zeroCodeArtworkInfo;
 
 - (id)associatedFileModificationDateWithDocument:(id)arg1;

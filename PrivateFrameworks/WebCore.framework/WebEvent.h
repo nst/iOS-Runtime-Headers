@@ -53,7 +53,6 @@
 @property (nonatomic, readonly) int type;
 @property (nonatomic) BOOL wasHandled;
 
-- (id).cxx_construct;
 - (id)_characterSetDescription;
 - (id)_eventDescription;
 - (id)_modiferFlagsDescription;

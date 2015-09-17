@@ -2,16 +2,22 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLSpreadsheetPrintPageRenderer : QLWebViewPrintPageHelper {
+@interface QLSpreadsheetPrintPageRenderer : QLWebViewPrintPageHelper <WebFrameLoadDelegate> {
     unsigned int _currentPageIndex;
     unsigned int _currentURLIndex;
     BOOL _frameLoaded;
+    int _numberOfPages;
     UIWebPaginationInfo *_paginationInfo;
     UIWebBrowserView *_printView;
     BOOL _printingDone;
     int _totalPagesPrinted;
     NSMutableArray *_urls;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)_documentURLs;
 - (BOOL)_loadNextURL;

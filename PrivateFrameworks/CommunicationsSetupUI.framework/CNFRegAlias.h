@@ -14,9 +14,9 @@
 @property (nonatomic, readonly, retain) NSString *identifier;
 @property (nonatomic, readonly) int type;
 
+- (void).cxx_destruct;
 - (id)account;
 - (id)alias;
-- (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (unsigned int)hash;

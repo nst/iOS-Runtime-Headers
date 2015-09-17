@@ -13,12 +13,33 @@
 + (BOOL)accessInstanceVariablesDirectly;
 + (void)load;
 
+- (BOOL)_byPropertyObjectTrumpMergeObject:(id)arg1 ontoObject:(id)arg2 writeAll:(BOOL)arg3;
+- (BOOL)_byPropertyObjectTrumpResolveConstraintConflict:(id)arg1;
+- (BOOL)_byPropertyStoreTrumpResolveConstraintConflict:(id)arg1;
+- (BOOL)_didSomethingElseResolveDBConflict:(id)arg1;
+- (id)_electDesignatedOriginalForConflict:(id)arg1;
+- (id)_electNewlyInsertedDesignatedOriginalFrom:(id)arg1;
+- (id)_electPreexistingDesignatedOriginalFrom:(id)arg1;
+- (BOOL)_eliminateContendersResolveConstraintConflict:(id)arg1 withKeeper:(id)arg2;
 - (void)_mergeChangesObjectUpdatesTrumpForObject:(id)arg1 withRecord:(id)arg2;
 - (void)_mergeChangesStoreUpdatesTrumpForObject:(id)arg1 withRecord:(id)arg2;
+- (BOOL)_mergeContendersResolveConstraintConflict:(id)arg1 withKeeper:(id)arg2;
 - (void)_mergeDeletionWithStoreChangesForObject:(id)arg1 withRecord:(id)arg2;
+- (void)_mergeToManyRelationshipsForConstraintConflict:(id)arg1 withDesignatedOriginal:(id)arg2;
+- (void)_mergeToManyRelationshipsForObject:(id)arg1 ontoObject:(id)arg2;
+- (void)_mergeToManyUnionRelationshipsForConstraintConflict:(id)arg1;
+- (void)_mergeToManyUnionRelationshipsForObject:(id)arg1 andObject:(id)arg2;
+- (void)_mergeValuesForObject:(id)arg1 ontoObject:(id)arg2;
+- (BOOL)_overwriteResolveConstraintConflict:(id)arg1;
+- (BOOL)_resolveContextConstraintConflict:(id)arg1;
+- (BOOL)_rollbackResolveConstraintConflict:(id)arg1;
+- (id)_unresolvedConflictFor:(id)arg1;
+- (id)_unresolvedObjectsForContextConflict:(id)arg1;
+- (BOOL)_valuesOnObject:(id)arg1 matchAgainstValues:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithMergeType:(unsigned int)arg1;
 - (id)initWithType:(unsigned int)arg1;
@@ -27,6 +48,9 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)resolveConflict:(id)arg1;
 - (BOOL)resolveConflicts:(id)arg1 error:(id*)arg2;
+- (BOOL)resolveConstraintConflict:(id)arg1 error:(id*)arg2;
+- (BOOL)resolveConstraintConflicts:(id)arg1 error:(id*)arg2;
+- (BOOL)resolveOptimisticLockingVersionConflicts:(id)arg1 error:(id*)arg2;
 - (unsigned int)type;
 
 @end

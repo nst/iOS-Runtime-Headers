@@ -12,6 +12,7 @@
 @property (nonatomic) <WeatherUpdaterDelegate> *delegate;
 @property (nonatomic, copy) id /* block */ weatherCompletionUpdaterHandler;
 
+- (void).cxx_destruct;
 - (id)_GMTOffsetRegularExpression;
 - (id)_ISO8601Calendar;
 - (id)_ISO8601DateFormatter;

@@ -24,6 +24,7 @@
 
 - (void)_dispatchToObservers:(id)arg1 block:(id /* block */)arg2;
 - (id)_iconDictionary;
+- (id)_initWithApplicationProxy:(id)arg1;
 - (double)_normalizedProgress:(double)arg1;
 - (void)_noteChangedSignificantly;
 - (id)_proxy;
@@ -44,7 +45,6 @@
 - (void)cancel;
 - (void)dealloc;
 - (id)description;
-- (id)initWithApplicationProxy:(id)arg1;
 - (unsigned int)installPhase;
 - (unsigned int)installState;
 - (unsigned int)installType;

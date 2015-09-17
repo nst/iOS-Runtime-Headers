@@ -102,6 +102,16 @@
 - (unsigned long)unsignedLongValue;
 - (unsigned short)unsignedShortValue;
 
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
+
+- (id)cl_json_serializeKey;
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
+// Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
+
+- (id)cl_json_serializeKey;
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 + (id)numberWithCGFloat:(float)arg1;
@@ -140,22 +150,16 @@
 - (BOOL)brc_isFolderID;
 - (unsigned long long)brc_rawID;
 
-// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
-
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ContactsAutocomplete.framework/ContactsAutocomplete
+
++ (id)_cnac_numberWithAutocompleteAddressType:(int)arg1;
+
+- (int)_cnac_autocompleteAddressTypeValue;
 
 // Image: /System/Library/PrivateFrameworks/CoreRecents.framework/CoreRecents
 
@@ -167,6 +171,10 @@
 - (long long)cr_CRContactIDValue;
 - (long long)cr_CRRecentIDValue;
 
+// Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
+
+- (BOOL)fm_isEqualToNumber:(id)arg1 withPrecision:(double)arg2;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)_gkServerTimeInterval:(double)arg1;
@@ -174,6 +182,11 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 - (BOOL)hk_hasFloatingPointValue;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
+- (BOOL)hk_animatable;
+- (id)hk_midPointToValue:(id)arg1 percentage:(float)arg2;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -190,8 +203,12 @@
 + (id)numberWithCGFloat:(float)arg1;
 
 - (float)CGFloatValue;
-- (void)appendJsonStringToString:(id)arg1;
 - (BOOL)isFloatingPointType;
+- (void)sfu_appendJsonStringToString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
+
+- (BOOL)sd_isEqualToNumber:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
@@ -237,5 +254,11 @@
 - (int)tsch_styleIntValue;
 - (int)tsch_stylePropertyValue;
 - (int)tss_propertyValue;
+
+// Image: /usr/lib/libprequelite.dylib
+
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

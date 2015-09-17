@@ -10,7 +10,6 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *interfaceOrientation;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL wristDetected;
 
 + (id)watchData;
 + (id)watchDataWithDictionary:(id)arg1 context:(id)arg2;
@@ -21,7 +20,5 @@
 - (id)interfaceOrientation;
 - (void)setConfiguredForLeftWrist:(BOOL)arg1;
 - (void)setInterfaceOrientation:(id)arg1;
-- (void)setWristDetected:(BOOL)arg1;
-- (BOOL)wristDetected;
 
 @end

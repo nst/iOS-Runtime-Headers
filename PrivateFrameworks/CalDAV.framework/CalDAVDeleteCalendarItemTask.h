@@ -8,8 +8,8 @@
 
 @property (nonatomic, retain) NSString *previousScheduleTag;
 
+- (void).cxx_destruct;
 - (id)additionalHeaderValues;
-- (void)dealloc;
 - (id)description;
 - (id)previousScheduleTag;
 - (void)setPreviousScheduleTag:(id)arg1;

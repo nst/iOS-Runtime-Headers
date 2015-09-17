@@ -12,6 +12,7 @@
 
 + (int)activityCategory;
 
+- (void).cxx_destruct;
 - (BOOL)_canBeExcludedByActivityViewController:(id)arg1;
 - (void)_cleanup;
 - (BOOL)_dismissActivityFromViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
@@ -21,7 +22,6 @@
 - (id)activityViewController;
 - (id)builtinActivityType;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)initWithActivityType:(id)arg1;
 - (id)initWithApplicationExtension:(id)arg1;

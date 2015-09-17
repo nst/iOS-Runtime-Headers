@@ -4,11 +4,16 @@
 
 @interface FIUIHeartRateStatusView : UIView {
     UIImageView *_animatingImageView;
+    NSCache *_assetCache;
+    NSObject<OS_dispatch_queue> *_assetLoadingQueue;
     BOOL _delayedStartMeasuringAnimation;
+    int _frameRateDivider;
     UIImageView *_fullHeartImageView;
+    NSString *_heartImageNameFormat;
     double _heartRate;
     UIImageView *_reloadArrowView;
     UIImageView *_reloadOutlineView;
+    NSBundle *_resourceBundle;
     unsigned int _state;
 }
 
@@ -20,11 +25,16 @@
 - (void).cxx_destruct;
 - (void)_beatFullHeartOnce;
 - (void)_finishedHeartBeat;
-- (void)_startMeasuringAnimation;
+- (void)_loadHeartMeasuringImagesWithCompletion:(id /* block */)arg1;
+- (id)_queue_heartMeasuringImages;
+- (void)_resumeAnimations;
+- (void)_startMeasuringAnimationAnimated:(BOOL)arg1;
+- (void)_suspendAnimations;
 - (id)animatingImageView;
-- (void)appDidBecomeActive:(id)arg1;
 - (void)dealloc;
 - (id)fullHeartImageView;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 heartImageNameFormat:(id)arg2 frameRateDivider:(int)arg3 resourceBundle:(id)arg4;
 - (void)layoutSubviews;
 - (id)reloadArrowView;
@@ -38,5 +48,6 @@
 - (void)setReloadOutlineView:(id)arg1;
 - (void)setState:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (void)unloadAnimationAssets;
 
 @end

@@ -14,6 +14,7 @@
 - (void)setBlocked:(BOOL)arg1;
 - (void)setDelegate:(id <PSPINEntryViewDelegate>)arg1;
 - (void)setPINPolicyString:(NSString *)arg1 visible:(BOOL)arg2;
+- (void)setShowsOptionsButton:(BOOL)arg1;
 - (void)setStringValue:(NSString *)arg1;
 - (void)setTextFieldKeyboardAppearance:(int)arg1;
 - (void)setTextFieldKeyboardType:(int)arg1;

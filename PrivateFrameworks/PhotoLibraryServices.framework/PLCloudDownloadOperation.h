@@ -2,13 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLCloudDownloadOperation : PLCloudOperation {
-    bool _cancelled;
-}
+@interface PLCloudDownloadOperation : PLCloudOperation
 
-- (unsigned int)cost;
-- (id)description;
-- (void)requestCancel;
-- (void)runOperationWithCompletionHandler:(id /* block */)arg1;
+- (void)executeWithRemoteLibrary:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 
 @end

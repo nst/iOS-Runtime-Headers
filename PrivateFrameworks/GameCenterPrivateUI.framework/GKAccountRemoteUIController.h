@@ -6,13 +6,18 @@
     BOOL _authenticatePlayerOnCompletion;
     NSArray *_availableExternalServices;
     int _mode;
+    NSDictionary *_postBody;
+    NSURL *_url;
 }
 
 @property (nonatomic) BOOL authenticatePlayerOnCompletion;
 @property (nonatomic, retain) NSArray *availableExternalServices;
 @property (nonatomic) int mode;
+@property (nonatomic, retain) NSDictionary *postBody;
+@property (nonatomic, retain) NSURL *url;
 
-+ (void)accountRemoteUIControllerForMode:(int)arg1 completionHandler:(id /* block */)arg2;
++ (void)accountRemoteUIControllerForPlayer:(id)arg1 mode:(int)arg2 completionHandler:(id /* block */)arg3;
++ (void)accountRemoteUIControllerForPlayer:(id)arg1 mode:(int)arg2 url:(id)arg3 postBody:(id)arg4 completionHandler:(id /* block */)arg5;
 
 - (BOOL)authenticatePlayerOnCompletion;
 - (id)availableExternalServices;
@@ -24,12 +29,17 @@
 - (void)fetchICloudAuthTokenWithHandler:(id /* block */)arg1;
 - (void)fireCompletionHandler;
 - (id)initWithMode:(int)arg1;
+- (id)initWithMode:(int)arg1 player:(id)arg2;
 - (int)mode;
+- (id)postBody;
 - (id)postBodyForInitialLoad;
 - (void)setAuthenticatePlayerOnCompletion:(BOOL)arg1;
 - (void)setAvailableExternalServices:(id)arg1;
 - (void)setMode:(int)arg1;
+- (void)setPostBody:(id)arg1;
+- (void)setUrl:(id)arg1;
 - (void)takeValuesFromClientInfo:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)updatePostbackDictionary:(id)arg1 withHandler:(id /* block */)arg2;
+- (id)url;
 
 @end

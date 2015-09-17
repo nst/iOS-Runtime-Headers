@@ -4,7 +4,6 @@
 
 @interface _EKNotificationMonitor : NSObject {
     NSMutableSet *_alertedNotificationsThatFailedToMarkAlerted;
-    NSMutableArray *_culledRecentlyRepliedNotifications;
     NSArray *_eventNotificationReferences;
     EKEventStore *_eventStore;
     id /* block */ _eventStoreGetter;
@@ -16,7 +15,6 @@
     NSDate *_nextFireTime;
     BOOL _pendingChanges;
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableArray *_recentlyRepliedNotifications;
     NSArray *_reminderNotificationReferences;
     BOOL _running;
     BOOL _shouldInstallPersistentTimer;

@@ -4,53 +4,78 @@
 
 @interface SGSuggestHistory : NSObject {
     NSUbiquitousKeyValueStore *_backingKVStore;
-    NSMutableSet *_contactHashes;
-    NSMutableSet *_dontUpdate;
-    NSMutableSet *_eventHashes;
-    struct _opaque_pthread_mutex_t { 
-        long __sig; 
-        BOOL __opaque[40]; 
-    } _lock;
+    NSData *_deviceSalt;
+    SGNoCloudNSUbiquitousKeyValueStore *_noCloudFakeBackingKVStore;
+    struct SGHistorySharedData { id x1; id x2; id x3; id x4; } *_privateShared;
+    struct SGMutexSynchronizedObject<SGHistorySharedData> { struct SGHistorySharedData {} *x1; struct _opaque_pthread_mutex_t { long x_2_1_1; BOOL x_2_1_2[40]; } x2; } *_shared;
 }
 
-+ (id)deviceSalt;
-+ (id)hashesForEvent:(id)arg1;
-+ (id)identitySalt;
+@property (nonatomic, readonly) NSUbiquitousKeyValueStore *kvs;
+
++ (id)newTestingInstanceWithSharedKVS:(id)arg1;
 + (void)reset;
 + (id)sharedSuggestHistory;
 
 - (void).cxx_destruct;
-- (void)addFieldValues:(id)arg1 forStorageEvent:(id)arg2;
+- (BOOL)_anyHash:(id)arg1 inSet:(id)arg2;
+- (id)_hashesForConfirmedField:(id)arg1 value:(id)arg2 storageEvent:(id)arg3;
+- (void)_setHashes:(id)arg1 forKey:(id)arg2;
+- (void)_tellObserversHashesDidChange;
+- (void)addObserver:(id)arg1;
+- (void)confirmContact:(id)arg1;
 - (void)confirmEvent:(id)arg1;
+- (void)confirmEventFromExternalDevice:(id)arg1;
+- (void)confirmFieldValues:(id)arg1 forStorageEvent:(id)arg2;
+- (void)confirmOrRejectDetail:(id)arg1 forContact:(id)arg2;
+- (void)confirmOrRejectRecordForContact:(id)arg1;
+- (void)confirmStorageEvent:(id)arg1;
 - (void)dealloc;
 - (id)description;
-- (id)deviceSalt;
 - (void)handleSyncedDataChanged:(id)arg1;
+- (BOOL)hasConfirmedField:(id)arg1 value:(id)arg2 forStorageEvent:(id)arg3;
 - (BOOL)hasContact:(id)arg1;
-- (BOOL)hasContact:(id)arg1 usingStore:(id)arg2;
-- (BOOL)hasContactDetail:(id)arg1 forContact:(id)arg2 usingStore:(id)arg3;
-- (BOOL)hasEvent:(id)arg1;
-- (BOOL)hasEventWithRejectedFields:(id)arg1;
-- (BOOL)hasFieldValues:(id)arg1 forEvent:(id)arg2;
-- (BOOL)hasFieldValues:(id)arg1 forStorageEvent:(id)arg2;
-- (BOOL)hasStorageEvent:(id)arg1;
-- (BOOL)hasStorageEventWithRejectedFields:(id)arg1;
+- (BOOL)hasContactDetail:(id)arg1 forContact:(id)arg2;
+- (BOOL)hasStorageContact:(id)arg1;
 - (id)hashesForContact:(id)arg1;
+- (id)hashesForContactDetail:(id)arg1 fromContact:(id)arg2;
+- (id)hashesForEvent:(id)arg1;
+- (id)hashesForOpaqueKey:(id)arg1;
+- (id)hashesForOpaqueKey:(id)arg1 withCreationTimeFromEpoch:(double)arg2;
+- (id)hashesForPseudoEventByKey:(id)arg1;
+- (id)hashesForStorageContact:(id)arg1;
+- (id)identityBasedHashesForPseudoEvent:(id)arg1 withCreationTimeFromEpoch:(double)arg2;
 - (id)identitySalt;
-- (id)init;
+- (id)initWithDeviceSalt:(id)arg1;
+- (id)initWithDeviceSalt:(id)arg1 andKVS:(id)arg2;
+- (BOOL)isConfirmedEvent:(id)arg1;
+- (BOOL)isConfirmedEvent:(id)arg1 withScopeLock:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg2;
+- (BOOL)isRejectedEvent:(id)arg1;
+- (BOOL)isRejectedEvent:(id)arg1 withScopeLock:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg2;
 - (BOOL)isUpdatableContact:(id)arg1;
-- (BOOL)isUpdatableEvent:(id)arg1;
+- (BOOL)isValidNewEvent:(id)arg1;
 - (BOOL)isValidSuggestion:(id)arg1;
 - (id)keysForContact:(id)arg1;
-- (void)pushAll;
-- (void)pushContacts;
-- (void)pushDontUpdate;
-- (void)pushEvents;
+- (id)keysForContactDetail:(id)arg1 ofContact:(id)arg2;
+- (id)keysForStorageContact:(id)arg1;
+- (id)kvs;
+- (id)loadResetInfo;
+- (id)mutableSetForKey:(id)arg1;
+- (void)pushAll:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg1;
+- (void)pushConfirmedEventFields:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg1;
+- (void)pushConfirmedEvents:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg1;
+- (void)pushContacts:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg1;
+- (void)pushDontUpdate:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg1;
+- (void)pushRejectedEvents:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg1;
+- (void)pushResetInfo:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg1;
+- (void)pushStorageDetails:(const struct SGMutexSynchronizedPtr<SGHistorySharedData> { struct SGMutexSynchronizedObject<SGHistorySharedData> {} *x1; }*)arg1;
 - (void)rejectContact:(id)arg1;
 - (void)rejectEvent:(id)arg1;
-- (void)rejectFieldValuesForStorageEvent:(id)arg1;
+- (void)rejectEventFromExternalDevice:(id)arg1;
+- (void)rejectStorageEvent:(id)arg1;
 - (void)reset;
 - (id)setForKey:(id)arg1;
 - (void)setInternalStateAccordingToKVS;
+- (void)writeAndPushConfirmedEventHashes:(id)arg1;
+- (void)writeAndPushRejectedEventHashes:(id)arg1;
 
 @end

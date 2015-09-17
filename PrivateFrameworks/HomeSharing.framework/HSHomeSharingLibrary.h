@@ -9,10 +9,10 @@
     HSConnection *_connection;
     NSObject<OS_dispatch_queue> *_connectionAccessQueue;
     int _connectionType;
-    <NSObject> *_context;
     NSString *_homeSharingGroupID;
     NSString *_name;
     BOOL _requiresPassword;
+    NSNetService *_service;
     NSString *_uniqueIdentifier;
     unsigned int _version;
 }
@@ -24,12 +24,12 @@
 @property (nonatomic, retain) HSConnection *connection;
 @property (nonatomic, readonly) int connectionState;
 @property (nonatomic, readonly) int connectionType;
-@property (nonatomic, retain) <NSObject> *context;
 @property (nonatomic, readonly) unsigned int databaseID;
 @property (nonatomic, readonly) NSString *deviceGUID;
 @property (nonatomic, readonly, copy) NSString *homeSharingGroupID;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly) BOOL requiresPassword;
+@property (nonatomic, retain) NSNetService *service;
 @property (nonatomic, readonly, copy) NSString *uniqueIdentifier;
 @property (nonatomic, readonly) unsigned int version;
 
@@ -43,19 +43,21 @@
 - (id)connection;
 - (int)connectionState;
 - (int)connectionType;
-- (id)context;
 - (unsigned int)databaseID;
 - (id)deviceGUID;
 - (void)disconnect;
+- (unsigned int)hash;
 - (id)homeSharingGroupID;
 - (id)initWithName:(id)arg1 uniqueIdentifier:(id)arg2 version:(unsigned int)arg3 baseURL:(id)arg4 homeSharingGroupID:(id)arg5 connectionType:(int)arg6;
 - (BOOL)isAvailable;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (BOOL)requiresPassword;
 - (id)securityInfoForURL:(id)arg1;
 - (void)sendRequest:(id)arg1 withResponseHandler:(id /* block */)arg2;
+- (id)service;
 - (void)setConnection:(id)arg1;
-- (void)setContext:(id)arg1;
+- (void)setService:(id)arg1;
 - (void)set_hasPendingUpdateRequest:(BOOL)arg1;
 - (id)signedRequestFromURLRequest:(id)arg1;
 - (id)uniqueIdentifier;

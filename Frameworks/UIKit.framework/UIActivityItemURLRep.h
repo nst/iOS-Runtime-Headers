@@ -12,9 +12,9 @@
 @property (nonatomic) int attachmentURLType;
 @property (nonatomic, retain) UIImage *thumbnail;
 
+- (void).cxx_destruct;
 - (id)URL;
 - (int)attachmentURLType;
-- (void)dealloc;
 - (BOOL)isFileURL;
 - (id)scheme;
 - (void)setAttachmentURLType:(int)arg1;

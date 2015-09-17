@@ -67,7 +67,6 @@
 - (void)invalidateSize;
 - (BOOL)isLastTarget;
 - (BOOL)isLayoutOffscreen;
-- (void)killColumns;
 - (BOOL)layoutIsValid;
 - (struct CGPoint { float x1; float x2; })layoutPositionFromAnchoredAttachmentPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (float)maxAnchorY;
@@ -97,13 +96,14 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectInRootForPresentingAnnotationPopoverForSelectionPath:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectInRootForSelectionPath:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectInRootOfAutoZoomContextOfSelectionPath:(id)arg1;
+- (void)resetColumnsAndLayouts;
 - (void)setAnchoredDrawablesForRelayout:(id)arg1;
 - (void)setNeedsDisplayInTargetRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldProvideSizingGuides;
 - (BOOL)siblingTargetIsManipulatingDrawable:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })targetRectForCanvasRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)textIsVertical;
-- (void)updateStartCharIndex;
+- (void)updateStartCharIndexWithDirtyRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)validate;
 - (id)validatedLayoutForAnchoredDrawable:(id)arg1;
 - (id)validatedLayoutForInlineDrawable:(id)arg1;

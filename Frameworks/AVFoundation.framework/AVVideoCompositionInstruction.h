@@ -6,7 +6,7 @@
     AVVideoCompositionInstructionInternal *_instruction;
 }
 
-@property (nonatomic, retain) struct CGColor { }*backgroundColor;
+@property (nonatomic, readonly, retain) struct CGColor { }*backgroundColor;
 @property (nonatomic, readonly) BOOL containsTweening;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

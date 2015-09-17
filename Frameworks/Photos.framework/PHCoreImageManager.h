@@ -8,11 +8,10 @@
     int _CPLDownloadUpdateNotifyToken;
     NSMutableSet *_cloudDomainsWithPurgeScheduled;
     NSMutableSet *_domainsWithPurgeScheduled;
-    NSMapTable *_perDomainCloudPreheatItemMapTables;
-    NSMapTable *_perDomainHighPriorityRequestWaitGroups;
-    NSMapTable *_perDomainMissedPreheatItemMapTables;
-    NSMapTable *_perDomainPreheatItemMapTables;
-    NSObject<OS_dispatch_queue> *_preheatItemIsolationQueue;
+    PHConcurrentMapTable *_perDomainCloudPreheatItemMapTables;
+    PHConcurrentMapTable *_perDomainHighPriorityRequestWaitGroups;
+    PHConcurrentMapTable *_perDomainMissedPreheatItemMapTables;
+    PHConcurrentMapTable *_perDomainPreheatItemMapTables;
     NSMapTable *_requestLookupTable;
     NSObject<OS_dispatch_queue> *_requestLookupTableIsolationQueue;
 }
@@ -22,11 +21,10 @@
 @property (nonatomic) int CPLDownloadUpdateNotifyToken;
 @property (nonatomic, retain) NSMutableSet *cloudDomainsWithPurgeScheduled;
 @property (nonatomic, retain) NSMutableSet *domainsWithPurgeScheduled;
-@property (nonatomic, retain) NSMapTable *perDomainCloudPreheatItemMapTables;
-@property (nonatomic, retain) NSMapTable *perDomainHighPriorityRequestWaitGroups;
-@property (nonatomic, retain) NSMapTable *perDomainMissedPreheatItemMapTables;
-@property (nonatomic, retain) NSMapTable *perDomainPreheatItemMapTables;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *preheatItemIsolationQueue;
+@property (nonatomic, retain) PHConcurrentMapTable *perDomainCloudPreheatItemMapTables;
+@property (nonatomic, retain) PHConcurrentMapTable *perDomainHighPriorityRequestWaitGroups;
+@property (nonatomic, retain) PHConcurrentMapTable *perDomainMissedPreheatItemMapTables;
+@property (nonatomic, retain) PHConcurrentMapTable *perDomainPreheatItemMapTables;
 @property (nonatomic, retain) NSMapTable *requestLookupTable;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *requestLookupTableIsolationQueue;
 
@@ -79,7 +77,8 @@
 - (void)_schedulePurgeForCPLPrefetching:(BOOL)arg1 domain:(id)arg2 onMainQueue:(BOOL)arg3 didCancelHandler:(id /* block */)arg4;
 - (id)_setupCPLDownloadWaitGroupForRequest:(id)arg1 withTimeout:(unsigned long long)arg2;
 - (void)_unregisterRequest:(id)arg1;
-- (void)_updateCPLDownloadStatesUponNotification;
+- (void)_updateCPLDownloadStatesOnConnectionLostNotification:(id)arg1;
+- (void)_updateCPLDownloadStatesOnStatusDidChangeNotification;
 - (id)cloudDomainsWithPurgeScheduled;
 - (void)dealloc;
 - (id)description;
@@ -89,7 +88,6 @@
 - (id)perDomainHighPriorityRequestWaitGroups;
 - (id)perDomainMissedPreheatItemMapTables;
 - (id)perDomainPreheatItemMapTables;
-- (id)preheatItemIsolationQueue;
 - (id)requestLookupTable;
 - (id)requestLookupTableIsolationQueue;
 - (void)setCPLDownloadFireAndForgetRequestQueue:(id)arg1;
@@ -101,7 +99,6 @@
 - (void)setPerDomainHighPriorityRequestWaitGroups:(id)arg1;
 - (void)setPerDomainMissedPreheatItemMapTables:(id)arg1;
 - (void)setPerDomainPreheatItemMapTables:(id)arg1;
-- (void)setPreheatItemIsolationQueue:(id)arg1;
 - (void)setRequestLookupTable:(id)arg1;
 - (void)setRequestLookupTableIsolationQueue:(id)arg1;
 

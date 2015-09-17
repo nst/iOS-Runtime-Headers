@@ -70,6 +70,7 @@
 @property (nonatomic, readonly) BOOL hasInactiveChunks;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) TSDDrawableInfo *i_drawable;
+@property (nonatomic, readonly) NSUUID *i_drawableId;
 @property (nonatomic, readonly) NSSet *inspectableAttributes;
 @property (nonatomic, readonly) BOOL isActionBuild;
 @property (nonatomic, readonly) BOOL isActionMotionBuild;
@@ -117,7 +118,6 @@
 - (id)chunkForIdentifier:(id)arg1;
 - (id)chunks;
 - (id)color;
-- (id)copyPreservingUUID:(BOOL)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (float)custom3DChartRotation;
 - (BOOL)customBounce;
@@ -161,6 +161,8 @@
 - (id)i_buildChunkForChunkIdentifier:(id)arg1;
 - (void)i_deregisterBuildChunkWithChunkIdentifier:(id)arg1;
 - (id)i_drawable;
+- (id)i_drawableId;
+- (id)i_drawableOnSlide:(id)arg1;
 - (void)i_generateAndApplyNewChunkIdentifierToChunk:(id)arg1;
 - (void)i_invalidateChunkCache;
 - (void)i_registerBuildChunkIdentifierForChunk:(id)arg1;
@@ -182,6 +184,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })p_calculateActiveChunkRange;
 - (id)p_chunkAtIndex:(unsigned int)arg1;
 - (id)p_chunkTitleByTruncatingTitle:(id)arg1 toLength:(unsigned int)arg2;
+- (BOOL)p_isDeliveryLocalized:(id)arg1 forNonNilDrawable:(id)arg2;
 - (BOOL)p_supportsCustomEffectTimingCurveForLayoutStyles:(id)arg1;
 - (BOOL)p_supportsCustomTextDeliveryOptionsForAttributes:(id)arg1;
 - (int)randomNumberSeed;

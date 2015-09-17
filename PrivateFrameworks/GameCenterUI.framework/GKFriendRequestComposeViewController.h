@@ -2,52 +2,66 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKFriendRequestComposeViewController : UINavigationController {
+@interface GKFriendRequestComposeViewController : UINavigationController <GKExtensionParentViewControllerProtocol> {
     UIAlertController *_alertController;
-    GKComposeHostedViewController *_composeController;
     <GKFriendRequestComposeViewControllerDelegate> *_composeViewDelegateWeak;
+    NSMutableArray *_emailsToAddAsRecipients;
     NSString *_message;
+    NSMutableArray *_playerInternalsToAddAsRecipients;
     unsigned int _recipientCount;
+    GKFriendRequestHostViewController *_remoteViewController;
+    unsigned int _rid;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;
-@property (nonatomic, retain) GKComposeHostedViewController *composeController;
 @property (nonatomic) <GKFriendRequestComposeViewControllerDelegate> *composeViewDelegate;
-@property (nonatomic, retain) NSString *message;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) NSMutableArray *emailsToAddAsRecipients;
+@property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *message;
+@property (nonatomic, retain) NSMutableArray *playerInternalsToAddAsRecipients;
 @property (nonatomic) unsigned int recipientCount;
+@property (nonatomic, retain) GKFriendRequestHostViewController *remoteViewController;
 @property (nonatomic) unsigned int rid;
+@property (readonly) Class superclass;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
 + (unsigned int)maxNumberOfRecipients;
 
-- (void)__viewControllerWillBePresented:(BOOL)arg1;
+- (void)_addRecipientInternals:(id)arg1;
+- (void)_setupChildViewController;
+- (void)_setupRemoteViewController;
 - (void)addRecipientPlayers:(id)arg1;
 - (void)addRecipientsWithEmailAddresses:(id)arg1;
 - (void)addRecipientsWithPlayerIDs:(id)arg1;
 - (id)alertController;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
-- (id)composeController;
 - (id)composeViewDelegate;
 - (void)dealloc;
+- (id)emailsToAddAsRecipients;
+- (void)extensionDidFinishWithError:(id)arg1;
 - (id)init;
 - (id)message;
-- (BOOL)navigationBarHidden;
+- (id)playerInternalsToAddAsRecipients;
 - (void)prepareForNewRecipients:(id)arg1;
 - (unsigned int)recipientCount;
+- (id)remoteViewController;
 - (unsigned int)rid;
 - (void)sendFinishedMessageToDelegateCancelled:(BOOL)arg1;
 - (void)setAlertController:(id)arg1;
-- (void)setComposeController:(id)arg1;
 - (void)setComposeViewDelegate:(id)arg1;
+- (void)setEmailsToAddAsRecipients:(id)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setPlayerInternalsToAddAsRecipients:(id)arg1;
 - (void)setRecipientCount:(unsigned int)arg1;
+- (void)setRemoteViewController:(id)arg1;
 - (void)setRid:(unsigned int)arg1;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidAppear:(BOOL)arg1;
-- (void)viewDidLoad;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

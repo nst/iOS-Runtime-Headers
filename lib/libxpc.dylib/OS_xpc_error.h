@@ -4,6 +4,11 @@
 
 @interface OS_xpc_error : OS_xpc_object <OS_xpc_error>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
 + (void)load;
 
 @end

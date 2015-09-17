@@ -37,7 +37,7 @@
 - (void)_performPresentationOnViewController:(id)arg1 completion:(id /* block */)arg2;
 - (void)_prepareToPost:(id)arg1 albumName:(id)arg2 recipients:(id)arg3 comments:(id)arg4;
 - (BOOL)_presentActivityOnViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)_publishAssets:(id)arg1 andTrimmedVideoPathInfo:(id)arg2 toAlbum:(id)arg3 orCreateWithName:(id)arg4 comment:(id)arg5 invitationRecipients:(id)arg6 wantsPublicWebsite:(BOOL)arg7 completion:(id /* block */)arg8;
+- (void)_publishAssets:(id)arg1 withSharingInfos:(id)arg2 andTrimmedVideoPathInfo:(id)arg3 toAlbum:(id)arg4 orCreateWithName:(id)arg5 comment:(id)arg6 invitationRecipients:(id)arg7 wantsPublicWebsite:(BOOL)arg8 completion:(id /* block */)arg9;
 - (id)_selectedVideo;
 - (BOOL)_sharedAlbumAllowsAdding:(struct NSObject { Class x1; }*)arg1;
 - (id)activityTitle;

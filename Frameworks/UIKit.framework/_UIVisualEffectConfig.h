@@ -13,9 +13,9 @@
 + (id)configWithContentConfig:(id)arg1;
 + (id)configWithLayerConfigs:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addLayerConfig:(id)arg1;
 - (id)contentConfig;
-- (void)dealloc;
 - (void)enumerateLayerConfigs:(id /* block */)arg1;
 - (id)layerConfigs;
 

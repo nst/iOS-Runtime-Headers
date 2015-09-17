@@ -25,7 +25,6 @@
 @property (retain) TSDDrawableInfo *info;
 @property (readonly) TNPageController *pageController;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)info;
 - (id)initWithInfo:(id)arg1 pageController:(id)arg2;

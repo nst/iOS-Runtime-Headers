@@ -12,7 +12,6 @@
     NSString *_identifier;
     NSURL *_objectID;
     NSString *_owningBundleID;
-    NSString *_owningTeamID;
     NSSet *_supportedDataclasses;
     int _supportsAuthentication;
     BOOL _supportsMultipleAccounts;
@@ -31,7 +30,6 @@
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, retain) NSURL *objectID;
 @property (nonatomic, retain) NSString *owningBundleID;
-@property (nonatomic, retain) NSString *owningTeamID;
 @property (nonatomic, readonly) NSSet *supportedDataclasses;
 @property (nonatomic) int supportsAuthentication;
 @property (nonatomic) BOOL supportsMultipleAccounts;
@@ -52,14 +50,15 @@
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)encryptAccountProperties;
 - (id)fullDescription;
+- (unsigned int)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 description:(id)arg2;
 - (id)initWithManagedAccountType:(id)arg1;
 - (id)initWithManagedAccountType:(id)arg1 accountStore:(id)arg2;
+- (BOOL)isEqual:(id)arg1;
 - (id)objectID;
 - (id)owningBundleID;
-- (id)owningTeamID;
 - (void)setAccountStore:(id)arg1;
 - (void)setAccountTypeDescription:(id)arg1;
 - (void)setCredentialProtectionPolicy:(id)arg1;
@@ -67,7 +66,6 @@
 - (void)setIdentifier:(id)arg1;
 - (void)setObjectID:(id)arg1;
 - (void)setOwningBundleID:(id)arg1;
-- (void)setOwningTeamID:(id)arg1;
 - (void)setSupportsAuthentication:(int)arg1;
 - (void)setSupportsMultipleAccounts:(BOOL)arg1;
 - (void)setVisibility:(int)arg1;

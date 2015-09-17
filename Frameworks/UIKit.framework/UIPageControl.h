@@ -3,18 +3,22 @@
  */
 
 @interface UIPageControl : UIControl {
+    UIVisualEffectView *_backgroundVisualEffectView;
     int _currentPage;
     UIImage *_currentPageImage;
+    NSMutableArray *_currentPageImages;
     UIColor *_currentPageIndicatorTintColor;
     int _displayedPage;
     NSMutableArray *_indicators;
     int _lastUserInterfaceIdiom;
     _UILegibilitySettings *_legibilitySettings;
+    int _numberOfPages;
     struct { 
         unsigned int hideForSinglePage : 1; 
         unsigned int defersCurrentPageDisplay : 1; 
     } _pageControlFlags;
     UIImage *_pageImage;
+    NSMutableArray *_pageImages;
     UIColor *_pageIndicatorTintColor;
 }
 
@@ -22,22 +26,27 @@
 @property (nonatomic, retain) UIColor *currentPageIndicatorTintColor;
 @property (nonatomic) BOOL defersCurrentPageDisplay;
 @property (nonatomic) BOOL hidesForSinglePage;
-@property (getter=_legibilitySettings, setter=_setLegibilitySettings:, nonatomic) _UILegibilitySettings *legibilitySettings;
+@property (getter=_legibilitySettings, setter=_setLegibilitySettings:, nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (getter=_legibilityStyle, setter=_setLegibilityStyle:, nonatomic) int legibilityStyle;
 @property (nonatomic) int numberOfPages;
 @property (nonatomic, retain) UIColor *pageIndicatorTintColor;
 
++ (BOOL)doesOverrideMethod:(SEL)arg1 inBaseClass:(Class)arg2;
+
+- (void).cxx_destruct;
 - (id)_activePageIndicatorImage;
+- (void)_cachePageIndicatorImages;
+- (id)_cachedPageIndicatorCurrentImageForPage:(int)arg1;
+- (id)_cachedPageIndicatorImageForPage:(int)arg1;
 - (void)_commonPageControlInit;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
-- (id)_correctIdiomaticNameForImageNamed:(id)arg1;
+- (unsigned int)_controlEventsForActionTriggered;
 - (id)_createModernIndicatorImageFromView:(id)arg1;
-- (id)_customPageIndicatorCurrentImageForPage:(int)arg1;
-- (id)_customPageIndicatorImageForPage:(int)arg1;
 - (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (int)_displayedPage;
 - (void)_drawModernIndicatorInView:(id)arg1 enabled:(BOOL)arg2;
+- (id)_effectiveContentView;
 - (BOOL)_hasCustomImageForPage:(int)arg1 enabled:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_indicatorFrameAtIndex:(int)arg1;
 - (float)_indicatorSpacing;
@@ -63,9 +72,9 @@
 - (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3;
 - (void)_transitionIndicator:(id)arg1 toEnabled:(BOOL)arg2 index:(int)arg3 legible:(BOOL)arg4;
 - (void)_updateCurrentPageDisplay;
+- (BOOL)canBecomeFocused;
 - (int)currentPage;
 - (id)currentPageIndicatorTintColor;
-- (void)dealloc;
 - (BOOL)defersCurrentPageDisplay;
 - (void)encodeWithCoder:(id)arg1;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

@@ -10,8 +10,8 @@
 
 + (id)_lexiconWithTILexicon:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)entries;
 - (BOOL)isEqual:(id)arg1;
 

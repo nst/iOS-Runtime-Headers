@@ -18,6 +18,7 @@
 + (BOOL)hasActiveSessions;
 + (void)startViewServiceSessionManagerAsPlugin:(BOOL)arg1;
 
+- (void).cxx_destruct;
 - (void)_configureSessionForConnection:(id)arg1;
 - (BOOL)_hasActiveSessions;
 - (id)_initAsPlugIn:(BOOL)arg1;

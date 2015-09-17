@@ -23,7 +23,6 @@
 @property (nonatomic, retain) NSArray *whiteListAllowedSites;
 
 + (id)_arrayByConvertingLinesInStringsAtPath:(id)arg1;
-+ (BOOL)_isURLMetasite:(id)arg1;
 + (id)_metasiteDomainNamesArray;
 + (id)_sharedMetasiteDomainNamesDictionary;
 + (id)_sharedMetasiteExceptionsDomainNamesArray;

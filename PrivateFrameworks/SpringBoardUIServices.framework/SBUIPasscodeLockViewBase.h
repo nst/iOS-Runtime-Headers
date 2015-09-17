@@ -18,7 +18,6 @@
     _UILegibilitySettings *_legibilitySettings;
     float _luminanceBoost;
     BOOL _mesaLockedOut;
-    NSString *_passcode;
     BOOL _playsKeypadSounds;
     BOOL _screenOn;
     BOOL _shouldResetForFailedPasscodeAttempt;
@@ -129,6 +128,7 @@
 - (void)updateStatusText:(id)arg1 subtitle:(id)arg2 animated:(BOOL)arg3;
 - (void)updateStatusTextAnimated:(BOOL)arg1;
 - (void)updateStatusTextForBioEvent:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)willMoveToSuperview:(id)arg1;
 - (void)willMoveToWindow:(id)arg1;
 
 @end

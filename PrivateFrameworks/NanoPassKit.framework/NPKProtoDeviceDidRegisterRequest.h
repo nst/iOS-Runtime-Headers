@@ -2,8 +2,26 @@
    Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
  */
 
-@interface NPKProtoDeviceDidRegisterRequest : PBRequest <NSCopying>
+@interface NPKProtoDeviceDidRegisterRequest : PBRequest <NSCopying> {
+    NSMutableArray *_brokerRegionPushTopics;
+    NSMutableArray *_tsmRegionPushTopics;
+    NSMutableArray *_tsmRegionURLs;
+}
 
+@property (nonatomic, retain) NSMutableArray *brokerRegionPushTopics;
+@property (nonatomic, retain) NSMutableArray *tsmRegionPushTopics;
+@property (nonatomic, retain) NSMutableArray *tsmRegionURLs;
+
+- (void).cxx_destruct;
+- (void)addBrokerRegionPushTopics:(id)arg1;
+- (void)addTsmRegionPushTopics:(id)arg1;
+- (void)addTsmRegionURLs:(id)arg1;
+- (id)brokerRegionPushTopics;
+- (id)brokerRegionPushTopicsAtIndex:(unsigned int)arg1;
+- (unsigned int)brokerRegionPushTopicsCount;
+- (void)clearBrokerRegionPushTopics;
+- (void)clearTsmRegionPushTopics;
+- (void)clearTsmRegionURLs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -12,6 +30,15 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setBrokerRegionPushTopics:(id)arg1;
+- (void)setTsmRegionPushTopics:(id)arg1;
+- (void)setTsmRegionURLs:(id)arg1;
+- (id)tsmRegionPushTopics;
+- (id)tsmRegionPushTopicsAtIndex:(unsigned int)arg1;
+- (unsigned int)tsmRegionPushTopicsCount;
+- (id)tsmRegionURLs;
+- (id)tsmRegionURLsAtIndex:(unsigned int)arg1;
+- (unsigned int)tsmRegionURLsCount;
 - (void)writeTo:(id)arg1;
 
 @end

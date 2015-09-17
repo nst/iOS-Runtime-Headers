@@ -20,11 +20,14 @@
 - (void)approveInPerson:(id)arg1 :(id)arg2;
 - (void)attemptLocalAskToBuyApproval:(id)arg1;
 - (void)buy:(id)arg1;
+- (void)clearToggleStateItems;
 - (void)dealloc;
 - (void)download:(id)arg1;
 - (void)exit:(id)arg1;
 - (void)findApps:(id)arg1 :(id)arg2 :(id)arg3;
 - (void)findLibraryItems:(id)arg1 :(id)arg2 :(id)arg3;
+- (void)findToggleStateForItem:(id)arg1 :(id)arg2;
+- (void)getAdminStatus:(id)arg1 :(id)arg2;
 - (void)getBookSample:(id)arg1;
 - (void)getProfilePermissions:(id)arg1 :(id)arg2;
 - (id)initWithAppContext:(id)arg1 clientContext:(id)arg2;
@@ -35,9 +38,12 @@
 - (id)primaryAppleAccount;
 - (void)resetStateForActiveDocument;
 - (BOOL)resourceExists:(id)arg1;
+- (void)sendApplicationDidEnterBackground;
+- (void)sendApplicationWillEnterForeground;
 - (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;
 - (BOOL)sendOnXEventWithDictionary:(id)arg1;
 - (void)setApplicationIconBadgeNumber:(int)arg1;
 - (void)setPreviewOverlay:(id)arg1 :(id)arg2;
+- (void)updateToggleStateForItem:(id)arg1 toggled:(BOOL)arg2 :(id)arg3;
 
 @end

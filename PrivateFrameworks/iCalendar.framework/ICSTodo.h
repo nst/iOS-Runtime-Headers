@@ -31,6 +31,7 @@
 @property (retain) NSString *uid;
 @property (retain) NSURL *url;
 @property (nonatomic, retain) NSArray *x_apple_activity;
+@property (nonatomic, retain) NSData *x_apple_appLinkData;
 @property (retain) NSString *x_apple_ews_changekey;
 @property (retain) NSString *x_apple_ews_itemid;
 @property BOOL x_apple_ews_needsserverconfirmation;
@@ -49,9 +50,11 @@
 - (void)setDue:(id)arg1;
 - (void)setPercentComplete:(int)arg1;
 - (void)setX_apple_activity:(id)arg1;
+- (void)setX_apple_appLinkData:(id)arg1;
 - (void)setX_apple_sort_order:(unsigned int)arg1;
 - (BOOL)validate:(id*)arg1;
 - (id)x_apple_activity;
+- (id)x_apple_appLinkData;
 - (unsigned int)x_apple_sort_order;
 
 @end

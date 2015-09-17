@@ -30,6 +30,7 @@
 
 + (id)defaultDimmingColor;
 
+- (void).cxx_destruct;
 - (id)_backdropViewsToAnimate;
 - (void)_simulateTap;
 - (void)dealloc;

@@ -3,7 +3,6 @@
  */
 
 @interface GEOPDCategory : PBCodable <NSCopying> {
-    NSString *_categoryId;
     struct { 
         unsigned int level : 1; 
     } _has;
@@ -11,8 +10,6 @@
     NSMutableArray *_localizedNames;
 }
 
-@property (nonatomic, retain) NSString *categoryId;
-@property (nonatomic, readonly) BOOL hasCategoryId;
 @property (nonatomic) BOOL hasLevel;
 @property (nonatomic) int level;
 @property (nonatomic, retain) NSMutableArray *localizedNames;
@@ -22,14 +19,12 @@
 + (BOOL)hasCategoryNamesForPlaceData:(id)arg1 type:(unsigned int)arg2;
 
 - (void)addLocalizedName:(id)arg1;
-- (id)categoryId;
 - (void)clearLocalizedNames;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasCategoryId;
 - (BOOL)hasLevel;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -39,7 +34,6 @@
 - (unsigned int)localizedNamesCount;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setCategoryId:(id)arg1;
 - (void)setHasLevel:(BOOL)arg1;
 - (void)setLevel:(int)arg1;
 - (void)setLocalizedNames:(id)arg1;

@@ -10,6 +10,10 @@
     GEORPMapLocation *_correctedMapLocation;
     GEORPCorrectedSearch *_correctedSearch;
     GEORPDirectionsProblem *_directionsProblem;
+    struct { 
+        unsigned int locationIsMissingType : 1; 
+    } _has;
+    int _locationIsMissingType;
     NSMutableArray *_photoWithMetadatas;
     GEORPPlaceProblem *_placeProblem;
 }
@@ -27,7 +31,9 @@
 @property (nonatomic, readonly) BOOL hasCorrectedMapLocation;
 @property (nonatomic, readonly) BOOL hasCorrectedSearch;
 @property (nonatomic, readonly) BOOL hasDirectionsProblem;
+@property (nonatomic) BOOL hasLocationIsMissingType;
 @property (nonatomic, readonly) BOOL hasPlaceProblem;
+@property (nonatomic) int locationIsMissingType;
 @property (nonatomic, retain) NSMutableArray *photoWithMetadatas;
 @property (nonatomic, retain) GEORPPlaceProblem *placeProblem;
 
@@ -55,9 +61,11 @@
 - (BOOL)hasCorrectedMapLocation;
 - (BOOL)hasCorrectedSearch;
 - (BOOL)hasDirectionsProblem;
+- (BOOL)hasLocationIsMissingType;
 - (BOOL)hasPlaceProblem;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (int)locationIsMissingType;
 - (void)mergeFrom:(id)arg1;
 - (id)photoWithMetadataAtIndex:(unsigned int)arg1;
 - (id)photoWithMetadatas;
@@ -71,6 +79,8 @@
 - (void)setCorrectedMapLocation:(id)arg1;
 - (void)setCorrectedSearch:(id)arg1;
 - (void)setDirectionsProblem:(id)arg1;
+- (void)setHasLocationIsMissingType:(BOOL)arg1;
+- (void)setLocationIsMissingType:(int)arg1;
 - (void)setPhotoWithMetadatas:(id)arg1;
 - (void)setPlaceProblem:(id)arg1;
 - (void)writeTo:(id)arg1;

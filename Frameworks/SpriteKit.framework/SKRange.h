@@ -20,6 +20,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLowerLimit:(float)arg1 upperLimit:(float)arg2;
 - (float)lowerLimit;

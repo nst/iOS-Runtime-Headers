@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIFieldEditor : UIScrollView <NSLayoutManagerDelegate, NSUITextViewCommonMethods, UIAutoscrollContainer, UIKeyboardInput, UITextAutoscrolling, UITextInput, UITextInputControllerDelegate> {
+@interface UIFieldEditor : UIScrollView <NSLayoutManagerDelegate, NSUITextViewCommonMethods, UIAutoscrollContainer, UIKeyInputPrivate, UIKeyboardInput, UITextAutoscrolling, UITextInput, UITextInputControllerDelegate> {
     UIAutoscroll *_autoscroll;
     struct CGPoint { 
         float x; 
@@ -52,7 +52,7 @@
 @property (nonatomic) <UITextInputDelegate> *inputDelegate;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
-@property (nonatomic) int layoutOrientation;
+@property (nonatomic, readonly) int layoutOrientation;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } markedRange;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
@@ -61,6 +61,7 @@
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (copy) UITextRange *selectedTextRange;
 @property (nonatomic) int selectionAffinity;
+@property (nonatomic) BOOL shouldAutoscroll;
 @property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
 @property (nonatomic) NSTextContainer *textContainer;
@@ -73,6 +74,7 @@
 + (void)releaseSharedInstance;
 + (id)sharedFieldEditor;
 
+- (void).cxx_destruct;
 - (void)_cancelObscureAllTextTimer;
 - (BOOL)_clearOnEditIfNeeded;
 - (void)_deleteBackwardAndNotify:(BOOL)arg1;
@@ -129,6 +131,7 @@
 - (id)inputDelegate;
 - (void)insertDictationResult:(id)arg1 withCorrectionIdentifier:(id)arg2;
 - (id)insertDictationResultPlaceholder;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })insertFilteredText:(id)arg1;
 - (void)insertText:(id)arg1;
 - (id)interactionAssistant;
 - (void)invalidateTextContainerOrigin;

@@ -10,6 +10,7 @@
 
 - (BOOL)_generateReferenceImage;
 - (void)_initializeCoreUIOptions:(id)arg1;
+- (id)_rendererInitializationDictionary;
 - (id)coreUIOptions;
 - (void)dealloc;
 - (id)effectPreset;

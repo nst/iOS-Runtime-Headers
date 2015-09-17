@@ -9,6 +9,7 @@
     unsigned int _modifierState;
     NSString *_shiftModifiedInput;
     NSString *_unmodifiedInput;
+    unsigned int _usagePage;
 }
 
 @property (nonatomic) unsigned short keyCode;
@@ -17,6 +18,7 @@
 @property (nonatomic) unsigned int modifierState;
 @property (nonatomic, retain) NSString *shiftModifiedInput;
 @property (nonatomic, retain) NSString *unmodifiedInput;
+@property (nonatomic) unsigned int usagePage;
 
 + (BOOL)supportsSecureCoding;
 
@@ -35,9 +37,11 @@
 - (void)setModifierState:(unsigned int)arg1;
 - (void)setShiftModifiedInput:(id)arg1;
 - (void)setUnmodifiedInput:(id)arg1;
+- (void)setUsagePage:(unsigned int)arg1;
 - (id)shiftModifiedInput;
 - (void)translateKeycode;
 - (void)translateStringToKeycode;
 - (id)unmodifiedInput;
+- (unsigned int)usagePage;
 
 @end

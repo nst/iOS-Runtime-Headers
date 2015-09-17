@@ -2,78 +2,35 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORouteHypothesizer : NSObject <GEOETAUpdaterDelegate, GEORouteHypothesizerUpdaterDelegate> {
-    NSDate *_arrivalDate;
-    GEOETARoute *_baselineETARoute;
-    <GEORouteHypothesizerDelegate> *_delegate;
-    NSDate *_departureDate;
-    GEOComposedWaypoint *_destination;
-    unsigned int _etaUpdateFrequency;
-    double _etaUpdateInterval;
-    GEOETAUpdater *_etaUpdater;
-    GEORoute *_existingRoute;
-    GEODirectionsRequestFeedback *_feedback;
-    id /* block */ _handler;
-    GEORouteHypothesis *_hypothesis;
-    NSDate *_lastETARequestDate;
-    GEOLocation *_lastLocation;
-    GEOETARoute *_liveETARoute;
-    GEOLocationShifter *_locationShifter;
-    GEORouteAttributes *_routeAttributes;
-    GEOComposedWaypoint *_source;
-    NSDate *_suggestedNextUpdateDate;
-    GEORouteHypothesizerUpdater *_updater;
-    NSData *_usualRouteData;
+@interface GEORouteHypothesizer : NSObject {
+    NSString *_activityIdentifier;
+    GEORouteHypothesis *_currentHypothesis;
+    GEOPlannedDestination *_plannedDestination;
+    unsigned int _state;
+    id /* block */ _updateHandler;
 }
 
-@property (nonatomic, readonly) NSDate *arrivalDate;
-@property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <GEORouteHypothesizerDelegate> *delegate;
-@property (nonatomic, readonly) NSDate *departureDate;
-@property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) GEOComposedWaypoint *destination;
-@property (nonatomic) unsigned int etaUpdateFrequency;
-@property (nonatomic, retain) GEODirectionsRequestFeedback *feedback;
-@property (readonly) unsigned int hash;
-@property (nonatomic, readonly) GEOComposedRoute *route;
-@property (nonatomic, readonly) GEOComposedWaypoint *source;
-@property (nonatomic, readonly) NSDate *suggestedNextUpdateDate;
-@property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsDirections;
-@property (nonatomic, readonly) BOOL supportsLiveTraffic;
+@property (nonatomic, readonly) GEORouteHypothesis *currentHypothesis;
+@property (nonatomic, readonly) GEOPlannedDestination *plannedDestination;
+@property (nonatomic) unsigned int state;
+@property (nonatomic, readonly) double willBeginHypothesizingInterval;
+@property (nonatomic, readonly) double willEndHypothesizingInterval;
 
-- (void)_commonInit;
-- (void)_createUpdaterWithStartingLocation:(id)arg1;
-- (void)_refreshETAWithRouteMatch:(id)arg1;
-- (void)_updateETAWithRouteMatch:(id)arg1;
-- (void)_updateLocation:(id)arg1 hypothesisHandler:(id /* block */)arg2;
-- (void)_updateLocationAndETAUpdateInterval;
-- (id)arrivalDate;
++ (id)hypothesizerForPlannedDestination:(id)arg1;
+
+- (BOOL)_wontHypothesizeAgain;
+- (id)currentHypothesis;
 - (void)dealloc;
-- (id)delegate;
-- (id)departureDate;
-- (id)destination;
-- (unsigned int)etaUpdateFrequency;
-- (void)etaUpdater:(id)arg1 receivedETATrafficUpdateResponse:(id)arg2;
-- (void)etaUpdater:(id)arg1 receivedError:(id)arg2;
-- (void)etaUpdater:(id)arg1 willSendETATrafficUpdateRequest:(id)arg2;
-- (void)etaUpdaterReceivedInvalidRoute:(id)arg1 newRoute:(id)arg2 incidentsOnRoute:(id)arg3 incidentsOffRoute:(id)arg4;
-- (id)etaUpdaterRoutesForETATrafficUpdateRequest:(id)arg1;
-- (void)etaUpdaterUpdatedETA:(id)arg1;
-- (id)feedback;
-- (id)initWithExistingRoute:(id)arg1 source:(id)arg2 destination:(id)arg3 etaUpdater:(id)arg4;
-- (id)initWithSource:(id)arg1 toDestination:(id)arg2 arrivalDate:(id)arg3 usualRouteData:(id)arg4;
-- (id)initWithSource:(id)arg1 toDestination:(id)arg2 departureDate:(id)arg3 usualRouteData:(id)arg4;
-- (id)route;
-- (void)routeHypothesizerUpdater:(id)arg1 receivedNewRoute:(id)arg2 request:(id)arg3 response:(id)arg4;
-- (void)routeHypothesizerUpdater:(id)arg1 willRequestNewRoute:(id)arg2;
-- (void)setDelegate:(id)arg1;
-- (void)setEtaUpdateFrequency:(unsigned int)arg1;
-- (void)setFeedback:(id)arg1;
-- (id)source;
-- (id)suggestedNextUpdateDate;
-- (BOOL)supportsDirections;
-- (BOOL)supportsLiveTraffic;
-- (void)updateLocation:(id)arg1 hypothesisHandler:(id /* block */)arg2;
+- (void)delayStarting;
+- (id)description;
+- (void)didPostUINotification:(unsigned int)arg1;
+- (id)initWithPlannedDestination:(id)arg1;
+- (id)plannedDestination;
+- (void)setState:(unsigned int)arg1;
+- (void)startHypothesizingWithUpdateHandler:(id /* block */)arg1;
+- (unsigned int)state;
+- (void)stopHypothesizing;
+- (double)willBeginHypothesizingInterval;
+- (double)willEndHypothesizingInterval;
 
 @end

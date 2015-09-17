@@ -12,12 +12,12 @@
 @property (nonatomic) BOOL content;
 @property (nonatomic, retain) CoreDAVItem *prop;
 
+- (void).cxx_destruct;
 - (void)addCalendarChange:(id)arg1;
 - (void)addContentItem:(id)arg1;
 - (id)calendarChanges;
 - (BOOL)content;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)init;
 - (id)prop;
 - (void)setCalendarChanges:(id)arg1;

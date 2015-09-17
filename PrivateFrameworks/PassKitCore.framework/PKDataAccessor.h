@@ -34,6 +34,6 @@
 - (id)resourceValueForKey:(id)arg1;
 - (void)revocationStatusWithCompletion:(id /* block */)arg1;
 - (id)serializedFileWrapper;
-- (void)updateSettings:(int)arg1;
+- (void)updateSettings:(unsigned int)arg1;
 
 @end

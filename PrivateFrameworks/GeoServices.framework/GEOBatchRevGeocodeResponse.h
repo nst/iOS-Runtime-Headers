@@ -24,7 +24,6 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) BOOL hasTtl;
 @property (nonatomic) BOOL hasVersion;
-@property (nonatomic, retain) NSDictionary *httpHeaders;
 @property (nonatomic) int statusCode;
 @property (nonatomic) double timestamp;
 @property (nonatomic) unsigned int ttl;

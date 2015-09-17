@@ -8,12 +8,11 @@
 
 @property (nonatomic, retain) UIView *containerView;
 
+- (void).cxx_destruct;
 - (id)containerView;
-- (void)dealloc;
-- (id)defaultSegueClassName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)segueWithDestinationViewController:(id)arg1;
+- (id /* block */)newDefaultPerformHandlerForSegue:(id)arg1;
 - (void)setContainerView:(id)arg1;
 
 @end

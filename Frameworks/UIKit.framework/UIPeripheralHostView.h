@@ -17,8 +17,8 @@
 @property (nonatomic, readonly) UIKBInputBackdropView *inputBackdropView;
 
 - (int)_clipCornersOfView:(id)arg1;
+- (void)_didChangeKeyplaneWithContext:(id)arg1;
 - (id)_inheritedRenderConfig;
-- (void)_resizeForKeyplaneSize:(struct CGSize { float x1; float x2; })arg1 splitWidthsChanged:(BOOL)arg2;
 - (void)_setBaseRenderConfig:(id)arg1;
 - (void)_setRenderConfig:(id)arg1;
 - (void)_setRenderConfig:(id)arg1 updateKeyboard:(BOOL)arg2;

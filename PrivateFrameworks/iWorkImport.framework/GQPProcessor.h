@@ -26,7 +26,6 @@
 + (struct _xmlTextReader { }*)createXmlReaderWithZipArchive:(id)arg1 indexFileName:(id)arg2 cryptoKey:(id)arg3 indexEntry:(id*)arg4 zipInputStream:(id*)arg5;
 + (void)initialize;
 
-- (id).cxx_construct;
 - (struct stack<std::__1::pair<const Action *, int>, std::__1::deque<std::__1::pair<const Action *, int>, std::__1::allocator<std::__1::pair<const Action *, int> > > > { struct deque<std::__1::pair<const Action *, int>, std::__1::allocator<std::__1::pair<const Action *, int> > > { struct __split_buffer<std::__1::pair<const Action *, int> *, std::__1::allocator<std::__1::pair<const Action *, int> *> > { struct pair<const Action *, int> {} **x_1_2_1; struct pair<const Action *, int> {} **x_1_2_2; struct pair<const Action *, int> {} **x_1_2_3; struct __compressed_pair<std::__1::pair<const Action *, int> **, std::__1::allocator<std::__1::pair<const Action *, int> *> > { struct pair<const Action *, int> {} **x_4_3_1; } x_1_2_4; } x_1_1_1; unsigned int x_1_1_2; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::pair<const Action *, int> > > { unsigned long x_3_2_1; } x_1_1_3; } x1; }*)actionStack;
 - (id)archive;
 - (struct __CFBundle { }*)bundle;

@@ -7,7 +7,7 @@
     int _variant;
 }
 
-@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly, retain) NSData *data;
 @property (nonatomic, readonly) int variant;
 
 + (struct CGImage { }*)_newBlackWallpaperImage;

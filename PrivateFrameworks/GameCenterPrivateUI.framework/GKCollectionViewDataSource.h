@@ -76,6 +76,7 @@
 - (void)notifySectionsMovedWithItems;
 - (void)notifySectionsRefreshed:(id)arg1;
 - (void)notifySectionsRemoved:(id)arg1;
+- (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2 updateNotifier:(id)arg3;
 - (void)registerSupplementaryViewOfKind:(id)arg1 withClass:(Class)arg2 target:(id)arg3 configurator:(SEL)arg4;
 - (void)registerSupplementaryViewOfKind:(id)arg1 withFactory:(id)arg2;

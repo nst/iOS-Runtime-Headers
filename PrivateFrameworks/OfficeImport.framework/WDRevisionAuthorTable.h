@@ -13,6 +13,7 @@
 - (unsigned int)authorCount;
 - (id)authors;
 - (void)dealloc;
+- (id)description;
 - (id)initWithDocument:(id)arg1;
 
 @end

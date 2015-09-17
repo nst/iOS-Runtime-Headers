@@ -2,7 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputViewSetPlacementOffScreenDown : UIInputViewSetPlacement
+@interface UIInputViewSetPlacementOffScreenDown : UIInputViewSetPlacement <NSSecureCoding>
+
++ (BOOL)supportsSecureCoding;
 
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
 

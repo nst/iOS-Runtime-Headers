@@ -26,6 +26,7 @@
 @property (nonatomic, copy) NSString *homeWins;
 @property (nonatomic, copy) NSString *location;
 @property (nonatomic, copy) NSString *losses;
+@property (nonatomic, copy) NSString *monogram;
 @property (nonatomic, copy) NSArray *news;
 @property (nonatomic, copy) NSString *overtimeLosses;
 @property (nonatomic, copy) NSString *points;
@@ -33,6 +34,7 @@
 @property (nonatomic, copy) NSString *pointsFor;
 @property (nonatomic, copy) NSNumber *primaryColor;
 @property (nonatomic, copy) NSString *qualificationPosition;
+@property (nonatomic, copy) NSString *qualificationPositionSummary;
 @property (nonatomic, copy) NSArray *rankings;
 @property (nonatomic, copy) NSNumber *secondaryColor;
 @property (nonatomic, copy) NSArray *statistics;
@@ -43,6 +45,8 @@
 @property (nonatomic, copy) NSString *venueName;
 @property (nonatomic, copy) NSString *winPercentage;
 @property (nonatomic, copy) NSString *wins;
+
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 + (id)team;
 + (id)teamWithDictionary:(id)arg1 context:(id)arg2;
@@ -71,6 +75,7 @@
 - (id)homeWins;
 - (id)location;
 - (id)losses;
+- (id)monogram;
 - (id)news;
 - (id)overtimeLosses;
 - (id)points;
@@ -78,6 +83,7 @@
 - (id)pointsFor;
 - (id)primaryColor;
 - (id)qualificationPosition;
+- (id)qualificationPositionSummary;
 - (id)rankings;
 - (id)secondaryColor;
 - (void)setAbbreviatedName:(id)arg1;
@@ -102,6 +108,7 @@
 - (void)setHomeWins:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setLosses:(id)arg1;
+- (void)setMonogram:(id)arg1;
 - (void)setNews:(id)arg1;
 - (void)setOvertimeLosses:(id)arg1;
 - (void)setPoints:(id)arg1;
@@ -109,6 +116,7 @@
 - (void)setPointsFor:(id)arg1;
 - (void)setPrimaryColor:(id)arg1;
 - (void)setQualificationPosition:(id)arg1;
+- (void)setQualificationPositionSummary:(id)arg1;
 - (void)setRankings:(id)arg1;
 - (void)setSecondaryColor:(id)arg1;
 - (void)setStatistics:(id)arg1;
@@ -123,10 +131,19 @@
 - (id)streakNumber;
 - (id)streakType;
 - (id)ties;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)venueLocation;
 - (id)venueName;
 - (id)winPercentage;
 - (id)wins;
+
+// Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
+
+- (id)_siriui_sportsValueForStandingsSnippetColumn:(id)arg1;
+- (id)siriui_displayName;
+- (id)siriui_displayNameAndLocation;
+- (void)siriui_enumerateEntitiesWithGroupHandler:(id /* block */)arg1 teamHandler:(id /* block */)arg2 athleteHandler:(id /* block */)arg3;
+- (id)siriui_localizedQualificationPositionFormatString;
+- (id)siriui_localizedSnippetColumnHeader:(id)arg1;
+- (id)siriui_textForSnippetColumn:(id)arg1;
 
 @end

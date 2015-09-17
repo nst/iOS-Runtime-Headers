@@ -9,6 +9,7 @@
     TSPArchiverManager *_archiverManager;
     NSHashTable *_commandToModelReferences;
     TSPComponent *_component;
+    TSPMutableComponentObjectUUIDMap *_componentObjectUUIDMap;
     NSHashTable *_dataReferences;
     <TSPComponentWriterDelegate> *_delegate;
     NSObject<OS_dispatch_semaphore> *_delegateSemaphore;
@@ -35,7 +36,6 @@
             struct ObjectStackEntry {} *__first_; 
         } __end_cap_; 
     } _objectStack;
-    NSMutableDictionary *_objectUUIDToIdentifierDictionary;
     unsigned char _packageIdentifier;
     unsigned long long _readVersion;
     TSPObject *_rootObject;

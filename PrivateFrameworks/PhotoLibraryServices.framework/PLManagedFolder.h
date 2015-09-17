@@ -58,9 +58,6 @@
 - (void)insertObject:(id)arg1 inChildCollectionsAtIndex:(unsigned int)arg2;
 - (BOOL)isEmpty;
 - (BOOL)isValidKindForPersistence;
-- (void)migration_handleChildOrderKeys;
-- (id)migration_newOrderKeyChild:(id)arg1;
-- (id)migration_sortedOrderKeysForChildrenUsingMap:(id)arg1;
 - (void)moveChildCollectionsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
 - (id)mutableAssets;
 - (BOOL)needsFixedOrderKeysComplianceUpdate;

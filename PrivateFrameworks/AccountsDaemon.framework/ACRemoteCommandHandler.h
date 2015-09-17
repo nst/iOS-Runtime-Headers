@@ -11,7 +11,7 @@
 - (void)_authenticateAccount:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_deleteAccount:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)_localAccountMatchingRemoteAccount:(id)arg1;
-- (void)_promptUserForAccountCredential:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_promptUserForAccountCredential:(id)arg1 withOptions:(id)arg2 completion:(id /* block */)arg3;
 - (void)_removeAllAccountsWithCompletion:(id /* block */)arg1;
 - (void)_saveAccount:(id)arg1 completion:(id /* block */)arg2;
 - (void)_updateAccount:(id)arg1 withCompletion:(id /* block */)arg2;

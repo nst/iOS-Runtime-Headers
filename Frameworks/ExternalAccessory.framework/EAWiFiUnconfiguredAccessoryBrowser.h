@@ -26,6 +26,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
+- (id)init;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
 - (void)setAccessorySearchPredicate:(id)arg1;
 - (void)setDelegate:(id)arg1;

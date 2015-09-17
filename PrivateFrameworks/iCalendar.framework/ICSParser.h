@@ -12,8 +12,8 @@
 
 + (id)entitiesFromNSData:(id)arg1 options:(int)arg2;
 
+- (void).cxx_destruct;
 - (BOOL)createPropertyType:(int)arg1 component:(id)arg2 withName:(id)arg3;
-- (void)dealloc;
 - (id)initWithData:(id)arg1 options:(unsigned int)arg2;
 - (id)lexer;
 - (id)makeComponent:(char *)arg1;

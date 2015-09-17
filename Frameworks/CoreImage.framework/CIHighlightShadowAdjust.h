@@ -16,6 +16,7 @@
 
 + (id)customAttributes;
 
+- (int)_defaultVersion;
 - (id)_initFromProperties:(id)arg1;
 - (BOOL)_isIdentity;
 - (id)_kernelSH_v0;
@@ -25,8 +26,8 @@
 - (id)_kernelSHnoB_v1;
 - (id)_kernelSHnoB_v2;
 - (id)_kernelSnoB_v0;
+- (int)_maxVersion;
 - (id)_outputProperties;
-- (int)bestVersion;
 - (id)inputHighlightAmount;
 - (id)inputImage;
 - (id)inputRadius;

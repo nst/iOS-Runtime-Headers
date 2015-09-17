@@ -17,8 +17,11 @@
 
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocalizedTitle:(id)arg1 localizedBody:(id)arg2 isLongForm:(BOOL)arg3;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToProfileWarning:(id)arg1;
 - (BOOL)isLongForm;
 - (id)localizedBody;
 - (id)localizedTitle;

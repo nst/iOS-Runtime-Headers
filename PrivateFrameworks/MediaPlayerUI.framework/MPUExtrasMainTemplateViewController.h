@@ -12,10 +12,12 @@
     UIView *_menuBarView;
 }
 
+@property (nonatomic, readonly) float collectionViewHeight;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <UICollectionViewDelegate> *didSelectDelegate;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSIndexPath *indexPathOfFeaturedItem;
 @property (nonatomic, readonly) UIView *menuBarView;
 @property (readonly) Class superclass;
 
@@ -36,8 +38,10 @@
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (void)collectionView:(id)arg1 willDisplayCell:(id)arg2 forItemAtIndexPath:(id)arg3;
+- (float)collectionViewHeight;
 - (void)dealloc;
 - (id)didSelectDelegate;
+- (id)indexPathOfFeaturedItem;
 - (id)initWithDocument:(id)arg1 options:(id)arg2 context:(id)arg3;
 - (id)menuBarView;
 - (int)numberOfItemsForSectionMetrics:(id)arg1;

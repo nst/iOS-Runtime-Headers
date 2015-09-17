@@ -45,7 +45,7 @@
 
 @property (nonatomic, readonly) PLCropOverlayBottomBar *_bottomBar;
 @property (nonatomic, readonly) UIButton *_cameraCancelButton;
-@property (nonatomic, retain) CAMBottomBar *cameraBottomBar;
+@property (nonatomic, retain) CMKBottomBar *cameraBottomBar;
 @property (nonatomic, readonly) PLContactPhotoOverlay *contactPhotoOverlay;
 @property (nonatomic, copy) NSString *defaultOKButtonTitle;
 @property (getter=isDisplayedInPopover, nonatomic) BOOL displayedInPopover;

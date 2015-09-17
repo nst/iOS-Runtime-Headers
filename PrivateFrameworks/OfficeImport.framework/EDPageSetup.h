@@ -22,6 +22,7 @@
 
 - (float)bottomMargin;
 - (bool)customFirstPageNumber;
+- (id)description;
 - (unsigned long)firstPageNumber;
 - (unsigned long)fitToHeight;
 - (unsigned long)fitToWidth;

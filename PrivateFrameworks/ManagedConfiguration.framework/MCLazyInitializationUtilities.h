@@ -12,6 +12,10 @@
 + (void)initDataAccess;
 + (void)initImageIO;
 + (void)initPowerlog;
++ (void)initServerAccounts;
++ (void)initSetupAssistant;
++ (void)initSpringBoardServices;
++ (void)initSpringBoardUIServices;
 + (void)initVPNUtilities;
 + (void)loadBundleAtURL:(id)arg1 completionBlock:(id /* block */)arg2;
 + (void)loadNSBundleAtURL:(id)arg1 completionBlock:(id /* block */)arg2;

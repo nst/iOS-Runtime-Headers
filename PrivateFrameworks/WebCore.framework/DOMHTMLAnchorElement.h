@@ -42,6 +42,7 @@
 - (id)port;
 - (id)protocol;
 - (id)rel;
+- (id)relList;
 - (id)rev;
 - (id)search;
 - (void)setAccessKey:(id)arg1;

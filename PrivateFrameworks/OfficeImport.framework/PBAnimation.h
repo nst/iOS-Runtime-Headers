@@ -10,7 +10,7 @@
 + (id)newChartBuild:(id)arg1;
 + (id)newColorFromBehaviorColor:(struct PptAnimColorBehavior_Color_Struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;
 + (id)newParaBuild:(id)arg1;
-+ (unsigned int)paragraphIndexFromCharacterIndex:(unsigned int)arg1 srcDrawable:(id)arg2;
++ (unsigned int)paragraphIndexFromBinaryTextBytesCharacterIndex:(unsigned int)arg1 srcDrawable:(id)arg2;
 + (void)parseAnimateBehaviorContainer:(id)arg1 animBehavior:(id)arg2 timeNode:(id)arg3;
 + (id)parseBehaviorContainer:(id)arg1 timeNode:(id)arg2 state:(id)arg3;
 + (void)parseBuildList:(id)arg1 buildMap:(id)arg2 state:(id)arg3;

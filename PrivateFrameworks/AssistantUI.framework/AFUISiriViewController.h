@@ -24,6 +24,8 @@
     BOOL _showsStatusBar;
     UIStatusBar *_statusBar;
     BOOL _statusBarEnabled;
+    BOOL _systemHostedPresentation;
+    id /* block */ _triggerUpdater;
     double _viewDidAppearTime;
     BOOL _visible;
     int _vtEnabledCount;
@@ -40,6 +42,7 @@
 @property (nonatomic, readonly) BOOL hasScreenSnapshot;
 @property (readonly) unsigned int hash;
 @property (getter=_isInHoldToTalkMode, setter=_setInHoldToTalkMode:, nonatomic) BOOL inHoldToTalkMode;
+@property (nonatomic, readonly) BOOL isProcessingAcousticIdRequest;
 @property (nonatomic) BOOL isStark;
 @property (nonatomic) BOOL mapsGatekeeperEnabled;
 @property (getter=_recordingStartedTimeValue, setter=_setRecordingStartedTimeValue:, nonatomic, retain) NSNumber *recordingStartedTimeValue;
@@ -51,7 +54,7 @@
 @property (getter=_statusBar, setter=_setStatusBar:, nonatomic, retain) UIStatusBar *statusBar;
 @property (nonatomic) BOOL statusBarEnabled;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) AFUISiriView *view;
+@property (nonatomic, retain) UIView<AFUISiriRemoteViewHosting> *view;
 @property (getter=_viewDidAppearTime, setter=_setViewDidAppearTime:, nonatomic) double viewDidAppearTime;
 @property (getter=isVisible, nonatomic) BOOL visible;
 
@@ -60,14 +63,19 @@
 - (void)_addStatusBar;
 - (id)_currentRequestOptions;
 - (void)_enqueueRemoteViewControllerMessageBlock:(id /* block */)arg1;
+- (void)_enqueueRemoteViewControllerMessageBlockWithWeaklyReferencedRemoteViewController:(id /* block */)arg1;
 - (void)_enterHoldToTalkMode;
 - (void)_exitHoldToTalkMode;
+- (void)_handleMicButtonLongPressBeganFromSource:(int)arg1;
+- (void)_handleMicButtonLongPressEndedFromSource:(int)arg1;
+- (void)_handleMicButtonTapFromSource:(int)arg1;
 - (BOOL)_hasCalledBeginAppearanceTransition;
 - (BOOL)_hasCalledEndAppearanceTransition;
 - (BOOL)_holdToTalkThresholdHasElapsed;
 - (void)_holdToTalkTriggerDidReleaseFromSource:(int)arg1;
 - (BOOL)_isInHoldToTalkMode;
 - (double)_manualEndpointingThreshold;
+- (void)_presentDeferredFlamesViewIfNecessary;
 - (void)_presentRemoteViewController;
 - (id)_recordingStartedTimeValue;
 - (id)_remoteViewController;
@@ -87,6 +95,7 @@
 - (void)_setStatusBar:(id)arg1;
 - (void)_setViewDidAppearTime:(double)arg1;
 - (void)_setVoiceTriggerEnabled:(BOOL)arg1;
+- (id)_siriView;
 - (id)_statusBar;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_statusBarFrame;
 - (void)_statusBarFrameDidChange:(id)arg1;
@@ -96,6 +105,7 @@
 - (double)_viewDidAppearTime;
 - (float)audioRecordingPowerLevelForSiriView:(id)arg1;
 - (id)bulletinsForSiriSession:(id)arg1;
+- (void)cancelTTS;
 - (id)contextAppInfosForSiriSession:(id)arg1;
 - (id)currentRequestOptions;
 - (int)currentSource;
@@ -103,7 +113,8 @@
 - (void)dealloc;
 - (void)defrost;
 - (id)delegate;
-- (void)dismissSiriRemoteViewController:(id)arg1;
+- (void)dismissSiriRemoteViewController:(id)arg1 delayForTTS:(BOOL)arg2;
+- (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)endSession;
 - (void)handlePasscodeUnlockAndCancelRequest:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)handlePasscodeUnlockWithCompletion:(id /* block */)arg1;
@@ -112,9 +123,11 @@
 - (BOOL)hasScreenSnapshot;
 - (id)init;
 - (id)initWithConnection:(id)arg1;
+- (id)initWithConnection:(id)arg1 systemHostedPresentation:(BOOL)arg2;
 - (BOOL)isEyesFree;
 - (BOOL)isListening;
 - (BOOL)isPreventingActivationGesture;
+- (BOOL)isProcessingAcousticIdRequest;
 - (BOOL)isStark;
 - (BOOL)isVisible;
 - (void)loadView;
@@ -124,7 +137,7 @@
 - (void)notifyOnNextUserInteractionForSiriRemoteViewController:(id)arg1;
 - (void)preheat;
 - (void)presentRemoteViewControllerIfNecessary;
-- (void)resetContext;
+- (void)resetContextTypes:(int)arg1;
 - (id)routePickerController;
 - (void)routePickerController:(id)arg1 hasRoutesToPick:(BOOL)arg2;
 - (void)routePickerControllerPickedNewRoute:(id)arg1 isBluetooth:(BOOL)arg2;
@@ -139,6 +152,7 @@
 - (void)setShowsStatusBar:(BOOL)arg1;
 - (void)setStatusBarEnabled:(BOOL)arg1;
 - (void)setVisible:(BOOL)arg1;
+- (void)shortTapAction;
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutorotate;
 - (void)showPresentationWithIdentifier:(id)arg1 properties:(id)arg2;
@@ -146,6 +160,7 @@
 - (void)siriDidActivateFromSource:(int)arg1;
 - (void)siriDidDeactivate;
 - (id)siriRemoteViewController:(id)arg1 bulletinWithIdentifier:(id)arg2;
+- (void)siriRemoteViewController:(id)arg1 didChangePresentationPeekMode:(unsigned int)arg2;
 - (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didReadBulletinWithIdentifier:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 handlePasscodeUnlockWithCompletion:(id /* block */)arg2;
@@ -153,6 +168,7 @@
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 appBundleID:(id)arg3 allowSiriDismissal:(BOOL)arg4;
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 delaySessionEndForTTS:(BOOL)arg3;
 - (void)siriRemoteViewController:(id)arg1 setBugReportingAvailable:(BOOL)arg2;
+- (void)siriRemoteViewController:(id)arg1 setCarDisplayGatekeeperVisible:(BOOL)arg2;
 - (void)siriRemoteViewController:(id)arg1 setCarDisplaySnippetVisible:(BOOL)arg2;
 - (void)siriRemoteViewController:(id)arg1 setHelpButtonEmphasized:(BOOL)arg2;
 - (void)siriRemoteViewController:(id)arg1 setStatusBarHidden:(BOOL)arg2;
@@ -164,22 +180,26 @@
 - (void)siriRemoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 willDismissViewControllerWithStatusBarStyle:(int)arg2;
 - (void)siriRemoteViewController:(id)arg1 willPresentViewControllerWithStatusBarStyle:(int)arg2;
+- (void)siriRemoteViewControllerDidDetectMicButtonLongPressBegan:(id)arg1;
+- (void)siriRemoteViewControllerDidDetectMicButtonLongPressEnded:(id)arg1;
+- (void)siriRemoteViewControllerDidDetectMicButtonTap:(id)arg1;
+- (void)siriRemoteViewControllerDidPresentUserInterface:(id)arg1;
 - (void)siriRemoteViewControllerPulseHelpButton:(id)arg1;
 - (void)siriSession:(id)arg1 didChangeDialogPhase:(id)arg2;
 - (void)siriSession:(id)arg1 didChangeToState:(int)arg2;
 - (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestAndCancelRequest:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestWithCompletion:(id /* block */)arg2;
+- (void)siriSessionDidResetContext:(id)arg1;
 - (void)siriSessionRecordingPreparationHasFinished:(id)arg1;
 - (BOOL)siriView:(id)arg1 attemptUnlockWithPassword:(id)arg2;
 - (void)siriView:(id)arg1 didReceiveSiriActivationMessageWithSource:(int)arg2;
-- (void)siriView:(id)arg1 didReceiveStartSpeechRequestWithTrigger:(id)arg2;
 - (void)siriViewDidReceiveAudioRouteAction:(id)arg1;
 - (void)siriViewDidReceiveBugButtonLongPress:(id)arg1;
-- (void)siriViewDidReceiveCancelSpeechRequestAction:(id)arg1;
 - (void)siriViewDidReceiveHelpAction:(id)arg1;
 - (void)siriViewDidReceiveReportBugAction:(id)arg1;
-- (void)siriViewDidReceiveStartSpeechRequestAction:(id)arg1;
-- (void)siriViewDidReceiveStopRecordingSpeechAction:(id)arg1;
+- (void)siriViewDidRecieveStatusViewHoldDidBeginAction:(id)arg1;
+- (void)siriViewDidRecieveStatusViewHoldDidEndAction:(id)arg1;
+- (void)siriViewDidRecieveStatusViewTappedAction:(id)arg1;
 - (void)siriWillActivateFromSource:(int)arg1;
 - (void)startGuidedAccessForRemoteViewController:(id)arg1;
 - (void)startRequestWithActivationTrigger:(id)arg1;
@@ -189,7 +209,7 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (void)telephonyRequestCompleted;
 - (id)underlyingConnection;
-- (void)updateAlertAndApplicationContexts;
+- (void)updateContexts:(int)arg1;
 - (void)updateRequestOptions:(id)arg1;
 - (void)updateViewForPercentageRevealed:(float)arg1;
 - (void)userInteractionDidOccur;

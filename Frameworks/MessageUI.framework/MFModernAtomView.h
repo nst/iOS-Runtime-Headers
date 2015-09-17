@@ -57,6 +57,7 @@
 + (id)defaultFont;
 + (float)defaultHeight;
 + (float)horizontalPadding;
++ (BOOL)presentationOptions:(unsigned int*)arg1 encodedIntoAddress:(id)arg2;
 + (id)primaryAtomFont;
 
 - (void)_invalidatePresentationOptions;

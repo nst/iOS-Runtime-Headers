@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicUpNextViewController : UIViewController <MusicClientContextConsuming, MusicTableViewDelegate, MusicUpNextAggregateDataSourceDelegate, MusicUpNextNowPlayingLockupViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate> {
+@interface MusicUpNextViewController : UIViewController <MusicClientContextConsuming, MusicUpNextAggregateDataSourceDelegate, MusicUpNextNowPlayingLockupViewDelegate, MusicUpNextTableViewDelegate, UITableViewDataSource, UIViewControllerTransitioningDelegate> {
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -12,6 +12,7 @@
     MusicClientContext *_clientContext;
     MusicUpNextAggregateDataSource *_dataSource;
     BOOL _didMutateWhileLoading;
+    UIView *_hairlineView;
     BOOL _hidesNowPlaying;
     BOOL _ignoreUpdates;
     NSIndexPath *_indexPathForNowPlayingFrame;
@@ -37,6 +38,7 @@
 @property (nonatomic, readonly) BOOL shouldDismissOnItemChange;
 @property (readonly) Class superclass;
 
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultContentInsets;
 + (id)upNextViewControllerWithPlayer:(id)arg1;
 
 - (void).cxx_destruct;
@@ -81,6 +83,7 @@
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 moveRowAtIndexPath:(id)arg2 toIndexPath:(id)arg3;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (void)tableView:(id)arg1 pinView:(id)arg2 didUpdatePinLocation:(int)arg3;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 targetIndexPathForMoveFromRowAtIndexPath:(id)arg2 toProposedIndexPath:(id)arg3;
 - (id)tableView:(id)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg2;

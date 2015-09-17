@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPassPaymentSummaryCell : UITableViewCell {
+@interface PKPassPaymentSummaryCell : PKTableViewCell {
     UILabel *_amountLabel;
     <PKPassPaymentSummaryCellDelegate> *_delegate;
     UIButton *_detailsButton;

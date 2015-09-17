@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIMoveEvent : UIInternalEvent {
+@interface UIMoveEvent : UIEvent {
     unsigned int _focusHeading;
     int _moveDirection;
 }

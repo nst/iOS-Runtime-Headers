@@ -9,6 +9,7 @@
 + (id)nibWithData:(id)arg1 bundle:(id)arg2;
 + (id)nibWithNibName:(id)arg1 bundle:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)_registerForMemoryWarningIfNeeded;
 - (id)bundleResourcePath;
 - (BOOL)captureEnclosingNIBBundleOnDecode;

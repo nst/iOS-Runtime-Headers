@@ -14,6 +14,7 @@
 @property (readonly) Class superclass;
 
 - (id)bodyReps;
+- (BOOL)canSelectChildRep:(id)arg1;
 - (BOOL)childRepIsMasterDrawable:(id)arg1;
 - (BOOL)childRepIsOnDocSetupCanvas:(id)arg1;
 - (void)dealloc;
@@ -25,12 +26,14 @@
 - (id)layerClass;
 - (id)marginAdjustRep;
 - (BOOL)masksToBounds;
+- (id)p_bodyRepThatCanSelectChildRep:(id)arg1;
 - (BOOL)p_headerFooterIsVisibleAndInteractive:(int)arg1;
 - (int)p_hitHeaderFooterFragment:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (id)p_hitRep:(struct CGPoint { float x1; float x2; })arg1 passingTest:(id /* block */)arg2;
 - (BOOL)p_pageRequiresSeparator;
 - (void)p_updateBorderLayers;
 - (void)p_updateLayoutBordersVisibility;
+- (void)selectChildRep:(id)arg1 extendingSelection:(BOOL)arg2;
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)showHUDForWPRep:(id)arg1 withFlags:(unsigned int)arg2;

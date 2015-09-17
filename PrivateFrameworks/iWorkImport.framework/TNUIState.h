@@ -47,7 +47,6 @@
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } scrollPosition;
 @property (nonatomic, copy) NSArray *selectedQuickCalcFunctions;
 @property (nonatomic, retain) TSKSelectionPath *selectionPath;
-@property (nonatomic, readonly) TNSheetSelection *sheetSelection;
 @property (nonatomic) BOOL showCanvasGuides;
 @property (nonatomic) BOOL showsComments;
 @property (nonatomic, readonly) float viewScale;
@@ -55,8 +54,8 @@
 
 + (float)maximumViewScale;
 + (float)minimumViewScale;
++ (id)p_copyOfSheetUIStates:(id)arg1;
 
-- (id).cxx_construct;
 - (id)UIStateForChart:(id)arg1;
 - (id)archivedUIStateInContext:(id)arg1;
 - (id)chartUIState;
@@ -70,6 +69,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })desktopWindowFrame;
 - (int)documentMode;
 - (void)enumerateSheetUIStatesWithBlock:(id /* block */)arg1;
+- (void)fixupSelectionPathsForRestorationForcingUnpagination:(BOOL)arg1;
 - (BOOL)hasPreviousVisibleRect;
 - (BOOL)hasVisibleRect;
 - (unsigned int)hash;
@@ -82,6 +82,8 @@
 - (float)p_defaultViewScale;
 - (void)p_enterPaginatedMode;
 - (void)p_exitPaginatedMode;
+- (id)p_fixedUpSelectionPathForRestoration:(id)arg1 forcingUnpagination:(BOOL)arg2;
+- (id)p_uiStateForActiveSheet;
 - (struct CGPoint { float x1; float x2; })previousScrollPosition;
 - (float)previousViewScale;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previousVisibleRect;
@@ -108,12 +110,11 @@
 - (void)setUIState:(id)arg1 forSheet:(id)arg2;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSheet:(id)arg2;
-- (id)sheetSelection;
 - (BOOL)showCanvasGuides;
 - (BOOL)showsComments;
-- (id)uiStateForActiveSheet;
 - (id)uiStateForSheet:(id)arg1;
 - (float)viewScale;
+- (float)viewScaleForSheet:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 
 @end

@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_registerForMessages;
+- (id)assistantUniqueIdentifier;
 - (void)configure:(id)arg1 queue:(id)arg2;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -41,6 +42,7 @@
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (id)url;
 - (id)uuid;
 - (id)workQueue;
 

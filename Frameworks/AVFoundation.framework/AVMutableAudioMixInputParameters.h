@@ -6,14 +6,14 @@
     AVMutableAudioMixInputParametersInternal *_mutableInputParameters;
 }
 
-@property (nonatomic, retain) struct opaqueMTAudioProcessingTap { }*audioTapProcessor;
+@property (nonatomic, retain) const struct opaqueMTAudioProcessingTap { }*audioTapProcessor;
 @property (nonatomic, copy) NSString *audioTimePitchAlgorithm;
 @property (nonatomic) int trackID;
 
 + (id)audioMixInputParameters;
 + (id)audioMixInputParametersWithTrack:(id)arg1;
 
-- (struct opaqueMTAudioProcessingTap { }*)audioTapProcessor;
+- (const struct opaqueMTAudioProcessingTap { }*)audioTapProcessor;
 - (id)audioTimePitchAlgorithm;
 - (void)setAudioTapProcessor:(struct opaqueMTAudioProcessingTap { }*)arg1;
 - (void)setAudioTimePitchAlgorithm:(id)arg1;

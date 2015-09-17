@@ -5,7 +5,6 @@
 
 @required
 
-- (void)alertView:(void *)arg1 pressedButton:(void *)arg2 attributes:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: RUIAlertView *, NSString *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
-- (void)alertView:(void *)arg1 pressedLink:(void *)arg2 attributes:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 10: RUIAlertView *, NSURL *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (void)alertView:(void *)arg1 pressedButton:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: RUIAlertView *, RUIElement *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 
 @end

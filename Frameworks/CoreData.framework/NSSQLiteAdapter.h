@@ -3,13 +3,19 @@
  */
 
 @interface NSSQLiteAdapter : NSSQLAdapter {
+    struct __CFDictionary { } *_cachedDeleteTriggersByEntity;
     NSString *_dbpath;
 }
 
+- (id)createCleanupSQLForRelationship:(id)arg1 existing:(struct __CFDictionary { }*)arg2 correlationTableTriggers:(struct __CFDictionary { }*)arg3 error:(id*)arg4;
 - (id)createConnection;
 - (void)dealloc;
+- (BOOL)generateCorrelationTableTriggerStatementsForRelationship:(id)arg1 existing:(struct __CFDictionary { }*)arg2 correlationTableTriggers:(struct __CFDictionary { }*)arg3 error:(id*)arg4;
+- (id)generateDeleteStatementsForRequest:(id)arg1 resultObject:(id*)arg2 inContext:(id)arg3 error:(id*)arg4;
 - (id)generateSQLStatmentForSourcesAndOrderKeysForDestination:(id)arg1 inManyToMany:(id)arg2;
 - (id)generateSQLStatmentForSourcesAndOrderKeysForDestination:(id)arg1 inToMany:(id)arg2;
+- (BOOL)generateTriggerForEntity:(id)arg1 alreadyCreated:(struct __CFDictionary { }*)arg2 correlations:(struct __CFDictionary { }*)arg3 fragments:(id)arg4 error:(id*)arg5;
+- (id)generateTriggerStatementsForEntity:(id)arg1 usingRelationshipCleanupSQL:(id)arg2 error:(id*)arg3;
 - (id)initWithSQLCore:(id)arg1;
 - (id)pathnameForDatabase;
 - (id)sqliteVersion;

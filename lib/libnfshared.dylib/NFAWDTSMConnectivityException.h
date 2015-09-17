@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) unsigned int errorCode;
 @property (readonly) unsigned int hash;
-@property AWDNFCTSMConnectivityExceptionEvent *metric;
+@property (nonatomic, retain) AWDNFCTSMConnectivityExceptionEvent *metric;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
@@ -22,6 +22,6 @@
 - (id)metric;
 - (void)setErrorCode:(unsigned int)arg1;
 - (void)setMetric:(id)arg1;
-- (unsigned int)updateTransactionStateInfoPreviousState:(unsigned int)arg1 withUUID:(id)arg2 withUUIDRefTimestamp:(unsigned long long)arg3;
+- (void)updateExceptionUUID:(id)arg1;
 
 @end

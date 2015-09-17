@@ -42,8 +42,20 @@
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI
 
 - (void)dd_makeLinksForResultsInAttributesOfType:(unsigned int)arg1 context:(id)arg2;
+- (void)dd_makeLinksForResultsInAttributesOfType:(unsigned int)arg1 usingURLificationBlock:(id /* block */)arg2 context:(id)arg3;
+- (void)dd_replaceResultAttributesWithSimpleLinksForTypes:(unsigned int)arg1 context:(id)arg2;
 - (void)dd_resetResults;
 - (void)dd_urlifyResult:(id)arg1 withBlock:(id /* block */)arg2 referenceDate:(id)arg3 context:(id)arg4;
+
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
++ (float)fiui_defaultDynamicTrackingFactor;
+
+- (void)fiui_addDynamicTrackingAttribute;
+- (struct CGSize { float x1; float x2; })scaleFontAndKerningToFitSize:(struct CGSize { float x1; float x2; })arg1 minimumFontSize:(float)arg2 minimumKerning:(float)arg3;
+- (float)scaleFontSizeByAmount:(float)arg1 minimumFontSize:(float)arg2;
+- (float)scaleNumericAttribute:(id)arg1 byAmount:(float)arg2;
+- (void)scaleToFitWidth:(float)arg1;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -52,10 +64,13 @@
 - (void)replaceNewlinesWithSpaces;
 - (void)trimWhitespace;
 
-// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
-- (void)MPU_appendMediumExplicitGlyphImage;
-- (void)_MPU_appendImage:(id)arg1;
+- (void)appendAttributedSubstring:(id)arg1 fromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)appendString:(id)arg1;
+- (void)enumerateClampedAttribute:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
+- (void)enumerateUnclampedAttribute:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 options:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
+- (void)replaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withAttributedSubstring:(id)arg2 fromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 

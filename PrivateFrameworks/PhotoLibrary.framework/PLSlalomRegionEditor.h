@@ -11,6 +11,7 @@
     BOOL _forceLayout;
     float _maxValue;
     float _minValue;
+    unsigned int _regionEditorStyle;
     UIImageView *_startHandleView;
     float _startValue;
     struct CGPoint { 
@@ -39,6 +40,7 @@
 @property (nonatomic) float endValue;
 @property (nonatomic) float maxValue;
 @property (nonatomic) float minValue;
+@property (nonatomic) unsigned int regionEditorStyle;
 @property (nonatomic) float startValue;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } trackInsets;
 @property (nonatomic) float trimHandleWidth;
@@ -53,10 +55,13 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_endHandleFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_handleFrameForValue:(float)arg1 isStart:(BOOL)arg2;
 - (id)_handleImage;
+- (id)_handleTintColor;
 - (BOOL)_isTouch:(id)arg1 inHandleIsStart:(BOOL)arg2 outTouchOffset:(float*)arg3;
 - (BOOL)_isZoomed;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_startHandleFrame;
 - (void)_stopTrackingAndSendControlEvents:(unsigned int)arg1;
+- (id)_tickColor;
+- (id)_trackColor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_trackFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_trackFrameNoZoom;
 - (id)_trackImageForZoom:(BOOL)arg1;
@@ -79,16 +84,19 @@
 - (float)endValue;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)isZoomAnimating;
 - (void)layoutSubviews;
 - (float)maxValue;
 - (float)minValue;
+- (unsigned int)regionEditorStyle;
 - (void)setDelegate:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setEndValue:(float)arg1;
 - (void)setEndValue:(float)arg1 notify:(BOOL)arg2;
 - (void)setMaxValue:(float)arg1;
 - (void)setMinValue:(float)arg1;
+- (void)setRegionEditorStyle:(unsigned int)arg1;
 - (void)setStartValue:(float)arg1;
 - (void)setStartValue:(float)arg1 notify:(BOOL)arg2;
 - (void)setTrackInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -96,6 +104,7 @@
 - (void)setZoomAnimating:(BOOL)arg1;
 - (void)setZoomDelay:(double)arg1;
 - (void)setZoomMinValue:(double)arg1 maxValue:(double)arg2;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (float)startValue;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })trackInsets;
 - (float)trimHandleWidth;

@@ -31,6 +31,5 @@
 - (void)setRating:(id)arg1;
 - (void)setTheatricalReleaseDate:(id)arg1;
 - (id)theatricalReleaseDate;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

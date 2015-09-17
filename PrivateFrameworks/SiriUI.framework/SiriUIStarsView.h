@@ -3,14 +3,15 @@
  */
 
 @interface SiriUIStarsView : UIView {
+    int _maxNumberOfStars;
     double _maxRating;
-    int _numberOfStars;
     double _rating;
     BOOL _snapsToHalfStar;
     UIImage *_starsImage;
     int _style;
 }
 
+@property (nonatomic) int maxNumberOfStars;
 @property (nonatomic) BOOL snapsToHalfStar;
 @property (nonatomic) int style;
 
@@ -28,6 +29,8 @@
 - (float)_xForFractionalPartOfStars:(float)arg1 inWidth:(float)arg2;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)maxNumberOfStars;
+- (void)setMaxNumberOfStars:(int)arg1;
 - (void)setRating:(double)arg1 maxRating:(double)arg2;
 - (void)setSnapsToHalfStar:(BOOL)arg1;
 - (void)setStyle:(int)arg1;

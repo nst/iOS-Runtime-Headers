@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSTabBar : IKJSObject <IKJSTabBar> {
+@interface IKJSTabBar : IKJSObject <IKJSTabBar, JSExport> {
     IKAppTabBar *_appTabBar;
     NSArray *_tabItems;
 }

@@ -17,8 +17,8 @@
 + (id)mergeActionWithOrderedKeyList:(id)arg1 factors:(id)arg2;
 + (id)mergeActionWithRemainingKeyName:(id)arg1 disappearingKeyName:(id)arg2 factors:(id)arg3;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)disappearingKeyName;
 - (id)factors;
 - (id)orderedKeyList;

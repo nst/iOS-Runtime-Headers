@@ -13,6 +13,7 @@
 @property (nonatomic) <RMSServiceProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) NSNetServiceBrowser *netServiceBrowser;
 @property (nonatomic, readonly) NSString *searchDomain;
 @property (nonatomic, readonly) NSString *searchScope;
 @property (nonatomic, readonly) NSString *searchType;
@@ -22,7 +23,8 @@
 - (void).cxx_destruct;
 - (id)_identifierForNetService:(id)arg1;
 - (id)_searchString;
-- (void)_updateService:(id)arg1 withNetService:(id)arg2;
+- (void)_updateCacheWithService:(id)arg1 identifier:(id)arg2;
+- (void)_updateService:(id)arg1 withNetService:(id)arg2 txtData:(id)arg3;
 - (id)_valueForTXTRecordKey:(id)arg1 inTXTDictionary:(id)arg2;
 - (void)beginDiscovery;
 - (void)dealloc;
@@ -31,6 +33,7 @@
 - (id)init;
 - (void)netService:(id)arg1 didNotResolve:(id)arg2;
 - (void)netService:(id)arg1 didUpdateTXTRecordData:(id)arg2;
+- (id)netServiceBrowser;
 - (void)netServiceBrowser:(id)arg1 didFindService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceBrowser:(id)arg1 didRemoveService:(id)arg2 moreComing:(BOOL)arg3;
 - (void)netServiceDidResolveAddress:(id)arg1;

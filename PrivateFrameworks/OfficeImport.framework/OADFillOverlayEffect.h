@@ -9,6 +9,7 @@
 
 - (int)blendMode;
 - (void)dealloc;
+- (id)description;
 - (id)fill;
 - (unsigned int)hash;
 - (id)init;

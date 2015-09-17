@@ -3,9 +3,10 @@
 
 @protocol FBSceneManagerObserver <NSObject>
 
-@required
+@optional
 
 - (void)sceneManager:(FBSceneManager *)arg1 didCommitUpdateForScene:(FBScene *)arg2 transactionID:(unsigned int)arg3;
+- (void)sceneManager:(FBSceneManager *)arg1 didCommitUpdateForScene:(FBScene *)arg2 transactionID:(unsigned int)arg3 success:(BOOL)arg4;
 - (void)sceneManager:(FBSceneManager *)arg1 didCreateScene:(FBScene *)arg2 withClient:(id <FBSceneClient>)arg3;
 - (void)sceneManager:(FBSceneManager *)arg1 didDestroyScene:(FBScene *)arg2;
 - (void)sceneManager:(FBSceneManager *)arg1 willCommitUpdateForScene:(FBScene *)arg2 transactionID:(unsigned int)arg3;

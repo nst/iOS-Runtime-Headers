@@ -88,6 +88,7 @@
 - (bool)dataOnRows;
 - (unsigned long)dataPosition;
 - (void)dealloc;
+- (id)description;
 - (bool)disableFieldList;
 - (long)firstDataColumn;
 - (long)firstDataRow;

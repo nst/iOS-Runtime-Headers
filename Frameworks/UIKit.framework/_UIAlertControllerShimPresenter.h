@@ -11,14 +11,14 @@
     _UIAlertControllerShimPresenterWindow *_window;
 }
 
-@property UIAlertController *alertController;
+@property (nonatomic) UIAlertController *alertController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property UIAlertView *legacyAlert;
-@property <UIPopoverControllerDelegate> *popoverDelegate;
+@property (nonatomic) UIAlertView *legacyAlert;
+@property (nonatomic) <UIPopoverControllerDelegate> *popoverDelegate;
 @property (readonly) Class superclass;
-@property (readonly) _UIAlertControllerShimPresenterWindow *window;
+@property (nonatomic, readonly) _UIAlertControllerShimPresenterWindow *window;
 
 + (void)_addPresenter:(id)arg1;
 + (void)_cancelPendingTouchesIfAppropriate;
@@ -28,6 +28,7 @@
 + (id)_topmostAlertWindow;
 + (id)_topmostLegacyAlertIncludingPresentingAlerts:(BOOL)arg1;
 
+- (void).cxx_destruct;
 - (void)_createWindowIfNecessary;
 - (void)_dismissAlertControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)_popoverController;

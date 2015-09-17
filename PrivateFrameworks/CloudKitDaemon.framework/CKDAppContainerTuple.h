@@ -5,10 +5,12 @@
 @interface CKDAppContainerTuple : NSObject <NSCopying> {
     NSString *_applicationBundleID;
     CKContainerID *_containerID;
+    NSString *_sourceApplicationBundleID;
 }
 
 @property (nonatomic, retain) NSString *applicationBundleID;
 @property (nonatomic, retain) CKContainerID *containerID;
+@property (nonatomic, retain) NSString *sourceApplicationBundleID;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -18,8 +20,12 @@
 - (id)description;
 - (unsigned int)hash;
 - (id)initWithApplicationBundleID:(id)arg1 containerID:(id)arg2;
+- (id)initWithApplicationBundleID:(id)arg1 sourceApplicationBundleID:(id)arg2 containerID:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
+- (id)pushTokenBundleID;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setContainerID:(id)arg1;
+- (void)setSourceApplicationBundleID:(id)arg1;
+- (id)sourceApplicationBundleID;
 
 @end

@@ -4,11 +4,13 @@
 
 @interface MFMailComposeToField : MFMailComposeRecipientView {
     MFComposeSMIMELockButton *_smimeButton;
+    BOOL _smimeButtonEnabled;
     BOOL _smimeButtonVisible;
     <MFMailComposeToFieldDelegate> *_toFieldDelegate;
 }
 
 @property (nonatomic, readonly) MFComposeSMIMELockButton *SMIMEButton;
+@property (nonatomic) BOOL smimeButtonEnabled;
 @property (nonatomic) BOOL smimeButtonVisible;
 @property (nonatomic) <MFMailComposeToFieldDelegate> *toFieldDelegate;
 
@@ -19,8 +21,11 @@
 - (void)dealloc;
 - (void)layoutSubviews;
 - (void)setExpanded:(BOOL)arg1;
+- (void)setSmimeButtonEnabled:(BOOL)arg1;
 - (void)setSmimeButtonVisible:(BOOL)arg1;
 - (void)setToFieldDelegate:(id)arg1;
+- (void)setWantsEncryption:(BOOL)arg1 canEncrypt:(BOOL)arg2 animated:(BOOL)arg3;
+- (BOOL)smimeButtonEnabled;
 - (BOOL)smimeButtonVisible;
 - (id)toFieldDelegate;
 

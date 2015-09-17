@@ -4,7 +4,6 @@
 
 @interface CNFRegSignInController : CNFRegFirstRunController <CNFRegCreateAccountControllerDelegate> {
     PSSpecifier *_actionGroupSpecifier;
-    id /* block */ _alertHandler;
     PSSpecifier *_createAccountButtonSpecifier;
     BOOL _hideLearnMoreButton;
     CNFRegLearnMoreButton *_learnMoreButton;
@@ -17,7 +16,6 @@
     PSSpecifier *_usernameSpecifier;
 }
 
-@property (nonatomic, copy) id /* block */ alertHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -27,6 +25,7 @@
 @property (nonatomic) unsigned int signinFailureCount;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)__userTappedTextField;
 - (void)_buildCreateAccountButtonSpecifierCache:(id)arg1;
 - (void)_buildCredentialSpecifierCache:(id)arg1;
@@ -53,8 +52,6 @@
 - (void)_startTimeout;
 - (void)_updateControllerState;
 - (void)_updateUI;
-- (id /* block */)alertHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)applicationDidResume;
 - (id)bundle;
 - (void)cancelButtonTapped;
@@ -74,7 +71,6 @@
 - (id)passwordTextField;
 - (id)pendingPassword;
 - (id)pendingUsername;
-- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setCreateAccountButtonEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHideLearnMoreButton:(BOOL)arg1;
 - (void)setPasswordEnabled:(BOOL)arg1 animated:(BOOL)arg2;
@@ -88,6 +84,7 @@
 - (void)setUsernameText:(id)arg1;
 - (void)showCreateAccountController;
 - (void)signInTapped:(id)arg1;
+- (void)signInWithUsername:(id)arg1 password:(id)arg2;
 - (unsigned int)signinFailureCount;
 - (id)specifierList;
 - (void)systemApplicationDidEnterBackground;

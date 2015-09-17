@@ -38,6 +38,7 @@
 - (void)loadThemeDirections;
 - (void)loadThemeDrawingLayers;
 - (void)loadThemeElements;
+- (void)loadThemeGraphicsFeatureSetClasses;
 - (void)loadThemeIdioms;
 - (void)loadThemeLooks;
 - (void)loadThemeParts;

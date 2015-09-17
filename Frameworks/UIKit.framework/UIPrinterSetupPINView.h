@@ -24,6 +24,7 @@
 @property (nonatomic, retain) UITextField *textEntryField;
 @property (nonatomic, retain) UILabel *titleLabel;
 
+- (void).cxx_destruct;
 - (id)PIN;
 - (void)dealloc;
 - (id)enterLabel;

@@ -4,18 +4,39 @@
 
 @interface SGAggregateLogging : NSObject
 
++ (void)_pushValuesForContact:(id)arg1 usingDomain:(id)arg2 subdomain:(id)arg3 type:(id)arg4 action:(id)arg5 extraSignature:(id)arg6;
 + (id)aggregateKeyForKeySuffix:(id)arg1;
-+ (id)anonymousHashForEvent:(id)arg1;
++ (void)app:(id)arg1 performedAction:(id)arg2 onContacts:(id)arg3 withResult:(id)arg4 elapsedTime:(unsigned long long)arg5;
++ (void)app:(id)arg1 performedAction:(id)arg2 onEvents:(id)arg3 withResult:(id)arg4 elapsedTime:(unsigned long long)arg5;
 + (void)assetVersion;
 + (void)clearDistributionKey:(id)arg1;
 + (void)contactConfirmed:(id)arg1;
 + (void)contactRejected:(id)arg1;
++ (id)contactsFromEntity:(id)arg1;
 + (void)contactsSuggested:(id)arg1 withElapsedTime:(unsigned long long)arg2;
++ (void)detail:(id)arg1 confirmedForContact:(id)arg2;
++ (void)detail:(id)arg1 rejectedForContact:(id)arg2;
 + (void)eventConfirmed:(id)arg1;
++ (void)eventConfirmedByRecord:(id)arg1;
 + (void)eventRejected:(id)arg1;
++ (void)eventRejectedByRecord:(id)arg1;
++ (id)eventsFromEntity:(id)arg1;
 + (void)eventsSuggested:(id)arg1 withElapsedTime:(unsigned long long)arg2;
-+ (void)incrementKeyWithSuffix:(id)arg1;
-+ (void)incrementKeyWithSuffix:(id)arg1 by:(unsigned long long)arg2;
++ (void)harvestDrainedBatches:(int)arg1 outOf:(int)arg2;
++ (void)harvestDrainedNumberOfMails:(int)arg1;
++ (void)harvestedEntity:(id)arg1 withElapsedTime:(unsigned long long)arg2;
++ (void)harvestedMessageInQueueSince:(double)arg1;
++ (void)identityGroupSize:(unsigned int)arg1;
++ (void)inMemoryDissectionCacheAttempted;
++ (void)inMemoryDissectionCacheHit;
++ (void)incrementKeyWithDomain:(id)arg1 subdomain:(id)arg2 suffix:(id)arg3;
++ (void)incrementKeyWithDomain:(id)arg1 subdomain:(id)arg2 suffix:(id)arg3 action:(id)arg4;
++ (void)incrementKeyWithDomain:(id)arg1 subdomain:(id)arg2 suffix:(id)arg3 action:(id)arg4 by:(unsigned long long)arg5;
++ (void)incrementKeyWithDomain:(id)arg1 subdomain:(id)arg2 suffix:(id)arg3 by:(unsigned long long)arg4;
++ (void)incrementKeyWithDomain:(id)arg1 suffix:(id)arg2;
++ (void)incrementValuesInDomain:(id)arg1 subdomain:(id)arg2 type:(id)arg3 action:(id)arg4 withKeysAndIncrements:(id)arg5 extraSignature:(id)arg6;
++ (void)masterEntityCacheAttempted;
++ (void)masterEntityCacheHit;
 + (void)messagesAdded:(unsigned long long)arg1;
 + (void)messagesDeleted:(unsigned long long)arg1;
 + (void)messagesFound:(unsigned long long)arg1;
@@ -23,9 +44,23 @@
 + (void)messagesLost:(unsigned long long)arg1;
 + (void)messagesPruned:(unsigned long long)arg1;
 + (void)messagesUndisplayablyLost:(long long)arg1;
++ (void)performedAction:(id)arg1 forApp:(id)arg2 onContact:(id)arg3;
++ (void)performedAction:(id)arg1 forApp:(id)arg2 onEvent:(id)arg3;
 + (void)performedAction:(id)arg1 onContact:(id)arg2;
-+ (void)performedAction:(id)arg1 onEvent:(id)arg2;
-+ (void)pushDistributionValue:(double)arg1 forKey:(id)arg2;
++ (void)performedAction:(id)arg1 onDetail:(id)arg2 forContact:(id)arg3;
++ (void)performedAction:(id)arg1 onEventInCalendar:(id)arg2;
++ (void)performedAction:(id)arg1 onEventInMail:(id)arg2;
++ (void)performedAction:(id)arg1 onRecordForContact:(id)arg2;
++ (void)pushValue:(double)arg1 toDistKeyWithDomain:(id)arg2 suffix:(id)arg3;
 + (void)pushValue:(double)arg1 toDistKeyWithSuffix:(id)arg2;
++ (void)re2CacheAttempted;
++ (void)re2CacheHit;
++ (void)recordConfirmedForContact:(id)arg1;
++ (void)recordRejectedForContact:(id)arg1;
++ (void)setKeyWithDomain:(id)arg1 suffix:(id)arg2 toValue:(unsigned long long)arg3;
++ (void)sqlStatementCacheAttempted;
++ (void)sqlStatementCacheHit;
++ (void)sqlStoreDissectionCacheAttempted;
++ (void)sqlStoreDissectionCacheHit;
 
 @end

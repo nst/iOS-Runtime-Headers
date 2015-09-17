@@ -5,22 +5,16 @@
 
 @required
 
+- (void)contactlessInterfaceDidDismissFromSource:(int)arg1;
+- (void)contactlessInterfaceDidPresentFromSource:(int)arg1;
 - (void)didUpdateDefaultPaymentPassWithUniqueIdentifier:(NSString *)arg1;
-- (void)paymentDeviceDidBecomeAvailable;
-- (void)paymentDeviceDidBecomeUnavailable;
-- (void)paymentDeviceDidEnterField;
-- (void)paymentDeviceDidEnterRestrictedMode;
-- (void)paymentDeviceDidLeaveField;
-- (void)paymentDeviceDidLeaveRestrictedMode;
+- (void)passWithUniqueIdentifier:(NSString *)arg1 didReceiveValueAddedServiceTransaction:(PKValueAddedServiceTransaction *)arg2;
+- (void)paymentDeviceDidEnterFieldWithProperties:(PKFieldProperties *)arg1;
+- (void)paymentDeviceDidExitField;
 - (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didEnableMessageService:(BOOL)arg2;
 - (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didEnableTransactionService:(BOOL)arg2;
 - (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didReceiveMessage:(PKPaymentMessage *)arg2;
 - (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didReceiveTransaction:(PKPaymentTransaction *)arg2;
-- (void)paymentPassWithUniqueIdentifierDidActivate:(NSString *)arg1;
-- (void)paymentPassWithUniqueIdentifierDidAuthorize:(NSString *)arg1;
-- (void)paymentPassWithUniqueIdentifierDidBeginTransaction:(NSString *)arg1;
-- (void)paymentPassWithUniqueIdentifierDidCompleteTransaction:(NSString *)arg1;
-- (void)paymentPassWithUniqueIdentifierDidDeauthorize:(NSString *)arg1;
-- (void)paymentPassWithUniqueIdentifierDidFailTransaction:(NSString *)arg1;
+- (void)paymentPassWithUniqueIdentifier:(NSString *)arg1 didRemoveTransactionWithIdentifier:(NSString *)arg2;
 
 @end

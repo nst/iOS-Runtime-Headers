@@ -6,6 +6,7 @@
     int _alignment;
     BOOL _alignmentHasBeenSet;
     BOOL _displayingEntireMessage;
+    BOOL _shouldHideSMSPreview;
 }
 
 - (void)_deactivateAllTaggedAlertItems;
@@ -18,6 +19,7 @@
 - (int)bodyTextAlignmentForAlertSheet:(id)arg1 displayedLineCount:(int)arg2;
 - (void)didDeactivateForReason:(int)arg1;
 - (BOOL)forcesModalAlertAppearance;
+- (id)init;
 - (id)lockLabel;
 - (id)messageText;
 - (id)name;

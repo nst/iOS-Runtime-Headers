@@ -25,6 +25,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithShadow:(id)arg1;
 - (BOOL)isEqual:(id)arg1;

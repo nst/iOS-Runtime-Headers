@@ -34,6 +34,7 @@
     BOOL _supportsIDStatusLookup;
     BOOL _supportsMutatingGroupMembers;
     BOOL _supportsOfflineTransfers;
+    BOOL _supportsOneSessionForAllAccounts;
     BOOL _supportsPhoneNumberMapping;
     BOOL _supportsPresence;
     BOOL _supportsRegistration;
@@ -74,6 +75,7 @@
 @property (nonatomic, readonly) BOOL supportsIDStatusLookup;
 @property (nonatomic, readonly) BOOL supportsMutatingGroupMembers;
 @property (nonatomic, readonly) BOOL supportsOfflineTransfers;
+@property (nonatomic, readonly) BOOL supportsOneSessionForAllAccounts;
 @property (nonatomic, readonly) BOOL supportsPhoneNumberMapping;
 @property (nonatomic, readonly) BOOL supportsPresence;
 @property (nonatomic, readonly) BOOL supportsRegistration;
@@ -83,12 +85,15 @@
 + (id)allServicesNonBlocking;
 + (id)connectedServices;
 + (id)connectedServicesWithCapability:(unsigned long long)arg1;
++ (BOOL)iMessageEnabled;
++ (BOOL)mmsEnabled;
 + (id)operationalServicesWithCapability:(unsigned long long)arg1;
 + (Class)serviceClass;
 + (id)serviceWithInternalName:(id)arg1;
 + (id)serviceWithName:(id)arg1;
 + (id)servicesWithCapability:(unsigned long long)arg1;
 + (void)setServiceClass:(Class)arg1;
++ (BOOL)smsEnabled;
 + (id)supportedCountryCodes;
 + (BOOL)systemSupportsSMSSending;
 + (BOOL)systemSupportsSendingAttachmentsOfTypes:(id)arg1 error:(int*)arg2;
@@ -171,6 +176,7 @@
 - (BOOL)supportsIDStatusLookup;
 - (BOOL)supportsMutatingGroupMembers;
 - (BOOL)supportsOfflineTransfers;
+- (BOOL)supportsOneSessionForAllAccounts;
 - (BOOL)supportsPhoneNumberMapping;
 - (BOOL)supportsPresence;
 - (BOOL)supportsRegistration;

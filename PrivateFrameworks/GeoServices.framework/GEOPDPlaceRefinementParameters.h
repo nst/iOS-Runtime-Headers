@@ -3,10 +3,12 @@
  */
 
 @interface GEOPDPlaceRefinementParameters : PBCodable <NSCopying> {
+    int _addressGeocodeAccuracyHint;
     GEOStructuredAddress *_addressHint;
     NSMutableArray *_formattedAddressLineHints;
     struct { 
         unsigned int muid : 1; 
+        unsigned int addressGeocodeAccuracyHint : 1; 
         unsigned int placeTypeHint : 1; 
         unsigned int resultProviderId : 1; 
     } _has;
@@ -17,8 +19,10 @@
     int _resultProviderId;
 }
 
+@property (nonatomic) int addressGeocodeAccuracyHint;
 @property (nonatomic, retain) GEOStructuredAddress *addressHint;
 @property (nonatomic, retain) NSMutableArray *formattedAddressLineHints;
+@property (nonatomic) BOOL hasAddressGeocodeAccuracyHint;
 @property (nonatomic, readonly) BOOL hasAddressHint;
 @property (nonatomic, readonly) BOOL hasLocationHint;
 @property (nonatomic) BOOL hasMuid;
@@ -31,7 +35,11 @@
 @property (nonatomic) int placeTypeHint;
 @property (nonatomic) int resultProviderId;
 
+- (BOOL)_hasRequiredFields;
+- (unsigned int)_routeHypothesisPlaceRefinementParametersHash;
+- (BOOL)_routeHypothesisPlaceRefinementParametersIsEqual:(id)arg1;
 - (void)addFormattedAddressLineHint:(id)arg1;
+- (int)addressGeocodeAccuracyHint;
 - (id)addressHint;
 - (void)clearFormattedAddressLineHints;
 - (void)copyTo:(id)arg1;
@@ -42,6 +50,7 @@
 - (id)formattedAddressLineHintAtIndex:(unsigned int)arg1;
 - (id)formattedAddressLineHints;
 - (unsigned int)formattedAddressLineHintsCount;
+- (BOOL)hasAddressGeocodeAccuracyHint;
 - (BOOL)hasAddressHint;
 - (BOOL)hasLocationHint;
 - (BOOL)hasMuid;
@@ -49,8 +58,7 @@
 - (BOOL)hasPlaceTypeHint;
 - (BOOL)hasResultProviderId;
 - (unsigned int)hash;
-- (id)initWithCoordinateHint:(struct { double x1; double x2; })arg1 addressHint:(id)arg2 placeNameHint:(id)arg3;
-- (id)initWithMapItemToRefine:(id)arg1;
+- (id)initWithMapItemToRefine:(id)arg1 coordinate:(struct { double x1; double x2; })arg2;
 - (id)initWithMuid:(unsigned long long)arg1 locationHint:(struct { double x1; double x2; })arg2 placeNameHint:(id)arg3 resultProviderId:(int)arg4;
 - (id)initWithSearchURLQuery:(id)arg1 coordinate:(struct { double x1; double x2; })arg2 muid:(unsigned long long)arg3 resultProviderId:(int)arg4;
 - (BOOL)isEqual:(id)arg1;
@@ -61,8 +69,10 @@
 - (int)placeTypeHint;
 - (BOOL)readFrom:(id)arg1;
 - (int)resultProviderId;
+- (void)setAddressGeocodeAccuracyHint:(int)arg1;
 - (void)setAddressHint:(id)arg1;
 - (void)setFormattedAddressLineHints:(id)arg1;
+- (void)setHasAddressGeocodeAccuracyHint:(BOOL)arg1;
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setHasPlaceTypeHint:(BOOL)arg1;
 - (void)setHasResultProviderId:(BOOL)arg1;

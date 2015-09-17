@@ -2,12 +2,14 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicGeniusMixQueueFeeder : MusicQueryQueueFeeder {
+@interface MusicGeniusMixQueueFeeder : MusicQueryQueueFeeder <NSSecureCoding> {
     unsigned int _currentPlaylistOffset;
     <MusicGeniusMixQueueFeederDataSource> *_dataSource;
 }
 
 @property (nonatomic, retain) <MusicGeniusMixQueueFeederDataSource> *dataSource;
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)dataSource;

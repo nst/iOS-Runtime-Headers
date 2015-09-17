@@ -29,7 +29,6 @@
 + (id)referenceForObject:(id)arg1;
 + (id)weakReferenceForObject:(id)arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)addLoadObserver:(id)arg1 action:(SEL)arg2;
 - (id)component;

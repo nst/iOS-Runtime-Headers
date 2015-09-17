@@ -12,8 +12,8 @@
 + (id)proxyWithTarget:(id)arg1;
 + (id)proxyWithTarget:(id)arg1 shouldSuspendInvocationBlock:(id /* block */)arg2;
 
+- (void).cxx_destruct;
 - (void)_dispatchSuspendedMessages;
-- (void)dealloc;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
 - (void)removeAllEnqueuedInvocations;

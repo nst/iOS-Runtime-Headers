@@ -6,6 +6,9 @@
 @required
 
 - (unsigned int)arrayLength;
+- (<MTLBuffer> *)buffer;
+- (unsigned int)bufferBytesPerRow;
+- (unsigned int)bufferOffset;
 - (unsigned int)depth;
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 bytesPerImage:(unsigned int)arg3 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg4 mipmapLevel:(unsigned int)arg5 slice:(unsigned int)arg6;
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg3 mipmapLevel:(unsigned int)arg4;
@@ -13,12 +16,17 @@
 - (BOOL)isFramebufferOnly;
 - (unsigned int)mipmapLevelCount;
 - (<MTLTexture> *)newTextureViewWithPixelFormat:(unsigned int)arg1;
+- (<MTLTexture> *)newTextureViewWithPixelFormat:(unsigned int)arg1 textureType:(unsigned int)arg2 levels:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 slices:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (unsigned int)parentRelativeLevel;
+- (unsigned int)parentRelativeSlice;
+- (<MTLTexture> *)parentTexture;
 - (unsigned int)pixelFormat;
 - (void)replaceRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned int)arg2 slice:(unsigned int)arg3 withBytes:(const void*)arg4 bytesPerRow:(unsigned int)arg5 bytesPerImage:(unsigned int)arg6;
 - (void)replaceRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned int)arg2 withBytes:(const void*)arg3 bytesPerRow:(unsigned int)arg4;
 - (<MTLResource> *)rootResource;
 - (unsigned int)sampleCount;
 - (unsigned int)textureType;
+- (unsigned int)usage;
 - (unsigned int)width;
 
 @end

@@ -17,5 +17,6 @@
 - (int)availableCount;
 - (void)dealloc;
 - (id)initWithResourceListCapacity:(int)arg1;
+- (void)purge;
 
 @end

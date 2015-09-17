@@ -29,6 +29,7 @@
 - (id)getPaymentPassesUserActivity;
 - (id)individualPassUserActivity;
 - (id)init;
+- (void)invalidateAllActivities;
 - (id)passListUserActivity;
 - (id)provisionPassUserActivity;
 - (id)queue;

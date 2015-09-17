@@ -7,26 +7,13 @@
 }
 
 @property (nonatomic, readonly, retain) AVAsset *asset;
-@property (nonatomic, copy) AVAudioMix *audioMix;
-@property (nonatomic, copy) NSString *audioTimePitchAlgorithm;
-@property (nonatomic) BOOL canPerformMultiplePassesOverSourceMediaData;
-@property (nonatomic, readonly) <AVVideoCompositing> *customVideoCompositor;
-@property (nonatomic, copy) NSURL *directoryForTemporaryFiles;
 @property (nonatomic, readonly) NSError *error;
-@property (nonatomic, readonly) long long estimatedOutputFileLength;
-@property (nonatomic) long long fileLengthLimit;
-@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxDuration;
-@property (nonatomic, copy) NSArray *metadata;
-@property (nonatomic, retain) AVMetadataItemFilter *metadataItemFilter;
 @property (nonatomic, copy) NSString *outputFileType;
 @property (nonatomic, copy) NSURL *outputURL;
 @property (nonatomic, readonly) NSString *presetName;
 @property (nonatomic, readonly) float progress;
 @property (nonatomic) BOOL shouldOptimizeForNetworkUse;
 @property (nonatomic, readonly) int status;
-@property (nonatomic, readonly) NSArray *supportedFileTypes;
-@property (nonatomic) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
-@property (nonatomic, copy) AVVideoComposition *videoComposition;
 
 + (id)_asynchronousDispatchQueue;
 + (id)_audioOnlyPresets;
@@ -53,6 +40,7 @@
 + (id)_utTypesForPresets;
 + (id)_utTypesForTemporalMetadataPresets;
 + (id)_videoCompressionPropertiesForVideoSetting:(id)arg1;
++ (id)_videoOnlyPresets;
 + (id)allExportPresets;
 + (void)determineCompatibilityOfExportPreset:(id)arg1 withAsset:(id)arg2 outputFileType:(id)arg3 completionHandler:(id /* block */)arg4;
 + (long long)estimatedOutputFileLengthForPreset:(id)arg1 duration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 properties:(id)arg3;

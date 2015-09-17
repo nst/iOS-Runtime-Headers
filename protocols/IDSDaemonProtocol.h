@@ -49,6 +49,11 @@
 - (void)getLocalDeviceInfo;
 - (void)getPairedDeviceInfo;
 - (void)hardDeregister;
+- (void)homeKitGetAdminAccessTokensWithServiceUserID:(NSString *)arg1 accessoryID:(NSString *)arg2 pairingToken:(NSData *)arg3;
+- (void)homeKitGetConsentTokensWithServiceUserID:(NSString *)arg1 accessoryIDs:(NSArray *)arg2 adminID:(NSString *)arg3;
+- (void)homeKitGetServiceUserIDs;
+- (void)homeKitGetUserAccessTokensWithServiceUserID:(NSString *)arg1 userID:(NSString *)arg2 userHandle:(NSString *)arg3 accessoryRequests:(NSArray *)arg4;
+- (void)homeKitRefreshUserAccessTokensWithServiceUserID:(NSString *)arg1 userID:(NSString *)arg2 accessoryRequests:(NSArray *)arg3;
 - (void)iCloudSignInHackWithUserName:(NSString *)arg1 password:(NSString *)arg2;
 - (void)iCloudSignInWithUserName:(NSString *)arg1 authToken:(NSString *)arg2 password:(NSString *)arg3 accountInfo:(NSDictionary *)arg4;
 - (void)iCloudSignOut;
@@ -81,6 +86,7 @@
 - (void)setAllowedTrafficClasses:(NSSet *)arg1;
 - (void)setAudioEnabled:(BOOL)arg1 forSessionWithUniqueID:(NSString *)arg2;
 - (void)setInviteTimetout:(int)arg1 forSessionWithUniqueID:(NSString *)arg2;
+- (void)setLinkPreferences:(NSDictionary *)arg1 service:(NSString *)arg2;
 - (void)setListenerServices:(NSSet *)arg1 commands:(NSSet *)arg2 capabilities:(unsigned int)arg3;
 - (void)setLoginID:(NSString *)arg1 forAccount:(NSString *)arg2;
 - (void)setMuted:(BOOL)arg1 forSessionWithUniqueID:(NSString *)arg2;
@@ -90,11 +96,13 @@
 - (void)setupAccountWithLoginID:(NSString *)arg1 serviceName:(NSString *)arg2 accountType:(int)arg3 accountConfig:(NSDictionary *)arg4 authToken:(NSString *)arg5 password:(NSString *)arg6 transactionID:(NSString *)arg7;
 - (void)setupNewSessionWithConfiguration:(NSDictionary *)arg1;
 - (void)startLocalSetup;
+- (void)startOTRTest:(NSString *)arg1 priority:(int)arg2;
 - (void)stopLocalSetup;
 - (void)unregisterAccount:(NSString *)arg1;
 - (void)unvalidateAliases:(NSArray *)arg1 forAccount:(NSString *)arg2;
 - (void)updateAccount:(NSString *)arg1 withAccountInfo:(NSDictionary *)arg2;
 - (void)updateAuthorizationCredentials:(NSString *)arg1 token:(NSString *)arg2 forAccount:(NSString *)arg3;
+- (void)updateSubServices:(NSArray *)arg1 forService:(NSString *)arg2;
 - (void)validateAliases:(NSArray *)arg1 forAccount:(NSString *)arg2;
 - (void)validateProfileForAccount:(NSString *)arg1;
 - (void)xpcObject:(NSObject<OS_xpc_object> *)arg1 objectContext:(NSDictionary *)arg2;

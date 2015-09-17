@@ -16,10 +16,6 @@
 
 + (id)advertiserClientInterface;
 + (id)advertiserInterface;
-+ (id)browserClientInterface;
-+ (id)browserInterface;
-+ (id)connectionManagerClientInterface;
-+ (id)connectionManagerInterface;
 + (id)hotspotClientInterface;
 + (id)hotspotInterface;
 + (void)initialize;
@@ -32,15 +28,14 @@
 + (id)xpcManagerInterface;
 
 - (void)activityAdvertiserProxyForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)companionBrowserProxyforIdentifier:(id)arg1 serviceType:(id)arg2 client:(id)arg3 withCompletionHandler:(id /* block */)arg4;
-- (void)companionConnectionProxyForService:(id)arg1 client:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)airdropTransferDataProviderWithCompletionHandler:(id /* block */)arg1;
 - (id)connection;
 - (void)continuityScannerProxyForClient:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
 - (BOOL)interrupted;
 - (BOOL)isInvalid;
-- (void)notifyObservers;
+- (void)notifyOfInterruption;
 - (void)notifyOfInvalidation;
 - (void)notifyOfResume;
 - (id)observers;

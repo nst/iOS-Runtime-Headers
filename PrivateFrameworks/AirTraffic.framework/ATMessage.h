@@ -3,18 +3,20 @@
  */
 
 @interface ATMessage : NSObject <NSSecureCoding> {
-    NSStream *_dataStream;
+    NSInputStream *_dataStream;
     unsigned int _messageID;
     NSDictionary *_parameters;
     unsigned int _sessionID;
+    ATCodableStream *_stream;
     double _timestamp;
 }
 
-@property (nonatomic, retain) NSStream *dataStream;
+@property (nonatomic, retain) NSInputStream *dataStream;
 @property (nonatomic) unsigned int messageID;
 @property (nonatomic) unsigned int options;
 @property (nonatomic, retain) NSDictionary *parameters;
 @property (nonatomic) unsigned int sessionID;
+@property (nonatomic, retain) ATCodableStream *stream;
 @property (nonatomic) double timestamp;
 
 // Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
@@ -37,7 +39,9 @@
 - (void)setOptions:(unsigned int)arg1;
 - (void)setParameters:(id)arg1;
 - (void)setSessionID:(unsigned int)arg1;
+- (void)setStream:(id)arg1;
 - (void)setTimestamp:(double)arg1;
+- (id)stream;
 - (double)timestamp;
 
 // Image: /System/Library/PrivateFrameworks/ATFoundation.framework/ATFoundation

@@ -8,14 +8,16 @@
     NSString *mText;
 }
 
-@property (nonatomic, retain) TSKAnnotationAuthor *author;
-@property (nonatomic, copy) NSDate *creationDate;
-@property (nonatomic, copy) NSString *text;
+@property (nonatomic, readonly) TSKAnnotationAuthor *author;
+@property (nonatomic, readonly) NSDate *creationDate;
+@property (nonatomic, readonly) NSString *text;
 
-- (void)appendText:(id)arg1;
 - (id)author;
 - (void)commentWillBeAddedToDocumentRoot;
+- (id)copyByAppendingText:(id)arg1;
+- (id)copyWithAuthor:(id)arg1;
 - (id)copyWithContext:(id)arg1;
+- (id)copyWithText:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (id)creationDateString;
@@ -23,7 +25,6 @@
 - (id)description;
 - (unsigned int)hash;
 - (id)initFromUnarchiver:(id)arg1;
-- (id)initWithContext:(id)arg1;
 - (id)initWithContext:(id)arg1 author:(id)arg2;
 - (id)initWithContext:(id)arg1 text:(id)arg2 creationDate:(id)arg3 author:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
@@ -32,7 +33,6 @@
 - (void)saveToArchiver:(id)arg1;
 - (void)setAuthor:(id)arg1;
 - (void)setCreationDate:(id)arg1;
-- (void)setText:(id)arg1;
 - (id)text;
 
 @end

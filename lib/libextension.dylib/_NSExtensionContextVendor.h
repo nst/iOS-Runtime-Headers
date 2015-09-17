@@ -24,6 +24,7 @@
 + (Class)_extensionPrincipalClass;
 + (id)_sharedExtensionContextVendor;
 + (void)_startListening;
++ (void)_startListening:(BOOL)arg1;
 
 - (void)_beginRequestWithExtensionItems:(id)arg1 listenerEndpoint:(id)arg2 withContextUUID:(id)arg3 completion:(id /* block */)arg4;
 - (id)_extensionContextForUUID:(id)arg1;

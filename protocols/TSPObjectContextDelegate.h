@@ -25,7 +25,7 @@
 - (NSDictionary *)packageDataForWrite;
 - (NSSet *)persistenceWarningsForData:(TSPData *)arg1 flags:(unsigned int)arg2;
 - (void)presentPersistenceError:(NSError *)arg1;
-- (BOOL)preserveDocumentRevisionIdentifierForSequenceZero;
+- (BOOL)preserveDocumentRevisionIdentifierForSaveURL:(NSURL *)arg1;
 - (void)resumeAutosave;
 - (BOOL)retrievePassphraseWithConsumer:(id <TSPPassphraseConsumer>)arg1;
 - (void)suspendAutosave;

@@ -5,14 +5,34 @@
 
 @required
 
+- (NSString *)artworkImageURL;
+- (NSString *)contentRatingDomain;
+- (NSNumber *)contentRatingRanking;
 - (NSString *)description;
-- (id)initWithArgument:(NSString *)arg1;
+- (NSArray *)highlightGroups;
+- (id)initWithType:(NSString *)arg1 :(NSString *)arg2;
+- (NSArray *)interstitials;
+- (BOOL)isExplicit;
+- (NSNumber *)resumeTime;
+- (void)setArtworkImageURL:(NSString *)arg1;
+- (void)setContentRatingDomain:(NSString *)arg1;
+- (void)setContentRatingRanking:(NSNumber *)arg1;
 - (void)setDescription:(NSString *)arg1;
+- (void)setHighlightGroups:(NSArray *)arg1;
+- (void)setInterstitials:(NSArray *)arg1;
+- (void)setIsExplicit:(BOOL)arg1;
+- (void)setResumeTime:(NSNumber *)arg1;
 - (void)setSubtitle:(NSString *)arg1;
 - (void)setTitle:(NSString *)arg1;
+- (void)setType:(NSString *)arg1;
+- (void)setUpNextPresentationDuration:(double)arg1;
+- (void)setUpNextPresentationStartTime:(double)arg1;
 - (void)setUrl:(NSString *)arg1;
 - (NSString *)subtitle;
 - (NSString *)title;
+- (NSString *)type;
+- (double)upNextPresentationDuration;
+- (double)upNextPresentationStartTime;
 - (NSString *)url;
 
 @end

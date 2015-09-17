@@ -3,6 +3,7 @@
  */
 
 @interface CacheDeleteServiceListener : CacheDeleteListener <CacheDeleteServiceProtocol, NSXPCListenerDelegate> {
+    id /* block */ _callback;
     id /* block */ _cancel;
     NSXPCListenerEndpoint *_endpoint;
     id /* block */ _notify;
@@ -11,6 +12,7 @@
     id /* block */ _purgeable;
 }
 
+@property (nonatomic, copy) id /* block */ callback;
 @property (nonatomic, copy) id /* block */ cancel;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -23,6 +25,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id /* block */)callback;
 - (id /* block */)cancel;
 - (id)endpoint;
 - (id)initWithName:(id)arg1 anonymous:(BOOL)arg2;
@@ -30,12 +33,14 @@
 - (id /* block */)periodic;
 - (id /* block */)purge;
 - (id /* block */)purgeable;
+- (void)serviceCallback:(id)arg1 replyBlock:(id /* block */)arg2;
 - (void)serviceCancelPurge:(id /* block */)arg1;
 - (void)serviceNotify:(id)arg1 replyBlock:(id /* block */)arg2;
 - (void)servicePeriodic:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
 - (void)servicePing:(id /* block */)arg1;
 - (void)servicePurge:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
 - (void)servicePurgeable:(int)arg1 info:(id)arg2 replyBlock:(id /* block */)arg3;
+- (void)setCallback:(id /* block */)arg1;
 - (void)setCancel:(id /* block */)arg1;
 - (void)setNotify:(id /* block */)arg1;
 - (void)setNotifyCallback:(id /* block */)arg1;

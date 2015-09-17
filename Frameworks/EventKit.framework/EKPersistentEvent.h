@@ -36,6 +36,7 @@
 @property (nonatomic) int privacyLevel;
 @property (nonatomic, copy) NSString *responseComment;
 @property (nonatomic) int status;
+@property (nonatomic, retain) EKPersistentSuggestedEventInfo *suggestedEventInfo;
 @property (nonatomic) int travelAdvisoryBehavior;
 @property (nonatomic, copy) NSNumber *travelTime;
 
@@ -99,10 +100,12 @@
 - (void)setPrivacyLevel:(int)arg1;
 - (void)setResponseComment:(id)arg1;
 - (void)setStatus:(int)arg1;
+- (void)setSuggestedEventInfo:(id)arg1;
 - (void)setTravelAdvisoryBehavior:(int)arg1;
 - (void)setTravelTime:(id)arg1;
 - (void)setURL:(id)arg1;
 - (int)status;
+- (id)suggestedEventInfo;
 - (int)travelAdvisoryBehavior;
 - (id)travelTime;
 - (BOOL)validate:(id*)arg1;

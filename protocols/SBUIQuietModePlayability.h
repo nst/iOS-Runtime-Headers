@@ -7,6 +7,7 @@
 
 - (BOOL)inertWhenLocked;
 - (BOOL)isCritical;
+- (BOOL)overridesPocketMode;
 - (BOOL)overridesQuietMode;
 
 @end

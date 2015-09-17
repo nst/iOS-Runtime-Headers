@@ -47,6 +47,7 @@
 @property (nonatomic, readonly) UIImage *toolbarIcon;
 @property (nonatomic, readonly) PUPhotoEditValuesCalculator *valuesCalculator;
 @property (nonatomic, readonly) BOOL wantsDefaultPreviewView;
+@property (nonatomic, readonly) BOOL wantsIrisAutoDisableWarning;
 @property (nonatomic, readonly) BOOL wantsSecondaryToolbarVisible;
 @property (nonatomic, readonly) BOOL wantsZoomAndPanEnabled;
 
@@ -102,6 +103,7 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)wantsDefaultPreviewView;
+- (BOOL)wantsIrisAutoDisableWarning;
 - (BOOL)wantsSecondaryToolbarVisible;
 - (BOOL)wantsZoomAndPanEnabled;
 - (void)willBecomeActiveTool;

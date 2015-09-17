@@ -6,9 +6,9 @@
     id _placeholderItem;
 }
 
+- (void).cxx_destruct;
 - (Class)class;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)forwardInvocation:(id)arg1;
 - (unsigned int)hash;

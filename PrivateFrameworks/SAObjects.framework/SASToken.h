@@ -13,6 +13,7 @@
 @property (nonatomic, copy) NSString *recognitionStability;
 @property (nonatomic) BOOL removeSpaceAfter;
 @property (nonatomic) BOOL removeSpaceBefore;
+@property (nonatomic, copy) NSNumber *silenceStartTime;
 @property (nonatomic, copy) NSNumber *startTime;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *text;
@@ -36,8 +37,10 @@
 - (void)setRecognitionStability:(id)arg1;
 - (void)setRemoveSpaceAfter:(BOOL)arg1;
 - (void)setRemoveSpaceBefore:(BOOL)arg1;
+- (void)setSilenceStartTime:(id)arg1;
 - (void)setStartTime:(id)arg1;
 - (void)setText:(id)arg1;
+- (id)silenceStartTime;
 - (id)startTime;
 - (id)text;
 

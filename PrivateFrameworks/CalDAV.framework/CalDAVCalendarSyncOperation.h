@@ -15,6 +15,7 @@
 @property (nonatomic) BOOL getScheduleChanges;
 @property (nonatomic) BOOL getScheduleTags;
 
+- (void).cxx_destruct;
 - (id)_distantFutureEndDate;
 - (void)_finishWithError:(id)arg1;
 - (void)_processAddedOrModified:(id)arg1 removed:(id)arg2;
@@ -23,7 +24,6 @@
 - (void)containerSyncTask:(id)arg1 retrievedAddedOrModifiedActions:(id)arg2 removed:(id)arg3;
 - (id)copyAllLocalURLsInFolderWithURL:(id)arg1;
 - (id)copyLocalETagsForURLs:(id)arg1 inFolderWithURL:(id)arg2;
-- (void)dealloc;
 - (BOOL)getScheduleChanges;
 - (BOOL)getScheduleTags;
 - (id)initWithPrincipal:(id)arg1 calendar:(id)arg2 nextCtag:(id)arg3 nextSyncToken:(id)arg4;

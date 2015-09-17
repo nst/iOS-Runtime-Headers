@@ -39,7 +39,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isConnecting;
-@property (nonatomic, readonly) IDSDaemonListener *listener;
+@property (nonatomic, readonly, retain) IDSDaemonListener *listener;
 @property (nonatomic, readonly) NSString *listenerID;
 @property (readonly) Class superclass;
 
@@ -100,7 +100,7 @@
 - (void)sendXPCObject:(id)arg1 objectContext:(id)arg2;
 - (id)services;
 - (id)servicesForListenerID:(id)arg1;
-- (BOOL)setCapabilities:(unsigned int)arg1 forListenerID:(id)arg2;
+- (BOOL)setCapabilities:(unsigned int)arg1 forListenerID:(id)arg2 shouldLog:(BOOL)arg3;
 - (BOOL)setCommands:(id)arg1 forListenerID:(id)arg2;
 - (void)setCurXPCMessagePriority:(int)arg1;
 - (void)setDelegate:(id)arg1;

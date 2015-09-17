@@ -4,6 +4,7 @@
 
 @interface UIMutableApplicationSceneClientSettings : FBSMutableSceneClientSettings <UIApplicationSceneClientSettings>
 
+@property (nonatomic) int backgroundStyle;
 @property (nonatomic) int compatibilityMode;
 @property (nonatomic) int controlCenterRevealMode;
 @property (readonly, copy) NSString *debugDescription;
@@ -12,15 +13,22 @@
 @property (nonatomic) BOOL defaultStatusBarHidden;
 @property (nonatomic) int defaultStatusBarStyle;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL deviceOrientationEventsEnabled;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL idleModeVisualEffectsEnabled;
 @property (nonatomic) BOOL idleTimerDisabled;
+@property (nonatomic) int interfaceOrientation;
+@property (nonatomic) BOOL interfaceOrientationChangesDisabled;
 @property (nonatomic) int notificationCenterRevealMode;
-@property (nonatomic) BOOL orientationEnabled;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } primaryWindowOverlayInsets;
 @property (nonatomic) unsigned int proximityDetectionModes;
+@property (nonatomic) unsigned int statusBarContextID;
 @property (nonatomic) BOOL statusBarHidden;
 @property (nonatomic) int statusBarStyle;
 @property (readonly) Class superclass;
+@property (nonatomic) unsigned int supportedInterfaceOrientations;
 
+- (int)backgroundStyle;
 - (int)compatibilityMode;
 - (int)controlCenterRevealMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -28,26 +36,39 @@
 - (id)defaultPNGName;
 - (BOOL)defaultStatusBarHidden;
 - (int)defaultStatusBarStyle;
+- (BOOL)deviceOrientationEventsEnabled;
+- (BOOL)idleModeVisualEffectsEnabled;
 - (BOOL)idleTimerDisabled;
+- (int)interfaceOrientation;
+- (BOOL)interfaceOrientationChangesDisabled;
 - (BOOL)isUISubclass;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (int)notificationCenterRevealMode;
-- (BOOL)orientationEnabled;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })primaryWindowOverlayInsets;
 - (unsigned int)proximityDetectionModes;
+- (void)setBackgroundStyle:(int)arg1;
 - (void)setCompatibilityMode:(int)arg1;
 - (void)setControlCenterRevealMode:(int)arg1;
 - (void)setDefaultPNGExpirationTime:(double)arg1;
 - (void)setDefaultPNGName:(id)arg1;
 - (void)setDefaultStatusBarHidden:(BOOL)arg1;
 - (void)setDefaultStatusBarStyle:(int)arg1;
+- (void)setDeviceOrientationEventsEnabled:(BOOL)arg1;
+- (void)setIdleModeVisualEffectsEnabled:(BOOL)arg1;
 - (void)setIdleTimerDisabled:(BOOL)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
+- (void)setInterfaceOrientationChangesDisabled:(BOOL)arg1;
 - (void)setNotificationCenterRevealMode:(int)arg1;
-- (void)setOrientationEnabled:(BOOL)arg1;
+- (void)setPrimaryWindowOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setProximityDetectionModes:(unsigned int)arg1;
+- (void)setStatusBarContextID:(unsigned int)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;
 - (void)setStatusBarStyle:(int)arg1;
+- (void)setSupportedInterfaceOrientations:(unsigned int)arg1;
+- (unsigned int)statusBarContextID;
 - (BOOL)statusBarHidden;
 - (int)statusBarStyle;
+- (unsigned int)supportedInterfaceOrientations;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 @end

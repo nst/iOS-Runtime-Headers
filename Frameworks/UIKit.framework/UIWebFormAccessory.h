@@ -4,6 +4,8 @@
 
 @interface UIWebFormAccessory : UIInputView {
     UIBarButtonItem *_autofill;
+    UIBarButtonItemGroup *_buttonGroupAutoFill;
+    UIBarButtonItemGroup *_buttonGroupNavigation;
     UIBarButtonItem *_clearButton;
     UIBarButtonItem *_doneButton;
     UIBarButtonItem *_flexibleSpaceItem;
@@ -12,6 +14,7 @@
     UIBarButtonItem *_previousItem;
     UIToolbar *_rightToolbar;
     UISegmentedControl *_tab;
+    BOOL _usesUCB;
     <UIWebFormAccessoryDelegate> *delegate;
 }
 
@@ -42,7 +45,8 @@
 - (id)delegate;
 - (void)done:(id)arg1;
 - (void)hideAutoFillButton;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)initForUCB:(id)arg1;
+- (id)initWithInputAssistantItem:(id)arg1;
 - (BOOL)isNextEnabled;
 - (BOOL)isPreviousEnabled;
 - (void)layoutSubviews;

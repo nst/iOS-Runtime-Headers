@@ -2,25 +2,16 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLVertexDescriptor : NSObject <NSCopying> {
-    MTLVertexAttributeDescriptorArray *_attributeArray;
-    MTLVertexBufferLayoutDescriptorArray *_vertexBufferArray;
-}
+@interface MTLVertexDescriptor : NSObject <NSCopying>
 
 @property (readonly) MTLVertexAttributeDescriptorArray *attributes;
 @property (readonly) MTLVertexBufferLayoutDescriptorArray *layouts;
 
++ (id)alloc;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)vertexDescriptor;
 
-- (id)attributes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (unsigned int)hash;
-- (id)init;
-- (BOOL)isEqual:(id)arg1;
-- (id)layouts;
 - (void)reset;
-- (id)serializeDescriptor;
 
 @end

@@ -7,5 +7,6 @@
 
 - (VKMapTile *)labelModel:(VKLabelModel *)arg1 mapTileForTile:(VKTile *)arg2 layer:(unsigned long long)arg3;
 - (void)labelModel:(VKLabelModel *)arg1 selectedLabelMarkerWillDisappear:(VKLabelMarker *)arg2;
+- (void)labelModelDidLayoutLabels:(VKLabelModel *)arg1;
 
 @end

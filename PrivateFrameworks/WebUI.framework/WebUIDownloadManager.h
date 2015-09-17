@@ -2,11 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
  */
 
-@interface WebUIDownloadManager : NSObject {
+@interface WebUIDownloadManager : NSObject <WebDownloadDelegate> {
     id _delegate;
     NSURLDownload *_download;
     NSString *_downloadPath;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_cleanUp;

@@ -27,6 +27,7 @@
 - (id)description;
 - (id)firstObject;
 - (void)firstObjectWeightChanged;
+- (id)init;
 - (id)initWithComparator:(id /* block */)arg1;
 - (void)objectWeightChanged:(id)arg1;
 - (void)removeAllObjects;

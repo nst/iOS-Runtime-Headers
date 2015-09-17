@@ -59,6 +59,7 @@
 - (id)medicationInfo;
 - (id)name;
 - (id)pictureData;
+- (void)recordFieldPresenceStatistics;
 - (int)schemaVersion;
 - (void)setAllergyInfo:(id)arg1;
 - (void)setBirthdate:(id)arg1;
@@ -79,6 +80,8 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
 
-- (void)loadDataFromABPerson:(void*)arg1;
++ (id)contactKeysToLoadForMedicalID;
+
+- (void)loadDataFromCNContact:(id)arg1;
 
 @end

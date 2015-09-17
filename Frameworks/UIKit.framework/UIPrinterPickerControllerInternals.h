@@ -7,6 +7,6 @@
     BOOL _supressNotifyDismissed;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end

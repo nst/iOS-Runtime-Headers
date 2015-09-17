@@ -3,11 +3,13 @@
  */
 
 @interface AXBinaryMonitor : NSObject {
+    NSObject<OS_dispatch_queue> *_binaryMonitorQueue;
     NSMutableDictionary *_bundleHandlerMap;
     NSMutableDictionary *_dylibHandlerMap;
     NSMutableDictionary *_frameworkHandlerMap;
 }
 
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *binaryMonitorQueue;
 @property (nonatomic, retain) NSMutableDictionary *bundleHandlerMap;
 @property (nonatomic, retain) NSMutableDictionary *dylibHandlerMap;
 @property (nonatomic, retain) NSMutableDictionary *frameworkHandlerMap;
@@ -27,11 +29,13 @@
 - (void)addHandler:(id /* block */)arg1 forBundleName:(id)arg2;
 - (void)addHandler:(id /* block */)arg1 forDylib:(id)arg2;
 - (void)addHandler:(id /* block */)arg1 forFramework:(id)arg2;
+- (id)binaryMonitorQueue;
 - (id)bundleHandlerMap;
 - (void)dealloc;
 - (id)dylibHandlerMap;
 - (id)frameworkHandlerMap;
 - (id)init;
+- (void)setBinaryMonitorQueue:(id)arg1;
 - (void)setBundleHandlerMap:(id)arg1;
 - (void)setDylibHandlerMap:(id)arg1;
 - (void)setFrameworkHandlerMap:(id)arg1;

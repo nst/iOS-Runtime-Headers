@@ -14,6 +14,7 @@
 @property (nonatomic) BOOL skipCallbacks;
 @property (nonatomic) BOOL updateStatusBarIfNecessary;
 
+- (void).cxx_destruct;
 - (void)animateTransition:(id)arg1;
 - (id /* block */)animations;
 - (void)dealloc;

@@ -94,6 +94,7 @@
 - (id)p_validatedImageProvider;
 - (id)p_validatedThumbnailImageProvider;
 - (void)setTextureAttributes:(id)arg1;
+- (BOOL)shouldShowCheckerboard;
 - (id)textureForContext:(id)arg1;
 - (void)willBeRemoved;
 

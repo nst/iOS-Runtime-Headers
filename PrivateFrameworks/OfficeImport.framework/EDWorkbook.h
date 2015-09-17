@@ -15,10 +15,11 @@
     EDResources *mResources;
     NSMutableArray *mSheets;
     NSString *mTemporaryDirectory;
-    OADTheme *mTheme;
     EDReference *mVisibleRange;
     EDWarnings *mWarnings;
 }
+
++ (id)impliedColorMap;
 
 - (id)activeSheet;
 - (unsigned int)activeSheetIndex;
@@ -29,6 +30,7 @@
 - (int)dateBase;
 - (id)dateBaseDate;
 - (void)dealloc;
+- (id)description;
 - (id)escherDrawingGroup;
 - (id)fileName;
 - (unsigned int)indexOfSheet:(id)arg1;
@@ -50,13 +52,11 @@
 - (void)setMappingContext:(id)arg1;
 - (void)setResources:(id)arg1;
 - (void)setTemporaryDirectory:(id)arg1;
-- (void)setTheme:(id)arg1;
 - (void)setVisibleRange:(id)arg1;
 - (id)sheetAtIndex:(unsigned int)arg1;
 - (id)sheetAtIndex:(unsigned int)arg1 loadIfNeeded:(bool)arg2;
 - (unsigned int)sheetCount;
 - (id)temporaryDirectory;
-- (id)theme;
 - (id)visibleRange;
 - (id)warnings;
 - (id)workbookName;

@@ -4,7 +4,7 @@
 
 @interface UISwipeGestureRecognizer : UIGestureRecognizer {
     unsigned int _direction;
-    unsigned int _failed;
+    BOOL _failed;
     double _maximumDuration;
     float _maximumPrimaryMovement;
     float _maximumSecondaryMovement;
@@ -33,6 +33,9 @@
 @property (nonatomic) float rateOfMinimumMovementDecay;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } startPoint;
 
++ (BOOL)_shouldDefaultToTouches;
+
+- (void).cxx_destruct;
 - (void)_appendSubclassDescription:(id)arg1;
 - (BOOL)_checkForSwipeWithDelta:(struct CGPoint { float x1; float x2; })arg1 time:(double)arg2;
 - (void)_resetGestureRecognizer;

@@ -2,9 +2,12 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKContainer : NSObject {
+@interface CKContainer : NSObject <CKBXPCClient> {
+    int _accountChangeToken;
     CKAccountInfo *_accountInfoOverride;
     ACAccountStore *_accountStore;
+    NSMapTable *_assetsByUUID;
+    NSOperationQueue *_backgroundThrottlingOperationQueue;
     CKContainerSetupInfo *_cachedSetupInfo;
     CKOperationCallbackManager *_callbackManager;
     CKContainerID *_containerID;
@@ -26,17 +29,23 @@
     NSXPCConnection *_xpcConnection;
 }
 
+@property (nonatomic) int accountChangeToken;
 @property (nonatomic, copy) CKAccountInfo *accountInfoOverride;
 @property (nonatomic, retain) ACAccountStore *accountStore;
+@property (nonatomic, retain) NSMapTable *assetsByUUID;
+@property (nonatomic, retain) NSOperationQueue *backgroundThrottlingOperationQueue;
 @property (nonatomic, retain) CKContainerSetupInfo *cachedSetupInfo;
 @property (nonatomic, retain) CKOperationCallbackManager *callbackManager;
 @property (nonatomic, retain) CKContainerID *containerID;
 @property (nonatomic, readonly) NSString *containerIdentifier;
 @property (nonatomic, retain) CKRecordID *containerScopedUserID;
 @property (nonatomic, retain) NSOperationQueue *convenienceOperationQueue;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) CKOperationFlowControlManager *flowControlManager;
 @property (nonatomic) BOOL hasCachedSetupInfo;
 @property (nonatomic) BOOL hasValidConnection;
+@property (readonly) unsigned int hash;
 @property (nonatomic) int killSwitchToken;
 @property (nonatomic) BOOL needsSandboxExtensions;
 @property (nonatomic, retain) CKDatabase *privateCloudDatabase;
@@ -45,6 +54,7 @@
 @property (nonatomic, retain) CKDatabase *sharedCloudDatabase;
 @property (nonatomic, readonly) CKDatabase *sharedCloudDatabase;
 @property (nonatomic) int statusReportToken;
+@property (readonly) Class superclass;
 @property (nonatomic, retain) NSOperationQueue *throttlingOperationQueue;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
@@ -64,6 +74,7 @@
 - (void)_setupWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
 - (int)_untrustedDatabaseEnvironment;
 - (id)_untrustedEntitlementForKey:(id)arg1;
+- (int)accountChangeToken;
 - (void)accountChangedWithID:(id)arg1;
 - (id)accountInfoOverride;
 - (void)accountStatusWithCompletionHandler:(id /* block */)arg1;
@@ -72,6 +83,8 @@
 - (void)accountsDidRevokeAccessToBundleID:(id)arg1 containerIdentifiers:(id)arg2;
 - (void)accountsWillDeleteAccount:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addOperation:(id)arg1;
+- (id)assetsByUUID;
+- (id)backgroundThrottlingOperationQueue;
 - (id)cachedSetupInfo;
 - (id)callbackManager;
 - (id)connection;
@@ -85,28 +98,36 @@
 - (void)discoverAllContactUserInfosWithCompletionHandler:(id /* block */)arg1;
 - (void)discoverUserInfoWithEmailAddress:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)discoverUserInfoWithUserRecordID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchServerEnvironment:(id /* block */)arg1;
 - (void)fetchUserIdentityWithEmailAddress:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchUserIdentityWithUserRecordID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchUserRecordIDWithCompletionHandler:(id /* block */)arg1;
+- (id)findTrackedAssetByUUID:(id)arg1;
 - (id)flowControlManager;
 - (void)getNewWebSharingIdentity:(id /* block */)arg1;
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
+- (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(id /* block */)arg3;
 - (BOOL)hasCachedSetupInfo;
 - (BOOL)hasValidConnection;
 - (id)initWithContainerID:(id)arg1;
 - (id)initWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
 - (int)killSwitchToken;
 - (BOOL)needsSandboxExtensions;
+- (void)openFileWithOpenInfo:(id)arg1 reply:(id /* block */)arg2;
 - (id)privateCloudDatabase;
 - (id)publicCloudDatabase;
+- (void)purgeTmpDirectory;
 - (void)requestApplicationPermission:(unsigned int)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetAllApplicationPermissionsWithCompletionHandler:(id /* block */)arg1;
 - (id)sandboxExtensionHandles;
 - (void)serverPreferredPushEnvironmentWithCompletionHandler:(id /* block */)arg1;
+- (void)setAccountChangeToken:(int)arg1;
 - (void)setAccountInfoOverride:(id)arg1;
 - (void)setAccountStore:(id)arg1;
 - (void)setApplicationPermission:(unsigned int)arg1 enabled:(BOOL)arg2 completionHandler:(id /* block */)arg3;
+- (void)setAssetsByUUID:(id)arg1;
+- (void)setBackgroundThrottlingOperationQueue:(id)arg1;
 - (void)setCachedSetupInfo:(id)arg1;
 - (void)setCallbackManager:(id)arg1;
 - (void)setContainerID:(id)arg1;
@@ -138,6 +159,7 @@
 - (int)statusReportToken;
 - (id)throttlingOperationQueue;
 - (void)tossConfigWithCompletionHandler:(id /* block */)arg1;
+- (void)trackAssets:(id)arg1;
 - (void)updatePushTokens;
 - (void)wipeAllCachesAndDie;
 - (id)xpcConnection;

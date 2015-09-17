@@ -21,6 +21,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_clearDynamics;
 - (void)_handleConversionToDynamicsTracking;
 - (void)_handleDynamicsStep;

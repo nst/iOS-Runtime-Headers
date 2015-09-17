@@ -3,9 +3,9 @@
  */
 
 @interface UISliderContent : NSObject {
-    UIImage *maxTrack;
-    UIImage *minTrack;
-    UIImage *thumb;
+    UIImage *_maxTrack;
+    UIImage *_minTrack;
+    UIImage *_thumb;
 }
 
 @property (nonatomic, readonly) BOOL isEmpty;
@@ -13,7 +13,7 @@
 @property (nonatomic, retain) UIImage *minTrack;
 @property (nonatomic, retain) UIImage *thumb;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (BOOL)isEmpty;
 - (id)maxTrack;
 - (id)minTrack;

@@ -25,6 +25,8 @@
 @property (nonatomic, retain) NSString *message;
 @property (nonatomic, retain) GKPlayerInternal *receivingPlayer;
 @property (nonatomic) int state;
+@property (nonatomic, readonly) NSString *subtitleText;
+@property (nonatomic, readonly) NSString *titleText;
 @property (nonatomic, readonly) unsigned int type;
 
 + (id)internalRepresentation;
@@ -35,6 +37,7 @@
 - (id)compatibleBundleIDs;
 - (id)completionDate;
 - (void)dealloc;
+- (id)descriptionSubstitutionMap;
 - (void)encodeWithCoder:(id)arg1;
 - (id)findLocalGameBundleID;
 - (id)game;
@@ -57,6 +60,8 @@
 - (void)setReceivingPlayer:(id)arg1;
 - (void)setState:(int)arg1;
 - (int)state;
+- (id)subtitleText;
+- (id)titleText;
 - (unsigned int)type;
 
 @end

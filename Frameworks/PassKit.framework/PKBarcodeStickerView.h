@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKBarcodeStickerView : UIView {
+@interface PKBarcodeStickerView : UIButton {
     UILabel *_altTextLabel;
     PKBarcode *_barcode;
     UIImageView *_barcodeView;

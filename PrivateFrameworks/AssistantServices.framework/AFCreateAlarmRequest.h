@@ -3,10 +3,10 @@
  */
 
 @interface AFCreateAlarmRequest : AFSiriRequest {
-    AFAlarm *_alarm;
+    STAlarm *_alarm;
 }
 
-@property (nonatomic, retain) AFAlarm *alarm;
+@property (nonatomic, retain) STAlarm *alarm;
 
 + (BOOL)supportsSecureCoding;
 

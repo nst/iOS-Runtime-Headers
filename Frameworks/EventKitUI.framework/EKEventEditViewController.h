@@ -25,6 +25,7 @@
 @property (nonatomic, retain) EKEventEditViewController *strongSelf;
 @property (nonatomic) int transitionForModalViewPresentation;
 
++ (id)eventEditViewControllerWithEvent:(id)arg1 eventStore:(id)arg2 editViewDelegate:(id)arg3;
 + (void)setDefaultDatesForEvent:(id)arg1;
 
 - (void).cxx_destruct;
@@ -43,6 +44,7 @@
 - (id)event;
 - (id)eventStore;
 - (void)handleTapOutside;
+- (BOOL)hasUnsavedChanges;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)refreshStartAndEndDates;

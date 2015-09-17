@@ -15,9 +15,13 @@
 
 - (void).cxx_destruct;
 - (id)_ML3QueryWithEntityClass:(Class)arg1 predicate:(id)arg2 options:(long long)arg3;
+- (id)_addPendingUpdateRecordForPlaylistGlobalID:(id)arg1 contentTasteType:(unsigned int)arg2;
+- (id)_addPendingUpdateRecordForStoreAdamID:(long long)arg1 contentTasteType:(unsigned int)arg2;
 - (void)_deviceMediaLibraryDidChangeNotification:(id)arg1;
 - (id)_libraryEntityWithStoreID:(long long)arg1 contentType:(unsigned int)arg2;
 - (id)_libraryPlaylistWithGlobalID:(id)arg1;
+- (void)_removePendingUpdateRecordForPlaylistGlobalID:(id)arg1 token:(id)arg2;
+- (void)_removePendingUpdateRecordForStoreAdamID:(long long)arg1 token:(id)arg2;
 - (void)dealloc;
 - (id)init;
 - (void)setTasteType:(unsigned int)arg1 forMediaEntity:(id)arg2 withCompletionHandler:(id /* block */)arg3;

@@ -27,8 +27,7 @@
 }
 
 + (Class)classForMimePart;
-+ (unsigned int)copyMessages:(id)arg1 toMailbox:(id)arg2 markAsRead:(BOOL)arg3 deleteOriginals:(BOOL)arg4 isDeletion:(BOOL)arg5 unsuccessfulOnes:(id)arg6;
-+ (unsigned int)copyMessages:(id)arg1 toMailbox:(id)arg2 markAsRead:(BOOL)arg3 deleteOriginals:(BOOL)arg4 isDeletion:(BOOL)arg5 unsuccessfulOnes:(id)arg6 newMessages:(id)arg7;
++ (id)copyMessageWithSelection:(id)arg1 toMailbox:(id)arg2 markAsRead:(BOOL)arg3 deleteOriginals:(BOOL)arg4 isDeletion:(BOOL)arg5;
 + (BOOL)createEmptyStoreForPath:(id)arg1;
 + (BOOL)createEmptyStoreIfNeededForPath:(id)arg1;
 + (Class)headersClass;
@@ -45,7 +44,9 @@
 - (BOOL)_updateFlagForMessage:(id)arg1 key:(id)arg2 value:(BOOL)arg3;
 - (id)account;
 - (void)allMessageFlagsDidChange:(id)arg1;
+- (unsigned int)allNonDeletedCountIncludingServerSearch:(BOOL)arg1 andThreadSearch:(BOOL)arg2;
 - (BOOL)allowsAppend;
+- (unsigned int)appendMessageSelections:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5;
 - (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2;
 - (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3;
 - (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4;
@@ -101,6 +102,7 @@
 - (void)messageFlagsDidChange:(id)arg1 flags:(id)arg2;
 - (id)messageForMessageID:(id)arg1 options:(unsigned int)arg2;
 - (id)messageForRemoteID:(id)arg1;
+- (id)messageIdRollCall:(id)arg1;
 - (void)messagesWereAdded:(id)arg1;
 - (void)messagesWereAdded:(id)arg1 earliestReceivedDate:(id)arg2;
 - (void)messagesWereCompacted:(id)arg1;

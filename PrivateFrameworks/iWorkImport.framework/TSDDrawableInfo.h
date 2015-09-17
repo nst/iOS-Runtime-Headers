@@ -53,7 +53,6 @@
 @property (nonatomic) NSObject<TSDContainerInfo> *parentInfo;
 @property (nonatomic, readonly) KNSlide *slide;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) BOOL supportsAccessibilityDescription;
 @property (nonatomic, readonly) BOOL supportsAttachedComments;
 @property (nonatomic, readonly) BOOL supportsHyperlinks;
 
@@ -99,6 +98,7 @@
 - (id)geometry;
 - (id)ghostInfos;
 - (BOOL)hasActionBuilds;
+- (BOOL)hasBuildOfAnimationType:(int)arg1;
 - (BOOL)hasBuilds;
 - (id)hyperlinkURL;
 - (id)initWithContext:(id)arg1 geometry:(id)arg2;
@@ -142,7 +142,6 @@
 - (void)setParentInfoDuringUnarchiving:(id)arg1 fromCopy:(BOOL)arg2;
 - (void)setPrimitiveGeometry:(id)arg1;
 - (id)slide;
-- (BOOL)supportsAccessibilityDescription;
 - (BOOL)supportsAttachedComments;
 - (BOOL)supportsHyperlinks;
 - (BOOL)swizzled_matchesObjectPlaceholderGeometry;

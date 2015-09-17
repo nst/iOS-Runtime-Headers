@@ -6,5 +6,6 @@
 @required
 
 - (void)hardPauseButtonDidChangeVisibility:(TPStarkInCallHardPauseButton *)arg1;
+- (void)hardPauseButtonDidSendHardPauseDigits:(TPStarkInCallHardPauseButton *)arg1;
 
 @end

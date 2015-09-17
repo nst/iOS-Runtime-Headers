@@ -13,6 +13,8 @@
 @property (nonatomic) BOOL autoAcceptWhenMaxNumbersMet;
 @property (nonatomic) unsigned int maxNumbersAllowed;
 
++ (BOOL)_shouldResetAutoAcceptWhenMaxNumbersMetInResignFirstResponder;
+
 - (void)_appendString:(id)arg1;
 - (void)_deleteLastCharacter;
 - (BOOL)_hasMaxDigitsSpecified;

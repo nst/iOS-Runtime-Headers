@@ -22,6 +22,7 @@
 - (id)init;
 - (void)initializeIfNecessary;
 - (BOOL)isCellConnection;
+- (BOOL)isConnectionRequired;
 - (BOOL)isNetworkReachable;
 - (void)removeNetworkReachableObserver:(id)arg1;
 

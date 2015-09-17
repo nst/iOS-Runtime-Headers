@@ -2,14 +2,20 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBRenderFactory_Candidates : UIKBRenderFactory
+@interface UIKBRenderFactory_Candidates : UIKBRenderFactory {
+    BOOL _isUCBStyle;
+}
+
+@property (nonatomic) BOOL isUCBStyle;
 
 - (id)controlKeyBackgroundColorName;
 - (id)controlKeyDividerColorName;
 - (id)controlKeyForegroundColorName;
 - (id)defaultKeyDividerColorName;
 - (id)initWithRenderConfig:(id)arg1;
+- (BOOL)isUCBStyle;
 - (int)lightHighQualityEnabledBlendForm;
+- (void)setIsUCBStyle:(BOOL)arg1;
 - (id)traitsForCellSize:(struct CGSize { float x1; float x2; })arg1 highlighted:(BOOL)arg2 edges:(BOOL)arg3;
 - (id)traitsForEdgeGradientWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)traitsForEmptyExtendedPane:(struct CGSize { float x1; float x2; })arg1 rowHeight:(float)arg2 idiomPad:(BOOL)arg3 clipCorners:(BOOL)arg4;

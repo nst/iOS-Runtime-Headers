@@ -13,6 +13,7 @@
 
 + (id)restrictedProxyForAlertView:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)delegate;
 - (void)forwardInvocation:(id)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;

@@ -23,8 +23,10 @@
 + (id)_beginPowerAssertionWithAssert:(unsigned int*)arg1;
 + (Class)_classForPersistentStoreAtURL:(id)arg1;
 + (void)_endPowerAssertionWithAssert:(unsigned int)arg1 andApp:(id)arg2;
++ (id)_metadataForPersistentStoreOfType:(id)arg1 URL:(id)arg2 options:(id)arg3 error:(id*)arg4;
 + (void)_registerCoreDataStoreClass:(Class)arg1 forStoreType:(id)arg2;
 + (void)_registerDefaultStoreClassesAndTypes;
++ (BOOL)_setMetadata:(id)arg1 forPersistentStoreOfType:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
 + (Class)_storeClassForStoreType:(id)arg1;
 + (id)_storeTypeForStore:(id)arg1;
 + (BOOL)accessInstanceVariablesDirectly;
@@ -50,6 +52,7 @@
 - (BOOL)_checkForSkewedEntityHashes:(id)arg1 metadata:(id)arg2;
 - (id)_checkRequestForStore:(id)arg1 withContext:(id)arg2 originalRequest:(id)arg3 andOptimisticLocking:(id)arg4;
 - (id)_conflictsWithRowCacheForObject:(id)arg1 withContext:(id)arg2 andStore:(id)arg3;
+- (int)_contactsIdentifierForObjectID:(id)arg1;
 - (void)_coordinator_no_idea_what_kind_of_request_that_was_supposed_to_be;
 - (void)_coordinator_you_never_successfully_opened_the_database_cant_open:(id)arg1;
 - (void)_coordinator_you_never_successfully_opened_the_database_corrupted:(id)arg1;
@@ -72,10 +75,11 @@
 - (id)_newConflictRecordForObject:(id)arg1 andOriginalRow:(id)arg2 withContext:(id)arg3;
 - (id)_newObjectGraphStyleRecordForRow:(id)arg1 andObject:(id)arg2 withContext:(id)arg3;
 - (id)_newOrderedRelationshipInformationForRelationship:(id)arg1 forObjectWithID:(id)arg2 withContext:(id)arg3 error:(id*)arg4;
+- (id)_objectIDForContactsIdentifier:(int)arg1 entityName:(id)arg2 store:(id)arg3;
 - (id)_persistentStoreForIdentifier:(id)arg1;
 - (void)_postStoresChangedNotificationsForStores:(id)arg1 changeKey:(id)arg2 options:(id)arg3;
 - (id)_processStoreResults:(id)arg1 forRequest:(id)arg2;
-- (id)_realStoreTypeForStoreWithType:(id)arg1 URL:(id)arg2 error:(id*)arg3;
+- (id)_realStoreTypeForStoreWithType:(id)arg1 URL:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (BOOL)_removePersistentStore:(id)arg1;
 - (BOOL)_replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 storeType:(id)arg5 error:(id*)arg6;
 - (id)_retainedAllMigratedObjectsInStore:(id)arg1 toStore:(id)arg2;
@@ -85,6 +89,7 @@
 - (id)addPersistentStoreWithType:(id)arg1 configuration:(id)arg2 URL:(id)arg3 options:(id)arg4 error:(id*)arg5;
 - (void)clearCachedInformationForRequestWithIdentifier:(id)arg1;
 - (void)dealloc;
+- (BOOL)destroyPersistentStoreAtURL:(id)arg1 withType:(id)arg2 options:(id)arg3 error:(id*)arg4;
 - (id)executeRequest:(id)arg1 withContext:(id)arg2 error:(id*)arg3;
 - (void)finalize;
 - (id)init;
@@ -111,6 +116,7 @@
 - (id)persistentStoreForURL:(id)arg1;
 - (id)persistentStores;
 - (BOOL)removePersistentStore:(id)arg1 error:(id*)arg2;
+- (BOOL)replacePersistentStoreAtURL:(id)arg1 destinationOptions:(id)arg2 withPersistentStoreFromURL:(id)arg3 sourceOptions:(id)arg4 storeType:(id)arg5 error:(id*)arg6;
 - (void)setMetadata:(id)arg1 forPersistentStore:(id)arg2;
 - (void)setName:(id)arg1;
 - (BOOL)setURL:(id)arg1 forPersistentStore:(id)arg2;

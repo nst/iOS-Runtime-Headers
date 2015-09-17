@@ -24,6 +24,7 @@
 - (void)_lockedRescheduleQueuedFetchesTimer;
 - (id)context;
 - (void)dealloc;
+- (id)init;
 - (id)initWithContext:(id)arg1;
 - (id)opQueue;
 - (id)queue;

@@ -14,7 +14,6 @@
 @property (nonatomic, readonly) float speedInKilometersPerHour;
 @property (nonatomic, readonly) NSArray *wheels;
 
-+ (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;
 + (id)vehicleWithChassisBody:(id)arg1 wheels:(id)arg2;
 
@@ -31,6 +30,7 @@
 - (id)chassisBody;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasReferenceToPhysicsBody:(id)arg1;
 - (id)initWithChassisBody:(id)arg1 wheels:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)physicsWorld;

@@ -15,7 +15,8 @@
 - (void).cxx_destruct;
 - (void)_discoverEmails:(id)arg1 userRecordIDs:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (void)_handleDiscoveredInfo:(id)arg1 emailToDiscover:(id)arg2;
+- (void)_handleDiscoveredInfo:(id)arg1 emailToDiscover:(id)arg2 responseCode:(id)arg3;
+- (unsigned long long)activityStart;
 - (id /* block */)discoverUserInfosProgressBlock;
 - (id)emailsToDiscover;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

@@ -2,7 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIAccessibilityElement : NSObject <UIAccessibilityIdentification>
+@interface UIAccessibilityElement : NSObject <UIAccessibilityIdentification> {
+    id _accessibilityContainer;
+    NSString *accessibilityIdentifier;
+}
 
 @property (nonatomic) id accessibilityContainer;
 @property (nonatomic, retain) NSArray *accessibilityContainerElements;
@@ -22,7 +25,23 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
+- (id)accessibilityContainer;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;
+- (id)accessibilityHint;
+- (id)accessibilityIdentifier;
+- (id)accessibilityLabel;
+- (unsigned long long)accessibilityTraits;
+- (id)accessibilityValue;
 - (id)initWithAccessibilityContainer:(id)arg1;
+- (BOOL)isAccessibilityElement;
+- (void)setAccessibilityContainer:(id)arg1;
+- (void)setAccessibilityFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setAccessibilityHint:(id)arg1;
+- (void)setAccessibilityIdentifier:(id)arg1;
+- (void)setAccessibilityLabel:(id)arg1;
+- (void)setAccessibilityTraits:(unsigned long long)arg1;
+- (void)setAccessibilityValue:(id)arg1;
+- (void)setIsAccessibilityElement:(BOOL)arg1;
 
 // Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
 

@@ -4,11 +4,11 @@
 
 @interface _HDDataInsertionJournalEntry : HDJournalEntry {
     HKObject *_dataObject;
-    int _provenance;
+    HDDataOriginProvenance *_provenance;
 }
 
 @property (nonatomic, readonly) HKObject *dataObject;
-@property (nonatomic, readonly) int provenance;
+@property (nonatomic, readonly) HDDataOriginProvenance *provenance;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;
@@ -19,7 +19,7 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDataObject:(id)arg1 provenance:(int)arg2;
-- (int)provenance;
+- (id)initWithDataObject:(id)arg1 provenance:(id)arg2;
+- (id)provenance;
 
 @end

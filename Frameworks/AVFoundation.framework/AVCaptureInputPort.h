@@ -12,7 +12,6 @@
 @property (nonatomic, readonly) AVCaptureInput *input;
 @property (nonatomic, readonly) NSString *mediaType;
 
-+ (id)alloc;
 + (BOOL)automaticallyNotifiesObserversOfClock;
 + (id)portWithInput:(id)arg1 mediaType:(id)arg2 formatDescription:(struct opaqueCMFormatDescription { }*)arg3 enabled:(BOOL)arg4;
 

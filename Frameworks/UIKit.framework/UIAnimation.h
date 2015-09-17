@@ -17,9 +17,9 @@
     id _target;
 }
 
+- (void).cxx_destruct;
 - (SEL)action;
 - (id /* block */)completion;
-- (void)dealloc;
 - (id)delegate;
 - (float)fractionForTime:(double)arg1;
 - (id)initWithTarget:(id)arg1;

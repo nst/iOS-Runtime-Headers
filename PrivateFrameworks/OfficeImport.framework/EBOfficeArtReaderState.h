@@ -4,9 +4,12 @@
 
 @interface EBOfficeArtReaderState : OABReaderState {
     EBReaderState *mReaderState;
+    EXReadState *mXmlDocumentState;
 }
 
+- (void)dealloc;
 - (id)initWithReaderState:(id)arg1;
 - (id)readerState;
+- (id)xmlDrawingState;
 
 @end

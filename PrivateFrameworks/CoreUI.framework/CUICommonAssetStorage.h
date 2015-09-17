@@ -4,14 +4,14 @@
 
 @interface CUICommonAssetStorage : NSObject {
     void *_colordb;
-    void *_elementDebugInfoDB;
+    NSSet *_externalTags;
     void *_facetKeysdb;
     void *_fontdb;
     void *_fontsizedb;
+    NSData *_globals;
     struct _carheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; BOOL x6[128]; BOOL x7[256]; unsigned char x8[16]; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; } *_header;
     void *_imagedb;
     struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; } *_keyfmt;
-    void *_partDebugInfoDB;
     BOOL _swap;
     void *_zcbezeldb;
     void *_zcglyphdb;
@@ -20,9 +20,7 @@
 + (void)initialize;
 
 - (void)_bringHeaderInfoUpToDate;
-- (id)_constantNameForIdentifier:(unsigned int)arg1 fromDebugTree:(void*)arg2;
-- (id)_dataForIdentifier:(unsigned int)arg1 fromDebugTree:(void*)arg2;
-- (id)_displayNameForIdentifier:(unsigned int)arg1 fromDebugTree:(void*)arg2;
+- (BOOL)_commonInitWithStorage:(struct _BOMStorage { }*)arg1 forWritting:(BOOL)arg2;
 - (const struct FontValue { BOOL x1[128]; float x2; }*)_fontValueForFontType:(id)arg1;
 - (void)_initDefaultHeaderVersion:(double)arg1 versionString:(const char *)arg2;
 - (long)_storagefileTimestamp;
@@ -39,21 +37,20 @@
 - (id)assetForKey:(id)arg1;
 - (id)assetKeysMatchingBlock:(id /* block */)arg1;
 - (unsigned int)associatedChecksum;
+- (id)catalogGlobalData;
 - (unsigned int)colorSpaceID;
-- (id)constantNameForElementID:(int)arg1;
-- (id)constantNameForPartID:(int)arg1;
 - (unsigned int)coreuiVersion;
 - (void)dealloc;
 - (id)description;
-- (id)displayNameForElementID:(int)arg1;
-- (id)displayNameForPartID:(int)arg1;
 - (void)enumerateKeysAndObjectsUsingBlock:(id /* block */)arg1;
+- (id)externalTags;
 - (void)finalize;
 - (float)fontSizeForFontSizeType:(id)arg1;
 - (BOOL)getBaselineOffset:(float*)arg1 forFontType:(id)arg2;
 - (BOOL)getColor:(struct _colordef { unsigned int x1; unsigned int x2; struct _rgbquad { unsigned int x_3_1_1 : 8; unsigned int x_3_1_2 : 8; unsigned int x_3_1_3 : 8; unsigned int x_3_1_4 : 8; } x3; }*)arg1 forName:(const char *)arg2;
 - (BOOL)getFontName:(id*)arg1 baselineOffset:(float*)arg2 forFontType:(id)arg3;
 - (BOOL)hasColorForName:(const char *)arg1;
+- (id)initWithBytes:(const void*)arg1 length:(unsigned long)arg2;
 - (id)initWithPath:(id)arg1;
 - (id)initWithPath:(id)arg1 forWriting:(BOOL)arg2;
 - (const struct _renditionkeyfmt { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4[0]; }*)keyFormat;

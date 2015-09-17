@@ -19,6 +19,7 @@
 - (id)dataLabel;
 - (unsigned int)dataValueIndex;
 - (void)dealloc;
+- (id)description;
 - (id)graphicProperties;
 - (id)init;
 - (int)key;

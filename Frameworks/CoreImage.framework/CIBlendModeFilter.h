@@ -10,7 +10,6 @@
 @property (nonatomic, retain) CIImage *inputBackgroundImage;
 @property (nonatomic, retain) CIImage *inputImage;
 
-+ (id)_filter_display_name;
 + (id)_kernel;
 + (id)customAttributes;
 

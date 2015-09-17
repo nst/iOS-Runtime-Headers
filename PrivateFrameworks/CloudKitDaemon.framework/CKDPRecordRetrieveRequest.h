@@ -3,6 +3,7 @@
  */
 
 @interface CKDPRecordRetrieveRequest : PBRequest <NSCopying> {
+    CKDPAssetsToDownload *_assetsToDownload;
     NSString *_clientVersionETag;
     CKDPRecordRetrieveRequestRetrieveAssetURL *_getAssetURL;
     CKDPRecordIdentifier *_recordIdentifier;
@@ -10,8 +11,10 @@
     NSString *_versionETag;
 }
 
+@property (nonatomic, retain) CKDPAssetsToDownload *assetsToDownload;
 @property (nonatomic, retain) NSString *clientVersionETag;
 @property (nonatomic, retain) CKDPRecordRetrieveRequestRetrieveAssetURL *getAssetURL;
+@property (nonatomic, readonly) BOOL hasAssetsToDownload;
 @property (nonatomic, readonly) BOOL hasClientVersionETag;
 @property (nonatomic, readonly) BOOL hasGetAssetURL;
 @property (nonatomic, readonly) BOOL hasRecordIdentifier;
@@ -24,12 +27,14 @@
 + (id)options;
 
 - (void).cxx_destruct;
+- (id)assetsToDownload;
 - (id)clientVersionETag;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)getAssetURL;
+- (BOOL)hasAssetsToDownload;
 - (BOOL)hasClientVersionETag;
 - (BOOL)hasGetAssetURL;
 - (BOOL)hasRecordIdentifier;
@@ -43,6 +48,7 @@
 - (unsigned int)requestTypeCode;
 - (id)requestedFields;
 - (Class)responseClass;
+- (void)setAssetsToDownload:(id)arg1;
 - (void)setClientVersionETag:(id)arg1;
 - (void)setGetAssetURL:(id)arg1;
 - (void)setRecordIdentifier:(id)arg1;

@@ -13,10 +13,12 @@
 + (id)_defaultPKPaperForOuptutType:(int)arg1;
 + (id)_defaultPaperForOutputType:(int)arg1;
 + (id)_defaultPaperListForOutputType:(int)arg1;
++ (id)_readyDocumentPaperListForPrinter:(id)arg1 withDuplexMode:(int)arg2 contentSize:(struct CGSize { float x1; float x2; })arg3 scaleUpForRoll:(BOOL)arg4;
 + (id)_readyPaperListForPrinter:(id)arg1 withDuplexMode:(int)arg2 forContentType:(int)arg3 contentSize:(struct CGSize { float x1; float x2; })arg4;
 + (id)bestPaperForPageSize:(struct CGSize { float x1; float x2; })arg1 andContentType:(int)arg2 withPapersFromArray:(id)arg3;
 + (id)bestPaperForPageSize:(struct CGSize { float x1; float x2; })arg1 withPapersFromArray:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)_initWithPrintKitPaper:(id)arg1;
 - (id)_localizedMediaTypeName;
 - (id)_localizedName;
@@ -25,7 +27,6 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_printableRectForDuplex:(BOOL)arg1;
 - (void)_setPaperOrientation:(int)arg1;
 - (void)_updatePKPaper:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (BOOL)isEqual:(id)arg1;
 - (struct CGSize { float x1; float x2; })paperSize;

@@ -9,6 +9,7 @@
     FUScrollWheel *_dateWheel;
     UILabel *_dayLabel;
     int _dayOrder;
+    NSArray *_dayValues;
     <FUDatePickerDelegate> *_delegate;
     BOOL _displayEra;
     BOOL _firstResponderShouldChange;
@@ -37,6 +38,8 @@
 @property (nonatomic, retain) FUScrollWheel *yearWheel;
 
 - (void).cxx_destruct;
+- (id)_enumerateDayValues;
+- (id)_enumerateDayValuesFromFormatter:(id)arg1;
 - (void)_updateDateRange:(BOOL)arg1;
 - (void)_updateSpinners;
 - (id)date;

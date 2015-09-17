@@ -12,7 +12,6 @@
     } _scrollOrigin;
 }
 
-- (id).cxx_construct;
 - (void)_adjustScrollers;
 - (BOOL)_selfHandleEvent:(id)arg1;
 - (id)contentView;

@@ -27,6 +27,7 @@
 - (id)defaultParagraphProperties;
 - (id)defaultParagraphStyle;
 - (id)defaultTableStyle;
+- (id)description;
 - (id)document;
 - (id)initWithDocument:(id)arg1;
 - (void)initializeDefaultProperties;

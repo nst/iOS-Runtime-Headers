@@ -77,6 +77,7 @@
 - (void)getCommentCount:(out unsigned int*)arg1 likeCount:(out unsigned int*)arg2;
 - (void)getPhotoCount:(out unsigned int*)arg1 videoCount:(out unsigned int*)arg2;
 - (BOOL)hasMultipleAssetsForItemAtIndex:(int)arg1;
+- (BOOL)hasPlayableAssetForItemAtIndex:(int)arg1;
 - (int)indexOfItemWithAsset:(id)arg1;
 - (int)indexOfItemWithComment:(id)arg1;
 - (id)initWithCloudFeedEntry:(id)arg1;

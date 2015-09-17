@@ -10,8 +10,8 @@
 
 @property (nonatomic, retain) UIViewController *disappearingViewController;
 
+- (void).cxx_destruct;
 - (BOOL)_isSupportedInterfaceOrientation:(int)arg1;
-- (void)dealloc;
 - (id)disappearingViewController;
 - (id)initWithInterfaceOrientation:(int)arg1;
 - (void)setDisappearingViewController:(id)arg1;

@@ -4,6 +4,4 @@
 
 @interface PLCloudAppInForegroundTrigger : PLCloudStatelessTrigger
 
-- (id)init;
-
 @end

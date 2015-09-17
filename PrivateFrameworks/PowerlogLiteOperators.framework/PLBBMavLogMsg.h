@@ -61,6 +61,7 @@
     NSArray *_mpssSleepVeto;
     NSArray *_npaVetoClientNumHistogram;
     NSNumber *_npaVetoMask;
+    NSArray *_pcieStateHistogram;
     NSArray *_protocolStateHist;
     NSDictionary *_protocolStateHistDict;
     NSArray *_qdspConfigCount;
@@ -142,6 +143,7 @@
 @property (retain) NSArray *mpssSleepVeto;
 @property (retain) NSArray *npaVetoClientNumHistogram;
 @property (retain) NSNumber *npaVetoMask;
+@property (retain) NSArray *pcieStateHistogram;
 @property (retain) NSArray *protocolStateHist;
 @property (retain) NSDictionary *protocolStateHistDict;
 @property (retain) NSArray *qdspConfigCount;
@@ -168,6 +170,7 @@
 + (id)entryEventBackwardMavBBHwOther;
 + (id)entryEventBackwardMavBBHwOtherPerRAT;
 + (id)entryEventMavBBMav10HwOther;
++ (id)entryEventMavBBMav13HwOther;
 + (id)entryEventMavBBMav1HwOther;
 + (id)entryEventMavBBMav2HwOther;
 + (id)entryEventMavBBMav4HwOther;
@@ -176,6 +179,7 @@
 - (void).cxx_destruct;
 - (void)addPairWithKey:(id)arg1 andWithVal:(id)arg2;
 - (void)addToGroupPLBBMav10HwOther;
+- (void)addToGroupPLBBMav13HwOther;
 - (void)addToGroupPLBBMav1HwOther;
 - (void)addToGroupPLBBMav2HwOther;
 - (void)addToGroupPLBBMav4HwOther;
@@ -235,10 +239,12 @@
 - (id)internaLogEventBackwardBBMavHwOtherPerRAT;
 - (id)kvPairs;
 - (void)logEventBackwardGrpEntriesBBMav10Hw;
+- (void)logEventBackwardGrpEntriesBBMav13Hw;
 - (id)logEventBackwardGrpEntriesBBMav1HwOtherPerRAT;
 - (void)logEventBackwardGrpEntriesBBMavHw;
 - (id)logEventBackwardGrpEntriesBBMavHwOtherPerRAT;
 - (void)logEventBackwardMav10BBHwOther;
+- (void)logEventBackwardMav13BBHwOther;
 - (void)logEventBackwardMav1BBHwOtherPerRAT;
 - (void)logEventBackwardMavBBHwOther;
 - (void)logEventBackwardMavBBHwOtherPerRAT;
@@ -252,7 +258,9 @@
 - (id)mpssSleepVeto;
 - (id)npaVetoClientNumHistogram;
 - (id)npaVetoMask;
+- (id)pcieStateHistogram;
 - (void)populateEntryBBMav10HwOther:(id)arg1;
+- (void)populateEntryBBMav13HwOther:(id)arg1;
 - (void)populateEntryBBMav1HwOtherPerRAT:(id)arg1;
 - (void)populateEntryBBMav2HwOther:(id)arg1;
 - (void)populateEntryBBMav4HwOther:(id)arg1;
@@ -263,6 +271,7 @@
 - (id)qdspConfigCount;
 - (id)radioTech;
 - (void)refreshBBMav10HwOther;
+- (void)refreshBBMav13HwOther;
 - (void)refreshBBMav2HwOther;
 - (void)refreshBBMav4HwOther;
 - (void)refreshMav1BBHwOtherPerRAT;
@@ -342,6 +351,7 @@
 - (void)setMpssSleepVeto:(id)arg1;
 - (void)setNpaVetoClientNumHistogram:(id)arg1;
 - (void)setNpaVetoMask:(id)arg1;
+- (void)setPcieStateHistogram:(id)arg1;
 - (void)setProtocolStateHist:(id)arg1;
 - (void)setProtocolStateHistDict:(id)arg1;
 - (void)setQdspConfigCount:(id)arg1;

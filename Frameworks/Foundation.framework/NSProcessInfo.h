@@ -33,6 +33,7 @@
 - (void)_exitIfSuddenTerminationEnabledWithStatus:(int)arg1;
 - (void)_exitWhenSuddenTerminationEnabledWithStatus:(int)arg1;
 - (void)_reactivateActivity:(id)arg1;
+- (void)_registerForHardwareStateNotifications;
 - (int)_suddenTerminationDisablingCount;
 - (unsigned int)activeProcessorCount;
 - (id)arguments;
@@ -49,6 +50,7 @@
 - (id)environment;
 - (id)globallyUniqueString;
 - (id)hostName;
+- (BOOL)isLowPowerModeEnabled;
 - (BOOL)isOperatingSystemAtLeastVersion:(struct { int x1; int x2; int x3; })arg1;
 - (BOOL)isTranslated;
 - (unsigned int)operatingSystem;

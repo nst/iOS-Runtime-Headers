@@ -7,6 +7,7 @@
 
 - (unsigned int)authoredWithSchemaVersion;
 - (BOOL)canGetRenditionWithKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
+- (NSDictionary *)catalogGlobals;
 - (unsigned int)distilledInCoreUIVersion;
 - (unsigned int)documentFormatVersion;
 - (float)fontSizeForFontSizeType:(NSString *)arg1;

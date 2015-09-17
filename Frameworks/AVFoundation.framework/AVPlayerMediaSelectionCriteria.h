@@ -9,6 +9,7 @@
 @property (nonatomic, readonly) NSArray *preferredLanguages;
 @property (nonatomic, readonly) NSArray *preferredMediaCharacteristics;
 
+- (id)_initWithPreferredLanguages:(id)arg1 preferredMediaCharacteristics:(id)arg2 preferredMediaSubTypes:(id)arg3 precludedMediaSubTypes:(id)arg4 preferMultichannelAudio:(BOOL)arg5 precludeMultichannelAudio:(BOOL)arg6;
 - (void)dealloc;
 - (id)description;
 - (id)figDictionary;

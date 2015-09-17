@@ -23,6 +23,7 @@
 + (float)defaultHeight;
 + (Class)textFieldClass;
 
+- (void).cxx_destruct;
 - (void)_textDidChange;
 - (void)_updateFields;
 - (void)appendString:(id)arg1;

@@ -9,7 +9,7 @@
     BKSApplicationStateMonitor *appStateMonitor;
     NSMutableDictionary *blackListed;
     id /* block */ callback;
-    NSMutableString *foreGroundApp;
+    NSMutableSet *foreGroundApps;
     NSMutableDictionary *recentList;
     AppLaunchStatsSaveAndRestore *saveAndRestoreContext;
     NSObject<OS_dispatch_queue> *sbMonitorQueue;
@@ -18,7 +18,7 @@
 
 @property (nonatomic, readonly) BOOL enableAppSwitcherCheck;
 @property (nonatomic, readonly) BOOL enableWasRecentlyLaunched;
-@property (nonatomic, readonly) NSMutableString *foreGroundApp;
+@property (nonatomic, readonly) NSMutableSet *foreGroundApps;
 
 - (void).cxx_destruct;
 - (void)addToBlackList:(id)arg1;
@@ -27,11 +27,13 @@
 - (void)clearTrendingCache;
 - (BOOL)enableAppSwitcherCheck;
 - (BOOL)enableWasRecentlyLaunched;
-- (id)foreGroundApp;
+- (id)foreGroundApps;
+- (id)foregroundAppsSnapshot;
 - (id)init:(id)arg1 withCallback:(id /* block */)arg2;
 - (void)initListenerForAppStateChange;
 - (bool)isForeGroundApp:(id)arg1;
 - (bool)isRemovedFromAppSwitcher:(id)arg1;
+- (bool)isSiriRunning;
 - (void)logAll:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)logLight:(struct __asl_object_s { }*)arg1 withMsg:(struct __asl_object_s { }*)arg2 withLevel:(int)arg3;
 - (void)reloadConfiguration;

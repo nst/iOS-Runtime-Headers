@@ -107,11 +107,14 @@
 - (id)pathsForResourcesOfType:(id)arg1 inDirectory:(id)arg2 forLocalization:(id)arg3;
 - (id)preferredLocalizations;
 - (BOOL)preflightAndReturnError:(id*)arg1;
+- (double)preservationPriorityForTag:(id)arg1;
 - (Class)principalClass;
 - (id)privateFrameworksPath;
 - (id)privateFrameworksURL;
 - (id)resourcePath;
 - (id)resourceURL;
+- (void)setPreservationPriority:(double)arg1 forTag:(id)arg2;
+- (void)setPreservationPriority:(double)arg1 forTags:(id)arg2;
 - (id)sharedFrameworksPath;
 - (id)sharedFrameworksURL;
 - (id)sharedSupportPath;
@@ -138,6 +141,12 @@
 
 + (id)pu_PhotosUIFrameworkBundle;
 
+// Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
+
++ (id)_srFrameworkBundle;
++ (id)_srLocalizedAppNameFromBundleID:(id)arg1;
++ (id)_srLocalizedStringFromFrameworkBundleWithKey:(id)arg1;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_typologyBundle;
@@ -156,6 +165,7 @@
 + (id)afui_assistantUIFrameworkBundle;
 
 - (id)_assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
+- (id)assistantUILocale;
 - (id)assistantUILocalizedStringForKey:(id)arg1 table:(id)arg2;
 - (id)assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)assistantUILocalizedStringFromSiriLanguageForKey:(id)arg1 table:(id)arg2;
@@ -174,12 +184,17 @@
 + (id)_gkBundleWithIdentifier:(id)arg1;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1;
 + (id)_gkLocalizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
++ (id)_gkLocalizedMessageFromPushDictionary:(id)arg1 forBundleID:(id)arg2;
++ (BOOL)_gkMainBundleIsGameCenterSystemProcess;
 
+- (id)_gkBundleShortVersion;
 - (id)_gkBundleVersion;
 - (id)_gkFrameworkVersionDescription;
 - (BOOL)_gkIsBadgingEnabled;
+- (BOOL)_gkIsDaemon;
 - (BOOL)_gkIsGameCenter;
-- (BOOL)_gkIsGameCenterUIService;
+- (BOOL)_gkIsGameCenterExtension;
+- (BOOL)_gkIsPreferences;
 - (id)_gkLocalizedName;
 - (id)_gkLocalizedStringForKey:(id)arg1 defaultValue:(id)arg2 arguments:(id)arg3;
 - (id)_gkLocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
@@ -187,6 +202,7 @@
 - (id)_gkPathForInviteSound;
 - (id)_gkPathForSoundWithName:(id)arg1;
 - (id)_gkPreferredLanguage;
+- (BOOL)_gkShouldAddQuickActions;
 
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
@@ -194,17 +210,8 @@
 
 // Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
 
-+ (id)APDBundleVersion;
-+ (id)APDCoachingTipsAPDIDForKey:(id)arg1;
-+ (id)APDCoachingTipsAPDIDForKey:(id)arg1 valueIfMissing:(id)arg2;
-+ (id)APDCoachingTipsGestureGraphicValueForKey:(id)arg1 valueIfMissing:(id)arg2;
-+ (id)APDCoachingTipsLocalizedFont;
-+ (id)APDCoachingTipsLocalizedString:(id)arg1;
-+ (id)APDLocalizedString:(id)arg1 valueIfMissing:(id)arg2 table:(id)arg3;
-+ (id)APDLocalizedString:(id)arg1 valueIfMissing:(id)arg2 table:(id)arg3 bundle:(id)arg4;
-+ (id)APDResourcesBundle;
-+ (id)APDResourcesBundleURL;
-+ (void)updateCoachingTipsStringsBundlesWithBundlePaths:(id)arg1;
++ (id)HLPBundle;
++ (void)removeHLPBundle;
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
@@ -222,6 +229,10 @@
 
 + (id)MCD_bundle;
 
+// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
+
+- (id)localizedDocumentStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
+
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 - (id)PKSanitizedBundleIdentifier;
@@ -229,6 +240,12 @@
 // Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
 
 + (id)radioUIBundle;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
++ (id)safari_safariSharedBundle;
+
+- (BOOL)safari_primaryLocalizationIsEnglish;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderOutput.framework/ScreenReaderOutput
 
@@ -294,9 +311,6 @@
 
 // Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
 
-+ (id)safari_safariSharedBundle;
-
-- (BOOL)safari_primaryLocalizationIsEnglish;
 - (id)webui_localizedDisplayName;
 
 // Image: /System/Library/PrivateFrameworks/XPCService.framework/XPCService

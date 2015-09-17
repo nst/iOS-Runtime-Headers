@@ -8,10 +8,11 @@
 
 - (unsigned int)count;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (unsigned int)keyForObject:(id)arg1;
 - (void)removeAllKeys;
-- (void)removeKeyForObject:(id)arg1;
+- (void)removeKeyForObject:(id)arg1 matchingKey:(unsigned int)arg2;
 - (void)setKey:(unsigned int)arg1 forObject:(id)arg2;
 
 @end

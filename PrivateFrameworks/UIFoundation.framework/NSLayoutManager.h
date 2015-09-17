@@ -86,6 +86,7 @@
 @property (nonatomic, readonly) BOOL hasNonContiguousLayout;
 @property (nonatomic) float hyphenationFactor;
 @property (nonatomic, readonly) unsigned int numberOfGlyphs;
+@property (retain) NSParagraphArbitrator *paragraphArbitrator;
 @property (nonatomic) BOOL showsControlCharacters;
 @property (nonatomic) BOOL showsInvisibleCharacters;
 @property (nonatomic, readonly) NSArray *textContainers;
@@ -101,6 +102,8 @@
 + (BOOL)_usesScreenFonts;
 + (void)initialize;
 
+- (unsigned short)CGGlyphAtIndex:(unsigned int)arg1;
+- (unsigned short)CGGlyphAtIndex:(unsigned int)arg1 isValidIndex:(BOOL*)arg2;
 - (void)_adjustCharacterIndicesForRawGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 byDelta:(int)arg2;
 - (BOOL)_alwaysDrawsActive;
 - (id)_attachmentSizesRun;
@@ -192,12 +195,15 @@
 - (void)_setCurrentAttachmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 index:(unsigned int)arg2;
 - (void)_setDrawsDebugBaselines:(BOOL)arg1;
 - (void)_setDrawsUnderlinesLikeWebKit:(BOOL)arg1;
+- (void)_setExtraLineFragmentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 textContainer:(id)arg3;
 - (void)_setGlyphGenerator:(id)arg1;
 - (void)_setGlyphsPerLineEstimate:(unsigned int)arg1 integerOffsetPerLineEstimate:(unsigned int)arg2;
 - (void)_setGlyphsPerLineEstimate:(unsigned int)arg1 offsetPerLineEstimate:(float)arg2;
 - (void)_setHasSeenRightToLeft:(BOOL)arg1;
 - (void)_setNeedToFlushGlyph:(BOOL)arg1;
 - (void)_setRowArrayCache:(id)arg1;
+- (void)_setTextContainer:(id)arg1 forGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (void)_showAttachmentCell:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 characterIndex:(unsigned int)arg3;
 - (void)_showCGGlyphs:(const unsigned short*)arg1 positions:(const struct CGPoint { float x1; float x2; }*)arg2 count:(unsigned int)arg3 font:(id)arg4 matrix:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 attributes:(id)arg6 inContext:(struct CGContext { }*)arg7;
 - (void)_simpleDeleteGlyphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_simpleInsertGlyph:(unsigned int)arg1 atGlyphIndex:(unsigned int)arg2 characterIndex:(unsigned int)arg3 elastic:(BOOL)arg4;
@@ -302,6 +308,7 @@
 - (struct CGPoint { float x1; float x2; })locationForGlyphAtIndex:(unsigned int)arg1;
 - (BOOL)notShownAttributeForGlyphAtIndex:(unsigned int)arg1;
 - (unsigned int)numberOfGlyphs;
+- (id)paragraphArbitrator;
 - (void)processEditingForTextStorage:(id)arg1 edited:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 changeInLength:(int)arg4 invalidatedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
 - (int)propertyForGlyphAtIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfCharacterClusterAtIndex:(unsigned int)arg1 type:(long)arg2;
@@ -338,6 +345,7 @@
 - (void)setLocation:(struct CGPoint { float x1; float x2; })arg1 forStartOfGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 coalesceRuns:(BOOL)arg3;
 - (void)setLocations:(struct CGPoint { float x1; float x2; }*)arg1 startingGlyphIndexes:(unsigned int*)arg2 count:(unsigned int)arg3 forGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
 - (void)setNotShownAttribute:(BOOL)arg1 forGlyphAtIndex:(unsigned int)arg2;
+- (void)setParagraphArbitrator:(id)arg1;
 - (void)setShowsControlCharacters:(BOOL)arg1;
 - (void)setShowsInvisibleCharacters:(BOOL)arg1;
 - (void)setSynchronizesAlignmentToDirection:(BOOL)arg1;

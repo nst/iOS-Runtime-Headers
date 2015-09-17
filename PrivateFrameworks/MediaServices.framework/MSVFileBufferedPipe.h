@@ -25,6 +25,7 @@
 + (id)pipe;
 
 - (void).cxx_destruct;
+- (void)_createBufferFiles;
 - (void)_inputReadyForReading:(unsigned int)arg1;
 - (void)_outputReadyForWriting:(unsigned int)arg1;
 - (void)_writeBufferedData;

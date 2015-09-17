@@ -11,6 +11,7 @@
 + (id)appPermissionGroupsFromContainerPrivacySettings:(id)arg1;
 
 - (void).cxx_destruct;
+- (unsigned long long)activityStart;
 - (id)containerPrivacySettings;
 - (void)main;
 - (void)setContainerPrivacySettings:(id)arg1;

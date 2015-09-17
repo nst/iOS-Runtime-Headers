@@ -22,12 +22,12 @@
 @property (nonatomic) unsigned int maxEditDistance;
 @property (nonatomic, retain) UITextChecker *textChecker;
 
+- (void).cxx_destruct;
 - (void)addAutocorrectionGuessesToReplacements:(id)arg1;
 - (void)addPreviouslySuggestedAutocorrectionToReplacements:(id)arg1;
 - (id)addReplacementRevertingAutocorrectionToReplacements:(id)arg1;
 - (void)addSpellingGuessesForString:(id)arg1 ToReplacements:(id)arg2;
 - (id)autocorrectionRecord;
-- (void)dealloc;
 - (BOOL)forceAutocorrectionGuesses;
 - (BOOL)forceHistoryReplacement;
 - (BOOL)forceSpellingGuesses;

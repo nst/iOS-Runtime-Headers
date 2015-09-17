@@ -6,32 +6,26 @@
     int _abortCounter;
     int _abortLock;
     NSMutableDictionary *_aborts;
-    NSMutableDictionary *_cancellableOperations;
     NSObject<OS_dispatch_queue> *_connectLock;
-    id _delegate;
     int _disconnectCount;
     NSString *_machServiceName;
-    unsigned int _nextCancellationToken;
-    Protocol *_protocol;
-    NSObject<OS_dispatch_queue> *_replyHandlerLock;
+    NSMutableSet *_outstandingAsyncCallbacks0;
+    NSMutableSet *_outstandingAsyncCallbacks1;
+    int _outstandingAsyncCallbacksLock;
     NSXPCConnection *_xpcConnection;
     NSXPCInterface *_xpcInterface;
 }
 
-@property (nonatomic) id delegate;
-@property (nonatomic, readonly, retain) NSXPCConnection *xpcConnection;
-
 - (void).cxx_destruct;
+- (void)_cancelAllOutstandingAsyncCallbacks;
 - (void)_connectToServer;
-- (void)_finishAllRepliesOnServerDeath;
-- (unsigned int)addCancellableRemoteOperation:(id)arg1;
-- (void)cancelRemoteOperation:(unsigned int)arg1;
-- (id)delegate;
+- (BOOL)addOutstandingAsyncCallback0:(id /* block */)arg1;
+- (BOOL)addOutstandingAsyncCallback1:(id /* block */)arg1;
+- (void)dealloc;
 - (void)disconnect;
-- (id)initWithMachServiceName:(id)arg1 protocol:(id)arg2 xpcInterface:(id)arg3;
-- (void)removeCancellableRemoteOperation:(unsigned int)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)sgClientReceivedResults:(id)arg1 forSearchToken:(unsigned int)arg2 finished:(BOOL)arg3;
+- (id)initWithMachServiceName:(id)arg1 xpcInterface:(id)arg2;
+- (BOOL)removeOutstandingAsyncCallback0:(id /* block */)arg1;
+- (BOOL)removeOutstandingAsyncCallback1:(id /* block */)arg1;
 - (id)waitUntilReturn:(id /* block */)arg1 error:(id*)arg2;
 - (id)xpcConnection;
 

@@ -41,7 +41,6 @@
 @property BOOL filterFirstEntry;
 @property (retain) PLEntryNotificationOperatorComposition *ioReportEventCallback;
 @property double mieOnTimeStamp;
-@property PLOperator *operator;
 @property BOOL prevAlsOn;
 @property long prevBklBucketIdx;
 @property double prevBklChgTimeStamp;
@@ -49,7 +48,6 @@
 @property BOOL prevDeviceCharging;
 @property BOOL prevDisplayOn;
 @property BOOL prevMieOn;
-@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property long long startTouchEntryId;
 @property (retain) PLEntryNotificationOperatorComposition *touchEventCallback;
 @property long touchSubmitCnt;

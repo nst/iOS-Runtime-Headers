@@ -93,6 +93,7 @@
 @property (nonatomic, copy) NSString *searchResultsTitle;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (float)_activationGapHeight;
 - (float)_additionalNonCollapsingHeightAboveSearchBar;
 - (void)_adjustTableViewContentInsetsAndOffsetsIgnoringCurrent:(BOOL)arg1;

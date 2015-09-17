@@ -13,7 +13,6 @@
     EDTable *mTable;
 }
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWith:(struct EFStrTok { id x1; union EFData { struct { unsigned int x_1_2_1; unsigned int x_1_2_2; BOOL x_1_2_3; } x_2_1_1; struct { unsigned int x_2_2_1; void *x_2_2_2; } x_2_1_2; struct { unsigned int x_3_2_1; unsigned int x_3_2_2; BOOL x_3_2_3; BOOL x_3_2_4; } x_2_1_3; } x2; }*)arg1;
 - (void)makeup:(id)arg1 with:(int)arg2;

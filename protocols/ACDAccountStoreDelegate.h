@@ -5,6 +5,6 @@
 
 @required
 
-- (void)accountStoreDidSaveAccounts;
+- (void)accountStoreDidSaveAccounts:(NSSet *)arg1;
 
 @end

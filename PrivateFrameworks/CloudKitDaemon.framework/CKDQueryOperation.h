@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleQueryRequestFinished:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)cursor;
 - (id)desiredKeySet;
 - (void)fillOutOperationResult:(id)arg1;

@@ -21,7 +21,7 @@
 - (Class)cellClass;
 - (id)cellIdentifier;
 - (void)configureBalloonView:(id)arg1;
-- (id)contactImage;
+- (id)contact;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)description;
 - (BOOL)displayDuringSend;

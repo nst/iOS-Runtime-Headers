@@ -25,6 +25,16 @@
 - (id)retain;
 - (unsigned int)retainCount;
 
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
+
+- (id)cl_json_serializeKey;
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
+// Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
+
+- (id)cl_json_serializeKey;
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 - (void)encodeWithCoder:(id)arg1;
@@ -37,14 +47,6 @@
 - (id)CAMLType;
 - (void)runActionForKey:(id)arg1 object:(id)arg2 arguments:(id)arg3;
 
-// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
@@ -52,7 +54,7 @@
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-- (void)appendJsonStringToString:(id)arg1;
+- (void)sfu_appendJsonStringToString:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
@@ -63,5 +65,9 @@
 - (void)sfu_appendJsonStringToString:(id)arg1;
 - (void)tsch_saveToArchive:(struct ChartsNSNumberDoubleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1 archiver:(id)arg2;
 - (void)tsch_saveToProtobufString:(struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > { struct __compressed_pair<std::__1::basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> >::__rep, std::__1::allocator<char> > { struct __rep { union { struct __long { unsigned int x_1_4_1; unsigned int x_1_4_2; char *x_1_4_3; } x_1_3_1; struct __short { union { unsigned char x_1_5_1; BOOL x_1_5_2; } x_2_4_1; BOOL x_2_4_2[11]; } x_1_3_2; struct __raw { unsigned long x_3_4_1[3]; } x_1_3_3; } x_1_2_1; } x_1_1_1; } x1; }*)arg1;
+
+// Image: /usr/lib/libprequelite.dylib
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

@@ -19,14 +19,14 @@
 
 + (id)rowActionWithStyle:(int)arg1 title:(id)arg2 handler:(id /* block */)arg3;
 
+- (void).cxx_destruct;
 - (id)_button;
 - (id /* block */)_handler;
-- (id)_initWithStyle:(id)arg1 title:(id)arg2 handler:(id /* block */)arg3;
+- (id)_initWithStyle:(int)arg1 title:(id)arg2 handler:(id /* block */)arg3;
 - (void)_setButton:(id)arg1;
 - (id)backgroundColor;
 - (id)backgroundEffect;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundEffect:(id)arg1;
 - (void)setTitle:(id)arg1;

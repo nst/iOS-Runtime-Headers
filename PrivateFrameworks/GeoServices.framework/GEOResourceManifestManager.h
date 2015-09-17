@@ -42,6 +42,7 @@
 
 - (id)_activeTileSetForKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
 - (void)_buildResourceNamesToPaths;
+- (id)_loadActiveTileGroupIfNecessary:(BOOL)arg1;
 - (void)_localeChanged:(id)arg1;
 - (void)_notifyObserversOfResourcesChange;
 - (id)activeTileGroup;
@@ -49,6 +50,7 @@
 - (void)addNetworkActivityHandler:(id /* block */)arg1;
 - (void)addServerProxyObserver:(id)arg1;
 - (void)addTileGroupObserver:(id)arg1 queue:(id)arg2;
+- (id)allRegionalResourceNames;
 - (id)allResourceNames;
 - (id)authToken;
 - (id)baseURLStringForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1;
@@ -68,7 +70,6 @@
 - (id)localizationURLStringIfNecessaryForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 overrideLocale:(id)arg2;
 - (int)mapMatchingTileSetStyle;
 - (unsigned int)mapMatchingZoomLevel;
-- (id)multiTileURLStringForTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 useStatusCodes:(BOOL*)arg2;
 - (void)openServerConnection;
 - (id)pathForResourceWithName:(id)arg1;
 - (void)removeServerProxyObserver:(id)arg1;

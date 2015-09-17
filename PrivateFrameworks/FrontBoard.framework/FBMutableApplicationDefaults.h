@@ -6,6 +6,7 @@
 
 @property (nonatomic) int backgroundStyle;
 @property (nonatomic) int interfaceOrientation;
+@property (nonatomic, copy) NSString *launchImageFile;
 @property (nonatomic) BOOL statusBarHidden;
 @property (nonatomic) BOOL statusBarHiddenWhenVerticallyCompact;
 @property (nonatomic) int statusBarStyle;

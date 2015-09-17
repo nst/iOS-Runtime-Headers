@@ -2,8 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMailMessageLibraryMigrator : NSObject
+@interface MFMailMessageLibraryMigrator : NSObject {
+    int _isNewDatabase;
+}
 
+- (BOOL)isNewDatabase;
 - (BOOL)migrateWithSQLiteConnection:(id)arg1;
 
 @end

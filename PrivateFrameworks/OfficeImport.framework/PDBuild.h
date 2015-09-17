@@ -8,6 +8,7 @@
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)drawable;
 - (id)init;
 - (BOOL)isAnimateBackground;

@@ -8,6 +8,7 @@
     NSMutableDictionary *_completeResponseResultsDictionary;
     id /* block */ _completionHandler;
     NSError *_error;
+    BOOL _hasCalledCompletionHandler;
     SSLookupRequest *_lookupRequest;
     NSOperationQueue *_operationQueue;
     NSObject<OS_dispatch_queue> *_serialQueue;

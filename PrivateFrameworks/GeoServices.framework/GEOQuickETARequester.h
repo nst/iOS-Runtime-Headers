@@ -11,19 +11,14 @@
 
 @property (nonatomic, copy) NSString *loggingFacility;
 
-// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
-
 - (void)_calculateRoutingETAWithHandler:(id /* block */)arg1;
-- (void)_calculateSimpleETAWithHandler:(id /* block */)arg1;
+- (void)_calculateSimpleETAFromAPI:(BOOL)arg1 WithHandler:(id /* block */)arg2;
+- (void)calculateETAFromAPI:(BOOL)arg1 WithResponseHandler:(id /* block */)arg2;
 - (void)calculateETAWithResponseHandler:(id /* block */)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1;
 - (id)loggingFacility;
 - (void)setLoggingFacility:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
-
-- (void)calculateETALocalizedDescriptionFromOrigin:(id)arg1 toPLOI:(id)arg2 handler:(id /* block */)arg3;
 
 @end

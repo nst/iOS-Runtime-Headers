@@ -6,6 +6,8 @@
 
 @property (nonatomic, copy) NSString *value;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)stringValue;
 + (id)stringValueWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -13,5 +15,9 @@
 - (id)groupIdentifier;
 - (void)setValue:(id)arg1;
 - (id)value;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)shortDescription;
 
 @end

@@ -23,6 +23,7 @@
 - (id)colorWithIndex:(unsigned int)arg1;
 - (unsigned int)defaultColorsCount;
 - (const unsigned int*)defaultPalette;
+- (id)description;
 - (id)initWithDefaultSetup:(bool)arg1;
 - (void)setupDefaults;
 

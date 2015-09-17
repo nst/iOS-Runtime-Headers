@@ -2,28 +2,6 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBWindowContextManager : NSObject {
-    <FBWindowContextManagerDelegate> *_delegate;
-    NSString *_identifier;
-    NSHashTable *_observers;
-    NSMutableOrderedSet *_orderedContexts;
-}
-
-@property (nonatomic) <FBWindowContextManagerDelegate> *delegate;
-@property (nonatomic, copy) NSString *identifier;
-
-- (void)_enumerateObserversWithBlock:(id /* block */)arg1;
-- (void)addContext:(id)arg1;
-- (void)addObserver:(id)arg1;
-- (id)contexts;
-- (void)dealloc;
-- (id)delegate;
-- (id)description;
-- (id)identifier;
-- (id)init;
-- (void)removeContext:(id)arg1;
-- (void)removeObserver:(id)arg1;
-- (void)setDelegate:(id)arg1;
-- (void)setIdentifier:(id)arg1;
+@interface FBWindowContextManager : FBSceneLayerManager
 
 @end

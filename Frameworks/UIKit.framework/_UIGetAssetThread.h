@@ -12,9 +12,9 @@
 @property (retain) ALAsset *asset;
 @property (retain) NSCondition *condition;
 
+- (void).cxx_destruct;
 - (id)asset;
 - (id)condition;
-- (void)dealloc;
 - (id)initWithURL:(id)arg1 assetsLibrary:(id)arg2;
 - (void)main;
 - (void)setAsset:(id)arg1;

@@ -58,7 +58,7 @@
 - (int)yearOfCommonEra;
 - (void)years:(int*)arg1 months:(int*)arg2 days:(int*)arg3 hours:(int*)arg4 minutes:(int*)arg5 seconds:(int*)arg6 sinceDate:(id)arg7;
 
-// Image: /System/Library/Frameworks/EventKit.framework/EventKit
+// Image: /System/Library/PrivateFrameworks/CalendarDatabase.framework/CalendarDatabase
 
 - (id)ekmsuidGMTDateToDateInTimeZone:(id)arg1;
 - (id)ekmsuidStringForYearMonthDay;

@@ -22,7 +22,7 @@
 - (id)displayName;
 - (id)docPassphrase;
 - (id)filename;
-- (void)finalizeBackgroundTasksWithDocumentState:(id)arg1;
+- (void)finalizeWithDocumentState:(id)arg1;
 - (id)initWithData:(id)arg1;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isDocumentEncryptedUnsupportedVersion:(BOOL*)arg1 errorMessage:(id*)arg2;

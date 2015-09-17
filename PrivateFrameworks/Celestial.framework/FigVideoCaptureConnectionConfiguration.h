@@ -24,7 +24,6 @@
 - (id)copyXPCEncoding;
 - (void)dealloc;
 - (id)description;
-- (id)init;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)mirroringEnabled;

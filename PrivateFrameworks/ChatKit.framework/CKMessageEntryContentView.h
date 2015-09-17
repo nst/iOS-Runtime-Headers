@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKMessageEntryContentView : UIScrollView <UITextViewDelegate> {
+@interface CKMessageEntryContentView : UIScrollView <CKMessageEntryRichTextViewDelegate, UITextViewDelegate> {
     UIView *_activeView;
     CKComposition *_composition;
     UIView *_dividerLine;
     BOOL _ignoreEndEditing;
+    BOOL _isCompositionExpirable;
     BOOL _needsEnsureSelectionVisible;
     BOOL _needsTextLayout;
     float _placeholderHeight;
@@ -38,6 +39,7 @@
 @property (nonatomic, retain) UIView *dividerLine;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL ignoreEndEditing;
+@property (nonatomic) BOOL isCompositionExpirable;
 @property (nonatomic) BOOL needsEnsureSelectionVisible;
 @property (nonatomic) BOOL needsTextLayout;
 @property (nonatomic) float placeholderHeight;
@@ -65,10 +67,12 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 shouldShowSubject:(BOOL)arg2 shouldShowCharacterCount:(BOOL)arg3;
 - (void)invalidateComposition;
 - (BOOL)isActive;
+- (BOOL)isCompositionExpirable;
 - (BOOL)isShowingDictationPlaceholder;
 - (BOOL)isSingleLine;
 - (void)layoutSubviews;
 - (BOOL)makeActive;
+- (void)messageEntryRichTextView:(id)arg1 didTapMediaObject:(id)arg2;
 - (BOOL)messageEntryRichTextView:(id)arg1 shouldPasteMediaObjects:(id)arg2;
 - (BOOL)needsEnsureSelectionVisible;
 - (BOOL)needsTextLayout;
@@ -81,6 +85,7 @@
 - (void)setDividerLine:(id)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setIgnoreEndEditing:(BOOL)arg1;
+- (void)setIsCompositionExpirable:(BOOL)arg1;
 - (void)setNeedsEnsureSelectionVisible:(BOOL)arg1;
 - (void)setNeedsTextLayout:(BOOL)arg1;
 - (void)setPlaceholderHeight:(float)arg1;

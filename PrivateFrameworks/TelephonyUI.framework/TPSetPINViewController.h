@@ -38,10 +38,10 @@
 @property (retain) UILabel *statusLabel;
 @property (retain) NSString *unconfirmedPIN;
 
+- (void).cxx_destruct;
 - (void)_cancelButtonTapped;
 - (void)_doneButtonTapped;
 - (id)_initForMinLength:(unsigned int)arg1 maxLength:(unsigned int)arg2 confirmPIN:(BOOL)arg3;
-- (void)_setPromptText:(id)arg1 oldPromptTextPointer:(id*)arg2;
 - (void)_updateDeleteAllowed;
 - (void)_updateNavBarButtons;
 - (void)_updateStatusLabel;

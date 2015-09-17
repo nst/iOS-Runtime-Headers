@@ -15,10 +15,10 @@
 - (void)dealloc;
 - (float)decodeTriePayload:(unsigned int)arg1;
 - (double)firstNameLikelihood:(id)arg1 underNamingTradition:(id)arg2 default:(double)arg3;
+- (struct _CFBurstTrie { }*)getTrieForNamingTradition:(id)arg1;
 - (id)init;
 - (double)inversionRateForNamingTradition:(id)arg1;
 - (BOOL)shouldInvertFirst:(id)arg1 last:(id)arg2;
 - (BOOL)shouldInvertFirst:(id)arg1 last:(id)arg2 underNamingTradition:(id)arg3;
-- (struct _CFBurstTrie { }*)trieForNamingTradition:(id)arg1;
 
 @end

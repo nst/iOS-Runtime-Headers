@@ -74,6 +74,6 @@
 - (void)tearDown;
 - (void)traverseComponentTreeFromRoot:(id)arg1 accessor:(id /* block */)arg2;
 - (id)viewStateComponent;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2 shouldCaptureSnapshot:(BOOL)arg3;
 
 @end

@@ -37,6 +37,7 @@
 - (id)localizedAlertWithError:(id)arg1;
 - (id)localizedStringForKey:(id)arg1 inTable:(id)arg2;
 - (id)modalDocumentViewControllerForDocument:(id)arg1 options:(id)arg2;
+- (id)previewViewControllerForViewElement:(id)arg1;
 - (id)recentStationsController;
 - (void)sendOnSubscriptionRequiredWithOptions:(id)arg1;
 - (void)setRecentStationsController:(id)arg1;

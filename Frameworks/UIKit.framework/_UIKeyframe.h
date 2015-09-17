@@ -11,7 +11,7 @@
 
 @property (nonatomic, retain) id value;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithKey:(id)arg1 startTime:(double)arg2 duration:(double)arg3;
 - (void)setValue:(id)arg1;
 - (id)value;

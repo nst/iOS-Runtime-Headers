@@ -30,6 +30,7 @@
 - (void)_stopRecordingTimeoutTimer;
 - (void)dealloc;
 - (id)delegate;
+- (id)init;
 - (id)initWithAssetPath:(id)arg1;
 - (double)maximumRecordingDuration;
 - (void)setDelegate:(id)arg1;

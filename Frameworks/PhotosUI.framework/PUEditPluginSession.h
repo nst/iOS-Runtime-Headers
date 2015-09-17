@@ -44,7 +44,7 @@
 - (id)delegate;
 - (void)dismissSession;
 - (void)editPluginHostViewController:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id /* block */)arg3;
-- (void)editPluginHostViewController:(id)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)editPluginHostViewController:(id)arg1 didFinishWithCompletionType:(unsigned int)arg2;
 - (void)editPluginHostViewController:(id)arg1 loadItemProviderWithHandler:(id /* block */)arg2;
 - (id)init;
 - (BOOL)isAvailable;

@@ -16,11 +16,11 @@
 + (id)referenceWithFirstRow:(int)arg1 lastRow:(int)arg2 firstColumn:(int)arg3 lastColumn:(int)arg4;
 + (id)referenceWithReference:(id)arg1;
 
-- (id).cxx_construct;
 - (struct EDAreaReference { int x1; int x2; int x3; int x4; })areaReference;
 - (bool)containsRow:(int)arg1 column:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned long long)countOfCellsBeingReferenced;
+- (id)description;
 - (int)firstColumn;
 - (int)firstRow;
 - (bool)fullyAdjacentToReference:(id)arg1;

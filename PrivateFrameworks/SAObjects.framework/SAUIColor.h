@@ -4,6 +4,7 @@
 
 @interface SAUIColor : AceObject <SAAceSerializable>
 
+@property (nonatomic, copy) NSNumber *alpha;
 @property (nonatomic) int blueValue;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -15,11 +16,13 @@
 + (id)color;
 + (id)colorWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)alpha;
 - (int)blueValue;
 - (id)encodedClassName;
 - (int)greenValue;
 - (id)groupIdentifier;
 - (int)redValue;
+- (void)setAlpha:(id)arg1;
 - (void)setBlueValue:(int)arg1;
 - (void)setGreenValue:(int)arg1;
 - (void)setRedValue:(int)arg1;

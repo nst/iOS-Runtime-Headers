@@ -67,6 +67,7 @@
 - (BOOL)isPrincipal;
 - (BOOL)isUnauthenticated;
 - (id)owner;
+- (void)postProcessWithResponseHeaders:(id)arg1;
 - (id)privileges;
 - (id)privilegesAsStringSet;
 - (id)pushKey;

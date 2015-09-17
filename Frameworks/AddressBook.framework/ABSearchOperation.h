@@ -5,8 +5,6 @@
 @interface ABSearchOperation : NSOperation {
     void *_addressBook;
     void *_context;
-    NSArray *_copiedRecords;
-    NSArray *_copiedSuggestions;
     <ABSearchOperationDelegate> *_delegate;
     void *_internalSearchAddressBook;
     NSPredicate *_predicate;
@@ -51,7 +49,6 @@
 - (id)predicate;
 - (BOOL)predicateShouldContinue:(id)arg1;
 - (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2;
-- (BOOL)predicateShouldContinue:(id)arg1 afterFindingRecord:(void*)arg2 moreComing:(BOOL)arg3;
 - (id)prefetchProperties;
 - (id /* block */)progressBlock;
 - (void)setAddressBook:(void*)arg1;

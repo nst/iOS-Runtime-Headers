@@ -13,9 +13,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id)_descriptionWithMultilinePrefix:(id)arg1;
 - (id)_initWithSceneImpl:(id)arg1 invalidationAction:(id)arg2;
 - (void)attachContext:(id)arg1;
+- (void)attachLayer:(id)arg1;
 - (void)attachSceneContext:(id)arg1;
 - (id)clientSettings;
 - (id)contexts;
@@ -23,16 +23,21 @@
 - (id)delegate;
 - (id)description;
 - (void)detachContext:(id)arg1;
+- (void)detachLayer:(id)arg1;
 - (void)detachSceneContext:(id)arg1;
 - (id)display;
 - (id)fbsDisplay;
 - (id)identifier;
+- (BOOL)invalidateSnapshotWithContext:(id)arg1;
+- (BOOL)performSnapshotWithContext:(id)arg1;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
 - (void)scene:(id)arg1 didUpdateWithDiff:(id)arg2 transitionContext:(id)arg3 completion:(id /* block */)arg4;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)settings;
+- (id)snapshotRequest;
 - (void)updateClientSettings:(id)arg1 withTransitionContext:(id)arg2;
 - (void)updateClientSettingsWithBlock:(id /* block */)arg1;
+- (void)updateClientSettingsWithTransitionBlock:(id /* block */)arg1;
 
 @end

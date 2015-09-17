@@ -32,6 +32,7 @@
 - (id)initWithChunk:(id)arg1 property:(id)arg2 value:(id)arg3;
 - (BOOL)isBuildTuple;
 - (BOOL)isChunkTuple;
+- (BOOL)isValidForSlide:(id)arg1;
 - (id)property;
 - (id)value;
 

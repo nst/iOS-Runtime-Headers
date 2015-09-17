@@ -4,16 +4,23 @@
 
 @interface VKImageCanvas : GGLImageCanvas <VKAnimationRunner, VKWorldDelegate> {
     VKCamera *_camera;
+    <VKInteractiveCameraController> *_cameraController;
+    <VKImageCanvasDelegate> *_delegate;
     VKDispatch *_dispatch;
     double _frameTimestamp;
     VKLayoutContext *_layoutContext;
     VKTimer *_layoutTimer;
-    struct MapCamera { 
-        struct View {} *_view; 
-        struct Viewport {} *_viewport; 
-        void *_layoutContext; 
+    struct unique_ptr<md::MapCamera, std::__1::default_delete<md::MapCamera> > { 
+        struct __compressed_pair<md::MapCamera *, std::__1::default_delete<md::MapCamera> > { 
+            struct MapCamera {} *__first_; 
+        } __ptr_; 
     } _mapCamera;
-    struct RenderTree { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; unsigned short x17; void*x18; void*x19; short x20; void*x21; void*x22; void*x23; const void*x24; in void*x25; void*x26; void*x27; short x28; void*x29; void*x30; void*x31; const void*x32; in void*x33; void*x34; void*x35; void*x36; void x37; void*x38; void*x39; void*x40; void x41; void*x42; void*x43; void*x44; void*x45; void*x46; out const unsigned long x47; void*x48; const void*x49; void*x50; long doublex51; int x52; short x53; void*x54; long x55; void*x56; void*x57; void*x58; unsigned int x59/* : ? */; long x60; void*x61; unsigned int x62; void*x63; void*x64; void*x65; void*x66; void*x67; int x68; long x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; unsigned long x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; out void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; unsigned short x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; unsigned long x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; out void*x153; void*x154; void*x155; out void*x156; void*x157; void*x158; out void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; unsigned short x181; void*x182; void*x183; short x184; void*x185; void*x186; void*x187; const void*x188; in void*x189; void*x190; void*x191; short x192; void*x193; void*x194; void*x195; const void*x196; in void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; unsigned short x209; void*x210; short x211; void*x212; void*x213; void*x214; void*x215; unsigned long x216; int x217; unsigned int x218/* : ? */; const void*x219; const void*x220; void*x221; void*x222; const int x223; void x224; void*x225; void*x226; void*x227; void*x228; const void*x229; void*x230; void*x231; void*x232; out const void*x233; short x234; void*x235; unsigned short x236; void*x237; unsigned int x238/* : ? */; void*x239; void*x240; BOOL x241; void*x242; short x243; void*x244; float x245; const void*x246; void*x247; void*x248; void*x249; out const void*x250; void*x251; unsigned short x252; void*x253; unsigned int x254/* : ? */; void*x255; void*x256; BOOL x257; void*x258; short x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void*x285; void*x286; void*x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void*x302; void*x303; void*x304; void*x305; void x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; struct x314; void*x315; void*x316; void*x317; float x318; void*x319; long x320; void*x321; out void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; void*x328; void*x329; void*x330; void*x331; void*x332; void*x333; void*x334; void*x335; void*x336; float x337; void*x338; long x339; void*x340; out void*x341; void*x342; void*x343; void*x344; void*x345; void*x346; void*x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; } *_mapScene;
+    struct unique_ptr<md::RenderTree, std::__1::default_delete<md::RenderTree> > { 
+        struct __compressed_pair<md::RenderTree *, std::__1::default_delete<md::RenderTree> > { 
+            struct RenderTree {} *__first_; 
+        } __ptr_; 
+    } _mapScene;
+    int _mapType;
     BOOL _needsLayout;
     struct unique_ptr<md::RenderQueue, std::__1::default_delete<md::RenderQueue> > { 
         struct __compressed_pair<md::RenderQueue *, std::__1::default_delete<md::RenderQueue> > { 
@@ -27,41 +34,53 @@
     } _renderQueueResolve;
     BOOL _shouldDrawWhileLoading;
     VKWorld *_world;
-    struct unique_ptr<<anonymous>::YFlipPass, std::__1::default_delete<<anonymous>::YFlipPass> > { 
-        struct __compressed_pair<<anonymous>::YFlipPass *, std::__1::default_delete<<anonymous>::YFlipPass> > { 
-            struct YFlipPass {} *__first_; 
-        } __ptr_; 
-    } _yFlipPass;
+    struct unique_ptr<(anonymous namespace)::YFlipPass, std::__1::default_delete<(anonymous namespace)::YFlipPass> >="__ptr_"{__compressed_pair<(anonymous namespace)::YFlipPass *, std::__1::default_delete<(anonymous namespace)::YFlipPass> >="__first_"^{YFlipPass {} _yFlipPass;
 }
 
 @property (nonatomic, readonly) VKCamera *camera;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <VKImageCanvasDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) VKDispatch *dispatch;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) GEOMapRegion *mapRegion;
+@property (nonatomic) int mapType;
+@property (nonatomic, readonly) double pitch;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) VKWorld *world;
+@property (nonatomic, readonly) double yaw;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)_spinScene:(id)arg1;
 - (void)_spinSceneWillRender:(BOOL)arg1;
-- (void)_updateViewTransform;
 - (void)animationDidResume:(id)arg1;
 - (void)animationDidStop:(id)arg1;
 - (id)camera;
 - (void)cancelLoad;
+- (void)cancelTileRequests;
+- (void)clearScene;
 - (void)dealloc;
+- (id)delegate;
+- (void)didLayout;
 - (void)didReceiveMemoryWarning:(BOOL)arg1;
 - (id)dispatch;
-- (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 useMultisampling:(BOOL)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 useMultisampling:(BOOL)arg3 device:(const struct shared_ptr<ggl::Device> { }*)arg4 homeQueue:(id)arg5;
 - (void)loadScene;
-- (void)renderSceneWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; bool x5; float x6; }*)arg1 completion:(id /* block */)arg2;
+- (id)mapRegion;
+- (int)mapType;
+- (double)pitch;
+- (void)renderSceneWithRenderer:(struct Renderer { int (**x1)(); struct Device {} *x2; unsigned int x3; unsigned int x4; bool x5; float x6; struct vector<std::__1::shared_ptr<ggl::DebugRenderer>, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_7_1_1; struct shared_ptr<ggl::DebugRenderer> {} *x_7_1_2; struct __compressed_pair<std::__1::shared_ptr<ggl::DebugRenderer> *, std::__1::allocator<std::__1::shared_ptr<ggl::DebugRenderer> > > { struct shared_ptr<ggl::DebugRenderer> {} *x_3_2_1; } x_7_1_3; } x7; struct unique_ptr<ggl::RenderQueue, std::__1::default_delete<ggl::RenderQueue> > { struct __compressed_pair<ggl::RenderQueue *, std::__1::default_delete<ggl::RenderQueue> > { struct RenderQueue {} *x_1_2_1; } x_8_1_1; } x8; struct unique_ptr<ggl::CommandBuffer, std::__1::default_delete<ggl::CommandBuffer> > { struct __compressed_pair<ggl::CommandBuffer *, std::__1::default_delete<ggl::CommandBuffer> > { struct CommandBuffer {} *x_1_2_1; } x_9_1_1; } x9; }*)arg1 completion:(id /* block */)arg2;
 - (void)runAnimation:(id)arg1;
+- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4;
+- (void)setDelegate:(id)arg1;
+- (void)setMapRegion:(id)arg1 pitch:(double)arg2 yaw:(double)arg3;
+- (void)setMapType:(int)arg1;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)update;
 - (id)world;
 - (void)worldDisplayDidChange:(id)arg1;
 - (void)worldLayoutDidChange:(id)arg1;
+- (double)yaw;
 
 @end

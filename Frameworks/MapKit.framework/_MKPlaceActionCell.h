@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MKPlaceActionCell : UITableViewCell {
+@interface _MKPlaceActionCell : MKTableViewCell {
     NSArray *_marginConstraints;
     NSMutableArray *_scaledConstraints;
     UILabel *_titleLabel;

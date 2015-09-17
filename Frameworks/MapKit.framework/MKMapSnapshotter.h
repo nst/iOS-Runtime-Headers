@@ -9,6 +9,7 @@
     BOOL _needsResume;
     MKMapSnapshotOptions *_options;
     VKMapSnapshotCreator *_snapshotCreator;
+    NSXPCConnection *_snapshotService;
 }
 
 @property (getter=isLoading, nonatomic, readonly) BOOL loading;

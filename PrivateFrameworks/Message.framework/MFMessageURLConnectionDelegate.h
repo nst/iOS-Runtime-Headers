@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFMessageURLConnectionDelegate : NSObject <NSURLConnectionDelegate> {
+@interface MFMessageURLConnectionDelegate : NSObject <NSURLSessionDelegate> {
     BOOL _done;
     NSError *_error;
+    MFFuture *_future;
     NSURLResponse *_response;
     NSMutableData *_responseBody;
 }
@@ -14,10 +15,9 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
 - (void)dealloc;
 
 @end

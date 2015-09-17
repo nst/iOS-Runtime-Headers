@@ -7,8 +7,8 @@
     NSMutableArray *_standaloneFileTransferGUIDs;
 }
 
-@property (nonatomic, readonly) NSArray *inlinedFileTransferGUIDs;
-@property (nonatomic, readonly) NSArray *standaloneFileTransferGUIDs;
+@property (nonatomic, readonly, retain) NSArray *inlinedFileTransferGUIDs;
+@property (nonatomic, readonly, retain) NSArray *standaloneFileTransferGUIDs;
 
 - (void)dealloc;
 - (id)initWithAttributedString:(id)arg1;

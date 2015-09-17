@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSArray *searchBarConstraints;
 @property (readonly) Class superclass;
 @property (nonatomic) float trailingMargin;
-@property (nonatomic) NSNumber *usePadConstraints;
+@property (nonatomic, retain) NSNumber *usePadConstraints;
 
 + (float)defaultHeight;
 + (void)initialize;

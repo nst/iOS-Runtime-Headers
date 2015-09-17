@@ -42,7 +42,6 @@
 + (id)rightParenCharacters;
 + (id)singleQuoteCharacters;
 
-- (id).cxx_construct;
 - (id)calculationEngine;
 - (BOOL)canSimplify;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

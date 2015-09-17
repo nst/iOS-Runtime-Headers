@@ -14,6 +14,7 @@
     NSString *_localizedName;
     NSString *_localizedShortName;
     BOOL _onSystemVolume;
+    NSString *_originalIdentifier;
     NSDictionary *_plugInDictionary;
     NSString *_requirement;
     NSDictionary *_topDictionary;
@@ -40,6 +41,7 @@
 @property (retain) NSString *localizedShortName;
 @property (readonly) BOOL oldStyle;
 @property BOOL onSystemVolume;
+@property (retain) NSString *originalIdentifier;
 @property (readonly) NSString *path;
 @property (retain) NSDictionary *plugInDictionary;
 @property (readonly) id protocolSpec;
@@ -84,12 +86,10 @@
 - (id)localizedShortName;
 - (id)mergeDictionary:(id)arg1 into:(id)arg2;
 - (id)mergeSharedResources:(id)arg1 into:(id)arg2;
-- (id)newAttributesFrom:(id)arg1;
-- (id)newMultiplesFrom:(id)arg1;
-- (id)newPlugInKitDictionaryFrom:(id)arg1;
 - (id)normalizeInfoDictionary:(id)arg1;
 - (BOOL)oldStyle;
 - (BOOL)onSystemVolume;
+- (id)originalIdentifier;
 - (id)path;
 - (id)plugInDictionary;
 - (id)protocolSpec;
@@ -110,6 +110,7 @@
 - (void)setLocalizedName:(id)arg1;
 - (void)setLocalizedShortName:(id)arg1;
 - (void)setOnSystemVolume:(BOOL)arg1;
+- (void)setOriginalIdentifier:(id)arg1;
 - (void)setPlugInDictionary:(id)arg1;
 - (void)setRequirement:(id)arg1;
 - (void)setTopDictionary:(id)arg1;

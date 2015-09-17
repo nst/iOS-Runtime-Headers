@@ -13,6 +13,8 @@
 
 + (void)initialize;
 
+- (id)_compressedDataWithModel:(id)arg1;
+- (id)_decompressedModelWithData:(id)arg1;
 - (void)_forceDisconnectOnError;
 - (void)_performPostSaveTasks;
 - (void)_raiseOptimisticLockingExceptionWithReason:(id)arg1;
@@ -23,13 +25,14 @@
 - (void)awake;
 - (void)beginTransaction;
 - (void)bindTempTableForBindIntarray:(id)arg1;
-- (void)cacheStatement:(id)arg1 forRequestWithIdentifier:(id)arg2;
-- (id)cachedStatementForRequestWithIdentifier:(id)arg1;
+- (void)cacheStatement:(id)arg1 forRequest:(id)arg2;
+- (id)cachedStatementForRequest:(id)arg1;
 - (BOOL)canConnect;
 - (void)clearCachedStatementForRequestWithIdentifier:(id)arg1;
 - (id)columnsToFetch;
 - (void)commitTransaction;
 - (void)connect;
+- (void)createCachedModelTable;
 - (void)createIndexesForEntity:(id)arg1;
 - (void)createManyToManyTablesForEntity:(id)arg1;
 - (id)createMapOfEntityNameToPKMaxForEntities:(id)arg1;
@@ -43,14 +46,15 @@
 - (BOOL)databaseIsEmpty;
 - (void)dealloc;
 - (void)deleteRow:(id)arg1;
-- (id)deleteTransactionEntriesAfterPeerState:(id)arg1 forStoreName:(id)arg2;
-- (id)describeResults;
 - (void)didCreateSchema;
 - (void)disconnect;
 - (void)dropUbiquityTables;
 - (void)endFetch;
 - (void)endPrimaryKeyGeneration;
 - (void)execute;
+- (id)executeAttributeUniquenessCheckSQLStatement:(id)arg1 returningColumns:(id)arg2;
+- (id)executeMulticolumnUniquenessCheckSQLStatement:(id)arg1 returningColumns:(id)arg2;
+- (id)fetchCachedModel;
 - (long long)fetchMaxPrimaryKeyForEntity:(id)arg1;
 - (id)fetchMetadata;
 - (int)fetchResultSet:(void*)arg1 usingFetchPlan:(id)arg2;
@@ -60,9 +64,13 @@
 - (void)finalize;
 - (void)forceTransactionClosed;
 - (long long)generatePrimaryKeysForEntity:(id)arg1 batch:(unsigned int)arg2;
+- (id)generateStatementForCheckingMulticolumnConstraint:(id)arg1 onObjects:(id)arg2;
+- (id)generateStatementForCheckingUniqueAttributesOnObjects:(id)arg1;
+- (BOOL)hasCachedModelTable;
 - (BOOL)hasMetadataTable;
 - (BOOL)hasOpenTransaction;
 - (BOOL)hasPrimaryKeyTable;
+- (void)incrementInUseCounterForCachedStatementForRequest:(id)arg1;
 - (id)initWithAdapter:(id)arg1;
 - (void)insertRow:(id)arg1;
 - (BOOL)isFetchInProgress;
@@ -74,9 +82,13 @@
 - (void)prepareForPrimaryKeyGeneration;
 - (void)prepareSQLStatement:(id)arg1;
 - (struct __CFArray { }*)rawIntegerRowsForSQL:(id)arg1;
+- (void)recreateIndices;
 - (void)releaseSQLStatement;
+- (void)replaceUbiquityKnowledgeVector:(id)arg1;
 - (void)resetSQLStatement;
 - (void)rollbackTransaction;
+- (int)rowsChangedByLastStatement;
+- (void)saveCachedModel:(id)arg1;
 - (void)saveMetadata:(id)arg1;
 - (void)selectAttributes:(id)arg1 fetchRequest:(id)arg2 lock:(BOOL)arg3 entity:(id)arg4;
 - (void)setColumnsToFetch:(id)arg1;
@@ -89,6 +101,7 @@
 - (void)transactionDidRollback;
 - (id)ubiquityTableKeysAndValues;
 - (id)ubiquityTableValueForKey:(id)arg1;
+- (void)updateConstrainedValuesForRow:(id)arg1;
 - (void)updateRow:(id)arg1;
 - (void)updateUbiquityKnowledgeForPeerWithID:(id)arg1 andTransactionNumber:(id)arg2;
 - (void)updateUbiquityKnowledgeVector:(id)arg1;

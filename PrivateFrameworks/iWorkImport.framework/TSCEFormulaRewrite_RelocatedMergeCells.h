@@ -33,7 +33,9 @@
 - (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)description;
+- (id)initFromMessage:(const struct RelocatedMergeCellsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSCE::RelocatedMergeCellsArchive_CoordWithAdjustment> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
 - (unsigned short)mergeRangeAdjustmentForCoord:(const struct { unsigned short x1; unsigned char x2; unsigned char x3; }*)arg1;
 - (void)mergeRangeAt:(const struct { unsigned short x1; unsigned char x2; unsigned char x3; }*)arg1 adjustedBy:(unsigned short)arg2;
+- (void)saveToMessage:(struct RelocatedMergeCellsArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TSCE::RelocatedMergeCellsArchive_CoordWithAdjustment> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; }*)arg1;
 
 @end

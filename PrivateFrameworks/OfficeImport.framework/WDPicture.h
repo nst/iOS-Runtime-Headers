@@ -5,6 +5,7 @@
 @interface WDPicture : WDOfficeArt
 
 - (void)dealloc;
+- (id)description;
 - (BOOL)hasContent;
 - (int)runType;
 

@@ -10,6 +10,7 @@
 
 + (id)sharedProgressController;
 
+- (void).cxx_destruct;
 - (void)_hideSpinner;
 - (void)_setHideSpinnerTimer:(id)arg1;
 - (void)_showSpinner;

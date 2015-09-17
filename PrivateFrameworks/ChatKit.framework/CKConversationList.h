@@ -13,7 +13,6 @@
 @property (nonatomic, retain) CKConversation *pendingConversation;
 
 + (void)_handleRegistryDidLoadNotification:(id)arg1;
-+ (id)conversationThumbnailCache;
 + (void)initialize;
 + (id)sharedConversationList;
 
@@ -33,7 +32,6 @@
 - (id)conversationForExistingChat:(id)arg1;
 - (id)conversationForExistingChatWithGUID:(id)arg1;
 - (id)conversationForExistingChatWithGroupID:(id)arg1;
-- (id)conversationForHandles:(id)arg1 create:(BOOL)arg2;
 - (id)conversationForHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(BOOL)arg3 create:(BOOL)arg4;
 - (id)conversations;
 - (void)dealloc;
@@ -47,7 +45,6 @@
 - (id)pendingConversation;
 - (id)pendingConversationCreatingIfNecessary;
 - (void)resetCaches;
-- (void)resetCachesAndRegenerateThumbnails;
 - (void)resort;
 - (void)setNeedsReload;
 - (void)setPendingConversation:(id)arg1;

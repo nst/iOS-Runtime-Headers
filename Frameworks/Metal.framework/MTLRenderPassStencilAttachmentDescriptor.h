@@ -6,9 +6,7 @@
 
 @property (nonatomic) unsigned int clearStencil;
 
-- (unsigned int)clearStencil;
-- (id)description;
-- (id)init;
-- (void)setClearStencil:(unsigned int)arg1;
++ (id)alloc;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 @end

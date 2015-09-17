@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFMessageWebLayer : UIWebBrowserView {
+@interface MFMessageWebLayer : UIWebBrowserView <WebPolicyDelegate, WebResourceLoadDelegate> {
     unsigned int _bottomReplyLastQuoteLevel;
     DOMRange *_bottomReplyRange;
     NSString *_currentUUID;
@@ -30,12 +30,16 @@
 
 @property unsigned int bottomReplyLastQuoteLevel;
 @property (retain) DOMRange *bottomReplyRange;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property BOOL hasUnloadedRemoteImages;
+@property (readonly) unsigned int hash;
 @property (copy) NSString *originalHTMLString;
 @property BOOL prePrintDataDetectionPending;
 @property (retain) MFMessageReformattingContext *reformattingContext;
 @property BOOL shouldAttemptToReformatMessage;
 @property BOOL showRemoteImages;
+@property (readonly) Class superclass;
 
 + (void)beginBlockingRemoteImagesExceptForMessageWebLayer:(id)arg1;
 + (void)clearMessageContentCache;
@@ -53,10 +57,12 @@
 - (id)_rangeOfFirstText;
 - (id)_reformatOneElementUsingMethod:(id /* block */)arg1 shouldCancel:(BOOL*)arg2;
 - (void)_reformattingDidFail;
+- (void)_refreshPaddingStyleSheet;
 - (void)_replaceElement:(id)arg1 with:(id)arg2;
 - (BOOL)_rescaleTopLevelElements;
 - (void)_schedulePendingIgnoreStylesheets;
 - (void)_sendDelegateSizeDidChange;
+- (BOOL)_shouldApplyEdgeToEdgeStylingToNode:(id)arg1;
 - (BOOL)_shouldContinueResizingMessage;
 - (BOOL)_shouldRescaleMessage;
 - (BOOL)_shouldResizeMessage;
@@ -70,15 +76,17 @@
 - (void)appendMarkupString:(id)arg1 baseURL:(id)arg2;
 - (id)attachmentDownloadProgressObserversByUniqueIdentifiers;
 - (void)attemptEarlyMessageReformat;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })basePadding;
 - (BOOL)boolForDisplayInfoCacheKey:(id)arg1;
 - (unsigned int)bottomReplyLastQuoteLevel;
 - (id)bottomReplyRange;
 - (BOOL)canReformatMessageWithoutSubresources:(id)arg1 resultCanBeCached:(BOOL*)arg2;
 - (void)cancelPostDisplayOperation;
+- (float)canvasWidth;
 - (void)clearMessageReformattingCache;
+- (float)contentWidth;
 - (void)copy:(id)arg1;
 - (void)dealloc;
-- (float)defaultWidth;
 - (void)displayDidEnd;
 - (int)displayStyle;
 - (BOOL)hasPluginWithUninitializedSize;
@@ -97,6 +105,7 @@
 - (void)performBatchUpdates:(id /* block */)arg1;
 - (BOOL)prePrintDataDetectionPending;
 - (void)prepareDisplayInfoCacheWithLibraryMessage:(id)arg1;
+- (void)redrawWithViewportSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)reformatAttachments:(id)arg1;
 - (void)reformatMessage:(id)arg1;
 - (BOOL)reformatMessageOnce;
@@ -125,6 +134,7 @@
 - (void)updateImageWithSource:(id)arg1 withHTMLRepresentation:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)updateInlinePluginWithContentID:(id)arg1 withHTMLRepresentation:(id)arg2 completionBlock:(id /* block */)arg3;
 - (BOOL)usePadDisplayStyle;
+- (BOOL)viewportUsesCozyMargins;
 - (id)webThreadWebView:(id)arg1 identifierForInitialRequest:(id)arg2 fromDataSource:(id)arg3;
 - (void)webThreadWebView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
 - (void)webThreadWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;

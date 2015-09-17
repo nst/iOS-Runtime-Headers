@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CKSettingsMessagesController : CNFRegListController <CNFRegWizardControllerDelegate> {
+@interface CKSettingsMessagesController : CNFRegListController <AKAppleIDAuthenticationDelegate, CNFRegWizardControllerDelegate> {
     int _profileToken;
     BOOL _showingChildViewController;
 }
@@ -24,8 +24,10 @@
 - (id)_madridSettingsController;
 - (void)_setupAccountHandlers;
 - (void)_setupAccountHandlersForDisabling;
+- (void)_showAuthKitSignInIfNecessary;
 - (void)_showMadridSetupIfNecessary;
 - (void)_showMadridSetupIfNecessary:(BOOL)arg1;
+- (void)_showSignInController;
 - (id)_smsRelayDevicesController;
 - (void)_startListeningForProfileChanges;
 - (void)_stopListeningForProfileChanges;
@@ -35,6 +37,7 @@
 - (void)_updateUIWithError:(id)arg1;
 - (id)areReadReceiptsEnabled:(id)arg1;
 - (id)audioMessageSettingsSpecifierIdentifiers;
+- (BOOL)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (id)blacklistSettingsSpecifierIdentifiers;
 - (id)bundle;
 - (id)characterCountSpecifierIdentifiers;

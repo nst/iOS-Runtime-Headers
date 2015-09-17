@@ -34,6 +34,7 @@
 @property (retain) TSUZipFileArchive *zipArchive;
 
 + (id)dataEntryPathForFilename:(id)arg1;
++ (BOOL)hasZipArchive;
 + (BOOL)isValidPackageAtURL:(id)arg1;
 + (id)newLazyPackageWithURL:(id)arg1 packageIdentifier:(unsigned char)arg2 decryptionKey:(id)arg3 fileCoordinatorDelegate:(id)arg4;
 + (id)newPackageWithURL:(id)arg1 packageIdentifier:(unsigned char)arg2 decryptionKey:(id)arg3 fileCoordinatorDelegate:(id)arg4 error:(id*)arg5;
@@ -41,7 +42,6 @@
 + (unsigned int)zipArchiveOptions;
 + (id)zipArchiveURLFromPackageURL:(id)arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)checkPassword:(id)arg1;
 - (id)componentZipArchive;
@@ -71,8 +71,8 @@
 - (id)newDataStorageAtRelativePath:(id)arg1 decryptionInfo:(id)arg2;
 - (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id /* block */)arg2 error:(id*)arg3;
 - (id)newRawDataReadChannelAtRelativePath:(id)arg1;
-- (id)newRawReadChannelForComponent:(id)arg1;
-- (id)newReadChannelForComponent:(id)arg1;
+- (id)newRawReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
+- (id)newReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
 - (id)newZipArchiveFromPackageURL:(id)arg1 isLazyLoading:(BOOL)arg2 error:(id*)arg3;
 - (unsigned char)packageIdentifier;
 - (int)packageType;

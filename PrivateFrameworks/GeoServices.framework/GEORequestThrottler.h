@@ -3,14 +3,13 @@
  */
 
 @interface GEORequestThrottler : NSObject {
+    NSLock *_lock;
     NSMapTable *_throttleMap;
 }
 
 + (id)sharedThrottler;
 
-- (void)_countryProvidersDidChange:(id)arg1;
-- (BOOL)allowRequest:(unsigned int)arg1 toURL:(id)arg2;
-- (void)clear;
+- (BOOL)allowRequestForKey:(id)arg1;
 - (void)dealloc;
 - (id)init;
 

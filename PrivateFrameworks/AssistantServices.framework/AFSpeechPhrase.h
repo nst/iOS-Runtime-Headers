@@ -16,8 +16,10 @@
 - (id)bestInterpretation;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)interpretations;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isLowConfidence;
 - (void)setInterpretations:(id)arg1;
 - (void)setIsLowConfidence:(BOOL)arg1;

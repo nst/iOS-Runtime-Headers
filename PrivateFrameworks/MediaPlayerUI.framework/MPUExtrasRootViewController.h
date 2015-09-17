@@ -5,6 +5,7 @@
 @interface MPUExtrasRootViewController : UIViewController <IKAppContextDelegate, IKAppDeviceConfig, IKApplication, MPVideoOverlayDelegate, UICollectionViewDelegate, UINavigationControllerDelegate> {
     IKAppContext *_applicationContext;
     MPUExtrasArtworkDataSource *_artworkDataSource;
+    NSLayoutConstraint *_bottomConstraint;
     MPUExtrasContext *_context;
     BOOL _didAttemptRestartAfterAppContextFailure;
     MPUExtrasFeatureContainerViewController *_featureContainer;
@@ -32,7 +33,9 @@
 + (id)currentController;
 
 - (void).cxx_destruct;
+- (void)_adjustExtrasVisibilityForViewSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_applyMainTemplateOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
+- (BOOL)_areExtrasVisible;
 - (void)_attemptRestart;
 - (id)_createDataStorageForIdentifier:(id)arg1;
 - (void)_finalizeMainTemplateOffset:(BOOL)arg1;
@@ -40,6 +43,8 @@
 - (BOOL)_setMainDocumentWithViewController:(id)arg1;
 - (void)_setNavigationController:(id)arg1;
 - (void)_setUpForApplication;
+- (BOOL)_shouldExtrasBeVisibleForViewSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_showExtrasBar:(BOOL)arg1;
 - (void)_stopOldContextIfNeeded;
 - (void)appContext:(id)arg1 didFailWithError:(id)arg2;
 - (void)appContext:(id)arg1 didStartWithOptions:(id)arg2;
@@ -88,5 +93,6 @@
 - (id)vendorIdentifier;
 - (id)vendorStorage;
 - (void)viewDidLoad;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

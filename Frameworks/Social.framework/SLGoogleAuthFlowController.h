@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Social.framework/Social
  */
 
-@interface SLGoogleAuthFlowController : NSObject <ACOOPAuthFlowDelegate, UIWebViewDelegate> {
+@interface SLGoogleAuthFlowController : NSObject <SL_OOPAuthFlowDelegate, UIWebViewDelegate> {
     id /* block */ _completion;
     BOOL _waitingForAuthorizationCode;
 }
@@ -15,11 +15,12 @@
 - (void).cxx_destruct;
 - (void)_exchangeAuthCode:(id)arg1 forTokensAndUsernameWithCompletion:(id /* block */)arg2;
 - (void)_exchangeAuthCode:(id)arg1 forTokensWithCompletion:(id /* block */)arg2;
-- (void)_fetchUsernameForToken:(id)arg1 completion:(id /* block */)arg2;
+- (void)_fetchNamesForToken:(id)arg1 completion:(id /* block */)arg2;
 - (id)authURLForUsername:(id)arg1;
 - (id)requestForAuthURL:(id)arg1;
 - (void)setAuthFlowCompletion:(id /* block */)arg1;
-- (BOOL)shouldHideWebView:(id)arg1 forLoadWithRequest:(id)arg2;
-- (void)webViewDidFinishLoad:(id)arg1;
+- (BOOL)shouldHideWebViewForLoadWithRequest:(id)arg1;
+- (BOOL)wantsInitialRedirect;
+- (void)webViewDidFinishLoadWithPageTitleSupplier:(id /* block */)arg1;
 
 @end

@@ -9,6 +9,7 @@
 - (void)configureStackView:(id)arg1;
 - (id)gridViewControllerSpec;
 - (float)stackWidth;
-- (int)thumbnailImageFormat;
+- (int)thumbnailContentMode;
+- (struct CGSize { float x1; float x2; })thumbnailSize;
 
 @end

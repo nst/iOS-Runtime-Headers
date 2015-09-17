@@ -29,7 +29,7 @@
 @property (nonatomic, readonly) NSArray *homeCountryList;
 @property (nonatomic, readonly) NSString *iccid;
 @property (nonatomic, readonly) NSString *planDescription;
-@property (nonatomic, readonly) int planStatus;
+@property (nonatomic) int planStatus;
 @property (nonatomic, readonly) int planType;
 @property (nonatomic) int subscriptionResult;
 @property (nonatomic, readonly) double timestamp;
@@ -55,6 +55,7 @@
 - (id)planDescription;
 - (int)planStatus;
 - (int)planType;
+- (void)setPlanStatus:(int)arg1;
 - (void)setSubscriptionResult:(int)arg1;
 - (int)subscriptionResult;
 - (double)timestamp;

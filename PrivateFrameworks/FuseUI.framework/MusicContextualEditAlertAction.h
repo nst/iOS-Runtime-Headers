@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualEditAlertAction : UIAlertAction
+@interface MusicContextualEditAlertAction : MusicContextualAlertAction
 
 + (id)contextualEditActionWithItemIdentifierCollection:(id)arg1;
 

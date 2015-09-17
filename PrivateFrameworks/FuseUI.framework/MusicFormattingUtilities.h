@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicFormattingUtilities : NSObject
+@interface MusicFormattingUtilities : MPUFormattingUtilities
 
-+ (id)formattedStringForDuration:(double)arg1;
 + (id)formattedStringWithAlbumsCount:(unsigned int)arg1 songsCount:(unsigned int)arg2;
 + (id)formattedStringWithSongsCount:(unsigned int)arg1;
 

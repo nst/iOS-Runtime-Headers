@@ -2,15 +2,31 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@interface NoteBodyObject : NSManagedObject
+@interface NoteBodyObject : NSManagedObject <ICSearchIndexable>
 
 @property (nonatomic, retain) NSString *content;
 @property (nonatomic, readonly) NSString *contentAsPlainText;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSString *externalContentRef;
 @property (nonatomic, retain) NSData *externalRepresentation;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NoteObject *owner;
+@property (readonly) Class superclass;
 
 - (id)contentAsPlainText;
 - (id)contentAsPlainTextPreservingNewlines;
+- (void)deleteFromNoteContextUsingIndexerContext:(id)arg1;
+- (id)identifier;
+- (BOOL)isHiddenFromSearch;
+- (id)modificationDate;
+- (id)objectIdentifier;
+- (id)searchIndexStringsOutHasAdditionalStrings:(BOOL*)arg1;
+- (id)searchIndexableTitleUsingContentTextIfNecessary:(id)arg1;
+- (BOOL)searchResultCanBeDeletedFromNoteContext;
+- (unsigned int)searchResultsSection;
+- (BOOL)shouldUpdateIndexForChangedValues:(id)arg1;
+- (id)targetSearchIndexable;
+- (int)visibilityTestingType;
 
 @end

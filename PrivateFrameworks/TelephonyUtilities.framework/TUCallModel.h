@@ -31,6 +31,8 @@
 + (id)sharedInstance;
 
 - (int)ambiguityState;
+- (id)audioCategoryForCall:(id)arg1;
+- (id)audioModeForCall:(id)arg1;
 - (id)description;
 - (BOOL)isAddCallAllowed;
 - (BOOL)isAmbiguous;
@@ -42,5 +44,6 @@
 - (BOOL)isSendToVoicemailAllowed;
 - (BOOL)isSwappable;
 - (BOOL)isTakingCallsPrivateAllowed;
+- (BOOL)shouldPlayDTMFToneForCall:(id)arg1;
 
 @end

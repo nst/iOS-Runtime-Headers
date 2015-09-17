@@ -49,6 +49,7 @@
 - (id)mediaObjects;
 - (void)pause;
 - (void)play;
+- (void)playAfterDelay:(double)arg1;
 - (void)playListenEndSound:(id /* block */)arg1;
 - (void)playListenSound:(id /* block */)arg1;
 - (void)setAudioPlayer:(id)arg1;

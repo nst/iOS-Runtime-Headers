@@ -3,15 +3,20 @@
  */
 
 @interface GEORequester : PBRequester {
+    BOOL _canceled;
     NSString *_debugRequestName;
     BOOL _disableReplay;
+    BOOL _finished;
+    int _symptomsAlternateAdviceToken;
     NSThread *_thread;
+    NSString *_throttleKey;
     BOOL _useBackgroundConnection;
     BOOL _usePersistentConnection;
 }
 
 @property (nonatomic, retain) NSString *debugRequestName;
 @property BOOL disableReplay;
+@property (nonatomic, copy) NSString *throttleKey;
 
 + (id)_logRequestResponseDirectory;
 + (void)enablePersistentConnection;
@@ -23,11 +28,15 @@
 
 - (void)_applicationDidStopAllRequests:(id)arg1;
 - (void)_applicationWantsToReplayRequests:(id)arg1;
+- (void)_cleanup;
+- (void)_considerRetryingDueToAlternateAdvice;
 - (void)_handleResumeOnThread;
 - (void)_handleSuspendOnThread;
 - (void)_logErrorIfNecessary:(id)arg1;
 - (void)_logRequestsIfNecessary:(id)arg1;
 - (void)_logResponsesIfNecessary:(id)arg1;
+- (void)_tryRerequest;
+- (void)cancel;
 - (void)dealloc;
 - (id)debugRequestName;
 - (BOOL)disableReplay;
@@ -41,7 +50,10 @@
 - (id)requestPreamble;
 - (void)setDebugRequestName:(id)arg1;
 - (void)setDisableReplay:(BOOL)arg1;
+- (void)setNeedsCancel;
+- (void)setThrottleKey:(id)arg1;
 - (void)start;
 - (void)startWithConnectionProperties:(id)arg1;
+- (id)throttleKey;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface MBProperties : NSObject {
-    NSMutableDictionary *_plist;
+    id _plist;
     BOOL _protect;
     BOOL _protected;
 }
@@ -45,6 +45,7 @@
 - (id)buildVersion;
 - (id)containerWithIdentifier:(id)arg1;
 - (id)containers;
+- (id)dataWithError:(id*)arg1;
 - (id)date;
 - (void)dealloc;
 - (id)description;

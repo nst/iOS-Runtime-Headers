@@ -28,7 +28,6 @@
 - (id)inputTime;
 - (id)inputWidth;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAngle:(id)arg1;
 - (void)setInputBarOffset:(id)arg1;
 - (void)setInputImage:(id)arg1;

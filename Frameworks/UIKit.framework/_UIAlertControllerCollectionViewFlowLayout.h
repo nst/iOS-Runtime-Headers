@@ -4,43 +4,32 @@
 
 @interface _UIAlertControllerCollectionViewFlowLayout : UICollectionViewFlowLayout {
     NSArray *_actionDelimiterIndices;
-    float _alignedDescriptiveLabelTextWidth;
-    BOOL _hideSeparators;
     BOOL _shouldRoundFirstCell;
     UIAlertControllerVisualStyle *_visualStyle;
 }
 
 @property (nonatomic, retain) NSArray *actionDelimiterIndices;
-@property float alignedDescriptiveLabelTextWidth;
-@property BOOL hideSeparators;
 @property BOOL shouldRoundFirstCell;
 @property (nonatomic) UIAlertControllerVisualStyle *visualStyle;
 
-// Image: /System/Library/Frameworks/UIKit.framework/UIKit
-
 + (Class)layoutAttributesClass;
 
+- (void).cxx_destruct;
 - (BOOL)_collectionViewIsLayingOutHorizontallyWithCellHeight:(float)arg1;
 - (float)_decorationDimensionAtIndexPath:(id)arg1;
 - (float)_delimiterShiftForCellAtIndexPath:(id)arg1;
 - (float)_delimiterShiftForDecorationViewAtIndexPath:(id)arg1;
+- (id)_delimiterShiftedLayoutAttributesForItemAtIndexPath:(id)arg1;
 - (BOOL)_indexPathIsSectionDelimiter:(id)arg1;
 - (id)_topDecorationViewLayoutAttributesAtIndexPath:(id)arg1;
 - (id)actionDelimiterIndices;
-- (float)alignedDescriptiveLabelTextWidth;
-- (BOOL)hideSeparators;
 - (id)init;
 - (id)layoutAttributesForDecorationViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (id)layoutAttributesForElementsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setActionDelimiterIndices:(id)arg1;
-- (void)setAlignedDescriptiveLabelTextWidth:(float)arg1;
-- (void)setHideSeparators:(BOOL)arg1;
 - (void)setShouldRoundFirstCell:(BOOL)arg1;
+- (void)setVisualStyle:(id)arg1;
 - (BOOL)shouldRoundFirstCell;
 - (id)visualStyle;
-
-// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
-
-- (void)setVisualStyle:(id)arg1;
 
 @end

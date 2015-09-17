@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ handler;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) NSMutableArray *matches;
+@property (nonatomic, retain) NSMutableArray *matches;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
@@ -20,5 +20,6 @@
 - (id)matches;
 - (void)searchOperation:(id)arg1 didFindMatches:(id)arg2 moreComing:(BOOL)arg3;
 - (void)setHandler:(id /* block */)arg1;
+- (void)setMatches:(id)arg1;
 
 @end

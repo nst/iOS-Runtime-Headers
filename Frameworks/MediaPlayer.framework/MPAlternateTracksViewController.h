@@ -6,7 +6,7 @@
     UIView *_backgroundView;
     UITextLabel *_loadingLabel;
     UINavigationBar *_navigationBar;
-    UIProgressIndicator *_progressIndicator;
+    UIActivityIndicatorView *_progressIndicator;
     UITableView *_table;
 }
 

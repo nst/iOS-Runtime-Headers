@@ -12,6 +12,7 @@
     unsigned int _hasAttachments;
     unsigned int _isVIP;
     unsigned int _mailboxID;
+    long long _messageID;
     unsigned int _read;
     unsigned int _uid;
     unsigned int _uidIsLibraryID;
@@ -26,6 +27,7 @@
 @property (nonatomic) BOOL isVIP;
 @property (getter=isKnownToHaveAttachments, nonatomic) BOOL knownToHaveAttachments;
 @property (nonatomic) unsigned int mailboxID;
+@property (nonatomic) long long messageID;
 @property (nonatomic) BOOL read;
 @property (nonatomic) unsigned int uid;
 @property (nonatomic) BOOL uidIsLibraryID;
@@ -42,11 +44,12 @@
 - (long long)generationNumber;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithUid:(unsigned int)arg1 mailboxID:(unsigned int)arg2 dateReceivedInterval:(unsigned int)arg3 dateSentInterval:(unsigned int)arg4 conversationHash:(long long)arg5 read:(BOOL)arg6 knownToHaveAttachments:(BOOL)arg7 flagged:(BOOL)arg8 isVIP:(BOOL)arg9;
+- (id)initWithUid:(unsigned int)arg1 mailboxID:(unsigned int)arg2 messageID:(long long)arg3 dateReceivedInterval:(unsigned int)arg4 dateSentInterval:(unsigned int)arg5 conversationHash:(long long)arg6 read:(BOOL)arg7 knownToHaveAttachments:(BOOL)arg8 flagged:(BOOL)arg9 isVIP:(BOOL)arg10;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isKnownToHaveAttachments;
 - (BOOL)isVIP;
 - (unsigned int)mailboxID;
+- (long long)messageID;
 - (BOOL)read;
 - (void)setConversationHash:(long long)arg1;
 - (void)setDateReceivedInterval:(unsigned int)arg1;
@@ -56,6 +59,7 @@
 - (void)setIsVIP:(BOOL)arg1;
 - (void)setKnownToHaveAttachments:(BOOL)arg1;
 - (void)setMailboxID:(unsigned int)arg1;
+- (void)setMessageID:(long long)arg1;
 - (void)setRead:(BOOL)arg1;
 - (void)setUid:(unsigned int)arg1;
 - (void)setUidIsLibraryID:(BOOL)arg1;

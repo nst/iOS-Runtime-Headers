@@ -19,8 +19,8 @@
 - (void)_applyStyleToUILabel:(id)arg1;
 - (void)_popBackToCalendarEditor:(BOOL)arg1;
 - (id)_shareeCellForName:(id)arg1 detailText:(id)arg2 additionalDetailText:(id)arg3;
-- (id)_stringForShareeAccessLevel:(int)arg1;
-- (id)_stringForShareeStatus:(int)arg1;
+- (id)_stringForShareeAccessLevel:(unsigned int)arg1;
+- (id)_stringForShareeStatus:(unsigned int)arg1;
 - (void)calendarEditor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (id)cellForSubitemAtIndex:(unsigned int)arg1;
 - (BOOL)configureWithCalendar:(id)arg1;

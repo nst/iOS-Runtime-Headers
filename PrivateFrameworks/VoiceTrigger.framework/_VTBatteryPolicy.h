@@ -8,17 +8,14 @@
     unsigned char _batteryState;
     BOOL _locked;
     int _notificationToken;
-    void *_powerAssertion;
     int _powerSourceNotificationToken;
 }
 
-- (void)_makePowerAssertion;
 - (void)_registerForBatteryStatusChanges;
 - (void)_registerForSettingsChange;
 - (void)_unregisterForBatteryStatusChanges;
 - (void)_unregisterForSettingsChange;
 - (void)dealloc;
-- (void)dependencyUpdated:(id)arg1;
 - (id)initWithCallback:(id /* block */)arg1 queue:(id)arg2;
 - (BOOL)isEnabled;
 - (void)reload;

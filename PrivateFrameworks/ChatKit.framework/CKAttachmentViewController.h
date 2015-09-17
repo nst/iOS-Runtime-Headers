@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKAttachmentViewController : CKViewController <CKAttachmentCellDelegate, CKFeedCollectionViewLayoutDatasource, CKFeedCollectionViewLayoutDelegate, CKTranscriptRecipientsControllerDelegate, QLPreviewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
+@interface CKAttachmentViewController : CKViewController <CKAttachmentCellDelegate, CKFeedCollectionViewLayoutDatasource, CKFeedCollectionViewLayoutDelegate, CKTranscriptRecipientsControllerDelegate, QLPreviewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIGestureRecognizerDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
     CKAttachmentCollectionView *_collectionView;
     CKConversation *_conversation;
     <CKAttachmentViewControllerDelegate> *_delegate;
@@ -11,7 +11,7 @@
     UICollectionViewFlowLayout *_flowLayout;
     BOOL _initialLoad;
     NSMutableArray *_mediaObjects;
-    CKQLPreviewController *_qlPreviewController;
+    CKQLDetailsPreviewController *_qlPreviewController;
     CKTranscriptRecipientsController *_recipientsController;
     UIBarButtonItem *_saveButton;
     BOOL _selectingAttachments;
@@ -29,7 +29,7 @@
 @property (readonly) unsigned int hash;
 @property (getter=isInitialLoad, nonatomic) BOOL initialLoad;
 @property (nonatomic, retain) NSMutableArray *mediaObjects;
-@property (nonatomic, retain) CKQLPreviewController *qlPreviewController;
+@property (nonatomic, retain) CKQLDetailsPreviewController *qlPreviewController;
 @property (nonatomic, retain) CKTranscriptRecipientsController *recipientsController;
 @property (nonatomic, retain) UIBarButtonItem *saveButton;
 @property (getter=isSelectingAttachments, nonatomic) BOOL selectingAttachments;
@@ -41,17 +41,15 @@
 - (void)_deleteAttachments:(id)arg1;
 - (void)_deleteSelectedAttachments:(id)arg1;
 - (void)_faultInAttachments;
-- (void)_hideCurrentPreviewItemForPreviewController:(id)arg1;
 - (id)_iconForFileURL:(id)arg1 UTIType:(id)arg2;
 - (void)_loadAttachments;
 - (id)_mediaObjectsForAttachments:(id)arg1;
 - (void)_prewarmNextChunk;
 - (void)_saveAttachments:(id)arg1;
 - (void)_saveSelectedAttachments:(id)arg1;
-- (void)_showAllPreviewItemsForPreviewController:(id)arg1;
 - (void)_updateMediaObjects:(id)arg1;
 - (void)_updateToolbar;
-- (struct CGImage { }*)cgImageForUIImage:(id)arg1;
+- (void)attachmentCellTapped:(id)arg1;
 - (id)collectionView;
 - (BOOL)collectionView:(id)arg1 canPerformAction:(SEL)arg2 forItemAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (id)collectionView:(id)arg1 cellForItemAtIndexPath:(id)arg2;
@@ -82,12 +80,17 @@
 - (void)collectionView:(id)arg1 performAction:(SEL)arg2 forItemAtIndexPath:(id)arg3 withSender:(id)arg4;
 - (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (BOOL)collectionView:(id)arg1 shouldShowMenuForItemAtIndexPath:(id)arg2;
+- (id)committedViewControllerForPreviewViewController:(id)arg1;
 - (id)conversation;
 - (void)dealloc;
 - (id)delegate;
 - (id)deleteButton;
+- (void)didDismissPreviewViewController:(id)arg1 committing:(BOOL)arg2;
+- (void)didReceiveMemoryWarning;
 - (id)feedLayout;
 - (id)flowLayout;
+- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithConversation:(id)arg1;
 - (BOOL)isInitialLoad;
 - (BOOL)isSelectingAttachments;
@@ -97,11 +100,12 @@
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (unsigned int)numberOfSectionsInFeedLayout:(id)arg1;
 - (void)performAction:(SEL)arg1 forAttachmentCell:(id)arg2;
-- (void)previewController:(id)arg1 didTransitionToState:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewController:(id)arg1 frameForPreviewItem:(id)arg2 inSourceView:(id*)arg3;
 - (BOOL)previewController:(id)arg1 shouldOpenURL:(id)arg2 forPreviewItem:(id)arg3;
-- (id)previewController:(id)arg1 transitionImageForPreviewItem:(id)arg2 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
-- (void)previewController:(id)arg1 willTransitionToState:(int)arg2;
+- (id)previewController:(id)arg1 transitionViewForPreviewItem:(id)arg2 uncroppedSourceFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 realSize:(struct CGSize { float x1; float x2; }*)arg4;
+- (void)previewControllerDidDismiss:(id)arg1;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)qlPreviewController;
 - (id)recipientsController;
 - (id)saveButton;
@@ -129,6 +133,8 @@
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (id)visibleMediaObjects;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

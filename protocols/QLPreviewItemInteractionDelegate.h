@@ -7,6 +7,7 @@
 
 - (UIAlertView *)clientProcessAlertViewForPreviewItem:(id <QLPreviewItem>)arg1;
 - (void)overlayWasInteractedWithOnPreviewItem:(id <QLPreviewItem>)arg1;
+- (void)previewItem:(id <QLPreviewItem>)arg1 atIndex:(int)arg2 didFailPresentingWithError:(NSError *)arg3;
 - (void)previewItem:(id <QLPreviewItem>)arg1 receivedTapOnURL:(NSURL *)arg2;
 - (void)previewItem:(id <QLPreviewItem>)arg1 requiresDisplayBundle:(NSString *)arg2 withHints:(NSDictionary *)arg3;
 - (void)previewItem:(id <QLPreviewItem>)arg1 setAVState:(QLPreviewItemAVState *)arg2;

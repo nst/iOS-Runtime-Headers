@@ -25,6 +25,7 @@
 
 - (id)__;
 - (id)_activity;
+- (id /* block */)_copyCompletionBlock;
 - (int)_effQoS;
 - (id)_implicitObservationInfo;
 - (void)addDependency:(id)arg1;

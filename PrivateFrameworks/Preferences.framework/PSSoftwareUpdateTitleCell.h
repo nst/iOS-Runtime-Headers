@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSSoftwareUpdateTitleCell : PSTableCell <UIWebViewDelegate> {
+@interface PSSoftwareUpdateTitleCell : PSTableCell {
     PSSoftwareUpdateAnimatedIcon *_animatedGearView;
     BOOL _animatingGearView;
     UIProgressView *_progressBar;
@@ -11,20 +11,16 @@
     UILabel *_updateStatusLabel;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) UIImage *gearBackgroundImage;
-@property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIProgressView *progressBar;
 @property (nonatomic) int progressDisplayStyle;
 @property (nonatomic, retain) PSWebContainerView *releaseNotesSummaryView;
-@property (readonly) Class superclass;
 @property (nonatomic, retain) UILabel *updateStatusLabel;
 
 + (int)cellStyle;
 
+- (void).cxx_destruct;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
-- (void)dealloc;
 - (void)didMoveToSuperview;
 - (id)gearBackgroundImage;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;
@@ -44,6 +40,5 @@
 - (void)setUpdateStatusLabel:(id)arg1;
 - (void)sizeToFitWithTable:(id)arg1;
 - (id)updateStatusLabel;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 
 @end

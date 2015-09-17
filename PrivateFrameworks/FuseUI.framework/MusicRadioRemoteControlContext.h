@@ -4,21 +4,18 @@
 
 @interface MusicRadioRemoteControlContext : NSObject {
     MPAVItem *_currentlyPlayingItem;
-    RadioTrack *_currentlyPlayingTrack;
     MusicAVPlayer *_player;
     RadioStation *_radioStation;
     long long _trackID;
 }
 
 @property (nonatomic, readonly) MPAVItem *currentlyPlayingItem;
-@property (nonatomic, readonly) RadioTrack *currentlyPlayingTrack;
 @property (nonatomic, readonly) MusicAVPlayer *player;
 @property (nonatomic, readonly) RadioStation *radioStation;
 @property (nonatomic, readonly) long long trackID;
 
 - (void).cxx_destruct;
 - (id)currentlyPlayingItem;
-- (id)currentlyPlayingTrack;
 - (id)initWithPlayer:(id)arg1 mediaRemoteOptions:(id)arg2;
 - (id)player;
 - (id)radioStation;

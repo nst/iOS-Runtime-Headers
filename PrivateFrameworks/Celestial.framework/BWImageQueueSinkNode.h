@@ -3,6 +3,7 @@
  */
 
 @interface BWImageQueueSinkNode : BWSinkNode {
+    NSObject<OS_os_transaction> *_holdingBuffersForClientAssertion;
     struct _CAImageQueue { } *_imageQueue;
     unsigned int _imageQueueCapacity;
     unsigned int _imageQueueFreeSlots;
@@ -11,6 +12,7 @@
     unsigned int _imageQueueWidth;
     struct OpaqueFigPreviewSynchronizer { } *_previewSynchronizer;
     <BWImageQueueSinkNodePreviewTapDelegate> *_previewTapDelegate;
+    BOOL _resetPreviewSynchronizerOnNextFrame;
     BOOL _syncedWithDisplay;
 }
 
@@ -24,10 +26,12 @@
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
+- (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (BOOL)hasNonLiveConfigurationChanges;
 - (struct _CAImageQueue { }*)imageQueue;
 - (unsigned int)imageQueueSlot;
 - (id)initWithHFRSupport:(unsigned char)arg1;
+- (void)inputConnectionWillBeEnabled;
 - (void)makeCurrentConfigurationLive;
 - (id)nodeSubType;
 - (void)prepareForCurrentConfigurationToBecomeLive;

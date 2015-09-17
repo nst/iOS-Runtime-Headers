@@ -129,6 +129,7 @@
 - (id)parentLayer;
 - (void)releaseSingleTexture;
 - (void)renderIntoContext:(struct CGContext { }*)arg1;
+- (void)renderIntoContext:(struct CGContext { }*)arg1 shouldApplyAlpha:(BOOL)arg2;
 - (void)renderLayerContentsIfNeeded;
 - (void)resetAnchorPoint;
 - (void)resetToSourceImage;

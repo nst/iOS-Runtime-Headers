@@ -143,7 +143,7 @@
 - (BOOL)isPaused;
 - (void)loadView;
 - (float)pointsPerSecondWithVisibleTimeRange:(struct { double x1; double x2; })arg1;
-- (id)rasterizeVisibleTimeRangeWithImageSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)rasterizeTimeRange:(struct { double x1; double x2; })arg1 imageSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)rendererDelegate;
 - (void)setActiveDisplayLinkRequired:(BOOL)arg1;
 - (void)setDataPointWidth:(float)arg1;

@@ -4,26 +4,34 @@
 
 @interface GEOAutomobileOptions : PBCodable <NSCopying> {
     struct { 
+        unsigned int trafficType : 1; 
         unsigned int includeHistoricTravelTime : 1; 
     } _has;
     BOOL _includeHistoricTravelTime;
+    int _trafficType;
 }
 
 @property (nonatomic) BOOL hasIncludeHistoricTravelTime;
+@property (nonatomic) BOOL hasTrafficType;
 @property (nonatomic) BOOL includeHistoricTravelTime;
+@property (nonatomic) int trafficType;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasIncludeHistoricTravelTime;
+- (BOOL)hasTrafficType;
 - (unsigned int)hash;
 - (BOOL)includeHistoricTravelTime;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setHasTrafficType:(BOOL)arg1;
 - (void)setIncludeHistoricTravelTime:(BOOL)arg1;
+- (void)setTrafficType:(int)arg1;
+- (int)trafficType;
 - (void)writeTo:(id)arg1;
 
 @end

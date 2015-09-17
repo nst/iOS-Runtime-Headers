@@ -2,22 +2,16 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGMailQuoteDissector : NSObject <SGPipelineDissector> {
+@interface SGMailQuoteDissector : SGPipelineDissector {
     BOOL _paranoid;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
-
 + (void)initialize;
 
-- (id)_tofuRegions:(id)arg1 utf16:(id)arg2;
-- (id)_xWrote:(id)arg1 utf16:(id)arg2 htmlQuotedRegions:(id)arg3;
-- (void)dissect:(id)arg1;
+- (id)_tofuRegions:(id)arg1 utf8:(const char *)arg2 utf16:(id)arg3 isAOSPMail:(BOOL)arg4;
+- (id)_xWrote:(id)arg1 utf8:(const char *)arg2;
+- (void)dissectInternal:(id)arg1;
 - (id)initParanoid;
-- (id)quotedRegionsFrom:(id)arg1;
-- (id)quotedRegionsFrom:(id)arg1 htmlQuotedRegions:(id)arg2;
+- (id)quotedRegionsFrom:(id)arg1 isAOSPMail:(BOOL)arg2;
 
 @end

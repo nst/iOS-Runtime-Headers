@@ -3,6 +3,7 @@
  */
 
 @interface NEVPNProtocol : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
+    NEDNSSettings *_DNSSettings;
     BOOL _disconnectOnIdle;
     int _disconnectOnIdleTimeout;
     BOOL _disconnectOnLogout;
@@ -16,6 +17,8 @@
     BOOL _identityDataImported;
     NSData *_identityDataInternal;
     NSString *_identityDataPassword;
+    NEKeychainItem *_identityDataPasswordKeychainItem;
+    NSString *_keychainAccessGroup;
     int _keychainDomain;
     NSString *_passwordEncryption;
     NEKeychainItem *_passwordKeychainItem;
@@ -26,6 +29,7 @@
     NSString *_username;
 }
 
+@property (copy) NEDNSSettings *DNSSettings;
 @property BOOL disconnectOnIdle;
 @property int disconnectOnIdleTimeout;
 @property BOOL disconnectOnLogout;
@@ -40,8 +44,10 @@
 @property BOOL identityDataImported;
 @property (copy) NSData *identityDataInternal;
 @property (copy) NSString *identityDataPassword;
+@property (copy) NEKeychainItem *identityDataPasswordKeychainItem;
 @property (copy) NSData *identityReference;
 @property (copy) NSData *identityReferenceInternal;
+@property (retain) NSString *keychainAccessGroup;
 @property int keychainDomain;
 @property (copy) NSString *passwordEncryption;
 @property (copy) NEKeychainItem *passwordKeychainItem;
@@ -54,6 +60,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)DNSSettings;
 - (void)addDisconnectOptions:(id)arg1;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
@@ -61,7 +68,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __SCNetworkInterface { }*)createInterface;
 - (id)description;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (BOOL)disconnectOnIdle;
 - (int)disconnectOnIdleTimeout;
 - (BOOL)disconnectOnLogout;
@@ -77,6 +84,7 @@
 - (BOOL)identityDataImported;
 - (id)identityDataInternal;
 - (id)identityDataPassword;
+- (id)identityDataPasswordKeychainItem;
 - (id)identityReference;
 - (id)identityReferenceInternal;
 - (void)initDisconnectOptions:(id)arg1;
@@ -84,6 +92,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProtocolIdentifier:(id)arg1;
 - (id)initWithType:(int)arg1;
+- (id)keychainAccessGroup;
 - (int)keychainDomain;
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences { }*)arg1;
 - (id)passwordEncryption;
@@ -92,6 +101,7 @@
 - (id)proxySettings;
 - (void)removeKeychainItemsInDomain:(int)arg1;
 - (id)serverAddress;
+- (void)setDNSSettings:(id)arg1;
 - (void)setDisconnectOnIdle:(BOOL)arg1;
 - (void)setDisconnectOnIdleTimeout:(int)arg1;
 - (void)setDisconnectOnLogout:(BOOL)arg1;
@@ -106,8 +116,10 @@
 - (void)setIdentityDataImported:(BOOL)arg1;
 - (void)setIdentityDataInternal:(id)arg1;
 - (void)setIdentityDataPassword:(id)arg1;
+- (void)setIdentityDataPasswordKeychainItem:(id)arg1;
 - (void)setIdentityReference:(id)arg1;
 - (void)setIdentityReferenceInternal:(id)arg1;
+- (void)setKeychainAccessGroup:(id)arg1;
 - (void)setKeychainDomain:(int)arg1;
 - (void)setPasswordEncryption:(id)arg1;
 - (void)setPasswordKeychainItem:(id)arg1;

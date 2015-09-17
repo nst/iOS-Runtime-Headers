@@ -5,6 +5,6 @@
 
 @required
 
-- (<CPLEngineTransportDownloadBatchTask> *)task:(void *)arg1 wantsToDownloadBatchesFromSyncAnchor:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 11: CPLPullFromTransportTask *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, CPLChangeBatch *, NSData *, BOOL, NSError *, void*
+- (<CPLEngineTransportDownloadBatchTask> *)task:(void *)arg1 wantsToDownloadBatchesFromSyncAnchor:(void *)arg2 progressHandler:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 17: CPLPullFromTransportTask *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, CPLChangeBatch *, NSData *, void*, id /* block */, void*, void, id /* block */, NSData *, BOOL, NSError *, void*
 
 @end

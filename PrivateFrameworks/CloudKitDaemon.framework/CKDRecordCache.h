@@ -2,13 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDRecordCache : CKSQLite {
+@interface CKDRecordCache : NSObject {
     CKDClientContext *_context;
+    CKSQLite *_db;
+    CKSQLitePool *_dbPool;
     NSObject<OS_dispatch_queue> *_queue;
     int _scope;
 }
 
 @property (nonatomic, retain) CKDClientContext *context;
+@property (nonatomic, retain) CKSQLite *db;
+@property (nonatomic, retain) CKSQLitePool *dbPool;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) int scope;
 
@@ -21,16 +25,23 @@
 - (void)clearAllRecords;
 - (void)clearAllRecordsForZoneWithID:(id)arg1;
 - (void)clearAssetAuthTokensForRecordWithID:(id)arg1;
+- (void)close;
 - (id)context;
+- (id)db;
+- (id)dbPool;
 - (void)deleteRecordWithID:(id)arg1;
 - (id)etagForRecordID:(id)arg1 requiredKeys:(id)arg2;
-- (void)expireRecordsWithExpiryDate:(id)arg1;
-- (id)initWithPath:(id)arg1 queue:(id)arg2;
+- (id)initWithDatabase:(id)arg1 dbPool:(id)arg2 context:(id)arg3 scope:(int)arg4;
+- (void)open;
 - (id)queue;
 - (id)recordWithID:(id)arg1 requiredKeys:(id)arg2;
 - (id)recordsWithIDs:(id)arg1 requiredKeys:(id)arg2;
+- (void)releaseDatabase;
+- (void)scheduleRecordExpirationWithExpiryDate:(id)arg1 completionBlock:(id /* block */)arg2;
 - (int)scope;
 - (void)setContext:(id)arg1;
+- (void)setDb:(id)arg1;
+- (void)setDbPool:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setScope:(int)arg1;
 

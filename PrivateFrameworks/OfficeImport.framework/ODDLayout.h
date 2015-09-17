@@ -7,6 +7,7 @@
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)rootNode;
 

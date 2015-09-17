@@ -9,7 +9,6 @@
     NSMutableDictionary *_completionHandlersByItemID;
     CKDClientContext *_context;
     NSString *_deviceIdentifier;
-    CKDDatabaseOperation *_fetchOp;
     BOOL _isFinished;
     NSDate *_lastRequestDate;
     NSOperationQueue *_operationQueue;
@@ -27,7 +26,6 @@
 @property (nonatomic, retain) NSMutableDictionary *completionHandlersByItemID;
 @property (nonatomic) CKDClientContext *context;
 @property (nonatomic, retain) NSString *deviceIdentifier;
-@property (nonatomic, retain) CKDDatabaseOperation *fetchOp;
 @property (nonatomic) BOOL isFinished;
 @property (nonatomic, retain) NSDate *lastRequestDate;
 @property (nonatomic) NSOperationQueue *operationQueue;
@@ -52,9 +50,9 @@
 - (id)context;
 - (id)description;
 - (id)deviceIdentifier;
-- (id)fetchOp;
-- (id)fetchOperation;
+- (id)fetchOperationForItemIDs:(id)arg1;
 - (void)finishFetchOperationWithError:(id)arg1;
+- (id)init;
 - (id)initWithOperation:(id)arg1 context:(id)arg2 operationQueue:(id)arg3;
 - (BOOL)isFinished;
 - (id)lastRequestDate;
@@ -72,7 +70,6 @@
 - (void)setCompletionHandlersByItemID:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
-- (void)setFetchOp:(id)arg1;
 - (void)setIsFinished:(BOOL)arg1;
 - (void)setLastRequestDate:(id)arg1;
 - (void)setOperationQueue:(id)arg1;

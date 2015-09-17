@@ -55,9 +55,9 @@
 @property (readonly, retain) NSOperationQueue *presentedItemOperationQueue;
 @property (readonly, copy) NSURL *presentedItemURL;
 @property (nonatomic) BOOL preserveDocumentAfterImport;
-@property (nonatomic, readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
 @property (readonly, copy) NSURL *primaryPresentedItemURL;
 @property (nonatomic, retain) TSUProgressContext *progressContext;
+@property (nonatomic, readonly) TSAUbiquitousRefreshQueue *refreshQueue;
 @property (nonatomic, readonly) NSString *sourcePath;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *temporaryURL;

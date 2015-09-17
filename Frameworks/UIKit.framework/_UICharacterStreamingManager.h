@@ -25,11 +25,11 @@
 @property (nonatomic) double streamingCharacterInsertionRate;
 @property (nonatomic, copy) NSString *targetHypothesis;
 
+- (void).cxx_destruct;
 - (void)_displayLinkFired:(id)arg1;
 - (void)_startStreamingAnimations;
 - (void)_stopStreamingAnimation;
 - (void)commitFinalResults;
-- (void)dealloc;
 - (BOOL)discardNextHypothesis;
 - (id)initWithTextView:(id)arg1;
 - (id)lastHypothesis;

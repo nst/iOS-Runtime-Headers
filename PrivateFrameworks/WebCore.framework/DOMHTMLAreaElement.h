@@ -39,6 +39,8 @@
 - (id)ping;
 - (id)port;
 - (id)protocol;
+- (id)rel;
+- (id)relList;
 - (id)search;
 - (void)setAccessKey:(id)arg1;
 - (void)setAlt:(id)arg1;
@@ -46,6 +48,7 @@
 - (void)setHref:(id)arg1;
 - (void)setNoHref:(BOOL)arg1;
 - (void)setPing:(id)arg1;
+- (void)setRel:(id)arg1;
 - (void)setShape:(id)arg1;
 - (void)setTarget:(id)arg1;
 - (id)shape;

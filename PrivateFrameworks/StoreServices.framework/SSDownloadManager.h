@@ -11,6 +11,7 @@
     NSArray *_downloads;
     BOOL _downloadsChanged;
     BOOL _isUsingNetwork;
+    int _launchNotificationToken;
     SSXPCConnection *_observerConnection;
     NSObject<OS_dispatch_queue> *_observerQueue;
     struct __CFArray { } *_observers;
@@ -40,6 +41,7 @@
 + (id)softwareDownloadManager;
 
 - (id)_XPCConnection;
+- (void)_connectAfterDaemonLaunch;
 - (void)_connectAsObserver;
 - (id)_copyDownloadKindsUsingNetwork;
 - (id)_copyDownloads;
@@ -85,6 +87,7 @@
 - (void)pauseDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)reloadFromServer;
 - (void)removeObserver:(id)arg1;
+- (void)restartDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)resumeDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setDownloads:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setDownloads:(id)arg1 forKinds:(id)arg2 completionBlock:(id /* block */)arg3;

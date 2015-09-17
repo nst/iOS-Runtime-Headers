@@ -52,6 +52,8 @@
 @property (nonatomic) BOOL usesExternalSync;
 @property (nonatomic) BOOL wantsFullscreenPresentation;
 
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
+
 - (void)_updateSupplementaryAction:(id)arg1;
 - (void)addAlertSuppressionAppID:(id)arg1;
 - (void)addAttachmentOfType:(int)arg1;
@@ -75,5 +77,9 @@
 - (BOOL)showsUnreadIndicator;
 - (BOOL)tentative;
 - (void)withdraw;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)description;
 
 @end

@@ -26,7 +26,7 @@
 
 @property (nonatomic, retain) ACAccount *account;
 @property (nonatomic, copy) id /* block */ configurationCompletion;
-@property (nonatomic) PSSpecifier *dataclassGroupSpecifier;
+@property (nonatomic, retain) PSSpecifier *dataclassGroupSpecifier;
 @property (nonatomic, readonly) PSSpecifier *deleteButtonSpecifier;
 @property (getter=isFirstTimeSetup, nonatomic) BOOL firstTimeSetup;
 @property (nonatomic) BOOL isMailSetupForced;

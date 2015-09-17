@@ -10,5 +10,6 @@
 - (id)initWithShare:(id)arg1 zone:(id)arg2 appName:(id)arg3;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

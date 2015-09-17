@@ -23,6 +23,8 @@
 - (void)finalize;
 - (id)initWithSQLCore:(id)arg1;
 - (BOOL)isFetchInProgress;
+- (BOOL)prepareAndExecuteStatement:(id)arg1;
+- (int)rowsChangedByLastStatement;
 - (BOOL)selectCountWithFetchRequest:(id)arg1;
 - (void)selectRowsWithCachedStatement:(id)arg1;
 - (void)selectRowsWithFetchRequest:(id)arg1;

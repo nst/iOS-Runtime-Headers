@@ -44,6 +44,7 @@
 @property (nonatomic) <UIMovieScrubberTrackViewDataSource> *dataSource;
 @property (nonatomic) <UIMovieScrubberTrackViewDelegate> *delegate;
 
+- (void).cxx_destruct;
 - (id)_createImageViewForTimestamp:(id)arg1 isSummaryThumbnail:(BOOL)arg2;
 - (void)_reallyReloadData;
 - (void)_setOverlayViewIsZoomed:(BOOL)arg1 minValue:(float)arg2 maxValue:(float)arg3;
@@ -52,7 +53,6 @@
 - (void)animateFillFramesAway;
 - (void)clear;
 - (id)dataSource;
-- (void)dealloc;
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;

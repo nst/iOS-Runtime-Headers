@@ -24,6 +24,7 @@
         unsigned int _drawsDebugBaselines : 1; 
         unsigned int _cachesLayout : 1; 
         unsigned int _usesSimpleTextEffects : 1; 
+        unsigned int _activeRenderers : 4; 
     } _sdcFlags;
     struct CGRect { 
         struct CGPoint { 
@@ -37,8 +38,10 @@
     } _totalBounds;
 }
 
+@property (nonatomic) unsigned int activeRenderers;
 @property (nonatomic) float actualScaleFactor;
 @property (nonatomic) float actualTrackingAdjustment;
+@property (nonatomic, readonly) float actualTrackingAdjustment;
 @property (nonatomic) float baselineOffset;
 @property (nonatomic) BOOL cachesLayout;
 @property (nonatomic) BOOL drawsDebugBaselines;
@@ -58,6 +61,7 @@
 @property (nonatomic) BOOL wantsScaledLineHeight;
 @property (nonatomic) BOOL wrapsForTruncationMode;
 
+- (unsigned int)activeRenderers;
 - (float)actualScaleFactor;
 - (float)actualTrackingAdjustment;
 - (float)baselineOffset;
@@ -74,6 +78,7 @@
 - (unsigned int)numberOfLineFragments;
 - (float)scaledBaselineOffset;
 - (float)scaledLineHeight;
+- (void)setActiveRenderers:(unsigned int)arg1;
 - (void)setActualScaleFactor:(float)arg1;
 - (void)setActualTrackingAdjustment:(float)arg1;
 - (void)setBaselineOffset:(float)arg1;

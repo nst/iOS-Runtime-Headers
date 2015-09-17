@@ -2,30 +2,12 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLRenderPipelineReflection : NSObject {
-    struct { 
-        unsigned int fragmentUsesDiscard : 1; 
-        unsigned int fragmentWritesSampleMask : 1; 
-        unsigned int fragmentWritesDepth : 1; 
-        unsigned int vertexRegisterSpill : 1; 
-        unsigned int fragmentRegisterSpill : 1; 
-        unsigned int fragmentReadsFramebufferValues : 1; 
-        unsigned int reserved : 58; 
-    } _flags;
-    NSArray *_fragmentArguments;
-    NSArray *_vertexArguments;
-    NSArray *_vertexBuiltInArguments;
-}
+@interface MTLRenderPipelineReflection : NSObject
 
 @property (readonly) NSArray *fragmentArguments;
 @property (readonly) NSArray *vertexArguments;
 
-- (id).cxx_construct;
-- (void)dealloc;
-- (id)description;
-- (id)fragmentArguments;
-- (id)initWithVertexData:(id)arg1 fragmentData:(id)arg2 serializedVertexDescriptor:(id)arg3 options:(unsigned int)arg4 flags:(struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; unsigned int x5 : 1; unsigned int x6 : 1; unsigned int x7 : 58; })arg5;
-- (id)vertexArguments;
-- (id)vertexBuiltInArguments;
++ (id)alloc;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 @end

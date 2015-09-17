@@ -4,7 +4,7 @@
 
 @interface PBMasterLayoutMap : NSObject {
     NSMutableDictionary *mMasterIdToMasterInfoMap;
-    NSMutableDictionary *mTitleIdToMasterIdInfoMap;
+    NSMutableDictionary *mTitleIdToMasterIdMap;
 }
 
 + (id)masterLayoutMap;

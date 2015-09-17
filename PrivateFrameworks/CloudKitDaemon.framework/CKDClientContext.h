@@ -37,8 +37,8 @@
     CKDFlowControlManager *_flowControlManager;
     CKDPublicIdentityLookupService *_foregroundPublicIdentityLookupService;
     CKDZoneGatekeeper *_foregroundZoneGatekeeper;
+    BOOL _hasAllowAccessDuringBuddyEntitlement;
     BOOL _hasDataContainer;
-    BOOL _hasSystemServiceEntitlement;
     BOOL _isForClouddInternalUse;
     CKDMescalSession *_mescalSession;
     NSMutableArray *_oldApplicationCaches;
@@ -50,7 +50,7 @@
     NSURL *_publicShareServiceURL;
     BOOL _sandboxed;
     NSObject<OS_dispatch_queue> *_setupQueue;
-    NSObject<OS_dispatch_source> *_setupSource;
+    NSString *_sourceApplicationBundleID;
     CKTimeLogger *_timeLogger;
     int _type;
     int _usesAPSPublicToken;
@@ -94,8 +94,9 @@
 @property (nonatomic, retain) CKDFlowControlManager *flowControlManager;
 @property (nonatomic, retain) CKDPublicIdentityLookupService *foregroundPublicIdentityLookupService;
 @property (nonatomic, retain) CKDZoneGatekeeper *foregroundZoneGatekeeper;
+@property (nonatomic) BOOL hasAllowAccessDuringBuddyEntitlement;
 @property (nonatomic) BOOL hasDataContainer;
-@property (nonatomic) BOOL hasSystemServiceEntitlement;
+@property (setter=setHasSystemServiceEntitlement:, nonatomic) BOOL hasSystemServiceEntitlement;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isForClouddInternalUse;
 @property (nonatomic, retain) CKDMescalSession *mescalSession;
@@ -108,7 +109,7 @@
 @property (nonatomic, retain) NSURL *publicShareServiceURL;
 @property (getter=isSandboxed, nonatomic) BOOL sandboxed;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *setupQueue;
-@property (nonatomic, retain) NSObject<OS_dispatch_source> *setupSource;
+@property (nonatomic, readonly) NSString *sourceApplicationBundleID;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKTimeLogger *timeLogger;
 @property (nonatomic, readonly) int type;
@@ -131,7 +132,6 @@
 - (void)_purgeOldCacheDirectories;
 - (void)_reloadAccount;
 - (BOOL)_setupDirectoriesWithClientProxy:(id)arg1 sandboxExtensions:(id*)arg2 error:(id*)arg3;
-- (void)_signalAccountReload;
 - (id)account;
 - (id)accountInfoOverride;
 - (void)addClientProxy:(id)arg1;
@@ -175,6 +175,7 @@
 - (id)flowControlManager;
 - (id)foregroundPublicIdentityLookupService;
 - (id)foregroundZoneGatekeeper;
+- (BOOL)hasAllowAccessDuringBuddyEntitlement;
 - (BOOL)hasDataContainer;
 - (BOOL)hasSystemServiceEntitlement;
 - (id)initWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
@@ -219,6 +220,7 @@
 - (void)setFlowControlManager:(id)arg1;
 - (void)setForegroundPublicIdentityLookupService:(id)arg1;
 - (void)setForegroundZoneGatekeeper:(id)arg1;
+- (void)setHasAllowAccessDuringBuddyEntitlement:(BOOL)arg1;
 - (void)setHasDataContainer:(BOOL)arg1;
 - (void)setHasSystemServiceEntitlement:(BOOL)arg1;
 - (void)setIsForClouddInternalUse:(BOOL)arg1;
@@ -233,14 +235,13 @@
 - (void)setPublicShareServiceURL:(id)arg1;
 - (void)setSandboxed:(BOOL)arg1;
 - (void)setSetupQueue:(id)arg1;
-- (void)setSetupSource:(id)arg1;
 - (void)setTimeLogger:(id)arg1;
 - (void)setUsesAPSPublicToken:(int)arg1;
 - (BOOL)setupAssetTransfersWithClientProxy:(id)arg1 error:(id*)arg2;
 - (BOOL)setupMMCSWrapperWithError:(id*)arg1;
 - (id)setupQueue;
-- (id)setupSource;
 - (void)showUserNotification:(struct __CFUserNotification { }*)arg1 withCompletionBlock:(id /* block */)arg2;
+- (id)sourceApplicationBundleID;
 - (void)startSetupWithClientProxy:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)tearDownAssetTransfers;
 - (id)timeLogger;

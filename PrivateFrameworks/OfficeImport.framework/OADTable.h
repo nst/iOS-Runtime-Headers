@@ -11,8 +11,11 @@
 
 - (id)addRow;
 - (id)cellAtPos:(struct OADTMatrixPos { int x1; int x2; })arg1;
+- (void)changeParentTextListStylePreservingEffectiveValues:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)flattenStyle;
+- (void)flipTableRTL;
 - (id)grid;
 - (id)init;
 - (id)masterCellOfPos:(struct OADTMatrixPos { int x1; int x2; })arg1;

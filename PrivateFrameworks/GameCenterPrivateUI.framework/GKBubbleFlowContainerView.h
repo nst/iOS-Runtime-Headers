@@ -17,7 +17,7 @@
     int _supportedBubbles;
 }
 
-@property (nonatomic, readonly) NSArray *bubbleSets;
+@property (nonatomic, retain) NSArray *bubbleSets;
 @property (nonatomic, readonly) GKBubbleSet *primaryBubbleControls;
 @property (nonatomic, readonly) int supportedBubbles;
 
@@ -30,6 +30,7 @@
 - (void)layoutSubviews;
 - (id)primaryBubbleControls;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })restingRectForBubbleType:(int)arg1;
+- (void)setBubbleSets:(id)arg1;
 - (void)setHidden:(BOOL)arg1;
 - (void)setRestingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forBubbleType:(int)arg2;
 - (int)supportedBubbles;

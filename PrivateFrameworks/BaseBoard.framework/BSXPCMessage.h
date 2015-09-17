@@ -3,7 +3,9 @@
  */
 
 @interface BSXPCMessage : NSObject {
+    int _invalidated;
     NSObject<OS_xpc_object> *_message;
+    int _replied;
     id /* block */ _replyHandler;
     NSObject<OS_dispatch_queue> *_replyQueue;
 }

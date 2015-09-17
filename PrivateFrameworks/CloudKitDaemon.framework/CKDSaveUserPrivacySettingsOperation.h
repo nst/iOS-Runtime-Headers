@@ -11,6 +11,7 @@
 @property (nonatomic) int discoverable;
 
 - (void).cxx_destruct;
+- (unsigned long long)activityStart;
 - (id)applicationBundleID;
 - (int)discoverable;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

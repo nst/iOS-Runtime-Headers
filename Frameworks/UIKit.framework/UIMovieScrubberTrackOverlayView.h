@@ -15,6 +15,7 @@
     unsigned int _zoomed;
 }
 
+- (void).cxx_destruct;
 - (void)_clampValueAndLayout;
 - (void)_updateLeftFill;
 - (void)_updateRightFill;

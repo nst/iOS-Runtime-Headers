@@ -42,12 +42,12 @@
     } mTrackedProperties;
 }
 
-- (id).cxx_construct;
 - (void)addProperties:(id)arg1;
 - (void)addPropertiesValues:(struct { short x1; int x2; short x3; int x4; long x5; int x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg1 to:(struct { short x1; int x2; short x3; int x4; long x5; int x6; unsigned int x7 : 1; unsigned int x8 : 1; unsigned int x9 : 1; unsigned int x10 : 1; unsigned int x11 : 1; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; }*)arg2;
 - (id)characterProperties;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (BOOL)header;
 - (long)height;
 - (int)heightType;

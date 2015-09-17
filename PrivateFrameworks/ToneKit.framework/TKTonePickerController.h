@@ -24,6 +24,7 @@
     NSIndexPath *_selectedToneIndexPath;
     BOOL _selectedToneWasExplicitlySetToDefaultTone;
     NSString *_selectedVibrationIdentifier;
+    BOOL _selectedVibrationIdentifierWasExplicitlySet;
     BOOL _shouldCachePickerItems;
     BOOL _showsDefault;
     BOOL _showsNone;
@@ -63,6 +64,7 @@
 @property (setter=_setSelectedToneIndexPath:, nonatomic, retain) NSIndexPath *_selectedToneIndexPath;
 @property (setter=_setSelectedToneWasExplicitlySetToDefaultTone:, nonatomic) BOOL _selectedToneWasExplicitlySetToDefaultTone;
 @property (setter=_setSelectedVibrationIdentifier:, nonatomic, copy) NSString *_selectedVibrationIdentifier;
+@property (setter=_setSelectedVibrationIdentifierWasExplicitlySet:, nonatomic) BOOL _selectedVibrationIdentifierWasExplicitlySet;
 @property (setter=_setShouldCachePickerItems:, nonatomic) BOOL _shouldCachePickerItems;
 @property (setter=_setShowsDefault:, nonatomic) BOOL _showsDefault;
 @property (setter=_setShowsNone:, nonatomic) BOOL _showsNone;
@@ -148,7 +150,7 @@
 - (id)_loadRingtonesFromPlist;
 - (id)_loadTonesFromPlistNamed:(id)arg1;
 - (unsigned int)_mediaItemsCount;
-- (id)_nameOfVibrationWithIdentifier:(id)arg1;
+- (id)_nameOfSelectedVibrationIdentifier;
 - (id)_noneString;
 - (id)_pickerRowItemAtIndex:(int)arg1 inSectionForItem:(id)arg2;
 - (void)_playToneWithIdentifier:(id)arg1;
@@ -160,14 +162,16 @@
 - (void)_reloadTonesForExternalChange:(BOOL)arg1;
 - (void)_resetSelectedClassicAlertToneIndex;
 - (void)_resetSelectedClassicRingtoneIndex;
-- (void)_resetSelectedVibrationIdentifier;
+- (void)_resetSelectedVibrationIdentifierForcingUpdatingVibrationName:(BOOL)arg1;
 - (id)_ringtonesPlistName;
+- (id)_sanitizedSelectedVibrationIdentifierAllowingNilForDefault:(BOOL)arg1;
 - (unsigned int)_selectedClassicAlertToneIndex;
 - (unsigned int)_selectedClassicRingtoneIndex;
 - (id)_selectedIdentifier:(BOOL*)arg1;
 - (id)_selectedToneIndexPath;
 - (BOOL)_selectedToneWasExplicitlySetToDefaultTone;
 - (id)_selectedVibrationIdentifier;
+- (BOOL)_selectedVibrationIdentifierWasExplicitlySet;
 - (void)_setAlertType:(int)arg1;
 - (void)_setBehavesAsRingtonePicker:(BOOL)arg1;
 - (void)_setCachedClassicAlertTonePickerItems:(id)arg1;
@@ -186,6 +190,9 @@
 - (void)_setSelectedToneIndexPath:(id)arg1;
 - (void)_setSelectedToneWasExplicitlySetToDefaultTone:(BOOL)arg1;
 - (void)_setSelectedVibrationIdentifier:(id)arg1;
+- (void)_setSelectedVibrationIdentifier:(id)arg1 explicitlySet:(BOOL)arg2;
+- (void)_setSelectedVibrationIdentifier:(id)arg1 forceUpdatingVibrationName:(BOOL)arg2 explicitlySet:(BOOL)arg3;
+- (void)_setSelectedVibrationIdentifierWasExplicitlySet:(BOOL)arg1;
 - (void)_setShouldCachePickerItems:(BOOL)arg1;
 - (void)_setShowsDefault:(BOOL)arg1;
 - (void)_setShowsNone:(BOOL)arg1;

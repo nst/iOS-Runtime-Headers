@@ -2,8 +2,21 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOComposedWalkingRouteLeg : GEOComposedRouteLeg
+@interface GEOComposedWalkingRouteLeg : GEOComposedRouteLeg {
+    <GEOTransitRoutingIncidentMessage> *_transitRouteDetailsIncidentMessage;
+    <GEOTransitRoutingIncidentMessage> *_transitSteppingIncidentMessage;
+}
 
-- (id)initWithComposedRoute:(id)arg1 stepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+@property (nonatomic, readonly) GEOComposedTransitWalkingRouteStep *arrivalStep;
+@property (nonatomic, readonly) GEOComposedWalkingRouteStep *lastWalkingStep;
+@property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *transitRouteDetailsIncidentMessage;
+@property (nonatomic, readonly) <GEOTransitRoutingIncidentMessage> *transitSteppingIncidentMessage;
+
+- (id)arrivalStep;
+- (void)dealloc;
+- (id)initWithComposedRoute:(id)arg1 stepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 transitSteppingIncidentMessage:(id)arg4 transitRouteDetailsIncidentMessage:(id)arg5;
+- (id)lastWalkingStep;
+- (id)transitRouteDetailsIncidentMessage;
+- (id)transitSteppingIncidentMessage;
 
 @end

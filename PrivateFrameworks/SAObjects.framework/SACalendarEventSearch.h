@@ -2,7 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SACalendarEventSearch : SABaseClientBoundCommand
+@interface SACalendarEventSearch : SABaseClientBoundCommand {
+    NSURL *_eventId;
+    NSURL *_targetAppId;
+}
 
 @property (nonatomic, copy) NSDate *endDate;
 @property (nonatomic, copy) NSURL *eventId;

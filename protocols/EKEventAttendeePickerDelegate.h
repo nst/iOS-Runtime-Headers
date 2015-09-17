@@ -5,7 +5,7 @@
 
 @required
 
-- (void)eventAttendeePicker:(EKEventAttendeePicker *)arg1 cacheValidationStatus:(int)arg2 forEmail:(NSString *)arg3;
-- (int)eventAttendeePicker:(EKEventAttendeePicker *)arg1 getValidationStatusForEmailAddress:(NSString *)arg2;
+- (void)eventAttendeePicker:(EKEventAttendeePicker *)arg1 cacheValidationStatus:(unsigned int)arg2 forEmail:(NSString *)arg3;
+- (unsigned int)eventAttendeePicker:(EKEventAttendeePicker *)arg1 getValidationStatusForEmailAddress:(NSString *)arg2;
 
 @end

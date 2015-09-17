@@ -111,6 +111,8 @@
 @property (nonatomic, readonly) float whiteBalanceFaceStrength;
 @property (nonatomic, readonly) float whiteBalanceFaceWarmth;
 
+// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
+
 + (id)_identityModel;
 + (void)_loadReferenceLevelsFromCIFilterWithName:(id)arg1 attributeKeys:(id)arg2 intoLevelStructs:(struct { /* ? */ }**)arg3;
 + (void)_loadSubfilterReferenceLevelsIfNeeded;
@@ -216,5 +218,9 @@
 - (float)whiteBalanceFaceQ;
 - (float)whiteBalanceFaceStrength;
 - (float)whiteBalanceFaceWarmth;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (BOOL)_pu_hasIrisConflicts;
 
 @end

@@ -3,10 +3,12 @@
  */
 
 @interface CTCellularPlan : NSObject <NSCopying, NSSecureCoding> {
-    CTCellularPlanExtProperties *_extendedProperties;
+    BOOL _isHomePlan;
+    BOOL _isSelectable;
     NSString *_phoneNumber;
     CTCellularPlanProfile *_profile;
     CTCellularPlanSubscription *_subscription;
+    NSNumber *_subscriptionStatusOverride;
 }
 
 @property (nonatomic, readonly) int accountStatus;
@@ -16,8 +18,9 @@
 @property (nonatomic, readonly) double billingStartDate;
 @property (nonatomic, readonly) NSString *carrierName;
 @property (nonatomic, readonly) NSArray *dataUsage;
-@property (nonatomic, retain) CTCellularPlanExtProperties *extendedProperties;
 @property (nonatomic, readonly) NSString *iccid;
+@property (nonatomic) BOOL isHomePlan;
+@property (nonatomic) BOOL isSelectable;
 @property (nonatomic, readonly) BOOL isSelected;
 @property (nonatomic, retain) NSString *phoneNumber;
 @property (nonatomic, readonly) NSString *planDescription;
@@ -27,6 +30,7 @@
 @property (nonatomic, readonly) NSData *profileId;
 @property (nonatomic, readonly) int status;
 @property (nonatomic, retain) CTCellularPlanSubscription *subscription;
+@property (nonatomic, retain) NSNumber *subscriptionStatusOverride;
 @property (nonatomic, readonly) double timestamp;
 
 + (BOOL)supportsSecureCoding;
@@ -42,24 +46,29 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)extendedProperties;
 - (id)iccid;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithProfile:(id)arg1 subscription:(id)arg2;
+- (BOOL)isHomePlan;
+- (BOOL)isSelectable;
 - (BOOL)isSelected;
 - (id)phoneNumber;
 - (id)planDescription;
+- (int)planDescriptionCompare:(id)arg1;
 - (int)planStatus;
 - (int)planType;
 - (id)profile;
 - (id)profileId;
-- (void)setExtendedProperties:(id)arg1;
+- (void)setIsHomePlan:(BOOL)arg1;
+- (void)setIsSelectable:(BOOL)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setProfile:(id)arg1;
 - (void)setSubscription:(id)arg1;
+- (void)setSubscriptionStatusOverride:(id)arg1;
 - (int)status;
 - (id)subscription;
+- (id)subscriptionStatusOverride;
 - (double)timestamp;
 
 @end

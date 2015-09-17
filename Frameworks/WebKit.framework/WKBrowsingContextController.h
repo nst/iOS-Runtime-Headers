@@ -9,7 +9,6 @@
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<WKBrowsingContextLoadDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<WKBrowsingContextLoadDelegate> > { 
         id m_weakReference; 
     } _loadDelegate;
-    unsigned int _observedRenderingProgressEvents;
     struct RefPtr<WebKit::WebPageProxy> { 
         struct WebPageProxy {} *m_ptr; 
     } _page;
@@ -43,7 +42,6 @@
 @property <WKBrowsingContextHistoryDelegate> *historyDelegate;
 @property <WKBrowsingContextLoadDelegate> *loadDelegate;
 @property (getter=isLoading, readonly) BOOL loading;
-@property (nonatomic) unsigned int observedRenderingProgressEvents;
 @property (readonly) unsigned int pageCount;
 @property float pageLength;
 @property float pageZoom;
@@ -94,7 +92,6 @@
 - (void)loadHTMLString:(id)arg1 baseURL:(id)arg2 userData:(id)arg3;
 - (void)loadRequest:(id)arg1;
 - (void)loadRequest:(id)arg1 userData:(id)arg2;
-- (unsigned int)observedRenderingProgressEvents;
 - (unsigned int)pageCount;
 - (float)pageLength;
 - (float)pageZoom;
@@ -110,7 +107,6 @@
 - (void)setGapBetweenPages:(float)arg1;
 - (void)setHistoryDelegate:(id)arg1;
 - (void)setLoadDelegate:(id)arg1;
-- (void)setObservedRenderingProgressEvents:(unsigned int)arg1;
 - (void)setPageLength:(float)arg1;
 - (void)setPageZoom:(float)arg1;
 - (void)setPaginationBehavesLikeColumns:(BOOL)arg1;

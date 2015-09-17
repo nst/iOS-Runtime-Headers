@@ -2,76 +2,27 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface CAMShutterButton : UIButton {
-    UIView *__innerView;
-    UIImageView *__outerImageView;
-    UIView *__outerView;
-    UIActivityIndicatorView *__progressActivityIndicatorView;
-    CAMTimelapseShutterRingView *__timelapseOuterView;
-    int _mode;
-    BOOL _pulsing;
-    BOOL _showDisabled;
-    struct CAMShutterButtonSpec { 
-        float outerRingDiameter; 
-        float outerRingStrokeWidth; 
-        float stopSquareSideLength; 
-        float stopSquareCornerRadius; 
-    } _spec;
-    BOOL _spinning;
-}
+@interface CAMShutterButton : CMKShutterButton <CKActionMenuItemView>
 
-@property (nonatomic, readonly) UIView *_innerView;
-@property (nonatomic, readonly) UIImageView *_outerImageView;
-@property (nonatomic, readonly) UIView *_outerView;
-@property (nonatomic, readonly) UIActivityIndicatorView *_progressActivityIndicatorView;
-@property (nonatomic, readonly) CAMTimelapseShutterRingView *_timelapseOuterView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) int mode;
-@property (getter=isPulsing, nonatomic) BOOL pulsing;
-@property (nonatomic) BOOL showDisabled;
-@property (nonatomic) struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; } spec;
-@property (getter=isSpinning, nonatomic) BOOL spinning;
+@property (readonly) Class superclass;
 
-+ (id)shutterButton;
+// Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
+
 + (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; })arg1;
-+ (id)smallShutterButton;
-+ (id)tinyShutterButton;
 
-- (void).cxx_destruct;
-- (float)_borderWidthForMode:(int)arg1;
-- (id)_colorForMode:(int)arg1;
-- (void)_commonCAMShutterButtonInitialization;
-- (float)_cornerRadiusForMode:(int)arg1;
-- (float)_innerCircleDiameter;
-- (id)_innerView;
-- (BOOL)_isStopMode:(int)arg1;
-- (id)_outerImageForMode:(int)arg1;
-- (id)_outerImageView;
-- (id)_outerView;
-- (void)_performHighlightAnimation;
-- (void)_performModeSwitchAnimationFromMode:(int)arg1 toMode:(int)arg2 animated:(BOOL)arg3;
-- (id)_progressActivityIndicatorView;
-- (void)_setSpec:(struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; })arg1;
-- (BOOL)_shouldUseImageViewForMode:(int)arg1;
-- (BOOL)_shouldUseTimelapseOuterViewForMode:(int)arg1;
-- (struct CGSize { float x1; float x2; })_sizeForMode:(int)arg1;
-- (id)_timelapseOuterView;
-- (void)_updateOuterAndInnerLayers;
-- (void)_updateSpinningAnimations;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (BOOL)isPulsing;
-- (BOOL)isSpinning;
-- (void)layoutSubviews;
 - (int)mode;
-- (void)setHighlighted:(BOOL)arg1;
-- (void)setMode:(int)arg1;
 - (void)setMode:(int)arg1 animated:(BOOL)arg2;
-- (void)setPulsing:(BOOL)arg1;
-- (void)setShowDisabled:(BOOL)arg1;
-- (void)setSpinning:(BOOL)arg1;
-- (BOOL)showDisabled;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; })spec;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
++ (id)actionMenuShutterButton;
+
+- (void)setEnabled:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 
 @end

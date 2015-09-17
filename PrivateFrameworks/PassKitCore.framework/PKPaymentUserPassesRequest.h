@@ -4,6 +4,6 @@
 
 @interface PKPaymentUserPassesRequest : PKPaymentWebServiceRequest
 
-+ (id)requestWithServiceURL:(id)arg1 account:(id)arg2;
+- (id)_urlRequestWithServiceURL:(id)arg1 account:(id)arg2;
 
 @end

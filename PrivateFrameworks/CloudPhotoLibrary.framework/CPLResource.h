@@ -40,6 +40,7 @@
 - (id)initWithResourceIdentity:(id)arg1 itemIdentifier:(id)arg2;
 - (id)initWithResourceIdentity:(id)arg1 itemIdentifier:(id)arg2 resourceType:(unsigned int)arg3;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isTrackedForUpload;
 - (id)itemIdentifier;
 - (unsigned int)resourceType;
 - (void)setCanGenerateDerivative:(BOOL)arg1;

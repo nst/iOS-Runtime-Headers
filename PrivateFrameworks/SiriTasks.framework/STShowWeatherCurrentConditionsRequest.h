@@ -3,7 +3,7 @@
  */
 
 @interface STShowWeatherCurrentConditionsRequest : AFSiriRequest {
-    AFCity *_city;
+    STCity *_city;
     STWeatherCurrentConditions *_currentConditions;
     STWeatherUnits *_units;
 }

@@ -18,6 +18,6 @@
 - (int)keyboardAppearance;
 - (BOOL)shouldNotShowSendButton;
 - (id)siri_sendButtonColor;
-- (BOOL)usesJoystick;
+- (BOOL)usesActionMenu;
 
 @end

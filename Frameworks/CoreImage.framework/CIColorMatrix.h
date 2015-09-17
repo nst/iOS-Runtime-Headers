@@ -27,7 +27,6 @@
 - (id)inputImage;
 - (id)inputRVector;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAVector:(id)arg1;
 - (void)setInputBVector:(id)arg1;
 - (void)setInputBiasVector:(id)arg1;

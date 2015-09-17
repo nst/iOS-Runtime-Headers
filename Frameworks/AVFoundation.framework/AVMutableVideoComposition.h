@@ -14,6 +14,7 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } renderSize;
 
 + (id)videoComposition;
++ (id)videoCompositionWithAsset:(id)arg1 applyingCIFiltersWithHandler:(id /* block */)arg2;
 + (id)videoCompositionWithPropertiesOfAsset:(id)arg1;
 + (id)videoCompositionWithPropertiesOfAsset:(id)arg1 videoGravity:(id)arg2;
 

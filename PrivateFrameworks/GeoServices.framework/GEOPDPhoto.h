@@ -11,6 +11,9 @@
 @property (nonatomic, retain) NSString *photoId;
 @property (nonatomic, retain) NSMutableArray *photoVersions;
 
++ (id)photosForPlaceData:(id)arg1;
+
+- (id)_bestURL;
 - (void)addPhotoVersion:(id)arg1;
 - (void)clearPhotoVersions;
 - (void)copyTo:(id)arg1;

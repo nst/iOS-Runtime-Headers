@@ -21,5 +21,6 @@
 - (id)initWithDocumentItem:(id)arg1 forPublish:(BOOL)arg2 readonly:(BOOL)arg3;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

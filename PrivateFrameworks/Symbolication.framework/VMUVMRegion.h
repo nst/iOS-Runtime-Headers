@@ -3,57 +3,67 @@
  */
 
 @interface VMUVMRegion : NSObject {
+    unsigned int coalesced_region_count;
+    unsigned long long dirty_size;
     unsigned char external_pager;
-    BOOL is_submap;
+    unsigned int is_macho_region;
+    unsigned int is_submap;
+    unsigned int is_unused_data_page_shared_with_active_content;
+    unsigned int is_unused_data_region;
     unsigned int mallocBlockCount;
     unsigned int mallocTypeFlag;
     unsigned int maxProt;
     unsigned int nesting_depth;
     unsigned int object_id;
     unsigned int pages_dirtied;
-    unsigned int pages_purgable_empty;
-    unsigned int pages_purgable_non_vol;
-    unsigned int pages_purgable_vol;
     unsigned int pages_resident;
     unsigned int pages_shared_now_private;
     unsigned int pages_swapped_out;
     NSString *path;
     unsigned int prot;
+    unsigned long long purgable_empty_size;
+    unsigned long long purgable_non_vol_size;
+    unsigned long long purgable_vol_size;
     int purgeable;
     struct _VMURange { 
         unsigned long long location; 
         unsigned long long length; 
     } range;
-    BOOL recalculate_pages_resident;
     unsigned int ref_count;
+    unsigned int reserved_flags;
+    unsigned long long resident_size;
     unsigned char share_mode;
+    unsigned long long shared_now_private_size;
     BOOL summarized;
+    unsigned long long swapped_out_size;
     NSString *type;
     unsigned int user_tag;
     unsigned int virtual_pages;
+    unsigned int zone_index;
 }
 
 + (id)columnHeadersWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2;
++ (id)columnHeadersWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2 memorySizeDivisor:(unsigned int)arg3 hasFractionalPageSizes:(BOOL)arg4;
++ (void)initialize;
 
 - (void)addInfoFromRegion:(id)arg1;
+- (unsigned long long)address;
 - (id)breakAtLength:(unsigned long long)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2;
-- (unsigned int)dirtyPageCount;
+- (id)descriptionWithOptions:(unsigned int)arg1 maximumLength:(unsigned int)arg2 memorySizeDivisor:(unsigned int)arg3 hasFractionalPageSizes:(BOOL)arg4;
+- (void)getVMRegionData:(struct _VMUVMRegionData { unsigned long long x1; unsigned long long x2; unsigned int x3; int x4; int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; int x11; unsigned int x12; unsigned char x13; unsigned char x14; unsigned char x15; unsigned int x16; unsigned int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 28; unsigned long long x23; unsigned long long x24; unsigned long long x25; unsigned long long x26; unsigned long long x27; unsigned long long x28; unsigned long long x29; }*)arg1 withSimpleSerializer:(id)arg2;
 - (BOOL)hasSameInfoAsRegion:(id)arg1;
 - (id)init;
+- (id)initWithVMRegionData:(struct _VMUVMRegionData { unsigned long long x1; unsigned long long x2; unsigned int x3; int x4; int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; int x11; unsigned int x12; unsigned char x13; unsigned char x14; unsigned char x15; unsigned int x16; unsigned int x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 28; unsigned long long x23; unsigned long long x24; unsigned long long x25; unsigned long long x26; unsigned long long x27; unsigned long long x28; unsigned long long x29; }*)arg1 encodedVersion:(int)arg2 simpleSerializer:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSubmap;
+- (unsigned long long)length;
 - (unsigned int)maxProtection;
 - (id)path;
 - (unsigned int)protection;
-- (unsigned int)purgeablePageCount;
 - (struct _VMURange { unsigned long long x1; unsigned long long x2; })range;
-- (unsigned int)residentPageCount;
-- (unsigned int)sharedNowPrivatePageCount;
-- (unsigned int)swappedOutPageCount;
 - (id)type;
-- (unsigned int)virtualPageCount;
 
 @end

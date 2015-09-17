@@ -26,6 +26,7 @@
 - (void)clearProperties;
 - (void)clearRuns;
 - (void)dealloc;
+- (id)description;
 - (id)initWithText:(id)arg1;
 - (id)initWithText:(id)arg1 string:(id)arg2;
 - (void)insertRun:(id)arg1 atIndex:(unsigned int)arg2;

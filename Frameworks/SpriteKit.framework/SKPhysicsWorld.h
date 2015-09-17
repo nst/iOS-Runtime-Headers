@@ -18,7 +18,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 
-- (id).cxx_construct;
 - (void)addBody:(id)arg1;
 - (void)addJoint:(id)arg1;
 - (id)bodies;

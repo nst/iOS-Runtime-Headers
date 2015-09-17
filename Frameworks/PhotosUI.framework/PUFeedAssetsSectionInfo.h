@@ -13,6 +13,7 @@
 - (id)cloudFeedAssetsEntry;
 - (BOOL)containsAsset:(id)arg1;
 - (void)getPhotoCount:(out unsigned int*)arg1 videoCount:(out unsigned int*)arg2;
+- (BOOL)hasPlayableAssetForItemAtIndex:(int)arg1;
 - (int)indexOfItemWithAsset:(id)arg1;
 - (int)sectionType;
 - (int)typeForItemAtIndex:(int)arg1;

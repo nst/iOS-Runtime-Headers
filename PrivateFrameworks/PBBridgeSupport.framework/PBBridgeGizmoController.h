@@ -112,5 +112,7 @@
 - (id /* block */)updateRegionCompletion;
 - (BOOL)updateRegionIdentifierWithCompletion:(id /* block */)arg1;
 - (void)updateSynchProgress:(id)arg1;
+- (void)waitForDynamicActivationEventPresentation:(id)arg1;
+- (void)waitForUserResponseToDynamicEventPresentation:(id)arg1;
 
 @end

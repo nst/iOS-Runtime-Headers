@@ -5,6 +5,8 @@
 @interface UIKeyboardCandidateGridCell : UICollectionViewCell {
     NSString *_alternativeText;
     UILabel *_alternativeTextLabel;
+    UILabel *_annotationLabel;
+    NSString *_annotationText;
     unsigned int _candidateNumber;
     UILabel *_candidateNumberLabel;
     struct CGSize { 
@@ -50,6 +52,8 @@
 
 @property (nonatomic, copy) NSString *alternativeText;
 @property (nonatomic, retain) UILabel *alternativeTextLabel;
+@property (nonatomic, retain) UILabel *annotationLabel;
+@property (nonatomic, copy) NSString *annotationText;
 @property (nonatomic, readonly) BOOL canShowCandidateNumber;
 @property (nonatomic) unsigned int candidateNumber;
 @property (nonatomic, retain) UILabel *candidateNumberLabel;
@@ -82,6 +86,8 @@
 
 - (id)alternativeText;
 - (id)alternativeTextLabel;
+- (id)annotationLabel;
+- (id)annotationText;
 - (void)applyLayoutAttributes:(id)arg1;
 - (BOOL)canShowCandidateNumber;
 - (unsigned int)candidateNumber;
@@ -103,6 +109,8 @@
 - (BOOL)secondaryCandidateAppearance;
 - (void)setAlternativeText:(id)arg1;
 - (void)setAlternativeTextLabel:(id)arg1;
+- (void)setAnnotationLabel:(id)arg1;
+- (void)setAnnotationText:(id)arg1;
 - (void)setCandidateNumber:(unsigned int)arg1;
 - (void)setCandidateNumberLabel:(id)arg1;
 - (void)setCandidateNumberSize:(struct CGSize { float x1; float x2; })arg1;

@@ -30,12 +30,13 @@
 @property (nonatomic, retain) NSXPCListener *listener;
 @property (nonatomic, retain) PKPaymentRequest *paymentRequest;
 @property (nonatomic, copy) id /* block */ presentationCompletionBlock;
-@property (nonatomic) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSTimer *timer;
 
 + (BOOL)canMakePayments;
 + (BOOL)canMakePaymentsUsingNetworks:(id)arg1;
++ (BOOL)canMakePaymentsUsingNetworks:(id)arg1 capabilities:(unsigned int)arg2;
 
 - (void)_invokeCallbackWithSuccess:(BOOL)arg1;
 - (id)_privateDelegate;
@@ -51,6 +52,7 @@
 - (id)exportedObject;
 - (id)hostIdentifier;
 - (id)inAppPaymentService;
+- (id)init;
 - (id)initWithPaymentRequest:(id)arg1;
 - (id)listener;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

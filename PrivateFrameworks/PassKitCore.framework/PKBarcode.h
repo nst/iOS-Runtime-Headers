@@ -24,8 +24,8 @@
 - (void)encodeWithCoder:(id)arg1;
 - (int)format;
 - (unsigned int)hash;
-- (id)initWithBarcodeDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithPassDictionary:(id)arg1 bundle:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTall;
 - (id)messageData;
@@ -38,7 +38,6 @@
 // Image: /System/Library/Frameworks/PassKit.framework/PassKit
 
 - (id)_imageFromBarcodeMessage;
-- (id)_imageFromTextMessage;
 - (id)image;
 
 @end

@@ -35,6 +35,7 @@
 - (BOOL)currentUnread;
 - (void)dealloc;
 - (id)deepCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (int)displayMode;
 - (int)firstToken;
 - (id)initWithContractionMode:(int)arg1 showEightDot:(BOOL)arg2 showDotsSevenAndEight:(BOOL)arg3;

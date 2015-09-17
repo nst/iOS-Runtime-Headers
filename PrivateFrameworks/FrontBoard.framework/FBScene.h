@@ -2,17 +2,17 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBScene : NSObject <FBSceneHost> {
-    <FBSceneBoundsDelegate> *_boundsDelegate;
+@interface FBScene : NSObject <BSDescriptionProviding, FBSceneHost> {
     <FBSceneClient> *_client;
     FBProcess *_clientProcess;
     <FBSceneClientProvider> *_clientProvider;
     FBSSceneClientSettings *_clientSettings;
-    FBWindowContextHostManager *_contextHostManager;
-    FBWindowContextManager *_contextManager;
     <FBSceneDelegate> *_delegate;
     FBSDisplay *_display;
+    NSHashTable *_geometryObservers;
+    FBSceneHostManager *_hostManager;
     NSString *_identifier;
+    FBSceneLayerManager *_layerManager;
     BOOL _lockedForMutation;
     FBSMutableSceneSettings *_mutableSettings;
     FBSSceneSettings *_settings;
@@ -20,7 +20,6 @@
     BOOL _valid;
 }
 
-@property (setter=_setBoundsDelegate:, nonatomic) <FBSceneBoundsDelegate> *_boundsDelegate;
 @property (setter=_setLockedForMutation:, nonatomic) BOOL _lockedForMutation;
 @property (nonatomic, readonly) unsigned int _transactionID;
 @property (nonatomic, readonly, retain) <FBSceneClient> *client;
@@ -29,47 +28,67 @@
 @property (nonatomic, readonly, retain) FBSSceneClientSettings *clientSettings;
 @property (nonatomic, readonly, retain) FBWindowContextHostManager *contextHostManager;
 @property (nonatomic, readonly, retain) FBWindowContextManager *contextManager;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <FBSceneDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) FBSDisplay *display;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly, retain) FBSceneHostManager *hostManager;
 @property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly, retain) FBSceneLayerManager *layerManager;
 @property (nonatomic, readonly, retain) FBSMutableSceneSettings *mutableSettings;
 @property (nonatomic, readonly, retain) FBSSceneSettings *settings;
+@property (readonly) Class superclass;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
+- (void)_addSceneGeometryObserver:(id)arg1;
 - (void)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
-- (id)_boundsDelegate;
-- (id)_descriptionWithMultilinePrefix:(id)arg1;
 - (void)_handleSceneClientMessage:(id)arg1 withBlock:(id /* block */)arg2;
 - (unsigned int)_incrementTransactionID;
 - (void)_invalidateWithTransitionContext:(id)arg1;
 - (BOOL)_lockedForMutation;
-- (void)_setBoundsDelegate:(id)arg1;
+- (void)_removeSceneGeometryObserver:(id)arg1;
 - (void)_setLockedForMutation:(BOOL)arg1;
 - (unsigned int)_transactionID;
 - (id)client;
-- (void)client:(id)arg1 attachContext:(id)arg2;
-- (void)client:(id)arg1 detachContext:(id)arg2;
+- (void)client:(id)arg1 attachLayer:(id)arg2;
+- (void)client:(id)arg1 detachLayer:(id)arg2;
 - (void)client:(id)arg1 didReceiveActions:(id)arg2;
 - (void)client:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
-- (void)client:(id)arg1 updateContext:(id)arg2;
+- (void)client:(id)arg1 updateLayer:(id)arg2;
 - (id)clientProcess;
 - (id)clientProvider;
 - (id)clientSettings;
 - (id)contextHostManager;
 - (id)contextManager;
+- (id)createSnapshot;
+- (id)createSnapshotWithContext:(id)arg1;
+- (int)currentInterfaceOrientation;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)delegate;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)display;
+- (id)hostManager;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 display:(id)arg2 initialClientSettings:(id)arg3 clientProvider:(id)arg4;
 - (BOOL)isValid;
+- (id)layerManager;
 - (id)mutableSettings;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (id)settings;
+- (id)snapshotContext;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+- (id)uiClientSettings;
+- (id)uiSettings;
 - (void)updateSettings:(id)arg1 withTransitionContext:(id)arg2;
 - (void)updateSettingsWithBlock:(id /* block */)arg1;
+- (void)updateSettingsWithTransitionBlock:(id /* block */)arg1;
+- (void)updateUISettingsWithBlock:(id /* block */)arg1;
+- (void)updateUISettingsWithTransitionBlock:(id /* block */)arg1;
 
 @end

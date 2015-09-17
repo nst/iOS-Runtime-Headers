@@ -8,6 +8,8 @@
 @property (readonly, retain) id object;
 @property (readonly, copy) NSDictionary *userInfo;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)notificationWithName:(id)arg1 object:(id)arg2;
 + (id)notificationWithName:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
@@ -25,5 +27,9 @@
 - (id)object;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (id)userInfo;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)pu_screen;
 
 @end

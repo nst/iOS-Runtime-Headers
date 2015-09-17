@@ -3,26 +3,31 @@
  */
 
 @interface GEOPDAttribution : PBCodable <NSCopying> {
+    NSString *_actionUrlComponent;
     NSMutableArray *_attributionUrls;
     NSString *_externalComponentId;
     NSString *_externalItemId;
     NSString *_vendorId;
 }
 
+@property (nonatomic, retain) NSString *actionUrlComponent;
 @property (nonatomic, retain) NSMutableArray *attributionUrls;
 @property (nonatomic, retain) NSString *externalComponentId;
 @property (nonatomic, retain) NSString *externalItemId;
+@property (nonatomic, readonly) BOOL hasActionUrlComponent;
 @property (nonatomic, readonly) BOOL hasExternalComponentId;
 @property (nonatomic, readonly) BOOL hasExternalItemId;
 @property (nonatomic, readonly) BOOL hasVendorId;
 @property (nonatomic, retain) NSString *vendorId;
 
++ (id)attributionForPlaceDataEncyclopedia:(id)arg1;
 + (id)attributionForPlaceDataEntity:(id)arg1;
 + (id)attributionForPlaceDataPhotos:(id)arg1;
 + (id)attributionForPlaceDataReview:(id)arg1;
 
 - (id)_attributionKey;
 - (BOOL)_isYelp;
+- (id)actionUrlComponent;
 - (void)addAttributionUrl:(id)arg1;
 - (id)attributionUrlAtIndex:(unsigned int)arg1;
 - (id)attributionUrls;
@@ -35,6 +40,7 @@
 - (id)dictionaryRepresentation;
 - (id)externalComponentId;
 - (id)externalItemId;
+- (BOOL)hasActionUrlComponent;
 - (BOOL)hasExternalComponentId;
 - (BOOL)hasExternalItemId;
 - (BOOL)hasVendorId;
@@ -42,6 +48,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setActionUrlComponent:(id)arg1;
 - (void)setAttributionUrls:(id)arg1;
 - (void)setExternalComponentId:(id)arg1;
 - (void)setExternalItemId:(id)arg1;

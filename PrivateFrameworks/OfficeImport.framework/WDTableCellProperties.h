@@ -143,7 +143,6 @@
     short mWidth;
 }
 
-- (id).cxx_construct;
 - (void)addProperties:(id)arg1;
 - (void)addPropertiesValues:(struct { id x1; id x2; id x3; id x4; id x5; short x6; int x7; short x8; int x9; short x10; int x11; short x12; int x13; int x14; BOOL x15; int x16; int x17; int x18; unsigned short x19; unsigned short x20; unsigned short x21; id x22; id x23; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x24; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; }*)arg1 to:(struct { id x1; id x2; id x3; id x4; id x5; short x6; int x7; short x8; int x9; short x10; int x11; short x12; int x13; int x14; BOOL x15; int x16; int x17; int x18; unsigned short x19; unsigned short x20; unsigned short x21; id x22; id x23; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x24; unsigned int x25 : 1; unsigned int x26 : 1; unsigned int x27 : 1; unsigned int x28 : 1; unsigned int x29 : 1; unsigned int x30 : 1; unsigned int x31 : 1; unsigned int x32 : 1; unsigned int x33 : 1; unsigned int x34 : 1; unsigned int x35 : 1; unsigned int x36 : 1; unsigned int x37 : 1; unsigned int x38 : 1; unsigned int x39 : 1; unsigned int x40 : 1; unsigned int x41 : 1; unsigned int x42 : 1; unsigned int x43 : 1; unsigned int x44 : 1; unsigned int x45 : 1; unsigned int x46 : 1; unsigned int x47 : 1; unsigned int x48 : 1; unsigned int x49 : 1; unsigned int x50 : 1; unsigned int x51 : 1; unsigned int x52 : 1; unsigned int x53 : 1; unsigned int x54 : 1; unsigned int x55 : 1; unsigned int x56 : 1; unsigned int x57 : 1; unsigned int x58 : 1; }*)arg2;
 - (id)bottomBorder;
@@ -154,6 +153,7 @@
 - (void)dealloc;
 - (int)deleted;
 - (id)deletionDate;
+- (id)description;
 - (id)diagonalDownBorder;
 - (id)diagonalUpBorder;
 - (id)document;

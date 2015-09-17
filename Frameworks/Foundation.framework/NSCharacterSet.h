@@ -58,14 +58,15 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
-
-+ (id)whitespaceNewlineAndSpecialCharacterSet;
-+ (id)wordBreakCharacterSet;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 + (id)safari_lockRelatedEmojiCharacterSet;
+
+// Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
+
++ (id)emojiCharacterSet;
++ (id)whitespaceNewlineAndSpecialCharacterSet;
++ (id)wordBreakCharacterSet;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

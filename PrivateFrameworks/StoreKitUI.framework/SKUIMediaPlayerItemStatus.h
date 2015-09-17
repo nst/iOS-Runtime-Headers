@@ -5,6 +5,7 @@
 @interface SKUIMediaPlayerItemStatus : NSObject <NSCopying> {
     double _currentTime;
     double _duration;
+    BOOL _hideDuration;
     NSString *_itemIdentifier;
     int _itemType;
     int _playState;
@@ -14,6 +15,7 @@
 
 @property (nonatomic) double currentTime;
 @property (nonatomic) double duration;
+@property (nonatomic) BOOL hideDuration;
 @property (nonatomic, copy) NSString *itemIdentifier;
 @property (nonatomic) int itemType;
 @property (nonatomic) int playState;
@@ -25,12 +27,14 @@
 - (double)currentTime;
 - (id)description;
 - (double)duration;
+- (BOOL)hideDuration;
 - (id)init;
 - (id)itemIdentifier;
 - (int)itemType;
 - (int)playState;
 - (void)setCurrentTime:(double)arg1;
 - (void)setDuration:(double)arg1;
+- (void)setHideDuration:(BOOL)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setItemType:(int)arg1;
 - (void)setPlayState:(int)arg1;

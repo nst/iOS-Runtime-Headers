@@ -9,4 +9,6 @@
     unsigned int _reserved;
 }
 
+- (void).cxx_destruct;
+
 @end

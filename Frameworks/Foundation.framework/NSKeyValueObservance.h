@@ -4,9 +4,7 @@
 
 @interface NSKeyValueObservance : NSWeakCallback {
     BOOL _cachedIsShareable;
-    unsigned int _cachedUnrotatedHashComponent;
     void *_context;
-    NSPointerArray *_observationInfos;
     NSObject *_observer;
     unsigned int _options;
     NSObject *_originalObservable;

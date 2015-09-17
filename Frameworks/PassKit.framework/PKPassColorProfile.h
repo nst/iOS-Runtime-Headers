@@ -32,8 +32,6 @@
 - (void)_calculateColorsWithBackgroundColor:(id)arg1 foregroundColor:(id)arg2 labelColor:(id)arg3;
 - (id)_imageForGlyph:(id)arg1 color:(id)arg2;
 - (id)_initWithBackgroundColor:(id)arg1 foregroundColor:(id)arg2 labelColor:(id)arg3;
-- (int)_sizeForFont:(id)arg1;
-- (int)_sizeForGlyph:(id)arg1;
 - (id)backgroundColor;
 - (void)dealloc;
 - (id)foregroundAttributesForFont:(id)arg1;

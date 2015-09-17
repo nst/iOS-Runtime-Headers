@@ -3,9 +3,11 @@
  */
 
 @interface UIAutoscroll : NSObject {
+    id _target;
     BOOL m_active;
     unsigned int m_count;
     int m_directions;
+    BOOL m_disabled;
     struct CGPoint { 
         float x; 
         float y; 
@@ -19,15 +21,18 @@
 @property (nonatomic) BOOL active;
 @property (nonatomic) unsigned int count;
 @property (nonatomic) int directions;
+@property (nonatomic) BOOL disabled;
 @property (nonatomic) struct CGPoint { float x1; float x2; } point;
 @property (nonatomic) double repeatInterval;
 @property (nonatomic, retain) UIView<UIAutoscrollContainer> *scrollContainer;
-@property (nonatomic, retain) id target;
+@property (nonatomic) id target;
 
+- (void).cxx_destruct;
 - (BOOL)active;
 - (unsigned int)count;
 - (void)dealloc;
 - (int)directions;
+- (BOOL)disabled;
 - (void)invalidate;
 - (struct CGPoint { float x1; float x2; })point;
 - (double)repeatInterval;
@@ -35,6 +40,7 @@
 - (void)setActive:(BOOL)arg1;
 - (void)setCount:(unsigned int)arg1;
 - (void)setDirections:(int)arg1;
+- (void)setDisabled:(BOOL)arg1;
 - (void)setPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setRepeatInterval:(double)arg1;
 - (void)setScrollContainer:(id)arg1;

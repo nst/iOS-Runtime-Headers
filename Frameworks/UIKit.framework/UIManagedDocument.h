@@ -15,8 +15,8 @@
     NSDictionary *persistentStoreOptions;
 }
 
-@property (nonatomic, readonly, retain) NSManagedObjectContext *managedObjectContext;
-@property (nonatomic, readonly, retain) NSManagedObjectModel *managedObjectModel;
+@property (nonatomic, readonly) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic, readonly) NSManagedObjectModel *managedObjectModel;
 @property (nonatomic, copy) NSString *modelConfiguration;
 @property (nonatomic, copy) NSDictionary *persistentStoreOptions;
 

@@ -32,6 +32,10 @@
 + (id)_kbTimingFunction;
 + (id)uiFunctionWithControlPoints:(const struct CGPoint { float x1; float x2; }*)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
+
++ (id)is_timingFunctionWithISPlaybackTimingFunction:(int)arg1 controlPoint1:(struct CGPoint { float x1; float x2; })arg2 controlPoint2:(struct CGPoint { float x1; float x2; })arg3;
+
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
 - (float)TSD_valueAtPercent:(double)arg1;

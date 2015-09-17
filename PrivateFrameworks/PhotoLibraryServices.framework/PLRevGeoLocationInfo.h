@@ -27,7 +27,7 @@
 + (BOOL)isValidFromData:(id)arg1;
 + (id)newDataFromRevGeoLocationInfo:(id)arg1;
 + (unsigned int)qualityTypeForPointInCountryCode:(id)arg1 withDataProviderId:(id)arg2;
-+ (id /* block */)sortedNameInfoComparatorWithHomeAtEnd:(BOOL)arg1;
++ (id /* block */)sortedNameAndAreaInfoComparatorWithHomeAtEnd:(BOOL)arg1;
 
 - (void)_addNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2 totalPlaceCount:(int*)arg3;
 - (id)compoundNameInfo;

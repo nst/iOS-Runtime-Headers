@@ -14,6 +14,7 @@
     id /* block */ __requestPostCompletionBlockWithItems;
     NSObject<OS_dispatch_queue> *__safePluginQueue;
     NSDictionary *_attributes;
+    NSUUID *_connectionUUID;
     NSString *_extensionPointIdentifier;
     NSString *_identifier;
     NSDictionary *_infoDictionary;
@@ -37,6 +38,7 @@
 @property (nonatomic, copy) id /* block */ _requestPostCompletionBlockWithItems;
 @property (nonatomic) NSObject<OS_dispatch_queue> *_safePluginQueue;
 @property (nonatomic, copy) NSDictionary *attributes;
+@property (nonatomic, copy) NSUUID *connectionUUID;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *extensionPointIdentifier;
@@ -59,6 +61,7 @@
 + (void)endMatchingExtensions:(id)arg1;
 + (BOOL)evaluateActivationRule:(id)arg1 withExtensionItemsRepresentation:(id)arg2;
 + (id)extensionWithIdentifier:(id)arg1 error:(id*)arg2;
++ (id)extensionWithIdentifier:(id)arg1 excludingDisabledExtensions:(BOOL)arg2 error:(id*)arg3;
 + (void)extensionsWithMatchingAttributes:(id)arg1 completion:(id /* block */)arg2;
 + (id)extensionsWithMatchingAttributes:(id)arg1 error:(id*)arg2;
 + (void)initialize;
@@ -111,12 +114,14 @@
 - (void)_setExtensionState:(id)arg1;
 - (void)_setObservingHostAppStateChanges:(BOOL)arg1;
 - (void)_setPlugIn:(id)arg1;
+- (BOOL)_wantsProcessPerRequest;
 - (BOOL)attemptOptIn:(id*)arg1;
 - (BOOL)attemptOptOut:(id*)arg1;
 - (id)attributes;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 completion:(id /* block */)arg2;
 - (void)beginExtensionRequestWithInputItems:(id)arg1 listenerEndpoint:(id)arg2 completion:(id /* block */)arg3;
 - (void)cancelExtensionRequestWithIdentifier:(id)arg1;
+- (id)connectionUUID;
 - (void)dealloc;
 - (id)description;
 - (id)extensionPointIdentifier;
@@ -133,6 +138,7 @@
 - (id /* block */)requestCompletionBlock;
 - (id /* block */)requestInterruptionBlock;
 - (void)setAttributes:(id)arg1;
+- (void)setConnectionUUID:(id)arg1;
 - (void)setExtensionPointIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInfoDictionary:(id)arg1;
@@ -144,6 +150,11 @@
 - (void)set_requestPostCompletionBlockWithItems:(id /* block */)arg1;
 - (void)set_safePluginQueue:(id)arg1;
 - (id)version;
+
+// Image: /System/Library/Frameworks/NotificationCenter.framework/NotificationCenter
+
+- (id)nc_description;
+- (BOOL)nc_hasExplicitUserElectionState;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 

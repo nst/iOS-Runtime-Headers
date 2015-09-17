@@ -42,6 +42,7 @@
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (id)initWithZone:(id)arg1;
 - (void)main;
+- (void)performAfterUnsharingIfNeeded:(id /* block */)arg1;
 - (BOOL)prepareWithMaxCost:(float)arg1 retryAfter:(unsigned long long*)arg2;
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsNeedingSharingInfo;
@@ -58,6 +59,7 @@
 - (void)setSyncUpCompletionBlock:(id /* block */)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (id)stageID;
+- (unsigned long long)startActivity;
 - (id /* block */)syncUpCompletionBlock;
 
 @end

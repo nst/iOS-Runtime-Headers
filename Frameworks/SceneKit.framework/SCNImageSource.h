@@ -7,6 +7,6 @@
 - (void)connectToProxy:(struct __C3DImageProxy { }*)arg1;
 - (BOOL)isOpaque;
 - (BOOL)isPremultiplied;
-- (id)textureSourceForContext:(void*)arg1;
+- (id)textureSource;
 
 @end

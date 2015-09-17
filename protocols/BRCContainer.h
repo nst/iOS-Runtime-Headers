@@ -7,6 +7,7 @@
 
 - (PQLConnection *)db;
 - (NSNumber *)dbRowID;
+- (BOOL)dumpStatusToContext:(BRCDumpContext *)arg1 error:(id*)arg2;
 - (BOOL)dumpTablesToContext:(BRCDumpContext *)arg1 error:(id*)arg2;
 - (BOOL)isPrivateContainer;
 - (BOOL)isSharedContainer;

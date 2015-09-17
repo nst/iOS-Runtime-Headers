@@ -12,13 +12,13 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (unsigned int)_maximumActionsForContext:(unsigned int)arg1;
 - (id)actions;
 - (id)actionsByContext;
 - (id)actionsForContext:(unsigned int)arg1;
 - (id)category;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

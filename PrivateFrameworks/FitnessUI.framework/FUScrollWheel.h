@@ -21,7 +21,6 @@
     float _scrollWheelLabelHeight;
     float _scrollWheelLabelPageSize;
     BOOL _shouldRegenerateOpacityMask;
-    BOOL _showsSelectionIndicator;
     UIView *_topDividerView;
     NSMutableDictionary *_usedLabels;
 }
@@ -36,7 +35,6 @@
 @property (nonatomic) int itemTitleAligmnent;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic) float scrollWheelLabelPageSize;
-@property (nonatomic) BOOL showsSelectionIndicator;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -70,6 +68,7 @@
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (float)scrollWheelLabelPageSize;
+- (void)setActiveScrollWheel;
 - (void)setCurrentIndex:(unsigned int)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -79,8 +78,6 @@
 - (void)setItemTitleAligmnent:(int)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)setScrollWheelLabelPageSize:(float)arg1;
-- (void)setShowsSelectionIndicator:(BOOL)arg1;
-- (BOOL)showsSelectionIndicator;
 - (void)willMoveToSuperview:(id)arg1;
 
 @end

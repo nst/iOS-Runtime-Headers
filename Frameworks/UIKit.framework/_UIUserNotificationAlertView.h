@@ -3,6 +3,7 @@
  */
 
 @interface _UIUserNotificationAlertView : UIAlertView {
+    id _retainedSelf;
     BOOL _runningModal;
     BOOL _runsModal;
     id _strongDelegate;
@@ -12,6 +13,7 @@
 
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (void)_cancelUserNotification;
 - (void)_removeObservervations;
 - (int)addButtonWithTitle:(id)arg1;

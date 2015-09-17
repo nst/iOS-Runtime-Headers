@@ -13,6 +13,7 @@
 + (void)enableAnimation;
 + (id)sharedAnimator;
 
+- (void).cxx_destruct;
 - (void)_LCDHeartbeatCallback:(id)arg1;
 - (void)_TVHeartbeatCallback:(id)arg1;
 - (void)_TimerHeartbeatCallback:(id)arg1;

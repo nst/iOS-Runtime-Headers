@@ -34,10 +34,12 @@
 @property (nonatomic, retain) NSString *firstName;
 @property (nonatomic) unsigned int flags;
 @property (nonatomic, retain) NSArray *friends;
+@property (nonatomic, retain) NSString *guestIdentifier;
 @property (nonatomic, retain) NSNumber *iCloudUserID;
 @property (nonatomic, readonly) BOOL isAnonymousPlayer;
 @property (nonatomic, readonly) BOOL isAutomatchPlayer;
 @property (nonatomic, readonly) BOOL isFriend;
+@property (nonatomic, readonly) BOOL isGuestPlayer;
 @property (nonatomic, readonly) BOOL isLoaded;
 @property (nonatomic, readonly) BOOL isLocalPlayer;
 @property (nonatomic, readonly) BOOL isUnknownPlayer;
@@ -79,6 +81,7 @@
 - (id)firstName;
 - (unsigned int)flags;
 - (id)friends;
+- (id)guestIdentifier;
 - (unsigned int)hash;
 - (id)iCloudUserID;
 - (BOOL)isAnonymousPlayer;
@@ -86,6 +89,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFindable;
 - (BOOL)isFriend;
+- (BOOL)isGuestPlayer;
 - (BOOL)isLoaded;
 - (BOOL)isLocalPlayer;
 - (BOOL)isPhotoPending;

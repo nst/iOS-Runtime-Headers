@@ -3,13 +3,13 @@
  */
 
 @interface GEOPDLocalizedSpokenStructuredAddress : PBCodable <NSCopying> {
-    NSString *_locale;
+    NSString *_language;
     GEOStructuredAddress *_spokenStructuredAddress;
 }
 
-@property (nonatomic, readonly) BOOL hasLocale;
+@property (nonatomic, readonly) BOOL hasLanguage;
 @property (nonatomic, readonly) BOOL hasSpokenStructuredAddress;
-@property (nonatomic, retain) NSString *locale;
+@property (nonatomic, retain) NSString *language;
 @property (nonatomic, retain) GEOStructuredAddress *spokenStructuredAddress;
 
 - (void)copyTo:(id)arg1;
@@ -17,14 +17,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasLocale;
+- (BOOL)hasLanguage;
 - (BOOL)hasSpokenStructuredAddress;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)locale;
+- (id)language;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
-- (void)setLocale:(id)arg1;
+- (void)setLanguage:(id)arg1;
 - (void)setSpokenStructuredAddress:(id)arg1;
 - (id)spokenStructuredAddress;
 - (void)writeTo:(id)arg1;

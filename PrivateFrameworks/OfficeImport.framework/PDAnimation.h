@@ -12,6 +12,7 @@
 - (id)addRootTimeNode;
 - (id)buildMap;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)rootTimeNode;
 - (void)setBuildMap:(id)arg1;

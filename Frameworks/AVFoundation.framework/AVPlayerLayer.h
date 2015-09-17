@@ -6,59 +6,84 @@
     AVPlayerLayerInternal *_playerLayer;
 }
 
+@property (nonatomic, copy) NSDictionary *pixelBufferAttributes;
 @property (nonatomic, retain) AVPlayer *player;
 @property (getter=isReadyForDisplay, nonatomic, readonly) BOOL readyForDisplay;
 @property (copy) NSString *videoGravity;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } videoRect;
 
-// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
-
++ (void)_swapSublayersBetweenPlayerLayer:(id)arg1 andPlayerLayer:(id)arg2;
 + (id)keyPathsForValuesAffectingVideoRect;
 + (id)playerLayerWithPlayer:(id)arg1;
 
-- (void)_addAnimationsForClosedCaptionLayer:(id)arg1 gravity:(id)arg2;
-- (void)_addAnimationsForMaskLayer:(id)arg1;
-- (void)_addAnimationsForVideoLayer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 gravity:(id)arg3;
+- (void)_addAnimationsForClosedCaptionLayer:(id)arg1 gravity:(id)arg2 forKey:(id)arg3;
+- (void)_addAnimationsForMaskLayer:(id)arg1 forKey:(id)arg2;
+- (void)_addAnimationsForPIPPlaceholderLayer:(id)arg1 forKey:(id)arg2;
+- (void)_addAnimationsForVideoLayer:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 gravity:(id)arg3 forKey:(id)arg4;
+- (void)_addBoundsAnimationToLayer:(id)arg1 usingAnimation:(id)arg2 forKey:(id)arg3;
+- (void)_addPositionAnimationToLayer:(id)arg1 usingAnimation:(id)arg2 forKey:(id)arg3;
+- (void)_addSublayerTransformAnimationToLayer:(id)arg1 fromTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg2 usingAnimation:(id)arg3 gravity:(id)arg4 presentationSize:(struct CGSize { float x1; float x2; })arg5 forKey:(id)arg6;
+- (void)_associateWithPIPLayer:(id)arg1;
+- (BOOL)_canHandleCALayerOverridesAsynchronously;
 - (id)_closedCaptionLayer;
+- (void)_configurePlayerWhenEnteringPIP;
+- (void)_configurePlayerWhenLeavingPIP;
+- (void)_disassociateWithPIPLayer;
 - (void)_forBoundsAnimations:(id)arg1 applyBlock:(id /* block */)arg2;
-- (struct CGSize { float x1; float x2; })_getAVPlayerCurrentItemPresentationSizeKeyFromPlayer:(id)arg1;
+- (void)_forceLayout;
+- (void)_mergeClientLayersIntoMaskLayer:(id)arg1;
 - (void)_notifyPlayerOfDisplaySize;
+- (BOOL)_preventsChangesToSublayerHierarchy;
+- (void)_restoreClientLayers:(id)arg1 intoMaskLayer:(id)arg2;
+- (void)_setCanHandleCALayerOverridesAsynchronously:(BOOL)arg1;
 - (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
 - (void)_setItem:(id)arg1 readyForDisplay:(BOOL)arg2;
+- (void)_setPreventsChangesToSublayerHierarchy:(BOOL)arg1;
+- (void)_setSublayersForPIP:(id)arg1;
+- (void)_setSublayersPreventChangesToSublayerHierarchy:(BOOL)arg1;
 - (void)_setSubtitleGravity:(id)arg1;
+- (void)_setWillManageSublayersAsSwappedLayers:(BOOL)arg1;
+- (id)_sublayersForPIP;
 - (id)_subtitleGravity;
 - (id)_subtitleLayer;
-- (id)_transformToAbsoluteAnimationOfBounds:(id)arg1;
 - (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1 forceUpdate:(BOOL)arg2;
 - (id)_videoLayer;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_videoRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)_willManageSublayersAsSwappedLayers;
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
+- (void)addSublayer:(id)arg1;
+- (BOOL)canEnterPIPMode;
 - (void)dealloc;
+- (void)enterPIPModeRedirectingVideoToLayer:(id)arg1;
 - (void)finalize;
 - (id)init;
 - (id)initWithLayer:(id)arg1;
+- (void)insertSublayer:(id)arg1 above:(id)arg2;
+- (void)insertSublayer:(id)arg1 atIndex:(unsigned int)arg2;
+- (void)insertSublayer:(id)arg1 below:(id)arg2;
 - (BOOL)isOverscanSubtitleSupportEnabled;
+- (BOOL)isPIPModeEnabled;
 - (BOOL)isReadyForDisplay;
 - (void)layerDidBecomeVisible:(BOOL)arg1;
+- (void)leavePIPMode;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pixelBufferAttributes;
+- (id)placeholderContentLayerDuringPIPMode;
 - (id)player;
 - (void)removeAllAnimations;
 - (void)removeAnimationForKey:(id)arg1;
+- (void)removeFromSuperlayer;
+- (void)replaceSublayer:(id)arg1 with:(id)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setContentsScale:(float)arg1;
 - (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
+- (void)setPIPModeEnabled:(BOOL)arg1;
 - (void)setPixelBufferAttributes:(id)arg1;
+- (void)setPlaceholderContentLayerDuringPIPMode:(id)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setSublayers:(id)arg1;
 - (void)setVideoGravity:(id)arg1;
 - (id)videoGravity;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })videoRect;
-
-// Image: /System/Library/Frameworks/AVKit.framework/AVKit
-
-+ (id)keyPathsForValuesAffectingVideoLayerGravity;
-
-- (void)setPlayerController:(id)arg1;
-- (void)setVideoLayerGravity:(int)arg1;
-- (int)videoLayerGravity;
 
 @end

@@ -9,9 +9,11 @@
     char *_altBuffer;
     char *_altBufferScores;
     char *_buffer;
+    NSMutableArray *_completions;
     void *_connection;
     unsigned int _endIndex;
     NSMutableArray *_geometryDataArray;
+    NSMutableArray *_guesses;
     unsigned int _lastIndexes;
     BOOL _lastSyllableIsPartial;
     unsigned int _length;
@@ -43,9 +45,11 @@
 - (void)_removePrefixes;
 - (void)addInputCharacter:(unsigned short)arg1 geometryModel:(void*)arg2 geometryData:(id)arg3;
 - (id)addedModifications;
+- (id)completions;
 - (id)currentModifications;
 - (void)dealloc;
 - (id)description;
+- (id)guesses;
 - (id)init;
 - (id)prefixes;
 - (void)removeNumberOfInputCharacters:(unsigned int)arg1;

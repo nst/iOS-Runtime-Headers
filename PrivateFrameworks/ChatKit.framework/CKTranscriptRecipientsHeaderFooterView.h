@@ -28,6 +28,7 @@
 - (id)locationSharingTextView;
 - (float)margin;
 - (id)preceedingSectionFooterLabel;
+- (void)prepareForReuse;
 - (void)setBottomSeparator:(id)arg1;
 - (void)setHeaderLabel:(id)arg1;
 - (void)setLocationSharingTextView:(id)arg1;

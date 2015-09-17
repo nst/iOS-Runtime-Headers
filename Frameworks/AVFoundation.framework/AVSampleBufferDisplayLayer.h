@@ -18,6 +18,7 @@
 @property (readonly, retain) struct OpaqueCMTimebase { }*timebase;
 @property (copy) NSString *videoGravity;
 
++ (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversOfError;
 + (BOOL)automaticallyNotifiesObserversOfStatus;
 
@@ -25,6 +26,7 @@
 - (void)_addFigVideoQueueListeners;
 - (long)_createVideoQueue;
 - (void)_didFinishSuspension:(id)arg1;
+- (void)_flushComplete;
 - (void)_forBoundsAnimations:(id)arg1 applyBlock:(id /* block */)arg2;
 - (long)_initializeTimebases;
 - (void)_refreshAboveHighWaterLevel;
@@ -33,7 +35,7 @@
 - (void)_setControlTimebase:(struct OpaqueCMTimebase { }*)arg1;
 - (void)_setOutputObscuredDueToInsufficientExternalProtection:(BOOL)arg1;
 - (void)_setStatus:(int)arg1 error:(id)arg2;
-- (void)_setSynchronizerTimebase:(struct OpaqueCMTimebase { }*)arg1;
+- (BOOL)_setSynchronizerTimebase:(struct OpaqueCMTimebase { }*)arg1 error:(id*)arg2;
 - (id)_transformToAbsoluteAnimationOfBounds:(id)arg1;
 - (void)_updateLayerTreeGeometryWithVideoGravity:(id)arg1 bounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 presentationSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)_updatePresentationSize:(struct CGSize { float x1; float x2; })arg1;
@@ -47,13 +49,14 @@
 - (void)finalize;
 - (void)flush;
 - (void)flushAndRemoveImage;
+- (void)flushWithRemovalOfDisplayedImage:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
 - (BOOL)isReadyForMoreMediaData;
 - (BOOL)outputObscuredDueToInsufficientExternalProtection;
 - (void)requestMediaDataWhenReadyOnQueue:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setControlTimebase:(struct OpaqueCMTimebase { }*)arg1;
-- (BOOL)setRenderSynchronizer:(id)arg1;
+- (BOOL)setRenderSynchronizer:(id)arg1 error:(id*)arg2;
 - (void)setVideoGravity:(id)arg1;
 - (int)status;
 - (void)stopRequestingMediaData;

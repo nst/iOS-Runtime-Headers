@@ -14,4 +14,6 @@
     BOOL touchIsValidTap;
 }
 
+- (void).cxx_destruct;
+
 @end

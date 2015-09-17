@@ -9,7 +9,6 @@
 
 - (id)changeSessionManagerForModel:(id)arg1;
 - (id)changeVisibility;
-- (void)dealloc;
 - (void)documentDidLoad;
 - (id)documentFonts;
 - (struct __CFLocale { }*)hyphenationLocale;
@@ -20,5 +19,6 @@
 - (id)unavailableDocumentFonts;
 - (BOOL)useLigatures;
 - (int)verticalAlignmentForTextStorage:(id)arg1;
+- (void)willClose;
 
 @end

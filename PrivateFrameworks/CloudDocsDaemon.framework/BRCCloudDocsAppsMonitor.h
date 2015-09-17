@@ -3,9 +3,10 @@
  */
 
 @interface BRCCloudDocsAppsMonitor : NSObject <BRCAppListMonitorDelegate> {
-    NSDictionary *_appIDsByContainerID;
+    NSMutableDictionary *_appIDsByContainerID;
     NSObject<OS_dispatch_queue> *_callbackQueue;
-    NSDictionary *_cloudDocsContainersByAppID;
+    NSMutableDictionary *_cloudDocsContainersByAppID;
+    NSObject<OS_dispatch_queue> *_fetchInstalledAppsQueue;
     NSMutableSet *_observers;
     NSObject<OS_dispatch_queue> *_queue;
     struct br_pacer_t { } *_refetchPacer;
@@ -26,6 +27,7 @@
 - (id)applicationIdentifiersForContainerID:(id)arg1;
 - (id)containerIDsForApplicationIdentifier:(id)arg1;
 - (void)dealloc;
+- (void)dumpToContext:(id)arg1;
 - (void)forceRefetchAppList;
 - (id)init;
 - (BOOL)isApplicationInstalledForContainerID:(id)arg1;

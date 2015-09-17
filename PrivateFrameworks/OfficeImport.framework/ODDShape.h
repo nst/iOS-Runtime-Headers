@@ -11,6 +11,7 @@
 - (void)addAdjustment:(id)arg1;
 - (id)adjustments;
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (int)presetType;
 - (void)setPresetType:(int)arg1;

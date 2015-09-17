@@ -22,7 +22,7 @@
 
 + (id)_constraintForAutoitem:(id)arg1 constrainedItem:(id)arg2 attribute:(int)arg3 relatedBy:(int)arg4 toItem:(id)arg5 attribute:(int)arg6 multiplier:(float)arg7 defaultConstant:(float)arg8 additionalConstant:(float)arg9 initialize:(BOOL)arg10;
 + (float)_maximumWidthOfStrings:(id)arg1 withFont:(id)arg2;
-+ (id)baselineConstraintForAutoitem:(id)arg1 relation:(int)arg2 toView:(id)arg3 attribute:(int)arg4 defaultConstant:(float)arg5;
++ (id)baselineConstraintForAutoitem:(id)arg1 relation:(int)arg2 toItem:(id)arg3 attribute:(int)arg4 defaultConstant:(float)arg5;
 + (id)baselineConstraintForView:(id)arg1 attribute:(int)arg2 relation:(int)arg3 toAutoitem:(id)arg4 defaultConstant:(float)arg5;
 + (id)constraintForAutoitem:(id)arg1 additionalConstant:(float)arg2 constantLoadingBlock:(id /* block */)arg3;
 + (id)constraintForAutoitem:(id)arg1 additionalConstant:(float)arg2 constantWidthSizingStringsLoadingBlock:(id /* block */)arg3;

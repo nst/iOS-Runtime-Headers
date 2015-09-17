@@ -21,7 +21,6 @@
     long mSIndex;
 }
 
-- (id).cxx_construct;
 - (long)anchorLocation;
 - (double)attachmentPosition;
 - (long)cIndex;

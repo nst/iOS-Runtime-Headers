@@ -14,8 +14,6 @@
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } center;
 @property (nonatomic) float radius;
 
-+ (id)SCNJSExportProtocol;
-
 - (struct SCNVector3 { float x1; float x2; float x3; })center;
 - (id)description;
 - (float)radius;

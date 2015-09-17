@@ -19,6 +19,5 @@
 - (void)setFriend:(id)arg1;
 - (void)setGeoFenceTrigger:(id)arg1;
 - (void)setLocation:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

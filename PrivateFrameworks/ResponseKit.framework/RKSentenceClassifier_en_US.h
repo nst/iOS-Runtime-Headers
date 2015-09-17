@@ -7,7 +7,7 @@
 + (id)preProcessTextMessageForLinguisticTagger:(id)arg1;
 
 - (id)addSentenceTerminatorQuestion:(id)arg1;
-- (id)alternativeConjunction;
+- (id)alternativeConjunctions;
 - (void)analyzeSentence;
 - (id)classifySentence;
 

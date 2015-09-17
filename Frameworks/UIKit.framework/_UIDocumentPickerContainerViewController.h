@@ -2,48 +2,72 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIDocumentPickerContainerViewController : UIViewController <_UIDocumentPickerServiceInvalidating> {
+@interface _UIDocumentPickerContainerViewController : UIViewController <UISearchControllerDelegate> {
     UIViewController<_UIDocumentPickerContainedViewController> *_childViewController;
+    int _explicitDisplayMode;
     _UIDocumentPickerContainerModel *_model;
     BOOL _rootContainer;
-    _UINavigationControllerPalette *_searchPalette;
-    _UIDocumentPickerViewServiceViewController *_weak_serviceViewController;
+    _UIDocumentPickerSearchPaletteView *_searchView;
+    <_UIDocumentPickerServiceViewController> *_serviceViewController;
+    _UIDocumentPickerSortOrderView *_sortView;
 }
 
 @property (nonatomic, retain) UIViewController<_UIDocumentPickerContainedViewController> *childViewController;
+@property (nonatomic) struct CGPoint { float x1; float x2; } contentOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isEditing, nonatomic) BOOL editing;
+@property (nonatomic) int explicitDisplayMode;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *indexPathsForSelectedItems;
 @property (nonatomic, retain) _UIDocumentPickerContainerModel *model;
 @property (getter=isRootContainer, nonatomic) BOOL rootContainer;
-@property (nonatomic, retain) _UINavigationControllerPalette *searchPalette;
+@property (nonatomic, retain) _UIDocumentPickerSearchPaletteView *searchView;
 @property (nonatomic) <_UIDocumentPickerServiceViewController> *serviceViewController;
+@property (nonatomic, retain) _UIDocumentPickerSortOrderView *sortView;
 @property (readonly) Class superclass;
 
-- (id)_mangledFilenameForURL:(id)arg1;
++ (id)userDefaults;
+
+- (void).cxx_destruct;
 - (void)_pickCurrentLocationForUpload:(id)arg1;
 - (void)_sortOrderViewChanged:(id)arg1;
-- (void)_tryExportingFile:(id)arg1 toLocation:(id)arg2;
 - (void)_updateForServiceView;
 - (id)childViewController;
+- (struct CGPoint { float x1; float x2; })contentOffset;
 - (void)dealloc;
+- (int)defaultDisplayMode;
 - (void)didMoveToParentViewController:(id)arg1;
+- (int)displayMode;
+- (void)displayModeChanged;
 - (void)ensureChildViewController;
+- (int)explicitDisplayMode;
+- (id)indexPathsForSelectedItems;
 - (id)initWithModel:(id)arg1;
-- (id)initWithURL:(id)arg1;
-- (void)invalidate;
+- (BOOL)isEditing;
 - (BOOL)isRootContainer;
 - (id)model;
-- (id)searchPalette;
+- (id)searchView;
 - (id)serviceViewController;
 - (void)setChildViewController:(id)arg1;
 - (void)setChildViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setDefaultDisplayMode:(int)arg1;
+- (void)setEditing:(BOOL)arg1;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setExplicitDisplayMode:(int)arg1;
+- (void)setIndexPathsForSelectedItems:(id)arg1;
 - (void)setModel:(id)arg1;
 - (void)setRootContainer:(BOOL)arg1;
-- (void)setSearchPalette:(id)arg1;
+- (void)setSearchView:(id)arg1;
 - (void)setServiceViewController:(id)arg1;
-- (void)setupPalettes;
-- (void)teardownPalettes;
+- (void)setSortOrder:(int)arg1;
+- (void)setSortView:(id)arg1;
+- (void)setupSearchController:(BOOL)arg1;
+- (void)setupToolbar;
+- (int)sortOrder;
+- (id)sortView;
+- (void)teardownToolbar;
 - (id)url;
 - (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;

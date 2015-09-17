@@ -3,38 +3,45 @@
  */
 
 @interface PLApplicationAgent : PLAgent {
-    PLAccountingGroup *_accountingGroupApplication;
-    PLAccountingGroup *_appAccountingGroup;
+    BKSApplicationStateMonitor *_appStateMonitor;
+    NSSet *_currentDisplayIdentifiers;
     NSMutableSet *_keyboardPlugins;
     PLNSNotificationOperatorComposition *_notificationSBApplicationStateChanged;
+    PLTimer *_runTimeAggregatorTimer;
+    NSDate *_startDateForOverAllBackGroundActivity;
+    NSMutableSet *_widgetPlugins;
 }
 
-@property (readonly) PLAccountingGroup *accountingGroupApplication;
-@property (retain) PLAccountingGroup *appAccountingGroup;
+@property (retain) BKSApplicationStateMonitor *appStateMonitor;
+@property (retain) NSSet *currentDisplayIdentifiers;
 @property (retain) NSMutableSet *keyboardPlugins;
 @property (readonly) PLNSNotificationOperatorComposition *notificationSBApplicationStateChanged;
+@property (retain) PLTimer *runTimeAggregatorTimer;
+@property (retain) NSDate *startDateForOverAllBackGroundActivity;
+@property (retain) NSMutableSet *widgetPlugins;
 
-+ (id)accountingGroupDefinitions;
 + (id)appNameForBundleID:(id)arg1;
++ (id)defaults;
 + (id)entryAggregateDefinitionApplicationReason;
 + (id)entryAggregateDefinitions;
 + (id)entryEventBackwardDefinitions;
++ (id)entryEventForwardDefinitionApplication;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventNoneAllApps;
 + (id)entryEventNoneAllPlugins;
 + (id)entryEventNoneDefinitionApplicationMetadata;
 + (id)entryEventNoneDefinitions;
-+ (id)entryEventPointDefinitionApplication;
 + (id)entryEventPointDefinitions;
-+ (id)installedBundleIDs;
 + (id)installedPlugins;
 + (void)load;
 + (id)pluginEntryFromProxy:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)accountingGroupApplication;
-- (void)addAccountingEvent:(id)arg1;
-- (id)appAccountingGroup;
+- (id)appStateMonitor;
+- (void)buildQueryWithQuery:(id)arg1 withKey:(id)arg2 withValue:(id)arg3;
+- (id)currentDisplayIdentifiers;
+- (void)displayIdentifiersDidChange;
+- (id)extensionSetWithType:(id)arg1;
 - (id)init;
 - (void)initOperatorDependancies;
 - (id)keyboardPlugins;
@@ -44,14 +51,21 @@
 - (void)logEventPointApplication;
 - (void)logEventPointApplicationForDisplayID:(id)arg1;
 - (void)logEventPointApplicationForDisplayID:(id)arg1 withPid:(int)arg2 withState:(id)arg3 withReasons:(id)arg4;
+- (void)logEventPointApplicationMetaDataForDisplayID:(id)arg1 withPid:(int)arg2;
 - (void)logInstalledApp:(id)arg1;
 - (void)logInstalledPlugin:(id)arg1;
 - (void)logUninstalledApp:(id)arg1;
 - (id)notificationSBApplicationStateChanged;
-- (void)setAppAccountingGroup:(id)arg1;
+- (void)refreshAllAppsAndPlugins;
+- (id)runTimeAggregatorTimer;
+- (void)setAppStateMonitor:(id)arg1;
+- (void)setCurrentDisplayIdentifiers:(id)arg1;
 - (void)setKeyboardPlugins:(id)arg1;
-- (void)storeInstalledAppsInfo:(id)arg1;
-- (void)storeUninstalledAppsInfo:(id)arg1;
-- (id)trimmingConditionsForRolloverAtDate:(id)arg1;
+- (void)setRunTimeAggregatorTimer:(id)arg1;
+- (void)setStartDateForOverAllBackGroundActivity:(id)arg1;
+- (void)setWidgetPlugins:(id)arg1;
+- (id)startDateForOverAllBackGroundActivity;
+- (id)trimConditionsForEntryKey:(id)arg1 forTrimDate:(id)arg2;
+- (id)widgetPlugins;
 
 @end

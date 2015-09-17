@@ -5,6 +5,7 @@
 @interface CPLEngineScheduler : NSObject <CPLAbstractObject, CPLEngineComponent> {
     unsigned int _currentRequestGeneration;
     unsigned int _currentSyncState;
+    BOOL _didStartFirstSync;
     unsigned int _disablingMinglingCount;
     NSCountedSet *_disablingReasons;
     CPLEngineLibrary *_engineLibrary;
@@ -16,6 +17,8 @@
     BOOL _opened;
     CPLPlatformObject *_platformObject;
     NSObject<OS_dispatch_queue> *_queue;
+    NSSet *_rejectedRecordIdentifiers;
+    unsigned int _rejectedRecordsRetries;
     unsigned int _requiredFirstState;
     BOOL _shouldDoSecondNormalPullPhase;
     BOOL _shouldRetryASyncSessionForResourcesUpload;
@@ -37,16 +40,22 @@
 - (void)_disableRetryAfterLocked;
 - (void)_disableSynchronizationWithReasonLocked:(id)arg1;
 - (void)_enableSynchronizationWithReasonLocked:(id)arg1;
+- (void)_handleResetAnchorWithError:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_handleResetClientCacheAndQuarantineRecords:(id)arg1 completionHAndler:(id /* block */)arg2;
 - (void)_handleResetClientCacheWithError:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_handleResetCloudCacheWithError:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)_minimalDateForFirstSync;
 - (void)_noteServerIsUnavailableWithErrorLocked:(id)arg1;
 - (void)_noteSyncSessionNeededFromState:(unsigned int)arg1;
+- (id)_pathToFirstSynchronizationMarker;
 - (void)_reallyStartSyncSession;
 - (void)_reallyUnscheduleSession;
 - (void)_scheduleNextSyncSession;
 - (void)_startRequiredSyncSession;
+- (void)_startSyncSessionWithMinimalPhase:(unsigned int)arg1;
 - (BOOL)_syncSessionIsPossible;
 - (void)_unscheduleNextSyncSession;
+- (void)_writeFirstSynchronizationMarker;
 - (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)componentName;
 - (void)disableMingling;

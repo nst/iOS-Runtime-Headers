@@ -8,7 +8,7 @@
 
 @property (nonatomic, retain) PKPrinter *printer;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)enterPIN;
 - (id)initWithPrinter:(id)arg1;
 - (void)loadView;

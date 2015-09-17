@@ -28,7 +28,6 @@
 
 - (id)_delegates;
 - (void)_dumpCaps;
-- (void)_markSetup;
 - (BOOL)_ready;
 - (void)_receivedPendingACRequests;
 - (void)_receivedPendingVCRequests;

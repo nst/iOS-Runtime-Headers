@@ -64,6 +64,7 @@
 - (void)_prepareForFirstIntrinsicContentSizeCalculation;
 - (void)_prepareForSecondIntrinsicContentSizeCalculationWithLayoutEngineBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_resetHighlightTimer;
+- (void)_resetToBeginningOfDoublePass;
 - (void)_setInSecondConstraintsPass:(BOOL)arg1;
 - (void)_updateHighlight:(id)arg1;
 - (int)action;
@@ -93,6 +94,7 @@
 - (void)dimmerView:(id)arg1 didReceiveTouchUpAtPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)enableDimmerView:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasAction;
 - (id)headlineForLCD;
 - (id)highlightClippedView;
 - (id)highlightHittableView;
@@ -112,6 +114,7 @@
 - (void)layoutSubviews;
 - (void)loadAd:(id)arg1;
 - (id)logoImageURL;
+- (id)nativeMetadata;
 - (int)options;
 - (void)pauseBannerMedia;
 - (void)playbackFailed:(id)arg1;
@@ -159,6 +162,7 @@
 - (void)setRequiredContentSizeIdentifiers:(id)arg1;
 - (void)setServerURL:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (double)skipThreshold;
 - (id)staticImageURL;
@@ -166,6 +170,7 @@
 - (void)suspendImpressionCycling;
 - (id)uniqueIdentifier;
 - (void)updateConstraints;
+- (void)userDidSkipPreroll;
 - (id)videoAssets;
 
 @end

@@ -22,9 +22,9 @@
 @property (nonatomic, retain) NSString *lastName;
 @property (nonatomic, retain) CoreDAVLeafItem *summary;
 
+- (void).cxx_destruct;
 - (id)acceptedURL;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)firstName;
 - (id)hostURL;
 - (id)href;

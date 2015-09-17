@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSString : NSObject <CKRecordValue, CKShortDescription, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable>
+@interface NSString : NSObject <CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CSCoderEncoder, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable>
 
 @property (nonatomic, readonly) NSData *_FTDataFromBase64String;
 @property (nonatomic, readonly) NSData *_FTDataFromHexString;
@@ -14,7 +14,11 @@
 @property (readonly) unsigned int length;
 @property (nonatomic, readonly) NSString *mobileMeDomain;
 @property (readonly) BOOL npkHasContent;
+@property (nonatomic, readonly) NSString *sf_URLScheme;
+@property (nonatomic, readonly) BOOL sf_isFeedScheme;
+@property (readonly) NSString *stringByEscapingXMLEntities;
 @property (readonly, copy) NSString *stringByRemovingPercentEncoding;
+@property (readonly) NSString *stringByUnescapingXMLEntities;
 @property (nonatomic, readonly) NSString *stripMobileMSuffixIfPresent;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSString *tsu_UTIFilenameExtension;
@@ -187,10 +191,17 @@
 - (unsigned int)lengthOfBytesUsingEncoding:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })lineRangeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)linguisticTagsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 scheme:(id)arg2 options:(unsigned int)arg3 orthography:(id)arg4 tokenRanges:(id*)arg5;
+- (id)localizedCapitalizedString;
 - (int)localizedCaseInsensitiveCompare:(id)arg1;
 - (BOOL)localizedCaseInsensitiveContainsString:(id)arg1;
 - (int)localizedCompare:(id)arg1;
+- (BOOL)localizedHasPrefix:(id)arg1;
+- (BOOL)localizedHasSuffix:(id)arg1;
+- (id)localizedLowercaseString;
 - (int)localizedStandardCompare:(id)arg1;
+- (BOOL)localizedStandardContainsString:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })localizedStandardRangeOfString:(id)arg1;
+- (id)localizedUppercaseString;
 - (long long)longLongValue;
 - (const char *)lossyCString;
 - (id)lowercaseString;
@@ -226,6 +237,7 @@
 - (id)stringByAppendingPathComponent:(id)arg1;
 - (id)stringByAppendingPathExtension:(id)arg1;
 - (id)stringByAppendingString:(id)arg1;
+- (id)stringByApplyingTransform:(id)arg1 reverse:(BOOL)arg2;
 - (id)stringByConvertingPathToURL;
 - (id)stringByConvertingURLToPath;
 - (id)stringByDeletingLastPathComponent;
@@ -249,6 +261,7 @@
 - (id)uppercaseString;
 - (id)uppercaseStringWithLocale:(id)arg1;
 - (id)urlPathRelativeToPath:(id)arg1;
+- (id)variantFittingPresentationWidth:(int)arg1;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2;
 - (BOOL)writeToFile:(id)arg1 atomically:(BOOL)arg2 encoding:(unsigned int)arg3 error:(id*)arg4;
 - (BOOL)writeToURL:(id)arg1 atomically:(BOOL)arg2;
@@ -264,31 +277,54 @@
 
 // Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
 
-- (BOOL)AB_containsEmojiCharacters;
-- (BOOL)AB_containsNonLatinCharacters;
-- (unsigned long)AB_firstUTF32Character;
-- (BOOL)AB_shouldTransliterateToLatin;
-- (id)AB_stringByTransliteratingToKana;
-- (id)AB_stringByTransliteratingToPhoneticCharactersAsFamilyName:(BOOL)arg1;
 - (int)abCompare:(id)arg1;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 - (id)CKMangledDocumentNameForURLFragment;
+- (id)CKSHA256;
 - (id)CKSafeHashStringForPathComponent;
 - (id)CKSafeStringForPathComponent;
 - (id)CKSafeStringForURLPathComponent;
-- (id)CKSafeStringForURLWithCharsToBeEscaped:(id)arg1 charsToLeaveUnescaped:(id)arg2;
+- (id)CKSafeStringForURLWithCharsToBeEscaped:(id)arg1;
+- (id)CKSanitizedPath;
 - (id)CKUnmangledDocumentNameFromURLFragment;
 - (id)ckShortDescription;
+
+// Image: /System/Library/Frameworks/Contacts.framework/Contacts
+
+- (void)_cn_executeGetterForRepresentedKeys:(id /* block */)arg1;
+- (id)_cn_requiredKeys;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (BOOL)cnui_containsEmojiCharacters;
+- (BOOL)cnui_containsNonLatinCharacters;
+- (unsigned long)cnui_firstUTF32Character;
+- (BOOL)cnui_shouldTransliterateToLatin;
+- (BOOL)cnui_shouldUseJapaneseTransliteration;
+- (BOOL)cnui_shouldUseZhuyinTransliteration;
+- (id)cnui_stringByTransliteratingToKana;
+- (id)cnui_stringByTransliteratingToPhoneticCharactersAsFamilyName:(BOOL)arg1;
 
 // Image: /System/Library/Frameworks/CoreData.framework/CoreData
 
 - (int)_caseInsensitiveNumericCompare:(id)arg1;
 
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
+
+- (id)cl_json_serializeKey;
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
 // Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
 
+- (id)cl_json_serializeKey;
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
 - (BOOL)hasSuffixInsensitive:(id)arg1;
+
+// Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
+
+- (void)encodeWithCSCoder:(id)arg1;
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 
@@ -301,21 +337,30 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
+- (id)hk_copyNonEmptyString;
 - (BOOL)hk_isBase64;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
+- (id)generateSHA1;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
++ (id)_mapkit_commaListDelimiter;
 + (id)_mapkit_formattedStringForCoordinate:(struct { double x1; double x2; })arg1;
 + (id)_mapkit_formattedStringForFloat:(float)arg1;
 + (id)_mapkit_formattedStringForFloatingPointNumber:(id)arg1;
++ (id)_mapkit_formattedStringForHourRanges:(id)arg1 timeZone:(id)arg2;
 + (id)_mapkit_formattedStringForInteger:(int)arg1;
-+ (id)_mapkit_localizedDistanceStringWithMeters:(unsigned int)arg1 inMetric:(BOOL)arg2 displaysYardsForShortDistances:(BOOL)arg3 includeTrip:(BOOL)arg4;
-+ (id)_mapkit_voiceOverLocalizedDistanceStringWithMeters:(unsigned int)arg1 inMetric:(BOOL)arg2 displaysYardsForShortDistances:(BOOL)arg3 includeTrip:(BOOL)arg4;
++ (id)_mapkit_localizedDistanceStringWithMeters:(unsigned int)arg1 includeTrip:(BOOL)arg2 abbreviated:(BOOL)arg3;
++ (id)_mapkit_stringForExpectedTravelTime:(double)arg1;
++ (id)_mapkit_voiceOverLocalizedDistanceStringWithMeters:(unsigned int)arg1 includeTrip:(BOOL)arg2;
 + (id)_maps_formatFloatForDistanceSign:(float)arg1;
 + (id)_maps_formattedStringForFloat:(float)arg1;
 + (id)_maps_formattedStringForFloat:(float)arg1 useIncreasedPrecision:(BOOL)arg2;
 
 - (float)_mapkit_cgFloatValue;
+- (id)_mapkit_componentsSeparatedFromCommaDelimitedList;
 - (BOOL)_mapkit_isCJK;
 - (id)_mapkit_sanitizedStringForDisplayInHTML;
 - (id)_mapkit_stringByEscapingHTML;
@@ -365,11 +410,24 @@
 
 - (BOOL)pu_endsWithFullStopOrEquivalentPunctuationMark;
 - (long long)pu_platformAgnosticHash;
+- (id)pu_stringByIndentingNewLines;
 
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 - (id)CAMLType;
 - (void)encodeWithCAMLWriter:(id)arg1;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (id)sf_URLScheme;
+- (BOOL)sf_isFeedScheme;
+- (id)sf_stringByReplacingLastOccurrenceOfWhitespaceWithANonBreakingSpace;
+- (id)sf_stringByReplacingMarkupCharactersWithHTMLEntities;
+
+// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
+
+- (unsigned int)SCN_safeHash;
+- (id)stringByReplacingCharactersInRanges:(id)arg1 withStrings:(id)arg2;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
@@ -468,6 +526,16 @@
 - (id)prefixStringWithByteCount:(unsigned int)arg1;
 - (id)stringByCapitalizingFirstLetter;
 
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (id)stringByTrimmingLeadingCharactersInSet:(id)arg1;
+- (id)stringByTrimmingLeadingWhitespace;
+- (id)stringByTrimmingLeadingWhitespaceAndNewline;
+- (id)stringByTrimmingTrailingCharactersInSet:(id)arg1;
+- (id)stringByTrimmingTrailingWhitespace;
+- (id)stringByTrimmingTrailingWhitespaceAndNewline;
+- (id)stringByTrimmingTrailingWhitespaceFromEachLine;
+
 // Image: /System/Library/PrivateFrameworks/AppSupport.framework/AppSupport
 
 - (id)stringByEscapingXMLSpecialCharacters;
@@ -532,6 +600,7 @@
 - (BOOL)containsCaseAndDiacriticInsensitive:(id)arg1;
 - (BOOL)containsCaseInsensitive:(id)arg1;
 - (BOOL)hasMailto;
+- (BOOL)hasPrefixCaseAndDiacriticInsensitive:(id)arg1;
 - (BOOL)hasPrefixCaseInsensitive:(id)arg1;
 - (BOOL)hasSuffixCaseInsensitive:(id)arg1;
 - (id)hostFromEmail;
@@ -559,6 +628,7 @@
 - (id)stringByExpandingTildeToNonSandboxHome;
 - (id)stringByRemovingCharactersInSet:(id)arg1;
 - (id)stringByRemovingLastPathComponent;
+- (id)stringByRemovingPrefixCaseInsensitive:(id)arg1;
 - (id)stringByReplacingCharactersInSet:(id)arg1 withString:(id)arg2;
 - (id)stringByTrimmingWhitespaceAndRemovingNewlines;
 - (id)stringByURLEscapingAllReservedCharacters;
@@ -585,18 +655,16 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
-+ (void)brc_addForcedPackageExtension:(id)arg1;
 + (id)brc_pathWithDeviceID:(int)arg1 fileID:(unsigned long long)arg2;
 + (id)brc_pathWithFileSystemRepresentation:(const char *)arg1;
 + (id)brc_representableHFSFileNameWithBase:(id)arg1 suffix:(id)arg2 extension:(id)arg3 makeDotFile:(BOOL)arg4;
-+ (void)brc_setForcedPackageExtensions:(id)arg1;
 
 - (int)brc_compareToStringForHFS:(id)arg1 isCaseSensitive:(BOOL)arg2;
+- (id)brc_displayFilenameWithExtensionHidden:(BOOL)arg1;
 - (const char *)brc_fileSystemRepresentation;
 - (BOOL)brc_isAbsolutePath;
 - (BOOL)brc_isEqualToStringForHFS:(id)arg1 isCaseSensitive:(BOOL)arg2;
 - (BOOL)brc_isExcludedWithMaximumDepth:(unsigned int)arg1;
-- (BOOL)brc_isForcedPackageExtension;
 - (BOOL)brc_isInPackage;
 - (BOOL)brc_isPackageRoot;
 - (BOOL)brc_isSideFaultName;
@@ -619,16 +687,16 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
++ (void)brc_addForcedPackageExtension:(id)arg1;
 + (id)brc_hexadecimalStringWithBytes:(const char *)arg1 length:(unsigned int)arg2;
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
++ (void)brc_loadForcedPackageExtensions;
 
 - (id)brc_SHA1WithSalt:(id)arg1;
 - (id)brc_SHA256;
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (BOOL)brc_isBlacklistedPackageExtension;
+- (BOOL)brc_isForcedPackageExtension;
 
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 
 - (id)CKDPIdentifier_Device;
 - (id)CKDPIdentifier_Raw;
@@ -638,7 +706,6 @@
 - (id)CKDPIdentifier_User;
 - (id)CKDPIdentifier_Zone;
 - (id)_CKDPIdentifierWithType:(int)arg1;
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -650,6 +717,29 @@
 + (id)cutStringGUID;
 
 - (id)cutStringByResolvingAndStandardizingPath;
+
+// Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
+
++ (BOOL)_cn_isBlank:(id)arg1;
+
+- (BOOL)_cn_caseInsensitiveIsEqual:(id)arg1;
+- (BOOL)_cn_containsCharacterInSet:(id)arg1;
+- (BOOL)_cn_containsSubstring:(id)arg1;
+- (BOOL)_cn_containsSubstring:(id)arg1 options:(unsigned int)arg2;
+- (BOOL)_cn_hasCaseAndDiacriticInsensitivePrefix:(id)arg1;
+- (BOOL)_cn_hasPrefix:(id)arg1;
+- (BOOL)_cn_hasPrefix:(id)arg1 options:(unsigned int)arg2;
+- (BOOL)_cn_isBlank;
+- (id)_cn_nameComponentTokens;
+- (id)_cn_nameComponentTokensUsingLocale:(id)arg1 inferredNameOrder:(int*)arg2;
+- (id)_cn_stringByAddingPercentEscapesIfNecessary;
+- (id)_cn_stringByAddingPercentEscapesToEntireURL;
+- (id)_cn_stringByDeletingCharactersInSet:(id)arg1;
+- (id)_cn_stringByDeletingNumberOfPathComponents:(unsigned int)arg1;
+- (id)_cn_stringByNormalizingCase;
+- (id)_cn_stringByReplacingStrings:(id)arg1;
+- (id)_cn_tokens;
+- (id)_cn_trimmedString;
 
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
@@ -667,6 +757,10 @@
 - (id)CDVStringByXMLQuoting;
 - (id)CDVStringByXMLUnquoting;
 - (id)initWithCDVNameSpace:(id)arg1 andName:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
+
+- (id)generateSHA1;
 
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
@@ -694,21 +788,31 @@
 
 - (int)editDistanceFromString:(id)arg1;
 - (int)editDistanceFromString:(id)arg1;
+- (int)editDistanceFromStringIgnoringSpaces:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
+
+- (id)sg_deepCopy;
+- (id)sg_initWithDataNoCopy:(id)arg1 encoding:(unsigned int)arg2;
+
+// Image: /System/Library/PrivateFrameworks/CoreThemeDefinition.framework/CoreThemeDefinition
+
+- (id)td_stringByStandardizingPath;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
-+ (id)new64ByteGUID;
-+ (id)newGUID;
++ (id)da_new64ByteGUID;
++ (id)da_newGUID;
 
-- (id)absoluteURLForChildLeastInfoRepresentationRelativeToParentURL:(id)arg1;
-- (id)appendSlashIfNeeded;
-- (BOOL)hasPrefixCaseInsensitive:(id)arg1;
-- (id)removeSlashIfNeeded;
-- (id)stringByAddingPercentEscapesForUsername;
-- (id)stringByRemovingPercentEscapesForUsername;
-- (id)stringByURLEscapingPathComponent;
+- (id)da_absoluteURLForChildLeastInfoRepresentationRelativeToParentURL:(id)arg1;
+- (id)da_appendSlashIfNeeded;
+- (BOOL)da_hasPrefixCaseInsensitive:(id)arg1;
+- (id)da_removeSlashIfNeeded;
+- (id)da_stringByAddingPercentEscapesForUsername;
+- (id)da_stringByRemovingPercentEscapesForUsername;
+- (id)da_stringByURLEscapingPathComponent;
+- (id)da_trimWhiteSpace;
 - (id)stringByURLQuoting;
-- (id)trimWhiteSpace;
 
 // Image: /System/Library/PrivateFrameworks/ETPeople.framework/ETPeople
 
@@ -719,10 +823,23 @@
 - (BOOL)etMessageIsRawAddress;
 - (id)etMessageRawAddress;
 
+// Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
+
+- (id)decodeFromPercentEscape;
+- (id)decodeHexString;
+- (id)encodeToPercentEscape;
+- (BOOL)isNumeric;
+- (id)legacyAllowedCharacterSet;
+
 // Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
 
 - (id)_FTDataFromBase64String;
 - (id)_FTDataFromHexString;
+
+// Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
+
+- (id)FU_uppercaseString;
+- (id)localizedTerminalOrGateID;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
@@ -752,7 +869,6 @@
 - (id)_gkTruncationSymbolWithFormat:(id)arg1;
 - (id)cacheKeyRepresentation;
 - (void)processUTF16CharactersForBidi:(id /* block */)arg1;
-- (id)stringByAddingPercentEscapesIncludingReservedCharacters;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 
@@ -770,12 +886,23 @@
 - (BOOL)validateGSName:(out id*)arg1;
 - (BOOL)validateGSNameAllowingDot:(BOOL)arg1 error:(id*)arg2;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
+- (id)serverFormattedString;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
+- (int)hd_compareBuildVersionWithString:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
 
-- (id)_hk_attributedStringPrefixedWithImage:(id)arg1 baselineAdjusted:(float)arg2 withSpacing:(float)arg3 attributes:(id)arg4;
++ (id)hk_deviceClassLocalizedStringForKey:(id)arg1;
+
 - (id)hk_attributedStringPrefixedWithImage:(id)arg1 baselineAdjusted:(float)arg2 spacing:(float)arg3;
+- (id)hk_attributedStringPrefixedWithImage:(id)arg1 baselineAdjusted:(float)arg2 spacing:(float)arg3 attributes:(id)arg4;
 - (id)hk_attributedStringPrefixedWithImage:(id)arg1 baselineAdjusted:(float)arg2 withAttributes:(id)arg3;
 - (id)hk_attributedStringPrefixedWithImage:(id)arg1 spacing:(float)arg2;
+- (id)hk_attributedStringPrefixedWithImage:(id)arg1 spacing:(float)arg2 attributes:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
@@ -938,6 +1065,7 @@
 - (id)mf_stringByLocalizingReOrFwdPrefix;
 - (id)mf_stringByReallyAbbreviatingSharedResourcesDirectoryWithTildeInPath;
 - (id)mf_stringByReplacingPercentEscapesUsingEncoding:(unsigned int)arg1;
+- (id)mf_stringForQuotingWithCharacter:(BOOL)arg1;
 - (id)mf_stringWithNoExtraSpaces;
 - (unsigned int)mf_subjectPrefixLength;
 - (id)mf_uniqueFilenameWithRespectToFilenames:(id)arg1;
@@ -949,6 +1077,8 @@
 
 - (const char *)FSR;
 - (id)MBAppendGreenteaSuffix;
+- (id)backupIDByAddingCKPrefix;
+- (id)backupIDByRemovingCKPrefix;
 - (BOOL)pathComponentExistsInSet:(id)arg1;
 - (void)splitIntoBase:(int*)arg1 andRelativePath:(const char **)arg2;
 - (id)stringByAppendingSlash;
@@ -971,145 +1101,176 @@
 - (BOOL)isAllCaps;
 - (BOOL)npkHasContent;
 
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
+- (BOOL)naui_containsCJKScripts;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
+- (void)enumerateContentLineRangesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateParagraphsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 usingBlock:(id /* block */)arg2;
+- (id)ic_substringFromIndex:(unsigned int)arg1;
+- (id)ic_substringToIndex:(unsigned int)arg1;
+- (id)ic_substringWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)md5;
+- (unsigned int)numberOfLines;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)dictionaryFromQueryComponents;
+- (id)stringByDecodingURLFormat;
+- (id)stringByEncodingURLFormat;
+
 // Image: /System/Library/PrivateFrameworks/OAuth.framework/OAuth
 
 - (id)urlEncodedString;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)customNumberFormatDecimalFormatStringWithDigits:(unsigned int)arg1 digitString:(id)arg2 includeDecimalSeparator:(BOOL)arg3;
-+ (id)customNumberFormatDecimalTokenDisplayStringWithDigits:(unsigned int)arg1 digitString:(id)arg2;
-+ (id)customNumberFormatDecimalTokenRepresentedStringWithDigits:(unsigned int)arg1 digitString:(id)arg2;
-+ (id)customNumberFormatIntegerFormatStringWithDigits:(unsigned int)arg1 digitString:(id)arg2;
-+ (id)customNumberFormatIntegerTokenDisplayStringWithDigits:(unsigned int)arg1 separator:(BOOL)arg2 digitString:(id)arg3;
-+ (id)customNumberFormatIntegerTokenRepresentedStringWithDigits:(unsigned int)arg1 separator:(BOOL)arg2 digitString:(id)arg3;
-+ (id)customNumberFormatTokenStringOfType:(int)arg1 content:(id)arg2;
-+ (id)listSeparator;
++ (id)gsu_UUIDString;
++ (id)gsu_formattedStringWithDouble:(double)arg1;
++ (id)gsu_tokenWithLength:(unsigned int)arg1;
 + (id)mapString:(id)arg1;
-+ (id)numberSymbols;
 + (bool)skipString:(id)arg1;
-+ (id)stringByBase64EncodingBytes:(const char *)arg1 length:(unsigned int)arg2;
-+ (id)stringByBase64EncodingBytes:(const char *)arg1 length:(unsigned int)arg2 breakLines:(BOOL)arg3;
-+ (id)stringByHexEncodingData:(id)arg1;
-+ (id)stringByIndentingString:(id)arg1;
-+ (id)stringByIndentingString:(id)arg1 times:(unsigned int)arg2;
 + (id)stringWithCsString:(const struct CsString { int (**x1)(); unsigned short *x2; unsigned int x3; unsigned int x4; }*)arg1;
-+ (id)stringWithFormat:(id)arg1 arguments:(void*)arg2;
-+ (id)stringWithHexFromBytes:(const char *)arg1 length:(unsigned int)arg2;
 + (id)stringWithOcText:(const struct OcText { int (**x1)(); int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; char *x7; bool x8; }*)arg1;
-+ (id)stringWithUUID;
 + (id)stringWithWideCString:(int*)arg1;
-+ (id)stringWithXMLString:(const char *)arg1;
-+ (id)stringWithXmlString:(const char *)arg1;
++ (id)tc_stringWithXmlString:(const char *)arg1;
++ (id)tsu_customNumberFormatDecimalFormatStringWithDigits:(unsigned int)arg1 digitString:(id)arg2 includeDecimalSeparator:(BOOL)arg3;
++ (id)tsu_customNumberFormatDecimalTokenDisplayStringWithDigits:(unsigned int)arg1 digitString:(id)arg2;
++ (id)tsu_customNumberFormatDecimalTokenRepresentedStringWithDigits:(unsigned int)arg1 digitString:(id)arg2;
++ (id)tsu_customNumberFormatIntegerFormatStringWithDigits:(unsigned int)arg1 digitString:(id)arg2;
++ (id)tsu_customNumberFormatIntegerTokenDisplayStringWithDigits:(unsigned int)arg1 separator:(BOOL)arg2 digitString:(id)arg3 locale:(id)arg4;
++ (id)tsu_customNumberFormatIntegerTokenRepresentedStringWithDigits:(unsigned int)arg1 separator:(BOOL)arg2 digitString:(id)arg3;
++ (id)tsu_customNumberFormatTokenStringOfType:(int)arg1 content:(id)arg2;
++ (id)tsu_numberSymbols;
++ (id)tsu_stringByBase64EncodingBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (id)tsu_stringByBase64EncodingBytes:(const char *)arg1 length:(unsigned int)arg2 breakLines:(BOOL)arg3;
++ (id)tsu_stringByHexEncodingData:(id)arg1;
++ (id)tsu_stringByIndentingString:(id)arg1;
++ (id)tsu_stringByIndentingString:(id)arg1 times:(unsigned int)arg2;
++ (id)tsu_stringWithFormat:(id)arg1 arguments:(void*)arg2;
++ (id)tsu_stringWithHexFromBytes:(const char *)arg1 length:(unsigned int)arg2;
++ (id)tsu_stringWithUUID;
++ (id)tsu_stringWithXMLString:(const char *)arg1;
 
 - (id)_copyCsvRows:(unsigned int*)arg1 usingDelimiter:(id)arg2 columnCountIsConstant:(BOOL*)arg3;
-- (void)appendJsonStringToString:(id)arg1;
 - (int*)cWideString;
-- (int)compareToVersionString:(id)arg1;
-- (id)componentsSeparatedByWhitespace;
-- (BOOL)containsOnlyCharactersFromSet:(id)arg1;
-- (BOOL)containsPercentEscapes;
-- (BOOL)containsSubstring:(id)arg1;
 - (id)copyCsvRows:(unsigned int*)arg1;
 - (void)copyToCsString:(struct CsString { int (**x1)(); unsigned short *x2; unsigned int x3; unsigned int x4; }*)arg1;
 - (void)copyToOcText:(struct OcText { int (**x1)(); int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; char *x7; bool x8; }*)arg1;
 - (void)copyToOcText:(struct OcText { int (**x1)(); int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; char *x7; bool x8; }*)arg1 encoding:(int)arg2;
-- (unsigned int)countInstancesOfString:(id)arg1 options:(unsigned int)arg2;
-- (id)currencyCodeFromCustomNumberFormatCurrencyToken;
-- (BOOL)customFormatIntegerTokenUsesSeparator;
 - (id)dataUsingWordEncoding:(int)arg1;
-- (id)digitPlaceholderStringInDigitToken;
-- (BOOL)doesURLHostContainWhitespace;
-- (id)encodeStringBase64;
-- (void)enumerateRangesOfCharactersInSet:(id)arg1 usingBlock:(id /* block */)arg2;
-- (id)escapeForIcuRegex;
-- (id)escapeXML;
-- (id)firstKey;
-- (int)fontTypeAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 forXML:(BOOL)arg3;
 - (int)fontTypeForCharacter:(unsigned short)arg1 isControl:(BOOL*)arg2;
-- (id)formatStringFromCustomNumberFormatScaleToken;
-- (int)fractionAccuracyFromCustomNumberFormatFractionToken;
 - (id)getDataUsingOfficeCryptographicEncoding;
-- (unsigned int)indexOfFirstNonPrefixCharacterInNumberFormatSubpattern;
-- (unsigned int)indexOfLastNonSuffixCharacterInNumberFormatSubpattern;
-- (unsigned int)indexOfNumberFormatSubpatternSeparator;
-- (id)initFromXmlNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 ns:(const char *)arg2 attributeName:(const char *)arg3;
-- (id)initFromXmlNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 nsWithFallbackNs:(id)arg2 attributeName:(const char *)arg3;
-- (id)initWithContentOfXmlNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
+- (unsigned int)gsu_crc32WithInterval:(unsigned int)arg1;
+- (id)gsu_realpath;
+- (id)gsu_singleLineForLog;
+- (id)gsu_splitNumParts:(unsigned int)arg1 delimiter:(id)arg2;
+- (id)gsu_splitWithoutLastEmptyEntryWithDelimiter:(id)arg1 isEndWithDelimiter:(BOOL*)arg2;
+- (id)gsu_stripTrailingChars:(BOOL)arg1;
+- (id)gsu_stripTrailingSlashesIfPresent;
+- (int)gsu_uInt64Value:(unsigned long long*)arg1;
+- (unsigned int)gsu_unsignedIntegerValue;
 - (id)initWithCsString:(const struct CsString { int (**x1)(); unsigned short *x2; unsigned int x3; unsigned int x4; }*)arg1;
 - (id)initWithOcText:(const struct OcText { int (**x1)(); int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; char *x7; bool x8; }*)arg1;
-- (id)initWithValueOfXmlAttribute:(struct _xmlAttr { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlAttr {} *x7; struct _xmlAttr {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; int x11; void *x12; }*)arg1;
 - (id)initWithWideCString:(int*)arg1;
-- (id)initWithXmlString:(const char *)arg1;
 - (id)initialsFromAuthorName;
-- (BOOL)isChildOfPath:(id)arg1;
-- (BOOL)isDescendantOfPath:(id)arg1;
-- (BOOL)isEqualToXmlString:(const char *)arg1;
-- (BOOL)isLegalEmailAddress;
-- (BOOL)isNumberFormatPattern;
-- (BOOL)isSpecialCustomNumberFormatToken;
-- (BOOL)isSpecialCustomNumberFormatTokenOfType:(int)arg1;
-- (id)keyPathByAppendingKey:(id)arg1;
-- (id)keyPathByPrependingKey:(id)arg1;
-- (id)keyPathByRemovingFirstKey;
-- (id)keyPathByRemovingLastKey;
 - (int)languageTypeAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
-- (id)lastKey;
-- (id)md5Hash;
-- (id)negativeSubpatternOfNumberFormatPattern;
-- (id)newRangesOfEscapedCharactersInNumberFormatPattern;
-- (id)newStringBySubstitutingCharactersCFNumberFormatterDoesntUnderstand;
-- (unsigned int)numberOfDigitsInCustomNumberFormatDecimalToken;
-- (unsigned int)numberOfDigitsInCustomNumberFormatIntegerToken;
-- (unsigned int)numberOfKeysInKeyPath;
-- (id)numberPortionOfNumberFormatSubpattern;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })oi_rangeOfCharactersFromSet:(id)arg1 index:(int)arg2;
 - (double)oi_sizeWithFontName:(id)arg1 size:(int)arg2;
 - (double)oi_sizeWithFontName:(id)arg1 size:(int)arg2 bold:(bool)arg3 italic:(bool)arg4;
-- (id)positiveSubpatternOfNumberFormatPattern;
-- (id)prefixOfNumberFormatSubpattern;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })range;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfString:(id)arg1 options:(unsigned int)arg2 updatingSearchRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
-- (unsigned short)scaleCharacterInCustomNumberFormatScaleToken;
-- (id)sha256HexHashString;
-- (unsigned short)spaceCharacterInCustomNumberFormatSpaceToken;
-- (BOOL)startsWithString:(id)arg1;
-- (id)stringByAddingCSVEscapes;
-- (id)stringByAppendingSeparator:(id)arg1 format:(id)arg2;
-- (id)stringByExpandingTableFormatting;
-- (id)stringByFixingBrokenSurrogatePairs;
-- (id)stringByFixingCharactersWithLatinFontFamilyName:(id)arg1 symbolFontFamilyName:(id)arg2;
-- (id)stringByInsertingFormatGroupingSeparators;
-- (id)stringByMakingFirstCharacterLowercase;
-- (id)stringByMakingFirstCharacterUppercase;
-- (id)stringByPercentEscaping;
-- (id)stringByRemovingCharactersInSet:(id)arg1;
-- (id)stringByRemovingCharactersInSet:(id)arg1 options:(unsigned int)arg2;
-- (id)stringByRemovingEscapedCharactersFromNumberFormatPattern;
-- (id)stringByReplacing2DigitYearStringWith4DigitYearString;
-- (id)stringByReplacing4DigitYearStringWith2DigitYearString;
-- (id)stringByReplacingInstancesOfCharactersInSet:(id)arg1 withString:(id)arg2;
-- (id)stringByTrimmingCharactersInSetFromFront:(id)arg1;
-- (id)stringByUniquingPathInsideDirectory:(id)arg1;
-- (id)stringByUniquingPathInsideDirectory:(id)arg1 withFormat:(id)arg2;
-- (id)stringQuotedIfContainsCharacterSet:(id)arg1;
-- (id)stringWithPathRelativeTo:(id)arg1;
-- (id)stringWithPathRelativeTo:(id)arg1 allowBacktracking:(BOOL)arg2;
-- (id)stringWithRealpath;
-- (id)substringWithComposedCharacterSequencesToFileSystemLength:(unsigned int)arg1;
-- (id)substringWithComposedCharacterSequencesToIndex:(unsigned int)arg1;
-- (id)suffixOfNumberFormatSubpattern;
-- (id)tolerantStringByAppendingPathExtension:(id)arg1;
+- (void)sfu_appendJsonStringToString:(id)arg1;
+- (BOOL)sfu_containsPercentEscapes;
+- (id)sfu_stringByPercentEscaping;
+- (id)tc_componentsSeparatedByWhitespace;
+- (BOOL)tc_doesURLHostContainWhitespace;
+- (int)tc_fontTypeAtIndex:(unsigned int)arg1 effectiveRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 forXML:(BOOL)arg3;
+- (id)tc_initFromXmlNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 ns:(const char *)arg2 attributeName:(const char *)arg3;
+- (id)tc_initFromXmlNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 nsWithFallbackNs:(id)arg2 attributeName:(const char *)arg3;
+- (id)tc_initWithContentOfXmlNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1;
+- (id)tc_initWithValueOfXmlAttribute:(struct _xmlAttr { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlAttr {} *x7; struct _xmlAttr {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; int x11; void *x12; }*)arg1;
+- (id)tc_initWithXmlString:(const char *)arg1;
+- (BOOL)tc_isEqualToXmlString:(const char *)arg1;
+- (BOOL)tc_startsWithString:(id)arg1;
+- (const char *)tc_xmlString;
 - (id)tsu_UTIFilenameExtension;
+- (int)tsu_compareToVersionString:(id)arg1;
 - (BOOL)tsu_conformsToAnyUTI:(id)arg1;
 - (BOOL)tsu_conformsToUTI:(id)arg1;
+- (BOOL)tsu_containsOnlyCharactersFromSet:(id)arg1;
+- (BOOL)tsu_containsSubstring:(id)arg1;
+- (unsigned int)tsu_countInstancesOfString:(id)arg1 options:(unsigned int)arg2;
+- (id)tsu_currencyCodeFromCustomNumberFormatCurrencyToken;
+- (BOOL)tsu_customFormatIntegerTokenUsesSeparator;
+- (id)tsu_digitPlaceholderStringInDigitToken;
+- (id)tsu_encodeStringBase64;
+- (void)tsu_enumerateRangesOfCharactersInSet:(id)arg1 usingBlock:(id /* block */)arg2;
+- (id)tsu_escapeForIcuRegex;
+- (id)tsu_escapeXML;
+- (id)tsu_firstKey;
+- (id)tsu_formatStringFromCustomNumberFormatScaleToken;
+- (int)tsu_fractionAccuracyFromCustomNumberFormatFractionToken;
+- (unsigned int)tsu_indexOfFirstNonPrefixCharacterInNumberFormatSubpattern;
+- (unsigned int)tsu_indexOfLastNonSuffixCharacterInNumberFormatSubpattern;
+- (unsigned int)tsu_indexOfNumberFormatSubpatternSeparator;
+- (BOOL)tsu_isChildOfPath:(id)arg1;
+- (BOOL)tsu_isDescendantOfPath:(id)arg1;
+- (BOOL)tsu_isLegalEmailAddress;
+- (BOOL)tsu_isNumberFormatPattern;
+- (BOOL)tsu_isSpecialCustomNumberFormatToken;
+- (BOOL)tsu_isSpecialCustomNumberFormatTokenOfType:(int)arg1;
+- (id)tsu_keyPathByAppendingKey:(id)arg1;
+- (id)tsu_keyPathByPrependingKey:(id)arg1;
+- (id)tsu_keyPathByRemovingFirstKey;
+- (id)tsu_keyPathByRemovingLastKey;
+- (id)tsu_lastKey;
+- (id)tsu_md5Hash;
+- (id)tsu_negativeSubpatternOfNumberFormatPattern;
+- (id)tsu_newRangesOfEscapedCharactersInNumberFormatPattern;
+- (unsigned int)tsu_numberOfDigitsInCustomNumberFormatDecimalToken;
+- (unsigned int)tsu_numberOfDigitsInCustomNumberFormatIntegerToken;
+- (unsigned int)tsu_numberOfKeysInKeyPath;
+- (id)tsu_numberPortionOfNumberFormatSubpattern;
 - (BOOL)tsu_pathConformsToUTI:(id)arg1;
 - (BOOL)tsu_pathExtensionConformsToUTI:(id)arg1;
 - (id)tsu_pathUTI;
-- (id)uncommentedAddress;
-- (id)uncommentedAddressRespectingGroups;
-- (id)unescapeXML;
-- (const char *)xmlString;
+- (id)tsu_positiveSubpatternOfNumberFormatPattern;
+- (id)tsu_prefixOfNumberFormatSubpattern;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_range;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_rangeOfString:(id)arg1 options:(unsigned int)arg2 updatingSearchRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3;
+- (unsigned short)tsu_scaleCharacterInCustomNumberFormatScaleToken;
+- (id)tsu_setOfContainedWordsIncludingPunctuationAndSymbols:(BOOL)arg1;
+- (id)tsu_sha256HexHashString;
+- (unsigned short)tsu_spaceCharacterInCustomNumberFormatSpaceToken;
+- (id)tsu_stringByAddingCSVEscapesForLocale:(id)arg1;
+- (id)tsu_stringByAppendingSeparator:(id)arg1 format:(id)arg2;
+- (id)tsu_stringByExpandingTableFormatting;
+- (id)tsu_stringByFixingBrokenSurrogatePairs;
+- (id)tsu_stringByInsertingFormatGroupingSeparators:(id)arg1;
+- (id)tsu_stringByMakingFirstCharacterLowercase;
+- (id)tsu_stringByMakingFirstCharacterUppercase;
+- (id)tsu_stringByRemovingCharactersInSet:(id)arg1;
+- (id)tsu_stringByRemovingCharactersInSet:(id)arg1 options:(unsigned int)arg2;
+- (id)tsu_stringByRemovingEscapedCharactersFromNumberFormatPattern;
+- (id)tsu_stringByReplacing2DigitYearStringWith4DigitYearString;
+- (id)tsu_stringByReplacing4DigitYearStringWith2DigitYearString;
+- (id)tsu_stringByReplacingInstancesOfCharactersInSet:(id)arg1 withString:(id)arg2;
+- (id)tsu_stringByTrimmingCharactersInSetFromFront:(id)arg1;
+- (id)tsu_stringByUniquingPathInsideDirectory:(id)arg1;
+- (id)tsu_stringByUniquingPathInsideDirectory:(id)arg1 withFormat:(id)arg2;
+- (id)tsu_stringQuotedIfContainsCharacterSet:(id)arg1;
+- (id)tsu_stringWithPathRelativeTo:(id)arg1;
+- (id)tsu_stringWithPathRelativeTo:(id)arg1 allowBacktracking:(BOOL)arg2;
+- (id)tsu_stringWithRealpath;
+- (id)tsu_stringWithoutAttachmentCharacters;
+- (id)tsu_substringWithComposedCharacterSequencesToFileSystemLength:(unsigned int)arg1;
+- (id)tsu_substringWithComposedCharacterSequencesToIndex:(unsigned int)arg1;
+- (id)tsu_suffixOfNumberFormatSubpattern;
+- (id)tsu_tolerantStringByAppendingPathExtension:(id)arg1;
+- (id)tsu_uncommentedAddress;
+- (id)tsu_uncommentedAddressRespectingGroups;
+- (id)tsu_unescapeXML;
 
 // Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
 
@@ -1119,6 +1280,9 @@
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
 - (id)decodeHexadecimal;
+- (id)pk_capitalizedStringForPreferredLocale;
+- (id)pk_lowercaseStringForPreferredLocale;
+- (id)pk_uppercaseFirstStringForPreferredLocale;
 - (id)pk_uppercaseStringForPreferredLocale;
 
 // Image: /System/Library/PrivateFrameworks/PerformanceAnalysis.framework/PerformanceAnalysis
@@ -1150,22 +1314,66 @@
 - (id)tokenizedByString:(id)arg1;
 - (id)tokenizedByStrings:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
+
+- (id)ICCIDString;
+- (id)IMEIString;
+
 // Image: /System/Library/PrivateFrameworks/Radio.framework/Radio
 
 + (id)queryStringForRadioRequestParameters:(id)arg1 protocolVersion:(int)arg2 error:(id*)arg3;
 
-// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
-
-- (id)RU_attributedStringByEmphasizingStationNameWithRegularTextAttributes:(id)arg1 emphasizedTextAttributes:(id)arg2;
-- (id)RU_emphasizedTextByEmphasizingStationName;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })_RU_stationNameRange;
-- (BOOL)_RU_stationTitleRadioIsSuffix;
-- (id)_RU_stationTitleRadioSubstring;
-
 // Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
 
+- (BOOL)consistsOfCharactersFromSet:(id)arg1 options:(unsigned int)arg2;
 - (id)lowercaseFirstWordString;
+- (id)stringByEscapingXMLEntities;
+- (id)stringByUnescapingXMLEntities;
 - (id)uppercaseFirstWordString;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
++ (void)_safari_reverseEnumerateComponents:(id)arg1 usingBlock:(id /* block */)arg2;
++ (id)safari_stringAsHexWithBuffer:(const char *)arg1 length:(unsigned long)arg2;
++ (id)safari_stringAsHexWithData:(id)arg1;
++ (id)safari_stringByBase64EncodingData:(id)arg1;
++ (id)safari_stringWithJSValue:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2;
++ (id)safari_stringWithJSValue:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 nullStringPolicy:(long)arg3;
++ (id)safari_stringWithUTF8Bytes:(const void*)arg1 length:(unsigned int)arg2;
+
+- (id)_safari_topLevelDomainUsingCFFromComponents:(id)arg1;
+- (id)safari_base64DecodedData;
+- (id)safari_bestLanguageTag;
+- (id)safari_bestURLForUserTypedString;
+- (id)safari_bestURLStringForUserTypedString;
+- (id)safari_canonicalURLStringForFrequentlyVisitedSites;
+- (unsigned int)safari_countOfString:(id)arg1;
+- (id)safari_domainFromHost;
+- (void)safari_enumerateSubdomainRangesInHostUsingBlock:(id /* block */)arg1;
+- (id)safari_fixedStringByExpandingTildeInPath;
+- (BOOL)safari_hasCaseInsensitivePrefix:(id)arg1;
+- (BOOL)safari_hasCaseInsensitiveSuffix:(id)arg1;
+- (BOOL)safari_hasLocalizedCaseInsensitivePrefix:(id)arg1;
+- (BOOL)safari_hasPrefix:(id)arg1;
+- (id)safari_highLevelDomainFromHost;
+- (BOOL)safari_isCaseInsensitiveEqualToString:(id)arg1;
+- (BOOL)safari_isJavaScriptURLString;
+- (id)safari_md5Hash;
+- (id)safari_normalizedParsecInputString;
+- (id)safari_possibleTopLevelDomainCorrectionForUserTypedString;
+- (id)safari_scriptIfJavaScriptURLString;
+- (id)safari_simplifiedUserVisibleURLString;
+- (id)safari_simplifiedUserVisibleURLStringWithSimplifications:(unsigned int)arg1 forDisplayOnly:(BOOL)arg2 simplifiedStringOffset:(unsigned int*)arg3;
+- (id)safari_stringByFoldingWideCharactersAndNormalizing;
+- (id)safari_stringByRemovingCharactersInSet:(id)arg1;
+- (id)safari_stringByRemovingTopLevelDomainFromHost;
+- (id)safari_stringByRemovingUnnecessaryCharactersFromUserTypedURLString;
+- (id)safari_stringByRemovingWwwDotPrefix;
+- (id)safari_stringBySubstitutingAmpersandAndAngleBracketsForHTMLEntities;
+- (id)safari_stringBySubstitutingHTMLEntitiesForAmpersandAndAngleBrackets;
+- (id)safari_stringByTrimmingWhitespace;
+- (id)safari_stringEncodedAsURLQueryParameter;
+- (id)safari_userVisibleURL;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 
@@ -1184,10 +1392,32 @@
 
 - (int)_brailleTableCompare:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/Search.framework/Search
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
-- (unsigned short)safeCharacterAtIndex:(unsigned int)arg1;
-- (id)unpunctuatedString;
++ (unsigned int)durationFromFullTimeCodeString:(id)arg1;
++ (id)fullTimeCodeStringWithDuration:(unsigned int)arg1;
++ (id)generateUUID;
++ (id)mimeBoundary;
++ (id)mimeCloser;
++ (id)mimePart:(id)arg1 forName:(id)arg2;
++ (id)multipartMIMEContentType;
++ (id)normalizeString:(id)arg1;
++ (id)shortTimeCodeStringWithDuration:(unsigned int)arg1;
++ (id)upperBoundString:(id)arg1;
+
+- (id)firstline;
+- (id)hmacSha1Hash:(id)arg1;
+- (id)javaScriptEscapedString;
+- (id)md5Hash;
+- (id)md5HashString;
+- (id)pathRelativeTo:(id)arg1;
+- (id)sha1HashData;
+- (id)sha1HashString;
+- (id)stringByAddingPercentEscapes;
+- (id)stringByAddingPercentEscapesForURLPath;
+- (id)stringByCapitalizingFirstCharacter;
+- (id)stringByDeletingTrailingSlash;
+- (id)stringByReplacingPercentEscapes;
 
 // Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
 
@@ -1206,10 +1436,12 @@
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
+- (id)IDSFormattedDestinationID;
+- (id)LTRString;
+- (id)RTLString;
 - (BOOL)destinationIdIsCallControlCode;
 - (BOOL)destinationIdIsEmailAddress;
 - (BOOL)destinationIdIsPhoneNumber;
-- (id)stringWithIDSFormat;
 
 // Image: /System/Library/PrivateFrameworks/TextInput.framework/TextInput
 
@@ -1226,6 +1458,7 @@
 + (struct USet { }*)_nonIdeographicCharacterSet;
 + (struct USet { }*)_nonJapaneseLetterSet;
 + (struct USet { }*)_nonKatakanaOrKanjiSet;
++ (BOOL)_string:(id)arg1 matchesString:(id)arg2;
 + (id)_stringWithUnichar:(unsigned long)arg1;
 + (id)stringWithUnichar:(unsigned long)arg1;
 
@@ -1311,11 +1544,6 @@
 - (id)stringByTrimmingCharactersInCFCharacterSet:(struct __CFCharacterSet { }*)arg1;
 - (id)stringByTrimmingLastCharacter;
 
-// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
-
-- (id)_accessibilityAttributedLocalizedString;
-- (void)_setAccessibilityAttributedLocalizedString:(id)arg1;
-
 // Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
 + (float)defaultBaselineOffsetForFont:(id)arg1;
@@ -1350,9 +1578,7 @@
 // Image: /System/Library/PrivateFrameworks/VectorKit.framework/VectorKit
 
 - (id)_vk_internedString;
-- (float)colorInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })rasterTileKeyValue;
-- (BOOL)red:(float*)arg1 green:(float*)arg2 blue:(float*)arg3 alpha:(float*)arg4;
 
 // Image: /System/Library/PrivateFrameworks/VideoUpload.framework/VideoUpload
 
@@ -1366,6 +1592,18 @@
 - (long long)rc_persistentIDValue;
 - (id)rc_stringByReplacingBreakingWithNonBreakingSpaces;
 
+// Image: /System/Library/PrivateFrameworks/VoiceTriggerUI.framework/VoiceTriggerUI
+
+- (BOOL)_caseInsensitiveHasMatchInEnumeration:(id)arg1;
+- (id)_firstMatchesForRegularExpression:(id)arg1;
+- (id)_firstMatchesForRegularExpressions:(id)arg1;
+- (BOOL)_hasSubstring:(id)arg1;
+- (BOOL)_matchesRegularExpression:(id)arg1;
+- (id)_stringByFixingNamePattern:(id)arg1;
+- (id)_stringByStrippingLeadingNoise:(id)arg1;
+- (id)_stringByStrippingNoiseLeadingNoise:(id)arg1 TrailingNoise:(id)arg2;
+- (id)_stringByStrippingTrailingNoise:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
 
 + (id)stringWithFormat:(id)arg1 andArguments:(id)arg2;
@@ -1374,7 +1612,6 @@
 - (void)drawAtPoint:(struct CGPoint { float x1; float x2; })arg1 forWidth:(float)arg2 withFont:(id)arg3 fontColor:(id)arg4 shadowColor:(id)arg5;
 - (void)drawWithDegreeAtPoint:(struct CGPoint { float x1; float x2; })arg1 font:(id)arg2 degreeFont:(id)arg3 degreeOffset:(struct CGSize { float x1; float x2; })arg4;
 - (struct CGSize { float x1; float x2; })sizeWithDegreeWithFont:(id)arg1 degreeFont:(id)arg2 degreeOffset:(struct CGSize { float x1; float x2; })arg3;
-- (id)weatherTemperatureWithDegree;
 
 // Image: /System/Library/PrivateFrameworks/WebApp.framework/WebApp
 
@@ -1411,24 +1648,18 @@
 - (id)_web_bestURLForUserTypedString;
 - (id)_web_capitalizeRFC822HeaderFieldName;
 - (id)_web_decodeHostName;
-- (id)_web_decodeHostNameWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)_web_encodeHostName;
-- (id)_web_encodeHostNameWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)_web_hostNameNeedsDecodingWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (BOOL)_web_hostNameNeedsEncodingWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (BOOL)_web_isUserVisibleURL;
 - (id)_web_possibleURLPrefixesForUserTypedString;
 - (id)_web_possibleURLsForForUserTypedString:(BOOL)arg1;
 - (id)_web_possibleURLsForUserTypedString;
 - (id)_web_stringByAbbreviatingWithTildeInPath;
 - (id)_web_stringByStrippingReturnCharacters;
-- (id)_webkit_URLFragment;
 - (id)_webkit_filenameByFixingIllegalCharacters;
 - (BOOL)_webkit_hasCaseInsensitivePrefix:(id)arg1;
 - (BOOL)_webkit_hasCaseInsensitiveSubstring:(id)arg1;
 - (BOOL)_webkit_hasCaseInsensitiveSuffix:(id)arg1;
 - (BOOL)_webkit_isCaseInsensitiveEqualToString:(id)arg1;
-- (BOOL)_webkit_isFTPDirectoryURL;
 - (BOOL)_webkit_isFileURL;
 - (BOOL)_webkit_isJavaScriptURL;
 - (BOOL)_webkit_looksLikeAbsoluteURL;
@@ -1443,44 +1674,15 @@
 
 // Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
 
-+ (void)_safari_reverseEnumerateComponents:(id)arg1 usingBlock:(id /* block */)arg2;
-+ (id)safari_stringByBase64EncodingData:(id)arg1;
-+ (id)safari_stringWithJSValue:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2;
-+ (id)safari_stringWithJSValue:(struct OpaqueJSValue { }*)arg1 context:(struct OpaqueJSContext { }*)arg2 nullStringPolicy:(long)arg3;
-+ (id)safari_stringWithUTF8Bytes:(const void*)arg1 length:(unsigned int)arg2;
-
-- (id)_safari_topLevelDomainUsingCFFromComponents:(id)arg1;
-- (id)safari_base64DecodedData;
-- (id)safari_bestURLForUserTypedString;
-- (id)safari_bestURLStringForUserTypedString;
-- (id)safari_canonicalURLStringForFrequentlyVisitedSites;
-- (unsigned int)safari_countOfString:(id)arg1;
-- (id)safari_domainFromHost;
-- (void)safari_enumerateSubdomainRangesInHostUsingBlock:(id /* block */)arg1;
-- (id)safari_fixedStringByExpandingTildeInPath;
-- (BOOL)safari_hasCaseInsensitivePrefix:(id)arg1;
-- (BOOL)safari_hasCaseInsensitiveSuffix:(id)arg1;
-- (BOOL)safari_hasLocalizedCaseInsensitivePrefix:(id)arg1;
-- (BOOL)safari_hasPrefix:(id)arg1;
-- (id)safari_highLevelDomainFromHost;
-- (BOOL)safari_isCaseInsensitiveEqualToString:(id)arg1;
-- (BOOL)safari_isJavaScriptURLString;
-- (id)safari_possibleTopLevelDomainCorrectionForUserTypedString;
-- (id)safari_scriptIfJavaScriptURLString;
-- (id)safari_simplifiedUserVisibleURLString;
-- (id)safari_simplifiedUserVisibleURLStringWithSimplifications:(unsigned int)arg1 forDisplayOnly:(BOOL)arg2 simplifiedStringOffset:(unsigned int*)arg3;
-- (id)safari_stringByFoldingWideCharactersAndNormalizing;
-- (id)safari_stringByRemovingCharactersInSet:(id)arg1;
-- (id)safari_stringByRemovingTopLevelDomainFromHost;
-- (id)safari_stringByRemovingUnnecessaryCharactersFromUserTypedURLString;
-- (id)safari_stringByRemovingWwwDotPrefix;
-- (id)safari_stringByReplacingSearchTermsTokenWithQueryString:(id)arg1;
-- (id)safari_stringBySubstitutingAmpersandAndAngleBracketsForHTMLEntities;
-- (id)safari_stringBySubstitutingHTMLEntitiesForAmpersandAndAngleBrackets;
-- (id)safari_stringByTrimmingWhitespace;
-- (id)safari_stringEncodedAsURLQueryParameter;
-- (id)safari_userVisibleURL;
 - (BOOL)webui_isConfigProfileMIMEType;
+
+// Image: /System/Library/PrivateFrameworks/WelcomeKit.framework/WelcomeKit
+
++ (id)wl_uniqueIdentifier;
+
+// Image: /System/Library/PrivateFrameworks/WelcomeKitCore.framework/WelcomeKitCore
+
+- (id)wl_sqlIDComponentsSeparatedByString:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
 
@@ -1530,6 +1732,8 @@
 + (id)tsu_customNumberFormatIntegerTokenDisplayStringWithDigits:(unsigned int)arg1 separator:(BOOL)arg2 digitString:(id)arg3 locale:(id)arg4;
 + (id)tsu_customNumberFormatIntegerTokenRepresentedStringWithDigits:(unsigned int)arg1 separator:(BOOL)arg2 digitString:(id)arg3;
 + (id)tsu_customNumberFormatTokenStringOfType:(int)arg1 content:(id)arg2;
++ (id)tsu_fogFilenameFromShareToken:(id)arg1;
++ (id)tsu_fogShareTokenFromFileURL:(id)arg1;
 + (id)tsu_numberSymbols;
 + (id)tsu_stringByBase64EncodingBytes:(const char *)arg1 length:(unsigned int)arg2;
 + (id)tsu_stringByBase64EncodingBytes:(const char *)arg1 length:(unsigned int)arg2 breakLines:(BOOL)arg3;
@@ -1635,6 +1839,7 @@
 - (unsigned int)tsu_indexOfLastNonSuffixCharacterInNumberFormatSubpattern;
 - (unsigned int)tsu_indexOfNumberFormatSubpatternSeparator;
 - (id)tsu_initWithSqlStatement:(struct sqlite3_stmt { }*)arg1 columnIndex:(int)arg2;
+- (BOOL)tsu_isCJKString;
 - (BOOL)tsu_isChildOfPath:(id)arg1;
 - (BOOL)tsu_isDescendantOfPath:(id)arg1;
 - (BOOL)tsu_isLegalEmailAddress;
@@ -1692,12 +1897,15 @@
 - (id)tsu_uncommentedAddress;
 - (id)tsu_uncommentedAddressRespectingGroups;
 - (id)tsu_unescapeXML;
+- (BOOL)tswp_containsIdeographs;
 - (int)tswp_contentsScript;
 - (int)tswp_contentsScriptInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)tswp_findIndexOfCharacter:(unsigned short)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)tswp_isAllWhitespaceInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (BOOL)tswp_isHyphenationAtCharacterIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })tswp_rangeOfCharactersFromSet:(id)arg1 index:(unsigned int)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })tswp_rangeOfWordAtCharacterIndex:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 includePreviousWord:(BOOL)arg3;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })tswp_rangeOfWordAtCharacterIndex:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 includePreviousWord:(BOOL)arg3 includeHyphenation:(BOOL)arg4;
 - (id)tswp_replaceOccurrencesOfCharactersInSet:(id)arg1 minimumConsecutiveLength:(unsigned int)arg2 replaceString:(id)arg3;
 - (id)tswp_stringByNormalizingParagraphBreaks;
 - (unsigned long)tswp_utf32CharacterAtIndex:(unsigned int)arg1;
@@ -1715,5 +1923,11 @@
 - (int)traditionalChinesePinyinCompare:(id)arg1;
 - (int)traditionalChineseZhuyinCompare:(id)arg1;
 - (id)zhuyinSyllableFromPinyinSyllable;
+
+// Image: /usr/lib/libprequelite.dylib
+
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

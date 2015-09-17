@@ -32,13 +32,13 @@
 
 + (id)_dateFormatter;
 + (id)_relativeDateFormatter;
-+ (id)_timeFormatWithoutDesignator;
 + (id)_timeOnlyDateFormatter;
 + (id)_weekdayDateFormatter;
 + (id)amString;
 + (id)defaultFont;
 + (id)pmString;
 
+- (void).cxx_destruct;
 - (id)_calendar;
 - (id)_dateString;
 - (id)_dateWithDayDiffFromToday:(int)arg1;

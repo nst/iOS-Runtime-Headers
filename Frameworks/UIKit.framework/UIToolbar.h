@@ -3,37 +3,28 @@
  */
 
 @interface UIToolbar : UIView <UIBarPositioning, _UIBackdropViewGraphicsQualityChangeDelegate, _UIBarPositioningInternal, _UIShadowedView> {
+    BOOL __wantsLetterpressContent;
     _UIBackdropView *_adaptiveBackdrop;
     id _appearanceStorage;
     NSString *_backdropViewLayerGroupName;
     UIImageView *_backgroundView;
     int _barPosition;
     UIColor *_barTintColor;
-    NSArray *_buttonItems;
     BOOL _centerTextButtons;
-    BOOL _collapsed;
-    int _currentButtonGroup;
-    id _delegate;
+    <UIToolbarDelegate> *_delegate;
     float _extraEdgeInsets;
-    struct __CFDictionary { } *_groups;
-    BOOL _isAdaptiveToolbarDisabled;
     NSArray *_items;
-    int _pressedTag;
     UIView *_shadowView;
     struct { 
         unsigned int barStyle : 3; 
-        unsigned int mode : 2; 
-        unsigned int wasEnabled : 1; 
-        unsigned int downButtonSentAction : 1; 
         unsigned int barTranslucence : 3; 
         unsigned int isLocked : 1; 
-        unsigned int backgroundLayoutNeedsUpdate : 1; 
         unsigned int hasCustomBackgroundView : 1; 
     } _toolbarFlags;
-    BOOL _wantsLetterpressContent;
 }
 
-@property (getter=_isAdaptiveToolbarDisabled, setter=_setAdaptiveToolbarDisabled:, nonatomic) BOOL _adaptiveToolbarDisabled;
+@property (setter=_setBackgroundView:, nonatomic, retain) UIImageView *_backgroundView;
+@property (setter=_setHidesShadow:, nonatomic) BOOL _hidesShadow;
 @property (getter=_isLocked, setter=_setLocked:, nonatomic) BOOL _locked;
 @property (setter=_setShadowView:, nonatomic, retain) UIView *_shadowView;
 @property (setter=_setWantsLetterpressContent:, nonatomic) BOOL _wantsLetterpressContent;
@@ -42,19 +33,18 @@
 @property (nonatomic) int barStyle;
 @property (nonatomic, retain) UIColor *barTintColor;
 @property (nonatomic) BOOL centerTextButtons;
-@property (getter=isCollapsed, nonatomic) BOOL collapsed;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIToolbarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSArray *items;
+@property (getter=isMinibar, nonatomic, readonly) BOOL minibar;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIColor *tintColor;
 @property (getter=isTranslucent, nonatomic) BOOL translucent;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
-+ (float)_buttonGap;
 + (Class)defaultButtonClass;
 + (id)defaultButtonFont;
 + (float)defaultHeight;
@@ -63,32 +53,22 @@
 + (Class)defaultTextButtonClass;
 
 - (id)_adaptiveBackdrop;
-- (void)_adjustButtonPressed:(id)arg1;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 inContainer:(id)arg2;
 - (float)_autolayoutSpacingAtEdge:(int)arg1 nextToNeighbor:(id)arg2;
 - (id)_backdropViewLayerGroupName;
 - (id)_backgroundView;
 - (int)_barPosition;
 - (void)_buttonBarFinishedAnimating;
-- (void)_buttonCancel:(id)arg1;
-- (void)_buttonDown:(id)arg1;
-- (void)_buttonDownDelayed:(id)arg1;
 - (id)_buttonName:(id)arg1 withType:(int)arg2;
-- (void)_buttonUp:(id)arg1;
-- (id)_buttonWithDescription:(id)arg1;
 - (void)_cleanupAdaptiveBackdrop;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
-- (id)_currentButtons;
 - (id)_currentCustomBackground;
 - (id)_currentCustomBackgroundRespectOversize_legacy:(BOOL*)arg1;
-- (id)_customToolbarAppearance;
 - (void)_customViewChangedForButtonItem:(id)arg1;
-- (id)_descriptionForTag:(int)arg1;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (float)_edgeMarginForBorderedItem:(BOOL)arg1 isText:(BOOL)arg2;
 - (id)_effectiveBarTintColor;
 - (void)_effectiveBarTintColorDidChangeWithPreviousColor:(id)arg1;
-- (void)_finishButtonAnimation:(int)arg1 forButton:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameOfBarButtonItem:(id)arg1;
 - (void)_frameOrBoundsChangedWithVisibleSizeChange:(BOOL)arg1 wasMinibar:(BOOL)arg2;
 - (void)_frameOrCenterChanged;
@@ -109,7 +89,6 @@
 - (void)_setBackgroundImage:(id)arg1 mini:(id)arg2;
 - (void)_setBackgroundView:(id)arg1;
 - (void)_setBarPosition:(int)arg1;
-- (void)_setBarTintColor:(id)arg1 force:(BOOL)arg2;
 - (void)_setButtonBackgroundImage:(id)arg1 mini:(id)arg2 forStates:(unsigned int)arg3;
 - (void)_setForceTopBarAppearance:(BOOL)arg1;
 - (void)_setHidesShadow:(BOOL)arg1;
@@ -119,12 +98,11 @@
 - (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setWantsLetterpressContent:(BOOL)arg1;
 - (id)_shadowView;
-- (void)_showButtons:(int*)arg1 withCount:(int)arg2 group:(int)arg3 withDuration:(double)arg4 adjustPositions:(BOOL)arg5 skipTag:(int)arg6;
 - (BOOL)_subclassImplementsDrawRect;
-- (unsigned int)_subviewIndexAboveBackgroundView;
 - (BOOL)_supportsAdaptiveBackground;
 - (void)_updateBackgroundColor;
 - (void)_updateBackgroundImage;
+- (void)_updateBarForStyle;
 - (void)_updateItemsForNewFrame:(id)arg1;
 - (void)_updateOpacity;
 - (void)_updateScriptingInfo:(id)arg1 view:(id)arg2;
@@ -155,7 +133,6 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)invalidateIntrinsicContentSize;
-- (BOOL)isCollapsed;
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isMinibar;
 - (BOOL)isTranslucent;
@@ -173,14 +150,12 @@
 - (void)setBadgeGlyph:(id)arg1 forButton:(int)arg2;
 - (void)setBadgeValue:(id)arg1 forButton:(int)arg2;
 - (void)setBarStyle:(int)arg1;
-- (void)setBarStyle:(int)arg1 force:(BOOL)arg2;
 - (void)setBarTintColor:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setButtonBarTrackingMode:(int)arg1;
 - (void)setButtonItems:(id)arg1;
 - (void)setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCenterTextButtons:(BOOL)arg1;
-- (void)setCollapsed:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setExtraEdgeInsets:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -197,8 +172,9 @@
 - (void)showButtons:(int*)arg1 withCount:(int)arg2 withDuration:(double)arg3;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
-// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+// Image: /System/Library/Frameworks/PassKit.framework/PassKit
 
-- (id)itemWithTag:(int)arg1;
+- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; bool x28; void*x29; void*x30; void*x31; bool x32; void*x33; void*x34; void*x35; unsigned char x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; unsigned long x61; bool x62; bool x63; unsigned short x64; long x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; short x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; unsigned short x93; void*x94; short x95; void*x96; void*x97; void*x98; void*x99; unsigned long x100; int x101; unsigned int x102/* : ? */; const void*x103; const void*x104; void*x105; void*x106; const int x107; void x108; void*x109; void*x110; void*x111; void*x112; const void*x113; void*x114; void*x115; void*x116; out const void*x117; short x118; void*x119; void*x120; out void*x121; void*x122; const long x123; out void*x124; unsigned long x125; int x126; void*x127; void*x128; bycopy void*x129; void*x130; const void*x131; void*x132; out const short x133; void*x134; float x135; const void*x136; void*x137; void*x138; void*x139; out const void*x140; void*x141; void*x142; out void*x143; void*x144; const long x145; out void*x146; unsigned long x147; int x148; void*x149; void*x150; bycopy void*x151; void*x152; const void*x153; void*x154; out const short x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; void*x181; void*x182; void*x183; void*x184; void*x185; void*x186; void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; unsigned char x245; void*x246; void*x247; void*x248; unsigned char x249; void*x250; void*x251; void*x252; long doublex253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; unsigned long x278; bool x279; bool x280; void*x281; short x282; void*x283; void*x284; out out void*x285; void*x286; void*x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void*x302; void*x303; void*x304; void*x305; void*x306; void*x307; unsigned short x308; void*x309; short x310; void*x311; void*x312; void*x313; void*x314; unsigned long x315; int x316; unsigned int x317/* : ? */; const void*x318; const void*x319; void*x320; void*x321; const int x322; void x323; void*x324; void*x325; void*x326; void*x327; const void*x328; void*x329; void*x330; void*x331; out const void*x332; short x333; void*x334; void*x335; out void*x336; void*x337; const long x338; out void*x339; unsigned long x340; int x341; void*x342; void*x343; bycopy void*x344; void*x345; const void*x346; void*x347; out const short x348; void*x349; float x350; const void*x351; void*x352; void*x353; void*x354; out const void*x355; void*x356; void*x357; out void*x358; void*x359; const long x360; out void*x361; unsigned long x362; int x363; void*x364; void*x365; bycopy void*x366; void*x367; const void*x368; void*x369; out const short x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void*x381; void*x382; void*x383; void*x384; void*x385; void*x386; void*x387; void*x388; void*x389; void*x390; void*x391; void*x392; void*x393; void*x394; void*x395; void*x396; void*x397; void*x398; void*x399; void*x400; void*x401; void*x402; void*x403; void*x404; void*x405; void*x406; void*x407; void*x408; void*x409; void*x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; void*x419; void*x420; void*x421; void*x422; void*x423; void*x424; void*x425; void*x426; void*x427; void*x428; }*)arg1;
+- (id)pk_childrenForAppearance;
 
 @end

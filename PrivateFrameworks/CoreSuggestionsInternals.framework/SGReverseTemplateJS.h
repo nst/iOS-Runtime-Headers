@@ -8,16 +8,21 @@
     SGReverseTemplatesJSDataDetectors *_dd;
     JSContext *_jsContext;
     JSVirtualMachine *_jsVM;
+    NSString *_localeIdentifier;
     NSMutableArray *_memoryMappedFiles;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 - (void).cxx_destruct;
 - (void)emailToOutput:(id)arg1 reply:(id /* block */)arg2;
 - (id)emailToOutput:(id)arg1 setForExceptionTemplates:(id)arg2;
+- (void)freeJSContext;
+- (id)getJSContext;
+- (void)holdXpcTransactionForShortDelay;
 - (id)init;
-- (void)killVM;
+- (void)initCurrentAsset;
 - (id)loadJSFromASCIIFile:(id)arg1;
-- (void)resetVM;
+- (id)processLoadRequestWithFileName:(id)arg1;
 - (void)setAssetPath:(id)arg1 locale:(id)arg2;
 - (BOOL)shouldDownloadFull:(id)arg1;
 - (void)shouldDownloadFull:(id)arg1 reply:(id /* block */)arg2;

@@ -15,6 +15,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)drawsInOneStep;
 - (BOOL)drawsOutsideStrokeBounds;
+- (float)horizontalMarginForSwatch;
 - (id)initWithColor:(id)arg1 width:(float)arg2 cap:(int)arg3 join:(int)arg4 pattern:(id)arg5 miterLimit:(float)arg6;
 - (id)initWithName:(id)arg1 color:(id)arg2 width:(float)arg3 cap:(int)arg4 join:(int)arg5 pattern:(id)arg6 miterLimit:(float)arg7;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

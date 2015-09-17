@@ -4,7 +4,6 @@
 
 @interface MFComposeRecipientGroup : MFComposeRecipient {
     NSArray *_children;
-    NSString *_displayString;
 }
 
 - (void)_populateSortedChildren;

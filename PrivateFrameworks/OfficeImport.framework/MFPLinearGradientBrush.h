@@ -17,7 +17,6 @@
     OITSUColor *mStartColor;
 }
 
-- (id).cxx_construct;
 - (void)createShading;
 - (void)dealloc;
 - (id)endColor;

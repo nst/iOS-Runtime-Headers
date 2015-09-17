@@ -7,11 +7,7 @@
 + (id)sharedInstance;
 
 - (id)_fmfAppAccountFromAOSAccount:(id)arg1;
-- (void)locationAuthorizationForShareMyLocationWithCompletion:(id /* block */)arg1;
-- (void)renewFMFAccountCredentialsWithCompletion:(id /* block */)arg1;
 - (void)retrieveFMFAccountWithCompletion:(id /* block */)arg1;
-- (void)startListeningForFMFAppPushInEnvironment:(id)arg1 withMessageHandler:(id /* block */)arg2 tokenHandler:(id /* block */)arg3;
-- (void)stopListeningForFMFAppPush;
 - (id)thisDeviceId;
 
 @end

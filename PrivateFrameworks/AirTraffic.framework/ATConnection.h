@@ -40,6 +40,7 @@
 - (void)registerForStatus;
 - (void)requestSyncForLibrary:(id)arg1;
 - (void)requestSyncForPairedDeviceWithPriority:(int)arg1;
+- (id)restoreDeviceWithIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)unregisterForStatus;
 

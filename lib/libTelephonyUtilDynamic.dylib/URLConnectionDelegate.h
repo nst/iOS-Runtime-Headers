@@ -9,7 +9,6 @@
         struct __shared_weak_count {} *__cntrl_; 
     } fHandler;
     NSMutableData *fPostData;
-    NSDictionary *fProxySettings;
     bool fRedirection;
     struct shared_ptr<ctu::Http::HttpResponse> { 
         struct HttpResponse {} *__ptr_; 

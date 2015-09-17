@@ -3,18 +3,22 @@
  */
 
 @interface UIKeyboardLayoutCursor : UIKeyboardLayoutStar {
+    BOOL _disableTouchInput;
+    BOOL _ignoreEventsUntilPressEnds;
     UIKBTree *_indirectKeyboard;
+    NSArray *_keyplaneKeys;
+    UILexicon *_recentInputs;
     int _savedSelectedKeyIndex;
     int _selectedKeyIndex;
     UIView *_selectionView;
     BOOL _suppressOperations;
-    BOOL _useGridSelection;
+    BOOL _useDirectionalSelection;
 }
 
 @property (nonatomic, readonly) UIKBTree *currentKey;
 
 + (id)carKeyboardNameForKeyboard:(id)arg1 screenTraits:(id)arg2;
-+ (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2;
++ (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2 keyboardType:(int)arg3;
 
 - (void)_handleKeyUIEvent:(id)arg1;
 - (BOOL)_handleMoveWithEvent:(id)arg1;
@@ -22,41 +26,68 @@
 - (BOOL)_handlePhysicalKeyDownWithEvent:(id)arg1;
 - (BOOL)_handleRemoteControlReceivedWithEvent:(id)arg1;
 - (BOOL)_handleWheelChangedWithEvent:(id)arg1;
+- (id)_keyplaneForKeyplaneProperties;
+- (BOOL)_menuTapShouldExitVariants;
 - (void)_moveWithEvent:(id)arg1;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_wheelChangedWithEvent:(id)arg1;
+- (void)acceptRecentInputIfNecessary;
 - (int)activeStateForKey:(id)arg1;
 - (id)cacheTokenForKeyplane:(id)arg1;
 - (BOOL)canHandleEvent:(id)arg1;
+- (void)clearVariantStateForKey:(id)arg1;
+- (void)configureChildCollectionViewCellsIfNeeded;
 - (id)currentKey;
-- (int)cursorLocation;
-- (void)deactivateCurrentKey;
+- (unsigned int)cursorLocation;
+- (void)deactivateKey:(id)arg1;
 - (void)dealloc;
+- (int)defaultSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2;
 - (int)enabledStateForKey:(id)arg1;
 - (void)flushKeyCache:(id)arg1;
 - (BOOL)handleLinearDirectionalInput:(int)arg1;
+- (void)handleVariantDeleteIfNecessaryForKey:(id)arg1;
 - (BOOL)handleVisualDirectionalInput:(int)arg1;
+- (BOOL)ignoresShiftState;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (int)keyIndexAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)isAlphabeticPlane;
+- (BOOL)isKeyplaneDisabledWithName:(id)arg1;
+- (id)keyHitTestInSameRowAsCenter:(struct CGPoint { float x1; float x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)keyViewAnimator;
 - (id)keyplaneKeyForCurrentKeyplane;
+- (void)longPressAction;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
+- (BOOL)refreshSelectedCellIfNecessaryForKey:(id)arg1;
 - (void)remoteControlReceivedWithEvent:(id)arg1;
 - (void)runWithSuppressedActions:(id /* block */)arg1;
+- (void)selectInitialKeyIfNecessary;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrameForKeyIndex:(int)arg1;
-- (void)setCursorLocation:(int)arg1;
+- (void)setCursorLocation:(unsigned int)arg1;
+- (void)setDisableTouchInput:(BOOL)arg1;
 - (void)setHighlightedVariantIndex:(int)arg1 key:(id)arg2;
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setKeyboardName:(id)arg1 appearance:(int)arg2;
 - (void)setKeyplaneName:(id)arg1;
+- (void)setRecentInputs:(id)arg1;
 - (void)setSelectedKeyIndex:(int)arg1;
+- (BOOL)shouldAddHandRestRecognizer;
+- (BOOL)shouldMatchCaseForDomainKeys;
 - (BOOL)shouldMergeKey:(id)arg1;
 - (BOOL)shouldPreventInputManagerHitTestingForKey:(id)arg1;
 - (BOOL)shouldRetestKey:(id)arg1 withKeyplane:(id)arg2;
 - (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;
+- (int)stateForCandidateListKey:(id)arg1;
+- (int)stateForKeyplaneSwitchKey:(id)arg1;
+- (BOOL)supportsEmoji;
 - (void)takeKeyAction:(id)arg1;
 - (unsigned int)targetEdgesForScreenGestureRecognition;
+- (int)targetKeyIndexAtOffset:(struct CGPoint { float x1; float x2; })arg1 fromKey:(id)arg2;
+- (void)updateKeyplaneSwitchEdgeBiases;
+- (void)updateRecentInputsKeyIfNecessary;
 - (void)updateSelectionForCurrentKeyplane;
 - (void)updateStatesForGridSelection;
+- (BOOL)usesAutoShift;
+- (unsigned int)variantCountForKey:(id)arg1;
 
 @end

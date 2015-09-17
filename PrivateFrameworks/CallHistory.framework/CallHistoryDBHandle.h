@@ -31,6 +31,7 @@
 - (void)deleteObjectsWithUniqueIds:(id)arg1;
 - (id)fetchAll;
 - (id)fetchAllNoLimit;
+- (id)fetchAllObjectsWithUniqueId:(id)arg1;
 - (id)fetchObjectWithUniqueId:(id)arg1;
 - (id)fetchObjectsWithPredicate:(id)arg1;
 - (id)fetchObjectsWithUniqueIds:(id)arg1;
@@ -45,13 +46,15 @@
 - (id)initWithDBManager:(id)arg1;
 - (void)mergeCallDBPropChangesFromRemoteAppSave;
 - (void)mergeCallRecordChangesFromRemoteAppSave;
-- (void)moveCallRecordsFromTempDB;
+- (BOOL)moveCallRecordsFromDatabaseAtURL:(id)arg1 withVersion:(int)arg2;
 - (id)objectId;
 - (BOOL)performSaveWithBackgroundTaskAssertion:(id)arg1 error:(id*)arg2;
 - (void)postTimersChangedNotification;
 - (void)registerForNotifications:(id)arg1;
+- (BOOL)resetAllTimers;
 - (void)resetTimers;
 - (BOOL)save:(id*)arg1;
+- (BOOL)saveTimers:(id /* block */)arg1;
 - (id)timerIncoming;
 - (id)timerLastReset;
 - (id)timerLifetime;

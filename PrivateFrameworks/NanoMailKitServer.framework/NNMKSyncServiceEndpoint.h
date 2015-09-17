@@ -49,12 +49,14 @@
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
 - (void)service:(id)arg1 nearbyDevicesChanged:(id)arg2;
 - (id)serviceQueue;
+- (void)serviceSpaceDidBecomeAvailable:(id)arg1;
 - (void)setIdsService:(id)arg1;
 - (void)setIdsServiceName:(id)arg1;
 - (void)setIsConnected:(BOOL)arg1;
 - (void)setRepeatPreventionCleanupTimer:(id)arg1;
 - (void)setRepeatPreventionRecords:(id)arg1;
 - (void)setServiceQueue:(id)arg1;
+- (void)spaceBecameAvailable;
 - (void)successfullySentProtobufWithIDSIdentifier:(id)arg1;
 
 @end

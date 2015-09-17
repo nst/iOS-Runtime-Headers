@@ -22,6 +22,7 @@
 @property (nonatomic) struct CGPoint { float x1; float x2; } presentationPoint;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)didRotate:(id)arg1;
 - (id)dismissDelegate;

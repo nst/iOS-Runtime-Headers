@@ -12,6 +12,7 @@
 @property (nonatomic, copy) NSString *authToken;
 @property (nonatomic) <CNFRegAccountAuthorizationDelegate> *delegate;
 
+- (void).cxx_destruct;
 - (id)authID;
 - (id)authIdHeaderValue;
 - (id)authToken;

@@ -43,6 +43,7 @@
 - (BOOL)isFocusedOrSelected;
 - (id)language;
 - (int)locationForIndex:(int)arg1;
+- (id)text;
 - (int)token;
 - (void)translate;
 

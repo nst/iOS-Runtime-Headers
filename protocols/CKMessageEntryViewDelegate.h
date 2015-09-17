@@ -5,6 +5,7 @@
 
 @required
 
+- (void)messageEntryView:(CKMessageEntryView *)arg1 didTapMediaObject:(CKMediaObject *)arg2;
 - (BOOL)messageEntryView:(CKMessageEntryView *)arg1 shouldInsertMediaObjects:(NSArray *)arg2;
 - (void)messageEntryViewDidBeginEditing:(CKMessageEntryView *)arg1;
 - (void)messageEntryViewDidChange:(CKMessageEntryView *)arg1;

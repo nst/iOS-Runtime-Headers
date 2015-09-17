@@ -70,6 +70,7 @@
     } _sectionContentInset;
     NSString *_sectionHeaderElementKind;
     float _sectionHeaderHeight;
+    BOOL _sectionHeadersEnabled;
     float _sectionTopPadding;
     BOOL _sectioningDataIsValid;
     NSSet *_supplementaryViewKinds;
@@ -137,6 +138,7 @@
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionContentInset;
 @property (nonatomic, copy) NSString *sectionHeaderElementKind;
 @property (nonatomic) float sectionHeaderHeight;
+@property (nonatomic) BOOL sectionHeadersEnabled;
 @property (nonatomic) float sectionTopPadding;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } transitionActualContentSize;
@@ -170,6 +172,7 @@
 - (struct CGPoint { float x1; float x2; })_currentVisibleRectOrigin;
 - (void)_didFinishLayoutTransitionAnimations:(BOOL)arg1;
 - (void)_enumerateVisualItemFramesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 usingBlock:(id /* block */)arg2;
+- (float)_finalSectionHeaderHeight;
 - (int)_firstVisualItemIndexForRenderedStripIndex:(int)arg1;
 - (int)_floatingHeaderVisualSectionForVisibleOrigin:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameByAdjustingOffScreenEnteringFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forRowAtVisualIndexPath:(struct PUSimpleIndexPath { int x1; int x2; })arg2 transitionSectionInfo:(id)arg3 toOrFromGridLayout:(id)arg4 isAppearing:(BOOL)arg5;
@@ -265,6 +268,8 @@
 - (id)layoutSectioning;
 - (id)mainRealIndexPathAtGridCoordinates:(struct PUGridCoordinates { int x1; int x2; })arg1 inTransitionSection:(int)arg2;
 - (int)mainRealSectionForVisualSection:(int)arg1;
+- (id)maxItemIndexPathAbovePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)maxItemIndexPathLeftOfPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)maximumNumberOfItemsInVisualSection:(int)arg1 withNumberOfRealItems:(int)arg2 forSectioning:(id)arg3;
 - (int)numberOfColumnsForWidth:(float)arg1;
 - (int)numberOfContiguousRowsInTransitionSection:(int)arg1;
@@ -281,7 +286,7 @@
 - (void)prepareForCollectionViewUpdates:(id)arg1;
 - (void)prepareForTransitionFromLayout:(id)arg1;
 - (void)prepareForTransitionToLayout:(id)arg1;
-- (void)prepareForViewTransitionToSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)prepareForViewTransitionToSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)prepareLayout;
 - (id)pu_debugRows;
 - (id)pu_layoutAttributesForElementClosestToPoint:(struct CGPoint { float x1; float x2; })arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 passingTest:(id /* block */)arg3;
@@ -292,6 +297,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
 - (id)sectionHeaderElementKind;
 - (float)sectionHeaderHeight;
+- (BOOL)sectionHeadersEnabled;
 - (float)sectionTopPadding;
 - (void)setCropAmount:(float)arg1;
 - (void)setCropType:(int)arg1;
@@ -309,6 +315,7 @@
 - (void)setSectionContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSectionHeaderElementKind:(id)arg1;
 - (void)setSectionHeaderHeight:(float)arg1;
+- (void)setSectionHeadersEnabled:(BOOL)arg1;
 - (void)setSectionTopPadding:(float)arg1;
 - (void)setTransitionAnchorShiftsColumns:(BOOL)arg1;
 - (void)setTransitionEffectiveContentOrigin:(struct CGPoint { float x1; float x2; })arg1;
@@ -323,6 +330,7 @@
 - (id)supplementaryViewIndexPathForVisualSection:(int)arg1 supplementaryViewItemIndex:(int)arg2;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })targetContentOffsetForTransitionFromGridLayout:(id)arg1;
+- (struct CGPoint { float x1; float x2; })targetContentOffsetForViewSizeTransitionContext:(id)arg1;
 - (struct PUGridCoordinates { int x1; int x2; })targetTransitionGridCoordsForGridCoords:(struct PUGridCoordinates { int x1; int x2; })arg1 atVisualSection:(int)arg2 outTransitionSection:(int*)arg3;
 - (id)targetTransitionRealIndexPathForIndexPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })transitionActualContentSize;

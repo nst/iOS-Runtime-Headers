@@ -50,7 +50,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSDate *endDate;
 @property (nonatomic) int filter;
-@property (nonatomic, readonly) NSArray *filterParameters;
+@property (nonatomic, readonly, retain) NSArray *filterParameters;
 @property (nonatomic, readonly, copy) NSIndexSet *filteredIndexes;
 @property (nonatomic, readonly, retain) NSURL *groupURL;
 @property (nonatomic) BOOL hasUnseenContentBoolValue;

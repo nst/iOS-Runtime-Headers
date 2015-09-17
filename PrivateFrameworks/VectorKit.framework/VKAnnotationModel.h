@@ -15,8 +15,16 @@
     struct { 
         int from; 
         int to; 
-        unsigned int fromDisplayStyle; 
-        unsigned int toDisplayStyle; 
+        struct { 
+            unsigned char timePeriod; 
+            unsigned char overlayType; 
+            unsigned char applicationState; 
+        } fromDisplayStyle; 
+        struct { 
+            unsigned char timePeriod; 
+            unsigned char overlayType; 
+            unsigned char applicationState; 
+        } toDisplayStyle; 
         float fraction; 
     } _styleTransitionState;
 }
@@ -29,13 +37,12 @@
 @property (nonatomic) VKMapModel *mapModel;
 @property (nonatomic, readonly) BOOL needsLayout;
 @property (nonatomic, readonly) VKAnnotationMarker *selectedAnnotationMarker;
-@property (nonatomic, readonly) VKStyleManager *styleManager;
-@property (nonatomic) struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; } styleTransitionState;
+@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
+@property (nonatomic) struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; } x4; float x5; } styleTransitionState;
 @property (readonly) Class superclass;
 
 + (BOOL)reloadOnStylesheetChange;
 
-- (id).cxx_construct;
 - (void)addAnnotationMarker:(id)arg1 allowAnimation:(BOOL)arg2;
 - (void)anchorPositionChangedForMarker:(id)arg1;
 - (id /* block */)annotationCoordinateTest;
@@ -55,10 +62,10 @@
 - (id)selectedAnnotationMarker;
 - (void)setAnnotationMarkerDeselectionCallback:(id /* block */)arg1;
 - (void)setMapModel:(id)arg1;
-- (void)setStyleTransitionState:(struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; })arg1;
+- (void)setStyleTransitionState:(struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; } x4; float x5; })arg1;
 - (BOOL)shouldLayoutWithoutStyleManager;
-- (id)styleManager;
-- (struct { int x1; int x2; unsigned int x3; unsigned int x4; float x5; })styleTransitionState;
+- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
+- (struct { int x1; int x2; struct { unsigned char x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; } x3; struct { unsigned char x_4_1_1; unsigned char x_4_1_2; unsigned char x_4_1_3; } x4; float x5; })styleTransitionState;
 - (void)stylesheetDidChange;
 
 @end

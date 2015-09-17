@@ -2,14 +2,17 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIInputViewSetPlacementDragToDismiss : UIInputViewSetPlacementOnScreen {
+@interface _UIInputViewSetPlacementDragToDismiss : UIInputViewSetPlacementOnScreen <NSSecureCoding> {
     float _offset;
 }
 
 @property (nonatomic) float offset;
 
 + (id)placementWithOffset:(float)arg1;
++ (BOOL)supportsSecureCoding;
 
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isInteractive;
 - (float)offset;
 - (void)setOffset:(float)arg1;

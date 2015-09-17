@@ -9,11 +9,14 @@
 
 @optional
 
+- (void)_setPluginCatherineFeeder:(CMCatherineFeeder *)arg1;
+- (void)_setPluginHeartRateEnable:(BOOL)arg1;
 - (BOOL)daemonDidReceiveNotification:(const char *)arg1;
 - (NSArray *)dataCollectors;
-- (void)invalidateActivityAlertSuppressionForBundleIdentifier:(NSString *)arg1;
+- (void)invalidateActivityAlertSuppressionForIdentifier:(NSString *)arg1;
 - (HDQueryServer *)queryServerForUUID:(NSUUID *)arg1 serverDataObject:(_HKQueryServerDataObject *)arg2 queryClass:(Class)arg3 clientProxy:(id)arg4 client:(HDClient *)arg5 healthDaemon:(id <HDHealthDaemon>)arg6 queryDelegate:(id <HDQueryServerDelegate>)arg7;
 - (void)setDataCollectionOptions:(NSDictionary *)arg1 forKey:(NSString *)arg2 type:(HKSampleType *)arg3 clientUUID:(NSUUID *)arg4;
-- (void)suppressActivityAlertsForBundleIdentifier:(NSString *)arg1 reason:(int)arg2;
+- (void)suppressActivityAlertsForIdentifier:(NSString *)arg1 suppressionReason:(int)arg2 timeoutUntilDate:(NSDate *)arg3;
+- (void)updateActivityCacheForNewWorkoutSamples;
 
 @end

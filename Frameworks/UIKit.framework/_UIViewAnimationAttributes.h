@@ -6,18 +6,33 @@
     int _curve;
     double _delay;
     double _duration;
+    BOOL _hasSpringAttributes;
     unsigned int _options;
+    float _springDamping;
+    float _springMass;
+    float _springStiffness;
+    float _springVelocity;
 }
 
 @property (getter=_curve, nonatomic, readonly) int curve;
 @property (getter=_delay, nonatomic, readonly) double delay;
 @property (getter=_duration, nonatomic, readonly) double duration;
+@property (getter=_hasSpringAttributes, nonatomic, readonly) BOOL hasSpringAttributes;
+@property (getter=_springDamping, nonatomic, readonly) float springDamping;
+@property (getter=_springMass, nonatomic, readonly) float springMass;
+@property (getter=_springStiffness, nonatomic, readonly) float springStiffness;
+@property (getter=_springVelocity, nonatomic, readonly) float springVelocity;
 
 + (BOOL)supportsSecureCoding;
 
 - (int)_curve;
 - (double)_delay;
 - (double)_duration;
+- (BOOL)_hasSpringAttributes;
+- (float)_springDamping;
+- (float)_springMass;
+- (float)_springStiffness;
+- (float)_springVelocity;
 - (int)curve;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

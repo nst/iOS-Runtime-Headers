@@ -8,8 +8,6 @@
 
 @property (nonatomic, retain) MFMessageFileWrapper *fileWrapper;
 
-// Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
-
 + (unsigned int)precedenceLevel;
 
 - (unsigned int)approximateSize;
@@ -33,25 +31,5 @@
 - (BOOL)shouldDownloadAttachmentOnDisplay;
 - (id)textEncodingGuess;
 - (id)textEncodingNameForData:(id)arg1 mimeType:(id)arg2;
-
-// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
-
-- (id)_contentTypeByStrippingZipIfNeeded:(BOOL)arg1;
-- (BOOL)_isSinglePagePDFThatIsAllowedToBeInline;
-- (id)contentType;
-- (unsigned int)imageScalingFlags;
-- (BOOL)isCalendarFile;
-- (BOOL)isContentDownloadable;
-- (BOOL)isContentOpenable;
-- (BOOL)isDisplayableInline;
-- (BOOL)isDisplayableInsidePlugin;
-- (BOOL)isPass;
-- (struct CGSize { float x1; float x2; })mf_markupSizeForImageScale:(unsigned int)arg1;
-- (id)mf_markupStringForComposition:(BOOL)arg1 prependBlankLine:(BOOL)arg2 imageScale:(unsigned int)arg3;
-- (id)mf_markupURL;
-- (id)mimeType;
-- (id)pass;
-- (void)setImageScalingFlags:(unsigned int)arg1;
-- (id)unzippedContentType;
 
 @end

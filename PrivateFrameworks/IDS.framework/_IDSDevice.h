@@ -27,9 +27,12 @@
 @property (nonatomic, readonly, retain) NSArray *identities;
 @property (nonatomic, readonly) BOOL isDefaultLocalDevice;
 @property (nonatomic, readonly) BOOL isDefaultPairedDevice;
+@property (nonatomic, readonly) BOOL isHSATrusted;
 @property (nonatomic, readonly, retain) NSDate *lastActivityDate;
 @property (nonatomic, readonly, retain) NSArray *linkedUserURIs;
 @property (nonatomic, readonly) BOOL locallyPresent;
+@property (nonatomic, readonly) unsigned int maxCompatibilityVersion;
+@property (nonatomic, readonly) unsigned int minCompatibilityVersion;
 @property (nonatomic, readonly, retain) NSString *modelIdentifier;
 @property (nonatomic, readonly, retain) NSString *name;
 @property (getter=isNearby, nonatomic, readonly) BOOL nearby;
@@ -48,6 +51,7 @@
 @property (nonatomic, readonly) BOOL supportsTethering;
 @property (nonatomic, readonly) BOOL supportsiCloudPairing;
 @property (nonatomic, readonly, retain) NSString *uniqueID;
+@property (nonatomic, readonly, retain) NSString *uniqueIDOverride;
 
 - (void)_addIdentity:(id)arg1;
 - (void)_connect;
@@ -66,10 +70,13 @@
 - (BOOL)isConnected;
 - (BOOL)isDefaultLocalDevice;
 - (BOOL)isDefaultPairedDevice;
+- (BOOL)isHSATrusted;
 - (BOOL)isNearby;
 - (id)lastActivityDate;
 - (id)linkedUserURIs;
 - (BOOL)locallyPresent;
+- (unsigned int)maxCompatibilityVersion;
+- (unsigned int)minCompatibilityVersion;
 - (id)modelIdentifier;
 - (id)name;
 - (id)nsuuid;
@@ -90,6 +97,7 @@
 - (BOOL)supportsTethering;
 - (BOOL)supportsiCloudPairing;
 - (id)uniqueID;
+- (id)uniqueIDOverride;
 - (void)xpcObject:(id)arg1 objectContext:(id)arg2;
 
 @end

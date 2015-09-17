@@ -25,6 +25,5 @@
 - (void)stopOnBodyStatusDetection;
 - (void)stopOnBodyStatusDetectionPrivate;
 - (void)stopWatchdogCheckinsPrivate;
-- (BOOL)validateParameters:(id)arg1;
 
 @end

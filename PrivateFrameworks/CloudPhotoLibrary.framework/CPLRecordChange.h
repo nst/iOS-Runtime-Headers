@@ -13,6 +13,7 @@
     NSString *_realIdentifier;
     NSData *_recordChangeData;
     NSDate *_recordModificationDate;
+    BOOL _serverRecordIsCorrupted;
     BOOL _shouldFilterDefaultValuesForNewProperties;
 }
 
@@ -24,6 +25,7 @@
 @property (nonatomic, copy) NSString *realIdentifier;
 @property (nonatomic, copy) NSData *recordChangeData;
 @property (nonatomic, copy) NSDate *recordModificationDate;
+@property (nonatomic) BOOL serverRecordIsCorrupted;
 
 + (id)_descriptionForChangeType:(unsigned int)arg1 isSparseFullChange:(BOOL)arg2;
 + (Class)classForStoredClassName:(id)arg1 forCPLArchiver:(id)arg2;
@@ -57,6 +59,7 @@
 - (BOOL)hasChangeType:(unsigned int)arg1;
 - (unsigned int)hash;
 - (id)identifier;
+- (id)identifierForQuarantine;
 - (id)identifiersForMapping;
 - (BOOL)inExpunged;
 - (BOOL)inTrash;
@@ -67,6 +70,7 @@
 - (BOOL)isSparseFullChange;
 - (void)markAsSparseFullChange;
 - (id)mergeRecordChangeWithNewRecordChange:(id)arg1;
+- (unsigned long long)originalResourceSize;
 - (void)prepareForStorage;
 - (id)propertiesDescription;
 - (id)propertiesForChangeType:(unsigned int)arg1;
@@ -83,6 +87,7 @@
 - (id)resources;
 - (id)resourcesDescription;
 - (id)secondaryIdentifier;
+- (BOOL)serverRecordIsCorrupted;
 - (void)setAlterationTypeFlags:(unsigned int)arg1;
 - (void)setChangeType:(unsigned int)arg1;
 - (void)setDateDeleted:(id)arg1;
@@ -95,6 +100,7 @@
 - (void)setRelatedIdentifier:(id)arg1;
 - (void)setResources:(id)arg1;
 - (void)setSecondaryIdentifier:(id)arg1;
+- (void)setServerRecordIsCorrupted:(BOOL)arg1;
 - (void)setShouldFilterDefaultValuesForNewProperties:(BOOL)arg1;
 - (BOOL)shouldApplyPropertiesWithSelector:(SEL)arg1;
 - (BOOL)shouldFilterDefaultValuesForNewProperties;

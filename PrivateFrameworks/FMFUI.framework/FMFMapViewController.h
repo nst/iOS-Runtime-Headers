@@ -9,6 +9,7 @@
     NSSet *__preloadedHandles;
     BOOL __refreshingIsPaused;
     void *_addressBook;
+    BOOL _alwaysShowAccuracy;
     UIColor *_annotationTintColor;
     UIImageView *_cachedMapView;
     BOOL _canShowNoLocation;
@@ -26,6 +27,7 @@
     FMFSession *_fmfSession;
     FMF3HiddenMapTrackingHandler *_hiddenMap;
     UIBarButtonItem *_infoBarButtonItem;
+    BOOL _isMapCenteringDisabled;
     BOOL _isSimpleMap;
     FMFMapOptionsViewController *_mapOptionsVC;
     BOOL _mapTypeLoaded;
@@ -48,6 +50,7 @@
 @property (nonatomic, retain) NSSet *_preloadedHandles;
 @property (nonatomic) BOOL _refreshingIsPaused;
 @property (nonatomic) void*addressBook;
+@property (nonatomic) BOOL alwaysShowAccuracy;
 @property (nonatomic, copy) UIColor *annotationTintColor;
 @property (nonatomic, retain) UIImageView *cachedMapView;
 @property (nonatomic) BOOL canShowNoLocation;
@@ -64,6 +67,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) FMF3HiddenMapTrackingHandler *hiddenMap;
 @property (nonatomic, retain) UIBarButtonItem *infoBarButtonItem;
+@property (nonatomic) BOOL isMapCenteringDisabled;
 @property (nonatomic) BOOL isSimpleMap;
 @property (nonatomic, retain) FMFMapOptionsViewController *mapOptionsVC;
 @property (nonatomic) BOOL mapTypeLoaded;
@@ -81,8 +85,6 @@
 @property (nonatomic) BOOL viewWillAppearCalled;
 
 + (struct CGSize { float x1; float x2; })annotationImageSize;
-+ (id)smallAnnotationViewImage;
-+ (id)smallAnnotationViewImageWithTintColor:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_authorizeMonitoringLocation;
@@ -100,10 +102,13 @@
 - (void)addFloatingToolbar;
 - (void)addHandlesToSession;
 - (void*)addressBook;
+- (BOOL)alwaysShowAccuracy;
+- (id)annotationImageForAnnotation:(id)arg1 andHandle:(id)arg2;
 - (id)annotationImageForHandle:(id)arg1;
 - (id)annotationTintColor;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (id)cachedMapView;
+- (BOOL)canSelectAnnotation:(id)arg1;
 - (BOOL)canShowNoLocation;
 - (void)dealloc;
 - (unsigned int)defaultMapType;
@@ -136,6 +141,7 @@
 - (id)initWithDelegate:(id)arg1 handles:(id)arg2;
 - (void)initializeDefaults;
 - (BOOL)isCompact;
+- (BOOL)isMapCenteringDisabled;
 - (BOOL)isSimpleMap;
 - (void)loadCachedLocationsForHandles;
 - (void)loadDelegate;
@@ -150,8 +156,8 @@
 - (id)mapViewDelegate;
 - (void)mapViewDidFinishRenderingMap;
 - (id)noLocationView;
+- (id)openInAppURL;
 - (void)openInMapsButtonTapped:(id)arg1;
-- (id)personImageForNoLocationView;
 - (void)presentMapOptionsModal:(id)arg1;
 - (void)reZoomToFit;
 - (id)refreshButton;
@@ -166,6 +172,7 @@
 - (void)selectAnnotationIfSingleFriend:(id)arg1;
 - (BOOL)sessionContainsHandle:(id)arg1;
 - (void)setAddressBook:(void*)arg1;
+- (void)setAlwaysShowAccuracy:(BOOL)arg1;
 - (void)setAnnotationTintColor:(id)arg1;
 - (void)setCachedMapView:(id)arg1;
 - (void)setCanShowNoLocation:(BOOL)arg1;
@@ -179,6 +186,7 @@
 - (void)setHandlesShowingLocations:(id)arg1;
 - (void)setHiddenMap:(id)arg1;
 - (void)setInfoBarButtonItem:(id)arg1;
+- (void)setIsMapCenteringDisabled:(BOOL)arg1;
 - (void)setIsSimpleMap:(BOOL)arg1;
 - (void)setMapOptionsVC:(id)arg1;
 - (void)setMapTypeLoaded:(BOOL)arg1;

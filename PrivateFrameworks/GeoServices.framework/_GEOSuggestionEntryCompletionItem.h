@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface _GEOSuggestionEntryCompletionItem : NSObject <GEOCompletionItem, _GEOCompletionSearchHint> {
+@interface _GEOSuggestionEntryCompletionItem : NSObject <GEOCompletionItem> {
     NSData *_completionMetaData;
     GEOSuggestionEntry *_entry;
     int _entryIndex;
@@ -18,10 +18,10 @@
 @property (nonatomic, readonly) <GEOMapItem> *geoMapItem;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSData *metadata;
+@property (nonatomic, readonly) GEOSearchCategory *searchCategory;
 @property (readonly) Class superclass;
 
 - (id)calloutTitle;
-- (id)completionLocation;
 - (void)dealloc;
 - (id)description;
 - (id)displayLines;
@@ -33,9 +33,8 @@
 - (id)initWithSuggestionEntry:(id)arg1 query:(id)arg2 entryListIndex:(int)arg3 entryIndex:(int)arg4 completion:(id)arg5 traits:(id)arg6;
 - (BOOL)isEqual:(id)arg1;
 - (id)metadata;
-- (id)query;
 - (id)queryLine;
+- (id)searchCategory;
 - (void)sendFeedback;
-- (id)suggestionsOptions;
 
 @end

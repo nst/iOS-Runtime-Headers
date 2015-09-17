@@ -24,10 +24,10 @@
             struct IsoAlphaAtlas {} *__first_; 
         } __ptr_; 
     } _isoAlphaAtlas;
+    GEOResourceManifestConfiguration *_manifestConfiguration;
     VKResourceManager *_resourceManager;
     VKShieldManager *_shieldManager;
     VKStylesheetVendor *_stylesheetVendor;
-    unsigned int _tileGroupIdentifier;
     VKTrafficIncidentImageManager *_trafficIncidentImageManager;
 }
 
@@ -42,7 +42,7 @@
 @property (nonatomic, readonly) VKStylesheetVendor *stylesheetVendor;
 @property (nonatomic, readonly) VKTrafficIncidentImageManager *trafficIncidentImageManager;
 
-+ (id)sharedResourcesForTileGroupIdentifier:(unsigned int)arg1;
++ (id)sharedResourcesForConfiguration:(id)arg1;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -52,7 +52,7 @@
 - (id)gglTextureManager;
 - (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }*)highInflationAlphaAtlas;
 - (id)iconManager;
-- (id)initWithTileGroupIdentifier:(unsigned int)arg1;
+- (id)initWithConfiguration:(id)arg1;
 - (struct IsoAlphaAtlas { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct Texture2D {} *x6; }*)isoAlphaAtlas;
 - (id)resourceManager;
 - (id)shieldManager;

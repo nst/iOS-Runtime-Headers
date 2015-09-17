@@ -4,6 +4,7 @@
 
 @interface UINavigationItemButtonView : UINavigationItemView <UIGestureRecognizerDelegate> {
     unsigned int _abbreviatedTitleIndex;
+    UIColor *_accessibilityBackgroundTintColor;
     _UIBarButtonItemAppearanceStorage *_appearanceStorage;
     UIImageView *_backgroundImageView;
     BOOL _customBackgroundImageChangedToOrFromNil;
@@ -14,6 +15,7 @@
 }
 
 @property (setter=_setAbbreviatedTitleIndex:, nonatomic) unsigned int _abbreviatedTitleIndex;
+@property (setter=_setAccessibilityBackgroundTintColor:, nonatomic, retain) UIColor *_accessibilityBackgroundTintColor;
 @property (setter=_setTintColor:, nonatomic, retain) UIColor *_tintColor;
 @property (setter=_setWantsBlendModeForAccessibilityBackgrounds:, nonatomic) BOOL _wantsBlendModeForAccessibilityBackgrounds;
 @property (readonly, copy) NSString *debugDescription;
@@ -21,6 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_UIAppearance_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_UIAppearance_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
@@ -31,6 +34,7 @@
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (unsigned int)_abbreviatedTitleIndex;
+- (id)_accessibilityBackgroundTintColor;
 - (void)_accessibilityButtonShapesDidChangeNotification:(id)arg1;
 - (void)_accessibilityButtonShapesParametersDidChange;
 - (Class)_appearanceGuideClass;
@@ -52,8 +56,10 @@
 - (void)_focusedViewDidChange:(id)arg1;
 - (void)_focusedViewWillChange:(id)arg1;
 - (void)_installBackSelectGestureRecognizer;
+- (void)_resetRenderingModesForAccessibilityBackgrounds;
 - (id)_scriptingInfo;
 - (void)_setAbbreviatedTitleIndex:(unsigned int)arg1;
+- (void)_setAccessibilityBackgroundTintColor:(id)arg1;
 - (void)_setBackButtonBackgroundImage:(id)arg1 forState:(unsigned int)arg2 barMetrics:(int)arg3;
 - (void)_setBackButtonBackgroundVerticalPositionAdjustment:(float)arg1 forBarMetrics:(int)arg2;
 - (void)_setBackButtonTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;

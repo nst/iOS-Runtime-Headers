@@ -5,9 +5,13 @@
 @interface VKMemoryObserver : NSObject {
     NSObject<OS_dispatch_source> *_memoryNotificationEventSource;
     SEL _selector;
-    id _target;
+    /* Warning: unhandled struct encoding: '{_geo_weak_ptr<id>="_p"@}' */ struct _geo_weak_ptr<id> { 
+        id _p; 
+    } _target;
 }
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)_receivedMemoryNotification;
 - (void)dealloc;
 - (id)initWithTarget:(id)arg1 selector:(SEL)arg2;

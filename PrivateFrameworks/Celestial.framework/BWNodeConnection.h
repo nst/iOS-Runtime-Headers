@@ -16,7 +16,8 @@
 @property (readonly) BWPipelineStage *pipelineStage;
 @property (readonly) Class superclass;
 
-+ (id)_requirementsArrayForInputByResolvingPassthroughTree:(id)arg1;
++ (id)_inputAndRequirementsDebugArrayStartingFromInput:(id)arg1;
++ (id)_requirementsArrayStartingFromInput:(id)arg1;
 + (void)initialize;
 
 - (BOOL)attach;

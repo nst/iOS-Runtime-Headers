@@ -37,6 +37,7 @@
 @property (nonatomic, retain) UIColor *tintColor;
 @property (nonatomic) BOOL useAlternateColor;
 
+- (void).cxx_destruct;
 - (void)_accessibilitySettingChanged;
 - (id)_accessibleOffImage;
 - (id)_accessibleOnImage;

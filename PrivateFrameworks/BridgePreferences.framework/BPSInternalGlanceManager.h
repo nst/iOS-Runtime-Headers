@@ -23,7 +23,6 @@
 - (void)addObserver:(id)arg1;
 - (id)glanceManager;
 - (id)init;
-- (void)invalidateSettings;
 - (void)loadSettingsIfNeeded;
 - (id)observers;
 - (void)removeObserver:(id)arg1;

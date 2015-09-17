@@ -75,14 +75,15 @@
 - (double)_energyBurnedGoalInKilocalories;
 - (double)_energyBurnedInKilocalories;
 - (BOOL)_isEqualToActivityCache:(id)arg1;
-- (long long)_minAnchor;
+- (long long)_minCategoryAnchor;
+- (long long)_minQuantityAnchor;
 - (void)_setActiveEnergyBurnedAnchor:(long long)arg1;
 - (void)_setActiveHours:(double)arg1;
 - (void)_setActiveHoursAnchor:(long long)arg1;
-- (void)_setAllAnchors:(long long)arg1;
 - (void)_setBriskMinutes:(double)arg1;
 - (void)_setBriskMinutesAnchor:(long long)arg1;
 - (void)_setCacheIndex:(long long)arg1;
+- (void)_setCategoryAnchor:(long long)arg1;
 - (void)_setEnergyBurned:(id)arg1;
 - (void)_setEnergyBurnedGoal:(id)arg1;
 - (void)_setEnergyBurnedGoal:(id)arg1 date:(id)arg2;
@@ -90,6 +91,7 @@
 - (void)_setEnergyBurnedGoalDateOnly:(id)arg1;
 - (void)_setEnergyBurnedGoalOnly:(id)arg1;
 - (void)_setKnownFields:(unsigned int)arg1;
+- (void)_setQuantityAnchor:(long long)arg1;
 - (void)_setStepCount:(int)arg1;
 - (void)_setStepCountAnchor:(long long)arg1;
 - (void)_setWalkingAndRunningDistance:(id)arg1;
@@ -139,10 +141,12 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
++ (Class)hd_dataEntityClass;
 
 - (BOOL)addCodableRepresentationToCollectionForJournal:(id)arg1;
 - (BOOL)addCodableRepresentationToCollectionForSync:(id)arg1;
 - (id)codableRepresentationForJournal;
 - (id)codableRepresentationForSync;
+- (BOOL)hd_isEnergyBurnedGoalSet;
 
 @end

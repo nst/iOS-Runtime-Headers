@@ -2,20 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABCardActionGroupItem : ABCardGroupItem {
-    NSMutableArray *_actions;
-}
-
-@property (nonatomic, readonly) NSArray *actions;
-
-+ (id)actionGroupItemWithAction:(id)arg1;
-+ (id)actionGroupItemWithActions:(id)arg1;
-
-- (id)actions;
-- (void)addAction:(id)arg1;
-- (Class)cellClass;
-- (void)dealloc;
-- (id)init;
-- (id)initWithAction:(id)arg1;
+@interface ABCardActionGroupItem : CNCardActionGroupItem
 
 @end

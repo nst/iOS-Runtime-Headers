@@ -26,7 +26,6 @@
 - (id)inputImage;
 - (id)inputRedCoefficients;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAlphaCoefficients:(id)arg1;
 - (void)setInputBlueCoefficients:(id)arg1;
 - (void)setInputGreenCoefficients:(id)arg1;

@@ -2,19 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGDataDetectorDissector : NSObject <SGPipelineDissector> {
+@interface SGDataDetectorDissector : SGPipelineDissector {
     long _scannerOptions;
 }
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
 
 + (void)initialize;
 + (BOOL)stringHasDatesOrTimes:(id)arg1;
 
-- (void)dissect:(id)arg1;
+- (void)dissectInternal:(id)arg1;
 - (id)init;
 - (id)initWithSigs:(BOOL)arg1;
 

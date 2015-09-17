@@ -5,6 +5,6 @@
 
 @required
 
-- (void)newPersonViewController:(ABNewPersonViewController *)arg1 didCompleteWithNewPerson:(void*)arg2;
+- (void)newPersonViewController:(ABNewPersonViewController *)arg1 didCompleteWithNewPerson:(const void*)arg2;
 
 @end

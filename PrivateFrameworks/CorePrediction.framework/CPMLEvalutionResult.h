@@ -13,6 +13,7 @@
 - (id)getList;
 - (id)getListDict;
 - (id)getString;
+- (id)getStringList;
 - (id)init:(id)arg1 withConfigurationList:(id)arg2;
 
 @end

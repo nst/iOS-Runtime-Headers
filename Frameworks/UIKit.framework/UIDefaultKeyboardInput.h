@@ -29,12 +29,14 @@
 @property (nonatomic, retain) UIColor *insertionPointColor;
 @property (nonatomic) unsigned int insertionPointWidth;
 @property (nonatomic, readonly) UITextInteractionAssistant *interactionAssistant;
+@property (nonatomic) BOOL isCarPlayIdiom;
 @property (nonatomic) BOOL isSingleLineDocument;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
 @property (nonatomic) BOOL learnsCorrections;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic, copy) NSString *responseContext;
 @property (nonatomic) BOOL returnKeyGoesToNextResponder;
 @property (nonatomic) int returnKeyType;

@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIServiceWebViewController : UIViewController <WebUIBrowserLoadingControllerDelegate, _UIServiceWebViewControllerProtocol> {
-    WebUIBrowserLoadingController *_loadingController;
+@interface _UIServiceWebViewController : UIViewController <_UIServiceWebViewControllerProtocol, _UIWebBrowserLoadingControllerDelegate> {
+    _UIWebBrowserLoadingController *_loadingController;
     _UIServiceWebView *_uiWebView;
 }
 

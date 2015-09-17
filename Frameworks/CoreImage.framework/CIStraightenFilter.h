@@ -15,7 +15,6 @@
 - (id)inputAngle;
 - (id)inputImage;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAngle:(id)arg1;
 - (void)setInputImage:(id)arg1;
 

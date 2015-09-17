@@ -15,6 +15,8 @@
 @property (nonatomic, readonly) NSDictionary *filterDictionary;
 @property (readonly, copy) NSDictionary *samplePredicates;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
 + (Class)_queryServerDataObjectClass;
 
 - (void).cxx_destruct;
@@ -27,9 +29,13 @@
 - (void)_setBehaviorVersion:(int)arg1;
 - (id /* block */)completionHandler;
 - (id)correlationType;
-- (void)deliverCorrelations:(id)arg1 forQuery:(id)arg2;
+- (void)deliverSampleObjects:(id)arg1 deletedObjects:(id)arg2 withAnchor:(id)arg3 forQuery:(id)arg4;
 - (id)filterDictionary;
 - (id)initWithType:(id)arg1 predicate:(id)arg2 samplePredicates:(id)arg3 completion:(id /* block */)arg4;
 - (id)samplePredicates;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (Class)hd_queryServerClass;
 
 @end

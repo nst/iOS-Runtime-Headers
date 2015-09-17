@@ -8,11 +8,10 @@
         float x; 
         float y; 
     } mCenterPoint;
-    OITSDBezierPath *mPath;
+    TSUBezierPath *mPath;
     NSArray *mSurroundColors;
 }
 
-- (id).cxx_construct;
 - (void)createShading;
 - (void)dealloc;
 - (id)endColor;

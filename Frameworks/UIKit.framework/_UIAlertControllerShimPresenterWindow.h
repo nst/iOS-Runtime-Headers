@@ -2,16 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIAlertControllerShimPresenterWindow : UIWindow {
+@interface _UIAlertControllerShimPresenterWindow : UIApplicationRotationFollowingWindow {
     UIAlertController *_alertController;
 }
 
 @property (nonatomic, readonly, retain) UIAlertController *alertController;
 
-+ (BOOL)_isSystemWindow;
-
+- (void).cxx_destruct;
 - (id)_presentationViewController;
-- (BOOL)_shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (id)alertController;
 - (id)init;
 - (void)presentAlertController:(id)arg1 animated:(BOOL)arg2 completionBlock:(id /* block */)arg3;

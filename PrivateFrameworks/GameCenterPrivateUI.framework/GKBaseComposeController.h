@@ -50,8 +50,6 @@
 - (id)contentLeadingConstraint;
 - (id)contentView;
 - (void)dealloc;
-- (void)didEnterLoadedState;
-- (void)didEnterLoadingState;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)headerFieldContainer;
 - (id)init;

@@ -34,6 +34,13 @@
 - (void)setProtocol:(id)arg1;
 - (void)setReplyBlockSignature:(id)arg1 forSelector:(SEL)arg2;
 
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (id)hm_setupRemoteHostInterface;
++ (id)hm_setupRemoteServiceInterface;
++ (id)hm_userManagementRemoteHostInterface;
++ (id)hm_userManagementRemoteServiceInterface;
+
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 + (id)mf_mailComposeRemoteHostInterface;

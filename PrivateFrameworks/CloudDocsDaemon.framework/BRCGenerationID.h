@@ -26,6 +26,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)fsGenerationID;
 - (id)generationIDString;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFSGenerationID:(unsigned int)arg1;
 - (id)initWithRelativePath:(id)arg1;

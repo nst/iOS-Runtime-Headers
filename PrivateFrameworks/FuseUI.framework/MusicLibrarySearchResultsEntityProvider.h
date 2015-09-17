@@ -35,6 +35,7 @@
 - (BOOL)hasResults;
 - (id)indexBarEntryAtIndex:(unsigned int)arg1;
 - (id)indexPathForEntityValueContext:(id)arg1;
+- (id)init;
 - (id)initWithSearchEntityProviderConfiguration:(id)arg1;
 - (unsigned int)maximumNumberOfSectionResults;
 - (id)moreSearchResultsEntityProviderConfigurationForSectionIndex:(int)arg1;

@@ -11,6 +11,7 @@
     id /* block */ _perRecordProgressBlock;
     NSMutableDictionary *_recordErrors;
     NSArray *_recordIDs;
+    NSDictionary *_recordIDsToETags;
     NSMutableDictionary *_recordIDsToRecords;
     NSDictionary *_recordIDsToVersionETags;
     BOOL _shouldFetchAssetContent;
@@ -26,11 +27,14 @@
 @property (nonatomic, copy) id /* block */ perRecordProgressBlock;
 @property (nonatomic, retain) NSMutableDictionary *recordErrors;
 @property (nonatomic, copy) NSArray *recordIDs;
+@property (nonatomic, retain) NSDictionary *recordIDsToETags;
 @property (nonatomic, retain) NSMutableDictionary *recordIDsToRecords;
 @property (nonatomic, retain) NSDictionary *recordIDsToVersionETags;
 @property (nonatomic) BOOL shouldFetchAssetContent;
 @property (nonatomic, retain) NSMutableDictionary *signaturesOfAssetsByRecordIDAndKey;
 @property (nonatomic, retain) NSDictionary *webSharingIdentityDataByRecordID;
+
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 + (id)fetchCurrentUserRecordOperation;
 
@@ -38,6 +42,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)desiredKeys;
 - (id)desiredPackageFileIndices;
 - (id /* block */)fetchRecordsCompletionBlock;
@@ -50,6 +55,7 @@
 - (void)performCKOperation;
 - (id)recordErrors;
 - (id)recordIDs;
+- (id)recordIDsToETags;
 - (id)recordIDsToRecords;
 - (id)recordIDsToVersionETags;
 - (void)setDesiredKeys:(id)arg1;
@@ -60,6 +66,7 @@
 - (void)setPerRecordProgressBlock:(id /* block */)arg1;
 - (void)setRecordErrors:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
+- (void)setRecordIDsToETags:(id)arg1;
 - (void)setRecordIDsToRecords:(id)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
 - (void)setShouldFetchAssetContent:(BOOL)arg1;
@@ -68,5 +75,9 @@
 - (BOOL)shouldFetchAssetContent;
 - (id)signaturesOfAssetsByRecordIDAndKey;
 - (id)webSharingIdentityDataByRecordID;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (void)ic_removeAllCompletionBlocks;
 
 @end

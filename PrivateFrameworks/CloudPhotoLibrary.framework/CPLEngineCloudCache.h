@@ -16,6 +16,8 @@
 - (BOOL)applyBatch:(id)arg1 isFinal:(BOOL)arg2 withError:(id*)arg3;
 - (id)cloudChangeBatchFromBatch:(id)arg1 usingMapping:(id)arg2 isFinal:(BOOL)arg3 withError:(id*)arg4;
 - (BOOL)commitStagedChangesWithError:(id*)arg1;
+- (BOOL)confirmAllRecordsWithError:(id*)arg1;
+- (id)confirmedRecordWithIdentifier:(id)arg1;
 - (BOOL)deleteRecordWithIdentifier:(id)arg1 isFinal:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)discardStagedChangesWithError:(id*)arg1;
 - (void)getCommittedRecord:(id*)arg1 stagedRecord:(id*)arg2 forIdentifier:(id)arg3;

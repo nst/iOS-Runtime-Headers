@@ -3,12 +3,18 @@
  */
 
 @interface MusicSocialFollowOperation : MusicSocialAbstractOperation {
-    long long _artistStoreID;
+    NSString *_entityType;
     BOOL _follow;
+    NSNumber *_storeEntityID;
 }
 
-- (id)initWithArtistStoreID:(long long)arg1 shouldFollow:(BOOL)arg2;
+@property (nonatomic, copy) NSNumber *storeEntityID;
+
+- (void).cxx_destruct;
+- (id)initWithEntityStoreID:(id)arg1 entityType:(id)arg2 shouldFollow:(BOOL)arg3;
 - (void)processResponse:(id)arg1 response:(id)arg2;
 - (id)serviceURL:(id)arg1;
+- (void)setStoreEntityID:(id)arg1;
+- (id)storeEntityID;
 
 @end

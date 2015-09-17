@@ -3,6 +3,7 @@
  */
 
 @interface PUSearchViewController : UIViewController <PUSearchResultsDelegate, PUSuggestedSearchResultsDelegate, UIGestureRecognizerDelegate, UISearchBarDelegate, UITableViewDataSource, UITableViewDelegate> {
+    id /* block */ __runImmediatelyAfterViewDidAppear;
     _UIBackdropView *_backdropView;
     UIView *_backgroundView;
     UIBarButtonItem *_cancelButton;
@@ -29,6 +30,7 @@
     PUPingTimer *_suggestedSearchResultsPingTimer;
 }
 
+@property (setter=_setRunImmediatelyAfterViewDidAppear:, nonatomic, copy) id /* block */ _runImmediatelyAfterViewDidAppear;
 @property (nonatomic, retain) UIView *backgroundView;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUSearchViewControllerDelegate> *delegate;
@@ -45,6 +47,7 @@
 + (id)_screenSnapshot;
 + (BOOL)mustAdaptFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2;
 + (id)newSearchBar;
++ (id)newSearchViewControllerWithLastYearPhotos;
 + (BOOL)usePopoverAppearanceForTraitCollection:(id)arg1;
 + (void)viewController:(id)arg1 swapSearchViewController:(id)arg2 withResultsViewController:(id)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
 
@@ -52,7 +55,6 @@
 - (void)_DEBUG_rebuildSearchIndex:(id)arg1;
 - (void)_applyHorizontalOffsetX:(float)arg1;
 - (void)_applyHorizontalPanResetAnimationWithVelocity:(float)arg1;
-- (void)_cancelButtonTapped:(id)arg1;
 - (void)_cancelHorizontalPanResetAnimation;
 - (void)_configureCell:(id)arg1 inTableView:(id)arg2 atIndexAPath:(id)arg3;
 - (void)_configureTableView:(id)arg1;
@@ -61,18 +63,23 @@
 - (id)_localIdentifiersForUUIDs:(id)arg1;
 - (void)_mergeSearchResults;
 - (void)_mergeSuggestedSearchResultsAnimated:(BOOL)arg1;
+- (void)_navigateToLastYearPhotoSearchWithoutAnimation;
 - (unsigned int)_numberOfTableViewSectionsOutSuggestionsSection:(unsigned int*)arg1 outRecentsSection:(unsigned int*)arg2;
 - (void)_pingTimerFire:(id)arg1;
+- (void)_preferredContentSizeChanged:(id)arg1;
 - (void)_pushGridForAlbum:(struct NSObject { Class x1; }*)arg1 completion:(id /* block */)arg2;
 - (void)_pushGridForAlbumWithUUID:(id)arg1 completion:(id /* block */)arg2;
-- (void)_pushMomentsGridForPhotoCollections:(id)arg1 title:(id)arg2 completion:(id /* block */)arg3;
-- (void)_pushMomentsGridForPhotosWithUUIDs:(id)arg1 title:(id)arg2 completion:(id /* block */)arg3;
+- (void)_pushMomentsGridForPhotoCollections:(id)arg1 title:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)_pushMomentsGridForPhotosWithUUIDs:(id)arg1 title:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;
+- (float)_rowHeightForCurrentFont;
+- (id /* block */)_runImmediatelyAfterViewDidAppear;
 - (void)_scheduleUpdateTableFooterView;
 - (void)_searchFieldTextDidChange:(id)arg1;
 - (id)_searchResultsTableView;
 - (void)_selectSearchResultAtIndexPath:(id)arg1;
 - (void)_selectSuggestedSearchAtIndexPath:(id)arg1;
 - (void)_setCurrentTableViewDataSource:(id)arg1;
+- (void)_setRunImmediatelyAfterViewDidAppear:(id /* block */)arg1;
 - (void)_setSearchText:(id)arg1;
 - (void)_setSelectedDisplayTitle:(id)arg1;
 - (void)_updateBackgroundView;
@@ -83,6 +90,7 @@
 - (void)_updateTableFooterViewWithProgress:(unsigned int)arg1;
 - (id)backgroundView;
 - (void)cancelActiveSearches;
+- (void)cancelButtonTapped:(id)arg1;
 - (id)contentScrollView;
 - (void)dealloc;
 - (id)delegate;
@@ -111,10 +119,10 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

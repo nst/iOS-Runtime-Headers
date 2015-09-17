@@ -13,7 +13,6 @@
     BOOL _paused;
     NSObject<OS_dispatch_queue> *_queue;
     int _queuedFrameCount;
-    id _reserved;
 }
 
 @property (nonatomic) int frameInterval;
@@ -33,6 +32,7 @@
 - (BOOL)isPaused;
 - (int)queuedFrameCount;
 - (void)setFrameInterval:(int)arg1;
+- (void)setNeedsDisplay;
 - (void)setPaused:(BOOL)arg1;
 - (void)setPaused:(BOOL)arg1 nextFrameTimeHint:(double)arg2;
 - (void)willDie;

@@ -8,7 +8,9 @@
     NSDate *_currentCachedDate;
     double _currentCachedTotalCPUTime;
     BOOL _firstBoot;
+    PLMonotonicTimer *_logTimer;
     NSDate *_previousCacheDate;
+    NSMutableSet *_processes;
 }
 
 @property (retain) PLNSNotificationOperatorComposition *asertionNotifications;
@@ -16,9 +18,11 @@
 @property (retain) NSDate *currentCachedDate;
 @property double currentCachedTotalCPUTime;
 @property BOOL firstBoot;
+@property (retain) PLMonotonicTimer *logTimer;
 @property (retain) NSDate *previousCacheDate;
+@property (retain) NSMutableSet *processes;
 
-+ (id)accountingGroupDefinitions;
++ (unsigned long long)PIDToCoalitionID:(int)arg1;
 + (id)defaults;
 + (id)entryEventBackwardDefinitionProcessMonitor;
 + (id)entryEventBackwardDefinitions;
@@ -28,6 +32,7 @@
 + (id)entryEventIntervalDefinitions;
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitions;
++ (id)entryEventPointMemoryTracking;
 + (void)load;
 
 - (void).cxx_destruct;
@@ -37,6 +42,7 @@
 - (double)currentCachedTotalCPUTime;
 - (id)eventForwardProcessIDForPID:(int)arg1;
 - (BOOL)firstBoot;
+- (void)getCpuUsageForPid:(int)arg1 withBuffer:(void*)arg2 withNewProcessArray:(id)arg3 withTotalCpu:(double*)arg4 withActiveProcesses:(id)arg5;
 - (id)init;
 - (void)initOperatorDependancies;
 - (BOOL)isCachedForProcessID:(int)arg1;
@@ -46,15 +52,21 @@
 - (void)logEventBackwardProcessMonitorUsingCache;
 - (void)logEventIntervalProcessMonitorInterval;
 - (void)logEventIntervalProcessMonitorIntervalUsingCache;
+- (void)logEventPointMemoryTracking;
+- (id)logTimer;
 - (id)previousCacheDate;
 - (id)processMonitorMultiKeyFromProcessID:(id)arg1;
+- (id)processes;
+- (void)processesOfInterest:(id)arg1;
 - (void)setAsertionNotifications:(id)arg1;
 - (void)setBatteryLevelChanged:(id)arg1;
 - (void)setCurrentCachedDate:(id)arg1;
 - (void)setCurrentCachedTotalCPUTime:(double)arg1;
 - (void)setFirstBoot:(BOOL)arg1;
+- (void)setLogTimer:(id)arg1;
 - (void)setPreviousCacheDate:(id)arg1;
-- (id)trimmingConditionsForRolloverAtDate:(id)arg1;
+- (void)setProcesses:(id)arg1;
+- (id)trimConditionsForEntryKey:(id)arg1 forTrimDate:(id)arg2;
 - (void)updateProcessMonitorCache;
 
 @end

@@ -4,35 +4,39 @@
 
 @interface SBSStatusBarStyleOverridesAssertionData : NSObject <NSSecureCoding> {
     BOOL _exclusive;
-    BOOL _isExclusive;
     int _pid;
+    BOOL _showsWhenForeground;
     int _statusBarStyleOverrides;
+    NSString *_statusString;
     NSString *_uniqueIdentifier;
 }
 
 @property (getter=isExclusive, nonatomic) BOOL exclusive;
-@property (nonatomic, readonly) BOOL isExclusive;
 @property (nonatomic) int pid;
+@property (nonatomic) BOOL showsWhenForeground;
 @property (nonatomic) int statusBarStyleOverrides;
+@property (nonatomic, copy) NSString *statusString;
 @property (nonatomic, copy) NSString *uniqueIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (unsigned int)hash;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3;
-- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3 uniqueIdentifier:(id)arg4;
-- (BOOL)isEqual:(id)arg1;
-- (BOOL)isExclusive;
+- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3 showsWhenForeground:(BOOL)arg4;
+- (id)initWithStatusBarStyleOverrides:(int)arg1 forPID:(int)arg2 exclusive:(BOOL)arg3 showsWhenForeground:(BOOL)arg4 uniqueIdentifier:(id)arg5;
 - (BOOL)isExclusive;
 - (int)pid;
 - (void)setExclusive:(BOOL)arg1;
 - (void)setPid:(int)arg1;
+- (void)setShowsWhenForeground:(BOOL)arg1;
 - (void)setStatusBarStyleOverrides:(int)arg1;
+- (void)setStatusString:(id)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
+- (BOOL)showsWhenForeground;
 - (int)statusBarStyleOverrides;
+- (id)statusString;
 - (id)uniqueIdentifier;
 
 @end

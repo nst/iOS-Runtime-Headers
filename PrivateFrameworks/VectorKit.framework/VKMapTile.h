@@ -8,10 +8,10 @@
         struct __shared_weak_count {} *__cntrl_; 
     } _labelMapTile;
     struct { 
-        float x0; 
-        float x1; 
-        float y0; 
-        float y1; 
+        double x0; 
+        double x1; 
+        double y0; 
+        double y1; 
     } _localBounds;
     float _maximumStyleZ;
     BOOL _needsRasterization;
@@ -36,7 +36,7 @@
 - (id)detailedDescription;
 - (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (struct shared_ptr<vk::LabelMapTile> { struct LabelMapTile {} *x1; struct __shared_weak_count {} *x2; })labelMapTile;
-- (struct { float x1; float x2; float x3; float x4; })localBoundsForLayer:(unsigned long long)arg1;
+- (struct { double x1; double x2; double x3; double x4; })localBoundsForLayer:(unsigned long long)arg1;
 - (float)maximumStyleZ;
 - (BOOL)needsRasterization;
 - (id)rasterized;

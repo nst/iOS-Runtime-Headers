@@ -11,6 +11,7 @@
 - (BOOL)isDeleted;
 - (CLLocation *)location;
 - (<PLMomentData> *)moment;
+- (NSData *)placeAnnotationData;
 - (NSData *)reverseLocationData;
 - (BOOL)reverseLocationDataIsValid;
 - (void)setDateCreated:(NSDate *)arg1;
@@ -18,6 +19,10 @@
 - (void)setMoment:(id <PLMomentData>)arg1;
 - (void)setReverseLocationData:(NSData *)arg1;
 - (void)setReverseLocationDataIsValid:(BOOL)arg1;
+- (void)setShiftedLocation:(CLLocation *)arg1;
+- (void)setShiftedLocationIsValid:(BOOL)arg1;
+- (CLLocation *)shiftedLocation;
+- (BOOL)shiftedLocationIsValid;
 - (NSObject<NSCopying> *)uniqueObjectID;
 - (BOOL)visibilityStateIsEqualToState:(short)arg1;
 

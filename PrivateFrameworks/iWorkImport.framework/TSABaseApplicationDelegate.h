@@ -27,6 +27,8 @@
 - (BOOL)URLIsValidForImportedHyperlink:(id)arg1;
 - (id)applicationTemplateVariants;
 - (id)applicationTemplateVariantsForLocale:(struct __CFLocale { }*)arg1;
+- (unsigned int)collaboratorColorIndexForDocumentShareID:(id)arg1;
+- (id)collaboratorName;
 - (id)collaboratorNameForDocumentShareID:(id)arg1;
 - (id)collaboratorPersonID;
 - (id)collaboratorPersonIDKey;

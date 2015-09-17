@@ -2,12 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegSettingsController : CNFRegListController <CNFRegFirstRunDelegate, CNFRegViewAccountControllerDelegate, CNFRegWizardControllerDelegate> {
+@interface CNFRegSettingsController : CNFRegListController <AKAppleIDAuthenticationDelegate, CNFRegFirstRunDelegate, CNFRegViewAccountControllerDelegate, CNFRegWizardControllerDelegate> {
     NSArray *_accountGroupSpecifiers;
-    TUAccountsController *_accountsController;
     PSSpecifier *_addAddressButtonSpecifier;
     NSMutableArray *_addresses;
-    id /* block */ _alertHandler;
     NSArray *_aliasGroupSpecifiers;
     NSArray *_blacklistGroupSpecifiers;
     PSSpecifier *_blankAddressSpecifier;
@@ -28,8 +26,6 @@
     BOOL _showReceiveRelayCalls;
 }
 
-@property (nonatomic, retain) TUAccountsController *accountsController;
-@property (nonatomic, copy) id /* block */ alertHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -40,6 +36,7 @@
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
+- (void).cxx_destruct;
 - (BOOL)_allAccountsAreDeactivated;
 - (id)_appleIDAccounts;
 - (void)_buildSpecifierCache:(id)arg1;
@@ -47,6 +44,7 @@
 - (void)_cacheSpecifierGroup:(id)arg1 withSpecifiers:(id)arg2;
 - (BOOL)_canDeselectAlias:(id)arg1;
 - (void)_clearBlankAliasField;
+- (void)_handleAccountRegistrarChanged;
 - (void)_handleDeactivation:(id)arg1;
 - (void)_handleFaceTimeCTRegistrationStatusChanged;
 - (void)_handleFaceTimeEntitlementStatusChanged;
@@ -55,6 +53,7 @@
 - (void)_handleOutgoingRelayCallerIDChanged;
 - (void)_handleRelayCapabilitiesChanged;
 - (void)_handleSuccessfulAccountReactivation:(id)arg1;
+- (void)_handleThumperCapabilitiesChanged;
 - (void)_hideLocaleChooser;
 - (id)_localeChooserForAccount:(id)arg1;
 - (id)_operationalAccounts;
@@ -71,6 +70,7 @@
 - (BOOL)_shouldUseDisabledHandlers;
 - (void)_showAccountAlertForAccount:(id)arg1;
 - (void)_showAliasValidationError:(id)arg1;
+- (void)_showAuthKitSignInIfNecessary;
 - (void)_showLocaleChooserWithAccount:(id)arg1;
 - (void)_showSignInController;
 - (void)_showViewAccountControllerForAccount:(id)arg1;
@@ -84,15 +84,13 @@
 - (id)_useableAccounts;
 - (id)accountSpecifiers;
 - (void)accountTappedWithSpecifier:(id)arg1;
-- (id)accountsController;
 - (void)addAddressTapped:(id)arg1;
 - (BOOL)additionalAliasesAvailable;
-- (id /* block */)alertHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)aliasDetailControllerForSpecifier:(id)arg1;
 - (id)aliasForSpecifier:(id)arg1;
 - (id)aliasSpecifiers;
 - (id)aliasWithIdentifier:(id)arg1;
+- (BOOL)authenticationController:(id)arg1 shouldContinueWithAuthenticationResults:(id)arg2 error:(id)arg3 forContext:(id)arg4;
 - (id)blankAliasTextField;
 - (id)bundle;
 - (id)callerIdAliasSpecifiers;
@@ -135,8 +133,6 @@
 - (void)refreshFaceTimeSettingsWithDelayAnimated:(BOOL)arg1;
 - (void)refreshReceiveRelayCallsSettingsAnimated:(BOOL)arg1;
 - (void)returnKeyPressed:(id)arg1;
-- (void)setAccountsController:(id)arg1;
-- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAliasSelected:(id)arg1;
 - (void)setCallerId:(id)arg1;
 - (void)setFaceTimeEnabled:(id)arg1 specifier:(id)arg2;
@@ -148,6 +144,7 @@
 - (BOOL)shouldReloadSpecifiersOnResume;
 - (BOOL)shouldShowBlacklistSettings;
 - (BOOL)shouldShowReceiveRelayCalls;
+- (BOOL)shouldShowReceiveThumperCalls;
 - (BOOL)shouldShowReplyWithMessage;
 - (BOOL)showAccounts:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showAddAliasButton:(BOOL)arg1 animated:(BOOL)arg2;

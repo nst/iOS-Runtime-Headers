@@ -10,6 +10,8 @@
 - (BOOL)containsRequester:(id)arg1 inBand:(int)arg2;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)frontmostRequester;
 - (id)init;
 - (void)prioritizeRequester:(id)arg1;

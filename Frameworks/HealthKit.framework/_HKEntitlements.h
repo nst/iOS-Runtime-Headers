@@ -2,16 +2,27 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface _HKEntitlements : NSObject
+@interface _HKEntitlements : NSObject {
+    NSString *_applicationIdentifier;
+    NSDictionary *_entitlementValues;
+}
 
+@property (nonatomic, readonly, copy) NSDictionary *entitlementValues;
+
++ (id)_allowedEntitlementsSet;
++ (id)_entitlementsWithSecTask:(struct __SecTask { }*)arg1 valueOverrides:(id)arg2;
 + (void)_setEntitlementsForCurrentTask:(id)arg1;
 + (id)entitlementsForCurrentTask;
 + (id)entitlementsWithApplicationIdentifier:(id)arg1;
 + (id)entitlementsWithConnection:(id)arg1;
 + (id)entitlementsWithDictionary:(id)arg1;
 
+- (void).cxx_destruct;
+- (id)_initWithEntitlementValues:(id)arg1;
 - (id)applicationIdentifier;
+- (id)entitlementValues;
 - (BOOL)hasEntitlement:(id)arg1;
+- (id)init;
 - (id)stringForEntitlement:(id)arg1;
 - (id)valueForEntitlement:(id)arg1;
 

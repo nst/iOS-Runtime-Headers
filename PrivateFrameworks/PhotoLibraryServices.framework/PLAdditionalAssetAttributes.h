@@ -2,11 +2,18 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLAdditionalAssetAttributes : PLManagedObject
+@interface PLAdditionalAssetAttributes : PLManagedObject {
+    CLLocation *__cachedShiftedLocation;
+}
 
+@property (setter=_setCachedShiftedLocation:, nonatomic, retain) CLLocation *_cachedShiftedLocation;
+@property (nonatomic, copy) NSString *adjustedFingerPrint;
 @property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic, retain) PLAssetDescription *assetDescription;
-@property (nonatomic, retain) NSManagedObject *cloudMaster;
+@property (nonatomic) short cameraCaptureDevice;
+@property (nonatomic) int cloudAvalanchePickType;
+@property (nonatomic) short cloudKindSubtype;
+@property (nonatomic, retain) PLCloudMaster *cloudMaster;
 @property (nonatomic, retain) NSSet *cloudResources;
 @property (nonatomic, retain) NSString *creatorBundleID;
 @property (nonatomic, retain) NSString *customCollectionName;
@@ -14,14 +21,20 @@
 @property (nonatomic, retain) NSString *customMomentName;
 @property (nonatomic, retain) NSString *customMomentUUID;
 @property (nonatomic, retain) NSString *editorBundleID;
+@property (nonatomic, retain) NSNumber *embeddedThumbnailHeight;
+@property (nonatomic, retain) NSNumber *embeddedThumbnailLength;
+@property (nonatomic, retain) NSNumber *embeddedThumbnailOffset;
+@property (nonatomic, retain) NSNumber *embeddedThumbnailWidth;
 @property (nonatomic, retain) NSString *exifTimestampString;
 @property (nonatomic, retain) NSNumber *externalUsageIntent;
 @property (nonatomic, retain) NSData *faceRegions;
+@property (nonatomic, readonly) BOOL hasVideoComplementData;
 @property (nonatomic, retain) id importSessionID;
 @property (nonatomic, retain) NSSet *keywords;
 @property (nonatomic, retain) NSDate *lastUploadAttemptDate;
 @property (nonatomic, retain) NSNumber *locationHash;
 @property (nonatomic, retain) NSString *longDescription;
+@property (nonatomic, copy) NSString *masterFingerPrint;
 @property (nonatomic, retain) id originalAssetsUUID;
 @property (nonatomic, retain) NSString *originalFilename;
 @property (nonatomic, retain) NSNumber *originalFilesize;
@@ -32,23 +45,43 @@
 @property (nonatomic, retain) NSNumber *originalResourceChoice;
 @property (nonatomic, retain) NSNumber *originalWidth;
 @property (nonatomic, retain) NSSet *personReferences;
+@property (nonatomic, retain) NSData *placeAnnotationData;
 @property (nonatomic, retain) NSString *publicGlobalUUID;
 @property (nonatomic, retain) NSData *reverseLocationData;
 @property (nonatomic, retain) NSNumber *reverseLocationDataIsValid;
+@property (nonatomic, retain) CLLocation *shiftedLocation;
+@property (nonatomic, retain) NSData *shiftedLocationData;
+@property (nonatomic) BOOL shiftedLocationIsValid;
 @property (nonatomic, retain) NSString *timeZoneName;
 @property (nonatomic, retain) NSNumber *timeZoneOffset;
 @property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSManagedObject *unmanagedAdjustment;
+@property (nonatomic, retain) PLUnmanagedAdjustment *unmanagedAdjustment;
 @property (nonatomic, retain) NSNumber *uploadAttempts;
+@property (nonatomic, retain) NSData *videoComplementData;
+@property (nonatomic) int videoCpDisplayTimescale;
+@property (nonatomic) long long videoCpDisplayValue;
+@property (nonatomic) int videoCpDurationTimescale;
+@property (nonatomic) long long videoCpDurationValue;
+@property (nonatomic) unsigned short videoCpVisibilityState;
 
++ (void)fromExtraDurationData:(id)arg1 getStillDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg3;
 + (id)listOfSyncedProperties;
++ (id)newExtraDurationDataFromStillDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 
+- (id)_cachedShiftedLocation;
 - (BOOL)_needToSetModificationDateOnAsset:(id)arg1;
+- (void)_setCachedShiftedLocation:(id)arg1;
+- (void)dealloc;
+- (BOOL)hasVideoComplementData;
 - (id)longDescription;
 - (BOOL)migrateReverseLocationDataFromKeyedArchiverFormat;
 - (void)setLongDescription:(id)arg1;
+- (void)setShiftedLocation:(id)arg1;
+- (void)setVideoComplementData:(id)arg1;
+- (id)shiftedLocation;
 - (BOOL)validateForInsert:(id*)arg1;
 - (BOOL)validateForUpdate:(id*)arg1;
+- (id)videoComplementData;
 - (void)willSave;
 
 @end

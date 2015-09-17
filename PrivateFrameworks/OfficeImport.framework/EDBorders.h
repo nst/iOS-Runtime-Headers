@@ -19,6 +19,7 @@
 
 - (id)bottomBorder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (id)diagonalBorder;
 - (unsigned int)hash;
 - (id)horizontalBorder;

@@ -14,6 +14,7 @@
 
 + (id)printerPickerControllerWithInitiallySelectedPrinter:(id)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)_delegateFiltersPrinters;
 - (id)_init;
 - (void)_printerPickerDidDismiss;
@@ -21,14 +22,12 @@
 - (void)_printerPickerWillDismiss;
 - (BOOL)_setupPickerPanel:(id /* block */)arg1;
 - (BOOL)_shouldShowPrinter:(id)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (void)dismissAnimated:(BOOL)arg1;
 - (id)init;
 - (BOOL)presentAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)presentFromBarButtonItem:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)presentFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3 completionHandler:(id /* block */)arg4;
-- (oneway void)release;
 - (id)selectedPrinter;
 - (void)setDelegate:(id)arg1;
 - (void)setSelectedPrinter:(id)arg1;

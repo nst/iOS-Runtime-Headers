@@ -4,13 +4,19 @@
 
 @interface NetPreferences : NSObject {
     NSString *_UUID;
+    NSString *_acceptLanguageCode;
     NSString *_buildVersion;
     BOOL _isNetworkReachable;
     NSString *_productVersion;
+    NSString *_requestCountryCode;
+    NSString *_requestLanguageCode;
     BOOL _serviceDebugging;
 }
 
+@property (retain) NSString *acceptLanguageCode;
 @property (getter=isNetworkReachable, nonatomic) BOOL networkReachable;
+@property (retain) NSString *requestCountryCode;
+@property (retain) NSString *requestLanguageCode;
 
 + (void)clearSharedPreferences;
 + (id)sharedPreferences;
@@ -21,6 +27,7 @@
 - (id)_stocksAcceptLanguage;
 - (id)_stocksUserAgent;
 - (id)_urlStringWithHost:(id)arg1;
+- (id)acceptLanguageCode;
 - (void)addStocksHeadersToPostRequest:(id)arg1;
 - (id)backsideLogoURL;
 - (id)defaultBacksideLogoURL;
@@ -30,14 +37,20 @@
 - (BOOL)isNetworkReachable;
 - (id)logoBacksideImage;
 - (id)logoButtonImage;
+- (id)requestCountryCode;
+- (id)requestLanguageCode;
 - (void)resetLocale;
 - (BOOL)serviceDebugging;
 - (id)serviceDebuggingPath;
+- (void)setAcceptLanguageCode:(id)arg1;
 - (void)setNetworkReachable:(BOOL)arg1;
+- (void)setRequestCountryCode:(id)arg1;
+- (void)setRequestLanguageCode:(id)arg1;
 - (void)setupLogging;
 - (id)signedRequestForURL:(id)arg1 parameters:(id)arg2;
 - (id)stocksCountryCode;
 - (id)stocksLanguageCode;
+- (id)stocksLanguageCodeForLanguage:(id)arg1;
 - (id)stocksYQLBaseURL;
 
 @end

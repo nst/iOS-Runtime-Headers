@@ -15,7 +15,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (int)delta;
 - (id)initWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 changeSession:(id)arg2;

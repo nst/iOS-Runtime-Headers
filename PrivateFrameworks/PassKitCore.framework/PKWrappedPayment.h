@@ -11,7 +11,6 @@
 @property (nonatomic, copy) NSString *transactionIdentifier;
 
 + (BOOL)supportsSecureCoding;
-+ (id)wrappedPaymentWithTransactionResponse:(id)arg1;
 
 - (void)dealloc;
 - (id)description;

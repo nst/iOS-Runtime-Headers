@@ -39,7 +39,10 @@
 - (id)deletedSections;
 - (id)description;
 - (BOOL)hasIncrementalChanges;
+- (id)indexPathAfterApplyingIncrementalChangesToIndexPath:(id)arg1;
+- (id)indexPathAfterRevertingIncrementalChangeDetailsFromIndexPath:(id)arg1;
 - (id)init;
+- (id)initWithDeletedIndexPaths:(id)arg1 changedIndexPaths:(id)arg2;
 - (id)initWithIncrementalChanges:(id)arg1 assetCollectionChangeDetails:(id)arg2 previousCollectionsCount:(int)arg3 assetCollectionToSectionCache:(id)arg4 originatingPhotoLibraryChange:(id)arg5;
 - (id)insertedIndexPaths;
 - (id)insertedSections;

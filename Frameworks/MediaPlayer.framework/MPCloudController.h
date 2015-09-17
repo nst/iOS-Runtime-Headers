@@ -38,6 +38,7 @@
 - (void)acceptJaliscGeniusTermsAndConditionsVersion:(long long)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)addGeniusPlaylistWithPersistentID:(unsigned long long)arg1 name:(id)arg2 seedItemSagaIDs:(id)arg3 itemSagaIDs:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)addStoreItemWithAdamID:(long long)arg1 completionHandler:(id /* block */)arg2;
+- (void)addStoreItemWithAdamID:(long long)arg1 toPlaylistWithPersistentID:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
 - (void)addStorePlaylistWithGlobalID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)becomeActive;
 - (void)becomeActiveAndWaitUntilDone:(BOOL)arg1;

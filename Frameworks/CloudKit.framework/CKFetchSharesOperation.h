@@ -22,6 +22,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id /* block */)fetchSharesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;

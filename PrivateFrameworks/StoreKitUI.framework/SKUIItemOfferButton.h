@@ -56,7 +56,6 @@
 
 + (id)_basicAnimationWithKeyPath:(id)arg1;
 + (id)_cachedImageForAttributedTitle:(id)arg1 titleStyle:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3 fillStyle:(int)arg4 universal:(BOOL)arg5 tintColor:(id)arg6;
-+ (id)_cloudImageWithTintColor:(id)arg1 arrowTintColor:(id)arg2;
 + (id)_defaultTitleAttributes;
 + (id)_imageForAttributedTitle:(id)arg1 titleStyle:(int)arg2 size:(struct CGSize { float x1; float x2; })arg3 fillStyle:(int)arg4 universal:(BOOL)arg5 tintColor:(id)arg6;
 + (id)_imageForProgressType:(int)arg1;
@@ -64,6 +63,7 @@
 + (BOOL)_sizeMattersForTitleStyle:(int)arg1;
 + (struct CGSize { float x1; float x2; })_titleSizeThatFitsForSize:(struct CGSize { float x1; float x2; })arg1 titleStyle:(int)arg2 mutableAttributedString:(id)arg3;
 + (id)_universalPlusImageWithTintColor:(id)arg1;
++ (id)cloudImageWithTintColor:(id)arg1 arrowTintColor:(id)arg2;
 + (id)cloudTintColorForBackgroundColor:(id)arg1;
 + (id)itemOfferButtonWithAppearance:(id)arg1;
 + (id)localizedTitleForItemState:(id)arg1 clientContext:(id)arg2;

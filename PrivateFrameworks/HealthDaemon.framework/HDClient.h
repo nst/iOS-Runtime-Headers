@@ -5,14 +5,18 @@
 @interface HDClient : NSObject {
     NSString *_applicationIdentifier;
     NSXPCConnection *_connection;
+    NSMutableSet *_droppedEntitlements;
     _HKEntitlements *_entitlements;
+    BOOL _isExtension;
     NSString *_name;
     NSString *_sourceBundleIdentifier;
 }
 
 @property (readonly) NSString *applicationIdentifier;
 @property (readonly) NSXPCConnection *connection;
+@property (nonatomic, retain) NSMutableSet *droppedEntitlements;
 @property (readonly) _HKEntitlements *entitlements;
+@property (readonly) BOOL isExtension;
 @property (readonly) NSString *name;
 @property (readonly) int processIdentifier;
 @property (readonly) NSString *sourceBundleIdentifier;
@@ -22,13 +26,18 @@
 - (id)applicationIdentifier;
 - (id)connection;
 - (id)description;
+- (void)dropEntitlement:(id)arg1;
+- (id)droppedEntitlements;
 - (id)entitlements;
 - (BOOL)hasEntitlement:(id)arg1 withError:(id*)arg2;
 - (id)initWithConnection:(id)arg1;
 - (id)initWithConnection:(id)arg1 entitlements:(id)arg2;
 - (id)initWithEntitlements:(id)arg1;
+- (BOOL)isExtension;
 - (id)name;
 - (int)processIdentifier;
+- (void)restoreEntitlement:(id)arg1;
+- (void)setDroppedEntitlements:(id)arg1;
 - (id)sourceBundleIdentifier;
 - (id)valueForEntitlement:(id)arg1;
 

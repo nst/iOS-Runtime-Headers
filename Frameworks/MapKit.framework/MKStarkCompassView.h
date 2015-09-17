@@ -3,9 +3,9 @@
  */
 
 @interface MKStarkCompassView : UIView <MKLocationManagerObserver> {
+    CLInUseAssertion *_assertion;
     int _compassPoint;
     UIView *_contentsView;
-    double _heading;
     UILabel *_label;
     MKLocationManager *_locationManager;
     BOOL _monitoringCourse;
@@ -15,7 +15,6 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) double heading;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -27,7 +26,6 @@
 - (int)compassPoint;
 - (void)dealloc;
 - (void)didMoveToWindow;
-- (double)heading;
 - (id)initWithEffectiveBundleIdentifier:(id)arg1;
 - (id)initWithSharedMKLocationManager;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
@@ -41,7 +39,6 @@
 - (BOOL)locationManagerShouldPauseLocationUpdates:(id)arg1;
 - (void)locationManagerUpdatedLocation:(id)arg1;
 - (void)setCompassPoint:(int)arg1;
-- (void)setHeading:(double)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

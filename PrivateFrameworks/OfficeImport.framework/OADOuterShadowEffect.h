@@ -13,6 +13,7 @@
 
 - (int)alignment;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;

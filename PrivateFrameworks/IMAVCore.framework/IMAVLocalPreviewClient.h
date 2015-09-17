@@ -24,6 +24,7 @@
 - (void)_updatePreviewState;
 - (void)beginAnimationToPIP;
 - (void)beginAnimationToPreview;
+- (void)cameraDidBecomeAvailable:(unsigned int)arg1;
 - (unsigned int)cameraOrientation;
 - (unsigned int)cameraType;
 - (void)dealloc;

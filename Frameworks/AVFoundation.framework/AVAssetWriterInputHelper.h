@@ -41,7 +41,7 @@
 - (void)addTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2;
 - (short)alternateGroupID;
 - (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
-- (BOOL)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
+- (int)appendSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 error:(id*)arg2;
 - (id)associatedInputsWithTrackAssociationType:(id)arg1;
 - (id)availableTrackAssociationTypes;
 - (BOOL)canAddTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2;

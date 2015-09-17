@@ -17,6 +17,7 @@
 - (void)loadView;
 - (BOOL)prefersStatusBarHidden;
 - (void)setCloseButton:(id)arg1;
+- (BOOL)shouldTestVisibilityAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAFmfLocation : SALocation
+@interface SAFmfLocation : SALocation {
+    NSString *_emailAddress;
+}
 
 @property (nonatomic, retain) NSNumber *distance;
 @property (nonatomic, copy) NSString *emailAddress;
@@ -22,6 +24,5 @@
 - (void)setEmailAddress:(id)arg1;
 - (void)setFriend:(id)arg1;
 - (void)setLocationDate:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

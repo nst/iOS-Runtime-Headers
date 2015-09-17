@@ -14,6 +14,8 @@
 @property (nonatomic, copy) NSString *serviceType;
 @property (nonatomic, copy) NSString *zoneName;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)searchCriteriaFilter;
 + (id)searchCriteriaFilterWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -36,7 +38,10 @@
 - (void)setServiceName:(id)arg1;
 - (void)setServiceType:(id)arg1;
 - (void)setZoneName:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)zoneName;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)shortDescription;
 
 @end

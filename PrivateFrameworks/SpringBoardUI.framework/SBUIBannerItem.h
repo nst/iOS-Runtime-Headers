@@ -20,6 +20,7 @@
 - (BOOL)isSticky;
 - (id)lockScreenActionContextWithContext:(id)arg1;
 - (id)message;
+- (BOOL)overridesPocketMode;
 - (BOOL)overridesQuietMode;
 - (unsigned int)priority;
 - (id)pullDownNotification;

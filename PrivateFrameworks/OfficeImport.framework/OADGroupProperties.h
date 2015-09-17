@@ -17,8 +17,10 @@
 + (id)defaultProperties;
 
 - (void)dealloc;
+- (id)description;
 - (id)effects;
 - (id)fill;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (BOOL)hasEffects;
 - (BOOL)hasFill;
 - (BOOL)hasScene3D;

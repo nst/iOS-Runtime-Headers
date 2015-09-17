@@ -46,11 +46,11 @@
 - (id)customCloudDBBaseURL;
 - (id)customDeviceServiceBaseURL;
 - (id)customShareServiceBaseURL;
-- (int)defaultOperationQualityOfService;
 - (double)defaultRequestTimeout;
 - (double)defaultResourceTimeout;
 - (int)defaultRetryAfter;
 - (BOOL)disableCaching;
+- (BOOL)enableMMCSMetricsWithDefaultValue:(BOOL)arg1;
 - (BOOL)enableMescal;
 - (BOOL)evictRecentAssets;
 - (int)flowControlBudget;
@@ -107,6 +107,7 @@
 - (void)setServerIDExpiryTime:(int)arg1;
 - (void)setSetupBaseURL:(id)arg1;
 - (void)setShouldProfileSQL:(BOOL)arg1;
+- (void)setTestRunIDHeader:(id)arg1;
 - (void)setTrafficLogMaximumDataSize:(int)arg1;
 - (void)setUseBackgroundSessions:(BOOL)arg1;
 - (void)setUseEncryption:(BOOL)arg1;
@@ -115,6 +116,7 @@
 - (BOOL)shouldDecryptRecordsBeforeSave;
 - (BOOL)shouldLogProtobufBinary;
 - (BOOL)shouldProfileSQL;
+- (id)testRunIDHeader;
 - (int)trafficLogMaximumDataSize;
 - (BOOL)useBackgroundSessions;
 - (BOOL)useEncryption;

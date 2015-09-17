@@ -17,6 +17,7 @@
 @property (nonatomic) UITableView *cnfreg_tableView;
 @property (nonatomic) BOOL isTopmostHeader;
 
+- (void).cxx_destruct;
 - (id)URLTarget;
 - (id)URLText;
 - (id)_URLTarget;

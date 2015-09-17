@@ -16,13 +16,12 @@
     BOOL _reCoalesce;
     NSArray *_recentCalls;
     BOOL _showsFaceTimeAudioCalls;
-    BOOL _showsFaceTimeCalls;
     BOOL _showsFaceTimeVideoCalls;
     BOOL _showsTelephonyCalls;
     <SyncManagerProtocol> *_syncManager;
     NSArray *_uncoalescedRecentCalls;
     NSArray *_uncoalescedUnFilteredRecentCalls;
-    int _unreadCallCount;
+    NSNumber *_unreadCallCount;
 }
 
 @property (retain) id addressBookChangedNotificationRef;
@@ -38,13 +37,12 @@
 @property BOOL reCoalesce;
 @property (nonatomic, retain) NSArray *recentCalls;
 @property (nonatomic) BOOL showsFaceTimeAudioCalls;
-@property (nonatomic) BOOL showsFaceTimeCalls;
 @property (nonatomic) BOOL showsFaceTimeVideoCalls;
 @property (nonatomic) BOOL showsTelephonyCalls;
 @property (retain) <SyncManagerProtocol> *syncManager;
 @property (getter=uncoalescedRecentCallsSync, nonatomic, retain) NSArray *uncoalescedRecentCalls;
 @property (retain) NSArray *uncoalescedUnFilteredRecentCalls;
-@property int unreadCallCount;
+@property (retain) NSNumber *unreadCallCount;
 
 + (unsigned int)CHCallStatusForCallWithDuration:(double)arg1 isOriginated:(BOOL)arg2 isAnswered:(BOOL)arg3;
 
@@ -93,6 +91,7 @@
 - (void)setCacheIsDirty:(BOOL)arg1;
 - (void)setCoalescingStrategy:(id)arg1;
 - (void)setDatabaseChangedNotificationRef:(id)arg1;
+- (void)setDefaultInitValues;
 - (void)setGenerateSyncTransactions:(BOOL)arg1;
 - (void)setLimitingCallTypes:(unsigned int)arg1;
 - (void)setLimitingCallTypesSync:(unsigned int)arg1;
@@ -103,15 +102,13 @@
 - (void)setReCoalesce:(BOOL)arg1;
 - (void)setRecentCalls:(id)arg1;
 - (void)setShowsFaceTimeAudioCalls:(BOOL)arg1;
-- (void)setShowsFaceTimeCalls:(BOOL)arg1;
 - (void)setShowsFaceTimeVideoCalls:(BOOL)arg1;
 - (void)setShowsTelephonyCalls:(BOOL)arg1;
 - (void)setSyncManager:(id)arg1;
 - (void)setUncoalescedRecentCalls:(id)arg1;
 - (void)setUncoalescedUnFilteredRecentCalls:(id)arg1;
-- (void)setUnreadCallCount:(int)arg1;
+- (void)setUnreadCallCount:(id)arg1;
 - (BOOL)showsFaceTimeAudioCalls;
-- (BOOL)showsFaceTimeCalls;
 - (BOOL)showsFaceTimeVideoCalls;
 - (BOOL)showsTelephonyCalls;
 - (id)syncManager;
@@ -119,7 +116,7 @@
 - (void)unRegisterForNotifications;
 - (id)uncoalescedRecentCallsSync;
 - (id)uncoalescedUnFilteredRecentCalls;
-- (int)unreadCallCount;
+- (id)unreadCallCount;
 - (void)updateBytesOfDataUsedFor:(id)arg1 with:(id)arg2;
 
 @end

@@ -23,6 +23,7 @@
 - (id)nextAuthorColor;
 - (void)p_addAuthor:(id)arg1 isFromDocumentSupport:(BOOL)arg2;
 - (int)p_hashCodeForColorKey:(id)arg1;
+- (BOOL)p_withToleranceDoesColorSet:(id)arg1 containColor:(id)arg2;
 - (id)packageLocator;
 - (void)removeAuthor:(id)arg1;
 - (void)saveToArchiver:(id)arg1;

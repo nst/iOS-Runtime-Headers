@@ -4,7 +4,7 @@
 
 @interface CoreCECDevice : CoreRCDevice {
     unsigned int _cecVersion;
-    unsigned char _deckStatusInternal;
+    unsigned int _deckStatus;
     unsigned int _deviceType;
     BOOL _isActiveSource;
     unsigned char _logicalAddress;
@@ -15,8 +15,7 @@
 }
 
 @property (nonatomic) unsigned int cecVersion;
-@property (nonatomic, readonly) unsigned int deckStatus;
-@property (nonatomic) unsigned char deckStatusInternal;
+@property (nonatomic) unsigned int deckStatus;
 @property (nonatomic) unsigned int deviceType;
 @property (nonatomic) BOOL isActiveSource;
 @property (nonatomic) unsigned char logicalAddress;
@@ -36,18 +35,16 @@
 - (BOOL)deckControlSetDeckStatus:(unsigned int)arg1 error:(id*)arg2;
 - (void)deckControlStatusHasBeenUpdated:(unsigned int)arg1 fromDevice:(id)arg2;
 - (unsigned int)deckStatus;
-- (unsigned char)deckStatusInternal;
 - (id)delegate;
 - (id)description;
 - (unsigned int)deviceType;
 - (void)encodeWithCoder:(id)arg1;
 - (void)featureAbort:(id)arg1;
-- (id)init;
+- (id)initWithBus:(id)arg1 local:(BOOL)arg2;
+- (id)initWithBus:(id)arg1 local:(BOOL)arg2 logicalAddress:(unsigned char)arg3 physicalAddress:(unsigned int)arg4 deviceType:(unsigned int)arg5;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDevice:(id)arg1;
-- (id)initWithDeviceType:(unsigned int)arg1 logicalAddress:(unsigned char)arg2 onBus:(id)arg3 physicalAddress:(id)arg4;
 - (BOOL)isActiveSource;
-- (BOOL)isLocalDevice;
 - (unsigned char)logicalAddress;
 - (BOOL)makeActiveSourceWithTVMenus:(BOOL)arg1 error:(id*)arg2;
 - (id)mergeProperties;
@@ -56,6 +53,7 @@
 - (void)notifyDelegateDeckControlPlayHasBeenReceived:(id)arg1 playMode:(unsigned int)arg2;
 - (void)notifyDelegateDeckControlStatusHasBeenUpdated:(id)arg1 deckInfo:(unsigned int)arg2;
 - (void)notifyDelegateFeatureAbort:(id)arg1;
+- (void)notifyDelegateShouldAssertActiveSource;
 - (void)notifyDelegateStandbyRequestHasBeenReceived:(id)arg1;
 - (BOOL)performStandbyWithTargetDevice:(id)arg1 error:(id*)arg2;
 - (unsigned int)physicalAddress;
@@ -66,15 +64,17 @@
 - (BOOL)requestActiveSource:(id*)arg1;
 - (BOOL)resignActiveSource:(id*)arg1;
 - (void)setCecVersion:(unsigned int)arg1;
-- (void)setDeckStatusInternal:(unsigned char)arg1;
+- (void)setDeckStatus:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDeviceType:(unsigned int)arg1;
 - (void)setIsActiveSource:(BOOL)arg1;
 - (void)setLogicalAddress:(unsigned char)arg1;
 - (void)setPhysicalAddress:(unsigned int)arg1;
 - (void)setPowerStatus:(unsigned int)arg1;
+- (BOOL)setPowerStatus:(unsigned int)arg1 error:(id*)arg2;
 - (BOOL)setSystemAudioControlEnabled:(BOOL)arg1 error:(id*)arg2;
 - (void)setVendorID:(unsigned int)arg1;
+- (void)shouldAssertActiveSource;
 - (void)standbyRequestHasBeenReceived:(id)arg1;
 - (BOOL)systemAudioControlEnabled;
 - (BOOL)systemAudioModeRequest:(unsigned int)arg1 error:(id*)arg2;

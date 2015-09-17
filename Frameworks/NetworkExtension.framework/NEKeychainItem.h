@@ -3,6 +3,7 @@
  */
 
 @interface NEKeychainItem : NSObject <NEPrettyDescription, NSCopying, NSSecureCoding> {
+    NSString *_accessGroup;
     int _domain;
     NSString *_identifier;
     BOOL _legacy;
@@ -11,7 +12,8 @@
     NSData *_persistentReference;
 }
 
-@property (readonly) int domain;
+@property (readonly) NSString *accessGroup;
+@property int domain;
 @property (copy) NSString *identifier;
 @property (readonly) BOOL legacy;
 @property (copy) NEKeychainItem *oldItem;
@@ -21,26 +23,33 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)addOrUpdateWithConfiguration:(id)arg1 passwordType:(int)arg2 accountName:(id)arg3 identifierSuffix:(id)arg4;
+- (id)accessGroup;
+- (BOOL)addOrUpdateWithConfiguration:(id)arg1 passwordType:(int)arg2 accountName:(id)arg3 identifierSuffix:(id)arg4;
 - (BOOL)copyDataFromKeychainItem:(void*)arg1 outPassword:(id*)arg2 outIdentifier:(id*)arg3 outPersistentReference:(id*)arg4;
 - (id)copyKindForPasswordType:(int)arg1;
 - (id)copyPassword;
+- (id)copyQueryWithReturnTypes:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (int)domain;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1 domain:(int)arg2;
+- (id)initWithIdentifier:(id)arg1 domain:(int)arg2 accessGroup:(id)arg3;
 - (id)initWithLegacyIdentifier:(id)arg1 domain:(int)arg2;
+- (id)initWithLegacyIdentifier:(id)arg1 domain:(int)arg2 accessGroup:(id)arg3;
 - (id)initWithPassword:(id)arg1 domain:(int)arg2;
+- (id)initWithPassword:(id)arg1 domain:(int)arg2 accessGroup:(id)arg3;
 - (id)initWithPersistentReference:(id)arg1 domain:(int)arg2;
+- (id)initWithPersistentReference:(id)arg1 domain:(int)arg2 accessGroup:(id)arg3;
 - (BOOL)legacy;
 - (void)migrateFromPreferences:(struct __SCPreferences { }*)arg1;
 - (id)oldItem;
 - (id)password;
 - (id)persistentReference;
 - (void)remove;
+- (void)setDomain:(int)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setIdentifierInternal:(id)arg1;
 - (void)setOldItem:(id)arg1;

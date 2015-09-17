@@ -10,6 +10,7 @@
 
 - (BOOL)_shouldShowHeadersAndFooters;
 - (BOOL)canBecomeFirstResponder;
+- (id)preferredFocusedView;
 - (void)setShouldShowHeadersAndFooters:(BOOL)arg1;
 - (BOOL)shouldShowHeadersAndFooters;
 

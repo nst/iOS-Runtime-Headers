@@ -13,6 +13,7 @@
 
 - (id)connection;
 - (void)dealloc;
+- (id)init;
 - (id)initWithRemoteObjectInterface:(id)arg1;
 - (id)newConnectionForInterface:(id)arg1;
 - (id)remoteObjectProxy;

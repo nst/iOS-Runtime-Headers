@@ -2,59 +2,88 @@
    Image: /System/Library/PrivateFrameworks/NearField.framework/NearField
  */
 
-@interface NFHardwareSecureElementInfo : NSObject {
+@interface NFHardwareSecureElementInfo : NSObject <NSSecureCoding> {
     unsigned int _OSMode;
     unsigned int _OSVersion;
+    unsigned int _appletMap;
+    unsigned int _compiledFWVersion;
     unsigned int _deviceType;
+    NSString *_eccCertificate;
     unsigned int _firmwareVersion;
     unsigned int _hardwareVersion;
+    NSString *_identifier;
+    unsigned int _migrationContext;
     unsigned int _migrationInstances;
     unsigned int _migrationPackages;
     unsigned int _migrationState;
     unsigned int _osid;
     unsigned int _otherOSValid;
+    unsigned int _persistentConfigID;
     NSString *_platformIdentifier;
     unsigned int _referenceCounter;
     BOOL _restrictedMode;
+    NSString *_rsaCertificate;
     unsigned int _sequenceCounter;
     NSString *_serialNumber;
     unsigned int _signingKeyType;
+    unsigned int _transientConfigID;
 }
 
 @property (nonatomic, readonly) unsigned int OSMode;
 @property (nonatomic, readonly) unsigned int OSVersion;
+@property (nonatomic, readonly) unsigned int appletMap;
+@property (nonatomic, readonly) unsigned int compiledFWVersion;
 @property (nonatomic, readonly) unsigned int deviceType;
+@property (nonatomic, readonly) NSString *eccCertificate;
 @property (nonatomic, readonly) unsigned int firmwareVersion;
 @property (nonatomic, readonly) unsigned int hardwareVersion;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) unsigned int migrationContext;
 @property (nonatomic, readonly) unsigned int migrationInstances;
 @property (nonatomic, readonly) unsigned int migrationPackages;
 @property (nonatomic, readonly) unsigned int migrationState;
 @property (nonatomic, readonly) unsigned int osid;
 @property (nonatomic, readonly) unsigned int otherOSValid;
+@property (nonatomic, readonly) unsigned int persistentConfigID;
 @property (nonatomic, readonly) NSString *platformIdentifier;
 @property (nonatomic, readonly) unsigned int referenceCounter;
 @property (nonatomic, readonly) BOOL restrictedMode;
+@property (nonatomic, readonly) NSString *rsaCertificate;
 @property (nonatomic, readonly) unsigned int sequenceCounter;
 @property (nonatomic, readonly) NSString *serialNumber;
 @property (nonatomic, readonly) unsigned int signingKeyType;
+@property (nonatomic, readonly) unsigned int transientConfigID;
+
++ (BOOL)supportsSecureCoding;
 
 - (unsigned int)OSMode;
 - (unsigned int)OSVersion;
+- (void)_setIsInRestrictedMode:(BOOL)arg1;
+- (unsigned int)appletMap;
+- (unsigned int)compiledFWVersion;
 - (void)dealloc;
 - (unsigned int)deviceType;
+- (id)eccCertificate;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)firmwareVersion;
 - (unsigned int)hardwareVersion;
+- (id)identifier;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithDictionary:(id)arg1;
+- (unsigned int)migrationContext;
 - (unsigned int)migrationInstances;
 - (unsigned int)migrationPackages;
 - (unsigned int)migrationState;
 - (unsigned int)osid;
 - (unsigned int)otherOSValid;
+- (unsigned int)persistentConfigID;
 - (id)platformIdentifier;
 - (unsigned int)referenceCounter;
 - (BOOL)restrictedMode;
+- (id)rsaCertificate;
 - (unsigned int)sequenceCounter;
 - (id)serialNumber;
 - (unsigned int)signingKeyType;
+- (unsigned int)transientConfigID;
 
 @end

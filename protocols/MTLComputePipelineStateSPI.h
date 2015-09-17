@@ -5,6 +5,6 @@
 
 @required
 
-- (unsigned int)staticLocalMemorySize;
+- (unsigned int)staticThreadgroupMemoryLength;
 
 @end

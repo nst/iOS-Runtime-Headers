@@ -2,24 +2,35 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDPlayableContentViewController : UIViewController {
+@interface MCDPlayableContentViewController : UINavigationController <UINavigationControllerDelegate> {
     NSString *_bundleID;
     BOOL _hasBrowsableContent;
-    MCDBrowsableContentModel *_model;
-    UINavigationController *_navigationController;
+    BOOL _hasLoaded;
+    MCDPCModel *_model;
+    MCDPCContainer *_rootContainer;
+    NSArray *_stackToRebuild;
 }
 
 @property (nonatomic, readonly, copy) NSString *bundleID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_embedAppropriateViewController;
-- (void)_updateStackForPlaying:(BOOL)arg1 launching:(BOOL)arg2;
+- (id)_createRootViewController;
+- (void)_evaluateViewControllers;
+- (void)_modelDidInvalidate:(id)arg1;
+- (void)_modelWillInvalidate:(id)arg1;
+- (void)_populateStack;
+- (void)_setupView;
 - (id)bundleID;
+- (id)currentStack;
 - (id)initWithBundleID:(id)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)preferredFocusedItem;
+- (id)initWithBundleID:(id)arg1 stack:(id)arg2;
 - (void)refreshNavigationStackForLaunch:(BOOL)arg1;
-- (void)viewDidLoad;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
+- (void)viewWillAppear:(BOOL)arg1;
 
 @end

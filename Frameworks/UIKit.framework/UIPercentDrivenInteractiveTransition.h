@@ -24,6 +24,7 @@
 @property (readonly) float percentComplete;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)_isTransitionInterrupted;
 - (id)_originalFillMode;
 - (void)_resetInteractionController;
@@ -38,7 +39,6 @@
 - (void)cancelInteractiveTransition;
 - (int)completionCurve;
 - (float)completionSpeed;
-- (void)dealloc;
 - (float)duration;
 - (void)finishInteractiveTransition;
 - (id)init;

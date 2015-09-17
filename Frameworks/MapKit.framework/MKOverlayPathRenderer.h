@@ -21,7 +21,7 @@
 @property int lineJoin;
 @property float lineWidth;
 @property float miterLimit;
-@property struct CGPath { }*path;
+@property const struct CGPath { }*path;
 @property (retain) UIColor *strokeColor;
 
 - (void).cxx_destruct;
@@ -40,7 +40,7 @@
 - (int)lineJoin;
 - (float)lineWidth;
 - (float)miterLimit;
-- (struct CGPath { }*)path;
+- (const struct CGPath { }*)path;
 - (void)setFillColor:(id)arg1;
 - (void)setLineCap:(int)arg1;
 - (void)setLineDashPattern:(id)arg1;

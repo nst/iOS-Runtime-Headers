@@ -8,9 +8,13 @@
 - (BOOL)passView:(PKPassView *)arg1 deleteButtonEnabledForPass:(PKPass *)arg2;
 - (void)passView:(PKPassView *)arg1 deleteButtonPressedForPass:(PKPass *)arg2;
 - (void)passView:(PKPassView *)arg1 flipButtonPressedForPass:(PKPass *)arg2;
+- (void)passView:(PKPassView *)arg1 resizeButtonPressedForPass:(PKPass *)arg2;
 - (BOOL)passViewBackGrowsCentered:(PKPassView *)arg1;
 - (void)passViewDidFlip:(PKPassView *)arg1 animated:(BOOL)arg2;
+- (void)passViewDidResize:(PKPassView *)arg1 animated:(BOOL)arg2;
 - (BOOL)passViewShouldFlip:(PKPassView *)arg1;
+- (BOOL)passViewShouldResize:(PKPassView *)arg1;
 - (void)passViewTapped:(PKPassView *)arg1;
+- (void)passViewWillFlip:(PKPassView *)arg1 animated:(BOOL)arg2;
 
 @end

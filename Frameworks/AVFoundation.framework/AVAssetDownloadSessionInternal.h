@@ -4,11 +4,13 @@
 
 @interface AVAssetDownloadSessionInternal : NSObject {
     NSURL *URL;
-    struct OpaqueFigAsset { } *asset;
+    AVURLAsset *asset;
+    struct CMBaseObject { } *assetDownloader;
     NSNumber *cachePrimingDownloadTokenNum;
     NSURL *destinationURL;
     unsigned long long downloadToken;
     NSError *error;
+    struct OpaqueFigAsset { } *figAsset;
     struct OpaqueFigPlaybackItem { } *playbackItem;
     struct OpaqueFigPlayer { } *player;
     int priority;

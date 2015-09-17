@@ -43,6 +43,7 @@
 - (id)achievedDescription;
 - (unsigned int)attributes;
 - (void)dealloc;
+- (id)descriptionSubstitutionMap;
 - (void)encodeWithCoder:(id)arg1;
 - (id)groupIdentifier;
 - (unsigned int)hash;

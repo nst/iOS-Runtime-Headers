@@ -29,6 +29,7 @@
 - (bool)bottom;
 - (int)compareToOtherRuleUsingPriority:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)differentialStyle;
 - (unsigned int)differentialStyleIndex;
 - (bool)equalAverage;

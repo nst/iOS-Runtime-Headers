@@ -134,6 +134,7 @@
 - (id)eventsFolders;
 - (id)exceptionsDict;
 - (struct __CFData { }*)exceptionsForDigest:(id)arg1;
+- (id)getAppleIDSession;
 - (id)getPendingQueryQueue;
 - (void)getRootFolderWithConsumer:(id)arg1;
 - (BOOL)handleCertificateError:(id)arg1;

@@ -2,22 +2,31 @@
    Image: /System/Library/PrivateFrameworks/NanoGlanceSettings.framework/NanoGlanceSettings
  */
 
-@interface NGSSettingsManager : NGSInternalSettingsManager {
+@interface NGSSettingsManager : NGSInternalSettingsManager <SPDeviceConnectionDelegate> {
     <NGSSettingsManagerDelegate> *_delegate;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NGSSettingsManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedSettingsManager;
 
 - (void).cxx_destruct;
-- (id)_fetchSockPuppetGlances;
+- (id)_fetchWatchKitGlances;
 - (void)_handleLocaleChange:(id)arg1;
-- (void)_updateSockPuppetGlances;
+- (unsigned int)_installStateForWatchKitInstallState:(int)arg1;
+- (void)_mergeAdditionalGlanceDefinitionsIntoArray:(id)arg1;
+- (BOOL)_shouldMergeGlanceDefinitions;
+- (BOOL)_shouldSaveGlanceDefinitions;
+- (void)_willSaveGlanceDefinitions;
 - (void)dealloc;
 - (id)delegate;
+- (void)didLoadGlanceDefinitions;
 - (id)init;
-- (void)loadSettings;
 - (void)setDelegate:(id)arg1;
+- (void)updateInstallStateForApplication:(id)arg1 installState:(int)arg2;
 
 @end

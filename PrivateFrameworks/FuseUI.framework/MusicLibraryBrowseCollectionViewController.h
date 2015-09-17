@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicLibraryBrowseCollectionViewController : UIViewController <MusicClientContextConsuming, MusicCollectionViewDelegate, MusicEntityPlaybackStatusControllerObserving, MusicEntityVerticalSectionHeaderViewDelegate, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryViewConfigurationConsuming, MusicSplitInitialStateProviding, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout> {
+@interface MusicLibraryBrowseCollectionViewController : UIViewController <MusicClientContextConsuming, MusicCollectionViewDelegate, MusicEntityPlaybackStatusControllerObserving, MusicEntityVerticalSectionHeaderViewDelegate, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLayoutMarginProxyViewDelegate, MusicLibraryViewConfigurationConsuming, MusicSplitInitialStateProviding, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
     Class _cellClass;
     NSString *_cellReuseIdentifier;
     MusicClientContext *_clientContext;
@@ -23,6 +23,7 @@
         float width; 
         float height; 
     } _sizeForLayoutMetrics;
+    <UIViewControllerPreviewing> *_viewControllerPreviewing;
 }
 
 @property (getter=_cellClass, nonatomic, readonly) Class _cellClass;
@@ -77,21 +78,29 @@
 - (id)collectionViewFlowLayout;
 - (void)collectionViewTintColorDidChange:(id)arg1;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
 - (void)didSelectActionButtonInBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)entityViewDescriptor;
 - (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
 - (void)handleContentSizeCategoryDidChange;
 - (void)handleEntityProviderDidInvalidate;
 - (id)indexBarEntryAtIndex:(unsigned int)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)layoutMarginProxyViewLayoutMarginsDidChange:(id)arg1;
 - (id)libraryViewConfiguration;
 - (id)loadEntityViewDescriptor;
+- (void)loadView;
 - (unsigned int)maximumItemsPerRow;
 - (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (unsigned int)numberOfIndexBarEntries;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)sectionHeaderViewDidSelectButton:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -102,5 +111,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

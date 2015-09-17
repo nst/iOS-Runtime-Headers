@@ -20,7 +20,7 @@
 
 + (void)clearCache;
 + (id)fetch;
-+ (id)fetchWithAddressBook:(void*)arg1;
++ (id)fetchWithAddressBook:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)addresses;

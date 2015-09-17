@@ -5,7 +5,9 @@
 
 @required
 
+- (struct CGSize { float x1; float x2; })fixedSize;
 - (UIView *)placeheldView;
 - (BOOL)refreshPlaceholder;
+- (void)setFixedSize:(struct CGSize { float x1; float x2; })arg1;
 
 @end

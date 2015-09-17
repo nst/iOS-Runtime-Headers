@@ -10,6 +10,7 @@
     AVCaptureInputPort *audioInputPort;
     BOOL automaticallyAdjustsVideoMirroring;
     int changeSeed;
+    NSString *connectionID;
     BOOL enabled;
     BOOL hasActiveObservers;
     BOOL hasVideoMinFrameDurationObserver;

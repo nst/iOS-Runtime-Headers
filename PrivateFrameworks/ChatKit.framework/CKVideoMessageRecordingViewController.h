@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKVideoMessageRecordingViewController : UIViewController <CKJoystickControllerDelegate, CKVideoPreviewViewControllerDelegate, CKVideoRecorderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface CKVideoMessageRecordingViewController : UIViewController <CKActionMenuControllerDelegate, CKVideoRecorderDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     UIImagePickerController *_cameraViewController;
     BOOL _canceled;
     NSError *_captureError;
@@ -10,21 +10,18 @@
     id /* block */ _mediaExportCompletionBlock;
     CKMediaObject *_mediaObjectForSending;
     UIWindow *_overlayWindow;
+    CKActionMenuItem *_photoMenuItem;
     UIView *_presentationView;
     BOOL _presented;
-    CKVideoPreviewViewController *_previewViewController;
     BOOL _previewWarmedUp;
-    BOOL _previewing;
-    CKJoystickShutterButtonItem *_recordVideoButtonItem;
     BOOL _recording;
-    CKJoystickButtonItem *_sendButtonItem;
     BOOL _sending;
     BOOL _showingVideo;
     UIButton *_swapCameraButton;
     CKRecordingElapsedTimeView *_timerView;
     UIView *_topBackgroundView;
     BOOL _triedToRecord;
-    CKJoystickController *_videoJoystickController;
+    CKActionMenuController *_videoActionMenuController;
     <CKVideoMessageRecordingViewControllerDelegate> *_videoMessageDelegate;
 }
 
@@ -37,69 +34,48 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) id /* block */ mediaExportCompletionBlock;
 @property (nonatomic, retain) CKMediaObject *mediaObjectForSending;
-@property (nonatomic, retain) CKVideoPreviewViewController *previewViewController;
-@property (nonatomic) BOOL previewing;
-@property (nonatomic, retain) CKJoystickShutterButtonItem *recordVideoButtonItem;
+@property (nonatomic, retain) CKActionMenuItem *photoMenuItem;
 @property (nonatomic) BOOL recording;
-@property (nonatomic, retain) CKJoystickButtonItem *sendButtonItem;
 @property (nonatomic) BOOL sending;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIButton *swapCameraButton;
 @property (nonatomic, retain) CKRecordingElapsedTimeView *timerView;
 @property (nonatomic, retain) UIView *topBackgroundView;
 @property (nonatomic) BOOL triedToRecord;
-@property (nonatomic, retain) CKJoystickController *videoJoystickController;
+@property (nonatomic, retain) CKActionMenuController *videoActionMenuController;
 @property (nonatomic) <CKVideoMessageRecordingViewControllerDelegate> *videoMessageDelegate;
 
-- (void)_animatePreviewIn;
 - (void)_animateVideoIn;
 - (void)_applicationDidEnterBackground:(id)arg1;
 - (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_cameraOrientationChanged:(id)arg1;
 - (void)_cleanupCamera;
 - (void)_previewWarmedUp:(id)arg1;
-- (void)_setupPreviewView;
+- (void)actionMenuControllerWillDismissActionMenu:(id)arg1 animated:(BOOL)arg2;
 - (id)cameraViewController;
 - (void)cancel;
+- (void)cancelMenuItemAction:(id)arg1;
 - (BOOL)canceled;
 - (id)captureError;
 - (id)childViewControllerForStatusBarHidden;
-- (void)ckVideoPreviewViewControllerFinishedPlaying:(id)arg1;
-- (void)ckVideoPreviewViewControllerReady:(id)arg1;
 - (void)ckVideoRecorder:(id)arg1 imageDataCaptured:(id)arg2 error:(id)arg3;
 - (void)ckVideoRecorder:(id)arg1 videoCaptured:(id)arg2 error:(id)arg3;
 - (void)ckVideoRecorderRecordingCanceled:(id)arg1;
 - (void)dealloc;
-- (void)delayedRecord;
 - (void)dismissWithCompletion:(id /* block */)arg1;
 - (unsigned int)enableCancel;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;
 - (id)initWithPresentationView:(id)arg1;
-- (void)joystickCancelAction:(id)arg1;
-- (void)joystickCancelActionButtonDown:(id)arg1;
-- (void)joystickControllerWillDismissJoystick:(id)arg1 animated:(BOOL)arg2;
-- (void)joystickPlaybackButtonUpAction:(id)arg1;
-- (void)joystickSendButtonUpAction:(id)arg1;
-- (void)joystickShutterButtonDownAction:(id)arg1;
-- (void)joystickShutterButtonTapAction:(id)arg1;
-- (void)joystickShutterButtonUpAction:(id)arg1;
-- (void)joystickTakePhoto:(id)arg1;
-- (void)loadView;
 - (id /* block */)mediaExportCompletionBlock;
 - (id)mediaObjectForSending;
-- (void)presentInitialPlaybackJoystick;
-- (void)presentPlaybackJoystick:(BOOL)arg1;
-- (void)presentRecordingJoystick;
-- (void)presentVideoJoystick;
+- (id)photoMenuItem;
+- (void)photoMenuItemAction:(id)arg1;
+- (void)presentVideoActionMenuController;
 - (void)presentWithCompletion:(id /* block */)arg1;
-- (id)previewViewController;
-- (BOOL)previewing;
 - (void)record;
-- (id)recordVideoButtonItem;
 - (BOOL)recording;
 - (void)send;
-- (id)sendButtonItem;
 - (BOOL)sending;
 - (void)setCameraViewController:(id)arg1;
 - (void)setCanceled:(BOOL)arg1;
@@ -107,17 +83,14 @@
 - (void)setEnableCancel:(unsigned int)arg1;
 - (void)setMediaExportCompletionBlock:(id /* block */)arg1;
 - (void)setMediaObjectForSending:(id)arg1;
-- (void)setPreviewViewController:(id)arg1;
-- (void)setPreviewing:(BOOL)arg1;
-- (void)setRecordVideoButtonItem:(id)arg1;
+- (void)setPhotoMenuItem:(id)arg1;
 - (void)setRecording:(BOOL)arg1;
-- (void)setSendButtonItem:(id)arg1;
 - (void)setSending:(BOOL)arg1;
 - (void)setSwapCameraButton:(id)arg1;
 - (void)setTimerView:(id)arg1;
 - (void)setTopBackgroundView:(id)arg1;
 - (void)setTriedToRecord:(BOOL)arg1;
-- (void)setVideoJoystickController:(id)arg1;
+- (void)setVideoActionMenuController:(id)arg1;
 - (void)setVideoMessageDelegate:(id)arg1;
 - (BOOL)shouldAutorotate;
 - (void)stopRecordingWithCompletionBlock:(id /* block */)arg1;
@@ -127,7 +100,9 @@
 - (id)timerView;
 - (id)topBackgroundView;
 - (BOOL)triedToRecord;
-- (id)videoJoystickController;
+- (id)videoActionMenuController;
+- (void)videoMenuItemAction:(id)arg1;
 - (id)videoMessageDelegate;
+- (void)viewDidLoad;
 
 @end

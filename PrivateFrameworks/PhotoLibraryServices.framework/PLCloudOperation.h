@@ -2,36 +2,35 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLCloudOperation : NSObject {
-    PLCloudPhotoLibraryManager *_connection;
-    unsigned int _cost;
-    long _createdAt;
-    PLCloudOperationResource *_operationResource;
-    BOOL _running;
-    PLCloudScenario *_scenario;
+@interface PLCloudOperation : NSObject <PLCloudQueueObject> {
+    NSString *_assetUuid;
+    unsigned int _retryNumber;
+    CPLResource *_targetResource;
+    double _timeIntervalSinceLastRetry;
 }
 
-@property (nonatomic, readonly) PLCloudPhotoLibraryManager *connection;
-@property (nonatomic, readonly) unsigned int cost;
-@property (nonatomic, readonly) long createdAt;
-@property (nonatomic, retain) PLCloudOperationResource *operationResource;
-@property BOOL running;
-@property (nonatomic, readonly) PLCloudScenario *scenario;
+@property (nonatomic, readonly, retain) NSString *assetUuid;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic) unsigned int retryNumber;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly, retain) CPLResource *targetResource;
+@property (nonatomic, readonly) double timeIntervalSinceLastRetry;
 
-- (id)connection;
-- (unsigned int)cost;
-- (long)createdAt;
+- (id)assetUuid;
+- (id)copy;
 - (void)dealloc;
-- (unsigned int)hash;
-- (id)initWithScenario:(id)arg1 cloudConnection:(id)arg2;
-- (BOOL)isEqual:(id)arg1;
-- (id)operationResource;
-- (void)requestCancel;
-- (id)resource;
-- (void)runOperationWithCompletionHandler:(id /* block */)arg1;
-- (BOOL)running;
-- (id)scenario;
-- (void)setOperationResource:(id)arg1;
-- (void)setRunning:(BOOL)arg1;
+- (id)description;
+- (void)executeWithRemoteLibrary:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (id)identityHash;
+- (id)initWithCPLResource:(id)arg1 assetUuid:(id)arg2;
+- (id)initWithProperties:(id)arg1;
+- (id)mergeWithObject:(id)arg1;
+- (unsigned int)retryNumber;
+- (id)serializeObject;
+- (void)setRetryNumber:(unsigned int)arg1;
+- (id)targetResource;
+- (double)timeIntervalSinceLastRetry;
 
 @end

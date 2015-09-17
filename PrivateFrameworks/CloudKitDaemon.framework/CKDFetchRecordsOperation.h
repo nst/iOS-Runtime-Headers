@@ -16,6 +16,7 @@
     NSArray *_fullRecordsToFetch;
     id /* block */ _recordFetchCompletionBlock;
     id /* block */ _recordFetchProgressBlock;
+    NSDictionary *_recordIDsToETags;
     NSArray *_recordIDsToFetch;
     NSDictionary *_recordIDsToVersionETags;
     unsigned int _requestedTTL;
@@ -38,6 +39,7 @@
 @property (nonatomic, retain) NSArray *fullRecordsToFetch;
 @property (nonatomic, copy) id /* block */ recordFetchCompletionBlock;
 @property (nonatomic, copy) id /* block */ recordFetchProgressBlock;
+@property (nonatomic, retain) NSDictionary *recordIDsToETags;
 @property (nonatomic, retain) NSArray *recordIDsToFetch;
 @property (nonatomic, retain) NSDictionary *recordIDsToVersionETags;
 @property (nonatomic) unsigned int requestedTTL;
@@ -58,6 +60,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordFetch:(id)arg1 recordID:(id)arg2 etagMatched:(BOOL)arg3 responseCode:(id)arg4;
 - (BOOL)_prepareAsset:(id)arg1 record:(id)arg2 recordKey:(id)arg3 signature:(id)arg4;
+- (unsigned long long)activityStart;
 - (id)assetFieldNamesToPublishURLs;
 - (id)cache;
 - (id)cachedRecords;
@@ -76,6 +79,7 @@
 - (id)nameForState:(unsigned int)arg1;
 - (id /* block */)recordFetchCompletionBlock;
 - (id /* block */)recordFetchProgressBlock;
+- (id)recordIDsToETags;
 - (id)recordIDsToFetch;
 - (id)recordIDsToVersionETags;
 - (unsigned int)requestedTTL;
@@ -92,6 +96,7 @@
 - (void)setFullRecordsToFetch:(id)arg1;
 - (void)setRecordFetchCompletionBlock:(id /* block */)arg1;
 - (void)setRecordFetchProgressBlock:(id /* block */)arg1;
+- (void)setRecordIDsToETags:(id)arg1;
 - (void)setRecordIDsToFetch:(id)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
 - (void)setRequestedTTL:(unsigned int)arg1;

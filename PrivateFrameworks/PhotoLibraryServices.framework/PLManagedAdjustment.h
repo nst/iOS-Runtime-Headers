@@ -5,7 +5,7 @@
 @interface PLManagedAdjustment : _PLManagedAdjustment
 
 @property (nonatomic) int adjustmentType;
-@property (nonatomic, copy) PLManagedAsset *asset;
+@property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic, copy) NSString *filterName;
 @property (nonatomic, copy) NSDictionary *filterSettings;
 

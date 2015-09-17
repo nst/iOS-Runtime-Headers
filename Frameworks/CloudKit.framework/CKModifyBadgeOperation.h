@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
+- (unsigned long long)activityStart;
 - (unsigned int)badgeValue;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)init;

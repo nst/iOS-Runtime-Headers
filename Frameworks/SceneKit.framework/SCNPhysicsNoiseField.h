@@ -10,7 +10,6 @@
 @property (nonatomic) float animationSpeed;
 @property (nonatomic) float smoothness;
 
-+ (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;
 
 - (struct c3dPhysicsField { int (**x1)(); struct { /* Warning: Unrecognized filer type: ']' using 'void*' */ void*x_2_1_1[4]; } x2; float x3; float x4; float x5; unsigned int x6; bool x7; bool x8; bool x9; bool x10; float x11; }*)_createField;
@@ -22,6 +21,8 @@
 - (void)setSmoothness:(float)arg1;
 - (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
 - (float)smoothness;
+- (BOOL)supportsDirection;
+- (BOOL)supportsOffset;
 - (id)valueForUndefinedKey:(id)arg1;
 
 @end

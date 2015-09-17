@@ -4,7 +4,7 @@
 
 @interface UICollectionViewUpdateItem : NSObject {
     NSIndexPath *_finalIndexPath;
-    id _gap;
+    UICollectionViewUpdateGap *_gap;
     NSIndexPath *_initialIndexPath;
     int _updateAction;
 }
@@ -18,6 +18,7 @@
 @property (getter=_newIndexPath, setter=_setNewIndexPath:, nonatomic, retain) NSIndexPath *newIndexPath;
 @property (nonatomic, readonly) int updateAction;
 
+- (void).cxx_destruct;
 - (int)_action;
 - (id)_gap;
 - (id)_indexPath;
@@ -26,7 +27,6 @@
 - (void)_setGap:(id)arg1;
 - (void)_setNewIndexPath:(id)arg1;
 - (int)compareIndexPaths:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)indexPathAfterUpdate;
 - (id)indexPathBeforeUpdate;

@@ -11,11 +11,7 @@
 - (id)_service;
 - (void)dealloc;
 - (void)enableVoiceTrigger:(BOOL)arg1 withAssertion:(id)arg2;
-- (void)feedbackWithReason:(unsigned char)arg1 atTime:(double)arg2;
-- (void)getSiriLanguageCode:(id /* block */)arg1;
 - (id)init;
-- (void)reportEventWithAudioFile:(id)arg1 metaDataFile:(id)arg2;
 - (void)resetAssertions;
-- (void)suggestVoiceTriggerThreshold:(int)arg1 withReason:(id)arg2;
 
 @end

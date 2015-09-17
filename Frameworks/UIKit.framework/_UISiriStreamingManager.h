@@ -22,11 +22,11 @@
 @property (nonatomic, readonly) NSTextStorage *streamingTextStorage;
 @property (nonatomic, copy) NSArray *words;
 
+- (void).cxx_destruct;
 - (void)_commitFinalResults;
 - (void)animateText;
 - (void)behaviorDidStop:(id)arg1;
 - (void)commitFinalResults;
-- (void)dealloc;
 - (id)initWithTextView:(id)arg1;
 - (void)setWords:(id)arg1;
 - (id)streamingLayoutManager;

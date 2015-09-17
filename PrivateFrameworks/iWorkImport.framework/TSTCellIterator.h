@@ -36,7 +36,6 @@
 @property (readonly) int rowWalkDirection;
 @property (nonatomic, readonly) TSTTableModel *tableModel;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (BOOL)dontExpandCellRefs;
 - (BOOL)getNext:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; } x2; id x3; struct TSTCellStorage {} x4; struct TSUColumnRowRect { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_5_1_1; struct { unsigned short x_2_2_1; unsigned short x_2_2_2; } x_5_1_2; } x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; }*)arg1;

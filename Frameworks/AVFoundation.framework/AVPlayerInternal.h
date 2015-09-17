@@ -3,7 +3,6 @@
  */
 
 @interface AVPlayerInternal : NSObject {
-    AVWeakKeyValueObserverProxy *KVOProxy;
     BOOL allowsOutOfBandTextTrackRendering;
     AVAudioSessionMediaPlayerOnly *audioSessionMediaPlayerOnly;
     BOOL autoSwitchStreamVariants;
@@ -13,8 +12,15 @@
         float height; 
     } cachedDisplaySize;
     NSDictionary *cachedFigMediaSelectionCriteriaProperty;
-    NSMutableSet *closedCaptionLayers;
+    NSMutableArray *closedCaptionLayers;
     AVPlayerItem *currentItem;
+    <AVCallbackCancellation> *currentItemPreferredPixelBufferAttributesCallbackInvoker;
+    NSObject<OS_dispatch_queue> *currentItemPropertyUpdateQueue;
+    <AVCallbackCancellation> *currentItemSuppressesVideoLayersCallbackInvoker;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } dimensionsOfReservedVideoMemory;
     NSArray *displaysUsedForPlayback;
     NSError *error;
     NSArray *expectedAssetTypes;
@@ -27,12 +33,15 @@
     BOOL hostApplicationInForeground;
     BOOL iapdExtendedModeIsActive;
     NSMutableSet *items;
+    NSArray *itemsInFigPlayQueue;
     NSObject<OS_dispatch_queue> *ivarAccessQueue;
     AVPlayerItem *lastItem;
     NSObject<OS_dispatch_queue> *layersQ;
     BOOL logPerformanceData;
+    NSString *multichannelAudioStrategy;
     BOOL needsToCreateFigPlayer;
     int nextPrerollIDToGenerate;
+    AVOutputContext *outputContext;
     NSMutableDictionary *pendingFigPlayerProperties;
     int pendingPrerollID;
     AVPixelBufferAttributeMediator *pixelBufferAttributeMediator;
@@ -41,10 +50,13 @@
     struct OpaqueFigSimpleMutex { } *prerollIDMutex;
     AVPropertyStorage *propertyStorage;
     struct OpaqueCMTimebase { } *proxyTimebase;
+    NSArray *queueModifications;
     BOOL reevaluateBackgroundPlayback;
+    BOOL shouldReduceResourceUsage;
     NSObject<OS_dispatch_queue> *stateDispatchQueue;
     int status;
-    NSMutableSet *subtitleLayers;
+    NSMutableArray *subtitleLayers;
+    BOOL usesDedicatedNotificationQueueForMediaServices;
     NSDictionary *vibrationPattern;
     struct __CFDictionary { } *videoLayers;
     AVWeakReference *weakReference;

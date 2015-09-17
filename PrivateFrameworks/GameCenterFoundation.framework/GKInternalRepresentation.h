@@ -9,8 +9,10 @@
 + (id)secureCodedPropertyKeys;
 + (BOOL)supportsSecureCoding;
 
+- (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)descriptionSubstitutionMap;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)mergePropertiesFrom:(id)arg1;

@@ -26,6 +26,7 @@
 - (BOOL)objectModel:(RUIObjectModel *)arg1 shouldShowModalHTMLViewWithURL:(NSURL *)arg2;
 - (UIView *)objectModel:(RUIObjectModel *)arg1 tableFooterViewForAttributes:(NSDictionary *)arg2 page:(RUIPage *)arg3;
 - (UIView *)objectModel:(RUIObjectModel *)arg1 tableHeaderViewForAttributes:(NSDictionary *)arg2 page:(RUIPage *)arg3;
+- (void)objectModel:(RUIObjectModel *)arg1 willLoadLinkURL:(NSURL *)arg2 attributes:(NSDictionary *)arg3;
 - (void)objectModelDidChange:(RUIObjectModel *)arg1;
 - (void)objectModelPressedBack:(RUIObjectModel *)arg1;
 - (unsigned int)supportedInterfaceOrientationsForObjectModel:(RUIObjectModel *)arg1 page:(RUIPage *)arg2;

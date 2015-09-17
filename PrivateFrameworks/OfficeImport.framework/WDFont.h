@@ -17,6 +17,7 @@
 - (int)characterSet;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (int)fontFamily;
 - (unsigned long)hash;
 - (id)init;

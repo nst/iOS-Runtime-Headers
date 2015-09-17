@@ -15,6 +15,7 @@
     BOOL _hasReceivedPushAck;
     BOOL _highPriority;
     NSDictionary *_responseAlert;
+    NSNumber *_retryCount;
     NSData *_serviceData;
     double _timeSent;
     double _timeout;
@@ -35,6 +36,7 @@
 @property (readonly, retain) NSDictionary *additionalMessageHeaders;
 @property (readonly, retain) NSDictionary *additionalMessageHeadersForOutgoingPush;
 @property (readonly, retain) NSDictionary *additionalQueryStringParameters;
+@property (readonly) double anisetteHeadersTimeout;
 @property (readonly, retain) NSString *bagKey;
 @property (nonatomic, copy) NSMutableArray *certDataArray;
 @property (copy) NSDictionary *clientInfo;
@@ -67,6 +69,7 @@
 @property (readonly, retain) NSArray *requiredKeys;
 @property (copy) NSDictionary *responseAlertInfo;
 @property (readonly) int responseCommand;
+@property (nonatomic, copy) NSNumber *retryCount;
 @property (copy) NSData *serviceData;
 @property double timeSent;
 @property double timeout;
@@ -78,6 +81,7 @@
 @property (nonatomic, copy) NSMutableArray *userIDArray;
 @property (copy) NSDictionary *userInfo;
 @property (readonly) BOOL wantsAPSRetries;
+@property (readonly) BOOL wantsAnisetteHeaders;
 @property (readonly) BOOL wantsBagKey;
 @property BOOL wantsBinaryPush;
 @property (readonly) BOOL wantsBodySignature;
@@ -98,6 +102,7 @@
 - (id)IDCertificate;
 - (void)_cacheBody;
 - (id)_cachedBody;
+- (void)_clearCache;
 - (void)_setCachedBody:(id)arg1;
 - (void)_setUsingOutgoingPush:(BOOL)arg1;
 - (BOOL)_usingOutgoingPush;
@@ -105,6 +110,7 @@
 - (id)additionalMessageHeaders;
 - (id)additionalMessageHeadersForOutgoingPush;
 - (id)additionalQueryStringParameters;
+- (double)anisetteHeadersTimeout;
 - (id)bagKey;
 - (id)certDataArray;
 - (id)clientInfo;
@@ -143,6 +149,7 @@
 - (id)requiredKeys;
 - (id)responseAlertInfo;
 - (int)responseCommand;
+- (id)retryCount;
 - (id)serviceData;
 - (void)setCertDataArray:(id)arg1;
 - (void)setClientInfo:(id)arg1;
@@ -161,6 +168,7 @@
 - (void)setPushPublicKey:(struct __SecKey { }*)arg1;
 - (void)setPushToken:(id)arg1;
 - (void)setResponseAlertInfo:(id)arg1;
+- (void)setRetryCount:(id)arg1;
 - (void)setServiceData:(id)arg1;
 - (void)setTimeSent:(double)arg1;
 - (void)setTimeout:(double)arg1;
@@ -182,6 +190,7 @@
 - (id)userIDArray;
 - (id)userInfo;
 - (BOOL)wantsAPSRetries;
+- (BOOL)wantsAnisetteHeaders;
 - (BOOL)wantsBagKey;
 - (BOOL)wantsBinaryPush;
 - (BOOL)wantsBodySignature;

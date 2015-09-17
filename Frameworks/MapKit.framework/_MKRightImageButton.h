@@ -21,6 +21,6 @@
 - (void)tintColorDidChange;
 - (id)title;
 - (id)titleLabel;
-- (id)viewForBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

@@ -4,7 +4,8 @@
 
 @interface PKPaymentRequest : NSObject <NSSecureCoding> {
     NSData *_applicationData;
-    void *_billingAddress;
+    const void *_billingAddress;
+    PKContact *_billingContact;
     NSString *_countryCode;
     NSString *_currencyCode;
     unsigned int _merchantCapabilities;
@@ -12,7 +13,8 @@
     NSArray *_paymentSummaryItems;
     unsigned int _requiredBillingAddressFields;
     unsigned int _requiredShippingAddressFields;
-    void *_shippingAddress;
+    const void *_shippingAddress;
+    PKContact *_shippingContact;
     BOOL _shippingEditable;
     NSString *_shippingEditableMessage;
     NSArray *_shippingMethods;
@@ -21,7 +23,8 @@
 }
 
 @property (nonatomic, copy) NSData *applicationData;
-@property (nonatomic) void*billingAddress;
+@property (nonatomic) const void*billingAddress;
+@property (nonatomic, retain) PKContact *billingContact;
 @property (nonatomic, copy) NSString *countryCode;
 @property (nonatomic, copy) NSString *currencyCode;
 @property (nonatomic) unsigned int merchantCapabilities;
@@ -29,7 +32,8 @@
 @property (nonatomic, copy) NSArray *paymentSummaryItems;
 @property (nonatomic) unsigned int requiredBillingAddressFields;
 @property (nonatomic) unsigned int requiredShippingAddressFields;
-@property (nonatomic) void*shippingAddress;
+@property (nonatomic) const void*shippingAddress;
+@property (nonatomic, retain) PKContact *shippingContact;
 @property (getter=isShippingEditable, nonatomic) BOOL shippingEditable;
 @property (nonatomic, copy) NSString *shippingEditableMessage;
 @property (nonatomic, copy) NSArray *shippingMethods;
@@ -41,7 +45,8 @@
 - (id)_shippingTypeToString;
 - (id)_transactionAmount;
 - (id)applicationData;
-- (void*)billingAddress;
+- (const void*)billingAddress;
+- (id)billingContact;
 - (id)countryCode;
 - (id)currencyCode;
 - (void)dealloc;
@@ -56,6 +61,7 @@
 - (unsigned int)requiredShippingAddressFields;
 - (void)setApplicationData:(id)arg1;
 - (void)setBillingAddress:(void*)arg1;
+- (void)setBillingContact:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setCurrencyCode:(id)arg1;
 - (void)setMerchantCapabilities:(unsigned int)arg1;
@@ -64,12 +70,14 @@
 - (void)setRequiredBillingAddressFields:(unsigned int)arg1;
 - (void)setRequiredShippingAddressFields:(unsigned int)arg1;
 - (void)setShippingAddress:(void*)arg1;
+- (void)setShippingContact:(id)arg1;
 - (void)setShippingEditable:(BOOL)arg1;
 - (void)setShippingEditableMessage:(id)arg1;
 - (void)setShippingMethods:(id)arg1;
 - (void)setShippingType:(unsigned int)arg1;
 - (void)setSupportedNetworks:(id)arg1;
-- (void*)shippingAddress;
+- (const void*)shippingAddress;
+- (id)shippingContact;
 - (id)shippingEditableMessage;
 - (id)shippingMethods;
 - (unsigned int)shippingType;

@@ -32,6 +32,7 @@
 - (id)_existingDownloadForSSDownload:(id)arg1;
 - (id)_init;
 - (void)_matchCellularRestrictedDidChangeNotification:(id)arg1;
+- (void)_musicCellularNetworkingAllowedDidChangeNotification:(id)arg1;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (id)_observersForAllDownloads;
 - (id)_observersForDownload:(id)arg1;

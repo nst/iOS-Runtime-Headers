@@ -12,6 +12,7 @@
 - (void)__hostWillEnterForeground;
 - (void)__setHostAllowedNotifications:(NSArray *)arg1;
 - (void)__setNextAutomaticOrderOutDirection:(int)arg1 duration:(double)arg2;
+- (void)__setSceneSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)__setWindowOffset:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

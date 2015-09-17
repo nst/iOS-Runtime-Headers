@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) MBAppManager *appManager;
 @property (getter=isBackgroundRestore, nonatomic, readonly) BOOL backgroundRestore;
 @property (getter=isBackupEngine, nonatomic, readonly) BOOL backupEngine;
+@property (getter=isCloudKitEngine, nonatomic, readonly) BOOL cloudKitEngine;
 @property (getter=shouldCommitIfPossible, nonatomic, readonly) BOOL commitIfPossible;
 @property (nonatomic, readonly) MBDebugContext *debugContext;
 @property (nonatomic, readonly) MBDomainManager *domainManager;
@@ -48,6 +49,7 @@
 - (id)initWithSettingsContext:(id)arg1 debugContext:(id)arg2 domainManager:(id)arg3;
 - (BOOL)isBackgroundRestore;
 - (BOOL)isBackupEngine;
+- (BOOL)isCloudKitEngine;
 - (BOOL)isDriveEngine;
 - (BOOL)isEncrypted;
 - (BOOL)isForegroundRestore;

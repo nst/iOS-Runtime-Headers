@@ -28,6 +28,5 @@
 - (void)setLabel:(id)arg1;
 - (void)setMinute:(id)arg1;
 - (void)setRelativeOffsetMinutes:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

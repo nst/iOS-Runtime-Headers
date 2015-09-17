@@ -6,8 +6,10 @@
 
 @property (nonatomic) unsigned int activationMode;
 @property (getter=isAuthenticationRequired, nonatomic) BOOL authenticationRequired;
+@property (nonatomic) unsigned int behavior;
 @property (getter=isDestructive, nonatomic) BOOL destructive;
 @property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSDictionary *parameters;
 @property (nonatomic, copy) NSString *title;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

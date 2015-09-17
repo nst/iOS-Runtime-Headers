@@ -10,7 +10,6 @@
     } _size;
 }
 
-- (id).cxx_construct;
 - (void)_cleanUpAfterDrawing;
 - (id)_newImage;
 - (void)dealloc;

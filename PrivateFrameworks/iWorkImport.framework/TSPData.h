@@ -16,6 +16,7 @@
 
 @property (getter=isAcknowledgedByServer, nonatomic) BOOL acknowledgedByServer;
 @property (copy) TSPDataAttributes *attributes;
+@property (nonatomic, readonly) unsigned int base64StringLength;
 @property (nonatomic, readonly) TSPObjectContext *context;
 @property (nonatomic, readonly) TSPDigest *digest;
 @property (nonatomic, readonly) NSString *digestString;
@@ -36,6 +37,7 @@
 @property (nonatomic, readonly) unsigned char packageIdentifier;
 @property (nonatomic, readonly) NSString *packageLocator;
 @property (nonatomic, retain) <TSPDataStorage> *storage;
+@property (nonatomic, readonly) BOOL tsd_allowedToConvertDataAlreadyInDocument;
 @property (nonatomic, readonly) NSString *type;
 @property (nonatomic, copy) TSPDataAttributes *unsafeAttributes;
 
@@ -70,6 +72,7 @@
 - (void)addDownloadObserver:(id)arg1 options:(unsigned int)arg2 completionHandler:(id /* block */)arg3;
 - (void)archiveInfoMessage:(struct DataInfo { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; unsigned long long x5; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x6; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x7; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x8; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x9; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x10; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x11; bool x12; int x13; struct DataAttributes {} *x14; struct EncryptionInfo {} *x15; struct basic_string<char, std::__1::char_traits<char>, std::__1::allocator<char> > {} *x16; }*)arg1 archiver:(id)arg2;
 - (id)attributes;
+- (unsigned int)base64StringLength;
 - (id)bookmarkData;
 - (BOOL)bookmarkDataNeedsWrite;
 - (id)context;
@@ -79,6 +82,7 @@
 - (id)digest;
 - (id)digestString;
 - (id)documentResourceLocator;
+- (id)encodeToBase64String;
 - (unsigned long long)encodedLength;
 - (unsigned long long)encodedLengthIfLocal;
 - (id)filename;
@@ -113,6 +117,7 @@
 - (void)setStorage:(id)arg1;
 - (void)setUnsafeAttributes:(id)arg1;
 - (id)storage;
+- (BOOL)tsd_allowedToConvertDataAlreadyInDocument;
 - (void)tsk_addDownloadObserver:(id)arg1 lockMode:(int)arg2 options:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 - (void)tsp_splitDataWithMaxSize:(unsigned long)arg1 subdataHandlerBlock:(id /* block */)arg2;
 - (id)type;

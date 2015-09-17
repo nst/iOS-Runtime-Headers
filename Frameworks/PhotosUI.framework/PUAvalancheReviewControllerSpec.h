@@ -2,9 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAvalancheReviewControllerSpec : NSObject {
-    float _interItemSpacing;
-}
+@interface PUAvalancheReviewControllerSpec : NSObject
 
 @property (nonatomic, readonly) float interItemSpacing;
 @property (nonatomic, readonly) unsigned int selectionBadgeCorner;

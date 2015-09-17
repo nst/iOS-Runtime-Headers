@@ -42,6 +42,7 @@
 @property (nonatomic, readonly) BOOL userCanChangeShuffleAndRepeatType;
 
 - (void).cxx_destruct;
+- (void)_applyVolumeNormalizationForQueuedItems;
 - (void)_awakeFromCoder:(id)arg1;
 - (void)_handleDownloadCancelledForDownloadToken:(unsigned long long)arg1;
 - (id)_itemToFollowItemIndex:(int)arg1 skipUnavailableContent:(BOOL)arg2;
@@ -94,7 +95,11 @@
 - (id)queueCoordinator;
 - (void)queueCoordinator:(id)arg1 failedToLoadItem:(id)arg2;
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
+- (void)queueCoordinator:(id)arg1 willInsertItem:(id)arg2 afterItem:(id)arg3;
+- (void)queueCoordinatorDidChangeItems:(id)arg1;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithPreferredStartIndex:(unsigned int)arg2 error:(id)arg3;
+- (void)queueFeeder:(id)arg1 didChangeContentsWithReplacementPlaybackContext:(id)arg2;
+- (void)queueFeederDidInvalidateAssets:(id)arg1;
 - (void)reloadItemsKeepingCurrentItem:(BOOL)arg1;
 - (void)reloadWithPlaybackContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)repeatMode;

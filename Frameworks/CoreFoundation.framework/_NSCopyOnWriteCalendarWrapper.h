@@ -11,6 +11,7 @@
 + (id)currentCalendar;
 
 - (void)_copyWrappedCalendar;
+- (id)_init;
 - (id)_initWithCalendar:(id)arg1;
 - (id)calendarIdentifier;
 - (id)components:(unsigned int)arg1 fromDate:(id)arg2;
@@ -23,7 +24,6 @@
 - (void)finalize;
 - (unsigned int)firstWeekday;
 - (unsigned int)hash;
-- (id)init;
 - (BOOL)isDateInWeekend:(id)arg1;
 - (id)locale;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })maximumRangeOfUnit:(unsigned int)arg1;

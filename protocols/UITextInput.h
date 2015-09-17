@@ -37,9 +37,11 @@
 
 @optional
 
+- (void)beginFloatingCursorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)characterOffsetOfPosition:(UITextPosition *)arg1 withinRange:(UITextRange *)arg2;
 - (void)dictationRecognitionFailed;
 - (void)dictationRecordingDidEnd;
+- (void)endFloatingCursor;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameForDictationResultPlaceholder:(id)arg1;
 - (void)insertDictationResult:(NSArray *)arg1;
 - (id)insertDictationResultPlaceholder;
@@ -50,5 +52,6 @@
 - (BOOL)shouldChangeTextInRange:(UITextRange *)arg1 replacementText:(NSString *)arg2;
 - (UIView *)textInputView;
 - (NSDictionary *)textStylingAtPosition:(UITextPosition *)arg1 inDirection:(int)arg2;
+- (void)updateFloatingCursorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

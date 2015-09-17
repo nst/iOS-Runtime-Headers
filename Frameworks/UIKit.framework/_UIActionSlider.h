@@ -74,14 +74,17 @@
 @property (nonatomic) float trackWidthProportion;
 @property (nonatomic, retain) _UIVibrantSettings *vibrantSettings;
 
+- (void).cxx_destruct;
 - (void)_hideTrackLabel:(BOOL)arg1;
 - (float)_knobAvailableX;
 - (float)_knobHorizontalPosition;
+- (float)_knobLeftMostX;
 - (float)_knobMaxX;
 - (float)_knobMaxXInset;
 - (float)_knobMinX;
 - (float)_knobMinXInset;
 - (void)_knobPanGesture:(id)arg1;
+- (float)_knobRightMostX;
 - (float)_knobVerticalInset;
 - (id)_knobView;
 - (float)_knobWidth;
@@ -92,10 +95,10 @@
 - (id)backgroundColor;
 - (float)cachedTrackMaskWidth;
 - (void)closeTrackAnimated:(BOOL)arg1;
-- (void)dealloc;
 - (id)delegate;
 - (void)didMoveToSuperview;
 - (void)didMoveToWindow;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 vibrantSettings:(id)arg2;
 - (BOOL)isAnimating;
@@ -131,6 +134,7 @@
 - (void)setTrackTextBaselineFromBottom:(float)arg1;
 - (void)setTrackWidthProportion:(float)arg1;
 - (void)setVibrantSettings:(id)arg1;
+- (BOOL)shouldHideTrackLabelForXPoint:(float)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)slideGestureRecognizer;
 - (int)style;
@@ -146,5 +150,6 @@
 - (float)trackWidthProportion;
 - (void)updateAllTrackMasks;
 - (id)vibrantSettings;
+- (BOOL)xPointIsWithinTrack:(float)arg1;
 
 @end

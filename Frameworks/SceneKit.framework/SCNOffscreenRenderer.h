@@ -5,25 +5,28 @@
 @interface SCNOffscreenRenderer : SCNRenderer
 
 @property (nonatomic) unsigned int antialiasingMode;
+@property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic, readonly) unsigned int textureID;
 
 + (id)offscreenRendererWithContext:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)offscreenRendererWithDevice:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 
-- (void)_bindFramebuffer;
+- (id)MTLTexture;
+- (void)_bindFramebuffer:(BOOL)arg1;
 - (void)_createFramebufferIfNeeded;
 - (void)_deleteFramebuffer;
-- (id)_initWithOptions:(id)arg1 isPrivateRenderer:(BOOL)arg2 privateRendererOwner:(id)arg3 clearsOnDraw:(BOOL)arg4 context:(void*)arg5 size:(struct CGSize { float x1; float x2; })arg6;
+- (id)_initOffscreenRendererWithOptions:(id)arg1 isPrivateRenderer:(BOOL)arg2 privateRendererOwner:(id)arg3 clearsOnDraw:(BOOL)arg4 size:(struct CGSize { float x1; float x2; })arg5 context:(void*)arg6 renderingAPI:(unsigned int)arg7;
+- (void)_render;
 - (void)_resolveAndDiscard;
-- (unsigned int)_sampleCount;
 - (void)_unbindFramebuffer;
 - (unsigned int)antialiasingMode;
 - (struct CGImage { }*)copySnapshotWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGImage { }*)createCGImageSnapshot:(double)arg1;
-- (void)dealloc;
-- (void)render;
 - (void)setAntialiasingMode:(unsigned int)arg1;
-- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)snapshot;
-- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)snapshotAtTime:(double)arg1;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGSize { float x1; float x2; })size;
+- (id)snapshot;
+- (id)snapshotAtTime:(double)arg1;
 - (unsigned int)textureID;
 
 @end

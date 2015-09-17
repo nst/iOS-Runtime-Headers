@@ -12,9 +12,9 @@
 
 + (id)phoneNumberWithDigits:(id)arg1 countryInfo:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)_stringByAddingDialingPrefixToString:(id)arg1;
 - (id)countryInfo;
-- (void)dealloc;
 - (id)digits;
 - (id)formattedAndObfuscatedString;
 - (id)formattedString;

@@ -15,7 +15,7 @@
 @property (nonatomic, copy) NSDateComponents *dueDateComponents;
 @property (nonatomic) BOOL hadRecurrences;
 @property (nonatomic, readonly) EKObjectID *parentID;
-@property (nonatomic) int priority;
+@property (nonatomic) unsigned int priority;
 @property (nonatomic, copy) NSDateComponents *startDateComponents;
 
 + (void)_removeSnoozedAlarmsFromReminder:(id)arg1 usingDueDate:(id)arg2;
@@ -37,14 +37,12 @@
 - (id)initWithPersistentObject:(id)arg1;
 - (BOOL)isCompleted;
 - (id)parentID;
-- (int)priority;
 - (id)reminderIdentifier;
 - (void)setCompleted:(BOOL)arg1;
 - (void)setCompletionDate:(id)arg1;
 - (void)setDisplayOrder:(unsigned int)arg1;
 - (void)setDueDateComponents:(id)arg1;
 - (void)setHadRecurrences:(BOOL)arg1;
-- (void)setPriority:(int)arg1;
 - (void)setStartDateComponents:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;

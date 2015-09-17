@@ -25,7 +25,6 @@
     unsigned long mSrcSlideId;
     ESDContainer *mSrcSlideListHolder;
     NSMutableDictionary *mTargetShapeToSourceTextBoxContainerHolderMap;
-    unsigned int mTextLength;
     PDPresentation *mTgtPresentation;
     PDSlideBase *mTgtSlide;
 }
@@ -73,13 +72,11 @@
 - (void)setSourceSlideId:(unsigned long)arg1;
 - (void)setSourceSlideListHolder:(id)arg1;
 - (void)setSourceTextBoxContainerHolder:(id)arg1 forTargetShape:(id)arg2;
-- (void)setTextLength:(unsigned int)arg1;
 - (void)setTgtSlide:(id)arg1;
 - (id)slideIndexesRef;
 - (id)slideState;
 - (id)sourceSlideListHolder;
 - (id)sourceTextBoxContainerHolderForTargetShape:(id)arg1;
-- (unsigned int)textLength;
 - (id)tgtPresentation;
 - (id)tgtSlide;
 

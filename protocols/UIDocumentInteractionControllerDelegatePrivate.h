@@ -12,6 +12,7 @@
 - (void)documentInteractionControllerWillEndPreview:(UIDocumentInteractionController *)arg1;
 - (LSDocumentProxy *)documentProxyForPreview:(UIDocumentInteractionController *)arg1 name:(NSString *)arg2 UTI:(NSString *)arg3;
 - (NSArray *)excludedActivityTypesForDocumentInteractionController:(UIDocumentInteractionController *)arg1;
+- (void)previewController:(QLPreviewController *)arg1 willMarkUpAtURL:(NSURL *)arg2;
 - (UIPrintInfo *)printInfoForDocumentInteractionController:(UIDocumentInteractionController *)arg1;
 - (BOOL)shouldBlockRemoteImagesInPreviewForDocumentInteractionController:(UIDocumentInteractionController *)arg1;
 

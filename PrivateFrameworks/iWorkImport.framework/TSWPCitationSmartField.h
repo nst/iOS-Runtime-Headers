@@ -4,12 +4,14 @@
 
 @interface TSWPCitationSmartField : TSWPSmartField <TSWPCitationRecordHosting> {
     NSArray *_citationRecords;
+    <TSWPCitationSmartFieldEditing> *_editingDelegate;
     BOOL _isLocalizable;
 }
 
 @property (nonatomic, copy) NSArray *citationRecords;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) <TSWPCitationSmartFieldEditing> *editingDelegate;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isLocalizable;
 @property (readonly) Class superclass;
@@ -20,11 +22,14 @@
 - (id)citationRecords;
 - (id)copyWithContext:(id)arg1;
 - (void)dealloc;
+- (id)editingDelegate;
 - (id)initFromUnarchiver:(id)arg1;
 - (BOOL)isLocalizable;
 - (void)saveToArchiver:(id)arg1;
 - (void)setCitationRecords:(id)arg1;
+- (void)setEditingDelegate:(id)arg1;
 - (void)setIsLocalizable:(BOOL)arg1;
 - (int)smartFieldKind;
+- (void)willBeRemovedFromDocumentRoot:(id)arg1;
 
 @end

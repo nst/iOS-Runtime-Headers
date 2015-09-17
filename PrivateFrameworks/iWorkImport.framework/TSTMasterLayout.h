@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTMasterLayout : NSObject <TSTTableHiddenRowColumnProviding> {
+@interface TSTMasterLayout : NSObject <TSTTableHiddenRowColumnProviding, TSTTableInternalGeometryProviding, TSTTableMergeRangeProviding> {
     BOOL mBandedFillIsValid;
     TSDFill *mBandedFillObject;
     NSPointerArray *mBottomRowStrokes;
@@ -77,7 +77,8 @@
     TSDInfoGeometry *mDynamicInfoGeometry;
     NSMutableSet *mDynamicLayouts;
     BOOL mDynamicRepResize;
-    BOOL mDynamicRepressFrozenHeader;
+    BOOL mDynamicRepressFrozenHeaderColumns;
+    BOOL mDynamicRepressFrozenHeaderRows;
     TSTLayoutDynamicResizeInfo *mDynamicResizeInfo;
     float mDynamicResizingColumnAdjustment;
     struct TSUColumnRowRect { 
@@ -183,7 +184,7 @@
 @property (nonatomic, readonly) TSDFill *bandedFillObject;
 @property (nonatomic, readonly) TSTWPColumnCache *cellIDToWPColumnCache;
 @property (nonatomic, readonly) NSMutableArray *changeDescriptors;
-@property (nonatomic) TSKChangeNotifier *changeNotifier;
+@property (nonatomic, retain) TSKChangeNotifier *changeNotifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TSTDupContentCache *dupContentCache;
@@ -226,8 +227,13 @@
 @property (nonatomic, readonly) BOOL isGrouped;
 @property (nonatomic) unsigned int maxConcurrentTasks;
 @property (nonatomic) struct CGSize { float x1; float x2; } maximumPartitionSize;
-@property (nonatomic) TSTMergeRangeSortedSet *mergeRanges;
+@property (nonatomic, retain) TSTMergeRangeSortedSet *mergeRanges;
 @property (nonatomic) unsigned int numCellsPerTask;
+@property (nonatomic, readonly) unsigned short numberOfColumns;
+@property (nonatomic, readonly) unsigned short numberOfFooterRows;
+@property (nonatomic, readonly) unsigned short numberOfHeaderColumns;
+@property (nonatomic, readonly) unsigned short numberOfHeaderRows;
+@property (nonatomic, readonly) unsigned short numberOfRows;
 @property (nonatomic) BOOL processHiddenRowsForExport;
 @property (nonatomic, readonly) TSTStrokeDefaultVendor *strokesDefaultVendor;
 @property (readonly) Class superclass;
@@ -245,13 +251,13 @@
 + (id)tableNameTextEngine:(id)arg1;
 + (struct CGSize { float x1; float x2; })tableNameTextSize:(id)arg1;
 
-- (id).cxx_construct;
 - (id)accountingParagraphStylePropertyMapForCell:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)addChangeDescriptor:(id)arg1;
 - (void)addChangeDescriptorWithType:(int)arg1 andCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 - (void)addChangeDescriptorWithType:(int)arg1 andCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2 andStrokeRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3;
 - (BOOL)adjustGridColumnForVisibility:(unsigned int*)arg1 isLeft:(BOOL)arg2;
 - (BOOL)adjustGridRowForVisibility:(unsigned int*)arg1 isTop:(BOOL)arg2;
+- (id)allMergeRanges;
 - (BOOL)anyColumnsHiddenInCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (BOOL)anyRowsHiddenInCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (BOOL)anyRowsUserHiddenInCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
@@ -307,7 +313,9 @@
 - (void)enumerateMergedStrokesAndCapsForGridRow:(unsigned int)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateMergedStrokesForGridColumn:(unsigned int)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
 - (void)enumerateMergedStrokesForGridRow:(unsigned int)arg1 from:(unsigned int)arg2 to:(unsigned int)arg3 usingBlock:(id /* block */)arg4;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })expandCellRangeToCoverMergedCells:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })expandCellRangeToVisibleNeighbors:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)expandCellRegionToCoverMergedCells:(id)arg1;
 - (unsigned short)firstEmptyBodyRow;
 - (float)fontHeightOfParagraphStyle:(id)arg1;
 - (id)hiddenColumnIndices;
@@ -339,7 +347,8 @@
 - (BOOL)isDynamicallyHidingTextOfCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)isDynamicallyMovingColumns;
 - (BOOL)isDynamicallyMovingRows;
-- (BOOL)isDynamicallyRepressingFrozenHeaders;
+- (BOOL)isDynamicallyRepressingFrozenHeaderColumns;
+- (BOOL)isDynamicallyRepressingFrozenHeaderRows;
 - (BOOL)isDynamicallyResizing:(int)arg1;
 - (BOOL)isDynamicallyResizing:(int)arg1 rowColIndex:(unsigned short)arg2;
 - (BOOL)isDynamicallyResizingCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
@@ -353,21 +362,31 @@
 - (BOOL)isRowHidden:(unsigned short)arg1;
 - (BOOL)isRowUserHidden:(unsigned short)arg1;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })layoutCellIDForModelCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (id)layoutCellRegionForModelCellRegion:(id)arg1;
 - (unsigned char)layoutColumnForModelColumn:(unsigned char)arg1;
 - (unsigned short)layoutRowForModelRow:(unsigned short)arg1;
 - (unsigned int)maxConcurrentTasks;
 - (struct CGSize { float x1; float x2; })maximumPartitionSize;
 - (void)measureTextForLayoutState:(id)arg1;
 - (id)mergeRanges;
+- (id)mergeRangesForCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
+- (id)mergeRangesForCellRegion:(id)arg1;
+- (id)mergeRangesProppingRowHeightsInRegion:(id)arg1;
 - (id)mergedStrokesForGridColumn:(unsigned int)arg1;
 - (id)mergedStrokesForGridRow:(unsigned int)arg1;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })modelCellIDForLayoutCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
+- (id)modelCellRegionForLayoutCellRegion:(id)arg1;
 - (unsigned char)modelColumnForLayoutColumn:(unsigned char)arg1;
 - (unsigned short)modelRowForLayoutRow:(unsigned short)arg1;
 - (id)newLayoutHint;
 - (id)newTextEngineForCell:(id)arg1 atCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg2;
 - (unsigned short)nonUserHiddenRowAfterAndIncludingRow:(unsigned short)arg1;
 - (unsigned int)numCellsPerTask;
+- (unsigned short)numberOfColumns;
+- (unsigned short)numberOfFooterRows;
+- (unsigned short)numberOfHeaderColumns;
+- (unsigned short)numberOfHeaderRows;
+- (unsigned short)numberOfRows;
 - (void)p_clearStrokesForMergesInCellRegion:(id)arg1;
 - (void)p_invalidateClearedStrokesForCellRegion:(id)arg1;
 - (void)p_setDynamicStroke:(id)arg1 strokeOrder:(int)arg2 forGridColumn:(unsigned int)arg3 isLeft:(BOOL)arg4 beginRow:(unsigned int)arg5 endRow:(unsigned int)arg6;
@@ -380,13 +399,15 @@
 - (void)p_validateStrokesForRegion:(id)arg1;
 - (id)p_validationFittingCellRegionForColumnsDeleted:(id)arg1 currentRegionToValidate:(id)arg2;
 - (id)p_validationFittingCellRegionForColumnsInserted:(id)arg1 currentRegionToValidate:(id)arg2;
+- (id)p_validationFittingCellRegionForColumnsVisibility:(id)arg1 currentRegionToValidate:(id)arg2;
+- (id)p_validationFittingCellRegionForRangeMergeUnmerge:(id)arg1 currentRegionToValidate:(id)arg2;
 - (id)p_validationFittingCellRegionForRowsDeleted:(id)arg1 currentRegionToValidate:(id)arg2;
 - (id)p_validationFittingCellRegionForRowsInserted:(id)arg1 currentRegionToValidate:(id)arg2;
 - (id)p_validationFittingForChangeDescriptorType:(int)arg1 regionFromChangeDescriptor:(id)arg2 currentRegionToValidate:(id)arg3;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })paddingForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (BOOL)processHiddenRowsForExport;
 - (void)processLayoutTask:(id)arg1;
-- (void)queueCellForValidation:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 cell:(id)arg2 mergeRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3 wrap:(BOOL)arg4 verticalAlignment:(int)arg5 padding:(id)arg6 prop:(BOOL)arg7 layoutCacheFlags:(int)arg8 layoutTask:(id)arg9;
+- (void)queueCellForValidation:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 cell:(id)arg2 modelMergeRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg3 wrap:(BOOL)arg4 verticalAlignment:(int)arg5 padding:(id)arg6 prop:(BOOL)arg7 layoutCacheFlags:(int)arg8 layoutTask:(id)arg9;
 - (void)resetModelHeightWidthCache;
 - (void)setChangeNotifier:(id)arg1;
 - (void)setClearedStrokeForGridColumn:(unsigned int)arg1 beginRow:(unsigned int)arg2 endRow:(unsigned int)arg3;

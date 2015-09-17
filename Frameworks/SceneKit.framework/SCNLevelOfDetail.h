@@ -6,14 +6,12 @@
     SCNGeometry *_geometry;
     struct __C3DLOD { } *_lod;
     int _mode;
-    id _reserved;
 }
 
 @property (readonly) SCNGeometry *geometry;
 @property (readonly) float screenSpaceRadius;
 @property (readonly) float worldSpaceDistance;
 
-+ (id)SCNJSExportProtocol;
 + (id)levelOfDetailWithGeometry:(id)arg1 screenSpaceRadius:(float)arg2;
 + (id)levelOfDetailWithGeometry:(id)arg1 worldSpaceDistance:(float)arg2;
 + (BOOL)supportsSecureCoding;
@@ -28,7 +26,6 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)geometry;
-- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithGeometry:(id)arg1 thresholdMode:(int)arg2 lod:(struct __C3DLOD { }*)arg3;
 - (id)initWithGeometry:(id)arg1 thresholdMode:(int)arg2 thresholdValue:(id)arg3;

@@ -7,11 +7,16 @@
 
 - (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id <MTLBuffer>)arg4 indexBufferOffset:(unsigned int)arg5;
 - (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id <MTLBuffer>)arg4 indexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6;
+- (void)drawIndexedPrimitives:(unsigned int)arg1 indexCount:(unsigned int)arg2 indexType:(unsigned int)arg3 indexBuffer:(id <MTLBuffer>)arg4 indexBufferOffset:(unsigned int)arg5 instanceCount:(unsigned int)arg6 baseVertex:(int)arg7 baseInstance:(unsigned int)arg8;
+- (void)drawIndexedPrimitives:(unsigned int)arg1 indexType:(unsigned int)arg2 indexBuffer:(id <MTLBuffer>)arg3 indexBufferOffset:(unsigned int)arg4 indirectBuffer:(id <MTLBuffer>)arg5 indirectBufferOffset:(unsigned int)arg6;
+- (void)drawPrimitives:(unsigned int)arg1 indirectBuffer:(id <MTLBuffer>)arg2 indirectBufferOffset:(unsigned int)arg3;
 - (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3;
 - (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3 instanceCount:(unsigned int)arg4;
+- (void)drawPrimitives:(unsigned int)arg1 vertexStart:(unsigned int)arg2 vertexCount:(unsigned int)arg3 instanceCount:(unsigned int)arg4 baseInstance:(unsigned int)arg5;
 - (void)setBlendColorRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 - (void)setCullMode:(unsigned int)arg1;
 - (void)setDepthBias:(float)arg1 slopeScale:(float)arg2 clamp:(float)arg3;
+- (void)setDepthClipMode:(unsigned int)arg1;
 - (void)setDepthStencilState:(id <MTLDepthStencilState>)arg1;
 - (void)setFragmentBuffer:(id <MTLBuffer>)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 - (void)setFragmentBufferOffset:(unsigned int)arg1 atIndex:(unsigned int)arg2;
@@ -26,6 +31,7 @@
 - (void)setFrontFacingWinding:(unsigned int)arg1;
 - (void)setRenderPipelineState:(id <MTLRenderPipelineState>)arg1;
 - (void)setScissorRect:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; })arg1;
+- (void)setStencilFrontReferenceValue:(unsigned int)arg1 backReferenceValue:(unsigned int)arg2;
 - (void)setStencilReferenceValue:(unsigned int)arg1;
 - (void)setTriangleFillMode:(unsigned int)arg1;
 - (void)setVertexBuffer:(id <MTLBuffer>)arg1 offset:(unsigned int)arg2 atIndex:(unsigned int)arg3;

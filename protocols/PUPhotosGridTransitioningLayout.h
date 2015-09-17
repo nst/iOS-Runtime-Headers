@@ -21,6 +21,8 @@
 - (int)itemsPerRow;
 - (NSIndexPath *)mainRealIndexPathAtGridCoordinates:(struct PUGridCoordinates { int x1; int x2; })arg1 inTransitionSection:(int)arg2;
 - (int)mainRealSectionForVisualSection:(int)arg1;
+- (NSIndexPath *)maxItemIndexPathAbovePoint:(struct CGPoint { float x1; float x2; })arg1;
+- (NSIndexPath *)maxItemIndexPathLeftOfPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)numberOfContiguousRowsInTransitionSection:(int)arg1;
 - (int)numberOfRowsInVisualSection:(int)arg1;
 - (int)numberOfVisualItemsInVisualSection:(int)arg1;

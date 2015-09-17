@@ -109,7 +109,6 @@
 
 @property (nonatomic, readonly) TSULocale *locale;
 
-- (id).cxx_construct;
 - (void)applyFormulaResult:(const struct TSCEValue { unsigned int x1[64]; int x2; }*)arg1;
 - (void)applyFormulaResult:(const struct TSCEValue { unsigned int x1[64]; int x2; }*)arg1 context:(id)arg2 hasWarnings:(BOOL)arg3 outWriteDidBeginOrEndWithTextCell:(BOOL*)arg4;
 - (void)clear;

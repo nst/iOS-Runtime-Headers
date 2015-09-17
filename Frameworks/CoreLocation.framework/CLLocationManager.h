@@ -7,6 +7,7 @@
 }
 
 @property (nonatomic) int activityType;
+@property (nonatomic) BOOL allowsBackgroundLocationUpdates;
 @property (nonatomic, readonly) double bestAccuracy;
 @property (nonatomic) <CLLocationManagerDelegate> *delegate;
 @property (nonatomic) double desiredAccuracy;
@@ -32,6 +33,8 @@
 @property (nonatomic, copy) NSString *purpose;
 @property (nonatomic, readonly, copy) NSSet *rangedRegions;
 @property (nonatomic) BOOL supportInfo;
+
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
 + (int)_authorizationStatus;
 + (int)_authorizationStatusForBundleIdentifier:(id)arg1 bundle:(id)arg2;
@@ -79,6 +82,7 @@
 
 - (int)activityType;
 - (void)allowDeferredLocationUpdatesUntilTraveled:(double)arg1 timeout:(double)arg2;
+- (BOOL)allowsBackgroundLocationUpdates;
 - (id)appsUsingLocation;
 - (id)appsUsingLocationWithDetails;
 - (double)bestAccuracy;
@@ -93,7 +97,6 @@
 - (BOOL)headingAvailable;
 - (double)headingFilter;
 - (int)headingOrientation;
-- (void)historicLocationsFromDate:(id)arg1 forInterval:(double)arg2;
 - (id)init;
 - (id)initWithEffectiveBundle:(id)arg1;
 - (id)initWithEffectiveBundleIdentifier:(id)arg1;
@@ -147,6 +150,7 @@
 - (void)resetApps;
 - (void)resumeLocationUpdates;
 - (void)setActivityType:(int)arg1;
+- (void)setAllowsBackgroundLocationUpdates:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;
 - (void)setDistanceFilter:(double)arg1;
@@ -185,5 +189,25 @@
 - (void)stopUpdatingVehicleSpeed;
 - (BOOL)supportInfo;
 - (id)technologiesInUse;
+
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (BOOL)convertAuthStatusToBool:(int)arg1;
++ (int)convertToHMDLocationAuthorization:(int)arg1;
++ (id)hmdLocationAuthorizationAsString:(int)arg1;
++ (id)locationAuthorizationDescription:(int)arg1;
++ (id)referenceFrameDescription:(int)arg1;
++ (id)regionDescription:(id)arg1;
++ (id)regionStateDescription:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
++ (BOOL)convertAuthStatusToBool:(int)arg1;
++ (int)convertToHMDLocationAuthorization:(int)arg1;
++ (id)hmdLocationAuthorizationAsString:(int)arg1;
++ (id)locationAuthorizationDescription:(int)arg1;
++ (id)referenceFrameDescription:(int)arg1;
++ (id)regionDescription:(id)arg1;
++ (id)regionStateDescription:(int)arg1;
 
 @end

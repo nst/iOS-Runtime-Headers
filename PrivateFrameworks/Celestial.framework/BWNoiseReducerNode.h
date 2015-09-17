@@ -10,12 +10,18 @@
     NSDictionary *_noiseReductionOptions;
     struct opaqueCMFormatDescription { } *_outputFormatDescription;
     BOOL _processLuma;
+    BOOL _quadraHighResStillImageCaptureEnabled;
+    struct opaqueCMFormatDescription { } *_quadraResampledIntermediaBufferFormatDescription;
+    struct __CVBuffer { } *_quadraResampledIntermediateBuffer;
+    struct OpaqueVTPixelTransferSession { } *_quadraResampledTransferSession;
     BOOL _threaded;
     BOOL _useInPlaceAlgorithm;
 }
 
 + (void)initialize;
 
+- (struct opaqueCMSampleBuffer { }*)_newQuadraResampledSampleBufferFromSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 outputPixelBuffer:(struct __CVBuffer { }*)arg2;
+- (id)_outputRequirementsForInputFormat:(id)arg1;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
@@ -24,6 +30,8 @@
 - (id)nodeSubType;
 - (id)nodeType;
 - (void)prepareForCurrentConfigurationToBecomeLive;
+- (BOOL)quadraHighResStillImageCaptureEnabled;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
+- (void)setQuadraHighResStillImageCaptureEnabled:(BOOL)arg1;
 
 @end

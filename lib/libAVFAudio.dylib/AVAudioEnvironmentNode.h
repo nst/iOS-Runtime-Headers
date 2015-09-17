@@ -4,6 +4,7 @@
 
 @interface AVAudioEnvironmentNode : AVAudioNode <AVAudioMixing>
 
+@property (nonatomic, readonly) NSArray *applicableRenderingAlgorithms;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) AVAudioEnvironmentDistanceAttenuationParameters *distanceAttenuationParameters;

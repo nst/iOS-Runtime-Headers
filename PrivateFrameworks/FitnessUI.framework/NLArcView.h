@@ -4,47 +4,35 @@
 
 @interface NLArcView : UIView {
     NLArcMaskLayer *_arcMaskLayer;
-    float _arcStart;
     NLArcLayer *_baseRing;
     CALayer *_coloredDotIndicatorLayer;
     CAGradientLayer *_gradientLayer;
-    UIImage *_icon;
     CALayer *_iconLayer;
     float _indicatorPercentage;
-    int _numberOfSegments;
     float _radius;
-    NLArcSegmentLayer *_segmentLayer;
     BOOL _shouldDrawIndicator;
-    BOOL _shouldDrawSegmented;
     BOOL _shouldShowIcon;
     CALayer *_whiteDotIndicatorLayer;
 }
 
 @property (nonatomic) float arcStart;
-@property (nonatomic, retain) UIImage *icon;
 @property (nonatomic) float indicatorPercentage;
 @property (nonatomic) float lineWidth;
-@property (nonatomic) int numberOfSegments;
 @property (nonatomic) float radius;
 @property (nonatomic) BOOL shouldDrawIndicator;
-@property (nonatomic) BOOL shouldDrawSegmented;
 @property (nonatomic) BOOL shouldShowIcon;
 
 - (void).cxx_destruct;
 - (id)_coloredDotIndicatorLayer;
 - (void)_positionIndicator;
-- (id)_segmentLayer;
 - (void)_showIndicatorIfNecessary;
-- (void)_showSegmentsIfNecessary;
 - (id)_whiteDotIndicatorLayer;
 - (void)animateToCenter:(struct CGPoint { float x1; float x2; })arg1 radius:(float)arg2 lineWidth:(float)arg3 duration:(float)arg4;
 - (float)arcStart;
-- (id)icon;
 - (float)indicatorPercentage;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)lineWidth;
-- (int)numberOfSegments;
 - (float)percentageFull;
 - (float)radius;
 - (void)setArcStart:(float)arg1;
@@ -53,8 +41,6 @@
 - (void)setIcon:(id)arg1;
 - (void)setIndicatorPercentage:(float)arg1;
 - (void)setLineWidth:(float)arg1;
-- (void)setNumberOfSegments:(int)arg1;
-- (void)setNumberOfSegments:(int)arg1 animated:(BOOL)arg2;
 - (void)setPercentageFull:(float)arg1;
 - (void)setPercentageFull:(float)arg1 animated:(BOOL)arg2;
 - (void)setPercentageFull:(float)arg1 animatedWithDuration:(float)arg2;
@@ -63,10 +49,8 @@
 - (void)setRadius:(float)arg1;
 - (void)setRadius:(float)arg1 animated:(BOOL)arg2;
 - (void)setShouldDrawIndicator:(BOOL)arg1;
-- (void)setShouldDrawSegmented:(BOOL)arg1;
 - (void)setShouldShowIcon:(BOOL)arg1;
 - (BOOL)shouldDrawIndicator;
-- (BOOL)shouldDrawSegmented;
 - (BOOL)shouldShowIcon;
 
 @end

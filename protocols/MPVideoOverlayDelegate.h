@@ -17,6 +17,7 @@
 - (BOOL)overlayShouldAcceptSkipForwardEvent:(UIView<MPVideoOverlay> *)arg1;
 - (void)overlayTappedBackButton:(UIView<MPVideoOverlay> *)arg1;
 - (void)overlayTappedFullscreenButton:(UIView<MPVideoOverlay> *)arg1;
+- (void)overlayTappedPictureInPictureButton:(UIView<MPVideoOverlay> *)arg1;
 - (void)overlayTappedScaleModeButton:(UIView<MPVideoOverlay> *)arg1;
 
 @end

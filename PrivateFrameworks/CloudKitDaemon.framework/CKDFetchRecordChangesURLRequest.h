@@ -14,6 +14,7 @@
     NSData *_resultServerChangeTokenData;
     unsigned int _resultsLimit;
     NSData *_serverChangeTokenData;
+    BOOL _shouldFetchAssetContent;
     int _status;
 }
 
@@ -28,6 +29,7 @@
 @property (nonatomic, retain) NSData *resultServerChangeTokenData;
 @property (nonatomic) unsigned int resultsLimit;
 @property (nonatomic, retain) NSData *serverChangeTokenData;
+@property (nonatomic) BOOL shouldFetchAssetContent;
 @property (nonatomic) int status;
 
 - (void).cxx_destruct;
@@ -54,7 +56,9 @@
 - (void)setResultServerChangeTokenData:(id)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
 - (void)setServerChangeTokenData:(id)arg1;
+- (void)setShouldFetchAssetContent:(BOOL)arg1;
 - (void)setStatus:(int)arg1;
+- (BOOL)shouldFetchAssetContent;
 - (int)status;
 - (id)zoneIDsToLock;
 

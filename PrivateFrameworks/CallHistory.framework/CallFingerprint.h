@@ -4,7 +4,7 @@
 
 @interface CallFingerprint : NSObject
 
-+ (id)getDatabasePredicate:(id)arg1;
 + (BOOL)match:(id)arg1 :(id)arg2;
++ (id)matchCallWithFingerprint:(id)arg1 withDatabase:(id)arg2;
 
 @end

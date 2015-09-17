@@ -10,7 +10,6 @@
 @property (nonatomic, readonly) float flashlightLevel;
 @property (getter=isOverheated, nonatomic, readonly) BOOL overheated;
 
-+ (id)alloc;
 + (BOOL)hasFlashlight;
 + (void)initialize;
 

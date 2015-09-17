@@ -14,7 +14,6 @@
 + (id)digestFromNSData:(id)arg1;
 + (id)digestWithDigestString:(id)arg1;
 
-- (id).cxx_construct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (const struct array<unsigned char, 20> { unsigned char x1[20]; }*)digestData;

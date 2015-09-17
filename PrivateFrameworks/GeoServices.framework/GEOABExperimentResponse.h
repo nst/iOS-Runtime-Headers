@@ -32,6 +32,7 @@
 @property (nonatomic, retain) NSString *sourceURL;
 @property (nonatomic) double timestamp;
 
+- (id)_experimentAssignmentForServiceType:(int)arg1 placeRequestType:(int)arg2;
 - (id)_querySubstringForServiceType:(int)arg1 placeRequestType:(int)arg2;
 - (void)addAssignment:(id)arg1;
 - (id)assignmentAtIndex:(unsigned int)arg1;

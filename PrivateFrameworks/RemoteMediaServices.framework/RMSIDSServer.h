@@ -38,6 +38,7 @@
 - (void)_handleSetVolume:(id)arg1;
 - (void)_handleTouchEnd:(id)arg1;
 - (void)_handleTouchMove:(id)arg1;
+- (void)_handleUpdatePairedNetworkNames:(id)arg1;
 - (void)_sendData:(id)arg1 type:(unsigned short)arg2 priority:(int)arg3 timeout:(int)arg4 queueOneID:(id)arg5 inResponseTo:(id)arg6;
 - (void)_sendData:(id)arg1 type:(unsigned short)arg2 timeout:(int)arg3 queueOneID:(id)arg4 inResponseTo:(id)arg5;
 - (void)controlSession:(id)arg1 artworkDataDidBecomeAvailable:(id)arg2 identifier:(id)arg3;

@@ -17,7 +17,7 @@
 @property (nonatomic, copy) NSString *rel;
 @property (nonatomic, copy) NSString *sizes;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)href;
 - (id)hrefURL;
 - (BOOL)mediaMatchesLandscapeOrientation;

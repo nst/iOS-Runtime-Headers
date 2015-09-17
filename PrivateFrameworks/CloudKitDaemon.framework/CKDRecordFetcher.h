@@ -26,6 +26,7 @@
 - (void)_fetchRecordsFromServer:(id)arg1 fullRecords:(id)arg2;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_flushFetchedRecordsToConsumer;
+- (unsigned long long)activityStart;
 - (id)desiredKeys;
 - (BOOL)fetchAssetContents;
 - (id)fetchGroup;

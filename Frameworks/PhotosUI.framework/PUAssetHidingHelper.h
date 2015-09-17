@@ -2,10 +2,38 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAssetHidingHelper : NSObject
+@interface PUAssetHidingHelper : NSObject <PUPhotoLibraryUIChangeObserver> {
+    PHManualFetchResult *__assetsFetchResults;
+    BOOL _areAllAssetsHidden;
+    BOOL _canToogleAssetsVisibility;
+    BOOL _didCheckAllAssetHidden;
+    BOOL _didCheckCanToogleAssetsVisibility;
+}
 
-+ (id)attemptTogglingVisibilityForAsset:(id)arg1 fromViewController:(id)arg2 sourceView:(id)arg3 sourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 completionHandler:(id /* block */)arg5;
-+ (BOOL)canToggleVisibilityOfAsset:(id)arg1;
-+ (id)menuItemTitleForTogglingVisibilityOfAsset:(id)arg1;
+@property (setter=_setAssetsFetchResult:, nonatomic, retain) PHManualFetchResult *_assetsFetchResults;
+@property (nonatomic, copy) NSArray *assets;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isHiding;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (BOOL)_areAllAssetsHidden;
+- (id)_assetsFetchResults;
+- (void)_prepareAssetsVisibilityValueIfNeeded;
+- (void)_setAssetsFetchResult:(id)arg1;
+- (id)alertControllerForTogglingAssetsVisibilityWithCompletionHandler:(id /* block */)arg1;
+- (void)applyHiddenState:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (id)assets;
+- (id)attemptTogglingAssetsVisibilityFromViewController:(id)arg1 sourceView:(id)arg2 sourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 completionHandler:(id /* block */)arg4;
+- (BOOL)canToggleAssetsVisibility;
+- (void)dealloc;
+- (id)init;
+- (BOOL)isHiding;
+- (id)menuItemTitleForTogglingAssetsVisibility;
+- (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
+- (void)prepareForPhotoLibraryChange:(id)arg1;
+- (void)setAssets:(id)arg1;
 
 @end

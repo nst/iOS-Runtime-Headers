@@ -16,6 +16,7 @@
 - (long)baseField;
 - (unsigned long)baseItem;
 - (void)dealloc;
+- (id)description;
 - (unsigned long)fieldId;
 - (id)init;
 - (id)name;

@@ -2,15 +2,12 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVFullScreenViewController : UIViewController {
-    unsigned int _statusBarWasHidden;
-}
+@interface AVFullScreenViewController : UIViewController
 
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)modalPresentationCapturesStatusBarAppearance;
 - (BOOL)prefersStatusBarHidden;
-- (void)viewDidAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
+- (void)viewDidLoad;
 
 @end

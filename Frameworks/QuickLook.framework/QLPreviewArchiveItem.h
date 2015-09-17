@@ -25,19 +25,19 @@
 @property (readonly) UIImage *icon;
 @property (readonly) BOOL isFolder;
 @property int level;
-@property (readonly) NSString *path;
+@property (retain) NSString *path;
 @property int previewItemIndex;
-@property (readonly) NSString *previewItemTitle;
-@property (readonly) NSURL *previewItemURL;
+@property (nonatomic, readonly) NSString *previewItemTitle;
+@property (nonatomic, readonly) NSURL *previewItemURL;
 @property (retain) NSURL *rootUnzippingURL;
 @property (copy) NSArray *subItems;
 @property (readonly) Class superclass;
 @property (readonly) BOOL unarchived;
 
+- (void).cxx_destruct;
 - (int)UIItemIndex;
 - (void)cancelIconUpdate;
 - (void)cleanup;
-- (void)dealloc;
 - (id)description;
 - (id)icon;
 - (id)initWithArchiveController:(id)arg1 path:(id)arg2;
@@ -50,6 +50,7 @@
 - (id)previewItemURL;
 - (id)rootUnzippingURL;
 - (void)setLevel:(int)arg1;
+- (void)setPath:(id)arg1;
 - (void)setPreviewItemIndex:(int)arg1;
 - (void)setRootUnzippingURL:(id)arg1;
 - (void)setSubItems:(id)arg1;

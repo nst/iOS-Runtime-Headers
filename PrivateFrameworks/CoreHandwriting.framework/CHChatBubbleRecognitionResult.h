@@ -13,7 +13,6 @@
 @property (readonly) struct CGPoint { float x1; float x2; } stemLocation;
 @property (readonly) float stemWidth;
 
-- (id).cxx_construct;
 - (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 center:(struct CGPoint { float x1; float x2; })arg4 size:(struct CGSize { float x1; float x2; })arg5 stemLocation:(struct CGPoint { float x1; float x2; })arg6 stemWidth:(float)arg7;
 - (struct CGPoint { float x1; float x2; })stemLocation;
 - (float)stemWidth;

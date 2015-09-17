@@ -4,16 +4,17 @@
 
 @interface GEOTrafficRerouteFeedback : PBCodable <NSCopying> {
     int _actionType;
-    NSData *_directionResponseID;
+    int _alertType;
+    BOOL _backgrounded;
     struct { 
         unsigned int actionType : 1; 
+        unsigned int alertType : 1; 
         unsigned int oldRouteHistoricTravelTime : 1; 
         unsigned int oldRouteTravelTime : 1; 
         unsigned int reroutedRouteHistoricTravelTime : 1; 
         unsigned int reroutedRouteTravelTime : 1; 
-        unsigned int oldRouteBlocked : 1; 
+        unsigned int backgrounded : 1; 
     } _has;
-    BOOL _oldRouteBlocked;
     unsigned int _oldRouteHistoricTravelTime;
     NSData *_oldRouteID;
     NSMutableArray *_oldRouteIncidents;
@@ -24,17 +25,17 @@
 }
 
 @property (nonatomic) int actionType;
-@property (nonatomic, retain) NSData *directionResponseID;
+@property (nonatomic) int alertType;
+@property (nonatomic) BOOL backgrounded;
 @property (nonatomic) BOOL hasActionType;
-@property (nonatomic, readonly) BOOL hasDirectionResponseID;
-@property (nonatomic) BOOL hasOldRouteBlocked;
+@property (nonatomic) BOOL hasAlertType;
+@property (nonatomic) BOOL hasBackgrounded;
 @property (nonatomic) BOOL hasOldRouteHistoricTravelTime;
 @property (nonatomic, readonly) BOOL hasOldRouteID;
 @property (nonatomic) BOOL hasOldRouteTravelTime;
 @property (nonatomic) BOOL hasReroutedRouteHistoricTravelTime;
 @property (nonatomic, readonly) BOOL hasReroutedRouteID;
 @property (nonatomic) BOOL hasReroutedRouteTravelTime;
-@property (nonatomic) BOOL oldRouteBlocked;
 @property (nonatomic) unsigned int oldRouteHistoricTravelTime;
 @property (nonatomic, retain) NSData *oldRouteID;
 @property (nonatomic, retain) NSMutableArray *oldRouteIncidents;
@@ -45,16 +46,17 @@
 
 - (int)actionType;
 - (void)addOldRouteIncidents:(id)arg1;
+- (int)alertType;
+- (BOOL)backgrounded;
 - (void)clearOldRouteIncidents;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (id)directionResponseID;
 - (BOOL)hasActionType;
-- (BOOL)hasDirectionResponseID;
-- (BOOL)hasOldRouteBlocked;
+- (BOOL)hasAlertType;
+- (BOOL)hasBackgrounded;
 - (BOOL)hasOldRouteHistoricTravelTime;
 - (BOOL)hasOldRouteID;
 - (BOOL)hasOldRouteTravelTime;
@@ -64,7 +66,6 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (BOOL)oldRouteBlocked;
 - (unsigned int)oldRouteHistoricTravelTime;
 - (id)oldRouteID;
 - (id)oldRouteIncidents;
@@ -76,14 +77,15 @@
 - (id)reroutedRouteID;
 - (unsigned int)reroutedRouteTravelTime;
 - (void)setActionType:(int)arg1;
-- (void)setDirectionResponseID:(id)arg1;
+- (void)setAlertType:(int)arg1;
+- (void)setBackgrounded:(BOOL)arg1;
 - (void)setHasActionType:(BOOL)arg1;
-- (void)setHasOldRouteBlocked:(BOOL)arg1;
+- (void)setHasAlertType:(BOOL)arg1;
+- (void)setHasBackgrounded:(BOOL)arg1;
 - (void)setHasOldRouteHistoricTravelTime:(BOOL)arg1;
 - (void)setHasOldRouteTravelTime:(BOOL)arg1;
 - (void)setHasReroutedRouteHistoricTravelTime:(BOOL)arg1;
 - (void)setHasReroutedRouteTravelTime:(BOOL)arg1;
-- (void)setOldRouteBlocked:(BOOL)arg1;
 - (void)setOldRouteHistoricTravelTime:(unsigned int)arg1;
 - (void)setOldRouteID:(id)arg1;
 - (void)setOldRouteIncidents:(id)arg1;

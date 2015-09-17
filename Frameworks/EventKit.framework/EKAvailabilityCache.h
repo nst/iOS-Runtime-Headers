@@ -22,6 +22,7 @@
 - (void)cancelAvailabilityRequestWithID:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)init;
 - (id)initWithSource:(id)arg1;
 - (id)requestAvailabilityBetweenStartDate:(id)arg1 endDate:(id)arg2 ignoredEventID:(id)arg3 addresses:(id)arg4 resultsBlock:(id /* block */)arg5 completionBlock:(id /* block */)arg6;
 

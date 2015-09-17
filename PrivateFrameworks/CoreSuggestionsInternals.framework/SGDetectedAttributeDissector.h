@@ -2,21 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGDetectedAttributeDissector : NSObject <SGPipelineDissector>
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
+@interface SGDetectedAttributeDissector : SGPipelineDissector
 
 + (void)initialize;
 + (BOOL)isAddressContext:(id)arg1;
 + (BOOL)isPhoneContext:(id)arg1;
 
 - (id)detailTypeFromPrefix:(id)arg1;
+- (id)detailTypeFromPrefix:(id)arg1 detectedLabelPointer:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
 - (id)detectionFromBodyDDMatch:(id)arg1 onEntity:(id)arg2;
-- (id)detectionFromSignatureDDMatch:(id)arg1 onEntity:(id)arg2;
-- (void)dissect:(id)arg1;
+- (id)detectionFromSignatureDDMatch:(id)arg1 onEntity:(id)arg2 detectedLabelRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg3 lastClaimedLabelRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (void)dissectInternal:(id)arg1;
 - (id)filterDangerousSigAddressDetections:(id)arg1 onEntity:(id)arg2;
 - (id)filterDangerousSigDetections:(id)arg1 onEntity:(id)arg2;
 - (id)filterDangerousSigEmailDetections:(id)arg1 onEntity:(id)arg2;

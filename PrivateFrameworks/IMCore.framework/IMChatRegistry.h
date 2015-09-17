@@ -9,12 +9,14 @@
     NSMutableDictionary *_chatGUIDToCurrentThreadMap;
     NSMutableDictionary *_chatGUIDToInfoMap;
     NSMutableDictionary *_chatGUIDToiMessageSentOrReceivedMap;
+    NSMutableDictionary *_chatsBeingLoadedMap;
     BOOL _daemonHadTerminated;
     long long _daemonLastFailedMessageID;
     unsigned int _daemonUnreadCount;
     unsigned int _defaultNumberOfMessagesToLoad;
     BOOL _firstLoad;
     NSString *_historyModificationStamp;
+    BOOL _isInternalInstall;
     BOOL _loading;
     IMTimer *_markAsReadTimer;
     NSMutableArray *_pendingQueries;
@@ -35,11 +37,7 @@
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
-+ (Class)chatClass;
-+ (Class)chatRegistryClass;
 + (Class)messageClass;
-+ (void)setChatClass:(Class)arg1;
-+ (void)setChatRegistryClass:(Class)arg1;
 + (void)setMessageClass:(Class)arg1;
 + (id)sharedInstance;
 
@@ -59,8 +57,10 @@
 - (void)_chat:(id)arg1 setProperties:(id)arg2 ofParticipant:(id)arg3;
 - (void)_chat:(id)arg1 setValue:(id)arg2 forChatProperty:(id)arg3;
 - (void)_chat:(id)arg1 updateDisplayName:(id)arg2;
+- (void)_chat:(id)arg1 updateIsFiltered:(BOOL)arg2;
 - (id)_chatForChatDictionary:(id)arg1 items:(id)arg2 allowCreate:(BOOL)arg3 createdChat:(BOOL*)arg4 outGUID:(id*)arg5;
 - (id)_chatInstanceForGUID:(id)arg1;
+- (void)_chatLoadedWithChatIdentifier:(id)arg1 chats:(id)arg2;
 - (void)_chat_clearHistory:(id)arg1 beforeGUID:(id)arg2 afterGUID:(id)arg3 queryID:(id)arg4;
 - (void)_chat_declineInvitation:(id)arg1;
 - (void)_chat_leave:(id)arg1;
@@ -87,6 +87,7 @@
 - (BOOL)_hasChat:(id)arg1 forService:(id)arg2;
 - (BOOL)_isLoading;
 - (id)_lookupExistingChatWithIMHandle:(id)arg1;
+- (void)_markHasHadSuccessfulQueryForChat:(id)arg1;
 - (void)_noteChatDealloc:(id)arg1;
 - (void)_noteChatInit:(id)arg1;
 - (BOOL)_postMessageSentNotifications;
@@ -115,6 +116,7 @@
 - (id)allExistingChats;
 - (void)attachmentQuery:(id)arg1 chatID:(id)arg2 services:(id)arg3 finishedWithResult:(id)arg4;
 - (void)chat:(id)arg1 displayNameUpdated:(id)arg2;
+- (void)chat:(id)arg1 isFilteredUpdated:(BOOL)arg2;
 - (void)chat:(id)arg1 propertiesUpdated:(id)arg2;
 - (void)chat:(id)arg1 updated:(id)arg2;
 - (id)chatForIMHandle:(id)arg1;
@@ -123,6 +125,7 @@
 - (id)chatForIMHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(BOOL)arg3;
 - (id)chatForRoom:(id)arg1 onAccount:(id)arg2;
 - (id)chatForURL:(id)arg1 outMessageText:(id*)arg2 outRecipientIDs:(id*)arg3 outService:(id*)arg4 outMessageGUID:(id*)arg5;
+- (void)chatLoadedWithChatIdentifier:(id)arg1 chats:(id)arg2;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
 - (id)existingChatForIMHandle:(id)arg1;
@@ -130,6 +133,7 @@
 - (id)existingChatForIMHandles:(id)arg1;
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2;
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2 groupID:(id)arg3;
+- (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2 groupID:(id)arg3 displayName:(id)arg4 ignoresDisplayName:(BOOL)arg5 joinedChatsOnly:(BOOL)arg6;
 - (id)existingChatForIMHandles:(id)arg1 allowRetargeting:(BOOL)arg2 groupID:(id)arg3 displayName:(id)arg4 joinedChatsOnly:(BOOL)arg5;
 - (id)existingChatForRoom:(id)arg1 onAccount:(id)arg2;
 - (id)existingChatForRoom:(id)arg1 onAccount:(id)arg2 allowRetargeting:(BOOL)arg3;
@@ -145,9 +149,11 @@
 - (long long)lastFailedMessageID;
 - (void)lastFailedMessageIDChanged:(long long)arg1;
 - (void)leftChat:(id)arg1;
+- (id)loadChatFromDaemonWithChatIdentifier:(id)arg1;
 - (id)messagesURLWithChat:(id)arg1 orHandles:(id)arg2 withMessageText:(id)arg3;
 - (unsigned int)numberOfExistingChats;
 - (void)setActiveChatURL:(id)arg1;
+- (void)setUserActivityForChat:(id)arg1 orHandles:(id)arg2 title:(id)arg3;
 - (void)setupComplete;
 - (void)setupComplete:(BOOL)arg1 info:(id)arg2;
 - (void)systemApplicationDidResume;
@@ -159,6 +165,6 @@
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (id)_ck_chatForHandles:(id)arg1 createIfNecessary:(BOOL)arg2;
-- (id)_ck_chatForHandles:(id)arg1 displayName:(id)arg2 joinedChatsOnly:(BOOL)arg3 createIfNecessary:(BOOL)arg4;
+- (id)_ck_chatForHandles:(id)arg1 displayName:(id)arg2 ignoresDisplayName:(BOOL)arg3 joinedChatsOnly:(BOOL)arg4 createIfNecessary:(BOOL)arg5;
 
 @end

@@ -52,6 +52,7 @@
 @property (nonatomic) int selectionBarRow;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_anyDateLabel;
 - (BOOL)_beginTrackingWithEvent:(id)arg1;
 - (id)_checkedRows;

@@ -9,6 +9,7 @@
 - (void)tonePickerController:(TKTonePickerController *)arg1 didSelectMediaItemAtIndex:(unsigned int)arg2 selectionDidChange:(BOOL)arg3;
 - (NSNumber *)tonePickerController:(TKTonePickerController *)arg1 identifierOfMediaItemAtIndex:(unsigned int)arg2;
 - (unsigned int)tonePickerController:(TKTonePickerController *)arg1 indexOfMediaItemWithIdentifier:(NSNumber *)arg2;
+- (void)tonePickerController:(TKTonePickerController *)arg1 requestsPresentingAlertWithTitle:(NSString *)arg2 message:(NSString *)arg3;
 - (void)tonePickerController:(TKTonePickerController *)arg1 requestsPresentingToneClassicsPickerForItem:(TKTonePickerItem *)arg2;
 - (void)tonePickerController:(TKTonePickerController *)arg1 selectedMediaItemWithIdentifier:(NSNumber *)arg2;
 - (NSString *)tonePickerController:(TKTonePickerController *)arg1 titleOfMediaItemAtIndex:(unsigned int)arg2;

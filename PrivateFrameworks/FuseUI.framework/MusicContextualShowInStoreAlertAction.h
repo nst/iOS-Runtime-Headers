@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualShowInStoreAlertAction : UIAlertAction
+@interface MusicContextualShowInStoreAlertAction : MusicContextualAlertAction
 
 + (id)contextualShowInStoreActionWithEntityValueContext:(id)arg1 didDismissHandler:(id /* block */)arg2;
 

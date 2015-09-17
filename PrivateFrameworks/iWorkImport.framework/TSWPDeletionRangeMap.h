@@ -4,10 +4,13 @@
 
 @interface TSWPDeletionRangeMap : NSObject {
     TSWPRangeArray *_removedRanges;
-    unsigned int _subRangeStart;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } _subRange;
 }
 
-- (void)adjustByDelta:(int)arg1;
+- (void)adjustByDelta:(int)arg1 startingAt:(unsigned int)arg2;
 - (BOOL)containsCharIndex:(unsigned int)arg1;
 - (void)dealloc;
 - (id)initWithSubRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 removeRanges:(id)arg2;

@@ -10,9 +10,9 @@
 @property (nonatomic, retain) PSRootController *containerNavigationController;
 @property (nonatomic) <PSSplitViewControllerNavigationDelegate> *navigationDelegate;
 
+- (void).cxx_destruct;
 - (id)childViewControllerForStatusBarStyle;
 - (id)containerNavigationController;
-- (void)dealloc;
 - (id)navigationDelegate;
 - (void)popRecursivelyToRootController;
 - (void)setContainerNavigationController:(id)arg1;

@@ -12,6 +12,7 @@
 
 - (id)alignmentInfo;
 - (void)dealloc;
+- (id)description;
 - (id)protection;
 - (void)setAlignmentInfo:(id)arg1;
 - (void)setProtection:(id)arg1;

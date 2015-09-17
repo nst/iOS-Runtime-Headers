@@ -31,7 +31,9 @@
 - (void)_handleRemoveServiceRequest:(id)arg1;
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_registerForMessages;
+- (id)assistantUniqueIdentifier;
 - (void)configure:(id)arg1 queue:(id)arg2;
+- (BOOL)containsAccessoryWithUUID:(id)arg1;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (void)fixupServicesForReplacementAccessory:(id)arg1;
@@ -50,6 +52,7 @@
 - (void)setName:(id)arg1;
 - (void)setServices:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (id)url;
 - (id)uuid;
 - (id)workQueue;
 

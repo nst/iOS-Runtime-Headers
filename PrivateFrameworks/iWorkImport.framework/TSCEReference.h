@@ -5,7 +5,7 @@
 @interface TSCEReference : NSObject {
     NSString *mOverrideText;
     NSString *mOverrideTextAsTyped;
-    struct { 
+    struct TSCECReference { 
         int referenceType; 
         union { 
             struct { 
@@ -60,8 +60,7 @@
     BOOL mWasConstructedViaNames;
 }
 
-- (id).cxx_construct;
-- (struct { int x1; union { struct { struct { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; int x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned long long x_5_2_1; unsigned long long x_5_2_2; } x_2_1_5; } x2; })cReference;
+- (struct TSCECReference { int x1; union { struct { struct { unsigned short x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_1_2_1; struct __CFUUID {} *x_1_2_2; } x_2_1_1; struct { struct TSCERangeCoordinate { struct { unsigned short x_1_4_1; unsigned char x_1_4_2; unsigned char x_1_4_3; } x_1_3_1; struct { unsigned short x_2_4_1; unsigned char x_2_4_2; unsigned char x_2_4_3; } x_1_3_2; } x_2_2_1; struct __CFUUID {} *x_2_2_2; } x_2_1_2; struct { struct { struct TSCERangeCoordinate { struct { unsigned short x_1_5_1; unsigned char x_1_5_2; unsigned char x_1_5_3; } x_1_4_1; struct { unsigned short x_2_5_1; unsigned char x_2_5_2; unsigned char x_2_5_3; } x_1_4_2; } x_1_3_1; struct __CFUUID {} *x_1_3_2; } x_3_2_1; int x_3_2_2; } x_2_1_3; struct __CFUUID {} *x_2_1_4; struct { unsigned long long x_5_2_1; unsigned long long x_5_2_2; } x_2_1_5; } x2; })cReference;
 - (void)dealloc;
 - (id)initWithCellReference:(struct { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct __CFUUID {} *x2; })arg1;
 - (id)initWithRangeReference:(struct { struct TSCERangeCoordinate { struct { unsigned short x_1_2_1; unsigned char x_1_2_2; unsigned char x_1_2_3; } x_1_1_1; struct { unsigned short x_2_2_1; unsigned char x_2_2_2; unsigned char x_2_2_3; } x_1_1_2; } x1; struct __CFUUID {} *x2; })arg1;

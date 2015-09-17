@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSString *shareeDisplayName;
 @property (nonatomic, readonly) NSString *shareeFirstName;
 @property (nonatomic, readonly) NSString *shareeLastName;
-@property (nonatomic, readonly) int status;
+@property (nonatomic, readonly) unsigned int status;
 
 - (id)_persistentInviteReplyNotification;
 - (BOOL)alerted;
@@ -25,6 +25,6 @@
 - (id)shareeDisplayName;
 - (id)shareeFirstName;
 - (id)shareeLastName;
-- (int)status;
+- (unsigned int)status;
 
 @end

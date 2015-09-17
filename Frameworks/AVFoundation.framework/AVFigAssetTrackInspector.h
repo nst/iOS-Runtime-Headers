@@ -20,7 +20,7 @@
 - (struct OpaqueFigTrackReader { }*)_figTrackReader;
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (void)_invokeCompletionHandlerForLoadingBatches:(id)arg1;
-- (int)_loadStatusForFigAssetTrackProperty:(id)arg1 returningError:(int*)arg2;
+- (int)_loadStatusForFigAssetTrackProperty:(id)arg1 error:(id*)arg2;
 - (id)_loadingBatches;
 - (struct OpaqueFigSimpleMutex { }*)_loadingMutex;
 - (void)_removeFigNotifications;

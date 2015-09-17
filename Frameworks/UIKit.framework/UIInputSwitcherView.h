@@ -3,7 +3,8 @@
  */
 
 @interface UIInputSwitcherView : UIKeyboardMenuView {
-    int m_currentInputModeIndex;
+    UISwitch *m_assistantSwitch;
+    unsigned int m_currentInputModeIndex;
     NSMutableArray *m_inputModes;
     BOOL m_keyboardSettingsFromSwitcher;
     UISwitch *m_predictiveSwitch;
@@ -15,16 +16,17 @@
 + (id)activeInstance;
 + (id)sharedInstance;
 
+- (id)assistantSwitch;
 - (void)dealloc;
-- (int)defaultSelectedIndex;
-- (void)didSelectItemAtIndex:(int)arg1;
-- (id)fontForItemAtIndex:(int)arg1;
+- (unsigned int)defaultSelectedIndex;
+- (void)didSelectItemAtIndex:(unsigned int)arg1;
+- (id)fontForItemAtIndex:(unsigned int)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)inputModes;
 - (BOOL)keyboardSettingsFromSwitcher;
-- (id)localizedTitleForItemAtIndex:(int)arg1;
+- (id)localizedTitleForItemAtIndex:(unsigned int)arg1;
 - (id)nextInputMode;
-- (int)numberOfItems;
+- (unsigned int)numberOfItems;
 - (id)predictiveSwitch;
 - (struct CGSize { float x1; float x2; })preferredSize;
 - (id)previousInputMode;
@@ -37,10 +39,11 @@
 - (void)setInputModes:(id)arg1;
 - (void)setKeyboardSettingsFromSwitcher:(BOOL)arg1;
 - (void)show;
-- (id)subtitleFontForItemAtIndex:(int)arg1;
-- (id)subtitleForItemAtIndex:(int)arg1;
+- (id)subtitleFontForItemAtIndex:(unsigned int)arg1;
+- (id)subtitleForItemAtIndex:(unsigned int)arg1;
 - (void)switchAction;
-- (id)titleForItemAtIndex:(int)arg1;
+- (id)titleForItemAtIndex:(unsigned int)arg1;
+- (void)toggleKeyboardAssistantPreference;
 - (void)toggleKeyboardPredictionPreference;
 
 @end

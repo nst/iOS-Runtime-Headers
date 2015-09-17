@@ -42,7 +42,7 @@
 - (BOOL)shouldDelayArchivingObject:(id)arg1;
 - (void)skipArchivingObject:(id)arg1;
 - (void)stopCapturingSnapshots;
-- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2;
+- (void)willModifyObject:(id)arg1 duringReadOperation:(BOOL)arg2 shouldCaptureSnapshot:(BOOL)arg3;
 - (void)writeRootObject:(id)arg1 completion:(id /* block */)arg2;
 
 @end

@@ -3,34 +3,63 @@
  */
 
 @interface IKAppMediaItemBridge : NSObject {
+    IKAppContext *_appContext;
     <IKAppMediaItem> *_appMediaItem;
     IKJSMediaItem *_jsMediaItem;
 }
 
+@property (nonatomic, readonly) IKAppContext *appContext;
 @property (nonatomic, readonly) <IKAppMediaItem> *appMediaItem;
+@property (nonatomic, retain) NSString *artworkImageURL;
+@property (nonatomic, retain) NSArray *chapterGroups;
+@property (nonatomic, retain) NSString *contentRatingDomain;
+@property (nonatomic, retain) NSNumber *contentRatingRanking;
 @property (nonatomic, retain) NSString *description;
+@property (nonatomic, retain) NSArray *interstitials;
+@property (nonatomic) BOOL isExplicit;
 @property (nonatomic, readonly) IKJSMediaItem *jsMediaItem;
+@property (nonatomic, retain) NSString *ratingBadge;
+@property (nonatomic, retain) NSNumber *resumeTime;
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) NSString *title;
+@property (nonatomic, retain) NSString *type;
 @property (nonatomic, retain) NSString *url;
 
 - (void).cxx_destruct;
+- (id)appContext;
 - (id)appMediaItem;
-- (void)certificateComplete:(id)arg1 error:(id)arg2 callback:(id /* block */)arg3;
-- (void)contentIdentifierComplete:(id)arg1 error:(id)arg2 callback:(id /* block */)arg3;
+- (id)artworkImageURL;
+- (id)chapterGroups;
+- (id)contentRatingDomain;
+- (id)contentRatingRanking;
+- (void)dealloc;
 - (id)description;
 - (id)initWithJSMediaItem:(id)arg1;
+- (id)interstitials;
+- (BOOL)isExplicit;
 - (id)jsMediaItem;
-- (void)keyComplete:(id)arg1 error:(id)arg2 callback:(id /* block */)arg3;
+- (void)loadCertificateDataForURL:(id)arg1 withCallback:(id /* block */)arg2;
+- (void)loadContentIdentifierDataForURL:(id)arg1 withCallback:(id /* block */)arg2;
+- (void)loadKeyDataForURL:(id)arg1 keyRequestData:(id)arg2 withCallback:(id /* block */)arg3;
+- (void)prepareForLoadingWithCallback:(id /* block */)arg1;
+- (id)ratingBadge;
+- (id)resumeTime;
+- (void)setArtworkImageURL:(id)arg1;
+- (void)setChapterGroups:(id)arg1;
+- (void)setContentRatingDomain:(id)arg1;
+- (void)setContentRatingRanking:(id)arg1;
 - (void)setDescription:(id)arg1;
+- (void)setInterstitials:(id)arg1;
+- (void)setIsExplicit:(BOOL)arg1;
+- (void)setRatingBadge:(id)arg1;
+- (void)setResumeTime:(id)arg1;
 - (void)setSubtitle:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setType:(id)arg1;
 - (void)setUrl:(id)arg1;
-- (void)startLoadingCertificateDataForURL:(id)arg1 withCallback:(id /* block */)arg2;
-- (void)startLoadingContentIdentifierDataForURL:(id)arg1 withCallback:(id /* block */)arg2;
-- (void)startLoadingKeyDataForURL:(id)arg1 keyRequestData:(id)arg2 withCallback:(id /* block */)arg3;
 - (id)subtitle;
 - (id)title;
+- (id)type;
 - (id)url;
 
 @end

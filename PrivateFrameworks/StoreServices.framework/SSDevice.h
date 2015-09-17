@@ -49,6 +49,7 @@
 @property (getter=isStoreFrontIdentifierTransient, readonly) BOOL storeFrontIdentifierTransient;
 @property (readonly) Class superclass;
 @property (readonly) NSString *synchedStoreFrontIdentifier;
+@property (readonly) NSString *thinnedApplicationVariantIdentifier;
 @property (readonly) NSString *uniqueDeviceIdentifier;
 @property (readonly) NSString *userAgent;
 
@@ -133,6 +134,7 @@
 - (BOOL)supportsDeviceCapability:(int)arg1;
 - (id)synchedStoreFrontIdentifier;
 - (void)synchronizeAutomaticDownloadKinds;
+- (id)thinnedApplicationVariantIdentifier;
 - (void)unionAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (id)uniqueDeviceIdentifier;
 - (id)userAgent;

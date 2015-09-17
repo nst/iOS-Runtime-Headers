@@ -3,52 +3,80 @@
  */
 
 @interface UIKBHandwritingView : UIKBKeyView <UIGestureRecognizerDelegate> {
+    NSMutableSet *_activeTouches;
+    UIKBHandwritingBezierPathPointFIFO *_bezierPathFIFO;
     UIBezierPath *_currentPath;
+    NSMutableArray *_currentPoints;
+    BOOL _initialPointPosted;
     struct CGColor { } *_inkColor;
     struct CGImage { } *_inkMask;
     float _inkWidth;
-    NSMutableArray *_interpolatedPaths;
+    NSMutableArray *_interpolatedPoints;
     UIKBHandwritingQuadCurvePointFIFO *_interpolatingFIFO;
+    struct { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } point; 
+        float force; 
+    } _previousPoint;
     UIKBHandwritingBoxcarFilterPointFIFO *_smoothingFIFO;
     UIKBHandwritingStrokePointFIFO *_strokeFIFO;
     UIKBHandwritingStrokeView *_strokeView;
 }
 
+@property (nonatomic, retain) NSMutableSet *activeTouches;
+@property (nonatomic, retain) UIKBHandwritingBezierPathPointFIFO *bezierPathFIFO;
 @property (nonatomic, retain) UIBezierPath *currentPath;
+@property (nonatomic, retain) NSMutableArray *currentPoints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL initialPointPosted;
 @property (nonatomic) struct CGColor { }*inkColor;
 @property (nonatomic) struct CGImage { }*inkMask;
 @property (nonatomic) float inkWidth;
-@property (nonatomic, retain) NSMutableArray *interpolatedPaths;
+@property (nonatomic, retain) NSMutableArray *interpolatedPoints;
 @property (nonatomic, retain) UIKBHandwritingQuadCurvePointFIFO *interpolatingFIFO;
+@property (nonatomic) struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } previousPoint;
 @property (nonatomic, retain) UIKBHandwritingBoxcarFilterPointFIFO *smoothingFIFO;
 @property (nonatomic, retain) UIKBHandwritingStrokePointFIFO *strokeFIFO;
 @property (nonatomic, retain) UIKBHandwritingStrokeView *strokeView;
 @property (readonly) Class superclass;
 
-- (void)addInkPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)activeTouches;
+- (void)addInkPoint:(struct CGPoint { float x1; float x2; })arg1 value:(float)arg2;
+- (id)bezierPathFIFO;
 - (BOOL)cancelTouchTracking;
 - (void)clearAndNotify:(BOOL)arg1;
+- (void)clearTouches;
 - (id)currentPath;
+- (id)currentPoints;
 - (void)dealloc;
 - (void)deleteStrokesAtIndexes:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
+- (BOOL)initialPointPosted;
 - (struct CGColor { }*)inkColor;
 - (struct CGImage { }*)inkMask;
 - (float)inkWidth;
-- (id)interpolatedPaths;
+- (id)interpolatedPoints;
 - (id)interpolatingFIFO;
 - (void)log;
+- (unsigned int)numberOfStrokes;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
+- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })previousPoint;
 - (void)send;
+- (void)setActiveTouches:(id)arg1;
+- (void)setBezierPathFIFO:(id)arg1;
 - (void)setCurrentPath:(id)arg1;
+- (void)setCurrentPoints:(id)arg1;
+- (void)setInitialPointPosted:(BOOL)arg1;
 - (void)setInkColor:(struct CGColor { }*)arg1;
 - (void)setInkMask:(struct CGImage { }*)arg1;
 - (void)setInkWidth:(float)arg1;
-- (void)setInterpolatedPaths:(id)arg1;
+- (void)setInterpolatedPoints:(id)arg1;
 - (void)setInterpolatingFIFO:(id)arg1;
+- (void)setPreviousPoint:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
 - (void)setRenderConfig:(id)arg1;
 - (void)setSmoothingFIFO:(id)arg1;
 - (void)setStrokeFIFO:(id)arg1;

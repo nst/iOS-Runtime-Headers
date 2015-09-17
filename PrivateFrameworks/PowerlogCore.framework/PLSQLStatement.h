@@ -3,42 +3,38 @@
  */
 
 @interface PLSQLStatement : NSObject {
-    NSMutableArray *_boundObjects;
     struct sqlite3 { } *_dbConnection;
+    NSObject<OS_dispatch_semaphore> *_dbSem;
     BOOL _isDelete;
     BOOL _isInsert;
     NSString *_sqlQuery;
     struct sqlite3_stmt { } *_statement;
-    NSString *_syncObject;
 }
 
-@property (retain) NSMutableArray *boundObjects;
 @property struct sqlite3 { }*dbConnection;
+@property (retain) NSObject<OS_dispatch_semaphore> *dbSem;
 @property (readonly) BOOL isDelete;
 @property (readonly) BOOL isInsert;
 @property (retain) NSString *sqlQuery;
 @property struct sqlite3_stmt { }*statement;
-@property (retain) NSString *syncObject;
 
 - (void).cxx_destruct;
 - (int)bindValue:(id)arg1 withFormater:(short)arg2 atPosition:(int)arg3;
-- (id)boundObjects;
 - (struct sqlite3 { }*)dbConnection;
+- (id)dbSem;
 - (void)dealloc;
 - (id)description;
 - (void)finalize;
-- (id)initWithSQLQuery:(id)arg1 forDatabase:(struct sqlite3 { }*)arg2 withSyncObject:(id)arg3 result:(int*)arg4;
+- (id)initWithSQLQuery:(id)arg1 forDatabase:(struct sqlite3 { }*)arg2 withDBSem:(id)arg3 result:(int*)arg4;
 - (BOOL)isDelete;
 - (BOOL)isInsert;
 - (id)perform;
 - (void)reset;
-- (void)setBoundObjects:(id)arg1;
 - (void)setDbConnection:(struct sqlite3 { }*)arg1;
+- (void)setDbSem:(id)arg1;
 - (void)setSqlQuery:(id)arg1;
 - (void)setStatement:(struct sqlite3_stmt { }*)arg1;
-- (void)setSyncObject:(id)arg1;
 - (id)sqlQuery;
 - (struct sqlite3_stmt { }*)statement;
-- (id)syncObject;
 
 @end

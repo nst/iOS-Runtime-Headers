@@ -30,9 +30,11 @@
 + (id)_popoverControllerForReferenceLibraryWithString:(id)arg1;
 + (id)_pressedButtonImage;
 + (BOOL)_shouldShowDefineForTerm:(id)arg1;
++ (BOOL)_shouldShowDefineForTermOfLength:(int)arg1;
 + (id)_viewControllerForReferenceWithString:(id)arg1 options:(unsigned int)arg2;
 + (BOOL)dictionaryHasDefinitionForTerm:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_backgroundColor;
 - (id)_colorAttributes;
 - (id)_defaultButtonImage;
@@ -41,6 +43,7 @@
 - (id)_diddlyDoViewLineColor;
 - (void)_dismissModalReferenceView:(id)arg1;
 - (id)_foregroundColor;
+- (void)_installDoneButtonOnViewControllerIfNeeded:(id)arg1;
 - (void)_installRequiredElementsOnViewController:(id)arg1;
 - (id)_localizedDictionaryTitleAttributes;
 - (id)_pressedButtonImage;
@@ -49,8 +52,9 @@
 - (void)_setPopoverController:(id)arg1;
 - (void)_setRotationDecider:(id)arg1;
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
-- (void)dealloc;
 - (id /* block */)dismissCompletionHandler;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithTerm:(id)arg1;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
@@ -64,6 +68,8 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 willSelectRowAtIndexPath:(id)arg2;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
+- (void)viewWillLayoutSubviews;
 
 @end

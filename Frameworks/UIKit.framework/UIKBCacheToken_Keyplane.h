@@ -25,6 +25,11 @@
 
 - (id)_initWithKeyplane:(id)arg1 keylayout:(id)arg2;
 - (void)dealloc;
+- (BOOL)isUsableForCacheToken:(id)arg1 withRenderFlags:(int)arg2;
+- (void)setSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setStyling:(struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })arg1;
+- (struct CGSize { float x1; float x2; })size;
 - (id)stringForSplitState:(BOOL)arg1;
+- (struct { unsigned int x1 : 6; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 8; unsigned int x5 : 16; })styling;
 
 @end

@@ -3,6 +3,7 @@
  */
 
 @interface FTMessageDelivery_HTTP : FTMessageDelivery <FTMessageQueueDelegate> {
+    NSObject<OS_dispatch_queue> *_anisetteHeadersQueue;
     BOOL _pendingRetryAfterAirplaneMode;
     IDSRemoteURLConnection *_remoteConnection;
     double _retryTimeAfterAirplaneMode;
@@ -17,7 +18,7 @@
 - (void)_serverBagLoaded:(id)arg1;
 - (BOOL)_tryRetryMessageWithTimeInterval:(double)arg1;
 - (void)_updateWiFiAssertions;
-- (id)_urlRequestWithURL:(id)arg1 andData:(id)arg2 message:(id)arg3;
+- (void)_urlRequestWithURL:(id)arg1 andData:(id)arg2 message:(id)arg3 missingAnisetteHeaders:(BOOL*)arg4 completionBlock:(id /* block */)arg5;
 - (BOOL)busy;
 - (void)cancelMessage:(id)arg1;
 - (void)dealloc;

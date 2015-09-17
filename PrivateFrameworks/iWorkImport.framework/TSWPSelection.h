@@ -64,13 +64,13 @@
 - (BOOL)containsCharacterAtIndex:(unsigned int)arg1;
 - (BOOL)containsCharacterAtIndex:(unsigned int)arg1 allowRightEdge:(BOOL)arg2;
 - (id)copyWithNewRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
-- (id)copyWithNewStyleInsertionBehavior:(int)arg1 caretAffinity:(int)arg2;
+- (id)copyWithNewStyleInsertionBehavior:(int)arg1 newCaretAffinity:(int)arg2;
 - (id)copyWithNewType:(int)arg1;
 - (id)copyWithNewType:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)copyWithNewType:(int)arg1 smartFieldRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)copyWithNewVisualRanges:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1;
 - (id)copyWithNewVisualTypeRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 head:(unsigned int)arg2 tail:(unsigned int)arg3;
-- (id)copyWithVisualRanges:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1 startChar:(unsigned int)arg2 endChar:(unsigned int)arg3 rightToLeft:(BOOL)arg4 sameLine:(BOOL)arg5;
+- (id)copyWithVisualRanges:(const struct TSWPRangeVector { struct _NSRange {} *x1; struct _NSRange {} *x2; struct __compressed_pair<_NSRange *, std::__1::allocator<_NSRange> > { struct _NSRange {} *x_3_1_1; } x3; }*)arg1 headChar:(unsigned int)arg2 tailChar:(unsigned int)arg3 rightToLeft:(BOOL)arg4 sameLine:(BOOL)arg5;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (unsigned int)end;

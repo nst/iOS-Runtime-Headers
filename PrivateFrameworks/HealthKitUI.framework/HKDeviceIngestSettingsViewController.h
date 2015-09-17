@@ -2,23 +2,12 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@interface HKDeviceIngestSettingsViewController : UITableViewController <HKSwitchTableViewCellDelegate> {
-    NSMutableArray *_dataTypeNames;
-    HKDataUnitGroupController *_dataUnitGroupController;
-    BOOL _deviceEnabled;
-    BOOL _deviceFound;
-    NSUUID *_deviceIdentifier;
-    HKHealthStore *_healthStore;
-    HKSource *_source;
+@interface HKDeviceIngestSettingsViewController : _HKIngestSettingsViewController {
+    HKDevice *_device;
 }
 
 - (void).cxx_destruct;
-- (id)initWithHealthStore:(id)arg1 dataUnitGroupController:(id)arg2 source:(id)arg3;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (void)switchCellValueChanged:(id)arg1 value:(BOOL)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
+- (id)initWithHealthStore:(id)arg1 dataUnitGroupController:(id)arg2 device:(id)arg3;
 - (void)viewDidLoad;
 
 @end

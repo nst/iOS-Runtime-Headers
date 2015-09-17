@@ -2,29 +2,34 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSSceneTransitionContext : NSObject <NSCopying, NSMutableCopying> {
+@interface FBSSceneTransitionContext : NSObject <BSDescriptionProviding, BSXPCCoding, NSCopying, NSMutableCopying> {
     NSSet *_actions;
-    BSMachSendRight *_animationFencePort;
+    BKSAnimationFenceHandle *_animationFence;
     BSAnimationSettings *_animationSettings;
     BSMutableSettings *_otherSettings;
     BSMutableSettings *_transientLocalClientSettings;
 }
 
 @property (nonatomic, copy) NSSet *actions;
-@property (nonatomic, copy) BSMachSendRight *animationFencePort;
+@property (nonatomic, retain) BKSAnimationFenceHandle *animationFence;
 @property (nonatomic, copy) BSAnimationSettings *animationSettings;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 + (id)transitionContext;
 
-- (id)_descriptionOfSettingsWithMultilinePrefix:(id)arg1;
 - (id)actions;
-- (id)animationFencePort;
+- (id)animationFence;
 - (id)animationSettings;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithXPCDictionary:(id)arg1;
@@ -33,8 +38,10 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)otherSettings;
 - (void)setActions:(id)arg1;
-- (void)setAnimationFencePort:(id)arg1;
+- (void)setAnimationFence:(id)arg1;
 - (void)setAnimationSettings:(id)arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 - (id)transientLocalClientSettings;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 

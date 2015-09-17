@@ -5,7 +5,7 @@
 
 @optional
 
-- (UITableViewCell *)contactView:(ABContactView *)arg1 cellForItemAtIndex:(int)arg2 inGroup:(ABCardGroup *)arg3;
-- (int)contactView:(ABContactView *)arg1 numberOfItemsInGroup:(ABCardGroup *)arg2;
+- (UITableViewCell *)contactView:(CNContactView *)arg1 cellForItemAtIndex:(int)arg2 inGroup:(CNCardGroup *)arg3;
+- (int)contactView:(CNContactView *)arg1 numberOfItemsInGroup:(CNCardGroup *)arg2;
 
 @end

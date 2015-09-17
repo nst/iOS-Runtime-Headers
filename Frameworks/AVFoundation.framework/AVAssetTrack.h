@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) int trackID;
 
 + (id)keyPathsForValuesAffectingTimeRange;
-+ (id)mediaTypesForMediaCharacteristics;
++ (id)mediaCharacteristicsForMediaTypes;
 
 - (id)_assetTrackInspector;
 - (id)_fallbackTrack;
@@ -27,8 +27,11 @@
 - (id)_initWithAsset:(id)arg1 trackID:(int)arg2 trackIndex:(long)arg3;
 - (id)_initWithAsset:(id)arg1 trackIndex:(long)arg2;
 - (id)_pairedForcedOnlySubtitlesTrack;
+- (void)_startListeningToFigAssetTrackNotifications;
+- (void)_stopListeningToFigAssetTrackNotifications;
 - (BOOL)_subtitleFormatDescriptionMatchesTextDisplayFlags:(unsigned int)arg1 flagsMask:(unsigned int)arg2;
 - (id)_trackReferences;
+- (id)_weakReference;
 - (int)alternateGroupID;
 - (id)asset;
 - (id)associatedTracksOfType:(id)arg1;

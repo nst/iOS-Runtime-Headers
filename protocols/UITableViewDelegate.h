@@ -5,8 +5,10 @@
 
 @optional
 
+- (NSIndexPath *)indexPathForPreferredFocusedViewInTableView:(UITableView *)arg1;
 - (void)tableView:(UITableView *)arg1 accessoryButtonTappedForRowWithIndexPath:(NSIndexPath *)arg2;
 - (int)tableView:(UITableView *)arg1 accessoryTypeForRowWithIndexPath:(NSIndexPath *)arg2;
+- (BOOL)tableView:(UITableView *)arg1 canFocusRowAtIndexPath:(NSIndexPath *)arg2;
 - (BOOL)tableView:(UITableView *)arg1 canPerformAction:(SEL)arg2 forRowAtIndexPath:(NSIndexPath *)arg3 withSender:(id)arg4;
 - (void)tableView:(UITableView *)arg1 didDeselectRowAtIndexPath:(NSIndexPath *)arg2;
 - (void)tableView:(UITableView *)arg1 didEndDisplayingCell:(UITableViewCell *)arg2 forRowAtIndexPath:(NSIndexPath *)arg3;
@@ -16,6 +18,7 @@
 - (void)tableView:(UITableView *)arg1 didHighlightRowAtIndexPath:(NSIndexPath *)arg2;
 - (void)tableView:(UITableView *)arg1 didSelectRowAtIndexPath:(NSIndexPath *)arg2;
 - (void)tableView:(UITableView *)arg1 didUnhighlightRowAtIndexPath:(NSIndexPath *)arg2;
+- (void)tableView:(UITableView *)arg1 didUpdateFocusInContext:(UITableViewFocusUpdateContext *)arg2 withAnimationCoordinator:(UIFocusAnimationCoordinator *)arg3;
 - (NSArray *)tableView:(UITableView *)arg1 editActionsForRowAtIndexPath:(NSIndexPath *)arg2;
 - (int)tableView:(UITableView *)arg1 editingStyleForRowAtIndexPath:(NSIndexPath *)arg2;
 - (float)tableView:(UITableView *)arg1 estimatedHeightForFooterInSection:(int)arg2;
@@ -29,6 +32,7 @@
 - (BOOL)tableView:(UITableView *)arg1 shouldHighlightRowAtIndexPath:(NSIndexPath *)arg2;
 - (BOOL)tableView:(UITableView *)arg1 shouldIndentWhileEditingRowAtIndexPath:(NSIndexPath *)arg2;
 - (BOOL)tableView:(UITableView *)arg1 shouldShowMenuForRowAtIndexPath:(NSIndexPath *)arg2;
+- (BOOL)tableView:(UITableView *)arg1 shouldUpdateFocusInContext:(UITableViewFocusUpdateContext *)arg2;
 - (NSIndexPath *)tableView:(UITableView *)arg1 targetIndexPathForMoveFromRowAtIndexPath:(NSIndexPath *)arg2 toProposedIndexPath:(NSIndexPath *)arg3;
 - (NSString *)tableView:(UITableView *)arg1 titleForDeleteConfirmationButtonForRowAtIndexPath:(NSIndexPath *)arg2;
 - (UIView *)tableView:(UITableView *)arg1 viewForFooterInSection:(int)arg2;

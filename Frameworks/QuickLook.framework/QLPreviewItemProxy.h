@@ -15,6 +15,7 @@
     NSURL *_url;
     NSURL *_urlForDisplay;
     NSUUID *_uuid;
+    BOOL _wantsDefaultMediaPlayer;
 }
 
 @property double autoPlaybackPosition;
@@ -26,13 +27,14 @@
 @property int index;
 @property BOOL isPromisedItem;
 @property (retain) NSString *password;
-@property (readonly) NSString *previewItemTitle;
-@property (readonly) NSURL *previewItemURL;
+@property (nonatomic, readonly) NSString *previewItemTitle;
+@property (nonatomic, readonly) NSURL *previewItemURL;
 @property (readonly) Class superclass;
 @property (retain) NSString *title;
 @property (retain) NSURL *url;
 @property (retain) NSURL *urlForDisplay;
 @property (readonly) NSUUID *uuid;
+@property (nonatomic) BOOL wantsDefaultMediaPlayer;
 
 + (id)encodedClasses;
 + (id)proxyWithPreviewItem:(id)arg1;
@@ -65,9 +67,11 @@
 - (void)setTitle:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (void)setUrlForDisplay:(id)arg1;
+- (void)setWantsDefaultMediaPlayer:(BOOL)arg1;
 - (id)title;
 - (id)url;
 - (id)urlForDisplay;
 - (id)uuid;
+- (BOOL)wantsDefaultMediaPlayer;
 
 @end

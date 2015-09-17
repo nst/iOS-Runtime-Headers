@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@interface NEAgentFilterPlugin : NSObject <NEAgentServerDelegate> {
+@interface NEAgentFilterPlugin : NSObject <NEAgentSessionDelegate> {
     id /* block */ _browserDataCompleteHandler;
     id /* block */ _browserDataHandler;
     struct __CFDictionary { } *_browserFlows;
@@ -29,7 +29,7 @@
     NEPluginPreferences *_pluginPrefs;
     NSString *_pluginType;
     NSObject<OS_dispatch_queue> *_queue;
-    NEAgentServer *_server;
+    NEAgentSession *_session;
     struct NESocketContentFilter_s { } *_socketContentFilter;
 }
 
@@ -42,7 +42,7 @@
 @property (retain) NEPluginPreferences *pluginPrefs;
 @property (readonly) NSString *pluginType;
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
-@property (readonly) NEAgentServer *server;
+@property (readonly) NEAgentSession *session;
 
 - (void).cxx_destruct;
 - (void)acceptNewClientConnection:(id)arg1;
@@ -55,17 +55,18 @@
 - (struct NESocketContentFilter_s { }*)copySocketContentFilter;
 - (void)handleAddClientMessage:(id)arg1;
 - (void)handleAddDataMessage:(id)arg1 forConnection:(id)arg2;
+- (void)handleCancel;
 - (void)handleClientMessage:(id)arg1 forConnection:(id)arg2;
 - (void)handleDataCompleteMessage:(id)arg1 forConnection:(id)arg2;
 - (void)handleDisposeWithCompletionHandler:(id /* block */)arg1;
 - (void)handleEnvironmentEvent:(id)arg1;
-- (BOOL)handleInit;
 - (void)handleInitMessage:(id)arg1;
+- (void)handleInitWithCompletionHandler:(id /* block */)arg1;
 - (void)handleMessage:(id)arg1 withOuterMessage:(id)arg2;
 - (void)handleNewFlowMessage:(id)arg1 forConnection:(id)arg2;
 - (void)handleStart:(id)arg1;
 - (void)handleStop:(id)arg1;
-- (id)initWithServer:(id)arg1 pluginType:(id)arg2 primaryPluginType:(id)arg3 pluginBundle:(struct __CFBundle { }*)arg4;
+- (id)initWithSession:(id)arg1 pluginType:(id)arg2 primaryPluginType:(id)arg3 pluginBundle:(struct __CFBundle { }*)arg4;
 - (int)outstandingSetDataOps;
 - (int)outstandingSetGlobalDataOps;
 - (BOOL)pluginInitialized;
@@ -77,7 +78,7 @@
 - (BOOL)sendSetPersistentData:(struct __CFDictionary { }*)arg1 ofType:(long)arg2;
 - (BOOL)sendSocketContentFilterRequestWithCompletionHandler:(id /* block */)arg1;
 - (void)sendStatus:(long)arg1 withError:(long)arg2;
-- (id)server;
+- (id)session;
 - (void)setBrowserNewFlowHandler:(id /* block */)arg1 dataHandler:(id /* block */)arg2 dataCompleteHandler:(id /* block */)arg3 clientQueue:(id)arg4 andClientInfo:(void*)arg5;
 - (void)setClientListener:(id)arg1;
 - (void)setConfigID:(id)arg1;

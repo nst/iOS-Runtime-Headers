@@ -2,23 +2,13 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSSceneSettingsDiffInspector : NSObject {
-    BOOL _iteratingObservers;
-    BSMutableSettings *_observerInfo;
-}
+@interface FBSSceneSettingsDiffInspector : FBSSettingsDiffInspector
 
-- (void)_addObserver:(id)arg1 forSetting:(unsigned int)arg2 inInfo:(id)arg3;
-- (void)dealloc;
-- (id)description;
-- (id)init;
-- (void)inspectDiff:(id)arg1 withContext:(void*)arg2;
 - (void)observeClassWithBlock:(id /* block */)arg1;
 - (void)observeFrameWithBlock:(id /* block */)arg1;
 - (void)observeInterfaceOrientationWithBlock:(id /* block */)arg1;
 - (void)observeIsBackgroundedWithBlock:(id /* block */)arg1;
 - (void)observeLevelWithBlock:(id /* block */)arg1;
 - (void)observeOcclusionsWithBlock:(id /* block */)arg1;
-- (void)observeOtherSetting:(unsigned int)arg1 withBlock:(id /* block */)arg2;
-- (void)removeAllObservers;
 
 @end

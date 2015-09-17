@@ -14,6 +14,8 @@
     BOOL _enabledCaching;
     BOOL _unlocked;
     BOOL _verbose;
+    int duetRestartToken;
+    NSArray *nonBundles;
 }
 
 @property (retain) NSObject<OS_dispatch_queue> *cacheSerializerQ;
@@ -37,7 +39,6 @@
 - (id)attributeForName:(id)arg1 type:(int)arg2 error:(id*)arg3;
 - (id)attributeFromFullname:(id)arg1 error:(id*)arg2;
 - (id)attributeFromRepresentation:(id)arg1 error:(id*)arg2;
-- (id)attributeNames;
 - (id)attributeNamesWithError:(id*)arg1;
 - (BOOL)broadcastSystemDataWithError:(id*)arg1;
 - (id)budgetForName:(id)arg1 type:(int)arg2 error:(id*)arg3;
@@ -64,9 +65,11 @@
 - (BOOL)loadDylibs;
 - (id)registerAttributeWithName:(id)arg1 type:(int)arg2 dataProtectionClass:(id)arg3 error:(id*)arg4;
 - (id)registerBudgetWithName:(id)arg1 value:(long long)arg2 type:(int)arg3 error:(id*)arg4;
+- (id)registerBudgetWithName:(id)arg1 value:(long long)arg2 type:(int)arg3 withOptions:(unsigned int)arg4 error:(id*)arg5;
 - (BOOL)registerForDeviceChanges;
 - (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 error:(id*)arg3;
 - (id)representationStringFromAttribute:(id)arg1 value:(id)arg2 options:(id)arg3 error:(id*)arg4;
+- (BOOL)setActiveComplications:(id)arg1 error:(id*)arg2;
 - (void)setCacheSerializerQ:(id)arg1;
 - (void)setCachedAttributes:(id)arg1;
 - (void)setCachedBudgets:(id)arg1;
@@ -76,7 +79,9 @@
 - (void)setDeviceList:(id)arg1;
 - (BOOL)setDevicesChangedHandlerWithError:(id*)arg1 handler:(id /* block */)arg2;
 - (void)setEnabledCaching:(BOOL)arg1;
+- (BOOL)setGlancesLingeredOn:(id)arg1 error:(id*)arg2;
 - (BOOL)setNonAppBundlIdWithError:(id)arg1 error:(id*)arg2;
+- (BOOL)setNonAppBundleIdWithError:(id)arg1 error:(id*)arg2;
 - (void)setUnlocked:(BOOL)arg1;
 - (void)setVerbose:(BOOL)arg1;
 - (BOOL)unlocked;

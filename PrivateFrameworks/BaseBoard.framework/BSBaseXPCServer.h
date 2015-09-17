@@ -23,7 +23,9 @@
 - (id)_notifyTokenName;
 - (id)_queue_clientForConnection:(id)arg1;
 - (void)_queue_removeClientConnection:(id)arg1;
+- (void)_sendMessageReply:(id)arg1 messagePacker:(id /* block */)arg2;
 - (void)_sendReply:(id)arg1 messagePacker:(id /* block */)arg2;
+- (void)_sendReplyForMessage:(id)arg1 messagePacker:(id /* block */)arg2;
 - (void)dealloc;
 - (id)initWithServiceName:(id)arg1;
 - (id)initWithServiceName:(id)arg1 onQueue:(id)arg2;

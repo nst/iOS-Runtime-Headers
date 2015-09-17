@@ -5,13 +5,39 @@
 @interface TSTMergeRangeCache : NSObject {
     NSMutableIndexSet *_mergeIndexes;
     TSTMergeOwner *_mergeOwner;
-    TSUSparseArray *_mergeRanges;
+    struct unordered_map<unsigned int, TSUColumnRowRect, std::__1::hash<unsigned int>, std::__1::equal_to<unsigned int>, std::__1::allocator<std::__1::pair<const unsigned int, TSUColumnRowRect> > > { 
+        struct __hash_table<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, std::__1::hash<unsigned int>, true>, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, std::__1::equal_to<unsigned int>, true>, std::__1::allocator<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect> > > { 
+            struct unique_ptr<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> *> > > { 
+                struct __compressed_pair<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> *> > > { 
+                    struct __hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> {} **__first_; 
+                    struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> *> > { 
+                        struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> *> > { 
+                            unsigned long __first_; 
+                        } __data_; 
+                    } __second_; 
+                } __ptr_; 
+            } __bucket_list_; 
+            struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> *>, std::__1::allocator<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> > > { 
+                struct __hash_node_base<std::__1::__hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> *> { 
+                    struct __hash_node<std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, void *> {} *__next_; 
+                } __first_; 
+            } __p1_; 
+            struct __compressed_pair<unsigned long, std::__1::__unordered_map_hasher<unsigned int, std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, std::__1::hash<unsigned int>, true> > { 
+                unsigned long __first_; 
+            } __p2_; 
+            struct __compressed_pair<float, std::__1::__unordered_map_equal<unsigned int, std::__1::__hash_value_type<unsigned int, TSUColumnRowRect>, std::__1::equal_to<unsigned int>, true> > { 
+                float __first_; 
+            } __p3_; 
+        } __table_; 
+    } _mergeRanges;
 }
 
 @property (nonatomic, readonly) unsigned int count;
 @property (nonatomic, readonly) NSIndexSet *mergeIndexes;
 @property (nonatomic, readonly) TSTMergeOwner *mergeOwner;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (unsigned int)count;
 - (void)dealloc;
 - (id)description;
@@ -24,7 +50,7 @@
 - (id)initWithMergeOwner:(id)arg1;
 - (id)mergeIndexes;
 - (id)mergeOwner;
-- (id)mergeRangeAtIndex:(unsigned int)arg1;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })mergeRangeAtIndex:(unsigned int)arg1;
 - (struct vector<TSUColumnRowRect, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x1; struct TSUColumnRowRect {} *x2; struct __compressed_pair<TSUColumnRowRect *, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x_3_1_1; } x3; })mergeRanges;
 - (struct vector<TSUColumnRowRect, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x1; struct TSUColumnRowRect {} *x2; struct __compressed_pair<TSUColumnRowRect *, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x_3_1_1; } x3; })mergeRangesIntersectingCellRegion:(id)arg1;
 - (struct vector<TSUColumnRowRect, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x1; struct TSUColumnRowRect {} *x2; struct __compressed_pair<TSUColumnRowRect *, std::__1::allocator<TSUColumnRowRect> > { struct TSUColumnRowRect {} *x_3_1_1; } x3; })mergeRangesIntersectingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
@@ -33,7 +59,6 @@
 - (BOOL)partiallyIntersectsCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (BOOL)partiallyIntersectsCellRegion:(id)arg1;
 - (void)removeMergeRangeAtIndex:(unsigned int)arg1;
-- (void)setItem:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)setMergeRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 withPriority:(int)arg2 atIndex:(unsigned int)arg3;
+- (void)setMerge:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1 atIndex:(unsigned int)arg2;
 
 @end

@@ -15,15 +15,15 @@
 @property (readonly) BOOL isFolder;
 @property (readonly) int level;
 @property (readonly) int previewItemIndex;
-@property (readonly) NSString *previewItemTitle;
-@property (readonly) NSURL *previewItemURL;
+@property (nonatomic, readonly) NSString *previewItemTitle;
+@property (nonatomic, readonly) NSURL *previewItemURL;
 @property (readonly) Class superclass;
 
 + (id)genericIconForPreviewItem:(id)arg1;
 + (id)uiItemForPreviewItem:(id)arg1 index:(int)arg2;
 
+- (void).cxx_destruct;
 - (void)cancelIconUpdate;
-- (void)dealloc;
 - (id)icon;
 - (BOOL)isFolder;
 - (int)level;

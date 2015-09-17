@@ -3,14 +3,18 @@
  */
 
 @interface UIRuntimeConnection : NSObject <NSCoding> {
-    id destination;
-    NSString *label;
-    id source;
+    id _destination;
+    NSString *_label;
+    id _source;
 }
 
+@property (nonatomic, retain) id destination;
+@property (nonatomic, copy) NSString *label;
+@property (nonatomic, retain) id source;
+
+- (void).cxx_destruct;
 - (void)connect;
 - (void)connectForSimulator;
-- (void)dealloc;
 - (id)destination;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

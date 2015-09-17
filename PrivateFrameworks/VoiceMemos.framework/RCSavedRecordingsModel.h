@@ -14,11 +14,16 @@
 
 @property (nonatomic, readonly) unsigned int count;
 @property (nonatomic, readonly) long long currentEntityRevision;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) int isSavingDisabledCount;
 @property (nonatomic, readonly) NSArray *recordings;
+@property (readonly) Class superclass;
 @property BOOL valid;
 
 + (id)_copyFileIntoRecordingsDirectory:(id)arg1;
++ (id)_dateFormatterComponentFormatting;
 + (void)_importImportableRecordingWithSourceAudioURL:(id)arg1 name:(id)arg2 date:(id)arg3 completionHandler:(id /* block */)arg4;
 + (void)_insertRecordingWithImportableAudioURL:(id)arg1 name:(id)arg2 date:(id)arg3 completionHandler:(id /* block */)arg4;
 + (id)creationDateFromStandardRecordingURL:(id)arg1;
@@ -26,16 +31,16 @@
 + (void)importRecordingWithSourceAudioURL:(id)arg1 name:(id)arg2 date:(id)arg3 completionHandler:(id /* block */)arg4;
 + (void)initialize;
 + (id)savedRecordingsDirectory;
-+ (id)sharedModel;
 + (id)sharedModelForQueue:(id)arg1;
 + (id)standardURLForRecordingWithCreationDate:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)_allCustomLabels;
+- (BOOL)__saveManagedObjectContext:(id*)arg1;
+- (id)_allTitles;
 - (void)_deleteOrphanedEntityRevisionsAndSave:(BOOL)arg1;
 - (void)_deleteRecordingsWithDurationLessThan:(double)arg1 passingTest:(id /* block */)arg2;
 - (id)_entityRevisionWithRecordingID:(long long)arg1;
-- (void)_enumerateFetchedRecordingsCustomLabels:(id /* block */)arg1;
+- (void)_enumerateFetchedRecordingTitles:(id /* block */)arg1;
 - (void)_enumerateSavedRecordingsAndEntityRevisionInArrayOfManagedObjects:(id)arg1 createIfNeeded:(BOOL)arg2 block:(id /* block */)arg3;
 - (void)_handleExternalModelDidSaveNotification:(id)arg1;
 - (void)_handleInternalModelDidSaveNotification:(id)arg1;
@@ -46,6 +51,7 @@
 - (long long)_nextRecordingID;
 - (void)_postRecordingsModelDidChangeForNotificationName:(id)arg1;
 - (id)_recordingWithRecordingID:(long long)arg1;
+- (BOOL)_saveIfNecessary:(id*)arg1;
 - (void)_scheduleAutomaticRecordingDeletions;
 - (void)_setNextEntityRevisionID:(long long)arg1 save:(BOOL)arg2;
 - (void)_setNextRecordingID:(long long)arg1 save:(BOOL)arg2;
@@ -60,24 +66,26 @@
 - (void)enumerateExistingRecordingsSinceEntityRevision:(long long)arg1 withBlock:(id /* block */)arg2;
 - (void)enumerateExistingRecordingsWithBlock:(id /* block */)arg1;
 - (id)fetchSavedRecordingIDs;
+- (void)finishSaveByUpdatingSearchableIndexWithChangeContext:(id)arg1;
 - (BOOL)hasExistingRecordingForAudioFile:(id)arg1;
 - (id)indexPathForRecording:(id)arg1;
 - (id)init;
 - (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3;
 - (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3 customLabelBase:(id)arg4;
+- (id)insertRecordingWithAudioFile:(id)arg1 duration:(double)arg2 date:(id)arg3 customTitleBase:(id)arg4;
 - (int)isSavingDisabledCount;
 - (id)nextRecordingDefaultLabelWithCustomLabelBase:(id)arg1;
+- (id)nextRecordingDefaultLabelWithCustomTitleBase:(id)arg1;
 - (void)performBlockAndWait:(id /* block */)arg1;
 - (void)performWithSavingDisabled:(id /* block */)arg1;
+- (void)prepareToSaveByUpdatingEntityRevisionsWithChangeContext:(id)arg1;
 - (id)recordingAtIndex:(unsigned int)arg1;
 - (id)recordingWithID:(id)arg1;
 - (id)recordingWithITunesPersistentID:(long long)arg1;
 - (id)recordingWithURIRepresentation:(id)arg1;
 - (id)recordings;
 - (id)recordingsForSpotlightSearch:(id)arg1;
-- (void)save;
 - (void)saveIfNecessary;
-- (BOOL)saveManagedObjectContext:(id*)arg1;
 - (void)setIsSavingDisabledCount:(int)arg1;
 - (void)setValid:(BOOL)arg1;
 - (BOOL)setValue:(id)arg1 forDatabaseProperty:(id)arg2;

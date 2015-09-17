@@ -11,7 +11,7 @@
 - (UIImage *)_imageForState:(int)arg1 controlState:(unsigned int)arg2;
 - (BOOL)_isHighlightedForState:(int)arg1;
 - (void)_repositionViews;
+- (void)_setInternallyEnabled:(BOOL)arg1;
 - (void)_updateForState:(int)arg1;
-- (void)setEnabled:(BOOL)arg1;
 
 @end

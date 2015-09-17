@@ -3,28 +3,34 @@
  */
 
 @interface LAContext : NSObject {
-    BOOL _cancelButtonVisible;
     LAClient *_client;
+    NSData *_evaluatedPolicyDomainState;
     NSData *_externalizedContext;
-    BOOL _fallbackButtonVisible;
-    NSString *_localizedFallbackTitle;
     NSNumber *_maxBiometryFailures;
+    <LAPrearmContextXPC> *_prearmContext;
 }
 
 @property (getter=isCancelButtonVisible, nonatomic) BOOL cancelButtonVisible;
-@property (readonly) NSString *creatorDisplayName;
-@property (retain) NSData *externalizedContext;
+@property (nonatomic, retain) NSData *evaluatedPolicyDomainState;
+@property (nonatomic, retain) NSData *externalizedContext;
 @property (getter=isFallbackButtonVisible, nonatomic) BOOL fallbackButtonVisible;
 @property (nonatomic, copy) NSString *localizedFallbackTitle;
 @property (nonatomic, retain) NSNumber *maxBiometryFailures;
+@property (nonatomic) double touchIDAuthenticationAllowableReuseDuration;
+@property (nonatomic, retain) NSNumber *touchIDAuthenticationRetryLimit;
 
 - (void).cxx_destruct;
+- (id)_publicErrorFromInternalError:(id)arg1;
+- (id)_serverPropertyValueForOption:(int)arg1;
+- (void)_setServerPropertyForOption:(int)arg1 value:(id)arg2;
 - (BOOL)canEvaluatePolicy:(int)arg1 error:(id*)arg2;
-- (id)creatorDisplayName;
 - (void)enterPassword:(id)arg1 reply:(id /* block */)arg2;
+- (void)evaluateAccessControl:(struct __SecAccessControl { }*)arg1 operation:(int)arg2 localizedReason:(id)arg3 reply:(id /* block */)arg4;
+- (void)evaluateAccessControl:(struct __SecAccessControl { }*)arg1 operation:(int)arg2 options:(id)arg3 reply:(id /* block */)arg4;
 - (void)evaluatePolicy:(int)arg1 localizedReason:(id)arg2 reply:(id /* block */)arg3;
 - (id)evaluatePolicy:(int)arg1 options:(id)arg2 error:(id*)arg3;
 - (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(id /* block */)arg3;
+- (id)evaluatedPolicyDomainState;
 - (id)evaluationMechanismsForPolicy:(int)arg1 error:(id*)arg2;
 - (id)externalizedContext;
 - (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id /* block */)arg3;
@@ -34,13 +40,21 @@
 - (id)initWithUIDelegate:(id)arg1;
 - (void)invalidate;
 - (BOOL)isCancelButtonVisible;
+- (BOOL)isCredentialSet:(int)arg1;
 - (BOOL)isFallbackButtonVisible;
 - (id)localizedFallbackTitle;
 - (id)maxBiometryFailures;
+- (void)prearmTouchIDWithReply:(id /* block */)arg1;
 - (void)setCancelButtonVisible:(BOOL)arg1;
+- (BOOL)setCredential:(id)arg1 type:(int)arg2;
+- (void)setEvaluatedPolicyDomainState:(id)arg1;
 - (void)setExternalizedContext:(id)arg1;
 - (void)setFallbackButtonVisible:(BOOL)arg1;
 - (void)setLocalizedFallbackTitle:(id)arg1;
 - (void)setMaxBiometryFailures:(id)arg1;
+- (void)setTouchIDAuthenticationAllowableReuseDuration:(double)arg1;
+- (void)setTouchIDAuthenticationRetryLimit:(id)arg1;
+- (double)touchIDAuthenticationAllowableReuseDuration;
+- (id)touchIDAuthenticationRetryLimit;
 
 @end

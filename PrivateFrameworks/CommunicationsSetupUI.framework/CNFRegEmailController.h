@@ -4,7 +4,6 @@
 
 @interface CNFRegEmailController : CNFRegFirstRunController {
     PSSpecifier *_actionGroupSpecifier;
-    id /* block */ _alertHandler;
     NSArray *_checkMailSpecifiers;
     PSSpecifier *_currentActionSpecifier;
     PSSpecifier *_emailSpecifier;
@@ -13,9 +12,9 @@
     NSTimer *_validationTimeoutTimer;
 }
 
-@property (nonatomic, copy) id /* block */ alertHandler;
 @property (nonatomic, copy) NSString *pendingAlias;
 
+- (void).cxx_destruct;
 - (void)_buildActionGroupSpecifierCache:(id)arg1;
 - (void)_buildCheckMailSpecifierCache:(id)arg1;
 - (void)_buildEmailSpecifierCache:(id)arg1;
@@ -34,8 +33,6 @@
 - (void)_stopValidationModeAnimated:(BOOL)arg1;
 - (void)_updateControllerState;
 - (void)_updateUI;
-- (id /* block */)alertHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)aliasSpecifiers;
 - (id)bundle;
 - (void)checkMailTapped:(id)arg1;
@@ -49,7 +46,6 @@
 - (id)pendingAlias;
 - (id)pendingAliasForSpecifier:(id)arg1;
 - (id)selectedAliases;
-- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAliasSelected:(id)arg1;
 - (void)setPendingAlias:(id)arg1;
 - (void)setPendingAlias:(id)arg1 forSpecifier:(id)arg2;

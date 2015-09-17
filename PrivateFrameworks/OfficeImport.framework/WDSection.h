@@ -176,7 +176,6 @@
     } mTrackedProperties;
 }
 
-- (id).cxx_construct;
 - (void)appendColumnSpace:(long)arg1;
 - (void)appendColumnWidth:(long)arg1;
 - (BOOL)bidi;
@@ -193,6 +192,7 @@
 - (long)columnWidthAt:(unsigned int)arg1;
 - (BOOL)columnsEqualWidth;
 - (void)dealloc;
+- (id)description;
 - (id)document;
 - (id)evenPageFooter;
 - (id)evenPageHeader;

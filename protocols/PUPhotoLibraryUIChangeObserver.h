@@ -3,7 +3,7 @@
 
 @protocol PUPhotoLibraryUIChangeObserver <NSObject>
 
-@required
+@optional
 
 - (void)photoLibraryDidChangeOnMainQueue:(PHChange *)arg1;
 - (void)prepareForPhotoLibraryChange:(PHChange *)arg1;

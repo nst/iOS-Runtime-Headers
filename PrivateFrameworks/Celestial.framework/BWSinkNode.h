@@ -19,6 +19,7 @@
 + (void)initialize;
 
 - (void)_setupSinkNodeStateMachine;
+- (void)addOutput:(id)arg1;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (id)currentStateDebugString;
 - (void)dealloc;

@@ -5,22 +5,27 @@
 
 @required
 
-- (void)answerCall:(TUProxyCall *)arg1;
-- (void)conferenceCall:(TUProxyCall *)arg1;
-- (void)dialCall:(TUProxyCall *)arg1;
+- (void)answerCallWithUniqueProxyIdentifier:(NSString *)arg1 withSourceIdentifier:(NSString *)arg2;
+- (void)conferenceCallWithUniqueProxyIdentifier:(NSString *)arg1;
 - (void)disconnectAllCalls;
-- (void)disconnectCall:(TUProxyCall *)arg1;
+- (void)disconnectCallWithUniqueProxyIdentifier:(NSString *)arg1;
 - (void)disconnectCurrentCallAndActivateHeld;
-- (void)endActiveAndAnswerCall:(TUProxyCall *)arg1;
-- (void)endHeldAndAnswerCall:(TUProxyCall *)arg1;
-- (void)holdCall:(TUProxyCall *)arg1;
-- (void)muteCall:(TUProxyCall *)arg1;
-- (void)playDTMFToneForCall:(TUProxyCall *)arg1 key:(unsigned char)arg2;
-- (void)sendHardPauseDigits;
-- (void)setIsSendingAudio:(BOOL)arg1 forCall:(TUProxyCall *)arg2;
+- (void)endActiveAndAnswerCallWithUniqueProxyIdentifier:(NSString *)arg1;
+- (void)endHeldAndAnswerCallWithUniqueProxyIdentifier:(NSString *)arg1;
+- (void)enteredBackgroundForAllCalls;
+- (void)enteredForegroundForCallWithUniqueProxyIdentifier:(NSString *)arg1;
+- (void)holdCallWithUniqueProxyIdentifier:(NSString *)arg1;
+- (void)playDTMFToneForCallWithUniqueProxyIdentifier:(NSString *)arg1 key:(unsigned char)arg2;
+- (void)pullHostedCallsFromPairedHostDevice;
+- (void)pullRelayingCallsFromClient;
+- (void)pushHostedCallsToPairedClientDevice;
+- (void)pushRelayingCallsToHostWithSourceIdentifier:(NSString *)arg1;
+- (void)sendHardPauseDigitsForCallWithUniqueProxyIdentifier:(NSString *)arg1;
+- (void)sendTelephonyDigits:(NSString *)arg1;
 - (void)swapCalls;
-- (void)unconferenceCall:(TUProxyCall *)arg1;
-- (void)unholdCall:(TUProxyCall *)arg1;
-- (void)unmuteCall:(TUProxyCall *)arg1;
+- (void)unconferenceCallWithUniqueProxyIdentifier:(NSString *)arg1;
+- (void)unholdCallWithUniqueProxyIdentifier:(NSString *)arg1;
+- (void)updateCallWithProxy:(TUProxyCall *)arg1;
+- (void)videoProxyCallFiltered:(TUProxyCall *)arg1;
 
 @end

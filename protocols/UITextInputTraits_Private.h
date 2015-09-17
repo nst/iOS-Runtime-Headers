@@ -22,8 +22,10 @@
 - (BOOL)forceEnableDictation;
 - (UIColor *)insertionPointColor;
 - (unsigned int)insertionPointWidth;
+- (BOOL)isCarPlayIdiom;
 - (BOOL)isSingleLineDocument;
 - (BOOL)learnsCorrections;
+- (NSString *)recentInputIdentifier;
 - (NSString *)responseContext;
 - (BOOL)returnKeyGoesToNextResponder;
 - (UIColor *)selectionBarColor;
@@ -42,8 +44,10 @@
 - (void)setForceEnableDictation:(BOOL)arg1;
 - (void)setInsertionPointColor:(UIColor *)arg1;
 - (void)setInsertionPointWidth:(unsigned int)arg1;
+- (void)setIsCarPlayIdiom:(BOOL)arg1;
 - (void)setIsSingleLineDocument:(BOOL)arg1;
 - (void)setLearnsCorrections:(BOOL)arg1;
+- (void)setRecentInputIdentifier:(NSString *)arg1;
 - (void)setResponseContext:(NSString *)arg1;
 - (void)setReturnKeyGoesToNextResponder:(BOOL)arg1;
 - (void)setSelectionBarColor:(UIColor *)arg1;

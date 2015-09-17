@@ -9,6 +9,7 @@
     PKPaymentOptionsDefaults *_defaults;
     unsigned int _holdPendingUpdatesCount;
     NSString *_hostAppLocalizedName;
+    NSString *_hostApplicationIdentifier;
     NSMutableArray *_items;
     PKPassLibrary *_library;
     PKPaymentPass *_pass;
@@ -27,6 +28,7 @@
     NSMutableDictionary *_statusForPasses;
     NSDecimalNumber *_transactionAmount;
     NSMutableDictionary *_typeToItemMap;
+    NSArray *_unavailablePasses;
     id /* block */ _updateHandler;
 }
 
@@ -39,6 +41,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *hostAppLocalizedName;
+@property (nonatomic, retain) NSString *hostApplicationIdentifier;
 @property (nonatomic, readonly) NSArray *items;
 @property (nonatomic, retain) PKPassLibrary *library;
 @property (nonatomic, readonly) NSString *merchantName;
@@ -59,17 +62,20 @@
 @property (nonatomic, retain) NSString *shippingType;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSDecimalNumber *transactionAmount;
+@property (nonatomic, readonly) NSArray *unavailablePasses;
 @property (nonatomic, copy) id /* block */ updateHandler;
 
 - (void)_ensureItemForClass:(Class)arg1;
 - (void)_ensureItems;
 - (void)_ensurePlaceholderItems;
-- (id)_inAppPaymentPassesForNetworks:(id)arg1;
-- (id)_initialBillingContactForPropertyID:(int)arg1;
-- (id)_initialShippingContactForPropertyID:(int)arg1;
+- (id)_inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2;
+- (id)_inAppPrivateLabelPaymentPasses;
+- (id)_initialBillingContactForProperty:(id)arg1;
+- (id)_initialShippingContactForProperty:(id)arg1;
 - (void)_notifyModelChanged;
 - (void)_setDataItem:(id)arg1;
 - (void)_setStatus:(int)arg1 forPaymentPass:(id)arg2;
+- (id)_simulatorPasses;
 - (id)acceptedPasses;
 - (void)beginUpdates;
 - (id)billingAddress;
@@ -79,6 +85,7 @@
 - (id)defaults;
 - (void)endUpdates;
 - (id)hostAppLocalizedName;
+- (id)hostApplicationIdentifier;
 - (id)init;
 - (BOOL)isShippingEditable;
 - (BOOL)isValidWithError:(id*)arg1;
@@ -97,6 +104,7 @@
 - (void)setCachedRecentAddress:(id)arg1;
 - (void)setDefaults:(id)arg1;
 - (void)setHostAppLocalizedName:(id)arg1;
+- (void)setHostApplicationIdentifier:(id)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setPass:(id)arg1;
 - (void)setPaymentApplication:(id)arg1;
@@ -124,6 +132,7 @@
 - (id)shippingType;
 - (int)statusForPass:(id)arg1;
 - (id)transactionAmount;
+- (id)unavailablePasses;
 - (id /* block */)updateHandler;
 
 @end

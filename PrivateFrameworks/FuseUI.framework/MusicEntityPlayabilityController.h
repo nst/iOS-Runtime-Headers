@@ -7,12 +7,15 @@
     BOOL _cellularNetworkAllowed;
     BOOL _hasValidNetworkType;
     int _networkType;
+    BOOL _showCloudMediaEnabled;
 }
 
 - (void).cxx_destruct;
+- (void)_allowsExplicitContentDidChangeNotification:(id)arg1;
 - (void)_cellularNetworkAllowedDidChangeNotification:(id)arg1;
 - (void)_fairPlaySubscriptionStatusDidChangeNotification:(id)arg1;
 - (BOOL)_isCellularNetworkAllowed;
+- (void)_musicDefaultsDidChangeNotification:(id)arg1;
 - (int)_networkType;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)dealloc;

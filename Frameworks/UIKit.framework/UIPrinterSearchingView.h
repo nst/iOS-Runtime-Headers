@@ -3,14 +3,18 @@
  */
 
 @interface UIPrinterSearchingView : UIView {
-    UIActivityIndicatorView *_searchingIndicator;
-    UILabel *_searchingLabel;
-    NSArray *_searchingLabelConstraints;
+    BOOL _constraintsSet;
+    _UIPrintMessageAndSpinnerView *_messageAndSpinner;
 }
 
-- (void)dealloc;
-- (id)initInView:(id)arg1;
+@property (nonatomic) _UIPrintMessageAndSpinnerView *messageAndSpinner;
+
+- (void).cxx_destruct;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)messageAndSpinner;
 - (void)searchTimeout;
+- (void)setMessageAndSpinner:(id)arg1;
 - (void)setSearching:(BOOL)arg1;
+- (void)updateConstraints;
 
 @end

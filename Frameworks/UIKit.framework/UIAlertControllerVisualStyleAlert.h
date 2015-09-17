@@ -2,17 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIAlertControllerVisualStyleAlert : UIAlertControllerVisualStyle {
-    UIAlertControllerDescriptor *_descriptor;
-}
+@interface UIAlertControllerVisualStyleAlert : UIAlertControllerVisualStyle
 
-@property (nonatomic, retain) UIAlertControllerDescriptor *descriptor;
-
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })actionImageMarginForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
+- (void)animateAlertControllerView:(id)arg1 ofAlertController:(id)arg2 forPresentation:(BOOL)arg3 inContainerView:(id)arg4 descendantOfContainerView:(id)arg5 duration:(double)arg6 completionBlock:(id /* block */)arg7;
 - (float)backgroundCornerRadius;
-- (void)dealloc;
-- (id)defaultActionFont;
-- (id)descriptor;
-- (float)horizontalContentMargin;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (float)marginAboveMessageLabelFirstBaseline;
 - (float)marginAboveTitleLabelFirstBaseline;
 - (float)marginBelowLastLabelLastBaseline;
@@ -22,12 +17,12 @@
 - (id)messageLabelColor;
 - (id)messageLabelFont;
 - (float)minimumActionHeight;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })presentationAnimationStartTransform;
+- (int)permittedActionLayoutDirection;
+- (id)preferredActionFont;
 - (id)regularActionFont;
-- (void)setDescriptor:(id)arg1;
+- (id)textFieldContainingViewWithTextField:(id)arg1;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
-- (float)verticalContentMargin;
-- (float)visualAltitude;
+- (double)transitionDurationForPresentation:(BOOL)arg1 ofAlertController:(id)arg2;
 
 @end

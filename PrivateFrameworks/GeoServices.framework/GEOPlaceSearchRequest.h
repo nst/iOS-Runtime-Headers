@@ -3,6 +3,7 @@
  */
 
 @interface GEOPlaceSearchRequest : PBRequest <NSCopying> {
+    GEOAdditionalEnabledMarkets *_additionalEnabledMarkets;
     struct { 
         int *list; 
         unsigned int count; 
@@ -34,6 +35,7 @@
         unsigned int businessSortOrder : 1; 
         unsigned int knownAccuracy : 1; 
         unsigned int localSearchProviderID : 1; 
+        unsigned int mapMode : 1; 
         unsigned int maxBusinessReviews : 1; 
         unsigned int maxResults : 1; 
         unsigned int placeTypeLimit : 1; 
@@ -51,13 +53,16 @@
         unsigned int includePhonetics : 1; 
         unsigned int includeQuads : 1; 
         unsigned int includeRevgeoRequestTemplate : 1; 
+        unsigned int includeRoadAccessPoints : 1; 
         unsigned int includeSpokenNames : 1; 
         unsigned int includeStatusCodeInfo : 1; 
         unsigned int includeSuggestionsOnly : 1; 
         unsigned int includeTravelDistance : 1; 
         unsigned int includeTravelTime : 1; 
         unsigned int includeUnmatchedStrings : 1; 
+        unsigned int isCanonicalLocationSearch : 1; 
         unsigned int isFromAPI : 1; 
+        unsigned int isPopularNearbyRequest : 1; 
         unsigned int isStrictGeocoding : 1; 
         unsigned int isStrictMapRegion : 1; 
         unsigned int structuredSearch : 1; 
@@ -73,6 +78,7 @@
     BOOL _includePhonetics;
     BOOL _includeQuads;
     BOOL _includeRevgeoRequestTemplate;
+    BOOL _includeRoadAccessPoints;
     BOOL _includeSpokenNames;
     BOOL _includeStatusCodeInfo;
     BOOL _includeSuggestionsOnly;
@@ -82,13 +88,17 @@
     GEOIndexQueryNode *_indexFilter;
     NSString *_inputLanguage;
     unsigned long long _intersectingGeoId;
+    BOOL _isCanonicalLocationSearch;
     BOOL _isFromAPI;
+    BOOL _isPopularNearbyRequest;
     BOOL _isStrictGeocoding;
     BOOL _isStrictMapRegion;
     int _knownAccuracy;
     GEOLatLng *_knownLocation;
+    NSMutableArray *_limitToCountryCodeIso2s;
     int _localSearchProviderID;
     GEOLocation *_location;
+    int _mapMode;
     GEOMapRegion *_mapRegion;
     int _maxBusinessReviews;
     int _maxResults;
@@ -129,6 +139,7 @@
     NSData *_zilchPoints;
 }
 
+@property (nonatomic, retain) GEOAdditionalEnabledMarkets *additionalEnabledMarkets;
 @property (nonatomic, readonly) int*additionalPlaceTypes;
 @property (nonatomic, readonly) unsigned int additionalPlaceTypesCount;
 @property (nonatomic, retain) GEOAddress *address;
@@ -143,6 +154,7 @@
 @property (nonatomic) BOOL excludeAddressInResults;
 @property (nonatomic, retain) NSMutableArray *filterByBusinessCategorys;
 @property (nonatomic) long long geoId;
+@property (nonatomic, readonly) BOOL hasAdditionalEnabledMarkets;
 @property (nonatomic, readonly) BOOL hasAddress;
 @property (nonatomic, readonly) BOOL hasBusinessOptions;
 @property (nonatomic) BOOL hasBusinessSortOrder;
@@ -162,6 +174,7 @@
 @property (nonatomic) BOOL hasIncludePhonetics;
 @property (nonatomic) BOOL hasIncludeQuads;
 @property (nonatomic) BOOL hasIncludeRevgeoRequestTemplate;
+@property (nonatomic) BOOL hasIncludeRoadAccessPoints;
 @property (nonatomic) BOOL hasIncludeSpokenNames;
 @property (nonatomic) BOOL hasIncludeStatusCodeInfo;
 @property (nonatomic) BOOL hasIncludeSuggestionsOnly;
@@ -171,13 +184,16 @@
 @property (nonatomic, readonly) BOOL hasIndexFilter;
 @property (nonatomic, readonly) BOOL hasInputLanguage;
 @property (nonatomic) BOOL hasIntersectingGeoId;
+@property (nonatomic) BOOL hasIsCanonicalLocationSearch;
 @property (nonatomic) BOOL hasIsFromAPI;
+@property (nonatomic) BOOL hasIsPopularNearbyRequest;
 @property (nonatomic) BOOL hasIsStrictGeocoding;
 @property (nonatomic) BOOL hasIsStrictMapRegion;
 @property (nonatomic) BOOL hasKnownAccuracy;
 @property (nonatomic, readonly) BOOL hasKnownLocation;
 @property (nonatomic) BOOL hasLocalSearchProviderID;
 @property (nonatomic, readonly) BOOL hasLocation;
+@property (nonatomic) BOOL hasMapMode;
 @property (nonatomic, readonly) BOOL hasMapRegion;
 @property (nonatomic) BOOL hasMaxBusinessReviews;
 @property (nonatomic) BOOL hasMaxResults;
@@ -210,6 +226,7 @@
 @property (nonatomic) BOOL includePhonetics;
 @property (nonatomic) BOOL includeQuads;
 @property (nonatomic) BOOL includeRevgeoRequestTemplate;
+@property (nonatomic) BOOL includeRoadAccessPoints;
 @property (nonatomic) BOOL includeSpokenNames;
 @property (nonatomic) BOOL includeStatusCodeInfo;
 @property (nonatomic) BOOL includeSuggestionsOnly;
@@ -219,13 +236,17 @@
 @property (nonatomic, retain) GEOIndexQueryNode *indexFilter;
 @property (nonatomic, retain) NSString *inputLanguage;
 @property (nonatomic) unsigned long long intersectingGeoId;
+@property (nonatomic) BOOL isCanonicalLocationSearch;
 @property (nonatomic) BOOL isFromAPI;
+@property (nonatomic) BOOL isPopularNearbyRequest;
 @property (nonatomic) BOOL isStrictGeocoding;
 @property (nonatomic) BOOL isStrictMapRegion;
 @property (nonatomic) int knownAccuracy;
 @property (nonatomic, retain) GEOLatLng *knownLocation;
+@property (nonatomic, retain) NSMutableArray *limitToCountryCodeIso2s;
 @property (nonatomic) int localSearchProviderID;
 @property (nonatomic, retain) GEOLocation *location;
+@property (nonatomic) int mapMode;
 @property (nonatomic, retain) GEOMapRegion *mapRegion;
 @property (nonatomic) int maxBusinessReviews;
 @property (nonatomic) int maxResults;
@@ -257,9 +278,11 @@
 - (void)addAdditionalPlaceType:(int)arg1;
 - (void)addBusinessID:(unsigned long long)arg1;
 - (void)addFilterByBusinessCategory:(id)arg1;
+- (void)addLimitToCountryCodeIso2:(id)arg1;
 - (void)addOptionalSuppressionReason:(int)arg1;
 - (void)addSearchSubstring:(struct { int x1; int x2; int x3; })arg1;
 - (void)addServiceTag:(id)arg1;
+- (id)additionalEnabledMarkets;
 - (int)additionalPlaceTypeAtIndex:(unsigned int)arg1;
 - (int*)additionalPlaceTypes;
 - (unsigned int)additionalPlaceTypesCount;
@@ -272,6 +295,7 @@
 - (void)clearAdditionalPlaceTypes;
 - (void)clearBusinessIDs;
 - (void)clearFilterByBusinessCategorys;
+- (void)clearLimitToCountryCodeIso2s;
 - (void)clearOptionalSuppressionReasons;
 - (void)clearSearchSubstrings;
 - (void)clearServiceTags;
@@ -289,6 +313,7 @@
 - (id)filterByBusinessCategorys;
 - (unsigned int)filterByBusinessCategorysCount;
 - (long long)geoId;
+- (BOOL)hasAdditionalEnabledMarkets;
 - (BOOL)hasAddress;
 - (BOOL)hasBusinessOptions;
 - (BOOL)hasBusinessSortOrder;
@@ -308,6 +333,7 @@
 - (BOOL)hasIncludePhonetics;
 - (BOOL)hasIncludeQuads;
 - (BOOL)hasIncludeRevgeoRequestTemplate;
+- (BOOL)hasIncludeRoadAccessPoints;
 - (BOOL)hasIncludeSpokenNames;
 - (BOOL)hasIncludeStatusCodeInfo;
 - (BOOL)hasIncludeSuggestionsOnly;
@@ -317,13 +343,16 @@
 - (BOOL)hasIndexFilter;
 - (BOOL)hasInputLanguage;
 - (BOOL)hasIntersectingGeoId;
+- (BOOL)hasIsCanonicalLocationSearch;
 - (BOOL)hasIsFromAPI;
+- (BOOL)hasIsPopularNearbyRequest;
 - (BOOL)hasIsStrictGeocoding;
 - (BOOL)hasIsStrictMapRegion;
 - (BOOL)hasKnownAccuracy;
 - (BOOL)hasKnownLocation;
 - (BOOL)hasLocalSearchProviderID;
 - (BOOL)hasLocation;
+- (BOOL)hasMapMode;
 - (BOOL)hasMapRegion;
 - (BOOL)hasMaxBusinessReviews;
 - (BOOL)hasMaxResults;
@@ -357,6 +386,7 @@
 - (BOOL)includePhonetics;
 - (BOOL)includeQuads;
 - (BOOL)includeRevgeoRequestTemplate;
+- (BOOL)includeRoadAccessPoints;
 - (BOOL)includeSpokenNames;
 - (BOOL)includeStatusCodeInfo;
 - (BOOL)includeSuggestionsOnly;
@@ -365,18 +395,22 @@
 - (BOOL)includeUnmatchedStrings;
 - (id)indexFilter;
 - (id)initWithTraits:(id)arg1;
-- (id)initWithTraits:(id)arg1 includeEntryPoints:(BOOL)arg2;
-- (id)initWithTraits:(id)arg1 maxResults:(int)arg2;
 - (id)inputLanguage;
 - (unsigned long long)intersectingGeoId;
+- (BOOL)isCanonicalLocationSearch;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isFromAPI;
+- (BOOL)isPopularNearbyRequest;
 - (BOOL)isStrictGeocoding;
 - (BOOL)isStrictMapRegion;
 - (int)knownAccuracy;
 - (id)knownLocation;
+- (id)limitToCountryCodeIso2AtIndex:(unsigned int)arg1;
+- (id)limitToCountryCodeIso2s;
+- (unsigned int)limitToCountryCodeIso2sCount;
 - (int)localSearchProviderID;
 - (id)location;
+- (int)mapMode;
 - (id)mapRegion;
 - (int)maxBusinessReviews;
 - (int)maxResults;
@@ -403,6 +437,7 @@
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionGUID;
+- (void)setAdditionalEnabledMarkets:(id)arg1;
 - (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
 - (void)setAddress:(id)arg1;
 - (void)setBusinessIDs:(unsigned long long*)arg1 count:(unsigned int)arg2;
@@ -428,6 +463,7 @@
 - (void)setHasIncludePhonetics:(BOOL)arg1;
 - (void)setHasIncludeQuads:(BOOL)arg1;
 - (void)setHasIncludeRevgeoRequestTemplate:(BOOL)arg1;
+- (void)setHasIncludeRoadAccessPoints:(BOOL)arg1;
 - (void)setHasIncludeSpokenNames:(BOOL)arg1;
 - (void)setHasIncludeStatusCodeInfo:(BOOL)arg1;
 - (void)setHasIncludeSuggestionsOnly:(BOOL)arg1;
@@ -435,11 +471,14 @@
 - (void)setHasIncludeTravelTime:(BOOL)arg1;
 - (void)setHasIncludeUnmatchedStrings:(BOOL)arg1;
 - (void)setHasIntersectingGeoId:(BOOL)arg1;
+- (void)setHasIsCanonicalLocationSearch:(BOOL)arg1;
 - (void)setHasIsFromAPI:(BOOL)arg1;
+- (void)setHasIsPopularNearbyRequest:(BOOL)arg1;
 - (void)setHasIsStrictGeocoding:(BOOL)arg1;
 - (void)setHasIsStrictMapRegion:(BOOL)arg1;
 - (void)setHasKnownAccuracy:(BOOL)arg1;
 - (void)setHasLocalSearchProviderID:(BOOL)arg1;
+- (void)setHasMapMode:(BOOL)arg1;
 - (void)setHasMaxBusinessReviews:(BOOL)arg1;
 - (void)setHasMaxResults:(BOOL)arg1;
 - (void)setHasPlaceTypeLimit:(BOOL)arg1;
@@ -463,6 +502,7 @@
 - (void)setIncludePhonetics:(BOOL)arg1;
 - (void)setIncludeQuads:(BOOL)arg1;
 - (void)setIncludeRevgeoRequestTemplate:(BOOL)arg1;
+- (void)setIncludeRoadAccessPoints:(BOOL)arg1;
 - (void)setIncludeSpokenNames:(BOOL)arg1;
 - (void)setIncludeStatusCodeInfo:(BOOL)arg1;
 - (void)setIncludeSuggestionsOnly:(BOOL)arg1;
@@ -472,13 +512,17 @@
 - (void)setIndexFilter:(id)arg1;
 - (void)setInputLanguage:(id)arg1;
 - (void)setIntersectingGeoId:(unsigned long long)arg1;
+- (void)setIsCanonicalLocationSearch:(BOOL)arg1;
 - (void)setIsFromAPI:(BOOL)arg1;
+- (void)setIsPopularNearbyRequest:(BOOL)arg1;
 - (void)setIsStrictGeocoding:(BOOL)arg1;
 - (void)setIsStrictMapRegion:(BOOL)arg1;
 - (void)setKnownAccuracy:(int)arg1;
 - (void)setKnownLocation:(id)arg1;
+- (void)setLimitToCountryCodeIso2s:(id)arg1;
 - (void)setLocalSearchProviderID:(int)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setMapMode:(int)arg1;
 - (void)setMapRegion:(id)arg1;
 - (void)setMaxBusinessReviews:(int)arg1;
 - (void)setMaxResults:(int)arg1;

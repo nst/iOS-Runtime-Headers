@@ -10,10 +10,19 @@
 }
 
 + (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 errorType:(unsigned int)arg3;
++ (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 errorScore:(double)arg4;
 + (id)candidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 errorType:(unsigned int)arg4;
 + (id)candidateWithString:(id)arg1 errorScore:(double)arg2;
 + (id)candidateWithString:(id)arg1 errorType:(unsigned int)arg2;
 + (double)errorScoreForType:(unsigned int)arg1;
++ (id)replacementCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 intendedCharacter:(unsigned short)arg3 actualCharacter:(unsigned short)arg4;
++ (id)replacementCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 intendedCharacter:(unsigned short)arg4 actualCharacter:(unsigned short)arg5;
++ (id)replacementCandidateWithString:(id)arg1 intendedCharacter:(unsigned short)arg2 actualCharacter:(unsigned short)arg3;
++ (double)replacementErrorScoreForIntendedCharacter:(unsigned short)arg1 actualCharacter:(unsigned short)arg2;
++ (id)transpositionCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 intendedFirstCharacter:(unsigned short)arg3 intendedSecondCharacter:(unsigned short)arg4;
++ (id)transpositionCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 intendedFirstCharacter:(unsigned short)arg4 intendedSecondCharacter:(unsigned short)arg5;
++ (id)transpositionCandidateWithString:(id)arg1 intendedFirstCharacter:(unsigned short)arg2 intendedSecondCharacter:(unsigned short)arg3;
++ (double)transpositionErrorScoreForIntendedFirstCharacter:(unsigned short)arg1 intendedSecondCharacter:(unsigned short)arg2;
 
 - (void)dealloc;
 - (id)description;

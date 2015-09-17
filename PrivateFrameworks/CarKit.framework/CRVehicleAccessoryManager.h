@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)_primeConnectedVehicleAccessories;
+- (void)_updateVehicle:(id)arg1 usingAccessory:(id)arg2;
 - (id)_vehicleForAccessory:(id)arg1;
 - (id)connectedVehicleAccessories;
 - (void)dealloc;

@@ -11,6 +11,7 @@
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)document;
 - (id)init;
 - (BOOL)isOle;

@@ -5,6 +5,7 @@
 @interface SiriUIContentLabel : UILabel
 
 + (id)label;
++ (id)labelWithBodyFont;
 + (id)labelWithHeaderFont;
 + (id)labelWithLightWeightRegularFont;
 + (id)labelWithLightWeightSubtextFont;

@@ -2,18 +2,27 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDPWebAuthTokenRetrieveRequest : PBRequest <NSCopying>
+@interface CKDPWebAuthTokenRetrieveRequest : PBRequest <NSCopying> {
+    NSString *_apiToken;
+}
+
+@property (nonatomic, retain) NSString *apiToken;
+@property (nonatomic, readonly) BOOL hasApiToken;
 
 + (id)options;
 
+- (void).cxx_destruct;
+- (id)apiToken;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasApiToken;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (void)setApiToken:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

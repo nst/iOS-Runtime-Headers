@@ -24,11 +24,10 @@
 @property (nonatomic, retain) CalDAVSupportedCalendarComponentSet *supportedCalendarComponentSet;
 @property (nonatomic, retain) CoreDAVLeafItem *uid;
 
+- (void).cxx_destruct;
 - (id)access;
 - (id)calendarPublic;
 - (id)copyParseRules;
-- (void)dealloc;
-- (id)description;
 - (id)hostURL;
 - (id)href;
 - (id)init;

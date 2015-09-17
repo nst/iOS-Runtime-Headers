@@ -33,7 +33,6 @@
     NSMutableArray *_transforms;
 }
 
-- (id).cxx_construct;
 - (void)_addTransform:(id)arg1;
 - (void)_applyTransform:(id)arg1;
 - (struct CGContext { }*)_cgContext;

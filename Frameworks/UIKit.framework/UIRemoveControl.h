@@ -50,7 +50,7 @@
 - (id)delegate;
 - (void)hideControlsUsingRemoveAnimation;
 - (id)initWithTarget:(id)arg1;
-- (void)isHighlighted;
+- (BOOL)isHighlighted;
 - (BOOL)isRemoveButtonVisible;
 - (BOOL)isRemoveConfirmationVisible;
 - (void)layoutSubviews;

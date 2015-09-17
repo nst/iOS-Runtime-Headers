@@ -7,6 +7,7 @@
     id /* block */ _completionHandler;
     <UIPrintInteractionControllerDelegate> *_delegate;
     BOOL _hidesNumberOfCopies;
+    NSObject<OS_dispatch_queue> *_previewQueue;
     <UIPrintInteractionControllerDelegate> *_printActivityDelegate;
     UIPrintFormatter *_printFormatter;
     UIPrintInfo *_printInfo;
@@ -17,11 +18,12 @@
     NSArray *_printingItems;
     BOOL _showsPageRange;
     BOOL _showsPaperSelectionForLoadedPapers;
+    id _temporaryRetainCycle;
 }
 
 @property (nonatomic) <UIPrintInteractionControllerDelegate> *delegate;
 @property (nonatomic, readonly) int pageCount;
-@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } pageRange;
+@property (nonatomic, retain) NSArray *pageRanges;
 @property (nonatomic, retain) UIPrintPaper *paper;
 @property (nonatomic) <UIPrintInteractionControllerDelegate> *printActivityDelegate;
 @property (nonatomic, retain) UIPrintFormatter *printFormatter;
@@ -41,17 +43,30 @@
 + (id)printableUTIs;
 + (id)sharedPrintController;
 
+- (void).cxx_destruct;
+- (BOOL)_canPrintPDFData:(id)arg1;
+- (BOOL)_canPrintPDFURL:(id)arg1;
+- (BOOL)_canShowColor;
 - (BOOL)_canShowCopies;
 - (BOOL)_canShowDuplex;
 - (BOOL)_canShowPageRange;
 - (BOOL)_canShowPaperList;
+- (BOOL)_canShowPreview;
+- (BOOL)_canShowPunch;
+- (BOOL)_canShowStaple;
+- (void)_cancelAllPreviewGeneration;
 - (void)_cancelManualPrintPage;
 - (void)_cleanPrintState;
 - (id)_currentPrintInfo;
 - (void)_enableManualPrintPage:(BOOL)arg1;
 - (void)_endPrintJob:(BOOL)arg1 error:(id)arg2;
+- (void)_ensurePDFIsUnlockedFirstAttempt:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)_generatePrintPreview:(id /* block */)arg1;
+- (id)_getChosenPaperFromDelegateForPaperList:(id)arg1;
+- (float)_getCutLengthFromDelegateForPaper:(id)arg1;
 - (id)_init;
 - (void)_manualPrintPage;
+- (struct CGContext { }*)_newSaveContext:(id)arg1 withMediaRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_paperForContentType:(int)arg1;
 - (id)_paperForPDFItem:(id)arg1 withDuplexMode:(int)arg2;
 - (void)_preparePrintInfo;
@@ -62,9 +77,12 @@
 - (void)_printPanelDidDismiss;
 - (void)_printPanelDidPresent;
 - (void)_printPanelWillDismiss:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })_printablePDFDataSize:(id)arg1;
+- (struct CGSize { float x1; float x2; })_printablePDFURLSize:(id)arg1;
 - (void)_setPrintInfoState:(int)arg1;
 - (BOOL)_setupPrintPanel:(id /* block */)arg1;
 - (void)_startPrinting;
+- (void)_updateCutterBehavior;
 - (void)_updatePageCount;
 - (void)_updatePrintPaper;
 - (void)dealloc;
@@ -72,7 +90,7 @@
 - (void)dismissAnimated:(BOOL)arg1;
 - (id)init;
 - (int)pageCount;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })pageRange;
+- (id)pageRanges;
 - (id)paper;
 - (BOOL)presentAnimated:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)presentFromBarButtonItem:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
@@ -86,9 +104,9 @@
 - (id)printer;
 - (id)printingItem;
 - (id)printingItems;
-- (oneway void)release;
+- (BOOL)savePDFToURL:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)setPageRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)setPageRanges:(id)arg1;
 - (void)setPaper:(id)arg1;
 - (void)setPrintActivityDelegate:(id)arg1;
 - (void)setPrintFormatter:(id)arg1;

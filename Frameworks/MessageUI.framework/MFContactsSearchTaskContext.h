@@ -17,6 +17,10 @@
 + (id)contextWithConsumer:(id)arg1 text:(id)arg2 operations:(id)arg3 searchQueries:(id)arg4;
 
 - (id)consumer;
+- (BOOL)consumerRespondsToAutocompleteCallbacks;
+- (BOOL)consumerRespondsToCorecipientCallbacks;
+- (BOOL)consumerRespondsToNetworkingMethods;
+- (BOOL)consumerRespondsToOldSortingCallbacks;
 - (void)dealloc;
 - (BOOL)done;
 - (id)operations;

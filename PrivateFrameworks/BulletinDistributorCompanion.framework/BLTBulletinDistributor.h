@@ -11,6 +11,7 @@
     NSMutableSet *_lockScreenFeed;
     NSMutableSet *_noticesFeed;
     BLTSettingSync *_settingSync;
+    BOOL _standaloneTestModeEnabled;
     BLTBulletinDistributorSubscriberList *_subscribers;
     BLTWatchKitAppList *_watchKitAppList;
 }
@@ -23,6 +24,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) BLTRemoteGizmoClient *gizmoConnection;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isStandaloneTestModeEnabled;
 @property (nonatomic, retain) NSMutableSet *lockScreenFeed;
 @property (nonatomic, retain) NSMutableSet *noticesFeed;
 @property (nonatomic, retain) BLTBulletinDistributorSubscriberList *subscribers;
@@ -32,35 +34,44 @@
 + (id)sharedDistributor;
 
 - (void).cxx_destruct;
+- (void)_addBulletin:(id)arg1 forFeed:(unsigned int)arg2 playLightsAndSirens:(BOOL)arg3 attachment:(id)arg4 attachmentType:(int)arg5 completion:(id /* block */)arg6;
 - (id)_bulletinWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
 - (void)_handleDidPlayLightsAndSirens:(BOOL)arg1 forBulletin:(id)arg2 inPhoneSection:(id)arg3 finalReply:(BOOL)arg4;
 - (void)_handleDidPlayLightsAndSirens:(BOOL)arg1 forBulletin:(id)arg2 inPhoneSection:(id)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5 fromGizmo:(BOOL)arg6 finalReply:(BOOL)arg7;
+- (BOOL)_isObsoleteBulletin:(id)arg1;
 - (void)_loadPingSubscriberBundles;
 - (unsigned int)_nanoPresentableFeedFromPhoneFeed:(unsigned int)arg1;
-- (void)_notifyGizmoOfBulletin:(id)arg1 forFeed:(unsigned int)arg2 updateType:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 shouldSendReplyIfNeeded:(BOOL)arg5;
-- (void)_notifyGizmoOfCancelBulletin:(id)arg1 universalSectionID:(id)arg2 feed:(unsigned int)arg3;
+- (void)_notifyGizmoOfBulletin:(id)arg1 forFeed:(unsigned int)arg2 updateType:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 shouldSendReplyIfNeeded:(BOOL)arg5 attachment:(id)arg6 attachmentType:(int)arg7;
+- (void)_notifyGizmoOfCancelBulletin:(id)arg1 universalSectionID:(id)arg2 feed:(unsigned int)arg3 withBulletinDate:(id)arg4;
 - (void)_pingSubscriberWithBulletin:(id)arg1;
 - (void)_reconnectObserver;
+- (void)_reloadBulletinsWithCompletion:(id /* block */)arg1;
+- (void)_rememberBulletin:(id)arg1 forFeed:(unsigned int)arg2;
+- (void)_sendCurrentBulletinIdentifiers;
 - (BOOL)_willNanoPresent:(unsigned int)arg1;
 - (BOOL)_willNanoPresent:(unsigned int)arg1 forBulletin:(id)arg2 feed:(unsigned int)arg3;
 - (id)attachmentHashCache;
 - (id)bbObserver;
 - (id)bulletins;
 - (id)bundleRootPath;
+- (void)clearSectionInfoSentCache;
 - (void)dealloc;
+- (void)disableStandaloneTestMode;
+- (void)enableStandaloneTestModeWithMinimumSendDelay:(unsigned int)arg1 maximumSendDelay:(unsigned int)arg2 minimumResponseDelay:(unsigned int)arg3 maximumResponseDelay:(unsigned int)arg4;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id /* block */)arg2;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
+- (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(int)arg3 considerSubtype:(BOOL)arg4 completion:(id /* block */)arg5;
 - (id)gizmoConnection;
-- (void)handleAcknowledgeActionForPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
+- (void)handleAction:(id)arg1;
 - (void)handleDidPlayLightsAndSirens:(BOOL)arg1 forBulletin:(id)arg2 inPhoneSection:(id)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5;
-- (void)handleDismissActionForPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
 - (void)handlePairedDeviceIdentifier:(id)arg1 carry:(BOOL)arg2;
-- (void)handleSnoozeActionForPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
-- (void)handleSupplementaryActionWithIdentifier:(id)arg1 forPublisherBulletinID:(id)arg2 recordID:(id)arg3 sectionID:(id)arg4;
 - (id)init;
+- (BOOL)isStandaloneTestModeEnabled;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (id)lockScreenFeed;
 - (id)noticesFeed;
+- (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 attachment:(id)arg5 attachmentType:(int)arg6 alwaysSend:(BOOL)arg7 withReply:(id /* block */)arg8;
+- (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 attachment:(id)arg5 attachmentType:(int)arg6 withReply:(id /* block */)arg7;
 - (void)observer:(id)arg1 addBulletin:(id)arg2 forFeed:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 withReply:(id /* block */)arg5;
 - (id)observer:(id)arg1 composedAttachmentImageForType:(int)arg2 thumbnailData:(id)arg3 key:(id)arg4;
 - (struct CGSize { float x1; float x2; })observer:(id)arg1 composedAttachmentSizeForType:(int)arg2 thumbnailWidth:(float)arg3 height:(float)arg4 key:(id)arg5;
@@ -70,8 +81,12 @@
 - (id)observer:(id)arg1 thumbnailSizeConstraintsForAttachmentType:(int)arg2;
 - (BOOL)observerShouldFetchAttachmentImageBeforeBulletinDelivery:(id)arg1;
 - (BOOL)observerShouldFetchAttachmentSizeBeforeBulletinDelivery:(id)arg1;
+- (id)originalSettings;
+- (id)overriddenSettings;
 - (void)removeBulletinWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
+- (void)sendAllSectionInfoWithCompletion:(id /* block */)arg1;
 - (void)sendBulletinSummary:(id)arg1;
+- (void)sendSectionInfoWithSectionID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setAttachmentHashCache:(id)arg1;
 - (void)setBbObserver:(id)arg1;
 - (void)setBulletins:(id)arg1;
@@ -82,6 +97,8 @@
 - (void)setReplyBlock:(id /* block */)arg1 forSection:(id)arg2 bulletin:(id)arg3 publicationDate:(id)arg4;
 - (void)setSubscribers:(id)arg1;
 - (void)setWatchKitAppList:(id)arg1;
+- (id)settingOverrides;
+- (bool)shouldSuppressLightsAndSirensNow;
 - (id)subscribers;
 - (id)watchKitAppList;
 

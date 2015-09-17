@@ -6,9 +6,11 @@
     FBSSerialQueue *_callOutQueue;
     FBSWorkspaceClient *_client;
     <FBSWorkspaceDelegate> *_delegate;
+    NSHashTable *_preFenceTriggers;
     NSObject<OS_dispatch_queue> *_queue;
     NSMutableDictionary *_scenesByIdentifier;
     NSObject<OS_dispatch_queue> *_scenesQueue;
+    BOOL _synchronizingFence;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -37,12 +39,17 @@
 - (id)init;
 - (id)initWithQueue:(id)arg1;
 - (id)initWithSerialQueue:(id)arg1;
+- (BOOL)isTrackingAnySystemAnimationFence;
 - (BOOL)isUIApplicationWorkspace;
 - (id)queue;
 - (void)requestDestructionOfScene:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)requestSceneCreationWithIdentifier:(id)arg1 initialClientSettings:(id)arg2 completion:(id /* block */)arg3;
 - (void)requestSceneCreationWithInitialClientSettings:(id)arg1 completion:(id /* block */)arg2;
+- (id)requestSystemAnimationFence;
 - (id)sceneWithIdentifier:(id)arg1;
 - (id)scenes;
 - (void)setDelegate:(id)arg1;
+- (void)synchronizeSystemAnimationFencesWithSpinCleanUpBlock:(id /* block */)arg1;
+- (BOOL)trackSystemAnimationFence:(id)arg1;
 
 @end

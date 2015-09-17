@@ -6,11 +6,13 @@
     id /* block */ _playlistSelectionHandler;
     MusicContextualPlaylistPickerViewConfiguration *_playlistsViewConfiguration;
     UIViewController *_playlistsViewController;
+    NSArray *_prepopulatedNewPlaylistMediaItems;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSArray *prepopulatedNewPlaylistMediaItems;
 @property (readonly) Class superclass;
 
 + (BOOL)automaticallyInstallAccountBarButtonItem;
@@ -22,6 +24,8 @@
 - (id)initWithPlaylistSelectionHandler:(id /* block */)arg1;
 - (void)playlistPickerDidFinishWithSelectedPlaylist:(id)arg1;
 - (int)preferredStatusBarStyle;
+- (id)prepopulatedNewPlaylistMediaItems;
+- (void)setPrepopulatedNewPlaylistMediaItems:(id)arg1;
 - (void)viewDidLoad;
 
 @end

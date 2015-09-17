@@ -21,7 +21,7 @@
 - (id)currentTime;
 - (id)entryDefinitionKey;
 - (id)initWithTimeManager:(id)arg1 entryDefinitionKey:(id)arg2 timeReferenceType:(int)arg3;
-- (void)initializeOffsetWithEntry:(id)arg1;
+- (void)initializeOffsetWithEntries:(id)arg1;
 - (double)offset;
 - (id)removeTimeOffsetFromReferenceTime:(id)arg1;
 - (void)setEntryDefinitionKey:(id)arg1;

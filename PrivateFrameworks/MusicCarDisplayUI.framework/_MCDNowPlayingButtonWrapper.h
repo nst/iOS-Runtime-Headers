@@ -9,10 +9,8 @@
 @property (nonatomic, retain) MCDNowPlayingButton *button;
 
 - (void).cxx_destruct;
-- (BOOL)_transparentFocusContainer;
 - (id)button;
 - (BOOL)canBecomeFocused;
-- (id)preferredFocusedItem;
 - (void)setButton:(id)arg1;
 
 @end

@@ -13,6 +13,7 @@
 @property (nonatomic) BOOL isAccumulating;
 @property (nonatomic) float trackedValue;
 
+- (void).cxx_destruct;
 - (void)addValue:(float)arg1;
 - (id)init;
 - (BOOL)isAccumulating;

@@ -99,7 +99,6 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) NSString *universalSectionID;
 
-+ (id)_actionWithBBAction:(id)arg1;
 + (void)_addPrimaryAttachmentFromBBBulletin:(id)arg1 toBLTPBBulletin:(id)arg2 observer:(id)arg3 completion:(id /* block */)arg4;
 + (void)bulletinWithBBBulletin:(id)arg1 sockPuppetAppBundleID:(id)arg2 isSockPuppetAppInstalled:(BOOL)arg3 observer:(id)arg4 feed:(unsigned int)arg5 teamID:(id)arg6 universalSectionID:(id)arg7 completion:(id /* block */)arg8;
 

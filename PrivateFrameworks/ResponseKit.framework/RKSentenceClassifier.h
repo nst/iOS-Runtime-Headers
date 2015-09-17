@@ -3,9 +3,11 @@
  */
 
 @interface RKSentenceClassifier : NSObject {
+    NSString *_RKLinguisticTagDataDetected;
     NSArray *_alternatives;
     NSArray *_appreciations;
     NSArray *_choiceDelimiters;
+    NSArray *_dataDetected;
     NSArray *_interrogatives;
     NSArray *_inversions;
     NSArray *_sentenceEntities;
@@ -18,10 +20,12 @@
     NSValue *_sentenceTag;
 }
 
-@property (readonly) NSString *alternativeConjunction;
+@property (retain) NSString *RKLinguisticTagDataDetected;
+@property (readonly) NSArray *alternativeConjunctions;
 @property (retain) NSArray *alternatives;
 @property (retain) NSArray *appreciations;
 @property (retain) NSArray *choiceDelimiters;
+@property (retain) NSArray *dataDetected;
 @property (retain) NSArray *interrogatives;
 @property (retain) NSArray *inversions;
 @property (retain) NSArray *sentenceEntities;
@@ -36,14 +40,11 @@
 + (id)alternativeInversionsForLanguage:(id)arg1;
 + (id)appreciationKeywordsForLanguage:(id)arg1;
 + (BOOL)canClassifyLanguageIdentifier:(id)arg1;
-+ (unsigned int)categoryForPreferenceKey:(id)arg1;
 + (id)categoryKeywordMapForLanguage:(id)arg1;
-+ (id)keyToCategoryMap;
 + (id)languageIdentifierFromClassName;
 + (id)lexicalEntitiesFromString:(id)arg1;
 + (id)polarTagRegularExpressionForLanguage:(id)arg1;
 + (id)preProcessTextMessageForLinguisticTagger:(id)arg1 withLocale:(id)arg2;
-+ (id)preferenceKeyForCategory:(unsigned int)arg1;
 + (id)sensitiveSubjectRegularExpressionForLanguage:(id)arg1;
 + (id)sentenceClassification:(id)arg1 withLanguageIdentifier:(id)arg2 options:(unsigned int)arg3;
 + (id)stringFromLexicalEntities:(id)arg1;
@@ -51,13 +52,15 @@
 + (Class)subclassForLocale:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)RKLinguisticTagDataDetected;
 - (id)addSentenceTerminatorQuestion:(id)arg1;
-- (id)alternativeConjunction;
+- (id)alternativeConjunctions;
 - (id)alternatives;
 - (void)analyzeSentence;
 - (id)appreciations;
 - (id)choiceDelimiters;
 - (id)classifySentence;
+- (id)dataDetected;
 - (id)interrogatives;
 - (id)inversions;
 - (BOOL)isLexicalClassAvailable;
@@ -74,8 +77,10 @@
 - (void)setAlternatives:(id)arg1;
 - (void)setAppreciations:(id)arg1;
 - (void)setChoiceDelimiters:(id)arg1;
+- (void)setDataDetected:(id)arg1;
 - (void)setInterrogatives:(id)arg1;
 - (void)setInversions:(id)arg1;
+- (void)setRKLinguisticTagDataDetected:(id)arg1;
 - (void)setSentenceEntities:(id)arg1;
 - (void)setSentenceHasAlternativeConjunction:(BOOL)arg1;
 - (void)setSentenceHasQuestionTerminator:(BOOL)arg1;

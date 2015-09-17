@@ -19,6 +19,7 @@
 @property (nonatomic) float rate;
 @property (nonatomic, retain) NSString *speechString;
 @property (nonatomic) BOOL useCompactVoice;
+@property (nonatomic) BOOL useMonarchStyleSpeechRate;
 @property (nonatomic, retain) AVSpeechSynthesisVoice *voice;
 @property (nonatomic) float volume;
 
@@ -53,6 +54,8 @@
 - (BOOL)processEmoticons;
 - (void)setProcessEmoticons:(BOOL)arg1;
 - (void)setUseCompactVoice:(BOOL)arg1;
+- (void)setUseMonarchStyleSpeechRate:(BOOL)arg1;
 - (BOOL)useCompactVoice;
+- (BOOL)useMonarchStyleSpeechRate;
 
 @end

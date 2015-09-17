@@ -54,7 +54,6 @@
 
 + (id)animationInfo;
 
-- (id).cxx_construct;
 - (BOOL)aboveIntercept;
 - (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4;
 - (void)addAnimationForLayer:(id)arg1 key:(id)arg2 values:(id)arg3 keyTimes:(id)arg4 needPresentationLayerValues:(BOOL)arg5;

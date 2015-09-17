@@ -2,9 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXSubsystemZoom : AXSubsystem
+@interface AXSubsystemZoom : AXLoggingSubsystem
 
 + (int)defaultLogLevel;
 + (id)identifier;
++ (BOOL)shouldIncludeFileLineAndFunctionInLogs;
++ (BOOL)shouldLogToFile;
++ (BOOL)shouldProcessMessageForLogs;
++ (double)threshold;
 
 @end

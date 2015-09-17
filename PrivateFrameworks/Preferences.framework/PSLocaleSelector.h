@@ -4,8 +4,6 @@
 
 @interface PSLocaleSelector : NSObject
 
-+ (id)sharedInstance;
-
 - (id)availableLocaleIdentifiers;
 - (id)currentLocale;
 - (void)setLocaleFromLanguageIdentifier:(id)arg1;

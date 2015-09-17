@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
  */
 
-@interface GKDaemonProxy : NSObject <GKClientProtocol, NSXPCConnectionDelegate> {
+@interface GKDaemonProxy : GKServiceProxy <GKClientProtocol, NSXPCConnectionDelegate> {
     NSObject<OS_dispatch_semaphore> *_concurrentRequestSemaphore;
     NSXPCConnection *_connection;
     <GKDaemonProxyDataUpdateDelegate> *_dataUpdateDelegate;
@@ -10,77 +10,62 @@
     NSDictionary *_interfaceLookup;
     NSObject<OS_dispatch_queue> *_invocationQueue;
     <GKDaemonProxyNetworkActivityIndicatorDelegate> *_networkActivityIndicatorDelegate;
-    GKThreadsafeDictionary *_pendingRequests;
-    NSDictionary *_serviceLookup;
-    NSObject<OS_dispatch_semaphore> *_serviceSemaphore;
 }
 
-@property (nonatomic) NSXPCConnection *connection;
+@property (nonatomic, retain) NSXPCConnection *connection;
 @property (nonatomic) <GKDaemonProxyDataUpdateDelegate> *dataUpdateDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) int hostPID;
 @property (nonatomic) <GKDaemonProxyNetworkActivityIndicatorDelegate> *networkActivityIndicatorDelegate;
 @property (readonly) Class superclass;
 
-+ (id)accountServicePrivateProxy;
-+ (id)accountServiceProxy;
-+ (id)analyticsServicePrivateProxy;
-+ (id)analyticsServiceProxy;
-+ (id)bulletinServicePrivateProxy;
-+ (id)bulletinServiceProxy;
-+ (id)challengeServicePrivateProxy;
-+ (id)challengeServiceProxy;
 + (id)daemonProxy;
-+ (id)friendServicePrivateProxy;
-+ (id)friendServiceProxy;
-+ (id)gameServicePrivateProxy;
-+ (id)gameServiceProxy;
-+ (id)gameStatServicePrivateProxy;
-+ (id)gameStatServiceProxy;
-+ (id)linkedAccountsServicePrivateProxy;
-+ (id)linkedAccountsServiceProxy;
-+ (id)multiplayerServicePrivateProxy;
-+ (id)multiplayerServiceProxy;
-+ (id)profileServicePrivateProxy;
-+ (id)profileServiceProxy;
-+ (id)turnBasedServicePrivateProxy;
-+ (id)turnBasedServiceProxy;
-+ (id)utilityServicePrivateProxy;
-+ (id)utilityServiceProxy;
++ (id)proxyForPlayer:(id)arg1;
++ (void)removeProxyForPlayer:(id)arg1;
 
-- (void)_replyToDuplicatesForRequest:(id)arg1 withInvocation:(id)arg2 queue:(id)arg3;
 - (void)_resetServiceLookup;
+- (oneway void)acceptInviteWithNotification:(id)arg1;
+- (oneway void)acceptMultiplayerGameInvite;
 - (id)accountName;
 - (oneway void)achievementSelected:(id)arg1;
 - (void)addInterface:(id)arg1 toLookup:(id)arg2;
-- (void)addService:(id)arg1 forProtocol:(id)arg2 toLookup:(id)arg3;
+- (id)authenticatedLocalPlayersWithStatus:(unsigned int)arg1;
 - (id)authenticatedPlayerID;
 - (id)authenticatedPlayerInfo;
+- (oneway void)authenticatedPlayersDidChange:(id)arg1 reply:(id /* block */)arg2;
 - (oneway void)beginNetworkActivity;
 - (void)buildInterfaceLookup;
-- (void)buildServiceLookup;
-- (void)buildServiceLookupIfNeccessary;
+- (oneway void)cancelGameInvite:(id)arg1;
 - (oneway void)challengeCompleted:(id)arg1;
 - (oneway void)challengeReceived:(id)arg1;
 - (oneway void)completedChallengeSelected:(id)arg1;
+- (oneway void)completedOptimisticAuthenticationWithResponse:(id)arg1 error:(id)arg2;
+- (id)concurrentRequestSemaphore;
 - (id)connection;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (id)dataUpdateDelegate;
 - (void)dealloc;
+- (oneway void)declineInviteWithNotification:(id)arg1;
 - (void)dispatchCompletedChallenge:(id)arg1;
 - (oneway void)endNetworkActivity;
-- (void)forwardInvocation:(id)arg1;
+- (oneway void)fetchTurnBasedData;
+- (oneway void)friendRequestSelected:(id)arg1;
 - (oneway void)getAccountNameWithHandler:(id /* block */)arg1;
-- (void)getAccountURLsWithHandler:(id /* block */)arg1;
 - (oneway void)getAuthenticatedPlayerIDWithHandler:(id /* block */)arg1;
 - (BOOL)hasAuthenticatedAccount;
+- (int)hostPID;
 - (id)init;
-- (id)methodSignatureForProtocol:(id)arg1 selector:(SEL)arg2;
-- (id)methodSignatureForSelector:(SEL)arg1;
+- (id)interfaceLookup;
+- (id)invocationQueue;
+- (void)loadRemoteImageDataForClientForURL:(id)arg1 reply:(id /* block */)arg2;
+- (id)localizedMessageFromDictionary:(id)arg1 forBundleID:(id)arg2;
 - (id)networkActivityIndicatorDelegate;
+- (oneway void)processQuickAction:(id)arg1;
 - (oneway void)receivedChallengeSelected:(id)arg1;
 - (oneway void)refreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (oneway void)relayPushNotification:(id)arg1;
 - (id)replyQueueForRequestSelector:(SEL)arg1;
 - (oneway void)resetNetworkActivity;
 - (void)resetServiceLookup;
@@ -91,7 +76,6 @@
 - (oneway void)setCurrentGame:(id)arg1 serverEnvironment:(int)arg2 reply:(id /* block */)arg3;
 - (void)setDataUpdateDelegate:(id)arg1;
 - (void)setHostPID:(int)arg1;
-- (oneway void)setLocalPlayer:(id)arg1 authenticated:(BOOL)arg2 reply:(id /* block */)arg3;
 - (oneway void)setLogBits:(int)arg1;
 - (void)setNetworkActivityIndicatorDelegate:(id)arg1;
 - (oneway void)setPreferencesValues:(id)arg1;

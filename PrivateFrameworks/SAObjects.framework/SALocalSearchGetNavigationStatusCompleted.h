@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SALocalSearchGetNavigationStatusCompleted : SABaseCommand <SAServerBoundCommand>
+@interface SALocalSearchGetNavigationStatusCompleted : SABaseCommand <SABackgroundContextObject, SAServerBoundCommand>
 
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;
@@ -13,6 +13,8 @@
 @property (nonatomic, copy) NSString *refId;
 @property (nonatomic, retain) SALocalSearchRoute *route;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *trafficIncidentAlertType;
+@property (nonatomic, copy) NSString *volume;
 
 + (id)getNavigationStatusCompleted;
 + (id)getNavigationStatusCompletedWithDictionary:(id)arg1 context:(id)arg2;
@@ -25,5 +27,9 @@
 - (void)setNextManeuverEta:(id)arg1;
 - (void)setOverallEta:(id)arg1;
 - (void)setRoute:(id)arg1;
+- (void)setTrafficIncidentAlertType:(id)arg1;
+- (void)setVolume:(id)arg1;
+- (id)trafficIncidentAlertType;
+- (id)volume;
 
 @end

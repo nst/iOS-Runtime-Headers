@@ -21,7 +21,6 @@
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)_implicit;
 - (id)bodyA;

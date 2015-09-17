@@ -8,9 +8,9 @@
 
 @property (nonatomic, retain) UIImageView *containerIconView;
 
+- (void).cxx_destruct;
 - (id)containerIconView;
 - (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
-- (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (void)prepareForReuse;
 - (void)reloadItem:(BOOL)arg1;

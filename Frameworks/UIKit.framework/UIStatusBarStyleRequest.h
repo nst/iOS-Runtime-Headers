@@ -16,9 +16,9 @@
 @property (nonatomic, readonly, retain) NSNumber *overrideHeight;
 @property (nonatomic, readonly) int style;
 
+- (void).cxx_destruct;
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 class:(Class)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)foregroundColor;
 - (unsigned int)hash;
 - (id)init;

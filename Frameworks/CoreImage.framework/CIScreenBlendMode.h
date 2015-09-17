@@ -4,7 +4,6 @@
 
 @interface CIScreenBlendMode : CIBlendModeFilter
 
-+ (id)_filter_display_name;
 + (id)_kernel;
 
 @end

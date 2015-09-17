@@ -23,10 +23,14 @@
 @property (nonatomic, readonly) int tileStyle;
 @property (nonatomic, readonly) unsigned int zoomLevel;
 
++ (id)detailedTransitTileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
++ (unsigned int)maxTransitZoomLevel;
++ (unsigned int)maxZoomLevel;
 + (id)realisticTileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 + (BOOL)supportsRealisticMap;
++ (BOOL)supportsTransitMap;
++ (id)transitGeometryTileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 
-- (id).cxx_construct;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })_adjacentTileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg1 dirX:(int)arg2 dirY:(int)arg3;
 - (void)_fetchDataForKeys:(const struct unordered_set<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { struct __hash_table<_GEOTileKey, std::__1::hash<GEOTileKey>, std::__1::equal_to<GEOTileKey>, std::__1::allocator<_GEOTileKey> > { struct unique_ptr<std::__1::__hash_node<_GEOTileKey, void *> *[], std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> *> > > { struct __compressed_pair<std::__1::__hash_node<_GEOTileKey, void *> **, std::__1::__bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> *> > > { struct __hash_node<_GEOTileKey, void *> {} **x_1_3_1; struct __bucket_list_deallocator<std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> *> > { struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> *> > { unsigned long x_1_5_1; } x_2_4_1; } x_1_3_2; } x_1_2_1; } x_1_1_1; struct __compressed_pair<std::__1::__hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *>, std::__1::allocator<std::__1::__hash_node<_GEOTileKey, void *> > > { struct __hash_node_base<std::__1::__hash_node<_GEOTileKey, void *> *> { struct __hash_node<_GEOTileKey, void *> {} *x_1_3_1; } x_2_2_1; } x_1_1_2; struct __compressed_pair<unsigned long, std::__1::hash<GEOTileKey> > { unsigned long x_3_2_1; } x_1_1_3; struct __compressed_pair<float, std::__1::equal_to<GEOTileKey> > { float x_4_2_1; } x_1_1_4; } x1; }*)arg1;
 - (id)_initWithMap:(id)arg1 zoomLevel:(unsigned int)arg2 tileSize:(int)arg3 tileScale:(int)arg4 tileStyle:(int)arg5 center:(struct { double x1; double x2; })arg6 radius:(double)arg7;

@@ -3,7 +3,7 @@
  */
 
 @interface MusicEntityTracklistItemView : MusicEntityAbstractLockupView <MPUTextDrawingCacheInvalidationObserver, MusicEntityContentDescriptorViewConfiguring> {
-    MPButton *_contextualActionsButton;
+    UIButton *_contextualActionsButton;
     <MusicEntityTracklistItemViewDelegate> *_delegate;
     struct { 
         unsigned int didSelectContextualActionsButton : 1; 

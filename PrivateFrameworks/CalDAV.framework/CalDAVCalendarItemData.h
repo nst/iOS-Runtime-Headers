@@ -14,8 +14,8 @@
 @property (nonatomic, retain) NSString *scheduleTag;
 @property (nonatomic, retain) CalDAVUpdateOwnerItem *updatedBy;
 
+- (void).cxx_destruct;
 - (id)createdBy;
-- (void)dealloc;
 - (id)scheduleChanges;
 - (id)scheduleTag;
 - (void)setCreatedBy:(id)arg1;

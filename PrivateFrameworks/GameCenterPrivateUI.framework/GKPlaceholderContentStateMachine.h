@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKPlaceholderContentStateMachine : GKStateMachine
+@interface GKPlaceholderContentStateMachine : _GKStateMachine
 
 @property (nonatomic, readonly) BOOL isInPlaceholderState;
 

@@ -17,7 +17,10 @@
 - (float)maxSearchBarWidth;
 - (id)photoBrowserSpec;
 - (id)photosPickerViewControllerSpec;
+- (float)sectionHeaderHeight;
+- (int)sectionHeaderStyle;
 - (BOOL)shouldPlaceDeleteInCenterToolbarPosition;
+- (BOOL)shouldPlaceSelectAllButtonInRightNavigationBar;
 - (unsigned int)supportedInterfaceOrientations;
 - (int)thumbnailImageFormat;
 - (BOOL)usesStackPopTransition;

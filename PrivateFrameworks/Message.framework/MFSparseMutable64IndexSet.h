@@ -22,6 +22,7 @@
 - (unsigned int)count;
 - (void)dealloc;
 - (id)description;
+- (void)enumerateIndexesWithBlock:(id /* block */)arg1;
 - (unsigned long long)firstIndex;
 - (unsigned long long)indexGreaterThanIndex:(unsigned long long)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;

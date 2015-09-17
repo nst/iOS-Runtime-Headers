@@ -15,6 +15,7 @@
 - (NEConfiguration *)findConfigurationByConfigurationID:(NSString *)arg1;
 - (NEConfiguration *)findConfigurationByName:(NSString *)arg1;
 - (NEConfiguration *)findConfigurationByPayloadUUID:(NSString *)arg1;
+- (NSArray *)getCertificatesForConfigurationWithIdentifier:(NSString *)arg1;
 - (NEConfiguration *)ingestedConfiguration;
 - (id)initWithNameAndType:(NSString *)arg1 payloadType:(NSString *)arg2;
 - (BOOL)isInstalled:(NSString *)arg1;
@@ -29,5 +30,6 @@
 - (BOOL)updateAppLayerVPNMappingRules:(NSDictionary *)arg1;
 - (BOOL)updateDefaultAfterAddingConfiguration;
 - (BOOL)updateDefaultAfterDeletingConfiguration;
+- (BOOL)updateManagedAppRules:(NSArray *)arg1;
 
 @end

@@ -2,18 +2,24 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceInfoViewController : ABContactViewController <ABContactViewControllerDelegate, MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse> {
+@interface MKPlaceInfoViewController : ABContactViewController <ABContactViewControllerDelegate, MKHideableBottomSeparator, MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse> {
     _MKPlaceInfoViewControllerRouter *_actionsProxy;
     ABCardGroup *_businessInfoGroup;
     NSArray *_businessInfoOrder;
+    float _businessInfoSizedForWidth;
     <MKMapItemVendorDeal> *_deal;
     ABCardGroup *_dealsGroup;
+    ABCardGroup *_directionsGroup;
+    ABCardGroup *_flyoverGroup;
     <MKPlaceInfoViewControllerDelegate> *_infoDelegate;
     UIImage *_inlineMap;
     ABCardGroup *_inlineMapGroup;
     MKMapItem *_mapItem;
     _MKPlaceViewController *_owner;
+    NSMutableDictionary *_removedContactsFields;
+    BOOL _shouldHideContactInfo;
     BOOL _showAttribution;
+    BOOL _viewShouldHideBottommostSeparator;
 }
 
 @property (nonatomic, retain) _MKPlaceInfoViewControllerRouter *actionsProxy;
@@ -27,51 +33,78 @@
 @property (nonatomic, retain) UIImage *inlineMap;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic) _MKPlaceViewController *owner;
+@property (nonatomic, retain) NSMutableDictionary *removedContactsFields;
 @property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
+@property (nonatomic) BOOL shouldHideContactInfo;
 @property (nonatomic) BOOL showAttribution;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL viewShouldHideBottommostSeparator;
 
 - (void).cxx_destruct;
-- (void)_directionsFromAddress:(id)arg1;
-- (void)_directionsToAddress:(id)arg1;
+- (void)_directionsToAddress:(unsigned int)arg1;
 - (void)_flyoverTour:(id)arg1;
 - (void)_handleBusinessAttributionRequest;
 - (void)_launchMaps;
 - (void)_launchMapsDirectionsWithSource:(id)arg1 destination:(id)arg2 directionsMode:(id)arg3;
+- (void)_rerouteFromAddress:(id)arg1;
 - (void)_setupActions;
 - (void)_setupBusinessInfo;
 - (void)_showDeal;
+- (void)_updateBusinessInfoForWidth:(float)arg1 withTraits:(id)arg2;
+- (void)_updateBusinessInfoForWidth:(float)arg1 withTraits:(id)arg2 forceReload:(BOOL)arg3;
 - (void)_updatePreferredContentSize;
 - (id)actionsProxy;
 - (id)businessInfoOrder;
+- (void)configureContactForShouldHideAddress:(BOOL)arg1;
+- (id)configuredContactForContact:(id)arg1 shouldHideAddress:(BOOL)arg2;
+- (BOOL)contactHasRemovableInfo:(id)arg1;
 - (id)contactHeaderView;
 - (id)contactView:(id)arg1 cellForItemAtIndex:(int)arg2 inGroup:(id)arg3;
-- (float)contactView:(id)arg1 heightForItemAtIndex:(int)arg2 inGroup:(id)arg3;
 - (int)contactView:(id)arg1 numberOfItemsInGroup:(id)arg2;
-- (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
+- (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
 - (id)deal;
 - (id)infoAttributionString;
 - (id)infoDelegate;
 - (id)initWithContact:(id)arg1;
 - (id)inlineMap;
 - (id)mapItem;
+- (void)moveInfoForContact:(id)arg1 intoInfo:(id)arg2;
 - (id)owner;
+- (id)removedContactsFields;
+- (BOOL)removedInfoExistsForContact:(id)arg1;
+- (id)removedInfoForContact:(id)arg1;
 - (BOOL)requiresPreferredContentSizeInStackingView;
+- (void)resetContactGroups;
+- (void)restoreFieldsForContact:(id)arg1 withInfo:(id)arg2;
 - (void)setActionsProxy:(id)arg1;
 - (void)setBusinessInfoOrder:(id)arg1;
+- (void)setContact:(id)arg1;
 - (void)setDeal:(id)arg1;
 - (void)setInfoDelegate:(id)arg1;
 - (void)setInlineMap:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setOwner:(id)arg1;
+- (void)setRemovedContactsFields:(id)arg1;
+- (void)setRemovedInfo:(id)arg1 forContact:(id)arg2;
+- (void)setShouldHideContactInfo:(BOOL)arg1;
 - (void)setShowAttribution:(BOOL)arg1;
+- (void)setViewShouldHideBottommostSeparator:(BOOL)arg1;
+- (BOOL)shouldHideContactInfo;
 - (BOOL)showAttribution;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableViewDidFinishReload:(id)arg1;
 - (void)updateInlineMapWithRefinedMapItem:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (BOOL)viewShouldHideBottommostSeparator;
+- (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (BOOL)willShowBusinessInfo;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

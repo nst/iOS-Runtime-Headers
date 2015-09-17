@@ -11,7 +11,6 @@
 
 - (void)_dumpToAggregated;
 - (id)initWithFastUpdateInterval:(double)arg1 slowUpdateInterval:(double)arg2;
-- (double)lastRecordedTimestamp;
 - (void)recordMotionMagnitude:(float)arg1 atTimestamp:(double)arg2;
 
 @end

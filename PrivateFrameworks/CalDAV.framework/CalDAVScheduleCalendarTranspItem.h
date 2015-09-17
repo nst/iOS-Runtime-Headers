@@ -9,9 +9,8 @@
 @property (nonatomic, readonly) BOOL isScheduleTransparent;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *transparent;
 
+- (void).cxx_destruct;
 - (id)copyParseRules;
-- (void)dealloc;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (BOOL)isScheduleTransparent;
 - (void)setTransparent:(id)arg1;
 - (id)transparent;

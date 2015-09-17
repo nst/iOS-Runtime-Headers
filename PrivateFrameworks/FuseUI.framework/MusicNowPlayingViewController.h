@@ -95,7 +95,7 @@
 - (void)_setRatingsVisible:(BOOL)arg1;
 - (id)_shareButton;
 - (BOOL)_shouldDismissAutomaticallyForCurrentPlaybackState;
-- (void)_showContextualActionsWithTransportButton:(id)arg1 includeSharing:(BOOL)arg2 includeStandardActions:(BOOL)arg3;
+- (void)_showContextualActionsWithTransportButton:(id)arg1 forSharing:(BOOL)arg2;
 - (void)_showUpNext;
 - (void)_showUpNext:(id)arg1;
 - (void)_skipLimitDidChangeNotification:(id)arg1;
@@ -122,6 +122,8 @@
 - (void)dismissButtonTapped:(id)arg1;
 - (void)dismissDetailViewController:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithPlayer:(id)arg1;
 - (id)interactionControllerForDismissal:(id)arg1;
 - (id)interactionControllerForPresentation:(id)arg1;

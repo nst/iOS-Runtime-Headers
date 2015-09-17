@@ -11,6 +11,7 @@
 @property (retain) NSArray *buttons;
 @property (nonatomic) BOOL numberButtonsEnabled;
 
+- (void).cxx_destruct;
 - (void)_addButton:(id)arg1;
 - (float)_backgroundAlphaOfButton:(id)arg1;
 - (void)_layoutGrid;
@@ -23,7 +24,6 @@
 - (void)buttonTapped:(id)arg1;
 - (void)buttonUp:(id)arg1;
 - (id)buttons;
-- (void)dealloc;
 - (id)initWithButtons:(id)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (BOOL)numberButtonsEnabled;

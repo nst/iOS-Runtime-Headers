@@ -8,7 +8,8 @@
     BOOL _cannotBeDisabled;
     BOOL _defaultGlance;
     NSString *_glanceBundleIdentifier;
-    BOOL _installed;
+    NSString *_glanceBundlePath;
+    unsigned int _installState;
     NSString *_name;
     BOOL _prelaunch;
     NSString *_sockPuppetIdentifier;
@@ -19,20 +20,25 @@
 @property (nonatomic) BOOL cannotBeDisabled;
 @property (getter=isDefaultGlance, nonatomic) BOOL defaultGlance;
 @property (nonatomic, copy) NSString *glanceBundleIdentifier;
+@property (nonatomic, copy) NSString *glanceBundlePath;
 @property (nonatomic, readonly) NSString *glanceIdentifier;
-@property (getter=isInstalled, nonatomic) BOOL installed;
+@property (nonatomic) unsigned int installState;
+@property (nonatomic, readonly) BOOL isInstalled;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) BOOL prelaunch;
 @property (nonatomic, copy) NSString *sockPuppetIdentifier;
 
 - (void).cxx_destruct;
+- (id)_localizedName;
 - (id)appBundleIdentifier;
 - (BOOL)cannotBeDisabled;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)glanceBundleIdentifier;
+- (id)glanceBundlePath;
 - (id)glanceIdentifier;
 - (id)initWithDictionary:(id)arg1;
+- (unsigned int)installState;
 - (BOOL)isActive;
 - (BOOL)isDefaultGlance;
 - (BOOL)isInstalled;
@@ -43,7 +49,8 @@
 - (void)setCannotBeDisabled:(BOOL)arg1;
 - (void)setDefaultGlance:(BOOL)arg1;
 - (void)setGlanceBundleIdentifier:(id)arg1;
-- (void)setInstalled:(BOOL)arg1;
+- (void)setGlanceBundlePath:(id)arg1;
+- (void)setInstallState:(unsigned int)arg1;
 - (void)setName:(id)arg1;
 - (void)setPrelaunch:(BOOL)arg1;
 - (void)setSockPuppetIdentifier:(id)arg1;

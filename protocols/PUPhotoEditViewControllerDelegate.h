@@ -5,6 +5,6 @@
 
 @required
 
-- (void)photoEditController:(PUPhotoEditViewController *)arg1 didFinishWithSavedChanges:(BOOL)arg2;
+- (void)photoEditController:(PUPhotoEditViewController *)arg1 didFinishWithSavedChanges:(BOOL)arg2 asset:(PHAsset *)arg3 modificationDate:(NSDate *)arg4;
 
 @end

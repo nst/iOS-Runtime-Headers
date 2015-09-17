@@ -4,11 +4,13 @@
 
 @interface SASyncAnchor : AceObject <SAAceSerializable>
 
+@property (nonatomic, copy) NSString *appBundleId;
 @property (nonatomic) int count;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *generation;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *intentSlotName;
 @property (nonatomic, copy) NSString *key;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *validity;
@@ -16,13 +18,17 @@
 + (id)anchor;
 + (id)anchorWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)appBundleId;
 - (int)count;
 - (id)encodedClassName;
 - (id)generation;
 - (id)groupIdentifier;
+- (id)intentSlotName;
 - (id)key;
+- (void)setAppBundleId:(id)arg1;
 - (void)setCount:(int)arg1;
 - (void)setGeneration:(id)arg1;
+- (void)setIntentSlotName:(id)arg1;
 - (void)setKey:(id)arg1;
 - (void)setValidity:(id)arg1;
 - (id)validity;

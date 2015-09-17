@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface KeychainSyncDevicePINController : KeychainSyncTextEntryController {
+@interface KeychainSyncDevicePINController : PSKeychainSyncTextEntryController {
     DevicePINController *_devicePINController;
     UIKeyboard *_disabledKeyboard;
     NSString *_enterPasscodeReason;
@@ -14,6 +14,7 @@
 @property (nonatomic, retain) NSString *enterPasscodeReason;
 @property (nonatomic, retain) NSString *enterPasscodeTitle;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)didFinishEnteringText:(id)arg1;
 - (id)disabledKeyboard;

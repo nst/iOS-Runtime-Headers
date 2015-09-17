@@ -13,6 +13,7 @@
 - (void)applyOverridesFrom:(id)arg1;
 - (id)borderStyle;
 - (void)dealloc;
+- (id)description;
 - (id)fill;
 - (void)setBorderStyle:(id)arg1;
 - (void)setFill:(id)arg1;

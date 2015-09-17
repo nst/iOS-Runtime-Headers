@@ -2,17 +2,16 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABUnknownPersonViewController_Modern : UIViewController <ABContactViewControllerDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface ABUnknownPersonViewController_Modern : UIViewController <ABContactViewControllerDelegate, CNContactViewControllerPrivateDelegate, UIActionSheetDelegate, UITableViewDataSource, UITableViewDelegate> {
     ABPersonTableViewActionsDelegate *_actionsDelegate;
     void *_addressBook;
     BOOL _allowsActions;
     BOOL _allowsAddingToAddressBook;
     BOOL _allowsConferencing;
     BOOL _allowsContactBlocking;
-    BOOL _allowsOnlyFaceTimeActions;
-    BOOL _allowsOnlyPhoneActions;
     BOOL _allowsSharing;
     NSString *_alternateName;
+    CNContactViewController *_cnContactViewController;
     ABContactViewController *_contactViewController;
     ABPersonTableViewDataSource *_dataSource;
     void *_displayedPerson;
@@ -34,18 +33,17 @@
 }
 
 @property (nonatomic, readonly) ABPersonTableViewActionsDelegate *actionsDelegate;
-@property (nonatomic) void*addressBook;
+@property (nonatomic) const void*addressBook;
 @property (nonatomic) BOOL allowsActions;
 @property (nonatomic) BOOL allowsAddingToAddressBook;
 @property (nonatomic) BOOL allowsConferencing;
 @property (nonatomic) BOOL allowsContactBlocking;
-@property (nonatomic) BOOL allowsOnlyFaceTimeActions;
-@property (nonatomic) BOOL allowsOnlyPhoneActions;
 @property (nonatomic) BOOL allowsSharing;
 @property (nonatomic, copy) NSString *alternateName;
 @property (nonatomic, copy) NSString *attribution;
 @property (nonatomic) BOOL badgeEmailPropertiesForMailVIP;
 @property (nonatomic, readonly) BOOL canShareContact;
+@property (nonatomic, retain) CNContactViewController *cnContactViewController;
 @property (nonatomic, retain) ABContactViewController *contactViewController;
 @property (nonatomic, retain) UIView *customFooterView;
 @property (nonatomic, retain) UIView *customHeaderView;
@@ -53,7 +51,7 @@
 @property (nonatomic, readonly) ABPersonTableViewDataSource *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) void*displayedPerson;
+@property (nonatomic) const void*displayedPerson;
 @property (nonatomic, copy) NSArray *displayedProperties;
 @property (nonatomic, retain) ABUIPerson *displayedUIPerson;
 @property (readonly) unsigned int hash;
@@ -94,18 +92,17 @@
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 location:(int)arg4 destructive:(BOOL)arg5;
 - (void)addToExistingContacts;
 - (void)addUnmergedRecords;
-- (void*)addressBook;
+- (const void*)addressBook;
 - (BOOL)allowsActions;
 - (BOOL)allowsAddingToAddressBook;
 - (BOOL)allowsConferencing;
 - (BOOL)allowsContactBlocking;
-- (BOOL)allowsOnlyFaceTimeActions;
-- (BOOL)allowsOnlyPhoneActions;
 - (BOOL)allowsSharing;
 - (id)alternateName;
 - (id)attribution;
 - (BOOL)badgeEmailPropertiesForMailVIP;
 - (BOOL)canShareContact;
+- (id)cnContactViewController;
 - (id)contactViewController;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
@@ -116,7 +113,7 @@
 - (id)dataSource;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
-- (void*)displayedPerson;
+- (const void*)displayedPerson;
 - (id)displayedProperties;
 - (id)displayedUIPerson;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
@@ -138,6 +135,7 @@
 - (id)newActionButton;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)personHeaderView;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)presentAddToContactsSheet;
 - (void)presentNewContactViewControllerForAddToContacts;
 - (void)presentPeoplePickerNavigationControllerForMergeToContact;
@@ -155,14 +153,13 @@
 - (void)setAllowsAddingToAddressBook:(BOOL)arg1;
 - (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsContactBlocking:(BOOL)arg1;
-- (void)setAllowsOnlyFaceTimeActions:(BOOL)arg1;
-- (void)setAllowsOnlyPhoneActions:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
 - (void)setAlternateName:(id)arg1;
 - (void)setAttribution:(id)arg1;
 - (void)setAttribution:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
 - (void)setBadgeEmailPropertiesForMailVIP:(BOOL)arg1;
 - (void)setCardContentProvider:(id)arg1;
+- (void)setCnContactViewController:(id)arg1;
 - (void)setContactViewController:(id)arg1;
 - (void)setCustomFooterView:(id)arg1;
 - (void)setCustomHeaderView:(id)arg1;
@@ -217,6 +214,7 @@
 - (id)vCardTableView;
 - (id)vCards;
 - (id)vCardsProperties;
+- (void)viewDidAppear:(BOOL)arg1;
 - (id /* block */)willTweetLocationCallback;
 - (id /* block */)willWeiboLocationCallback;
 

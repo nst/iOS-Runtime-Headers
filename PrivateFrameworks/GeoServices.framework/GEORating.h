@@ -46,7 +46,6 @@
 - (BOOL)hasScore;
 - (BOOL)hasURL;
 - (unsigned int)hash;
-- (id)initWithPlaceDataRating:(id)arg1 reviews:(id)arg2;
 - (id)initWithSampleSizeForUserRatingScore:(unsigned int)arg1 normalizedUserRatingScore:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (double)maxScore;

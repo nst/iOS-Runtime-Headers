@@ -3,7 +3,7 @@
  */
 
 @interface FBProcessCPUStatistics : NSObject {
-    BSMachSendRight *_taskNamePort;
+    BSMachPortSendRight *_taskNamePort;
     struct FBProcessTimes { 
         double beginUserCPUElapsedTime; 
         double beginSystemCPUElapsedTime; 

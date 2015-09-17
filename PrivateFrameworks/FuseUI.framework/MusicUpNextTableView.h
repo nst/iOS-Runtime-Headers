@@ -14,6 +14,7 @@
 
 @property (nonatomic, readonly) UIView *attachedView;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <MusicUpNextTableViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disableWrapperScroll;
 @property (readonly) unsigned int hash;

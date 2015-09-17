@@ -2,8 +2,23 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentSubmitVerificationRequest : PKPaymentWebServiceRequest
+@interface PKPaymentSubmitVerificationRequest : PKPaymentWebServiceRequest {
+    PKPaymentPass *_pass;
+    NSString *_verificationCode;
+    NSData *_verificationData;
+}
 
-+ (id)requestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 pass:(id)arg3 verificationCode:(id)arg4 verificationData:(id)arg5 account:(id)arg6;
+@property (nonatomic, retain) PKPaymentPass *pass;
+@property (nonatomic, copy) NSString *verificationCode;
+@property (nonatomic, copy) NSData *verificationData;
+
+- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3;
+- (void)dealloc;
+- (id)pass;
+- (void)setPass:(id)arg1;
+- (void)setVerificationCode:(id)arg1;
+- (void)setVerificationData:(id)arg1;
+- (id)verificationCode;
+- (id)verificationData;
 
 @end

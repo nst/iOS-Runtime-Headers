@@ -6,6 +6,6 @@
     PKPrinter *_printer;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end

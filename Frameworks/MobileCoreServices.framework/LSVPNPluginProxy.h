@@ -2,10 +2,13 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface LSVPNPluginProxy : LSBundleProxy
+@interface LSVPNPluginProxy : LSBundleProxy <NSSecureCoding>
 
 + (id)VPNPluginProxyForIdentifier:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)_initWithBundleIdentifier:(id)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 
 @end

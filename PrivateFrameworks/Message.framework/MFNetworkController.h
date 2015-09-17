@@ -22,6 +22,7 @@
     struct __CFRunLoop { } *_rl;
     struct __SCDynamicStore { } *_store;
     struct __CFRunLoopSource { } *_store_source;
+    int _symptomsToken;
     struct __CTServerConnection { } *_telephony;
     NSThread *_thread;
     struct __SCPreferences { } *_wiFiPreferences;
@@ -47,6 +48,7 @@
 - (void)_setDataStatus_nts:(id)arg1;
 - (void)_setFlags:(unsigned int)arg1 forReachability:(struct __SCNetworkReachability { }*)arg2;
 - (void)_setUpTelephony_nts;
+- (void)_setupSymptons;
 - (BOOL)_simulationOverrideForType:(unsigned int)arg1 actualValue:(BOOL)arg2;
 - (void)_tearDownTelephony_nts;
 - (void)_updateWifiClientType;

@@ -5,6 +5,7 @@
 @interface GKValueWithCaptionBubbleControl : GKBaseBubbleWithTextControl {
     GKLabel *_captionLabel;
     NSString *_captionText;
+    GKTextStyle *_normalCaptionStyle;
     GKTextStyle *_normalValueStyle;
     GKTextStyle *_overrideCaptionStyle;
     GKTextStyle *_overrideValueStyle;
@@ -15,6 +16,7 @@
 
 @property (nonatomic, retain) GKLabel *captionLabel;
 @property (nonatomic, retain) NSString *captionText;
+@property (nonatomic, retain) GKTextStyle *normalCaptionStyle;
 @property (nonatomic, retain) GKTextStyle *normalValueStyle;
 @property (nonatomic) BOOL oneLineOnly;
 @property (nonatomic, retain) GKTextStyle *overrideCaptionStyle;
@@ -22,6 +24,8 @@
 @property (nonatomic, retain) GKTextStyle *smallValueStyle;
 @property (nonatomic, retain) GKLabel *valueLabel;
 @property (nonatomic, retain) NSString *valueText;
+
++ (void)initialize;
 
 - (void)_updateCaptionTextLabel;
 - (void)_updateValueTextLabel;
@@ -36,6 +40,7 @@
 - (id)description;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
+- (id)normalCaptionStyle;
 - (id)normalValueStyle;
 - (BOOL)oneLineOnly;
 - (id)overrideCaptionStyle;
@@ -44,6 +49,7 @@
 - (void)setAttributedValueText:(id)arg1;
 - (void)setCaptionLabel:(id)arg1;
 - (void)setCaptionText:(id)arg1;
+- (void)setNormalCaptionStyle:(id)arg1;
 - (void)setNormalValueStyle:(id)arg1;
 - (void)setOneLineOnly:(BOOL)arg1;
 - (void)setOverrideCaptionStyle:(id)arg1;
@@ -51,7 +57,9 @@
 - (void)setSmallValueStyle:(id)arg1;
 - (void)setValueLabel:(id)arg1;
 - (void)setValueText:(id)arg1;
+- (void)setValueTextForInteger:(int)arg1;
 - (id)smallValueStyle;
+- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateTextFieldsFor3DScaling;
 - (id)valueLabel;
 - (id)valueText;

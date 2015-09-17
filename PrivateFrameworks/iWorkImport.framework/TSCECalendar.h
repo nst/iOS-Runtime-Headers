@@ -12,6 +12,8 @@
 - (id)dateByAddingComponents:(id)arg1 toDate:(id)arg2 options:(unsigned int)arg3;
 - (id)dateFromComponents:(id)arg1;
 - (void)dealloc;
+- (void)extractComponentsFromDate:(id)arg1 year:(int*)arg2 month:(int*)arg3 day:(int*)arg4;
+- (void)extractComponentsFromDate:(id)arg1 year:(int*)arg2 month:(int*)arg3 day:(int*)arg4 hour:(int*)arg5 minute:(int*)arg6 second:(int*)arg7;
 - (id)init;
 - (id)initWithCalendarIdentifier:(id)arg1;
 - (void)setTimeZone:(id)arg1;

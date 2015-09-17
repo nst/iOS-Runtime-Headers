@@ -71,6 +71,25 @@
 + (id)mf_copyCompositionServicesPreferenceValueForKey:(id)arg1;
 + (void)mf_setCompositionServicesPreferenceValue:(id)arg1 forKey:(id)arg2;
 
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (id)_sf_stringForKey:(id)arg1 defaultValue:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
++ (id)_akColorForData:(id)arg1;
++ (id)_akFontForData:(id)arg1;
++ (id)akDataForColor:(id)arg1;
++ (id)akDataForFont:(id)arg1;
++ (id)akDataForTextAttributes:(id)arg1;
+
+- (id)akColorForKey:(id)arg1;
+- (id)akFontForKey:(id)arg1;
+- (void)akSetColor:(id)arg1 forKey:(id)arg2;
+- (void)akSetFont:(id)arg1 forKey:(id)arg2;
+- (void)akSetTextAttributes:(id)arg1 forKey:(id)arg2;
+- (id)akTextAttributesForKey:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
 
 + (id)CNFObjectForKey:(id)arg1;
@@ -99,6 +118,11 @@
 - (const char *)utf8ValueSafeForKey:(id)arg1;
 - (const char *)utf8ValueSafeForKey:(id)arg1 status:(int*)arg2;
 
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
++ (void)FU_backupStandardUserDefaultsKey:(id)arg1;
++ (id)_npsManager;
+
 // Image: /System/Library/PrivateFrameworks/IMDaemonCore.framework/IMDaemonCore
 
 - (BOOL)delayedSynchronize;
@@ -109,6 +133,12 @@
 + (id)_IMAppObjectForKey:(id)arg1;
 + (id)_IMObjectForKey:(id)arg1 inDomain:(id)arg2;
 + (void)_IMSetObject:(id)arg1 forKey:(id)arg2 inDomain:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
+- (BOOL)boolForKey:(id)arg1 withDefaultValue:(BOOL)arg2;
+- (int)integerForSettingKey:(id)arg1 withDefaultValue:(int)arg2;
+- (id)stringForSettingKey:(id)arg1 withDefaultValue:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

@@ -3,17 +3,25 @@
  */
 
 @interface MFGraphicsDevice : NSObject {
+    NSMutableArray *m_DCStack;
     NSDictionary *m_colorMap;
     MFDeviceContext *m_currentDC;
     NSObject<MFDeviceDriver> *m_deviceDriver;
     NSDictionary *m_fillMap;
+    MFDeviceContext *m_firstClipDC;
+    int m_gStateStackHeight;
     MFObjectTable *m_objectTable;
-    NSMutableArray *m_savedDC;
     MFObjectTable *m_stockObjects;
 }
 
 - (int)abortPath;
+- (void)addClippingPathToCurrentContext:(id)arg1 dc:(id)arg2;
+- (void)addClippingPathToCurrentDCAndCurrentContext:(id)arg1;
+- (int)alphaBlend:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(id)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(unsigned char)arg10 :(BOOL)arg11 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg12 :(unsigned int)arg13;
 - (int)angleArc:(int)arg1 :(int)arg2 :(unsigned int)arg3 :(double)arg4 :(double)arg5;
+- (void)applyClippingOfDCAtIndexToCurrentContext:(unsigned int)arg1;
+- (void)applyDCAtIndexToCurrentContext:(unsigned int)arg1;
+- (void)applyNonClippingOfDCAtIndexToCurrentContext:(unsigned int)arg1;
 - (int)arc:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8;
 - (int)arcTo:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8;
 - (int)beginPath;
@@ -21,6 +29,11 @@
 - (int)bezierTo:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6;
 - (int)bitBlt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(id)arg5 :(int)arg6 :(int)arg7 :(unsigned int)arg8 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg9 :(unsigned int)arg10;
 - (int)chord:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8;
+- (id)clipEverythingClippingPath;
+- (id)clippingPathByCombiningClippingPath:(id)arg1 withClippingPath:(id)arg2 combineMode:(int)arg3;
+- (id)clippingPathByCombiningEmptyClippingPathWithClippingPath:(id)arg1 combineMode:(int)arg2;
+- (id)clippingPathByCombiningImplicitClippingPathWithClippingPath:(id)arg1 combineMode:(int)arg2;
+- (unsigned int)clippingStartDCIndex;
 - (int)closeCurrentPath:(bool)arg1;
 - (int)comment:(id)arg1;
 - (id)createBitmap:(unsigned int)arg1 :(unsigned int)arg2 :(unsigned int)arg3 :(unsigned int)arg4 :(const char *)arg5 :(unsigned int)arg6;
@@ -35,6 +48,8 @@
 - (int)createPen:(int)arg1 :(int)arg2 :(id)arg3 :(double*)arg4 :(unsigned int)arg5;
 - (int)createRegion:(id)arg1;
 - (void)createStockObjects;
+- (id)currentCummulatedClippingPath;
+- (unsigned int)currentDCIndex;
 - (void)dealloc;
 - (int)deleteObject:(int)arg1;
 - (int)description:(id)arg1;
@@ -46,11 +61,13 @@
 - (int)extTextOutEncoded:(int)arg1 :(int)arg2 :(id)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int*)arg9 :(int)arg10;
 - (int)fillRgn:(unsigned int)arg1 :(unsigned int)arg2;
 - (int)fillRgnWithRects:(id)arg1 :(unsigned int)arg2;
+- (unsigned int)firstClipDCIndex;
 - (int)frameRegion:(unsigned int)arg1 :(unsigned int)arg2 :(int)arg3 :(int)arg4;
 - (int)frameRegionWithRects:(id)arg1 :(unsigned int)arg2 :(int)arg3 :(int)arg4;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })getCanvas;
 - (id)getCurrentFont;
 - (int)getStockObject:(unsigned int)arg1;
+- (id)implicitClippingPath;
 - (id)initWithCanvas:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)intersectClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)invertRgn:(unsigned int)arg1;
@@ -59,6 +76,8 @@
 - (int)maskBlt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(id)arg5 :(int)arg6 :(int)arg7 :(id)arg8 :(int)arg9 :(int)arg10 :(unsigned int)arg11 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg12 :(unsigned int)arg13;
 - (int)modifyWorldTransform:(const struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1 :(int)arg2;
 - (int)moveTo:(double)arg1 :(double)arg2;
+- (id)normalizedClippingPathWithClippingPath:(id)arg1;
+- (int)offsetClipRegionByX:(int)arg1 y:(int)arg2;
 - (int)offsetViewportOrg:(int)arg1 :(int)arg2;
 - (int)offsetWindowOrg:(int)arg1 :(int)arg2;
 - (int)paintRgn:(unsigned int)arg1;
@@ -74,20 +93,27 @@
 - (id)recolor:(unsigned char)arg1 :(unsigned char)arg2 :(unsigned char)arg3 fill:(BOOL)arg4;
 - (id)recolor:(id)arg1 fill:(BOOL)arg2;
 - (int)rectangle:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4;
+- (int)removeClip;
 - (int)resizePalette:(unsigned int)arg1 :(unsigned int)arg2;
+- (int)restoreDC;
 - (int)restoreDC:(int)arg1;
+- (void)restoreGState:(id)arg1;
 - (int)roundRect:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(double)arg5 :(double)arg6;
 - (int)saveDC;
+- (void)saveGState:(id)arg1;
 - (int)scaleViewportExt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4;
 - (int)scaleWindowExt:(int)arg1 :(int)arg2 :(int)arg3 :(int)arg4;
 - (int)selectClipPath:(int)arg1;
-- (int)selectClipRegion:(unsigned int)arg1 :(int)arg2;
+- (int)selectClipRegion:(id)arg1 combineMode:(int)arg2;
 - (int)selectClipRegionWithRects:(id)arg1 :(int)arg2;
+- (int)selectClippingPath:(id)arg1 combineMode:(int)arg2;
 - (int)selectObject:(int)arg1;
 - (int)setArcDirection:(int)arg1;
 - (int)setBkColour:(id)arg1;
 - (int)setBkMode:(int)arg1;
 - (int)setBrushOrg:(double)arg1 :(double)arg2;
+- (int)setClipRegion:(unsigned int)arg1;
+- (void)setClippingPath:(id)arg1;
 - (void)setColorMap:(id)arg1 fillMap:(id)arg2;
 - (int)setMapMode:(int)arg1;
 - (int)setMetaRgn;

@@ -25,6 +25,8 @@
 - (id)_callerIDForChat:(id)arg1;
 - (void)_postNotification:(id)arg1 object:(id)arg2 userInfo:(id)arg3;
 - (void)_postRelationshipStatusDidChangeNotificationWithHandle:(id)arg1;
+- (void)_startSharingWithFMFHandles:(id)arg1 inChat:(id)arg2 untilDate:(id)arg3;
+- (void)_stopSharingWithFMFHandles:(id)arg1 inChat:(id)arg2;
 - (void)_updateActiveDevice;
 - (id)activeDevice;
 - (BOOL)allChatParticipantsFollowingMyLocation:(id)arg1;
@@ -66,9 +68,11 @@
 - (void)setEstablishingAccountID:(id)arg1;
 - (void)setSession:(id)arg1;
 - (void)startSharingWithChat:(id)arg1 untilDate:(id)arg2;
+- (void)startSharingWithHandle:(id)arg1 inChat:(id)arg2 untilDate:(id)arg3;
 - (void)startTrackingLocationForChat:(id)arg1;
 - (void)startTrackingLocationForHandle:(id)arg1;
 - (void)stopSharingWithChat:(id)arg1;
+- (void)stopSharingWithHandle:(id)arg1 inChat:(id)arg2;
 - (void)stopTrackingLocationForChat:(id)arg1;
 - (void)stopTrackingLocationForHandle:(id)arg1;
 - (id)timedOfferExpirationForChat:(id)arg1;

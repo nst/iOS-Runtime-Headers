@@ -23,6 +23,7 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (id)_achievementStringFromType:(unsigned int)arg1;
 + (unsigned int)_achievementTypeFromString:(id)arg1;
 + (id)_achievementTypeNameMappings;
 + (id)_achievementWithUUID:(id)arg1 type:(unsigned int)arg2 completedDate:(id)arg3 value:(id)arg4 extraData:(id)arg5;
@@ -62,24 +63,31 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
-- (id)_fiui_URLForFullMovieName:(id)arg1 withScale:(float)arg2;
 - (id)_fiui_assetNameForSizeClass:(int)arg1;
-- (id)fiui_badgeMovieURL;
+- (id)_fiui_baseAssetName;
+- (id)fiui_badgeModelBaseAssetName;
+- (id)fiui_badgePlistPath;
+- (id)fiui_badgeTexturePath;
+- (id)fiui_compressedBadgeModelPath;
 - (id)fiui_imageForSizeClass:(int)arg1;
+- (id)fiui_uncompressedBadgeModelPath;
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
 
 - (id)codableRepresentationForSync;
+- (BOOL)isEquivalentToAchievement:(id)arg1 inCalendar:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/HealthKitExtensions.framework/HealthKitExtensions
 
 - (id)_localizedDescriptionForCompleteNumberOfTimes:(int)arg1;
 - (id)_localizedDescriptionForIncomplete;
+- (id)_localizedShareDescriptionWithNumberOfTimesAchieved:(int)arg1;
 - (id)localizedDescription;
 - (id)localizedDescriptionForAlertWithUserName:(id)arg1;
 - (id)localizedDescriptionWithNumberOfTimesAchieved:(int)arg1;
+- (id)localizedShareDescriptionWithNumberOfTimesAchieved:(int)arg1;
 - (id)localizedTitle;
 
 @end

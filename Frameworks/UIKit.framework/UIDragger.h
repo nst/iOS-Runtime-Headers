@@ -26,6 +26,7 @@
     BOOL _waitingForSmoothScrolling;
 }
 
+- (void).cxx_destruct;
 - (void)_continueDrag:(id)arg1;
 - (double)_delayUntilNextEvent;
 - (void)_postMouseEvent:(int)arg1 timestamp:(unsigned long long)arg2 location:(struct CGPoint { float x1; float x2; })arg3;

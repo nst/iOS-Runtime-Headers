@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLRenderPassColorAttachmentDescriptorArray : NSObject {
-    MTLRenderPassAttachmentDescriptor *_descriptors;
-}
+@interface MTLRenderPassColorAttachmentDescriptorArray : NSObject
+
++ (id)alloc;
 
 - (id)_descriptorAtIndex:(unsigned int)arg1;
-- (void)dealloc;
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
 

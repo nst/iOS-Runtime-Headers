@@ -11,7 +11,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCSEAIDSelectEvent *metric;
+@property (nonatomic, retain) AWDNFCSEAIDSelectEvent *metric;
 @property (readonly) Class superclass;
 
 - (id)aid;
@@ -22,6 +22,7 @@
 - (id)metric;
 - (void)setAid:(id)arg1;
 - (void)setMetric:(id)arg1;
-- (unsigned int)updateTransactionStateInfoPreviousState:(unsigned int)arg1 withUUID:(id)arg2 withUUIDRefTimestamp:(unsigned long long)arg3;
+- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 
 @end

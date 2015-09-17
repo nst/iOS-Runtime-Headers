@@ -3,11 +3,11 @@
  */
 
 @interface MKPlaceHeaderBackgroundView_Snapshot : MKPlaceHeaderBackgroundView <MKMapViewDelegate> {
-    CLLocation *_location;
     MKMapView *_mapView;
     MKMapCamera *_orbitCamera;
     BOOL _orbiting;
-    unsigned int _pinColor;
+    UIColor *_pinTintColor;
+    BOOL _renderingMap;
     BOOL _settingUpOrbitAnimation;
     BOOL _showsPin;
     float _zoomLevel;
@@ -16,10 +16,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) CLLocation *location;
 @property (nonatomic, retain) MKMapCamera *orbitCamera;
 @property (nonatomic) BOOL orbiting;
-@property (nonatomic) unsigned int pinColor;
+@property (nonatomic) UIColor *pinTintColor;
 @property (nonatomic) BOOL settingUpOrbitAnimation;
 @property (nonatomic) BOOL showsPin;
 @property (readonly) Class superclass;
@@ -31,27 +30,25 @@
 - (void)beginOrbit;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 mapItem:(id)arg2;
-- (id)location;
 - (void)mapFinishedLoading:(BOOL)arg1;
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
-- (void)mapViewDidFinishLoadingMap:(id)arg1;
+- (void)mapViewDidFailLoadingMap:(id)arg1 withError:(id)arg2;
 - (void)mapViewDidFinishRenderingMap:(id)arg1 fullyRendered:(BOOL)arg2;
 - (id)orbitCamera;
 - (BOOL)orbiting;
 - (void)pause;
 - (void)pauseOrbit;
-- (unsigned int)pinColor;
+- (id)pinTintColor;
 - (void)prepareForPresentation;
 - (void)present;
 - (void)requestSnapshot;
 - (void)reset;
 - (void)resume;
-- (void)setLocation:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setOrbitCamera:(id)arg1;
 - (void)setOrbiting:(BOOL)arg1;
-- (void)setPinColor:(unsigned int)arg1;
+- (void)setPinTintColor:(id)arg1;
 - (void)setSettingUpOrbitAnimation:(BOOL)arg1;
 - (void)setShowsPin:(BOOL)arg1;
 - (void)setZoomLevel:(float)arg1;

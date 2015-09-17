@@ -8,7 +8,6 @@
     <TSCHStyleActAlike> *mLegendStyle;
     NSArray *mParagraphStyles;
     <TSCHStyleActAlike> *mRefLineStyle;
-    NSArray *mRefLineStyles;
     NSArray *mSeriesStyles;
     struct __CFUUID { } *mUUID;
     NSArray *mValueAxisStyles;

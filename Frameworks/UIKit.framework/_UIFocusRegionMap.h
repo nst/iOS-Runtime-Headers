@@ -2,42 +2,48 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFocusRegionMap : NSObject <NSSecureCoding> {
-    BOOL _builtRegionMap;
-    UIView *_containingView;
-    NSMutableArray *_mapEntries;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _windowSize;
+@interface _UIFocusRegionMap : NSObject {
+    UIView *_favoredFocusCandidateView;
+    _UIFocusRegionMapSnapshot *_lastSnapshot;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _minimumSearchArea;
+    UIView *_rootView;
 }
 
-@property (nonatomic, retain) UIView *containingView;
-@property (nonatomic, retain) NSMutableArray *mapEntries;
-@property (nonatomic) struct CGSize { float x1; float x2; } windowSize;
+@property (nonatomic) UIView *favoredFocusCandidateView;
+@property (nonatomic, retain) _UIFocusRegionMapSnapshot *lastSnapshot;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } minimumSearchArea;
+@property (nonatomic) UIView *rootView;
 
-+ (BOOL)supportsSecureCoding;
-
-- (void)_buildRegionMap;
-- (void)_punchHoleInMapAtFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)addFocusableView:(id)arg1 withFrameInWindow:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)addUnfocusableView:(id)arg1 withFrameInWindow:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (id)closestFocusableViewFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDirection:(struct CGSize { float x1; float x2; })arg2;
-- (id)closestFocusableViewFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDirection:(struct CGSize { float x1; float x2; })arg2 includeCurrentlyFocused:(BOOL)arg3;
-- (id)containingView;
-- (void)dealloc;
+- (void).cxx_destruct;
+- (id)_closestFocusableRegionInArray:(id)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 usingHeading:(unsigned int)arg3;
+- (id)_closestFocusableRegionInArray:(id)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2 usingHeading:(unsigned int)arg3 withFocusedView:(id)arg4 consideringFavoredRegion:(BOOL)arg5 includingFocusedView:(BOOL)arg6;
+- (struct CGPoint { float x1; float x2; })_focusCandidateSearchOriginForFocusedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 heading:(unsigned int)arg2 minimumSearchArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_focusCandidateSearchRectForFocusedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 heading:(unsigned int)arg2 minimumSearchArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (id)_nearestFocusCandidateFromFocusedView:(id)arg1 withFocusedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 inDirection:(struct CGVector { float x1; float x2; })arg3 includingFocusedView:(BOOL)arg4;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectThatJustBarelyIntersectsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 startingRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_viewSearchRectForFocusedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 focusCandidateSearchRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 includesFocusedFrame:(BOOL)arg3;
 - (id)debugQuickLookObject;
-- (id)debuggingImage;
-- (void)encodeWithCoder:(id)arg1;
-- (id)init;
-- (id)initWithCoder:(id)arg1;
-- (id)initWithContainingView:(id)arg1;
-- (id)linearlyOrderedFocusRegionMaps;
-- (id)linearlyOrderedFocusViews;
-- (id)mapEntries;
-- (void)setContainingView:(id)arg1;
-- (void)setMapEntries:(id)arg1;
-- (void)setWindowSize:(struct CGSize { float x1; float x2; })arg1;
-- (struct CGSize { float x1; float x2; })windowSize;
+- (id)favoredFocusCandidateView;
+- (id)initWithRootView:(id)arg1;
+- (id)lastSnapshot;
+- (id)linearlyOrderedFocusCandidatesFromView:(id)arg1 usingHeading:(unsigned int)arg2 indexForFocusedView:(unsigned int*)arg3;
+- (id)linearlyOrderedFocusRegionMapEntriesFromView:(id)arg1 usingHeading:(unsigned int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })minimumSearchArea;
+- (id)nearestFocusCandidateFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inDirection:(struct CGVector { float x1; float x2; })arg2;
+- (id)nearestFocusCandidateFromView:(id)arg1 inDirection:(struct CGVector { float x1; float x2; })arg2;
+- (id)rootView;
+- (void)setFavoredFocusCandidateView:(id)arg1;
+- (void)setLastSnapshot:(id)arg1;
+- (void)setMinimumSearchArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRootView:(id)arg1;
 
 @end

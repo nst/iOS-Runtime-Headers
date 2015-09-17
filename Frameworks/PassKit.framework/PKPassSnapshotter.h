@@ -16,7 +16,8 @@
 - (void)_cacheItem:(id)arg1 withKey:(id)arg2;
 - (BOOL)_cachedImageWithKey:(id)arg1 completion:(id /* block */)arg2;
 - (void)_performSnapshot:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id /* block */)arg4;
-- (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cacheKey:(id)arg3 completion:(id /* block */)arg4;
+- (void)_prepareSnapshotViewWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 suppressedContent:(unsigned int)arg3 cacheKey:(id)arg4 completion:(id /* block */)arg5;
+- (void)_snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 suppressedContent:(unsigned int)arg3 withCache:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)dealloc;
 - (id)init;
 - (id)passLibrary;
@@ -24,7 +25,7 @@
 - (void)setRunsInBackgroundProcess:(BOOL)arg1;
 - (void)snapshotWithPass:(id)arg1 completion:(id /* block */)arg2;
 - (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;
-- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 withCache:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)snapshotWithPass:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 suppressedContent:(unsigned int)arg3 completion:(id /* block */)arg4;
 - (void)snapshotWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)snapshotWithUniqueID:(id)arg1 manifestHash:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 completion:(id /* block */)arg4;
 - (void)snapshotWithUniqueID:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 completion:(id /* block */)arg3;

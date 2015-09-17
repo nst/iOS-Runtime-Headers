@@ -4,10 +4,16 @@
 
 @interface PKPaymentRemoteAlertViewController : SBUIRemoteAlertServiceViewController <PKPaymentServiceDelegate> {
     _UIBackdropView *_backdropView;
-    BOOL _backlightActiveOnLaunch;
+    BOOL _backlightActive;
+    NSArray *_fieldPassUniqueIdentifiers;
+    PKFieldProperties *_fieldProperties;
+    NSObject<OS_dispatch_group> *_fieldPropertiesLookupGroup;
     PKPassGroupsViewController *_passGroupsViewController;
+    NSString *_passUniqueIdentifier;
     CLInUseAssertion *_passbookForegroundAssertion;
     PKPaymentService *_paymentService;
+    int _presentationSource;
+    BOOL _processHomeButtonEvents;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,22 +21,22 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (id)_createGroupsController;
 + (BOOL)_isSecureForRemoteViewService;
 + (BOOL)_shouldForwardViewWillTransitionToSize;
-+ (id)groupsController;
-+ (void)preloadGroupsController;
++ (id)groupsControllerWithSource:(int)arg1;
 
-- (void)_dismiss;
+- (void)_contactlessInterfaceSessionDidAuthorize:(id)arg1;
+- (void)_dismissForSource:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (void)_dismissIfRestricted;
-- (BOOL)_isBacklightActive;
+- (BOOL)_notificationIsFromChildViewController:(id)arg1;
+- (void)_paymentDidReceiveSuccessfulTransactionNotification:(id)arg1;
+- (void)_presentHomeButtonDoubleTapAlertIfNecessary;
+- (void)_setupGroupController;
 - (void)_willAppearInRemoteViewController;
 - (void)dealloc;
 - (void)handleHomeButtonPressed;
 - (id)init;
-- (void)paymentContainerDidFinishAnimatingNotification:(id)arg1;
-- (void)paymentPassWithUniqueIdentifierDidAuthorize:(id)arg1;
-- (void)paymentPassWithUniqueIdentifierDidDeauthorize:(id)arg1;
+- (void)setUserInfo:(id)arg1;
 - (BOOL)shouldAutorotate;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (unsigned int)supportedInterfaceOrientations;

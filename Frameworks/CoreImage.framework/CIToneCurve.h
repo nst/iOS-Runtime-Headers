@@ -36,7 +36,6 @@
 - (id)inputPoint3;
 - (id)inputPoint4;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputPoint0:(id)arg1;
 - (void)setInputPoint1:(id)arg1;

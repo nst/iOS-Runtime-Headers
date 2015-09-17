@@ -15,6 +15,7 @@
 - (void)notifyFetchRequestCompleted:(id)arg1;
 - (void)notifyOldMessagesAvailable:(id)arg1;
 - (void)readProtobufData:(id)arg1 type:(unsigned int)arg2;
+- (id)reportComposedMessageSendingProgress:(id)arg1;
 - (void)requestPrepareForFullSync:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)successfullySentProtobufWithIDSIdentifier:(id)arg1;

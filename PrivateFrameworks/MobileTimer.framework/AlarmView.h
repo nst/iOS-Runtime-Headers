@@ -3,6 +3,8 @@
  */
 
 @interface AlarmView : UIView <MTDateLabelObserver> {
+    id _contentSizeFontAdjustObserver;
+    NSArray *_currentConstraints;
     UILabel *_detailLabel;
     UISwitch *_enabledSwitch;
     NSString *_name;
@@ -17,28 +19,31 @@
     DigitalClockLabel *_timeLabel;
 }
 
+@property (nonatomic, retain) NSArray *currentConstraints;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly, retain) UILabel *detailLabel;
+@property (nonatomic, readonly) UILabel *detailLabel;
 @property (nonatomic, readonly) UISwitch *enabledSwitch;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, retain) UIFont *nameFont;
-@property (nonatomic, readonly, retain) UILabel *nameLabel;
+@property (nonatomic, readonly) UILabel *nameLabel;
 @property (nonatomic, retain) UIFont *repeatFont;
-@property (nonatomic, readonly, retain) UILabel *repeatLabel;
+@property (nonatomic, readonly) UILabel *repeatLabel;
 @property (nonatomic, copy) NSString *repeatText;
-@property (nonatomic, readonly, retain) UILabel *secondaryDesignatorLabel;
+@property (nonatomic, readonly) UILabel *secondaryDesignatorLabel;
 @property (nonatomic) int style;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) DigitalClockLabel *timeLabel;
+@property (nonatomic, readonly) NSDictionary *viewsByIdentifier;
 
+- (void).cxx_destruct;
+- (void)_loadFontsWithTextStyles;
+- (id)currentConstraints;
 - (void)dateLabel:(id)arg1 timeDesignatorDidChange:(id)arg2;
-- (void)dealloc;
 - (id)detailLabel;
 - (id)enabledSwitch;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
 - (id)name;
 - (id)nameFont;
 - (id)nameLabel;
@@ -46,6 +51,7 @@
 - (id)repeatLabel;
 - (id)repeatText;
 - (id)secondaryDesignatorLabel;
+- (void)setCurrentConstraints:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setName:(id)arg1 andRepeatText:(id)arg2 textColor:(id)arg3;
 - (void)setNameFont:(id)arg1;
@@ -53,6 +59,11 @@
 - (void)setRepeatText:(id)arg1;
 - (void)setStyle:(int)arg1;
 - (int)style;
+- (void)tearDownContentSizeChangeObserver;
 - (id)timeLabel;
+- (void)updateConstraints;
+- (void)updatePreferredMaxLayoutWidthForDetailContainerLabels;
+- (void)updateSubviewVisibility;
+- (id)viewsByIdentifier;
 
 @end

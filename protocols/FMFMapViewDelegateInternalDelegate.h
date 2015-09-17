@@ -6,7 +6,9 @@
 @required
 
 - (UIColor *)_internalAnnotationTintColor;
-- (UIImage *)annotationImageForHandle:(FMFHandle *)arg1;
+- (BOOL)alwaysShowAccuracy;
+- (UIImage *)annotationImageForAnnotation:(FMFLocation *)arg1 andHandle:(FMFHandle *)arg2;
+- (BOOL)canSelectAnnotation:(id <MKAnnotation>)arg1;
 - (void)didDeselectLocation:(FMFLocation *)arg1;
 - (void)didSelectLocation:(FMFLocation *)arg1;
 - (void)didUpdateUserLocation:(MKUserLocation *)arg1;

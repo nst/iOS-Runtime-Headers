@@ -20,6 +20,7 @@
     NSDate *_startDate;
     UITableView *_tableView;
     NSTimeZone *_timeZone;
+    BOOL _useClearBackground;
     EKRecurrenceWeekdayChooserController *_weeklyChooser;
     UISwitch *_yearOrdinalSwitch;
     EKRecurrenceMonthChooserController *_yearlyChooser;
@@ -70,11 +71,12 @@
 - (void)_updateSummaryLabel;
 - (void)_updateTableSectionsFromFrequency:(int)arg1 toFrequency:(int)arg2;
 - (void)_yearOrdinalSwitchChanged:(id)arg1;
+- (struct CGSize { float x1; float x2; })calculatePreferredContentSize;
 - (id /* block */)completionBlock;
 - (id)currentChooser;
 - (id)frequencyPickerView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (id)initWithStartDate:(id)arg1 timeZone:(id)arg2;
+- (id)initWithStartDate:(id)arg1 timeZone:(id)arg2 clearBackground:(BOOL)arg3;
 - (id)intervalPickerViewController;
 - (void)loadView;
 - (id)monthlyChooser;
@@ -83,6 +85,7 @@
 - (void)pickerView:(id)arg1 didSelectRow:(int)arg2 inComponent:(int)arg3;
 - (int)pickerView:(id)arg1 numberOfRowsInComponent:(int)arg2;
 - (id)pickerView:(id)arg1 titleForRow:(int)arg2 forComponent:(int)arg3;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (BOOL)prohibitsMultipleDaysInMonthlyRecurrence;
 - (BOOL)prohibitsMultipleMonthsInYearlyRecurrence;
 - (BOOL)prohibitsYearlyRecurrenceInterval;

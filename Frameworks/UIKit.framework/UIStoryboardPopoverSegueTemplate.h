@@ -14,10 +14,9 @@
 @property (nonatomic, copy) NSArray *passthroughViews;
 @property (nonatomic) unsigned int permittedArrowDirections;
 
+- (void).cxx_destruct;
 - (id)anchorBarButtonItem;
 - (id)anchorView;
-- (void)dealloc;
-- (id)defaultSegueClassName;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)passthroughViews;

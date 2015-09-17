@@ -5,17 +5,26 @@
 @interface PDAnimationChartTarget : PDAnimationShapeTarget {
     int mBuildStep;
     int mCatagoryIndex;
+    int mChartSubElementType;
+    BOOL mHasBuildStep;
+    BOOL mHasCatagoryIndex;
+    BOOL mHasSeriesIndex;
     int mSeriesIndex;
 }
 
 - (int)buildStep;
 - (int)catagoryIndex;
+- (int)chartSubElementType;
+- (BOOL)hasBuildStep;
+- (BOOL)hasCatagoryIndex;
+- (BOOL)hasSeriesIndex;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
 - (int)seriesIndex;
 - (void)setBuildStep:(int)arg1;
 - (void)setCatagoryIndex:(int)arg1;
+- (void)setChartSubElementType:(int)arg1;
 - (void)setSeriesIndex:(int)arg1;
 
 @end

@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) BOOL isMeCategory;
 @property (nonatomic, readonly) UIImage *listIcon;
 @property (nonatomic, readonly) NSString *listIconName;
+@property (nonatomic, readonly) UIColor *seriesColor;
 @property (nonatomic, readonly) UIImage *shareIcon;
 
 - (void).cxx_destruct;
@@ -40,6 +41,7 @@
 - (id)listIcon;
 - (id)listIconName;
 - (id)roundedCornerGradientWithHeight:(float)arg1;
+- (id)seriesColor;
 - (id)shareIcon;
 
 @end

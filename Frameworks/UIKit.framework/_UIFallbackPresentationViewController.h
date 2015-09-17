@@ -3,22 +3,26 @@
  */
 
 @interface _UIFallbackPresentationViewController : UIViewController {
+    BOOL _hasPreservedKeyboardInputViews;
     _UIFallbackPresentationWindow *_presentationWindow;
     UIWindow *_rotationDecider;
 }
 
+@property (nonatomic) BOOL hasPreservedKeyboardInputViews;
 @property (nonatomic, retain) UIWindow *rotationDecider;
 
+- (void).cxx_destruct;
+- (void)_dismissViewControllerWithTransition:(int)arg1 from:(id)arg2 completion:(id /* block */)arg3;
 - (void)_presentViewController:(id)arg1 sendingView:(id)arg2 animated:(BOOL)arg3;
-- (void)dealloc;
-- (void)didReceiveMemoryWarning;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (void)_preserveInputViewsAnimated:(BOOL)arg1;
+- (void)_restoreInputViewsAnimated:(BOOL)arg1;
+- (BOOL)hasPreservedKeyboardInputViews;
 - (id)rotationDecider;
+- (void)setHasPreservedKeyboardInputViews:(BOOL)arg1;
 - (void)setRotationDecider:(id)arg1;
 - (BOOL)shouldAutorotate;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidLoad;
-- (void)viewDidUnload;
 
 @end

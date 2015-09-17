@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicLibraryBrowseTableViewController : UIViewController <MusicClientContextConsuming, MusicEntityPlaybackStatusControllerObserving, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryBrowseSectionHeaderViewDelegate, MusicLibraryViewConfigurationConsuming, MusicMediaPickerSearchDelegate, MusicSplitInitialStateProviding, MusicTableViewDelegate, UITableViewDataSource> {
+@interface MusicLibraryBrowseTableViewController : UIViewController <MusicClientContextConsuming, MusicEntityPlaybackStatusControllerObserving, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryBrowseSectionHeaderViewDelegate, MusicLibraryViewConfigurationConsuming, MusicMediaPickerSearchDelegate, MusicSplitInitialStateProviding, MusicTableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
     MusicClientContext *_clientContext;
-    BOOL _collapseSections;
     NSArray *_contentDescriptors;
     UIColor *_defaultSelectionTintColor;
     <MusicLibraryBrowseTableViewControllerDelegate> *_delegate;
@@ -31,11 +30,12 @@
     unsigned int _referenceCountForRunningEditingStateAnimations;
     NSMutableArray *_reusableCoalescingEntityValueProviders;
     NSMapTable *_sectionContentDescriptorToMaximumHeaderHeight;
-    unsigned int _sectionCountThresholdForCollapsedSections;
     MusicSectionEntityValueContext *_sectionEntityValueContext;
     MusicEntityValueContext *_selectedItemEntityValueContext;
     BOOL _shouldReloadTableViewOnceStoppedIgnoringNotifications;
     MusicTableView *_tableView;
+    <UIViewControllerPreviewing> *_viewControllerPreviewing;
+    NSMutableArray *_visibleFlexibleHeaderViews;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
@@ -47,7 +47,6 @@
 @property (nonatomic, readonly) MusicEntityViewDescriptor *entityViewDescriptor;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) MusicLibraryViewConfiguration *libraryViewConfiguration;
-@property (nonatomic) unsigned int sectionCountThresholdForCollapsedSections;
 @property (nonatomic, readonly) UIColor *sectionHeaderBackgroundColor;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MusicTableView *tableView;
@@ -77,12 +76,9 @@
 - (void)_reloadTableViewData;
 - (void)_sectionContentDescriptorDidInvalidateNotification:(id)arg1;
 - (id)_sectionEntityValueContextForIndex:(unsigned int)arg1;
-- (void)_setCollapseSections:(BOOL)arg1;
 - (void)_setSelectedIndexPath:(id)arg1 entityValueContext:(id)arg2;
-- (void)_setTableViewRowHeight:(float)arg1;
 - (void)_uninstallEditingEntityProviderIfAppropriate;
 - (void)_unregisterForNotificationsForContentDescriptors;
-- (void)_updateCollapseSections;
 - (void)_updateEntityDisabledStateForView:(id)arg1 withEntityValueContext:(id)arg2;
 - (void)_updateEntityDisabledStateForVisibleItems;
 - (void)_updateNumberOfEntities;
@@ -96,11 +92,13 @@
 - (id)clientContext;
 - (id)contentScrollView;
 - (void)dealloc;
+- (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)delegate;
 - (id)description;
 - (void)didEndDisplayingBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
 - (void)didSelectActionButtonInBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
 - (float)effectiveContentHeight;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)endEditingWithCommitBlock:(id /* block */)arg1;
 - (id)entityProviderChangeRecords;
 - (id)entityViewDescriptor;
@@ -112,6 +110,7 @@
 - (int)handleSelectionOfCellForEntityValueContext:(id)arg1;
 - (int)handleSelectionOfSectionHeaderForSectionEntityValueContext:(id)arg1;
 - (id)indexBarEntryAtIndex:(unsigned int)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)insertEntityValueProviders:(id)arg1;
@@ -121,14 +120,14 @@
 - (unsigned int)numberOfIndexBarEntries;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
-- (unsigned int)sectionCountThresholdForCollapsedSections;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)sectionHeaderBackgroundColor;
 - (void)sectionHeaderViewDidSelectButton:(id)arg1;
 - (id)sectionIndexTitlesForTableView:(id)arg1;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setSectionCountThresholdForCollapsedSections:(unsigned int)arg1;
 - (void)showInitialStateForSplitViewController;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableView;
@@ -160,6 +159,8 @@
 - (id)tableView:(id)arg1 willDeselectRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)tableViewDataDidReload;
+- (void)tableViewLayoutMarginsDidChange:(id)arg1;
 - (id)tableViewThatNeedsSearchBarHeader;
 - (void)tableViewTintColorDidChange:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
@@ -167,5 +168,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willDisplayBrowseSectionHeaderView:(id)arg1 forSection:(int)arg2;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

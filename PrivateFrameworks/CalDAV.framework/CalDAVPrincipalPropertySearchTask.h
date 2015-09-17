@@ -14,7 +14,7 @@
 @property (nonatomic, retain) NSSet *searchTypes;
 @property (nonatomic, retain) CalDAVPrincipalSearchPropertySet *serverSupportSet;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)extraAttributes;
 - (id)initWithSearchStrings:(id)arg1 searchTypes:(id)arg2 serverSupportSet:(id)arg3 atURL:(id)arg4;
 - (id)searchContext;

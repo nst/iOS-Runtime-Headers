@@ -7,12 +7,12 @@
     MusicEntityViewContentDescriptor *_defaultContentDescriptor;
     MusicEntityViewContentDescriptor *_defaultSectionHeaderContentDescriptor;
     <MusicEntityProviding> *_entityProvider;
-    BOOL _rightSeparatorInsetFollowsLayoutMargin;
     int _scrollIndicatorStyle;
     int _sectionHeaderHairlineStyleForNonFloatingState;
     UIColor *_sectionHeaderTextColorForNonFloatingState;
     float _sectionHeaderTopContentInset;
     BOOL _sectionHeaderViewsFloat;
+    BOOL _trailingSeparatorInsetFollowsLayoutMargin;
     BOOL _usesUppercaseLettersForSectionHeaderTitles;
 }
 
@@ -20,12 +20,12 @@
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *defaultContentDescriptor;
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *defaultSectionHeaderContentDescriptor;
 @property (nonatomic, retain) <MusicEntityProviding> *entityProvider;
-@property (nonatomic) BOOL rightSeparatorInsetFollowsLayoutMargin;
 @property (nonatomic) int scrollIndicatorStyle;
 @property (nonatomic) int sectionHeaderHairlineStyleForNonFloatingState;
 @property (nonatomic, retain) UIColor *sectionHeaderTextColorForNonFloatingState;
 @property (nonatomic) float sectionHeaderTopContentInset;
 @property (nonatomic) BOOL sectionHeaderViewsFloat;
+@property (nonatomic) BOOL trailingSeparatorInsetFollowsLayoutMargin;
 @property (nonatomic) BOOL usesUppercaseLettersForSectionHeaderTitles;
 
 - (void).cxx_destruct;
@@ -39,7 +39,6 @@
 - (void)enumerateContentDescriptorsUsingBlock:(id /* block */)arg1;
 - (void)enumerateSectionHeaderContentDescriptorsUsingBlock:(id /* block */)arg1;
 - (id)init;
-- (BOOL)rightSeparatorInsetFollowsLayoutMargin;
 - (int)scrollIndicatorStyle;
 - (id)sectionHeaderContentDescriptorForSectionIndex:(unsigned int)arg1;
 - (int)sectionHeaderHairlineStyleForNonFloatingState;
@@ -50,13 +49,14 @@
 - (void)setDefaultContentDescriptor:(id)arg1;
 - (void)setDefaultSectionHeaderContentDescriptor:(id)arg1;
 - (void)setEntityProvider:(id)arg1;
-- (void)setRightSeparatorInsetFollowsLayoutMargin:(BOOL)arg1;
 - (void)setScrollIndicatorStyle:(int)arg1;
 - (void)setSectionHeaderHairlineStyleForNonFloatingState:(int)arg1;
 - (void)setSectionHeaderTextColorForNonFloatingState:(id)arg1;
 - (void)setSectionHeaderTopContentInset:(float)arg1;
 - (void)setSectionHeaderViewsFloat:(BOOL)arg1;
+- (void)setTrailingSeparatorInsetFollowsLayoutMargin:(BOOL)arg1;
 - (void)setUsesUppercaseLettersForSectionHeaderTitles:(BOOL)arg1;
+- (BOOL)trailingSeparatorInsetFollowsLayoutMargin;
 - (BOOL)usesUppercaseLettersForSectionHeaderTitles;
 
 @end

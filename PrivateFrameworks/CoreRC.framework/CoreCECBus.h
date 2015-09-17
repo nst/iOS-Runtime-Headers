@@ -23,6 +23,7 @@
 @property (nonatomic, readonly) NSString *osdName;
 @property (nonatomic) union CECOSDName { unsigned char x1[15]; struct { unsigned char x_2_1_1; unsigned char x_2_1_2[14]; } x2; } osdNameASCII;
 @property (nonatomic) unsigned int physicalAddress;
+@property (nonatomic, readonly) CoreCECPhysicalDevice *rootPhysicalDevice;
 @property (nonatomic) unsigned int systemAudioModeStatus;
 @property (nonatomic, readonly) NSString *tvLanguageCode;
 @property (nonatomic) struct CECLanguage { unsigned char x1[3]; } tvLanguageCodeASCII;

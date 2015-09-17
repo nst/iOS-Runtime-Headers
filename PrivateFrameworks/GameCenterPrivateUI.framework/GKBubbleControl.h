@@ -35,6 +35,7 @@
 
 + (void)initialize;
 + (float)maximumDimensionBasedOnDeviceAdjustForTallness:(BOOL)arg1;
++ (float)maximumDimensionWhenContainedInViewWithSize:(struct CGSize { float x1; float x2; })arg1;
 
 - (BOOL)animateOnTouch;
 - (void)bounceAfterDelay:(double)arg1 fromZ:(float)arg2 toZ:(float)arg3;

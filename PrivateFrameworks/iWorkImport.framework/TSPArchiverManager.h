@@ -22,7 +22,6 @@
 
 @property (nonatomic, retain) TSPDescriptionGenerator *descriptionGenerator;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)archiveObjectWithHighPriority:(id)arg1;
 - (void)archiveObjectWithLowPriority:(id)arg1;

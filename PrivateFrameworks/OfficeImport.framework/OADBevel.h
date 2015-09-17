@@ -9,6 +9,7 @@
 }
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (unsigned int)hash;
 - (float)height;
 - (id)init;

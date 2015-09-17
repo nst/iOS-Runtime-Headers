@@ -153,7 +153,6 @@
     } mTrackedProperties;
 }
 
-- (id).cxx_construct;
 - (int)alignment;
 - (id)baseStyle;
 - (BOOL)biDirectional;
@@ -172,6 +171,7 @@
 - (void)dealloc;
 - (int)deleted;
 - (id)deletionDate;
+- (id)description;
 - (id)document;
 - (id)editDate;
 - (int)edited;

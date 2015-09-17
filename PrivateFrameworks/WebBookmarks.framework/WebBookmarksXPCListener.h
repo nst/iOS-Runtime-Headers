@@ -10,14 +10,17 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <WebBookmarksXPCConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_handleIncomingConnection:(id)arg1;
 - (void)connection:(id)arg1 didCloseWithError:(id)arg2;
-- (void)dealloc;
-- (id)initListenerForMachService:(const char *)arg1 delegate:(id)arg2;
+- (id)delegate;
+- (id)initListenerForMachService:(const char *)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setHandler:(id /* block */)arg1 forMessageNamed:(const char *)arg2;
 - (void)setMessageHandlers:(id)arg1;
 

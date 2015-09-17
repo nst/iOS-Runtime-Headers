@@ -6,14 +6,13 @@
 @optional
 
 - (void)stackingViewController:(MKStackingViewController *)arg1 calculatedTransformForHeaderView:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg2;
+- (void)stackingViewController:(MKStackingViewController *)arg1 didShowMinimumVisibleSurfacePercentForAnalyticsSelection:(UIViewController *)arg2;
+- (float)stackingViewController:(MKStackingViewController *)arg1 heightForSeparatorBetweenUpperViewController:(UIViewController *)arg2 andLowerViewController:(UIViewController *)arg3;
+- (float)stackingViewController:(MKStackingViewController *)arg1 minimumVisibleSurfacePercentForAnalyticsSelection:(UIViewController *)arg2;
 - (BOOL)stackingViewController:(MKStackingViewController *)arg1 showsTitleForViewController:(UIViewController *)arg2;
-- (void)stackingViewController:(MKStackingViewController *)arg1 willSelectViewController:(UIViewController *)arg2;
 - (void)stackingViewControllerDidEndScroll:(MKStackingViewController *)arg1;
 - (float)stackingViewControllerHeightForHeaderView:(MKStackingViewController *)arg1;
-- (float)stackingViewControllerHeightForSelectorView:(MKStackingViewController *)arg1;
 - (float)stackingViewControllerHeightForTitleView:(MKStackingViewController *)arg1;
-- (float)stackingViewControllerTopLayoutGuideLength:(MKStackingViewController *)arg1;
-- (void)stackingViewControllerUpdateSelectorView:(MKStackingViewController *)arg1;
 - (void)stackingViewControllerWillBeginScroll:(MKStackingViewController *)arg1;
 
 @end

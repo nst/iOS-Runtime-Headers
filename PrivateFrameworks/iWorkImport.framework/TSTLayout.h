@@ -130,7 +130,7 @@
 @property (nonatomic, readonly) BOOL layoutDirectionIsLeftToRight;
 @property (nonatomic, retain) TSTLayoutHint *layoutHint;
 @property (nonatomic, readonly) TSWPPadding *layoutMargins;
-@property (nonatomic) TSTMasterLayout *masterLayout;
+@property (nonatomic, retain) TSTMasterLayout *masterLayout;
 @property (nonatomic) BOOL newCanvasRevealedHorizontally;
 @property (nonatomic) BOOL newCanvasRevealedVertically;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } paddingForEditingCell;
@@ -146,7 +146,7 @@
 @property (nonatomic, readonly) TSTTableModel *tableModel;
 @property (nonatomic, readonly) float textScaleFactor;
 
-- (id).cxx_construct;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forScrollingToSelectionPath:(id)arg2;
 - (struct CGSize { float x1; float x2; })adjustedInsetsForTarget:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alignmentFrame;
 - (BOOL)alwaysStartsNewTarget;

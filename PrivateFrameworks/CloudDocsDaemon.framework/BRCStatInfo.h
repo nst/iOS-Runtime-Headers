@@ -16,17 +16,15 @@
     NSData *_xattrSignature;
 }
 
-@property (nonatomic, readonly) NSString *_aliasTargetContainerID;
 @property (nonatomic, readonly) BRCItemID *_aliasTargetItemID;
 @property (nonatomic, readonly) NSString *_aliasTargetMangledID;
 @property (nonatomic) long long birthtime;
 @property (nonatomic, retain) BRFieldCKInfo *ckInfo;
-@property (nonatomic, readonly) NSString *displayName;
-@property (nonatomic, retain) NSString *filename;
 @property (nonatomic, retain) NSData *finderTags;
 @property (getter=isHiddenExt, nonatomic) BOOL hiddenExt;
 @property (nonatomic, readonly) BOOL iWorkShareable;
 @property (nonatomic, retain) NSData *lazyXattr;
+@property (nonatomic, retain) NSString *logicalName;
 @property (nonatomic) BOOL mode;
 @property (nonatomic, retain) BRCItemID *parentID;
 @property (nonatomic) BOOL state;
@@ -36,7 +34,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_aliasTargetContainerID;
+- (id)_aliasTargetContainerIDAndOwner;
 - (id)_aliasTargetItemID;
 - (id)_aliasTargetMangledID;
 - (void)_updateAliasTarget:(id)arg1;
@@ -50,7 +48,6 @@
 - (unsigned long long)diffAgainst:(id)arg1;
 - (id)displayName;
 - (void)encodeWithCoder:(id)arg1;
-- (id)filename;
 - (id)finderTags;
 - (BOOL)iWorkShareable;
 - (id)initFromResultSet:(id)arg1 pos:(int)arg2;
@@ -60,14 +57,15 @@
 - (BOOL)isHiddenExt;
 - (BOOL)isWritable;
 - (id)lazyXattr;
+- (id)logicalName;
 - (BOOL)mode;
 - (id)parentID;
 - (void)setBirthtime:(long long)arg1;
 - (void)setCkInfo:(id)arg1;
-- (void)setFilename:(id)arg1;
 - (void)setFinderTags:(id)arg1;
 - (void)setHiddenExt:(BOOL)arg1;
 - (void)setLazyXattr:(id)arg1;
+- (void)setLogicalName:(id)arg1;
 - (void)setMode:(BOOL)arg1;
 - (void)setParentID:(id)arg1;
 - (void)setState:(BOOL)arg1;

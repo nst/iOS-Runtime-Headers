@@ -9,9 +9,9 @@
     NSString *_uuid;
 }
 
-@property (nonatomic, readonly) struct __CFArray { }*categories;
-@property (nonatomic, readonly) NSArray *contentStrings;
-@property (nonatomic, readonly) struct __CFArray { }*owningCategories;
+@property (nonatomic, readonly, retain) struct __CFArray { }*categories;
+@property (nonatomic, readonly, retain) NSArray *contentStrings;
+@property (nonatomic, readonly, retain) struct __CFArray { }*owningCategories;
 @property (setter=setUUID:, nonatomic, copy) NSString *uuid;
 
 - (id)_initForCopy:(BOOL)arg1;

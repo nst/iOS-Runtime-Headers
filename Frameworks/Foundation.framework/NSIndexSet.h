@@ -25,12 +25,12 @@
 
 @property (readonly) unsigned int count;
 @property (readonly) unsigned int firstIndex;
-@property (nonatomic, readonly) BOOL isSingleContiguousRange;
 @property (readonly) unsigned int lastIndex;
 @property (nonatomic, readonly) BOOL tsu_isSingleContiguousRange;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)indexSet;
 + (id)indexSetWithIndex:(unsigned int)arg1;
 + (id)indexSetWithIndexes:(const unsigned int*)arg1 count:(unsigned int)arg2;
@@ -105,6 +105,11 @@
 - (id)__ck_indexPathRowsInSection:(int)arg1;
 - (id)__ck_indexSetShiftedForInsertedIndexes:(id)arg1 removedIndexes:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
+
+- (BOOL)_cn_all:(id /* block */)arg1;
+- (BOOL)_cn_any:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (id)_gkIndexSetWithArray:(id)arg1;
@@ -118,13 +123,20 @@
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
++ (id)tsu_indexSetWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 
-- (id)indexSetByAddingIndexes:(id)arg1;
-- (id)indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
-- (id)initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
-- (BOOL)intersectsIndexesInIndexSet:(id)arg1;
-- (BOOL)isSingleContiguousRange;
+- (unsigned int)tsu_indexAtPosition:(unsigned int)arg1;
+- (id)tsu_indexSetByAddingIndex:(unsigned int)arg1;
+- (id)tsu_indexSetByAddingIndexes:(id)arg1;
+- (id)tsu_indexSetByInsertingIndexes:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (id)tsu_indexSetByIntersectingWithIndexes:(id)arg1;
+- (id)tsu_indexSetByIntersectingWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)tsu_initWithIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (BOOL)tsu_intersectsIndexesInIndexSet:(id)arg1;
+- (BOOL)tsu_isSingleContiguousRange;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_leadingRangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned int)tsu_positionOfIndex:(unsigned int)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })tsu_trailingRangeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 

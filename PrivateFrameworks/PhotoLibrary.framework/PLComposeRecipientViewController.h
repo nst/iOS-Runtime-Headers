@@ -39,7 +39,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned int maxExpandRows;
-@property (nonatomic, readonly) PLComposeRecipientView *recipientView;
+@property (nonatomic, readonly, retain) PLComposeRecipientView *recipientView;
 @property (readonly) Class superclass;
 
 + (void)recordRecentInvitationRecipient:(id)arg1 displayName:(id)arg2 date:(id)arg3;

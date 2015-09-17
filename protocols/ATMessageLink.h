@@ -8,9 +8,9 @@
 - (void)addObserver:(id <ATMessageLinkObserver>)arg1;
 - (void)addRequestHandler:(id <ATMessageLinkRequestHandler>)arg1 forDataClass:(NSString *)arg2;
 - (int)endpointType;
+- (NSString *)identifier;
 - (BOOL)isInitialized;
 - (BOOL)isOpen;
-- (NSString *)libraryIdentifier;
 - (void)removeObserver:(id <ATMessageLinkObserver>)arg1;
 - (void)removeRequestHandlerForDataClass:(NSString *)arg1;
 - (void)sendRequest:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: ATRequest *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, ATResponse *, NSError *, void*

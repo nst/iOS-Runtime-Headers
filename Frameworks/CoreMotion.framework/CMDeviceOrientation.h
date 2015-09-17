@@ -17,6 +17,5 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithOrientation:(int)arg1 andTimestamp:(double)arg2;
 - (int)orientation;
-- (id)orientationString;
 
 @end

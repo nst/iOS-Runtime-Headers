@@ -6,6 +6,7 @@
 @required
 
 - (oneway void)speechDidFinishWritingAudioFile:(NSFileHandle *)arg1 error:(NSError *)arg2;
+- (oneway void)speechDidReceiveSearchResults:(NSArray *)arg1 recognitionText:(NSString *)arg2 stable:(BOOL)arg3 final:(BOOL)arg4;
 - (oneway void)speechDidRecognizePhrases:(NSArray *)arg1 usingSpeechModel:(NSString *)arg2 correctionContext:(NSDictionary *)arg3;
 - (oneway void)speechDidRecognizeTokens:(NSArray *)arg1 usingSpeechModel:(NSString *)arg2;
 - (oneway void)speechDidRecognizeTranscriptionObjects:(NSArray *)arg1 usingSpeechModel:(NSString *)arg2;
@@ -14,7 +15,6 @@
 - (oneway void)speechRecordingDidCancel;
 - (oneway void)speechRecordingDidEnd;
 - (oneway void)speechRecordingDidFail:(NSError *)arg1;
-- (oneway void)speechRecordingDidUpdateAveragePower:(float)arg1 peakPower:(float)arg2;
-- (oneway void)speechRecordingWillBegin;
+- (oneway void)speechRecordingWillBeginWithLevelsSharedMem:(AFXPCWrapper *)arg1;
 
 @end

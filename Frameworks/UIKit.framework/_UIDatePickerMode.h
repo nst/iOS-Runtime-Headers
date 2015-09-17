@@ -75,6 +75,7 @@
 + (void)initialize;
 + (id)newDateFromGregorianYear:(int)arg1 month:(int)arg2 day:(int)arg3 timeZone:(id)arg4;
 
+- (void).cxx_destruct;
 - (id)_dateByEnsuringValue:(int)arg1 forCalendarUnit:(unsigned int)arg2;
 - (id)_dateForYearRow:(int)arg1;
 - (int)_incrementForStaggeredTimeIntervals;
@@ -110,6 +111,7 @@
 - (int)displayedCalendarUnits;
 - (unsigned int*)elements;
 - (int)eraForYearRow:(int)arg1;
+- (void)fixUpElementsForRTL;
 - (id)font;
 - (id)fontForCalendarUnit:(unsigned int)arg1;
 - (int)hourForRow:(int)arg1;

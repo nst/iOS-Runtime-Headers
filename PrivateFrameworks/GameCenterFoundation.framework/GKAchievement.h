@@ -35,6 +35,7 @@
 + (void)resetAchievementsWithCompletionHandler:(id /* block */)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (id)_achievementDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

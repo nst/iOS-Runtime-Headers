@@ -15,6 +15,7 @@
 @property (nonatomic, retain) SKUINavigationDocumentController *navigationDocumentController;
 
 - (void).cxx_destruct;
+- (id)init;
 - (id)initWithNavigationController:(id)arg1;
 - (id)jsNavigationDocumentManagedObject;
 - (int)lastNavigationControllerOperation;

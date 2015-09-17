@@ -4,14 +4,16 @@
 
 @interface SBBulletinEvent : NSObject {
     NSString *_bulletinID;
+    unsigned int _feed;
     id /* block */ _handler;
 }
 
-+ (id)eventForBulletin:(id)arg1 block:(id /* block */)arg2;
++ (id)eventForBulletin:(id)arg1 feed:(unsigned int)arg2 block:(id /* block */)arg3;
 
 - (id)bulletinID;
 - (void)dealloc;
 - (void)execute;
-- (id)initWithBulletin:(id)arg1 block:(id /* block */)arg2;
+- (unsigned int)feed;
+- (id)initWithBulletin:(id)arg1 feed:(unsigned int)arg2 block:(id /* block */)arg3;
 
 @end

@@ -12,7 +12,6 @@
 
 - (id)inputColorSpace;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputColorSpace:(id)arg1;
 
 @end

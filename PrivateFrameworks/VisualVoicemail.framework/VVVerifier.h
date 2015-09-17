@@ -9,13 +9,13 @@
 
 + (id)sharedVerifier;
 
+- (void).cxx_destruct;
 - (id)_checkpointDictionary;
 - (void)_checkpointDictionaryChanged;
 - (id)_checkpointDictionaryFilePath;
 - (void)_mapFromSourceDictionary:(id)arg1 destinationDictionary:(id)arg2 inKey:(id)arg3 outDescription:(id)arg4;
 - (void)_saveCheckpointDictionary;
 - (id)configurationDictionary;
-- (void)dealloc;
 - (id)humanReadableConfigurationDictionary:(id*)arg1;
 - (id)keyDescriptions;
 - (id)readableError;

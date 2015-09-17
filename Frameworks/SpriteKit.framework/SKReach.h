@@ -18,10 +18,7 @@
 + (id)reachTo:(struct CGPoint { float x1; float x2; })arg1 rootNode:(id)arg2 duration:(double)arg3 maxZRotationSpeed:(float)arg4;
 + (id)reachTo:(struct CGPoint { float x1; float x2; })arg1 rootNode:(id)arg2 velocity:(float)arg3;
 + (id)reachTo:(struct CGPoint { float x1; float x2; })arg1 rootNode:(id)arg2 zRotationSpeed:(float)arg3 maxDuration:(double)arg4;
-+ (id)reachToNode:(id)arg1 rootNode:(id)arg2 duration:(double)arg3;
-+ (id)reachToNode:(id)arg1 rootNode:(id)arg2 velocity:(float)arg3;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;

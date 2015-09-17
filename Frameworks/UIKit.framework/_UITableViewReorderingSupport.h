@@ -17,4 +17,6 @@
     BOOL _wasScrollingEnabled;
 }
 
+- (void).cxx_destruct;
+
 @end

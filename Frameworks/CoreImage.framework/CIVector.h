@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIVector : NSObject <NSCoding, NSCopying> {
+@interface CIVector : NSObject <NSCopying, NSSecureCoding> {
     unsigned long _count;
     union { 
         float vec[4]; 
@@ -10,6 +10,18 @@
     } _u;
 }
 
+@property (readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } CGAffineTransformValue;
+@property (readonly) struct CGPoint { float x1; float x2; } CGPointValue;
+@property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } CGRectValue;
+@property (readonly) float W;
+@property (readonly) float X;
+@property (readonly) float Y;
+@property (readonly) float Z;
+@property (readonly) float*_values;
+@property (readonly) unsigned long count;
+@property (readonly) NSString *stringRepresentation;
+
++ (BOOL)supportsSecureCoding;
 + (id)vectorWithCGAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 + (id)vectorWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (id)vectorWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

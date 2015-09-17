@@ -122,7 +122,7 @@
 - (id)localizedSharedWithLabel;
 - (void)persistRecoveryMetadata;
 - (void)prepareForDeletion;
-- (void)publishBatchOfOriginalAssets:(id)arg1 withBatchCommentText:(id)arg2 andTrimmedVideoPathInfo:(id)arg3 isNewAlbum:(BOOL)arg4;
+- (void)publishBatchOfOriginalAssets:(id)arg1 withBatchCommentText:(id)arg2 assetsSharingInfos:(id)arg3 andTrimmedVideoPathInfo:(id)arg4 isNewAlbum:(BOOL)arg5;
 - (void)setCloudOwnerEmail:(id)arg1;
 - (void)setHasUnseenContentBoolValue:(BOOL)arg1;
 - (void)setUnseenAssetsCountIntegerValue:(unsigned int)arg1;

@@ -16,6 +16,7 @@
 
 - (id)URLBag;
 - (void)_addHeadersToRequestProperties:(id)arg1;
+- (void)_analyzeBagForActiveSystemApps:(id)arg1;
 - (void)_postBagDidLoadNotificationWithURLBag:(id)arg1;
 - (void)_sendPingsForURLBag:(id)arg1;
 - (void)_setOutputURLBag:(id)arg1;

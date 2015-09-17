@@ -2,11 +2,15 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKIMComposeRecipient : MFComposeRecipient {
+@interface CKIMComposeRecipient : MFComposeRecipient <CKIMComposeRecipient> {
     IMHandle *_handle;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) IMHandle *handle;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (id)address;
 - (id)commentedAddress;
@@ -26,6 +30,7 @@
 - (int)property;
 - (void*)record;
 - (int)recordID;
+- (void)releaseIMReferences;
 - (void)setIdentifier:(int)arg1;
 - (void)setRecord:(void*)arg1 recordID:(int)arg2 identifier:(int)arg3;
 - (id)supportedDragTypes;

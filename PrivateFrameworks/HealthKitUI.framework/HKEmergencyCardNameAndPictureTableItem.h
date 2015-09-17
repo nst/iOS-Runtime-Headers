@@ -2,11 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@interface HKEmergencyCardNameAndPictureTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate, HKMedicalIDEditorCellHeightChangeDelegate, UIActionSheetDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
+@interface HKEmergencyCardNameAndPictureTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate, HKMedicalIDEditorCellHeightChangeDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     HKMedicalIDEditorNameAndPhotoCell *_cell;
     <HKEmergencyCardRowHeightChangeDelegate> *_rowHeightChangeDelegate;
-    BOOL _showingDeletePhotoButton;
-    BOOL _showingTakePhotoButton;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -18,7 +16,6 @@
 - (void).cxx_destruct;
 - (id)_cell;
 - (void)_editPhotoTapped:(id)arg1;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (void)commitEditing;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;
 - (void)imagePickerControllerDidCancel:(id)arg1;

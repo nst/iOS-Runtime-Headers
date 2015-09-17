@@ -16,6 +16,6 @@
 - (id)initWithInput:(id)arg1 timestamp:(int)arg2 method:(unsigned int)arg3;
 - (unsigned int)method;
 - (id)plist;
-- (id)type;
+- (id)typeString;
 
 @end

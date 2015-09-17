@@ -12,9 +12,10 @@
 @property (nonatomic) BOOL dontDismiss;
 @property (nonatomic, copy) NSString *title;
 
+- (void).cxx_destruct;
 - (SEL)action;
-- (void)dealloc;
 - (BOOL)dontDismiss;
+- (id)init;
 - (id)initWithTitle:(id)arg1 action:(SEL)arg2;
 - (void)setAction:(SEL)arg1;
 - (void)setDontDismiss:(BOOL)arg1;

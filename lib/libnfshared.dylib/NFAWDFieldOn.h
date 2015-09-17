@@ -4,13 +4,15 @@
 
 @interface NFAWDFieldOn : NSObject <NFAWDEventProtocol> {
     AWDNFCFieldOnEvent *_metric;
+    unsigned int technology;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCFieldOnEvent *metric;
+@property (nonatomic, retain) AWDNFCFieldOnEvent *metric;
 @property (readonly) Class superclass;
+@property (nonatomic) unsigned int technology;
 
 - (void)dealloc;
 - (id)getMetric;
@@ -18,6 +20,9 @@
 - (id)init;
 - (id)metric;
 - (void)setMetric:(id)arg1;
-- (unsigned int)updateTransactionStateInfoPreviousState:(unsigned int)arg1 withUUID:(id)arg2 withUUIDRefTimestamp:(unsigned long long)arg3;
+- (void)setTechnology:(unsigned int)arg1;
+- (unsigned int)technology;
+- (unsigned int)updateTransactionStateInfoWithPreviousState:(unsigned int)arg1;
+- (void)updateUUID:(id)arg1 withUUIDRefTimestamp:(unsigned long long)arg2;
 
 @end

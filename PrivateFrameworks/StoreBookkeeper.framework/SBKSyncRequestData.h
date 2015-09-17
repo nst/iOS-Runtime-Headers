@@ -4,8 +4,6 @@
 
 @interface SBKSyncRequestData : SBKRequestData
 
-@property (readonly) SBKSyncTransaction *transaction;
-
 - (BOOL)_needsConflictDetection;
 - (id)_serializableConflictDetectionOrdinalForKey:(id)arg1;
 - (id)_serializableConflictDetectionValue;

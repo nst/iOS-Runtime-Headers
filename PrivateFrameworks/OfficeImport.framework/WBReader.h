@@ -67,6 +67,7 @@
 - (BOOL)start;
 - (struct WrdStoryTable { int (**x1)(); int x2; struct ChVector<WrdStory *> { struct WrdStory {} **x_3_1_1; struct WrdStory {} **x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; unsigned int x_3_1_5; } x3; }*)storyTable;
 - (id)styleAtIndex:(int)arg1;
+- (id)styleAtIndex:(int)arg1 expectedType:(int)arg2;
 - (struct WrdCPTableHeaders { int (**x1)(); struct ChVector<int> { int *x_2_1_1; int *x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; unsigned int x_2_1_5; } x2; }*)tableHeaders;
 - (id)targetDocument;
 - (unsigned int)textBoxCount;

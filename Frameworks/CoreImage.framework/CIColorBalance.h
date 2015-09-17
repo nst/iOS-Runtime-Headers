@@ -25,7 +25,6 @@
 - (id)inputStrength;
 - (id)inputWarmth;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputColor:(id)arg1;
 - (void)setInputDamping:(id)arg1;
 - (void)setInputImage:(id)arg1;

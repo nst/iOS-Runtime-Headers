@@ -10,7 +10,6 @@
     RadioStation *_station;
     RadioStationMatchContext *_stationMatchContext;
     NSArray *_tracks;
-    BOOL _transitioningPlaybackModes;
 }
 
 @property (nonatomic, readonly, copy) NSArray *allPreparedAdSlotRadioTracks;
@@ -19,7 +18,6 @@
 @property (nonatomic, retain) RadioStation *station;
 @property (nonatomic, retain) RadioStationMatchContext *stationMatchContext;
 @property (nonatomic, copy) NSArray *tracks;
-@property (getter=isTransitioningPlaybackModes, nonatomic) BOOL transitioningPlaybackModes;
 
 + (Class)queueFeederClass;
 + (void)setDefaultPlaybackLease:(id)arg1;
@@ -30,7 +28,6 @@
 - (void)configureWithStationPlaybackMetadata:(id)arg1;
 - (id)descriptionComponents;
 - (id)init;
-- (BOOL)isTransitioningPlaybackModes;
 - (id)playbackLease;
 - (id)prefixItem;
 - (id)preparedAdSlotForRadioTrack:(id)arg1;
@@ -39,7 +36,6 @@
 - (void)setStation:(id)arg1;
 - (void)setStationMatchContext:(id)arg1;
 - (void)setTracks:(id)arg1;
-- (void)setTransitioningPlaybackModes:(BOOL)arg1;
 - (id)station;
 - (id)stationMatchContext;
 - (id)tracks;

@@ -33,9 +33,7 @@
 - (void)_clientQueue_acquireAssertion;
 - (void)_clientQueue_invalidate:(BOOL)arg1;
 - (void)_clientQueue_notifyAssertionAcquired:(BOOL)arg1;
-- (void)_clientQueue_setAcquisitionHandler:(id /* block */)arg1;
 - (void)_clientQueue_updateAssertion;
-- (id /* block */)acquisitionHandler;
 - (void)assertionDidInvalidate;
 - (void)dealloc;
 - (unsigned int)flags;
@@ -46,7 +44,6 @@
 - (id /* block */)invalidationHandler;
 - (id)name;
 - (unsigned int)reason;
-- (void)setAcquisitionHandler:(id /* block */)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setInvalidationHandler:(id /* block */)arg1;
 - (void)setName:(id)arg1;

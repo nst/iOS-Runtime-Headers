@@ -31,7 +31,6 @@
 - (id)inputTargetImage;
 - (id)inputTime;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAngle:(id)arg1;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputCompression:(id)arg1;

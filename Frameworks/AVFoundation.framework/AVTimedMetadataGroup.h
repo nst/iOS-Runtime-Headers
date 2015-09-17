@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVTimedMetadataGroup : NSObject <NSCopying> {
+@interface AVTimedMetadataGroup : AVMetadataGroup <NSCopying, NSMutableCopying> {
     AVTimedMetadataGroupInternal *_priv;
 }
 
-@property (readonly, copy) NSArray *items;
-@property (readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
-
-+ (void)initialize;
+@property (nonatomic, readonly, copy) NSArray *items;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } timeRange;
+@property (getter=_timedMetadataGroupInternal, nonatomic, readonly) AVTimedMetadataGroupInternal *timedMetadataGroupInternal;
 
 - (struct opaqueCMSampleBuffer { }*)_createSerializedRepresentationWithFormatDescription:(struct opaqueCMFormatDescription { }*)arg1 error:(id*)arg2;
-- (struct opaqueCMFormatDescription { }*)copyFormatDescription;
+- (id)_timedMetadataGroupInternal;
+- (const struct opaqueCMFormatDescription { }*)copyFormatDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;

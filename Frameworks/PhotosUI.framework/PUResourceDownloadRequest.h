@@ -32,6 +32,7 @@
 - (void)cancelDownloadRequest;
 - (void)downloadRequiredResourcesWithCompletionHandler:(id /* block */)arg1;
 - (void)fetchIsDownloadRequiredWithHandler:(id /* block */)arg1;
+- (id)init;
 - (id)initWithAsset:(id)arg1 requestType:(int)arg2;
 - (double)progress;
 - (id /* block */)progressChangeHandler;

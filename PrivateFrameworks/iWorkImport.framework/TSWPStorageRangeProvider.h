@@ -15,7 +15,6 @@
 @property (nonatomic, readonly) NSObject *object;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1;

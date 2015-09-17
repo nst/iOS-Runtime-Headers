@@ -56,6 +56,8 @@
 - (bool)useEvaluationStackToCheckFunctionId:(int)arg1 functionName:(id)arg2 tokenIndex:(unsigned int)arg3;
 - (unsigned int)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2;
 - (id)useEvaluationStackToGetParameter:(unsigned int)arg1 tokenIndex:(unsigned int)arg2 allReferencesAllowed:(bool)arg3 success:(bool*)arg4;
+- (int)useEvaluationStackToGetParameterTokenType:(unsigned int)arg1 tokenIndex:(unsigned int)arg2 success:(bool*)arg3;
 - (id)worksheetFromLinkReferenceIndex:(unsigned int)arg1;
+- (id)worksheetsFromLinkReferenceIndex:(unsigned int)arg1;
 
 @end

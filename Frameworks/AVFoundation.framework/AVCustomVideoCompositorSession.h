@@ -3,6 +3,7 @@
  */
 
 @interface AVCustomVideoCompositorSession : NSObject {
+    void *_callbackContextToken;
     <AVVideoCompositing> *_clientCustomCompositor;
     NSObject<OS_dispatch_queue> *_clientCustomCompositorQ;
     NSError *_clientError;

@@ -13,7 +13,7 @@
 @property (nonatomic) int mode;
 @property (nonatomic) int securityCodeType;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)firstPasscodeEntry;
 - (void)layoutSubviews;
 - (int)mode;

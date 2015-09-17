@@ -7,5 +7,7 @@
 - (void)didReceiveLocalNotification:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)didReceiveRemoteNotification:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)init;
+- (id)suggestionsForResponseToActionWithIdentifier:(id)arg1 forLocalNotification:(id)arg2 inputLanguage:(id)arg3;
+- (id)suggestionsForResponseToActionWithIdentifier:(id)arg1 forRemoteNotification:(id)arg2 inputLanguage:(id)arg3;
 
 @end

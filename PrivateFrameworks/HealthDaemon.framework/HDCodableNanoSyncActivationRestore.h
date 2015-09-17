@@ -3,7 +3,7 @@
  */
 
 @interface HDCodableNanoSyncActivationRestore : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying> {
-    NSString *_deviceSourceIdentifier;
+    NSString *_defaultSourceBundleIdentifier;
     struct { 
         unsigned int sequenceNumber : 1; 
         unsigned int statusCode : 1; 
@@ -15,9 +15,9 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) NSString *defaultSourceBundleIdentifier;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSString *deviceSourceIdentifier;
-@property (nonatomic, readonly) BOOL hasDeviceSourceIdentifier;
+@property (nonatomic, readonly) BOOL hasDefaultSourceBundleIdentifier;
 @property (nonatomic, readonly) BOOL hasRestoreIdentifier;
 @property (nonatomic) BOOL hasSequenceNumber;
 @property (nonatomic) BOOL hasStatusCode;
@@ -40,10 +40,10 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)decodedRestoreUUID;
+- (id)defaultSourceBundleIdentifier;
 - (id)description;
-- (id)deviceSourceIdentifier;
 - (id)dictionaryRepresentation;
-- (BOOL)hasDeviceSourceIdentifier;
+- (BOOL)hasDefaultSourceBundleIdentifier;
 - (BOOL)hasRequiredFields;
 - (BOOL)hasRestoreIdentifier;
 - (BOOL)hasSequenceNumber;
@@ -58,7 +58,7 @@
 - (id)restoresAtIndex:(unsigned int)arg1;
 - (unsigned int)restoresCount;
 - (long long)sequenceNumber;
-- (void)setDeviceSourceIdentifier:(id)arg1;
+- (void)setDefaultSourceBundleIdentifier:(id)arg1;
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (void)setHasStatusCode:(BOOL)arg1;
 - (void)setRestoreIdentifier:(id)arg1;

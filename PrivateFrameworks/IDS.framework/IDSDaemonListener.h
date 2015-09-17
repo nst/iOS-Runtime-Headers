@@ -4,6 +4,7 @@
 
 @interface IDSDaemonListener : NSObject <IDSDaemonListenerProtocol> {
     NSMutableDictionary *_accountToDevices;
+    NSString *_deviceIdentifier;
     NSHashTable *_handlers;
     BOOL _hidingDisconnect;
     NSObject<OS_dispatch_queue> *_ivarQueue;
@@ -17,6 +18,7 @@
 @property (setter=_setHidingDisconnect:, nonatomic) BOOL _hidingDisconnect;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, retain) NSString *deviceIdentifier;
 @property (nonatomic, readonly) BOOL hasPostedSetupComplete;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isSetupComplete;
@@ -62,6 +64,8 @@
 - (void)dealloc;
 - (id)dependentDevicesForAccount:(id)arg1;
 - (void)device:(id)arg1 nsuuidChanged:(id)arg2;
+- (id)deviceIdentifier;
+- (void)deviceIdentifierDidChange:(id)arg1;
 - (id)enabledAccountsForService:(id)arg1;
 - (void)forwardInvocation:(id)arg1;
 - (BOOL)hasPostedSetupComplete;

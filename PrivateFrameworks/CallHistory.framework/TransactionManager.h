@@ -18,7 +18,6 @@
 - (void)createXpcConnection_sync;
 - (void)dealloc;
 - (id)init;
-- (void)sendHello_sync;
 - (void)setupConnectionHandlers_sync;
 
 @end

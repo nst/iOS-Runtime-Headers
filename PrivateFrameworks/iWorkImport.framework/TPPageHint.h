@@ -3,7 +3,7 @@
  */
 
 @interface TPPageHint : NSObject <TSWPOffscreenColumn> {
-    NSDictionary *_anchoredAttachmentPositions;
+    TSURetainedPointerKeyDictionary *_anchoredDrawablePositions;
     <TSDHint> *_firstChildHint;
     struct _NSRange { 
         unsigned int location; 
@@ -41,7 +41,7 @@
     } _topicNumbers;
 }
 
-@property (nonatomic, retain) NSDictionary *anchoredAttachmentPositions;
+@property (nonatomic, retain) TSURetainedPointerKeyDictionary *anchoredDrawablePositions;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } anchoredRange;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -60,7 +60,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (id)anchoredAttachmentPositions;
+- (id)anchoredDrawablePositions;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })anchoredRange;
 - (id)copyForArchiving;
 - (void)dealloc;
@@ -80,7 +80,7 @@
 - (int)pageKind;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })range;
 - (void)saveToArchive:(struct PageHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct RepeatedPtrField<TP::TargetHintArchive> { void **x_5_1_1; int x_5_1_2; int x_5_1_3; int x_5_1_4; } x5; struct Range {} *x6; struct Range {} *x7; struct Reference {} *x8; int x9; unsigned int x10; struct Reference {} *x11; struct RepeatedPtrField<TP::AnchorPosArchive> { void **x_12_1_1; int x_12_1_2; int x_12_1_3; int x_12_1_4; } x12; struct TopicNumberHintsArchive {} *x13; unsigned int x14; }*)arg1 archiver:(id)arg2 context:(id)arg3;
-- (void)setAnchoredAttachmentPositions:(id)arg1;
+- (void)setAnchoredDrawablePositions:(id)arg1;
 - (void)setFirstChildHint:(id)arg1;
 - (void)setFootnoteAutoNumberRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setFootnoteLayoutRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

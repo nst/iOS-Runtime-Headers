@@ -9,5 +9,6 @@
 - (VKVectorTile *)overlayContainer:(VKOverlayContainerModel *)arg1 roadTileForTile:(VKMapTile *)arg2;
 - (void)overlayContainer:(VKOverlayContainerModel *)arg1 showingRouteInStandardModeDidChange:(BOOL)arg2;
 - (BOOL)overlayContainerIsInRealisticMode:(VKOverlayContainerModel *)arg1;
+- (BOOL)overlayContainerIsInTransitMode:(VKOverlayContainerModel *)arg1;
 
 @end

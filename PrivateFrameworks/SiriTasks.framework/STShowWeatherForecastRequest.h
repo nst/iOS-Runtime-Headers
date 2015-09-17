@@ -3,7 +3,7 @@
  */
 
 @interface STShowWeatherForecastRequest : AFSiriRequest {
-    AFCity *_city;
+    STCity *_city;
     STWeatherCurrentConditions *_currentConditions;
     int _forecastType;
     NSArray *_hourlyForecasts;

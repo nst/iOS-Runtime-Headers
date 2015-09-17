@@ -15,6 +15,7 @@
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 didStopTrackingPeer:(NSUUID *)arg2 withData:(NSDictionary *)arg3;
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 failedToStartAdvertisingWithError:(NSError *)arg2;
 - (void)airPlaySolo:(WPAirPlaySolo *)arg1 failedToStartScanningWithError:(NSError *)arg2;
+- (void)airPlaySoloAdvertisingPending:(WPAirPlaySolo *)arg1;
 - (void)airPlaySoloStartedAdvertising:(WPAirPlaySolo *)arg1;
 - (void)airPlaySoloStartedScanning:(WPAirPlaySolo *)arg1;
 - (void)airPlaySoloStoppedAdvertising:(WPAirPlaySolo *)arg1;

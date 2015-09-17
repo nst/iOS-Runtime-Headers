@@ -22,6 +22,7 @@
 @property (nonatomic, readonly, copy) NSString *subLocality;
 @property (nonatomic, readonly, copy) NSString *subThoroughfare;
 @property (nonatomic, readonly, copy) NSString *thoroughfare;
+@property (nonatomic, readonly, copy) NSTimeZone *timeZone;
 
 + (id)placemarkWithGEOMapItem:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -53,5 +54,6 @@
 - (id)subLocality;
 - (id)subThoroughfare;
 - (id)thoroughfare;
+- (id)timeZone;
 
 @end

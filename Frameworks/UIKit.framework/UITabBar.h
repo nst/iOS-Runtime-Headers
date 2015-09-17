@@ -17,6 +17,8 @@
     NSMutableArray *_dividerImageViews;
     BOOL _dividerImagesAreInvalid;
     BOOL _dividerImagesChangeWithSelection;
+    UIMotionEffect *_focusedItemHighlightMotionEffect;
+    UIView *_focusedItemHighlightView;
     struct __CFArray { } *_hiddenItems;
     BOOL _hidesShadow;
     int _imageStyle;
@@ -24,7 +26,10 @@
     int _itemPositioning;
     float _itemSpacing;
     NSArray *_items;
+    UIScrollView *_itemsScrollView;
     float _nextSelectionSlideDuration;
+    unsigned int _preferredFocusHeading;
+    BOOL _scrollsItems;
     UITabBarItem *_selectedItem;
     UIView *_shadowView;
     BOOL _showsHighlightedState;
@@ -39,6 +44,10 @@
         unsigned int barStyle : 3; 
         unsigned int barTranslucence : 3; 
         unsigned int backgroundNeedsUpdate : 1; 
+        unsigned int hiddenAwaitingFocus : 1; 
+        unsigned int focusedItemHighlightShouldBeVisible : 1; 
+        unsigned int hasVibrantLabels : 1; 
+        unsigned int blurDisabled : 1; 
     } _tabBarFlags;
     int _tabBarSizing;
 }
@@ -48,6 +57,7 @@
 @property (setter=_setBackgroundView:, nonatomic, retain) UIView *_backgroundView;
 @property (setter=_setBarMetrics:, nonatomic) int _barMetrics;
 @property (setter=_setBarOrientation:, nonatomic) int _barOrientation;
+@property (setter=_setBlurEnabled:, nonatomic) BOOL _blurEnabled;
 @property (setter=_setDividerImageViews:, nonatomic, retain) NSMutableArray *_dividerImageViews;
 @property (setter=_setDividerImagesAreInvalid:, nonatomic) BOOL _dividerImagesAreInvalid;
 @property (setter=_setDividerImagesChangeWithSelection:, nonatomic) BOOL _dividerImagesChangeWithSelection;
@@ -55,9 +65,11 @@
 @property (setter=_setImageStyle:, nonatomic) int _imageStyle;
 @property (setter=_setInterTabButtonSpacing:, nonatomic) float _interTabButtonSpacing;
 @property (setter=_setNextSelectionSlideDuration:, nonatomic) float _nextSelectionSlideDuration;
+@property (setter=_setScrollsItems:, nonatomic) BOOL _scrollsItems;
 @property (setter=_setShowsHighlightedState:, nonatomic) BOOL _showsHighlightedState;
 @property (setter=_setTabBarSizing:, nonatomic) int _tabBarSizing;
 @property (setter=_setTabButtonWidth:, nonatomic) float _tabButtonWidth;
+@property (setter=_setVibrantLabels:, nonatomic) BOOL _vibrantLabels;
 @property (getter=_backdropViewLayerGroupName, setter=_setBackdropViewLayerGroupName:, nonatomic, retain) NSString *backdropViewLayerGroupName;
 @property (nonatomic, retain) UIImage *backgroundImage;
 @property (nonatomic) int barStyle;
@@ -65,12 +77,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UITabBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=_focusedItemHighlightShouldBeVisible, setter=_setFocusedItemHightlightShouldBeVisible:, nonatomic) BOOL focusedItemHighlightShouldBeVisible;
 @property (readonly) unsigned int hash;
+@property (getter=_isHiddenAwaitingFocus, setter=_setHiddenAwaitingFocus:, nonatomic) BOOL hiddenAwaitingFocus;
 @property (nonatomic) int itemPositioning;
 @property (nonatomic) float itemSpacing;
 @property (nonatomic) float itemWidth;
 @property (nonatomic, copy) NSArray *items;
 @property (getter=isLocked, nonatomic) BOOL locked;
+@property (getter=_preferredFocusHeading, setter=_setPreferredFocusHeading:, nonatomic) unsigned int preferredFocusHeading;
 @property (nonatomic, retain) UIColor *selectedImageTintColor;
 @property (nonatomic) UITabBarItem *selectedItem;
 @property (nonatomic, retain) UIImage *selectionIndicatorImage;
@@ -79,7 +94,8 @@
 @property (nonatomic, retain) UIColor *tintColor;
 @property (getter=isTranslucent, nonatomic) BOOL translucent;
 
-+ (float)_buttonGap;
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (void)_initializeForIdiom:(int)arg1;
 + (id)_tabBarForView:(id)arg1;
 + (id)_unselectedTabTintColorForView:(id)arg1;
@@ -99,6 +115,7 @@
 - (id)_backgroundView;
 - (int)_barMetrics;
 - (int)_barOrientation;
+- (BOOL)_blurEnabled;
 - (void)_buttonCancel:(id)arg1;
 - (void)_buttonDown:(id)arg1;
 - (void)_buttonDownDelayed:(id)arg1;
@@ -123,6 +140,7 @@
 - (void)_effectiveBarTintColorDidChange;
 - (void)_finishCustomizeAnimation:(id)arg1;
 - (void)_finishSetItems:(id)arg1 finished:(id)arg2 context:(id)arg3;
+- (BOOL)_focusedItemHighlightShouldBeVisible;
 - (BOOL)_hasCustomAutolayoutNeighborSpacing;
 - (void)_hideItemsAnimated:(BOOL)arg1;
 - (BOOL)_hidesShadow;
@@ -130,12 +148,18 @@
 - (float)_interTabButtonSpacing;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_invalidateDividerImages;
+- (BOOL)_isEligibleForFocus;
 - (BOOL)_isHidden:(id)arg1;
+- (BOOL)_isHiddenAwaitingFocus;
 - (BOOL)_isTranslucent;
 - (void)_makeCurrentButtonFirstResponder;
 - (float)_nextSelectionSlideDuration;
+- (id)_parentViewForItems;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_positionTabBarButtons:(id)arg1 ignoringItem:(id)arg2;
+- (unsigned int)_preferredFocusHeading;
+- (float)_scaleFactorForItems:(id)arg1 spacing:(float)arg2 dimension:(float)arg3 maxWidth:(float)arg4;
+- (BOOL)_scrollsItems;
 - (void)_sendAction:(id)arg1 withEvent:(id)arg2;
 - (void)_setAccessoryView:(id)arg1;
 - (void)_setBackdropViewLayerGroupName:(id)arg1;
@@ -144,10 +168,14 @@
 - (void)_setBackgroundView:(id)arg1;
 - (void)_setBarMetrics:(int)arg1;
 - (void)_setBarOrientation:(int)arg1;
+- (void)_setBlurEnabled:(BOOL)arg1;
 - (void)_setDividerImage:(id)arg1 forLeftButtonState:(unsigned int)arg2 rightButtonState:(unsigned int)arg3;
 - (void)_setDividerImageViews:(id)arg1;
 - (void)_setDividerImagesAreInvalid:(BOOL)arg1;
 - (void)_setDividerImagesChangeWithSelection:(BOOL)arg1;
+- (void)_setFocusedItemHightlightShouldBeVisible:(BOOL)arg1;
+- (void)_setFocusedItemHightlightVisible:(BOOL)arg1;
+- (void)_setHiddenAwaitingFocus:(BOOL)arg1;
 - (void)_setHidesShadow:(BOOL)arg1;
 - (void)_setImageStyle:(int)arg1;
 - (void)_setInterTabButtonSpacing:(float)arg1;
@@ -156,25 +184,34 @@
 - (void)_setLabelShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLabelTextColor:(id)arg1 selectedTextColor:(id)arg2;
 - (void)_setNextSelectionSlideDuration:(float)arg1;
+- (void)_setPreferredFocusHeading:(unsigned int)arg1;
+- (void)_setScrollsItems:(BOOL)arg1;
 - (void)_setSelectionIndicatorImage:(id)arg1;
+- (void)_setShadowAlpha:(float)arg1;
 - (void)_setShowsHighlightedState:(BOOL)arg1;
 - (void)_setTabBarSizing:(int)arg1;
 - (void)_setTabButtonWidth:(float)arg1;
+- (void)_setVibrantLabels:(BOOL)arg1;
 - (void)_setVisualAltitude:(float)arg1;
 - (void)_setVisualAltitudeBias:(struct CGSize { float x1; float x2; })arg1;
+- (float)_shadowAlpha;
 - (id)_shadowView;
 - (void)_showItemsAnimated:(BOOL)arg1;
 - (BOOL)_showsHighlightedState;
 - (BOOL)_subclassImplementsDrawRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tabAreaLayoutBounds;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tabAreaLayoutRegion;
 - (void)_tabBarFinishedAnimating;
 - (int)_tabBarSizing;
 - (float)_tabButtonWidth;
 - (id)_topmostDividerImageView;
+- (float)_totalDimensionForItems:(id)arg1 spacing:(float)arg2 dimension:(float)arg3 scaleFactor:(float)arg4;
 - (void)_updateAppearanceCustomizationIfNecessaryForItem:(id)arg1;
 - (void)_updateBackgroundImage;
 - (void)_updateDividerImagesIfNecessary;
+- (void)_updateFocusedItemHighlightFrame;
+- (void)_updateHighlightMotionEffect;
 - (void)_updateTintedImages:(id)arg1 selected:(BOOL)arg2;
+- (BOOL)_vibrantLabels;
 - (BOOL)_wantsAdaptiveBackdrop;
 - (void)addConstraint:(id)arg1;
 - (void)backdropView:(id)arg1 didChangeToGraphicsQuality:(int)arg2;
@@ -191,6 +228,7 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)endCustomizingAnimated:(BOOL)arg1;
+- (void)focusedViewDidChange;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -239,5 +277,9 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (void)pu_animateBarTransitionWithContext:(id)arg1;
 
 @end

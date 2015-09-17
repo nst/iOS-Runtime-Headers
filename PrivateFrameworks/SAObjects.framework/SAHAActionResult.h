@@ -9,6 +9,8 @@
 @property (nonatomic, copy) NSString *resultAttribute;
 @property (nonatomic, retain) SAHAAttributeValue *resultValue;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)actionResult;
 + (id)actionResultWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -22,6 +24,9 @@
 - (void)setOutcome:(id)arg1;
 - (void)setResultAttribute:(id)arg1;
 - (void)setResultValue:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)shortDescription;
 
 @end

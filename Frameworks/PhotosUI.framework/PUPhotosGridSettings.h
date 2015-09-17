@@ -8,12 +8,16 @@
     BOOL _displayAllItemsAsBursts;
     BOOL _flashDegradedImages;
     BOOL _forceJPEGThumbnailsInDefaultGrid;
+    float _magnifierRevealPreviewScale;
     float _maximumSpacing;
+    float _minimumDistanceToUnfreeze;
     float _minimumSpacing;
     int _numberColumnsInDefaultGrid;
     int _numberOfColumnsInWideGrid;
+    float _previewRevealProgressToFreezeMagnifier;
     float _sideMargins;
-    BOOL _slowBackgroundFetch;
+    BOOL _swipeSelectionEnabled;
+    BOOL _useFloatingHeaders;
 }
 
 @property (nonatomic) BOOL badgeAllItemsAsVideos;
@@ -21,12 +25,16 @@
 @property (nonatomic) BOOL displayAllItemsAsBursts;
 @property (nonatomic) BOOL flashDegradedImages;
 @property (nonatomic) BOOL forceJPEGThumbnailsInDefaultGrid;
+@property (nonatomic) float magnifierRevealPreviewScale;
 @property (nonatomic) float maximumSpacing;
+@property (nonatomic) float minimumDistanceToUnfreeze;
 @property (nonatomic) float minimumSpacing;
 @property (nonatomic) int numberColumnsInDefaultGrid;
 @property (nonatomic) int numberOfColumnsInWideGrid;
+@property (nonatomic) float previewRevealProgressToFreezeMagnifier;
 @property (nonatomic) float sideMargins;
-@property (nonatomic) BOOL slowBackgroundFetch;
+@property (getter=isSwipeSelectionEnabled, nonatomic) BOOL swipeSelectionEnabled;
+@property (nonatomic) BOOL useFloatingHeaders;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
@@ -36,23 +44,31 @@
 - (BOOL)displayAllItemsAsBursts;
 - (BOOL)flashDegradedImages;
 - (BOOL)forceJPEGThumbnailsInDefaultGrid;
+- (BOOL)isSwipeSelectionEnabled;
+- (float)magnifierRevealPreviewScale;
 - (float)maximumSpacing;
+- (float)minimumDistanceToUnfreeze;
 - (float)minimumSpacing;
 - (int)numberColumnsInDefaultGrid;
 - (int)numberOfColumnsInWideGrid;
+- (float)previewRevealProgressToFreezeMagnifier;
 - (void)setBadgeAllItemsAsVideos:(BOOL)arg1;
 - (void)setDefaultItemSideSize:(float)arg1;
 - (void)setDefaultValues;
 - (void)setDisplayAllItemsAsBursts:(BOOL)arg1;
 - (void)setFlashDegradedImages:(BOOL)arg1;
 - (void)setForceJPEGThumbnailsInDefaultGrid:(BOOL)arg1;
+- (void)setMagnifierRevealPreviewScale:(float)arg1;
 - (void)setMaximumSpacing:(float)arg1;
+- (void)setMinimumDistanceToUnfreeze:(float)arg1;
 - (void)setMinimumSpacing:(float)arg1;
 - (void)setNumberColumnsInDefaultGrid:(int)arg1;
 - (void)setNumberOfColumnsInWideGrid:(int)arg1;
+- (void)setPreviewRevealProgressToFreezeMagnifier:(float)arg1;
 - (void)setSideMargins:(float)arg1;
-- (void)setSlowBackgroundFetch:(BOOL)arg1;
+- (void)setSwipeSelectionEnabled:(BOOL)arg1;
+- (void)setUseFloatingHeaders:(BOOL)arg1;
 - (float)sideMargins;
-- (BOOL)slowBackgroundFetch;
+- (BOOL)useFloatingHeaders;
 
 @end

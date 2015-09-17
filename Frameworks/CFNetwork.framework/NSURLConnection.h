@@ -34,6 +34,7 @@
 - (id)_cfInternal;
 - (id)_dlInternal;
 - (id)_initWithRequest:(id)arg1 delegate:(id)arg2 usesCache:(BOOL)arg3 maxContentLength:(long long)arg4 startImmediately:(BOOL)arg5 connectionProperties:(id)arg6;
+- (void)_reportTimingDataToAWD;
 - (void)_resumeLoading;
 - (void)_suspendLoading;
 - (id)_timingData;
@@ -72,8 +73,8 @@
 
 - (id)_geo_initWithAttributedRequest:(id)arg1 delegate:(id)arg2 startImmediately:(BOOL)arg3;
 
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
-+ (void)safari_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
++ (id)safari_sendAsynchronousRequest:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 
 @end

@@ -4,12 +4,10 @@
 
 @interface CallDBManagerClient : CallDBManager {
     NSXPCConnection *_helperConnection;
-    int _retryCount;
     id _syncHelperReadyNotificationRef;
 }
 
 @property (retain) NSXPCConnection *helperConnection;
-@property int retryCount;
 @property (retain) id syncHelperReadyNotificationRef;
 
 - (void).cxx_destruct;
@@ -18,16 +16,15 @@
 - (void)createTemporary;
 - (void)handlePermanentCreated;
 - (id)helperConnection;
-- (id)init;
 - (void)moveCallsFromTempDatabase;
-- (id)permDBLocation;
+- (id)permDBLocation:(unsigned char*)arg1;
 - (void)pokeSyncHelperToInitDB;
-- (int)retryCount;
 - (void)setHelperConnection:(id)arg1;
-- (void)setRetryCount:(int)arg1;
 - (void)setSyncHelperReadyNotificationRef:(id)arg1;
 - (id)syncHelperReadyNotificationRef;
-- (id)tempDBLocation;
+- (id)tempDBLocation:(unsigned char*)arg1;
+- (BOOL)validatePermDatabase;
+- (BOOL)validateTempDatabase;
 - (BOOL)willMoveCallsFromTempDatabase;
 
 @end

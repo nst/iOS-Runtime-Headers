@@ -2,12 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDocumentInteractionController : NSObject <UIActionSheetDelegate> {
+@interface UIDocumentInteractionController : NSObject <QLPreviewControllerDelegate, UIActionSheetDelegate> {
     UIActivityViewController *_activityViewController;
     id _annotation;
-    id _applicationToOpen;
+    LSApplicationProxy *_applicationToOpen;
     NSArray *_availableApplications;
+    id /* block */ _completionWithItemsHandler;
     <UIDocumentInteractionControllerDelegate> *_delegate;
+    BOOL _disableFilteringDotFilesInArchives;
     struct { 
         unsigned int delegateViewControllerForPreview : 1; 
         unsigned int delegateRectForPreview : 1; 
@@ -51,23 +53,26 @@
     } _presentRect;
     UIView *_presentView;
     UIViewController *_presentingViewController;
-    id _previewController;
+    QLPreviewController *_previewController;
     id _previewItemProxy;
     BOOL _shouldUnzipDocument;
     BOOL _sourceIsManaged;
     NSURL *_tmpURLToDeleteOnDealloc;
     NSString *_uniqueIdentifier;
     NSURL *_unzippedDocumentURL;
+    BOOL previewsPresentWithMarkup;
 }
 
 @property (retain) NSURL *URL;
 @property (nonatomic, copy) NSString *UTI;
+@property (getter=_completionWithItemsHandler, setter=_setCompletionWithItemsHandler:, nonatomic, copy) id /* block */ _completionWithItemsHandler;
 @property (nonatomic, retain) UIActivityViewController *activityViewController;
 @property (nonatomic, retain) id annotation;
 @property (getter=isArchive, nonatomic, readonly) BOOL archive;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIDocumentInteractionControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=_disableFilteringDotFilesInArchives, setter=_setDisableFilteringDotFilesInArchives:, nonatomic) BOOL disableFilteringDotFilesInArchives;
 @property (nonatomic, readonly) NSArray *gestureRecognizers;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *icons;
@@ -75,7 +80,8 @@
 @property (getter=_performingActivity, setter=_setPerformingActivity:, nonatomic) BOOL performingActivity;
 @property (nonatomic, retain) UIPopoverController *popoverController;
 @property (nonatomic, readonly) id previewController;
-@property (nonatomic, readonly) _UIPreviewItemProxy *previewItemProxy;
+@property (nonatomic, readonly) _UIPreviewItemProxy<QLPreviewItem> *previewItemProxy;
+@property (nonatomic) BOOL previewsPresentWithMarkup;
 @property (nonatomic) BOOL shouldUnzipDocument;
 @property (nonatomic) BOOL sourceIsManaged;
 @property (readonly) Class superclass;
@@ -83,27 +89,33 @@
 
 + (id)_UTIForFileURL:(id)arg1;
 + (id)_applicationsForDocumentProxy:(id)arg1;
-+ (id)_pathFilterPredicate;
++ (id)_pathFilterPredicate:(BOOL)arg1;
 + (id)_unzippingQueue;
 + (id)allActionSelectorNames;
 + (void)initialize;
 + (id)interactionControllerWithURL:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)URL;
 - (id)UTI;
 - (void)_activityControllerViewDidDismiss;
 - (id)_applicationToOpen;
 - (id)_applications:(BOOL)arg1;
+- (void)_callBeginSelector:(id)arg1;
+- (void)_callFinishSelectorForOpenInPlace:(id)arg1;
 - (BOOL)_canPreviewUnzippedDocument;
 - (BOOL)_canSaveToCameraRollForType;
 - (BOOL)_canUnzipDocument;
 - (BOOL)_canUnzipDocumentAndPresentOpenIn;
 - (BOOL)_canUnzipDocumentAndPresentOptions;
 - (BOOL)_canUnzipDocumentForPreview;
+- (id /* block */)_completionWithItemsHandler;
+- (id)_defaultApplication;
 - (BOOL)_delegateCanPerformAction:(SEL)arg1;
 - (BOOL)_delegateExistsAndImplementsRequiredMethods:(id*)arg1;
 - (BOOL)_delegateImplementsLegacyActions;
 - (BOOL)_delegatePerformAction:(SEL)arg1;
+- (BOOL)_disableFilteringDotFilesInArchives;
 - (void)_dismissEverythingWithExtremePrejudiceAnimated:(BOOL)arg1;
 - (BOOL)_documentNeedsHelpUnzippingForPreview;
 - (id)_documentProxySourceIsManaged:(BOOL)arg1;
@@ -117,7 +129,9 @@
 - (BOOL)_isPackageArchive:(id)arg1;
 - (BOOL)_isValidURL:(id)arg1;
 - (BOOL)_isVideo;
+- (void)_openDocumentInPlaceWithApplication:(id)arg1;
 - (void)_openDocumentWithApplication:(id)arg1;
+- (void)_openDocumentWithApplication:(id)arg1 userInfo:(id)arg2;
 - (void)_openDocumentWithCurrentApplication;
 - (id)_pathsInArchive:(id /* block */)arg1;
 - (BOOL)_performingActivity;
@@ -125,6 +139,8 @@
 - (void)_presentOptionsMenu:(id)arg1;
 - (void)_presentPreview:(id)arg1;
 - (void)_setApplicationToOpen:(id)arg1;
+- (void)_setCompletionWithItemsHandler:(id /* block */)arg1;
+- (void)_setDisableFilteringDotFilesInArchives:(BOOL)arg1;
 - (void)_setPerformingActivity:(BOOL)arg1;
 - (void)_setUnzippedDocumentURL:(id)arg1;
 - (BOOL)_setupForOpenInMenu;
@@ -137,6 +153,7 @@
 - (id)annotation;
 - (unsigned int)applicationCount;
 - (void)dealloc;
+- (BOOL)defaultApplicationSupportsOpenInPlace;
 - (id)delegate;
 - (void)dismissMenuAnimated:(BOOL)arg1;
 - (void)dismissPreviewAnimated:(BOOL)arg1;
@@ -145,6 +162,7 @@
 - (id)icons;
 - (id)initWithURL:(id)arg1;
 - (BOOL)isArchive;
+- (void)markupAction:(id)arg1;
 - (id)name;
 - (int)numberOfPreviewItemsInPreviewController:(id)arg1;
 - (void)openDocumentWithDefaultApplication;
@@ -164,12 +182,14 @@
 - (void)previewControllerDidDismiss:(id)arg1;
 - (void)previewControllerWillDismiss:(id)arg1;
 - (id)previewItemProxy;
+- (BOOL)previewsPresentWithMarkup;
 - (void)setActivityViewController:(id)arg1;
 - (void)setAnnotation:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setPopoverController:(id)arg1;
 - (void)setPreviewURLOverride:(id)arg1;
+- (void)setPreviewsPresentWithMarkup:(BOOL)arg1;
 - (void)setShouldUnzipDocument:(BOOL)arg1;
 - (void)setSourceIsManaged:(BOOL)arg1;
 - (void)setURL:(id)arg1;

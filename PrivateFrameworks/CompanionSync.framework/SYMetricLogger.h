@@ -4,14 +4,21 @@
 
 @interface SYMetricLogger : NSObject {
     AWDServerConnection *_connection;
+    AWDCompanionSyncReceiveEvent *_lastReceiveMetric;
+    id /* block */ _lastReceiveMetricTimeoutBlock;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_bufferNewReceiptMetricForMessage:(id)arg1 service:(id)arg2;
+- (void)_sendLastReceiveMetric;
 - (id)init;
+- (void)postErrorInformation:(id)arg1 forService:(id)arg2;
 - (void)postFullSyncDuration:(double)arg1 onMaster:(BOOL)arg2 forService:(id)arg3;
 - (void)postReceiptOfMessage:(id)arg1 forService:(id)arg2;
 - (void)postSequenceErrorOfType:(int)arg1 sequenceNumber:(unsigned long long)arg2 forService:(id)arg3;
+- (void)updateLastReceivedMessageWithProcessingTime:(double)arg1;
 
 @end

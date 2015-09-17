@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSITunesStore : IKJSObject <IKJSITunesStore> {
+@interface IKJSITunesStore : IKJSObject <IKJSITunesStore, JSExport> {
     int _bagOperationLock;
     NSString *_cookieURL;
     id _isURLBagDidLoadToken;

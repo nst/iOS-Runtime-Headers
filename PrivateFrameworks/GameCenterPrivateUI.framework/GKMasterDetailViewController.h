@@ -34,26 +34,32 @@
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 
 - (void)_animateSlidingDoorTransitionFromRelativeStartTime:(double)arg1 relativeDuration:(double)arg2 duration:(double)arg3 appearing:(BOOL)arg4;
+- (void)_gkPushPresentedViewControllerForCompactSizeClass:(id)arg1;
 - (void)_gkRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (void)_gkRestorePopoverWithViewControllers:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)_gkShouldRefreshContentsForDataType:(unsigned int)arg1 userInfo:(id)arg2;
+- (id)_gkTargetViewControllerForAction:(SEL)arg1;
+- (id)_gkViewControllersForRestoringPopover;
 - (void)_setSeparatorBarHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setupSeparatorViews;
 - (id)_viewForSlidingInDetailView;
 - (id)_viewForSlidingInMasterView;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (BOOL)automaticallyForwardAppearanceMethods;
-- (id)blankRootDetailViewController;
 - (double)bubbleFlowAnimateInDuration;
 - (double)bubbleFlowAnimateOutDuration;
 - (id)controllersDelayingPresentation;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)delayAppearingWithBubbleFlowUntil:(id /* block */)arg1;
+- (void)dismissMasterOverlayViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)init;
 - (BOOL)isCovered;
+- (BOOL)isUsingPrimaryViewOverlay;
 - (id)masterDetailDelegate;
 - (id)masterNavigationController;
+- (void)notifyViewControllersOfNavigationController:(id)arg1 transitionToTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)popToRootDetailViewControllerAnimated:(BOOL)arg1;
 - (id /* block */)presentationDelayHandler;
@@ -80,15 +86,20 @@
 - (void)setShouldCollapseToDetail:(BOOL)arg1;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (BOOL)shouldCollapseToDetail;
+- (BOOL)shouldUnhidePrimaryViewController;
 - (BOOL)statusShouldCoverSplitViewFor:(id)arg1;
 - (id)topDetailViewController;
 - (id)topMasterViewController;
 - (void)updateCoveredColumnWidth;
+- (void)updateViewsForCurrentAppSize;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappearAnimated:(BOOL)arg1 bubbleFlow:(BOOL)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willAnimateKeyframesForAppearingWithBubbleFlowFromRelativeStartTime:(double)arg1 relativeDuration:(double)arg2 absoluteTransitionDuration:(double)arg3 fromViewController:(id)arg4;
 - (void)willAnimateKeyframesForDisappearingWithBubbleFlowFromRelativeStartTime:(double)arg1 relativeDuration:(double)arg2 absoluteTransitionDuration:(double)arg3 toViewController:(id)arg4;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

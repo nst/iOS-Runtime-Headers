@@ -3,6 +3,7 @@
  */
 
 @interface TSSStylesheet : TSPObject <TSKTransformableObject> {
+    BOOL mBaseStyleSetUpdated;
     BOOL mCanCullStyles;
     TSSStylesheet *mChild;
     NSString *mDebugName;
@@ -13,6 +14,7 @@
     TSUMutableRetainedPointerSet *mStyles;
 }
 
+@property (nonatomic, readonly) BOOL baseStyleSetUpdated;
 @property (nonatomic, readonly) NSSet *baseStyles;
 @property (nonatomic) BOOL canCullStyles;
 @property (nonatomic, readonly) TSSStylesheet *child;
@@ -41,6 +43,8 @@
 - (void)addStyle:(id)arg1 withIdentifier:(id)arg2;
 - (void)addStyle:(id)arg1 withParent:(id)arg2;
 - (void)addStyle:(id)arg1 withParent:(id)arg2 identifier:(id)arg3;
+- (id)allPresenterNotesStyles;
+- (BOOL)baseStyleSetUpdated;
 - (id)baseStyles;
 - (BOOL)canCullStyles;
 - (BOOL)cascadedContainsStyle:(id)arg1;
@@ -98,6 +102,7 @@
 - (id)packageLocator;
 - (id)parent;
 - (void)removeStyle:(id)arg1;
+- (void)resetBaseStyleSetUpdatedFlag;
 - (id)rootAncestor;
 - (void)saveStyles:(id)arg1 toArchiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
@@ -113,8 +118,6 @@
 - (id)styles;
 - (id)stylesOfClass:(Class)arg1;
 - (id)stylesPassingTest:(id /* block */)arg1;
-- (id)stylesToNotTransform;
-- (id)stylesToNotTransform;
 - (id)stylesWithName:(id)arg1;
 - (void)unlockStylesheetForDurationOfBlock:(id /* block */)arg1;
 - (id)unusedStyleIdentifierWithPackageString:(id)arg1 styleDescriptor:(id)arg2 contentTag:(id)arg3;

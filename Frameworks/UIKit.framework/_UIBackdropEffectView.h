@@ -12,6 +12,7 @@
 
 + (Class)layerClass;
 
+- (void).cxx_destruct;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
 - (id)backdropLayer;
 - (void)backdropLayerStatisticsDidChange:(id)arg1;

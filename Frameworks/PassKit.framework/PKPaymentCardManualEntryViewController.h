@@ -2,23 +2,9 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentCardManualEntryViewController : PKPaymentCardDetailsViewController <PKPaymentCameraCaptureViewControllerDelegate, UITextFieldDelegate> {
-    UITableViewCell *_cardHolderNameCell;
-    UITableViewCell *_cardNumberCell;
-    UITextField *_cardNumberField;
-    BOOL _cardNumberHasBecomeFirstResponder;
-    NSDateFormatter *_dateFormatter;
-    UITableViewCell *_expirationDateCell;
-    UITextField *_expirationDateField;
-    UIDatePicker *_expirationDatePicker;
-    BOOL _hasScrolledToShowFields;
-    BOOL _hasShown;
-    BOOL _isCUPDebit;
-    UITextField *_nameField;
-    UIButton *_photoButton;
-    UITableViewCell *_securityCodeCell;
-    NSArray *_sortedCUPDebitBins;
-    void *_unifiedMeCard;
+@interface PKPaymentCardManualEntryViewController : PKPaymentSetupFieldsViewController <PKPaymentCameraCaptureViewControllerDelegate, PKPaymentSetupBrowseProductsViewControllerDelegate, PKPaymentSetupDisambiguationViewControllerDelegate> {
+    PKPaymentSetupBrowseProductsViewController *_findWithoutNumberBrowser;
+    PKPaymentSetupFindWithoutNumberFooterView *_findWithoutNumberFooterView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -28,40 +14,36 @@
 
 - (void)_cameraCaptureCancelButtonPressed:(id)arg1;
 - (void)_captureFromCamera:(id)arg1;
-- (id)_cardHolderNameCell;
-- (id)_cardNumberCell;
-- (void)_checkAndAdjustForCUPDebit:(id)arg1;
-- (void)_clearTextFieldColors;
-- (id)_defaultCell;
 - (void)_dismissCameraCaptureViewController:(id)arg1;
-- (void)_displayNewExpiration:(id)arg1;
-- (id)_expirationDateCell;
-- (BOOL)_isCUPDebit:(id)arg1;
-- (id)_name;
-- (id)_securityCodeCell;
-- (void)_setCUPDebitFieldsDisabled:(BOOL)arg1;
-- (void)_updateTextField:(id)arg1 withDate:(id)arg2;
+- (id)_findWithoutNumberFooterView;
+- (void)_performDisambiguationWithCompletion:(id /* block */)arg1;
+- (void)_performInlineSecondaryWithCompletion:(id /* block */)arg1;
+- (void)_performRequirementsWithCompletion:(id /* block */)arg1;
+- (void)_performSecondaryWithCompletion:(id /* block */)arg1;
+- (void)_pushSecondaryPaymentSetupViewControllerWithCompletion:(id /* block */)arg1;
+- (BOOL)_shouldUseInlineSecondaryProvisioningFlow;
+- (void)browseProductsViewController:(id)arg1 didSelectProduct:(id)arg2;
 - (void)cameraCaptureViewController:(id)arg1 didRecognizeObjects:(id)arg2;
 - (void)cameraCaptureViewControllerDidFail:(id)arg1;
 - (void)dealloc;
+- (id)defaultFields;
 - (id)defaultHeaderViewSubTitle;
 - (id)defaultHeaderViewTitle;
-- (id)dummyTextField;
-- (id)firstEmptyField;
-- (void)handleNext:(id)arg1;
-- (id)initWithWebService:(id)arg1 context:(int)arg2 setupDelegate:(id)arg3;
-- (BOOL)isComplete;
-- (BOOL)isEmpty;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (void)disambiguationViewController:(id)arg1 didSelectProduct:(id)arg2;
+- (void)disambiguationViewControllerSetupLater:(id)arg1;
+- (void)fieldCellEditableTextFieldValueDidChange:(id)arg1;
+- (void)findCardWithoutNumber:(id)arg1;
+- (id)footerView;
+- (id)newPaymentEligibilityRequest;
+- (void)performNextActionForProvisioningState:(int)arg1 withCompletion:(id /* block */)arg2;
+- (id)readonlyFieldIdentifiers;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
-- (BOOL)textFieldShouldBeginEditing:(id)arg1;
-- (BOOL)textFieldShouldClear:(id)arg1;
-- (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)updateFieldsModelWithCameraCaptureObjects:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
+- (id)visibleFieldIdentifiers;
 
 @end

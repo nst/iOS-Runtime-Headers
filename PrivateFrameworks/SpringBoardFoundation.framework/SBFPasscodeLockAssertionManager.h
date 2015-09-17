@@ -3,9 +3,7 @@
  */
 
 @interface SBFPasscodeLockAssertionManager : NSObject {
-    SBFPasscodeLockAssertionTracker *_lockScreenCameraTracker;
     SBFPasscodeLockAssertionTracker *_preventLockTracker;
-    SBFPasscodeLockAssertionTracker *_siriTracker;
     SBFPasscodeLockAssertionTracker *_transientTracker;
 }
 
@@ -14,6 +12,7 @@
 - (id)description;
 - (BOOL)hasActiveAssertions;
 - (id)init;
+- (BOOL)isAssertionValid:(id)arg1;
 - (void)removeAssertion:(id)arg1;
 
 @end

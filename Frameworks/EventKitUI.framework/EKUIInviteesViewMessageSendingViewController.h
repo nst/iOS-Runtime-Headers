@@ -21,10 +21,14 @@
 - (void).cxx_destruct;
 - (id)_htmlBodyForMailMessageWithNames:(id)arg1;
 - (id)event;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithEvent:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (void)mailComposeController:(id)arg1 didFinishWithResult:(int)arg2 error:(id)arg3;
 - (id /* block */)messageSendingComplete;
+- (BOOL)prefersForcedModalShowViewController;
+- (BOOL)prefersToBePresentedFromApplicationRootViewController;
 - (void)setEvent:(id)arg1;
 - (void)setMessageSendingComplete:(id /* block */)arg1;
 

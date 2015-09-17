@@ -5,11 +5,13 @@
 @interface SFAirDropNode : NSObject {
     UIImage *_displayIcon;
     NSString *_displayName;
+    BOOL _isConversation;
     BOOL _monogram;
     id _node;
     NSString *_realName;
     NSString *_secondaryName;
     struct __SFOperation { } *_sender;
+    BOOL _supportsFMF;
     BOOL _supportsMixedTypes;
     BOOL _supportsPasses;
     BOOL _unknown;
@@ -17,10 +19,12 @@
 
 @property (retain) UIImage *displayIcon;
 @property (retain) NSString *displayName;
+@property (readonly) BOOL isConversation;
 @property (getter=isMonogram) BOOL monogram;
 @property (retain) id node;
 @property (retain) NSString *realName;
 @property (retain) NSString *secondaryName;
+@property (readonly) BOOL supportsFMF;
 @property (readonly) BOOL supportsMixedTypes;
 @property (readonly) BOOL supportsPasses;
 @property (getter=isUnknown) BOOL unknown;
@@ -35,6 +39,7 @@
 - (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long)arg2 withResults:(id)arg3;
 - (unsigned int)hash;
 - (id)init;
+- (BOOL)isConversation;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMonogram;
 - (BOOL)isUnknown;
@@ -48,7 +53,9 @@
 - (void)setRealName:(id)arg1;
 - (void)setSecondaryName:(id)arg1;
 - (void)setUnknown:(BOOL)arg1;
+- (void)simulateFakeTransferWithSessionID:(id)arg1;
 - (void)startSendWithSessionID:(id)arg1 items:(id)arg2 description:(id)arg3 previewImage:(id)arg4;
+- (BOOL)supportsFMF;
 - (BOOL)supportsMixedTypes;
 - (BOOL)supportsPasses;
 - (void)updateWithSFNode:(struct __SFNode { }*)arg1;

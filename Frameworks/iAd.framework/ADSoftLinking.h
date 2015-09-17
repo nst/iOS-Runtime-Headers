@@ -66,7 +66,6 @@
 @property (nonatomic, readonly) Class PKShippingMethod;
 @property (nonatomic, readonly) Class PLStaticWallpaperImageViewController;
 @property (nonatomic, readonly) NSString *SKStoreProductParameterITunesItemIdentifier;
-@property (nonatomic, readonly) NSString *SKStoreProductParameterQToken;
 @property (nonatomic, readonly) Class SKStoreProductViewController;
 @property (nonatomic, readonly) Class SLComposeViewController;
 @property (nonatomic, readonly) Class SLRequest;
@@ -147,7 +146,6 @@
 - (Class)PKShippingMethod;
 - (Class)PLStaticWallpaperImageViewController;
 - (id)SKStoreProductParameterITunesItemIdentifier;
-- (id)SKStoreProductParameterQToken;
 - (Class)SKStoreProductViewController;
 - (Class)SLComposeViewController;
 - (Class)SLRequest;

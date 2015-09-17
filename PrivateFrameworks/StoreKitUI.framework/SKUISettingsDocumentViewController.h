@@ -50,6 +50,7 @@
 - (id)initWithTemplateElement:(id)arg1 clientContext:(id)arg2;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)owningViewControllerForSettingsGroupsDescription:(id)arg1;
 - (void)settingsDocumentViewDidChangeTintColor:(id)arg1;
 - (void)settingsEditTransaction:(id)arg1 isValid:(BOOL)arg2;
 - (void)settingsEditTransactionDidCompleteTransaction:(id)arg1;

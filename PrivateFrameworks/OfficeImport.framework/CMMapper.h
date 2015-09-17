@@ -6,6 +6,8 @@
     CMMapper *mParent;
 }
 
+@property (readonly) CMMapper *parent;
+
 - (void)addAttribute:(id)arg1 toNode:(id)arg2 value:(id)arg3;
 - (void)addStyle:(id)arg1 withName:(id)arg2;
 - (void)addStyleUsingGlobalCacheTo:(id)arg1 style:(id)arg2;
@@ -18,7 +20,6 @@
 - (void)mapStylesheetAt:(id)arg1 stylesheet:(id)arg2;
 - (id)parent;
 - (id)root;
-- (void)setParent:(id)arg1;
 - (void)startMappingWithState:(id)arg1;
 
 @end

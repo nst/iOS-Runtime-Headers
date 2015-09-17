@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLGenericAlbum : _PLGenericAlbum <PLAlbumProtocol, PLDerivedAlbumOrigin, PLIndexMappersDataOrigin, PLOrderKeyObject> {
+@interface PLGenericAlbum : _PLGenericAlbum <PLAlbumProtocol, PLDerivedAlbumOrigin, PLIndexMappersDataOrigin> {
     NSObject<PLIndexMappingCache> *_derivededAlbums;
     BOOL didRegisteredWithUserInterfaceContext;
     BOOL isRegisteredForChanges;
@@ -17,7 +17,6 @@
 @property (nonatomic, readonly) BOOL canShowComments;
 @property (nonatomic, retain) NSString *cloudGUID;
 @property (nonatomic) short cloudLocalState;
-@property (nonatomic) short cloudServerState;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL didRegisteredWithUserInterfaceContext;
@@ -39,6 +38,7 @@
 @property (nonatomic, readonly) BOOL isPanoramasAlbum;
 @property (nonatomic, readonly) BOOL isPendingPhotoStreamAlbum;
 @property (nonatomic, readonly) BOOL isPhotoStreamAlbum;
+@property (nonatomic) BOOL isPinned;
 @property (nonatomic, readonly) BOOL isRecentlyAddedAlbum;
 @property (nonatomic) BOOL isRegisteredForChanges;
 @property (nonatomic, readonly) BOOL isRootFolder;
@@ -57,7 +57,6 @@
 @property (nonatomic) int pendingItemsType;
 @property (nonatomic, readonly, retain) PLPhotoLibrary *photoLibrary;
 @property (nonatomic, readonly) unsigned int photosCount;
-@property (getter=isPinned, setter=setPinned:, nonatomic) BOOL pinned;
 @property (nonatomic, readonly, retain) UIImage *posterImage;
 @property (nonatomic, retain) PLManagedAsset *secondaryKeyAsset;
 @property (nonatomic, readonly) BOOL shouldDeleteWhenEmpty;
@@ -106,7 +105,6 @@
 + (id)allVideosAlbumInLibrary:(id)arg1;
 + (id)cameraRollAlbumInLibrary:(id)arg1;
 + (id)childKeyForOrdering;
-+ (id)cloudAlbumsInLibrary:(id)arg1;
 + (id)eventsWithName:(id)arg1 andImportSessionIdentifier:(id)arg2 inManagedObjectContext:(id)arg3;
 + (id)filesystemImportProgressAlbumInLibrary:(id)arg1;
 + (id)iTunesLibraryAlbumInLibrary:(id)arg1;
@@ -121,7 +119,9 @@
 + (id)insertNewSyncedEventIntoLibrary:(id)arg1;
 + (id)insertNewSyncedEventWithTitle:(id)arg1 intoLibrary:(id)arg2;
 + (id)insertNewSyncedFolderWithTitle:(id)arg1 intoLibrary:(id)arg2;
++ (BOOL)is1WaySyncKind:(int)arg1;
 + (BOOL)isFolder:(int)arg1;
++ (BOOL)isSmartAlbumForKind:(int)arg1;
 + (id)keyPathsForValuesAffectingKindValue;
 + (id)keyPathsForValuesAffectingName;
 + (id)localizedTitleForAlbumKind:(int)arg1;
@@ -156,7 +156,6 @@
 - (BOOL)canShowComments;
 - (id)childKeyForOrdering;
 - (id)childManagedObject;
-- (id)cloudGUID;
 - (unsigned int)count;
 - (unsigned int)countForAssetsOfKind:(short)arg1;
 - (id)cplAlbumChangeInPhotoLibrary:(id)arg1;
@@ -164,7 +163,6 @@
 - (void)delete;
 - (id)description;
 - (BOOL)didRegisteredWithUserInterfaceContext;
-- (void)didSave;
 - (void)enumerateDerivedAlbums:(id /* block */)arg1;
 - (void)enumerateDerivedIndexMappers:(id /* block */)arg1;
 - (id)groupURL;
@@ -183,7 +181,6 @@
 - (BOOL)isPanoramasAlbum;
 - (BOOL)isPendingPhotoStreamAlbum;
 - (BOOL)isPhotoStreamAlbum;
-- (BOOL)isPinned;
 - (BOOL)isRecentlyAddedAlbum;
 - (BOOL)isRegisteredForChanges;
 - (BOOL)isRootFolder;
@@ -191,39 +188,25 @@
 - (BOOL)isStandInAlbum;
 - (BOOL)isUserLibraryAlbum;
 - (BOOL)isWallpaperAlbum;
-- (id)kind;
 - (int)kindValue;
 - (id)localizedLocationNames;
 - (id)localizedTitle;
-- (id)migration_sortedOrderKeysForChildrenUsingMap:(id)arg1;
 - (id)name;
-- (long long)orderValue;
 - (id)photoLibrary;
 - (unsigned int)photosCount;
 - (id)posterImage;
 - (void)reducePendingItemsCountBy:(unsigned int)arg1;
 - (void)registerDerivedAlbum:(struct NSObject { Class x1; }*)arg1;
 - (void)registerForChanges;
-- (id)secondaryOrderSortKey;
-- (void)setCloudGUID:(id)arg1;
 - (void)setDidRegisteredWithUserInterfaceContext:(BOOL)arg1;
 - (void)setHasUnseenContentBoolValue:(BOOL)arg1;
 - (void)setIsRegisteredForChanges:(BOOL)arg1;
-- (void)setKind:(id)arg1;
 - (void)setKindValue:(int)arg1;
-- (void)setOrderValue:(long long)arg1;
-- (void)setPinned:(BOOL)arg1;
-- (void)setSlideshowSettings:(id)arg1;
-- (void)setTitle:(id)arg1;
-- (void)setUuid:(id)arg1;
 - (BOOL)shouldDeleteWhenEmpty;
-- (id)slideshowSettings;
 - (id /* block */)sortingComparator;
-- (id)title;
 - (void)unregisterAllDerivedAlbums;
 - (void)unregisterForChanges;
 - (void)updateAlbumFolderRelation:(id)arg1 inLibrary:(id)arg2;
-- (id)uuid;
 - (unsigned int)videosCount;
 - (void)willTurnIntoFault;
 

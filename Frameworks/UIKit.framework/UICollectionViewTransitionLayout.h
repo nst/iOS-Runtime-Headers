@@ -43,6 +43,7 @@
 @property (nonatomic, readonly) UICollectionViewLayout *nextLayout;
 @property (nonatomic) float transitionProgress;
 
+- (void).cxx_destruct;
 - (void)_finalizeLayoutTransition;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_newVisibleBounds;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_oldVisibleBounds;
@@ -52,7 +53,8 @@
 - (BOOL)_supportsAdvancedTransitionAnimations;
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
 - (id)currentLayout;
-- (void)dealloc;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithCurrentLayout:(id)arg1 nextLayout:(id)arg2;
 - (id)interpolatedLayoutAttributesFromLayoutAttributes:(id)arg1 toLayoutAttributes:(id)arg2 progress:(float)arg3;
 - (void)invalidateLayout;

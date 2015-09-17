@@ -8,6 +8,7 @@
     NSRecursiveLock *_lock;
     int _pid;
     NSString *_portName;
+    NSString *_processName;
     Protocol *_protocol;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _willBeTerminated;

@@ -5,11 +5,11 @@
 @interface BSPortDeathWatcher : NSObject {
     id /* block */ _handler;
     NSObject<OS_dispatch_queue> *_queue;
-    BSMachSendRight *_sendRight;
+    BSMachPortSendRight *_sendRight;
     BSDispatchSource *_source;
 }
 
-@property (nonatomic, readonly, copy) BSMachSendRight *sendRight;
+@property (nonatomic, readonly, copy) BSMachPortSendRight *sendRight;
 
 - (void)dealloc;
 - (id)initWithPort:(unsigned int)arg1 queue:(id)arg2 deathHandler:(id /* block */)arg3;

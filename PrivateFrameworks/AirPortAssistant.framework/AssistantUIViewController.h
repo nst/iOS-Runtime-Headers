@@ -81,6 +81,8 @@
 - (id)askUserQuestionAlert;
 - (id)assistantDelegate;
 - (void)assistantUpdateProgress:(id)arg1 forState:(int)arg2;
+- (void)assistantWaitingForResourcesComplete;
+- (void)assistantWaitingForResourcesStart;
 - (BOOL)auUIAlertAlternateAction:(id)arg1;
 - (BOOL)auUIAlertCancelAction:(id)arg1;
 - (BOOL)auUIAlertDestructiveAction:(id)arg1;

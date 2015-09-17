@@ -48,6 +48,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property NSMetadataQuery *query;
+@property BRNotificationReceiver *receiver;
 @property (readonly) Class superclass;
 
 + (void)didEndPossibleFileOperation:(id)arg1;
@@ -85,6 +86,7 @@
 - (void)processUpdates;
 - (id)query;
 - (id)queryQueue;
+- (id)receiver;
 - (const void*)resultAtIndex:(int)arg1;
 - (unsigned int)resultCount;
 - (void)setBatchingParameters:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; })arg1;
@@ -93,6 +95,7 @@
 - (void)setExternalDocumentsBundleIdentifier:(id)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryQueue:(id)arg1;
+- (void)setReceiver:(id)arg1;
 - (void)setSearchScope:(id)arg1 withOptions:(unsigned long)arg2;
 - (void)setSendHasUpdateNotification:(BOOL)arg1;
 - (void)setSortComparator:(int (*)arg1 withContext:(void*)arg2;

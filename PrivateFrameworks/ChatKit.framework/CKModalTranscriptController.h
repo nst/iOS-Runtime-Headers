@@ -26,7 +26,7 @@
 - (BOOL)forceMMS;
 - (BOOL)getContainerWidth:(float*)arg1 offset:(float*)arg2;
 - (void)insertData:(id)arg1 MIMEType:(id)arg2 exportedFilename:(id)arg3;
-- (void)insertFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3;
+- (void)insertFileURL:(id)arg1 filename:(id)arg2 transcoderUserInfo:(id)arg3 fullyRealizedPreview:(id)arg4 rawPreview:(id)arg5 appendedVideoURL:(id)arg6;
 - (BOOL)mimeType;
 - (void)registerForNotifications;
 - (void)setCanEditRecipients:(BOOL)arg1;
@@ -36,7 +36,7 @@
 - (void)setTextEntryContentsVisible:(BOOL)arg1;
 - (BOOL)shouldDismissAfterSend;
 - (void)transitionFromNewMessageToConversation;
-- (void)viewServiceWillAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

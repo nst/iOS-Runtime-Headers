@@ -17,7 +17,6 @@
     NSString *_path;
 }
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (unsigned int)CRC;
 - (BOOL)bookmarkDataNeedsWriteWithOptions:(unsigned int)arg1;

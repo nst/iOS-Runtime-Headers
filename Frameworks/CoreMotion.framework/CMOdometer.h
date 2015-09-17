@@ -10,8 +10,6 @@
 @property (nonatomic) <CMOdometerDelegate> *delegate;
 @property (nonatomic, readonly) CMOdometerProxy *odometerProxy;
 
-+ (BOOL)isOdometerAvailableForActivity:(int)arg1;
-
 - (void)dealloc;
 - (id)delegate;
 - (id)init;

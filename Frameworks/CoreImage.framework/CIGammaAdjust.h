@@ -16,7 +16,6 @@
 - (id)inputImage;
 - (id)inputPower;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputPower:(id)arg1;
 

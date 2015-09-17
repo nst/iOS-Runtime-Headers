@@ -4,27 +4,34 @@
 
 @interface NSMutableParagraphStyle : NSParagraphStyle
 
-@property int alignment;
-@property int baseWritingDirection;
+@property (nonatomic) int alignment;
+@property (nonatomic) BOOL allowsDefaultTighteningForTruncation;
+@property (nonatomic) int baseWritingDirection;
 @property (nonatomic) float defaultTabInterval;
-@property float firstLineHeadIndent;
-@property float headIndent;
-@property float hyphenationFactor;
-@property int lineBreakMode;
-@property float lineHeightMultiple;
-@property float lineSpacing;
-@property float maximumLineHeight;
-@property float minimumLineHeight;
-@property float paragraphSpacing;
-@property float paragraphSpacingBefore;
+@property (nonatomic) float firstLineHeadIndent;
+@property (nonatomic) float headIndent;
+@property (nonatomic) float hyphenationFactor;
+@property (nonatomic) int lineBreakMode;
+@property (nonatomic) float lineHeightMultiple;
+@property (nonatomic) float lineSpacing;
+@property (nonatomic) float maximumLineHeight;
+@property (nonatomic) float minimumLineHeight;
+@property (nonatomic) float paragraphSpacing;
+@property (nonatomic) float paragraphSpacingBefore;
 @property (nonatomic, copy) NSArray *tabStops;
-@property float tailIndent;
+@property (nonatomic) float tailIndent;
+@property float tighteningFactorForTruncation;
+
+// Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
 - (void)_mutateTabStops;
+- (void)_setLineBoundsOptions:(unsigned long)arg1;
 - (void)addTabStop:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)removeTabStop:(id)arg1;
 - (void)setAlignment:(int)arg1;
+- (void)setAllowsDefaultTighteningForTruncation:(BOOL)arg1;
+- (void)setAllowsHangingPunctuation:(BOOL)arg1;
 - (void)setBaseWritingDirection:(int)arg1;
 - (void)setDefaultTabInterval:(float)arg1;
 - (void)setFirstLineHeadIndent:(float)arg1;
@@ -32,6 +39,7 @@
 - (void)setHeaderLevel:(int)arg1;
 - (void)setHyphenationFactor:(float)arg1;
 - (void)setLineBreakMode:(int)arg1;
+- (void)setLineBreakStrategy:(unsigned int)arg1;
 - (void)setLineHeightMultiple:(float)arg1;
 - (void)setLineSpacing:(float)arg1;
 - (void)setMaximumLineHeight:(float)arg1;
@@ -44,5 +52,12 @@
 - (void)setTextBlocks:(id)arg1;
 - (void)setTextLists:(id)arg1;
 - (void)setTighteningFactorForTruncation:(float)arg1;
+- (void)setUsesOpticalAlignment:(BOOL)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
++ (id)_fiui_mutableParagraphStyleWithDynamicTracking;
+
+- (void)_fiui_addDynamicTracking;
 
 @end

@@ -25,7 +25,6 @@
     OADShapeStyle *mTextStyle;
 }
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)defaultStyleLabelNameForPointType:(int)arg1;
 - (id)diagram;

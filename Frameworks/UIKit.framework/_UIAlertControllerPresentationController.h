@@ -2,11 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIAlertControllerPresentationController : UIPresentationController <UIAdaptivePresentationControllerDelegate> {
+@interface _UIAlertControllerPresentationController : UIPresentationController <UIAdaptivePresentationControllerDelegate, UIForcePresentationController> {
     BOOL __isCurrentContext;
     BOOL __shouldRespectNearestCurrentContextPresenter;
     BOOL _chromeHidden;
     UIView *_dimmingView;
+    <_UIForcePresentationControllerDelegate> *_forcePresentationControllerDelegate;
+    UIGestureRecognizer *_panningGestureRecognizer;
+    id /* block */ _presentationPhaseCompletionBlock;
+    UIView *_revealContainerView;
+    BOOL _sourceViewSnapshotAndScaleTransformSuppressed;
     BOOL constraintsPrepared;
     UIView *keyboardLayoutAlignmentAvailableSpaceView;
     _UIKeyboardLayoutAlignmentView *keyboardLayoutAlignmentView;
@@ -15,41 +20,55 @@
 @property (getter=_isChromeHidden, setter=_setChromeHidden:, nonatomic) BOOL _chromeHidden;
 @property (readonly) UIView *_dimmingView;
 @property (setter=_setIsCurrentContext:) BOOL _isCurrentContext;
+@property (nonatomic, readonly) UIView *_revealContainerView;
 @property (setter=_setShouldRespectNearestCurrentContextPresenter:) BOOL _shouldRespectNearestCurrentContextPresenter;
+@property (nonatomic) BOOL _sourceViewSnapshotAndScaleTransformSuppressed;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) <_UIForcePresentationControllerDelegate> *forcePresentationControllerDelegate;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIGestureRecognizer *panningGestureRecognizer;
+@property (nonatomic, copy) id /* block */ presentationPhaseCompletionBlock;
 @property (readonly) Class superclass;
 
-- (void)_containerViewWillLayoutSubviews;
+- (void).cxx_destruct;
+- (BOOL)_canCommitPresentation;
+- (BOOL)_canDismissPresentation;
 - (id)_dimmingView;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForTransitionViewInPresentationSuperview:(id)arg1;
 - (BOOL)_isChromeHidden;
 - (BOOL)_isCurrentContext;
-- (void)_occludePresentingWindow:(BOOL)arg1;
+- (BOOL)_keyboardShouldAnimateAlongsideForInteractiveTransitions;
 - (void)_prepareConstraintsIfNecessary;
 - (void)_prepareDimmingViewIfNecessary;
 - (id)_presentedAlertController;
+- (void)_presentedAlertControllerDidAdapt;
 - (BOOL)_preserveResponderAcrossWindows;
+- (id)_revealContainerView;
 - (void)_setChromeHidden:(BOOL)arg1;
 - (void)_setIsCurrentContext:(BOOL)arg1;
 - (void)_setShouldRespectNearestCurrentContextPresenter:(BOOL)arg1;
 - (BOOL)_shouldChangeStatusBarViewController;
+- (BOOL)_shouldOccludeDuringPresentation;
 - (BOOL)_shouldRespectDefinesPresentationContext;
 - (BOOL)_shouldRespectNearestCurrentContextPresenter;
+- (BOOL)_sourceViewSnapshotAndScaleTransformSuppressed;
+- (void)_willRunTransitionForCurrentStateDeferred:(BOOL)arg1;
 - (int)adaptivePresentationStyle;
 - (int)adaptivePresentationStyleForPresentationController:(id)arg1;
-- (int)attributeToAlignAlertControllerViewBy;
-- (float)constantForAligningAlertControllerToAvailableSpace;
 - (void)containerViewWillLayoutSubviews;
-- (void)dealloc;
-- (void)dismissalTransitionWillBegin;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (id)forcePresentationControllerDelegate;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
+- (id)panningGestureRecognizer;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (id)presentationController:(id)arg1 viewControllerForAdaptivePresentationStyle:(int)arg2;
-- (void)presentationTransitionDidEnd:(BOOL)arg1;
+- (id /* block */)presentationPhaseCompletionBlock;
 - (void)presentationTransitionWillBegin;
-- (id)presentedView;
 - (void)setDelegate:(id)arg1;
+- (void)setForcePresentationControllerDelegate:(id)arg1;
+- (void)setPanningGestureRecognizer:(id)arg1;
+- (void)setPresentationPhaseCompletionBlock:(id /* block */)arg1;
+- (void)set_sourceViewSnapshotAndScaleTransformSuppressed:(BOOL)arg1;
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;
 

@@ -14,6 +14,7 @@
     unsigned int _isDraftMessage;
     unsigned int _isEditableMessage;
     unsigned int _isOutgoingMessage;
+    BOOL _isReload;
     int _loadAlternative;
     unsigned int _loadIncrement;
     MFActivityMonitor *_loadTask;
@@ -56,7 +57,7 @@
 @property (nonatomic, copy) NSArray *signers;
 @property (nonatomic, copy) NSArray *suggestions;
 
-+ (BOOL)isAttachmentTooLarge:(id)arg1;
++ (BOOL)isAttachmentTooLargeToDownload:(id)arg1;
 + (unsigned int)nextOffsetForOffset:(unsigned int)arg1 totalLength:(unsigned int)arg2 requestedAmount:(unsigned int)arg3;
 
 - (void)_notifyAttachmentComplete:(id)arg1 data:(id)arg2;
@@ -81,7 +82,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (BOOL)failedToLoad;
-- (id)fileWrappersForImageAttachments;
+- (void)forceReload;
 - (BOOL)hasAnalyzedMessage;
 - (BOOL)hasAnalyzedMessageWithTimeout:(id)arg1;
 - (BOOL)hasLoaded;

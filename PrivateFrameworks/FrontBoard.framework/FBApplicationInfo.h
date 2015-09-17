@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBApplicationInfo : FBBundleInfo {
+@interface FBApplicationInfo : FBBundleInfo <BSDescriptionProviding> {
+    NSString *_applicationIdentifierEntitlement;
     NSSet *_backgroundModes;
     BOOL _beta;
     NSURL *_bundleContainerURL;
@@ -18,12 +19,16 @@
     NSArray *_externalAccessoryProtocols;
     NSString *_fallbackFolderName;
     NSArray *_folderNames;
+    BOOL _hasFreeDeveloperProvisioningProfile;
+    BOOL _hasUniversalProvisioningProfile;
     BOOL _installing;
+    BOOL _isManaged;
     double _lastModifiedDate;
     float _minimumBrightnessLevel;
     BOOL _newsstand;
     NSString *_preferenceDomain;
     BOOL _provisioningProfileValidated;
+    NSArray *_provisioningProfiles;
     int _ratingRank;
     NSArray *_requiredCapabilities;
     BOOL _requiresPersistentWiFi;
@@ -31,19 +36,23 @@
     NSURL *_sandboxURL;
     NSString *_sdkVersion;
     NSString *_signerIdentity;
-    NSSet *_supportedInterfaceOrientations;
+    unsigned int _supportedInterfaceOrientations;
     NSArray *_tags;
     unsigned int _type;
     BOOL _uninstalling;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
+@property (nonatomic, readonly, copy) NSString *applicationIdentifierEntitlement;
 @property (getter=isBeta, nonatomic, readonly) BOOL beta;
 @property (nonatomic, readonly, retain) NSURL *bundleContainerURL;
 @property (nonatomic, readonly, retain) NSArray *customMachServices;
 @property (nonatomic, readonly, retain) NSURL *dataContainerURL;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly, retain) FBApplicationDefaults *defaults;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly, retain) NSArray *deviceFamilies;
+@property (nonatomic, readonly, retain) NSNumber *downloaderDSID;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
 @property (nonatomic, readonly, retain) NSDictionary *entitlements;
 @property (nonatomic, readonly, retain) NSDictionary *environmentVariables;
@@ -52,12 +61,15 @@
 @property (nonatomic, readonly, retain) NSArray *externalAccessoryProtocols;
 @property (nonatomic, readonly, retain) NSString *fallbackFolderName;
 @property (nonatomic, readonly, retain) NSArray *folderNames;
+@property (getter=hasFreeDeveloperProvisioningProfile, nonatomic, readonly) BOOL freeDeveloperProvisioningProfile;
+@property (readonly) unsigned int hash;
 @property (getter=_isInstalling, setter=_setInstalling:, nonatomic) BOOL installing;
 @property (nonatomic, readonly) double lastModifiedDate;
 @property (nonatomic, readonly) float minimumBrightnessLevel;
 @property (getter=isNewsstand, nonatomic, readonly) BOOL newsstand;
 @property (nonatomic, readonly, copy) NSString *preferenceDomain;
 @property (getter=isProvisioningProfileValidated, nonatomic, readonly) BOOL provisioningProfileValidated;
+@property (nonatomic, readonly, retain) NSNumber *purchaserDSID;
 @property (nonatomic, readonly) int ratingRank;
 @property (nonatomic, readonly, retain) NSArray *requiredCapabilities;
 @property (nonatomic, readonly) BOOL requiresPersistentWiFi;
@@ -66,22 +78,25 @@
 @property (nonatomic, readonly, copy) NSString *sdkVersion;
 @property (nonatomic, readonly) int signatureState;
 @property (nonatomic, readonly, copy) NSString *signerIdentity;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) unsigned int supportedInterfaceOrientations;
 @property (nonatomic, readonly, retain) NSArray *tags;
 @property (nonatomic, readonly) unsigned int type;
 @property (getter=_isUninstalling, setter=_setUninstalling:, nonatomic) BOOL uninstalling;
+@property (getter=hasUniversalProvisioningProfile, nonatomic, readonly) BOOL universalProvisioningProfile;
 
-// Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
++ (id)_ratingQueue;
 
 - (void)_acceptApplicationSignatureIdentity;
 - (unsigned int)_applicationType:(id)arg1;
 - (void)_buildDefaultsFromInfoPlist:(id)arg1;
 - (void)_cacheFolderNamesForSystemApp:(id)arg1;
-- (int)_computeRatingRank;
-- (id)_computeSupportedInterfaceOrientations:(id)arg1;
+- (void)_computeRatingRank;
+- (unsigned int)_computeSupportedInterfaceOrientations:(id)arg1;
 - (id)_configureEnvironment:(id)arg1;
 - (id)_copyiTunesMetadata;
-- (BOOL)_doesProfileMatchSignerIdentity:(struct _MISProfile { }*)arg1;
 - (id)_expirationDateForProvisioningProfile;
+- (id)_initWithApplicationProxy:(id)arg1;
 - (BOOL)_isInstalling;
 - (BOOL)_isUninstalling;
 - (double)_lastModifiedDateForPath:(id)arg1;
@@ -91,22 +106,30 @@
 - (void)_setInstalling:(BOOL)arg1;
 - (void)_setUninstalling:(BOOL)arg1;
 - (BOOL)_signatureNeedsExplicitUserTrust;
-- (id)_uniqueDeviceIdentifier;
+- (void)_updateWithManagedApplicationStatus:(BOOL)arg1;
+- (void)_updateWithProvisioningProfiles:(id)arg1;
 - (void)acceptApplicationSignatureIdentity;
+- (id)applicationIdentifierEntitlement;
 - (BOOL)builtOnOrAfterSDKVersion:(id)arg1;
 - (id)bundleContainerURL;
 - (id)customMachServices;
 - (id)dataContainerURL;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)defaults;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)deviceFamilies;
+- (id)downloaderDSID;
 - (id)entitlements;
 - (id)environmentVariables;
 - (id)executableURL;
 - (id)externalAccessoryProtocols;
 - (id)fallbackFolderName;
 - (id)folderNames;
+- (BOOL)hasFreeDeveloperProvisioningProfile;
+- (BOOL)hasUniversalProvisioningProfile;
 - (id)initWithApplicationProxy:(id)arg1;
 - (BOOL)isBeta;
 - (BOOL)isEnabled;
@@ -117,6 +140,7 @@
 - (double)lastModifiedDate;
 - (float)minimumBrightnessLevel;
 - (id)preferenceDomain;
+- (id)purchaserDSID;
 - (int)ratingRank;
 - (id)requiredCapabilities;
 - (BOOL)requiresPersistentWiFi;
@@ -124,14 +148,15 @@
 - (id)sdkVersion;
 - (int)signatureState;
 - (id)signerIdentity;
+- (BOOL)statusBarHiddenForInterfaceOrientation:(int)arg1 onDisplay:(id)arg2;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
+- (unsigned int)supportedInterfaceOrientations;
+- (BOOL)supportsAllInterfaceOrientations;
 - (BOOL)supportsBackgroundMode:(id)arg1;
+- (BOOL)supportsDeviceFamily:(unsigned int)arg1;
 - (BOOL)supportsInterfaceOrientation:(int)arg1;
 - (id)tags;
 - (unsigned int)type;
-
-// Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
-
-- (BOOL)defaultStatusBarHiddenForOrientation:(int)arg1;
-- (BOOL)supportsCompactStatusBarHiding;
 
 @end

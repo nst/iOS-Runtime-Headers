@@ -3,10 +3,10 @@
  */
 
 @interface AVAssetReaderInternal : NSObject {
-    AVWeakKeyValueObserverProxy *KVOProxy;
     AVAsset *asset;
     NSError *error;
     struct OpaqueFigAssetReader { } *figAssetReader;
+    NSMutableSet *outputFinishedCallbackInvokers;
     NSMutableArray *outputs;
     int status;
     NSObject<OS_dispatch_queue> *statusReadWriteQueue;

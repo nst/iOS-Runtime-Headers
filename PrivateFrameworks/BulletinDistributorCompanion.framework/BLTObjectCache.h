@@ -20,6 +20,7 @@
 - (BOOL)_isObjectWithKeyCached:(id)arg1;
 - (void)_pruneCache;
 - (void)_updateCachedObjectIfNecessary:(id)arg1 withKey:(id)arg2;
+- (id)init;
 - (id)initWithDelegate:(id)arg1 withMaxItemAge:(double)arg2;
 - (id)initWithDelegate:(id)arg1 withMaxItemCount:(int)arg2;
 - (id)initWithDelegate:(id)arg1 withMaxItemCount:(int)arg2 andMaxItemAge:(double)arg3;

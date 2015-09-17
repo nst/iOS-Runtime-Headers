@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIBarItem : NSObject <UIAppearance> {
+@interface UIBarItem : NSObject <NSCoding, UIAppearance> {
     BOOL _hasCustomizableInstanceAppearanceModifications;
     BOOL _shouldArchiveUIAppearanceTags;
 }
@@ -12,30 +12,41 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
+@property (nonatomic, readonly) BOOL hasImage;
+@property (nonatomic, readonly) BOOL hasTitle;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imageInsets;
 @property (nonatomic, retain) UIImage *landscapeImagePhone;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } landscapeImagePhoneInsets;
+@property (nonatomic, readonly, copy) NSString *resolvedTitle;
+@property (nonatomic, readonly) BOOL selected;
 @property (readonly) Class superclass;
 @property (nonatomic) int tag;
 @property (nonatomic, copy) NSString *title;
 
 + (id)_appearanceBlindViewClasses;
-+ (id)_appearanceRecorder;
-+ (id)_appearanceRecorderWhenContainedIn:(Class)arg1;
 + (id)_appearanceWhenContainedIn:(id)arg1;
 + (id)appearance;
 + (id)appearanceForTraitCollection:(id)arg1;
 + (id)appearanceForTraitCollection:(id)arg1 whenContainedIn:(Class)arg2;
++ (id)appearanceForTraitCollection:(id)arg1 whenContainedInInstancesOfClasses:(id)arg2;
 + (id)appearanceWhenContainedIn:(Class)arg1;
++ (id)appearanceWhenContainedInInstancesOfClasses:(id)arg1;
 
+- (id)_attributedTitleForState:(unsigned int)arg1 withDefaultAttributes:(id)arg2;
 - (BOOL)_hasCustomizableInstanceAppearanceModifications;
+- (id)_imageForState:(unsigned int)arg1 metrics:(int)arg2 position:(int)arg3 type:(int)arg4;
 - (void)_setHasCustomizableInstanceAppearanceModifications:(BOOL)arg1;
 - (void)_setShouldArchiveUIAppearanceTags:(BOOL)arg1;
 - (BOOL)_shouldArchiveUIAppearanceTags;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasImage;
+- (BOOL)hasTitle;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)resolvedTitle;
+- (BOOL)selected;
 - (void)setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (id)titleTextAttributesForState:(unsigned int)arg1;
 

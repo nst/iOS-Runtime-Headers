@@ -34,8 +34,8 @@
 @property (nonatomic) double sendTimeout;
 @property (readonly) Class superclass;
 
-+ (id)activationRequestWithRestore:(id)arg1 pairingInfo:(id)arg2;
-+ (id)changeRequestWithChanges:(id)arg1 status:(id)arg2 pairingInfo:(id)arg3;
++ (id)activationRequestWithRestore:(id)arg1 forStore:(id)arg2;
++ (id)changeRequestWithChanges:(id)arg1 status:(id)arg2 forStore:(id)arg3;
 + (id)requestWithMessageID:(unsigned short)arg1;
 
 - (void).cxx_destruct;

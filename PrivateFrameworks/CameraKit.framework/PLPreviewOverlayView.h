@@ -3,10 +3,10 @@
  */
 
 @interface PLPreviewOverlayView : UIView {
-    CAMCameraView *cameraView;
+    CMKCameraView *cameraView;
 }
 
-@property (nonatomic) CAMCameraView *cameraView;
+@property (nonatomic) CMKCameraView *cameraView;
 
 - (id)cameraView;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;

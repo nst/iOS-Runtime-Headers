@@ -5,6 +5,7 @@
 
 @required
 
+- (UIViewController *)owningViewControllerForSettingsGroupsDescription:(SKUISettingsGroupsDescription *)arg1;
 - (void)settingsGroupsDescription:(SKUISettingsGroupsDescription *)arg1 deletedSettingAtIndexPath:(NSIndexPath *)arg2;
 - (void)settingsGroupsDescription:(SKUISettingsGroupsDescription *)arg1 deletedSettingsGroupAtIndex:(unsigned int)arg2;
 - (void)settingsGroupsDescription:(SKUISettingsGroupsDescription *)arg1 didUpdateSettingsDescription:(SKUISettingsDescriptionUpdate *)arg2;

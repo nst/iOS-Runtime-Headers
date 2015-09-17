@@ -29,4 +29,6 @@
     UIWebDocumentView *m_webView;
 }
 
+- (void).cxx_destruct;
+
 @end

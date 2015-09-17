@@ -32,6 +32,7 @@
 + (id)representationWithHandInfo:(struct { int x1; unsigned short x2; unsigned short x3; float x4; float x5; float x6; float x7; float x8; float x9; unsigned char x10; unsigned char x11; unsigned char x12; struct { unsigned char x_13_1_1; unsigned char x_13_1_2; unsigned char x_13_1_3; float x_13_1_4; float x_13_1_5; struct CGPoint { float x_6_2_1; float x_6_2_2; } x_13_1_6; unsigned int x_13_1_7; void *x_13_1_8; } x13[0]; }*)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (id)_tabularDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned short)currentFingerCount;
 - (void)dealloc;

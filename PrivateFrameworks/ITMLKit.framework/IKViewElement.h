@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKViewElement : NSObject {
+@interface IKViewElement : NSObject <IKStyleableElement> {
     NSString *_accessibilityText;
     NSMutableSet *_activeSingularEvents;
     IKAppDocument *_appDocument;
@@ -18,6 +18,7 @@
     NSString *_itmlID;
     NSMutableDictionary *_metadataDict;
     IKViewElement *_parent;
+    <IKStyleableElement> *_parentStyleableElement;
     IKViewElementStyleComposer *_styleComposer;
     unsigned int _updateType;
 }
@@ -38,8 +39,9 @@
 @property (nonatomic, readonly, retain) NSString *itmlID;
 @property (nonatomic, retain) NSMutableDictionary *metadataDict;
 @property (nonatomic) IKViewElement *parent;
+@property (nonatomic, readonly) <IKStyleableElement> *parentStyleableElement;
 @property (nonatomic, readonly, retain) IKViewElementStyle *style;
-@property (nonatomic, readonly, retain) IKViewElementStyleComposer *styleComposer;
+@property (nonatomic, retain) IKViewElementStyleComposer *styleComposer;
 @property (nonatomic) unsigned int updateType;
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
@@ -53,6 +55,7 @@
 - (void)_appDocumentDidMarkStylesDirty:(id)arg1;
 - (void)_applyUpdatesToChildrenWithElements:(id)arg1;
 - (void)_reorderAndUpdateChildrenWithElements:(id)arg1;
+- (void)_resetUpdates;
 - (void)_setAppDocument:(id)arg1;
 - (id)accessibilityText;
 - (id)activeSingularEvents;
@@ -66,6 +69,7 @@
 - (id)childTextElementWithStyle:(unsigned int)arg1;
 - (id)children;
 - (void)dealloc;
+- (void)dispatchEvent:(id)arg1 eventAttribute:(id)arg2 canBubble:(BOOL)arg3 isCancelable:(BOOL)arg4 extraInfo:(id)arg5 completionBlock:(id /* block */)arg6;
 - (void)dispatchEventOfType:(unsigned int)arg1 canBubble:(BOOL)arg2 isCancelable:(BOOL)arg3 extraInfo:(id)arg4 completionBlock:(id /* block */)arg5;
 - (id)elementID;
 - (id)elementName;
@@ -79,6 +83,7 @@
 - (id)metadataDict;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)parent;
+- (id)parentStyleableElement;
 - (void)setActiveSingularEvents:(id)arg1;
 - (void)setAppDocument:(id)arg1;
 - (void)setChildren:(id)arg1;
@@ -87,6 +92,7 @@
 - (void)setMetadataDict:(id)arg1;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setParent:(id)arg1;
+- (void)setStyleComposer:(id)arg1;
 - (void)setUpdateType:(unsigned int)arg1;
 - (id)style;
 - (id)styleComposer;

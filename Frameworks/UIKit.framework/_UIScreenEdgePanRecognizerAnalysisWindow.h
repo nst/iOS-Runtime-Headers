@@ -13,6 +13,7 @@
 @property (nonatomic) long maximumVisibleOverlayItems;
 @property (nonatomic) _UIScreenEdgePanRecognizer *recognizer;
 
+- (void).cxx_destruct;
 - (BOOL)_isWindowServerHostingManaged;
 - (void)dealloc;
 - (void)dismissMessages;

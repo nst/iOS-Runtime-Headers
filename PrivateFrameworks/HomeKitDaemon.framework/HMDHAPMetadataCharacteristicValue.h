@@ -13,6 +13,7 @@
 - (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hapValueMetadata;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithHAPCharacteristicValue:(id)arg1;
 - (void)setHapValueMetadata:(id)arg1;

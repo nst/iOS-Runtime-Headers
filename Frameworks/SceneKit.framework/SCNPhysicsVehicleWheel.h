@@ -19,7 +19,6 @@
     float _maximumSuspensionTravel;
     SCNNode *_node;
     float _radius;
-    id _reserved;
     struct SCNVector3 { 
         float x; 
         float y; 
@@ -46,11 +45,9 @@
 @property float suspensionRestLength;
 @property float suspensionStiffness;
 
-+ (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;
 + (id)wheelWithNode:(id)arg1;
 
-- (id).cxx_construct;
 - (void)_setVehicle:(id)arg1;
 - (void)_setWheelIndex:(int)arg1;
 - (struct SCNVector3 { float x1; float x2; float x3; })axle;

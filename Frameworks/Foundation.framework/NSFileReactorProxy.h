@@ -20,6 +20,7 @@
 - (id)itemLocation;
 - (id /* block */)messageSender;
 - (id)reactorID;
+- (void)sendMessageKind:(id)arg1 parameters:(id)arg2 resultHandler:(id /* block */)arg3;
 - (void)setItemLocation:(id)arg1;
 
 @end

@@ -7,7 +7,9 @@
 @property (readonly) struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; } CATransform3DValue;
 @property (readonly) struct { double x1; double x2; } MKCoordinateSpanValue;
 @property (readonly) struct { double x1; double x2; } MKCoordinateValue;
+@property (readonly) struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } UIKBHandwritingPointValue;
 @property (readonly) const char *objCType;
+@property (nonatomic, readonly) struct PUDisplayVelocity { float x1; float x2; float x3; float x4; } pu_displayVelocityValue;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -23,6 +25,7 @@
 + (id)valueWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 + (id)valueWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (id)valueWithSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)valueWithWeakObject:(id)arg1;
 
 - (BOOL)_matchType:(const char *)arg1 size:(unsigned int)arg2;
 - (Class)classForCoder;
@@ -46,6 +49,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectValue;
 - (id)replacementObjectForPortCoder:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeValue;
+- (id)weakObjectValue;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
@@ -79,6 +83,12 @@
 - (id)_mapkit_initWithMKMapRect:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (id)_mapkit_initWithZoomRegion:(struct { float x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 - (struct { float x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapkit_zoomRegionValue;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)pu_valueWithDisplayVelocity:(struct PUDisplayVelocity { float x1; float x2; float x3; float x4; })arg1;
+
+- (struct PUDisplayVelocity { float x1; float x2; float x3; float x4; })pu_displayVelocityValue;
 
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
@@ -118,6 +128,7 @@
 + (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)valueWithCGVector:(struct CGVector { float x1; float x2; })arg1;
 + (id)valueWithUIEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
++ (id)valueWithUIKBHandwritingPoint:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
 + (id)valueWithUIOffset:(struct UIOffset { float x1; float x2; })arg1;
 
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })CGAffineTransformValue;
@@ -126,7 +137,32 @@
 - (struct CGSize { float x1; float x2; })CGSizeValue;
 - (struct CGVector { float x1; float x2; })CGVectorValue;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })UIEdgeInsetsValue;
+- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })UIKBHandwritingPointValue;
 - (struct UIOffset { float x1; float x2; })UIOffsetValue;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
++ (id)akValueWithPoint:(struct CGPoint { float x1; float x2; })arg1;
++ (id)akValueWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (id)akValueWithSize:(struct CGSize { float x1; float x2; })arg1;
++ (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })CGRectValue;
+- (struct CGPoint { float x1; float x2; })akPointValue;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })akRectValue;
+- (struct CGSize { float x1; float x2; })akSizeValue;
+
+// Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
+
++ (id)bs_valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bs_CGRectValue;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
++ (id)valueWithModeWithOptions:(struct CAMCaptureModeWithOptions { int x1; int x2; int x3; int x4; })arg1;
+
+- (struct CAMCaptureModeWithOptions { int x1; int x2; int x3; int x4; })modeWithOptions;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -140,27 +176,47 @@
 
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })_gkGLKVector3Value;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
++ (id)_geo_valueWithGEOPlaceDataComponentKey:(union _GEOPlaceDataComponentKey { struct { unsigned long long x_1_1_1; unsigned short x_1_1_2; unsigned short x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; })arg1;
++ (id)valueWithCoordinate:(struct { double x1; double x2; })arg1;
+
+- (union _GEOPlaceDataComponentKey { struct { unsigned long long x_1_1_1; unsigned short x_1_1_2; unsigned short x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; })_geo_GEOPlaceDataComponentKeyValue;
+- (struct { double x1; double x2; })coordinateValue;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
++ (id)valueWithHKGraphSeriesDataBlockPath:(struct { int x1; int x2; })arg1;
++ (id)valueWithHKLinearTransform:(struct HKLinearTransform { float x1; float x2; })arg1;
+
+- (struct { int x1; int x2; })HKGraphSeriesDataBlockPathValue;
+- (struct HKLinearTransform { float x1; float x2; })HKLinearTransformValue;
+- (id)_hk_CGPointMidPointToValue:(id)arg1 percentage:(float)arg2;
+- (id)_hk_HKLinearTransformMidPointToValue:(id)arg1 percentage:(float)arg2;
+- (BOOL)_hk_isCGPoint;
+- (BOOL)_hk_isHKLinearTransform;
+- (BOOL)hk_animatable;
+- (id)hk_midPointToValue:(id)arg1 percentage:(float)arg2;
+
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 + (id)valueWithML3NameOrder:(struct { long long x1; int x2; })arg1;
 
 - (struct { long long x1; int x2; })ML3NameOrderValue;
 
-// Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
-
-+ (id)valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
-+ (id)valueWithCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-+ (id)valueWithCGSize:(struct CGSize { float x1; float x2; })arg1;
-
-- (struct CGPoint { float x1; float x2; })cgPointValue;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cgRectValue;
-- (struct CGSize { float x1; float x2; })cgSizeValue;
-
 // Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
 
 + (id)valueWithCGPoint:(struct CGPoint { float x1; float x2; })arg1;
 
 - (struct CGPoint { float x1; float x2; })CGPointValue;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
++ (id)valueWithCLLocationCoordinate2D:(struct { double x1; double x2; })arg1;
++ (id)valueWithMKCoordinateRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
+
+- (struct { double x1; double x2; })CLLocationCoordinate2DValue;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })MKCoordinateRegionValue;
 
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 

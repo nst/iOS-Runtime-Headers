@@ -19,12 +19,14 @@
 - (void)_learnOwnerIdentity:(id)arg1;
 - (void)_performAfterFetchingOwnerIdentityForShareID:(id)arg1 block:(id /* block */)arg2;
 - (void)_performAfterFetchingRecordChanges:(id /* block */)arg1;
-- (void)_performAfterFetchingXattrsForRecordIDs:(id)arg1 block:(id /* block */)arg2;
+- (void)_performAfterFetchingXattrsForRecordsByID:(id)arg1 block:(id /* block */)arg2;
+- (void)_processXattrFetchWithRecord:(id)arg1 recordIDsToETags:(id)arg2 askedXattrs:(id)arg3;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
 - (BOOL)hasCaughtUp;
 - (id)initWithServerZone:(id)arg1;
 - (BOOL)isConsistent;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

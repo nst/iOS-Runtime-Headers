@@ -7,20 +7,25 @@
     BOOL _didStartLongPress;
     MKVariableDelayTapRecognizer *_doubleTapGestureRecognizer;
     int _gestureCount;
+    BOOL _isPanning;
+    BOOL _isPinching;
     double _lastScale;
     MKBasicMapView *_mapView;
-    _UIDynamicAnimationGroup *_panDecelerationAnimationGroup;
+    VKCompoundAnimation *_panDecelerationAnimationGroup;
     UIPanGestureRecognizer *_panGestureRecognizer;
     BOOL _panWithMomentum;
     _UIDynamicValueAnimation *_pinchDecelerationAnimation;
     UIPinchGestureRecognizer *_pinchGestureRecognizer;
+    UIGestureRecognizer *_pressureGestureRecognizer;
     _UIDynamicValueAnimation *_rotationDecelerationAnimation;
     UIRotationGestureRecognizer *_rotationGestureRecognizer;
     _UIDynamicValueAnimation *_tiltDecelerationAnimation;
     MKTiltGestureRecognizer *_tiltGestureRecognizer;
     _MKUserInteractionGestureRecognizer *_touchGestureRecognizer;
     UILongPressGestureRecognizer *_twoFingerLongPressGestureRecognizer;
+    MKTwoFingerPanGestureRecognizer *_twoFingerPanGestureRecognizer;
     UITapGestureRecognizer *_twoFingerTapGestureRecognizer;
+    UIPanGestureRecognizer *_verticalPanGestureRecognizer;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -32,16 +37,22 @@
 @property (nonatomic, readonly) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic) BOOL panWithMomentum;
 @property (nonatomic, readonly) UIPinchGestureRecognizer *pinchGestureRecognizer;
+@property (nonatomic, readonly) UIGestureRecognizer *pressureGestureRecognizer;
 @property (getter=isRotationEnabled, nonatomic) BOOL rotationEnabled;
+@property (nonatomic, readonly) UIRotationGestureRecognizer *rotationGestureRecognizer;
 @property (getter=isScrollEnabled, nonatomic) BOOL scrollEnabled;
 @property (readonly) Class superclass;
 @property (getter=isTiltEnabled, nonatomic) BOOL tiltEnabled;
 @property (nonatomic, readonly) UILongPressGestureRecognizer *twoFingerLongPressGestureRecognizer;
+@property (nonatomic, readonly) UIPanGestureRecognizer *twoFingerPanGestureRecognizer;
 @property (nonatomic, readonly) UITapGestureRecognizer *twoFingerTapGestureRecognizer;
+@property (nonatomic, readonly) UIPanGestureRecognizer *verticalPanGestureRecognizer;
 @property (getter=isZoomEnabled, nonatomic) BOOL zoomEnabled;
 
 - (void).cxx_destruct;
 - (void)_clearGesture:(id)arg1;
+- (void)_handleStandardPan:(id)arg1;
+- (void)_handleStandardTilt:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_snapPointToDevicePixels:(struct CGPoint { float x1; float x2; })arg1;
 - (void)beginGesturing;
 - (void)clearGestureRecognizersInFlight;
@@ -62,6 +73,7 @@
 - (void)handleTilt:(id)arg1;
 - (void)handleTouch:(id)arg1;
 - (void)handleTwoFingerLongPress:(id)arg1;
+- (void)handleTwoFingerPan:(id)arg1;
 - (void)handleTwoFingerTap:(id)arg1;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2;
 - (id)initWithMapView:(id)arg1 gestureTargetView:(id)arg2 doubleTapTargetView:(id)arg3;
@@ -73,6 +85,8 @@
 - (id)panGestureRecognizer;
 - (BOOL)panWithMomentum;
 - (id)pinchGestureRecognizer;
+- (id)pressureGestureRecognizer;
+- (id)rotationGestureRecognizer;
 - (void)setDelegate:(id)arg1;
 - (void)setPanWithMomentum:(BOOL)arg1;
 - (void)setRotationEnabled:(BOOL)arg1;
@@ -83,7 +97,9 @@
 - (void)stopDynamicAnimations;
 - (void)stopUserInteractionFromExternalGesture;
 - (id)twoFingerLongPressGestureRecognizer;
+- (id)twoFingerPanGestureRecognizer;
 - (id)twoFingerTapGestureRecognizer;
 - (double)variableDelayTapRecognizer:(id)arg1 shouldWaitForNextTapForDuration:(double)arg2 afterTouch:(id)arg3;
+- (id)verticalPanGestureRecognizer;
 
 @end

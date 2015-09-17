@@ -6,19 +6,19 @@
     struct HashSet<WebCore::DeviceMotionClientIOS *, WTF::PtrHash<WebCore::DeviceMotionClientIOS *>, WTF::HashTraits<WebCore::DeviceMotionClientIOS *> > { 
         struct HashTable<WebCore::DeviceMotionClientIOS *, WebCore::DeviceMotionClientIOS *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::DeviceMotionClientIOS *>, WTF::HashTraits<WebCore::DeviceMotionClientIOS *>, WTF::HashTraits<WebCore::DeviceMotionClientIOS *> > { 
             struct DeviceMotionClientIOS {} **m_table; 
-            int m_tableSize; 
-            int m_tableSizeMask; 
-            int m_keyCount; 
-            int m_deletedCount; 
+            unsigned int m_tableSize; 
+            unsigned int m_tableSizeMask; 
+            unsigned int m_keyCount; 
+            unsigned int m_deletedCount; 
         } m_impl; 
     } m_deviceMotionClients;
     struct HashSet<WebCore::DeviceOrientationClientIOS *, WTF::PtrHash<WebCore::DeviceOrientationClientIOS *>, WTF::HashTraits<WebCore::DeviceOrientationClientIOS *> > { 
         struct HashTable<WebCore::DeviceOrientationClientIOS *, WebCore::DeviceOrientationClientIOS *, WTF::IdentityExtractor, WTF::PtrHash<WebCore::DeviceOrientationClientIOS *>, WTF::HashTraits<WebCore::DeviceOrientationClientIOS *>, WTF::HashTraits<WebCore::DeviceOrientationClientIOS *> > { 
             struct DeviceOrientationClientIOS {} **m_table; 
-            int m_tableSize; 
-            int m_tableSizeMask; 
-            int m_keyCount; 
-            int m_deletedCount; 
+            unsigned int m_tableSize; 
+            unsigned int m_tableSizeMask; 
+            unsigned int m_keyCount; 
+            unsigned int m_deletedCount; 
         } m_impl; 
     } m_deviceOrientationClients;
     BOOL m_gyroAvailable;

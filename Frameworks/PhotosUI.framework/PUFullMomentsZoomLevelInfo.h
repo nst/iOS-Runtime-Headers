@@ -24,7 +24,6 @@
 - (void)didFinishZoomLevelTransition;
 - (id)displayTitle;
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
-- (int)imageFormat;
 - (id)newCollectionViewLayout;
 - (void)prepareForTransitionFromZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)prepareForTransitionToZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
@@ -32,6 +31,7 @@
 - (void)sectionedGridLayout:(id)arg1 didFinalizePrepareTransitionIsAppearing:(BOOL)arg2;
 - (BOOL)supportsEditMode;
 - (BOOL)supportsIncrementalChangeNotifications;
+- (struct CGSize { float x1; float x2; })thumbnailImageSize;
 - (void)updateLayoutMetricsForWidth:(float)arg1;
 - (BOOL)wantsAssetCountsVisible;
 - (BOOL)wantsAutomaticContentOffsetAdjustment;

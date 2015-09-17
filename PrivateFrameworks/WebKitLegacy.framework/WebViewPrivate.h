@@ -92,10 +92,10 @@
     struct HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id> > > { 
         struct HashTable<unsigned long, WTF::KeyValuePair<unsigned long, WTF::RetainPtr<id> >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long, WTF::RetainPtr<id> > >, WTF::IntHash<unsigned long>, WTF::HashMap<unsigned long, WTF::RetainPtr<id>, WTF::IntHash<unsigned long>, WTF::HashTraits<unsigned long>, WTF::HashTraits<WTF::RetainPtr<id> > >::KeyValuePairTraits, WTF::HashTraits<unsigned long> > { 
             struct KeyValuePair<unsigned long, WTF::RetainPtr<id> > {} *m_table; 
-            int m_tableSize; 
-            int m_tableSizeMask; 
-            int m_keyCount; 
-            int m_deletedCount; 
+            unsigned int m_tableSize; 
+            unsigned int m_tableSizeMask; 
+            unsigned int m_keyCount; 
+            unsigned int m_deletedCount; 
         } m_impl; 
     } identifierMap;
     BOOL includesFlattenedCompositingLayersWhenDrawingToBitmap;
@@ -174,6 +174,7 @@
         int (*exceptionWasRaisedFunc)(); 
     } scriptDebugDelegateImplementations;
     BOOL shouldCloseWithWindow;
+    BOOL shouldMaintainInactiveSelection;
     BOOL shouldUpdateWhileOffscreen;
     struct RetainPtr<NSData> { 
         void *m_ptr; 

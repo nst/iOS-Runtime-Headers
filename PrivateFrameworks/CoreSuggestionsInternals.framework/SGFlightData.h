@@ -28,6 +28,7 @@
 - (id)airportIataCodesForDataOffset:(id)arg1;
 - (id)airportsServicedByCarrier:(id)arg1 flightNumber:(unsigned short)arg2;
 - (id)airportsServicedByCarrier:(id)arg1 flightNumber:(unsigned short)arg2 withDataOffset:(id)arg3 andFileHandle:(id)arg4;
+- (id)bestLocalizedNameForAirport:(id)arg1;
 - (id)carrierIataCodeForCarrierName:(id)arg1;
 - (id)carrierIataCodes;
 - (id)init;

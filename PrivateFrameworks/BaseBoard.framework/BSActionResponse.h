@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSActionResponse : NSObject <BSSettingDescriptionProvider, BSXPCCoding, NSCopying> {
+@interface BSActionResponse : NSObject <BSDescriptionProviding, BSSettingDescriptionProvider, BSXPCCoding, NSCopying> {
     NSError *_error;
     BSSettings *_info;
 }
@@ -21,6 +21,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)error;
@@ -31,6 +32,8 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 @end

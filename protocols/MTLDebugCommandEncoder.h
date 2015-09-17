@@ -12,7 +12,8 @@
 
 @optional
 
-- (void)dumpBuffer:(id <MTLBuffer>)arg1;
-- (void)dumpTexture:(id <MTLTexture>)arg1;
+- (void)dumpBuffer:(id <MTLBuffer>)arg1 name:(const char *)arg2;
+- (void)dumpTexture:(id <MTLTexture>)arg1 name:(const char *)arg2;
+- (void)postFinishEvent:(const char *)arg1;
 
 @end

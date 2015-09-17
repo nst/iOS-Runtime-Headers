@@ -11,10 +11,10 @@
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (void)_configureImage:(id)arg1;
 - (void)_preheatBitmapData;
 - (id)data;
-- (void)dealloc;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)setData:(id)arg1;

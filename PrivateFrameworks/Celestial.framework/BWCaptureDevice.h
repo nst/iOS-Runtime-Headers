@@ -5,8 +5,8 @@
 @interface BWCaptureDevice : NSObject
 
 @property (nonatomic, readonly) struct OpaqueCMClock { }*clock;
-@property (nonatomic) int maximumFrameRate;
-@property (nonatomic) int minimumFrameRate;
+@property (nonatomic) float maximumFrameRate;
+@property (nonatomic) float minimumFrameRate;
 @property (nonatomic, readonly) int position;
 @property (nonatomic, readonly) NSArray *supportedFormats;
 
@@ -15,15 +15,15 @@
 - (void)captureStillImageNow;
 - (void)captureStillImageWithFlashNow;
 - (struct OpaqueCMClock { }*)clock;
-- (void)getCurrentVideoFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; long long x11; }*)arg1;
+- (void)getCurrentVideoFrameStatistics:(struct { double x1; float x2; float x3; double x4; float x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned char x10; unsigned int x11; long long x12; }*)arg1;
 - (BOOL)isStreaming;
-- (int)maximumFrameRate;
-- (int)minimumFrameRate;
+- (float)maximumFrameRate;
+- (float)minimumFrameRate;
 - (int)position;
 - (BOOL)registerStillImageBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (void)setActiveFormatIndex:(int)arg1;
-- (void)setMaximumFrameRate:(int)arg1;
-- (void)setMinimumFrameRate:(int)arg1;
+- (void)setMaximumFrameRate:(float)arg1;
+- (void)setMinimumFrameRate:(float)arg1;
 - (BOOL)startStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (BOOL)stopStreamingToSampleBufferHandler:(id /* block */)arg1 error:(id*)arg2;
 - (id)supportedFormats;

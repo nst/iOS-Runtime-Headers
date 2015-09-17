@@ -4,21 +4,22 @@
 
 @interface MCDPlayModeControlView : UIView {
     BOOL _creatingGenius;
-    MCDButton *_geniusButton;
-    MCDButton *_repeatButton;
-    MCDButton *_shuffleButton;
+    MCDLikeButton *_likeButton;
+    MCDRepeatButton *_repeatButton;
+    MCDPlayModeButton *_shuffleButton;
 }
 
 @property (nonatomic) BOOL creatingGenius;
-@property (nonatomic, readonly) MCDButton *geniusButton;
-@property (nonatomic, readonly) MCDButton *repeatButton;
-@property (nonatomic, readonly) MCDButton *shuffleButton;
+@property (nonatomic, readonly) MCDLikeButton *likeButton;
+@property (nonatomic, readonly) MCDRepeatButton *repeatButton;
+@property (nonatomic, readonly) MCDPlayModeButton *shuffleButton;
 
 - (void).cxx_destruct;
+- (void)_addConstraints;
 - (BOOL)creatingGenius;
-- (id)geniusButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (id)likeButton;
 - (id)repeatButton;
 - (void)setCreatingGenius:(BOOL)arg1;
 - (id)shuffleButton;

@@ -18,7 +18,6 @@
 - (id)inputNeutral;
 - (id)inputTargetNeutral;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputNeutral:(id)arg1;
 - (void)setInputTargetNeutral:(id)arg1;

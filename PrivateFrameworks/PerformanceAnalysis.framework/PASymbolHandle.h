@@ -12,6 +12,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) BOOL hasSymbol;
 @property (readonly) BOOL hasSymbolOwner;
+@property (readonly) BOOL hasSymbolOwnerStartAddressInTask;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 @property (readonly) unsigned long long symbolLength;
@@ -43,6 +44,7 @@
 - (BOOL)hasSourceInformationForAddress:(unsigned long long)arg1;
 - (BOOL)hasSymbol;
 - (BOOL)hasSymbolOwner;
+- (BOOL)hasSymbolOwnerStartAddressInTask;
 - (id)initWithSymbol:(id)arg1 andSymbolOwnerStartAddress:(unsigned long long)arg2 andSymbolOwner:(id)arg3;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (void)setSymbolOwnerPath:(id)arg1;

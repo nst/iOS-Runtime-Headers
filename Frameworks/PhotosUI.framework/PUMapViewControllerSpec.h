@@ -8,7 +8,8 @@
 @property (readonly) struct CGSize { float x1; float x2; } annotationSize;
 @property (readonly) float annotationWidth;
 @property (readonly) float borderAnnotationPadding;
-@property (readonly) int thumbnailImageFormat;
+@property (readonly) int thumbnailContentMode;
+@property (readonly) struct CGSize { float x1; float x2; } thumbnailSize;
 
 - (BOOL)alwaysFadeRemoves;
 - (struct CGSize { float x1; float x2; })annotationSize;
@@ -17,6 +18,7 @@
 - (void)configureStackView:(id)arg1;
 - (id)gridViewControllerSpec;
 - (float)stackWidth;
-- (int)thumbnailImageFormat;
+- (int)thumbnailContentMode;
+- (struct CGSize { float x1; float x2; })thumbnailSize;
 
 @end

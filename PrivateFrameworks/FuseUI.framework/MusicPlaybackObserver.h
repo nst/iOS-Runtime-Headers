@@ -18,6 +18,8 @@
 - (void)_currentItemDidChange:(id)arg1;
 - (void)_currentItemWillChange:(id)arg1;
 - (id)_initWithPlayer:(id)arg1;
+- (void)_itemArtworkDidChangeNotification:(id)arg1;
+- (void)_itemTitlesDidChangeNotification:(id)arg1;
 - (void)_registerForPlayerNotifications:(id)arg1;
 - (void)_unregisterForPlayerNotifications:(id)arg1;
 - (void)dealloc;

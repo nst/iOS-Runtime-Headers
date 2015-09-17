@@ -10,6 +10,7 @@
 + (id)protectionWithHidden:(bool)arg1 locked:(bool)arg2;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithHidden:(bool)arg1 locked:(bool)arg2;

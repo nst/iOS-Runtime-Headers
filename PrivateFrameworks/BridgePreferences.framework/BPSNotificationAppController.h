@@ -52,6 +52,8 @@
 - (id)localizedMirroringDetailFooter;
 - (id)localizedPaneTitle;
 - (id)localizedPreviewChoiceTitle;
+- (id)localizedPreviewGroupFooter;
+- (id)localizedPreviewGroupLabel;
 - (id)manager;
 - (BOOL)mirrorSettings;
 - (void)mirrorSettingsChanged:(BOOL)arg1;
@@ -93,6 +95,7 @@
 - (void)updateSubsections;
 - (id)vibrationValue:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
+- (BOOL)wantsPreviewChoice;
 - (void)writeSectionState;
 
 @end

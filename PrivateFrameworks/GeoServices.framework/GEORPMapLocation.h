@@ -21,6 +21,9 @@
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 @property (nonatomic) float zoomLevel;
 
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
+- (void)_setMapMode:(int)arg1 region:(id)arg2;
 - (id)coordinate;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -44,5 +47,9 @@
 - (id)viewportInfo;
 - (void)writeTo:(id)arg1;
 - (float)zoomLevel;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (void)_setMapType:(unsigned int)arg1 region:(id)arg2;
 
 @end

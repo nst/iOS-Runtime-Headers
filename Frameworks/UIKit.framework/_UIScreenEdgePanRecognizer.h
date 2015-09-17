@@ -57,10 +57,11 @@
 
 + (BOOL)_edgeSwipeNavigationGestureEnabled;
 
+- (void).cxx_destruct;
 - (void)_createOrDestoryAnalysisWindowIfNeeded;
 - (void)_idleTimerElapsed:(id)arg1;
-- (void)_incorporateIncrementalSampleAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4;
-- (void)_incorporateInitialTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4;
+- (void)_incorporateIncrementalSampleAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4 forceState:(int)arg5;
+- (void)_incorporateInitialTouchAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4 forceState:(int)arg5;
 - (struct CGPoint { float x1; float x2; })_lastTouchLocation;
 - (void)_longPressTimerElapsed:(id)arg1;
 - (void)_setState:(int)arg1;
@@ -68,7 +69,7 @@
 - (int)_type;
 - (void)dealloc;
 - (id)delegate;
-- (void)incorporateTouchSampleAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4;
+- (void)incorporateTouchSampleAtLocation:(struct CGPoint { float x1; float x2; })arg1 timestamp:(double)arg2 modifier:(int)arg3 interfaceOrientation:(int)arg4 forceState:(int)arg5;
 - (id)initWithType:(int)arg1;
 - (BOOL)isRequiringLongPress;
 - (unsigned int)recognizedRegion;

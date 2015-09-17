@@ -5,12 +5,14 @@
 @interface PHImageManager : NSObject <PHPhotoLibraryChangeObserver> {
     id _cachedDomain;
     unsigned int _managerID;
+    NSObject<OS_dispatch_source> *_memoryEventSource;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) unsigned int managerID;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *memoryEventSource;
 @property (readonly) Class superclass;
 
 + (id)defaultManager;
@@ -21,8 +23,9 @@
 + (BOOL)useNewImageManager;
 
 - (void).cxx_destruct;
+- (void)_asyncFetchCloudSharedVideoComplement:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
 - (id)_domain;
-- (int)_requestAVAssetForVideo:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
+- (int)_requestAVAssetForAsset:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
 - (id)_videoAVObjectBuilderFromVideoURL:(id)arg1 info:(id)arg2 playbackOnly:(BOOL)arg3;
 - (void)cancelImageRequest:(int)arg1;
 - (void)dealloc;
@@ -31,6 +34,7 @@
 - (id)imageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 outInfo:(id*)arg5;
 - (id)init;
 - (unsigned int)managerID;
+- (id)memoryEventSource;
 - (struct CGImage { }*)newResizedImageForImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 normalizedCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 contentMode:(int)arg4;
 - (void)photoLibraryDidChange:(id)arg1;
 - (void)registerRequest:(id)arg1;
@@ -47,6 +51,7 @@
 - (int)requestPlayerItemForVideo:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
 - (void)requestSynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)requestSynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)setMemoryEventSource:(id)arg1;
 - (id)thumbnailDataForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)unloadImageFilesForAsset:(id)arg1 minimumFormat:(int)arg2 completionHandler:(id /* block */)arg3;
 - (void)unregisterRequest:(id)arg1;

@@ -16,7 +16,6 @@
     NSString *_localServiceName;
     NSMutableArray *_messageReceiptHandlerHoldingQueue;
     NSMutableArray *_messageReceiptHandlerList;
-    id _peer;
     id /* block */ _receiveDataHandler;
     NSMutableArray *_receivedDataHoldingQueue;
     NSString *_remoteServiceName;

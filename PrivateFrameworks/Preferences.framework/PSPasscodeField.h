@@ -7,6 +7,9 @@
     <PSPasscodeFieldDelegate> *_delegate;
     NSMutableArray *_digitViews;
     NSMutableArray *_dotViews;
+    NSArray *_fieldSpacing;
+    UIColor *_foregroundColor;
+    int _keyboardAppearance;
     unsigned int _numberOfEntryFields;
     BOOL _securePasscodeEntry;
     NSMutableString *_stringValue;
@@ -18,21 +21,25 @@
 @property (nonatomic) <PSPasscodeFieldDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
+@property (nonatomic, retain) NSArray *fieldSpacing;
+@property (nonatomic, retain) UIColor *foregroundColor;
 @property (readonly) unsigned int hash;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
-@property (nonatomic, readonly) unsigned int numberOfEntryFields;
+@property (nonatomic) unsigned int numberOfEntryFields;
 @property (nonatomic) int returnKeyType;
 @property (nonatomic) BOOL securePasscodeEntry;
 @property (getter=isSecureTextEntry, nonatomic) BOOL secureTextEntry;
 @property (nonatomic) int spellCheckingType;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
-- (void)dealloc;
 - (id)delegate;
 - (void)deleteBackward;
+- (id)fieldSpacing;
+- (id)foregroundColor;
 - (BOOL)hasText;
 - (id)initWithNumberOfEntryFields:(unsigned int)arg1;
 - (void)insertText:(id)arg1;
@@ -44,9 +51,14 @@
 - (void)passcodeFieldTapped:(id)arg1;
 - (BOOL)securePasscodeEntry;
 - (void)setDelegate:(id)arg1;
+- (void)setFieldSpacing:(id)arg1;
+- (void)setForegroundColor:(id)arg1;
+- (void)setKeyboardAppearance:(int)arg1;
+- (void)setNumberOfEntryFields:(unsigned int)arg1;
 - (void)setSecurePasscodeEntry:(BOOL)arg1;
 - (void)setSecureTextEntry:(BOOL)arg1;
 - (void)setStringValue:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)stringValue;
 
 @end

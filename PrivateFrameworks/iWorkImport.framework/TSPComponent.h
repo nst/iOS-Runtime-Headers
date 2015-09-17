@@ -5,6 +5,7 @@
 @interface TSPComponent : NSObject <NSDiscardableContent> {
     int _accessCount;
     NSObject<OS_dispatch_queue> *_accessQueue;
+    TSPComponentObjectUUIDMap *_componentObjectUUIDMap;
     NSMutableSet *_dataReferences;
     <TSPComponentDelegate> *_delegate;
     unsigned long long _encodedLength;
@@ -19,7 +20,6 @@
     } _flags;
     long long _identifier;
     NSString *_locator;
-    NSDictionary *_objectUUIDToIdentifierDictionary;
     NSString *_preferredLocator;
     unsigned long long _readVersion;
     unsigned long long _saveToken;
@@ -29,6 +29,7 @@
     NSHashTable *_writtenObjects;
 }
 
+@property (nonatomic, readonly) TSPComponentObjectUUIDMap *componentObjectUUIDMap;
 @property (nonatomic, readonly) unsigned long long encodedLength;
 @property (nonatomic, readonly) long long identifier;
 @property (nonatomic, readonly) BOOL isStoredOutsideObjectArchive;
@@ -36,7 +37,6 @@
 @property (nonatomic, readonly) NSString *locator;
 @property (readonly) BOOL modified;
 @property (readonly) BOOL needsArchiving;
-@property (nonatomic, readonly) NSDictionary *objectUUIDToIdentifierDictionary;
 @property (readonly) unsigned char packageIdentifier;
 @property (readonly) BOOL persisted;
 @property (nonatomic, readonly) NSString *preferredLocator;
@@ -45,10 +45,10 @@
 @property (nonatomic, readonly) unsigned long long saveToken;
 @property (nonatomic, readonly) unsigned long long writeVersion;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (BOOL)addExternalReferenceToObjectOrLazyReference:(id)arg1 isWeak:(BOOL)arg2 externalReferenceMap:(id)arg3 delegate:(id)arg4;
 - (BOOL)beginContentAccess;
+- (id)componentObjectUUIDMap;
 - (void)didReadObjects:(id)arg1;
 - (void)discardContentIfPossible;
 - (unsigned long long)encodedLength;
@@ -72,7 +72,6 @@
 - (BOOL)needsArchivingImpl;
 - (id)newExternalReferenceMapWithStrongReferences:(id)arg1 weakReferences:(id)arg2 delegate:(id)arg3;
 - (id)newUpdatedExternalReferenceMapUsingDelegate:(id)arg1;
-- (id)objectUUIDToIdentifierDictionary;
 - (unsigned char)packageIdentifier;
 - (BOOL)persisted;
 - (id)preferredLocator;
@@ -85,8 +84,8 @@
 - (void)setModified:(BOOL)arg1 forObject:(id)arg2;
 - (void)setModified:(BOOL)arg1 forObject:(id)arg2 isDocumentUpgrade:(BOOL)arg3;
 - (void)setModifiedImpl:(BOOL)arg1 forObject:(id)arg2;
-- (void)setPackageIdentifier:(unsigned char)arg1 preferredLocator:(id)arg2 locator:(id)arg3 isStoredOutsideObjectArchive:(BOOL)arg4 rootObjectOrNil:(id)arg5 archivedObjects:(id)arg6 externalReferenceMap:(id)arg7 dataReferences:(id)arg8 readVersion:(unsigned long long)arg9 writeVersion:(unsigned long long)arg10 objectUUIDToIdentifierDictionary:(id)arg11 saveToken:(unsigned long long)arg12 encodedLength:(unsigned long long)arg13 wasCopied:(BOOL)arg14 wasModifiedDuringWrite:(BOOL)arg15;
-- (void)setReadVersion:(unsigned long long)arg1 writeVersion:(unsigned long long)arg2 objectUUIDToIdentifierDictionary:(id)arg3;
+- (void)setPackageIdentifier:(unsigned char)arg1 preferredLocator:(id)arg2 locator:(id)arg3 isStoredOutsideObjectArchive:(BOOL)arg4 rootObjectOrNil:(id)arg5 archivedObjects:(id)arg6 externalReferenceMap:(id)arg7 dataReferences:(id)arg8 readVersion:(unsigned long long)arg9 writeVersion:(unsigned long long)arg10 componentObjectUUIDMap:(id)arg11 saveToken:(unsigned long long)arg12 encodedLength:(unsigned long long)arg13 wasCopied:(BOOL)arg14 wasModifiedDuringWrite:(BOOL)arg15;
+- (void)setReadVersion:(unsigned long long)arg1 writeVersion:(unsigned long long)arg2 componentObjectUUIDMap:(id)arg3;
 - (void)setRootObject:(id)arg1;
 - (BOOL)shouldForceCaching;
 - (BOOL)shouldKeepStrongObjectImpl;

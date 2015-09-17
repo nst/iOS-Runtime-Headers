@@ -4,8 +4,6 @@
 
 @interface CIFourfoldReflectedTile : CITile2Filter
 
-+ (id)customAttributes;
-
 - (id)_kernel_name;
 - (id)_kernel_source;
 - (id)outputImage;

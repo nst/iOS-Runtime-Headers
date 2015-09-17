@@ -12,6 +12,7 @@
 - (id)_specifiersForOtherCalendarAccounts;
 - (id)_specifiersForOtherContactsAccounts;
 - (id)_specifiersForOtherMailAccounts;
+- (id)_specifiersForOtherServerAccounts;
 - (id)_viewProvidersManager;
 - (void)setupViewControllerDidDismiss:(id)arg1;
 - (id)specifiers;

@@ -2,30 +2,7 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLRenderPassAttachmentDescriptor : NSObject <NSCopying> {
-    struct MTLRenderPassAttachmentDescriptorPrivate { 
-        <MTLTextureImplementation> *texture; 
-        unsigned int level; 
-        unsigned int slice; 
-        unsigned int depthPlane; 
-        unsigned int loadAction; 
-        unsigned int storeAction; 
-        struct { 
-            double red; 
-            double green; 
-            double blue; 
-            double alpha; 
-        } clearColor; 
-        double clearDepth; 
-        unsigned int clearStencil; 
-        <MTLTextureImplementation> *resolveTexture; 
-        unsigned int resolveLevel; 
-        unsigned int resolveSlice; 
-        unsigned int resolveDepthPlane; 
-        unsigned int width; 
-        unsigned int height; 
-    } _private;
-}
+@interface MTLRenderPassAttachmentDescriptor : NSObject <NSCopying>
 
 @property (nonatomic) unsigned int depthPlane;
 @property (nonatomic) unsigned int level;
@@ -38,32 +15,6 @@
 @property (nonatomic) unsigned int storeAction;
 @property (nonatomic, retain) <MTLTexture> *texture;
 
-+ (id)attachmentDescriptor;
-
-- (const struct MTLRenderPassAttachmentDescriptorPrivate { id x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { double x_6_1_1; double x_6_1_2; double x_6_1_3; double x_6_1_4; } x6; double x7; unsigned int x8; id x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; }*)_descriptorPrivate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (unsigned int)depthPlane;
-- (id)description;
-- (id)init;
-- (unsigned int)level;
-- (unsigned int)loadAction;
-- (unsigned int)resolveDepthPlane;
-- (unsigned int)resolveLevel;
-- (unsigned int)resolveSlice;
-- (id)resolveTexture;
-- (void)setDepthPlane:(unsigned int)arg1;
-- (void)setLevel:(unsigned int)arg1;
-- (void)setLoadAction:(unsigned int)arg1;
-- (void)setResolveDepthPlane:(unsigned int)arg1;
-- (void)setResolveLevel:(unsigned int)arg1;
-- (void)setResolveSlice:(unsigned int)arg1;
-- (void)setResolveTexture:(id)arg1;
-- (void)setSlice:(unsigned int)arg1;
-- (void)setStoreAction:(unsigned int)arg1;
-- (void)setTexture:(id)arg1;
-- (unsigned int)slice;
-- (unsigned int)storeAction;
-- (id)texture;
 
 @end

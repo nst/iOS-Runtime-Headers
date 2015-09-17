@@ -28,6 +28,7 @@
 @property (getter=_applicationController, setter=_setApplicationController:, nonatomic) SKUIApplicationController *_applicationController;
 @property (getter=_scriptAppContext, setter=_setScriptAppContext:, nonatomic, retain) IKAppContext *_scriptAppContext;
 @property (nonatomic, readonly) SUClientInterface *clientInterface;
+@property (nonatomic, readonly, copy) NSDictionary *configurationDictionary;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -64,6 +65,7 @@
 - (void)clientInterface:(id)arg1 dispatchOnPageResponseWithData:(id)arg2 response:(id)arg3;
 - (void)clientInterface:(id)arg1 dispatchXEvent:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)clientInterface:(id)arg1 presentDialog:(id)arg2;
+- (id)configurationDictionary;
 - (void)customizePurchase:(id)arg1;
 - (void)dealloc;
 - (id)description;
@@ -83,9 +85,12 @@
 - (id)newLoadStoreURLOperationWithURL:(id)arg1;
 - (id)newLoadStoreURLOperationWithURLRequest:(id)arg1;
 - (id)platformContext;
+- (id)previewViewControllerForViewElement:(id)arg1;
 - (id)purchaseReferrerURL;
 - (void)pushNavigationHistoryPageIdentifier:(id)arg1;
 - (id)scriptInterfaceForClientInterface:(id)arg1;
+- (void)sendApplicationDidEnterBackground;
+- (void)sendApplicationWillEnterForeground;
 - (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;
 - (void)sendOnXEventWithDictionary:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)setMetricsConfigurationIdentifier:(id)arg1;

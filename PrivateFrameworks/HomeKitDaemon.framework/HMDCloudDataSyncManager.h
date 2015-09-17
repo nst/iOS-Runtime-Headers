@@ -22,8 +22,10 @@
     CKRecordID *_homeDataBlobRecordID;
     CKRecordZone *_homeDataBlobRecordZone;
     CKSubscription *_homeDataBlobSubscription;
+    HAPOSTransaction *_homeDataFetchedTransaction;
     CKRecord *_homeDataRecord;
     HMDHomeManager *_homeManager;
+    BOOL _keychainSyncEnabled;
     NSString *_lastHomeDataChangeTag;
     NSString *_lastMetadataChangeTag;
     CKRecordID *_metadataBlobRecordID;
@@ -33,6 +35,7 @@
     NSMutableArray *_pendingFetchedRecords;
     NSObject<OS_dispatch_source> *_pollTimer;
     APSConnection *_pushConnection;
+    NSObject<OS_dispatch_source> *_retryTimer;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
@@ -59,8 +62,10 @@
 @property (nonatomic, retain) CKRecordID *homeDataBlobRecordID;
 @property (nonatomic, retain) CKRecordZone *homeDataBlobRecordZone;
 @property (nonatomic, retain) CKSubscription *homeDataBlobSubscription;
+@property (nonatomic, retain) HAPOSTransaction *homeDataFetchedTransaction;
 @property (nonatomic, retain) CKRecord *homeDataRecord;
 @property (nonatomic) HMDHomeManager *homeManager;
+@property (nonatomic) BOOL keychainSyncEnabled;
 @property (nonatomic, retain) NSString *lastHomeDataChangeTag;
 @property (nonatomic, retain) NSString *lastMetadataChangeTag;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
@@ -72,6 +77,7 @@
 @property (nonatomic, retain) NSMutableArray *pendingFetchedRecords;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *pollTimer;
 @property (nonatomic, retain) APSConnection *pushConnection;
+@property (nonatomic, retain) NSObject<OS_dispatch_source> *retryTimer;
 @property (nonatomic, readonly) NSData *serverTokenData;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSUUID *uuid;
@@ -84,12 +90,14 @@
 - (void)_fetchExistingRecord:(id /* block */)arg1;
 - (void)_fetchNewChangesWithCompletionHandler:(id /* block */)arg1;
 - (void)_handleAccountStatus:(int)arg1 completionHandler:(id /* block */)arg2 error:(id)arg3;
-- (void)_handleChangedMetadataRecordWithEncodedData:(id)arg1;
-- (void)_handleChangedRecordWithEncodedData:(id)arg1;
+- (void)_handleChangedMetadataRecordWithEncodedData:(id)arg1 transaction:(id)arg2;
+- (void)_handleChangedRecordWithEncodedData:(id)arg1 encodeDataVersion2:(id)arg2;
 - (void)_handleControllerKeyAvailable;
-- (void)_handleFetchCompletedWithError:(id)arg1 serverToken:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_handleFetchCompletedWithError:(id)arg1 serverToken:(id)arg2 completionHandler:(id /* block */)arg3 moreRecordsComing:(BOOL)arg4;
+- (void)_handleFetchedHomeDataRecord;
 - (void)_handleKeychainSyncChanged:(id)arg1;
 - (void)_handleKeychainSyncStateChanged:(BOOL)arg1;
+- (void)_handleModifiedHomeData;
 - (BOOL)_isControllerKeyAvailable;
 - (void)_registerForMessages;
 - (void)_registerForPushNotifications;
@@ -99,10 +107,13 @@
 - (void)_setupSubscription;
 - (void)_startControllerKeyPollTimer;
 - (void)_startFetchPollTimer;
+- (void)_startFetchRetryTimer;
 - (void)_stopControllerKeyPollTimer;
 - (void)_stopFetchPollTimer;
+- (void)_stopFetchRetryTimer;
 - (void)_updateCloudDataSyncFilterState:(BOOL)arg1;
 - (void)_uploadHomeData:(id)arg1 metadata:(id)arg2 completionHandler:(id /* block */)arg3;
+- (BOOL)_validFetchRetryCKErrorCode:(int)arg1;
 - (BOOL)accountActive;
 - (id)callbackQueue;
 - (id)clientCallbackQueue;
@@ -119,7 +130,6 @@
 - (id)container;
 - (id /* block */)controllerKeyAvailableNotificationHandler;
 - (id)controllerKeyPollTimer;
-- (id)convertCKErrorToHMError:(id)arg1;
 - (id)database;
 - (void)dealloc;
 - (BOOL)decryptionFailed;
@@ -128,9 +138,11 @@
 - (id)homeDataBlobRecordID;
 - (id)homeDataBlobRecordZone;
 - (id)homeDataBlobSubscription;
+- (id)homeDataFetchedTransaction;
 - (id)homeDataRecord;
 - (id)homeManager;
 - (id)initWithCloudServerTokenData:(id)arg1 messageDispatcher:(id)arg2 cloudDataSyncStateFilter:(id)arg3 homeManager:(id)arg4 callbackQueue:(id)arg5;
+- (BOOL)keychainSyncEnabled;
 - (id)lastHomeDataChangeTag;
 - (id)lastMetadataChangeTag;
 - (id)messageReceiveQueue;
@@ -143,6 +155,7 @@
 - (id)pollTimer;
 - (id)pushConnection;
 - (void)resetCloudDataAndDeleteMetadataForCurrentAccount:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (id)retryTimer;
 - (id)serverTokenData;
 - (void)setAccountActive:(BOOL)arg1;
 - (void)setCallbackQueue:(id)arg1;
@@ -167,8 +180,10 @@
 - (void)setHomeDataBlobRecordID:(id)arg1;
 - (void)setHomeDataBlobRecordZone:(id)arg1;
 - (void)setHomeDataBlobSubscription:(id)arg1;
+- (void)setHomeDataFetchedTransaction:(id)arg1;
 - (void)setHomeDataRecord:(id)arg1;
 - (void)setHomeManager:(id)arg1;
+- (void)setKeychainSyncEnabled:(BOOL)arg1;
 - (void)setLastHomeDataChangeTag:(id)arg1;
 - (void)setLastMetadataChangeTag:(id)arg1;
 - (void)setMetadataBlobRecordID:(id)arg1;
@@ -178,6 +193,7 @@
 - (void)setPendingFetchedRecords:(id)arg1;
 - (void)setPollTimer:(id)arg1;
 - (void)setPushConnection:(id)arg1;
+- (void)setRetryTimer:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)updateAccountStatusChanged:(BOOL)arg1 completionHandler:(id /* block */)arg2;

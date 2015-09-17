@@ -44,7 +44,7 @@
 - (void)_signalDeferredConnectionResumeQueueSemaphore;
 - (void)_stopObservingLanguageChangeNotification;
 - (id)accessPluginManager;
-- (void)accountStoreDidSaveAccounts;
+- (void)accountStoreDidSaveAccounts:(id)arg1;
 - (id)authenticationDialogManager;
 - (id)authenticationPluginManager;
 - (id)clientForConnection:(id)arg1;

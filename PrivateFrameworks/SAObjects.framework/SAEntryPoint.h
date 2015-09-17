@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAEntryPoint : AceObject <SAAceSerializable>
+@interface SAEntryPoint : AceObject <SAAceComparable, SAAceSerializable>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

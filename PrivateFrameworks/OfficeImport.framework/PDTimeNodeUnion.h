@@ -23,6 +23,7 @@
 - (id)colorBehavior;
 - (id)commonBehavior;
 - (void)dealloc;
+- (id)description;
 - (id)effectBehavior;
 - (id)init;
 - (id)motionBehavior;

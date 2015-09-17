@@ -2,12 +2,20 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSSQLAttribute : NSSQLColumn
+@interface NSSQLAttribute : NSSQLColumn {
+    BOOL _constrained;
+    BOOL _unique;
+}
+
+@property (getter=isConstrained, nonatomic) BOOL constrained;
 
 - (unsigned int)_sqlTypeForAttributeType:(unsigned int)arg1 flags:(unsigned int)arg2;
 - (id)attributeDescription;
 - (id)initForReadOnlyFetchWithExpression:(id)arg1;
 - (id)initWithEntity:(id)arg1 propertyDescription:(id)arg2;
+- (BOOL)isConstrained;
+- (BOOL)isUnique;
+- (void)setConstrained:(BOOL)arg1;
 - (BOOL)shouldIndex;
 
 @end

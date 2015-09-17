@@ -6,6 +6,7 @@
 @required
 
 - (void*)contents;
+- (void)didModifyRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (unsigned int)length;
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1 offset:(unsigned int)arg2 bytesPerRow:(unsigned int)arg3;
 

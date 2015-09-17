@@ -68,6 +68,7 @@
 - (long long)persistentIdentifier;
 - (void)prioritizeAboveDownload:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)removeAsset:(id)arg1;
+- (void)restart;
 - (void)resume;
 - (void)setAssets:(id)arg1;
 - (void)setBackgroundNetworkingJobGroupName:(id)arg1;

@@ -4,6 +4,7 @@
 
 @interface PCSimpleTimer : NSObject <PCLoggingDelegate> {
     BOOL _disableSystemWaking;
+    double _earlyFireDelta;
     double _fireTime;
     PCDispatchTimer *_fireTimer;
     double _lastUpdateTime;
@@ -22,6 +23,7 @@
     NSRunLoop *_timerRunLoop;
     BOOL _triggerOnGMTChange;
     id _userInfo;
+    BOOL _userVisible;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -30,6 +32,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *loggingIdentifier;
 @property (readonly) Class superclass;
+@property (getter=isUserVisible, nonatomic) BOOL userVisible;
 
 + (double)currentMachTimeInterval;
 + (id)lastSystemWakeDate;
@@ -54,12 +57,14 @@
 - (id)initWithFireDate:(id)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (id)initWithTimeInterval:(double)arg1 serviceIdentifier:(id)arg2 target:(id)arg3 selector:(SEL)arg4 userInfo:(id)arg5;
 - (void)invalidate;
+- (BOOL)isUserVisible;
 - (BOOL)isValid;
 - (id)loggingIdentifier;
 - (void)scheduleInQueue:(id)arg1;
 - (void)scheduleInRunLoop:(id)arg1;
 - (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
 - (void)setDisableSystemWaking:(BOOL)arg1;
+- (void)setUserVisible:(BOOL)arg1;
 - (void)updateFireTime:(double)arg1 triggerOnGMTChange:(BOOL)arg2;
 - (id)userInfo;
 

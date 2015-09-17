@@ -7,10 +7,12 @@
     NSUUID *_activationUUID;
     NSObject<OS_dispatch_queue> *_clientQueue;
     <HKQueryDelegate> *_delegate;
+    NSMutableArray *_deletedObjects;
     _HKFilter *_filter;
     BOOL _hasBeenExecuted;
     NSPredicate *_predicate;
     BOOL _receivedInitialResults;
+    NSMutableArray *_sampleObjects;
     HKSampleType *_sampleType;
     <NSXPCProxyCreating> *_serverProxy;
 }
@@ -33,14 +35,18 @@
 
 + (id)_clientInterfaceProtocol;
 + (void)_configureClientInterface:(id)arg1;
++ (id)_predicateForSamplesSyncedFromOtherDevice;
 + (Class)_queryServerDataObjectClass;
 + (id)_serverInterfaceProtocol;
 + (id)clientInterface;
 + (id)predicateForCategorySamplesWithOperatorType:(unsigned int)arg1 value:(int)arg2;
 + (id)predicateForObjectWithUUID:(id)arg1;
++ (id)predicateForObjectsFromDevices:(id)arg1;
 + (id)predicateForObjectsFromSource:(id)arg1;
++ (id)predicateForObjectsFromSourceRevisions:(id)arg1;
 + (id)predicateForObjectsFromSources:(id)arg1;
 + (id)predicateForObjectsFromWorkout:(id)arg1;
++ (id)predicateForObjectsWithDeviceProperty:(id)arg1 allowedValues:(id)arg2;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 allowedValues:(id)arg2;
 + (id)predicateForObjectsWithMetadataKey:(id)arg1 operatorType:(unsigned int)arg2 value:(id)arg3;
@@ -72,6 +78,7 @@
 - (void)_queue_requestServerProxyWithUUID:(id)arg1 connection:(id)arg2 handler:(id /* block */)arg3;
 - (BOOL)_queue_shouldStayAliveAfterInitialResults;
 - (void)_queue_validate;
+- (BOOL)_requiresValidSampleType;
 - (BOOL)_shouldStayAliveAfterInitialResults;
 - (void)_throwInvalidArgumentExceptionIfHasBeenExecuted:(SEL)arg1;
 - (void)activateWithClientQueue:(id)arg1 connection:(id)arg2 delegate:(id)arg3 withCompletion:(id /* block */)arg4;
@@ -80,16 +87,19 @@
 - (void)dataUpdatedInDatabaseWithAnchor:(id)arg1 query:(id)arg2;
 - (void)deactivate;
 - (id)delegate;
-- (void)deliverCorrelations:(id)arg1 forQuery:(id)arg2;
-- (void)deliverDataObjects:(id)arg1 withAnchor:(id)arg2 queryUUID:(id)arg3;
 - (void)deliverError:(id)arg1 forQuery:(id)arg2;
 - (void)deliverInitialStatisticsObjects:(id)arg1 anchor:(id)arg2 forQuery:(id)arg3;
 - (void)deliverResetStatisticsObjects:(id)arg1 forQuery:(id)arg2;
-- (void)deliverResultsBatch:(id)arg1 final:(BOOL)arg2 error:(id)arg3 forQuery:(id)arg4;
+- (void)deliverResetValuesByType:(id)arg1 forQuery:(id)arg2;
+- (void)deliverResultsResetWithAnchor:(id)arg1 final:(BOOL)arg2 forQuery:(id)arg3;
+- (void)deliverSampleBatch:(id)arg1 deletedBatch:(id)arg2 final:(BOOL)arg3 anchor:(id)arg4 forQuery:(id)arg5;
+- (void)deliverSampleObjects:(id)arg1 deletedObjects:(id)arg2 withAnchor:(id)arg3 forQuery:(id)arg4;
 - (void)deliverSources:(id)arg1 forQuery:(id)arg2;
 - (void)deliverStatistics:(id)arg1 forQuery:(id)arg2;
 - (void)deliverUpdatedSources:(id)arg1 added:(id)arg2 forQuery:(id)arg3;
 - (void)deliverUpdatedStatistics:(id)arg1 anchor:(id)arg2 forQuery:(id)arg3;
+- (void)deliverUpdatedValuesByType:(id)arg1 forQuery:(id)arg2;
+- (void)deliverValuesByType:(id)arg1 forQuery:(id)arg2;
 - (BOOL)hasBeenExecuted;
 - (id)init;
 - (id)predicate;
@@ -107,6 +117,7 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (Class)hd_queryServerClass;
++ (BOOL)hd_requiresPrivateEntitlements;
 
 // Image: /System/Library/PrivateFrameworks/HealthKitExtensions.framework/HealthKitExtensions
 

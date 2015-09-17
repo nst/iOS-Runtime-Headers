@@ -25,6 +25,7 @@
 - (void)_resetAdditionalMetadataViewController:(id)arg1;
 - (void)_setEditedValue:(id)arg1 forProperty:(id)arg2 onPlaylist:(id)arg3 withSuccessfullyEditedPropertiesAccumulatorDictionary:(id)arg4;
 - (void)_updateEditableComponents;
+- (void)addEntitiesToSelection:(id)arg1;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 presentationSource:(int)arg4 forContentCreation:(BOOL)arg5;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 presentationSource:(int)arg4 forContentCreation:(BOOL)arg5 curatorStoreID:(id)arg6;
 - (void)mediaPickerNavigationController:(id)arg1 didFinishWithSelectedEntities:(id)arg2;

@@ -67,6 +67,8 @@
 - (BOOL)isDeletable;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMine;
+- (BOOL)isPhotoIris;
+- (BOOL)isVideo;
 - (id)lastName;
 - (id)mediaAssetType;
 - (id)metadata;

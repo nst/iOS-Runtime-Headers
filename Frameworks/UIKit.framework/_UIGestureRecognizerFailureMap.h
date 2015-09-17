@@ -4,27 +4,28 @@
 
 @interface _UIGestureRecognizerFailureMap : NSObject {
     char *_failureMap;
-    NSMutableArray *_gestureRecognizers;
+    NSMutableArray *_failureRequirements;
     int _unmetFailureDependentCount;
     int _unmetFailureRequirementCount;
 }
 
 @property (readonly) BOOL hasUnmetFailureRequirementsOrDependents;
 
-+ (void)buildFailureMapForGestureRecognizer:(id)arg1;
-+ (void)buildFailureMapForGestureRecognizers:(id)arg1;
++ (void)buildFailureMapForFailureRequirements:(id)arg1;
 
-- (void)_gestureRecognizerFinished:(id)arg1 withEvent:(id)arg2;
+- (void).cxx_destruct;
+- (void)_failureRequirementCompleted:(id)arg1 withEvent:(id)arg2;
+- (BOOL)_isFailureRequirementWaitingForOtherFailureRequirements:(id)arg1;
 - (void)_queueRecognizersForResetIfFinished;
-- (void)_rebuildFailureMapDefferingRelease;
+- (void)_rebuildFailureMapDeferringRelease;
 - (void)dealloc;
 - (id)description;
-- (void)gestureRecognizerBecameDirty:(id)arg1;
-- (void)gestureRecognizerDeallocated:(id)arg1;
-- (void)gestureRecognizerFinished:(id)arg1 withEvent:(id)arg2;
+- (void)failureRequirementBeganRunning:(id)arg1;
+- (void)failureRequirementCompleted:(id)arg1 withEvent:(id)arg2;
+- (void)failureRequirementDeallocated:(id)arg1;
+- (void)failureRequirementEnteredOtherFailureMap:(id)arg1;
 - (BOOL)hasUnmetFailureRequirementsOrDependents;
-- (id)initWithRelatedGestures:(id)arg1;
-- (BOOL)isGestureRecognizerWaitingForGestureRecognizersToFail:(id)arg1;
+- (id)initWithRelatedFailureRequirements:(id)arg1;
 - (void)rebuildFailureMap;
 - (void)reloadFailureMap;
 

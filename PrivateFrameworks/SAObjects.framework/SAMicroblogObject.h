@@ -45,7 +45,6 @@
 - (void)setSocialProfileReferences:(id)arg1;
 - (void)setUseLocation:(id)arg1;
 - (id)socialProfileReferences;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)useLocation;
 
 @end

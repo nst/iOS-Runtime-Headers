@@ -32,7 +32,6 @@
 - (BOOL)_hasEqualValueForKey:(id)arg1 asObject:(id)arg2;
 - (BOOL)_isAuxiliaryContent;
 - (BOOL)_isDesignatedDefault;
-- (BOOL)_isMainProgramContent;
 - (id)_taggedCharacteristics;
 - (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
 - (id)availableMetadataFormats;
@@ -41,7 +40,6 @@
 - (BOOL)displaysNonForcedSubtitles;
 - (id)extendedLanguageTag;
 - (void)finalize;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithAssetWriterInput:(id)arg1;
 - (id)initWithAssetWriterInput:(id)arg1 displaysNonForcedSubtitles:(BOOL)arg2;

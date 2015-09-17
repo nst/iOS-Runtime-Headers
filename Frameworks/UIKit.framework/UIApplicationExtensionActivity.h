@@ -31,6 +31,7 @@
 + (id)_applicationExtensionActivitiesForItems:(id)arg1;
 + (int)activityCategory;
 
+- (void).cxx_destruct;
 - (id)_activityImage;
 - (id)_activitySettingsImage;
 - (BOOL)_canBeExcludedByActivityViewController:(id)arg1;

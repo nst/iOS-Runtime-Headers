@@ -20,9 +20,7 @@
 @property (nonatomic, copy) NSString *shortActionTitle;
 
 + (id)alertActionAccessoryViewControllerWithOfflineSwitch:(id)arg1;
-+ (id)alertActionAccessoryViewControllerWithShowPurchasesSwitch:(id)arg1;
 + (id)libraryOfflineSwitch;
-+ (id)showPurchasesSwitch;
 
 - (void).cxx_destruct;
 - (void)_configureActionDescriptiveLabel;

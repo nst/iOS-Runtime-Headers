@@ -19,6 +19,7 @@
 + (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 + (void)writePreference:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_delayedControllerReleaseAfterPop:(id)arg1;
 - (void)_setNavigationBarHidden:(BOOL)arg1 edge:(unsigned int)arg2 duration:(double)arg3;
 - (void)addTask:(id)arg1;

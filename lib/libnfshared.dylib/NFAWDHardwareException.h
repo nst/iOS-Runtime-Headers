@@ -12,7 +12,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCHardwareExceptionEvent *metric;
+@property (nonatomic, retain) AWDNFCHardwareExceptionEvent *metric;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int type;
 
@@ -26,5 +26,6 @@
 - (void)setMetric:(id)arg1;
 - (void)setType:(unsigned int)arg1;
 - (unsigned int)type;
+- (void)updateExceptionUUID:(id)arg1;
 
 @end

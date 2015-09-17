@@ -12,8 +12,8 @@
 @property (nonatomic, retain) NSIndexPath *originalIndexPath;
 @property (nonatomic, retain) NSIndexPath *targetIndexPath;
 
+- (void).cxx_destruct;
 - (id)cell;
-- (void)dealloc;
 - (id)initWithCell:(id)arg1 indexPath:(id)arg2;
 - (id)originalIndexPath;
 - (void)setOriginalIndexPath:(id)arg1;

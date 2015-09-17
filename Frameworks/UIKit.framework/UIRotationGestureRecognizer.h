@@ -23,6 +23,9 @@
 @property (nonatomic) float rotation;
 @property (nonatomic, readonly) float velocity;
 
++ (BOOL)_shouldDefaultToTouches;
+
+- (void).cxx_destruct;
 - (float)_postRecognitionWeight;
 - (float)_preRecognitionWeight;
 - (void)_resetGestureRecognizer;
@@ -30,7 +33,6 @@
 - (void)_setPreRecognitionWeight:(float)arg1;
 - (void)_updateTransformAnalyzerWeights;
 - (struct CGPoint { float x1; float x2; })anchorPoint;
-- (void)dealloc;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (float)rotation;

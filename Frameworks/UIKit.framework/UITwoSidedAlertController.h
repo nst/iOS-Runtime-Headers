@@ -2,13 +2,19 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITwoSidedAlertController : NSObject {
+@interface UITwoSidedAlertController : NSObject <UIAlertViewDelegate> {
     UIAlertView *_back;
     UIAlertView *_currentAlert;
     id _delegate;
     UIAlertView *_front;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
 - (void)alertSheet:(id)arg1 buttonClicked:(int)arg2;
 - (void)alertViewCancel:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;

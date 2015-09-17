@@ -5,6 +5,6 @@
 
 @required
 
-- (void)willModifyObject:(TSPObject *)arg1 duringReadOperation:(BOOL)arg2;
+- (void)willModifyObject:(TSPObject *)arg1 duringReadOperation:(BOOL)arg2 shouldCaptureSnapshot:(BOOL)arg3;
 
 @end

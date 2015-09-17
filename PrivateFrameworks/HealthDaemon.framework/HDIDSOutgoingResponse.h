@@ -33,8 +33,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)configureWithActivationRestore:(id)arg1 pairingInfo:(id)arg2;
-- (void)configureWithStatus:(id)arg1 pairingInfo:(id)arg2;
+- (void)configureWithActivationRestore:(id)arg1 forStore:(id)arg2;
+- (void)configureWithStatus:(id)arg1 forStore:(id)arg2;
 - (id)data;
 - (void)dealloc;
 - (id)description;

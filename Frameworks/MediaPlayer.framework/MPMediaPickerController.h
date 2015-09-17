@@ -34,8 +34,9 @@
 - (BOOL)allowsPickingMultipleItems;
 - (void)dealloc;
 - (id)delegate;
-- (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithMediaTypes:(unsigned int)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (unsigned int)mediaTypes;
 - (id)prompt;
 - (void)remoteMediaPickerDidCancel;

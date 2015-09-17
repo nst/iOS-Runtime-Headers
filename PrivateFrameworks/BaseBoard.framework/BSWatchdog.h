@@ -28,6 +28,7 @@
 - (void)_stageOneTimerFired;
 - (void)_stageTwoTimerFired;
 - (void)_startWatchdogTimer;
+- (void)_watchdogInvalidated;
 - (void)_watchdogTimerFired;
 - (void)dealloc;
 - (id)delegate;

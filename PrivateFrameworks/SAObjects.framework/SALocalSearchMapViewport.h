@@ -2,15 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SALocalSearchMapViewport : AceObject <SAAceSerializable>
+@interface SALocalSearchMapViewport : SADomainObject
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic) double eastLongitude;
-@property (readonly) unsigned int hash;
 @property (nonatomic) double northLatitude;
 @property (nonatomic) double southLatitude;
-@property (readonly) Class superclass;
 @property (nonatomic) double timeInSecondsSinceViewportChanged;
 @property (nonatomic) double timeInSecondsSinceViewportEnteredForeground;
 @property (nonatomic, copy) NSArray *vertices;

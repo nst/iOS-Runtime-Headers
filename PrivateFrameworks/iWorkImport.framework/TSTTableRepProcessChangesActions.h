@@ -54,7 +54,6 @@
 @property (nonatomic) BOOL syncReferenceHighlightState;
 @property (nonatomic) BOOL updateEditorRemainders;
 
-- (id).cxx_construct;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })dirtyCellRange;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })dirtyStrokeRange;
 - (BOOL)hideChromeContextMenuButton;

@@ -3,6 +3,7 @@
  */
 
 @interface CalDAVContainer : CoreDAVContainer {
+    NSString *_alarms;
     BOOL _autoprovisioned;
     NSString *_calendarColor;
     NSString *_calendarDescription;
@@ -18,6 +19,7 @@
     BOOL _isScheduleTransparent;
     NSString *_languageCode;
     NSString *_locationCode;
+    BOOL _overrideSupportsFreebusy;
     NSURL *_prePublishURL;
     NSURL *_publishURL;
     NSURL *_scheduleDefaultCalendarURL;
@@ -33,6 +35,7 @@
     NSTimeZone *_timeZone;
 }
 
+@property (nonatomic, retain) NSString *alarms;
 @property (nonatomic) BOOL autoprovisioned;
 @property (nonatomic, retain) NSString *calendarColor;
 @property (nonatomic, retain) NSString *calendarDescription;
@@ -60,6 +63,7 @@
 @property (nonatomic, readonly) BOOL isTaskContainer;
 @property (nonatomic, retain) NSString *languageCode;
 @property (nonatomic, retain) NSString *locationCode;
+@property (nonatomic) BOOL overrideSupportsFreebusy;
 @property (nonatomic, retain) NSURL *prePublishURL;
 @property (nonatomic, retain) NSURL *publishURL;
 @property (nonatomic, retain) NSURL *scheduleDefaultCalendarURL;
@@ -77,8 +81,10 @@
 
 + (id)copyPropertyMappingsForParser;
 
+- (void).cxx_destruct;
 - (BOOL)_isComponentSupportedForString:(id)arg1;
 - (void)_setTimeZoneFromProperties:(id)arg1 onCalendar:(id)arg2;
+- (id)alarms;
 - (void)applyParsedProperties:(id)arg1;
 - (BOOL)autoprovisioned;
 - (id)calendarColor;
@@ -87,7 +93,6 @@
 - (BOOL)canBePublished;
 - (BOOL)canBeShared;
 - (id)ctag;
-- (void)dealloc;
 - (id)defaultAllDayAlarms;
 - (id)defaultTimedAlarms;
 - (id)description;
@@ -109,9 +114,12 @@
 - (BOOL)isTaskContainer;
 - (id)languageCode;
 - (id)locationCode;
+- (BOOL)overrideSupportsFreebusy;
+- (void)postProcessWithResponseHeaders:(id)arg1;
 - (id)prePublishURL;
 - (id)publishURL;
 - (id)scheduleDefaultCalendarURL;
+- (void)setAlarms:(id)arg1;
 - (void)setAutoprovisioned:(BOOL)arg1;
 - (void)setCalendarColor:(id)arg1;
 - (void)setCalendarDescription:(id)arg1;
@@ -127,6 +135,7 @@
 - (void)setIsScheduleTransparent:(BOOL)arg1;
 - (void)setLanguageCode:(id)arg1;
 - (void)setLocationCode:(id)arg1;
+- (void)setOverrideSupportsFreebusy:(BOOL)arg1;
 - (void)setPrePublishURL:(id)arg1;
 - (void)setPublishURL:(id)arg1;
 - (void)setScheduleDefaultCalendarURL:(id)arg1;

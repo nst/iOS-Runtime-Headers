@@ -27,6 +27,7 @@
 - (id)dataForKey:(id)arg1;
 - (void)dealloc;
 - (id)dictionaryForKey:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)domain;
 - (double)doubleForKey:(id)arg1;
 - (double)doubleForKey:(id)arg1 keyExistsAndHasValidFormat:(BOOL*)arg2;
@@ -34,6 +35,7 @@
 - (float)floatForKey:(id)arg1;
 - (float)floatForKey:(id)arg1 keyExistsAndHasValidFormat:(BOOL*)arg2;
 - (id)initWithDomain:(id)arg1;
+- (id)initWithDomain:(id)arg1 pairedDevice:(id)arg2;
 - (id)initWithDomain:(id)arg1 pairingID:(id)arg2 pairingDataStore:(id)arg3;
 - (id)initWithDomain:(id)arg1 queue:(id)arg2;
 - (id)initWithDomain:(id)arg1 queue:(id)arg2 pairingID:(id)arg3 pairingDataStore:(id)arg4;

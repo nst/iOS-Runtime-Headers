@@ -7,6 +7,7 @@
     <IKAppKeyboardDelegate> *_delegate;
     NSString *_featureName;
     IKJSKeyboard *_jsKeyboard;
+    NSString *_jsText;
     NSString *_text;
 }
 
@@ -17,6 +18,7 @@
 @property (nonatomic, readonly, copy) NSString *featureName;
 @property (readonly) unsigned int hash;
 @property (setter=setJSKeyboard:, nonatomic) IKJSKeyboard *jsKeyboard;
+@property (setter=setJSText:, nonatomic, copy) NSString *jsText;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *text;
 
@@ -28,10 +30,11 @@
 - (id)featureName;
 - (id)initWithDOMNode:(id)arg1 featureName:(id)arg2;
 - (id)jsKeyboard;
+- (id)jsText;
 - (void)setDelegate:(id)arg1;
 - (void)setJSKeyboard:(id)arg1;
+- (void)setJSText:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
-- (void)textDidChangeForJSKeyboard:(id)arg1;
 
 @end

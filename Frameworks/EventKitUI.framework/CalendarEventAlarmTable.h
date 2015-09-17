@@ -59,8 +59,10 @@
 - (id)styleProvider;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForFooterInSection:(int)arg2;
+- (void)tableView:(id)arg1 willDisplayFooterView:(id)arg2 forSection:(int)arg3;
 - (BOOL)useAllDayAlarms;
 
 @end

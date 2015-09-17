@@ -17,8 +17,10 @@
     SSVSubscriptionStatus *_lastKnownSubscriptionStatus;
     unsigned int _matchStatus;
     unsigned int _matchStatusObservationCount;
+    BOOL _observingNetworkReachability;
     SSVPlaybackLease *_playbackLease;
     unsigned int _purchaseHistoryObservationCount;
+    BOOL _shouldPlaybackRequireSubscriptionLease;
     unsigned int _shouldPlaybackRequireSubscriptionLeaseObservationCount;
     unsigned int _subscriptionAvailabilityObservationCount;
     BOOL _subscriptionAvailable;
@@ -48,6 +50,7 @@
 - (void)_beginObservingAccountStoreDidChange;
 - (void)_beginObservingURLBag;
 - (void)_beginUsingSubscriptionLease;
+- (BOOL)_calculateShouldPlaybackRequireSubscriptionLeaseReturningLikelyToReachRemoteServer:(BOOL*)arg1;
 - (void)_cloudClientAuthenticationDidChange;
 - (BOOL)_currentCloudLibraryEnabled;
 - (id)_currentFairPlaySubscriptionStatus;
@@ -62,6 +65,7 @@
 - (void)_setHasSubscriptionLease:(BOOL)arg1 endReasonType:(unsigned int)arg2;
 - (void)_storeFrontDidChangeNotification:(id)arg1;
 - (void)_subscriptionStatusDidChangeNotification:(id)arg1;
+- (void)_updateForNetworkReachabilityObserversCountChange;
 - (void)_updateMatchStatus;
 - (void)_updateWithURLBagDictionary:(id)arg1;
 - (void)acquireSubscriptionLeaseWithCompletionHandler:(id /* block */)arg1;

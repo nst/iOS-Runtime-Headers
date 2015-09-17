@@ -18,7 +18,7 @@
 + (id)imagePromiseWithImagePath:(id)arg1;
 + (id)imagePromiseWithLoadBlock:(id /* block */)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)image;
 - (BOOL)isImageLoaded;
 - (void)loadImage;

@@ -5,8 +5,6 @@
 
 @required
 
-- (void)subscriptionDetailsDidUpdate:(NSArray *)arg1;
-- (void)subscriptionDetailsForCompletion:(NSArray *)arg1;
-- (void)subscriptionDetailsRequestDidFail:(NSError *)arg1;
+- (void)planInfoDidUpdate;
 
 @end

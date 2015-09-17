@@ -26,7 +26,7 @@
 - (struct BTAccessoryManagerImpl { }*)_accessoryManager;
 - (void)_advertisingChanged;
 - (BOOL)_attach:(id)arg1;
-- (void)_cleanup;
+- (void)_cleanup:(BOOL)arg1;
 - (void)_connectabilityChanged;
 - (void)_connectedStatusChanged;
 - (void)_discoveryStateChanged;
@@ -54,6 +54,7 @@
 - (BOOL)devicePairingEnabled;
 - (BOOL)deviceScanningEnabled;
 - (BOOL)deviceScanningInProgress;
+- (void)disconnectDevice:(id)arg1;
 - (void)enableTestMode;
 - (BOOL)enabled;
 - (void)endVoiceCommand:(id)arg1;

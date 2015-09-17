@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
  */
 
-@interface EDPhoneticInfo : NSObject <EDImmutableObject> {
+@interface EDPhoneticInfo : NSObject <EDImmutableObject, NSCopying> {
     int mAlign;
     bool mDoNotModify;
     unsigned int mFontIndex;
@@ -21,7 +21,9 @@
 
 - (int)align;
 - (void)appendString:(id)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)font;
 - (unsigned int)fontIndex;
 - (unsigned int)hash;

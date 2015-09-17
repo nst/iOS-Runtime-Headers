@@ -2,7 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAFmfSearch : SABaseClientBoundCommand
+@interface SAFmfSearch : SABaseClientBoundCommand {
+    NSArray *_emailAddresses;
+    NSURL *_targetAppId;
+}
 
 @property (nonatomic, retain) SALocation *currentLocation;
 @property (nonatomic, copy) NSArray *emailAddresses;

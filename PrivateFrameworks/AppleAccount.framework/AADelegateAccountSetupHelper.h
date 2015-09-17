@@ -14,7 +14,6 @@
 
 - (void).cxx_destruct;
 - (id)_adjustResponseDictionary:(id)arg1;
-- (void)_completeiCloudAndDelegateSetupWithResponse:(id)arg1;
 - (id)_loadAssistantDelegateBundles;
 - (void)_setupDelegateAccountsWithEmailChoice:(id)arg1;
 - (id)init;

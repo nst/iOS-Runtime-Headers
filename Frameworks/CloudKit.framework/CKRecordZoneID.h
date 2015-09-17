@@ -2,30 +2,32 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKRecordZoneID : NSObject <NSCopying, NSSecureCoding> {
+@interface CKRecordZoneID : NSObject <CKXPCSuitableString, NSCopying, NSSecureCoding> {
     NSString *_ownerName;
     NSString *_zoneName;
 }
 
-@property (nonatomic, retain) NSString *ownerName;
-@property (nonatomic, retain) NSString *zoneName;
+@property (nonatomic, readonly) NSString *ownerName;
+@property (nonatomic, readonly) NSString *zoneName;
 
++ (id)cachedRecordZoneIDWithName:(id)arg1 ownerName:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (id)CKXPCSuitableString;
+- (id)_initWithZoneName:(id)arg1 ownerName:(id)arg2;
 - (id)ckShortDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSqliteRepresentation:(id)arg1;
 - (id)initWithZoneName:(id)arg1 ownerName:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (id)ownerName;
-- (void)setOwnerName:(id)arg1;
-- (void)setZoneName:(id)arg1;
 - (id)sqliteRepresentation;
 - (id)zoneName;
 

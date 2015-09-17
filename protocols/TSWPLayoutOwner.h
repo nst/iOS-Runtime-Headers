@@ -13,6 +13,7 @@
 @optional
 
 - (BOOL)forceWesternLineBreaking;
+- (TSULocale *)locale;
 - (<TSWPStyleProvider> *)styleProvider;
 - (TSUColor *)textColorOverride;
 

@@ -50,6 +50,7 @@
 - (void)assetContainerListDidChange:(id)arg1;
 - (BOOL)assetIsAvailableForNavigation:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2;
 - (BOOL)assetIsAvailableForNavigationInMoments:(id)arg1;
+- (BOOL)assetIsAvailableForNavigationInMoments:(id)arg1 refetchSectionsIfNeeded:(BOOL)arg2;
 - (BOOL)cloudFeedAssetIsAvailableForNavigation:(id)arg1;
 - (BOOL)cloudFeedCommentIsAvailableForNavigation:(id)arg1;
 - (BOOL)cloudFeedInvitationForAlbumIsAvailableForNavigation:(id)arg1;
@@ -68,7 +69,10 @@
 - (void)navigateToComment:(id)arg1 forAsset:(id)arg2 animated:(BOOL)arg3;
 - (void)navigateToContentMode:(int)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)navigateToInitialLocationInNavigationController:(id)arg1;
+- (void)navigateToLastYearPhotosSearchAnimated:(BOOL)arg1;
+- (void)navigateToOneUpForAsset:(id)arg1 inAssetContainer:(id)arg2 animated:(BOOL)arg3;
 - (void)navigateToPhotosContentBottomAnimated:(BOOL)arg1;
+- (void)navigateToPhotosSearchAnimated:(BOOL)arg1;
 - (void)navigateToRevealAlbum:(struct NSObject { Class x1; }*)arg1 initiallyHidden:(BOOL)arg2 animated:(BOOL)arg3;
 - (void)navigateToRevealAsset:(id)arg1 inAlbum:(struct NSObject { Class x1; }*)arg2 animated:(BOOL)arg3;
 - (void)navigateToRevealCloudFeedAsset:(id)arg1 completion:(id /* block */)arg2;

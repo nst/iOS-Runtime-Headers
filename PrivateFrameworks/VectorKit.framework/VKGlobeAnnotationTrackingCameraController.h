@@ -22,7 +22,7 @@
 
 @property (nonatomic) struct GlobeView { int (**x1)(); }*globeView;
 
-- (id).cxx_construct;
+- (struct Vector2i { int x1; int x2; })_centerCursor;
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (void)dealloc;

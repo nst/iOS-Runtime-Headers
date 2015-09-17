@@ -14,8 +14,8 @@
 
 + (id)resultFromResponseItem:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)addresses;
-- (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (id)principalURL;

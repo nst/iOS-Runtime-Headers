@@ -70,6 +70,7 @@
 - (void)prepareBeginsWith:(id)arg1;
 - (void)prepareBetween:(id)arg1;
 - (void)prepareComparisonPredicate:(id)arg1;
+- (void)prepareConstrainedValuesUpdateStatementWithRow:(id)arg1;
 - (void)prepareCountStatementWithFetchRequest:(id)arg1;
 - (void)prepareDeleteStatementForRelationship:(id)arg1;
 - (void)prepareDeleteStatementWithRow:(id)arg1;

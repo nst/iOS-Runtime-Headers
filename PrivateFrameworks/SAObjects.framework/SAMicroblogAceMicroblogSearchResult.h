@@ -33,7 +33,6 @@
 - (void)setSummary:(id)arg1;
 - (void)setWebAddress:(id)arg1;
 - (id)summary;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)webAddress;
 
 @end

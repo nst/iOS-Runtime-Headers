@@ -18,5 +18,6 @@
 - (id)recordID;
 - (void)setRecordID:(id)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

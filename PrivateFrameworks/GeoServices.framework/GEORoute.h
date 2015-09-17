@@ -26,6 +26,8 @@
         unsigned int historicTravelTime : 1; 
         unsigned int routeType : 1; 
         unsigned int transportType : 1; 
+        unsigned int travelTimeAggressiveEstimate : 1; 
+        unsigned int travelTimeConservativeEstimate : 1; 
     } _has;
     unsigned int _historicTravelTime;
     struct { 
@@ -55,6 +57,8 @@
         unsigned int size; 
     } _trafficColors;
     int _transportType;
+    unsigned int _travelTimeAggressiveEstimate;
+    unsigned int _travelTimeConservativeEstimate;
     NSData *_unpackedLatLngVertices;
     NSData *_zilchPoints;
 }
@@ -84,6 +88,8 @@
 @property (nonatomic, readonly) BOOL hasRouteID;
 @property (nonatomic) BOOL hasRouteType;
 @property (nonatomic) BOOL hasTransportType;
+@property (nonatomic) BOOL hasTravelTimeAggressiveEstimate;
+@property (nonatomic) BOOL hasTravelTimeConservativeEstimate;
 @property (nonatomic, readonly) BOOL hasUnpackedLatLngVertices;
 @property (nonatomic, readonly) BOOL hasZilchPoints;
 @property (nonatomic) unsigned int historicTravelTime;
@@ -103,6 +109,8 @@
 @property (nonatomic, readonly) unsigned int*trafficColors;
 @property (nonatomic, readonly) unsigned int trafficColorsCount;
 @property (nonatomic) int transportType;
+@property (nonatomic) unsigned int travelTimeAggressiveEstimate;
+@property (nonatomic) unsigned int travelTimeConservativeEstimate;
 @property (nonatomic, retain) NSData *unpackedLatLngVertices;
 @property (nonatomic, retain) NSData *zilchPoints;
 
@@ -161,6 +169,8 @@
 - (BOOL)hasRouteID;
 - (BOOL)hasRouteType;
 - (BOOL)hasTransportType;
+- (BOOL)hasTravelTimeAggressiveEstimate;
+- (BOOL)hasTravelTimeConservativeEstimate;
 - (BOOL)hasUnpackedLatLngVertices;
 - (BOOL)hasZilchPoints;
 - (unsigned int)hash;
@@ -205,6 +215,8 @@
 - (void)setHasHistoricTravelTime:(BOOL)arg1;
 - (void)setHasRouteType:(BOOL)arg1;
 - (void)setHasTransportType:(BOOL)arg1;
+- (void)setHasTravelTimeAggressiveEstimate:(BOOL)arg1;
+- (void)setHasTravelTimeConservativeEstimate:(BOOL)arg1;
 - (void)setHistoricTravelTime:(unsigned int)arg1;
 - (void)setIncidentEndOffsetsInRoutes:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setIncidentIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
@@ -217,6 +229,8 @@
 - (void)setTrafficColorOffsets:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setTrafficColors:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setTransportType:(int)arg1;
+- (void)setTravelTimeAggressiveEstimate:(unsigned int)arg1;
+- (void)setTravelTimeConservativeEstimate:(unsigned int)arg1;
 - (void)setUnpackedLatLngVertices:(id)arg1;
 - (void)setZilchPoints:(id)arg1;
 - (id)simplifiedDescription;
@@ -232,6 +246,8 @@
 - (unsigned int)trafficColorsCount;
 - (int)transportType;
 - (int)transportTypeForStep:(id)arg1;
+- (unsigned int)travelTimeAggressiveEstimate;
+- (unsigned int)travelTimeConservativeEstimate;
 - (BOOL)unpackBasicPoints;
 - (BOOL)unpackLatLngVertices;
 - (BOOL)unpackZilchPoints;
@@ -241,7 +257,6 @@
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
-- (struct CGImage { }*)_mapKitImage;
 - (id)instructionsForStep:(id)arg1;
 - (id)maneuverImageForStep:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3;
 

@@ -3,8 +3,10 @@
  */
 
 @interface WebDeviceOrientationProviderMockInternal : NSObject {
-    struct OwnPtr<WebCore::DeviceOrientationClientMock> { 
-        struct DeviceOrientationClientMock {} *m_ptr; 
+    struct unique_ptr<WebCore::DeviceOrientationClientMock, std::__1::default_delete<WebCore::DeviceOrientationClientMock> > { 
+        struct __compressed_pair<WebCore::DeviceOrientationClientMock *, std::__1::default_delete<WebCore::DeviceOrientationClientMock> > { 
+            struct DeviceOrientationClientMock {} *__first_; 
+        } __ptr_; 
     } m_core;
 }
 

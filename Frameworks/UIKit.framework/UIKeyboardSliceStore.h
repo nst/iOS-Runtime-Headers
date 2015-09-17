@@ -11,8 +11,8 @@
 + (id)sliceSetForID:(id)arg1;
 + (id)sliceSetIDForKeyplaneName:(id)arg1 type:(int)arg2 orientation:(int)arg3;
 
+- (void).cxx_destruct;
 - (void)addSet:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (id)sliceSetForID:(id)arg1;
 

@@ -54,6 +54,10 @@
 - (id)mf_remainingString;
 - (BOOL)mf_scanUpToRegularExpression:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (BOOL)scanCGFloat:(float*)arg1;
+
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)SQLParsingScannerWithSQL:(id)arg1;
@@ -75,7 +79,7 @@
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-- (BOOL)scanCGFloat:(float*)arg1;
+- (BOOL)tsu_scanCGFloat:(float*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 

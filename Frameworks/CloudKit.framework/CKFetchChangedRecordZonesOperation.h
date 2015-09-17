@@ -25,6 +25,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id /* block */)fetchChangedRecordZonesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithPreviousServerChangeToken:(id)arg1;

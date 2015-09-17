@@ -16,6 +16,7 @@
     CoreDAVLeafItem *_status;
     CoreDAVItemWithNoChildren *_uid;
     CoreDAVItemWithNoChildren *_validAddressData;
+    CoreDAVItemWithNoChildren *_validSplit;
     CoreDAVItemWithNoChildren *_validSyncToken;
     CoreDAVItemWithNoChildren *_validTimezone;
 }
@@ -33,6 +34,7 @@
 @property (nonatomic, retain) CoreDAVLeafItem *status;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *uid;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *validAddressData;
+@property (nonatomic, retain) CoreDAVItemWithNoChildren *validSplit;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *validSyncToken;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *validTimezone;
 
@@ -64,11 +66,13 @@
 - (void)setStatus:(id)arg1;
 - (void)setUid:(id)arg1;
 - (void)setValidAddressData:(id)arg1;
+- (void)setValidSplit:(id)arg1;
 - (void)setValidSyncToken:(id)arg1;
 - (void)setValidTimezone:(id)arg1;
 - (id)status;
 - (id)uid;
 - (id)validAddressData;
+- (id)validSplit;
 - (id)validSyncToken;
 - (id)validTimezone;
 

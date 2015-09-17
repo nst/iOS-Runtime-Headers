@@ -16,8 +16,8 @@
 - (int)fatalStatusForVersion:(int)arg1 errorMessage:(id)arg2 error:(id*)arg3;
 - (id)init;
 - (id)initWithDatabase:(id)arg1;
-- (int)migrateProtectedDatabaseFromVersion:(int)arg1 toVersion:(int)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
-- (int)migrateUnprotectedDatabaseFromVersion:(int)arg1 toVersion:(int)arg2 error:(id*)arg3;
+- (int)migrateProtectedDatabaseFromVersion:(int)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
+- (int)migrateUnprotectedDatabaseFromVersion:(int)arg1 error:(id*)arg2;
 - (int)statusForUnhandledVersion:(int)arg1 error:(id*)arg2;
 
 @end

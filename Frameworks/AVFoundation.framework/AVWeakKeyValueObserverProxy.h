@@ -7,7 +7,6 @@
 }
 
 - (void)dealloc;
-- (id)init;
 - (id)initWithWeakReferenceToObserver:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 

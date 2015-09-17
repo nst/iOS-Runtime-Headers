@@ -4,14 +4,16 @@
 
 @interface TULogging : NSObject
 
++ (void)_logType:(id)arg1 topic:(id)arg2 category:(id)arg3 severity:(int)arg4 asSession:(BOOL)arg5 backtrace:(BOOL)arg6 format:(id)arg7 args:(void*)arg8;
 + (void)beginLoggingSessionAsInitiator:(BOOL)arg1;
 + (void)checkpointLoggingSession:(id)arg1;
 + (void)disablePhoneLogging;
 + (void)enablePhoneLogging;
 + (void)endLoggingSession;
-+ (void)initialize;
 + (BOOL)isWalkaboutEnabled;
 + (void)logType:(id)arg1 topic:(id)arg2 category:(id)arg3 backtrace:(BOOL)arg4 format:(id)arg5;
++ (void)logType:(id)arg1 topic:(id)arg2 category:(id)arg3 severity:(int)arg4 asSession:(BOOL)arg5 backtrace:(BOOL)arg6 format:(id)arg7;
++ (void)logType:(id)arg1 topic:(id)arg2 category:(id)arg3 severity:(int)arg4 backtrace:(BOOL)arg5 format:(id)arg6;
 + (void)pulseLoggingSession;
 + (void)registerForShouldLogChangedNotification;
 + (BOOL)sendDirectoryToCrashReporter:(id)arg1 error:(id*)arg2;

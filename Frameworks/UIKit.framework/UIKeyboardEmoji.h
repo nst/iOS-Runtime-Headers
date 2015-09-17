@@ -12,7 +12,7 @@
 
 + (id)emojiWithString:(id)arg1 withVariantMask:(unsigned int)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)emojiString;
 - (id)initWithString:(id)arg1 withVariantMask:(unsigned int)arg2;
 - (BOOL)isEqual:(id)arg1;

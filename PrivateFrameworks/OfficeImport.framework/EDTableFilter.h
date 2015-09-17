@@ -11,6 +11,7 @@
 
 + (id)edTableFilter;
 
+- (id)description;
 - (double)filterValue;
 - (int)operatorType;
 - (int)scale;

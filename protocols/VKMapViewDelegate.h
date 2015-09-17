@@ -12,9 +12,11 @@
 - (void)mapLayer:(VKMapView *)arg1 canZoomOutDidChange:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 didBecomePitched:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 didChangeRegionAnimated:(BOOL)arg2;
-- (void)mapLayer:(VKMapView *)arg1 didFinishChangingMapDisplayStyle:(unsigned int)arg2;
+- (void)mapLayer:(VKMapView *)arg1 didFinishChangingMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg2;
 - (void)mapLayer:(VKMapView *)arg1 didStopFlyoverTourCompleted:(BOOL)arg2;
 - (void)mapLayer:(VKMapView *)arg1 didUpdateVerticalYawTo:(double)arg2;
+- (void)mapLayer:(VKMapView *)arg1 flyoverModeDidChange:(int)arg2;
+- (void)mapLayer:(VKMapView *)arg1 flyoverModeWillChange:(int)arg2;
 - (void)mapLayer:(VKMapView *)arg1 flyoverTourLabelDidChange:(NSString *)arg2;
 - (VKOverlayPainter *)mapLayer:(VKMapView *)arg1 painterForOverlay:(id <VKOverlay>)arg2;
 - (<VKTrackableAnnotationPresentation> *)mapLayer:(VKMapView *)arg1 presentationForAnnotation:(id <VKTrackableAnnotation>)arg2;
@@ -29,7 +31,9 @@
 - (void)mapLayerDidFailLoadingTiles:(VKMapView *)arg1 withError:(NSError *)arg2;
 - (void)mapLayerDidFinishInitialTrackingAnimation:(VKMapView *)arg1;
 - (void)mapLayerDidFinishLoadingTiles:(VKMapView *)arg1;
+- (void)mapLayerDidReloadStylesheet:(VKMapView *)arg1;
 - (void)mapLayerDidStartLoadingTiles:(VKMapView *)arg1;
+- (void)mapLayerLabelsDidLayout:(VKMapView *)arg1;
 - (void)mapLayerWillStartFlyoverTour:(VKMapView *)arg1;
 
 @end

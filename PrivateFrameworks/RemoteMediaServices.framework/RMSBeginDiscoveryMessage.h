@@ -6,24 +6,41 @@
     int _discoveryTypes;
     struct { 
         unsigned int discoveryTypes : 1; 
+        unsigned int hasPairedNetworkNames : 1; 
     } _has;
+    BOOL _hasPairedNetworkNames;
+    NSMutableArray *_pairedNetworkNames;
 }
 
 @property (nonatomic) int discoveryTypes;
 @property (nonatomic) BOOL hasDiscoveryTypes;
+@property (nonatomic) BOOL hasHasPairedNetworkNames;
+@property (nonatomic) BOOL hasPairedNetworkNames;
+@property (nonatomic, retain) NSMutableArray *pairedNetworkNames;
 
+- (void).cxx_destruct;
+- (void)addPairedNetworkNames:(id)arg1;
+- (void)clearPairedNetworkNames;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)discoveryTypes;
 - (BOOL)hasDiscoveryTypes;
+- (BOOL)hasHasPairedNetworkNames;
+- (BOOL)hasPairedNetworkNames;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)pairedNetworkNames;
+- (id)pairedNetworkNamesAtIndex:(unsigned int)arg1;
+- (unsigned int)pairedNetworkNamesCount;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDiscoveryTypes:(int)arg1;
 - (void)setHasDiscoveryTypes:(BOOL)arg1;
+- (void)setHasHasPairedNetworkNames:(BOOL)arg1;
+- (void)setHasPairedNetworkNames:(BOOL)arg1;
+- (void)setPairedNetworkNames:(id)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

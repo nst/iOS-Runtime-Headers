@@ -4,6 +4,6 @@
 
 @interface HDCorrelationSamplePropertyApplier : HDDataPropertyApplier
 
-- (void)applyPropertiesToObject:(id)arg1 entity:(id)arg2 values:(id*)arg3 healthDaemon:(id)arg4;
+- (void)applyPropertiesToObject:(id)arg1 entity:(id)arg2 row:(struct HDSQLiteRow { }*)arg3 healthDaemon:(id)arg4;
 
 @end

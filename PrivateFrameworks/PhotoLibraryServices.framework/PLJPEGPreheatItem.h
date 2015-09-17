@@ -17,7 +17,7 @@
 }
 
 @property (setter=_setHasCachedImage:) BOOL _hasCachedImage;
-@property (nonatomic, readonly) NSString *imagePath;
+@property (nonatomic, readonly, copy) NSString *imagePath;
 @property (nonatomic, readonly) unsigned int options;
 
 + (id)jpegDataLoadSemaphore;

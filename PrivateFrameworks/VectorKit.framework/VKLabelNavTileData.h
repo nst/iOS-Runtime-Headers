@@ -33,7 +33,7 @@
 - (id)initWithTile:(id)arg1;
 - (void)initializeJunctionInfos;
 - (id)junctionAtCoordinate:(struct Matrix<float, 2, 1> { float x1[2]; })arg1;
-- (id)junctionForGeoJunction:(struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)arg1;
+- (id)junctionForGeoJunction:(struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*)arg1;
 - (id)oppositeCarriagewayJunctions;
 - (BOOL)oppositeCarriagewayJunctionsValid;
 - (void)setOppositeCarriagewayJunctionsValid:(BOOL)arg1;

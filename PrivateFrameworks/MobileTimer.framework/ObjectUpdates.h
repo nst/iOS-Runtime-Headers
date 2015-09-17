@@ -10,8 +10,8 @@
 @property (nonatomic, readonly) NSMutableArray *addedObjects;
 @property (nonatomic, readonly) NSMutableArray *removedObjects;
 
+- (void).cxx_destruct;
 - (id)addedObjects;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)removedObjects;

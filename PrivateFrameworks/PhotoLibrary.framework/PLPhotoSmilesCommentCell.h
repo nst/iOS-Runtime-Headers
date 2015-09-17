@@ -5,16 +5,22 @@
 @interface PLPhotoSmilesCommentCell : UITableViewCell {
     BOOL _isVideo;
     BOOL _showUserLikes;
+    BOOL _showsSmileButton;
     UILabel *_smileContentLabel;
     UIButton *_smileImageButton;
+    UIView *_styledSeparatorView;
     NSOrderedSet *_userLikes;
+    BOOL _usesCompactSeparators;
 }
 
 @property (nonatomic) BOOL isVideo;
 @property (nonatomic) BOOL showUserLikes;
+@property (nonatomic) BOOL showsSmileButton;
 @property (nonatomic, readonly, retain) UILabel *smileContentLabel;
 @property (nonatomic, readonly, retain) UIButton *smileImageButton;
+@property (nonatomic, readonly, retain) UIView *styledSeparatorView;
 @property (nonatomic, copy) NSOrderedSet *userLikes;
+@property (nonatomic) BOOL usesCompactSeparators;
 
 + (id)_attributedStringForComments:(id)arg1 color:(id)arg2 isVideo:(BOOL)arg3;
 + (id)_smileStringForComments:(id)arg1;
@@ -28,10 +34,15 @@
 - (void)prepareForReuse;
 - (void)setIsVideo:(BOOL)arg1;
 - (void)setShowUserLikes:(BOOL)arg1;
+- (void)setShowsSmileButton:(BOOL)arg1;
 - (void)setUserLikes:(id)arg1;
+- (void)setUsesCompactSeparators:(BOOL)arg1;
 - (BOOL)showUserLikes;
+- (BOOL)showsSmileButton;
 - (id)smileContentLabel;
 - (id)smileImageButton;
+- (id)styledSeparatorView;
 - (id)userLikes;
+- (BOOL)usesCompactSeparators;
 
 @end

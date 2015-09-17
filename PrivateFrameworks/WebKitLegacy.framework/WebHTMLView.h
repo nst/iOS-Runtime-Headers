@@ -14,11 +14,13 @@
 + (void)initialize;
 + (id)supportedImageMIMETypes;
 + (id)supportedMIMETypes;
++ (id)supportedMediaMIMETypes;
 + (id)supportedNonImageMIMETypes;
 + (id)unsupportedTextMIMETypes;
 
 - (id)_accessibilityParentForSubview:(id)arg1;
 - (float)_adjustedBottomOfPageWithTop:(float)arg1 bottom:(float)arg2 limit:(float)arg3;
+- (void)_applyEditingStyleToSelection:(struct Ref<WebCore::EditingStyle> { struct EditingStyle {} *x1; }*)arg1 withUndoAction:(int)arg2;
 - (void)_applyStyleToSelection:(id)arg1 withUndoAction:(int)arg2;
 - (void)_autoscroll;
 - (BOOL)_beginPrintModeWithMinimumPageWidth:(float)arg1 height:(float)arg2 maximumPageWidth:(float)arg3;
@@ -45,7 +47,7 @@
 - (id)_frame;
 - (void)_frameOrBoundsChanged;
 - (id)_frameView;
-- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; unsigned int x3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; unsigned short x12; struct EventTarget {} *x13; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_14_1_1; } x14; unsigned long long x15; struct RefPtr<WebCore::Event> { struct Event {} *x_16_1_1; } x16; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_17_1_1; } x17; int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; struct unique_ptr<WebCore::PlatformKeyboardEvent, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct __compressed_pair<WebCore::PlatformKeyboardEvent *, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct PlatformKeyboardEvent {} *x_1_2_1; } x_23_1_1; } x23; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_24_1_1; } x24; unsigned int x25; unsigned int x26 : 1; bool x27; struct Vector<WebCore::KeypressCommand, 0, WTF::CrashOnOverflow> { struct KeypressCommand {} *x_28_1_1; unsigned int x_28_1_2; unsigned int x_28_1_3; } x28; }*)arg1;
+- (BOOL)_handleEditingKeyEvent:(struct KeyboardEvent { int (**x1)(); struct Weak<WebCore::JSDOMWrapper> { struct WeakImpl {} *x_2_1_1; } x2; unsigned int x3; struct AtomicString { struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_3_1; } x_1_2_1; } x_4_1_1; } x4; bool x5; bool x6; bool x7; bool x8; bool x9; bool x10; bool x11; unsigned short x12; struct EventTarget {} *x13; struct RefPtr<WebCore::EventTarget> { struct EventTarget {} *x_14_1_1; } x14; unsigned long long x15; struct RefPtr<WebCore::Event> { struct Event {} *x_16_1_1; } x16; struct RefPtr<WebCore::DOMWindow> { struct DOMWindow {} *x_17_1_1; } x17; int x18; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; struct unique_ptr<WebCore::PlatformKeyboardEvent, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct __compressed_pair<WebCore::PlatformKeyboardEvent *, std::__1::default_delete<WebCore::PlatformKeyboardEvent> > { struct PlatformKeyboardEvent {} *x_1_2_1; } x_23_1_1; } x23; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_24_1_1; } x24; unsigned int x25; unsigned int x26 : 1; bool x27; struct Vector<WebCore::KeypressCommand, 0, WTF::CrashOnOverflow, 16> { struct KeypressCommand {} *x_28_1_1; unsigned int x_28_1_2; unsigned int x_28_1_3; } x28; }*)arg1;
 - (BOOL)_hasHTMLDocument;
 - (BOOL)_hasInsertionPoint;
 - (BOOL)_hasSelection;
@@ -222,6 +224,7 @@
 - (void)pageUpAndModifySelection:(id)arg1;
 - (void)paste:(id)arg1;
 - (void)pasteAsPlainText:(id)arg1;
+- (void)pressureChangeWithEvent:(id)arg1;
 - (void)reapplyStyles;
 - (id)rectsForTextMatches;
 - (BOOL)resignFirstResponder;

@@ -6,11 +6,13 @@
     UILabel *_ownerContentLabel;
     NSAttributedString *_ownerString;
     UIView *_styledSeparatorView;
+    BOOL _usesCompactSeparators;
 }
 
 @property (nonatomic, readonly, retain) UILabel *ownerContentLabel;
 @property (nonatomic, copy) NSAttributedString *ownerString;
 @property (nonatomic, readonly, retain) UIView *styledSeparatorView;
+@property (nonatomic) BOOL usesCompactSeparators;
 
 + (id)_ownerStringForAsset:(id)arg1;
 + (float)heightOfOwnerCellWithAsset:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
@@ -22,7 +24,9 @@
 - (id)ownerString;
 - (void)prepareForReuse;
 - (void)setOwnerString:(id)arg1;
+- (void)setUsesCompactSeparators:(BOOL)arg1;
 - (id)styledSeparatorView;
 - (void)updateContentFromAsset:(id)arg1;
+- (BOOL)usesCompactSeparators;
 
 @end

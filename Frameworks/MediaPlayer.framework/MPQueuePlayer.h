@@ -4,6 +4,7 @@
 
 @interface MPQueuePlayer : NSObject <MPAVRoutingControllerDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
+    unsigned long long _allowsExternalPlaybackRevisionID;
     AVPlayerItem *_currentItem;
     struct { 
         long long value; 
@@ -25,12 +26,14 @@
     BOOL _routeDidChangeDuringPlaybackQueueTransaction;
     MPAVRoutingController *_routingController;
     int _status;
+    unsigned long long _usesAudioOnlyModeForExternalPlaybackRevisionID;
+    unsigned long long _usesExternalPlaybackWhileExternalScreenIsActiveRevisionID;
 }
 
 @property (nonatomic, readonly) int _externalProtectionStatus;
 @property (nonatomic, readonly) AVPlayer *_player;
 @property (nonatomic) int actionAtItemEnd;
-@property (nonatomic) BOOL allowsExternalPlayback;
+@property (nonatomic, readonly) BOOL allowsExternalPlayback;
 @property (getter=isClosedCaptionDisplayEnabled, nonatomic) BOOL closedCaptionDisplayEnabled;
 @property (nonatomic, readonly) AVPlayerItem *currentItem;
 @property (readonly, copy) NSString *debugDescription;
@@ -51,11 +54,12 @@
 @property (nonatomic) float rate;
 @property (nonatomic, readonly) int status;
 @property (readonly) Class superclass;
-@property (nonatomic) BOOL usesAudioOnlyModeForExternalPlayback;
-@property (nonatomic) BOOL usesExternalPlaybackWhileExternalScreenIsActive;
+@property (nonatomic, readonly) BOOL usesAudioOnlyModeForExternalPlayback;
+@property (nonatomic, readonly) BOOL usesExternalPlaybackWhileExternalScreenIsActive;
 
 - (void).cxx_destruct;
 - (BOOL)_CALayerDestinationIsTVOut;
+- (void)_currentItemDidChangeNotification:(id)arg1;
 - (int)_externalProtectionStatus;
 - (id)_player;
 - (BOOL)_resumePlayback:(double)arg1 error:(id*)arg2;
@@ -106,7 +110,7 @@
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)seekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (void)setActionAtItemEnd:(int)arg1;
-- (void)setAllowsExternalPlayback:(BOOL)arg1;
+- (void)setAllowsExternalPlayback:(BOOL)arg1 shouldIgnorePlaybackQueueTransactions:(BOOL)arg2;
 - (void)setClosedCaptionDisplayEnabled:(BOOL)arg1;
 - (void)setCurrentPlaybackQueueTransactionDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setDefaultItemEQPresetType:(int)arg1;
@@ -115,8 +119,8 @@
 - (void)setMediaSelectionCriteria:(id)arg1 forMediaCharacteristic:(id)arg2;
 - (void)setPlaybackQueueCommitHandler:(id /* block */)arg1;
 - (void)setRate:(float)arg1;
-- (void)setUsesAudioOnlyModeForExternalPlayback:(BOOL)arg1;
-- (void)setUsesExternalPlaybackWhileExternalScreenIsActive:(BOOL)arg1;
+- (void)setUsesAudioOnlyModeForExternalPlayback:(BOOL)arg1 shouldIgnorePlaybackQueueTransactions:(BOOL)arg2;
+- (void)setUsesExternalPlaybackWhileExternalScreenIsActive:(BOOL)arg1 shouldIgnorePlaybackQueueTransactions:(BOOL)arg2;
 - (int)status;
 - (BOOL)usesAudioOnlyModeForExternalPlayback;
 - (BOOL)usesExternalPlaybackWhileExternalScreenIsActive;

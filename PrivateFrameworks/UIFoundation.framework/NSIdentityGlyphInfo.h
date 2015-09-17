@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSIdentityGlyphInfo : NSGlyphInfo {
+@interface NSIdentityGlyphInfo : NSGlyphInfo <NSSecureCoding> {
     NSFont *_font;
     unsigned int _glyph;
 }
 
 + (id)glyphInfoWithGlyph:(unsigned int)arg1 forFont:(id)arg2 baseString:(id)arg3;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (id)_font;
 - (unsigned int)_glyph;

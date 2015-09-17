@@ -16,7 +16,6 @@
 - (id)inputImage;
 - (id)inputTransform;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputTransform:(id)arg1;
 

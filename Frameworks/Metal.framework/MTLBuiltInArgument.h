@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLBuiltInArgument : MTLArgument {
+@interface MTLBuiltInArgument : MTLArgumentInternal {
     unsigned short _builtInDataType;
     unsigned short _builtInType;
 }

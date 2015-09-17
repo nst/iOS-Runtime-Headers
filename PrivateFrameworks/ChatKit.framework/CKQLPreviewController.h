@@ -12,6 +12,7 @@
 - (void)dealloc;
 - (id)init;
 - (int)numberOfPreviewItemsInPreviewController:(id)arg1;
+- (id)previewActions;
 - (id)previewController:(id)arg1 previewItemAtIndex:(int)arg2;
 - (id)previewItems;
 - (void)setDataSource:(id)arg1;

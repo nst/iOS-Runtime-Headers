@@ -9,6 +9,7 @@
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)encodeWithCoder:(id)arg1;

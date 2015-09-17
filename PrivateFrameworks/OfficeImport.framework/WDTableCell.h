@@ -15,6 +15,7 @@
 - (void)clearProperties;
 - (int)compareIndex:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)identifier;
 - (unsigned int)index;
 - (id)initWithRow:(id)arg1 at:(unsigned int)arg2;

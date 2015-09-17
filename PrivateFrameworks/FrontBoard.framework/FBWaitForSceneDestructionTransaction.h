@@ -14,6 +14,7 @@
 @property (readonly) Class superclass;
 
 - (void)_begin;
+- (BOOL)_canBeInterrupted;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;
 - (void)dealloc;

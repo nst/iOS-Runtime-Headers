@@ -2,16 +2,49 @@
    Image: /System/Library/PrivateFrameworks/NearField.framework/NearField
  */
 
-@interface NFHardwareManager : NSObject {
-    NFDaemonProxy *_nfcd;
+@interface NFHardwareManager : NSObject <NFHardwareManagerCallbacks, NSXPCConnectionDelegate> {
+    NSXPCConnection *_connection;
+    NSMutableSet *_eventListeners;
+    BOOL _hasEventListener;
+    NSArray *_secureElements;
+    NSDictionary *_secureElementsById;
+    NSMutableSet *_sessions;
 }
+
+@property (readonly) NFHardwareControllerInfo *controllerInfo;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedHardwareManager;
 
+- (void)_connectIfNeeded;
+- (id)boosterInfo;
+- (id)controllerInfo;
 - (void)dealloc;
+- (void)didCloseXPCConnection:(id)arg1;
+- (void)didInvalidateXPCConnection:(id)arg1;
 - (id)getBoosterInfo;
 - (id)getControllerInfo;
 - (id)getSecureElementInfo;
 - (id)init;
+- (void)registerEventListener:(id)arg1;
+- (id)rfSettings;
+- (id)secureElementWithIdentifier:(id)arg1;
+- (void)secureElementWithIdentifier:(id)arg1 didChangeRestrictedMode:(BOOL)arg2;
+- (id)secureElements;
+- (void)sessionDidEnd:(id)arg1;
+- (BOOL)setFieldDetectEnabled:(BOOL)arg1;
+- (id)startContactlessPaymentSession:(id /* block */)arg1;
+- (id)startContactlessUICCSession:(id /* block */)arg1;
+- (id)startECommercePaymentSession:(id /* block */)arg1;
+- (id)startFieldDetectSession:(id /* block */)arg1;
+- (id)startLoyaltyAndContactlessPaymentSession:(id /* block */)arg1;
+- (id)startSecureElementSession:(id)arg1 didStartCallback:(id /* block */)arg2;
+- (id)startValueAddedServiceSession:(id /* block */)arg1;
+- (id)startValueAddedServiceSession:(id)arg1 callback:(id /* block */)arg2;
+- (BOOL)triggerDelayedWake:(unsigned char)arg1;
+- (void)unregisterEventListener:(id)arg1;
 
 @end

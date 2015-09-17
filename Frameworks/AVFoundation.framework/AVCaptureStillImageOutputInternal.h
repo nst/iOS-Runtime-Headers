@@ -13,6 +13,8 @@
     BOOL isCapturingPhoto;
     float jpegQuality;
     BOOL jpegQualitySpecified;
+    BOOL lensStabilizationDuringBracketedCaptureEnabled;
+    BOOL lensStabilizationDuringBracketedCaptureSupported;
     unsigned int maxBracketedCaptureCount;
     BOOL noiseReductionEnabled;
     NSDictionary *outputSettings;

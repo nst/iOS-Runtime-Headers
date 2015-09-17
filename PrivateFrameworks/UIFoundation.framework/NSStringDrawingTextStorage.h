@@ -55,6 +55,7 @@
 - (id)cuiStyleEffects;
 - (struct CGPoint { float x1; float x2; })defaultTextContainerOriginForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)defaultTighteningFactor;
+- (void)drawTextContainer:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 graphicsContext:(struct CGContext { }*)arg4 baselineMode:(BOOL)arg5 scrollable:(BOOL)arg6 padding:(float)arg7;
 - (void)drawTextContainer:(id)arg1 withRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 graphicsContext:(struct CGContext { }*)arg3 baselineMode:(BOOL)arg4 scrollable:(BOOL)arg5 padding:(float)arg6;
 - (void)fontSetChanged;
 - (id)init;

@@ -8,6 +8,7 @@
     HMDCloudDataSyncManager *_cloudDataSyncManager;
     HMDHomeManager *_homeManager;
     HMDIdentityRegistry *_identityRegistry;
+    HMDIDSMessageTransport *_idsProxyTransport;
     HMDIDSMessageTransport *_idsTransport;
     HMDIDSMessageDispatcher *_messageDispatcher;
     HMDMessageFilterChain *_msgFilterChain;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) HMDCloudDataSyncManager *cloudDataSyncManager;
 @property (nonatomic, retain) HMDHomeManager *homeManager;
 @property (nonatomic, retain) HMDIdentityRegistry *identityRegistry;
+@property (nonatomic, retain) HMDIDSMessageTransport *idsProxyTransport;
 @property (nonatomic, retain) HMDIDSMessageTransport *idsTransport;
 @property (nonatomic, retain) HMDIDSMessageDispatcher *messageDispatcher;
 @property (nonatomic, retain) HMDMessageFilterChain *msgFilterChain;
@@ -39,6 +41,7 @@
 - (void)executeBTAJob:(const char *)arg1 withXPCDict:(id)arg2;
 - (id)homeManager;
 - (id)identityRegistry;
+- (id)idsProxyTransport;
 - (id)idsTransport;
 - (id)init;
 - (void)initBackgroundTaskAgentForTimerTriggers;
@@ -51,6 +54,7 @@
 - (void)setCloudDataSyncManager:(id)arg1;
 - (void)setHomeManager:(id)arg1;
 - (void)setIdentityRegistry:(id)arg1;
+- (void)setIdsProxyTransport:(id)arg1;
 - (void)setIdsTransport:(id)arg1;
 - (void)setMessageDispatcher:(id)arg1;
 - (void)setMsgFilterChain:(id)arg1;

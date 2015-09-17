@@ -29,9 +29,13 @@
 @property (readonly, retain) NSXPCListenerEndpoint *endpoint;
 @property (retain) NSXPCInterface *exportedInterface;
 @property (retain) id exportedObject;
+@property (nonatomic, readonly, copy) NSString *hk_bundleIdentifier;
+@property (nonatomic, readonly) BOOL hk_isAppExtension;
 @property (copy) id /* block */ interruptionHandler;
 @property (copy) id /* block */ invalidationHandler;
+@property (nonatomic, readonly) NSString *processBundleIdentifier;
 @property (readonly) int processIdentifier;
+@property (nonatomic, readonly) NSString *processName;
 @property (retain) NSXPCInterface *remoteObjectInterface;
 @property (readonly, retain) id remoteObjectProxy;
 @property (readonly, copy) NSString *serviceName;
@@ -60,15 +64,17 @@
 - (void)_pauseProgress:(unsigned long long)arg1;
 - (id)_queue;
 - (void)_removeImportedProxy:(id)arg1;
+- (void)_resumeProgress:(unsigned long long)arg1;
 - (void)_sendDesistForProxy:(id)arg1;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5;
 - (void)_sendInvocation:(id)arg1 withProxy:(id)arg2 remoteInterface:(id)arg3 withErrorHandler:(id /* block */)arg4 timeout:(double)arg5 userInfo:(id)arg6;
+- (void)_sendProgressMessage:(id)arg1 forSequence:(unsigned long long)arg2;
 - (void)_setQueue:(id)arg1;
 - (void)_setTargetUserIdentifier:(unsigned int)arg1;
 - (void)_setUUID:(id)arg1;
-- (void)_updateProgress:(unsigned long long)arg1 completed:(long long)arg2 total:(long long)arg3;
+- (id)_unboostingRemoteObjectProxy;
 - (id)_xpcConnection;
 - (void)addBarrierBlock:(id /* block */)arg1;
 - (int)auditSessionIdentifier;
@@ -112,8 +118,14 @@
 - (void)start;
 - (void)stop;
 - (void)suspend;
+- (id)synchronousRemoteObjectProxyWithErrorHandler:(id /* block */)arg1;
 - (id)userInfo;
 - (id)valueForEntitlement:(id)arg1;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (id)hk_bundleIdentifier;
+- (BOOL)hk_isAppExtension;
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
@@ -128,9 +140,10 @@
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
-+ (id)callServicesAccountsControllerDelegateXPCInterface;
++ (id)callServicesClientXPCInterface;
 + (id)callServicesDaemonDelegateXPCInterface;
-+ (id)callServicesDaemonObserverXPCInterface;
-+ (void)dispatchMainIfCurrentXPCConnection:(id /* block */)arg1;
+
+- (id)processBundleIdentifier;
+- (id)processName;
 
 @end

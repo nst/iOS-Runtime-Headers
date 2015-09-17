@@ -3,8 +3,6 @@
  */
 
 @interface UIClassicController : NSObject {
-    UIView *_chromeView;
-    BOOL _hidesClassicChrome;
     BOOL _hidesStatusBarFiller;
     UIStatusBarViewController *_statusBarViewController;
     UIWindow *_window;
@@ -13,6 +11,7 @@
 
 + (id)sharedClassicController;
 
+- (void).cxx_destruct;
 - (void)_classicChangeStatusBarOrientation:(id)arg1;
 - (void)_classicChangeStatusBarOrientationFinished:(id)arg1 finished:(BOOL)arg2 context:(id)arg3;
 - (void)_initializeStatusBarOrientation;
@@ -20,7 +19,6 @@
 - (BOOL)_shouldHideStatusBar;
 - (BOOL)_supportsZoom;
 - (id)_window;
-- (void)dealloc;
 - (BOOL)drawsStatusBarFiller;
 - (BOOL)isClassicControlWindow:(id)arg1;
 - (BOOL)isZoomed;

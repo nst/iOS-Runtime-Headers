@@ -6,12 +6,17 @@
 @optional
 
 - (MKActivityViewController *)activityViewControllerForPlaceViewController:(_MKPlaceViewController *)arg1;
+- (void)placeViewController:(void *)arg1 addFavoriteForMapItem:(void *)arg2 title:(void *)arg3 result:(void *)arg4; // needs 4 arg types, found 9: _MKPlaceViewController *, MKMapItem *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didBecomeContact:(CNContact *)arg2;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectActivityOfType:(NSString *)arg2 completed:(BOOL)arg3;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectAddressWithIdentifier:(int)arg2;
-- (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectDirectionsFromAddressWithIdentifier:(int)arg2;
-- (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectDirectionsToAddressWithIdentifier:(int)arg2;
+- (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectReroute:(GEOTransitSuggestedRoute *)arg2 withDecoderData:(GEOTransitDecoderData *)arg3 withOrigin:(GEOComposedWaypoint *)arg4;
 - (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectRerouteFromAddressWithIdentifier:(int)arg2;
+- (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectRouteToCurrentSearchResultWithMode:(unsigned int)arg2;
+- (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectTransitConnectionInformation:(id <GEOTransitConnectionInfo>)arg2;
+- (void)placeViewController:(_MKPlaceViewController *)arg1 didSelectTransitLine:(id <MKTransitLineMarker>)arg2;
+- (void)placeViewController:(void *)arg1 hasFavoriteForMapItem:(void *)arg2 result:(void *)arg3; // needs 3 arg types, found 8: _MKPlaceViewController *, MKMapItem *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)placeViewController:(void *)arg1 removeFavoriteForMapItem:(void *)arg2 result:(void *)arg3; // needs 3 arg types, found 8: _MKPlaceViewController *, MKMapItem *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (BOOL)placeViewController:(_MKPlaceViewController *)arg1 shouldOpenHomePage:(CNLabeledValue *)arg2;
 - (void)placeViewControllerDidDismiss:(_MKPlaceViewController *)arg1;
 - (void)placeViewControllerDidSelectDisplayedAddress:(_MKPlaceViewController *)arg1;

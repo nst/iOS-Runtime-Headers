@@ -6,7 +6,7 @@
     float _EUVolumeLimit;
     NSString *_category;
     <NACVolumeControllerDelegate> *_delegate;
-    float _hapticIntensity;
+    NSNumber *_hapticIntensity;
     NACEventThrottler *_hapticThrottler;
     BOOL _isObserving;
     float _lastReceivedVolumeValue;
@@ -17,7 +17,7 @@
     BOOL _systemMuted;
     BOOL _volumeControlAvailable;
     NACEventThrottler *_volumeThrottler;
-    float _volumeValue;
+    NSNumber *_volumeValue;
     BOOL _volumeWarningEnabled;
     NACXPCClient *_xpcClient;
 }

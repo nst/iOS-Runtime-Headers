@@ -18,6 +18,7 @@
     unsigned int _alignmentSize;
     UIView *_colorView;
     UIMorphingLabelGlyphSet *_dstGlyphSet;
+    BOOL _enableAnimation;
     UIFont *_font;
     NSMutableArray *_hiddenGlyphViews;
     BOOL _isDoingFastAnimation;
@@ -50,6 +51,7 @@
     } _visibleRect;
 }
 
+@property (nonatomic) BOOL enableAnimation;
 @property (nonatomic, retain) UIFont *font;
 @property (nonatomic) BOOL suppressLayoutSubviews;
 @property (nonatomic, copy) NSString *text;
@@ -83,6 +85,7 @@
 - (void)copyStateFromGlyph:(id)arg1 toGlyph:(id)arg2;
 - (float)currentMediaTime;
 - (void)dealloc;
+- (BOOL)enableAnimation;
 - (float)flushAmount;
 - (id)font;
 - (id)glyphViewWithImage:(id)arg1 isColorGlyph:(BOOL)arg2;
@@ -96,6 +99,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (float)requiredWidthForText:(id)arg1;
+- (void)setEnableAnimation:(BOOL)arg1;
 - (void)setFont:(id)arg1;
 - (void)setSuppressLayoutSubviews:(BOOL)arg1;
 - (void)setText:(id)arg1;

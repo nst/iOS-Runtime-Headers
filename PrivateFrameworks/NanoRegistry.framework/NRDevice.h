@@ -18,6 +18,8 @@
 @property (nonatomic, retain) NSPointerArray *promiscuousObservers;
 @property (nonatomic, retain) NSMutableDictionary *properties;
 
+// Image: /System/Library/PrivateFrameworks/NanoRegistry.framework/NanoRegistry
+
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -57,7 +59,12 @@
 - (void)setPromiscuousObservers:(id)arg1;
 - (void)setProperties:(id)arg1;
 - (BOOL)setValue:(id)arg1 forProperty:(id)arg2;
+- (BOOL)supportsCapability:(id)arg1;
 - (void)unregisterForPropertyChanges:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)valueForProperty:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
+
+- (unsigned int)bltVersion;
 
 @end

@@ -26,6 +26,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (void)enumerateEmphasisRangesUsingBlock:(id /* block */)arg1;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1 emphasisRanges:(id)arg2;
 - (BOOL)isEqual:(id)arg1;

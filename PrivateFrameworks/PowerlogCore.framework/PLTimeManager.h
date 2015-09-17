@@ -36,6 +36,7 @@
 - (void)setTimeReferences:(id)arg1;
 - (id)storageOperator;
 - (id)storageQueue;
+- (double)timeOffsetForTimeReference:(int)arg1;
 - (id)timeReferences;
 - (void)unregisterForTimeChangedCallbackWithIdentifier:(id)arg1 forTimeReference:(int)arg2;
 

@@ -4,7 +4,7 @@
 
 @interface SCNActionGroup : SCNAction {
     NSArray *_actions;
-    struct SCNCActionGroup { int (**x1)(); float x2; id /* block */ x3; id x4; double x5; double x6; float x7; float x8; double x9; bool x10; bool x11; id /* block */ x12; struct __CFString {} *x13; int x14; float x15; float x16; float x17; float x18; struct list<SCNCAction *, std::__1::allocator<SCNCAction *> > { struct __list_node_base<SCNCAction *, void *> { struct __list_node<SCNCAction *, void *> {} *x_1_2_1; struct __list_node<SCNCAction *, void *> {} *x_1_2_2; } x_19_1_1; struct __compressed_pair<unsigned long, std::__1::allocator<std::__1::__list_node<SCNCAction *, void *> > > { unsigned long x_2_2_1; } x_19_1_2; } x19; } *_mycaction;
+    void *_mycaction;
 }
 
 + (id)groupWithActions:(id)arg1;
@@ -18,5 +18,6 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCustom;
 - (id)reversedAction;
+- (void)setupWithActions:(id)arg1;
 
 @end

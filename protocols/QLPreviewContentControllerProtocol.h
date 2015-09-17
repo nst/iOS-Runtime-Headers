@@ -12,6 +12,7 @@
 - (int)currentPreviewItemIndex;
 - (<QLPreviewContentDataSource> *)dataSource;
 - (<QLPreviewContentDelegate> *)delegate;
+- (void)dismissTransitionIsReadyToFinishSynchronizedWithBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)endScrubbing;
 - (void)enterBackground;
 - (void)forceResignFirstResponder;
@@ -26,6 +27,7 @@
 - (void)setDataSource:(id <QLPreviewContentDataSource>)arg1;
 - (void)setDelegate:(id <QLPreviewContentDelegate>)arg1;
 - (void)setLoadingTextForMissingFiles:(NSString *)arg1;
+- (void)setOrbMode:(unsigned int)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewMode:(int)arg1;
 - (void)setTransitioning:(void *)arg1 synchronizedWithBlock:(void *)arg2; // needs 2 arg types, found 6: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*

@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAMovieV2TheaterShowtimeListCell : SADomainObject
+@interface SAMovieV2TheaterShowtimeListCell : SADomainObject {
+    NSArray *_displayableShowtimes;
+}
 
 @property (nonatomic) BOOL bookable;
 @property (nonatomic, copy) NSArray *displayableShowtimes;
@@ -25,6 +27,5 @@
 - (void)setTheaterName:(id)arg1;
 - (id)showtimeSnippet;
 - (id)theaterName;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

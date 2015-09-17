@@ -2,7 +2,11 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAStockAddCompleted : SABaseCommand <SAServerBoundCommand>
+@interface SAStockAddCompleted : SABaseCommand <SAServerBoundCommand> {
+    SAStockObject *_aceStock;
+    NSURL *_identifier;
+    NSArray *_stockReferences;
+}
 
 @property (nonatomic, copy) NSString *aceId;
 @property (nonatomic, retain) SAStockObject *aceStock;

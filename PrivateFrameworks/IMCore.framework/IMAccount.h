@@ -60,6 +60,7 @@
     IMServiceImpl *_service;
     id _smallImage;
     NSMutableDictionary *_sortOrders;
+    NSString *_strippedLogin;
     NSDictionary *_subtypeInfo;
     BOOL _syncedWithRemoteBuddyList;
     NSArray *_targetGroupState;
@@ -139,6 +140,7 @@
 @property (nonatomic, readonly) IMServiceImpl *service;
 @property (nonatomic, readonly) NSString *serviceName;
 @property (nonatomic, readonly) NSString *shortName;
+@property (nonatomic, readonly, retain) NSString *strippedLogin;
 @property (nonatomic, readonly) BOOL supportsAuthorization;
 @property (nonatomic, readonly) BOOL supportsRegistration;
 @property (nonatomic, readonly) NSString *temporaryPassword;
@@ -428,6 +430,7 @@
 - (void)stopWatchingIMHandle:(id)arg1;
 - (id)stringForKey:(id)arg1;
 - (id)stringForPreferenceKey:(id)arg1;
+- (id)strippedLogin;
 - (BOOL)supportsAuthorization;
 - (BOOL)supportsRegistration;
 - (void)syncWithRemoteBuddies;

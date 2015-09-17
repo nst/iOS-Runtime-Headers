@@ -30,6 +30,7 @@
 - (id)metricsOverrides;
 - (id)nameLabel;
 - (id)player;
+- (id)popoverSourceView;
 - (void)prepareForReuse;
 - (void)setIconView:(id)arg1;
 - (void)setMetricsOverrides:(id)arg1;

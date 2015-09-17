@@ -34,6 +34,8 @@
 @property (nonatomic) int status;
 @property (nonatomic) BOOL timeChanged;
 
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
+
 - (BOOL)attendeeReplyChanged;
 - (id)attendees;
 - (BOOL)dateChanged;
@@ -65,5 +67,19 @@
 - (id)startDateForNextOccurrence;
 - (int)status;
 - (BOOL)timeChanged;
+
+// Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
+
+- (id)_attachmentString;
+- (id)_attendeeString;
+- (id)_dateString;
+- (id)_errorString;
+- (id)_locationString;
+- (id)_organizerString;
+- (void)_populateStringsForInvitation:(id)arg1 options:(unsigned int)arg2;
+- (void)_populateStringsForReply:(id)arg1 options:(unsigned int)arg2;
+- (id)messageStringForDescriptionWithOptions:(unsigned int)arg1;
+- (id)messageStringsForDescriptionWithOptions:(unsigned int)arg1;
+- (BOOL)supportsDisplay;
 
 @end

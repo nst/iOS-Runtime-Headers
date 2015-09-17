@@ -3,34 +3,49 @@
  */
 
 @interface SSVPlaybackLeaseRequest : NSObject <NSCopying> {
-    NSString *_bagKey;
+    int _actionType;
+    NSData *_certificateData;
     NSURL *_certificateURL;
+    unsigned long long _kdChannelIdentifier;
+    unsigned long long _kdMovieIdentifier;
+    int _leaseType;
     NSMutableDictionary *_parameters;
-    BOOL _shouldIncludeFairPlayLeaseRequest;
     BOOL _startsLeaseSession;
-    unsigned long _transactionType;
     NSURL *_url;
 }
 
+@property (nonatomic) unsigned long long KDChannelIdentifier;
+@property (getter=_KDMovieIdentifier, setter=_setKDMovieIdentifier:, nonatomic) unsigned long long _KDMovieIdentifier;
 @property (getter=_URL, setter=_setURL:, nonatomic, copy) NSURL *_URL;
-@property (getter=_URLBagKey, setter=_setURLBagKey:, nonatomic, copy) NSString *_URLBagKey;
-@property (getter=_shouldIncludeFairPlayLeaseRequest, setter=_setShouldIncludeFairPlayLeaseRequest:, nonatomic) BOOL _shouldIncludeFairPlayLeaseRequest;
-@property (getter=_transactionType, setter=_setTransactionType:, nonatomic) unsigned long _transactionType;
+@property (getter=_URLBagKey, nonatomic, readonly, copy) NSString *_URLBagKey;
+@property (getter=_actionParameterValue, nonatomic, readonly, copy) NSString *_actionParameterValue;
+@property (getter=_actionType, setter=_setActionType:, nonatomic) int _actionType;
+@property (getter=_certificateData, setter=_setCertificateData:, nonatomic, copy) NSData *_certificateData;
+@property (getter=_leaseType, nonatomic, readonly) int _leaseType;
 @property (nonatomic, copy) NSDictionary *parameterValues;
 @property (nonatomic) BOOL startsLeaseSession;
 
++ (id)_requestWithType:(int)arg1;
+
 - (void).cxx_destruct;
+- (unsigned long long)KDChannelIdentifier;
+- (unsigned long long)_KDMovieIdentifier;
 - (id)_URL;
 - (id)_URLBagKey;
-- (void)_setShouldIncludeFairPlayLeaseRequest:(BOOL)arg1;
-- (void)_setTransactionType:(unsigned long)arg1;
+- (id)_actionParameterValue;
+- (int)_actionType;
+- (void)_applyValuesToCopy:(id)arg1;
+- (id)_certificateData;
+- (id)_copyBodyDictionaryWithFairPlaySession:(void**)arg1;
+- (id)_copyWithLeaseType:(int)arg1;
+- (int)_leaseType;
+- (void)_setActionType:(int)arg1;
+- (void)_setCertificateData:(id)arg1;
+- (void)_setKDMovieIdentifier:(unsigned long long)arg1;
 - (void)_setURL:(id)arg1;
-- (void)_setURLBagKey:(id)arg1;
-- (BOOL)_shouldIncludeFairPlayLeaseRequest;
-- (unsigned long)_transactionType;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)init;
 - (id)parameterValues;
+- (void)setKDChannelIdentifier:(unsigned long long)arg1;
 - (void)setParameterValues:(id)arg1;
 - (void)setStartsLeaseSession:(BOOL)arg1;
 - (void)setValue:(id)arg1 forParameter:(id)arg2;

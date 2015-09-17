@@ -24,6 +24,7 @@
 
 + (id)settingsControllerModule;
 
+- (void).cxx_destruct;
 - (BOOL)analysisFailureOverlayVisible;
 - (BOOL)analysisLoggingEnabled;
 - (BOOL)analysisLoggingOverlayVisible;

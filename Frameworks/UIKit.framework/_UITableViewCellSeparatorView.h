@@ -13,7 +13,7 @@
 @property (nonatomic) BOOL drawsWithVibrantLightMode;
 @property (nonatomic, retain) UIVisualEffect *separatorEffect;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (BOOL)drawsWithVibrantLightMode;
 - (void)layoutSubviews;
 - (id)separatorEffect;

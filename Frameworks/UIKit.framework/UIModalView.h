@@ -86,6 +86,7 @@
 + (id)topMostAlert;
 + (id)visibleAlert;
 
+- (void).cxx_destruct;
 - (id)_addButtonWithTitle:(id)arg1;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)_addButtonWithTitleText:(id)arg1;

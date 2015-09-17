@@ -17,13 +17,11 @@
 + (id)customAttributes;
 
 - (id)_kernel;
-- (id)customAttributes;
 - (id)inputHeight;
 - (id)inputHighLimit;
 - (id)inputImage;
 - (id)inputLowLimit;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputHeight:(id)arg1;
 - (void)setInputHighLimit:(id)arg1;
 - (void)setInputImage:(id)arg1;

@@ -7,7 +7,6 @@
 @property (nonatomic, retain) NSSet *assetAttributes;
 @property (nonatomic) short cloudLocalState;
 @property (nonatomic, retain) NSString *cloudMasterGUID;
-@property (nonatomic) short cloudServerState;
 @property (nonatomic, retain) NSDate *creationDate;
 @property (nonatomic) short fullSizeJPEGSource;
 @property (nonatomic, retain) NSDate *importDate;
@@ -35,5 +34,6 @@
 - (id)cloudResourcesForResourceType:(unsigned int)arg1;
 - (id)cplResourceForResourceType:(unsigned int)arg1 forAssetUuid:(id)arg2;
 - (id)description;
+- (unsigned long long)sizeOfOriginal;
 
 @end

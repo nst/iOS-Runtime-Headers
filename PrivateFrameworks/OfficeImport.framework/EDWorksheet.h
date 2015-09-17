@@ -27,6 +27,7 @@
 - (id)conditionalFormattings;
 - (double)defaultColumnWidth;
 - (unsigned short)defaultRowHeight;
+- (id)description;
 - (bool)fitToPage;
 - (bool)hasMergedCells;
 - (BOOL)hasMergedCol;

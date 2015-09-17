@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSParagraphStyle : NSObject <NSCoding, NSCopying, NSMutableCopying> {
+@interface NSParagraphStyle : NSObject <NSCopying, NSMutableCopying, NSSecureCoding> {
     float _defaultTabInterval;
     id _extraData;
     float _firstLineHeadIndent;
@@ -13,7 +13,8 @@
         unsigned int isNaturalDirection : 1; 
         unsigned int rightToLeftDirection : 1; 
         unsigned int fixedMultiple : 2; 
-        unsigned int refCount : 19; 
+        unsigned int tightensForTruncation : 1; 
+        unsigned int refCount : 18; 
     } _flags;
     float _headIndent;
     float _lineSpacing;
@@ -24,21 +25,22 @@
     float _tailIndent;
 }
 
-@property (readonly) int alignment;
-@property (readonly) int baseWritingDirection;
+@property (nonatomic, readonly) int alignment;
+@property (nonatomic, readonly) BOOL allowsDefaultTighteningForTruncation;
+@property (nonatomic, readonly) int baseWritingDirection;
 @property (nonatomic, readonly) float defaultTabInterval;
-@property (readonly) float firstLineHeadIndent;
-@property (readonly) float headIndent;
-@property (readonly) float hyphenationFactor;
-@property (readonly) int lineBreakMode;
-@property (readonly) float lineHeightMultiple;
-@property (readonly) float lineSpacing;
-@property (readonly) float maximumLineHeight;
-@property (readonly) float minimumLineHeight;
-@property (readonly) float paragraphSpacing;
-@property (readonly) float paragraphSpacingBefore;
+@property (nonatomic, readonly) float firstLineHeadIndent;
+@property (nonatomic, readonly) float headIndent;
+@property (nonatomic, readonly) float hyphenationFactor;
+@property (nonatomic, readonly) int lineBreakMode;
+@property (nonatomic, readonly) float lineHeightMultiple;
+@property (nonatomic, readonly) float lineSpacing;
+@property (nonatomic, readonly) float maximumLineHeight;
+@property (nonatomic, readonly) float minimumLineHeight;
+@property (nonatomic, readonly) float paragraphSpacing;
+@property (nonatomic, readonly) float paragraphSpacingBefore;
 @property (nonatomic, readonly, copy) NSArray *tabStops;
-@property (readonly) float tailIndent;
+@property (nonatomic, readonly) float tailIndent;
 
 // Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
@@ -46,14 +48,16 @@
 + (id)defaultParagraphStyle;
 + (int)defaultWritingDirectionForLanguage:(id)arg1;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (void)_allocExtraData;
 - (void)_deallocExtraData;
 - (id)_initWithParagraphStyle:(id)arg1;
-- (BOOL)_isDeallocating;
 - (BOOL)_isSuitableForFastStringDrawingWithAlignment:(int*)arg1 lineBreakMode:(int*)arg2 tighteningFactorForTruncation:(float*)arg3;
-- (BOOL)_tryRetain;
+- (unsigned long)_lineBoundsOptions;
 - (int)alignment;
+- (BOOL)allowsDefaultTighteningForTruncation;
+- (BOOL)allowsHangingPunctuation;
 - (int)baseWritingDirection;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -69,6 +73,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (int)lineBreakMode;
+- (unsigned int)lineBreakStrategy;
 - (float)lineHeightMultiple;
 - (float)lineSpacing;
 - (float)maximumLineHeight;
@@ -76,17 +81,20 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (float)paragraphSpacing;
 - (float)paragraphSpacingBefore;
-- (oneway void)release;
-- (id)retain;
-- (unsigned int)retainCount;
 - (id)tabStops;
 - (float)tailIndent;
 - (id)textBlocks;
 - (id)textLists;
 - (float)tighteningFactorForTruncation;
+- (BOOL)usesOpticalAlignment;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (int)_ui_resolvedTextAlignment;
+- (int)_ui_resolvedTextAlignmentForUserInterfaceLayoutDirection:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)icMutableDefaultParagraphStyle;
 
 @end

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreKitUI.framework/StoreKitUI
  */
 
-@interface SKUIStorePageSectionsViewController : SKUIViewController <SKUIItemStateCenterObserver, SKUILayoutCacheDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUIViewControllerTesting, UICollectionViewDataSource, UIGestureRecognizerDelegate> {
+@interface SKUIStorePageSectionsViewController : SKUIViewController <SKUIItemStateCenterObserver, SKUILayoutCacheDelegate, SKUIProductPageOverlayDelegate, SKUIResourceLoaderDelegate, SKUIStorePageCollectionViewDelegate, SKUIViewControllerTesting, UICollectionViewDataSource, UIGestureRecognizerDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
     SKUIMetricsImpressionSession *_activeMetricsImpressionSession;
     SKUIProductPageOverlayController *_activeOverlayController;
     SKUICollectionView *_collectionView;
@@ -45,6 +45,7 @@
     UIView *_splitsDividerView;
     SKUIStackedBar *_stackedBar;
     SKUILayoutCache *_textLayoutCache;
+    <UIViewControllerPreviewing> *_viewControllerPreviewing;
 }
 
 @property (nonatomic, retain) SKUIMetricsImpressionSession *activeMetricsImpressionSession;
@@ -150,6 +151,7 @@
 - (id)indexBarControl;
 - (id)indexPathsForGradientItemsInCollectionView:(id)arg1 layout:(id)arg2;
 - (id)indexPathsForPinningItemsInCollectionView:(id)arg1 layout:(id)arg2;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLayoutStyle:(int)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)invalidateAndReload;
@@ -163,6 +165,8 @@
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (BOOL)performTestWithName:(id)arg1 options:(id)arg2;
 - (int)pinningTransitionStyle;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)pullToRefreshDelegate;
 - (void)reloadSections:(id)arg1;
@@ -189,5 +193,6 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

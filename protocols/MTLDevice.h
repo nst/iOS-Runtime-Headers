@@ -5,12 +5,18 @@
 
 @required
 
+- (BOOL)isDepth24Stencil8PixelFormatSupported;
+- (BOOL)isHeadless;
+- (BOOL)isLowPower;
+- (struct { unsigned int x1; unsigned int x2; unsigned int x3; })maxThreadsPerThreadgroup;
 - (NSString *)name;
 - (<MTLBuffer> *)newBufferWithBytes:(const void*)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3;
 - (<MTLBuffer> *)newBufferWithBytesNoCopy:(void *)arg1 length:(void *)arg2 options:(void *)arg3 deallocator:(void *)arg4; // needs 4 arg types, found 10: void*, unsigned int, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, unsigned int, void*
 - (<MTLBuffer> *)newBufferWithLength:(unsigned int)arg1 options:(unsigned int)arg2;
 - (<MTLCommandQueue> *)newCommandQueue;
 - (<MTLCommandQueue> *)newCommandQueueWithMaxCommandBufferCount:(unsigned int)arg1;
+- (void)newComputePipelineStateWithDescriptor:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 10: MTLComputePipelineDescriptor *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLComputePipelineState> *, MTLComputePipelineReflection *, NSError *, void*
+- (<MTLComputePipelineState> *)newComputePipelineStateWithDescriptor:(MTLComputePipelineDescriptor *)arg1 options:(unsigned int)arg2 reflection:(id*)arg3 error:(id*)arg4;
 - (void)newComputePipelineStateWithFunction:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: <MTLFunction> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLComputePipelineState> *, NSError *, void*
 - (<MTLComputePipelineState> *)newComputePipelineStateWithFunction:(id <MTLFunction>)arg1 error:(id*)arg2;
 - (void)newComputePipelineStateWithFunction:(void *)arg1 options:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 10: <MTLFunction> *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLComputePipelineState> *, MTLComputePipelineReflection *, NSError *, void*
@@ -28,5 +34,6 @@
 - (<MTLSamplerState> *)newSamplerStateWithDescriptor:(MTLSamplerDescriptor *)arg1;
 - (<MTLTexture> *)newTextureWithDescriptor:(MTLTextureDescriptor *)arg1;
 - (BOOL)supportsFeatureSet:(unsigned int)arg1;
+- (BOOL)supportsTextureSampleCount:(unsigned int)arg1;
 
 @end

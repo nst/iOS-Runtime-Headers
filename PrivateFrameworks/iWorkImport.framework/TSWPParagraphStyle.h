@@ -27,6 +27,7 @@
 + (id)propertiesAllowingNSNull;
 + (id)styleSummaryForPropertyMap:(id)arg1;
 
+- (void)addMissingClassProperties;
 - (float)ascent;
 - (id)boxedValueForProperty:(int)arg1 oldBoxedValue:(id)arg2 transformedByTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg3;
 - (void)clearStyleCaches;
@@ -39,7 +40,6 @@
 - (id)initialListStyle;
 - (void)loadFromArchive:(const struct ParagraphStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StyleArchive {} *x5; struct CharacterStylePropertiesArchive {} *x6; struct ParagraphStylePropertiesArchive {} *x7; unsigned int x8; }*)arg1 unarchiver:(id)arg2;
 - (void)localizeForBidi:(BOOL)arg1;
-- (void)localizeForRightToLeft;
 - (SEL)mapThemePropertyMapSelector;
 - (id)mixedObjectWithFraction:(float)arg1 ofObject:(id)arg2;
 - (int)mixingTypeWithObject:(id)arg1 context:(id)arg2;
@@ -51,8 +51,8 @@
 - (void)saveToArchive:(struct ParagraphStyleArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct StyleArchive {} *x5; struct CharacterStylePropertiesArchive {} *x6; struct ParagraphStylePropertiesArchive {} *x7; unsigned int x8; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setInitialListStyle:(id)arg1;
-- (void)setOverridePropertyMap:(id)arg1;
 - (id)styleSummary;
 - (BOOL)transformsFontSizes;
+- (void)willModify;
 
 @end

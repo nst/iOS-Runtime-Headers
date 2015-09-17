@@ -6,6 +6,7 @@
     AVAudioSessionMediaPlayerOnlyInternal *_audioSession;
 }
 
+@property (readonly) BOOL canEnterPIPMode;
 @property (readonly) NSString *category;
 @property (readonly) int currentHardwareInputNumberOfChannels;
 @property (readonly) int currentHardwareOutputNumberOfChannels;
@@ -22,6 +23,7 @@
 - (void)_removeFPListeners;
 - (void)_setFigPlayer:(struct OpaqueFigPlayer { }*)arg1;
 - (id)_weakReference;
+- (BOOL)canEnterPIPMode;
 - (id)category;
 - (int)currentHardwareInputNumberOfChannels;
 - (int)currentHardwareOutputNumberOfChannels;
@@ -34,6 +36,7 @@
 - (id)mode;
 - (double)preferredHardwareSampleRate;
 - (double)preferredIOBufferDuration;
+- (BOOL)setActivationContext:(id)arg1 error:(id*)arg2;
 - (BOOL)setActive:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)setActive:(BOOL)arg1 withFlags:(int)arg2 error:(id*)arg3;
 - (void)setApplicationAudioSession:(BOOL)arg1;

@@ -10,6 +10,7 @@
     double _dateAtFirstTouchPoint;
     <EKEventGestureControllerDelegate> *_delegate;
     BOOL _dragLockDisabled;
+    UILongPressGestureRecognizer *_draggingGestureRecognizer;
     EKDayOccurrenceView *_draggingView;
     EKDayOccurrenceView *_draggingViewSource;
     EKEvent *_event;
@@ -36,10 +37,10 @@
     } _previousTouchPoint;
     double _previousTouchTime;
     float _previousTouchVelocity;
-    UILongPressGestureRecognizer *_recognizer;
     id /* block */ _recurrenceSheetCompletionHandler;
     NSTimer *_scrollTimer;
     NSString *_sessionIdentifierForDebug;
+    UITapGestureRecognizer *_tapGestureRecognizer;
     double _timeSinceEnteredPageMargin;
     struct CGPoint { 
         float x; 
@@ -90,6 +91,7 @@
 - (void)_setTouchOffsetsFromPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setUpAfterForcedStartFromPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setUpAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_tapGesture:(id)arg1;
 - (void)_update;
 - (void)_updateHorizontalDragLockForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;

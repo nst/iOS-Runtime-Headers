@@ -6,7 +6,7 @@
     void *_addressBook;
     ABPeoplePickerNavigationController *_peoplePickerController;
     UILabel *_placeholderLabel;
-    SKUIGiftComposeRecipientView *_recipientView;
+    MFComposeRecipientView *_recipientView;
     SKUIGiftContactSearchController *_searchController;
     UIView *_topBorderView;
 }

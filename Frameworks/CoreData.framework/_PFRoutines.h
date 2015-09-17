@@ -5,6 +5,7 @@
 @interface _PFRoutines : NSObject
 
 + (id)_coalescedPrefetchKeypaths:(id)arg1;
++ (struct __CFDictionary { }*)_createDictionaryPartitioningObjects:(id)arg1 intoHierarchies:(BOOL)arg2;
 + (id)_createNicksBase64EncodedStringFromData:(id)arg1;
 + (BOOL)_doNameAndTypeCheck:(id)arg1;
 + (id)_frameworkHash;
@@ -17,10 +18,14 @@
 + (id)_newObjectIDsArrayWithMapping:(id)arg1 andEntries:(id)arg2 andCoordinator:(id)arg3;
 + (BOOL)_objectsInOrderedCollection:(id)arg1 formSubstringInOrderedCollection:(id)arg2;
 + (id)_replaceBaseline:(id)arg1 inOrderedSet:(id)arg2 withOrderedSet:(id)arg3;
++ (id)_rootEntityGroupsForObjects:(id)arg1 passingBlock:(id /* block */)arg2;
 + (id)anyObjectFromCollection:(id)arg1;
 + (void)attemptToUpdatePermissionsForFileAtPath:(const char *)arg1 toLevel:(int)arg2;
 + (void)cleanupExternalReferenceLink:(const char *)arg1;
 + (BOOL)convertCString:(const char *)arg1 toUnsignedInt64:(unsigned long long*)arg2 withBase:(int)arg3;
++ (struct __CFDictionary { }*)createDictionaryPartitioningObjectsByEntity:(id)arg1;
++ (struct __CFDictionary { }*)createDictionaryPartitioningObjectsByRootEntity:(id)arg1;
++ (struct __CFDictionary { }*)createDictionaryPartitioningObjectsIntoHierarchies:(id)arg1;
 + (BOOL)createExternalReferenceLinkFromPath:(const char *)arg1 toPath:(const char *)arg2 protectionLevel:(int)arg3;
 + (id)decodeValue:(id)arg1 forTransformableAttribute:(id)arg2;
 + (void)deleteFileForPFExternalReferenceData:(id)arg1;
@@ -52,5 +57,7 @@
 + (void)setOrRemoveValue:(id)arg1 forKey:(id)arg2 inDictionary:(id)arg3;
 + (id)valueForProcessArgument:(id)arg1;
 + (id)writePFExternalReferenceDataToInterimFile:(id)arg1;
+
+- (id)_groupObjectsWithUniqueAttributesByRootEntity:(id)arg1;
 
 @end

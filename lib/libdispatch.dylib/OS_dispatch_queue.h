@@ -4,6 +4,11 @@
 
 @interface OS_dispatch_queue : OS_dispatch_object <OS_dispatch_queue>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
 + (void)load;
 
 - (id)description;

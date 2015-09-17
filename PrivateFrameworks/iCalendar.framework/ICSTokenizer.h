@@ -17,6 +17,7 @@
 @property int logCount;
 @property BOOL printedICS;
 
+- (void).cxx_destruct;
 - (BOOL)consumeEOL;
 - (BOOL)consumeEscaped:(const char *)arg1;
 - (BOOL)consumeFolding;

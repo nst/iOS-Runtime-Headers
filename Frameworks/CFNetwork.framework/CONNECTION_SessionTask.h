@@ -3,7 +3,9 @@
  */
 
 @interface CONNECTION_SessionTask : NSObject {
+    struct __CFDictionary { } *__atsContext;
     struct __PerformanceTiming { } *__performanceTiming;
+    BOOL __shouldSkipPreferredClientCertificateLookup;
     struct __CFDictionary { } *_connectionProperties;
     struct _CFURLRequest { } *_currentRequest;
     bool _is_cellular;
@@ -11,7 +13,7 @@
     NSMutableURLRequest *_nsCurrentRequest;
     NSURLRequest *_nsOriginalRequest;
     struct _CFURLRequest { } *_originalRequest;
-    NSURLSession *_session;
+    __NSCFURLSession *_session;
     struct __CFDictionary { } *_socketProperties;
 }
 
@@ -19,6 +21,8 @@
 - (id)_allowsCellular;
 - (id)_backgroundTaskTimingData;
 - (id)_boundInterfaceIdentifier;
+- (long long)_bytesPerSecondLimit;
+- (BOOL)_cacheOnly;
 - (int)_cachePolicy;
 - (id)_cfCache;
 - (id)_cfCookies;
@@ -27,9 +31,9 @@
 - (id)_connectionPropertyDuet;
 - (id)_contentDispositionFallbackArray;
 - (id)_cookieAcceptPolicy;
+- (struct __CFDictionary { }*)_copyATSState;
 - (struct _CFURLRequest { }*)_copyCurrentCFURLRequest;
 - (struct _CFHSTSPolicy { }*)_copyHSTSPolicy;
-- (struct __CFHTTPMessage { }*)_copyHTTPMessage;
 - (struct _CFURLRequest { }*)_copyOriginalCFURLRequest;
 - (struct __CFDictionary { }*)_copySocketStreamProperties;
 - (const struct XCookieStorage { int (**x1)(); struct __CFAllocator {} *x2; int x3; }*)_createXCookieStorage;
@@ -38,11 +42,14 @@
 - (struct _CFURLRequest { }*)_currentCFURLRequest;
 - (id)_disallowCellular;
 - (id)_expectedWorkload;
+- (void)_getAuthenticationHeadersForResponse:(struct _CFURLResponse { }*)arg1 completionHandler:(id /* block */)arg2;
+- (struct __CFSet { }*)_getAuthenticatorStatusCodes;
 - (void)_initializeTimingDataWithSessionConfiguration:(id)arg1;
 - (id)_networkServiceType;
 - (struct __PerformanceTiming { }*)_performanceTiming;
 - (unsigned char)_preventsIdleSystemSleep;
 - (id)_priorityValue;
+- (void)_processConnectionProperties;
 - (id)_prohibitAuthUI;
 - (id)_protocolForTask;
 - (struct __CFDictionary { }*)_proxySettings;
@@ -62,18 +69,17 @@
 - (id)_timeWindowDelay;
 - (id)_timeWindowDuration;
 - (double)_timeoutInterval;
-- (void)cleanupAndBreakCycles;
 - (id)countOfBytesExpectedToReceive;
 - (id)countOfBytesExpectedToSend;
 - (id)countOfBytesReceived;
 - (id)countOfBytesSent;
 - (id)currentRequest;
 - (struct __CFURL { }*)currentRequest_URL;
+- (struct __CFURL { }*)currentRequest_mainDocumentURL;
 - (void)dealloc;
 - (id)error;
 - (id)initWithRequest:(struct _CFURLRequest { }*)arg1 mutableCurrent:(struct _CFURLRequest { }*)arg2 connProps:(struct __CFDictionary { }*)arg3 sockProps:(struct __CFDictionary { }*)arg4 session:(id)arg5;
 - (id)originalRequest;
-- (struct __CFURL { }*)originalRequest_mainDocumentURL;
 - (float)priority;
 - (id)session;
 - (void)set_protocolForTask:(id)arg1;

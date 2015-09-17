@@ -24,8 +24,8 @@
 
 + (id)gapWithUpdateItem:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addUpdateItem:(id)arg1;
-- (void)dealloc;
 - (id)deleteItems;
 - (id)description;
 - (id)firstUpdateItem;

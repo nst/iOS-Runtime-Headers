@@ -74,6 +74,7 @@
 - (void)_invalidateTimeWidth;
 - (void)_localeChanged;
 - (float)_positionOfSecond:(int)arg1;
+- (void)_sizeClassChanged;
 - (float)_timeWidth;
 - (void)dealloc;
 - (float)defaultHeight;

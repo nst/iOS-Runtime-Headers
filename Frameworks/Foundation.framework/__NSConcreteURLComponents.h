@@ -9,15 +9,15 @@
     unsigned int _hostComponentValid;
     int _lock;
     struct _URIParseInfo { 
-        int userinfoNameOffset; 
-        int userinfoPasswordOffset; 
-        int hostOffset; 
-        int portOffset; 
-        int pathOffset; 
-        int paramOffset; 
-        int queryOffset; 
-        int fragmentOffset; 
-        int endOffset; 
+        unsigned int userinfoNameOffset; 
+        unsigned int userinfoPasswordOffset; 
+        unsigned int hostOffset; 
+        unsigned int portOffset; 
+        unsigned int pathOffset; 
+        unsigned int paramOffset; 
+        unsigned int queryOffset; 
+        unsigned int fragmentOffset; 
+        unsigned int endOffset; 
         unsigned int schemeExists : 1; 
         unsigned int authorityExists : 1; 
         unsigned int userinfoNameExists : 1; 
@@ -59,6 +59,7 @@
 - (id)initWithString:(id)arg1;
 - (id)initWithURL:(id)arg1 resolvingAgainstBaseURL:(BOOL)arg2;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)parseInfoIsValid;
 - (id)password;
 - (id)path;
 - (id)percentEncodedFragment;
@@ -70,6 +71,14 @@
 - (id)port;
 - (id)query;
 - (id)queryItems;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfFragment;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfHost;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfPassword;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfPath;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfPort;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfQuery;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfScheme;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfUser;
 - (id)scheme;
 - (void)setFragment:(id)arg1;
 - (void)setHost:(id)arg1;

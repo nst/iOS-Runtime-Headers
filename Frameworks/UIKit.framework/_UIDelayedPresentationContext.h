@@ -14,10 +14,10 @@
 @property (nonatomic, copy) id /* block */ cancellationHandler;
 @property (nonatomic, retain) NSInvocation *presentInvocation;
 
+- (void).cxx_destruct;
 - (void)beginDelayedPresentation;
 - (void)cancelDelayedPresentation:(BOOL)arg1;
 - (id /* block */)cancellationHandler;
-- (void)dealloc;
 - (int)decrementRequestCount;
 - (id)delayingController;
 - (void)finishDelayedPresentation:(id)arg1;

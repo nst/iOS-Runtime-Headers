@@ -8,8 +8,9 @@
 }
 
 @property (nonatomic) BOOL called;
-@property (nonatomic, retain) NSString *message;
+@property (nonatomic, copy) NSString *message;
 
+- (void).cxx_destruct;
 - (BOOL)called;
 - (void)dealloc;
 - (id)message;

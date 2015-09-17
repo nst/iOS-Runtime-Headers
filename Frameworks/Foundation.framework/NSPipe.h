@@ -10,6 +10,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)pipe;
 
+- (void)_closeOnDealloc;
 - (id)fileHandleForReading;
 - (id)fileHandleForWriting;
 - (id)init;

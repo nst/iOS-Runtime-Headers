@@ -8,7 +8,6 @@
     NSMutableArray *_connectedPeers;
     NSMutableArray *_connectedVoicePeers;
     BOOL _currentWifiState;
-    NSMutableArray *_focusPausedPeers;
     GKSessionInternal *_gkSession;
     NSMutableArray *_mutedPeers;
     NSMutableArray *_myPausedList;

@@ -36,6 +36,6 @@
 - (id)segmentWesternNameWithNameParts:(id)arg1 andPrefix:(id)arg2;
 - (id)suffix;
 - (id)surname;
-- (id)toSGName;
+- (id)toSGNameWithOrigin:(id)arg1 andRecordId:(id)arg2;
 
 @end

@@ -2,21 +2,27 @@
    Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
  */
 
-@interface BSEventQueue : NSObject {
+@interface BSEventQueue : NSObject <BSDescriptionProviding> {
     NSMutableArray *_eventQueue;
     NSHashTable *_eventQueueLocks;
     BSEventQueueEvent *_executingEvent;
     NSString *_name;
+    BOOL _processingEvents;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) BSEventQueueEvent *executingEvent;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *pendingEvents;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (readonly) Class superclass;
 
 - (void)_addEventQueueLock:(id)arg1;
 - (void)_executeOrPendEvents:(id)arg1 position:(int)arg2;
+- (void)_noteQueueDidDrain;
 - (void)_noteQueueDidLock;
 - (void)_noteQueueDidUnlock;
 - (void)_noteWillCancelEventsWithName:(id)arg1 count:(unsigned int)arg2;
@@ -29,6 +35,8 @@
 - (void)cancelEventsWithName:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)executeOrInsertEvent:(id)arg1 atPosition:(int)arg2;
 - (void)executeOrInsertEvents:(id)arg1 atPosition:(int)arg2;
 - (id)executingEvent;
@@ -47,5 +55,7 @@
 - (void)setExecutingEvent:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 
 @end

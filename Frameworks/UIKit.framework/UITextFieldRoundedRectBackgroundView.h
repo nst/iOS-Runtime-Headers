@@ -9,6 +9,7 @@
     UIImageView *_rightCap;
 }
 
+- (void).cxx_destruct;
 - (void)_updateImages;
 - (void)dealloc;
 - (void)layoutSubviews;

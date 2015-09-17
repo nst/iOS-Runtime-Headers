@@ -3,6 +3,7 @@
  */
 
 @interface AXElementGroup : NSArray <AXGroupable> {
+    AXElement *_elementCommunity;
     NSArray *_elementStore;
     <AXElementGroupGenerator> *_generator;
     NSHashTable *_groupObservers;
@@ -18,6 +19,7 @@
 @property (nonatomic, readonly) BOOL canBeReplacedByChildren;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) AXElement *elementCommunity;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
 @property (nonatomic) <AXElementGroupGenerator> *generator;
 @property (nonatomic, retain) NSHashTable *groupObservers;
@@ -57,6 +59,8 @@
 - (id)descendantsPassingTest:(id /* block */)arg1;
 - (id)description;
 - (id)descriptionWithLocale:(id)arg1;
+- (id)elementCommunity;
+- (void)enumerateLeafDescendantsUsingBlock:(id /* block */)arg1;
 - (id)firstChild;
 - (id)firstChildMatchingItem:(id)arg1;
 - (id)firstChildPassingTest:(id /* block */)arg1;
@@ -90,6 +94,7 @@
 - (id)parentGroup;
 - (id)previousSiblingOfChild:(id)arg1 didWrap:(BOOL*)arg2;
 - (void)registerGroupObserver:(id)arg1;
+- (void)setElementCommunity:(id)arg1;
 - (void)setGenerator:(id)arg1;
 - (void)setGroupObservers:(id)arg1;
 - (void)setGroupTraits:(int)arg1;

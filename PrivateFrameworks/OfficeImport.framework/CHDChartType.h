@@ -23,6 +23,7 @@
 - (id)defaultDataLabel;
 - (int)defaultLabelPosition;
 - (id)defaultTitleWithResources:(id)arg1;
+- (id)description;
 - (id)initWithChart:(id)arg1;
 - (bool)isHorizontal;
 - (bool)isPlotedOnSecondaryAxis;

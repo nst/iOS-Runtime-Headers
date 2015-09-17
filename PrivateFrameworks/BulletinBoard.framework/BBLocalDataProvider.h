@@ -31,6 +31,8 @@
 - (BOOL)canPerformMigration;
 - (id)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2;
 - (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
+- (void)clearedInfoForClearingAllBulletinsWithLastClearedInfo:(id)arg1 completion:(id /* block */)arg2;
+- (void)clearedInfoForClearingBulletinsFromDate:(id)arg1 toDate:(id)arg2 lastClearedInfo:(id)arg3 completion:(id /* block */)arg4;
 - (id)dataProvider;
 - (void)dataProviderDidLoad;
 - (void)dealloc;

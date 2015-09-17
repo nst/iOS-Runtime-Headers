@@ -4,10 +4,10 @@
 
 @interface TSUNumberFormatter : NSObject {
     struct __CFString { } *mAdditionalCurrencyCode;
-    struct __CFArray { } *mAdditionalCurrencyCodeFormatters;
+    NSDictionary *mAdditionalCurrencyCodeFormatters;
     NSMutableDictionary *mCurrencyCodeToHalfWidthSymbolMap;
-    NSDictionary *mCurrencyCodeToSymbolMap;
-    struct __CFArray { } *mCurrencyFormatters;
+    TSULocaleStructuredDictionary *mCurrencyCodeToSymbolMap;
+    NSDictionary *mCurrencyFormatters;
     NSString *mCurrencyString;
     struct __CFArray { } *mDecimalFormatters;
     NSString *mDecimalString;
@@ -59,13 +59,13 @@
 - (id)defaultFormatStringForValueType:(int)arg1;
 - (id)defaultFormatStringForValueType:(int)arg1 negativeStyle:(int)arg2;
 - (id)displayNameForCurrencyCode:(id)arg1;
-- (BOOL)findCurrencySymbolInString:(struct __CFString { }*)arg1 additionalCurrencyCode:(struct __CFString { }*)arg2 successTSUlString:(const struct __CFString {}**)arg3;
+- (id)findCurrencySymbolInString:(struct __CFString { }*)arg1 additionalCurrencyCode:(struct __CFString { }*)arg2 successfullString:(const struct __CFString {}**)arg3;
 - (BOOL)fractionFromString:(struct __CFString { }*)arg1 value:(double*)arg2;
 - (id)halfWidthCurrencySymbolForCurrencyCode:(id)arg1;
 - (id)initWithLocale:(struct __CFLocale { }*)arg1;
 - (id)localizedPercentSymbol;
 - (void)numberPreferencesChanged:(id)arg1;
-- (struct __CFArray { }*)p_currencyFormatters;
+- (id)p_currencyFormatters;
 - (struct __CFArray { }*)p_decimalFormatters;
 - (struct __CFArray { }*)p_percentageFormatters;
 - (struct __CFArray { }*)p_scientificFormatters;

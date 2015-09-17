@@ -69,7 +69,6 @@
 
 + (void)initialize;
 
-- (BOOL)_emitMessage:(id)arg1;
 - (id)_poolName;
 - (BOOL)buffersOriginateUpstream;
 - (long long)configurationID;
@@ -80,6 +79,7 @@
 - (BOOL)discardsSampleData;
 - (BOOL)dropsSampleBuffersWithUnexpectedPTS;
 - (void)emitDroppedSample:(id)arg1;
+- (void)emitIrisReferenceMovieRequestWithInfo:(id)arg1;
 - (void)emitNodeError:(id)arg1;
 - (void)emitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (id)format;

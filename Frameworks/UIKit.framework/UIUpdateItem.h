@@ -20,11 +20,11 @@
 @property (nonatomic) float offset;
 @property (nonatomic) BOOL skipAnimation;
 
+- (void).cxx_destruct;
 - (id)_actionDescription;
 - (int)action;
 - (int)animation;
 - (int)compareIndexPaths:(id)arg1;
-- (void)dealloc;
 - (id)gap;
 - (BOOL)headerFooterOnly;
 - (id)indexPath;

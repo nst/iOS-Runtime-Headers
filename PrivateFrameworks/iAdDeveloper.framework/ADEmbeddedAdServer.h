@@ -37,10 +37,14 @@
 @property (nonatomic, readonly) unsigned long long totalBytesWritten;
 @property (nonatomic, readonly) NSString *urlString;
 
++ (id)accessibilityDescriptionForAccessibilityKey:(id)arg1;
 + (BOOL)adBundleAtURL:(id)arg1 matchesRequest:(id)arg2;
++ (int)creativeTypeForPlistType:(id)arg1;
++ (BOOL)creativeTypeMatches:(id)arg1 type:(int)arg2 creativeType:(id)arg3;
 + (id)creativesForAdBundleAtURL:(id)arg1 matchingRequest:(id)arg2;
 + (id)manifestForAdAtURL:(id)arg1;
 
+- (id)_actionDictionaryFromProperties:(id)arg1 path:(id)arg2 error:(id*)arg3;
 - (id)_adDataForPath:(id)arg1 creative:(id)arg2 error:(id*)arg3;
 - (id)_defaultResponseForBatchRequest:(id)arg1;
 - (id)_handleAdSlotRequest:(id)arg1 message:(id)arg2;

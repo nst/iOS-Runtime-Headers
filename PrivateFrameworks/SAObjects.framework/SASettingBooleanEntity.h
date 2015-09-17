@@ -17,7 +17,6 @@
 - (id)previousValue;
 - (void)setPreviousValue:(id)arg1;
 - (void)setValue:(BOOL)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (BOOL)value;
 
 @end

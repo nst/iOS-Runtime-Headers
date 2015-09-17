@@ -2,8 +2,9 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIWebDocumentView : UIWebTiledView <DDDetectionControllerInteractionDelegate, UIAutoscrollContainer, UIGestureRecognizerDelegate, UIKeyInput, UIKeyboardInput, UIModalViewDelegate, UITextAutoscrolling, UITextInputPrivate, UITextInputTokenizer, UIWebFileUploadPanelDelegate, _UIRotatingAlertControllerDelegate, _UIWebDoubleTapDelegate> {
+@interface UIWebDocumentView : UIWebTiledView <DDDetectionControllerInteractionDelegate, UIAutoscrollContainer, UIGestureRecognizerDelegate, UIKeyInput, UIKeyboardInput, UIModalViewDelegate, UIPreviewItemDelegate, UITextAutoscrolling, UITextInputPrivate, UITextInputTokenizer, UIWebFileUploadPanelDelegate, WebFrameLoadDelegate, _UIRotatingAlertControllerDelegate, _UIWebDoubleTapDelegate> {
     NSArray *_additionalSubviews;
+    unsigned int _alwaysConstrainsScale;
     unsigned int _autoresizes;
     UIAutoscroll *_autoscroll;
     unsigned int _avoidFixedPositionUpdateViaDidScroll;
@@ -24,6 +25,7 @@
         float minimumScale; 
         float maximumScale; 
         bool allowsUserScaling; 
+        bool allowsShrinkToFit; 
     } _defaultViewportConfigurations;
     _UITextServiceSession *_definitionSession;
     id _delegate;
@@ -81,7 +83,7 @@
     unsigned int _ignoresViewportOverflowWhenAutoresizing;
     <UITextInputDelegate> *_inputDelegate;
     unsigned int _inspectorSearchingForNode;
-    /* Warning: unhandled struct encoding: '{?="timer"@"NSTimer""location"{CGPoint="x"f"y"f}"isBlocked"c"isCancelled"c"isOnWebThread"c"isDisplayingHighlight"c"attemptedClick"c"lastPanTranslation"{CGPoint="x"f"y"f}"element"@"DOMNode""delegate"@"interactionSheet"@"UIWebRotatingAlertController""allowsImageSheet"c"allowsDataDetectorsSheet"c"allowsLinkSheet"c"acceptsFirstResponder"c"documentScale"f}' */ struct { 
+    /* Warning: unhandled struct encoding: '{?="timer"@"NSTimer""location"{CGPoint="x"f"y"f}"isBlocked"c"isCancelled"c"isOnWebThread"c"isDisplayingHighlight"c"attemptedClick"c"lastPanTranslation"{CGPoint="x"f"y"f}"element"@"DOMNode""delegate"@"interactionSheet"@"UIWebRotatingAlertController""allowsImageSheet"c"allowsDataDetectorsSheet"c"allowsLinkSheet"c"acceptsFirstResponder"c"documentScale"f"previewHintRects"@"NSArray""previewHintImage"@"UIImage"}' */ struct { 
         NSTimer *timer; 
         struct CGPoint { 
             float x; 
@@ -106,6 +108,7 @@
     unsigned int _loadInProgress;
     unsigned int _loadsSynchronously;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
+    _UITextServiceSession *_lookupSession;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -135,8 +138,12 @@
     } _pendingSize;
     UIWebPlaybackTargetPicker *_playbackTargetPicker;
     struct __CFDictionary { } *_plugInViews;
+    UILongPressGestureRecognizer *_previewGestureRecognizer;
+    UIPreviewItemController *_previewItemController;
+    UILongPressGestureRecognizer *_previewSecondaryGestureRecognizer;
     float _previousDocumentScale;
     unsigned int _previousScrollWasScrollToTop;
+    unsigned int _printModeCount;
     DOMRange *_rangeToRestoreAfterDictation;
     unsigned int _renderTreeSize;
     unsigned int _renderTreeSizeThresholdForReset;
@@ -146,6 +153,7 @@
         float y; 
     } _scrollPoint;
     int _selectionAffinity;
+    _UITextServiceSession *_shareSession;
     unsigned int _sheetsCount;
     unsigned int _shouldCloseWebViewAtDealloc;
     unsigned int _shouldIgnoreCustomViewport;
@@ -188,6 +196,7 @@
 @property (nonatomic) BOOL acceptsEmoji;
 @property (nonatomic) BOOL acceptsFloatingKeyboard;
 @property (nonatomic) BOOL acceptsSplitKeyboard;
+@property (nonatomic) BOOL alwaysConstrainsScale;
 @property (nonatomic) int autocapitalizationType;
 @property (nonatomic, copy) NSString *autocorrectionContext;
 @property (nonatomic) int autocorrectionType;
@@ -211,6 +220,7 @@
 @property (nonatomic, retain) UIColor *insertionPointColor;
 @property (nonatomic) unsigned int insertionPointWidth;
 @property (nonatomic, readonly) UITextInteractionAssistant *interactionAssistant;
+@property (nonatomic) BOOL isCarPlayIdiom;
 @property (nonatomic) BOOL isSingleLineDocument;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
@@ -219,6 +229,7 @@
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
 @property (nonatomic) BOOL mediaPlaybackAllowsAirPlay;
 @property (nonatomic, retain) DOMRange *rangeToRestoreAfterDictation;
+@property (nonatomic, copy) NSString *recentInputIdentifier;
 @property (nonatomic, readonly) unsigned int renderTreeSize;
 @property (nonatomic) unsigned int renderTreeSizeThresholdForReset;
 @property (nonatomic, copy) NSString *responseContext;
@@ -233,6 +244,7 @@
 @property (nonatomic, retain) UIColor *selectionHighlightColor;
 @property (nonatomic, readonly) int selectionState;
 @property (nonatomic) int shortcutConversionType;
+@property (nonatomic) BOOL shouldAutoscroll;
 @property (nonatomic) BOOL shouldIgnoreCustomViewport;
 @property (nonatomic) BOOL shouldOnlyRecognizeGesturesOnActiveElements;
 @property (nonatomic) BOOL sizeUpdatesSuspended;
@@ -259,11 +271,13 @@
 + (Class)layerClass;
 + (id)standardTextViewPreferences;
 
+- (id)URL;
 - (void)_WAKViewSizeDidChange:(id)arg1;
 - (BOOL)_acceptsFirstResponder;
 - (SEL)_actionForLongPressOnElement:(id)arg1;
 - (void)_addShortcut:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustedLayoutRectForFixedPositionObjects;
+- (void)_appendOpenActionsForURL:(id)arg1 actions:(id)arg2;
 - (void)_applyViewportArguments:(id)arg1;
 - (id)_beginPrintModeForHTMLView:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 startOffset:(float)arg3 minimumLayoutWidth:(float)arg4 maximumLayoutWidth:(float)arg5 tileClippedContent:(BOOL)arg6;
 - (id)_beginPrintModeForPDFView:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 startOffset:(float)arg3 minimumLayoutWidth:(float)arg4 maximumLayoutWidth:(float)arg5;
@@ -272,11 +286,14 @@
 - (void)_cleanupSheet;
 - (void)_clearAllConsoleMessages;
 - (void)_clearDoubleTapRect;
+- (void)_clearPreviewRevealInformation;
 - (id)_collectAdditionalSubviews;
+- (void)_collectPreviewRevealInformationIfNeeded;
 - (unsigned int)_contentSizeInExposedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 topLayer:(id)arg2 visibleLayerCount:(int*)arg3;
 - (void*)_createIOSurfaceFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_createSheetWithElementActions:(id)arg1 showLinkTitle:(BOOL)arg2;
 - (BOOL)_dataDetectionIsActivated;
+- (id)_dataForPreviewItemController:(id)arg1 atPosition:(struct CGPoint { float x1; float x2; })arg2 type:(int*)arg3;
 - (void)_define:(id)arg1;
 - (BOOL)_dictationPlaceholderHasBeenRemoved;
 - (void)_didDismissElementSheet;
@@ -290,6 +307,7 @@
 - (void)_doubleTapRecognized:(id)arg1;
 - (void)_drawPDFPagesForPage:(unsigned int)arg1 withPaginationInfo:(id)arg2;
 - (void)_editableSelectionLayoutChangedByScrolling:(BOOL)arg1;
+- (void)_endPrintMode;
 - (void)_finishedUsingDictationPlaceholder;
 - (void)_flattenAndSwapContentLayersInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_focusedOrMainFrame;
@@ -302,13 +320,19 @@
 - (void)_insertAttributedTextWithoutClosingTyping:(id)arg1;
 - (void)_inspectorDidStartSearchingForNode:(id)arg1;
 - (void)_inspectorDidStopSearchingForNode:(id)arg1;
+- (BOOL)_interactionShouldBeginFromPreviewItemController:(id)arg1 forPosition:(struct CGPoint { float x1; float x2; })arg2;
+- (void)_interactionStartedFromPreviewItemController:(id)arg1;
+- (void)_interactionStoppedFromPreviewItemController:(id)arg1;
+- (BOOL)_isDisplayingLookupViewController;
 - (BOOL)_isDisplayingReferenceLibraryViewController;
+- (BOOL)_isDisplayingShareViewController;
 - (BOOL)_isDisplayingShortcutViewController;
 - (BOOL)_isInspectorSearchingForNode;
 - (BOOL)_isSubviewOfPlugInView:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_lastRectForRange:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_layoutRectForFixedPositionObjects;
 - (void)_longPressRecognized:(id)arg1;
+- (void)_lookup:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_notifyContentHostingLayersOfScaleChange;
 - (void)_notifyPlugInViewsOfDidEndZooming;
 - (void)_notifyPlugInViewsOfDidZoom;
@@ -318,9 +342,20 @@
 - (id)_positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4;
 - (BOOL)_presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_presentationRectForSheetGivenPoint:(struct CGPoint { float x1; float x2; })arg1 inHostView:(id)arg2;
+- (id)_presentationRectsForPreview;
+- (id)_presentationRectsForPreviewItemController:(id)arg1;
+- (id)_presentationSnapshotForPreview;
+- (id)_presentationSnapshotForPreviewItemController:(id)arg1;
+- (id)_presentedViewControllerForPreviewItemController:(id)arg1;
+- (BOOL)_previewAllowedForPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)_previewItemController:(id)arg1 commitPreview:(id)arg2;
+- (void)_previewItemController:(id)arg1 didDismissPreview:(id)arg2 committing:(BOOL)arg3;
+- (void)_previewItemController:(id)arg1 willPresentPreview:(id)arg2 forPosition:(struct CGPoint { float x1; float x2; })arg3 inSourceView:(id)arg4;
 - (Class)_printFormatterClass;
 - (void)_promptForReplace:(id)arg1;
+- (void)_registerPreview;
 - (void)_removeDefinitionController:(BOOL)arg1;
+- (void)_removeShareController:(BOOL)arg1;
 - (void)_removeShortcutController:(BOOL)arg1;
 - (void)_renderUnbufferedInContext:(struct CGContext { }*)arg1;
 - (void)_resetForNewPage;
@@ -329,6 +364,7 @@
 - (void)_resetShowingTextStyle:(id)arg1;
 - (void)_reshapePlugInViews;
 - (id)_responderForBecomeFirstResponder;
+- (BOOL)_restoreFirstResponder;
 - (void)_restoreFlattenedContentLayers;
 - (void)_restoreScrollPointForce:(BOOL)arg1;
 - (void)_restoreViewportSettingsWithSize:(struct CGSize { float x1; float x2; })arg1;
@@ -348,6 +384,7 @@
 - (void)_setParentTextView:(id)arg1;
 - (void)_setSubviewCachesNeedUpdate:(BOOL)arg1;
 - (void)_setTextColor:(id)arg1;
+- (void)_share:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_shortcutPresentationRect;
 - (BOOL)_shouldFlattenContentLayersForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_shouldResetForNewPage;
@@ -362,10 +399,12 @@
 - (void)_syntheticMouseEventNotHandledAtLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_targetURL;
 - (id)_textSelectingContainer;
+- (void)_transliterateChinese:(id)arg1;
 - (void)_twoFingerDoubleTapRecognized:(id)arg1;
 - (void)_twoFingerPanRecognized:(id)arg1;
 - (void)_undoManagerDidRedo:(id)arg1;
 - (void)_undoManagerDidUndo:(id)arg1;
+- (void)_unregisterPreview;
 - (void)_updateFixedPositionContent;
 - (void)_updateFixedPositionedObjectsLayoutRectUsingWebThread:(BOOL)arg1 synchronize:(BOOL)arg2;
 - (void)_updateFixedPositioningObjectsLayoutAfterScroll;
@@ -381,6 +420,7 @@
 - (void)actionDidFinish;
 - (void)addInputString:(id)arg1;
 - (void)addInputString:(id)arg1 withFlags:(unsigned int)arg2;
+- (BOOL)alwaysConstrainsScale;
 - (id)approximateNodeAtViewportLocation:(struct CGPoint { float x1; float x2; }*)arg1;
 - (id)asText;
 - (void)assistFormNode:(id)arg1;
@@ -392,6 +432,7 @@
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;
 - (BOOL)becomeFirstResponder;
 - (BOOL)becomesEditableWithGestures;
+- (void)beginFloatingCursorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)beginPrintModeForFrame:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 startOffset:(float)arg3 minimumLayoutWidth:(float)arg4 maximumLayoutWidth:(float)arg5 tileClippedContent:(BOOL)arg6;
 - (id)beginPrintModeForFrame:(id)arg1 withWidth:(float)arg2 height:(float)arg3 startOffset:(float)arg4 shrinkToFit:(BOOL)arg5 tileClippedContent:(BOOL)arg6;
 - (id)beginPrintModeWithSize:(struct CGSize { float x1; float x2; })arg1 startOffset:(float)arg2 minimumLayoutWidth:(float)arg3 maximumLayoutWidth:(float)arg4 tileClippedContent:(BOOL)arg5;
@@ -427,6 +468,7 @@
 - (void)collapseSelection;
 - (int)comparePosition:(id)arg1 toPosition:(id)arg2;
 - (void)completeInteraction;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })computeRectForElement:(id)arg1 withHighligh:(id)arg2 isInverted:(BOOL)arg3;
 - (void)confirmMarkedText:(id)arg1;
 - (BOOL)considerHeightForDoubleTap;
 - (struct CGPoint { float x1; float x2; })constrainedPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -475,6 +517,7 @@
 - (void)drawPage:(unsigned int)arg1 withPaginationInfo:(id)arg2;
 - (unsigned int)effectiveDataDetectorTypes;
 - (id)enclosingScrollView;
+- (void)endFloatingCursor;
 - (id)endOfDocument;
 - (void)endPrintMode;
 - (void)endSelectionChange;
@@ -539,6 +582,7 @@
 - (BOOL)isInsideRichlyEditableTextWidget;
 - (BOOL)isPosition:(id)arg1 atBoundary:(int)arg2 inDirection:(int)arg3;
 - (BOOL)isPosition:(id)arg1 withinTextUnit:(int)arg2 inDirection:(int)arg3;
+- (BOOL)isPreviewing;
 - (BOOL)isShowingFullScreenPlugInUI;
 - (BOOL)isStandaloneEditableView;
 - (BOOL)isUnperturbedDictationResultMarker:(id)arg1;
@@ -592,6 +636,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectOfInterestForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)rectsForNSRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)redrawScaledDocument;
+- (void)releasePrintMode;
 - (void)removeDictationResultPlaceholder:(id)arg1 willInsertResult:(BOOL)arg2;
 - (unsigned int)renderTreeSize;
 - (unsigned int)renderTreeSizeThresholdForReset;
@@ -622,6 +667,7 @@
 - (void)selectionChanged;
 - (void)selectionChanged:(id)arg1;
 - (int)selectionGranularity;
+- (id)selectionInteractionAssistant;
 - (BOOL)selectionIsCaretInDisplayBlockElementAtOffset:(int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectionRange;
 - (id)selectionRects;
@@ -636,7 +682,9 @@
 - (void)setAllowsDataDetectorsSheet:(BOOL)arg1;
 - (void)setAllowsImageSheet:(BOOL)arg1;
 - (void)setAllowsLinkSheet:(BOOL)arg1;
+- (void)setAllowsShrinkToFit:(BOOL)arg1 forDocumentTypes:(int)arg2;
 - (void)setAllowsUserScaling:(BOOL)arg1 forDocumentTypes:(int)arg2;
+- (void)setAlwaysConstrainsScale:(BOOL)arg1;
 - (void)setAutoresizes:(BOOL)arg1;
 - (void)setAutoscrollContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setBaseWritingDirection:(int)arg1;
@@ -693,6 +741,7 @@
 - (void)setSelectionToStart;
 - (void)setSelectionWithFirstPoint:(struct CGPoint { float x1; float x2; })arg1 secondPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setShouldAutoscroll:(BOOL)arg1;
 - (void)setShouldIgnoreCustomViewport:(BOOL)arg1;
 - (void)setShouldOnlyRecognizeGesturesOnActiveElements:(BOOL)arg1;
 - (void)setSizeUpdatesSuspended:(BOOL)arg1;
@@ -706,6 +755,7 @@
 - (void)setUsePreTimberlineTransparencyBehavior;
 - (void)setUserStyleSheet:(id)arg1;
 - (void)setViewportSize:(struct CGSize { float x1; float x2; })arg1 forDocumentTypes:(int)arg2;
+- (BOOL)shouldAutoscroll;
 - (BOOL)shouldIgnoreCustomViewport;
 - (BOOL)shouldOnlyRecognizeGesturesOnActiveElements;
 - (BOOL)shouldSelectionAssistantReceiveDoubleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1 forScale:(float)arg2;
@@ -740,6 +790,7 @@
 - (id)undoManager;
 - (id)undoManagerForWebView:(id)arg1;
 - (void)unmarkText;
+- (void)updateFloatingCursorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateInteractionElements;
 - (BOOL)updateKeyboardStateOnResponderChanges;
 - (void)updateSelection;
@@ -783,6 +834,7 @@
 - (id)webVisiblePositionForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)willInteractWithLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)willMoveToSuperview:(id)arg1;
+- (void)willMoveToWindow:(id)arg1;
 - (void)willRotateInteractionSheet;
 - (void)willStartScroll;
 - (void)willStartScrollToTop;
@@ -796,10 +848,7 @@
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
+- (id)mf_NodeForAttachmentInRange:(id)arg1;
 - (id)mf_URLsForAttachmentsInRange:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
-
-- (id)URL;
 
 @end

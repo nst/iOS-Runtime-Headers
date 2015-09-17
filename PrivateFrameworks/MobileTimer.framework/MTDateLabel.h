@@ -3,16 +3,17 @@
  */
 
 @interface MTDateLabel : UIView {
+    NSArray *_currentConstraints;
     NSDate *_date;
     UILabel *_dateLabel;
     BOOL _hideTimeDesignator;
     <MTDateLabelObserver> *_observer;
     float _paddingFromTimeToDesignator;
-    int _timeDesignatorBaselineAdjustment;
     UILabel *_timeDesignatorLabel;
     NSTimeZone *_timeZone;
 }
 
+@property (retain) NSArray *currentConstraints;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, readonly) UILabel *dateLabel;
 @property (nonatomic, retain) UIFont *font;
@@ -21,39 +22,38 @@
 @property (nonatomic) <MTDateLabelObserver> *observer;
 @property (nonatomic) float paddingFromTimeToDesignator;
 @property (nonatomic, retain) UIColor *textColor;
-@property (nonatomic) int timeDesignatorBaselineAdjustment;
 @property (nonatomic, retain) UIFont *timeDesignatorFont;
 @property (nonatomic, readonly) UILabel *timeDesignatorLabel;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
+- (void).cxx_destruct;
 - (void)_noteLayoutChange;
 - (void)_updateDateString;
+- (id)currentConstraints;
 - (id)date;
 - (id)dateLabel;
-- (void)dealloc;
 - (id)font;
 - (BOOL)hasTimeDesignator;
 - (BOOL)hideTimeDesignator;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
-- (void)layoutSubviews;
 - (id)observer;
 - (float)paddingFromTimeToDesignator;
+- (void)setCurrentConstraints:(id)arg1;
 - (void)setDate:(id)arg1;
 - (void)setFont:(id)arg1;
 - (void)setHideTimeDesignator:(BOOL)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setPaddingFromTimeToDesignator:(float)arg1;
 - (void)setTextColor:(id)arg1;
-- (void)setTimeDesignatorBaselineAdjustment:(int)arg1;
 - (void)setTimeDesignatorFont:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)textColor;
-- (int)timeDesignatorBaselineAdjustment;
 - (id)timeDesignatorFont;
 - (id)timeDesignatorLabel;
 - (id)timeZone;
+- (void)updateConstraints;
 - (id)viewForBaselineLayout;
 
 @end

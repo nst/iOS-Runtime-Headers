@@ -5,6 +5,7 @@
 @interface PAStackshotImageInfo : NSObject <PASerializable> {
     NSUUID *_imageUUID;
     unsigned long long _loadAddress;
+    NSString *_path;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -12,6 +13,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) NSUUID *imageUUID;
 @property (readonly) unsigned long long loadAddress;
+@property (readonly) NSString *path;
 @property (readonly) Class superclass;
 
 + (id)classDictionaryKey;
@@ -25,7 +27,9 @@
 - (id)initWithImageInfo:(void*)arg1 is64Bit:(BOOL)arg2;
 - (id)initWithSerializedImageInfo:(const struct { unsigned long long x1; long long x2; unsigned long long x3; }*)arg1;
 - (id)initWithUUID:(id)arg1 andAddress:(unsigned long long)arg2;
+- (id)initWithUUID:(id)arg1 andAddress:(unsigned long long)arg2 andPath:(id)arg3;
 - (unsigned long long)loadAddress;
+- (id)path;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
 - (unsigned long)sizeInBytesForSerializedVersion;
 

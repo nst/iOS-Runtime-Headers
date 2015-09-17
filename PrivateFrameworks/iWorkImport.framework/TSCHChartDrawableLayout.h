@@ -115,7 +115,6 @@
 - (BOOL)supportsParentRotation;
 - (void)take3DDepth;
 - (void)validate;
-- (float)viewScaleForZoomingToSelectionPath:(id)arg1 targetPointSize:(float)arg2;
 - (id)visibleGeometries;
 - (int)wrapFitType;
 

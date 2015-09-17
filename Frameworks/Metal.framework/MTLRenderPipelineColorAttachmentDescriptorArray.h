@@ -2,12 +2,11 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLRenderPipelineColorAttachmentDescriptorArray : NSObject {
-    MTLRenderPipelineColorAttachmentDescriptor *_descriptors;
-}
+@interface MTLRenderPipelineColorAttachmentDescriptorArray : NSObject
 
-- (id)_descriptorAtIndex:(unsigned int)arg1;
-- (void)dealloc;
++ (id)alloc;
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
+
 - (id)objectAtIndexedSubscript:(unsigned int)arg1;
 - (void)setObject:(id)arg1 atIndexedSubscript:(unsigned int)arg2;
 

@@ -4,10 +4,14 @@
 
 @interface NSDate : NSObject <CKRecordValue, NSCopying, NSSecureCoding, PQLValuable, TSCHChartGridValue>
 
+@property (nonatomic, readonly) NSString *briefFormattedDate;
 @property (nonatomic, readonly) int chartGridValueType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isToday;
+@property (nonatomic, readonly) BOOL isYesterday;
+@property (nonatomic, readonly) NSString *shortFormattedDate;
 @property (readonly) Class superclass;
 @property (readonly) double timeIntervalSinceReferenceDate;
 
@@ -82,9 +86,19 @@
 - (id)initWithCoder:(id)arg1;
 - (id)replacementObjectForPortCoder:(id)arg1;
 
+// Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
+
++ (id)timeIntervalDescription:(double)arg1;
+
+- (id)localTimeDescription;
+
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (BOOL)isWholeHour;
+
+// Image: /System/Library/Frameworks/ReplayKit.framework/ReplayKit
+
++ (id)_srGetStringFromDate:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AggregateDictionary.framework/AggregateDictionary
 
@@ -98,14 +112,25 @@
 + (id)dateForDaysSince1970:(int)arg1;
 + (int)daysSince1970;
 
+// Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
+
+- (BOOL)isAfterDate:(id)arg1;
+- (BOOL)isBeforeDate:(id)arg1;
+- (BOOL)isInclusiveBetweenDate:(id)arg1 andDate:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
 - (BOOL)_afui_isSameDayAsDate:(id)arg1;
 - (BOOL)afui_isToday;
 - (BOOL)afui_isTomorrow;
 
+// Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
+
+- (id)ak_serverFriendlyString;
+
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
+- (id)bs_dateByAddingDays:(int)arg1;
 - (BOOL)isAfterDate:(id)arg1;
 - (BOOL)isBeforeDate:(id)arg1;
 
@@ -116,6 +141,7 @@
 + (id)CalDateForEndOfToday;
 + (id)CalDateForEndOfTomorrow;
 + (id)CalDateForNow;
++ (id)CalSimulatedDateForNow;
 + (id)_nowComponents;
 + (id)_todayComponents;
 + (id)_tomorrowComponents;
@@ -123,26 +149,35 @@
 + (int)daysSpannedFromStartDate:(id)arg1 toEndDate:(id)arg2 allDay:(BOOL)arg3 inCalendar:(id)arg4;
 + (id)nextRoundedHour;
 
+- (id)CalDateRoundedDownToNearestMinuteIncrement:(int)arg1 inCalendar:(id)arg2;
 - (BOOL)CalIsAfterDate:(id)arg1;
 - (BOOL)CalIsAfterOrSameAsDate:(id)arg1;
 - (BOOL)CalIsBeforeDate:(id)arg1;
 - (BOOL)CalIsBeforeOrSameAsDate:(id)arg1;
 - (BOOL)CalIsBetweenStartDate:(id)arg1 endDate:(id)arg2;
+- (void)_performBlockBehindDispatchSync:(id /* block */)arg1 inTimeZone:(id)arg2;
 - (id)_stringWithUseAbbreviatedFormats:(BOOL)arg1 lowerCase:(BOOL)arg2;
 - (id)allComponentsInCalendar:(id)arg1;
 - (int)compareDateIgnoringTimeComponents:(id)arg1 inCalendar:(id)arg2;
+- (id)dateAtHour:(unsigned int)arg1 minute:(unsigned int)arg2 second:(unsigned int)arg3 inTimeZone:(id)arg4;
+- (id)dateByAddingCalSimulatedOffset;
 - (id)dateByAddingDays:(int)arg1 inCalendar:(id)arg2;
 - (id)dateByAddingHours:(int)arg1 inCalendar:(id)arg2;
 - (id)dateByAddingMinutes:(int)arg1 inCalendar:(id)arg2;
 - (id)dateByAddingMonths:(int)arg1 inCalendar:(id)arg2;
 - (id)dateByAddingWeeks:(int)arg1 inCalendar:(id)arg2;
 - (id)dateByAddingYears:(int)arg1 inCalendar:(id)arg2;
+- (id)dateBySubtractingCalSimulatedOffset;
+- (id)dateForEndOfDayInTimeZone:(id)arg1;
+- (id)dateForStartOfDayInTimeZone:(id)arg1;
 - (id)dateOnlyByTranslatingFrom:(id)arg1 toCalendar:(id)arg2;
 - (id)dateOnlyComponentsInCalendar:(id)arg1;
 - (id)dateRemovingTimeComponentsInCalendar:(id)arg1;
+- (id)dateRoundedDownToNearestFiveMinutesInCalendar:(id)arg1;
 - (id)dateRoundedToHourOnSameDayInCalendar:(id)arg1;
 - (id)dateRoundedToNearestFifteenMinutesInCalendar:(id)arg1;
 - (id)dateRoundedToStartOfNextDayInCalendar:(id)arg1;
+- (id)dateWithoutTimeComponentsInTimeZone:(id)arg1;
 - (int)dayInCalendar:(id)arg1;
 - (int)hourInCalendar:(id)arg1;
 - (BOOL)isAfterDate:(id)arg1;
@@ -153,6 +188,7 @@
 - (BOOL)isEqualToDateIgnoringTimeComponents:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isSameDayAsDate:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isSameMonthAsDate:(id)arg1 inCalendar:(id)arg2;
+- (BOOL)isSameWeekAsDate:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isSameYearAsDate:(id)arg1 inCalendar:(id)arg2;
 - (BOOL)isTodayInCalendar:(id)arg1;
 - (id)localizedDateStringWithTemplate:(id)arg1;
@@ -168,6 +204,8 @@
 - (int)minuteInCalendar:(id)arg1;
 - (int)monthInCalendar:(id)arg1;
 - (void)printComparisonToDate:(id)arg1;
+- (id)roundSecondsAndMinutesDownInCalendar:(id)arg1;
+- (id)roundSecondsAndMinutesUpInCalendar:(id)arg1;
 - (id)roundSecondsDownInCalendar:(id)arg1;
 - (id)roundToCurrentDayInCalendar:(id)arg1;
 - (id)roundToCurrentMondayInCalendar:(id)arg1;
@@ -181,35 +219,47 @@
 - (int)weekdayInCalendar:(id)arg1;
 - (int)yearInCalendar:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
+
+- (id)localizedShortTimeInTimeZone:(id)arg1;
+- (id)nextDateMatchingTimeComponents;
+
 // Image: /System/Library/PrivateFrameworks/CallHistory.framework/CallHistory
 
 - (BOOL)isSameDayAsDate:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
-
-+ (id)bod;
-+ (id)eod;
-
-// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
-
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 - (id)initWithCPLArchiver:(id)arg1;
 - (id)plistArchiveWithCPLArchiver:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
+
+- (id)_cd_beginningOfDay;
+- (id)_cd_endOfDay;
+- (id)_cd_nextBeginningOfDay;
+- (int)_cd_weekday;
+
+// Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
+
++ (id)timeIntervalDescription:(double)arg1;
+
+- (id)localTimeDescription;
+
 // Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
 
-- (id)__coreroutine_roundedUpDate;
+- (id)dateByRoundingWithTimeQuantization:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
+
+- (id)sg_descriptionForMimeHeaders;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
+
++ (id)fm_dateFromEpoch:(long long)arg1;
+
+- (long long)fm_epoch;
+- (id)fm_epochObject;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
@@ -229,6 +279,12 @@
 - (double)geo_hoursAndMinutes;
 - (double)geo_julianDay;
 - (double)geo_julianEphemerisDay;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
+- (BOOL)hk_animatable;
+- (id)hk_dateWithTruncatedSecond;
+- (id)hk_midPointToValue:(id)arg1 percentage:(float)arg2;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
@@ -253,11 +309,18 @@
 
 + (id)modificationDateForNoteBeingEdited;
 
+- (id)briefFormattedDate;
+- (BOOL)isEarlierThanDate:(id)arg1;
+- (BOOL)isLaterThanDate:(id)arg1;
+- (BOOL)isToday;
+- (BOOL)isYesterday;
+- (id)shortFormattedDate;
+
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)dateWithWordDate:(const struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
++ (id)tc_dateWithWordDate:(const struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
 
-- (void)copyToWordDate:(struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
+- (void)tc_copyToWordDate:(struct WrdDateTime { int (**x1)(); int x2; unsigned short x3; unsigned short x4; unsigned short x5; unsigned short x6; unsigned short x7; }*)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
@@ -290,23 +353,32 @@
 - (BOOL)isInMonotonicPastWithDistance:(double)arg1;
 - (double)timeIntervalSinceMonitonicNow;
 
-// Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
-- (BOOL)isAfterDate:(id)arg1;
-- (BOOL)isBeforeDate:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
-
-- (id)copyXPCEncoding;
-- (id)initWithXPCEncoding:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
++ (id)safari_dateOfMidnightNumberOfDaysAgo:(int)arg1;
 
 - (BOOL)safari_isInSameDayAsDate:(id)arg1;
 - (BOOL)safari_isInToday;
 - (BOOL)safari_isInclusivelyBetweenDate:(id)arg1 andDate:(id)arg2;
 - (int)safari_numberOfWeeksUntilDate:(id)arg1;
 - (id)safari_startOfDay;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
++ (id)dateFromISO8601String:(id)arg1;
++ (id)dateFromRFC1123String:(id)arg1;
++ (id)dateFromString:(id)arg1;
++ (id)dateFromTWTimeString:(id)arg1;
+
+- (id)shortDescription;
+- (id)shortDescriptionSinceNow;
+- (id)shortDescriptionWithTime;
+- (id)shortWeekDescription;
+
+// Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
+
+- (id)copyXPCEncoding;
+- (id)initWithXPCEncoding:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
 
@@ -325,5 +397,11 @@
 - (int)tsce_year;
 - (id)tsp_initWithMessage:(const struct Date { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1;
 - (void)tsp_saveToMessage:(struct Date { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; double x5; }*)arg1;
+
+// Image: /usr/lib/libprequelite.dylib
+
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

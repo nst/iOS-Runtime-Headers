@@ -5,16 +5,20 @@
 @interface CKDApplicationMetadata : NSObject {
     NSString *_apsEnvironmentString;
     int _isApplication;
+    BOOL _isCKSystemService;
 }
 
 @property (nonatomic, retain) NSString *apsEnvironmentString;
 @property (nonatomic) int isApplication;
+@property (nonatomic) BOOL isCKSystemService;
 
 - (void).cxx_destruct;
 - (id)apsEnvironmentString;
 - (id)init;
 - (int)isApplication;
+- (BOOL)isCKSystemService;
 - (void)setApsEnvironmentString:(id)arg1;
 - (void)setIsApplication:(int)arg1;
+- (void)setIsCKSystemService:(BOOL)arg1;
 
 @end

@@ -15,6 +15,7 @@
     int _mapType;
     NSString *_referralIdentifier;
     GEOURLRouteHandle *_routeHandle;
+    GEOURLTimePoint *_timePoint;
     int _transportType;
     int _userTrackingMode;
 }
@@ -30,6 +31,7 @@
 @property (nonatomic) BOOL hasMapType;
 @property (nonatomic, readonly) BOOL hasReferralIdentifier;
 @property (nonatomic, readonly) BOOL hasRouteHandle;
+@property (nonatomic, readonly) BOOL hasTimePoint;
 @property (nonatomic) BOOL hasTransportType;
 @property (nonatomic) BOOL hasUserTrackingMode;
 @property (readonly) unsigned int hash;
@@ -37,6 +39,7 @@
 @property (nonatomic, retain) NSString *referralIdentifier;
 @property (nonatomic, retain) GEOURLRouteHandle *routeHandle;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) GEOURLTimePoint *timePoint;
 @property (nonatomic) int transportType;
 @property (nonatomic) int userTrackingMode;
 
@@ -56,6 +59,7 @@
 - (BOOL)hasMapType;
 - (BOOL)hasReferralIdentifier;
 - (BOOL)hasRouteHandle;
+- (BOOL)hasTimePoint;
 - (BOOL)hasTransportType;
 - (BOOL)hasUserTrackingMode;
 - (unsigned int)hash;
@@ -76,8 +80,10 @@
 - (void)setMapType:(int)arg1;
 - (void)setReferralIdentifier:(id)arg1;
 - (void)setRouteHandle:(id)arg1;
+- (void)setTimePoint:(id)arg1;
 - (void)setTransportType:(int)arg1;
 - (void)setUserTrackingMode:(int)arg1;
+- (id)timePoint;
 - (int)transportType;
 - (id)urlRepresentation;
 - (int)userTrackingMode;

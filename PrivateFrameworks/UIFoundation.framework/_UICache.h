@@ -14,6 +14,7 @@
 @property (nonatomic) BOOL clearsCacheOnApplicationBackground;
 @property (nonatomic) BOOL clearsCacheOnLowMemoryWarnings;
 
+- (id)cacheKeys;
 - (BOOL)clearsCacheOnApplicationBackground;
 - (BOOL)clearsCacheOnLowMemoryWarnings;
 - (void)dealloc;

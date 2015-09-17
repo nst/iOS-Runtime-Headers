@@ -13,6 +13,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)changeVisibility:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)handleMessage:(id)arg1;
 - (id)lastPlugin;
 - (void)migrateWithCompletion:(id /* block */)arg1;

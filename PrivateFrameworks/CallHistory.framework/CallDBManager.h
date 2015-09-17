@@ -15,14 +15,14 @@
 @property unsigned char notifyDataStoreChangeReason;
 
 + (id)dataStoreName;
-+ (id)getDBLocationIsSandboxed:(BOOL)arg1 isTemporary:(BOOL)arg2;
++ (id)getDBLocationIsSandboxed:(BOOL)arg1 isTemporary:(BOOL)arg2 error:(unsigned char*)arg3;
 + (id)modelURL;
 
 - (void).cxx_destruct;
 - (void)createDataStore;
 - (id)createManagedObjectContext;
-- (BOOL)createPermanent;
-- (BOOL)createTemporary;
+- (void)createPermanent;
+- (void)createTemporary;
 - (unsigned char)dataStoreType;
 - (id)dbManager;
 - (BOOL)deviceUnlocked;
@@ -32,7 +32,7 @@
 - (void)moveCallsFromTempDatabase;
 - (unsigned char)notifyDataStoreChangeReason;
 - (BOOL)notifyDataStoreChanged;
-- (id)permDBLocation;
+- (id)permDBLocation:(unsigned char*)arg1;
 - (void)reFetchState;
 - (void)registerForNotifications;
 - (void)setDataStoreType:(unsigned char)arg1;
@@ -41,6 +41,6 @@
 - (void)setNotifyDataStoreChangeReason:(unsigned char)arg1;
 - (BOOL)shouldCreatePermanent;
 - (BOOL)shouldCreateTemporary;
-- (id)tempDBLocation;
+- (id)tempDBLocation:(unsigned char*)arg1;
 
 @end

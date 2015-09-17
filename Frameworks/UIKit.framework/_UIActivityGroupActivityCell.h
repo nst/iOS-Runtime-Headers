@@ -12,6 +12,7 @@
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic, retain) UILabel *titleLabel;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)draggingView;
 - (id)highlightedImageView;

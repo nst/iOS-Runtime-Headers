@@ -44,6 +44,7 @@
 - (id)convertUint16ArrayToNSArray:(unsigned short*)arg1 ofSize:(unsigned int)arg2;
 - (id)convertUint32ArrayToNSArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2;
 - (id)convertUint32ArrayToNSArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 andFill:(unsigned int)arg3;
+- (id)convertUint64ArrayToNSArray:(unsigned long long*)arg1 ofSize:(unsigned int)arg2;
 - (id)convertUint8ArrayToNSArray:(char *)arg1 ofSize:(unsigned int)arg2;
 - (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 inString:(id)arg3;
 - (void)formatArray:(unsigned int*)arg1 ofSize:(unsigned int)arg2 inString:(id)arg3 inReverse:(BOOL)arg4;

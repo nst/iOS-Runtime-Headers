@@ -12,7 +12,7 @@
 
 + (id)regionWithName:(id)arg1 code:(id)arg2;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)regionCode;
 - (id)regionName;
 - (void)setRegionCode:(id)arg1;

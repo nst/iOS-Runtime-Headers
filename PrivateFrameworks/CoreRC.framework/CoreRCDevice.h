@@ -5,26 +5,32 @@
 @interface CoreRCDevice : NSObject <NSCopying, NSSecureCoding> {
     NSUUID *_busUniqueID;
     <CoreRCDeviceDelegate> *_delegate;
+    BOOL _isLocalDevice;
     CoreRCManager *_manager;
+    unsigned int _owningClients;
     NSUUID *_uniqueID;
 }
 
 @property (nonatomic, readonly) NSUUID *busUniqueID;
 @property (nonatomic, readonly) BOOL isLocalDevice;
-@property (nonatomic, readonly) NSUUID *uniqueID;
+@property (nonatomic, copy) NSUUID *uniqueID;
 
 + (BOOL)supportsSecureCoding;
 
+- (unsigned int)addOwningClient:(id)arg1;
 - (id)bus;
 - (id)busUniqueID;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)delegate;
-- (void)delloc;
 - (id)description;
+- (void)didAddToBus:(id)arg1;
+- (void)didRemoveFromBus:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)extendedPropertyForKey:(id)arg1 error:(id*)arg2;
 - (unsigned int)hash;
 - (id)init;
-- (id)initWithBus:(id)arg1;
+- (id)initWithBus:(id)arg1 local:(BOOL)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDevice:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
@@ -34,10 +40,16 @@
 - (void)mergePropertiesFromDevice:(id)arg1;
 - (void)readyToSend;
 - (void)receivedHIDEvent:(id)arg1 fromDevice:(id)arg2;
+- (unsigned int)removeOwningClient:(id)arg1;
+- (BOOL)sendCommand:(unsigned int)arg1 target:(id)arg2 withDuration:(unsigned int)arg3 error:(id*)arg4;
 - (BOOL)sendHIDEvent:(id)arg1 error:(id*)arg2;
 - (BOOL)sendHIDEvent:(id)arg1 target:(id)arg2 error:(id*)arg3;
 - (void)setDelegate:(id)arg1;
+- (BOOL)setExtendedProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)setManager:(id)arg1;
+- (void)setUniqueID:(id)arg1;
 - (id)uniqueID;
+- (void)willAddToBus:(id)arg1;
+- (void)willRemoveFromBus:(id)arg1;
 
 @end

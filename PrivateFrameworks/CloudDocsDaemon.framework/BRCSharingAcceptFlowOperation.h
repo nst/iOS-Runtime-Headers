@@ -38,6 +38,7 @@
 - (void)_fetchShareInfo;
 - (void)_isAppInstalled;
 - (void)_isAppProfileEnabled;
+- (BOOL)_isItemDownloaded;
 - (BOOL)_isOwner;
 - (BOOL)_isOwnerOrShareAlreadyAccepted;
 - (void)_isURLWellFormed;
@@ -52,5 +53,7 @@
 - (id)initWithShareURL:(id)arg1 client:(id)arg2 session:(id)arg3;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
+- (id)subclassableDescriptionWithContext:(id)arg1;
 
 @end

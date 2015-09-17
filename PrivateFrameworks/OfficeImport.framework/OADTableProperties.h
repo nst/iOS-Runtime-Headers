@@ -24,6 +24,7 @@
 - (BOOL)bandColumn;
 - (BOOL)bandRow;
 - (void)dealloc;
+- (id)description;
 - (id)effects;
 - (BOOL)firstColumn;
 - (BOOL)firstRow;

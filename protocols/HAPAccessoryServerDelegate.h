@@ -5,13 +5,16 @@
 
 @required
 
-- (void)accessoryServer:(HAPAccessoryServer *)arg1 didDiscoverAccessoriesWithError:(NSError *)arg2;
+- (void)accessoryServer:(HAPAccessoryServer *)arg1 didDiscoverAccessoriesWithError:(NSError *)arg2 transaction:(HAPOSTransaction *)arg3;
 - (void)accessoryServer:(HAPAccessoryServer *)arg1 didReceiveBadPasswordThrottleAttemptsWithDelay:(int)arg2;
 - (void)accessoryServer:(HAPAccessoryServer *)arg1 didStopPairingWithError:(NSError *)arg2;
+- (void)accessoryServer:(HAPAccessoryServer *)arg1 didUpdateCategory:(NSNumber *)arg2;
+- (void)accessoryServer:(HAPAccessoryServer *)arg1 didUpdateHasPairings:(BOOL)arg2;
+- (void)accessoryServer:(HAPAccessoryServer *)arg1 didUpdateName:(NSString *)arg2;
 - (void)accessoryServer:(HAPAccessoryServer *)arg1 didUpdateValuesForCharacteristics:(NSArray *)arg2;
 - (void)accessoryServer:(void *)arg1 isBlockedWithCompletionHandler:(void *)arg2; // needs 2 arg types, found 7: HAPAccessoryServer *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)accessoryServer:(HAPAccessoryServer *)arg1 promptUserForPasswordWithType:(unsigned int)arg2;
 - (void)accessoryServer:(HAPAccessoryServer *)arg1 requestUserPermissionForUnauthenticatedAccessory:(NSError *)arg2;
-- (void)accessoryServerDidUpdateHasPairings:(HAPAccessoryServer *)arg1;
+- (void)accessoryServerDidUpdateStateNumber:(HAPAccessoryServer *)arg1;
 
 @end

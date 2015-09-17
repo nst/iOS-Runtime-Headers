@@ -13,8 +13,10 @@
     SSItemContentRating *_contentRating;
     NSString *_deviceIdentifierForVendor;
     NSNumber *_familyAccountIdentifier;
+    BOOL _hasMIDBasedSINF;
     NSNumber *_itemIdentifier;
     NSString *_itemName;
+    BOOL _missingRequiredSINF;
     BOOL _placeholder;
     BOOL _profileValidated;
     NSDate *_receiptExpirationDate;
@@ -38,9 +40,11 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *deviceIdentifierForVendor;
 @property (nonatomic, copy) NSNumber *familyAccountIdentifier;
+@property (nonatomic) BOOL hasMIDBasedSINF;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSNumber *itemIdentifier;
 @property (nonatomic, copy) NSString *itemName;
+@property (nonatomic) BOOL missingRequiredSINF;
 @property (getter=isPlaceholder, nonatomic) BOOL placeholder;
 @property (getter=isProfileValidated, nonatomic) BOOL profileValidated;
 @property (nonatomic, readonly) NSDate *receiptExpirationDate;
@@ -66,6 +70,7 @@
 - (id)description;
 - (id)deviceIdentifierForVendor;
 - (id)familyAccountIdentifier;
+- (BOOL)hasMIDBasedSINF;
 - (id)initWithLaunchServicesApplication:(id)arg1;
 - (id)initWithLaunchServicesApplication:(id)arg1 containerPath:(id)arg2;
 - (id)initWithXPCEncoding:(id)arg1;
@@ -74,6 +79,7 @@
 - (BOOL)isProfileValidated;
 - (id)itemIdentifier;
 - (id)itemName;
+- (BOOL)missingRequiredSINF;
 - (id)receiptExpirationDate;
 - (void)resetVPPStateFlags;
 - (void)setAccountDSID:(id)arg1;
@@ -86,8 +92,10 @@
 - (void)setContentRating:(id)arg1;
 - (void)setDeviceIdentifierForVendor:(id)arg1;
 - (void)setFamilyAccountIdentifier:(id)arg1;
+- (void)setHasMIDBasedSINF:(BOOL)arg1;
 - (void)setItemIdentifier:(id)arg1;
 - (void)setItemName:(id)arg1;
+- (void)setMissingRequiredSINF:(BOOL)arg1;
 - (void)setPlaceholder:(BOOL)arg1;
 - (void)setProfileValidated:(BOOL)arg1;
 - (void)setSoftwareType:(id)arg1;

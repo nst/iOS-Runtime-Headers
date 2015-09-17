@@ -13,10 +13,6 @@
 
 + (SEL)fontOverriddenSelectorForFontType:(int)arg1;
 + (SEL)fontSelectorForFontType:(int)arg1;
-+ (int)languageFromString:(id)arg1;
-+ (BOOL)languageIsArabicOrHebrew:(int)arg1;
-+ (BOOL)languageIsCJK:(int)arg1;
-+ (BOOL)languageIsChinese:(int)arg1;
 + (SEL)setFontSelectorForFontType:(int)arg1;
 
 - (void)applyPropertiesFrom:(id)arg1 ifOverriddenIn:(id)arg2;
@@ -37,6 +33,7 @@
 - (id)deletionDate;
 - (BOOL)deletionDifferentFrom:(id)arg1;
 - (BOOL)deletionDifferentFrom:(id)arg1 mode:(int)arg2;
+- (id)description;
 - (id)document;
 - (int)doubleStrikeThrough;
 - (id)editDate;

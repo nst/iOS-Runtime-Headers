@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@interface HKMedicalIDViewController : UITableViewController <HKEmergencyCardDeletionDelegate, HKEmergencyCardEnabledDelegate, HKEmergencyCardRowHeightChangeDelegate, HKMedicalIDViewControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    void *_addressBook;
+@interface HKMedicalIDViewController : UITableViewController <HKEmergencyCardDeletionDelegate, HKEmergencyCardRowHeightChangeDelegate, HKMedicalIDViewControllerDelegate, UINavigationControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
     BOOL _allowsEditing;
     HKEmergencyCardContactsTableItem *_contactsItem;
     <HKMedicalIDViewControllerDelegate> *_delegate;
@@ -33,10 +32,10 @@
 + (BOOL)isSupportedOnThisDevice;
 
 - (void).cxx_destruct;
-- (void*)_addressBook;
 - (void)_buildPresentableTableItems;
 - (void)_buildTableItems;
 - (void)_cancelEditingTapped:(id)arg1;
+- (void)_contactStoreDidChange:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_doneEditingTapped:(id)arg1;
 - (void)_doneTapped:(id)arg1;
@@ -48,7 +47,6 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)deletionTableItemDidTapDelete:(id)arg1;
-- (void)enabledTableItem:(id)arg1 stateDidChange:(BOOL)arg2;
 - (id)healthStore;
 - (id)initInEditMode:(BOOL)arg1;
 - (void)localeDidChange:(id)arg1;
@@ -56,6 +54,7 @@
 - (void)medicalIDViewControllerDidCancel:(id)arg1;
 - (void)medicalIDViewControllerDidDelete:(id)arg1;
 - (void)medicalIDViewControllerDidSave:(id)arg1;
+- (unsigned int)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (int)preferredStatusBarStyle;
 - (void)setAllowsEditing:(BOOL)arg1;
@@ -66,6 +65,7 @@
 - (void)setShowsDismissButton:(BOOL)arg1;
 - (BOOL)showsDeleteButton;
 - (BOOL)showsDismissButton;
+- (unsigned int)supportedInterfaceOrientations;
 - (void)tableItem:(id)arg1 heightDidChangeForRowIndex:(int)arg2 keepRectVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 inView:(id)arg4;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

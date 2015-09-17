@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
  */
 
-@interface CKRecordID : NSObject <NSCopying, NSSecureCoding> {
+@interface CKRecordID : NSObject <CKXPCSuitableString, NSCopying, NSSecureCoding> {
     NSString *_recordName;
     CKRecordZoneID *_zoneID;
 }
@@ -16,11 +16,13 @@
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
+- (id)CKXPCSuitableString;
 - (id)ckShortDescription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRecordName:(id)arg1;
 - (id)initWithRecordName:(id)arg1 zoneID:(id)arg2;

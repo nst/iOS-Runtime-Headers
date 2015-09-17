@@ -3,6 +3,7 @@
  */
 
 @interface CalDAVGetDelegatesBaseTaskGroup : CoreDAVTaskGroup <CoreDAVTaskDelegate, CoreDAVTaskGroupDelegate> {
+    CalDAVGetPrincipalEmailDetailsTaskGroup *_getPrincipalEmailDetailsTaskGroup;
     NSURL *_principalURL;
     NSMutableSet *_readDetails;
     NSMutableArray *_readPrincipalURLs;
@@ -13,6 +14,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) CalDAVGetPrincipalEmailDetailsTaskGroup *getPrincipalEmailDetailsTaskGroup;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSURL *principalURL;
 @property (nonatomic, retain) NSMutableSet *readDetails;
@@ -24,11 +26,12 @@
 @property (nonatomic, retain) NSMutableSet *writeDetails;
 @property (nonatomic, retain) NSMutableArray *writePrincipalURLs;
 
+- (void).cxx_destruct;
 - (void)_getPrincipalDetailsForURL:(id)arg1;
 - (id)_mappingsForPrincipalDetails;
 - (id)_popFromArray:(id)arg1;
 - (void)_processDetailsFromMultiStatus:(id)arg1 allowWrite:(BOOL)arg2;
-- (void)dealloc;
+- (id)getPrincipalEmailDetailsTaskGroup;
 - (id)initWithAccountInfoProvider:(id)arg1 principalURL:(id)arg2 taskManager:(id)arg3;
 - (id)principalURL;
 - (id)readDetails;
@@ -36,6 +39,7 @@
 - (id)readPrincipalURLs;
 - (id)readWritePrincipalDetails;
 - (BOOL)serverSupportsExpandPropertyReport;
+- (void)setGetPrincipalEmailDetailsTaskGroup:(id)arg1;
 - (void)setPrincipalURL:(id)arg1;
 - (void)setReadDetails:(id)arg1;
 - (void)setReadPrincipalURLs:(id)arg1;

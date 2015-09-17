@@ -11,9 +11,9 @@
 - (void)dealloc;
 - (void)finalize;
 - (id)init;
-- (void)removeSourceRenderersForCGLContextObj:(void*)arg1;
+- (void)removeSourceRenderersForEngineContext:(struct __C3DEngineContext { }*)arg1;
 - (void)removeSourceRenderersForSource:(id)arg1;
 - (void)rendererDidChange:(id)arg1;
-- (id)sourceRendererForCGLContextObj:(void*)arg1 source:(id)arg2;
+- (id)sourceRendererForEngineContext:(struct __C3DEngineContext { }*)arg1 source:(id)arg2;
 
 @end

@@ -5,6 +5,7 @@
 
 @required
 
+- (BOOL)isEnabled;
 - (void)logWithFormat:(NSString *)arg1;
 - (void)logWithFormat:(NSString *)arg1 arguments:(void*)arg2;
 

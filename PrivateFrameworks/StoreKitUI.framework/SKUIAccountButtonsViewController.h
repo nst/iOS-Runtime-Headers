@@ -36,7 +36,6 @@
 - (void)_termsAndConditionsButtonAction:(id)arg1;
 - (void)_usernameButtonAction:(id)arg1;
 - (void)_viewAppleID;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)clientContext;
 - (void)dealloc;
 - (id)delegate;

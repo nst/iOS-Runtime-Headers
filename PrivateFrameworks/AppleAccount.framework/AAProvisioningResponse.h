@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) NSDictionary *dataclassProperties;
 @property (nonatomic, readonly) NSString *firstName;
 @property (nonatomic, readonly) NSString *fmipAuthToken;
+@property (nonatomic, readonly) NSString *fmipSiriToken;
 @property (nonatomic, readonly) NSString *iCloudAuthToken;
 @property (nonatomic, readonly) NSString *lastName;
 @property (nonatomic, readonly) NSString *primaryEmail;
@@ -23,6 +24,7 @@
 - (id)dataclassProperties;
 - (id)firstName;
 - (id)fmipAuthToken;
+- (id)fmipSiriToken;
 - (id)iCloudAuthToken;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithHTTPResponse:(id)arg1 data:(id)arg2;

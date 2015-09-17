@@ -9,9 +9,9 @@
 
 + (id)_backgroundImage;
 
+- (void).cxx_destruct;
 - (id)button;
 - (float)buttonWidth;
-- (void)dealloc;
 - (void)setButton:(id)arg1 andStyle:(BOOL)arg2;
 
 @end

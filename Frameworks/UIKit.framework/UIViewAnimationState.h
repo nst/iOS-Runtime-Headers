@@ -32,7 +32,7 @@
     } _position;
     unsigned int _preventsAdditive;
     float _repeatCount;
-    BOOL _retainedSelf;
+    UIViewAnimationState *_retainedSelf;
     unsigned int _roundsToInteger;
     double _start;
     NSMutableArray *_trackedAnimations;
@@ -40,15 +40,20 @@
     UIView *_transitionView;
     unsigned int _useCurrentLayerState;
     NSUUID *_uuid;
+    NSMutableArray *_viewsPendingConstraintBasedAnimation;
     SEL _willStartSelector;
     unsigned int _willStartSent;
 }
 
 @property (nonatomic, readonly) BOOL _allowsUserInteraction;
 
++ (void)_addConstraintPendingAnimation:(id)arg1 container:(id)arg2;
++ (void)_addSystemPostAnimationAction:(id /* block */)arg1;
++ (void)_addViewForConstraintBasedAnimation:(id)arg1;
 + (void)popAnimationState;
 + (void)pushViewAnimationState:(id)arg1 context:(void*)arg2;
 
+- (void).cxx_destruct;
 - (void)_acceptEarlyAnimationCutoff:(id)arg1;
 - (void)_addAnimationStateForTracking:(id)arg1;
 - (BOOL)_allowsUserInteraction;
@@ -57,6 +62,7 @@
 - (void)_removeAnimationStateFromTrackingMap:(BOOL)arg1;
 - (void)_removeAnimationStateFromTrackingMap:(BOOL)arg1 disableTrackingIfNeeded:(BOOL)arg2;
 - (void)_runAlongsideAnimations;
+- (void)_runConstraintBasedLayoutAnimations;
 - (void)_setAlongsideAnimations:(id /* block */)arg1;
 - (BOOL)_shouldAnimateAdditivelyForKey:(id)arg1 onLayer:(id)arg2;
 - (BOOL)_shouldStartFromCurrentStateForLayer:(id)arg1 key:(id)arg2;
@@ -67,7 +73,6 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (id)animationForLayer:(id)arg1 forKey:(id)arg2 forView:(id)arg3;
 - (void)configureAnimation:(id)arg1 forLayer:(id)arg2 forKey:(id)arg3;
-- (void)dealloc;
 - (id)init;
 - (void)pop;
 - (void)sendDelegateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKDayViewController : UIViewController <BlockableScrollViewDelegate, EKDayViewDataSource, EKDayViewDelegate, EKEventGestureControllerDelegate, UIScrollViewDelegate> {
+@interface EKDayViewController : UIViewController <BlockableScrollViewDelegate, EKDayViewDataSource, EKDayViewDelegate, EKEventGestureControllerDelegate, UIScrollViewDelegate, UIViewControllerPreviewingDelegate> {
     BOOL _adjustingForDeceleration;
     BOOL _allowsDaySwitching;
     BOOL _allowsSelection;
@@ -30,7 +30,7 @@
     unsigned int _hasPendingNextDate;
     unsigned int _hasPendingPreviousDate;
     UIScrollView *_horizontalScrollingView;
-    BOOL _initialLoad;
+    BOOL _initialLoadHasOccurred;
     BOOL _instigatedDateChange;
     BOOL _needToCompleteDeceleration;
     BOOL _needToCompleteScrollingAnimation;
@@ -54,12 +54,12 @@
     unsigned int _scrollViewAnimating;
     unsigned int _settingDateFromScrolling;
     BOOL _shouldAutoscrollAfterAppearance;
-    BOOL _shouldAutoscrollOnNextActivation;
     NSTimer *_showNowTimer;
     BOOL _showsBanner;
     NSDateComponents *_targetDateComponents;
     BOOL _transitionedToSameDay;
     BOOL _viewAppeared;
+    <UIViewControllerPreviewing> *_viewControllerPreviewingRegistration;
 }
 
 @property (nonatomic) BOOL allowsDaySwitching;
@@ -69,6 +69,7 @@
 @property (nonatomic, copy) NSCalendar *calendar;
 @property (nonatomic, readonly) UIView *currentAllDayView;
 @property (nonatomic, readonly) BOOL currentDayContainsOccurrences;
+@property (nonatomic, readonly) UIView *currentDayContentGridView;
 @property (nonatomic, retain) EKEventEditViewController *currentEditor;
 @property (nonatomic) <EKDayViewControllerDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
@@ -84,8 +85,8 @@
 @property (nonatomic) BOOL notifyWhenTapOtherEventDuringDragging;
 @property (nonatomic, copy) NSDateComponents *pendingNextDate;
 @property (nonatomic, copy) NSDateComponents *pendingPreviousDate;
+@property (nonatomic) BOOL scrollEventsInToViewIgnoresVisibility;
 @property (nonatomic) BOOL shouldAutoscrollAfterAppearance;
-@property (nonatomic) BOOL shouldAutoscrollOnNextActivation;
 @property (nonatomic, retain) NSTimer *showNowTimer;
 @property (nonatomic) BOOL showsBanner;
 @property (readonly) Class superclass;
@@ -108,6 +109,7 @@
 - (void)_highlightDayViewDate:(double)arg1 isAllDay:(BOOL)arg2;
 - (BOOL)_isCalendarDate:(id)arg1 sameDayAsComponents:(id)arg2;
 - (BOOL)_isCurrentDayToday;
+- (BOOL)_isResizing;
 - (BOOL)_isViewInVisibleRect:(id)arg1;
 - (void)_localeChanged:(id)arg1;
 - (void)_notifyDelegateOfSelectedDateChange;
@@ -115,8 +117,7 @@
 - (void)_relayoutDays;
 - (void)_relayoutDaysDuringScrolling;
 - (void)_relayoutDaysDuringScrollingAndPerformDayChanges:(BOOL)arg1;
-- (void)_scrollDayViewAfterAppearance:(BOOL)arg1;
-- (void)_scrollDayViewAfterAppearanceIfNeeded;
+- (void)_scrollDayViewAfterRelayoutDays;
 - (void)_scrollToNowOnScrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)_scrollViewDidEndDecelerating:(id)arg1 notifyParallxState:(BOOL)arg2;
 - (void)_setDayView:(id)arg1 toDate:(id)arg2;
@@ -148,6 +149,7 @@
 - (id)createOccurrenceViewForEventGestureController:(id)arg1;
 - (id)currentAllDayView;
 - (BOOL)currentDayContainsOccurrences;
+- (id)currentDayContentGridView;
 - (id)currentEditor;
 - (id)dataSource;
 - (void)dayView:(id)arg1 didCreateOccurrenceViews:(id)arg2;
@@ -205,9 +207,13 @@
 - (id)pendingNextDate;
 - (id)pendingPreviousDate;
 - (id)preferredEventToSelectOnDate:(id)arg1;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)reloadData;
 - (void)reloadDataBetweenStart:(id)arg1 end:(id)arg2;
+- (void)scrollDayViewAppropriatelyWithAnimation:(BOOL)arg1;
 - (void)scrollEventIntoView:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)scrollEventsInToViewIgnoresVisibility;
 - (void)scrollEventsIntoViewAnimated:(BOOL)arg1;
 - (void)scrollToNow:(BOOL)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -234,15 +240,14 @@
 - (void)setNotifyWhenTapOtherEventDuringDragging:(BOOL)arg1;
 - (void)setPendingNextDate:(id)arg1;
 - (void)setPendingPreviousDate:(id)arg1;
+- (void)setScrollEventsInToViewIgnoresVisibility:(BOOL)arg1;
 - (void)setShouldAutoscrollAfterAppearance:(BOOL)arg1;
-- (void)setShouldAutoscrollOnNextActivation:(BOOL)arg1;
 - (void)setShowNowTimer:(id)arg1;
 - (void)setShowsBanner:(BOOL)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setToDay:(id)arg1 normalizedOffset:(float)arg2;
 - (void)setTransitionedToSameDay:(BOOL)arg1;
 - (BOOL)shouldAutoscrollAfterAppearance;
-- (BOOL)shouldAutoscrollOnNextActivation;
 - (id)showNowTimer;
 - (BOOL)showsBanner;
 - (void)significantTimeChangeOccurred;

@@ -11,7 +11,7 @@
 - (void).cxx_destruct;
 - (id)addReviewURLs;
 - (id)initWithGEOMapItemAttribution:(id)arg1;
-- (id)urlsForReviewWithIdentifier:(id)arg1;
+- (id)urlsForReview:(id)arg1;
 - (id)urlsForSelectedItemWithItems:(id)arg1;
 
 @end

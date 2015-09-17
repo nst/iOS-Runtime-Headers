@@ -10,6 +10,6 @@
 - (<QLPreviewItem> *)previewItem;
 - (void)setIndex:(int)arg1;
 - (void)setPreviewItem:(id <QLPreviewItem>)arg1;
-- (void)willStartSwiping;
+- (void)willStartSwiping:(BOOL)arg1;
 
 @end

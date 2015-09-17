@@ -3,18 +3,14 @@
  */
 
 @interface CKDDeviceManager : NSObject {
-    NSMutableDictionary *_callbackGroups;
     NSMutableDictionary *_deviceIDs;
     NSString *_deviceIdentifier;
     NSObject<OS_dispatch_queue> *_queue;
-    NSMutableDictionary *_requests;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *callbackGroups;
 @property (nonatomic, retain) NSMutableDictionary *deviceIDs;
 @property (nonatomic, readonly) NSString *deviceIdentifier;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, retain) NSMutableDictionary *requests;
 
 + (id)sharedManager;
 
@@ -23,16 +19,12 @@
 - (void)_saveDeviceIdentifier:(id)arg1 forContext:(id)arg2;
 - (id)_savedDeviceIdentifierForContext:(id)arg1;
 - (id)_serviceForContext:(id)arg1;
-- (id)callbackGroups;
 - (id)deviceIDs;
 - (id)deviceIdentifier;
 - (void)fetchDeviceIdentifierForContext:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)init;
 - (id)queue;
-- (id)requests;
-- (void)setCallbackGroups:(id)arg1;
 - (void)setDeviceIDs:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setRequests:(id)arg1;
 
 @end

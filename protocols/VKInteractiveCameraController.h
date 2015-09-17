@@ -23,8 +23,8 @@
 - (double)pitch;
 - (double)presentationYaw;
 - (BOOL)restoreViewportFromInfo:(VKViewportInfo *)arg1;
-- (void)setCenterCoordinate:(void *)arg1 altitude:(void *)arg2 yaw:(void *)arg3 pitch:(void *)arg4 duration:(void *)arg5 timingCurve:(void *)arg6 completion:(void *)arg7; // needs 7 arg types, found 17: struct { double x1; double x2; }, double, double, double, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, float, id /* block */, float, void*, id /* block */, void*, void, id /* block */, BOOL, void*
-- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
+- (void)setCenterCoordinate3D:(void *)arg1 altitude:(void *)arg2 yaw:(void *)arg3 pitch:(void *)arg4 duration:(void *)arg5 animationStyle:(void *)arg6 timingCurve:(void *)arg7 completion:(void *)arg8; // needs 8 arg types, found 18: struct { double x1; double x2; double x3; }, double, double, double, double, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, float, id /* block */, float, void*, id /* block */, void*, void, id /* block */, BOOL, void*
+- (void)setCenterCoordinate:(void *)arg1 altitude:(void *)arg2 yaw:(void *)arg3 pitch:(void *)arg4 duration:(void *)arg5 animationStyle:(void *)arg6 timingCurve:(void *)arg7 completion:(void *)arg8; // needs 8 arg types, found 18: struct { double x1; double x2; }, double, double, double, double, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, float, id /* block */, float, void*, id /* block */, void*, void, id /* block */, BOOL, void*
 - (void)setMapRegion:(void *)arg1 pitch:(void *)arg2 yaw:(void *)arg3 animated:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: GEOMapRegion *, double, double, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)setYaw:(double)arg1 animated:(BOOL)arg2;
 - (BOOL)snapMapIfNecessary:(const struct VKPoint { double x1; double x2; double x3; }*)arg1 animated:(BOOL)arg2;

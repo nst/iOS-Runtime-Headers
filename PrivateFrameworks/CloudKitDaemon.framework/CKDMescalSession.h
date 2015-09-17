@@ -32,12 +32,14 @@
 - (void)_reallyExchangeData:(id)arg1 serverVersion:(int)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_reallyProcessSignedData:(id)arg1 signature:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)_reallySignData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)_renewMescalSessionForRequestLocked:(id)arg1 withCallback:(id /* block */)arg2;
 - (void)_setUpWithCompletionHandler:(id /* block */)arg1;
 - (void)_teardown;
 - (void)_teardownLocked;
 - (id)context;
 - (void)dealloc;
 - (void)exchangeData:(id)arg1 serverVersion:(int)arg2 withCompletionHandler:(id /* block */)arg3;
+- (id)init;
 - (id)initWithContext:(id)arg1;
 - (BOOL)isSetup;
 - (id)lastSetupError;

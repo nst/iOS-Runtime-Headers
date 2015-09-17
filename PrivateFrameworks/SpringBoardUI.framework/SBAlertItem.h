@@ -9,6 +9,7 @@
     BOOL _allowMessageInCar;
     NSArray *_allowedBundleIDs;
     BOOL _didEverActivate;
+    BOOL _didEverDeactivate;
     BOOL _didPlayPresentationSound;
     BOOL _ignoreIfAlreadyDisplaying;
     BOOL _orderOverSBAlert;
@@ -33,7 +34,9 @@
 + (void)activateAlertItem:(id)arg1;
 
 - (BOOL)_didEverActivate;
+- (BOOL)_didEverDeactivate;
 - (BOOL)_dismissesOverlaysOnLockScreen;
+- (void)_noteDeactivated;
 - (void)_playPresentationSound;
 - (id)alertController;
 - (id)alertItemNotificationDate;

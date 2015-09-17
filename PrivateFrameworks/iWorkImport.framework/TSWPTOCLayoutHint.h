@@ -17,7 +17,6 @@
 
 + (Class)archivedHintClass;
 
-- (id).cxx_construct;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })charRange;
 - (id)copyForArchiving;
 - (id)firstChildHint;
@@ -26,7 +25,7 @@
 - (BOOL)isFirstHint;
 - (id)lastChildHint;
 - (void)offsetByDelta:(int)arg1;
-- (BOOL)overlapsWithSelection:(id)arg1;
+- (BOOL)overlapsWithSelectionPath:(id)arg1;
 - (void)saveToArchive:(struct TOCLayoutHintArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct Range {} *x5; }*)arg1 archiver:(id)arg2;
 
 @end

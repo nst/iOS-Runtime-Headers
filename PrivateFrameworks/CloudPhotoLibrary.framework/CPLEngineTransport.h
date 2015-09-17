@@ -21,12 +21,14 @@
 - (BOOL)canBatchResourceDownloadTasks:(id)arg1 :(id)arg2;
 - (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)componentName;
-- (id)downloadBatchTaskForSyncAnchor:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)downloadBatchTaskForSyncAnchor:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (id)engineLibrary;
 - (id)getAssetCountsTaskWithCompletionHandler:(id /* block */)arg1;
 - (void)getStatusDictionaryWithCompletionHandler:(id /* block */)arg1;
 - (void)getStatusWithCompletionHandler:(id /* block */)arg1;
 - (id)initWithEngineLibrary:(id)arg1;
+- (void)noteClientIsInBackground;
+- (void)noteClientIsInForeground;
 - (void)openWithCompletionHandler:(id /* block */)arg1;
 - (id)platformObject;
 - (id)removeLibraryTaskWithCompletionHandler:(id /* block */)arg1;
@@ -37,6 +39,6 @@
 - (id)setupTaskCreateLibraryIfNecessary:(BOOL)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)simpleDataForSyncAnchor:(id)arg1;
 - (BOOL)supportsDelayedUploads;
-- (id)uploadBatchTaskForBatch:(id)arg1 completionHandler:(id /* block */)arg2;
+- (id)uploadBatchTaskForBatch:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 
 @end

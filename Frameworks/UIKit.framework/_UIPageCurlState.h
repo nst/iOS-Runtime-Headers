@@ -35,6 +35,7 @@
 @property (getter=hasPendingAnimations, nonatomic, readonly) BOOL pendingAnimations;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } referenceLocation;
 
+- (void).cxx_destruct;
 - (int)_effectiveTransitionDirection;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_pageViewFrame;
 - (void)addBackPageContent;

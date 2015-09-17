@@ -20,11 +20,9 @@
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *sharedOwner;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *subscribed;
 
+- (void).cxx_destruct;
 - (id)calendar;
 - (id)copyParseRules;
-- (void)dealloc;
-- (id)description;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)isFamilyCalendar;
 - (id)notification;
 - (id)scheduleInbox;

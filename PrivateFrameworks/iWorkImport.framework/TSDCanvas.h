@@ -100,7 +100,7 @@
 - (id)infosToDisplay;
 - (id)init;
 - (id)initForTemporaryLayout;
-- (id)initWithLayoutControllerClass:(Class)arg1;
+- (id)initWithLayoutControllerClass:(Class)arg1 delegate:(id)arg2;
 - (void)invalidateLayers;
 - (void)invalidateReps;
 - (void)invalidateVisibleBounds;
@@ -122,6 +122,7 @@
 - (BOOL)p_updateRepsFromLayouts;
 - (void)recreateAllLayoutsAndReps;
 - (id)repForLayout:(id)arg1;
+- (Class)rootLayoutClass;
 - (void)setAllowsFontSubpixelQuantization:(BOOL)arg1;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -143,5 +144,6 @@
 - (struct CGSize { float x1; float x2; })unscaledSize;
 - (float)viewScale;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleUnscaledRectForClippingReps;
+- (BOOL)wantsEditingLayoutsForOffscreenInfos;
 
 @end

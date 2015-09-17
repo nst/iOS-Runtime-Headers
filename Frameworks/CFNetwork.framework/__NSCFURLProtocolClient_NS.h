@@ -6,7 +6,7 @@
     struct URLProtocolClient { int (**x1)(); } *_cf;
     struct _CFURLAuthChallenge { } *_cfChallenge;
     NSURLAuthenticationChallenge *_challenge;
-    struct URLProtocol { int (**x1)(); int (**x2)(); struct CoreSchedulingSet {} *x3; double x4; unsigned char x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; int x13; int x14; long long x15; unsigned char x16; int x17; long long x18; id x19; struct URLProtocolClient {} x20; struct _CFCachedURLResponse {} *x21; } *_prot;
+    struct URLProtocol { int (**x1)(); int (**x2)(); int (**x3)(); struct CoreSchedulingSet {} *x4; double x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; unsigned char x13; int x14; int x15; struct Throttler {} *x16; id x17; struct _CFURLRequest {} x18; struct URLProtocolClient {} *x19; struct _CFCachedURLResponse {} *x20; } *_prot;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,7 +25,7 @@
 - (struct _CFURLAuthChallenge { }*)cfChallenge;
 - (id)challenge;
 - (void)dealloc;
-- (id)initWithCFClient:(struct URLProtocolClient { int (**x1)(); }*)arg1 prot:(struct URLProtocol { int (**x1)(); int (**x2)(); struct CoreSchedulingSet {} *x3; double x4; unsigned char x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; int x13; int x14; long long x15; unsigned char x16; int x17; long long x18; id x19; struct URLProtocolClient {} x20; struct _CFCachedURLResponse {} *x21; }*)arg2;
+- (id)initWithCFClient:(struct URLProtocolClient { int (**x1)(); }*)arg1 prot:(struct URLProtocol { int (**x1)(); int (**x2)(); int (**x3)(); struct CoreSchedulingSet {} *x4; double x5; unsigned char x6; unsigned char x7; unsigned char x8; unsigned char x9; unsigned char x10; unsigned char x11; unsigned char x12; unsigned char x13; int x14; int x15; struct Throttler {} *x16; id x17; struct _CFURLRequest {} x18; struct URLProtocolClient {} *x19; struct _CFCachedURLResponse {} *x20; }*)arg2;
 - (void)teardown;
 
 @end

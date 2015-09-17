@@ -9,6 +9,7 @@
     int _accountSource;
     BOOL _active;
     BOOL _activeLockerAccount;
+    NSString *_altDSID;
     int _availableServiceTypes;
     NSData *_bioToken;
     NSString *_creditsString;
@@ -35,6 +36,7 @@
 @property int accountSource;
 @property (getter=isActive) BOOL active;
 @property (getter=isActiveLockerAccount) BOOL activeLockerAccount;
+@property (copy) NSString *altDSID;
 @property (getter=isAuthenticated, readonly) BOOL authenticated;
 @property int availableServiceTypes;
 @property (copy) NSString *creditsString;
@@ -64,6 +66,7 @@
 - (int)accountSource;
 - (void)addAvailableServiceTypes:(int)arg1;
 - (void)addEnabledServiceTypes:(int)arg1;
+- (id)altDSID;
 - (int)availableServiceTypes;
 - (id)copyLockdownRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -107,6 +110,7 @@
 - (void)setAccountSource:(int)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setActiveLockerAccount:(BOOL)arg1;
+- (void)setAltDSID:(id)arg1;
 - (void)setAvailableServiceTypes:(int)arg1;
 - (void)setBiometricToken:(id)arg1;
 - (void)setCreditsString:(id)arg1;

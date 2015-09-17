@@ -23,6 +23,7 @@
     NSString *_symbolType;
     double _timeMetadataLastUpdated;
     double _timeQuoteLastUpdated;
+    BOOL _transient;
     NSString *_volume;
     NSString *_yearHigh;
     NSString *_yearLow;
@@ -47,6 +48,7 @@
 @property (nonatomic, retain) NSString *symbolType;
 @property (nonatomic) double timeMetadataLastUpdated;
 @property (nonatomic) double timeQuoteLastUpdated;
+@property (getter=isTransient, nonatomic) BOOL transient;
 @property (nonatomic, retain) NSString *volume;
 @property (nonatomic, retain) NSString *yearHigh;
 @property (nonatomic, retain) NSString *yearLow;
@@ -60,12 +62,14 @@
 + (id)formattedStringForNumber:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3 groupingSeparators:(BOOL)arg4 droppingFractionDigitsIfLengthExceeds:(unsigned int)arg5;
 + (id)formattedStringForString:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3;
 + (id)formattedStringForString:(id)arg1 fractionDigits:(unsigned int)arg2 percentStyle:(BOOL)arg3 droppingFractionDigitsIfLengthExceeds:(unsigned int)arg4;
++ (id)listNameOverridesBySymbol;
 + (BOOL)localeUsesASCIIDigits;
 + (id)localizedMagnitudeAbbreviatedStringWithString:(id)arg1;
 + (id)localizedMagnitudeAbbreviatedStringWithString:(id)arg1 fractionDigits:(unsigned int)arg2;
 + (id)percentSymbol;
 + (id)postfixCharacterForMagnitude:(unsigned int)arg1 unitMagnitude:(unsigned int*)arg2;
 + (void)resetLocale;
++ (id)symbolForURL:(id)arg1;
 + (id)urlForStock:(id)arg1;
 + (id)urlForStockSymbol:(id)arg1;
 
@@ -97,7 +101,9 @@
 - (BOOL)isIndex;
 - (BOOL)isMetadataStale;
 - (BOOL)isQuoteStale;
+- (BOOL)isTransient;
 - (id)listName;
+- (id)listNameOverride;
 - (id)listNameWithMaxIndexNameLength:(unsigned int)arg1;
 - (id)low;
 - (BOOL)marketIsOpen;
@@ -127,10 +133,12 @@
 - (void)setSymbolType:(id)arg1;
 - (void)setTimeMetadataLastUpdated:(double)arg1;
 - (void)setTimeQuoteLastUpdated:(double)arg1;
+- (void)setTransient:(BOOL)arg1;
 - (void)setVolume:(id)arg1;
 - (void)setYearHigh:(id)arg1;
 - (void)setYearLow:(id)arg1;
 - (id)shortCompanyName;
+- (BOOL)shouldUseCompanyNameAsListName:(unsigned int)arg1;
 - (id)symbol;
 - (id)symbolType;
 - (double)timeMetadataLastUpdated;

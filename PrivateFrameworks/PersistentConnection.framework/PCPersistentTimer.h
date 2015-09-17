@@ -15,6 +15,7 @@
     id _target;
     BOOL _triggerOnGMTChange;
     id _userInfo;
+    BOOL _userVisible;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,7 +25,9 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *loggingIdentifier;
 @property (nonatomic) double minimumEarlyFireProportion;
+@property (nonatomic, readonly) double startTime;
 @property (readonly) Class superclass;
+@property (getter=isUserVisible, nonatomic) BOOL userVisible;
 
 + (id)_backgroundUpdateQueue;
 + (double)_currentGuidanceTime;
@@ -50,6 +53,7 @@
 - (void)interfaceManagerWWANInterfaceChangedPowerState:(id)arg1;
 - (void)interfaceManagerWWANInterfaceStatusChanged:(id)arg1;
 - (void)invalidate;
+- (BOOL)isUserVisible;
 - (BOOL)isValid;
 - (id)loggingIdentifier;
 - (double)minimumEarlyFireProportion;
@@ -58,6 +62,8 @@
 - (void)scheduleInRunLoop:(id)arg1 inMode:(id)arg2;
 - (void)setDisableSystemWaking:(BOOL)arg1;
 - (void)setMinimumEarlyFireProportion:(double)arg1;
+- (void)setUserVisible:(BOOL)arg1;
+- (double)startTime;
 - (id)userInfo;
 
 @end

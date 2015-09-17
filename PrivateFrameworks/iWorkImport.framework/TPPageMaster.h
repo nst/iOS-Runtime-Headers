@@ -21,6 +21,7 @@
 - (void)adoptStylesheet:(id)arg1 withMapper:(id)arg2;
 - (float)bodyWidth;
 - (id)childEnumerator;
+- (BOOL)containsModelObject:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (unsigned int)countOfMasterDrawables;
 - (void)dealloc;
@@ -47,11 +48,11 @@
 - (BOOL)isHeaderFooterEmpty:(int)arg1 fragmentAtIndex:(int)arg2;
 - (id)masterDrawables;
 - (id)masterDrawablesSortedByZOrder:(id)arg1;
-- (BOOL)ownsModelObject:(id)arg1;
 - (float)pHeightOfHeaderFooter:(int)arg1;
 - (void)p_filterParagraphStylesOnHeaderFooterStorage:(id)arg1 stylesheet:(id)arg2;
 - (id)p_headerAndFooterStorages;
 - (int)p_headerFragmentIndexForTabIndex:(unsigned int)arg1 paragraphStyle:(id)arg2 bodyWidth:(float)arg3;
+- (BOOL)p_isInDocument;
 - (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 documentRoot:(id)arg2;
 - (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 documentRoot:(id)arg2 context:(id)arg3;
 - (void)p_makeHeadersFootersPerformSelector:(SEL)arg1 withStylesheet:(id)arg2 withMapper:(id)arg3;
@@ -64,6 +65,7 @@
 - (id)section;
 - (void)setParentStorage:(id)arg1;
 - (void)setSection:(id)arg1;
+- (id)topLevelParentInfoForInfo:(id)arg1;
 - (BOOL)usesSingleHeaderFooter;
 - (void)wasAddedToDocumentRoot:(id)arg1 dolcContext:(id)arg2;
 - (void)wasRemovedFromDocumentRoot:(id)arg1;

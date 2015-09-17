@@ -7,6 +7,7 @@
     double _sessionStartTime;
     struct { 
         int trackAdds; 
+        int trackUpdates; 
         int trackDeletes; 
         int playlistAdds; 
         int playlistDeletes; 
@@ -24,6 +25,7 @@
 - (id)exportPlaylistDeleted:(unsigned long long)arg1;
 - (id)exportTrackAdded:(unsigned long long)arg1;
 - (id)exportTrackDeleted:(unsigned long long)arg1;
+- (id)exportTrackUpdated:(unsigned long long)arg1;
 - (id)initWithLibrary:(id)arg1 outputStream:(id)arg2 syncType:(int)arg3;
 
 @end

@@ -38,4 +38,10 @@
 
 - (id)_prettyDictionaryRepresentation;
 
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)ic_encryptedDataWithString:(id)arg1;
+
+- (id)ic_stringValue;
+
 @end

@@ -33,7 +33,9 @@
 - (void)getBehaviorOverridesWithCompletion:(id /* block */)arg1;
 - (void)getPrivilegedSenderAddressBookGroupRecordIDAndNameWithCompletion:(id /* block */)arg1;
 - (void)getPrivilegedSenderTypesWithCompletion:(id /* block */)arg1;
-- (void)getSectionInfoForCategory:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)getSectionInfoForActiveSectionsWithCompletion:(id /* block */)arg1;
+- (void)getSectionInfoForSectionID:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)getSectionInfoForSectionIDs:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getSectionInfoWithCompletion:(id /* block */)arg1;
 - (void)getSectionOrderRuleWithCompletion:(id /* block */)arg1;
 - (id)init;
@@ -57,7 +59,6 @@
 - (void)setBehaviorOverridesEnabled:(BOOL)arg1;
 - (void)setBehaviorOverridesWithSourceChangeHandler:(id /* block */)arg1;
 - (void)setOrderedSectionIDs:(id)arg1;
-- (void)setOrderedSectionIDs:(id)arg1 forCategory:(int)arg2;
 - (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2;
 - (void)setPrivilegedSenderAddressBookGroupRecordID:(int)arg1 name:(id)arg2 source:(unsigned int)arg3;
 - (void)setPrivilegedSenderAddressBookGroupRecordIDWithSourceChangeHandler:(id /* block */)arg1;
@@ -65,7 +66,8 @@
 - (void)setPrivilegedSenderTypes:(unsigned int)arg1 source:(unsigned int)arg2;
 - (void)setPrivilegedSenderTypesWithSourceChangeHandler:(id /* block */)arg1;
 - (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2;
-- (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2 inCategory:(int)arg3;
+- (void)setSectionInfo:(id)arg1 forSectionID:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)setSectionOrderRule:(int)arg1;
+- (void)updateSectionInfoForSectionID:(id)arg1 withHandler:(id /* block */)arg2;
 
 @end

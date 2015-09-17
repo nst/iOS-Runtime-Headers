@@ -15,6 +15,7 @@
 + (id)unreadBubbleHighlightedImage;
 + (id)unreadBubbleImage;
 
+- (void).cxx_destruct;
 - (void)badgeWithInteger:(int)arg1;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2 specifier:(id)arg3;

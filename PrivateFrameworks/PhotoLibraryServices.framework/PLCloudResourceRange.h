@@ -5,35 +5,37 @@
 @interface PLCloudResourceRange : NSObject {
     unsigned short _category;
     PLPhotoLibrary *_photoLibrary;
-    unsigned short _qualityClass;
     PLCloudResourceNode *_rootNode;
 }
 
 @property (nonatomic, readonly) unsigned short category;
-@property (nonatomic, readonly) unsigned short qualityClass;
-@property (nonatomic, readonly) unsigned long long totalCount;
-@property (nonatomic, readonly) unsigned long long totalSize;
+@property (nonatomic, readonly) PLCloudResourceNode *rootNode;
+@property (nonatomic, readonly) unsigned long long totalAssetCount;
 
-- (void)assignSuccessorNode:(id)arg1;
+- (void)_assignSuccessorNode:(id)arg1;
+- (void)_insertionRebalanceCaseFive:(id)arg1;
+- (void)_insertionRebalanceCaseFour:(id)arg1;
+- (void)_insertionRebalanceCaseOne:(id)arg1;
+- (void)_insertionRebalanceCaseThree:(id)arg1;
+- (void)_insertionRebalanceCaseTwo:(id)arg1;
+- (id)_nodeForAssetWithUuid:(id)arg1;
+- (void)_removeRebalance:(id)arg1;
+- (void)_removeTreeNode:(id)arg1;
 - (unsigned short)category;
-- (id)cloudResourceAtIndex:(unsigned int)arg1;
-- (id)cloudResourcesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)dealloc;
-- (void)enumerateResourcesWithBlock:(id /* block */)arg1;
-- (id)initWithBudgetingCategory:(unsigned short)arg1 qualityClass:(unsigned short)arg2 photoLibrary:(id)arg3;
-- (void)insertCloudResource:(id)arg1;
-- (void)insertionRebalanceCaseFive:(id)arg1;
-- (void)insertionRebalanceCaseFour:(id)arg1;
-- (void)insertionRebalanceCaseOne:(id)arg1;
-- (void)insertionRebalanceCaseThree:(id)arg1;
-- (void)insertionRebalanceCaseTwo:(id)arg1;
+- (void)enumerateNodesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withBlock:(id /* block */)arg2;
+- (id)initWithBudgetingCategory:(unsigned short)arg1 photoLibrary:(id)arg2;
+- (unsigned int)insertCloudAsset:(id)arg1;
+- (void)logTreeValidationErrors;
 - (id)lowestCommonAncestorBetween:(id)arg1 and:(id)arg2;
-- (unsigned short)qualityClass;
-- (BOOL)removeCloudResource:(id)arg1;
-- (void)removeRebalance:(id)arg1;
-- (void)removeTreeNode:(id)arg1;
-- (unsigned long long)totalCount;
-- (unsigned long long)totalSize;
-- (unsigned long long)totalSizeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (unsigned int)removeNodeForAssetWithUuid:(id)arg1;
+- (id)rootNode;
+- (unsigned long long)totalAggregateBetween:(id)arg1 and:(id)arg2 usingVisitorFunction:(id /* block */)arg3 usingAggregateFunction:(id /* block */)arg4;
+- (unsigned long long)totalAssetCount;
+- (unsigned long long)totalDistanceBetween:(id)arg1 and:(id)arg2;
+- (unsigned long long)totalSizeForQualityClass:(unsigned short)arg1;
+- (unsigned long long)totalSizeInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 forQualityClass:(unsigned short)arg2;
+- (void)traverseSubtreeInOrderFromLocalRoot:(id)arg1 withCallbackBlock:(id /* block */)arg2 currentDepth:(int)arg3;
+- (BOOL)validateTreeUsingContext:(id)arg1 errors:(id*)arg2;
 
 @end

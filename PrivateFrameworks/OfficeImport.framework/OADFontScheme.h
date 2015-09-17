@@ -3,23 +3,24 @@
  */
 
 @interface OADFontScheme : NSObject {
-    NSMutableDictionary *mMajorFont;
-    NSMutableDictionary *mMinorFont;
+    OADFontCollection *_majorFont;
+    OADFontCollection *_minorFont;
+    NSString *_name;
 }
 
-+ (void)addFontEntry:(id)arg1 script:(id)arg2 typeface:(id)arg3;
+@property (nonatomic, readonly) OADFontCollection *majorFont;
+@property (nonatomic, readonly) OADFontCollection *minorFont;
+@property (nonatomic, copy) NSString *name;
 
 - (void)dealloc;
-- (id)description;
-- (id)fontForFontSchemeRef:(id)arg1;
+- (id)fontForId:(int)arg1;
 - (id)init;
+- (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
-- (BOOL)isFontSchemeRef:(id)arg1;
 - (id)majorFont;
-- (unsigned int)majorFontCount;
-- (id)majorTypefaceForScript:(id)arg1;
 - (id)minorFont;
-- (unsigned int)minorFontCount;
-- (id)minorTypefaceForScript:(id)arg1;
+- (id)name;
+- (void)setName:(id)arg1;
+- (void)validateFontScheme;
 
 @end

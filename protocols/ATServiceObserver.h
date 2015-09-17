@@ -5,6 +5,6 @@
 
 @required
 
-- (void)service:(ATService *)arg1 willOpenMessageLink:(id <ATMessageLink>)arg2;
+- (void)service:(ATService *)arg1 willOpenMessageLink:(ATMessageLink *)arg2;
 
 @end

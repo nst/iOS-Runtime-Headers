@@ -4,12 +4,12 @@
 
 @interface PKPaymentDevice : NSObject <CLLocationManagerDelegate> {
     NSObject<OS_dispatch_queue> *_callbackQueue;
-    NFCardManager *_cardManager;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSObject<OS_dispatch_source> *_locationFixTimeout;
     CLLocationManager *_locationManager;
     NSMutableArray *_provisioningCompletions;
     PKPaymentDeviceProvisioningData *_provisioningData;
+    PKSecureElement *_secureElement;
     BOOL _skipLocationCheck;
     NSTimer *_timer;
 }
@@ -24,6 +24,7 @@
 
 - (void)_executeProvisioningCompletionHandlers;
 - (void)_finishLocationFixWithLocation:(id)arg1;
+- (id)configurationData;
 - (void)configurationDataWithCompletionHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (void)deleteApplicationWithAID:(id)arg1;
@@ -32,15 +33,13 @@
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (void)provisioningDataWithCompletionHandler:(id /* block */)arg1;
-- (void)queueConnectionToTrustedServiceManager;
-- (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1;
 - (void)queueConnectionToTrustedServiceManagerForPushTopic:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)queueConnectionToTrustedServiceManagerWithCompletion:(id /* block */)arg1;
 - (void)registrationDataWithAuthToken:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)rewrapDataWithDeviceIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
-- (void)secureElementSigningKeyTypeWithCompletion:(id /* block */)arg1;
+- (id)rewrapDataWithDeviceIdentifier:(id)arg1;
 - (void)setRegistrationRegionMap:(id)arg1;
 - (void)setSkipLocationCheck:(BOOL)arg1;
+- (void)signData:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (BOOL)skipLocationCheck;
 
 @end

@@ -23,6 +23,7 @@
 + (id)dispatchGroup;
 + (id)dispatchGroupWithName:(id)arg1;
 + (id)mainQueue;
++ (void)waitUntilDone:(id /* block */)arg1;
 
 - (id)_values;
 - (void)_waitWithDispatchTimeout:(unsigned long long)arg1;

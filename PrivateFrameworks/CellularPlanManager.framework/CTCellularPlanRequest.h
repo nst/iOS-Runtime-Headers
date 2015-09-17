@@ -31,6 +31,7 @@
 @property (readonly) Class superclass;
 
 + (id)connectionSettingsForServiceType:(int)arg1;
++ (id)countryListRequestWithSignIdMap:(id)arg1 urls:(id)arg2;
 + (id)createSessionRequest;
 + (void)initialize;
 + (BOOL)isRetriableErrorCode:(int)arg1;

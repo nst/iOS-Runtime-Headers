@@ -11,9 +11,9 @@
 
 + (id)proxyWithTarget:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_awaitingReply;
 - (id)_deliveringRepliesAsynchronously;
-- (void)dealloc;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (id)methodSignatureForSelector:(SEL)arg1;
 - (BOOL)respondsToSelector:(SEL)arg1;

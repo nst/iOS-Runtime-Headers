@@ -9,6 +9,7 @@
 - (void)_createDatabaseSchema;
 - (void)_migrateToSchemaVersion2;
 - (void)_migrateToSchemaVersion3;
+- (void)_migrateToSchemaVersion4;
 - (id)init;
 
 @end

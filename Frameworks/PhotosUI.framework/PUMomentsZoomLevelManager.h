@@ -29,7 +29,7 @@
 - (id)existingViewControllerForZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2;
 - (unsigned int)highestZoomLevel;
 - (id)initWithSpec:(id)arg1;
-- (id)jumpToZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2;
+- (id)jumpToZoomLevel:(unsigned int)arg1 inNavigationController:(id)arg2 usingTopControllerConfigurationBlock:(id /* block */)arg3;
 - (unsigned int)lowestZoomLevel;
 - (void)markZoomInfosInvalidWithWidth:(float)arg1;
 - (id)momentsDataSource;

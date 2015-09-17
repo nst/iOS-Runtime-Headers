@@ -115,6 +115,7 @@
 - (void)setViewController:(id)arg1 forSegmentIdentifier:(id)arg2;
 - (BOOL)shouldAutomaticallySelectMyMusicSegment;
 - (BOOL)shouldShowStoreSegments;
+- (id)viewControllerForSegmentIdentifier:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

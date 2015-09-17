@@ -30,7 +30,6 @@
     BOOL _disableAirPlayMirroringDuringPlayback;
     BOOL _disallowsAMRAudio;
     int _displayOverridePlaybackState;
-    int _feederMode;
     unsigned int _forceDelayedCurrentTimeToSet;
     unsigned int _hasDelayedCurrentTimeToSet;
     BOOL _hasPendingRate;
@@ -65,6 +64,7 @@
     float _pendingRate;
     MPAVItem *_pendingRateItem;
     MPAVRoute *_pickedRoute;
+    AVPictureInPictureController *_pictureInPictureController;
     unsigned int _playInBackgroundUserDefaultEnabled;
     int _playbackMode;
     MPAVPlaylistManager *_playlistManager;
@@ -101,6 +101,7 @@
     unsigned int _videoLayerUsageCount;
     MPVideoView *_videoView;
     Class _videoViewClass;
+    BOOL _wantsPictureInPicture;
     double _whenSawSeekableEnd;
     double _whenSawSeekableStart;
 }
@@ -132,7 +133,6 @@
 @property (nonatomic, readonly) int externalPlaybackType;
 @property (nonatomic, copy) NSString *externalPlaybackVideoGravity;
 @property (nonatomic, readonly) MPQueueFeeder *feeder;
-@property (nonatomic) int feederMode;
 @property (nonatomic, readonly) BOOL hasVolumeControl;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isCurrentItemReady;
@@ -140,6 +140,7 @@
 @property (nonatomic) BOOL managesAirPlayBehaviors;
 @property (nonatomic, readonly) BOOL muted;
 @property (nonatomic) double nextFadeOutDuration;
+@property (nonatomic, readonly) AVPictureInPictureController *pictureInPictureController;
 @property (nonatomic, readonly) double playableDurationOfCurrentItemIfAvailable;
 @property (nonatomic) int playbackMode;
 @property (getter=isPlaying, nonatomic, readonly) BOOL playing;
@@ -166,8 +167,7 @@
 @property (nonatomic, readonly) AVPlayerLayer *videoLayer;
 @property (nonatomic, readonly) MPVideoView *videoView;
 @property (nonatomic) float volume;
-
-// Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
+@property (nonatomic) BOOL wantsPictureInPicture;
 
 + (id)_itemKeysToObserve;
 + (id)_playerKeysToObserve;
@@ -183,6 +183,7 @@
 - (void)_applicationWillAddDeactivationReason:(id)arg1;
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_applyAirPlayMusicMode;
+- (void)_applyAirPlayMusicModeForItem:(id)arg1 shouldIgnorePlaybackQueueTransactions:(BOOL)arg2;
 - (void)_attemptAutoPlay;
 - (BOOL)_canPlayItem:(id)arg1;
 - (void)_cancelStallTimer;
@@ -192,7 +193,7 @@
 - (void)_clearLastSetTimeIfPlayerTimeIsValid;
 - (void)_clearResetRateAfterSeeking;
 - (void)_clearSeekingIntervalsForStreaming;
-- (void)_clearVideoLayer;
+- (void)_clearVideoLayer:(BOOL)arg1;
 - (void)_configureAVPlaylistManager;
 - (void)_configureUpdateCurrentItemBookkeepingTimer;
 - (void)_connectAVPlayer;
@@ -220,6 +221,7 @@
 - (void)_itemFailedToPlayToEndNotification:(id)arg1;
 - (BOOL)_itemIsRestricted:(id)arg1;
 - (void)_itemPlaybackDidEndNotification:(id)arg1;
+- (void)_itemPlaybackModeAvailableNotification:(id)arg1;
 - (void)_itemReadyToPlay:(id)arg1;
 - (void)_itemTimeMarkersAvailableNotification:(id)arg1;
 - (void)_itemTypeAvailableNotification:(id)arg1;
@@ -244,9 +246,9 @@
 - (void)_prepareToPlayItem:(id)arg1;
 - (void)_rateDidChange:(id)arg1;
 - (void)_registerForAVItemNotifications:(id)arg1;
+- (void)_registerForPlaylistManager:(id)arg1;
 - (void)_reloadTimeMarkerObservationsForItem:(id)arg1;
 - (void)_resetInternalState;
-- (void)_resetQueue:(BOOL)arg1 useVideoLayer:(BOOL)arg2;
 - (void)_resumeBookkeepingTimer;
 - (void)_resumePlaybackIfNecessary;
 - (void)_resumeTickTimer;
@@ -258,10 +260,10 @@
 - (void)_setItemErrorResolver:(id)arg1;
 - (void)_setLastSetTime:(double)arg1;
 - (BOOL)_setRate:(float)arg1 forScanning:(BOOL)arg2;
+- (BOOL)_setRate:(float)arg1 forScanning:(BOOL)arg2 withItem:(id)arg3;
 - (void)_setState:(int)arg1;
 - (void)_setValid:(BOOL)arg1;
 - (void)_setVideoLayerAttachedToPlayer:(BOOL)arg1 force:(BOOL)arg2 pauseIfNecessary:(BOOL)arg3;
-- (BOOL)_shouldSwitchToAudioPlaybackWhenTransitioningFromVideo;
 - (BOOL)_showsPlayingWhenInState:(int)arg1;
 - (void)_sizeDidChange:(id)arg1;
 - (void)_streamBufferFull:(id)arg1;
@@ -272,11 +274,13 @@
 - (void)_timedMetadataAvailable:(id)arg1;
 - (void)_tracksDidChange:(id)arg1;
 - (void)_unregisterForAVItemNotifications:(id)arg1;
+- (void)_unregisterForPlayer:(id)arg1;
 - (void)_unregisterForPlaylistManager:(id)arg1;
 - (void)_updateCurrentItemBookkeepingForTimerCallback;
 - (void)_updateCurrentItemBookkeepingMarkedAsCheckpoint:(BOOL)arg1;
 - (void)_updateCurrentTimeToBookmarkTimeForDynamicPropertyChange;
 - (void)_updateCurrentTimeToNextStartTimeForQueueFeeder:(id)arg1 withItemIndex:(int)arg2;
+- (void)_updatePlaybackModeForItem:(id)arg1;
 - (void)_updateProgress:(struct __CFRunLoopTimer { }*)arg1;
 - (void)_updateScanningRate;
 - (void)_updateSeekingIntervalsForStreaming;
@@ -336,7 +340,6 @@
 - (int)externalPlaybackType;
 - (id)externalPlaybackVideoGravity;
 - (id)feeder;
-- (int)feederMode;
 - (void)finalizeBookkeepingNow;
 - (BOOL)forceRestartPlaybackIfNecessary;
 - (BOOL)hasVolumeControl;
@@ -358,6 +361,7 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
 - (void)pauseWithFadeout:(float)arg1;
+- (id)pictureInPictureController;
 - (void)play;
 - (void)playChapterTimeMarkerAtIndex:(unsigned int)arg1;
 - (void)playChapterTimeMarkerAtIndex:(unsigned int)arg1 withOptions:(unsigned int)arg2;
@@ -369,6 +373,7 @@
 - (int)playbackMode;
 - (void)playlistManager:(id)arg1 didFailLoadingAllItemsForQueueFeeder:(id)arg2;
 - (void)playlistManager:(id)arg1 didTransitionToPlaylistFeeder:(id)arg2;
+- (void)playlistManager:(id)arg1 queueCoordinator:(id)arg2 willInsertItem:(id)arg3 afterItem:(id)arg4;
 - (id)preferredLanguages;
 - (float)rate;
 - (void)reloadWithPlaybackContext:(id)arg1;
@@ -385,15 +390,16 @@
 - (void)setAutoPlayWhenLikelyToKeepUp:(BOOL)arg1;
 - (void)setAutoclearingDisplayOverridePlaybackState:(int)arg1;
 - (void)setClient:(id)arg1 wantsToAllowExternalPlayback:(BOOL)arg2;
+- (void)setClient:(id)arg1 wantsToAllowExternalPlayback:(BOOL)arg2 shouldIgnorePlaybackQueueTransactions:(BOOL)arg3;
 - (void)setClosedCaptioningEnabled:(BOOL)arg1;
 - (void)setCurrentTime:(double)arg1;
 - (void)setCurrentTime:(double)arg1 options:(int)arg2;
 - (void)setDestinationIsTVOut:(BOOL)arg1;
 - (void)setDisableAirPlayMirroringDuringPlayback:(BOOL)arg1;
+- (void)setDisableAirPlayMirroringDuringPlayback:(BOOL)arg1 shouldIgnorePlaybackQueueTransactions:(BOOL)arg2;
 - (void)setDisallowsAMRAudio:(BOOL)arg1;
 - (void)setDisplayOverridePlaybackState:(int)arg1;
 - (void)setExternalPlaybackVideoGravity:(id)arg1;
-- (void)setFeederMode:(int)arg1;
 - (void)setManagesAirPlayBehaviors:(BOOL)arg1;
 - (void)setNextFadeOutDuration:(double)arg1;
 - (void)setPlaybackIndex:(int)arg1;
@@ -412,7 +418,9 @@
 - (void)setUseAirPlayMusicMode:(BOOL)arg1;
 - (void)setUseApplicationAudioSession:(BOOL)arg1;
 - (void)setUsesAudioOnlyModeForExternalPlayback:(BOOL)arg1;
+- (void)setUsesAudioOnlyModeForExternalPlayback:(BOOL)arg1 shouldIgnorePlaybackQueueTransactions:(BOOL)arg2;
 - (void)setVolume:(float)arg1;
+- (void)setWantsPictureInPicture:(BOOL)arg1;
 - (BOOL)shouldDisplayAsPlaying;
 - (BOOL)shouldEnforceHDCP;
 - (BOOL)shouldHaveNoActionAtEndForState:(int)arg1;
@@ -423,8 +431,6 @@
 - (void)skipToSeekableStart;
 - (int)state;
 - (BOOL)stopAtEnd;
-- (void)switchToAudioPlayback:(BOOL)arg1 forItem:(id)arg2;
-- (void)switchToVideoPlayback:(BOOL)arg1 forItem:(id)arg2;
 - (void)tickTimerFired;
 - (double)timeOfPlayableEnd;
 - (double)timeOfPlayableStart;
@@ -440,10 +446,6 @@
 - (id)videoLayer;
 - (id)videoView;
 - (float)volume;
-
-// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
-
-- (unsigned int)RTCReportingFlags;
-- (void)setRTCReportingFlags:(unsigned int)arg1;
+- (BOOL)wantsPictureInPicture;
 
 @end

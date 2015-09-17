@@ -4,12 +4,11 @@
 
 @interface PDCmdBehavior : PDAnimateBehavior {
     int mBehaviorType;
-    NSString *mCmd;
+    BOOL mHasBehaviorType;
 }
 
 - (int)behaviorType;
-- (id)cmd;
+- (BOOL)hasBehaviorType;
 - (void)setBehaviorType:(int)arg1;
-- (void)setCmd:(id)arg1;
 
 @end

@@ -10,6 +10,7 @@
 - (void).cxx_destruct;
 - (BOOL)continueGatheringWithBatchSize:(int)arg1;
 - (void)done;
+- (id)init;
 - (id)initWithNotificationPipe:(id)arg1 reply:(id /* block */)arg2;
 - (void)invalidate;
 

@@ -19,7 +19,7 @@
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (int)diffieHellmanGroup;
 - (void)encodeWithCoder:(id)arg1;
 - (int)encryptionAlgorithm;

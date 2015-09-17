@@ -12,7 +12,8 @@
 
 + (BOOL)isServiceRestricted:(id)arg1;
 
-- (BOOL)_isBackgroundAppRefreshRestricted;
+- (void).cxx_destruct;
+- (BOOL)_isBackgroundAppRefreshAllowed;
 - (BOOL)_isCellularDataRestricted;
 - (BOOL)_isLocationServicesRestricted;
 - (id)_privacyAccessForService:(struct __CFString { }*)arg1;

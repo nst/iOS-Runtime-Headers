@@ -17,6 +17,7 @@
 - (id)author;
 - (int)columnIndex;
 - (void)dealloc;
+- (id)description;
 - (int)rowIndex;
 - (void)setAuthor:(id)arg1;
 - (void)setColumnIndex:(int)arg1;

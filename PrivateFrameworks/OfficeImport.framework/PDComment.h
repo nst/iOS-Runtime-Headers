@@ -3,6 +3,7 @@
  */
 
 @interface PDComment : NSObject {
+    NSString *_author;
     unsigned int mAuthorId;
     NSDate *mDate;
     unsigned int mIndex;
@@ -13,13 +14,17 @@
     NSString *mText;
 }
 
-- (id).cxx_construct;
+@property (nonatomic, retain) NSString *author;
+
+- (id)author;
 - (unsigned int)authorId;
 - (id)date;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)index;
 - (id)init;
 - (struct CGPoint { float x1; float x2; })position;
+- (void)setAuthor:(id)arg1;
 - (void)setAuthorId:(unsigned int)arg1;
 - (void)setDate:(id)arg1;
 - (void)setIndex:(unsigned int)arg1;

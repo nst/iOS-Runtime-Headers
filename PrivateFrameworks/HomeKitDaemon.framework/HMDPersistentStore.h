@@ -6,32 +6,34 @@
 
 + (id)_decryptData:(id)arg1 withKey:(id)arg2 error:(id*)arg3;
 + (id)_encryptData:(id)arg1 withKey:(id)arg2 error:(id*)arg3;
++ (id)_writeData:(id)arg1 toStorePath:(id)arg2 dataLabel:(id)arg3;
++ (id)archiveBlacklistedBundles:(id)arg1;
++ (id)archiveBulletinBoard:(id)arg1;
++ (id)archiveCloudServerTokenData:(id)arg1;
++ (id)archiveHomeData:(id)arg1;
++ (id)archiveIDSDataSyncJournal:(id)arg1;
++ (id)archiveMetadata:(id)arg1;
++ (id)archiveTransactions:(id)arg1;
 + (id)decryptDataWithControllerKey:(id)arg1 totalKeysFound:(unsigned int*)arg2 deleteExtraKeys:(BOOL)arg3 extraKeysWereDeleted:(BOOL*)arg4 error:(id*)arg5;
 + (id)decryptDataWithMetadataKey:(id)arg1 error:(id*)arg2;
++ (id)decryptUsingLocalKeyAndUnarchiveFromPath:(id)arg1 error:(id*)arg2;
++ (id)deserializeBlacklistedBundlesFromData:(id)arg1;
 + (BOOL)deserializeHomeData:(id*)arg1 localStorage:(BOOL)arg2 fromData:(id)arg3;
 + (BOOL)deserializeMetadata:(id*)arg1 fromData:(id)arg2;
 + (id)encryptDataWithControllerKey:(id)arg1 error:(id*)arg2;
 + (id)encryptDataWithMetadataKey:(id)arg1 error:(id*)arg2;
-+ (id)idsDataSyncJournalPath;
-+ (id)protectedMetadataPath;
-+ (id)protectedStorePath;
++ (id)encryptUsingLocalKeyAndArchiveData:(id)arg1 storePath:(id)arg2 dataLabel:(id)arg3;
++ (void)resetConfiguration;
++ (void)resetMetadata;
++ (id)serializeBlacklistedBundles:(id)arg1;
 + (id)serializeHomeData:(id)arg1 localStorage:(BOOL)arg2 remoteDeviceOnSameAccount:(BOOL)arg3;
 + (id)serializeMetadata:(id)arg1;
-+ (id)serverTokenPath;
-+ (id)storeDirectoryPath;
-+ (id)transactionJournalPath;
-
-- (BOOL)archiveCloudServerTokenData:(id)arg1;
-- (BOOL)archiveHomeData:(id)arg1;
-- (BOOL)archiveIDSDataSyncJournal:(id)arg1;
-- (BOOL)archiveMetadata:(id)arg1;
-- (BOOL)archiveTransactions:(id)arg1;
-- (void)resetConfiguration;
-- (void)resetMetadata;
-- (id)unarchiveHomeData:(id*)arg1;
-- (id)unarchiveIDSDataSyncJournal;
-- (id)unarchiveMetadata:(id*)arg1;
-- (id)unarchiveServerTokenData:(BOOL*)arg1;
-- (id)unarchiveTransactionJournal;
++ (id)unarchiveBlacklistedBundles;
++ (id)unarchiveBulletinBoard;
++ (id)unarchiveHomeData:(id*)arg1;
++ (id)unarchiveIDSDataSyncJournal;
++ (id)unarchiveMetadata:(id*)arg1;
++ (id)unarchiveServerTokenData:(BOOL*)arg1;
++ (id)unarchiveTransactionJournal;
 
 @end

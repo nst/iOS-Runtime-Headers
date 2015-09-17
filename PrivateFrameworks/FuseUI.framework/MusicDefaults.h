@@ -27,8 +27,6 @@
 @property (nonatomic, copy) NSString *selectedLibraryViewIdentifier;
 @property (nonatomic, copy) NSString *selectedPlaylistsOverviewFilter;
 @property (getter=isShakeToShuffleEnabled, nonatomic, readonly) BOOL shakeToShuffleEnabled;
-@property (nonatomic, readonly) BOOL shouldForceShowingSubscriberTabs;
-@property (nonatomic, readonly) BOOL shouldSkipConnectStoreBagCheck;
 @property (getter=isShowCloudMediaEnabled, nonatomic) BOOL showCloudMediaEnabled;
 @property (nonatomic) unsigned int shuffleType;
 @property (getter=isSortByArtistEnabled, nonatomic, readonly) BOOL sortByArtistEnabled;
@@ -83,8 +81,6 @@
 - (void)setShowCloudMediaEnabled:(BOOL)arg1;
 - (void)setShuffleType:(unsigned int)arg1;
 - (void)setTabBarOrdering:(id)arg1;
-- (BOOL)shouldForceShowingSubscriberTabs;
-- (BOOL)shouldSkipConnectStoreBagCheck;
 - (unsigned int)shuffleType;
 - (id)tabBarOrdering;
 

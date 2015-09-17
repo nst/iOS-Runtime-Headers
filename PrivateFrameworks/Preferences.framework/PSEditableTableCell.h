@@ -23,6 +23,7 @@
 
 + (int)cellStyle;
 
+- (void).cxx_destruct;
 - (BOOL)_cellIsEditing;
 - (id)_defaultTextColor;
 - (void)_saveForExit;

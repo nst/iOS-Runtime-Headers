@@ -9,6 +9,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *nonFormattedTime;
+@property (nonatomic, retain) SASportsAthlete *offensivePlayer;
 @property (nonatomic, copy) NSString *summaryDescription;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *time;
@@ -20,8 +22,12 @@
 - (BOOL)appliesToHomeTeam;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)nonFormattedTime;
+- (id)offensivePlayer;
 - (void)setAppliesToAwayTeam:(BOOL)arg1;
 - (void)setAppliesToHomeTeam:(BOOL)arg1;
+- (void)setNonFormattedTime:(id)arg1;
+- (void)setOffensivePlayer:(id)arg1;
 - (void)setSummaryDescription:(id)arg1;
 - (void)setTime:(id)arg1;
 - (id)summaryDescription;

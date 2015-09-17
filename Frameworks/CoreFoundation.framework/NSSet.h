@@ -91,6 +91,14 @@
 
 - (void)CKAssignToContainerWithID:(id)arg1;
 
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
+
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
+// Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
+
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (BOOL)supportsSecureCoding;
@@ -121,6 +129,13 @@
 - (id)CAMLType;
 - (void)encodeWithCAMLWriter:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
+
+- (void)bs_each:(id /* block */)arg1;
+- (id)bs_filter:(id /* block */)arg1;
+- (id)bs_map:(id /* block */)arg1;
+- (id)bs_mapNoNulls:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
 
 - (id)allObjectsWithClass:(Class)arg1;
@@ -132,13 +147,9 @@
 - (id)CalMutableRecursiveCopy;
 - (id)allObjectsWithClass:(Class)arg1;
 
-// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
+// Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
 
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (BOOL)_cn_any:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
@@ -146,6 +157,7 @@
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
+- (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
@@ -160,14 +172,39 @@
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
-- (id)mf_getAllObjectsAsArray;
+- (id)mf_anyPassingTest:(id /* block */)arg1;
+- (id)mf_filter:(id /* block */)arg1;
+- (id)mf_flatMap:(id /* block */)arg1;
+- (id)mf_flatten;
+- (id)mf_map:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
+
+- (id)npkComprehension:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
+- (BOOL)naui_any:(id /* block */)arg1;
+- (void)naui_each:(id /* block */)arg1;
+- (id)naui_filter:(id /* block */)arg1;
+- (id)naui_firstObjectPassingTest:(id /* block */)arg1;
+- (id)naui_map:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (BOOL)containsObjectPassingTest:(id /* block */)arg1;
+- (id)objectPassingTest:(id /* block */)arg1;
+- (id)objectsOfClass:(Class)arg1;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)intersectionOfSets:(id)arg1;
-+ (BOOL)set:(id)arg1 isEqualToSet:(id)arg2;
++ (id)tsu_intersectionOfSets:(id)arg1;
++ (BOOL)tsu_set:(id)arg1 isEqualToSet:(id)arg2;
++ (id)tsu_setWithSelectors:(SEL)arg1;
 
-- (BOOL)containsObjectIdenticalTo:(id)arg1;
+- (BOOL)tsu_containsObjectIdenticalTo:(id)arg1;
+- (id)tsu_setByMappingObjectsUsingBlock:(id /* block */)arg1;
+- (id)tsu_sortedArray;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
@@ -181,7 +218,7 @@
 
 - (id)setByIntersectingWithSet:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 - (id)safari_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
 
@@ -196,5 +233,9 @@
 - (BOOL)tsu_containsObjectIdenticalTo:(id)arg1;
 - (id)tsu_setByMappingObjectsUsingBlock:(id /* block */)arg1;
 - (id)tsu_sortedArray;
+
+// Image: /usr/lib/libprequelite.dylib
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

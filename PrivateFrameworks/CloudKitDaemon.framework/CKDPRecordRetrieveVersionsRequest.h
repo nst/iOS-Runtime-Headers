@@ -3,11 +3,14 @@
  */
 
 @interface CKDPRecordRetrieveVersionsRequest : PBRequest <NSCopying> {
+    CKDPAssetsToDownload *_assetsToDownload;
     NSString *_minimumVersionEtag;
     CKDPRecordIdentifier *_recordIdentifier;
     CKDPRequestedFields *_requestedFields;
 }
 
+@property (nonatomic, retain) CKDPAssetsToDownload *assetsToDownload;
+@property (nonatomic, readonly) BOOL hasAssetsToDownload;
 @property (nonatomic, readonly) BOOL hasMinimumVersionEtag;
 @property (nonatomic, readonly) BOOL hasRecordIdentifier;
 @property (nonatomic, readonly) BOOL hasRequestedFields;
@@ -18,10 +21,12 @@
 + (id)options;
 
 - (void).cxx_destruct;
+- (id)assetsToDownload;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAssetsToDownload;
 - (BOOL)hasMinimumVersionEtag;
 - (BOOL)hasRecordIdentifier;
 - (BOOL)hasRequestedFields;
@@ -34,6 +39,7 @@
 - (unsigned int)requestTypeCode;
 - (id)requestedFields;
 - (Class)responseClass;
+- (void)setAssetsToDownload:(id)arg1;
 - (void)setMinimumVersionEtag:(id)arg1;
 - (void)setRecordIdentifier:(id)arg1;
 - (void)setRequestedFields:(id)arg1;

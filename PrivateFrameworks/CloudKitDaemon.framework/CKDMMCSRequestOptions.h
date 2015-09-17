@@ -8,6 +8,7 @@
     NSString *_applicationBundleID;
     NSString *_applicationSecondaryID;
     NSString *_containerID;
+    int _qualityOfService;
     BOOL _usesBackgroundSession;
     NSArray *_zoneNames;
 }
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) NSString *applicationBundleID;
 @property (nonatomic, retain) NSString *applicationSecondaryID;
 @property (nonatomic, retain) NSString *containerID;
+@property (nonatomic) int qualityOfService;
 @property (nonatomic) BOOL usesBackgroundSession;
 @property (nonatomic, retain) NSArray *zoneNames;
 
@@ -30,11 +32,13 @@
 - (id)containerID;
 - (id)description;
 - (id)initWithOperation:(id)arg1;
+- (int)qualityOfService;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
 - (void)setAllowsPowerNapScheduling:(BOOL)arg1;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setApplicationSecondaryID:(id)arg1;
 - (void)setContainerID:(id)arg1;
+- (void)setQualityOfService:(int)arg1;
 - (void)setUsesBackgroundSession:(BOOL)arg1;
 - (void)setZoneNames:(id)arg1;
 - (BOOL)usesBackgroundSession;

@@ -17,7 +17,7 @@
     UILabel *_promptLabel;
     UIButton *_recordButton;
     float _recordingTimeLabelWidth;
-    CAMShutterButton *_stopRecordingIndicator;
+    CMKShutterButton *_stopRecordingIndicator;
     UILabel *_timeLabel;
     UIView *_waveformBackgroundView;
     MSCLWaveformImageProducer *_waveformImageProducer;

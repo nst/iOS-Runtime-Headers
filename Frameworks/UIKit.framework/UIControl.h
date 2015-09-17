@@ -39,19 +39,23 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
+- (void).cxx_destruct;
 - (void)_cancelDelayedActions;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedHighlightBounds;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
+- (unsigned int)_controlEventsForActionTriggered;
 - (void)_delayActions;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
-- (BOOL)_hasActionForEventMask:(int)arg1;
+- (int)_focusedSound;
+- (BOOL)_hasActionForEventMask:(unsigned int)arg1;
 - (float)_highlightCornerRadius;
-- (void)_sendActionsForEvents:(int)arg1 withEvent:(id)arg2;
+- (void)_sendActionsForEvents:(unsigned int)arg1 withEvent:(id)arg2;
 - (void)_sendDelayedActions;
 - (void)_sendDelayedActions:(BOOL)arg1;
 - (void)_setHighlightOnMouseDown:(BOOL)arg1;
 - (void)_setLastHighlightSuccessful:(BOOL)arg1;
 - (void)_setTouchHasHighlighted:(BOOL)arg1;
+- (unsigned int)_stateForFocusUpdateContext:(id)arg1;
 - (BOOL)_touchHasHighlighted;
 - (void)_unhighlight;
 - (BOOL)_wasLastHighlightSuccessful;
@@ -102,6 +106,10 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_super_touchesCancelled:(id)arg1 withEvent:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

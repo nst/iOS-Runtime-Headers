@@ -18,7 +18,7 @@
 - (id)initWithDocumentRoot:(id)arg1;
 - (BOOL)p_initialReadCallback:(id)arg1;
 - (void)p_mainThreadReadCallback:(id)arg1;
-- (struct CGImage { }*)p_newThumbnailForProducer:(id)arg1 identifier:(id)arg2;
+- (struct CGImage { }*)p_newThumbnailForProducer:(id)arg1 identifier:(id)arg2 outDatasNeedingDownload:(id*)arg3;
 - (void)p_writeCallback:(id)arg1;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 

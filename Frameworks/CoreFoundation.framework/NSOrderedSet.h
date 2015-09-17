@@ -120,6 +120,7 @@
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
+- (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
 - (id)_gkFilteredOrderedSetUsingPredicate:(id)arg1;
 - (id)_gkFirstObject;

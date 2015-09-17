@@ -32,7 +32,7 @@
 @property (nonatomic, retain) MPUExtrasGridViewControllerStyle *wideStyle;
 
 + (id)_defaultCellStyle;
-+ (id)_fontAttributes;
++ (id)_fontAttributesForTextStyle:(id)arg1;
 + (id)extraLargeDetailStyle;
 + (id)extraLargeGalleryStyle;
 + (id)extraLargeStackGridStyle;

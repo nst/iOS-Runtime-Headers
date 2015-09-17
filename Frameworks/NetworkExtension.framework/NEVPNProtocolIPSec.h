@@ -3,8 +3,8 @@
  */
 
 @interface NEVPNProtocolIPSec : NEVPNProtocol {
-    NEDNSSettings *_DNSSettings;
     int _authenticationMethod;
+    BOOL _extendedAuthPasswordPrompt;
     NSArray *_legacyExchangeMode;
     NSArray *_legacyProposals;
     NSString *_localIdentifier;
@@ -14,8 +14,8 @@
     BOOL _useExtendedAuthentication;
 }
 
-@property (copy) NEDNSSettings *DNSSettings;
 @property int authenticationMethod;
+@property BOOL extendedAuthPasswordPrompt;
 @property (copy) NSArray *legacyExchangeMode;
 @property (copy) NSArray *legacyProposals;
 @property (copy) NSString *localIdentifier;
@@ -27,14 +27,14 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)DNSSettings;
 - (int)authenticationMethod;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (struct __SCNetworkInterface { }*)createInterface;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)extendedAuthPasswordPrompt;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -46,19 +46,17 @@
 - (id)remoteIdentifier;
 - (void)removeKeychainItemsInDomain:(int)arg1;
 - (void)setAuthenticationMethod:(int)arg1;
-- (void)setDNSSettings:(id)arg1;
+- (void)setExtendedAuthPasswordPrompt:(BOOL)arg1;
 - (void)setLegacyExchangeMode:(id)arg1;
 - (void)setLegacyProposals:(id)arg1;
 - (void)setLocalIdentifier:(id)arg1;
 - (void)setRemoteIdentifier:(id)arg1;
-- (BOOL)setServiceProtocolsInService:(struct __SCNetworkService { }*)arg1;
 - (void)setSharedSecretKeychainItem:(id)arg1;
 - (void)setSharedSecretReference:(id)arg1;
 - (void)setUseExtendedAuthentication:(BOOL)arg1;
 - (id)sharedSecretKeychainItem;
 - (id)sharedSecretReference;
 - (void)syncWithKeychainInDomain:(int)arg1 configuration:(id)arg2 suffix:(id)arg3;
-- (BOOL)updateWithServiceProtocolsFromService:(struct __SCNetworkService { }*)arg1;
 - (BOOL)useExtendedAuthentication;
 
 @end

@@ -33,6 +33,6 @@
 - (BOOL)isLastPartitionHorizontally:(BOOL)arg1;
 - (id)lastChildHint;
 - (void)offsetByDelta:(int)arg1;
-- (BOOL)overlapsWithSelection:(id)arg1;
+- (BOOL)overlapsWithSelectionPath:(id)arg1;
 
 @end

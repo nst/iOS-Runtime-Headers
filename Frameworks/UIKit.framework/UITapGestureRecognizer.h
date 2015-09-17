@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITapGestureRecognizer : UIGestureRecognizer {
+@interface UITapGestureRecognizer : UIGestureRecognizer <UITapRecognizerDelegate> {
     int _buttonType;
     unsigned int _delaysRecognitionForGreaterTapCounts;
-    id _imp;
+    UITapRecognizer *_imp;
     struct CGPoint { 
         float x; 
         float y; 
@@ -13,22 +13,34 @@
 }
 
 @property (setter=_setButtonType:, nonatomic) int _buttonType;
+@property (readonly) unsigned int akNumberOfTapsRequired;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } centroid;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } location;
+@property (nonatomic) double maximumTapDuration;
 @property (nonatomic) unsigned int numberOfTapsRequired;
 @property (nonatomic) unsigned int numberOfTouchesRequired;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *touches;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
+- (void).cxx_destruct;
+- (float)_allowableSeparation;
+- (double)_allowableTouchTimeSeparation;
 - (void)_appendSubclassDescription:(id)arg1;
 - (int)_buttonType;
 - (BOOL)_delaysRecognitionForGreaterTapCounts;
 - (struct CGPoint { float x1; float x2; })_digitizerLocation;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_resetGestureRecognizer;
+- (void)_setAllowableSeparation:(float)arg1;
+- (void)_setAllowableTouchTimeSeparation:(double)arg1;
 - (void)_setButtonType:(int)arg1;
 - (void)_setDelaysRecognitionForGreaterTapCounts:(BOOL)arg1;
+- (BOOL)_shouldFailInResponseToPresses:(id)arg1 withEvent:(id)arg2;
+- (BOOL)_shouldReceivePress:(id)arg1;
 - (BOOL)_shouldRequireFailureOfGestureRecognizer:(id)arg1;
 - (float)_touchSloppinessFactor;
 - (float)allowableMovement;
@@ -43,12 +55,19 @@
 - (struct CGPoint { float x1; float x2; })locationOfTouch:(unsigned int)arg1 inView:(id)arg2;
 - (double)maximumIntervalBetweenSuccessiveTaps;
 - (double)maximumSingleTapDuration;
+- (double)maximumTapDuration;
 - (unsigned int)numberOfTapsRequired;
 - (unsigned int)numberOfTouches;
 - (unsigned int)numberOfTouchesRequired;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)setAllowableMovement:(float)arg1;
+- (void)setAllowedPressTypes:(id)arg1;
 - (void)setMaximumIntervalBetweenSuccessiveTaps:(double)arg1;
 - (void)setMaximumSingleTapDuration:(double)arg1;
+- (void)setMaximumTapDuration:(double)arg1;
 - (void)setNumberOfTapsRequired:(unsigned int)arg1;
 - (void)setNumberOfTouchesRequired:(unsigned int)arg1;
 - (BOOL)tapIsPossibleForTapRecognizer:(id)arg1;
@@ -59,5 +78,9 @@
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (unsigned int)akNumberOfTapsRequired;
 
 @end

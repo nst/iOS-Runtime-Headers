@@ -20,6 +20,7 @@
 @property (nonatomic, retain) SASStartSpeech *sourceSpeechRequest;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL talkOnly;
+@property (nonatomic) BOOL textToSpeechIsMuted;
 @property (nonatomic, copy) NSString *utterance;
 
 + (id)startRequest;
@@ -45,9 +46,11 @@
 - (void)setOrigin:(id)arg1;
 - (void)setSourceSpeechRequest:(id)arg1;
 - (void)setTalkOnly:(BOOL)arg1;
+- (void)setTextToSpeechIsMuted:(BOOL)arg1;
 - (void)setUtterance:(id)arg1;
 - (id)sourceSpeechRequest;
 - (BOOL)talkOnly;
+- (BOOL)textToSpeechIsMuted;
 - (id)utterance;
 
 @end

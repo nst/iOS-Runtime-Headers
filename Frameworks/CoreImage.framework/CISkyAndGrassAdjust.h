@@ -19,7 +19,6 @@
 - (id)inputImage;
 - (id)inputSkyAmount;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputGrassAmount:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (void)setInputSkyAmount:(id)arg1;

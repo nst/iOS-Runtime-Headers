@@ -21,6 +21,7 @@
 - (void)clearPhoneticGuideFontSize;
 - (void)clearPhoneticGuideLanguage;
 - (void)dealloc;
+- (id)description;
 - (unsigned short)distanceBetween;
 - (id)init;
 - (BOOL)isAlignmentOverridden;

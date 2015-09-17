@@ -4,6 +4,7 @@
 
 @interface UIStatusBarForegroundStyleAttributes : NSObject {
     NSMutableDictionary *_cachedFonts;
+    BOOL _canShowBreadcrumbs;
     BOOL _hasBusyBackground;
     float _height;
     int _idiom;
@@ -12,9 +13,11 @@
     UIColor *_tintColor;
 }
 
+@property (nonatomic) BOOL canShowBreadcrumbs;
 @property (nonatomic, readonly, retain) UIColor *tintColor;
 
-- (id)_batteryColorForCapacity:(float)arg1 lowCapacity:(float)arg2 charging:(BOOL)arg3;
+- (void).cxx_destruct;
+- (id)_batteryColorForCapacity:(float)arg1 lowCapacity:(float)arg2 style:(unsigned int)arg3;
 - (void)_cacheImage:(id)arg1 named:(id)arg2;
 - (id)_cachedImageNamed:(id)arg1;
 - (void)_drawText:(id)arg1 inRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withFont:(id)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 textAlignment:(int)arg6;
@@ -28,8 +31,8 @@
 - (void)cacheImage:(id)arg1 named:(id)arg2 inTempGroup:(id)arg3;
 - (id)cachedImageNamed:(id)arg1 inTempGroup:(id)arg2;
 - (id)cachedImageWithText:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4 textAlignment:(int)arg5 style:(int)arg6 itemType:(int)arg7;
-- (void)dealloc;
-- (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 charging:(BOOL)arg3;
+- (BOOL)canShowBreadcrumbs;
+- (void)drawBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2 style:(unsigned int)arg3;
 - (void)drawBluetoothBatteryInsidesWithSize:(struct CGSize { float x1; float x2; })arg1 capacity:(float)arg2;
 - (void)drawText:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4 textAlignment:(int)arg5 style:(int)arg6 textSize:(struct CGSize { float x1; float x2; })arg7 textHeight:(float)arg8;
 - (void)drawTextInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withColor:(id)arg2 withBlock:(id /* block */)arg3;
@@ -39,6 +42,7 @@
 - (id)expandedNameForImageName:(id)arg1;
 - (float)height;
 - (int)idiom;
+- (id)imageIdWithText:(id)arg1 forWidth:(float)arg2 lineBreakMode:(int)arg3 letterSpacing:(float)arg4 style:(int)arg5;
 - (id)imageNamed:(id)arg1;
 - (id)imageNamed:(id)arg1 withLegibilityStyle:(int)arg2 legibilityStrength:(float)arg3;
 - (id)imageWithText:(id)arg1 ofItemType:(int)arg2 forWidth:(float)arg3 lineBreakMode:(int)arg4 letterSpacing:(float)arg5 textAlignment:(int)arg6 style:(int)arg7 withLegibilityStyle:(int)arg8 legibilityStrength:(float)arg9;
@@ -49,11 +53,13 @@
 - (struct CGPoint { float x1; float x2; })positionForMoonMaskInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)proportionalFontForFont:(id)arg1;
 - (float)scale;
+- (void)setCanShowBreadcrumbs:(BOOL)arg1;
 - (id)shadowImageForImage:(id)arg1 withIdentifier:(id)arg2 forStyle:(int)arg3 withStrength:(float)arg4;
 - (id)shadowImageForImage:(id)arg1 withIdentifier:(id)arg2 forStyle:(int)arg3 withStrength:(float)arg4 inTempGroup:(id)arg5;
 - (float)shadowPadding;
 - (float)sizeForMoonMaskVisible:(BOOL)arg1;
 - (float)standardPadding;
+- (BOOL)supportsShowingBuildVersion;
 - (id)textColorForStyle:(int)arg1;
 - (id)textFontForStyle:(int)arg1;
 - (id)textForNetworkType:(int)arg1;

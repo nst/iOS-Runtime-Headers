@@ -14,10 +14,10 @@
 @property (nonatomic) SEL action;
 @property (nonatomic) id target;
 
+- (void).cxx_destruct;
 - (id)URL;
 - (SEL)action;
 - (id)color:(id)arg1 byMultiplyingSubComponentsBy:(float)arg2;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)openURL:(id)arg1;
 - (void)setAction:(SEL)arg1;

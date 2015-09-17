@@ -59,6 +59,7 @@
 - (void)setInputBackdropFullView:(id)arg1;
 - (void)setInputBackdropLeftView:(id)arg1;
 - (void)setInputBackdropRightView:(id)arg1;
+- (void)setTintOpacity:(float)arg1;
 - (int)textEffectsVisibilityLevel;
 - (void)transitionToStyle:(int)arg1 isSplit:(BOOL)arg2;
 

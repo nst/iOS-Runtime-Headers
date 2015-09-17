@@ -10,10 +10,10 @@
 @property BOOL addsContentToExistingCollection;
 @property (copy) NSString *runtimeCollectionClassName;
 
+- (void).cxx_destruct;
 - (BOOL)addsContentToExistingCollection;
 - (void)connect;
 - (void)connectForSimulator;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

@@ -20,6 +20,7 @@
     BOOL _fallbackEnabled;
     NSMutableSet *_fallbackTiles;
     BOOL _finishedLoading;
+    BOOL _finishedLoadingOptionalLayers;
     BOOL _hasFailedTile;
     NSArray *_holes;
     VKTileKeyList *_keysInView;
@@ -60,7 +61,10 @@
         double x; 
         double y; 
     } _sortPoint;
-    VKStyleManager *_styleManager;
+    struct shared_ptr<gss::StyleManager> { 
+        struct StyleManager {} *__ptr_; 
+        struct __shared_weak_count {} *__cntrl_; 
+    } _styleManager;
     unsigned int _tileMaximumLimit;
     VKTileCache *_tilePool;
     unsigned int _tileReserveLimit;
@@ -79,6 +83,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isFallbackEnabled, nonatomic) BOOL fallbackEnabled;
 @property (getter=isFinishedLoading, nonatomic, readonly) BOOL finishedLoading;
+@property (getter=isFinishedLoadingOptionalLayers, nonatomic, readonly) BOOL finishedLoadingOptionalLayers;
 @property (nonatomic, readonly) BOOL hasFailedTile;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) VKTileKeyList *keysInView;
@@ -89,7 +94,7 @@
 @property (nonatomic) unsigned int neighborMode;
 @property (nonatomic, readonly) NSSet *neighborTiles;
 @property (getter=isPrefetchEnabled, nonatomic) BOOL prefetchEnabled;
-@property (nonatomic, retain) VKStyleManager *styleManager;
+@property (nonatomic) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSSet *tilesToRender;
 @property (nonatomic) BOOL useSmallTileCache;
@@ -125,13 +130,16 @@
 - (void)flushCaches:(BOOL)arg1;
 - (void)foreachActiveLayer:(id /* block */)arg1;
 - (void)foreachOptionalLayer:(id /* block */)arg1;
+- (BOOL)hasAllTileData:(id)arg1;
 - (BOOL)hasFailedTile;
 - (BOOL)hasRequiredTileData:(id)arg1;
 - (BOOL)inFailedState:(id)arg1;
 - (id)initWithClient:(id)arg1 resourceManifestConfiguration:(id)arg2 locale:(id)arg3;
+- (void)invalidateRasterizedTiles;
 - (void)invalidateTilesFromTileSource:(id)arg1;
 - (BOOL)isFallbackEnabled;
 - (BOOL)isFinishedLoading;
+- (BOOL)isFinishedLoadingOptionalLayers;
 - (BOOL)isPrefetchEnabled;
 - (id)keysInView;
 - (unsigned long long)layerForSource:(id)arg1;
@@ -162,12 +170,12 @@
 - (void)setMode:(int)arg1;
 - (void)setNeighborMode:(unsigned int)arg1;
 - (void)setPrefetchEnabled:(BOOL)arg1;
-- (void)setStyleManager:(id)arg1;
+- (void)setStyleManager:(struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (void)setTileExclusionAreas:(const struct vector<vk::TileExclusionArea, std::__1::allocator<vk::TileExclusionArea> > { struct TileExclusionArea {} *x1; struct TileExclusionArea {} *x2; struct __compressed_pair<vk::TileExclusionArea *, std::__1::allocator<vk::TileExclusionArea> > { struct TileExclusionArea {} *x_3_1_1; } x3; }*)arg1;
 - (void)setTileSource:(id)arg1 forMapLayer:(unsigned long long)arg2 optional:(BOOL)arg3;
 - (void)setUseSmallTileCache:(BOOL)arg1;
 - (id)sourceForLayer:(id)arg1;
-- (id)styleManager;
+- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (BOOL)tileExclusionAreaVisible;
 - (id)tileForKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1;
 - (BOOL)tileMatters:(id)arg1;

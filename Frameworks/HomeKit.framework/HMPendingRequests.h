@@ -16,6 +16,7 @@
 - (void)addAccessory:(id)arg1 andCompletionBlock:(id)arg2 forIdentifier:(id)arg3;
 - (void)addAction:(id)arg1 andCompletionBlock:(id)arg2 forIdentifier:(id)arg3;
 - (void)addCompletionBlock:(id)arg1 forIdentifier:(id)arg2;
+- (void)addEvent:(id)arg1 andCompletionBlock:(id)arg2 forIdentifier:(id)arg3;
 - (void)addRequest:(id)arg1 ofType:(int)arg2 forIdentifier:(id)arg3;
 - (void)addTrigger:(id)arg1 andCompletionBlock:(id)arg2 forIdentifier:(id)arg3;
 - (id)contextLists;
@@ -23,6 +24,7 @@
 - (id)removeAccessoryForIdentifier:(id)arg1;
 - (id)removeActionForIdentifier:(id)arg1;
 - (id)removeCompletionBlockForIdentifier:(id)arg1;
+- (id)removeEventForIdentifier:(id)arg1;
 - (id)removeRequestOfType:(int)arg1 forIdentifier:(id)arg2;
 - (id)removeTriggerForIdentifier:(id)arg1;
 - (void)setContextLists:(id)arg1;

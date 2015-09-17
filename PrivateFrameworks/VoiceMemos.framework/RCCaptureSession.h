@@ -29,6 +29,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) RCCaptureInputDevice *inputDevice;
 @property (nonatomic, readonly) BOOL isCaptureSessionFinished;
+@property (readonly) double storeDemoTimeLimit;
 @property (readonly) Class superclass;
 
 + (void)playCaptureDidFinishSoundEffectWithCompletionBlock:(id /* block */)arg1;
@@ -68,6 +69,7 @@
 - (void)disableCaptureBeginSoundEffect;
 - (void)disableCaptureEndSoundEffect;
 - (void)finishCapturing;
+- (id)init;
 - (id)initWithInputDevice:(id)arg1 captureWaveformDataSource:(id)arg2;
 - (id)inputDevice;
 - (BOOL)isCaptureActive;
@@ -78,6 +80,7 @@
 - (void)prepareToCaptureWithPreparedHandler:(id /* block */)arg1;
 - (void)removeCaptureSessionObserver:(id)arg1;
 - (void)resumeCapturing;
+- (double)storeDemoTimeLimit;
 - (void)waveformDataSource:(id)arg1 didLoadWaveformSegment:(id)arg2;
 - (void)waveformDataSourceDidFinishLoading:(id)arg1;
 

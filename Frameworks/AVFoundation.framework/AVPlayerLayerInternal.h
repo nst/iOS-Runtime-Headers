@@ -4,10 +4,14 @@
 
 @interface AVPlayerLayerInternal : NSObject {
     AVPlayer *_player;
+    AVPlayerLayer *associatedPIPLayer;
+    BOOL canDispatchOverrides;
+    BOOL canEnterPIPMode;
+    NSDictionary *clientLayers;
     CALayer *closedCaptionLayer;
     BOOL hasPlayerToObserve;
-    BOOL isInPIPMode;
     BOOL isObservingPlayer;
+    BOOL isPIPModeEnabled;
     BOOL isPresentationLayer;
     BOOL isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } *isReadyForDisplayMutex;
@@ -37,17 +41,39 @@
         } size; 
     } latestSubtitleLayoutAtRendering;
     CALayer *maskLayer;
+    struct CATransform3D { 
+        float m11; 
+        float m12; 
+        float m13; 
+        float m14; 
+        float m21; 
+        float m22; 
+        float m23; 
+        float m24; 
+        float m31; 
+        float m32; 
+        float m33; 
+        float m34; 
+        float m41; 
+        float m42; 
+        float m43; 
+        float m44; 
+    } oldSublayerTransform;
     NSDictionary *pixelBufferAttributes;
+    CALayer *placeholderContentLayerDuringPIPMode;
     struct CGSize { 
         float width; 
         float height; 
     } presentationSize;
+    BOOL preventsChangesToSublayerHierarchy;
+    NSObject<OS_dispatch_queue> *queueForDispatchingOverrides;
     NSObject<OS_dispatch_queue> *serialQueue;
     BOOL shouldObservePlayer;
     NSString *subtitleGravity;
     FigSubtitleCALayer *subtitleLayer;
     NSString *videoGravity;
-    CALayer *videoLayer;
+    FigVideoContainerLayer *videoLayer;
+    BOOL willManageSublayersAsSwappedLayers;
 }
 
 @end

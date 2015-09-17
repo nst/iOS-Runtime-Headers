@@ -8,6 +8,7 @@
     NSArray *_clientCertificates;
     NSCondition *_condition;
     struct __CFString { } *_connectionServiceType;
+    BOOL _disableEphemeralDiffieHellmanCiphers;
     NSInvocation *_eventHandler;
     NSString *_host;
     int _lowThroughputCounter;
@@ -24,6 +25,7 @@
 @property (nonatomic, copy) NSString *accountIdentifier;
 @property (nonatomic) BOOL allowsTrustPrompt;
 @property (nonatomic, retain) NSArray *clientCertificates;
+@property (nonatomic) BOOL disableEphemeralDiffieHellmanCiphers;
 @property (nonatomic, readonly) BOOL isCellularConnection;
 @property (nonatomic, readonly) BOOL isReadable;
 @property (nonatomic, readonly) BOOL isValid;
@@ -44,6 +46,7 @@
 - (id)clientCertificates;
 - (BOOL)connectToHost:(id)arg1 withPort:(unsigned int)arg2 service:(id)arg3;
 - (void)dealloc;
+- (BOOL)disableEphemeralDiffieHellmanCiphers;
 - (void)enableThroughputMonitoring:(BOOL)arg1;
 - (id)init;
 - (BOOL)isCellularConnection;
@@ -59,6 +62,7 @@
 - (void)setAllowsTrustPrompt:(BOOL)arg1;
 - (void)setClientCertificates:(id)arg1;
 - (void)setConnectionServiceType:(struct __CFString { }*)arg1;
+- (void)setDisableEphemeralDiffieHellmanCiphers:(BOOL)arg1;
 - (void)setEventHandler:(id)arg1;
 - (BOOL)setSecurityProtocol:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;

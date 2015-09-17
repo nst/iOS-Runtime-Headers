@@ -20,7 +20,6 @@
 - (void)dealloc;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)handleTap;
-- (void)layoutSubviews;
 - (void)scrollViewWillBeginDragging:(id)arg1;
 
 @end

@@ -4,14 +4,12 @@
 
 @interface PHSandboxExtensionWrapper : NSObject {
     long long _handle;
+    NSString *_token;
 }
 
-@property long long handle;
++ (id)wrapperWithToken:(id)arg1;
 
-+ (id)objectWithHandle:(long long)arg1;
-
+- (void).cxx_destruct;
 - (void)dealloc;
-- (long long)handle;
-- (void)setHandle:(long long)arg1;
 
 @end

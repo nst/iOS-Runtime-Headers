@@ -2,18 +2,13 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSSearchController : NSObject <PSSearchModelDataSource, PSSearchModelDelegate, UISearchBarDelegate, UISearchDisplayDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface PSSearchController : NSObject <PSSearchModelDataSource, PSSearchModelDelegate, PSSearchResultsControllerDelegate, UISearchControllerDelegate, UISearchResultsUpdating> {
     <PSSearchControllerDelegate> *_delegate;
-    UISearchDisplayController *_displayController;
-    NSMutableDictionary *_iconViewMap;
     PSListController *_listController;
     int _notifyToken;
-    NSMutableArray *_reusableIconViews;
-    UISearchBar *_searchBar;
+    PSSearchResultsController *_resultsController;
+    UISearchController *_searchController;
     BOOL _searchEnabled;
-    PSSearchResults *_searchResults;
-    BOOL _showSectionInDetailText;
-    BOOL _showToggles;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -24,53 +19,36 @@
 @property (nonatomic, readonly) UISearchBar *searchBar;
 @property (readonly) Class superclass;
 
-+ (float)_additionalHeightForLabelWithText:(id)arg1 font:(id)arg2 boundingWidth:(float)arg3;
-
+- (void).cxx_destruct;
 - (void)_buildSearchUIIfNecessary;
-- (id)_buildURLForEntry:(id)arg1 isRoot:(BOOL*)arg2;
-- (id)_detailTextForSearchEntry:(id)arg1 effectiveTitle:(id*)arg2;
-- (struct { unsigned int x1 : 1; unsigned int x2 : 1; unsigned int x3 : 1; unsigned int x4 : 1; })_layoutInfoForEntryAtIndexPath:(id)arg1;
-- (id)_readPreferenceValueUsingAction:(id)arg1;
 - (void)_reloadSettings:(BOOL)arg1;
-- (void)_removeIconViewForSection:(id)arg1;
 - (BOOL)_setBoolValue:(BOOL)arg1 forIvar:(BOOL*)arg2;
-- (void)_setPreferenceValueUsingAction:(id)arg1 specifier:(id)arg2;
-- (BOOL)_shouldShowSwitchForSearchEntry:(id)arg1;
-- (void)_updateIconViews:(BOOL)arg1;
 - (void)_updateListControllerHeaderView:(BOOL)arg1;
 - (void)_updateSearchResultsWithText:(id)arg1;
 - (BOOL)activateWithInitialText:(id)arg1 animated:(BOOL)arg2;
 - (void)addRootSpecifiers:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (void)didDismissSearchController:(id)arg1;
 - (id)initWithListController:(id)arg1;
 - (BOOL)isActive;
 - (id)listController;
-- (int)numberOfSectionsInTableView:(id)arg1;
-- (id)readPreferenceValue:(id)arg1;
 - (void)reloadRootSpecifiers:(id)arg1;
 - (void)removeRootSpecifiers:(id)arg1;
 - (Class)rootSearchControllerClassForSearchModel:(id)arg1;
 - (id)rootSpecifiersForSearchModel:(id)arg1;
-- (void)scrollViewDidScroll:(id)arg1;
 - (id)searchBar;
-- (void)searchBar:(id)arg1 textDidChange:(id)arg2;
-- (void)searchDisplayController:(id)arg1 didLoadSearchResultsTableView:(id)arg2;
-- (BOOL)searchDisplayController:(id)arg1 shouldReloadTableForSearchString:(id)arg2;
-- (void)searchDisplayController:(id)arg1 willUnloadSearchResultsTableView:(id)arg2;
-- (void)searchDisplayControllerWillBeginSearch:(id)arg1;
 - (void)searchModel:(id)arg1 updatedWithNewResults:(id)arg2 forQuery:(id)arg3;
 - (void)searchModelDidFinishIndexing:(id)arg1;
 - (void)searchModelWillBeginIndexing:(id)arg1;
-- (void)setActive:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)searchResultsController:(id)arg1 didSelectSearchEntry:(id)arg2;
+- (id)searchResultsController:(id)arg1 iconForSearchEntry:(id)arg2;
+- (BOOL)searchResultsController:(id)arg1 shouldShowSwitchForSearchEntry:(id)arg2;
+- (id)searchResultsController:(id)arg1 switchActionForSearchEntry:(id)arg2;
+- (void)setActive:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPreferenceValue:(id)arg1 specifier:(id)arg2;
 - (void)setSearchBarVisible:(BOOL)arg1 animated:(BOOL)arg2;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (void)tableViewDidFinishReload:(id)arg1;
-- (void)viewWillAppear;
+- (void)updateSearchResultsForSearchController:(id)arg1;
+- (void)willPresentSearchController:(id)arg1;
 
 @end

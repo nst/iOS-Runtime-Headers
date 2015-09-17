@@ -15,8 +15,10 @@
 
 - (id)allEntryNames;
 - (void)collapseCommonRootDirectoryIgnoreCase:(BOOL)arg1;
+- (id)commonRootDirectoryIgnoringCase:(BOOL)arg1;
 - (void)dealloc;
 - (BOOL)decompressAtPath:(id)arg1;
+- (BOOL)decompressAtPath:(id)arg1 wasEmpty:(BOOL*)arg2;
 - (id)encryptedDocumentUuid;
 - (id)entryWithName:(id)arg1;
 - (id)entryWithName:(id)arg1 dataLength:(long long)arg2;

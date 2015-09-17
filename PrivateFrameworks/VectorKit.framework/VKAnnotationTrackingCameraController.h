@@ -5,7 +5,7 @@
 @interface VKAnnotationTrackingCameraController : VKCameraController {
     <VKTrackableAnnotation> *_annotation;
     <VKTrackableAnnotationPresentation> *_annotationPresentation;
-    VKAnimation *_currentAnimation;
+    VKTimedAnimation *_currentAnimation;
     struct VKPoint { 
         double x; 
         double y; 
@@ -26,7 +26,7 @@
         double y; 
         double z; 
     } _currentAnimationStartPoint;
-    VKAnimation *_currentHeadingAnimation;
+    VKTimedAnimation *_currentHeadingAnimation;
     struct VKEdgeInsets { 
         float top; 
         float left; 
@@ -43,10 +43,10 @@
         unsigned int annotationImplementsAccuracy : 1; 
         unsigned int annotationImplementsHeading : 1; 
         unsigned int annotationImplementsExpectedCoordinateUpdateInterval : 1; 
-        unsigned int annotationImplementsExpectedHeadingUpdateInterval : 1; 
     } _flags;
     float _headingAnimationCompletedAngle;
     int _headingAnimationDisplayRate;
+    VKTimer *_headingRegionChangeEndTimer;
     double _pendingChangeDuration;
     double _pendingHeadingChangeDuration;
     int _zoomStyle;
@@ -60,6 +60,7 @@
 
 - (id).cxx_construct;
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
+- (void)_headingRegionChangeTimerFired:(id)arg1;
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (id)annotation;
 - (void)dealloc;

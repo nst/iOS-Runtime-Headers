@@ -4,20 +4,49 @@
 
 @interface CSIGenerator : NSObject {
     BOOL _allowsMultiPassEncoding;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _alphaCroppedFrame;
+    NSString *_assetPackIdentifier;
     NSMutableArray *_bitmaps;
     int _blendMode;
     short _colorSpaceID;
     CUIShapeEffectPreset *_effectPreset;
     int _exifOrientation;
+    NSArray *_explicitlyPackedContents;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _externalReferenceFrame;
+    NSSet *_externalTags;
     CUIPSDGradient *_gradient;
     BOOL _isExcludedFromFilter;
     BOOL _isFPOHint;
     BOOL _isVectorBased;
+    NSMutableArray *_layerReferences;
     short _layout;
+    unsigned short _linkLayout;
     NSMutableArray *_metrics;
     NSDate *_modtime;
     NSString *_name;
     float _opacity;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _originalUncroppedSize;
     unsigned int _pixelFormat;
     NSData *_rawData;
     unsigned long _rowbytes;
@@ -32,6 +61,7 @@
 }
 
 @property (nonatomic) BOOL allowsMultiPassEncoding;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alphaCroppedFrame;
 @property (nonatomic) int blendMode;
 @property (nonatomic) short colorSpaceID;
 @property (nonatomic, retain) CUIShapeEffectPreset *effectPreset;
@@ -40,24 +70,29 @@
 @property (nonatomic, retain) CUIPSDGradient *gradient;
 @property (nonatomic) BOOL isRenditionFPO;
 @property (nonatomic) BOOL isVectorBased;
+@property (nonatomic, readonly) NSArray *layerReferences;
 @property (nonatomic, copy) NSDate *modtime;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) float opacity;
+@property (nonatomic) struct CGSize { float x1; float x2; } originalUncroppedSize;
 @property (nonatomic) unsigned int pixelFormat;
 @property (nonatomic) unsigned int scaleFactor;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 @property (nonatomic) int templateRenderingMode;
 @property (nonatomic, copy) NSString *utiType;
 
-+ (int)fileCompression;
++ (int)fileEncoding;
 + (void)initialize;
-+ (void)setFileCompression:(int)arg1;
++ (void)setFileEncoding:(int)arg1;
 
 - (id)CSIRepresentationWithCompression:(BOOL)arg1;
 - (void)_addNodes:(id)arg1 toNodeList:(struct _csigradientdatanode { unsigned int x1; float x2; double x3; double x4; double x5; double x6; double x7; double x8; double x9; double x10; }*)arg2;
 - (void)addBitmap:(id)arg1;
+- (void)addLayerReference:(id)arg1;
 - (void)addMetrics:(struct { struct CGSize { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGSize { float x_3_1_1; float x_3_1_2; } x3; })arg1;
 - (void)addSliceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)allowsMultiPassEncoding;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alphaCroppedFrame;
 - (int)blendMode;
 - (short)colorSpaceID;
 - (void)dealloc;
@@ -66,17 +101,24 @@
 - (void)formatCSIHeader:(struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1;
 - (id)gradient;
 - (id)initWithCanvasSize:(struct CGSize { float x1; float x2; })arg1 sliceCount:(unsigned int)arg2 layout:(short)arg3;
+- (id)initWithExplicitlyPackedList:(id)arg1;
+- (id)initWithExternalReference:(id)arg1 tags:(id)arg2;
+- (id)initWithInternalReferenceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 layout:(short)arg2;
+- (id)initWithLayerStackData:(id)arg1 withCanvasSize:(struct CGSize { float x1; float x2; })arg2;
 - (id)initWithRawData:(id)arg1 pixelFormat:(unsigned int)arg2 layout:(short)arg3;
 - (id)initWithShapeEffectPreset:(id)arg1 forScaleFactor:(unsigned int)arg2;
 - (BOOL)isExcludedFromContrastFilter;
 - (BOOL)isRenditionFPO;
 - (BOOL)isVectorBased;
+- (id)layerReferences;
 - (id)modtime;
 - (id)name;
 - (float)opacity;
+- (struct CGSize { float x1; float x2; })originalUncroppedSize;
 - (unsigned int)pixelFormat;
 - (unsigned int)scaleFactor;
 - (void)setAllowsMultiPassEncoding:(BOOL)arg1;
+- (void)setAlphaCroppedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setColorSpaceID:(short)arg1;
 - (void)setEffectPreset:(id)arg1;
@@ -88,13 +130,16 @@
 - (void)setModtime:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setOpacity:(float)arg1;
+- (void)setOriginalUncroppedSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPixelFormat:(unsigned int)arg1;
 - (void)setScaleFactor:(unsigned int)arg1;
 - (void)setTemplateRenderingMode:(int)arg1;
 - (void)setUtiType:(id)arg1;
+- (struct CGSize { float x1; float x2; })size;
 - (int)templateRenderingMode;
 - (id)utiType;
 - (unsigned long)writeBitmap:(id)arg1 toData:(id)arg2 compress:(BOOL)arg3;
+- (unsigned long)writeExternalLinkToData:(id)arg1;
 - (unsigned long)writeGradientToData:(id)arg1;
 - (void)writeHeader:(struct _csiheader { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8 : 4; unsigned int x9 : 28; struct _csimetadata { unsigned int x_10_1_1; unsigned short x_10_1_2; unsigned short x_10_1_3; BOOL x_10_1_4[128]; } x10; unsigned int x11; struct _csibitmaplist { unsigned int x_12_1_1; unsigned int x_12_1_2[0]; } x12; }*)arg1 toData:(id)arg2;
 - (unsigned long)writeRawDataToData:(id)arg1;

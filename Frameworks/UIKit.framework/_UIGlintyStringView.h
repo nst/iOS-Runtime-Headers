@@ -87,6 +87,7 @@
 @property (nonatomic) BOOL usesBackgroundDimming;
 @property (nonatomic, retain) _UIVibrantSettings *vibrantSettings;
 
+- (void).cxx_destruct;
 - (float)_chevronHeightWithMaxOffset;
 - (id)_chevronImageForStyle:(int)arg1;
 - (float)_chevronPadding;

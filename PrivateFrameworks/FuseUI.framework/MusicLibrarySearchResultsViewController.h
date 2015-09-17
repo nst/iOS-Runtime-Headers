@@ -26,6 +26,7 @@
 - (void)_recordRecentForIndexPath:(id)arg1;
 - (void)_updateForResultsCount;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumInteritemSpacingForSectionAtIndex:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 referenceSizeForHeaderInSection:(int)arg3;
@@ -42,6 +43,8 @@
 - (id)libraryViewConfiguration;
 - (id)loadEntityViewDescriptor;
 - (unsigned int)maximumNumberOfSectionResults;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)searchResultsDelegate;
 - (id)searchTerm;
 - (void)setMaximumNumberOfSectionResults:(unsigned int)arg1;
@@ -50,5 +53,6 @@
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

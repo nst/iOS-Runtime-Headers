@@ -46,6 +46,7 @@
     NSMutableArray *_viewAnimations;
 }
 
+- (void).cxx_destruct;
 - (void)_computeGaps;
 - (void)_computeItemUpdates;
 - (void)_computeSectionUpdates;

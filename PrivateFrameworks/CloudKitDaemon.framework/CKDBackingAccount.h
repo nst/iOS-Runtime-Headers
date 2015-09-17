@@ -40,7 +40,7 @@
 - (id)privateCloudDBURL;
 - (id)privateDeviceServiceURL;
 - (id)privateShareServiceURL;
-- (void)renewAuthTokenInStore:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)renewAuthTokenInStore:(id)arg1 withOptions:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)serverPreferredPushEnvironment;
 
 @end

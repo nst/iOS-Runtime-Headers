@@ -19,7 +19,7 @@
 @property (copy) NSData *identityReference;
 @property (copy) NSString *organization;
 @property (copy) NSData *passwordReference;
-@property (readonly) NSString *pluginType;
+@property (retain) NSString *pluginType;
 @property (copy) NSString *serverAddress;
 @property (copy) NSString *username;
 @property (copy) NSDictionary *vendorConfiguration;
@@ -29,7 +29,7 @@
 - (void).cxx_destruct;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)filterBrowsers;
 - (BOOL)filterSockets;

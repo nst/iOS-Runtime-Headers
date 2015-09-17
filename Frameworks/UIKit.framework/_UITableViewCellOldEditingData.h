@@ -11,8 +11,8 @@
 @property (nonatomic, retain) UIControl *reorderControl;
 @property (nonatomic, retain) UIView *separatorView;
 
+- (void).cxx_destruct;
 - (BOOL)dataRequired;
-- (void)dealloc;
 - (id)reorderControl;
 - (id)separatorView;
 - (void)setReorderControl:(id)arg1;

@@ -20,12 +20,14 @@
 - (id)generatePlaceholderThumbnailForWidth:(float)arg1;
 - (id)generatePreviewFromThumbnail:(id)arg1 width:(float)arg2 orientation:(BOOL)arg3;
 - (id)generateThumbnailForWidth:(float)arg1 orientation:(BOOL)arg2;
+- (BOOL)isLikeAudioMessage;
 - (int)mediaType;
 - (id)powerLevels;
 - (id)previewItemTitle;
 - (void)savePreview:(id)arg1 toURL:(id)arg2 forOrientation:(BOOL)arg3;
 - (id)savedPreviewFromURL:(id)arg1 forOrientation:(BOOL)arg2;
 - (void)setPowerLevels:(id)arg1;
+- (BOOL)shouldBeQuickLooked;
 - (id)waveformForWidth:(float)arg1 orientation:(BOOL)arg2;
 
 @end

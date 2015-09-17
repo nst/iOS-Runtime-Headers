@@ -9,6 +9,7 @@
 }
 
 - (void)dealloc;
+- (id)description;
 - (id)graphicProperties;
 - (id)init;
 - (void)setGraphicProperties:(id)arg1;

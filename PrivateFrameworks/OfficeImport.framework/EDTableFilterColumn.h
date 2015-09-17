@@ -11,6 +11,7 @@
 - (void)addFilter:(id)arg1;
 - (unsigned int)columnIndex;
 - (void)dealloc;
+- (id)description;
 - (id)filterAtIndex:(unsigned int)arg1;
 - (unsigned int)filterCount;
 - (int)filtersRelation;

@@ -30,6 +30,7 @@
 
 - (void)_contentWasTappedInPreviewContentController;
 - (void)_didExitFullScreen;
+- (void)_dismissGestureUpdateWithState:(int)arg1 trackingInformation:(id)arg2;
 - (void)_overlayWasTappedInPreviewContentController;
 - (void)_previewContentControllerDidLoadItem:(id)arg1 atIndex:(int)arg2 withError:(id)arg3;
 - (void)_previewContentControllerDidMoveToItemAtIndex:(int)arg1;
@@ -53,6 +54,7 @@
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
+- (void)dismissTransitionIsReadyToFinishSynchronizedWithBlock:(id /* block */)arg1;
 - (void)endScrubbing;
 - (void)enterBackground;
 - (void)forceResignFirstResponder;
@@ -73,6 +75,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)setNumberOfPreviewItems:(int)arg1;
+- (void)setOrbMode:(unsigned int)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewController:(id)arg1;
 - (void)setPreviewMode:(int)arg1;

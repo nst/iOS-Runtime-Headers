@@ -2,7 +2,12 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAStockAdd : SABaseClientBoundCommand
+@interface SAStockAdd : SABaseClientBoundCommand {
+    NSString *_companyName;
+    NSArray *_stockReferences;
+    NSURL *_targetAppId;
+    NSString *_tickerSymbol;
+}
 
 @property (nonatomic, copy) NSString *companyName;
 @property (nonatomic, copy) NSArray *stockReferences;

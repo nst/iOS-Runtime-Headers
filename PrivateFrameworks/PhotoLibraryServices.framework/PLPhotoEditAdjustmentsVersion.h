@@ -20,6 +20,7 @@
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithMajor:(unsigned int)arg1 minor:(unsigned int)arg2;
 - (id)initWithMajor:(unsigned int)arg1 minor:(unsigned int)arg2 platform:(id)arg3;
 - (BOOL)isEqual:(id)arg1;

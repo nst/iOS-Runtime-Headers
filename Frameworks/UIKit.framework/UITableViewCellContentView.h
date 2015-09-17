@@ -10,6 +10,7 @@
 
 + (id)classFallbacksForKeyedArchiver;
 
+- (void).cxx_destruct;
 - (id)_cell;
 - (void)_tableViewCellContentViewCommonSetup;
 - (void)dealloc;

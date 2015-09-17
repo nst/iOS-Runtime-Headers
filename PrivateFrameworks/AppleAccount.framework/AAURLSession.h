@@ -5,7 +5,7 @@
 @interface AAURLSession : NSObject <NSURLSessionDataDelegate, NSURLSessionDelegate> {
     NSMutableDictionary *_pendingCompletionsByTask;
     NSMutableDictionary *_receivedDataByTask;
-    NSMutableDictionary *_retryCountByRequest;
+    NSMutableDictionary *_retryCountByURL;
     NSObject<OS_dispatch_queue> *_sessionQueue;
     NSURLSession *_urlSession;
 }

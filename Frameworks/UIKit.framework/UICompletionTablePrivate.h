@@ -9,6 +9,6 @@
     UIView *_topStrokeView;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 
 @end

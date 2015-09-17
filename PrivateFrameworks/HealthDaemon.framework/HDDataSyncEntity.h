@@ -11,11 +11,13 @@
 
 + (BOOL)_insertObjectsFromCodableObjectCollection:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)_objectWithCodable:(id)arg1;
-+ (id)_objectsFromCodableObjectsInCollection:(id)arg1;
 + (id)decodeSyncObjectWithData:(id)arg1;
 + (Class)healthEntityClass;
 + (long long)nextSyncAnchorWithStore:(id)arg1 startSyncAnchor:(long long)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (id)objectsFromCodableObjectsInCollection:(id)arg1;
++ (id)predicateForSyncObjects;
 + (BOOL)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (id)syncEntityDependencies;
 + (int)syncEntityType;
 + (id)syncObjectsWithStore:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
 

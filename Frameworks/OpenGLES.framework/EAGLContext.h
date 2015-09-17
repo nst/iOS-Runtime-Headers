@@ -25,6 +25,7 @@
 - (id)debugLabel;
 - (struct EAGLMacroContext { }*)getMacroContextPrivate;
 - (unsigned int)getParameter:(unsigned int)arg1 to:(int*)arg2;
+- (id)init;
 - (id)initWithAPI:(unsigned int)arg1;
 - (id)initWithAPI:(unsigned int)arg1 properties:(id)arg2;
 - (id)initWithAPI:(unsigned int)arg1 sharedWithCompute:(BOOL)arg2;

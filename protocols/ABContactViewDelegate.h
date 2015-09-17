@@ -5,8 +5,8 @@
 
 @optional
 
-- (void)contactView:(ABContactView *)arg1 didSelectItemAtIndex:(int)arg2 inGroup:(ABCardGroup *)arg3;
-- (float)contactView:(ABContactView *)arg1 heightForItemAtIndex:(int)arg2 inGroup:(ABCardGroup *)arg3;
-- (int)numberOfGroupsInContactView:(ABContactView *)arg1;
+- (void)contactView:(CNContactView *)arg1 didSelectItemAtIndex:(int)arg2 inGroup:(CNCardGroup *)arg3;
+- (float)contactView:(CNContactView *)arg1 heightForItemAtIndex:(int)arg2 inGroup:(CNCardGroup *)arg3;
+- (int)numberOfGroupsInContactView:(CNContactView *)arg1;
 
 @end

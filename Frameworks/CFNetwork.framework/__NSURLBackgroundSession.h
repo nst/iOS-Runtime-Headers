@@ -2,35 +2,41 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface __NSURLBackgroundSession : NSURLSession <NDBackgroundSessionClient, NSURLSessionSubclass> {
+@interface __NSURLBackgroundSession : __NSCFURLSession <NDBackgroundSessionClient, NSURLSessionSubclass> {
     NSString *_appWakeUUID;
+    BOOL _companionAvailable;
     NSURL *_downloadDirectory;
     unsigned int _identSeed;
     id /* block */ _invalidateCallback;
     NSObject<OS_dispatch_queue> *_invalidateQueue;
+    NSError *_invalidationError;
     BOOL _isInvalid;
     BOOL _isPrivileged;
     <NDBackgroundSessionProtocol> *_remoteSession;
     NSMutableArray *_taskIDsToFailOnReconnection;
     NSMutableDictionary *_tasks;
+    BOOL _tryToReconnect;
+    unsigned int _wifiRetainCount;
     NSXPCConnection *_xpcConn;
 }
 
 @property (copy) NSString *appWakeUUID;
+@property (getter=isCompanionAvailable) BOOL companionAvailable;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (id)AVAssetDownloadTaskForURLAsset:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 - (id)_AVAssetDownloadTaskForURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
 - (id)_downloadTaskForRequest:(id)arg1;
 - (id)_downloadTaskForResumeData:(id)arg1;
-- (id)_onqueue_AVAssetDownloadTaskForURL:(id)arg1 destinationURL:(id)arg2 options:(id)arg3;
+- (id)_onqueue_AVAssetDownloadTaskForURLAsset:(id)arg1 URL:(id)arg2 destinationURL:(id)arg3 options:(id)arg4;
 - (void)_onqueue_completeInvalidation:(BOOL)arg1;
 - (id)_onqueue_dataTaskForRequest:(id)arg1 completion:(id /* block */)arg2;
 - (void)_onqueue_disavowTask:(id)arg1;
 - (id)_onqueue_downloadTaskForRequest:(id)arg1 resumeData:(id)arg2 completion:(id /* block */)arg3;
-- (id)_onqueue_dummyTaskForClass:(Class)arg1 withError:(id)arg2;
+- (id)_onqueue_dummyTaskForClass:(Class)arg1 withRequest:(id)arg2 error:(id)arg3;
 - (void)_onqueue_flushWithCompletionHandler:(id /* block */)arg1;
 - (void)_onqueue_getTasksWithCompletionHandler:(id /* block */)arg1;
 - (void)_onqueue_invalidateSession:(BOOL)arg1 withQueue:(id)arg2 completion:(id /* block */)arg3;
@@ -38,9 +44,10 @@
 - (void)_onqueue_resetStorageWithCompletionHandler:(id /* block */)arg1;
 - (void)_onqueue_retryDataTaskWithIdentifier:(unsigned int)arg1;
 - (id)_onqueue_uploadTaskForRequest:(id)arg1 uploadFile:(id)arg2 bodyData:(id)arg3 completion:(id /* block */)arg4;
-- (id)_streamTaskForHost:(id)arg1 port:(int)arg2 tls:(bool)arg3 completionHandler:(id /* block */)arg4;
 - (id)appWakeUUID;
+- (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didLoadTimeRange:(id)arg2 totalTimeRangesLoaded:(id)arg3 timeRangeExpectedToLoad:(id)arg4;
 - (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didReceiveDownloadToken:(unsigned long long)arg2;
+- (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didResolveMediaSelectionProperyList:(id)arg2;
 - (void)backgroundAVAssetDownloadTaskDidUpdateProgress:(unsigned int)arg1 totalBytesWritten:(unsigned long long)arg2 totalBytesExpectedToWrite:(unsigned long long)arg3;
 - (void)backgroundDataTask:(unsigned int)arg1 didReceiveData:(id)arg2 withReply:(id /* block */)arg3;
 - (void)backgroundDataTaskDidBecomeDownloadTask:(unsigned int)arg1;
@@ -49,6 +56,7 @@
 - (void)backgroundDownloadTask:(unsigned int)arg1 didWriteData:(long long)arg2 totalBytesWritten:(long long)arg3 totalBytesExpectedToWrite:(long long)arg4;
 - (id)backgroundDownloadsDirectory;
 - (id)backgroundResumeDataFromClientResumeData:(id)arg1;
+- (id)backgroundResumeDataFromLegacyClientResumeData:(id)arg1;
 - (void)backgroundSessionDidFinishAppWake:(id)arg1 reply:(id /* block */)arg2;
 - (void)backgroundSessionDidStartAppWake:(id)arg1 reply:(id /* block */)arg2;
 - (void)backgroundTask:(unsigned int)arg1 _willSendRequestForEstablishedConnection:(id)arg2 reply:(id /* block */)arg3;
@@ -57,6 +65,7 @@
 - (void)backgroundTask:(unsigned int)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3;
 - (void)backgroundTask:(unsigned int)arg1 didReceiveResponse:(id)arg2 timingData:(id)arg3 reply:(id /* block */)arg4;
 - (void)backgroundTask:(unsigned int)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
+- (void)backgroundTask:(unsigned int)arg1 getAuthHeadersForResponse:(id)arg2 reply:(id /* block */)arg3;
 - (void)backgroundTask:(unsigned int)arg1 hasConnectionWaitingWithError:(id)arg2;
 - (void)backgroundTask:(unsigned int)arg1 hasConnectionWaitingWithReason:(long long)arg2;
 - (void)backgroundTask:(unsigned int)arg1 needNewBodyStream:(BOOL)arg2 withReply:(id /* block */)arg3;
@@ -67,7 +76,6 @@
 - (id)cachesDirectory;
 - (void)cameIntoForeground:(id)arg1;
 - (void)cleanupConfig;
-- (id)clientResumeDataFromBackgroundResumeData:(id)arg1;
 - (id)connectionLostErrorWithURL:(id)arg1;
 - (id)copyTasks;
 - (void)credStorage_allCredentialsWithReply:(id /* block */)arg1;
@@ -83,6 +91,10 @@
 - (id)downloadTaskForRequest:(id)arg1 downloadFilePath:(id)arg2 resumeData:(id)arg3 completion:(id /* block */)arg4;
 - (void)failDisconnectedTasks;
 - (id)initWithConfiguration:(id)arg1 delegate:(id)arg2 delegateQueue:(id)arg3;
+- (BOOL)isCompanionAvailable;
+- (void)moveFileForResumeData:(id)arg1 fromDirectory:(id)arg2 toDirectory:(id)arg3;
+- (void)moveFileToBackgroundDownloadsDirectoryForLocalResumeData:(id)arg1;
+- (void)moveFileToTempForBackgroundResumeData:(id)arg1;
 - (void)openFileAtPath:(id)arg1 mode:(int)arg2 withReply:(id /* block */)arg3;
 - (void)performBlockOnQueueAndRethrowExceptions:(id /* block */)arg1;
 - (id)placeholderErrorWithURL:(id)arg1;
@@ -90,6 +102,7 @@
 - (id)requestWithCookiesApplied:(id)arg1;
 - (void)sendInvalidationRequest;
 - (void)setAppWakeUUID:(id)arg1;
+- (void)setCompanionAvailable:(BOOL)arg1;
 - (void)setCookiesFromResponse:(id)arg1 forOriginalRequest:(id)arg2;
 - (void)setupBackgroundSession;
 - (void)setupXPCConnection;

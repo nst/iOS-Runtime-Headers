@@ -27,10 +27,11 @@
 - (void)dealloc;
 - (id)device;
 - (void)didComplete:(unsigned long long)arg1 error:(unsigned int)arg2;
+- (void)didSchedule:(unsigned long long)arg1 error:(unsigned int)arg2;
 - (void)endCurrentSegment;
 - (void)getCurrentKernelCommandBufferPointer:(void**)arg1 end:(void**)arg2;
 - (void)getCurrentKernelCommandBufferStart:(void**)arg1 current:(void**)arg2 end:(void**)arg3;
-- (struct IOAccelSegmentListHeader { unsigned int x1; unsigned int x2; struct IOAccelSegmentResourceListHeader { unsigned int x_3_1_1; unsigned int x_3_1_2; unsigned int x_3_1_3; unsigned int x_3_1_4; struct IOAccelSegmentResourceDescriptorGroup { unsigned int x_5_2_1[6]; unsigned int x_5_2_2[6]; unsigned short x_5_2_3[6]; unsigned short x_5_2_4; unsigned short x_5_2_5; } x_3_1_5[0]; } x3[0]; }*)getSegmentListHeader;
+- (struct IOAccelSegmentListHeader { unsigned long long x1; unsigned int x2; unsigned int x3; struct IOAccelSegmentResourceListHeader { unsigned long long x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; unsigned int x_4_1_4; unsigned int x_4_1_5; struct IOAccelSegmentResourceDescriptorGroup { unsigned int x_6_2_1[6]; unsigned int x_6_2_2[6]; unsigned short x_6_2_3[6]; unsigned short x_6_2_4; unsigned short x_6_2_5; } x_4_1_6[0]; } x4[0]; }*)getSegmentListHeader;
 - (void)getSegmentListPointerStart:(void**)arg1 current:(void**)arg2 end:(void**)arg3;
 - (void)growKernelCommandBuffer:(unsigned long)arg1;
 - (void)growSegmentList;
@@ -38,7 +39,10 @@
 - (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2 synchronousDebugMode:(BOOL)arg3;
 - (struct IOAccelResourceList { unsigned short x1[256]; struct IOAccelSegmentResourceDescriptorGroup {} *x2; unsigned long long x3; unsigned long long x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; int (*x12)(); void *x13; }*)ioAccelResourceList;
 - (void)kernelCommandCollectTimeStamp;
+- (void)setCurrentCommandEncoder:(id)arg1;
 - (void)setCurrentKernelCommandBufferPointer:(void*)arg1;
 - (void)setCurrentSegmentListPointer:(void*)arg1;
+- (void)setLabel:(id)arg1;
+- (void)waitUntilCompleted;
 
 @end

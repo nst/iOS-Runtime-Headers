@@ -15,6 +15,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (unsigned long long)activityStart;
 - (id)emails;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

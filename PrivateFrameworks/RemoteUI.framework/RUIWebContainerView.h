@@ -27,6 +27,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setUserStyleSheet:(id)arg1;
+- (BOOL)uiWebView:(id)arg1 previewIsAllowedForPosition:(struct CGPoint { float x1; float x2; })arg2;
 - (id)webView;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;

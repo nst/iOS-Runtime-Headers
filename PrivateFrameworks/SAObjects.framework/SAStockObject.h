@@ -95,7 +95,6 @@
 - (id)stockNews;
 - (id)symbol;
 - (id)timeStamp;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 - (id)volume;
 - (id)yearRange;
 

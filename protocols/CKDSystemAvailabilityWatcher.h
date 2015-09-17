@@ -5,6 +5,6 @@
 
 @required
 
-- (void)systemAvailabilityChanged:(BOOL)arg1;
+- (void)systemAvailabilityChanged:(unsigned int)arg1;
 
 @end

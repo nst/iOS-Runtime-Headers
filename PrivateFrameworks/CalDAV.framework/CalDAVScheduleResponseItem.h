@@ -12,12 +12,11 @@
 @property (nonatomic, retain) NSMutableSet *responses;
 @property (nonatomic, retain) NSMutableSet *successfulICS;
 
+- (void).cxx_destruct;
 - (void)addNewTopLevelItem:(id)arg1;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)description;
 - (id)failedResponseItems;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)responses;
 - (void)setFailedResponseItems:(id)arg1;
 - (void)setResponses:(id)arg1;

@@ -21,7 +21,6 @@
 + (id)gradientWithType:(int)arg1 degree:(double)arg2 focusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 stops:(id)arg4 resources:(id)arg5;
 + (id)gradientWithType:(int)arg1 degree:(double)arg2 top:(double)arg3 bottom:(double)arg4 right:(double)arg5 left:(double)arg6 stops:(id)arg7 resources:(id)arg8;
 
-- (id).cxx_construct;
 - (id)colorForStopAtPosition:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

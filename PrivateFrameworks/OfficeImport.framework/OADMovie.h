@@ -6,12 +6,13 @@
     BOOL loop;
     NSData *mData;
     float mEnd;
+    BOOL mIsAudioOnly;
     NSString *mName;
     float mStart;
 }
 
 @property (retain) NSData *data;
-@property (readonly) BOOL isAudioOnly;
+@property BOOL isAudioOnly;
 @property BOOL loop;
 @property float movieEndPoint;
 @property float movieStartPoint;
@@ -19,12 +20,14 @@
 
 - (id)data;
 - (void)dealloc;
+- (id)description;
 - (BOOL)isAudioOnly;
 - (BOOL)loop;
 - (float)movieEndPoint;
 - (float)movieStartPoint;
 - (id)name;
 - (void)setData:(id)arg1;
+- (void)setIsAudioOnly:(BOOL)arg1;
 - (void)setLoop:(BOOL)arg1;
 - (void)setMovieEndPoint:(float)arg1;
 - (void)setMovieStartPoint:(float)arg1;

@@ -24,6 +24,7 @@
 - (BOOL)evictsObjectsWithDiscardedContent;
 - (void)finalize;
 - (id)init;
+- (unsigned int)minimumObjectCount;
 - (id)name;
 - (id)objectForKey:(id)arg1;
 - (void)removeAllObjects;
@@ -32,6 +33,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setEvictsObjectsWhenApplicationEntersBackground:(BOOL)arg1;
 - (void)setEvictsObjectsWithDiscardedContent:(BOOL)arg1;
+- (void)setMinimumObjectCount:(unsigned int)arg1;
 - (void)setName:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKey:(id)arg2 cost:(unsigned int)arg3;

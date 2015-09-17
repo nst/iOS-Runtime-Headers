@@ -2,23 +2,22 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCSyncContext : NSObject <BRCLowDiskDelegate> {
+@interface BRCSyncContext : NSObject {
     NSString *_admissionTicket;
     BRCThrottleBase *_applyThrottle;
     CKContainer *_ckContainer;
     NSString *_contextIdentifier;
     CDBudget *_dataBudget;
+    BRCTransferStream *_downloadStream;
     BRCThrottleBase *_downloadThrottle;
-    BRCTransferStream *_downloader;
     CDAttribute *_duetAttribute;
     CDBudget *_energyBudget;
     BOOL _isCancelled;
-    BOOL _isInLowDisk;
     BOOL _isShared;
     BRCThrottleBase *_readerThrottle;
     BRCAccountSession *_session;
+    BRCTransferStream *_uploadStream;
     BRCThrottleBase *_uploadThrottle;
-    BRCTransferStream *_uploader;
 }
 
 @property (nonatomic, readonly) NSString *admissionTicket;
@@ -26,25 +25,23 @@
 @property (nonatomic, readonly) CKContainer *ckContainer;
 @property (nonatomic, readonly) NSString *contextIdentifier;
 @property (nonatomic, readonly) CDBudget *dataBudget;
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) BRCUserDefaults *defaults;
-@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BRCTransferStream *downloadStream;
 @property (nonatomic, readonly) BRCThrottleBase *downloadThrottle;
-@property (nonatomic, readonly) BRCTransferStream *downloader;
 @property (nonatomic, readonly) CDBudget *energyBudget;
-@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isShared;
 @property (nonatomic, readonly) BRCThrottleBase *readerThrottle;
 @property (nonatomic, readonly) BRCAccountSession *session;
-@property (readonly) Class superclass;
+@property (nonatomic, readonly) BRCTransferStream *uploadStream;
 @property (nonatomic, readonly) BRCThrottleBase *uploadThrottle;
-@property (nonatomic, readonly) BRCTransferStream *uploader;
 
 + (id)contextIdentifierForZone:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_database;
 - (void)_setupDuetIfNeeded;
 - (void)addOperation:(id)arg1;
+- (void)addOperation:(id)arg1 allowsCellularAccess:(id)arg2;
 - (id)admissionTicket;
 - (BOOL)allowsCellularAccess;
 - (id)applyThrottle;
@@ -55,19 +52,19 @@
 - (id)dataBudget;
 - (id)defaults;
 - (id)description;
+- (id)downloadStream;
 - (id)downloadThrottle;
-- (id)downloader;
 - (id)energyBudget;
 - (id)initWithSession:(id)arg1 contextIdentifier:(id)arg2 isShared:(BOOL)arg3;
 - (id)initWithZone:(id)arg1;
 - (BOOL)isShared;
-- (void)lowDiskStatusChangedForDevice:(int)arg1 hasEnoughSpace:(BOOL)arg2;
 - (void)notifyDuetFromAccessByBundleID:(id)arg1;
 - (id)readerThrottle;
 - (void)resume;
 - (id)session;
 - (void)setupIfNeeded;
+- (id)uploadStream;
 - (id)uploadThrottle;
-- (id)uploader;
+- (void)waitForAllOperations;
 
 @end

@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)initWithZoneIDsToRepair:(id)arg1;
 - (void)performCKOperation;

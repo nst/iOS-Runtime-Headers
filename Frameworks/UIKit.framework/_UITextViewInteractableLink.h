@@ -3,31 +3,38 @@
  */
 
 @interface _UITextViewInteractableLink : _UITextViewInteractableItem <DDDetectionControllerInteractionDelegate> {
+    LSAppLink *_appLink;
     NSURL *_link;
 }
 
+@property (nonatomic, retain) LSAppLink *appLink;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSURL *link;
 @property (readonly) Class superclass;
 
-+ (id)interactableLinkWithURL:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
++ (id)interactableLinkWithURL:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 subRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 
+- (void).cxx_destruct;
 - (void)_dataDetectorAction:(id)arg1;
 - (void)_linkInteractionAddToReadingList;
 - (void)_linkInteractionCopyLink;
 - (void)_linkInteractionOpenURL;
+- (void)_linkInteractionOpenURLInDefaultBrowser;
+- (void)_linkInteractionOpenURLInExternalApplication;
+- (BOOL)_linkInteractionPerformDefaultAction;
 - (void)action:(id)arg1 didDismissAlertController:(id)arg2;
 - (void)actionDidFinish:(id)arg1;
 - (id)actions;
 - (BOOL)allowInteraction;
+- (id)appLink;
 - (id)dataDetectorActionsForTextView:(id)arg1;
-- (void)dealloc;
 - (id)defaultAction;
 - (id)link;
 - (id)linkActions;
 - (id)localizedTitle;
+- (void)setAppLink:(id)arg1;
 - (void)setLink:(id)arg1;
 
 @end

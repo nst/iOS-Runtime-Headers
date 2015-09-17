@@ -18,6 +18,7 @@
 @property (nonatomic, readonly, retain) UIImage *ratingStarsBackgroundImage;
 @property (nonatomic, readonly, retain) UIImage *ratingStarsForegroundImage;
 @property (nonatomic, retain) NSCache *resourceCache;
+@property (nonatomic, readonly) GKNetworkImageSource *untreatedAchievementImageDetailSource;
 @property (nonatomic, readonly) GKNetworkImageSource *untreatedAchievementImageSource;
 
 + (id)sharedTheme;
@@ -71,6 +72,7 @@
 - (id)tabbarIconGamesSelected:(BOOL)arg1;
 - (id)tabbarIconMeSelected:(BOOL)arg1;
 - (id)tabbarIconTurnsSelected:(BOOL)arg1;
+- (id)untreatedAchievementImageDetailSource;
 - (id)untreatedAchievementImageSource;
 
 @end

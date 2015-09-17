@@ -3,6 +3,7 @@
  */
 
 @interface MSCLSettingsTableViewCell : UITableViewCell {
+    <MSCLSettingsTableViewCellDelegate> *_changeDelegate;
     BOOL _disabled;
     struct CGSize { 
         float width; 
@@ -15,6 +16,7 @@
     int _valueType;
 }
 
+@property (nonatomic) <MSCLSettingsTableViewCellDelegate> *changeDelegate;
 @property (getter=isDisabled, nonatomic) BOOL disabled;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic) struct CGSize { float x1; float x2; } imageSize;
@@ -26,10 +28,13 @@
 
 - (void).cxx_destruct;
 - (void)_reloadTitleTextColor;
+- (void)_valueChanged:(id)arg1;
+- (id)changeDelegate;
 - (id)image;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (BOOL)isDisabled;
 - (void)layoutSubviews;
+- (void)setChangeDelegate:(id)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;

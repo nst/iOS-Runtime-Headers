@@ -17,6 +17,7 @@
     struct sqlite3_stmt { } *_popPendingMessage;
     struct sqlite3_stmt { } *_pushPendingMessage;
     struct sqlite3_stmt { } *_removeMessageInFlight;
+    _SYSharedServiceDB *_sharedDB;
     NSObject<OS_dispatch_queue> *_syncQ;
 }
 
@@ -27,9 +28,12 @@
 @property (nonatomic, readonly) unsigned int lengthOfAllMessagesInFlight;
 
 - (void).cxx_destruct;
+- (void)_ensureSchema;
 - (int)_getSchemaVersion;
 - (BOOL)_openDBForceRecreate:(BOOL)arg1;
+- (void)_prepareStatements;
 - (BOOL)_syncTransaction:(BOOL)arg1 block:(id /* block */)arg2;
+- (void)_withDB:(id /* block */)arg1;
 - (void)addMessageWithID:(id)arg1 ofLength:(unsigned int)arg2 timeoutTime:(double)arg3;
 - (unsigned int)countOfAllMessagesInFlight;
 - (unsigned int)countOfPendingMessages;
@@ -39,6 +43,7 @@
 - (id)expiredMessageIDs;
 - (id)init;
 - (id)initWithPath:(id)arg1 logFacility:(struct __CFString { }*)arg2;
+- (id)initWithSharedDBForServiceName:(id)arg1;
 - (unsigned int)lengthOfAllMessagesInFlight;
 - (id)popPendingMessage;
 - (void)pushPendingMessageData:(id)arg1 timeToLive:(double)arg2;

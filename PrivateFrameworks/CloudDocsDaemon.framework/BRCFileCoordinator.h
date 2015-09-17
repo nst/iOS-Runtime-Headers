@@ -18,6 +18,7 @@
 + (void)itemAtPath:(id)arg1 didBounceToName:(id)arg2;
 + (void)itemAtPath:(id)arg1 logicalFilename:(id)arg2 didMoveToPath:(id)arg3 logicalFilename:(id)arg4 hasContentUpdate:(BOOL)arg5;
 + (void)itemDidAppearAtPath:(id)arg1 logicalFilename:(id)arg2;
++ (void)itemDidChangeAtPath:(id)arg1 logicalFilename:(id)arg2;
 + (void)itemDidDisappearAtPath:(id)arg1 logicalFilename:(id)arg2;
 
 - (void).cxx_destruct;

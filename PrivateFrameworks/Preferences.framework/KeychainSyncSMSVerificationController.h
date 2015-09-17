@@ -2,14 +2,12 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface KeychainSyncSMSVerificationController : KeychainSyncTextEntryController <UIAlertViewDelegate> {
+@interface KeychainSyncSMSVerificationController : PSKeychainSyncTextEntryController <UIAlertViewDelegate> {
     NSString *_countryCode;
     NSString *_dialingPrefix;
     UIButton *_footerButton;
     PSKeychainSyncManager *_keychainSyncManager;
     NSString *_phoneNumber;
-    UIAlertView *_supportVerificationAlert;
-    unsigned int _verificationCodeLength;
 }
 
 @property (nonatomic, retain) NSString *countryCode;
@@ -20,26 +18,21 @@
 @property (nonatomic) PSKeychainSyncManager *keychainSyncManager;
 @property (nonatomic, retain) NSString *phoneNumber;
 @property (readonly) Class superclass;
-@property (nonatomic) unsigned int verificationCodeLength;
 
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void).cxx_destruct;
 - (id)countryCode;
-- (void)dealloc;
 - (id)dialingPrefix;
 - (void)dismissAlerts;
 - (id)init;
 - (id)keychainSyncManager;
 - (void)loadView;
-- (unsigned int)numberOfPasscodeFields;
 - (id)phoneNumber;
 - (void)setCountryCode:(id)arg1;
 - (void)setDialingPrefix:(id)arg1;
 - (void)setKeychainSyncManager:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
-- (void)setVerificationCodeLength:(unsigned int)arg1;
 - (void)showSupportVerification;
 - (id)specifiers;
-- (unsigned int)verificationCodeLength;
 - (void)viewDidLayoutSubviews;
 
 @end

@@ -17,8 +17,8 @@
 @property (nonatomic, retain) UIColor *chevronShimmerColor;
 @property (nonatomic, retain) UIColor *highlightColor;
 @property (nonatomic, retain) UIColor *highlightLimitingColor;
-@property (nonatomic, readonly) _UILegibilitySettings *legibilitySettings;
-@property (nonatomic, readonly) UIColor *referenceColor;
+@property (nonatomic, readonly, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, readonly, retain) UIColor *referenceColor;
 @property (nonatomic, readonly) float referenceContrast;
 @property (nonatomic, retain) UIColor *shimmerColor;
 @property (nonatomic, readonly) int style;

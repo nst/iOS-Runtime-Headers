@@ -2,16 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDictationView : UIView <_UISiriWaveyViewDelegate> {
+@interface UIDictationView : UIView <SUICFlamesViewDelegate> {
     BOOL _automaticAppearanceWasEnabled;
     UIKeyboardDicationBackground *_background;
     UIButton *_endpointButton;
     UIButton *_endpointButtonLandscape;
+    SUICFlamesView *_flamesView;
     BOOL _keyboardInTransition;
     UIDictationMeterView *_meterView;
     int _state;
     UIButton *_waveTapEndpointButton;
-    _UISiriWaveyView *_waveyView;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,7 +27,7 @@
 
 - (void)applicationEnteredBackground;
 - (void)applicationWillResignActive;
-- (float)audioLevelForWaveyView:(id)arg1;
+- (float)audioLevelForFlamesView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })backgroundOffset;
 - (struct CGPoint { float x1; float x2; })contentOffset;
 - (struct CGSize { float x1; float x2; })currentScreenSize;

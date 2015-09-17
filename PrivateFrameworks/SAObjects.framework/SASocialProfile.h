@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SASocialProfile : AceObject <SAAceSerializable>
+@interface SASocialProfile : AceObject <SAAceComparable, SAAceSerializable>
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

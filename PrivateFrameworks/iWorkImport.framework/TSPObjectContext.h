@@ -27,8 +27,9 @@
         unsigned int delegateRespondsToAreNewExternalReferencesToDataAllowed : 1; 
         unsigned int delegateRespondsToAreExternalReferencesToDataAllowedAtURL : 1; 
         unsigned int delegateRespondsToBaseUUIDForObjectUUID : 1; 
-        unsigned int delegateRespondsToPreserveDocumentRevisionIdentifierForSequenceZero : 1; 
+        unsigned int delegateRespondsToPreserveDocumentRevisionIdentifierForSaveURL : 1; 
         unsigned int delegateRespondsToFilePresenter : 1; 
+        unsigned int delegateRespondsToSupportDirectoryURLReturningIsUnique : 1; 
         unsigned int delegateRespondsToSupportDirectoryURL : 1; 
         unsigned int delegateRespondsToIgnoreDocumentSupport : 1; 
         unsigned int delegateRespondsToIsDocumentSupportTemporary : 1; 
@@ -74,6 +75,7 @@
     TSPObjectUUIDMap *_objectUUIDMap;
     NSMapTable *_objects;
     NSObject<OS_dispatch_queue> *_objectsQueue;
+    NSHashTable *_objectsToIgnoreModifications;
     NSObject<OS_dispatch_group> *_outstandingReadsGroup;
     TSPPackageWriteCoordinator *_packageWriteCoordinator;
     NSData *_passwordVerifier;
@@ -156,7 +158,7 @@
 + (void)removeDefaultSupportDirectory;
 + (id)requestDownloadingDocumentResourcesForURL:(id)arg1 decryptionKey:(id)arg2;
 + (BOOL)requestDownloadingDocumentResourcesForURL:(id)arg1 decryptionKey:(id)arg2 usingDataProvider:(id)arg3;
-+ (id)supportBundleURLForUUID:(id)arg1 delegate:(id)arg2;
++ (id)supportBundleURLForDocumentUUID:(id)arg1 delegate:(id)arg2;
 + (void)waitForPendingEndSaveGroup:(id)arg1;
 
 - (id).cxx_construct;
@@ -172,6 +174,7 @@
 - (id)baseUUIDForObjectUUID;
 - (void)beginAssertOnModify;
 - (void)beginIgnoringCachedObjectEviction;
+- (void)beginIgnoringModificationsForObject:(id)arg1;
 - (void)beginSaveToURL:(id)arg1 updateType:(int)arg2 packageType:(int)arg3;
 - (void)beginSaveToURL:(id)arg1 updateType:(int)arg2 packageType:(int)arg3 documentUUID:(id)arg4;
 - (void)beginWriteOperation;
@@ -221,6 +224,7 @@
 - (id)downloadWithDelegate:(id)arg1 description:(id)arg2;
 - (void)endAssertOnModify;
 - (void)endIgnoringCachedObjectEviction;
+- (void)endIgnoringModificationsForObject:(id)arg1;
 - (void)endSaveWithSuccess:(BOOL)arg1;
 - (void)endWriteOperation;
 - (BOOL)endWriteWithSuccess:(BOOL)arg1 error:(id*)arg2;
@@ -263,6 +267,7 @@
 - (id)objectUUIDMap;
 - (id)objectWithUUID:(id)arg1;
 - (id)objectWithUUID:(id)arg1 onlyIfLoaded:(BOOL)arg2 validateNewObjects:(BOOL)arg3 identifier:(long long*)arg4;
+- (id)objectWithUUIDIfAvailable:(id)arg1;
 - (id)objectWithUUIDPath:(id)arg1;
 - (id)objectsFromUUIDs:(id)arg1;
 - (int)packageType;
@@ -307,7 +312,7 @@
 - (void)setSupportObject:(id)arg1;
 - (void)setSupportObjectContainer:(id)arg1;
 - (void)setSupportObjectImpl:(id)arg1;
-- (id)supportDirectoryURL;
+- (id)supportDirectoryURLReturningIsBundleURL:(BOOL*)arg1;
 - (id)supportManager;
 - (id)supportMetadata;
 - (id)supportObject;

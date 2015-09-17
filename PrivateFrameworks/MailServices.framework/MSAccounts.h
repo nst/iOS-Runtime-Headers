@@ -7,6 +7,7 @@
 + (void)accountValuesForKeys:(id)arg1 completionBlock:(id /* block */)arg2;
 + (void)accountValuesForKeys:(id)arg1 launchMobileMail:(BOOL)arg2 completionBlock:(id /* block */)arg3;
 + (void)accountValuesForKeys:(id)arg1 originatingBundleID:(id)arg2 sourceAccountManagement:(int)arg3 launchMobileMail:(BOOL)arg4 completionBlock:(id /* block */)arg5;
++ (id)attachmentCapabilities;
 + (BOOL)canSendMail;
 + (BOOL)canSendMailSourceAccountManagement:(int)arg1;
 + (id)customSignatureForSendingEmailAddress:(id)arg1;

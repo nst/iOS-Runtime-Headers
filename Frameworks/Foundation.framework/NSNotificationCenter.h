@@ -15,6 +15,7 @@
 - (void)addObserver:(id)arg1 selector:(SEL)arg2 name:(id)arg3 object:(id)arg4;
 - (id)addObserverForName:(id)arg1 object:(id)arg2 queue:(id)arg3 usingBlock:(id /* block */)arg4;
 - (void)dealloc;
+- (id)debugDescription;
 - (id)description;
 - (void)finalize;
 - (id)init;

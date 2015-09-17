@@ -11,6 +11,8 @@
 - (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 errorType:(unsigned int)arg3;
 - (void)addCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 errorType:(unsigned int)arg4;
 - (void)addCandidateWithString:(id)arg1 errorType:(unsigned int)arg2;
+- (void)addReplacementCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 intendedCharacter:(unsigned short)arg4 actualCharacter:(unsigned short)arg5;
+- (void)addTranspositionCandidateWithBuffer:(char *)arg1 encoding:(unsigned long)arg2 transform:(unsigned int)arg3 intendedFirstCharacter:(unsigned short)arg4 intendedSecondCharacter:(unsigned short)arg5;
 - (id)candidateStrings;
 - (id)candidates;
 - (unsigned int)count;

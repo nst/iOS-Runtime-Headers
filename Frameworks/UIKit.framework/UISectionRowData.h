@@ -25,10 +25,13 @@
     BOOL _valid;
 }
 
+- (void).cxx_destruct;
 - (float)_defaultSectionFooterHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
 - (float)_defaultSectionHeaderHeightForSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
 - (float)_headerOrFooterSizeForTable:(id)arg1 title:(id)arg2 detailText:(id)arg3 isHeader:(BOOL)arg4 stripPaddingForAbuttingView:(BOOL)arg5 isTopHeader:(BOOL)arg6;
-- (int)_rowForPoint:(struct CGPoint { float x1; float x2; })arg1 beginningWithRow:(int)arg2 numberOfRows:(int)arg3;
+- (float)_offsetForFirstRow;
+- (int)_rowForPoint:(struct CGPoint { float x1; float x2; })arg1 beginningWithRow:(int)arg2 numberOfRows:(int)arg3 extraHitSpaceBetweenRows:(float)arg4;
+- (int)_rowForPoint:(struct CGPoint { float x1; float x2; })arg1 extraHitSpaceBetweenRows:(float)arg2;
 - (void)addOffset:(float)arg1 fromRow:(int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -43,10 +46,9 @@
 - (void)invalidateSectionOffset;
 - (float)offsetForRow:(int)arg1;
 - (void)refreshWithSection:(int)arg1 tableView:(id)arg2 tableViewRowData:(id)arg3;
-- (int)rowForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (int)sectionLocationForReorderedRow:(int)arg1;
 - (int)sectionLocationForRow:(int)arg1;
-- (void)setHeight:(float)arg1 forRow:(int)arg2;
+- (void)setHeight:(float)arg1 forRow:(int)arg2 inSection:(int)arg3;
 - (void)updateSectionHeightWithDelta:(float)arg1 section:(int)arg2 updateFooterOffset:(BOOL)arg3;
 
 @end

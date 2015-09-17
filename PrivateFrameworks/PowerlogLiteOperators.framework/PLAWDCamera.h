@@ -21,11 +21,9 @@
 @property (retain) PLEntryNotificationOperatorComposition *cameraEventCallbackTorch;
 @property long cameraSubmitCnt;
 @property double frontCameraTimestamp;
-@property PLOperator *operator;
 @property BOOL prevBackCameraState;
 @property BOOL prevFrontCameraState;
 @property BOOL prevTorchCameraState;
-@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property double torchCameraTimestamp;
 
 + (id)entryAggregateDefinitionAwdCamera;

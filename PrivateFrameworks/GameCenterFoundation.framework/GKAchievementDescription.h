@@ -20,6 +20,8 @@
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
++ (id)_achievementDescriptionFromGame:(id)arg1 propertyListDictionary:(id)arg2;
++ (id)_loadLocalAchievementDescriptionsForGame:(id)arg1;
 + (id)instanceMethodSignatureForSelector:(SEL)arg1;
 + (BOOL)instancesRespondToSelector:(SEL)arg1;
 + (void)loadAchievementDescriptionsForGame:(id)arg1 withCompletionHandler:(id /* block */)arg2;
@@ -30,8 +32,10 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)game;
 - (unsigned int)hash;
 - (id)image;
+- (id)imageNameForIcon;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithInternalRepresentation:(id)arg1;

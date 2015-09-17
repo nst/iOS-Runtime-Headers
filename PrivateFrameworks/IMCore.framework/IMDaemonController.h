@@ -62,6 +62,7 @@
 - (BOOL)_blocksConnectionAtResume;
 - (unsigned int)_capabilities;
 - (void)_connectToDaemonWithLaunch:(BOOL)arg1 capabilities:(unsigned int)arg2;
+- (double)_connectionTimeout;
 - (void)_disconnectFromDaemonWithForce:(BOOL)arg1;
 - (void)_handleDaemonException:(id)arg1;
 - (id)_listenerID;

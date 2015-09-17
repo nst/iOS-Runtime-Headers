@@ -19,6 +19,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (float)scale;

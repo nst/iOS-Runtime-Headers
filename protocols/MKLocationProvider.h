@@ -6,7 +6,6 @@
 @required
 
 - (int)activityType;
-- (BOOL)airplaneModeBlocksLocation;
 - (id /* block */)authorizationRequestBlock:(void *)arg1; // needs 1 arg types, found 10: id /* block */, id /* block */, void*, void, id /* block */, BOOL, void*, void*, id, SEL
 - (int)authorizationStatus;
 - (<MKLocationProviderDelegate> *)delegate;
@@ -41,6 +40,7 @@
 - (void)stopUpdatingLocation;
 - (void)stopUpdatingVehicleHeading;
 - (void)stopUpdatingVehicleSpeed;
+- (double)timeScale;
 - (BOOL)usesCLMapCorrection;
 
 @end

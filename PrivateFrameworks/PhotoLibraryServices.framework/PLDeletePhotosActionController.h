@@ -3,33 +3,28 @@
  */
 
 @interface PLDeletePhotosActionController : NSObject {
-    UIBarButtonItem *__referenceBarButtonItem;
     int _action;
     UIAlertController *_actionSheetController;
     NSArray *_additionalAssetsToDelete;
     NSArray *_assets;
     id /* block */ _completionHandler;
-    BOOL _handlesDuplicates;
+    <PLDeletePhotosActionControllerDelegate> *_delegate;
     UIAlertController *_oneTimeConfirmation;
     UIAlertController *_overQuotaConfirmation;
     PLPhotoLibrary *_photoLibrary;
-    UIViewController *_referenceViewController;
     id /* block */ _willDeleteHandler;
 }
 
-@property (setter=_setReferenceBarButtonItem:, nonatomic, retain) UIBarButtonItem *_referenceBarButtonItem;
 @property (nonatomic, readonly) int action;
-@property (nonatomic, readonly) NSArray *assets;
-@property (nonatomic, readonly) BOOL handlesDuplicates;
-@property (nonatomic, readonly) PLPhotoLibrary *photoLibrary;
+@property (nonatomic, readonly, retain) NSArray *assets;
+@property (nonatomic, readonly) <PLDeletePhotosActionControllerDelegate> *delegate;
+@property (nonatomic, readonly, retain) PLPhotoLibrary *photoLibrary;
 
 - (void)_actionSheetDeletePressed:(BOOL)arg1;
 - (void)_didCompleteWithDestructiveAction:(BOOL)arg1;
 - (void)_getDeleteActionSheetTitle:(id*)arg1 destructiveButtonTitle:(id*)arg2 cancelButtonTitle:(id*)arg3 forAssets:(id)arg4 additionalPhotoStreamAssets:(id)arg5;
 - (void)_oneTimeAlertConfirmed;
 - (void)_overQuotaAlertConfirmed:(BOOL)arg1;
-- (id)_referenceBarButtonItem;
-- (void)_setReferenceBarButtonItem:(id)arg1;
 - (void)_setupActionSheet;
 - (void)_setupOnetimeConfirmationSheet;
 - (void)_setupOverQuotaConfirmationSheet;
@@ -38,12 +33,10 @@
 - (int)action;
 - (id)assets;
 - (void)dealloc;
-- (void)dismissAnimated:(BOOL)arg1;
-- (BOOL)handlesDuplicates;
-- (id)initWithPhotoLibrary:(id)arg1 assets:(id)arg2 action:(int)arg3 handleDuplicates:(BOOL)arg4;
+- (id)delegate;
+- (id)initWithPhotoLibrary:(id)arg1 assets:(id)arg2 action:(int)arg3 delegate:(id)arg4;
+- (void)performWithWillDeleteHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
 - (id)photoLibrary;
-- (id)presentInViewController:(id)arg1 fromBarButtonItem:(id)arg2 willDeleteHAndler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
-- (void)redisplayInViewController:(id)arg1 fromBarButtonItem:(id)arg2;
 - (void)runDestructiveActionWithCompletion:(id /* block */)arg1;
 
 @end

@@ -113,4 +113,8 @@
 
 - (id)pu_increment:(float)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
+
+- (id)is_increment:(double)arg1;
+
 @end

@@ -17,10 +17,10 @@
         } __end_cap_; 
     } _facadeTextures;
     struct FogInfo { 
-        struct shared_ptr<ggl::Fog::FogUniformData> { 
-            struct FogUniformData {} *__ptr_; 
+        struct shared_ptr<ggl::ConstantDataTyped<ggl::Fog::Skyfog> > { 
+            struct ConstantDataTyped<ggl::Fog::Skyfog> {} *__ptr_; 
             struct __shared_weak_count {} *__cntrl_; 
-        } _fogUniformData; 
+        } _fogConstantData; 
     } _fogInfo;
     double _maxHeight;
     float _maxLayeringHeight;
@@ -36,24 +36,24 @@
             struct Texture2D {} *__first_; 
         } __ptr_; 
     } _shadowTexture;
-    struct shared_ptr<ggl::Tile::ViewUniformData> { 
-        struct ViewUniformData {} *__ptr_; 
+    struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { 
+        struct ConstantDataTyped<ggl::Tile::View> {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
-    } _shadowViewUniformData;
+    } _shadowViewConstantData;
 }
 
 @property (nonatomic) float alpha;
 @property (nonatomic, retain) VKAnimation *animation;
 @property (nonatomic, retain) VKAnimation *animationForPitch;
 @property (nonatomic, readonly) struct CullingGridWithHeight { float x1[16]; } cullingGrid;
-@property (nonatomic, readonly) struct FogInfo { struct shared_ptr<ggl::Fog::FogUniformData> { struct FogUniformData {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }*fogInfo;
+@property (nonatomic, readonly) struct FogInfo { struct shared_ptr<ggl::ConstantDataTyped<ggl::Fog::Skyfog> > { struct ConstantDataTyped<ggl::Fog::Skyfog> {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }*fogInfo;
 @property (nonatomic, readonly) double maxHeight;
 @property (nonatomic, readonly) float maxLayeringHeight;
 @property (nonatomic, readonly) float minLayeringHeight;
 @property (nonatomic, readonly) VK3DObjectSubTile *objectSubTile;
 @property (nonatomic) float scale;
 @property (nonatomic, readonly) struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; bool x12; bool x13; bool x14; unsigned int x15; unsigned int x16; int x17; int x18; }*shadowTexture;
-@property (nonatomic, readonly) struct shared_ptr<ggl::Tile::ViewUniformData> { struct ViewUniformData {} *x1; struct __shared_weak_count {} *x2; } shadowViewUniformData;
+@property (nonatomic, readonly) struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { struct ConstantDataTyped<ggl::Tile::View> {} *x1; struct __shared_weak_count {} *x2; } shadowViewConstantData;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
@@ -65,12 +65,13 @@
 - (id)animation;
 - (id)animationForPitch;
 - (void)buildMeshesWithTriangulator:(id)arg1 device:(struct Device { int (**x1)(); int x2; }*)arg2 prepareExtrusion:(BOOL)arg3;
+- (void)confirmBuildingSuppression:(struct { struct { struct { id x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; unsigned int x_1_2_6; unsigned long long x_1_2_7; BOOL x_1_2_8; unsigned long long x_1_2_9; float x_1_2_10; unsigned long long x_1_2_11; id x_1_2_12; } x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; int x_1_1_4; int x_1_1_5; int x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; union { struct { struct { float x_1_4_1; float x_1_4_2; } x_1_3_1; struct { float x_2_4_1; float x_2_4_2; } x_1_3_2; } x_9_2_1; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_9_2_2; } x_1_1_9; struct { /* ? */ } *x_1_1_10; struct { unsigned short x_11_2_1[2]; unsigned short x_11_2_2[2]; } x_1_1_11; unsigned char x_1_1_12; struct _NSRange { unsigned int x_13_2_1; unsigned int x_13_2_2; } x_1_1_13; BOOL x_1_1_14; } x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; }*)arg1;
 - (struct CullingGridWithHeight { float x1[16]; })cullingGrid;
 - (void)dealloc;
 - (const struct vector<std::__1::shared_ptr<ggl::Texture2D>, std::__1::allocator<std::__1::shared_ptr<ggl::Texture2D> > > { struct shared_ptr<ggl::Texture2D> {} *x1; struct shared_ptr<ggl::Texture2D> {} *x2; struct __compressed_pair<std::__1::shared_ptr<ggl::Texture2D> *, std::__1::allocator<std::__1::shared_ptr<ggl::Texture2D> > > { struct shared_ptr<ggl::Texture2D> {} *x_3_1_1; } x3; }*)facadeTextures;
-- (struct FogInfo { struct shared_ptr<ggl::Fog::FogUniformData> { struct FogUniformData {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }*)fogInfo;
+- (struct FogInfo { struct shared_ptr<ggl::ConstantDataTyped<ggl::Fog::Skyfog> > { struct ConstantDataTyped<ggl::Fog::Skyfog> {} *x_1_1_1; struct __shared_weak_count {} *x_1_1_2; } x1; }*)fogInfo;
 - (BOOL)heightAtPoint:(const struct Matrix<float, 2, 1> { float x1[2]; }*)arg1 outZ:(float*)arg2;
-- (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 modelTile:(id)arg2 prepareExtrusion:(BOOL)arg3 styleManager:(id)arg4 sharedResources:(id)arg5 contentScale:(float)arg6 device:(struct Device { int (**x1)(); int x2; }*)arg7;
+- (id)initWithKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg1 modelTile:(id)arg2 prepareExtrusion:(BOOL)arg3 styleManager:(struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })arg4 sharedResources:(id)arg5 contentScale:(float)arg6 device:(struct Device { int (**x1)(); int x2; }*)arg7;
 - (double)maxHeight;
 - (float)maxLayeringHeight;
 - (float)minLayeringHeight;
@@ -83,7 +84,7 @@
 - (void)setAnimationForPitch:(id)arg1;
 - (void)setScale:(float)arg1;
 - (struct Texture2D { int (**x1)(); struct ResourceManager {} *x2; struct RenderResource {} *x3; int x4; int x5; unsigned int x6; int x7; int x8; int x9; float x10; struct TextureDataAbstract {} *x11; bool x12; bool x13; bool x14; unsigned int x15; unsigned int x16; int x17; int x18; }*)shadowTexture;
-- (struct shared_ptr<ggl::Tile::ViewUniformData> { struct ViewUniformData {} *x1; struct __shared_weak_count {} *x2; })shadowViewUniformData;
+- (struct shared_ptr<ggl::ConstantDataTyped<ggl::Tile::View> > { struct ConstantDataTyped<ggl::Tile::View> {} *x1; struct __shared_weak_count {} *x2; })shadowViewConstantData;
 - (void)updateViewDependentStateIfNecessaryWithContext:(id)arg1;
 - (void)updateViewDependentStateWithContext:(id)arg1;
 - (void)updateWithStyleResolutionSession:(struct StyleResolutionSession<geo::_retain_ptr<id, geo::_retain_objc, geo::_release_objc, geo::_hash_objc, geo::_equal_objc> > { }*)arg1;

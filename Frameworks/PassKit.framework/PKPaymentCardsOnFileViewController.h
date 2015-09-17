@@ -3,17 +3,23 @@
  */
 
 @interface PKPaymentCardsOnFileViewController : PKPaymentSetupTableViewController {
-    NSArray *_cardsOnFile;
-    PKPaymentWebService *_paymentWebService;
+    BOOL _allowsManualEntry;
+    PKPaymentProvisioningController *_provisioningController;
     <PKPaymentSetupViewControllerDelegate> *_setupDelegate;
 }
 
+@property (nonatomic) BOOL allowsManualEntry;
+@property (nonatomic, readonly, copy) NSArray *cardsOnFile;
+
 - (void)_presentCardDetailsControllerForCredential:(id)arg1;
 - (void)_presentManualAddController;
+- (BOOL)allowsManualEntry;
 - (void)cancel:(id)arg1;
+- (id)cardsOnFile;
 - (void)dealloc;
-- (id)initWithPaymentWebService:(id)arg1 eligibleCards:(id)arg2 context:(int)arg3 delegate:(id)arg4;
+- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 delegate:(id)arg3;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (void)setAllowsManualEntry:(BOOL)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;

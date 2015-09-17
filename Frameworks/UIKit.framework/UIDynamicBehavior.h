@@ -3,7 +3,6 @@
  */
 
 @interface UIDynamicBehavior : NSObject {
-    BOOL __isPrimitiveBehavior;
     id /* block */ _action;
     NSMutableArray *_addedBehaviors;
     NSMutableArray *_behaviors;
@@ -11,20 +10,18 @@
     NSMutableArray *_items;
 }
 
-@property (setter=_isPrimitiveBehavior:, nonatomic) BOOL _isPrimitiveBehavior;
 @property (nonatomic, copy) id /* block */ action;
 @property (nonatomic, readonly, copy) NSArray *childBehaviors;
 @property (nonatomic, readonly) UIDynamicAnimator *dynamicAnimator;
 
++ (BOOL)_isPrimitiveBehavior;
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (void)_associate;
 - (void)_changedParameterForBody:(id)arg1;
 - (id)_context;
 - (void)_dissociate;
-- (id)_init:(BOOL)arg1;
-- (BOOL)_isPrimitiveBehavior;
-- (void)_isPrimitiveBehavior:(BOOL)arg1;
 - (id)_items;
 - (id)_itemsDescription;
 - (void)_reevaluate:(unsigned int)arg1;
@@ -35,7 +32,6 @@
 - (void)addChildBehavior:(id)arg1;
 - (BOOL)allowsAnimatorToStop;
 - (id)childBehaviors;
-- (void)dealloc;
 - (id)description;
 - (id)dynamicAnimator;
 - (id)init;

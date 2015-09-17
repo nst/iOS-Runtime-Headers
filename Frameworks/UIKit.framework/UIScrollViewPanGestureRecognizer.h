@@ -3,6 +3,7 @@
  */
 
 @interface UIScrollViewPanGestureRecognizer : UIPanGestureRecognizer {
+    unsigned int _asksScrollViewForTouchCentroidAdjustment;
     unsigned int _caughtDeceleratingScrollView;
     unsigned int _directionalLockEnabled;
     unsigned int _hasChildScrollView;
@@ -18,25 +19,31 @@
     unsigned int _transfersTrackingFromParentScrollView;
 }
 
+@property (nonatomic) BOOL asksScrollViewForTouchCentroidAdjustment;
 @property (getter=_caughtDeceleratingScrollView, nonatomic, readonly) BOOL caughtDeceleratingScrollView;
 @property (getter=isDirectionalLockEnabled, nonatomic) BOOL directionalLockEnabled;
 @property (nonatomic) UIScrollView *scrollView;
 
+- (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_adjustSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_canTransferTrackingFromParentPagingScrollView;
 - (BOOL)_caughtDeceleratingScrollView;
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
+- (struct CGPoint { float x1; float x2; })_centroidOfTouches:(id)arg1 excludingEnded:(BOOL)arg2;
 - (float)_hysteresis;
 - (void)_resetGestureRecognizer;
 - (void)_scrollViewDidEndZooming;
 - (BOOL)_shouldContinueToWaitToTransferTrackingFromParentScrollView;
 - (BOOL)_shouldTransferTrackingFromParentScrollViewForCurrentOffset;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
+- (BOOL)asksScrollViewForTouchCentroidAdjustment;
 - (BOOL)canBePreventedByGestureRecognizer:(id)arg1;
+- (BOOL)delaysTouchesBegan;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
 - (BOOL)isDirectionalLockEnabled;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2;
 - (id)scrollView;
+- (void)setAsksScrollViewForTouchCentroidAdjustment:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDirectionalLockEnabled:(BOOL)arg1;
 - (void)setScrollView:(id)arg1;

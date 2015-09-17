@@ -11,5 +11,6 @@
 - (int)presentationStyle;
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;
+- (void)transitionDidFinish:(BOOL)arg1;
 
 @end

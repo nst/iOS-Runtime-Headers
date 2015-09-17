@@ -31,6 +31,7 @@
 + (BOOL)requiresConstraintBasedLayout;
 
 - (void)applyLayoutAttributes:(id)arg1;
+- (id)baseTextStyle;
 - (id)collectionView;
 - (void)dealloc;
 - (id)horizontalContraint;

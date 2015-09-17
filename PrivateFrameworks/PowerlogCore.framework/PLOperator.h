@@ -8,20 +8,19 @@
     NSMutableDictionary *_filterDeltaLastEntryIDs;
     NSMutableDictionary *_lastLogDateForEntryKey;
     NSMutableDictionary *_localCache;
-    PLNSTimerOperatorComposition *_triggerBufferFlush;
+    PLTimer *_triggerBufferFlush;
 }
 
-@property (readonly) PLCoreAccountingGroup *accountingGroups;
 @property (retain) NSMutableArray *bufferedEntries;
 @property (readonly) NSString *className;
 @property (retain) NSMutableDictionary *filterDefinitions;
 @property (retain) NSMutableDictionary *filterDeltaLastEntryIDs;
 @property (retain) NSMutableDictionary *lastLogDateForEntryKey;
 @property (retain) NSMutableDictionary *localCache;
-@property (readonly) PLCoreRail *rails;
 @property (readonly) PLCoreStorage *storage;
 @property (readonly) NSObject<OS_dispatch_queue> *storageQueue;
-@property (retain) PLNSTimerOperatorComposition *triggerBufferFlush;
+@property (readonly) NSString *storageQueueName;
+@property (retain) PLTimer *triggerBufferFlush;
 @property (readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)accountingGroupDefinitions;
@@ -47,9 +46,11 @@
 + (void)setDebugEnabled:(BOOL)arg1;
 + (void)setDebugEnabled:(BOOL)arg1 forKey:(id)arg2;
 + (void)setEnabled:(BOOL)arg1;
++ (id)storageQueueName;
++ (id)trimConditionsWithEntryKey:(id)arg1 withTrimDate:(id)arg2 withCount:(id)arg3 withStartDateKey:(id)arg4;
++ (id)trimConditionsWithEntryKey:(id)arg1 withTrimDate:(id)arg2 withDuration:(id)arg3 withStartDateKey:(id)arg4;
 
 - (void).cxx_destruct;
-- (id)accountingGroups;
 - (id)bufferedEntries;
 - (id)className;
 - (void)dealloc;
@@ -74,11 +75,9 @@
 - (void)logEntry:(id)arg1;
 - (void)logFromCFCallback:(id)arg1;
 - (void)logRequestNotification:(id)arg1;
-- (void)maintainAggregateStorage;
 - (void)postEntries:(id)arg1;
 - (void)postEntries:(id)arg1 withGroupID:(id)arg2;
 - (BOOL)postFilteredNotificationForEntry:(id)arg1 withFilteredDefition:(id)arg2 withNotificationName:(id)arg3;
-- (id)rails;
 - (void)setBufferedEntries:(id)arg1;
 - (void)setDebugEnabled:(BOOL)arg1;
 - (void)setDebugEnabled:(BOOL)arg1 forKey:(id)arg2;
@@ -91,11 +90,13 @@
 - (BOOL)shouldWriteEntry:(id)arg1 withDebug:(BOOL)arg2;
 - (id)storage;
 - (id)storageQueue;
+- (id)storageQueueName;
 - (void)subscribeNotificationsForEntries;
+- (id)tablesToTrimConditionsForTrimDate:(id)arg1;
 - (double)timeIntervalSinceLastLogForEntryKey:(id)arg1;
 - (id)triggerBufferFlush;
-- (id)trimmingConditionsForRolloverAtDate:(id)arg1;
-- (void)updateEntry:(id)arg1;
+- (id)trimConditionsForEntryKey:(id)arg1 forTrimDate:(id)arg2;
+- (void)updateEntry:(id)arg1 withBlock:(id /* block */)arg2;
 - (id)workQueue;
 
 @end

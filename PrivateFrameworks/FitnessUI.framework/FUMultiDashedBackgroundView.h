@@ -4,32 +4,38 @@
 
 @interface FUMultiDashedBackgroundView : FUChartBackgroundView {
     BOOL _backgroundIsTransparent;
-    UIView *_lastLineView;
+    UIImageView *_imageView;
     UIColor *_lineColor;
-    float _lineSpacing;
     float _lineWidth;
-    unsigned int _numSubLines;
+    unsigned int _numLines;
+    float _previousWidth;
     UIColor *_subLineColor;
-    float _subLineHeight;
+    float _sublineInset;
+    unsigned int _sublineInterval;
 }
 
 @property (nonatomic) BOOL backgroundIsTransparent;
-@property (nonatomic) float lineSpacing;
 @property (nonatomic) float lineWidth;
-@property (nonatomic) float subLineHeight;
+@property (nonatomic) unsigned int numLines;
+@property (nonatomic) float sublineInset;
+@property (nonatomic) unsigned int sublineInterval;
+
++ (id)calculateRoundedLinePositionsForTotalWidth:(float)arg1 lineWidth:(float)arg2 numberOfLines:(unsigned int)arg3 roundedInView:(id)arg4;
 
 - (void).cxx_destruct;
-- (id)_linesPatternColor;
+- (void)_setNeedsRegenerateBackgroundImage;
+- (id)_stretchableLinesPatternImage;
 - (BOOL)backgroundIsTransparent;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
-- (float)lineSpacing;
 - (float)lineWidth;
+- (unsigned int)numLines;
 - (void)setBackgroundIsTransparent:(BOOL)arg1;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setLineSpacing:(float)arg1;
 - (void)setLineWidth:(float)arg1;
-- (void)setSubLineHeight:(float)arg1;
-- (float)subLineHeight;
+- (void)setNumLines:(unsigned int)arg1;
+- (void)setSublineInset:(float)arg1;
+- (void)setSublineInterval:(unsigned int)arg1;
+- (float)sublineInset;
+- (unsigned int)sublineInterval;
 
 @end

@@ -7,6 +7,7 @@
     BOOL _connected;
     <SUManagerClientDelegate> *_delegate;
     SUDescriptor *_installDescriptor;
+    NSMutableDictionary *_installOperationIDsToOperationHandler;
     BOOL _installing;
     SUDescriptor *_scanDescriptor;
     NSXPCConnection *_serverConnection;
@@ -20,18 +21,29 @@
 
 + (BOOL)_shouldDisallowAvailabilityNotifications;
 
+- (void)_cancelAutoInstallOperation:(id)arg1 withResult:(id /* block */)arg2;
+- (void)_consentAutoInstallOperation:(id)arg1 withResult:(id /* block */)arg2;
 - (void)_invalidateConnection;
+- (void)_registerAutoInstallOperationClientHandler:(id)arg1;
 - (id)_remoteInterface;
 - (id)_remoteInterfaceWithErrorHandler:(id /* block */)arg1;
 - (id)_remoteInterfaceWithErrorHandler:(id /* block */)arg1 connectIfNecessary:(BOOL)arg2;
 - (void)_setClientType;
+- (void)_unregisterAutoInstallOperationClientHandler:(id)arg1;
+- (void)autoInstallOperationDidConsent:(id)arg1;
+- (void)autoInstallOperationDidExpire:(id)arg1;
+- (void)autoInstallOperationIsReadyToInstall:(id)arg1 withResult:(id /* block */)arg2;
+- (void)autoInstallOperationWasCancelled:(id)arg1;
 - (void)automaticDownloadDidFailToStartForNewUpdateAvailable:(id)arg1 withError:(id)arg2;
 - (void)cancelDownload:(id /* block */)arg1;
 - (int)clientType;
 - (void)connectToServerIfNecessary;
 - (BOOL)createInstallationKeybag:(id)arg1;
+- (BOOL)createInstallationKeybag:(id)arg1 forUnattendedInstall:(BOOL)arg2;
+- (void)currentAutoInstallOperation:(BOOL)arg1 withResult:(id /* block */)arg2;
 - (void)dealloc;
 - (id)delegate;
+- (void)deviceHasSufficientSpaceForDownload:(id /* block */)arg1;
 - (void)download:(id /* block */)arg1;
 - (void)downloadDidFail:(id)arg1 withError:(id)arg2;
 - (void)downloadDidFinish:(id)arg1;

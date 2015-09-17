@@ -2,15 +2,27 @@
    Image: /System/Library/Frameworks/AVKit.framework/AVKit
  */
 
-@interface AVButton : UIButton
+@interface AVButton : UIButton {
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _hitRectInsets;
+}
+
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } hitRectInsets;
 
 - (BOOL)_drawingAsSelected;
 - (void)_updateForStateChangeAnimated:(BOOL)arg1;
 - (void)_updateSelected:(BOOL)arg1 highlighted:(BOOL)arg2;
 - (void)didMoveToSuperview;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })hitRectInsets;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)setHighlighted:(BOOL)arg1;
+- (void)setHitRectInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSelected:(BOOL)arg1;
 
 @end

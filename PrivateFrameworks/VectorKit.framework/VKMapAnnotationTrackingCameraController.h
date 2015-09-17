@@ -8,5 +8,6 @@
 - (double)_minTrackingCameraDistance;
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (double)_zoomLevelForCameraPosition:(struct VKPoint { double x1; double x2; double x3; })arg1;
+- (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
 @end

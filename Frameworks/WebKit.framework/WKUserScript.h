@@ -2,20 +2,24 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface WKUserScript : NSObject <NSCopying> {
-    BOOL _forMainFrameOnly;
-    int _injectionTime;
-    struct RetainPtr<NSString> { 
-        void *m_ptr; 
-    } _source;
+@interface WKUserScript : NSObject <NSCopying, WKObject> {
+    struct ObjectStorage<API::UserScript> { 
+        struct type { 
+            unsigned char __lx[92]; 
+        } data; 
+    } _userScript;
 }
 
+@property (readonly) struct Object { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; unsigned int x22; unsigned char x23; out long x24; long x25; void*x26; BOOL x27; void*x28; int x29; out in oneway int x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; }*_apiObject;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (getter=isForMainFrameOnly, nonatomic, readonly) BOOL forMainFrameOnly;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int injectionTime;
 @property (nonatomic, readonly, copy) NSString *source;
+@property (readonly) Class superclass;
 
-- (id).cxx_construct;
-- (void).cxx_destruct;
+- (struct Object { int (**x1)(); id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; double x101; void*x102; union x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; inout unsigned short x125; unsigned int x126; unsigned short x127; bycopy void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; in BOOL x136; out double x137; int x138; in void*x139; long doublex140; void*x141; void*x142; void*x143; BOOL x144; void*x145; out const void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; void*x160; void*x161; void*x162; void*x163; void*x164; void*x165; inout unsigned short x166; unsigned int x167; unsigned short x168; bycopy void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; in BOOL x177; out double x178; int x179; in void*x180; long doublex181; void*x182; void*x183; void*x184; BOOL x185; void*x186; out const void*x187; void*x188; void*x189; void*x190; void*x191; void*x192; void*x193; void*x194; void*x195; void*x196; void*x197; void*x198; void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; void*x229; void*x230; void*x231; void*x232; }*)_apiObject;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithSource:(id)arg1 injectionTime:(int)arg2 forMainFrameOnly:(BOOL)arg3;
 - (int)injectionTime;

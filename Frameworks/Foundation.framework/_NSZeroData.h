@@ -6,6 +6,7 @@
 
 + (id)data;
 
+- (id)_dispatchData;
 - (BOOL)_isCompact;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

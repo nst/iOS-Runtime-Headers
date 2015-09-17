@@ -12,6 +12,7 @@
 
 + (id)constantWithSymbolicValue:(id)arg1 numericValue:(float)arg2;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

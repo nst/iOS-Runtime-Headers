@@ -17,8 +17,10 @@
     NSString *_embeddedDisplayName;
     BOOL _isCharacteristic;
     NSString *_joinString;
-    NSString *_keywords;
+    NSSet *_keywordsSet;
+    NSString *_keywordsString;
     NSArray *_reversedDataUnits;
+    BOOL _showAllDataHierarchically;
     NSString *_summary;
     NSString *_summaryAttribution;
     NSString *_unitChangeCautionaryText;
@@ -37,8 +39,9 @@
 @property (nonatomic, readonly) NSString *embeddedDisplayName;
 @property (nonatomic, readonly) UIImage *groupIcon;
 @property (nonatomic, readonly) NSString *joinString;
-@property (nonatomic, readonly) NSString *keywords;
+@property (nonatomic, readonly) NSSet *keywords;
 @property (nonatomic, readonly) UIImage *shareIcon;
+@property (nonatomic, readonly) BOOL showAllDataHierarchically;
 @property (nonatomic, readonly) NSString *summary;
 @property (nonatomic, readonly) NSString *summaryAttribution;
 @property (nonatomic, readonly) NSString *unitChangeCautionaryText;
@@ -47,6 +50,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyChartingProperties:(id)arg1;
+- (BOOL)allowsManualEntry;
 - (id)anyDataUnit;
 - (id)attributedSummaryAttribution;
 - (int)categoryID;
@@ -70,7 +74,8 @@
 - (id)joinString;
 - (id)keywords;
 - (id)shareIcon;
-- (BOOL)shouldStartDayAtNoon;
+- (BOOL)shouldDisplayUnitStringOnYAxis;
+- (BOOL)showAllDataHierarchically;
 - (id)summary;
 - (id)summaryAttribution;
 - (id)unitChangeCautionaryText;

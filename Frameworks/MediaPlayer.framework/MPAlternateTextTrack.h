@@ -22,6 +22,7 @@
 - (int)compare:(id)arg1;
 - (id)displayName;
 - (id)initWithType:(int)arg1 name:(id)arg2 locale:(id)arg3;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isInBand;
 - (id)locale;
 - (void)setTag:(int)arg1;

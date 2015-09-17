@@ -37,6 +37,7 @@
 - (int)attributionRequirementsAtIndex:(unsigned int)arg1;
 - (unsigned int)attributionRequirementsCount;
 - (id)bestLocalizedAttribution;
+- (BOOL)canLocallyHandleAction:(int)arg1 forComponent:(int)arg2;
 - (void)clearAttributionApps;
 - (void)clearAttributionRequirements;
 - (void)clearLocalizedAttributions;
@@ -66,6 +67,7 @@
 - (id)supportedComponentActions;
 - (id)supportedComponentActionsAtIndex:(unsigned int)arg1;
 - (unsigned int)supportedComponentActionsCount;
+- (BOOL)supportsAction:(int)arg1 forComponent:(int)arg2;
 - (id)webBaseActionURL;
 - (void)writeTo:(id)arg1;
 

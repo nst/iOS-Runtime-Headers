@@ -20,11 +20,15 @@
 - (id)_loadRecentlyAddedOverviewEntityProvider;
 - (id)_loadRecentlyAddedOverviewEntityViewDescriptor;
 - (id)_recentlyAddedOverviewEntityViewDescriptor;
+- (BOOL)canPreviewEntityValueContext:(id)arg1;
 - (void)configureContentDescriptorForSearchResults:(id)arg1;
+- (void)handleCommitPreviewViewController:(id)arg1 fromViewController:(id)arg2;
 - (int)handleSelectionFromUserActivityContext:(id)arg1 containerItem:(id)arg2 entityValueContext:(id)arg3 viewController:(id)arg4;
 - (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)init;
 - (id)loadEntityViewDescriptor;
+- (id)newContextualActionsEntityValueContext;
+- (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (void)setShouldIncludeRecentlyAddedOverview:(BOOL)arg1;
 - (BOOL)shouldIncludeRecentlyAddedOverview;
 - (BOOL)wantsToDisplayDetailViewControllerUponEntityValueProviderSelection;

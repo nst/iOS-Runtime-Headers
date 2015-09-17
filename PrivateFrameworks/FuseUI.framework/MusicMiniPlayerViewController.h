@@ -33,6 +33,7 @@
 
 - (void).cxx_destruct;
 - (void)_currentItemTitlesDidChangeNotification:(id)arg1;
+- (void)_didFinishAdActionNotification:(id)arg1;
 - (void)_didUpdateSupportedCommandsNotification:(id)arg1;
 - (id)_imageForTransportButtonWithControlType:(int)arg1;
 - (void)_panRecognized:(id)arg1;
@@ -72,6 +73,8 @@
 - (id)transportControlsView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })transportControlsView:(id)arg1 adjustedFrameOfTransportButtonWithControlType:(int)arg2 proposedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (id)transportControlsView:(id)arg1 buttonForControlType:(int)arg2;
+- (void)transportControlsView:(id)arg1 longPressBeginOnControlType:(int)arg2;
+- (void)transportControlsView:(id)arg1 longPressEndOnControlType:(int)arg2;
 - (void)transportControlsView:(id)arg1 tapOnControlType:(int)arg2;
 - (void)transportControlsViewDidLayoutSubviews:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

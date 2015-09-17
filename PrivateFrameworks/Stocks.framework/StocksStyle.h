@@ -13,7 +13,6 @@
 - (void).cxx_destruct;
 - (id)boldFontOfSize:(float)arg1;
 - (id)chartHighlightColor;
-- (void)dealloc;
 - (id)fontOfSize:(float)arg1;
 - (id)gainColor;
 - (id)init;

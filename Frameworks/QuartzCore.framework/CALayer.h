@@ -11,6 +11,7 @@
     } _attr;
 }
 
+@property (nonatomic, readonly) CALayer *_labelLayerToClipDuringBoundsSizeAnimation;
 @property (nonatomic, readonly, retain) CALayer *_mapKit_mapLayer;
 @property BOOL acceleratesDrawing;
 @property BOOL acceptsLights;
@@ -62,6 +63,8 @@
 @property (getter=isHidden) BOOL hidden;
 @property BOOL hitTestsAsOpaque;
 @property BOOL invertsShadow;
+@property (nonatomic) struct CGPoint { float x1; float x2; } lastPosition;
+@property (nonatomic) float lastScale;
 @property (copy) NSArray *lights;
 @property BOOL literalContentsCenter;
 @property (copy) NSString *magnificationFilter;
@@ -74,11 +77,13 @@
 @property (copy) NSString *minificationFilter;
 @property float minificationFilterBias;
 @property float momentOfInertia;
+@property float motionBlurAmount;
 @property (copy) NSString *name;
 @property BOOL needsDisplayOnBoundsChange;
 @property BOOL needsLayoutOnGeometryChange;
 @property float opacity;
 @property (getter=isOpaque) BOOL opaque;
+@property (nonatomic) float originalOpacity;
 @property struct CGPoint { float x1; float x2; } position;
 @property BOOL preloadsCache;
 @property BOOL rasterizationPrefersDisplayCompositing;
@@ -88,7 +93,7 @@
 @property struct CGColor { }*shadowColor;
 @property struct CGSize { float x1; float x2; } shadowOffset;
 @property float shadowOpacity;
-@property struct CGPath { }*shadowPath;
+@property const struct CGPath { }*shadowPath;
 @property BOOL shadowPathIsBounds;
 @property float shadowRadius;
 @property float shininess;
@@ -127,14 +132,13 @@
 + (id)properties;
 + (BOOL)resolveInstanceMethod:(SEL)arg1;
 
-- (id).cxx_construct;
 - (void)CAMLParser:(id)arg1 setValue:(id)arg2 forKey:(id)arg3;
 - (id)CAMLTypeForKey:(id)arg1;
 - (BOOL)_canDisplayConcurrently;
 - (void)_cancelAnimationTimer;
-- (struct Layer { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct Data { unsigned int x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned int x_3_1_6 : 3; unsigned int x_3_1_7 : 3; unsigned int x_3_1_8 : 4; unsigned int x_3_1_9 : 4; unsigned int x_3_1_10 : 4; unsigned int x_3_1_11 : 1; unsigned int x_3_1_12 : 1; unsigned int x_3_1_13 : 1; unsigned int x_3_1_14 : 1; unsigned int x_3_1_15 : 1; unsigned int x_3_1_16 : 1; unsigned int x_3_1_17 : 1; unsigned int x_3_1_18 : 1; unsigned int x_3_1_19 : 1; unsigned int x_3_1_20 : 1; unsigned int x_3_1_21 : 1; unsigned int x_3_1_22 : 1; unsigned int x_3_1_23 : 1; unsigned int x_3_1_24 : 1; unsigned int x_3_1_25 : 1; unsigned int x_3_1_26 : 1; unsigned int x_3_1_27 : 1; unsigned int x_3_1_28 : 1; unsigned int x_3_1_29 : 1; unsigned int x_3_1_30 : 1; unsigned int x_3_1_31 : 1; unsigned int x_3_1_32 : 25; struct Vec2<double> { double x_33_2_1; double x_33_2_2; } x_3_1_33; struct Rect { double x_34_2_1; double x_34_2_2; double x_34_2_3; double x_34_2_4; } x_3_1_34; } x3; struct Ref<CA::Render::Object> { struct Object {} *x_4_1_1; } x4; struct Ref<CA::Render::Object> { struct Object {} *x_5_1_1; } x5; struct Ref<CA::Render::TypedArray<CA::Render::Layer> > { struct TypedArray<CA::Render::Layer> {} *x_6_1_1; } x6; struct Layer {} *x7; struct Ref<CA::Render::Layer::Ext> { struct Ext {} *x_8_1_1; } x8; struct Ref<CA::Render::TypedArray<CA::Render::Animation> > { struct TypedArray<CA::Render::Animation> {} *x_9_1_1; } x9; struct Ref<CA::Render::Handle> { struct Handle {} *x_10_1_1; } x10; }*)_copyRenderLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; struct List<CA::Layer *> {} *x16; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 layerFlags:(unsigned int)arg2 commitFlags:(unsigned int*)arg3;
+- (struct Layer { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; struct Data { unsigned int x_3_1_1; unsigned char x_3_1_2; unsigned char x_3_1_3; unsigned char x_3_1_4; unsigned char x_3_1_5; unsigned int x_3_1_6 : 3; unsigned int x_3_1_7 : 3; unsigned int x_3_1_8 : 4; unsigned int x_3_1_9 : 4; unsigned int x_3_1_10 : 4; unsigned int x_3_1_11 : 1; unsigned int x_3_1_12 : 1; unsigned int x_3_1_13 : 1; unsigned int x_3_1_14 : 1; unsigned int x_3_1_15 : 1; unsigned int x_3_1_16 : 1; unsigned int x_3_1_17 : 1; unsigned int x_3_1_18 : 1; unsigned int x_3_1_19 : 1; unsigned int x_3_1_20 : 1; unsigned int x_3_1_21 : 1; unsigned int x_3_1_22 : 1; unsigned int x_3_1_23 : 1; unsigned int x_3_1_24 : 1; unsigned int x_3_1_25 : 1; unsigned int x_3_1_26 : 1; unsigned int x_3_1_27 : 1; unsigned int x_3_1_28 : 1; unsigned int x_3_1_29 : 1; unsigned int x_3_1_30 : 1; unsigned int x_3_1_31 : 1; unsigned int x_3_1_32 : 1; unsigned int x_3_1_33 : 24; struct Vec2<double> { double x_34_2_1; double x_34_2_2; } x_3_1_34; struct Rect { double x_35_2_1; double x_35_2_2; double x_35_2_3; double x_35_2_4; } x_3_1_35; } x3; struct Ref<CA::Render::Object> { struct Object {} *x_4_1_1; } x4; struct Ref<CA::Render::Object> { struct Object {} *x_5_1_1; } x5; struct Ref<CA::Render::TypedArray<CA::Render::Layer> > { struct TypedArray<CA::Render::Layer> {} *x_6_1_1; } x6; struct Layer {} *x7; struct Ref<CA::Render::Layer::Ext> { struct Ext {} *x_8_1_1; } x8; struct Ref<CA::Render::TypedArray<CA::Render::Animation> > { struct TypedArray<CA::Render::Animation> {} *x_9_1_1; } x9; struct Ref<CA::Render::Handle> { struct Handle {} *x_10_1_1; } x10; }*)_copyRenderLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; struct List<CA::Layer *> {} *x16; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1 layerFlags:(unsigned int)arg2 commitFlags:(unsigned int*)arg3;
 - (void)_dealloc;
-- (BOOL)_deferrsDidBecomeVisiblePostCommit;
+- (BOOL)_defersDidBecomeVisiblePostCommit;
 - (void)_didCommitLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; struct List<CA::Layer *> {} *x16; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1;
 - (void)_display;
 - (id)_initWithReference:(id)arg1;
@@ -161,6 +165,7 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 - (BOOL)allowsDisplayCompositing;
 - (BOOL)allowsEdgeAntialiasing;
+- (BOOL)allowsExtendedColorRangeContent;
 - (BOOL)allowsGroupBlending;
 - (BOOL)allowsGroupOpacity;
 - (BOOL)allowsHitTesting;
@@ -273,6 +278,7 @@
 - (float)minificationFilterBias;
 - (id)modelLayer;
 - (float)momentOfInertia;
+- (float)motionBlurAmount;
 - (id)name;
 - (BOOL)needsDisplay;
 - (BOOL)needsDisplayOnBoundsChange;
@@ -308,6 +314,7 @@
 - (void)setAffineTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setAllowsDisplayCompositing:(BOOL)arg1;
 - (void)setAllowsEdgeAntialiasing:(BOOL)arg1;
+- (void)setAllowsExtendedColorRangeContent:(BOOL)arg1;
 - (void)setAllowsGroupBlending:(BOOL)arg1;
 - (void)setAllowsGroupOpacity:(BOOL)arg1;
 - (void)setAllowsHitTesting:(BOOL)arg1;
@@ -368,6 +375,7 @@
 - (void)setMinificationFilter:(id)arg1;
 - (void)setMinificationFilterBias:(float)arg1;
 - (void)setMomentOfInertia:(float)arg1;
+- (void)setMotionBlurAmount:(float)arg1;
 - (void)setName:(id)arg1;
 - (void)setNeedsDisplay;
 - (void)setNeedsDisplayInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -408,7 +416,7 @@
 - (struct CGColor { }*)shadowColor;
 - (struct CGSize { float x1; float x2; })shadowOffset;
 - (float)shadowOpacity;
-- (struct CGPath { }*)shadowPath;
+- (const struct CGPath { }*)shadowPath;
 - (BOOL)shadowPathIsBounds;
 - (float)shadowRadius;
 - (float)shininess;
@@ -452,10 +460,25 @@
 - (id)pkui_addAdditiveAnimation:(id)arg1 withKeyPath:(id)arg2;
 - (id)pkui_additiveAnimationKeyPrefixForKeyPath:(id)arg1;
 - (double)pkui_elapsedDurationForAnimationWithKey:(id)arg1;
+- (BOOL)pkui_hasAdditiveAnimationForKeyPath:(id)arg1;
 - (double)pkui_remainingDurationForAnimationWithKey:(id)arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (void)pu_animateAlongsideView:(id)arg1 animations:(id /* block */)arg2;
+
+- (id)_pu_uniqueAnimationKeyWithProposedKey:(id)arg1;
+- (void)pu_setPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (void)pu_setTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
+
+// Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
+
++ (id)SCNJSExportProtocol;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
+- (id)_labelLayerToClipDuringBoundsSizeAnimation;
+- (void)_setLabelMasksToBoundsForAnimation:(BOOL)arg1;
 - (int)compareTextEffectsOrdering:(id)arg1;
 - (void)setPerspectiveDistance:(float)arg1;
 - (BOOL)uiHasFilterWithName:(id)arg1;
@@ -465,6 +488,17 @@
 - (id)_gkDescriptionWithChildren:(int)arg1;
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })_gkParentSublayerTransform;
 - (id)_gkRecursiveDescription;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
+- (void)alignOnPixels;
+- (void)animateMoveTo:(struct CGPoint { float x1; float x2; })arg1;
+- (void)animateOpacityTo:(float)arg1;
+- (void)animateResizeTo:(struct CGSize { float x1; float x2; })arg1;
+- (void)animateTransformTo:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
+- (BOOL)containsLayer:(id)arg1;
+- (void)removeFromSuperlayerInstantly;
+- (id)sublayerNamed:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/WebCore.framework/WebCore
 

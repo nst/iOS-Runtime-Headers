@@ -18,6 +18,7 @@
 - (id)encodedHeaders;
 - (id)firstHeaderForKey:(id)arg1;
 - (BOOL)hasHeaderForKey:(id)arg1;
+- (id)headersDictionary;
 - (void)mergeHeaders:(id)arg1;
 - (id)mutableCopy;
 - (void)removeHeaderForKey:(id)arg1;

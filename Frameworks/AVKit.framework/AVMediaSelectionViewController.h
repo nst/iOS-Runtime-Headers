@@ -3,7 +3,6 @@
  */
 
 @interface AVMediaSelectionViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
-    id /* block */ _doneButtonHandler;
     AVPlayerController *_playerController;
     AVMediaSelectionOption *_selectedAudioMediaSelectionOption;
     AVMediaSelectionOption *_selectedLegibleMediaSelectionOption;
@@ -12,21 +11,19 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) id /* block */ doneButtonHandler;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) AVPlayerController *playerController;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_doneButtonTapped:(id)arg1;
 - (BOOL)_isSelectedOrCurrentAudioMediaSelectionOption:(id)arg1;
 - (BOOL)_isSelectedOrCurrentLegibleMediaSelectionOption:(id)arg1;
-- (id /* block */)doneButtonHandler;
+- (void)dealloc;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)playerController;
 - (BOOL)prefersStatusBarHidden;
-- (void)setDoneButtonHandler:(id /* block */)arg1;
 - (void)setPlayerController:(id)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

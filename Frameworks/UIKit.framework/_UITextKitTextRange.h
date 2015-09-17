@@ -16,10 +16,10 @@
 + (id)rangeWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 affinity:(int)arg2;
 + (id)rangeWithStart:(id)arg1 end:(id)arg2;
 
+- (void).cxx_destruct;
 - (int)affinity;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })asRange;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)end;
 - (id)init;

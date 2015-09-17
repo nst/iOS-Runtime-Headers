@@ -15,5 +15,6 @@
 - (BOOL)isAudioOnly;
 - (void)setDuration:(float)arg1;
 - (void)setHasDuration:(BOOL)arg1;
+- (void)setIsAudioOnly:(BOOL)arg1;
 
 @end

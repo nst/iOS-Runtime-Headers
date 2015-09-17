@@ -10,22 +10,27 @@
 
 + (id)defaultProperties;
 
+- (void)changeParentPreservingEffectiveValues:(id)arg1;
 - (void)dealloc;
+- (id)description;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (void)flatten;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithDefaults;
+- (BOOL)isAnythingOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isMerged;
 - (BOOL)isMergedPropertyForSelector:(SEL)arg1;
 - (BOOL)isMergedWithParent;
 - (id)overrideForSelector:(SEL)arg1;
+- (id)overrideForSelector:(SEL)arg1 mustExist:(BOOL)arg2;
 - (void)p_setParent:(id)arg1;
 - (id)parent;
+- (id)possiblyInexistentOverrideForSelector:(SEL)arg1;
 - (void)removeUnnecessaryOverrides;
 - (void)setMerged:(BOOL)arg1;
 - (void)setMergedWithParent:(BOOL)arg1;
 - (void)setParent:(id)arg1;
-- (void)setParent:(id)arg1 myRestrictedClass:(Class)arg2;
 
 @end

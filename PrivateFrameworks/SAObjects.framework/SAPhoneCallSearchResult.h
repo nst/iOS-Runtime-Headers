@@ -8,15 +8,16 @@
 @property (nonatomic, retain) SAPersonAttribute *contact;
 @property (nonatomic, copy) NSNumber *isNew;
 
++ (id)callSearchResult;
++ (id)callSearchResultWithDictionary:(id)arg1 context:(id)arg2;
+
 - (id)callTime;
 - (id)contact;
 - (id)encodedClassName;
 - (id)groupIdentifier;
-- (id)init;
 - (id)isNew;
 - (void)setCallTime:(id)arg1;
 - (void)setContact:(id)arg1;
 - (void)setIsNew:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

@@ -3,39 +3,29 @@
  */
 
 @interface OADDrawingTheme : NSObject {
-    OADColorMap *mColorMap;
-    <OADColorPalette> *mColorPalette;
-    OADColorScheme *mColorScheme;
+    OADColorContext *mColorContext;
     OADFontScheme *mFontScheme;
-    OADDefaultProperties *mLineDefaults;
-    OADDefaultProperties *mShapeDefaults;
     OADStyleMatrix *mStyleMatrix;
-    OADDefaultProperties *mTextDefaults;
 }
 
+@property (nonatomic, readonly) OADColorContext *colorContext;
 @property (nonatomic, readonly) OADColorMap *colorMap;
-@property (nonatomic, retain) <OADColorPalette> *colorPalette;
-@property (nonatomic, retain) OADColorScheme *colorScheme;
+@property (nonatomic, readonly) <OADColorPalette> *colorPalette;
+@property (nonatomic, readonly) OADColorScheme *colorScheme;
 @property (nonatomic, readonly) OADFontScheme *fontScheme;
-@property (nonatomic, readonly) OADDefaultProperties *lineDefaults;
-@property (nonatomic, readonly) OADDefaultProperties *shapeDefaults;
 @property (nonatomic, readonly) OADStyleMatrix *styleMatrix;
-@property (nonatomic, readonly) OADDefaultProperties *textDefaults;
 
 - (void)applyThemeOverrides:(id)arg1 colorMapOverride:(id)arg2;
+- (id)colorContext;
 - (id)colorMap;
 - (id)colorPalette;
 - (id)colorScheme;
 - (void)dealloc;
+- (id)description;
 - (id)fontScheme;
 - (id)initWithStyleMatrix:(id)arg1 fontScheme:(id)arg2 colorScheme:(id)arg3 colorMap:(id)arg4 colorPalette:(id)arg5;
 - (id)initWithTheme:(id)arg1 colorMap:(id)arg2 colorPalette:(id)arg3;
 - (BOOL)isEqual:(id)arg1;
-- (id)lineDefaults;
-- (void)setColorPalette:(id)arg1;
-- (void)setColorScheme:(id)arg1;
-- (id)shapeDefaults;
 - (id)styleMatrix;
-- (id)textDefaults;
 
 @end

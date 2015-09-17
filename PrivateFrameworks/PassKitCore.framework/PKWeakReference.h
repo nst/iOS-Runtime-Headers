@@ -4,8 +4,9 @@
 
 @interface PKWeakReference : NSObject {
     id _store;
-    BOOL _storedValue;
 }
+
++ (id)weakReferenceWithObject:(id)arg1;
 
 - (void)dealloc;
 - (id)getObject;

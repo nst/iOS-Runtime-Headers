@@ -4,20 +4,43 @@
 
 @interface PLCloudResourceNode : PLManagedObject
 
+@property (nonatomic, readonly, retain) PLManagedAsset *asset;
+@property (nonatomic, retain) NSString *assetUuid;
 @property (nonatomic) unsigned short budgetingCategory;
 @property (nonatomic) unsigned short color;
+@property (nonatomic, retain) NSDate *dateCreated;
+@property (nonatomic) BOOL floating;
+@property (nonatomic, readonly, retain) PLCloudResourceNode *grandparentNode;
+@property (nonatomic) unsigned int layoutStatus;
 @property (nonatomic, retain) PLCloudResourceNode *leftChild;
 @property (nonatomic, retain) PLCloudResourceNode *next;
 @property (nonatomic, retain) PLCloudResourceNode *parent;
-@property (nonatomic) unsigned short qualityClass;
-@property (nonatomic, retain) PLCloudResource *resource;
+@property (nonatomic, readonly, retain) PLCloudResourceNode *predecessorNode;
+@property (nonatomic) unsigned long long refcount;
 @property (nonatomic, retain) PLCloudResourceNode *rightChild;
-@property (nonatomic) unsigned long long totalResourceCount;
-@property (nonatomic) unsigned long long totalResourceSize;
+@property (nonatomic) unsigned long long selfResourceSizeClassHi;
+@property (nonatomic) unsigned long long selfResourceSizeClassLo;
+@property (nonatomic) unsigned long long selfResourceSizeClassMed;
+@property (nonatomic, readonly, retain) PLCloudResourceNode *successorNode;
+@property (nonatomic) unsigned long long totalAssetCount;
+@property (nonatomic) unsigned long long totalResourceSizeClassHi;
+@property (nonatomic) unsigned long long totalResourceSizeClassLo;
+@property (nonatomic) unsigned long long totalResourceSizeClassMed;
+@property (nonatomic, readonly, retain) PLCloudResourceNode *uncleNode;
 
++ (void)_enumerateSelfAndDescendantsInOrderFromLocalRoot:(id)arg1 withCallbackBlock:(id /* block */)arg2 currentDepth:(int)arg3;
++ (void)_insertFloatingNodeForAsset:(id)arg1;
 + (id)entityName;
++ (void)markStaleForAsset:(id)arg1;
++ (id)nodeForAssetWithUuid:(id)arg1 inContext:(id)arg2;
 
+- (void)_rotateLeftWithTreeRoot:(id*)arg1;
+- (void)_rotateRightWithTreeRoot:(id*)arg1;
+- (id)asset;
+- (unsigned long long)countOfDescendants;
+- (unsigned long long)countOfResourcesOnSelfAndDescendants;
 - (id)description;
+- (void)enumerateDescendantsInOrder:(id /* block */)arg1;
 - (id)grandparentNode;
 - (void)insertChildNode:(id)arg1 usingComparer:(id /* block */)arg2;
 - (BOOL)isLeaf;
@@ -26,10 +49,15 @@
 - (id)nodeAtIndex:(unsigned int)arg1 withLocalRoot:(id)arg2;
 - (unsigned int)nodeHeight;
 - (id)predecessorNode;
-- (void)rotateLeftWithTreeRoot:(id*)arg1;
-- (void)rotateRightWithTreeRoot:(id*)arg1;
+- (id)resourceForQualityClass:(unsigned short)arg1;
+- (unsigned long long)selfResourceSizeForQualityClass:(unsigned short)arg1;
+- (void)setSelfResourceSize:(unsigned long long)arg1 forQualityClass:(unsigned short)arg2;
+- (void)setTotalResourceSize:(unsigned long long)arg1 forQualityClass:(unsigned short)arg2;
 - (id)siblingNode;
 - (id)successorNode;
+- (id)supportingResourcesForQualityClass:(unsigned short)arg1;
+- (unsigned long long)totalResourceSizeForQualityClass:(unsigned short)arg1;
 - (id)uncleNode;
+- (void)updateTotalResourceSizesForQualityLevels:(id /* block */)arg1;
 
 @end

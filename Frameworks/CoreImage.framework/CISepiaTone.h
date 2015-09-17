@@ -17,7 +17,6 @@
 - (id)inputImage;
 - (id)inputIntensity;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputIntensity:(id)arg1;
 

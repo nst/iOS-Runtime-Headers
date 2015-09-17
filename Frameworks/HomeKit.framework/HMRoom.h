@@ -2,16 +2,21 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMRoom : NSObject <HMMessageReceiver, NSSecureCoding> {
+@interface HMRoom : NSObject <HMMessageReceiver, HMObjectMerge, NSSecureCoding> {
+    NSObject<OS_dispatch_queue> *_clientQueue;
+    HMDelegateCaller *_delegateCaller;
     HMHome *_home;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
+    NSObject<OS_dispatch_queue> *_propertyQueue;
+    NSUUID *_uniqueIdentifier;
     NSUUID *_uuid;
-    NSObject<OS_dispatch_queue> *_workQueue;
 }
 
 @property (nonatomic, readonly, copy) NSArray *accessories;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *clientQueue;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) HMHome *home;
@@ -19,36 +24,45 @@
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
 @property (nonatomic, readonly, copy) NSString *name;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
 @property (nonatomic, retain) NSUUID *uuid;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3 clientQueue:(id)arg4 delegateCaller:(id)arg5;
+- (void)_handleRoomRenamedNotification:(id)arg1;
+- (void)_invalidate;
+- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (void)_registerNotificationHandlers;
+- (void)_unconfigure;
 - (void)_updateName:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateRoomName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)accessories;
-- (void)configure:(id)arg1 uuid:(id)arg2 messageDispatcher:(id)arg3;
+- (id)clientQueue;
 - (void)dealloc;
+- (id)delegateCaller;
 - (void)encodeWithCoder:(id)arg1;
-- (void)handleRoomRenamedNotification:(id)arg1;
 - (id)home;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1;
-- (void)invalidate;
 - (id)messageReceiveQueue;
 - (id)messageTargetUUID;
 - (id)msgDispatcher;
 - (id)name;
+- (id)propertyQueue;
+- (void)setClientQueue:(id)arg1;
+- (void)setDelegateCaller:(id)arg1;
 - (void)setHome:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
+- (void)setName:(id)arg1;
+- (void)setPropertyQueue:(id)arg1;
 - (void)setUuid:(id)arg1;
-- (void)setWorkQueue:(id)arg1;
-- (void)unconfigure;
+- (id)uniqueIdentifier;
 - (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
-- (id)workQueue;
 
 @end

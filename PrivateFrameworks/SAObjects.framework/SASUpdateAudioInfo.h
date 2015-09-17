@@ -18,6 +18,7 @@
 @property (nonatomic, copy) NSString *headsetName;
 @property (nonatomic, copy) NSNumber *noiseReductionLevel;
 @property (nonatomic, copy) NSString *origin;
+@property (nonatomic, retain) SASRecordingInfo *recordingInfo;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 
@@ -36,6 +37,7 @@
 - (id)headsetName;
 - (id)noiseReductionLevel;
 - (id)origin;
+- (id)recordingInfo;
 - (void)setAudioSource:(id)arg1;
 - (void)setCodec:(int)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
@@ -46,5 +48,6 @@
 - (void)setHeadsetName:(id)arg1;
 - (void)setNoiseReductionLevel:(id)arg1;
 - (void)setOrigin:(id)arg1;
+- (void)setRecordingInfo:(id)arg1;
 
 @end

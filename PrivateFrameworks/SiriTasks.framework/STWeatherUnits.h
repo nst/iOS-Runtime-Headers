@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STWeatherUnits : AFSiriModelObject {
+@interface STWeatherUnits : STSiriModelObject {
     int _temperatureUnits;
 }
 

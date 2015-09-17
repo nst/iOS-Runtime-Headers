@@ -4,7 +4,11 @@
 
 @interface DDAddToAddressBookAction : DDAddressAction
 
+@property (nonatomic, retain) DDRemoteActionViewController *viewController;
+
+- (void)adaptForPresentationInPopover:(BOOL)arg1;
 - (int)interactionType;
+- (void)invalidate;
 - (id)localizedName;
 - (void)prepareViewControllerForActionController:(id)arg1;
 

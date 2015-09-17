@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentAuthorizationItemCell : UITableViewCell {
+@interface PKPaymentAuthorizationItemCell : PKTableViewCell {
     UIImageView *_alertView;
     UIImageView *_arrowView;
     NSMutableArray *_constraints;

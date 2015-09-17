@@ -10,7 +10,6 @@
     } _space;
 }
 
-- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })_renderPathElement:(id)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 inPath:(struct CGPath { }*)arg3;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransform;
 - (struct CGPath { }*)copyShapeWithTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;

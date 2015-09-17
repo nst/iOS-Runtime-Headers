@@ -2,39 +2,32 @@
    Image: /System/Library/PrivateFrameworks/iOSDiagnosticsSupport.framework/iOSDiagnosticsSupport
  */
 
-@interface MBSStockholm : NSObject <NFCardEmulationDelegate, NFCardManagerDelegate> {
-    NFCardEmulation *_cardEmulation;
+@interface MBSStockholm : NSObject <NFContactlessPaymentSessionDelegate> {
     bool _cardEmulationSuspended;
-    NSObject<OS_dispatch_semaphore> *_semaphore;
+    NFContactlessPaymentSession *_paymentSession;
+    NSObject<NFSession> *_sessionController;
+    NSObject<OS_dispatch_semaphore> *_start_timeout_sema;
 }
 
-@property (nonatomic, retain) NFCardEmulation *cardEmulation;
 @property (nonatomic) bool cardEmulationSuspended;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *semaphore;
+@property (nonatomic, retain) NFContactlessPaymentSession *paymentSession;
+@property (nonatomic, retain) NSObject<NFSession> *sessionController;
 @property (readonly) Class superclass;
 
-- (id)cardEmulation;
-- (void)cardEmulation:(id)arg1 didChangeRestrictedMode:(BOOL)arg2;
-- (void)cardEmulation:(id)arg1 didDetectField:(BOOL)arg2;
-- (void)cardEmulation:(id)arg1 didSelectCard:(id)arg2;
-- (void)cardEmulation:(id)arg1 didStartTransaction:(id)arg2;
-- (void)cardEmulation:(id)arg1 isSuspended:(BOOL)arg2;
 - (bool)cardEmulationSuspended;
-- (void)cardEmulationTransactionButtonPressed:(id)arg1;
-- (void)cardEmulationTransactionTimerExpired:(id)arg1;
-- (void)fieldDetect:(id)arg1 isSuspended:(BOOL)arg2;
+- (void)dealloc;
 - (id)init;
+- (id)paymentSession;
 - (bool)pingRotterdam:(id*)arg1;
 - (bool)pingStockholm:(id*)arg1;
-- (id)semaphore;
-- (id)serverRegistrationInfo:(double)arg1 error:(id*)arg2;
-- (void)setCardEmulation:(id)arg1;
+- (id)sessionController;
 - (void)setCardEmulationSuspended:(bool)arg1;
-- (void)setSemaphore:(id)arg1;
+- (void)setPaymentSession:(id)arg1;
+- (void)setSessionController:(id)arg1;
 - (bool)startCardEmulationWithTimeout:(double)arg1 error:(id*)arg2;
-- (bool)stopCardEmulationWithTimeout:(double)arg1 error:(id*)arg2;
+- (void)stopCardEmulationWithTimeout:(double)arg1 error:(id*)arg2;
 
 @end

@@ -13,6 +13,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (BOOL)_deviceLockedWithPasscode;
 - (void)_registerForLockscreenUpdates;
 - (void)_unregisterForLockscreenUpdates;
 - (void)dealloc;

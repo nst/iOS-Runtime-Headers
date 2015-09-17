@@ -10,15 +10,18 @@
 @property (nonatomic, readonly) WebFrame *webFrame;
 
 - (void).cxx_destruct;
+- (void)annotateForm:(id)arg1 withValues:(id)arg2;
 - (void)autoFillGeneratedPassword:(id)arg1 inForm:(double)arg2;
-- (void)autoFillValues:(id)arg1 andFocusField:(id)arg2;
+- (void)autoFillValues:(id)arg1 setAutoFilled:(BOOL)arg2 andFocusField:(id)arg3;
 - (void)dealloc;
 - (void)fetchFormMetadataWithCompletion:(id /* block */)arg1;
+- (void)fillGeneratedPassword:(id)arg1 inField:(id)arg2;
 - (id)frame;
 - (void)getTextFieldMetadata:(id*)arg1 formMetadata:(id*)arg2;
 - (id)initWithTextField:(id)arg1 webFrame:(id)arg2;
 - (void)invalidate;
 - (void)setAutoFillButtonTitle:(id)arg1;
+- (void)setFormControls:(id)arg1 areAutoFilled:(BOOL)arg2 clearField:(id)arg3;
 - (id)textFieldValue;
 - (id)webFrame;
 - (id)webView;

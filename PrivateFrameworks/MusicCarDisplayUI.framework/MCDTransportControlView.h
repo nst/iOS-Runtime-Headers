@@ -21,15 +21,14 @@
 @property (nonatomic) BOOL progressActive;
 
 - (void).cxx_destruct;
+- (void)_addConstraints;
 - (void)_createSubviews;
-- (void)_layoutSubviewsForHiTouch;
-- (void)_layoutSubviewsForLowTouch;
 - (void)_updateProgressActive;
 - (id)defaultFastForwardButtonImage;
 - (id)defaultLeftButtonImage;
 - (id)fastForwardButton;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutSubviews;
+- (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (id)leftButton;
 - (int)mode;
 - (id)pauseImage;

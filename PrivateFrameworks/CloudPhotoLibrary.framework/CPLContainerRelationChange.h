@@ -16,6 +16,7 @@
 - (void).cxx_destruct;
 - (id)compactedChangeWithRelatedChanges:(id)arg1 isOnlyChange:(BOOL)arg2 usingClientCache:(id)arg3;
 - (id)description;
+- (id)identifierForQuarantine;
 - (id)identifiersForMapping;
 - (id)itemIdentifier;
 - (id)relatedIdentifier;

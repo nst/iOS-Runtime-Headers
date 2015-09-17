@@ -3,18 +3,18 @@
  */
 
 @interface HKDataUnit : NSObject <NSCopying> {
-    NSPredicate *_chartingPredicate;
+    NSDictionary *_chartingPredicatesByTimeScope;
     HKObjectType *_dataType;
-    int _keyboardType;
+    HKDataUnitGroup *_dataUnitGroup;
+    NSPredicate *_defaultChartingPredicate;
     NSString *_labelDisplayName;
     float _scalarValue;
     NSDictionary *_singularUnitNameOverrides;
     NSDictionary *_unitNameOverrides;
 }
 
-@property (nonatomic, readonly) NSPredicate *chartingPredicate;
 @property (nonatomic, readonly) HKObjectType *dataType;
-@property (nonatomic) int keyboardType;
+@property (nonatomic) HKDataUnitGroup *dataUnitGroup;
 @property (nonatomic, readonly) NSString *labelDisplayName;
 @property (nonatomic, readonly) float scalarValue;
 
@@ -25,9 +25,11 @@
 - (id)_initAsCopyOf:(id)arg1;
 - (id)adjustedValueForClientValue:(id)arg1;
 - (id)adjustedValueForDaemonValue:(id)arg1;
-- (id)chartingPredicate;
+- (BOOL)allowsManualEntry;
+- (id)chartingPredicateForTimeScope:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataType;
+- (id)dataUnitGroup;
 - (id)description;
 - (unsigned int)hash;
 - (id)init;
@@ -35,11 +37,10 @@
 - (BOOL)isCharacteristic;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isNikeFuel;
-- (int)keyboardType;
 - (id)labelDisplayName;
 - (id)sampleType;
 - (float)scalarValue;
-- (void)setKeyboardType:(int)arg1;
+- (void)setDataUnitGroup:(id)arg1;
 - (id)singularUnitDisplayNameOverrideForUnit:(id)arg1;
 - (id)unitDisplayNameOverrideForUnit:(id)arg1;
 

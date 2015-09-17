@@ -17,13 +17,13 @@
 @property (nonatomic, readonly) BOOL mismatchDetected;
 @property (nonatomic, retain) NSArray *preferredChecksumVersions;
 
+- (void).cxx_destruct;
 - (id)_calculatedCalendarHome;
 - (BOOL)_hadOutOfDateCollectionToken;
 - (void)_handleResponseToChecksumPropfind:(id)arg1;
 - (void)_serverChecksumSupportPropfind;
 - (id)bestServerChecksumVersion;
 - (id)copyAdditionalResourcePropertiesToFetch;
-- (void)dealloc;
 - (void)deleteResourceURLs:(id)arg1;
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 actions:(id)arg4 accountInfoProvider:(id)arg5 taskManager:(id)arg6 appSpecificCalendarItemClass:(Class)arg7;
 - (BOOL)mismatchDetected;

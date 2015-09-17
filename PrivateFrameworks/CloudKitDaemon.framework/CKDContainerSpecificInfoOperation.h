@@ -13,6 +13,7 @@
 @property (nonatomic) BOOL needUserID;
 
 - (void).cxx_destruct;
+- (unsigned long long)activityStart;
 - (id)containerInfo;
 - (id)infoFetchedGroup;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

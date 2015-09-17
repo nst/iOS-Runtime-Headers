@@ -25,6 +25,7 @@
 - (BOOL)isEmpty;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValid;
+- (id)resolveToChunkOnSlide:(id)arg1;
 - (id)resolveToChunkUsingContext:(id)arg1;
 - (void)saveToMessage:(struct BuildChunkIdentifierArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct UUID {} *x5; int x6; }*)arg1;
 

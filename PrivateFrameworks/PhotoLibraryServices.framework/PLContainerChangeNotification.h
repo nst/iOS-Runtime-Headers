@@ -30,6 +30,8 @@
 @property (nonatomic, readonly) BOOL hasMoves;
 @property (nonatomic, readonly, retain) NSIndexSet *insertedIndexes;
 @property (nonatomic, readonly, retain) NSArray *insertedObjects;
+@property (nonatomic, readonly, retain) struct __CFArray { }*movedFromIndexes;
+@property (nonatomic, readonly, retain) NSIndexSet *movedIndexes;
 @property (nonatomic, readonly) BOOL shouldReload;
 @property (nonatomic, readonly, retain) PLObjectSnapshot *snapshot;
 
@@ -56,6 +58,8 @@
 - (id)init;
 - (id)insertedIndexes;
 - (id)insertedObjects;
+- (struct __CFArray { }*)movedFromIndexes;
+- (id)movedIndexes;
 - (id)name;
 - (id)object;
 - (BOOL)shouldReload;

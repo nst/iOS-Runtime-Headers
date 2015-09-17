@@ -14,9 +14,9 @@
 @property (nonatomic, readonly) int style;
 @property (nonatomic, retain) UIColor *tintColor;
 
+- (void).cxx_destruct;
 - (float)_heightAtWhichNoneOfTheInterfaceElementsAreVisibleEvenIfTheControlIsStillPartiallyOnScreen;
 - (id)attributedTitle;
-- (void)dealloc;
 - (void)didTransitionFromState:(int)arg1 toState:(int)arg2;
 - (float)maximumSnappingHeight;
 - (float)minimumSnappingHeight;

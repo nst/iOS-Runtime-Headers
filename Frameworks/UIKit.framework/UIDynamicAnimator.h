@@ -5,15 +5,17 @@
 @interface UIDynamicAnimator : NSObject {
     float _accuracy;
     id /* block */ _action;
+    NSMutableIndexSet *_availableFieldCategories;
     NSMutableArray *_beginContacts;
     NSMutableSet *_behaviorsToAdd;
     NSMutableSet *_behaviorsToRemove;
     NSMutableDictionary *_bodies;
+    BOOL _debugEnabled;
     int _debugInterval;
-    CALayer *_debugLayer;
     <UIDynamicAnimatorDelegate> *_delegate;
     BOOL _disableDisplayLink;
     CADisplayLink *_displaylink;
+    UIDynamicsDebug *_dynamicsDebug;
     double _elapsedTime;
     NSMutableArray *_endContacts;
     unsigned int _integralization;
@@ -63,6 +65,7 @@
 + (void)_unregisterAnimator:(id)arg1;
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (BOOL)_alwaysDisableDisplayLink;
 - (unsigned int)_animatorIntegralization;
 - (double)_animatorInterval;
@@ -70,6 +73,8 @@
 - (id)_bodyForItem:(id)arg1;
 - (void)_checkBehavior:(id)arg1;
 - (void)_clearReferenceView;
+- (BOOL)_containsBehavior:(id)arg1;
+- (BOOL)_debugEnabled;
 - (int)_debugInterval;
 - (void)_defaultMapper:(id)arg1 position:(struct CGPoint { float x1; float x2; })arg2 angle:(float)arg3 itemType:(unsigned int)arg4;
 - (id)_delegate;
@@ -77,6 +82,7 @@
 - (void)_evaluateLocalBehaviors;
 - (BOOL)_isWorldActive;
 - (id)_keyForItem:(id)arg1;
+- (id)_newBodyForItem:(id)arg1 inItemGroup:(id)arg2;
 - (void)_postSolverStep;
 - (void)_preSolverStep;
 - (float)_ptmRatio;
@@ -87,8 +93,8 @@
 - (unsigned int)_referenceSystemType;
 - (void)_registerBehavior:(id)arg1;
 - (id)_registerBodyForItem:(id)arg1;
-- (id)_registerBodyForItem:(id)arg1 shape:(unsigned int)arg2;
 - (int)_registerCollisionGroup;
+- (void)_registerFieldCategoryForFieldBehavior:(id)arg1;
 - (void)_registerImplicitBounds;
 - (void)_reportBeginContacts;
 - (void)_reportEndContacts;
@@ -96,6 +102,7 @@
 - (void)_setAction:(id /* block */)arg1;
 - (void)_setAlwaysDisableDisplayLink:(BOOL)arg1;
 - (void)_setAnimatorIntegralization:(unsigned int)arg1;
+- (void)_setDebugEnabled:(BOOL)arg1;
 - (void)_setDebugInterval:(int)arg1;
 - (void)_setDelegate:(id)arg1;
 - (void)_setReferenceSystem:(id)arg1;
@@ -112,11 +119,14 @@
 - (void)_unregisterBehavior:(id)arg1;
 - (void)_unregisterBodyForItem:(id)arg1 action:(id /* block */)arg2;
 - (void)_unregisterCollisionGroup;
+- (void)_unregisterFieldCategoryForFieldBehavior:(id)arg1;
 - (void)_unregisterImplicitBounds;
 - (id)_world;
 - (void)addBehavior:(id)arg1;
 - (id)behaviors;
 - (void)dealloc;
+- (float)debugAnimationSpeed;
+- (unsigned int)debugFrameInterval;
 - (id)delegate;
 - (id)description;
 - (void)didBeginContact:(id)arg1;
@@ -126,6 +136,7 @@
 - (id)initWithCollectionViewLayout:(id)arg1;
 - (id)initWithReferenceSystem:(id)arg1;
 - (id)initWithReferenceView:(id)arg1;
+- (BOOL)isDebugEnabled;
 - (BOOL)isRunning;
 - (id)itemsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)layoutAttributesForCellAtIndexPath:(id)arg1;
@@ -135,6 +146,9 @@
 - (id)referenceView;
 - (void)removeAllBehaviors;
 - (void)removeBehavior:(id)arg1;
+- (void)setDebugAnimationSpeed:(float)arg1;
+- (void)setDebugEnabled:(BOOL)arg1;
+- (void)setDebugFrameInterval:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setReferenceView:(id)arg1;
 - (void)setTicker:(id)arg1;

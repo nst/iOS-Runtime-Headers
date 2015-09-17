@@ -5,7 +5,6 @@
 @interface LAClient : NSObject <LAContextCallbackXPC, LAContextXPC> {
     NSMutableArray *_callInvalidationBlocks;
     NSData *_connectToContext;
-    NSString *_creatorName;
     NSXPCConnection *_daemonConnection;
     NSData *_externalizedContext;
     NSError *_permanentError;
@@ -15,7 +14,6 @@
 }
 
 @property (nonatomic, retain) NSData *connectToContext;
-@property (readonly) NSString *creatorDisplayName;
 @property (readonly) NSData *externalizedContext;
 @property (nonatomic) <LAUIDelegate> *uiDelegate;
 
@@ -23,21 +21,26 @@
 + (void)clientWithExternalizedContext:(id)arg1 uiDelegate:(id)arg2 reply:(id /* block */)arg3;
 
 - (void).cxx_destruct;
+- (id)_invalidatedCallError;
 - (void)_recoverConnection;
 - (void)_scheduleRecovery;
 - (BOOL)_setPermanentError:(id)arg1;
 - (id)connectToContext;
-- (id)creatorDisplayName;
-- (void)creatorName:(id /* block */)arg1;
 - (void)dealloc;
 - (void)enterPassword:(id)arg1 reply:(id /* block */)arg2;
-- (void)evaluateACL:(id)arg1 operation:(id)arg2 options:(id)arg3 reply:(id /* block */)arg4;
+- (void)evaluateACL:(id)arg1 operation:(int)arg2 options:(id)arg3 reply:(id /* block */)arg4;
 - (void)evaluatePolicy:(int)arg1 options:(id)arg2 reply:(id /* block */)arg3;
 - (id)externalizedContext;
 - (void)failProcessedEvent:(int)arg1 failureError:(id)arg2 reply:(id /* block */)arg3;
 - (void)invalidate;
 - (void)invalidatedWithError:(id)arg1;
+- (void)prearmTouchIdWithReply:(id /* block */)arg1;
+- (id)serverPropertyForOption:(int)arg1 error:(id*)arg2;
+- (void)serverPropertyForOption:(int)arg1 reply:(id /* block */)arg2;
 - (void)setConnectToContext:(id)arg1;
+- (void)setCredential:(id)arg1 type:(int)arg2 onlyGet:(BOOL)arg3 reply:(id /* block */)arg4;
+- (BOOL)setServerPropertyForOption:(int)arg1 value:(id)arg2 error:(id*)arg3;
+- (void)setServerPropertyForOption:(int)arg1 value:(id)arg2 reply:(id /* block */)arg3;
 - (void)setUiDelegate:(id)arg1;
 - (void)setupDaemonConnection:(id)arg1 remoteContext:(id)arg2 constInfo:(id)arg3;
 - (id)uiDelegate;

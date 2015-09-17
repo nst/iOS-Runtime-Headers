@@ -20,6 +20,7 @@
 }
 
 @property (retain) PHAdjustmentData *adjustmentData;
+@property (readonly) AVAsset *audiovisualAsset;
 @property (readonly) AVAsset *avAsset;
 @property (nonatomic) int baseVersion;
 @property (copy) NSDate *creationDate;
@@ -36,6 +37,7 @@
 - (void)_invalidateAVAsset;
 - (id)adjustmentData;
 - (id)audioMix;
+- (id)audiovisualAsset;
 - (id)avAsset;
 - (int)baseVersion;
 - (void)consumeSandboxExtensionToken:(id)arg1;

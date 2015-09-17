@@ -19,11 +19,11 @@
 @property (nonatomic) BOOL compressed;
 @property (nonatomic, readonly, retain) NSData *data;
 @property (nonatomic, readonly) BOOL expectsPeerResponse;
-@property (nonatomic) NSDate *expiryDate;
+@property (nonatomic, retain) NSDate *expiryDate;
 @property (nonatomic, readonly, retain) NSString *messageUUID;
 @property (nonatomic, readonly, retain) NSString *peerResponseIdentifier;
 @property (nonatomic) unsigned int sequenceNumber;
-@property (nonatomic, readonly) unsigned short streamID;
+@property (nonatomic) unsigned short streamID;
 @property (nonatomic, readonly) BOOL wantsAppAck;
 
 - (id)_nonHeaderData;
@@ -41,6 +41,7 @@
 - (void)setCompressed:(BOOL)arg1;
 - (void)setExpiryDate:(id)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
+- (void)setStreamID:(unsigned short)arg1;
 - (unsigned short)streamID;
 - (BOOL)wantsAppAck;
 

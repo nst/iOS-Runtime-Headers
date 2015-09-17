@@ -15,6 +15,7 @@
 - (id)_fetchHKUnitPreferences;
 - (id)_generateDefaultHKUnitPreferences;
 - (id)_hkUnitPreferences;
+- (void)_localeDidChange:(id)arg1;
 - (id)_longDisplayNameForUnit:(id)arg1;
 - (id)_nameWithKey:(id)arg1 forDataUnit:(id)arg2;
 - (id)_nameWithKey:(id)arg1 forDataUnit:(id)arg2 unit:(id)arg3;
@@ -25,6 +26,7 @@
 - (void)dealloc;
 - (id)displayNameForDataUnit:(id)arg1;
 - (id)displayNameForDataUnit:(id)arg1 unit:(id)arg2;
+- (id)displayNameForDataUnit:(id)arg1 value:(double)arg2;
 - (id)displayNameForDataUnitGroup:(id)arg1;
 - (id)displayRangeForDataUnit:(id)arg1;
 - (id)initWithHealthStore:(id)arg1;

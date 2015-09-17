@@ -21,6 +21,7 @@
 - (id)characteristic;
 - (void)configure:(id)arg1 actionSet:(id)arg2;
 - (void)encodeWithCoder:(id)arg1;
+- (id)init;
 - (id)initWithCharacteristic:(id)arg1 targetValue:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (void)replaceCharacteristic:(id)arg1;

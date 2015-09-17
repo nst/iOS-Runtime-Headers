@@ -2,13 +2,16 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITableView : UIScrollView <NSCoding, UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate> {
+@interface UITableView : UIScrollView <NSCoding, UIGestureRecognizerDelegatePrivate, UIScrollViewDelegate, _UIKeyboardAutoRespondingScrollView> {
     UIView *_backgroundView;
     float _bottomPadding;
+    UITraitCollection *_cachedTraitCollection;
     NSMutableDictionary *_cellClassDict;
     UIColor *_checkmarkColor;
     UIView *_clearBlendingView;
     NSMutableSet *_clientGesturesRequiringTableGesturesToFail;
+    <UITableViewConstants> *_constants;
+    UIFocusContainerGuide *_contentFocusContainerGuide;
     UITableViewCountView *_countLabel;
     int _currentIndexTitleIndex;
     UITouch *_currentTouch;
@@ -19,6 +22,8 @@
     _UITableViewDeleteAnimationSupport *_deleteAnimationSupport;
     NSMutableArray *_deleteItems;
     NSIndexPath *_displayingCellContentStringIndexPath;
+    UILongPressGestureRecognizer *_downArrowLongPressGestureRecognizer;
+    UITapGestureRecognizer *_downArrowTapGestureRecognizer;
     float _estimatedRowHeight;
     float _estimatedSectionFooterHeight;
     float _estimatedSectionHeaderHeight;
@@ -26,6 +31,7 @@
     NSIndexPath *_firstResponderIndexPath;
     UIView *_firstResponderView;
     int _firstResponderViewType;
+    UIView *_focusedCell;
     NSIndexPath *_focusedCellIndexPath;
     int _focusedViewType;
     NSMutableDictionary *_headerFooterClassDict;
@@ -39,6 +45,7 @@
     UITableViewIndexOverlayIndicatorView *_indexOverlayIndicatorView;
     UITableViewIndexOverlaySelectionView *_indexOverlaySelectionView;
     NSTimer *_indexOverlayTimer;
+    NSIndexPath *_indexPathToFocus;
     UIColor *_indexTrackingBackgroundColor;
     NSMutableArray *_insertItems;
     UIWindow *_lastWindow;
@@ -57,6 +64,7 @@
         float x; 
         float y; 
     } _postLayoutContentOffset;
+    float _preReloadFirstCellOffset;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -113,6 +121,7 @@
         unsigned int dataSourceCanPerformAction : 1; 
         unsigned int dataSourcePerformAction : 1; 
         unsigned int dataSourceIndexPathForSectionIndexTitle : 1; 
+        unsigned int dataSourceWasNonNil : 1; 
         unsigned int delegateEditingStyleForRowAtIndexPath : 1; 
         unsigned int delegateTitleForDeleteConfirmationButtonForRowAtIndexPath : 1; 
         unsigned int delegateEditActionsForRowAtIndexPath : 1; 
@@ -183,6 +192,11 @@
         unsigned int delegateDidUnfocusRow : 1; 
         unsigned int delegateShouldChangeFocusedItem : 1; 
         unsigned int delegateIndexPathForPreferredFocusedItem : 1; 
+        unsigned int delegateShouldUpdateFocusFromRowAtIndexPathToView : 1; 
+        unsigned int delegateIndexPathForPreferredFocusedView : 1; 
+        unsigned int delegateShouldUpdateFocusInContext : 1; 
+        unsigned int delegateDidUpdateFocusInContext : 1; 
+        unsigned int delegateWasNonNil : 1; 
         unsigned int style : 1; 
         unsigned int separatorStyle : 3; 
         unsigned int wasEditing : 1; 
@@ -260,18 +274,28 @@
         unsigned int settingDefaultLayoutMargins : 1; 
         unsigned int deallocating : 1; 
         unsigned int updateFocusAfterItemAnimations : 1; 
-        unsigned int remembersPreviouslyFocusedItem : 1; 
+        unsigned int updateFocusAfterLoadingCells : 1; 
+        unsigned int remembersLastFocusedIndexPath : 1; 
+        unsigned int cellLayoutMarginsFollowReadableWidth : 1; 
+        unsigned int sectionContentInsetFollowsLayoutMargins : 1; 
     } _tableFlags;
     UIView *_tableFooterView;
     UIView *_tableHeaderBackgroundView;
     UIView *_tableHeaderView;
     int _tableReloadingSuspendedCount;
+    NSIndexPath *_targetIndexPathForScrolling;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _targetOffsetToIndexPathForScrolling;
     NSMutableDictionary *_tentativeCells;
     struct __CFDictionary { } *_tentativeFooterViews;
     struct __CFDictionary { } *_tentativeHeaderViews;
     float _topPadding;
     UIView *_topSeparator;
     UITableViewCell *_topSeparatorCell;
+    UILongPressGestureRecognizer *_upArrowLongPressGestureRecognizer;
+    UITapGestureRecognizer *_upArrowTapGestureRecognizer;
     int _updateAnimationCount;
     id _updateCompletionHandler;
     int _updateCount;
@@ -300,6 +324,7 @@
 @property (nonatomic) BOOL allowsSelection;
 @property (nonatomic) BOOL allowsSelectionDuringEditing;
 @property (nonatomic, retain) UIView *backgroundView;
+@property (nonatomic) BOOL cellLayoutMarginsFollowReadableWidth;
 @property (nonatomic, retain) UITouch *currentTouch;
 @property (nonatomic) <UITableViewDataSource> *dataSource;
 @property (readonly, copy) NSString *debugDescription;
@@ -310,10 +335,18 @@
 @property (nonatomic) float estimatedRowHeight;
 @property (nonatomic) float estimatedSectionFooterHeight;
 @property (nonatomic) float estimatedSectionHeaderHeight;
+@property (getter=_focusedCell, setter=_setFocusedCell:, nonatomic, retain) UIView *focusedCell;
 @property (getter=_focusedCellIndexPath, setter=_setFocusedCellIndexPath:, nonatomic, copy) NSIndexPath *focusedCellIndexPath;
 @property (readonly) unsigned int hash;
 @property (getter=MPU_isInScrollTest, setter=MPU_setInScrollTest:, nonatomic) BOOL inScrollTest;
+@property (nonatomic, readonly) NSIndexPath *indexPathForSelectedRow;
+@property (getter=_indexPathToFocus, setter=_setIndexPathToFocus:, nonatomic, copy) NSIndexPath *indexPathToFocus;
+@property (nonatomic, readonly) NSArray *indexPathsForSelectedRows;
+@property (nonatomic, readonly) NSArray *indexPathsForVisibleRows;
+@property (getter=_keepsFirstResponderVisibleOnBoundsChange, setter=_setKeepsFirstResponderVisibleOnBoundsChange:, nonatomic) BOOL keepsFirstResponderVisibleOnBoundsChange;
 @property (getter=_manuallyManagesSwipeUI, setter=_setManuallyManagesSwipeUI:, nonatomic) BOOL manuallyManagesSwipeUI;
+@property (nonatomic, readonly) int numberOfSections;
+@property (nonatomic) BOOL remembersLastFocusedIndexPath;
 @property (nonatomic) float rowHeight;
 @property (nonatomic) float sectionFooterHeight;
 @property (nonatomic) float sectionHeaderHeight;
@@ -329,6 +362,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *tableFooterView;
 @property (nonatomic, retain) UIView *tableHeaderView;
+@property (nonatomic, readonly) NSArray *visibleCells;
 @property (getter=_wrapperView, nonatomic, readonly) UIScrollView *wrapperView;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
@@ -339,8 +373,13 @@
 + (id)_externalTableBackgroundColor;
 + (id)_externalTableSeparatorColor;
 + (void)_initializeForIdiom:(int)arg1;
++ (void)_setupIdiom:(int)arg1 forTableViewStyle:(int)arg2;
 + (void)initialize;
 
+- (void).cxx_destruct;
+- (void)_UIAppearance_setBackgroundColor:(id)arg1;
+- (void)_UIAppearance_setSeparatorColor:(id)arg1;
+- (void)_UIAppearance_setSeparatorStyle:(int)arg1;
 - (void)_accessoryButtonAction:(id)arg1;
 - (int)_accessoryTypeForCell:(id)arg1 forRowAtIndexPath:(id)arg2;
 - (void)_actionButton:(id)arg1 pushedInCell:(id)arg2;
@@ -384,7 +423,6 @@
 - (BOOL)_canSelectRowContainingHitView:(id)arg1;
 - (BOOL)_canSwipeCellAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_cancelCellReorder:(BOOL)arg1;
-- (BOOL)_cell:(id)arg1 shouldChangeFocusedItem:(id)arg2;
 - (id)_cellAfterIndexPath:(id)arg1;
 - (id)_cellContainerView;
 - (void)_cellDidBecomeFocused:(id)arg1;
@@ -393,6 +431,7 @@
 - (void)_cellDidShowSelectedBackground:(id)arg1;
 - (id)_cellReuseMapForType:(int)arg1;
 - (BOOL)_cellsSelfSize;
+- (id)_childFocusRegions;
 - (id)_classMapForType:(int)arg1;
 - (float)_classicHeightForFooterInSection:(int)arg1;
 - (float)_classicHeightForHeaderInSection:(int)arg1;
@@ -402,6 +441,8 @@
 - (void)_configureCellForDisplay:(id)arg1 forIndexPath:(id)arg2;
 - (void)_configureIndexOverlayIndicatorViewIfNecessary;
 - (void)_configureIndexOverlaySelectionViewIfNecessary;
+- (id)_constants;
+- (id)_contentFocusContainerGuide;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_contentInset;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForLowFidelityScrollInDirection:(struct CGPoint { float x1; float x2; })arg1 duration:(double*)arg2;
 - (struct CGPoint { float x1; float x2; })_contentOffsetForScrollingToRowAtIndexPath:(id)arg1 atScrollPosition:(int)arg2;
@@ -453,8 +494,11 @@
 - (void)_deselectRowAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 - (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_didInsertRowForTableCell:(id)arg1;
+- (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)_displayingCellContentStringCallout;
 - (BOOL)_displaysCellContentStringsOnTapAndHold;
+- (void)_downArrowLongPress:(id)arg1;
+- (void)_downArrowTap:(id)arg1;
 - (void)_drawExtraSeparator:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_drawsSeparatorAtTopOfSections;
 - (BOOL)_drawsTopShadowInGroupedSections;
@@ -477,17 +521,19 @@
 - (float)_externalIndexWidth;
 - (void)_finishedAnimatingCellReorder:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_finishedRemovingRemovalButtonForTableCell:(id)arg1;
+- (id)_focusedCell;
 - (BOOL)_focusedCellContainedInRowsAtIndexPaths:(id)arg1;
 - (BOOL)_focusedCellContainedInSections:(id)arg1;
 - (id)_focusedCellIndexPath;
-- (void)_focusedViewWillChange:(id)arg1;
+- (void)_focusedView:(id)arg1 isMinX:(BOOL*)arg2 isMaxX:(BOOL*)arg3 isMinY:(BOOL*)arg4 isMaxY:(BOOL*)arg5;
 - (float)_footerMarginWidth;
 - (float)_footerRightMarginWidth;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForWrapper;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRequireFailureOfGestureRecognizer:(id)arg2;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
-- (void)_getResponderRectsForXAxisMinRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 yMinRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 xMaxRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 yMaxRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 - (int)_globalReorderingRow;
+- (void)_handleNudgeInDirection:(int)arg1;
 - (void)_handleSwipeDelete:(id)arg1;
 - (void)_handleSwipeDeleteGobbler:(id)arg1;
 - (BOOL)_hasHeaderFooterBelowRowAtIndexPath:(id)arg1;
@@ -509,6 +555,7 @@
 - (BOOL)_highlightFirstVisibleRowIfAppropriate;
 - (id)_indexPathForSwipeRowAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_indexPathIsValid:(id)arg1;
+- (id)_indexPathToFocus;
 - (id)_indexPathsForHighlightedRows;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_indexRect;
 - (void)_initializeTentativeViewContainers;
@@ -525,15 +572,18 @@
 - (BOOL)_isTableHeaderViewHidden;
 - (BOOL)_keepsFirstResponderVisibleOnBoundsChange;
 - (void)_languageChanged;
+- (int)_lastGlobalRowIndex;
+- (void)_longPressNudgeScrollToRow:(int)arg1 position:(int)arg2;
 - (BOOL)_manuallyManagesSwipeUI;
 - (float)_marginWidth;
 - (void)_moveSectionIndexTitleIndexToIndex:(int)arg1;
 - (void)_moveWithEvent:(id)arg1;
 - (id)_multiSelectCheckmarkImage;
 - (id)_multiSelectNotSelectedImage;
-- (id)_nearestContentSubviewToPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (id)_nearestCellToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_newSectionViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSection:(int)arg2 isHeader:(BOOL)arg3;
 - (id)_nibMapForType:(int)arg1;
+- (void)_nudgeScroll:(int)arg1;
 - (void)_numberOfRowsDidChange;
 - (float)_offsetForRubberBandOffset:(float)arg1 maxOffset:(float)arg2 minOffset:(float)arg3 range:(float)arg4;
 - (BOOL)_pathIsHidden:(id)arg1;
@@ -541,9 +591,7 @@
 - (void)_performBatchUpdates:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)_performBatchUpdates:(id /* block */)arg1 withContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)_performCellContentStringCalloutCleanupHidingMenu:(BOOL)arg1;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
+- (void)_performWithCachedTraitCollection:(id /* block */)arg1;
 - (BOOL)_pinsTableHeaderView;
 - (id)_popReusableHeaderView:(BOOL)arg1;
 - (int)_popoverControllerStyle;
@@ -576,6 +624,7 @@
 - (void)_reuseTableViewCell:(id)arg1 withIndexPath:(id)arg2 didEndDisplaying:(BOOL)arg3;
 - (void)_reuseTableViewSubview:(id)arg1 viewType:(int)arg2;
 - (id)_rowData;
+- (float)_rowSpacing;
 - (float)_rubberBandOffsetForOffset:(float)arg1 maxOffset:(float)arg2 minOffset:(float)arg3 range:(float)arg4 outside:(BOOL*)arg5;
 - (void)_scheduleAdjustExtraSeparators;
 - (id)_scriptingInfo;
@@ -584,11 +633,13 @@
 - (void)_scrollToTopFromTouchAtScreenLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id /* block */)arg2;
 - (void)_scrollToTopHidingTableHeader:(BOOL)arg1;
 - (void)_scrollToTopHidingTableHeaderIfNecessary:(BOOL)arg1;
+- (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewWillEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1 targetContentOffset:(struct CGPoint { float x1; float x2; }*)arg2;
 - (BOOL)_scrollsToMakeFirstResponderVisible;
 - (float)_sectionBorderWidth;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_sectionContentInset;
+- (BOOL)_sectionContentInsetFollowsLayoutMargins;
 - (id)_sectionFooterViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSection:(int)arg2 floating:(BOOL)arg3 reuseViewIfPossible:(BOOL)arg4 willDisplay:(BOOL)arg5;
 - (int)_sectionForFooterView:(id)arg1;
 - (int)_sectionForHeaderView:(id)arg1;
@@ -617,12 +668,14 @@
 - (void)_setDrawsTopShadowInGroupedSections:(BOOL)arg1;
 - (void)_setEditing:(BOOL)arg1 animated:(BOOL)arg2 forced:(BOOL)arg3;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfCellWithReuseIdentifier:(id)arg2;
+- (void)_setFocusedCell:(id)arg1;
 - (void)_setFocusedCellIndexPath:(id)arg1;
 - (void)_setGestureRecognizerRequiresTableGestureRecognizersToFail:(id)arg1;
 - (void)_setHeaderAndFooterViewsFloat:(BOOL)arg1;
 - (void)_setHeight:(float)arg1 forRowAtIndexPath:(id)arg2;
 - (void)_setHeightForTableHeaderViewHiding:(float)arg1;
 - (void)_setIgnorePinnedTableHeaderUpdates:(BOOL)arg1;
+- (void)_setIndexPathToFocus:(id)arg1;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
 - (void)_setKeepsFirstResponderVisibleOnBoundsChange:(BOOL)arg1;
 - (void)_setManuallyManagesSwipeUI:(BOOL)arg1;
@@ -634,6 +687,7 @@
 - (void)_setRowCount:(unsigned int)arg1;
 - (void)_setSectionBorderWidth:(float)arg1;
 - (void)_setSectionContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setSectionContentInsetFollowsLayoutMargins:(BOOL)arg1;
 - (void)_setSectionIndexColor:(id)arg1;
 - (void)_setSectionIndexTrackingBackgroundColor:(id)arg1;
 - (void)_setSeparatorBackdropOverlayBlendMode:(int)arg1;
@@ -643,6 +697,7 @@
 - (void)_setSwipeToDeleteCell:(id)arg1 installGobbler:(BOOL)arg2;
 - (void)_setTopPadding:(float)arg1;
 - (void)_setTopSeparatorCell:(id)arg1;
+- (void)_setUpContentFocusContainerGuide;
 - (void)_setUsesStaticScrollBar:(BOOL)arg1;
 - (void)_setupCell:(id)arg1 forEditing:(BOOL)arg2 atIndexPath:(id)arg3 animated:(BOOL)arg4 updateSeparators:(BOOL)arg5;
 - (void)_setupCell:(id)arg1 forEditing:(BOOL)arg2 atIndexPath:(id)arg3 canEdit:(BOOL)arg4 editingStyle:(int)arg5 shouldIndentWhileEditing:(BOOL)arg6 showsReorderControl:(BOOL)arg7 accessoryType:(int)arg8 animated:(BOOL)arg9 updateSeparators:(BOOL)arg10;
@@ -653,6 +708,7 @@
 - (float)_shadowHeightOffset;
 - (void)_shiftSectionIndexTitleIndexByAmount:(int)arg1;
 - (BOOL)_shouldChangeIndexBasedOnValueChanged;
+- (BOOL)_shouldConsumePressEvent:(id)arg1;
 - (BOOL)_shouldDisplayExtraSeparatorsAtOffset:(float*)arg1;
 - (BOOL)_shouldDisplayTopSeparator;
 - (BOOL)_shouldDrawSeparatorAtBottomOfSection:(int)arg1;
@@ -666,12 +722,13 @@
 - (BOOL)_shouldShowIndexOverlays;
 - (BOOL)_shouldShowMenuForCell:(id)arg1;
 - (BOOL)_shouldUnionVisibleBounds;
+- (BOOL)_shouldUpdateFocusInContext:(id)arg1;
 - (BOOL)_shouldWrapCells;
 - (void)_showSeparatorForRowAtIndexPath:(id)arg1;
 - (void)_showSeparatorForRowBeforeIndexPath:(id)arg1;
 - (float)_spacingForExtraSeparators;
 - (void)_startIndexOverlayIndicatorIgnoreTimer;
-- (void)_startIndexOverlayTimer;
+- (void)_startIndexOverlayTimerWithDelay:(double)arg1;
 - (void)_stopAutoscrollTimer;
 - (void)_stopIgnoringWheelEventsOnIndexOverlayIndicator:(id)arg1;
 - (void)_stopIndexOverlayTimer;
@@ -697,7 +754,6 @@
 - (id)_tableViewCellForContentView:(id)arg1;
 - (id)_targetIndexPathAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_tearDownIndexOverlayViews;
-- (float)_timeBeforeIndexOverlayFadesAway;
 - (float)_timeToIgnoreWheelEventsOnIndexOverlayIndicator;
 - (id)_titleForDeleteConfirmationButton;
 - (id)_titleForDeleteConfirmationButtonForRowAtIndexPath:(id)arg1;
@@ -707,11 +763,12 @@
 - (void)_transitionIndexOverlaySelectionViewToVisible:(BOOL)arg1;
 - (void)_transitionIndexOverlayToVisible:(BOOL)arg1 shouldFadeBackToInvisible:(BOOL)arg2;
 - (void)_unhighlightAllRowsAndHighlightGlobalRow:(int)arg1;
+- (void)_upArrowLongPress:(id)arg1;
+- (void)_upArrowTap:(id)arg1;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateBackgroundView;
 - (void)_updateBackgroundViewFrame;
 - (void)_updateCellContentStringCallout:(id)arg1;
-- (void)_updateCellsToFocusable:(BOOL)arg1;
 - (void)_updateContentSize;
 - (void)_updateFocusedCellIndexPathIfNecessaryWithLastFocusedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateFocusedItemToIndexPath:(id)arg1;
@@ -737,6 +794,7 @@
 - (void)_updateWithItems:(id)arg1 updateSupport:(id)arg2;
 - (void)_updateWrapperContentInset;
 - (void)_updateWrapperFrame;
+- (void)_userSelectCell:(id)arg1;
 - (void)_userSelectRowAtPendingSelectionIndexPath:(id)arg1;
 - (BOOL)_usesNewHeaderFooterBehavior;
 - (BOOL)_usingCustomBackgroundView;
@@ -751,6 +809,7 @@
 - (id)_visibleFooterViewForSection:(int)arg1 includeTentativeViews:(BOOL)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleGlobalRows;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleGlobalRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_visibleGlobalRowsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 canGuess:(BOOL)arg2;
 - (id)_visibleHeaderFooterViews;
 - (id)_visibleHeaderViewForSection:(int)arg1;
 - (id)_visibleHeaderViewForSection:(int)arg1 includeTentativeViews:(BOOL)arg2;
@@ -770,11 +829,13 @@
 - (BOOL)allowsSelection;
 - (BOOL)allowsSelectionDuringEditing;
 - (void)animateDeletionOfRowWithCell:(id)arg1;
+- (void)awakeFromNib;
 - (id)backgroundView;
 - (void)beginUpdates;
 - (BOOL)canBecomeFocused;
 - (BOOL)cancelTouchTracking;
 - (id)cellForRowAtIndexPath:(id)arg1;
+- (BOOL)cellLayoutMarginsFollowReadableWidth;
 - (id)currentTouch;
 - (id)dataSource;
 - (void)dealloc;
@@ -823,6 +884,7 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isIndexHidden;
 - (void)layoutMarginsDidChange;
+- (BOOL)layoutMarginsFollowReadableWidth;
 - (void)layoutSubviews;
 - (void)longPress:(id)arg1;
 - (BOOL)longPressGestureWithinAutoscrollZone;
@@ -835,7 +897,11 @@
 - (int)numberOfRowsInSection:(int)arg1;
 - (int)numberOfSections;
 - (BOOL)overlapsSectionHeaderViews;
-- (id)preferredFocusedItem;
+- (id)preferredFocusedView;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
+- (void)pressesChanged:(id)arg1 withEvent:(id)arg2;
+- (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForFooterInSection:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForHeaderInSection:(int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForRowAtIndexPath:(id)arg1;
@@ -848,6 +914,7 @@
 - (void)reloadRowsAtIndexPaths:(id)arg1 withRowAnimation:(int)arg2;
 - (void)reloadSectionIndexTitles;
 - (void)reloadSections:(id)arg1 withRowAnimation:(int)arg2;
+- (BOOL)remembersLastFocusedIndexPath;
 - (void)resizeSubviewsWithOldSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)rowHeight;
 - (void)scrollToNearestSelectedRowAtScrollPosition:(int)arg1 animated:(BOOL)arg2;
@@ -876,6 +943,7 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundView:(id)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCellLayoutMarginsFollowReadableWidth:(BOOL)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setCountString:(id)arg1;
@@ -893,8 +961,10 @@
 - (void)setIndexHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setIndexHiddenForSearch:(BOOL)arg1;
 - (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setLayoutMarginsFollowReadableWidth:(BOOL)arg1;
 - (void)setMultiselectCheckmarkColor:(id)arg1;
 - (void)setOverlapsSectionHeaderViews:(BOOL)arg1;
+- (void)setRemembersLastFocusedIndexPath:(BOOL)arg1;
 - (void)setRowHeight:(float)arg1;
 - (void)setSectionBorderColor:(id)arg1;
 - (void)setSectionFooterHeight:(float)arg1;
@@ -903,6 +973,7 @@
 - (void)setSectionIndexColor:(id)arg1;
 - (void)setSectionIndexMinimumDisplayRowCount:(int)arg1;
 - (void)setSectionIndexTrackingBackgroundColor:(id)arg1;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (void)setSeparatorBottomShadowColor:(id)arg1;
 - (void)setSeparatorColor:(id)arg1;
 - (void)setSeparatorEffect:(id)arg1;
@@ -930,6 +1001,7 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)touchesShouldCancelInContentView:(id)arg1;
+- (id)traitCollection;
 - (void)unhighlightRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)usesVariableMargins;
 - (id)visibleCells;
@@ -941,9 +1013,24 @@
 - (void)ab_internalScrollToRowAtIndexPathRespectingCaretOfActiveTextView:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
 - (void)ab_scrollToRowAtIndexPathRespectingCaretOfActiveTextView:(id)arg1 atScrollPosition:(int)arg2 animated:(BOOL)arg3;
 
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_applyContactStyle;
+- (void)_cnui_applyContactStyleStark;
+
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (id)_mapkit_dequeueReusableCellWithIdentifier:(id)arg1;
+- (BOOL)_mk_indexPathIsLastIndexPath:(id)arg1;
+- (BOOL)_mk_indexPathIsLastIndexPath:(id)arg1;
+- (BOOL)_mk_indexPathIsLastIndexPath:(id)arg1;
+- (BOOL)_mk_indexPathIsLastIndexPath:(id)arg1;
+- (BOOL)_mk_indexPathIsLastIndexPath:(id)arg1;
+
+// Image: /System/Library/Frameworks/PassKit.framework/PassKit
+
+- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; struct x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; void*x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; void*x69; void*x70; void*x71; void*x72; void*x73; void*x74; void*x75; void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; void*x100; void*x101; void*x102; void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void*x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; void*x135; void*x136; void*x137; void*x138; void*x139; void*x140; void*x141; void*x142; void*x143; void*x144; void*x145; void*x146; void*x147; void*x148; void*x149; void*x150; void*x151; void*x152; void*x153; void*x154; void*x155; void*x156; void*x157; void*x158; void*x159; unsigned short x160; void*x161; void*x162; void*x163; void*x164; void*x165; void*x166; void*x167; void*x168; void*x169; void*x170; void*x171; void*x172; void*x173; void*x174; void*x175; void*x176; void*x177; void*x178; void*x179; void*x180; unsigned short x181; void*x182; short x183; void*x184; void*x185; void*x186; void*x187; unsigned long x188; int x189; unsigned int x190/* : ? */; const void*x191; const void*x192; void*x193; void*x194; const int x195; void x196; void*x197; void*x198; void*x199; void*x200; const void*x201; void*x202; void*x203; void*x204; out const void*x205; short x206; void*x207; bycopy float x208; float x209; int x210; BOOL x211; void*x212; unsigned int x213; void*x214; void*x215; out const void*x216; void*x217; float x218; const void*x219; void*x220; void*x221; void*x222; out const void*x223; void*x224; bycopy float x225; float x226; int x227; BOOL x228; void*x229; unsigned int x230; void*x231; void*x232; out const void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; void*x255; void*x256; void*x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; BOOL x279; void*x280; int x281; void*x282; void x283; void*x284; void*x285; void*x286; in void*x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void*x302; void*x303; void*x304; void*x305; void*x306; void*x307; void*x308; void*x309; void*x310; void*x311; void*x312; void*x313; void*x314; void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; void*x322; void*x323; void*x324; void*x325; void*x326; void*x327; void*x328; void*x329; void*x330; void*x331; void*x332; void*x333; void*x334; void*x335; void*x336; void*x337; void*x338; void*x339; void*x340; BOOL x341; void*x342; int x343; void*x344; void x345; void*x346; void*x347; void*x348; in void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; void*x358; void*x359; void*x360; void*x361; void*x362; void*x363; void*x364; void*x365; void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void*x381; unsigned int x382; void*x383; void*x384; void*x385; void*x386; void*x387; void*x388; void*x389; void*x390; void*x391; void*x392; void*x393; void*x394; void*x395; void*x396; void*x397; void*x398; void*x399; void*x400; void*x401; unsigned short x402; void*x403; short x404; void*x405; void*x406; void*x407; void*x408; unsigned long x409; int x410; unsigned int x411/* : ? */; const void*x412; const void*x413; void*x414; void*x415; const int x416; void x417; void*x418; void*x419; void*x420; void*x421; const void*x422; void*x423; void*x424; void*x425; out const void*x426; short x427; void*x428; void*x429; void*x430; void*x431; long x432; void*x433; void*x434; long doublex435; void*x436; void*x437; void*x438; out in void*x439; float x440; const void*x441; void*x442; void*x443; void*x444; out const void*x445; void*x446; void*x447; void*x448; void*x449; long x450; void*x451; void*x452; long doublex453; void*x454; void*x455; void*x456; out in void*x457; void*x458; void*x459; void*x460; void*x461; void*x462; void*x463; void*x464; void*x465; void*x466; void*x467; char *x468; void*x469; void*x470; void*x471; void*x472; void*x473; void*x474; void*x475; void*x476; void*x477; void*x478; void*x479; SEL x480; void*x481; unsigned long long x482; void*x483; void*x484; void*x485; void*x486; void*x487; void*x488; void*x489; void*x490; void*x491; void*x492; void*x493; void*x494; void*x495; void*x496; void*x497; void*x498; void*x499; void*x500; void*x501; void*x502; void*x503; void*x504; void*x505; void*x506; void*x507; void*x508; void*x509; void*x510; void*x511; void*x512; void*x513; void*x514; void*x515; void*x516; void*x517; void*x518; void*x519; void*x520; void*x521; void*x522; void*x523; void*x524; void*x525; void*x526; void*x527; void*x528; void*x529; void*x530; void*x531; void*x532; void*x533; void*x534; void*x535; void*x536; void*x537; void*x538; void*x539; void*x540; void*x541; void*x542; void*x543; void*x544; void*x545; void*x546; void*x547; void*x548; void*x549; void*x550; void*x551; void*x552; void*x553; void*x554; void*x555; void*x556; void*x557; void*x558; void*x559; void*x560; void*x561; void*x562; void*x563; void*x564; void*x565; void*x566; void*x567; void*x568; void*x569; void*x570; void*x571; void*x572; void*x573; void*x574; void*x575; void*x576; void*x577; void*x578; void*x579; void*x580; void*x581; void*x582; void*x583; void*x584; void*x585; void*x586; void*x587; void*x588; void*x589; void*x590; void*x591; void*x592; void*x593; void*x594; void*x595; void*x596; void*x597; void*x598; void*x599; void*x600; void*x601; void*x602; void*x603; void*x604; void*x605; void*x606; void*x607; void*x608; void*x609; void*x610; void*x611; void*x612; void*x613; void*x614; void*x615; void*x616; void*x617; void*x618; void*x619; void*x620; void*x621; void*x622; void*x623; void*x624; void*x625; void*x626; void*x627; void*x628; void*x629; void*x630; void*x631; void*x632; void*x633; void*x634; void*x635; void*x636; void*x637; void*x638; void*x639; void*x640; void*x641; void*x642; void*x643; void*x644; void*x645; void*x646; void*x647; void*x648; void*x649; void*x650; void*x651; void*x652; void*x653; void*x654; void*x655; void*x656; void*x657; void*x658; void*x659; void*x660; void*x661; void*x662; void*x663; void*x664; void*x665; void*x666; void*x667; void*x668; void*x669; void*x670; void*x671; void*x672; void*x673; void*x674; void*x675; void*x676; void*x677; void*x678; void*x679; void*x680; void*x681; void*x682; void*x683; void*x684; void*x685; void*x686; void*x687; void*x688; void*x689; void*x690; void*x691; void*x692; void*x693; void*x694; void*x695; void*x696; void*x697; void*x698; void*x699; void*x700; void*x701; void*x702; void*x703; void*x704; void*x705; void*x706; void*x707; void*x708; void*x709; void*x710; void*x711; void*x712; void*x713; void*x714; void*x715; void*x716; void*x717; void*x718; void*x719; void*x720; void*x721; void*x722; void*x723; void*x724; void*x725; void*x726; void*x727; void*x728; void*x729; void*x730; void*x731; void*x732; void*x733; void*x734; void*x735; void*x736; void*x737; void*x738; void*x739; void*x740; void*x741; void*x742; void*x743; void*x744; void*x745; void*x746; void*x747; void*x748; void*x749; void*x750; void*x751; void*x752; void*x753; void*x754; void*x755; void*x756; void*x757; void*x758; void*x759; void*x760; void*x761; void*x762; void*x763; void*x764; void*x765; void*x766; void*x767; void*x768; void*x769; void*x770; void*x771; void*x772; void*x773; void*x774; void*x775; void*x776; void*x777; void*x778; void*x779; void*x780; void*x781; void*x782; void*x783; void*x784; void*x785; void*x786; void*x787; void*x788; void*x789; void*x790; void*x791; void*x792; void*x793; void*x794; void*x795; void*x796; void*x797; void*x798; void*x799; void*x800; void*x801; void*x802; void*x803; void*x804; void*x805; void*x806; void*x807; void*x808; void*x809; void*x810; void*x811; void*x812; void*x813; void*x814; void*x815; void*x816; void*x817; void*x818; void*x819; void*x820; void*x821; void*x822; void*x823; void*x824; void*x825; void*x826; void*x827; void*x828; void*x829; void*x830; void*x831; void*x832; void*x833; void*x834; void*x835; void*x836; void*x837; void*x838; void*x839; void*x840; void*x841; void*x842; void*x843; void*x844; void*x845; void*x846; void*x847; void*x848; void*x849; void*x850; void*x851; void*x852; void*x853; void*x854; void*x855; void*x856; void*x857; void*x858; void*x859; void*x860; void*x861; void*x862; void*x863; void*x864; void*x865; void*x866; void*x867; void*x868; void*x869; void*x870; void*x871; void*x872; void*x873; void*x874; void*x875; void*x876; void*x877; void*x878; void*x879; void*x880; void*x881; void*x882; void*x883; void*x884; unsigned short x885; void*x886; short x887; void*x888; void*x889; void*x890; void*x891; unsigned long x892; int x893; unsigned int x894/* : ? */; const void*x895; const void*x896; void*x897; void*x898; const void*x899; void*x900; void*x901; void*x902; out const void*x903; short x904; void*x905; void*x906; void*x907; void*x908; void*x909; int x910; void*x911; void*x912; float x913; const void*x914; void*x915; void*x916; void*x917; out const void*x918; void*x919; void*x920; void*x921; void*x922; void*x923; int x924; void*x925; void*x926; void*x927; void*x928; void*x929; void*x930; void*x931; void*x932; void*x933; void*x934; void*x935; void*x936; void*x937; void*x938; void*x939; void*x940; void*x941; void*x942; void*x943; void*x944; void*x945; void*x946; void*x947; void*x948; void*x949; void*x950; void*x951; void*x952; void*x953; void*x954; void*x955; void*x956; void*x957; void*x958; void*x959; void*x960; void*x961; void*x962; void*x963; void*x964; void*x965; void*x966; void*x967; void*x968; void*x969; void*x970; void*x971; void*x972; void*x973; void*x974; void*x975; void*x976; void*x977; void*x978; void*x979; void*x980; void*x981; void*x982; void*x983; void*x984; void*x985; void*x986; void*x987; void*x988; void*x989; void*x990; void*x991; void*x992; void*x993; void*x994; void*x995; void*x996; void*x997; void*x998; void*x999; void*x1000; void*x1001; void*x1002; void*x1003; void*x1004; void*x1005; void*x1006; void*x1007; void*x1008; void*x1009; void*x1010; void*x1011; void*x1012; void*x1013; void*x1014; void*x1015; void*x1016; void*x1017; void*x1018; void*x1019; void*x1020; void*x1021; void*x1022; void*x1023; void*x1024; void*x1025; void*x1026; void*x1027; void*x1028; void*x1029; void*x1030; void*x1031; void*x1032; void*x1033; void*x1034; void*x1035; void*x1036; void*x1037; void*x1038; void*x1039; void*x1040; void*x1041; void*x1042; void*x1043; void*x1044; void*x1045; void*x1046; void*x1047; void*x1048; void*x1049; void*x1050; void*x1051; void*x1052; void*x1053; void*x1054; void*x1055; void*x1056; void*x1057; void*x1058; void*x1059; void*x1060; void*x1061; void*x1062; void*x1063; void*x1064; void*x1065; void*x1066; void*x1067; void*x1068; void*x1069; void*x1070; void*x1071; void*x1072; void*x1073; void*x1074; void*x1075; void*x1076; void*x1077; void*x1078; void*x1079; void*x1080; void*x1081; void*x1082; void*x1083; void*x1084; void*x1085; void*x1086; void*x1087; void*x1088; void*x1089; void*x1090; void*x1091; void*x1092; void*x1093; void*x1094; void*x1095; void*x1096; void*x1097; void*x1098; void*x1099; void*x1100; void*x1101; void*x1102; void*x1103; void*x1104; void*x1105; void*x1106; void*x1107; void*x1108; void*x1109; void*x1110; void*x1111; void*x1112; void*x1113; void*x1114; void*x1115; void*x1116; void*x1117; void*x1118; void*x1119; void*x1120; void*x1121; void*x1122; void*x1123; void*x1124; void*x1125; void*x1126; void*x1127; void*x1128; void*x1129; void*x1130; void*x1131; void*x1132; void*x1133; void*x1134; void*x1135; void*x1136; void*x1137; void*x1138; void*x1139; void*x1140; void*x1141; void*x1142; void*x1143; void*x1144; void*x1145; void*x1146; void*x1147; void*x1148; void*x1149; void*x1150; void*x1151; void*x1152; void*x1153; void*x1154; void*x1155; void*x1156; void*x1157; void*x1158; void*x1159; void*x1160; void*x1161; void*x1162; void*x1163; void*x1164; void*x1165; void*x1166; void*x1167; void*x1168; void*x1169; void*x1170; void*x1171; void*x1172; void*x1173; void*x1174; void*x1175; void*x1176; void*x1177; void*x1178; void*x1179; void*x1180; void*x1181; void*x1182; void*x1183; void*x1184; void*x1185; void*x1186; void*x1187; void*x1188; void*x1189; void*x1190; void*x1191; void*x1192; void*x1193; void*x1194; void*x1195; void*x1196; void*x1197; void*x1198; void*x1199; void*x1200; void*x1201; void*x1202; void*x1203; void*x1204; void*x1205; void*x1206; void*x1207; void*x1208; void*x1209; void*x1210; void*x1211; void*x1212; void*x1213; void*x1214; void*x1215; void*x1216; void*x1217; void*x1218; void*x1219; void*x1220; void*x1221; void*x1222; void*x1223; void*x1224; void*x1225; void*x1226; void*x1227; void*x1228; void*x1229; void*x1230; void*x1231; void*x1232; void*x1233; void*x1234; void*x1235; void*x1236; void*x1237; void*x1238; void*x1239; void*x1240; void*x1241; void*x1242; void*x1243; void*x1244; void*x1245; void*x1246; void*x1247; void*x1248; void*x1249; void*x1250; void*x1251; void*x1252; void*x1253; void*x1254; void*x1255; void*x1256; void*x1257; void*x1258; void*x1259; void*x1260; void*x1261; void*x1262; void*x1263; void*x1264; void*x1265; void*x1266; void*x1267; void*x1268; void*x1269; void*x1270; void*x1271; void*x1272; void*x1273; void*x1274; void*x1275; void*x1276; void*x1277; void*x1278; void*x1279; void*x1280; void*x1281; void*x1282; void*x1283; void*x1284; void*x1285; void*x1286; char *x1287; void*x1288; void*x1289; void*x1290; void*x1291; void*x1292; void*x1293; void*x1294; void*x1295; void*x1296; void*x1297; void*x1298; void*x1299; void*x1300; void*x1301; void*x1302; void*x1303; void*x1304; void*x1305; void*x1306; id x1307; void*x1308; void*x1309; void*x1310; void*x1311; void*x1312; void*x1313; void*x1314; void*x1315; void*x1316; void*x1317; void*x1318; void*x1319; void*x1320; void*x1321; void*x1322; void*x1323; void*x1324; void*x1325; void*x1326; void*x1327; void*x1328; void*x1329; void*x1330; void*x1331; void*x1332; void*x1333; void*x1334; void*x1335; void*x1336; void*x1337; void*x1338; void*x1339; void*x1340; void*x1341; void*x1342; void*x1343; void*x1344; void*x1345; void*x1346; void*x1347; void*x1348; void*x1349; void*x1350; void*x1351; void*x1352; void*x1353; void*x1354; void*x1355; void*x1356; void*x1357; void*x1358; void*x1359; void*x1360; void*x1361; void*x1362; void*x1363; void*x1364; void*x1365; void*x1366; void*x1367; void*x1368; void*x1369; void*x1370; void*x1371; void*x1372; void*x1373; void*x1374; void*x1375; void*x1376; void*x1377; void*x1378; void*x1379; void*x1380; void*x1381; void*x1382; void*x1383; void*x1384; void*x1385; void*x1386; void*x1387; void*x1388; void*x1389; void*x1390; void*x1391; void*x1392; void*x1393; void*x1394; void*x1395; void*x1396; void*x1397; void*x1398; void*x1399; void*x1400; void*x1401; void*x1402; void*x1403; void*x1404; void*x1405; void*x1406; void*x1407; void*x1408; void*x1409; void*x1410; void*x1411; void*x1412; void*x1413; void*x1414; unsigned long long x1415; void*x1416; void*x1417; void*x1418; void*x1419; void*x1420; void*x1421; void*x1422; void*x1423; void*x1424; void*x1425; void*x1426; void*x1427; void*x1428; void*x1429; void*x1430; void*x1431; void*x1432; void*x1433; void*x1434; void*x1435; void*x1436; void*x1437; void*x1438; void*x1439; void*x1440; void*x1441; void*x1442; void*x1443; void*x1444; void*x1445; void*x1446; void*x1447; void*x1448; void*x1449; void*x1450; void*x1451; void*x1452; void*x1453; void*x1454; void*x1455; void*x1456; void*x1457; void*x1458; void*x1459; void*x1460; void*x1461; void*x1462; void*x1463; void*x1464; void*x1465; void*x1466; void*x1467; void*x1468; void*x1469; void*x1470; void*x1471; void*x1472; void*x1473; void*x1474; void*x1475; long long x1476; void*x1477; void*x1478; void*x1479; void*x1480; void*x1481; void*x1482; void*x1483; void*x1484; void*x1485; void*x1486; void*x1487; void*x1488; void*x1489; void*x1490; void*x1491; void*x1492; void*x1493; void*x1494; void*x1495; void*x1496; void*x1497; void*x1498; void*x1499; void*x1500; void*x1501; void*x1502; void*x1503; void*x1504; void*x1505; void*x1506; void*x1507; void*x1508; void*x1509; void*x1510; void*x1511; void*x1512; void*x1513; long doublex1514; unsigned long x1515; void*x1516; void*x1517; short x1518; void*x1519; bool x1520; void*x1521; float x1522; float x1523; void*x1524; const long x1525; long x1526; out BOOL x1527; void*x1528; void*x1529; out const long doublex1530; void*x1531; float x1532; void*x1533; void*x1534; long x1535; void*x1536; void*x1537; void*x1538; void*x1539; void*x1540; void*x1541; void*x1542; void*x1543; void*x1544; void*x1545; void*x1546; void*x1547; void*x1548; void*x1549; void*x1550; void*x1551; void*x1552; void*x1553; long long x1554; void*x1555; void*x1556; void*x1557; void*x1558; void*x1559; void*x1560; void*x1561; void*x1562; void*x1563; void*x1564; void*x1565; void*x1566; void*x1567; void*x1568; void*x1569; void*x1570; void*x1571; void*x1572; void*x1573; void*x1574; void*x1575; void*x1576; void*x1577; void*x1578; void*x1579; void*x1580; void*x1581; void*x1582; void*x1583; void*x1584; void*x1585; void*x1586; void*x1587; void*x1588; void*x1589; void*x1590; void*x1591; void*x1592; void*x1593; void*x1594; void*x1595; void*x1596; void*x1597; void*x1598; void*x1599; void*x1600; void*x1601; void*x1602; void*x1603; void*x1604; void*x1605; void*x1606; void*x1607; void*x1608; void*x1609; void*x1610; void*x1611; void*x1612; void*x1613; void*x1614; void*x1615; void*x1616; void*x1617; void*x1618; void*x1619; void*x1620; void*x1621; void*x1622; void*x1623; void*x1624; void*x1625; void*x1626; void*x1627; unsigned short x1628; void*x1629; void*x1630; void*x1631; void*x1632; void*x1633; void*x1634; void*x1635; void*x1636; void*x1637; void*x1638; void*x1639; void*x1640; void*x1641; void*x1642; void*x1643; void*x1644; void*x1645; void*x1646; void*x1647; void*x1648; void*x1649; void*x1650; void*x1651; void*x1652; void*x1653; void*x1654; void*x1655; void*x1656; void*x1657; void*x1658; void*x1659; void*x1660; void*x1661; void*x1662; void*x1663; void*x1664; void*x1665; void*x1666; void*x1667; void*x1668; void*x1669; void*x1670; void*x1671; void*x1672; void*x1673; void*x1674; void*x1675; void*x1676; void*x1677; void*x1678; void*x1679; void*x1680; void*x1681; void*x1682; void*x1683; void*x1684; void*x1685; void*x1686; void*x1687; void*x1688; void*x1689; void*x1690; void*x1691; void*x1692; void*x1693; void*x1694; void*x1695; void*x1696; void*x1697; void*x1698; void*x1699; void*x1700; void*x1701; void*x1702; void*x1703; void*x1704; void*x1705; void*x1706; void*x1707; void*x1708; void*x1709; void*x1710; void*x1711; void*x1712; void*x1713; void*x1714; void*x1715; void*x1716; void*x1717; void*x1718; void*x1719; void*x1720; void*x1721; void*x1722; void*x1723; void*x1724; void*x1725; void*x1726; void*x1727; void*x1728; void*x1729; void*x1730; unsigned short x1731; void*x1732; short x1733; void*x1734; void*x1735; void*x1736; void*x1737; unsigned long x1738; int x1739; unsigned int x1740/* : ? */; const void*x1741; const void*x1742; void*x1743; void*x1744; const int x1745; void x1746; void*x1747; void*x1748; void*x1749; void*x1750; const void*x1751; void*x1752; void*x1753; void*x1754; out const void*x1755; short x1756; void*x1757; void*x1758; void*x1759; out void*x1760; out unsigned long x1761; int x1762; unsigned int x1763/* : ? */; const void*x1764; const void*x1765; unsigned short x1766; void*x1767; const void x1768; int x1769; BOOL x1770; void*x1771; short x1772; void*x1773; float x1774; const void*x1775; void*x1776; void*x1777; void*x1778; out const void*x1779; void*x1780; void*x1781; void*x1782; out void*x1783; out unsigned long x1784; int x1785; unsigned int x1786/* : ? */; const void*x1787; const void*x1788; unsigned short x1789; void*x1790; const void x1791; int x1792; BOOL x1793; void*x1794; short x1795; void*x1796; void*x1797; void*x1798; void*x1799; void*x1800; long long x1801; void*x1802; void*x1803; void*x1804; void*x1805; void*x1806; void*x1807; void*x1808; void*x1809; void*x1810; void*x1811; struct x1812; void*x1813; void*x1814; void*x1815; short x1816; void*x1817; void*x1818; void*x1819; const void*x1820; void*x1821; void*x1822; BOOL x1823; void*x1824; void*x1825; void*x1826; void*x1827; void*x1828; unsigned char x1829; void*x1830; void*x1831; void*x1832; void*x1833; void*x1834; out void*x1835; int x1836; void*x1837; in void*x1838; void*x1839; void*x1840; void*x1841; void*x1842; struct x1843; void*x1844; void*x1845; void*x1846; float x1847; void*x1848; long x1849; void*x1850; out void*x1851; void*x1852; void*x1853; void*x1854; void*x1855; void*x1856; void*x1857; void*x1858; void*x1859; void*x1860; void*x1861; void*x1862; void*x1863; void*x1864; void*x1865; void*x1866; void*x1867; void*x1868; void*x1869; void*x1870; void*x1871; void*x1872; void*x1873; void*x1874; void*x1875; float x1876; void*x1877; long x1878; void*x1879; out void*x1880; void*x1881; void*x1882; void*x1883; void*x1884; void*x1885; void*x1886; void*x1887; void*x1888; void*x1889; void*x1890; void*x1891; void*x1892; void*x1893; void*x1894; void*x1895; void*x1896; void*x1897; void*x1898; void*x1899; void*x1900; void*x1901; void*x1902; void*x1903; void*x1904; }*)arg1;
+- (id)pk_childrenForAppearance;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

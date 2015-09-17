@@ -7,10 +7,12 @@
     NSObject<OS_dispatch_queue> *_executionQueue;
     NSMutableArray *_inputsForQueuedMessages;
     NSString *_name;
+    unsigned int _priority;
     NSMutableArray *_queuedMessages;
 }
 
 @property (nonatomic, readonly) NSString *name;
+@property (nonatomic, readonly) unsigned int priority;
 
 + (id)_currentPipelineStage;
 + (void)_setCurrentPipelineStage:(id)arg1;
@@ -24,6 +26,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)name;
+- (unsigned int)priority;
 - (void)sendMessage:(id)arg1 toInput:(id)arg2;
 
 @end

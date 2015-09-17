@@ -6,5 +6,6 @@
 
 + (id)identitiesWithProtectionSpace:(id)arg1;
 + (BOOL)isCertificateChain:(id)arg1 trustedForHost:(id)arg2;
++ (BOOL)shouldTreatSHA1SignedCertificatesAsInsecure;
 
 @end

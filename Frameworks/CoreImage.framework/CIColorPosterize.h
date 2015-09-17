@@ -17,7 +17,6 @@
 - (id)inputImage;
 - (id)inputLevels;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputImage:(id)arg1;
 - (void)setInputLevels:(id)arg1;
 

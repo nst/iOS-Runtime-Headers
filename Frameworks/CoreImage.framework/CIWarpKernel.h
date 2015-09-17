@@ -4,10 +4,17 @@
 
 @interface CIWarpKernel : CIKernel
 
-- (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 andArguments:(id)arg3;
-- (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 inputImage:(id)arg3 andArguments:(id)arg4;
++ (id)kernelWithString:(id)arg1;
+
+- (id)_initWithDict:(id)arg1;
+- (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 arguments:(id)arg3;
+- (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 arguments:(id)arg3 options:(id)arg4;
+- (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 cpuCallback:(id /* block */)arg3 colorManagement:(bool)arg4 andArguments:(id)arg5;
 - (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 inputImage:(id)arg3 arguments:(id)arg4;
-- (id)initWithDict:(id)arg1;
-- (id)initWithString:(id)arg1;
+- (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 inputImage:(id)arg3 arguments:(id)arg4 options:(id)arg5;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })autogenerateROI:(struct WarpKernel { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; char *x3; char *x4; bool x5; bool x6; struct SerialIntArray {} *x7; struct SerialStringArray {} *x8; bool x9; struct __CFString {} *x10; }*)arg1 args:(struct SerialObjectPtrArray { int x1; int x2; int x3; void **x4; }*)arg2 arguments:(id)arg3 extent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (id)generateGeneralKernelFromWarpKernel:(struct WarpKernel { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; char *x3; char *x4; bool x5; bool x6; struct SerialIntArray {} *x7; struct SerialStringArray {} *x8; bool x9; struct __CFString {} *x10; }*)arg1 args:(struct SerialObjectPtrArray { int x1; int x2; int x3; void **x4; }*)arg2;
+- (id)generateMainFromWarpKernel:(struct WarpKernel { int (**x1)(); struct Atomic { struct { int x_1_2_1; } x_2_1_1; } x2; char *x3; char *x4; bool x5; bool x6; struct SerialIntArray {} *x7; struct SerialStringArray {} *x8; bool x9; struct __CFString {} *x10; }*)arg1 args:(struct SerialObjectPtrArray { int x1; int x2; int x3; void **x4; }*)arg2;
+- (id)makeGridImage:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 nx:(int)arg2 ny:(int)arg3;
 
 @end

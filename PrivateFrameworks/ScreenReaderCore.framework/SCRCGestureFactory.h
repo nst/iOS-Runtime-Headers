@@ -66,6 +66,7 @@
             float x; 
             float y; 
         } lastDownPoint; 
+        float orbValue; 
     } _finger;
     unsigned short _fingerCount;
     float _flickVelocityThreshold;
@@ -224,6 +225,7 @@
 - (float)distance;
 - (struct CGPoint { float x1; float x2; })endLocation;
 - (unsigned int)fingerCount;
+- (float)firstFingerOrbValue;
 - (float)flickSpeed;
 - (int)gestureState;
 - (id)gestureStateString;

@@ -15,8 +15,14 @@
 @property (readonly) const void*bytes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly, copy) NSData *fm_md5Hash;
+@property (nonatomic, readonly, copy) NSData *fm_sha1Hash;
+@property (nonatomic, readonly, copy) NSData *fm_sha256Hash;
+@property (nonatomic, readonly, copy) NSData *fm_sha512Hash;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSString *hexString;
 @property (readonly) unsigned int length;
+@property (nonatomic, readonly) NSString *md5;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/AddressBook.framework/AddressBook
@@ -29,7 +35,7 @@
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
-- (BOOL)_isSafeResumeDataForBackgroundDownload:(int)arg1;
+- (BOOL)_isSafeResumeDataForBackgroundDownload;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -40,10 +46,12 @@
 - (id)CKBase64URLSafeString;
 - (id)CKHexString;
 - (id)CKLowercaseHexStringWithoutSpaces;
+- (id)CKSHA256;
 - (id)CKUppercaseHexStringWithoutSpaces;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
++ (BOOL)_base64DecodingAlwaysSucceedsForOptions:(unsigned int)arg1;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)data;
 + (id)dataWithBytes:(const void*)arg1 length:(unsigned int)arg2;
@@ -63,9 +71,11 @@
 - (BOOL)_canReplaceWithDispatchDataForXPCCoder;
 - (unsigned long)_cfTypeID;
 - (BOOL)_copyWillRetain;
+- (id)_createDispatchData;
 - (BOOL)_decodeBase64EncodedCharacterBuffer:(const char *)arg1 length:(unsigned int)arg2 options:(unsigned int)arg3 buffer:(char *)arg4 bufferLength:(unsigned int)arg5 state:(struct { BOOL x1; BOOL x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; }*)arg6;
 - (id)_initWithBase64EncodedObject:(id)arg1 options:(unsigned int)arg2;
 - (BOOL)_isCompact;
+- (BOOL)_isCompactAndReturnBytes:(const void**)arg1;
 - (BOOL)_isDispatchData;
 - (id)_replaceCString:(const char *)arg1 withCString:(const char *)arg2;
 - (id)_web_guessedMIMEType;
@@ -125,7 +135,9 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
+- (id)generateSHA1;
 - (id)shortDescription;
+- (id)stringInHexFormat;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
@@ -137,6 +149,11 @@
 
 - (id)gzipDeflate:(float)arg1;
 - (id)gzipInflate;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
++ (id)encodeCGPath:(struct CGPath { }*)arg1;
++ (struct CGPath { }*)newCGPathDecodedFromData:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AppleAccount.framework/AppleAccount
 
@@ -150,6 +167,10 @@
 
 - (void)MD5:(unsigned char)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
++ (id)dataWithIOSurface:(void*)arg1 usedSize:(unsigned long)arg2;
+
 // Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
 
 - (id)hexString;
@@ -157,7 +178,6 @@
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
 + (id)brc_pendingPlaceholderForPackage:(BOOL)arg1;
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
 
 - (unsigned int)br_qtnFlags;
 - (id)brc_SHA256WithSalt:(id)arg1;
@@ -166,13 +186,6 @@
 - (BOOL)brc_signatureIsPackage;
 - (BOOL)brc_signatureIsPendingPlaceHolder;
 - (BOOL)brc_signatureIsValid;
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
-// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
-
-+ (id)newFromSqliteValue:(struct Mem { }*)arg1;
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -188,9 +201,16 @@
 - (id)_CUTOptionallyDecompressData;
 - (id)_CUTStringFromBaseData;
 
+// Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
+
+- (id)_cn_decodeBase64;
+- (id)_cn_decodeBase64IgnoringWhitespace;
+
 // Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
+- (id)generateSHA1;
 - (id)shortDescription;
+- (id)stringInHexFormat;
 
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
 
@@ -204,12 +224,20 @@
 
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
-+ (id)dataWithHexString:(id)arg1;
-+ (id)dataWithHexString:(id)arg1 stringIsUppercase:(BOOL)arg2;
++ (id)da_dataWithHexString:(id)arg1;
++ (id)da_dataWithHexString:(id)arg1 stringIsUppercase:(BOOL)arg2;
 
+- (id)da_hexString;
+- (id)da_lowercaseHexStringWithoutSpaces;
+- (id)da_uppercaseHexStringWithoutSpaces;
+
+// Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
+
+- (id)fm_md5Hash;
+- (id)fm_sha1Hash;
+- (id)fm_sha256Hash;
+- (id)fm_sha512Hash;
 - (id)hexString;
-- (id)lowercaseHexStringWithoutSpaces;
-- (id)uppercaseHexStringWithoutSpaces;
 
 // Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
 
@@ -221,6 +249,7 @@
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 + (void)_gkLoadRemoteImageDataForURL:(id)arg1 queue:(id)arg2 handler:(id /* block */)arg3;
++ (void)_gkRequestClientsRemoteImageDataForURL:(id)arg1 queue:(id)arg2 reply:(id /* block */)arg3;
 
 - (id)_gkBase64EncodedString;
 - (id)_gkMD5HashData;
@@ -252,6 +281,11 @@
 
 - (id)_geo_newXPCData;
 - (id)_geo_uppercaseMD5HashString;
+
+// Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
+
+- (id)compress;
+- (id)uncompress;
 
 // Image: /System/Library/PrivateFrameworks/IDSFoundation.framework/IDSFoundation
 
@@ -308,6 +342,12 @@
 - (id)MCInitWithBase64String:(id)arg1;
 - (id)MCSHA1Hash;
 
+// Image: /System/Library/PrivateFrameworks/MobileBackup.framework/MobileBackup
+
++ (id)dataFromHexadecimalString:(id)arg1;
+
+- (id)hexadecimalString;
+
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
@@ -322,9 +362,26 @@
 
 - (void)MD5:(unsigned char)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
+- (id)md5;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)TT_gzipDeflate;
+- (id)TT_gzipInflate;
+
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; bool x7; struct SsrwOOStream {} *x8; }*)arg1;
++ (id)tc_nsDataWithOcBinaryData:(const struct OcBinaryData { int (**x1)(); unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; char *x6; bool x7; struct SsrwOOStream {} *x8; }*)arg1;
++ (id)tsu_decodeFromBase64CString:(const char *)arg1 srcLength:(unsigned int)arg2;
++ (id)tsu_decodeFromBase64String:(id)arg1;
++ (id)tsu_decodeFromBase64StringWithWhitespace:(id)arg1;
++ (id)tsu_decodeFromHexidecimalString:(id)arg1;
+
+- (id)tsu_encodeToBase64String;
+- (id)tsu_encodeToBase64URLSafeString;
+- (id)tsu_encodeToHexidecimalString;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
@@ -349,6 +406,35 @@
 
 - (id)propertyListForRadioResponseReturningError:(id*)arg1;
 - (id)propertyListForRadioResponseReturningError:(id*)arg1 unparsedResponseDictionary:(id*)arg2;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
+- (BOOL)safari_dataAppearsToBeCompressed;
+- (id)safari_dataByCompressingData;
+- (id)safari_dataByDecompressingData;
+
+// Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
+
++ (id)pu_dataFromHexString:(id)arg1;
+
+- (id)pu_hex;
+- (int)sd_compare:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
++ (BOOL)AES128CheckVerifier:(id)arg1 withPassword:(id)arg2;
++ (id)AES128GenerateVerifierWithPassword:(id)arg1;
+
+- (id)AES128DecryptWithPassword:(id)arg1;
+- (id)AES128EncryptWithPassword:(id)arg1;
+- (id)dictionaryFromNode:(struct _xmlNode { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; struct _xmlNs {} *x10; char *x11; struct _xmlAttr {} *x12; struct _xmlNs {} *x13; void *x14; unsigned short x15; unsigned short x16; }*)arg1 parentResult:(id)arg2 isParentContent:(BOOL)arg3;
+- (id)hexaStringRepresentation;
+- (id)hmacSha1Hash:(id)arg1;
+- (id)md5Hash;
+- (id)searchDataByXPathQuery:(struct _xmlDoc { void *x1; int x2; char *x3; struct _xmlNode {} *x4; struct _xmlNode {} *x5; struct _xmlNode {} *x6; struct _xmlNode {} *x7; struct _xmlNode {} *x8; struct _xmlDoc {} *x9; int x10; int x11; struct _xmlDtd {} *x12; struct _xmlDtd {} *x13; struct _xmlNs {} *x14; char *x15; char *x16; void *x17; void *x18; char *x19; int x20; struct _xmlDict {} *x21; void *x22; int x23; int x24; }*)arg1 query:(id)arg2;
+- (id)searchHTMLContentByXPathQuery:(id)arg1;
+- (id)sha1Hash;
+- (id)stringWithEncoding:(unsigned int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/StoreBookkeeper.framework/StoreBookkeeper
 
@@ -376,11 +462,9 @@
 - (id)_webkit_guessedMIMETypeForXML;
 - (id)_webkit_parseRFC822HeaderFields;
 
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+// Image: /System/Library/PrivateFrameworks/WelcomeKitCore.framework/WelcomeKitCore
 
-- (BOOL)safari_dataAppearsToBeCompressed;
-- (id)safari_dataByCompressingData;
-- (id)safari_dataByDecompressingData;
+- (id)wl_subdataWithRangeExcludingTrailingCrnl:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/YouTube.framework/YouTube
 
@@ -398,16 +482,34 @@
 
 + (id)tsp_dataFromDispatchData:(id)arg1;
 + (id)tsp_dataWithContentsOfURL:(id)arg1 decryptionKey:(id)arg2;
++ (id)tsu_decodeFromBase64CString:(const char *)arg1 srcLength:(unsigned int)arg2;
++ (id)tsu_decodeFromBase64String:(id)arg1;
++ (id)tsu_decodeFromBase64StringWithWhitespace:(id)arg1;
 
 - (id)tsp_dispatchData;
 - (id)tsp_dispatchDataWithApplier:(id /* block */)arg1;
 - (void)tsp_splitDataWithMaxSize:(unsigned long)arg1 subdataHandlerBlock:(id /* block */)arg2;
 - (BOOL)tsp_writeToURL:(id)arg1 encryptionKey:(id)arg2;
+- (id)tsu_encodeToBase64String;
+- (id)tsu_encodeToBase64URLSafeString;
+
+// Image: /System/Library/PrivateFrameworks/vCard.framework/vCard
+
++ (unsigned int)_cn_maxDataLengthFittingInBase64EncodingLength:(unsigned int)arg1;
+
+- (id)_cn_MD5Hash;
+- (id)_cn_encodeVCardBase64DataWithInitialLength:(unsigned int)arg1;
 
 // Image: /usr/lib/libnfshared.dylib
 
 + (id)NF_dataWithHexString:(id)arg1;
 
 - (id)NF_asHexString;
+
+// Image: /usr/lib/libprequelite.dylib
+
++ (id)newFromSqliteValue:(struct Mem { }*)arg1;
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

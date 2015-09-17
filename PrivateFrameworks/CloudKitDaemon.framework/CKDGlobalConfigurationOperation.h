@@ -11,6 +11,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *configurationFetchedGroup;
 
 - (void).cxx_destruct;
+- (unsigned long long)activityStart;
 - (id)configuration;
 - (id)configurationFetchedGroup;
 - (void)main;

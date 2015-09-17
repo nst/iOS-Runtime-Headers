@@ -4,8 +4,10 @@
 
 @interface SFRemoteHotspotSession : NSObject <SFCompanionXPCManagerObserver, SFRemoteHotspotClient> {
     BOOL _browsing;
+    unsigned long long _browsingActivity;
     <SFRemoteHotspotProtocol> *_connectionProxy;
     <SFRemoteHotspotSessionDelegate> *_delegate;
+    unsigned long long _enableActivity;
 }
 
 @property BOOL browsing;

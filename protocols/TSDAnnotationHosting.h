@@ -7,7 +7,6 @@
 
 - (TSKAnnotationAuthor *)author;
 - (void)commentWillBeAddedToDocumentRoot;
-- (void)commitText:(NSString *)arg1;
 - (NSDate *)date;
 - (<TSKModel> *)hostingModel;
 - (BOOL)isEqual:(id)arg1;

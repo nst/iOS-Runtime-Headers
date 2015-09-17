@@ -6,7 +6,7 @@
     _UIDefinitionValue *_definitionValue;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithDefinitionValue:(id)arg1;
 - (void)viewDidLoad;
 

@@ -4,7 +4,6 @@
 
 @interface CIHueBlendMode : CIBlendModeFilter
 
-+ (id)_filter_display_name;
 + (id)_kernel;
 
 - (id)outputImage;

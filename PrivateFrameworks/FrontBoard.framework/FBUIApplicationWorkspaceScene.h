@@ -45,9 +45,10 @@
 - (void)_workspaceQueue_takeSEOProcessAssertionWithTransitionContext:(id)arg1;
 - (void)_workspaceQueue_takeSuspendingProcessAssertion;
 - (void)dealloc;
+- (void)host:(id)arg1 configureWithInitialClientSettings:(id)arg2;
 - (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
-- (id)initWithParentWorkspace:(id)arg1 host:(id)arg2 initialClientSettings:(id)arg3;
+- (id)initWithParentWorkspace:(id)arg1 host:(id)arg2;
 - (id)parentWorkspace;
 
 @end

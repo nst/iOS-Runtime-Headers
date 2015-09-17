@@ -4,16 +4,29 @@
 
 @interface AFUIApplicationSiriTaskDeliverer : NSObject <AFSiriTaskDelivering> {
     NSString *_appBundleIdentifier;
+    BKSApplicationStateMonitor *_appStateMonitor;
+    AFWatchdogTimer *_assertionTimer;
+    BKSProcessAssertion *_bKSAssertionForBgLaunch;
+    NSObject<OS_dispatch_group> *_group;
+    NSObject<OS_dispatch_queue> *_queue;
+    AFSiriTaskmaster *_taskmaster;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (nonatomic) AFSiriTaskmaster *taskmaster;
 
 - (void).cxx_destruct;
+- (void)_invalidateAssertionTimer;
+- (void)_invalidateBackboardServices;
+- (id)_queue;
 - (void)deliverSiriTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)description;
 - (id)initWithAppBundleIdentifier:(id)arg1;
+- (void)setTaskmaster:(id)arg1;
+- (void)siriTaskDidFinish;
+- (id)taskmaster;
 
 @end

@@ -8,6 +8,7 @@
     GEOMapItemStorage *geoMapItemStorage;
     CLLocation *location;
     CLRegion *region;
+    NSTimeZone *timeZone;
 }
 
 @end

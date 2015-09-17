@@ -23,10 +23,10 @@
 
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (retain) UIView *contentView;
-@property (nonatomic, retain) NSData *contents;
+@property (nonatomic, copy) NSData *contents;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSString *fileType;
+@property (nonatomic, copy) NSString *fileType;
 @property (nonatomic, retain) NSFileWrapper *fileWrapper;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *image;
@@ -37,6 +37,7 @@
 
 - (id)_cacheKey;
 - (id)_image;
+- (void)_invalidateWrapperView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attachmentBoundsForTextContainer:(id)arg1 proposedLineFragment:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 glyphPosition:(struct CGPoint { float x1; float x2; })arg3 characterIndex:(unsigned int)arg4;
 - (id)attachmentCell;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
@@ -50,6 +51,7 @@
 - (id)fileWrapper;
 - (id)image;
 - (id)imageForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 textContainer:(id)arg2 characterIndex:(unsigned int)arg3;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 ofType:(id)arg2;
 - (id)initWithFileWrapper:(id)arg1;

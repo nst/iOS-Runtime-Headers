@@ -7,24 +7,26 @@
 - (BOOL)canDisplayMultipleRightBarButtonItems;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionsLevelSectionHeaderContentInset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionsLevelSectionHeaderHighlightInset;
-- (int)collectionsLevelThumbnailFormat;
+- (struct CGSize { float x1; float x2; })collectionsLevelThumbnailSize;
+- (float)collectionsSectionHeaderHeight;
 - (int)collectionsSectionHeaderStyle;
 - (void)configureCollectionsLevelGridLayout:(id)arg1 forWidth:(float)arg2;
 - (void)configureFullMomentsLevelGridLayout:(id)arg1 forWidth:(float)arg2;
 - (void)configureYearsLevelGridLayout:(id)arg1 forWidth:(float)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })fullMomentsLevelSectionHeaderContentInset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })fullMomentsLevelSectionHeaderHighlightInset;
-- (int)fullMomentsLevelThumbnailFormat;
+- (struct CGSize { float x1; float x2; })fullMomentsLevelThumbnailSize;
+- (float)fullMomentsSectionHeaderHeight;
 - (int)fullMomentsSectionHeaderStyle;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })magnifiedDragEdgeInsets;
-- (int)magnifiedImageFormat;
 - (struct CGSize { float x1; float x2; })magnifiedImageSize;
 - (float)magnifiedYOffset;
 - (id)mapViewControllerSpec;
 - (id)newGridSpec;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })yearsLevelSectionHeaderContentInset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })yearsLevelSectionHeaderHighlightInset;
-- (int)yearsLevelThumbnailFormat;
+- (struct CGSize { float x1; float x2; })yearsLevelThumbnailSize;
+- (float)yearsSectionHeaderHeight;
 - (int)yearsSectionHeaderStyle;
 
 @end

@@ -4,16 +4,19 @@
 
 @interface WorldClockManager : NSObject {
     NSMutableArray *_cities;
+    WorldClockPreferences *_defaults;
     BOOL _dirty;
     NSTimer *_weatherUpdateTimer;
     NSDate *lastModified;
 }
 
-@property (nonatomic, readonly, retain) NSArray *cities;
+@property (nonatomic, readonly) NSArray *cities;
 @property (nonatomic, retain) NSDate *lastModified;
 
 + (id)sharedManager;
++ (id)sharedManagerWithPreferences:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_notifyNano;
 - (unsigned int)addCity:(id)arg1;
 - (void)addDefaultCitiesIfNeeded;
@@ -21,8 +24,8 @@
 - (BOOL)checkIfCitiesModified;
 - (id)cities;
 - (id)cityWithIdUrl:(id)arg1;
-- (void)dealloc;
 - (id)fixUpCityProperties:(id)arg1;
+- (id)initWithPreferences:(id)arg1;
 - (id)lastModified;
 - (void)loadCities;
 - (void)moveCityFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;

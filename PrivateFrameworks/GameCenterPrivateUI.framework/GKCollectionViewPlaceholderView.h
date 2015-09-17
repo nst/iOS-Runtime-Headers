@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKCollectionViewPlaceholderView : UICollectionReusableView <GKStateMachineDelegate> {
+@interface GKCollectionViewPlaceholderView : UICollectionReusableView <_GKStateMachineDelegate> {
     int _alignment;
     NSArray *_cachedConstraints;
     NSString *_errorMessage;

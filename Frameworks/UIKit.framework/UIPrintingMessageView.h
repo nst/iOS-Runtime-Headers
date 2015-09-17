@@ -7,7 +7,7 @@
     UILabel *_title;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initInView:(id)arg1 title:(id)arg2;
 - (void)setMessage:(id)arg1;
 

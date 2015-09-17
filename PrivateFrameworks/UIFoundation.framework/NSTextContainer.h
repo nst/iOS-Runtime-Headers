@@ -34,10 +34,11 @@
 @property (nonatomic) BOOL heightTracksTextView;
 @property (readonly) BOOL isSimpleRectangularTextContainer;
 @property (nonatomic) NSLayoutManager *layoutManager;
-@property (nonatomic) int layoutOrientation;
+@property (nonatomic, readonly) int layoutOrientation;
 @property (nonatomic) int lineBreakMode;
 @property (nonatomic) float lineFragmentPadding;
 @property (nonatomic) unsigned int maximumNumberOfLines;
+@property (getter=isSimpleRectangularTextContainer, nonatomic, readonly) BOOL simpleRectangularTextContainer;
 @property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic) BOOL widthTracksTextView;
 
@@ -86,6 +87,12 @@
 - (struct CGPoint { float x1; float x2; })textContainerOrigin;
 - (id)textView;
 - (BOOL)widthTracksTextView;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (struct CGSize { float x1; float x2; })akContainerSize;
+- (void)akSetContainerSize:(struct CGSize { float x1; float x2; })arg1;
+- (id)initWithContainerSize:(struct CGSize { float x1; float x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

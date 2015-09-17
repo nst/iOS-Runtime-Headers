@@ -14,11 +14,13 @@
 @property (nonatomic) unsigned int arrowDirections;
 @property (nonatomic) <_UIRotatingAlertControllerDelegate> *rotatingSheetDelegate;
 
+- (void).cxx_destruct;
 - (void)_didRotateAndLayout;
+- (BOOL)_shouldAbortAdaptationFromTraitCollection:(id)arg1 toTraitCollection:(id)arg2 withTransitionCoordinator:(id)arg3;
 - (void)_updateSheetPositionAfterRotation;
 - (unsigned int)arrowDirections;
 - (void)dealloc;
-- (void)didRotate;
+- (void)didRotate:(id)arg1;
 - (void)doneWithSheet;
 - (id)init;
 - (BOOL)presentSheet;
@@ -26,6 +28,6 @@
 - (id)rotatingSheetDelegate;
 - (void)setArrowDirections:(unsigned int)arg1;
 - (void)setRotatingSheetDelegate:(id)arg1;
-- (void)willRotate;
+- (void)willRotate:(id)arg1;
 
 @end

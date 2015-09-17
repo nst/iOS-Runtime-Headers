@@ -8,6 +8,7 @@
         unsigned int count; 
         unsigned int size; 
     } _additionalTransportTypes;
+    GEOAutomobileOptions *_automobileOptions;
     int _basicPointsToBeIncluded;
     struct { 
         unsigned int timepoint : 1; 
@@ -38,21 +39,28 @@
     NSString *_phoneticLocaleIdentifier;
     struct { 
         double _time; 
-        int _flexibility; 
         int _type; 
         struct { 
             unsigned int time : 1; 
-            unsigned int flexibility : 1; 
             unsigned int type : 1; 
         } _has; 
     } _timepoint;
     int _trafficType;
+    GEOTransitOptions *_transitOptions;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _uiContexts;
     unsigned int _walkingLimitMeters;
+    GEOWalkingOptions *_walkingOptions;
 }
 
 @property (nonatomic, readonly) int*additionalTransportTypes;
 @property (nonatomic, readonly) unsigned int additionalTransportTypesCount;
+@property (nonatomic, retain) GEOAutomobileOptions *automobileOptions;
 @property (nonatomic) int basicPointsToBeIncluded;
+@property (nonatomic, readonly) BOOL hasAutomobileOptions;
 @property (nonatomic) BOOL hasBasicPointsToBeIncluded;
 @property (nonatomic) BOOL hasIncludeContingencyRoutes;
 @property (nonatomic) BOOL hasIncludeHistoricTravelTime;
@@ -67,7 +75,9 @@
 @property (nonatomic, readonly) BOOL hasPhoneticLocaleIdentifier;
 @property (nonatomic) BOOL hasTimepoint;
 @property (nonatomic) BOOL hasTrafficType;
+@property (nonatomic, readonly) BOOL hasTransitOptions;
 @property (nonatomic) BOOL hasWalkingLimitMeters;
+@property (nonatomic, readonly) BOOL hasWalkingOptions;
 @property (nonatomic) BOOL includeContingencyRoutes;
 @property (nonatomic) BOOL includeHistoricTravelTime;
 @property (nonatomic) BOOL includeLaneGuidance;
@@ -79,21 +89,31 @@
 @property (nonatomic) BOOL includeZilchPoints;
 @property (nonatomic) int mainTransportType;
 @property (nonatomic, retain) NSString *phoneticLocaleIdentifier;
-@property (nonatomic) struct { double x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; } timepoint;
+@property (nonatomic) struct { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; } timepoint;
 @property (nonatomic) int trafficType;
+@property (nonatomic, retain) GEOTransitOptions *transitOptions;
+@property (nonatomic, readonly) int*uiContexts;
+@property (nonatomic, readonly) unsigned int uiContextsCount;
 @property (nonatomic) unsigned int walkingLimitMeters;
+@property (nonatomic, retain) GEOWalkingOptions *walkingOptions;
+
++ (id)defaultRouteAttributes;
 
 - (void)addAdditionalTransportType:(int)arg1;
+- (void)addUiContext:(int)arg1;
 - (int)additionalTransportTypeAtIndex:(unsigned int)arg1;
 - (int*)additionalTransportTypes;
 - (unsigned int)additionalTransportTypesCount;
+- (id)automobileOptions;
 - (int)basicPointsToBeIncluded;
 - (void)clearAdditionalTransportTypes;
+- (void)clearUiContexts;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAutomobileOptions;
 - (BOOL)hasBasicPointsToBeIncluded;
 - (BOOL)hasIncludeContingencyRoutes;
 - (BOOL)hasIncludeHistoricTravelTime;
@@ -108,7 +128,9 @@
 - (BOOL)hasPhoneticLocaleIdentifier;
 - (BOOL)hasTimepoint;
 - (BOOL)hasTrafficType;
+- (BOOL)hasTransitOptions;
 - (BOOL)hasWalkingLimitMeters;
+- (BOOL)hasWalkingOptions;
 - (unsigned int)hash;
 - (BOOL)includeContingencyRoutes;
 - (BOOL)includeHistoricTravelTime;
@@ -125,6 +147,7 @@
 - (id)phoneticLocaleIdentifier;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAdditionalTransportTypes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setAutomobileOptions:(id)arg1;
 - (void)setBasicPointsToBeIncluded:(int)arg1;
 - (void)setHasBasicPointsToBeIncluded:(BOOL)arg1;
 - (void)setHasIncludeContingencyRoutes:(BOOL)arg1;
@@ -151,12 +174,20 @@
 - (void)setIncludeZilchPoints:(BOOL)arg1;
 - (void)setMainTransportType:(int)arg1;
 - (void)setPhoneticLocaleIdentifier:(id)arg1;
-- (void)setTimepoint:(struct { double x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })arg1;
+- (void)setTimepoint:(struct { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })arg1;
 - (void)setTrafficType:(int)arg1;
+- (void)setTransitOptions:(id)arg1;
+- (void)setUiContexts:(int*)arg1 count:(unsigned int)arg2;
 - (void)setWalkingLimitMeters:(unsigned int)arg1;
-- (struct { double x1; int x2; int x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 1; unsigned int x_4_1_3 : 1; } x4; })timepoint;
+- (void)setWalkingOptions:(id)arg1;
+- (struct { double x1; int x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })timepoint;
 - (int)trafficType;
+- (id)transitOptions;
+- (int)uiContextAtIndex:(unsigned int)arg1;
+- (int*)uiContexts;
+- (unsigned int)uiContextsCount;
 - (unsigned int)walkingLimitMeters;
+- (id)walkingOptions;
 - (void)writeTo:(id)arg1;
 
 @end

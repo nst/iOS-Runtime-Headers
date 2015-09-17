@@ -13,13 +13,13 @@
     SBLockOverlayStylePropertiesFactory *_underlayPropertiesFactory;
 }
 
-@property (nonatomic, readonly) UIButton *actionButton;
+@property (nonatomic, readonly, retain) UIButton *actionButton;
 @property (nonatomic) <SBUILockOverlayViewDelegate> *delegate;
-@property (nonatomic, readonly) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, readonly, retain) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic, readonly) unsigned int style;
-@property (nonatomic, readonly) UILabel *subtitleLabel;
-@property (nonatomic, readonly) UILabel *titleLabel;
-@property (nonatomic, readonly) SBLockOverlayStylePropertiesFactory *underlayPropertiesFactory;
+@property (nonatomic, readonly, retain) UILabel *subtitleLabel;
+@property (nonatomic, readonly, retain) UILabel *titleLabel;
+@property (nonatomic, readonly, retain) SBLockOverlayStylePropertiesFactory *underlayPropertiesFactory;
 
 - (id)_actionFont;
 - (void)_buttonPressed;

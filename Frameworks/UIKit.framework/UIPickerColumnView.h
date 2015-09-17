@@ -57,6 +57,7 @@
 @property (nonatomic, readonly) int selectionBarRow;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_allVisibleCells;
 - (void)_centerTableInContainer:(id)arg1;
 - (BOOL)_containsTable:(id)arg1;
@@ -81,7 +82,6 @@
 - (void)beginUpdates;
 - (id)cellForRowAtIndexPath:(id)arg1;
 - (void)clearDataSourceAndDelegate;
-- (void)dealloc;
 - (void)endUpdates;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 tableFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 middleBarHeight:(float)arg3 rowHeight:(float)arg4 pickerView:(id)arg5 transform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg6;
 - (BOOL)isRowChecked:(int)arg1;

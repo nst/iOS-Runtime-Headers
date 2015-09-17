@@ -6,6 +6,7 @@
 @optional
 
 - (void)match:(GKMatch *)arg1 didFailWithError:(NSError *)arg2;
+- (void)match:(GKMatch *)arg1 didReceiveData:(NSData *)arg2 forRecipient:(GKPlayer *)arg3 fromRemotePlayer:(GKPlayer *)arg4;
 - (void)match:(GKMatch *)arg1 didReceiveData:(NSData *)arg2 fromPlayer:(NSString *)arg3;
 - (void)match:(GKMatch *)arg1 didReceiveData:(NSData *)arg2 fromRemotePlayer:(GKPlayer *)arg3;
 - (void)match:(GKMatch *)arg1 player:(GKPlayer *)arg2 didChangeConnectionState:(int)arg3;

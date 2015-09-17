@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProductDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSProductNativeViewControllerDelegate, MusicMediaProductHeaderContentViewControllerDelegate> {
+@interface MusicMediaProductDetailViewController : MusicMediaDetailViewController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSProductNativeViewControllerDelegate, MusicMediaProductHeaderContentViewControllerDelegate, UIViewControllerRestoration> {
     BOOL _allowsProductHairline;
     MPArtworkCatalog *_artworkCatalog;
     UIBarButtonItem *_cancelButtonItem;
@@ -29,7 +29,6 @@
         float height; 
     } _previousMaximumHeaderSize;
     UIViewController *_relatedContentViewController;
-    BOOL _shouldAutomaticallyDismissUponExitingEditingMode;
     <MusicEntityProviding> *_tracklistEntityProvider;
 }
 
@@ -45,11 +44,12 @@
 @property (nonatomic, retain) MusicMediaProductHeaderContentViewController *headerContentViewController;
 @property (nonatomic, retain) MusicMediaDetailHeaderViewController *headerViewController;
 @property (nonatomic, readonly) int presentationSource;
-@property (nonatomic) BOOL shouldAutomaticallyDismissUponExitingEditingMode;
 @property (nonatomic, readonly) MusicMediaProductSplitDetailViewController *splitDetailViewController;
 @property (nonatomic, retain) MusicMediaProductSplitMainViewController *splitMainViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <MusicEntityProviding> *tracklistEntityProvider;
+
++ (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void).cxx_destruct;
 - (BOOL)_calculateHeaderContentViewControllerEditing;
@@ -84,6 +84,7 @@
 - (void)dealloc;
 - (void)detailTintInformationDidChange;
 - (id)editedContentArtworkImage;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 existingJSProductNativeViewController:(id)arg4;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 existingJSProductNativeViewController:(id)arg4 forContentCreation:(BOOL)arg5;
 - (BOOL)isForContentCreation;
@@ -98,11 +99,10 @@
 - (void)mediaProductHeaderContentViewControllerDidUpdateEditableText:(id)arg1;
 - (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (int)presentationSource;
+- (id)previewMenuItems;
 - (void)setClientContext:(id)arg1;
 - (void)setEditedContentArtworkImage:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)setShouldAutomaticallyDismissUponExitingEditingMode:(BOOL)arg1;
-- (BOOL)shouldAutomaticallyDismissUponExitingEditingMode;
 - (void)showingSplitDetailViewControllerDidChange;
 - (id)tracklistEntityProvider;
 - (void)traitCollectionDidChange:(id)arg1;

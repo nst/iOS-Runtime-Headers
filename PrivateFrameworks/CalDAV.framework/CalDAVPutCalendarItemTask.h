@@ -9,10 +9,9 @@
 @property (nonatomic) <CalDAVPutCalendarItemTaskDelegate> *delegate;
 @property (nonatomic, retain) NSString *previousScheduleTag;
 
+- (void).cxx_destruct;
 - (id)additionalHeaderValues;
-- (void)dealloc;
 - (id)description;
-- (id)initWithDataPayload:(id)arg1 dataContentType:(id)arg2 atURL:(id)arg3 previousETag:(id)arg4;
 - (id)previousScheduleTag;
 - (void)setPreviousScheduleTag:(id)arg1;
 

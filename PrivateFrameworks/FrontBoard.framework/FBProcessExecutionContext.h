@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBProcessExecutionContext : NSObject {
+@interface FBProcessExecutionContext : NSObject <NSCopying, NSMutableCopying> {
     NSArray *_arguments;
     BOOL _checkForLeaks;
     BOOL _disableASLR;
@@ -13,30 +13,33 @@
     NSURL *_standardOutputURL;
     BOOL _waitForDebugger;
     double _watchdogExtension;
+    double _watchdogScaleFactor;
 }
 
-@property (nonatomic, retain) NSArray *arguments;
+@property (nonatomic, copy) NSArray *arguments;
 @property (nonatomic) BOOL checkForLeaks;
 @property (nonatomic) BOOL disableASLR;
-@property (nonatomic, retain) NSDictionary *environment;
+@property (nonatomic, copy) NSDictionary *environment;
 @property (nonatomic) unsigned int launchAssertionFlags;
 @property (nonatomic) int launchIntent;
 @property (nonatomic, retain) NSURL *standardErrorURL;
 @property (nonatomic, retain) NSURL *standardOutputURL;
 @property (nonatomic) BOOL waitForDebugger;
 @property (nonatomic) double watchdogExtension;
+@property (nonatomic) double watchdogScaleFactor;
 
-+ (double)watchdogIntervalForLaunchIntent:(int)arg1;
-
+- (id)_initWithExecutionContext:(id)arg1;
 - (unsigned int)_launchAssertionFlags;
-- (double)_launchWatchdogInterval;
 - (id)arguments;
 - (BOOL)checkForLeaks;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (BOOL)disableASLR;
 - (id)environment;
+- (id)init;
 - (unsigned int)launchAssertionFlags;
 - (int)launchIntent;
+- (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (void)setArguments:(id)arg1;
 - (void)setCheckForLeaks:(BOOL)arg1;
 - (void)setDisableASLR:(BOOL)arg1;
@@ -47,9 +50,11 @@
 - (void)setStandardOutputURL:(id)arg1;
 - (void)setWaitForDebugger:(BOOL)arg1;
 - (void)setWatchdogExtension:(double)arg1;
+- (void)setWatchdogScaleFactor:(double)arg1;
 - (id)standardErrorURL;
 - (id)standardOutputURL;
 - (BOOL)waitForDebugger;
 - (double)watchdogExtension;
+- (double)watchdogScaleFactor;
 
 @end

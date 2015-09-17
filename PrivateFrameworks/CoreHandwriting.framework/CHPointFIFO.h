@@ -8,10 +8,10 @@
 
 @property (nonatomic, retain) CHPointFIFO *nextFIFO;
 
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addPoint;
 - (void)clear;
 - (void)dealloc;
-- (void)emitPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)emitPoint;
 - (void)flush;
 - (id)initWithFIFO:(id)arg1;
 - (id)nextFIFO;

@@ -21,7 +21,6 @@
 @property (readonly) struct CGPoint { float x1; float x2; } vertex2;
 @property (readonly) struct CGPoint { float x1; float x2; } vertex3;
 
-- (id).cxx_construct;
 - (id)initWithString:(id)arg1 score:(double)arg2 rotation:(float)arg3 vertex1:(struct CGPoint { float x1; float x2; })arg4 vertex2:(struct CGPoint { float x1; float x2; })arg5 vertex3:(struct CGPoint { float x1; float x2; })arg6;
 - (struct CGPoint { float x1; float x2; })vertex1;
 - (struct CGPoint { float x1; float x2; })vertex2;

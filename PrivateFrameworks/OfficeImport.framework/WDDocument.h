@@ -10,6 +10,7 @@
     NSMutableArray *mChangeTrackingEditAuthors;
     NSMutableArray *mChangeTrackingEditDates;
     WDCitationTable *mCitationTable;
+    OADColorMap *mColorMap;
     NSDate *mCreationDate;
     unsigned short mDefaultTabWidth;
     OADBackground *mDocumentBackground;
@@ -35,6 +36,7 @@
     NSString *mKinsokuAltBreakAfter;
     NSString *mKinsokuAltBreakBefore;
     unsigned int mKinsokuStrict;
+    NSString *mLanguage;
     WDListDefinitionTable *mListDefinitionTable;
     WDListTable *mListTable;
     unsigned int mMirrorMargins;
@@ -51,13 +53,10 @@
     unsigned int mShowOutline;
     unsigned int mShowRevisionMarksOnScreen;
     WDStyleSheet *mStyleSheet;
-    OADTheme *mTheme;
     unsigned int mTrackChanges;
     NSString *mVersion;
     short mZoomPercentage;
 }
-
-+ (id)impliedColorMap;
 
 - (void)addChangeTrackingEditAtDate:(id)arg1 authorIndex:(int)arg2;
 - (void)addCitation:(id)arg1 forID:(id)arg2;
@@ -78,6 +77,7 @@
 - (unsigned int)citationCount;
 - (id)citationFor:(id)arg1;
 - (id)citationTable;
+- (id)colorMap;
 - (id)creationDate;
 - (void)dealloc;
 - (unsigned short)defaultTabWidth;
@@ -112,11 +112,13 @@
 - (id)kinsokuAltBreakAfter;
 - (id)kinsokuAltBreakBefore;
 - (BOOL)kinsokuStrict;
+- (id)language;
 - (id)lastModDate;
 - (id)lastSection;
 - (id)listDefinitionTable;
 - (id)listDefinitionWithListDefinitionId:(long)arg1;
 - (id)listDefinitionWithListId:(long)arg1;
+- (id)listLevelWithListId:(long)arg1 levelIndex:(unsigned char)arg2;
 - (id)listTable;
 - (id)listWithListId:(long)arg1;
 - (id)mainBlocksIterator;
@@ -147,6 +149,7 @@
 - (void)setBookFold:(BOOL)arg1;
 - (void)setBorderSurroundFooter:(BOOL)arg1;
 - (void)setBorderSurroundHeader:(BOOL)arg1;
+- (void)setColorMap:(id)arg1;
 - (void)setCreationDate:(id)arg1;
 - (void)setDefaultTabWidth:(unsigned short)arg1;
 - (void)setDocumentBackground:(id)arg1;
@@ -162,6 +165,7 @@
 - (void)setKinsokuAltBreakAfter:(id)arg1;
 - (void)setKinsokuAltBreakBefore:(id)arg1;
 - (void)setKinsokuStrict:(BOOL)arg1;
+- (void)setLanguage:(id)arg1;
 - (void)setLastModDate:(id)arg1;
 - (void)setMirrorMargins:(BOOL)arg1;
 - (void)setNoTabForHangingIndents:(BOOL)arg1;
@@ -182,7 +186,6 @@
 - (BOOL)showOutline;
 - (BOOL)showRevisionMarksOnScreen;
 - (id)styleSheet;
-- (id)theme;
 - (BOOL)trackChanges;
 - (id)version;
 - (short)zoomPercentage;

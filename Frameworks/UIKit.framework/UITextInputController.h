@@ -14,6 +14,7 @@
     <UITextInputDelegate> *_inputDelegate;
     NSLayoutManager *_layoutManager;
     _UITextServiceSession *_learnSession;
+    _UITextServiceSession *_lookupSession;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -28,6 +29,7 @@
         unsigned int length; 
     } _previousSelectedRange;
     _UITextKitTextRange *_selectedTextRange;
+    _UITextServiceSession *_shareSession;
     UITextChecker *_textChecker;
     UITextInputTraits *_textInputTraits;
     struct { 
@@ -74,7 +76,7 @@
 @property (nonatomic) <UITextInputDelegate> *inputDelegate;
 @property (nonatomic) int keyboardAppearance;
 @property (nonatomic) int keyboardType;
-@property (nonatomic, retain) NSLayoutManager *layoutManager;
+@property (nonatomic) NSLayoutManager *layoutManager;
 @property (nonatomic, readonly) UITextRange *markedTextRange;
 @property (nonatomic, copy) NSDictionary *markedTextStyle;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } previousSelectedRange;
@@ -89,6 +91,7 @@
 @property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
 @property (nonatomic, copy) NSDictionary *typingAttributes;
 
+- (void).cxx_destruct;
 - (void)_addShortcut:(id)arg1;
 - (void)_addToTypingAttributes:(id)arg1 value:(id)arg2;
 - (id)_attributesForReplacementInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -113,6 +116,7 @@
 - (void)_deleteForwardAndNotify:(BOOL)arg1;
 - (void)_deleteToEndOfLine;
 - (void)_deleteToStartOfLine;
+- (void)_detachFromLayoutManager;
 - (id)_emptyStringAttributes;
 - (void)_ensureSelectionValid;
 - (void)_ensureSelectionVisible;
@@ -138,12 +142,15 @@
 - (void)_insertText:(id)arg1 fromKeyboard:(BOOL)arg2;
 - (void)_invalidateEmptyStringAttributes;
 - (void)_invalidateTypingAttributes;
+- (BOOL)_isDisplayingLookupViewController;
 - (BOOL)_isDisplayingReferenceLibraryViewController;
+- (BOOL)_isDisplayingShareViewController;
 - (BOOL)_isDisplayingShortcutViewController;
 - (BOOL)_isEmptySelection;
 - (BOOL)_isSecureTextEntry;
 - (id)_keyInput;
 - (id)_layoutManager;
+- (void)_lookup:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_mightHaveSelection;
 - (void)_moveCurrentSelection:(int)arg1;
 - (id)_moveDown:(BOOL)arg1 withHistory:(id)arg2;
@@ -161,21 +168,28 @@
 - (id)_newAttributedStringForInsertionOfText:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)_newPhraseBoundaryGestureRecognizer;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_nsrangeForTextRange:(id)arg1;
+- (int)_opposingDirectionFromDirection:(int)arg1;
 - (id)_parentScrollView;
 - (void)_performWhileSuppressingDelegateNotifications:(id /* block */)arg1;
 - (void)_phraseBoundaryGesture:(id)arg1;
 - (id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2;
 - (id)_positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4;
+- (id)_positionFromPosition:(id)arg1 pastTextUnit:(int)arg2 inDirection:(int)arg3;
+- (id)_positionWithinRange:(id)arg1 farthestInDirection:(int)arg2;
 - (void)_promptForReplace:(id)arg1;
 - (id)_proxyTextInput;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeForBackwardsDelete;
 - (id)_rangeOfEnclosingWord:(id)arg1;
 - (id)_rangeOfLineEnclosingPosition:(id)arg1;
 - (id)_rangeOfParagraphEnclosingPosition:(id)arg1;
+- (id)_rangeOfSentenceEnclosingPosition:(id)arg1;
 - (id)_rangeOfText:(id)arg1 endingAtPosition:(id)arg2;
+- (id)_rangeOfTextUnit:(int)arg1 enclosingPosition:(id)arg2;
+- (id)_rangeSpanningTextUnit:(int)arg1 andPosition:(id)arg2;
 - (id)_rectsForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)_registerUndoOperationForReplacementWithActionName:(id)arg1 replacementText:(id)arg2;
 - (void)_removeDefinitionController;
+- (void)_removeShareController;
 - (void)_removeShortcutController;
 - (void)_replaceCurrentWordWithText:(id)arg1;
 - (void)_resetShowingTextStyle:(id)arg1;
@@ -208,6 +222,7 @@
 - (void)_setUndoRedoInProgress:(BOOL)arg1;
 - (void)_setWhitelistedTypingAttributes:(id)arg1;
 - (void)_setupTextContainerView:(id)arg1;
+- (void)_share:(id)arg1;
 - (BOOL)_shouldConsiderTextViewForGeometry:(id)arg1;
 - (BOOL)_shouldHandleResponderAction:(SEL)arg1;
 - (BOOL)_shouldPerformUICalloutBarButtonReplaceAction:(SEL)arg1 forText:(id)arg2 checkAutocorrection:(BOOL)arg3;
@@ -248,7 +263,6 @@
 - (BOOL)continuousSpellCheckingEnabled;
 - (void)copy:(id)arg1;
 - (void)cut:(id)arg1;
-- (void)dealloc;
 - (void)decreaseSize:(id)arg1;
 - (id)delegate;
 - (void)delegateWillChangeAttributedText:(id)arg1;

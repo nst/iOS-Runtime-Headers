@@ -10,7 +10,7 @@
     unsigned int _totalFragmentCount;
 }
 
-@property (nonatomic, readonly) NSData *data;
+@property (nonatomic, readonly, retain) NSData *data;
 @property (nonatomic, readonly) unsigned int fragmentIndex;
 @property (nonatomic, readonly) unsigned int fragmentedMessageID;
 @property (nonatomic, readonly) unsigned int totalFragmentCount;

@@ -22,7 +22,9 @@
 
 + (id)createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3 foregroundStyle:(id)arg4;
 
+- (void).cxx_destruct;
 - (BOOL)_shouldAnimatePropertyWithKey:(id)arg1;
+- (BOOL)_shouldReverseLayoutDirection;
 - (float)addContentOverlap:(float)arg1;
 - (float)adjustFrameToNewSize:(float)arg1;
 - (BOOL)allowsUpdates;

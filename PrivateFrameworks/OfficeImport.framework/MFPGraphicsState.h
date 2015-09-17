@@ -21,7 +21,6 @@
     } mWorldTransform;
 }
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithDefaults;
 - (id)initWithGraphicsState:(id)arg1;

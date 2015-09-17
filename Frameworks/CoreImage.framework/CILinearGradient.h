@@ -22,7 +22,6 @@
 - (id)inputPoint0;
 - (id)inputPoint1;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputColor0:(id)arg1;
 - (void)setInputColor1:(id)arg1;
 - (void)setInputPoint0:(id)arg1;

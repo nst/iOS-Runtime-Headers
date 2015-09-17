@@ -11,7 +11,13 @@
 @optional
 
 - (NSURL *)attribution_url;
+- (BOOL)card_padding_bottom;
+- (BOOL)card_padding_top;
+- (BOOL)hide_divider;
 - (void)setAttribution_url:(NSURL *)arg1;
+- (void)setCard_padding_bottom:(BOOL)arg1;
+- (void)setCard_padding_top:(BOOL)arg1;
+- (void)setHide_divider:(BOOL)arg1;
 - (void)setUrl:(NSURL *)arg1;
 - (NSURL *)url;
 

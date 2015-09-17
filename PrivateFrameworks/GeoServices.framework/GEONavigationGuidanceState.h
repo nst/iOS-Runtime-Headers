@@ -3,35 +3,58 @@
  */
 
 @interface GEONavigationGuidanceState : PBCodable <NSCopying> {
+    int _guidanceLevel;
     struct { 
+        unsigned int guidanceLevel : 1; 
         unsigned int navigationState : 1; 
         unsigned int trackedTransportType : 1; 
+        unsigned int shouldSuppressCellularDataAlerts : 1; 
     } _has;
     int _navigationState;
+    BOOL _shouldSuppressCellularDataAlerts;
     int _trackedTransportType;
 }
 
+@property (nonatomic) int guidanceLevel;
+@property (nonatomic) BOOL hasGuidanceLevel;
 @property (nonatomic) BOOL hasNavigationState;
+@property (nonatomic) BOOL hasShouldSuppressCellularDataAlerts;
 @property (nonatomic) BOOL hasTrackedTransportType;
 @property (nonatomic) int navigationState;
+@property (nonatomic) BOOL shouldSuppressCellularDataAlerts;
 @property (nonatomic) int trackedTransportType;
+
++ (BOOL)_currentLocationInsideTrackingRegionForRoute:(id)arg1 location:(id)arg2;
++ (BOOL)_currentLocationInsideTurnByTurnRegionForRoute:(id)arg1 location:(id)arg2;
++ (BOOL)_currentTimeInsideTrackingRegionForRoute:(id)arg1 location:(id)arg2;
++ (int)routeGuidanceLevelForLocation:(id)arg1 route:(id)arg2 withCurrentGuidanceLevel:(int)arg3;
++ (int)routeGuidanceLevelForLocation:(id)arg1 route:(id)arg2 withCurrentGuidanceLevel:(int)arg3 ignoreTimeCriterion:(BOOL)arg4;
 
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (int)guidanceLevel;
+- (BOOL)hasGuidanceLevel;
 - (BOOL)hasNavigationState;
+- (BOOL)hasShouldSuppressCellularDataAlerts;
 - (BOOL)hasTrackedTransportType;
 - (unsigned int)hash;
+- (id)initWithGuidanceLevel:(int)arg1;
 - (id)initWithTransportType:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)navigationState;
 - (BOOL)readFrom:(id)arg1;
+- (void)setGuidanceLevel:(int)arg1;
+- (void)setHasGuidanceLevel:(BOOL)arg1;
 - (void)setHasNavigationState:(BOOL)arg1;
+- (void)setHasShouldSuppressCellularDataAlerts:(BOOL)arg1;
 - (void)setHasTrackedTransportType:(BOOL)arg1;
 - (void)setNavigationState:(int)arg1;
+- (void)setShouldSuppressCellularDataAlerts:(BOOL)arg1;
 - (void)setTrackedTransportType:(int)arg1;
+- (BOOL)shouldSuppressCellularDataAlerts;
 - (int)trackedTransportType;
 - (void)writeTo:(id)arg1;
 

@@ -18,6 +18,7 @@
 - (void)requestContent:(id)arg1 highPriority:(BOOL)arg2;
 - (id)requestFetch:(id)arg1;
 - (id)requestFullSync:(id)arg1;
+- (id)requestHaltSync:(id)arg1;
 - (id)requestMoreMessages:(id)arg1;
 - (void)requestMoreMessagesForConversation:(id)arg1;
 - (void)setDelegate:(id)arg1;

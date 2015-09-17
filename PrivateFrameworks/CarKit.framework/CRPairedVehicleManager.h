@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (void)_blockOnServiceSemaphore:(id)arg1;
+- (void)_releaseAllServiceSemaphores;
 - (id)_serviceSemaphore;
 - (id)allVehicles;
 - (id)init;
@@ -27,5 +28,6 @@
 - (void)setService:(id)arg1;
 - (void)setServiceConnection:(id)arg1;
 - (id)vehicleForBluetoothAddress:(id)arg1;
+- (id)vehicleNameForWiFiUUID:(id)arg1;
 
 @end

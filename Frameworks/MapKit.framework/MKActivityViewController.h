@@ -4,6 +4,7 @@
 
 @interface MKActivityViewController : UIActivityViewController <UIActivityViewControllerDelegate> {
     <MKActivityViewControllerDelegate> *_activityControllerDelegate;
+    MKMapItem *_mapItem;
 }
 
 @property (nonatomic) <MKActivityViewControllerDelegate> *activityControllerDelegate;
@@ -19,8 +20,8 @@
 - (void)activityViewControllerDidFinishAirdropTransfer:(id)arg1;
 - (id)initWithMapItem:(id)arg1 contact:(id)arg2 applicationActivities:(id)arg3;
 - (id)initWithMapItem:(id)arg1 contact:(id)arg2 applicationActivities:(id)arg3 activityProviderDelegate:(id)arg4;
-- (id)initWithSource:(id)arg1 destination:(id)arg2 applicationActivities:(id)arg3;
-- (id)initWithSource:(id)arg1 destination:(id)arg2 applicationActivities:(id)arg3 routeProviderDelegate:(id)arg4;
+- (id)initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 applicationActivities:(id)arg4;
+- (id)initWithSource:(id)arg1 destination:(id)arg2 transportType:(unsigned int)arg3 applicationActivities:(id)arg4 routeProviderDelegate:(id)arg5;
 - (void)setActivityControllerDelegate:(id)arg1;
 
 @end

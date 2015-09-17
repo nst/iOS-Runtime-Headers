@@ -3,7 +3,7 @@
  */
 
 @interface MFAttachmentComposeManager : MFAttachmentManager {
-    NSMutableArray *_composeAttachments;
+    NSMutableArray *_composeAttachmentURLs;
 }
 
 - (id)_composeAttachmentDataProviderForContext:(id)arg1;

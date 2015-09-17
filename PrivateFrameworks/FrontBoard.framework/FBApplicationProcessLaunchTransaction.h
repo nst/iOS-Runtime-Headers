@@ -2,37 +2,35 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBApplicationProcessLaunchTransaction : FBTransaction <FBApplicationProcessObserver> {
+@interface FBApplicationProcessLaunchTransaction : FBTransaction {
     NSString *_bundleID;
     FBWaitForProcessDeathTransaction *_deathTransaction;
     FBProcessExecutionContext *_executionContext;
     id /* block */ _executionContextProvider;
     BOOL _exited;
     BOOL _failedLaunch;
+    int _interruptedOrComplete;
     FBApplicationProcess *_process;
-    BOOL _processIsValid;
     FBProcessManager *_processManager;
 }
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL exited;
 @property (nonatomic, readonly) BOOL failedLaunch;
-@property (readonly) unsigned int hash;
 @property (nonatomic, readonly, retain) FBApplicationProcess *process;
-@property (readonly) Class superclass;
 
 - (void)_begin;
 - (BOOL)_canBeInterrupted;
 - (void)_childTransactionDidComplete:(id)arg1;
 - (id)_customizedDescriptionProperties;
 - (void)_didComplete;
+- (void)_queue_finishProcessLaunch:(BOOL)arg1;
 - (void)_queue_launchProcess:(id)arg1;
 - (void)_queue_noteExited;
+- (void)_queue_processWillLaunch:(id)arg1;
+- (BOOL)_shouldFailForChildTransaction:(id)arg1;
+- (void)_willComplete;
+- (void)_willInterruptWithReason:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)applicationProcessDidExit:(id)arg1 withContext:(id)arg2;
-- (void)applicationProcessDidLaunch:(id)arg1;
-- (void)applicationProcessWillLaunch:(id)arg1;
 - (void)dealloc;
 - (BOOL)exited;
 - (BOOL)failedLaunch;

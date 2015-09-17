@@ -8,8 +8,8 @@
     ICSDateValue *_start;
 }
 
+- (void).cxx_destruct;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
-- (void)dealloc;
 - (id)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (id)end;

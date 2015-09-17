@@ -26,7 +26,9 @@
 @property (nonatomic, retain) UIActivityIndicatorView *spinner;
 @property (nonatomic, retain) GKStoreItemInternal *storeItem;
 
+- (void)_commonInit;
 - (void)applyConstraints;
+- (void)awakeFromNib;
 - (id)button;
 - (void)buttonPressed:(id)arg1;
 - (void)configureButtonWithTitle:(id)arg1 state:(unsigned int)arg2 imageName:(id)arg3;

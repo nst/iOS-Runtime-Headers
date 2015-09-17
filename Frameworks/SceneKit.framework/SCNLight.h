@@ -4,17 +4,20 @@
 
 @interface SCNLight : NSObject <NSCopying, NSSecureCoding, SCNAnimatable, SCNTechniqueSupport> {
     SCNOrderedDictionary *_animations;
-    float _attenuations;
+    float _attenuationEndDistance;
+    float _attenuationFalloffExponent;
+    float _attenuationStartDistance;
+    unsigned int _baked;
     unsigned int _castsShadow;
     unsigned int _categoryBitMask;
     id _color;
     SCNMaterialProperty *_gobo;
     unsigned int _goboProjectShadows;
     unsigned int _isPresentationInstance;
-    struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4[6]; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_5_1_1; } x5; union C3DVector2 { float x_6_1_1[2]; struct { float x_2_2_1; float x_2_2_2; } x_6_1_2; struct { float x_3_2_1; float x_3_2_2; } x_6_1_3; struct { float x_4_2_1; float x_4_2_2; } x_6_1_4; } x6; float x7; float x8; unsigned int x9; unsigned int x10; bool x11; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; double x15; double x16; double x17; struct __C3DEffectSlot {} *x18; struct __C3DFXTechnique {} *x19; } *_light;
+    struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4; float x5; float x6; float x7; float x8; float x9; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_10_1_1; } x10; float x11; float x12; unsigned int x13; unsigned int x14; bool x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; double x22; double x23; double x24; struct __C3DEffectSlot {} *x25; struct __C3DFXTechnique {} *x26; void *x27; } *_light;
+    MDLLightProbe *_mkLightProbe;
     NSString *_name;
     float _orthographicScale;
-    id _reserved;
     double _shadowBias;
     id _shadowColor;
     struct CGSize { 
@@ -23,6 +26,11 @@
     } _shadowMapSize;
     float _shadowRadius;
     unsigned int _shadowSampleCount;
+    unsigned int _shouldBakeDirectLighting;
+    unsigned int _shouldBakeIndirectLighting;
+    float _spotFalloffExponent;
+    float _spotInnerAngle;
+    float _spotOuterAngle;
     SCNTechnique *_technique;
     NSString *_type;
     unsigned int _usesDeferredShadows;
@@ -31,6 +39,7 @@
     double _zNear;
 }
 
+@property (readonly) NSArray *animationKeys;
 @property (nonatomic) float attenuationEndDistance;
 @property (nonatomic) float attenuationFalloffExponent;
 @property (nonatomic) float attenuationStartDistance;
@@ -57,9 +66,10 @@
 @property (nonatomic) float zFar;
 @property (nonatomic) float zNear;
 
-+ (id)SCNJSExportProtocol;
 + (id)light;
-+ (id)lightWithLightRef:(struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4[6]; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_5_1_1; } x5; union C3DVector2 { float x_6_1_1[2]; struct { float x_2_2_1; float x_2_2_2; } x_6_1_2; struct { float x_3_2_1; float x_3_2_2; } x_6_1_3; struct { float x_4_2_1; float x_4_2_2; } x_6_1_4; } x6; float x7; float x8; unsigned int x9; unsigned int x10; bool x11; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; double x15; double x16; double x17; struct __C3DEffectSlot {} *x18; struct __C3DFXTechnique {} *x19; }*)arg1;
++ (id)lightWithLightRef:(struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4; float x5; float x6; float x7; float x8; float x9; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_10_1_1; } x10; float x11; float x12; unsigned int x13; unsigned int x14; bool x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; double x22; double x23; double x24; struct __C3DEffectSlot {} *x25; struct __C3DFXTechnique {} *x26; void *x27; }*)arg1;
++ (id)lightWithMDLLight:(id)arg1;
++ (id)lightWithMDLLightProbe:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void*)__CFObject;
@@ -75,7 +85,7 @@
 - (void)addAnimation:(id)arg1 forKey:(id)arg2;
 - (id)animationForKey:(id)arg1;
 - (id)animationKeys;
-- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; struct _opaque_pthread_mutex_t { long x_16_1_1; BOOL x_16_1_2[40]; } x16; int x17; int x18; int x19; int x20; }*)animationManager;
+- (struct __C3DAnimationManager { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DModelValueStorage {} *x2; struct __CFDictionary {} *x3; struct __CFDictionary {} *x4; struct __CFSet {} *x5; struct __CFArray {} *x6; bool x7; bool x8; bool x9; struct _C3DAnimationPendingEvent {} *x10; struct __C3DAllocator {} *x11; struct __CFDictionary {} *x12; struct __CFArray {} *x13; double x14; double x15; double x16; struct _opaque_pthread_mutex_t { long x_17_1_1; BOOL x_17_1_2[40]; } x17; int x18; int x19; int x20; int x21; }*)animationManager;
 - (float)attenuationEndDistance;
 - (float)attenuationFalloffExponent;
 - (float)attenuationStartDistance;
@@ -84,7 +94,7 @@
 - (unsigned int)categoryBitMask;
 - (id)color;
 - (id)copy;
-- (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1;
+- (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 animation:(id)arg2;
 - (struct __C3DAnimationChannel { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __C3DAnimation {} *x2; struct __CFArray {} *x3; void *x4; struct __C3DModelTarget {} *x5; struct __CFString {} *x6; }*)copyAnimationChannelForKeyPath:(id)arg1 property:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -93,12 +103,14 @@
 - (id)gobo;
 - (id)identifier;
 - (id)init;
-- (id)initPresentationLightWithLightRef:(struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4[6]; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_5_1_1; } x5; union C3DVector2 { float x_6_1_1[2]; struct { float x_2_2_1; float x_2_2_2; } x_6_1_2; struct { float x_3_2_1; float x_3_2_2; } x_6_1_3; struct { float x_4_2_1; float x_4_2_2; } x_6_1_4; } x6; float x7; float x8; unsigned int x9; unsigned int x10; bool x11; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; double x15; double x16; double x17; struct __C3DEffectSlot {} *x18; struct __C3DFXTechnique {} *x19; }*)arg1;
+- (id)initPresentationLightWithLightRef:(struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4; float x5; float x6; float x7; float x8; float x9; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_10_1_1; } x10; float x11; float x12; unsigned int x13; unsigned int x14; bool x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; double x22; double x23; double x24; struct __C3DEffectSlot {} *x25; struct __C3DFXTechnique {} *x26; void *x27; }*)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLightRef:(struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4[6]; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_5_1_1; } x5; union C3DVector2 { float x_6_1_1[2]; struct { float x_2_2_1; float x_2_2_2; } x_6_1_2; struct { float x_3_2_1; float x_3_2_2; } x_6_1_3; struct { float x_4_2_1; float x_4_2_2; } x_6_1_4; } x6; float x7; float x8; unsigned int x9; unsigned int x10; bool x11; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; double x15; double x16; double x17; struct __C3DEffectSlot {} *x18; struct __C3DFXTechnique {} *x19; }*)arg1;
+- (id)initWithLightRef:(struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4; float x5; float x6; float x7; float x8; float x9; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_10_1_1; } x10; float x11; float x12; unsigned int x13; unsigned int x14; bool x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; double x22; double x23; double x24; struct __C3DEffectSlot {} *x25; struct __C3DFXTechnique {} *x26; void *x27; }*)arg1;
 - (BOOL)isAnimationForKeyPaused:(id)arg1;
+- (BOOL)isBaked;
 - (BOOL)isPausedOrPausedByInheritance;
-- (struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4[6]; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_5_1_1; } x5; union C3DVector2 { float x_6_1_1[2]; struct { float x_2_2_1; float x_2_2_2; } x_6_1_2; struct { float x_3_2_1; float x_3_2_2; } x_6_1_3; struct { float x_4_2_1; float x_4_2_2; } x_6_1_4; } x6; float x7; float x8; unsigned int x9; unsigned int x10; bool x11; unsigned int x12 : 1; unsigned int x13 : 1; unsigned int x14 : 1; double x15; double x16; double x17; struct __C3DEffectSlot {} *x18; struct __C3DFXTechnique {} *x19; }*)lightRef;
+- (struct __C3DLight { struct __C3DEntity { struct __CFRuntimeBase { unsigned int x_1_2_1; unsigned char x_1_2_2[4]; } x_1_1_1; void *x_1_1_2; struct __CFString {} *x_1_1_3; struct __CFString {} *x_1_1_4; struct __CFDictionary {} *x_1_1_5; int x_1_1_6; int x_1_1_7; } x1; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_2_1_1; } x2; long x3; float x4; float x5; float x6; float x7; float x8; float x9; struct C3DColor4 { union { float x_1_2_1[4]; struct { float x_2_3_1; float x_2_3_2; float x_2_3_3; float x_2_3_4; } x_1_2_2; } x_10_1_1; } x10; float x11; float x12; unsigned int x13; unsigned int x14; bool x15; unsigned int x16 : 1; unsigned int x17 : 1; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; double x22; double x23; double x24; struct __C3DEffectSlot {} *x25; struct __C3DFXTechnique {} *x26; void *x27; }*)lightRef;
+- (id)mkLightProbe;
 - (id)name;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (float)orthographicScale;
@@ -115,10 +127,12 @@
 - (void)setAttenuationFalloffExponent:(float)arg1;
 - (void)setAttenuationStartDistance:(float)arg1;
 - (void)setAttribute:(id)arg1 forKey:(id)arg2;
+- (void)setBaked:(BOOL)arg1;
 - (void)setCastsShadow:(BOOL)arg1;
 - (void)setCategoryBitMask:(unsigned int)arg1;
 - (void)setColor:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setMkLightProbe:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setOrthographicScale:(float)arg1;
 - (void)setShadowBias:(float)arg1;
@@ -127,6 +141,8 @@
 - (void)setShadowMode:(int)arg1;
 - (void)setShadowRadius:(float)arg1;
 - (void)setShadowSampleCount:(unsigned int)arg1;
+- (void)setShouldBakeDirectLighting:(BOOL)arg1;
+- (void)setShouldBakeIndirectLighting:(BOOL)arg1;
 - (void)setSpotFalloffExponent:(float)arg1;
 - (void)setSpotInnerAngle:(float)arg1;
 - (void)setSpotOuterAngle:(float)arg1;
@@ -142,6 +158,8 @@
 - (int)shadowMode;
 - (float)shadowRadius;
 - (unsigned int)shadowSampleCount;
+- (BOOL)shouldBakeDirectLighting;
+- (BOOL)shouldBakeIndirectLighting;
 - (float)spotFalloffExponent;
 - (float)spotInnerAngle;
 - (float)spotOuterAngle;

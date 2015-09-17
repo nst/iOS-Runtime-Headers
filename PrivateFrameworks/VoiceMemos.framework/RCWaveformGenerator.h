@@ -96,6 +96,7 @@
 - (BOOL)finished;
 - (void)flushPendingCapturedSampleBuffers;
 - (BOOL)idle;
+- (id)init;
 - (id)initWithSamplingParametersFromGenerator:(id)arg1;
 - (id)initWithSegmentFlushInterval:(double)arg1;
 - (BOOL)loadable;

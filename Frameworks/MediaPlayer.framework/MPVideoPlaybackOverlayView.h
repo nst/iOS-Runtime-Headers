@@ -4,6 +4,7 @@
 
 @interface MPVideoPlaybackOverlayView : UIView <MPDetailSliderDelegate, MPVideoOverlay, UIPopoverPresentationControllerDelegate> {
     BOOL _allowsExitFromFullscreen;
+    BOOL _allowsPictureInPicture;
     UIButton *_audioAndSubtitlesButton;
     MPAudioAndSubtitlesController *_audioAndSubtitlesController;
     BOOL _automaticallyHandleTransportControls;
@@ -23,6 +24,7 @@
     MPKnockoutButton *_leftButton;
     UIActivityIndicatorView *_loadingIndicator;
     UILabel *_loadingLabel;
+    MPKnockoutButton *_pictureInPictureButton;
     MPKnockoutButton *_playPauseButton;
     MPAVController *_player;
     MPKnockoutButton *_rightButton;
@@ -55,6 +57,7 @@
 
 @property (nonatomic) BOOL allowsDetailScrubbing;
 @property (nonatomic) BOOL allowsExitFromFullscreen;
+@property (nonatomic) BOOL allowsPictureInPicture;
 @property (nonatomic) BOOL allowsScrubbing;
 @property (nonatomic) BOOL allowsWirelessPlayback;
 @property (nonatomic) BOOL automaticallyHandleTransportControls;
@@ -98,6 +101,7 @@
 - (void)_notifyDelegateOfUserEventCancel:(int)arg1;
 - (void)_notifyDelegateOfUserEventEnd:(int)arg1;
 - (void)_observeControl:(id)arg1;
+- (void)_pictureInPictureButtonTapped:(id)arg1;
 - (void)_playPauseButtonTapped:(id)arg1;
 - (void)_playbackStateChanged:(id)arg1;
 - (void)_registerForItemNotifications:(id)arg1;
@@ -121,6 +125,7 @@
 - (int)adaptivePresentationStyleForPresentationController:(id)arg1;
 - (BOOL)allowsDetailScrubbing;
 - (BOOL)allowsExitFromFullscreen;
+- (BOOL)allowsPictureInPicture;
 - (BOOL)allowsScrubbing;
 - (BOOL)allowsWirelessPlayback;
 - (BOOL)automaticallyHandleTransportControls;
@@ -142,12 +147,14 @@
 - (void)layoutSubviews;
 - (id)navigationBar;
 - (BOOL)navigationBarHidden;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)player;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)removeFromSuperview;
 - (void)setAllowsDetailScrubbing:(BOOL)arg1;
 - (void)setAllowsExitFromFullscreen:(BOOL)arg1;
+- (void)setAllowsPictureInPicture:(BOOL)arg1;
 - (void)setAllowsScrubbing:(BOOL)arg1;
 - (void)setAllowsWirelessPlayback:(BOOL)arg1;
 - (void)setAutomaticallyHandleTransportControls:(BOOL)arg1;

@@ -17,19 +17,19 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id)_configureDataProvider:(id)arg1;
+- (id)_configureDataProvider:(id)arg1 performMigration:(BOOL)arg2;
 - (id)_configureSectionInfo:(id)arg1 forDataProvider:(id)arg2;
 - (id)_queue_dataProviderForUniversalSectionID:(id)arg1;
 - (id)_queue_getSectionInfoForSectionID:(id)arg1;
 - (id)dataProviderForSectionID:(id)arg1;
-- (void)dataProviderStore:(id)arg1 didAddDataProvider:(id)arg2 completion:(id /* block */)arg3;
+- (void)dataProviderStore:(id)arg1 didAddDataProvider:(id)arg2 performMigration:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)dataProviderStore:(id)arg1 didAddParentSectionFactory:(id)arg2;
 - (void)dataProviderStore:(id)arg1 didRemoveDataProvider:(id)arg2;
 - (void)dealloc;
 - (id)debugDescription;
 - (id)debugDescriptionWithChildren:(unsigned int)arg1;
 - (id)initWithDelegate:(id)arg1 queue:(id)arg2;
-- (void)loadAllDataProviders;
+- (void)loadAllDataProvidersAndPerformMigration:(BOOL)arg1;
 - (id)localSectionIdentifierFromDismissalSectionIdentifer:(id)arg1;
 - (void)noteSettingsChanged:(id)arg1 forSectionID:(id)arg2;
 - (id)parentSectionDataProviderFactoryForSectionID:(id)arg1;

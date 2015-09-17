@@ -12,14 +12,22 @@
 
 - (BOOL)key_nowrap;
 - (int)key_weight;
+- (NSString *)punchout_picker_dismiss_label;
+- (NSString *)punchout_picker_label;
+- (NSArray *)punchouts;
 - (void)setKey_nowrap:(BOOL)arg1;
 - (void)setKey_weight:(int)arg1;
+- (void)setPunchout_picker_dismiss_label:(NSString *)arg1;
+- (void)setPunchout_picker_label:(NSString *)arg1;
+- (void)setPunchouts:(NSArray *)arg1;
 - (void)setValue:(NSString *)arg1;
 - (void)setValue_image:(PRSImage *)arg1;
+- (void)setValue_image_align:(NSString *)arg1;
 - (void)setValue_nowrap:(BOOL)arg1;
 - (void)setValue_weight:(int)arg1;
 - (NSString *)value;
 - (PRSImage *)value_image;
+- (NSString *)value_image_align;
 - (BOOL)value_nowrap;
 - (int)value_weight;
 

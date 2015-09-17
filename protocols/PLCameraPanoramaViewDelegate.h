@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)panoramaView:(CAMPanoramaView *)arg1 didChangeDirection:(int)arg2;
+- (void)panoramaView:(CMKPanoramaView *)arg1 didChangeDirection:(int)arg2;
 
 @end

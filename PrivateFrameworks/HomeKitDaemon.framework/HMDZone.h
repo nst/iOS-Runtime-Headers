@@ -31,6 +31,7 @@
 - (void)_handleRemoveRoom:(id)arg1;
 - (void)_handleRename:(id)arg1;
 - (void)_registerForMessages;
+- (id)assistantUniqueIdentifier;
 - (void)configure:(id)arg1 queue:(id)arg2;
 - (id)currentRooms;
 - (void)dealloc;
@@ -51,6 +52,7 @@
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (id)url;
 - (id)uuid;
 - (id)workQueue;
 

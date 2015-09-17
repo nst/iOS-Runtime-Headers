@@ -68,6 +68,7 @@
 - (void)_setGratisIdentifiers:(id)arg1 error:(id)arg2;
 - (void)_setInstalledItems:(id)arg1;
 - (void)_setPurchaseHistoryItemsWithIdentifiers:(id)arg1;
+- (void)_setPurchaseHistoryVPPItemsWithIdentifiers:(id)arg1;
 - (id)_setStateFlag:(unsigned int)arg1 forItemsWithIdentifiers:(id)arg2 sendNotification:(BOOL)arg3;
 - (id)_setStateFlag:(unsigned int)arg1 forOnlyItemsWithIdentifiers:(id)arg2 sendNotification:(BOOL)arg3;
 - (void)_updatesStoreChangeNotification:(id)arg1;

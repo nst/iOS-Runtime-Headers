@@ -8,21 +8,21 @@
     NSProgress *_progress;
     id /* block */ _progressHandler;
     NSObject<OS_dispatch_queue> *_queue;
-    BOOL _stopped;
+    BOOL _started;
     id _subscriber;
 }
 
 @property (nonatomic, readonly) BRQueryItem *item;
 @property (nonatomic, copy) id /* block */ progressHandler;
-@property (nonatomic) NSObject<OS_dispatch_queue> *queue;
 
+- (void)_subscribe;
+- (void)_unsubscribe;
 - (void)dealloc;
 - (id)description;
 - (id)initWithItem:(id)arg1;
 - (id)item;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id /* block */)progressHandler;
-- (id)queue;
 - (void)setProgressHandler:(id /* block */)arg1;
 - (void)setQueue:(id)arg1;
 - (void)start;

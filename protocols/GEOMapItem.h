@@ -24,7 +24,8 @@
 - (BOOL)isEventAllDay;
 - (BOOL)isValid;
 - (NSString *)name;
+- (int)referenceFrame;
 - (NSString *)spokenNameForLocale:(NSString *)arg1;
-- (NSString *)timezone;
+- (NSTimeZone *)timezone;
 
 @end

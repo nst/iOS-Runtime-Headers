@@ -3,6 +3,7 @@
  */
 
 @interface CNFRegLocaleController : CNFRegFirstRunController <CNFRegRegionChooserDelegate> {
+    id /* block */ _completionBlock;
     PSSpecifier *_countryFieldSpecifier;
     NSString *_currentPhoneValue;
     NSString *_currentRegionID;
@@ -15,6 +16,7 @@
     id _regionListChangeObserver;
 }
 
+@property (copy) id /* block */ completionBlock;
 @property (nonatomic, copy) NSString *currentPhoneValue;
 @property (nonatomic, copy) NSString *currentRegionID;
 @property (readonly, copy) NSString *debugDescription;
@@ -23,6 +25,7 @@
 @property (nonatomic, retain) NSArray *regionData;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_buildCountryFieldSpecifierCache:(id)arg1;
 - (void)_buildPhoneNumberSpecifierCache:(id)arg1;
 - (void)_buildSpecifierCache:(id)arg1;
@@ -37,6 +40,7 @@
 - (id)_phoneTextField;
 - (void)_refreshCountryFieldAnimated:(BOOL)arg1;
 - (void)_refreshPhoneFieldAnimated:(BOOL)arg1;
+- (id)_rightButtonItem;
 - (void)_rightButtonTapped;
 - (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setupEventHandlers;
@@ -49,6 +53,7 @@
 - (void)_updateControllerState;
 - (void)_updateUI;
 - (id)bundle;
+- (id /* block */)completionBlock;
 - (id)controllerForSpecifier:(id)arg1;
 - (id)countryList;
 - (id)currentCountryValueForSpecifier:(id)arg1;
@@ -56,12 +61,13 @@
 - (id)currentPhoneNumberForSpecifier:(id)arg1;
 - (id)currentPhoneValue;
 - (id)currentRegionID;
-- (void)dealloc;
+- (void)dismiss;
 - (void)hideCountryPicker;
 - (id)initWithRegController:(id)arg1;
 - (id)logName;
 - (void)regionChooser:(id)arg1 selectedRegionID:(id)arg2;
 - (id)regionData;
+- (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setCurrentPhoneNumber:(id)arg1 forSpecifier:(id)arg2;
 - (void)setCurrentPhoneValue:(id)arg1;
 - (void)setCurrentRegionID:(id)arg1;

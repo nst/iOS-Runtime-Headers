@@ -23,6 +23,7 @@
 + (id)alignmentInfo;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (unsigned int)hash;
 - (int)horizontalAlignment;
 - (int)indent;

@@ -6,6 +6,7 @@
     NSXPCConnection *_connection;
     bool _initializationComplete;
     id _remote;
+    struct __CFRunLoop { } *_rl;
     NSTimer *_timer;
     NSArray *clientProperties;
     BrightnessSystemClientExportedObj *exportedObj;

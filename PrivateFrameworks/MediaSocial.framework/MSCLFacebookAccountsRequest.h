@@ -5,12 +5,14 @@
 @interface MSCLFacebookAccountsRequest : NSObject {
     MSCLAccountStore *_accountStore;
     id /* block */ _responseBlock;
+    NSMutableDictionary *_services;
 }
 
 - (void).cxx_destruct;
 - (void)_finishWithPages:(id)arg1 accessToken:(id)arg2 error:(id)arg3;
 - (void)_getPagesWithAccessToken:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)_pagesWithResponseDictionary:(id)arg1;
+- (void)_updateCredentialsForAccount:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithAccountStore:(id)arg1;
 - (void)startWithResponseBlock:(id /* block */)arg1;
 

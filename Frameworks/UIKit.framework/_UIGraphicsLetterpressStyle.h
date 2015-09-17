@@ -44,9 +44,9 @@
 + (id)defaultLetterpressStyle;
 + (id)old2xLetterpressStyle;
 
+- (void).cxx_destruct;
 - (id)bottomGradientColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (id)embossHighlightColor;
 - (id)embossShadowColor;

@@ -21,6 +21,7 @@
 
 @property (nonatomic, retain) UIImage *optionsBackgroundImage;
 
+- (void).cxx_destruct;
 - (id)anyDividerImage;
 - (id)anyDividerImageForMini:(BOOL)arg1;
 - (id)backgroundImageForState:(unsigned int)arg1 isMini:(BOOL)arg2;
@@ -28,7 +29,6 @@
 - (float)backgroundPositionAdjustmentForBarMetrics:(int)arg1;
 - (id)contentPositionOffsetForSegment:(int)arg1 inMiniBar:(BOOL)arg2;
 - (id)contentPositionOffsetForSegment:(int)arg1 inMiniBar:(BOOL)arg2 noFallback:(BOOL)arg3;
-- (void)dealloc;
 - (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2 isMini:(BOOL)arg3;
 - (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2 isMini:(BOOL)arg3 withFallback:(BOOL)arg4;
 - (id)init;

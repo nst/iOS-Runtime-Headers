@@ -11,7 +11,6 @@
 + (id)customAttributes;
 
 - (id)inputAcuteAngle;
-- (void)setDefaults;
 - (void)setInputAcuteAngle:(id)arg1;
 
 @end

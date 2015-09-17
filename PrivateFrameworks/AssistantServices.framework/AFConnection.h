@@ -3,6 +3,7 @@
  */
 
 @interface AFConnection : NSObject {
+    int _activeRequestUsefulUserResultType;
     unsigned int _audioSessionID;
     NSArray *_cachedBulletins;
     unsigned int _clientStateIsInSync;
@@ -35,11 +36,9 @@
 + (void)defrost;
 + (void)initialize;
 + (BOOL)isAvailable;
-+ (BOOL)isReadyForLanguageCode:(id)arg1;
 + (id)outputVoice;
-+ (void)preheat;
-+ (void)preheatWithStyle:(int)arg1;
 + (BOOL)siriIsSupportedForLanguageCode:(id)arg1 deviceProductVersion:(id)arg2 error:(id*)arg3;
++ (BOOL)siriIsSupportedForLanguageCode:(id)arg1 productName:(id)arg2 productVersion:(id)arg3 error:(id*)arg4;
 + (void)stopMonitoringAvailability;
 + (BOOL)userDataSyncNeeded;
 
@@ -90,7 +89,9 @@
 - (void)_updateState;
 - (void)_willCancelRequest;
 - (void)_willCompleteRequest;
+- (void)_willEndSession;
 - (void)_willFailRequestWithError:(id)arg1;
+- (void)_willPresentUsefulUserResultWithType:(int)arg1;
 - (void)_willStartRequestForSpeech:(BOOL)arg1;
 - (unsigned int)audioSessionID;
 - (float)averagePower;
@@ -99,15 +100,18 @@
 - (void)clearContext;
 - (void)dealloc;
 - (id)delegate;
+- (void)didDismissUI;
 - (void)endSession;
 - (void)forceAudioSessionActive;
+- (void)getDeferredObjectsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (BOOL)isRecording;
 - (float)peakPower;
-- (void)preheat;
 - (void)preheatWithStyle:(int)arg1;
 - (void)prepareForPhoneCall;
-- (void)recordMetrics:(id)arg1;
+- (void)recordRequestMetric:(id)arg1 withTimestamp:(double)arg2;
+- (void)recordUIMetrics:(id)arg1;
+- (void)requestBarrier:(id /* block */)arg1;
 - (void)rollbackClearContext;
 - (void)rollbackRequest;
 - (void)sendGenericAceCommand:(id)arg1;
@@ -119,7 +123,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setIsStark:(BOOL)arg1;
 - (void)setLockState:(BOOL)arg1 screenLocked:(BOOL)arg2;
-- (void)setOverriddenApplicationContext:(id)arg1 withSMSContext:(id)arg2;
+- (void)setOverriddenApplicationContext:(id)arg1 withContext:(id)arg2;
 - (void)setSpeechDelegate:(id)arg1;
 - (void)setVoiceOverIsActive:(BOOL)arg1;
 - (BOOL)shouldSpeak;
@@ -127,17 +131,23 @@
 - (void)startAcousticIDRequestWithOptions:(id)arg1;
 - (void)startContinuationRequestWithUserInfo:(id)arg1;
 - (void)startDirectActionRequestWithString:(id)arg1;
+- (id /* block */)startRecordingAndGetContinueBlockForPendingSpeechRequestWithOptions:(id)arg1;
 - (void)startRecordingForPendingSpeechRequestWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (void)startRequestWithCorrectedText:(id)arg1 forSpeechIdentifier:(id)arg2;
+- (void)startRequestWithInfo:(id)arg1;
 - (void)startRequestWithText:(id)arg1;
 - (void)startSpeechPronunciationRequestWithOptions:(id)arg1 pronunciationContext:(id)arg2;
 - (void)startSpeechRequestWithOptions:(id)arg1;
 - (void)startSpeechRequestWithSpeechFileAtURL:(id)arg1;
 - (void)startSpeechRequestWithSpeechFileAtURL:(id)arg1 isNarrowBand:(BOOL)arg2;
+- (void)startUIRequest;
 - (void)stopSpeech;
 - (void)stopSpeechWithOptions:(id)arg1;
 - (void)telephonyRequestCompleted;
 - (void)updateSpeechOptions:(id)arg1;
 - (void)usefulUserResultWillPresent;
+- (void)willPresentUI;
+- (void)willPresentUsefulUserResultWithType:(int)arg1;
+- (void)willSetApplicationContextWithRefId:(id)arg1;
 
 @end

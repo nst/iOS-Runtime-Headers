@@ -5,7 +5,9 @@
 
 @required
 
+- (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didLoadTimeRange:(NSValue *)arg2 totalTimeRangesLoaded:(NSArray *)arg3 timeRangeExpectedToLoad:(NSValue *)arg4;
 - (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didReceiveDownloadToken:(unsigned long long)arg2;
+- (void)backgroundAVAssetDownloadTask:(unsigned int)arg1 didResolveMediaSelectionProperyList:(NSDictionary *)arg2;
 - (void)backgroundAVAssetDownloadTaskDidUpdateProgress:(unsigned int)arg1 totalBytesWritten:(unsigned long long)arg2 totalBytesExpectedToWrite:(unsigned long long)arg3;
 - (void)backgroundDataTask:(void *)arg1 didReceiveData:(void *)arg2 withReply:(void *)arg3; // needs 3 arg types, found 7: unsigned int, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)backgroundDataTaskDidBecomeDownloadTask:(unsigned int)arg1;
@@ -20,6 +22,7 @@
 - (void)backgroundTask:(unsigned int)arg1 didReceiveResponse:(NSURLResponse *)arg2 timingData:(NSDictionary *)arg3;
 - (void)backgroundTask:(void *)arg1 didReceiveResponse:(void *)arg2 timingData:(void *)arg3 reply:(void *)arg4; // needs 4 arg types, found 9: unsigned int, NSURLResponse *, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)backgroundTask:(unsigned int)arg1 didSendBodyData:(long long)arg2 totalBytesSent:(long long)arg3 totalBytesExpectedToSend:(long long)arg4;
+- (void)backgroundTask:(void *)arg1 getAuthHeadersForResponse:(void *)arg2 reply:(void *)arg3; // needs 3 arg types, found 9: unsigned int, NSURLResponse *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSDictionary *, void*
 - (void)backgroundTask:(unsigned int)arg1 hasConnectionWaitingWithError:(NSError *)arg2;
 - (void)backgroundTask:(unsigned int)arg1 hasConnectionWaitingWithReason:(long long)arg2;
 - (void)backgroundTask:(void *)arg1 needNewBodyStream:(void *)arg2 withReply:(void *)arg3; // needs 3 arg types, found 8: unsigned int, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSFileHandle *, void*

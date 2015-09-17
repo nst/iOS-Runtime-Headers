@@ -4,12 +4,20 @@
 
 @interface MusicSocialRequestFollowingOperation : MusicSocialAbstractOperation {
     NSNumber *_dsid;
+    NSString *_entityType;
+    BOOL _requestEntity;
+    NSNumber *_storeEntityID;
 }
+
+@property (nonatomic, copy) NSNumber *storeEntityID;
 
 - (void).cxx_destruct;
 - (id)initWithDsid:(id)arg1;
+- (id)initWithEnityId:(id)arg1 entityType:(id)arg2;
 - (void)processResponse:(id)arg1 response:(id)arg2;
 - (id)requestProperties:(id)arg1;
 - (id)serviceURL:(id)arg1;
+- (void)setStoreEntityID:(id)arg1;
+- (id)storeEntityID;
 
 @end

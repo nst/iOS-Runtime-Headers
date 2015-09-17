@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleFetchChangedRecordZonesRequestCompleted:(id)arg1;
+- (unsigned long long)activityStart;
 - (void)fillOutOperationResult:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

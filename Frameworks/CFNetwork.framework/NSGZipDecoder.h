@@ -36,7 +36,6 @@
 + (BOOL)canDecodeDownloadHeaderData:(id)arg1;
 + (BOOL)decodeDownloadHeader:(id)arg1 headerLength:(int*)arg2 modificationTime:(unsigned int*)arg3 filename:(id*)arg4;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)decodeData:(id)arg1;
 - (BOOL)decodeDownloadData:(id)arg1 dataForkData:(id*)arg2 resourceForkData:(id*)arg3;

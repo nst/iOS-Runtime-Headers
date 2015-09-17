@@ -8,10 +8,13 @@
 - (BOOL)isProfilingEnabled;
 - (NSDictionary *)profilingResults;
 - (void)setProfilingEnabled:(BOOL)arg1;
+- (NSMutableDictionary *)userDictionary;
 
 @optional
 
+- (void)commitAndHold;
 - (<MTLDebugCommandEncoder> *)debugCommandEncoder;
+- (<MTLFragmentRenderCommandEncoder> *)fragmentRenderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1;
 - (<MTLComputeCommandEncoder> *)sampledComputeCommandEncoderWithProgramInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg1 capacity:(unsigned int)arg2;
 - (<MTLRenderCommandEncoder> *)sampledRenderCommandEncoderWithDescriptor:(MTLRenderPassDescriptor *)arg1 programInfoBuffer:(struct { unsigned int x1 : 8; unsigned int x2 : 24; unsigned int x3; unsigned long long x4; unsigned long long x5; }*)arg2 capacity:(unsigned int)arg3;
 

@@ -8,6 +8,7 @@
     int _styleOverrides;
 }
 
+- (void).cxx_destruct;
 - (void)addStatusBarItem:(int)arg1;
 - (int)addStyleOverrides:(int)arg1;
 - (void)dealloc;

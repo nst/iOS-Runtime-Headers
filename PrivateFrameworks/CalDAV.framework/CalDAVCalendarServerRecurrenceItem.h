@@ -13,12 +13,10 @@
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *master;
 @property (nonatomic, retain) CoreDAVLeafItem *recurrenceID;
 
+- (void).cxx_destruct;
 - (id)changes;
 - (id)copyParseRules;
-- (void)dealloc;
-- (id)description;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (BOOL)isMaster;
 - (id)master;
 - (id)recurrenceID;

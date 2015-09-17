@@ -16,9 +16,7 @@
         unsigned int removeBulletinFinal : 1; 
         unsigned int sectionOrderRule : 1; 
         unsigned int sectionOrder : 1; 
-        unsigned int sectionOrderDefault : 1; 
         unsigned int sectionInfo : 1; 
-        unsigned int sectionInfoDefault : 1; 
         unsigned int sectionParameters : 1; 
         unsigned int fetchImage : 1; 
         unsigned int fetchSize : 1; 
@@ -82,6 +80,7 @@
 - (id)attachmentImageForKey:(id)arg1 forBulletinID:(id)arg2;
 - (struct CGSize { float x1; float x2; })attachmentSizeForKey:(id)arg1 forBulletinID:(id)arg2;
 - (void)clearBulletins:(id)arg1 inSection:(id)arg2;
+- (void)clearBulletinsFromDate:(id)arg1 toDate:(id)arg2 inSections:(id)arg3;
 - (void)clearSection:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -91,11 +90,12 @@
 - (void)getAlertBehaviorOverridesWithCompletion:(id /* block */)arg1;
 - (void)getAttachmentImageForBulletin:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getBulletinsForPublisherMatchIDs:(id)arg1 sectionID:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)getBulletinsWithCompletion:(id /* block */)arg1;
 - (void)getParametersForSectionID:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getPrimaryAttachmentDataForBulletin:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)getPrivilegedAddressBookGroupRecordIDAndNameWithCompletion:(id /* block */)arg1;
 - (void)getPrivilegedSenderTypesWithCompletion:(id /* block */)arg1;
-- (void)getSectionInfoForCategory:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)getSectionInfoForActiveSectionsWithCompletion:(id /* block */)arg1;
+- (void)getSectionInfoForSectionIDs:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getSectionInfoWithCompletion:(id /* block */)arg1;
 - (void)getSectionOrderRuleWithCompletion:(id /* block */)arg1;
 - (void)getSortDescriptorsForSectionID:(id)arg1 withCompletion:(id /* block */)arg2;
@@ -122,8 +122,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setObserverFeed:(unsigned int)arg1;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withReply:(id /* block */)arg3;
-- (void)updateSectionInfo:(id)arg1 inCategory:(int)arg2;
-- (void)updateSectionOrder:(id)arg1 forCategory:(int)arg2;
+- (void)updateSectionInfo:(id)arg1;
+- (void)updateSectionOrder:(id)arg1;
 - (void)updateSectionOrderRule:(id)arg1;
 - (void)updateSectionParameters:(id)arg1 forSectionID:(id)arg2;
 

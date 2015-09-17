@@ -48,7 +48,6 @@
     BOOL _wifiEnabled;
     struct OpaqueAGPSession { } *agpSessionRef;
     double disconnectTimeout;
-    NSString *displayName;
     NSString *domain;
     unsigned int maxPeers;
     NSString *serviceType;

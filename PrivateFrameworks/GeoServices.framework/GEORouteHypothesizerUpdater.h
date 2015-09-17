@@ -2,14 +2,16 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORouteHypothesizerUpdater : NSObject {
+@interface GEORouteHypothesizerUpdater : NSObject <NSSecureCoding> {
     GEOMapRegion *_arrivalMapRegion;
     GEODirectionsRouteRequest *_currentRequest;
     <GEORouteHypothesizerUpdaterDelegate> *_delegate;
     GEOComposedWaypoint *_destination;
     GEODirectionsRequestFeedback *_feedback;
     BOOL _hasArrived;
+    BOOL _isNavd;
     BOOL _isTraveling;
+    GEOLocation *_lastMatchedLocation;
     NSDate *_lastRerouteDate;
     unsigned int _numThrottledReroutes;
     GEOLocation *_originLocation;
@@ -18,6 +20,7 @@
     GEOComposedRoute *_route;
     GEORouteAttributes *_routeAttributes;
     GEORouteMatch *_routeMatch;
+    GEORouteSummaryAttributes *_routeSummaryAttributes;
     double _score;
     BOOL _shouldThrottleReroutes;
     GEOComposedWaypoint *_source;
@@ -26,27 +29,39 @@
 @property (nonatomic) <GEORouteHypothesizerUpdaterDelegate> *delegate;
 @property (nonatomic, retain) GEODirectionsRequestFeedback *feedback;
 @property (nonatomic, readonly) BOOL hasArrived;
+@property (nonatomic) BOOL isNavd;
 @property (nonatomic, readonly) BOOL isTraveling;
 @property (nonatomic, readonly) GEOComposedRoute *route;
+@property (nonatomic, readonly) GEORouteAttributes *routeAttributes;
 @property (nonatomic, readonly) GEORouteMatch *routeMatch;
 @property (nonatomic, readonly) double score;
 
++ (BOOL)supportsSecureCoding;
+
 - (BOOL)_checkForArrival:(id)arg1 routeMatch:(id)arg2;
 - (void)_requestNewRouteFromLocation:(id)arg1 usualRouteData:(id)arg2;
-- (id)_routeMatchForLocation:(id)arg1;
+- (int)_transportType;
 - (void)_updateScoreForLocation:(id)arg1;
 - (void)cancelCurrentRequest;
 - (void)dealloc;
 - (id)delegate;
+- (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (id)feedback;
 - (BOOL)hasArrived;
+- (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithSource:(id)arg1 destination:(id)arg2 routeAttributes:(id)arg3;
+- (BOOL)isNavd;
 - (BOOL)isTraveling;
 - (id)route;
+- (id)routeAttributes;
 - (id)routeMatch;
+- (id)routeMatchForLocation:(id)arg1;
 - (double)score;
 - (void)setDelegate:(id)arg1;
 - (void)setFeedback:(id)arg1;
+- (void)setIsNavd:(BOOL)arg1;
 - (void)startUpdatingFromLocation:(id)arg1 existingRoute:(id)arg2 usualRouteData:(id)arg3;
 - (void)updateForLocation:(id)arg1;
 

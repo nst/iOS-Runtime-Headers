@@ -2,9 +2,15 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UILabelContentLayer : CALayer
+@interface _UILabelContentLayer : CALayer {
+    BOOL _wantsAnimation;
+}
+
+@property (nonatomic) BOOL wantsAnimation;
 
 - (id)actionForKey:(id)arg1;
 - (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)setWantsAnimation:(BOOL)arg1;
+- (BOOL)wantsAnimation;
 
 @end

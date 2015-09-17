@@ -33,7 +33,6 @@
 
 + (void)initialize;
 
-- (id).cxx_construct;
 - (void)clear;
 - (void)dealloc;
 - (void)finalize;

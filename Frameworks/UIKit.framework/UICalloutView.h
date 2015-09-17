@@ -90,6 +90,7 @@
 + (float)defaultHeight;
 + (id)sharedCalloutView;
 
+- (void).cxx_destruct;
 - (float)UICalloutViewButtonPadding;
 - (float)UICalloutViewCapHeight;
 - (float)UICalloutViewCapPaddingTop;

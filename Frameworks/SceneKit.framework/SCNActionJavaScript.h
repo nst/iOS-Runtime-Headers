@@ -14,6 +14,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (BOOL)isCustom;
+- (id)parameters;
 - (id)reversedAction;
 
 @end

@@ -15,6 +15,7 @@
 - (void)session:(VCCallSession *)arg1 changeVideoRulesToCaptureRule:(VCVideoRule *)arg2 encodeRule:(VCVideoRule *)arg3 featuresListString:(NSString *)arg4;
 - (void)session:(VCCallSession *)arg1 didChangeRemoteScreenAttributes:(VideoAttributes *)arg2;
 - (void)session:(VCCallSession *)arg1 didChangeVideoRule:(VCVideoRule *)arg2;
+- (void)session:(VCCallSession *)arg1 didPauseAudio:(BOOL)arg2 error:(NSError *)arg3;
 - (void)session:(VCCallSession *)arg1 didReceiveARPLData:(NSData *)arg2 fromCallID:(unsigned long)arg3;
 - (void)session:(VCCallSession *)arg1 didReceiveData:(NSData *)arg2 withCallID:(unsigned long)arg3;
 - (void)session:(VCCallSession *)arg1 didSeeThermalChange:(double)arg2;
@@ -24,16 +25,21 @@
 - (void)session:(VCCallSession *)arg1 didStopWithError:(NSError *)arg2;
 - (void)session:(VCCallSession *)arg1 inititiateRelayRequest:(NSDictionary *)arg2;
 - (void)session:(VCCallSession *)arg1 localAudioEnabled:(BOOL)arg2 withCallID:(unsigned long)arg3 error:(NSError *)arg4;
+- (void)session:(VCCallSession *)arg1 localIPChange:(NSData *)arg2 withCallID:(unsigned long)arg3;
 - (void)session:(VCCallSession *)arg1 packMeters:(char *)arg2 withLength:(char *)arg3;
 - (void)session:(VCCallSession *)arg1 receivedNoPacketsForSeconds:(double)arg2;
 - (bool)session:(VCCallSession *)arg1 receivedRemoteFrame:(struct __CVBuffer { }*)arg2 atTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 withScreenAttributes:(VideoAttributes *)arg4 videoAttributes:(VideoAttributes *)arg5 isFirstFrame:(BOOL)arg6 isVideoPaused:(BOOL)arg7;
 - (void)session:(VCCallSession *)arg1 remoteAudioEnabled:(BOOL)arg2 withCallID:(unsigned long)arg3;
+- (void)session:(VCCallSession *)arg1 remoteCallingModeChanged:(unsigned long)arg2 withCallID:(unsigned long)arg3;
 - (void)session:(VCCallSession *)arg1 remoteMediaStalled:(BOOL)arg2;
-- (void)session:(VCCallSession *)arg1 sendIPChangeRequest:(NSData *)arg2 withCallID:(unsigned long)arg3;
 - (void)session:(VCCallSession *)arg1 sendRelayResponse:(NSDictionary *)arg2;
 - (bool)session:(VCCallSession *)arg1 startVideoIO:(id*)arg2 captureRule:(VCVideoRule *)arg3 isUnpausing:(BOOL)arg4;
+- (BOOL)session:(VCCallSession *)arg1 startVideoReceive:(id*)arg2;
+- (BOOL)session:(VCCallSession *)arg1 startVideoSend:(id*)arg2 captureRule:(VCVideoRule *)arg3 isUnpausing:(BOOL)arg4;
 - (void)session:(VCCallSession *)arg1 withCallID:(unsigned long)arg2 networkHint:(BOOL)arg3;
 - (void)session:(VCCallSession *)arg1 withCallID:(unsigned long)arg2 videoIsDegraded:(BOOL)arg3 isRemote:(BOOL)arg4;
 - (void)setBWEOptions:(BOOL)arg1 UseNewBWEMode:(BOOL)arg2 FakeLargeFrameMode:(BOOL)arg3 ProbingSenderLog:(BOOL)arg4;
+- (BOOL)stopVideoReceive:(id*)arg1;
+- (BOOL)stopVideoSend:(BOOL)arg1 error:(id*)arg2;
 
 @end

@@ -30,6 +30,7 @@
 @property (nonatomic, readonly) int _spineLocation;
 @property (nonatomic, readonly) NSNumber *_wrappedManualPageCurlDirection;
 
+- (void).cxx_destruct;
 - (void)_abortManualCurlAtLocation:(struct CGPoint { float x1; float x2; })arg1 withSuggestedVelocity:(float)arg2;
 - (id)_animationKeyPaths;
 - (BOOL)_areAnimationsInFlightOrPending;

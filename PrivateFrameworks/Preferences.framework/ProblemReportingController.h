@@ -16,9 +16,9 @@
 
 + (BOOL)isProblemReportingEnabled;
 
+- (void).cxx_destruct;
 - (id)appActivitySpecifiers;
 - (void)checkDiagnosticsSessionAvailability;
-- (void)dealloc;
 - (void)dismissAboutSheet:(id)arg1;
 - (id)filesystemMetadataSnapshotSpecifier;
 - (void)launchDiagnosticsSession:(id)arg1;

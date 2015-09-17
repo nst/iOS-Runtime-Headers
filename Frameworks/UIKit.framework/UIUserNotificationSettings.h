@@ -15,10 +15,10 @@
 + (id)settingsForUserNotificationTypes:(unsigned int)arg1 userNotificationActionSettings:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (unsigned int)allowedUserNotificationTypes;
 - (id)categories;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

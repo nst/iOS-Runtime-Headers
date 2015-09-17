@@ -4,9 +4,9 @@
 
 @interface OADTextBodyProperties : OADProperties {
     OADTextBodyAutoFit *mAutoFit;
-    double mBottomInset;
+    float mBottomInset;
     unsigned short mColumnCount;
-    double mColumnSpacing;
+    float mColumnSpacing;
     unsigned char mFlowType;
     unsigned int mHasBottomInset;
     unsigned int mHasColumnCount;
@@ -29,14 +29,14 @@
     unsigned int mIsAnchorCenter;
     unsigned int mIsLeftToRightColumns;
     unsigned int mIsUpright;
-    double mLeftInset;
+    float mLeftInset;
     unsigned int mRepectFirstLastParagraphSpacing;
-    double mRightInset;
-    double mRotation;
+    float mRightInset;
+    float mRotation;
     unsigned char mTextAnchorType;
     unsigned short mTextBodyId;
     OADTextWarp *mTextWarp;
-    double mTopInset;
+    float mTopInset;
     unsigned char mVerticalOverflowType;
     unsigned char mWrapType;
 }
@@ -45,11 +45,13 @@
 + (id)defaultProperties;
 
 - (id)autoFit;
-- (double)bottomInset;
+- (float)bottomInset;
 - (int)columnCount;
-- (double)columnSpacing;
+- (float)columnSpacing;
 - (void)dealloc;
-- (int)flowType;
+- (id)description;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
+- (unsigned char)flowType;
 - (BOOL)hasAutoFit;
 - (BOOL)hasBottomInset;
 - (BOOL)hasColumnCount;
@@ -70,7 +72,7 @@
 - (BOOL)hasVerticalOverflowType;
 - (BOOL)hasWrapType;
 - (unsigned int)hash;
-- (int)horizontalOverflowType;
+- (unsigned char)horizontalOverflowType;
 - (id)init;
 - (id)initWithDefaults;
 - (BOOL)isAnchorCenter;
@@ -78,35 +80,35 @@
 - (BOOL)isLeftToRightColumns;
 - (BOOL)isUpright;
 - (BOOL)isWarped;
-- (double)leftInset;
+- (float)leftInset;
 - (void)removeUnnecessaryOverrides;
 - (BOOL)respectLastFirstLineSpacing;
-- (double)rightInset;
-- (double)rotation;
+- (float)rightInset;
+- (float)rotation;
 - (void)setAutoFit:(id)arg1;
-- (void)setBottomInset:(double)arg1;
+- (void)setBottomInset:(float)arg1;
 - (void)setColumnCount:(int)arg1;
-- (void)setColumnSpacing:(double)arg1;
-- (void)setFlowType:(int)arg1;
-- (void)setHorizontalOverflowType:(int)arg1;
+- (void)setColumnSpacing:(float)arg1;
+- (void)setFlowType:(unsigned char)arg1;
+- (void)setHorizontalOverflowType:(unsigned char)arg1;
 - (void)setIsAnchorCenter:(BOOL)arg1;
 - (void)setIsLeftToRightColumns:(BOOL)arg1;
 - (void)setIsUpright:(BOOL)arg1;
-- (void)setLeftInset:(double)arg1;
+- (void)setLeftInset:(float)arg1;
 - (void)setRespectLastFirstLineSpacing:(BOOL)arg1;
-- (void)setRightInset:(double)arg1;
-- (void)setRotation:(double)arg1;
-- (void)setTextAnchorType:(int)arg1;
+- (void)setRightInset:(float)arg1;
+- (void)setRotation:(float)arg1;
+- (void)setTextAnchorType:(unsigned char)arg1;
 - (void)setTextBodyId:(int)arg1;
 - (void)setTextWarp:(id)arg1;
-- (void)setTopInset:(double)arg1;
-- (void)setVerticalOverflowType:(int)arg1;
-- (void)setWrapType:(int)arg1;
-- (int)textAnchorType;
+- (void)setTopInset:(float)arg1;
+- (void)setVerticalOverflowType:(unsigned char)arg1;
+- (void)setWrapType:(unsigned char)arg1;
+- (unsigned char)textAnchorType;
 - (int)textBodyId;
 - (id)textWarp;
-- (double)topInset;
-- (int)verticalOverflowType;
-- (int)wrapType;
+- (float)topInset;
+- (unsigned char)verticalOverflowType;
+- (unsigned char)wrapType;
 
 @end

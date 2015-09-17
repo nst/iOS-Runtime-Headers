@@ -9,6 +9,7 @@
     NSMutableDictionary *_recordIDByRequestID;
     NSArray *_recordIDs;
     id /* block */ _recordVersionsFetchedBlock;
+    BOOL _shouldFetchAssetContent;
 }
 
 @property (nonatomic, retain) NSArray *desiredKeys;
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) NSMutableDictionary *recordIDByRequestID;
 @property (nonatomic, retain) NSArray *recordIDs;
 @property (nonatomic, copy) id /* block */ recordVersionsFetchedBlock;
+@property (nonatomic) BOOL shouldFetchAssetContent;
 
 - (void).cxx_destruct;
 - (id)desiredKeys;
@@ -37,6 +39,8 @@
 - (void)setRecordIDByRequestID:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordVersionsFetchedBlock:(id /* block */)arg1;
+- (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (BOOL)shouldFetchAssetContent;
 - (id)zoneIDsToLock;
 
 @end

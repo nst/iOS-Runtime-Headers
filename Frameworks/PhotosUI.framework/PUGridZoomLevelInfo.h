@@ -11,6 +11,10 @@
     int _maxRowsPerSection;
     float _pendingContentWidth;
     BOOL _summarizeSections;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _thumbnailImageSize;
     BOOL _useFloatingHeaderGroupName;
     unsigned int _zoomLevel;
     PUMomentsZoomLevelManager *_zoomLevelManager;
@@ -25,13 +29,13 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *displayTitle;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) int imageFormat;
 @property (nonatomic, readonly) int maxRowsPerSection;
 @property (nonatomic) float pendingContentWidth;
 @property (nonatomic, readonly) NSString *renderedStripsElementKind;
 @property (nonatomic, readonly) NSString *sectionHeaderElementKind;
 @property (nonatomic) BOOL summarizeSections;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } thumbnailImageSize;
 @property (nonatomic) BOOL useFloatingHeaderGroupName;
 @property (nonatomic, readonly) double zoomInDuration;
 @property (nonatomic, readonly) unsigned int zoomLevel;
@@ -59,7 +63,6 @@
 - (void)headerView:(id)arg1 actionButtonPressed:(id)arg2;
 - (id)imageDataForAsset:(id)arg1 itemContentScale:(float)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (int)imageDeliveryMode;
-- (int)imageFormat;
 - (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
 - (int)maxRowsPerSection;
 - (void)modelDidChange:(id)arg1;
@@ -87,6 +90,7 @@
 - (BOOL)summarizeSections;
 - (BOOL)supportsEditMode;
 - (BOOL)supportsIncrementalChangeNotifications;
+- (struct CGSize { float x1; float x2; })thumbnailImageSize;
 - (void)updateForSizeChangeIfNecessary;
 - (void)updateLayoutMetricsForWidth:(float)arg1;
 - (BOOL)useFloatingHeaderGroupName;
@@ -95,7 +99,6 @@
 - (BOOL)wantsCloudStatusVisible;
 - (BOOL)wantsMagnifierNavigation;
 - (void)willAnimateSizeTransition;
-- (void)willHideMagnifiedViewController:(id)arg1;
 - (void)willShowMagnifiedViewController:(id)arg1;
 - (double)zoomInDuration;
 - (unsigned int)zoomLevel;

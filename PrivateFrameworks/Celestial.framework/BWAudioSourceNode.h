@@ -5,6 +5,7 @@
 @interface BWAudioSourceNode : BWSourceNode {
     struct opaqueCMSession { } *_CMSession;
     struct opaqueCMSimpleQueue { } *_activeBuffersQueue;
+    long long _auRenderCount;
     unsigned long _auSubType;
     int _audioLevelUnits;
     struct OpaqueAudioComponentInstance { } *_audioUnit;
@@ -15,6 +16,20 @@
     int _clientPID;
     struct OpaqueCMClock { } *_clock;
     BOOL _configuresSession;
+    struct TimestampedAudioBufferList { 
+        struct __CFAllocator {} *allocator; 
+        long long auRenderCount; 
+        unsigned int dataBytesCapacity; 
+        unsigned int numFrames; 
+        struct { 
+            long long value; 
+            int timescale; 
+            unsigned int flags; 
+            long long epoch; 
+        } pts; 
+        struct AudioBufferList {} *abl; 
+        unsigned int numPrependedSilenceFrames; 
+    } _currentSilenceBuffer;
     BOOL _didBeginInterruption;
     struct opaqueCMFormatDescription { } *_formatDescription;
     NSObject<OS_dispatch_queue> *_generateSamplesDispatchQueue;
@@ -27,6 +42,7 @@
         long long epoch; 
     } _latencyOffset;
     BOOL _levelMeteringEnabled;
+    BOOL _mixesWithOthers;
     struct { 
         long long value; 
         int timescale; 
@@ -36,6 +52,8 @@
     unsigned int _pullDuration;
     struct opaqueCMSimpleQueue { } *_renderProcErrorQueue;
     BOOL _selectsMicForFrontCamera;
+    long long _silenceFramesGeneratedSinceLastAURenderProc;
+    NSObject<OS_dispatch_source> *_silenceTimer;
     BOOL _streamInterrupted;
     BOOL _streamStarted;
     BOOL _usesVideoCMSessionAudioMode;
@@ -52,9 +70,10 @@
 
 - (unsigned int)_audioCombinedLatency;
 - (long)_configureCMSessionWithDefaultHardwareSampleRate:(double)arg1;
-- (struct opaqueCMSampleBuffer { }*)_createSampleBufferForBufferTimestampedAudioBufferList:(struct TimestampedAudioBufferList { struct __CFAllocator {} *x1; unsigned int x2; unsigned int x3; struct { long long x_4_1_1; int x_4_1_2; unsigned int x_4_1_3; long long x_4_1_4; } x4; struct AudioBufferList {} *x5; unsigned int x6; }*)arg1;
+- (struct opaqueCMSampleBuffer { }*)_createSampleBufferForTimestampedAudioBufferList:(struct TimestampedAudioBufferList { struct __CFAllocator {} *x1; long long x2; unsigned int x3; unsigned int x4; struct { long long x_5_1_1; int x_5_1_2; unsigned int x_5_1_3; long long x_5_1_4; } x5; struct AudioBufferList {} *x6; unsigned int x7; }*)arg1;
 - (long)_generatePullBuffers;
 - (void)_generateSamples;
+- (void)_generateSilenceIfNeeded;
 - (long)_getAudioDevicePullFrames:(unsigned int*)arg1;
 - (long)_selectMicForAudioRoute:(id)arg1;
 - (long)_setCMSessionAudioModeAndSelectMic;
@@ -65,7 +84,7 @@
 - (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;
 - (BOOL)hasNonLiveConfigurationChanges;
-- (id)initWithCMSession:(struct opaqueCMSession { }*)arg1 configureSession:(BOOL)arg2 clientToken:(id)arg3 clientPID:(int)arg4;
+- (id)initWithCMSession:(struct opaqueCMSession { }*)arg1 configureSession:(BOOL)arg2 mixWithOthers:(BOOL)arg3 clientToken:(id)arg4 clientPID:(int)arg5;
 - (BOOL)interrupted;
 - (BOOL)levelMeteringEnabled;
 - (void)makeCurrentConfigurationLive;

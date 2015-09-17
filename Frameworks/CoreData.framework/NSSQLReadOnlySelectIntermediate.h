@@ -4,9 +4,14 @@
 
 @interface NSSQLReadOnlySelectIntermediate : NSSQLSelectIntermediate {
     BOOL _onlyFetchesAggregates;
+    NSMutableDictionary *_propertyToAliasMappings;
+    NSMutableDictionary *_variableToAliasMappings;
 }
 
+- (void)dealloc;
 - (id)generateSQLStringInContext:(id)arg1;
+- (id)initWithScope:(id)arg1;
 - (BOOL)onlyFetchesAggregates;
+- (id)resolveVariableExpression:(id)arg1 inContext:(id)arg2;
 
 @end

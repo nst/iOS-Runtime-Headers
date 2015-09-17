@@ -6,6 +6,7 @@
     AVPlayerItemInternal *_playerItem;
 }
 
+@property (nonatomic, retain) <NSObject><NSCopying> *AVKitData;
 @property (nonatomic, retain) MPAVItem *MPAVItem;
 @property (nonatomic) MPQueuePlayer *MP_associatedQueuePlayer;
 @property (getter=_isExternalProtectionRequiredForPlayback, setter=_setExternalProtectionRequiredForPlayback:, nonatomic) BOOL _externalProtectionRequiredForPlayback;
@@ -18,8 +19,8 @@
 @property (getter=isApplicationAuthorizedForPlayback, nonatomic, readonly) BOOL applicationAuthorizedForPlayback;
 @property (getter=isAuthorizationRequiredForPlayback, nonatomic, readonly) BOOL authorizationRequiredForPlayback;
 @property (getter=isContentAuthorizedForPlayback, nonatomic, readonly) BOOL contentAuthorizedForPlayback;
-@property (nonatomic, copy) NSString *dataYouTubeID;
 @property (nonatomic, readonly) NSError *error;
+@property (getter=is_isHighFramerate, nonatomic, readonly) BOOL is_highFramerate;
 @property (nonatomic, copy) NSString *mediaKind;
 @property (nonatomic, readonly) NSArray *outputs;
 @property (nonatomic, readonly) double rc_durationInSeconds;
@@ -35,6 +36,7 @@
 + (struct OpaqueCMTimebase { }*)_copyTimebaseFromFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1;
 + (BOOL)_forNonStreamingURLsFireKVOForAssetWhenReadyForInspection;
 + (BOOL)_forStreamingItemsVendAssetWithFigPlaybackItem;
++ (BOOL)_hasOverrideForSelector:(SEL)arg1;
 + (id)_initializeProtectedContentPlaybackSupportSessionAsynchronouslyForProvider:(id)arg1 withOptions:(id)arg2;
 + (void)_uninitializeProtectedContentPlaybackSupportSession:(id)arg1;
 + (BOOL)automaticallyNotifiesObserversOfAllowProgressiveSwitchUp;
@@ -51,12 +53,15 @@
 + (BOOL)automaticallyNotifiesObserversOfSeekableTimeRanges;
 + (BOOL)automaticallyNotifiesObserversOfStatus;
 + (BOOL)automaticallyNotifiesObserversOfTracks;
++ (BOOL)automaticallyNotifiesObserversOfUsesMinimalLatencyForVideoCompositionRendering;
 + (BOOL)automaticallyNotifiesObserversOfVariantIndex;
 + (void)initialize;
 + (id)playerItemWithAsset:(id)arg1;
 + (id)playerItemWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
 + (id)playerItemWithURL:(id)arg1;
 
+- (id)AVKitData;
+- (struct CGSize { float x1; float x2; })IFramePrefetchTargetDimensions;
 - (unsigned int)RTCReportingFlags;
 - (int)_CreateSeekID;
 - (id)_URL;
@@ -65,11 +70,12 @@
 - (void)_addLegibleOutput:(id)arg1;
 - (void)_addMetadataOutput:(id)arg1;
 - (void)_addSyncLayer:(id)arg1;
+- (BOOL)_addToPlayQueueOfFigPlayerOfPlayer:(id)arg1 afterFigPlaybackItemOfItem:(id)arg2;
 - (void)_addVideoOutput:(id)arg1;
 - (void)_allowSelectMediaOptionsAutomaticallyUsingFigSelectedMediaArrayObtainedFromGroup:(id)arg1;
 - (BOOL)_alwaysMonitorsPlayability;
+- (void)_applyCurrentAudioMix;
 - (void)_applyMediaSelectionOptions;
-- (void)_applyNewAudioMix:(id)arg1 oldAudioMix:(id)arg2;
 - (void)_applySeekingWaitsForVideoCompositionRendering;
 - (void)_applyTextStyleRules;
 - (void)_attachToFigPlayer;
@@ -78,7 +84,6 @@
 - (long long)_availableFileSize;
 - (void)_cacheMediaSelectionOption:(id)arg1 forMediaSelectionGroup:(id)arg2;
 - (id)_cachedTracks;
-- (id)_cachedValueForKey:(id)arg1;
 - (BOOL)_canPlayFastForward;
 - (BOOL)_canPlayFastReverse;
 - (BOOL)_canPlayReverse;
@@ -94,13 +99,11 @@
 - (BOOL)_continuesPlayingDuringPrerollForSeek;
 - (struct OpaqueFigPlaybackItem { }*)_copyFigPlaybackItem;
 - (struct OpaqueCMTimebase { }*)_copyProxyTimebase;
+- (id)_copyStateDispatchQueue;
 - (struct OpaqueCMTimebase { }*)_copyTimebase;
-- (void)_createPlayerConnection:(id)arg1 shouldAppendItem:(BOOL)arg2;
-- (void)_createPlayerItemInternal;
-- (void)_dequeueFromPlayer;
 - (void)_didAccessKVOForKey:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_duration;
-- (void)_enqueueWithPlayer:(id)arg1 shouldAppendItem:(BOOL)arg2;
+- (id)_ensureAssetWithFigPlaybackItemWithTrackIDs:(id)arg1;
 - (void)_evaluateLegibleOutputs;
 - (void)_evaluateMetadataOutputs;
 - (void)_evaluateVideoOutputs;
@@ -112,18 +115,23 @@
 - (long long)_fileSize;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_forwardPlaybackEndTime;
 - (id)_fpNotificationNames;
+- (BOOL)_getCachedNonForcedSubtitleEnabled:(BOOL*)arg1;
+- (BOOL)_getCachedPresentationSize:(struct CGSize { float x1; float x2; }*)arg1;
 - (BOOL)_hasEnabledAudio;
 - (BOOL)_hasEnabledVideo;
+- (BOOL)_hasSelectionInCachedMediaSelectionGroup:(id)arg1;
 - (void)_informObserversAboutAvailabilityOfDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_informObserversAboutAvailabilityOfPresentationSize;
 - (void)_informObserversAboutAvailabilityOfTracks;
 - (void)_insertAfterItem:(id)arg1;
 - (void)_invokeReadyForEnqueueingHandlers;
 - (BOOL)_isAFileBasedItemThatsReadyToPlay;
-- (BOOL)_isCurrentPlayerItem;
 - (BOOL)_isExternalProtectionRequiredForPlayback;
 - (id)_isExternalProtectionRequiredForPlaybackInternal;
 - (BOOL)_isNonForcedSubtitleDisplayEnabled;
+- (BOOL)_isReadyForBasicInspection;
+- (BOOL)_isReadyForInspectionOfPresentationSize;
+- (BOOL)_isReadyForInspectionOfTracks;
 - (BOOL)_isRental;
 - (BOOL)_isRentalPlaybackStarted;
 - (void)_kickAssetObserversIfAppropriate;
@@ -132,8 +140,13 @@
 - (BOOL)_limitReadAhead;
 - (id)_loadedTimeRanges;
 - (id)_loadedTimeRangesFromFPPlaybableTimeIntervals:(id)arg1;
-- (void)_makeNewAssetWithFigPlaybackItem;
 - (void)_makeReadyForEnqueueingWithCompletionHandler:(id /* block */)arg1;
+- (void)_markAsNeedingNewAssetWithFigPlaybackItem;
+- (void)_markAsReadyForBasicInspection;
+- (void)_markAsReadyForInspectionOfPresentationSize;
+- (void)_markAsReadyForInspectionOfTracks;
+- (void)_markAssetWithFigPlaybackItemAsNeedingNewTracks;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_maximumForwardBufferDuration;
 - (id)_mediaKind;
 - (id)_metadataOutputForKey:(id)arg1;
 - (id)_metadataOutputsForKeys;
@@ -147,15 +160,21 @@
 - (id)_preferredPixelBufferAttributes;
 - (struct CGSize { float x1; float x2; })_presentationSize;
 - (id)_previousItem;
+- (id)_propertyListForSelectedMediaOptionUsingFigSelectedMediaArrayObtainedFromGroup:(id)arg1;
 - (id)_propertyStorage;
+- (void)_quietlySetAggressivelyCachesVideoFrames:(BOOL)arg1;
 - (void)_quietlySetAllowsExtendedReadAhead:(BOOL)arg1;
 - (void)_quietlySetAlwaysMonitorsPlayability:(BOOL)arg1;
+- (void)_quietlySetBlendsVideoFrames:(BOOL)arg1;
+- (void)_quietlySetCanUseNetworkResourcesForLiveStreamingWhilePaused:(BOOL)arg1;
 - (void)_quietlySetContinuesPlayingDuringPrerollForRateChange:(BOOL)arg1;
 - (void)_quietlySetContinuesPlayingDuringPrerollForSeek:(BOOL)arg1;
 - (void)_quietlySetEQPreset:(int)arg1;
 - (void)_quietlySetFigTimePitchAlgorithm:(struct __CFString { }*)arg1;
 - (void)_quietlySetForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_quietlySetImageQueueInterpolationCurve:(id)arg1;
 - (void)_quietlySetLimitReadAhead:(BOOL)arg1;
+- (void)_quietlySetMaximumForwardBufferDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_quietlySetMaximumTrailingBufferDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_quietlySetMediaKind:(id)arg1;
 - (void)_quietlySetMinimumIntervalForIFrameOnlyPlayback:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -165,16 +184,19 @@
 - (void)_quietlySetRTCReportingFlags:(unsigned int)arg1;
 - (void)_quietlySetRestrictions:(unsigned int)arg1;
 - (void)_quietlySetReversePlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_quietlySetReversesMoreVideoFramesInMemory:(BOOL)arg1;
 - (void)_quietlySetServiceIdentifier:(id)arg1;
 - (void)_quietlySetSoundCheckVolumeNormalization:(float)arg1;
 - (void)_quietlySetSpeedThresholdForIFrameOnlyPlayback:(float)arg1;
 - (void)_quietlySetUsesIFrameOnlyPlaybackForHighRateScaledEdits:(BOOL)arg1;
+- (void)_quietlySetUsesMinimalLatencyForVideoCompositionRendering:(BOOL)arg1;
 - (void)_quietlySetVariantIndex:(int)arg1;
 - (void)_quietlySetVolumeAdjustment:(float)arg1;
 - (void)_quietlySetWillNeverSeekBackwardsHint:(BOOL)arg1;
 - (void)_removeFAListeners;
 - (void)_removeFPListeners;
 - (void)_removeFromItems;
+- (void)_removeFromPlayQueueOfFigPlayerOfAttachedPlayer;
 - (void)_removeLegibleOutput:(id)arg1;
 - (void)_removeMetadataOutput:(id)arg1;
 - (void)_removeSyncLayer:(id)arg1;
@@ -195,37 +217,34 @@
 - (void)_selectMediaOption:(id)arg1 usingFigSelectedMediaArrayObtainedFromGroup:(id)arg2;
 - (void)_setAsset:(id)arg1;
 - (void)_setAssetToAssetWithFigPlaybackItemIfAppropriate;
-- (void)_setAssetWithFigPlaybackItem:(id)arg1;
 - (void)_setAudibleDRMInfo:(id)arg1;
 - (void)_setAudioCurvesAccordingToInputParameters:(id)arg1 forTrackID:(int)arg2;
+- (void)_setAudioEffectParameters:(id)arg1 forTrackID:(int)arg2;
 - (void)_setAudioTapProcessor:(struct opaqueMTAudioProcessingTap { }*)arg1 forTrackID:(int)arg2;
 - (void)_setAudioTimePitchAlgorithm:(id)arg1 forTrackID:(int)arg2;
 - (void)_setEQPreset:(int)arg1;
 - (void)_setExternalProtectionRequiredForPlayback:(BOOL)arg1;
-- (void)_setIsCurrentPlayerItem:(BOOL)arg1;
-- (void)_setPlayerConnection:(id)arg1;
 - (void)_setRampInOutInfo:(id)arg1;
 - (void)_setSuppressesVideoLayers:(BOOL)arg1;
 - (void)_setSyncLayersOnFigPlaybackItem:(id)arg1;
 - (void)_setTimedMetadata:(id)arg1;
-- (void)_setTrackIDsForAssetWithFigPlaybackItem:(id)arg1;
 - (void)_setURL:(id)arg1;
 - (void)_setVideoCompositionFrameDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setVideoCompositionInstructions:(id)arg1;
 - (void)_setVideoCompositionRenderScale:(float)arg1;
 - (void)_setVideoCompositionRenderSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setVideoCompositor:(void*)arg1;
-- (id)_stateDispatchQueue;
 - (BOOL)_suppressesVideoLayers;
 - (BOOL)_suppressionForOutputs:(id)arg1;
 - (id)_trackWithTrackID:(int)arg1;
 - (id)_tracks;
 - (id)_tracksFromAssetTrackIDs;
-- (id)_tracksWithFPTrackIDArray:(id)arg1;
+- (id)_tracksWithFPTrackIDArray:(id)arg1 fromFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2;
 - (void)_unregisterInvokeAndReleasePendingSeekCompletionHandlerForSeekID:(int)arg1 finished:(BOOL)arg2;
 - (void)_updateLegibleSuppressionOnFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 basedOnOutputs:(id)arg2;
 - (void)_updateTimebase;
 - (void)_updateVideoSuppressionOnFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 basedOnOutputs:(id)arg2;
+- (BOOL)_usesMinimalLatencyForVideoCompositionRendering;
 - (id)_videoOutputs;
 - (id)_weakReference;
 - (void)_willAccessKVOForKey:(id)arg1;
@@ -233,6 +252,7 @@
 - (id)accessLog;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
 - (void)addOutput:(id)arg1;
+- (BOOL)aggressivelyCachesVideoFrames;
 - (BOOL)allowProgressiveSwitchUp;
 - (BOOL)allowsExtendedReadAhead;
 - (BOOL)alwaysMonitorsPlayability;
@@ -240,6 +260,7 @@
 - (id)audioMix;
 - (id)audioTimePitchAlgorithm;
 - (id)automaticallyLoadedAssetKeys;
+- (BOOL)blendsVideoFrames;
 - (BOOL)canPlayFastForward;
 - (BOOL)canPlayFastReverse;
 - (BOOL)canPlayReverse;
@@ -247,15 +268,16 @@
 - (BOOL)canPlaySlowReverse;
 - (BOOL)canStepBackward;
 - (BOOL)canStepForward;
+- (BOOL)canUseNetworkResourcesForLiveStreamingWhilePaused;
 - (void)cancelPendingSeeks;
 - (BOOL)continuesPlayingDuringPrerollForRateChange;
 - (BOOL)continuesPlayingDuringPrerollForSeek;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentDate;
 - (id)currentEstimatedDate;
+- (id)currentMediaSelection;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (id)customVideoCompositor;
-- (id)dataYouTubeID;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
@@ -268,6 +290,7 @@
 - (id)gaplessInfo;
 - (BOOL)hasEnabledAudio;
 - (BOOL)hasEnabledVideo;
+- (id)imageQueueInterpolationCurve;
 - (id)init;
 - (id)initWithAsset:(id)arg1;
 - (id)initWithAsset:(id)arg1 automaticallyLoadedAssetKeys:(id)arg2;
@@ -284,6 +307,7 @@
 - (BOOL)limitReadAhead;
 - (id)loadedTimeRanges;
 - (float)maximumBitRate;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumForwardBufferDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumTrailingBufferDuration;
 - (id)mediaKind;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minimumIntervalForIFrameOnlyPlayback;
@@ -291,6 +315,7 @@
 - (id)outputs;
 - (id)playabilityMetrics;
 - (int)playbackLikelyToKeepUpTrigger;
+- (BOOL)playerAppliesAutomaticMediaSelectionToGroup:(id)arg1;
 - (double)preferredPeakBitRate;
 - (struct CGSize { float x1; float x2; })presentationSize;
 - (float)progressTowardsPlaybackLikelyToKeepUp;
@@ -298,6 +323,7 @@
 - (BOOL)requiresAccessLog;
 - (unsigned int)restrictions;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })reversePlaybackEndTime;
+- (BOOL)reversesMoreVideoFramesInMemory;
 - (BOOL)savesDownloadedDataToDiskWhenDone;
 - (BOOL)seekToDate:(id)arg1;
 - (BOOL)seekToDate:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -311,21 +337,27 @@
 - (void)selectMediaOptionAutomaticallyInMediaSelectionGroup:(id)arg1;
 - (id)selectedMediaOptionInMediaSelectionGroup:(id)arg1;
 - (id)serviceIdentifier;
+- (void)setAVKitData:(id)arg1;
+- (void)setAggressivelyCachesVideoFrames:(BOOL)arg1;
 - (void)setAllowProgressiveSwitchUp:(BOOL)arg1;
 - (void)setAllowsExtendedReadAhead:(BOOL)arg1;
 - (void)setAlwaysMonitorsPlayability:(BOOL)arg1;
 - (void)setAudioMix:(id)arg1;
 - (void)setAudioTimePitchAlgorithm:(id)arg1;
+- (void)setBlendsVideoFrames:(BOOL)arg1;
+- (void)setCanUseNetworkResourcesForLiveStreamingWhilePaused:(BOOL)arg1;
 - (void)setContinuesPlayingDuringPrerollForRateChange:(BOOL)arg1;
 - (void)setContinuesPlayingDuringPrerollForSeek:(BOOL)arg1;
-- (void)setDataYouTubeID:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setGaplessInfo:(id)arg1;
+- (void)setIFramePrefetchTargetDimensions:(struct CGSize { float x1; float x2; })arg1;
+- (void)setImageQueueInterpolationCurve:(id)arg1;
 - (void)setInitialDate:(id)arg1;
 - (void)setInitialEstimatedDate:(id)arg1;
 - (void)setLimitReadAhead:(BOOL)arg1;
 - (void)setMaximumBitRate:(float)arg1;
+- (void)setMaximumForwardBufferDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMaximumTrailingBufferDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMediaKind:(id)arg1;
 - (void)setMinimumIntervalForIFrameOnlyPlayback:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
@@ -337,6 +369,7 @@
 - (void)setRequiresAccessLog:(BOOL)arg1;
 - (void)setRestrictions:(unsigned int)arg1;
 - (void)setReversePlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setReversesMoreVideoFramesInMemory:(BOOL)arg1;
 - (void)setSavesDownloadedDataToDiskWhenDone:(BOOL)arg1;
 - (void)setSeekingWaitsForVideoCompositionRendering:(BOOL)arg1;
 - (void)setServiceIdentifier:(id)arg1;
@@ -344,6 +377,7 @@
 - (void)setSpeedThresholdForIFrameOnlyPlayback:(float)arg1;
 - (void)setTextStyleRules:(id)arg1;
 - (void)setUsesIFrameOnlyPlaybackForHighRateScaledEdits:(BOOL)arg1;
+- (void)setUsesMinimalLatencyForVideoCompositionRendering:(BOOL)arg1;
 - (void)setVariantIndex:(int)arg1;
 - (void)setVideoComposition:(id)arg1;
 - (void)setVolumeAdjustment:(float)arg1;
@@ -357,6 +391,7 @@
 - (id)timedMetadata;
 - (id)tracks;
 - (BOOL)usesIFrameOnlyPlaybackForHighRateScaledEdits;
+- (BOOL)usesMinimalLatencyForVideoCompositionRendering;
 - (id)valueForUndefinedKey:(id)arg1;
 - (int)variantIndex;
 - (id)videoComposition;
@@ -369,8 +404,17 @@
 - (id)MPAVItem;
 - (id)MP_associatedQueuePlayer;
 - (id)MP_shortDescription;
+- (id)createLanguageOptions;
 - (void)setMPAVItem:(id)arg1;
 - (void)setMP_associatedQueuePlayer:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
+
++ (void)is_prepareIrisAudioWithAsset:(id)arg1 completion:(id /* block */)arg2;
++ (void)is_prepareIrisPlayerItemWithAsset:(id)arg1 includeVideo:(BOOL)arg2 includeAudio:(BOOL)arg3 completion:(id /* block */)arg4;
++ (void)is_prepareIrisVideoWithAsset:(id)arg1 completion:(id /* block */)arg2;
+
+- (BOOL)is_isHighFramerate;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

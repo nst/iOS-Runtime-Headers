@@ -79,7 +79,7 @@
 + (unsigned int)charIndexForPoint:(struct CGPoint { float x1; float x2; })arg1 inColumnsArray:(id)arg2 allowPastBreak:(BOOL)arg3 allowNotFound:(BOOL)arg4 isAtEndOfLine:(BOOL*)arg5 leadingEdge:(BOOL*)arg6;
 + (unsigned int)charIndexForPoint:(struct CGPoint { float x1; float x2; })arg1 inColumnsArray:(id)arg2 allowPastBreak:(BOOL)arg3 allowNotFound:(BOOL)arg4 pastCenterGoesToNextChar:(BOOL)arg5 isAtEndOfLine:(BOOL*)arg6 leadingEdge:(BOOL*)arg7;
 + (id)closestColumnInColumnsArray:(id)arg1 forPoint:(struct CGPoint { float x1; float x2; })arg2 ignoreEmptyColumns:(BOOL)arg3 ignoreDrawableOnlyColumns:(BOOL)arg4;
-+ (id)columnForCharIndex:(unsigned int)arg1 eol:(BOOL)arg2 withColumns:(id)arg3;
++ (id)columnForCharIndex:(unsigned int)arg1 allowEndOfColumn:(BOOL)arg2 withColumns:(id)arg3;
 + (id)footnoteMarkAttachmentInColumnArray:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 + (id)footnoteReferenceAttachmentInColumnArray:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 + (id)pathForHighlightWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 columnArray:(id)arg2 pathStyle:(int)arg3;
@@ -119,10 +119,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })glyphRectForRubyFieldAtCharIndex:(unsigned int)arg1 glyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (BOOL)hasPartitionedAttachmentAtStart:(BOOL)arg1;
 - (float)horizontalOffsetForCharIndex:(unsigned int)arg1 lineFragmentIndex:(unsigned int)arg2 bumpPastHyphen:(BOOL)arg3 allowPastLineBounds:(BOOL)arg4;
-- (void)incrementRanges:(int)arg1;
+- (void)incrementRanges:(int)arg1 startingAt:(unsigned int)arg2;
 - (id)initWithStorage:(id)arg1 frameBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (int)layoutResultFlags;
 - (const struct shared_ptr<TSWPLineFragmentArray> { struct TSWPLineFragmentArray {} *x1; struct shared_count { struct sp_counted_base {} *x_2_1_1; } x2; }*)lineFragmentArray;
+- (const struct shared_ptr<TSWPLineFragmentArray> { struct TSWPLineFragmentArray {} *x1; struct shared_count { struct sp_counted_base {} *x_2_1_1; } x2; }*)lineFragmentArrayForUnitTests;
 - (const struct TSWPLineFragment { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; float x5; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_6_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_6_1_2; } x6; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_7_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_7_1_2; } x7; struct { float x_8_1_1; float x_8_1_2; float x_8_1_3; float x_8_1_4; float x_8_1_5; float x_8_1_6; float x_8_1_7; } x8; struct TSWPListLabel {} *x9; id x10; void x11; /* Warning: Unrecognized filer type: 'e' using 'void*' */ void*x12; BOOL x13; void*x14; out const void*x15; void*x16; unsigned short x17; void*x18; void*x19; unsigned long x20; int x21; in void*x22; void*x23; void*x24; float x25; void*x26; void*x27; short x28; void*x29; double x30; SEL x31; SEL x32; void*x33; void*x34; void*x35; SEL x36; SEL x37; void*x38; long x39; long x40; out BOOL x41; void*x42; void*x43; out const void*x44; void*x45; unsigned short x46; void*x47; void*x48; unsigned long x49; int x50; in void*x51; void*x52; void*x53; float x54; void*x55; void*x56; void*x57; void*x58; struct TSWPLineRef {} *x59; struct TSWPLineRef {} *x60; struct __compressed_pair<TSWPLineRef *, std::__1::allocator<TSWPLineRef> > { struct TSWPLineRef {} *x_61_1_1; } x61; }*)lineFragmentAtIndex:(unsigned int)arg1;
 - (unsigned int)lineFragmentCountForBaseline:(float)arg1;
 - (unsigned int)lineIndexForCharIndex:(unsigned int)arg1 eol:(BOOL)arg2;

@@ -3,16 +3,20 @@
  */
 
 @interface CHPointStrokeFIFO : CHPointFIFO {
+    CHDrawing *_drawing;
     CHDrawing *_strokes;
 }
 
-@property (nonatomic, retain) CHDrawing *strokes;
+@property (nonatomic) CHDrawing *drawing;
+@property (nonatomic) CHDrawing *strokes;
 
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addPoint;
 - (void)clear;
 - (void)dealloc;
+- (id)drawing;
 - (void)flush;
 - (id)initWithFIFO:(id)arg1;
+- (void)setDrawing:(id)arg1;
 - (void)setStrokes:(id)arg1;
 - (id)strokes;
 

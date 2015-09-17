@@ -23,7 +23,6 @@
 
 + (id)tokenWithStroke:(id)arg1 range:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3 andPosition:(unsigned int)arg4;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithStroke:(id)arg1 range:(struct TSTSimpleRange { int x1; unsigned int x2; })arg2 order:(int)arg3 andPosition:(unsigned int)arg4;
 - (int)order;

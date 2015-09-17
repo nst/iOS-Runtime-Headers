@@ -21,7 +21,6 @@
     <MusicEntityProviding> *_libraryAddRemoveOverrideItemEntityProvider;
     int _preferredAlertControllerStyle;
     MusicViewControllerPresenter *_presenter;
-    BOOL _showsHeader;
 }
 
 @property (nonatomic) BOOL allowsAddToPlaylistActions;
@@ -45,14 +44,15 @@
 @property (nonatomic, retain) <MusicEntityProviding> *libraryAddRemoveOverrideItemEntityProvider;
 @property (nonatomic) int preferredAlertControllerStyle;
 @property (nonatomic, readonly) MusicViewControllerPresenter *presenter;
-@property (nonatomic) BOOL showsHeader;
 @property (readonly) Class superclass;
 
 + (id)defaultEntityValueContext;
 
 - (void).cxx_destruct;
 - (void)_didSelectHeaderFromAlertController:(id)arg1;
+- (void)_getAdditionalPresentationHandler:(id /* block */*)arg1 shouldDismissHandler:(id /* block */*)arg2 forAlertController:(id)arg3;
 - (struct { long long x1; unsigned long long x2; })_headerSelectionHandlingInformation;
+- (id)_newContextualActionsAlertController;
 - (BOOL)allowsAddToPlaylistActions;
 - (BOOL)allowsCreateGeniusPlaylist;
 - (BOOL)allowsLibraryAddRemoveActions;
@@ -71,7 +71,8 @@
 - (BOOL)includesPostActionForDefaultContainer;
 - (id)init;
 - (id)libraryAddRemoveOverrideItemEntityProvider;
-- (id)newAlertController;
+- (id)newShareViewController;
+- (id)newViewController;
 - (int)preferredAlertControllerStyle;
 - (id)presenter;
 - (void)setAllowsAddToPlaylistActions:(BOOL)arg1;
@@ -91,7 +92,5 @@
 - (void)setIncludesPostActionForDefaultContainer:(BOOL)arg1;
 - (void)setLibraryAddRemoveOverrideItemEntityProvider:(id)arg1;
 - (void)setPreferredAlertControllerStyle:(int)arg1;
-- (void)setShowsHeader:(BOOL)arg1;
-- (BOOL)showsHeader;
 
 @end

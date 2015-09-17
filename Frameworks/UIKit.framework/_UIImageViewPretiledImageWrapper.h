@@ -11,6 +11,7 @@
 
 + (id)cacheValueWithPretiledImage:(id)arg1 cacheKey:(id)arg2;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;

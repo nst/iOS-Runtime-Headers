@@ -9,6 +9,7 @@
     int _activationState;
     NSTimer *_activationTimeout;
     BOOL _allowAnyHTTPSCertificate;
+    BOOL _awaitingCustomResponse;
     BOOL _connectionFailed;
     NSString *_contentType;
     <PBBridgeConnectionDelegate> *_delegate;
@@ -19,6 +20,7 @@
     id /* block */ _lockedOnAnimationCompletion;
     BOOL _nonSilentActivation;
     BOOL _passcodeSet;
+    NSString *_remoteActivationUserAgent;
     <RUILoaderDelegate> *_ruiDelegate;
     RUILoader *_ruiLoader;
     BOOL _selectedPairedUnlock;
@@ -31,6 +33,7 @@
 @property (nonatomic) int activationState;
 @property (nonatomic, retain) NSTimer *activationTimeout;
 @property (nonatomic) BOOL allowAnyHTTPSCertificate;
+@property (nonatomic) BOOL awaitingCustomResponse;
 @property (nonatomic) BOOL connectionFailed;
 @property (nonatomic, copy) NSString *contentType;
 @property (readonly, copy) NSString *debugDescription;
@@ -44,6 +47,7 @@
 @property (nonatomic, copy) id /* block */ lockedOnAnimationCompletion;
 @property (nonatomic) BOOL nonSilentActivation;
 @property (nonatomic) BOOL passcodeSet;
+@property (nonatomic, copy) NSString *remoteActivationUserAgent;
 @property (nonatomic) <RUILoaderDelegate> *ruiDelegate;
 @property (nonatomic, retain) RUILoader *ruiLoader;
 @property (nonatomic) BOOL selectedPairedUnlock;
@@ -56,8 +60,10 @@
 - (void).cxx_destruct;
 - (void)_cleanup;
 - (id)_connectionWithRequest:(id)arg1;
+- (BOOL)_dumpCustomRequestBody;
 - (BOOL)_sendRemoteCommandWithMessageID:(unsigned short)arg1 withArguments:(id)arg2;
 - (BOOL)_sendResponseToMessage:(id)arg1 withResponseMessageID:(unsigned short)arg2 withArguments:(id)arg3;
+- (unsigned short)_testActivationResponseType;
 - (id)activationConnection;
 - (id)activationData;
 - (id)activationRequest;
@@ -65,6 +71,9 @@
 - (id)activationTimeout;
 - (void)activationTimeout:(id)arg1;
 - (BOOL)allowAnyHTTPSCertificate;
+- (BOOL)awaitingCustomResponse;
+- (void)beganWaitingForPresentationOfActivationEvent;
+- (void)beganWaitingForUserResponseToActivationEvent;
 - (void)beginSetupTransaction;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
 - (void)connection:(id)arg1 didReceiveData:(id)arg2;
@@ -108,11 +117,13 @@
 - (void)queryGizmoForOfflineTerms;
 - (void)queryGizmoForShowWarrantySentinelAndRestoreDeviceName:(id)arg1;
 - (void)refreshTimeoutTimer;
+- (id)remoteActivationUserAgent;
 - (id)ruiDelegate;
 - (id)ruiLoader;
 - (BOOL)selectedPairedUnlock;
 - (void)sendGizmoPasscodeRestrictions;
 - (void)sendProxyActivationRequest:(id)arg1;
+- (void)sendProxyActivationWithCustomRequest:(id)arg1;
 - (id)serviceIdentifier;
 - (void)setActivationConnection:(id)arg1;
 - (void)setActivationData:(id)arg1;
@@ -120,6 +131,7 @@
 - (void)setActivationState:(int)arg1;
 - (void)setActivationTimeout:(id)arg1;
 - (void)setAllowAnyHTTPSCertificate:(BOOL)arg1;
+- (void)setAwaitingCustomResponse:(BOOL)arg1;
 - (void)setConnectionFailed:(BOOL)arg1;
 - (void)setContentType:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -130,6 +142,7 @@
 - (void)setLockedOnAnimationCompletion:(id /* block */)arg1;
 - (void)setNonSilentActivation:(BOOL)arg1;
 - (void)setPasscodeSet:(BOOL)arg1;
+- (void)setRemoteActivationUserAgent:(id)arg1;
 - (void)setRuiDelegate:(id)arg1;
 - (void)setRuiLoader:(id)arg1;
 - (void)setSelectedPairedUnlock:(BOOL)arg1;
@@ -148,6 +161,7 @@
 - (void)tellGizmoToUpdateSyncProgressTo:(float)arg1 withState:(int)arg2;
 - (void)transportBecameReachable;
 - (void)transportBecameUnreachable;
+- (id)viewControllerForAlertPresentation;
 - (void)watchDidPrepareForInitialSync:(id)arg1;
 
 @end

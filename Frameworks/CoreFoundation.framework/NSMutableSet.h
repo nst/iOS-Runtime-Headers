@@ -48,6 +48,10 @@
 
 - (void)axSafelyAddObject:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
+
+- (void)_cn_addNonNilObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
 - (void)CDVAddItemParserMappingWithNameSpace:(id)arg1 name:(id)arg2 parseClass:(Class)arg3;
@@ -68,11 +72,20 @@
 
 - (void)minusPathSet:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
+- (void)naui_safeAddObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (void)ic_addNonNilObject:(id)arg1;
+- (void)ic_removeNonNilObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-- (void)addMessageEntry:(id)arg1;
-- (void)addNonNilObject:(id)arg1;
-- (void)xorSet:(id)arg1;
+- (void)tc_addMessageEntry:(id)arg1;
+- (void)tsu_addNonNilObject:(id)arg1;
+- (void)tsu_xorSet:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 

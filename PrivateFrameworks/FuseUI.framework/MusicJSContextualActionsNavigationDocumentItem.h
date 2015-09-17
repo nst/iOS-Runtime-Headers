@@ -11,6 +11,7 @@
 @property (nonatomic, readonly) NSDictionary *presentationOptions;
 
 - (void).cxx_destruct;
+- (id)init;
 - (id)initWithJSDocumentManagedObject:(id)arg1 presentationOptions:(id)arg2;
 - (id)jsDocumentManagedObject;
 - (id)presentationOptions;

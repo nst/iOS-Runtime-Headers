@@ -5,7 +5,7 @@
 
 @required
 
-- (id)initWithItem:(id)arg1;
+- (NSString *)contentType;
 - (NSDate *)modificationDate;
 - (NSString *)title;
 - (NSURL *)url;

@@ -7,6 +7,7 @@
 + (int)category;
 + (void)didReceiveKeysAndValuesWithHealthDaemon:(id)arg1;
 + (int)nanoSyncObjectType;
++ (id)syncEntityDependencies;
 + (int)syncEntityType;
 
 @end

@@ -16,6 +16,7 @@
 
 + (id)statusStringForDisplayForCall:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addPrimaryPhoneCall:(id)arg1 animated:(BOOL)arg2;
 - (id)container;
 - (void)dealloc;

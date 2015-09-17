@@ -26,7 +26,6 @@
 - (id)proposedRecipients;
 - (void)recipientSelectionControllerDidChange;
 - (void)reset;
-- (BOOL)searchListShouldUsePopvoers;
 - (id /* block */)sendBlock;
 - (void)setSendBlock:(id /* block */)arg1;
 - (BOOL)shouldAtomizeToConversationName;

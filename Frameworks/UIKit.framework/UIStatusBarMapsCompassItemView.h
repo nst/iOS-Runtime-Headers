@@ -6,7 +6,7 @@
     MKStarkCompassView *_compassView;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (float)updateContentsAndWidth;
 
 @end

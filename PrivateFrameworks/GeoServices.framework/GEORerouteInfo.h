@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEORerouteInfo : NSObject {
+@interface GEORerouteInfo : NSObject <NSSecureCoding> {
     double _distanceFromDestination;
     double _distancePenalty;
     double _penalty;
@@ -14,7 +14,11 @@
 @property (nonatomic, readonly) double penalty;
 @property (nonatomic, retain) NSDate *time;
 
++ (BOOL)supportsSecureCoding;
+
 - (double)distanceFromDestination;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (double)penalty;
 - (void)setDistanceFromDestination:(double)arg1;
 - (void)setTime:(id)arg1;

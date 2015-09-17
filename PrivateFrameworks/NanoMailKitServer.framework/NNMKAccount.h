@@ -5,11 +5,13 @@
 @interface NNMKAccount : NSObject <NSSecureCoding> {
     NSString *_accountId;
     NSString *_displayName;
+    NSArray *_emailAddresses;
     BOOL _shouldArchive;
 }
 
 @property (nonatomic, retain) NSString *accountId;
 @property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSArray *emailAddresses;
 @property (nonatomic) BOOL shouldArchive;
 
 + (BOOL)supportsSecureCoding;
@@ -18,10 +20,12 @@
 - (id)accountId;
 - (id)description;
 - (id)displayName;
+- (id)emailAddresses;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setAccountId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setEmailAddresses:(id)arg1;
 - (void)setShouldArchive:(BOOL)arg1;
 - (BOOL)shouldArchive;
 

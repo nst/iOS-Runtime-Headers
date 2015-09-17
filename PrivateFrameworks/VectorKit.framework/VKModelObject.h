@@ -35,7 +35,7 @@
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
-@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (nonatomic, readonly) NSArray *submodels;
 @property (nonatomic, readonly) VKModelObject *supermodel;
 @property (nonatomic) VKWorld *world;
@@ -66,7 +66,7 @@
 - (void)setSupportedPasses:(const struct CommandBufferIdSet { struct vector<md::CommandBufferId, std::__1::allocator<md::CommandBufferId> > { unsigned char *x_1_1_1; unsigned char *x_1_1_2; struct __compressed_pair<md::CommandBufferId *, std::__1::allocator<md::CommandBufferId> > { unsigned char *x_3_2_1; } x_1_1_3; } x1; }*)arg1;
 - (void)setWorld:(id)arg1;
 - (BOOL)shouldLayoutWithoutStyleManager;
-- (id)styleManager;
+- (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })styleManager;
 - (id)submodels;
 - (id)supermodel;
 - (const struct CommandBufferIdSet { struct vector<md::CommandBufferId, std::__1::allocator<md::CommandBufferId> > { unsigned char *x_1_1_1; unsigned char *x_1_1_2; struct __compressed_pair<md::CommandBufferId *, std::__1::allocator<md::CommandBufferId> > { unsigned char *x_3_2_1; } x_1_1_3; } x1; }*)supportedRenderPasses;

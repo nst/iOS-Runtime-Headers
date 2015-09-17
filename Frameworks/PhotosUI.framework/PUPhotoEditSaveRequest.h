@@ -8,6 +8,7 @@
     PHContentEditingOutput *_contentEditingOutput;
     int _currentState;
     PLPhotoEditModel *_editModel;
+    PUPhotoEditIrisModel *_irisModel;
     PHAsset *_photo;
     int _workImageVersion;
 }
@@ -15,6 +16,7 @@
 @property (nonatomic, readonly) PHContentEditingOutput *contentEditingOutput;
 @property (nonatomic, readonly) int currentState;
 @property (nonatomic, readonly, copy) PLPhotoEditModel *editModel;
+@property (nonatomic, readonly, copy) PUPhotoEditIrisModel *irisModel;
 @property (nonatomic, readonly) PHAsset *photo;
 @property (nonatomic, readonly) int workImageVersion;
 
@@ -31,10 +33,11 @@
 - (int)currentState;
 - (id)editModel;
 - (id)init;
-- (id)initWithPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(int)arg3;
-- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(int)arg4;
-- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(int)arg3;
+- (id)initWithPhoto:(id)arg1 contentEditingOutput:(id)arg2 workImageVersion:(int)arg3 irisEditModel:(id)arg4;
+- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 contentEditingOutput:(id)arg3 workImageVersion:(int)arg4 irisEditModel:(id)arg5;
+- (id)initWithPhoto:(id)arg1 editModel:(id)arg2 workImageVersion:(int)arg3 irisEditModel:(id)arg4;
 - (id)initWithPhotoToRevertToOriginal:(id)arg1;
+- (id)irisModel;
 - (id)photo;
 - (int)workImageVersion;
 

@@ -14,7 +14,6 @@
 - (id)activityAnnotationView;
 - (id)activityTitle;
 - (id)activityURL;
-- (id)appleActivityURL;
 - (id)delegate;
 - (id)initWithMapItem:(id)arg1;
 - (id)mapItem;

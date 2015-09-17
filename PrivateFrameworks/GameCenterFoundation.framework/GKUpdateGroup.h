@@ -31,6 +31,7 @@
 - (id)error;
 - (id)initWithName:(id)arg1 targetQueue:(id)arg2;
 - (void)join:(id /* block */)arg1;
+- (void)joinAndApplyUpdates;
 - (id)lock;
 - (id)name;
 - (id)notifiers;

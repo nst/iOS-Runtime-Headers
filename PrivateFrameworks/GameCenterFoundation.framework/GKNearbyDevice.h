@@ -5,14 +5,12 @@
 @interface GKNearbyDevice : NSObject {
     NSString *_deviceID;
     GKDiscovery *_discovery;
-    NSDictionary *_pendingInvite;
     GKPlayer *_player;
     int _state;
 }
 
 @property (nonatomic, retain) NSString *deviceID;
 @property (nonatomic, retain) GKDiscovery *discovery;
-@property (nonatomic, retain) NSDictionary *pendingInvite;
 @property (nonatomic, retain) GKPlayer *player;
 @property (nonatomic) int state;
 
@@ -21,12 +19,10 @@
 - (void)dealloc;
 - (id)deviceID;
 - (id)discovery;
-- (id)pendingInvite;
 - (id)player;
 - (void)sendDictionary:(id)arg1;
 - (void)setDeviceID:(id)arg1;
 - (void)setDiscovery:(id)arg1;
-- (void)setPendingInvite:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setState:(int)arg1;
 - (int)state;

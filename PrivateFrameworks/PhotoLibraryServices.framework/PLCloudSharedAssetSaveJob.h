@@ -40,13 +40,14 @@
 + (id)placeholderImageProperties;
 + (void)processMetadataForAssetCollections:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3 info:(id)arg4;
 + (void)replaceRecentlyUploadedOriginalWithDerivativeForCollection:(id)arg1 inAlbum:(id)arg2 personID:(id)arg3;
-+ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollectionWithGUID:(id)arg2 mediaAssetType:(unsigned int)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(BOOL)arg7;
++ (void)saveCloudSharedAssetAtPath:(id)arg1 forAssetCollection:(id)arg2 mediaAssetType:(unsigned int)arg3 albumGUID:(id)arg4 personID:(id)arg5 info:(id)arg6 shouldPrioritize:(BOOL)arg7;
 
 - (BOOL)_createPlaceHolderInSharedAlbum:(id)arg1;
 - (unsigned int)_insertionIndexForAsset:(id)arg1 inAlbum:(id)arg2;
 - (BOOL)_parseISO6709String:(id)arg1 outLatitude:(double*)arg2 outLongitude:(double*)arg3;
 - (void)_processInFlightCommentsForAsset:(id)arg1 inAlbum:(id)arg2 inPhotoLibrary:(id)arg3;
 - (BOOL)_processSaveAssetWithPlaceholderKind:(short)arg1 withAssetDataFilePath:(id)arg2;
+- (void)_updatePhotoIrisPropertiesIfNecessaryForAsset:(id)arg1 inManagedObjectContext:(id)arg2;
 - (id)assetCollectionInfos;
 - (short)attemptLightweightReimportAssetData;
 - (id)cloudAlbumGUID;

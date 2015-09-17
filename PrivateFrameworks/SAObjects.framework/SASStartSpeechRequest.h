@@ -7,8 +7,9 @@
 @property (nonatomic) BOOL eyesFree;
 @property (nonatomic) BOOL handsFree;
 @property (nonatomic) BOOL talkOnly;
-@property (nonatomic, copy) NSDictionary *voiceTriggerEventInfo;
+@property (nonatomic) BOOL textToSpeechIsMuted;
 @property (nonatomic, copy) NSArray *voiceTriggerPhrases;
+@property (nonatomic) BOOL wasLaunchedForRequest;
 
 + (id)startSpeechRequest;
 + (id)startSpeechRequestWithDictionary:(id)arg1 context:(id)arg2;
@@ -20,10 +21,12 @@
 - (void)setEyesFree:(BOOL)arg1;
 - (void)setHandsFree:(BOOL)arg1;
 - (void)setTalkOnly:(BOOL)arg1;
-- (void)setVoiceTriggerEventInfo:(id)arg1;
+- (void)setTextToSpeechIsMuted:(BOOL)arg1;
 - (void)setVoiceTriggerPhrases:(id)arg1;
+- (void)setWasLaunchedForRequest:(BOOL)arg1;
 - (BOOL)talkOnly;
-- (id)voiceTriggerEventInfo;
+- (BOOL)textToSpeechIsMuted;
 - (id)voiceTriggerPhrases;
+- (BOOL)wasLaunchedForRequest;
 
 @end

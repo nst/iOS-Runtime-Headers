@@ -8,6 +8,14 @@
 }
 
 @property (readonly) JSContext *context;
+@property (readonly) BOOL isArray;
+@property (readonly) BOOL isBoolean;
+@property (readonly) BOOL isDate;
+@property (readonly) BOOL isNull;
+@property (readonly) BOOL isNumber;
+@property (readonly) BOOL isObject;
+@property (readonly) BOOL isString;
+@property (readonly) BOOL isUndefined;
 
 // Image: /System/Library/Frameworks/JavaScriptCore.framework/JavaScriptCore
 
@@ -42,7 +50,9 @@
 - (id)init;
 - (id)initWithValue:(struct OpaqueJSValue { }*)arg1 inContext:(id)arg2;
 - (id)invokeMethod:(id)arg1 withArguments:(id)arg2;
+- (BOOL)isArray;
 - (BOOL)isBoolean;
+- (BOOL)isDate;
 - (BOOL)isEqualToObject:(id)arg1;
 - (BOOL)isEqualWithTypeCoercionToObject:(id)arg1;
 - (BOOL)isInstanceOf:(id)arg1;
@@ -82,6 +92,26 @@
 + (id)valueWithVector4:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
 
 - (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })toTransform3D;
+- (struct SCNVector3 { float x1; float x2; float x3; })toVector3;
+- (struct SCNVector4 { float x1; float x2; float x3; float x4; })toVector4;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusKit.framework/OpusKit
+
++ (id)valueWithCATransform3D:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1 inContext:(id)arg2;
++ (id)valueWithCoodinateRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1 inContext:(id)arg2;
++ (id)valueWithEdgeInsets:(struct OKEdgeInsets { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
++ (id)valueWithLocationCoordinate2D:(struct OKLocationCoordinate2D { double x1; double x2; })arg1 inContext:(id)arg2;
++ (id)valueWithOffset:(struct UIOffset { float x1; float x2; })arg1 inContext:(id)arg2;
++ (id)valueWithVector3:(struct SCNVector3 { float x1; float x2; float x3; })arg1 inContext:(id)arg2;
++ (id)valueWithVector4:(struct SCNVector4 { float x1; float x2; float x3; float x4; })arg1 inContext:(id)arg2;
+
+- (BOOL)isVector3;
+- (BOOL)isVector4;
+- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })toCATransform3D;
+- (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })toCoordinateRegion;
+- (struct OKEdgeInsets { float x1; float x2; float x3; float x4; })toEdgeInsets;
+- (struct OKLocationCoordinate2D { double x1; double x2; })toLocationCoordinate2D;
+- (struct UIOffset { float x1; float x2; })toOffset;
 - (struct SCNVector3 { float x1; float x2; float x3; })toVector3;
 - (struct SCNVector4 { float x1; float x2; float x3; float x4; })toVector4;
 

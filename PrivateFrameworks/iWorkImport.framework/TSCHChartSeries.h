@@ -7,6 +7,7 @@
     unsigned int mBarGapIndex;
     TSCHChartModel *mChartModel;
     TSCHErrorBarData *mErrorBarData;
+    BOOL mIsFakeSeriesForHiddenDataExport;
     TSCHChartGridAdapter *mNameAdapter;
     <TSCHStyleActAlike> *mNonStyle;
     unsigned int mSeriesIndex;
@@ -22,6 +23,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TSCHErrorBarData *errorBarData;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isFakeSeriesForHiddenDataExport;
 @property (nonatomic, readonly) TSCHChartModel *model;
 @property (nonatomic, retain) NSString *name;
 @property (nonatomic, readonly) unsigned int seriesIndex;
@@ -67,6 +69,7 @@
 - (id)initWithChartModel:(id)arg1 index:(unsigned int)arg2;
 - (int)intValueForProperty:(int)arg1 defaultValue:(int)arg2;
 - (void)invalidateCacheDataForSynchronization;
+- (BOOL)isFakeSeriesForHiddenDataExport;
 - (BOOL)isMultiData;
 - (id)model;
 - (void)modelSyncSetNonStyle:(id)arg1;
@@ -95,6 +98,7 @@
 - (void)setBarGapIndex:(unsigned int)arg1;
 - (void)setGridAdapter:(id)arg1 forAxisType:(int)arg2;
 - (void)setGridAdapterForName:(id)arg1;
+- (void)setIsFakeSeriesForHiddenDataExport:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setSeriesStorage:(id)arg1;
 - (void)setSeriesType:(id)arg1;

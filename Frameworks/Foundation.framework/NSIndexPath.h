@@ -12,6 +12,7 @@
 @property (nonatomic, readonly) int ab_item;
 @property (nonatomic, readonly) int item;
 @property (readonly) unsigned int length;
+@property (getter=pu_isValid, nonatomic, readonly) BOOL pu_valid;
 @property (nonatomic, readonly) int row;
 @property (nonatomic, readonly) int section;
 @property (nonatomic, readonly) int tk_row;
@@ -42,7 +43,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (unsigned int)length;
 
-// Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
 + (id)indexPathForItem:(int)arg1 inGroup:(int)arg2;
 
@@ -51,13 +52,24 @@
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
++ (id)pu_indexPathForItem:(int)arg1 inSubSection:(int)arg2 section:(int)arg3;
 + (id)pu_indexPathsForItems:(id)arg1 inSection:(int)arg2;
++ (id)pu_rootIndexPath;
 
 - (id)pu_alteredIndexPathAfterDeletingItemAtIndexPath:(id)arg1;
 - (id)pu_alteredIndexPathAfterDeletingItemsAtIndexPaths:(id)arg1;
 - (id)pu_alteredIndexPathAfterInsertingItemAtIndexPath:(id)arg1;
 - (id)pu_alteredIndexPathAfterInsertingItemsAtIndexPaths:(id)arg1;
 - (id)pu_alteredIndexPathAfterMovingItemAtIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (id)pu_indexPathAfterDeletingItemAtIndexPath:(id)arg1;
+- (id)pu_indexPathAfterInsertingItemAtIndexPath:(id)arg1;
+- (id)pu_indexPathAfterMovingItemFromIndexPath:(id)arg1 toIndexPath:(id)arg2;
+- (id)pu_indexPathAfterReloadingItemAtIndexPath:(id)arg1;
+- (id)pu_indexPathByAppendingIndexPath:(id)arg1;
+- (id)pu_indexPathByChangingIndexAtPosition:(unsigned int)arg1 toIndex:(unsigned int)arg2;
+- (BOOL)pu_isParentOfIndexPath:(id)arg1;
+- (BOOL)pu_isValid;
+- (id)pu_shortDescription;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 

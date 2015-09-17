@@ -7,6 +7,8 @@
 @property (nonatomic, retain) <SASTTemplateAction> *action;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *extSessionGuid;
+@property (nonatomic, copy) NSDate *extSessionGuidCreatedTimestamp;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) SALocation *location;
 @property (readonly) Class superclass;
@@ -17,9 +19,13 @@
 
 - (id)action;
 - (id)encodedClassName;
+- (id)extSessionGuid;
+- (id)extSessionGuidCreatedTimestamp;
 - (id)groupIdentifier;
 - (id)location;
 - (void)setAction:(id)arg1;
+- (void)setExtSessionGuid:(id)arg1;
+- (void)setExtSessionGuidCreatedTimestamp:(id)arg1;
 - (void)setLocation:(id)arg1;
 - (void)setZoomLevel:(id)arg1;
 - (id)zoomLevel;

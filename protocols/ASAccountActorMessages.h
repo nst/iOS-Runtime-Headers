@@ -51,6 +51,7 @@
 - (oneway void)stopMonitoringAllFolders;
 - (oneway void)stopMonitoringFoldersForUpdates:(NSArray *)arg1;
 - (int)supportsConversations;
+- (int)supportsDraftFolderSync;
 - (int)supportsEmailFlagging;
 - (int)supportsMailboxSearch;
 - (NSString *)unactionableICSRepresentationForMetaData:(NSData *)arg1 inFolderWithId:(NSString *)arg2 outSummary:(id*)arg3;

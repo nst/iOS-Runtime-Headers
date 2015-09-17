@@ -131,5 +131,6 @@
 - (BOOL)temporalNoiseReductionEnabled;
 - (void)updateOutputRequirements;
 - (id)videoCaptureOutput;
+- (void)willStop;
 
 @end

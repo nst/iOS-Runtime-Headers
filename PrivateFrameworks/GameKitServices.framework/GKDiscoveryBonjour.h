@@ -6,7 +6,6 @@
     struct _DNSServiceRef_t { } *_advertiseRef;
     id /* block */ _browseCallback;
     struct _DNSServiceRef_t { } *_browseRef;
-    BOOL _checkedInWithLaunchd;
     id /* block */ _connectionCallback;
     NSMutableArray *_launchdSources;
     int _listeningPort;
@@ -39,6 +38,7 @@
 - (id)initWithDomain:(id)arg1 type:(id)arg2;
 - (int)ipV4Socket;
 - (int)ipV6Socket;
+- (BOOL)isAppleTV;
 - (id)launchdSources;
 - (id)resolveContainers;
 - (id)resolveContainersSyncQueue;

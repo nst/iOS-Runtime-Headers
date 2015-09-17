@@ -16,7 +16,9 @@
 - (void).cxx_destruct;
 - (id)details;
 - (id)init;
+- (BOOL)isAwaitingConfiguration;
 - (BOOL)isSupervised;
+- (BOOL)isTeslaEnrolled;
 - (id)memberQueue;
 - (id)memberQueueDetails;
 - (void)refreshDetailsFromDisk;

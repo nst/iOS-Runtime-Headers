@@ -55,8 +55,8 @@
 + (void)bootstrapPresetsOfKind:(id)arg1 inTheme:(id)arg2 alternate:(int)arg3 reservedCount:(unsigned int)arg4;
 + (id)bootstrapPropertyMapForPresetIndex:(unsigned int)arg1 inTheme:(id)arg2 alternate:(int)arg3;
 + (id)i_thumbnailForImageData:(id)arg1;
++ (id)p_resampleAndConvertImageDataToSRGB:(id)arg1 resampled:(BOOL*)arg2 alreadyInDocument:(BOOL)arg3;
 + (id)presetKinds;
-+ (id)resampleAndConvertImageDataToSRGB:(id)arg1 resampled:(BOOL*)arg2;
 
 - (void)acceptVisitor:(id)arg1;
 - (id)adjustedImageData;
@@ -90,7 +90,7 @@
 - (BOOL)isMasked;
 - (BOOL)isPDF;
 - (Class)layoutClass;
-- (void)loadFromArchive:(const struct ImageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct DataReference {} *x6; struct Reference {} *x7; struct Size {} *x8; struct Reference {} *x9; struct DataReference {} *x10; struct DataReference {} *x11; struct Size {} *x12; struct Path {} *x13; struct ImageAdjustmentsArchive {} *x14; unsigned int x15; bool x16; struct DataReference {} *x17; struct DataReference {} *x18; struct DataReference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; }*)arg1 unarchiver:(id)arg2;
+- (void)loadFromArchive:(const struct ImageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct DataReference {} *x6; struct Reference {} *x7; struct Size {} *x8; struct Reference {} *x9; struct DataReference {} *x10; struct DataReference {} *x11; struct Size {} *x12; struct Path {} *x13; struct ImageAdjustmentsArchive {} *x14; unsigned int x15; bool x16; struct DataReference {} *x17; struct DataReference {} *x18; struct DataReference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Path {} *x23; }*)arg1 unarchiver:(id)arg2;
 - (id)localizedChunkNameForTextureDeliveryStyle:(unsigned int)arg1 animationFilter:(id)arg2 chunkIndex:(unsigned int)arg3;
 - (BOOL)maskCanBeReset;
 - (id)maskInfo;
@@ -110,7 +110,7 @@
 - (id)propertyNameForOriginalSizeCommand;
 - (struct CGSize { float x1; float x2; })rawDataSize;
 - (Class)repClass;
-- (void)saveToArchive:(struct ImageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct DataReference {} *x6; struct Reference {} *x7; struct Size {} *x8; struct Reference {} *x9; struct DataReference {} *x10; struct DataReference {} *x11; struct Size {} *x12; struct Path {} *x13; struct ImageAdjustmentsArchive {} *x14; unsigned int x15; bool x16; struct DataReference {} *x17; struct DataReference {} *x18; struct DataReference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; }*)arg1 archiver:(id)arg2;
+- (void)saveToArchive:(struct ImageArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct DrawableArchive {} *x5; struct DataReference {} *x6; struct Reference {} *x7; struct Size {} *x8; struct Reference {} *x9; struct DataReference {} *x10; struct DataReference {} *x11; struct Size {} *x12; struct Path {} *x13; struct ImageAdjustmentsArchive {} *x14; unsigned int x15; bool x16; struct DataReference {} *x17; struct DataReference {} *x18; struct DataReference {} *x19; struct Reference {} *x20; struct Reference {} *x21; struct Reference {} *x22; struct Path {} *x23; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAdjustedImageData:(id)arg1;
 - (void)setEnhancedImageData:(id)arg1;
@@ -130,7 +130,6 @@
 - (Class)styleClass;
 - (id)styleIdentifierTemplateForNewPreset;
 - (id)subclassInitFromUnarchiver:(id)arg1;
-- (BOOL)supportsAccessibilityDescription;
 - (struct CGSize { float x1; float x2; })targetSizeForImageData:(id)arg1 associatedHint:(id)arg2;
 - (id)thumbnailAdjustedImageData;
 - (id)thumbnailImageData;

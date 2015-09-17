@@ -8,6 +8,8 @@
 + (void)_handleInteractionDisablingTimeout;
 + (void)_handleInteractionDisablingTimeoutForAlbumStackTransition;
 + (void)_handleInteractionDisablingTimeoutForBannerViewImagesJump;
++ (void)_handleInteractionDisablingTimeoutForOneUpToPhotoEditorTransition;
++ (void)_handleInteractionDisablingTimeoutForOverOneUpTransition;
 + (void)_handleInteractionDisablingTimeoutForPhotoBrowserToPhotoEditorTransition;
 + (void)_handleInteractionDisablingTimeoutForPhotoBrowserZoomTransition;
 + (void)_handleInteractionDisablingTimeoutForPhotoEditorComputingAutoEnhance;
@@ -21,8 +23,10 @@
 + (void)_handleInteractionDisablingTimeoutForStartSlideshowFromGrid;
 + (id)beginDisablingUserInteractionForReason:(int)arg1;
 + (id)beginDisablingUserInteractionForReason:(int)arg1 withExpectedTimeout:(double)arg2;
++ (void)beginUsingOrbTheme;
 + (id)currentTheme;
 + (void)endDisablingUserInteraction:(id)arg1;
++ (void)endUsingOrbTheme;
 + (BOOL)shouldUsePhoneLayoutWithTraitCollection:(id)arg1;
 
 @end

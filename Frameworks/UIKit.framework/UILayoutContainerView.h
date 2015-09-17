@@ -17,6 +17,7 @@
 @property (nonatomic) BOOL usesInnerShadow;
 @property (nonatomic) BOOL usesRoundedCorners;
 
+- (void).cxx_destruct;
 - (void)_installShadowViews;
 - (void)_tearDownShadowViews;
 - (void)addSubview:(id)arg1;

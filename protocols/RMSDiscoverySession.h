@@ -11,7 +11,9 @@
 - (int)discoveryTypes;
 - (void)endDiscovery;
 - (BOOL)isNetworkAvailable;
+- (NSArray *)pairedNetworkNames;
 - (void)setDelegate:(id <RMSDiscoverySessionDelegate>)arg1;
 - (void)setDiscoveryTypes:(int)arg1;
+- (void)setPairedNetworkNames:(NSArray *)arg1;
 
 @end

@@ -23,6 +23,7 @@
 + (id)updatesByDiffingSpecifiers:(id)arg1 withSpecifiers:(id)arg2 changedBlock:(id /* block */)arg3;
 + (id)updatesWithSpecifiers:(id)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)_addAndApplyOperation:(id)arg1;
 - (void)_didApplyOperation:(id)arg1;
 - (BOOL)_enumerateArrayWithConjuctionalResult:(id)arg1 usingBlock:(id /* block */)arg2;
@@ -41,7 +42,6 @@
 - (id)context;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)currentSpecifiers;
-- (void)dealloc;
 - (id)description;
 - (void)enumerateUpdatesUsingBlock:(id /* block */)arg1;
 - (id)groupIndex;

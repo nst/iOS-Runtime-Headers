@@ -8,9 +8,9 @@
 
 @property (nonatomic, retain) NSSet *notificationTypeNamesToFetch;
 
+- (void).cxx_destruct;
 - (id)copyAdditionalResourcePropertiesToFetch;
 - (id)copyGetTaskWithURL:(id)arg1;
-- (void)dealloc;
 - (id)initWithFolderURL:(id)arg1 previousCTag:(id)arg2 previousSyncToken:(id)arg3 accountInfoProvider:(id)arg4 taskManager:(id)arg5;
 - (id)notificationTypeNamesToFetch;
 - (void)setNotificationTypeNamesToFetch:(id)arg1;

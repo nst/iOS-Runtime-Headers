@@ -5,6 +5,7 @@
 @interface EKUIDividedGridViewController : UIViewController {
     NSArray *_allCells;
     NSArray *_buttonTitles;
+    UIColor *_cellBackgroundColor;
     <EKUIDividedGridViewControllerDelegate> *_delegate;
     float _preferredWidth;
     int _type;
@@ -28,7 +29,7 @@
 - (id)buttonTitles;
 - (void)cellTapped:(id)arg1;
 - (id)delegate;
-- (id)initWithType:(int)arg1 buttonTitles:(id)arg2;
+- (id)initWithType:(int)arg1 buttonTitles:(id)arg2 cellBackgroundColor:(id)arg3;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)loadView;
 - (float)preferredWidth;

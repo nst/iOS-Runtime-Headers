@@ -8,31 +8,28 @@
     NSData *_certificateData;
     NSString *_certificateURLBagKey;
     SSVPlaybackLeaseConfiguration *_configuration;
-    SSVFairPlaySubscriptionController *_fairPlaySubscriptionController;
     id /* block */ _outputBlock;
     SSVPlaybackLeaseRequest *_request;
+    unsigned int _retryCount;
     SSURLBag *_urlBag;
 }
 
-@property (copy) NSData *certificateData;
 @property (copy) NSString *certificateURLBagKey;
-@property (retain) SSVFairPlaySubscriptionController *fairPlaySubscriptionController;
+@property (readonly, copy) SSVPlaybackLeaseRequest *leaseRequest;
 @property (copy) id /* block */ outputBlock;
 
 - (void).cxx_destruct;
-- (BOOL)_addRequestBodyToRequest:(id)arg1 withCertificateData:(id)arg2 error:(id*)arg3;
+- (BOOL)_loadCertificateDataIfNecessary:(id*)arg1;
 - (BOOL)_resolveConfigurationAndURLReturningError:(id*)arg1;
+- (BOOL)_shouldRetryForError:(id)arg1;
 - (void)cancel;
-- (id)certificateData;
 - (id)certificateURLBagKey;
-- (id)fairPlaySubscriptionController;
 - (id)initWithLeaseRequest:(id)arg1 URLBag:(id)arg2;
 - (id)initWithLeaseRequest:(id)arg1 configuration:(id)arg2;
+- (id)leaseRequest;
 - (void)main;
 - (id /* block */)outputBlock;
-- (void)setCertificateData:(id)arg1;
 - (void)setCertificateURLBagKey:(id)arg1;
-- (void)setFairPlaySubscriptionController:(id)arg1;
 - (void)setOutputBlock:(id /* block */)arg1;
 
 @end

@@ -25,7 +25,9 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)endTime;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)removeSpaceAfter;
 - (BOOL)removeSpaceBefore;
 - (void)setConfidenceScore:(int)arg1;

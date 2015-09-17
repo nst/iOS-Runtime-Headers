@@ -19,6 +19,7 @@
 @property (nonatomic, retain) NSString *url;
 @property (nonatomic) unsigned int width;
 
+- (unsigned int)_area;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -6,26 +6,35 @@
     unsigned int _baselineETASeconds;
     GEOLocation *_destinationLocation;
     double _distance;
+    double _distanceToDepartureStop;
     unsigned int _responseETASeconds;
     NSMutableArray *_sortedETAs;
     GEOLocation *_sourceLocation;
+    GEOQuickETATransitDeparturesInfo *_transitDeparturesInfo;
+    double _walkingDurationToDepartureStop;
 }
 
 @property (nonatomic, readonly) unsigned int baselineETASeconds;
 @property (nonatomic, readonly) GEOLocation *destinationLocation;
 @property (nonatomic, readonly) double distance;
+@property (nonatomic, readonly) double distanceToDepartureStop;
 @property (nonatomic, readonly) unsigned int responseETASeconds;
 @property (nonatomic, readonly) NSMutableArray *sortedETAs;
 @property (nonatomic, readonly) GEOLocation *sourceLocation;
+@property (nonatomic, readonly) GEOQuickETATransitDeparturesInfo *transitDeparturesInfo;
+@property (nonatomic, readonly) double walkingDurationToDepartureStop;
 
 - (unsigned int)baselineETASeconds;
 - (void)dealloc;
 - (id)destinationLocation;
 - (double)distance;
+- (double)distanceToDepartureStop;
 - (id)initWithDirectionsResponse:(id)arg1 fromRequest:(id)arg2;
 - (id)initWithETAResult:(id)arg1 fromRequest:(id)arg2;
 - (unsigned int)responseETASeconds;
 - (id)sortedETAs;
 - (id)sourceLocation;
+- (id)transitDeparturesInfo;
+- (double)walkingDurationToDepartureStop;
 
 @end

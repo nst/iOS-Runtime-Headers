@@ -4,25 +4,24 @@
 
 @interface ABPhonePredicate : ABPredicate {
     NSString *_country;
-    NSString *_dbCountry;
+    NSString *_homeCountryCode;
     NSString *_phoneNumber;
 }
 
 @property (nonatomic, copy) NSString *country;
-@property (nonatomic, readonly) NSString *dbCountry;
 @property (nonatomic, copy) NSString *phoneNumber;
 
-- (void)ab_bindStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
+- (void)ab_bindWhereClauseComponentOfStatement:(struct CPSqliteStatement { struct CPSqliteConnection {} *x1; struct sqlite3_stmt {} *x2; }*)arg1 withBindingOffset:(int*)arg2 predicateIdentifier:(int)arg3;
 - (id)country;
-- (id)dbCountry;
 - (void)dealloc;
-- (void)evaluateCallbackWithSqliteContext:(struct sqlite3_context { }*)arg1 predicateContext:(void*)arg2 values:(struct Mem {}**)arg3 count:(int)arg4;
+- (void)evaluateCallbackWithSqliteContext:(struct sqlite3_context { }*)arg1 predicateContext:(id)arg2 values:(struct Mem {}**)arg3 count:(int)arg4;
 - (BOOL)hasCallback;
+- (id)homeCountryCode;
 - (BOOL)isValid;
 - (id)phoneNumber;
 - (id)predicateFormat;
-- (id)queryJoinsInCompound:(BOOL)arg1;
-- (id)queryWhereString;
+- (id)queryJoinsInCompound:(BOOL)arg1 predicateIdentifier:(int)arg2;
+- (id)queryWhereStringForPredicateIdentifier:(int)arg1;
 - (void)setCountry:(id)arg1;
 - (void)setPhoneNumber:(id)arg1;
 

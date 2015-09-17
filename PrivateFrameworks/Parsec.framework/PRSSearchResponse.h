@@ -6,6 +6,7 @@
     double _backOff;
     NSArray *_completionResultSets;
     NSString *_errorCodeString;
+    NSString *_fbq;
     double _maxAge;
     int _status;
     NSString *_statusString;
@@ -14,6 +15,7 @@
 @property (nonatomic, readonly) double backOff;
 @property (nonatomic, readonly) NSArray *completionResultSets;
 @property (nonatomic, readonly) NSString *errorCodeString;
+@property (nonatomic, readonly) NSString *fbq;
 @property (nonatomic, readonly) double maxAge;
 @property (nonatomic, readonly) int status;
 @property (nonatomic, readonly) NSString *statusString;
@@ -23,6 +25,7 @@
 - (id)completionResultSets;
 - (id)description;
 - (id)errorCodeString;
+- (id)fbq;
 - (id)initWithFactory:(id)arg1 session:(id)arg2 webSearch:(BOOL)arg3 resourceProvider:(id)arg4 array:(id)arg5 error:(id*)arg6;
 - (double)maxAge;
 - (int)status;

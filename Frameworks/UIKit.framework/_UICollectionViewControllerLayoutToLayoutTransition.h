@@ -24,13 +24,13 @@
 
 + (id)transitionForOperation:(int)arg1 fromViewController:(id)arg2 toViewController:(id)arg3;
 
+- (void).cxx_destruct;
 - (BOOL)_shouldCrossFadeBottomBars;
 - (BOOL)_shouldCrossFadeNavigationBar;
 - (void)animateTransition:(id)arg1;
 - (void)animationEnded:(BOOL)arg1;
 - (BOOL)crossFadeBottomBars;
 - (BOOL)crossFadeNavigationBar;
-- (void)dealloc;
 - (BOOL)interactionAborted;
 - (id)interactionController;
 - (int)operation;

@@ -32,7 +32,6 @@
 - (id)inputSize;
 - (id)inputSoften;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAngle:(id)arg1;
 - (void)setInputHighlightColor:(id)arg1;
 - (void)setInputImage:(id)arg1;

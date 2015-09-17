@@ -17,12 +17,14 @@
 - (void)mapModelDidUpdateMinMaxZoomLevel:(VKMapModel *)arg1;
 - (BOOL)mapModelInNav:(VKMapModel *)arg1;
 - (BOOL)mapModelInNavAtDefaultZoom:(VKMapModel *)arg1;
-- (void)mapModelWillBecomFullyDrawn:(VKMapModel *)arg1;
+- (void)mapModelLabelsDidLayout:(VKMapModel *)arg1;
+- (void)mapModelWillBecomeFullyDrawn:(VKMapModel *)arg1;
 - (double)mapModelZoomScale:(VKMapModel *)arg1;
 
 @optional
 
 - (void)mapModel:(VKMapModel *)arg1 didUpdateContainsOverlay:(BOOL)arg2;
 - (void)mapModel:(VKMapModel *)arg1 didUpdateNavigationPuckSize:(float)arg2;
+- (void)mapModelDidReloadStylesheet:(VKMapModel *)arg1;
 
 @end

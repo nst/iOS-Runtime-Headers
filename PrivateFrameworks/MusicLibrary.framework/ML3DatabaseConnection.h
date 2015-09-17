@@ -10,6 +10,7 @@
     NSString *_databasePath;
     NSMutableArray *_enqueuedTransactionCommitBlocks;
     const void *_iTunesExtensions;
+    BOOL _isHandlingIOError;
     BOOL _isOpen;
     BOOL _isReadOnly;
     unsigned int _journalingMode;
@@ -47,6 +48,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)_alterTableNamed:(id)arg1 withNewColumnDefinitions:(id)arg2 newColumnNames:(id)arg3 oldColumnNames:(id)arg4;
+- (BOOL)_closeAndFlushTransactionState:(BOOL)arg1;
 - (void)_createDatabaseDirectoryIfNonexistent;
 - (void)_createDatabaseFileIfNonexistent;
 - (BOOL)_databaseFileExists;
@@ -58,9 +60,11 @@
 - (void)_executeTransactionCommitBlocks:(BOOL)arg1;
 - (void)_finalizeAllStatements;
 - (BOOL)_handleBusyLockWithNumberOfRetries:(int)arg1;
+- (BOOL)_handleConnectionErrorWhileOpening:(int)arg1;
 - (void)_handleDatabaseCorruption;
 - (void)_handleDatabaseProfileStatement:(const char *)arg1 executionTimeNS:(unsigned long long)arg2;
 - (void)_handleDatabaseTraceStatement:(const char *)arg1;
+- (BOOL)_handleDiskIOError;
 - (BOOL)_handleZombieSQLiteConnection:(struct sqlite3 { }*)arg1;
 - (BOOL)_internalBeginTransactionWithBehaviorType:(unsigned int)arg1;
 - (BOOL)_internalEndTransactionAndCommit:(BOOL)arg1;

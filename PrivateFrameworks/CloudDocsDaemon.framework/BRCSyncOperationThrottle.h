@@ -5,6 +5,7 @@
 @interface BRCSyncOperationThrottle : NSObject <NSSecureCoding> {
     NSString *_containerID;
     double _delay;
+    BOOL _isSyncDown;
     int _lastErrorKind;
     double _nextTry;
 }
@@ -23,13 +24,13 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithContainerID:(id)arg1;
+- (id)initWithContainerID:(id)arg1 isSyncDown:(BOOL)arg2;
 - (int)lastErrorKind;
 - (double)nextTry;
 - (void)setContainerID:(id)arg1;
 - (void)updateAfterSchedulingTask;
 - (void)updateAfterSchedulingTaskWithMinimumDelay:(double)arg1;
 - (BOOL)updateForClearingOutOfQuota;
-- (void)updateForError:(id)arg1 isSyncDown:(BOOL)arg2;
+- (void)updateForError:(id)arg1;
 
 @end

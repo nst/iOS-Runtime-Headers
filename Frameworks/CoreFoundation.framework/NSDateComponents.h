@@ -80,6 +80,11 @@
 - (int)year;
 - (int)yearForWeekOfYear;
 
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (Class)contactViewControllerCellClassForPropertyType:(id)arg1;
+- (id)displayString;
+
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 
 - (void)clearTimeComponents;
@@ -133,11 +138,5 @@
 - (BOOL)isSameMonthAsComponents:(id)arg1;
 - (BOOL)isSameYearAsComponents:(id)arg1;
 - (id)representedDate;
-
-// Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
-
-- (BOOL)isSameDayAsComponents:(id)arg1;
-- (BOOL)isSameMonthAsComponents:(id)arg1;
-- (BOOL)isSameYearAsComponents:(id)arg1;
 
 @end

@@ -6,7 +6,8 @@
     CALayer *_baseDimmingLayer;
     CALayer *_baseLayer;
     CALayer *_innerCircleLayer;
-    struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; } *_innerImageMask;
+    struct UIImage { Class x1; } *_innerImageMask;
+    BOOL _isShowingStaleColor;
     BOOL _rotateInnerImageToMatchCourse;
     BOOL _shouldInnerPulse;
 }
@@ -24,13 +25,12 @@
 - (id)_baseDimmingLayer;
 - (id)_baseLayer;
 - (void)_dealloc;
-- (struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)_headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (id)_innerPulseAnimation;
 - (id)_layerToMatchAccuracyRing;
 - (id)_pulseAnimation;
 - (id)_pulseLayer;
 - (void)_resetLayerToMatchAccuracyRing;
-- (void)_setMapDisplayStyle:(unsigned int)arg1;
+- (void)_setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)_setMapRotationRadians:(float)arg1;
 - (void)_setMapType:(unsigned int)arg1;
 - (void)_setPresentationCourse:(double)arg1;
@@ -48,7 +48,7 @@
 - (id)innerImageMask;
 - (BOOL)rotateInnerImageToMatchCourse;
 - (void)setEffectsEnabled:(BOOL)arg1;
-- (void)setInnerImageMask:(struct UIImage { Class x1; void *x2; float x3; struct { unsigned int x_4_1_1 : 1; unsigned int x_4_1_2 : 3; unsigned int x_4_1_3 : 1; unsigned int x_4_1_4 : 1; unsigned int x_4_1_5 : 1; unsigned int x_4_1_6 : 2; unsigned int x_4_1_7 : 1; unsigned int x_4_1_8 : 1; } x4; }*)arg1;
+- (void)setInnerImageMask:(struct UIImage { Class x1; }*)arg1;
 - (void)setRotateInnerImageToMatchCourse:(BOOL)arg1;
 - (void)setShouldInnerPulse:(BOOL)arg1;
 - (BOOL)shouldInnerPulse;

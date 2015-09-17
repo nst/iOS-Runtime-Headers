@@ -2,12 +2,16 @@
    Image: /System/Library/PrivateFrameworks/WebContentAnalysis.framework/WebContentAnalysis
  */
 
-@interface WebFilterEvaluator : NSObject <NSSecureCoding> {
+@interface WebFilterEvaluator : NSObject <NSSecureCoding, WFPINEntryViewControllerProtocol> {
     NSMutableData *_buffer;
+    id /* block */ _completion;
     unsigned int _filterState;
     NSString *_pageTitle;
+    WFRemotePINEntryViewController *_remoteViewController;
     NSURL *_url;
 }
+
+@property (nonatomic, retain) WFRemotePINEntryViewController *remoteViewController;
 
 + (id)createWithResponse:(id)arg1;
 + (BOOL)isManagedSession;
@@ -23,7 +27,11 @@
 - (long)filterState;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithResponse:(id)arg1;
+- (id)remoteViewController;
+- (void)setRemoteViewController:(id)arg1;
 - (void)unblockWithCompletion:(id /* block */)arg1;
+- (void)userDidCancel;
+- (void)userEnteredCorrectPIN;
 - (BOOL)wasBlocked;
 
 @end

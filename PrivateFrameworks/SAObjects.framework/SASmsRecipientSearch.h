@@ -4,15 +4,18 @@
 
 @interface SASmsRecipientSearch : SADomainCommand
 
+@property (nonatomic) BOOL clientShouldResolvePhonesAndEmails;
 @property (nonatomic, copy) NSArray *recipients;
 
 + (id)recipientSearch;
 + (id)recipientSearchWithDictionary:(id)arg1 context:(id)arg2;
 
+- (BOOL)clientShouldResolvePhonesAndEmails;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)recipients;
 - (BOOL)requiresResponse;
+- (void)setClientShouldResolvePhonesAndEmails:(BOOL)arg1;
 - (void)setRecipients:(id)arg1;
 
 @end

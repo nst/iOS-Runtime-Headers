@@ -20,8 +20,8 @@
 @property (nonatomic) BOOL toggledOn;
 @property (retain) UIColor *unhighlightedBackgroundColor;
 
+- (void).cxx_destruct;
 - (id)buttonLabel;
-- (void)dealloc;
 - (id)horizontalPositioningConstraint;
 - (int)inCallButtonType;
 - (id)initForButtonType:(int)arg1;

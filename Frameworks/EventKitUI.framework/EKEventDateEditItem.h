@@ -33,6 +33,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_adjustDatePickerFrame:(id)arg1 toFillEnclosingViewWidth:(id)arg2;
 - (id)_allDayCell;
 - (void)_allDayChanged:(id)arg1;
 - (id)_calendarForEventComponents:(BOOL)arg1;

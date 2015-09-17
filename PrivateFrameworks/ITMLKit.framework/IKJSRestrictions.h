@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSRestrictions : IKJSObject <IKJSRestrictions>
+@interface IKJSRestrictions : IKJSObject <IKJSRestrictions, JSExport>
 
 @property (nonatomic, readonly) BOOL allowArtistActivity;
 @property (nonatomic, readonly) BOOL allowsErotica;
 @property (nonatomic, readonly) BOOL allowsExplicit;
+@property (nonatomic, readonly) BOOL appAnalyticsAllowed;
 @property (nonatomic, readonly) BOOL appInstallationAllowed;
 @property (nonatomic, readonly) int maxAppRank;
 @property (nonatomic, readonly) NSString *maxAppRating;
@@ -20,6 +21,7 @@
 - (BOOL)allowArtistActivity;
 - (BOOL)allowsErotica;
 - (BOOL)allowsExplicit;
+- (BOOL)appAnalyticsAllowed;
 - (BOOL)appInstallationAllowed;
 - (int)maxAppRank;
 - (id)maxAppRating;

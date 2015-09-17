@@ -48,9 +48,12 @@
 - (id)_copyReplacingURLWithURL:(id)arg1;
 - (id)_initWithCFURLRequest:(struct _CFURLRequest { }*)arg1;
 - (BOOL)_isSafeRequestForBackgroundDownload;
+- (double)_payloadTransmissionTimeout;
 - (id)_propertyForKey:(id)arg1;
 - (void)_removePropertyForKey:(id)arg1;
+- (BOOL)_requiresShortConnectionTimeout;
 - (void)_setProperty:(id)arg1 forKey:(id)arg2;
+- (id)_startTimeoutDate;
 - (double)_timeWindowDelay;
 - (double)_timeWindowDuration;
 - (id)allHTTPHeaderFields;
@@ -75,6 +78,10 @@
 - (double)timeoutInterval;
 - (id)valueForHTTPHeaderField:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AuthKit.framework/AuthKit
+
+- (BOOL)ak_usesHTTPSScheme;
+
 // Image: /System/Library/PrivateFrameworks/DataAccess.framework/DataAccess
 
 - (id)DARequestByApplyingStorageSession:(struct __CFURLStorageSession { }*)arg1;
@@ -93,11 +100,5 @@
 
 - (id)copyXPCEncoding;
 - (id)initWithXPCEncoding:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
-
-- (id)_web_HTTPContentType;
-- (id)_web_HTTPReferrer;
-- (BOOL)_web_isConditionalRequest;
 
 @end

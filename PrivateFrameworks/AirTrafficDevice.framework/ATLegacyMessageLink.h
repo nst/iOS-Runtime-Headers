@@ -15,9 +15,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_checkMessageTimeouts;
 - (void)_handlePingMessage:(id)arg1 fromLink:(id)arg2;
 - (void)_handlePongMessage:(id)arg1 fromLink:(id)arg2;
-- (void)_queue_checkMessageTimeouts;
 - (BOOL)_sendData:(const char *)arg1 offset:(unsigned int)arg2 len:(unsigned int)arg3 error:(id*)arg4;
 - (void)_sendPingMessage;
 - (void)close;

@@ -77,6 +77,7 @@
 - (void)setSkipLabel:(id)arg1;
 - (void)setVolumeSlider:(id)arg1;
 - (id)shortSkipLabel;
+- (void)showActionButton:(BOOL)arg1;
 - (id)skipAccumulationTimer;
 - (id)skipButton;
 - (BOOL)skipButtonCountingDown;

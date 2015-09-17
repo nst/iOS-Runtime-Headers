@@ -30,10 +30,12 @@
 - (void)replaceRangeWithTextWithoutClosingTyping:(UITextRange *)arg1 replacementText:(NSString *)arg2;
 - (BOOL)requiresKeyEvents;
 - (int)selectionGranularity;
+- (<UISelectionInteractionAssistant> *)selectionInteractionAssistant;
 - (void)setBottomBufferHeight:(float)arg1;
 - (void)setSelectionGranularity:(int)arg1;
 - (void)streamingDictationDidBegin;
 - (void)streamingDictationDidEnd;
 - (UIColor *)textColorForCaretSelection;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 
 @end

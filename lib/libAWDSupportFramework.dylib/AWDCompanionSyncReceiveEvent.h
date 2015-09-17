@@ -6,9 +6,11 @@
     unsigned long long _duration;
     struct { 
         unsigned int duration : 1; 
+        unsigned int processingTime : 1; 
         unsigned int sequenceNumber : 1; 
         unsigned int timestamp : 1; 
     } _has;
+    unsigned long long _processingTime;
     unsigned long long _sequenceNumber;
     NSString *_service;
     unsigned long long _timestamp;
@@ -16,9 +18,11 @@
 
 @property (nonatomic) unsigned long long duration;
 @property (nonatomic) BOOL hasDuration;
+@property (nonatomic) BOOL hasProcessingTime;
 @property (nonatomic) BOOL hasSequenceNumber;
 @property (nonatomic, readonly) BOOL hasService;
 @property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic) unsigned long long processingTime;
 @property (nonatomic) unsigned long long sequenceNumber;
 @property (nonatomic, retain) NSString *service;
 @property (nonatomic) unsigned long long timestamp;
@@ -30,19 +34,23 @@
 - (id)dictionaryRepresentation;
 - (unsigned long long)duration;
 - (BOOL)hasDuration;
+- (BOOL)hasProcessingTime;
 - (BOOL)hasSequenceNumber;
 - (BOOL)hasService;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (unsigned long long)processingTime;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned long long)sequenceNumber;
 - (id)service;
 - (void)setDuration:(unsigned long long)arg1;
 - (void)setHasDuration:(BOOL)arg1;
+- (void)setHasProcessingTime:(BOOL)arg1;
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
+- (void)setProcessingTime:(unsigned long long)arg1;
 - (void)setSequenceNumber:(unsigned long long)arg1;
 - (void)setService:(id)arg1;
 - (void)setTimestamp:(unsigned long long)arg1;

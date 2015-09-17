@@ -43,7 +43,6 @@
     double _preblobCallbackCancelTime;
     NSMutableDictionary *_preblobToPIDMap;
     struct opaqueRTCReporting { } *_reportingAgent;
-    BOOL _toForwardEVents;
     NSMutableDictionary *_updateRelayQueue;
     double _wakeTime;
     struct _opaque_pthread_mutex_t { 

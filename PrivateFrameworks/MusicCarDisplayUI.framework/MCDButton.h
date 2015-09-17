@@ -15,8 +15,16 @@
 + (id)buttonWithType:(int)arg1;
 
 - (void).cxx_destruct;
+- (id)_buttonBackGroundColorTouch;
 - (void)_updateButtonStyle;
 - (BOOL)canBecomeFocused;
+- (id)colorForKnobContentSelected;
+- (id)colorForKnobFocusLayer;
+- (id)colorForKnobFocusLayerSelected;
+- (id)colorForKnobFocused;
+- (id)colorForTouchContentSelected;
+- (id)colorForTouchFocusLayer;
+- (id)colorForTouchFocusLayerSelected;
 - (void)focusedViewDidChange;
 - (id)labelTemplateString;
 - (void)layoutSubviews;

@@ -11,6 +11,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (BOOL)handlesDoneButton;
 - (id)htmlFileLocation;

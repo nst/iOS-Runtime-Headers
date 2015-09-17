@@ -14,6 +14,7 @@
 @property (nonatomic) <FBSUIApplicationSystemServiceDelegate> *delegate;
 
 - (id)_getBadgeValue;
+- (int)activeInterfaceOrientation;
 - (double)backgroundTimeRemaining;
 - (int)badgeNumber;
 - (id)badgeString;
@@ -27,5 +28,6 @@
 - (void)setCurrentBacklightLevel:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (BOOL)setNextWakeInterval:(double)arg1;
+- (void)suspendCurrentApplication;
 
 @end

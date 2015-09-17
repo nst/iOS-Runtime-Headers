@@ -22,6 +22,7 @@
 @property (nonatomic) BOOL barWantsAdaptiveBackdrop;
 @property (getter=isTranslucent, nonatomic) BOOL translucent;
 
+- (void).cxx_destruct;
 - (id)_adaptiveBackdrop;
 - (id)_currentCustomBackground;
 - (id)_currentCustomBackgroundDedicatedToBarMetrics:(int*)arg1 barPosition:(int*)arg2;

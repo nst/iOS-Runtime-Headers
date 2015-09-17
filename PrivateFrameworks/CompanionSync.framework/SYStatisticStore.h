@@ -35,6 +35,7 @@
 - (void)_unpackPBRequest:(id)arg1 forMessageID:(unsigned short)arg2 intoDictionary:(id)arg3;
 - (void)_unpackPBResponse:(id)arg1 forMessageID:(unsigned short)arg2 intoDictionary:(id)arg3;
 - (void)assignIdentifier:(id)arg1 toOutgoingMessage:(id)arg2;
+- (void)confirmDeliveryOfOutgoingFileTransfer:(id)arg1;
 - (void)confirmDeliveryOfOutgoingMessage:(id)arg1;
 - (struct sqlite3 { }*)dbRef;
 - (void)dealloc;
@@ -42,10 +43,15 @@
 - (id)initWithPath:(id)arg1;
 - (void)markLastIncomingMessageComplete;
 - (id)operationQ;
+- (void)recordIncomingFileTransferAtURL:(id)arg1 metadata:(id)arg2 identifier:(id)arg3;
 - (void)recordIncomingMessage:(id)arg1 forService:(id)arg2;
+- (void)recordOutgoingFileTransferAtURL:(id)arg1 metadata:(id)arg2 identifier:(id)arg3 error:(id)arg4;
 - (void)recordOutgoingMessage:(id)arg1 forService:(id)arg2;
+- (unsigned long long)rowIDForPartialMessage:(id)arg1;
+- (void)setIdentifier:(id)arg1 forOutgoingMessagesWithRowIDs:(id)arg2;
 - (void)updateLastIncomingMessageWithError:(id)arg1;
 - (void)updateLastIncomingMessageWithProcessingTime:(double)arg1;
+- (void)updateOutgoingFileTransferWithIdentifier:(id)arg1 sentSuccessfully:(BOOL)arg2 error:(id)arg3;
 - (void)updateOutgoingMessageWithIdentifier:(id)arg1 didReceiveResponse:(BOOL)arg2 error:(id)arg3;
 - (void)updateOutgoingMessageWithIdentifier:(id)arg1 forService:(id)arg2 sentSuccessfully:(BOOL)arg3 sendError:(id)arg4;
 

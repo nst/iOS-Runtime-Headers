@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentTransactionTableCell : UITableViewCell {
+@interface PKPaymentTransactionTableCell : PKTableViewCell {
     UILabel *_amountLabel;
     NSString *_amountString;
     UILabel *_primaryLabel;

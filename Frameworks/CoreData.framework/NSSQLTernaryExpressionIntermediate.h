@@ -2,9 +2,13 @@
    Image: /System/Library/Frameworks/CoreData.framework/CoreData
  */
 
-@interface NSSQLTernaryExpressionIntermediate : NSSQLExpressionIntermediate
+@interface NSSQLTernaryExpressionIntermediate : NSSQLExpressionIntermediate {
+    NSSQLEntity *_disambiguatingEntity;
+}
 
 - (id)_generateSQLForPredicate:(id)arg1 inContext:(id)arg2;
+- (id)disambiguatingEntity;
 - (id)generateSQLStringInContext:(id)arg1;
+- (void)setDisambiguatingEntity:(id)arg1;
 
 @end

@@ -3,10 +3,12 @@
  */
 
 @interface BWVideoCompressorNode : BWNode {
+    NSObject<OS_dispatch_semaphore> *_backPressureSemaphore;
     struct OpaqueVTCompressionSession { } *_compressionSession;
     NSDictionary *_compressionSettings;
     BOOL _didPrepareToEncode;
     NSObject<OS_dispatch_queue> *_emitterQueue;
+    BOOL _flushRequestReceived;
     float _maxVideoFrameRate;
     BOOL _nextFrameEncodeAsKeyFrame;
     BOOL _shouldAttachDebugSEI;
@@ -18,11 +20,14 @@
 + (void)initialize;
 
 - (void)_cleanCompressor;
+- (void)_signalBackPressureSemaphore;
+- (id)backPressureSemaphore;
 - (id)compressionSettings;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
+- (void)handleDroppedSample:(id)arg1 forInput:(id)arg2;
 - (id)initWithCompressionSettings:(id)arg1 maxVideoFrameRate:(float)arg2;
 - (void)insertKeyFrame;
 - (void)makeCurrentConfigurationLive;

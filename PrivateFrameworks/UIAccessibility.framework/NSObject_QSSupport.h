@@ -4,7 +4,7 @@
 
 @interface NSObject_QSSupport : __NSObject_QSSupport_super
 
-+ (Class)safeCategoryTargetClass;
++ (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
 - (BOOL)_accessibilityIsTextInput;

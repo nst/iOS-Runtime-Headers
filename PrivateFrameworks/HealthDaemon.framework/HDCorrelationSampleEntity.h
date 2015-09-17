@@ -6,11 +6,13 @@
 
 + (Class)_associatedDataObjectClass;
 + (id)_objectsWithIDs:(id)arg1 healthDaemon:(id)arg2;
-+ (id)_tableValuesFromDataObject:(id)arg1;
 + (BOOL)acceptsObject:(id)arg1;
++ (BOOL)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (id)codableObjectsFromObjectCollection:(id)arg1;
++ (id)codableRepresentationEncoderForHealthDaemon:(id)arg1 database:(id)arg2;
 + (id)createTableSQL;
 + (id)deleteStatementsForRelatedEntitiesInDatabase:(id)arg1;
++ (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id*)arg5;
 + (BOOL)isBackedByTable;
 + (Class)propertyApplierClass;
 

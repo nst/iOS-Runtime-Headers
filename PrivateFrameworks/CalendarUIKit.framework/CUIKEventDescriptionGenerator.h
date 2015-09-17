@@ -2,11 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
  */
 
-@interface CUIKEventDescriptionGenerator : NSObject {
+@interface CUIKEventDescriptionGenerator : CUIKDescriptionGenerator {
     NSDataDetector *_addressDetector;
     NSDateFormatter *_dateFormatter;
     NSNumberFormatter *_numberFormatter;
 }
+
++ (id)sharedGenerator;
 
 - (void).cxx_destruct;
 - (id)_addressDetector;
@@ -19,11 +21,11 @@
 - (id)_locationStringForEvent:(id)arg1;
 - (id)_naturalLanguageDescriptionForEvent:(id)arg1 isFirstInDay:(BOOL)arg2;
 - (id)_noonDateForEvents:(id)arg1;
+- (id)_notReallyRandomNumberBetween1AndN:(int)arg1;
 - (BOOL)_prepareToUseMessageWithID:(id)arg1 shouldAllowWeekendUsage:(BOOL)arg2;
 - (BOOL)_prependBusyDayMessageToEventSummaryIfPossible:(id)arg1;
 - (BOOL)_prependEarlyStartMessageToEventSummaryIfPossible:(id)arg1;
 - (BOOL)_prependFreeMorningMessageToEventSummaryIfPossible:(id)arg1;
-- (id)_randomNumberBetween1And3;
 - (id)_sharedDateFormatter;
 - (id)_sharedNumberFormatter;
 - (BOOL)_startTimeRequiresSingularForEvent:(id)arg1 withTimeString:(id)arg2;

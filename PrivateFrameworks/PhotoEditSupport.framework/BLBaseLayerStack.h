@@ -50,7 +50,7 @@
 @property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } flippedViewToMaskTransform;
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } inverseFlippedViewToMaskTransform;
 @property (nonatomic, readonly) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } inverseViewToMaskTransform;
-@property (nonatomic, readonly) NSMutableArray *layers;
+@property (nonatomic, readonly, retain) NSMutableArray *layers;
 @property (nonatomic) int maskLongEdgeSize;
 @property (nonatomic) struct CGSize { float x1; float x2; } maskSize;
 @property (nonatomic) BOOL shouldNotify;

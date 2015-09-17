@@ -2,13 +2,13 @@
    Image: /System/Library/PrivateFrameworks/CameraKit.framework/CameraKit
  */
 
-@interface DeferredPUCameraApplicationViewController : CAMApplicationViewController {
+@interface DeferredPUCameraApplicationViewController : CMKApplicationViewController {
     DeferredFrameworkLoader *_deferredLoader;
-    CAMCameraRollSpec *_spec;
+    CMKCameraRollSpec *_spec;
 }
 
 @property (nonatomic, retain) DeferredFrameworkLoader *deferredLoader;
-@property (nonatomic, retain) CAMCameraRollSpec *spec;
+@property (nonatomic, retain) CMKCameraRollSpec *spec;
 
 - (void).cxx_destruct;
 - (id)_initWithSessionID:(id)arg1 usesCameraLocationBundleID:(BOOL)arg2 startPreviewImmediately:(BOOL)arg3;

@@ -7,10 +7,11 @@
 }
 
 - (void)dealloc;
-- (void)didUpdateUUIDDuringRead:(id)arg1 forComponentIdentifier:(long long)arg2 objectIdentifier:(long long)arg3 originalUUID:(id)arg4;
-- (id)init;
-- (id)initWithComponents:(id)arg1;
+- (id)descriptionForComponentIdentifier:(long long)arg1 objectIdentifier:(long long)arg2 delegate:(id)arg3;
+- (void)didUpdateObjectIdentifierDuringRead:(long long)arg1 forUUID:(id)arg2 componentIdentifier:(long long)arg3 originalObjectIdentifier:(long long)arg4 delegate:(id)arg5;
+- (void)didUpdateUUIDDuringRead:(id)arg1 forComponentIdentifier:(long long)arg2 objectIdentifier:(long long)arg3 originalUUID:(id)arg4 delegate:(id)arg5;
+- (id)initWithComponentsDictionary:(id)arg1 isLoadingDocument:(BOOL)arg2 delegate:(id)arg3;
 - (struct ObjectLocation { long long x1; long long x2; })objectLocationForUUID:(id)arg1;
-- (void)setObjectLocation:(struct ObjectLocation { long long x1; long long x2; })arg1 forUUID:(id)arg2;
+- (BOOL)setObjectLocation:(struct ObjectLocation { long long x1; long long x2; })arg1 forUUID:(id)arg2 delegate:(id)arg3;
 
 @end

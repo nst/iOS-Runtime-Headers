@@ -2,41 +2,54 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface FigCaptureClientSessionMonitor : NSObject {
+@interface FigCaptureClientSessionMonitor : NSObject <FigCaptureDisplayLayoutObserver> {
+    id /* block */ _applicationAndLayoutStateHandler;
+    NSString *_applicationID;
     int _applicationState;
     id _applicationStateChangeNotificationToken;
-    id /* block */ _applicationStateHandler;
+    NSString *_cachedApplicationIDToInheritAppStateFrom;
+    BOOL _clientCanInheritApplicationState;
     int _clientType;
+    FigCaptureDisplayLayoutMonitor *_displayLayoutMonitor;
     BOOL _haveExternalCMSession;
     id /* block */ _interruptionHandler;
-    int _interruptionState;
     id _interruptionStateChangeNotificationToken;
     BOOL _invalid;
+    int _layoutState;
     int _pid;
+    int _pidToInheritAppStateFrom;
     struct opaqueCMSession { } *_session;
-    BOOL _stateChangeCallbacksEnabled;
+    struct OpaqueFigSimpleMutex { } *_sessionLock;
     struct OpaqueFigSimpleMutex { } *_stateChangeLock;
 }
 
+@property (readonly) NSString *applicationID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (readonly) struct opaqueCMSession { }*session;
+@property (readonly) Class superclass;
 
 + (id)_stringForCMSessionState:(unsigned int)arg1;
 + (void)initialize;
 + (void)startPrewarmingMonitor;
 + (void)stopPrewarmingMonitor;
 
+- (void)_copyClientType:(int*)arg1 applicationID:(id*)arg2;
 - (long)_createAndObserveCMSession;
 - (void)_deregisterAndReleaseCMSession;
 - (void)_handleApplicationStateChange:(unsigned int)arg1;
 - (void)_handleAudioInterruptionChange:(int)arg1;
 - (void)_handleCMSessionManagerNofification:(id)arg1;
-- (int)_queryClientType;
+- (id)_lookupApplicationIDAllowingInheritence;
 - (long)_registerCMSessionForObservation;
 - (long)_updateApplicationState;
+- (id)applicationID;
 - (void)dealloc;
 - (id)init;
-- (id)initWithPID:(int)arg1 applicationStateHandler:(id /* block */)arg2 interruptionHandler:(id /* block */)arg3;
+- (id)initWithPID:(int)arg1 applicationAndLayoutStateHandler:(id /* block */)arg2 interruptionHandler:(id /* block */)arg3;
 - (void)invalidate;
+- (void)layoutMonitor:(id)arg1 didUpdateLayoutWithForegroundApps:(id)arg2 layoutState:(int)arg3;
 - (long)observeSession:(struct opaqueCMSession { }*)arg1;
 - (struct opaqueCMSession { }*)session;
 

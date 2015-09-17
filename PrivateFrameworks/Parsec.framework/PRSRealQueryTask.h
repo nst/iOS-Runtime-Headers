@@ -22,7 +22,7 @@
 @property (readonly, copy) NSString *description;
 @property BOOL doCache;
 @property BOOL doResume;
-@property (nonatomic) <PRSSessionController> *factory;
+@property (readonly) <PRSSessionController> *factory;
 @property BOOL failed;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *queryString;
@@ -46,6 +46,7 @@
 - (BOOL)doResume;
 - (id)factory;
 - (BOOL)failed;
+- (void)gotCachedResultSet:(id)arg1;
 - (id)initWithSession:(id)arg1 handler:(id)arg2 factory:(id)arg3 queue:(id)arg4 scaleFactor:(float)arg5 allowLocation:(BOOL)arg6 feedback:(id)arg7;
 - (id)queryString;
 - (void)resume;
@@ -55,7 +56,6 @@
 - (void)setDataTask:(id)arg1;
 - (void)setDoCache:(BOOL)arg1;
 - (void)setDoResume:(BOOL)arg1;
-- (void)setFactory:(id)arg1;
 - (void)setFailed:(BOOL)arg1;
 - (void)setQueryString:(id)arg1;
 - (void)setScaleFactor:(float)arg1;

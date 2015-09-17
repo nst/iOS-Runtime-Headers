@@ -60,12 +60,13 @@
 @property (nonatomic, readonly, retain) TIKeyboardCandidate *prediction;
 @property (nonatomic) int state;
 
-+ (id)initKeyViewWithSize:(struct CGSize { float x1; float x2; })arg1 state:(int)arg2 needsBackground:(BOOL)arg3;
++ (id)newKeyViewWithSize:(struct CGSize { float x1; float x2; })arg1 state:(int)arg2 needsBackground:(BOOL)arg3;
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })activeFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })baseFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })collapsedFrame;
 - (void)dealloc;
+- (void)dimKeys:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isAutocorrection;
 - (BOOL)isCenter;

@@ -73,6 +73,10 @@
 
 - (void)pl_primeForUseWithCameraOverlays;
 
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
+- (void)cam_primeForUseWithCameraOverlays;
+
 // Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
 
 - (void)pl_primeForUseWithCameraOverlays;

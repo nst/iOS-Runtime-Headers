@@ -9,6 +9,7 @@
     BOOL mFooterPlaceholderIsVisible;
     BOOL mHeaderPlaceholderIsVisible;
     OADTextListStyle *mOtherTextStyle;
+    PDPresentation *mPresentation;
     NSMutableArray *mSlideLayouts;
     BOOL mSlideNumberPlaceholderIsVisible;
     OADTheme *mTheme;
@@ -18,6 +19,7 @@
 @property (nonatomic) BOOL dateTimePlaceholderIsVisible;
 @property (nonatomic) BOOL footerPlaceholderIsVisible;
 @property (nonatomic) BOOL headerPlaceholderIsVisible;
+@property (nonatomic, readonly) PDPresentation *presentation;
 @property (nonatomic, retain) NSMutableArray *slideLayouts;
 @property (nonatomic) BOOL slideNumberPlaceholderIsVisible;
 
@@ -28,15 +30,15 @@
 - (id)colorScheme;
 - (BOOL)dateTimePlaceholderIsVisible;
 - (void)dealloc;
+- (id)defaultTextListStyle;
 - (id)defaultTheme;
+- (id)description;
 - (void)doneWithContent;
 - (id)drawingTheme;
 - (id)fontScheme;
 - (BOOL)footerPlaceholderIsVisible;
-- (BOOL)hasMappableSlideNumberShape;
 - (BOOL)headerPlaceholderIsVisible;
-- (id)init;
-- (id)initWithDefaultsAndTheme:(id)arg1;
+- (id)initWithPresentation:(id)arg1;
 - (id)masterGraphicForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
 - (id)otherTextStyle;
 - (id)parentShapePropertiesForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
@@ -45,6 +47,8 @@
 - (id)parentTextStyleForPlaceholderType:(int)arg1 placeholderTypeIndex:(int)arg2 defaultTextListStyle:(id)arg3 overrideIndex:(BOOL)arg4;
 - (id)parentTextStyleForTables;
 - (id)placeholderWithType:(int)arg1 placeholderTypeIndex:(int)arg2 overrideIndex:(BOOL)arg3;
+- (id)presentation;
+- (void)removeUnnecessaryOverrides;
 - (void)setBodyTextStyle:(id)arg1;
 - (void)setDateTimePlaceholderIsVisible:(BOOL)arg1;
 - (void)setFooterPlaceholderIsVisible:(BOOL)arg1;
@@ -52,8 +56,8 @@
 - (void)setOtherTextStyle:(id)arg1;
 - (void)setSlideLayouts:(id)arg1;
 - (void)setSlideNumberPlaceholderIsVisible:(BOOL)arg1;
-- (void)setTheme:(id)arg1;
 - (void)setTitleTextStyle:(id)arg1;
+- (void)setUpPropertyHierarchyPreservingEffectiveValues;
 - (id)slideLayoutAtIndex:(unsigned int)arg1;
 - (unsigned int)slideLayoutCount;
 - (id)slideLayoutOfType:(int)arg1;

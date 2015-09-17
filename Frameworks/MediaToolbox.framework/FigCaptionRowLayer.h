@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MediaToolbox.framework/MediaToolbox
  */
 
-@interface FigCaptionRowLayer : CALayer
+@interface FigCaptionRowLayer : FigBaseCALayer
 
 - (void)setNeedsDisplay;
 

@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) UITraitCollection *traitCollection;
 @property (nonatomic, readonly) id value;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithTraitCollection:(id)arg1 value:(id)arg2;

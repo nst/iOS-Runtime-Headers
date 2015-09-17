@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> *_dispatchQueue;
     BOOL _isCellularRestricted;
     double _lastNetworkTypeChangeTime;
+    unsigned int _networkReachabilityFlags;
     int _networkType;
     int _networkUsageCount;
     NSObject<OS_dispatch_queue> *_notificationQueue;
@@ -26,6 +27,7 @@
 @property (readonly) NSString *mobileSubscriberCountryCode;
 @property (readonly) NSString *mobileSubscriberNetworkCode;
 @property (readonly) NSString *modemRegistrationStatus;
+@property (readonly) unsigned int networkReachabilityFlags;
 @property int networkType;
 @property (readonly) NSString *operatorName;
 @property (readonly) NSString *phoneNumber;
@@ -35,18 +37,20 @@
 @property (getter=isUsingNetwork, readonly) BOOL usingNetwork;
 @property (getter=isWiFiEnabled, readonly) BOOL wifiEnabled;
 
++ (BOOL)isLikelyToReachRemoteServerWithReachabilityFlags:(unsigned int)arg1;
 + (void)set3GEnabled:(BOOL)arg1;
 + (void)setAirplaneModeEnabled:(BOOL)arg1;
 + (void)setWiFiEnabled:(BOOL)arg1;
 + (id)sharedInstance;
 
 - (void)_applicationWillEnterForegroundNotification:(id)arg1;
-- (int)_currentNetworkType;
+- (unsigned int)_currentNetworkReachabilityFlags;
 - (id)_dataStatusIndicator;
 - (void)_handleTelephonyNotificationWithName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2;
 - (int)_networkTypeForReachabilityFlags:(unsigned int)arg1;
 - (int)_networkTypeFromDataIndicator:(id)arg1;
 - (BOOL)_ntsIsUsingNetwork;
+- (void)_postReachabilityFlagsChangedNotificationFromValue:(unsigned int)arg1 toValue:(unsigned int)arg2;
 - (void)_postTypeChangedNotificationFromValue:(int)arg1 toValue:(int)arg2;
 - (void)_postUsageChangedToValue:(BOOL)arg1;
 - (void)_reloadCellularRestriction;
@@ -71,6 +75,7 @@
 - (id)mobileSubscriberCountryCode;
 - (id)mobileSubscriberNetworkCode;
 - (id)modemRegistrationStatus;
+- (unsigned int)networkReachabilityFlags;
 - (int)networkType;
 - (id)operatorName;
 - (id)phoneNumber;

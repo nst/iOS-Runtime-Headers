@@ -2,41 +2,40 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWVideoOrientationMetadataNode : BWNode <BWDeviceOrientationMonitorPortraitLandscapeUpdateDelegate> {
+@interface BWVideoOrientationMetadataNode : BWNode {
     struct OpaqueCMBlockBuffer {} *_bbufCache;
     struct opaqueCMFormatDescription { } *_boxedMetadataFormatDescription;
     struct OpaqueCMClock { } *_clock;
-    BWDeviceOrientationMonitor *_deviceOrientationMonitor;
     NSObject<OS_dispatch_queue> *_emitSamplesDispatchQueue;
+    int _exifOrientation;
     unsigned long _localIDOfOrientationMetadata;
     struct OpaqueCMClock { } *_masterClock;
-    int _mostRecentDevicePortraitLandscapeOrientation;
+    BOOL _recordVideoOrientationAndMirroringChanges;
     BOOL _recording;
     int _sourcePosition;
-    NSMutableArray *_transforms;
+    BOOL _videoMirrored;
+    int _videoOrientation;
 }
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
 
 + (void)initialize;
 
-- (void)_queueUpCallToEmitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 markerBufferOrFirstSample:(BOOL)arg2;
-- (void)_releaseTransformData;
-- (void)_renderSampleBufferForBoxedFormatOutputAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 orientation:(int)arg2 firstSample:(BOOL)arg3;
+- (void)_determineExifOrientation;
+- (void)_emitBufferForNewStateIfRecording;
+- (void)_emitValidatedVideoOrientationSampleBufferForBoxedFormatOutputAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_releaseCachedBBufs;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
-- (void)didUpdatePortraitLandscapeOrientation:(int)arg1;
 - (id)init;
 - (struct OpaqueCMClock { }*)masterClock;
 - (id)nodeSubType;
 - (id)nodeType;
+- (void)prepareForCurrentConfigurationToBecomeLive;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setMasterClock:(struct OpaqueCMClock { }*)arg1;
 - (void)setSourcePosition:(int)arg1;
 - (int)sourcePosition;
+- (void)updateVideoMirrored:(BOOL)arg1;
+- (void)updateVideoOrientation:(int)arg1;
 
 @end

@@ -2,10 +2,21 @@
    Image: /System/Library/PrivateFrameworks/PowerlogCore.framework/PowerlogCore
  */
 
-@interface PLTimeReferenceKernel : PLTimeReference
+@interface PLTimeReferenceKernel : PLTimeReference {
+    NSDate *_lastKernelTimeRecalibrated;
+    NSDate *_lastSystemTimeRecalibrated;
+}
 
+@property (retain) NSDate *lastKernelTimeRecalibrated;
+@property (retain) NSDate *lastSystemTimeRecalibrated;
+
+- (void).cxx_destruct;
 - (id)currentTime;
-- (void)initializeOffsetWithEntry:(id)arg1;
+- (void)initializeOffsetWithEntries:(id)arg1;
+- (id)lastKernelTimeRecalibrated;
+- (id)lastSystemTimeRecalibrated;
 - (double)resolution;
+- (void)setLastKernelTimeRecalibrated:(id)arg1;
+- (void)setLastSystemTimeRecalibrated:(id)arg1;
 
 @end

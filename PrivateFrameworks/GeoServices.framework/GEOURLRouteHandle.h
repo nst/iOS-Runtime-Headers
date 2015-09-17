@@ -5,14 +5,17 @@
 @interface GEOURLRouteHandle : PBCodable <NSCopying> {
     NSData *_directionsResponseID;
     NSData *_routeID;
+    NSData *_transitData;
     NSData *_zilchPoints;
 }
 
 @property (nonatomic, retain) NSData *directionsResponseID;
 @property (nonatomic, readonly) BOOL hasDirectionsResponseID;
 @property (nonatomic, readonly) BOOL hasRouteID;
+@property (nonatomic, readonly) BOOL hasTransitData;
 @property (nonatomic, readonly) BOOL hasZilchPoints;
 @property (nonatomic, retain) NSData *routeID;
+@property (nonatomic, retain) NSData *transitData;
 @property (nonatomic, retain) NSData *zilchPoints;
 
 - (void)copyTo:(id)arg1;
@@ -23,6 +26,7 @@
 - (id)directionsResponseID;
 - (BOOL)hasDirectionsResponseID;
 - (BOOL)hasRouteID;
+- (BOOL)hasTransitData;
 - (BOOL)hasZilchPoints;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -31,7 +35,9 @@
 - (id)routeID;
 - (void)setDirectionsResponseID:(id)arg1;
 - (void)setRouteID:(id)arg1;
+- (void)setTransitData:(id)arg1;
 - (void)setZilchPoints:(id)arg1;
+- (id)transitData;
 - (void)writeTo:(id)arg1;
 - (id)zilchPoints;
 

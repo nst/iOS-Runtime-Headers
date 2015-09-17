@@ -5,7 +5,6 @@
 @interface PTSSwitch : UIView <PTSHUDControl, _UISettingsKeyPathObserver> {
     SEL _action;
     int _alignment;
-    BOOL _enabled;
     float _height;
     _UISettings *_settings;
     NSArray *_subviewConstraints;
@@ -19,7 +18,7 @@
 @property (nonatomic) int alignment;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) float height;
 @property (nonatomic) _UISettings *settings;
@@ -38,10 +37,10 @@
 - (SEL)action;
 - (int)alignment;
 - (void)dealloc;
-- (BOOL)enabled;
 - (id)forwardingTargetForSelector:(SEL)arg1;
 - (float)height;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isEnabled;
 - (void)layoutSubviews;
 - (id)makeSwitch;
 - (id)makeTitleLabel;

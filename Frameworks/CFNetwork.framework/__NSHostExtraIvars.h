@@ -11,9 +11,9 @@
     NSString *thingToResolve;
 }
 
-@property (readonly) NSObject<OS_dispatch_queue> *cacheAccessQueue;
-@property (readonly) NSObject<OS_dispatch_queue> *callbackQueue;
-@property (readonly) NSObject<OS_dispatch_queue> *resolveQueue;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *cacheAccessQueue;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *callbackQueue;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *resolveQueue;
 @property (nonatomic) int resolveType;
 @property BOOL startedResolving;
 @property (nonatomic, retain) NSString *thingToResolve;

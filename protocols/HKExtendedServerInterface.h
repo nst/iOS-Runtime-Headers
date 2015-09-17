@@ -9,10 +9,9 @@
 - (void)fetchAchievementsWithCompletedDateBetweenStart:(void *)arg1 end:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSDate *, NSDate *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
 - (void)fetchNumberOfUnviewedAchievementsWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSError *, void*
 - (void)fetchUnalertedAchievementsWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
-- (void)forceNanoSyncWithPullRequest:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)markAchievementAsViewed:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: HKAchievement *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, HKAchievement *, NSError *, void*
 - (void)markAchievementsAlerted:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 8: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)registerForAchievementNotificationsAndFetchUnalertedCountWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSError *, void*
-- (void)resetNanoSyncWithCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
+- (void)runAchievementsFixupAsDryRun:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 9: BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, BOOL, NSError *, void*
 
 @end

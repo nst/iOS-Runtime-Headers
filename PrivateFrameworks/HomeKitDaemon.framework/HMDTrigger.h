@@ -31,16 +31,18 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_activate:(BOOL)arg1;
+- (void)_executeActionSets;
 - (void)_handleActivateTriggerRequest:(id)arg1;
 - (void)_handleRenameRequest:(id)arg1;
 - (void)_handleUpdateActionSetRequest:(id)arg1;
 - (void)_registerForMessages;
 - (id)_updateActionSets:(id)arg1 add:(BOOL)arg2;
 - (id)actionSets;
+- (void)activate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)active;
 - (void)checkForNoActions;
 - (void)configure:(id)arg1 messageDispatcher:(id)arg2 queue:(id)arg3;
+- (BOOL)containsAccessoryWithUUID:(id)arg1;
 - (id)currentActionSets;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
@@ -54,7 +56,9 @@
 - (id)msgDispatcher;
 - (id)name;
 - (void)reEvaluate;
+- (void)removeAccessory:(id)arg1;
 - (void)removeActionSet:(id)arg1;
+- (void)sendTriggerFiredNotification:(id)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setCurrentActionSets:(id)arg1;
 - (void)setHome:(id)arg1;
@@ -63,6 +67,7 @@
 - (void)setName:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (BOOL)shouldEncodeLastFireDate:(id)arg1;
 - (void)triggerFired;
 - (id)uuid;
 - (id)workQueue;

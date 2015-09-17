@@ -19,7 +19,7 @@
 + (id)sharedInstance;
 
 - (void)__handleCallEvent:(id)arg1;
-- (void)_answerCall:(struct __CTCall { }*)arg1;
+- (void)_answerCall:(struct __CTCall { }*)arg1 withSource:(struct __CFString { }*)arg2;
 - (BOOL)_breakCSCallsIfNecessary;
 - (struct __CTCall { }*)_callRefForChat:(id)arg1;
 - (void)_chatStateChanged:(id)arg1;

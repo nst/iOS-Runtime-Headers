@@ -3,23 +3,18 @@
  */
 
 @interface PLWatchKitAgent : PLAgent {
-    PLAccountingGroup *_watchkitAccountingGroup;
     PLXPCListenerOperatorComposition *_xpcHandler;
 }
 
-@property (readonly) PLAccountingGroup *watchkitAccountingGroup;
 @property (retain) PLXPCListenerOperatorComposition *xpcHandler;
 
-+ (id)accountingGroupDefinitions;
 + (id)entryEventPointDefinitions;
 + (void)load;
 
 - (void).cxx_destruct;
 - (id)appNameForWatchAppExtension:(id)arg1;
-- (void)createWatchKitAccountingEventsWithTransportEntries:(id)arg1;
 - (void)initOperatorDependancies;
 - (void)setXpcHandler:(id)arg1;
-- (id)watchkitAccountingGroup;
 - (id)xpcHandler;
 
 @end

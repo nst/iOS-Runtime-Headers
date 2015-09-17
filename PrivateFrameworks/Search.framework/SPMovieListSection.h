@@ -5,6 +5,9 @@
 @interface SPMovieListSection : SPSection <PRSMovieListSection>
 
 @property (nonatomic, retain) NSURL *attribution_url;
+@property (nonatomic) BOOL card_padding_bottom;
+@property (nonatomic) BOOL card_padding_top;
+@property (nonatomic) BOOL hide_divider;
 @property (nonatomic, retain) NSArray *movies;
 @property (nonatomic, retain) NSString *subtitle;
 @property (nonatomic, retain) NSString *title;

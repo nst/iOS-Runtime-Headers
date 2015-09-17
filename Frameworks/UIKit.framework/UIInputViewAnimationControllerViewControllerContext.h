@@ -27,6 +27,7 @@
             float height; 
         } size; 
     } _toRect;
+    NSMapTable *_transitioningBackdropViews;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -44,9 +45,12 @@
 - (void)dealloc;
 - (id)fromKeyboard;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fromKeyboardFrame;
+- (void)gatherTransitioningBackdropViews;
 - (id)initWithHost:(id)arg1 startPlacement:(id)arg2 endPlacement:(id)arg3 transitionContext:(id)arg4;
 - (id)mainContext;
 - (id)toKeyboard;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })toKeyboardFrame;
+- (void)transitionBackdropViewsBack;
+- (void)transitionBackdropViewsToLowQuality;
 
 @end

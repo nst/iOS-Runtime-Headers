@@ -9,6 +9,7 @@
 
 + (id)sharedStackManager;
 
+- (void).cxx_destruct;
 - (void)_addAlertControllerToStack:(id)arg1;
 - (void)_alertControllerDidAppear:(id)arg1;
 - (void)_alertControllerDidDisappear:(id)arg1;
@@ -20,15 +21,10 @@
 - (void)_displayedAlertControllersChanged;
 - (void)_hideStackedAlertControllers;
 - (void)_removeAlertControllerFromStack:(id)arg1;
-- (void)_setHasAlertControllers:(BOOL)arg1;
 - (void)_showHiddenStackedAlertControllers;
 - (id)_topAlertControllerInStack;
 - (void)_willHideAlertController:(id)arg1;
 - (void)_willShowAlertController:(id)arg1;
-- (id)autorelease;
-- (void)dealloc;
 - (id)init;
-- (oneway void)release;
-- (id)retain;
 
 @end

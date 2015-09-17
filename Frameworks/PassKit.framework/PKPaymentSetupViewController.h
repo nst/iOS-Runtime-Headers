@@ -4,36 +4,42 @@
 
 @interface PKPaymentSetupViewController : UIViewController <PKPaymentSetupPrivacyFooterViewDelegate> {
     ACAccountStore *_accountStore;
+    BOOL _allowsManualEntry;
     int _context;
     <PKPaymentSetupViewControllerDelegate> *_delegate;
-    NSArray *_eligibleCards;
-    PKPaymentWebService *_webService;
+    BOOL _nextControllerPushed;
+    PKPaymentProvisioningController *_provisioningController;
+    PKPaymentCardOnFileDetailsViewController *_singleEligibleCardDetailsController;
 }
 
+@property (nonatomic) BOOL allowsManualEntry;
 @property (nonatomic) int context;
 @property (nonatomic) <PKPaymentSetupViewControllerDelegate> *delegate;
-@property (nonatomic, retain) NSArray *eligibleCards;
-@property (nonatomic, retain) PKPaymentWebService *webService;
+@property (nonatomic, readonly, retain) PKPaymentProvisioningController *provisioningController;
+@property (nonatomic, readonly, retain) PKPaymentWebService *webService;
 
+- (id)_configuredCardListViewControllerWithCardList:(id)arg1;
+- (id)_configuredCardOnFileEntryViewControllerForCredential:(id)arg1;
+- (id)_configuredManualCardEntryViewController;
 - (id)_contextSpecificStringForAggdKey:(id)arg1;
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (void)_next:(id)arg1;
-- (void)_pushCardDetailsViewControllerForCredential:(id)arg1;
-- (void)_pushCardEntryViewController;
-- (void)_pushCardList:(id)arg1;
+- (void)_pushCardListViewController:(id)arg1;
+- (void)_pushCardOnFileEntryViewControllerForCredential:(id)arg1;
+- (void)_pushManualCardEntryViewController;
+- (BOOL)allowsManualEntry;
+- (id)configuredNextActionViewController;
 - (int)context;
 - (void)dealloc;
 - (id)delegate;
-- (void)dismissAboutView:(id)arg1;
 - (unsigned int)edgesForExtendedLayout;
-- (id)eligibleCards;
-- (id)initWithPaymentWebService:(id)arg1 eligibleCards:(id)arg2 context:(int)arg3 delegate:(id)arg4;
+- (id)initWithProvisioningController:(id)arg1 context:(int)arg2 delegate:(id)arg3;
 - (void)loadView;
 - (void)privacyFooterLinkTapped:(id)arg1;
+- (id)provisioningController;
+- (void)setAllowsManualEntry:(BOOL)arg1;
 - (void)setContext:(int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setEligibleCards:(id)arg1;
-- (void)setWebService:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;

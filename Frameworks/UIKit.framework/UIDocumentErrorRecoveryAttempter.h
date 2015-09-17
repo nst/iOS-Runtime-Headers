@@ -14,6 +14,7 @@
     id _wrappedRecoveryAttempter;
 }
 
+- (void).cxx_destruct;
 - (BOOL)attemptRecoveryFromError:(id)arg1 optionIndex:(unsigned int)arg2;
 - (BOOL)attemptSilentRecoveryFromError:(id)arg1 error:(id*)arg2;
 - (void)cancelRecovery;

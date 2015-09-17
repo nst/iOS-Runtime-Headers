@@ -11,7 +11,7 @@
 
 @property (nonatomic, retain) TSWPDeletionRangeMap *rangeMap;
 @property (nonatomic, readonly, retain) TSWPRangeArray *sourceRanges;
-@property (nonatomic) NSString *sourceString;
+@property (nonatomic, retain) NSString *sourceString;
 
 - (unsigned int)charIndexMappedFromStorage:(unsigned int)arg1;
 - (unsigned int)charIndexMappedToStorage:(unsigned int)arg1;

@@ -22,6 +22,5 @@
 - (id)theaterAddress;
 - (id)theaterName;
 - (id)theaterShowtimeListSnippet;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

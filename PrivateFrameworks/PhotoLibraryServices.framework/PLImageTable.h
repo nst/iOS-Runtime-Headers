@@ -17,7 +17,7 @@
     NSMutableIndexSet *_preheatIndexes;
     NSObject<OS_dispatch_queue> *_preheatQueue;
     BOOL _readOnly;
-    unsigned int _segmentCount;
+    int _segmentCount;
     unsigned long _segmentLength;
     struct CGSize { 
         float width; 

@@ -18,6 +18,8 @@
 - (id)altTitle;
 - (id)clickHyperlink;
 - (void)dealloc;
+- (id)description;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (BOOL)hasAltDescription;
 - (BOOL)hasAltTitle;
 - (BOOL)hasAspectRatioLocked;

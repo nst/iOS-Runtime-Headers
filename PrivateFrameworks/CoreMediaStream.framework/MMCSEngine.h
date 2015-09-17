@@ -10,7 +10,7 @@
     NSURL *_autoItemIDPersistenceURL;
     NSString *_dataClass;
     <MMCSEngineDelegate> *_delegate;
-    struct __MMCSEngine { } *_engine;
+    struct _mmcs_engine { } *_engine;
     struct { 
         int version; 
         void *context; 

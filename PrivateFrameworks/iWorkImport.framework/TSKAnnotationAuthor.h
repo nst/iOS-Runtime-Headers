@@ -40,9 +40,11 @@
 + (id)authorMenuSwatchColorForIndex:(unsigned int)arg1;
 + (id)authorStorageColorForIndex:(unsigned int)arg1;
 + (id)authorTextMarkupColorForIndex:(unsigned int)arg1;
++ (id)collaboratorCursorColorByLightColor:(id)arg1;
 + (id)defaultAuthorName;
 + (id)indicatorDarkColorByLightColor:(id)arg1;
 + (id)indicatorDarkColorForIndex:(unsigned int)arg1;
++ (id)indicatorLightColorByAuthorColor:(id)arg1;
 + (id)indicatorLightColorForIndex:(unsigned int)arg1;
 + (id)normalizedAuthorNameForAuthorName:(id)arg1;
 + (unsigned int)p_authorColorIndexWithColor:(id)arg1 forIndicator:(BOOL)arg2;

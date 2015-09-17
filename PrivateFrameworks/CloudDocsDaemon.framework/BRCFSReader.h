@@ -28,8 +28,10 @@
 - (void)_close;
 - (void)_continueScan:(id)arg1;
 - (void)_createOrRetryThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3 throttle:(id)arg4 hasBeenTried:(BOOL)arg5;
+- (void)_delayThrottleID:(long long)arg1 zone:(id)arg2 by:(double)arg3;
 - (void)_didResolvedDocumentID:(unsigned int)arg1 fileID:(unsigned long long)arg2 zone:(id)arg3;
 - (void)_fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 item:(id)arg3 lookup:(id)arg4;
+- (void)_fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 item:(id)arg3 lookup:(id)arg4 unresolvedLastPathComponent:(id)arg5;
 - (void)_lostScanSchedule;
 - (void)_processDeadItem:(id)arg1;
 - (void)_processLostItem:(id)arg1;
@@ -44,15 +46,19 @@
 - (BOOL)_scheduleOne:(id)arg1;
 - (void)_slowScanDirectoryAtPath:(id)arg1;
 - (void)_startScan:(id)arg1;
+- (void)cancel;
 - (void)createThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3;
+- (void)dealloc;
 - (void)didChangeLostScanStatusForContainer:(id)arg1;
 - (void)endReadCoordinationInZone:(id)arg1;
 - (void)fseventAtPath:(id)arg1 flags:(unsigned long)arg2;
+- (void)fseventAtPath:(id)arg1 flags:(unsigned long)arg2 unresolvedLastPathComponent:(id)arg3;
 - (void)fseventInsideSharedEnclosure:(id)arg1 flags:(unsigned long)arg2;
 - (void)fseventOnAlias:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3;
 - (void)fseventOnContainer:(id)arg1 flags:(unsigned long)arg2;
 - (void)fseventOnDirectory:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3;
 - (void)fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3;
+- (void)fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3 unresolvedLastPathComponent:(id)arg4;
 - (void)fseventOnRoot:(id)arg1 flags:(unsigned long)arg2;
 - (void)fseventOnSharedRoot:(id)arg1 flags:(unsigned long)arg2;
 - (id)initWithAccountSession:(id)arg1;
@@ -67,6 +73,7 @@
 - (id)serialQueue;
 - (BOOL)startReadCoordinationInZone:(id)arg1;
 - (void)suspend;
+- (BOOL)thumbnailChangedForItem:(id)arg1 relpath:(id)arg2 url:(id)arg3 error:(id*)arg4;
 - (void)unscheduleContainerForLostScan:(id)arg1;
 
 @end

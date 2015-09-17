@@ -4,6 +4,7 @@
 
 @interface NNMKMessage : NSObject <NNMKMailboxItem, NSSecureCoding> {
     NSString *_accountId;
+    NSArray *_bcc;
     NSArray *_cc;
     NSString *_conversationId;
     NSDate *_dateReceived;
@@ -18,6 +19,7 @@
 }
 
 @property (nonatomic, retain) NSString *accountId;
+@property (nonatomic, retain) NSArray *bcc;
 @property (nonatomic, retain) NSArray *cc;
 @property (nonatomic, retain) NSString *conversationId;
 @property (nonatomic, retain) NSDate *dateReceived;
@@ -34,11 +36,13 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSArray *to;
 
++ (BOOL)messageHasMultipleRecipients:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)accountId;
 - (void)addState:(unsigned int)arg1;
+- (id)bcc;
 - (id)cc;
 - (BOOL)checkState:(unsigned int)arg1;
 - (id)conversationId;
@@ -53,6 +57,7 @@
 - (id)preview;
 - (void)removeState:(unsigned int)arg1;
 - (void)setAccountId:(id)arg1;
+- (void)setBcc:(id)arg1;
 - (void)setCc:(id)arg1;
 - (void)setConversationId:(id)arg1;
 - (void)setDateReceived:(id)arg1;

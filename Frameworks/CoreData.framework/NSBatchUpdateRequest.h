@@ -5,7 +5,6 @@
 @interface NSBatchUpdateRequest : NSPersistentStoreRequest <NSPredicatedStoreRequest> {
     NSDictionary *_columnsToUpdate;
     id _entity;
-    NSString *_entityName;
     struct _requestFlags { 
         unsigned int includesSubentities : 1; 
         unsigned int resultType : 2; 
@@ -32,6 +31,7 @@
 - (void)_resolveEntityWithContext:(id)arg1;
 - (void)_setValidatedPropertiesToUpdate:(id)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)entity;
 - (id)entityName;
 - (BOOL)includesSubentities;

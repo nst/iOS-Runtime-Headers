@@ -31,7 +31,7 @@
 - (void).cxx_destruct;
 - (int)componentWriterMode;
 - (id)contentDescription;
-- (id)createMetadataForRootObject:(id)arg1 dataArchiver:(id)arg2 objectUUIDToIdentifierDictionary:(id)arg3 externalReferences:(id)arg4 weakExternalReferences:(id)arg5 lazyReferences:(id)arg6 dataReferences:(id)arg7 error:(id*)arg8;
+- (id)createMetadataForRootObject:(id)arg1 dataArchiver:(id)arg2 archivedObjects:(id)arg3 componentObjectUUIDMap:(id)arg4 externalReferences:(id)arg5 weakExternalReferences:(id)arg6 lazyReferences:(id)arg7 dataReferences:(id)arg8 error:(id*)arg9;
 - (void)delayArchivingOfObject:(id)arg1;
 - (BOOL)excludeNativeData;
 - (id)initWithContext:(id)arg1;

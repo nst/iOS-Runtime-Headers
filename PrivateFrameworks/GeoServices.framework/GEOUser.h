@@ -21,7 +21,6 @@
 - (BOOL)hasName;
 - (unsigned int)hash;
 - (id)image;
-- (id)initWithPlaceDataUser:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)name;

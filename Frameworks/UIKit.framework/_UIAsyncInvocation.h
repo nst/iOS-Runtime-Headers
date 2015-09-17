@@ -11,7 +11,7 @@
 + (id)emptyInvocation;
 + (id)invocationWithBlock:(id /* block */)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)invoke;
 
 @end

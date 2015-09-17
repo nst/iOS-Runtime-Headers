@@ -6,14 +6,17 @@
     UIButton *_skipButton;
 }
 
++ (BOOL)bridgeSetupAssistantNeedsToRunReturningRequirements:(unsigned int*)arg1;
++ (id)defaultWebServiceForContext:(int)arg1;
 + (BOOL)setupAssistantNeedsToRun;
 + (BOOL)setupAssistantNeedsToRunReturningRequirements:(unsigned int*)arg1;
 
+- (id)_bridgeContextDefaultLocalCredential;
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
 - (void)dealloc;
 - (id)initWithPaymentWebService:(id)arg1 context:(int)arg2 delegate:(id)arg3;
 - (void)preflightWithCompletion:(id /* block */)arg1;
 - (void)privacyButtonTouched:(id)arg1;
-- (void)skip:(id)arg1;
+- (void)viewDidLoad;
 
 @end

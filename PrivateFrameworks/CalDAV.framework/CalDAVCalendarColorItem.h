@@ -9,8 +9,8 @@
 @property (nonatomic, retain) NSString *colorString;
 @property (nonatomic, retain) NSString *symbolicColorName;
 
+- (void).cxx_destruct;
 - (id)colorString;
-- (void)dealloc;
 - (id)init;
 - (void)parserFoundAttributes:(id)arg1;
 - (void)setColorString:(id)arg1;

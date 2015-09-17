@@ -14,6 +14,7 @@
 + (id)pivotArea;
 
 - (void)dealloc;
+- (id)description;
 - (bool)grandCol;
 - (bool)grandRow;
 - (id)init;

@@ -9,6 +9,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSURL *image;
 @property (nonatomic, copy) NSNumber *imageInverted;
+@property (nonatomic, retain) SAUIImageResource *imageResource;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *text;
 
@@ -19,8 +20,10 @@
 - (id)groupIdentifier;
 - (id)image;
 - (id)imageInverted;
+- (id)imageResource;
 - (void)setImage:(id)arg1;
 - (void)setImageInverted:(id)arg1;
+- (void)setImageResource:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)text;
 

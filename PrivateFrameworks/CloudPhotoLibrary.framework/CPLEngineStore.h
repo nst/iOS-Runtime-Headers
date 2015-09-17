@@ -15,6 +15,7 @@
     CPLPlatformObject *_platformObject;
     CPLEngineChangePipe *_pullQueue;
     CPLEngineChangePipe *_pushQueue;
+    CPLEngineQuarantinedRecords *_quarantinedRecords;
     CPLEngineRemappedDeletes *_remappedDeletes;
     NSMutableArray *_resetEvents;
     NSURL *_resetEventsURL;
@@ -27,6 +28,7 @@
 
 @property (nonatomic, readonly) CPLEngineClientCache *clientCache;
 @property (nonatomic, readonly) CPLEngineCloudCache *cloudCache;
+@property (nonatomic, readonly) id corruptionInfo;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) CPLEngineChangePipe *deletePushQueue;
 @property (readonly, copy) NSString *description;
@@ -39,6 +41,7 @@
 @property (nonatomic, readonly) CPLEngineChangePipe *pullQueue;
 @property (nonatomic, readonly) CPLEngineChangePipe *pushQueue;
 @property (nonatomic, readonly) BOOL pushQueuesAreFull;
+@property (nonatomic, readonly) CPLEngineQuarantinedRecords *quarantinedRecords;
 @property (nonatomic, readonly) CPLEngineRemappedDeletes *remappedDeletes;
 @property (nonatomic, readonly) CPLEngineResourceStorage *resourceStorage;
 @property (nonatomic) unsigned int state;
@@ -69,6 +72,7 @@
 - (void)closeAndDeactivate:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)cloudCache;
 - (id)componentName;
+- (id)corruptionInfo;
 - (id)createNewLibraryVersion;
 - (void)dealloc;
 - (id)deletePushQueue;
@@ -91,10 +95,12 @@
 - (id)pullQueue;
 - (id)pushQueue;
 - (BOOL)pushQueuesAreFull;
+- (id)quarantinedRecords;
 - (void)registerStorage:(id)arg1;
 - (id)remappedDeletes;
 - (BOOL)resetCompleteSyncStateWithCause:(id)arg1 error:(id*)arg2;
 - (BOOL)resetLocalSyncStateWithCause:(id)arg1 error:(id*)arg2;
+- (BOOL)resetSyncAnchorWithCause:(id)arg1 error:(id*)arg2;
 - (id)resourceStorage;
 - (void)setState:(unsigned int)arg1;
 - (unsigned int)state;
@@ -102,7 +108,9 @@
 - (BOOL)storeClientIsInSyncWithClientCacheWithError:(id*)arg1;
 - (BOOL)storeLibraryVersion:(id)arg1 withError:(id*)arg2;
 - (BOOL)storeLibraryZoneName:(id)arg1 error:(id*)arg2;
+- (BOOL)storeSupportedFeatureVersionInLastSync:(unsigned int)arg1 error:(id*)arg2;
 - (BOOL)storeUserIdentifier:(id)arg1 error:(id*)arg2;
+- (unsigned int)supportedFeatureVersionInLastSync;
 - (id)transientPullRepository;
 - (id)uploadQueue;
 - (id)userIdentifier;

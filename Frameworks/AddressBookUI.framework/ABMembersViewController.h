@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABMembersViewController : ABAbstractViewController <ABMembersControllerDelegate, ABNewPersonViewControllerDelegate, ABPersonEditDelegate, ABViewControllerBannerViewProtocol> {
+@interface ABMembersViewController : ABAbstractViewController <ABMembersControllerDelegate, ABNewPersonViewControllerDelegate, ABPersonEditDelegate, ABViewControllerBannerViewProtocol, CNContactViewControllerAddContactPresenter> {
     _UIAccessDeniedView *_accessDeniedView;
     id _insertionLabel;
     int _insertionProperty;
@@ -30,8 +30,8 @@
 - (void)_updateForModel;
 - (int)abViewControllerType;
 - (id)accessDeniedView;
+- (id)addContactPresenter;
 - (void)addPerson:(id)arg1;
-- (id)addPersonPresentationTarget;
 - (void)addPersonWithContact:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)allowsCancel;
 - (BOOL)allowsCardEditing;
@@ -71,7 +71,7 @@
 - (void)personWasDeleted;
 - (void)personWasSelected:(void*)arg1;
 - (void)preferredPersonDidChangeToPerson:(void*)arg1;
-- (void)presentAddPersonViewController:(id)arg1 animated:(BOOL)arg2;
+- (void)presentAddContactViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)presentGroupsViewController;
 - (void)reallyHandleExternalChangeOnPersonViewControllers;
 - (void)refreshEverythingNow;

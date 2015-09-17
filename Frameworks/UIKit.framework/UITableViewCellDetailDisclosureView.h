@@ -7,10 +7,11 @@
     UIButton *_infoButton;
 }
 
+- (void).cxx_destruct;
 - (void)addTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
-- (void)dealloc;
-- (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2 cell:(id)arg3 shouldReverseLayoutDirection:(BOOL)arg4;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

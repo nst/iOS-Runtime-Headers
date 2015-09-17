@@ -7,6 +7,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (BOOL)_allowsDirectEncoding;
+- (id)_createDispatchData;
 - (BOOL)_isDispatchData;
 - (const void*)bytes;
 - (Class)classForCoder;

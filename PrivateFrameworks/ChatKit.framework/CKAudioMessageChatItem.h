@@ -8,5 +8,6 @@
 
 - (unsigned int)balloonCorners;
 - (Class)balloonViewClass;
+- (Class)cellClass;
 
 @end

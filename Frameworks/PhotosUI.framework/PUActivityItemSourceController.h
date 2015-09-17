@@ -7,7 +7,7 @@
     NSError *__error;
     PUActivityViewController *_activityViewController;
     NSMutableOrderedSet *_assetItemSources;
-    NSMutableOrderedSet *_assets;
+    NSMutableOrderedSet *_assetItems;
     id /* block */ _progressHandler;
     int _taskId;
 }
@@ -16,7 +16,8 @@
 @property (setter=_setError:, retain) NSError *_error;
 @property (nonatomic) PUActivityViewController *activityViewController;
 @property (nonatomic, readonly, copy) NSOrderedSet *assetItemSources;
-@property (nonatomic, copy) NSOrderedSet *assets;
+@property (nonatomic, copy) NSOrderedSet *assetItems;
+@property (nonatomic, readonly, copy) NSOrderedSet *assets;
 @property (nonatomic, copy) id /* block */ progressHandler;
 
 - (void).cxx_destruct;
@@ -24,17 +25,19 @@
 - (id)_error;
 - (void)_setActiveItemSources:(id)arg1;
 - (void)_setError:(id)arg1;
+- (id)activityItemSourceForAsset:(id)arg1;
 - (id)activityViewController;
-- (void)addAsset:(id)arg1;
+- (void)addAssetItem:(id)arg1;
 - (id)assetItemSources;
+- (id)assetItems;
 - (id)assets;
 - (void)cancel;
 - (int)countOfAssetType:(int)arg1;
 - (id /* block */)progressHandler;
-- (void)removeAsset:(id)arg1;
+- (void)removeAssetItem:(id)arg1;
 - (void)runExplicitly:(BOOL)arg1 withActivityType:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setActivityViewController:(id)arg1;
-- (void)setAssets:(id)arg1;
+- (void)setAssetItems:(id)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
 
 @end

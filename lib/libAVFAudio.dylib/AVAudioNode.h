@@ -19,6 +19,7 @@
 - (struct OpaqueAudioComponentInstance { }*)audioUnit;
 - (id)clock;
 - (void)dealloc;
+- (id)destinationForMixer:(id)arg1 bus:(unsigned int)arg2;
 - (void)didAttachToEngine:(id)arg1;
 - (void)didDetachFromEngine:(id)arg1;
 - (id)engine;
@@ -42,6 +43,7 @@
 - (int)renderingAlgorithm;
 - (void)reset;
 - (float)reverbBlend;
+- (BOOL)setInputFormat:(id)arg1 forBus:(unsigned int)arg2;
 - (void)setNumberOfInputs:(unsigned int)arg1;
 - (void)setNumberOfOutputs:(unsigned int)arg1;
 - (void)setObstruction:(float)arg1;

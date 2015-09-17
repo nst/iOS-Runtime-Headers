@@ -6,6 +6,7 @@
     UIView *_accessoryContainerView;
     QLGenericView *_airPlayPasswordView;
     float _aspectRatio;
+    NSLayoutConstraint *_bundleTopConstraint;
     struct { 
         int pid; 
         struct { 
@@ -23,6 +24,7 @@
         } contentFrame; 
     } _clientContext;
     UIView *_contentContainerView;
+    NSString *_contentType;
     QLDisplayBundle *_displayBundle;
     <QLPreviewItemInteractionDelegate> *_displayBundleDelegate;
     UIDocumentPasswordView *_documentPasswordView;
@@ -43,6 +45,7 @@
     float _navigationBarVerticalOffset;
     BOOL _needsReload;
     QLDisplayBundle *_newDisplayBundle;
+    unsigned int _orbMode;
     BOOL _overlayHidden;
     <QLPreviewItem> *_previewItem;
     int _previewMode;
@@ -58,6 +61,7 @@
 @property (readonly) int airPlayMode;
 @property (readonly) UIView *airPlayView;
 @property struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; } clientContext;
+@property (nonatomic, retain) NSString *contentType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) QLDisplayBundle *displayBundle;
@@ -65,6 +69,7 @@
 @property (readonly) unsigned int hash;
 @property int index;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } initialFrame;
+@property (nonatomic) unsigned int orbMode;
 @property (retain) <QLPreviewItem> *previewItem;
 @property int previewMode;
 @property (readonly) UIView *snapshotView;
@@ -85,12 +90,15 @@
 - (void)_showProgressUI;
 - (void)_swapDisplayBundles;
 - (void)_updateProgressUIWithDuration:(double)arg1;
+- (void)_updateTopConstraintWithDuration:(float)arg1;
 - (int)airPlayMode;
 - (id)airPlayView;
 - (void)beginTrackingViewUpdates;
+- (BOOL)canHideOverlay;
 - (void)cancelLoadIfNeeded;
 - (struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })clientContext;
 - (id)clientProcessAlertViewForPreviewItem:(id)arg1;
+- (id)contentType;
 - (void)dealloc;
 - (id)description;
 - (void)didBeginEditingPassword:(id)arg1 inView:(id)arg2;
@@ -104,9 +112,11 @@
 - (id)init;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })initialFrame;
 - (void)loadView;
+- (unsigned int)orbMode;
 - (void)overlayWasInteractedWithOnPreviewItem:(id)arg1;
 - (void)preloadIfNeeded;
 - (id)previewItem;
+- (void)previewItem:(id)arg1 atIndex:(int)arg2 didFailPresentingWithError:(id)arg3;
 - (void)previewItem:(id)arg1 receivedTapOnURL:(id)arg2;
 - (void)previewItem:(id)arg1 requiresDisplayBundle:(id)arg2 withHints:(id)arg3;
 - (void)previewItem:(id)arg1 setAVState:(id)arg2;
@@ -121,11 +131,13 @@
 - (void)refreshPreviewItem;
 - (void)setAspectRatio:(float)arg1 scaleFactor:(float)arg2;
 - (void)setClientContext:(struct { int x1; struct { unsigned int x_2_1_1[8]; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; })arg1;
+- (void)setContentType:(id)arg1;
 - (void)setDisplayBundleDelegate:(id)arg1;
 - (void)setIndex:(int)arg1;
 - (void)setInitialFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
 - (void)setNavigationBarVerticalOffset:(float)arg1;
+- (void)setOrbMode:(unsigned int)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewItem:(id)arg1;
 - (void)setPreviewMode:(int)arg1;
@@ -139,6 +151,6 @@
 - (void)viewWasTappedOnPreviewItem:(id)arg1;
 - (BOOL)visible;
 - (void)willMoveToParentViewController:(id)arg1;
-- (void)willStartSwiping;
+- (void)willStartSwiping:(BOOL)arg1;
 
 @end

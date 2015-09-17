@@ -3,6 +3,7 @@
  */
 
 @interface PKPrinter : NSObject {
+    int _jobAccountIDSupport;
     PKPaperList *_paperList;
     int accessState;
     BOOL connectionShouldNotBeTrusted;
@@ -13,6 +14,7 @@
     int kind;
     NSArray *mandatoryJobAttributes;
     int maxCopies;
+    int maxDocumentPasswordLength;
     int maxJPEGKBytes;
     int maxJPEGXDimension;
     int maxJPEGYDimension;
@@ -38,9 +40,10 @@
 @property BOOL isFromMCProfile;
 @property (readonly) BOOL isIPPS;
 @property BOOL isLocal;
+@property int jobAccountIDSupport;
 @property (readonly) int jobTypesSupported;
 @property (readonly) int kind;
-@property (readonly) NSString *name;
+@property (retain) NSString *name;
 @property (readonly) BOOL needsSetup;
 @property (retain) PKPaperList *paperList;
 @property (retain) NSNumber *port;
@@ -78,6 +81,8 @@
 - (int)finishJob;
 - (struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; int x9; int x10; }*)getAttributes:(const char **)arg1 count:(int)arg2;
 - (struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; int x9; int x10; }*)getPrinterAttributes;
+- (struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; int x9; int x10; }*)getSupplyLevelAttributes;
+- (void)getSupplyLevels:(id /* block */)arg1;
 - (void)handlePrinterStateReasonsFromResponse:(struct _ipp_s { int x1; union _ipp_request_u { struct { unsigned char x_1_2_1[2]; int x_1_2_2; int x_1_2_3; } x_2_1_1; struct { unsigned char x_2_2_1[2]; int x_2_2_2; int x_2_2_3; } x_2_1_2; struct { unsigned char x_3_2_1[2]; int x_3_2_2; int x_3_2_3; } x_2_1_3; struct { unsigned char x_4_2_1[2]; int x_4_2_2; int x_4_2_3; } x_2_1_4; } x2; struct _ipp_attribute_s {} *x3; struct _ipp_attribute_s {} *x4; struct _ipp_attribute_s {} *x5; int x6; struct _ipp_attribute_s {} *x7; int x8; int x9; int x10; }*)arg1;
 - (BOOL)hasIdentifyPrinterOp;
 - (BOOL)hasPrintInfoSupported;
@@ -91,6 +96,7 @@
 - (BOOL)isIPPS;
 - (BOOL)isLocal;
 - (BOOL)isPaperReady:(id)arg1;
+- (int)jobAccountIDSupport;
 - (int)jobTypesSupported;
 - (int)kind;
 - (BOOL)knowsReadyPaperList;
@@ -104,6 +110,7 @@
 - (id)paperList;
 - (id)paperListForDuplexMode:(id)arg1;
 - (id)papersForDocumentWithSize:(struct CGSize { float x1; float x2; })arg1 andDuplex:(BOOL)arg2;
+- (id)papersForDocumentWithSize:(struct CGSize { float x1; float x2; })arg1 scaleUpOnRoll:(BOOL)arg2 andDuplex:(BOOL)arg3;
 - (id)papersForPhotoWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)port;
 - (id)printInfoSupported;
@@ -111,7 +118,8 @@
 - (id)printerURL;
 - (id)privateObjectForKey:(id)arg1;
 - (void)reconfirmWithForce:(BOOL)arg1;
-- (void)resolve;
+- (BOOL)resolve;
+- (BOOL)resolveIfNeeded;
 - (BOOL)resolveWithTimeout:(int)arg1;
 - (id)rollReadyPaperListWithContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)rollReadyPaperListWithContentSize:(struct CGSize { float x1; float x2; })arg1 forPhoto:(BOOL)arg2;
@@ -122,6 +130,8 @@
 - (void)setHostname:(id)arg1;
 - (void)setIsFromMCProfile:(BOOL)arg1;
 - (void)setIsLocal:(BOOL)arg1;
+- (void)setJobAccountIDSupport:(int)arg1;
+- (void)setName:(id)arg1;
 - (void)setPaperList:(id)arg1;
 - (void)setPort:(id)arg1;
 - (void)setPrivateObject:(id)arg1 forKey:(id)arg2;
@@ -130,6 +140,7 @@
 - (void)setupWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)showPassCodeForSetupWithCompletionHandler:(id /* block */)arg1;
 - (int)startJob:(id)arg1 ofType:(id)arg2;
+- (BOOL)supportsJobAccountID;
 - (id)txtRecordObjectForKey:(id)arg1;
 - (int)type;
 - (void)unlockWithCompletionHandler:(id /* block */)arg1;

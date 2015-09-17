@@ -2,21 +2,6 @@
    Image: /System/Library/Frameworks/WebKit.framework/WebKit
  */
 
-@interface _WKSecurityOrigin : NSObject {
-    struct RefPtr<WebCore::SecurityOrigin> { 
-        struct SecurityOrigin {} *m_ptr; 
-    } _origin;
-}
-
-@property (nonatomic, readonly, copy) NSString *host;
-@property (nonatomic, readonly) unsigned short port;
-@property (nonatomic, readonly, copy) NSString *protocol;
-
-- (id).cxx_construct;
-- (void).cxx_destruct;
-- (id)_initWithSecurityOrigin:(const struct SecurityOrigin { struct atomic<int> { int x_1_1_1; } x1; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_2_1_1; } x2; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_3_1_1; } x3; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_4_1_1; } x4; struct String { struct RefPtr<WTF::StringImpl> { struct StringImpl {} *x_1_2_1; } x_5_1_1; } x5; unsigned short x6; bool x7; bool x8; bool x9; bool x10; int x11; bool x12; bool x13; }*)arg1;
-- (id)host;
-- (unsigned short)port;
-- (id)protocol;
+@interface _WKSecurityOrigin : WKSecurityOrigin
 
 @end

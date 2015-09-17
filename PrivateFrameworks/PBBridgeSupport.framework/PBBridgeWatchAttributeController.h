@@ -5,23 +5,28 @@
 @interface PBBridgeWatchAttributeController : NSObject {
     NRDevice *_device;
     unsigned int _edition;
+    int _hardwareBehavior;
+    unsigned int _internalSize;
     int _material;
-    unsigned int _size;
     NSCache *_stringCache;
 }
 
 @property (nonatomic, retain) NRDevice *device;
 @property (nonatomic, readonly) unsigned int edition;
+@property (nonatomic, readonly) int hardwareBehavior;
+@property (nonatomic, readonly) unsigned int internalSize;
 @property (nonatomic, readonly) int material;
 @property (nonatomic, readonly) unsigned int size;
 @property (nonatomic, retain) NSCache *stringCache;
 
 + (id)editionDescription:(unsigned int)arg1;
++ (id)hwBehaviorDescription:(int)arg1;
 + (id)materialDescription:(int)arg1;
 + (id)materialKeyColorForMaterial:(int)arg1;
 + (id)resourceString:(id)arg1 material:(int)arg2 size:(unsigned int)arg3 forAttributes:(unsigned int)arg4;
 + (id)sharedDeviceController;
 + (id)sizeDescription:(unsigned int)arg1;
++ (BOOL)testZeusMaterial;
 
 - (void).cxx_destruct;
 - (void)_populateMaterialDetailsWithDMinProperities:(id)arg1;
@@ -29,13 +34,15 @@
 - (id)device;
 - (unsigned int)edition;
 - (id)getGestaltDmin;
+- (int)hardwareBehavior;
 - (id)init;
+- (unsigned int)internalSize;
 - (int)material;
 - (id)materialKeyColor;
 - (id)resourceString:(id)arg1 forAttributes:(unsigned int)arg2;
 - (void)setDevice:(id)arg1;
+- (void)setInternalSize:(unsigned int)arg1;
 - (void)setMaterial:(int)arg1;
-- (void)setSize:(unsigned int)arg1;
 - (void)setStringCache:(id)arg1;
 - (unsigned int)size;
 - (id)stringCache;

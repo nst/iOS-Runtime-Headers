@@ -65,6 +65,7 @@
 - (BOOL)hasStreamError;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (unsigned int)messageID;
 - (int)messageType;
 - (id)parameters;

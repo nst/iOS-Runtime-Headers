@@ -3,6 +3,7 @@
  */
 
 @interface GEOResourceManifestServerRemoteProxy : NSObject <GEOResourceManifestServerProxy> {
+    int _activeTileGroupChangedNotificationToken;
     NSString *_authToken;
     NSLock *_authTokenLock;
     NSHashTable *_cancellingConnections;
@@ -17,6 +18,7 @@
     NSObject<OS_dispatch_queue> *_serverQueue;
 }
 
+@property (nonatomic, readonly) GEOActiveTileGroup *activeTileGroup;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <GEOResourceManifestServerProxyDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -25,6 +27,7 @@
 
 - (void)_handleMessage:(id)arg1 xpcMessage:(id)arg2;
 - (void)_setupConnection;
+- (id)activeTileGroup;
 - (id)authToken;
 - (void)closeConnection;
 - (id)configuration;

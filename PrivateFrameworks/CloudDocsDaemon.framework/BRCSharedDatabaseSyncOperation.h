@@ -21,5 +21,6 @@
 - (id)initWithSyncContext:(id)arg1 changeState:(id)arg2 group:(id)arg3;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

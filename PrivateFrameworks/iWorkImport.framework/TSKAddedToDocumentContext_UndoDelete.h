@@ -2,14 +2,9 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSKAddedToDocumentContext_UndoDelete : TSKAddedToDocumentContext {
-    NSMutableArray *mInsertedTableInfos;
-}
+@interface TSKAddedToDocumentContext_UndoDelete : TSKAddedToDocumentContext
 
-- (void)addInsertedTableInfo:(id)arg1;
-- (void)dealloc;
 - (id)description;
-- (id)insertedTableInfos;
 - (BOOL)wasUndoDelete;
 
 @end

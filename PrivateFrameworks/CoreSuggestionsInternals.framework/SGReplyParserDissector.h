@@ -2,13 +2,8 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGReplyParserDissector : NSObject <SGPipelineDissector>
+@interface SGReplyParserDissector : SGPipelineDissector
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
-
-- (void)dissect:(id)arg1;
+- (void)dissectInternal:(id)arg1;
 
 @end

@@ -6,9 +6,11 @@
     NSMutableString *_accumulator;
     int _actionSignal;
     NSURL *_baseURL;
+    RUIAlertView *_currentAlert;
     NSDictionary *_currentElementAttributes;
     NSMutableArray *_currentPageStack;
     <RUIParserDelegate> *_delegate;
+    NSMutableArray *_elementStack;
     NSMutableArray *_pages;
     NSXMLParser *_parser;
     int _parserState;
@@ -36,12 +38,15 @@
 - (void)_addSectionSubHeaderText:(id)arg1 withAttributes:(id)arg2;
 - (void)_addSectionWithAttributes:(id)arg1;
 - (void)_addTableFooterViewWithAttributes:(id)arg1;
-- (void)_addTableHeaderViewWithAttributes:(id)arg1;
+- (void)_convertAttributeMap:(id)arg1 toPropertiesOnElement:(id)arg2;
 - (id)_createAndAddPageWithAttributes:(id)arg1;
 - (id)_createPageWithName:(id)arg1 attributes:(id)arg2;
+- (void)_finalizeElement:(id)arg1;
+- (void)_finalizePinView;
 - (void)_finalizeSection;
 - (id)_lastPageCreateIfNeeded;
 - (id)_lastRow;
+- (void)_logDeprecation:(id)arg1 value:(id)arg2;
 - (void)_newRowWithAttributeDict:(id)arg1;
 - (int)actionSignal;
 - (id)baseURL;

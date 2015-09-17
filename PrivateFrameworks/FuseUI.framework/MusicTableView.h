@@ -5,16 +5,16 @@
 @interface MusicTableView : MusicBasicTableView {
     BOOL _enforcesMinimumLayoutMargin;
     int _highlightedSectionHeaderViewIndex;
-    BOOL _rightSeparatorInsetFollowsLayoutMargin;
     int _selectedSectionHeaderViewIndex;
     BOOL _shouldTreatContentOffsetChangesAsDeltas;
+    BOOL _trailingSeparatorInsetFollowsLayoutMargin;
 }
 
 @property (nonatomic) <MusicTableViewDelegate> *delegate;
 @property (nonatomic) BOOL enforcesMinimumLayoutMargin;
 @property (nonatomic, readonly) int indexForSelectedSectionHeader;
-@property (nonatomic) BOOL rightSeparatorInsetFollowsLayoutMargin;
 @property (nonatomic) BOOL shouldTreatContentOffsetChangesAsDeltas;
+@property (nonatomic) BOOL trailingSeparatorInsetFollowsLayoutMargin;
 @property (nonatomic, readonly, copy) NSArray *visibleSectionHeaderViews;
 
 - (void)_clearHeaderViewHighlightAnimated:(BOOL)arg1;
@@ -33,14 +33,14 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
 - (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
-- (BOOL)rightSeparatorInsetFollowsLayoutMargin;
 - (void)selectHeaderForSection:(int)arg1 animated:(BOOL)arg2;
 - (void)setEnforcesMinimumLayoutMargin:(BOOL)arg1;
 - (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setRightSeparatorInsetFollowsLayoutMargin:(BOOL)arg1;
 - (void)setShouldTreatContentOffsetChangesAsDeltas:(BOOL)arg1;
+- (void)setTrailingSeparatorInsetFollowsLayoutMargin:(BOOL)arg1;
 - (BOOL)shouldTreatContentOffsetChangesAsDeltas;
 - (void)tintColorDidChange;
+- (BOOL)trailingSeparatorInsetFollowsLayoutMargin;
 - (id)visibleSectionHeaderViews;
 
 @end

@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) NSString *changeTrackingContentFormatString;
 @property (nonatomic, readonly) NSString *changeTrackingContentString;
 @property (nonatomic, readonly) NSString *changeTrackingTitleString;
-@property (nonatomic, readonly) TSDCommentStorage *commentStorage;
+@property (nonatomic, retain) TSDCommentStorage *commentStorage;
 @property (nonatomic, readonly) NSDate *date;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -39,7 +39,6 @@
 - (id)author;
 - (id)commentStorage;
 - (void)commentWillBeAddedToDocumentRoot;
-- (void)commitText:(id)arg1;
 - (id)copyWithContext:(id)arg1;
 - (id)creationDateString;
 - (id)date;
@@ -56,6 +55,7 @@
 - (void)saveToArchive:(struct CommentInfoArchive { int (**x1)(); struct UnknownFieldSet { struct vector<google::protobuf::UnknownField, std::__1::allocator<google::protobuf::UnknownField> > {} *x_2_1_1; } x2; unsigned int x3[1]; int x4; struct ShapeInfoArchive {} *x5; struct Reference {} *x6; }*)arg1 archiver:(id)arg2;
 - (void)saveToArchiver:(id)arg1;
 - (void)setAuthor:(id)arg1;
+- (void)setCommentStorage:(id)arg1;
 - (void)setHostingModel:(id)arg1;
 - (id)storage;
 - (BOOL)supportsAttachedComments;

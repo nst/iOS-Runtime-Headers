@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@interface ATDeviceService : ATConcreteService <ATEnvironmentMonitorObserver, ATIDSServiceListener, ATMessageLinkListenerDelegate, ATSyncClientDelegate, ATWorkspaceObserverDelegate, ATXPCInterfaceProtocol> {
+@interface ATDeviceService : ATConcreteService <ATEnvironmentMonitorObserver, ATIDSServiceListener, ATMessageLinkListenerDelegate, ATMessageLinkRequestHandler, ATSyncClientDelegate, ATWorkspaceObserverDelegate, ATXPCInterfaceProtocol> {
     int _atcRunningToken;
     ATDeviceSyncManager *_deviceSyncManager;
+    ATRemoteFileManagerLinkHandler *_driveHandler;
     ATEnvironmentMonitor *_environmentMonitor;
     ATIDSService *_idsService;
     ATLegacyDeviceSyncManager *_legacyDeviceSyncManager;
@@ -57,6 +58,7 @@
 - (void)keepATCAlive:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)listener:(id)arg1 didReceiveMessageLinkRequest:(id)arg2;
 - (void)lowBatteryNotificationWithCompletion:(id /* block */)arg1;
+- (void)messageLink:(id)arg1 didReceiveRequest:(id)arg2;
 - (void)messageLinkWasClosed:(id)arg1;
 - (void)openDeviceMessageLinkWithPriority:(int)arg1 withCompletion:(id /* block */)arg2;
 - (void)prioritizeAsset:(id)arg1 forDataclass:(id)arg2 withCompletion:(id /* block */)arg3;
@@ -66,6 +68,7 @@
 - (void)removeMessageLink:(id)arg1;
 - (void)requestSyncForLibrary:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)requestSyncForPairedDeviceWithPriority:(int)arg1 withCompletion:(id /* block */)arg2;
+- (void)restoreFromDeviceWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)run;
 - (BOOL)stop;
 - (void)syncClient:(id)arg1 hasChangesWithPriority:(int)arg2;

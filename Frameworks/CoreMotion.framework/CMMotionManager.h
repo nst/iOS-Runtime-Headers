@@ -20,6 +20,7 @@
 @property (getter=isGyroAvailable, nonatomic, readonly) BOOL gyroAvailable;
 @property (readonly) CMGyroData *gyroData;
 @property (nonatomic) double gyroUpdateInterval;
+@property (getter=isDeviceMotionLiteAvailable, nonatomic, readonly) BOOL isDeviceMotionLiteAvailable;
 @property (getter=isMagnetometerActive, nonatomic, readonly) BOOL magnetometerActive;
 @property (getter=isMagnetometerAvailable, nonatomic, readonly) BOOL magnetometerAvailable;
 @property (readonly) CMMagnetometerData *magnetometerData;
@@ -34,6 +35,7 @@
 + (BOOL)hasRunMiniCal;
 + (void)initialize;
 + (void)setAllowInBackground:(BOOL)arg1;
++ (BOOL)setUrgentCalFlag;
 + (BOOL)startGyroMiniCalibration;
 + (BOOL)supportsGyroMiniCalibration;
 
@@ -67,6 +69,7 @@
 - (BOOL)isAmbientPressureAvailable;
 - (BOOL)isDeviceMotionActive;
 - (BOOL)isDeviceMotionAvailable;
+- (BOOL)isDeviceMotionLiteAvailable;
 - (BOOL)isGyroActive;
 - (BOOL)isGyroAvailable;
 - (BOOL)isMagnetometerActive;
@@ -98,10 +101,9 @@
 - (void)setMagnetometerDataCallback:(int (*)arg1 info:(void*)arg2 interval:(double)arg3;
 - (void)setMagnetometerUpdateInterval:(double)arg1;
 - (void)setMagnetometerUpdateIntervalPrivate:(double)arg1;
-- (void)setMaxAccelerationVarianceForStability:(float)arg1;
+- (bool)setMotionThreadPriority:(int)arg1;
 - (void)setNotificationCallback:(int (*)arg1 info:(void*)arg2;
-- (void)setSensorThrottleTime:(double)arg1;
-- (void)setSensorTurnOffTime:(double)arg1;
+- (void)setPowerConservationMode:(int)arg1;
 - (void)setShowsDeviceMovementDisplay:(BOOL)arg1;
 - (void)setShowsDeviceMovementDisplayPrivate:(BOOL)arg1;
 - (BOOL)setSidebandSensorFusionEnable:(BOOL)arg1;
@@ -109,7 +111,6 @@
 - (BOOL)setSidebandSensorFusionEnable:(BOOL)arg1 withSnoopHandler:(id /* block */)arg2;
 - (void)setSidebandTimeSyncHandler:(id /* block */)arg1;
 - (void)setUseAccelerometer:(BOOL)arg1;
-- (void)setWantsPowerConservativeDeviceMotion:(BOOL)arg1;
 - (void)showDeviceMovementDisplay;
 - (BOOL)showsDeviceMovementDisplay;
 - (void)startAccelerometerUpdates;
@@ -118,6 +119,9 @@
 - (void)startAmbientPressureUpdates;
 - (void)startAmbientPressureUpdatesPrivateToQueue:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)startAmbientPressureUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)startDeviceMotionLiteDebugUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)startDeviceMotionLiteFusedUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
+- (void)startDeviceMotionLiteUpdatesUsingConfiguration:(struct { int x1; })arg1 toQueue:(id)arg2 withFusedHandler:(id /* block */)arg3 debugHandler:(id /* block */)arg4;
 - (void)startDeviceMotionUpdates;
 - (void)startDeviceMotionUpdatesPrivateUsingReferenceFrame:(unsigned int)arg1 toQueue:(id)arg2 withHandler:(id /* block */)arg3;
 - (void)startDeviceMotionUpdatesToQueue:(id)arg1 withHandler:(id /* block */)arg2;
@@ -134,6 +138,7 @@
 - (void)stopAccelerometerUpdatesPrivate;
 - (void)stopAmbientPressureUpdates;
 - (void)stopAmbientPressureUpdatesPrivate;
+- (void)stopDeviceMotionLiteUpdates;
 - (void)stopDeviceMotionUpdates;
 - (void)stopDeviceMotionUpdatesPrivate;
 - (void)stopGyroUpdates;

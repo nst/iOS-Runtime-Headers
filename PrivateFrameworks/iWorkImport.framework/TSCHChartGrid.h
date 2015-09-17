@@ -17,13 +17,13 @@
     NSMutableArray *mValues;
 }
 
-@property (nonatomic, readonly) NSArray *columnIds;
+@property (nonatomic, readonly, copy) NSArray *columnIds;
 @property (nonatomic) int direction;
 @property (nonatomic) BOOL dirty;
 @property (nonatomic, readonly) unsigned int numberOfColumns;
 @property (nonatomic, readonly) unsigned int numberOfRows;
 @property (nonatomic) <TSCHNotifyOnModify> *objectToNotify;
-@property (nonatomic, readonly) NSArray *rowIds;
+@property (nonatomic, readonly, copy) NSArray *rowIds;
 
 - (void)addingMultipleCols:(BOOL)arg1;
 - (void)addingMultipleRows:(BOOL)arg1;
@@ -70,6 +70,8 @@
 - (unsigned int)numberOfColumns;
 - (unsigned int)numberOfRows;
 - (id)objectToNotify;
+- (void)p_adjustNameListLength:(BOOL)arg1;
+- (void)p_adjustRowAndColumnNameListLength;
 - (void)p_generateRowColumnIdMaps;
 - (BOOL)p_name:(id)arg1 isInArray:(id)arg2;
 - (id)p_uuidsForColumns:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;

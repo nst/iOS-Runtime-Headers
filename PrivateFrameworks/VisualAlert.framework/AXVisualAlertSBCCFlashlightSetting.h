@@ -4,7 +4,7 @@
 
 @interface AXVisualAlertSBCCFlashlightSetting : __AXVisualAlertSBCCFlashlightSetting_super
 
-+ (Class)safeCategoryTargetClass;
++ (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
 - (void)setFlashlightOn:(BOOL)arg1;

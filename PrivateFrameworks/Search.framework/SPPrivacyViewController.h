@@ -9,5 +9,6 @@
 - (BOOL)shouldAutomaticallyForwardAppearanceMethods;
 - (BOOL)shouldAutomaticallyForwardRotationMethods;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

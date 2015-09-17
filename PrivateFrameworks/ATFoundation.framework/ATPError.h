@@ -37,6 +37,7 @@
 - (BOOL)hasErrorDescription;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setCode:(int)arg1;
 - (void)setDomain:(id)arg1;

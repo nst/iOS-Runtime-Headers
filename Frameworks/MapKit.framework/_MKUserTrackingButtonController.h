@@ -6,12 +6,14 @@
     UIActivityIndicatorView *_activityIndicatorView;
     UIButton *_button;
     UIImageView *_imageView;
+    NSMutableDictionary *_skipModeDictionary;
     int _state;
     <MKUserTrackingButtonTarget> *_target;
     <MKUserTrackingView> *_userTrackingView;
 }
 
 @property (nonatomic, readonly) UIImageView *imageView;
+@property (nonatomic, retain) NSMutableDictionary *skipModeDictionary;
 @property (nonatomic) int state;
 @property (nonatomic, retain) <MKUserTrackingView> *userTrackingView;
 
@@ -31,8 +33,10 @@
 - (void)dealloc;
 - (id)imageView;
 - (id)initWithTarget:(id)arg1 userTrackingView:(id)arg2 imageView:(id)arg3 button:(id)arg4;
+- (void)setSkipModeDictionary:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setUserTrackingView:(id)arg1;
+- (id)skipModeDictionary;
 - (int)state;
 - (id)userTrackingView;
 

@@ -17,7 +17,7 @@
     BOOL _usesEvenOddFillRule;
 }
 
-@property (nonatomic) struct CGPath { }*CGPath;
+@property (nonatomic) const struct CGPath { }*CGPath;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } currentPoint;
 @property (getter=isEmpty, readonly) BOOL empty;
@@ -27,6 +27,8 @@
 @property (nonatomic) float lineWidth;
 @property (nonatomic) float miterLimit;
 @property (nonatomic) BOOL usesEvenOddFillRule;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_bezierPathWithArcRoundedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cornerRadius:(float)arg2;
 + (id)_bezierPathWithPillRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 cornerRadius:(float)arg2;
@@ -48,7 +50,7 @@
 + (id)roundedRectBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTopCornerRadius:(float)arg2 withBottomCornerRadius:(float)arg3;
 + (id)shadowBezierPath:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withRoundedEdges:(unsigned int)arg2;
 
-- (struct CGPath { }*)CGPath;
+- (const struct CGPath { }*)CGPath;
 - (void)_addRoundedCornerWithTrueCorner:(struct CGPoint { float x1; float x2; })arg1 radius:(struct CGSize { float x1; float x2; })arg2 corner:(unsigned int)arg3 clockwise:(BOOL)arg4;
 - (struct CGPath { }*)_createMutablePathByDecodingData:(id)arg1;
 - (id)_initWithCGMutablePath:(struct CGPath { }*)arg1;
@@ -102,5 +104,14 @@
 - (void)stroke;
 - (void)strokeWithBlendMode:(int)arg1 alpha:(float)arg2;
 - (BOOL)usesEvenOddFillRule;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (struct CGPath { }*)newCGPathForPlatformBezierPath;
+
+// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+
+- (void)hk_applyBlock:(id /* block */)arg1;
+- (id)hk_firstPoint;
 
 @end

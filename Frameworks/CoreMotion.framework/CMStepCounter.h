@@ -7,7 +7,6 @@
 }
 
 @property BOOL enabled;
-@property (readonly) BOOL everRequested;
 @property (nonatomic, readonly) CMStepCounterProxy *stepcounterProxy;
 
 + (BOOL)isStepCountingAvailable;
@@ -15,7 +14,6 @@
 - (void)dealloc;
 - (void)deleteHistory;
 - (BOOL)enabled;
-- (BOOL)everRequested;
 - (void)getTotalCountToQueue:(id)arg1 withHandler:(id /* block */)arg2;
 - (id)init;
 - (void)queryStepCountStartingFrom:(id)arg1 to:(id)arg2 toQueue:(id)arg3 withHandler:(id /* block */)arg4;

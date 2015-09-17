@@ -11,7 +11,7 @@
     NSMutableData *_value;
 }
 
-@property (nonatomic, readonly, retain) CBCentral *central;
+@property (nonatomic, readonly) CBCentral *central;
 @property (nonatomic, retain) CBCharacteristic *characteristic;
 @property (nonatomic) BOOL ignoreResponse;
 @property (nonatomic, readonly) unsigned int offset;

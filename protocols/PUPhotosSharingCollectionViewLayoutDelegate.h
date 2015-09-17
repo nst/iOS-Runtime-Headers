@@ -5,6 +5,8 @@
 
 @required
 
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })layout:(PUPhotosSharingCollectionViewLayout *)arg1 collectionView:(UICollectionView *)arg2 selectionBadgeFrameForItemFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 atIndexPath:(NSIndexPath *)arg4;
+- (float)layout:(PUPhotosSharingCollectionViewLayout *)arg1 collectionView:(UICollectionView *)arg2 bottomBadgeInsetforItemAtIndexPath:(NSIndexPath *)arg3;
+- (void)layout:(PUPhotosSharingCollectionViewLayout *)arg1 collectionView:(UICollectionView *)arg2 itemAtIndexPath:(NSIndexPath *)arg3 didChangeToVisibleFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (struct CGSize { float x1; float x2; })layout:(PUPhotosSharingCollectionViewLayout *)arg1 collectionView:(UICollectionView *)arg2 sizeForBadgeViewOfKind:(NSString *)arg3 forItemAtIndexPath:(NSIndexPath *)arg4;
 
 @end

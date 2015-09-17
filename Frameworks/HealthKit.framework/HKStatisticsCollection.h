@@ -15,8 +15,6 @@
 @property (nonatomic, readonly) NSDate *anchorDate;
 @property (nonatomic, readonly) NSDateComponents *statisticsInterval;
 
-// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
-
 - (void).cxx_destruct;
 - (void)_clearSourcesCache;
 - (void)_enumerateStatisticsIndexesFromDate:(id)arg1 toDate:(id)arg2 withBlock:(id /* block */)arg3;
@@ -39,11 +37,5 @@
 - (id)statistics;
 - (id)statisticsForDate:(id)arg1;
 - (id)statisticsInterval;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-- (id)_fakeDataWithUnit:(id)arg1;
-- (id)_fakingValueForKey:(id)arg1;
-- (double)totalWithUnit:(id)arg1;
 
 @end

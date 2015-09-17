@@ -7,6 +7,7 @@
     <RMSDiscoverySessionDelegate> *_delegate;
     int _discoveryTypes;
     BOOL _networkAvailable;
+    NSArray *_pairedNetworkNames;
     NSArray *_providers;
     Reachability *_reachability;
 }
@@ -18,6 +19,7 @@
 @property (nonatomic) int discoveryTypes;
 @property (readonly) unsigned int hash;
 @property (getter=isNetworkAvailable, nonatomic, readonly) BOOL networkAvailable;
+@property (nonatomic, retain) NSArray *pairedNetworkNames;
 @property (readonly) Class superclass;
 
 + (id)localDiscoverySession;
@@ -37,9 +39,11 @@
 - (void)endDiscovery;
 - (id)init;
 - (BOOL)isNetworkAvailable;
+- (id)pairedNetworkNames;
 - (void)serviceProvider:(id)arg1 serviceDidBecomeAvailable:(id)arg2;
 - (void)serviceProvider:(id)arg1 serviceDidBecomeUnavailable:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscoveryTypes:(int)arg1;
+- (void)setPairedNetworkNames:(id)arg1;
 
 @end

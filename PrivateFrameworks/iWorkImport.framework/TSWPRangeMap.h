@@ -25,7 +25,7 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
-- (void)adjustByDelta:(int)arg1;
+- (void)adjustByDelta:(int)arg1 startingAt:(unsigned int)arg2;
 - (id)initWithSubRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 unmappedIndexes:(const struct vector<unsigned int, std::__1::allocator<unsigned int> > { unsigned int *x1; unsigned int *x2; struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { unsigned int *x_3_1_1; } x3; }*)arg2 affinity:(int)arg3;
 - (id)initWithSubRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 unmappedIndexes:(const struct vector<unsigned int, std::__1::allocator<unsigned int> > { unsigned int *x1; unsigned int *x2; struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { unsigned int *x_3_1_1; } x3; }*)arg2 isBackwardAffinities:(const struct vector<bool, std::__1::allocator<bool> > { unsigned long *x1; unsigned int x2; struct __compressed_pair<unsigned long, std::__1::allocator<unsigned long> > { unsigned long x_3_1_1; } x3; }*)arg3;
 - (id)initWithSubRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 unmappedPairIndexes:(const struct vector<unsigned int, std::__1::allocator<unsigned int> > { unsigned int *x1; unsigned int *x2; struct __compressed_pair<unsigned int *, std::__1::allocator<unsigned int> > { unsigned int *x_3_1_1; } x3; }*)arg2;

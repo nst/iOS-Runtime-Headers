@@ -8,6 +8,7 @@
     NSString *_displayName;
     BOOL _isCurrentLocation;
     CLLocation *_location;
+    NSData *_mapKitHandle;
     CLPlacemark *_placemark;
     double _radius;
     NSString *_routeType;
@@ -20,6 +21,7 @@
 @property (copy) NSString *displayName;
 @property (nonatomic, readonly) BOOL isCurrentLocation;
 @property (nonatomic, copy) CLLocation *location;
+@property (copy) NSData *mapKitHandle;
 @property (retain) CLPlacemark *placemark;
 @property (nonatomic) double radius;
 @property (copy) NSString *routeType;
@@ -48,6 +50,7 @@
 - (BOOL)isCurrentLocation;
 - (BOOL)isEqual:(id)arg1;
 - (id)location;
+- (id)mapKitHandle;
 - (id)placemark;
 - (double)radius;
 - (id)routeType;
@@ -55,6 +58,7 @@
 - (void)setAddress:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setLocation:(id)arg1;
+- (void)setMapKitHandle:(id)arg1;
 - (void)setPlacemark:(id)arg1;
 - (void)setRadius:(double)arg1;
 - (void)setRouteType:(id)arg1;

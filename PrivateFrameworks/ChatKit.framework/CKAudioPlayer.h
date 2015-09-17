@@ -12,7 +12,7 @@
 }
 
 @property (nonatomic, retain) AVAudioPlayer *audioPlayer;
-@property (nonatomic) id /* block */ block;
+@property (nonatomic, copy) id /* block */ block;
 @property (nonatomic, readonly) double currentTime;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKAudioPlayerDelegate> *delegate;
@@ -39,8 +39,7 @@
 - (BOOL)isPlaying;
 - (id)mediaObject;
 - (void)pause;
-- (void)play;
-- (void)playWithCompletionBlock:(id /* block */)arg1;
+- (void)playAfterDelay:(double)arg1 completion:(id /* block */)arg2;
 - (double)prevCurrentTime;
 - (void)setAudioPlayer:(id)arg1;
 - (void)setBlock:(id /* block */)arg1;

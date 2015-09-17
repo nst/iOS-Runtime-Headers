@@ -13,7 +13,7 @@
     NSMutableDictionary *_unknownAttributes;
 }
 
-@property (readonly) NSData *lastCropRectChecksum;
+@property (readonly, retain) NSData *lastCropRectChecksum;
 @property (readonly) int lastCropRectHeight;
 @property (readonly) int lastCropRectWidth;
 @property (readonly) int lastCropRectX;

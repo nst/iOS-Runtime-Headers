@@ -29,6 +29,8 @@
 + (id)sharedInstance;
 
 - (int)ambiguityState;
+- (id)audioCategoryForCall:(id)arg1;
+- (id)audioModeForCall:(id)arg1;
 - (BOOL)isAddCallAllowed;
 - (BOOL)isEndAndAnswerAllowed;
 - (BOOL)isHardPauseAvailable;

@@ -29,7 +29,7 @@
 @property (nonatomic, readonly) BOOL canSendAsTextMessage;
 @property (nonatomic, readonly) Class cellClass;
 @property (nonatomic, readonly, copy) NSString *cellIdentifier;
-@property (nonatomic, readonly, retain) UIImage *contactImage;
+@property (nonatomic, readonly, retain) CNContact *contact;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (nonatomic, readonly) unsigned char contiguousType;
 @property (nonatomic, readonly) BOOL displayDuringSend;
@@ -45,7 +45,7 @@
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } transcriptTextAlignmentInsets;
 @property (nonatomic, readonly) BOOL wantsDrawerLayout;
 
-+ (id)chatItemWithIMChatItem:(id)arg1 rightBalloonMaxWidth:(float)arg2 leftBalloonMaxWidth:(float)arg3 otherMaxWidth:(float)arg4;
++ (id)chatItemWithIMChatItem:(id)arg1 balloonMaxWidth:(float)arg2 otherMaxWidth:(float)arg3;
 
 - (id)IMChatItem;
 - (unsigned char)attachmentContiguousType;
@@ -57,7 +57,7 @@
 - (BOOL)canSendAsTextMessage;
 - (Class)cellClass;
 - (id)cellIdentifier;
-- (id)contactImage;
+- (id)contact;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (unsigned char)contiguousType;
 - (void)dealloc;

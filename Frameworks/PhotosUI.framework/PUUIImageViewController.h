@@ -2,6 +2,47 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUUIImageViewController : PLUIImageViewController
+@interface PUUIImageViewController : PLUIImageViewController <ISPlayerViewDelegate, UIGestureRecognizerDelegate> {
+    NSURL *__assetURL;
+    int __imageManagerVideoRequestID;
+    PUBrowsingIrisPlayer *__irisPlayer;
+    ISPlayerView *__irisPlayerView;
+    NSString *__videoAssetURL;
+    PHAsset *_asset;
+    BOOL _isIris;
+}
+
+@property (setter=_setAssetURL:, nonatomic, retain) NSURL *_assetURL;
+@property (setter=_setImageManagerVideoRequestID:) int _imageManagerVideoRequestID;
+@property (nonatomic, retain) PUBrowsingIrisPlayer *_irisPlayer;
+@property (setter=_setIrisPlayerView:, nonatomic, retain) ISPlayerView *_irisPlayerView;
+@property (setter=_setVideoAssetURL:, nonatomic, retain) NSString *_videoAssetURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_assetURL;
+- (void)_fetchVideoWithCompletion:(id /* block */)arg1;
+- (int)_imageManagerVideoRequestID;
+- (id)_irisPlayer;
+- (id)_irisPlayerView;
+- (void)_loadIrisPlayerItem:(id)arg1;
+- (void)_setAssetURL:(id)arg1;
+- (void)_setImageManagerVideoRequestID:(int)arg1;
+- (void)_setIrisPlayerView:(id)arg1;
+- (void)_setVideoAssetURL:(id)arg1;
+- (id)_videoAssetURL;
+- (void)cropOverlayWasOKed:(id)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (id)initWithPhoto:(id)arg1 imagePickerProperties:(id)arg2;
+- (id)irisPlayerView:(id)arg1 delegateForGestureRecognizer:(id)arg2;
+- (id)irisPlayerViewViewHostingGestureRecognizers:(id)arg1;
+- (void)loadView;
+- (void)setIrisPlayer:(id)arg1;
+- (void)set_irisPlayer:(id)arg1;
+- (void)viewDidLayoutSubviews;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

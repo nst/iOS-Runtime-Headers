@@ -4,19 +4,23 @@
 
 @interface AVPlayerControllerInternal : AVPlayerController {
     int _actionAtItemEnd;
+    BOOL _atMaxTime;
+    BOOL _atMinTime;
     NSArray *_audioMediaSelectionOptions;
     unsigned int _audioSessionInterrupted;
     id _audioSessionInterruptionObserver;
     NSArray *_availableMetadataFormats;
+    BOOL _compatibleWithAirPlayVideo;
     BOOL _composable;
     NSArray *_contentChapters;
     unsigned int _deviceBatteryChargingOrFull;
     unsigned int _deviceBatteryMonitoringWasEnabled;
     id _deviceBatteryStateDidChangeObserver;
     BOOL _disablingAutomaticTermination;
+    BOOL _forceScanning;
     BOOL _hasProtectedContent;
-    BOOL _ignoreBackwardAndForwardScans;
-    BOOL _isActuallySettingRateWithThrottling;
+    unsigned int _isPictureInPictureSupported;
+    BOOL _isResumed;
     BOOL _isScanningBackward;
     BOOL _isScanningForward;
     BOOL _isSeeking;
@@ -26,9 +30,9 @@
     NSArray *_legibleMediaSelectionOptions;
     BOOL _looping;
     NSDictionary *_metadata;
-    unsigned int _pausedDuringAudioSessionInterruption;
     BOOL _pendingSeek;
-    BOOL _pendingSetRateWithThrottling;
+    unsigned int _pictureInPictureInterrupted;
+    BOOL _playbackSuspended;
     AVPlayer *_player;
     id _playerItemDidPlayToEndTimeObserver;
     id _playerItemTimeJumpedObserver;
@@ -37,21 +41,23 @@
     double _preScanningRate;
     BOOL _preventingIdleDisplaySleep;
     BOOL _preventingIdleSystemSleep;
-    double _rateBeforeAudioSessionInterruption;
+    float _rate;
+    double _rateBeforeForceScanning;
+    float _rateBeforeInterruption;
     double _rateBeforeScrubBegan;
     unsigned int _scanningCount;
     BOOL _scrubbing;
     NSObject<OS_dispatch_queue> *_seekQueue;
+    NSObject<OS_dispatch_source> *_seekTimer;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
     } _seekToTime;
-    NSObject<OS_dispatch_queue> *_setRateWithThrottlingQueue;
-    double _setToRate;
     unsigned int _shouldPlayWhenLikelyToKeepUp;
     id _timeObserverToken;
+    double _timeOfLastUpdate;
     AVValueTiming *_timing;
     struct { 
         long long value; 
@@ -67,7 +73,10 @@
     } _toleranceBefore;
 }
 
+@property (getter=isAtMaxTime, nonatomic) BOOL atMaxTime;
+@property (getter=isAtMinTime, nonatomic) BOOL atMinTime;
 @property (nonatomic, retain) NSArray *availableMetadataFormats;
+@property (getter=isCompatibleWithAirPlayVideo, nonatomic) BOOL compatibleWithAirPlayVideo;
 @property (getter=isComposable, nonatomic) BOOL composable;
 @property (nonatomic, retain) NSArray *contentChapters;
 @property (getter=isDeviceBatteryChargingOrFull, nonatomic) BOOL deviceBatteryChargingOrFull;
@@ -115,6 +124,7 @@
 + (id)keyPathsForValuesAffectingLoadedTimeRanges;
 + (id)keyPathsForValuesAffectingMaxTime;
 + (id)keyPathsForValuesAffectingMinTime;
++ (id)keyPathsForValuesAffectingPictureInPicturePossible;
 + (id)keyPathsForValuesAffectingPlaying;
 + (id)keyPathsForValuesAffectingPlayingOnExternalScreen;
 + (id)keyPathsForValuesAffectingRate;
@@ -125,29 +135,27 @@
 
 - (void).cxx_destruct;
 - (BOOL)CALayerDestinationIsTVOut;
-- (id)_DVSAudioOptionsForMediaSelectionOptions:(id)arg1;
-- (void)_Starsky_dealloc;
-- (void)_Starsky_init;
-- (void)_Starsky_observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (id)_auxiliaryAudioOptionsForMediaSelectionOptions:(id)arg1;
+- (id)_DVSOptionsForMediaSelectionOptions:(id)arg1;
+- (void)_attemptToResumePlaybackAfterInterruption;
+- (id)_audioOptionsForMediaSelectionOptions:(id)arg1;
+- (id)_auxiliaryOptionsForMediaSelectionOptions:(id)arg1;
 - (void)_disableLegibleMediaSelectionOptions:(id)arg1;
 - (void)_enableAutoMediaSelection:(id)arg1;
 - (id)_extendedLanguageTagsForOptions:(id)arg1;
 - (BOOL)_isMarkedNotSerializablePlayerItem:(id)arg1;
 - (BOOL)_isRestrictedFromSavingPlayerItem:(id)arg1;
-- (id)_languageCodesForOptions:(id)arg1;
-- (id)_mainAudioOptionsForMediaSelectionOptions:(id)arg1;
-- (id)_mediaSelectionOptionForLanguageCode:(id)arg1 options:(id)arg2;
-- (id)_mediaSelectionOptionForLanguageCode:(id)arg1 options:(id)arg2 preferAC3:(BOOL)arg3;
+- (id)_localesForOptions:(id)arg1;
+- (id)_mediaSelectionOptionForLocale:(id)arg1 options:(id)arg2;
+- (id)_mediaSelectionOptionForLocale:(id)arg1 options:(id)arg2 preferAC3:(BOOL)arg3;
 - (id)_playableMediaSelectionOptionsForMediaCharacteristic:(id)arg1;
 - (id)_pushSystemLanguageToTop:(id)arg1;
+- (id)_seekTimer;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
 - (void)_setMediaOption:(id)arg1 mediaCharacteristic:(id)arg2;
 - (id)_subtitlesForOptions:(id)arg1;
 - (void)_updateScanningBackwardRate;
 - (void)_updateScanningForwardRate;
 - (void)actuallySeekToTime;
-- (void)actuallySetRateWithThrottling;
 - (BOOL)allowsExternalPlayback;
 - (id)audioMediaSelectionOptions;
 - (id)audioOptions;
@@ -177,6 +185,8 @@
 - (double)contentDurationWithinEndTimes;
 - (id)currentAudioMediaSelectionOption;
 - (id)currentLegibleMediaSelectionOption;
+- (double)currentTime;
+- (double)currentTimeWithinEndTimes;
 - (void)dealloc;
 - (void)decreaseVolume:(id)arg1;
 - (void)endScanningBackward:(id)arg1;
@@ -201,11 +211,16 @@
 - (void)increaseVolume:(id)arg1;
 - (id)init;
 - (id)initWithPlayer:(id)arg1;
+- (BOOL)isAtMaxTime;
+- (BOOL)isAtMinTime;
+- (BOOL)isCompatibleWithAirPlayVideo;
 - (BOOL)isComposable;
 - (BOOL)isDeviceBatteryChargingOrFull;
 - (BOOL)isDisablingAutomaticTermination;
 - (BOOL)isExternalPlaybackActive;
 - (BOOL)isLooping;
+- (BOOL)isPictureInPictureInterrupted;
+- (BOOL)isPictureInPicturePossible;
 - (BOOL)isPlaying;
 - (BOOL)isPlayingOnExternalScreen;
 - (BOOL)isPlayingOnSecondScreen;
@@ -217,6 +232,7 @@
 - (id)legibleOptions;
 - (id)loadedTimeRanges;
 - (double)maxTime;
+- (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
 - (id)metadata;
 - (double)minTime;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -245,9 +261,12 @@
 - (void)seekToTime:(double)arg1 toleranceBefore:(double)arg2 toleranceAfter:(double)arg3;
 - (id)seekableTimeRanges;
 - (void)setAllowsExternalPlayback:(BOOL)arg1;
+- (void)setAtMaxTime:(BOOL)arg1;
+- (void)setAtMinTime:(BOOL)arg1;
 - (void)setAudioMediaSelectionOptions:(id)arg1;
 - (void)setAvailableMetadataFormats:(id)arg1;
 - (void)setCALayerDestinationIsTVOut:(BOOL)arg1;
+- (void)setCompatibleWithAirPlayVideo:(BOOL)arg1;
 - (void)setComposable:(BOOL)arg1;
 - (void)setContentChapters:(id)arg1;
 - (void)setCurrentAudioMediaSelectionOption:(id)arg1;
@@ -260,6 +279,7 @@
 - (void)setMaxTime:(double)arg1;
 - (void)setMetadata:(id)arg1;
 - (void)setMinTime:(double)arg1;
+- (void)setPictureInPictureInterrupted:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setPlaying:(BOOL)arg1;
 - (void)setPlayingOnSecondScreen:(BOOL)arg1;
@@ -267,16 +287,19 @@
 - (void)setPreventingIdleSystemSleep:(BOOL)arg1;
 - (void)setRate:(double)arg1;
 - (void)setRateBeforeScrubBegan:(double)arg1;
-- (void)setRateWithThrottling:(double)arg1;
+- (void)setRateWithForce:(double)arg1;
 - (void)setScrubbing:(BOOL)arg1;
 - (void)setTiming:(id)arg1;
 - (void)setVolume:(double)arg1;
 - (BOOL)shouldPreventIdleDisplaySleep;
 - (void)skipBackwardThirtySeconds:(id)arg1;
 - (int)status;
+- (void)throttledSeekToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 toleranceAfter:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (id)timing;
 - (void)toggleMuted:(id)arg1;
 - (void)togglePlayback:(id)arg1;
+- (void)togglePlaybackEvenWhenInBackground:(id)arg1;
+- (void)updateAtMinMaxTime;
 - (void)updateTiming;
 - (double)volume;
 

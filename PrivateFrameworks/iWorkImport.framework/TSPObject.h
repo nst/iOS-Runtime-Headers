@@ -50,6 +50,7 @@
 - (BOOL)documentIsRTL;
 - (id)documentRoot;
 - (id)init;
+- (id)initBaseObjectFromUnarchiver:(id)arg1;
 - (id)initBaseObjectWithContext:(id)arg1;
 - (id)initCommon;
 - (id)initDocumentObjectWithContext:(id)arg1;
@@ -64,6 +65,7 @@
 - (id)objectUUIDPath;
 - (id)owningDocument;
 - (id)packageLocator;
+- (void)performBlockIgnoringModifications:(id /* block */)arg1;
 - (void)saveToArchiver:(id)arg1;
 - (void)setObjectUUID:(id)arg1;
 - (void)setTsp_component:(id)arg1;
@@ -75,6 +77,7 @@
 - (id)tsp_component;
 - (void)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 objectMap:(id*)arg3 error:(id*)arg4;
 - (id)tsp_deepCopyWithOptions:(id)arg1;
 - (void)tsp_deepCopyWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (id)tsp_delegate;

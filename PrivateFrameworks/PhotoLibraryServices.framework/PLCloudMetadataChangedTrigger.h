@@ -4,6 +4,4 @@
 
 @interface PLCloudMetadataChangedTrigger : PLCloudStatelessTrigger
 
-- (id)init;
-
 @end

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)avalancheReviewControllerDidComplete:(PUAvalancheReviewController *)arg1;
+- (void)avalancheReviewControllerDidComplete:(PUAvalancheReviewController *)arg1 withAsset:(PHAsset *)arg2 animated:(BOOL)arg3;
 
 @end

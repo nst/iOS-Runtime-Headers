@@ -21,6 +21,7 @@
 + (id)colorWithCalibratedRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (id)colorWithCsColour:(const struct CsColour { unsigned short x1; unsigned short x2; unsigned short x3; unsigned short x4; }*)arg1;
 + (id)colorWithEshColor:(const struct EshColor { struct Data { int x_1_1_1; union Value { struct RGB { unsigned char x_1_3_1; unsigned char x_1_3_2; unsigned char x_1_3_3; } x_2_2_1; unsigned short x_2_2_2; unsigned short x_2_2_3; struct AdjustedColor { unsigned char x_4_3_1; unsigned char x_4_3_2; unsigned int x_4_3_3 : 4; unsigned int x_4_3_4 : 1; unsigned int x_4_3_5 : 1; unsigned int x_4_3_6 : 1; } x_2_2_4; } x_1_1_2; } x1; }*)arg1;
++ (id)colorWithHexString:(id)arg1;
 + (id)colorWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 + (id)colorWithPatternImage:(id)arg1;
 + (id)colorWithRGBBytes:(unsigned char)arg1 :(unsigned char)arg2 :(unsigned char)arg3;
@@ -48,6 +49,7 @@
 - (float)alphaComponent;
 - (id)blendedColorWithFraction:(float)arg1 ofColor:(id)arg2;
 - (float)blueComponent;
+- (float)brightnessComponent;
 - (id)colorWithAlphaComponent:(float)arg1;
 - (id)colorWithShadeValue:(double)arg1;
 - (id)colorWithTintValue:(double)arg1;
@@ -61,7 +63,10 @@
 - (id)grayscaleColor;
 - (float)greenComponent;
 - (unsigned int)hash;
+- (id)hexString;
+- (float)hueComponent;
 - (id)initWithCGColor:(struct CGColor { }*)arg1;
+- (id)initWithHexString:(id)arg1;
 - (id)initWithHue:(float)arg1 saturation:(float)arg2 brightness:(float)arg3 alpha:(float)arg4;
 - (id)initWithPatternImage:(id)arg1;
 - (id)initWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
@@ -80,6 +85,7 @@
 - (void)paintPath:(struct CGPath { }*)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)paintRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inContext:(struct CGContext { }*)arg2;
 - (float)redComponent;
+- (float)saturationComponent;
 - (void)set;
 - (id)solidColoredPngImage;
 - (unsigned long)toBGR;

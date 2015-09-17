@@ -10,7 +10,6 @@
 + (void)initialize;
 + (BOOL)supportsSecureCoding;
 
-- (void)_validateForMetadataQueryScopes:(id)arg1;
 - (void)acceptVisitor:(id)arg1 flags:(unsigned int)arg2;
 - (id)autorelease;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

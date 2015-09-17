@@ -25,8 +25,10 @@
 - (id)initWithSQLEntity:(id)arg1 ownedObjectID:(struct _NSScalarObjectID { Class x1; }*)arg2 andTimestamp:(double)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (const id*)knownKeyValuesPointer;
-- (struct __CFBitVector { }*)newCalculatedDeltaMaskFrom:(id)arg1;
+- (struct __CFBitVector { }*)newColumnMaskFrom:(id)arg1 columnInclusionOptions:(unsigned int)arg2;
 - (struct _NSScalarObjectID { Class x1; }*)newObjectIDForToOne:(id)arg1;
+- (struct __CFBitVector { }*)newUpdateMaskForConstrainedValues;
+- (struct __CFBitVector { }*)newUpdateMaskFrom:(id)arg1;
 - (struct _NSScalarObjectID { Class x1; }*)objectID;
 - (long long)optLock;
 - (long long)pk64;

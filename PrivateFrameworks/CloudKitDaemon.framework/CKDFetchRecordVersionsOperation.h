@@ -9,6 +9,7 @@
     NSString *_minimumVersionETag;
     NSArray *_recordIDs;
     id /* block */ _recordVersionFetchedBlock;
+    BOOL _shouldFetchAssetContent;
 }
 
 @property (nonatomic, retain) NSArray *desiredKeys;
@@ -17,10 +18,12 @@
 @property (nonatomic, retain) NSString *minimumVersionETag;
 @property (nonatomic, retain) NSArray *recordIDs;
 @property (nonatomic, copy) id /* block */ recordVersionFetchedBlock;
+@property (nonatomic) BOOL shouldFetchAssetContent;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordVersionsFecthedForID:(id)arg1 isDeleted:(BOOL)arg2 versions:(id)arg3 responseCode:(id)arg4;
+- (unsigned long long)activityStart;
 - (id)desiredKeys;
 - (id)fetchVersionsGroup;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
@@ -35,5 +38,7 @@
 - (void)setMinimumVersionETag:(id)arg1;
 - (void)setRecordIDs:(id)arg1;
 - (void)setRecordVersionFetchedBlock:(id /* block */)arg1;
+- (void)setShouldFetchAssetContent:(BOOL)arg1;
+- (BOOL)shouldFetchAssetContent;
 
 @end

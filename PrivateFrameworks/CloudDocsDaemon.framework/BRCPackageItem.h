@@ -45,7 +45,7 @@
 + (id)packageItemInContainer:(id)arg1 documentID:(unsigned int)arg2 relativePath:(id)arg3;
 + (struct PQLResultSet { Class x1; }*)packageItemsForDocumentID:(unsigned int)arg1 order:(unsigned int)arg2 container:(id)arg3;
 + (struct PQLResultSet { Class x1; }*)packageItemsForItem:(id)arg1 order:(unsigned int)arg2;
-+ (BOOL)updateSigaturesForFilesInItem:(id)arg1 fromCKPackage:(id)arg2 error:(id*)arg3;
++ (BOOL)updateSignaturesForFilesInItem:(id)arg1 fromCKPackage:(id)arg2 error:(id*)arg3;
 + (BOOL)updateSnapshotAtPath:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;

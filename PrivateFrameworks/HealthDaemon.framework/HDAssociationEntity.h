@@ -12,18 +12,20 @@
 + (id)_propertySettersForDataObject;
 + (BOOL)_shouldJoinWithProperty:(id)arg1 joinProperty:(id)arg2;
 + (id)associationPropertyForEntityClass:(Class)arg1;
++ (id)columnsDefinition;
 + (id)createNonUniqueIndicesForColumns;
-+ (id)createTableSQL;
 + (id)databaseTable;
 + (id)deleteStatementForAssociationWithDatabase:(id)arg1;
 + (id)deleteStatementForObjectAssociationsWithDatabase:(id)arg1;
 + (BOOL)insertEntriesWithAssociation:(id)arg1 objects:(id)arg2 enforceSameSource:(BOOL)arg3 database:(id)arg4 error:(id*)arg5;
 + (BOOL)insertEntriesWithAssociation:(id)arg1 objects:(id)arg2 enforceSameSource:(BOOL)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
 + (BOOL)insertEntriesWithAssociationUUID:(id)arg1 objectUUIDsData:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
-+ (id)joinClauseForProperty:(id)arg1;
++ (id)joinClausesForProperty:(id)arg1;
 + (id)journalEntryForAssociation:(id)arg1 objects:(id)arg2;
 + (id)objectIDsForAssociationEntity:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (id)propertyForSyncProvenance;
 + (int)protectionClass;
++ (id)tableAliases;
++ (id)uniquedColumns;
 
 @end

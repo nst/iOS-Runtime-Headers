@@ -29,6 +29,7 @@
 - (void)_saveRecords;
 - (id /* block */)accessWasGrantedBlock;
 - (id /* block */)accessWasRevokedBlock;
+- (unsigned long long)activityStart;
 - (id)fetchedRecordIDs;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

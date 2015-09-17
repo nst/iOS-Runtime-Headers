@@ -7,6 +7,7 @@
     int mLocationIndex;
 }
 
+- (id)description;
 - (unsigned long)drawableId;
 - (int)locationIndex;
 - (void)setDrawableId:(unsigned long)arg1;

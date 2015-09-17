@@ -30,6 +30,7 @@
 - (id)contextAfterInput;
 - (id)contextBeforeInput;
 - (void)dealloc;
+- (BOOL)deletingBackwardsWillRemoveText;
 - (id)description;
 - (BOOL)documentIsEmpty;
 - (id)documentStateAfterCollapsingSelection;
@@ -54,7 +55,6 @@
 - (id)markedText;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedRangeInMarkedText;
 - (id)selectedText;
-- (BOOL)string:(id)arg1 matchesString:(id)arg2;
 - (id)wordPrefixOfString:(id)arg1 withTerminatorPredicate:(id /* block */)arg2 reverse:(BOOL)arg3;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit

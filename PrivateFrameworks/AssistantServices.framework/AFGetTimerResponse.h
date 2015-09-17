@@ -3,10 +3,10 @@
  */
 
 @interface AFGetTimerResponse : AFSiriResponse {
-    AFTimer *_timer;
+    STTimer *_timer;
 }
 
-@property (nonatomic, retain) AFTimer *timer;
+@property (nonatomic, retain) STTimer *timer;
 
 + (BOOL)supportsSecureCoding;
 

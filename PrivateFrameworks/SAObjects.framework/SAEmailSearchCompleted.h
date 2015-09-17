@@ -10,21 +10,16 @@
 @property (nonatomic, copy) NSArray *emailResults;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *refId;
-@property (nonatomic, copy) NSArray *results;
 @property (readonly) Class superclass;
 
 + (id)searchCompleted;
 + (id)searchCompletedWithDictionary:(id)arg1 context:(id)arg2;
 + (id)searchCompletedWithEmailResults:(id)arg1;
-+ (id)searchCompletedWithResults:(id)arg1;
 
 - (id)emailResults;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)initWithEmailResults:(id)arg1;
-- (id)initWithResults:(id)arg1;
-- (id)results;
 - (void)setEmailResults:(id)arg1;
-- (void)setResults:(id)arg1;
 
 @end

@@ -5,12 +5,12 @@
 @interface PSKeychainSyncViewController : PSListController <KeychainSyncViewController> {
     <KeychainSyncViewControllerDelegate> *_delegate;
     PSSpecifier *_groupSpecifier;
-    KeychainSyncHeaderView *_headerView;
+    PSKeychainSyncHeaderView *_headerView;
 }
 
 @property (nonatomic) <KeychainSyncViewControllerDelegate> *delegate;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)delegate;
 - (id)groupSpecifier;
 - (id)headerView;

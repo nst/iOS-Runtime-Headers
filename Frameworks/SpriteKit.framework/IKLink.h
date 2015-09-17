@@ -38,7 +38,6 @@
 @property (nonatomic) union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } position;
 @property (nonatomic) union _GLKVector2 { struct { float x_1_1_1; float x_1_1_2; } x1; struct { float x_2_1_1; float x_2_1_2; } x2; float x3[2]; } size;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (float)angle;
 - (float)angleInitial;

@@ -3,11 +3,11 @@
  */
 
 @interface EKPersistentSource : EKPersistentObject {
-    EKSourceConstraints *_constraints;
+    CDBSourceConstraints *_constraints;
 }
 
 @property (nonatomic) NSString *UUID;
-@property (nonatomic, readonly) EKSourceConstraints *constraints;
+@property (nonatomic, readonly) CDBSourceConstraints *constraints;
 @property (nonatomic, copy) NSNumber *defaultAlarmOffset;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (nonatomic, copy) NSString *externalID;

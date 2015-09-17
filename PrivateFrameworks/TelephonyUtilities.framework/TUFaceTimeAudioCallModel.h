@@ -2,19 +2,14 @@
    Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
  */
 
-@interface TUFaceTimeAudioCallModel : TUCallModel
+@interface TUFaceTimeAudioCallModel : TUFaceTimeCallModel
 
 + (id)sharedInstance;
 
-- (int)ambiguityState;
+- (id)audioModeForCall:(id)arg1;
 - (BOOL)isAddCallAllowed;
-- (BOOL)isEndAndAnswerAllowed;
-- (BOOL)isHardPauseAvailable;
 - (BOOL)isHoldAllowed;
 - (BOOL)isHoldAndAnswerAllowed;
-- (BOOL)isMergeable;
-- (BOOL)isSendToVoicemailAllowed;
 - (BOOL)isSwappable;
-- (BOOL)isTakingCallsPrivateAllowed;
 
 @end

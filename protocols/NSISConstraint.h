@@ -5,6 +5,8 @@
 
 @required
 
+- (id)firstItem;
 - (float)nsis_allowedMagnitudeForIntegralizationAdjustmentOfConstraintWithMarker:(NSISVariable *)arg1;
+- (id)secondItem;
 
 @end

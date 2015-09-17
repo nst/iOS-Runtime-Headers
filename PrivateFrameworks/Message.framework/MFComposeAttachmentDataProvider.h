@@ -2,10 +2,11 @@
    Image: /System/Library/PrivateFrameworks/Message.framework/Message
  */
 
-@interface MFComposeAttachmentDataProvider : NSObject <MFAttachmentDataProvider> {
-    NSMutableDictionary *_attachments;
-    NSMutableDictionary *_attachmentsPasteboard;
-    NSMutableDictionary *_attachmentsUndo;
+@interface MFComposeAttachmentDataProvider : NSObject <MFAttachmentDataProviderProtocol> {
+    NSMutableDictionary *_attachmentsData;
+    NSMutableDictionary *_attachmentsPasteboardData;
+    NSCache *_attachmentsPlaceholderData;
+    NSMutableDictionary *_attachmentsUndoData;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,11 +16,13 @@
 
 - (id)_dataForAttachment:(id)arg1;
 - (void)addData:(id)arg1 forContentID:(id)arg2;
+- (id)dataForContentID:(id)arg1;
 - (void)dealloc;
 - (BOOL)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 error:(id*)arg3;
 - (id)fetchLocalDataForAttachment:(id)arg1;
 - (id)initWithData:(id)arg1 forContentID:(id)arg2;
 - (id)messageForAttachment:(id)arg1;
+- (id)rawDataForContentID:(id)arg1;
 - (void)recordPasteboardDataForAttachments:(id)arg1;
 - (void)recordUndoDataForAttachments:(id)arg1;
 - (void)removeDataForAttachment:(id)arg1;

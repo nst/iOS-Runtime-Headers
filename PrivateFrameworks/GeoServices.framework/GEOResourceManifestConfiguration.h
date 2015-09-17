@@ -27,6 +27,9 @@
 @property (nonatomic, copy) NSString *osVersion;
 @property (nonatomic) unsigned int tileGroupIdentifier;
 
++ (id)configurationWithPairedDevice:(id)arg1;
++ (id)defaultConfiguration;
+
 - (id)applicationIdentifier;
 - (id)applicationVersion;
 - (id)conciseDictionaryRepresentation;

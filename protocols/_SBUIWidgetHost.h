@@ -7,6 +7,5 @@
 
 - (void)invalidatePreferredViewSize;
 - (void)requestLaunchOfURL:(NSURL *)arg1;
-- (void)requestPresentationOfViewController:(void *)arg1 presentationStyle:(void *)arg2 context:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 8: NSString *, int, NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 
 @end

@@ -18,6 +18,7 @@
     BOOL _isThirdParty;
     BOOL _isUnresponsive;
     NSString *_mainBinaryPath;
+    double _mostRecentTimeSamplingOnlyMainThread;
     NSString *_name;
     int _pid;
     int _ppid;
@@ -50,6 +51,7 @@
 @property (readonly) unsigned long long mainBinaryOffset;
 @property (readonly) NSString *mainBinaryPath;
 @property (readonly) NSUUID *mainBinaryUuid;
+@property double mostRecentTimeSamplingOnlyMainThread;
 @property (readonly) NSString *name;
 @property (readonly) int pid;
 @property (readonly) int ppid;
@@ -90,6 +92,7 @@
 - (unsigned long long)mainBinaryOffset;
 - (id)mainBinaryPath;
 - (id)mainBinaryUuid;
+- (double)mostRecentTimeSamplingOnlyMainThread;
 - (id)name;
 - (int)pid;
 - (void)populateReferencesUsingBufferPosition:(const void*)arg1 andDeserializationDictionary:(id)arg2 andDataBufferDictionary:(id)arg3;
@@ -100,6 +103,7 @@
 - (void)setCachedDonatingPids:(id)arg1;
 - (void)setCachedPrivateData:(id)arg1;
 - (void)setDidExec:(BOOL)arg1;
+- (void)setMostRecentTimeSamplingOnlyMainThread:(double)arg1;
 - (unsigned long long)sharedCacheOffset;
 - (id)sharedCacheUuid;
 - (unsigned long)sizeInBytesForSerializedVersion;

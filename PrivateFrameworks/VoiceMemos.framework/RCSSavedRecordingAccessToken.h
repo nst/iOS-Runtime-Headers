@@ -3,23 +3,25 @@
  */
 
 @interface RCSSavedRecordingAccessToken : NSObject <NSCoding, NSCopying, NSSecureCoding> {
+    int _accessIntent;
     NSString *_accessName;
-    unsigned int _accessType;
     NSURL *_compositionAVURL;
+    BOOL _exclusive;
     NSUUID *_identifier;
 }
 
+@property (nonatomic, readonly) int accessIntent;
 @property (nonatomic, readonly, copy) NSString *accessName;
-@property (nonatomic, readonly) unsigned int accessType;
 @property (nonatomic, readonly) NSURL *compositionAVURL;
+@property (getter=isExclusive, nonatomic, readonly) BOOL exclusive;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
 
 + (BOOL)supportsSecureCoding;
-+ (id)tokenWithName:(id)arg1 accessType:(unsigned int)arg2 compositionAVURL:(id)arg3;
++ (id)tokenWithName:(id)arg1 accessIntent:(int)arg2 compositionAVURL:(id)arg3;
 
 - (void).cxx_destruct;
+- (int)accessIntent;
 - (id)accessName;
-- (unsigned int)accessType;
 - (id)compositionAVURL;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -27,7 +29,8 @@
 - (unsigned int)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithName:(id)arg1 accessType:(unsigned int)arg2 compositionAVURL:(id)arg3 identifier:(id)arg4;
+- (id)initWithName:(id)arg1 accessIntent:(int)arg2 compositionAVURL:(id)arg3 identifier:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isExclusive;
 
 @end

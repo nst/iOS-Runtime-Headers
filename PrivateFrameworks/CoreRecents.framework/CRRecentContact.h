@@ -46,6 +46,8 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void)_enumerateWordsInString:(id)arg1 usingBlock:(id /* block */)arg2;
+- (struct __CFStringTokenizer { }*)_wordTokenizerForString:(id)arg1 locale:(id)arg2;
 - (id)address;
 - (void)applyWeight:(id)arg1;
 - (id)archivableContactID;
@@ -117,9 +119,5 @@
 - (int)matchedIdentifier;
 - (void*)person;
 - (int)property;
-
-// Image: /System/Library/Frameworks/PassKit.framework/PassKit
-
-- (id)contactForPropertyID:(int)arg1;
 
 @end

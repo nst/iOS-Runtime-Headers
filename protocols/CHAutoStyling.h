@@ -16,7 +16,7 @@
 - (void)resolveGraphicPropertiesOfTrendline:(OADGraphicProperties *)arg1 forSeriesIndex:(unsigned int)arg2;
 - (void)resolveLegendGraphicProperties:(OADGraphicProperties *)arg1;
 - (void)resolveMajorGridLinesGraphicProperties:(OADGraphicProperties *)arg1;
-- (void)resolveMarker:(CHDMarker *)arg1 withSeriesGraphicProperties:(OADGraphicProperties *)arg2 forSeriesIndex:(unsigned int)arg3;
+- (void)resolveMarker:(void *)arg1 withSeriesGraphicProperties:(void *)arg2 forSeriesIndex:(void *)arg3 clientGraphicPropertyDefaults:(void *)arg4; // needs 4 arg types, found 10: CHDMarker *, OADGraphicProperties *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, id, void*, OADGraphicProperties *, NSArray *, void*
 - (void)resolveMinorGridLinesGraphicProperties:(OADGraphicProperties *)arg1;
 - (void)resolvePlotAreaGraphicProperties:(OADGraphicProperties *)arg1;
 - (void)resolveWallGraphicProperties:(OADGraphicProperties *)arg1;

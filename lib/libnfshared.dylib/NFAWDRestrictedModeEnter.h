@@ -13,7 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCJCOPRestrictedModeEvent *metric;
+@property (nonatomic, retain) AWDNFCJCOPRestrictedModeEvent *metric;
 @property (readonly) Class superclass;
 
 - (id)attackLog;
@@ -26,5 +26,6 @@
 - (void)setAttackLog:(id)arg1;
 - (void)setContactlessMode:(BOOL)arg1;
 - (void)setMetric:(id)arg1;
+- (void)updateExceptionUUID:(id)arg1;
 
 @end

@@ -73,7 +73,9 @@
 - (BOOL)enableTransmissionWindow;
 - (id)errorHandlers;
 - (id)idsService;
-- (id)initWithIDSServiceIdentifier:(id)arg1 launchOnDemandNotification:(id)arg2 cacheFolderPath:(id)arg3 loggingFacility:(struct __CFString { }*)arg4;
+- (id)init;
+- (id)initWithIDSServiceIdentifier:(id)arg1;
+- (id)initWithIDSServiceIdentifier:(id)arg1 launchOnDemandNotification:(id)arg2 cacheFolderPath:(id)arg3;
 - (void)mapPBRequest:(Class)arg1 toResponse:(Class)arg2 messageID:(unsigned short)arg3;
 - (unsigned int)maxBytesInFlight;
 - (unsigned int)maxMessagesInFlight;
@@ -82,11 +84,13 @@
 - (id)requestHandlers;
 - (id)responseHandlers;
 - (void)resume;
+- (void)sendFile:(id)arg1;
 - (void)sendRequest:(id)arg1;
 - (id)service;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 hasBeenDeliveredWithContext:(id)arg4;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
+- (void)service:(id)arg1 account:(id)arg2 incomingResourceAtURL:(id)arg3 metadata:(id)arg4 fromID:(id)arg5 context:(id)arg6;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateRequiresACKs:(BOOL)arg1;

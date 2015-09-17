@@ -9,6 +9,7 @@
 
 @property (nonatomic) double timePerFrame;
 
++ (id)animateWithNormalTextures:(id)arg1 timePerFrame:(double)arg2 resize:(BOOL)arg3 restore:(BOOL)arg4;
 + (id)animateWithTextures:(id)arg1 timePerFrame:(double)arg2 resize:(BOOL)arg3 restore:(BOOL)arg4;
 
 - (void).cxx_destruct;
@@ -17,6 +18,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)reversedAction;
+- (void)setDuration:(double)arg1;
 - (void)setTimePerFrame:(double)arg1;
 - (double)timePerFrame;
 

@@ -4,9 +4,9 @@
 
 @interface OABFill : NSObject
 
-+ (void)addStopsFromArray:(const struct OABGradientStop { id x1; }*)arg1 stopCount:(int)arg2 inverted:(BOOL)arg3 startPos:(float)arg4 endPos:(float)arg5 toGradientFill:(id)arg6 fillPropertiesManager:(id)arg7;
-+ (id)readFillFromFillPropertiesManager:(id)arg1 colorPalette:(id)arg2;
-+ (void)readGradientFill:(id)arg1 fromFillPropertiesManager:(id)arg2 colorPalette:(id)arg3;
-+ (void)readImageFill:(id)arg1 fromFillPropertiesManager:(id)arg2 colorPalette:(id)arg3;
++ (void)addStopsFromArray:(const struct OABGradientStop { id x1; }*)arg1 stopCount:(int)arg2 inverted:(BOOL)arg3 startPos:(float)arg4 endPos:(float)arg5 toStopArray:(id)arg6 fillPropertiesManager:(id)arg7;
++ (id)readFillFromFillPropertiesManager:(id)arg1 state:(id)arg2;
++ (void)readGradientFill:(id)arg1 fromFillPropertiesManager:(id)arg2 state:(id)arg3;
++ (void)readImageFill:(id)arg1 fromFillPropertiesManager:(id)arg2 state:(id)arg3;
 
 @end

@@ -26,11 +26,9 @@
 @property (nonatomic, readonly) SCNPhysicsBody *bodyA;
 @property (nonatomic, readonly) SCNPhysicsBody *bodyB;
 
-+ (id)SCNJSExportProtocol;
 + (id)jointWithBody:(id)arg1 anchor:(struct SCNVector3 { float x1; float x2; float x3; })arg2;
 + (id)jointWithBodyA:(id)arg1 anchorA:(struct SCNVector3 { float x1; float x2; float x3; })arg2 bodyB:(id)arg3 anchorB:(struct SCNVector3 { float x1; float x2; float x3; })arg4;
 
-- (id).cxx_construct;
 - (void)_addToPhysicsWorld:(id)arg1;
 - (void)_willRemoveFromPhysicsWorld:(id)arg1;
 - (struct SCNVector3 { float x1; float x2; float x3; })anchorA;

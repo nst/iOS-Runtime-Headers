@@ -9,11 +9,13 @@
     NSArray *_alertLocalizationArgs;
     NSString *_alertLocalizationKey;
     NSNumber *_badge;
+    NSString *_category;
     NSString *_containerIdentifier;
     BOOL _isPruned;
     CKNotificationID *_notificationID;
     int _notificationType;
     NSString *_soundName;
+    NSString *_subscriptionID;
 }
 
 @property (nonatomic, copy) NSString *alertActionLocalizationKey;
@@ -22,11 +24,13 @@
 @property (nonatomic, copy) NSArray *alertLocalizationArgs;
 @property (nonatomic, copy) NSString *alertLocalizationKey;
 @property (nonatomic, copy) NSNumber *badge;
+@property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSString *containerIdentifier;
 @property (nonatomic) BOOL isPruned;
 @property (nonatomic, copy) CKNotificationID *notificationID;
 @property (nonatomic) int notificationType;
 @property (nonatomic, copy) NSString *soundName;
+@property (nonatomic, copy) NSString *subscriptionID;
 
 + (id)_realNotificationFromRemoteNotificationDictionary:(id)arg1;
 + (id)notificationFromRemoteNotificationDictionary:(id)arg1;
@@ -41,6 +45,7 @@
 - (id)alertLocalizationArgs;
 - (id)alertLocalizationKey;
 - (id)badge;
+- (id)category;
 - (id)containerIdentifier;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
@@ -57,11 +62,14 @@
 - (void)setAlertLocalizationArgs:(id)arg1;
 - (void)setAlertLocalizationKey:(id)arg1;
 - (void)setBadge:(id)arg1;
+- (void)setCategory:(id)arg1;
 - (void)setContainerIdentifier:(id)arg1;
 - (void)setIsPruned:(BOOL)arg1;
 - (void)setNotificationID:(id)arg1;
 - (void)setNotificationType:(int)arg1;
 - (void)setSoundName:(id)arg1;
+- (void)setSubscriptionID:(id)arg1;
 - (id)soundName;
+- (id)subscriptionID;
 
 @end

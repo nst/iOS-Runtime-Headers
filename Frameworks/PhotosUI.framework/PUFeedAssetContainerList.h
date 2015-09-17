@@ -20,7 +20,9 @@
 - (id)containers;
 - (unsigned int)containersCount;
 - (id)containersRelationshipName;
+- (unsigned int)hash;
 - (BOOL)isEmpty;
+- (BOOL)isEqual:(id)arg1;
 - (id)managedObjectContext;
 - (id)photoLibrary;
 - (id)sectionInfos;

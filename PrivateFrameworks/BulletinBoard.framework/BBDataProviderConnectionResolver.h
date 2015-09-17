@@ -17,6 +17,7 @@
 
 + (id)resolverForConnection:(id)arg1;
 
+- (void)_invalidate;
 - (void)_queue_registerWithServer:(id /* block */)arg1;
 - (void)_registerForPublicationNotification;
 - (id)dataProviderConnection;

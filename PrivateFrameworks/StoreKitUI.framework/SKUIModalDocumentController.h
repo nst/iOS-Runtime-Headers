@@ -77,6 +77,7 @@
 - (void)popDocument;
 - (void)popToDocument:(id)arg1;
 - (void)popoverControllerDidDismissPopover:(id)arg1;
+- (void)popoverPresentationController:(id)arg1 willRepositionPopoverToRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 inView:(inout id*)arg3;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (void)presentOverlayViewControllersFromNavigationController:(id)arg1;
 - (void)pushDocument:(id)arg1 options:(id)arg2;

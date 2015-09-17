@@ -10,8 +10,10 @@
     unsigned long long _cpuTimeNsCached;
     unsigned int _firstTimestampIndex;
     unsigned long long _mainThreadId;
+    double _mostRecentTimeSamplingOnlyMainThread;
     NSMutableArray *_sampleTasks;
     NSArray *_threadsInPreviousSample;
+    unsigned int _timestampIndexWhenTransitionedToSamplingAllThreads;
     struct __CFDictionary { } *stacks;
 }
 
@@ -36,6 +38,7 @@
 @property (readonly) NSMutableArray *sampleTasks;
 @property (retain) NSArray *threadsInPreviousSample;
 @property (readonly) double timeOfLastResponse;
+@property (readonly) unsigned int timestampIndexWhenTransitionedToSamplingAllThreads;
 @property (readonly) unsigned int uid;
 @property (readonly) unsigned long long uniqueId;
 @property (readonly) BOOL usesSuddenTermination;
@@ -50,6 +53,7 @@
 - (id)aggregator;
 - (BOOL)allowsIdleExit;
 - (id)architectureString;
+- (void)calculateTimeIndexes;
 - (void)combineStacks;
 - (int)compare:(id)arg1;
 - (id)concurrentDispatchQueueIds;
@@ -84,6 +88,7 @@
 - (id)sortedStacks;
 - (id)threadsInPreviousSample;
 - (double)timeOfLastResponse;
+- (unsigned int)timestampIndexWhenTransitionedToSamplingAllThreads;
 - (unsigned int)uid;
 - (unsigned long long)uniqueId;
 - (BOOL)usesSuddenTermination;

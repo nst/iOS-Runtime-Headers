@@ -6,7 +6,6 @@
     int (*_createSampleBufferProcessorFunction;
     int _lastMRCCount;
     NSDictionary *_metadataIdentifierToSymbologyDictionary;
-    int _metadataOutputRate;
     NSArray *_mrcIdentifiers;
     struct CGRect { 
         struct CGPoint { 

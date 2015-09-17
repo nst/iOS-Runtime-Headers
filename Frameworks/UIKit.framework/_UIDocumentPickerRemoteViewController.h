@@ -3,16 +3,12 @@
  */
 
 @interface _UIDocumentPickerRemoteViewController : _UIRemoteViewController <_UIDocumentPickerServiceInvalidating, _UIDocumentPickerViewControllerHost> {
-    NSExtension *_extension;
-    <NSCopying><NSObject> *_extensionRequestIdentifier;
     NSString *_identifier;
     UIViewController<_UIDocumentPickerRemoteViewControllerContaining> *_publicController;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, retain) NSExtension *extension;
-@property (nonatomic, copy) <NSCopying><NSObject> *extensionRequestIdentifier;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) UIViewController<_UIDocumentPickerRemoteViewControllerContaining> *publicController;
@@ -21,19 +17,16 @@
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
 
+- (void).cxx_destruct;
 - (void)_didSelectPicker;
 - (void)_didSelectURLWrapper:(id)arg1;
 - (void)_dismissViewController;
 - (void)_dismissWithOption:(id)arg1;
 - (void)_stitchFileCreationAtURL:(id)arg1;
 - (void)_tintColorDidChangeToColor:(id)arg1;
-- (id)extension;
-- (id)extensionRequestIdentifier;
 - (id)identifier;
 - (void)invalidate;
 - (id)publicController;
-- (void)setExtension:(id)arg1;
-- (void)setExtensionRequestIdentifier:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setPreferredContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPublicController:(id)arg1;

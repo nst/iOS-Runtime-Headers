@@ -6,5 +6,6 @@
 
 - (void)gatherDebugDiagnostics:(unsigned int)arg1 withCompletion:(id /* block */)arg2;
 - (id)init;
+- (id)initWithRemoteObjectInterface:(id)arg1;
 
 @end

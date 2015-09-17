@@ -19,7 +19,7 @@
 - (void)connectionInvalidated:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)enableLogCodes:(id)arg1 andEvents:(id)arg2;
+- (void)enableLogCodes:(id)arg1 andEvents:(id)arg2 andExtraCode:(id)arg3;
 - (void)flush;
 - (id)init;
 - (void)invalidate;

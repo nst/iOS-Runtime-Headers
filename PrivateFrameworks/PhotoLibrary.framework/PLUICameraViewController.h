@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLUICameraViewController : CAMCameraViewController <UIImagePickerCameraViewController> {
+@interface PLUICameraViewController : CMKCameraViewController <UIImagePickerCameraViewController> {
     int _newStatusBarStyle;
     struct CGAffineTransform { 
         float a; 

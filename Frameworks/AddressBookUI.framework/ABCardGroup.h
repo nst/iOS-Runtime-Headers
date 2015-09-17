@@ -2,48 +2,6 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABCardGroup : NSObject <NSCopying> {
-    NSArray *_actionItems;
-    NSMutableArray *_actions;
-    BOOL _addSpacerFromPreviousGroup;
-    CNContact *_contact;
-    NSMutableArray *_items;
-    NSString *_title;
-    BOOL _useSplitActions;
-}
-
-@property (nonatomic, readonly) NSArray *actionItems;
-@property (nonatomic, readonly) NSArray *actions;
-@property (nonatomic) BOOL addSpacerFromPreviousGroup;
-@property (nonatomic, retain) CNContact *contact;
-@property (nonatomic, readonly) NSArray *displayItems;
-@property (nonatomic, readonly) NSArray *editingItems;
-@property (nonatomic, readonly) NSString *title;
-@property (nonatomic) BOOL useSplitActions;
-
-+ (id)groupForContact:(id)arg1;
-
-- (id)_loadActionItems;
-- (id)actionItems;
-- (id)actions;
-- (void)addAction:(id)arg1 withTitle:(id)arg2;
-- (void)addAction:(id)arg1 withTitle:(id)arg2 color:(id)arg3 transportType:(int)arg4;
-- (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3;
-- (id)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 destructive:(BOOL)arg4;
-- (BOOL)addSpacerFromPreviousGroup;
-- (id)contact;
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
-- (id)description;
-- (id)displayItems;
-- (id)editingItems;
-- (id)initWithContact:(id)arg1;
-- (void)removeActionWithTarget:(id)arg1 selector:(SEL)arg2;
-- (void)removeActionWithTitle:(id)arg1;
-- (void)setAddSpacerFromPreviousGroup:(BOOL)arg1;
-- (void)setContact:(id)arg1;
-- (void)setUseSplitActions:(BOOL)arg1;
-- (id)title;
-- (BOOL)useSplitActions;
+@interface ABCardGroup : CNCardGroup
 
 @end

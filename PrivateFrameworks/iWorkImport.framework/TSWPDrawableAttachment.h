@@ -31,7 +31,6 @@
 - (float)hOffset;
 - (int)hOffsetType;
 - (void)infoChanged;
-- (id)init;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1 drawable:(id)arg2;
 - (void)invalidate;

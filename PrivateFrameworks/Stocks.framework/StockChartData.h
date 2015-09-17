@@ -4,6 +4,7 @@
 
 @interface StockChartData : NSObject {
     int _chartInterval;
+    NSDictionary *_dataSeriesDict;
     double _expirationTime;
     BOOL _hasVolume;
     NSMutableDictionary *_imageSetCache;
@@ -25,6 +26,7 @@
 }
 
 @property (nonatomic) int chartInterval;
+@property (nonatomic, retain) NSDictionary *dataSeriesDict;
 @property (nonatomic) double expirationTime;
 @property (nonatomic) BOOL hasVolume;
 @property (nonatomic, retain) NSArray *interestingIndexes;
@@ -44,6 +46,7 @@
 - (struct { double x1; double x2; unsigned long long x3; }*)allocateStockValuesWithCount:(unsigned int)arg1;
 - (int)chartInterval;
 - (void)clearAllImageSets;
+- (id)dataSeriesDict;
 - (void)dealloc;
 - (id)description;
 - (double)expirationTime;
@@ -60,6 +63,7 @@
 - (struct { double x1; double x2; unsigned long long x3; }*)minValue;
 - (float)previousClosePrice;
 - (void)setChartInterval:(int)arg1;
+- (void)setDataSeriesDict:(id)arg1;
 - (void)setExpirationTime:(double)arg1;
 - (void)setHasVolume:(BOOL)arg1;
 - (void)setImageSet:(id)arg1 forDisplayMode:(id)arg2;

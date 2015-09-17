@@ -3,12 +3,19 @@
  */
 
 @interface CPMLModel : NSObject {
+    NSObject<OS_dispatch_queue> *_dispatch_queue;
+    void *_mData;
     NSString *_modelPath;
+    double *_realBase;
     NSString *_savedPlistPath;
+    unsigned long long _totalBytesIntSection;
+    unsigned long long _totalBytesRealSection;
     CPMLModelEvaluate *cpModelEvaluate;
 }
 
-@property (nonatomic, retain) CPMLModelEvaluate *cpModelEvaluate;
+@property (retain) CPMLModelEvaluate *cpModelEvaluate;
+
++ (id)initCPModelPath:(id)arg1 withConfiguration:(id)arg2;
 
 - (void).cxx_destruct;
 - (void)boundResult:(id)arg1;
@@ -20,8 +27,12 @@
 - (id)getPropertyList;
 - (id)initWithModelPath:(id)arg1 withConfiguration:(id)arg2;
 - (id)initWithModelPath:(id)arg1 withPropertyListPath:(id)arg2;
+- (void)initializeModel:(id)arg1 withConfiguration:(id)arg2;
 - (BOOL)reset;
+- (void)setCPMLAlgorithm:(id)arg1;
+- (void)setCPMLAlgorithmEngine:(id)arg1;
 - (void)setCpModelEvaluate:(id)arg1;
+- (void)setDispatchQueue:(id)arg1;
 - (BOOL)updateModelWithCPDB:(id)arg1;
 - (BOOL)updateModelWithDB:(id)arg1;
 

@@ -3,20 +3,42 @@
  */
 
 @interface BSDescriptionBuilder : NSObject {
+    int _activeComponent;
+    NSString *_activePrefix;
     NSMutableString *_description;
     NSObject *_object;
+    NSMutableString *_proem;
+    BOOL _useDebugDescription;
 }
+
+@property (nonatomic) int activeComponent;
+@property (nonatomic, retain) NSString *activeMultilinePrefix;
+@property (nonatomic) BOOL useDebugDescription;
 
 + (id)builderWithObject:(id)arg1;
 + (id)componentSeparator;
 + (id)descriptionForObject:(id)arg1;
 + (id)descriptionForObject:(id)arg1 withObjectsAndNames:(id)arg2;
 + (id)nameObjectSeparator;
++ (id)succinctDescriptionForObject:(id)arg1;
 
+- (id)_activeComponentString;
+- (int)activeComponent;
+- (id)activeMultilinePrefix;
+- (id)appendArraySection:(id)arg1 withName:(id)arg2 multilinePrefix:(id)arg3 skipIfEmpty:(BOOL)arg4;
+- (id)appendArraySection:(id)arg1 withName:(id)arg2 multilinePrefix:(id)arg3 skipIfEmpty:(BOOL)arg4 objectTransformer:(id /* block */)arg5;
+- (id)appendArraySection:(id)arg1 withName:(id)arg2 skipIfEmpty:(BOOL)arg3;
+- (id)appendArraySection:(id)arg1 withName:(id)arg2 skipIfEmpty:(BOOL)arg3 objectTransformer:(id /* block */)arg4;
+- (id)appendBodySectionWithName:(id)arg1 multilinePrefix:(id)arg2 block:(id /* block */)arg3;
 - (id)appendBool:(BOOL)arg1 withName:(id)arg2;
 - (id)appendCString:(const char *)arg1 withName:(id)arg2;
+- (id)appendDictionarySection:(id)arg1 withName:(id)arg2 multilinePrefix:(id)arg3 skipIfEmpty:(BOOL)arg4;
+- (id)appendDictionarySection:(id)arg1 withName:(id)arg2 skipIfEmpty:(BOOL)arg3;
+- (id)appendFlag:(int)arg1 withName:(id)arg2;
+- (id)appendFlag:(int)arg1 withName:(id)arg2 skipIfNotSet:(BOOL)arg3;
 - (id)appendFloat:(float)arg1 withName:(id)arg2;
 - (id)appendFloat:(float)arg1 withName:(id)arg2 decimalPrecision:(unsigned int)arg3;
+- (id)appendFormat:(id)arg1;
 - (id)appendInt:(int)arg1 withName:(id)arg2;
 - (id)appendInteger:(int)arg1 withName:(id)arg2;
 - (id)appendKey:(id)arg1;
@@ -32,11 +54,18 @@
 - (id)appendSelector:(SEL)arg1 withName:(id)arg2;
 - (id)appendSize:(struct CGSize { float x1; float x2; })arg1 withName:(id)arg2;
 - (id)appendString:(id)arg1;
-- (id)appendUnsignedInt:(int)arg1 withName:(id)arg2;
+- (id)appendSuper;
+- (id)appendUnsignedInt:(unsigned int)arg1 withName:(id)arg2;
 - (id)appendUnsignedInteger:(unsigned int)arg1 withName:(id)arg2;
 - (id)build;
 - (void)dealloc;
 - (id)initWithObject:(id)arg1;
+- (id)modifyBody:(id /* block */)arg1;
+- (id)modifyProem:(id /* block */)arg1;
+- (void)setActiveComponent:(int)arg1;
+- (void)setActiveMultilinePrefix:(id)arg1;
+- (void)setUseDebugDescription:(BOOL)arg1;
 - (void)tryAppendKey:(id)arg1;
+- (BOOL)useDebugDescription;
 
 @end

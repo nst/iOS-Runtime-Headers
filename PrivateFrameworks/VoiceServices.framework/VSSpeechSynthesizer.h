@@ -54,6 +54,7 @@
 + (void)getVoiceInfoForLanguageCode:(id)arg1 footprint:(int)arg2 gender:(int)arg3 custom:(BOOL)arg4 reply:(id /* block */)arg5;
 + (void)initialize;
 + (BOOL)isSystemSpeaking;
++ (BOOL)playVoicePreviewForLanguageCode:(id)arg1 gender:(int)arg2;
 + (void)setAutoDownloadedVoiceAssets:(id)arg1;
 + (void)setLogToFile:(BOOL)arg1;
 

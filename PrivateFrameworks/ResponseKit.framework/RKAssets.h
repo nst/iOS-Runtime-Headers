@@ -7,14 +7,11 @@
 + (id)alternativeInversions;
 + (id)appreciationKeywords;
 + (id)categoryKeywordMap;
-+ (id)categoryKeywords;
-+ (id)categoryResponsesEditable;
-+ (id)categoryResponsesNonEditable;
++ (id)constantClasses;
 + (id)fixedPhrases;
 + (id)polarTagKeywords;
-+ (id)sensitiveSubjectKeywords;
 + (id)sensitiveSubjectRegularExpressionPatterns;
++ (id)stringsFromTable:(id)arg1 forLanguageIdentifier:(id)arg2;
 + (id)synonyms;
-+ (id)wordIDs;
 
 @end

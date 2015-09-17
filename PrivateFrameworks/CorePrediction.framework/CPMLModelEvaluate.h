@@ -3,6 +3,10 @@
  */
 
 @interface CPMLModelEvaluate : NSObject {
+    struct CPMLDelegate { void *x1; void *x2; } *_cpmlDelegate;
+    <CPMLAlgorithmProtocol> *_delegateAlgorithm;
+    struct CPMLDelegateEngine { void *x1; void *x2; } *_delegateEngine;
+    CPMLStorageManager *_storageManager;
     struct vector<int, std::__1::allocator<int> > { 
         int *__begin_; 
         int *__end_; 
@@ -11,7 +15,7 @@
         } __end_cap_; 
     } boundedRemappedValues;
     int countRows;
-    struct CPMLAlgorithm { int (**x1)(); BOOL x2[32]; struct CPMLCDB {} *x3; struct CPMLTunableData {} *x4; struct CPMLIterator {} *x5; struct CPMLSerialization {} *x6; } *cpMLAlgo;
+    struct CPMLAlgorithm { int (**x1)(); BOOL x2[32]; void *x3; struct CPMLCDB {} *x4; struct CPMLDelegate {} *x5; struct CPMLDelegateEngine {} *x6; struct CPMLTunableData {} *x7; struct CPMLIterator {} *x8; struct CPMLSerialization {} *x9; } *cpMLAlgo;
     struct CPMLRemapper { bool x1; bool x2; bool x3; struct sqlite3 {} *x4; struct CPMLStatistics {} *x5; struct vector<int, std::__1::allocator<int> > {} *x6; struct vector<int, std::__1::allocator<int> > {} *x7; } *cpRemapper;
     struct CPMLTunableData { int x1; void *x2; void *x3; } *cpTuneableData;
     CPMLSchema *cpmlSchema;
@@ -44,7 +48,10 @@
 - (id)evalString:(id)arg1;
 - (id)fileProtectionClassRequest:(id)arg1;
 - (int)getAttributeType:(id)arg1;
+- (void*)getModelData;
 - (id)initWithModel:(id)arg1 withPropertyList:(id)arg2;
+- (void)setCPMLAlgorithm:(id)arg1;
+- (void)setCPMLAlgorithmEngine:(id)arg1;
 - (BOOL)updateModel:(id)arg1;
 
 @end

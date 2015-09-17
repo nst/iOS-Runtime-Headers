@@ -14,9 +14,9 @@
 @property (nonatomic, retain) UITableViewCell *swipeToDeleteCell;
 @property (nonatomic, retain) NSArray *viewAnimations;
 
+- (void).cxx_destruct;
 - (int)animationCount;
 - (id /* block */)completionHandler;
-- (void)dealloc;
 - (id)initWithCompletionHandler:(id /* block */)arg1;
 - (void)setAnimationCount:(int)arg1;
 - (void)setSwipeToDeleteCell:(id)arg1;

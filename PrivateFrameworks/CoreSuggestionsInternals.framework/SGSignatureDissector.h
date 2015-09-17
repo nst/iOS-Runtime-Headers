@@ -2,25 +2,28 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGSignatureDissector : NSObject <SGPipelineDissector>
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
+@interface SGSignatureDissector : SGPipelineDissector
 
 + (void)initialize;
++ (id)singleLineSignatureLeadingCharacterSet;
 
-- (void)dissect:(id)arg1;
+- (id)authorFirstname:(id)arg1;
+- (id)authorName:(id)arg1;
+- (void)dissectInternal:(id)arg1;
+- (id)findRejectSig:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })findSignaturePrefix:(id)arg1;
 - (id)findSignaturePrefixesInEntity:(id)arg1 withSignaturePrefixes:(id)arg2;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })findValediction:(id)arg1;
 - (id)findValedictionCommencedSignatureRanges:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })hmmPlausibleSignatureRange:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })hmmSignatureRange:(id)arg1;
-- (struct _NSRange { unsigned int x1; unsigned int x2; })hmmSignatureRangeWithContent:(id)arg1 detectedData:(id)arg2 quotedRegions:(id)arg3;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })hmmSignatureRangeWithContent:(id)arg1 detectedData:(id)arg2 quotedRegions:(id)arg3 authorName:(id)arg4;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })miniSignatureRange:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSenderName:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 restrictLength:(BOOL)arg3 forEntity:(id)arg4;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })rangeOfSenderNameComponents:(id)arg1 withFullname:(id)arg2 inSubstring:(id)arg3;
 - (BOOL)shouldIgnoreSignature:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })sigHtmlBlockRange:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })signatureRange:(id)arg1;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })trailingSenderNameLineRange:(id)arg1;
 
 @end

@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUITableViewRow : RUIElement <UIPickerViewDelegate, UITextFieldDelegate> {
+@interface RUITableViewRow : RUIElement <RUIWebContainerViewDelegate, UIPickerViewDelegate, UITextFieldDelegate> {
+    int _alignment;
     float _cachedHeight;
     BOOL _configured;
     NSData *_data;
@@ -25,6 +26,7 @@
     RUIWebContainerView *_webContainerView;
 }
 
+@property (nonatomic) int alignment;
 @property (nonatomic) BOOL configured;
 @property (nonatomic, readonly) UIControl *control;
 @property (nonatomic, retain) NSData *data;
@@ -59,6 +61,7 @@
 - (void)_switchFlipped:(id)arg1;
 - (void)_updateContentForDisabledState;
 - (void)accessoryImageLoaded;
+- (int)alignment;
 - (void)clearCachedHeight;
 - (BOOL)configured;
 - (id)control;
@@ -85,6 +88,7 @@
 - (BOOL)rowInvalid;
 - (id)selectOptions;
 - (int)selectedRow;
+- (void)setAlignment:(int)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setConfigured:(BOOL)arg1;
 - (void)setData:(id)arg1;
@@ -102,6 +106,7 @@
 - (void)setTextFieldChangeObserver:(id)arg1;
 - (id)sourceURL;
 - (BOOL)supportsAutomaticSelection;
+- (void)switchCanceled;
 - (id)tableCell;
 - (Class)tableCellClass;
 - (int)tableCellStyle;
@@ -109,5 +114,6 @@
 - (BOOL)textField:(id)arg1 shouldChangeCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementString:(id)arg3;
 - (id)textFieldChangeObserver;
 - (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)webContainerView:(id)arg1 didClickLinkWithURL:(id)arg2;
 
 @end

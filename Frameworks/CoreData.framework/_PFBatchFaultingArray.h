@@ -15,7 +15,7 @@
         unsigned int _RESERVED : 23; 
     } _flags;
     NSManagedObjectContext *_moc;
-    NSFetchRequest *_request;
+    NSCachingFetchRequest *_request;
 }
 
 + (BOOL)accessInstanceVariablesDirectly;
@@ -55,6 +55,8 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newArrayFromObjectIDs;
 - (id)objectAtIndex:(unsigned int)arg1;
+- (id)objectAtIndexedSubscript:(unsigned int)arg1;
+- (id)objectsAtIndexes:(id)arg1;
 - (oneway void)release;
 - (id)retain;
 - (unsigned int)retainCount;

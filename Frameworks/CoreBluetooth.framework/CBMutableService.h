@@ -7,10 +7,8 @@
 }
 
 @property (retain) NSNumber *ID;
-@property (nonatomic, retain) CBUUID *UUID;
 @property (retain) NSArray *characteristics;
 @property (retain) NSArray *includedServices;
-@property (nonatomic) BOOL isPrimary;
 
 - (id)ID;
 - (void)dealloc;
@@ -18,7 +16,7 @@
 - (void)handlePowerNotOn;
 - (id)initWithDictionary:(id)arg1;
 - (id)initWithType:(id)arg1 primary:(BOOL)arg2;
-- (void)setCharacteristics:(id)arg1;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setID:(id)arg1;
 
 @end

@@ -34,7 +34,6 @@
 - (id)inputTime;
 - (id)inputWidth;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputAngle:(id)arg1;
 - (void)setInputColor:(id)arg1;
 - (void)setInputExtent:(id)arg1;

@@ -11,7 +11,6 @@
     NSString *_title;
 }
 
-@property (nonatomic, retain) NSDictionary *attributes;
 @property (nonatomic, readonly) int buttonIndex;
 @property (nonatomic, copy) id /* block */ completion;
 @property (nonatomic, retain) NSString *message;

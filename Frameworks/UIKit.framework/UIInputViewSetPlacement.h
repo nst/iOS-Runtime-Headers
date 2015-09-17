@@ -2,7 +2,8 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputViewSetPlacement : NSObject {
+@interface UIInputViewSetPlacement : NSObject <NSSecureCoding> {
+    BOOL _dirty;
     float _extendedHeight;
 }
 
@@ -12,16 +13,22 @@
 @property (nonatomic, readonly) BOOL showsInputViews;
 @property (nonatomic, readonly) BOOL showsKeyboard;
 
++ (id)encodablePlacementsForXPC;
 + (id)placement;
++ (BOOL)supportsSecureCoding;
 
 - (BOOL)accessoryViewWillAppear;
+- (void)encodeWithCoder:(id)arg1;
 - (float)extendedHeight;
 - (id)horizontalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)inputViewWillAppear;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isInteractive;
 - (BOOL)isUndocked;
 - (unsigned int)notificationsForTransitionToPlacement:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })remoteIntrinsicContentSizeForInputViewInSet:(id)arg1;
+- (void)setDirty;
 - (void)setExtendedHeight:(float)arg1;
 - (BOOL)showsInputViews;
 - (BOOL)showsKeyboard;

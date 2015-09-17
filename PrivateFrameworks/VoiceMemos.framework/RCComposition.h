@@ -25,6 +25,7 @@
 @property (nonatomic, retain) NSArray *decomposedFragments;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isContentBeingModified;
 @property (nonatomic) BOOL readonly;
 @property (nonatomic, retain) NSURL *savedRecordingURI;
 @property (readonly) Class superclass;
@@ -34,6 +35,8 @@
 + (id)_compositionLoadedFromMetadataURL:(id)arg1 composedAVURL:(id)arg2 savedRecordingURI:(id)arg3 createIfNeeded:(BOOL)arg4;
 + (id)_compositionMetadataURLForComposedAVURL:(id)arg1;
 + (id)_compositionMetadataURLForCompositionBundleURL:(id)arg1;
++ (BOOL)_isSessionWithModificationAccessActiveForComposedAVURL:(id)arg1;
++ (BOOL)_markCompositionAVURLsBeingModified:(id)arg1;
 + (id)_unitTestingCompositionWithDecomposedFragments:(id)arg1;
 + (id)compositionBundleURLForComposedAVURL:(id)arg1;
 + (id)compositionLoadedForComposedAVURL:(id)arg1 createIfNeeded:(BOOL)arg2;
@@ -68,6 +71,7 @@
 - (unsigned long long)fileSizeOfAssetsIncludingRelatedResources:(BOOL)arg1;
 - (id)initWithComposedAVURL:(id)arg1 savedRecordingURI:(id)arg2 decomposedFragments:(id)arg3 composedFragments:(id)arg4;
 - (id)initWithDictionaryPListRepresentation:(id)arg1;
+- (BOOL)isContentBeingModified;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)newRandomFragmentWithInsertionTimeRangeInComposition:(struct { double x1; double x2; })arg1 pathExtension:(id)arg2;
 - (id)playableAsset;

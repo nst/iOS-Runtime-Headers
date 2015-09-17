@@ -2,18 +2,14 @@
    Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
  */
 
-@interface SCNPhysicsBehavior : NSObject <NSSecureCoding> {
-    id _reserved;
-}
+@interface SCNPhysicsBehavior : NSObject <NSSecureCoding>
 
-+ (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;
 
 - (id)bodyA;
 - (id)bodyB;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
-- (id)init;
+- (BOOL)hasReferenceToPhysicsBody:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 
 @end

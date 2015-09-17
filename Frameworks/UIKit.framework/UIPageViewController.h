@@ -31,6 +31,7 @@
         float bottom; 
         float right; 
     } _effectiveTapRegionInsets;
+    UITapGestureRecognizer *_forwardTapGestureRecognizer;
     NSDictionary *_incomingAndOutgoingViewControllersForManualTransition;
     BOOL _interfaceRotating;
     int _lastKnownNavigationDirection;
@@ -39,6 +40,7 @@
     _UIPageCurl *_pageCurl;
     float _pageSpacing;
     UIPanGestureRecognizer *_panGestureRecognizer;
+    UITapGestureRecognizer *_reverseTapGestureRecognizer;
     NSMutableArray *_rotationSnapshotViews;
     int _spineLocation;
     int _spineLocationPriorToInterfaceRotation;
@@ -91,6 +93,7 @@
 + (BOOL)doesOverrideSupportedInterfaceOrientations;
 + (id)stringForSpineLocation:(int)arg1;
 
+- (void).cxx_destruct;
 - (void)_beginDisablingInterfaceAutorotation;
 - (void)_cacheViewControllerForScroll:(id)arg1;
 - (BOOL)_canHandleGestures;
@@ -107,12 +110,16 @@
 - (id)_contentView;
 - (void)_contentViewFrameOrBoundsDidChange;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_disabledScrollingRegion;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (struct CGSize { float x1; float x2; })_effectiveTapRegionBreadths;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_effectiveTapRegionInsets;
 - (void)_endDisablingInterfaceAutorotation;
 - (void)_flushViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
+- (void)_handleForwardTapGesture:(id)arg1;
+- (void)_handlePagingInDirection:(int)arg1;
 - (void)_handlePanGesture:(id)arg1;
+- (void)_handleReverseTapGesture:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;
 - (id)_incomingViewControllersForGestureDrivenCurlInDirection:(int)arg1;
 - (void)_invalidateEffectiveTapRegions;
@@ -143,6 +150,7 @@
 - (void)_setViewControllersStashedForRotation:(id)arg1;
 - (BOOL)_shouldBeginNavigationInDirection:(int*)arg1 inResponseToPanGestureRecognizer:(id)arg2;
 - (BOOL)_shouldCompleteManualCurlWithSuggestedVelocity:(float*)arg1;
+- (BOOL)_shouldFlipInRTL;
 - (BOOL)_shouldNavigateInDirection:(int*)arg1 inResponseToTapGestureRecognizer:(id)arg2;
 - (BOOL)_shouldNavigateInDirection:(int*)arg1 inResponseToVelocity:(float*)arg2 ofGestureRecognizedByPanGestureRecognizer:(id)arg3;
 - (BOOL)_shouldPersistViewWhenCoding;
@@ -174,6 +182,7 @@
 - (BOOL)isDoubleSided;
 - (void)loadView;
 - (int)navigationOrientation;
+- (id)preferredFocusedView;
 - (int)preferredInterfaceOrientationForPresentation;
 - (void)queuingScrollView:(id)arg1 didBailoutOfScrollAndRevealedView:(id)arg2;
 - (void)queuingScrollView:(id)arg1 didCommitManualScroll:(BOOL)arg2 toRevealView:(id)arg3 concealView:(id)arg4 direction:(int)arg5 animated:(BOOL)arg6 canComplete:(BOOL)arg7;

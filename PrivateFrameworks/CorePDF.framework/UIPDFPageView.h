@@ -128,6 +128,7 @@
 - (void)doubleTapAt:(struct CGPoint { float x1; float x2; })arg1;
 - (void)drawAnnotations:(struct CGContext { }*)arg1;
 - (id)effectsLayer;
+- (void)enableLightMemoryFootprint;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fitRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })fitWidth:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atVertical:(float)arg2;
 - (BOOL)hasSearchHighlights;
@@ -138,6 +139,7 @@
 - (id)init;
 - (id)initWithPage:(id)arg1;
 - (id)initWithPage:(id)arg1 tiledContent:(BOOL)arg2;
+- (id)initWithPageLimitedMemory:(id)arg1;
 - (void)layoutSubviews;
 - (void)layoutTextEffects;
 - (float)margin;
@@ -182,6 +184,7 @@
 - (void)suspendInstantTouchHighlighting;
 - (void)twoFingerDoubleTapAt:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)useBackingLayer;
+- (void)viewDidZoom:(id)arg1;
 - (BOOL)willDoSomethingWithTap:(struct CGPoint { float x1; float x2; })arg1;
 - (void)willMoveToSuperview:(id)arg1;
 

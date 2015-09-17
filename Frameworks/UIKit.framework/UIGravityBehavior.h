@@ -14,9 +14,10 @@
 @property (nonatomic, readonly, copy) NSArray *items;
 @property (nonatomic) float magnitude;
 
++ (BOOL)_isPrimitiveBehavior;
+
 - (void)_addItem:(id)arg1;
 - (void)_associate;
-- (void)_commonInit;
 - (void)_dissociate;
 - (void)_setAngle:(float)arg1 magnitude:(float)arg2;
 - (void)addItem:(id)arg1;

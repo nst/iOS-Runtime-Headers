@@ -16,6 +16,7 @@
     GEOComposedRoute *_route;
     GEORouteAttributes *_routeAttributes;
     GEORouteMatch *_routeMatch;
+    GEORouteSummaryAttributes *_routeSummaryAttributes;
     BOOL _shouldUseConditionalRequest;
     GEOLocation *_userLocation;
 }
@@ -37,6 +38,7 @@
 - (void)_clearTimer;
 - (void)_continueUpdateRequests;
 - (void)_createETARequest;
+- (void)_fakeResponseForWalkingWithETAUpdateRequest:(id)arg1 currentStep:(id)arg2 percentOfCurrentStepRemaining:(double)arg3;
 - (BOOL)_sendETARequest:(id)arg1 isUpdate:(BOOL)arg2;
 - (BOOL)_shouldStartConditionalETARequest;
 - (void)_startConditionalConnectionETARequest;
@@ -45,6 +47,7 @@
 - (BOOL)_updateETAResponse:(id)arg1 withRemainingDistanceFromRequest:(id)arg2;
 - (BOOL)_updateRouteWithETATrafficUpdateResponse:(id)arg1;
 - (BOOL)allowRequests;
+- (void)cancelRequest;
 - (id)currentStep;
 - (void)dealloc;
 - (double)debugTimeWindowDuration;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)setCategory:(int)arg1;
+- (void)setCategory:(UIKeyboardEmojiCategory *)arg1;
 
 @end

@@ -4,12 +4,10 @@
 
 @interface UIAlertControllerVisualStyleActionSheetCar : UIAlertControllerVisualStyleActionSheet
 
-- (id)actionHighlightedBackgroundView;
+- (id)actionContentColorForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
 - (id)backgroundView;
-- (id)defaultActionBackgroundColorWhenSeparate;
-- (id)defaultActionFont;
-- (id)highlightedActionContentColor;
-- (float)horizontalContentMargin;
+- (id)backgroundViewForAction:(id)arg1 withViewRepresentation:(id)arg2 inAlertController:(id)arg3;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (float)marginAboveTitleLabelFirstBaseline;
 - (float)marginBelowLastLabelLastBaseline;
 - (int)maximumNumberOfLinesInMessageLabel;
@@ -17,10 +15,10 @@
 - (id)messageLabelColor;
 - (id)messageLabelFont;
 - (float)minimumActionHeight;
+- (int)permittedActionLayoutDirection;
+- (id)preferredActionFont;
 - (id)regularActionFont;
 - (id)titleLabelColor;
 - (id)titleLabelFont;
-- (float)verticalContentMargin;
-- (float)visualAltitude;
 
 @end

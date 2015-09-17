@@ -22,7 +22,7 @@
 
 + (BOOL)tokensAreLegal:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)extraAttributes;
 - (BOOL)findAttendees;
 - (BOOL)findGroups;

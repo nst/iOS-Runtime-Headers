@@ -8,6 +8,7 @@
     NSMapTable *_images;
     NSArray *_pages;
     UIImage *_placeholderImage;
+    MSCLSettingsTableViewCell *_removeAccountButtonCell;
     NSString *_selectedPageIdentifier;
     UITableView *_tableView;
 }
@@ -21,8 +22,11 @@
 - (id)_attributedExplanationString;
 - (void)_cancelButtonAction:(id)arg1;
 - (void)_doneButtonAction:(id)arg1;
+- (id)_facebookPageTableViewCellInTableView:(id)arg1 forIndexPath:(id)arg2;
 - (id)_imageDataConsumer;
 - (id)_newImageOperationWithObjectIdentifier:(id)arg1;
+- (id)_removalConfirmationMessage;
+- (void)_removeAccount;
 - (void)_requestImagesIfNecessary;
 - (void)_setImage:(id)arg1 forObject:(id)arg2;
 - (void)dealloc;

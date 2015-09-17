@@ -3,10 +3,10 @@
  */
 
 @interface VKGenericShieldGenerator : NSObject <GEOResourceManifestTileGroupObserver> {
-    VKGenericShieldDrawStyle *_defaultStyle;
+    VKPGenericShieldStyleInfo *_defaultStyle;
     NSCache *_defaultStylePacks;
+    GEOResourceManifestConfiguration *_manifestConfiguration;
     VKResourceManager *_resourceManager;
-    unsigned int _tileGroupIdentifier;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +15,7 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (id)initWithTileGroupIdentifier:(unsigned int)arg1 resourceManager:(id)arg2;
+- (id)initWithConfiguration:(id)arg1 resourceManager:(id)arg2;
 - (id)newArtworkWithScale:(float)arg1 style:(id)arg2 size:(int)arg3 numberOfLines:(unsigned int)arg4;
 - (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;

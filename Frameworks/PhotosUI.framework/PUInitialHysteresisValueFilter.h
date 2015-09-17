@@ -8,8 +8,10 @@
     double _thresholdValue;
 }
 
+@property (nonatomic, readonly) double outputValueDerivative;
 @property (nonatomic) double thresholdValue;
 
+- (double)outputValueDerivative;
 - (void)setThresholdValue:(double)arg1;
 - (double)thresholdValue;
 - (double)updatedValue:(double)arg1 withTargetValue:(double)arg2;

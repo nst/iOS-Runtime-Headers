@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
  */
 
-@interface NSGlyphInfo : NSObject <NSCoding, NSCopying> {
+@interface NSGlyphInfo : NSObject <NSCopying, NSSecureCoding> {
     NSString *_baseString;
 }
 

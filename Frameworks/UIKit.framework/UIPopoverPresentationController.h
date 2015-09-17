@@ -5,10 +5,10 @@
 @interface UIPopoverPresentationController : UIPresentationController <UIDimmingViewDelegate, UIGestureRecognizerDelegatePrivate> {
     BOOL __centersPopoverIfSourceViewNotSet;
     float __dimmingViewTopEdgeInset;
+    BOOL __ignoreBarButtonItemSiblings;
     BOOL __shouldHideArrow;
-    BOOL _allowResizePastTargetRect;
     UIColor *_backgroundColor;
-    UIBarButtonItem *_barButtonItem;
+    BOOL _canOverlapSourceViewRect;
     UIViewController *_contentViewController;
     unsigned int _currentArrowDirection;
     SEL _didEndSelector;
@@ -27,6 +27,7 @@
         } size; 
     } _embeddedTargetRect;
     BOOL _ignoresKeyboardNotifications;
+    BOOL _isArrowDirectionFixed;
     BOOL _isDismissingBecauseDimmingViewTapped;
     BOOL _isLayoutDisabled;
     UIView *_layoutConstraintView;
@@ -61,23 +62,14 @@
     unsigned int _presentationEdge;
     int _presentationState;
     UIView *_presentingView;
+    UIPopoverPresentationController *_retainedSelf;
     BOOL _retainsSelfWhilePresented;
+    _UIMirrorNinePatchView *_shadowImageView;
     BOOL _showsOrientationMarker;
     BOOL _showsPresentationArea;
     BOOL _showsTargetRect;
     unsigned int _slideTransitionCount;
     UIViewController *_slidingViewController;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _sourceRect;
-    UIView *_sourceView;
     UIViewController *_splitParentController;
     id _target;
     UIBarButtonItem *_targetBarButtonItem;
@@ -109,12 +101,13 @@
 
 @property (getter=_centersPopoverIfSourceViewNotSet, setter=_setCentersPopoverIfSourceViewNotSet:, nonatomic) BOOL _centersPopoverIfSourceViewNotSet;
 @property (setter=_setDimmingViewTopEdgeInset:, nonatomic) float _dimmingViewTopEdgeInset;
+@property (setter=_setIgnoreBarButtonItemSiblings:, nonatomic) BOOL _ignoreBarButtonItemSiblings;
 @property (setter=_setIgnoresKeyboardNotifications:, nonatomic) BOOL _ignoresKeyboardNotifications;
 @property (getter=_shouldHideArrow, setter=_setShouldHideArrow:, nonatomic) BOOL _shouldHideArrow;
-@property (nonatomic) BOOL allowResizePastTargetRect;
 @property (nonatomic, readonly) unsigned int arrowDirection;
 @property (nonatomic, copy) UIColor *backgroundColor;
 @property (nonatomic, retain) UIBarButtonItem *barButtonItem;
+@property (nonatomic) BOOL canOverlapSourceViewRect;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIPopoverPresentationControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -129,6 +122,7 @@
 @property (nonatomic, retain) _UIPopoverLayoutInfo *preferredLayoutInfo;
 @property (getter=_presentationEdge, setter=_setPresentationEdge:, nonatomic) unsigned int presentationEdge;
 @property (getter=_presentingView, setter=_setPresentingView:, nonatomic) UIView *presentingView;
+@property (nonatomic, retain) UIPopoverPresentationController *retainedSelf;
 @property (getter=_retainsSelfWhilePresented, setter=_setRetainsSelfWhilePresented:, nonatomic) BOOL retainsSelfWhilePresented;
 @property (nonatomic) BOOL showsOrientationMarker;
 @property (nonatomic) BOOL showsPresentationArea;
@@ -144,7 +138,9 @@
 + (void)_setAlwaysAllowPopoverPresentations:(BOOL)arg1;
 + (BOOL)_showTargetRectPref;
 
+- (void).cxx_destruct;
 - (void)_adjustPopoverForNewContentSizeFromViewController:(id)arg1 allowShrink:(BOOL)arg2;
+- (BOOL)_alwaysAdaptToFullscreenForTraitCollection:(id)arg1;
 - (BOOL)_attemptsToAvoidKeyboard;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_baseContentInsets;
 - (struct CGPoint { float x1; float x2; })_centerPointForScale:(float)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;
@@ -162,8 +158,10 @@
 - (BOOL)_embedsInView;
 - (id)_exceptionStringForNilSourceViewOrBarButtonItem;
 - (BOOL)_forcesPreferredAnimationControllers;
+- (BOOL)_ignoreBarButtonItemSiblings;
 - (BOOL)_ignoresKeyboardNotifications;
 - (void)_incrementSlideTransitionCount:(BOOL)arg1;
+- (id)_initialPresentationViewControllerForViewController:(id)arg1;
 - (void)_invalidateLayoutInfo;
 - (BOOL)_isDismissing;
 - (BOOL)_isPresenting;
@@ -183,6 +181,7 @@
 - (BOOL)_popoverBackgroundViewWantsDefaultContentAppearance;
 - (int)_popoverControllerStyle;
 - (id)_popoverHostingWindow;
+- (BOOL)_popoverIsDismissingBecauseDimmingViewWasTapped;
 - (Class)_popoverLayoutInfoForChromeClass:(Class)arg1;
 - (void)_postludeForDismissal;
 - (id)_preferredAnimationControllerForDismissal;
@@ -197,14 +196,17 @@
 - (BOOL)_retainsSelfWhilePresented;
 - (void)_scrollViewDidEndDragging:(id)arg1;
 - (void)_scrollViewWillBeginDragging:(id)arg1;
+- (void)_sendDelegateWillRepositionToRect;
 - (void)_setCentersPopoverIfSourceViewNotSet:(BOOL)arg1;
 - (void)_setContentViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)_setContentViewController:(id)arg1 backgroundStyle:(int)arg2 animated:(BOOL)arg3;
 - (void)_setDimmingViewTopEdgeInset:(float)arg1;
 - (void)_setGesturesEnabled:(BOOL)arg1;
+- (void)_setIgnoreBarButtonItemSiblings:(BOOL)arg1;
 - (void)_setIgnoresKeyboardNotifications:(BOOL)arg1;
 - (void)_setManagingSplitViewController:(id)arg1;
 - (void)_setPopoverBackgroundStyle:(int)arg1;
+- (void)_setPopoverFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2 coordinator:(id)arg3;
 - (void)_setPopoverView:(id)arg1;
 - (void)_setPresentationEdge:(unsigned int)arg1;
 - (void)_setPresentationState:(int)arg1;
@@ -219,6 +221,7 @@
 - (BOOL)_shouldOccludeDuringPresentation;
 - (unsigned int)_slideTransitionCount;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sourceRect;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_sourceRectInContainerView;
 - (id)_sourceView;
 - (id)_splitParentController;
 - (void)_startWatchingForKeyboardNotificationsIfNecessary;
@@ -233,10 +236,10 @@
 - (void)_transitionFromWillBegin;
 - (void)_transitionToDidEnd;
 - (void)_transitionToWillBegin;
-- (BOOL)allowResizePastTargetRect;
+- (void)_updateShadowFrame;
 - (unsigned int)arrowDirection;
 - (id)backgroundColor;
-- (id)barButtonItem;
+- (BOOL)canOverlapSourceViewRect;
 - (void)containerViewWillLayoutSubviews;
 - (void)dealloc;
 - (id)dimmingView;
@@ -262,9 +265,9 @@
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
 - (id)presentedView;
-- (void)setAllowResizePastTargetRect:(BOOL)arg1;
+- (id)retainedSelf;
 - (void)setBackgroundColor:(id)arg1;
-- (void)setBarButtonItem:(id)arg1;
+- (void)setCanOverlapSourceViewRect:(BOOL)arg1;
 - (void)setDimmingView:(id)arg1;
 - (void)setDismissesOnRotation:(BOOL)arg1;
 - (void)setPassthroughViews:(id)arg1;
@@ -276,18 +279,16 @@
 - (void)setPopoverFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)setPopoverLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPreferredLayoutInfo:(id)arg1;
+- (void)setRetainedSelf:(id)arg1;
 - (void)setShowsOrientationMarker:(BOOL)arg1;
 - (void)setShowsPresentationArea:(BOOL)arg1;
 - (void)setShowsTargetRect:(BOOL)arg1;
-- (void)setSourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setSourceView:(id)arg1;
+- (void)set_ignoreBarButtonItemSiblings:(BOOL)arg1;
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;
 - (BOOL)showsOrientationMarker;
 - (BOOL)showsPresentationArea;
 - (BOOL)showsTargetRect;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceRect;
-- (id)sourceView;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

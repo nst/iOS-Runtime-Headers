@@ -21,11 +21,15 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *group;
 @property (nonatomic, readonly) CKPackage *package;
 @property (nonatomic, retain) CKDProgressTracker *progressTracker;
+@property (nonatomic, readonly) NSString *recordKey;
+@property (nonatomic, readonly) int storageGroupingPolicy;
+@property (nonatomic, readonly) int uploadRank;
 
 - (void).cxx_destruct;
 - (id)MMCSManifestItem;
 - (id)MMCSRequestOptions;
 - (id)MMCSSectionItems;
+- (unsigned long long)activityStart;
 - (void)cancel;
 - (id)cancelTokens;
 - (id)error;
@@ -33,6 +37,7 @@
 - (id)initWithPackage:(id)arg1 trackProgress:(BOOL)arg2;
 - (id)package;
 - (id)progressTracker;
+- (id)recordKey;
 - (void)setCancelTokens:(id)arg1;
 - (void)setError:(id)arg1;
 - (void)setGroup:(id)arg1;
@@ -40,5 +45,7 @@
 - (void)setMMCSRequestOptions:(id)arg1;
 - (void)setMMCSSectionItems:(id)arg1;
 - (void)setProgressTracker:(id)arg1;
+- (int)storageGroupingPolicy;
+- (int)uploadRank;
 
 @end

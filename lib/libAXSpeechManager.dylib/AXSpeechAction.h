@@ -3,6 +3,7 @@
  */
 
 @interface AXSpeechAction : NSObject {
+    unsigned int _audioQueueFlags;
     BOOL _cannotInterrupt;
     id /* block */ _completionCallback;
     NSMutableArray *_emojiRangeReplacements;
@@ -22,11 +23,13 @@
     TTSSpeechRequest *_speechRequest;
     NSString *_string;
     BOOL _useCompactVoice;
+    float _useMonarchStyleSpeechRate;
     NSString *_voiceIdentifier;
     float _volume;
     int _wordCallbackPostProcessedOffset;
 }
 
+@property (nonatomic) unsigned int audioQueueFlags;
 @property (nonatomic) BOOL cannotInterrupt;
 @property (nonatomic, copy) id /* block */ completionCallback;
 @property (nonatomic, retain) NSMutableArray *emojiRangeReplacements;
@@ -46,6 +49,7 @@
 @property (nonatomic, retain) TTSSpeechRequest *speechRequest;
 @property (nonatomic, copy) NSString *string;
 @property (nonatomic) BOOL useCompactVoice;
+@property (nonatomic) float useMonarchStyleSpeechRate;
 @property (nonatomic, retain) NSString *voiceIdentifier;
 @property (nonatomic) float volume;
 @property (nonatomic) int wordCallbackPostProcessedOffset;
@@ -53,6 +57,7 @@
 + (id)actionWithString:(id)arg1 shouldQueue:(BOOL)arg2;
 
 - (id)_detectLanguageFromContent;
+- (unsigned int)audioQueueFlags;
 - (BOOL)cannotInterrupt;
 - (id /* block */)completionCallback;
 - (void)dealloc;
@@ -67,6 +72,7 @@
 - (float)pitch;
 - (void)preprocessAction;
 - (id)processedString;
+- (void)setAudioQueueFlags:(unsigned int)arg1;
 - (void)setCannotInterrupt:(BOOL)arg1;
 - (void)setCompletionCallback:(id /* block */)arg1;
 - (void)setEmojiRangeReplacements:(id)arg1;
@@ -86,6 +92,7 @@
 - (void)setSpeechRequest:(id)arg1;
 - (void)setString:(id)arg1;
 - (void)setUseCompactVoice:(BOOL)arg1;
+- (void)setUseMonarchStyleSpeechRate:(float)arg1;
 - (void)setVoiceIdentifier:(id)arg1;
 - (void)setVolume:(float)arg1;
 - (void)setWordCallbackPostProcessedOffset:(int)arg1;
@@ -98,6 +105,7 @@
 - (id)speechRequest;
 - (id)string;
 - (BOOL)useCompactVoice;
+- (float)useMonarchStyleSpeechRate;
 - (id)voiceIdentifier;
 - (float)volume;
 - (int)wordCallbackPostProcessedOffset;

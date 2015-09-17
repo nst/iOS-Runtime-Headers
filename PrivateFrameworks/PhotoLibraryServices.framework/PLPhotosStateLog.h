@@ -7,7 +7,7 @@
     PLPhotoLibrary *_photoLibrary;
 }
 
-@property (nonatomic, readonly) NSObject<OS_dispatch_group> *group;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_group> *group;
 @property (nonatomic, readonly, retain) PLPhotoLibrary *photoLibrary;
 
 - (void)_logAssets:(id)arg1 forAlbum:(id)arg2 indent:(unsigned int)arg3;

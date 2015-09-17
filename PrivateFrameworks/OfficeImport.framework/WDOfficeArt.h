@@ -14,6 +14,7 @@
 - (void)clearDrawable;
 - (void)clearProperties;
 - (void)dealloc;
+- (id)description;
 - (id)drawable;
 - (id)imageBlipRef;
 - (id)imageData;

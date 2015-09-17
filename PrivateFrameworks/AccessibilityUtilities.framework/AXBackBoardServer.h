@@ -5,6 +5,7 @@
 @interface AXBackBoardServer : AXServer {
     NSMutableArray *_eventListeners;
     BOOL _overrideGestureRecognition;
+    NSMutableArray *_zoomAttributeListeners;
 }
 
 @property (nonatomic) BOOL inPreboardMode;
@@ -14,39 +15,50 @@
 
 - (void)_didConnectToServer;
 - (id)_handleEventListener:(id)arg1;
+- (id)_handleZoomAttributesListener:(id)arg1;
 - (id)_serviceName;
 - (BOOL)_shouldDispatchLocally;
 - (id)_springboardParametersForGuidedAccessAvailability;
 - (void)_willClearServer;
+- (int)accessibilityUIServicePID;
 - (void)adjustSystemZoom:(int)arg1;
 - (id)backboardServiceInstance;
-- (unsigned int)contextIdForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forContextId:(unsigned int)arg2;
+- (unsigned int)contextIdForPosition:(struct CGPoint { float x1; float x2; })arg1;
+- (unsigned int)contextIdHostingContextId:(unsigned int)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromContextId:(unsigned int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromContextId:(unsigned int)arg2 toContextId:(unsigned int)arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toContextId:(unsigned int)arg2;
 - (void)dealloc;
 - (unsigned int)guidedAccessAvailability;
+- (id)guidedAccessIgnoredRegions;
 - (BOOL)inPreboardMode;
 - (id)init;
 - (BOOL)invertColorsEnabled;
 - (BOOL)isGuidedAccessActive;
+- (BOOL)isGuidedAccessInWorkspace;
 - (BOOL)isGuidedAccessSelfLockedToApp:(id)arg1;
 - (void)jetsamThirdPartyApps;
+- (id)performGuidedAccessAutomationCommand:(id)arg1 error:(id*)arg2;
 - (void)postEvent:(id)arg1 afterNamedTap:(id)arg2 includeTaps:(id)arg3;
 - (void)postEvent:(id)arg1 systemEvent:(BOOL)arg2;
 - (void)registerAccessibilityUIServicePID:(int)arg1;
 - (void)registerAssistiveTouchPID:(int)arg1;
-- (void)registerEventListener:(id /* block */)arg1 withIdentifierCallback:(id /* block */)arg2;
 - (void)registerGestureConflictWithZoom:(id)arg1;
 - (void)registerSiriViewServicePID:(int)arg1;
-- (void)removeEventListener:(id)arg1;
+- (void)registerZoomAttributesChangeHandler:(id /* block */)arg1;
 - (BOOL)requestGuidedAccessSession:(BOOL)arg1 appID:(id)arg2;
 - (void)setAccessibilityPreferenceAsMobile:(id)arg1 value:(id)arg2 notification:(id)arg3;
 - (void)setHearingAidControlIsVisible:(BOOL)arg1;
 - (void)setInPreboardMode:(BOOL)arg1;
 - (void)setInvertColorsEnabled:(BOOL)arg1;
 - (void)setLockScreenDimTimerEnabled:(BOOL)arg1;
+- (void)setSwitchControlRendersDeviceUnusable:(BOOL)arg1;
 - (void)setVoiceOverItemChooserVisible:(BOOL)arg1;
+- (void)setZoomInitialFocusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromContext:(unsigned int)arg2;
 - (void)toggleGuidedAccess;
 - (void)userEventOccurred;
 - (void)wakeUpDeviceIfNecessary;
+- (void)zoomAttributesChanged:(id)arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zoomInitialFocusRectWithQueryingContext:(unsigned int)arg1;
 
 @end

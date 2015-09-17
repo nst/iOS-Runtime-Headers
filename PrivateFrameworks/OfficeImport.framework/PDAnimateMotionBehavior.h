@@ -6,34 +6,36 @@
     double mAngle;
     BOOL mHasAngle;
     BOOL mHasOriginType;
-    BOOL mHasPointType;
+    BOOL mHasPathEditMode;
     BOOL mHasRotationCenter;
     int mOriginType;
     NSString *mPath;
-    int mPointType;
+    int mPathEditMode;
+    NSString *mPointsTypes;
     struct CGPoint { 
         float x; 
         float y; 
     } mRotationCenter;
 }
 
-- (id).cxx_construct;
 - (double)angle;
 - (void)dealloc;
 - (BOOL)hasAngle;
 - (BOOL)hasOriginType;
 - (BOOL)hasPath;
-- (BOOL)hasPointType;
+- (BOOL)hasPathEditMode;
 - (BOOL)hasRotationCenter;
 - (BOOL)isEqual:(id)arg1;
 - (int)originType;
 - (id)path;
-- (int)pointType;
+- (int)pathEditMode;
+- (id)pointsTypes;
 - (struct CGPoint { float x1; float x2; })rotationCenter;
 - (void)setAngle:(double)arg1;
 - (void)setOriginType:(int)arg1;
 - (void)setPath:(id)arg1;
-- (void)setPointType:(int)arg1;
+- (void)setPathEditMode:(int)arg1;
+- (void)setPointsTypes:(id)arg1;
 - (void)setRotationCenter:(struct CGPoint { float x1; float x2; })arg1;
 
 @end

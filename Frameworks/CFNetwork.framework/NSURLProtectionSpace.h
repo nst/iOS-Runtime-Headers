@@ -14,6 +14,7 @@
 @property (readonly, copy) NSString *proxyType;
 @property (readonly, copy) NSString *realm;
 @property (readonly) BOOL receivesCredentialSecurely;
+@property (nonatomic, readonly) struct __CFString { }*safari_protocolAsSecAttrProtocolValue;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
 
@@ -44,13 +45,17 @@
 - (BOOL)receivesCredentialSecurely;
 - (struct __SecTrust { }*)serverTrust;
 
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 
 + (id)safari_HTMLFormProtectionSpaceForURL:(id)arg1;
 
 - (id)safari_URL;
 - (id)safari_addressString;
 - (BOOL)safari_allowsCredentialSaving;
+- (int)safari_compareToHighLevelDomainFromProtectionSpace:(id)arg1;
+- (int)safari_compareToHighLevelDomainFromProtectionSpaceOrderingDecimalCharactersLast:(id)arg1;
+- (id)safari_creationDateOfCredentialWithUser:(id)arg1;
 - (id)safari_protectionSpaceByReplacingHostWithHighlevelDomain;
+- (struct __CFString { }*)safari_protocolAsSecAttrProtocolValue;
 
 @end

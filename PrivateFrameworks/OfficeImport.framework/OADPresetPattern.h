@@ -12,8 +12,10 @@
 + (id)namedBitmapDataForPresetPatternType:(int)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithDefaults;
+- (BOOL)isAnythingOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isTypeOverridden;
 - (void)setType:(int)arg1;

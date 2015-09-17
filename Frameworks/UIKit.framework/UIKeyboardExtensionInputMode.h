@@ -20,7 +20,7 @@
 - (id)initWithIdentifier:(id)arg1;
 - (BOOL)isAllowedForTraits:(id)arg1;
 - (BOOL)isDefaultRightToLeft;
-- (BOOL)isDesiredForTraits:(id)arg1 forceASCIICapable:(BOOL)arg2;
+- (BOOL)isDesiredForTraits:(id)arg1;
 - (BOOL)isExtensionInputMode;
 - (id)normalizedIdentifierLevels;
 - (void)setExtension:(id)arg1;

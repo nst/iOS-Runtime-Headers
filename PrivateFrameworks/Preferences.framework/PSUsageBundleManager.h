@@ -8,9 +8,9 @@
     NSArray *_usageBundleApps;
 }
 
+- (void).cxx_destruct;
 - (void)_loadUsageBundlesWithHandler:(id /* block */)arg1;
 - (id)allUsageBundleApps;
-- (void)dealloc;
 - (void)vendUsageBundleAppsWithHandler:(id /* block */)arg1;
 
 @end

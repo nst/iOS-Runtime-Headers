@@ -6,6 +6,6 @@
 @required
 
 - (void)xpcAssertInClient:(NSString *)arg1;
-- (void)xpcSetValue:(id)arg1 forProperty:(NSString *)arg2 deviceID:(NSUUID *)arg3;
+- (void)xpcSetValue:(id)arg1 forProperty:(NSString *)arg2 deviceID:(NSUUID *)arg3 withSequenceNumber:(unsigned long long)arg4;
 
 @end

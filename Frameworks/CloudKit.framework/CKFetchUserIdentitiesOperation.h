@@ -22,6 +22,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)discoveredUserIdentities;
 - (id /* block */)fetchIdentitiesCompletionBlock;
 - (void)fillOutOperationInfo:(id)arg1;

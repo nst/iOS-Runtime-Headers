@@ -33,7 +33,7 @@
 - (void).cxx_destruct;
 - (void)_closeAllConnectionsAndWaitForBusyConnections:(BOOL)arg1;
 - (id)_connectionForIdentifier:(id)arg1;
-- (id)_connectionForWriting:(BOOL)arg1 useThreadConnection:(BOOL)arg2;
+- (id)_connectionForWriting:(BOOL)arg1 useThreadConnection:(BOOL)arg2 storeThreadLocalConnection:(BOOL)arg3;
 - (id)_localConnectionForThread:(id)arg1;
 - (void)_setConnection:(id)arg1 forIdentifier:(id)arg2;
 - (void)_setLocalConnection:(id)arg1 forThread:(id)arg2;

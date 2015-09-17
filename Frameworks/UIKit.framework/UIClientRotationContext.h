@@ -3,7 +3,6 @@
  */
 
 @interface UIClientRotationContext : NSObject {
-    NSArray *_backdropViews;
     UISnapshotView *_contentSnapshotViewStart;
     float _contentTopAdjustmentStart;
     UIView *_contentView;
@@ -54,7 +53,6 @@
 - (void)_slideHeaderView:(id)arg1 andFooterView:(id)arg2 offScreen:(BOOL)arg3 forInterfaceOrientation:(int)arg4;
 - (id)contentView;
 - (void)dealloc;
-- (void)disableBackdropViewUpdates:(BOOL)arg1;
 - (double)duration;
 - (void)finishFirstHalfRotation;
 - (void)finishFullRotateUsingOnePartAnimation:(BOOL)arg1;

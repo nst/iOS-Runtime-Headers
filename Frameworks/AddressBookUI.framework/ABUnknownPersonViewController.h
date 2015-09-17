@@ -5,8 +5,6 @@
 @interface ABUnknownPersonViewController : UIViewController <UIActionSheetDelegate> {
     ABPersonTableViewActionsDelegate *_actionsDelegate;
     BOOL _allowsContactBlocking;
-    BOOL _allowsOnlyFaceTimeActions;
-    BOOL _allowsOnlyPhoneActions;
     ABContactViewController *_contactViewController;
     ABPersonTableViewDataSource *_dataSource;
     id _helper;
@@ -16,13 +14,11 @@
 }
 
 @property (nonatomic, readonly) ABPersonTableViewActionsDelegate *actionsDelegate;
-@property (nonatomic) void*addressBook;
+@property (nonatomic) const void*addressBook;
 @property (nonatomic) BOOL allowsActions;
 @property (nonatomic) BOOL allowsAddingToAddressBook;
 @property (nonatomic) BOOL allowsConferencing;
 @property (nonatomic) BOOL allowsContactBlocking;
-@property (nonatomic) BOOL allowsOnlyFaceTimeActions;
-@property (nonatomic) BOOL allowsOnlyPhoneActions;
 @property (nonatomic) BOOL allowsSharing;
 @property (nonatomic, copy) NSString *alternateName;
 @property (nonatomic, copy) NSString *attribution;
@@ -35,7 +31,7 @@
 @property (nonatomic, readonly) ABPersonTableViewDataSource *dataSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) void*displayedPerson;
+@property (nonatomic) const void*displayedPerson;
 @property (nonatomic, copy) NSArray *displayedProperties;
 @property (nonatomic, retain) ABUIPerson *displayedUIPerson;
 @property (readonly) unsigned int hash;
@@ -89,13 +85,11 @@
 - (void)addActionWithTitle:(id)arg1 content:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(int)arg5 withActionGrouping:(int)arg6 ordering:(int)arg7;
 - (void)addActionWithTitle:(id)arg1 shortTitle:(id)arg2 target:(id)arg3 selector:(SEL)arg4 forProperty:(int)arg5 withActionGrouping:(int)arg6 ordering:(int)arg7;
 - (void)addActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 forProperty:(int)arg4 withActionGrouping:(int)arg5 ordering:(int)arg6;
-- (void*)addressBook;
+- (const void*)addressBook;
 - (BOOL)allowsActions;
 - (BOOL)allowsAddingToAddressBook;
 - (BOOL)allowsConferencing;
 - (BOOL)allowsContactBlocking;
-- (BOOL)allowsOnlyFaceTimeActions;
-- (BOOL)allowsOnlyPhoneActions;
 - (BOOL)allowsSendingTextMessage;
 - (BOOL)allowsSharing;
 - (id)alternateName;
@@ -111,13 +105,14 @@
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)dismissAnimated:(BOOL)arg1;
-- (void*)displayedPerson;
+- (const void*)displayedPerson;
 - (id)displayedProperties;
 - (id)displayedUIPerson;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (BOOL)hasActionWithTitle:(id)arg1 target:(id)arg2 selector:(SEL)arg3 property:(int)arg4 actionGrouping:(int)arg5 ordering:(int)arg6;
 - (id)helper;
 - (id)init;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2 style:(int)arg3;
 - (id)initWithStyle:(int)arg1;
 - (id)initWithVCardData:(id)arg1;
@@ -145,8 +140,6 @@
 - (void)setAllowsAddingToAddressBook:(BOOL)arg1;
 - (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsContactBlocking:(BOOL)arg1;
-- (void)setAllowsOnlyFaceTimeActions:(BOOL)arg1;
-- (void)setAllowsOnlyPhoneActions:(BOOL)arg1;
 - (void)setAllowsSendingTextMessage:(BOOL)arg1;
 - (void)setAllowsSharing:(BOOL)arg1;
 - (void)setAlternateName:(id)arg1;

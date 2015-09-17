@@ -6,8 +6,8 @@
 @required
 
 - (NSString *)extension;
-- (NSString *)filename;
 - (BRCItemID *)itemID;
+- (NSString *)logicalName;
 - (NSString *)path;
 
 @end

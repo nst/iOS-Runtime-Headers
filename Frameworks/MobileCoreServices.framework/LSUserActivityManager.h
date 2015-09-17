@@ -31,6 +31,7 @@
 - (id)_findUserActivityForUUID:(id)arg1;
 - (id)activeUserActivityUUID;
 - (BOOL)activityContinuationIsEnabled;
+- (void)addDynamicUserActivity:(id)arg1 matching:(id)arg2;
 - (void)addUserActivity:(id)arg1;
 - (void)askClientUserActivityToSave:(id)arg1;
 - (void)askClientUserActivityToSave:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -45,6 +46,8 @@
 - (void)makeActive:(id)arg1;
 - (void)makeInactive:(id)arg1;
 - (void)markUserActivityAsDirty:(id)arg1 forceImmediate:(BOOL)arg2;
+- (void)pinUserActivity:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)removeDynamicUserActivity:(id)arg1 matching:(id)arg2;
 - (void)removeUserActivity:(id)arg1;
 - (void)sendInitialMessage;
 - (void)sendUserActivityInfoToLSUserActivityd:(id)arg1 makeCurrent:(BOOL)arg2;

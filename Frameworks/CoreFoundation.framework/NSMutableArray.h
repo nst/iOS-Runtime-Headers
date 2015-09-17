@@ -124,6 +124,10 @@
 - (id)ax_lastEnqueuedObject;
 - (id)ax_nextDequeuedObject;
 
+// Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
+
+- (void)bs_safeAddObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
 
 + (id)nonRetainingArray;
@@ -141,6 +145,14 @@
 - (BOOL)bw_empty;
 - (id)bw_pop;
 - (void)bw_push:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
+
+- (void)_cn_addNonNilObject:(id)arg1;
+- (void)_cn_addObject:(id)arg1 orPlaceholder:(id)arg2;
+- (void)_cn_insertNonNilObject:(id)arg1 atIndex:(unsigned int)arg2;
+- (id)_cn_popObject;
+- (void)_cn_removeObjectsPassingTest:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CoreDuet.framework/CoreDuet
 
@@ -165,6 +177,11 @@
 - (void)cr_addObject:(id)arg1 orPlaceholder:(id)arg2;
 - (void)cr_insertObject:(id)arg1 usingComparator:(id /* block */)arg2;
 - (void)cr_removeObjectsStartingAtIndex:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CrashReporterSupport.framework/CrashReporterSupport
+
+- (id)section_pop;
+- (void)section_push:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
@@ -198,17 +215,25 @@
 
 - (void)shuffle;
 
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
+- (void)naui_safeAddObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
+- (void)ic_addNonNilObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-- (void)addNonNilObject:(id)arg1;
-- (void)addObjects:(id)arg1;
-- (void)addObjectsFromNonNilArray:(id)arg1;
-- (id)dequeue;
-- (void)enqueue:(id)arg1;
-- (id)pop_tsu;
-- (void)push_tsu:(id)arg1;
-- (void)removeObjectsIdenticalToObjectsInArray:(id)arg1;
-- (void)trimObjectsFromIndex:(unsigned int)arg1;
+- (void)tsu_addNonNilObject:(id)arg1;
+- (void)tsu_addObjects:(id)arg1;
+- (void)tsu_addObjectsFromNonNilArray:(id)arg1;
+- (id)tsu_dequeue;
+- (void)tsu_enqueue:(id)arg1;
+- (id)tsu_pop;
+- (void)tsu_push:(id)arg1;
+- (void)tsu_removeObjectsIdenticalToObjectsInArray:(id)arg1;
+- (void)tsu_trimObjectsFromIndex:(unsigned int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 

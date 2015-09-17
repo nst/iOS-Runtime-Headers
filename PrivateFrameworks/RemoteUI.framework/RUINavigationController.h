@@ -3,11 +3,19 @@
  */
 
 @interface RUINavigationController : UINavigationController {
-    int _ruiSupportedInterfaceOrientations;
+    id /* block */ _menuDismissalHandler;
+    unsigned int _ruiSupportedInterfaceOrientations;
 }
 
+@property (nonatomic, copy) id /* block */ menuDismissalHandler;
+
+- (void).cxx_destruct;
+- (void)_menuButtonPressed:(id)arg1;
 - (BOOL)canBeShownFromSuspendedState;
+- (id /* block */)menuDismissalHandler;
+- (void)setMenuDismissalHandler:(id /* block */)arg1;
 - (void)setSupportedInterfaceOrientations:(unsigned int)arg1;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)viewDidLoad;
 
 @end

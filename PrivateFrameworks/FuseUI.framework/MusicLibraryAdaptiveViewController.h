@@ -30,10 +30,14 @@
 - (id)childViewControllerForStatusBarStyle;
 - (id)clientContext;
 - (void)dealloc;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (BOOL)getContentOffset:(struct CGPoint { float x1; float x2; }*)arg1 forIndexBarEntryAtIndex:(unsigned int)arg2;
 - (id)indexBarEntryAtIndex:(unsigned int)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)libraryViewConfiguration;
+- (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (unsigned int)numberOfIndexBarEntries;
 - (void)setClientContext:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;

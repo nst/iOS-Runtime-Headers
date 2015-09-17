@@ -21,10 +21,10 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSURL *urlToAdd;
 
+- (void).cxx_destruct;
 - (void)_finishWithError:(id)arg1 state:(int)arg2;
 - (void)_startFetchFreeBusySet;
 - (void)_startPropPatchWithURLs:(id)arg1;
-- (void)dealloc;
 - (id)fetchTask;
 - (id)inboxURL;
 - (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 urlToAdd:(id)arg3 suffixToFilterOut:(id)arg4 taskManager:(id)arg5;

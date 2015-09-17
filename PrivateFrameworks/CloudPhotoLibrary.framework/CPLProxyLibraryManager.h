@@ -61,7 +61,7 @@
 - (void)getStatusArrayForComponents:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getStatusForComponents:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)initWithAbstractObject:(id)arg1;
-- (void)libraryManagerDidUpdateSizeOfResourcesToUploadToSize:(unsigned long long)arg1 numberOfImages:(unsigned int)arg2 numberOfVideos:(unsigned int)arg3 numberOfOtherItems:(unsigned int)arg4;
+- (void)libraryManagerDidUpdateSizeOfResourcesToUploadToSize:(unsigned long long)arg1 sizeOfOriginalResourcesToUpload:(unsigned long long)arg2 numberOfImages:(unsigned int)arg3 numberOfVideos:(unsigned int)arg4 numberOfOtherItems:(unsigned int)arg5;
 - (void)libraryManagerDidUpdateStatusWithProperties:(id)arg1;
 - (void)libraryManagerHasChangesToPull;
 - (void)noteClientIsInBackground;

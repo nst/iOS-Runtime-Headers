@@ -7,20 +7,21 @@
     id _mode;
 }
 
-@property BOOL _mainScreen;
+@property (getter=_isMainScreen, setter=_setMainScreen:) BOOL _mainScreen;
 @property (nonatomic, readonly) float pixelAspectRatio;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
 + (id)_screenModeForDisplayMode:(id)arg1 mainScreen:(BOOL)arg2;
 
+- (void).cxx_destruct;
 - (id)_displayMode;
+- (BOOL)_isMainScreen;
 - (BOOL)_isNTSCOrPAL;
-- (BOOL)_mainScreen;
+- (void)_setMainScreen:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })_sizeWithLevel:(unsigned int)arg1;
 - (id)description;
 - (id)initWithDisplayMode:(id)arg1 mainScreen:(BOOL)arg2;
 - (float)pixelAspectRatio;
-- (void)set_mainScreen:(BOOL)arg1;
 - (struct CGSize { float x1; float x2; })size;
 
 @end

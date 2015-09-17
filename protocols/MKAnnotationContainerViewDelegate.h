@@ -5,9 +5,8 @@
 
 @required
 
-- (float)_zoomScale;
 - (void)annotationContainer:(MKAnnotationContainerView *)arg1 annotationView:(MKAnnotationView *)arg2 calloutAccessoryControlTapped:(UIControl *)arg3;
-- (float)annotationContainer:(MKAnnotationContainerView *)arg1 pinDropDistanceForCoordinate:(struct { double x1; double x2; })arg2 maxDistance:(float*)arg3 startPoint:(struct CGPoint { float x1; float x2; }*)arg4 shadowStartPoint:(struct CGPoint { float x1; float x2; }*)arg5;
+- (float)annotationContainer:(MKAnnotationContainerView *)arg1 pinDropDistanceForCoordinate:(struct { double x1; double x2; })arg2 maxDistance:(float*)arg3;
 - (void)annotationContainer:(void *)arg1 scrollToRevealCalloutWithOffset:(void *)arg2 annotationCoordinate:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 8: MKAnnotationContainerView *, struct CGPoint { float x1; float x2; }, struct { double x1; double x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)annotationContainerDidAnimateBubble:(MKAnnotationContainerView *)arg1;
 - (void)annotationContainerDidDropPins:(MKAnnotationContainerView *)arg1;
@@ -16,6 +15,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })annotationContainerVisibleRect:(MKAnnotationContainerView *)arg1;
 - (void)annotationContainerWillAnimateBubble:(MKAnnotationContainerView *)arg1;
 - (void)annotationContainerWillDropPins:(MKAnnotationContainerView *)arg1;
+- (float)annotationContainerZoomScale:(MKAnnotationContainerView *)arg1;
 - (void)calloutDidAppearForAnnotationView:(MKAnnotationView *)arg1 inContainer:(MKAnnotationContainerView *)arg2;
 - (struct CGPoint { float x1; float x2; })convertCoordinate:(struct { double x1; double x2; })arg1 toPointToView:(UIView *)arg2;
 - (struct { double x1; double x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toCoordinateFromView:(UIView *)arg2;

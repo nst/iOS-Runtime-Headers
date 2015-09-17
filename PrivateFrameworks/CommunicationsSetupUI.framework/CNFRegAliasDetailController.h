@@ -3,31 +3,26 @@
  */
 
 @interface CNFRegAliasDetailController : CNFRegListController {
-    id /* block */ _alertHandler;
     CNFRegAlias *_alias;
     PSSpecifier *_removeButtonSpecifier;
     PSSpecifier *_removeGroupSpecifier;
     NSArray *_resendValidationSpecifierGroup;
 }
 
-@property (nonatomic, copy) id /* block */ alertHandler;
 @property (nonatomic, retain) CNFRegAlias *alias;
 
+- (void).cxx_destruct;
 - (void)_buildSpecifierCache:(id)arg1;
 - (void)_setupEventHandlers;
 - (BOOL)_shouldShowResendButton;
 - (void)_showAliasValidationError:(id)arg1;
 - (void)_showResendGroup:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_updateUIAnimated:(BOOL)arg1;
-- (id /* block */)alertHandler;
-- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
 - (id)alias;
 - (id)bundle;
-- (void)dealloc;
 - (void)forgetAliasTapped:(id)arg1;
 - (id)initWithRegController:(id)arg1 alias:(id)arg2;
 - (void)resendValidationEmailTapped:(id)arg1;
-- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAlias:(id)arg1;
 - (void)setRemoveAliasEnabled:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)showRemoveAliasConfirmation;

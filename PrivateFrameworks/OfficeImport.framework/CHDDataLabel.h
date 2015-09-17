@@ -3,7 +3,10 @@
  */
 
 @interface CHDDataLabel : NSObject {
+    bool mContentFormatDerived;
     unsigned int mContentFormatId;
+    bool mDeleted;
+    bool mExtensionDetected;
     OADGraphicProperties *mGraphicProperties;
     bool mIsPositionAffineTransform;
     int mPosition;
@@ -24,8 +27,13 @@
 - (id)contentFormat;
 - (unsigned int)contentFormatId;
 - (void)dealloc;
+- (id)description;
 - (id)graphicProperties;
 - (id)initWithResources:(id)arg1;
+- (bool)isContentFormatDerivedFromDataPoints;
+- (bool)isCustomLabelBlockingVisibility;
+- (bool)isDeleted;
+- (bool)isExtensionDetected;
 - (bool)isPositionAffineTransform;
 - (bool)isShowBubbleSize;
 - (bool)isShowCategoryName;
@@ -38,7 +46,10 @@
 - (double)rotationAngle;
 - (void)setContentFormat:(id)arg1;
 - (void)setContentFormatId:(unsigned int)arg1;
+- (void)setDeleted:(bool)arg1;
+- (void)setExtensionDetected:(bool)arg1;
 - (void)setGraphicProperties:(id)arg1;
+- (void)setIsContentFormatDerivedFromDataPoints:(bool)arg1;
 - (void)setIsPositionAffineTransform:(bool)arg1;
 - (void)setPosition:(int)arg1;
 - (void)setRotationAngle:(double)arg1;

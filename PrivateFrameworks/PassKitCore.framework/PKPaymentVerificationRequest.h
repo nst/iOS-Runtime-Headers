@@ -2,8 +2,19 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentVerificationRequest : PKPaymentWebServiceRequest
+@interface PKPaymentVerificationRequest : PKPaymentWebServiceRequest {
+    PKVerificationChannel *_channel;
+    PKPaymentPass *_pass;
+}
 
-+ (id)requestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 pass:(id)arg3 channel:(id)arg4 account:(id)arg5;
+@property (nonatomic, retain) PKVerificationChannel *channel;
+@property (nonatomic, retain) PKPaymentPass *pass;
+
+- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3;
+- (id)channel;
+- (void)dealloc;
+- (id)pass;
+- (void)setChannel:(id)arg1;
+- (void)setPass:(id)arg1;
 
 @end

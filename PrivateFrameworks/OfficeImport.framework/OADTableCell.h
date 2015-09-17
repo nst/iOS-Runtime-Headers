@@ -14,6 +14,7 @@
 }
 
 - (void)dealloc;
+- (id)description;
 - (int)gridSpan;
 - (BOOL)horzMerge;
 - (id)init;

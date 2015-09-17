@@ -10,9 +10,9 @@
     UIWindow *_window;
 }
 
+- (void).cxx_destruct;
 - (void)cancelProgress;
 - (void)cleanupAfterDismiss;
-- (void)dealloc;
 - (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)doneProgress;

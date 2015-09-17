@@ -11,6 +11,7 @@
     int _powerStates;
     int _registrationStates;
     int _timeLimitStates;
+    NSSet *_userDefaultStates;
 }
 
 @property (nonatomic, copy) NSSet *applicationStates;
@@ -26,10 +27,12 @@
 @property (nonatomic) int registrationStates;
 @property (readonly) Class superclass;
 @property (nonatomic) int timeLimitStates;
+@property (nonatomic, copy) NSSet *userDefaultStates;
 @property (getter=isWiFiAllowed, nonatomic, readonly) BOOL wiFiAllowed;
 
 - (void)addApplicationState:(id)arg1;
 - (void)addNetworkType:(int)arg1;
+- (void)addUserDefaultState:(id)arg1;
 - (id)applicationStates;
 - (float)batteryLevel;
 - (int)cellularDataStates;
@@ -56,7 +59,9 @@
 - (void)setPowerStates:(int)arg1;
 - (void)setRegistrationStates:(int)arg1;
 - (void)setTimeLimitStates:(int)arg1;
+- (void)setUserDefaultStates:(id)arg1;
 - (int)timeLimitStates;
 - (void)unionPolicyRule:(id)arg1;
+- (id)userDefaultStates;
 
 @end

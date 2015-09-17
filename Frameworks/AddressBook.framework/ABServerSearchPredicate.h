@@ -27,7 +27,7 @@
 
 - (int)_errorForDAStatusCode:(int)arg1;
 - (void)_searchQueryIsDone;
-- (void)ab_runPredicateWithSortOrder:(unsigned int)arg1 inAddressBook:(void*)arg2 withDelegate:(id)arg3;
+- (void)ab_runPredicateWithSortOrder:(unsigned int)arg1 ranked:(BOOL)arg2 inAddressBook:(void*)arg3 withDelegate:(id)arg4;
 - (id)accountIdentifier;
 - (id)connection;
 - (void)dealloc;

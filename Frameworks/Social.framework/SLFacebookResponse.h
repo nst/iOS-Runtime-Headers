@@ -18,6 +18,7 @@
 - (int)APIresponseErrorCode;
 - (id)checkpointURL;
 - (void)encodeWithCoder:(id)arg1;
+- (id)failedRequestIDs;
 - (BOOL)hasBadTokenError;
 - (BOOL)hasError;
 - (BOOL)hasHTTPStatusOK;

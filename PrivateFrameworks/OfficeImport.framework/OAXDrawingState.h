@@ -3,6 +3,7 @@
  */
 
 @interface OAXDrawingState : OCXReadState {
+    id /* block */ _clientChartGraphicPropertyDefaultsBlock;
     OAXClient *mClient;
     OADColorMap *mColorMap;
     OADColorScheme *mColorScheme;
@@ -10,6 +11,7 @@
     NSMutableDictionary *mDrawableIdToVmlShapeIdMap;
     OADFontScheme *mFontScheme;
     NSMutableArray *mGroupStack;
+    CXNamespace *mOAXChart2012Namespace;
     CXNamespace *mOAXChartDrawingNamespace;
     CXNamespace *mOAXChartNamespace;
     CXNamespace *mOAXCompatNamespace;
@@ -17,6 +19,7 @@
     CXNamespace *mOAXLockedCanvasNamespace;
     CXNamespace *mOAXMainNamespace;
     CXNamespace *mOAXPictureNamespace;
+    CXNamespace *mOAXTableNamespace;
     CXNamespace *mOAXWordProcessingMLNamespace;
     OAVReadState *mOavState;
     OCPPackagePart *mPackagePart;
@@ -29,6 +32,7 @@
     NSMutableArray *mTgtBulletBlips;
 }
 
+@property (nonatomic, retain) CXNamespace *OAXChart2012Namespace;
 @property (nonatomic, retain) CXNamespace *OAXChartDrawingNamespace;
 @property (nonatomic, retain) CXNamespace *OAXChartNamespace;
 @property (nonatomic, retain) CXNamespace *OAXCompatNamespace;
@@ -36,10 +40,13 @@
 @property (nonatomic, retain) CXNamespace *OAXLockedCanvasNamespace;
 @property (nonatomic, retain) CXNamespace *OAXMainNamespace;
 @property (nonatomic, retain) CXNamespace *OAXPictureNamespace;
+@property (nonatomic, retain) CXNamespace *OAXTableNamespace;
 @property (nonatomic, retain) CXNamespace *OAXWordProcessingMLNamespace;
+@property (nonatomic, copy) id /* block */ clientChartGraphicPropertyDefaultsBlock;
 @property (nonatomic, retain) NSMutableDictionary *sourceURLToTargetBlipIndexMap;
 @property (nonatomic, retain) NSMutableDictionary *sourceURLToTargetBulletBlipIndexMap;
 
+- (id)OAXChart2012Namespace;
 - (id)OAXChartDrawingNamespace;
 - (id)OAXChartNamespace;
 - (id)OAXCompatNamespace;
@@ -47,12 +54,14 @@
 - (id)OAXLockedCanvasNamespace;
 - (id)OAXMainNamespace;
 - (id)OAXPictureNamespace;
+- (id)OAXTableNamespace;
 - (id)OAXWordProcessingMLNamespace;
 - (id)blipRefForURL:(id)arg1;
 - (id)blipRefWithURL:(id)arg1 blipArray:(id)arg2 blipURLtoIndexMap:(id)arg3;
 - (id)bulletBlipRefForURL:(id)arg1;
 - (void)clearTargetBlipCollection;
 - (id)client;
+- (id /* block */)clientChartGraphicPropertyDefaultsBlock;
 - (id)colorMap;
 - (id)colorScheme;
 - (void)dealloc;
@@ -67,12 +76,15 @@
 - (id)peekGroup;
 - (id)popGroup;
 - (void)pushGroup:(id)arg1;
+- (void)replaceGroupStack:(id)arg1;
 - (void)resetForNewDrawing;
+- (void)setClientChartGraphicPropertyDefaultsBlock:(id /* block */)arg1;
 - (void)setColorMap:(id)arg1;
 - (void)setColorScheme:(id)arg1;
 - (void)setDocumentState:(id)arg1;
 - (void)setDrawable:(id)arg1 forShapeId:(unsigned long)arg2;
 - (void)setFontScheme:(id)arg1;
+- (void)setOAXChart2012Namespace:(id)arg1;
 - (void)setOAXChartDrawingNamespace:(id)arg1;
 - (void)setOAXChartNamespace:(id)arg1;
 - (void)setOAXCompatNamespace:(id)arg1;
@@ -80,6 +92,7 @@
 - (void)setOAXLockedCanvasNamespace:(id)arg1;
 - (void)setOAXMainNamespace:(id)arg1;
 - (void)setOAXPictureNamespace:(id)arg1;
+- (void)setOAXTableNamespace:(id)arg1;
 - (void)setOAXWordProcessingMLNamespace:(id)arg1;
 - (void)setOavState:(id)arg1;
 - (void)setPackagePart:(id)arg1;

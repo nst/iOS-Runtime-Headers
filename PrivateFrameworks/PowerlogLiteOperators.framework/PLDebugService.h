@@ -3,6 +3,7 @@
  */
 
 @interface PLDebugService : PLService {
+    PLAccountingDebugService *_accDS;
     PLXPCListenerOperatorComposition *_aggregateTestListener;
     PLXPCResponderOperatorComposition *_aggregateTestResponder;
     PLEntryNotificationOperatorComposition *_assertionListener;
@@ -14,9 +15,11 @@
     PLEntryNotificationOperatorComposition *_sleepNotification;
     PLEntryNotificationOperatorComposition *_wakeNotification;
     PLXPCListenerOperatorComposition *_xpcListenerPLLog;
+    PLXPCResponderOperatorComposition *_xpcResponderPLAPITest;
     PLXPCResponderOperatorComposition *_xpcResponderPLLog;
 }
 
+@property (retain) PLAccountingDebugService *accDS;
 @property (retain) PLXPCListenerOperatorComposition *aggregateTestListener;
 @property (retain) PLXPCResponderOperatorComposition *aggregateTestResponder;
 @property (retain) PLEntryNotificationOperatorComposition *assertionListener;
@@ -28,30 +31,41 @@
 @property (retain) PLEntryNotificationOperatorComposition *sleepNotification;
 @property (retain) PLEntryNotificationOperatorComposition *wakeNotification;
 @property (retain) PLXPCListenerOperatorComposition *xpcListenerPLLog;
+@property (retain) PLXPCResponderOperatorComposition *xpcResponderPLAPITest;
 @property (retain) PLXPCResponderOperatorComposition *xpcResponderPLLog;
 
 + (id)entryAggregateDefinitionAggregateTest;
++ (id)entryAggregateDefinitionAggregateTestSmall;
++ (id)entryAggregateDefinitionAggregateTestVerySmall;
 + (id)entryAggregateDefinitions;
 + (id)entryEventNoneDefinitionArrayTest;
 + (id)entryEventNoneDefinitionFastInsertTest;
++ (id)entryEventNoneDefinitionPLAPITest;
 + (id)entryEventNoneDefinitionSleepNotificationTest;
 + (id)entryEventNoneDefinitions;
++ (id)entryEventPointDefinitionTest;
++ (id)entryEventPointDefinitions;
 + (void)load;
 + (id)railDefinitions;
 
 - (void).cxx_destruct;
+- (id)accDS;
 - (id)aggregateTestListener;
 - (id)aggregateTestResponder;
 - (id)assertionListener;
 - (id)assertionNewListener;
 - (id)assertionUpdateListener;
-- (void)bombardRails;
 - (id)canSleepNotification;
 - (id)canSleepSemaphore;
+- (void)currentBasebandTime;
+- (id)filledTestArrayEntry;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)printNullTestResultsForEntry:(id)arg1 withDescription:(id)arg2;
+- (bool)rawRead:(id)arg1;
+- (bool)rawWrite:(id)arg1;
 - (id)schemaTestListener;
+- (void)setAccDS:(id)arg1;
 - (void)setAggregateTestListener:(id)arg1;
 - (void)setAggregateTestResponder:(id)arg1;
 - (void)setAssertionListener:(id)arg1;
@@ -63,8 +77,20 @@
 - (void)setSleepNotification:(id)arg1;
 - (void)setWakeNotification:(id)arg1;
 - (void)setXpcListenerPLLog:(id)arg1;
+- (void)setXpcResponderPLAPITest:(id)arg1;
 - (void)setXpcResponderPLLog:(id)arg1;
 - (id)sleepNotification;
+- (void)stressActivityScheduler;
+- (void)stressAggregateSmall;
+- (void)stressAggregateVerySmall;
+- (void)stressCache;
+- (void)stressCacheSmall;
+- (void)stressMidnightCalculation;
+- (void)stressMonotonicTimer;
+- (void)stressObjectForKey;
+- (void)stressPLEntry;
+- (void)stressSetObjectForKey;
+- (void)stressTimer;
 - (void)testAllEntryKeyRequests;
 - (void)testArchive;
 - (void)testArray;
@@ -75,11 +101,47 @@
 - (void)testEntryQueries;
 - (void)testEntrySleep;
 - (void)testEntryWake;
+- (void)testExit;
 - (void)testFastInserts;
 - (void)testGenerateOTASubmission;
+- (void)testMonotonicTimerThroughSleep;
+- (id)testPLAPIAccounting_AddPowerMeasurementEventInterval:(id)arg1;
+- (id)testPLAPIAccounting_CreateDistributionEventBackward:(id)arg1;
+- (id)testPLAPIAccounting_CreateDistributionEventForwardAdd:(id)arg1;
+- (id)testPLAPIAccounting_CreateDistributionEventForwardChild:(id)arg1;
+- (id)testPLAPIAccounting_CreateDistributionEventForwardRem:(id)arg1;
+- (id)testPLAPIAccounting_CreateDistributionEventInterval:(id)arg1;
+- (id)testPLAPIAccounting_CreateDistributionEventPoint:(id)arg1;
+- (id)testPLAPIAccounting_CreatePowerEventBackward:(id)arg1;
+- (id)testPLAPIAccounting_CreatePowerEventForward:(id)arg1;
+- (id)testPLAPIAccounting_CreatePowerEventInterval:(id)arg1;
+- (id)testPLAPIAccounting_CreateQualificationEventBackward:(id)arg1;
+- (id)testPLAPIAccounting_CreateQualificationEventForwardAdd:(id)arg1;
+- (id)testPLAPIAccounting_CreateQualificationEventForwardChild:(id)arg1;
+- (id)testPLAPIAccounting_CreateQualificationEventForwardRem:(id)arg1;
+- (id)testPLAPIAccounting_CreateQualificationEventInterval:(id)arg1;
+- (id)testPLAPIAccounting_CreateQualificationEventPoint:(id)arg1;
+- (id)testPLAPIAccounting_ExistingTest:(id)arg1;
+- (id)testPLAPICore_DeleteAllEntriesForKey:(id)arg1;
+- (id)testPLAPICore_DeleteAllEntriesForKeyBTWF:(id)arg1;
+- (id)testPLAPICore_DeleteAllEntriesForKeyWF:(id)arg1;
+- (id)testPLAPICore_DeleteEntry:(id)arg1;
+- (id)testPLAPICore_DeleteEntryForKey:(id)arg1;
+- (id)testPLAPICore_EntriesForKeyBeforeTICWF:(id)arg1;
+- (id)testPLAPICore_EntriesForKeyInTimeRange:(id)arg1;
+- (id)testPLAPICore_EntriesForKeyWithProperties:(id)arg1;
+- (id)testPLAPICore_LastEntryForKeyWC:(id)arg1;
+- (id)testPLAPICore_LastEntryForKeyWSEK:(id)arg1;
+- (id)testPLAPICore_UpdateEntry:(id)arg1;
+- (id)testPLAPICore_WriteEntries:(id)arg1;
+- (id)testPLAPICore_WriteEntry:(id)arg1;
 - (void)testQMI;
+- (void)testUTF8;
+- (id)test_LogErr:(id)arg1 str:(id)arg2;
+- (id)test_LogPass:(id)arg1 str:(id)arg2;
 - (id)wakeNotification;
 - (id)xpcListenerPLLog;
+- (id)xpcResponderPLAPITest;
 - (id)xpcResponderPLLog;
 
 @end

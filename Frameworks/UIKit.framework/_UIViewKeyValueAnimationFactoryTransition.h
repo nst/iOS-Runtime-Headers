@@ -10,7 +10,7 @@
 @property (nonatomic, retain) CABasicAnimation *fromAnimation;
 @property (nonatomic, retain) CABasicAnimation *toAnimation;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)fromAnimation;
 - (void)setFromAnimation:(id)arg1;
 - (void)setToAnimation:(id)arg1;

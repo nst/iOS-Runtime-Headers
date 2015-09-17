@@ -30,6 +30,7 @@
 - (void)receivedAdvertisement:(id)arg1;
 - (void)removeObserver:(id)arg1;
 - (void)setConnectionProxy:(id)arg1;
+- (void)setForceScanningEnabled:(BOOL)arg1;
 - (void)setFoundDevices:(id)arg1;
 - (void)setObservers:(id)arg1;
 - (void)setupXPCConnection;

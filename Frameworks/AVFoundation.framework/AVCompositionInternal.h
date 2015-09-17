@@ -3,6 +3,7 @@
  */
 
 @interface AVCompositionInternal : NSObject {
+    NSDictionary *URLAssetInitializationOptions;
     AVAssetInspector *assetInspector;
     long assetInspectorInitializationOnce;
     AVAssetInspectorLoader *assetInspectorLoader;

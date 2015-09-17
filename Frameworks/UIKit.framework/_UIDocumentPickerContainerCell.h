@@ -3,45 +3,36 @@
  */
 
 @interface _UIDocumentPickerContainerCell : _UIDocumentPickerCell {
-    NSString *_containerDisplayName;
     NSLayoutConstraint *_containerIconBottomConstraint;
     NSLayoutConstraint *_containerIconHeightConstraint;
     UIImageView *_containerIconView;
     NSLayoutConstraint *_containerIconWidthConstraint;
-    _UIDocumentPickerContainerItem *_item;
     id _observerToken;
 }
 
-@property (nonatomic, retain) NSString *containerDisplayName;
 @property (nonatomic, retain) NSLayoutConstraint *containerIconBottomConstraint;
 @property (nonatomic, retain) NSLayoutConstraint *containerIconHeightConstraint;
 @property (nonatomic, retain) UIImageView *containerIconView;
 @property (nonatomic, retain) NSLayoutConstraint *containerIconWidthConstraint;
-@property (nonatomic, retain) _UIDocumentPickerContainerItem *item;
 @property (nonatomic, retain) id observerToken;
 
+- (void).cxx_destruct;
 - (void)_showPickableDiagnostic;
-- (id)containerDisplayName;
 - (id)containerIconBottomConstraint;
 - (id)containerIconHeightConstraint;
 - (id)containerIconView;
 - (id)containerIconWidthConstraint;
-- (void)containersChangedWithSnapshot:(id)arg1 differences:(id)arg2;
-- (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)item;
 - (id)observerToken;
 - (void)prepareForReuse;
 - (void)reloadItem:(BOOL)arg1;
-- (void)setContainerDisplayName:(id)arg1;
 - (void)setContainerIconBottomConstraint:(id)arg1;
 - (void)setContainerIconHeightConstraint:(id)arg1;
 - (void)setContainerIconView:(id)arg1;
 - (void)setContainerIconWidthConstraint:(id)arg1;
-- (void)setItem:(id)arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setObserverToken:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
-- (void)updateSubtitle;
-- (id)viewControllerForDisplay;
+- (void)updateContents;
 
 @end

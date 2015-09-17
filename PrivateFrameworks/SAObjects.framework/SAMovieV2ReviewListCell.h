@@ -19,6 +19,5 @@
 - (void)setReviewAuthor:(id)arg1;
 - (void)setReviewDate:(id)arg1;
 - (void)setReviewText:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

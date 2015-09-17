@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)messageLink:(id <ATMessageLink>)arg1 didReceiveRequest:(ATRequest *)arg2;
+- (void)messageLink:(ATMessageLink *)arg1 didReceiveRequest:(ATRequest *)arg2;
 
 @end

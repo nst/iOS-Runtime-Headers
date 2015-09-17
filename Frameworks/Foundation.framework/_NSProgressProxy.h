@@ -21,6 +21,7 @@
 - (void)prioritize;
 - (void)publish;
 - (void)resignCurrent;
+- (void)resume;
 - (void)setCancellable:(BOOL)arg1;
 - (void)setCancellationHandler:(id /* block */)arg1;
 - (void)setCompletedUnitCount:(long long)arg1;

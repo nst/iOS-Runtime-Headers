@@ -5,11 +5,12 @@
 @interface MPUReportingPlaybackObserver : NSObject {
     BOOL _SBEnabled;
     NSData *_currentJingleReportingTimedMetadata;
+    BOOL _hasSetLastPlayEventTimeStamp;
     BOOL _isReloadingWithPlaybackContext;
     BOOL _isScrubbing;
     MPAVItem *_itemForCurrentTimeChange;
     double _lastPlayEventEndTimeForCurrentItem;
-    double _lastPlayEventTimeIntervalSinceReferenceDate;
+    double _lastPlayEventTimeStamp;
     BOOL _offline;
     NSString *_playbackSessionID;
     MPAVController *_player;

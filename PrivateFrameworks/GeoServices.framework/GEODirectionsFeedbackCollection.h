@@ -5,12 +5,11 @@
 @interface GEODirectionsFeedbackCollection : PBCodable <NSCopying> {
     BOOL _arrivedAtDestination;
     NSMutableArray *_directionsFeedbacks;
-    double _endTimeStamp;
+    double _durationOfTrip;
     GEOLocation *_finalLocation;
     struct { 
         unsigned int navigationAudioFeedback : 1; 
-        unsigned int endTimeStamp : 1; 
-        unsigned int startTimeStamp : 1; 
+        unsigned int durationOfTrip : 1; 
         unsigned int arrivedAtDestination : 1; 
     } _has;
     struct { 
@@ -27,6 +26,7 @@
         BOOL _everViewedAudioSheet; 
         BOOL _everViewedAudioSheetBTAny; 
         BOOL _everViewedAudioSheetBTHFP; 
+        BOOL _pauseSpokenAudioEnabled; 
         BOOL _viewedAudioSheet; 
         BOOL _viewedAudioSheetBTAny; 
         BOOL _viewedAudioSheetBTHFP; 
@@ -45,26 +45,24 @@
             unsigned int everViewedAudioSheet : 1; 
             unsigned int everViewedAudioSheetBTAny : 1; 
             unsigned int everViewedAudioSheetBTHFP : 1; 
+            unsigned int pauseSpokenAudioEnabled : 1; 
             unsigned int viewedAudioSheet : 1; 
             unsigned int viewedAudioSheetBTAny : 1; 
             unsigned int viewedAudioSheetBTHFP : 1; 
             unsigned int wirelessRoutesAvailable : 1; 
         } _has; 
     } _navigationAudioFeedback;
-    double _startTimeStamp;
 }
 
 @property (nonatomic) BOOL arrivedAtDestination;
 @property (nonatomic, retain) NSMutableArray *directionsFeedbacks;
-@property (nonatomic) double endTimeStamp;
+@property (nonatomic) double durationOfTrip;
 @property (nonatomic, retain) GEOLocation *finalLocation;
 @property (nonatomic) BOOL hasArrivedAtDestination;
-@property (nonatomic) BOOL hasEndTimeStamp;
+@property (nonatomic) BOOL hasDurationOfTrip;
 @property (nonatomic, readonly) BOOL hasFinalLocation;
 @property (nonatomic) BOOL hasNavigationAudioFeedback;
-@property (nonatomic) BOOL hasStartTimeStamp;
-@property (nonatomic) struct { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; BOOL x13; BOOL x14; BOOL x15; BOOL x16; BOOL x17; struct { unsigned int x_18_1_1 : 1; unsigned int x_18_1_2 : 1; unsigned int x_18_1_3 : 1; unsigned int x_18_1_4 : 1; unsigned int x_18_1_5 : 1; unsigned int x_18_1_6 : 1; unsigned int x_18_1_7 : 1; unsigned int x_18_1_8 : 1; unsigned int x_18_1_9 : 1; unsigned int x_18_1_10 : 1; unsigned int x_18_1_11 : 1; unsigned int x_18_1_12 : 1; unsigned int x_18_1_13 : 1; unsigned int x_18_1_14 : 1; unsigned int x_18_1_15 : 1; unsigned int x_18_1_16 : 1; unsigned int x_18_1_17 : 1; } x18; } navigationAudioFeedback;
-@property (nonatomic) double startTimeStamp;
+@property (nonatomic) struct { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; BOOL x13; BOOL x14; BOOL x15; BOOL x16; BOOL x17; BOOL x18; struct { unsigned int x_19_1_1 : 1; unsigned int x_19_1_2 : 1; unsigned int x_19_1_3 : 1; unsigned int x_19_1_4 : 1; unsigned int x_19_1_5 : 1; unsigned int x_19_1_6 : 1; unsigned int x_19_1_7 : 1; unsigned int x_19_1_8 : 1; unsigned int x_19_1_9 : 1; unsigned int x_19_1_10 : 1; unsigned int x_19_1_11 : 1; unsigned int x_19_1_12 : 1; unsigned int x_19_1_13 : 1; unsigned int x_19_1_14 : 1; unsigned int x_19_1_15 : 1; unsigned int x_19_1_16 : 1; unsigned int x_19_1_17 : 1; unsigned int x_19_1_18 : 1; } x19; } navigationAudioFeedback;
 
 - (void)addDirectionsFeedback:(id)arg1;
 - (BOOL)arrivedAtDestination;
@@ -77,29 +75,25 @@
 - (id)directionsFeedbackAtIndex:(unsigned int)arg1;
 - (id)directionsFeedbacks;
 - (unsigned int)directionsFeedbacksCount;
-- (double)endTimeStamp;
+- (double)durationOfTrip;
 - (id)finalLocation;
 - (BOOL)hasArrivedAtDestination;
-- (BOOL)hasEndTimeStamp;
+- (BOOL)hasDurationOfTrip;
 - (BOOL)hasFinalLocation;
 - (BOOL)hasNavigationAudioFeedback;
-- (BOOL)hasStartTimeStamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
-- (struct { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; BOOL x13; BOOL x14; BOOL x15; BOOL x16; BOOL x17; struct { unsigned int x_18_1_1 : 1; unsigned int x_18_1_2 : 1; unsigned int x_18_1_3 : 1; unsigned int x_18_1_4 : 1; unsigned int x_18_1_5 : 1; unsigned int x_18_1_6 : 1; unsigned int x_18_1_7 : 1; unsigned int x_18_1_8 : 1; unsigned int x_18_1_9 : 1; unsigned int x_18_1_10 : 1; unsigned int x_18_1_11 : 1; unsigned int x_18_1_12 : 1; unsigned int x_18_1_13 : 1; unsigned int x_18_1_14 : 1; unsigned int x_18_1_15 : 1; unsigned int x_18_1_16 : 1; unsigned int x_18_1_17 : 1; } x18; })navigationAudioFeedback;
+- (struct { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; BOOL x13; BOOL x14; BOOL x15; BOOL x16; BOOL x17; BOOL x18; struct { unsigned int x_19_1_1 : 1; unsigned int x_19_1_2 : 1; unsigned int x_19_1_3 : 1; unsigned int x_19_1_4 : 1; unsigned int x_19_1_5 : 1; unsigned int x_19_1_6 : 1; unsigned int x_19_1_7 : 1; unsigned int x_19_1_8 : 1; unsigned int x_19_1_9 : 1; unsigned int x_19_1_10 : 1; unsigned int x_19_1_11 : 1; unsigned int x_19_1_12 : 1; unsigned int x_19_1_13 : 1; unsigned int x_19_1_14 : 1; unsigned int x_19_1_15 : 1; unsigned int x_19_1_16 : 1; unsigned int x_19_1_17 : 1; unsigned int x_19_1_18 : 1; } x19; })navigationAudioFeedback;
 - (BOOL)readFrom:(id)arg1;
 - (void)setArrivedAtDestination:(BOOL)arg1;
 - (void)setDirectionsFeedbacks:(id)arg1;
-- (void)setEndTimeStamp:(double)arg1;
+- (void)setDurationOfTrip:(double)arg1;
 - (void)setFinalLocation:(id)arg1;
 - (void)setHasArrivedAtDestination:(BOOL)arg1;
-- (void)setHasEndTimeStamp:(BOOL)arg1;
+- (void)setHasDurationOfTrip:(BOOL)arg1;
 - (void)setHasNavigationAudioFeedback:(BOOL)arg1;
-- (void)setHasStartTimeStamp:(BOOL)arg1;
-- (void)setNavigationAudioFeedback:(struct { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; BOOL x13; BOOL x14; BOOL x15; BOOL x16; BOOL x17; struct { unsigned int x_18_1_1 : 1; unsigned int x_18_1_2 : 1; unsigned int x_18_1_3 : 1; unsigned int x_18_1_4 : 1; unsigned int x_18_1_5 : 1; unsigned int x_18_1_6 : 1; unsigned int x_18_1_7 : 1; unsigned int x_18_1_8 : 1; unsigned int x_18_1_9 : 1; unsigned int x_18_1_10 : 1; unsigned int x_18_1_11 : 1; unsigned int x_18_1_12 : 1; unsigned int x_18_1_13 : 1; unsigned int x_18_1_14 : 1; unsigned int x_18_1_15 : 1; unsigned int x_18_1_16 : 1; unsigned int x_18_1_17 : 1; } x18; })arg1;
-- (void)setStartTimeStamp:(double)arg1;
-- (double)startTimeStamp;
+- (void)setNavigationAudioFeedback:(struct { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; BOOL x13; BOOL x14; BOOL x15; BOOL x16; BOOL x17; BOOL x18; struct { unsigned int x_19_1_1 : 1; unsigned int x_19_1_2 : 1; unsigned int x_19_1_3 : 1; unsigned int x_19_1_4 : 1; unsigned int x_19_1_5 : 1; unsigned int x_19_1_6 : 1; unsigned int x_19_1_7 : 1; unsigned int x_19_1_8 : 1; unsigned int x_19_1_9 : 1; unsigned int x_19_1_10 : 1; unsigned int x_19_1_11 : 1; unsigned int x_19_1_12 : 1; unsigned int x_19_1_13 : 1; unsigned int x_19_1_14 : 1; unsigned int x_19_1_15 : 1; unsigned int x_19_1_16 : 1; unsigned int x_19_1_17 : 1; unsigned int x_19_1_18 : 1; } x19; })arg1;
 - (void)writeTo:(id)arg1;
 
 @end

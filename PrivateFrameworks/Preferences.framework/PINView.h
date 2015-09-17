@@ -7,27 +7,38 @@
     BOOL _error;
     UILabel *_errorTitleLabel;
     FailureBarView *_failureView;
+    UIButton *_optionsButton;
+    id /* block */ _passcodeOptionsHandler;
     UILabel *_pinPolicyLabel;
     UILabel *_titleLabel;
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PSPINEntryViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ passcodeOptionsHandler;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)appendString:(id)arg1;
 - (BOOL)becomeFirstResponder;
-- (void)dealloc;
+- (id)delegate;
 - (void)deleteLastCharacter;
 - (void)hideError;
 - (void)hideFailedAttempts;
 - (void)hidePasscodeField:(BOOL)arg1;
+- (void)layoutSubviews;
 - (void)notifyDelegatePINChanged;
 - (void)notifyDelegatePINEntered;
+- (id)optionsButton;
+- (void)optionsButtonTapped;
+- (id /* block */)passcodeOptionsHandler;
 - (void)setBlocked:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPINPolicyString:(id)arg1 visible:(BOOL)arg2;
+- (void)setPasscodeOptionsHandler:(id /* block */)arg1;
+- (void)setShowsOptionsButton:(BOOL)arg1;
 - (void)setStringValue:(id)arg1;
 - (void)setTextFieldKeyboardAppearance:(int)arg1;
 - (void)setTextFieldKeyboardType:(int)arg1;

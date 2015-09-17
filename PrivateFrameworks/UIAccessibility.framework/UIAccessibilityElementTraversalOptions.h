@@ -5,46 +5,59 @@
 @interface UIAccessibilityElementTraversalOptions : NSObject {
     int _direction;
     BOOL _forSpeakScreen;
+    BOOL _ignoreObscuresScreen;
     BOOL _includeHiddenViews;
     id /* block */ _leafNodePredicate;
+    BOOL _shouldIncludeKeyboardObscuredElements;
+    BOOL _shouldIncludeStatusBarWindow;
     BOOL _shouldOnlyIncludeElementsWithVisibleFrame;
     BOOL _shouldReturnScannerGroups;
-    BOOL _shouldReturnTouchContainers;
     BOOL _shouldUseAllSubviews;
+    BOOL _sorted;
 }
 
 @property (nonatomic) int direction;
 @property (nonatomic) BOOL forSpeakScreen;
+@property (nonatomic) BOOL ignoreObscuresScreen;
 @property (nonatomic) BOOL includeHiddenViews;
 @property (nonatomic, copy) id /* block */ leafNodePredicate;
+@property (nonatomic) BOOL shouldIncludeKeyboardObscuredElements;
+@property (nonatomic) BOOL shouldIncludeStatusBarWindow;
 @property (nonatomic) BOOL shouldOnlyIncludeElementsWithVisibleFrame;
 @property (nonatomic) BOOL shouldReturnScannerGroups;
-@property (nonatomic) BOOL shouldReturnTouchContainers;
 @property (nonatomic) BOOL shouldUseAllSubviews;
+@property (nonatomic) BOOL sorted;
 
 + (id)defaultSpeakScreenOptions;
 + (id)defaultSwitchControlOptions;
 + (id)defaultVoiceOverOptions;
 + (id)options;
++ (id)voiceOverOptionsIncludingElementsFromOpaqueProviders:(BOOL)arg1;
 
 - (void)dealloc;
 - (id)description;
 - (int)direction;
 - (BOOL)forSpeakScreen;
+- (BOOL)ignoreObscuresScreen;
 - (BOOL)includeHiddenViews;
 - (id)init;
 - (id /* block */)leafNodePredicate;
 - (void)setDirection:(int)arg1;
 - (void)setForSpeakScreen:(BOOL)arg1;
+- (void)setIgnoreObscuresScreen:(BOOL)arg1;
 - (void)setIncludeHiddenViews:(BOOL)arg1;
 - (void)setLeafNodePredicate:(id /* block */)arg1;
+- (void)setShouldIncludeKeyboardObscuredElements:(BOOL)arg1;
+- (void)setShouldIncludeStatusBarWindow:(BOOL)arg1;
 - (void)setShouldOnlyIncludeElementsWithVisibleFrame:(BOOL)arg1;
 - (void)setShouldReturnScannerGroups:(BOOL)arg1;
-- (void)setShouldReturnTouchContainers:(BOOL)arg1;
 - (void)setShouldUseAllSubviews:(BOOL)arg1;
+- (void)setSorted:(BOOL)arg1;
+- (BOOL)shouldIncludeKeyboardObscuredElements;
+- (BOOL)shouldIncludeStatusBarWindow;
 - (BOOL)shouldOnlyIncludeElementsWithVisibleFrame;
 - (BOOL)shouldReturnScannerGroups;
-- (BOOL)shouldReturnTouchContainers;
 - (BOOL)shouldUseAllSubviews;
+- (BOOL)sorted;
 
 @end

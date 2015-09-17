@@ -14,6 +14,7 @@
     unsigned long long _storageID;
 }
 
+@property (nonatomic, readonly) GSDocumentIdentifier *documentID;
 @property (retain) NSURL *documentURL;
 @property (nonatomic, readonly) <NSCopying><NSSecureCoding> *persistentIdentifier;
 @property (retain) NSData *privExtension;
@@ -35,8 +36,9 @@
 - (void)createAdditionStagedAtURL:(id)arg1 creationInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)dealloc;
 - (id)description;
+- (id)documentID;
 - (id)documentURL;
-- (id)enumeratorForAdditionsInNameSpace:(id)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
+- (struct NSEnumerator { Class x1; }*)enumeratorForAdditionsInNameSpace:(id)arg1 withOptions:(unsigned long long)arg2 withoutOptions:(unsigned long long)arg3 ordering:(int)arg4;
 - (void)finalize;
 - (id)getAdditionDictionary:(id)arg1 error:(id*)arg2;
 - (unsigned int)hash;

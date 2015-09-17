@@ -5,7 +5,6 @@
 @interface TPSearchCanvasDelegate : TSASearchCanvasDelegate
 
 - (void)dealloc;
-- (id)initWithDocumentRoot:(id)arg1;
 - (id)initWithDocumentRoot:(id)arg1 canvas:(id)arg2;
 
 @end

@@ -8,31 +8,21 @@
     NSObject<OS_dispatch_queue> *_queue;
     NSObject<OS_dispatch_source> *_source;
     BOOL _started;
-    int _type;
 }
 
-@property (nonatomic, copy) id /* block */ eventBlock;
-@property (nonatomic, retain) NSString *path;
-@property (nonatomic) BOOL started;
-@property (nonatomic) int type;
-
-+ (unsigned long)_maskForFileSensorType:(int)arg1;
-+ (id)copyFileSensorTypeAsString:(int)arg1;
+@property (nonatomic, readonly, copy) id /* block */ eventBlock;
+@property (nonatomic, readonly, retain) NSString *path;
+@property (nonatomic, readonly) BOOL started;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
 - (id /* block */)eventBlock;
 - (id)init;
-- (id)initWithPath:(id)arg1 andType:(int)arg2;
+- (id)initWithPath:(id)arg1 eventBlock:(id /* block */)arg2;
 - (id)path;
-- (void)setEventBlock:(id /* block */)arg1;
-- (void)setPath:(id)arg1;
-- (void)setStarted:(BOOL)arg1;
-- (void)setType:(int)arg1;
 - (void)start;
 - (BOOL)started;
 - (void)stop;
-- (int)type;
 
 @end

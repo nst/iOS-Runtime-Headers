@@ -3,19 +3,26 @@
  */
 
 @interface CoreRCBus : NSObject <NSCopying, NSSecureCoding> {
+    unsigned int _assertionID;
     <CoreRCBusDelegate> *_delegate;
     NSMutableSet *_devicesInternal;
     CoreRCManager *_manager;
+    NSObject<OS_dispatch_queue> *_serialQueue;
     NSUUID *_uniqueID;
 }
 
+@property (nonatomic, readonly) BOOL allowHibernation;
 @property (nonatomic, readonly) NSSet *devices;
 @property (nonatomic, readonly) NSMutableSet *devicesInternal;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialQueue;
 @property (nonatomic, readonly) NSUUID *uniqueID;
 
 + (BOOL)supportsSecureCoding;
 
+- (int)_allowSleep;
+- (int)_preventSleep;
 - (void)addDevice:(id)arg1;
+- (BOOL)allowHibernation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)delegate;
@@ -23,6 +30,10 @@
 - (id)deviceOnBusEquivalentTo:(id)arg1;
 - (id)devices;
 - (id)devicesInternal;
+- (void)didAddDevice:(id)arg1;
+- (void)didAddToManager:(id)arg1;
+- (void)didRemoveDevice:(id)arg1;
+- (void)didRemoveFromManager:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
@@ -40,9 +51,17 @@
 - (void)removeAllDevices;
 - (void)removeDevice:(id)arg1;
 - (void)replaceDevice:(id)arg1 withDevice:(id)arg2;
+- (void)scheduleWithDispatchQueue:(id)arg1;
+- (id)serialQueue;
+- (BOOL)setAllowHibernation:(BOOL)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setManager:(id)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)uniqueID;
+- (void)unscheduleFromDispatchQueue:(id)arg1;
+- (void)willAddDevice:(id)arg1;
+- (void)willAddToManager:(id)arg1;
+- (void)willRemoveDevice:(id)arg1;
+- (void)willRemoveFromManager:(id)arg1;
 
 @end

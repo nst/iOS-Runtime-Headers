@@ -10,5 +10,6 @@
 - (void)cancelBulletinWithPublisherMatchID:(NSString *)arg1 universalSectionID:(NSString *)arg2 feed:(unsigned int)arg3 transmissionDate:(NSDate *)arg4 receptionDate:(NSDate *)arg5;
 - (void)handlePairedDeviceIdentifier:(NSString *)arg1;
 - (void)removeBulletinWithPublisherBulletinID:(NSString *)arg1 recordID:(NSString *)arg2 sectionID:(NSString *)arg3;
+- (void)updateBulletinList:(BLTPBFullBulletinList *)arg1;
 
 @end

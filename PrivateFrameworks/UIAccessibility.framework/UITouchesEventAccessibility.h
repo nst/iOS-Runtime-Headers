@@ -4,7 +4,7 @@
 
 @interface UITouchesEventAccessibility : __UITouchesEventAccessibility_super
 
-+ (Class)safeCategoryTargetClass;
++ (Class)safeCategoryBaseClass;
 + (id)safeCategoryTargetClassName;
 
 - (id)_accessibilityHitTestStartsAtElement;

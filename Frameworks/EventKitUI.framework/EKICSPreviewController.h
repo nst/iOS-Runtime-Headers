@@ -2,8 +2,8 @@
    Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
  */
 
-@interface EKICSPreviewController : NSObject {
-    int _actionsState;
+@interface EKICSPreviewController : NSObject <EKEventViewDelegatePrivate> {
+    unsigned int _actionsState;
     BOOL _allowsEditing;
     BOOL _allowsImport;
     BOOL _allowsInvalidProperties;
@@ -12,21 +12,28 @@
     int _cancelButtonType;
     UIViewController *_contentViewController;
     EKEventViewController *_currentImport;
+    EKEvent *_eventFromUID;
     EKEventStore *_eventStore;
+    int _eventUID;
     BOOL _hasCustomCancelButton;
     BOOL _importing;
     EKICSPreviewModel *_model;
     <EKICSPreviewControllerDelegate> *_previewDelegate;
 }
 
-@property (nonatomic) int actionsState;
+@property (nonatomic) unsigned int actionsState;
 @property (nonatomic) BOOL allowsEditing;
 @property (nonatomic) BOOL allowsImport;
 @property (nonatomic) BOOL allowsInvalidProperties;
 @property (nonatomic) BOOL allowsSubitems;
 @property (nonatomic) BOOL allowsToDos;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) int eventUID;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isImporting;
 @property (nonatomic) <EKICSPreviewControllerDelegate> *previewDelegate;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int totalEventCount;
 @property (nonatomic, readonly) unsigned int unimportedEventCount;
 
@@ -34,7 +41,7 @@
 - (void)_createCancelButtonWithType:(int)arg1 target:(id)arg2 action:(SEL)arg3;
 - (void)_databaseChanged:(id)arg1;
 - (void)_updateCancelButton;
-- (int)actionsState;
+- (unsigned int)actionsState;
 - (BOOL)allowsEditing;
 - (BOOL)allowsImport;
 - (BOOL)allowsInvalidProperties;
@@ -43,8 +50,12 @@
 - (void)calendarChooserDidCancel:(id)arg1;
 - (void)calendarChooserDidFinish:(id)arg1;
 - (void)dealloc;
-- (id)detailViewForEvent:(id)arg1 eventInRealStore:(BOOL)arg2;
+- (id)detailViewForEvent:(id)arg1 eventInRealStore:(BOOL)arg2 isUpdate:(BOOL)arg3;
+- (int)eventUID;
+- (void)eventViewController:(id)arg1 didCompleteWithAction:(int)arg2;
 - (void)eventViewControllerDidRequestAddToCalendar:(id)arg1;
+- (BOOL)eventViewControllerShouldAlwaysShowNavBar:(id)arg1;
+- (BOOL)eventViewControllerShouldDismissSelf:(id)arg1;
 - (void)icsPreviewListController:(id)arg1 didSelectEvent:(id)arg2;
 - (void)icsPreviewListControllerDidRequestImportAll:(id)arg1;
 - (void)importAllIntoCalendar:(id)arg1;
@@ -52,6 +63,7 @@
 - (void)importEventFromController:(id)arg1 intoCalendar:(id)arg2;
 - (id)initWithData:(id)arg1 eventStore:(id)arg2;
 - (id)initWithData:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
+- (id)initWithEventUID:(int)arg1 eventStore:(id)arg2;
 - (id)initWithURL:(id)arg1 eventStore:(id)arg2;
 - (id)initWithURL:(id)arg1 eventStore:(id)arg2 options:(unsigned int)arg3;
 - (BOOL)isImporting;
@@ -59,7 +71,7 @@
 - (void)presentCalendarChooserForController:(id)arg1;
 - (id)previewDelegate;
 - (void)removeCancelButton;
-- (void)setActionsState:(int)arg1;
+- (void)setActionsState:(unsigned int)arg1;
 - (void)setAllowsEditing:(BOOL)arg1;
 - (void)setAllowsImport:(BOOL)arg1;
 - (void)setAllowsInvalidProperties:(BOOL)arg1;

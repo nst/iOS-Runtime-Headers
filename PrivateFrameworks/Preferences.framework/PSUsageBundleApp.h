@@ -19,9 +19,9 @@
 + (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2;
 + (id)usageBundleAppForBundleWithIdentifier:(id)arg1 withTotalSize:(float)arg2 andCategories:(id)arg3;
 
+- (void).cxx_destruct;
 - (id)bundleIdentifier;
 - (id)categories;
-- (void)dealloc;
 - (id)description;
 - (id)name;
 - (void)setBundleIdentifier:(id)arg1;

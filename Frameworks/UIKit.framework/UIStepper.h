@@ -28,9 +28,11 @@
 @property (nonatomic) double value;
 @property (nonatomic) BOOL wraps;
 
+- (void).cxx_destruct;
 - (void)_commonStepperInit;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (unsigned int)_controlEventsForActionTriggered;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_setBackgroundImage:(id)arg1 forState:(unsigned int)arg2;
@@ -49,7 +51,6 @@
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
-- (void)dealloc;
 - (id)decrementImageForState:(unsigned int)arg1;
 - (id)dividerImageForLeftSegmentState:(unsigned int)arg1 rightSegmentState:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;

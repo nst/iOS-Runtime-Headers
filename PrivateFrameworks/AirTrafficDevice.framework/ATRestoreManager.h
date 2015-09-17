@@ -9,6 +9,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     ATRestoreAssetLink *_restoreLink;
     ATSession *_restoreSession;
+    ATDeviceSettings *_settings;
     ATStoreAssetLink *_storeLink;
     MSVXPCTransaction *_xpcTransaction;
 }

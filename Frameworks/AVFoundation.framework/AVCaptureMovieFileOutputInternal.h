@@ -3,6 +3,7 @@
  */
 
 @interface AVCaptureMovieFileOutputInternal : NSObject {
+    NSMutableArray *connectionsThatRecordVideoOrientationAndMirroringChangesAsMetadataTrack;
     NSArray *metadata;
     struct { 
         long long value; 

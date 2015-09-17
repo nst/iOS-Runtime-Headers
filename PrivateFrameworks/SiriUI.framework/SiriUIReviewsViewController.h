@@ -9,6 +9,7 @@
         unsigned int viewForRatingForReview : 1; 
         unsigned int offsetForRatingView : 1; 
     } _delegateFlags;
+    BOOL _ignoreBackgroundInsets;
     NSString *_providerName;
     UIView *_providerView;
     struct UIOffset { 
@@ -29,6 +30,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL ignoreBackgroundInsets;
 @property (nonatomic, copy) NSString *providerName;
 @property (nonatomic, retain) UIView *providerView;
 @property (nonatomic) struct UIOffset { float x1; float x2; } providerViewOffset;
@@ -64,6 +66,7 @@
 - (float)desiredHeightForWidth:(float)arg1;
 - (void)didEndDisplayingReusableHeaderView:(id)arg1;
 - (Class)headerViewClass;
+- (BOOL)ignoreBackgroundInsets;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)loadView;
 - (id)providerName;
@@ -72,6 +75,7 @@
 - (int)reviewCharacterLimit;
 - (id)reviewList;
 - (id)reviewsDelegate;
+- (void)setIgnoreBackgroundInsets:(BOOL)arg1;
 - (void)setProviderName:(id)arg1;
 - (void)setProviderView:(id)arg1;
 - (void)setProviderViewOffset:(struct UIOffset { float x1; float x2; })arg1;

@@ -14,8 +14,9 @@
 
 - (void).cxx_destruct;
 - (void)_initCache;
+- (void)_lockedSetPCSData:(id)arg1 forItemWithID:(id)arg2;
 - (void)clearCache;
-- (void)fetchPCSForItemWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)fetchPCSForItemWithID:(id)arg1 operation:(id)arg2 options:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
 - (id /* block */)fetchPCSItemForCacheBlock;
 - (id)init;
 - (id)itemIDToPCSCacheItem;
@@ -25,5 +26,6 @@
 - (void)setItemIDToPCSCacheItem:(id)arg1;
 - (void)setItemPCSFetchQueue:(id)arg1;
 - (void)setPCSData:(id)arg1 forItemWithID:(id)arg2;
+- (void)setPCSData:(id)arg1 forItemsPassingTest:(id /* block */)arg2;
 
 @end

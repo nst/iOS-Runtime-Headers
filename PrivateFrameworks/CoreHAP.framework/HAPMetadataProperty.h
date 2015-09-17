@@ -4,13 +4,11 @@
 
 @interface HAPMetadataProperty : NSObject {
     NSNumber *_bitPosition;
-    NSString *_localizationKey;
     NSString *_propertyDescription;
     NSString *_propertyType;
 }
 
 @property (nonatomic, retain) NSNumber *bitPosition;
-@property (nonatomic, retain) NSString *localizationKey;
 @property (nonatomic, retain) NSString *propertyDescription;
 @property (nonatomic, retain) NSString *propertyType;
 
@@ -21,12 +19,10 @@
 - (id)description;
 - (void)dump;
 - (id)generateDictionary;
-- (id)initWithType:(id)arg1 bitPosition:(id)arg2 description:(id)arg3 localizationKey:(id)arg4;
-- (id)localizationKey;
+- (id)initWithType:(id)arg1 bitPosition:(id)arg2 description:(id)arg3;
 - (id)propertyDescription;
 - (id)propertyType;
 - (void)setBitPosition:(id)arg1;
-- (void)setLocalizationKey:(id)arg1;
 - (void)setPropertyDescription:(id)arg1;
 - (void)setPropertyType:(id)arg1;
 

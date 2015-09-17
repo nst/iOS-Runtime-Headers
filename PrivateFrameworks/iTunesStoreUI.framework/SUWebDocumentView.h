@@ -2,14 +2,18 @@
    Image: /System/Library/PrivateFrameworks/iTunesStoreUI.framework/iTunesStoreUI
  */
 
-@interface SUWebDocumentView : UIWebDocumentView {
+@interface SUWebDocumentView : UIWebDocumentView <WebPolicyDelegate> {
     unsigned int _adjustHeightToFit;
     id _loadDelegate;
     NSString *_stylesheet;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) id loadDelegate;
 @property (nonatomic, retain) NSString *stylesheet;
+@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

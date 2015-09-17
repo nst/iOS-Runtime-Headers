@@ -26,6 +26,7 @@
 
 + (double)defaultDurationForTransition:(int)arg1;
 
+- (void).cxx_destruct;
 - (id)_containerViewForView:(id)arg1;
 - (id)_dividerViewForView:(id)arg1;
 - (BOOL)_isTransitioningFromView:(id)arg1;

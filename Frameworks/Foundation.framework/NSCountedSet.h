@@ -7,6 +7,8 @@
     id _table;
 }
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (BOOL)supportsSecureCoding;
 
 - (void)addObject:(id)arg1;
@@ -30,5 +32,9 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)objectEnumerator;
 - (void)removeObject:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Message.framework/Message
+
+- (id)mf_debugDescription;
 
 @end

@@ -12,8 +12,8 @@
 
 + (id)_entryWithTILexiconEntry:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)documentText;
 - (BOOL)isEqual:(id)arg1;
 - (id)userInput;

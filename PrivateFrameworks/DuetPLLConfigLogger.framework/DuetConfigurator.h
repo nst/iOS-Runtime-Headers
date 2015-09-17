@@ -19,7 +19,9 @@
 - (void).cxx_destruct;
 - (id)appBlackMap;
 - (id)appWhiteListArray;
-- (long long)getStateFor:(id)arg1;
+- (double)getDoubleFor:(id)arg1;
+- (long long)getInt64For:(id)arg1;
+- (id)getNSNumberFor:(id)arg1;
 - (id)init;
 - (void)loadBundleConfigurations;
 - (void)loadConfigurations:(id)arg1;

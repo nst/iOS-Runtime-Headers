@@ -3,17 +3,21 @@
  */
 
 @interface IDSSocketPairMessage : NSObject {
+    BOOL _cancelled;
     unsigned char _command;
     <NSObject> *_context;
     NSString *_topic;
     NSData *_underlyingData;
+    BOOL _useDynamicServiceName;
 }
 
+@property (nonatomic) BOOL cancelled;
 @property (nonatomic, readonly) unsigned char command;
 @property (nonatomic, retain) <NSObject> *context;
 @property (nonatomic, retain) NSString *topic;
 @property (nonatomic, readonly, retain) NSData *underlyingData;
 @property (nonatomic, readonly) unsigned int underlyingDataLength;
+@property (nonatomic) BOOL useDynamicServiceName;
 
 + (unsigned int)dataLengthFromHeaderData:(id)arg1;
 + (unsigned int)headerDataSize;
@@ -23,14 +27,18 @@
 
 - (id)_existingUnderlyingData;
 - (id)_nonHeaderData;
+- (BOOL)cancelled;
 - (unsigned char)command;
 - (id)context;
 - (void)dealloc;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
+- (void)setCancelled:(BOOL)arg1;
 - (void)setContext:(id)arg1;
 - (void)setTopic:(id)arg1;
+- (void)setUseDynamicServiceName:(BOOL)arg1;
 - (id)topic;
 - (id)underlyingData;
 - (unsigned int)underlyingDataLength;
+- (BOOL)useDynamicServiceName;
 
 @end

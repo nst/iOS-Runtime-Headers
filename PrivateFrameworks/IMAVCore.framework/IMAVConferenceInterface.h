@@ -12,7 +12,6 @@
 
 @property (nonatomic, readonly) AVConference *controller;
 
-+ (BOOL)_forceRelayMode;
 + (void)_postParticipantMediaChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 contentRectChanged:(BOOL)arg5 cameraWillSwitch:(BOOL)arg6 camera:(unsigned int)arg7 orentation:(unsigned int)arg8 aspect:(struct CGSize { float x1; float x2; })arg9 contentRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg10;
 + (void)_postParticipantScreenAttributesChangeNotification:(id)arg1 cameraChanged:(BOOL)arg2 orientationChanged:(BOOL)arg3 aspectChanged:(BOOL)arg4 cameraWillSwitch:(BOOL)arg5 camera:(unsigned int)arg6 orentation:(unsigned int)arg7 aspect:(struct CGSize { float x1; float x2; })arg8;
 + (BOOL)_useMultipleAVConference;
@@ -25,6 +24,7 @@
 - (id)_conferenceForAVChat:(id)arg1;
 - (void)_configureAVConference:(id)arg1 forChat:(id)arg2;
 - (id)_controller;
+- (int)_deviceRoleForAVChat:(id)arg1;
 - (id)_existingConferenceForAVChat:(id)arg1;
 - (id)_existingConferenceForAVChatGUID:(id)arg1;
 - (id)_getFaceTimeUUID;
@@ -46,6 +46,7 @@
 - (unsigned long long)capabilities;
 - (unsigned long long)capabilitiesOfCPU;
 - (unsigned long long)capabilitiesOfNetwork;
+- (void)chatRelayedStatusChanged:(id)arg1;
 - (void)chatStateUpdated;
 - (void)conference:(id)arg1 cancelRelayRequest:(int)arg2 requestDict:(id)arg3;
 - (void)conference:(id)arg1 didChangeLocalVariablesForCallID:(int)arg2;
@@ -62,10 +63,9 @@
 - (void)conference:(id)arg1 remoteVideoPaused:(BOOL)arg2 callID:(int)arg3;
 - (void)conference:(id)arg1 sendRelayUpdate:(int)arg2 updateDict:(id)arg3;
 - (void)conference:(id)arg1 updateInputFrequencyLevel:(id)arg2;
-- (void)conference:(id)arg1 updateInputMeterLevel:(float)arg2;
 - (void)conference:(id)arg1 updateOutputFrequencyLevel:(id)arg2;
-- (void)conference:(id)arg1 updateOutputMeterLevel:(float)arg2;
 - (void)conference:(id)arg1 videoQualityNotificationForCallID:(int)arg2 isDegraded:(BOOL)arg3 isRemote:(BOOL)arg4;
+- (void)conference:(id)arg1 withCallID:(int)arg2 didPauseAudio:(BOOL)arg3 error:(id)arg4;
 - (void)conference:(id)arg1 withCallID:(int)arg2 networkHint:(BOOL)arg3;
 - (void)conference:(id)arg1 withCallID:(int)arg2 remoteMediaStalled:(BOOL)arg3;
 - (id)controller;
@@ -95,6 +95,8 @@
 - (void)setRemoteVideoBackLayer:(void*)arg1 forChat:(id)arg2;
 - (void)setRemoteVideoLayer:(void*)arg1 forChat:(id)arg2;
 - (void)setRemoteVideoLayersFromChat:(id)arg1 toChat:(id)arg2;
+- (void)setRemoteVideoPresentationSize:(struct CGSize { float x1; float x2; })arg1 forChat:(id)arg2;
+- (void)setRemoteVideoPresentationState:(unsigned int)arg1 forChat:(id)arg2;
 - (BOOL)startPreviewWithError:(id*)arg1;
 - (BOOL)stopPreview;
 - (BOOL)supportsLayers;

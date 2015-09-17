@@ -15,7 +15,7 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (id)initWithSection:(id)arg1 traits:(id)arg2 entryListIndex:(int)arg3;
+- (id)initWithSection:(id)arg1 traits:(id)arg2 entryListIndex:(int)arg3 mapItems:(id)arg4;
 - (id)items;
 - (id)localizedSectionHeader;
 

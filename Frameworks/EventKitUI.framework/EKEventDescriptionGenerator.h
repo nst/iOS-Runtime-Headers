@@ -16,7 +16,7 @@
 - (BOOL)_appendFreeAfternoonMessageToEventSummaryIfPossible:(id)arg1;
 - (BOOL)_arrayHasAfternoonEvents:(id)arg1;
 - (BOOL)_arrayHasMorningEvents:(id)arg1;
-- (id)_attendeesForEvent:(id)arg1;
+- (id)_attendeesForEvent:(id)arg1 sorted:(BOOL)arg2 limtedTo:(int)arg3;
 - (BOOL)_doesEventStartEarly:(id)arg1;
 - (BOOL)_eventIsAlreadyLate:(id)arg1;
 - (int)_fetchIdentifierForMeCard;
@@ -26,7 +26,6 @@
 - (BOOL)_isDateInWeekend:(id)arg1;
 - (id)_locationStringForEvent:(id)arg1;
 - (id)_nameForPersonWithIdentifier:(int)arg1;
-- (id)_naturalLanguageDescriptionForEvent:(id)arg1 isFirstInDay:(BOOL)arg2;
 - (id)_noonDateForEvents:(id)arg1;
 - (BOOL)_prepareToUseMessageWithID:(id)arg1 shouldAllowWeekendUsage:(BOOL)arg2;
 - (BOOL)_prependBusyDayMessageToEventSummaryIfPossible:(id)arg1;
@@ -36,11 +35,13 @@
 - (struct __CFDateFormatter { }*)_sharedDateFormatter;
 - (id)_sharedNumberFormatter;
 - (BOOL)_startTimeRequiresSingularForEvent:(id)arg1 withTimeString:(id)arg2;
-- (id)_timeStringForEvent:(id)arg1 forBeginningOfSentence:(BOOL)arg2 useExplicitTimes:(BOOL)arg3 followingComma:(BOOL)arg4;
 - (void)dealloc;
 - (id)init;
+- (id)naturalLanguageDescriptionForAttendees:(id)arg1;
 - (id)naturalLanguageDescriptionForBirthdayEvents:(id)arg1;
+- (id)naturalLanguageDescriptionForEvent:(id)arg1 isFirstInDay:(BOOL)arg2;
 - (id)naturalLanguageDescriptionForUpcomingEvents:(id)arg1 firstInDay:(BOOL)arg2;
+- (id)timeStringForEvent:(id)arg1 forBeginningOfSentence:(BOOL)arg2 useExplicitTimes:(BOOL)arg3 followingComma:(BOOL)arg4;
 - (id)tomorrowSnippetForUpcomingEvents:(id)arg1 withTodayEvents:(id)arg2;
 
 @end

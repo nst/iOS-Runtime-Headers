@@ -4,23 +4,20 @@
 
 @interface BRCXPCClient : NSObject <BRCForegroundClient, BRCProcessMonitorDelegate> {
     NSOperationQueue *_acceptOperationQueue;
-    NSString *_applicationIdenfier;
     int _clientPid;
+    BRCClientPrivilegesDescriptor *_clientPriviledgesDescriptor;
     NSXPCConnection *_connection;
     NSCountedSet *_containers;
-    NSString *_debugIdentifier;
-    NSString *_defaultContainerID;
     BOOL _dieOnInvalidate;
-    NSSet *_entitledContainerIDs;
-    BOOL _entitlementsCached;
-    BOOL _hasCloudServices;
-    BOOL _invalidated;
-    BOOL _isForeground;
-    BOOL _isProxyEntitled;
-    BOOL _isSharingPrivateInterfaceEntitled;
+    unsigned int _invalidated;
+    unsigned int _isForeground;
     BOOL _isUsingUbiquity;
     NSMutableDictionary *_runningAcceptOperations;
     BRCAccountSession *_session;
+    brc_task_tracker *_tracker;
+    struct { 
+        unsigned int val[8]; 
+    } auditToken;
 }
 
 @property (nonatomic, readonly) NSString *bundleID;
@@ -38,19 +35,14 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)__cacheEntitlements;
 - (void)_addExternalDocumentReferenceTo:(id)arg1 underParent:(id)arg2 forceReparent:(BOOL)arg3 reply:(id /* block */)arg4;
 - (BOOL)_canCreateContainerWithID:(id)arg1 error:(id*)arg2;
-- (BOOL)_cloudEnabledPrecheckStatusForContainerIDs:(id)arg1 bundleID:(id)arg2;
-- (BOOL)_cloudEnabledStatusForContainerIDs:(id)arg1 bundleID:(id)arg2 auditToken:(struct { unsigned int x1[8]; })arg3;
-- (BOOL)_cloudSyncTCCDisabledForContainerMeta:(id)arg1 disabledBundleIDs:(id)arg2;
-- (id)_containerIDsForPid:(int)arg1;
 - (id)_disabledBundleIDs;
 - (BOOL)_entitlementBooleanValueForKey:(id)arg1;
 - (id)_entitlementValueForKey:(id)arg1 ofClass:(Class)arg2;
 - (BOOL)_hasAccessToContainerID:(id)arg1 error:(id*)arg2;
 - (BOOL)_hasPrivateIPCEntitlementForSelector:(SEL)arg1 error:(id*)arg2;
-- (BOOL)_isContainerAccessAllowed;
+- (BOOL)_isAutomationEntitled;
 - (BOOL)_isContainerProxyEntitled;
 - (BOOL)_isContainerProxyWithError:(id*)arg1;
 - (void)_setupContainerID:(id)arg1 andSendReply:(id /* block */)arg2;
@@ -63,16 +55,15 @@
 - (BOOL)canAccessPath:(const char *)arg1 needsWrite:(BOOL)arg2;
 - (BOOL)canAccessPhysicalURL:(id)arg1;
 - (BOOL)cloudEnabledStatus;
-- (BOOL)cloudEnabledStatusForPID:(int)arg1;
 - (id)connection;
-- (id)copyContainerIDsForPid:(int)arg1 error:(id*)arg2;
 - (id)defaultContainerID;
 - (id)description;
 - (BOOL)dieOnInvalidate;
+- (void)dumpToContext:(id)arg1;
 - (id)entitledContainerIDs;
 - (BOOL)hasPrivateSharingInterfaceEntitlement;
 - (id)identifier;
-- (id)initWithConnection:(id)arg1 session:(id)arg2;
+- (id)initWithConnection:(id)arg1;
 - (void)invalidate;
 - (BOOL)isSandboxed;
 - (BOOL)isUsingUbiquity;
@@ -81,7 +72,10 @@
 - (void)removeContainer:(id)arg1;
 - (id)session;
 - (void)setIsUsingUbiquity:(BOOL)arg1;
+- (void)setPrivilegesDescriptor:(id)arg1;
 - (void)setSession:(id)arg1;
+- (void)setupNonSandboxedAccessForUbiquityContainers:(id)arg1 forBundleID:(id)arg2;
 - (id)setupPrivateContainer:(id)arg1 root:(id)arg2 error:(id*)arg3;
+- (void)wait;
 
 @end

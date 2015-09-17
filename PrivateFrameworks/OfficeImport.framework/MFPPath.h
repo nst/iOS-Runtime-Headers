@@ -3,7 +3,7 @@
  */
 
 @interface MFPPath : NSObject {
-    OITSDBezierPath *mPath;
+    TSUBezierPath *mPath;
 }
 
 - (void)dealloc;

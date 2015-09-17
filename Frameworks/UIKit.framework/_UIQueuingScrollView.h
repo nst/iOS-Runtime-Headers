@@ -42,6 +42,7 @@
 @property (nonatomic) <_UIQueuingScrollViewDelegate> *qDelegate;
 @property (nonatomic, readonly) UIView *visibleView;
 
+- (void).cxx_destruct;
 - (unsigned int)_abuttedPagingEdges;
 - (void)_adjustContentInsets;
 - (void)_boundsDidChangeToSize:(struct CGSize { float x1; float x2; })arg1;
@@ -80,7 +81,7 @@
 - (id)_viewBefore:(BOOL)arg1 view:(id)arg2;
 - (id)_viewBeforeView:(id)arg1;
 - (id)_visibleView;
-- (void)dealloc;
+- (BOOL)canBecomeFocused;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })disabledScrollingRegion;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 navigationOrientation:(int)arg2;
 - (BOOL)isManualScrollInProgress;

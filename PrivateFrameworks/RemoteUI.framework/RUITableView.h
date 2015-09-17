@@ -2,14 +2,14 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUITableView : RUIElement <RUITableViewRowDelegate, RUITableViewSectionDelegate, UITableViewDataSource, UITableViewDelegate, UIWebViewDelegate> {
+@interface RUITableView : RUIElement <RUITableViewRowDelegate, RUITableViewSectionDelegate, RUIWebViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     UIDatePicker *_datePicker;
     RUITableViewRow *_defaultFirstResponderRow;
     NSIndexPath *_embeddedPickerRowIndexPath;
     NSDictionary *_footerViewAttributes;
     float _fullscreenCellHeight;
-    RUITableHeaderView *_headerView;
-    NSDictionary *_headerViewAttributes;
+    NSDictionary *_headerAttributes;
+    NSString *_headerText;
     float _lastLayoutWidth;
     RUIObjectModel<RUITableViewDelegate> *_objectModel;
     RUIBarButtonItem *_oldLeftBarButtonItemForPicker;
@@ -24,6 +24,8 @@
     BOOL _showDatePicker;
     BOOL _showSelectPicker;
     BOOL _showingPickerNavBarButtons;
+    NSDictionary *_subHeaderAttributes;
+    NSString *_subHeaderText;
     UITableView *_tableView;
 }
 
@@ -33,8 +35,8 @@
 @property (nonatomic, retain) NSDictionary *footerViewAttributes;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *headerTitle;
-@property (nonatomic, readonly) RUITableHeaderView *headerView;
-@property (nonatomic, retain) NSDictionary *headerViewAttributes;
+@property (nonatomic, readonly) RUIHeaderView *headerView;
+@property (nonatomic, readonly) NSDictionary *headerViewAttributes;
 @property (nonatomic) RUIObjectModel<RUITableViewDelegate> *objectModel;
 @property (nonatomic, readonly) NSMutableArray *sections;
 @property (getter=isShowingPicker, nonatomic, readonly) BOOL showingPicker;
@@ -45,12 +47,14 @@
 - (void)_clearPickers;
 - (void)_datePickerRevert;
 - (void)_enumerateRowsUsingBlock:(id /* block */)arg1;
-- (void)_handleLinkPress:(id)arg1 attributes:(id)arg2;
 - (void)_hideDatePickerNavBarButtonsIfNeeded;
+- (void)_loadHeaderView;
 - (id)_objectModelIndexPathForIndexPath:(id)arg1;
 - (void)_registerForNotifications:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectPickerFrame;
 - (void)_setBottomInset:(float)arg1;
+- (void)_setHeaderText:(id)arg1 attributes:(id)arg2;
+- (void)_setSubHeaderText:(id)arg1 attributes:(id)arg2;
 - (void)_showDatePickerNavBarButtonsIfNeededForRow:(id)arg1;
 - (void)_textChanged:(id)arg1;
 - (void)activateRowAtIndexPath:(id)arg1 animated:(BOOL)arg2;
@@ -65,6 +69,7 @@
 - (id)headerView;
 - (id)headerViewAttributes;
 - (void)hidePickerViewAnimated:(BOOL)arg1;
+- (id)indexPathForPreferredFocusedViewInTableView:(id)arg1;
 - (id)indexPathForRow:(id)arg1;
 - (id)init;
 - (BOOL)isShowingPicker;
@@ -72,19 +77,21 @@
 - (id)objectModel;
 - (id)objectModelRowForIndexPath:(id)arg1;
 - (void)populatePostbackDictionary:(id)arg1;
-- (void)rowActivatedLink:(id)arg1 attributes:(id)arg2;
-- (void)rowActivatedLink:(id)arg1 attributes:(id)arg2 completion:(id /* block */)arg3;
-- (void)rowDidChange:(id)arg1;
+- (void)row:(id)arg1 activatedElement:(id)arg2;
+- (void)rowDidChange:(id)arg1 action:(int)arg2;
 - (void)rowDidEndEditing:(id)arg1;
 - (void)rowIsFirstResponder:(id)arg1;
+- (id)rowWithIdentifier:(id)arg1;
 - (void)scrollViewWillBeginDragging:(id)arg1;
-- (void)sectionActivatedLink:(id)arg1 attributes:(id)arg2 completion:(id /* block */)arg3;
+- (void)section:(id)arg1 activatedElement:(id)arg2 completion:(id /* block */)arg3;
 - (id)sections;
 - (void)setAttributes:(id)arg1;
 - (void)setDefaultFirstResponderRow:(id)arg1;
 - (void)setFooterViewAttributes:(id)arg1;
 - (void)setHeaderTitle:(id)arg1;
-- (void)setHeaderViewAttributes:(id)arg1;
+- (void)setImage:(id)arg1;
+- (void)setImageAlignment:(int)arg1;
+- (void)setImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setObjectModel:(id)arg1;
 - (void)setSelectedRadioGroupRow:(id)arg1;
 - (void)showPickerViewForRow:(id)arg1 animated:(BOOL)arg2;
@@ -118,6 +125,6 @@
 - (void)viewDidLayout;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
-- (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
+- (BOOL)webViewOM:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 
 @end

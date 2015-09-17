@@ -10,7 +10,7 @@
 
 @optional
 
-- (void)commitThumbnail:(TSUImage *)arg1 identifier:(id <TSDThumbnailIdentifier>)arg2;
+- (void)commitThumbnail:(TSUImage *)arg1 identifier:(id <TSDThumbnailIdentifier>)arg2 datasThatNeedDownload:(NSSet *)arg3;
 - (BOOL)shouldCallCommit;
 
 @end

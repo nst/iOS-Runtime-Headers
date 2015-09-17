@@ -4,6 +4,7 @@
 
 @interface GCControllerMBDelegate : NSObject {
     id /* block */ _completionHandler;
+    struct BTDiscoveryAgentImpl { } *_discoveryAgent;
     struct BTPairingAgentImpl { } *_pairingAgent;
     struct BTSessionImpl { } *_session;
     NSTimer *_timer;

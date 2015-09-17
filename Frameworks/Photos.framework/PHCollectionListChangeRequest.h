@@ -28,6 +28,7 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, readonly) NSString *uuid;
 
++ (id)_changeRequestForCollectionList:(id)arg1 optionalChildCollections:(id)arg2;
 + (id)changeRequestForCollectionList:(id)arg1;
 + (id)changeRequestForCollectionList:(id)arg1 childCollections:(id)arg2;
 + (id)creationRequestForCollectionListWithTitle:(id)arg1;
@@ -63,6 +64,7 @@
 - (void)moveChildCollectionsAtIndexes:(id)arg1 toIndex:(unsigned int)arg2;
 - (id)mutations;
 - (id)objectID;
+- (void)performTransactionCompletionHandlingInPhotoLibrary:(id)arg1;
 - (id)placeholderForCreatedCollectionList;
 - (void)removeChildCollection:(id)arg1;
 - (void)removeChildCollectionFromChildCollectionsAtIndex:(unsigned int)arg1;

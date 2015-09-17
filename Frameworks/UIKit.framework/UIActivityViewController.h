@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIActivityViewController : UIViewController <SFAirDropActivityViewControllerDelegate, UIActivityGroupViewControllerDataSource, UIActivityGroupViewControllerDelegate, UIAlertControllerContaining, UIViewControllerRestoration> {
+@interface UIActivityViewController : UIViewController <SFAirDropActivityViewControllerDelegate, UIActivityGroupViewControllerDataSource, UIActivityGroupViewControllerDelegate, UIAlertControllerContaining, UIAlertControllerVisualStyleProviding, UIViewControllerRestoration> {
     id /* block */ __popoverDismissalAction;
     UIActivity *_activity;
     UIAlertAction *_activityAlertCancelAction;
@@ -59,13 +59,14 @@
 @property (nonatomic, copy) id /* block */ completionWithItemsHandler;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) id /* block */ dismissCompletionHandler;
 @property (nonatomic) int excludedActivityCategories;
 @property (nonatomic, copy) NSArray *excludedActivityTypes;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSArray *includedActivityTypes;
 @property (nonatomic, retain) NSString *mailAutosaveIdentifier;
 @property (nonatomic) int originalPopoverBackgroundStyle;
-@property (nonatomic) Class originalPopoverBackgroundViewClass;
+@property (nonatomic, retain) Class originalPopoverBackgroundViewClass;
 @property (nonatomic) BOOL performActivityForStateRestoration;
 @property (nonatomic, copy) id /* block */ preCompletionHandler;
 @property (nonatomic) BOOL shouldMatchOnlyUserElectedExtensions;
@@ -90,6 +91,7 @@
 + (id)_thumbnailImageForActivityItem:(id)arg1 activity:(id)arg2;
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)_activityItemValues;
 - (void)_addToActiveActivityViewControllers;
 - (id)_availableActivities;
@@ -118,6 +120,7 @@
 - (void)_resetAfterActivity:(BOOL)arg1;
 - (void)_setDarkStyleOnLegacyApp;
 - (void)_setPopoverController:(id)arg1;
+- (BOOL)_shouldExcludeActivityType:(id)arg1;
 - (BOOL)_shouldShowSystemActivity:(id)arg1;
 - (id)_titleForActivity:(id)arg1;
 - (void)_updateActivities:(id)arg1 animated:(BOOL)arg2;
@@ -149,12 +152,16 @@
 - (id /* block */)completionWithItemsHandler;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
+- (id /* block */)dismissCompletionHandler;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (int)excludedActivityCategories;
 - (id)excludedActivityTypes;
 - (id)includedActivityTypes;
+- (id)init;
 - (id)initWithActivityItems:(id)arg1 applicationActivities:(id)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)mailAutosaveIdentifier;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (int)originalPopoverBackgroundStyle;
@@ -181,6 +188,7 @@
 - (void)setCompletedProviderCount:(int)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setCompletionWithItemsHandler:(id /* block */)arg1;
+- (void)setDismissCompletionHandler:(id /* block */)arg1;
 - (void)setExcludedActivityCategories:(int)arg1;
 - (void)setExcludedActivityTypes:(id)arg1;
 - (void)setIncludedActivityTypes:(id)arg1;
@@ -212,8 +220,14 @@
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (id)visualStyleForAlertControllerStyle:(int)arg1 traitCollection:(id)arg2 descriptor:(id)arg3;
 - (BOOL)willDismissActivityViewController;
 - (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
+- (id)_fiui_excludedActivityTypesForFitnessSharing;
+- (void)fiui_excludeActivityTypesForFitnessSharing;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
 

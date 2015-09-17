@@ -5,19 +5,13 @@
 @interface PLCloudTrigger : NSObject {
     NSMutableDictionary *_subscriptions;
     NSObject<OS_dispatch_queue> *_triggerQueue;
-    unsigned int _type;
 }
-
-@property (nonatomic, readonly, retain) NSDictionary *subscriptions;
-@property (nonatomic, readonly) unsigned int type;
 
 - (void)activate;
 - (void)dealloc;
-- (id)initWithType:(unsigned int)arg1;
+- (id)init;
 - (void)subscribeWithInstance:(id)arg1 selector:(SEL)arg2;
-- (id)subscriptions;
 - (void)triggerWithContextObject:(id)arg1;
-- (unsigned int)type;
 - (void)unsubscribeWithInstance:(id)arg1;
 
 @end

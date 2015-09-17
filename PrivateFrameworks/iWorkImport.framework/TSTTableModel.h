@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/iWorkImport.framework/iWorkImport
  */
 
-@interface TSTTableModel : TSPObject <TSDMixing, TSTCustomStrokeProviding, TSTTableHiddenRowColumnProviding, TSTTableMergeRangeProviding, TSTTableStrokeProviding> {
+@interface TSTTableModel : TSPObject <TSDMixing, TSTCustomStrokeProviding, TSTTableHiddenRowColumnProviding, TSTTableInternalGeometryProviding, TSTTableMergeRangeProviding, TSTTableStrokeProviding> {
     TSCECalculationEngine *mCalcEngine;
     TSTCellDictionary *mCellsPendingWrite;
     TSCECellCoordinateVector *mCellsToInvalidateAfterRecalc;
@@ -88,7 +88,7 @@
 @property (nonatomic, readonly) TSCECellCoordinateVector *cellsToInvalidateNonoverflowingAfterRecalc;
 @property (nonatomic, retain) TSTColumnRowUIDMap *columnRowUIDMap;
 @property NSArray *columnWidths;
-@property (nonatomic) TSTConditionalStyleFormulaOwner *conditionalStyleFormulaOwner;
+@property (nonatomic, retain) TSTConditionalStyleFormulaOwner *conditionalStyleFormulaOwner;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) TSTCell *defaultBodyCell;
 @property (nonatomic, readonly) TSTCell *defaultFooterRowCell;
@@ -173,7 +173,6 @@
 + (struct __CFDictionary { }*)newIDMapForPastedTablesInDrawables:(id)arg1 calculationEngine:(id)arg2;
 + (unsigned int)tableAreaForCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 inTableWithHeaderColumns:(unsigned short)arg2 headerRows:(unsigned short)arg3 footerRows:(unsigned short)arg4 totalRows:(unsigned short)arg5;
 
-- (id).cxx_construct;
 - (id)UIDSetForIndexes:(id)arg1 asRows:(BOOL)arg2;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })actualHeaderColumnRange;
 - (void)addPasteboardCustomFormatsToDocumentAndUpdateCellsInRegion:(id)arg1;
@@ -201,7 +200,7 @@
 - (id)cellAtCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (id)cellBorderAtCellID:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })cellIDForCellUID:(const struct TSTCellUID { struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_1_1_1; } x1; struct UUIDData<TSP::UUIDData> { union { unsigned char x_1_2_1[16]; struct { unsigned char x_2_3_1; unsigned char x_2_3_2; unsigned char x_2_3_3; unsigned char x_2_3_4; unsigned char x_2_3_5; unsigned char x_2_3_6; unsigned char x_2_3_7; unsigned char x_2_3_8; unsigned char x_2_3_9; unsigned char x_2_3_10; unsigned char x_2_3_11; unsigned char x_2_3_12; unsigned char x_2_3_13; unsigned char x_2_3_14; unsigned char x_2_3_15; unsigned char x_2_3_16; } x_1_2_2; struct { unsigned long long x_3_3_1; unsigned long long x_3_3_2; } x_1_2_3; } x_2_1_1; } x2; }*)arg1;
-- (id)cellMapForUIDRange:(const struct TSTCellUIDRange { struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_1_1_1; struct UUIDData<TSP::UUIDData> {} *x_1_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_1_1_3; } x1; struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_2_1_1; struct UUIDData<TSP::UUIDData> {} *x_2_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_2_1_3; } x2; }*)arg1;
+- (id)cellMapForRegion:(id)arg1 uidBased:(BOOL)arg2;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cellRangeForTableArea:(unsigned int)arg1;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })cellRangeForUIDRange:(const struct TSTCellUIDRange { struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_1_1_1; struct UUIDData<TSP::UUIDData> {} *x_1_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_1_1_3; } x1; struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_2_1_1; struct UUIDData<TSP::UUIDData> {} *x_2_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_2_1_3; } x2; }*)arg1;
 - (id)cellRegionForUIDRange:(const struct TSTCellUIDRange { struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_1_1_1; struct UUIDData<TSP::UUIDData> {} *x_1_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_1_1_3; } x1; struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_2_1_1; struct UUIDData<TSP::UUIDData> {} *x_2_1_2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_2_1; } x_2_1_3; } x2; }*)arg1;
@@ -248,6 +247,7 @@
 - (id)duplicateFilterSet;
 - (id)duplicateFilterSetInUidForm;
 - (void)enableFilterSet:(BOOL)arg1;
+- (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })expandCellRangeToCoverMergedCells:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)expandCellRegionToCoverMergedCells:(id)arg1;
 - (id)filterSet;
 - (void)filterSetUpdated;
@@ -302,6 +302,7 @@
 - (int)insertColumnsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 uids:(const struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; }*)arg2 metadata:(id)arg3;
 - (void)insertRowsAtIndex:(unsigned short)arg1 count:(unsigned short)arg2 addBefore:(BOOL)arg3;
 - (int)insertRowsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 uids:(const struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; }*)arg2 metadata:(id)arg3;
+- (int)insertRowsInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 uids:(const struct vector<TSU::UUIDData<TSP::UUIDData>, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x1; struct UUIDData<TSP::UUIDData> {} *x2; struct __compressed_pair<TSU::UUIDData<TSP::UUIDData> *, std::__1::allocator<TSU::UUIDData<TSP::UUIDData> > > { struct UUIDData<TSP::UUIDData> {} *x_3_1_1; } x3; }*)arg2 metadata:(id)arg3 unsetFilterHidingAction:(BOOL)arg4;
 - (BOOL)isCellRangeHidden:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (BOOL)isColumnHidden:(unsigned char)arg1;
 - (BOOL)isColumnHidden:(unsigned char)arg1 forAction:(unsigned char)arg2;
@@ -311,7 +312,6 @@
 - (id)mappingForSortWithRules:(id)arg1 inRows:(id)arg2;
 - (int)maxStrokeOrder;
 - (id)mergeOwner;
-- (void)mergeRangeAnchor:(struct { unsigned short x1; unsigned char x2; unsigned char x3; })arg1 rewrittenFor:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 - (id)mergeRangesForCellRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)mergeRangesForCellRegion:(id)arg1;
 - (id)mergedGridIndicesForDirection:(int)arg1;

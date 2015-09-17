@@ -70,9 +70,8 @@
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
 + (id)mf_edgeToEdgeImageAttachmentStyle;
-+ (float)mf_maxPhotoWidth;
 
-- (void)mf_applyEdgeToEdgeStyle;
+- (void)mf_applyEdgeToEdgeStyleWithViewportWidth:(float)arg1;
 - (void)mf_constrainImageToSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)mf_isEdgeToEdgeFormatted;
 - (BOOL)mf_shouldFormatEdgeToEdge;

@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (BOOL)_setValue:(float)arg1;
+- (BOOL)_setValue:(float)arg1 queue:(id)arg2;
 - (id)collection;
 - (id)initWithCollection:(id)arg1 flipped:(BOOL)arg2 digital:(BOOL)arg3;
 - (BOOL)isAnalog;
@@ -22,6 +23,7 @@
 - (id)negative;
 - (id)positive;
 - (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1 queue:(id)arg2;
 - (void)setValueChangedHandler:(id /* block */)arg1;
 - (float)value;
 - (id /* block */)valueChangedHandler;

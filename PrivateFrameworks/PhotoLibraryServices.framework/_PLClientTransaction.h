@@ -3,6 +3,9 @@
  */
 
 @interface _PLClientTransaction : PLClientServerTransaction {
+    int _addChangeScopesBatch;
+    NSSet *_batchScopes;
+    NSSet *_changeScopes;
     NSObject<OS_dispatch_semaphore> *_fdResourceSemaphore;
     int _fileDescriptor;
     NSString *_path;
@@ -18,14 +21,21 @@
 + (id)_fdResourceSemaphore;
 
 - (void)abortTransaction;
+- (void)addChangeScopes:(id)arg1;
+- (id)changeScopes;
 - (void)completeTransaction;
+- (void)completeTransactionScope:(id)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)fdResourceSemaphore;
 - (int)fileDescriptor;
 - (id)init;
+- (BOOL)isClientTransaction;
 - (id)path;
+- (void)persistTransactionScopes:(id)arg1;
+- (void)popChangeScopesBatch;
 - (id)processAssertion;
+- (void)pushChangeScopesBatch;
 - (void)setFdResourceSemaphore:(id)arg1;
 - (void)setFileDescriptor:(int)arg1;
 - (void)setPath:(id)arg1;

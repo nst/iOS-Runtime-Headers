@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
  */
 
-@interface AXThreadTimer : NSObject <AXTimer> {
+@interface AXThreadTimer : NSObject <AXAccessQueueTimer> {
     BOOL _automaticallyCancelPendingBlockUponSchedulingNewBlock;
     id /* block */ _cancelBlock;
     AXThreadTimerTask *_task;

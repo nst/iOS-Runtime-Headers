@@ -4,4 +4,6 @@
 
 @interface MCMPluginKitPluginDataContainer : MCMContainer
 
+- (BOOL)wipeAllMyContainerContent:(id*)arg1;
+
 @end

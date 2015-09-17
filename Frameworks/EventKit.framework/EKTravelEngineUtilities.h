@@ -5,8 +5,14 @@
 @interface EKTravelEngineUtilities : NSObject
 
 + (id)authorizationStatusAsString:(int)arg1;
-+ (id)calendarLocationBundle;
 + (id)formattedLocationCoordinates:(id)arg1;
++ (int)geoRouteHypothesisTravelStateForString:(id)arg1;
++ (id)geoTrafficDensityAsString:(unsigned int)arg1;
++ (unsigned int)geoTrafficDensityForString:(id)arg1;
 + (id)geoTransportTypeAsString:(int)arg1;
++ (int)geoTransportTypeForCalLocationRoutingMode:(int)arg1;
++ (int)geoTransportTypeForString:(id)arg1;
++ (id)hypothesizerStateAsString:(unsigned int)arg1;
++ (BOOL)travelStateIndicatesTravelingTowardDestination:(int)arg1;
 
 @end

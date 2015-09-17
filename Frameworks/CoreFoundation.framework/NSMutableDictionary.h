@@ -36,10 +36,6 @@
 - (void)setObjects:(id)arg1 forKeys:(id)arg2;
 - (void)setObjects:(const id*)arg1 forKeys:(const id*)arg2 count:(unsigned int)arg3;
 
-// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
-
-- (void)addEntriesFromDictionaryWithRecursion:(id)arg1;
-
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 - (void)_web_setBool:(BOOL)arg1 forKey:(id)arg2;
@@ -50,14 +46,13 @@
 - (id)initWithContentsOfURL:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (BOOL)pu_containsIndexPath:(id)arg1;
+
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)_dictionaryWithContentsOfDictionaries:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/AOSNotification.framework/AOSNotification
-
-- (void)safelyMapKey:(id)arg1 toObject:(id)arg2;
-- (void)safelySetObject:(id)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/AirPortAssistant.framework/AirPortAssistant
 
@@ -75,6 +70,10 @@
 // Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
 
 - (void)bw_addEntriesFromDictionaryWithRecursion:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
+
+- (void)_cn_setNonNilObject:(id)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
@@ -97,7 +96,12 @@
 
 - (void)cr_setNonNilObject:(id)arg1 forKey:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/FindMyDevice.framework/FindMyDevice
+// Image: /System/Library/PrivateFrameworks/CrashReporterSupport.framework/CrashReporterSupport
+
+- (unsigned int)logCounter_getForSubtype:(id)arg1;
+- (void)logCounter_incrementForSubtype:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FMCoreLite.framework/FMCoreLite
 
 - (void)safelyMapKey:(id)arg1 toObject:(id)arg2;
 - (void)safelySetObject:(id)arg1 forKey:(id)arg2;
@@ -154,14 +158,20 @@
 
 - (void)npkSetObject:(id)arg1 forKey:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
+- (void)naui_safeSetObject:(id)arg1 forKey:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)dictionaryByInvertingDictionary:(id)arg1;
-+ (id)dictionaryByInvertingDictionaryIfPossible:(id)arg1;
++ (id)tsu_dictionaryByInvertingDictionary:(id)arg1;
++ (id)tsu_dictionaryByInvertingDictionaryIfPossible:(id)arg1;
 
 - (id)addToCacheAndReturnCssString:(id)arg1;
-- (id)objectForKey:(id)arg1 withDefaultOfClass:(Class)arg2;
-- (id)objectForKey:(id)arg1 withDefaultUsingBlock:(id /* block */)arg2;
+- (id)tsu_objectForKey:(id)arg1 withDefaultOfClass:(Class)arg2;
+- (id)tsu_objectForKey:(id)arg1 withDefaultUsingBlock:(id /* block */)arg2;
+- (void)tsu_setNonNilObject:(id)arg1 forKey:(id)arg2;
+- (void)tsu_setNonNilValueForKey:(id)arg1 fromDictionary:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
 
@@ -194,6 +204,10 @@
 
 - (void)pl_applyOrientation:(int)arg1 toNormalizedPointWithXKey:(id)arg2 yKey:(id)arg3;
 - (void)pl_enforceCorrectValuesForMinKey:(id)arg1 maxKey:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/ServerDocsProtocol.framework/ServerDocsProtocol
+
++ (id)sd_dictionaryFromDictionary:(id)arg1 forKeys:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/SoftwareUpdateServices.framework/SoftwareUpdateServices
 

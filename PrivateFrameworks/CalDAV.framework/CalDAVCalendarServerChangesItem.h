@@ -8,11 +8,10 @@
 
 @property (nonatomic, retain) NSMutableSet *changedProperties;
 
+- (void).cxx_destruct;
 - (void)addChangedProperty:(id)arg1;
 - (id)changedProperties;
 - (id)copyParseRules;
-- (void)dealloc;
-- (id)description;
 - (id)init;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (void)setChangedProperties:(id)arg1;

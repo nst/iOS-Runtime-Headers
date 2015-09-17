@@ -33,7 +33,7 @@
 
 - (struct CGColor { }*)backgroundColor;
 - (id)cachedThumbnail:(id)arg1;
-- (void)commitThumbnail:(id)arg1 identifier:(id)arg2;
+- (void)commitThumbnail:(id)arg1 identifier:(id)arg2 datasThatNeedDownload:(id)arg3;
 - (void)dealloc;
 - (double)delayBeforeRedraw;
 - (id)delegate;

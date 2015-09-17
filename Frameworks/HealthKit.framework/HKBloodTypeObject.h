@@ -2,13 +2,20 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKBloodTypeObject : NSObject {
+@interface HKBloodTypeObject : NSObject <NSCopying, NSSecureCoding> {
     int _bloodType;
 }
 
 @property (readonly) int bloodType;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)_initWithBloodType:(int)arg1;
 - (int)bloodType;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
+- (id)initWithCoder:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

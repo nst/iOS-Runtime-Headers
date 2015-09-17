@@ -2,11 +2,12 @@
    Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
  */
 
-@interface __NSCFBackgroundSessionTask : NSURLSessionTask <NSURLSessionTaskSubclass> {
+@interface __NSCFBackgroundSessionTask : __NSCFURLSessionTask <NSURLSessionTaskSubclass> {
     unsigned int _ident;
     NSError *_immediateError;
     <NDBackgroundSessionProtocol> *_remoteSession;
     BOOL _sentCancel;
+    BOOL _sentDidFinish;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -17,6 +18,8 @@
 @property (retain) <NDBackgroundSessionProtocol> *remoteSession;
 @property (readonly) Class superclass;
 
+- (void)_onqueue_adjustBytesPerSecondLimit:(long long)arg1;
+- (void)_onqueue_adjustLoadingPoolPriority;
 - (void)_onqueue_adjustPoolPriority;
 - (void)_onqueue_adjustPriorityHint:(float)arg1;
 - (void)_onqueue_cancel;

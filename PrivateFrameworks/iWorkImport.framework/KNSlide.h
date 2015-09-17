@@ -53,7 +53,6 @@
 - (void)setMaster:(id)arg1;
 - (void)setNote:(id)arg1;
 - (void)setToMaster:(id)arg1;
-- (void)setToMasterUsingBlob:(id)arg1;
 - (BOOL)slideObjectsLayerWithMaster;
 - (void)updateSlideSpecificHyperlinkMapForStorage:(id)arg1 oldHyperlink:(id)arg2 newHyperlink:(id)arg3;
 - (void)updateSlideSpecificLinkMapForInfo:(id)arg1 newHyperlink:(id)arg2;

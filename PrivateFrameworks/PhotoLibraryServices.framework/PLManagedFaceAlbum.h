@@ -11,9 +11,4 @@
 + (id)entityName;
 + (id)insertInManagedObjectContext:(id)arg1;
 
-- (short)keyAssetFaceIdentifier;
-- (int)keyAssetFaceThumbnailIndex;
-- (void)setKeyAssetFaceIdentifier:(short)arg1;
-- (void)setKeyAssetFaceThumbnailIndex:(int)arg1;
-
 @end

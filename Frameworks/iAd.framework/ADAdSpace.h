@@ -10,8 +10,10 @@
     NSString *_authenticationUserName;
     NSSet *_context;
     ADAdSpaceRemoteViewController *_creativeViewController;
+    ADAdActionPublicAttributes *_currentActionPublicAttributes;
     ADAdImpressionPublicAttributes *_currentAdImpressionPublicAttributes;
     NSString *_identifier;
+    BOOL _isModalInterstitial;
     double _lastSlowCheck;
     _ADRemoteViewController *_portraitOnlyViewController;
     <ADAdRecipient> *_recipient;
@@ -33,11 +35,13 @@
 @property (nonatomic, readonly) NSString *connectionAssertionIdentifier;
 @property (nonatomic, copy) NSSet *context;
 @property (nonatomic, retain) ADAdSpaceRemoteViewController *creativeViewController;
+@property (nonatomic, retain) ADAdActionPublicAttributes *currentActionPublicAttributes;
 @property (nonatomic, retain) ADAdImpressionPublicAttributes *currentAdImpressionPublicAttributes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *identifier;
+@property (nonatomic) BOOL isModalInterstitial;
 @property (nonatomic) double lastSlowCheck;
 @property (nonatomic, retain) _ADRemoteViewController *portraitOnlyViewController;
 @property (nonatomic, readonly) <ADAdRecipient> *recipient;
@@ -50,6 +54,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic) int visibility;
 @property (nonatomic) BOOL visibilityCheckScheduled;
+
++ (int)_modalTansitionStyleForTransitionType:(int)arg1;
 
 - (void)_clientApplicationDidBecomeActive;
 - (void)_clientApplicationDidEnterBackground;
@@ -82,13 +88,16 @@
 - (id)connectionAssertionIdentifier;
 - (id)context;
 - (id)creativeViewController;
+- (id)currentActionPublicAttributes;
 - (id)currentAdImpressionPublicAttributes;
 - (void)dealloc;
 - (id)description;
+- (void)determineActionForTapAtLocation:(struct CGPoint { float x1; float x2; })arg1 inFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 completeHandler:(id /* block */)arg3;
 - (void)executeBannerViewActionFrom:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withTapLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)identifier;
 - (id)initForRecipient:(id)arg1;
 - (void)interstitialWasRemovedFromSuperview;
+- (BOOL)isModalInterstitial;
 - (double)lastSlowCheck;
 - (void)loadAd:(id)arg1;
 - (id)portraitOnlyViewController;
@@ -107,8 +116,10 @@
 - (void)setAuthenticationUserName:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setCreativeViewController:(id)arg1;
+- (void)setCurrentActionPublicAttributes:(id)arg1;
 - (void)setCurrentAdImpressionPublicAttributes:(id)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setIsModalInterstitial:(BOOL)arg1;
 - (void)setLastSlowCheck:(double)arg1;
 - (void)setPortraitOnlyViewController:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;

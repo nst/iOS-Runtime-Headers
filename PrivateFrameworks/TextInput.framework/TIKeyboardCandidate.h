@@ -4,11 +4,14 @@
 
 @interface TIKeyboardCandidate : NSObject <NSCopying, NSSecureCoding, TIKeyboardCandidateCoding> {
     NSString *_alternativeText;
+    NSString *_annotationText;
 }
 
 @property (nonatomic, copy) NSString *alternativeText;
+@property (nonatomic, copy) NSString *annotationText;
 @property (nonatomic, readonly) NSString *candidate;
 @property (getter=isCompletionCandidate, nonatomic, readonly) BOOL completionCandidate;
+@property (nonatomic, readonly) int cursorMovement;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) unsigned int deleteCount;
 @property (readonly, copy) NSString *description;
@@ -29,8 +32,10 @@
 + (int)type;
 
 - (id)alternativeText;
+- (id)annotationText;
 - (id)candidate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (int)cursorMovement;
 - (void)dealloc;
 - (unsigned int)deleteCount;
 - (void)encodeWithCandidateResultSetCoder:(id)arg1;
@@ -49,6 +54,7 @@
 - (BOOL)isInlineCompletionCandidate;
 - (id)label;
 - (void)setAlternativeText:(id)arg1;
+- (void)setAnnotationText:(id)arg1;
 - (unsigned int)usageTrackingMask;
 - (unsigned int)wordOriginFeedbackID;
 

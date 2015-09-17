@@ -3,7 +3,7 @@
  */
 
 @interface VKPuckAnimator : NSObject {
-    VKAnimation *_animation;
+    VKTimedAnimation *_animation;
     unsigned int _behavior;
     VKRunningCurve *_curve;
     <VKPuckAnimatorDelegate> *_delegate;

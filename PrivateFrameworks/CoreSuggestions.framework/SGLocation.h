@@ -2,9 +2,10 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@interface SGLocation : NSObject <SGObject> {
+@interface SGLocation : SGObject <NSCopying, NSSecureCoding, SGEventLocationForGeocode> {
     double _accuracy;
     NSString *_address;
+    NSData *_handle;
     NSString *_label;
     double _latitude;
     unsigned int _locationType;
@@ -14,12 +15,17 @@
 
 @property (nonatomic, readonly) double accuracy;
 @property (nonatomic, readonly) NSString *address;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (getter=isGeocoded, nonatomic, readonly) BOOL geocoded;
+@property (nonatomic, readonly) NSData *handle;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *label;
 @property (nonatomic, readonly) double latitude;
 @property (nonatomic, readonly) unsigned int locationType;
 @property (nonatomic, readonly) double longitude;
 @property (nonatomic, readonly) double quality;
+@property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 
@@ -30,12 +36,22 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (double)geocodeAccuracy;
+- (id)geocodeAddress;
+- (id)geocodeHandle;
+- (BOOL)geocodeIsEnd;
+- (BOOL)geocodeIsStart;
+- (id)geocodeLabel;
+- (double)geocodeLatitude;
+- (double)geocodeLongitude;
+- (id)geocodedLocationWithLatitude:(double)arg1 longitude:(double)arg2 accuracy:(double)arg3 handle:(id)arg4;
+- (id)handle;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLocation:(id)arg1 latitude:(double)arg2 longitude:(double)arg3 accuracy:(double)arg4;
-- (id)initWithType:(unsigned int)arg1 label:(id)arg2 address:(id)arg3 accuracy:(double)arg4 quality:(double)arg5;
-- (id)initWithType:(unsigned int)arg1 label:(id)arg2 address:(id)arg3 latitude:(double)arg4 longitude:(double)arg5 accuracy:(double)arg6 quality:(double)arg7;
-- (id)initWithType:(unsigned int)arg1 label:(id)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(double)arg5 quality:(double)arg6;
+- (id)initWithId:(id)arg1 origin:(id)arg2 type:(unsigned int)arg3 label:(id)arg4 address:(id)arg5 accuracy:(double)arg6 quality:(double)arg7;
+- (id)initWithId:(id)arg1 origin:(id)arg2 type:(unsigned int)arg3 label:(id)arg4 address:(id)arg5 latitude:(double)arg6 longitude:(double)arg7 accuracy:(double)arg8 quality:(double)arg9 handle:(id)arg10;
+- (id)initWithId:(id)arg1 origin:(id)arg2 type:(unsigned int)arg3 label:(id)arg4 latitude:(double)arg5 longitude:(double)arg6 accuracy:(double)arg7 quality:(double)arg8;
+- (id)initWithLocation:(id)arg1 latitude:(double)arg2 longitude:(double)arg3 accuracy:(double)arg4 handle:(id)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLocation:(id)arg1;
 - (BOOL)isGeocoded;

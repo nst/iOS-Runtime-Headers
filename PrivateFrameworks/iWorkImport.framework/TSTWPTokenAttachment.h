@@ -35,7 +35,6 @@
 @property (getter=neverShowsMenu, nonatomic) BOOL neverShowsMenu;
 @property (getter=isSelected, nonatomic) BOOL selected;
 
-- (id).cxx_construct;
 - (struct CGImage { }*)cachedImage;
 - (float)cachedImageScreenScale;
 - (id)copyIntoContext:(id)arg1;

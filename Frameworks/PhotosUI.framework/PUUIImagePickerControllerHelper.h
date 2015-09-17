@@ -11,8 +11,11 @@
 
 + (int)albumFilterForMediaTypes:(id)arg1;
 + (id)albumListViewControllerSpec;
++ (id)assetsFilterPredicateForMediaTypes:(id)arg1;
++ (id)collectionsFilterPredicateForMediaTypes:(id)arg1;
 + (id)gridViewControllerSpec;
 + (id)imagePickerControllerForViewController:(id)arg1;
++ (unsigned int)imagePickerTypesForMediaTypes:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_notifyImagePickerOfAssetAvailability:(id)arg1;

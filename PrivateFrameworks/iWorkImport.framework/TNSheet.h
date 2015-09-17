@@ -58,7 +58,6 @@
 + (BOOL)needsObjectUUID;
 + (id)sheetForSelectionModel:(id)arg1 outIsPaginated:(BOOL*)arg2;
 
-- (id).cxx_construct;
 - (void)addChildInfo:(id)arg1;
 - (float)bodyWidth;
 - (BOOL)canMoveDrawables:(id)arg1 toIndexes:(id)arg2;

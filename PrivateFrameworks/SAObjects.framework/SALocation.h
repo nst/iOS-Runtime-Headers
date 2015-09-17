@@ -2,13 +2,16 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SALocation : SADomainObject
+@interface SALocation : SADomainObject <SAAceComparable>
 
 @property (nonatomic, copy) NSNumber *accuracy;
 @property (nonatomic, copy) NSString *city;
 @property (nonatomic, copy) NSString *countryCode;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *entryPoints;
 @property (nonatomic, copy) NSData *forwardGeoData;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *label;
 @property (nonatomic, copy) NSNumber *latitude;
 @property (nonatomic, copy) NSNumber *longitude;
@@ -18,6 +21,7 @@
 @property (nonatomic, copy) NSString *stateCode;
 @property (nonatomic, copy) NSString *street;
 @property (nonatomic, copy) NSString *subThoroughfare;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *thoroughfare;
 @property (nonatomic, copy) NSString *timezoneId;
 @property (nonatomic, copy) NSNumber *travelDistance;
@@ -66,7 +70,6 @@
 - (id)timezoneId;
 - (id)travelDistance;
 - (id)travelTime;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 

@@ -23,8 +23,10 @@
 @property (nonatomic, retain) GEOPDUser *reviewer;
 @property (nonatomic, retain) NSMutableArray *snippets;
 
++ (id)reviewsForPlaceData:(id)arg1;
+
+- (id)_bestSnippet;
 - (void)addSnippet:(id)arg1;
-- (id)bestLocalizedSnippet;
 - (void)clearSnippets;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

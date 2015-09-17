@@ -3,6 +3,7 @@
  */
 
 @interface PDTransition : OADProperties {
+    NSNumber *duration;
     int mAdvanceAfterTime;
     BOOL mHasAdvanceAfterTime;
     BOOL mHasAdvanceOnClick;
@@ -14,8 +15,12 @@
     int mType;
 }
 
+@property (nonatomic, retain) NSNumber *duration;
+
 - (int)advanceAfterTime;
 - (void)dealloc;
+- (id)description;
+- (id)duration;
 - (BOOL)hasAdvanceAfterTime;
 - (BOOL)hasIsAdvanceOnClick;
 - (BOOL)hasSpeed;
@@ -25,6 +30,7 @@
 - (BOOL)isAdvanceOnClick;
 - (id)options;
 - (void)setAdvanceAfterTime:(int)arg1;
+- (void)setDuration:(id)arg1;
 - (void)setIsAdvanceOnClick:(BOOL)arg1;
 - (void)setOptions:(id)arg1;
 - (void)setSpeed:(int)arg1;

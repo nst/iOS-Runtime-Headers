@@ -4,11 +4,11 @@
 
 @interface SCNTransaction : NSObject
 
-+ (id)SCNJSExportProtocol;
 + (double)animationDuration;
 + (id)animationTimingFunction;
 + (void)begin;
 + (void)commit;
++ (void)commitImmediate;
 + (id /* block */)completionBlock;
 + (unsigned int)currentState;
 + (BOOL)disableActions;

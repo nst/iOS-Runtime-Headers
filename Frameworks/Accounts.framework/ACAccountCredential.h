@@ -21,6 +21,7 @@
 @property (nonatomic, copy) NSString *mapsToken;
 @property (nonatomic, copy) NSString *oauthRefreshToken;
 @property (nonatomic, copy) NSString *oauthToken;
+@property (nonatomic, copy) NSString *oauthTokenNoSync;
 @property (nonatomic, copy) NSString *oauthTokenSecret;
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *token;

@@ -10,6 +10,7 @@
 @property (nonatomic, readonly, retain) NSNumber *adamID;
 @property (nonatomic, readonly, retain) NSBundle *bundle;
 @property (nonatomic, readonly, retain) NSString *bundleID;
+@property (nonatomic, readonly, retain) NSString *bundleShortVersion;
 @property (nonatomic, readonly, retain) NSString *bundleVersion;
 @property (nonatomic, readonly, retain) NSNumber *externalVersion;
 @property (getter=isGameCenterEnabled, nonatomic, readonly) BOOL gameCenterEnabled;
@@ -24,6 +25,7 @@
 - (id)adamID;
 - (id)bundle;
 - (id)bundleID;
+- (id)bundleShortVersion;
 - (id)bundleURL;
 - (id)bundleVersion;
 - (void)dealloc;

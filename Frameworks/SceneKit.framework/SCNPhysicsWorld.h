@@ -13,6 +13,7 @@
         } _fields; 
     } _aether;
     NSMutableArray *_behaviors;
+    NSMutableSet *_bodies;
     SCNPhysicsContact *_contact;
     <SCNPhysicsContactDelegate> *_contactDelegate;
     struct btC3DDebugDraw { int (**x1)(); int x2; void *x3; } *_debugDrawer;
@@ -25,7 +26,6 @@
         float z; 
     } _gravity;
     BOOL _hasActiveFields;
-    id _reserved;
     float _scale;
     SCNScene *_scene;
     float _speed;
@@ -34,12 +34,12 @@
     struct btDiscreteDynamicsWorld { int (**x1)(); struct btAlignedObjectArray<btCollisionObject *> { struct btAlignedAllocator<btCollisionObject *, 16> { } x_2_1_1; int x_2_1_2; int x_2_1_3; struct btCollisionObject {} **x_2_1_4; bool x_2_1_5; } x2; struct btDispatcher {} *x3; struct btDispatcherInfo { float x_4_1_1; int x_4_1_2; int x_4_1_3; float x_4_1_4; bool x_4_1_5; struct btIDebugDraw {} *x_4_1_6; bool x_4_1_7; bool x_4_1_8; bool x_4_1_9; float x_4_1_10; bool x_4_1_11; float x_4_1_12; } x4; struct btBroadphaseInterface {} *x5; struct btIDebugDraw {} *x6; bool x7; int (*x8)(); int (*x9)(); void *x10; struct btContactSolverInfo { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; float x_11_1_5; int x_11_1_6; float x_11_1_7; float x_11_1_8; float x_11_1_9; float x_11_1_10; float x_11_1_11; int x_11_1_12; float x_11_1_13; float x_11_1_14; float x_11_1_15; float x_11_1_16; int x_11_1_17; int x_11_1_18; int x_11_1_19; float x_11_1_20; float x_11_1_21; } x11; float x12; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_13_1_1; int x_13_1_2; int x_13_1_3; struct btTypedConstraint {} **x_13_1_4; bool x_13_1_5; } x13; struct InplaceSolverIslandCallback {} *x14; struct btConstraintSolver {} *x15; struct btSimulationIslandManager {} *x16; struct btAlignedObjectArray<btTypedConstraint *> { struct btAlignedAllocator<btTypedConstraint *, 16> { } x_17_1_1; int x_17_1_2; int x_17_1_3; struct btTypedConstraint {} **x_17_1_4; bool x_17_1_5; } x17; struct btAlignedObjectArray<btRigidBody *> { struct btAlignedAllocator<btRigidBody *, 16> { } x_18_1_1; int x_18_1_2; int x_18_1_3; struct btRigidBody {} **x_18_1_4; bool x_18_1_5; } x18; struct btVector3 { float x_19_1_1[4]; } x19; float x20; bool x21; bool x22; bool x23; bool x24; struct btAlignedObjectArray<btActionInterface *> { struct btAlignedAllocator<btActionInterface *, 16> { } x_25_1_1; int x_25_1_2; int x_25_1_3; struct btActionInterface {} **x_25_1_4; bool x_25_1_5; } x25; int x26; struct btAlignedObjectArray<btPersistentManifold *> { struct btAlignedAllocator<btPersistentManifold *, 16> { } x_27_1_1; int x_27_1_2; int x_27_1_3; struct btPersistentManifold {} **x_27_1_4; bool x_27_1_5; } x27; bool x28; } *_world;
 }
 
+@property (nonatomic, readonly) NSArray *allBehaviors;
 @property <SCNPhysicsContactDelegate> *contactDelegate;
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } gravity;
 @property (nonatomic) float speed;
 @property (nonatomic) double timeStep;
 
-+ (id)SCNJSExportProtocol;
 + (BOOL)supportsSecureCoding;
 
 - (id).cxx_construct;
@@ -53,6 +53,7 @@
 - (struct btVehicleRaycaster { int (**x1)(); }*)_defaultVehicleRayCaster;
 - (void)_didDecodeSCNPhysicsWorld:(id)arg1;
 - (void)_drawDebugInAuthoringEnvironment:(void*)arg1;
+- (id)_findFieldAttachedToNode:(id)arg1;
 - (struct btDynamicsWorld { int (**x1)(); struct btAlignedObjectArray<btCollisionObject *> { struct btAlignedAllocator<btCollisionObject *, 16> { } x_2_1_1; int x_2_1_2; int x_2_1_3; struct btCollisionObject {} **x_2_1_4; bool x_2_1_5; } x2; struct btDispatcher {} *x3; struct btDispatcherInfo { float x_4_1_1; int x_4_1_2; int x_4_1_3; float x_4_1_4; bool x_4_1_5; struct btIDebugDraw {} *x_4_1_6; bool x_4_1_7; bool x_4_1_8; bool x_4_1_9; float x_4_1_10; bool x_4_1_11; float x_4_1_12; } x4; struct btBroadphaseInterface {} *x5; struct btIDebugDraw {} *x6; bool x7; int (*x8)(); int (*x9)(); void *x10; struct btContactSolverInfo { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; float x_11_1_5; int x_11_1_6; float x_11_1_7; float x_11_1_8; float x_11_1_9; float x_11_1_10; float x_11_1_11; int x_11_1_12; float x_11_1_13; float x_11_1_14; float x_11_1_15; float x_11_1_16; int x_11_1_17; int x_11_1_18; int x_11_1_19; float x_11_1_20; float x_11_1_21; } x11; float x12; }*)_handle;
 - (BOOL)_needsRedraw;
 - (id)_physicsContact;
@@ -60,15 +61,19 @@
 - (void)_preTick:(double)arg1;
 - (id)_rayTestWithSegmentFromPoint:(struct btVector3 { float x1[4]; })arg1 toPoint:(struct btVector3 { float x1[4]; })arg2 options:(id)arg3;
 - (void)_removeFieldFromWorld:(id)arg1;
+- (void)_reset;
 - (void)_step:(double)arg1;
 - (void)addBehavior:(id)arg1;
+- (void)addPhysicsBody:(id)arg1 nodeRef:(struct __C3DNode { }*)arg2 colGroup:(unsigned long)arg3 colMask:(unsigned long)arg4 colTest:(unsigned long)arg5;
 - (id)allBehaviors;
+- (void)commonInit;
 - (id)contactDelegate;
 - (id)contactTestBetweenBody:(id)arg1 andBody:(id)arg2 options:(id)arg3;
 - (id)contactTestWithBody:(id)arg1 options:(id)arg2;
 - (id)convexSweepTestWithShape:(id)arg1 fromTransform:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg2 toTransform:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg3 options:(id)arg4;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (void)enumerateBodiesUsingBlock:(id /* block */)arg1;
 - (struct SCNVector3 { float x1; float x2; float x3; })gravity;
 - (struct btDynamicsWorld { int (**x1)(); struct btAlignedObjectArray<btCollisionObject *> { struct btAlignedAllocator<btCollisionObject *, 16> { } x_2_1_1; int x_2_1_2; int x_2_1_3; struct btCollisionObject {} **x_2_1_4; bool x_2_1_5; } x2; struct btDispatcher {} *x3; struct btDispatcherInfo { float x_4_1_1; int x_4_1_2; int x_4_1_3; float x_4_1_4; bool x_4_1_5; struct btIDebugDraw {} *x_4_1_6; bool x_4_1_7; bool x_4_1_8; bool x_4_1_9; float x_4_1_10; bool x_4_1_11; float x_4_1_12; } x4; struct btBroadphaseInterface {} *x5; struct btIDebugDraw {} *x6; bool x7; int (*x8)(); int (*x9)(); void *x10; struct btContactSolverInfo { float x_11_1_1; float x_11_1_2; float x_11_1_3; float x_11_1_4; float x_11_1_5; int x_11_1_6; float x_11_1_7; float x_11_1_8; float x_11_1_9; float x_11_1_10; float x_11_1_11; int x_11_1_12; float x_11_1_13; float x_11_1_14; float x_11_1_15; float x_11_1_16; int x_11_1_17; int x_11_1_18; int x_11_1_19; float x_11_1_20; float x_11_1_21; } x11; float x12; }*)handle;
 - (id)initWithCoder:(id)arg1;
@@ -76,6 +81,7 @@
 - (id)rayTestWithSegmentFromPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg1 toPoint:(struct SCNVector3 { float x1; float x2; float x3; })arg2 options:(id)arg3;
 - (void)removeAllBehaviors;
 - (void)removeBehavior:(id)arg1;
+- (void)removePhysicsBody:(id)arg1 handle:(void*)arg2;
 - (float)scale;
 - (id)scene;
 - (void)sceneWillDie;
@@ -88,5 +94,6 @@
 - (float)speed;
 - (double)timeStep;
 - (void)updateCollisionPairs;
+- (void)wakeUpAllBodies;
 
 @end

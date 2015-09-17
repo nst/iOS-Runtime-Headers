@@ -25,7 +25,6 @@
 }
 
 @property (nonatomic, readonly) long long autoFilledTracksTotalSize;
-@property (nonatomic) BOOL companionDeviceActiveStoreAccountIsDynamiteEligible;
 @property (nonatomic, readonly) ML3DatabaseConnectionPool *connectionPool;
 @property (nonatomic, readonly) long long currentContentRevision;
 @property (nonatomic, readonly) ML3Container *currentDevicePlaybackHistoryPlaylist;
@@ -39,6 +38,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isHomeSharingLibrary;
 @property (nonatomic, retain) NSArray *libraryContainerFilterPredicates;
+@property (getter=isLibraryEmpty, nonatomic, readonly) BOOL libraryEmpty;
 @property (nonatomic, retain) NSArray *libraryEntityFilterPredicates;
 @property (nonatomic, retain) NSArray *libraryPublicContainerFilterPredicates;
 @property (nonatomic, retain) NSArray *libraryPublicEntityFilterPredicates;
@@ -58,6 +58,7 @@
 + (id)allSchemaSQL;
 + (id)allTables;
 + (id)allTriggersSQL;
++ (BOOL)companionDeviceActiveStoreAccountIsSubscriber;
 + (id)controlDirectoryPathWithBasePath:(id)arg1;
 + (id)databasePathForUnitTest:(id)arg1 withBasePath:(id)arg2;
 + (BOOL)deviceSupportsMultipleLibraries;
@@ -82,6 +83,7 @@
 + (id)pathForResourceFileOrFolder:(int)arg1 basePath:(id)arg2 relativeToBase:(BOOL)arg3 isFolder:(BOOL*)arg4;
 + (id)sectionIndexTitleForSectionHeader:(id)arg1;
 + (id)sectionIndexTitles;
++ (void)setCompanionDeviceActiveStoreAccountSubscriber:(BOOL)arg1;
 + (id)sharedLibrary;
 + (id)sharedLibraryDatabasePath;
 + (id)sortMapNewSchemaSQL;
@@ -96,7 +98,6 @@
 - (id)_allArtworkVariantDirectories;
 - (id)_allKeepLocalPlaylistTracks;
 - (void)_autogenerateArtworkForRelativePath:(id)arg1 artworkType:(int)arg2 mediaType:(unsigned long)arg3 completionHandler:(id /* block */)arg4;
-- (unsigned int)_cacheDeleteUrgencyToMusicLibraryUrgency:(int)arg1;
 - (BOOL)_canConfigureMediaLibraryDatabaseConnection:(id)arg1;
 - (long long)_clearAllCloudAssets;
 - (BOOL)_clearAllRowsFromTables:(id)arg1;
@@ -118,7 +119,6 @@
 - (long long)_getPurgeableArtworkTotalSizeWithUrgency:(unsigned int)arg1;
 - (long long)_getPurgeableDatabaseFileSizeWithUrgency:(unsigned int)arg1;
 - (long long)_getPurgeableTracksTotalSizeWithUrgency:(unsigned int)arg1 includeAutoFilledTracks:(BOOL)arg2;
-- (void)_handleCacheDeleteNotification:(id)arg1;
 - (BOOL)_insertArtworkRowWithArtworkToken:(id)arg1 artworkType:(int)arg2 sourceType:(int)arg3 relativePath:(id)arg4;
 - (BOOL)_insertArtworkRowWithArtworkToken:(id)arg1 artworkType:(int)arg2 sourceType:(int)arg3 relativePath:(id)arg4 usingConnection:(id)arg5;
 - (void)_loggingSettingsDidChangeNotification:(id)arg1;
@@ -157,7 +157,6 @@
 - (long long)clearPurgeableStorageAmount:(long long)arg1 withUrgency:(unsigned int)arg2 includeAutoFilledTracks:(BOOL)arg3;
 - (BOOL)coalesceMismatchedCollectionsUsingConnection:(id)arg1;
 - (BOOL)coerceValidDatabaseWithError:(id*)arg1;
-- (BOOL)companionDeviceActiveStoreAccountIsDynamiteEligible;
 - (id)composerForComposerName:(id)arg1;
 - (void)connection:(id)arg1 didEndDatabaseTransactionAndCommit:(BOOL)arg2;
 - (void)connectionDidBeginDatabaseTransaction:(id)arg1;
@@ -215,6 +214,7 @@
 - (BOOL)isArtworkTokenAvailable:(id)arg1;
 - (BOOL)isCurrentThreadInTransaction;
 - (BOOL)isHomeSharingLibrary;
+- (BOOL)isLibraryEmpty;
 - (id)libraryContainerFilterPredicates;
 - (id)libraryEntityFilterPredicates;
 - (id)libraryEntityFilterPredicatesForContainerClass:(Class)arg1;
@@ -264,7 +264,6 @@
 - (void)saveTrackMetadataSinceRevision:(long long)arg1 withGrappaID:(unsigned int)arg2;
 - (unsigned int)sectionIndexTitleIndexForSectionIndex:(unsigned int)arg1;
 - (void)setAutoFilledTracksArePurgeable:(BOOL)arg1;
-- (void)setCompanionDeviceActiveStoreAccountIsDynamiteEligible:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setIsHomeSharingLibrary:(BOOL)arg1;
 - (void)setLibraryContainerFilterPredicates:(id)arg1;

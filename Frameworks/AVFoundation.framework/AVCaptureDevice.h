@@ -15,7 +15,10 @@
 @property (nonatomic, readonly) NSString *modelID;
 @property (nonatomic, readonly) NSString *uniqueID;
 
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 + (id)_devices;
++ (void)_registerOnceForServerConnectionDiedNotification;
 + (int)authorizationStatusForMediaType:(id)arg1;
 + (id)defaultDeviceWithMediaType:(id)arg1;
 + (id)deviceWithUniqueID:(id)arg1;
@@ -49,6 +52,7 @@
 - (void)dealloc;
 - (id)description;
 - (struct OpaqueCMClock { }*)deviceClock;
+- (int)deviceSourceOrigin;
 - (struct { float x1; float x2; float x3; })deviceWhiteBalanceGains;
 - (struct { float x1; float x2; float x3; })deviceWhiteBalanceGainsForChromaticityValues:(struct { float x1; float x2; })arg1;
 - (struct { float x1; float x2; float x3; })deviceWhiteBalanceGainsForTemperatureAndTintValues:(struct { float x1; float x2; })arg1;
@@ -96,6 +100,7 @@
 - (BOOL)isHighDynamicRangeSceneDetectionSupported;
 - (BOOL)isImageControlModeSupported:(int)arg1;
 - (BOOL)isInUseByAnotherApplication;
+- (BOOL)isLensStabilizationSupported;
 - (BOOL)isLockedForConfiguration;
 - (BOOL)isLowLightBoostEnabled;
 - (BOOL)isLowLightBoostSupported;
@@ -122,6 +127,8 @@
 - (struct { int x1; int x2; })maxH264VideoDimensions;
 - (float)maxWhiteBalanceGain;
 - (float)minExposureTargetBias;
+- (int)minMacroblocksForHighProfileAbove30fps;
+- (int)minMacroblocksForHighProfileUpTo30fps;
 - (id)modelID;
 - (BOOL)open:(id*)arg1;
 - (int)position;
@@ -173,5 +180,17 @@
 - (void)unlockForConfiguration;
 - (float)videoZoomFactor;
 - (int)whiteBalanceMode;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
+- (void)cam_debugExposureState;
+- (void)cam_debugFocusAndExposureState;
+- (void)cam_debugFocusState;
+- (id)cameraPanoramaFormatForConfiguration:(id)arg1;
+- (id)cameraStillImageFormat;
+- (int)cameraVideoConfigurationForDeviceFormat:(id)arg1;
+- (int)cameraVideoConfigurationForSessionPreset:(id)arg1;
+- (id)cameraVideoFormatForVideoConfiguration:(int)arg1;
+- (id)cameraVideoPresetForVideoConfiguration:(int)arg1;
 
 @end

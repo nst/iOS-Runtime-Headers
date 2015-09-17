@@ -9,6 +9,7 @@
 
 @optional
 
+- (NSURL *)attachmentURLForExpression:(NSString *)arg1;
 - (NSString *)identifier;
 - (id)initWithAceObject:(AceObject *)arg1;
 - (void)setAssistantBulletin:(AFBulletin *)arg1;

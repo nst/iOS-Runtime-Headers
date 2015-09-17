@@ -7,6 +7,7 @@
     id _target;
 }
 
+- (void).cxx_destruct;
 - (id)description;
 
 @end

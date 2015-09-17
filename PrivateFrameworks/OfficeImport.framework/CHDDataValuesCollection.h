@@ -20,6 +20,7 @@
 - (id)dataValueAtIndex:(unsigned int)arg1;
 - (id)dataValueWithIndex:(unsigned int)arg1;
 - (void)dealloc;
+- (id)description;
 - (void)finishReading;
 - (id)init;
 - (id)initWithDataPointCount:(unsigned int)arg1;

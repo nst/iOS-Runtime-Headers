@@ -17,6 +17,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) int level;
 @property (nonatomic, readonly) unsigned int logDestinations;
 @property (nonatomic, readonly) NSString *logPath;
 @property (nonatomic, readonly) NSString *logPreferenceDomain;
@@ -29,19 +30,22 @@
 @property (nonatomic, readonly) BOOL shouldEnableOnInternalBuilds;
 @property (readonly) Class superclass;
 
-- (void)_appendLogForCategory:(id)arg1 withFormat:(id)arg2 arguments:(void*)arg3;
+- (void)_appendLogForLevel:(int)arg1 category:(id)arg2 withFormat:(id)arg3 arguments:(void*)arg4;
 - (void)_disableLogCategory:(id)arg1;
 - (void)_enableLogCategory:(id)arg1;
-- (void)_queue_appendLogForCategory:(id)arg1 withFormat:(id)arg2 arguments:(void*)arg3;
+- (void)_queue_appendLogForLevel:(int)arg1 category:(id)arg2 withFormat:(id)arg3 arguments:(void*)arg4;
 - (BOOL)_queue_isEnabledForCategory:(id)arg1;
+- (void)_reloadFromDefaultsDictionary:(id)arg1;
 - (void)_setEnabled:(BOOL)arg1;
-- (void)_setEnabled:(BOOL)arg1 fromDefaults:(BOOL)arg2;
+- (void)_setLevel:(int)arg1;
+- (void)_setLevel:(int)arg1 fromDefaults:(BOOL)arg2;
 - (id)composedLogForCategory:(id)arg1 destination:(unsigned int)arg2 format:(id)arg3 arguments:(void*)arg4;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (BOOL)isEnabled;
 - (BOOL)isEnabledForCategory:(id)arg1;
+- (int)level;
 - (unsigned int)logDestinations;
 - (id)logPath;
 - (id)logPreferenceDomain;

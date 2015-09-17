@@ -3,6 +3,7 @@
  */
 
 @interface EKEvent : EKCalendarItem {
+    NSString *_birthdayPersonUniqueID;
     EKCalendarDate *_occurrenceEndDate;
     BOOL _occurrenceIsAllDay;
     EKCalendarDate *_occurrenceStartDate;
@@ -17,14 +18,17 @@
 @property (nonatomic, readonly) BOOL allowsPrivacyLevelModifications;
 @property (nonatomic, readonly) NSArray *attachments;
 @property (nonatomic, readonly) BOOL attendeeReplyChanged;
+@property (nonatomic, readonly) BOOL automaticLocationGeocodingAllowed;
 @property (nonatomic) int availability;
+@property (nonatomic, readonly) NSString *birthdayContactIdentifier;
 @property (nonatomic, readonly) int birthdayPersonID;
+@property (nonatomic, readonly) NSString *birthdayPersonUniqueID;
 @property (nonatomic, readonly) BOOL canBeRespondedTo;
-@property (readonly) BOOL canDetachSingleOccurrence;
+@property (nonatomic, readonly) BOOL canDetachSingleOccurrence;
 @property (nonatomic, readonly) BOOL canSetAvailability;
 @property (nonatomic, readonly) BOOL dateChanged;
-@property (readonly) double duration;
-@property (readonly) double durationIncludingTravel;
+@property (nonatomic, readonly) double duration;
+@property (nonatomic, readonly) double durationIncludingTravel;
 @property (nonatomic, readonly) BOOL eligibleForTravelAdvisories;
 @property (nonatomic, readonly) EKCalendarDate *endCalendarDate;
 @property (nonatomic, copy) NSDate *endDate;
@@ -32,17 +36,20 @@
 @property (nonatomic, readonly) NSString *eventIdentifier;
 @property (nonatomic, readonly) EKEventStore *eventStore;
 @property (nonatomic, readonly) NSURL *externalURL;
-@property (readonly, copy) NSDate *initialEndDate;
-@property (readonly, copy) NSDate *initialStartDate;
+@property (nonatomic, readonly, copy) NSDate *initialEndDate;
+@property (nonatomic, readonly, copy) NSDate *initialStartDate;
 @property (nonatomic) unsigned int invitationStatus;
-@property (readonly) BOOL isAllDayDirty;
+@property BOOL ipsos_isDateTimeTenseDependent;
+@property BOOL ipsos_isTimeApproximate;
+@property (nonatomic, readonly) BOOL isAllDayDirty;
 @property (nonatomic, readonly) BOOL isDetached;
-@property (readonly) BOOL isEditable;
-@property (readonly) BOOL isEndDateDirty;
-@property (readonly) BOOL isStartDateDirty;
-@property (readonly) BOOL isStatusDirty;
-@property (readonly) BOOL isTravelTimeEditable;
+@property (nonatomic, readonly) BOOL isEditable;
+@property (nonatomic, readonly) BOOL isEndDateDirty;
+@property (nonatomic, readonly) BOOL isStartDateDirty;
+@property (nonatomic, readonly) BOOL isStatusDirty;
+@property (nonatomic, readonly) BOOL isTravelTimeEditable;
 @property (nonatomic, readonly) BOOL locationChanged;
+@property (nonatomic, readonly) BOOL locationIsAConferenceRoom;
 @property (nonatomic, readonly) unsigned int modifiedProperties;
 @property (nonatomic, readonly) NSDate *occurrenceDate;
 @property (nonatomic, copy) EKCalendarDate *occurrenceEndDate;
@@ -57,19 +64,21 @@
 @property (nonatomic, readonly) int pendingParticipationStatus;
 @property (nonatomic) int privacyLevel;
 @property (nonatomic) BOOL requiresDetachDueToSnoozedAlarm;
-@property (copy) NSString *responseComment;
+@property (nonatomic, copy) NSString *responseComment;
 @property (nonatomic, readonly) BOOL responseMustApplyToAll;
 @property (nonatomic, readonly) EKCalendarDate *startCalendarDate;
-@property (readonly) EKCalendarDate *startCalendarDateIncludingTravelTime;
+@property (nonatomic, readonly) EKCalendarDate *startCalendarDateIncludingTravelTime;
 @property (nonatomic, copy) NSDate *startDate;
 @property (nonatomic, readonly) struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; } startDateGr;
-@property (readonly) NSDate *startDateIncludingTravel;
+@property (nonatomic, readonly) NSDate *startDateIncludingTravel;
 @property (nonatomic, readonly) int status;
+@property (nonatomic, copy) EKStructuredLocation *structuredLocation;
+@property (nonatomic, retain) EKSuggestedEventInfo *suggestionInfo;
 @property (nonatomic, readonly) BOOL timeChanged;
 @property (nonatomic, readonly) BOOL titleChanged;
 @property (nonatomic) int travelAdvisoryBehavior;
 @property (nonatomic, readonly) BOOL travelAdvisoryBehaviorIsEffectivelyEnabled;
-@property (readonly) int travelRoutingMode;
+@property (nonatomic, readonly) int travelRoutingMode;
 @property (nonatomic) double travelTime;
 @property (nonatomic, readonly, copy) NSString *uniqueId;
 
@@ -85,15 +94,18 @@
 - (BOOL)_deleteWithSpan:(int)arg1 error:(id*)arg2;
 - (void)_detachWithStartDate:(id)arg1 newStartDate:(id)arg2 future:(BOOL)arg3;
 - (id)_effectiveTimeZone;
+- (BOOL)_eventIsTheOnlyRemainingRecurrence;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })_gregorianDateCorrectedForTimeZoneFromCalendarDate:(id)arg1 orNSDate:(id)arg2;
 - (BOOL)_isAllDay;
 - (BOOL)_isInitialOccurrenceDate:(id)arg1;
+- (BOOL)_isSimpleRepeatingEvent;
 - (BOOL)_occurrenceExistsOnDate:(double)arg1 timeZone:(id)arg2;
 - (int)_parentParticipationStatus;
 - (id)_persistentEvent;
 - (void)_sendModifiedNote;
 - (BOOL)_shouldCancelInsteadOfDeleteWithSpan:(int)arg1;
 - (BOOL)_shouldDeclineInsteadOfDelete;
+- (id)_suggestedEventInfoRelation;
 - (id)_travelTimeInternalDescription;
 - (BOOL)_validateAlarmIntervalConstrainedToRecurrenceInterval:(int)arg1;
 - (BOOL)_validateDatesAndRecurrencesGivenSpan:(int)arg1 error:(id*)arg2;
@@ -102,9 +114,13 @@
 - (BOOL)allowsCalendarModifications;
 - (BOOL)allowsPrivacyLevelModifications;
 - (BOOL)allowsRecurrenceModifications;
+- (BOOL)allowsSpansOtherThanThisEvent;
 - (BOOL)attendeeReplyChanged;
+- (BOOL)automaticLocationGeocodingAllowed;
 - (int)availability;
+- (id)birthdayContactIdentifier;
 - (int)birthdayPersonID;
+- (id)birthdayPersonUniqueID;
 - (BOOL)canBeRespondedTo;
 - (BOOL)canDetachSingleOccurrence;
 - (BOOL)canMoveToCalendar:(id)arg1 fromCalendar:(id)arg2 error:(id*)arg3;
@@ -114,6 +130,7 @@
 - (BOOL)commitWithSpan:(int)arg1 error:(id*)arg2;
 - (id)committedValueForKey:(id)arg1;
 - (int)compareStartDateWithEvent:(id)arg1;
+- (BOOL)conformsToRecurrenceRules:(id)arg1;
 - (BOOL)dateChanged;
 - (void)dealloc;
 - (id)description;
@@ -151,6 +168,7 @@
 - (BOOL)isTentative;
 - (BOOL)isTravelTimeEditable;
 - (BOOL)locationChanged;
+- (BOOL)locationIsAConferenceRoom;
 - (unsigned int)modifiedProperties;
 - (BOOL)needsOccurrenceCacheUpdate;
 - (id)occurrenceDate;
@@ -191,6 +209,7 @@
 - (void)setRequiresDetachDueToSnoozedAlarm:(BOOL)arg1;
 - (void)setResponseComment:(id)arg1;
 - (void)setStartDate:(id)arg1;
+- (void)setSuggestionInfo:(id)arg1;
 - (void)setTimeZone:(id)arg1;
 - (void)setTravelAdvisoryBehavior:(int)arg1;
 - (void)setTravelTime:(double)arg1;
@@ -203,6 +222,7 @@
 - (id)startDateIncludingTravel;
 - (struct { int x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; double x6; })startDatePinnedForAllDay;
 - (int)status;
+- (id)suggestionInfo;
 - (BOOL)timeChanged;
 - (id)title;
 - (BOOL)titleChanged;
@@ -211,6 +231,7 @@
 - (int)travelRoutingMode;
 - (double)travelTime;
 - (id)uniqueId;
+- (BOOL)updateEventToEvent:(id)arg1;
 - (BOOL)validateRecurrenceRule:(id)arg1 error:(id*)arg2;
 - (BOOL)validateWithSpan:(int)arg1 error:(id*)arg2;
 
@@ -227,5 +248,13 @@
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
 - (BOOL)sg_isCuratedEventFromSuggestionNewerThan:(double)arg1;
+
+// Image: /System/Library/PrivateFrameworks/DataDetectorsNaturalLanguage.framework/DataDetectorsNaturalLanguage
+
+- (id)ipsos_betterDescription;
+- (BOOL)ipsos_isDateTimeTenseDependent;
+- (BOOL)ipsos_isTimeApproximate;
+- (void)setIpsos_isDateTimeTenseDependent:(BOOL)arg1;
+- (void)setIpsos_isTimeApproximate:(BOOL)arg1;
 
 @end

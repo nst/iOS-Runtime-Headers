@@ -10,6 +10,7 @@
     id *_values;
 }
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 
 - (BOOL)_isDeallocating;

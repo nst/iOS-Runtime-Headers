@@ -14,6 +14,7 @@
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id /* block */)discoverAllContactsCompletionBlock;
 - (id)discoveredUserInfos;
 - (id)init;

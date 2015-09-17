@@ -105,6 +105,7 @@
 - (BOOL)connectionShouldUseCredentialStorage:(id)arg1;
 - (id)context;
 - (id)copyDefaultParserForContentType:(id)arg1;
+- (id)credentialForClientCertificateChallenge:(id)arg1;
 - (id)credentialForOAuthChallenge:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

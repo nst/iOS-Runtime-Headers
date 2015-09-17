@@ -9,7 +9,9 @@
     BOOL _paused;
     SEL _selector;
     int _skippedFrames;
-    id _target;
+    /* Warning: unhandled struct encoding: '{_geo_weak_ptr<id>="_p"@}' */ struct _geo_weak_ptr<id> { 
+        id _p; 
+    } _target;
 }
 
 @property (nonatomic, retain) CADisplay *display;
@@ -17,6 +19,8 @@
 @property (getter=isPaused, nonatomic) BOOL paused;
 @property (nonatomic, readonly) double timestamp;
 
+- (id).cxx_construct;
+- (void).cxx_destruct;
 - (void)_displayLinkFired:(id)arg1;
 - (void)addToRunLoop:(id)arg1 forMode:(id)arg2;
 - (void)dealloc;

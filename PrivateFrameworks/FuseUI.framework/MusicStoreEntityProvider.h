@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicStoreEntityProvider : NSObject <MusicEntityProviding, NSCopying> {
+@interface MusicStoreEntityProvider : NSObject <MusicEntityProviding, NSCopying, NSSecureCoding> {
     int _entityType;
     NSArray *_filteredPlayableItemMetadataContexts;
     BOOL _shouldIncludeUnplayableContent;
@@ -22,6 +22,8 @@
 @property (nonatomic, readonly, copy) NSArray *storeItemMetadataContexts;
 @property (readonly) Class superclass;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (void)_configureEntityValueContextOutput:(id)arg1 forGlobalIndex:(unsigned int)arg2;
 - (unsigned int)_entityCount;
@@ -30,14 +32,16 @@
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (void)_mediaLibraryDynamicPropertiesDidChangeNotification:(id)arg1;
 - (void)_postInvalidationNotification;
-- (void)_reloadFilteredPlayableItemMetadataContexts;
+- (void)_reloadFilteredPlayableItemMetadataContextsAllowingInvalidationNotification:(BOOL)arg1;
 - (void)_restrictionMonitorAllowsExplicitContentDidChangeNotification:(id)arg1;
+- (void)_setStoreItemMetadataContexts:(id)arg1 entityType:(int)arg2 allowingInvalidationNotification:(BOOL)arg3;
 - (id)_storeEntityValueProviderAtIndex:(unsigned int)arg1;
 - (void)configureEntityValueContextOutput:(id)arg1 forIndexPath:(id)arg2;
 - (void)configureEntityValueContextOutputForAnyIndexPath:(id)arg1;
 - (void)configureSectionEntityValueContextOutput:(id)arg1 forIndex:(unsigned int)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (int)entityType;
 - (id)entityValueProviderAtIndexPath:(id)arg1;
 - (BOOL)hasEntities;
@@ -46,6 +50,7 @@
 - (id)indexPathForEntityValueContext:(id)arg1;
 - (id)indexPathForStoreItemMetadataContext:(id)arg1;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (unsigned int)numberOfEntitiesInSection:(unsigned int)arg1;
 - (unsigned int)numberOfIndexBarEntries;
 - (unsigned int)numberOfSections;

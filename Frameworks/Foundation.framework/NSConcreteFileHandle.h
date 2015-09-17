@@ -22,6 +22,7 @@
 }
 
 - (void)_cancelDispatchSources;
+- (void)_closeOnDealloc;
 - (void)_commonDealloc;
 - (void)_locked_clearHandler:(id /* block */*)arg1 forSource:(id*)arg2;
 - (id)_monitor:(int)arg1;

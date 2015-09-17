@@ -8,7 +8,9 @@
 - (BOOL)canSendMessage;
 - (void)inCallButtonWasTapped:(id)arg1;
 - (BOOL)isAddCallAllowed;
+- (BOOL)isHoldEnabled;
 - (BOOL)isKeypadAllowed;
+- (BOOL)isKeypadEnabled;
 - (BOOL)isMergeCallsAllowed;
 - (BOOL)isMuted;
 - (BOOL)isSwapCallsAllowed;

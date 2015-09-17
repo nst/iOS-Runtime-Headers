@@ -64,6 +64,7 @@
 + (id)allEmailAddressesIncludingFullUserName:(BOOL)arg1 includeReceiveAliases:(BOOL)arg2;
 + (id)allMailboxUids;
 + (BOOL)canMoveMessagesFromAccount:(id)arg1 toAccount:(id)arg2;
++ (id)csAccountTypeString;
 + (id)defaultAccountDirectory;
 + (id)defaultDeliveryAccount;
 + (id)defaultMailAccountForDelivery;
@@ -236,7 +237,7 @@
 - (id)mailboxUidOfType:(int)arg1 createIfNeeded:(BOOL)arg2;
 - (id)meetingStorePersistentID;
 - (BOOL)moveMailbox:(id)arg1 intoParent:(id)arg2;
-- (BOOL)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4 unsuccessfulOnes:(id)arg5 newMessages:(id)arg6;
+- (id)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4;
 - (BOOL)newMailboxNameIsAcceptable:(id)arg1 reasonForFailure:(id*)arg2;
 - (id)newMailboxWithParent:(id)arg1 name:(id)arg2;
 - (void)nowWouldBeAGoodTimeToStartBackgroundSynchronization;
@@ -312,14 +313,17 @@
 - (Class)storeClass;
 - (Class)storeClassForMailbox:(id)arg1;
 - (id)storeForMailboxUid:(id)arg1;
+- (id)suggestionsLostMessageSearchOrderWithLimit:(unsigned int)arg1 wasTruncated:(BOOL*)arg2;
 - (BOOL)supportsAppend;
 - (BOOL)supportsArchiving;
 - (BOOL)supportsContinuationType:(id)arg1;
+- (BOOL)supportsMailDrop;
 - (BOOL)supportsMailboxEditing;
 - (BOOL)supportsMessageFlagging;
+- (BOOL)supportsRangeOperations;
 - (BOOL)supportsRemoteAppend;
 - (BOOL)supportsSyncingReadState;
-- (BOOL)supportsThreadNotifications;
+- (BOOL)supportsThreadOperations;
 - (BOOL)supportsUserPushedMailboxes;
 - (void)systemDidWake;
 - (void)systemWillSleep;

@@ -28,6 +28,8 @@
 + (id)calorieUnit;
 + (id)centimeterOfWaterUnit;
 + (id)countUnit;
++ (id)cupImperialUnit;
++ (id)cupUSUnit;
 + (id)dayUnit;
 + (id)degreeCelsiusUnit;
 + (id)degreeFahrenheitUnit;
@@ -73,6 +75,7 @@
 + (id)unitFromLengthFormatterUnit:(int)arg1;
 + (id)unitFromMassFormatterUnit:(int)arg1;
 + (id)unitFromString:(id)arg1;
++ (id)yardUnit;
 
 - (void).cxx_destruct;
 - (id)_baseUnitReduction;

@@ -30,7 +30,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setText:(id)arg1;
 - (id)textView;
+- (void)textViewDidBeginEditing:(id)arg1;
 - (void)textViewDidChange:(id)arg1;
+- (void)textViewDidEndEditing:(id)arg1;
+- (BOOL)textViewShouldBeginEditing:(id)arg1;
 - (id)trimmedText;
 
 @end

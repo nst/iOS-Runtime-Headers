@@ -43,11 +43,11 @@
 
 + (id)binaryEffects:(BOOL)arg1;
 
-- (id).cxx_construct;
 - (void)addChild:(id)arg1;
 - (void)addChildren:(id)arg1;
 - (id)backWallGraphicProperties;
 - (unsigned int)categoryCount;
+- (void)changeParentTextListStylePreservingEffectiveValues:(id)arg1;
 - (id)chartAreaGraphicProperties;
 - (id)childAtIndex:(unsigned int)arg1;
 - (unsigned int)childCount;
@@ -62,6 +62,7 @@
 - (id)defaultTextFont;
 - (id)defaultTextProperties;
 - (id)defaultThemeFont;
+- (id)description;
 - (int)direction;
 - (int)displayBlankAs;
 - (id)externalData;
@@ -82,6 +83,7 @@
 - (id)mainType;
 - (id)plotArea;
 - (id)processors;
+- (void)removeChild:(id)arg1;
 - (void)replaceChild:(id)arg1 with:(id)arg2;
 - (unsigned int)seriesCount;
 - (void)setAutoTitleDeleted:(bool)arg1;

@@ -10,6 +10,7 @@
 @property (nonatomic) BOOL censorSpeech;
 @property (nonatomic, copy) NSString *fieldId;
 @property (nonatomic, copy) NSString *fieldLabel;
+@property (nonatomic, copy) NSArray *inlineItemList;
 @property (nonatomic, copy) NSString *interactionId;
 @property (nonatomic, copy) NSString *keyboardReturnKey;
 @property (nonatomic, copy) NSString *keyboardType;
@@ -17,7 +18,9 @@
 @property (nonatomic, copy) NSString *postfixText;
 @property (nonatomic, copy) NSString *prefixText;
 @property (nonatomic, copy) NSString *region;
+@property (nonatomic) BOOL saveRequestAudio;
 @property (nonatomic, copy) NSString *selectedText;
+@property (nonatomic) BOOL speakerIndependentRecognition;
 
 + (id)startSpeechDictation;
 + (id)startSpeechDictationWithDictionary:(id)arg1 context:(id)arg2;
@@ -30,6 +33,7 @@
 - (id)fieldId;
 - (id)fieldLabel;
 - (id)groupIdentifier;
+- (id)inlineItemList;
 - (id)interactionId;
 - (id)keyboardReturnKey;
 - (id)keyboardType;
@@ -37,6 +41,7 @@
 - (id)postfixText;
 - (id)prefixText;
 - (id)region;
+- (BOOL)saveRequestAudio;
 - (id)selectedText;
 - (void)setActivationToken:(id)arg1;
 - (void)setApplicationName:(id)arg1;
@@ -44,6 +49,7 @@
 - (void)setCensorSpeech:(BOOL)arg1;
 - (void)setFieldId:(id)arg1;
 - (void)setFieldLabel:(id)arg1;
+- (void)setInlineItemList:(id)arg1;
 - (void)setInteractionId:(id)arg1;
 - (void)setKeyboardReturnKey:(id)arg1;
 - (void)setKeyboardType:(id)arg1;
@@ -51,6 +57,9 @@
 - (void)setPostfixText:(id)arg1;
 - (void)setPrefixText:(id)arg1;
 - (void)setRegion:(id)arg1;
+- (void)setSaveRequestAudio:(BOOL)arg1;
 - (void)setSelectedText:(id)arg1;
+- (void)setSpeakerIndependentRecognition:(BOOL)arg1;
+- (BOOL)speakerIndependentRecognition;
 
 @end

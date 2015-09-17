@@ -27,11 +27,13 @@
 + (id)compositionWithMediaObjects:(id)arg1 subject:(id)arg2;
 + (void)deleteCompositionWithGUID:(id)arg1;
 + (id)expirableCompositionWithMediaObject:(id)arg1;
++ (id)newExpirableCompositionWithText:(id)arg1 subject:(id)arg2;
 + (id)photoPickerCompositionWithMediaObject:(id)arg1;
 + (id)photoPickerCompositionWithMediaObjects:(id)arg1;
 + (id)quickImageCompositionWithMediaObject:(id)arg1;
 + (id)savedCompositionForGUID:(id)arg1;
 
+- (id)_compositionByAppendingText:(id)arg1 isExpirable:(BOOL)arg2;
 - (id)compositionByAppendingComposition:(id)arg1;
 - (id)compositionByAppendingMediaObject:(id)arg1;
 - (id)compositionByAppendingMediaObjects:(id)arg1;

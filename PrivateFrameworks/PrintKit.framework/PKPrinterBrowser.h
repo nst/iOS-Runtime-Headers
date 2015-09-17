@@ -23,7 +23,7 @@
 @property (nonatomic, retain) NSMutableArray *pendingList;
 @property (nonatomic, retain) NSMutableDictionary *printers;
 @property (nonatomic, retain) NSMutableDictionary *printersByUUID;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *printersQueue;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *printersQueue;
 
 + (id)browserWithDelegate:(id)arg1;
 
@@ -51,5 +51,6 @@
 - (void)setPendingList:(id)arg1;
 - (void)setPrinters:(id)arg1;
 - (void)setPrintersByUUID:(id)arg1;
+- (void)setPrintersQueue:(id)arg1;
 
 @end

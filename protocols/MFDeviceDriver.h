@@ -6,6 +6,7 @@
 @required
 
 - (int)activateTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (int)alphaBlend:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned char)arg11 :(BOOL)arg12 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg13 :(unsigned int)arg14;
 - (int)angleArc:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(unsigned int)arg4 :(double)arg5 :(double)arg6;
 - (int)arc:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
 - (int)arcTo:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(int)arg6 :(int)arg7 :(int)arg8 :(int)arg9;
@@ -42,10 +43,8 @@
 - (int)polygon:(MFDeviceContext *)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int)arg3;
 - (int)polyline:(MFDeviceContext *)arg1 :(struct CGPoint { float x1; float x2; }*)arg2 :(int)arg3;
 - (int)rectangle:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5;
-- (int)removeClip;
 - (int)roundRect:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(double)arg6 :(double)arg7;
 - (int)setMetaRgn;
-- (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (int)setViewBox:(double)arg1 :(double)arg2 :(double)arg3 :(double)arg4;
 - (int)stretchBlt:(MFDeviceContext *)arg1 :(int)arg2 :(int)arg3 :(int)arg4 :(int)arg5 :(MFBitmap *)arg6 :(int)arg7 :(int)arg8 :(int)arg9 :(int)arg10 :(unsigned int)arg11 :(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg12 :(unsigned int)arg13;
 - (int)textOut:(MFDeviceContext *)arg1 :(int*)arg2 :(int*)arg3 :(NSString *)arg4;

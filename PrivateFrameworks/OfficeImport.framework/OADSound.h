@@ -10,7 +10,6 @@
 
 - (void)dealloc;
 - (id)description;
-- (id)init;
 - (bool)isLoaded;
 - (id)name;
 - (void)setName:(id)arg1;

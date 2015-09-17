@@ -5,14 +5,15 @@
 
 @required
 
-+ (BOOL)supportsMapType:(int)arg1 scale:(int)arg2;
++ (BOOL)supportsMapType:(int)arg1 scale:(int)arg2 manifestConfiguration:(GEOResourceManifestConfiguration *)arg3;
 
-- (void)_setStyleTransitionProgress:(float)arg1 targetStyle:(unsigned int)arg2 step:(int)arg3;
+- (void)_setStyleTransitionProgress:(float)arg1 targetStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; })arg2 step:(int)arg3;
 - (float)_styleTransitionProgress;
 - (void)addAnnotationMarker:(VKAnnotationMarker *)arg1 allowAnimation:(BOOL)arg2;
 - (void)addExternalAnchor:(VKAnchorWrapper *)arg1;
 - (void)addOverlay:(id <VKOverlay>)arg1;
 - (void)addPersistentOverlay:(id <VKOverlay>)arg1;
+- (void)addRasterOverlay:(VKRasterOverlay *)arg1;
 - (double)altitude;
 - (void)animateToMapRegion:(void *)arg1 pitch:(void *)arg2 yaw:(void *)arg3 duration:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: GEOMapRegion *, double, double, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (id /* block */)annotationCoordinateTest:(void *)arg1; // needs 1 arg types, found 5: id /* block */, struct { double x1; double x2; }, void*, id, SEL
@@ -23,10 +24,12 @@
 - (int)annotationTrackingHeadingAnimationDisplayRate;
 - (int)annotationTrackingZoomStyle;
 - (NSArray *)attributionsForCurrentRegion;
+- (void)beginStyleAnimationGroup;
 - (BOOL)canEnter3DMode;
 - (BOOL)canZoomInForTileSize:(int)arg1;
 - (BOOL)canZoomOutForTileSize:(int)arg1;
 - (struct { double x1; double x2; double x3; })centerCoordinate;
+- (VKFeatureMarker *)closestRoadMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (NSString *)consoleString:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })convertCoordinateToCameraModelPoint:(struct { double x1; double x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertCoordinateToPoint:(struct { double x1; double x2; })arg1;
@@ -40,13 +43,17 @@
 - (<VKInteractiveMapDelegate> *)delegate;
 - (void)deselectAnnotationMarker:(VKAnnotationMarker *)arg1;
 - (void)deselectLabelMarker;
+- (void)deselectTransitLineMarker;
 - (NSString *)detailedDescription;
 - (void)didStartPanningDeceleration;
 - (double)durationToAnimateToMapRegion:(GEOMapRegion *)arg1;
+- (void)endStyleAnimationGroup;
 - (void)enter3DMode;
 - (void)exit3DMode;
 - (VKAnchorWrapper *)externalAnchors;
 - (NSArray *)externalTrafficIncidents;
+- (void)insertRasterOverlay:(VKRasterOverlay *)arg1 aboveOverlay:(VKRasterOverlay *)arg2;
+- (void)insertRasterOverlay:(VKRasterOverlay *)arg1 belowOverlay:(VKRasterOverlay *)arg2;
 - (BOOL)isAnimatingToTrackAnnotation;
 - (BOOL)isFullyDrawn;
 - (BOOL)isFullyPitched;
@@ -58,7 +65,7 @@
 - (VKLabelMarker *)labelMarkerForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1 selectableLabelsOnly:(BOOL)arg2;
 - (BOOL)labelMarkerSelectionEnabled;
 - (NSArray *)labelMarkers;
-- (int)labelScaleFactor;
+- (unsigned char)labelScaleFactor;
 - (BOOL)localizeLabels;
 - (GEOMapRegion *)mapRegion;
 - (GEOMapRegion *)mapRegionOfInterest;
@@ -73,34 +80,39 @@
 - (NSSet *)persistentOverlays;
 - (double)pitch;
 - (double)presentationYaw;
+- (NSArray *)rasterOverlays;
 - (void)removeAnnotationMarker:(VKAnnotationMarker *)arg1;
 - (void)removeExternalAnchor:(VKAnchorWrapper *)arg1;
 - (void)removeOverlay:(id <VKOverlay>)arg1;
 - (void)removePersistentOverlay:(id <VKOverlay>)arg1;
-- (void)requestStylesheetAnimation:(void *)arg1 targetMapDisplayStyle:(void *)arg2 setupHandler:(void *)arg3; // needs 3 arg types, found 7: VKAnimation *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (void)removeRasterOverlay:(VKRasterOverlay *)arg1;
+- (void)requestStylesheetAnimation:(void *)arg1 targetMapDisplayStyle:(void *)arg2 setupHandler:(void *)arg3; // needs 3 arg types, found 7: VKAnimation *, struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (BOOL)restoreViewportFromInfo:(VKViewportInfo *)arg1;
 - (<VKRouteMatchedAnnotationPresentation> *)routeLineSplitAnnotation;
 - (struct PolylineCoordinate { unsigned int x1; float x2; })routeUserOffset;
 - (struct VKPoint { double x1; double x2; double x3; })screenPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)selectAnnotationMarker:(VKAnnotationMarker *)arg1;
 - (void)selectLabelMarker:(VKLabelMarker *)arg1;
+- (void)selectTransitLineMarker:(VKTransitLineMarker *)arg1;
 - (VKAnnotationMarker *)selectedAnnotationMarker;
 - (VKLabelMarker *)selectedLabelMarker;
 - (void)setAnnotationMarkerDeselectionCallback:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, VKAnnotationMarker *, void*
 - (void)setAnnotationTrackingHeadingAnimationDisplayRate:(int)arg1;
 - (void)setAnnotationTrackingZoomStyle:(int)arg1;
-- (void)setCenterCoordinate:(void *)arg1 altitude:(void *)arg2 yaw:(void *)arg3 pitch:(void *)arg4 duration:(void *)arg5 timingCurve:(void *)arg6 completion:(void *)arg7; // needs 7 arg types, found 17: struct { double x1; double x2; }, double, double, double, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, float, id /* block */, float, void*, id /* block */, void*, void, id /* block */, BOOL, void*
+- (void)setCenterCoordinate3D:(void *)arg1 altitude:(void *)arg2 yaw:(void *)arg3 pitch:(void *)arg4 duration:(void *)arg5 animationStyle:(void *)arg6 timingCurve:(void *)arg7 completion:(void *)arg8; // needs 8 arg types, found 18: struct { double x1; double x2; double x3; }, double, double, double, double, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, float, id /* block */, float, void*, id /* block */, void*, void, id /* block */, BOOL, void*
+- (void)setCenterCoordinate:(void *)arg1 altitude:(void *)arg2 yaw:(void *)arg3 pitch:(void *)arg4 duration:(void *)arg5 animationStyle:(void *)arg6 timingCurve:(void *)arg7 completion:(void *)arg8; // needs 8 arg types, found 18: struct { double x1; double x2; }, double, double, double, double, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, float, id /* block */, float, void*, id /* block */, void*, void, id /* block */, BOOL, void*
 - (void)setDelegate:(id <VKInteractiveMapDelegate>)arg1;
 - (void)setExternalTrafficIncidents:(NSArray *)arg1;
 - (void)setIsPitchable:(BOOL)arg1;
 - (void)setLabelMarkerSelectionEnabled:(BOOL)arg1;
-- (void)setLabelScaleFactor:(int)arg1;
+- (void)setLabelScaleFactor:(unsigned char)arg1;
 - (void)setLocalizeLabels:(BOOL)arg1;
 - (void)setMapRegion:(GEOMapRegion *)arg1;
 - (void)setMapRegion:(GEOMapRegion *)arg1 animated:(BOOL)arg2;
 - (void)setMapRegion:(GEOMapRegion *)arg1 pitch:(double)arg2 yaw:(double)arg3 animated:(BOOL)arg4;
 - (void)setMapRegion:(void *)arg1 pitch:(void *)arg2 yaw:(void *)arg3 animated:(void *)arg4 completion:(void *)arg5; // needs 5 arg types, found 10: GEOMapRegion *, double, double, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)setMapType:(int)arg1;
+- (void)setMapType:(int)arg1 animated:(BOOL)arg2;
 - (void)setNavigationShieldSize:(int)arg1;
 - (void)setRouteLineSplitAnnotation:(id <VKRouteMatchedAnnotationPresentation>)arg1;
 - (void)setRouteUserOffset:(struct PolylineCoordinate { unsigned int x1; float x2; })arg1;
@@ -110,14 +122,16 @@
 - (void)setShowsPointsOfInterest:(BOOL)arg1;
 - (void)setStaysCenteredDuringPinch:(BOOL)arg1;
 - (void)setStaysCenteredDuringRotation:(BOOL)arg1;
-- (void)setStylesheetMapDisplayStyle:(unsigned int)arg1;
+- (void)setStylesheetMapDisplayStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setTrafficEnabled:(BOOL)arg1;
+- (void)setTrafficIncidentsEnabled:(BOOL)arg1;
 - (void)setYaw:(double)arg1 animated:(BOOL)arg2;
 - (int)shieldIdiom;
 - (int)shieldSize;
 - (BOOL)shouldHideOffscreenSelectedAnnotation;
 - (BOOL)showsBuildings;
 - (BOOL)showsPointsOfInterest;
+- (struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; })sourceMapDisplayStyle;
 - (void)startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1 panAtStartPoint:(BOOL)arg2;
 - (void)startPinchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)startPitchingWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -133,10 +147,14 @@
 - (void)stopTrackingAnnotation;
 - (void)stylesheetAnimationDidEnd:(BOOL)arg1;
 - (void)stylesheetAnimationDidProgress:(float)arg1;
-- (void)stylesheetAnimationWillStartFromStyle:(unsigned int)arg1 toStyle:(unsigned int)arg2;
+- (void)stylesheetAnimationWillStartFromStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; })arg1 toStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; })arg2;
+- (BOOL)supportsMapDisplayStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
 - (double)topDownMinimumZoomLevelForTileSize:(int)arg1;
 - (<VKTrackableAnnotation> *)trackingAnnotation;
 - (BOOL)trafficEnabled;
+- (BOOL)trafficIncidentsEnabled;
+- (NSArray *)transitLineMarkersForSelectionAtPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (NSArray *)transitLineMarkersInCurrentViewport;
 - (void)updatePanWithTranslation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updatePinchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
 - (void)updatePitchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;

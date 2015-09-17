@@ -7,6 +7,7 @@
     NSString *_appBundleIdentifier;
     NSString *_bluetoothDeviceAddress;
     AFBulletin *_bulletin;
+    double _buttonDownTimestamp;
     NSDictionary *_continuityInfo;
     int _directActionEvent;
     double _expectedTimestamp;
@@ -15,6 +16,7 @@
     NSDictionary *_messagesDirectActionContext;
     SASPronunciationContext *_pronunciationContext;
     BOOL _pronunciationRequest;
+    AFRequestInfo *_requestInfo;
     int _requestSource;
     NSString *_serverCommandId;
     NSURL *_speechFileURL;
@@ -28,6 +30,7 @@
 @property (nonatomic, copy) NSString *appBundleIdentifier;
 @property (nonatomic, copy) NSString *bluetoothDeviceAddress;
 @property (nonatomic, retain) AFBulletin *bulletin;
+@property (nonatomic) double buttonDownTimestamp;
 @property (nonatomic, copy) NSDictionary *continuityInfo;
 @property (nonatomic) int directActionEvent;
 @property (nonatomic) double expectedTimestamp;
@@ -38,6 +41,7 @@
 @property (nonatomic, copy) NSDictionary *messagesDirectActionContext;
 @property (nonatomic, retain) SASPronunciationContext *pronunciationContext;
 @property (getter=isPronunciationRequest, nonatomic) BOOL pronunciationRequest;
+@property (nonatomic, retain) AFRequestInfo *requestInfo;
 @property (nonatomic) int requestSource;
 @property (nonatomic, copy) NSString *serverCommandId;
 @property (nonatomic, copy) NSURL *speechFileURL;
@@ -54,6 +58,7 @@
 - (id)appBundleIdentifier;
 - (id)bluetoothDeviceAddress;
 - (id)bulletin;
+- (double)buttonDownTimestamp;
 - (id)continuityInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -70,12 +75,14 @@
 - (BOOL)isPronunciationRequest;
 - (id)messagesDirectActionContext;
 - (id)pronunciationContext;
+- (id)requestInfo;
 - (int)requestSource;
 - (id)serverCommandId;
 - (void)setAcousticIdEnabled:(BOOL)arg1;
 - (void)setAppBundleIdentifier:(id)arg1;
 - (void)setBluetoothDeviceAddress:(id)arg1;
 - (void)setBulletin:(id)arg1;
+- (void)setButtonDownTimestamp:(double)arg1;
 - (void)setContinuityInfo:(id)arg1;
 - (void)setDirectActionEvent:(int)arg1;
 - (void)setExpectedTimestamp:(double)arg1;
@@ -84,6 +91,7 @@
 - (void)setMessagesDirectActionContext:(id)arg1;
 - (void)setPronunciationContext:(id)arg1;
 - (void)setPronunciationRequest:(BOOL)arg1;
+- (void)setRequestInfo:(id)arg1;
 - (void)setRequestSource:(int)arg1;
 - (void)setServerCommandId:(id)arg1;
 - (void)setSpeechFileURL:(id)arg1;

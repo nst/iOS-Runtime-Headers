@@ -2,7 +2,10 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUMapViewController : UIViewController <MKMapViewDelegate, PUMapAnnotationManagerDataSource, PUPhotoBrowserZoomTransitionDelegate, PUPhotoLibraryUIChangeObserver, PUStackedAlbumTransitionDelegate> {
+@interface PUMapViewController : UIViewController <MKMapViewDelegate, PLDismissableViewController, PUMapAnnotationManagerDataSource, PUOneUpPresentationHelperDelegate, PUPhotoBrowserZoomTransitionDelegate, PUPhotoLibraryUIChangeObserver, PUStackedAlbumTransitionDelegate> {
+    PUOneUpPresentationHelper *__oneUpPresentationHelper;
+    PUDisplayLink *__oneUpPresentationHelperDisplayLink;
+    PUPhotoBrowserOneUpPresentationAdaptor *__photoBrowserOneUpPresentationAdaptor;
     PUMapAnnotationManager *_annotationManager;
     struct CGSize { 
         float width; 
@@ -23,6 +26,9 @@
     BOOL _useCurrentUserLocation;
 }
 
+@property (setter=_setOneUpPresentationHelper:, nonatomic, retain) PUOneUpPresentationHelper *_oneUpPresentationHelper;
+@property (setter=_setOneUpPresentationHelperDisplayLink:, nonatomic, retain) PUDisplayLink *_oneUpPresentationHelperDisplayLink;
+@property (setter=_setPhotoBrowserOneUpPresentationAdaptor:, nonatomic, retain) PUPhotoBrowserOneUpPresentationAdaptor *_photoBrowserOneUpPresentationAdaptor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSObject<PLDiagnosticsProvider> *diagnosticsProvider;
@@ -37,9 +43,16 @@
 - (id)_annotationViewForPhotoToken:(id)arg1;
 - (void)_createAnnotationManager;
 - (void)_displayDetailsForAlbum:(struct NSObject { Class x1; }*)arg1;
+- (void)_ensureOneUpPresentationHelperWithFetchResult:(id)arg1;
 - (void)_handleReportButton:(id)arg1;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })_mapRectWithDefaultZoomCenteredAtCoordinate:(struct { double x1; double x2; })arg1;
+- (id)_oneUpPresentationHelper;
+- (id)_oneUpPresentationHelperDisplayLink;
+- (id)_photoBrowserOneUpPresentationAdaptor;
 - (id)_puAnnotationViewForAnnotation:(id)arg1;
+- (void)_setOneUpPresentationHelper:(id)arg1;
+- (void)_setOneUpPresentationHelperDisplayLink:(id)arg1;
+- (void)_setPhotoBrowserOneUpPresentationAdaptor:(id)arg1;
 - (void)_showLocations:(id)arg1 animated:(BOOL)arg2;
 - (void)_updateAnnotationsForMapItems:(id)arg1;
 - (void)_updateAnnotationsForMapItems:(id)arg1 shouldScroll:(BOOL)arg2;
@@ -55,10 +68,16 @@
 - (void)mapView:(id)arg1 didFailToLocateUserWithError:(id)arg2;
 - (void)mapView:(id)arg1 didSelectAnnotationView:(id)arg2;
 - (void)mapView:(id)arg1 regionDidChangeAnimated:(BOOL)arg2;
+- (void)mapView:(id)arg1 regionWillChangeAnimated:(BOOL)arg2;
 - (id)mapView:(id)arg1 viewForAnnotation:(id)arg2;
 - (id)mapView:(id)arg1 viewForOverlay:(id)arg2;
 - (unsigned int)maxItemsInitialZoom;
+- (void)oneUpPresentationHelper:(id)arg1 didDismissOneUpViewController:(id)arg2;
+- (BOOL)oneUpPresentationHelperDisableFinalFadeoutAnimation:(id)arg1;
+- (BOOL)oneUpPresentationHelperShouldLeaveContentOnSecondScreen:(id)arg1;
+- (id)oneUpPresentationHelperViewController:(id)arg1;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
+- (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (void)prepareForPhotoLibraryChange:(id)arg1;
 - (BOOL)pu_wantsTabBarVisible;
 - (BOOL)pu_wantsToolbarVisible;
@@ -70,10 +89,13 @@
 - (BOOL)shouldShowToolbar;
 - (id)stackedAlbumTransition:(id)arg1 layoutForCollection:(id)arg2 forCollectionView:(id)arg3;
 - (void)stackedAlbumTransition:(id)arg1 setVisibility:(BOOL)arg2 forCollection:(id)arg3;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })zoomTransition:(id)arg1 frameForPhotoToken:(id)arg2 operation:(int)arg3;
-- (BOOL)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 forPhotoToken:(id)arg4 operation:(int)arg5;
+- (BOOL)zoomTransition:(id)arg1 getFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 contentMode:(int*)arg3 cropInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg4 forPhotoToken:(id)arg5 operation:(int)arg6;
 - (id)zoomTransition:(id)arg1 photoTokenForPhoto:(id)arg2 inCollection:(id)arg3;
 - (void)zoomTransition:(id)arg1 setVisibility:(BOOL)arg2 forPhotoToken:(id)arg3;
 

@@ -44,6 +44,7 @@
 - (void)_setNeedsAutosave;
 - (void)_updateMailboxUnreadCount;
 - (void)addCountsForMessages:(id)arg1 shouldUpdateUnreadCount:(BOOL)arg2;
+- (unsigned int)allNonDeletedCountIncludingServerSearch:(BOOL)arg1 andThreadSearch:(BOOL)arg2;
 - (BOOL)allowsAppend;
 - (unsigned int)appendMessages:(id)arg1 unsuccessfulOnes:(id)arg2 newMessageIDs:(id)arg3 newMessages:(id)arg4 flagsToSet:(id)arg5;
 - (id)bodyDataForMessage:(id)arg1 isComplete:(BOOL*)arg2 isPartial:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
@@ -66,7 +67,10 @@
 - (id)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4 didDownload:(BOOL*)arg5;
 - (BOOL)dataForMimePart:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 isComplete:(BOOL*)arg3 withConsumer:(id)arg4 downloadIfNecessary:(BOOL)arg5 didDownload:(BOOL*)arg6;
 - (id)dataPathForMessage:(id)arg1 part:(id)arg2;
+- (id)dateOfNewestNonSearchResultMessage;
+- (id)dateOfOldestNonIndexedNonSearchResultMessage;
 - (void)dealloc;
+- (void)deleteBodyDataForMessage:(id)arg1;
 - (void)deleteMessages:(id)arg1 moveToTrash:(BOOL)arg2;
 - (void)deleteMessagesOlderThanNumberOfDays:(int)arg1 compact:(BOOL)arg2;
 - (void)doCompact;

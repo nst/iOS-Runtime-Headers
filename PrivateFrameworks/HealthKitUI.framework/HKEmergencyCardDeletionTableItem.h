@@ -2,19 +2,14 @@
    Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
  */
 
-@interface HKEmergencyCardDeletionTableItem : HKEmergencyCardTableItem <UIActionSheetDelegate> {
+@interface HKEmergencyCardDeletionTableItem : HKEmergencyCardTableItem {
     UITableViewCell *_cell;
     <HKEmergencyCardDeletionDelegate> *_deletionDelegate;
 }
 
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HKEmergencyCardDeletionDelegate> *deletionDelegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (id)deletionDelegate;
 - (id)initInEditMode:(BOOL)arg1;
 - (void)setDeletionDelegate:(id)arg1;

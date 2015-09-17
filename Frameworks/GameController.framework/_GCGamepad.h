@@ -31,6 +31,7 @@
 - (id)controller;
 - (id)dpad;
 - (void)encodeWithCoder:(id)arg1;
+- (void)handleReport:(unsigned int)arg1 data:(id)arg2;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithController:(id)arg1;

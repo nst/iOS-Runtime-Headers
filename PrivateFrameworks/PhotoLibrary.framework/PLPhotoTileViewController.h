@@ -127,7 +127,7 @@
 @property (setter=_setCustomCenterOverlay:, nonatomic, retain) UIView *_customCenterOverlay;
 @property (nonatomic) BOOL centerContentVertically;
 @property (nonatomic, readonly) BOOL commentsTableIsVisible;
-@property (nonatomic, readonly) PLCommentsViewController *commentsViewController;
+@property (nonatomic, readonly, retain) PLCommentsViewController *commentsViewController;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL force1XCroppedImage;
@@ -167,7 +167,6 @@
 - (id)_newOriginalImageForPickerFromCachedData;
 - (void)_performDidEndZoomBlock;
 - (void)_performRotationUpdatesWithDuration:(double)arg1 size:(struct CGSize { float x1; float x2; })arg2;
-- (void)_readOrientation:(int*)arg1 andSize:(struct CGSize { float x1; float x2; }*)arg2 fromImageData:(id)arg3;
 - (void)_removePlaceholderView;
 - (void)_repositionBadgeView;
 - (void)_requestFullSizeImage;

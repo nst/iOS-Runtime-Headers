@@ -16,7 +16,7 @@
 
 + (id)atomWithEditOperation:(int)arg1 indexToEdit:(unsigned int)arg2 newText:(id)arg3 indexInArrayB:(unsigned int)arg4;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (int)editOperation;
 - (unsigned int)indexInArrayB;

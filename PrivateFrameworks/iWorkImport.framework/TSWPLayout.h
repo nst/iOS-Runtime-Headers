@@ -73,6 +73,7 @@
 - (id)interiorClippingPath;
 - (void)invalidateForFootnoteNumberingChange;
 - (BOOL)invalidateForPageCountChange;
+- (void)invalidateForcingFullReLayOut;
 - (void)invalidateParentForAutosizing;
 - (void)invalidateSize;
 - (void)invalidateTextLayout;
@@ -126,6 +127,7 @@
 - (BOOL)textLayoutValid;
 - (id)textWrapper;
 - (void)validate;
+- (void)validateTextLayoutForcibly;
 - (id)validatedLayoutForAnchoredDrawable:(id)arg1;
 - (id)validatedLayoutForInlineDrawable:(id)arg1;
 - (int)verticalAlignment;

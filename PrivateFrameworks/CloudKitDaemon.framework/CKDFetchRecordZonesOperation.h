@@ -7,16 +7,19 @@
     BOOL _isFetchAllRecordZonesOperation;
     id /* block */ _recordZoneFetchedProgressBlock;
     NSArray *_recordZoneIDs;
+    NSObject<OS_dispatch_group> *_zoneFetchGroup;
 }
 
 @property (nonatomic) BOOL ignorePCSFailures;
 @property (nonatomic) BOOL isFetchAllRecordZonesOperation;
 @property (nonatomic, copy) id /* block */ recordZoneFetchedProgressBlock;
 @property (nonatomic, retain) NSArray *recordZoneIDs;
+@property (nonatomic, retain) NSObject<OS_dispatch_group> *zoneFetchGroup;
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleRecordZoneFetch:(id)arg1 zoneID:(id)arg2 responseCode:(id)arg3;
+- (unsigned long long)activityStart;
 - (BOOL)ignorePCSFailures;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (BOOL)isFetchAllRecordZonesOperation;
@@ -27,5 +30,7 @@
 - (void)setIsFetchAllRecordZonesOperation:(BOOL)arg1;
 - (void)setRecordZoneFetchedProgressBlock:(id /* block */)arg1;
 - (void)setRecordZoneIDs:(id)arg1;
+- (void)setZoneFetchGroup:(id)arg1;
+- (id)zoneFetchGroup;
 
 @end

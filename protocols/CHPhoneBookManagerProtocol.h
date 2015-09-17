@@ -5,15 +5,11 @@
 
 @required
 
-- (const void*)getABRecordRef;
-- (NSString *)getCallerIdPropertyMultiValueId:(NSString *)arg1 andISOCountryCode:(NSString *)arg2 isEmail:(BOOL)arg3;
-- (NSString *)getLocalizedCallerIdLabelForRecordId:(NSString *)arg1;
-- (NSString *)getPersonsNameForRecordId:(NSString *)arg1;
-- (NSString *)getRecordId:(NSString *)arg1 andISOCountryCode:(NSString *)arg2 isEmail:(BOOL)arg3;
++ (id)get;
+
+- (NSString *)getLocalizedCallerIdLabelForRecord:(const void*)arg1 withMultiValueId:(NSString *)arg2 withCallerIdIsEmail:(BOOL)arg3;
+- (NSString *)getPersonsNameForRecord:(const void*)arg1;
+- (NSDictionary *)getRecordId:(NSString *)arg1 andISOCountryCode:(NSString *)arg2 isEmail:(BOOL)arg3;
 - (BOOL)isABContactASuggestion;
-- (void)releaseCachedRecord;
-- (void)setABRecordId:(NSString *)arg1;
-- (void)setABRecordMultiValueId:(NSString *)arg1;
-- (void)setABRecordRef:(const void*)arg1;
 
 @end

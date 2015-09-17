@@ -10,8 +10,11 @@
     <SSVPlaybackLeaseDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     SSVFairPlaySubscriptionController *_fairPlaySubscriptionController;
+    unsigned long long _kdMovieIdentifier;
+    SSVPlaybackLeaseRequest *_lastKDLeaseRequest;
     int _leaseDidEndNotificationToken;
     NSDate *_leaseExpirationDate;
+    int _leaseType;
     SSVRefreshSubscriptionRequest *_offlineSlotRequest;
     SSVBarrierOperationQueue *_operationQueue;
     NSObject<OS_dispatch_source> *_refreshTimer;
@@ -26,7 +29,7 @@
 @property BOOL refreshesAutomatically;
 
 - (void).cxx_destruct;
-- (id)_addOperationWithRequest:(id)arg1 configurationURL:(id)arg2 bagKey:(id)arg3 completionBlock:(id /* block */)arg4;
+- (id)_addOperationWithRequest:(id)arg1 configurationURL:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_cancelRefreshTimer;
 - (void)_endLease;
 - (void)_fireRefreshTimer;
@@ -47,6 +50,7 @@
 - (id)init;
 - (id)initWithLeaseConfiguration:(id)arg1;
 - (id)initWithURLBag:(id)arg1;
+- (id)initWithURLBag:(id)arg1 leaseType:(int)arg2;
 - (void)preheatLeaseRequestsWithCompletionBlock:(id /* block */)arg1;
 - (void)refreshLeaseWithRequest:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)refreshesAutomatically;

@@ -10,8 +10,11 @@
 + (void)keyboardExtensionsOnDevice;
 + (void)keyboardGestureSelectedPredictiveInputCandidate;
 + (void)keyboardGestureSetPredictionPreference:(BOOL)arg1;
++ (void)keyboardGestureTwoFingerTap:(BOOL)arg1 withTapCount:(int)arg2;
 + (void)keyboardSetToInputMode:(id)arg1 fromPrevious:(id)arg2;
 + (void)predictionViewState:(BOOL)arg1 forInputMode:(id)arg2;
 + (void)selectedPredictiveInputCandidate:(id)arg1 isAutocorrection:(BOOL)arg2;
++ (void)showCharacterPreviewPreference:(BOOL)arg1;
++ (void)showLowercaseKeyplanePreference:(BOOL)arg1;
 
 @end

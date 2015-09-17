@@ -22,6 +22,5 @@
 - (void)setNumberOfResults:(id)arg1;
 - (void)setProviderImage:(id)arg1;
 - (void)setProviderName:(id)arg1;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

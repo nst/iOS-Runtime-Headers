@@ -13,8 +13,10 @@
     UIButton *_secondaryActionButton;
     NSArray *_secondaryActionButtonConstraints;
     UIView *_solidBackgroundView;
+    UIView *_stretchableView;
     NSArray *_toolButtons;
     NSArray *_toolButtonsConstraints;
+    BOOL _useLargeShortSideHeight;
     BOOL _useTranslucentBackground;
 }
 
@@ -25,11 +27,14 @@
 @property (nonatomic) float longSideMargin;
 @property (nonatomic, readonly) UIButton *mainActionButton;
 @property (nonatomic, readonly) UIButton *secondaryActionButton;
+@property (nonatomic, readonly) UIView *stretchableView;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSArray *toolButtons;
+@property (nonatomic) BOOL useLargeShortSideHeight;
 @property (nonatomic) BOOL useTranslucentBackground;
 
 - (void).cxx_destruct;
+- (float)_shortSideSize;
 - (void)_updateBackgroundAnimated:(BOOL)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (int)layoutOrientation;
@@ -37,12 +42,15 @@
 - (id)mainActionButton;
 - (id)secondaryActionButton;
 - (void)setLongSideMargin:(float)arg1;
-- (void)setToolButtons:(id)arg1 mainActionButton:(id)arg2 secondaryActionButton:(id)arg3;
+- (void)setToolButtons:(id)arg1 mainActionButton:(id)arg2 secondaryActionButton:(id)arg3 stretchableView:(id)arg4;
+- (void)setUseLargeShortSideHeight:(BOOL)arg1;
 - (void)setUseTranslucentBackground:(BOOL)arg1;
 - (void)setUseTranslucentBackground:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setupWithLayoutOrientation:(int)arg1;
+- (id)stretchableView;
 - (id)toolButtons;
 - (void)updateConstraints;
+- (BOOL)useLargeShortSideHeight;
 - (BOOL)useTranslucentBackground;
 - (void)willMoveToWindow:(id)arg1;
 

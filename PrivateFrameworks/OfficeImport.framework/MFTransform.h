@@ -39,7 +39,6 @@
     } m_world;
 }
 
-- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })DPtoLP:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })LPtoDP:(struct CGPoint { float x1; float x2; })arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

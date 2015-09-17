@@ -63,6 +63,7 @@
 - (void)userDidCancel;
 - (void)userDidCancelWithoutAnimation;
 - (void)userDidPost;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

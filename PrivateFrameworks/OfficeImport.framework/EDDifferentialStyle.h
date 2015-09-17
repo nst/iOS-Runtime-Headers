@@ -25,6 +25,7 @@
 - (id)contentFormat;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)fill;
 - (id)font;
 - (id)protection;

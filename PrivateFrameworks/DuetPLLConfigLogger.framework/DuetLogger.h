@@ -29,6 +29,7 @@
 - (void)createFile;
 - (void)dealloc;
 - (void)dumpAllLogs;
+- (id)getHumanReadableTimeStamp;
 - (id)getTimeStamp;
 - (id)getUniqueFileName;
 - (id)init:(id)arg1 withState:(id)arg2;

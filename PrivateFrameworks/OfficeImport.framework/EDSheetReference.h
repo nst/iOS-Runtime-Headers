@@ -8,6 +8,7 @@
 
 + (id)referenceWithSheetIndex:(unsigned int)arg1 firstRow:(int)arg2 lastRow:(int)arg3 firstColumn:(int)arg4 lastColumn:(int)arg5;
 
+- (id)description;
 - (bool)fullyAdjacentToReference:(id)arg1;
 - (unsigned int)hash;
 - (id)init;

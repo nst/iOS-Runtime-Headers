@@ -10,7 +10,6 @@
     struct { 
         unsigned int didUpdateName : 1; 
         unsigned int didModifyServices : 1; 
-        unsigned int didInvalidateServices : 1; 
         unsigned int didReadRSSI : 1; 
         unsigned int didUpdateRSSI : 1; 
         unsigned int didDiscoverServices : 1; 
@@ -32,7 +31,6 @@
 
 @property (retain) NSNumber *RSSI;
 @property (nonatomic) <CBPeripheralDelegate> *delegate;
-@property (readonly) BOOL isConnected;
 @property (nonatomic, readonly) BOOL isConnectedToSystem;
 @property (retain) NSString *name;
 @property (retain) NSArray *services;
@@ -70,17 +68,16 @@
 - (void)handleServicesDiscovered:(id)arg1;
 - (void)handleSuccessfulConnection:(id)arg1;
 - (void)handleTimeSyncResponse:(id)arg1;
-- (void)handleWritesExecuted:(id)arg1;
 - (BOOL)hasTag:(id)arg1;
 - (id)initWithCentralManager:(id)arg1 info:(id)arg2;
 - (void)invalidateAllAttributes;
-- (BOOL)isConnected;
 - (BOOL)isConnectedToSystem;
+- (unsigned int)maximumWriteValueLengthForType:(int)arg1;
 - (id)name;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)readRSSI;
 - (void)readValueForCharacteristic:(id)arg1;
 - (void)readValueForDescriptor:(id)arg1;
-- (void)reliablyWriteValues:(id)arg1 forCharacteristics:(id)arg2;
 - (void)removeAttributeForHandle:(id)arg1;
 - (void)sendMsg:(int)arg1 args:(id)arg2;
 - (void)sendMsg:(int)arg1 requiresConnected:(BOOL)arg2 args:(id)arg3;

@@ -51,6 +51,7 @@
 - (int)encryptionPreference;
 - (unsigned int)gckPID;
 - (struct OpaqueGCKSession { }*)gckSession;
+- (id)init;
 - (id)initWithPeer:(id)arg1;
 - (id)initWithPeer:(id)arg1 securityIdentity:(id)arg2 encryptionPreference:(int)arg3;
 - (BOOL)isEncryptionPreferenceCompatible:(int)arg1;

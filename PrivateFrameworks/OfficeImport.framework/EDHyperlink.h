@@ -15,6 +15,7 @@
 + (id)hyperlink;
 
 - (void)dealloc;
+- (id)description;
 - (id)descriptionText;
 - (id)dosPath;
 - (id)path;

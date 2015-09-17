@@ -6,7 +6,9 @@
     UIView *_associatedView;
     _MKUserTrackingButtonController *_controller;
     UIButton *_customButton;
+    BOOL _explicitlyEnabled;
     BOOL _hasCustomAssociatedView;
+    BOOL _internallyEnabled;
     BOOL _isLegacy;
     UINavigationBar *_navigationBar;
     UIToolbar *_toolbar;
@@ -44,6 +46,7 @@
 - (void)_repositionViews;
 - (BOOL)_selectsWhenTracking;
 - (void)_setImage:(id)arg1 forUserTrackingMode:(int)arg2;
+- (void)_setInternallyEnabled:(BOOL)arg1;
 - (void)_setLandscapeImagePhone:(id)arg1 forUserTrackingMode:(int)arg2;
 - (void)_setSelectsWhenTracking:(BOOL)arg1;
 - (void)_setState:(int)arg1;
@@ -61,7 +64,9 @@
 - (id)createViewForToolbar:(id)arg1;
 - (void)dealloc;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithMapView:(id)arg1;
+- (BOOL)isEnabled;
 - (id)mapView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)setEnabled:(BOOL)arg1;

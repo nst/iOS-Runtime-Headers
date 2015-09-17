@@ -35,7 +35,9 @@
 - (id)initWithQuantityType:(id)arg1 filter:(id)arg2 statisticsOptions:(unsigned int)arg3 mergeStrategy:(unsigned int)arg4 restrictedSourceIdentifier:(id)arg5 healthDaemon:(id)arg6;
 - (id)initialStatisticsForCollection:(id)arg1 shouldStopProcessing:(id /* block */)arg2 error:(id*)arg3;
 - (id)initialStatisticsShouldStopProcessing:(id /* block */)arg1 error:(id*)arg2;
+- (BOOL)isTimeIntervalTooLong:(long long)arg1 sampleStartTime:(double)arg2 sampleEndTime:(double)arg3 seconds:(double)arg4;
 - (unsigned int)mergeStrategy;
+- (id)orderedSourceIDsFromSources:(id)arg1 sourceManager:(id)arg2;
 - (id)orderedSources;
 - (id)predicate;
 - (id)quantityType;

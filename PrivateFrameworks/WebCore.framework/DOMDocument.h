@@ -46,7 +46,10 @@
 - (id)caretRangeFromPoint:(int)arg1 y:(int)arg2;
 - (id)characterSet;
 - (id)charset;
+- (unsigned int)childElementCount;
+- (id)children;
 - (id)compatMode;
+- (id)contentType;
 - (id)cookie;
 - (id)createAttribute:(id)arg1;
 - (id)createAttributeNS:(id)arg1 :(id)arg2;
@@ -86,6 +89,7 @@
 - (BOOL)execCommand:(id)arg1;
 - (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2;
 - (BOOL)execCommand:(id)arg1 userInterface:(BOOL)arg2 value:(id)arg3;
+- (id)firstElementChild;
 - (id)forms;
 - (id)getComputedStyle:(id)arg1 :(id)arg2;
 - (id)getComputedStyle:(id)arg1 pseudoElement:(id)arg2;
@@ -107,6 +111,7 @@
 - (id)importNode:(id)arg1 :(BOOL)arg2;
 - (id)importNode:(id)arg1 deep:(BOOL)arg2;
 - (id)inputEncoding;
+- (id)lastElementChild;
 - (id)lastModified;
 - (id)links;
 - (id)origin;
@@ -120,6 +125,7 @@
 - (id)querySelectorAll:(id)arg1;
 - (id)readyState;
 - (id)referrer;
+- (id)scrollingElement;
 - (id)selectedStylesheetSet;
 - (void)setBody:(id)arg1;
 - (void)setCharset:(id)arg1;

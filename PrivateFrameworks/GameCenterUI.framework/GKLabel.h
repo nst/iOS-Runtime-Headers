@@ -6,6 +6,7 @@
     float _actualFontShrinkageFactor;
     GKTextStyle *_appliedStyle;
     GKTextStyle *_baseStyle;
+    BOOL _shouldEnforcePreferredWidth;
     BOOL _shouldInhibitReplay;
     BOOL _usingAttributedText;
 }
@@ -16,7 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic) float minimumScaleFactor;
+@property (nonatomic) BOOL shouldEnforcePreferredWidth;
 @property (nonatomic) BOOL shouldInhibitReplay;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL usingAttributedText;
@@ -35,11 +36,15 @@
 - (void)setAppliedStyle:(id)arg1;
 - (void)setAttributedText:(id)arg1;
 - (void)setBaseStyle:(id)arg1;
+- (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setShouldEnforcePreferredWidth:(BOOL)arg1;
 - (void)setShouldInhibitReplay:(BOOL)arg1;
 - (void)setText:(id)arg1;
+- (BOOL)shouldEnforcePreferredWidth;
 - (BOOL)shouldInhibitReplay;
 - (struct CGSize { float x1; float x2; })shrinkFontToFitSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)shrinkFontToFitWidth;
+- (void)updateConstraints;
 - (BOOL)usingAttributedText;
 
 @end

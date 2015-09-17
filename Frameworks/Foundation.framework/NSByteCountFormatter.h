@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSByteCountFormatter : NSFormatter {
+@interface NSByteCountFormatter : NSFormatter <NSObservable, NSObserver> {
     BOOL _adaptive;
     unsigned int _allowedUnits;
     BOOL _allowsNonnumericFormatting;
@@ -19,14 +19,19 @@
 @property unsigned int allowedUnits;
 @property BOOL allowsNonnumericFormatting;
 @property int countStyle;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property int formattingContext;
+@property (readonly) unsigned int hash;
 @property BOOL includesActualByteCount;
 @property BOOL includesCount;
 @property BOOL includesUnit;
+@property (readonly) Class superclass;
 @property BOOL zeroPadsFractionDigits;
 
 + (id)stringFromByteCount:(long long)arg1 countStyle:(int)arg2;
 
+- (BOOL)_mayDecorateAttributedStringForObjectValue:(id)arg1;
 - (unsigned long long)_options;
 - (unsigned int)allowedUnits;
 - (BOOL)allowsNonnumericFormatting;
@@ -42,6 +47,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isAdaptive;
 - (BOOL)isPartialStringValid:(id*)arg1 proposedSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2 originalString:(id)arg3 originalSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 errorDescription:(id*)arg5;
+- (void)receiveObservedValue:(id)arg1;
 - (void)setAdaptive:(BOOL)arg1;
 - (void)setAllowedUnits:(unsigned int)arg1;
 - (void)setAllowsNonnumericFormatting:(BOOL)arg1;

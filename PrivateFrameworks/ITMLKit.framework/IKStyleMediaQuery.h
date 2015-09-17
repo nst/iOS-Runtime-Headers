@@ -12,7 +12,7 @@
 @property (nonatomic, readonly) BOOL isNegated;
 @property (nonatomic, readonly, retain) NSString *mediaType;
 
-+ (id)mediaQueryListWithQueryString:(id)arg1;
++ (id)mediaQueryListWithCSSMediaQuery:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)featureValues;

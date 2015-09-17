@@ -5,6 +5,6 @@
 @interface PUSuggestedSearchRecent : PUSuggestedSearch
 
 - (id)initFromDictionary:(id)arg1;
-- (id)initWithSearchString:(id)arg1 displayTitle:(id)arg2 uuids:(id)arg3 albumUUID:(id)arg4;
+- (id)initWithSiriSearchData:(id)arg1 albumUUID:(id)arg2 searchString:(id)arg3 displayTitle:(id)arg4 uuids:(id)arg5;
 
 @end

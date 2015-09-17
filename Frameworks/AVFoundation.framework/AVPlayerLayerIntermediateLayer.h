@@ -2,10 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVPlayerLayerIntermediateLayer : CALayer
-
-+ (id)defaultActionForKey:(id)arg1;
-
-- (id)actionForKey:(id)arg1;
+@interface AVPlayerLayerIntermediateLayer : FigBaseCALayer
 
 @end

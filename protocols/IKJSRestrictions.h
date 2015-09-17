@@ -8,6 +8,7 @@
 - (BOOL)allowArtistActivity;
 - (BOOL)allowsErotica;
 - (BOOL)allowsExplicit;
+- (BOOL)appAnalyticsAllowed;
 - (BOOL)appInstallationAllowed;
 - (int)maxAppRank;
 - (NSString *)maxAppRating;

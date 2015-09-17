@@ -17,7 +17,7 @@
 - (id)_gatheringNotDescendantOfContainerWithID:(id)arg1;
 - (BOOL)continueGatheringWithBatchSize:(int)arg1;
 - (id)gatheredChildrenItemID;
-- (id)initWithNotificationPipe:(id)arg1 reply:(id /* block */)arg2;
+- (id)initWithNotificationPipe:(id)arg1 containers:(id)arg2 reply:(id /* block */)arg3;
 - (void)setGatheredChildrenItemID:(id)arg1;
 
 @end

@@ -4,23 +4,38 @@
 
 @interface MTLIOAccelTexture : MTLIOAccelResource {
     unsigned int _arrayLength;
+    MTLIOAccelBuffer *_buffer;
+    unsigned int _bufferBytesPerRow;
+    unsigned int _bufferOffset;
     unsigned int _depth;
     BOOL _framebufferOnly;
     unsigned int _height;
     struct __IOSurface { } *_iosurface;
     unsigned int _iosurfacePlane;
     BOOL _isDrawable;
+    unsigned int _length;
+    MTLIOAccelBuffer *_masterBuffer;
+    short _masterBufferIndex;
+    int _masterBufferOffset;
+    short _masterHeapIndex;
     unsigned int _mipmapLevelCount;
     unsigned int _numFaces;
+    unsigned int _parentRelativeLevel;
+    unsigned int _parentRelativeSlice;
+    MTLIOAccelTexture *_parentTexture;
     unsigned int _pixelFormat;
-    MTLIOAccelResource *_rootResource;
+    BOOL _rootResourceIsSuballocatedBuffer;
     unsigned int _rotation;
     unsigned int _sampleCount;
     unsigned int _textureType;
+    unsigned int _usage;
     unsigned int _width;
 }
 
 @property (readonly) unsigned int arrayLength;
+@property (readonly) MTLIOAccelBuffer *buffer;
+@property (readonly) unsigned int bufferBytesPerRow;
+@property (readonly) unsigned int bufferOffset;
 @property (readonly) unsigned int depth;
 @property (getter=isFramebufferOnly, readonly) BOOL framebufferOnly;
 @property (readonly) unsigned int height;
@@ -29,14 +44,22 @@
 @property (readonly) BOOL isDrawable;
 @property (readonly) unsigned int mipmapLevelCount;
 @property (readonly) unsigned int numFaces;
+@property (readonly) unsigned int parentRelativeLevel;
+@property (readonly) unsigned int parentRelativeSlice;
+@property (readonly) MTLIOAccelTexture *parentTexture;
 @property (readonly) unsigned int pixelFormat;
 @property (readonly) MTLIOAccelResource *rootResource;
+@property (readonly) BOOL rootResourceIsSuballocatedBuffer;
 @property (readonly) unsigned int rotation;
 @property (readonly) unsigned int sampleCount;
 @property (readonly) unsigned int textureType;
+@property (readonly) unsigned int usage;
 @property (readonly) unsigned int width;
 
 - (unsigned int)arrayLength;
+- (id)buffer;
+- (unsigned int)bufferBytesPerRow;
+- (unsigned int)bufferOffset;
 - (struct __CFArray { }*)copyAnnotations;
 - (void)copyFromPixels:(const void*)arg1 rowBytes:(unsigned int)arg2 imageBytes:(unsigned int)arg3 toSlice:(unsigned int)arg4 mipmapLevel:(unsigned int)arg5 origin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg6 size:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg7;
 - (void)copyFromSlice:(unsigned int)arg1 mipmapLevel:(unsigned int)arg2 origin:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg3 size:(struct { unsigned int x1; unsigned int x2; unsigned int x3; })arg4 toPixels:(void*)arg5 rowBytes:(unsigned int)arg6 imageBytes:(unsigned int)arg7;
@@ -44,22 +67,30 @@
 - (unsigned int)depth;
 - (void)getBytes:(void*)arg1 bytesPerRow:(unsigned int)arg2 fromRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg3 mipmapLevel:(unsigned int)arg4;
 - (unsigned int)height;
-- (id)initWithBuffer:(id)arg1 descriptor:(id)arg2 sysMemOffset:(unsigned int)arg3 sysMemRowBytes:(unsigned int)arg4 vidMemSize:(unsigned int)arg5 vidMemRowBytes:(unsigned int)arg6 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned long long x_1_3_5[1]; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg7 argsSize:(unsigned int)arg8;
-- (id)initWithDevice:(id)arg1 descriptor:(id)arg2 iosurface:(struct __IOSurface { }*)arg3 plane:(unsigned int)arg4 field:(unsigned int)arg5 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned long long x_1_3_5[1]; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg6 argsSize:(unsigned int)arg7;
-- (id)initWithDevice:(id)arg1 descriptor:(id)arg2 sysMemSize:(unsigned int)arg3 sysMemRowBytes:(unsigned int)arg4 vidMemSize:(unsigned int)arg5 vidMemRowBytes:(unsigned int)arg6 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned long long x_1_3_5[1]; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg7 argsSize:(unsigned int)arg8;
+- (id)initWithBuffer:(id)arg1 descriptor:(id)arg2 sysMemOffset:(unsigned int)arg3 sysMemRowBytes:(unsigned int)arg4 vidMemSize:(unsigned int)arg5 vidMemRowBytes:(unsigned int)arg6 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; unsigned int x_1_3_6[1]; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg7 argsSize:(unsigned int)arg8;
+- (id)initWithBuffer:(id)arg1 descriptor:(id)arg2 sysMemOffset:(unsigned int)arg3 sysMemRowBytes:(unsigned int)arg4 vidMemSize:(unsigned int)arg5 vidMemRowBytes:(unsigned int)arg6 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; unsigned int x_1_3_6[1]; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg7 argsSize:(unsigned int)arg8 isStrideTexture:(BOOL)arg9;
+- (id)initWithDevice:(id)arg1 descriptor:(id)arg2 iosurface:(struct __IOSurface { }*)arg3 plane:(unsigned int)arg4 field:(unsigned int)arg5 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; unsigned int x_1_3_6[1]; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg6 argsSize:(unsigned int)arg7;
+- (id)initWithDevice:(id)arg1 descriptor:(id)arg2 sysMemSize:(unsigned int)arg3 sysMemRowBytes:(unsigned int)arg4 vidMemSize:(unsigned int)arg5 vidMemRowBytes:(unsigned int)arg6 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; unsigned int x_1_3_6[1]; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg7 argsSize:(unsigned int)arg8;
+- (id)initWithMasterBuffer:(id)arg1 heapIndex:(short)arg2 bufferIndex:(short)arg3 bufferOffset:(int)arg4 length:(unsigned int)arg5 descriptor:(id)arg6 sysMemRowBytes:(unsigned int)arg7 vidMemSize:(unsigned int)arg8 vidMemRowBytes:(unsigned int)arg9 args:(struct IOAccelNewResourceArgs { struct IOAccelNewResourceData { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned short x_1_1_3; unsigned short x_1_1_4; unsigned short x_1_1_5; unsigned short x_1_1_6; unsigned int x_1_1_7; unsigned int x_1_1_8; unsigned char x_1_1_9; unsigned char x_1_1_10; unsigned char x_1_1_11; unsigned char x_1_1_12; unsigned int x_1_1_13; unsigned long long x_1_1_14[2]; union { struct { unsigned long long x_1_3_1; unsigned long long x_1_3_2; unsigned int x_1_3_3; unsigned int x_1_3_4; unsigned int x_1_3_5; unsigned int x_1_3_6[1]; } x_15_2_1; struct { unsigned int x_2_3_1; unsigned int x_2_3_2; unsigned long long x_2_3_3[3]; } x_15_2_2; struct { unsigned int x_3_3_1; unsigned int x_3_3_2; unsigned int x_3_3_3; unsigned int x_3_3_4; unsigned long long x_3_3_5[2]; } x_15_2_3; } x_1_1_15; } x1; }*)arg10 argsSize:(unsigned int)arg11;
 - (id)initWithTexture:(id)arg1 pixelFormat:(unsigned int)arg2;
+- (id)initWithTexture:(id)arg1 pixelFormat:(unsigned int)arg2 textureType:(unsigned int)arg3 levels:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 slices:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
 - (struct __IOSurface { }*)iosurface;
 - (unsigned int)iosurfacePlane;
 - (BOOL)isDrawable;
 - (BOOL)isFramebufferOnly;
 - (unsigned int)mipmapLevelCount;
 - (unsigned int)numFaces;
+- (unsigned int)parentRelativeLevel;
+- (unsigned int)parentRelativeSlice;
+- (id)parentTexture;
 - (unsigned int)pixelFormat;
 - (void)replaceRegion:(struct { struct { unsigned int x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; })arg1 mipmapLevel:(unsigned int)arg2 withBytes:(const void*)arg3 bytesPerRow:(unsigned int)arg4;
 - (id)rootResource;
+- (BOOL)rootResourceIsSuballocatedBuffer;
 - (unsigned int)rotation;
 - (unsigned int)sampleCount;
 - (unsigned int)textureType;
+- (unsigned int)usage;
 - (unsigned int)width;
 
 @end

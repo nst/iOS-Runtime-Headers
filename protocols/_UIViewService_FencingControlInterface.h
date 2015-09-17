@@ -5,7 +5,6 @@
 
 @optional
 
-- (void)__beginFencingMessagesWithSendRight:(_UIViewServiceXPCMachSendRight *)arg1 connectionCount:(unsigned int)arg2;
-- (void)__endFencingMessagesForSendRight:(_UIViewServiceXPCMachSendRight *)arg1;
+- (void)__participateInSystemAnimationFence:(BKSAnimationFenceHandle *)arg1;
 
 @end

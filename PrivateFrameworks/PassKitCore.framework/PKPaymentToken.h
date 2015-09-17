@@ -5,15 +5,18 @@
 @interface PKPaymentToken : NSObject <NSSecureCoding> {
     NSData *_paymentData;
     NSString *_paymentInstrumentName;
+    PKPaymentMethod *_paymentMethod;
     NSString *_paymentNetwork;
     NSString *_transactionIdentifier;
 }
 
 @property (nonatomic, copy) NSData *paymentData;
 @property (nonatomic, copy) NSString *paymentInstrumentName;
+@property (nonatomic, copy) PKPaymentMethod *paymentMethod;
 @property (nonatomic, copy) NSString *paymentNetwork;
 @property (nonatomic, copy) NSString *transactionIdentifier;
 
++ (id)simulatedToken;
 + (BOOL)supportsSecureCoding;
 
 - (void)dealloc;
@@ -22,9 +25,11 @@
 - (id)initWithCoder:(id)arg1;
 - (id)paymentData;
 - (id)paymentInstrumentName;
+- (id)paymentMethod;
 - (id)paymentNetwork;
 - (void)setPaymentData:(id)arg1;
 - (void)setPaymentInstrumentName:(id)arg1;
+- (void)setPaymentMethod:(id)arg1;
 - (void)setPaymentNetwork:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (id)transactionIdentifier;

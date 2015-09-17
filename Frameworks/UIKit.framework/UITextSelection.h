@@ -19,9 +19,11 @@
 @property (nonatomic, readonly) BOOL isCommitting;
 @property (nonatomic, retain) UITextRange *selectedRange;
 
+- (void).cxx_destruct;
 - (id)_domRange;
 - (void)aggressivelyExpandSelectionToWordContainingCaretSelection;
 - (void)alterSelection:(struct CGPoint { float x1; float x2; })arg1 granularity:(int)arg2;
+- (void)alterSelectionGranularity:(int)arg1;
 - (id)base;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })caretRectAtBeginOfDocument;
@@ -36,6 +38,7 @@
 - (id)document;
 - (int)granularity;
 - (BOOL)hasEditableSelection;
+- (void)increaseSelectionGranularity;
 - (id)initWithDocument:(id)arg1;
 - (id)initialExtent;
 - (void)invalidate;
@@ -51,6 +54,7 @@
 - (id)selectionRects;
 - (void)setBase:(id)arg1;
 - (void)setGranularity:(int)arg1;
+- (void)setHybridSelectionWithPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setInitialExtent:(id)arg1;
 - (void)setRangedSelectionBaseToCurrentSelection;
 - (void)setRangedSelectionBaseToCurrentSelectionEnd;

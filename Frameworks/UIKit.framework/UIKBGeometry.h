@@ -8,6 +8,7 @@
         float amount; 
         int unit; 
     } m_h;
+    BOOL m_isTemplate;
     NSString *m_name;
     struct { 
         float amount; 
@@ -41,6 +42,7 @@
 
 @property (nonatomic) BOOL explicitlySpecified;
 @property (setter=setH:, nonatomic) struct { float x1; int x2; } h;
+@property (nonatomic) BOOL isTemplate;
 @property (nonatomic, retain) NSString *name;
 @property (setter=setPaddingBottom:, nonatomic) struct { float x1; int x2; } paddingBottom;
 @property (setter=setPaddingLeft:, nonatomic) struct { float x1; int x2; } paddingLeft;
@@ -65,9 +67,11 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameWithContainingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct { float x1; int x2; })h;
 - (id)init;
+- (id)initTemplateWithName:(id)arg1 rect:(struct { struct { float x_1_1_1; int x_1_1_2; } x1[4]; })arg2 padding:(struct { struct { float x_1_1_1; int x_1_1_2; } x1[4]; })arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithName:(id)arg1 rect:(struct { struct { float x_1_1_1; int x_1_1_2; } x1[4]; })arg2 padding:(struct { struct { float x_1_1_1; int x_1_1_2; } x1[4]; })arg3;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isTemplate;
 - (id)name;
 - (id)overrideGeometry:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })paddedFrameWithContainingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -78,6 +82,7 @@
 - (struct { float x1; int x2; })paddingTop;
 - (void)setExplicitlySpecified:(BOOL)arg1;
 - (void)setH:(struct { float x1; int x2; })arg1;
+- (void)setIsTemplate:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setPaddingBottom:(struct { float x1; int x2; })arg1;
 - (void)setPaddingLeft:(struct { float x1; int x2; })arg1;

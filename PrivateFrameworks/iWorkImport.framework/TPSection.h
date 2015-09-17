@@ -3,7 +3,6 @@
  */
 
 @interface TPSection : TSPObject <TSKDocumentObject, TSKModel, TSWPSection> {
-    TPDocumentRoot *_documentRoot;
     BOOL _inheritPreviousHeaderFooter;
     NSString *_name;
     BOOL _pageMasterEvenOddPagesDifferent;
@@ -40,7 +39,6 @@
 - (void)i_clearPropertiesToDefaults;
 - (void)i_copyHeadersAndFootersFrom:(id)arg1 dolcContext:(id)arg2;
 - (void)i_ensureHeaderFooterStoragesExistWithStylesheet:(id)arg1;
-- (void)i_setDocumentRoot:(id)arg1;
 - (BOOL)inheritPreviousHeaderFooter;
 - (id)initFromUnarchiver:(id)arg1;
 - (id)initWithContext:(id)arg1;

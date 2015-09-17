@@ -8,6 +8,7 @@
     NSString *_alertLaunchImage;
     NSArray *_alertLocalizationArgs;
     NSString *_alertLocalizationKey;
+    NSString *_category;
     NSArray *_desiredKeys;
     BOOL _shouldBadge;
     BOOL _shouldSendContentAvailable;
@@ -19,6 +20,7 @@
 @property (nonatomic, copy) NSString *alertLaunchImage;
 @property (nonatomic, copy) NSArray *alertLocalizationArgs;
 @property (nonatomic, copy) NSString *alertLocalizationKey;
+@property (nonatomic, copy) NSString *category;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic) BOOL shouldBadge;
 @property (nonatomic) BOOL shouldSendContentAvailable;
@@ -33,6 +35,7 @@
 - (id)alertLaunchImage;
 - (id)alertLocalizationArgs;
 - (id)alertLocalizationKey;
+- (id)category;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugDescription;
 - (id)desiredKeys;
@@ -43,6 +46,7 @@
 - (void)setAlertLaunchImage:(id)arg1;
 - (void)setAlertLocalizationArgs:(id)arg1;
 - (void)setAlertLocalizationKey:(id)arg1;
+- (void)setCategory:(id)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setShouldBadge:(BOOL)arg1;
 - (void)setShouldSendContentAvailable:(BOOL)arg1;

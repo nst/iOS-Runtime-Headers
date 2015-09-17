@@ -4,12 +4,14 @@
 
 @interface HDWorkoutEventEntity : HDHealthEntity
 
-+ (id)createTableSQL;
++ (id)columnsDefinition;
 + (id)databaseTable;
 + (id)deleteStatementForWorkoutEventsWithDatabase:(id)arg1;
-+ (id)insertWorkoutEventWithWorkoutID:(id)arg1 date:(id)arg2 eventType:(int)arg3 database:(id)arg4;
-+ (BOOL)insertWorkoutEventsFromWorkout:(id)arg1 entity:(id)arg2 database:(id)arg3;
++ (void)enumerateEventsForWorkout:(long long)arg1 withStatement:(struct sqlite3_stmt { }*)arg2 eventHandler:(id /* block */)arg3;
++ (id)insertWorkoutEventWithWorkoutID:(id)arg1 date:(id)arg2 eventType:(int)arg3 database:(id)arg4 error:(id*)arg5;
++ (BOOL)insertWorkoutEventsFromWorkout:(id)arg1 workoutPersistentID:(id)arg2 database:(id)arg3 error:(id*)arg4;
 + (int)protectionClass;
++ (struct sqlite3_stmt { }*)statementForEnumeratingEventsForWorkoutInDatabase:(id)arg1 error:(id*)arg2;
 + (id)workoutEventsWithWorkoutID:(id)arg1 database:(id)arg2;
 + (id)workoutEventsWithWorkoutID:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 

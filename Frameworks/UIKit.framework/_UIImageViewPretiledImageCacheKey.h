@@ -12,6 +12,7 @@
 
 + (id)cacheKeyWithOriginalImage:(id)arg1 pretiledSize:(struct CGSize { float x1; float x2; })arg2;
 
+- (void).cxx_destruct;
 - (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;

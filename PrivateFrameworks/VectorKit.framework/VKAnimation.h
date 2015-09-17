@@ -4,20 +4,11 @@
 
 @interface VKAnimation : NSObject {
     id /* block */ _completionHandler;
-    double _duration;
-    struct { 
-        unsigned int resuming : 1; 
-        unsigned int runsForever : 1; 
-        unsigned int startTimestampSet : 1; 
-        unsigned int state : 3; 
-    } _flags;
-    double _lastTimestamp;
     NSString *_name;
     int _priority;
     <VKAnimationRunner> *_runner;
-    double _startTimestamp;
-    id /* block */ _stepHandler;
-    id /* block */ _timingFunction;
+    BOOL _runsForever;
+    int _state;
 }
 
 @property (nonatomic, copy) id /* block */ completionHandler;
@@ -25,21 +16,12 @@
 @property (nonatomic, readonly) int priority;
 @property (nonatomic, readonly) BOOL running;
 @property (nonatomic) BOOL runsForever;
-@property (nonatomic, copy) id /* block */ stepHandler;
-@property (nonatomic, copy) id /* block */ timingFunction;
+@property (nonatomic, readonly) BOOL timed;
 
-+ (void)setDragCoefficientGetter:(id /* block */)arg1;
-
-- (id).cxx_construct;
-- (void)_stopAnimation:(BOOL)arg1;
 - (id /* block */)completionHandler;
 - (void)dealloc;
 - (id)description;
 - (double)duration;
-- (id)init;
-- (id)initWithDuration:(double)arg1;
-- (id)initWithDuration:(double)arg1 name:(id)arg2;
-- (id)initWithDuration:(double)arg1 priority:(int)arg2 name:(id)arg3;
 - (id)initWithName:(id)arg1;
 - (id)initWithPriority:(int)arg1;
 - (id)initWithPriority:(int)arg1 name:(id)arg2;
@@ -52,12 +34,10 @@
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setRunsForever:(BOOL)arg1;
-- (void)setStepHandler:(id /* block */)arg1;
-- (void)setTimingFunction:(id /* block */)arg1;
 - (void)startWithRunner:(id)arg1;
-- (id /* block */)stepHandler;
 - (void)stop;
-- (id /* block */)timingFunction;
+- (void)stopAnimation:(BOOL)arg1;
+- (BOOL)timed;
 - (void)transferToRunner:(id)arg1;
 
 @end

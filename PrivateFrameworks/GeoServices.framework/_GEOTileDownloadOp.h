@@ -29,6 +29,7 @@
         unsigned char reserved2[4]; 
     } _key;
     _GEOTileDownloadOp *_localizationTile;
+    unsigned int _priority;
     BOOL _requireWiFi;
     NSString *_responseEtag;
     double _startTime;
@@ -55,8 +56,10 @@
 @property (readonly) unsigned int hash;
 @property struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; } key;
 @property (nonatomic, retain) _GEOTileDownloadOp *localizationTile;
+@property (nonatomic) unsigned int priority;
 @property (nonatomic) BOOL requireWiFi;
 @property (nonatomic, retain) NSString *responseEtag;
+@property (nonatomic, readonly) double startTime;
 @property (readonly) Class superclass;
 @property unsigned int tileEdition;
 @property (nonatomic) double timeout;
@@ -85,6 +88,7 @@
 - (BOOL)finished;
 - (struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })key;
 - (id)localizationTile;
+- (unsigned int)priority;
 - (BOOL)requireWiFi;
 - (id)responseEtag;
 - (void)setAuditToken:(id)arg1;
@@ -98,6 +102,7 @@
 - (void)setEditionHeader:(id)arg1;
 - (void)setKey:(struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; })arg1;
 - (void)setLocalizationTile:(id)arg1;
+- (void)setPriority:(unsigned int)arg1;
 - (void)setRequireWiFi:(BOOL)arg1;
 - (void)setResponseEtag:(id)arg1;
 - (void)setTileEdition:(unsigned int)arg1;
@@ -106,6 +111,7 @@
 - (void)setUseCookies:(BOOL)arg1;
 - (void)setUserAgent:(id)arg1;
 - (void)start;
+- (double)startTime;
 - (unsigned int)tileEdition;
 - (double)timeout;
 - (id)url;

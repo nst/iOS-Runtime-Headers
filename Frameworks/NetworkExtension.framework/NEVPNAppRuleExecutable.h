@@ -2,33 +2,25 @@
    Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
  */
 
-@interface NEVPNAppRuleExecutable : NSObject <NEConfigurationLegacySupport, NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
+@interface NEVPNAppRuleExecutable : NSObject <NSCopying, NSSecureCoding> {
     NSString *_matchDesignatedRequirement;
     NSString *_matchPath;
     NSString *_matchSigningIdentifier;
-    BOOL _requiresDomains;
 }
 
 @property (readonly) NSString *matchDesignatedRequirement;
 @property (copy) NSString *matchPath;
 @property (readonly) NSString *matchSigningIdentifier;
-@property (readonly) BOOL requiresDomains;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (BOOL)checkValidityAndCollectErrors:(id)arg1;
-- (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithSigningIdentifier:(id)arg1 andDesignatedRequirement:(id)arg2;
 - (id)matchDesignatedRequirement;
 - (id)matchPath;
 - (id)matchSigningIdentifier;
-- (BOOL)requiresDomains;
 - (void)setMatchPath:(id)arg1;
 
 @end

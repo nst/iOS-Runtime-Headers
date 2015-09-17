@@ -40,10 +40,10 @@
 + (BOOL)usesTelephonyGlyphsWhereAvailable;
 + (float)verticalPadding;
 
+- (void).cxx_destruct;
 - (float)alphaOutsideAndInsideRing;
 - (unsigned int)character;
 - (id)color;
-- (void)dealloc;
 - (id)defaultColor;
 - (id)glyphLayer;
 - (id)highlightedGlyphLayer;

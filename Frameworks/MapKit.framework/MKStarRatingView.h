@@ -31,6 +31,7 @@
 
 - (void).cxx_destruct;
 - (void)_layoutStarViewsCreatingIfNeeded:(BOOL)arg1;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (void)commonInit;
 - (void)didMoveToWindow;
 - (id)emptyStarHighlightedImage;
@@ -39,6 +40,7 @@
 - (id)fullStarImage;
 - (id)halfStarHighlightedImage;
 - (id)halfStarImage;
+- (id)imageWithName:(id)arg1 andColor:(id)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithStyle:(int)arg1;
@@ -60,5 +62,6 @@
 - (void)setStarStyle:(int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (int)starStyle;
+- (float)verticalAlignmentCenterPercentage;
 
 @end

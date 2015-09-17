@@ -5,6 +5,7 @@
 
 @required
 
+- (NSArray *)allAssetIDsNeedingLocationShiftWithError:(id*)arg1;
 - (NSArray *)allAssetIDsToBeIncludedInMomentsWithError:(id*)arg1;
 - (NSArray *)allAssetsToBeIncludedInMomentsWithError:(id*)arg1;
 - (NSArray *)allMomentListsForLevel:(short)arg1;
@@ -15,14 +16,17 @@
 - (<PLMomentAssetData> *)assetWithUniqueID:(NSObject<NSCopying> *)arg1 error:(id*)arg2;
 - (NSArray *)assetsWithUniqueIDs:(NSArray *)arg1 error:(id*)arg2;
 - (void)beginObservingNetworkReachabilityChangesWithBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)enumerateAssetsWithIDs:(void *)arg1 usingBlock:(void *)arg2; // needs 2 arg types, found 9: NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <PLMomentAssetData> *, unsigned int, BOOL*, void*
 - (<PLMomentListData> *)findOrCreateYearMomentListForYear:(int)arg1;
 - (BOOL)hasChanges;
 - (NSDictionary *)homeAddressDictionary;
 - (<PLMomentData> *)insertNewMoment;
 - (<PLMomentListData> *)insertNewMomentListForGranularityLevel:(short)arg1;
+- (void)invalidateShiftedLocationForAllAssetsInMoments;
 - (BOOL)isMomentAnalysisNeeded;
 - (BOOL)isMomentsSupportedOnPlatform;
 - (BOOL)isNetworkReachable;
+- (NSDictionary *)locationCoordinatesForAssetIDs:(NSArray *)arg1;
 - (Class)momentAssetDataClass;
 - (Class)momentDataClass;
 - (<PLMomentListData> *)momentListContainingDate:(NSDate *)arg1 forLevel:(short)arg2 wantsEarliest:(BOOL)arg3;
@@ -30,6 +34,7 @@
 - (<PLMomentListData> *)momentListWithUniqueID:(NSObject<NSCopying> *)arg1 forLevel:(short)arg2 error:(id*)arg3;
 - (<PLMomentData> *)momentWithUniqueID:(NSObject<NSCopying> *)arg1 error:(id*)arg2;
 - (NSArray *)momentsBetweenDate:(NSDate *)arg1 andDate:(NSDate *)arg2 sorted:(BOOL)arg3;
+- (NSArray *)momentsBetweenDateRanges:(NSArray *)arg1;
 - (NSArray *)momentsSinceDate:(NSDate *)arg1;
 - (void)performBlock:(void *)arg1 synchronously:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, BOOL, id /* block */, void*, void, id /* block */, void*
 - (void)performDataTransaction:(void *)arg1 synchronously:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 11: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*, BOOL, id /* block */, void*, void, id /* block */, void*
@@ -48,6 +53,7 @@
 - (NSSet *)deletedObjects;
 - (unsigned int)hardGenerationBatchSizeLimit;
 - (NSSet *)insertedObjects;
+- (<PLMomentAnalysisTransaction> *)momentAnalysisTransactionWithName:(const char *)arg1;
 - (void)pendingChangesUpdated:(unsigned int)arg1;
 - (NSString *)replayLogPath;
 - (NSSet *)updatedObjects;

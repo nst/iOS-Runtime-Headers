@@ -4,23 +4,34 @@
 
 @interface PLStorageOperator : PLOperator
 
++ (id)entryEventForwardDefinitionActivityStates;
 + (id)entryEventForwardDefinitionConfiguration;
 + (id)entryEventForwardDefinitionSchemaChange;
 + (id)entryEventForwardDefinitionTimeOffset;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventIntervalDefinitionCacheSize;
++ (id)entryEventIntervalDefinitions;
++ (id)entryEventNoneDefinitionActivity;
++ (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitionArchive;
-+ (id)entryEventPointDefinitionMerge;
++ (id)entryEventPointDefinitionCacheFlush;
 + (id)entryEventPointDefinitionOTA;
++ (id)entryEventPointDefinitionPLLog;
++ (id)entryEventPointDefinitionTimeCorrection;
 + (id)entryEventPointDefinitions;
++ (id)eventIntervalCacheSizeWithPayload:(id)arg1 withEntryDate:(id)arg2;
++ (id)eventPointCacheFlushWithPayload:(id)arg1;
 
 - (void)initOperatorDependancies;
 - (void)log;
+- (void)logEventForwardConfiguration:(id)arg1;
 - (void)logEventForwardSchemaChange:(id)arg1;
 - (void)logEventForwardTimeOffset:(id)arg1;
-- (void)logEventNoneConfiguration:(id)arg1;
 - (void)logEventPointArchive:(id)arg1;
-- (void)logEventPointMerge:(id)arg1;
+- (void)logEventPointCacheFlush:(id)arg1;
 - (void)logEventPointOTA:(id)arg1;
-- (id)trimmingConditionsForRolloverAtDate:(id)arg1;
+- (void)logEventPointPLLog:(id)arg1;
+- (void)logEventPointTimeCorrection:(id)arg1;
+- (id)trimConditionsForEntryKey:(id)arg1 forTrimDate:(id)arg2;
 
 @end

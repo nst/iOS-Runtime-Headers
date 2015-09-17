@@ -9,6 +9,10 @@
     int _startIndex;
 }
 
+@property (readonly) unsigned int listOptions;
+@property (readonly, copy) NSString *markerFormat;
+@property int startingItemNumber;
+
 + (id)_standardMarkerAttributesForAttributes:(id)arg1;
 + (void)initialize;
 

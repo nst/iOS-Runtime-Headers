@@ -20,6 +20,7 @@
 + (id)collationWithDictionary:(id)arg1;
 + (id)currentCollation;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)initWithDictionary:(id)arg1;
 - (int)sectionForObject:(id)arg1 collationStringSelector:(SEL)arg2;

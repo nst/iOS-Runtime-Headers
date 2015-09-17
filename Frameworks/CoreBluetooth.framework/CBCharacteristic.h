@@ -12,6 +12,7 @@
     CBService *_service;
     NSData *_value;
     NSNumber *_valueHandle;
+    unsigned long long _valueTimestamp;
 }
 
 @property (retain) NSArray *descriptors;
@@ -19,10 +20,11 @@
 @property (readonly) BOOL isBroadcasted;
 @property BOOL isNotifying;
 @property (nonatomic, readonly) CBPeripheral *peripheral;
-@property (nonatomic, readonly) unsigned int properties;
+@property (nonatomic) unsigned int properties;
 @property (nonatomic) CBService *service;
 @property (retain) NSData *value;
 @property (nonatomic, readonly) NSNumber *valueHandle;
+@property (nonatomic, readonly) unsigned long long valueTimestamp;
 
 - (void)dealloc;
 - (id)description;
@@ -42,9 +44,11 @@
 - (id)service;
 - (void)setDescriptors:(id)arg1;
 - (void)setIsNotifying:(BOOL)arg1;
+- (void)setProperties:(unsigned int)arg1;
 - (void)setService:(id)arg1;
 - (void)setValue:(id)arg1;
 - (id)value;
 - (id)valueHandle;
+- (unsigned long long)valueTimestamp;
 
 @end

@@ -18,19 +18,21 @@
 @property (nonatomic, readonly) BOOL fileXfer;
 @property (nonatomic, readonly) unsigned short priority;
 @property (nonatomic, readonly) unsigned int sequenceNumber;
-@property (nonatomic, readonly) unsigned short streamID;
+@property (nonatomic) unsigned short streamID;
 @property (nonatomic, readonly) unsigned char versionNumber;
 
 - (id)_nonHeaderData;
 - (unsigned char)command;
 - (id)data;
 - (void)dealloc;
+- (id)description;
 - (BOOL)encrypted;
 - (BOOL)fileXfer;
 - (id)initWithCommand:(unsigned char)arg1 underlyingData:(id)arg2;
 - (id)initWithVersion:(unsigned char)arg1 encrypted:(BOOL)arg2 streamID:(unsigned short)arg3 priority:(unsigned short)arg4 sequenceNumber:(unsigned int)arg5 fileXfer:(BOOL)arg6 data:(id)arg7;
 - (unsigned short)priority;
 - (unsigned int)sequenceNumber;
+- (void)setStreamID:(unsigned short)arg1;
 - (unsigned short)streamID;
 - (unsigned char)versionNumber;
 

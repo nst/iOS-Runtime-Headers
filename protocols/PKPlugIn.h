@@ -10,6 +10,7 @@
 - (void)beginUsing:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (NSDictionary *)bundleInfoDictionary;
 - (NSURL *)containingUrl;
+- (<PKPlugIn> *)createInstanceWithUUID:(NSUUID *)arg1;
 - (NSUserDefaults *)defaults;
 - (NSBundle *)embeddedBundle;
 - (id)embeddedPrincipal;
@@ -18,6 +19,7 @@
 - (NSString *)localizedContainingName;
 - (NSString *)localizedName;
 - (NSString *)localizedShortName;
+- (NSUUID *)multipleInstanceUUID;
 - (id /* block */)notificationBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, <PKPlugIn> *, unsigned int, void*, id, SEL
 - (BOOL)onSystemVolume;
 - (NSDictionary *)plugInDictionary;
@@ -26,6 +28,7 @@
 - (void)setNotificationBlock:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <PKPlugIn> *, unsigned int, void*
 - (void)setReplyQueue:(NSObject<OS_dispatch_queue> *)arg1;
 - (void)setUserElection:(int)arg1;
+- (bool)spent;
 - (<PKPlugIn> *)supersededBy;
 - (NSURL *)url;
 - (BOOL)useBundle:(NSString *)arg1 error:(id*)arg2;

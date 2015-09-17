@@ -18,6 +18,8 @@
 + (id)effectWithCIFilterName:(id)arg1;
 + (id)effectWithIdentifier:(id)arg1;
 + (unsigned int)indexOfEffectWithIdentifier:(id)arg1;
++ (BOOL)isEffectNoneForIdentifier:(id)arg1;
++ (BOOL)isEffectWithIdentifier:(id)arg1 equalToEffectWithIdentifier:(id)arg2;
 
 - (id)CIFilterName;
 - (id)description;

@@ -24,8 +24,6 @@
 @property BOOL isBTStart;
 @property BOOL isWiFiRailStart;
 @property BOOL isWiFiStart;
-@property PLOperator *operator;
-@property (nonatomic, retain) NSMutableSet *runningMetrics;
 @property (retain) PLEntryNotificationOperatorComposition *wifiEventCallback;
 @property (retain) PLEntryNotificationOperatorComposition *wifiRailCallback;
 @property long wifiSubmitCnt;

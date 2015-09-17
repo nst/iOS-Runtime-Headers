@@ -4,23 +4,23 @@
 
 @interface NEContentFilter : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
     BOOL _enabled;
-    NEContentFilterPlugin *_plugin;
+    NEFilterProviderConfiguration *_provider;
 }
 
 @property (getter=isEnabled) BOOL enabled;
-@property (copy) NEContentFilterPlugin *plugin;
+@property (copy) NEFilterProviderConfiguration *provider;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEnabled;
-- (id)plugin;
+- (id)provider;
 - (void)setEnabled:(BOOL)arg1;
-- (void)setPlugin:(id)arg1;
+- (void)setProvider:(id)arg1;
 
 @end

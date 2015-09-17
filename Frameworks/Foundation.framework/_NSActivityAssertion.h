@@ -3,6 +3,7 @@
  */
 
 @interface _NSActivityAssertion : NSObject {
+    unsigned char _adoptPreviousVoucher;
     long long _ended;
     id /* block */ _expirationHandler;
     unsigned long long _options;

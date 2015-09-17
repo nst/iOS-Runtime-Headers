@@ -19,10 +19,9 @@
 @property (nonatomic, retain) NSURL *sharedAs;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)acceptInvitation;
 - (id)calendarHomeURL;
-- (void)dealloc;
-- (id)description;
 - (id)generateReply;
 - (id)initWithAccountInfoProvider:(id)arg1 taskManager:(id)arg2;
 - (id)initWithInvitation:(id)arg1 acceptInvitation:(BOOL)arg2 atCalendarHomeURL:(id)arg3 accountInfoProvider:(id)arg4 taskManager:(id)arg5;

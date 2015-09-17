@@ -7,6 +7,7 @@
     UIWebDocumentView *_webBrowserView;
 }
 
+- (void).cxx_destruct;
 - (void)_disableWebView;
 - (void)_enableWebView;
 - (void)dealloc;

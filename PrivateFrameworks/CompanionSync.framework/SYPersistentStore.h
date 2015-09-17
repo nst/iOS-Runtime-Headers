@@ -27,6 +27,7 @@
     struct sqlite3_stmt { } *_getSyncIDSOptions;
     struct sqlite3_stmt { } *_getSyncUserInfo;
     struct sqlite3_stmt { } *_getWaitingForSyncID;
+    void *_inXpcTransaction;
     struct sqlite3_stmt { } *_insertChange;
     struct sqlite3_stmt { } *_logSyncComplete;
     struct __CFString { } *_loggingFacility;
@@ -42,6 +43,7 @@
     struct sqlite3_stmt { } *_setSyncUserInfo;
     struct sqlite3_stmt { } *_setVectorClock;
     struct sqlite3_stmt { } *_setWaitingForSyncID;
+    _SYSharedServiceDB *_sharedDB;
     NSObject<OS_dispatch_queue> *_syncQ;
     double _timeToLiveCache;
     double _unfinishedSyncTimeout;
@@ -69,12 +71,16 @@
 @property (nonatomic, readonly) NSString *path;
 @property (nonatomic, readonly) NSString *peerID;
 @property (getter=isPerformingDeltaSync, nonatomic) BOOL performingDeltaSync;
+@property (nonatomic, retain) _SYSharedServiceDB *sharedDB;
 @property (nonatomic) double timeToLive;
 @property (nonatomic) double unfinishedSyncTimeout;
 @property (nonatomic, retain) NSString *vectorClockJSON;
 @property (nonatomic, copy) NSString *waitingForSyncEndID;
 
++ (id)sharedPersistentStoreForService:(id)arg1;
+
 - (void).cxx_destruct;
+- (void)_LOCKED_storeSequenceNumberSet:(id)arg1 forPeerID:(id)arg2 db:(struct sqlite3 { }*)arg3;
 - (void)_cacheTTL;
 - (void)_convertTimestamps;
 - (struct sqlite3 { }*)_dbRef;
@@ -86,9 +92,12 @@
 - (unsigned long long)_lastSequenceNumberForPeerID_LOCKED:(id)arg1;
 - (unsigned long long)_oldestVersion;
 - (BOOL)_openDBAtPath:(id)arg1;
-- (id)_sequenceNumberSetForPeerID:(id)arg1;
+- (void)_prepareStatements;
+- (id)_sequenceNumberSetForPeerID:(id)arg1 inDB:(struct sqlite3 { }*)arg2;
+- (void)_setupSharedDB;
 - (void)_storeSequenceNumberSet:(id)arg1 forPeerID:(id)arg2;
-- (BOOL)_tableEmpty:(id)arg1;
+- (BOOL)_tableEmpty:(id)arg1 db:(struct sqlite3 { }*)arg2;
+- (void)_withDB:(id /* block */)arg1;
 - (id)cachedChangedSyncIDs;
 - (unsigned long long)cachedChangedSyncIDsVersion;
 - (BOOL)cachedVersionStale;
@@ -108,7 +117,9 @@
 - (id)fullSyncUserInfo;
 - (BOOL)ignoringFullSyncWithID:(id)arg1;
 - (BOOL)inFullSync;
-- (id)initWithPath:(id)arg1 loggingFacility:(struct __CFString { }*)arg2 changeTrackingEnabled:(BOOL)arg3;
+- (id)init;
+- (id)initWithPath:(id)arg1 loggingFacility:(const struct __CFString { }*)arg2 changeTrackingEnabled:(BOOL)arg3;
+- (id)initWithSharedDatabase:(id)arg1;
 - (BOOL)isPerformingDeltaSync;
 - (id)lastMessageReceived;
 - (unsigned long long)lastSeenRemoteVersion;
@@ -124,6 +135,7 @@
 - (id)path;
 - (id)peerID;
 - (BOOL)reassignCurrentSyncID:(id)arg1;
+- (void)resetSequenceNumber:(unsigned long long)arg1;
 - (void)resetSequenceNumbersForPeer:(id)arg1;
 - (void)sendCompletedForSyncWithID:(id)arg1;
 - (BOOL)sequenceNumberIsDuplicate:(unsigned long long)arg1 forPeer:(id)arg2;
@@ -137,10 +149,12 @@
 - (void)setLastSequenceNumber:(unsigned long long)arg1 fromPeer:(id)arg2;
 - (void)setOverflowResyncTime:(id)arg1;
 - (void)setPerformingDeltaSync:(BOOL)arg1;
+- (void)setSharedDB:(id)arg1;
 - (void)setTimeToLive:(double)arg1;
 - (void)setUnfinishedSyncTimeout:(double)arg1;
 - (void)setVectorClockJSON:(id)arg1;
 - (void)setWaitingForSyncEndID:(id)arg1;
+- (id)sharedDB;
 - (double)timeToLive;
 - (double)unfinishedSyncTimeout;
 - (id)vectorClockJSON;

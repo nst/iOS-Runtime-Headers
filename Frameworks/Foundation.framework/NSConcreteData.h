@@ -15,6 +15,7 @@
 }
 
 - (BOOL)_copyWillRetain;
+- (id)_createDispatchData;
 - (BOOL)_isCompact;
 - (const void*)bytes;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

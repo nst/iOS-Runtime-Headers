@@ -38,6 +38,8 @@
 + (void)initialize;
 + (unsigned int)themeForBundleIdentifier:(id)arg1 error:(id*)arg2;
 + (unsigned int)themeNamed:(id)arg1 forBundleIdentifier:(id)arg2 error:(id*)arg3;
++ (void)themeUnregisterThemeRef:(unsigned int)arg1;
++ (unsigned int)themeWithBytes:(const void*)arg1 length:(unsigned long)arg2 error:(id*)arg3;
 + (unsigned int)themeWithContentsOfURL:(id)arg1 error:(id*)arg2;
 
 - (void)_applyFixedAttributesToKey:(id)arg1;
@@ -53,6 +55,7 @@
 - (id)_imageForRenditionFromKey:(id)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 isMask:(BOOL)arg3;
 - (void)_initWithRenditionKey:(id)arg1;
 - (BOOL)_isButtonGlyph;
+- (id)_makeLayerFromCAPackageData;
 - (id)_rendition;
 - (id)_renditionForSpecificKey:(id)arg1;
 - (void)_setHasCheckedButtonGlyph:(BOOL)arg1;

@@ -19,6 +19,7 @@
 @property (nonatomic, readonly) NSMutableOrderedSet *geoPlaces;
 @property (nonatomic, readonly, copy) NSString *localizedName;
 @property (nonatomic) unsigned int matchingCount;
+@property (nonatomic, readonly, copy) NSNumber *minimumArea;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, readonly) NSMutableOrderedSet *remainingGeoPlaces;
 @property (nonatomic) unsigned int type;
@@ -40,6 +41,7 @@
 - (id)initWithName:(id)arg1 type:(unsigned int)arg2;
 - (id)localizedName;
 - (unsigned int)matchingCount;
+- (id)minimumArea;
 - (id)name;
 - (void)prepareRemainingGeoPlaces;
 - (id)remainingGeoPlaces;

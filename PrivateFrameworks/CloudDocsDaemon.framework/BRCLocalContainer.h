@@ -41,6 +41,7 @@
     BOOL _shouldForceContainerForeground;
     unsigned int _state;
     BRCDeadlineToken *_syncDeadlineToken;
+    id _syncDeadlineTokenResumer;
     NSMutableDictionary *_syncDownBlockToPerformForBookmarkData;
     NSMutableDictionary *_syncDownBlockToPerformForItemID;
     BRCSyncDownOperation *_syncDownOperation;
@@ -99,6 +100,7 @@
 - (void)_markLatestSyncRequestFailed;
 - (void)_markRequestIDAcked;
 - (void)_mkdirContainerIfNeeded;
+- (void)_notifyContainerBeingNowForeground;
 - (void)_notifyFrameworkContainersMonitorWithState:(BOOL)arg1;
 - (void)_performAfterResetServerAndClientTruthsAndUnlinkData:(id /* block */)arg1;
 - (void)_performAfterResetServerAndClientTruthsAndUnlinkDataAndPurgeTheZone:(id /* block */)arg1;
@@ -110,6 +112,7 @@
 - (void)_removeTargetedAliasesWithCompletionBlock:(id /* block */)arg1;
 - (void)_reset:(unsigned int)arg1;
 - (BOOL)_resetItemsTable;
+- (void)_showiCloudDriveAppUpSellDialogIfNeeded;
 - (void)_startSync;
 - (void)_syncUpOfRecords:(id)arg1 didFinishWithError:(id)arg2;
 - (id)absolutePath;
@@ -147,11 +150,13 @@
 - (id)directoryItemIDByFileID:(unsigned long long)arg1;
 - (unsigned long long)documentCount;
 - (unsigned long long)documentEvictableSizeUsage;
-- (unsigned long long)documentEvictableSizeUsageWithAccessTimeDelta:(unsigned long long)arg1;
+- (unsigned long long)documentEvictableSizeUsageWithAccessTimeDelta:(double)arg1;
 - (unsigned long long)documentEvictableSizeUsageWithUrgency:(int)arg1;
 - (id)documentItemByItemID:(id)arg1;
 - (unsigned long long)documentSizeUsage;
+- (struct PQLResultSet { Class x1; }*)documentsNotIdleEnumerator;
 - (BOOL)dumpActivityToContext:(id)arg1 error:(id*)arg2;
+- (BOOL)dumpStatusToContext:(id)arg1 error:(id*)arg2;
 - (BOOL)dumpTablesToContext:(id)arg1 error:(id*)arg2;
 - (BOOL)evictItem:(id)arg1 group:(id)arg2 error:(id*)arg3;
 - (BOOL)existsByItemID:(id)arg1;
@@ -163,11 +168,13 @@
 - (BOOL)hasActiveAliasQueries;
 - (BOOL)hasActiveQueries;
 - (BOOL)hasActiveRecursiveQueries;
+- (BOOL)hasDocumentsOrDirectory;
 - (BOOL)hasHighPriorityWatchers;
 - (BOOL)hasLocalChanges;
 - (BOOL)hasUbiquitousDocuments;
 - (BOOL)hasUbiquityClientsConnected;
 - (unsigned int)hash;
+- (id)init;
 - (id)initForCreationWithContainerID:(id)arg1 dbRowID:(id)arg2 db:(id)arg3 session:(id)arg4;
 - (id)initWithContainerID:(id)arg1 dbRowID:(id)arg2 db:(id)arg3 session:(id)arg4 initialCreation:(BOOL)arg5;
 - (id)initWithPlist:(id)arg1 containerID:(id)arg2 dbRowID:(id)arg3 db:(id)arg4 session:(id)arg5;
@@ -179,11 +186,11 @@
 - (id)itemByDocumentID:(unsigned int)arg1;
 - (id)itemByFileID:(unsigned long long)arg1;
 - (id)itemByItemID:(id)arg1;
-- (id)itemByRowID:(unsigned int)arg1;
+- (id)itemByRowID:(unsigned long long)arg1;
 - (struct PQLResultSet { Class x1; }*)itemsEnumerator;
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorChildOf:(id)arg1 rankMin:(unsigned long long)arg2 rankMax:(unsigned long long)arg3 count:(unsigned long long)arg4;
-- (struct PQLResultSet { Class x1; }*)itemsEnumeratorParentedTo:(id)arg1 notParentedTo:(id)arg2 rankMin:(unsigned long long)arg3 rankMax:(unsigned long long)arg4 namePrefix:(id)arg5 shouldIncludeFolders:(BOOL)arg6 shouldIncludeAliases:(BOOL)arg7 count:(unsigned long long)arg8;
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorWithDB:(id)arg1;
+- (struct PQLResultSet { Class x1; }*)itemsEnumeratorWithRankMin:(unsigned long long)arg1 rankMax:(unsigned long long)arg2 namePrefix:(id)arg3 shouldIncludeFolders:(BOOL)arg4 shouldIncludeAliases:(BOOL)arg5 shouldIncludeDataScope:(BOOL)arg6 shouldIncludeDocumentsScope:(BOOL)arg7 count:(unsigned long long)arg8;
 - (struct PQLResultSet { Class x1; }*)itemsWithInFlightDiffsEnumerator;
 - (long long)lastInsertedRank;
 - (struct PQLResultSet { Class x1; }*)liveTargetedAliasesEnumeratorWithCount:(unsigned long long)arg1;
@@ -203,7 +210,6 @@
 - (id)plist;
 - (id /* block */)popDownloadedBlockForItemID:(id)arg1;
 - (id /* block */)popOnDiskBlockForItemID:(id)arg1;
-- (BOOL)printStatusLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1 db:(id)arg2;
 - (void)registerQueryWithAliases:(BOOL)arg1 isRecursive:(BOOL)arg2;
 - (void)removeClientUsingUbiquity:(id)arg1;
 - (void)removeForegroundClient:(id)arg1;
@@ -236,6 +242,7 @@
 - (void)startDownloadingItemsUsingGroup:(id)arg1;
 - (unsigned int)state;
 - (id)syncDeadlineToken;
+- (id)syncDownImmediately;
 - (void)syncDownOperation:(id)arg1 didFinishWithError:(id)arg2;
 - (unsigned int)syncState;
 - (id)syncThrottles;

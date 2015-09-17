@@ -24,6 +24,7 @@
 - (id)eventUniqueID;
 - (id)fileAttributes;
 - (id)fileProtection;
+- (unsigned int)fileSize;
 - (id)fileWrappers;
 - (id)filename;
 - (unsigned short)finderFlags;
@@ -62,17 +63,6 @@
 - (void)setURL:(id)arg1;
 - (id)symbolicLinkDestination;
 - (unsigned long)type;
-
-// Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
-
-- (BOOL)_pathExtensionEquals:(id)arg1;
-- (BOOL)isDisplayableByWebKit;
-- (BOOL)isDisplayableImage;
-- (BOOL)isMedia;
-- (BOOL)isRFC822;
-- (BOOL)isZip;
-- (float)minimumZoomFontSize;
-- (id)preferredFilenameStrippingZipIfNeededUseApplications:(BOOL)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 

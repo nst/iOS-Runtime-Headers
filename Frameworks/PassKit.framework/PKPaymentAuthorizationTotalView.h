@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentAuthorizationTotalView : UIView {
+    BOOL _isPendingTotal;
     NSLayoutConstraint *_labelBaselineConstraint;
     UILabel *_labelView;
     PKPaymentAuthorizationLayout *_layout;
@@ -13,6 +14,7 @@
     UILabel *_valueView;
 }
 
+@property (nonatomic) BOOL isPendingTotal;
 @property (nonatomic) PKPaymentAuthorizationLayout *layout;
 @property (nonatomic) int style;
 
@@ -24,7 +26,9 @@
 - (void)dealloc;
 - (id)init;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (BOOL)isPendingTotal;
 - (id)layout;
+- (void)setIsPendingTotal:(BOOL)arg1;
 - (void)setLabel:(id)arg1 value:(id)arg2;
 - (void)setLayout:(id)arg1;
 - (void)setStyle:(int)arg1;

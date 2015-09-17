@@ -36,6 +36,7 @@
 - (unsigned int)contentFormatId;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)fill;
 - (unsigned int)fillIndex;
 - (id)font;
@@ -45,6 +46,7 @@
 - (id)initWithResources:(id)arg1;
 - (bool)isAlignmentInfoOverridden;
 - (bool)isBordersOverridden;
+- (bool)isCenterAcrossAligned;
 - (bool)isContentFormatOverridden;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToStyle:(id)arg1;

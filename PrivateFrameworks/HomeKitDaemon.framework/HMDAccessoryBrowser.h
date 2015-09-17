@@ -7,6 +7,7 @@
     NSMutableSet *_browsingXPCConnections;
     unsigned int _generationCounter;
     HMMessageDispatcher *_messageDispatcher;
+    NSHashTable *_unpairedAccessories;
     NSUUID *_uuid;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
@@ -21,6 +22,7 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *messageReceiveQueue;
 @property (nonatomic, readonly) NSUUID *messageTargetUUID;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) NSHashTable *unpairedAccessories;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
@@ -48,6 +50,7 @@
 - (void)setMessageDispatcher:(id)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (id)unpairedAccessories;
 - (id)uuid;
 - (id)workQueue;
 

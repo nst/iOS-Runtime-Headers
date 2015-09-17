@@ -11,6 +11,7 @@
     } _adjustedMaxFileDuration;
     unsigned long long _adjustedMaxFileSize;
     unsigned long long _adjustedMinFreeDiskSpaceLimit;
+    BOOL _atLeastOneFragmentIsWritten;
     struct OpaqueCMByteStream { } *_byteStream;
     struct { 
         long long value; 
@@ -46,10 +47,16 @@
     } _debugDurationForFailOfDiskSpaceTest;
     BOOL _didBeginSession;
     BOOL _didBeginWriting;
+    BOOL *_expectingToSeeSamplesForInput;
     BOOL *_finalDurationNeedsToBeWrittenForTrack;
+    BWIrisMovieInfo *_firstIrisMovieInfo;
     struct OpaqueFigFormatWriter { } *_formatWriter;
     BOOL _haveDebugASBD;
     BOOL *_haveSeenSamplesForTrack;
+    BWQuickTimeReferenceMovieGenerator *_irisRefMovieGenerator;
+    int _irisStillImageTimeTrackID;
+    int _irisStillImageTimeTrackTimeScale;
+    int _irisTerminationStatus;
     unsigned int _masterInputIndex;
     int _masterInputTimeScale;
     struct { 
@@ -61,7 +68,7 @@
     unsigned long long _maxFileSize;
     float _maxVideoFrameRate;
     unsigned long long _minFreeDiskSpaceLimit;
-    NSDictionary *_movieLevelMetadata;
+    NSArray *_movieLevelMetadata;
     BOOL _needToDeMoof;
     struct { 
         long long value; 
@@ -71,10 +78,13 @@
     } _nextTimeToReturnFileSize;
     unsigned int _numAudioTracks;
     unsigned int _numInputs;
+    unsigned int _numVideoTracks;
     char *_parentPath;
+    NSMutableArray *_pendingIrisRefMovieRequests;
     struct OpaqueFigSimpleMutex { } *_propertyMutex;
+    BOOL _recordingIsForFrontCamera;
     int _recordingState;
-    FigCaptureRecordingSettings *_settings;
+    FigCaptureMovieFileRecordingSettings *_settings;
     NSArray *_stagingQueues;
     struct { 
         long long value; 
@@ -82,6 +92,7 @@
         unsigned int flags; 
         long long epoch; 
     } _startingPTS;
+    NSArray *_structuralDependentTrackReferenceListForMetadataInputs;
     NSObject<OS_dispatch_queue> *_thumbnailGenerationDispatchQueue;
     struct __IOSurface { } *_thumbnailSurface;
     int *_trackIDs;
@@ -89,15 +100,18 @@
 }
 
 @property (nonatomic) float maxVideoFrameRate;
-@property (nonatomic, copy) NSDictionary *movieLevelMetadata;
+@property (nonatomic, copy) NSArray *movieLevelMetadata;
+@property (nonatomic, copy) NSArray *structuralDependentTrackReferenceListForMetadataInputs;
 @property (nonatomic, copy) NSArray *trackReferenceListForMetadataInputs;
 
 + (void)initialize;
 
 - (long)_adjustRecordingLimitsForMovieTimeScale:(int)arg1;
+- (void)_buildIrisRefMovieGeneratorAndWriteFirstIrisAsRefMovie;
 - (long)_checkFreeSpace;
 - (void)_debugAudioUsingSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
-- (void)_doEndRecordingAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_determineWhichInputsWeExpectToSeeSamplesFor;
+- (void)_doEndRecordingAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 yieldingIrisMovieInfo:(id*)arg2 recordingSucceeded:(BOOL*)arg3;
 - (long)_doStartRecordingAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withSettings:(id)arg2 thumbnailSourcePixelBuffer:(struct __CVBuffer { }*)arg3 sensorVideoPort:(struct __CFString { }*)arg4;
 - (BOOL)_driveStateMachineWithBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2 sampleBufferAlreadyAtHeadOfQueue:(BOOL)arg3;
 - (void)_driveStateMachineWithMediaBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2 sampleBufferAlreadyAtHeadOfQueue:(BOOL)arg3;
@@ -107,16 +121,22 @@
 - (BOOL)_driveStateMachineWithStopMarkerBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2 sampleBufferAlreadyAtHeadOfQueue:(BOOL)arg3;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_findMarkers:(struct __CFString { }*)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_findStartMarkersWithMatchedStagedSetting:(id*)arg1 thumbnailSourcePixelBuffer:(struct __CVBuffer {}**)arg2 sensorVideoPort:(const struct __CFString {}**)arg3;
+- (void)_forceEarlyTerminationWithErrorCode:(long)arg1;
 - (unsigned long long)_getCurrentFileSize:(BOOL)arg1;
+- (void)_handleFormatWriterDidWriteFragmentNotification;
 - (void)_preprocessingForFirstAudioBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2;
+- (void)_preprocessingForFirstMetadataBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2;
 - (void)_preprocessingForFirstVideoBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2;
 - (void)_printBufferEvent:(struct opaqueCMSampleBuffer { }*)arg1 forNodeInputIndex:(unsigned int)arg2 eventName:(id)arg3;
 - (long)_startUpFormatWriterAtTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withSettings:(id)arg2;
-- (void)_writeBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forTrackIndex:(unsigned int)arg2;
-- (long)_writeCommonMetadata:(id)arg1 withProperties:(id)arg2 usingWriter:(struct OpaqueFigMetadataWriter { }*)arg3;
+- (id)_validTrackReferencesForReferenceInputIndexes:(id)arg1;
+- (void)_writeBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2;
+- (void)_writeIrisRefMovieWithInfo:(id)arg1;
+- (long)_writeStillImageTimeMetadataSampleForCaptureTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toTrackWithID:(int)arg2 usingTrackTimeScale:(int)arg3;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
+- (void)handleIrisReferenceMovieRequest:(id)arg1 forInput:(id)arg2;
 - (id)init;
 - (id)initWithNumberOfVideoInputs:(unsigned int)arg1 numberOfAudioInputs:(unsigned int)arg2 numberOfMetadataInputs:(unsigned int)arg3;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })lastFileDuration;
@@ -128,7 +148,9 @@
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setMaxVideoFrameRate:(float)arg1;
 - (void)setMovieLevelMetadata:(id)arg1;
+- (void)setStructuralDependentTrackReferenceListForMetadataInputs:(id)arg1;
 - (void)setTrackReferenceListForMetadataInputs:(id)arg1;
+- (id)structuralDependentTrackReferenceListForMetadataInputs;
 - (id)trackReferenceListForMetadataInputs;
 
 @end

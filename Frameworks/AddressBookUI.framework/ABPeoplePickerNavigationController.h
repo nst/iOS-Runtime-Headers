@@ -2,13 +2,11 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABPeoplePickerNavigationController : UINavigationController {
+@interface ABPeoplePickerNavigationController : UINavigationController <ABContactViewControllerDelegate> {
     void *_addressBook;
     BOOL _allowsContactBlocking;
-    BOOL _allowsOnlyFaceTimeActions;
-    BOOL _allowsOnlyPhoneActions;
     int _behavior;
-    CNContactPicker *_contactPicker;
+    CNContactPickerViewController *_contactPicker;
     UISplitViewController<ABContactViewControllerDelegate> *_contactsSplitViewPresentationDelegate;
     NSArray *_defaultToolbarItems;
     struct __CFArray { } *_displayedProperties;
@@ -40,12 +38,13 @@
 }
 
 @property (setter=ab_setDefaultToolbarItems:, nonatomic, retain) NSArray *ab_defaultToolbarItems;
-@property (nonatomic) void*addressBook;
+@property (nonatomic) const void*addressBook;
 @property (nonatomic) BOOL allowsContactBlocking;
-@property (nonatomic) BOOL allowsOnlyFaceTimeActions;
-@property (nonatomic) BOOL allowsOnlyPhoneActions;
 @property (nonatomic) UISplitViewController<ABContactViewControllerDelegate> *contactsSplitViewPresentationDelegate;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSArray *displayedProperties;
+@property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidesPromptInLandscape;
 @property (nonatomic) BOOL hidesSearchableSources;
 @property (nonatomic) <ABPeoplePickerNavigationControllerDelegate> *peoplePickerDelegate;
@@ -53,6 +52,7 @@
 @property (nonatomic, copy) NSPredicate *predicateForSelectionOfPerson;
 @property (nonatomic, copy) NSPredicate *predicateForSelectionOfProperty;
 @property (nonatomic, retain) <ABStyleProvider> *styleProvider;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
 
@@ -78,32 +78,30 @@
 - (void)ab_restoreViewControllerToolbarItems:(id)arg1 animated:(BOOL)arg2;
 - (void)ab_setDefaultToolbarItems:(id)arg1;
 - (void)ab_setDefaultToolbarItems:(id)arg1 animated:(BOOL)arg2;
-- (void*)addressBook;
+- (const void*)addressBook;
 - (BOOL)allowsActions;
 - (BOOL)allowsCancel;
 - (BOOL)allowsCardEditing;
 - (BOOL)allowsConferencing;
 - (BOOL)allowsContactBlocking;
-- (BOOL)allowsOnlyFaceTimeActions;
-- (BOOL)allowsOnlyPhoneActions;
 - (BOOL)allowsShowingPersonsCards;
 - (BOOL)allowsSounds;
 - (id)bannerTitle;
 - (id)bannerValue;
 - (int)behavior;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;
-- (void)contactPicker:(id)arg1 didSelectContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(int)arg4;
+- (void)contactPicker:(id)arg1 didSelectContactProperty:(id)arg2;
 - (void)contactPickerDidCancel:(id)arg1;
 - (id)contactPickerPresentedViewController:(id)arg1;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
-- (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 property:(id)arg3 labeledValue:(id)arg4;
+- (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
 - (id)contactsSplitViewPresentationDelegate;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
-- (id)displayedKeys;
 - (void*)displayedPerson;
 - (id)displayedProperties;
+- (id)displayedPropertyKeys;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)finishNavigationBarAnimation;
 - (void)groupsViewControllerDidFinish:(id)arg1;
@@ -155,8 +153,6 @@
 - (void)setAllowsCardEditing:(BOOL)arg1;
 - (void)setAllowsConferencing:(BOOL)arg1;
 - (void)setAllowsContactBlocking:(BOOL)arg1;
-- (void)setAllowsOnlyFaceTimeActions:(BOOL)arg1;
-- (void)setAllowsOnlyPhoneActions:(BOOL)arg1;
 - (void)setAllowsSounds:(BOOL)arg1;
 - (void)setAllowsVibrations:(BOOL)arg1;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
@@ -185,15 +181,16 @@
 - (BOOL)shouldContinueAfterSelectingPerson:(void*)arg1 cell:(id)arg2;
 - (BOOL)shouldPerformDefaultActionForPerson:(void*)arg1 property:(int)arg2 identifier:(int)arg3 withMemberCell:(id)arg4;
 - (void)showCardForPerson:(void*)arg1;
-- (void)showCardForPerson:(void*)arg1 resetFilter:(BOOL)arg2 resetSearch:(BOOL)arg3 fallbackToFirstPerson:(BOOL)arg4;
 - (BOOL)showCardForPerson:(void*)arg1 withMemberCell:(id)arg2 animate:(BOOL)arg3 forceDisableEditing:(BOOL)arg4;
 - (void)showMembersOfContactsFilter:(id)arg1;
-- (void)showMembersOfContactsFilter:(id)arg1 animate:(BOOL)arg2 resetSearch:(BOOL)arg3 loadState:(BOOL)arg4;
+- (void)showMembersOfContactsFilter:(id)arg1 animate:(BOOL)arg2 loadState:(BOOL)arg3;
 - (void)showUnifiedCardForPerson:(void*)arg1;
 - (id)styleProvider;
 - (void)unknownPersonViewController:(id)arg1 didResolveToPerson:(void*)arg2;
 - (BOOL)unknownPersonViewController:(id)arg1 shouldPerformDefaultActionForPerson:(void*)arg2 property:(int)arg3 identifier:(int)arg4 withMemberCell:(id)arg5;
 - (id)valueForUndefinedKey:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;

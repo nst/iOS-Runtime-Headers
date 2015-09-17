@@ -8,7 +8,7 @@
     UILabel *_titleLabel;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithSpecifier:(id)arg1;
 - (void)layoutSubviews;
 - (float)preferredHeightForWidth:(float)arg1;

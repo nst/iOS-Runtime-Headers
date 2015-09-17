@@ -14,6 +14,7 @@
 
 @optional
 
+- (void)performTapActionCancelForHighlightedKey;
 - (void)performTapActionDownForHighlightedKey;
 - (void)performTapActionEndForHighlightedKey;
 - (void)replaceButton:(UIView<TPNumberPadButtonProtocol> *)arg1 atIndex:(unsigned int)arg2;

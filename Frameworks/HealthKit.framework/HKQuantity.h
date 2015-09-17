@@ -14,6 +14,7 @@
 
 - (void).cxx_destruct;
 - (id)_initWithUnit:(id)arg1 doubleValue:(double)arg2;
+- (BOOL)_isZero;
 - (id)_quantityByAddingQuantity:(id)arg1;
 - (id)_unit;
 - (int)compare:(id)arg1;

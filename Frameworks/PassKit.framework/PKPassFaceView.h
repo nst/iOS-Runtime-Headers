@@ -6,7 +6,6 @@
     BOOL _allowBackgroundPlaceHolders;
     int _backgroundMode;
     UIImageView *_backgroundView;
-    PKBarcodeStickerView *_barcodeView;
     NSMutableArray *_bodyBucketViews;
     NSMutableSet *_bodyContentViews;
     NSMutableSet *_bodyInvariantViews;
@@ -34,7 +33,6 @@
 
 @property (nonatomic) BOOL allowBackgroundPlaceHolders;
 @property (nonatomic) int backgroundMode;
-@property (nonatomic, readonly) PKBarcodeStickerView *barcodeView;
 @property (nonatomic, readonly) BOOL bodyContentCreated;
 @property (nonatomic, readonly, retain) NSArray *buckets;
 @property (nonatomic) float clippedContentHeight;
@@ -44,6 +42,7 @@
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } contentSize;
 @property (nonatomic, readonly) UIView *contentView;
 @property (nonatomic) <PKPassFaceDelegate> *delegate;
+@property (nonatomic, readonly) PKPassFaceTemplate *faceTemplate;
 @property (nonatomic, retain) NSMutableArray *headerBucketViews;
 @property (nonatomic, readonly) BOOL isFrontFace;
 @property (nonatomic, readonly) PKPass *pass;
@@ -59,7 +58,6 @@
 - (void)_createInvariantViewsForRegions:(unsigned int)arg1;
 - (void)_flushContentViewsForRegions:(unsigned int)arg1;
 - (void)_handleTimeOrLocaleChange:(id)arg1;
-- (void)_positionBarcodeView;
 - (id)_relevantBuckets;
 - (void)_setContentViewsAlpha:(float)arg1;
 - (void)_setShowsBackgroundView:(BOOL)arg1;
@@ -70,8 +68,6 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (BOOL)allowBackgroundPlaceHolders;
 - (int)backgroundMode;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })barcodeFrame;
-- (id)barcodeView;
 - (BOOL)bodyContentCreated;
 - (id)buckets;
 - (float)clippedContentHeight;
@@ -87,6 +83,7 @@
 - (void)createHeaderInvariantViews;
 - (void)dealloc;
 - (id)delegate;
+- (id)faceTemplate;
 - (id)headerBucketViews;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)insertContentView:(id)arg1 ofType:(int)arg2;

@@ -5,6 +5,6 @@
 
 @required
 
-- (void)consumeScenario:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 7: PLCloudScenario *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PLCloudScenarioExecutionResult *, void*
+- (void)consumeScenario:(void *)arg1 withCompletionHandler:(void *)arg2; // needs 2 arg types, found 7: PLCloudLegacyScenario *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PLCloudScenarioExecutionResult *, void*
 
 @end

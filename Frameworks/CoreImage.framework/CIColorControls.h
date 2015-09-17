@@ -21,7 +21,6 @@
 - (id)inputImage;
 - (id)inputSaturation;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputBrightness:(id)arg1;
 - (void)setInputContrast:(id)arg1;
 - (void)setInputImage:(id)arg1;

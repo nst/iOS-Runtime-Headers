@@ -16,7 +16,9 @@
     int staticPriority;
     unsigned long long systemTimeInNs;
     unsigned long long threadId;
-    unsigned int threadQos;
+    BOOL threadQos;
+    BOOL threadRequestedQos;
+    BOOL threadRequestedQosOverride;
     unsigned long long userTimeInNs;
     unsigned long long waitEvent;
 }

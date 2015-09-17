@@ -16,8 +16,8 @@
 @property (nonatomic, retain) _UIBackdropViewSettings *outputSettingsB;
 @property (nonatomic) float weighting;
 
+- (void).cxx_destruct;
 - (void)computeOutputSettingsUsingModel:(id)arg1;
-- (void)dealloc;
 - (id)inputSettingsA;
 - (id)inputSettingsB;
 - (id)outputSettingsA;

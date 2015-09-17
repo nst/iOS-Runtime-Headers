@@ -12,11 +12,22 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (BOOL)_shouldDefaultToTouches;
+
+- (void).cxx_destruct;
 - (float)_edgeRegionSize;
+- (struct CGPoint { float x1; float x2; })_locationForTouch:(id)arg1;
+- (void)_setEdgeRegionSize:(float)arg1;
+- (void)_setHysteresis:(float)arg1;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
+- (BOOL)_shouldUseGrapeFlags;
+- (int)_touchInterfaceOrientation;
 - (void)dealloc;
 - (unsigned int)edges;
+- (void)encodeWithCoder:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2;
+- (id)initWithTarget:(id)arg1 action:(SEL)arg2 type:(int)arg3;
 - (BOOL)isRequiringLongPress;
 - (void)reset;
 - (void)screenEdgePanRecognizerStateDidChange:(id)arg1;

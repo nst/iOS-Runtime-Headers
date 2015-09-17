@@ -13,6 +13,7 @@
     NSDictionary *_recordIDsToETags;
     NSDictionary *_recordIDsToVersionETags;
     unsigned int _requestedTTL;
+    BOOL _shouldFetchAssetContent;
 }
 
 @property (nonatomic) unsigned int URLOptions;
@@ -25,6 +26,7 @@
 @property (nonatomic, retain) NSDictionary *recordIDsToETags;
 @property (nonatomic, retain) NSDictionary *recordIDsToVersionETags;
 @property (nonatomic) unsigned int requestedTTL;
+@property (nonatomic) BOOL shouldFetchAssetContent;
 
 - (void).cxx_destruct;
 - (unsigned int)URLOptions;
@@ -53,7 +55,9 @@
 - (void)setRecordIDsToETags:(id)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
 - (void)setRequestedTTL:(unsigned int)arg1;
+- (void)setShouldFetchAssetContent:(BOOL)arg1;
 - (void)setURLOptions:(unsigned int)arg1;
+- (BOOL)shouldFetchAssetContent;
 - (id)zoneIDsToLock;
 
 @end

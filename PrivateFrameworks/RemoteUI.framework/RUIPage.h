@@ -6,7 +6,14 @@
     NSString *_backButtonTitle;
     NSMutableArray *_childPages;
     UIView *_containerView;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _customEdgeInsets;
     float _customMargin;
+    NSMutableArray *_didAppearCallbacks;
     BOOL _hidesBackButton;
     UIBarButtonItem *_leftFlexSpace;
     RUIBarButtonItem *_leftNavigationBarButtonItem;
@@ -29,6 +36,7 @@
     UIBarButtonItem *_rightToolbarItem;
     BOOL _showsTitlesAsHeaderViews;
     RUISpinnerView *_spinnerViewOM;
+    RUIStyle *_style;
     RUITableView *_tableViewOM;
     struct UIEdgeInsets { 
         float top; 
@@ -47,6 +55,7 @@
 @property (nonatomic, readonly) NSArray *buttons;
 @property (nonatomic, readonly) NSArray *childPages;
 @property (nonatomic, readonly) UIView *containerView;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } customEdgeInsets;
 @property (nonatomic) float customMargin;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -76,6 +85,7 @@
 @property (nonatomic, retain) UIBarButtonItem *rightToolbarItem;
 @property (nonatomic) BOOL showsTitlesAsHeaderViews;
 @property (nonatomic, readonly) RUISpinnerView *spinnerViewOM;
+@property (nonatomic, retain) RUIStyle *style;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) RUITableView *tableViewOM;
 @property (nonatomic, readonly) UILabel *titleLabel;
@@ -87,7 +97,6 @@
 - (void).cxx_destruct;
 - (void)_addChildPage:(id)arg1;
 - (void)_barButtonPressed:(id)arg1 isRight:(BOOL)arg2 isNavbar:(BOOL)arg3;
-- (float)_getKeyboardIntersectionHeight;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (void)_leftNavigationBarButtonPressed:(id)arg1;
@@ -103,12 +112,14 @@
 - (void)_updateToolbar;
 - (void)_updateWithCompletedChild:(id)arg1;
 - (id)accessoryViews;
+- (void)addDidAppearBlock:(id /* block */)arg1;
 - (id)backButtonTitle;
 - (id)buttonItems;
 - (id)buttons;
 - (id)childPages;
 - (id)containerView;
 - (id)contentScrollView;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })customEdgeInsets;
 - (float)customMargin;
 - (void)dealloc;
 - (id)description;
@@ -126,6 +137,7 @@
 - (id)leftToolbarButton;
 - (id)leftToolbarButtonItem;
 - (id)leftToolbarItem;
+- (void)loadView;
 - (int)loadingIndicatorStyle;
 - (id)loadingTitle;
 - (id)middleToolbarButton;
@@ -138,6 +150,7 @@
 - (id)parentPage;
 - (id)passcodeViewOM;
 - (void)populatePostbackDictionary:(id)arg1;
+- (id)preferredFocusedView;
 - (id)primaryElement;
 - (id)rightNavigationBarButton;
 - (id)rightNavigationBarButtonItem;
@@ -146,6 +159,7 @@
 - (id)rightToolbarItem;
 - (void)setBackButtonTitle:(id)arg1;
 - (void)setButton:(id)arg1 enabled:(BOOL)arg2;
+- (void)setCustomEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setCustomMargin:(float)arg1;
 - (void)setHasToolbar;
 - (void)setHidesBackButton:(BOOL)arg1;
@@ -172,10 +186,12 @@
 - (void)setRightToolbarButtonItem:(id)arg1;
 - (void)setRightToolbarItem:(id)arg1;
 - (void)setShowsTitlesAsHeaderViews:(BOOL)arg1;
+- (void)setStyle:(id)arg1;
 - (void)setTitleLabelPadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setValidationFunction:(id)arg1;
 - (BOOL)showsTitlesAsHeaderViews;
 - (id)spinnerViewOM;
+- (id)style;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableViewOM;
 - (id)titleLabel;

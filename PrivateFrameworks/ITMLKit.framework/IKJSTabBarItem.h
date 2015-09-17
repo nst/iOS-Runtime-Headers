@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSTabBarItem : IKJSObject <IKJSTabBarItem> {
+@interface IKJSTabBarItem : IKJSObject <IKJSTabBarItem, JSExport> {
     NSString *_identifier;
     JSManagedValue *_managedNavigationDocument;
     JSManagedValue *_managedSelf;

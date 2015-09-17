@@ -3,6 +3,9 @@
  */
 
 @interface VKRoadMapModel : VKVectorMapModel <VKStyleManagerObserver> {
+    struct ClearItem { unsigned char x1; struct Matrix<float, 4, 1> { float x_2_1_1[4]; } x2; bool x3; float x4; unsigned char x5; int x6; unsigned char x7; struct Box<unsigned int, 2> { struct Matrix<unsigned int, 2, 1> { unsigned int x_1_2_1[2]; } x_8_1_1; struct Matrix<unsigned int, 2, 1> { unsigned int x_2_2_1[2]; } x_8_1_2; } x8; } *_clearItem;
+    int _extraStencil;
+    double _layoutTimestamp;
     unsigned long long _mapLayerPosition;
     struct unique_ptr<vk::PatternedManager, std::__1::default_delete<vk::PatternedManager> > { 
         struct __compressed_pair<vk::PatternedManager *, std::__1::default_delete<vk::PatternedManager> > { 
@@ -14,13 +17,15 @@
             struct RoadManager {} *__first_; 
         } __ptr_; 
     } _roadManager;
+    int _sourceTileZtoStencilOffset;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) double layoutTimestamp;
 @property (nonatomic) unsigned long long mapLayerPosition;
-@property (nonatomic, readonly) VKStyleManager *styleManager;
+@property (nonatomic, readonly) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } styleManager;
 @property (readonly) Class superclass;
 
 - (id).cxx_construct;
@@ -28,9 +33,12 @@
 - (unsigned char)commandBufferId;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning:(BOOL)arg1;
+- (id)featureMarkerInTile:(id)arg1 atPoint:(struct VKPoint { double x1; double x2; double x3; }*)arg2;
 - (void)gglLayoutScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (id)init;
+- (double)layoutTimestamp;
 - (unsigned long long)mapLayerPosition;
+- (void)reserveStencilRangeForScene:(id)arg1 withContext:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (void)setMapLayerPosition:(unsigned long long)arg1;
 - (void)stylesheetDidChange;
 

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NotificationsUI.framework/NotificationsUI
  */
 
-@interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHostDelegate, NCInteractiveNotificationHostInterface> {
+@interface NCInteractiveNotificationHostViewController : _UIRemoteViewController <NCInteractiveNotificationHost, NCInteractiveNotificationHostDelegate, NCInteractiveNotificationHostInterface> {
     NCViewServiceDescriptor *_accessoryViewService;
     float _bottomOverhangHeight;
     <NCInteractiveNotificationHostDelegate> *_delegate;

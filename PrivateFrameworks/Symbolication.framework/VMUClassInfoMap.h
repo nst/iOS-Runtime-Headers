@@ -2,20 +2,30 @@
    Image: /System/Library/PrivateFrameworks/Symbolication.framework/Symbolication
  */
 
-@interface VMUClassInfoMap : NSObject <NSCoding> {
-    void *_cppMap;
+@interface VMUClassInfoMap : NSObject <NSSecureCoding> {
+    NSMutableArray *_linearClassInfos;
+    void *_map1;
+    void *_map2;
 }
 
-+ (id)infoMap;
-+ (void)initialize;
+@property (nonatomic, readonly) unsigned int count;
 
-- (void)addClassInfo:(id)arg1 forAddress:(unsigned long long)arg2;
++ (void)_claimUnarchivingOfClass:(id)arg1;
++ (void)_destroyRetainedLinearArray:(id*)arg1 withCount:(unsigned int)arg2;
++ (void)initialize;
++ (BOOL)supportsSecureCoding;
+
+- (id*)_retainedLinearArrayWithReturnedCount:(unsigned int*)arg1;
+- (unsigned int)addClassInfo:(id)arg1 forAddress:(unsigned long long)arg2;
 - (void)addClassInfosFromMap:(id)arg1;
 - (id)classInfoForAddress:(unsigned long long)arg1;
+- (id)classInfoForIndex:(unsigned int)arg1;
 - (unsigned int)count;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
+- (void)enumerateInfosWithBlock:(id /* block */)arg1;
 - (void)enumerateWithBlock:(id /* block */)arg1;
+- (unsigned int)indexForClassInfo:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 

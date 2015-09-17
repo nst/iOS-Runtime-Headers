@@ -5,6 +5,7 @@
 
 @required
 
-- (void)textDidChangeForJSKeyboard:(IKJSKeyboard *)arg1;
+- (NSString *)jsText;
+- (void)setJSText:(NSString *)arg1;
 
 @end

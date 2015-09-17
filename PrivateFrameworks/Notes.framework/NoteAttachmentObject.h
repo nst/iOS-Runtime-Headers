@@ -10,6 +10,8 @@
 @property (nonatomic, retain) NoteObject *note;
 
 + (BOOL)applyFileAttributesForAttachment:(id)arg1 error:(id*)arg2;
++ (id)attachmentDirectoryPathForAttachmentObjectID:(id)arg1 error:(id*)arg2;
++ (id)attachmentDirectoryURLForAttachmentObjectID:(id)arg1 error:(id*)arg2;
 + (BOOL)migrateAttachmentRelatedFilesInContext:(id)arg1 error:(id*)arg2;
 + (BOOL)migrateFileForAttachment:(id)arg1 toCurrentAttachmentPathWithError:(id*)arg2;
 

@@ -87,6 +87,7 @@
 - (void).cxx_destruct;
 - (id)UUID;
 - (id)appAccessibilityParameters;
+- (BOOL)containsOnlyPayloadsOfClasses:(id)arg1;
 - (BOOL)containsPayloadOfClass:(Class)arg1;
 - (struct __SecCertificate { }*)copyCertificateFromPayloadWithUUID:(id)arg1;
 - (struct __SecCertificate { }*)copyCertificateWithPersistentID:(id)arg1;

@@ -61,7 +61,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (void)addAttachmentPosition:(double)arg1;
 - (void)addFloatingDrawable:(id)arg1;
 - (void)addSectionStyle:(id)arg1 pageIndex:(int)arg2 numPages:(int)arg3;

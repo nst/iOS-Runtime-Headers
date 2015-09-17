@@ -3,25 +3,35 @@
  */
 
 @interface UIKBHandwritingQuadCurvePointFIFO : UIKBHandwritingPointFIFO {
-    UIBezierPath *_path;
+    id /* block */ _emissionHandler;
+    struct { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } point; 
+        float force; 
+    } _lastPoint;
     NSMutableArray *_prevPoints;
-    UIView<UIKBHandwritingStrokeEnabled> *_strokeView;
+    float _scale;
 }
 
-@property (nonatomic, retain) UIBezierPath *path;
+@property (copy) id /* block */ emissionHandler;
+@property (nonatomic) struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; } lastPoint;
 @property (nonatomic, retain) NSMutableArray *prevPoints;
-@property (nonatomic, retain) UIView<UIKBHandwritingStrokeEnabled> *strokeView;
+@property (nonatomic) float scale;
 
-- (void)addPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)addPoint:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
 - (void)clear;
 - (void)dealloc;
+- (id /* block */)emissionHandler;
 - (void)flush;
-- (id)initWithFIFO:(id)arg1 strokeView:(id)arg2;
-- (id)path;
+- (id)initWithFIFO:(id)arg1 scale:(float)arg2;
+- (struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })lastPoint;
 - (id)prevPoints;
-- (void)setPath:(id)arg1;
+- (float)scale;
+- (void)setEmissionHandler:(id /* block */)arg1;
+- (void)setLastPoint:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; })arg1;
 - (void)setPrevPoints:(id)arg1;
-- (void)setStrokeView:(id)arg1;
-- (id)strokeView;
+- (void)setScale:(float)arg1;
 
 @end

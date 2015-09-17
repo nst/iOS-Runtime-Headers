@@ -24,12 +24,13 @@
 - (void)_buildCompleteEdge;
 - (BOOL)_findEdgeAheadInTile:(id)arg1;
 - (BOOL)_findEdgeBehindInTile:(id)arg1;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)_firstJunction;
 - (struct Matrix<float, 2, 1> { float x1[2]; })_firstPoint;
 - (id)_firstTile;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)_lastJunction;
 - (struct Matrix<float, 2, 1> { float x1[2]; })_lastPoint;
 - (id)_lastTile;
+- (unsigned int)_maxTileCount;
+- (BOOL)_shouldFindEdgeAhead;
+- (BOOL)_shouldFindEdgeBehind;
 - (id)_tileFinderForMap:(id)arg1 center:(struct { double x1; double x2; })arg2 radius:(double)arg3;
 - (void)dealloc;
 - (id)initWithMap:(id)arg1 firstEdge:(const struct { struct { /* ? */ } *x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; struct { /* ? */ } *x6; struct { /* ? */ } *x7; }*)arg2;

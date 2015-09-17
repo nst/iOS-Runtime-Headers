@@ -20,7 +20,6 @@
 + (BOOL)readCheckCrcFromArchiveInputStream:(id)arg1 crc:(unsigned int*)arg2 error:(id*)arg3;
 + (BOOL)streamDistributableArchive:(id)arg1 estimatedDataLength:(long long)arg2 toUnarchiver:(id)arg3 supplementalDataBundle:(id)arg4 closedCleanly:(BOOL*)arg5 context:(id)arg6 error:(id*)arg7;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)_createInputStreamWithOffset:(long long)arg1 length:(long long)arg2;
 - (BOOL)_readEntriesFromToc:(id)arg1 error:(id*)arg2;

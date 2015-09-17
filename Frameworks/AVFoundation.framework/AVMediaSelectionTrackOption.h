@@ -11,6 +11,7 @@
 }
 
 - (id)_groupID;
+- (id)_track;
 - (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
@@ -18,7 +19,6 @@
 - (id)dictionary;
 - (BOOL)displaysNonForcedSubtitles;
 - (id)group;
-- (BOOL)hasMediaCharacteristic:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithAsset:(id)arg1 group:(id)arg2 dictionary:(id)arg3;
 - (BOOL)isEqual:(id)arg1;

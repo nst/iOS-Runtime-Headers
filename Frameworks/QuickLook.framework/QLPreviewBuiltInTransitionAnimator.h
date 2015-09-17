@@ -2,7 +2,12 @@
    Image: /System/Library/Frameworks/QuickLook.framework/QuickLook
  */
 
-@interface QLPreviewBuiltInTransitionAnimator : QLPreviewTransitionAnimator
+@interface QLPreviewBuiltInTransitionAnimator : QLPreviewTransitionAnimator <UIViewControllerAnimatedTransitioning>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)animateTransition:(id)arg1;
 - (double)transitionDuration:(id)arg1;

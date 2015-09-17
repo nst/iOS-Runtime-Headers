@@ -31,6 +31,7 @@
 - (void)_commonInit;
 - (id)adjustmentData;
 - (int)baseVersion;
+- (void)clearRenderedContentURL;
 - (id)description;
 - (id)editorBundleURL;
 - (void)encodeWithCoder:(id)arg1;

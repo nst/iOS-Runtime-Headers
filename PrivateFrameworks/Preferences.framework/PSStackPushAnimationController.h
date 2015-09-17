@@ -35,6 +35,7 @@
 + (void)resetDefaultAnimationParameters;
 + (void)setDefaultAnimationPreset:(int)arg1;
 
+- (void).cxx_destruct;
 - (double)_actualDuration;
 - (void)_addAnimation:(id /* block */)arg1 forViewAtIndex:(unsigned int)arg2 count:(unsigned int)arg3;
 - (double)_desiredDuration;
@@ -47,7 +48,6 @@
 - (int)animationPreset;
 - (id /* block */)completionBlock;
 - (double)completionStagger;
-- (void)dealloc;
 - (id)init;
 - (id)navigationController;
 - (double)pushDuration;

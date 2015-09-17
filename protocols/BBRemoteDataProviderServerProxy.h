@@ -14,7 +14,6 @@
 - (void)reloadSectionParameters:(BBDataProviderIdentity *)arg1;
 - (void)setClearedInfo:(id)arg1;
 - (void)setSectionInfo:(BBSectionInfo *)arg1;
-- (void)setSectionInfo:(BBSectionInfo *)arg1 inCategory:(int)arg2;
 - (void)withdrawBulletinWithPublisherBulletinID:(NSString *)arg1;
 - (void)withdrawBulletinsWithRecordID:(NSString *)arg1;
 

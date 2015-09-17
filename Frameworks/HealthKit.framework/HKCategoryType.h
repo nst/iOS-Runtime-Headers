@@ -8,5 +8,6 @@
 
 - (BOOL)_acceptsValue:(int)arg1;
 - (int)_defaultValue;
+- (BOOL)_validateMetadata:(id)arg1 error:(id*)arg2;
 
 @end

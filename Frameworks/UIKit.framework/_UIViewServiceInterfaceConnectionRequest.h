@@ -27,7 +27,7 @@
 - (void)_createAndEstablishConnection;
 - (void)_createPlugInProcessAssertion;
 - (void)_createProcessAssertion;
-- (void)_createProcessAssertionForPID:(int)arg1 aquiredHandler:(id /* block */)arg2;
+- (void)_createProcessAssertionForPID:(int)arg1 orBundleIdentifier:(id)arg2 acquiredHandler:(id /* block */)arg3;
 - (void)_didConnectToService;
 - (void)_establishConnection;
 - (BOOL)_isDeallocating;

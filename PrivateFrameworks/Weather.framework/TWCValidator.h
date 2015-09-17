@@ -16,12 +16,12 @@
 
 + (id)sharedValidator;
 
+- (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;
-- (void)autocompleteLocation:(id)arg1;
+- (void)autocompleteLocationName:(id)arg1;
 - (void)cancel;
 - (void)completerDidFail:(id)arg1 error:(id)arg2;
 - (void)completerDidUpdateResults:(id)arg1 finished:(BOOL)arg2;
-- (void)dealloc;
 - (id)delegate;
 - (void)geocodeLocation:(id)arg1;
 - (id)init;

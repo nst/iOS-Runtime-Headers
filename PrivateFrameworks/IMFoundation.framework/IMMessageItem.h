@@ -118,11 +118,20 @@
 
 // Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
 
++ (Class)contextClass;
+
+- (id)_copy;
+- (id)_copyWithFlags:(unsigned long long)arg1;
 - (BOOL)_hasMessageChatItem;
+- (BOOL)_isInvitation;
 - (id)_newChatItems;
-- (id)_otherHandle;
-- (id)_senderHandle;
 - (id)_service;
+- (void)_setInivtation:(BOOL)arg1;
+- (BOOL)isCancelTypingMessage;
+- (BOOL)isIncomingTypingMessage;
+- (BOOL)isIncomingTypingOrCancelTypingMessage;
+- (BOOL)isSystemMessage;
+- (BOOL)isTypingOrCancelTypingMessage;
 - (id)message;
 
 @end

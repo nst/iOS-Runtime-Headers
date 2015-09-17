@@ -7,6 +7,8 @@
     NSMutableDictionary *_timings;
 }
 
+// Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
+
 - (void)dealloc;
 - (id)description;
 - (BOOL)hasKey:(id)arg1;
@@ -15,5 +17,18 @@
 - (void)startTimingForKey:(id)arg1;
 - (void)stopTimingForKey:(id)arg1;
 - (double)totalTimeForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
+
++ (id)activeGlobalTimingCollections;
++ (id)globalTimingCollectionForKey:(id)arg1;
++ (void)invalidateGlobalTimingCollectionForKey:(id)arg1;
++ (void)invalidateGlobalTimingCollections;
++ (void)logTimingCollectionForKey:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/IMCore.framework/IMCore
+
++ (id)IMCoreSetupTimingCollection;
++ (void)IMCoreSetupTimingCollectionEnd;
 
 @end

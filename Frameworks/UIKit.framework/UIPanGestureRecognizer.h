@@ -3,12 +3,14 @@
  */
 
 @interface UIPanGestureRecognizer : UIGestureRecognizer {
+    float _allowableSeparation;
     unsigned int _canPanHorizontally;
     unsigned int _canPanVertically;
     struct CGPoint { 
         float x; 
         float y; 
     } _digitizerLocation;
+    unsigned int _failsPastHysteresisWithoutMinTouches;
     unsigned int _failsPastMaxTouches;
     struct CGPoint { 
         float x; 
@@ -39,9 +41,13 @@
 @property (nonatomic) unsigned int maximumNumberOfTouches;
 @property (nonatomic) unsigned int minimumNumberOfTouches;
 
++ (float)_defaultHysteresis;
 + (void)_setPanGestureRecognizersEnabled:(BOOL)arg1;
++ (BOOL)_shouldDefaultToTouches;
 
+- (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_adjustSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (float)_allowableSeparation;
 - (BOOL)_canPanHorizontally;
 - (BOOL)_canPanVertically;
 - (void)_centroidMovedTo:(struct CGPoint { float x1; float x2; })arg1 atTime:(double)arg2;
@@ -49,23 +55,26 @@
 - (struct CADoublePoint { double x1; double x2; })_convertPoint:(struct CGPoint { float x1; float x2; })arg1 toSceneReferenceCoordinatesFromView:(id)arg2;
 - (struct CADoublePoint { double x1; double x2; })_convertVelocitySample:(id)arg1 fromSceneReferenceCoordinatesToView:(id)arg2;
 - (struct CGPoint { float x1; float x2; })_digitizerLocation;
+- (BOOL)_failsPastHysteresisWithoutMinTouches;
 - (void)_handleEndedTouches:(id)arg1 withFinalStateAdjustments:(id /* block */)arg2;
 - (float)_hysteresis;
 - (BOOL)_ignoresStationaryTouches;
 - (int)_lastTouchCount;
 - (struct UIOffset { float x1; float x2; })_offsetInViewFromSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1 toSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg2;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
 - (id)_previousVelocitySample;
 - (void)_processTouchesMoved:(id)arg1 withEvent:(id)arg2;
 - (void)_removeHysteresisFromTranslation;
 - (void)_resetGestureRecognizer;
 - (void)_resetVelocitySamples;
+- (void)_setAllowableSeparation:(float)arg1;
 - (void)_setCanPanHorizontally:(BOOL)arg1;
 - (void)_setCanPanVertically:(BOOL)arg1;
+- (void)_setFailsPastHysteresisWithoutMinTouches:(BOOL)arg1;
 - (void)_setHysteresis:(float)arg1;
 - (void)_setIgnoresStationaryTouches:(BOOL)arg1;
 - (struct CGPoint { float x1; float x2; })_shiftPanLocationToNewSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1 lockingToAxis:(int)arg2;
 - (BOOL)_shouldTryToBeginWithEvent:(id)arg1;
+- (BOOL)_touchesExceedAllowableSeparation;
 - (void)_touchesListChangedFrom:(id)arg1 to:(id)arg2;
 - (void)_updateDigitizerLocationWithEvent:(id)arg1;
 - (BOOL)_updateMovingTouchesArraySavingOldArray:(id*)arg1;
@@ -73,7 +82,6 @@
 - (void)_willBeginAfterSatisfyingFailureRequirements;
 - (BOOL)_willScrollX;
 - (BOOL)_willScrollY;
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)failsPastMaxTouches;
 - (id)initWithCoder:(id)arg1;
@@ -83,6 +91,7 @@
 - (unsigned int)maximumNumberOfTouches;
 - (unsigned int)minimumNumberOfTouches;
 - (unsigned int)numberOfTouches;
+- (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)setFailsPastMaxTouches:(BOOL)arg1;
 - (void)setMaximumNumberOfTouches:(unsigned int)arg1;
 - (void)setMinimumNumberOfTouches:(unsigned int)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
  */
 
-@interface BLTSectionInfoListBBProvider : NSObject <BLTSectionInfoObserverDelegate, LSApplicationWorkspaceObserverProtocol> {
+@interface BLTSectionInfoListBBProvider : NSObject <BLTSectionInfoListProvider, BLTSectionInfoObserverDelegate, LSApplicationWorkspaceObserverProtocol> {
     LSApplicationWorkspace *_appWorkspace;
     <BLTSectionInfoListProviderDelegate> *_delegate;
     BLTSectionInfoObserver *_observer;

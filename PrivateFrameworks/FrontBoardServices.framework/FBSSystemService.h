@@ -12,8 +12,10 @@
 - (id)clientCallbackQueue;
 - (unsigned int)createClientPort;
 - (void)dealloc;
+- (void)deleteAllSnapshotsForApplication:(id)arg1;
 - (void)fireCompletion:(id /* block */)arg1 error:(id)arg2;
 - (id)init;
+- (BOOL)isPasscodeLockedOrBlocked;
 - (void)openApplication:(id)arg1 options:(id)arg2 clientPort:(unsigned int)arg3 withResult:(id /* block */)arg4;
 - (void)openApplication:(id)arg1 options:(id)arg2 withResult:(id /* block */)arg3;
 - (void)openDataActivationURL:(id)arg1 withResult:(id /* block */)arg2;
@@ -22,6 +24,7 @@
 - (void)reboot;
 - (void)sendActions:(id)arg1 withResult:(id /* block */)arg2;
 - (void)setBadgeValue:(id)arg1 forBundleID:(id)arg2;
+- (void)setKeyboardFocusApplicationWithBundleID:(id)arg1 pid:(int)arg2 completion:(id /* block */)arg3;
 - (void)shutdown;
 - (id)systemApplicationBundleIdentifier;
 - (void)terminateApplication:(id)arg1 forReason:(int)arg2 andReport:(BOOL)arg3 withDescription:(id)arg4;

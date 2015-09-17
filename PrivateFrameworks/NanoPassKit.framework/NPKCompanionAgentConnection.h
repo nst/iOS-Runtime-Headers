@@ -6,13 +6,24 @@
     NSObject<OS_dispatch_queue> *_cacheQueue;
     NSMutableDictionary *_cachedPasses;
     NSMutableSet *_cachedUniqueIDs;
+    NSMutableDictionary *_connectionAvailableActions;
+    PKPaymentWebServiceContext *_connectionUnavailableWebServiceContext;
+    BOOL _queueAppropriateFailedActions;
     NSXPCConnection *_xpcConnection;
     NSObject<OS_dispatch_queue> *_xpcConnectionQueue;
 }
 
 @property (retain) NSMutableDictionary *cachedPasses;
 @property (retain) NSMutableSet *cachedUniqueIDs;
+@property (nonatomic, retain) NSMutableDictionary *connectionAvailableActions;
+@property (nonatomic, retain) PKPaymentWebServiceContext *connectionUnavailableWebServiceContext;
+@property (nonatomic) BOOL queueAppropriateFailedActions;
 @property (readonly) NSXPCConnection *xpcConnection;
+
++ (BOOL)isIssuerAppProvisioningSupported;
++ (BOOL)isSetupAssistantProvisioningSupported;
++ (id)watchProvisioningURL;
++ (id)watchProvisioningURLForPaymentPass:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_addPassToCache:(id)arg1;
@@ -23,29 +34,47 @@
 - (id /* block */)_errorHandlerWithCompletion:(id /* block */)arg1;
 - (void)_handleDefaultCardChanged:(id)arg1;
 - (void)_handleServerPaymentPassesChanged:(id)arg1;
+- (int)_isApplePaySupportedInCurrentRegion;
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (void)_removePassWithUniqueIDFromCache:(id)arg1;
+- (void)_savePaymentPass:(id)arg1 atURL:(id)arg2 completion:(id /* block */)arg3;
 - (void)_setCachedUniqueIDs:(id)arg1;
 - (void)_sharedPaymentWebServiceContextWithCompletion:(id /* block */)arg1;
+- (void)beginProvisioningFromWatchOfferForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)cachedPasses;
 - (id)cachedUniqueIDs;
+- (id)connectionAvailableActions;
+- (id)connectionUnavailableWebServiceContext;
 - (void)consistencyCheckWithCompletion:(id /* block */)arg1;
 - (void)dealloc;
 - (void)defaultCardUniqueID:(id /* block */)arg1;
+- (void)defaultPaymentApplicationForPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)handlePendingUnpairingWithCompletion:(id /* block */)arg1;
 - (void)handlePendingiCloudSignoutWithCompletion:(id /* block */)arg1;
 - (id)init;
+- (BOOL)isIssuerAppProvisioningSupported;
+- (void)noteProvisioningPreflightCompleteWithSuccess:(BOOL)arg1 error:(id)arg2 completion:(id /* block */)arg3;
+- (void)noteWatchOfferShownForPaymentPass:(id)arg1;
 - (void)paymentPassUniqueIDs:(id /* block */)arg1;
+- (void)paymentPassWithDeviceAccountIdentifier:(id)arg1 completion:(id /* block */)arg2;
+- (void)paymentPassWithPrimaryAccountIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)paymentPassWithUniqueID:(id)arg1 reply:(id /* block */)arg2;
+- (BOOL)queueAppropriateFailedActions;
 - (void)redownloadAllPaymentPassesWithCompletion:(id /* block */)arg1;
 - (void)removePaymentPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)savePaymentPass:(id)arg1 completion:(id /* block */)arg2;
 - (void)setCachedPasses:(id)arg1;
 - (void)setCachedUniqueIDs:(id)arg1;
+- (void)setConnectionAvailableActions:(id)arg1;
+- (void)setConnectionUnavailableWebServiceContext:(id)arg1;
 - (void)setDefaultCardUniqueID:(id)arg1 completion:(id /* block */)arg2;
+- (void)setDefaultPaymentApplication:(id)arg1 forPassWithUniqueID:(id)arg2 completion:(id /* block */)arg3;
+- (void)setQueueAppropriateFailedActions:(BOOL)arg1;
 - (void)setSharedPaymentWebServiceContext:(id)arg1;
 - (id)sharedPaymentWebServiceContext;
 - (void)shouldShowApplePaySettingsWithCompletion:(id /* block */)arg1;
+- (void)shouldShowWatchOfferForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
+- (id)watchPaymentWebService;
 - (id)xpcConnection;
 
 @end

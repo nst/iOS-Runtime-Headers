@@ -14,7 +14,6 @@
     NSMutableArray *_iCloudTeardownStack;
     NSObject<OS_dispatch_queue> *_iCloudTeardownStackQueue;
     BOOL _isBeingLocalized;
-    BOOL _isCollaborationLobbyOutgoingRequestsSuspended;
     BOOL _isFindActive;
     TSKPasteboardController *_pasteboardController;
     TSKSelectionDispatcher *_selectionDispatcher;
@@ -24,10 +23,10 @@
 @property (nonatomic, retain) TSKAnnotationAuthorStorage *annotationAuthorStorage;
 @property (nonatomic, readonly) unsigned int applicationType;
 @property (nonatomic, readonly) TSKChangeNotifier *changeNotifier;
-@property (nonatomic, readonly) NSString *creationLanguage;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) TSULocale *documentCreationLocale;
+@property (nonatomic, readonly) NSString *documentLanguage;
 @property (nonatomic, readonly) TSULocale *documentLocale;
 @property (nonatomic, readonly) TSKDocumentSupport *documentSupport;
 @property (nonatomic, retain) NSSet *filteredAuthors;
@@ -47,6 +46,7 @@
 
 - (id)UIStateForChart:(id)arg1;
 - (id)accessController;
+- (long long)addObserverForICloudTeardownSuspendingCollaboration:(BOOL)arg1 block:(id /* block */)arg2;
 - (long long)addObserverForICloudTeardownWithBlock:(id /* block */)arg1;
 - (void)addOrUpdateAnnotationAuthorList:(id)arg1;
 - (id)additionalDocumentPropertiesForWrite;
@@ -56,7 +56,6 @@
 - (id)changeNotifier;
 - (id)collaborationState;
 - (id)commandForRemovingCommentsFromDrawables:(id)arg1 context:(id)arg2;
-- (id)creationLanguage;
 - (id)customFormatList;
 - (id)dataFromDocumentCachePath:(id)arg1;
 - (void)dealloc;
@@ -66,6 +65,7 @@
 - (id)documentCreationLocale;
 - (void)documentDidLoad;
 - (BOOL)documentDisallowsHighlightsOnStorage:(id)arg1;
+- (id)documentLanguage;
 - (id)documentLocale;
 - (id)documentSupport;
 - (id)filteredAuthors;
@@ -84,6 +84,7 @@
 - (id)makeStyleMapper;
 - (unsigned long long)maxMediaItemFileSize;
 - (void)migrateStylesInObjects:(id)arg1;
+- (void)migrateStylesInObjects:(id)arg1 changePropagationMap:(id)arg2;
 - (id)migratedPresetForPreset:(id)arg1;
 - (id)migratedPropertyMapForPropertyMap:(id)arg1;
 - (id)migratedStyleForStyle:(id)arg1;
@@ -102,6 +103,7 @@
 - (id)pasteboardController;
 - (void)pauseRecalculation;
 - (void)pauseRecalculationForBlock:(id /* block */)arg1;
+- (void)pauseRecalculationSometimeSoon;
 - (void)removeCommentsFromDrawables:(id)arg1;
 - (void)removeICloudTeardownObserver:(long long)arg1;
 - (void)resumeRecalculation;
@@ -117,6 +119,7 @@
 - (void)setThemeForTemplateImport:(id)arg1;
 - (void)setUIState:(id)arg1 forChart:(id)arg2;
 - (BOOL)shouldShowComments;
+- (id)stylesToNotResizeInStylesheet:(id)arg1;
 - (id)stylesheet;
 - (id)theme;
 - (Class)thumbnailImagerClass;

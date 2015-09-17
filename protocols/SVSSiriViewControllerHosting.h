@@ -10,19 +10,25 @@
 - (void)notifyOnNextUserInteraction;
 - (void)pulseHelpButton;
 - (void)serviceBulletinWithIdentifier:(void *)arg1 replyHandler:(void *)arg2; // needs 2 arg types, found 7: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, AFBulletin *, void*
+- (void)serviceDidDetectMicButtonLongPressBegan;
+- (void)serviceDidDetectMicButtonLongPressEnded;
+- (void)serviceDidDetectMicButtonTap;
 - (void)serviceDidDismissBugReporter;
 - (void)serviceDidPresentBugReporter;
+- (void)serviceDidPresentUserInterface;
 - (void)serviceDidReadBulletinWithIdentifier:(NSString *)arg1;
 - (void)serviceLaunchApplicationWithBundleIdentifier:(void *)arg1 withURL:(void *)arg2 replyHandler:(void *)arg3; // needs 3 arg types, found 8: NSString *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)serviceOpenURL:(NSURL *)arg1 appBundleID:(NSString *)arg2 allowSiriDismissal:(BOOL)arg3;
 - (void)serviceOpenURL:(void *)arg1 delaySessionEndForTTS:(void *)arg2 replyHandler:(void *)arg3; // needs 3 arg types, found 8: NSURL *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
-- (void)serviceRequestsDismissal;
+- (void)servicePresentationDidChangePeekMode:(unsigned int)arg1;
+- (void)serviceRequestsDismissal:(BOOL)arg1;
 - (void)serviceStartGuidedAccess;
 - (void)serviceStartRequestWithOptions:(AFUIRequestOptions *)arg1;
 - (void)serviceUserRelevantEventDidOccur;
 - (void)serviceWillDismissViewControllerWithStatusBarStyle:(int)arg1;
 - (void)serviceWillPresentViewControllerWithStatusBarStyle:(int)arg1;
 - (void)setBugReportingAvailable:(BOOL)arg1;
+- (void)setCarDisplayGatekeeperVisible:(BOOL)arg1;
 - (void)setCarDisplaySnippetVisible:(BOOL)arg1;
 - (void)setHelpButtonEmphasized:(BOOL)arg1;
 - (void)setStatusBarHidden:(BOOL)arg1;

@@ -27,6 +27,7 @@
 - (void)_fetchPCSForRecords;
 - (void)_fetchRecords;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
+- (unsigned long long)activityStart;
 - (id /* block */)assetPublishedBlock;
 - (void)cancel;
 - (id)fetchRecordsOperation;

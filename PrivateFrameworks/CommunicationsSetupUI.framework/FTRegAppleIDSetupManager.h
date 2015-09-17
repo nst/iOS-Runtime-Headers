@@ -23,12 +23,14 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_aliasesForDictionary:(id)arg1;
 - (id)_appleID;
 - (void)_cleanup;
 - (void)_notifyFailureWithError:(id)arg1;
 - (void)_notifySuccess;
 - (void)_notifySuccess:(BOOL)arg1 error:(id)arg2;
+- (BOOL)_shouldAttemptAccountRegistration;
 - (BOOL)_shouldShowAliasSelectionUI;
 - (void)_updateCandidateAliases;
 - (void)_updateSelectionSummaryText;
@@ -37,7 +39,6 @@
 - (BOOL)aliasIsEnabled:(id)arg1;
 - (BOOL)beginSetupWithCompletionHandler:(id /* block */)arg1;
 - (id)candidateAliases;
-- (void)dealloc;
 - (id)faceTimeAccountController;
 - (id /* block */)handler;
 - (id)iMessageAccountController;

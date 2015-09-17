@@ -3,31 +3,30 @@
  */
 
 @interface NEIPC : NSObject {
+    NSObject<OS_xpc_object> *_connection;
+    NSObject<OS_xpc_object> *_listener;
     id /* block */ _messageHandler;
-    NSObject<OS_dispatch_data> *_previousData;
-    int _socket;
-    NSObject<OS_dispatch_io> *_socket_io;
 }
 
+@property (readonly) BOOL connected;
+@property (retain) NSObject<OS_xpc_object> *connection;
+@property (retain) NSObject<OS_xpc_object> *listener;
 @property (copy) id /* block */ messageHandler;
-@property (retain) NSObject<OS_dispatch_data> *previousData;
-@property int socket;
-@property (retain) NSObject<OS_dispatch_io> *socket_io;
 
 - (void).cxx_destruct;
-- (id)initWithSocket:(int)arg1;
+- (BOOL)connected;
+- (id)connection;
+- (void)handleMessage:(id)arg1 withHandler:(id /* block */)arg2;
+- (id)listener;
 - (void)logMessageType:(unsigned int)arg1 data:(id)arg2 actionString:(id)arg3;
 - (id /* block */)messageHandler;
-- (BOOL)parseMessageFromData:(id)arg1 messageHeader:(struct { unsigned int x1; unsigned int x2; }*)arg2 messageData:(id*)arg3;
-- (id)previousData;
-- (BOOL)sendMessageWithType:(unsigned int)arg1 data:(id)arg2 andQueue:(id)arg3;
+- (BOOL)sendMessageWithType:(unsigned int)arg1 data:(id)arg2 replyQueue:(id)arg3 replyHandler:(id /* block */)arg4;
+- (void)setConnection:(id)arg1;
+- (void)setListener:(id)arg1;
 - (void)setMessageHandler:(id /* block */)arg1;
-- (void)setPreviousData:(id)arg1;
-- (void)setSocket:(int)arg1;
-- (void)setSocket_io:(id)arg1;
-- (int)socket;
-- (id)socket_io;
-- (void)startWithQueue:(id)arg1 messageHandler:(id /* block */)arg2;
+- (void)setupMessageHandlingWithQueue:(id)arg1;
+- (id)startInListenModeWithQueue:(id)arg1 messageHandler:(id /* block */)arg2;
+- (void)startWithEndpoint:(id)arg1 queue:(id)arg2 messageHandler:(id /* block */)arg3;
 - (void)stop;
 
 @end

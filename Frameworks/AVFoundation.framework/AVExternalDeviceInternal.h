@@ -8,6 +8,8 @@
     <AVExternalDeviceDelegate> *_delegate;
     struct OpaqueFigEndpoint { } *_figEndpoint;
     long _makeHIDsOnlyOnce;
+    long _makeIconsOnlyOnce;
+    NSArray *_oemIcons;
     NSObject<OS_dispatch_queue> *_queue;
     AVWeakReference *_weakReference;
 }

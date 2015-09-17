@@ -10,6 +10,7 @@
     float _lastBottomLayoutGuideLength;
     float _lastTopLayoutGuideLength;
     SSVLoadURLOperation *_loadURLOperation;
+    BOOL _makeSearchBarFirstResponderOnLoad;
     SKUIMediaQueryEvaluator *_mediaQueryEvaluator;
     SKUINavigationBarController *_navigationBarController;
     NSNumber *_orientationAtDisappear;
@@ -21,6 +22,7 @@
         BOOL isBouncingOffTheEdge; 
     } _scrollingTabAppearanceStatus;
     NSArray *_searchBarControllers;
+    BOOL _selectSearchBarContentOnBecomingFirstResponder;
     NSValue *_sizeAtDisappear;
     unsigned int _templateViewElementType;
     SKUIToolbarController *_toolbarController;
@@ -46,6 +48,7 @@
 - (void)_finishLegacyProtocolOperationForResponse:(id)arg1 dataProvider:(id)arg2 dictionary:(id)arg3;
 - (void)_finishLoadOperationWithResponse:(id)arg1 error:(id)arg2;
 - (void)_forceOrientationBackToSupportedOrientation;
+- (BOOL)_makeSearchBarFirstResponderOnLoad;
 - (id)_millisecondsFromTimeInterval:(double)arg1;
 - (id)_navigationBarViewElement;
 - (void)_networkTypeChangeNotification:(id)arg1;
@@ -57,8 +60,11 @@
 - (void)_reloadNavigationItemContents;
 - (void)_reloadNavigationPalette;
 - (void)_reloadToolbar;
+- (BOOL)_selectSearchBarContentOnBecomingFirstResponder;
 - (void)_sendOnViewAttributesChangeWithAttributes:(id)arg1 viewWillAppear:(BOOL)arg2;
 - (void)_setChildViewController:(id)arg1;
+- (void)_setMakeSearchBarFirstResponderOnLoad:(BOOL)arg1;
+- (void)_setSelectSearchBarContentOnBecomingFirstResponder:(BOOL)arg1;
 - (BOOL)_shouldFillNavigationBarContentsBasedOnNavigationBarViewElement;
 - (void)_showAccountViewControllerWithURL:(id)arg1;
 - (void)_showLegacyStorePageWithRequest:(id)arg1 page:(id)arg2 pageType:(int)arg3 URLResponse:(id)arg4;
@@ -91,6 +97,8 @@
 - (id)navigationBarTitleTextTintColor;
 - (id)navigationPaletteView;
 - (BOOL)prefersNavigationBarBackgroundViewHidden;
+- (BOOL)prefersNavigationBarHidden;
+- (id)previewMenuItems;
 - (void)reloadData;
 - (void)scrollingTabAppearanceStatusWasUpdated:(struct { float x1; BOOL x2; })arg1;
 - (id)scrollingTabNestedPagingScrollView;

@@ -31,6 +31,7 @@
 - (id)customRootViewController;
 - (id)description;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithTabIdentifier:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)metricsIdentifier;

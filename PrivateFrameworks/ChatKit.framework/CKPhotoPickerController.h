@@ -2,66 +2,44 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKPhotoPickerController : UIViewController <CKPhotoPickerCollectionViewDelegate, UIGestureRecognizerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UITableView *_alertTableView;
+@interface CKPhotoPickerController : CKAlertController <CKPhotoPickerCollectionViewDelegate> {
+    UIAlertAction *_bottomAlertAction;
     NSString *_captureLabelText;
     <CKPhotoPickerControllerDelegate> *_delegate;
-    CKPhotoPickerWindow *_photoPickerWindow;
     CKPhotoPickerCollectionViewController *_photosCollectionView;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _sourceViewRect;
-    UITapGestureRecognizer *_tapGestureRecognizer;
+    UIAlertAction *_topAlertAction;
 }
 
-@property (nonatomic, retain) UITableView *alertTableView;
+@property (nonatomic, retain) UIAlertAction *bottomAlertAction;
 @property (nonatomic, retain) NSString *captureLabelText;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <CKPhotoPickerControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) CKPhotoPickerWindow *photoPickerWindow;
 @property (nonatomic, retain) CKPhotoPickerCollectionViewController *photosCollectionView;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } sourceViewRect;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) UITapGestureRecognizer *tapGestureRecognizer;
+@property (nonatomic, retain) UIAlertAction *topAlertAction;
 
-- (id)alertTableView;
+- (void)_bottomAlertActionHandler;
+- (void)_cancelButtonPressed;
+- (BOOL)_shouldAlignToKeyboard;
+- (void)_topAlertActionHandler;
+- (void)_updateAlertTitles;
+- (BOOL)allowsRotation;
+- (id)bottomAlertAction;
 - (id)captureLabelText;
 - (void)dealloc;
 - (id)delegate;
-- (void)dismissPhotoPicker:(BOOL)arg1 completion:(id /* block */)arg2;
-- (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
-- (void)handleTap:(id)arg1;
-- (int)numberOfSectionsInTableView:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)photoPickerCollectionViewAssetSelectionDidChange:(id)arg1;
-- (void)photoPickerCollectionViewPreferredContentSizeDidChange:(id)arg1;
-- (id)photoPickerWindow;
 - (id)photosCollectionView;
-- (void)presentPhotoPickerInWindowWithSourceView:(id)arg1 sourceRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)setAlertTableView:(id)arg1;
+- (void)setBottomAlertAction:(id)arg1;
 - (void)setCaptureLabelText:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPhotoPickerWindow:(id)arg1;
 - (void)setPhotosCollectionView:(id)arg1;
-- (void)setSourceViewRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setTapGestureRecognizer:(id)arg1;
+- (void)setTopAlertAction:(id)arg1;
 - (BOOL)shouldAutorotate;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })sourceViewRect;
-- (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
-- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
-- (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
-- (id)tapGestureRecognizer;
-- (void)updatePreferredContentSize;
-- (void)viewDidLayoutSubviews;
+- (id)topAlertAction;
 - (void)viewDidLoad;
 
 @end

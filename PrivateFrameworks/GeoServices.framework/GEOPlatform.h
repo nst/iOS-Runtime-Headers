@@ -10,11 +10,16 @@
 - (id)_systemInfoDictionary;
 - (id)buildVersion;
 - (id)clientCapabilities;
+- (int)deviceScreenHeightInPixels;
+- (float)deviceScreenScale;
+- (int)deviceScreenWidthInPixels;
 - (id)hardwareIdentifier;
 - (BOOL)isInternalInstall;
 - (BOOL)mapsFeatureFreedomEnabled;
 - (id)osVersion;
+- (BOOL)supportsForceTouch;
 - (BOOL)supportsNavigation;
+- (BOOL)supportsNewiOS9Features;
 - (BOOL)supportsRealisticTiles;
 
 @end

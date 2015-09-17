@@ -5,11 +5,12 @@
 @interface _SCRCThreadTask : NSObject {
     unsigned long _count;
     unsigned long _mask;
-    void *_objects;
     SEL _selector;
     id _target;
     NSConditionLock *_waitLock;
 }
+
++ (id)newThreadTaskWithTarget:(id)arg1 selector:(SEL)arg2 cancelMask:(unsigned long)arg3 count:(unsigned long)arg4 firstObject:(id)arg5 moreObjects:(void*)arg6;
 
 - (void)dealloc;
 - (void)fire;

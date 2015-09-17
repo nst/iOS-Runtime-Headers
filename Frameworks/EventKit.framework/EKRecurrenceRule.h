@@ -17,7 +17,7 @@
 @property (nonatomic, readonly) BOOL dirtyStateMayAffectExceptionDates;
 @property (nonatomic, readonly) int firstDayOfTheWeek;
 @property (nonatomic, readonly) int frequency;
-@property (readonly) struct { int x1; int x2; int x3; int x4; int x5; double x6; } gregorianUnits;
+@property (nonatomic, readonly) struct { int x1; int x2; int x3; int x4; int x5; double x6; } gregorianUnits;
 @property (nonatomic, readonly) int interval;
 @property (nonatomic, readonly) NSArray *monthsOfTheYear;
 @property (nonatomic, retain) EKCalendarItem *owner;
@@ -52,6 +52,7 @@
 - (id)initRecurrenceWithFrequency:(int)arg1 interval:(int)arg2 end:(id)arg3;
 - (int)interval;
 - (BOOL)isAnyDayRule;
+- (BOOL)isSimpleRule;
 - (BOOL)isWeekdayRule;
 - (BOOL)isWeekendRule;
 - (id)lazyLoadRelationForKey:(id)arg1;

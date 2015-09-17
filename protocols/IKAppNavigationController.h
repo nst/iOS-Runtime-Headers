@@ -17,5 +17,7 @@
 @optional
 
 - (void)clear;
+- (void)dismissModal;
+- (void)presentModal:(IKAppDocument *)arg1 options:(NSDictionary *)arg2;
 
 @end

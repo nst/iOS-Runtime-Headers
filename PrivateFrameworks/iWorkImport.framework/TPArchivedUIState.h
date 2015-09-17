@@ -7,7 +7,7 @@
     TPArchivedViewState *_viewState;
 }
 
-@property (nonatomic, readonly) TPArchivedLayoutState *layoutState;
+@property (nonatomic, retain) TPArchivedLayoutState *layoutState;
 @property (nonatomic, readonly) TPArchivedViewState *viewState;
 
 - (void)dealloc;
@@ -15,6 +15,7 @@
 - (id)initWithContext:(id)arg1;
 - (id)layoutState;
 - (void)saveToArchiver:(id)arg1;
+- (void)setLayoutState:(id)arg1;
 - (id)viewState;
 
 @end

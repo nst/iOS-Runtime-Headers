@@ -42,7 +42,8 @@
 - (id)_playerItems;
 - (void)_removeAllItemsFromPlayer;
 - (void)_removeItemFromPlayer:(id)arg1;
-- (void)_syncItems;
+- (void)_sendItemsDidChange;
+- (void)_syncItemsWithPreviousItems:(id)arg1;
 - (void)_syncPlayerItems;
 - (void)_updateCurrentItem;
 - (void)_updateQueueDepth;

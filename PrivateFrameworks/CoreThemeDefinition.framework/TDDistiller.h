@@ -4,22 +4,22 @@
 
 @interface TDDistiller : NSObject {
     NSString *_accumulatedErrorDescription;
+    CUIMutableCommonAssetStorage *_assetStore;
     int _assetStoreVersionNumber;
     NSString *_assetStoreVersionString;
     NSThread *_callbackThread;
     BOOL _cancelled;
     NSArray *_changedProductions;
     id /* block */ _completionHandler;
+    CoreThemeDocument *_document;
     int _fileCompression;
     BOOL _finished;
     BOOL _incremental;
     TDLogger *_logger;
     NSArray *_mainThreadPerformRunLoopModes;
     id /* block */ _oldCompletionHandler;
+    NSMutableArray *_renditionEntries;
     BOOL _successful;
-    CUIMutableCommonAssetStorage *assetStore;
-    CoreThemeDocument *document;
-    NSMutableArray *renditionEntries;
 }
 
 @property (nonatomic, retain) NSString *accumulatedErrorDescription;
@@ -34,6 +34,7 @@
 @property (retain) TDLogger *logger;
 @property (copy) id /* block */ oldCompletionHandler;
 @property (getter=isSuccessful) BOOL successful;
+@property (nonatomic, readonly) NSUUID *uuid;
 
 - (void)_accumulateErrorDescription:(id)arg1;
 - (id)_copyStandardEffectDefinitions;
@@ -41,7 +42,6 @@
 - (void)_distillChanges:(id)arg1;
 - (BOOL)_distillColorDefinitions:(id)arg1;
 - (BOOL)_distillCursorFacetDefinitions:(id)arg1;
-- (void)_distillDebuggingInfoForConstants:(id)arg1 isElement:(BOOL)arg2;
 - (BOOL)_distillFonts:(id)arg1;
 - (BOOL)_distillNamedElements:(id)arg1;
 - (id)_keyDataFromKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
@@ -63,16 +63,17 @@
 - (id)accumulatedErrorDescription;
 - (int)assetStoreVersionNumber;
 - (id)assetStoreVersionString;
+- (BOOL)assetStoreWriteToDisk;
 - (void)beginDistillWithCompletionHandler:(id /* block */)arg1;
 - (id)callbackThread;
 - (void)cancelDistill;
 - (id /* block */)completionHandler;
 - (void)dealloc;
+- (BOOL)distillCatalogGlobals;
 - (BOOL)distillCursorFacetDefinitions;
 - (BOOL)distillCustomColors;
 - (BOOL)distillCustomFontSizes;
 - (BOOL)distillCustomFonts;
-- (BOOL)distillDebuggingInfo;
 - (BOOL)distillNamedElements;
 - (BOOL)distillRenditions;
 - (void)distillWithCompletionHandler:(id /* block */)arg1;
@@ -95,9 +96,19 @@
 - (void)markDistillationAsFinished;
 - (id /* block */)oldCompletionHandler;
 - (void)performSelectorOnCallbackThread:(SEL)arg1 withObject:(id)arg2 waitUntilDone:(BOOL)arg3;
+- (void)removeRenditionsFromAssetStoreWithKey:(id)arg1;
 - (void)saveAndDistillWithCompletionHandler:(id /* block */)arg1;
 - (void)setAccumulatedErrorDescription:(id)arg1;
 - (void)setAsset:(id)arg1 withKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2 fromRenditionSpec:(id)arg3;
+- (void)setAssetColorSpaceID:(unsigned int)arg1;
+- (void)setAssetSchemaVersion:(unsigned int)arg1;
+- (void)setAssetStorageVersion:(unsigned int)arg1;
+- (void)setAssetStorageVersionString:(const char *)arg1;
+- (void)setAssetStoreAssociatedChecksum:(unsigned int)arg1;
+- (void)setAssetStoreKeyFormatData:(id)arg1;
+- (void)setAssetStoreKeySemantics:(int)arg1;
+- (void)setAssetStoreRenditionCount:(unsigned int)arg1;
+- (void)setAssetStoreUuid:(id)arg1;
 - (void)setAssetStoreVersionNumber:(int)arg1;
 - (void)setAssetStoreVersionString:(id)arg1;
 - (void)setCallbackThread:(id)arg1;
@@ -110,6 +121,7 @@
 - (void)setOldCompletionHandler:(id /* block */)arg1;
 - (void)setSuccessful:(BOOL)arg1;
 - (BOOL)sortAndStoreRenditions;
+- (id)uuid;
 - (void)waitTimerDidFire:(id)arg1;
 - (void)waitUntilFinished;
 - (id)zeroCodeArtworkInfoOfType:(int)arg1 error:(id*)arg2;

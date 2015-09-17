@@ -6,7 +6,7 @@
     UIActivityIndicatorView *_spinner;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 - (void)startAnimating;
 - (void)stopAnimating;

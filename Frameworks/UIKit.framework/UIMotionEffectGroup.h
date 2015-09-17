@@ -8,9 +8,9 @@
 
 @property (nonatomic, copy) NSArray *motionEffects;
 
+- (void).cxx_destruct;
 - (id)_keyPathsAndRelativeValuesForPose:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)debugDescription;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

@@ -8,27 +8,32 @@
         long __sig; 
         BOOL __opaque[40]; 
     } _lock;
-    BLTSectionInfoListBridgeProvider *_overrideProvider;
+    <BLTSectionInfoListProvider> *_overrideProvider;
     NSMutableDictionary *_sectionInfoListItemsBySectionID;
-    BLTSectionInfoListBBProvider *_sectionInfoProvider;
+    <BLTSectionInfoListProvider> *_sectionInfoProvider;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <BLTSectionInfoListDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) BLTSectionInfoListBridgeProvider *overrideProvider;
-@property (nonatomic, retain) BLTSectionInfoListBBProvider *sectionInfoProvider;
+@property (nonatomic, retain) <BLTSectionInfoListProvider> *overrideProvider;
+@property (nonatomic, retain) <BLTSectionInfoListProvider> *sectionInfoProvider;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_migrateFromExternalDeviceSwitchToOverrides:(id)arg1;
+- (void)dealloc;
 - (id)delegate;
 - (id)effectiveSectionInfoForSectionID:(id)arg1;
-- (id)effectiveSectionInfos;
 - (id)init;
+- (id)originalSettings;
 - (id)overriddenSectionInfoForSectionID:(id)arg1;
+- (id)overriddenSettings;
 - (id)overrideProvider;
+- (id)overrides;
 - (void)reloadWithCompletion:(id /* block */)arg1;
+- (id)sectionIDs;
 - (id)sectionInfoForSectionID:(id)arg1;
 - (id)sectionInfoProvider;
 - (void)setDelegate:(id)arg1;

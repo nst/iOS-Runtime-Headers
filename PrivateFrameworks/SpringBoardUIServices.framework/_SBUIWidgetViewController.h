@@ -23,7 +23,6 @@
 - (void)invalidatePreferredViewSize;
 - (struct CGSize { float x1; float x2; })preferredViewSize;
 - (void)requestLaunchOfURL:(id)arg1;
-- (void)requestPresentationOfViewController:(id)arg1 presentationStyle:(int)arg2 context:(id)arg3 completion:(id /* block */)arg4;
 - (void)setVisibleWidgetsIDs:(id)arg1;
 - (void)setWidgetHost:(id)arg1;
 - (void)setWidgetIdentifier:(id)arg1;

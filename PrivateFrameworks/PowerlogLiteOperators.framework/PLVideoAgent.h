@@ -3,18 +3,11 @@
  */
 
 @interface PLVideoAgent : PLAgent {
-    PLCFNotificationOperatorComposition *_VRPCreated;
-    PLCFNotificationOperatorComposition *_VRPFinalized;
-    PLCFNotificationOperatorComposition *_VRPPaused;
-    PLCFNotificationOperatorComposition *_VRPPlaying;
+    PLXPCListenerOperatorComposition *_notification;
 }
 
-@property (readonly) PLCFNotificationOperatorComposition *VRPCreated;
-@property (readonly) PLCFNotificationOperatorComposition *VRPFinalized;
-@property (readonly) PLCFNotificationOperatorComposition *VRPPaused;
-@property (readonly) PLCFNotificationOperatorComposition *VRPPlaying;
+@property (retain) PLXPCListenerOperatorComposition *notification;
 
-+ (id)accountingGroupDefinitions;
 + (id)defaults;
 + (id)entryAggregateDefinitions;
 + (id)entryEventBackwardDefinitions;
@@ -23,15 +16,14 @@
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitions;
 + (void)load;
-+ (id)railDefinitions;
++ (id)stateEnumForStateString:(id)arg1;
 
 - (void).cxx_destruct;
-- (id)VRPCreated;
-- (id)VRPFinalized;
-- (id)VRPPaused;
-- (id)VRPPlaying;
 - (id)init;
 - (void)initOperatorDependancies;
 - (void)log;
+- (void)logEventForwardVideoWithEntry:(id)arg1;
+- (id)notification;
+- (void)setNotification:(id)arg1;
 
 @end

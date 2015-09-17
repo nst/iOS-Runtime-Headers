@@ -23,7 +23,6 @@
 + (void)addObjectsToSceneWithSceneInfo:(const struct ChartSceneInfo { id x1; id x2; struct { BOOL x_3_1_1; BOOL x_3_1_2; BOOL x_3_1_3; BOOL x_3_1_4; BOOL x_3_1_5; BOOL x_3_1_6; unsigned int x_3_1_7; } x3; }*)arg1;
 + (BOOL)supportsValueAxisLabelAlignmentCaching;
 
-- (id).cxx_construct;
 - (void)addAllLabelsToScene;
 - (void)addAllObjectsToScene;
 - (void)addChartTitlesToScene;

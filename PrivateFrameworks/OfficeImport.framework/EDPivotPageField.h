@@ -12,6 +12,7 @@
 
 - (id)cap;
 - (void)dealloc;
+- (id)description;
 - (unsigned long)fieldId;
 - (id)init;
 - (id)name;

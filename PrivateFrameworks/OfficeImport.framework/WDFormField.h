@@ -14,6 +14,7 @@
 
 - (id)URI;
 - (void)dealloc;
+- (id)description;
 - (id)dosName;
 - (id)initWithParagraph:(id)arg1;
 - (BOOL)linkAbsolute;

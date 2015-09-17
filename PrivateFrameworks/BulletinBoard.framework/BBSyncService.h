@@ -25,7 +25,6 @@
 - (void)_addDeferredDismissalForBulletin:(id)arg1 feeds:(unsigned int)arg2;
 - (void)_clearDeferredTimer;
 - (void)_deferredTimerFired:(id)arg1;
-- (void)_deviceLocked;
 - (id)_dismissalDictionaryForBulletin:(id)arg1;
 - (BOOL)_hasDestination;
 - (void)_reallyEnqueueBulletin:(id)arg1 feeds:(unsigned int)arg2;
@@ -39,6 +38,7 @@
 - (id)dismissalSectionIdentifierForIncomingMessage:(id)arg1;
 - (void)enqueueSyncedRemovalForBulletin:(id)arg1 feeds:(unsigned int)arg2;
 - (id)initWithQueue:(id)arg1;
+- (void)sendDeferredDismissals;
 - (void)sendPendingSyncedRemovals;
 - (void)sendSyncedRemovalForBulletin:(id)arg1 feeds:(unsigned int)arg2;
 - (void)service:(id)arg1 account:(id)arg2 incomingMessage:(id)arg3 fromID:(id)arg4;

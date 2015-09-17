@@ -12,6 +12,6 @@
 - (BOOL)isOpaque;
 - (id)layer;
 - (void)setLayer:(id)arg1;
-- (id)textureSourceForContext:(void*)arg1;
+- (id)textureSource;
 
 @end

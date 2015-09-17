@@ -12,6 +12,7 @@
 
 + (int)activityCategory;
 
+- (void).cxx_destruct;
 - (id)_activityImage;
 - (id)_activitySettingsImage;
 - (void)_cleanup;

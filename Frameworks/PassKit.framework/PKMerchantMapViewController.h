@@ -10,7 +10,6 @@
 @property (readonly) Class superclass;
 
 - (id)activityViewControllerForPlaceViewController:(id)arg1;
-- (void)done:(id)arg1;
 - (void)placeViewControllerDidSelectShareLocation;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

@@ -13,18 +13,16 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)_clearConnection;
+- (void).cxx_destruct;
 - (void)clearAllReadingListArchives;
 - (void)clearReadingListArchiveWithUUID:(id)arg1;
 - (void)connection:(id)arg1 didCloseWithError:(id)arg2;
-- (void)dealloc;
 - (id)delegate;
 - (void)didFinishFetching;
 - (void)didStartFetchingReadingListItemWithMessage:(id)arg1;
 - (void)didStopFetchingReadingListItemWithMessage:(id)arg1;
 - (void)didUpdateProgressWithMessage:(id)arg1;
 - (id)init;
-- (void)invalidate;
 - (void)setDelegate:(id)arg1;
 - (void)startReadingListFetcher;
 

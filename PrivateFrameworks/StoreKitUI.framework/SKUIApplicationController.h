@@ -25,7 +25,9 @@
     SKUISimpleContainerViewController *_navigationContainerViewController;
     NSMutableArray *_navigationDocumentControllers;
     NSOperationQueue *_operationQueue;
+    SKUIApplicationControllerOptions *_options;
     SKUIPreviewDocumentController *_previewDocumentController;
+    BOOL _reloadApplicationOnForegroundNotification;
     unsigned int _resignActiveTaskID;
     UIViewController *_rootViewController;
     IKAppContext *_scriptContext;
@@ -33,8 +35,8 @@
     SKUIScrollingTabBarController *_scrollingTabBarController;
     _SKUIApplicationShutdownHelper *_shutdownHelper;
     <SKUIStatusOverlayProvider> *_statusOverlayProvider;
+    BOOL _stopApplicationOnBackgroundNotification;
     SKUITabBarController *_tabBarController;
-    int _tabBarControllerStyle;
     NSArray *_tabBarItems;
     SKUINavigationDocumentController *_transientNavigationDocument;
     SKUIURLResolver *_urlResolver;
@@ -55,11 +57,11 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL mescalPrimeEnabledForXHRRequests;
 @property (nonatomic, readonly) SKUIModalDocumentController *modalDocumentController;
+@property (nonatomic, readonly) SKUIApplicationControllerOptions *options;
 @property (nonatomic, readonly) UIViewController *rootViewController;
 @property (nonatomic, readonly) SKUIScrollingTabBarController *scrollingTabBarController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITabBarController *tabBarController;
-@property (nonatomic, readonly) int tabBarControllerStyle;
 @property (nonatomic, copy) NSArray *tabBarItems;
 
 + (id)applicationOptionsWithLaunchOptions:(id)arg1;
@@ -71,11 +73,14 @@
 - (void)URLResolver:(id)arg1 showURL:(id)arg2 withTabIdentifier:(id)arg3;
 - (Class)_JSITunesStoreClass;
 - (id)_activeNavigationController;
+- (void)_applicationDidEnterBackground:(id)arg1;
 - (int)_applicationMode;
+- (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_assetsDidUpdate:(id)arg1;
 - (void)_dispatchTabBarOnNeedsContentForTabAtIndex:(unsigned int)arg1;
 - (void)_dispatchTabBarOnSelect;
 - (id)_documentControllerForNavigationController:(id)arg1;
+- (void)_ensureStackConsistencyForNavigationController:(id)arg1;
 - (id)_existingTabBarController;
 - (void)_failReloadWithError:(id)arg1;
 - (void)_failWithError:(id)arg1;
@@ -102,7 +107,6 @@
 - (void)_recordTabBarMetricsEventToSelectViewController:(id)arg1;
 - (void)_reloadAfterNetworkChange:(id)arg1;
 - (void)_reloadApplication;
-- (void)_reloadApplicationOnForegroundNotification:(id)arg1;
 - (void)_reloadRootViewControllers;
 - (void)_reloadTabBarWithClientContext:(id)arg1;
 - (void)_removeObserversForReloadNotifications;
@@ -127,7 +131,6 @@
 - (void)_startScriptContextWithURL:(id)arg1;
 - (id)_statusOverlayProviderForViewController:(id)arg1;
 - (void)_stopApplication;
-- (void)_stopApplicationOnBackgroundNotification:(id)arg1;
 - (void)_stopScriptContextForReload;
 - (void)_storeFrontChangeNotification:(id)arg1;
 - (id)_tabBarController;
@@ -161,7 +164,9 @@
 - (void)evaluateBlockWhenLoaded:(id /* block */)arg1;
 - (void)getModalSourceViewForElementIdentifier:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)hideStatusOverlayForProvider:(id)arg1 animated:(BOOL)arg2;
+- (id)init;
 - (id)initWithClientContextClass:(Class)arg1;
+- (id)initWithClientContextClass:(Class)arg1 options:(id)arg2;
 - (id)initWithClientContextClass:(Class)arg1 tabBarControllerStyle:(int)arg2;
 - (id)jsNavigationDocumentForNavigationController:(id)arg1 inContext:(id)arg2;
 - (id)jsNavigationDocumentForNavigationDocumentController:(id)arg1 inContext:(id)arg2;
@@ -178,6 +183,7 @@
 - (unsigned int)navigationControllerSupportedInterfaceOrientations:(id)arg1;
 - (void)navigationDocumentController:(id)arg1 requestsAccessToAppContextUsingBlock:(id /* block */)arg2;
 - (void)navigationDocumentStackDidChange:(id)arg1;
+- (id)options;
 - (id)presentationViewControllerForAppContext:(id)arg1;
 - (id)presentationViewControllerForURLResolver:(id)arg1;
 - (void)recordMetricsEvent:(id)arg1 flushImmediately:(BOOL)arg2;
@@ -201,7 +207,6 @@
 - (BOOL)tabBarController:(id)arg1 shouldSelectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willDisplayViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize { float x1; float x2; })arg2 withTransitionCoordinator:(id)arg3;
-- (int)tabBarControllerStyle;
 - (unsigned int)tabBarControllerSupportedInterfaceOrientations:(id)arg1;
 - (id)tabBarItems;
 - (void)updateTabBarWithItems:(id)arg1 animated:(BOOL)arg2;

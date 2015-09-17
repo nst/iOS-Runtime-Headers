@@ -9,7 +9,6 @@
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithDefaults;
-- (void)setParent:(id)arg1;
 - (void)setStyleColor:(id)arg1;
 
 @end

@@ -10,7 +10,6 @@
     id /* block */ _queryCompletionBlock;
     NSObject<OS_dispatch_queue> *_queryResultQueue;
     id /* block */ _recordFetchedBlock;
-    NSArray *_results;
     CKQueryCursor *_resultsCursor;
     unsigned int _resultsLimit;
     BOOL _shouldFetchAssetContent;
@@ -24,7 +23,6 @@
 @property (nonatomic, copy) id /* block */ queryCompletionBlock;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queryResultQueue;
 @property (nonatomic, copy) id /* block */ recordFetchedBlock;
-@property (nonatomic, retain) NSArray *results;
 @property (nonatomic, retain) CKQueryCursor *resultsCursor;
 @property (nonatomic) unsigned int resultsLimit;
 @property (nonatomic) BOOL shouldFetchAssetContent;
@@ -35,6 +33,7 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
+- (unsigned long long)activityStart;
 - (id)cursor;
 - (id)desiredKeys;
 - (void)fillOutOperationInfo:(id)arg1;
@@ -47,7 +46,6 @@
 - (id /* block */)queryCompletionBlock;
 - (id)queryResultQueue;
 - (id /* block */)recordFetchedBlock;
-- (id)results;
 - (id)resultsCursor;
 - (unsigned int)resultsLimit;
 - (void)setCursor:(id)arg1;
@@ -57,7 +55,6 @@
 - (void)setQueryCompletionBlock:(id /* block */)arg1;
 - (void)setQueryResultQueue:(id)arg1;
 - (void)setRecordFetchedBlock:(id /* block */)arg1;
-- (void)setResults:(id)arg1;
 - (void)setResultsCursor:(id)arg1;
 - (void)setResultsLimit:(unsigned int)arg1;
 - (void)setShouldFetchAssetContent:(BOOL)arg1;

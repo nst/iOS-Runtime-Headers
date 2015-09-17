@@ -17,6 +17,7 @@
 + (unsigned int)numberOfActiveDevices;
 + (BOOL)shouldShowSMSRelaySettings;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)getDeviceActive:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

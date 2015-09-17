@@ -47,6 +47,7 @@
 - (void)setHasVideoTrack:(BOOL)arg1;
 - (void)setPxSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setThumbnail:(id)arg1;
+- (BOOL)shouldBeQuickLookedFromEntryView;
 - (id)thumbnail;
 - (void)updateVideoInfo;
 

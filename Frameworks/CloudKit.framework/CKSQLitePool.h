@@ -11,7 +11,7 @@
 
 @property (nonatomic, retain) NSMutableArray *dbs;
 @property (nonatomic) BOOL drainScheduled;
-@property (nonatomic, readonly, copy) id /* block */ factory;
+@property (nonatomic, readonly) id /* block */ factory;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 - (void).cxx_destruct;
@@ -26,6 +26,7 @@
 - (BOOL)drainScheduled;
 - (id /* block */)factory;
 - (id)initWithFactory:(id /* block */)arg1;
+- (id)initWithFactory:(id /* block */)arg1 queueAttr:(id)arg2;
 - (void)performWithDatabase:(id /* block */)arg1;
 - (BOOL)performWithDatabase:(id /* block */)arg1 error:(id*)arg2;
 - (id)queue;

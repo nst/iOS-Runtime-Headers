@@ -17,6 +17,7 @@
 
 + (id)sharedAccelerometer;
 
+- (void).cxx_destruct;
 - (void)_acceleratedInX:(double)arg1 y:(double)arg2 z:(double)arg3 timestamp:(double)arg4;
 - (void)_didSuspend:(id)arg1;
 - (id)_motionManager;

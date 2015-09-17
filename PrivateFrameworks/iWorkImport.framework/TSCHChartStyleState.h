@@ -48,6 +48,7 @@
 - (id)stateByReducingReferenceLineStyles;
 - (id)stateByReducingSeriesPrivateStyles;
 - (id)stateByReducingSeriesPrivateStylesAndReferenceLineStyles;
+- (id)styleToSemanticTagsMap;
 - (id)usesOfParagraphStyleProperties;
 - (id)valueAxisStyles;
 

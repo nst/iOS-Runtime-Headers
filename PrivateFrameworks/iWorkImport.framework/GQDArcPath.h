@@ -13,7 +13,6 @@
     } mSize;
 }
 
-- (id).cxx_construct;
 - (double)arcWidth;
 - (double)arrowLength;
 - (double)arrowWidth;

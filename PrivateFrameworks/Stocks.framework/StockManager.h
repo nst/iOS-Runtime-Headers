@@ -38,6 +38,7 @@
 - (id)init;
 - (id)makeSyncableStockListFromList:(id)arg1;
 - (void)moveStockFromIndex:(int)arg1 toIndex:(int)arg2;
+- (void)purgeTransientData;
 - (void)reloadStocksFromDefaults;
 - (void)removeStock:(id)arg1;
 - (void)saveDataChanges;

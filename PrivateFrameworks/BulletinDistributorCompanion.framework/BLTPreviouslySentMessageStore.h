@@ -16,6 +16,7 @@
 - (void)_cancelSave;
 - (void)_enqueueSave;
 - (void)_save;
+- (void)clear;
 - (void)dealloc;
 - (BOOL)dirty;
 - (id)initWithMessageStorePath:(id)arg1;

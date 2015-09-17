@@ -33,6 +33,7 @@
 - (void)loadView;
 - (BOOL)pu_wantsNavigationBarVisible;
 - (void)setAlbum:(id)arg1 existingFetchResults:(id)arg2;
+- (BOOL)shouldShowMenu;
 - (void)viewDidLoad;
 
 @end

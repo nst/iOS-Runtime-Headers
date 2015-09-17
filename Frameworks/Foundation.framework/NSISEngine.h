@@ -17,6 +17,7 @@
     NSISVariable *_headForObjectiveRow;
     struct __CFDictionary { } *_integralizationAdjustmentsForConstraintMarkers;
     BOOL _lastOptimizationInvolvedIntegralization;
+    NSMutableArray *_pendingMarkerDelegates;
     NSMutableArray *_pendingRemovals;
     unsigned int _pivotCount;
     NSMutableDictionary *_recordedOperations;
@@ -67,6 +68,7 @@
 - (void)constraintDidChangeSuchThatMarker:(id)arg1 shouldBeReplacedByMarkerPlusDelta:(float)arg2;
 - (id)constraints;
 - (id)constraintsAffectingValueOfVariable:(id)arg1;
+- (BOOL)containsConstraintWithMarker:(id)arg1;
 - (id)createExpressionBySubstitutingForRowHeadVariablesInExpression:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

@@ -2,12 +2,9 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDMetadataValueStatement : HDSQLiteQueryStatement {
-    NSDictionary *_propertySetters;
-}
+@interface HDMetadataValueStatement : HDSQLiteStatement
 
-- (void).cxx_destruct;
-- (id)initWithDatabase:(id)arg1 properties:(id)arg2 propertySetters:(id)arg3;
-- (id)resultsForObjectID:(id)arg1;
+- (BOOL)enumerateResultsForObjectID:(long long)arg1 withError:(id*)arg2 block:(id /* block */)arg3;
+- (id)initWithDatabase:(id)arg1;
 
 @end

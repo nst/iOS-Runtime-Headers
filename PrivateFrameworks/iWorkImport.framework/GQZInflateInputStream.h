@@ -27,7 +27,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (id)initWithInput:(id)arg1;
 - (unsigned long)readToBuffer:(char *)arg1 size:(unsigned long)arg2;

@@ -71,6 +71,7 @@
 - (id)initWithLocalPeerID:(id)arg1 andUbiquityRootLocation:(id)arg2;
 - (id)initWithLocalPeerID:(id)arg1 ubiquityRootLocation:(id)arg2 storeName:(id)arg3 andPrivateStore:(id)arg4;
 - (BOOL)isMonitoring;
+- (BOOL)isPeerForked:(id)arg1 andLocalKV:(id)arg2;
 - (id)localPeerID;
 - (id)logRestartTimer;
 - (void)metadataInconsistencyDetectedForStore:(id)arg1;

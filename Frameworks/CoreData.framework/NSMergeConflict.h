@@ -22,8 +22,8 @@
 - (id)cachedSnapshot;
 - (void)dealloc;
 - (id)description;
+- (id)init;
 - (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 cachedSnapshot:(id)arg4 persistedSnapshot:(id)arg5;
-- (id)initWithSource:(id)arg1 newVersion:(unsigned int)arg2 oldVersion:(unsigned int)arg3 snapshot1:(id)arg4 snapshot2:(id)arg5 snapshot3:(id)arg6;
 - (unsigned int)newVersionNumber;
 - (id)objectForKey:(id)arg1;
 - (id)objectSnapshot;

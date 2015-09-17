@@ -3,14 +3,14 @@
  */
 
 @interface OADPresetTextWarp : OADTextWarp {
-    int mPresetTextWarpType;
+    unsigned char mPresetTextWarpType;
 }
 
-+ (id)stringWithPresetTextWarpType:(int)arg1;
++ (id)stringWithPresetTextWarpType:(unsigned char)arg1;
 
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (int)presetTextWarpType;
-- (void)setPresetTextWarpType:(int)arg1;
+- (unsigned char)presetTextWarpType;
+- (void)setPresetTextWarpType:(unsigned char)arg1;
 
 @end

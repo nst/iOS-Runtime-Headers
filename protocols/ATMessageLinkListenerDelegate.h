@@ -5,6 +5,6 @@
 
 @required
 
-- (void)listener:(ATMessageLinkListener *)arg1 didReceiveMessageLinkRequest:(ATSocket *)arg2;
+- (void)listener:(ATMessageLinkListener *)arg1 didReceiveMessageLinkRequest:(ATMessageLink *)arg2;
 
 @end

@@ -21,6 +21,7 @@
 - (void)_enterBackground;
 - (void)_exitBackground;
 - (void)_resignActive;
+- (void)_sceneOcclusionChanged:(id)arg1;
 - (void)dealloc;
 - (BOOL)forceBackboardServicesMonitoring;
 - (BOOL)isActive;

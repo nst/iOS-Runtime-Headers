@@ -11,11 +11,10 @@
 @property (nonatomic, retain) UIImageView *newlyAddedView;
 @property (nonatomic) BOOL showNewlyAdded;
 
+- (void).cxx_destruct;
 - (id)_dotImage;
-- (void)dealloc;
 - (id)iconView;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)layoutSubviews;
 - (id)newlyAddedView;
 - (void)prepareForReuse;
 - (void)setIconView:(id)arg1;

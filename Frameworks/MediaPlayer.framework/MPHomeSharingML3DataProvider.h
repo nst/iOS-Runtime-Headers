@@ -18,7 +18,6 @@
 + (void)beginScanningForLibraries;
 + (void)endScanningForLibraries;
 + (id)homeSharingGroupID;
-+ (BOOL)isConnecting;
 + (BOOL)isScanningForLibraries;
 
 - (void).cxx_destruct;

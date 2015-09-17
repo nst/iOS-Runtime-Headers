@@ -4,6 +4,10 @@
 
 @interface BLTPingSubscriber : NSObject <BLTPingSubscribing> {
     NSMutableDictionary *_bulletinHandlers;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    } _lock;
     NSMutableDictionary *_pingHandlers;
     <BLTPingService> *_service;
 }
@@ -18,6 +22,7 @@
 
 - (void).cxx_destruct;
 - (id)bulletinHandlers;
+- (void)dealloc;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 completion:(id /* block */)arg2;
 - (void)getWillNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;

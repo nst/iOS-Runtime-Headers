@@ -9,6 +9,7 @@
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (BOOL)forceRenderBlankBackground;
 - (TSDLayoutGeometry *)geometry;
+- (BOOL)is2DRepFor3DChartRep;
 - (BOOL)isDrawingIntoPDF;
 - (BOOL)renderElements;
 - (BOOL)renderElementsShadowOnly;

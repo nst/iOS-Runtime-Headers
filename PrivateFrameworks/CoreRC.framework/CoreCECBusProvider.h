@@ -2,58 +2,70 @@
    Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
  */
 
-@interface CoreCECBusProvider : CoreCECBus <CECBusPollingOperationDelegate, CECInterfaceDelegate, NSCopying, NSSecureCoding> {
+@interface CoreCECBusProvider : CoreCECBus <CECBusPollingOperationDelegate, CECInterfaceDelegate> {
     CECInterface *_interface;
     CECBusPollingOperation *_pollingOperation;
-    unsigned char _powerStatus;
+    unsigned int _previousStreamPath;
+    unsigned int _streamPath;
 }
 
+@property (nonatomic) CoreCECDevice *activeSource;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, retain) CECInterface *interface;
 @property (nonatomic, retain) CECBusPollingOperation *pollingOperation;
-@property (nonatomic) unsigned char powerStatus;
+@property (nonatomic) unsigned int previousStreamPath;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *serialQueue;
+@property (nonatomic) unsigned int streamPath;
 @property (readonly) Class superclass;
 
 + (BOOL)supportsSecureCoding;
 
 - (id)_cecErrorWithInterfaceError:(id)arg1;
 - (id)addDeviceWithLogicalAddress:(unsigned char)arg1 message:(id)arg2 reason:(unsigned int)arg3;
-- (id)addDeviceWithLogicalAddress:(unsigned char)arg1 physicalAddress:(id)arg2 deviceType:(unsigned int)arg3 message:(id)arg4 reason:(unsigned int)arg5;
+- (id)addDeviceWithLogicalAddress:(unsigned char)arg1 physicalAddress:(unsigned int)arg2 deviceType:(unsigned int)arg3 message:(id)arg4 reason:(unsigned int)arg5;
 - (id)addDeviceWithType:(unsigned int)arg1 error:(id*)arg2;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (id)destinationConfirmedForMessage:(id)arg1;
 - (id)destinationExpectedForMessage:(id)arg1;
 - (unsigned int)hash;
-- (id)init;
+- (id)initWithBus:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithInterface:(id)arg1;
+- (id)initWithPhysicalAddress:(unsigned int)arg1;
 - (id)interface;
+- (void)interface:(id)arg1 hibernationChanged:(BOOL)arg2;
 - (void)interface:(id)arg1 receivedFrame:(struct CECFrame { unsigned char x1[16]; unsigned int x2 : 5; unsigned int x3 : 3; })arg2;
 - (void)interfacePropertiesChanged:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)linkStateChanged:(BOOL)arg1 error:(id*)arg2;
+- (void)makeDeviceInactiveSource:(id)arg1;
 - (id)pollingOperation;
 - (void)pollingOperation:(id)arg1 deviceNotRespondingAtAddress:(unsigned char)arg2;
 - (void)pollingOperation:(id)arg1 encounteredError:(id)arg2 forMessage:(id)arg3;
 - (BOOL)pollingOperation:(id)arg1 shouldSkipAddress:(unsigned char)arg2;
 - (void)pollingOperationCompleted:(id)arg1;
-- (unsigned char)powerStatus;
+- (unsigned int)previousStreamPath;
 - (id)propertyForKey:(id)arg1 error:(id*)arg2;
 - (void)receivedMessage:(id)arg1;
 - (BOOL)refreshDevicesWithInitiator:(id)arg1 error:(id*)arg2;
 - (BOOL)sendMessage:(id)arg1 error:(id*)arg2;
 - (BOOL)sendMessage:(id)arg1 withRetryCount:(unsigned char)arg2 error:(id*)arg3;
 - (id)serialQueue;
+- (void)setActiveSource:(id)arg1;
 - (void)setOsdNameASCII:(union CECOSDName { unsigned char x1[15]; struct { unsigned char x_2_1_1; unsigned char x_2_1_2[14]; } x2; })arg1;
 - (void)setPollingOperation:(id)arg1;
-- (void)setPowerStatus:(unsigned char)arg1;
+- (void)setPreviousStreamPath:(unsigned int)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
+- (void)setStreamPath:(unsigned int)arg1;
 - (void)setSystemAudioModeStatus:(unsigned int)arg1;
 - (void)setTvLanguageCodeASCII:(struct CECLanguage { unsigned char x1[3]; })arg1;
-- (BOOL)updateActiveSource:(id)arg1 error:(id*)arg2;
+- (unsigned int)streamPath;
+- (void)updateAllowHibernation;
+- (void)willRemoveDevice:(id)arg1;
 
 @end

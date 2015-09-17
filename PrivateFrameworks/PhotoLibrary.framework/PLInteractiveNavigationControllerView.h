@@ -26,7 +26,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *headerView;
 @property (getter=headerViewIsHidden, nonatomic) BOOL headerViewHidden;
-@property (nonatomic, readonly) UINavigationBar *navigationBar;
+@property (nonatomic, readonly, retain) UINavigationBar *navigationBar;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIView *topView;
 

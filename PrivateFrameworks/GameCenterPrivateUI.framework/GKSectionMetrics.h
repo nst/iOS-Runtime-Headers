@@ -4,6 +4,7 @@
 
 @interface GKSectionMetrics : GKGridLayoutMetrics {
     unsigned int _alignment;
+    float _calculatedItemHeightCache;
     float _desiredItemHeight;
     float _desiredItemWidth;
     float _flowColumnWidth;
@@ -24,10 +25,12 @@
     } _padding;
     BOOL _shouldAlwaysIncludeShowMore;
     BOOL _shouldShowSectionHeadersWhenNoItems;
+    BOOL _useViewSizeForFlowMaxColumnCount;
 }
 
 @property (nonatomic) unsigned int alignment;
 @property (nonatomic, readonly) float calculatedItemHeight;
+@property (nonatomic) float calculatedItemHeightCache;
 @property (nonatomic) float desiredItemHeight;
 @property (nonatomic) float desiredItemWidth;
 @property (nonatomic) float flowColumnWidth;
@@ -46,17 +49,20 @@
 @property (nonatomic) BOOL shouldAlwaysIncludeShowMore;
 @property (nonatomic) BOOL shouldShowSectionHeadersWhenNoItems;
 @property (nonatomic) float showMoreHeight;
+@property (nonatomic) BOOL useViewSizeForFlowMaxColumnCount;
 
 + (id)metricsForIdiom:(int)arg1;
 
 - (unsigned int)alignment;
 - (float)calculatedItemHeight;
+- (float)calculatedItemHeightCache;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (float)desiredItemHeight;
 - (float)desiredItemWidth;
 - (float)flowColumnWidth;
 - (unsigned int)flowMaxColumnCount;
+- (unsigned int)flowMaxColumnCountForViewWidth:(float)arg1;
 - (BOOL)incrementalRevealConsumesPadding;
 - (unsigned int)incrementalRevealItemCount;
 - (id)init;
@@ -74,6 +80,7 @@
 - (float)sectionHeaderHeight;
 - (BOOL)sectionHeadersShouldPin;
 - (void)setAlignment:(unsigned int)arg1;
+- (void)setCalculatedItemHeightCache:(float)arg1;
 - (void)setDesiredItemHeight:(float)arg1;
 - (void)setDesiredItemWidth:(float)arg1;
 - (void)setFlowColumnWidth:(float)arg1;
@@ -92,8 +99,10 @@
 - (void)setShouldAlwaysIncludeShowMore:(BOOL)arg1;
 - (void)setShouldShowSectionHeadersWhenNoItems:(BOOL)arg1;
 - (void)setShowMoreHeight:(float)arg1;
+- (void)setUseViewSizeForFlowMaxColumnCount:(BOOL)arg1;
 - (BOOL)shouldAlwaysIncludeShowMore;
 - (BOOL)shouldShowSectionHeadersWhenNoItems;
 - (float)showMoreHeight;
+- (BOOL)useViewSizeForFlowMaxColumnCount;
 
 @end

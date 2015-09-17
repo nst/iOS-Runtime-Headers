@@ -2,12 +2,18 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface WKInterfaceGroup : WKInterfaceObject
+@interface WKInterfaceGroup : WKInterfaceObject <WKImageAnimatable>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBackgroundImage:(id)arg1;
 - (void)setBackgroundImageData:(id)arg1;
 - (void)setBackgroundImageNamed:(id)arg1;
+- (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)startAnimating;
 - (void)startAnimatingWithImagesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 duration:(double)arg2 repeatCount:(int)arg3;

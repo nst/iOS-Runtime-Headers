@@ -4,10 +4,14 @@
 
 @interface PKPassPaymentPayStateView : UIView <PKGlyphViewDelegate> {
     <PKPassPaymentPayStateViewDelegate> *_delegate;
+    BOOL _enhancedContrast;
     PKGlyphView *_glyph;
+    float _glyphViewPadding;
     UILabel *_label;
     float _labelAlpha;
+    float _labelTopPadding;
     int _state;
+    int _style;
     BOOL _touchRecognizingHint;
 }
 
@@ -24,13 +28,15 @@
 
 - (void)_applyStateWithTextOverride:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)_canEmphasizeState:(int)arg1;
+- (void)_configureLayoutMetrics;
 - (id)_labelForState:(int)arg1 textOverride:(id)arg2;
+- (id)_textForState:(int)arg1 textOverride:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (void)emphasizeStateIfPossible:(int)arg1 withTextOverride:(id)arg2;
 - (id)glyph;
 - (void)glyphView:(id)arg1 revealingCheckmark:(BOOL)arg2;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithStyle:(int)arg1 enhancedContrast:(BOOL)arg2;
 - (id)label;
 - (float)labelAlpha;
 - (void)layoutSubviews;

@@ -17,8 +17,8 @@
 @property (nonatomic, readonly, retain) NSArray *updateSceneTransactions;
 @property (nonatomic, readonly, retain) FBWorkspace *workspace;
 
-- (void)_childTransactionDidComplete:(id)arg1;
 - (void)_didRemoveChildTransaction:(id)arg1;
+- (BOOL)_shouldFailForChildTransaction:(id)arg1;
 - (void)_willAddChildTransaction:(id)arg1;
 - (id)addUpdateSceneTransactionForSceneIdentifier:(id)arg1 display:(id)arg2 newSettings:(id)arg3 transitionContext:(id)arg4 initialClientSettingsProvider:(id /* block */)arg5;
 - (void)dealloc;

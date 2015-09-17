@@ -20,6 +20,7 @@
 + (void)withNamedVolatileSourceForIdentifier:(struct __CFString { }*)arg1 perform:(id /* block */)arg2;
 + (void)withSourceForIdentifier:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 byHost:(BOOL)arg3 container:(struct __CFString { }*)arg4 perform:(id /* block */)arg5;
 
+- (void)alreadylocked_clearCache;
 - (struct __CFDictionary { }*)alreadylocked_copyDictionary;
 - (struct __CFArray { }*)alreadylocked_copyKeyList;
 - (void*)alreadylocked_copyValueForKey:(struct __CFString { }*)arg1;
@@ -28,7 +29,6 @@
 - (BOOL)alreadylocked_requestNewData;
 - (void)alreadylocked_setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)alreadylocked_setValues:(const void**)arg1 forKeys:(const void**)arg2 count:(long)arg3;
-- (void)clearCache;
 - (struct __CFString { }*)container;
 - (struct __CFDictionary { }*)copyDictionary;
 - (struct __CFArray { }*)copyKeyList;

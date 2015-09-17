@@ -15,6 +15,7 @@
     NSString *_cachedInboxFolderID;
     BOOL _cachedIsActive;
     BOOL _cachedIsHotmailAccount;
+    BOOL _cachedIsManaged;
     NSString *_cachedJunkFolderID;
     BOOL _cachedPerMessageEncryptionEnabled;
     BOOL _cachedRestrictMessageTransfersToOtherAccounts;
@@ -25,6 +26,7 @@
     BOOL _cachedSecureMIMEShouldSign;
     NSString *_cachedSentMessagesFolderID;
     BOOL _cachedSourceIsManaged;
+    BOOL _cachedSupportsMailDrop;
     NSString *_cachedTrashFolderID;
     DAAccount *_daAccount;
     unsigned int _daysToSync;
@@ -50,6 +52,7 @@
 + (Class)_accountConduitClass;
 + (id)accountIDForDirectoryName:(id)arg1 isAccountDirectory:(BOOL*)arg2;
 + (id)accountTypeString;
++ (id)csAccountTypeString;
 + (id)displayedAccountTypeString;
 + (id)displayedShortAccountTypeString;
 + (id)folderIDForRelativePath:(id)arg1 accountID:(id*)arg2;
@@ -110,12 +113,13 @@
 - (BOOL)isActive;
 - (BOOL)isEnabledForDataclass:(id)arg1;
 - (BOOL)isMailboxLocalForType:(int)arg1;
+- (BOOL)isManaged;
 - (BOOL)isRunningInDisallowedBundle;
 - (id)mailboxForFolderID:(id)arg1;
 - (id)mailboxPathExtension;
 - (id)mailboxUidForInfo:(id)arg1;
 - (id)meetingStorePersistentID;
-- (BOOL)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4 unsuccessfulOnes:(id)arg5 newMessages:(id)arg6;
+- (id)moveMessages:(id)arg1 fromMailbox:(id)arg2 toMailbox:(id)arg3 markAsRead:(BOOL)arg4;
 - (BOOL)newMailboxNameIsAcceptable:(id)arg1 reasonForFailure:(id*)arg2;
 - (BOOL)perMessageEncryptionEnabled;
 - (BOOL)performRequests:(id)arg1 mailbox:(id)arg2 consumers:(id)arg3;
@@ -149,11 +153,12 @@
 - (id)statisticsKind;
 - (void)stopListeningForNotifications;
 - (Class)storeClass;
+- (BOOL)supportsMailDrop;
 - (BOOL)supportsMailboxEditing;
 - (BOOL)supportsMessageFlagging;
 - (BOOL)supportsRemoteAppend;
 - (BOOL)supportsServerSearch;
-- (BOOL)supportsThreadNotifications;
+- (BOOL)supportsThreadOperations;
 - (BOOL)supportsUserPushedMailboxes;
 - (id)syncAnchorForFolderID:(id)arg1 mailbox:(id*)arg2;
 - (id)syncAnchorForMailbox:(id)arg1;

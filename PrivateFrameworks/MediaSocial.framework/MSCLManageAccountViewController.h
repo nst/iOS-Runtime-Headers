@@ -39,5 +39,6 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (BOOL)textFieldShouldReturn:(id)arg1;
+- (void)viewWillLayoutSubviews;
 
 @end

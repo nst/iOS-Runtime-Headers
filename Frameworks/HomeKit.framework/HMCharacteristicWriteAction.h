@@ -2,26 +2,35 @@
    Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
  */
 
-@interface HMCharacteristicWriteAction : HMAction <NSSecureCoding> {
+@interface HMCharacteristicWriteAction : HMAction <HMObjectMerge, NSSecureCoding> {
     HMCharacteristic *_characteristic;
-    id _targetValue;
+    <NSCopying> *_targetValue;
 }
 
-@property (nonatomic, readonly) HMCharacteristic *characteristic;
-@property (nonatomic, copy) id targetValue;
+@property (nonatomic, retain) HMCharacteristic *characteristic;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, copy) <NSCopying> *targetValue;
+@property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 
-+ (id)actionWithInfo:(id)arg1 home:(id)arg2;
-+ (id)lookupActionWithInfo:(id)arg1 inArray:(id)arg2;
++ (id)_actionWithInfo:(id)arg1 home:(id)arg2;
++ (id)_lookupActionWithInfo:(id)arg1 inArray:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (void)_configureWithMerge:(id)arg1 actionSet:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
+- (BOOL)_handleUpdates:(id)arg1;
+- (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
+- (id)_serializeForAdd;
+- (void)_updateTargetValue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)characteristic;
 - (void)encodeWithCoder:(id)arg1;
-- (BOOL)handleUpdates:(id)arg1;
 - (id)init;
 - (id)initWithCharacteristic:(id)arg1 targetValue:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)serializeForAdd;
+- (void)setCharacteristic:(id)arg1;
 - (void)setTargetValue:(id)arg1;
 - (id)targetValue;
 - (void)updateTargetValue:(id)arg1 completionHandler:(id /* block */)arg2;

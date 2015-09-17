@@ -48,6 +48,7 @@
     UIColor *_occurrenceTextBackgroundColor;
     UIColor *_occurrenceTimeColor;
     UIColor *_occurrenceTitleColor;
+    BOOL _offscreenOccurrencePinningEnabled;
     BOOL _putSelectionOnTop;
     BOOL _reduceLayoutProcessingForAnimation;
     UIView *_saturdayDarkeningView;
@@ -78,6 +79,7 @@
 @property (nonatomic, retain) UIColor *occurrenceTextBackgroundColor;
 @property (nonatomic, retain) UIColor *occurrenceTimeColor;
 @property (nonatomic, retain) UIColor *occurrenceTitleColor;
+@property (nonatomic) BOOL offscreenOccurrencePinningEnabled;
 @property (nonatomic) BOOL reduceLayoutProcessingForAnimation;
 @property (setter=selectEvent:, nonatomic, retain) EKEvent *selectedEvent;
 @property (nonatomic) BOOL showsLeftBorder;
@@ -133,6 +135,7 @@
 - (id)occurrenceViewForEvent:(id)arg1;
 - (id)occurrenceViewForEvent:(id)arg1 onDate:(double)arg2;
 - (id)occurrenceViews;
+- (BOOL)offscreenOccurrencePinningEnabled;
 - (struct CGPoint { float x1; float x2; })pointForDate:(double)arg1;
 - (void)rectBecameVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)reduceLayoutProcessingForAnimation;
@@ -155,6 +158,7 @@
 - (void)setOccurrenceTimeColor:(id)arg1;
 - (void)setOccurrenceTitleColor:(id)arg1;
 - (void)setOccurrences:(id)arg1;
+- (void)setOffscreenOccurrencePinningEnabled:(BOOL)arg1;
 - (void)setOrientation:(int)arg1;
 - (void)setReduceLayoutProcessingForAnimation:(BOOL)arg1;
 - (void)setShowsLeftBorder:(BOOL)arg1;

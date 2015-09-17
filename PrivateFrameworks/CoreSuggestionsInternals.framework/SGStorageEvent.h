@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
  */
 
-@interface SGStorageEvent : NSObject {
+@interface SGStorageEvent : NSObject <SGEventForGeocode> {
     NSString *_content;
     double _creationTimestamp;
     BOOL _curated;
     SGDuplicateKey *_duplicateKey;
     double _lastModifiedTimestamp;
     NSArray *_locations;
+    SGRecordId *_recordId;
     NSString *_sourceKey;
     unsigned int _state;
     NSData *_structuredData;
@@ -20,33 +21,51 @@
 @property (nonatomic, readonly) NSString *content;
 @property (nonatomic, readonly) double creationTimestamp;
 @property (nonatomic, readonly) BOOL curated;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) SGDuplicateKey *duplicateKey;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) double lastModifiedTimestamp;
 @property (nonatomic, readonly) NSArray *locations;
+@property (nonatomic, readonly) NSString *opaqueKey;
+@property (nonatomic, readonly) SGRecordId *recordId;
 @property (nonatomic, readonly) NSString *sourceKey;
 @property (nonatomic, readonly) unsigned int state;
 @property (nonatomic, readonly) NSData *structuredData;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSSet *tags;
 @property (nonatomic, readonly) NSString *title;
 @property (nonatomic, readonly) SGSimpleTimeRange *when;
 
-+ (id)storageEventFromEntity:(id)arg1 usingStore:(id)arg2;
++ (id)storageEventFromEntity:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)content;
 - (id)convertToEvent:(id)arg1;
 - (double)creationTimestamp;
 - (BOOL)curated;
+- (id)description;
 - (id)duplicateKey;
 - (id)extraKeyTag;
 - (id)fieldsToSaveOnConfirmation;
-- (id)initWithDuplicateKey:(id)arg1 sourceKey:(id)arg2 content:(id)arg3 title:(id)arg4 creationTimestamp:(double)arg5 lastModifiedTimestamp:(double)arg6 tags:(id)arg7 when:(id)arg8 locations:(id)arg9 structuredData:(id)arg10 state:(unsigned int)arg11 curated:(BOOL)arg12;
+- (id)geocodeEndDate;
+- (id)geocodeEndTimeZone;
+- (id)geocodeLocations;
+- (id)geocodeStartDate;
+- (id)geocodeStartTimeZone;
+- (id)geocodedEventWithStartDate:(id)arg1 startTimeZone:(id)arg2 endDate:(id)arg3 endTimeZone:(id)arg4 locations:(id)arg5;
+- (unsigned int)hash;
+- (id)initWithRecordId:(id)arg1 duplicateKey:(id)arg2 sourceKey:(id)arg3 content:(id)arg4 title:(id)arg5 creationTimestamp:(double)arg6 lastModifiedTimestamp:(double)arg7 tags:(id)arg8 when:(id)arg9 locations:(id)arg10 structuredData:(id)arg11 state:(unsigned int)arg12 curated:(BOOL)arg13;
 - (BOOL)isAllDay;
 - (BOOL)isCancelled;
+- (BOOL)isEqual:(id)arg1;
+- (BOOL)isEqualToStorageEvent:(id)arg1;
 - (BOOL)isFromDataDetectors;
 - (BOOL)isFromSuggestions;
 - (double)lastModifiedTimestamp;
 - (id)locations;
+- (id)opaqueKey;
+- (id)recordId;
 - (id)sourceKey;
 - (unsigned int)state;
 - (id)structuredData;

@@ -48,6 +48,7 @@
 - (void)_applyPlaybackStatus:(id)arg1;
 - (id)_artworkView;
 - (void)_artworkViewImageDidChange;
+- (void)_configureArtworkCatalog:(id)arg1;
 - (void)_configureArtworkView:(id)arg1 forContentArtworkDescriptor:(id)arg2 entityValueProvider:(id)arg3;
 - (void)_configurePlayButtonForLayingOverArtworkRelativeToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_configurePlayButtonVisualProperties:(id)arg1;

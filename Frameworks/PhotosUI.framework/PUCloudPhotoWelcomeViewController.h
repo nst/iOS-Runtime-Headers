@@ -18,7 +18,6 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) PUCloudPhotoWelcomeView *welcomeView;
 
-+ (void)_enablePhotoStream;
 + (BOOL)_isPhotoStreamEnabled;
 + (void)showIfNecessaryWithPresentingViewController:(id)arg1;
 + (void)showWithPresentingViewController:(id)arg1;

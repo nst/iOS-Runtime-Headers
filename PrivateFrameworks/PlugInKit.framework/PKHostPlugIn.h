@@ -11,6 +11,7 @@
     NSDictionary *_discoveryExtensions;
     NSBundle *_embeddedBundle;
     id _embeddedPrincipal;
+    NSUUID *_multipleInstanceUUID;
     id /* block */ _notificationBlock;
     id _plugInPrincipal;
     NSXPCConnection *_pluginConnection;
@@ -18,6 +19,7 @@
     Protocol *_queuedHostProtocol;
     NSArray *_sandboxExtensions;
     <PKCorePlugInProtocol> *_service;
+    NSDictionary *_sourceForm;
     unsigned int _state;
     <PKPlugIn> *_supersededBy;
     NSUUID *_supersedingUUID;
@@ -36,6 +38,7 @@
 @property (readonly) NSUserDefaults *defaults;
 @property (readonly, copy) NSString *description;
 @property (retain) NSDictionary *discoveryExtensions;
+@property (readonly) NSUUID *effectiveUUID;
 @property (retain) NSBundle *embeddedBundle;
 @property (retain) id embeddedPrincipal;
 @property (retain) NSDictionary *extensionState;
@@ -44,6 +47,7 @@
 @property (readonly) NSString *localizedContainingName;
 @property (readonly) NSString *localizedName;
 @property (readonly) NSString *localizedShortName;
+@property (retain) NSUUID *multipleInstanceUUID;
 @property (copy) id /* block */ notificationBlock;
 @property (readonly) BOOL onSystemVolume;
 @property (readonly) NSDictionary *plugInDictionary;
@@ -53,6 +57,8 @@
 @property (retain) Protocol *queuedHostProtocol;
 @property (retain) NSArray *sandboxExtensions;
 @property (retain) <PKCorePlugInProtocol> *service;
+@property (retain) NSDictionary *sourceForm;
+@property (readonly) bool spent;
 @property unsigned int state;
 @property (readonly) Class superclass;
 @property (retain) <PKPlugIn> *supersededBy;
@@ -73,9 +79,11 @@
 - (void)beginUsing:(id /* block */)arg1;
 - (void)changeState:(unsigned int)arg1;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
+- (id)createInstanceWithUUID:(id)arg1;
 - (id)defaults;
 - (id)description;
 - (id)discoveryExtensions;
+- (id)effectiveUUID;
 - (id)embeddedBundle;
 - (id)embeddedPrincipal;
 - (void)endUsing:(id /* block */)arg1;
@@ -83,6 +91,7 @@
 - (id)initWithForm:(id)arg1;
 - (bool)loadExtensions:(id)arg1 error:(id*)arg2;
 - (void)messageTraceUsage;
+- (id)multipleInstanceUUID;
 - (id /* block */)notificationBlock;
 - (id)plugInPrincipal;
 - (id)pluginConnection;
@@ -99,6 +108,7 @@
 - (void)setEmbeddedPrincipal:(id)arg1;
 - (void)setExtensionState:(id)arg1;
 - (void)setHostPrincipal:(id)arg1 withProtocol:(id)arg2;
+- (void)setMultipleInstanceUUID:(id)arg1;
 - (void)setNotificationBlock:(id /* block */)arg1;
 - (void)setPlugInPrincipal:(id)arg1;
 - (void)setPluginConnection:(id)arg1;
@@ -107,6 +117,7 @@
 - (void)setReplyQueue:(id)arg1;
 - (void)setSandboxExtensions:(id)arg1;
 - (void)setService:(id)arg1;
+- (void)setSourceForm:(id)arg1;
 - (void)setState:(unsigned int)arg1;
 - (void)setSupersededBy:(id)arg1;
 - (void)setSupersedingUUID:(id)arg1;
@@ -115,6 +126,8 @@
 - (void)set_replyQueue:(id)arg1;
 - (void)set_startQueue:(id)arg1;
 - (void)set_syncQueue:(id)arg1;
+- (id)sourceForm;
+- (bool)spent;
 - (void)startPlugIn:(id /* block */)arg1;
 - (unsigned int)state;
 - (id)supersededBy;

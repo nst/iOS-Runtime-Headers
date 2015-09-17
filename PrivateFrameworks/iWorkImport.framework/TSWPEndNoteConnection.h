@@ -20,7 +20,6 @@
 + (id)currentPluginDownloadURL;
 + (id)sharedEndNoteConnection;
 
-- (id).cxx_construct;
 - (BOOL)anyOpenLibraries;
 - (BOOL)anyOpenNonEmptyLibraries;
 - (struct { BOOL x1; BOOL x2; BOOL x3; })availability;

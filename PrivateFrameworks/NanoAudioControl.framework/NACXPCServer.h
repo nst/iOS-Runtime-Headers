@@ -5,6 +5,7 @@
 @interface NACXPCServer : NSObject <NACIDSClientDelegate, NACXPCInterface, NSXPCListenerDelegate> {
     BOOL _audioAndHapticPreviewIsPlaying;
     NSObject<OS_dispatch_queue> *_audioAndHapticPreviewQueue;
+    NSObject<OS_dispatch_source> *_audioRouteDeferTimer;
     NSMutableDictionary *_audioRoutesRecords;
     float _hapticIntensity;
     NACIDSClient *_idsClient;
@@ -24,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)EULimitForCategory:(id)arg1 result:(id /* block */)arg2;
 - (id)_audioRoutesRecordForCategory:(id)arg1;
+- (void)_cancelDeferredAudioRoutesUpdate;
 - (void)_cleanupConnection:(id)arg1;
 - (void)_endObservingAudioRoutesForCategory:(id)arg1 connection:(id)arg2;
 - (void)_endObservingVolumeForConnection:(id)arg1;
@@ -34,6 +36,8 @@
 - (void)_persistSystemMutedState;
 - (void)_persistVolumeRecords;
 - (id)_routeObservationCategoriesForConnection:(id)arg1;
+- (void)_scheduleDeferredAudioRoutesUpdate:(id)arg1 category:(id)arg2;
+- (void)_updateAudioRoutes:(id)arg1 category:(id)arg2;
 - (id)_volumeRecordForCategory:(id)arg1;
 - (void)audioAndHapticPreviewHasCompletedPlaying;
 - (void)audioRoutesForCategory:(id)arg1 result:(id /* block */)arg2;

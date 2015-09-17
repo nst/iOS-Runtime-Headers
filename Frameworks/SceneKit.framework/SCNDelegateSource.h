@@ -12,6 +12,6 @@
 - (id)delegate;
 - (BOOL)isOpaque;
 - (void)setDelegate:(id)arg1;
-- (id)textureSourceForContext:(void*)arg1;
+- (id)textureSource;
 
 @end

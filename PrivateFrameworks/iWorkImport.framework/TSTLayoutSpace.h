@@ -134,7 +134,6 @@
 @property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transformToDevice;
 @property (nonatomic) float viewScale;
 
-- (id).cxx_construct;
 - (id)bezierPathCache;
 - (id)bundle;
 - (void)dealloc;

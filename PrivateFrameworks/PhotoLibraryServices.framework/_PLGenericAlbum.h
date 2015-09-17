@@ -5,23 +5,17 @@
 @interface _PLGenericAlbum : PLManagedObject
 
 @property (nonatomic, retain) NSMutableSet *albumLists;
-@property (nonatomic) long long albumToFolderOrderKey;
 @property (nonatomic) int cachedCount;
 @property (nonatomic) int cachedPhotosCount;
 @property (nonatomic) int cachedVideosCount;
 @property (nonatomic, retain) PLManagedAsset *customKeyAsset;
 @property (nonatomic) BOOL customSortAscending;
 @property (nonatomic) int customSortKey;
-@property (nonatomic, retain) PLManagedAsset *keyAsset;
 @property (nonatomic, retain) NSNumber *kind;
 @property (nonatomic, retain) PLManagedFolder *parentFolder;
 @property (nonatomic) int pendingItemsCount;
 @property (nonatomic) int pendingItemsType;
-@property (nonatomic, retain) PLManagedAsset *secondaryKeyAsset;
-@property (nonatomic, retain) NSDictionary *slideshowSettings;
-@property (nonatomic, retain) PLManagedAsset *tertiaryKeyAsset;
-@property (nonatomic, retain) NSString *title;
-@property (nonatomic, retain) NSString *uuid;
+@property (nonatomic) long long syncEventOrderKey;
 
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;

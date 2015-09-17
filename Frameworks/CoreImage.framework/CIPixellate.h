@@ -14,13 +14,11 @@
 
 + (id)customAttributes;
 
-- (bool)_isIdentity;
 - (id)_kernel;
 - (id)inputCenter;
 - (id)inputImage;
 - (id)inputScale;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputImage:(id)arg1;
 - (void)setInputScale:(id)arg1;

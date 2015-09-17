@@ -12,11 +12,14 @@
     NSString *_kind;
     NSString *_localizedAdditionalDescription;
     NSString *_localizedDescription;
+    long long _portionOfParent;
     _NSProgressFraction *_selfFraction;
     NSMutableDictionary *_userInfo;
+    BOOL _usingChildUserInfo;
 }
 
 + (id)_derivedKeys;
++ (id)_importantKeys;
 + (id)decodableClasses;
 + (BOOL)supportsSecureCoding;
 

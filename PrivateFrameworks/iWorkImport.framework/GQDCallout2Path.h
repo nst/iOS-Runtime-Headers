@@ -16,7 +16,6 @@
     double mTailSize;
 }
 
-- (id).cxx_construct;
 - (double)cornerRadius;
 - (struct CGPath { }*)createBezierPath;
 - (int)readAttributesFromReader:(struct _xmlTextReader { }*)arg1 processor:(id)arg2;

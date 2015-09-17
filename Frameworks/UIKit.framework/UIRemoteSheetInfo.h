@@ -18,8 +18,8 @@
 @property (nonatomic) SEL selector;
 @property (nonatomic, retain) UIView *sheetView;
 
+- (void).cxx_destruct;
 - (void*)context;
-- (void)dealloc;
 - (id)delegate;
 - (id)remoteView;
 - (int)returnCode;

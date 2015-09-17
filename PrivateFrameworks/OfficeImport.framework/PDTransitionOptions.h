@@ -8,4 +8,6 @@
     NSString *mSoundFile;
 }
 
+- (id)description;
+
 @end

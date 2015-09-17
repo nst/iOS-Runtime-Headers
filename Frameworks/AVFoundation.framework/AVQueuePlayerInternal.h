@@ -2,9 +2,6 @@
    Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
  */
 
-@interface AVQueuePlayerInternal : NSObject {
-    int beginModificationCount;
-    NSMutableArray *queuedModifications;
-}
+@interface AVQueuePlayerInternal : NSObject
 
 @end

@@ -22,12 +22,16 @@
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } finalFrameForContainerView;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) float resultsControllerContentOffset;
+@property (nonatomic, readonly) BOOL resultsUnderlapsSearchBar;
+@property (nonatomic, readonly) BOOL searchBarCanContainScopeBar;
 @property (nonatomic, readonly, retain) UIView *searchBarContainerView;
+@property (nonatomic, readonly) BOOL searchBarShouldClipToBounds;
 @property (nonatomic, readonly) BOOL searchBarToBecomeTopAttached;
 @property (nonatomic, readonly) BOOL shouldAccountForStatusBar;
 @property (nonatomic, readonly) float statusBarAdjustment;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_popoverHostingWindow;
 - (id)_presentationControllerForTraitCollection:(id)arg1;
 - (id)_presentedViewControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
@@ -37,12 +41,14 @@
 - (void)_transitionToWillBegin;
 - (id)adaptivePresentationController;
 - (int)adaptivePresentationStyle;
-- (void)dealloc;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)presentationTransitionWillBegin;
 - (float)resultsControllerContentOffset;
+- (BOOL)resultsUnderlapsSearchBar;
+- (BOOL)searchBarCanContainScopeBar;
 - (id)searchBarContainerView;
+- (BOOL)searchBarShouldClipToBounds;
 - (BOOL)searchBarToBecomeTopAttached;
 - (void)setContentVisible:(BOOL)arg1;
 - (BOOL)shouldAccountForStatusBar;

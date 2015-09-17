@@ -24,6 +24,7 @@
 @property (nonatomic) float visibleHeightRatio;
 @property (nonatomic) float visibleWidth;
 
+- (void).cxx_destruct;
 - (id)accessoryView;
 - (struct CGSize { float x1; float x2; })contentSize;
 - (float)cornerRadius;

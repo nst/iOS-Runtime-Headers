@@ -9,11 +9,14 @@
     BRCDeadlineToken *_containerMetadataSyncToken;
     NSString *_environmentName;
     NSObject<OS_dispatch_group> *_initialSyncDownGroup;
+    NSDate *_lastPeriodicSyncDate;
     struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } *_periodicSyncOperation;
     APSConnection *_pushConnection;
     NSObject<OS_dispatch_queue> *_pushQueue;
     NSObject<OS_dispatch_source> *_pushSource;
+    NSData *_pushToken;
     BRCAccountSession *_session;
+    unsigned int _sharedDBSyncState;
     struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } *_sharedDatabaseSyncOperation;
     BRCDeadlineToken *_sharedDatabaseSyncToken;
     NSObject<OS_dispatch_group> *_syncGroup;
@@ -32,7 +35,6 @@
 @property (nonatomic, readonly) BRCSyncBudgetThrottle *syncUpBudget;
 
 - (void).cxx_destruct;
-- (void)_automaticSyncSchedule:(id)arg1;
 - (void)_scheduleUpdatePushTopicsRegistration;
 - (void)_syncScheduleForContainersMetadata;
 - (void)_syncScheduleForSharedDatabase;
@@ -47,11 +49,11 @@
 - (void)containerDidBecomeForeground:(id)arg1;
 - (void)didChangeSyncStatusForContainerMetadataForContainer:(id)arg1;
 - (void)didInitialSyncDownForContainer:(id)arg1;
-- (void)didSyncDownSharedDatabase;
 - (void)dumpToContext:(id)arg1;
 - (id)initWithAccountSession:(id)arg1;
 - (id)initialSyncDownGroup;
 - (void)refreshPushRegistrationAfterAppsListChanged;
+- (void)schedulePeriodicSyncIfNecessary;
 - (void)scheduleSyncDownForContainerMetadata;
 - (void)scheduleSyncDownForSharedDatabaseImmediately:(BOOL)arg1;
 - (id)session;

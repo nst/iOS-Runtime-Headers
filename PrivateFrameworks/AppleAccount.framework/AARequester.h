@@ -3,6 +3,7 @@
  */
 
 @interface AARequester : NSOperation {
+    AKAppleIDSession *_appleIDSession;
     BOOL _canceled;
     NSMutableData *_data;
     id /* block */ _handler;
@@ -14,6 +15,7 @@
     AARequest *_request;
     AAResponse *_response;
     Class _responseClass;
+    BOOL _shouldRetry;
     NSURLConnection *_urlConnection;
 }
 
@@ -23,7 +25,9 @@
 @property (getter=isExecuting, nonatomic) BOOL isExecuting;
 
 - (void).cxx_destruct;
+- (void)__unsafe_callHandler;
 - (void)_callHandler;
+- (void)_kickOffRequest:(id)arg1;
 - (void)cancel;
 - (BOOL)connection:(id)arg1 canAuthenticateAgainstProtectionSpace:(id)arg2;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;

@@ -3,6 +3,7 @@
  */
 
 @interface TUAudioRoute : NSObject {
+    TUAudioRoutePreferredRouteOptions *_preferredRouteOptions;
     NSDictionary *_route;
 }
 
@@ -10,21 +11,30 @@
 @property (getter=isBluetooth, nonatomic, readonly) BOOL bluetooth;
 @property (nonatomic, readonly) int bluetoothEndpointType;
 @property (getter=isCarAudio, nonatomic, readonly) BOOL carAudio;
+@property (getter=isPreferred, nonatomic, readonly) BOOL preferred;
+@property (nonatomic, retain) TUAudioRoutePreferredRouteOptions *preferredRouteOptions;
 @property (getter=isReceiver, nonatomic, readonly) BOOL receiver;
 @property (nonatomic, retain) NSDictionary *route;
 @property (getter=isSpeaker, nonatomic, readonly) BOOL speaker;
+@property (nonatomic, readonly) NSString *uniqueIdentifier;
 @property (getter=isWirelessHeadset, nonatomic, readonly) BOOL wirelessHeadset;
 
+- (void).cxx_destruct;
 - (BOOL)_routeNameEqualTo:(id)arg1;
+- (void)_updatePreferredRouteOptions;
 - (int)bluetoothEndpointType;
 - (id)initWithDictionary:(id)arg1;
 - (BOOL)isAirTunes;
 - (BOOL)isBluetooth;
 - (BOOL)isCarAudio;
+- (BOOL)isPreferred;
 - (BOOL)isReceiver;
 - (BOOL)isSpeaker;
 - (BOOL)isWirelessHeadset;
+- (id)preferredRouteOptions;
 - (id)route;
+- (void)setPreferredRouteOptions:(id)arg1;
 - (void)setRoute:(id)arg1;
+- (id)uniqueIdentifier;
 
 @end

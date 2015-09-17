@@ -8,6 +8,7 @@
 
 @property (nonatomic, readonly) NSDictionary *bagDictionary;
 @property (nonatomic, readonly) unsigned int librarySharedPlaylistTrackCountLimit;
+@property (nonatomic, readonly) NSURL *prominentRadioStationInfoURL;
 @property (nonatomic, readonly) BOOL supportsConnect;
 @property (nonatomic, readonly) BOOL supportsSubscription;
 @property (nonatomic, readonly) NSDictionary *tabConfigurations;
@@ -16,6 +17,7 @@
 - (id)bagDictionary;
 - (id)initWithBagDictionary:(id)arg1;
 - (unsigned int)librarySharedPlaylistTrackCountLimit;
+- (id)prominentRadioStationInfoURL;
 - (BOOL)supportsConnect;
 - (BOOL)supportsSubscription;
 - (id)tabConfigurations;

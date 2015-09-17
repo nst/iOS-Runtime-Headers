@@ -25,7 +25,6 @@
 @property (nonatomic, readonly) NSArray *cells;
 @property (nonatomic, readonly) unsigned int triangleCount;
 
-- (id).cxx_construct;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (unsigned int)cellCount;
 - (id)cellFromTriangleIndex:(unsigned int)arg1;

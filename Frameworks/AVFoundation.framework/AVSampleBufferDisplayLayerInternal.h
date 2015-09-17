@@ -19,6 +19,9 @@
     struct OpaqueCMTimebase { } *controlTimebaseSetByUser;
     BOOL controlTimebaseSetByUserIsInUse;
     NSError *error;
+    NSObject<OS_dispatch_queue> *flushCallbackListQueue;
+    NSObject<OS_dispatch_queue> *flushCallbackQueue;
+    NSMutableArray *flushCallbacks;
     BOOL isRequestingMediaData;
     AVMediaDataRequester *mediaDataRequester;
     BOOL outputObscured;

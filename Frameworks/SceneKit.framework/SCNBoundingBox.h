@@ -18,8 +18,6 @@
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } max;
 @property (nonatomic) struct SCNVector3 { float x1; float x2; float x3; } min;
 
-+ (id)SCNJSExportProtocol;
-
 - (id)description;
 - (struct SCNVector3 { float x1; float x2; float x3; })max;
 - (struct SCNVector3 { float x1; float x2; float x3; })min;

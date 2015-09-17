@@ -3,9 +3,11 @@
 
 @protocol BSSettingDescriptionProvider <NSObject>
 
-@required
+@optional
 
 - (NSString *)keyDescriptionForSetting:(unsigned int)arg1;
+- (NSString *)settings:(BSSettings *)arg1 keyDescriptionForSetting:(unsigned int)arg2;
+- (NSString *)settings:(BSSettings *)arg1 valueDescriptionForFlag:(int)arg2 object:(id)arg3 ofSetting:(unsigned int)arg4;
 - (NSString *)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 @end

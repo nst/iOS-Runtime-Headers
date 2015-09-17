@@ -64,6 +64,7 @@
     } values;
 }
 
+- (unsigned int)__capacity;
 - (void)_initBlock;
 - (void)_setBackingStore;
 - (id)allKeys;

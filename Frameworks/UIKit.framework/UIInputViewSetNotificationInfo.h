@@ -28,6 +28,7 @@
         } size; 
     } _bounds;
     BOOL _changedAccessoryOnly;
+    BOOL _dueToRotation;
     float _duration;
     struct CGPoint { 
         float x; 
@@ -43,19 +44,24 @@
             float height; 
         } size; 
     } _endFrame;
+    BOOL _forceNotification;
     unsigned int _options;
+    BOOL _wasCausedRemotely;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } beginCenter;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } beginFrame;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
 @property (nonatomic) BOOL changedAccessoryOnly;
+@property (nonatomic) BOOL dueToRotation;
 @property (nonatomic) float duration;
 @property (nonatomic) struct CGPoint { float x1; float x2; } endCenter;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } endFrame;
+@property (nonatomic) BOOL forceNotification;
 @property (nonatomic) unsigned int options;
 @property (nonatomic, readonly) NSDictionary *privateUserInfo;
 @property (nonatomic, readonly) NSDictionary *userInfo;
+@property (nonatomic) BOOL wasCausedRemotely;
 
 + (id)info;
 
@@ -63,9 +69,13 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })beginFrame;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (BOOL)changedAccessoryOnly;
+- (BOOL)containsChange;
+- (BOOL)dueToRotation;
 - (float)duration;
 - (struct CGPoint { float x1; float x2; })endCenter;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })endFrame;
+- (BOOL)forceNotification;
+- (id)init;
 - (id)inverseInfo;
 - (void)logGeometry;
 - (unsigned int)options;
@@ -73,14 +83,19 @@
 - (void)populateStartInfoWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)populateWithAnimationStyle:(id)arg1;
 - (id)privateUserInfo;
+- (id)rotationUserInfo;
 - (void)setBeginCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setBeginFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setChangedAccessoryOnly:(BOOL)arg1;
+- (void)setDueToRotation:(BOOL)arg1;
 - (void)setDuration:(float)arg1;
 - (void)setEndCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setEndFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setForceNotification:(BOOL)arg1;
 - (void)setOptions:(unsigned int)arg1;
+- (void)setWasCausedRemotely:(BOOL)arg1;
 - (id)userInfo;
+- (BOOL)wasCausedRemotely;
 
 @end

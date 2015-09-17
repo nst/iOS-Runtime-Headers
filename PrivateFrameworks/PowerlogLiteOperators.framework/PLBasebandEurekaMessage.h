@@ -12,7 +12,6 @@
 }
 
 @property (readonly) unsigned int eventCode;
-@property (readonly) NSString *eventCodeString;
 @property struct _PLBasebandEventHeader { struct _PLBasebandMessageHeader { unsigned char x_1_1_1; } x1; unsigned int x2; unsigned char x3[8]; unsigned char x4; }*header;
 @property (retain) NSData *payload;
 @property unsigned char skip;
@@ -21,7 +20,7 @@
 @property char *ssstate;
 
 - (void).cxx_destruct;
-- (id)actionStringSystemSelection;
+- (id)actionSystemSelection;
 - (id)callTypeString:(char *)arg1;
 - (id)cdmaExitString:(char *)arg1;
 - (id)cellUpdateCause:(char *)arg1;
@@ -33,11 +32,9 @@
 - (id)estCauseLTE:(char *)arg1;
 - (id)establishmentCauseStringWCDMA:(char *)arg1;
 - (unsigned int)eventCode;
-- (id)eventCodeString;
-- (id)eventCodeString:(unsigned int)arg1;
 - (id)eventStringACC:(char *)arg1;
 - (id)eventStringOOS:(char *)arg1;
-- (id)eventStringSystemSelection;
+- (id)eventSystemSelection;
 - (struct _PLBasebandEventHeader { struct _PLBasebandMessageHeader { unsigned char x_1_1_1; } x1; unsigned int x2; unsigned char x3[8]; unsigned char x4; }*)header;
 - (id)initWithData:(id)arg1;
 - (id)iratHOStringLTE:(char *)arg1;
@@ -75,9 +72,9 @@
 - (id)stateStringLTE:(char *)arg1;
 - (id)stateStringMotion:(char *)arg1;
 - (id)stateStringOOS:(char *)arg1;
-- (id)stateStringSystemSelection;
 - (id)stateStringUTRANL1:(char *)arg1;
 - (id)stateStringWCDMA:(char *)arg1;
+- (id)stateSystemSelection;
 - (id)stringForUnknownBytes:(unsigned int)arg1;
 - (id)termStringSystemSelection:(char *)arg1;
 - (id)tooShortErrorString;

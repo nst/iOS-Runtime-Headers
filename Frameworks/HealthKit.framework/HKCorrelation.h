@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKCorrelation : HKSample <HDCoding, NSSecureCoding> {
+@interface HKCorrelation : HKSample <HDCoding> {
     NSMutableDictionary *_objects;
 }
 
@@ -19,6 +19,7 @@
 + (BOOL)_allowEmptyCorrelations;
 + (BOOL)_isConcreteObjectClass;
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4;
++ (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4 device:(id)arg5 metadata:(id)arg6;
 + (id)correlationWithType:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 objects:(id)arg4 metadata:(id)arg5;
 + (BOOL)supportsSecureCoding;
 
@@ -43,11 +44,14 @@
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 + (id)createWithCodable:(id)arg1;
++ (Class)hd_dataEntityClass;
 
 - (BOOL)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
+- (id)hd_associatedObjects;
+- (id)hd_associatedSampleTypes;
 - (void)hd_cleanupBeforeJournalInsertion;
-- (BOOL)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entity:(id)arg3 error:(id*)arg4;
+- (BOOL)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entityPersistentID:(id)arg3 error:(id*)arg4;
 - (id)hd_relatedJournalEntries;
 
 @end

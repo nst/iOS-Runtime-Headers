@@ -32,6 +32,7 @@
         float height; 
     } mMaximumScaledImageSize;
     id /* block */ mPostRenderAction;
+    NSSet *mPreviousRenderDatasNeedingDownload;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -100,6 +101,7 @@
 @property (nonatomic, retain) NSArray *infos;
 @property (nonatomic) BOOL isPrinting;
 @property (nonatomic) struct CGSize { float x1; float x2; } maximumScaledImageSize;
+@property (nonatomic, copy) NSSet *previousRenderDatasNeedingDownload;
 @property (nonatomic) struct CGSize { float x1; float x2; } scaledImageSize;
 @property (nonatomic) BOOL shouldReuseBitmapContext;
 @property (readonly) Class superclass;
@@ -126,6 +128,7 @@
 - (void)p_drawPageInContext:(struct CGContext { }*)arg1 createPage:(BOOL)arg2;
 - (struct CGImage { }*)p_newImageInReusableContext;
 - (id)pdfData;
+- (id)previousRenderDatasNeedingDownload;
 - (struct CGSize { float x1; float x2; })scaledImageSize;
 - (void)setBackgroundColor:(struct CGColor { }*)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -135,6 +138,7 @@
 - (void)setIsPrinting:(BOOL)arg1;
 - (void)setMaximumScaledImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPostRenderAction:(id /* block */)arg1;
+- (void)setPreviousRenderDatasNeedingDownload:(id)arg1;
 - (void)setScaledImageSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShouldReuseBitmapContext:(BOOL)arg1;
 - (void)setUnscaledClipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

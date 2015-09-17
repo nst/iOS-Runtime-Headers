@@ -21,6 +21,7 @@
 + (id)searchWithEntityClass:(Class)arg1 predicate:(id)arg2 store:(id)arg3;
 
 - (void)_startActualWithCompletion:(id /* block */)arg1;
+- (unsigned long long)_startOSActivity;
 - (void)cancel;
 - (void)dealloc;
 - (void)disconnect;

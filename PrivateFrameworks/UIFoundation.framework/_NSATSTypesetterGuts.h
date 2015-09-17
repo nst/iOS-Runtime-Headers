@@ -17,8 +17,10 @@
     NSATSGlyphStorage *_glyphStorage;
     unsigned int _lastContainerIndex;
     unsigned int _lastGlyphIndex;
+    unsigned int _lineBreakStrategy;
     NSATSLineFragment *_lineFragment;
     union { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; int x_1_1_4; } x1; struct { struct CGRect { struct CGPoint { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct CGSize { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_2_1_1; } x2; } *_lineFragmentRectArgs;
+    NSParagraphArbitrator *_paragraphArbitrator;
     struct { 
         unsigned int _resolvedWritingDirection : 2; 
         unsigned int _reserved : 30; 

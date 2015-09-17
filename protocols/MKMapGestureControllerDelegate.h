@@ -5,6 +5,7 @@
 
 @required
 
+- (BOOL)gestureController:(MKMapGestureController *)arg1 shouldReceiveTouch:(UITouch *)arg2;
 - (void)gestureControllerDidStopPanning:(MKMapGestureController *)arg1 willDecelerate:(BOOL)arg2;
 - (void)gestureControllerDidStopPanningDecelerating:(MKMapGestureController *)arg1;
 - (void)gestureControllerDidStopRotating:(MKMapGestureController *)arg1 willDecelerate:(BOOL)arg2;

@@ -2,16 +2,15 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKMatchmakerViewController : UINavigationController <GKMatchDelegate> {
+@interface GKMatchmakerViewController : UINavigationController <GKExtensionParentViewControllerProtocol, GKMatchDelegate> {
     GKInvite *_acceptedInvite;
     UIAlertController *_alertController;
     BOOL _hosted;
     NSMutableArray *_hostedPlayers;
-    GKHostedMatchmakerViewController *_hostedViewController;
     GKMatch *_match;
     GKMatchRequest *_matchRequest;
     <GKMatchmakerViewControllerDelegate> *_matchmakerDelegateWeak;
-    GKRemoteMatchmakerViewController *_remoteViewController;
+    GKMatchmakerHostViewController *_remoteViewController;
 }
 
 @property (nonatomic, retain) GKInvite *acceptedInvite;
@@ -22,31 +21,32 @@
 @property (readonly) unsigned int hash;
 @property (getter=isHosted, nonatomic) BOOL hosted;
 @property (nonatomic, retain) NSMutableArray *hostedPlayers;
-@property (nonatomic, retain) GKHostedMatchmakerViewController *hostedViewController;
 @property (nonatomic, retain) GKMatch *match;
 @property (nonatomic, readonly, retain) GKMatchRequest *matchRequest;
 @property (nonatomic) <GKMatchmakerViewControllerDelegate> *matchmakerDelegate;
-@property (nonatomic, retain) GKRemoteMatchmakerViewController *remoteViewController;
+@property (nonatomic, retain) GKMatchmakerHostViewController *remoteViewController;
 @property (readonly) Class superclass;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
 
 - (void)_setupChildViewController;
+- (void)_setupRemoteViewController;
 - (id)acceptedInvite;
 - (void)addPlayersToMatch:(id)arg1;
 - (id)alertController;
 - (void)applicationWillEnterForeground:(id)arg1;
 - (void)authenticationChanged:(id)arg1;
 - (void)cancel;
-- (void)cancelInviteToPlayer:(id)arg1;
+- (void)cancelMatching;
+- (void)cancelPendingInviteToPlayer:(id)arg1;
 - (void)createMatchForAcceptedInvite;
 - (void)dealloc;
 - (id)defaultInvitationMessage;
+- (void)extensionDidFinishWithError:(id)arg1;
 - (void)finishWithError:(id)arg1;
 - (void)finishWithMatch;
 - (void)finishWithPlayers;
 - (id)hostedPlayers;
-- (id)hostedViewController;
 - (id)init;
 - (id)initWithInvite:(id)arg1;
 - (id)initWithMatchRequest:(id)arg1;
@@ -72,7 +72,6 @@
 - (void)setHostedPlayer:(id)arg1 didConnect:(BOOL)arg2;
 - (void)setHostedPlayerReady:(id)arg1;
 - (void)setHostedPlayers:(id)arg1;
-- (void)setHostedViewController:(id)arg1;
 - (void)setMatch:(id)arg1;
 - (void)setMatchmakerDelegate:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
@@ -81,6 +80,7 @@
 - (void)startMatchingWithRequest:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 

@@ -9,10 +9,7 @@
     struct CGColor { } *mDefaultSelectionHighlightColor;
     CALayer *mDragAndDropHighlightLayer;
     BOOL mHasBeenRemoved;
-    BOOL mKnobPositionsInvalid;
     TSDKnobTracker *mKnobTracker;
-    NSArray *mKnobs;
-    BOOL mKnobsAreShowing;
     TSDLayoutGeometry *mLastGeometryInRoot;
     TSDLayout *mLayout;
     struct CGRect { 
@@ -29,7 +26,6 @@
     CALayer *mSelectionHighlightLayer;
     BOOL mSelectionHighlightLayerValid;
     BOOL mShowDragAndDropHighlight;
-    BOOL mShowKnobsWhenManipulated;
     BOOL mShowTemporaryHighlight;
     CALayer *mTemporaryHighlightLayer;
     TSDLayout *mTemporaryMixingLayout;
@@ -49,7 +45,7 @@
 @property (nonatomic) TSDRep<TSDContainerRep> *parentRep;
 @property (nonatomic, retain) TSDLayout *temporaryMixingLayout;
 @property (retain) TSDTextureSet *texture;
-@property (nonatomic) NSDictionary *textureActionAttributes;
+@property (nonatomic, retain) NSDictionary *textureActionAttributes;
 @property (nonatomic, readonly) float textureAngle;
 @property (nonatomic, retain) NSDictionary *textureAnimationInfo;
 @property (nonatomic) int textureByGlyphStyle;
@@ -60,9 +56,11 @@
 - (void)addBitmapsToRenderingQualityInfo:(id)arg1 inContext:(struct CGContext { }*)arg2;
 - (void)addToSet:(id)arg1;
 - (id)additionalRepsForDragging;
+- (BOOL)allowDragAcrossPageBoundaries;
 - (float)angleInRoot;
 - (void)antiAliasDefeatLayerFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 forTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 - (void)antiAliasDefeatLayerTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg1 forFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)beginDragInlineWithText;
 - (void)beginDrawingOperation;
 - (BOOL)canClipThemeContentToCanvas;
 - (BOOL)canEditWithEditor:(id)arg1;
@@ -88,6 +86,7 @@
 - (id)description;
 - (BOOL)directlyManagesLayerContent;
 - (void)drawInContext:(struct CGContext { }*)arg1;
+- (void)endDragInlineWithText;
 - (void)endDrawingOperation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInScreenSpace;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameInUnscaledCanvas;

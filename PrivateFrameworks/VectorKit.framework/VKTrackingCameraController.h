@@ -4,7 +4,7 @@
 
 @interface VKTrackingCameraController : VKCameraController {
     BOOL _animatingIn;
-    VKAnimation *_animation;
+    VKTimedAnimation *_animation;
     struct VKNavigationCameraModel { 
         double _halfVerticalFov; 
         double _horizontalFov; 
@@ -95,7 +95,7 @@
     } _matchedSection;
     double _maxBoomLength;
     double _maxDistanceScale;
-    VKAnimation *_panAnimation;
+    VKTimedAnimation *_panAnimation;
     double _panBoomLength;
     struct Matrix<double, 3, 1> { 
         double _e[3]; 
@@ -122,7 +122,7 @@
     double _panStartPitch;
     int _panStyle;
     BOOL _panning;
-    VKAnimation *_pitchAnimation;
+    VKTimedAnimation *_pitchAnimation;
     double _pitchOffset;
     BOOL _pitching;
     double _previousCourse;
@@ -170,7 +170,7 @@
     double _startTime;
     double _startZoomScale;
     BOOL _successfullyStartedRouteLinePan;
-    VKAnimation *_tapZoomAnimation;
+    VKTimedAnimation *_tapZoomAnimation;
     double _tracePlaybackSpeedMultiplier;
     <VKTrackingCameraControllerDelegate> *_trackingDelegate;
     double _userZoomFocusStyleMaxZoomScale;
@@ -180,7 +180,7 @@
     double _verticalGroundspanScale;
     int _viewStyle;
     double _zoomScale;
-    VKAnimation *_zoomScaleAnimation;
+    VKTimedAnimation *_zoomScaleAnimation;
     BOOL _zooming;
 }
 

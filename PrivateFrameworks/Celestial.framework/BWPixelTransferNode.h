@@ -4,6 +4,7 @@
 
 @interface BWPixelTransferNode : BWNode {
     int _cropMode;
+    NSObject<OS_dispatch_semaphore> *_emitSampleBufferSemaphore;
     BOOL _flipHorizontal;
     BOOL _flipVertical;
     BOOL _haveLiveInputCropRect;
@@ -73,6 +74,7 @@
 - (void)dealloc;
 - (void)didReachEndOfDataForInput:(id)arg1;
 - (void)didSelectFormat:(id)arg1 forInput:(id)arg2;
+- (id)emitSampleBufferSemaphore;
 - (BOOL)flipHorizontal;
 - (BOOL)flipVertical;
 - (BOOL)hasNonLiveConfigurationChanges;
@@ -90,6 +92,7 @@
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (int)rotationDegrees;
 - (void)setCropMode:(int)arg1;
+- (void)setEmitSampleBufferSemaphore:(id)arg1;
 - (void)setFlipHorizontal:(BOOL)arg1;
 - (void)setFlipVertical:(BOOL)arg1;
 - (void)setInputCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -21,6 +21,7 @@
 - (void)authorizationDidAuthorizePayment:(id)arg1;
 - (void)authorizationDidFinishWithError:(id)arg1;
 - (void)authorizationDidPresent;
+- (void)authorizationDidSelectPaymentMethod:(id)arg1;
 - (void)authorizationDidSelectShippingAddress:(id)arg1;
 - (void)authorizationDidSelectShippingMethod:(id)arg1;
 - (void)authorizationWillStart;

@@ -2,21 +2,18 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBSceneManager : NSObject <FBSceneDelegate, FBWindowContextManagerObserver> {
-    BOOL _applyingOrientationTransform;
+@interface FBSceneManager : NSObject <FBSceneDelegate, FBSceneLayerManagerObserver> {
     FBSSceneClientSettingsDiffInspector *_clientSettingsDiffInspector;
-    <FBSceneManagerDelegate> *_delegate;
+    FBSceneManagerObserver *_delegate;
     NSMutableDictionary *_displayToOcclusionsStack;
     NSMutableDictionary *_displayToRootWindow;
     FBSceneEventQueue *_eventQueue;
-    int _lastOrientation;
-    NSHashTable *_observers;
-    int _orientationNotificationToken;
+    NSMutableOrderedSet *_observers;
+    NSMutableArray *_pendingIdleEvents;
     NSMapTable *_providerToSceneMap;
     NSHashTable *_providersWithOpenTransactions;
     NSMutableDictionary *_scenesByID;
     unsigned int _synchronizationBlockDepth;
-    unsigned int _synchronizationPort;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -25,6 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (BOOL)_isSynchronizingSceneUpdates;
 + (id)sharedInstance;
 + (void)synchronizeChanges:(id /* block */)arg1;
 
@@ -33,45 +31,45 @@
 - (void)_destroyScene:(id)arg1 withTransitionContext:(id)arg2;
 - (void)_endSynchronizationBlock;
 - (void)_enqueueEventForScene:(id)arg1 withName:(id)arg2 block:(id /* block */)arg3;
+- (void)_enqueueInternalObserverCalloutsForScene:(id)arg1 eventName:(id)arg2 withBlock:(id /* block */)arg3;
+- (void)_enqueueObserverCalloutsForScene:(id)arg1 eventName:(id)arg2 preferInternal:(BOOL)arg3 withBlock:(id /* block */)arg4;
 - (void)_enqueueObserverCalloutsForScene:(id)arg1 eventName:(id)arg2 withBlock:(id /* block */)arg3;
-- (void)_noteSceneChangedFrame:(id)arg1;
+- (id)_eventForScene:(id)arg1 withName:(id)arg2 block:(id /* block */)arg3;
+- (void)_executeEventWhenIdle:(id)arg1;
+- (void)_executeNextIdleEventIfAppropriate;
 - (void)_noteSceneChangedLevel:(id)arg1;
 - (void)_noteSceneMovedToBackground:(id)arg1;
 - (void)_noteSceneMovedToForeground:(id)arg1;
 - (id)_occlusionStackForDisplay:(id)arg1 creatingIfNecessary:(BOOL)arg2;
-- (void)_orientationChanged:(int)arg1;
 - (void)_positionWrapperViewInRootViewOrderedCorrectly:(id)arg1 rootWindow:(id)arg2;
 - (void)_reEvaluateNeedForRootWindowOnDisplay:(id)arg1;
-- (id)_rootWindowForDisplay:(id)arg1;
-- (void)_sendOutstandingOcclusionChangesWithTransitionContext:(id)arg1;
+- (id)_rootWindowForDisplay:(id)arg1 createIfNecessary:(BOOL)arg2;
+- (void)_sendOutstandingOcclusionChangesForStack:(id)arg1 withTransitionContext:(id)arg2;
 - (void)_startContextHostingForScene:(id)arg1;
 - (void)_stopContextHostingForScene:(id)arg1;
-- (void)_updateMainDisplayRootWindowTransformsToWindow:(id)arg1;
 - (void)_updateScene:(id)arg1 withSettings:(id)arg2 transitionContext:(id)arg3;
 - (void)addObserver:(id)arg1;
 - (void)attachDefaultTransform:(id)arg1 forDisplay:(id)arg2;
-- (id)contextManagerForSceneID:(id)arg1;
 - (id)createSceneWithIdentifier:(id)arg1 display:(id)arg2 settings:(id)arg3 initialClientSettings:(id)arg4 clientProvider:(id)arg5 transitionContext:(id)arg6;
 - (id)createSceneWithIdentifier:(id)arg1 settings:(id)arg2 initialClientSettings:(id)arg3 clientProvider:(id)arg4 transitionContext:(id)arg5;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)destroyScene:(id)arg1 withTransitionContext:(id)arg2;
 - (void)enumerateScenesWithBlock:(id /* block */)arg1;
-- (id)hostManagerForSceneID:(id)arg1;
 - (id)init;
 - (void)removeDefaultTransform:(id)arg1 forDisplay:(id)arg2;
 - (void)removeObserver:(id)arg1;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
 - (void)scene:(id)arg1 didUpdateClientSettingsWithDiff:(id)arg2 oldClientSettings:(id)arg3 transitionContext:(id)arg4;
-- (void)scene:(id)arg1 handleUpdateSettingsWithBlock:(id /* block */)arg2;
 - (void)scene:(id)arg1 handleUpdateToSettings:(id)arg2 withTransitionContext:(id)arg3;
+- (void)sceneLayerManagerDidStopTrackingLayers:(id)arg1;
+- (void)sceneLayerManagerWillStartTrackingLayers:(id)arg1;
 - (id)sceneWithIdentifier:(id)arg1;
 - (id)scenesMatchingPredicate:(id)arg1;
 - (id)scenesPassingTest:(id /* block */)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)shutdown:(BOOL)arg1;
-- (void)windowContextManagerDidStopTrackingContexts:(id)arg1;
-- (void)windowContextManagerWillStartTrackingContexts:(id)arg1;
 
 @end

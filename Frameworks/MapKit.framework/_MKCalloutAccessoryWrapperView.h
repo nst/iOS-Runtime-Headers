@@ -13,6 +13,9 @@
 
 - (void).cxx_destruct;
 - (id)_mapkit_accessoryControlToExtendWithCallout;
+- (float)_mapkit_calloutCustomLeftMargin;
+- (float)_mapkit_calloutCustomRightMargin;
+- (float)_mapkit_minimumCalloutWidthMultiplier;
 - (void)_mapkit_setCalloutBackgroundColor:(id)arg1;
 - (void)_mapkit_setCalloutTextColor:(id)arg1;
 - (id)initWithView:(id)arg1;

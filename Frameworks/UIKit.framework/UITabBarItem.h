@@ -43,6 +43,7 @@
 @property (nonatomic, copy) NSString *badgeValue;
 @property (nonatomic, retain) UIImage *selectedImage;
 @property (nonatomic) id target;
+@property (nonatomic) struct UIOffset { float x1; float x2; } titlePositionAdjustment;
 @property (nonatomic, retain) UIImage *unselectedImage;
 @property (nonatomic, retain) UIView *view;
 @property (nonatomic) BOOL viewIsCustom;

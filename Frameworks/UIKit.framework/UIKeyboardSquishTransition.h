@@ -7,10 +7,13 @@
     NSArray *_commonVisibleKeys;
     BOOL _disableMeshOptimization;
     NSArray *_endGeometries;
-    BOOL _nonoverlappingCrossfade;
     float _offsetX;
+    double _opacityAnimationBeginTime;
+    BOOL _opacityAnimationDirectionForward;
+    CADisplayLink *_opacityAnimationDisplayLink;
+    float _previousProgress;
     NSArray *_startGeometries;
-    BOOL _transitionNeedsUpdate;
+    BOOL _useInteractiveOpacity;
     float _widthRatio;
 }
 
@@ -18,10 +21,15 @@
 @property (nonatomic, retain) NSArray *commonVisibleKeys;
 @property (nonatomic) BOOL disableMeshOptimization;
 @property (nonatomic, retain) NSArray *endGeometries;
-@property (nonatomic) BOOL nonoverlappingCrossfade;
+@property (nonatomic) double opacityAnimationBeginTime;
+@property (nonatomic) BOOL opacityAnimationDirectionForward;
+@property (nonatomic, retain) CADisplayLink *opacityAnimationDisplayLink;
+@property (nonatomic) float previousProgress;
 @property (nonatomic, retain) NSArray *startGeometries;
-@property (nonatomic, readonly) float transitionOverlapDelta;
+@property (nonatomic) BOOL useInteractiveOpacity;
 
+- (id)_animationsForEnd;
+- (id)_animationsForStart;
 - (void)_updateTransition;
 - (unsigned int)animationType;
 - (void)commitTransitionRebuild;
@@ -31,20 +39,27 @@
 - (id)endGeometries;
 - (id)geometriesForKeyplane:(id)arg1;
 - (id)meshTransformForKeyplane:(id)arg1 toKeyplane:(id)arg2;
-- (BOOL)nonoverlappingCrossfade;
+- (double)opacityAnimationBeginTime;
+- (BOOL)opacityAnimationDirectionForward;
+- (id)opacityAnimationDisplayLink;
+- (float)previousProgress;
 - (void)rebuildWithStartKeyplane:(id)arg1 startView:(id)arg2 endKeyplane:(id)arg3 endView:(id)arg4;
 - (void)removeAllAnimations;
 - (void)setAnimationType:(unsigned int)arg1;
 - (void)setCommonVisibleKeys:(id)arg1;
 - (void)setDisableMeshOptimization:(BOOL)arg1;
 - (void)setEndGeometries:(id)arg1;
-- (void)setNonoverlappingCrossfade:(BOOL)arg1;
+- (void)setOpacityAnimationBeginTime:(double)arg1;
+- (void)setOpacityAnimationDirectionForward:(BOOL)arg1;
+- (void)setOpacityAnimationDisplayLink:(id)arg1;
+- (void)setPreviousProgress:(float)arg1;
 - (void)setStartGeometries:(id)arg1;
+- (void)setUseInteractiveOpacity:(BOOL)arg1;
 - (id)sortedCommonVisibleKeys;
 - (id)startGeometries;
 - (id)symmetricMeshTransformForKeyplane:(id)arg1;
-- (float)transitionOverlapDelta;
-- (void)updateTransitionIfNeeded;
+- (void)updateOpacityAnimation:(id)arg1;
 - (void)updateWithProgress:(float)arg1;
+- (BOOL)useInteractiveOpacity;
 
 @end

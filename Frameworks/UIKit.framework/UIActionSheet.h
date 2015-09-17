@@ -9,6 +9,7 @@
     BOOL _alertControllerShouldDismiss;
     int _cancelIndex;
     id _context;
+    <UIActionSheetDelegate> *_delegate;
     int _destructiveButtonIndex;
     BOOL _dismissingAlertController;
     int _firstOtherButtonIndex;
@@ -16,7 +17,7 @@
     BOOL _hasPreparedAlertActions;
     BOOL _isPresented;
     _UIAlertControllerShimPresenter *_presenter;
-    _UIWeakRef *_weakDelegate;
+    UIActionSheet *_retainedSelf;
 }
 
 @property (nonatomic) int actionSheetStyle;
@@ -31,11 +32,11 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
 @property (getter=isVisible, nonatomic, readonly) BOOL visible;
-@property (nonatomic, retain) _UIWeakRef *weakDelegate;
 
 + (BOOL)_isAlertControllerShimClass;
 + (Class)_popoverControllerClass;
 
+- (void).cxx_destruct;
 - (id)_addButtonWithTitle:(id)arg1 label:(id)arg2;
 - (id)_addMediaButtonWithTitle:(id)arg1 iconView:(id)arg2 andTableIconView:(id)arg3;
 - (id)_alertController;
@@ -103,7 +104,6 @@
 - (void)setTitle:(id)arg1;
 - (void)setTitleMaxLineCount:(int)arg1;
 - (void)setUseThreeColumnsButtonsLayout:(BOOL)arg1;
-- (void)setWeakDelegate:(id)arg1;
 - (void)showFromBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)showFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inView:(id)arg2 animated:(BOOL)arg3;
 - (void)showFromTabBar:(id)arg1;
@@ -112,6 +112,5 @@
 - (id)subtitle;
 - (id)title;
 - (BOOL)useThreeColumnsButtonsLayout;
-- (id)weakDelegate;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface AVAssetInternal : NSObject {
     NSString *anchorChapterType;
+    NSArray *availableChapterLanguages;
     NSArray *availableChapterLocales;
     NSArray *chapterGroupInfo;
     long loadChapterInfoOnce;

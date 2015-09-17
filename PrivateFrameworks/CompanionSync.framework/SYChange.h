@@ -2,36 +2,53 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@interface SYChange : PBCodable <NSCopying> {
-    NSData *_data;
+@interface SYChange : PBCodable <NSCopying, SYChange> {
+    NSData *_changeData;
     NSString *_objectId;
+    NSString *_sequencer;
     int _type;
     unsigned long long _version;
 }
 
-@property (nonatomic, retain) NSData *data;
-@property (nonatomic, readonly) BOOL hasData;
+@property (nonatomic, retain) NSData *changeData;
+@property (nonatomic, readonly) int changeType;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasChangeData;
+@property (nonatomic, readonly) BOOL hasSequencer;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSString *objectId;
+@property (nonatomic, readonly) NSString *objectIdentifier;
+@property (nonatomic, readonly) NSString *sequencer;
+@property (nonatomic, retain) NSString *sequencer;
+@property (readonly) Class superclass;
 @property (nonatomic) int type;
 @property (nonatomic) unsigned long long version;
 
++ (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2;
 + (id)changeWithObject:(id)arg1 updateType:(int)arg2 store:(id)arg3;
 
 - (void).cxx_destruct;
+- (id)changeData;
+- (id)changeObjectWithSerializer:(id)arg1;
+- (int)changeType;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)data;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasData;
+- (BOOL)hasChangeData;
+- (BOOL)hasSequencer;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)objectForStore:(id)arg1;
 - (id)objectId;
+- (id)objectIdentifier;
 - (BOOL)readFrom:(id)arg1;
-- (void)setData:(id)arg1;
+- (id)sequencer;
+- (void)setChangeData:(id)arg1;
 - (void)setObjectId:(id)arg1;
+- (void)setSequencer:(id)arg1;
 - (void)setType:(int)arg1;
 - (void)setVersion:(unsigned long long)arg1;
 - (int)type;

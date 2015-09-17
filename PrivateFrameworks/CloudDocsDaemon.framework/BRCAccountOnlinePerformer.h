@@ -5,7 +5,7 @@
 @interface BRCAccountOnlinePerformer : NSObject <BRCReachabilityDelegate> {
     NSString *_accountID;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_source;
+    BRCThrottler *_throttler;
 }
 
 @property (readonly, copy) NSString *debugDescription;

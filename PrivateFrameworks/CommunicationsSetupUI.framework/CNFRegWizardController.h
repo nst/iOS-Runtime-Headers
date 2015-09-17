@@ -3,7 +3,6 @@
  */
 
 @interface CNFRegWizardController : PSSetupController <CNFRegFirstRunDelegate> {
-    id /* block */ _alertHandler;
     _UIBackdropView *_backdropView;
     <CNFRegWizardControllerDelegate> *_firstRunDelegate;
     CNFRegController *_regController;
@@ -25,7 +24,6 @@
     } _wizardFlags;
 }
 
-@property (nonatomic, copy) id /* block */ alertHandler;
 @property (nonatomic) BOOL allowCancel;
 @property (nonatomic) BOOL allowSMS;
 @property (nonatomic, retain) _UIBackdropView *backdropView;
@@ -46,6 +44,7 @@
 + (void)setGlobalAppearanceStyle:(int)arg1;
 + (void)setSupportsAutoRotation:(BOOL)arg1;
 
+- (void).cxx_destruct;
 - (void)_applicationDidEnterBackground;
 - (void)_applicationDidFinishLaunching;
 - (void)_checkRestrictions;
@@ -58,8 +57,6 @@
 - (void)_updateNavigationBarHiddenForPop;
 - (void)_updateNavigationBarHiddenForPush;
 - (void)_updateNavigationBarTitle;
-- (id /* block */)alertHandler;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)allowCancel;
 - (BOOL)allowSMS;
 - (void)applicationDidResume;
@@ -85,7 +82,6 @@
 - (void)pushViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)pushViewController:(id)arg1 transition:(int)arg2;
 - (id)regController;
-- (void)setAlertHandler:(id /* block */)arg1;
 - (void)setAllowCancel:(BOOL)arg1;
 - (void)setAllowSMS:(BOOL)arg1;
 - (void)setBackdropView:(id)arg1;

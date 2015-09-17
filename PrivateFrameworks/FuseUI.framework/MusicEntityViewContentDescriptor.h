@@ -6,6 +6,7 @@
     NSSet *_allPropertiesToPrefetch;
     BOOL _allowsDeletionWithoutEditingMode;
     MusicEntityViewContentArtworkDescriptor *_artworkDescriptor;
+    int _artworkVerticalAlignment;
     UIColor *_backgroundColor;
     UIColor *_customSelectionTintColor;
     UIColor *_customSeparatorColor;
@@ -34,6 +35,7 @@
 @property (nonatomic, readonly) NSSet *allPropertiesToPrefetch;
 @property (nonatomic) BOOL allowsDeletionWithoutEditingMode;
 @property (nonatomic, retain) MusicEntityViewContentArtworkDescriptor *artworkDescriptor;
+@property (nonatomic) int artworkVerticalAlignment;
 @property (nonatomic, copy) UIColor *backgroundColor;
 @property (nonatomic, retain) UIColor *customSelectionTintColor;
 @property (nonatomic, retain) UIColor *customSeparatorColor;
@@ -69,6 +71,7 @@
 - (id)allPropertiesToPrefetch;
 - (BOOL)allowsDeletionWithoutEditingMode;
 - (id)artworkDescriptor;
+- (int)artworkVerticalAlignment;
 - (id)backgroundColor;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)customSelectionTintColor;
@@ -85,6 +88,7 @@
 - (int)selectionStyle;
 - (void)setAllowsDeletionWithoutEditingMode:(BOOL)arg1;
 - (void)setArtworkDescriptor:(id)arg1;
+- (void)setArtworkVerticalAlignment:(int)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCustomSelectionTintColor:(id)arg1;
 - (void)setCustomSeparatorColor:(id)arg1;

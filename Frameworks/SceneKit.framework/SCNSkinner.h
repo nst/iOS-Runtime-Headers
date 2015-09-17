@@ -3,7 +3,6 @@
  */
 
 @interface SCNSkinner : NSObject <NSSecureCoding> {
-    id _reserved;
     struct __C3DSkinner { } *_skinner;
 }
 

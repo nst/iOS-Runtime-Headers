@@ -3,8 +3,9 @@
  */
 
 @interface _BRCOperation : NSOperation {
+    unsigned long long _activityID;
     NSObject<OS_dispatch_queue> *_callbackQueue;
-    BOOL _executing;
+    NSObject<OS_os_transaction> *_executionTransaction;
     id /* block */ _finishBlock;
     BOOL _finished;
     NSObject<OS_dispatch_group> *_group;
@@ -18,10 +19,8 @@
     unsigned char _operationUUID;
     NSObject<OS_dispatch_source> *_retryTimer;
     NSDate *_startDate;
-    NSMutableArray *_subOperations;
     BRCSyncContext *_syncContext;
     long long _throttleHash;
-    BOOL _usesBackgroundSession;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *callbackQueue;
@@ -34,24 +33,25 @@
 @property (nonatomic, readonly) NSUUID *operationID;
 @property (nonatomic) BRCThrottle *operationThrottle;
 @property (nonatomic, readonly) BRCSyncContext *syncContext;
-@property (nonatomic) BOOL usesBackgroundSession;
+@property (nonatomic, readonly) BOOL usesBackgroundSession;
 
 - (void).cxx_destruct;
+- (void)_addRegisterSubscriptionForZoneID:(id)arg1 isOptimisticSubscribe:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)_addZoneCreationWithZoneID:(id)arg1 completion:(id /* block */)arg2;
 - (void)_completedWithResult:(id)arg1 error:(id)arg2;
-- (id)_description;
 - (void)_executeAndBumpThrottle:(id)arg1;
 - (BOOL)_finishIfCancelled;
 - (void)_main;
 - (void)_scheduleExecutionWithPreviousError:(id)arg1 throttle:(id)arg2;
-- (void)addRegisterSubscriptionForZoneID:(id)arg1 completion:(id /* block */)arg2;
 - (void)addSubOperation:(id)arg1;
-- (void)addSubOperation:(id)arg1 overrideContext:(id)arg2;
-- (void)addZoneCreationWithZoneID:(id)arg1 completion:(id /* block */)arg2;
+- (void)addSubOperation:(id)arg1 overrideContext:(id)arg2 allowsCellularAccess:(id)arg3;
+- (void)addZoneCreationAndRegisterSubscriptionWithZoneID:(id)arg1 completion:(id /* block */)arg2;
 - (id)callbackQueue;
 - (void)cancel;
 - (void)completedWithResult:(id)arg1 error:(id)arg2;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionWithContext:(id)arg1;
 - (id)error;
 - (id /* block */)finishBlock;
 - (BOOL)finishIfCancelled;
@@ -75,10 +75,11 @@
 - (void)setFinished:(BOOL)arg1;
 - (void)setMainBlock:(id /* block */)arg1;
 - (void)setOperationThrottle:(id)arg1;
-- (void)setUsesBackgroundSession:(BOOL)arg1;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (void)start;
-- (id)state;
+- (unsigned long long)startActivity;
+- (id)stateWithContext:(id)arg1;
+- (id)subclassableDescriptionWithContext:(id)arg1;
 - (id)syncContext;
 - (BOOL)usesBackgroundSession;
 

@@ -3,20 +3,48 @@
  */
 
 @interface VKRoadTrafficMapModel : VKVectorMapModel {
+    BOOL _clearFrameBufferAlpha;
+    struct ClearItem { 
+        unsigned char colorMask; 
+        struct Matrix<float, 4, 1> { 
+            float _e[4]; 
+        } color; 
+        bool clearDepthBuffer; 
+        float depth; 
+        unsigned char clearStencilBuffer; 
+        int stencil; 
+        unsigned char scissorRegion; 
+        struct Box<unsigned int, 2> { 
+            struct Matrix<unsigned int, 2, 1> { 
+                unsigned int _e[2]; 
+            } _minimum; 
+            struct Matrix<unsigned int, 2, 1> { 
+                unsigned int _e[2]; 
+            } _maximum; 
+        } scissorRect; 
+    } _clearItem;
     BOOL _enabled;
-    VKRoadMapModel *_roadModel;
-    struct unique_ptr<vk::TrafficManager, std::__1::default_delete<vk::TrafficManager> > { 
-        struct __compressed_pair<vk::TrafficManager *, std::__1::default_delete<vk::TrafficManager> > { 
-            struct TrafficManager {} *__first_; 
+    struct unique_ptr<vk::TrafficManager<ggl::PilledTrafficRibbonDescriptor>, std::__1::default_delete<vk::TrafficManager<ggl::PilledTrafficRibbonDescriptor> > > { 
+        struct __compressed_pair<vk::TrafficManager<ggl::PilledTrafficRibbonDescriptor> *, std::__1::default_delete<vk::TrafficManager<ggl::PilledTrafficRibbonDescriptor> > > { 
+            struct TrafficManager<ggl::PilledTrafficRibbonDescriptor> {} *__first_; 
         } __ptr_; 
-    } _trafficManager;
+    } _pilledTrafficManager;
+    VKRoadMapModel *_roadModel;
+    struct unique_ptr<vk::TrafficManager<ggl::SolidTrafficRibbonDescriptor>, std::__1::default_delete<vk::TrafficManager<ggl::SolidTrafficRibbonDescriptor> > > { 
+        struct __compressed_pair<vk::TrafficManager<ggl::SolidTrafficRibbonDescriptor> *, std::__1::default_delete<vk::TrafficManager<ggl::SolidTrafficRibbonDescriptor> > > { 
+            struct TrafficManager<ggl::SolidTrafficRibbonDescriptor> {} *__first_; 
+        } __ptr_; 
+    } _solidTrafficManager;
+    int _sourceTileZtoStencilOffset;
 }
 
+@property (nonatomic) BOOL clearFrameBufferAlpha;
 @property (nonatomic) BOOL enabled;
 @property (nonatomic, retain) VKRoadMapModel *roadModel;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (BOOL)clearFrameBufferAlpha;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning:(BOOL)arg1;
 - (BOOL)enabled;
@@ -24,6 +52,7 @@
 - (id)init;
 - (unsigned long long)mapLayerPosition;
 - (id)roadModel;
+- (void)setClearFrameBufferAlpha:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setRoadModel:(id)arg1;
 - (void)stylesheetDidChange;

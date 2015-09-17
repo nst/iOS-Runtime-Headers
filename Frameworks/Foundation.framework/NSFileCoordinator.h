@@ -32,11 +32,14 @@
 + (id)_canonicalURLForURL:(id)arg1;
 + (id)_currentFileCoordinator;
 + (id)_fileProviders;
++ (void)_getDebugInfoWithCompletionHandler:(id /* block */)arg1;
 + (void)_printDebugInfo;
 + (int)_processIdentifierForID:(id)arg1;
-+ (int)_processIdentifierForPresenterWithID:(id)arg1;
++ (BOOL)_provideRecursively;
 + (void)_removeFileProvider:(id)arg1;
 + (void)_removeProcessIdentifierForID:(id)arg1;
++ (unsigned long long)_responsesForPresenter:(id)arg1;
++ (void)_setProvideRecursively:(BOOL)arg1;
 + (BOOL)_skipCoordinationWork;
 + (void)addFilePresenter:(id)arg1;
 + (id)filePresenters;

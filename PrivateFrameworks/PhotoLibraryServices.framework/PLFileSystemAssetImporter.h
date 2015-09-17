@@ -19,6 +19,9 @@
 @property (nonatomic) unsigned int thumbnailBatchFetchSize;
 
 - (id)_addAssetWithURL:(id)arg1 existingOID:(id)arg2;
+- (BOOL)_setupPhotoAsset:(id)arg1 withURL:(id)arg2;
+- (BOOL)_setupPhotoAssetAsPhotoIrisIfNeeded:(id)arg1;
+- (BOOL)_setupVideoAsset:(id)arg1 withURL:(id)arg2;
 - (id)addAssetWithURLs:(id)arg1;
 - (id)addAssetWithURLs:(id)arg1 forceInsert:(BOOL)arg2 forceUpdate:(BOOL)arg3;
 - (void)addAvailableThumbnailIndex:(unsigned int)arg1;
@@ -34,8 +37,6 @@
 - (void)setExistingUUIDsByPath:(id)arg1;
 - (void)setModificationAndCreationDateOnAsset:(id)arg1 withURL:(id)arg2;
 - (void)setThumbnailBatchFetchSize:(unsigned int)arg1;
-- (BOOL)setupPhotoAsset:(id)arg1 withURL:(id)arg2;
-- (BOOL)setupVideoAsset:(id)arg1 withURL:(id)arg2;
 - (unsigned int)thumbnailBatchFetchSize;
 
 @end

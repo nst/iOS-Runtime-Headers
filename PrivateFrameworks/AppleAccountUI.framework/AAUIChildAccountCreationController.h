@@ -38,6 +38,7 @@
 - (void)_popObjectModelAnimated:(BOOL)arg1;
 - (BOOL)_pressedLink:(id)arg1 comesFromBarButtonItem:(id)arg2 objectModel:(id)arg3;
 - (void)_renewCredentialsWithCompletionHandler:(id /* block */)arg1;
+- (void)_sendUserToiTunesSettings;
 - (void)_showActivitySpinnerInNavigationBar;
 - (void)_showActivitySpinnerInToolbar:(id)arg1;
 - (id)_spinnerView;

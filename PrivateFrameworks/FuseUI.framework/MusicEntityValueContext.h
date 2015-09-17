@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityValueContext : NSObject <NSCopying> {
+@interface MusicEntityValueContext : NSObject <NSCoding, NSCopying> {
     <MusicEntityValueProviding> *_containerEntityValueProvider;
     MPUContentItemIdentifierCollection *_containerIdentifierCollection;
     MPPlaybackContext *_containerPlaybackContext;
@@ -41,8 +41,10 @@
 - (id)containerIdentifierCollection;
 - (id)containerPlaybackContext;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)encodeWithCoder:(id)arg1;
 - (id)entityValueProvider;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)itemEntityValueProvider;
 - (unsigned int)itemGlobalIndex;
 - (id)itemIdentifierCollection;

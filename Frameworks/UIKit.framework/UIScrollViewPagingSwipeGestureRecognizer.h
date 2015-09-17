@@ -16,6 +16,7 @@
     UIDelayedAction *_swipeFailureDelay;
 }
 
+- (void).cxx_destruct;
 - (void)_processNewLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_resetGestureRecognizer;
 - (void)clearTimer;

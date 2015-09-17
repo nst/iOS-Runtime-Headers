@@ -12,9 +12,11 @@
 @property (nonatomic) BOOL appInstalled;
 @property (nonatomic, copy) NSURL *appStoreUri;
 @property (nonatomic, copy) NSString *bundleId;
+@property (nonatomic, copy) NSString *predefinedButtonType;
 @property (nonatomic, copy) NSString *providerId;
 @property (nonatomic, copy) NSString *punchOutName;
 @property (nonatomic, copy) NSURL *punchOutUri;
+@property (nonatomic, copy) NSString *subtitle;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
@@ -31,6 +33,7 @@
 - (id)bundleId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)predefinedButtonType;
 - (id)providerId;
 - (id)punchOutName;
 - (id)punchOutUri;
@@ -43,13 +46,16 @@
 - (void)setAppInstalled:(BOOL)arg1;
 - (void)setAppStoreUri:(id)arg1;
 - (void)setBundleId:(id)arg1;
+- (void)setPredefinedButtonType:(id)arg1;
 - (void)setProviderId:(id)arg1;
 - (void)setPunchOutName:(id)arg1;
 - (void)setPunchOutUri:(id)arg1;
+- (void)setSubtitle:(id)arg1;
+- (id)subtitle;
 
 // Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
 
-- (BOOL)_afui_isUsefulUserResultCommand;
+- (int)_afui_usefulUserResultType;
 - (void)afui_getInstallAppPunchoutWithCompletion:(id /* block */)arg1;
 - (id)afui_punchOutAppNotAvailableViews;
 - (id)afui_punchOutFailureViews;

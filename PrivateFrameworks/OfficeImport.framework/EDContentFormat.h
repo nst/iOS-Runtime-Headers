@@ -21,6 +21,7 @@
 - (bool)builtIn;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)formatId;
 - (id)formatString;
 - (unsigned int)hash;

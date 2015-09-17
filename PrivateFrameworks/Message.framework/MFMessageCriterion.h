@@ -25,7 +25,6 @@
 @property (nonatomic, retain) NSIndexSet *libraryIdentifiers;
 @property (nonatomic) BOOL useFlaggedForUnreadCount;
 
-+ (id)ThreadNotifyMessageCriterion;
 + (id)VIPSenderMessageCriterion;
 + (void)_updateAddressComments:(id)arg1;
 + (id)andCompoundCriterionWithCriteria:(id)arg1;
@@ -42,13 +41,17 @@
 + (id)notCriterionWithCriterion:(id)arg1;
 + (id)orCompoundCriterionWithCriteria:(id)arg1;
 + (id)stringForCriterionType:(int)arg1;
++ (id)threadMuteMessageCriterion;
++ (id)threadNotifyMessageCriterion;
 + (id)todayMessageCriterion;
 + (id)unreadMessageCriterion;
 
 - (id)SQLExpressionWithContext:(struct { id x1; unsigned int x2; unsigned int x3; BOOL x4; BOOL x5; BOOL x6; }*)arg1 depth:(unsigned int)arg2;
-- (id)SQLExpressionWithTables:(unsigned int*)arg1 baseTable:(unsigned int)arg2 protectedDataAvailable:(BOOL)arg3 contentIndex:(id)arg4 mailboxIDs:(id)arg5;
+- (id)SQLExpressionWithTables:(unsigned int*)arg1 baseTable:(unsigned int)arg2 protectedDataAvailable:(BOOL)arg3 searchableIndex:(id)arg4 mailboxIDs:(id)arg5;
 - (void)_addCriteriaSatisfyingPredicate:(int (*)arg1 toCollector:(id)arg2;
+- (id)_attributesForHeaderCriterion;
 - (id)_collapsedMessageNumberCriterion:(id)arg1 allMustBeSatisfied:(BOOL)arg2 collapsedIndexes:(id*)arg3;
+- (id)_comparisonOperationMatchingValue:(id)arg1;
 - (id)_criterionForSQL;
 - (BOOL)_evaluateAccountCriterion:(id)arg1;
 - (BOOL)_evaluateAddressBookCriterion:(id)arg1;
@@ -68,7 +71,10 @@
 - (BOOL)_evaluateSenderHeaderCriterion:(id)arg1;
 - (id)_headersRequiredForEvaluation;
 - (id)_qualifierString;
+- (id)_queryWithAttributes:(id)arg1 matchingValue:(id)arg2;
 - (id)_resolveWithIndex:(id)arg1 mailboxIDs:(id)arg2;
+- (id)_spotlightQueryString;
+- (id)_wordQueryWithAttributes:(id)arg1 matchingValue:(id)arg2;
 - (BOOL)allCriteriaMustBeSatisfied;
 - (unsigned int)bestBaseTable;
 - (id)criteria;
@@ -121,7 +127,9 @@
 - (void)setUseFlaggedForUnreadCount:(BOOL)arg1;
 - (id)simplifiedCriterion;
 - (id)simplifyOnce;
+- (id)spotlightQueryString;
 - (id)stringForMessageRuleQualifier:(int)arg1;
+- (id)unreadCountCriterion;
 - (BOOL)useFlaggedForUnreadCount;
 
 @end

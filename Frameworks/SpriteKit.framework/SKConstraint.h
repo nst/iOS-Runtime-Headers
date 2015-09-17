@@ -8,7 +8,7 @@
 }
 
 @property BOOL enabled;
-@property (retain) SKNode *referenceNode;
+@property (nonatomic, retain) SKNode *referenceNode;
 
 + (id)distance:(id)arg1 toNode:(id)arg2;
 + (id)distance:(id)arg1 toPoint:(struct CGPoint { float x1; float x2; })arg2;

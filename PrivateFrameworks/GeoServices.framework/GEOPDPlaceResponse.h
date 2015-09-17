@@ -3,6 +3,8 @@
  */
 
 @interface GEOPDPlaceResponse : PBCodable <NSCopying> {
+    NSMutableArray *_displayLanguages;
+    NSString *_displayRegion;
     GEOPDPlaceGlobalResult *_globalResult;
     struct { 
         unsigned int requestType : 1; 
@@ -10,31 +12,45 @@
     } _has;
     NSMutableArray *_placeResults;
     int _requestType;
+    NSMutableArray *_spokenLanguages;
     int _status;
 }
 
+@property (nonatomic, retain) NSMutableArray *displayLanguages;
+@property (nonatomic, retain) NSString *displayRegion;
 @property (nonatomic, retain) GEOPDPlaceGlobalResult *globalResult;
+@property (nonatomic, readonly) BOOL hasDisplayRegion;
 @property (nonatomic, readonly) BOOL hasGlobalResult;
 @property (nonatomic) BOOL hasRequestType;
 @property (nonatomic) BOOL hasStatus;
 @property (nonatomic, retain) NSMutableArray *placeResults;
 @property (nonatomic) int requestType;
+@property (nonatomic, retain) NSMutableArray *spokenLanguages;
 @property (nonatomic) int status;
 
 - (id)_disambiguationLabels;
+- (void)addDisplayLanguage:(id)arg1;
 - (void)addPlaceResult:(id)arg1;
+- (void)addSpokenLanguage:(id)arg1;
+- (void)clearDisplayLanguages;
 - (void)clearPlaceResults;
+- (void)clearSpokenLanguages;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)displayLanguageAtIndex:(unsigned int)arg1;
+- (id)displayLanguages;
+- (unsigned int)displayLanguagesCount;
+- (id)displayRegion;
 - (id)globalResult;
+- (BOOL)hasDisplayRegion;
 - (BOOL)hasGlobalResult;
 - (BOOL)hasRequestType;
 - (BOOL)hasStatus;
 - (unsigned int)hash;
-- (id)initWithGeocoderPlace:(id)arg1;
+- (id)initWithPlace:(id)arg1 forRequestType:(int)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)placeResultAtIndex:(unsigned int)arg1;
@@ -42,12 +58,18 @@
 - (unsigned int)placeResultsCount;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestType;
+- (void)setDisplayLanguages:(id)arg1;
+- (void)setDisplayRegion:(id)arg1;
 - (void)setGlobalResult:(id)arg1;
 - (void)setHasRequestType:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setPlaceResults:(id)arg1;
 - (void)setRequestType:(int)arg1;
+- (void)setSpokenLanguages:(id)arg1;
 - (void)setStatus:(int)arg1;
+- (id)spokenLanguageAtIndex:(unsigned int)arg1;
+- (id)spokenLanguages;
+- (unsigned int)spokenLanguagesCount;
 - (int)status;
 - (void)writeTo:(id)arg1;
 

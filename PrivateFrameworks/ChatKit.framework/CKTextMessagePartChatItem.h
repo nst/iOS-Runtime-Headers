@@ -8,6 +8,7 @@
 @property (nonatomic, readonly, copy) NSAttributedString *subject;
 @property (nonatomic, readonly, copy) NSAttributedString *text;
 
+- (id)_time;
 - (Class)balloonViewClass;
 - (id)composition;
 - (BOOL)containsHyperlink;

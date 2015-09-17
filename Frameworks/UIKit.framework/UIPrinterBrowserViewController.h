@@ -13,7 +13,9 @@
     <UIPrinterBrowserOwner> *_ownerPanelViewController;
     NSMutableArray *_preferredPrinters;
     PKPrinterBrowser *_printerBrowser;
+    float _rowHeight;
     UIPrinterSearchingView *_searchingView;
+    BOOL _searchingViewConstraintsSet;
     BOOL _shouldFilterPrinters;
 }
 
@@ -23,14 +25,17 @@
 @property float maximumPopoverHeight;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)addPrinter:(id)arg1 moreComing:(BOOL)arg2;
 - (void)adjustPopoverSize;
 - (void)dealloc;
+- (void)didChangePreferredContentSize;
 - (id)initWithOwnerViewController:(id)arg1;
 - (void)loadView;
 - (float)maximumPopoverHeight;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)printerAtIndexPath:(id)arg1;
+- (void)printerInfoButtonTapped:(id)arg1;
 - (void)removePrinter:(id)arg1 moreGoing:(BOOL)arg2;
 - (void)selectPrinter:(id)arg1;
 - (void)setMaximumPopoverHeight:(float)arg1;
@@ -41,9 +46,11 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
+- (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)updateSearching;
+- (void)updateViewConstraints;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

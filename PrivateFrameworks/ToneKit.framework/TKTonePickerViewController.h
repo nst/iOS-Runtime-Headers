@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKTonePickerViewController : UITableViewController <MPMediaPickerControllerDelegate, TKTonePickerControllerDelegate, TKTonePickerControllerDelegateInternal, TKTonePickerTableViewControllerHelper, TKTonePickerTableViewLayoutMarginsObserver, TKVibrationPickerViewControllerDelegate, TKVibrationPickerViewControllerDismissalDelegate> {
+@interface TKTonePickerViewController : UITableViewController <MPMediaPickerControllerDelegate, TKTonePickerControllerDelegate, TKTonePickerControllerDelegateInternal, TKTonePickerTableViewControllerHelper, TKTonePickerTableViewLayoutMarginsObserver, TKTonePickerTableViewSeparatorObserver, TKVibrationPickerViewControllerDelegate, TKVibrationPickerViewControllerDismissalDelegate> {
     UIImage *_checkmarkImage;
     UIView *_defaultSectionHeaderView;
     <TKTonePickerViewControllerDelegate> *_delegate;
@@ -133,6 +133,7 @@
 - (id)selectedToneIdentifier;
 - (id)selectedTonePickerItem;
 - (id)selectedVibrationIdentifier;
+- (void)separatorColorDidChangeInTonePickerTableView:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;
 - (void)setDefaultToneIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -173,6 +174,7 @@
 - (void)tonePickerController:(id)arg1 didUpdateDetailText:(id)arg2 ofTonePickerItem:(id)arg3;
 - (id)tonePickerController:(id)arg1 identifierOfMediaItemAtIndex:(unsigned int)arg2;
 - (unsigned int)tonePickerController:(id)arg1 indexOfMediaItemWithIdentifier:(id)arg2;
+- (void)tonePickerController:(id)arg1 requestsPresentingAlertWithTitle:(id)arg2 message:(id)arg3;
 - (void)tonePickerController:(id)arg1 requestsPresentingToneClassicsPickerForItem:(id)arg2;
 - (void)tonePickerController:(id)arg1 selectedMediaItemWithIdentifier:(id)arg2;
 - (void)tonePickerController:(id)arg1 selectedToneWithIdentifier:(id)arg2;
@@ -188,6 +190,7 @@
 - (void)tonePickerTableViewWillDisappear:(BOOL)arg1;
 - (void)updateCell:(id)arg1 withCheckedStatus:(BOOL)arg2;
 - (void)updateCell:(id)arg1 withDetailText:(id)arg2;
+- (void)updateDividerContentColorToMatchSeparatorColorInTableView:(id)arg1;
 - (void)vibrationPickerViewController:(id)arg1 selectedVibrationWithIdentifier:(id)arg2;
 - (void)vibrationPickerViewControllerWasDismissed:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

@@ -4,11 +4,9 @@
 
 @interface HKEmergencyCardGroupTableItem : HKEmergencyCardTableItem {
     NSMutableArray *_cumulativeRowOffsets;
-    BOOL _enabled;
     NSArray *_subitems;
 }
 
-@property (nonatomic) BOOL enabled;
 @property (nonatomic, retain) NSArray *subitems;
 
 - (void).cxx_destruct;
@@ -18,11 +16,9 @@
 - (int)commitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
 - (void)didCommitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
 - (int)editingStyleForRowAtIndex:(int)arg1;
-- (BOOL)enabled;
 - (BOOL)hasPresentableData;
 - (int)numberOfRows;
 - (void)setData:(id)arg1;
-- (void)setEnabled:(BOOL)arg1;
 - (void)setOwningViewController:(id)arg1;
 - (void)setSubitems:(id)arg1;
 - (BOOL)shouldHighlightRowAtIndex:(int)arg1;

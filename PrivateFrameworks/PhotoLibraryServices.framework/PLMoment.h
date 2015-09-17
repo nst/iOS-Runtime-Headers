@@ -57,6 +57,7 @@
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertNewMomentInManagedObjectContext:(id)arg1 error:(id*)arg2;
++ (id)predicateForAssetsIncludedInMoments;
 
 - (void)_updateCachedNameInfoIfNeeded;
 - (BOOL)_validateForInsertOrUpdate:(id*)arg1;

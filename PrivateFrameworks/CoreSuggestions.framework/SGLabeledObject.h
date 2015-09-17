@@ -2,10 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
  */
 
-@interface SGLabeledObject : NSObject <SGObject> {
+@interface SGLabeledObject : SGObject {
+    unsigned int _extractionType;
     NSString *_label;
 }
 
+@property (nonatomic, readonly) unsigned int extractionType;
 @property (nonatomic, readonly) NSString *label;
 
 + (BOOL)supportsSecureCoding;
@@ -13,8 +15,9 @@
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)extractionType;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithLabel:(id)arg1;
+- (id)initWithLabel:(id)arg1 extractionType:(unsigned int)arg2 recordId:(id)arg3 origin:(id)arg4;
 - (BOOL)isEqualToSuggestion:(id)arg1;
 - (id)label;
 - (id)localizedLabel;

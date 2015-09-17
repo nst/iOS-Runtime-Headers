@@ -4,7 +4,6 @@
 
 @interface CMOdometerProxy : NSObject {
     double _averageSpeed;
-    int _mode;
     CMOdometer *_odometer;
     double _startDate;
     double _totalDistance;
@@ -16,22 +15,19 @@
 }
 
 @property double averageSpeed;
-@property int mode;
 @property (nonatomic) CMOdometer *odometer;
 @property double startDate;
 @property double totalDistance;
 
 - (void)_startDaemonConnection;
-- (void)_startOdometerUpdatesForActivity:(int)arg1 withHandler:(id /* block */)arg2;
+- (void)_startOdometerUpdatesWithHandler:(id /* block */)arg1;
 - (void)_stopOdometerUpdates;
 - (void)_teardown;
 - (double)averageSpeed;
 - (void)dealloc;
 - (id)initWithOdometer:(id)arg1;
-- (int)mode;
 - (id)odometer;
 - (void)setAverageSpeed:(double)arg1;
-- (void)setMode:(int)arg1;
 - (void)setOdometer:(id)arg1;
 - (void)setStartDate:(double)arg1;
 - (void)setTotalDistance:(double)arg1;

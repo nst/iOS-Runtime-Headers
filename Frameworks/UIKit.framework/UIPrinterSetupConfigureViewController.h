@@ -22,6 +22,7 @@
 @property (nonatomic, retain) PKPrinter *printer;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (BOOL)addToNetwork;
 - (id)connectingView;
 - (void)dealloc;

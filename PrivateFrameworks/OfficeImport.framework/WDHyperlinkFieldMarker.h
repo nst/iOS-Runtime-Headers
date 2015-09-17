@@ -13,6 +13,7 @@
 @property (nonatomic, retain) NSString *link;
 
 - (void)dealloc;
+- (id)description;
 - (id)fragment;
 - (BOOL)internalLink;
 - (id)link;

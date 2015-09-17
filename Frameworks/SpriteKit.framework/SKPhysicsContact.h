@@ -25,7 +25,6 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (id)copyWithZone:(struct _NSZone { }*)arg1;
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (id)bodyA;
 - (id)bodyB;

@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKConversationListController : UIViewController <CKConversationResultsControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate> {
-    UIToolbar *_buttonBar;
+@interface CKConversationListController : UITableViewController <CKConversationResultsControllerDelegate, CKTranscriptPreviewControllerDelegate, UIActionSheetDelegate, UISearchBarDelegate, UISearchControllerDelegate, UITableViewDataSource, UITableViewDelegate, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
     float _conversationCellHeight;
     CKConversationList *_conversationList;
     UIBarButtonItem *_currentEditButtonItem;
@@ -17,6 +16,7 @@
     unsigned int _isVisible;
     CKMessagesController *_messagesController;
     UIView *_noMessagesDialogView;
+    NSArray *_nonPlaceholderConversations;
     NSIndexPath *_previouslySelectedIndexPath;
     UISearchController *_searchController;
     CKConversationSearchResultsController *_searchResultsController;
@@ -40,6 +40,7 @@
 @property (nonatomic) BOOL isShowingSwipeDeleteConfirmation;
 @property (nonatomic) CKMessagesController *messagesController;
 @property (nonatomic, retain) UIView *noMessagesDialogView;
+@property (nonatomic, retain) NSArray *nonPlaceholderConversations;
 @property (nonatomic, retain) NSIndexPath *previouslySelectedIndexPath;
 @property (nonatomic, retain) UISearchController *searchController;
 @property (nonatomic, retain) CKConversationSearchResultsController *searchResultsController;
@@ -53,6 +54,8 @@
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (void)_conversationDisplayNameChangedNotification:(id)arg1;
 - (void)_conversationFilteringStateChangedNotification:(id)arg1;
+- (void)_conversationIsFilteredChangedNotification:(id)arg1;
+- (void)_conversationKeepMessagesChangedNotification:(id)arg1;
 - (void)_conversationListDidChange:(id)arg1;
 - (void)_conversationListDidFinishLoadingConversations:(id)arg1;
 - (void)_conversationMessageWasSent:(id)arg1;
@@ -65,14 +68,16 @@
 - (void)_keyboardWillShowOrHide:(id)arg1;
 - (void)_selectConversationAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (BOOL)_shouldKeepSelection;
+- (BOOL)_shouldOnlyShowNonPlaceholderConversationLists;
 - (void)_updateFilteredConversationLists;
-- (void)_updateSearchTableInsets;
+- (void)_updateNonPlaceholderConverationLists;
 - (void)_updateToolbarItems;
 - (void)accessibilityLargeTextDidChange;
 - (id)activeConversations;
 - (void)applicationWillSuspend;
 - (void)batchDeleteButtonTapped:(id)arg1;
 - (void)beginHoldingConversationListUpdatesForKey:(id)arg1;
+- (id)committedViewControllerForPreviewViewController:(id)arg1;
 - (void)composeButtonClicked:(id)arg1;
 - (float)conversationCellHeight;
 - (id)conversationList;
@@ -82,7 +87,6 @@
 - (void)dealloc;
 - (void)deleteButtonTappedForIndexPath:(id)arg1;
 - (void)didDismissSearchController:(id)arg1;
-- (void)didPresentSearchController:(id)arg1;
 - (void)editButtonTapped:(id)arg1;
 - (void)endHoldingConversationListUpdatesForKey:(id)arg1;
 - (int)filterMode;
@@ -92,21 +96,28 @@
 - (id)frozenConversations;
 - (id)init;
 - (id)inputAccessoryView;
+- (void)invalidateCellLayout;
 - (BOOL)isShowingSwipeDeleteConfirmation;
 - (void)loadView;
 - (void)markAsReadButtonTapped:(id)arg1;
 - (void)markAsReadButtonTappedForIndexPath:(id)arg1;
+- (id)menuItemsForTranscriptPreviewController:(id)arg1;
 - (id)messagesController;
 - (id)noMessagesDialogView;
+- (id)nonPlaceholderConversations;
 - (void)noteUnreadCountsChanged;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (void)parentControllerDidResume:(BOOL)arg1 animating:(BOOL)arg2;
 - (void)prepareForResume;
 - (void)prepareForSuspend;
+- (id)previewViewControllerForRowAtIndexPath:(id)arg1;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)previouslySelectedIndexPath;
 - (void)scrollToTop;
 - (void)searchBar:(id)arg1 textDidChange:(id)arg2;
 - (BOOL)searchBarShouldBeginEditing:(id)arg1;
+- (void)searchBarTextDidEndEditing:(id)arg1;
 - (id)searchController;
 - (id)searchResultsController;
 - (id)searcher:(id)arg1 conversationForChatGUID:(id)arg2;
@@ -126,6 +137,7 @@
 - (void)setIsShowingSwipeDeleteConfirmation:(BOOL)arg1;
 - (void)setMessagesController:(id)arg1;
 - (void)setNoMessagesDialogView:(id)arg1;
+- (void)setNonPlaceholderConversations:(id)arg1;
 - (void)setPreviouslySelectedIndexPath:(id)arg1;
 - (void)setSearchController:(id)arg1;
 - (void)setSearchResultsController:(id)arg1;

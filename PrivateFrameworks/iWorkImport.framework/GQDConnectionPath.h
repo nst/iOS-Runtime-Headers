@@ -13,7 +13,6 @@
     } mSize;
 }
 
-- (id).cxx_construct;
 - (struct CGPath { }*)createBezierPath;
 - (struct CGPoint { float x1; float x2; })point;
 - (struct CGSize { float x1; float x2; })size;

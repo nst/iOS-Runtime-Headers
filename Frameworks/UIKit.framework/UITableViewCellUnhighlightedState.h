@@ -12,8 +12,8 @@
 @property BOOL highlighted;
 @property BOOL opaque;
 
+- (void).cxx_destruct;
 - (id)backgroundColor;
-- (void)dealloc;
 - (BOOL)highlighted;
 - (BOOL)opaque;
 - (void)setBackgroundColor:(id)arg1;

@@ -96,6 +96,7 @@
 - (void)addRequest:(id)arg1;
 - (void)cancel;
 - (void)cancelWithErrorCode:(int)arg1;
+- (void)cancelWithErrorCode:(int)arg1 description:(id)arg2;
 - (void)clearRequests;
 - (id)clientCertificates;
 - (id)connection;

@@ -3,6 +3,7 @@
  */
 
 @interface CIFaceCoreDetector : CIDetector {
+    bool _tracking;
     CIContext *context;
     FCRFaceDetector *faceCoreDetector;
     NSMutableDictionary *featureOptions;

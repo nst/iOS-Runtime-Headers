@@ -13,6 +13,7 @@
 - (NSArray *)highlightsForLine:(unsigned int)arg1;
 - (NSData *)metadata;
 - (NSString *)queryLine;
+- (GEOSearchCategory *)searchCategory;
 - (void)sendFeedback;
 
 @end

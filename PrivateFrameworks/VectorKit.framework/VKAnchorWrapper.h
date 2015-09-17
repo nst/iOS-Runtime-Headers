@@ -27,7 +27,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (id).cxx_construct;
 - (id)_anchorWithContext:(id)arg1;
 - (void)_updateCachedPointWithContext:(id)arg1;
 - (void)anchorWorldPointDidChange:(void*)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIInputViewSetPlacementUndocked : UIInputViewSetPlacement {
+@interface UIInputViewSetPlacementUndocked : UIInputViewSetPlacement <NSSecureCoding> {
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -16,12 +16,17 @@
 @property (nonatomic) float normalizedOffset;
 
 + (id)placementWithUndockedOffset:(float)arg1 chromeBuffer:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
++ (BOOL)supportsSecureCoding;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })chromeBuffer;
+- (void)encodeWithCoder:(id)arg1;
+- (float)heightOfInputViews:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)inputViewWillAppear;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isUndocked;
 - (float)normalizedOffset;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })remoteIntrinsicContentSizeForInputViewInSet:(id)arg1;
 - (void)setChromeBuffer:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setNormalizedOffset:(float)arg1;
 - (id)verticalConstraintForInputViewSet:(id)arg1 hostView:(id)arg2 containerView:(id)arg3;

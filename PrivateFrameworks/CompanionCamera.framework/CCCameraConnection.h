@@ -31,6 +31,7 @@
 - (void)countdownCanceled;
 - (void)dealloc;
 - (id)delegate;
+- (void)flashModeDidChange;
 - (id)init;
 - (BOOL)isOpen;
 - (BOOL)isPreviewConnected;
@@ -49,5 +50,6 @@
 - (oneway void)xpc_setCameraMode:(int)arg1 interruptCapture:(BOOL)arg2 completion:(id /* block */)arg3;
 - (oneway void)xpc_setFocusPoint:(id)arg1;
 - (oneway void)xpc_setPreviewEndpoint:(id)arg1;
+- (void)zoomDidChange:(float)arg1;
 
 @end

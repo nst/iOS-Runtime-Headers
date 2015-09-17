@@ -35,7 +35,7 @@
 @property (nonatomic) float leadingMargin;
 @property (nonatomic, retain) CALayer *leftGradientMask;
 @property (nonatomic, retain) id representedItem;
-@property (nonatomic, readonly) UIView *staticContentView;
+@property (nonatomic, retain) UIView *staticContentView;
 @property (nonatomic, retain) GKHairlineView *topHairline;
 @property (nonatomic) float trailingMargin;
 
@@ -67,6 +67,7 @@
 - (void)layoutSubviews;
 - (float)leadingMargin;
 - (id)leftGradientMask;
+- (id)popoverSourceView;
 - (void)prepareEditActionsConstraintsIfNeeded;
 - (void)prepareForReuse;
 - (void)prepareHairlineConstraintsIfNeeded;
@@ -86,6 +87,7 @@
 - (void)setNeedsDisplay;
 - (void)setRepresentedItem:(id)arg1;
 - (void)setShouldDisplaySwipeToEditAccessories:(BOOL)arg1;
+- (void)setStaticContentView:(id)arg1;
 - (void)setTopHairline:(id)arg1;
 - (void)setTrailingMargin:(float)arg1;
 - (void)setUserInteractionEnabledForEditing:(BOOL)arg1;

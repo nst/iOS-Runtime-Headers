@@ -12,6 +12,7 @@
     PSIQuery *_query;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_searchString;
+    PUSiriSearch *_siriSearch;
     unsigned int _taskId;
     NSMutableArray *_uncommittedUUIDs;
     NSArray *_uuids;
@@ -27,12 +28,14 @@
 @property (readonly) unsigned int hash;
 @property (readonly) BOOL isEmpty;
 @property (copy) NSString *searchString;
+@property (retain) PUSiriSearch *siriSearch;
 @property (readonly) Class superclass;
 @property (readonly) NSArray *uuids;
 
 - (void).cxx_destruct;
 - (unsigned int)_approximateCount;
 - (void)_inqAddAssetUUIDsFromFetchRequest:(id)arg1;
+- (void)_inqAddAssetUUIDsFromFetchRequest:(id)arg1 synchronous:(BOOL)arg2;
 - (BOOL)_inqIsCancelledWithTaskId:(unsigned int)arg1;
 - (void)_inqMergePendingChanges;
 - (void)_inqRestart;
@@ -43,12 +46,14 @@
 - (void)_setApproximateCount:(unsigned int)arg1;
 - (void)_setDisplayTitle:(id)arg1;
 - (void)_setSearchString:(id)arg1;
+- (void)_setSiriSearch:(id)arg1;
 - (id)albumUUID;
 - (void)cancel;
 - (id)delegate;
 - (id)displaySubtitle;
 - (id)displayTitle;
 - (void)fetchRemainingUUIDs:(id /* block */)arg1;
+- (void)fetchRemainingUUIDs:(id /* block */)arg1 completionQueue:(id)arg2;
 - (BOOL)hasPendingChanges;
 - (id)init;
 - (id)initWithDisplayTitle:(id)arg1;
@@ -57,6 +62,7 @@
 - (void)restart;
 - (id)searchString;
 - (void)setDelegate:(id)arg1;
+- (id)siriSearch;
 - (id)uuids;
 
 @end

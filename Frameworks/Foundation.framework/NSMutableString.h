@@ -23,6 +23,7 @@
 - (void)appendCharacters:(const unsigned short*)arg1 length:(unsigned int)arg2;
 - (void)appendFormat:(id)arg1;
 - (void)appendString:(id)arg1;
+- (BOOL)applyTransform:(id)arg1 reverse:(BOOL)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 updatedRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg4;
 - (Class)classForCoder;
 - (void)deleteCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (id)initWithCapacity:(unsigned int)arg1;
@@ -35,9 +36,9 @@
 
 // Image: /System/Library/Frameworks/NetworkExtension.framework/NetworkExtension
 
-- (void)appendPrettyBOOL:(BOOL)arg1 withName:(id)arg2 andIndent:(int)arg3;
-- (void)appendPrettyInt:(int)arg1 withName:(id)arg2 andIndent:(int)arg3;
-- (void)appendPrettyObject:(id)arg1 withName:(id)arg2 andIndent:(int)arg3;
+- (void)appendPrettyBOOL:(BOOL)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned int)arg4;
+- (void)appendPrettyInt:(int)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned int)arg4;
+- (void)appendPrettyObject:(id)arg1 withName:(id)arg2 andIndent:(int)arg3 options:(unsigned int)arg4;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -53,6 +54,16 @@
 - (void)replaceOccurrencesOfString:(id)arg1 withString:(id)arg2;
 - (void)searchAndReplaceInString:(id)arg1 withString:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
+
+- (void)_cn_appendNonNilString:(id)arg1;
+- (void)_cn_deleteCharactersInSet:(id)arg1;
+- (void)_cn_deleteCharactersInSet:(id)arg1 options:(unsigned int)arg2;
+- (unsigned int)_cn_replaceStrings:(id)arg1;
+- (void)_cn_trim;
+- (void)_cn_trimLeadingWhitespace;
+- (void)_cn_trimTrailingWhitespace;
+
 // Image: /System/Library/PrivateFrameworks/DataDetectorsCore.framework/DataDetectorsCore
 
 - (void)dd_appendSpaces:(unsigned int)arg1;
@@ -61,18 +72,24 @@
 
 - (void)replaceNewlinesWithSpaces;
 
+// Image: /System/Library/PrivateFrameworks/Network.framework/Network
+
+- (void)appendPrettyBOOL:(BOOL)arg1 withName:(id)arg2 indent:(int)arg3;
+- (void)appendPrettyInt:(int)arg1 withName:(id)arg2 indent:(int)arg3;
+- (void)appendPrettyObject:(id)arg1 withName:(id)arg2 indent:(int)arg3 showFullContent:(BOOL)arg4;
+
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-- (void)appendCharacter:(unsigned short)arg1;
-- (void)appendSeparator:(id)arg1 format:(id)arg2;
-- (void)indentBy:(unsigned int)arg1;
-- (void)insertCharacter:(unsigned short)arg1 atIndex:(unsigned int)arg2;
-- (void)replaceAllSubstr:(id)arg1 with:(id)arg2;
-- (void)replaceAllSubstr:(id)arg1 with:(id)arg2 escStr:(id)arg3;
-- (void)replaceAllSubstr:(id)arg1 with:(id)arg2 escStr:(id)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
-- (void)replaceAllSubstr:(id)arg1 with:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
-- (BOOL)replaceSubstr:(id)arg1 with:(id)arg2;
-- (BOOL)replaceSubstr:(id)arg1 with:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)tc_replaceAllSubstr:(id)arg1 with:(id)arg2;
+- (void)tc_replaceAllSubstr:(id)arg1 with:(id)arg2 escStr:(id)arg3;
+- (void)tc_replaceAllSubstr:(id)arg1 with:(id)arg2 escStr:(id)arg3 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (void)tc_replaceAllSubstr:(id)arg1 with:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)tc_replaceSubstr:(id)arg1 with:(id)arg2;
+- (BOOL)tc_replaceSubstr:(id)arg1 with:(id)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (void)tsu_appendCharacter:(unsigned short)arg1;
+- (void)tsu_appendSeparator:(id)arg1 format:(id)arg2;
+- (void)tsu_indentBy:(unsigned int)arg1;
+- (void)tsu_insertCharacter:(unsigned short)arg1 atIndex:(unsigned int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/ScreenReaderCore.framework/ScreenReaderCore
 

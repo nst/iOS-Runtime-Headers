@@ -20,9 +20,9 @@
 + (void)animateWithParameters:(id)arg1 fromCurrentState:(BOOL)arg2 animations:(id /* block */)arg3 completion:(id /* block */)arg4;
 + (void)animateWithParameters:(id)arg1 fromCurrentState:(BOOL)arg2 frameInterval:(float)arg3 animations:(id /* block */)arg4 completion:(id /* block */)arg5;
 
+- (void).cxx_destruct;
 - (id)animationFactory;
 - (int)curve;
-- (void)dealloc;
 - (double)delay;
 - (double)duration;
 - (id)init;

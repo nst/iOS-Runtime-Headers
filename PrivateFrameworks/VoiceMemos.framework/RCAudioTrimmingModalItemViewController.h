@@ -42,6 +42,8 @@
 - (void)audioWaveformControllerDidChangeAVTimes:(id)arg1;
 - (void)audioWaveformControllerDidChangeWaveformDataSource:(id)arg1;
 - (id)initWithAudioURL:(id)arg1 maximumDuration:(double)arg2;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isEnabled;
 - (void)loadView;
 - (double)maximumDuration;
@@ -53,6 +55,7 @@
 - (void)setShowsProgress:(BOOL)arg1;
 - (BOOL)showsProgress;
 - (void)updateViewConstraints;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

@@ -3,11 +3,8 @@
  */
 
 @interface UIInputView : UIView <UISplittableInputView> {
+    BOOL _allowsSelfSizing;
     float _contentRatio;
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _defaultSize;
     BOOL _disableSplitSupport;
     float _gapWidth;
     BOOL _isTransitioning;
@@ -40,6 +37,7 @@
 @property (nonatomic, retain) NSMutableDictionary *_mergedSliceMap;
 @property (nonatomic, retain) UIImage *_splitImage;
 @property (nonatomic, retain) NSMutableDictionary *_splitSliceMap;
+@property (nonatomic) BOOL allowsSelfSizing;
 @property (nonatomic) float contentRatio;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -78,9 +76,11 @@
 - (id)_toolbarBorderedBackground;
 - (void)_updateClipCorners;
 - (void)_updateWithSize:(struct CGSize { float x1; float x2; })arg1;
+- (BOOL)allowsSelfSizing;
 - (float)contentRatio;
 - (void)dealloc;
 - (void)didEndSplitTransition;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputViewStyle:(int)arg2;
 - (int)inputViewStyle;
@@ -91,6 +91,7 @@
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)rightContentView;
 - (struct CGSize { float x1; float x2; })rightContentViewSize;
+- (void)setAllowsSelfSizing:(BOOL)arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentRatio:(float)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

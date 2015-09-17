@@ -17,9 +17,9 @@
 @property (nonatomic, retain) NSURL *inboxURL;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_finishWithError:(id)arg1;
 - (id)calendarAvailability;
-- (void)dealloc;
 - (id)fetchTask;
 - (id)inboxURL;
 - (id)initWithAccountInfoProvider:(id)arg1 inboxURL:(id)arg2 taskManager:(id)arg3;

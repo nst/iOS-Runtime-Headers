@@ -5,7 +5,6 @@
 @interface PTSPicker : UIView <PTSHUDControl, UITableViewDataSource, UITableViewDelegate, _UISettingsKeyPathObserver> {
     int _alignment;
     NSArray *_choices;
-    BOOL _enabled;
     _UISettings *_settings;
     NSArray *_subviewConstraints;
     UITableView *_tableView;
@@ -17,7 +16,7 @@
 @property (nonatomic, copy) NSArray *choices;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic) BOOL enabled;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (readonly) unsigned int hash;
 @property (nonatomic) _UISettings *settings;
 @property (nonatomic, retain) NSArray *subviewConstraints;
@@ -34,9 +33,9 @@
 - (int)alignment;
 - (id)choices;
 - (void)dealloc;
-- (BOOL)enabled;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (BOOL)isEnabled;
 - (void)layoutSubviews;
 - (id)makeTableView;
 - (id)makeTitleLabel;

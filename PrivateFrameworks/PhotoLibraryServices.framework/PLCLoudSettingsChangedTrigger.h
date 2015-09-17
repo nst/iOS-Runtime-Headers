@@ -4,6 +4,4 @@
 
 @interface PLCLoudSettingsChangedTrigger : PLCloudStatelessTrigger
 
-- (id)init;
-
 @end

@@ -54,6 +54,7 @@
 + (id)regionFromCellDiffMap:(id)arg1 withTableInfo:(id)arg2;
 + (id)regionFromCellIDVector:(const struct vector<TSUColumnRowCoordinate, std::__1::allocator<TSUColumnRowCoordinate> > { struct { /* ? */ } *x1; struct { /* ? */ } *x2; struct __compressed_pair<TSUColumnRowCoordinate *, std::__1::allocator<TSUColumnRowCoordinate> > { struct { /* ? */ } *x_3_1_1; } x3; }*)arg1;
 + (id)regionFromCellMap:(id)arg1 withTableInfo:(id)arg2;
++ (id)regionFromCellMap:(id)arg1 withTableInfo:(id)arg2 passingTest:(id /* block */)arg3;
 + (id)regionFromColumnIndexes:(id)arg1 rowIndexes:(id)arg2;
 + (id)regionFromColumnIndices:(id)arg1;
 + (id)regionFromMergeActionArray:(id)arg1 withTableInfo:(id)arg2;
@@ -64,7 +65,6 @@
 + (id)regionFromRowIndices:(id)arg1;
 + (id)unionEveryRangeInRegion:(id)arg1 withRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg2;
 
-- (id).cxx_construct;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })boundingBottomRightCellID;
 - (struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })boundingCellRange;
 - (struct { unsigned short x1; unsigned char x2; unsigned char x3; })boundingTopLeftCellID;
@@ -78,6 +78,8 @@
 - (id)description;
 - (void)enumerateCellIDsUsingBlock:(id /* block */)arg1;
 - (void)enumerateCellRangesUsingBlock:(id /* block */)arg1;
+- (void)enumerateCellsInTable:(id)arg1 usingBlock:(id /* block */)arg2;
+- (void)enumerateCellsInTable:(id)arg1 withFlags:(unsigned long)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateColumnRangesInReverseUsingBlock:(id /* block */)arg1;
 - (void)enumerateColumnRangesUsingBlock:(id /* block */)arg1;
 - (void)enumerateColumnsInReverseUsingBlock:(id /* block */)arg1;
@@ -133,7 +135,7 @@
 - (id)regionByIntersectingRange:(struct TSUColumnRowRect { struct { unsigned short x_1_1_1; unsigned char x_1_1_2; unsigned char x_1_1_3; } x1; struct { unsigned short x_2_1_1; unsigned short x_2_1_2; } x2; })arg1;
 - (id)regionByIntersectingRegion:(id)arg1;
 - (id)regionByIntersectingRowIndices:(id)arg1;
-- (id)regionByMovingColumnsFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(unsigned short)arg2;
+- (id)regionByMovingColumnsFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(unsigned char)arg2;
 - (id)regionByMovingRowsFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toIndex:(unsigned short)arg2;
 - (id)regionByRemovingColumns:(id)arg1;
 - (id)regionByRemovingRows:(id)arg1;

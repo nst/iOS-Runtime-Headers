@@ -8,11 +8,14 @@
 
 @property (nonatomic, readonly) CMPedometerProxy *pedometerProxy;
 
++ (BOOL)isCadenceAvailable;
 + (BOOL)isDistanceAvailable;
 + (BOOL)isFloorCountingAvailable;
-+ (BOOL)isPaceEstimationAvailable;
++ (BOOL)isPaceAvailable;
 + (BOOL)isStepCountingAvailable;
 
+- (id)_pedometerDataWithRecordID:(int)arg1;
+- (void)_queryPedometerDataSinceDataRecord:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (id)init;
 - (id)pedometerProxy;

@@ -23,7 +23,6 @@
 - (id)_stringForTransactionType:(int)arg1;
 - (id)_transactionInfoCellForIndex:(int)arg1;
 - (void)dealloc;
-- (void)done:(id)arg1;
 - (id)initWithTransaction:(id)arg1;
 - (id)merchantDetails;
 - (int)numberOfSectionsInTableView:(id)arg1;

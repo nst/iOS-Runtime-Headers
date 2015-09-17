@@ -18,6 +18,7 @@
 @property (retain) NSString *copyright;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isDeviceBasedVPP) BOOL deviceBasedVPP;
 @property (retain) NSDictionary *dictionary;
 @property (retain) NSString *downloadKey;
 @property (readonly) NSNumber *downloaderAccountIdentifier;
@@ -59,6 +60,7 @@
 @property (retain) NSString *title;
 @property (retain) NSString *transactionIdentifier;
 @property (copy) NSURL *transitMapDataURL;
+@property (getter=isTvTemplate) BOOL tvTemplate;
 
 - (id)MD5HashStrings;
 - (id)_assetDictionary;
@@ -77,6 +79,7 @@
 - (unsigned long long)artistIdentifier;
 - (id)artistName;
 - (BOOL)artworkIsPrerendered;
+- (id)betaExternalVersionIdentifier;
 - (id)bundleIdentifier;
 - (id)cancelDownloadURL;
 - (id)cloudIdentifier;
@@ -116,11 +119,13 @@
 - (BOOL)isAutomaticDownload;
 - (BOOL)isCompilation;
 - (BOOL)isContentRestricted;
+- (BOOL)isDeviceBasedVPP;
 - (BOOL)isExplicitContent;
 - (BOOL)isHighDefinition;
 - (BOOL)isRedownloadDownload;
 - (BOOL)isRental;
 - (BOOL)isSample;
+- (BOOL)isTvTemplate;
 - (unsigned long long)itemIdentifier;
 - (int)keyStyle;
 - (id)kind;
@@ -153,6 +158,7 @@
 - (void)setArtistName:(id)arg1;
 - (void)setArtworkIsPrerendered:(BOOL)arg1;
 - (void)setAutomaticDownload:(BOOL)arg1;
+- (void)setBetaExternalVersionIdentifier:(id)arg1;
 - (void)setBundleIdentifier:(id)arg1;
 - (void)setCancelDownloadURL:(id)arg1;
 - (void)setCloudIdentifier:(id)arg1;
@@ -165,6 +171,7 @@
 - (void)setComposerName:(id)arg1;
 - (void)setContentRating:(id)arg1;
 - (void)setCopyright:(id)arg1;
+- (void)setDeviceBasedVPP:(BOOL)arg1;
 - (void)setDictionary:(id)arg1;
 - (void)setDocumentTargetIdentifier:(id)arg1;
 - (void)setDownloadKey:(id)arg1;
@@ -221,8 +228,10 @@
 - (void)setTitle:(id)arg1;
 - (void)setTransactionIdentifier:(id)arg1;
 - (void)setTransitMapDataURL:(id)arg1;
+- (void)setTvTemplate:(BOOL)arg1;
 - (void)setValue:(id)arg1 forMetadataKey:(id)arg2;
 - (void)setValuesFromDownload:(id)arg1;
+- (void)setVariantIdentifier:(id)arg1;
 - (void)setVideoDetailsDictionary:(id)arg1;
 - (void)setViewStoreItemURL:(id)arg1;
 - (id)shortDescription;
@@ -241,6 +250,7 @@
 - (id)transitMapDataURL;
 - (id)valueForFirstAvailableKey:(id)arg1;
 - (id)valueForMetadataKey:(id)arg1;
+- (id)variantIdentifier;
 - (id)videoDetailsDictionary;
 - (id)viewStoreItemURL;
 

@@ -4,7 +4,29 @@
 
 @interface AWDWiFiMetricRssiHistory : PBCodable <NSCopying> {
     struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _bcnFrmsHistorys;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _bcnPerHistorys;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _fwTxFrmsHistorys;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _fwTxPerHistorys;
+    unsigned int _gatewayARPHistory;
+    struct { 
         unsigned int timestamp : 1; 
+        unsigned int gatewayARPHistory : 1; 
     } _has;
     struct { 
         int *list; 
@@ -12,20 +34,70 @@
         unsigned int size; 
     } _rssiHistorys;
     unsigned long long _timestamp;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _txFrmsHistorys;
+    struct { 
+        int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _txPerHistorys;
 }
 
+@property (nonatomic, readonly) int*bcnFrmsHistorys;
+@property (nonatomic, readonly) unsigned int bcnFrmsHistorysCount;
+@property (nonatomic, readonly) int*bcnPerHistorys;
+@property (nonatomic, readonly) unsigned int bcnPerHistorysCount;
+@property (nonatomic, readonly) int*fwTxFrmsHistorys;
+@property (nonatomic, readonly) unsigned int fwTxFrmsHistorysCount;
+@property (nonatomic, readonly) int*fwTxPerHistorys;
+@property (nonatomic, readonly) unsigned int fwTxPerHistorysCount;
+@property (nonatomic) unsigned int gatewayARPHistory;
+@property (nonatomic) BOOL hasGatewayARPHistory;
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic, readonly) int*rssiHistorys;
 @property (nonatomic, readonly) unsigned int rssiHistorysCount;
 @property (nonatomic) unsigned long long timestamp;
+@property (nonatomic, readonly) int*txFrmsHistorys;
+@property (nonatomic, readonly) unsigned int txFrmsHistorysCount;
+@property (nonatomic, readonly) int*txPerHistorys;
+@property (nonatomic, readonly) unsigned int txPerHistorysCount;
 
+- (void)addBcnFrmsHistory:(int)arg1;
+- (void)addBcnPerHistory:(int)arg1;
+- (void)addFwTxFrmsHistory:(int)arg1;
+- (void)addFwTxPerHistory:(int)arg1;
 - (void)addRssiHistory:(int)arg1;
+- (void)addTxFrmsHistory:(int)arg1;
+- (void)addTxPerHistory:(int)arg1;
+- (int)bcnFrmsHistoryAtIndex:(unsigned int)arg1;
+- (int*)bcnFrmsHistorys;
+- (unsigned int)bcnFrmsHistorysCount;
+- (int)bcnPerHistoryAtIndex:(unsigned int)arg1;
+- (int*)bcnPerHistorys;
+- (unsigned int)bcnPerHistorysCount;
+- (void)clearBcnFrmsHistorys;
+- (void)clearBcnPerHistorys;
+- (void)clearFwTxFrmsHistorys;
+- (void)clearFwTxPerHistorys;
 - (void)clearRssiHistorys;
+- (void)clearTxFrmsHistorys;
+- (void)clearTxPerHistorys;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (int)fwTxFrmsHistoryAtIndex:(unsigned int)arg1;
+- (int*)fwTxFrmsHistorys;
+- (unsigned int)fwTxFrmsHistorysCount;
+- (int)fwTxPerHistoryAtIndex:(unsigned int)arg1;
+- (int*)fwTxPerHistorys;
+- (unsigned int)fwTxPerHistorysCount;
+- (unsigned int)gatewayARPHistory;
+- (BOOL)hasGatewayARPHistory;
 - (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -34,10 +106,24 @@
 - (int)rssiHistoryAtIndex:(unsigned int)arg1;
 - (int*)rssiHistorys;
 - (unsigned int)rssiHistorysCount;
+- (void)setBcnFrmsHistorys:(int*)arg1 count:(unsigned int)arg2;
+- (void)setBcnPerHistorys:(int*)arg1 count:(unsigned int)arg2;
+- (void)setFwTxFrmsHistorys:(int*)arg1 count:(unsigned int)arg2;
+- (void)setFwTxPerHistorys:(int*)arg1 count:(unsigned int)arg2;
+- (void)setGatewayARPHistory:(unsigned int)arg1;
+- (void)setHasGatewayARPHistory:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;
 - (void)setRssiHistorys:(int*)arg1 count:(unsigned int)arg2;
 - (void)setTimestamp:(unsigned long long)arg1;
+- (void)setTxFrmsHistorys:(int*)arg1 count:(unsigned int)arg2;
+- (void)setTxPerHistorys:(int*)arg1 count:(unsigned int)arg2;
 - (unsigned long long)timestamp;
+- (int)txFrmsHistoryAtIndex:(unsigned int)arg1;
+- (int*)txFrmsHistorys;
+- (unsigned int)txFrmsHistorysCount;
+- (int)txPerHistoryAtIndex:(unsigned int)arg1;
+- (int*)txPerHistorys;
+- (unsigned int)txPerHistorysCount;
 - (void)writeTo:(id)arg1;
 
 @end

@@ -3,7 +3,7 @@
  */
 
 @interface OADCharacterProperties : OADProperties <OADEffectsParent> {
-    double mBaseline;
+    float mBaseline;
     NSString *mBidiFont;
     unsigned char mCaps;
     OADHyperlink *mClickHyperlink;
@@ -17,16 +17,21 @@
     unsigned int mHasCaps;
     unsigned int mHasFormatKerningType;
     unsigned int mHasFormatType;
+    unsigned int mHasHighlight;
     unsigned int mHasIsBold;
     unsigned int mHasIsHorizontalNormalized;
     unsigned int mHasIsItalic;
     unsigned int mHasIsRightToLeft;
     unsigned int mHasIsVerticalText;
     unsigned int mHasKerning;
+    unsigned int mHasLanguage;
     unsigned int mHasOpacity;
     unsigned int mHasSize;
     unsigned int mHasSpacing;
     unsigned int mHasStrikeThroughType;
+    unsigned int mHasUnderlineFill;
+    unsigned int mHasUnderlineStroke;
+    unsigned int mHasUnderlineType;
     OADColor *mHighlight;
     OADHyperlink *mHoverHyperlink;
     unsigned int mIsBold;
@@ -34,14 +39,17 @@
     unsigned int mIsItalic;
     unsigned int mIsRightToLeft;
     unsigned int mIsVerticalText;
+    int mLanguage;
     NSString *mLatinFont;
-    double mOpacity;
-    double mSize;
-    double mSpacing;
+    float mOpacity;
+    float mSize;
+    float mSpacing;
     unsigned char mStrikeThroughType;
     OADStroke *mStroke;
     NSString *mSymbolFont;
-    OADUnderline *mUnderline;
+    OADFill *mUnderlineFill;
+    OADStroke *mUnderlineStroke;
+    unsigned char mUnderlineType;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -51,16 +59,18 @@
 
 + (void)initialize;
 
-- (double)baseline;
+- (float)baseline;
 - (id)bidiFont;
-- (int)caps;
+- (unsigned char)caps;
 - (id)clickHyperlink;
 - (void)dealloc;
+- (id)description;
 - (id)eastAsianFont;
 - (id)effects;
 - (id)fill;
-- (int)formatKerningType;
-- (int)formatType;
+- (void)fixPropertiesForChangingParentPreservingEffectiveValues:(id)arg1;
+- (unsigned char)formatKerningType;
+- (unsigned char)formatType;
 - (id)hansiFont;
 - (BOOL)hasBaseline;
 - (BOOL)hasBidiFont;
@@ -77,6 +87,7 @@
 - (BOOL)hasIsItalic;
 - (BOOL)hasIsRightToLeft;
 - (BOOL)hasIsVerticalText;
+- (BOOL)hasLanguage;
 - (BOOL)hasLatinFont;
 - (BOOL)hasOpacity;
 - (BOOL)hasSize;
@@ -84,30 +95,36 @@
 - (BOOL)hasStrikeThroughType;
 - (BOOL)hasStroke;
 - (BOOL)hasSymbolFont;
-- (BOOL)hasUnderline;
+- (BOOL)hasUnderlineFill;
+- (BOOL)hasUnderlineStroke;
+- (BOOL)hasUnderlineType;
 - (unsigned int)hash;
 - (id)highlight;
 - (id)hoverHyperlink;
 - (id)initWithDefaults;
+- (BOOL)isAnyCharacterPropertyOverridden;
+- (BOOL)isAnythingOverridden;
 - (BOOL)isBold;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isHorizontalNormalized;
 - (BOOL)isItalic;
 - (BOOL)isRightToLeft;
 - (BOOL)isVerticalText;
+- (int)language;
 - (id)latinFont;
-- (double)opacity;
+- (float)opacity;
+- (void)overrideWithCharacterProperties:(id)arg1;
 - (void)overrideWithProperties:(id)arg1;
 - (void)removeUnnecessaryOverrides;
-- (void)setBaseline:(double)arg1;
+- (void)setBaseline:(float)arg1;
 - (void)setBidiFont:(id)arg1;
-- (void)setCaps:(int)arg1;
+- (void)setCaps:(unsigned char)arg1;
 - (void)setClickHyperlink:(id)arg1;
 - (void)setEastAsianFont:(id)arg1;
 - (void)setEffects:(id)arg1;
 - (void)setFill:(id)arg1;
-- (void)setFormatKerningType:(int)arg1;
-- (void)setFormatType:(int)arg1;
+- (void)setFormatKerningType:(unsigned char)arg1;
+- (void)setFormatType:(unsigned char)arg1;
 - (void)setHAnsiFont:(id)arg1;
 - (void)setHighlight:(id)arg1;
 - (void)setHoverHyperlink:(id)arg1;
@@ -116,19 +133,24 @@
 - (void)setIsItalic:(BOOL)arg1;
 - (void)setIsRightToLeft:(BOOL)arg1;
 - (void)setIsVerticalText:(BOOL)arg1;
+- (void)setLanguage:(int)arg1;
 - (void)setLatinFont:(id)arg1;
-- (void)setOpacity:(double)arg1;
-- (void)setSize:(double)arg1;
-- (void)setSpacing:(double)arg1;
-- (void)setStrikeThroughType:(int)arg1;
+- (void)setOpacity:(float)arg1;
+- (void)setSize:(float)arg1;
+- (void)setSpacing:(float)arg1;
+- (void)setStrikeThroughType:(unsigned char)arg1;
 - (void)setStroke:(id)arg1;
 - (void)setSymbolFont:(id)arg1;
-- (void)setUnderline:(id)arg1;
-- (double)size;
-- (double)spacing;
-- (int)strikeThroughType;
+- (void)setUnderlineFill:(id)arg1;
+- (void)setUnderlineStroke:(id)arg1;
+- (void)setUnderlineType:(unsigned char)arg1;
+- (float)size;
+- (float)spacing;
+- (unsigned char)strikeThroughType;
 - (id)stroke;
 - (id)symbolFont;
-- (id)underline;
+- (id)underlineFill;
+- (id)underlineStroke;
+- (unsigned char)underlineType;
 
 @end

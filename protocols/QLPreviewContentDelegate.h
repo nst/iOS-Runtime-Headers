@@ -6,6 +6,7 @@
 @required
 
 - (void)contentWasTappedInPreviewContentController:(id <QLPreviewContentControllerProtocol>)arg1;
+- (void)dismissalGestureDidUpdateInPreviewContentController:(id <QLPreviewContentControllerProtocol>)arg1 state:(int)arg2 trackingInformation:(QLDismissTrackingInformation *)arg3;
 - (void)overlayWasTappedInPreviewContentController:(id <QLPreviewContentControllerProtocol>)arg1;
 - (void)previewContentController:(id <QLPreviewContentControllerProtocol>)arg1 didFailWithError:(NSError *)arg2;
 - (void)previewContentController:(id <QLPreviewContentControllerProtocol>)arg1 didLoadItem:(id <QLPreviewItem>)arg2 atIndex:(int)arg3 withError:(NSError *)arg4;

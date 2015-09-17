@@ -36,6 +36,7 @@
 
 - (void)dealloc;
 - (unsigned char)defaultNumberOfPlayers;
+- (BOOL)hasGuestPlayers;
 - (unsigned int)hash;
 - (id)init;
 - (id)inviteMessage;

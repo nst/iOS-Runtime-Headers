@@ -6,6 +6,7 @@
     NSString *_activityType;
     NSString *_bundleIdentifier;
     double _confidence;
+    NSString *_dynamicIdentifier;
     NSDate *_lastUpdateTime;
     NSDictionary *_options;
     NSString *_originatingDeviceIdentifier;
@@ -18,6 +19,7 @@
 @property (copy) NSString *activityType;
 @property (readonly, copy) NSString *bundleIdentifier;
 @property (readonly) double confidence;
+@property (readonly, copy) NSString *dynamicIdentifier;
 @property (readonly, copy) NSDate *lastUpdateTime;
 @property (readonly, copy) NSDictionary *options;
 @property (readonly, copy) NSString *originatingDeviceIdentifier;
@@ -36,8 +38,9 @@
 - (void)dealloc;
 - (id)debugDescription;
 - (id)description;
+- (id)dynamicIdentifier;
 - (unsigned int)hash;
-- (id)initWithBundleIdentifier:(id)arg1 uuid:(id)arg2 activityType:(id)arg3 lastUpdateTime:(id)arg4 type:(unsigned int)arg5 deviceName:(id)arg6 deviceIdentifier:(id)arg7 deviceType:(id)arg8 options:(id)arg9;
+- (id)initWithBundleIdentifier:(id)arg1 uuid:(id)arg2 activityType:(id)arg3 dynamicIdentifier:(id)arg4 lastUpdateTime:(id)arg5 type:(unsigned int)arg6 deviceName:(id)arg7 deviceIdentifier:(id)arg8 deviceType:(id)arg9 options:(id)arg10;
 - (BOOL)isEqual:(id)arg1;
 - (id)lastUpdateTime;
 - (id)options;

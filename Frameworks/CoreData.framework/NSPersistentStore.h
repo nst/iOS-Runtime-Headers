@@ -67,6 +67,7 @@
 - (Class)faultHandlerClass;
 - (void)finalize;
 - (id)identifier;
+- (id)init;
 - (id)initWithPersistentStoreCoordinator:(id)arg1 configurationName:(id)arg2 URL:(id)arg3 options:(id)arg4;
 - (BOOL)isReadOnly;
 - (id*)knownKeyValuesForObjectID:(id)arg1 withContext:(id)arg2;

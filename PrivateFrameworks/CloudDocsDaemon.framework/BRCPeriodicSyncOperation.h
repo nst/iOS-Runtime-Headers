@@ -18,7 +18,9 @@
 - (id)initWithContainerScheduler:(id)arg1 metadataChangeToken:(id)arg2;
 - (void)main;
 - (id)metadataChangeToken;
+- (BOOL)scheduleSyncDownIfNeededForZoneID:(id)arg1 zoneIfAny:(id)arg2;
 - (id)scheduler;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

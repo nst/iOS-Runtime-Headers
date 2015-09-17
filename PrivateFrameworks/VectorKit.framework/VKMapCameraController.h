@@ -7,7 +7,7 @@
     double _canonicalSkyHeight;
     double _finalPitch;
     double _finalYaw;
-    VKAnimation *_horizontalOffsetAnimation;
+    VKTimedAnimation *_horizontalOffsetAnimation;
     VKMapCanvas *_mapCanvas;
     VKMapModel *_mapModel;
     double _maxDistanceToGroundAlongForwardVector;
@@ -34,7 +34,6 @@
 }
 
 @property (nonatomic) BOOL allowDatelineWraparound;
-@property (nonatomic) int annotationTrackingZoomStyle;
 @property (nonatomic) double canonicalSkyHeight;
 @property (nonatomic, readonly) struct { double x1; double x2; double x3; } centerCoordinate;
 @property (readonly, copy) NSString *debugDescription;
@@ -57,7 +56,6 @@
 @property (nonatomic) double userZoomFocusStyleMinGroundspanMeters;
 @property (nonatomic, readonly) double yaw;
 
-- (id).cxx_construct;
 - (void)_animateToPosition:(struct VKPoint { double x1; double x2; double x3; })arg1 pitch:(double)arg2 yaw:(double)arg3 duration:(double)arg4 timingCurve:(id /* block */)arg5 completion:(id /* block */)arg6;
 - (struct CGPoint { float x1; float x2; })_centerScreenPoint;
 - (id)_mapRegionIgnoringFarAmount:(double)arg1;
@@ -122,8 +120,8 @@
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
 - (void)setCameraHorizontalOffset:(double)arg1 duration:(double)arg2 timingFunction:(id)arg3;
 - (void)setCanonicalSkyHeight:(double)arg1;
-- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 timingCurve:(id /* block */)arg6 completion:(id /* block */)arg7;
-- (void)setCenterCoordinate:(struct { double x1; double x2; double x3; })arg1 animated:(BOOL)arg2;
+- (void)setCenterCoordinate3D:(struct { double x1; double x2; double x3; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(int)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
+- (void)setCenterCoordinate:(struct { double x1; double x2; })arg1 altitude:(double)arg2 yaw:(double)arg3 pitch:(double)arg4 duration:(double)arg5 animationStyle:(int)arg6 timingCurve:(id /* block */)arg7 completion:(id /* block */)arg8;
 - (void)setEdgeInsets:(struct VKEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setGesturing:(BOOL)arg1;
 - (void)setMapCanvas:(id)arg1;

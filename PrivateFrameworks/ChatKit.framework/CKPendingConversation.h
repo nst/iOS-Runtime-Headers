@@ -13,6 +13,7 @@
 @property (nonatomic) IMService *previousSendingService;
 
 - (id)composeSendingService;
+- (id)deviceIndependentID;
 - (BOOL)noAvailableServices;
 - (id)previousSendingService;
 - (void)refreshComposeSendingServiceForAddresses:(id)arg1 withCompletionBlock:(id /* block */)arg2;
@@ -21,5 +22,6 @@
 - (void)setComposeSendingService:(id)arg1;
 - (void)setNoAvailableServices:(BOOL)arg1;
 - (void)setPreviousSendingService:(id)arg1;
+- (id)uniqueIdentifier;
 
 @end

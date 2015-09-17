@@ -42,8 +42,8 @@
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-- (void)intersectionWithIndexSet:(id)arg1;
-- (void)moveIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toOffset:(unsigned int)arg2;
+- (void)tsu_intersectionWithIndexSet:(id)arg1;
+- (void)tsu_moveIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 toOffset:(unsigned int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 

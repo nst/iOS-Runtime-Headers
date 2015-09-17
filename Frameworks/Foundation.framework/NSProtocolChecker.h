@@ -27,5 +27,6 @@
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
 - (id)_imMethodSignatureForSelector:(SEL)arg1;
+- (id)initWithProtocol:(id)arg1;
 
 @end

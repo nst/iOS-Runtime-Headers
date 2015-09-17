@@ -3,7 +3,9 @@
  */
 
 @interface IKViewElementStyle : NSObject {
-    NSString *_classSelector;
+    NSString *_classDescriptorString;
+    IKCSSRule *_cssRule;
+    BOOL _filterBlockedStyles;
     NSArray *_mediaQueryList;
     NSMutableDictionary *_styleDict;
 }
@@ -15,11 +17,12 @@
 @property (nonatomic, readonly) IKFourTuple *borderRadius;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderWidths;
 @property (nonatomic, readonly) NSString *cardType;
-@property (nonatomic, retain) NSString *classSelector;
+@property (nonatomic, readonly) NSString *classDescriptorString;
 @property (nonatomic, readonly) UIColor *color;
 @property (nonatomic, readonly) int columnCount;
 @property (nonatomic, readonly) NSString *columnItemType;
 @property (nonatomic, readonly) NSString *columnType;
+@property (nonatomic, retain) IKCSSRule *cssRule;
 @property (nonatomic, readonly) NSString *dividerType;
 @property (nonatomic, readonly) unsigned int elementAlignment;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } elementMargin;
@@ -61,30 +64,30 @@
 
 // Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
 
++ (void)addBlockedStyle:(id)arg1;
 + (unsigned int)alignmentFromString:(id)arg1;
++ (void)clearBlockedStyles;
 + (id)elementStyleWithParentStyle:(id)arg1 elementStyle:(id)arg2 elementStyleOverrides:(id)arg3;
 + (id)elementStyleWithSelector:(id)arg1 aggregatingStyles:(id)arg2;
-+ (id)elementStyleWithSelector:(id)arg1 styleString:(id)arg2;
++ (id)elementStyleWithSelector:(id)arg1 cssRule:(id)arg2 filterBlockedStyles:(BOOL)arg3;
++ (id)elementStyleWithSelector:(id)arg1 inlineStyleString:(id)arg2 filterBlockedStyles:(BOOL)arg3;
 + (unsigned int)imageTreatmentFromString:(id)arg1;
 + (void)initialize;
++ (id)normalizeClassSelectorString:(id)arg1;
 + (unsigned int)positionFromString:(id)arg1;
++ (void)registerStyle:(id)arg1 aliasName:(id)arg2 withType:(unsigned int)arg3 inherited:(BOOL)arg4;
 + (void)registerStyle:(id)arg1 withType:(unsigned int)arg2 inherited:(BOOL)arg3;
++ (id)registeredAliases;
++ (id)registeredStyles;
 + (unsigned int)transitionFromString:(id)arg1;
++ (void)unregisterStyles;
 
 - (void).cxx_destruct;
 - (void)_addElementStyle:(id)arg1;
 - (void)_addParentStyle:(id)arg1;
-- (id)_doubleFromString:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForStyleKey:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsFromString:(id)arg1;
-- (id)_fontSizeFromString:(id)arg1;
 - (id)_gradientFromString:(id)arg1;
 - (id)_newColorFromString:(id)arg1;
-- (id)_numberFromString:(id)arg1;
-- (void)_parse:(id)arg1;
-- (void)_setValue:(id)arg1 forKey:(id)arg2;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_transformFromString:(id)arg1;
-- (id)_urlFromString:(id)arg1;
 - (id)backgroundColor;
 - (id)badgeTreatment;
 - (id)borderColor;
@@ -92,11 +95,12 @@
 - (id)borderRadius;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderWidths;
 - (id)cardType;
-- (id)classSelector;
+- (id)classDescriptorString;
 - (id)color;
 - (int)columnCount;
 - (id)columnItemType;
 - (id)columnType;
+- (id)cssRule;
 - (id)description;
 - (id)dividerType;
 - (unsigned int)elementAlignment;
@@ -115,8 +119,8 @@
 - (id)imagePlaceholderURL;
 - (unsigned int)imagePosition;
 - (id)imageTreatment;
+- (id)initWithCSSRule:(id)arg1 filterBlockedStyles:(BOOL)arg2 selStr:(id)arg3;
 - (id)initWithClassSelector:(id)arg1;
-- (id)initWithString:(id)arg1 classSelector:(id)arg2;
 - (id)initWithStyle:(id)arg1 classSelector:(id)arg2;
 - (id)itemHeight;
 - (id)itemWidth;
@@ -130,7 +134,7 @@
 - (unsigned int)ordinalMaxLength;
 - (int)reflectImage;
 - (id)rowHeight;
-- (void)setClassSelector:(id)arg1;
+- (void)setCssRule:(id)arg1;
 - (void)setMediaQueryList:(id)arg1;
 - (void)setStyleDict:(id)arg1;
 - (id)styleDict;

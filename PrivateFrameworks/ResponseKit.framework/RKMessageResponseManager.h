@@ -2,14 +2,24 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@interface RKMessageResponseManager : NSObject
+@interface RKMessageResponseManager : NSObject {
+    RKResponseCollection *_collection;
+}
+
+@property (retain) RKResponseCollection *collection;
 
 + (id)sharedManager;
 
+- (void).cxx_destruct;
 - (id)_init;
+- (id)collection;
+- (void)flushDynamicData;
 - (id)init;
+- (id)initWithDynamicDataURL:(id)arg1;
+- (void)registerResponse:(id)arg1 forMessage:(id)arg2 forContext:(id)arg3 withEffectiveDate:(id)arg4 withLanguage:(id)arg5;
 - (void)registerResponse:(id)arg1 forMessage:(id)arg2 forContext:(id)arg3 withLanguage:(id)arg4;
-- (void)resetRegisteredResponsesForContext:(id)arg1;
+- (void)resetRegisteredResponses;
 - (id)responsesForMessage:(id)arg1 maximumResponses:(unsigned int)arg2 forContext:(id)arg3 withLanguage:(id)arg4 options:(unsigned int)arg5;
+- (void)setCollection:(id)arg1;
 
 @end

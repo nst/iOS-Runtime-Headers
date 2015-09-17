@@ -11,4 +11,9 @@
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 
+@optional
+
+- (UIBezierPath *)collisionBoundingPath;
+- (unsigned int)collisionBoundsType;
+
 @end

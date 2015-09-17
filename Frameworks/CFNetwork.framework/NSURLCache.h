@@ -14,10 +14,10 @@
 + (void)setSharedURLCache:(id)arg1;
 + (id)sharedURLCache;
 
-- (struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFURLCache {} *x2; }*)_CFURLCache;
+- (struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)_CFURLCache;
 - (id)_cacheDirectory;
 - (id)_diskCacheDefaultPath;
-- (id)_initWithExistingCFURLCache:(struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFURLCache {} *x2; }*)arg1;
+- (id)_initWithExistingCFURLCache:(struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg1;
 - (id)_initWithIdentifier:(id)arg1 memoryCapacity:(int)arg2 diskCapacity:(int)arg3 private:(bool)arg4;
 - (id)_initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 relativePath:(id)arg3;
 - (struct _CFCachedURLResponse { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFCachedURLResponse {} *x2; }*)_nscfBridgeURLCacheCopyResponseForRequest:(struct _CFURLRequest { }*)arg1;
@@ -38,7 +38,7 @@
 - (void)flushWithCompletion:(id /* block */)arg1;
 - (void)getCachedResponseForDataTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)init;
-- (id)initWithExistingSharedCFURLCache:(struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct __CFURLCache {} *x2; }*)arg1;
+- (id)initWithExistingSharedCFURLCache:(struct _CFURLCache { struct __CFRuntimeBase { unsigned int x_1_1_1; unsigned char x_1_1_2[4]; } x1; struct shared_ptr<__CFURLCache> { struct __CFURLCache {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg1;
 - (id)initWithMemoryCapacity:(unsigned int)arg1 diskCapacity:(unsigned int)arg2 diskPath:(id)arg3;
 - (unsigned int)memoryCapacity;
 - (void)removeAllCachedResponses;

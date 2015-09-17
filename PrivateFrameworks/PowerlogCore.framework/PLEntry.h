@@ -8,7 +8,9 @@
     NSDictionary *_entryDefinition;
     long long _entryID;
     NSString *_entryKey;
+    BOOL _existsInDB;
     BOOL _isErrorEntry;
+    NSObject<OS_dispatch_semaphore> *_sem;
     BOOL _writeToDB;
 }
 
@@ -20,10 +22,13 @@
 @property (nonatomic, retain) NSDictionary *entryDefinition;
 @property (nonatomic) long long entryID;
 @property (nonatomic, retain) NSString *entryKey;
+@property BOOL existsInDB;
 @property (readonly) BOOL hasArrayKeys;
 @property (readonly) BOOL hasDynamicKeys;
 @property BOOL isErrorEntry;
 @property (readonly) NSMutableArray *keys;
+@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *sem;
+@property (readonly) id subEntryKey;
 @property (getter=allValues, readonly) NSMutableArray *values;
 @property BOOL writeToDB;
 
@@ -39,10 +44,10 @@
 - (void).cxx_destruct;
 - (id)allValues;
 - (id)arrayKeys;
+- (void)checkOverridesEntryDateWithNowDate:(id)arg1;
 - (int)compare:(id)arg1;
 - (int)compare:(id)arg1 options:(short)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)definedKeys;
 - (id)definitionForKey:(id)arg1;
 - (id)description;
@@ -52,6 +57,7 @@
 - (id)entryDefinition;
 - (long long)entryID;
 - (id)entryKey;
+- (BOOL)existsInDB;
 - (BOOL)filterEntryLogging;
 - (short)formaterForKey:(id)arg1;
 - (BOOL)hasArrayKeys;
@@ -59,6 +65,7 @@
 - (id)init;
 - (id)initEntryWithData:(id)arg1;
 - (id)initEntryWithRawData:(id)arg1;
+- (id)initWithEntryDate:(id)arg1;
 - (id)initWithEntryKey:(id)arg1;
 - (id)initWithEntryKey:(id)arg1 withData:(id)arg2;
 - (id)initWithEntryKey:(id)arg1 withDate:(id)arg2;
@@ -69,10 +76,10 @@
 - (id)keyValuePathForKey:(id)arg1;
 - (id)keys;
 - (void)loadDynamicKeys;
-- (void)loadLookupTableValues;
 - (id)objectForKey:(id)arg1;
 - (id)objectForKeyedSubscript:(id)arg1;
 - (void)removeObjectForKey:(id)arg1;
+- (id)sem;
 - (id)serialized;
 - (id)serializedForJSON;
 - (void)setDictionary:(id)arg1;
@@ -81,13 +88,16 @@
 - (void)setEntryDefinition:(id)arg1;
 - (void)setEntryID:(long long)arg1;
 - (void)setEntryKey:(id)arg1;
+- (void)setExistsInDB:(BOOL)arg1;
 - (void)setIsErrorEntry:(BOOL)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
 - (void)setObjectsFromData:(id)arg1;
 - (void)setObjectsFromRawData:(id)arg1;
+- (void)setSem:(id)arg1;
 - (void)setWriteToDB:(BOOL)arg1;
 - (int)staticArraySizeForKey:(id)arg1;
+- (id)subEntryKey;
 - (id)unitForKey:(id)arg1;
 - (BOOL)writeToDB;
 

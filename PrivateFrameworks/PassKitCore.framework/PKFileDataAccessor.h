@@ -9,7 +9,7 @@
 }
 
 @property (nonatomic, readonly, retain) NSURL *fileURL;
-@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *processingQueue;
+@property (nonatomic, readonly, retain) NSObject<OS_dispatch_queue> *processingQueue;
 
 - (id)archiveData;
 - (id)bundle;

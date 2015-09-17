@@ -13,6 +13,7 @@
 
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
++ (id)URLForEntityWithPersistentID:(long long)arg1 libraryUID:(id)arg2;
 + (BOOL)_deleteRowForPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 library:(id)arg3 table:(id)arg4 usingColumn:(id)arg5 usingConnection:(id)arg6;
 + (void)_didChangeValueForProperties:(id)arg1 inLibrary:(id)arg2;
 + (BOOL)_shouldIncrementRevisionForType:(int)arg1 persistentID:(long long)arg2 usingConnection:(id)arg3;
@@ -30,6 +31,9 @@
 + (id)directCollectionQueryWithAggregateQuery:(id)arg1 predicate:(id)arg2 usingSections:(BOOL)arg3;
 + (id)disambiguatedSQLForProperty:(id)arg1;
 + (id)disambiguatedSelectSQLForProperty:(id)arg1;
++ (id)entityFromURL:(id)arg1 inLibrary:(id)arg2;
++ (id)entityFromURL:(id)arg1 inLibrary:(id)arg2 verifyExistence:(BOOL)arg3;
++ (id)entityURLScheme;
 + (void)enumeratePersistentIDsInLibrary:(id)arg1 afterRevision:(long long)arg2 usingBlock:(id /* block */)arg3;
 + (void)enumeratePersistentIDsInLibrary:(id)arg1 matchingPredicate:(id)arg2 orderingTerms:(id)arg3 persistentIDs:(const long long*)arg4 count:(unsigned int)arg5 options:(long long)arg6 usingBlock:(id /* block */)arg7;
 + (id)extraTablesToDelete;
@@ -87,6 +91,7 @@
 + (id)widthLimitedSetValuesQueue;
 
 - (void).cxx_destruct;
+- (id)URL;
 - (id)copyInLibrary:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)deleteFromLibrary;

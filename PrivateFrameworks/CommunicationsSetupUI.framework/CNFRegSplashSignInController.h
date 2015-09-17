@@ -2,22 +2,26 @@
    Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
  */
 
-@interface CNFRegSplashSignInController : CNFRegSignInController {
+@interface CNFRegSplashSignInController : CNFRegSignInController <AKTapToSignInViewControllerDelegate> {
+    AKTapToSignInViewController *_akSignInVC;
     CNFRegSigninLearnMoreView *_signInView;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+- (void).cxx_destruct;
+- (id)_controllerToPresentOn;
 - (id)_existingLearnMoreViewForSection:(int)arg1;
 - (id)_existingLearnMoreViewForSpecifier:(id)arg1;
-- (void)_setFieldsEnabled:(BOOL)arg1 animated:(BOOL)arg2;
-- (BOOL)passwordIsEmpty;
-- (id)passwordTextField;
-- (void)setPasswordText:(id)arg1;
-- (void)setUsernameText:(id)arg1;
+- (void)_handleTimeout;
+- (void)dealloc;
 - (id)specifierList;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
-- (BOOL)usernameIsEmpty;
-- (id)usernameTextField;
+- (void)tapToSignInViewController:(id)arg1 didAuthenticateWithResults:(id)arg2 error:(id)arg3;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 

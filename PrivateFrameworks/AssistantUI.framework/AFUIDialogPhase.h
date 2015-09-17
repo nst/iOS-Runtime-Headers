@@ -9,11 +9,13 @@
 @property (nonatomic, readonly) NSString *aceDialogPhaseValue;
 @property (getter=isCancelledDialogPhase, nonatomic, readonly) BOOL cancelledDialogPhase;
 @property (getter=isClarificationDialogPhase, nonatomic, readonly) BOOL clarificationDialogPhase;
+@property (getter=isCompletionDialogPhase, nonatomic, readonly) BOOL completionDialogPhase;
 @property (getter=isConfirmationDialogPhase, nonatomic, readonly) BOOL confirmationDialogPhase;
 @property (getter=isConfirmedDialogPhase, nonatomic, readonly) BOOL confirmedDialogPhase;
 @property (getter=isErrorDialogPhase, nonatomic, readonly) BOOL errorDialogPhase;
 @property (getter=isExpository, nonatomic, readonly) BOOL expository;
 @property (getter=isReflectionDialogPhase, nonatomic, readonly) BOOL reflectionDialogPhase;
+@property (getter=isSummaryDialogPhase, nonatomic, readonly) BOOL summaryDialogPhase;
 @property (getter=isTemporary, nonatomic, readonly) BOOL temporary;
 @property (getter=_type, nonatomic, readonly) int type;
 @property (getter=isUserRequestDialogPhase, nonatomic, readonly) BOOL userRequestDialogPhase;
@@ -42,6 +44,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCancelledDialogPhase;
 - (BOOL)isClarificationDialogPhase;
+- (BOOL)isCompletionDialogPhase;
 - (BOOL)isConfirmationDialogPhase;
 - (BOOL)isConfirmedDialogPhase;
 - (BOOL)isEqual:(id)arg1;
@@ -49,6 +52,7 @@
 - (BOOL)isErrorDialogPhase;
 - (BOOL)isExpository;
 - (BOOL)isReflectionDialogPhase;
+- (BOOL)isSummaryDialogPhase;
 - (BOOL)isTemporary;
 - (BOOL)isUserRequestDialogPhase;
 - (BOOL)replacesPreviousSnippetContents;

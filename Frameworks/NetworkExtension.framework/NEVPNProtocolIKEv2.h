@@ -4,44 +4,97 @@
 
 @interface NEVPNProtocolIKEv2 : NEVPNProtocolIPSec {
     NEVPNIKEv2SecurityAssociationParameters *_IKESecurityAssociationParameters;
+    NSArray *_IKESecurityAssociationParametersArray;
     int _certificateType;
     NEVPNIKEv2SecurityAssociationParameters *_childSecurityAssociationParameters;
+    NSArray *_childSecurityAssociationParametersArray;
     int _deadPeerDetectionRate;
+    BOOL _disableMOBIKE;
+    int _disableMOBIKERetryOnWake;
+    BOOL _disableRedirect;
+    BOOL _enablePFS;
+    BOOL _enableRevocationCheck;
+    int _natKeepAliveOffloadEnable;
+    int _natKeepAliveOffloadInterval;
+    NSString *_pluginType;
+    NSString *_providerBundleIdentifier;
     NSString *_serverCertificateCommonName;
     NSString *_serverCertificateIssuerCommonName;
+    BOOL _strictRevocationCheck;
+    BOOL _useConfigurationAttributeInternalIPSubnet;
     BOOL _wakeForRekey;
 }
 
 @property (readonly) NEVPNIKEv2SecurityAssociationParameters *IKESecurityAssociationParameters;
+@property (retain) NSArray *IKESecurityAssociationParametersArray;
 @property int certificateType;
 @property (readonly) NEVPNIKEv2SecurityAssociationParameters *childSecurityAssociationParameters;
+@property (retain) NSArray *childSecurityAssociationParametersArray;
 @property int deadPeerDetectionRate;
+@property BOOL disableMOBIKE;
+@property int disableMOBIKERetryOnWake;
+@property BOOL disableRedirect;
+@property BOOL enablePFS;
+@property BOOL enableRevocationCheck;
+@property int natKeepAliveOffloadEnable;
+@property int natKeepAliveOffloadInterval;
+@property (readonly) NSString *pluginType;
+@property (copy) NSString *providerBundleIdentifier;
 @property (copy) NSString *serverCertificateCommonName;
 @property (copy) NSString *serverCertificateIssuerCommonName;
+@property BOOL strictRevocationCheck;
+@property BOOL useConfigurationAttributeInternalIPSubnet;
 @property BOOL wakeForRekey;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)IKESecurityAssociationParameters;
+- (id)IKESecurityAssociationParametersArray;
 - (int)certificateType;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)childSecurityAssociationParameters;
+- (id)childSecurityAssociationParametersArray;
 - (id)clone;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)deadPeerDetectionRate;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
+- (BOOL)disableMOBIKE;
+- (int)disableMOBIKERetryOnWake;
+- (BOOL)disableRedirect;
+- (BOOL)enablePFS;
+- (BOOL)enableRevocationCheck;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithPluginType:(id)arg1;
+- (int)natKeepAliveOffloadEnable;
+- (int)natKeepAliveOffloadInterval;
+- (id)pluginType;
+- (id)providerBundleIdentifier;
 - (id)serverCertificateCommonName;
 - (id)serverCertificateIssuerCommonName;
 - (void)setCertificateType:(int)arg1;
+- (void)setChildSecurityAssociationParametersArray:(id)arg1;
 - (void)setDeadPeerDetectionRate:(int)arg1;
+- (void)setDisableMOBIKE:(BOOL)arg1;
+- (void)setDisableMOBIKERetryOnWake:(int)arg1;
+- (void)setDisableRedirect:(BOOL)arg1;
+- (void)setEnablePFS:(BOOL)arg1;
+- (void)setEnableRevocationCheck:(BOOL)arg1;
+- (void)setIKESecurityAssociationParametersArray:(id)arg1;
+- (void)setNatKeepAliveOffloadEnable:(int)arg1;
+- (void)setNatKeepAliveOffloadInterval:(int)arg1;
+- (void)setPluginType:(id)arg1;
+- (void)setProviderBundleIdentifier:(id)arg1;
 - (void)setServerCertificateCommonName:(id)arg1;
 - (void)setServerCertificateIssuerCommonName:(id)arg1;
+- (void)setStrictRevocationCheck:(BOOL)arg1;
+- (void)setUseConfigurationAttributeInternalIPSubnet:(BOOL)arg1;
 - (void)setWakeForRekey:(BOOL)arg1;
+- (BOOL)strictRevocationCheck;
+- (BOOL)useConfigurationAttributeInternalIPSubnet;
 - (BOOL)wakeForRekey;
 
 @end

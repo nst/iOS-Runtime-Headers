@@ -5,6 +5,7 @@
 @interface _UIDocumentPickerModalManagementViewController : UINavigationController
 
 - (void)_donePressed:(id)arg1;
-- (id)init;
+- (id)initWithCoder:(id)arg1;
+- (id)initWithFileTypes:(id)arg1 mode:(unsigned int)arg2;
 
 @end

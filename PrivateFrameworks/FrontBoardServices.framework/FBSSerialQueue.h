@@ -3,23 +3,32 @@
  */
 
 @interface FBSSerialQueue : NSObject {
+    NSMutableArray *_blocks;
+    NSMutableSet *_enqueueSemaphores;
     NSArray *_mainRunLoopModes;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_semaphore> *_runLoopSemaphore;
     struct __CFRunLoopSource { } *_runLoopSource;
+    BOOL _runLoopSourceHandlingBlock;
     NSObject<OS_dispatch_queue> *_targetQueue;
 }
 
 + (id)queueWithDispatchQueue:(id)arg1;
 + (id)queueWithMainRunLoopModes:(id)arg1;
 
+- (void)_deregisterEnqueueSemaphore:(id)arg1;
+- (BOOL)_hasNext;
 - (id)_initWithDispatchQueue:(id)arg1 mainRunLoopModes:(id)arg2;
+- (BOOL)_performNext;
+- (void)_performNextFromRunLoopSource;
+- (void)_queue_performAsync:(id /* block */)arg1;
+- (void)_registerEnqueueSemaphore:(id)arg1;
 - (void)assertOnQueue;
 - (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)init;
 - (BOOL)isEqual:(id)arg1;
+- (void)performAfter:(double)arg1 withBlock:(id /* block */)arg2;
 - (void)performAsync:(id /* block */)arg1;
 
 @end

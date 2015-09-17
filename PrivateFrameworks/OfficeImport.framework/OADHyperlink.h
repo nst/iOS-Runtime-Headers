@@ -20,6 +20,7 @@
 
 - (id)action;
 - (void)dealloc;
+- (id)description;
 - (BOOL)doAddToHistory;
 - (BOOL)doEndSound;
 - (unsigned int)hash;

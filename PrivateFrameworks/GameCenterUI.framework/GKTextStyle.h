@@ -20,9 +20,9 @@
     float _zPosition;
 }
 
-@property (nonatomic, readonly) NSString *UIKitFontTextStyleName;
+@property (nonatomic, retain) NSString *UIKitFontTextStyleName;
 @property (nonatomic, retain) UIColor *color;
-@property (nonatomic, readonly) NSString *fontName;
+@property (nonatomic, retain) NSString *fontName;
 @property (nonatomic) SEL fontNameRebaseSelector;
 @property (nonatomic, readonly) float fontSize;
 @property (nonatomic) SEL fontSizeRebaseSelector;
@@ -71,6 +71,8 @@
 - (id)cellActionItem;
 - (id)centered;
 - (id)challengeBubbleValue;
+- (id)challengeText;
+- (id)challengeTitleText;
 - (id)color;
 - (id)composeFields;
 - (id)composeMessage;
@@ -150,6 +152,7 @@
 - (id)segmentBubbleValue;
 - (id)selectedBuyButtonTitle;
 - (void)setColor:(id)arg1;
+- (void)setFontName:(id)arg1;
 - (void)setFontName:(id)arg1 kitTextStyleName:(id)arg2 leadingOverrideFromHISpec:(float)arg3 shouldOverrideSize:(BOOL)arg4 rebaseSelector:(SEL)arg5;
 - (void)setFontName:(id)arg1 kitTextStyleName:(id)arg2 shouldOverrideSize:(BOOL)arg3 rebaseSelector:(SEL)arg4;
 - (void)setFontName:(id)arg1 rebaseSelector:(SEL)arg2;
@@ -163,6 +166,7 @@
 - (void)setOverrideUIKitFontSize:(BOOL)arg1;
 - (void)setPalette:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
+- (void)setUIKitFontTextStyleName:(id)arg1;
 - (void)setZPosition:(float)arg1;
 - (id)settingsBoldButton;
 - (id)settingsButton;

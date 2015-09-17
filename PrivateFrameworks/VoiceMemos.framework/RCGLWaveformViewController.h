@@ -29,7 +29,6 @@
     BOOL _playing;
     RCGLWaveformRenderer *_rendererController;
     float _resumingToForegroundAutoscrollRate;
-    BOOL _screenUpdatesDisabled;
     RCWaveformScrollView *_scrollView;
     BOOL _scrubbing;
     BOOL _scrubbingEnabled;
@@ -73,7 +72,6 @@
 @property (nonatomic, retain) RCLayoutMetrics *layoutMetrics;
 @property (nonatomic) double maximumSelectionDuration;
 @property (nonatomic) BOOL playing;
-@property (nonatomic) BOOL screenUpdatesDisabled;
 @property (nonatomic) BOOL scrubbingEnabled;
 @property (nonatomic) struct { double x1; double x2; } selectedTimeRange;
 @property (getter=isSelectedTimeRangeEditingEnabled, nonatomic) BOOL selectedTimeRangeEditingEnabled;
@@ -130,9 +128,9 @@
 - (double)maximumSelectionDuration;
 - (void)pauseAutoscrolling;
 - (BOOL)playing;
+- (void)rc_screenUpdatesDisabledDidChange;
 - (void)reloadOverlayOffsets;
 - (void)resumeAutoscrollingIfPaused;
-- (BOOL)screenUpdatesDisabled;
 - (void)scrollView:(id)arg1 didChangeContentOffsetToOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (void)scrollView:(id)arg1 willChangeContentOffsetToOffset:(struct CGPoint { float x1; float x2; })arg2;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
@@ -155,7 +153,6 @@
 - (void)setLayoutMetrics:(id)arg1;
 - (void)setMaximumSelectionDuration:(double)arg1;
 - (void)setPlaying:(BOOL)arg1;
-- (void)setScreenUpdatesDisabled:(BOOL)arg1;
 - (void)setScrubbingEnabled:(BOOL)arg1;
 - (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2;

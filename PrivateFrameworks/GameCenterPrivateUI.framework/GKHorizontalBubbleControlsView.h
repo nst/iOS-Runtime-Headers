@@ -12,6 +12,8 @@
 @property (nonatomic, retain) NSArray *bubbles;
 @property (nonatomic) float overlap;
 
+- (void)_commonInit;
+- (void)awakeFromNib;
 - (id)bubbleTokens;
 - (id)bubbles;
 - (void)dealloc;

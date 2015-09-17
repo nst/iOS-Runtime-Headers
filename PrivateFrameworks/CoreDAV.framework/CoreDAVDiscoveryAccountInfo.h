@@ -47,6 +47,7 @@
 - (id)accountID;
 - (id)additionalHeaderValues;
 - (id)backingAccountInfoProvider;
+- (id)clientCertificateInfoProvider;
 - (id)clientToken;
 - (void)clientTokenRequestedByServer;
 - (struct __CFURLStorageSession { }*)copyStorageSession;

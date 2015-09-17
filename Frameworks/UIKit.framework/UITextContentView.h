@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITextContentView : UIView <UITextInput, UITextInputTraits, UITextLinkInteraction> {
+@interface UITextContentView : UIView <UITextInput, UITextInputTraits, UITextLinkInteraction, WebPolicyDelegate> {
     BOOL m_allowsEditingTextAttributes;
     BOOL m_becomesEditableWithGestures;
     BOOL m_becomingFirstResponder;
@@ -64,6 +64,7 @@
 @property (nonatomic, readonly) UIView *textInputView;
 @property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
 
+- (void).cxx_destruct;
 - (void)_addShortcut:(id)arg1;
 - (unsigned int)_allowedLinkTypes;
 - (id)_automationValue;
@@ -72,15 +73,18 @@
 - (void)_hideSelectionCommands;
 - (void)_insertAttributedTextWithoutClosingTyping:(id)arg1;
 - (id)_keyboardResponder;
+- (void)_lookup:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_promptForReplace:(id)arg1;
 - (id)_proxyTextInput;
 - (void)_removeAttribute:(id)arg1 fromString:(id)arg2 andSetPropertyWith:(SEL)arg3 usingValueClass:(Class)arg4;
 - (void)_removeTextViewPropertiesFromText:(id)arg1;
+- (BOOL)_restoreFirstResponder;
 - (void)_scrollViewDidEndDecelerating;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewWillBeginDragging;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_selectionClipRect;
+- (void)_share:(id)arg1;
 - (void)_showTextStyleOptions:(id)arg1;
 - (void)_sizeChanged;
 - (void)_transliterateChinese:(id)arg1;

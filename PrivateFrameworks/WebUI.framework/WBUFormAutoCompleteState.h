@@ -5,14 +5,17 @@
 @interface WBUFormAutoCompleteState : NSObject <UIActionSheetDelegate, WBUCreditCardCaptureViewControllerDelegate> {
     int _action;
     BOOL _canAutoComplete;
+    NSArray *_credentialMatches;
     id /* block */ _creditCardCaptureCompletionHandler;
     WBUFormDataController *_dataController;
+    NSDictionary *_formAnnotations;
     NSDictionary *_formMetadata;
     unsigned int _formType;
     NSDictionary *_formValues;
     BOOL _gatheringFormValues;
     NSMutableDictionary *_matchesByCompletion;
-    NSArray *_potentialCredentialMatches;
+    WBSMultiRoundAutoFillManager *_multiRoundAutoFillManager;
+    NSArray *_relatedCredentialMatches;
     NSDictionary *_textFieldMetadata;
 }
 
@@ -29,30 +32,43 @@
 
 - (void).cxx_destruct;
 - (int)_action;
+- (int)_actionForLoginForm;
 - (void)_autoFillCreditCardData;
 - (void)_autoFillFormWithCreditCardData:(id)arg1;
-- (void)_autoFillValues:(id)arg1;
+- (void)_autoFillValues:(id)arg1 setAutoFilled:(BOOL)arg2;
 - (BOOL)_canAutoFillCreditCardData;
 - (void)_captureCreditCardDataWithCameraAndFill;
 - (void)_ensureFormMetadata;
 - (void)_gatherFormValuesWithCompletionHandler:(id /* block */)arg1;
-- (void)_generateAndSuggestPassword;
+- (void)_generateAndSuggestPasswordWithCompletionHandler:(id /* block */)arg1;
+- (void)_getLoginFormUser:(id*)arg1 password:(id*)arg2 userIsAutoFilled:(BOOL*)arg3 passwordIsAutoFilled:(BOOL*)arg4;
+- (void)_getShouldOfferForgetPassword:(BOOL*)arg1 savePassword:(BOOL*)arg2;
+- (BOOL)_hasMatchWithUser:(id)arg1 password:(id)arg2;
 - (id)_matchesForPartialString:(id)arg1;
 - (void)_offerToAutoFillFromPotentialCredentialMatches;
+- (void)_offerToForgetSavedPassword:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)_passwordGenerationAssistanceAction;
 - (BOOL)_passwordGenerationAssistanceAutoFillButtonEnabled;
+- (void)_performAutoFill;
+- (void)_setUpMultiRoundAutoFillManagerIfNecessary;
+- (void)_setUserAndPasswordFieldsAutoFilled:(BOOL)arg1 clearPasswordField:(BOOL)arg2;
+- (BOOL)_shouldAllowGeneratedPassword;
 - (BOOL)_shouldUsePasswordGenerationAssistanceForTextField;
+- (void)_suggestPasswordForNewAccountOrChangePasswordForm;
+- (BOOL)_textFieldIsEmptyPasswordField;
 - (BOOL)_textFieldLooksLikeCreditCardFormField;
 - (void)_updateAutoFillButton;
 - (void)acceptedAutoFillWord:(id)arg1;
+- (void)annotateForm:(id)arg1 withValues:(id)arg2;
 - (void)autoFill;
 - (void)autoFillGeneratedPassword:(id)arg1 inForm:(double)arg2;
-- (void)autoFillValues:(id)arg1 andFocusField:(id)arg2;
+- (void)autoFillValues:(id)arg1 setAutoFilled:(BOOL)arg2 andFocusField:(id)arg3;
 - (void)creditCardCaptureViewController:(id)arg1 didCaptureCreditCard:(id)arg2;
 - (void)creditCardCaptureViewControllerDidCancel:(id)arg1;
 - (id)dataController;
 - (void)dealloc;
 - (void)fetchFormMetadataWithCompletion:(id /* block */)arg1;
+- (void)fillGeneratedPassword:(id)arg1 inField:(id)arg2;
 - (id)frame;
 - (void)getTextFieldMetadata:(id*)arg1 formMetadata:(id*)arg2;
 - (BOOL)hasCurrentSuggestions;
@@ -60,7 +76,9 @@
 - (void)invalidate;
 - (void)setAutoFillButtonTitle:(id)arg1;
 - (void)setDataController:(id)arg1;
+- (void)setFormControls:(id)arg1 areAutoFilled:(BOOL)arg2 clearField:(id)arg3;
 - (id)suggestionsForString:(id)arg1;
+- (void)textDidChangeInForm:(id)arg1 textField:(id)arg2;
 - (id)textFieldValue;
 - (id)titleOfAutoFillButton;
 - (id)webView;

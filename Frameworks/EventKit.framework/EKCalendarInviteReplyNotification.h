@@ -4,17 +4,26 @@
 
 @interface EKCalendarInviteReplyNotification : EKCalendarNotification {
     unsigned int _allowedEntityTypes;
-    int _status;
+    unsigned int _status;
 }
 
 @property (nonatomic) unsigned int allowedEntityTypes;
-@property (nonatomic) int status;
+@property (nonatomic) unsigned int status;
+
+// Image: /System/Library/Frameworks/EventKit.framework/EventKit
 
 - (unsigned int)allowedEntityTypes;
 - (id)initWithType:(int)arg1;
 - (id)inviteReplyNotificationFromEventStore:(id)arg1;
 - (void)setAllowedEntityTypes:(unsigned int)arg1;
-- (void)setStatus:(int)arg1;
-- (int)status;
+- (void)setStatus:(unsigned int)arg1;
+- (unsigned int)status;
+
+// Image: /System/Library/PrivateFrameworks/CalendarUIKit.framework/CalendarUIKit
+
+- (id)messageStringForDescriptionWithOptions:(unsigned int)arg1;
+- (id)messageStringsForDescriptionWithOptions:(unsigned int)arg1;
+- (BOOL)supportsDisplay;
+- (id)titleStringWithOptions:(unsigned int)arg1;
 
 @end

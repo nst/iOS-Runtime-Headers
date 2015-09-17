@@ -43,7 +43,6 @@
     } mTop;
 }
 
-- (id).cxx_construct;
 - (struct OADAdjustCoord { BOOL x1; int x2; })bottom;
 - (BOOL)clockwise;
 - (BOOL)connectedToPrevious;

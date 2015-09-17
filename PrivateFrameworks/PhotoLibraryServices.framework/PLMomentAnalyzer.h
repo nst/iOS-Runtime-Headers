@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
  */
 
-@interface PLMomentAnalyzer : NSObject {
+@interface PLMomentAnalyzer : NSObject <PLGeoLocationShifterDelegate> {
     NSMutableArray *_activeGEORequests;
     BOOL _addCountyIfNeeded;
     double _analysisStartTime;
@@ -30,6 +30,7 @@
     double _lastRevGeoRequestTime;
     double _lastRevGeoURLFetchAttemptTime;
     double _lastServerVersionInfoFetchAttemptTime;
+    PLGeoLocationShifter *_locationShifter;
     PLMomentAnalyzerQueue *_megaMomentProcessingQueue;
     unsigned int _mode;
     BOOL _momentAnalysisPaused;
@@ -58,7 +59,11 @@
 
 @property (nonatomic, readonly, retain) CLLocation *_homeLocation;
 @property (nonatomic, readonly, retain) <PLMomentGenerationDataManagement> *_momentDataManager;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic) <PLMomentGenerationDataManagement> *momentGenerationDataManager;
+@property (readonly) Class superclass;
 @property BOOL throttlesCollectionListAnalysis;
 
 - (void)_addOrUpdateNameInfo:(id)arg1 inPlaceInfoMap:(id)arg2;
@@ -106,8 +111,8 @@
 - (id)_resetAndSortedNameInfoArray:(id)arg1 homeAtEnd:(BOOL)arg2;
 - (void)_resetErrorState;
 - (void)_reverseGeocodeMoment:(id)arg1 shouldFilterIfInProgress:(BOOL)arg2 invalidOnly:(BOOL)arg3;
-- (void)_runBlockOnWorkQueue:(id /* block */)arg1;
-- (void)_runOnWorkQueueAferSeconds:(double)arg1 block:(id /* block */)arg2;
+- (void)_runOnWorkQueueWithTransaction:(id)arg1 aferDelay:(double)arg2 block:(id /* block */)arg3;
+- (void)_runOnWorkQueueWithTransaction:(id)arg1 block:(id /* block */)arg2;
 - (void)_saveDataIfNeededAfterTimeDiff:(double)arg1;
 - (void)_saveDataIfReachedObjectChangeThreshold;
 - (void)_saveGlobalMetadata;
@@ -124,6 +129,8 @@
 - (void)_stopObservingReachabilityChanges;
 - (id)_suffixForGeoPlace:(id)arg1 afterOrderType:(unsigned int)arg2 homePlace:(id)arg3;
 - (id)_suffixForNameInfoArray:(id)arg1 afterOrderType:(unsigned int)arg2;
+- (id)_transactionWithName:(const char *)arg1;
+- (id)_transactionWithName:(const char *)arg1 inDataManager:(id)arg2;
 - (void)_updateAllInfoInCompoundNameInfo:(id)arg1 andCompoundSecondaryNameInfo:(id)arg2 withRevGeoPlaces:(id)arg3 includeHome:(BOOL)arg4 primaryGeoOrderingSet:(id)arg5 secondaryGeoOrderingSet:(id)arg6;
 - (void)_updateCurrentProviderId;
 - (void)_updateCurrentProviderIdWithCountryCode:(id)arg1;
@@ -145,6 +152,13 @@
 - (void)addressBookChanged;
 - (void)dealloc;
 - (id)init;
+- (void)invalidateLocationShift;
+- (id)locationShiftStatus;
+- (void)locationShifter:(id)arg1 didShiftWithResult:(id)arg2;
+- (id)locationShifter:(id)arg1 locationCoordinatesForAssetIDs:(id)arg2;
+- (void)locationShifter:(id)arg1 requestsInvocation:(id)arg2;
+- (void)locationShifterDidFinish:(id)arg1;
+- (id)momentAnalysisStatus;
 - (id)momentGenerationDataManager;
 - (void)pauseMomentAnalysis;
 - (void)resumeMomentAnalysis;
@@ -160,5 +174,6 @@
 - (BOOL)updateInfoForMomentWithMomentId:(id)arg1 fromOnDemandRequest:(BOOL)arg2;
 - (BOOL)updateInfoForMoments:(id)arg1 invalidOnly:(BOOL)arg2;
 - (BOOL)updateInfoForYearMomentLists:(id)arg1;
+- (void)updateShiftForAssets:(id)arg1;
 
 @end

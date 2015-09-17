@@ -2,14 +2,16 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoEditViewController : UIViewController <GLKViewDelegate, PUEditPluginSessionDelegate, PUImageEditPluginSessionDataSource, PUPhotoEditLayoutSource, PUPhotoEditToolControllerDelegate, PUPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate> {
+@interface PUPhotoEditViewController : PUEditViewController <GLKViewDelegate, PLDismissableViewController, PUEditPluginSessionDelegate, PUImageEditPluginSessionDataSource, PUOneUpAssetTransitionViewController, PUPhotoEditIrisModelChangeObserver, PUPhotoEditLayoutSource, PUPhotoEditToolControllerDelegate, PUPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate> {
     PLPhotoEditAggregateSession *__aggregateSession;
     NSArray *__allTools;
+    unsigned int __assetChangeDismissalState;
     CIImage *__baseWorkCIImage;
     UIImage *__baseWorkUIImage;
     BOOL __canAnimateNextAutoEnhance;
     UIAlertController *__cancelConfirmationAlert;
     PUResourceDownloadRequest *__currentResourceLoadRequest;
+    UIAlertController *__irisRevertConfirmationAlert;
     struct CGSize { 
         float width; 
         float height; 
@@ -19,6 +21,7 @@
     CIImage *__originalWorkCIImage;
     UIImage *__originalWorkUIImage;
     BOOL __penultimateAvailable;
+    PUPhotoEditIrisModel *__photoEditIrisModel;
     PLPhotoEditMutableModel *__photoEditModel;
     int __previewRenderType;
     PLPhotoEditRenderer *__previewingOriginalRenderer;
@@ -26,13 +29,12 @@
     int __resourcesAvailability;
     UIAlertController *__revertConfirmationAlert;
     BOOL __revertingToOriginal;
+    unsigned int __saveCompetionDismissalState;
     BOOL __shouldBePreviewingOriginal;
     PLPhotoEditModel *__uneditedPhotoEditModel;
     PUPhotoEditValuesCalculator *__valuesCalculator;
-    BOOL __waitingForAssetChange;
     BOOL __waitingForBaseImageRequest;
     BOOL __waitingForOriginalImageRequest;
-    BOOL __waitingForSaveCompletion;
     int __workImageVersion;
     PUAdjustmentsToolController *_adjustmentsController;
     PUPhotoEditToolbar *_alternateToolbar;
@@ -48,6 +50,8 @@
     BOOL _didLoadTools;
     PUFiltersToolController *_filtersController;
     BOOL _hasRequestedAdjustmentsData;
+    BOOL _hasStartedLoadingRemoteResources;
+    UIButton *_irisButton;
     struct CGSize { 
         float width; 
         float height; 
@@ -66,7 +70,6 @@
     PHAsset *_photo;
     PUPhotoEditViewControllerSpec *_photoEditSpec;
     BOOL _photoTakenWithoutFlash;
-    UIImage *_placeholderImage;
     UIImageView *_placeholderImageView;
     NSArray *_placeholderImageViewConstraints;
     UIButton *_pluginButton;
@@ -101,17 +104,20 @@
 }
 
 @property (setter=_setAggregateSession:, nonatomic, retain) PLPhotoEditAggregateSession *_aggregateSession;
+@property (setter=_setAssetChangeDismissalState:, nonatomic) unsigned int _assetChangeDismissalState;
 @property (setter=_setBaseWorkCIImage:, nonatomic, retain) CIImage *_baseWorkCIImage;
 @property (setter=_setBaseWorkUIImage:, nonatomic, retain) UIImage *_baseWorkUIImage;
 @property (setter=_setCanAnimateNextAutoEnhance:, nonatomic) BOOL _canAnimateNextAutoEnhance;
 @property (setter=_setCancelConfirmationAlert:, nonatomic) UIAlertController *_cancelConfirmationAlert;
 @property (setter=_setCurrentResourceLoadRequest:, nonatomic, retain) PUResourceDownloadRequest *_currentResourceLoadRequest;
+@property (setter=_setIrisRevertConfirmationAlert:, nonatomic) UIAlertController *_irisRevertConfirmationAlert;
 @property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { float x1; float x2; } _layoutReferenceSize;
 @property (setter=_setMainRenderer:, nonatomic, retain) PLPhotoEditRenderer *_mainRenderer;
 @property (setter=_setNextRenderCompletionBlock:, nonatomic, copy) id /* block */ _nextRenderCompletionBlock;
 @property (setter=_setOriginalWorkCIImage:, nonatomic, retain) CIImage *_originalWorkCIImage;
 @property (setter=_setOriginalWorkUIImage:, nonatomic, retain) UIImage *_originalWorkUIImage;
 @property (getter=_isPenultimateAvailable, setter=_setPenultimateAvailable:, nonatomic) BOOL _penultimateAvailable;
+@property (setter=_setPhotoEditIrisModel:, nonatomic, retain) PUPhotoEditIrisModel *_photoEditIrisModel;
 @property (setter=_setPhotoEditModel:, nonatomic, retain) PLPhotoEditMutableModel *_photoEditModel;
 @property (setter=_setPreviewRenderType:, nonatomic) int _previewRenderType;
 @property (setter=_setPreviewingOriginalRenderer:, nonatomic, retain) PLPhotoEditRenderer *_previewingOriginalRenderer;
@@ -119,13 +125,12 @@
 @property (setter=_setResourcesAvailability:, nonatomic) int _resourcesAvailability;
 @property (setter=_setRevertConfirmationAlert:, nonatomic) UIAlertController *_revertConfirmationAlert;
 @property (getter=_isRevertingToOriginal, setter=_setRevertingToOriginal:, nonatomic) BOOL _revertingToOriginal;
+@property (setter=_setSaveCompletionDismissalState:, nonatomic) unsigned int _saveCompetionDismissalState;
 @property (setter=_setShouldBePreviewingOriginal:, nonatomic) BOOL _shouldBePreviewingOriginal;
 @property (setter=_setUneditedPhotoEditModel:, nonatomic, copy) PLPhotoEditModel *_uneditedPhotoEditModel;
 @property (setter=_setValuesCalculator:, nonatomic, retain) PUPhotoEditValuesCalculator *_valuesCalculator;
-@property (getter=_isWaitingForAssetChange, setter=_setWaitingForAssetChange:, nonatomic) BOOL _waitingForAssetChange;
 @property (setter=_setWaitingForBaseImageRequest:, nonatomic) BOOL _waitingForBaseImageRequest;
 @property (setter=_setWaitingForOriginalImageRequest:, nonatomic) BOOL _waitingForOriginalImageRequest;
-@property (getter=_isWaitingForSaveCompletion, setter=_setWaitingForSaveCompletion:, nonatomic) BOOL _waitingForSaveCompletion;
 @property (setter=_setWorkImageVersion:, nonatomic) int _workImageVersion;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUPhotoEditViewControllerDelegate> *delegate;
@@ -134,7 +139,6 @@
 @property (nonatomic) int layoutOrientation;
 @property (nonatomic, readonly) PHAsset *photo;
 @property (nonatomic, readonly) PUPhotoEditViewControllerSpec *photoEditSpec;
-@property (nonatomic, retain) UIImage *placeholderImage;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } previewViewFrame;
 @property (getter=isPreviewViewHidden, nonatomic) BOOL previewViewHidden;
 @property (readonly) Class superclass;
@@ -144,6 +148,7 @@
 - (void).cxx_destruct;
 - (id)_aggregateSession;
 - (id)_allTools;
+- (unsigned int)_assetChangeDismissalState;
 - (id)_baseWorkCIImage;
 - (id)_baseWorkUIImage;
 - (BOOL)_canAnimateNextAutoEnhance;
@@ -156,12 +161,15 @@
 - (void)_handleAutoEnhanceButton:(id)arg1;
 - (void)_handleCancelButton:(id)arg1;
 - (void)_handleDoneButton:(id)arg1;
+- (void)_handleIrisButton:(id)arg1;
 - (void)_handleMainActionButton:(id)arg1;
 - (void)_handlePluginButton:(id)arg1;
-- (void)_handleRedeyeButton:(id)arg1;
 - (void)_handleRevertButton:(id)arg1;
 - (void)_handleTogglePreviewPressGesture:(id)arg1;
 - (void)_handleToolbarToolButton:(id)arg1;
+- (BOOL)_hasUnsavedChanges;
+- (id)_irisRevertConfirmationAlert;
+- (BOOL)_isDownloadingResources;
 - (BOOL)_isPenultimateAvailable;
 - (BOOL)_isPreviewingOriginal;
 - (BOOL)_isReadyToRender;
@@ -181,9 +189,13 @@
 - (id)_orientedCIImageFromUIImage:(id)arg1;
 - (id)_originalWorkCIImage;
 - (id)_originalWorkUIImage;
+- (void)_performDiscardAction;
+- (void)_performRevertAction;
+- (id)_photoEditIrisModel;
 - (id)_photoEditModel;
 - (void)_photoEditModelDidChange:(id)arg1;
 - (void)_presentErrorAndDismissEditorWithTitle:(id)arg1 message:(id)arg2;
+- (void)_presentWarningForIrisRemovesEditsWithCompletion:(id /* block */)arg1;
 - (int)_previewRenderType;
 - (id)_previewingOriginalRenderer;
 - (id)_redEyeController;
@@ -193,13 +205,16 @@
 - (void)_restoreSnapshot:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)_revertConfirmationAlert;
 - (void)_revertToOriginalWithCompletionHandler:(id /* block */)arg1;
+- (unsigned int)_saveCompetionDismissalState;
 - (struct CGSize { float x1; float x2; })_scaleSize:(struct CGSize { float x1; float x2; })arg1 toFitSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_setAggregateSession:(id)arg1;
+- (void)_setAssetChangeDismissalState:(unsigned int)arg1;
 - (void)_setBaseWorkCIImage:(id)arg1;
 - (void)_setBaseWorkUIImage:(id)arg1;
 - (void)_setCanAnimateNextAutoEnhance:(BOOL)arg1;
 - (void)_setCancelConfirmationAlert:(id)arg1;
 - (void)_setCurrentResourceLoadRequest:(id)arg1;
+- (void)_setIrisRevertConfirmationAlert:(id)arg1;
 - (void)_setLayoutOrientation:(int)arg1;
 - (void)_setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_setLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
@@ -208,6 +223,7 @@
 - (void)_setOriginalWorkCIImage:(id)arg1;
 - (void)_setOriginalWorkUIImage:(id)arg1;
 - (void)_setPenultimateAvailable:(BOOL)arg1;
+- (void)_setPhotoEditIrisModel:(id)arg1;
 - (void)_setPhotoEditModel:(id)arg1;
 - (void)_setPreviewRenderType:(int)arg1;
 - (void)_setPreviewingOriginalRenderer:(id)arg1;
@@ -215,13 +231,12 @@
 - (void)_setResourcesAvailability:(int)arg1;
 - (void)_setRevertConfirmationAlert:(id)arg1;
 - (void)_setRevertingToOriginal:(BOOL)arg1;
+- (void)_setSaveCompletionDismissalState:(unsigned int)arg1;
 - (void)_setShouldBePreviewingOriginal:(BOOL)arg1;
 - (void)_setUneditedPhotoEditModel:(id)arg1;
 - (void)_setValuesCalculator:(id)arg1;
-- (void)_setWaitingForAssetChange:(BOOL)arg1;
 - (void)_setWaitingForBaseImageRequest:(BOOL)arg1;
 - (void)_setWaitingForOriginalImageRequest:(BOOL)arg1;
-- (void)_setWaitingForSaveCompletion:(BOOL)arg1;
 - (void)_setWorkImageVersion:(int)arg1;
 - (void)_setupToolsIfNeeded;
 - (BOOL)_shouldBePreviewingOriginal;
@@ -229,13 +244,14 @@
 - (void)_showCancelAndRevertOptionsAllowResetTool:(BOOL)arg1;
 - (void)_startWaitingForAssetChange;
 - (void)_startWaitingForSaveCompletion;
-- (void)_stopWaitingForAssetChange;
+- (void)_stopWaitingForAssetChangeWithSuccess:(BOOL)arg1;
 - (void)_stopWaitingForSaveCompletionWithSuccess:(BOOL)arg1;
 - (void)_switchToEditingTool:(id)arg1 animated:(BOOL)arg2;
 - (id)_uneditedPhotoEditModel;
 - (void)_updateAlternateToolbarAnimated:(BOOL)arg1;
 - (void)_updateAutoEnhanceButtonAnimated:(BOOL)arg1;
 - (void)_updateBackgroundColor;
+- (void)_updateIrisButtonAnimated:(BOOL)arg1;
 - (void)_updateLastKnownImageSize;
 - (void)_updateLayoutOrientationWithViewSize:(struct CGSize { float x1; float x2; })arg1 transitionCoordinator:(id)arg2;
 - (void)_updateMainActionButtonAnimated:(BOOL)arg1;
@@ -243,6 +259,7 @@
 - (void)_updateModelDependentControlsAnimated:(BOOL)arg1;
 - (void)_updatePenultimateAvailableWithCompletionHandler:(id /* block */)arg1;
 - (void)_updatePhoto;
+- (void)_updatePhotoEditIrisModel;
 - (void)_updatePlaceholderImage;
 - (void)_updatePluginButtonAnimated:(BOOL)arg1;
 - (void)_updatePluginWorkImageVersion;
@@ -267,14 +284,15 @@
 - (int)_workImageVersion;
 - (void)dealloc;
 - (id)delegate;
+- (void)didFinishWithSavedChanges:(BOOL)arg1;
 - (void)didReceiveMemoryWarning;
 - (void)editPluginSession:(id)arg1 commitContentEditingOutput:(id)arg2 withCompletionHandler:(id /* block */)arg3;
+- (void)editPluginSession:(id)arg1 didEndWithCompletionType:(unsigned int)arg2;
 - (void)editPluginSession:(id)arg1 loadAdjustmentDataWithHandler:(id /* block */)arg2;
 - (void)editPluginSession:(id)arg1 loadDisplaySizeImageWithHandler:(id /* block */)arg2;
 - (void)editPluginSession:(id)arg1 loadFullSizeImageWithHandler:(id /* block */)arg2;
 - (void)editPluginSession:(id)arg1 loadPlaceholderImageWithHandler:(id /* block */)arg2;
 - (void)editPluginSessionAvailabilityDidChange:(id)arg1;
-- (void)editPluginSessionDidEnd:(id)arg1;
 - (void)editPluginSessionWillBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
@@ -282,12 +300,16 @@
 - (id)initWithPhoto:(id)arg1;
 - (BOOL)isPreviewViewHidden;
 - (int)layoutOrientation;
+- (void)oneUpAssetTransition:(id)arg1 animateTransitionWithContext:(id)arg2 duration:(double)arg3 completion:(id /* block */)arg4;
+- (void)oneUpAssetTransition:(id)arg1 requestTransitionContextWithCompletion:(id /* block */)arg2;
+- (void)oneUpAssetTransitionDidEnd:(id)arg1;
+- (void)oneUpAssetTransitionWillBegin:(id)arg1;
 - (id)photo;
 - (id)photoEditSpec;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
-- (id)placeholderImage;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
 - (BOOL)prefersStatusBarHidden;
+- (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (void)prepareForPhotoLibraryChange:(id)arg1;
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })previewViewFrame;
@@ -323,6 +345,7 @@
 - (void)viewDidLoad;
 - (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (id)viewForZoomingInScrollView:(id)arg1;
+- (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;

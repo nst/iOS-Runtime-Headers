@@ -19,9 +19,9 @@
 + (id)reloadOperationWithSpecifier:(id)arg1 atIndex:(unsigned int)arg2;
 + (id)removeOperationWithSpecifier:(id)arg1 atIndex:(unsigned int)arg2;
 
+- (void).cxx_destruct;
 - (BOOL)applyToArray:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)index;
 - (id)initWithOperation:(int)arg1 specifier:(id)arg2 fromIndex:(id)arg3 toIndex:(id)arg4;

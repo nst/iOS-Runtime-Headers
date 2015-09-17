@@ -21,7 +21,6 @@
     unsigned int _transactionID;
     FBSSceneTransitionContext *_transitionContext;
     BOOL _waitsForSceneCommit;
-    BOOL _willCommitUpdateFinished;
 }
 
 @property (nonatomic, retain) id context;
@@ -65,7 +64,7 @@
 - (void)removeObserver:(id)arg1;
 - (id)scene;
 - (id)sceneIdentifier;
-- (void)sceneManager:(id)arg1 didCommitUpdateForScene:(id)arg2 transactionID:(unsigned int)arg3;
+- (void)sceneManager:(id)arg1 didCommitUpdateForScene:(id)arg2 transactionID:(unsigned int)arg3 success:(BOOL)arg4;
 - (void)sceneManager:(id)arg1 didCreateScene:(id)arg2 withClient:(id)arg3;
 - (void)sceneManager:(id)arg1 didDestroyScene:(id)arg2;
 - (void)sceneManager:(id)arg1 willCommitUpdateForScene:(id)arg2 transactionID:(unsigned int)arg3;

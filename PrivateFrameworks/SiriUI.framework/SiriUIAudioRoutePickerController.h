@@ -2,39 +2,28 @@
    Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
  */
 
-@interface SiriUIAudioRoutePickerController : NSObject <UIActionSheetDelegate> {
+@interface SiriUIAudioRoutePickerController : NSObject {
     NSString *_audioCategory;
     BOOL _bluetoothIsPicked;
     <SiriUIAudioRoutePickerControllerDelegate> *_delegate;
     BOOL _hasRoutesToPick;
-    BOOL _overrideIsPicked;
-    UIActionSheet *_pickerActionSheet;
     SiriRoutePickerAlertController *_pickerAlertController;
-    BOOL _useActionSheet;
     UIWindow *_window;
 }
 
-@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SiriUIAudioRoutePickerControllerDelegate> *delegate;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) UIActionSheet *pickerActionSheet;
 @property (nonatomic, retain) SiriRoutePickerAlertController *pickerAlertController;
-@property (readonly) Class superclass;
 
-+ (id)_nameForRouteInfo:(id)arg1 overridePicked:(BOOL)arg2 isSelected:(BOOL*)arg3 isBluetooth:(BOOL*)arg4 isOverride:(BOOL*)arg5 audioRouteName:(id*)arg6;
++ (id)_nameForRouteInfo:(id)arg1 isSelected:(BOOL*)arg2 isBluetooth:(BOOL*)arg3 isOverride:(BOOL*)arg4 audioRouteName:(id*)arg5;
 
 - (void).cxx_destruct;
 - (void)_dismissAlertController:(BOOL)arg1;
 - (void)_fetchPickableRoutesForCategory:(id)arg1 withCompletion:(id /* block */)arg2;
-- (BOOL)_overrideIsPicked;
 - (void)_pickableRoutesChanged:(id)arg1;
 - (void)_removeWindow;
 - (void)_routeChanged:(id)arg1;
 - (void)_selectRouteWithInfo:(id)arg1;
-- (void)_showActionSheetFromView:(id)arg1 animated:(BOOL)arg2;
 - (void)_showAlertControllerFromViewController:(id)arg1 animated:(BOOL)arg2;
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (BOOL)bluetoothIsPicked;
 - (void)cancelPickerAnimated:(BOOL)arg1;
 - (void)dealloc;
@@ -42,11 +31,9 @@
 - (BOOL)hasRoutesToPick;
 - (id)initWithCategory:(id)arg1 delegate:(id)arg2;
 - (BOOL)isShowingPicker;
-- (id)pickerActionSheet;
 - (id)pickerAlertController;
 - (void)refreshRoutes;
 - (void)setDelegate:(id)arg1;
-- (void)setPickerActionSheet:(id)arg1;
 - (void)setPickerAlertController:(id)arg1;
 - (void)showPickerFromViewController:(id)arg1 animated:(BOOL)arg2;
 

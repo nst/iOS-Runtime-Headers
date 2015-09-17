@@ -12,6 +12,7 @@
 
 - (unsigned int)colorIndex;
 - (void)dealloc;
+- (id)description;
 - (unsigned int)id;
 - (id)init;
 - (id)initials;

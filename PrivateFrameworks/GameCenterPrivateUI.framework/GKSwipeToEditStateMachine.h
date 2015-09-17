@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GameCenterPrivateUI.framework/GameCenterPrivateUI
  */
 
-@interface GKSwipeToEditStateMachine : GKStateMachine <GKSegmentedSectionDataSourceEventHandler, UIGestureRecognizerDelegate> {
+@interface GKSwipeToEditStateMachine : _GKStateMachine <GKSegmentedSectionDataSourceEventHandler, UIGestureRecognizerDelegate> {
     UICollectionView *_collectionView;
     int _debounce;
     GKCancelSwipeToEditGestureRecognizer *_editModeCancelRecognizer;

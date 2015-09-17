@@ -34,6 +34,7 @@
 - (id)dataAreaDxf;
 - (unsigned int)dataAreaDxfIndex;
 - (void)dealloc;
+- (id)description;
 - (id)displayName;
 - (id)headerRowBorderDxf;
 - (unsigned int)headerRowBorderDxfIndex;

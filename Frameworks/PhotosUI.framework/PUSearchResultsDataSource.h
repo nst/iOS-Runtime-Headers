@@ -28,7 +28,6 @@
 
 - (void).cxx_destruct;
 - (id)_fetchAlbumsWithUUIDs:(id)arg1;
-- (id)_fetchAssetsWithUUIDs:(id)arg1;
 - (void)_inqBackgroundProcessSearchResults:(id)arg1 withTag:(unsigned int)arg2 searchString:(id)arg3;
 - (void)_inqCancel;
 - (BOOL)_shouldCancel:(unsigned int)arg1;
@@ -44,6 +43,8 @@
 - (void)setDelegate:(id)arg1;
 - (void)setSearchIndex:(id)arg1;
 - (void)setSearchString:(id)arg1;
+- (void)setSearchString:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)setSearchString:(id)arg1 withWildcardSearch:(BOOL)arg2 andEarlyNotifyOfResults:(id /* block */)arg3 andCompletion:(id /* block */)arg4;
 - (id)valueAtIndex:(unsigned int)arg1;
 
 @end

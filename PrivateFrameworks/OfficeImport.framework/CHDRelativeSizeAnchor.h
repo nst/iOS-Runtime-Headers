@@ -13,7 +13,6 @@
     } mTo;
 }
 
-- (id).cxx_construct;
 - (struct CGPoint { float x1; float x2; })from;
 - (void)setFrom:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setTo:(struct CGPoint { float x1; float x2; })arg1;

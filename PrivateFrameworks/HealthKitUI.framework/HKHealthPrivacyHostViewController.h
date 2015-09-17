@@ -18,7 +18,7 @@
 - (id)delegate;
 - (void)didFinishWithError:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setSessionIdentifier:(id)arg1 updateDescription:(id)arg2 shareDescription:(id)arg3;
+- (void)setRequestRecord:(id)arg1 updateDescription:(id)arg2 shareDescription:(id)arg3;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

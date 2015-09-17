@@ -3,11 +3,14 @@
  */
 
 @interface MPMediaPlaybackItemMetadata : NSObject {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     NSString *_albumArtistName;
     long long _albumStoreAdamID;
     NSString *_albumTitle;
+    BOOL _allowsCellularNetworking;
     BOOL _allowsInitiatingPlayWhileDownload;
     NSString *_artistName;
+    long long _artistStoreAdamID;
     NSString *_buyParameters;
     NSString *_composerName;
     NSString *_contentTitle;
@@ -37,8 +40,10 @@
 @property (nonatomic, readonly) long long albumStoreAdamID;
 @property (nonatomic, readonly, copy) NSString *albumTitle;
 @property (nonatomic, readonly) BOOL allowsAssetCaching;
+@property (nonatomic, readonly) BOOL allowsCellularNetworking;
 @property (nonatomic, readonly) BOOL allowsInitiatingPlayWhileDownload;
 @property (nonatomic, readonly, copy) NSString *artistName;
+@property (nonatomic, readonly) long long artistStoreAdamID;
 @property (nonatomic, readonly) NSString *buyParameters;
 @property (nonatomic, readonly, copy) NSString *composerName;
 @property (nonatomic, readonly, copy) NSString *contentTitle;
@@ -69,19 +74,26 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (BOOL)_shouldRespectMusicCellularDataSetting;
++ (BOOL)_shouldRespectStoreCellularDataSetting;
+
 - (void).cxx_destruct;
-- (void)_cloudControllerIsCellularDataRestrictedDidChangeNotification:(id)arg1;
+- (BOOL)_calculateAllowsCellularNetworking;
 - (void)_contentTasteControllerDidChangeNotification:(id)arg1;
+- (void)_musicCellularNetworkingAllowedDidChangeNotification:(id)arg1;
+- (void)_setNeedsAllowsCellularNetworkingUpdate;
+- (void)_storeCellularNetworkingAllowedDidChangeNotification:(id)arg1;
 - (id)albumArtistName;
 - (long long)albumStoreAdamID;
 - (id)albumTitle;
 - (BOOL)allowsAssetCaching;
+- (BOOL)allowsCellularNetworking;
 - (BOOL)allowsInitiatingPlayWhileDownload;
 - (id)artistName;
+- (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)buyParameters;
 - (id)cachedLocalPlaybackAssetFilePathReturningAssetQuality:(unsigned int*)arg1 protectionType:(unsigned int*)arg2 usesPurchaseBundle:(BOOL*)arg3;
-- (BOOL)canDownloadContentForNetworkType:(int)arg1;
 - (void)clearLocalPlaybackAssetFilePathWithCompletionHandler:(id /* block */)arg1;
 - (id)composerName;
 - (id)contentTitle;

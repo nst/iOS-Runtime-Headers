@@ -6,7 +6,8 @@
     int _cacheSize;
     NSString *_cachedClassName;
     struct sqlite3 { } *_dbConnection;
-    NSString *_dbLock;
+    NSObject<OS_dispatch_semaphore> *_dbSem;
+    int _entryCacheStorageSize;
     NSString *_filePath;
     NSMutableDictionary *_preparedDynamicStatements;
     NSMutableDictionary *_preparedStatements;
@@ -18,7 +19,8 @@
 @property int cacheSize;
 @property (retain) NSString *cachedClassName;
 @property struct sqlite3 { }*dbConnection;
-@property (nonatomic, retain) NSString *dbLock;
+@property (retain) NSObject<OS_dispatch_semaphore> *dbSem;
+@property int entryCacheStorageSize;
 @property (nonatomic, copy) NSString *filePath;
 @property (retain) NSMutableDictionary *preparedDynamicStatements;
 @property (retain) NSMutableDictionary *preparedStatements;
@@ -28,8 +30,11 @@
 @property (readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)masterTableForTable:(id)arg1 andType:(id)arg2;
++ (double)periodicIntegrityCheckInterval;
 + (void)removeDBAtFilePath:(id)arg1;
 + (id)sharedSQLiteConnection;
++ (id)tableHasTimestampColumn;
++ (id)tableHasTimestampColumnSem;
 + (id)versionForTable:(id)arg1;
 
 - (void).cxx_destruct;
@@ -39,6 +44,7 @@
 - (int)cacheSize;
 - (id)cachedClassName;
 - (void)checkPointDB;
+- (void)clearTableHasTimestampColumnCache;
 - (void)closeConnection;
 - (BOOL)copyDatabaseToPath:(id)arg1;
 - (BOOL)copyDatabaseToPath:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3;
@@ -48,7 +54,7 @@
 - (void)createIndexOnTable:(id)arg1 forColumn:(id)arg2;
 - (void)createTableName:(id)arg1 withColumns:(id)arg2;
 - (struct sqlite3 { }*)dbConnection;
-- (id)dbLock;
+- (id)dbSem;
 - (void)dealloc;
 - (void)deleteAllEntriesForKey:(id)arg1 withFilters:(id)arg2;
 - (void)deleteArrayEntriesForKey:(id)arg1 withRowID:(long long)arg2;
@@ -59,6 +65,8 @@
 - (void)dropTables:(id)arg1;
 - (void)endTransaction;
 - (id)entriesForKey:(id)arg1 withProperties:(id)arg2;
+- (id)entriesForKey:(id)arg1 withQuery:(id)arg2;
+- (int)entryCacheStorageSize;
 - (void)enumerateAllTablesWithBlock:(id /* block */)arg1;
 - (id)filePath;
 - (void)hashEntryKeyKeys:(id)arg1;
@@ -68,10 +76,6 @@
 - (BOOL)isTransactionInProgress;
 - (void)loadArrayValuesIntoEntry:(id)arg1;
 - (void)loadDynamicValuesIntoEntry:(id)arg1;
-- (void)loadLookupTableValuesIntoEntry:(id)arg1;
-- (void)lockDatabaseWithBlock:(id /* block */)arg1;
-- (id)lookupValueForEntryKey:(id)arg1 forKey:(id)arg2 forNumberValue:(long)arg3;
-- (id)mergeDataFromOtherDBFile:(id)arg1;
 - (BOOL)openCurrentFile;
 - (BOOL)openCurrentFileWithCacheSize:(int)arg1;
 - (BOOL)passesIntegrityCheck;
@@ -81,21 +85,21 @@
 - (id)preparedStatements;
 - (id)preparedUpdateStatements;
 - (void)printDBStatusString;
-- (void)releaseMemory;
 - (void)removeEmptyOldTables;
 - (void)removeIDIndexes;
 - (void)removeTableNameFromMergeDB:(id)arg1;
 - (int)rowCountForTable:(id)arg1;
 - (void)runTrimQuery:(id)arg1;
+- (void)scheduleIntegrityCheck;
 - (double)schemaVersionForTable:(id)arg1;
 - (void)setAllNullValuesForEntryKey:(id)arg1 forKey:(id)arg2 toValue:(id)arg3 withFilters:(id)arg4;
 - (void)setCacheSize:(int)arg1;
 - (void)setCachedClassName:(id)arg1;
 - (void)setDbConnection:(struct sqlite3 { }*)arg1;
-- (void)setDbLock:(id)arg1;
+- (void)setDbSem:(id)arg1;
+- (void)setEntryCacheStorageSize:(int)arg1;
 - (void)setFilePath:(id)arg1;
 - (void)setJournalMode:(short)arg1;
-- (void)setLookupValueForEntryKey:(id)arg1 forKey:(id)arg2 forNumberValue:(long)arg3 withStringValue:(id)arg4;
 - (void)setPreparedDynamicStatements:(id)arg1;
 - (void)setPreparedStatements:(id)arg1;
 - (void)setPreparedUpdateStatements:(id)arg1;
@@ -112,14 +116,12 @@
 - (id)transactionLock;
 - (void)trimAllTablesFromDate:(id)arg1 toDate:(id)arg2;
 - (void)trimAllTablesFromDate:(id)arg1 toDate:(id)arg2 withTableFilters:(id)arg3;
-- (void)trimTable:(id)arg1 fromDate:(id)arg2 toDate:(id)arg3 withFilter:(id)arg4;
+- (void)trimTable:(id)arg1 fromDate:(id)arg2 withFilter:(id)arg3 withTrimLimit:(long)arg4;
 - (void)updateEntry:(id)arg1;
 - (void)vacuum;
 - (id)workQueue;
-- (void)writeAggregateEntry:(id)arg1;
 - (void)writeArrayEntries:(id)arg1;
 - (void)writeDynamicEntries:(id)arg1;
-- (id)writeEntries:(id)arg1;
 - (long long)writeEntry:(id)arg1;
 
 @end

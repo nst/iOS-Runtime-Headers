@@ -25,6 +25,7 @@
 - (id)colors;
 - (id)contentFormats;
 - (void)dealloc;
+- (id)description;
 - (id)differentialStyles;
 - (id)fills;
 - (id)fonts;

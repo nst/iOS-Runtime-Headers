@@ -19,10 +19,10 @@
 + (id)countryInfoForCountryCode:(id)arg1 dialingPrefix:(id)arg2;
 + (id)countryInfoWithDictionary:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)countryCode;
 - (id)countryName;
-- (void)dealloc;
 - (id)description;
 - (id)dialingPrefix;
 - (BOOL)isEqual:(id)arg1;

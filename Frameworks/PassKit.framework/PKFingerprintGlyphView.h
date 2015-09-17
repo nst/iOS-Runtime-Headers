@@ -6,6 +6,7 @@
     CALayer *_backgroundLayer;
     NSArray *_backgroundShapeLayers;
     UIView *_contentView;
+    BOOL _fadeOnRecognized;
     CALayer *_foregroundLayer;
     CALayer *_foregroundRingContainerLayer;
     NSArray *_foregroundRingShapeLayers;
@@ -27,6 +28,7 @@
 @property (nonatomic, readonly) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL fadeOnRecognized;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) UIColor *primaryColor;
 @property (nonatomic, copy) UIColor *secondaryColor;
@@ -41,6 +43,7 @@
 - (void)_hideNonRingShapeLayersWithTransitionIndex:(unsigned int)arg1 withGap:(BOOL)arg2 animated:(BOOL)arg3;
 - (double)_minimumAnimationDurationForStateTransition;
 - (void)_performTransitionWithTransitionIndex:(unsigned int)arg1 animated:(BOOL)arg2;
+- (void)_restartRotationIfNecessary;
 - (void)_setProgress:(float)arg1 withDuration:(double)arg2 forShapeLayerAtIndex:(unsigned int)arg3;
 - (void)_showFingerprintWithTransitionIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)_startRecognitionHoldingStateWithTransitionIndex:(unsigned int)arg1;
@@ -50,7 +53,10 @@
 - (struct CGSize { float x1; float x2; })boundsSizeToMatchPointScale:(float)arg1;
 - (id)contentView;
 - (void)dealloc;
+- (void)didMoveToWindow;
+- (BOOL)fadeOnRecognized;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)pathStateForLayer:(id)arg1;
@@ -58,6 +64,7 @@
 - (id)primaryColor;
 - (id)secondaryColor;
 - (void)setContentViewAlpha:(float)arg1 withDuration:(double)arg2;
+- (void)setFadeOnRecognized:(BOOL)arg1;
 - (void)setPathState:(id)arg1 forLayer:(id)arg2;
 - (void)setPrimaryColor:(id)arg1;
 - (void)setPrimaryColor:(id)arg1 animated:(BOOL)arg2;

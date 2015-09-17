@@ -10,6 +10,7 @@
     BOOL _hasAssociatedPaymentApplication;
     NSString *_identifier;
     NSDate *_messageDate;
+    NSString *_serviceIdentifier;
 }
 
 @property (nonatomic) BOOL allowDeepLink;
@@ -19,6 +20,7 @@
 @property (nonatomic) BOOL hasAssociatedPaymentApplication;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, copy) NSDate *messageDate;
+@property (nonatomic, copy) NSString *serviceIdentifier;
 
 + (id)paymentMessageWithDictionary:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -38,6 +40,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToPaymentMessage:(id)arg1;
 - (id)messageDate;
+- (id)serviceIdentifier;
 - (void)setAllowDeepLink:(BOOL)arg1;
 - (void)setContent:(id)arg1;
 - (void)setExpirationDate:(id)arg1;
@@ -45,5 +48,6 @@
 - (void)setHasAssociatedPaymentApplication:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setMessageDate:(id)arg1;
+- (void)setServiceIdentifier:(id)arg1;
 
 @end

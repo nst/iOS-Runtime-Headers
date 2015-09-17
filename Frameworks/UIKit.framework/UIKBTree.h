@@ -26,6 +26,7 @@
 + (BOOL)shouldSkipCacheString:(id)arg1;
 + (id)stringForType:(int)arg1;
 + (id)treeOfType:(int)arg1;
++ (BOOL)typeIsPersistent:(int)arg1;
 + (id)uniqueName;
 
 - (void)_addKeylayoutKeys:(id)arg1;
@@ -37,6 +38,7 @@
 - (int)_variantType;
 - (id)activeGeometriesList;
 - (id)activeShapesFromOutputShapes:(id)arg1 inputShapes:(id)arg2;
+- (BOOL)allowRetestAfterCommittingDownActions;
 - (id)alternateKeyplaneName;
 - (id)attributeSet:(BOOL)arg1;
 - (id)autolocalizedKeyCacheIterator;
@@ -48,7 +50,6 @@
 - (id)cacheDisplayString;
 - (void)cacheKey:(id)arg1;
 - (id)cachedKeysByKeyName:(id)arg1;
-- (BOOL)canFadeOutFromState:(int)arg1 toState:(int)arg2;
 - (void)clearTransientCaches;
 - (int)clipCorners;
 - (id)componentName;
@@ -65,7 +66,6 @@
 - (int)dragThreshold;
 - (BOOL)dynamicDisplayTypeHint;
 - (void)elaborateLayoutWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
-- (float)fadeOutDuration;
 - (id)findLeftMoreKey;
 - (id)firstCachedKeyWithName:(id)arg1;
 - (int)flickDirection;
@@ -97,6 +97,7 @@
 - (BOOL)isHashed;
 - (BOOL)isLeafType;
 - (BOOL)isLetters;
+- (BOOL)isRightToLeftSensitive;
 - (BOOL)isSameAsTree:(id)arg1;
 - (BOOL)isShiftKeyPlaneChooser;
 - (BOOL)isShiftKeyplane;
@@ -118,6 +119,7 @@
 - (BOOL)looksLike:(id)arg1;
 - (BOOL)looksLikeShiftAlternate;
 - (id)mergeKeyNames:(id)arg1;
+- (void)mergeReturnKey:(id)arg1 withReturnKey:(id)arg2;
 - (BOOL)modifiesKeyplane;
 - (id)name;
 - (id)nameFromAttributes;
@@ -137,6 +139,8 @@
 - (BOOL)renderKeyInKeyplane:(id)arg1;
 - (int)rendering;
 - (id)representedString;
+- (id)secondaryDisplayStrings;
+- (id)secondaryRepresentedStrings;
 - (int)selectedVariantIndex;
 - (void)setActiveGeometriesList:(id)arg1;
 - (void)setAttributes:(id)arg1;
@@ -165,6 +169,8 @@
 - (void)setProperties:(id)arg1;
 - (void)setRendering:(int)arg1;
 - (void)setRepresentedString:(id)arg1;
+- (void)setSecondaryDisplayStrings:(id)arg1;
+- (void)setSecondaryRepresentedStrings:(id)arg1;
 - (void)setSelectedVariantIndex:(int)arg1;
 - (void)setShape:(id)arg1;
 - (void)setSplitMode:(int)arg1;

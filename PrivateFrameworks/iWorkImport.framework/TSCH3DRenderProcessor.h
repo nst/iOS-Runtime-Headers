@@ -4,6 +4,7 @@
 
 @interface TSCH3DRenderProcessor : NSObject
 
++ (void)initialize;
 + (id)processor;
 
 - (BOOL)canRenderPrefilteredLines;

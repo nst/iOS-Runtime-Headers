@@ -21,6 +21,7 @@
 @property (nonatomic) int numberOfFullTaps;
 @property (nonatomic, retain) UITouch *touch;
 
+- (void).cxx_destruct;
 - (void)_resetGestureRecognizer;
 - (void)_verifyMovementInAllowableRange;
 - (float)allowableMovement;

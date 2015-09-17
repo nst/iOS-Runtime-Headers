@@ -3,11 +3,13 @@
  */
 
 @interface GEOWaypointID : PBCodable <NSCopying> {
+    int _addressGeocodeAccuracyHint;
     GEOStructuredAddress *_addressHint;
     NSMutableArray *_formattedAddressLineHints;
     struct { 
         unsigned int muid : 1; 
         unsigned int resultProviderId : 1; 
+        unsigned int addressGeocodeAccuracyHint : 1; 
         unsigned int placeTypeHint : 1; 
     } _has;
     GEOLatLng *_locationHint;
@@ -17,8 +19,10 @@
     unsigned long long _resultProviderId;
 }
 
+@property (nonatomic) int addressGeocodeAccuracyHint;
 @property (nonatomic, retain) GEOStructuredAddress *addressHint;
 @property (nonatomic, retain) NSMutableArray *formattedAddressLineHints;
+@property (nonatomic) BOOL hasAddressGeocodeAccuracyHint;
 @property (nonatomic, readonly) BOOL hasAddressHint;
 @property (nonatomic, readonly) BOOL hasLocationHint;
 @property (nonatomic) BOOL hasMuid;
@@ -32,6 +36,7 @@
 @property (nonatomic) unsigned long long resultProviderId;
 
 - (void)addFormattedAddressLineHint:(id)arg1;
+- (int)addressGeocodeAccuracyHint;
 - (id)addressHint;
 - (void)clearFormattedAddressLineHints;
 - (void)copyTo:(id)arg1;
@@ -42,6 +47,7 @@
 - (id)formattedAddressLineHintAtIndex:(unsigned int)arg1;
 - (id)formattedAddressLineHints;
 - (unsigned int)formattedAddressLineHintsCount;
+- (BOOL)hasAddressGeocodeAccuracyHint;
 - (BOOL)hasAddressHint;
 - (BOOL)hasLocationHint;
 - (BOOL)hasMuid;
@@ -57,8 +63,10 @@
 - (int)placeTypeHint;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned long long)resultProviderId;
+- (void)setAddressGeocodeAccuracyHint:(int)arg1;
 - (void)setAddressHint:(id)arg1;
 - (void)setFormattedAddressLineHints:(id)arg1;
+- (void)setHasAddressGeocodeAccuracyHint:(BOOL)arg1;
 - (void)setHasMuid:(BOOL)arg1;
 - (void)setHasPlaceTypeHint:(BOOL)arg1;
 - (void)setHasResultProviderId:(BOOL)arg1;

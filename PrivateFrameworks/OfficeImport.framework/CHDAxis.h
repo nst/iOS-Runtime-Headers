@@ -20,6 +20,7 @@
     bool mDeleted;
     unsigned int mFontIndex;
     bool mIsAutoRotation;
+    NSArray *mLabelEffects;
     bool mLineVisible;
     OADGraphicProperties *mMajorGridLinesGraphicProperties;
     int mMajorTickMark;
@@ -45,11 +46,13 @@
 - (void)adjustAxisPositionForHorizontalChart;
 - (id)axisGraphicProperties;
 - (int)axisId;
+- (int)axisIdForXml;
 - (int)axisPosition;
 - (int)axisType;
 - (id)contentFormat;
 - (unsigned int)contentFormatId;
 - (double)crossAxisId;
+- (double)crossAxisIdForXml;
 - (int)crossBetween;
 - (int)crosses;
 - (double)crossesAt;
@@ -73,6 +76,7 @@
 - (bool)isTickLabelAutoRotation;
 - (bool)isTickLabelVisible;
 - (int)key;
+- (id)labelEffects;
 - (id)majorGridLinesGraphicProperties;
 - (int)majorTickMark;
 - (id)minorGridLinesGraphicProperties;
@@ -95,6 +99,7 @@
 - (void)setFont:(id)arg1;
 - (void)setFontIndex:(unsigned int)arg1;
 - (void)setIsContentFormatDerivedFromDataPoints:(bool)arg1;
+- (void)setLabelEffects:(id)arg1;
 - (void)setLineVisible:(bool)arg1;
 - (void)setMajorGridLinesGraphicProperties:(id)arg1;
 - (void)setMajorTickMark:(int)arg1;

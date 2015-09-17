@@ -6,6 +6,7 @@
     ATAssetLinkController *_assetLinkController;
     BOOL _cancelAtStart;
     NSString *_dataClass;
+    NSMutableSet *_failedAssets;
     unsigned int _failedAssetsCount;
     NSPredicate *_filterPredicate;
     NSObject<OS_dispatch_queue> *_queue;

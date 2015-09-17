@@ -5,7 +5,6 @@
 @interface PLFileStats : NSObject
 
 + (id)cpuTimeForProcess:(id)arg1;
-+ (id)energyUsageForProcess:(id)arg1;
 + (long long)fileSizeAtPath:(id)arg1;
 + (id)logEndDate;
 + (id)logEndDateFromTable:(id)arg1;

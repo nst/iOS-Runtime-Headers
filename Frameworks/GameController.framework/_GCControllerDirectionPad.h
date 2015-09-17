@@ -3,6 +3,7 @@
  */
 
 @interface _GCControllerDirectionPad : GCControllerDirectionPad {
+    NSString *_descriptionName;
     id /* block */ _valueChangedHandler;
     _GCControllerAxisInput *_xAxis;
     _GCControllerAxisInput *_yAxis;
@@ -10,12 +11,15 @@
 
 - (void).cxx_destruct;
 - (void)_fireValueChanged;
+- (void)_fireValueChangedWithQueue:(id)arg1;
 - (id)description;
 - (id)down;
 - (id)initWithFlippedY:(BOOL)arg1 digital:(BOOL)arg2;
+- (id)initWithFlippedY:(BOOL)arg1 digital:(BOOL)arg2 descriptionName:(id)arg3;
 - (id)left;
 - (id)right;
 - (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1;
+- (BOOL)setHIDValue:(struct __IOHIDValue { }*)arg1 queue:(id)arg2;
 - (void)setValueChangedHandler:(id /* block */)arg1;
 - (id)up;
 - (id /* block */)valueChangedHandler;

@@ -19,8 +19,12 @@
             float height; 
         } size; 
     } _exposedScrollViewRect;
-    struct TCMalloc_SpinLock { 
-        unsigned int lockword_; 
+    struct SpinLock { 
+        struct Atomic<unsigned int> { 
+            struct atomic<unsigned int> { 
+                unsigned int __a_; 
+            } value; 
+        } m_lock; 
     } _exposedScrollViewRectLock;
     struct CGRect { 
         struct CGPoint { 

@@ -9,6 +9,7 @@
 }
 
 @property (nonatomic) NSObject<MBConnectionHandler> *messageHandler;
+@property (readonly, retain) NSObject<OS_xpc_object> *xpcConnection;
 
 - (void)_handleXPCError:(id)arg1;
 - (void)_handleXPCEvent:(id)arg1;
@@ -24,5 +25,6 @@
 - (id)sendMessageWithReplyAndSync:(id)arg1 error:(id*)arg2;
 - (void)setMessageHandler:(id)arg1;
 - (void)suspend;
+- (id)xpcConnection;
 
 @end

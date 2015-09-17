@@ -21,6 +21,7 @@
 @property (nonatomic, retain) CNFRegShadowView *shadowView;
 @property (nonatomic) BOOL skipDelegateCallback;
 
+- (void).cxx_destruct;
 - (void)_handleTextChanged;
 - (void)_startListeningForTextChanges;
 - (void)_stopListeningForTextChanges;

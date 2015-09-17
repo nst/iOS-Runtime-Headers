@@ -24,7 +24,6 @@
     double _maximumSelectionDuration;
     BOOL _needsUpdateDisplayableTime;
     double _nextPreviewStartTime;
-    BOOL _screenUpdatesDisabled;
     BOOL _selectionOverlayVisible;
     BOOL _showingSelectionOverlayEnabled;
     BOOL _userInteractionEnabled;
@@ -51,7 +50,6 @@
 @property (nonatomic) double maximumSelectionDuration;
 @property (nonatomic, readonly) double nextPreviewStartTime;
 @property (nonatomic, readonly) struct { double x1; double x2; } nextPreviewTimeRange;
-@property (nonatomic) BOOL screenUpdatesDisabled;
 @property (nonatomic, readonly) struct { double x1; double x2; } selectedTimeRange;
 @property (getter=isSelectionOverlayVisible, nonatomic, readonly) BOOL selectionOverlayVisible;
 @property (readonly) Class superclass;
@@ -64,8 +62,6 @@
 - (void).cxx_destruct;
 - (id)AVState;
 - (id)UIConfiguration;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
-- (void)_applicationWillEnterForegroundNotification:(id)arg1;
 - (void)_beginShowingSelectionOverlay;
 - (unsigned int)_currentTimeDisplayOptions;
 - (unsigned int)_currentTimeDisplayOptionsIgnoringSelectionOverlayState:(BOOL)arg1;
@@ -93,6 +89,7 @@
 - (double)duration;
 - (void)hidSelectionOverlayWithCompletionBlock:(id /* block */)arg1;
 - (struct { double x1; double x2; })highlightTimeRange;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithWaveformDataSource:(id)arg1 delegate:(id)arg2;
 - (BOOL)isSelectionOverlayVisible;
@@ -105,8 +102,8 @@
 - (void)previewController:(id)arg1 playbackDidStopPlayingWithError:(id)arg2;
 - (void)previewController:(id)arg1 playbackTimeDidJumpWithPreviousTime:(double)arg2;
 - (void)previewController:(id)arg1 playbackTimeDidUpdateToCurrentTime:(double)arg2;
+- (void)rc_screenUpdatesDisabledDidChange;
 - (void)reloadWaveformDataSource:(id)arg1 initialTime:(double)arg2;
-- (BOOL)screenUpdatesDisabled;
 - (struct { double x1; double x2; })selectedTimeRange;
 - (void)setAVState:(id)arg1;
 - (void)setActiveCaptureSession:(id)arg1;
@@ -121,7 +118,6 @@
 - (void)setHighlightTimeRange:(struct { double x1; double x2; })arg1;
 - (void)setLayoutMetrics:(id)arg1;
 - (void)setMaximumSelectionDuration:(double)arg1;
-- (void)setScreenUpdatesDisabled:(BOOL)arg1;
 - (void)setSelectedTimeRange:(struct { double x1; double x2; })arg1 animationDuration:(double)arg2;
 - (void)setUIConfiguration:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;

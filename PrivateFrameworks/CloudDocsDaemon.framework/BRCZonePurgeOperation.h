@@ -15,5 +15,6 @@
 - (id)initWithServerZone:(id)arg1;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
+- (unsigned long long)startActivity;
 
 @end

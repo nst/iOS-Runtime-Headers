@@ -57,15 +57,20 @@
 @property (nonatomic, retain) NSString *sourceBundleID;
 @property (nonatomic, retain) NSString *sourceLocalizedAppName;
 @property (nonatomic, readonly) unsigned int specialID;
+@property (nonatomic, readonly) UIImage *ss_icon;
+@property (setter=ss_setIconKeyColor:, nonatomic, retain) UIColor *ss_iconKeyColor;
 @property (nonatomic, retain) NSData *syncData;
 @property (nonatomic, retain) NSString *syncKey;
 @property (getter=isSyncable, nonatomic, readonly) BOOL syncable;
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic) int webFilterStatus;
 
+// Image: /System/Library/PrivateFrameworks/WebBookmarks.framework/WebBookmarks
+
 + (id)_trimmedPreviewText:(id)arg1;
 + (id)_trimmedTitle:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)UUID;
 - (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1;
 - (id)_initWithSqliteRow:(struct sqlite3_stmt { }*)arg1 hasIcon:(BOOL)arg2;
@@ -94,7 +99,6 @@
 - (id)dateLastArchived;
 - (id)dateLastFetched;
 - (id)dateLastViewed;
-- (void)dealloc;
 - (id)description;
 - (id)extraAttributes;
 - (BOOL)fetchedIconData;
@@ -169,5 +173,11 @@
 - (id)webarchivePathForNextPageURL:(id)arg1;
 - (id)webarchivePathInReaderForm:(BOOL)arg1 fileExists:(BOOL*)arg2;
 - (BOOL)writeOfflineWebView:(id)arg1 asArchive:(BOOL)arg2 inReaderForm:(BOOL)arg3;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (id)ss_icon;
+- (id)ss_iconKeyColor;
+- (void)ss_setIconKeyColor:(id)arg1;
 
 @end

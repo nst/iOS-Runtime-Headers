@@ -3,6 +3,7 @@
  */
 
 @interface MFActivityMonitor : MFPriorityDesignator {
+    NSMutableSet *_associatedProgresses;
     unsigned int _bytesRead;
     unsigned int _bytesWritten;
     unsigned int _canCancel;
@@ -32,11 +33,14 @@
     NSString *_taskName;
 }
 
+@property (nonatomic) BOOL canBeCancelled;
 @property (retain) MFMailboxUid *mailbox;
+@property (nonatomic) BOOL shouldCancel;
 
 + (id)currentMonitor;
 + (void)destroyMonitor;
 
+- (void)_cancelAssociatedProgresses;
 - (void)_didChange;
 - (BOOL)_lockedAddActivityTarget:(id)arg1;
 - (id)_ntsThrottledUserInfoDict;
@@ -46,6 +50,7 @@
 - (void)addActivityTarget:(id)arg1;
 - (void)addActivityTargets:(id)arg1;
 - (void)addReason:(id)arg1;
+- (void)associateProgress:(id)arg1;
 - (unsigned int)bytesRead;
 - (unsigned int)bytesWritten;
 - (BOOL)canBeCancelled;
@@ -55,6 +60,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
+- (void)dissociateProgress:(id)arg1;
 - (id)error;
 - (unsigned int)expectedLength;
 - (void)finishedActivity:(id)arg1;

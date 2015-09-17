@@ -2,9 +2,29 @@
    Image: /System/Library/PrivateFrameworks/ToneKit.framework/ToneKit
  */
 
-@interface TKVibratorController : NSObject
+@interface TKVibratorController : NSObject {
+    TLAccessQueue *_accessQueue;
+    unsigned long _previewVibrationSystemSoundID;
+    unsigned int _vibratorState;
+}
 
+@property (setter=_setAccessQueue:, retain) TLAccessQueue *_accessQueue;
+@property (setter=_setPreviewVibrationSystemSoundID:, nonatomic) unsigned long _previewVibrationSystemSoundID;
+@property (setter=_setVibratorState:, nonatomic) unsigned int _vibratorState;
+@property (nonatomic, readonly) unsigned int vibratorState;
+
+- (id)_accessQueue;
+- (unsigned long)_previewVibrationSystemSoundID;
+- (void)_setAccessQueue:(id)arg1;
+- (void)_setPreviewVibrationSystemSoundID:(unsigned long)arg1;
+- (void)_setVibratorState:(unsigned int)arg1;
+- (void)_turnOffIfAppropriate;
+- (void)_vibrationDidComplete;
+- (unsigned int)_vibratorState;
+- (void)dealloc;
+- (id)init;
 - (void)turnOff;
 - (void)turnOnWithVibrationPattern:(id)arg1;
+- (unsigned int)vibratorState;
 
 @end

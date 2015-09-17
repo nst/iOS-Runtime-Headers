@@ -5,7 +5,9 @@
 @interface CPMLDB : NSObject {
     NSDictionary *_cInfo;
     NSString *_dbFileName;
+    NSObject<OS_dispatch_queue> *_dispatch_queue;
     int _openCPMLDBOptions;
+    <CPMLAlgorithmProtocol> *_thedelegate;
     NSString *_trainingFile;
     NSString *_trainingModelFileAndPath;
     double *cardinality;
@@ -58,11 +60,12 @@
 - (unsigned long long)getColumnCount;
 - (id)getColumnName:(unsigned int)arg1;
 - (unsigned long long)getCombinedRemapTableCardinality:(unsigned long)arg1;
+- (id)getDelegate;
+- (id)getDispatchQueue;
 - (double)getMaxFor:(unsigned long)arg1;
 - (double)getMeanFor:(unsigned long)arg1;
 - (double)getMinFor:(unsigned long)arg1;
 - (id)getRemapTable;
-- (id)getRepresentation:(id)arg1 withColPos:(int)arg2;
 - (unsigned long long)getRowCount;
 - (int)getSchemaType:(unsigned int)arg1;
 - (double)getStdDevFor:(unsigned long)arg1;
@@ -83,19 +86,19 @@
 - (BOOL)logBatchNSDictionary:(id)arg1;
 - (BOOL)logCTypesV:(void*)arg1;
 - (BOOL)logNSArray:(id)arg1;
+- (BOOL)logNSDataDouble:(id)arg1;
+- (BOOL)logNSDataFloat:(id)arg1;
 - (BOOL)logNSDictionary:(id)arg1;
 - (BOOL)logNSObjectV:(id)arg1;
-- (void)performanceTestDB;
 - (id)prepInsertStatementForMainTable;
-- (id)prepQueryStatementForTable:(id)arg1;
 - (void)printFormat:(id)arg1;
 - (void)queryDatabase:(id)arg1 whereMatch:(id)arg2;
 - (void)removeTrainingRow:(id)arg1;
 - (void)removeTrainingRowData:(double)arg1;
 - (BOOL)reset;
 - (void)restart;
-- (void)saveStatistics;
-- (void)updateCardinality:(id)arg1 withColPos:(int)arg2;
+- (void)setCPMLAlgorithm:(id)arg1;
+- (void)setDispatchQueue:(id)arg1;
 - (void)updateStatistics;
 - (void)updateStatisticsReal:(double)arg1 colPosition:(unsigned int)arg2;
 - (double)updateStatisticsString:(id)arg1 colPosition:(unsigned int)arg2;

@@ -76,6 +76,7 @@
 + (void)initialize;
 
 - (void).cxx_destruct;
+- (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (id)_dateRangeCompactFormatter;
 - (void)_dateRangeFormatterChanged:(id)arg1;
 - (id)_dateRangeLongFormatter;

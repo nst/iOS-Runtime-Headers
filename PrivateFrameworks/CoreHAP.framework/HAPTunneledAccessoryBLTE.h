@@ -3,6 +3,7 @@
  */
 
 @interface HAPTunneledAccessoryBLTE : HAPAccessory <HAPAccessoryServerInternalDelegate> {
+    HAPCharacteristic *_advertisingCharacteristic;
     <HAPKeyStore> *_keyStore;
     NSOperationQueue *_operationQueue;
     HAPCharacteristic *_pairVerifyCharacteristic;
@@ -22,6 +23,7 @@
     NSMutableData *_writeNonce;
 }
 
+@property (nonatomic) HAPCharacteristic *advertisingCharacteristic;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -44,6 +46,7 @@
 @property (nonatomic, retain) NSMutableData *writeNonce;
 
 - (void).cxx_destruct;
+- (BOOL)__isAdvertising;
 - (void)_cancelAllQueuedOperationsWithError:(id)arg1;
 - (void)_cancelSessionLifetimeTimer;
 - (id)_decryptData:(id)arg1 error:(id*)arg2;
@@ -61,16 +64,22 @@
 - (BOOL)_parseServices;
 - (BOOL)_parseTunneledBTLEAccessoryService:(id)arg1;
 - (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_readUpdatedCharacteristics:(id)arg1 queue:(id)arg2;
 - (void)_readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_registerForTunnelCharacteristicNotifications;
 - (void)_resumeAllOperations;
 - (void)_sanitizeAllTunneledCharacteristics;
 - (void)_suspendAllOperations;
 - (void)_tearDownSessionWithError:(id)arg1;
+- (void)_updateOnStateNumberChange;
 - (void)_updateSessionLifetimeTimer;
 - (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 authorizationData:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (void)_writeValueWithResponse:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)accessoryServer:(id)arg1 didUpdateValueForCharacteristic:(id)arg2;
+- (void)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 completionQueue:(id)arg4 completionHandler:(id /* block */)arg5;
+- (id)advertisingCharacteristic;
+- (id)initWithServer:(id)arg1 instanceID:(id)arg2 parsedServices:(id)arg3;
 - (id)initWithServer:(id)arg1 instanceID:(id)arg2 parsedServices:(id)arg3 keyStore:(id)arg4;
 - (void)invalidate;
 - (BOOL)isPairVerifyComplete;
@@ -85,10 +94,13 @@
 - (void)readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)readNonce;
 - (void)readValueForCharacteristic:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)removePairingForCurrentControllerWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)removePairingWithIdentifier:(id)arg1 completionQueue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)sessionLifetimeTimeout;
 - (id)sessionLifetimeTimer;
 - (id)sessionReadKey;
 - (id)sessionWriteKey;
+- (void)setAdvertisingCharacteristic:(id)arg1;
 - (void)setKeyStore:(id)arg1;
 - (void)setPairVerifyCharacteristic:(id)arg1;
 - (void)setPairVerifyComplete:(BOOL)arg1;
@@ -96,6 +108,7 @@
 - (void)setPairingsCharacteristic:(id)arg1;
 - (void)setPerformingPairVerify:(BOOL)arg1;
 - (void)setQueue:(id)arg1;
+- (void)setReachable:(BOOL)arg1;
 - (void)setReadNonce:(id)arg1;
 - (void)setSessionLifetimeTimeout:(id)arg1;
 - (void)setSessionLifetimeTimer:(id)arg1;
@@ -104,8 +117,8 @@
 - (void)setStateNumber:(id)arg1;
 - (void)setTunneledBTLEAccessoryService:(id)arg1;
 - (void)setWriteNonce:(id)arg1;
+- (id)shortDescription;
 - (id)stateNumber;
-- (BOOL)supportsGroupedRequests;
 - (id)tunneledBTLEAccessoryService;
 - (id)uniqueIdentifier;
 - (void)writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;

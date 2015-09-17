@@ -15,7 +15,6 @@
     struct ODIHRangeVector { struct ODIHRange {} *x1; struct ODIHRange {} *x2; unsigned int x3; unsigned int x4; unsigned int x5; } *mXRanges;
 }
 
-- (id).cxx_construct;
 - (void)addToXOffsetRelativeToParent:(float)arg1;
 - (BOOL)connectToVerticalSide;
 - (void)dealloc;

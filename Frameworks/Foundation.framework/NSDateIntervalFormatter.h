@@ -32,6 +32,7 @@
 - (void)dealloc;
 - (id)editingStringForObjectValue:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)finalize;
 - (BOOL)getObjectValue:(out id*)arg1 forString:(id)arg2 errorDescription:(out id*)arg3;
 - (id)init;
 - (id)initWithCoder:(id)arg1;

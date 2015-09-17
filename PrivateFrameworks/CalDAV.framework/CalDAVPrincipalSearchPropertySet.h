@@ -3,18 +3,19 @@
  */
 
 @interface CalDAVPrincipalSearchPropertySet : NSObject {
-    NSSet *_properties;
+    NSSet *_stringProperties;
 }
 
-@property (nonatomic, readonly) NSSet *stringProperties;
+@property (nonatomic, retain) NSSet *stringProperties;
 @property (nonatomic, readonly) BOOL supportsPropertySearch;
 
 + (id)searchSetWithProperties:(id)arg1;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithSearchProperties:(id)arg1;
 - (id)initWithStringProperties:(id)arg1;
 - (BOOL)isEqualToPropertySet:(id)arg1;
+- (void)setStringProperties:(id)arg1;
 - (id)stringProperties;
 - (BOOL)supportsPropertySearch;
 - (BOOL)supportsPropertyTypeWithNameSpace:(id)arg1 andName:(id)arg2;

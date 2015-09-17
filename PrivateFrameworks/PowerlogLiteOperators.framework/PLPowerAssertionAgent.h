@@ -3,35 +3,40 @@
  */
 
 @interface PLPowerAssertionAgent : PLAgent {
+    long _aggregateMaxPIDCount;
+    long _aggregteZeroDeltaCount;
     NSMutableDictionary *_assertionAggregatedLastSample;
+    NSMutableDictionary *_assertionAggregatedLastSamplePLDataStructure;
     PLCFNotificationOperatorComposition *_assertionBufferFullNotification;
     BOOL _assertionBufferFullNotificationActive;
-    PLNSTimerOperatorComposition *_assertionBufferFullNotificationRearmTimer;
+    PLTimer *_assertionBufferFullNotificationRearmTimer;
     NSMutableArray *_assertionBufferNotificationTracking;
     PLCFNotificationOperatorComposition *_assertionNotification;
-    PLNSTimerOperatorComposition *_assertionSnapShotTimer;
+    PLTimer *_assertionSnapShotTimer;
     PLEntryNotificationOperatorComposition *_batteryLevelNotificiations;
     PLEntryNotificationOperatorComposition *_canSleepNotification;
     BOOL _firstBufferDrain;
-    PLNSTimerOperatorComposition *_runQueryTimer;
+    PLTimer *_runQueryTimer;
     PLEntryNotificationOperatorComposition *_wakeNotification;
 }
 
+@property long aggregateMaxPIDCount;
+@property long aggregteZeroDeltaCount;
 @property (nonatomic, retain) NSMutableDictionary *assertionAggregatedLastSample;
+@property (retain) NSMutableDictionary *assertionAggregatedLastSamplePLDataStructure;
 @property (retain) PLCFNotificationOperatorComposition *assertionBufferFullNotification;
 @property (nonatomic) BOOL assertionBufferFullNotificationActive;
-@property (retain) PLNSTimerOperatorComposition *assertionBufferFullNotificationRearmTimer;
+@property (retain) PLTimer *assertionBufferFullNotificationRearmTimer;
 @property (retain) NSMutableArray *assertionBufferNotificationTracking;
 @property (retain) PLCFNotificationOperatorComposition *assertionNotification;
-@property (retain) PLNSTimerOperatorComposition *assertionSnapShotTimer;
+@property (retain) PLTimer *assertionSnapShotTimer;
 @property (nonatomic) BOOL assertionSnapshotTimerActive;
 @property (retain) PLEntryNotificationOperatorComposition *batteryLevelNotificiations;
 @property (retain) PLEntryNotificationOperatorComposition *canSleepNotification;
 @property BOOL firstBufferDrain;
-@property (retain) PLNSTimerOperatorComposition *runQueryTimer;
+@property (retain) PLTimer *runQueryTimer;
 @property (retain) PLEntryNotificationOperatorComposition *wakeNotification;
 
-+ (id)accountingGroupDefinitions;
 + (id)defaults;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitions;
@@ -44,10 +49,12 @@
 + (id)entryEventPointDefinitionSnapshotReason;
 + (id)entryEventPointDefinitions;
 + (void)load;
-+ (id)railDefinitions;
 
 - (void).cxx_destruct;
+- (long)aggregateMaxPIDCount;
+- (long)aggregteZeroDeltaCount;
 - (id)assertionAggregatedLastSample;
+- (id)assertionAggregatedLastSamplePLDataStructure;
 - (id)assertionBufferFullNotification;
 - (BOOL)assertionBufferFullNotificationActive;
 - (id)assertionBufferFullNotificationRearmTimer;
@@ -64,15 +71,20 @@
 - (void)initOperatorDependancies;
 - (void)log;
 - (void)logAggregatedAssertionActivity;
+- (void)logAggregatedAssertionActivityPLDataStructure;
 - (void)logEventIntervalAssertion;
 - (void)logEventIntervalAssertionWithReason:(id)arg1;
 - (void)logEventPointAggregateResetWithReason:(short)arg1 withPidCount:(int)arg2;
 - (void)logEventPointSnapshot;
 - (void)logEventPointSnapshotWithReason:(id)arg1;
+- (void)resetIOPMSetAssertionActivityAggregatePLDataStructureWithReason:(short)arg1 withPidCount:(int)arg2;
 - (void)resetIOPMSetAssertionActivityAggregateWithReason:(short)arg1 withPidCount:(int)arg2;
 - (id)runQueryTimer;
 - (void)sanitizeAssertionNameForEntry:(id)arg1;
+- (void)setAggregateMaxPIDCount:(long)arg1;
+- (void)setAggregteZeroDeltaCount:(long)arg1;
 - (void)setAssertionAggregatedLastSample:(id)arg1;
+- (void)setAssertionAggregatedLastSamplePLDataStructure:(id)arg1;
 - (void)setAssertionBufferFullNotification:(id)arg1;
 - (void)setAssertionBufferFullNotificationActive:(BOOL)arg1;
 - (void)setAssertionBufferFullNotificationActive:(BOOL)arg1 withReason:(id)arg2;

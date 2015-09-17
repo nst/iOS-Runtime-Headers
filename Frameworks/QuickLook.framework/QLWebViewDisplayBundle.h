@@ -41,6 +41,7 @@
 - (id)_scrubView:(BOOL)arg1;
 - (void)_showScrubberIfNeeded:(double)arg1;
 - (void)_tearDownWebView;
+- (void)_updateScrubberForTraitCollection:(id)arg1;
 - (BOOL)acceptControllerTouch:(id)arg1 fromGestureRecognizer:(id)arg2;
 - (int)airPlayMode;
 - (id)alertViewForUIWebPDFViewHandler:(id)arg1;
@@ -48,11 +49,9 @@
 - (unsigned int)currentPageNumber;
 - (void)dealloc;
 - (void)didReceiveMemoryWarning;
-- (void)didRotateFromInterfaceOrientation:(int)arg1;
 - (id)gestureRecognizersForFullScreenDisplay;
 - (void)loadWithHints:(id)arg1;
 - (BOOL)needsContentInset;
-- (BOOL)needsContentInsetEvenIfNavigationBarIsHidden;
 - (int)numberOfPagesInScrubView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })originForPDFPageLabelViewWithHandler:(id)arg1 proposedOrigin:(struct CGPoint { float x1; float x2; })arg2;
 - (int)pageCount;
@@ -67,19 +66,22 @@
 - (void)scrubView:(id)arg1 didSelectPageAtIndex:(unsigned int)arg2;
 - (struct CGSize { float x1; float x2; })scrubView:(id)arg1 pageSizeAtIndex:(unsigned int)arg2;
 - (id)scrubView:(id)arg1 thumbnailOperationForPageAtIndex:(unsigned int)arg2;
+- (void)setNavigationBarVerticalOffset:(float)arg1;
+- (void)setOrbMode:(unsigned int)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewItem:(id)arg1;
-- (void)setPreviewMode:(int)arg1;
 - (void)uiWebView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;
 - (void)uiWebView:(id)arg1 didFirstLayoutInFrame:(id)arg2;
 - (void)uiWebView:(id)arg1 resource:(id)arg2 didFailLoadingWithError:(id)arg3 fromDataSource:(id)arg4;
 - (void)uiWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
 - (id)uiWebView:(id)arg1 resource:(id)arg2 willSendRequest:(id)arg3 redirectResponse:(id)arg4 fromDataSource:(id)arg5;
+- (void)updateFrameWithOrb;
 - (void)userInteractedWithScrubView:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (BOOL)webView:(id)arg1 shouldStartLoadWithRequest:(id)arg2 navigationType:(int)arg3;
 - (void)webViewDidFinishLoad:(id)arg1;
-- (void)willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)willTransitionToTraitCollection:(id)arg1 withTransitionCoordinator:(id)arg2;
 
 @end

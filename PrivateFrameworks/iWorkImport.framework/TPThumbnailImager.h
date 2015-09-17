@@ -4,6 +4,8 @@
 
 @interface TPThumbnailImager : TSDImager
 
+- (void)canvasDidValidateLayouts:(id)arg1;
 - (void)canvasWillLayout:(id)arg1;
+- (struct CGImage { }*)newImage;
 
 @end

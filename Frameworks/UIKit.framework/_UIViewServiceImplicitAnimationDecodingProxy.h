@@ -14,8 +14,8 @@
 
 + (id)proxyDecodingAnimationsForTarget:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)__animateNextInvocationOfSelector:(id)arg1 withAnimationAttributes:(id)arg2;
-- (void)dealloc;
 - (void)forwardInvocation:(id)arg1;
 
 @end

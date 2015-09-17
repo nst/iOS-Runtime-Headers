@@ -3,35 +3,58 @@
  */
 
 @interface AFVoiceInfo : NSObject <NSCopying, NSSecureCoding> {
+    NSNumber *_contentVersion;
+    int _footprint;
     int _gender;
     BOOL _isCustom;
     NSString *_languageCode;
+    NSString *_masteredVersion;
+    NSString *_name;
     BOOL _wasInitalizedFromDictionaryRepresentation;
 }
 
+@property (nonatomic, readonly) NSNumber *contentVersion;
+@property (nonatomic, readonly) int footprint;
 @property (nonatomic) int gender;
 @property (nonatomic) BOOL isCustom;
 @property (nonatomic, readonly) NSString *languageCode;
+@property (nonatomic, readonly) NSString *masteredVersion;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) BOOL wasInitalizedFromDictionaryRepresentation;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)contentVersion;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (void)encodeWithCoder:(id)arg1;
+- (int)footprint;
+- (id)footprintString;
 - (int)gender;
+- (id)genderString;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDictionaryRepresentation:(id)arg1;
 - (id)initWithLanguageCode:(id)arg1;
 - (id)initWithLanguageCode:(id)arg1 gender:(int)arg2 isCustom:(BOOL)arg3;
+- (id)initWithLanguageCode:(id)arg1 gender:(int)arg2 isCustom:(BOOL)arg3 name:(id)arg4 footprint:(int)arg5 contentVersion:(id)arg6 masteredVersion:(id)arg7;
 - (BOOL)isCustom;
 - (BOOL)isEqual:(id)arg1;
 - (id)languageCode;
+- (id)masteredVersion;
+- (id)name;
 - (void)setGender:(int)arg1;
 - (void)setIsCustom:(BOOL)arg1;
 - (BOOL)wasInitalizedFromDictionaryRepresentation;
+
+// Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
+
+- (int)VSSpeechFootprint;
+- (int)VSSpeechGender;
+- (BOOL)isMatchForVoiceAsset:(id)arg1;
 
 @end

@@ -3,7 +3,10 @@
  */
 
 @interface BSBasicServerClient : NSObject <BSXPCServerClient> {
+    int _cancelled;
     NSObject<OS_xpc_object> *_connection;
+    BOOL _managingResumeState;
+    int _resumed;
 }
 
 @property (nonatomic, retain) NSObject<OS_xpc_object> *connection;
@@ -19,9 +22,11 @@
 - (id)description;
 - (id)initWithConnection:(id)arg1;
 - (void)invalidate;
+- (void)resume;
 - (void)sendMessage:(id)arg1;
 - (void)sendMessageWithPacker:(id /* block */)arg1;
 - (void)sendMessageWithPacker:(id /* block */)arg1 replyHandler:(id /* block */)arg2 onQueue:(id)arg3;
 - (void)setConnection:(id)arg1;
+- (void)suspend;
 
 @end

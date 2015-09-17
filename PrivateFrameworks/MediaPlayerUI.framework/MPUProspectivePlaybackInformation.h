@@ -4,18 +4,8 @@
 
 @interface MPUProspectivePlaybackInformation : NSObject <NSCopying>
 
-@property (nonatomic, readonly) BOOL isRadioProspectivePlaybackInformation;
-@property (nonatomic, readonly) RURadioStationPlaybackMetadata *stationMetadata;
-
-// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
-
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
-
-- (BOOL)isRadioProspectivePlaybackInformation;
-- (id)stationMetadata;
 
 @end

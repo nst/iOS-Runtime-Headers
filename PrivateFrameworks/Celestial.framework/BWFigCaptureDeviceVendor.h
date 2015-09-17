@@ -4,14 +4,21 @@
 
 @interface BWFigCaptureDeviceVendor : NSObject
 
++ (void)_dumpInventory;
++ (id)_moveDeviceClientToVictimizedList;
++ (id)_popLatestVictimizedDeviceClient;
++ (void)_registerNewDeviceClientForPID:(int)arg1 clientIDOut:(int*)arg2 deviceAvailabilityChangedHandler:(id /* block */)arg3;
++ (void)_removeDeviceClient;
++ (void)_removeVictimizedDeviceClientWithClientID:(int)arg1;
 + (void)_setupDeviceCloseTimer;
 + (BOOL)activeDeviceEquals:(struct OpaqueFigCaptureDevice { }*)arg1;
-+ (struct OpaqueFigCaptureDevice { }*)copyDefaultVideoDeviceWithStealingBehavior:(int)arg1;
++ (struct OpaqueFigCaptureDevice { }*)copyDefaultVideoDeviceWithStealingBehavior:(int)arg1 forPID:(int)arg2 clientIDOut:(int*)arg3 withDeviceAvailabilityChangedHandler:(id /* block */)arg4;
 + (struct OpaqueFigCaptureStream { }*)copyStreamWithPosition:(int)arg1 forDevice:(struct OpaqueFigCaptureDevice { }*)arg2;
 + (void)initialize;
-+ (void)invalidateVideoDevice:(struct OpaqueFigCaptureDevice { }*)arg1;
-+ (void)powerOnDefaultVideoDevice;
-+ (void)takeBackVideoDevice:(struct OpaqueFigCaptureDevice { }*)arg1;
++ (void)invalidateVideoDevice:(struct OpaqueFigCaptureDevice { }*)arg1 forPID:(int)arg2;
++ (void)prewarmDefaultVideoDeviceForPID:(int)arg1;
++ (void)takeBackVideoDevice:(struct OpaqueFigCaptureDevice { }*)arg1 forPID:(int)arg2 requestDeviceWhenAvailableAgain:(BOOL)arg3 informOtherClients:(BOOL)arg4;
++ (void)unregisterCallbacksForClient:(int)arg1;
 + (BOOL)videoCaptureDeviceFirmwareIsLoaded;
 
 @end

@@ -13,6 +13,7 @@
 - (BOOL)layoutManager:(NSLayoutManager *)arg1 shouldBreakLineByHyphenatingBeforeCharacterAtIndex:(unsigned int)arg2;
 - (BOOL)layoutManager:(NSLayoutManager *)arg1 shouldBreakLineByWordBeforeCharacterAtIndex:(unsigned int)arg2;
 - (unsigned int)layoutManager:(NSLayoutManager *)arg1 shouldGenerateGlyphs:(const unsigned short*)arg2 properties:(const int*)arg3 characterIndexes:(const unsigned int*)arg4 font:(UIFont *)arg5 forGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
+- (BOOL)layoutManager:(NSLayoutManager *)arg1 shouldSetLineFragmentRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2 lineFragmentUsedRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3 baselineOffset:(inout float*)arg4 inTextContainer:(NSTextContainer *)arg5 forGlyphRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6;
 - (int)layoutManager:(NSLayoutManager *)arg1 shouldUseAction:(int)arg2 forControlCharacterAtIndex:(unsigned int)arg3;
 - (void)layoutManager:(NSLayoutManager *)arg1 textContainer:(NSTextContainer *)arg2 didChangeGeometryFromSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)layoutManagerDidInvalidateLayout:(NSLayoutManager *)arg1;

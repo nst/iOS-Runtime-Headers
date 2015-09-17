@@ -17,6 +17,7 @@
 - (id)dataAreaDxf;
 - (unsigned int)dataAreaDxfIndex;
 - (void)dealloc;
+- (id)description;
 - (id)headerRowDxf;
 - (unsigned int)headerRowDxfIndex;
 - (id)initWithResources:(id)arg1;

@@ -12,7 +12,7 @@
 @property (nonatomic, copy) UIColor *headerTextColor;
 @property (nonatomic) BOOL useVibrantBlend;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (float)headerFontSize;
 - (id)headerName;
 - (float)headerOpacity;

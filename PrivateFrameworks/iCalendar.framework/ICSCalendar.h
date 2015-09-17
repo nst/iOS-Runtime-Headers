@@ -33,6 +33,7 @@
 + (id)name;
 + (void)setDefaultProdid:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_addComponent:(id)arg1;
 - (void)_addTimeZonesInComponent:(id)arg1 toDictionary:(id)arg2;
 - (void)_addTimeZonesInComponent:(id)arg1 toSet:(id)arg2;
@@ -44,7 +45,6 @@
 - (id)componentForKey:(id)arg1;
 - (id)componentKeys;
 - (id)componentOccurrencesForKey:(id)arg1;
-- (void)dealloc;
 - (void)fixComponent;
 - (void)fixEntities;
 - (void)fixPropertiesInheritance;

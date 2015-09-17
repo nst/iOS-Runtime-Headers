@@ -7,6 +7,7 @@
 + (id)defaultDispatch;
 
 - (id)_newLayoutQueue:(const char *)arg1;
+- (id)_newLayoutWorkerQueue:(const char *)arg1;
 - (id)_newRenderQueue:(const char *)arg1;
 
 @end

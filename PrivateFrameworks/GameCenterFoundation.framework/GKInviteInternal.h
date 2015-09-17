@@ -50,6 +50,7 @@
 
 - (id)bundleID;
 - (void)dealloc;
+- (id)descriptionSubstitutionMap;
 - (id)deviceID;
 - (unsigned int)hash;
 - (id)init;

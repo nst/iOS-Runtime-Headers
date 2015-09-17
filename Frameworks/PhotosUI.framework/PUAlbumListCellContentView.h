@@ -61,6 +61,7 @@
 - (void)_pinAction:(id)arg1;
 - (id)_pinButton;
 - (struct CGPoint { float x1; float x2; })_pinButtonOriginForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 pinButtonSize:(struct CGSize { float x1; float x2; })arg2 titleTextFieldFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 subtitleLabelFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (void)_preferredContentSizeChanged:(id)arg1;
 - (void)_setBadgeImageView:(id)arg1;
 - (void)_setDeleteButton:(id)arg1;
 - (void)_setPinButton:(id)arg1;
@@ -80,12 +81,15 @@
 - (void)_updatePinButtonAnimated:(BOOL)arg1;
 - (void)_updateStackViewAnimated:(BOOL)arg1;
 - (void)_updateSubtitleLabelAnimated:(BOOL)arg1;
+- (void)_updateSubtitleLabelStyle;
 - (void)_updateSubviewOrdering;
 - (void)_updateTitleFieldAnimated:(BOOL)arg1;
+- (void)_updateTitleTextFieldsStyle;
 - (int)badgeType;
 - (void)cancelPerformRetitleAction;
 - (BOOL)combinesPhotoDecorations;
 - (id)customImageView;
+- (void)dealloc;
 - (id)delegate;
 - (unsigned int)editCapabilities;
 - (void)handleTransitionFade:(BOOL)arg1 animate:(BOOL)arg2;

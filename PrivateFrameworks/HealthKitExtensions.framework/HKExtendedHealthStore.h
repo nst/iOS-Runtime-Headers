@@ -32,12 +32,11 @@
 - (void)fetchAchievementsWithCompletion:(id /* block */)arg1;
 - (void)fetchNumberOfUnviewedAchievementsWithCompletion:(id /* block */)arg1;
 - (void)fetchUnalertedAchievementsWithCompletion:(id /* block */)arg1;
-- (void)forceNanoSyncWithPullRequest:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (void)markAchievementAsViewed:(id)arg1 completion:(id /* block */)arg2;
 - (void)markAchievementsAlerted:(id)arg1 completion:(id /* block */)arg2;
 - (id)remoteObjectProxyWithErrorHandler:(id /* block */)arg1;
-- (void)resetNanoSyncWithCompletion:(id /* block */)arg1;
+- (void)runAchievementsFixupAsDryRun:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)serverInterface;
 - (void)setAchievementsAddedHandler:(id /* block */)arg1;
 - (void)setConnection:(id)arg1;

@@ -18,7 +18,7 @@
     BOOL _maySuppressUpAction;
     UIKBTree *_slidOffKey;
     int _stage;
-    UITouch *_touch;
+    UIKBTouchState *_touch;
 }
 
 @property (nonatomic) BOOL dragged;
@@ -30,7 +30,7 @@
 @property (nonatomic) BOOL maySuppressUpAction;
 @property (nonatomic, retain) UIKBTree *slidOffKey;
 @property (nonatomic) int stage;
-@property (nonatomic, retain) UITouch *touch;
+@property (nonatomic, retain) UIKBTouchState *touch;
 
 - (void)dealloc;
 - (BOOL)dragged;

@@ -14,6 +14,7 @@
     BOOL _offMainThread;
     BOOL _pendingComponentQueueProcessing;
     NSString *_portName;
+    NSString *_processName;
     NSProtocolChecker *_protocolChecker;
     NSObject<OS_dispatch_queue> *_queue;
     struct __CFRunLoopSource { } *_runloopSource;

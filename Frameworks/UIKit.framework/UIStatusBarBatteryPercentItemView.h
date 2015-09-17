@@ -6,9 +6,9 @@
     NSString *_percentString;
 }
 
+- (void).cxx_destruct;
 - (BOOL)animatesDataChange;
 - (id)contentsImage;
-- (void)dealloc;
 - (float)extraRightPadding;
 - (int)textAlignment;
 - (int)textStyle;

@@ -61,6 +61,7 @@
 - (id)frameworkBundle;
 - (id)init;
 - (id)initWithBrowser:(id)arg1 session:(id)arg2;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithServiceType:(id)arg1 session:(id)arg2;
 - (id)invitedPeersSection;

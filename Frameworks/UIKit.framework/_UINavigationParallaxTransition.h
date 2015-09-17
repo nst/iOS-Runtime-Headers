@@ -34,6 +34,7 @@
 @property (nonatomic) float transitionGap;
 @property (nonatomic) int transitionStyle;
 
+- (void).cxx_destruct;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (id)_timingFunctionForAnimation;
 - (void)animateKeyboard:(id)arg1;
@@ -46,7 +47,6 @@
 - (id)containerFromView;
 - (id)containerToView;
 - (id)contentDimmingView;
-- (void)dealloc;
 - (float)gapBetweenViews;
 - (id)initWithCurrentOperation:(int)arg1;
 - (BOOL)interactionAborted;

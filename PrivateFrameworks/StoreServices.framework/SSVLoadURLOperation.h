@@ -3,6 +3,7 @@
  */
 
 @interface SSVLoadURLOperation : NSOperation <NSURLConnectionDelegate> {
+    AKAppleIDSession *_authKitSession;
     NSMutableData *_dataBuffer;
     SSVURLDataConsumer *_dataConsumer;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
@@ -22,6 +23,7 @@
     NSRunLoop *_runLoop;
     SSVFairPlaySAPSession *_sapSession;
     SSVSAPSignaturePolicy *_sapSignaturePolicy;
+    BOOL _shouldRetry;
     BOOL _stopped;
     NSString *_storeFrontSuffix;
     SSURLBag *_urlBag;
@@ -61,6 +63,7 @@
 - (void)_addSAPSignatureToRequest:(id)arg1;
 - (void)_applyResponseToMetrics:(id)arg1;
 - (void)_configureWithURLBagInterpreter:(id)arg1;
+- (void)_createAuthKitSession;
 - (id)_dataForCachedResponse:(struct _CFCachedURLResponse { }*)arg1;
 - (void)_finishWithData:(id)arg1;
 - (void)_finishWithOutput:(id)arg1 error:(id)arg2;

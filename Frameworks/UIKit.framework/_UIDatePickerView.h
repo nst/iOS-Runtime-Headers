@@ -61,6 +61,7 @@
 @property (nonatomic, retain) NSLocale *userProvidedLocale;
 @property (getter=_usesBlackChrome, setter=_setUsesBlackChrome:, nonatomic) BOOL usesBlackChrome;
 
+- (void).cxx_destruct;
 - (BOOL)_allowsZeroCountDownDuration;
 - (BOOL)_allowsZeroTimeInterval;
 - (int)_amPmValue;

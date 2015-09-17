@@ -8,9 +8,11 @@
 
 @property (getter=isActivating, readonly) BOOL activating;
 @property (nonatomic, readonly) NSString *applicationName;
+@property (nonatomic, readonly) NSString *cloudKitContainerIdentifier;
 @property (nonatomic, retain) <TSKCompatibilityDelegate> *compatibilityDelegate;
 @property (nonatomic, readonly) BOOL designModeEnabled;
 @property (nonatomic, readonly) NSString *documentTypeDisplayName;
+@property (nonatomic, readonly) NSString *documentTypeDisplayNameForSharingInvitation;
 @property (nonatomic) unsigned int iWorkAuthorColorIndex;
 @property (nonatomic, copy) NSString *iWorkAuthorName;
 @property (getter=isInBackground, readonly) BOOL inBackground;
@@ -32,11 +34,13 @@
 - (id)applicationName;
 - (id)applicationNameForTitleBar;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })applicationToolbarFrame;
+- (id)cloudKitContainerIdentifier;
 - (id)compatibilityDelegate;
 - (id)createCompatibilityDelegate;
 - (id)defaultHyperlinkURL;
 - (BOOL)designModeEnabled;
 - (id)documentTypeDisplayName;
+- (id)documentTypeDisplayNameForSharingInvitation;
 - (unsigned int)iWorkAuthorColorIndex;
 - (id)iWorkAuthorName;
 - (id)init;
@@ -50,7 +54,6 @@
 - (void)setCompatibilityDelegate:(id)arg1;
 - (void)setIWorkAuthorColorIndex:(unsigned int)arg1;
 - (void)setIWorkAuthorName:(id)arg1;
-- (BOOL)shouldGenerateGuidesForOffscreenLayouts;
 - (BOOL)shouldRenderContactShadow;
 - (BOOL)shouldRenderCurvedShadow;
 - (BOOL)shouldValidateMasterLayoutWhileInsertingRows;

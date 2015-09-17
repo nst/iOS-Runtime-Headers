@@ -7,9 +7,11 @@
     float __resultsContentScrollViewPresentationOffset;
     BOOL __showResultsForEmptySearch;
     <UIViewControllerAnimatedTransitioning> *_animator;
+    UITapGestureRecognizer *_backButtonDismissGestureRecognizer;
     int _barPresentationStyle;
     struct { 
         unsigned int searchBarWasTableHeaderView : 1; 
+        unsigned int searchBarWasFirstResponder : 1; 
     } _controllerFlags;
     <UISearchControllerDelegate> *_delegate;
     _UISearchControllerDidScrollDelegate *_didScrollDelegate;
@@ -19,6 +21,7 @@
     UISearchBar *_searchBar;
     UIViewController *_searchResultsController;
     <UISearchResultsUpdating> *_searchResultsUpdater;
+    UISystemInputViewController *_systemInputViewController;
     id _windowWillAnimateToken;
 }
 
@@ -26,7 +29,9 @@
 @property (nonatomic) int _previousSearchBarPosition;
 @property (nonatomic) float _resultsContentScrollViewPresentationOffset;
 @property (nonatomic, retain) UIView *_resultsControllerViewContainer;
+@property (nonatomic, readonly) BOOL _searchbarWasTableHeaderView;
 @property (setter=_setShowResultsForEmptySearch:, nonatomic) BOOL _showResultsForEmptySearch;
+@property (nonatomic, readonly) UISystemInputViewController *_systemInputViewController;
 @property (getter=isActive, nonatomic) BOOL active;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UISearchControllerDelegate> *delegate;
@@ -34,13 +39,14 @@
 @property (nonatomic) BOOL dimsBackgroundDuringPresentation;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidesNavigationBarDuringPresentation;
-@property (nonatomic, readonly, retain) UISearchBar *searchBar;
-@property (nonatomic, readonly, retain) UIViewController *searchResultsController;
+@property (nonatomic, readonly) UISearchBar *searchBar;
+@property (nonatomic, readonly) UIViewController *searchResultsController;
 @property (nonatomic) <UISearchResultsUpdating> *searchResultsUpdater;
 @property (readonly) Class superclass;
 
-+ (BOOL)_shouldForwardViewWillTransitionToSize;
++ (void)_resignSearchBarAsFirstResponder:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_adjustSearchBarSizeForOrientation:(int)arg1;
 - (BOOL)_allowFormSheetStylePresentation;
 - (id)_animatorForBarPresentationStyle:(int)arg1 dismissing:(BOOL)arg2;
@@ -49,11 +55,16 @@
 - (void)_commonInit;
 - (void)_connectSearchBar:(id)arg1;
 - (id)_createAnimationCoordinator;
+- (void)_createSystemInputViewControllerIfNeededForTraitEnvironment:(id)arg1;
+- (id)_defaultAnimationController;
 - (void)_didDismissSearchController;
 - (void)_didPresentFromViewController:(id)arg1;
 - (void)_didScroll;
+- (BOOL)_disableAutomaticKeyboardUI;
+- (void)_dismissFromBackButton:(id)arg1;
 - (void)_dismissPresentation:(BOOL)arg1;
 - (void)_endWatchingPresentingController;
+- (void)_installBackGestureRecognizer;
 - (void)_keyboardWillHide:(id)arg1;
 - (void)_keyboardWillShow:(id)arg1;
 - (id)_locatePresentingViewController;
@@ -75,9 +86,12 @@
 - (void)_searchBarSuperviewChanged;
 - (void)_searchBarTextDidBeginEditing:(id)arg1;
 - (id)_searchPresentationController;
+- (BOOL)_searchbarWasTableHeaderView;
 - (void)_setShowResultsForEmptySearch:(BOOL)arg1;
 - (BOOL)_showResultsForEmptySearch;
 - (void)_sizeSearchViewToPresentingViewController:(id)arg1;
+- (id)_systemInputViewController;
+- (void)_uninstallBackGestureRecognizer;
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
 - (void)_updateSearchBarMaskIfNecessary;
 - (void)_updateSearchResultsContentScrollViewWithDelta:(struct CGSize { float x1; float x2; })arg1;
@@ -95,11 +109,13 @@
 - (id)delegate;
 - (BOOL)dimsBackgroundDuringPresentation;
 - (void)encodeWithCoder:(id)arg1;
+- (void)focusedViewDidChange;
 - (BOOL)hidesNavigationBarDuringPresentation;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSearchResultsController:(id)arg1;
 - (BOOL)isActive;
 - (void)loadView;
+- (id)preferredFocusedItem;
 - (id)searchBar;
 - (id)searchResultsController;
 - (id)searchResultsUpdater;
@@ -112,9 +128,11 @@
 - (void)set_previousSearchBarPosition:(int)arg1;
 - (void)set_resultsContentScrollViewPresentationOffset:(float)arg1;
 - (void)set_resultsControllerViewContainer:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (double)transitionDuration:(id)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
+- (void)willUpdateFocusToView:(id)arg1;
 
 @end

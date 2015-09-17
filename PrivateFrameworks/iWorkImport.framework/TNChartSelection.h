@@ -26,7 +26,6 @@
 
 + (Class)archivedSelectionClass;
 
-- (id).cxx_construct;
 - (id)chart;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -9,6 +9,7 @@
 @property (nonatomic, readonly) struct CGColor { }*CGColor;
 @property (nonatomic, readonly) CIColor *CIColor;
 @property (nonatomic, readonly) float MP_lightness;
+@property (nonatomic, readonly, copy) UIColor *invert;
 @property (getter=_systemColorName, setter=_setSystemColorName:, nonatomic, retain) NSString *systemColorName;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
@@ -115,6 +116,7 @@
 + (id)systemMidGrayColor;
 + (id)systemOrangeColor;
 + (id)systemPinkColor;
++ (id)systemPurpleColor;
 + (id)systemRedColor;
 + (id)systemTealColor;
 + (id)systemYellowColor;
@@ -128,7 +130,7 @@
 + (id)tableCellPlainBackgroundColor;
 + (id)tableCellValue1BlueColor;
 + (id)tableCellValue2BlueColor;
-+ (id)tableCellbackgroundColorPigglyWiggly;
++ (id)tableCellbackgroundColorCarPlay;
 + (id)tableGroupedSeparatorLightColor;
 + (id)tableGroupedTopShadowColor;
 + (id)tablePlainHeaderFooterBackgroundColor;
@@ -184,7 +186,43 @@
 - (void)setStroke;
 - (id)styleString;
 
+// Image: /System/Library/Frameworks/AVKit.framework/AVKit
+
++ (id)AV_indicatorBackgroundColor;
++ (id)AV_indicatorForegroundColor;
+
 // Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
+
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeBabyBlueColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeDarkSeparatorColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightBabyBlueColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeLightSeparatorColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSectionOutlineColor;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeSeparatorColorWithBlurUnsupported;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
++ (id)faceTimeShadowedGroupBackgroundColor;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
 + (id)ab_colorWithR:(float)arg1 G:(float)arg2 B:(float)arg3 A:(float)arg4;
 + (id)cardBackgroundInPopoverColor;
@@ -192,7 +230,9 @@
 + (id)cardCellReadonlyBackgroundColor;
 + (id)cardCellSeparatorColor;
 + (id)cardLabelReadonlyTextColor;
++ (id)cardLabelSuggestedTextColor;
 + (id)cardValueReadonlyTextColor;
++ (id)cardValueSuggestedTextColor;
 + (id)cardValueTextColor;
 + (id)faceTimeBabyBlueColor;
 + (id)faceTimeBabyBlueColor;
@@ -201,8 +241,6 @@
 + (id)faceTimeBabyBlueColor;
 + (id)faceTimeBabyBlueColor;
 + (id)faceTimeBabyBlueColor;
-+ (id)faceTimeBabyBlueColor;
-+ (id)faceTimeDarkSeparatorColor;
 + (id)faceTimeDarkSeparatorColor;
 + (id)faceTimeDarkSeparatorColor;
 + (id)faceTimeDarkSeparatorColor;
@@ -217,8 +255,6 @@
 + (id)faceTimeLightBabyBlueColor;
 + (id)faceTimeLightBabyBlueColor;
 + (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightBabyBlueColor;
-+ (id)faceTimeLightSeparatorColor;
 + (id)faceTimeLightSeparatorColor;
 + (id)faceTimeLightSeparatorColor;
 + (id)faceTimeLightSeparatorColor;
@@ -233,8 +269,6 @@
 + (id)faceTimeSectionOutlineColor;
 + (id)faceTimeSectionOutlineColor;
 + (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSectionOutlineColor;
-+ (id)faceTimeSeparatorColorWithBlurUnsupported;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
 + (id)faceTimeSeparatorColorWithBlurUnsupported;
@@ -249,8 +283,6 @@
 + (id)faceTimeShadowedGroupBackgroundColor;
 + (id)faceTimeShadowedGroupBackgroundColor;
 + (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)faceTimeShadowedGroupBackgroundColor;
-+ (id)randomColor;
 
 // Image: /System/Library/Frameworks/EventKitUI.framework/EventKitUI
 
@@ -271,6 +303,7 @@
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
++ (id)_mapkit_colorForTransitLine:(id)arg1;
 + (id)_mapkit_userLocationAccuracyRingFillColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColor;
 + (id)_mapkit_userLocationAccuracyRingStrokeColorSatellite;
@@ -296,9 +329,12 @@
 - (id)pu_colorWithIncreasedAlpha;
 - (id)pu_colorWithIncreasedBrightness;
 
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
++ (id)ss_browserSystemColor;
+
 // Image: /System/Library/Frameworks/SceneKit.framework/SceneKit
 
-+ (id)SCNJSExportProtocol;
 + (id)color:(float)arg1 :(float)arg2 :(float)arg3 :(float)arg4;
 + (id)colorWithC3DColor4:(const struct C3DColor4 { union { float x_1_1_1[4]; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_1_1_2; } x1; }*)arg1;
 
@@ -312,16 +348,47 @@
 // Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
 
 + (id)colorWithComponentRGBA:(struct { float x1; float x2; float x3; float x4; })arg1;
++ (id)colorWithVectorRGBA;
 
 - (float)alpha;
 - (float)blue;
 - (struct { float x1; float x2; float x3; float x4; })componentRGBA;
 - (float)green;
 - (float)red;
+- (void)vectorRGBA;
 
 // Image: /System/Library/Frameworks/iAd.framework/iAd
 
 + (id)_iAd_colorWithRGBA:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
++ (id)akBoxBorderColor;
++ (id)akBubbleFillColor;
++ (id)akButtonHoverStateColor;
++ (id)akColorPickerBlue;
++ (id)akColorPickerGreen;
++ (id)akColorPickerOrange;
++ (id)akColorPickerPurple;
++ (id)akColorPickerRed;
++ (id)akColorPickerYellow;
++ (id)akColorWithCIColor:(id)arg1;
++ (id)akColorWithSRGBRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
++ (id)akColorWithWhite:(float)arg1 alpha:(float)arg2;
++ (id)akRowSeparatorColor;
++ (id)akSystemRedColor;
+
+- (float)akAlphaComponent;
+- (BOOL)akIsEqualToColor:(id)arg1;
+- (id)colorUsingSRGBColorSpace;
+
+// Image: /System/Library/PrivateFrameworks/AuthKitUI.framework/AuthKitUI
+
++ (id)ak_colorWithServerRGBRepresentation:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
++ (id)cam_lightenColor:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
 
@@ -331,6 +398,10 @@
 
 - (id)colorByBlendingWithColor:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/FMCoreUI.framework/FMCoreUI
+
+- (id)invert;
+
 // Image: /System/Library/PrivateFrameworks/FMFUI.framework/FMFUI
 
 + (id)fmfOrangeColor;
@@ -339,19 +410,26 @@
 
 - (float)_gkLuminance;
 
-// Image: /System/Library/PrivateFrameworks/HelpKit.framework/HelpKit
-
-+ (id)colorWithCSSString:(id)arg1;
-+ (id)colorWithR:(int)arg1 G:(int)arg2 B:(int)arg3 alpha:(float)arg4;
-
-- (id)initWithR:(int)arg1 G:(int)arg2 B:(int)arg3 alpha:(float)arg4;
-
 // Image: /System/Library/PrivateFrameworks/NanoMailKitServer.framework/NanoMailKitServer
 
 + (id)colorWithWebColor:(id)arg1;
 + (id)colorWithWebColorName:(id)arg1;
 + (id)colorWithWebHexTriplet:(id)arg1;
 + (id)colorWithWebRgb:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
++ (id)ICDarkenedTintColor;
++ (struct UIColor { Class x1; }*)ICGrayColor;
++ (struct UIColor { Class x1; }*)ICGrayTodoButtonColor;
++ (struct UIColor { Class x1; }*)ICGrayTodoButtonHighlightColor;
++ (struct UIColor { Class x1; }*)ICRedColor;
++ (struct UIColor { Class x1; }*)ICTintColor;
++ (struct UIColor { Class x1; }*)ICTintedSelectionColor;
++ (struct UIColor { Class x1; }*)ICYellowTodoButtonColor;
++ (struct UIColor { Class x1; }*)ICYellowTodoButtonHighlightColor;
++ (id)ic_colorWith256Red:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
++ (struct UIColor { Class x1; }*)preferredDefaultFontColor;
 
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
@@ -363,6 +441,12 @@
 // Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
 
 + (id)_remoteUI_colorWithString:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
++ (id)safari_colorWithRGBColorComponents:(id)arg1;
+
+- (id)safari_rgbColorComponents;
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 

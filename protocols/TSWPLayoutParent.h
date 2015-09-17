@@ -15,6 +15,7 @@
 
 @optional
 
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forScrollingToSelectionPath:(TSKSelectionPath *)arg2;
 - (unsigned int)initialCharIndex;
 - (struct CGSize { float x1; float x2; })initialTextSize;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maskRectForTextLayout:(TSWPLayout *)arg1;

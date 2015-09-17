@@ -9,6 +9,7 @@
 
 - (id)colors;
 - (void)dealloc;
+- (id)description;
 - (id)fills;
 - (unsigned int)hash;
 - (id)initWithColors:(id)arg1 fills:(id)arg2;

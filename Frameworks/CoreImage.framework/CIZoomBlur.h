@@ -2,18 +2,29 @@
    Image: /System/Library/Frameworks/CoreImage.framework/CoreImage
  */
 
-@interface CIZoomBlur : CILinearBlur {
+@interface CIZoomBlur : CIFilter {
+    NSNumber *inputAmount;
     CIVector *inputCenter;
+    CIImage *inputImage;
 }
 
+@property (nonatomic, retain) NSNumber *inputAmount;
 @property (nonatomic, retain) CIVector *inputCenter;
+@property (nonatomic, retain) CIImage *inputImage;
 
 + (id)customAttributes;
 
 - (id)_blur:(id)arg1 pass:(int)arg2 weightsFactor:(float)arg3;
+- (BOOL)_isIdentity;
 - (id)_kernel;
+- (id)inputAmount;
 - (id)inputCenter;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })regionOf:(int)arg1 destRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 userInfo:(id)arg3;
+- (id)inputImage;
+- (id)outputImage;
+- (void)setInputAmount:(id)arg1;
 - (void)setInputCenter:(id)arg1;
+- (void)setInputImage:(id)arg1;
+- (void)setValue:(id)arg1 forUndefinedKey:(id)arg2;
+- (id)valueForUndefinedKey:(id)arg1;
 
 @end

@@ -9,6 +9,7 @@
 @property (nonatomic, retain) NSString *displayName;
 @property (nonatomic, retain) NSString *fmtype;
 @property (nonatomic, retain) NSString *loctype;
+@property (nonatomic, retain) NSData *mapKitHandle;
 @property (nonatomic) double radius;
 @property (nonatomic, retain) NSString *routing;
 @property (nonatomic, retain) NSString *title;
@@ -19,6 +20,7 @@
 - (id)displayName;
 - (id)fmtype;
 - (id)loctype;
+- (id)mapKitHandle;
 - (id)parametersToObscure;
 - (id)propertiesToObscure;
 - (double)radius;
@@ -28,6 +30,7 @@
 - (void)setDisplayName:(id)arg1;
 - (void)setFmtype:(id)arg1;
 - (void)setLoctype:(id)arg1;
+- (void)setMapKitHandle:(id)arg1;
 - (void)setRadius:(double)arg1;
 - (void)setRouting:(id)arg1;
 - (void)setTitle:(id)arg1;

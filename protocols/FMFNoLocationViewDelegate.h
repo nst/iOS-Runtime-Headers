@@ -7,6 +7,5 @@
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsets;
 - (NSSet *)handlesShowingLocations;
-- (UIImage *)personImageForNoLocationView;
 
 @end

@@ -14,14 +14,15 @@
 
 - (void)_cleanupMachInfo;
 - (BOOL)_disconnectCTServerConnection;
+- (void)_entitlementStatusChanged;
 - (void)_handleCTServiceRequestName:(struct __CFString { }*)arg1 userInfo:(struct __CFDictionary { }*)arg2 contextInfo:(void*)arg3;
-- (void)_handleEntitlementNotification:(struct __CFDictionary { }*)arg1;
 - (id)_rawEntitlementValue;
 - (BOOL)_reconnectCTServerConnectionIfNecessary;
 - (BOOL)_registerForCTEntitlementNotifications;
 - (void)_registrationStateChanged;
 - (BOOL)_setupCTServerConnection;
 - (void)_unregisterForCTEntitlementNotifications;
+- (void)_updateEntitlementStatusUsingCTEntitlementsInfo:(struct __CFDictionary { }*)arg1;
 - (BOOL)faceTimeNonWiFiEntitled;
 - (id)init;
 - (id)registrationState;

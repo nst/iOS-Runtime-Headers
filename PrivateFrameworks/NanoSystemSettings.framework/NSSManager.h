@@ -22,6 +22,8 @@
 - (void)enableAirplaneMode:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)externalQueue;
 - (void)getAboutInfo:(id /* block */)arg1;
+- (void)getAccountsInfo:(id /* block */)arg1;
+- (void)getAccountsInfoForAccountType:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)getLegalDocuments:(id /* block */)arg1;
 - (void)getLocalesInfo:(id /* block */)arg1;
 - (void)getProfileWithIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;

@@ -4,7 +4,7 @@
 
 @interface RKSentenceClassifier_fr_FR : RKSentenceClassifier
 
-- (id)alternativeConjunction;
+- (id)alternativeConjunctions;
 - (void)analyzeSentence;
 - (id)classifySentence;
 

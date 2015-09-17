@@ -3,18 +3,21 @@
  */
 
 @interface PLCameraAgent : PLAgent {
-    PLCFNotificationOperatorComposition *_backCameraPowerNotification;
-    PLCFNotificationOperatorComposition *_cameraTorchNotification;
-    PLCFNotificationOperatorComposition *_frontCameraPowerNotification;
+    PLXPCListenerOperatorComposition *_backCameraNotification;
+    NSDictionary *_backCameraPowerModel;
+    PLXPCListenerOperatorComposition *_frontCameraNotification;
+    NSDictionary *_frontCameraPowerModel;
+    PLXPCListenerOperatorComposition *_torchNotification;
     NSDictionary *_torchPowerModel;
 }
 
-@property (readonly) PLCFNotificationOperatorComposition *backCameraPowerNotification;
-@property (readonly) PLCFNotificationOperatorComposition *cameraTorchNotification;
-@property (readonly) PLCFNotificationOperatorComposition *frontCameraPowerNotification;
+@property (readonly) PLXPCListenerOperatorComposition *backCameraNotification;
+@property (readonly) NSDictionary *backCameraPowerModel;
+@property (readonly) PLXPCListenerOperatorComposition *frontCameraNotification;
+@property (readonly) NSDictionary *frontCameraPowerModel;
+@property (readonly) PLXPCListenerOperatorComposition *torchNotification;
 @property (readonly) NSDictionary *torchPowerModel;
 
-+ (id)accountingGroupDefinitions;
 + (id)defaults;
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitions;
@@ -22,17 +25,18 @@
 + (id)entryEventNoneDefinitions;
 + (id)entryEventPointDefinitions;
 + (void)load;
-+ (id)railDefinitions;
 
 - (void).cxx_destruct;
-- (id)backCameraPowerNotification;
-- (id)cameraTorchNotification;
-- (id)frontCameraPowerNotification;
-- (id)init;
+- (id)backCameraNotification;
+- (id)backCameraPowerModel;
+- (id)frontCameraNotification;
+- (id)frontCameraPowerModel;
 - (void)initOperatorDependancies;
 - (void)log;
-- (void)modelTorchPower:(id)arg1;
-- (double)torchLevelToTorchPower:(double)arg1;
+- (void)modelBackCameraPowerWithEntry:(id)arg1;
+- (void)modelFrontCameraPowerWithEntry:(id)arg1;
+- (void)modelTorchPowerWithEntry:(id)arg1;
+- (id)torchNotification;
 - (id)torchPowerModel;
 
 @end

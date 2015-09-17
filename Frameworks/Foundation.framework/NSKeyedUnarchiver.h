@@ -22,6 +22,7 @@
 }
 
 @property <NSKeyedUnarchiverDelegate> *delegate;
+@property BOOL requiresSecureCoding;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -29,8 +30,11 @@
 + (void)initialize;
 + (void)setClass:(Class)arg1 forClassName:(id)arg2;
 + (id)unarchiveObjectWithData:(id)arg1;
++ (id)unarchiveObjectWithData:(id)arg1 error:(id*)arg2;
 + (id)unarchiveObjectWithFile:(id)arg1;
++ (id)unarchiveTopLevelObjectWithData:(id)arg1 error:(id*)arg2;
 
+- (void)__setError:(id)arg1;
 - (id)_allowedClassNames;
 - (id)_blobForCurrentObject;
 - (unsigned int)_currentUniqueIdentifier;
@@ -61,8 +65,10 @@
 - (id)decodeObjectOfClasses:(id)arg1 forKey:(id)arg2;
 - (void)decodeValueOfObjCType:(const char *)arg1 at:(void*)arg2;
 - (void)decodeValuesOfObjCTypes:(const char *)arg1;
+- (int)decodingFailurePolicy;
 - (id)delegate;
 - (id)description;
+- (id)error;
 - (void)finalize;
 - (void)finishDecoding;
 - (id)init;
@@ -72,6 +78,7 @@
 - (BOOL)requiresSecureCoding;
 - (void)setAllowedClasses:(id)arg1;
 - (void)setClass:(Class)arg1 forClassName:(id)arg2;
+- (void)setDecodingFailurePolicy:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setRequiresSecureCoding:(BOOL)arg1;
 - (unsigned int)systemVersion;
@@ -79,6 +86,7 @@
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
++ (id)deserializeObjectWithData:(id)arg1 allowedClass:(Class)arg2 frameworkClasses:(id)arg3;
 + (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
@@ -98,6 +106,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
++ (id)deserializeObjectWithData:(id)arg1 allowedClass:(Class)arg2 frameworkClasses:(id)arg3;
 + (id)deserializeObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
@@ -122,9 +131,5 @@
 // Image: /System/Library/PrivateFrameworks/Search.framework/Search
 
 + (id)_sp_secureUnarchiveObjectWithData:(id)arg1;
-
-// Image: /System/Library/PrivateFrameworks/XPCObjects.framework/XPCObjects
-
-+ (id)unarchiveObjectWithData:(id)arg1 allowedClasses:(id)arg2;
 
 @end

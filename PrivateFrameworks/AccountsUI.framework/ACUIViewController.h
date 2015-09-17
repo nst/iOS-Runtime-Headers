@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AccountsUI.framework/AccountsUI
  */
 
-@interface ACUIViewController : PSListController <ACUIAccountOperationsDelegate> {
+@interface ACUIViewController : PSListController <ACUIAccountOperationsDelegate, UIActionSheetDelegate> {
     <ACUIViewControllerAccountChangeObserver> *_accountChangeObserver;
     ACUIAccountOperationsHelper *_accountOperationsHelper;
     ACAccountStore *_accountStore;

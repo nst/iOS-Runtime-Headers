@@ -3,18 +3,23 @@
  */
 
 @interface CKOperation : NSOperation {
+    unsigned long long _activityID;
+    BOOL _allowsBackgroundNetworking;
     BOOL _allowsCellularAccess;
+    NSString *_authPromptReason;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     CKContainer *_container;
     id _context;
     NSString *_deviceIdentifier;
     NSError *_error;
     BOOL _isDiscretionary;
-    BOOL _isExecuting;
+    NSObject<OS_os_transaction> *_isExecuting;
     BOOL _isFinished;
+    CKOperationMetrics *_metrics;
     NSString *_operationID;
     NSString *_parentSectionID;
     CKPlaceholderOperation *_placeholderOperation;
+    BOOL _preferAnonymousRequests;
     NSArray *_requestUUIDs;
     NSString *_sectionID;
     NSString *_sourceApplicationBundleIdentifier;
@@ -24,7 +29,9 @@
     int _usesBackgroundSessionOverride;
 }
 
+@property (nonatomic) BOOL allowsBackgroundNetworking;
 @property (nonatomic) BOOL allowsCellularAccess;
+@property (nonatomic, retain) NSString *authPromptReason;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (nonatomic, retain) CKContainer *container;
 @property (nonatomic, readonly) id context;
@@ -33,10 +40,12 @@
 @property (nonatomic) BOOL isDiscretionary;
 @property (nonatomic) BOOL isExecuting;
 @property (nonatomic) BOOL isFinished;
+@property (nonatomic, retain) CKOperationMetrics *metrics;
 @property (nonatomic, retain) NSString *operationID;
 @property (nonatomic, readonly) CKOperationInfo *operationInfo;
 @property (nonatomic, readonly) NSString *parentSectionID;
 @property (nonatomic, retain) CKPlaceholderOperation *placeholderOperation;
+@property (nonatomic) BOOL preferAnonymousRequests;
 @property (nonatomic, retain) NSArray *requestUUIDs;
 @property (nonatomic, retain) NSString *sectionID;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
@@ -46,6 +55,8 @@
 @property (nonatomic) BOOL usesBackgroundSession;
 @property (nonatomic) int usesBackgroundSessionOverride;
 
+// Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
+
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
 - (id)CKPropertiesDescription;
@@ -54,8 +65,12 @@
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (void)_installTimeoutSource;
+- (void)_start;
 - (void)_uninstallTimeoutSource;
+- (unsigned long long)activityStart;
+- (BOOL)allowsBackgroundNetworking;
 - (BOOL)allowsCellularAccess;
+- (id)authPromptReason;
 - (id)callbackQueue;
 - (void)cancel;
 - (id)container;
@@ -73,16 +88,20 @@
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
 - (void)main;
+- (id)metrics;
 - (id)operationID;
 - (id)operationInfo;
 - (Class)operationInfoClass;
 - (id)parentSectionID;
 - (void)performCKOperation;
 - (id)placeholderOperation;
+- (BOOL)preferAnonymousRequests;
 - (void)processOperationResult:(id)arg1;
 - (id)requestUUIDs;
 - (id)sectionID;
+- (void)setAllowsBackgroundNetworking:(BOOL)arg1;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
+- (void)setAuthPromptReason:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setContainer:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
@@ -90,8 +109,10 @@
 - (void)setIsDiscretionary:(BOOL)arg1;
 - (void)setIsExecuting:(BOOL)arg1;
 - (void)setIsFinished:(BOOL)arg1;
+- (void)setMetrics:(id)arg1;
 - (void)setOperationID:(id)arg1;
 - (void)setPlaceholderOperation:(id)arg1;
+- (void)setPreferAnonymousRequests:(BOOL)arg1;
 - (void)setRequestUUIDs:(id)arg1;
 - (void)setSectionID:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
@@ -107,5 +128,9 @@
 - (id)timeoutSource;
 - (BOOL)usesBackgroundSession;
 - (int)usesBackgroundSessionOverride;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (void)ic_removeAllCompletionBlocks;
 
 @end

@@ -13,7 +13,6 @@
     BOOL _needsReload;
     NSArray *_pendingHandles;
     NSArray *_recipients;
-    NSArray *_thumbnailOrderABRecordIDs;
 }
 
 @property (nonatomic, readonly) BOOL buttonColor;
@@ -31,8 +30,10 @@
 @property (nonatomic, readonly) BOOL hasDisplayName;
 @property (nonatomic, readonly) BOOL hasUnreadMessages;
 @property (getter=isIgnoringTypingUpdates, nonatomic) BOOL ignoringTypingUpdates;
+@property (nonatomic, readonly) BOOL isPreviewTextForAttachment;
 @property (nonatomic, readonly) BOOL isToEmailAddress;
 @property (getter=hasLeft, nonatomic, readonly) BOOL left;
+@property (getter=hasLeftGroupChat, nonatomic, readonly) BOOL leftGroupChat;
 @property (nonatomic) unsigned int limitToLoad;
 @property (nonatomic) BOOL localUserIsRecording;
 @property (nonatomic) BOOL localUserIsTyping;
@@ -51,7 +52,6 @@
 @property (nonatomic, readonly, retain) NSString *serviceDisplayName;
 @property (nonatomic, readonly) BOOL shouldShowCharacterCount;
 @property (nonatomic, readonly) BOOL supportsMutatingGroupMembers;
-@property (nonatomic, retain) NSArray *thumbnailOrderABRecordIDs;
 @property (nonatomic, readonly) unsigned int unreadCount;
 @property (nonatomic, retain) CKComposition *unsentComposition;
 
@@ -74,8 +74,6 @@
 + (BOOL)_sms_mediaObjectPassesRestriction:(id)arg1;
 + (id)newPendingConversation;
 
-- (id)__generateThumbnailOfDiameter:(float)arg1 withRecipientImage:(id)arg2 andOtherRecipient:(id)arg3;
-- (id)__generateThumbnailOfDiameter:(float)arg1 withRecordIDs:(id)arg2 recipientCount:(unsigned int)arg3;
 - (BOOL)_accountIsOperational:(id)arg1 forService:(id)arg2;
 - (BOOL)_chatHasValidAccount:(id)arg1 forService:(id)arg2;
 - (BOOL)_chatSupportsTypingIndicators;
@@ -89,11 +87,7 @@
 - (id)_headerTitleForService:(id)arg1;
 - (BOOL)_iMessage_canSendToRecipients:(id)arg1 alertIfUnable:(BOOL)arg2;
 - (BOOL)_iMessage_supportsCharacterCountForAddresses:(id)arg1;
-- (id)_messageOrderedABRecordIDsForChatItems:(id)arg1;
-- (void)_messageReceived:(id)arg1;
 - (id)_nameForHandle:(id)arg1;
-- (void)_postThumbnailChanged;
-- (void)_recordRecentContact;
 - (BOOL)_sms_canSendToRecipients:(id)arg1 alertIfUnable:(BOOL)arg2;
 - (BOOL)_sms_supportsCharacterCountForAddresses:(id)arg1;
 - (BOOL)_sms_willSendMMSByDefaultForAddresses:(id)arg1;
@@ -125,6 +119,7 @@
 - (id)handles;
 - (BOOL)hasDisplayName;
 - (BOOL)hasLeft;
+- (BOOL)hasLeftGroupChat;
 - (BOOL)hasUnreadMessages;
 - (id)init;
 - (id)initWithChat:(id)arg1;
@@ -134,6 +129,7 @@
 - (BOOL)isMuted;
 - (BOOL)isPending;
 - (BOOL)isPlaceholder;
+- (BOOL)isPreviewTextForAttachment;
 - (BOOL)isToEmailAddress;
 - (unsigned int)limitToLoad;
 - (void)loadAllMessages;
@@ -148,6 +144,7 @@
 - (id)name;
 - (BOOL)needsReload;
 - (BOOL)noAvailableServices;
+- (id)orderedContactsForAvatarView;
 - (BOOL)outgoingBubbleColor;
 - (id)pendingEntities;
 - (id)pendingHandles;
@@ -157,12 +154,10 @@
 - (id)recipientStrings;
 - (id)recipients;
 - (void)refreshServiceForSending;
-- (void)regenerateThumbnail;
 - (void)reloadIfNeeded;
 - (void)removeRecipientHandles:(id)arg1;
 - (void)resetCaches;
 - (void)resetNameCaches;
-- (void)resetThumbnailCaches;
 - (BOOL)sendButtonColor;
 - (void)sendMessage:(id)arg1 newComposition:(BOOL)arg2;
 - (void)sendMessage:(id)arg1 onService:(id)arg2 newComposition:(BOOL)arg3;
@@ -181,18 +176,14 @@
 - (void)setPendingComposeRecipients:(id)arg1;
 - (void)setPendingHandles:(id)arg1;
 - (void)setRecipients:(id)arg1;
-- (void)setThumbnailOrderABRecordIDs:(id)arg1;
 - (void)setUnsentComposition:(id)arg1;
 - (id)shortDescription;
 - (BOOL)shouldShowCharacterCount;
 - (BOOL)supportsMutatingGroupMembers;
-- (id)thumbnail;
-- (id)thumbnailOrderABRecordIDs;
 - (id)uniqueIdentifier;
 - (void)unmute;
 - (unsigned int)unreadCount;
 - (id)unsentComposition;
-- (void)updateGroupThumbnailIfNeeded;
 - (void)updateUserActivityWithComposition:(id)arg1;
 
 @end

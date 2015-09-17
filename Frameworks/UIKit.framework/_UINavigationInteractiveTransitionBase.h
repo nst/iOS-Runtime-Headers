@@ -58,6 +58,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) float totalDistance;
 
+- (void).cxx_destruct;
 - (void)_completeStoppedInteractiveTransition;
 - (BOOL)_completesTransitionOnEnd;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldBeRequiredToFailByGestureRecognizer:(id)arg2;
@@ -74,6 +75,7 @@
 - (void)_stopInteractiveTransition;
 - (BOOL)_stoppedTransitionWasCancelled;
 - (BOOL)_transitionWasStopped;
+- (float)_translationCoefficient;
 - (void)_updateStatistics:(id)arg1 firstSample:(BOOL)arg2 finalSample:(BOOL)arg3;
 - (BOOL)_useAugmentedShouldPopDecisionProcedure;
 - (id)animationController;

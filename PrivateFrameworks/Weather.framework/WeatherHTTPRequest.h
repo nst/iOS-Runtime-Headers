@@ -16,6 +16,7 @@
 + (void)appendDebugString:(id)arg1;
 + (void)saveDebugString;
 
+- (void).cxx_destruct;
 - (id)aggregateDictionaryDomain;
 - (void)cancel;
 - (id)connection;

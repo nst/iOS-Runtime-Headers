@@ -7,13 +7,12 @@
     NSString *_serviceName;
 }
 
-@property (nonatomic, copy) NSString *serviceName;
+@property (nonatomic, readonly, copy) NSString *serviceName;
 
 - (void).cxx_destruct;
 - (void)_handleNewConnection:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 - (id)serviceName;
-- (void)setServiceName:(id)arg1;
 - (BOOL)start;
 - (void)stop;
 

@@ -44,9 +44,10 @@
 
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
-- (BOOL)ml_isAUCAudio;
+- (BOOL)ml_isAUCAudioKind;
 - (BOOL)ml_isAUCItemKind;
-- (BOOL)ml_isAUCVideo;
+- (BOOL)ml_isAUCVideoKind;
 - (BOOL)ml_isMusicItemKind;
+- (BOOL)ml_isMusicVideoKind;
 
 @end

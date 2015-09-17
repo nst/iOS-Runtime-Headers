@@ -35,6 +35,7 @@
 - (void)_capVisibleTextForBucket:(id)arg1;
 - (float)_combinedWidthOfPartitions;
 - (double)_effectiveEndTimeForOccurrence:(id)arg1;
+- (float)_endOfCollisionZoneForY:(float)arg1 occurrence:(id)arg2;
 - (void)_findCollidingOccurrences;
 - (void)_generateNewPartitions;
 - (void)_initializeFirstGridStripe;

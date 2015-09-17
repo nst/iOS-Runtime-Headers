@@ -9,4 +9,6 @@
     NSString *_testName;
 }
 
+- (void).cxx_destruct;
+
 @end

@@ -2,38 +2,76 @@
    Image: /System/Library/PrivateFrameworks/RemoteUI.framework/RemoteUI
  */
 
-@interface RUIPasscodeView : RUIElement <RUIPasscodeFieldDelegate, RUITableFooterDelegate> {
-    UIView *_footer;
+@interface RUIPasscodeView : RUIElement <PSPasscodeFieldDelegate, RUITableFooterDelegate> {
+    BOOL _appeared;
+    UITextField *_complexPasscodeField;
+    UIView *_containerView;
+    RUIElement *_footer;
+    UIView<RemoteUITableFooter> *_footerView;
     UIColor *_foregroundColor;
+    RUIElement *_header;
+    NSString *_headerTitle;
+    UIView<RemoteUITableHeader> *_headerView;
     int _keyboardAppearance;
-    UILabel *_label;
+    unsigned int _numberOfEntryFields;
     RUIObjectModel *_objectModel;
     RUIPage *_page;
-    RUIPasscodeField *_passcodeField;
-    UIView *_view;
+    PSPasscodeField *_passcodeField;
+    unsigned int _passcodeValidationAttempts;
+    NSString *_pendingAutoFillToken;
+    UILabel *_titleLabel;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) RUIElement *footer;
 @property (nonatomic, retain) UIColor *foregroundColor;
+@property (readonly) unsigned int hash;
+@property (nonatomic, retain) RUIElement *header;
+@property (nonatomic, copy) NSString *headerTitle;
 @property (nonatomic) int keyboardAppearance;
+@property (nonatomic) unsigned int numberOfEntryFields;
 @property (nonatomic) RUIObjectModel *objectModel;
 @property (nonatomic) RUIPage *page;
-@property (nonatomic, readonly) RUIPasscodeField *passcodeField;
+@property (nonatomic, readonly) PSPasscodeField *passcodeField;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_clearPasscode;
+- (void)_complexPasscodeFieldDidChange:(id)arg1;
+- (void)_doneButtonTapped:(id)arg1;
+- (void)_jiggleView:(id)arg1;
+- (BOOL)_requiresLocalPasscodeValidation;
+- (void)_updateFieldSpacer;
+- (void)autofillWithToken:(id)arg1;
+- (id)footer;
+- (id)footerView;
 - (void)footerView:(id)arg1 activatedLinkWithURL:(id)arg2;
 - (id)foregroundColor;
+- (id)header;
+- (id)headerTitle;
+- (id)headerView;
+- (id)init;
 - (int)keyboardAppearance;
+- (unsigned int)numberOfEntryFields;
 - (id)objectModel;
 - (id)page;
 - (id)passcodeField;
 - (void)passcodeField:(id)arg1 enteredPasscode:(id)arg2;
 - (id)passcodeView;
 - (void)populatePostbackDictionary:(id)arg1;
+- (void)setFooter:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
+- (void)setHeader:(id)arg1;
+- (void)setHeaderTitle:(id)arg1;
 - (void)setKeyboardAppearance:(int)arg1;
+- (void)setNumberOfEntryFields:(unsigned int)arg1;
 - (void)setObjectModel:(id)arg1;
 - (void)setPage:(id)arg1;
+- (id)sourceURL;
 - (void)submitPIN;
+- (id)titleLabel;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayout;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

@@ -2,10 +2,10 @@
    Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
  */
 
-@interface LSBundleProxy : LSResourceProxy {
+@interface LSBundleProxy : LSResourceProxy <NSSecureCoding> {
     NSURL *_appStoreReceiptURL;
     NSString *_bundleExecutable;
-    unsigned int _bundleFlags;
+    unsigned long long _bundleFlags;
     NSString *_bundleType;
     NSURL *_bundleURL;
     NSString *_bundleVersion;
@@ -16,7 +16,7 @@
     NSDictionary *_groupContainerURLs;
     NSString *_localizedShortName;
     NSArray *_machOUUIDs;
-    unsigned int _plistContentFlags;
+    unsigned long long _plistContentFlags;
     unsigned int _sequenceNumber;
     NSString *_signerIdentity;
 }
@@ -40,8 +40,11 @@
 @property (nonatomic, readonly) unsigned int sequenceNumber;
 @property (nonatomic, readonly) NSString *signerIdentity;
 
+// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+
 + (id)bundleProxyForIdentifier:(id)arg1;
 + (id)bundleProxyForURL:(id)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (unsigned char)_createContext:(struct LSContext { struct LSDatabase {} *x1; }*)arg1 andGetBundle:(unsigned int*)arg2 withData:(const struct LSBundleData {}**)arg3;
 - (id)_initWithBundleUnit:(unsigned long)arg1 bundleType:(unsigned int)arg2 BundleID:(id)arg3 localizedName:(id)arg4 bundleContainerURL:(id)arg5 dataContainerURL:(id)arg6 resourcesDirectoryURL:(id)arg7 iconsDictionary:(id)arg8 iconFileNames:(id)arg9 version:(id)arg10;
@@ -57,16 +60,25 @@
 - (id)containerURL;
 - (id)dataContainerURL;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (id)entitlements;
 - (id)environmentVariables;
 - (BOOL)foundBackingBundle;
 - (id)groupContainerURLs;
 - (unsigned int)hash;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedShortName;
 - (id)machOUUIDs;
 - (unsigned int)sequenceNumber;
 - (void)setLocalizedShortName:(id)arg1;
 - (id)signerIdentity;
+- (id)uniqueIdentifier;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
++ (id)_hk_appExtensionContainerBundleProxyWithProperties:(id)arg1;
++ (id)hk_appExtensionContainerBundleForConnection:(id)arg1;
++ (id)hk_appExtensionContainerBundleForCurrentTask;
 
 @end

@@ -28,7 +28,7 @@
 - (BOOL)isFirstCell;
 - (int)lastColumn;
 - (void)mapAt:(id)arg1 withState:(id)arg2 height:(double)arg3 nextCell:(struct EDCellHeader { unsigned int x1; unsigned int x2; }*)arg4;
-- (id)mapHyperlinkAt:(id)arg1;
+- (id)mapHyperlink:(id)arg1 at:(id)arg2;
 - (void)mapRowColSpansAt:(id)arg1 withState:(id)arg2;
 - (void)resetColumnSpan:(int)arg1;
 - (void)setFirstCellFlag;

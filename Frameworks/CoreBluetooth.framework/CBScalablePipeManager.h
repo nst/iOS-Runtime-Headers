@@ -18,7 +18,7 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (void)handleDataAvailable:(id)arg1;
+- (void)handleDataAvailable:(id)arg1 replyBlock:(id /* block */)arg2;
 - (void)handleEndpointAdded:(id)arg1;
 - (void)handleEndpointRemoved:(id)arg1;
 - (void)handleHostStateUpdated:(id)arg1;
@@ -34,12 +34,13 @@
 - (void)registerEndpoint:(id)arg1 type:(int)arg2 priority:(int)arg3;
 - (oneway void)release;
 - (BOOL)sendMsg:(int)arg1 args:(id)arg2;
+- (void)setLinkRequirementsForPeer:(id)arg1 packetsPerSecond:(unsigned int)arg2 inputBytesPerSecond:(unsigned int)arg3 outputBytesPerSecond:(unsigned int)arg4;
 - (int)state;
 - (void)unregisterAllEndpoints;
 - (void)unregisterEndpoint:(id)arg1;
-- (void)xpcConnection:(id)arg1 didReceiveMsg:(unsigned short)arg2 args:(id)arg3;
-- (void)xpcConnectionDidFinalize:(id)arg1;
-- (void)xpcConnectionDidReset:(id)arg1;
-- (void)xpcConnectionIsInvalid:(id)arg1;
+- (void)xpcConnectionDidFinalize;
+- (void)xpcConnectionDidReceiveMsg:(unsigned short)arg1 args:(id)arg2 reply:(id /* block */)arg3;
+- (void)xpcConnectionDidReset;
+- (void)xpcConnectionIsInvalid;
 
 @end

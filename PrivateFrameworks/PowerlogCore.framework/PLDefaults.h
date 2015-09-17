@@ -14,6 +14,8 @@
 @property (retain) NSMutableDictionary *managedPrefsCache;
 @property (retain) NSMutableDictionary *userPrefsCache;
 
++ (id)allDefaultsEnabled;
++ (id)applicationID;
 + (BOOL)boolForKey:(id)arg1;
 + (BOOL)boolForKey:(id)arg1 ifNotSet:(BOOL)arg2;
 + (BOOL)debugEnabled;
@@ -21,11 +23,14 @@
 + (double)doubleForKey:(id)arg1 ifNotSet:(double)arg2;
 + (BOOL)fullMode;
 + (BOOL)fullModeForClass:(Class)arg1;
++ (BOOL)fullModeLiveQuery;
 + (BOOL)fullPLLog;
 + (BOOL)isClassDebugEnabled:(Class)arg1;
 + (BOOL)isClassDebugEnabled:(Class)arg1 forKey:(id)arg2;
 + (BOOL)isClassNameDebugEnabled:(id)arg1;
 + (BOOL)isClassNameDebugEnabled:(id)arg1 forKey:(id)arg2;
++ (BOOL)isDevBoard;
++ (BOOL)isModelingDebugEnabled;
 + (long)longForKey:(id)arg1;
 + (long)longForKey:(id)arg1 ifNotSet:(long)arg2;
 + (BOOL)objectExistsForKey:(id)arg1;

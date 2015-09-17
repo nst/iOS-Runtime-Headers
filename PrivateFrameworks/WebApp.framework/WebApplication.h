@@ -5,7 +5,7 @@
 @interface WebApplication : UIApplication <UIApplicationDelegate> {
     NSURL *_lastActiveWebClipURL;
     BOOL _wasSuspendedUnderLock;
-    NSMutableDictionary *webAppControllerDictionary;
+    id _webApp;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -14,13 +14,14 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UIWindow *window;
 
-- (id)_currentWebAppController;
+- (void).cxx_destruct;
+- (BOOL)_shouldForceClassicMode;
+- (void)_showWebApplicationAtURL:(id)arg1;
 - (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationOpenURL:(id)arg1;
 - (BOOL)applicationSuspendWithSettings:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
-- (void)bringToFrontWebAppControllerForWebAppURL:(id)arg1;
 - (id)nameOfDefaultImageToUpdateAtSuspension;
 - (id)nameOfDefaultImageToUpdateAtSuspension:(int)arg1;
 

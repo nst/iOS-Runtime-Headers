@@ -7,18 +7,29 @@
     BOOL m_canceled;
     double m_delay;
     NSString *m_runLoopMode;
+    NSDate *m_startDate;
     id m_target;
     NSTimer *m_timer;
     id m_userInfo;
 }
 
+@property (readonly) BOOL _canceled;
+@property (readonly) NSDate *_startDate;
+@property (retain) id target;
+@property (retain) id userInfo;
+
+- (void).cxx_destruct;
+- (BOOL)_canceled;
+- (id)_startDate;
 - (void)cancel;
 - (void)dealloc;
 - (double)delay;
+- (id)init;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3 delay:(double)arg4;
 - (id)initWithTarget:(id)arg1 action:(SEL)arg2 userInfo:(id)arg3 delay:(double)arg4 mode:(id)arg5;
 - (BOOL)scheduled;
 - (void)setTarget:(id)arg1;
+- (void)setUserInfo:(id)arg1;
 - (id)target;
 - (void)timerFired:(id)arg1;
 - (void)touch;

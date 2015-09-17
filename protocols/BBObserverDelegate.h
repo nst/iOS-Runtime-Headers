@@ -23,9 +23,7 @@
 - (void)observer:(BBObserver *)arg1 removeBulletin:(BBBulletin *)arg2 forFeed:(unsigned int)arg3;
 - (BBThumbnailSizeConstraints *)observer:(BBObserver *)arg1 thumbnailSizeConstraintsForAttachmentType:(int)arg2;
 - (void)observer:(BBObserver *)arg1 updateSectionInfo:(BBSectionInfo *)arg2;
-- (void)observer:(BBObserver *)arg1 updateSectionInfo:(BBSectionInfo *)arg2 inCategory:(int)arg3;
 - (void)observer:(BBObserver *)arg1 updateSectionOrder:(NSArray *)arg2;
-- (void)observer:(BBObserver *)arg1 updateSectionOrder:(NSArray *)arg2 forCategory:(int)arg3;
 - (void)observer:(BBObserver *)arg1 updateSectionOrderRule:(int)arg2;
 - (BOOL)observerShouldFetchAttachmentImageBeforeBulletinDelivery:(BBObserver *)arg1;
 - (BOOL)observerShouldFetchAttachmentSizeBeforeBulletinDelivery:(BBObserver *)arg1;

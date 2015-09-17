@@ -23,6 +23,7 @@
 - (id)deletedEntityValueProvider;
 - (id)deletedIndexPath;
 - (id)description;
+- (id)init;
 - (id)initWithDeletedEntityValueProvider:(id)arg1 atIndexPath:(id)arg2;
 - (id)initWithInsertedEntityValueProvider:(id)arg1 atIndexPath:(id)arg2;
 - (id)initWithMovedEntityValueProvider:(id)arg1 fromSourceIndexPath:(id)arg2 toDestinationIndexPath:(id)arg3;

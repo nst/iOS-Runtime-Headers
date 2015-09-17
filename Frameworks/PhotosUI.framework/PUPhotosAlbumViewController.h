@@ -28,6 +28,7 @@
 - (void)_setCountingAssetTypes:(BOOL)arg1;
 - (void)_setHasAccurateCounts:(BOOL)arg1;
 - (struct NSObject { Class x1; }*)album;
+- (BOOL)allowSelectAllButton;
 - (id)assetCollection;
 - (id)assetCollectionAssets;
 - (BOOL)canBeginStackCollapseTransition;
@@ -40,6 +41,7 @@
 - (void)handleAddToAlbum:(id)arg1 pickedAssets:(id)arg2;
 - (void)handleTransitionFade:(BOOL)arg1 animate:(BOOL)arg2;
 - (id)initWithSpec:(id)arg1;
+- (BOOL)isCameraRoll;
 - (BOOL)isTrashBinViewController;
 - (id)localizedTitleForAssets:(id)arg1;
 - (id)newGridLayout;

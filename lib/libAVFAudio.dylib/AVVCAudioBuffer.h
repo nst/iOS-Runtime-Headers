@@ -13,6 +13,7 @@
 @property (readonly) int packetDescriptionCapacity;
 @property (readonly) int packetDescriptionCount;
 @property (readonly) struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*packetDescriptions;
+@property (readonly) unsigned long long timeStamp;
 
 - (int)bytesCapacity;
 - (int)bytesDataSize;
@@ -20,11 +21,12 @@
 - (void*)data;
 - (void)dealloc;
 - (void)finalize;
-- (id)initWithAudioQueueBuffer:(struct MyAudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 channels:(int)arg2;
+- (id)initWithAudioQueueBuffer:(struct MyAudioQueueBuffer { unsigned int x1; void *x2; unsigned int x3; void *x4; unsigned int x5; struct AudioStreamPacketDescription {} *x6; unsigned int x7; }*)arg1 channels:(int)arg2 timeStamp:(unsigned long long)arg3;
 - (int)packetDescriptionCapacity;
 - (int)packetDescriptionCount;
 - (struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)packetDescriptions;
 - (void)setBytesDataSize:(int)arg1;
 - (void)setPacketDescriptions:(const struct AudioStreamPacketDescription { long long x1; unsigned int x2; unsigned int x3; }*)arg1 count:(int)arg2;
+- (unsigned long long)timeStamp;
 
 @end

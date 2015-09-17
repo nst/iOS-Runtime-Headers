@@ -13,6 +13,7 @@
 + (id)byDayValueFromICSString:(id)arg1;
 + (int)weekdayFromICSString:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (int)compare:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;

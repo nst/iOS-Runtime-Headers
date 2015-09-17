@@ -26,6 +26,7 @@
 + (void)scheduleVoicemailMapHousekeeping;
 + (id)voicemailWithAccount:(id)arg1 identifier:(long long)arg2 creating:(BOOL)arg3;
 
+- (void).cxx_destruct;
 - (void)_forceUpdateCache;
 - (void)_handleDataAvailable:(id)arg1;
 - (void)_lockedPreemptivelySetFlags:(unsigned int)arg1 clearFlags:(unsigned int)arg2 unlockedBlock:(id /* block */*)arg3;
@@ -37,12 +38,16 @@
 - (id)cachedDisplayName;
 - (id)callbackNumber;
 - (struct __CFPhoneNumber { }*)callbackPhoneNumber;
+- (id)contactUsingContactStore:(id)arg1;
+- (id)contactUsingContactStore:(id)arg1 withKeysToFetch:(id)arg2;
 - (id)dataPath;
 - (id)date;
 - (void)dealloc;
 - (id)description;
 - (id)displayLabelUsingAddressBook:(void*)arg1;
+- (id)displayLabelUsingContactStore:(id)arg1;
 - (id)displayNameUsingAddressBook:(void*)arg1;
+- (id)displayNameUsingContactStore:(id)arg1;
 - (BOOL)doesNotHaveFlags:(unsigned int)arg1;
 - (int)duration;
 - (unsigned int)flags;
@@ -50,6 +55,7 @@
 - (long long)identifier;
 - (id)imageDataUsingAddressBook:(void*)arg1;
 - (id)initWithAccount:(id)arg1 identifier:(long long)arg2;
+- (BOOL)isContactSuggested:(id)arg1;
 - (unsigned long long)remoteUID;
 - (id)sender;
 - (struct __CFPhoneNumber { }*)senderPhoneNumber;

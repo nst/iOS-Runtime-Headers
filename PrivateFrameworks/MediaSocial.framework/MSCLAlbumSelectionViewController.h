@@ -4,6 +4,7 @@
 
 @interface MSCLAlbumSelectionViewController : SKUIViewController <SKUIArtworkRequestDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSArray *_albumItems;
+    NSString *_headerText;
     BOOL _loading;
     UIImage *_placeholderImage;
     SKUIResourceLoader *_resourceLoader;
@@ -16,6 +17,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSString *headerText;
 @property (getter=isLoading, nonatomic) BOOL loading;
 @property (nonatomic) int selectedItemIndex;
 @property (nonatomic, copy) id /* block */ selectionBlock;
@@ -29,12 +31,14 @@
 - (id)albumItems;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)dealloc;
+- (id)headerText;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isLoading;
 - (void)loadView;
 - (int)selectedItemIndex;
 - (id /* block */)selectionBlock;
 - (void)setAlbumItems:(id)arg1;
+- (void)setHeaderText:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (void)setSelectedItemIndex:(int)arg1;
 - (void)setSelectionBlock:(id /* block */)arg1;

@@ -26,6 +26,7 @@
 - (unsigned int)contentFormatId;
 - (void)dealloc;
 - (int)defaultTextType;
+- (id)description;
 - (id)initWithResources:(id)arg1;
 - (bool)isShowBubbleSizeLabel;
 - (bool)isShowCategoryLabel;

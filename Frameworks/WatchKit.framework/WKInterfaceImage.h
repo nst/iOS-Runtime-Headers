@@ -2,7 +2,12 @@
    Image: /System/Library/Frameworks/WatchKit.framework/WatchKit
  */
 
-@interface WKInterfaceImage : WKInterfaceObject
+@interface WKInterfaceImage : WKInterfaceObject <WKImageAnimatable>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 - (void)setImage:(id)arg1;
 - (void)setImageData:(id)arg1;

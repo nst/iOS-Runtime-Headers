@@ -8,6 +8,8 @@
 
 @property (nonatomic, readonly) NSArray *connections;
 
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 + (void)initialize;
 
 - (id)_inputForConnection:(id)arg1;
@@ -28,6 +30,7 @@
 - (void)detachFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (void)detachSafelyFromFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)firstEnabledConnectionForMediaType:(id)arg1;
+- (void)handleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (BOOL)hasRequiredOutputFormatForConnection:(id)arg1;
 - (id)init;
 - (id)liveConnections;
@@ -40,11 +43,16 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectForMetadataOutputRectOfInterest:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)removeConnection:(id)arg1;
 - (int)requiredOutputFormatForConnection:(id)arg1;
+- (void)safelyHandleServerConnectionDeathForFigCaptureSession:(struct OpaqueFigCaptureSession { }*)arg1;
 - (id)session;
 - (void)setSession:(id)arg1;
 - (void)setSinkID:(id)arg1;
 - (id)sinkID;
 - (id)transformedMetadataObjectForMetadataObject:(id)arg1 connection:(id)arg2;
 - (void)updateMetadataTransformForSourceFormat:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
+
+- (id)currentRequest;
 
 @end

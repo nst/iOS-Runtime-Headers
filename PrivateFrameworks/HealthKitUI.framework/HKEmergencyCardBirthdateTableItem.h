@@ -3,11 +3,12 @@
  */
 
 @interface HKEmergencyCardBirthdateTableItem : HKEmergencyCardTableItem <HKMedicalIDEditorCellEditDelegate> {
-    HKMedicalIDEditorDateCell *_cell;
+    HKMedicalIDEditorDateCell *_editableCell;
+    _HKCustomInsetCellLayoutManager *_layoutManager;
 }
 
 - (void).cxx_destruct;
-- (id)_cell;
+- (id)_createEditableCell;
 - (BOOL)canEditRowAtIndex:(int)arg1;
 - (int)commitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;
 - (void)didCommitEditingStyle:(int)arg1 forRowAtIndex:(int)arg2;

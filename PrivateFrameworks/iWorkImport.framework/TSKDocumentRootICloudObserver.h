@@ -7,13 +7,16 @@
     long long _identifer;
     long long _identifier;
     NSOperationQueue *_operationQueue;
+    BOOL _suspendedCollaboration;
 }
 
 @property (nonatomic, readonly) long long identifer;
+@property (nonatomic, readonly) BOOL suspendedCollaboration;
 
 - (void)dealloc;
 - (long long)identifer;
-- (id)initWithBlock:(id /* block */)arg1;
+- (id)initWithSuspendedCollaboration:(BOOL)arg1 block:(id /* block */)arg2;
 - (void)invokeWithDocumentRoot:(id)arg1;
+- (BOOL)suspendedCollaboration;
 
 @end

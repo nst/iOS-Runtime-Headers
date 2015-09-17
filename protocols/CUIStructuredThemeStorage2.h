@@ -14,5 +14,7 @@
 
 - (void)insertCGImage:(struct CGImage { }*)arg1 withName:(NSString *)arg2 andDescription:(CUINamedImageDescription *)arg3;
 - (void)removeImageNamed:(NSString *)arg1 withDescription:(CUINamedImageDescription *)arg2;
+- (NSString *)renditionNameForKeyList:(struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg1;
+- (CUICommonAssetStorage *)themeStore;
 
 @end

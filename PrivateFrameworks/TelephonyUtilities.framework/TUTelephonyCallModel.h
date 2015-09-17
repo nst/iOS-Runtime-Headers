@@ -4,26 +4,28 @@
 
 @interface TUTelephonyCallModel : TUCallModel {
     NSDictionary *_callManagementState;
-    NSObject<OS_dispatch_semaphore> *_callManagementStateSemaphore;
+    BOOL _networkCanTakeCallsPrivate;
+    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property (nonatomic, retain) NSDictionary *callManagementState;
-@property (nonatomic, retain) NSObject<OS_dispatch_semaphore> *callManagementStateSemaphore;
+@property (nonatomic, readonly) int expectedOutgoingCallSubType;
+@property (nonatomic) BOOL networkCanTakeCallsPrivate;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (getter=isWiFiCallingCurrentlyAvailable, nonatomic, readonly) BOOL wiFiCallingCurrentlyAvailable;
+@property (getter=isWiFiEmergencyCallingAllowed, nonatomic, readonly) BOOL wiFiEmergencyCallingAllowed;
 
 + (id)sharedInstance;
 
-- (BOOL)_booleanValueForKey:(struct __CFString { }*)arg1;
-- (void)_invalidateCachedState;
-- (void)_invalidateNetworkCanTakeCallsPrivateCache;
+- (void).cxx_destruct;
 - (BOOL)_isAmbiguousCallList;
 - (BOOL)_isAmbiguousMultiPartyCall;
-- (BOOL)_networkCanTakeCallsPrivate;
-- (BOOL)_valueExistsForKey:(struct __CFString { }*)arg1;
 - (int)ambiguityState;
+- (id)audioCategoryForCall:(id)arg1;
+- (id)audioModeForCall:(id)arg1;
 - (id)callManagementState;
-- (id)callManagementStateSemaphore;
 - (void)dealloc;
+- (int)expectedOutgoingCallSubType;
 - (id)init;
 - (BOOL)isAddCallAllowed;
 - (BOOL)isEndAndAnswerAllowed;
@@ -35,7 +37,13 @@
 - (BOOL)isSwappable;
 - (BOOL)isTakingCallsPrivateAllowed;
 - (BOOL)isWiFiCallingCurrentlyAvailable;
+- (BOOL)isWiFiEmergencyCallingAllowed;
+- (BOOL)networkCanTakeCallsPrivate;
+- (id)queue;
 - (void)setCallManagementState:(id)arg1;
-- (void)setCallManagementStateSemaphore:(id)arg1;
+- (void)setNetworkCanTakeCallsPrivate:(BOOL)arg1;
+- (void)setQueue:(id)arg1;
+- (void)updateCallManagementState;
+- (void)updateNetworkCanTakeCallsPrivate;
 
 @end

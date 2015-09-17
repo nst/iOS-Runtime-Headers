@@ -33,7 +33,8 @@
 - (BOOL)_wristDetectionEnabledRestriction;
 - (id)connection;
 - (void)dealloc;
-- (unsigned int)getSettingsWillPresentBlockedByReasonForSectionInfo:(id)arg1;
+- (void)disableStandaloneTestMode;
+- (void)enableStandaloneTestModeWithMinimumSendDelay:(unsigned int)arg1 maximumSendDelay:(unsigned int)arg2 minimumResponseDelay:(unsigned int)arg3 maximumResponseDelay:(unsigned int)arg4;
 - (id)init;
 - (BOOL)isDNDMirrorEnabled;
 - (BOOL)isWristDetectDisabled;
@@ -51,12 +52,13 @@
 - (void)setNpsManager:(id)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setPrivilegedSenderTypes:(unsigned int)arg1;
-- (void)setSectionInfo:(id)arg1;
+- (void)setSectionInfo:(id)arg1 completion:(id /* block */)arg2;
 - (void)setSectionSubtypeParametersIcon:(id)arg1 forSectionID:(id)arg2 forSubtypeID:(int)arg3;
 - (void)setSettingsGateway:(id)arg1;
 - (id)settingsGateway;
 - (void)updateDNDMirrorState;
 - (void)updateDNDState;
 - (unsigned int)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2;
+- (unsigned int)willNanoPresentNotificationForSectionID:(id)arg1 subsectionIDs:(id)arg2 subtype:(int)arg3 considerSubtype:(BOOL)arg4;
 
 @end

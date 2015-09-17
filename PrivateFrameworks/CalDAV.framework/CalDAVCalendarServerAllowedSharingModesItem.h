@@ -14,13 +14,11 @@
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *isMarkedImmutableSharees;
 @property (nonatomic, retain) CoreDAVItemWithNoChildren *isMarkedUndeletable;
 
+- (void).cxx_destruct;
 - (id)canBePublished;
 - (id)canBeShared;
 - (id)copyParseRules;
-- (void)dealloc;
-- (id)description;
 - (id)init;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)isMarkedImmutableSharees;
 - (id)isMarkedUndeletable;
 - (void)setCanBePublished:(id)arg1;

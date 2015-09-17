@@ -16,9 +16,9 @@
 @property (nonatomic, retain) ICSDateValue *nextInstance;
 @property (nonatomic, retain) NSString *summary;
 
+- (void).cxx_destruct;
 - (id)componentType;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)displayName;
 - (BOOL)hadMoreInstances;
 - (id)init;

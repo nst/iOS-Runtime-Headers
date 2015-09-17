@@ -43,7 +43,6 @@
 - (id)pAssetFromAsset:(id)arg1;
 - (id)pFieldWithKey:(id)arg1 value:(id)arg2;
 - (id)pIdentifierFromUserRecordID:(id)arg1;
-- (id)pIdentifierFromUserRecordName:(id)arg1;
 - (id)pPackageFromPackage:(id)arg1;
 - (id)pParticipantFromShareParticipant:(id)arg1;
 - (id)pQueryFromQuery:(id)arg1 error:(id*)arg2;
@@ -51,12 +50,14 @@
 - (id)pRecordFromRecord:(id)arg1 forCache:(BOOL)arg2;
 - (id)pRecordIdentifierFromRecordID:(id)arg1;
 - (id)pRecordIdentifierFromShareID:(id)arg1;
+- (id)pRecordIdentifierFromUserRecordName:(id)arg1;
 - (id)pRecordZoneFromRecordZone:(id)arg1;
 - (id)pRecordZoneIdentifierFromRecordZoneID:(id)arg1;
 - (id)pShareFromShare:(id)arg1;
 - (id)pShareIdentifierFromShareID:(id)arg1;
 - (id)pSubscriptionFromSubscription:(id)arg1 error:(id*)arg2;
 - (id)pUserID;
+- (id)pUserIdentifierFromUserRecordName:(id)arg1;
 - (id)packageFromPPackage:(id)arg1 error:(id*)arg2;
 - (id)recordFromPRecord:(id)arg1 error:(id*)arg2;
 - (id)recordIDFromPRecordIdentifier:(id)arg1 error:(id*)arg2;

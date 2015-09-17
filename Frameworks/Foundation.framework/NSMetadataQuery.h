@@ -37,6 +37,7 @@
 + (id)willBeginPossibleMoveOfItemAtURL:(id)arg1 toURL:(id)arg2;
 
 - (id)_allAttributes;
+- (BOOL)_canModifyQueryOrObserversInCurrentContext;
 - (void)_disableAutoUpdates;
 - (void)_enableAutoUpdates;
 - (id)_externalDocumentsBundleIdentifier;
@@ -46,6 +47,7 @@
 - (void)_noteNote3:(id)arg1;
 - (void)_noteNote4:(id)arg1;
 - (void)_noteNote5:(id)arg1;
+- (id)_pendingChangeNotificationsArrayForKey:(id)arg1 create:(BOOL)arg2;
 - (void)_postNotificationName:(id)arg1 userInfo:(id)arg2;
 - (id)_queryString;
 - (void)_recreateQuery;
@@ -74,6 +76,7 @@
 - (double)notificationBatchingInterval;
 - (id)operationQueue;
 - (id)predicate;
+- (void)removeObserver:(id)arg1 forKeyPath:(id)arg2;
 - (id)resultAtIndex:(unsigned int)arg1;
 - (unsigned int)resultCount;
 - (id)results;

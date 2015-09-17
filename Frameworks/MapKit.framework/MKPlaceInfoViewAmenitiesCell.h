@@ -3,32 +3,50 @@
  */
 
 @interface MKPlaceInfoViewAmenitiesCell : ABContactCell {
+    unsigned int _columnCount;
+    UIView *_insetMetricView;
+    UIColor *_keyLabelColor;
     NSArray *_keyValues;
     NSMutableArray *_labelConstraints;
     NSMutableArray *_labels;
+    UIView *_leftMetricView;
+    UIView *_rightMetricView;
+    UIFont *_valueLabelFont;
     NSMutableArray *_values;
 }
 
+@property (nonatomic) unsigned int columnCount;
+@property (nonatomic, retain) UIColor *keyLabelColor;
 @property (nonatomic, retain) NSArray *keyValues;
 @property (nonatomic, retain) NSMutableArray *labelConstraints;
+@property (nonatomic, retain) UIFont *valueLabelFont;
 
-+ (float)intrinsicContentHeight;
++ (float)intrinsicContentHeightForValueLabelFont:(id)arg1;
++ (unsigned int)requiredNumberOfColumnsForValue:(id)arg1 withColumnCount:(unsigned int)arg2 andMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3 maxWidth:(float)arg4;
 + (id)reuseIdentifier;
 
 - (void).cxx_destruct;
+- (void)_setKeyLabelsToColor:(id)arg1;
 - (void)addConstraintsForKeyLabel:(id)arg1 andMatchingValueLabel:(id)arg2;
-- (void)addWidthAndSideSpacingConstraintsForLabels:(id)arg1;
+- (void)addWidthAndSideSpacingConstraintsForLabels;
 - (id)attributeLabelWithString:(id)arg1;
 - (id)attributeValueWithString:(id)arg1;
+- (unsigned int)columnCount;
 - (void)contentSizeDidChange;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (id)keyLabelColor;
 - (id)keyValues;
 - (id)labelConstraints;
 - (void)layoutMarginsDidChange;
-- (void)refreshContent;
+- (void)prepareForReuse;
+- (void)refreshContent:(BOOL)arg1;
+- (void)setColumnCount:(unsigned int)arg1;
+- (void)setKeyLabelColor:(id)arg1;
 - (void)setKeyValues:(id)arg1;
 - (void)setLabelConstraints:(id)arg1;
+- (void)setValueLabelFont:(id)arg1;
 - (void)tintColorDidChange;
+- (id)valueLabelFont;
 
 @end

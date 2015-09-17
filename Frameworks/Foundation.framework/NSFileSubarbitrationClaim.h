@@ -5,6 +5,7 @@
 @interface NSFileSubarbitrationClaim : NSFileAccessClaim {
     NSMutableSet *_forwardedClaimIDs;
     id /* block */ _messageSender;
+    BOOL _nullified;
     NSMutableDictionary *_readRelinquishmentsByPresenterID;
     NSArray *_readingLocations;
     unsigned int _readingOptions;
@@ -25,7 +26,7 @@
 - (void)forwardRelinquishmentMessageWithKind:(id)arg1 parameters:(id)arg2 toPresenter:(id)arg3 usingReplySender:(id /* block */)arg4;
 - (void)forwardUsingMessageSender:(id /* block */)arg1 crashHandler:(id /* block */)arg2;
 - (void)granted;
-- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 replySender:(id /* block */)arg3;
+- (id)initWithClient:(id)arg1 messageParameters:(id)arg2 arbiterQueue:(id)arg3 replySender:(id /* block */)arg4;
 - (id)initWithReadingURLs:(id)arg1 options:(unsigned int)arg2 writingURLs:(id)arg3 options:(unsigned int)arg4 claimer:(id /* block */)arg5;
 - (void)invokeClaimer;
 - (BOOL)isBlockedByReadingItemAtLocation:(id)arg1 options:(unsigned int)arg2;

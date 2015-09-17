@@ -16,5 +16,6 @@
 - (void)URLSessionTaskIsWaitingForConnection:(NSURLSessionTask *)arg1;
 - (NSOperationQueue *)delegateQueue;
 - (NSString *)sectionID;
+- (NSObject<OS_voucher> *)voucher;
 
 @end

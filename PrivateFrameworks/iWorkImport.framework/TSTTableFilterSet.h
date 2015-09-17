@@ -28,6 +28,7 @@
 - (id)absoluteRuleIndicesForColumn:(unsigned char)arg1 inTable:(id)arg2;
 - (void)addRules:(id)arg1 inFilter:(unsigned int)arg2;
 - (BOOL)canAddRules;
+- (id)columnIndicesForRulesInTable:(id)arg1;
 - (BOOL)containsFilterRulesInUIDForm;
 - (id)copyByRewritingFilterRulesToGeometricFormWithContext:(id)arg1 withTableModel:(id)arg2;
 - (id)copyByRewritingFilterRulesToUidFormWithContext:(id)arg1 withTableModel:(id)arg2;

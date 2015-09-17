@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAStockSearchCompleted : SABaseCommand <SAServerBoundCommand>
+@interface SAStockSearchCompleted : SABaseCommand <SAServerBoundCommand> {
+    NSArray *_stockList;
+}
 
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;

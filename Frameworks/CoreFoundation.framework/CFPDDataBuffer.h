@@ -15,6 +15,7 @@
 - (id)copyXPCData;
 - (void)endAccessing;
 - (unsigned long)length;
+- (BOOL)purgable;
 - (BOOL)validatePlist;
 
 @end

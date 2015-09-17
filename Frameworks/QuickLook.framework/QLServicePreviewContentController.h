@@ -30,6 +30,7 @@
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
+- (void)_dismissTransitionIsReadyToFinish;
 - (void)_getNumberOfPagesForSize:(struct CGSize { float x1; float x2; })arg1 withHandler:(id /* block */)arg2;
 - (void)_getPDFPageAtIndex:(int)arg1 handler:(id /* block */)arg2;
 - (void)_prepareForDrawingPages:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withSize:(struct CGSize { float x1; float x2; })arg2;
@@ -51,6 +52,8 @@
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
+- (void)dismissTransitionIsReadyToFinishSynchronizedWithBlock:(id /* block */)arg1;
+- (void)dismissalGestureDidUpdateInPreviewContentController:(id)arg1 state:(int)arg2 trackingInformation:(id)arg3;
 - (void)endScrubbing;
 - (void)enterBackground;
 - (void)forceResignFirstResponder;
@@ -82,6 +85,7 @@
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLoadingTextForMissingFiles:(id)arg1;
+- (void)setOrbMode:(unsigned int)arg1;
 - (void)setOverlayHidden:(BOOL)arg1 duration:(double)arg2;
 - (void)setPreviewMode:(int)arg1;
 - (void)setTransitioning:(BOOL)arg1 synchronizedWithBlock:(id /* block */)arg2;
@@ -89,6 +93,7 @@
 - (int)sourceUUID;
 - (void)stopLoadingCurrentPreviewItem;
 - (void)togglePlayState;
+- (void)viewDidLayoutSubviews;
 - (void)willChangeContentFrame;
 
 @end

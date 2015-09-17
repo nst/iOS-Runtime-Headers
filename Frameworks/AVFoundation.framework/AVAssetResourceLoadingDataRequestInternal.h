@@ -6,8 +6,9 @@
     BOOL canSupplyIncrementalDataImmediately;
     long long currentOffset;
     NSObject<OS_dispatch_queue> *dataResponseQueue;
-    int requestedLength;
+    long long requestedLength;
     long long requestedOffset;
+    BOOL requestsAllDataToEndOfResource;
     AVWeakReference *weakReferenceToLoadingRequest;
 }
 

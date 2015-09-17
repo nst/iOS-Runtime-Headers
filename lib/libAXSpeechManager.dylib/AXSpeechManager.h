@@ -3,10 +3,10 @@
  */
 
 @interface AXSpeechManager : NSObject <TTSSpeechSynthesizerDelegate> {
+    unsigned int _audioQueueFlags;
     BOOL _isSpeaking;
     NSNumber *_originalSpeechRateForJobOverride;
-    BOOL _runLoopEnabled;
-    NSThread *_runThread;
+    AXSpeechThread *_runThread;
     NSObject<OS_dispatch_semaphore> *_runThreadSemaphore;
     BOOL _showControlCenterControls;
     BOOL _speechEnabled;
@@ -15,6 +15,7 @@
     BOOL isPaused;
 }
 
+@property (nonatomic) unsigned int audioQueueFlags;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -26,6 +27,7 @@
 @property (readonly) Class superclass;
 
 + (id)availableLanguageCodes;
++ (id)availableVoices;
 + (struct URegularExpression { }*)createRegularExpressionFromString:(id)arg1;
 + (id)currentLanguageCode;
 + (id)matchedRangesForString:(id)arg1 withRegularExpression:(struct URegularExpression { }*)arg2;
@@ -42,6 +44,8 @@
 - (void)_speechJobFinished:(BOOL)arg1 action:(id)arg2;
 - (void)_startNextSpeechJob;
 - (void)_stopSpeaking:(id)arg1;
+- (void)_tearDown;
+- (unsigned int)audioQueueFlags;
 - (void)clearSpeechQueue;
 - (void)continueSpeaking;
 - (void)dealloc;
@@ -51,6 +55,7 @@
 - (BOOL)isSpeaking;
 - (id)originalSpeechRateForJobOverride;
 - (void)pauseSpeaking:(int)arg1;
+- (void)setAudioQueueFlags:(unsigned int)arg1;
 - (void)setIsPaused:(BOOL)arg1;
 - (void)setOriginalSpeechRateForJobOverride:(id)arg1;
 - (void)setSpeechEnabled:(BOOL)arg1;
@@ -63,5 +68,6 @@
 - (void)speechSynthesizer:(id)arg1 willSpeakRangeOfSpeechString:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 forRequest:(id)arg3;
 - (void)stopSpeaking;
 - (void)stopSpeaking:(int)arg1;
+- (void)tearDown;
 
 @end

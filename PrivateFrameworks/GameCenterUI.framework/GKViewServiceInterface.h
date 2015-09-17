@@ -5,19 +5,19 @@
 @interface GKViewServiceInterface : NSXPCInterface
 
 + (void)_configureKVOTypes:(id)arg1;
++ (id)challengeIssueHostViewControllerInterface;
 + (id)challengeIssueServiceViewControllerInterface;
++ (id)gameCenterHostViewControllerInterface;
 + (id)gameCenterServiceViewControllerInterface;
-+ (id)gameCenterViewControllerInterface;
-+ (id)matchmakerRemoteViewControllerInterface;
++ (id)matchmakerHostViewControllerInterface;
 + (id)matchmakerServiceViewControllerInterface;
-+ (id)remoteChallengeIssueViewControllerInterface;
 + (id)remoteFriendRequestViewControllerInterface;
 + (id)remoteSignInViewControllerInterface;
 + (id)remoteViewControllerInterface;
 + (id)serviceFriendRequestViewControllerInterface;
 + (id)serviceViewControllerInterface;
 + (id)signInServiceViewControllerInterface;
-+ (id)turnBasedRemoteViewControllerInterface;
++ (id)turnBasedHostViewControllerInterface;
 + (id)turnBasedServiceViewControllerInterface;
 
 @end

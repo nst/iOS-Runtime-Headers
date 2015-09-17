@@ -13,13 +13,13 @@
     NSString *_selectedPhoneString;
 }
 
-@property (nonatomic, readonly) NSArray *allEmails;
-@property (nonatomic, readonly) NSArray *allPhones;
-@property (nonatomic, readonly) NSString *firstName;
-@property (nonatomic, readonly) NSString *invalidAddressString;
-@property (nonatomic, readonly) NSString *lastName;
-@property (nonatomic, readonly) NSString *selectedEmailString;
-@property (nonatomic, readonly) NSString *selectedPhoneString;
+@property (nonatomic, readonly, retain) NSArray *allEmails;
+@property (nonatomic, readonly, retain) NSArray *allPhones;
+@property (nonatomic, readonly, copy) NSString *firstName;
+@property (nonatomic, readonly, copy) NSString *invalidAddressString;
+@property (nonatomic, readonly, copy) NSString *lastName;
+@property (nonatomic, readonly, copy) NSString *selectedEmailString;
+@property (nonatomic, readonly, copy) NSString *selectedPhoneString;
 
 + (id)validEmailAddressFromComposeRecipient:(id)arg1;
 + (id)validPhoneNumberFromString:(id)arg1;

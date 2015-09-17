@@ -23,6 +23,7 @@
 @property (nonatomic, retain) NSString *selectedRegionID;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_drillDownControllersWithArray:(id)arg1;
 - (void)_hideTableViewCells;
 - (void)_selectRegionID:(id)arg1;

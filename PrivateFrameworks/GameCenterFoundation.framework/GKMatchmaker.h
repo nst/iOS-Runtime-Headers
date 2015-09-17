@@ -98,7 +98,8 @@
 - (void)loadCompatabilityMatrixAsDictionaryWithHandler:(id /* block */)arg1;
 - (void)loadConnectivitySettingsWithCompletionHandler:(id /* block */)arg1;
 - (void)loadPhotoDataDictionaryWithHandler:(id /* block */)arg1;
-- (void)localPlayerAcceptedGameInvite:(id)arg1;
+- (void)localPlayerAcceptedGameInvite;
+- (void)localPlayerAcceptedGameInviteNotification:(id)arg1;
 - (void)localPlayerAcceptedNearbyInvite:(id)arg1;
 - (void)localPlayerRespondedToNearbyInvite:(id)arg1;
 - (void)lookForInvite;

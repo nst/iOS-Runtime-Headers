@@ -3,8 +3,8 @@
  */
 
 @interface CKTranscriptRecipientCell : UITableViewCell {
-    UIImage *_contactImage;
-    UIImageView *_contactImageView;
+    CNContact *_contact;
+    CKAvatarView *_contactAvatarView;
     NSString *_entityName;
     UIButton *_facetimeVideoButton;
     UIButton *_infoButton;
@@ -22,8 +22,8 @@
     NSMutableArray *_visibleButtons;
 }
 
-@property (nonatomic, retain) UIImage *contactImage;
-@property (nonatomic, retain) UIImageView *contactImageView;
+@property (nonatomic, retain) CNContact *contact;
+@property (nonatomic, retain) CKAvatarView *contactAvatarView;
 @property (nonatomic, copy) NSString *entityName;
 @property (nonatomic, retain) UIButton *facetimeVideoButton;
 @property (nonatomic, retain) UIButton *infoButton;
@@ -45,8 +45,8 @@
 + (float)preferredHeight;
 
 - (void)_updateVisibleButtons;
-- (id)contactImage;
-- (id)contactImageView;
+- (id)contact;
+- (id)contactAvatarView;
 - (void)dealloc;
 - (id)entityName;
 - (id)facetimeVideoButton;
@@ -59,8 +59,8 @@
 - (float)margin;
 - (id)nameLabel;
 - (id)phoneButton;
-- (void)setContactImage:(id)arg1;
-- (void)setContactImageView:(id)arg1;
+- (void)setContact:(id)arg1;
+- (void)setContactAvatarView:(id)arg1;
 - (void)setEntityName:(id)arg1;
 - (void)setFacetimeVideoButton:(id)arg1;
 - (void)setInfoButton:(id)arg1;

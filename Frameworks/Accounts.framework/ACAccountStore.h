@@ -3,6 +3,7 @@
  */
 
 @interface ACAccountStore : NSObject {
+    NSMutableDictionary *_accountCache;
     NSString *_clientBundleID;
     id _daemonAccountStoreDidChangeObserver;
     ACRemoteAccountStoreSession *_remoteAccountStoreSession;
@@ -20,7 +21,10 @@
 + (int)countOfAccountsWithAccountTypeIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)_connectionFailureError;
+- (id)_sanitizeOptionsDictionary:(id)arg1;
 - (void)_saveAccount:(id)arg1 verify:(BOOL)arg2 dataclassActions:(id)arg3 completion:(id /* block */)arg4;
+- (id)_unsanitizeError:(id)arg1;
 - (id)accessKeysForAccountType:(id)arg1;
 - (id)accountIdentifiersEnabledForDataclass:(id)arg1;
 - (void)accountIdentifiersEnabledForDataclasses:(id)arg1 withAccountTypeIdentifiers:(id)arg2 completion:(id /* block */)arg3;
@@ -36,8 +40,10 @@
 - (void)accountsWithAccountTypeIdentifiers:(id)arg1 preloadedProperties:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)addClientToken:(id)arg1 forAccount:(id)arg2;
 - (id)allAccountTypes;
+- (id)allCredentialItems;
 - (id)allDataclasses;
 - (id)appPermissionsForAccountType:(id)arg1;
+- (void)cachedAccountWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)canSaveAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)childAccountsForAccount:(id)arg1;
 - (id)childAccountsForAccount:(id)arg1 withTypeIdentifier:(id)arg2;
@@ -49,10 +55,12 @@
 - (id)credentialForAccount:(id)arg1 bundleID:(id)arg2;
 - (id)credentialForAccount:(id)arg1 error:(id*)arg2;
 - (id)credentialForAccount:(id)arg1 serviceID:(id)arg2;
+- (id)credentialItemForAccount:(id)arg1 serviceName:(id)arg2;
 - (id)dataclassActionsForAccountDeletion:(id)arg1;
 - (id)dataclassActionsForAccountSave:(id)arg1;
 - (void)dealloc;
 - (void)disconnectFromRemoteAccountStore;
+- (void)discoverPropertiesForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)displayTypeForAccountWithIdentifier:(id)arg1;
 - (id)effectiveBundleID;
 - (id)enabledDataclassesForAccount:(id)arg1;
@@ -64,6 +72,7 @@
 - (id)initWithRemoteEndpoint:(id)arg1;
 - (id)initWithRemoteEndpoint:(id)arg1 effectiveBundleID:(id)arg2;
 - (void)insertAccountType:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)insertCredentialItem:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (BOOL)isPerformingDataclassActionsForAccount:(id)arg1;
 - (BOOL)isPushSupportedForAccount:(id)arg1;
 - (BOOL)isTetheredSyncingEnabledForDataclass:(id)arg1;
@@ -81,6 +90,7 @@
 - (void)removeAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id /* block */)arg3;
 - (void)removeAccountType:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)removeAccountsFromPairedDeviceWithCompletion:(id /* block */)arg1;
+- (void)removeCredentialItem:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 completion:(id /* block */)arg2;
 - (void)renewCredentialsForAccount:(id)arg1 force:(BOOL)arg2 reason:(id)arg3 completion:(id /* block */)arg4;
 - (void)renewCredentialsForAccount:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
@@ -92,7 +102,9 @@
 - (void)saveAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 completion:(id /* block */)arg3;
 - (void)saveAccount:(id)arg1 withDataclassActions:(id)arg2 doVerify:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)saveCredentialItem:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)saveVerifiedAccount:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)setCredential:(id)arg1 forAccount:(id)arg2 serviceID:(id)arg3 error:(id*)arg4;
 - (void)setNotificationsEnabled:(BOOL)arg1;
 - (void)setPermissionGranted:(BOOL)arg1 forBundleID:(id)arg2 onAccountType:(id)arg3;
 - (void)setRemoteAccountStoreSession:(id)arg1;
@@ -108,6 +120,8 @@
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
++ (BOOL)SLDuplicateAccountExistsForAccount:(id)arg1 withTypeIdentifier:(id)arg2 andAccountPropertyIDKey:(id)arg3;
+
 - (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)sl_openGoogleAuthenticationSheetForAccount:(id)arg1 shouldConfirm:(BOOL)arg2 delegateClassName:(id)arg3 completion:(id /* block */)arg4;
 - (void)sl_openGoogleAuthenticationSheetWithAccountDescription:(id)arg1 completion:(id /* block */)arg2;
@@ -122,7 +136,8 @@
 - (id)aa_appleAccountWithPersonID:(id)arg1;
 - (id)aa_appleAccountWithUsername:(id)arg1;
 - (id)aa_appleAccounts;
-- (id)aa_grandSlamAccountWithUsername:(id)arg1;
+- (id)aa_grandSlamAccountForiCloudAccount:(id)arg1;
+- (BOOL)aa_isUsingiCloud;
 - (void)aa_lookupEmailAddresses:(id)arg1 withAppleAccount:(id)arg2 completion:(id /* block */)arg3;
 - (id)aa_primaryAppleAccount;
 - (id)aa_primaryAppleAccountWithPreloadedDataclasses;

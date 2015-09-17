@@ -26,6 +26,7 @@
 - (bool)hasSecondaryMixedColumn;
 - (bool)hasSecondaryMixedLine;
 - (id)init;
+- (bool)isMixedChart;
 - (void)readAndCacheXlChartDataSeries;
 - (id)resources;
 - (void)setChart:(id)arg1;

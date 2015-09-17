@@ -92,6 +92,8 @@
 - (void)playVideoWithURL:(id)arg1;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)prefetchResourcesWithReason:(int)arg1;
+- (id)previewViewControllerForIndexPath:(id)arg1;
+- (BOOL)previewsSupportedForIndexPath:(id)arg1;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)relevantEntityProviders;
 - (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;

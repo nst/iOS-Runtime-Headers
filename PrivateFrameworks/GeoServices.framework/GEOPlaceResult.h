@@ -5,6 +5,7 @@
 @interface GEOPlaceResult : PBCodable <NSCopying> {
     NSMutableArray *_additionalPlaces;
     int _cacheControl;
+    NSMutableArray *_disambiguationLabels;
     unsigned long long _flyoverTourMuid;
     struct { 
         unsigned int flyoverTourMuid : 1; 
@@ -26,6 +27,7 @@
 
 @property (nonatomic, retain) NSMutableArray *additionalPlaces;
 @property (nonatomic) int cacheControl;
+@property (nonatomic, retain) NSMutableArray *disambiguationLabels;
 @property (nonatomic) unsigned long long flyoverTourMuid;
 @property (nonatomic) BOOL hasCacheControl;
 @property (nonatomic) BOOL hasFlyoverTourMuid;
@@ -47,6 +49,7 @@
 @property (nonatomic, retain) NSMutableArray *unmatchedStrings;
 
 - (void)addAdditionalPlace:(id)arg1;
+- (void)addDisambiguationLabel:(id)arg1;
 - (void)addMatchedToken:(id)arg1;
 - (void)addNamedFeature:(id)arg1;
 - (void)addUnmatchedString:(id)arg1;
@@ -55,6 +58,7 @@
 - (unsigned int)additionalPlacesCount;
 - (int)cacheControl;
 - (void)clearAdditionalPlaces;
+- (void)clearDisambiguationLabels;
 - (void)clearMatchedTokens;
 - (void)clearNamedFeatures;
 - (void)clearUnmatchedStrings;
@@ -63,6 +67,9 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (id)disambiguationLabelAtIndex:(unsigned int)arg1;
+- (id)disambiguationLabels;
+- (unsigned int)disambiguationLabelsCount;
 - (unsigned long long)flyoverTourMuid;
 - (id)geoMapItem;
 - (BOOL)hasCacheControl;
@@ -88,6 +95,7 @@
 - (id)revgeoRequestTemplate;
 - (void)setAdditionalPlaces:(id)arg1;
 - (void)setCacheControl:(int)arg1;
+- (void)setDisambiguationLabels:(id)arg1;
 - (void)setFlyoverTourMuid:(unsigned long long)arg1;
 - (void)setHasCacheControl:(BOOL)arg1;
 - (void)setHasFlyoverTourMuid:(BOOL)arg1;

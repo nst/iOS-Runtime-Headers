@@ -10,6 +10,8 @@
 @property (nonatomic, readonly) id /* block */ completionHandler;
 @property (nonatomic, copy) id /* block */ updateHandler;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
 - (void).cxx_destruct;
 - (void)_queue_cleanupAfterDeactivation;
 - (id /* block */)_queue_errorHandler;
@@ -21,5 +23,9 @@
 - (id)initWithSampleType:(id)arg1 samplePredicate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setUpdateHandler:(id /* block */)arg1;
 - (id /* block */)updateHandler;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (Class)hd_queryServerClass;
 
 @end

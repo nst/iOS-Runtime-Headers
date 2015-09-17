@@ -10,5 +10,6 @@
 - (id)data;
 - (void)dealloc;
 - (id)initWithCSIData:(id)arg1 forKey:(const struct _renditionkeytoken { unsigned short x1; unsigned short x2; }*)arg2 artworkStatus:(int)arg3;
+- (int)pixelFormat;
 
 @end

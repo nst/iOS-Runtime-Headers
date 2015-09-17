@@ -2,21 +2,17 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKUsageNotificationClient : NSObject <NSXPCListenerDelegate, PKUsageNotificationClientInterface> {
-    NSMutableSet *_connections;
+@interface PKUsageNotificationClient : NSObject <PKUsageNotificationClientExportedInterface> {
+    PKXPCService *_connection;
     id /* block */ _handler;
-    NSXPCListener *_listener;
+    id /* block */ _paymentHandler;
 }
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
 
 - (void)dealloc;
 - (id)init;
-- (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
-- (void)passUsedFromSource:(int)arg1 withTypeIdentifier:(id)arg2 info:(id)arg3;
 - (void)setPassUsageHandler:(id /* block */)arg1;
+- (void)setPaymentUsageHandler:(id /* block */)arg1;
+- (void)usedPassFromSource:(int)arg1 withTypeIdentifier:(id)arg2 info:(id)arg3;
+- (void)usedPaymentPassWithUniqueIdentifier:(id)arg1 transactionIdentifier:(id)arg2 info:(id)arg3;
 
 @end

@@ -2,7 +2,9 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SANoteSearchCompleted : SABaseCommand <SAServerBoundCommand>
+@interface SANoteSearchCompleted : SABaseCommand <SAServerBoundCommand> {
+    NSArray *_results;
+}
 
 @property (nonatomic, copy) NSString *aceId;
 @property (readonly, copy) NSString *debugDescription;

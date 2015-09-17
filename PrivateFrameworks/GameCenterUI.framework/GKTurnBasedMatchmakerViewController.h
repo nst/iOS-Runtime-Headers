@@ -2,49 +2,55 @@
    Image: /System/Library/PrivateFrameworks/GameCenterUI.framework/GameCenterUI
  */
 
-@interface GKTurnBasedMatchmakerViewController : UINavigationController {
+@interface GKTurnBasedMatchmakerViewController : UINavigationController <GKExtensionParentViewControllerProtocol, GKLocalPlayerListener, GKTurnBasedEventListener> {
     UIAlertController *_alertController;
-    GKHostedTurnBasedViewController *_hostedViewController;
     GKMatchRequest *_matchRequest;
-    GKRemoteTurnBasedViewController *_remoteViewController;
+    GKTurnBasedMatchmakerHostViewController *_remoteViewController;
     BOOL _showExistingMatches;
     <GKTurnBasedMatchmakerViewControllerDelegate> *_turnBasedMatchmakerDelegateWeak;
 }
 
 @property (nonatomic, retain) UIAlertController *alertController;
-@property (nonatomic, retain) GKHostedTurnBasedViewController *hostedViewController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) GKMatchRequest *matchRequest;
-@property (nonatomic, retain) GKRemoteTurnBasedViewController *remoteViewController;
+@property (nonatomic, retain) GKTurnBasedMatchmakerHostViewController *remoteViewController;
 @property (nonatomic) BOOL showExistingMatches;
+@property (readonly) Class superclass;
 @property (nonatomic) <GKTurnBasedMatchmakerViewControllerDelegate> *turnBasedMatchmakerDelegate;
 
 + (BOOL)_preventsAppearanceProxyCustomization;
 
 - (void)_setupChildViewController;
+- (void)_setupRemoteViewController;
 - (id)alertController;
 - (void)authenticationChanged:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
+- (void)extensionDidFinishWithError:(id)arg1;
 - (void)finishWithError:(id)arg1;
 - (void)finishWithMatch:(id)arg1;
-- (id)hostedViewController;
 - (id)init;
 - (id)initWithMatchRequest:(id)arg1;
 - (void)loadView;
 - (id)matchRequest;
+- (void)player:(id)arg1 receivedTurnEventForMatch:(id)arg2 didBecomeActive:(BOOL)arg3;
 - (void)playerQuitMatch:(id)arg1;
 - (id)remoteViewController;
 - (void)setAlertController:(id)arg1;
-- (void)setHostedViewController:(id)arg1;
 - (void)setMatchRequest:(id)arg1;
 - (void)setRemoteViewController:(id)arg1;
 - (void)setShowExistingMatches:(BOOL)arg1;
 - (void)setTurnBasedMatchmakerDelegate:(id)arg1;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldShowPlayForTurnBasedMatch;
+- (BOOL)shouldShowQuitForTurnBasedMatch;
 - (BOOL)showExistingMatches;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)turnBasedMatchmakerDelegate;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

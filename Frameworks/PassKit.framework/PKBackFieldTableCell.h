@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKBackFieldTableCell : UITableViewCell {
+@interface PKBackFieldTableCell : PKTableViewCell {
     PKPassField *_field;
     BOOL _showLinks;
     UITextView *_valueTextView;

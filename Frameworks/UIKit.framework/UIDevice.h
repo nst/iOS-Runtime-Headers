@@ -11,6 +11,8 @@
         unsigned int orientation : 3; 
         unsigned int batteryState : 2; 
         unsigned int proximityState : 1; 
+        unsigned int hasTouchPadOverride : 1; 
+        unsigned int hasTouchPad : 1; 
     } _deviceFlags;
     int _numDeviceOrientationObservers;
 }
@@ -21,21 +23,22 @@
 @property (nonatomic, readonly) int batteryState;
 @property (nonatomic, readonly, retain) NSString *buildVersion;
 @property (getter=isGeneratingDeviceOrientationNotifications, nonatomic, readonly) BOOL generatesDeviceOrientationNotifications;
-@property (nonatomic, readonly, retain) NSUUID *identifierForVendor;
-@property (nonatomic, readonly, retain) NSString *localizedModel;
-@property (nonatomic, readonly, retain) NSString *model;
+@property (nonatomic, readonly) NSUUID *identifierForVendor;
+@property (nonatomic, readonly) NSString *localizedModel;
+@property (nonatomic, readonly) NSString *model;
 @property (getter=isMultitaskingSupported, nonatomic, readonly) BOOL multitaskingSupported;
-@property (nonatomic, readonly, retain) NSString *name;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic) int orientation;
 @property (nonatomic, readonly) int orientation;
 @property (getter=isProximityMonitoringEnabled, nonatomic) BOOL proximityMonitoringEnabled;
 @property (nonatomic, readonly) BOOL proximityState;
-@property (nonatomic, readonly, retain) NSString *systemName;
-@property (nonatomic, readonly, retain) NSString *systemVersion;
+@property (nonatomic, readonly) NSString *systemName;
+@property (nonatomic, readonly) NSString *systemVersion;
 @property (nonatomic, readonly) int userInterfaceIdiom;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
++ (BOOL)_isLowEnd;
 + (BOOL)_isWatch;
 + (BOOL)_isWatchCompanion;
 + (id)currentDevice;
@@ -48,8 +51,12 @@
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
 - (int)_graphicsQuality;
 - (BOOL)_hasGraphicsQualityOverride;
+- (BOOL)_hasTouchPad;
+- (BOOL)_isSystemSoundEnabled;
 - (BOOL)_isTTYEnabled;
 - (int)_keyboardGraphicsQuality;
+- (void)_playInputDeleteSound;
+- (void)_playInputSelectSound;
 - (void)_playSystemSound:(unsigned long)arg1;
 - (int)_predictionGraphicsQuality;
 - (void)_registerForSystemSounds:(id)arg1;
@@ -59,8 +66,12 @@
 - (void)_setBatteryState:(int)arg1;
 - (void)_setExpectsFaceContactInLandscape:(BOOL)arg1;
 - (void)_setGraphicsQualityOverride:(int)arg1;
+- (void)_setHasTouchPad:(BOOL)arg1;
 - (void)_setProximityState:(BOOL)arg1;
 - (float)_softwareDimmingAlpha;
+- (BOOL)_supportsForceTouch;
+- (BOOL)_supportsHapticFeedback;
+- (id)_tapticEngine;
 - (void)_unregisterForSystemSounds:(id)arg1;
 - (void)_updateSystemSoundActiveStatus:(id)arg1;
 - (float)batteryLevel;
@@ -88,9 +99,20 @@
 - (id)uniqueIdentifier;
 - (int)userInterfaceIdiom;
 
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (struct CGSize { float x1; float x2; })_notesDeviceDrawingSize;
+- (BOOL)_notesDeviceSupportsBodyLettpress;
+- (BOOL)_notesLowEndHardware;
+- (id)_notesProductType;
+
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
 + (id)platformString;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
++ (id)platform;
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
 

@@ -5,6 +5,7 @@
 
 @optional
 
+- (int)printInteractionController:(UIPrintInteractionController *)arg1 chooseCutterBehavior:(NSArray *)arg2;
 - (UIPrintPaper *)printInteractionController:(UIPrintInteractionController *)arg1 choosePaper:(NSArray *)arg2;
 - (float)printInteractionController:(UIPrintInteractionController *)arg1 cutLengthForPaper:(UIPrintPaper *)arg2;
 - (void)printInteractionControllerDidDismissPrinterOptions:(UIPrintInteractionController *)arg1;

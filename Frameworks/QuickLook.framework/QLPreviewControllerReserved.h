@@ -3,20 +3,23 @@
  */
 
 @interface QLPreviewControllerReserved : NSObject {
-    UIBarButtonItem *actionItem;
+    NSArray *additionalLeftBarButtonItems;
+    NSArray *additionalRightBarButtonItems;
     UIBarButtonItem *archiveItem;
     QLArchiveViewer *archiveViewer;
     NSMutableDictionary *avStateForPreviewItems;
     BOOL blockRemoteImages;
     _UIAsyncInvocation *cancelViewServiceRequest;
+    unsigned int crashCount;
+    UIBarButtonItem *customActionItem;
+    UIBarButtonItem *defaultActionItem;
     id delegate;
-    NSNumberFormatter *indexFormatter;
-    UIBarButtonItem *indexItem;
-    UILabel *indexLabel;
+    BOOL hasToolBar;
     UIDocumentInteractionController *interactionController;
     BOOL internalViewsLoaded;
     BOOL isDelayingPresentation;
     unsigned int isInUIDICPopover;
+    QLActivityItemProvider *itemProvider;
     QLPreviewItemsSource *itemsSource;
     NSURL *lastPreviewedCurrentItemURL;
     NSURL *lastPreviewedRealItemURL;
@@ -24,29 +27,33 @@
     NSString *loadingTextForMissingFiles;
     UIView *mainView;
     int mode;
+    unsigned int navigationButtonsMask;
     UINavigationController *navigationController;
+    unsigned int orbMode;
     NSArray *originalLeftBarButtonItems;
     NSArray *originalRightBarButtonItems;
     int overlayState;
-    NSMutableDictionary *pdfPreviewDataCache;
-    UIBarButtonItem *playPauseButton;
+    int overlayStateBeforeDismissal;
+    UIBarButtonItem *pauseButton;
+    UIBarButtonItem *playButton;
     UIViewController<QLPreviewContentControllerProtocol> *previewContentController;
     <QLPreviewItem> *previewItem;
+    UIViewController *previousViewControllerForNavigationItem;
     id /* block */ readyBlock;
     id /* block */ restorePreviousStateBlock;
-    UIBarButtonItem *routeButton;
     BOOL scrubbing;
     BOOL showActionAsDefaultButton;
     BOOL sourceIsManaged;
     unsigned int statusBarWasHidden;
+    id strongDelegate;
+    QLDismissGestureRecognizer *swipeToDismissGestureRecognizer;
     UIBarButtonItem *titleItem;
+    unsigned int toolbarButtonsMask;
     unsigned int toolbarWasHidden;
     BOOL useCustomActionButton;
-    MPVolumeView *volumeView;
-    MPVolumeView *volumeViewHidden;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)init;
 
 @end

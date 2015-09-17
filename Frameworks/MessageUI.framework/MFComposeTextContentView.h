@@ -19,6 +19,7 @@
 - (void)endPreventingScrollSelectionToVisible;
 - (void)ensureSelection;
 - (void)increaseQuoteLevel;
+- (id)keyCommands;
 - (BOOL)resignFirstResponder;
 - (void)scrollSelectionToVisible:(BOOL)arg1;
 - (void)showQuoteLevelOptions;

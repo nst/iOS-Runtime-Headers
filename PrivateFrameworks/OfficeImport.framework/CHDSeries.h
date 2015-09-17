@@ -37,6 +37,7 @@
 - (void)dealloc;
 - (id)defaultDataLabel;
 - (id)defaultSeriesNameForIndex:(unsigned int)arg1;
+- (id)description;
 - (id)errorBarXAxis;
 - (id)errorBarYAxis;
 - (id)graphicProperties;

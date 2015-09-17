@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (id)_endpointInfoForLibrary:(id)arg1;
 - (void)_setEndpointInfo:(id)arg1 forLibrary:(id)arg2;
+- (int)activeRestoreType;
 - (id)dataClassesNeedingSync;
 - (id)endpointInfo;
 - (BOOL)fairPlayEnabled;
@@ -41,6 +42,7 @@
 - (id)serviceDomain;
 - (id)serviceName;
 - (id)serviceType;
+- (void)setActiveRestoreType:(int)arg1;
 - (void)setEndpointInfo:(id)arg1;
 - (void)setHasCompletedDataMigration:(BOOL)arg1;
 - (void)setHostInfo:(id)arg1 forLibrary:(id)arg2;

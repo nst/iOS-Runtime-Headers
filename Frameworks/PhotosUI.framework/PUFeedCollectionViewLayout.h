@@ -29,12 +29,16 @@
         float width; 
         float height; 
     } _noCaptionSpacing;
+    PUParallaxComputer *_parallaxComputer;
+    float _parallaxFactor;
+    int _parallaxModel;
     float _sectionHeaderBackgroundHeight;
     NSMutableArray *_sectionLayoutInfos;
     struct CGSize { 
         float width; 
         float height; 
     } _sectionReferenceSize;
+    BOOL _shouldApplyParallaxEffect;
     BOOL _shouldDisplayCaptionsBelowBatches;
     BOOL _shouldDisplaySectionHeadersBelowSections;
     BOOL _shouldFloatOverShortDistances;
@@ -51,8 +55,11 @@
 @property (nonatomic, readonly) unsigned int flowDirectionEdge;
 @property (nonatomic) struct CGSize { float x1; float x2; } interTileSpacing;
 @property (nonatomic) struct CGSize { float x1; float x2; } noCaptionSpacing;
+@property (nonatomic) float parallaxFactor;
+@property (nonatomic) int parallaxModel;
 @property (nonatomic) float sectionHeaderBackgroundHeight;
 @property (nonatomic) struct CGSize { float x1; float x2; } sectionReferenceSize;
+@property (nonatomic) BOOL shouldApplyParallaxEffect;
 @property (nonatomic) BOOL shouldDisplayCaptionsBelowBatches;
 @property (nonatomic) BOOL shouldDisplaySectionHeadersBelowSections;
 @property (nonatomic) BOOL shouldFloatOverShortDistances;
@@ -61,6 +68,8 @@
 @property (nonatomic) BOOL shouldFloatWithEase;
 @property (nonatomic) float thumbnailSpacing;
 
++ (Class)layoutAttributesClass;
+
 - (void).cxx_destruct;
 - (void)_adjustFloatingLayoutAttributes:(id)arg1 inSection:(int)arg2;
 - (id)_delegate;
@@ -68,9 +77,13 @@
 - (void)_getSize:(out struct CGSize { float x1; float x2; }*)arg1 headerSize:(out struct CGSize { float x1; float x2; }*)arg2 footerSize:(out struct CGSize { float x1; float x2; }*)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out int*)arg7 forSection:(int)arg8 isJoined:(BOOL)arg9;
 - (void)_getSizeForHorizontalFlowDirection:(out struct CGSize { float x1; float x2; }*)arg1 headerSize:(out struct CGSize { float x1; float x2; }*)arg2 footerSize:(out struct CGSize { float x1; float x2; }*)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out int*)arg7 forSection:(int)arg8 isJoined:(BOOL)arg9;
 - (void)_getSizeForVerticalFlowDirection:(out struct CGSize { float x1; float x2; }*)arg1 headerSize:(out struct CGSize { float x1; float x2; }*)arg2 footerSize:(out struct CGSize { float x1; float x2; }*)arg3 fixedLayoutAttributes:(id)arg4 tileLayoutAttributes:(id)arg5 floatingLayoutAttributes:(id)arg6 type:(out int*)arg7 forSection:(int)arg8 isJoined:(BOOL)arg9;
+- (id)_parallaxComputer;
 - (void)_sectionAtIndex:(int)arg1 sizeDidChangeFrom:(struct CGSize { float x1; float x2; })arg2 to:(struct CGSize { float x1; float x2; })arg3;
+- (void)_setOrigin:(struct CGPoint { float x1; float x2; })arg1 forSectionLayoutInfo:(id)arg2;
 - (void)_updateGlobalLayoutInfoWithOptions:(int)arg1 sectionsWithUpdatedGroupIDs:(out id*)arg2;
 - (void)_updateLayoutInfoForSection:(int)arg1 ignoreSizeChange:(BOOL)arg2;
+- (void)_updateParallaxComputer;
+- (void)_updateParallaxForLayoutAttributes:(id)arg1;
 - (void)_updateSectionLayoutInfosIfNecessary;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })captionPadding;
 - (struct CGSize { float x1; float x2; })collectionViewContentSize;
@@ -91,6 +104,8 @@
 - (id)layoutAttributesForSupplementaryViewOfKind:(id)arg1 atIndexPath:(id)arg2;
 - (struct CGSize { float x1; float x2; })noCaptionSpacing;
 - (int)numberOfTilesOmittedInSection:(int)arg1;
+- (float)parallaxFactor;
+- (int)parallaxModel;
 - (void)prepareLayout;
 - (float)sectionHeaderBackgroundHeight;
 - (struct CGSize { float x1; float x2; })sectionReferenceSize;
@@ -101,8 +116,11 @@
 - (void)setFlowDirection:(int)arg1;
 - (void)setInterTileSpacing:(struct CGSize { float x1; float x2; })arg1;
 - (void)setNoCaptionSpacing:(struct CGSize { float x1; float x2; })arg1;
+- (void)setParallaxFactor:(float)arg1;
+- (void)setParallaxModel:(int)arg1;
 - (void)setSectionHeaderBackgroundHeight:(float)arg1;
 - (void)setSectionReferenceSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setShouldApplyParallaxEffect:(BOOL)arg1;
 - (void)setShouldDisplayCaptionsBelowBatches:(BOOL)arg1;
 - (void)setShouldDisplaySectionHeadersBelowSections:(BOOL)arg1;
 - (void)setShouldFloatOverShortDistances:(BOOL)arg1;
@@ -110,6 +128,7 @@
 - (void)setShouldFloatThumbnails:(BOOL)arg1;
 - (void)setShouldFloatWithEase:(BOOL)arg1;
 - (void)setThumbnailSpacing:(float)arg1;
+- (BOOL)shouldApplyParallaxEffect;
 - (BOOL)shouldDisplayCaptionsBelowBatches;
 - (BOOL)shouldDisplaySectionHeadersBelowSections;
 - (BOOL)shouldFloatOverShortDistances;

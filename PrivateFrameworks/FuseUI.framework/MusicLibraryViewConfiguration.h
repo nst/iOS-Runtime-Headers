@@ -27,9 +27,11 @@
 - (void)applyEntityProviderChangeRecords:(id)arg1;
 - (BOOL)canDeleteEntityValueContext:(id)arg1;
 - (BOOL)canMoveEntityValueContext:(id)arg1;
+- (BOOL)canPreviewEntityValueContext:(id)arg1;
 - (void)configureContentDescriptorForSearchResults:(id)arg1;
 - (id)entityViewDescriptor;
 - (void)enumerateContentViewConfigurationsUsingBlock:(id /* block */)arg1;
+- (void)handleCommitPreviewViewController:(id)arg1 fromViewController:(id)arg2;
 - (int)handleSelectionFromUserActivityContext:(id)arg1 containerItem:(id)arg2 entityValueContext:(id)arg3 viewController:(id)arg4;
 - (void)handleSelectionOfAddButtonForEntityValueProvider:(id)arg1 inEntityProvider:(id)arg2 fromViewController:(id)arg3;
 - (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
@@ -37,11 +39,14 @@
 - (id)identifier;
 - (BOOL)isEntityViewDescriptorLoaded;
 - (id)loadEntityViewDescriptor;
+- (id)newContextualActionsEntityValueContext;
+- (id)newContextualActionsSectionEntityValueContext;
 - (id)newEntityValueContext;
 - (id)newSectionEntityValueContext;
 - (id)newSelectionEntityValueContext;
 - (id)newSelectionSectionEntityValueContext;
 - (id)newViewController;
+- (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (void)setIconName:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setSupportsSplitView:(BOOL)arg1;

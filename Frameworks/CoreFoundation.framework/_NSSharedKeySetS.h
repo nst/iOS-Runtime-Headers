@@ -47,7 +47,6 @@
 - (unsigned int)factor;
 - (void)finalize;
 - (char *)g;
-- (id)generateSubclassCode:(id)arg1;
 - (unsigned int)hash;
 - (unsigned int)indexForBytes:(char *)arg1 length:(unsigned int)arg2;
 - (unsigned int)indexForKey:(unsigned short*)arg1 length:(unsigned int)arg2;

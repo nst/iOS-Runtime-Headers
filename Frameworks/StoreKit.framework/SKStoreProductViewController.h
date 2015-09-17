@@ -49,6 +49,7 @@
 - (void)_addRemoteView;
 - (void)_didFinish;
 - (void)_didFinishWithResult:(int)arg1;
+- (void)_fireLoadBlockBeforeFinishing;
 - (void)_forceOrientationBackToSupportedOrientation;
 - (void)_loadDidFinishWithResult:(BOOL)arg1 error:(id)arg2;
 - (void)_presentPageWithRequest:(id)arg1 animated:(BOOL)arg2;

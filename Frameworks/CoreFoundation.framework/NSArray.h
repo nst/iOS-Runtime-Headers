@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSArray : NSObject <CKRecordValue, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSArray : NSObject <CKRecordValue, CSCoderEncoder, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
 @property (nonatomic, readonly, retain) IMMessageItem *__imLastMessageItem;
 @property (nonatomic, readonly) NSDictionary *bw_builtInMicRouteDictionary;
@@ -128,6 +128,18 @@
 
 - (void)CKAssignToContainerWithID:(id)arg1;
 
+// Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
+
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
+// Image: /System/Library/Frameworks/CoreMotion.framework/CoreMotion
+
+- (void)cl_json_serializeValue:(struct value_ostream { bool x1; struct ostream {} *x2; }*)arg1;
+
+// Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
+
+- (void)encodeWithCSCoder:(id)arg1;
+
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
 + (id)arrayWithContentsOfFile:(id)arg1;
@@ -186,7 +198,9 @@
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (id)_mapkit_arrayByRemovingObject:(id)arg1;
+- (id)_mapkit_componentsJoinedInCommaDelimitedList;
 - (unsigned int)_mapkit_indexForObject:(id)arg1 usingSortFunction:(int (*)arg2 context:(void*)arg3;
+- (id)_mapkit_joinedAddressComponents;
 - (void)_mapkit_orientableAnnotationViewsFixed:(id*)arg1 notFixed:(id*)arg2;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
@@ -206,6 +220,7 @@
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
+- (void)pu_enumerateObjectsFromIndex:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (id)pu_localizedComposedStringThatFitsWidth:(float)arg1 withMeasuringLabel:(id)arg2;
 - (id)pu_localizedComposedStringWithCount:(unsigned int)arg1;
 
@@ -239,11 +254,16 @@
 - (id)_nextToLastObject;
 - (id)_ui_firstObject;
 - (id)_ui_onlyObject;
+- (id)ui_arrayByRemovingLastObjectEqualTo:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
 
 + (id)axArrayByIgnoringNilElementsWithCount:(unsigned int)arg1;
 
+- (id)axFilterObjectsUsingBlock:(id /* block */)arg1;
+- (BOOL)axIsEqualToOrderedArray:(id)arg1 withPredicate:(id /* block */)arg2;
+- (id)axMapObjectsUsingBlock:(id /* block */)arg1;
+- (id)axUniqueArrayWithPredicate:(id /* block */)arg1;
 - (id)firstPath;
 
 // Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
@@ -280,6 +300,7 @@
 - (BOOL)CalContainsObjectIdenticalTo:(id)arg1;
 - (id)CalMutableRecursiveCopy;
 - (id)allObjectsWithClass:(Class)arg1;
+- (id)filteredArrayUsingTest:(id /* block */)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
 
@@ -301,17 +322,14 @@
 - (id)__ck_messageForChatItemAtIndex:(unsigned int)arg1;
 - (void)__ck_unloadSizesAtIndexes:(id)arg1;
 - (void)__ck_unloadTranscriptTextAtIndexes:(id)arg1;
+- (BOOL)ck_containsObjectIdenticalTo:(id)arg1;
 - (id)composeRecipientAddresses;
 - (id)composeRecipientHandles;
 - (id)composeRecipientNormalizedAddresses;
 
-// Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
-
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
-
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
-- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
+- (id)CKSortedForUpload;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -327,6 +345,28 @@
 
 - (id)CNFRegArrayPassingTest:(id /* block */)arg1;
 - (id)CNFRegArrayPassingTests:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/ContactsFoundation.framework/ContactsFoundation
+
+- (BOOL)_cn_all:(id /* block */)arg1;
+- (BOOL)_cn_any:(id /* block */)arg1;
+- (id)_cn_distinctObjects;
+- (void)_cn_each:(id /* block */)arg1;
+- (id)_cn_filter:(id /* block */)arg1;
+- (id)_cn_firstObjectPassingTest:(id /* block */)arg1;
+- (id)_cn_flatMap:(id /* block */)arg1;
+- (id)_cn_flatten;
+- (id)_cn_groupBy:(id /* block */)arg1;
+- (id)_cn_indexBy:(id /* block */)arg1;
+- (unsigned int)_cn_indexOfFirstObjectPassingTest:(id /* block */)arg1;
+- (id)_cn_indicesForObjects:(id)arg1;
+- (BOOL)_cn_isNonEmpty;
+- (id)_cn_map:(id /* block */)arg1;
+- (id)_cn_partition:(id /* block */)arg1;
+- (id)_cn_safeSortedArrayUsingComparator:(id /* block */)arg1;
+- (id)_cn_tail;
+- (id)_cn_take:(unsigned int)arg1;
+- (void)_cn_zip:(id)arg1 withBlock:(id /* block */)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
@@ -363,16 +403,19 @@
 
 + (id)_gkArrayWithIndexSet:(id)arg1;
 
+- (id)_gkDescriptionWithChildren:(int)arg1;
 - (id)_gkDistinctValuesForKeyPath:(id)arg1;
 - (id)_gkFilterWithBlock:(id /* block */)arg1;
 - (id)_gkFirstObject;
 - (id)_gkFoldWithInitialValue:(id)arg1 block:(id /* block */)arg2;
+- (id)_gkGuestPlayersFromPlayers;
 - (id)_gkIncompletePlayersFromPlayerIDs;
 - (id)_gkInternalsFromPlayers;
 - (id)_gkMapConcurrentlyWithBlock:(id /* block */)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1;
 - (id)_gkMapDictionaryWithKeyPath:(id)arg1 valueKeyPath:(id)arg2;
 - (id)_gkMapWithBlock:(id /* block */)arg1;
+- (id)_gkNonGuestPlayersFromPlayers;
 - (id)_gkOrderedSet;
 - (id)_gkPlayersFromInternals;
 - (id)_gkPlayersIDsFromPlayers;
@@ -385,6 +428,11 @@
 - (id)_gkBubbleOfType:(int)arg1;
 - (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forTextStyle:(id)arg2;
 - (id)_gkCommaSeparatedRecipientListWithWidth:(float)arg1 forTextStyle:(id)arg2 usingSelector:(SEL)arg3;
+
+// Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
+
+- (id)_geo_bestLocalizedString;
+- (id)_geo_bestLocalizedStringValue;
 
 // Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
 
@@ -412,6 +460,7 @@
 
 // Image: /System/Library/PrivateFrameworks/IMFoundation.framework/IMFoundation
 
+- (id)__IMStripPotentialTokenURIs;
 - (id)__imArrayByApplyingBlock:(id /* block */)arg1;
 - (id)__imArrayByApplyingBlock:(id /* block */)arg1 filter:(id /* block */)arg2;
 - (id)__imArrayByFilteringWithBlock:(id /* block */)arg1;
@@ -435,6 +484,7 @@
 - (id)mf_dictionaryWithMessagesSortedByStore;
 - (id)mf_filter:(id /* block */)arg1;
 - (id)mf_firstObjectPassingTest:(id /* block */)arg1;
+- (id)mf_flatMap:(id /* block */)arg1;
 - (id)mf_flatten;
 - (unsigned int)mf_indexOfObject:(id)arg1 usingComparator:(id /* block */)arg2;
 - (unsigned int)mf_indexOfObject:(id)arg1 usingSortFunction:(int (*)arg2 context:(void*)arg3;
@@ -449,37 +499,69 @@
 - (id)mf_uncommentedAddressList;
 - (id)mf_uniquifyWithComparator:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/MapsSupport.framework/MapsSupport
+
+- (id)_maps_arrayWithObjectsConformingToProtocols:(id)arg1;
+- (unsigned int)_maps_indexOfObjectCorrespondingToImmutableObject:(id)arg1;
+- (id)_maps_indexesOfObjectsCorrespondingToImmutableObjects:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
 - (unsigned int)mf_indexOfMailboxDictionaryWithName:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/NanoPassKit.framework/NanoPassKit
 
+- (id)npkComprehension:(id /* block */)arg1;
 - (id)npkFindFirstObjectMatchingCondition:(id /* block */)arg1;
 - (id)npkSafeObjectAtIndex:(unsigned int)arg1;
 
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
+- (BOOL)naui_all:(id /* block */)arg1;
+- (BOOL)naui_any:(id /* block */)arg1;
+- (id)naui_arrayByFlattening;
+- (id)naui_arrayWithResultsOfBlock:(id /* block */)arg1;
+- (void)naui_each:(id /* block */)arg1;
+- (id)naui_filter:(id /* block */)arg1;
+- (id)naui_firstObjectPassingTest:(id /* block */)arg1;
+- (id)naui_map:(id /* block */)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
+- (id)arrayByGroupingIntoArraysWithMaxCount:(unsigned int)arg1;
+- (BOOL)containsObjectPassingTest:(id /* block */)arg1;
+- (id)objectPassingTest:(id /* block */)arg1;
+- (id)objectsOfClass:(Class)arg1;
+- (id)objectsPassingTest:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/OfficeImport.framework/OfficeImport
 
-+ (id)arrayWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
-+ (id)arrayWithInts:(int*)arg1 count:(unsigned int)arg2;
++ (id)tsu_arrayWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
++ (id)tsu_arrayWithInts:(int*)arg1 count:(unsigned int)arg2;
++ (id)tsu_arrayWithUIntegers:(unsigned int*)arg1 count:(unsigned int)arg2;
 
-- (void)appendJsonStringToString:(id)arg1;
-- (id)arrayByAddingNonContainedObjectsFromArray:(id)arg1;
-- (id)arrayByFlattening;
-- (id)arrayByRemovingObjectsIdenticalToObjectsInArray:(id)arg1;
-- (id)arrayByReversingOrder;
-- (id)arrayByTransformingWithBlock:(id /* block */)arg1;
-- (id)arrayOfObjectsPassingTest:(id /* block */)arg1;
-- (id)arrayWithObjectsInSet:(id)arg1;
-- (void)enumerateSnapshotObjectsUsingBlock:(id /* block */)arg1;
-- (id)firstObjectPassingTest:(id /* block */)arg1;
-- (unsigned int)indexOfSmallestObject;
-- (id)indexesOfObjects:(id)arg1;
-- (id)initWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
-- (id)initWithInts:(int*)arg1 count:(unsigned int)arg2;
-- (id)intersectionWithArray:(id)arg1;
-- (id)rangeCheckedObjectAtIndex:(unsigned int)arg1;
-- (id)uniqueObjects;
+- (void)sfu_appendJsonStringToString:(id)arg1;
+- (id)tsu_anyObject;
+- (id)tsu_arrayByAddingNonContainedObjectsFromArray:(id)arg1;
+- (id)tsu_arrayByFlattening;
+- (id)tsu_arrayByMappingObjectsUsingBlock:(id /* block */)arg1;
+- (id)tsu_arrayByRemovingObjectsIdenticalToObjectsInArray:(id)arg1;
+- (id)tsu_arrayByReversingOrder;
+- (id)tsu_arrayByTransformingWithBlock:(id /* block */)arg1;
+- (id)tsu_arrayOfObjectsPassingTest:(id /* block */)arg1;
+- (id)tsu_arrayWithObjectsInSet:(id)arg1;
+- (void)tsu_enumerateSnapshotObjectsUsingBlock:(id /* block */)arg1;
+- (id)tsu_firstObjectPassingTest:(id /* block */)arg1;
+- (unsigned int)tsu_indexOfSmallestObject;
+- (id)tsu_indexesOfObjects:(id)arg1;
+- (id)tsu_initWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
+- (id)tsu_initWithInts:(int*)arg1 count:(unsigned int)arg2;
+- (id)tsu_initWithUIntegers:(unsigned int*)arg1 count:(unsigned int)arg2;
+- (id)tsu_intersectionWithArray:(id)arg1;
+- (id)tsu_objectPriorToObject:(id)arg1;
+- (id)tsu_onlyObject;
+- (id)tsu_rangeCheckedObjectAtIndex:(unsigned int)arg1;
+- (id)tsu_uniqueObjects;
 
 // Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
 
@@ -493,7 +575,11 @@
 
 // Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
 
-- (id)arrayByRemovingObject:(id)arg1;
+- (id)pk_arrayByApplyingBlock:(id /* block */)arg1;
+- (id)pk_arrayByRemovingObject:(id)arg1;
+- (id)pk_arrayByRemovingObjectsInArray:(id)arg1;
+- (id)pk_objectsPassingTest:(id /* block */)arg1;
+- (id)pk_shuffledArray;
 
 // Image: /System/Library/PrivateFrameworks/PhotoEditSupport.framework/PhotoEditSupport
 
@@ -541,13 +627,40 @@
 - (unsigned int)indexOfSpecifierWithID:(id)arg1;
 - (id)specifierForID:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
+
+- (BOOL)containsString:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
 - (id)_sa_mappedArrayWithBlock:(id /* block */)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
+
++ (id)safari_arrayWithPropertyListData:(id)arg1 options:(unsigned int)arg2;
+
+- (id)safari_arrayAtIndex:(unsigned int)arg1;
+- (id)safari_dictionaryAtIndex:(unsigned int)arg1;
+- (id)safari_filterObjectsUsingBlock:(id /* block */)arg1;
+- (id)safari_mapAndFilterObjectsUsingBlock:(id /* block */)arg1;
+- (id)safari_mapAndFilterObjectsWithOptions:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
+- (id)safari_mapObjectsUsingBlock:(id /* block */)arg1;
+- (id)safari_numberAtIndex:(unsigned int)arg1;
+- (id)safari_stringAtIndex:(unsigned int)arg1;
+- (id)safari_translateToArrayOfParsecModelsOfClass:(Class)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
+- (BOOL)containsAnyObjects:(id)arg1;
+- (BOOL)containsObjects:(id)arg1;
+- (id)indexesOfObjects:(id)arg1;
+- (id)objectPassingTest:(id /* block */)arg1;
+- (id)objectsPassingTest:(id /* block */)arg1;
+
 // Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
 
 - (id)firstObjectPassingTest:(id /* block */)arg1;
+- (BOOL)hasObjectPassingTest:(id /* block */)arg1;
 - (id)map:(id /* block */)arg1;
 - (id)max:(id /* block */)arg1;
 - (id)objectsPassingTest:(id /* block */)arg1;
@@ -564,18 +677,6 @@
 // Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
 
 - (id)_web_lowercaseStrings;
-- (id)_webkit_numberAtIndex:(unsigned int)arg1;
-- (id)_webkit_stringAtIndex:(unsigned int)arg1;
-
-// Image: /System/Library/PrivateFrameworks/WebUI.framework/WebUI
-
-- (id)safari_arrayAtIndex:(unsigned int)arg1;
-- (id)safari_dictionaryAtIndex:(unsigned int)arg1;
-- (id)safari_filterObjectsUsingBlock:(id /* block */)arg1;
-- (id)safari_mapAndFilterObjectsUsingBlock:(id /* block */)arg1;
-- (id)safari_mapObjectsUsingBlock:(id /* block */)arg1;
-- (id)safari_numberAtIndex:(unsigned int)arg1;
-- (id)safari_stringAtIndex:(unsigned int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iCalendar.framework/iCalendar
 
@@ -588,6 +689,7 @@
 
 + (id)tsu_arrayWithCGFloats:(float*)arg1 count:(unsigned int)arg2;
 + (id)tsu_arrayWithInts:(int*)arg1 count:(unsigned int)arg2;
++ (id)tsu_arrayWithNonNilObject:(id)arg1;
 + (id)tsu_arrayWithUIntegers:(unsigned int*)arg1 count:(unsigned int)arg2;
 
 - (BOOL)kn_isEquivalentForCrossDocumentPasteMasterComparison:(id)arg1;
@@ -602,6 +704,7 @@
 - (void)tsd_saveToGeometryArray:(struct RepeatedPtrField<TSD::GeometryArchive> { void **x1; int x2; int x3; int x4; }*)arg1 archiver:(id)arg2;
 - (void)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 completion:(id /* block */)arg3;
 - (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 error:(id*)arg3;
+- (id)tsp_deepCopyWithContext:(id)arg1 options:(id)arg2 objectMap:(id*)arg3 error:(id*)arg4;
 - (id)tsp_initWithColorArray:(const struct RepeatedPtrField<TSP::Color> { void **x1; int x2; int x3; int x4; }*)arg1;
 - (id)tsp_initWithNSRangeArray:(const struct RepeatedPtrField<TSP::Range> { void **x1; int x2; int x3; int x4; }*)arg1;
 - (id)tsp_initWithProtobufStringArray:(const struct RepeatedPtrField<std::__1::basic_string<char> > { void **x1; int x2; int x3; int x4; }*)arg1;
@@ -634,5 +737,9 @@
 - (id)tsu_onlyObject;
 - (id)tsu_rangeCheckedObjectAtIndex:(unsigned int)arg1;
 - (id)tsu_uniqueObjects;
+
+// Image: /usr/lib/libprequelite.dylib
+
+- (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
 @end

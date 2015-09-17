@@ -2,17 +2,17 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceActionsViewController : UITableViewController <MKStackingViewControllerPreferredSizeUse> {
+@interface MKPlaceActionsViewController : UITableViewController <MKHideableBottomSeparator, MKStackingViewControllerPreferredSizeUse> {
     <MKPlaceActionsViewControllerDelegate> *_actionDelegate;
     NSArray *_actions;
     MKMapItem *_mapItem;
     BOOL _showContactActions;
-    BOOL _showCreateReminder;
     BOOL _showOpenInSkyline;
     BOOL _showRemovePin;
     BOOL _showReportAProblem;
     BOOL _showSharing;
     BOOL _showSimulateLocation;
+    BOOL _viewShouldHideBottommostSeparator;
 }
 
 @property (nonatomic) <MKPlaceActionsViewControllerDelegate> *actionDelegate;
@@ -23,13 +23,13 @@
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
 @property (nonatomic) BOOL showContactActions;
-@property (nonatomic) BOOL showCreateReminder;
 @property (nonatomic) BOOL showOpenInSkyline;
 @property (nonatomic) BOOL showRemovePin;
 @property (nonatomic) BOOL showReportAProblem;
 @property (nonatomic) BOOL showSharing;
 @property (nonatomic) BOOL showSimulateLocation;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL viewShouldHideBottommostSeparator;
 
 - (void).cxx_destruct;
 - (id)actionDelegate;
@@ -42,14 +42,13 @@
 - (void)setActions:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setShowContactActions:(BOOL)arg1;
-- (void)setShowCreateReminder:(BOOL)arg1;
 - (void)setShowOpenInSkyline:(BOOL)arg1;
 - (void)setShowRemovePin:(BOOL)arg1;
 - (void)setShowReportAProblem:(BOOL)arg1;
 - (void)setShowSharing:(BOOL)arg1;
 - (void)setShowSimulateLocation:(BOOL)arg1;
+- (void)setViewShouldHideBottommostSeparator:(BOOL)arg1;
 - (BOOL)showContactActions;
-- (BOOL)showCreateReminder;
 - (BOOL)showOpenInSkyline;
 - (BOOL)showRemovePin;
 - (BOOL)showReportAProblem;
@@ -62,6 +61,7 @@
 - (void)updateActions;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (BOOL)viewShouldHideBottommostSeparator;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

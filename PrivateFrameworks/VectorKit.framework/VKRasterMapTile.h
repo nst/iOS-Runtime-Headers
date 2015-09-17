@@ -31,6 +31,7 @@
 - (void)dealloc;
 - (void)foreachTileOfSize:(unsigned int)arg1 perform:(id /* block */)arg2 completion:(id /* block */)arg3;
 - (id)imageDataInFormat:(unsigned int)arg1;
+- (id)imageDataInFormat:(unsigned int)arg1 compressionLevel:(float)arg2;
 - (id)initWithBitmapData:(struct shared_ptr<ggl::BitmapDataBase> { struct BitmapDataBase {} *x1; struct __shared_weak_count {} *x2; })arg1 superKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2 finalKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg3 scale:(float)arg4;
 - (id)initWithBitmapData:(struct shared_ptr<ggl::BitmapDataBase> { struct BitmapDataBase {} *x1; struct __shared_weak_count {} *x2; })arg1 tileKey:(const struct VKTileKey { unsigned int x1; int x2; int x3; unsigned int x4; }*)arg2 scale:(float)arg3;
 - (id)tileForKey:(const struct VKRasterTileKey { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; }*)arg1;

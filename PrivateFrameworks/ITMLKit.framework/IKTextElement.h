@@ -3,7 +3,6 @@
  */
 
 @interface IKTextElement : IKViewElement {
-    IKViewElementFactory *_elementFactory;
     NSMutableArray *_textBadges;
     IKTextParser *_textParser;
     unsigned int _textStyle;

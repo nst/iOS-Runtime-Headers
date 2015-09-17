@@ -66,6 +66,7 @@
 
 + (id)_associatedTransitionContextForObject:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)__runAlongsideAnimations;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_affineTransform;
 - (BOOL)_allowUserInteraction;

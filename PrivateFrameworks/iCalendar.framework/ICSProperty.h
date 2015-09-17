@@ -8,6 +8,7 @@
     id _value;
 }
 
+- (void).cxx_destruct;
 - (id)ICSStringWithOptions:(unsigned int)arg1;
 - (void)ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
@@ -18,7 +19,6 @@
 - (void)addParametersFromDictionary:(id)arg1;
 - (id)allParameters;
 - (BOOL)alwaysHasParametersToSerialize;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

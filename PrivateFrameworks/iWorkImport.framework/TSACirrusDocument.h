@@ -28,7 +28,7 @@
 @property (nonatomic, readonly) BOOL isInCollaborationMode;
 @property (nonatomic, readonly) BOOL isInReadOnlyMode;
 @property (nonatomic, readonly) NSString *name;
-@property (nonatomic, readonly) BOOL preserveDocumentRevisionIdentifierForSequenceZero;
+@property (nonatomic, readonly) TSAUbiquitousRefreshQueue *refreshQueue;
 @property (nonatomic, readonly) BOOL skipDocumentUpgrade;
 @property (readonly) Class superclass;
 

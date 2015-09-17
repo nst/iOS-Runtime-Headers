@@ -4,15 +4,17 @@
 
 @interface SGDeduper : NSObject
 
++ (id)_dedupeGenericContactDetails:(id)arg1;
++ (id)_dedupePostalAddresses:(id)arg1;
++ (id /* block */)bucketerWithEqualityTest:(id /* block */)arg1;
++ (id /* block */)bucketerWithLabeledBuckets:(id /* block */)arg1;
 + (id /* block */)bucketerWithMapping:(id /* block */)arg1;
 + (id)dedupe:(id)arg1 bucketer:(id /* block */)arg2 resolver:(id /* block */)arg3;
 + (id)dedupeContactDetails:(id)arg1;
 + (id)nearDuplicateEKEventOfPseudoEventTitle:(id)arg1 inEKEventsWithSameStartTime:(id)arg2;
-+ (id)nearDuplicateOfPseudoEventTitle:(id)arg1 inCuratedEventsWithSameStartTime:(id)arg2;
 + (id /* block */)resolveByPairs:(id /* block */)arg1;
 + (id /* block */)resolveByScoreBreakTiesArbitrarily:(id /* block */)arg1;
-+ (id /* block */)resolveContactDetailUsingIsCuratedFn:(id /* block */)arg1 labelLengthFn:(id /* block */)arg2;
-+ (id /* block */)resolveSGContactDetailsPreferringCuratedDetails;
-+ (id /* block */)resolveSGObjectsPreferringCuratedDetails;
++ (id /* block */)resolveSGContactDetailsPreferringPhraseExtractionsAndLabels;
++ (id)splitContactDetailsByType:(id)arg1;
 
 @end

@@ -16,10 +16,10 @@
 @property (nonatomic) unsigned int icon;
 @property (nonatomic, copy) NSString *low;
 
+- (void).cxx_destruct;
 - (int)compareDayNumberToDayForecast:(id)arg1;
 - (unsigned int)dayNumber;
 - (unsigned int)dayOfWeek;
-- (void)dealloc;
 - (id)description;
 - (id)high;
 - (unsigned int)icon;

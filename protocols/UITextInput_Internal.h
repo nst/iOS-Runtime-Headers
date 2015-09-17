@@ -45,11 +45,16 @@
 - (void)_phraseBoundaryGesture:(UIPhraseBoundaryGestureRecognizer *)arg1;
 - (UITextPosition *)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(UITextPosition *)arg2;
 - (UITextPosition *)_positionFromPosition:(UITextPosition *)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4;
+- (UITextPosition *)_positionFromPosition:(UITextPosition *)arg1 pastTextUnit:(int)arg2 inDirection:(int)arg3;
+- (UITextPosition *)_positionWithinRange:(UITextRange *)arg1 farthestInDirection:(int)arg2;
 - (UIResponder<UITextInput> *)_proxyTextInput;
 - (UITextRange *)_rangeOfEnclosingWord:(UITextPosition *)arg1;
 - (UITextRange *)_rangeOfLineEnclosingPosition:(UITextPosition *)arg1;
 - (UITextRange *)_rangeOfParagraphEnclosingPosition:(UITextPosition *)arg1;
+- (UITextRange *)_rangeOfSentenceEnclosingPosition:(UITextPosition *)arg1;
 - (UITextRange *)_rangeOfText:(NSString *)arg1 endingAtPosition:(UITextPosition *)arg2;
+- (UITextRange *)_rangeOfTextUnit:(int)arg1 enclosingPosition:(UITextPosition *)arg2;
+- (UITextRange *)_rangeSpanningTextUnit:(int)arg1 andPosition:(UITextPosition *)arg2;
 - (void)_replaceCurrentWordWithText:(NSString *)arg1;
 - (void)_scrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 animated:(BOOL)arg2;
 - (void)_selectAll;

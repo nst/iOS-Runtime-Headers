@@ -14,6 +14,7 @@
     TSURetainedPointerKeyDictionary *_oldChildLayouts;
     unsigned int _pageCount;
     unsigned int _pageNumber;
+    BOOL _validating;
 }
 
 @property (nonatomic, readonly) BOOL allowsBody;
@@ -34,6 +35,7 @@
 @property (nonatomic, readonly) unsigned int pageNumber;
 @property (nonatomic, readonly) BOOL shrinkTextToFit;
 @property (nonatomic, readonly) float textScaleFactor;
+@property (getter=isValidating, nonatomic) BOOL validating;
 
 - (void)addAttachmentLayout:(id)arg1;
 - (id)additionalDependenciesForChildLayout:(id)arg1;
@@ -78,6 +80,7 @@
 - (void)invalidateSize;
 - (BOOL)isReadyForBodyLayout;
 - (BOOL)isRootLayoutForInspectorGeometry;
+- (BOOL)isValidating;
 - (id)layoutForChildInfo:(id)arg1;
 - (id)layoutMargins;
 - (id)layoutsCausingWrapOnTextLayoutTarget:(id)arg1 ignoreIntersection:(BOOL)arg2;
@@ -114,9 +117,10 @@
 - (id)primaryLayoutForInfo:(id)arg1;
 - (void)processWidowAndInflation;
 - (BOOL)providesGuidesForChildLayouts;
-- (void)rebuildChildLayoutsOnNextValidation;
+- (void)rebuildChildLayoutsOnNextValidationForcingTextLayout:(BOOL)arg1;
 - (Class)repClassForTextLayout:(id)arg1;
-- (void)resetFootnoteLayoutsForReinflation;
+- (void)resetLayoutsForReinflation;
+- (void)setValidating:(BOOL)arg1;
 - (BOOL)shouldHeaderFooterBeVisible:(int)arg1;
 - (BOOL)shouldHeaderFooterBeVisibleForPageIndex:(unsigned int)arg1;
 - (BOOL)shouldProvideGuidesDuringExclusiveAlignmentOperation;

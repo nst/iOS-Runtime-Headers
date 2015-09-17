@@ -27,6 +27,7 @@
 - (id)band2HorzStyle;
 - (id)band2VertStyle;
 - (void)dealloc;
+- (id)description;
 - (id)firstColumnStyle;
 - (id)firstRowStyle;
 - (id)id;
@@ -51,6 +52,7 @@
 - (void)setNorthWestStyle:(id)arg1;
 - (void)setSouthEastStyle:(id)arg1;
 - (void)setSouthWestStyle:(id)arg1;
+- (void)setStyle:(id)arg1 forPart:(int)arg2;
 - (void)setWholeTableStyle:(id)arg1;
 - (id)southEastStyle;
 - (id)southWestStyle;

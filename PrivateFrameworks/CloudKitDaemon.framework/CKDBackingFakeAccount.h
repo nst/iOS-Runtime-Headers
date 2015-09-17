@@ -37,7 +37,7 @@
 - (BOOL)isFakeAccount;
 - (id)password;
 - (id)primaryEmail;
-- (void)renewAuthTokenInStore:(id)arg1 withCompletionHandler:(id /* block */)arg2;
+- (void)renewAuthTokenInStore:(id)arg1 withOptions:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setAccountBag:(id)arg1;
 - (void)setDsid:(id)arg1;
 - (void)setFakeAccountInfoQueue:(id)arg1;

@@ -5,10 +5,11 @@
 @interface UIInputViewController : UIViewController <UITextInputDelegate, _UITextDocumentInterfaceDelegate> {
     BOOL _alignsToContentViewController;
     NSString *_primaryLanguage;
-    NSObject<UITextDocumentProxy> *_textDocumentProxy;
+    <UITextDocumentProxy> *_textDocumentProxy;
 }
 
 @property (nonatomic) BOOL _alignsToContentViewController;
+@property (nonatomic, readonly) BOOL _isPlaceholder;
 @property (nonatomic, readonly) UIKeyboard *_keyboard;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -16,7 +17,7 @@
 @property (nonatomic, retain) UIInputView *inputView;
 @property (nonatomic, copy) NSString *primaryLanguage;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly) NSObject<UITextDocumentProxy> *textDocumentProxy;
+@property (nonatomic, readonly) <UITextDocumentProxy> *textDocumentProxy;
 
 + (BOOL)_requiresProxyInterface;
 
@@ -24,6 +25,7 @@
 - (id)_compatibilityController;
 - (void)_didResetDocumentState;
 - (id)_extensionContext;
+- (BOOL)_isPlaceholder;
 - (id)_keyboard;
 - (id)_proxyInterface;
 - (void)_setExtensionContext:(id)arg1;

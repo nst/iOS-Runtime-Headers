@@ -6,6 +6,12 @@
 @required
 
 - (void)addSplitHandler:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLRenderCommandEncoderSPI> *, unsigned int, void*
+- (void)setFragmentTexture:(id <MTLTexture>)arg1 atTextureIndex:(unsigned int)arg2 samplerState:(id <MTLSamplerState>)arg3 atSamplerIndex:(unsigned int)arg4;
 - (void)setLineWidth:(float)arg1;
+
+@optional
+
+- (void)setFragmentTexture:(id <MTLTexture>)arg1 baseLevel:(unsigned int)arg2 atIndex:(unsigned int)arg3;
+- (void)setVertexTexture:(id <MTLTexture>)arg1 baseLevel:(unsigned int)arg2 atIndex:(unsigned int)arg3;
 
 @end

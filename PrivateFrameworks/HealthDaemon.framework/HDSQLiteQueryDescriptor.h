@@ -20,10 +20,11 @@
 @property (nonatomic, copy) HDSQLitePredicate *predicate;
 @property (nonatomic) BOOL returnsDistinctEntities;
 
+- (void).cxx_destruct;
 - (id)_newSelectSQLWithProperties:(id)arg1;
 - (id)_newSelectSQLWithProperties:(id)arg1 columns:(id)arg2;
+- (id)_sortedJoinClauses:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (Class)entityClass;
 - (id)groupBy;
 - (int)limitCount;

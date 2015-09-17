@@ -4,6 +4,8 @@
 
 @interface GEOPlaceDataRemoteProxy : NSObject <GEOPlaceDataProxy> {
     NSObject<OS_dispatch_queue> *_requestQ;
+    NSMapTable *_requestToUUID;
+    NSLock *_requestToUUIDLock;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -13,13 +15,16 @@
 
 - (void)applyRAPUpdatedMapItems:(id)arg1;
 - (void)calculateFreeableSpaceWithHandler:(id /* block */)arg1;
+- (void)cancelRequest:(id)arg1;
+- (void)clearCache;
 - (void)dealloc;
 - (void)fetchAllCacheEntriesWithRequesterHandler:(id /* block */)arg1;
 - (id)init;
-- (void)performPlaceDataRequest:(id)arg1 traits:(id)arg2 timeout:(double)arg3 networkActivity:(id /* block */)arg4 requesterHandler:(id /* block */)arg5;
-- (void)requestMUIDs:(id)arg1 resultProviderID:(int)arg2 includeETA:(BOOL)arg3 traits:(id)arg4 requesterHandler:(id /* block */)arg5;
-- (void)requestPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3 requesterHandler:(id /* block */)arg4;
-- (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2;
+- (void)performPlaceDataRequest:(id)arg1 traits:(id)arg2 timeout:(double)arg3 auditToken:(id)arg4 networkActivity:(id /* block */)arg5 requesterHandler:(id /* block */)arg6;
+- (void)requestComponentsFromNetwork:(id)arg1 muid:(unsigned long long)arg2 resultProviderID:(int)arg3 traits:(id)arg4 auditToken:(id)arg5 requesterHandler:(id /* block */)arg6;
+- (void)requestMUIDs:(id)arg1 resultProviderID:(int)arg2 includeETA:(BOOL)arg3 traits:(id)arg4 options:(unsigned int)arg5 auditToken:(id)arg6 requesterHandler:(id /* block */)arg7;
+- (void)requestPhoneNumbers:(id)arg1 allowCellularDataForLookup:(BOOL)arg2 traits:(id)arg3 auditToken:(id)arg4 requesterHandler:(id /* block */)arg5;
+- (void)shrinkBySize:(unsigned long long)arg1 finished:(id /* block */)arg2;
 - (void)trackPlaceData:(id)arg1;
 
 @end

@@ -19,6 +19,8 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } size;
 @property (nonatomic) unsigned int target;
 
++ (id)materialAttachmentWithGLKTextureInfo:(id)arg1;
+
 - (void*)context;
 - (void)dealloc;
 - (unsigned int)glID;

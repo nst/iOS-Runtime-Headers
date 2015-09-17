@@ -3,9 +3,10 @@
  */
 
 @interface FBSynchronizedTransactionGroup : FBTransaction <FBSynchronizedTransaction, FBSynchronizedTransactionDelegate> {
+    BOOL _commitAllowed;
     BOOL _didCommit;
     BOOL _readyForCommit;
-    <FBSynchronizedTransactionDelegate> *_synchronizationDelegate;
+    <FBSynchronizedTransactionGroupDelegate> *_synchronizationDelegate;
     NSMutableSet *_synchronizedTransactions;
     NSMutableSet *_synchronizedTransactionsAwaitingCommitReadiness;
     NSMutableSet *_synchronizedTransactionsReadyToCommit;
@@ -17,7 +18,12 @@
 @property (readonly) Class superclass;
 @property (nonatomic) <FBSynchronizedTransactionDelegate> *synchronizationDelegate;
 
+- (BOOL)_canBeInterrupted;
+- (void)_checkPreconditionsAndCommitIfReady;
+- (void)_childTransactionDidComplete:(id)arg1;
 - (void)_performSynchronizedCommit:(id)arg1;
+- (void)_performSynchronizedCommitIfReady;
+- (BOOL)_shouldFailForChildTransaction:(id)arg1;
 - (void)addSynchronizedTransaction:(id)arg1;
 - (void)dealloc;
 - (id)init;
@@ -28,5 +34,6 @@
 - (void)synchronizedTransaction:(id)arg1 didCommitSynchronizedTransactions:(id)arg2;
 - (void)synchronizedTransaction:(id)arg1 willCommitSynchronizedTransactions:(id)arg2;
 - (void)synchronizedTransactionReadyToCommit:(id)arg1;
+- (id)synchronizedTransactions;
 
 @end

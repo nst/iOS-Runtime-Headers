@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKServiceAddPassesViewController : UIViewController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKServiceAddPassesViewControllerProtocol, UIScrollViewDelegate> {
+@interface PKServiceAddPassesViewController : PKNavigationController <PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKPaymentSetupViewControllerDelegate, PKServiceAddPassesViewControllerProtocol, UIScrollViewDelegate> {
     BOOL _allowsPassIngestion;
     BOOL _alreadyAdding;
     PKPassGroupStackView *_cardStackView;
@@ -16,9 +16,9 @@
     NSArray *_localPassDatas;
     NSMutableArray *_localPasses;
     NSMutableArray *_minimumCardHeightFromHereToTop;
-    UINavigationBar *_navigationBar;
     int _presentationState;
     UIProgressView *_progressView;
+    BOOL _showAutomaticSelection;
     BOOL _viewAppeared;
 }
 
@@ -31,7 +31,6 @@
 @property (nonatomic, retain) NSArray *localPassDatas;
 @property (nonatomic, retain) NSMutableArray *localPasses;
 @property (nonatomic, retain) NSMutableArray *minimumCardHeightFromHereToTop;
-@property (retain) UINavigationBar *navigationBar;
 @property (nonatomic) int presentationState;
 @property (nonatomic, retain) UIProgressView *progressView;
 @property (readonly) Class superclass;
@@ -42,8 +41,9 @@
 + (id)_remoteViewControllerInterface;
 
 - (void)_acceptCard:(id)arg1;
+- (void)_addPassesToLibraryWithCompletion:(id /* block */)arg1;
 - (void)acceptCard:(id)arg1;
-- (void)animateInCardIfNeeded;
+- (id)addPassViewController;
 - (void)cancelCard:(id)arg1;
 - (id)cardStackView;
 - (void)connection:(id)arg1 didFailWithError:(id)arg2;
@@ -67,14 +67,14 @@
 - (void)ingestCardAtURL:(id)arg1;
 - (void)ingestPasses:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
-- (void)loadGroups;
 - (void)loadView;
 - (id)localPassDatas;
 - (id)localPasses;
 - (id)minimumCardHeightFromHereToTop;
-- (id)navigationBar;
 - (unsigned int)numberOfGroups;
 - (BOOL)passesGrowWhenFlipped;
+- (int)preferredStatusBarStyle;
+- (BOOL)prefersStatusBarHidden;
 - (int)presentationState;
 - (id)progressView;
 - (void)setAllowsPassIngestion:(BOOL)arg1;
@@ -85,11 +85,11 @@
 - (void)setLocalPassDatas:(id)arg1;
 - (void)setLocalPasses:(id)arg1;
 - (void)setMinimumCardHeightFromHereToTop:(id)arg1;
-- (void)setNavigationBar:(id)arg1;
 - (void)setPresentationState:(int)arg1;
 - (void)setProgressView:(id)arg1;
 - (void)setViewAppeared:(BOOL)arg1;
 - (BOOL)shouldAutorotate;
+- (void)showAutomaticSelectionController:(id)arg1;
 - (void)showDownloadingPassUI;
 - (id)styleTitleUsingPass:(id)arg1 count:(unsigned int)arg2;
 - (unsigned int)supportedInterfaceOrientations;
@@ -101,6 +101,7 @@
 - (void)updateCancelButton;
 - (void)updateNavTitle;
 - (BOOL)viewAppeared;
+- (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;

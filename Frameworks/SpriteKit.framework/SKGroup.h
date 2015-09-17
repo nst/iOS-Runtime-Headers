@@ -16,5 +16,6 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)reversedAction;
+- (id)subactions;
 
 @end

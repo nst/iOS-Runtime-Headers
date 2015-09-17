@@ -5,9 +5,9 @@
 @interface AppLaunchStatsDiag : NSObject {
     NSObject<OS_dispatch_queue> *APLSDiagQueue;
     NSObject<OS_dispatch_source> *APLSDiagTimer;
+    bool _hasTransitionedToCoreDuet;
     bool diagTimerOn;
     int diagToken;
-    bool hasTransitionedToCoreDuet;
 }
 
 @property bool hasTransitionedToCoreDuet;

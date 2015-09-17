@@ -52,7 +52,7 @@
 @property (nonatomic, readonly) double smartToneBaseShadows;
 
 + (id)_editedImagePropertiesFromOriginalImageProperties:(id)arg1 preserveRegions:(BOOL)arg2;
-+ (id)createImageDataFromCGImage:(struct CGImage { }*)arg1 withCompressionQuality:(float)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(BOOL)arg4;
++ (id)newImageDataFromCGImage:(struct CGImage { }*)arg1 withCompressionQuality:(float)arg2 metadataSourceImageURL:(id)arg3 preserveRegionsInMetadata:(BOOL)arg4;
 
 - (id)_editedGeometryImageWithBaseImage:(id)arg1;
 - (id)_editedImage;

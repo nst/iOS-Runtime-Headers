@@ -12,5 +12,6 @@
 
 - (int)navigationBarTintAdjustmentMode;
 - (UIColor *)navigationBarTitleTextTintColor;
+- (BOOL)prefersNavigationBarHidden;
 
 @end

@@ -17,6 +17,7 @@
 
 + (id)contextWithCell:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_killTimer;
 - (void)_timerFired;
 - (BOOL)animateUnhighlight;

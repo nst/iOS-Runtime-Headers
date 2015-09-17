@@ -14,6 +14,7 @@
     unsigned int _options;
     MPStorePlayWhileDownloadSession *_playWhileDownloadSession;
     MPMediaPlaybackItemMetadata *_playbackItemMetadata;
+    unsigned int _preferredAssetQuality;
     MPStreamingDownloadSession *_streamingDownloadSession;
 }
 
@@ -23,7 +24,7 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)_assetURLForCachedLocalPlaybackAssetFilePathForPlaybackItemMetadata:(id)arg1 withMinimumAssetQuality:(unsigned int)arg2 assetOptions:(id)arg3 returningProtectionType:(unsigned int*)arg4 assetQuality:(unsigned int*)arg5 usesPurchaseBundle:(BOOL*)arg6;
-+ (unsigned int)_preferredAssetQualityForCurrentNetworkConditions;
++ (unsigned int)_currentPreferredAssetQualityForPlaybackItemMetadata:(id)arg1;
 + (void)applyVolumeNormalizationForQueuedItems:(id)arg1;
 + (BOOL)isPlaybackItemMetadataStreamingForAssetCreation:(id)arg1 returningProtectionType:(unsigned int*)arg2;
 + (BOOL)isPlaybackItemMetadataValidForAssetCreation:(id)arg1;
@@ -55,6 +56,7 @@
 - (BOOL)allowsExternalPlayback;
 - (void)applyVolumeNormalizationWithSoundCheckEnabled:(BOOL)arg1;
 - (id)artist;
+- (long long)artistStoreID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)artworkTimeMarkers;
 - (BOOL)canSeedGenius;

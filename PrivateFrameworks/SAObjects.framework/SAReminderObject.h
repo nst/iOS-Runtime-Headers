@@ -13,6 +13,7 @@
 @property (nonatomic, retain) <SAReminderPayload> *payload;
 @property (nonatomic, retain) SAReminderRecurrence *recurrence;
 @property (nonatomic, copy) NSString *subject;
+@property (nonatomic, retain) SAReminderListObject *toList;
 @property (nonatomic, retain) SAReminderTrigger *trigger;
 
 + (id)object;
@@ -37,9 +38,10 @@
 - (void)setPayload:(id)arg1;
 - (void)setRecurrence:(id)arg1;
 - (void)setSubject:(id)arg1;
+- (void)setToList:(id)arg1;
 - (void)setTrigger:(id)arg1;
 - (id)subject;
+- (id)toList;
 - (id)trigger;
-- (void)updateUsingSet:(id)arg1 add:(id)arg2 remove:(id)arg3;
 
 @end

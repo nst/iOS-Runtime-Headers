@@ -33,7 +33,10 @@
 + (void)sleepUntilDate:(id)arg1;
 + (double)threadPriority;
 
+- (struct pthread_override_s { }*)_beginQoSOverride:(unsigned int)arg1 relativePriority:(int)arg2;
+- (void)_endQoSOverride:(struct pthread_override_s { }*)arg1;
 - (void)_nq:(id)arg1;
+- (BOOL)_setThreadPriority:(double)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)description;

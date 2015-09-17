@@ -17,6 +17,20 @@
 + (id)tab;
 + (int)tabAlignmentFromString:(id)arg1 isRTL:(BOOL)arg2;
 + (id)tabLeaderFromDisplayString:(id)arg1;
++ (id)tabStopAlignmentStringCenter;
++ (id)tabStopAlignmentStringDecimal;
++ (id)tabStopAlignmentStringLeft;
++ (id)tabStopAlignmentStringRight;
++ (id)tabStopDisplayStringArrow;
++ (id)tabStopDisplayStringDash;
++ (id)tabStopDisplayStringNone;
++ (id)tabStopDisplayStringPoint;
++ (id)tabStopDisplayStringUnderscore;
++ (id)tabStopLeaderStringArrow;
++ (id)tabStopLeaderStringArrowRTL;
++ (id)tabStopLeaderStringDash;
++ (id)tabStopLeaderStringPoint;
++ (id)tabStopLeaderStringUnderscore;
 
 - (int)alignment;
 - (int)compare:(id)arg1;

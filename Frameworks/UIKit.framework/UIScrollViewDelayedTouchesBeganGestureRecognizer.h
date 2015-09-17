@@ -10,6 +10,7 @@
     UIDelayedAction *_touchDelay;
 }
 
+- (void).cxx_destruct;
 - (void)_resetGestureRecognizer;
 - (void)clearTimer;
 - (void)dealloc;

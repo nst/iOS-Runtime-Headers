@@ -4,16 +4,25 @@
 
 @interface AVSpeechSynthesisVoice : NSObject <NSSecureCoding>
 
+@property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, copy) NSString *language;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic) int quality;
+
+// Image: /System/Library/Frameworks/AVFoundation.framework/libAVFAudio.dylib
 
 + (id)currentLanguageCode;
 + (void)initialize;
 + (id)speechVoices;
 + (BOOL)supportsSecureCoding;
++ (id)voiceWithIdentifier:(id)arg1;
 + (id)voiceWithLanguage:(id)arg1;
 
-- (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities
+
+- (id)debugDescription;
 
 @end

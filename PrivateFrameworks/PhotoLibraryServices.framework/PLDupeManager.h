@@ -21,11 +21,11 @@
 
 + (BOOL)_computeHashForAsset:(id)arg1;
 + (id)_hashForFileAtPath:(id)arg1 utiType:(id)arg2;
-+ (BOOL)_resetDupesAnalysisInManagedObjectContext:(id)arg1 resetHashes:(BOOL)arg2;
++ (BOOL)_resetDupesAnalysisInManagedObjectContext:(id)arg1;
 + (void)_setPlaceHolderHashOnAsset:(id)arg1;
 + (id)hashForAsset:(id)arg1;
 + (id)placeholderHash;
-+ (BOOL)resetDupesAnalysisForOfflineStore:(id)arg1 resetHashes:(BOOL)arg2;
++ (BOOL)resetDupesAnalysisForOfflineStore:(id)arg1;
 + (id)sharedInstance;
 
 - (short)_adjustCloudAssetVisibilityStateForManagedObjectContext:(id)arg1;
@@ -55,7 +55,7 @@
 - (void)pauseAnalysisWithReason:(id)arg1;
 - (void)persistPublicGlobalUUIDsForAssets:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)photoLibrary;
-- (void)resetDupesAnalysisResetHashes:(BOOL)arg1;
+- (void)resetDupesAnalysis;
 - (void)resumeAnalysisWithReason:(id)arg1;
 
 @end

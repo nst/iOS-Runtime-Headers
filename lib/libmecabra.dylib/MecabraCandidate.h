@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) BOOL isLearningDictionaryCandidate;
 @property (nonatomic, readonly) BOOL isPersonName;
 @property (nonatomic, readonly) BOOL isPredictionCandidate;
+@property (nonatomic, readonly) BOOL isSyntheticCandidate;
 @property (nonatomic, readonly) BOOL isUserWordCandidate;
 @property (nonatomic, readonly) struct MecabraCandidateBase { int (**x1)(); int x2; }*rawCandidate;
 @property (nonatomic, readonly) struct ConversionCandidate { int (**x1)(); int x2; }*rawConversionCandidate;
@@ -24,7 +25,7 @@
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly) unsigned int wordCount;
 
-+ (id)createSyntheticCandidate:(id)arg1 withLexicon:(void*)arg2 language:(int)arg3;
++ (id)syntheticCandidateFromWords:(id)arg1 withLexicon:(struct Lexicon { int (**x1)(); void *x2; void *x3; }*)arg2 language:(int)arg3;
 
 - (id)analysisString;
 - (id)convertedAnalysisString;
@@ -47,6 +48,7 @@
 - (BOOL)isLearningDictionaryCandidate;
 - (BOOL)isPersonName;
 - (BOOL)isPredictionCandidate;
+- (BOOL)isSyntheticCandidate;
 - (BOOL)isUserWordCandidate;
 - (unsigned short)kind;
 - (unsigned short)lastPrefixValue;

@@ -19,6 +19,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (unsigned int)hash;
+- (id)init;
 - (id)initWithTiledArtworkRequest:(id)arg1 scaledFittingSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)isEqual:(id)arg1;
 

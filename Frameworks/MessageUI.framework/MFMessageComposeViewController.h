@@ -25,6 +25,7 @@
 @property (nonatomic, copy) NSString *subject;
 
 + (BOOL)_canSendText;
++ (id)_chatKitBundle;
 + (void)_serviceAvailabilityChanged:(id)arg1;
 + (void)_setupAccountMonitor;
 + (void)_startListeningForAvailabilityNotifications;
@@ -77,6 +78,7 @@
 - (void)smsComposeControllerCancelled:(id)arg1;
 - (void)smsComposeControllerSendStarted:(id)arg1;
 - (id)subject;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

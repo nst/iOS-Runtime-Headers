@@ -13,7 +13,7 @@
     int _playbackNotificationObservers;
     int _playbackState;
     BOOL _preparedToPlay;
-    struct SBSProcessAssertion { } *_processAssertion;
+    BKSProcessAssertion *_processAssertion;
     MPMediaQuery *_query;
     struct __CFRunLoopSource { } *_runLoopSource;
     unsigned int _useApplicationSpecificQueue;

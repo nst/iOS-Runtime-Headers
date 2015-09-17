@@ -14,7 +14,7 @@
     TSPLazyReference *mFormulaTableReference;
     TSPLazyReference *mImportWarningSetTableReference;
     TSTMergeRegionMap *mMergedCellRanges;
-    TSPLazyReference *mMultipleChoiceListFormatTableReference;
+    TSTTableDataList *mMultipleChoiceListFormatTableList;
     unsigned short mNextColumnStripID;
     unsigned short mNextRowStripID;
     TSKCustomFormatList *mPasteboardCustomFormatList;

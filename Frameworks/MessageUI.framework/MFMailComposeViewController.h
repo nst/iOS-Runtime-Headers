@@ -19,12 +19,14 @@
 
 - (void)__viewControllerWillBePresented:(BOOL)arg1;
 - (id)_addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
+- (id)_addAttachmentWithFileURL:(id)arg1 mimeType:(id)arg2;
 - (id)_internalViewController;
 - (id)_validEmailAddressesFromArray:(id)arg1;
 - (void)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (void)addSetupAnimationBlock:(id /* block */)arg1;
 - (BOOL)automaticallyForwardAppearanceAndRotationMethodsToChildViewControllers;
 - (void)autosaveWithHandler:(id /* block */)arg1;
+- (void)currentAttachmentLimitWithHandler:(id /* block */)arg1;
 - (void)dealloc;
 - (void)finalizeCompositionValues;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;

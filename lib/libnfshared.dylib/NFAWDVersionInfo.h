@@ -26,7 +26,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property AWDNFCVersions *metric;
+@property (nonatomic, retain) AWDNFCVersions *metric;
 @property (nonatomic) unsigned int nfccFWRevision;
 @property (nonatomic) unsigned int nfccFWVersion;
 @property (nonatomic) unsigned int nfccHWVersion;

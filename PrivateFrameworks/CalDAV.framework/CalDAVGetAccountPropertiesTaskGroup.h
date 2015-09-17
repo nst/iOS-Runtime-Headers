@@ -26,10 +26,10 @@
 @property (nonatomic, readonly) NSURL *updatedPrincipalURL;
 @property (nonatomic, readonly) NSSet *userAddresses;
 
+- (void).cxx_destruct;
 - (id)_copyAccountPropertiesPropFindElements;
 - (void)_setPropertiesFromParsedResponses:(id)arg1;
 - (id)calendarHomes;
-- (void)dealloc;
 - (id)delegatePrincipalURL;
 - (id)description;
 - (id)dropboxURL;

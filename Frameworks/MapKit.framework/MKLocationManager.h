@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKLocationManager : NSObject <GEOResourceManifestTileGroupObserver, MKLocationProviderDelegate, _MKWiFiObserverDelegate> {
-    BOOL _airplaneModeEnabled;
-    BOOL _airplaneModeEnabledIsValid;
-    struct __SCPreferences { } *_airplaneModePrefs;
+@interface MKLocationManager : NSObject <GEOResourceManifestTileGroupObserver, MKLocationProviderDelegate> {
+    BOOL _allowOldLocations;
     BOOL _allowUpdateCoalescing;
     double _applicationResumeTime;
     double _applicationSuspendTime;
@@ -17,9 +15,11 @@
     BOOL _hasCustomDesiredAccuracy;
     CLHeading *_heading;
     NSHashTable *_headingObservers;
-    double _headingUpdateTime;
     BOOL _isLastLocationStale;
+    BOOL _isReceivingAccurateLocations;
+    CLLocation *_lastGoodLocation;
     CLLocation *_lastLocation;
+    NSLock *_lastLocationLock;
     BOOL _lastLocationPushed;
     double _lastLocationReportTime;
     double _lastLocationUpdateTime;
@@ -35,20 +35,23 @@
     <MKLocationProvider> *_locationProvider;
     <MKLocationRecorder> *_locationRecorder;
     GEOLocationShifter *_locationShifter;
+    double _locationUpdateStartTime;
     BOOL _logStartStopLocationUpdates;
     double _minimumLocationUpdateInterval;
     double _navCourse;
     id /* block */ _networkActivity;
+    NSLock *_observersLock;
     NSMutableArray *_recentLocationUpdateIntervals;
     BOOL _suspended;
-    CLHeading *_throttledHeading;
     BOOL _trackingHeading;
     BOOL _trackingLocation;
     BOOL _useCourseForHeading;
-    _MKWiFiObserver *_wifiObserver;
+    NSMutableArray *_waitForAccurateLocationsHandlers;
+    NSTimer *_waitForAccurateLocationsTimer;
 }
 
 @property (nonatomic) int activityType;
+@property (nonatomic) BOOL allowOldLocations;
 @property (nonatomic) BOOL allowUpdateCoalescing;
 @property (nonatomic, copy) id /* block */ authorizationRequestBlock;
 @property (nonatomic) BOOL continuesWhileInactive;
@@ -69,8 +72,6 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) CLHeading *heading;
 @property (nonatomic) int headingOrientation;
-@property (nonatomic, readonly) double headingUpdateTimeInterval;
-@property (nonatomic, readonly) BOOL isAirplaneModeBlockingLocation;
 @property (nonatomic, readonly) BOOL isHeadingServicesAvailable;
 @property (nonatomic, readonly) BOOL isLastLocationStale;
 @property (nonatomic, readonly) BOOL isLocationServicesApproved;
@@ -79,7 +80,7 @@
 @property (nonatomic, readonly) BOOL isLocationServicesEnabled;
 @property (nonatomic, readonly) BOOL isLocationServicesPossiblyAvailable;
 @property (nonatomic, readonly) BOOL isLocationServicesRestricted;
-@property (nonatomic, readonly) BOOL isWiFiEnabled;
+@property (nonatomic, readonly) CLLocation *lastGoodLocation;
 @property (nonatomic, readonly) CLLocation *lastLocation;
 @property (getter=wasLastLocationPushed, nonatomic, readonly) BOOL lastLocationPushed;
 @property (nonatomic, readonly) int lastLocationSource;
@@ -96,24 +97,24 @@
 @property (nonatomic, readonly) double navigationCourse;
 @property (nonatomic, copy) id /* block */ networkActivity;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) CLHeading *throttledHeading;
+@property (nonatomic, readonly) double timeScale;
 @property (nonatomic) BOOL useCourseForHeading;
 @property (nonatomic, readonly) double vehicleHeadingOrCourse;
 
 + (void)setCanMonitorWiFiStatus:(BOOL)arg1;
 + (id)sharedLocationManager;
++ (id)timeoutError;
 
 - (void).cxx_destruct;
-- (void)_airplaneModeChanged;
 - (BOOL)_isTimeToResetOnResume;
 - (void)_locationProvider:(id)arg1 didUpdateLocation:(id)arg2 lastKnownNavCourse:(double)arg3;
-- (void)_refreshAirplaneMode;
 - (void)_reportHeadingFailureWithError:(id)arg1;
 - (void)_reportHeadingSuccess;
 - (void)_reportLocationFailureWithError:(id)arg1;
 - (void)_reportLocationReset;
 - (void)_reportLocationStatus:(SEL)arg1;
 - (void)_reportLocationSuccess;
+- (void)_setIsReceivingAccurateLocations:(BOOL)arg1;
 - (void)_setTrackingHeading:(BOOL)arg1;
 - (void)_setTrackingLocation:(BOOL)arg1;
 - (BOOL)_shouldAllowLocationUpdateInterval:(double)arg1;
@@ -123,7 +124,9 @@
 - (void)_suspend;
 - (void)_syncLocationProviderWithTracking;
 - (void)_useCoreLocationProvider;
+- (void)_waitForAccurateLocationsTimerFired:(id)arg1;
 - (int)activityType;
+- (BOOL)allowOldLocations;
 - (BOOL)allowUpdateCoalescing;
 - (void)applicationDidBecomeActive:(id)arg1;
 - (void)applicationWillResignActive:(id)arg1;
@@ -145,9 +148,7 @@
 - (BOOL)hasLocation;
 - (id)heading;
 - (int)headingOrientation;
-- (double)headingUpdateTimeInterval;
 - (id)init;
-- (BOOL)isAirplaneModeBlockingLocation;
 - (BOOL)isEnabled;
 - (BOOL)isHeadingServicesAvailable;
 - (BOOL)isLastLocationStale;
@@ -160,7 +161,7 @@
 - (BOOL)isLocationServicesPossiblyAvailable:(id*)arg1;
 - (BOOL)isLocationServicesPreferencesDialogEnabled;
 - (BOOL)isLocationServicesRestricted;
-- (BOOL)isWiFiEnabled;
+- (id)lastGoodLocation;
 - (id)lastLocation;
 - (int)lastLocationSource;
 - (void)listenForLocationUpdates:(id)arg1;
@@ -192,6 +193,7 @@
 - (void)resetAfterResumeIfNecessary;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 - (void)setActivityType:(int)arg1;
+- (void)setAllowOldLocations:(BOOL)arg1;
 - (void)setAllowUpdateCoalescing:(BOOL)arg1;
 - (void)setAuthorizationRequestBlock:(id /* block */)arg1;
 - (void)setCoalesceTimer:(id)arg1;
@@ -212,12 +214,13 @@
 - (void)setMatchInfoEnabled:(BOOL)arg1;
 - (void)setMinimumLocationUpdateInterval:(double)arg1;
 - (void)setNetworkActivity:(id /* block */)arg1;
-- (void)setThrottledHeading:(id)arg1;
 - (void)setUseCourseForHeading:(BOOL)arg1;
 - (BOOL)shouldCoalesceUpdates;
 - (BOOL)shouldStartCoalescingLocation:(id)arg1;
 - (BOOL)shouldStopCoalescingLocation:(id)arg1;
 - (id)singleLocationUpdateWithDesiredAccuracy:(double)arg1 handler:(id /* block */)arg2;
+- (id)singleLocationUpdateWithDesiredAccuracy:(double)arg1 handler:(id /* block */)arg2 timeout:(double)arg3;
+- (id)singleLocationUpdateWithDesiredAccuracy:(double)arg1 handler:(id /* block */)arg2 timeout:(double)arg3 maxLocationAge:(double)arg4;
 - (id)singleLocationUpdateWithHandler:(id /* block */)arg1;
 - (void)startHeadingUpdateWithObserver:(id)arg1;
 - (void)startLocationUpdateWithObserver:(id)arg1;
@@ -227,10 +230,10 @@
 - (void)stopLocationUpdateWithObserver:(id)arg1;
 - (void)stopVehicleHeadingUpdate;
 - (void)stopVehicleSpeedUpdate;
-- (id)throttledHeading;
+- (double)timeScale;
 - (BOOL)useCourseForHeading;
 - (double)vehicleHeadingOrCourse;
+- (void)waitForAccurateLocationWithHandler:(id /* block */)arg1;
 - (BOOL)wasLastLocationPushed;
-- (void)wiFiObserverDidChangeEnabled:(id)arg1;
 
 @end

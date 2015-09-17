@@ -20,7 +20,7 @@
 @property id container;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (getter=_encodedConstant, setter=_setEncodedConstant:) _NSLayoutConstraintConstant *encodedConstant;
+@property (getter=_encodedConstant, setter=_setEncodedConstant:, retain) _NSLayoutConstraintConstant *encodedConstant;
 @property int firstAttribute;
 @property id firstItem;
 @property (readonly) BOOL hasBeenLowered;
@@ -35,6 +35,7 @@
 @property BOOL shouldBeArchived;
 @property (readonly) Class superclass;
 @property (copy) NSString *symbolicConstant;
+@property (readonly) float unsatisfaction;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -63,12 +64,17 @@
 - (id)_constraintByReplacingView:(id)arg1 withView:(id)arg2;
 - (int)_constraintType;
 - (void)_containerGeometryDidChange;
+- (id)_deallocSafeDescription;
 - (BOOL)_deferDTraceLogging;
 - (BOOL)_describesSameRestrictionAsConstraint:(id)arg1;
 - (id)_descriptionforSymbolicConstant;
 - (BOOL)_effectiveConstant:(float*)arg1 error:(id*)arg2;
 - (struct CGSize { float x1; float x2; })_engineToContainerScalingCoefficients;
 - (void)_ensureValueMaintainsArbitraryLimit:(float*)arg1;
+- (BOOL)_existsInEngine:(id)arg1;
+- (BOOL)_existsInFirstItemEngine;
+- (void)_explainUnsatisfaction;
+- (void)_forceSatisfactionMeasuringUnsatisfactionChanges:(id*)arg1 andMutuallyExclusiveConstraints:(id*)arg2;
 - (float)_fudgeIncrement;
 - (id)_identifier;
 - (BOOL)_isFudgeable;
@@ -86,6 +92,7 @@
 - (int)_primitiveConstraintType;
 - (id)_priorityDescription;
 - (void)_removeFromEngine:(id)arg1;
+- (void)_setActive:(BOOL)arg1 mutuallyExclusiveConstraints:(id*)arg2;
 - (void)_setDeferDTraceLogging:(BOOL)arg1;
 - (void)_setFirstAttribute:(int)arg1;
 - (void)_setFirstItem:(id)arg1;
@@ -101,6 +108,7 @@
 - (void)_setSymbolicConstant:(id)arg1;
 - (void)_setSymbolicConstant:(id)arg1 constant:(float)arg2;
 - (id)_symbolicConstant;
+- (void)_tryToActivateMeasuringUnsatisfactionChanges:(id*)arg1 andMutuallyExclusiveConstraints:(id*)arg2;
 - (BOOL)_tryToChangeContainerGeometryWithUndoHandler:(id /* block */)arg1;
 - (id)animations;
 - (id)asciiArtDescription;
@@ -109,6 +117,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)descriptionAccessory;
+- (float)dissatisfaction;
 - (void)encodeWithCoder:(id)arg1;
 - (id)equationDescription;
 - (int)firstAttribute;
@@ -140,16 +149,25 @@
 - (void)setSymbolicConstant:(id)arg1;
 - (BOOL)shouldBeArchived;
 - (id)symbolicConstant;
+- (float)unsatisfaction;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (BOOL)_UIWantsMarginAttributeSupport;
 
+- (id)_baselineLoweringInfoForFirstItem:(BOOL)arg1;
 - (id)_encodedConstant;
+- (id)_ola_dimensionItem;
+- (id)_ola_dimensionRefItem;
+- (void)_setBaselineLoweringInfo:(id)arg1 forFirstItem:(BOOL)arg2;
 - (void)_setEncodedConstant:(id)arg1;
+- (id)_uiFirstRefView;
+- (id)_uiSecondRefView;
 - (BOOL)defaultResolvedValue:(float*)arg1 forSymbolicConstant:(id)arg2 error:(id*)arg3;
 
 // Image: /System/Library/PrivateFrameworks/Accessibility.framework/Frameworks/AccessibilityUIUtilities.framework/AccessibilityUIUtilities
+
++ (id)ax_constraintsToMakeView:(id)arg1 sameDimensionsAsView:(id)arg2;
 
 - (void)ax_removeFromContainer;
 
@@ -178,6 +196,24 @@
 + (id)constraintsByCenteringAndContainingView:(id)arg1 inView:(id)arg2 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 + (id)constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
 + (id)constraintsBySizingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
+
+// Image: /System/Library/PrivateFrameworks/NetAppsUtilitiesUI.framework/NetAppsUtilitiesUI
+
++ (BOOL)naui_areConstraints:(id)arg1 equalToConstraints:(id)arg2;
++ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
++ (id)naui_constraintsByAttachingView:(id)arg1 toView:(id)arg2 alongEdges:(unsigned int)arg3 relatedBy:(int)arg4 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg5;
++ (id)naui_constraintsByCenteringView:(id)arg1 withView:(id)arg2 alongAxes:(unsigned int)arg3 offset:(struct UIOffset { float x1; float x2; })arg4;
++ (id)naui_constraintsBySizingView:(id)arg1 toSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)naui_constraintsWithVisualFormat:(id)arg1 options:(unsigned int)arg2 metrics:(id)arg3 views:(id)arg4 label:(id)arg5;
++ (id)naui_viewsInConstraints:(id)arg1;
+
+- (id)naui_debugIdentifierWithBaseLabel:(id)arg1;
+- (BOOL)naui_isEqualToConstraint:(id)arg1;
+- (void)naui_setIdentifierWithLabel:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Pegasus.framework/Pegasus
+
++ (id)PG_constraintWithItem:(id)arg1 attribute:(int)arg2 relatedBy:(int)arg3 toItem:(id)arg4 attribute:(int)arg5 multiplier:(float)arg6 constant:(float)arg7 priority:(float)arg8;
 
 // Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
 

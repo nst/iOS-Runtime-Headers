@@ -24,14 +24,14 @@
         float x; 
         float y; 
     } _panStartScreenPoint;
-    VKAnimation *_pitchAnimation;
-    VKAnimation *_regionAnimation;
-    VKAnimation *_rotationAnimation;
+    VKTimedAnimation *_pitchAnimation;
+    VKTimedAnimation *_regionAnimation;
+    VKTimedAnimation *_rotationAnimation;
     BOOL _rotationLowZoomSnappingEnabled;
     BOOL _shouldRotationRubberband;
     BOOL _staysCenteredDuringPinch;
     BOOL _staysCenteredDuringRotation;
-    VKAnimation *_zoomAnimation;
+    VKTimedAnimation *_zoomAnimation;
 }
 
 @property (getter=isAnimatingToTrackAnnotation, nonatomic, readonly) BOOL animatingToTrackAnnotation;
@@ -48,7 +48,6 @@
 @property (nonatomic, readonly) <VKTrackableAnnotation> *trackingAnnotation;
 @property (getter=isTrackingHeading, nonatomic, readonly) BOOL trackingHeading;
 
-- (id).cxx_construct;
 - (int)annotationTrackingHeadingAnimationDisplayRate;
 - (int)annotationTrackingZoomStyle;
 - (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
@@ -56,6 +55,8 @@
 - (void)cameraController:(id)arg1 canZoomOutDidChange:(BOOL)arg2;
 - (void)cameraController:(id)arg1 didBecomePitched:(BOOL)arg2;
 - (void)cameraController:(id)arg1 didChangeRegionAnimated:(BOOL)arg2;
+- (void)cameraController:(id)arg1 flyoverModeDidChange:(int)arg2;
+- (void)cameraController:(id)arg1 flyoverModeWillChange:(int)arg2;
 - (id)cameraController:(id)arg1 presentationForAnnotation:(id)arg2;
 - (void)cameraController:(id)arg1 requestsDisplayRate:(int)arg2;
 - (void)cameraController:(id)arg1 willChangeRegionAnimated:(BOOL)arg2;

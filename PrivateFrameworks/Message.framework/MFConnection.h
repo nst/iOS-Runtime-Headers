@@ -49,6 +49,7 @@
 + (BOOL)shouldTryFallbacksAfterError:(id)arg1;
 
 - (void)_setupNetworkLogging;
+- (void)_setupSocketWithSettings:(id)arg1;
 - (BOOL)authenticateUsingAccount:(id)arg1;
 - (BOOL)authenticateUsingAccount:(id)arg1 authenticator:(id)arg2;
 - (id)authenticationMechanisms;

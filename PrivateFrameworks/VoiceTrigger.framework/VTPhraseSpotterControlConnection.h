@@ -15,6 +15,9 @@
 
 - (void).cxx_destruct;
 - (id)init;
+- (void)notifyRemoteOfDismissal;
+- (void)notifyRemoteOfEarlyDetect;
+- (void)notifyRemoteOfTriggerEvent;
 - (void)remoteConnection:(id)arg1 handleMessageType:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (void)updateRemotePhraseSpotterEnabled:(BOOL)arg1;
 

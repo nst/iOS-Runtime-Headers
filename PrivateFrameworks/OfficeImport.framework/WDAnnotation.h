@@ -14,6 +14,7 @@
 - (id)data;
 - (id)date;
 - (void)dealloc;
+- (id)description;
 - (id)initWithParagraph:(id)arg1 type:(int)arg2;
 - (id)otherEndOfRangedAnnotation;
 - (id)owner;

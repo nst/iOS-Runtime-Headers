@@ -5,6 +5,6 @@
 
 @optional
 
-- (void)editPluginHostViewController:(PUEditPluginHostViewController *)arg1 didFinishWithSuccess:(BOOL)arg2;
+- (void)editPluginHostViewController:(PUEditPluginHostViewController *)arg1 didFinishWithCompletionType:(unsigned int)arg2;
 
 @end

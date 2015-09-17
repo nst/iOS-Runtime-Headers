@@ -10,6 +10,7 @@
     AVAssetResourceLoadingContentInformationRequest *contentInformationRequest;
     NSObject<OS_dispatch_queue> *dataCachingQueue;
     AVAssetResourceLoadingDataRequest *dataRequest;
+    struct OpaqueFigAsset { } *figAsset;
     struct OpaqueFigAssetImageGenerator { } *figImageGenerator;
     struct OpaqueFigPlaybackItem { } *figPlaybackItem;
     int finished;

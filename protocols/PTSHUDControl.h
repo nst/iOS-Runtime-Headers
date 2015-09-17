@@ -8,8 +8,8 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })defaultFrame;
 
 - (int)alignment;
-- (BOOL)enabled;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
+- (BOOL)isEnabled;
 - (void)setAlignment:(int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setSettings:(_UISettings *)arg1;

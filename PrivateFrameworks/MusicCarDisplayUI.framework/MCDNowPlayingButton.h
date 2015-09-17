@@ -4,11 +4,11 @@
 
 @interface MCDNowPlayingButton : UIButton {
     CALayer *_focusColorLayer;
-    BOOL _hidesLeftBorder;
-    CALayer *_leftBorder;
+    BOOL _hidesLeadingBorder;
+    CALayer *_leadingBorder;
 }
 
-@property (nonatomic) BOOL hidesLeftBorder;
+@property (nonatomic) BOOL hidesLeadingBorder;
 
 + (id)buttonWithHeight:(float)arg1;
 + (id)wrappingViewForButton:(id)arg1;
@@ -16,9 +16,9 @@
 - (void).cxx_destruct;
 - (BOOL)canBecomeFocused;
 - (void)focusedViewDidChange;
-- (BOOL)hidesLeftBorder;
+- (BOOL)hidesLeadingBorder;
 - (void)layoutSubviews;
-- (void)setHidesLeftBorder:(BOOL)arg1;
+- (void)setHidesLeadingBorder:(BOOL)arg1;
 - (void)sizeToFit;
 
 @end

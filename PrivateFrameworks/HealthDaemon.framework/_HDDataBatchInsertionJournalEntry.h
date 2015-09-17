@@ -4,11 +4,11 @@
 
 @interface _HDDataBatchInsertionJournalEntry : HDJournalEntry {
     HDCodableObjectCollection *_collection;
-    int _provenance;
+    HDDataOriginProvenance *_provenance;
 }
 
 @property (nonatomic, readonly) HDCodableObjectCollection *collection;
-@property (nonatomic, readonly) int provenance;
+@property (nonatomic, readonly) HDDataOriginProvenance *provenance;
 
 + (void)applyEntries:(id)arg1 withDaemon:(id)arg2;
 + (int)behavior;
@@ -18,8 +18,8 @@
 - (id)collection;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithCodableObjectCollection:(id)arg1 provenance:(int)arg2;
+- (id)initWithCodableObjectCollection:(id)arg1 provenance:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (int)provenance;
+- (id)provenance;
 
 @end

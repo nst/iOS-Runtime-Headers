@@ -5,7 +5,7 @@
 @interface HDAggregateDataCollector : HDDataCollector {
     BOOL _didReceiveSensorDatum;
     BOOL _fetchingHistoricalData;
-    _HKDelayedOperation *_historicalFetchOperation;
+    _HKDataCollectorDelayedOperation *_historicalFetchOperation;
     NSDictionary *_lastReceivedSecondaryContext;
     <HDSensorDatum> *_lastReceivedSensorDatum;
     double _maxDatumDuration;

@@ -16,7 +16,6 @@
     } mTransparentRange;
 }
 
-- (id).cxx_construct;
 - (struct MFPColorMatrix { float x1[5][5]; }*)colorMatrix;
 - (int)colorMatrixFlags;
 - (void)dealloc;

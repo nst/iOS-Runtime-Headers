@@ -17,6 +17,7 @@
 - (NSString *)documentCachePath;
 - (void)documentRoot:(TSADocumentRoot *)arg1 didReceiveDocumentStatusNotification:(TSKMailboxDocStatusMessage *)arg2;
 - (void)invalidateRestorableState;
+- (TSAUbiquitousRefreshQueue *)refreshQueue;
 - (void)willRemoveICloudTeardownObserver:(id)arg1;
 
 @end

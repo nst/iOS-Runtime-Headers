@@ -5,12 +5,17 @@
 @interface MusicNowPlayingItemViewController : UIViewController <MusicNowPlayingVideoViewControllerDelegate> {
     ADBannerView *_adBannerView;
     MPArtworkCatalog *_artworkCatalog;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _artworkFittingSize;
     UIImage *_artworkImage;
     id /* block */ _deferTransitionBlock;
     <MusicNowPlayingItemViewControllerDelegate> *_delegate;
     BOOL _hasProperApplicationStateForWantingVideoLayer;
     BOOL _hasVisibilityForWantingVideoLayer;
     MusicArtworkView *_imageView;
+    BOOL _isConnectedToTVOutScreen;
     MPAVItem *_item;
     unsigned int _itemType;
     MusicNowPlayingVideoViewController *_videoViewController;
@@ -33,11 +38,14 @@
 - (void)_itemTypeAvailableNotification:(id)arg1;
 - (id)_placeholderArtwork;
 - (void)_playerFirstVideoFrameDidDisplayNotification:(id)arg1;
+- (void)_registerForVideoViewControllerNotifications:(id)arg1;
 - (void)_removeAdBannerView;
 - (void)_removeArtworkImageView;
 - (void)_removeVideoViewController;
 - (void)_setArtworkImage:(id)arg1;
 - (void)_setWantsVideoLayer:(BOOL)arg1;
+- (void)_tvOutCapabiltiesDidChangeNotification:(id)arg1;
+- (void)_unregisterForVideoViewControllerNotifications:(id)arg1;
 - (void)_updateArtworkCatalogWithReload:(BOOL)arg1;
 - (void)_updateContentViewWithReload:(BOOL)arg1;
 - (void)_updatePreferredContentSize;
@@ -59,6 +67,7 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (void)traitCollectionDidChange:(id)arg1;
 - (int)transitionFromItemViewController:(id)arg1;
+- (void)updateArtworkImageForSize:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)videoController:(id)arg1 shouldDisplayAlertForError:(id)arg2;
 - (id)viewControllerForStoryboardPresentationFromBannerView:(id)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

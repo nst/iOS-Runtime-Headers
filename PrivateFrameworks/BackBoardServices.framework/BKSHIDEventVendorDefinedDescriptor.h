@@ -4,9 +4,6 @@
 
 @interface BKSHIDEventVendorDefinedDescriptor : BKSHIDEventKeyboardDescriptor
 
-@property (readonly) unsigned int page;
-@property (readonly) unsigned int usage;
-
 + (id)descriptorWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;
 
 - (id)_initWithPage:(unsigned int)arg1 usage:(unsigned int)arg2;

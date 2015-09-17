@@ -44,6 +44,7 @@
 - (void)setContentView:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPostButtonEnabled:(BOOL)arg1;
+- (void)setPostButtonTitle:(id)arg1;
 - (void)setServiceIconImage:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)tableView;

@@ -4,8 +4,10 @@
 
 @interface PKAddPassesMethodPickerViewController : UITableViewController {
     float _boundsWidth;
+    BOOL _cameraAvailable;
 }
 
+- (int)_addPassMethodForIndexPath:(id)arg1;
 - (void)dealloc;
 - (void)doneTapped:(id)arg1;
 - (id)initWithStyle:(int)arg1;

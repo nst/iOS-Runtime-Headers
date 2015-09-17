@@ -10,7 +10,7 @@
     NSArray *_familySpecifiers;
     NSArray *_followersHandles;
     NSArray *_followersSpecifiers;
-    UIAlertView *_genericErrorAlert;
+    UIAlertController *_genericErrorAlert;
     NSArray *_hashedFamilyDsids;
     BOOL _isMyLocationEnabled;
     FMFHandle *_lastSelectedHandle;
@@ -27,7 +27,7 @@
 @property (nonatomic, retain) NSArray *familySpecifiers;
 @property (nonatomic, retain) NSArray *followersHandles;
 @property (nonatomic, retain) NSArray *followersSpecifiers;
-@property (nonatomic, retain) UIAlertView *genericErrorAlert;
+@property (nonatomic, retain) UIAlertController *genericErrorAlert;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSArray *hashedFamilyDsids;
 @property (nonatomic) BOOL isMyLocationEnabled;

@@ -17,12 +17,11 @@
 @property (nonatomic, retain) NSString *responseDescription;
 @property (nonatomic, retain) CoreDAVErrorItem *topLevelErrorItem;
 
+- (void).cxx_destruct;
 - (void)_setCalendarDataWithLeafItem:(id)arg1;
 - (id)calendarData;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)description;
-- (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)recipientHREF;
 - (id)recipientString;
 - (id)requestStatus;

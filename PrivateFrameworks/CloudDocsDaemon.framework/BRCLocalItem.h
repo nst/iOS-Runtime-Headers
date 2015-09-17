@@ -7,9 +7,11 @@
     unsigned long long _dbRowID;
     BOOL _forceDelete;
     BOOL _forceDeletedAlready;
+    BOOL _forceNotif;
     NSNumber *_inFlightDiffs;
     NSNumber *_isInDocumentScope;
     BRCItemID *_itemID;
+    unsigned char _itemScope;
     NSNumber *_knownByServer;
     unsigned long long _localDiffs;
     unsigned long long _notifsRank;
@@ -34,7 +36,6 @@
 @property (nonatomic, readonly) unsigned long long dbRowID;
 @property (nonatomic, readonly) NSString *digestDescription;
 @property (nonatomic, readonly) NSString *extension;
-@property (nonatomic, readonly) NSString *filename;
 @property (nonatomic, readonly) NSNumber *inFlightDiffs;
 @property (nonatomic, readonly) BOOL isAlias;
 @property (nonatomic, readonly) BOOL isAlmostDead;
@@ -50,6 +51,7 @@
 @property (nonatomic, readonly) BOOL isKnownByServerOrInFlight;
 @property (nonatomic, readonly) BOOL isLive;
 @property (nonatomic, readonly) BOOL isLost;
+@property (nonatomic, readonly) BOOL isOnDisk;
 @property (nonatomic, readonly) BOOL isPackage;
 @property (nonatomic, readonly) BOOL isReadAndUploaded;
 @property (nonatomic, readonly) BOOL isRejected;
@@ -58,7 +60,7 @@
 @property (nonatomic, readonly) BOOL isSharedByMeWithAShareID;
 @property (nonatomic, readonly) BRCItemID *itemID;
 @property (nonatomic, readonly) unsigned long long localDiffs;
-@property (nonatomic, readonly) BOOL localNameNeedsRename;
+@property (nonatomic, readonly) NSString *logicalName;
 @property (nonatomic, readonly) BOOL needsInsert;
 @property (nonatomic, readonly) BOOL needsReading;
 @property (nonatomic, readonly) BOOL needsSyncUp;
@@ -68,6 +70,7 @@
 @property (nonatomic, readonly) NSNumber *ownerKey;
 @property (nonatomic, readonly) NSNumber *parentFileID;
 @property (nonatomic, readonly) NSString *path;
+@property (nonatomic, readonly) BOOL physicalNameNeedsRename;
 @property (nonatomic, readonly) BRCItemID *serverPathMatchItemID;
 @property (nonatomic, readonly) BRCServerZone *serverZone;
 @property (nonatomic, readonly) BRCAccountSession *session;
@@ -102,6 +105,7 @@
 - (id)baseStructureRecord;
 - (void)beginBounceAndSaveToDBWithName:(id)arg1;
 - (BOOL)changedAtRelativePath:(id)arg1 scanPackage:(BOOL)arg2;
+- (BOOL)checkIsInDocumentsScopeWithParent:(id)arg1;
 - (void)clearFromStage;
 - (id)container;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -117,9 +121,7 @@
 - (BOOL)evictWithGroup:(id)arg1 error:(id*)arg2;
 - (id)extension;
 - (float)fakeSync;
-- (id)filename;
 - (void)fixupStagedItemAtStartup;
-- (void)forceUpdateNotification;
 - (void)handleUnknownItemError;
 - (id)inFlightDiffs;
 - (id)initFromPQLResultSet:(id)arg1 container:(id)arg2 error:(id*)arg3;
@@ -135,11 +137,11 @@
 - (BOOL)isFromInitialScan;
 - (BOOL)isIdleOrRejected;
 - (BOOL)isInDocumentScope;
-- (BOOL)isInDocumentScopeWithParent:(id)arg1;
 - (BOOL)isKnownByServer;
 - (BOOL)isKnownByServerOrInFlight;
 - (BOOL)isLive;
 - (BOOL)isLost;
+- (BOOL)isOnDisk;
 - (BOOL)isPackage;
 - (BOOL)isReadAndUploaded;
 - (BOOL)isRejected;
@@ -150,11 +152,13 @@
 - (void)learnItemID:(id)arg1 ownerKey:(id)arg2 path:(id)arg3 markLost:(BOOL)arg4;
 - (BOOL)learnStagedInfoFromDownloadStageID:(id)arg1 error:(id*)arg2;
 - (unsigned long long)localDiffs;
-- (BOOL)localNameNeedsRename;
+- (id)logicalName;
 - (void)markBounceFailed;
 - (void)markBounceFinished;
 - (void)markDead;
 - (void)markForceNeedsSyncUp;
+- (void)markForceNotify;
+- (void)markFound;
 - (void)markLatestRequestAcknowledged;
 - (void)markLatestSyncRequestFailed;
 - (void)markLatestSyncRequestRejected;
@@ -166,7 +170,7 @@
 - (void)markNeedsReading;
 - (void)markNeedsUploadOrSyncingUpWithAliasTarget:(id)arg1;
 - (void)markRemovedFromFilesystemForServerEdit:(BOOL)arg1;
-- (void)markRenamedUsingServerItem:(id)arg1 parentFileID:(id)arg2;
+- (void)markRenamedUsingServerItem:(id)arg1 toRelpath:(id)arg2;
 - (void)markReserved;
 - (void)markStagedWithFileID:(unsigned long long)arg1 generationID:(unsigned int)arg2;
 - (void)markStagedWithFileID:(unsigned long long)arg1 generationID:(unsigned int)arg2 documentID:(unsigned int)arg3;
@@ -181,6 +185,7 @@
 - (id)parentFileID;
 - (id)parentItem;
 - (id)path;
+- (BOOL)physicalNameNeedsRename;
 - (float)prepareDeletionSyncUpWithOperation:(id)arg1 defaults:(id)arg2;
 - (float)prepareEditSyncUpWithOperation:(id)arg1 defaults:(id)arg2;
 - (void)prepareForSyncUp;

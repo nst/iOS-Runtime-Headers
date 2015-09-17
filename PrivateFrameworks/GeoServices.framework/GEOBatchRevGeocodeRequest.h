@@ -8,20 +8,14 @@
         unsigned int count; 
         unsigned int size; 
     } _additionalPlaceTypes;
-    struct { 
-        unsigned int splitIntoClusters : 1; 
-    } _has;
     NSMutableArray *_locations;
     NSMutableArray *_serviceTags;
-    BOOL _splitIntoClusters;
 }
 
 @property (nonatomic, readonly) int*additionalPlaceTypes;
 @property (nonatomic, readonly) unsigned int additionalPlaceTypesCount;
-@property (nonatomic) BOOL hasSplitIntoClusters;
 @property (nonatomic, retain) NSMutableArray *locations;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
-@property (nonatomic) BOOL splitIntoClusters;
 
 - (void)addAdditionalPlaceType:(int)arg1;
 - (void)addLocation:(id)arg1;
@@ -37,7 +31,6 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
-- (BOOL)hasSplitIntoClusters;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)locationAtIndex:(unsigned int)arg1;
@@ -51,11 +44,8 @@
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
 - (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
-- (void)setHasSplitIntoClusters:(BOOL)arg1;
 - (void)setLocations:(id)arg1;
 - (void)setServiceTags:(id)arg1;
-- (void)setSplitIntoClusters:(BOOL)arg1;
-- (BOOL)splitIntoClusters;
 - (void)writeTo:(id)arg1;
 
 @end

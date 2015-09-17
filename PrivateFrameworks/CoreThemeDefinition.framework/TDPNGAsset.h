@@ -7,6 +7,7 @@
     unsigned int _fileScaleFactor;
 }
 
+@property (nonatomic) BOOL rawData;
 @property (nonatomic, retain) NSSet *renditions;
 
 - (void)_logError:(id)arg1;

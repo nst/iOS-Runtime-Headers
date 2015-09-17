@@ -84,6 +84,13 @@
 - (void)pu_setAssetRepresentation:(id)arg1;
 - (void)pu_setAssetRepresentations:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
+
+- (void)akClearContents;
+- (id)akPasteboardAnnotations;
+- (BOOL)akPasteboardContainsAnnotations;
+- (void)akPasteboardSetAnnotations:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (id)__ck_composition;
@@ -101,5 +108,9 @@
 - (BOOL)pl_containsAssets;
 - (void)pl_setAsset:(id)arg1;
 - (void)pl_setAssets:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
+
+- (id)objectsForPasteboardType:(id)arg1;
 
 @end

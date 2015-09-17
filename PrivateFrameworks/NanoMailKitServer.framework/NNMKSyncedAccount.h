@@ -5,6 +5,7 @@
 @interface NNMKSyncedAccount : NSObject {
     NSString *_accountId;
     NSString *_displayName;
+    NSArray *_emailAddresses;
     unsigned int _resendInterval;
     BOOL _resendRequested;
     BOOL _shouldArchive;
@@ -12,6 +13,7 @@
 
 @property (nonatomic, retain) NSString *accountId;
 @property (nonatomic, retain) NSString *displayName;
+@property (nonatomic, retain) NSArray *emailAddresses;
 @property (nonatomic) unsigned int resendInterval;
 @property (nonatomic) BOOL resendRequested;
 @property (nonatomic) BOOL shouldArchive;
@@ -19,12 +21,14 @@
 - (void).cxx_destruct;
 - (id)accountId;
 - (id)displayName;
+- (id)emailAddresses;
 - (id)init;
 - (id)initWithAccount:(id)arg1;
 - (unsigned int)resendInterval;
 - (BOOL)resendRequested;
 - (void)setAccountId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
+- (void)setEmailAddresses:(id)arg1;
 - (void)setResendInterval:(unsigned int)arg1;
 - (void)setResendRequested:(BOOL)arg1;
 - (void)setShouldArchive:(BOOL)arg1;

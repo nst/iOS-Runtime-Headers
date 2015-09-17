@@ -10,9 +10,9 @@
 + (id)defaultReadingList;
 + (BOOL)supportsURL:(id)arg1;
 
+- (void).cxx_destruct;
 - (id)_init;
 - (BOOL)addReadingListItemWithURL:(id)arg1 title:(id)arg2 previewText:(id)arg3 error:(id*)arg4;
-- (void)dealloc;
 - (id)init;
 
 @end

@@ -37,6 +37,7 @@
 + (id)from:(id)arg1 subtract:(id)arg2;
 + (id)inverseOrderKey:(id)arg1;
 + (id)leftshift:(id)arg1 by:(id)arg2;
++ (id)length:(id)arg1;
 + (id)ln:(id)arg1;
 + (id)log:(id)arg1;
 + (id)lowercase:(id)arg1;

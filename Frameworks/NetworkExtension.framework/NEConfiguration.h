@@ -14,6 +14,7 @@
     int _grade;
     NSUUID *_identifier;
     NSString *_name;
+    NEPathController *_pathController;
     NEProfileIngestionPayloadInfo *_payloadInfo;
 }
 
@@ -28,11 +29,13 @@
 @property (readonly) int grade;
 @property (readonly) NSUUID *identifier;
 @property (copy) NSString *name;
+@property (copy) NEPathController *pathController;
 @property (copy) NEProfileIngestionPayloadInfo *payloadInfo;
 @property (readonly) NSString *pluginType;
 
 + (BOOL)SCServiceWithIdentifier:(id)arg1 existsInPreferences:(struct __SCPreferences { }*)arg2;
 + (void)addError:(id)arg1 toList:(id)arg2;
++ (id)configurationWithProfilePayload:(id)arg1;
 + (struct __CFDictionary { }*)copyConfigurationForProtocol:(struct __CFString { }*)arg1 inService:(struct __SCNetworkService { }*)arg2;
 + (BOOL)removeSCServiceWithIdentifier:(id)arg1 fromPreferences:(struct __SCPreferences { }*)arg2;
 + (BOOL)setConfiguration:(struct __CFDictionary { }*)arg1 forProtocol:(struct __CFString { }*)arg2 inService:(struct __SCNetworkService { }*)arg3;
@@ -50,7 +53,7 @@
 - (void)clearKeychainInDomain:(int)arg1;
 - (void)clearSystemKeychain;
 - (void)clearUserKeychain;
-- (id)configureAOVPNTunnelFromTunnelDict:(id)arg1 payloadBase:(id)arg2;
+- (id)configureAOVPNTunnelFromTunnelDict:(id)arg1 tunnelDict:(id)arg2 payloadBase:(id)arg3 interfaceType:(id)arg4;
 - (BOOL)configureIKE:(id)arg1 vpnType:(id)arg2 payloadBase:(id)arg3 vpn:(id)arg4;
 - (BOOL)configureL2TPWithPPPOptions:(id)arg1;
 - (BOOL)configurePPPCommon:(id)arg1;
@@ -64,16 +67,19 @@
 - (id)copyProfileDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
+- (id)descriptionWithOptions:(unsigned int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalIdentifier;
 - (id)generateSignature;
+- (id)getCertificates;
 - (id)getConfigurationIdentifier;
-- (id)getConfigurationPasswordPersist:(id)arg1 account:(id)arg2 description:(id)arg3;
 - (id)getConfigurationProtocol;
+- (id)getPendingCertificateInfo:(id)arg1;
 - (id)getPendingCertificateUUIDs:(id)arg1;
 - (id)getPendingCertificateUUIDsAOVpn:(id)arg1;
 - (id)getPendingCertificateUUIDsAppVPN:(id)arg1;
 - (id)getPendingCertificateUUIDsContentFilter:(id)arg1;
+- (id)getPendingCertificateUUIDsInternal:(id)arg1;
 - (id)getPendingCertificateUUIDsVPN:(id)arg1;
 - (int)grade;
 - (unsigned int)hash;
@@ -92,10 +98,12 @@
 - (id)initWithContentFilterPayload:(id)arg1 configurationName:(id)arg2;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithName:(id)arg1 grade:(int)arg2;
+- (id)initWithPathControllerPayload:(id)arg1 configurationName:(id)arg2;
 - (id)initWithVPNPayload:(id)arg1 configurationName:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSupportedBySC;
 - (id)name;
+- (id)pathController;
 - (id)payloadInfo;
 - (id)pluginType;
 - (void)setAlwaysOnVPN:(id)arg1;
@@ -110,13 +118,12 @@
 - (BOOL)setCertificatesAOVpn:(id)arg1;
 - (BOOL)setCertificatesAppVPN:(id)arg1;
 - (BOOL)setCertificatesVPN:(id)arg1;
-- (BOOL)setConfigurationHTTPPassword:(id)arg1;
-- (BOOL)setConfigurationPassword:(id)arg1 account:(id)arg2 password:(id)arg3 description:(id)arg4;
 - (BOOL)setConfigurationSharedSecret:(id)arg1;
 - (BOOL)setConfigurationVPNPassword:(id)arg1;
 - (void)setContentFilter:(id)arg1;
 - (void)setExternalIdentifier:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setPathController:(id)arg1;
 - (void)setPayloadInfo:(id)arg1;
 - (BOOL)setPayloadInfoCommon:(id)arg1 payloadOrganization:(id)arg2;
 - (BOOL)setPayloadInfoIdentity:(id)arg1;

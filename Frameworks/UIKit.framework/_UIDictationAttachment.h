@@ -13,8 +13,8 @@
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } attachmentRange;
 @property (nonatomic, copy) NSDictionary *typingAttributesBeforeInsertion;
 
+- (void).cxx_destruct;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })attachmentRange;
-- (void)dealloc;
 - (void)setAttachmentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setTypingAttributesBeforeInsertion:(id)arg1;
 - (id)typingAttributesBeforeInsertion;

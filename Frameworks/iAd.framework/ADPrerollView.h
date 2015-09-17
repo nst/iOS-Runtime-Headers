@@ -7,6 +7,7 @@
     BOOL _barsVisible;
     ADPrerollBottomBar *_bottomBar;
     <ADPrerollViewDelegate> *_delegate;
+    BOOL _hasAction;
     NSTimer *_passiveWatchingTimer;
     BOOL _skipButtonCountingDown;
     UIImageView *_swooshView;
@@ -19,6 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ADPrerollViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL hasAction;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSTimer *passiveWatchingTimer;
 @property (nonatomic) BOOL skipButtonCountingDown;
@@ -47,6 +49,7 @@
 - (void)displayAsPaused:(BOOL)arg1;
 - (void)fadeToBlackWithCompletion:(id /* block */)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)hasAction;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -56,6 +59,7 @@
 - (void)setBottomBar:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setElapsedTime:(double)arg1 totalTime:(double)arg2;
+- (void)setHasAction:(BOOL)arg1;
 - (void)setPassiveWatchingTimer:(id)arg1;
 - (void)setSkipButtonCountingDown:(BOOL)arg1;
 - (void)setSwooshView:(id)arg1;

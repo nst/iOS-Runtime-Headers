@@ -12,10 +12,10 @@
 @property (nonatomic, retain) NSString *nameAttribute;
 @property (nonatomic, retain) NSString *typeAttribute;
 
+- (void).cxx_destruct;
 - (void)addChangedParameter:(id)arg1;
 - (id)changedParameters;
 - (id)copyParseRules;
-- (void)dealloc;
 - (id)initWithNameSpace:(id)arg1 andName:(id)arg2;
 - (id)nameAttribute;
 - (void)parserFoundAttributes:(id)arg1;

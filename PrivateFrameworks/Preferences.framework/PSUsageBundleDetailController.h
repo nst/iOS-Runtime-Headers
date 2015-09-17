@@ -8,7 +8,6 @@
 + (void)setupSpecifier:(id)arg1 forMediaGroups:(id)arg2;
 
 - (BOOL)canBeShownFromSuspendedState;
-- (void)dealloc;
 - (void)loadView;
 - (BOOL)needsToShowToolbarInPrefsAppRoot;
 - (id)size:(id)arg1;

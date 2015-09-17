@@ -4,6 +4,4 @@
 
 @interface RCGLKViewEAGLLayer : CAEAGLLayer
 
-- (void)setDrawableProperties:(id)arg1;
-
 @end

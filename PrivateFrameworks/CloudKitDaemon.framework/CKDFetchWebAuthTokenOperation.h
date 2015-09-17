@@ -9,6 +9,7 @@
 @property (nonatomic, copy) NSString *webAuthToken;
 
 - (void).cxx_destruct;
+- (unsigned long long)activityStart;
 - (void)fillOutOperationResult:(id)arg1;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;
 - (void)main;

@@ -10,6 +10,7 @@
     TIKeyboardCandidateResultSet *_candidateSet;
     int _candidatesVisualStyle;
     <UIKeyboardCandidateGridCollectionViewControllerDelegate> *_delegate;
+    NSArray *_filteredCandidates;
     float _groupBarWidth;
     BOOL _hasSecondaryCandidates;
     UIView *_headerView;
@@ -18,7 +19,6 @@
     UIKBCandidateCollectionView *_secondaryCandidatesView;
     BOOL _secondaryCandidatesViewIsCurrent;
     BOOL _showHiddenCandidatesOnly;
-    BOOL _showsExtensionCandidates;
     BOOL _singleLineMode;
     BOOL _supportsNumberKeySelection;
     struct { 
@@ -41,8 +41,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIKeyboardCandidateGridCollectionViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *filteredCandidates;
 @property (nonatomic) float groupBarWidth;
-@property (nonatomic, readonly) BOOL hasGroupBar;
 @property (nonatomic) BOOL hasSecondaryCandidates;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *headerView;
@@ -51,7 +51,6 @@
 @property (nonatomic, retain) UIKBCandidateCollectionView *secondaryCandidatesView;
 @property (nonatomic) BOOL secondaryCandidatesViewIsCurrent;
 @property (nonatomic) BOOL showHiddenCandidatesOnly;
-@property (nonatomic) BOOL showsExtensionCandidates;
 @property (nonatomic) BOOL singleLineMode;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL supportsNumberKeySelection;
@@ -81,6 +80,7 @@
 - (unsigned int)currentIndex;
 - (void)dealloc;
 - (id)delegate;
+- (id)filteredCandidates;
 - (id)firstCandidateIndexPath;
 - (id)firstCandidateIndexPathInGroupAtIndex:(unsigned int)arg1;
 - (id)groupAtIndex:(unsigned int)arg1;
@@ -88,7 +88,6 @@
 - (unsigned int)groupsCount;
 - (BOOL)handleNumberKey:(unsigned int)arg1;
 - (BOOL)hasCandidates;
-- (BOOL)hasGroupBar;
 - (BOOL)hasNextPage;
 - (BOOL)hasPreviousPage;
 - (BOOL)hasSecondaryCandidates;
@@ -137,7 +136,6 @@
 - (void)setSecondaryCandidatesView:(id)arg1;
 - (void)setSecondaryCandidatesViewIsCurrent:(BOOL)arg1;
 - (void)setShowHiddenCandidatesOnly:(BOOL)arg1;
-- (void)setShowsExtensionCandidates:(BOOL)arg1;
 - (void)setSingleLineMode:(BOOL)arg1;
 - (void)setSupportsNumberKeySelection:(BOOL)arg1;
 - (void)setUIKeyboardCandidateListDelegate:(id)arg1;
@@ -152,7 +150,6 @@
 - (void)showPreviousCandidate;
 - (void)showPreviousPage;
 - (void)showPreviousRow;
-- (BOOL)showsExtensionCandidates;
 - (BOOL)singleLineMode;
 - (id)statisticsIdentifier;
 - (void)stepOneLine:(BOOL)arg1;

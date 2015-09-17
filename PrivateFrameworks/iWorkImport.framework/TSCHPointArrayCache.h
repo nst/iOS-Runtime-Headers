@@ -25,7 +25,6 @@
 + (id)p_getCacheCreate:(BOOL)arg1;
 + (void)setCachedPointsForSeries:(id)arg1 inAreaFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 valueStart:(unsigned int)arg3 valueEnd:(unsigned int)arg4 cullBadPoints:(BOOL)arg5 points:(struct { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; float x2; BOOL x3; unsigned int x4; }*)arg6 count:(unsigned int)arg7;
 
-- (id).cxx_construct;
 - (void)dealloc;
 - (BOOL)matchesSeries:(id)arg1 areaFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 start:(unsigned int)arg3 end:(unsigned int)arg4 cull:(BOOL)arg5;
 

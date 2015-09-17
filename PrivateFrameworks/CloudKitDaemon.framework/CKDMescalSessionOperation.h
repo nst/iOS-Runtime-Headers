@@ -15,6 +15,7 @@
 - (void)_handleCertRequestFinished:(id)arg1;
 - (void)_handleDataExchanged:(id)arg1 withError:(id)arg2;
 - (void)_handleSessionRequestFinished:(id)arg1;
+- (unsigned long long)activityStart;
 - (BOOL)allowsAnonymousAccount;
 - (id)flowControlKey;
 - (id)initWithOperationInfo:(id)arg1 clientContext:(id)arg2;

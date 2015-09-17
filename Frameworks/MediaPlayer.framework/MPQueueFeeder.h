@@ -60,6 +60,7 @@
 - (BOOL)canSkipToPreviousItem;
 - (void)contentsDidChangeWithPreferredStartIndex:(unsigned int)arg1;
 - (void)contentsDidChangeWithPreferredStartIndex:(unsigned int)arg1 error:(id)arg2;
+- (void)contentsDidChangeWithReplacementPlaybackContext:(id)arg1;
 - (id)copyRawItemAtIndex:(unsigned int)arg1;
 - (id)delegate;
 - (void)encodeWithCoder:(id)arg1;
@@ -71,6 +72,7 @@
 - (unsigned int)indexOfMediaItem:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (unsigned int)initialPlaybackQueueDepthForStartingIndex:(unsigned int)arg1;
+- (void)invalidateAssets;
 - (Class)itemClass;
 - (unsigned int)itemCount;
 - (id)itemForIdentifier:(id)arg1;

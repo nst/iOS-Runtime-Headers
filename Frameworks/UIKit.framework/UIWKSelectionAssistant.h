@@ -5,14 +5,19 @@
 @interface UIWKSelectionAssistant : UIWebSelectionAssistant {
     _UITextServiceSession *_definitionSession;
     _UITextServiceSession *_learnSession;
+    _UITextServiceSession *_lookupSession;
+    _UITextServiceSession *_shareSession;
 }
 
 @property (nonatomic, readonly) UILongPressGestureRecognizer *selectionLongPressRecognizer;
 
+- (id)asyncSelectionView;
 - (void)blockSelectionChangedWithTouch:(int)arg1 withFlags:(int)arg2 growThreshold:(float)arg3 shrinkThreshold:(float)arg4;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)initWithView:(id)arg1;
+- (void)initializeSelectionView;
+- (id)interactionView;
+- (void)lookup:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)selectionChanged;
 - (void)selectionChangedWithGestureAt:(struct CGPoint { float x1; float x2; })arg1 withGesture:(int)arg2 withState:(int)arg3;
 - (void)selectionChangedWithGestureAt:(struct CGPoint { float x1; float x2; })arg1 withGesture:(int)arg2 withState:(int)arg3 withFlags:(int)arg4;
@@ -20,8 +25,12 @@
 - (void)selectionChangedWithTouchAt:(struct CGPoint { float x1; float x2; })arg1 withSelectionTouch:(int)arg2 withFlags:(int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })selectionFrame;
 - (id)selectionLongPressRecognizer;
+- (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toBegin:(BOOL)arg3;
 - (BOOL)shouldHandleSingleTapAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showDictionaryFor:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)showSelectionCommands;
+- (void)showShareSheetFor:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)showTextServiceFor:(id)arg1 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)willBeginGesture;
 
 @end

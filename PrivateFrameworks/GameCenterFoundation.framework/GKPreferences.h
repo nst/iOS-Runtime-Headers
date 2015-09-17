@@ -15,6 +15,7 @@
 @property (nonatomic) BOOL allowUnsignedBag;
 @property (getter=isAppInstallationRestricted, nonatomic, readonly) BOOL appInstallationRestricted;
 @property (nonatomic) double cacheTTLOverride;
+@property (getter=isClipGestureEnabled, nonatomic) BOOL clipGestureEnabled;
 @property (getter=isComprehensiveLoggingEnabled, nonatomic) BOOL comprehensiveLoggingEnabled;
 @property (nonatomic) double debugRequestTimeout;
 @property (nonatomic) int environment;
@@ -59,11 +60,11 @@
 @property (nonatomic) BOOL shouldLinkPlayerToICloud;
 @property (nonatomic) BOOL shouldLinkPlayerToTwitter;
 @property (nonatomic) BOOL shouldTrackAtlasImageUsage;
-@property (nonatomic) BOOL shouldUseSandboxServer;
 @property (nonatomic) BOOL shouldUseTestIcons;
 @property (nonatomic, retain) NSString *storeBagURL;
 @property (getter=isStoreDemoModeEnabled, nonatomic, readonly) BOOL storeDemoModeEnabled;
 @property (nonatomic) double terminationInterval;
+@property (nonatomic, copy) NSString *testRunID;
 @property (nonatomic) BOOL useInternalHeader;
 @property (nonatomic) BOOL useTestProtocols;
 @property (nonatomic) BOOL verboseLogging;
@@ -98,6 +99,7 @@
 - (BOOL)isAccountModificationRestricted;
 - (BOOL)isAddingFriendsRestricted;
 - (BOOL)isAppInstallationRestricted;
+- (BOOL)isClipGestureEnabled;
 - (BOOL)isComprehensiveLoggingEnabled;
 - (BOOL)isGameCenterRestricted;
 - (BOOL)isInternalBuild;
@@ -135,6 +137,7 @@
 - (void)setAllowUnsignedBag:(BOOL)arg1;
 - (void)setBooleanValue:(BOOL)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)setCacheTTLOverride:(double)arg1;
+- (void)setClipGestureEnabled:(BOOL)arg1;
 - (void)setComprehensiveLoggingEnabled:(BOOL)arg1;
 - (void)setDebugRequestTimeout:(double)arg1;
 - (void)setEnvironment:(int)arg1;
@@ -171,11 +174,11 @@
 - (void)setShouldLinkPlayerToICloud:(BOOL)arg1;
 - (void)setShouldLinkPlayerToTwitter:(BOOL)arg1;
 - (void)setShouldTrackAtlasImageUsage:(BOOL)arg1;
-- (void)setShouldUseSandboxServer:(BOOL)arg1;
 - (void)setShouldUseTestIcons:(BOOL)arg1;
 - (void)setStoreBagURL:(id)arg1;
 - (void)setStringValue:(id)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)setTerminationInterval:(double)arg1;
+- (void)setTestRunID:(id)arg1;
 - (void)setTimeInterval:(double)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)setUnsignedIntegerValue:(int)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)setUseInternalHeader:(BOOL)arg1;
@@ -192,12 +195,12 @@
 - (BOOL)shouldLinkPlayerToICloud;
 - (BOOL)shouldLinkPlayerToTwitter;
 - (BOOL)shouldTrackAtlasImageUsage;
-- (BOOL)shouldUseSandboxServer;
 - (BOOL)shouldUseTestIcons;
 - (id)storeBagURL;
 - (id)stringValueForKey:(struct __CFString { }*)arg1 defaultValue:(id)arg2;
 - (void)synchronize;
 - (double)terminationInterval;
+- (id)testRunID;
 - (double)timeIntervalForKey:(struct __CFString { }*)arg1 defaultValue:(double)arg2;
 - (int)unsignedIntegerValueForKey:(struct __CFString { }*)arg1 defaultValue:(int)arg2;
 - (BOOL)useInternalHeader;

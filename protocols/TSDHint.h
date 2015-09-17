@@ -11,7 +11,7 @@
 - (<TSDHint> *)firstChildHint;
 - (<TSDHint> *)lastChildHint;
 - (void)offsetByDelta:(int)arg1;
-- (BOOL)overlapsWithSelection:(TSKSelection *)arg1;
+- (BOOL)overlapsWithSelectionPath:(TSKSelectionPath *)arg1;
 
 @optional
 

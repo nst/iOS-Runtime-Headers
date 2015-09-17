@@ -12,6 +12,7 @@
 + (id)pivotConditionalFormat;
 
 - (void)dealloc;
+- (id)description;
 - (id)init;
 - (id)pivotAreas;
 - (unsigned long)priority;

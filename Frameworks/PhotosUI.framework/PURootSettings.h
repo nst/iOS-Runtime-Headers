@@ -3,48 +3,91 @@
  */
 
 @interface PURootSettings : PUSettings {
+    PUAirPlaySettings *_airPlaySettings;
+    BOOL _allowIrisUI;
+    NSMutableSet *_archivedSettings;
+    BOOL _enforceDisableIrisUI;
     PUFeedSettings *_feedSettings;
-    int _imagePickerTestSourceType;
+    Class _interfaceThemeClass;
+    PUIrisSettings *_irisSettings;
+    PUMedusaSettings *_medusaSettings;
     PUMomentsSettings *_momentsSettings;
+    PUOneUpSettings *_oneUpSettings;
+    Class _orbInterfaceThemeClass;
+    PUPerformanceDiagnosticsSettings *_performanceDiagnosticsSettings;
     PUPhotoEditProtoSettings *_photoEditingSettings;
+    PUPhotosDataSourceSettings *_photosDataSourceSettings;
     PUPhotosGridSettings *_photosGridSettings;
     unsigned int _settingsVersion;
-    PUSizeSettings *_sizeSettings;
+    PUSlideshowSettings *_slideshowSettings;
+    PUTilingViewSettings *_tilingViewSettings;
 }
 
+@property (nonatomic, retain) PUAirPlaySettings *airPlaySettings;
+@property (nonatomic) BOOL allowIrisUI;
 @property (nonatomic, retain) PUFeedSettings *feedSettings;
-@property (nonatomic) int imagePickerTestSourceType;
+@property (nonatomic) Class interfaceThemeClass;
+@property (nonatomic, retain) PUIrisSettings *irisSettings;
+@property (nonatomic, retain) PUMedusaSettings *medusaSettings;
 @property (nonatomic, retain) PUMomentsSettings *momentsSettings;
+@property (nonatomic, retain) PUOneUpSettings *oneUpSettings;
+@property (nonatomic) Class orbInterfaceThemeClass;
+@property (nonatomic, retain) PUPerformanceDiagnosticsSettings *performanceDiagnosticsSettings;
 @property (nonatomic, retain) PUPhotoEditProtoSettings *photoEditingSettings;
+@property (nonatomic, retain) PUPhotosDataSourceSettings *photosDataSourceSettings;
 @property (nonatomic, retain) PUPhotosGridSettings *photosGridSettings;
 @property (nonatomic) unsigned int settingsVersion;
-@property (nonatomic, retain) PUSizeSettings *sizeSettings;
+@property (nonatomic, retain) PUSlideshowSettings *slideshowSettings;
+@property (nonatomic, retain) PUTilingViewSettings *tilingViewSettings;
 
-+ (void)_addRandomPhoto;
 + (id)_currentViewControllerStack;
 + (id)_debugRowsForViewControllerStack:(id)arg1;
 + (void)_deleteAllDiagnosticFiles;
 + (void)_setDebugRows:(id)arg1;
 + (void)presentSettingsController;
 + (id)settingsControllerModule;
++ (void)setupStatusBarDoubleTapOnInternalDevices;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_save;
+- (id)airPlaySettings;
+- (BOOL)allowIrisUI;
+- (void)applyArchiveValue:(id)arg1 forKey:(id)arg2;
+- (id)archiveValueForKey:(id)arg1;
 - (id)feedSettings;
-- (int)imagePickerTestSourceType;
+- (Class)interfaceThemeClass;
+- (id)irisSettings;
+- (BOOL)irisUIEnabled;
+- (id)medusaSettings;
 - (id)momentsSettings;
+- (id)oneUpSettings;
+- (Class)orbInterfaceThemeClass;
+- (id)performanceDiagnosticsSettings;
 - (id)photoEditingSettings;
+- (id)photosDataSourceSettings;
 - (id)photosGridSettings;
+- (void)restoreDefaultValues;
+- (void)save;
+- (void)setAirPlaySettings:(id)arg1;
+- (void)setAllowIrisUI:(BOOL)arg1;
 - (void)setDefaultValues;
+- (void)setEnforceDisableIrisUI:(BOOL)arg1;
 - (void)setFeedSettings:(id)arg1;
-- (void)setImagePickerTestSourceType:(int)arg1;
+- (void)setInterfaceThemeClass:(Class)arg1;
+- (void)setIrisSettings:(id)arg1;
+- (void)setMedusaSettings:(id)arg1;
 - (void)setMomentsSettings:(id)arg1;
+- (void)setOneUpSettings:(id)arg1;
+- (void)setOrbInterfaceThemeClass:(Class)arg1;
+- (void)setPerformanceDiagnosticsSettings:(id)arg1;
 - (void)setPhotoEditingSettings:(id)arg1;
+- (void)setPhotosDataSourceSettings:(id)arg1;
 - (void)setPhotosGridSettings:(id)arg1;
 - (void)setSettingsVersion:(unsigned int)arg1;
-- (void)setSizeSettings:(id)arg1;
+- (void)setSlideshowSettings:(id)arg1;
+- (void)setTilingViewSettings:(id)arg1;
 - (unsigned int)settingsVersion;
-- (id)sizeSettings;
+- (id)slideshowSettings;
+- (id)tilingViewSettings;
 
 @end

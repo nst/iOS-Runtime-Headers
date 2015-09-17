@@ -6,6 +6,15 @@
     <TDAssetManagementDelegate> *_assetManagementDelegate;
     int _capabilities;
     <TDCustomAssetProvider> *_customAssetProvider;
+    NSMutableDictionary *_explicitlyPackedContents;
+    NSMutableDictionary *_explicitlyPackedIdentifiers;
+    NSMutableDictionary *_explicitlyPackedPackings;
+    int _majorVersion;
+    NSString *_minimumDeploymentVersion;
+    int _minorVersion;
+    TDDeviceTraits *_optimizeForDeviceTraits;
+    NSMutableDictionary *_packableRenditions;
+    int _patchVersion;
     NSString *_relativePathToProductionData;
     NSString *_targetPlatform;
     int _updateVersionMetadataState;
@@ -19,11 +28,19 @@
     NSString *pathToRepresentedDocument;
 }
 
+@property (nonatomic) BOOL allowsVibrancy;
 @property (nonatomic) <TDAssetManagementDelegate> *assetManagementDelegate;
 @property (nonatomic) <TDCustomAssetProvider> *customAssetProvider;
+@property (nonatomic) int defaultBlendMode;
 @property (nonatomic) int documentCapabilities;
+@property (nonatomic, readonly) int majorVersion;
+@property (nonatomic, copy) NSString *minimumDeploymentVersion;
+@property (nonatomic, readonly) int minorVersion;
+@property (nonatomic, retain) TDDeviceTraits *optimizeForDeviceTraits;
+@property (nonatomic, readonly) int patchVersion;
 @property (copy) NSString *pathToRepresentedDocument;
 @property (nonatomic, readonly) NSURL *themeBitSourceURL;
+@property (nonatomic, copy) NSUUID *uuid;
 
 + (void)_addThemeDocument:(id)arg1;
 + (id)_imageAssetURLsByCopyingFileURLs:(id)arg1 toManagedLocationAtURL:(id)arg2 error:(id*)arg3;
@@ -37,6 +54,7 @@
 + (id)defaultThemeBitSourceURLForDocumentURL:(id)arg1;
 + (void)doneWithColorConversion;
 + (void)initialize;
++ (int)maximumAreaOfPackableImageForScale:(unsigned int)arg1;
 + (id)migrateDocumentAtURL:(id)arg1 ofType:(id)arg2 error:(id*)arg3;
 + (id)persistentStringForPlatform:(int)arg1;
 + (int)platformForPersistentString:(id)arg1;
@@ -47,7 +65,10 @@
 
 - (id)_addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2 referenceFiles:(BOOL)arg3 bitSource:(id)arg4 customInfos:(id)arg5 sortedCustomInfos:(id*)arg6;
 - (id)_addAssetsFromCustomAssetInfos:(id)arg1 bitSource:(id)arg2 error:(id*)arg3;
+- (void)_addResolvedLayerReferenceToFlattenedImageRendition:(id)arg1 usingArtworkRendition:(id)arg2 andLayerReference:(id)arg3;
 - (id)_cachedConstantsForEntity:(id)arg1;
+- (id)_catalogGlobals;
+- (int)_compareFlattenedKeySpec1:(id)arg1 toKeySpec2:(id)arg2;
 - (void)_configureAfterFirstSave;
 - (id)_createNamedElementWithIdentifier:(int)arg1;
 - (id)_createNamedElementWithNextAvailableIdentifier;
@@ -56,15 +77,22 @@
 - (void)_delete:(id)arg1 withRendition:(id)arg2;
 - (id)_genericPartDefinition;
 - (void)_getFilename:(id*)arg1 scaleFactor:(unsigned int*)arg2 category:(id*)arg3 bitSource:(id*)arg4 forFileURL:(id)arg5;
+- (void)_groupPackableRenditions;
+- (void)_insertRendition:(id)arg1 forKey:(id)arg2;
+- (void)_makeRadiosityImages;
 - (id)_namedImageEffectPartDefinition;
 - (id)_namedImagePartDefinition;
 - (id)_namedTextEffectPartDefinition;
 - (void)_normalizeRenditionKeySpec:(id)arg1 forSchemaRendition:(id)arg2;
+- (void)_optimizeForDeviceTraits;
 - (id)_predicateForRenditionKeySpec:(id)arg1;
+- (void)_removeRedundantPDFBasedRenditions:(id)arg1;
 - (void)_removeRedundantPDFBasedRenditionsForAssets:(id)arg1;
 - (void)_synchronousSave;
 - (id)_themeBitSource:(id*)arg1;
 - (id)_themeBitSourceForReferencedFilesAtURLs:(id)arg1 createIfNecessary:(BOOL)arg2;
+- (void)_tidyUpLayerStacks;
+- (void)_updateRenditionPackings:(id)arg1;
 - (id)addAssetsAtFileURLs:(id)arg1;
 - (id)addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2;
 - (id)addAssetsAtFileURLs:(id)arg1 createProductions:(BOOL)arg2 referenceFiles:(BOOL)arg3 bitSource:(id)arg4 customInfos:(id)arg5;
@@ -73,6 +101,7 @@
 - (id)allObjectsForEntity:(id)arg1 withSortDescriptors:(id)arg2;
 - (id)allObjectsForEntity:(id)arg1 withSortDescriptors:(id)arg2 error:(id*)arg3;
 - (BOOL)allowMultipleInstancesOfElementID:(int)arg1;
+- (BOOL)allowsVibrancy;
 - (id)artworkDraftTypeWithIdentifier:(int)arg1;
 - (id)artworkFormat;
 - (id)assetAtFileURL:(id)arg1;
@@ -107,11 +136,14 @@
 - (BOOL)customizationExistsForSchemaDefinition:(id)arg1;
 - (BOOL)customizeSchemaEffectDefinition:(id)arg1 shouldReplaceExisting:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)customizeSchemaElementDefinition:(id)arg1 usingArtworkFormat:(id)arg2 shouldReplaceExisting:(BOOL)arg3 error:(id*)arg4;
+- (BOOL)customizeSchemaMaterialDefinition:(id)arg1 shouldReplaceExisting:(BOOL)arg2 error:(id*)arg3;
 - (BOOL)customizeSchemaPartDefinition:(id)arg1 usingArtworkFormat:(id)arg2 nameElement:(id)arg3 shouldReplaceExisting:(BOOL)arg4 error:(id*)arg5;
 - (id)customizedSchemaEffectDefinitions;
 - (id)customizedSchemaElementDefinitions;
+- (id)customizedSchemaMaterialDefinitions;
 - (void)dealloc;
 - (id)defaultBaseFileNameForSchemaRendition:(id)arg1 withPartDefinition:(id)arg2;
+- (int)defaultBlendMode;
 - (id)defaultPNGFileNameForSchemaRendition:(id)arg1 withPartDefinition:(id)arg2;
 - (id)defaultPathComponentsForPartDefinition:(id)arg1;
 - (void)deleteNamedAssets:(id)arg1 shouldDeleteAssetFiles:(BOOL)arg2 completionHandler:(id /* block */)arg3;
@@ -132,6 +164,7 @@
 - (void)exportColorsToURL:(id)arg1;
 - (void)exportCursorsToURL:(id)arg1;
 - (id)folderNameFromRenditionKey:(id)arg1 forPartDefinition:(id)arg2;
+- (id)graphicsFeatureSetClassWithIdentifier:(int)arg1;
 - (id)historian;
 - (id)idiomWithIdentifier:(int)arg1;
 - (void)importColorsFromURL:(id)arg1 valuesOnly:(BOOL)arg2 getUnusedColorNames:(id*)arg3;
@@ -147,10 +180,13 @@
 - (BOOL)isCustomLook;
 - (id)iterationTypeWithIdentifier:(int)arg1;
 - (id)lookWithIdentifier:(int)arg1;
+- (int)majorVersion;
 - (id)managedObjectModel;
 - (id)mappingForPhotoshopLayerIndex:(int)arg1 themeDrawingLayerIdentifier:(int)arg2;
 - (id)metadatumForKey:(id)arg1;
 - (id)minimalDisplayNameForThemeConstant:(id)arg1;
+- (id)minimumDeploymentVersion;
+- (int)minorVersion;
 - (id)mocOrganizer;
 - (id)namedArtworkProductionWithName:(id)arg1;
 - (id)namedArtworkProductions;
@@ -161,7 +197,10 @@
 - (id)newObjectForEntity:(id)arg1;
 - (id)objectsForEntity:(id)arg1 withPredicate:(id)arg2 sortDescriptors:(id)arg3;
 - (id)objectsForEntity:(id)arg1 withPredicate:(id)arg2 sortDescriptors:(id)arg3 error:(id*)arg4;
+- (id)optimizeForDeviceTraits;
+- (void)packRenditions;
 - (id)partWithIdentifier:(int)arg1;
+- (int)patchVersion;
 - (id)pathToAsset:(id)arg1;
 - (id)pathToRepresentedDocument;
 - (id)persistentStoreTypeForFileType:(id)arg1;
@@ -185,11 +224,15 @@
 - (id)schemaCategoryWithIdentifier:(int)arg1;
 - (id)schemaDefinitionWithElementID:(int)arg1;
 - (id)schemaPartDefinitionWithElementID:(int)arg1 partID:(int)arg2;
+- (void)setAllowsVibrancy:(BOOL)arg1;
 - (void)setArtworkFormat:(id)arg1;
 - (void)setAssetManagementDelegate:(id)arg1;
 - (void)setCustomAssetProvider:(id)arg1;
+- (void)setDefaultBlendMode:(int)arg1;
 - (void)setDocumentCapabilities:(int)arg1;
 - (void)setMetadatum:(id)arg1 forKey:(id)arg2;
+- (void)setMinimumDeploymentVersion:(id)arg1;
+- (void)setOptimizeForDeviceTraits:(id)arg1;
 - (void)setPathToRepresentedDocument:(id)arg1;
 - (void)setRelativePathToProductionData:(id)arg1;
 - (void)setTargetPlatform:(int)arg1;

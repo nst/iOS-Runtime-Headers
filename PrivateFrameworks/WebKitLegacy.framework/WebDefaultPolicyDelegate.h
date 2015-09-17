@@ -2,7 +2,12 @@
    Image: /System/Library/PrivateFrameworks/WebKitLegacy.framework/WebKitLegacy
  */
 
-@interface WebDefaultPolicyDelegate : NSObject
+@interface WebDefaultPolicyDelegate : NSObject <WebPolicyDelegate>
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (id)sharedPolicyDelegate;
 

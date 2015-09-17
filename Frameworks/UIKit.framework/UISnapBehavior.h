@@ -21,7 +21,11 @@
 }
 
 @property (nonatomic) float damping;
+@property (nonatomic) struct CGPoint { float x1; float x2; } snapPoint;
 
++ (BOOL)_isPrimitiveBehavior;
+
+- (void).cxx_destruct;
 - (void)_associate;
 - (void)_dissociate;
 - (float)_distance;
@@ -29,10 +33,11 @@
 - (void)_setDistance:(float)arg1;
 - (void)_setFrequency:(float)arg1;
 - (float)damping;
-- (void)dealloc;
 - (id)description;
 - (id)init;
 - (id)initWithItem:(id)arg1 snapToPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)setDamping:(float)arg1;
+- (void)setSnapPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (struct CGPoint { float x1; float x2; })snapPoint;
 
 @end

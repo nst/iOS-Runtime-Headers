@@ -4,7 +4,6 @@
 
 @interface SCNAction : NSObject <NSCopying, NSSecureCoding> {
     struct SCNCAction { int (**x1)(); float x2; id /* block */ x3; id x4; double x5; double x6; float x7; float x8; double x9; bool x10; bool x11; id /* block */ x12; struct __CFString {} *x13; int x14; float x15; float x16; float x17; float x18; } *_caction;
-    id _reserved;
 }
 
 @property (nonatomic) double duration;
@@ -12,18 +11,21 @@
 @property (nonatomic) id /* block */ timingFunction;
 @property (nonatomic) int timingMode;
 
-+ (id)SCNJSExportProtocol;
++ (id)actionNamed:(id)arg1;
 + (id)customActionWithDuration:(double)arg1 actionBlock:(id /* block */)arg2;
++ (BOOL)editingModeEnabled;
 + (id)fadeInWithDuration:(double)arg1;
 + (id)fadeOpacityBy:(float)arg1 duration:(double)arg2;
 + (id)fadeOpacityTo:(float)arg1 duration:(double)arg2;
 + (id)fadeOutWithDuration:(double)arg1;
 + (id)group:(id)arg1;
++ (id)hide;
 + (id)javaScriptActionWithScript:(id)arg1 duration:(double)arg2;
 + (id)moveBy:(struct SCNVector3 { float x1; float x2; float x3; })arg1 duration:(double)arg2;
 + (id)moveByX:(float)arg1 y:(float)arg2 z:(float)arg3 duration:(double)arg4;
 + (id)moveTo:(struct SCNVector3 { float x1; float x2; float x3; })arg1 duration:(double)arg2;
 + (id)performSelector:(SEL)arg1 onTarget:(id)arg2;
++ (id)playAudioSource:(id)arg1 waitForCompletion:(BOOL)arg2;
 + (id)removeFromParentNode;
 + (id)repeatAction:(id)arg1 count:(unsigned int)arg2;
 + (id)repeatActionForever:(id)arg1;
@@ -38,7 +40,9 @@
 + (id)scaleBy:(float)arg1 duration:(double)arg2;
 + (id)scaleTo:(float)arg1 duration:(double)arg2;
 + (id)sequence:(id)arg1;
++ (void)setEditingModeEnabled:(BOOL)arg1;
 + (BOOL)supportsSecureCoding;
++ (id)unhide;
 + (id)waitForDuration:(double)arg1;
 + (id)waitForDuration:(double)arg1 withRange:(double)arg2;
 
@@ -53,6 +57,8 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCustom;
+- (BOOL)isRelative;
+- (id)parameters;
 - (float)ratioForTime:(double)arg1;
 - (id)reversedAction;
 - (void)setCompletionBlock:(id /* block */)arg1;

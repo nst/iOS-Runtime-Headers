@@ -28,8 +28,9 @@
 - (void)calloutToServer:(id /* block */)arg1;
 - (BOOL)canPerformMigration;
 - (BOOL)checkResponds:(BOOL)arg1 forSelector:(SEL)arg2;
-- (void)clearedInfoAndBulletinsForClearingAllBulletinsWithLimit:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
 - (void)clearedInfoForBulletins:(id)arg1 lastClearedInfo:(id)arg2 completion:(id /* block */)arg3;
+- (void)clearedInfoForClearingAllBulletinsWithLastClearedInfo:(id)arg1 completion:(id /* block */)arg2;
+- (void)clearedInfoForClearingBulletinsFromDate:(id)arg1 toDate:(id)arg2 lastClearedInfo:(id)arg3 completion:(id /* block */)arg4;
 - (void)dataProviderDidLoad;
 - (void)dealloc;
 - (id)debugDescription;
@@ -51,7 +52,6 @@
 - (void)setClearedInfo:(id)arg1;
 - (void)setClientProxy:(id)arg1 completion:(id /* block */)arg2;
 - (void)setSectionInfo:(id)arg1;
-- (void)setSectionInfo:(id)arg1 inCategory:(int)arg2;
 - (void)setServerIsReady:(BOOL)arg1;
 - (void)startWatchdog;
 - (void)updateClearedInfoWithClearedInfo:(id)arg1 handler:(id /* block */)arg2 completion:(id /* block */)arg3;

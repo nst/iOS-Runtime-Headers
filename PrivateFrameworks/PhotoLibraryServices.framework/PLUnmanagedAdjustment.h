@@ -19,4 +19,6 @@
 + (id)addUnmanagedAdjustmentFromAdjustmentFileAtPath:(id)arg1 withAsset:(id)arg2;
 + (id)addUnmanagedAdjustmentFromXMPDataIfNeededForAsset:(id)arg1;
 
+- (void)willSave;
+
 @end

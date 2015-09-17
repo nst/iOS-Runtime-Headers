@@ -22,6 +22,7 @@
 - (double)customScaleY;
 - (BOOL)customVerticalFlip;
 - (void)dealloc;
+- (id)description;
 - (id)layoutTypeId;
 - (id)presentationAssociatedId;
 - (id)presentationName;

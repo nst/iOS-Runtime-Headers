@@ -44,6 +44,8 @@
 - (double)contentDurationWithinEndTimes;
 - (id)currentAudioMediaSelectionOption;
 - (id)currentLegibleMediaSelectionOption;
+- (double)currentTime;
+- (double)currentTimeWithinEndTimes;
 - (void)decreaseVolume:(id)arg1;
 - (void)endScanningBackward:(id)arg1;
 - (void)endScanningForward:(id)arg1;
@@ -64,8 +66,13 @@
 - (BOOL)hasTrimmableContent;
 - (void)increaseVolume:(id)arg1;
 - (id)initWithPlayer:(id)arg1;
+- (BOOL)isAtMaxTime;
+- (BOOL)isAtMinTime;
+- (BOOL)isCompatibleWithAirPlayVideo;
 - (BOOL)isExternalPlaybackActive;
 - (BOOL)isLooping;
+- (BOOL)isPictureInPictureInterrupted;
+- (BOOL)isPictureInPicturePossible;
 - (BOOL)isPlaying;
 - (BOOL)isPlayingOnExternalScreen;
 - (BOOL)isPlayingOnSecondScreen;
@@ -73,6 +80,7 @@
 - (id)legibleMediaSelectionOptions;
 - (id)loadedTimeRanges;
 - (double)maxTime;
+- (id)mediaSelectionGroupForMediaCharacteristic:(id)arg1;
 - (id)metadata;
 - (double)minTime;
 - (void)pause:(id)arg1;
@@ -102,9 +110,11 @@
 - (void)setLooping:(BOOL)arg1;
 - (void)setMaxTime:(double)arg1;
 - (void)setMinTime:(double)arg1;
+- (void)setPictureInPictureInterrupted:(BOOL)arg1;
 - (void)setPlaying:(BOOL)arg1;
 - (void)setPlayingOnSecondScreen:(BOOL)arg1;
 - (void)setRate:(double)arg1;
+- (void)setRateWithForce:(double)arg1;
 - (void)setRateWithThrottling:(double)arg1;
 - (void)setVolume:(double)arg1;
 - (void)skipBackwardThirtySeconds:(id)arg1;
@@ -112,6 +122,7 @@
 - (id)timing;
 - (void)toggleMuted:(id)arg1;
 - (void)togglePlayback:(id)arg1;
+- (void)togglePlaybackEvenWhenInBackground:(id)arg1;
 - (double)volume;
 
 @end

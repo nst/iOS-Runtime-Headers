@@ -22,9 +22,10 @@
 + (id)resolverWithDelegate:(id)arg1;
 
 - (void)_registerForPublicationNotification;
+- (void)_registerServiceName:(id)arg1 appBundleID:(id)arg2 completion:(id /* block */)arg3;
 - (id)dataProviderForSectionID:(id)arg1;
 - (id)dataProviderForUniversalSectionID:(id)arg1;
-- (void)dataProviderStore:(id)arg1 didAddDataProvider:(id)arg2 completion:(id /* block */)arg3;
+- (void)dataProviderStore:(id)arg1 didAddDataProvider:(id)arg2 performMigration:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)dataProviderStore:(id)arg1 didAddParentSectionFactory:(id)arg2;
 - (void)dataProviderStore:(id)arg1 didRemoveDataProvider:(id)arg2;
 - (void)dealloc;

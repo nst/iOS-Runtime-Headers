@@ -11,13 +11,17 @@
 @property (nonatomic, readonly, retain) NSString *enclosureColor;
 @property (nonatomic, readonly, retain) NSArray *identities;
 @property (nonatomic, readonly) BOOL isDefaultPairedDevice;
+@property (nonatomic, readonly) BOOL isHSATrusted;
 @property (nonatomic, readonly, retain) NSDate *lastActivityDate;
 @property (nonatomic, readonly, retain) NSArray *linkedUserURIs;
 @property (nonatomic, readonly) BOOL locallyPresent;
+@property (nonatomic, readonly) unsigned int maxCompatibilityVersion;
+@property (nonatomic, readonly) unsigned int minCompatibilityVersion;
 @property (nonatomic, readonly, retain) NSString *modelIdentifier;
 @property (nonatomic, readonly, retain) NSString *name;
 @property (getter=isNearby, nonatomic, readonly) BOOL nearby;
 @property (setter=setNSUUID:, nonatomic, retain) NSUUID *nsuuid;
+@property (nonatomic, readonly) struct { int x1; int x2; int x3; } operatingSystemVersion;
 @property (nonatomic, readonly) unsigned int pairingProtocolVersion;
 @property (nonatomic, readonly) NSString *productBuildVersion;
 @property (nonatomic, readonly) NSString *productName;
@@ -31,6 +35,7 @@
 @property (nonatomic, readonly) BOOL supportsTethering;
 @property (nonatomic, readonly) BOOL supportsiCloudPairing;
 @property (nonatomic, readonly, retain) NSString *uniqueID;
+@property (nonatomic, readonly, retain) NSString *uniqueIDOverride;
 
 // Image: /System/Library/PrivateFrameworks/IDS.framework/IDS
 
@@ -52,16 +57,20 @@
 - (BOOL)isConnected;
 - (BOOL)isDefaultLocalDevice;
 - (BOOL)isDefaultPairedDevice;
+- (BOOL)isHSATrusted;
 - (BOOL)isNearby;
 - (id)lastActivityDate;
 - (id)linkedUserURIs;
 - (BOOL)locallyPresent;
+- (unsigned int)maxCompatibilityVersion;
+- (unsigned int)minCompatibilityVersion;
 - (id)modelIdentifier;
 - (id)name;
 - (id)nsuuid;
 - (int)openSocketForDomain:(id)arg1;
 - (int)openSocketForDomain:(id)arg1 transportType:(int)arg2;
 - (void)openSocketWithOptions:(id)arg1 completionHandler:(id /* block */)arg2 onQueue:(id)arg3;
+- (struct { int x1; int x2; int x3; })operatingSystemVersion;
 - (unsigned int)pairingProtocolVersion;
 - (id)productBuildVersion;
 - (id)productName;
@@ -77,6 +86,7 @@
 - (BOOL)supportsTethering;
 - (BOOL)supportsiCloudPairing;
 - (id)uniqueID;
+- (id)uniqueIDOverride;
 
 // Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
 

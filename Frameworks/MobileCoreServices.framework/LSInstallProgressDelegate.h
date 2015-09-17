@@ -3,6 +3,7 @@
  */
 
 @interface LSInstallProgressDelegate : NSObject <LSInstallProgressProtocol, NSXPCListenerDelegate> {
+    NSObject<OS_dispatch_queue> *_databaseQueue;
     NSMutableSet *_inactiveInstalls;
     NSObject<OS_dispatch_queue> *_installControlsQueue;
     NSMutableDictionary *_installIndexes;
@@ -29,7 +30,7 @@
 - (void)dealloc;
 - (void)endObservingConnection;
 - (void)handleCancelInstallationForApp:(id)arg1;
-- (id)init;
+- (id)initWithQueue:(id)arg1;
 - (void)installationEndedForApplication:(id)arg1;
 - (void)installationFailedForApplication:(id)arg1 reply:(id /* block */)arg2;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;

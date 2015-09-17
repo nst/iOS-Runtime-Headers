@@ -6,12 +6,12 @@
 @required
 
 - (void)registerDelegate:(id <FBSSceneUpdaterDelegate>)arg1 forSceneID:(NSString *)arg2;
-- (void)scene:(FBSScene *)arg1 didAttachContext:(FBSSceneContext *)arg2;
-- (void)scene:(FBSScene *)arg1 didDetachContext:(FBSSceneContext *)arg2;
+- (void)scene:(FBSScene *)arg1 didAttachLayer:(FBSSceneLayer *)arg2;
+- (void)scene:(FBSScene *)arg1 didDetachLayer:(FBSSceneLayer *)arg2;
 - (void)scene:(FBSScene *)arg1 didReceiveActions:(NSSet *)arg2;
-- (void)scene:(FBSScene *)arg1 didReceiveUpdateToContext:(FBSSceneContext *)arg2;
 - (void)scene:(FBSScene *)arg1 didUpdateClientSettings:(FBSSceneClientSettings *)arg2 withDiff:(FBSSceneClientSettingsDiff *)arg3 transitionContext:(FBSSceneTransitionContext *)arg4;
+- (void)scene:(FBSScene *)arg1 didUpdateLayer:(FBSSceneLayer *)arg2;
 - (void)unregisterDelegateForSceneID:(NSString *)arg1;
-- (BOOL)willObserveContextsManually;
+- (BOOL)willObserveLayersManually;
 
 @end

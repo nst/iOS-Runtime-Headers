@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Metal.framework/Metal
  */
 
-@interface MTLTextureArgument : MTLArgument {
+@interface MTLTextureArgument : MTLArgumentInternal {
     unsigned short _textureDataType;
     unsigned short _textureType;
 }

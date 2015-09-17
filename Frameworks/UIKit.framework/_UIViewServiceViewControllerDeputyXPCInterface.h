@@ -14,10 +14,10 @@
 
 + (id)interfaceWithExportedInterface:(id)arg1 remoteViewControllerInterface:(id)arg2;
 
+- (void).cxx_destruct;
 - (id)connectionInvocation;
 - (id)connectionProtocol;
 - (SEL)connectionSelector;
-- (void)dealloc;
 - (id)exportedInterface;
 - (id)hostObjectInterface;
 

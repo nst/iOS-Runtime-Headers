@@ -3,19 +3,17 @@
  */
 
 @interface AVAssetWriterFinishWritingHelper : AVAssetWriterHelper {
-    <AVAssetWriterFinishWritingHelperDelegate> *_delegate;
-    struct OpaqueFigAssetWriter { } *_figAssetWriter;
-    NSObject<OS_dispatch_queue> *_figAssetWriterAccessQueue;
-    AVWeakReference *_weakReferenceToSelf;
+    NSArray *_finishWritingOperations;
+    NSOperation *_transitionToTerminalStatusOperation;
 }
 
-- (struct OpaqueFigAssetWriter { }*)_retainedFigAssetWriter;
+@property (nonatomic, readonly) NSOperation *transitionToTerminalStatusOperation;
+
+- (void)_finishWritingOperationsDidFinish;
 - (void)cancelWriting;
 - (void)dealloc;
-- (void)finalize;
-- (void)finishOperationCompletedSuccessfully:(BOOL)arg1 withError:(id)arg2;
-- (id)initWithConfigurationState:(id)arg1 figAssetWriter:(struct OpaqueFigAssetWriter { }*)arg2 delegate:(id)arg3;
-- (void)performFinishOperation;
+- (id)initWithConfigurationState:(id)arg1 finishWritingOperations:(id)arg2;
 - (int)status;
+- (id)transitionToTerminalStatusOperation;
 
 @end

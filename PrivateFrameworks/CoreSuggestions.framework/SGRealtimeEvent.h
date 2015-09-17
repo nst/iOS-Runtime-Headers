@@ -5,18 +5,25 @@
 @interface SGRealtimeEvent : NSObject <NSCopying, NSSecureCoding> {
     SGEvent *_event;
     NSString *_eventIdentifier;
+    BOOL _isHarvested;
     int _state;
 }
 
 @property (nonatomic, readonly) SGEvent *event;
 @property (nonatomic, readonly) NSString *eventIdentifier;
+@property (nonatomic, readonly) BOOL isHarvested;
 @property (nonatomic, readonly) int state;
 
 + (id)realtimeEventForCanceledEvent:(id)arg1 eventIdentifier:(id)arg2;
-+ (id)realtimeEventForDuplicateEvent:(id)arg1;
++ (id)realtimeEventForCanceledEvent:(id)arg1 eventIdentifier:(id)arg2 harvested:(BOOL)arg3;
++ (id)realtimeEventForDuplicateEvent:(id)arg1 eventIdentifier:(id)arg2;
++ (id)realtimeEventForDuplicateEvent:(id)arg1 eventIdentifier:(id)arg2 harvested:(BOOL)arg3;
 + (id)realtimeEventForNearDuplicateEvent:(id)arg1;
++ (id)realtimeEventForNearDuplicateEvent:(id)arg1 harvested:(BOOL)arg2;
 + (id)realtimeEventForNewEvent:(id)arg1;
++ (id)realtimeEventForNewEvent:(id)arg1 harvested:(BOOL)arg2;
 + (id)realtimeEventUpdateToEvent:(id)arg1 withNewValues:(id)arg2;
++ (id)realtimeEventUpdateToEvent:(id)arg1 withNewValues:(id)arg2 harvested:(BOOL)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -27,9 +34,10 @@
 - (id)eventIdentifier;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithState:(int)arg1 event:(id)arg2 eventIdentifier:(id)arg3;
+- (id)initWithState:(int)arg1 event:(id)arg2 eventIdentifier:(id)arg3 harvested:(BOOL)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToRealtimeEvent:(id)arg1;
+- (BOOL)isHarvested;
 - (int)state;
 
 @end

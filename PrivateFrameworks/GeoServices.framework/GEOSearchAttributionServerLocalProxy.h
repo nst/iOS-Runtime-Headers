@@ -3,6 +3,8 @@
  */
 
 @interface GEOSearchAttributionServerLocalProxy : NSObject <GEOSearchAttributionServerProxy> {
+    GEOSearchAttributionManifest *_attributionManifest;
+    NSLock *_attributionManifestLock;
     NSMapTable *_listeners;
     NSMutableArray *_updateManifestCompletionHandlers;
     NSMutableArray *_updateManifestErrorHandlers;
@@ -14,6 +16,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (id)_attributionManifest;
 - (void)_loadAttributionInfoForListener:(id)arg1 hasUpdatedManifest:(BOOL)arg2;
 - (void)_pruneOldAttributionLogos;
 - (void)_sendError:(id)arg1 toListener:(id)arg2;

@@ -30,10 +30,10 @@
 - (void)_queue_handleTransactionBookEnd;
 - (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2;
 - (void)_queue_sendMessage:(int)arg1 withEvent:(id)arg2 withResponseEvent:(id /* block */)arg3 ofType:(Class)arg4;
-- (void)_queue_sendReplyForMessage:(id)arg1 withEvent:(id)arg2;
+- (void)_queue_sendMessageReply:(id)arg1 withEvent:(id)arg2;
 - (id)_queue_workspaceEventFromMessage:(id)arg1 ofType:(Class)arg2;
 - (void)_sendMessage:(int)arg1 withEvent:(id)arg2;
-- (void)_sendReplyForMessage:(id)arg1 withEvent:(id)arg2;
+- (void)_sendMessageReply:(id)arg1 withEvent:(id)arg2;
 - (id)callOutQueue;
 - (void)dealloc;
 - (id)delegate;
@@ -45,14 +45,14 @@
 - (void)queue_handleMessage:(id)arg1;
 - (BOOL)queue_handleMessageWithType:(long long)arg1 message:(id)arg2 client:(id)arg3;
 - (void)registerDelegate:(id)arg1 forSceneID:(id)arg2;
-- (void)scene:(id)arg1 didAttachContext:(id)arg2;
-- (void)scene:(id)arg1 didDetachContext:(id)arg2;
+- (void)scene:(id)arg1 didAttachLayer:(id)arg2;
+- (void)scene:(id)arg1 didDetachLayer:(id)arg2;
 - (void)scene:(id)arg1 didReceiveActions:(id)arg2;
-- (void)scene:(id)arg1 didReceiveUpdateToContext:(id)arg2;
 - (void)scene:(id)arg1 didUpdateClientSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4;
+- (void)scene:(id)arg1 didUpdateLayer:(id)arg2;
 - (void)sendCreateSceneRequestEvent:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)sendDestroySceneRequestEvent:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)unregisterDelegateForSceneID:(id)arg1;
-- (BOOL)willObserveContextsManually;
+- (BOOL)willObserveLayersManually;
 
 @end

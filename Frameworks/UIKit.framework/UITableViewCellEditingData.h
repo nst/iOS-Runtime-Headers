@@ -12,7 +12,9 @@
 }
 
 @property (getter=isDataRequired, nonatomic, readonly) BOOL dataRequired;
+@property (nonatomic, readonly) BOOL wantsMaskingWhileAnimatingDisabled;
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (id)deleteConfirmationControl:(BOOL)arg1;
 - (id)editControl:(BOOL)arg1;
@@ -20,5 +22,6 @@
 - (BOOL)isDataRequired;
 - (id)reorderControl:(BOOL)arg1;
 - (id)reorderSeparatorView:(BOOL)arg1;
+- (BOOL)wantsMaskingWhileAnimatingDisabled;
 
 @end

@@ -23,7 +23,6 @@
 @property (nonatomic) float jumpSpeed;
 @property (nonatomic) float velocity;
 
-- (id).cxx_construct;
 - (void)_addToPhysicsWorld:(id)arg1;
 - (void)_handleCreateIfNeeded:(BOOL)arg1;
 - (void)_update;

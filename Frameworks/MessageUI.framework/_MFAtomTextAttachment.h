@@ -4,7 +4,6 @@
 
 @interface _MFAtomTextAttachment : NSTextAttachment {
     MFModernComposeRecipientAtom *_atomView;
-    NSAttributedString *_attributedString;
     BOOL _isPlaceholder;
 }
 

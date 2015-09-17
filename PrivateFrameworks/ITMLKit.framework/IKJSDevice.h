@@ -2,31 +2,36 @@
    Image: /System/Library/PrivateFrameworks/ITMLKit.framework/ITMLKit
  */
 
-@interface IKJSDevice : IKJSObject <IKJSDevice> {
+@interface IKJSDevice : IKJSObject <IKJSDevice, JSExport> {
     <IKAppDeviceConfig> *_deviceConfig;
     id _isNetworkTypeChangedToken;
 }
 
+@property (nonatomic, readonly) NSString *advertisingIdentifier;
 @property (nonatomic, readonly) NSString *appIdentifier;
 @property (nonatomic, readonly) NSString *appVersion;
 @property (nonatomic) <IKAppDeviceConfig> *deviceConfig;
+@property (nonatomic, readonly) BOOL isAdvertisingTrackingEnabled;
 @property (nonatomic, readonly) BOOL isInRetailDemoMode;
 @property (nonatomic, readonly) NSString *model;
 @property (nonatomic, readonly) NSNumber *pixelRatio;
 @property (nonatomic, readonly) NSString *productType;
 @property (nonatomic, readonly) NSString *systemVersion;
 @property (nonatomic, readonly) NSString *vendorID;
+@property (nonatomic, readonly) NSString *vendorIdentifier;
 
 + (id)getMobileGestaltString:(struct __CFString { }*)arg1;
 
 - (void).cxx_destruct;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
+- (id)advertisingIdentifier;
 - (id)appIdentifier;
 - (id)appVersion;
 - (id)capacity:(id)arg1;
 - (void)dealloc;
 - (id)deviceConfig;
 - (id)initWithAppContext:(id)arg1 deviceConfig:(id)arg2;
+- (BOOL)isAdvertisingTrackingEnabled;
 - (BOOL)isInRetailDemoMode;
 - (id)model;
 - (id)pixelRatio;
@@ -34,5 +39,6 @@
 - (void)setDeviceConfig:(id)arg1;
 - (id)systemVersion;
 - (id)vendorID;
+- (id)vendorIdentifier;
 
 @end

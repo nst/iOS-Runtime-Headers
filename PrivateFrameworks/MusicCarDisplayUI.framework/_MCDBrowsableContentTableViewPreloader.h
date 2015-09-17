@@ -2,41 +2,38 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface _MCDBrowsableContentTableViewPreloader : NSObject <MCDBrowsableContentModelListener> {
+@interface _MCDBrowsableContentTableViewPreloader : NSObject {
     BOOL _cancelled;
     id /* block */ _cancelledBlock;
+    MCDPCContainer *_container;
+    int _index;
     NSIndexPath *_indexPath;
-    MCDBrowsableContentModel *_model;
-    UINavigationController *_navigationController;
-    BOOL _pushContainerWhenNil;
-    BOOL _pushNowPlayingWhenNil;
+    MCDPCItem *_item;
     UIViewController *_sourceViewController;
 }
 
 @property (getter=isCancelled, nonatomic) BOOL cancelled;
 @property (nonatomic, readonly, copy) id /* block */ cancelledBlock;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MCDPCContainer *container;
+@property (nonatomic, readonly) int index;
 @property (nonatomic, readonly) NSIndexPath *indexPath;
-@property (nonatomic, readonly) MCDBrowsableContentModel *model;
-@property (nonatomic, readonly) UINavigationController *navigationController;
+@property (nonatomic, readonly) MCDPCItem *item;
 @property (nonatomic, readonly) UIViewController *sourceViewController;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_deregister;
+- (void)_loadContainerAndPush;
+- (void)_pushToPlayback:(id)arg1;
 - (id /* block */)cancelledBlock;
+- (id)container;
 - (void)dealloc;
+- (id)description;
+- (int)index;
 - (id)indexPath;
-- (id)initWithModel:(id)arg1 indexPath:(id)arg2 sourceViewController:(id)arg3 navigationController:(id)arg4 cancelledBlock:(id /* block */)arg5;
+- (id)initWithContainer:(id)arg1 index:(int)arg2 sourceViewController:(id)arg3 cancelledBlock:(id /* block */)arg4;
 - (BOOL)isCancelled;
+- (id)item;
 - (void)loadAndPush;
-- (id)model;
-- (void)model:(id)arg1 didInitiatePlaybackOfItemAtIndexPath:(id)arg2 error:(id)arg3;
-- (void)model:(id)arg1 didUpdateContainerAtIndexPath:(id)arg2;
-- (void)model:(id)arg1 didUpdateContentItemsAtIndexPaths:(id)arg2;
-- (id)navigationController;
 - (void)setCancelled:(BOOL)arg1;
 - (id)sourceViewController;
 

@@ -9,4 +9,8 @@
 - (void)composeSubjectViewTextFieldDidBecomeFirstResponder:(MFComposeSubjectView *)arg1;
 - (void)composeSubjectViewTextFieldDidResignFirstResponder:(MFComposeSubjectView *)arg1;
 
+@optional
+
+- (void)composeSubjectViewDidRemoveContent:(MFComposeSubjectView *)arg1;
+
 @end

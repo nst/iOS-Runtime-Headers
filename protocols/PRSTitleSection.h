@@ -8,9 +8,4 @@
 - (void)setTitle:(NSString *)arg1;
 - (NSString *)title;
 
-@optional
-
-- (void)setSubtitle:(NSString *)arg1;
-- (NSString *)subtitle;
-
 @end

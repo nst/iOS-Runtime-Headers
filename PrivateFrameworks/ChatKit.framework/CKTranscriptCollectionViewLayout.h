@@ -73,6 +73,7 @@
 - (void)prepareLayout;
 - (void)prepareLayoutForRotisserieScrolling;
 - (double)prevTimestamp;
+- (void)reduceMotionSettingChanged;
 - (void)reloadData;
 - (void)setAnchorYPosition:(float)arg1;
 - (void)setContentSize:(struct CGSize { float x1; float x2; })arg1;

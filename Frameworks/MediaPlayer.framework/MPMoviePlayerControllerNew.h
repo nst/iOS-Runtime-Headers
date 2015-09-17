@@ -40,6 +40,7 @@
     int _repeatMode;
     BOOL _setUseApplicationAudioSessionWhenPlaybackEnds;
     BOOL _shouldAutoplay;
+    BOOL _shouldIgnoreItemChange;
     BOOL _shouldRestartPlaybackFromBeginning;
     int _stateBeforeSettingPlaybackTime;
     double _timeWhenResignedActive;
@@ -73,9 +74,11 @@
 - (id)_delegate;
 - (void)_didBecomeActiveNotification:(id)arg1;
 - (BOOL)_didPostFinishNotificationForReason:(int)arg1;
+- (void)_endPlayback;
 - (void)_endUsingVideoLayer;
 - (void)_ensureActive;
 - (void)_firstVideoFrameDisplayedNotification:(id)arg1;
+- (void)_handlePlaybackEnd;
 - (id)_hostedWindow;
 - (unsigned int)_hostedWindowContextID;
 - (void)_isExternalPlaybackActiveDidChangeNotification:(id)arg1;

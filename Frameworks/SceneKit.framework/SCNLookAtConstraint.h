@@ -4,14 +4,12 @@
 
 @interface SCNLookAtConstraint : SCNConstraint {
     BOOL _gimbalLockEnabled;
-    id _reserved;
     SCNNode *_target;
 }
 
 @property (nonatomic) BOOL gimbalLockEnabled;
 @property (nonatomic, readonly) SCNNode *target;
 
-+ (id)SCNJSExportProtocol;
 + (id)lookAtConstraintWithTarget:(id)arg1;
 + (BOOL)supportsSecureCoding;
 

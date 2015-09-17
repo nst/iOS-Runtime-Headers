@@ -9,6 +9,7 @@
     NSDictionary *_desiredPackageFileIndices;
     BOOL _isFetchCurrentUserOperation;
     NSArray *_recordIDs;
+    NSDictionary *_recordIDsToETags;
     NSDictionary *_recordIDsToVersionETags;
     unsigned int _requestedTTL;
     BOOL _shouldFetchAssetContent;
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) NSDictionary *desiredPackageFileIndices;
 @property (nonatomic) BOOL isFetchCurrentUserOperation;
 @property (nonatomic, retain) NSArray *recordIDs;
+@property (nonatomic, retain) NSDictionary *recordIDsToETags;
 @property (nonatomic, retain) NSDictionary *recordIDsToVersionETags;
 @property (nonatomic) unsigned int requestedTTL;
 @property (nonatomic) BOOL shouldFetchAssetContent;
@@ -39,6 +41,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isFetchCurrentUserOperation;
 - (id)recordIDs;
+- (id)recordIDsToETags;
 - (id)recordIDsToVersionETags;
 - (unsigned int)requestedTTL;
 - (void)setAssetFieldNamesToPublishURLs:(id)arg1;
@@ -46,6 +49,7 @@
 - (void)setDesiredPackageFileIndices:(id)arg1;
 - (void)setIsFetchCurrentUserOperation:(BOOL)arg1;
 - (void)setRecordIDs:(id)arg1;
+- (void)setRecordIDsToETags:(id)arg1;
 - (void)setRecordIDsToVersionETags:(id)arg1;
 - (void)setRequestedTTL:(unsigned int)arg1;
 - (void)setShouldFetchAssetContent:(BOOL)arg1;

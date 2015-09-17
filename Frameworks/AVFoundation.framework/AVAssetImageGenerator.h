@@ -15,6 +15,8 @@
 @property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } requestedTimeToleranceBefore;
 @property (nonatomic, copy) AVVideoComposition *videoComposition;
 
+// Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
+
 + (id)assetImageGeneratorWithAsset:(id)arg1;
 
 - (id)_NSErrorForError:(long)arg1;
@@ -49,5 +51,9 @@
 - (void)setRequestedTimeToleranceBefore:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoComposition:(id)arg1;
 - (id)videoComposition;
+
+// Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
+
+- (void)is_generateCGImagesAsynchronouslyForTimes:(id)arg1 completionHandler:(id /* block */)arg2;
 
 @end

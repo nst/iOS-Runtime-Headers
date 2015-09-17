@@ -5,12 +5,10 @@
 
 @required
 
-- (PRSImage *)icon;
 - (NSData *)maps_data;
 - (NSString *)maps_data_type;
 - (NSString *)maps_result_type;
 - (NSString *)section_header;
-- (void)setIcon:(PRSImage *)arg1;
 - (void)setMaps_data:(NSData *)arg1;
 - (void)setMaps_data_type:(NSString *)arg1;
 - (void)setMaps_result_type:(NSString *)arg1;
@@ -23,9 +21,11 @@
 @optional
 
 - (NSString *)card_title;
+- (PRSImage *)icon;
 - (NSString *)more;
 - (NSURL *)more_url;
 - (void)setCard_title:(NSString *)arg1;
+- (void)setIcon:(PRSImage *)arg1;
 - (void)setMore:(NSString *)arg1;
 - (void)setMore_url:(NSURL *)arg1;
 

@@ -9,10 +9,37 @@
 - (BOOL)executionEnabled;
 - (void)finish;
 - (BOOL)isProfilingEnabled;
+- (BOOL)setBackgroundGPUPriority:(unsigned int)arg1;
+- (BOOL)setBackgroundGPUPriority:(unsigned int)arg1 offset:(unsigned short)arg2;
 - (void)setBackgroundTrackingPID:(int)arg1;
+- (void)setCompletionQueue:(NSObject<OS_dispatch_queue> *)arg1;
 - (void)setExecutionEnabled:(BOOL)arg1;
+- (BOOL)setGPUPriority:(unsigned int)arg1;
+- (BOOL)setGPUPriority:(unsigned int)arg1 offset:(unsigned short)arg2;
 - (void)setProfilingEnabled:(BOOL)arg1;
 - (void)setSkipRender:(BOOL)arg1;
+- (void)setSubmissionQueue:(NSObject<OS_dispatch_queue> *)arg1;
 - (BOOL)skipRender;
+
+@optional
+
+- (unsigned long long)StatLocations;
+- (unsigned long long)StatOptions;
+- (void)addPerfSampleHandler:(void *)arg1; // needs 1 arg types, found 8: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <MTLCommandBuffer> *, NSData *, unsigned int, void*
+- (NSArray *)availableCounters;
+- (NSMutableDictionary *)counterInfo;
+- (NSArray *)getRequestedCounters;
+- (unsigned long long)getStatLocations;
+- (unsigned long long)getStatOptions;
+- (BOOL)isStatEnabled;
+- (unsigned int)numInternalSampleCounters;
+- (unsigned int)numRequestedCounters;
+- (int)requestCounters:(NSArray *)arg1;
+- (void)setCounterInfo:(NSMutableDictionary *)arg1;
+- (void)setNumInternalSampleCounters:(unsigned int)arg1;
+- (void)setNumRequestedCounters:(unsigned int)arg1;
+- (void)setStatEnabled:(BOOL)arg1;
+- (void)setStatLocations:(unsigned long long)arg1;
+- (void)setStatOptions:(unsigned long long)arg1;
 
 @end

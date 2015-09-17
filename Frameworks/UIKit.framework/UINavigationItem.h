@@ -65,11 +65,13 @@
 
 + (id)defaultFont;
 
+- (void).cxx_destruct;
 - (id)_abbreviatedBackButtonTitles;
 - (BOOL)_accumulateViewsFromItems:(id)arg1 isLeft:(BOOL)arg2 refreshViews:(BOOL)arg3;
 - (void)_addDefaultTitleViewToNavigationBarIfNecessary;
 - (id)_automationID;
 - (id)_backgroundImages;
+- (id)_barButtonForBackButtonIndicator;
 - (id)_buttonForBackButtonIndicator;
 - (void)_cleanupFrozenTitleView;
 - (id)_customLeftView;
@@ -141,7 +143,6 @@
 - (id)backBarButtonItem;
 - (id)backButtonTitle;
 - (id)backButtonView;
-- (id)context;
 - (id)currentBackButtonTitle;
 - (id)customLeftItem;
 - (id)customLeftView;
@@ -164,7 +165,6 @@
 - (id)rightBarButtonItems;
 - (void)setBackBarButtonItem:(id)arg1;
 - (void)setBackButtonTitle:(id)arg1;
-- (void)setContext:(id)arg1;
 - (void)setCustomLeftItem:(id)arg1;
 - (void)setCustomLeftItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setCustomLeftView:(id)arg1;
@@ -188,7 +188,6 @@
 - (void)setRightBarButtonItem:(id)arg1 animated:(BOOL)arg2;
 - (void)setRightBarButtonItems:(id)arg1;
 - (void)setRightBarButtonItems:(id)arg1 animated:(BOOL)arg2;
-- (void)setTag:(int)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setTitleView:(id)arg1;
 - (void)set_customLeftView:(id)arg1;
@@ -200,7 +199,6 @@
 - (void)set_rightBarButtonItem:(id)arg1;
 - (void)set_rightBarButtonItems:(id)arg1;
 - (void)set_titleViewWidthForAnimations:(float)arg1;
-- (int)tag;
 - (id)title;
 - (id)titleView;
 - (void)updateNavigationBarButtonsAnimated:(BOOL)arg1;

@@ -18,7 +18,7 @@
 
 + (id)replacementWithRange:(id)arg1 original:(id)arg2 replacement:(id)arg3 menuTitle:(id)arg4;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)menuTitle;
 - (id)originalText;
 - (id)range;

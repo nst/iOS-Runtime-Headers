@@ -20,6 +20,7 @@
     NSObject<OS_dispatch_queue> *_queue;
     <CPLResourceProgressDelegate> *_resourceProgressDelegate;
     NSObject<OS_dispatch_queue> *_sessionLock;
+    unsigned long long _sizeOfOriginalResourcesToUpload;
     unsigned long long _sizeOfResourcesToUpload;
     BOOL _sizeOfResourcesToUploadIsSet;
     unsigned int _state;
@@ -47,6 +48,7 @@
 @property (nonatomic, readonly) unsigned int numberOfVideosToUpload;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (nonatomic) <CPLResourceProgressDelegate> *resourceProgressDelegate;
+@property (nonatomic, readonly) unsigned long long sizeOfOriginalResourcesToUpload;
 @property (nonatomic, readonly) unsigned long long sizeOfResourcesToUpload;
 @property (nonatomic) unsigned int state;
 @property (nonatomic, readonly) unsigned int status;
@@ -65,7 +67,7 @@
 - (void)_getMappedIdentifiersForIdentifiers:(id)arg1 inAreLocalIdentifiers:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)_setCurrentSession:(id)arg1;
 - (void)_setLibraryVersion:(id)arg1;
-- (void)_setSizeOfResourcesToUpload:(unsigned long long)arg1 numberOfImages:(unsigned int)arg2 numberOfVideos:(unsigned int)arg3 numberOfOtherItems:(unsigned int)arg4;
+- (void)_setSizeOfResourcesToUpload:(unsigned long long)arg1 sizeOfOriginalResourcesToUpload:(unsigned long long)arg2 numberOfImages:(unsigned int)arg3 numberOfVideos:(unsigned int)arg4 numberOfOtherItems:(unsigned int)arg5;
 - (BOOL)_setStatus:(unsigned int)arg1 andError:(id)arg2;
 - (void)_statusDidChange;
 - (void)addInfoToLog:(id)arg1;
@@ -127,6 +129,7 @@
 - (void)setResourceProgressDelegate:(id)arg1;
 - (void)setState:(unsigned int)arg1;
 - (void)setUserOverride:(id)arg1;
+- (unsigned long long)sizeOfOriginalResourcesToUpload;
 - (unsigned long long)sizeOfResourcesToUpload;
 - (void)startSyncSession;
 - (unsigned int)state;

@@ -13,7 +13,6 @@
     BOOL _showResetToolButton;
     BOOL _simulateDownload;
     BOOL _simulateDownloadFailure;
-    BOOL _useOldPhotosEditor2;
 }
 
 @property (nonatomic) BOOL allowAnyPlugin;
@@ -26,7 +25,6 @@
 @property (nonatomic) BOOL showResetToolButton;
 @property (nonatomic) BOOL simulateDownload;
 @property (nonatomic) BOOL simulateDownloadFailure;
-@property (nonatomic) BOOL useOldPhotosEditor2;
 
 + (id)settingsControllerModule;
 + (id)sharedInstance;
@@ -48,11 +46,9 @@
 - (void)setShowResetToolButton:(BOOL)arg1;
 - (void)setSimulateDownload:(BOOL)arg1;
 - (void)setSimulateDownloadFailure:(BOOL)arg1;
-- (void)setUseOldPhotosEditor2:(BOOL)arg1;
 - (BOOL)showLevelIndicator;
 - (BOOL)showResetToolButton;
 - (BOOL)simulateDownload;
 - (BOOL)simulateDownloadFailure;
-- (BOOL)useOldPhotosEditor2;
 
 @end

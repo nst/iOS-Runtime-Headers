@@ -30,6 +30,7 @@
     UIRefreshControl *_refreshControl;
     int _refreshCounter;
     NSMutableSet *_selectedCalendars;
+    BOOL _showDefaultCalendarExplanatoryText;
     BOOL _showDetailAccessories;
     BOOL _showsDeclinedEventsSetting;
     NSMutableDictionary *_storeGroupMap;
@@ -59,6 +60,7 @@
 @property (nonatomic, retain) NSMutableSet *selectedCalendarSet;
 @property (nonatomic, copy) NSSet *selectedCalendars;
 @property (nonatomic) int selectionStyle;
+@property (nonatomic) BOOL showDefaultCalendarExplanatoryText;
 @property (nonatomic) BOOL showDetailAccessories;
 @property (nonatomic) BOOL showsCancelButton;
 @property (nonatomic) BOOL showsDeclinedEventsSetting;
@@ -101,6 +103,7 @@
 - (void)_syncCompletedGracePeriodExpired;
 - (void)_syncDidEnd;
 - (void)_syncDidStart;
+- (id)_tableHeaderView;
 - (BOOL)_tableShouldDisplayAllCalendarsSection;
 - (BOOL)_tableShouldDisplayAllCellForGroup:(id)arg1;
 - (BOOL)_tableShouldDisplayNewCalendarCellForGroup:(id)arg1;
@@ -162,6 +165,7 @@
 - (void)setSelectedCalendars:(id)arg1;
 - (void)setSelectionStyle:(int)arg1;
 - (void)setShowAll:(BOOL)arg1;
+- (void)setShowDefaultCalendarExplanatoryText:(BOOL)arg1;
 - (void)setShowDetailAccessories:(BOOL)arg1;
 - (void)setShowsCancelButton:(BOOL)arg1;
 - (void)setShowsDeclinedEventsSetting:(BOOL)arg1;
@@ -171,6 +175,7 @@
 - (void)setStoreGroupMap:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (void)setTableView:(id)arg1;
+- (BOOL)showDefaultCalendarExplanatoryText;
 - (BOOL)showDetailAccessories;
 - (BOOL)showsCancelButton;
 - (BOOL)showsDeclinedEventsSetting;

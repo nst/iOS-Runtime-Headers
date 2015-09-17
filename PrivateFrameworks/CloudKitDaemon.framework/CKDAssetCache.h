@@ -30,7 +30,7 @@
 @property (nonatomic, retain) NSString *packageUploadPath;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
-+ (id)_sharedCachesByBundleID;
++ (id)_sharedCachesByPath;
 + (id)_sharedCachesQueue;
 + (id)assetCacheWithApplicationBundleID:(id)arg1 dbPath:(id)arg2 fileDownloadPath:(id)arg3 packageDownloadPath:(id)arg4 packageUploadPath:(id)arg5 shouldEvictOnCreation:(BOOL)arg6;
 + (int)openFdForDownloadPath:(id)arg1 error:(id*)arg2;
@@ -59,14 +59,16 @@
 - (id)expiryTimer;
 - (id)fileDownloadPath;
 - (int)fileDownloadPathFd;
+- (id)findAssetHandleForItemID:(unsigned long long)arg1 error:(id*)arg2;
 - (id)initWithApplicationBundleID:(id)arg1 dbPath:(id)arg2 fileDownloadPath:(id)arg3 packageDownloadPath:(id)arg4 packageUploadPath:(id)arg5;
 - (BOOL)isEvictionScheduled;
 - (BOOL)isUnitTestingAccount;
-- (int)openFileDescriptorForItemID:(unsigned long long)arg1 itemType:(id*)arg2 error:(id*)arg3;
 - (id)packageDownloadPath;
 - (id)packageUploadPath;
 - (unsigned long long)predictedEvictedSizeForAllFilesForced:(BOOL)arg1;
 - (id)queue;
+- (void)scheduleAssetHandleDeletionForItemID:(unsigned long long)arg1 UUID:(id)arg2;
+- (void)scheduleAssetHandleLastUsedTimeUpdateForUUID:(id)arg1;
 - (void)setApplicationBundleID:(id)arg1;
 - (void)setDbPath:(id)arg1;
 - (void)setExpiryTimer:(id)arg1;

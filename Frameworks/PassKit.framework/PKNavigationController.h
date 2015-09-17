@@ -10,8 +10,7 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
-- (id)initWithRootViewController:(id)arg1;
-- (void)loadView;
+- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 
 @end

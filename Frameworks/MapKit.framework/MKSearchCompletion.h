@@ -5,9 +5,11 @@
 @interface MKSearchCompletion : NSObject {
     <GEOCompletionItem> *_item;
     NSString *_localizedSectionHeader;
+    MKMapItem *_mapItem;
     NSString *_sourceID;
 }
 
+@property (nonatomic, readonly) GEOSearchCategory *category;
 @property (nonatomic, readonly) NSArray *displayLines;
 @property (nonatomic, readonly) <GEOCompletionItem> *geoCompletionItem;
 @property (nonatomic, copy) NSString *localizedSectionHeader;
@@ -16,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)calloutTitle;
+- (id)category;
 - (id)copyStorage;
 - (id)description;
 - (id)displayLines;

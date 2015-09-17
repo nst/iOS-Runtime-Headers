@@ -6,20 +6,30 @@
     void *_priv;
 }
 
+@property (readonly) NSString *name;
+
 + (id)_getDictForSourceString:(id)arg1 dimensionality:(int*)arg2;
++ (id)betterString:(id)arg1;
++ (id)colorMatrixBiasKernel;
++ (id)hashForString:(id)arg1;
 + (id)kernelWithString:(id)arg1;
 + (id)kernelsWithString:(id)arg1;
++ (id)kernelsWithString:(id)arg1 messageLog:(id)arg2;
++ (id)modifiedKernelStringForFosl:(id)arg1;
++ (id)removeTableKeyword:(id)arg1;
 
-- (int)_argumentTypeAtIndex:(int)arg1;
+- (SEL)ROISelector;
+- (id)_initWithDict:(id)arg1;
+- (id)_initWithFirstKernelFromString:(id)arg1;
 - (id)_initWithInternalRepresentation:(void*)arg1;
-- (void*)_internalRepresentation;
-- (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 andArguments:(id)arg3;
 - (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 arguments:(id)arg3;
+- (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 arguments:(id)arg3 options:(id)arg4;
 - (id)applyWithExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 roiCallback:(id /* block */)arg2 cpuCallback:(id /* block */)arg3 colorManagement:(bool)arg4 andArguments:(id)arg5;
 - (id)description;
 - (id)init;
-- (id)initWithDict:(id)arg1;
 - (id)initWithString:(id)arg1;
 - (id)name;
+- (id)parameters;
+- (void)setROISelector:(SEL)arg1;
 
 @end

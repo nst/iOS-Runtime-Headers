@@ -14,6 +14,7 @@
 @property (nonatomic, readonly) NSString *artKey;
 @property (nonatomic, retain) NSArray *images;
 
+- (void).cxx_destruct;
 - (id)artKey;
 - (BOOL)beginContentAccess;
 - (void)dealloc;

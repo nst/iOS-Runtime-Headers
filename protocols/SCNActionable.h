@@ -6,6 +6,7 @@
 @required
 
 - (SCNAction *)actionForKey:(NSString *)arg1;
+- (NSArray *)actionKeys;
 - (BOOL)hasActions;
 - (void)removeActionForKey:(NSString *)arg1;
 - (void)removeAllActions;

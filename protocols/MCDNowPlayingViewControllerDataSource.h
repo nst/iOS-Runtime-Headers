@@ -15,7 +15,7 @@
 
 @optional
 
-- (NSString *)repeatStringForNowPlayingViewController:(MCDNowPlayingViewController *)arg1;
+- (BOOL)likedForNowPlayingViewController:(MCDNowPlayingViewController *)arg1;
 - (unsigned int)repeatTypeForNowPlayingViewController:(MCDNowPlayingViewController *)arg1;
 - (NSString *)shuffleStringForNowPlayingViewController:(MCDNowPlayingViewController *)arg1;
 - (unsigned int)shuffleTypeForNowPlayingViewController:(MCDNowPlayingViewController *)arg1;

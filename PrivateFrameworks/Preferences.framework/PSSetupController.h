@@ -8,8 +8,8 @@
     NSDictionary *_rootInfo;
 }
 
+- (void).cxx_destruct;
 - (id)controller;
-- (void)dealloc;
 - (void)dismiss;
 - (void)dismissAnimated:(BOOL)arg1;
 - (void)dismissAnimated:(BOOL)arg1 completion:(id /* block */)arg2;

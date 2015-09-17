@@ -5,6 +5,7 @@
 
 @required
 
+- (TSULocale *)locale;
 - (float)maxWidthForChildren;
 - (TSWPPadding *)padding;
 - (int)verticalAlignment;

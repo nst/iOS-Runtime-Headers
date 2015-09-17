@@ -2,8 +2,15 @@
    Image: /System/Library/PrivateFrameworks/PassKitCore.framework/PassKitCore
  */
 
-@interface PKPaymentDevicePassesRequest : PKPaymentWebServiceRequest
+@interface PKPaymentDevicePassesRequest : PKPaymentWebServiceRequest {
+    NSString *_updatedSince;
+}
 
-+ (id)requestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 updatedSinceTag:(id)arg3 account:(id)arg4;
+@property (nonatomic, copy) NSString *updatedSince;
+
+- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3;
+- (void)dealloc;
+- (void)setUpdatedSince:(id)arg1;
+- (id)updatedSince;
 
 @end

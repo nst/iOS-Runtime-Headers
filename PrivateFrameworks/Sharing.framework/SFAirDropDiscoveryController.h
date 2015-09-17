@@ -2,9 +2,9 @@
    Image: /System/Library/PrivateFrameworks/Sharing.framework/Sharing
  */
 
-@interface SFAirDropDiscoveryController : NSObject <UIActionSheetDelegate> {
-    UIActionSheet *_actionSheet;
-    id _actionSheetDelegate;
+@interface SFAirDropDiscoveryController : NSObject <SFWirelessSettingsControllerDelegate, UIActionSheetDelegate> {
+    UIAlertController *_alertController;
+    id _alertControllerDelegate;
     struct __SFOperation { } *_controller;
     id _delegate;
     int _discoverableMode;
@@ -12,9 +12,10 @@
     BOOL _isLegacyModeEnabled;
     BOOL _isLegacyModeSettable;
     BOOL _isVisible;
+    SFWirelessSettingsController *_settingsController;
 }
 
-@property <SFAirDropDiscoveryActionSheetDelegate> *actionSheetDelegate;
+@property <SFAirDropDiscoveryAlertControllerDelegate> *alertControllerDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property <SFAirDropDiscoveryControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -26,14 +27,11 @@
 @property (readonly) Class superclass;
 @property (getter=isVisible, readonly) BOOL visible;
 
-- (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 didDismissWithButtonIndex:(int)arg2;
-- (void)actionSheet:(id)arg1 willDismissWithButtonIndex:(int)arg2;
-- (id)actionSheetDelegate;
+- (id)alertControllerDelegate;
 - (void)dealloc;
 - (id)delegate;
 - (int)discoverableMode;
-- (id)discoverableModeActionSheet;
+- (id)discoverableModeAlertController;
 - (id)discoverableModeToString:(int)arg1;
 - (void)handleOperationCallback:(struct __SFOperation { }*)arg1 event:(long)arg2 withResults:(id)arg3;
 - (id)init;
@@ -42,9 +40,11 @@
 - (BOOL)isLegacyModeSettable;
 - (BOOL)isVisible;
 - (int)operationDiscoverableModeToInteger:(id)arg1;
-- (void)setActionSheetDelegate:(id)arg1;
+- (void)setAlertControllerDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiscoverableMode:(int)arg1;
 - (void)setLegacyModeEnabled:(BOOL)arg1;
+- (void)updateAlertControllerTitle;
+- (void)wirelessSettingsDidChange:(id)arg1;
 
 @end

@@ -3,11 +3,15 @@
  */
 
 @interface SGPipelineEntity : SGEntity {
+    NSData *_contentHash;
     struct __DDResult { } *_dataDetectorsSignature;
+    struct _opaque_pthread_mutex_t { 
+        long __sig; 
+        BOOL __opaque[40]; 
+    } _dissectorLock;
     NSMutableDictionary *_emailToCanonicalEmailCache;
     NSMutableArray *_enrichments;
     BOOL _fullDownloadRequested;
-    NSArray *_headers;
     unsigned int *_htmlOffsets;
     struct { 
         struct { 
@@ -20,6 +24,8 @@
         BOOL inhumanBody; 
         BOOL isTemplate; 
     } _inhumanFeatures;
+    SGSimpleMailMessage *_mailMessage;
+    BOOL _pendingGeocode;
     NSString *_plainTextContentCache;
     BOOL _plainTextContentCacheGenerated;
     struct _opaque_pthread_mutex_t { 
@@ -29,6 +35,7 @@
     NSArray *_plainTextDetectedData;
     NSArray *_plainTextLines;
     NSIndexSet *_plainTextQuotedRegions;
+    NSIndexSet *_plainTextSigHtmlBlockRegions;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -38,45 +45,50 @@
 
 @property (nonatomic, readonly) NSArray *addresses;
 @property (nonatomic, readonly) NSString *authorEmail;
+@property (nonatomic, retain) NSData *contentHash;
 @property (nonatomic) struct __DDResult { }*dataDetectorsSignature;
 @property (nonatomic, readonly) NSArray *emailAddresses;
 @property (nonatomic, readonly) NSMutableDictionary *emailToCanonicalEmailCache;
-@property (nonatomic, readonly) NSArray *enrichments;
+@property (nonatomic, retain) NSArray *enrichments;
 @property (getter=hasFullDownloadBeenRequested, readonly) BOOL fullDownloadRequested;
-@property (nonatomic, readonly) NSArray *headers;
 @property (nonatomic, readonly) unsigned int*htmlOffsets;
 @property (nonatomic, readonly) struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; } x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; }*inhumanFeatures;
+@property (nonatomic, readonly) SGSimpleMailMessage *mailMessage;
+@property (nonatomic) BOOL pendingGeocode;
 @property (nonatomic, readonly) NSArray *phoneNumbers;
 @property (nonatomic, readonly) NSString *plainTextContent;
 @property (nonatomic, retain) NSArray *plainTextDetectedData;
 @property (nonatomic, readonly) NSArray *plainTextLines;
 @property (nonatomic, retain) NSIndexSet *plainTextQuotedRegions;
+@property (nonatomic, retain) NSIndexSet *plainTextSigHtmlBlockRegions;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } plainTextSigRange;
 @property (nonatomic, retain) NSIndexSet *plainTextTabularRegions;
 
-+ (id)address:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5;
-+ (id)emailAddress:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5;
-+ (id)phoneNumber:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5;
++ (id)address:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5 contextRangeOfInterest:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 extractionType:(unsigned int)arg7;
++ (id)emailAddress:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5 contextRangeOfInterest:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 extractionType:(unsigned int)arg7;
++ (id)phoneNumber:(id)arg1 forIdentity:(id)arg2 parent:(id)arg3 curated:(BOOL)arg4 context:(id)arg5 contextRangeOfInterest:(struct _NSRange { unsigned int x1; unsigned int x2; })arg6 extractionType:(unsigned int)arg7;
 
 - (void).cxx_destruct;
+- (void)acquireDissectorLock;
 - (void)addCuratedEmailAddress:(id)arg1;
 - (void)addCuratedPhoneNumber:(id)arg1;
 - (void)addCuratedPostalAddress:(id)arg1;
-- (void)addDetectedEmailAddress:(id)arg1 forIdentity:(id)arg2 context:(id)arg3;
-- (void)addDetectedPhoneNumber:(id)arg1 forIdentity:(id)arg2 context:(id)arg3;
-- (void)addDetectedPostalAddress:(id)arg1 forIdentity:(id)arg2 context:(id)arg3;
-- (void)addDetection:(id)arg1 forIdentity:(id)arg2;
+- (void)addDetectedEmailAddress:(id)arg1 forIdentity:(id)arg2 context:(id)arg3 contextRangeOfInterest:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 extractionType:(unsigned int)arg5;
+- (void)addDetectedPhoneNumber:(id)arg1 forIdentity:(id)arg2 context:(id)arg3 contextRangeOfInterest:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 extractionType:(unsigned int)arg5;
+- (void)addDetectedPostalAddress:(id)arg1 forIdentity:(id)arg2 context:(id)arg3 contextRangeOfInterest:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 extractionType:(unsigned int)arg5;
+- (void)addDetection:(id)arg1 forIdentity:(id)arg2 extractionType:(unsigned int)arg3;
+- (void)addEmailAddressEnrichment:(id)arg1;
 - (void)addEnrichment:(id)arg1;
-- (void)addParticipant:(id)arg1 type:(unsigned int)arg2;
-- (void)addParticipants:(id)arg1 type:(unsigned int)arg2;
+- (void)addUnrecognizedLookupEmailAddress:(id)arg1;
+- (void)addUnrecognizedLookupPhoneNumber:(id)arg1;
 - (id)addresses;
 - (id)authorEmail;
 - (void)chopOffContentAfterIndex:(unsigned int)arg1;
 - (void)chopOffContentBeforeIndex:(unsigned int)arg1;
 - (id)contactDetailsWithType:(unsigned int)arg1;
+- (id)contentHash;
 - (struct __DDResult { }*)dataDetectorsSignature;
 - (void)dealloc;
-- (id)debugRegions;
 - (id)description;
 - (id)emailAddresses;
 - (id)emailToCanonicalEmailCache;
@@ -84,35 +96,43 @@
 - (void)enumeratePeople:(id /* block */)arg1;
 - (void)enumeratePlainTextLines:(id /* block */)arg1;
 - (BOOL)hasFullDownloadBeenRequested;
-- (id)headers;
 - (unsigned int*)htmlOffsets;
 - (struct { struct { unsigned short x_1_1_1; unsigned short x_1_1_2; } x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; BOOL x6; }*)inhumanFeatures;
 - (id)init;
-- (id)initPrivately;
-- (id)initWithContactDetailWithKey:(id)arg1 type:(unsigned int)arg2 curated:(BOOL)arg3 parent:(id)arg4 value:(id)arg5 context:(id)arg6;
-- (id)initWithCuratedContactWithABRecordID:(int)arg1 sourceKey:(id)arg2 name:(id)arg3 creationTimestamp:(id)arg4 lastModifiedTimestamp:(id)arg5 emailAddresses:(id)arg6 phoneNumbers:(id)arg7 postalAddresses:(id)arg8;
-- (id)initWithDuplicateKey:(id)arg1 title:(id)arg2;
+- (id)initWithContactDetailWithKey:(id)arg1 type:(unsigned int)arg2 extractionType:(unsigned int)arg3 curated:(BOOL)arg4 parent:(id)arg5 value:(id)arg6 context:(id)arg7 contextRangeOfInterest:(struct _NSRange { unsigned int x1; unsigned int x2; })arg8;
 - (id)initWithDuplicateKey:(id)arg1 title:(id)arg2 parent:(id)arg3;
 - (id)initWithEmailMessage:(id)arg1 fromSource:(id)arg2;
-- (id)initWithParent:(id)arg1;
 - (id)initWithPseudoContactWithKey:(id)arg1 parent:(id)arg2 name:(id)arg3;
-- (id)initWithSimpleCalendarEvent:(id)arg1 fromSource:(id)arg2;
-- (BOOL)isInhuman;
+- (id)initWithUnrecognizedContactWithKey:(id)arg1;
+- (BOOL)isEvent;
 - (BOOL)isPerson;
+- (id)mailMessage;
+- (BOOL)pendingGeocode;
 - (id)phoneNumbers;
 - (id)plainTextContent;
 - (id)plainTextDetectedData;
 - (id)plainTextLines;
 - (id)plainTextQuotedRegions;
+- (id)plainTextSigHtmlBlockRegions;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })plainTextSigRange;
 - (id)plainTextTabularRegions;
+- (void)releaseDissectorLock;
 - (void)requestFullDownload;
+- (void)setAuthor:(id)arg1;
+- (void)setContentHash:(id)arg1;
+- (void)setCreationTimestamp:(double)arg1;
 - (void)setDataDetectorsSignature:(struct __DDResult { }*)arg1;
+- (void)setEnrichments:(id)arg1;
+- (void)setLastModifiedTimestamp:(double)arg1;
+- (void)setPendingGeocode:(BOOL)arg1;
 - (void)setPlainTextDetectedData:(id)arg1;
-- (void)setPlainTextLines:(id)arg1 utf8Offsets:(id)arg2;
+- (void)setPlainTextLines:(id)arg1;
+- (void)setPlainTextLines:(id)arg1 utf8Offsets:(id)arg2 isAscii:(BOOL)arg3;
 - (void)setPlainTextQuotedRegions:(id)arg1;
+- (void)setPlainTextSigHtmlBlockRegions:(id)arg1;
 - (void)setPlainTextSigRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setPlainTextTabularRegions:(id)arg1;
-- (id)templateShortName;
+- (void)stripContactInformation;
+- (void)stripEventInformation;
 
 @end

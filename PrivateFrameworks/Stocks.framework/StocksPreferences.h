@@ -18,7 +18,6 @@
 
 - (void).cxx_destruct;
 - (BOOL)boolForKey:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (int)integerForKey:(id)arg1;
 - (BOOL)isChangeColorSwapped;

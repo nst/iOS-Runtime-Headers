@@ -41,7 +41,6 @@
 - (id)inputTargetImage;
 - (id)inputTime;
 - (id)outputImage;
-- (void)setDefaults;
 - (void)setInputCenter:(id)arg1;
 - (void)setInputColor:(id)arg1;
 - (void)setInputExtent:(id)arg1;

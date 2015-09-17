@@ -4,6 +4,7 @@
 
 @interface BWMultiStreamCameraSourceNode : BWSourceNode <BWFigCameraSourceNode> {
     float _aeMaxGain;
+    struct OpaqueFigCaptureISPProcessingSession { } *_bayerProcessingSession;
     BWFigVideoCaptureDevice *_captureDevice;
     BOOL _chromaNoiseReductionEnabled;
     int _clientSpecifiedFormatIndex;
@@ -11,16 +12,21 @@
         int width; 
         int height; 
     } _cropAspectRatio;
+    BOOL _cropsOverscanFromFirmwareStillImageOutput;
     int _currentFirmwareStillImageOutputRetainedBufferCount;
     BOOL _deferMetadataCreation;
+    BOOL _deferProcessingSessionMetadataCreation;
     BWDeferredMetadataCache *_deferredMetadataCache;
     BWNodeOutput *_detectedFacesOutput;
     NSDictionary *_detectedFacesOutputConfiguration;
     BOOL _detectedFacesOutputEnabled;
-    NSMutableArray *_detectedFacesRingBuffer;
-    struct OpaqueFigSimpleMutex { } *_detectedFacesRingBufferMutex;
-    BOOL _discardUnstableSphereVideoFrames;
+    BWDetectedFacesRingBuffer *_detectedFacesRingBuffer;
+    BOOL _discardsUnstableSphereVideoFrames;
     NSMutableDictionary *_dutyCycleMetadataCache;
+    struct { 
+        int width; 
+        int height; 
+    } _firmwareStillImageDimensionsAfterOverscanCropping;
     int _firmwareStillImageOutputRetainedBufferCountOverride;
     float _lastRequestedZoomFactor;
     float _maxFrameRate;
@@ -28,12 +34,19 @@
     int _maxIntegrationTimeOverride;
     float _minFrameRate;
     int _motionAttachmentsSource;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _onDemandStillOverscanPercentage;
     struct BWStreamOutputStorage { 
+        int type; 
+        unsigned int flags; 
         BOOL ready; 
         BOOL enabled; 
         BWNodeOutput *nodeOutput; 
         struct opaqueCMSimpleQueue {} *simpleQueue; 
         NSObject<OS_dispatch_queue> *bufferServicingQueue; 
+        int (*bufferServicingQueueCallback)(); 
         struct opaqueCMFormatDescription {} *cachedFormatDescription; 
         int frameCount; 
     } _outputsStorage;
@@ -47,7 +60,15 @@
     } _preferredPreviewDimensions;
     BWNodeOutput *_previewOutput;
     BOOL _previewOutputEnabled;
-    NSString *_previewOutputID;
+    NSDictionary *_qHDRSensorDefectivePixelInfo;
+    struct OpaqueFigSampleBufferProcessor { } *_qrmSampleBufferProcessor;
+    struct { 
+        int width; 
+        int height; 
+    } _quadraCropDimensions;
+    BOOL _quadraHighResStillImageCaptureEnabled;
+    struct opaqueCMFormatDescription { } *_quadraStillOutputFormatDescription;
+    struct opaqueCMSimpleQueue { } *_quadraYUVBufferQueue;
     int _resolvedFormatIndex;
     BOOL _resolvedFormatIndexUpToDate;
     struct { 
@@ -63,6 +84,7 @@
     NSArray *_supportedFormats;
     BOOL _temporalNoiseReductionEnabled;
     BOOL _usesFirmwareStillImageOutput;
+    BOOL _usesISPBackEndScalers;
     struct { 
         int width; 
         int height; 
@@ -87,7 +109,8 @@
 + (void)initialize;
 
 - (long)_bringStreamUpToDate;
-- (void)_enableOutputs;
+- (void)_enableStreamOutputs;
+- (id)_enabledNodeOutputsDrivenByThePrimaryStreamingOutput;
 - (int)_firmwareStillImageOutputRetainedBufferCountForClientBracketCount:(int)arg1;
 - (void)_flushOutRemainingBuffers;
 - (id)_initWithCaptureDevice:(id)arg1;
@@ -95,29 +118,39 @@
 - (void)_markEndOfLiveOutput;
 - (void)_registerForStreamNotifications;
 - (void)_registerStreamOutputHandlers;
+- (BOOL)_requiresOneStreamingOutputForMetadata;
 - (void)_serviceZoomForPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (long)_setupBayerProcessingSessionForQuadraStillImageCaptures;
+- (long)_setupQRMSampleBufferProcessor;
 - (BOOL)_shouldEnableStreamCaptureOutput;
 - (BOOL)_shouldEnableStreamPreviewOutput;
+- (id)_streamOutputIDForCapture;
+- (id)_streamOutputIDForOnDemandStills;
+- (id)_streamOutputIDForPreview;
+- (BOOL)_streamSupportsProperty:(struct __CFString { }*)arg1;
 - (void)_unregisterFromStreamNotifications;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_updateDigitalZoomForOutputIndex:(int)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
 - (void)_updateDutyCycleMetadataCacheForActiveFormatIndex:(int)arg1;
 - (long)_updateFormatIndex;
-- (float)_updateMaxIspZoomFactor;
+- (long)_updateMaxISPZoomFactor;
 - (void)_updateMetadataConfigurations;
 - (long)_updateOutputConfigurations;
-- (void)_updatePreviewOutputID;
-- (void)_updateStreamOutputToNodeOutputMapping;
+- (void)_updateOutputsStorage;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_updateZoomForOutputIndex:(int)arg1 sampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2;
+- (id)_videoFormatRequirementsForOutputID:(id)arg1 configuration:(id)arg2;
 - (float)aeMaxGain;
+- (struct OpaqueFigCaptureISPProcessingSession { }*)bayerProcessingSession;
 - (id)captureDevice;
 - (BOOL)chromaNoiseReductionEnabled;
 - (struct OpaqueCMClock { }*)clock;
 - (id)colorInfoForOutput:(id)arg1;
 - (struct { int x1; int x2; })cropAspectRatio;
+- (BOOL)cropsOverscanFromFirmwareStillImageOutput;
 - (void)dealloc;
 - (id)detectedFacesOutput;
 - (id)detectedFacesOutputConfiguration;
 - (BOOL)detectedFacesOutputEnabled;
-- (BOOL)discardUnstableSphereVideoFrames;
+- (BOOL)discardsUnstableSphereVideoFrames;
+- (struct { int x1; int x2; })firmwareStillImageDimensionsAfterOverscanCropping;
 - (int)firmwareStillImageOutputRetainedBufferCountOverride;
 - (int)formatIndex;
 - (BOOL)hasNonLiveConfigurationChanges;
@@ -133,13 +166,18 @@
 - (void)prepareForCurrentConfigurationToBecomeLive;
 - (id)previewOutput;
 - (BOOL)previewOutputEnabled;
+- (id)qHDRSensorDefectivePixelInfo;
+- (struct { int x1; int x2; })quadraCropDimensions;
+- (BOOL)quadraHighResStillImageCaptureEnabled;
 - (struct { int x1; int x2; })sensorCropDimensions;
 - (void)setAeMaxGain:(float)arg1;
+- (void)setBayerProcessingSession:(struct OpaqueFigCaptureISPProcessingSession { }*)arg1;
 - (void)setChromaNoiseReductionEnabled:(BOOL)arg1;
 - (void)setCropAspectRatio:(struct { int x1; int x2; })arg1;
+- (void)setCropsOverscanFromFirmwareStillImageOutput:(BOOL)arg1;
 - (void)setDetectedFacesOutputConfiguration:(id)arg1;
 - (void)setDetectedFacesOutputEnabled:(BOOL)arg1;
-- (void)setDiscardUnstableSphereVideoFrames:(BOOL)arg1;
+- (void)setDiscardsUnstableSphereVideoFrames:(BOOL)arg1;
 - (void)setFirmwareStillImageOutputRetainedBufferCountOverride:(int)arg1;
 - (void)setFormatIndex:(int)arg1;
 - (void)setMaxFrameRate:(float)arg1;
@@ -149,10 +187,14 @@
 - (void)setOverscanPercentage:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPreferredPreviewDimensions:(struct { int x1; int x2; })arg1;
 - (void)setPreviewOutputEnabled:(BOOL)arg1;
+- (void)setQHDRSensorDefectivePixelInfo:(id)arg1;
+- (void)setQuadraCropDimensions:(struct { int x1; int x2; })arg1;
+- (void)setQuadraHighResStillImageCaptureEnabled:(BOOL)arg1;
 - (void)setSensorCropDimensions:(struct { int x1; int x2; })arg1;
 - (void)setStillImageOutputEnabled:(BOOL)arg1;
 - (void)setTemporalNoiseReductionEnabled:(BOOL)arg1;
 - (void)setUsesFirmwareStillImageOutput:(BOOL)arg1;
+- (void)setUsesISPBackEndScalers:(BOOL)arg1;
 - (void)setVideoCaptureDimensions:(struct { int x1; int x2; })arg1;
 - (void)setVideoCaptureOutputEnabled:(BOOL)arg1;
 - (void)setVideoPixelFormat:(unsigned long)arg1;
@@ -164,10 +206,12 @@
 - (BOOL)temporalNoiseReductionEnabled;
 - (void)updateOutputRequirements;
 - (BOOL)usesFirmwareStillImageOutput;
+- (BOOL)usesISPBackEndScalers;
 - (struct { int x1; int x2; })videoCaptureDimensions;
 - (id)videoCaptureOutput;
 - (BOOL)videoCaptureOutputEnabled;
 - (unsigned long)videoPixelFormat;
 - (BOOL)videoStabilizationEnabled;
+- (void)willStop;
 
 @end

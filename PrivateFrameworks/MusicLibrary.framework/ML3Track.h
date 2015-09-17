@@ -84,6 +84,7 @@
 - (void)populateLocationPropertiesWithPath:(id)arg1 isProtected:(BOOL)arg2;
 - (void)populateLocationPropertiesWithPath:(id)arg1 protectionType:(int)arg2;
 - (id)protocolItem;
+- (id)protocolItemForDynamicUpdate;
 - (id)rawIntegrity;
 - (void)updateCollectionCloudStatus;
 - (BOOL)updateIntegrity;

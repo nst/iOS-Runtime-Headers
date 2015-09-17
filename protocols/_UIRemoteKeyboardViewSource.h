@@ -9,6 +9,7 @@
 - (<_UIRemoteKeyboardControllerDelegate> *)controllerDelegate;
 - (UIView *)hostView;
 - (UIInputViewSet *)inputViewSet;
+- (BOOL)isOnScreenRotating;
 - (void)setControllerDelegate:(id <_UIRemoteKeyboardControllerDelegate>)arg1;
 
 @end

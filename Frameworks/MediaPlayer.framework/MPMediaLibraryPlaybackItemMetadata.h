@@ -25,6 +25,7 @@
 - (id)albumTitle;
 - (BOOL)allowsInitiatingPlayWhileDownload;
 - (id)artistName;
+- (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
 - (id)buyParameters;
 - (id)cachedLocalPlaybackAssetFilePathReturningAssetQuality:(unsigned int*)arg1 protectionType:(unsigned int*)arg2 usesPurchaseBundle:(BOOL*)arg3;

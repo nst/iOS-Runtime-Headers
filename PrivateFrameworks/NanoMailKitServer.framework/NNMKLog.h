@@ -4,6 +4,7 @@
 
 @interface NNMKLog : NSObject
 
++ (id)_loggingBaseDirectory;
 + (void)_setupLoggingFacility:(id)arg1;
 + (void)setupLoggingFacilities;
 + (void)setupLoggingFacility:(id)arg1;

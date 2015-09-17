@@ -15,6 +15,7 @@
 @property (nonatomic) UIResponder<UITextInput> *textInput;
 @property (nonatomic) id userData;
 
+- (void).cxx_destruct;
 - (void)_resetGestureRecognizer;
 - (void)clearTimer;
 - (double)secondDelay;

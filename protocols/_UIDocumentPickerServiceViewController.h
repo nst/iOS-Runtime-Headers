@@ -5,15 +5,15 @@
 
 @required
 
-- (void)dismissWithURL:(NSURL *)arg1 forBundleIdentifier:(NSString *)arg2;
-- (int)displayMode;
-- (NSArray *)pickableTypes;
-- (unsigned int)pickerMode;
-- (void)setDisplayMode:(int)arg1;
-- (void)setSortOrder:(int)arg1;
+- (void)didSelectItem:(_UIDocumentPickerContainerItem *)arg1;
 - (void)setupNavigationItemForPicker:(UINavigationItem *)arg1 isRoot:(BOOL)arg2;
 - (BOOL)shouldShowSearch;
-- (int)sortOrder;
 - (NSURL *)uploadURL;
+
+@optional
+
+- (void)itemsOrSelectionDidChange:(BOOL)arg1;
+- (void)performAction:(void *)arg1 item:(void *)arg2 view:(void *)arg3 completion:(void *)arg4; // needs 4 arg types, found 8: int, _UIDocumentPickerContainerItem *, UIView *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
+- (BOOL)shouldShowAction:(int)arg1;
 
 @end

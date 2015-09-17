@@ -3,17 +3,18 @@
  */
 
 @interface FIUIPropertyAnimation : NSObject {
-    CAMediaTimingFunction *_animationTimingFunction;
+    id /* block */ _animationTimingFunction;
     id /* block */ _completionHandler;
     double _currentAnimationTime;
     double _duration;
 }
 
-@property (nonatomic, readonly) CAMediaTimingFunction *animationTimingFunction;
 @property (nonatomic, readonly) id /* block */ completionHandler;
 @property (nonatomic, readonly) double duration;
 
-+ (id)animationWithDuration:(double)arg1 timingFunction:(id)arg2 completion:(id /* block */)arg3;
++ (id)animationWithDuration:(double)arg1 timingFunction:(id /* block */)arg2 completion:(id /* block */)arg3;
++ (id /* block */)linearTimingFunction;
++ (id /* block */)timingFunctionForMediaTimingFunction:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_currentValue;
@@ -23,7 +24,6 @@
 - (void)_setStartValue:(id)arg1;
 - (id)_startValue;
 - (void)_updateWithProgress:(float)arg1;
-- (id)animationTimingFunction;
 - (void)callAndReleaseCompletionHandler;
 - (id /* block */)completionHandler;
 - (double)duration;

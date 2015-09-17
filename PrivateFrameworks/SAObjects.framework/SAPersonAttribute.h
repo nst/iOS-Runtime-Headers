@@ -11,7 +11,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) SAPerson *object;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) <SAAceSerializable> *typedData;
+@property (nonatomic, retain) <SAAceComparable> *typedData;
 
 // Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
 
@@ -31,6 +31,6 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
-- (id)af_contactAddressValue;
+- (id)st_contactAddressValue;
 
 @end

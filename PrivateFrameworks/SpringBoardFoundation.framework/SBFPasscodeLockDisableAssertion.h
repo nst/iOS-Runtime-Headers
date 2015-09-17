@@ -11,6 +11,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)initWithIdentifier:(id)arg1 type:(int)arg2 withController:(id)arg3;
+- (BOOL)isValid;
 - (int)type;
 
 @end

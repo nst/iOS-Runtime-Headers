@@ -10,6 +10,7 @@
 - (void)clearProperties;
 - (id)date;
 - (void)dealloc;
+- (id)description;
 - (id)initWithParagraph:(id)arg1 date:(id)arg2;
 - (id)properties;
 - (int)runType;

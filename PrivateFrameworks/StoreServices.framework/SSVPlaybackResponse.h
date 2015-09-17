@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
  */
 
-@interface SSVPlaybackResponse : NSObject {
+@interface SSVPlaybackResponse : NSObject <NSCopying> {
     NSDictionary *_responseDictionary;
     NSHTTPURLResponse *_urlResponse;
 }
@@ -14,6 +14,7 @@
 - (void).cxx_destruct;
 - (id)URLResponse;
 - (void)_enumerateItemsUsingBlock:(id /* block */)arg1;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)initWithDictionary:(id)arg1 URLResponse:(id)arg2;
 - (id)itemForItemIdentifier:(id)arg1;
 - (id)items;

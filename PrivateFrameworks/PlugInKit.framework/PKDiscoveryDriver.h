@@ -7,6 +7,9 @@
     NSDictionary *_attributes;
     unsigned int _flags;
     NSSet *_lastResults;
+    PKDiscoveryLSWatcher *_lsWatcher;
+    id _mcNotificationToken;
+    NSObject<OS_dispatch_queue> *_queue;
     id /* block */ _report;
 }
 
@@ -17,6 +20,9 @@
 @property unsigned int flags;
 @property (readonly) unsigned int hash;
 @property (retain) NSSet *lastResults;
+@property (retain) PKDiscoveryLSWatcher *lsWatcher;
+@property (retain) id mcNotificationToken;
+@property (retain) NSObject<OS_dispatch_queue> *queue;
 @property (copy) id /* block */ report;
 @property (readonly) Class superclass;
 
@@ -27,15 +33,21 @@
 - (void)dealloc;
 - (unsigned int)flags;
 - (id)initWithAttributes:(id)arg1 flags:(unsigned int)arg2 report:(id /* block */)arg3;
+- (void)installWatchers;
 - (id)lastResults;
+- (id)lsWatcher;
+- (id)mcNotificationToken;
 - (void)performWithPreviousResults:(id)arg1 forceNotify:(BOOL)arg2;
-- (void)pluginsDidInstall:(id)arg1;
-- (void)pluginsDidUninstall:(id)arg1;
+- (id)queue;
+- (void)removeWatchers;
 - (id /* block */)report;
 - (void)setAnnotationNotifyToken:(int)arg1;
 - (void)setAttributes:(id)arg1;
 - (void)setFlags:(unsigned int)arg1;
 - (void)setLastResults:(id)arg1;
+- (void)setLsWatcher:(id)arg1;
+- (void)setMcNotificationToken:(id)arg1;
+- (void)setQueue:(id)arg1;
 - (void)setReport:(id /* block */)arg1;
 
 @end

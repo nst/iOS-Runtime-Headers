@@ -4,16 +4,13 @@
 
 @interface ADAdImpressionPublicAttributes : NSObject <NSSecureCoding> {
     NSString *_accessibilityLabel;
-    int _action;
-    BOOL _actionLeavesApplication;
-    BOOL _actionViewControllerHidesStatusBar;
-    unsigned int _actionViewControllerPresentationOrientationMask;
     NSURL *_audioURL;
     NSString *_descriptionForLCD;
+    BOOL _hasAction;
     NSString *_headlineForLCD;
     NSURL *_logoImageURL;
     double _minimumIntervalBetweenPresentations;
-    int _modalPresentationStyle;
+    NSArray *_nativeMetadata;
     double _skipThreshold;
     NSURL *_staticImageURL;
     BOOL _unbranded;
@@ -22,16 +19,13 @@
 }
 
 @property (nonatomic, copy) NSString *accessibilityLabel;
-@property (nonatomic) int action;
-@property (nonatomic) BOOL actionLeavesApplication;
-@property (nonatomic) BOOL actionViewControllerHidesStatusBar;
-@property (nonatomic) unsigned int actionViewControllerPresentationOrientationMask;
 @property (nonatomic, retain) NSURL *audioURL;
 @property (nonatomic, copy) NSString *descriptionForLCD;
+@property (nonatomic) BOOL hasAction;
 @property (nonatomic, copy) NSString *headlineForLCD;
 @property (nonatomic, retain) NSURL *logoImageURL;
 @property (nonatomic) double minimumIntervalBetweenPresentations;
-@property (nonatomic) int modalPresentationStyle;
+@property (nonatomic, retain) NSArray *nativeMetadata;
 @property (nonatomic) double skipThreshold;
 @property (nonatomic, retain) NSURL *staticImageURL;
 @property (nonatomic) BOOL unbranded;
@@ -40,33 +34,26 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (id)_actionDescription;
 - (id)accessibilityLabel;
-- (int)action;
-- (BOOL)actionLeavesApplication;
-- (BOOL)actionViewControllerHidesStatusBar;
-- (unsigned int)actionViewControllerPresentationOrientationMask;
 - (id)audioURL;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionForLCD;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasAction;
 - (id)headlineForLCD;
 - (id)initWithCoder:(id)arg1;
 - (id)logoImageURL;
 - (double)minimumIntervalBetweenPresentations;
-- (int)modalPresentationStyle;
+- (id)nativeMetadata;
 - (void)setAccessibilityLabel:(id)arg1;
-- (void)setAction:(int)arg1;
-- (void)setActionLeavesApplication:(BOOL)arg1;
-- (void)setActionViewControllerHidesStatusBar:(BOOL)arg1;
-- (void)setActionViewControllerPresentationOrientationMask:(unsigned int)arg1;
 - (void)setAudioURL:(id)arg1;
 - (void)setDescriptionForLCD:(id)arg1;
+- (void)setHasAction:(BOOL)arg1;
 - (void)setHeadlineForLCD:(id)arg1;
 - (void)setLogoImageURL:(id)arg1;
 - (void)setMinimumIntervalBetweenPresentations:(double)arg1;
-- (void)setModalPresentationStyle:(int)arg1;
+- (void)setNativeMetadata:(id)arg1;
 - (void)setSkipThreshold:(double)arg1;
 - (void)setStaticImageURL:(id)arg1;
 - (void)setUnbranded:(BOOL)arg1;

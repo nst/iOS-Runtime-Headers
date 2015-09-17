@@ -29,8 +29,6 @@
 + (id)dynamicKeyConfigsForEntryKey:(id)arg1;
 + (id)entryDefinitionsForOperator:(id)arg1;
 + (id)entryDefinitionsForOperatorClass:(Class)arg1;
-+ (id)entryDefinitionsForOperatorClass:(Class)arg1 andOperatorName:(id)arg2;
-+ (id)entryDefinitionsForOperatorName:(id)arg1;
 + (BOOL)filterEntryLoggingForEntryDefinition:(id)arg1;
 + (BOOL)filterEntryLoggingForEntryKey:(id)arg1;
 + (BOOL)hasArrayKeysForEntryDefinition:(id)arg1;
@@ -43,13 +41,19 @@
 + (BOOL)isOnDemandQueryableForEntryKey:(id)arg1;
 + (id)keyConfigsForEntryDefinition:(id)arg1;
 + (id)keyConfigsForEntryKey:(id)arg1;
++ (int)limitOfType:(id)arg1 forEntryDefinition:(id)arg2;
++ (int)limitOfType:(id)arg1 forEntryKey:(id)arg2;
 + (id)logSelectorStringForEnteryKey:(id)arg1;
 + (id)logSelectorStringForEntryDefinition:(id)arg1;
 + (id)manualSortOrderForEntryDefinition:(id)arg1;
 + (id)manualSortOrderForEntryKey:(id)arg1;
 + (id)notificationNameForEntryKey:(id)arg1 withFilterDefintion:(id)arg2;
++ (BOOL)overridesEntryDateForEntryDefinition:(id)arg1;
++ (BOOL)overridesEntryDateForEntryKey:(id)arg1;
 + (double)schemaVersionForEntryDefinition:(id)arg1;
 + (double)schemaVersionForEntryKey:(id)arg1;
 + (id)sortedKeysFromEntryDefinition:(id)arg1;
++ (id)subEntryKeyKeyForEntryDefinition:(id)arg1;
++ (id)subEntryKeyKeyForEntryKey:(id)arg1;
 
 @end

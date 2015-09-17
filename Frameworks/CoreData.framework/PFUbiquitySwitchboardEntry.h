@@ -18,6 +18,7 @@
     NSObject<OS_dispatch_queue> *_privateQueue;
     NSMutableDictionary *_registeredCoordinators;
     NSString *_storeName;
+    NSURL *_storeURL;
     PFUbiquityLocation *_ubiquityRootLocation;
 }
 
@@ -50,7 +51,7 @@
 - (BOOL)finishSetupForStore:(id)arg1 withSetupAssistant:(id)arg2 synchronously:(BOOL)arg3 error:(id*)arg4 finishBlock:(id /* block */)arg5;
 - (id)finishingSetupAssistant;
 - (id)init;
-- (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 ubiquityRootLocation:(id)arg3 andLocalRootLocation:(id)arg4;
+- (id)initWithLocalPeerID:(id)arg1 storeName:(id)arg2 withURL:(id)arg3 ubiquityRootLocation:(id)arg4 andLocalRootLocation:(id)arg5;
 - (id)localFilePresenter;
 - (id)localPeerID;
 - (id)localRootLocation;

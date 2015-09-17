@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SiriTasks.framework/SiriTasks
  */
 
-@interface STMapViewport : AFSiriModelObject {
+@interface STMapViewport : STSiriModelObject {
     double _eastLongitude;
     double _northLatitude;
     double _southLatitude;

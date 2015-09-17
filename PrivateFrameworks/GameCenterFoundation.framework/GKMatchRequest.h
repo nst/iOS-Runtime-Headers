@@ -30,12 +30,14 @@
 - (id)description;
 - (void)ensureValidityHosted:(BOOL)arg1;
 - (id)forwardingTargetForSelector:(SEL)arg1;
+- (id)guestPlayers;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithInternalRepresentation:(id)arg1;
 - (id)internal;
 - (id /* block */)inviteeResponseHandler;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isRecipientCountValid;
 - (BOOL)isTurnBasedValid;
 - (BOOL)isValidForHosted:(BOOL)arg1;
 - (BOOL)isValidWithMax:(unsigned int)arg1;

@@ -11,7 +11,6 @@
     unsigned int _texName;
 }
 
-- (id).cxx_construct;
 - (void).cxx_destruct;
 - (void)bind;
 - (void)dealloc;

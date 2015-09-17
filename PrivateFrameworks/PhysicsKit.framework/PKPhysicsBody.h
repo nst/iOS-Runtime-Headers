@@ -108,6 +108,7 @@
 @property (nonatomic) float rotation;
 @property (nonatomic) BOOL usesPreciseCollisionDetection;
 @property (nonatomic) struct CGVector { float x1; float x2; } velocity;
+@property (nonatomic, readonly) /* Warning: unhandled struct encoding: '{PKPath=f{vector<PKPoint' */ struct *volume; /* unknown property attribute:  std::__1::allocator<PKPoint> >=^{?}}}^{CGPath}} */
 
 // Image: /System/Library/PrivateFrameworks/PhysicsKit.framework/PhysicsKit
 
@@ -227,10 +228,12 @@
 - (void)set_world:(id)arg1;
 - (BOOL)usesPreciseCollisionDetection;
 - (struct CGVector { float x1; float x2; })velocity;
+- (struct PKPath { float x1; struct vector<PKPoint, std::__1::allocator<PKPoint> > { struct { /* ? */ } *x_2_1_1; struct { /* ? */ } *x_2_1_2; struct __compressed_pair<PKPoint *, std::__1::allocator<PKPoint> > { struct { /* ? */ } *x_3_2_1; } x_2_1_3; } x2; struct CGPath {} *x3; }*)volume;
 
 // Image: /System/Library/Frameworks/SpriteKit.framework/SpriteKit
 
 - (id)_descriptionClassName;
+- (BOOL)isKindOfClass:(Class)arg1;
 - (id)node;
 
 @end

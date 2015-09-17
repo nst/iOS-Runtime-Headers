@@ -3,24 +3,27 @@
  */
 
 @interface SCNCameraControlEventHandler : SCNEventHandler {
+    unsigned int _allowsTranslation;
     unsigned int _alternateMode;
-    unsigned int _automaticCameraTarget;
+    struct SCNVector3 { 
+        float x; 
+        float y; 
+        float z; 
+    } _autoCameraTarget;
+    unsigned int _automaticCameraTargetUpToDate;
+    int _browseMode;
+    float _browseScaleFactor;
     struct SCNVector3 { 
         float x; 
         float y; 
         float z; 
     } _cameraTarget;
     void_clickOrigin;
-    id _dReserved;
+    unsigned int _didEverFocusNode;
     SCNNode *_freeViewCameraNode;
     float _friction;
     unsigned int _gimbalLockMode;
-    struct SCNVector3 { 
-        float x; 
-        float y; 
-        float z; 
-    } _gimbalLockVector;
-    unsigned int _hasCheckedIfViewingAnObject;
+    unsigned int _hasAutomaticCameraTarget;
     unsigned int _inertia;
     unsigned int _inertiaRunning;
     struct CGPoint { 
@@ -42,20 +45,17 @@
     float _initialZoom;
     BOOL _isDraggingWithOneFinger;
     unsigned int _isViewedObjectSphereComputed;
-    unsigned int _isViewingAnObject;
     int _lastGestureFingerCount;
     double _lastSimulationTime;
-    int _mode;
     float _originalFovX;
     float _originalFovY;
     float _originalOrthoScale;
     UIGestureRecognizer *_panGesture;
     UIGestureRecognizer *_pinchGesture;
+    unsigned int _pinchShouldMoveCamera;
     UIGestureRecognizer *_pressGesture;
     float _roll;
     UIGestureRecognizer *_rotateGesture;
-    float _savedZfar;
-    float _savedZnear;
     int _stickyAxis;
     UIGestureRecognizer *_tapGesture;
     struct CGPoint { 
@@ -70,6 +70,7 @@
     float _zoomFactor;
 }
 
+@property BOOL allowsTranslation;
 @property BOOL automaticCameraTarget;
 @property struct SCNVector3 { float x1; float x2; float x3; } cameraTarget;
 @property BOOL enableInertia;
@@ -78,7 +79,11 @@
 @property struct SCNVector3 { float x1; float x2; float x3; } gimbalLockVector;
 @property int stickyAxis;
 
++ (void)frontVectorWithPointOfView:(id)arg1;
++ (struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })matrixWithNoRoll:(struct SCNMatrix4 { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
+
 - (void)_beginTranslateAtLocation:(struct CGPoint { float x1; float x2; })arg1;
+- (float)_browseScale;
 - (BOOL)_freeCameraActivated;
 - (void)_handleDoubleTap:(id)arg1;
 - (void)_handlePan:(id)arg1;
@@ -88,6 +93,7 @@
 - (void)_installFreeViewCameraIfNeeded;
 - (void)_onInertiaTimer;
 - (void)_prepareFreeViewCamera;
+- (void)_resetBrowseScaleFactor;
 - (void)_resetFreeViewCamera;
 - (void)_rotateWithDrag:(struct CGPoint { float x1; float x2; })arg1 mode:(int)arg2 stickyAxis:(int)arg3;
 - (void)_startBrowsingIfNeeded:(struct CGPoint { float x1; float x2; })arg1;
@@ -95,15 +101,20 @@
 - (void)_switchToFreeViewCamera;
 - (void)_translateTo:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_translationCoef;
+- (BOOL)allowsTranslation;
 - (BOOL)automaticCameraTarget;
 - (void)beginGesture:(id)arg1;
+- (struct SCNVector3 { float x1; float x2; float x3; })cameraAutomaticTargetPoint;
 - (void)cameraDidChange;
 - (struct SCNVector3 { float x1; float x2; float x3; })cameraTarget;
 - (void)cameraWillChange;
+- (void)clearRoll;
+- (void)computeAutomaticTargetPoint;
 - (BOOL)computeBoundingSphereOmittingFloorsForNode:(struct __C3DNode { }*)arg1 sphere:(struct C3DSphere { }*)arg2;
 - (void)dealloc;
 - (BOOL)enableInertia;
 - (void)endDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg1;
+- (void)focusNode:(id)arg1;
 - (float)friction;
 - (void)frontVector;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
@@ -112,7 +123,7 @@
 - (BOOL)gimbalLockMode;
 - (struct SCNVector3 { float x1; float x2; float x3; })gimbalLockVector;
 - (id)init;
-- (BOOL)isViewingAnObject;
+- (void)invalidateCameraTarget;
 - (void)panWithGestureRecognizer:(id)arg1;
 - (void)pinchWithGestureRecognizer:(id)arg1;
 - (void)rotateOf:(float)arg1;
@@ -120,6 +131,7 @@
 - (void)rotateWithVector:(void *)arg1 mode:(void *)arg2; // needs 2 arg types, found 1: int
 - (void)sceneDidChange;
 - (void)sceneWillChange;
+- (void)setAllowsTranslation:(BOOL)arg1;
 - (void)setAutomaticCameraTarget:(BOOL)arg1;
 - (void)setCameraTarget:(struct SCNVector3 { float x1; float x2; float x3; })arg1;
 - (void)setEnableInertia:(BOOL)arg1;
@@ -130,7 +142,7 @@
 - (void)setZoomFactor:(float)arg1;
 - (int)stickyAxis;
 - (void)translateByX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
-- (void)updateCameraTargetIfNeeded;
+- (void)updateBrowseScaleFactor;
 - (void)viewWillDraw;
 - (struct C3DSphere { })viewedObjectSphere;
 - (BOOL)wantsRedraw;

@@ -64,6 +64,7 @@
 - (id)description;
 - (id)geoCompletionItem;
 - (id)initWithCompletion:(id)arg1;
+- (id)initWithMapsURL:(id)arg1;
 - (id)naturalLanguageQuery;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
 - (void)setNaturalLanguageQuery:(id)arg1;

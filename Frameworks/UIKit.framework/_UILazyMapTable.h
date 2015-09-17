@@ -9,10 +9,10 @@
     NSMapTable *_valuesToKeys;
 }
 
+- (void).cxx_destruct;
 - (id)cachedObjectEnumerable;
 - (id)cachedObjects;
 - (unsigned int)count;
-- (void)dealloc;
 - (id)description;
 - (BOOL)hasCachedObjectForKey:(id)arg1;
 - (id)initWithMappingBlock:(id /* block */)arg1;

@@ -5,6 +5,8 @@
 
 @required
 
+- (oneway void)abDidChange;
+- (oneway void)abPreferencesDidChange;
 - (oneway void)didAddFollowerHandle:(FMFHandle *)arg1;
 - (oneway void)didChangeActiveLocationSharingDevice:(FMFDevice *)arg1;
 - (void)didReceiveFriendshipRequest:(FMFFriendshipRequest *)arg1;
@@ -13,6 +15,7 @@
 - (oneway void)didStartFollowingHandle:(FMFHandle *)arg1;
 - (oneway void)didStopFollowingHandle:(FMFHandle *)arg1;
 - (oneway void)didUpdateActiveDeviceList:(NSSet *)arg1;
+- (oneway void)didUpdateFavorites:(NSArray *)arg1;
 - (oneway void)didUpdateFollowers:(NSSet *)arg1;
 - (oneway void)didUpdateFollowing:(NSSet *)arg1;
 - (oneway void)didUpdateHideFromFollowersStatus:(BOOL)arg1;

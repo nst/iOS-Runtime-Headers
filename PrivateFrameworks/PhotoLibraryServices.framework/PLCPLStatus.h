@@ -5,6 +5,7 @@
 @interface PLCPLStatus : NSObject <CPLStatusDelegate> {
     CPLStatus *_cplStatus;
     <PLCPLStatusDelegate> *_delegate;
+    BOOL _inResetSync;
     BOOL _isCPLDataClassEnabled;
     BOOL _isCPLDataClassEnabledValid;
     unsigned int _numberOfImagesToDownload;
@@ -18,6 +19,9 @@
     double _syncProgress;
     unsigned int _syncProgressState;
     unsigned int _totalAssetsOnServer;
+    unsigned long long _totalSizeOfPushedOriginals;
+    unsigned long long _totalSizeOfUnpushedOriginals;
+    unsigned long long _totalUploadedOriginalSize;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,6 +31,7 @@
 @property (nonatomic, readonly, retain) NSDate *exitDeleteTime;
 @property (nonatomic, readonly) BOOL hasExitedCPL;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL inResetSync;
 @property (nonatomic, readonly) BOOL isConnecting;
 @property (nonatomic, readonly) BOOL isEnabled;
 @property (nonatomic, readonly) BOOL isExceedingQuota;
@@ -43,6 +48,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) double syncProgress;
 @property (nonatomic, readonly) unsigned int totalAssetsOnServer;
+@property (nonatomic) unsigned long long totalSizeOfPushedOriginals;
+@property (nonatomic) unsigned long long totalSizeOfUnpushedOriginals;
+@property (nonatomic) unsigned long long totalUploadedOriginalSize;
 
 + (void)_prepareQueue;
 + (void)_setPulledItemsCount:(unsigned int)arg1;
@@ -72,6 +80,7 @@
 - (unsigned int)diskSpaceLevel;
 - (id)exitDeleteTime;
 - (BOOL)hasExitedCPL;
+- (BOOL)inResetSync;
 - (id)init;
 - (BOOL)isConnecting;
 - (BOOL)isEnabled;
@@ -88,8 +97,15 @@
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)progress;
 - (void)setDelegate:(id)arg1;
+- (void)setInResetSync:(BOOL)arg1;
+- (void)setTotalSizeOfPushedOriginals:(unsigned long long)arg1;
+- (void)setTotalSizeOfUnpushedOriginals:(unsigned long long)arg1;
+- (void)setTotalUploadedOriginalSize:(unsigned long long)arg1;
 - (void)statusDidChange:(id)arg1;
 - (double)syncProgress;
 - (unsigned int)totalAssetsOnServer;
+- (unsigned long long)totalSizeOfPushedOriginals;
+- (unsigned long long)totalSizeOfUnpushedOriginals;
+- (unsigned long long)totalUploadedOriginalSize;
 
 @end

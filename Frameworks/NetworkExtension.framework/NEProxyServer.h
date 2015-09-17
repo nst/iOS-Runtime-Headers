@@ -15,7 +15,7 @@
 @property BOOL authenticationRequired;
 @property (copy) NSString *password;
 @property (readonly) int port;
-@property (readonly) int type;
+@property int type;
 @property (copy) NSString *username;
 
 + (BOOL)supportsSecureCoding;
@@ -27,15 +27,17 @@
 - (id)copyPassword;
 - (id)copyProtectionSpace;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
-- (id)initWithAddress:(id)arg1 andPort:(int)arg2;
+- (id)initWithAddress:(id)arg1 port:(int)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithType:(int)arg1 address:(id)arg2 port:(int)arg3;
 - (id)password;
 - (int)port;
+- (void)removeFromKeychain;
 - (void)setAuthenticationRequired:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
+- (void)setType:(int)arg1;
 - (void)setUsername:(id)arg1;
 - (void)syncWithKeychain;
 - (int)type;

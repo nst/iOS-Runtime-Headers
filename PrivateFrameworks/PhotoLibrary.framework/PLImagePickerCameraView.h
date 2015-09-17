@@ -2,11 +2,11 @@
    Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
  */
 
-@interface PLImagePickerCameraView : CAMCameraView <PLVideoViewDelegate> {
+@interface PLImagePickerCameraView : CMKCameraView <PLVideoViewDelegate> {
     PLCropOverlay *__cropOverlay;
     int __enabledGestures;
     BOOL __manipulatingCrop;
-    CAMStillImageCaptureResponse *__mostRecentCaptureResponse;
+    CMKStillImageCaptureResponse *__mostRecentCaptureResponse;
     BOOL __retakingPhoto;
     BOOL __shouldSkipPostcaptureReview;
     PLVideoView *__videoView;
@@ -24,7 +24,7 @@
 @property (nonatomic, readonly) PLCropOverlay *_cropOverlay;
 @property (setter=_setEnabledGestures:, nonatomic) int _enabledGestures;
 @property (getter=_isManipulatingCrop, setter=_setManipulatingCrop:, nonatomic) BOOL _manipulatingCrop;
-@property (nonatomic, readonly) CAMStillImageCaptureResponse *_mostRecentCaptureResponse;
+@property (nonatomic, readonly) CMKStillImageCaptureResponse *_mostRecentCaptureResponse;
 @property (getter=_isRetakingPhoto, setter=_setRetakingPhoto:, nonatomic) BOOL _retakingPhoto;
 @property (nonatomic, readonly) BOOL _shouldSkipPostcaptureReview;
 @property (nonatomic, readonly) PLVideoView *_videoView;

@@ -46,6 +46,7 @@
 
 - (id)__searchBar;
 - (id)__searchController;
+- (void)_addNoContactsViewConstraints;
 - (void)_applyStylesToTableView:(id)arg1;
 - (void)_cancelGALSearch;
 - (void)_deselectAllRowsWithAnimation;

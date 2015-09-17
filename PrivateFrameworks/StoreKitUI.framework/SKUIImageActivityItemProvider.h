@@ -8,6 +8,7 @@
 }
 
 - (void).cxx_destruct;
+- (BOOL)_validActivityType:(id)arg1;
 - (id)initWithProductPageItem:(id)arg1 clientContext:(id)arg2;
 - (id)item;
 

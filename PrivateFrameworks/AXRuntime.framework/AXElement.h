@@ -3,24 +3,56 @@
  */
 
 @interface AXElement : NSObject <AXGroupable> {
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _cachedFrame;
+    AXElement *_cachedRemoteParent;
+    AXElement *_cachedRemoteParentForContextID;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _cachedVisibleFrame;
     AXElementGroup *_parentGroup;
     BOOL _representsScannerGroup;
     AXUIElement *_uiElement;
 }
 
 @property (nonatomic, readonly) AXElement *accessibilityUIServerApplication;
+@property (nonatomic, readonly) AXElement *application;
 @property (nonatomic, readonly) int applicationOrientation;
 @property (nonatomic) BOOL assistiveTechFocused;
 @property (nonatomic, retain) AXElement *autoscrollTarget;
 @property (nonatomic, readonly) NSString *bundleId;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedFrame;
+@property (nonatomic, retain) AXElement *cachedRemoteParent;
+@property (nonatomic, retain) AXElement *cachedRemoteParentForContextID;
+@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } cachedVisibleFrame;
 @property (nonatomic, readonly) BOOL canPerformEscape;
 @property (nonatomic, readonly) BOOL canPerformZoom;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } centerPoint;
+@property (nonatomic, readonly) NSArray *children;
 @property (nonatomic, readonly) AXElement *currentApplication;
+@property (nonatomic, readonly) NSArray *currentApplications;
+@property (nonatomic, readonly) NSArray *currentApplicationsIgnoringSiri;
 @property (nonatomic, readonly) NSArray *customActions;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) struct __AXUIElement { }*elementRef;
+@property (nonatomic, readonly) NSArray *elementsWithSemanticContext;
+@property (nonatomic, readonly) NSArray *explorerElements;
 @property (nonatomic, readonly) AXElement *firstElementInApplication;
 @property (nonatomic, readonly) AXElement *firstElementInApplicationForFocus;
 @property (nonatomic, readonly) AXElement *firstResponder;
@@ -31,6 +63,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *hint;
 @property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) BOOL isAXUIServer;
 @property (nonatomic, readonly) BOOL isAccessibilityOpaqueElementProvider;
 @property (nonatomic, readonly) BOOL isAccessibleElement;
 @property (nonatomic, readonly) BOOL isAutoscrolling;
@@ -45,13 +78,19 @@
 @property (nonatomic, readonly) BOOL isVisible;
 @property (nonatomic, readonly) NSString *label;
 @property (nonatomic, readonly) NSString *language;
+@property (getter=isNativeFocused, nonatomic, readonly) BOOL nativeFocus;
+@property (nonatomic, readonly) AXElement *nativeFocusElement;
+@property (nonatomic, readonly) AXElement *nativeFocusPreferredElement;
+@property (nonatomic, readonly) NSArray *nativeFocusableElements;
+@property (nonatomic, readonly) NSArray *parent;
 @property (nonatomic) AXElementGroup *parentGroup;
 @property (getter=isPassivelyListeningForEvents, nonatomic) BOOL passivelyListeningForEvents;
 @property (nonatomic, readonly) struct CGPath { }*path;
+@property (nonatomic, readonly) AXElement *remoteParent;
 @property (nonatomic, readonly) BOOL representsScannerGroup;
 @property (nonatomic, readonly) int scannerActivateBehavior;
-@property (nonatomic, readonly) NSArray *scannerRootGroup;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } selectedTextRange;
+@property (nonatomic, readonly) NSDictionary *semanticContext;
 @property (nonatomic, readonly) AXElement *springBoardApplication;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *supportedGestures;
@@ -62,7 +101,8 @@
 @property (nonatomic, readonly) unsigned long long traits;
 @property (nonatomic, readonly) NSArray *typingCandidates;
 @property (nonatomic, retain) AXUIElement *uiElement;
-@property (nonatomic, readonly) NSString *value;
+@property (nonatomic, readonly) NSURL *url;
+@property (nonatomic) NSString *value;
 @property (nonatomic, readonly) NSArray *variantKeys;
 @property (nonatomic, readonly) NSArray *visibleElements;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visibleFrame;
@@ -72,15 +112,28 @@
 + (id)elementAtCoordinate:(struct CGPoint { float x1; float x2; })arg1 withVisualPadding:(BOOL)arg2;
 + (id)elementWithAXUIElement:(struct __AXUIElement { }*)arg1;
 + (id)elementWithUIElement:(id)arg1;
++ (id)elementsWithUIElements:(id)arg1;
++ (id)primaryApp;
 + (id)systemWideElement;
 
 - (id)_axElementsForAXUIElements:(id)arg1;
+- (id)_elementForAttribute:(int)arg1 shouldUpdateCache:(BOOL)arg2 shouldFetchAttributes:(BOOL)arg3;
+- (BOOL)_performActivate;
+- (id)_remoteParentForContextID;
+- (void)_updateLabel;
+- (BOOL)_zoomInOrOut:(BOOL)arg1;
 - (id)accessibilityUIServerApplication;
+- (id)application;
 - (int)applicationOrientation;
 - (BOOL)assistiveTechFocused;
+- (id)auditIssuesForOptions:(id)arg1;
 - (void)autoscrollInDirection:(int)arg1;
 - (id)autoscrollTarget;
 - (id)bundleId;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cachedFrame;
+- (id)cachedRemoteParent;
+- (id)cachedRemoteParentForContextID;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })cachedVisibleFrame;
 - (BOOL)canPerformActivate;
 - (BOOL)canPerformEscape;
 - (BOOL)canPerformSecondaryActivate;
@@ -88,9 +141,13 @@
 - (BOOL)canPerformZoom;
 - (BOOL)canScrollInAtLeastOneDirection;
 - (struct CGPoint { float x1; float x2; })centerPoint;
+- (id)children;
 - (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 fromContextId:(unsigned int)arg2;
+- (struct CGPoint { float x1; float x2; })convertPoint:(struct CGPoint { float x1; float x2; })arg1 toContextId:(unsigned int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromContextId:(unsigned int)arg2;
 - (id)currentApplication;
+- (id)currentApplications;
+- (id)currentApplicationsIgnoringSiri;
 - (id)customActions;
 - (void)dealloc;
 - (void)decreaseAutoscrollSpeed;
@@ -98,8 +155,12 @@
 - (float)distanceToElement:(id)arg1;
 - (float)distanceToPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)elementForAttribute:(int)arg1;
+- (id)elementForAttribute:(int)arg1 parameter:(id)arg2;
 - (struct __AXUIElement { }*)elementRef;
+- (id)elementsForAttribute:(int)arg1;
 - (id)elementsMatchingText:(id)arg1;
+- (id)elementsWithSemanticContext;
+- (id)explorerElements;
 - (id)firstElementInApplication;
 - (id)firstElementInApplicationForFocus;
 - (id)firstResponder;
@@ -119,6 +180,7 @@
 - (id)initWithUIElement:(id)arg1;
 - (void)insertText:(id)arg1 atPosition:(int)arg2;
 - (void)insertTextAtCurrentPosition:(id)arg1;
+- (BOOL)isAXUIServer;
 - (BOOL)isAccessibilityOpaqueElementProvider;
 - (BOOL)isAccessibleElement;
 - (BOOL)isAutoscrolling;
@@ -127,6 +189,7 @@
 - (BOOL)isKeyboardKey;
 - (BOOL)isMap;
 - (BOOL)isMathEquation;
+- (BOOL)isNativeFocused;
 - (BOOL)isPassivelyListeningForEvents;
 - (BOOL)isScannerElement;
 - (BOOL)isScreenLocked;
@@ -139,30 +202,61 @@
 - (id)label;
 - (id)language;
 - (BOOL)longPress;
+- (id)nativeFocusElement;
+- (id)nativeFocusPreferredElement;
+- (id)nativeFocusableElements;
 - (id)nextElementsWithCount:(unsigned int)arg1;
 - (id)opaqueElementInDirection:(int)arg1 startElement:(id)arg2 searchTraits:(unsigned long long)arg3;
 - (id)opaqueParent;
+- (id)parent;
 - (id)parentGroup;
 - (struct CGPath { }*)path;
 - (void)pauseAutoscrolling;
 - (BOOL)performAction:(int)arg1;
 - (BOOL)performAction:(int)arg1 withValue:(id)arg2;
 - (BOOL)press;
+- (BOOL)pressTVBackButton;
+- (BOOL)pressTVDataOnScreenButton;
+- (BOOL)pressTVDownButton;
+- (BOOL)pressTVFastForwardButton;
+- (BOOL)pressTVLeftButton;
+- (BOOL)pressTVMenuButton;
+- (BOOL)pressTVMicButton;
+- (BOOL)pressTVNextTrackButton;
+- (BOOL)pressTVPauseButton;
+- (BOOL)pressTVPlayButton;
+- (BOOL)pressTVPlayPauseButton;
+- (BOOL)pressTVPreviousTrackButton;
+- (BOOL)pressTVRewindButton;
+- (BOOL)pressTVRightButton;
+- (BOOL)pressTVSelectButton;
+- (BOOL)pressTVSkipBackwardsButton;
+- (BOOL)pressTVSkipForwardsButton;
+- (BOOL)pressTVStopButton;
+- (BOOL)pressTVUpButton;
 - (id)previousElementsWithCount:(unsigned int)arg1;
+- (id)remoteParent;
 - (BOOL)representsScannerGroup;
 - (int)scannerActivateBehavior;
-- (id)scannerRootGroup;
+- (struct __AXUIElement { }*)scrollAncestorForScrollAction:(int)arg1;
 - (void)scrollToBottom;
 - (void)scrollToTop;
 - (void)scrollToVisible;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })selectedTextRange;
+- (id)semanticContext;
 - (void)sendUserEventOccurred;
 - (void)setAssistiveTechFocused:(BOOL)arg1;
 - (void)setAutoscrollTarget:(id)arg1;
+- (void)setCachedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setCachedRemoteParent:(id)arg1;
+- (void)setCachedRemoteParentForContextID:(id)arg1;
+- (void)setCachedVisibleFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)setNativeFocus;
 - (void)setParentGroup:(id)arg1;
 - (void)setPassivelyListeningForEvents:(BOOL)arg1;
 - (void)setSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setUiElement:(id)arg1;
+- (void)setValue:(id)arg1;
 - (id)springBoardApplication;
 - (id)supportedGestures;
 - (BOOL)supportsAction:(int)arg1;
@@ -173,6 +267,7 @@
 - (unsigned long long)traits;
 - (id)typingCandidates;
 - (id)uiElement;
+- (id)url;
 - (id)value;
 - (id)variantKeys;
 - (id)visibleElements;

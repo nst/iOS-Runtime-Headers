@@ -35,7 +35,6 @@
 - (id)notificationRelayDispatcher;
 - (id)pendingNotifications;
 - (void)removePendingNotification:(id)arg1;
-- (void)sendResponse:(id)arg1 error:(id)arg2 forMessage:(id)arg3;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setNotificationRelayDispatcher:(id)arg1;
 - (void)setPendingNotifications:(id)arg1;

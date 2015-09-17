@@ -22,8 +22,7 @@
 - (void)connectToService;
 - (BOOL)connectionMayBeValid;
 - (void)dealloc;
-- (void)getCachedIconForBundleID:(id)arg1 iconVariant:(int)arg2 outIconImage:(id*)arg3;
-- (void)getCachedIconForBundleID:(id)arg1 iconVariant:(int)arg2 outIconImage:(id*)arg3 outIconHash:(id*)arg4;
+- (void)getCachedIconForBundleID:(id)arg1 iconVariant:(int)arg2 outIconImage:(id*)arg3 updateBlock:(id /* block */)arg4;
 - (void)getIconForBundleID:(id)arg1 iconVariant:(int)arg2 block:(id /* block */)arg3;
 - (void)getIconForBundleID:(id)arg1 iconVariant:(int)arg2 block:(id /* block */)arg3 timeout:(double)arg4;
 - (void)getIconForBundleIDThread:(id)arg1 iconVariant:(int)arg2 block:(id /* block */)arg3 timeout:(double)arg4;

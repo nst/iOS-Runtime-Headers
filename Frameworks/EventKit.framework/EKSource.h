@@ -16,7 +16,7 @@
 @property (nonatomic, retain) NSSet *cachedOwnerAddresses;
 @property (nonatomic) int cachedPort;
 @property (nonatomic, readonly) NSSet *calendars;
-@property (nonatomic, readonly) EKSourceConstraints *constraints;
+@property (nonatomic, readonly) CDBSourceConstraints *constraints;
 @property (nonatomic, copy) NSNumber *defaultAlarmOffset;
 @property (nonatomic, readonly) int displayOrderForNewCalendar;
 @property (getter=isEnabled, nonatomic, readonly) BOOL enabled;

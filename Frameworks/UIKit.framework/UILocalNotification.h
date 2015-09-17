@@ -15,6 +15,7 @@
 @property (nonatomic, copy) NSDate *fireDate;
 @property (nonatomic) BOOL fireNotificationsWhenAppRunning;
 @property (nonatomic, copy) NSString *firedNotificationName;
+@property (getter=isFromSnooze, nonatomic) BOOL fromSnooze;
 @property (nonatomic) BOOL hasAction;
 @property (nonatomic) BOOL hideAlertTitle;
 @property (nonatomic) BOOL interruptAudioAndLockDevice;
@@ -32,6 +33,7 @@
 @property (nonatomic, copy) NSTimeZone *timeZone;
 @property (nonatomic) int totalRepeatCount;
 @property (nonatomic, copy) NSDictionary *userInfo;
+@property (nonatomic, copy) NSString *vibrationName;
 
 + (id)alloc;
 + (id)allocWithZone:(struct _NSZone { }*)arg1;

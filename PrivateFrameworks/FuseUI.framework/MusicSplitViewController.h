@@ -39,6 +39,7 @@
 - (id)_detailViewControllerOverrideTraitCollection;
 - (void)_didChangeDetailViewController;
 - (void)_didChangePrimaryViewController;
+- (void)_handleDetailViewController:(id)arg1;
 - (float)_preferredPrimaryWColumnWidthWhenWithDetailForWidth:(float)arg1;
 - (id)_primaryViewControllerOverrideTraitCollection;
 - (void)_requestInitialStateDetailViewController;
@@ -47,8 +48,10 @@
 - (void)_updateHorizontallyCompactState;
 - (void)_willChangeDetailViewController:(id)arg1;
 - (void)_willChangePrimaryViewController:(id)arg1;
+- (void)clearDetailViewController;
 - (id)contentScrollView;
 - (void)dealloc;
+- (void)encodeRestorableStateWithCoder:(id)arg1;
 - (id)primaryViewController;
 - (void)scrollViewDidChangeContentInset:(id)arg1;
 - (void)setPrimaryViewController:(id)arg1;

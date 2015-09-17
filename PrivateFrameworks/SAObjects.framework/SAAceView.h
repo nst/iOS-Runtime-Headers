@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
  */
 
-@interface SAAceView : AceObject <SAAceSerializable>
+@interface SAAceView : SABaseAceObject <SAAceSerializable>
 
 @property (nonatomic, retain) <SAAceSerializable> *context;
 @property (readonly, copy) NSString *debugDescription;

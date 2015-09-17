@@ -16,13 +16,12 @@
 
 + (id)mutableTextureWithSize:(struct CGSize { float x1; float x2; })arg1;
 
-- (id).cxx_construct;
+- (struct shared_ptr<jet_texture> { struct jet_texture {} *x1; struct __shared_weak_count {} *x2; })_backingTexture;
 - (void)dealloc;
 - (id)description;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 ioSurfaceBacked:(BOOL)arg2 pixelFormat:(int)arg3;
 - (id)initWithSize:(struct CGSize { float x1; float x2; })arg1 pixelFormat:(int)arg2;
-- (void)load;
 - (void)modifyPixelDataWithBlock:(id /* block */)arg1;
 
 @end

@@ -53,6 +53,7 @@
 - (void)setLogFileDirectoryPath:(id)arg1;
 - (void)setLogFilePath:(id)arg1;
 - (void)setLogRotationTimerSource:(id)arg1;
+- (void)setLoggingLevel:(int)arg1;
 - (void)setUserDefaults:(id)arg1;
 - (BOOL)shouldLog:(int)arg1;
 - (BOOL)shouldLogCommon:(unsigned int)arg1;

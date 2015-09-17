@@ -41,6 +41,7 @@
 + (id)reuseIdentifierForSpecifier:(id)arg1;
 + (id)stringFromCellType:(int)arg1;
 
+- (void).cxx_destruct;
 - (id)_automationID;
 - (id)_checkmarkImage:(BOOL)arg1;
 - (id)_contentString;

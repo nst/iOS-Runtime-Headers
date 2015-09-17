@@ -13,6 +13,7 @@
 @property (readonly) Class superclass;
 
 - (void)dealloc;
+- (id)description;
 - (id)effects;
 - (id)fill;
 - (BOOL)hasEffects;

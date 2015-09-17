@@ -6,7 +6,6 @@
 
 - (void)_mergeAllBitsOfRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 excludingRanges:(id)arg2 mergeRanges:(BOOL)arg3;
 - (void)addOrExtendRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
-- (struct _VMURange { unsigned long long x1; unsigned long long x2; })largestUnusedWithInUse:(id)arg1;
 - (void)mergeRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1;
 - (void)mergeRange:(struct _VMURange { unsigned long long x1; unsigned long long x2; })arg1 excludingRanges:(id)arg2;
 - (void)mergeRanges:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKSettingTableCell : UITableViewCell {
+@interface PKSettingTableCell : PKTableViewCell {
     SEL _action;
     UISwitch *_settingSwitch;
     id _target;
@@ -10,7 +10,7 @@
 
 @property (nonatomic, readonly) SEL action;
 @property (getter=isOn, nonatomic) BOOL on;
-@property (nonatomic) UISwitch *settingSwitch;
+@property (nonatomic, retain) UISwitch *settingSwitch;
 @property (nonatomic, readonly) id target;
 
 - (SEL)action;

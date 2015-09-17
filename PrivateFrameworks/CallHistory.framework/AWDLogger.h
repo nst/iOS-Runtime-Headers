@@ -12,16 +12,19 @@
 
 - (void).cxx_destruct;
 - (id)awdServer;
+- (void)bootstrapGizmo:(unsigned int)arg1;
 - (void)callAddedWithNilUuid:(unsigned int)arg1 withCallStatus:(unsigned int)arg2;
 - (void)commCenterMigrationResult:(BOOL)arg1 withMigratedCallCount:(unsigned int)arg2;
 - (void)databaseMigrationResult:(BOOL)arg1 oldVersion:(int)arg2 newVersion:(int)arg3;
 - (void)databaseSaveError:(int)arg1 withTableName:(id)arg2;
 - (void)deleteAll:(unsigned int)arg1;
 - (void)entitlementRejection:(int)arg1;
+- (void)gizmoDatabaseMigrationFailure;
 - (id)init;
 - (void)setAwdServer:(id)arg1;
 - (void)submitMetric:(id)arg1 withId:(unsigned int)arg2;
 - (void)syncFailure:(unsigned int)arg1;
 - (void)syncSuccess:(unsigned int)arg1 withDownloadRecordCount:(unsigned int)arg2;
+- (void)uninitializedDatabaseSave;
 
 @end

@@ -60,7 +60,6 @@
 @property (nonatomic, readonly) KNSlideCollectionSelection *slideTreeSelection;
 @property (nonatomic) BOOL slideViewFitsContentInWindow;
 
-- (id).cxx_construct;
 - (id)UIStateForChart:(id)arg1;
 - (id)archivedUIStateInContext:(id)arg1;
 - (struct CGPoint { float x1; float x2; })canvasOffset;

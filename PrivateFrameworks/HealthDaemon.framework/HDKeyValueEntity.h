@@ -29,7 +29,7 @@
 + (BOOL)_validateEntityClassForCategory:(int)arg1;
 + (id)_valuesForKeys:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 error:(id*)arg5 handler:(id /* block */)arg6;
 + (id)allValuesForDomain:(id)arg1 category:(int)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
-+ (id)createTableSQL;
++ (id)columnsDefinition;
 + (id)dataForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
 + (id)databaseTable;
 + (id)dateForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
@@ -51,6 +51,7 @@
 + (BOOL)setString:(id)arg1 forKey:(id)arg2 domain:(id)arg3 category:(int)arg4 healthDaemon:(id)arg5 error:(id*)arg6;
 + (BOOL)setValuesWithDictionary:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
 + (id)stringForKey:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 entity:(id*)arg5 error:(id*)arg6;
++ (id)uniquedColumns;
 + (id)valuesForKeys:(id)arg1 domain:(id)arg2 category:(int)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
 
 @end

@@ -19,6 +19,7 @@
 - (int)bold;
 - (id)color;
 - (void)dealloc;
+- (id)description;
 - (id)fontReference;
 - (id)init;
 - (int)italic;

@@ -10,6 +10,8 @@
     NSMutableArray *mOrderedKeys;
 }
 
+@property (nonatomic, readonly) NSArray *allKeys;
+@property (nonatomic, readonly) NSArray *allValues;
 @property (nonatomic, readonly) unsigned int maxSize;
 
 - (id)allKeys;

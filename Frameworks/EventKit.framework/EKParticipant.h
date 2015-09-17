@@ -10,12 +10,13 @@
 @property (nonatomic, readonly) NSString *UUID;
 @property (nonatomic, copy) NSURL *address;
 @property (nonatomic, copy) NSString *comment;
+@property (nonatomic, readonly) NSPredicate *contactPredicate;
+@property (getter=isCurrentUser, nonatomic, readonly) BOOL currentUser;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *emailAddress;
 @property (nonatomic, copy) NSString *firstName;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isCurrentUser;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) EKCalendarItem *owner;
@@ -28,12 +29,13 @@
 
 + (void*)findABPersonByURL:(id)arg1 inAddressBook:(void*)arg2;
 
-- (void*)ABRecordWithAddressBook:(void*)arg1;
+- (const void*)ABRecordWithAddressBook:(void*)arg1;
 - (id)URL;
 - (id)UUID;
 - (id)_persistentItem;
 - (id)address;
 - (id)comment;
+- (id)contactPredicate;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)emailAddress;
 - (id)firstName;

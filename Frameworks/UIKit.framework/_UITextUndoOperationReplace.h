@@ -10,7 +10,7 @@
     } _replacementRange;
 }
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithAffectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inputController:(id)arg2 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
 - (void)undoRedo;
 

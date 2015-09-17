@@ -12,6 +12,8 @@
 - (struct OpaqueFigMutableComposition { }*)_mutableComposition;
 - (void)dealloc;
 - (void)finalize;
+- (BOOL)isPlayable;
+- (long)playabilityValidationResult;
 - (id)segmentForTrackTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)segments;
 

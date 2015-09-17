@@ -3,10 +3,18 @@
  */
 
 @interface OADGenericTextField : OADTextField {
-    NSString *mType;
+    NSString *_guid;
+    NSString *_type;
 }
 
+@property (nonatomic, copy) NSString *guid;
+@property (nonatomic, copy) NSString *type;
+
 - (void)dealloc;
+- (id)guid;
+- (id)initWithGuid:(id)arg1 type:(id)arg2;
+- (BOOL)isSimilarToTextRun:(id)arg1;
+- (void)setGuid:(id)arg1;
 - (void)setType:(id)arg1;
 - (id)type;
 

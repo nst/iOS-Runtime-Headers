@@ -69,6 +69,8 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_responderSelectionRectForWindow:(id)arg1;
 - (id)_scriptingInfo;
 - (id)_selectedIndicatorView;
+- (void)_sendFocusAction;
+- (struct CGSize { float x1; float x2; })_sensitivitySize;
 - (void)_setAppearanceGuideClass:(Class)arg1;
 - (void)_setBadgeAnimated:(BOOL)arg1;
 - (void)_setBadgeValue:(id)arg1;
@@ -91,6 +93,7 @@
 - (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
 - (BOOL)_showsHighlightedState;
 - (id)_swappableImageView;
+- (id)_tabBar;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_tabBarHitRect;
 - (struct UIOffset { float x1; float x2; })_titlePositionAdjustment;
 - (id)_unselectedTintColor;
@@ -100,7 +103,7 @@
 - (BOOL)_useBarHeight;
 - (BOOL)canBecomeFocused;
 - (void)dealloc;
-- (void)focusedViewDidChange;
+- (void)didUpdateFocusFromView:(id)arg1;
 - (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
 - (id)labelOffsetValue;
 - (void)layoutSubviews;
@@ -111,7 +114,6 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLabelOffsetValue:(id)arg1;
-- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tabBarButtonLabel;
 
 @end

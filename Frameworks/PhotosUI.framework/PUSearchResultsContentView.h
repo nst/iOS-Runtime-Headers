@@ -37,17 +37,18 @@
 @property (nonatomic, copy) NSString *subtitle;
 @property (nonatomic, copy) NSAttributedString *title;
 
-+ (id)defaultAttributes;
-+ (id)highlightedAttributes;
-+ (id)subtitleTextColor;
-
 - (void).cxx_destruct;
+- (void)_preferredContentSizeChanged:(id)arg1;
+- (void)_updateAuxSubtitleLabel;
 - (void)_updateImageContainers;
-- (void)_updateSubviews;
+- (void)_updateImageView;
+- (void)_updateSubtitleLabel;
+- (void)_updateTitleLabel;
 - (id)auxSubtitle;
 - (void)clearImages;
 - (float)clippingOffsetY;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
+- (void)dealloc;
 - (float)draggingOffsetX;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

@@ -6,39 +6,50 @@
     unsigned int _activationMode;
     NSString *_activationModeString;
     BOOL _authenticationRequired;
+    unsigned int _behavior;
+    NSString *_behaviorString;
     BOOL _destructive;
     NSString *_identifier;
+    NSDictionary *_parameters;
     NSString *_title;
 }
 
 @property (nonatomic) unsigned int activationMode;
 @property (nonatomic, readonly) NSString *activationModeString;
 @property (getter=isAuthenticationRequired, nonatomic) BOOL authenticationRequired;
+@property (nonatomic) unsigned int behavior;
+@property (nonatomic, readonly) NSString *behaviorString;
 @property (getter=isDestructive, nonatomic) BOOL destructive;
 @property (nonatomic, copy) NSString *identifier;
+@property (nonatomic, copy) NSDictionary *parameters;
 @property (nonatomic, copy) NSString *title;
 
-+ (id)actionWithIdentifier:(id)arg1 title:(id)arg2 activationMode:(unsigned int)arg3 isAuthenticationRequired:(BOOL)arg4;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (unsigned int)activationMode;
 - (id)activationModeString;
+- (unsigned int)behavior;
+- (id)behaviorString;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)identifier;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 title:(id)arg2 activationMode:(unsigned int)arg3 isAuthenticationRequired:(BOOL)arg4 isDestructive:(BOOL)arg5;
+- (id)initWithIdentifier:(id)arg1 title:(id)arg2 behavior:(unsigned int)arg3 parameters:(id)arg4 activationMode:(unsigned int)arg5 isAuthenticationRequired:(BOOL)arg6 isDestructive:(BOOL)arg7;
 - (BOOL)isAuthenticationRequired;
 - (BOOL)isDestructive;
 - (BOOL)isEqual:(id)arg1;
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
+- (id)parameters;
 - (void)setActivationMode:(unsigned int)arg1;
 - (void)setAuthenticationRequired:(BOOL)arg1;
+- (void)setBehavior:(unsigned int)arg1;
 - (void)setDestructive:(BOOL)arg1;
 - (void)setIdentifier:(id)arg1;
+- (void)setParameters:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 - (id)validatedAction;

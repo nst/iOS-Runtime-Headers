@@ -48,7 +48,10 @@
 - (BOOL)_isValidRow:(int)arg1;
 - (id)_lookUpAvailabilityTypeForParticipantAddress:(id)arg1;
 - (id)_lookUpParticipantIndexForParticipantAddress:(id)arg1;
+- (void)_removeAddressFromDictionaryOfAddressesToAvailabilityType:(id)arg1;
+- (void)_removeAddressFromDictionaryOfAddressesToParticipantIndex:(id)arg1;
 - (void)_removeAddressFromSetOfAddressesToInflightOperations:(id)arg1;
+- (void)_removeParticipantAtIndexPath:(id)arg1;
 - (void)_setAvailabilityType:(id)arg1 forParticipantAddress:(id)arg2;
 - (BOOL)_setOfAddressesToInflightOperationsContainsAddress:(id)arg1;
 - (void)_setParticipantIndex:(id)arg1 forParticipantAddress:(id)arg2;

@@ -3,6 +3,12 @@
  */
 
 @interface MTLIOAccelCommandQueue : _MTLCommandQueue {
+    struct IOAccelCommandQueueSetPriorityAndBackgroundArgs { 
+        int priority; 
+        int background_priority; 
+        unsigned short priority_offset; 
+        unsigned short background_priority_offset; 
+    } _PriorityArgs;
     struct __IOAccelCommandQueue { } *_commandQueue;
     MTLIOAccelDevice<MTLDevice> *_device;
 }
@@ -12,6 +18,12 @@
 - (void)dealloc;
 - (id)device;
 - (id)initWithDevice:(id)arg1 maxCommandBufferCount:(unsigned long)arg2;
+- (BOOL)setBackgroundGPUPriority:(unsigned int)arg1;
+- (BOOL)setBackgroundGPUPriority:(unsigned int)arg1 offset:(unsigned short)arg2;
+- (void)setCompletionQueue:(id)arg1;
+- (BOOL)setGPUPriority:(unsigned int)arg1;
+- (BOOL)setGPUPriority:(unsigned int)arg1 offset:(unsigned short)arg2;
+- (void)setLabel:(id)arg1;
 - (void)submitCommandBuffers:(id*)arg1 count:(unsigned int)arg2;
 
 @end

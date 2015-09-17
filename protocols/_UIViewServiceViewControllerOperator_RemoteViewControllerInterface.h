@@ -5,12 +5,14 @@
 
 @required
 
-- (void)__createViewController:(void *)arg1 withAppearanceSerializedRepresentations:(void *)arg2 legacyAppearance:(void *)arg3 hostAccessibilityServerPort:(void *)arg4 canShowTextServices:(void *)arg5 replyHandler:(void *)arg6; // needs 6 arg types, found 16: NSString *, NSArray *, BOOL, _UIViewServiceXPCMachSendRight *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, int, BOOL, _UIViewServiceXPCMachSendRight *, NSError *, void*
-- (void)__createViewController:(void *)arg1 withContextToken:(void *)arg2 fbsDisplays:(void *)arg3 appearanceSerializedRepresentations:(void *)arg4 legacyAppearance:(void *)arg5 traitCollection:(void *)arg6 initialInterfaceOrientation:(void *)arg7 hostAccessibilityServerPort:(void *)arg8 canShowTextServices:(void *)arg9 replyHandler:(void *)arg10; // needs 10 arg types, found 20: NSString *, NSUUID *, NSArray *, NSArray *, BOOL, UITraitCollection *, int, _UIViewServiceXPCMachSendRight *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, int, BOOL, _UIViewServiceXPCMachSendRight *, NSError *, void*
+- (void)__createViewController:(void *)arg1 withAppearanceSerializedRepresentations:(void *)arg2 legacyAppearance:(void *)arg3 hostAccessibilityServerPort:(void *)arg4 canShowTextServices:(void *)arg5 replyHandler:(void *)arg6; // needs 6 arg types, found 16: NSString *, NSArray *, BOOL, BSMachPortSendRight *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, int, BOOL, BSMachPortSendRight *, NSError *, void*
+- (void)__createViewController:(void *)arg1 withContextToken:(void *)arg2 fbsDisplays:(void *)arg3 appearanceSerializedRepresentations:(void *)arg4 legacyAppearance:(void *)arg5 traitCollection:(void *)arg6 initialInterfaceOrientation:(void *)arg7 hostAccessibilityServerPort:(void *)arg8 canShowTextServices:(void *)arg9 replyHandler:(void *)arg10; // needs 10 arg types, found 20: NSString *, NSUUID *, NSArray *, NSArray *, BOOL, UITraitCollection *, int, BSMachPortSendRight *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, int, BOOL, BSMachPortSendRight *, NSError *, void*
 - (void)__dimmingViewWasTapped;
-- (void)__exchangeAccessibilityPortInformation:(void *)arg1 replyHandler:(void *)arg2; // needs 2 arg types, found 8: _UIViewServiceXPCMachSendRight *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIViewServiceXPCMachSendRight *, NSError *, void*
+- (void)__exchangeAccessibilityPortInformation:(void *)arg1 replyHandler:(void *)arg2; // needs 2 arg types, found 8: BSMachPortSendRight *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BSMachPortSendRight *, NSError *, void*
+- (void)__hostDidAttachDisplay:(FBSDisplay *)arg1;
 - (void)__hostDidChangeStatusBarHeight:(float)arg1;
 - (void)__hostDidChangeStatusBarOrientationToInterfaceOrientation:(int)arg1;
+- (void)__hostDidDetachDisplayWithIntegerDisplayID:(unsigned int)arg1;
 - (void)__hostDidEnterBackground;
 - (void)__hostDidPromoteFirstResponder;
 - (void)__hostDidRotateFromInterfaceOrientation:(int)arg1 skipSelf:(BOOL)arg2;
@@ -22,9 +24,9 @@
 - (void)__hostViewDidAppear:(BOOL)arg1;
 - (void)__hostViewDidDisappear:(BOOL)arg1;
 - (void)__hostViewDidMoveToScreenWithIntegerDisplayID:(void *)arg1 newHostingHandleReplyHandler:(void *)arg2; // needs 2 arg types, found 7: unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, void*
-- (void)__hostViewWillAppear:(void *)arg1 inInterfaceOrientation:(void *)arg2 traitCollection:(void *)arg3 statusBarHeight:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 10: BOOL, int, UITraitCollection *, float, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { float x1; float x2; }, void*
+- (void)__hostViewWillAppear:(void *)arg1 inInterfaceOrientation:(void *)arg2 traitCollection:(void *)arg3 statusBarHeight:(void *)arg4 underlapsStatusBar:(void *)arg5 completionHandler:(void *)arg6; // needs 6 arg types, found 11: BOOL, int, UITraitCollection *, float, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { float x1; float x2; }, void*
 - (void)__hostViewWillDisappear:(BOOL)arg1;
-- (void)__hostViewWillTransitionToSize:(void *)arg1 withContextDescription:(void *)arg2 statusBarHeight:(void *)arg3 whenDone:(void *)arg4; // needs 4 arg types, found 9: struct CGSize { float x1; float x2; }, _UIViewControllerTransitionCoordinatorContextDescription *, float, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { float x1; float x2; }, void*
+- (void)__hostViewWillTransitionToSize:(void *)arg1 withContextDescription:(void *)arg2 statusBarHeight:(void *)arg3 underlapsStatusBar:(void *)arg4 whenDone:(void *)arg5; // needs 5 arg types, found 10: struct CGSize { float x1; float x2; }, _UIViewControllerTransitionCoordinatorContextDescription *, float, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { float x1; float x2; }, void*
 - (void)__hostWillAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2 skipSelf:(BOOL)arg3;
 - (void)__hostWillEnterForeground;
 - (void)__hostWillRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2 skipSelf:(BOOL)arg3;
@@ -37,7 +39,8 @@
 - (void)__scrollToTopFromTouchAtViewLocation:(void *)arg1 resultHandler:(void *)arg2; // needs 2 arg types, found 8: struct CGPoint { float x1; float x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)__setContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)__setHostTintColor:(UIColor *)arg1 tintAdjustmentMode:(int)arg2;
-- (void)__setHostTraitCollection:(UITraitCollection *)arg1;
+- (void)__setHostTraitCollection:(UITraitCollection *)arg1 deferIfAnimated:(BOOL)arg2;
+- (void)__setHostViewUnderlapsStatusBar:(BOOL)arg1;
 - (void)__setServiceInPopover:(BOOL)arg1;
 - (void)__textServiceDidDismiss;
 

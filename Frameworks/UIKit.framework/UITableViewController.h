@@ -2,11 +2,11 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UITableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate> {
+@interface UITableViewController : UIViewController <UITableViewDataSource, UITableViewDelegate, UITableViewFocusDelegateLegacy, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Deprecated, _UIKeyboardAutoRespondingScrollViewController> {
     _UIFilteredDataSource *_filteredDataSource;
     int _filteredDataType;
-    id _keyboardSupport;
-    id _staticDataSource;
+    UIAutoRespondingScrollViewControllerKeyboardSupport *_keyboardSupport;
+    UITableViewDataSource *_staticDataSource;
     struct { 
         unsigned int clearsSelectionOnViewWillAppear : 1; 
         unsigned int insetsApplied : 1; 
@@ -20,18 +20,21 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIRefreshControl *refreshControl;
+@property (getter=_scrollView, nonatomic, readonly, retain) UIScrollView<_UIKeyboardAutoRespondingScrollView> *scrollView;
 @property (getter=_staticDataSource, setter=_setStaticDataSource:, nonatomic, retain) UITableViewDataSource *staticDataSource;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITableView *tableView;
 
-- (void)_adjustTableForKeyboardInfo:(id)arg1;
+- (void).cxx_destruct;
 - (void)_applyDefaultDataSourceToTable:(id)arg1;
 - (id)_existingTableView;
 - (int)_filteredDataType;
 - (void)_refreshFilteredDataSourceFilterTypeForScreen:(id)arg1;
 - (int)_resolvedDataSourceFilterTypeForScreen:(id)arg1;
+- (id)_scrollView;
 - (void)_setFilteredDataType:(int)arg1;
 - (void)_setStaticDataSource:(id)arg1;
+- (BOOL)_shouldRespondToPreviewingMethods;
 - (id)_staticDataSource;
 - (BOOL)_viewControllerWasSelected;
 - (void)_willChangeToIdiom:(int)arg1 onScreen:(id)arg2;
@@ -44,6 +47,10 @@
 - (id)initWithStyle:(int)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (id)previewViewControllerForLocation:(struct CGPoint { float x1; float x2; })arg1 inSourceView:(id)arg2;
+- (id)previewViewControllerForRowAtIndexPath:(id)arg1;
+- (void)previewingContext:(id)arg1 commitViewController:(id)arg2;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)refreshControl;
 - (BOOL)respondsToSelector:(SEL)arg1;
 - (void)setClearsSelectionOnViewWillAppear:(BOOL)arg1;
@@ -66,5 +73,8 @@
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forPosition:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
+- (void)willPresentPreviewViewController:(id)arg1 forRowAtIndexPath:(id)arg2;
 
 @end

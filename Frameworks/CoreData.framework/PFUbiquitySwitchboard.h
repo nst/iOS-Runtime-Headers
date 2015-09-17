@@ -25,7 +25,7 @@
 - (id)entryForStore:(id)arg1;
 - (id)filePresenterForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;
 - (id)init;
-- (BOOL)registerUbiquitizedPersistentStore:(id)arg1 forLocalPeerID:(id)arg2 withLocalRootLocation:(id)arg3 andUbiquityRootLocation:(id)arg4 error:(id*)arg5;
+- (BOOL)registerUbiquitizedPersistentStore:(id)arg1 withURL:(id)arg2 forLocalPeerID:(id)arg3 withLocalRootLocation:(id)arg4 andUbiquityRootLocation:(id)arg5 error:(id*)arg6;
 - (void)releaseAllEntriesForStoreName:(id)arg1 andPeerID:(id)arg2;
 - (void)removeEntryFromPreviousEntries:(id)arg1;
 - (void)removeFilePresenterCachedForUbiquityRootLocation:(id)arg1 andLocalPeerID:(id)arg2;

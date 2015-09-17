@@ -3,6 +3,9 @@
  */
 
 @interface _MTLCommandBuffer : NSObject {
+    BOOL _StatEnabled;
+    unsigned long long _StatLocations;
+    unsigned long long _StatOptions;
     unsigned long long _commitTime;
     bool _completedCallbacksDone;
     struct MTLDispatch { struct MTLDispatch {} *x1; id /* block */ x2; } *_completedDispatchList;
@@ -15,37 +18,60 @@
     } _cond;
     unsigned long long _creationTime;
     <MTLCommandEncoder> *_currentCommandEncoder;
+    struct MTLStatSampleRec { void *x1; unsigned long long x2; unsigned long long x3[0]; } *_currentSample;
     unsigned long long _enqueueTime;
     MTLError *_error;
+    unsigned long long _globalTraceObjectID;
     unsigned long long _kernelCompleteTime;
     unsigned long long _kernelScheduledTime;
     NSString *_label;
+    unsigned long long _labelTraceID;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
     } _mutex;
+    unsigned int _numEncoders;
+    unsigned int _numInternalSampleCounters;
+    unsigned int _numRequestedCounters;
+    unsigned int _numThisCommandBuffer;
+    id /* block */ _perfSampleHandlerBlock;
     bool _profilingEnabled;
     NSDictionary *_profilingResults;
     _MTLCommandQueue<MTLCommandQueue> *_queue;
     BOOL _retainedReferences;
+    int _sampleLock;
+    NSMutableArray *_sampleStorage;
+    struct MTLStatSampleRec { void *x1; unsigned long long x2; unsigned long long x3[0]; } *_samples;
+    unsigned int _samplesPerStorageBlock;
     bool _scheduledCallbacksDone;
     struct MTLDispatch { struct MTLDispatch {} *x1; id /* block */ x2; } *_scheduledDispatchList;
     bool _skipRender;
+    _MTLCommandBuffer<MTLCommandBuffer> *_statCommandBuffer;
     unsigned int _status;
     BOOL _strongObjectReferences;
     unsigned long long _submitToHardwareTime;
     unsigned long long _submitToKernelTime;
     BOOL _synchronousDebugMode;
+    unsigned int _totalNumStatSamples;
+    NSMutableDictionary *_userDictionary;
 }
 
+@property (getter=isStatEnabled, nonatomic) BOOL StatEnabled;
+@property (getter=getStatLocations, nonatomic) unsigned long long StatLocations;
+@property (getter=getStatOptions, nonatomic) unsigned long long StatOptions;
 @property (readonly) <MTLCommandQueue> *commandQueue;
 @property (readonly) NSError *error;
+@property (readonly) unsigned long long globalTraceObjectID;
 @property (copy) NSString *label;
+@property (nonatomic) unsigned int numEncoders;
+@property (nonatomic) unsigned int numThisCommandBuffer;
 @property (getter=isProfilingEnabled) BOOL profilingEnabled;
 @property (readonly) NSDictionary *profilingResults;
 @property (readonly) BOOL retainedReferences;
+@property (nonatomic, retain) _MTLCommandBuffer<MTLCommandBuffer> *statCommandBuffer;
 @property (readonly) unsigned int status;
 @property (readonly) BOOL synchronousDebugMode;
+@property (nonatomic, readonly) NSMutableDictionary *userDictionary;
 
 + (void)initialize;
 
@@ -53,19 +79,31 @@
 - (void)addScheduledHandler:(id /* block */)arg1;
 - (id)commandQueue;
 - (void)commit;
+- (void)commitAndHold;
 - (void)commitAndReset;
 - (void)dealloc;
 - (id)description;
 - (void)didComplete:(unsigned long long)arg1 error:(unsigned int)arg2;
+- (void)didCompletePreDealloc:(unsigned long long)arg1 error:(unsigned int)arg2;
 - (void)didSchedule:(unsigned long long)arg1 error:(unsigned int)arg2;
 - (void)enqueue;
 - (id)error;
+- (unsigned int)getAndIncrementNumEncoders;
+- (unsigned long long)getStatLocations;
+- (unsigned long long)getStatOptions;
+- (unsigned long long)globalTraceObjectID;
 - (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2;
 - (id)initWithQueue:(id)arg1 retainedReferences:(BOOL)arg2 synchronousDebugMode:(BOOL)arg3;
 - (BOOL)isCommitted;
 - (BOOL)isProfilingEnabled;
+- (BOOL)isStatEnabled;
 - (void)kernelSubmitTime;
 - (id)label;
+- (struct MTLStatSampleRec { void *x1; unsigned long long x2; unsigned long long x3[0]; }*)newSample;
+- (unsigned int)numEncoders;
+- (unsigned int)numThisCommandBuffer;
+- (void)postProcessCommandbuffer;
+- (void)postProcessSamples:(struct MTLStatSampleRec { void *x1; unsigned long long x2; unsigned long long x3[0]; }*)arg1 toUserDst:(unsigned long long*)arg2 numSamples:(unsigned int)arg3;
 - (void)presentDrawable:(id)arg1;
 - (void)presentDrawable:(id)arg1 atTime:(double)arg2;
 - (id)profilingResults;
@@ -73,10 +111,18 @@
 - (void)setCommitted:(BOOL)arg1;
 - (void)setCurrentCommandEncoder:(id)arg1;
 - (void)setLabel:(id)arg1;
+- (void)setNumEncoders:(unsigned int)arg1;
+- (void)setNumThisCommandBuffer:(unsigned int)arg1;
 - (void)setProfilingEnabled:(BOOL)arg1;
+- (void)setStatCommandBuffer:(id)arg1;
+- (void)setStatEnabled:(BOOL)arg1;
+- (void)setStatLocations:(unsigned long long)arg1;
+- (void)setStatOptions:(unsigned long long)arg1;
 - (BOOL)skipRender;
+- (id)statCommandBuffer;
 - (unsigned int)status;
 - (BOOL)synchronousDebugMode;
+- (id)userDictionary;
 - (void)waitUntilCompleted;
 - (void)waitUntilScheduled;
 

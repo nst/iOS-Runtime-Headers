@@ -2,12 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
  */
 
-@interface FBSSceneSettings : NSObject <NSCopying, NSMutableCopying> {
+@interface FBSSceneSettings : NSObject <BSDescriptionProviding, NSCopying, NSMutableCopying> {
     BOOL _backgrounded;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _contentOffset;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -29,23 +25,27 @@
 }
 
 @property (getter=isBackgrounded, nonatomic, readonly) BOOL backgrounded;
-@property (nonatomic, readonly) struct CGPoint { float x1; float x2; } contentOffset;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (getter=isEffectivelyBackgrounded, nonatomic, readonly) BOOL effectivelyBackgrounded;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) int interfaceOrientation;
 @property (nonatomic, readonly) float level;
 @property (nonatomic, readonly, copy) NSArray *occlusions;
+@property (readonly) Class superclass;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoardServices.framework/FrontBoardServices
 
 + (BOOL)_isMutable;
 + (id)settings;
 
-- (id)_descriptionOfSettingsWithMultilinePrefix:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
-- (struct CGPoint { float x1; float x2; })contentOffset;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frame;
 - (unsigned int)hash;
 - (id)ignoreOcclusionReasons;
@@ -61,11 +61,17 @@
 - (id)mutableCopyWithZone:(struct _NSZone { }*)arg1;
 - (id)occlusions;
 - (id)otherSettings;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 - (id)transientLocalSettings;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (BOOL)isUISubclass;
+
+// Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
+
+- (BOOL)isEffectivelyBackgrounded;
 
 @end

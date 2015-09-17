@@ -43,7 +43,6 @@
 - (BOOL)hasStructuredAddress;
 - (unsigned int)hash;
 - (id)initWithAddressDictionary:(id)arg1;
-- (id)initWithAddressString:(id)arg1;
 - (id)initWithUrlRepresentation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;

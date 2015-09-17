@@ -10,8 +10,11 @@
     } mMaxSize;
 }
 
+@property (nonatomic, readonly) struct CGSize { float x1; float x2; } maxSize;
+
 - (void)addSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)dealloc;
 - (struct CGImage { }*)degradedImageRefForForProvider:(id)arg1 quality:(int)arg2 canvasScale:(float)arg3;
+- (struct CGSize { float x1; float x2; })maxSize;
 
 @end

@@ -13,6 +13,7 @@
 @property unsigned int gradientStyle;
 
 + (id)cuiPSDGradientWithColors:(id)arg1 locations:(id)arg2 midpointLocations:(id)arg3 angle:(float)arg4 isRadial:(BOOL)arg5;
++ (id)cuiPSDGradientWithColors:(id)arg1 locations:(id)arg2 midpointLocations:(id)arg3 angle:(float)arg4 style:(unsigned int)arg5;
 + (id)getMidpointLocationFromArray:(id)arg1 atIndex:(int)arg2 withPolicy:(int)arg3;
 
 - (void)dealloc;

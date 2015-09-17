@@ -17,7 +17,7 @@
 - (id)newDataStorageAtRelativePath:(id)arg1 decryptionInfo:(id)arg2;
 - (id)newDocumentPropertiesWithURL:(id)arg1 zipProvider:(id /* block */)arg2 error:(id*)arg3;
 - (id)newRawDataReadChannelAtRelativePath:(id)arg1;
-- (id)newRawReadChannelForComponent:(id)arg1;
+- (id)newRawReadChannelForComponentLocator:(id)arg1 isStoredOutsideObjectArchive:(BOOL)arg2;
 - (int)packageType;
 - (void)prepareForDocumentReplacementWithSuccess:(BOOL)arg1 forSafeSave:(BOOL)arg2 originalURL:(id)arg3;
 

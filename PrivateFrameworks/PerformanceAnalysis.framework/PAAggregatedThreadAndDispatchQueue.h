@@ -7,7 +7,9 @@
     NSMutableArray *_contiguousThreadArrays;
     unsigned long long _cpuTimeNsCached;
     unsigned long long _dispatchQueueId;
+    int _maxBasePriority;
     int _maxPriority;
+    int _minBasePriority;
     int _minPriority;
     unsigned long long _threadId;
 }
@@ -24,7 +26,9 @@
 @property (readonly) BOOL isMainThread;
 @property (readonly) BOOL isProcessorIdleThread;
 @property (readonly) unsigned int lastTimestampIndex;
+@property int maxBasePriority;
 @property int maxPriority;
+@property int minBasePriority;
 @property int minPriority;
 @property (readonly) Class superclass;
 @property unsigned long long threadId;
@@ -51,7 +55,9 @@
 - (BOOL)isProcessorIdleThread;
 - (BOOL)isSingleStack;
 - (unsigned int)lastTimestampIndex;
+- (int)maxBasePriority;
 - (int)maxPriority;
+- (int)minBasePriority;
 - (int)minPriority;
 - (unsigned int)numMissingSamplesBeforeContiguousThreadArrayIndex:(unsigned int)arg1;
 - (void)printHeaderToStream:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
@@ -60,7 +66,9 @@
 - (void)printToStream:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 - (id)sampleStore;
 - (void)setDispatchQueueId:(unsigned long long)arg1;
+- (void)setMaxBasePriority:(int)arg1;
 - (void)setMaxPriority:(int)arg1;
+- (void)setMinBasePriority:(int)arg1;
 - (void)setMinPriority:(int)arg1;
 - (void)setThreadId:(unsigned long long)arg1;
 - (unsigned long long)threadId;

@@ -23,6 +23,7 @@
 
 + (double)defaultDurationForTransition:(int)arg1;
 
+- (void).cxx_destruct;
 - (void)_cleanupTransition;
 - (void)_cleanupTransitionFromPopover;
 - (BOOL)_isTransitioningFromView:(id)arg1;

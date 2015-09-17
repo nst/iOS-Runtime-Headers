@@ -14,6 +14,7 @@
     bool mItalic;
     bool mItalicOverridden;
     NSString *mName;
+    bool mNameOverridden;
     bool mOutline;
     EDResources *mResources;
     int mScript;
@@ -38,6 +39,7 @@
 - (id)colorReference;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
+- (id)description;
 - (int)family;
 - (double)height;
 - (id)initWithResources:(id)arg1;
@@ -48,6 +50,7 @@
 - (bool)isHeightOverridden;
 - (bool)isItalic;
 - (bool)isItalicOverridden;
+- (bool)isNameOverridden;
 - (bool)isOutline;
 - (bool)isShadow;
 - (bool)isStrike;

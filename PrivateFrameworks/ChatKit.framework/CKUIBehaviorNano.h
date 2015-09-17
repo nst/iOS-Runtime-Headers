@@ -17,6 +17,7 @@
 - (struct CGSize { float x1; float x2; })balloonMaskSize;
 - (float)balloonMaskTailHeight;
 - (float)balloonMaskTailWidth;
+- (float)balloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2 shouldShowPhotoButton:(BOOL)arg3 shouldShowCharacterCount:(BOOL)arg4;
 - (id)balloonName;
 - (id)blue_sendButtonColor;
 - (float)bottomConversationListSpace;
@@ -40,6 +41,7 @@
 - (unsigned int)conversationListCellSummaryNumberOfLines;
 - (id)conversationListDateColor;
 - (id)conversationListDateFont;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })conversationListFilterSegmentInset;
 - (id)conversationListGroupCountColor;
 - (id)conversationListGroupCountFont;
 - (id)conversationListSenderColor;
@@ -52,7 +54,6 @@
 - (id)detailsImage;
 - (struct CGSize { float x1; float x2; })documentIconSize;
 - (float)emojiPreviewMaxWidth;
-- (float)entryContentViewPortraitWidth;
 - (id)grayChevronImage;
 - (id)gray_chevronImage;
 - (id)gray_unfilledBalloonColor;
@@ -62,10 +63,10 @@
 - (BOOL)hyphenatesTextContent;
 - (BOOL)isSizeConstrained;
 - (float)largeTranscriptSpace;
-- (float)leftBalloonMaxWidthForTranscriptWidth:(float)arg1 marginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg2;
 - (struct CGSize { float x1; float x2; })mapThumbnailFillSizeForWidth:(float)arg1;
 - (float)mediumTranscriptSpace;
 - (id)messagesControllerBackgroundColor;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })minTranscriptMarginInsets;
 - (id)notificationSubtitleColor;
 - (BOOL)opensLocationsInMapsApp;
 - (id)playButtonArrowImage;
@@ -78,7 +79,6 @@
 - (BOOL)promptsForReadReceiptsSetting;
 - (BOOL)recordsRecentContact;
 - (BOOL)resetsIdleTimer;
-- (float)rightBalloonMaxWidthForEntryContentViewWidth:(float)arg1;
 - (BOOL)scrollToBottomStopsAtTopOfLastBubble;
 - (float)senderSummaryConversationListSpace;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })senderTranscriptInsets;
@@ -98,6 +98,7 @@
 - (BOOL)showsNoMessagesDialog;
 - (BOOL)showsPlaceCardForBalloonViewTitleTap;
 - (BOOL)showsProgressInNavigationBar;
+- (BOOL)showsSegmentedControlForFilteredConversationList;
 - (BOOL)showsSendAnimation;
 - (BOOL)showsVCalViewer;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })skinnyBalloonMaskCapInsets;
@@ -107,6 +108,8 @@
 - (float)smallTranscriptSpace;
 - (id)stampTranscriptBoldTextAttributes;
 - (id)stampTranscriptTextAttributes;
+- (id)strokedBalloonName;
+- (id)strokedTaillessBalloonName;
 - (float)summaryDateConversationListSpace;
 - (BOOL)supportsContiguousAttachments;
 - (id)systemGrayChevronImage;
@@ -130,7 +133,6 @@
 - (float)transcriptDrawerMaxContentOffsetXForMarginInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (float)transcriptDrawerSpace;
 - (int)transcriptLoadingIndicatorStyle;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })transcriptMarginInsets;
 - (id)transcriptTextColor;
 - (id)transcriptTextFont;
 - (float)transcriptWaveformWidthForDuration:(double)arg1;

@@ -6,6 +6,7 @@
 
 + (id)accountTypeIdentifier;
 + (id)accountTypeString;
++ (id)csAccountTypeString;
 + (id)defaultPathNameForAccountWithHostname:(id)arg1 username:(id)arg2;
 + (id)localAccount;
 

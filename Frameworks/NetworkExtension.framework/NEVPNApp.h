@@ -4,9 +4,11 @@
 
 @interface NEVPNApp : NEVPN {
     NSArray *_appRules;
+    int _tunnelType;
 }
 
 @property (copy) NSArray *appRules;
+@property int tunnelType;
 
 + (BOOL)supportsSecureCoding;
 
@@ -18,12 +20,14 @@
 - (id)copyAppRuleIDs;
 - (id)copyLegacyDictionary;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (id)descriptionWithIndent:(int)arg1;
+- (id)descriptionWithIndent:(int)arg1 options:(unsigned int)arg2;
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)removeAppRuleByID:(id)arg1;
 - (void)setAppRules:(id)arg1;
+- (void)setTunnelType:(int)arg1;
+- (int)tunnelType;
 
 @end

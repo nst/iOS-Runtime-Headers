@@ -6,6 +6,7 @@
     NSMutableArray *_activityCaches;
     NSMutableArray *_categorySamples;
     NSMutableArray *_correlations;
+    HDCodableProvenance *_provenance;
     NSMutableArray *_quantitySamples;
     HDCodableSource *_source;
     NSString *_sourceBundleIdentifier;
@@ -15,8 +16,10 @@
 @property (nonatomic, retain) NSMutableArray *activityCaches;
 @property (nonatomic, retain) NSMutableArray *categorySamples;
 @property (nonatomic, retain) NSMutableArray *correlations;
+@property (nonatomic, readonly) BOOL hasProvenance;
 @property (nonatomic, readonly) BOOL hasSource;
 @property (nonatomic, readonly) BOOL hasSourceBundleIdentifier;
+@property (nonatomic, retain) HDCodableProvenance *provenance;
 @property (nonatomic, retain) NSMutableArray *quantitySamples;
 @property (nonatomic, retain) HDCodableSource *source;
 @property (nonatomic, retain) NSString *sourceBundleIdentifier;
@@ -48,12 +51,14 @@
 - (id)decodedObjects;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasProvenance;
 - (BOOL)hasSource;
 - (BOOL)hasSourceBundleIdentifier;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEquivalentToObjectCollection:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)provenance;
 - (id)quantitySamples;
 - (id)quantitySamplesAtIndex:(unsigned int)arg1;
 - (unsigned int)quantitySamplesCount;
@@ -61,6 +66,7 @@
 - (void)setActivityCaches:(id)arg1;
 - (void)setCategorySamples:(id)arg1;
 - (void)setCorrelations:(id)arg1;
+- (void)setProvenance:(id)arg1;
 - (void)setQuantitySamples:(id)arg1;
 - (void)setSource:(id)arg1;
 - (void)setSourceBundleIdentifier:(id)arg1;

@@ -4,29 +4,23 @@
 
 @interface OADTheme : NSObject {
     OADBaseStyles *mBaseStyles;
-    OADDefaultProperties *mLineDefaults;
-    OADDefaultProperties *mShapeDefaults;
-    OADDefaultProperties *mTextDefaults;
+    OADDrawableDefaults *mDrawableDefaults;
+    NSString *mName;
 }
 
 @property (nonatomic, retain) OADBaseStyles *baseStyles;
-@property (nonatomic, retain) OADDefaultProperties *lineDefaults;
-@property (nonatomic, retain) OADDefaultProperties *shapeDefaults;
-@property (nonatomic, retain) OADDefaultProperties *textDefaults;
+@property (nonatomic, readonly) OADDrawableDefaults *drawableDefaults;
+@property (nonatomic, copy) NSString *name;
 
-- (void)addDefaults;
-- (id)addLineDefaults;
-- (id)addShapeDefaults;
-- (id)addTextDefaults;
 - (id)baseStyles;
 - (void)dealloc;
+- (id)description;
+- (id)drawableDefaults;
 - (id)init;
-- (id)lineDefaults;
+- (bool)isEmpty;
+- (id)name;
 - (void)setBaseStyles:(id)arg1;
-- (void)setLineDefaults:(id)arg1;
-- (void)setShapeDefaults:(id)arg1;
-- (void)setTextDefaults:(id)arg1;
-- (id)shapeDefaults;
-- (id)textDefaults;
+- (void)setName:(id)arg1;
+- (void)validateTheme;
 
 @end

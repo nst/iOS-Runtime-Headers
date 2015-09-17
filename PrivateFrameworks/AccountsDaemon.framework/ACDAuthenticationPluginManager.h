@@ -5,6 +5,8 @@
 @interface ACDAuthenticationPluginManager : NSObject {
     NSObject<OS_dispatch_queue> *_authenticationPluginQueue;
     NSMutableDictionary *_authenticationPluginsByType;
+    ACDQueueDictionary *_discoveryHandlerQueues;
+    NSLock *_discoveryHandlersLock;
     ACDQueueDictionary *_renewalHandlerQueues;
     NSLock *_renewalHandlersLock;
     ACDQueueDictionary *_verificationHandlerQueues;
@@ -15,10 +17,14 @@
 - (id)_authCapableParentAccountForAccount:(id)arg1;
 - (id)_authenticationTypeForAccount:(id)arg1;
 - (id)_descriptionForRenewalResult:(int)arg1;
+- (void)_handleDiscoveryCompletionResult:(id)arg1 forAccount:(id)arg2 discoveryID:(id)arg3 accountStore:(id)arg4 shouldSave:(BOOL)arg5 error:(id)arg6;
 - (void)_handleRenewalCompletionResult:(int)arg1 forAccount:(id)arg2 renewalID:(id)arg3 accountStore:(id)arg4 error:(id)arg5;
 - (void)_handleVerificationCompletionForAccount:(id)arg1 verifiedAccount:(id)arg2 error:(id)arg3 store:(id)arg4 shouldSave:(BOOL)arg5;
 - (id)_pluginForAuthenticationType:(id)arg1;
+- (id)_sanitizeError:(id)arg1;
+- (id)_unsanitizeOptionsDictionary:(id)arg1;
 - (void)credentialForAccount:(id)arg1 client:(id)arg2 store:(id)arg3 handler:(id /* block */)arg4;
+- (void)discoverPropertiesForAccount:(id)arg1 accountStore:(id)arg2 options:(id)arg3 completion:(id /* block */)arg4;
 - (id)init;
 - (BOOL)isPushSupportedForAccount:(id)arg1;
 - (void)renewCredentialsForAccount:(id)arg1 accountStore:(id)arg2 options:(id)arg3 completion:(id /* block */)arg4;

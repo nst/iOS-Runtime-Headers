@@ -3,6 +3,8 @@
  */
 
 @interface PLRoundProgressView : UIView {
+    float __contentsScale;
+    PLProgressArcLayer *__progressArcLayer;
     CAShapeLayer *_circleLayer;
     float _increaseRate;
     struct CGPoint { 
@@ -11,6 +13,7 @@
     } _pieCenter;
     float _pieRadius;
     NSDate *_prevUpdateTime;
+    float _progress;
     NSTimer *_progressTimer;
     float _realProgress;
     CAShapeLayer *_sliceLayer;
@@ -18,17 +21,27 @@
     float _uiProgress;
 }
 
+@property (setter=_setContentsScale:, nonatomic) float _contentsScale;
+@property (setter=_setProgressArcLayer:, nonatomic, retain) PLProgressArcLayer *_progressArcLayer;
+@property (nonatomic) float progress;
 @property (nonatomic, readonly) int style;
 
+- (float)_contentsScale;
+- (id)_progressArcLayer;
+- (void)_setContentsScale:(float)arg1;
+- (void)_setProgressArcLayer:(id)arg1;
 - (void)_setupSubviews;
+- (void)_updateSublayersContentsScale;
+- (void)_updateUIProgress;
 - (void)dealloc;
+- (void)didMoveToWindow;
 - (void)increaseUIProgress:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(int)arg2;
+- (float)progress;
 - (void)recalculateIncreaseProgress:(float)arg1 withTimeDiff:(double)arg2;
 - (void)resetProgress;
 - (void)setInitialIncreaseRatePerFrame:(float)arg1;
-- (void)setPieCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPieRadius:(float)arg1;
 - (void)setProgress:(float)arg1;
 - (void)startProgressTimer;

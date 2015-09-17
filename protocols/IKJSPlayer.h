@@ -6,15 +6,17 @@
 @required
 
 - (IKJSMediaItem *)currentMediaItem;
-- (BOOL)ended;
 - (id)init;
+- (IKJSMediaItem *)nextMediaItem;
+- (IKDOMDocument *)overlayDocument;
 - (void)pause;
-- (BOOL)paused;
 - (void)play;
-- (BOOL)playing;
+- (NSString *)playbackState;
 - (IKJSPlaylist *)playlist;
-- (BOOL)seeking;
-- (void)setCurrentTime:(double)arg1;
+- (void)present;
+- (IKJSMediaItem *)previousMediaItem;
+- (void)seekToTime:(double)arg1;
+- (void)setOverlayDocument:(IKDOMDocument *)arg1;
 - (void)setPlaybackRate:(double)arg1;
 - (void)setPlaylist:(IKJSPlaylist *)arg1;
 - (void)stop;

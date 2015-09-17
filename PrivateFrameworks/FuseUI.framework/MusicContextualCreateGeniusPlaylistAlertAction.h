@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualCreateGeniusPlaylistAlertAction : UIAlertAction
+@interface MusicContextualCreateGeniusPlaylistAlertAction : MusicContextualAlertAction
 
 + (id)contextualCreateGeniusPlaylistActionWithEntityValueContext:(id)arg1 presentingViewController:(id)arg2 allowDetailPush:(BOOL)arg3 didDismissHandler:(id /* block */)arg4;
 

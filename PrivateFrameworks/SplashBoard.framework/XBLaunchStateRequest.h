@@ -2,71 +2,61 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBLaunchStateRequest : NSObject <BSXPCCoding> {
-    int _currentOrientation;
-    BOOL _isLaunchingLive;
+@interface XBLaunchStateRequest : NSObject <BSXPCCoding, NSCopying> {
+    FBSDisplay *_display;
+    int _interfaceOrientation;
     BOOL _isMainScene;
-    int _launchingOrientation;
-    float _scale;
+    NSString *_launchInterfaceIdentifier;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _naturalSize;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _referenceSize;
     NSString *_sceneID;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _screenBounds;
-    struct CGRect { 
-        struct CGPoint { 
-            float x; 
-            float y; 
-        } origin; 
-        struct CGSize { 
-            float width; 
-            float height; 
-        } size; 
-    } _statusBarJailRect;
     unsigned int _statusBarState;
+    NSString *_urlSchemeName;
 }
 
-@property (nonatomic) int currentOrientation;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, retain) FBSDisplay *display;
 @property (readonly) unsigned int hash;
-@property (nonatomic) BOOL isLaunchingLive;
+@property (nonatomic) int interfaceOrientation;
 @property (nonatomic) BOOL isMainScene;
-@property (nonatomic) int launchingOrientation;
-@property (nonatomic) float scale;
+@property (nonatomic, copy) NSString *launchInterfaceIdentifier;
+@property (nonatomic) struct CGSize { float x1; float x2; } naturalSize;
+@property (nonatomic) struct CGSize { float x1; float x2; } referenceSize;
 @property (nonatomic, copy) NSString *sceneID;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } screenBounds;
-@property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } statusBarJailRect;
 @property (nonatomic) unsigned int statusBarState;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSString *urlSchemeName;
 
-- (int)currentOrientation;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)display;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
-- (BOOL)isLaunchingLive;
+- (int)interfaceOrientation;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isMainScene;
-- (int)launchingOrientation;
-- (float)scale;
+- (id)launchInterfaceIdentifier;
+- (struct CGSize { float x1; float x2; })naturalSize;
+- (struct CGSize { float x1; float x2; })referenceSize;
 - (id)sceneID;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })screenBounds;
-- (void)setCurrentOrientation:(int)arg1;
-- (void)setIsLaunchingLive:(BOOL)arg1;
+- (void)setDisplay:(id)arg1;
+- (void)setInterfaceOrientation:(int)arg1;
 - (void)setIsMainScene:(BOOL)arg1;
-- (void)setLaunchingOrientation:(int)arg1;
-- (void)setScale:(float)arg1;
+- (void)setLaunchInterfaceIdentifier:(id)arg1;
+- (void)setNaturalSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setReferenceSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setSceneID:(id)arg1;
-- (void)setScreenBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setStatusBarJailRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setStatusBarState:(unsigned int)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })statusBarJailRect;
+- (void)setUrlSchemeName:(id)arg1;
 - (unsigned int)statusBarState;
+- (id)urlSchemeName;
 
 @end

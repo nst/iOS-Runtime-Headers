@@ -10,5 +10,6 @@
 - (BWNodeOutput *)detectedFacesOutput;
 - (BWNodeOutput *)stillImageOutput;
 - (BWNodeOutput *)videoCaptureOutput;
+- (void)willStop;
 
 @end

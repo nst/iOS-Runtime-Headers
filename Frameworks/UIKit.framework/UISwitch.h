@@ -28,12 +28,14 @@
 
 + (Class)_internalViewClass;
 
+- (void).cxx_destruct;
 - (BOOL)_alwaysShowOnOffLabel;
 - (void)_animateToOn:(BOOL)arg1 withDuration:(float)arg2 sendAction:(BOOL)arg3;
 - (void)_commonInitNewLook;
 - (void)_commonInitNewLookNeue1;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;
+- (unsigned int)_controlEventsForActionTriggered;
 - (void)_encodeFrameWithCoder:(id)arg1;
 - (BOOL)_gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)_handleLongPressNL:(id)arg1;

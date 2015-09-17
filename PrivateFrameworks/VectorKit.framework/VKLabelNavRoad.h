@@ -5,7 +5,7 @@
 @interface VKLabelNavRoad : NSObject <VKLabelNavFeature> {
     BOOL _areLabelsDisabled;
     BOOL _areNavStylesInitialized;
-    struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; } *_data;
+    struct { struct { id x_1_1_1; unsigned int x_1_1_2; unsigned int x_1_1_3; unsigned int x_1_1_4; unsigned int x_1_1_5; unsigned int x_1_1_6; unsigned long long x_1_1_7; BOOL x_1_1_8; unsigned long long x_1_1_9; float x_1_1_10; unsigned long long x_1_1_11; id x_1_1_12; } x1; unsigned int x2; unsigned int x3; int x4; int x5; int x6; unsigned int x7; unsigned int x8; union { struct { struct { float x_1_3_1; float x_1_3_2; } x_1_2_1; struct { float x_2_3_1; float x_2_3_2; } x_1_2_2; } x_9_1_1; struct { float x_2_2_1; float x_2_2_2; float x_2_2_3; float x_2_2_4; } x_9_1_2; } x9; struct { /* ? */ } *x10; struct { unsigned short x_11_1_1[2]; unsigned short x_11_1_2[2]; } x11; unsigned char x12; struct _NSRange { unsigned int x_13_1_1; unsigned int x_13_1_2; } x13; BOOL x14; } *_data;
     struct Matrix<float, 2, 1> { 
         float _e[2]; 
     } _direction;
@@ -17,8 +17,8 @@
     BOOL _isOnRoute;
     BOOL _isRoadLabelUnique;
     BOOL _isStartOfRoadName;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; } *_junctionA;
-    struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; } *_junctionB;
+    struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; } *_junctionA;
+    struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; } *_junctionB;
     double _length;
     NSString *_name;
     VKLabelNavJunction *_navJunctionA;
@@ -56,7 +56,7 @@
 @property (nonatomic, readonly) BOOL isRamp;
 @property (nonatomic) BOOL isRoadLabelUnique;
 @property (nonatomic) BOOL isStartOfRoadName;
-@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*junctionB;
+@property (nonatomic, readonly) struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*junctionB;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) VKLabelNavJunction *navJunctionA;
 @property (nonatomic, readonly) int roadClass;
@@ -97,7 +97,7 @@
 - (BOOL)isRamp;
 - (BOOL)isRoadLabelUnique;
 - (BOOL)isStartOfRoadName;
-- (struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; struct { /* ? */ } *x5; }*)junctionB;
+- (struct { unsigned int x1; unsigned int x2; struct { /* ? */ } *x3; }*)junctionB;
 - (id)labelWithType:(BOOL)arg1;
 - (double)length;
 - (BOOL)matchesRoad:(id)arg1;

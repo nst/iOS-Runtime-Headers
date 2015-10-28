@@ -25,7 +25,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToEmailKey:(id)arg1;
 - (id)messageId;
-- (id)messageURL;
 - (id)serialize;
 - (id)source;
 - (id)toMailMessageKey;

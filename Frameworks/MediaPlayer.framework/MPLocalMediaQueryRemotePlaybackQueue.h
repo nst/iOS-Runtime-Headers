@@ -21,6 +21,7 @@
 - (id)firstItem;
 - (id)initWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
 - (id)mediaQuery;
+- (id)playbackItemMetadataForMediaItem:(id)arg1;
 - (unsigned int)repeatType;
 - (unsigned int)shuffleType;
 - (BOOL)verifyWithError:(id*)arg1;

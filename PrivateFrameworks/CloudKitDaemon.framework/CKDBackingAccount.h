@@ -4,12 +4,12 @@
 
 @interface CKDBackingAccount : NSObject
 
-@property (nonatomic, readonly) BOOL allowsCellularAccess;
 @property (nonatomic, readonly) NSString *cloudKitAuthToken;
 @property (nonatomic, readonly) BOOL cloudKitIsEnabled;
 @property (nonatomic, readonly) BOOL cloudPhotosIsEnabled;
 @property (nonatomic, readonly) NSString *dsid;
 @property (nonatomic, readonly) NSString *iCloudAuthToken;
+@property (nonatomic, readonly) BOOL iCloudDriveAllowsCellularAccess;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) BOOL isFakeAccount;
 @property (nonatomic, readonly) NSString *primaryEmail;
@@ -26,13 +26,13 @@
 
 - (id)_init;
 - (id)accountPropertiesForDataclass:(id)arg1;
-- (BOOL)allowsCellularAccess;
 - (id)ckAccount;
 - (id)cloudKitAuthToken;
 - (BOOL)cloudKitIsEnabled;
 - (BOOL)cloudPhotosIsEnabled;
 - (id)dsid;
 - (id)iCloudAuthToken;
+- (BOOL)iCloudDriveAllowsCellularAccess;
 - (id)identifier;
 - (id)init;
 - (BOOL)isFakeAccount;

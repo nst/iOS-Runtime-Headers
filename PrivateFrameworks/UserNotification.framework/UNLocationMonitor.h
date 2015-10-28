@@ -17,6 +17,8 @@
 
 + (BOOL)isBundleIdentifierAuthorizedForRegionMonitoring:(id)arg1;
 
+- (void)_queue_delegate_didEnterRegion:(id)arg1;
+- (void)_queue_delegate_didExitRegion:(id)arg1;
 - (void)_queue_didEnterRegion:(id)arg1;
 - (void)_queue_didExitRegion:(id)arg1;
 - (void)_queue_markAsHavingReceivedLocation;

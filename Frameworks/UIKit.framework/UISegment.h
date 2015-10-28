@@ -11,6 +11,7 @@
         float width; 
         float height; 
     } _contentOffset;
+    _UIFloatingContentView *_floatingContentView;
     UIView *_info;
     NSArray *_infoConstraints;
     id _objectValue;
@@ -53,6 +54,7 @@
 - (id)_dividerImageIsCustom:(BOOL*)arg1;
 - (id)_effectiveContentView;
 - (id)_encodableSubviews;
+- (id)_floatingContentView;
 - (void)_forceInfoDisplay;
 - (BOOL)_hasSelectedColor;
 - (float)_idealWidth;
@@ -73,6 +75,7 @@
 - (id)_tintColorArchivingKey;
 - (void)_updateBackgroundAndContentViews;
 - (void)_updateBackgroundAndContentViewsIfNeeded;
+- (void)_updateFloatingContentControlState:(unsigned int)arg1 context:(id)arg2 withAnimationCoordinator:(id)arg3 animated:(BOOL)arg4;
 - (void)_updateTextColors;
 - (void)animateAdd:(BOOL)arg1;
 - (void)animateRemoveForWidth:(float)arg1;
@@ -83,7 +86,7 @@
 - (struct CGSize { float x1; float x2; })contentSize;
 - (int)controlSize;
 - (void)dealloc;
-- (void)didUpdateFocusFromView:(id)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)disabledTextColor;
 - (void)encodeWithCoder:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 forEvent:(struct __GSEvent { }*)arg2;

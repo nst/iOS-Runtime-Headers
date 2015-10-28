@@ -5,6 +5,7 @@
 @interface SAVCSContentCabinet : SAUISnippet
 
 @property (nonatomic) BOOL browseResults;
+@property (nonatomic) BOOL fullScreenEnabled;
 @property (nonatomic, copy) NSArray *shelves;
 
 + (id)contentCabinet;
@@ -12,8 +13,10 @@
 
 - (BOOL)browseResults;
 - (id)encodedClassName;
+- (BOOL)fullScreenEnabled;
 - (id)groupIdentifier;
 - (void)setBrowseResults:(BOOL)arg1;
+- (void)setFullScreenEnabled:(BOOL)arg1;
 - (void)setShelves:(id)arg1;
 - (id)shelves;
 

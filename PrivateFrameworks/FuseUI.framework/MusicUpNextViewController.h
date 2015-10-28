@@ -38,7 +38,6 @@
 @property (nonatomic, readonly) BOOL shouldDismissOnItemChange;
 @property (readonly) Class superclass;
 
-+ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultContentInsets;
 + (id)upNextViewControllerWithPlayer:(id)arg1;
 
 - (void).cxx_destruct;

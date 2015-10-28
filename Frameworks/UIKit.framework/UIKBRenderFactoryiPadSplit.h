@@ -27,6 +27,7 @@
 - (id)shiftLockImageName;
 - (id)shiftOnKeyImageName;
 - (float)skinnyKeyThreshold;
+- (BOOL)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
 - (float)symbolFrameInset;
 - (id)variantGeometriesForGeometry:(id)arg1 variantCount:(unsigned int)arg2 rowLimit:(int)arg3;
 

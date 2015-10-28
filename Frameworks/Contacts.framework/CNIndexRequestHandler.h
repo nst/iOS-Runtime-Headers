@@ -20,7 +20,6 @@
 - (void).cxx_destruct;
 - (id)contactIdentifierFromPerson:(void*)arg1;
 - (void)dealloc;
-- (void)finishIndexingAllSearchableItemsIfNecessary;
 - (id)index;
 - (id)init;
 - (id)initWithAddressBook:(void*)arg1;

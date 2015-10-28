@@ -8,6 +8,8 @@
     BOOL _includeCompilations;
 }
 
++ (void)populateHorizontalLayoutInterpolatorsOnCollectionViewDescriptor:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)_detailViewControllerForAlbumPersistentID:(unsigned long long)arg1 sourceViewController:(id)arg2;
 - (void)addQueryFilterPredicate:(id)arg1;

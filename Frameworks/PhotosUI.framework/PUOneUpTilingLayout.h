@@ -92,7 +92,7 @@
 - (id)_createLayoutInfoForTileWithIndexPath:(id)arg1 kind:(id)arg2;
 - (id)_displayTileTransformForItemAtIndexPath:(id)arg1;
 - (id)_displayTileTransformForItemAtIndexPath:(id)arg1 pageSize:(struct CGSize { float x1; float x2; })arg2 secondaryDisplayTransform:(id)arg3;
-- (void)_getLayoutRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 transform:(out struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 shouldIncludeBottomOffset:(BOOL)arg3 forContentOfItemAtIndexPath:(id)arg4;
+- (void)_getLayoutRect:(out struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 transform:(out struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg2 parallaxOffset:(out struct CGPoint { float x1; float x2; }*)arg3 shouldIncludeBottomOffset:(BOOL)arg4 forContentOfItemAtIndexPath:(id)arg5;
 - (id)_indexPathOfItemClosestToAbscissa:(float)arg1;
 - (BOOL)_isVideoPlacholderVisibleForItemAtIndexPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })_itemSize;

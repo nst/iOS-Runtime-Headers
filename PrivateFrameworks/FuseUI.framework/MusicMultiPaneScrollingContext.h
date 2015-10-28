@@ -25,6 +25,12 @@
         float bottom; 
         float right; 
     } _previousExternalContentInset;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _previousMaximumContentSizeScrollIndicatorInsetAdditions;
     float _previousMaximumHeaderHeight;
     float _previousStabilizingBottomAdditions;
     int _snapDecelerationVeloctiyOverrideState;
@@ -37,6 +43,7 @@
 @property (nonatomic) struct CGPoint { float x1; float x2; } previousContentOffset;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } previousContentScrollInsetAdditions;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } previousExternalContentInset;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } previousMaximumContentSizeScrollIndicatorInsetAdditions;
 @property (nonatomic) float previousMaximumHeaderHeight;
 @property (nonatomic) float previousStabilizingBottomAdditions;
 @property (nonatomic) int snapDecelerationVeloctiyOverrideState;
@@ -48,12 +55,14 @@
 - (struct CGPoint { float x1; float x2; })previousContentOffset;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })previousContentScrollInsetAdditions;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })previousExternalContentInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })previousMaximumContentSizeScrollIndicatorInsetAdditions;
 - (float)previousMaximumHeaderHeight;
 - (float)previousStabilizingBottomAdditions;
 - (void)setPreviousContentInsetAdditions:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPreviousContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setPreviousContentScrollInsetAdditions:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPreviousExternalContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setPreviousMaximumContentSizeScrollIndicatorInsetAdditions:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setPreviousMaximumHeaderHeight:(float)arg1;
 - (void)setPreviousStabilizingBottomAdditions:(float)arg1;
 - (void)setSnapDecelerationVeloctiyOverrideState:(int)arg1;

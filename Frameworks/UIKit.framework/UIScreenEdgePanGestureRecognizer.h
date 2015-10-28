@@ -13,6 +13,7 @@
 @property (readonly) Class superclass;
 
 + (BOOL)_shouldDefaultToTouches;
++ (BOOL)_shouldSupportStylusTouches;
 
 - (void).cxx_destruct;
 - (float)_edgeRegionSize;

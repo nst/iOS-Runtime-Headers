@@ -8,6 +8,7 @@
     NSString *_bluetoothAddress;
     NSData *_certificateSerialNumber;
     NSNumber *_connectionID;
+    BOOL _supportsUSBCarPlay;
     BOOL _supportsWiredBluetoothPairing;
     BOOL _supportsWirelessCarPlay;
     NSString *_vehicleName;
@@ -18,6 +19,7 @@
 @property (nonatomic, retain) NSString *bluetoothAddress;
 @property (nonatomic, retain) NSData *certificateSerialNumber;
 @property (nonatomic, retain) NSNumber *connectionID;
+@property (nonatomic) BOOL supportsUSBCarPlay;
 @property (nonatomic) BOOL supportsWiredBluetoothPairing;
 @property (nonatomic) BOOL supportsWirelessCarPlay;
 @property (nonatomic, retain) NSString *vehicleName;
@@ -39,9 +41,11 @@
 - (void)setBluetoothAddress:(id)arg1;
 - (void)setCertificateSerialNumber:(id)arg1;
 - (void)setConnectionID:(id)arg1;
+- (void)setSupportsUSBCarPlay:(BOOL)arg1;
 - (void)setSupportsWiredBluetoothPairing:(BOOL)arg1;
 - (void)setSupportsWirelessCarPlay:(BOOL)arg1;
 - (void)setVehicleName:(id)arg1;
+- (BOOL)supportsUSBCarPlay;
 - (BOOL)supportsWiredBluetoothPairing;
 - (BOOL)supportsWirelessCarPlay;
 - (id)vehicleName;

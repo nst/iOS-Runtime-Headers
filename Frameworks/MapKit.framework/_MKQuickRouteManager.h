@@ -11,7 +11,6 @@
     <MKQuickRouteManagerDelegate> *_delegate;
     NSMutableDictionary *_etaResults;
     BOOL _fetchAllTransportTypes;
-    BOOL _haveCheckedMapItemForETA;
     MKDirections *_inProgressETAUpdate;
     _MKRouteETA *_lastETA;
     BOOL _lastETAUpdateHadError;
@@ -46,6 +45,7 @@
 @property (nonatomic) NSObject<MKQuickRouteConfigurableView> *view;
 
 + (unsigned int)counterpartForTransportType:(unsigned int)arg1;
++ (unsigned int)directionsTypeForMapItem:(id)arg1 delegate:(id)arg2 mapType:(unsigned int)arg3;
 
 - (void).cxx_destruct;
 - (void)_resetState;
@@ -53,6 +53,9 @@
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)delegate;
+- (struct { double x1; double x2; })destinationCoordinate;
+- (unsigned int)directionsTypeForMapType:(unsigned int)arg1;
+- (unsigned int)directionsTypeForOriginCoordinate:(struct { double x1; double x2; })arg1 destinationCoordinate:(struct { double x1; double x2; })arg2 preferredDirectionsType:(unsigned int)arg3;
 - (void)expireETAsIfNoLongerValid;
 - (BOOL)fetchAllTransportTypes;
 - (unsigned int)guessTransportTypeForDistance:(double)arg1 preferredDirectionsType:(unsigned int)arg2;

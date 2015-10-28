@@ -7,6 +7,7 @@
         double latitude; 
         double longitude; 
     } _coordinate;
+    BOOL _showsPlane;
     NSMutableArray *_viewAddedBlock;
 }
 
@@ -39,6 +40,7 @@
 - (void)setCurrentProgress:(float)arg1;
 - (void)setEndLocation:(struct { double x1; double x2; })arg1;
 - (void)setPlaneImage:(id)arg1;
+- (void)setShowsPlane:(BOOL)arg1;
 - (void)setStartLatitude:(float)arg1 startLongitude:(float)arg2 endLatitude:(float)arg3 endLongitude:(float)arg4;
 - (void)setStartLocation:(struct { double x1; double x2; })arg1;
 - (void)setViewAddedBlock:(id)arg1;

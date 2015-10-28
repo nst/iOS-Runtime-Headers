@@ -10,6 +10,7 @@
         float bottom; 
         float right; 
     } _appliedContentInsetsAdjustment;
+    SKUIViewControllerContainerCollectionViewCell *_collectionViewCell;
     <SKUIScrollingTabBarControllerItemContextDelegate> *_delegate;
     struct { 
         struct UIEdgeInsets { 
@@ -34,6 +35,7 @@
     BOOL _viewControllerIsNavigationController;
 }
 
+@property (nonatomic, retain) SKUIViewControllerContainerCollectionViewCell *collectionViewCell;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIScrollingTabBarControllerItemContextDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -54,6 +56,7 @@
 - (void)_prepareViewControllerForTearDown;
 - (void)_updateAppliedContentInsetsAdjustment;
 - (void)applyNewContentInsetDescriptor:(struct { struct UIEdgeInsets { float x_1_1_1; float x_1_1_2; float x_1_1_3; float x_1_1_4; } x1; float x2; })arg1;
+- (id)collectionViewCell;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
@@ -66,6 +69,7 @@
 - (void)observedNavigationStackDidChange:(id)arg1;
 - (void)prepareViewControllerForDisplayWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)prepareViewControllerForTearDown;
+- (void)setCollectionViewCell:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLastSelectedPageIndex:(unsigned int)arg1;
 - (void)updateForPossibleNestedPagingScrollViewChange;

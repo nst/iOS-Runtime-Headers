@@ -17,6 +17,7 @@
 + (id)sharedInstance;
 
 - (id)assistantSwitch;
+- (unsigned int)currentSelectedRow;
 - (void)dealloc;
 - (unsigned int)defaultSelectedIndex;
 - (void)didSelectItemAtIndex:(unsigned int)arg1;

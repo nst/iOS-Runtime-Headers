@@ -12,6 +12,7 @@
     BOOL _identityStoreDirty;
     BOOL _isEphemeral;
     SGJournal *_journal;
+    unsigned int _lostMessageOverflow;
     SGBloomFilter *_messageRecipients;
     unsigned int _parentMessagesLimit;
     NSObject<OS_dispatch_queue> *_precomputationQueue;
@@ -146,6 +147,8 @@
 - (id)contactsWithIdentifiers:(id)arg1;
 - (BOOL)corruptionMarkerPresent;
 - (id)curatedRecordIds;
+- (BOOL)databasecheck_BrokenEntityIDReferences;
+- (BOOL)databasecheck_IntegrityCheck;
 - (id)dbHandleForTesting;
 - (id)dbStats;
 - (void)deleteAllCNContactMatches;
@@ -182,6 +185,7 @@
 - (double)incStatsCounterWithKey:(id)arg1;
 - (id)initForDbStatsOnlyWithError:(id*)arg1;
 - (id)initForMigratorTestWithEntityDb:(id)arg1 snippetDb:(id)arg2;
+- (id)initForRawDatabaseAccessWithEntityPath:(id)arg1 snippetsPath:(id)arg2 error:(id*)arg3;
 - (id)initWithEntityDbPath:(id)arg1 snippetDbPath:(id)arg2 isEphemeral:(BOOL)arg3 executeJournals:(BOOL)arg4 noMigrate:(BOOL)arg5;
 - (BOOL)isEphemeral;
 - (BOOL)isRecentlyDeleted:(id)arg1;
@@ -239,6 +243,7 @@
 - (id)mostRecentParentKeyForDuplicateKey:(id)arg1;
 - (id)nextPendingGeocode;
 - (id)parentKeysForDuplicateKey:(id)arg1;
+- (BOOL)performDatabaseCheck;
 - (id)prematchedContactIdentifiers;
 - (void)prepMigrator;
 - (BOOL)processEntity:(id)arg1 recordId:(id)arg2;
@@ -276,6 +281,7 @@
 - (void)setCRLookupForTesting:(id /* block */)arg1;
 - (void)setContactsEnabled:(BOOL)arg1;
 - (void)setEventsEnabled:(BOOL)arg1;
+- (void)setLostMessageOverflow:(unsigned int)arg1;
 - (void)setParentMessagesLimitForTesting:(unsigned int)arg1;
 - (void)setSerializedContactsLimit:(unsigned int)arg1;
 - (int)skipFromZeroSchema;

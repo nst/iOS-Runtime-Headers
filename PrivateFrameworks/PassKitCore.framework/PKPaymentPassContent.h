@@ -4,6 +4,7 @@
 
 @interface PKPaymentPassContent : PKPassContent <NSSecureCoding> {
     NSString *_appURLScheme;
+    NSString *_cobrandName;
     NSDictionary *_localizedSuspendedReasonsByAID;
     NSString *_messagePushTopic;
     NSURL *_messageServiceURL;
@@ -12,6 +13,7 @@
 }
 
 @property (nonatomic, copy) NSString *appURLScheme;
+@property (nonatomic, copy) NSString *cobrandName;
 @property (nonatomic, copy) NSDictionary *localizedSuspendedReasonsByAID;
 @property (nonatomic, copy) NSString *messagePushTopic;
 @property (nonatomic, copy) NSURL *messageServiceURL;
@@ -21,6 +23,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)appURLScheme;
+- (id)cobrandName;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
@@ -29,6 +32,7 @@
 - (id)messagePushTopic;
 - (id)messageServiceURL;
 - (void)setAppURLScheme:(id)arg1;
+- (void)setCobrandName:(id)arg1;
 - (void)setLocalizedSuspendedReasonsByAID:(id)arg1;
 - (void)setMessagePushTopic:(id)arg1;
 - (void)setMessageServiceURL:(id)arg1;

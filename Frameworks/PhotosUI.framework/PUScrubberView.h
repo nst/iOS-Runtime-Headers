@@ -26,6 +26,10 @@
     NSMutableDictionary *_aspectRatioByIndexPath;
     PUBrowsingSession *_browsingSession;
     NSString *_contentScrubbingIdentifier;
+    <PUScrubberViewDelegate> *_delegate;
+    struct { 
+        BOOL respondsToShouldIgnoreHitTestWithEvent; 
+    } _delegateFlags;
     BOOL _isForPreview;
     BOOL _loupeEffectIsValid;
     BOOL _scrubberLayoutIsValid;
@@ -56,6 +60,7 @@
 @property (setter=_setVideoScrubberController:, nonatomic, retain) PUVideoScrubberController *_videoScrubberController;
 @property (nonatomic, retain) PUBrowsingSession *browsingSession;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUScrubberViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isForPreview;
@@ -127,9 +132,11 @@
 - (void)beginPreviewing;
 - (id)browsingSession;
 - (void)dealloc;
+- (id)delegate;
 - (void)endPreviewing;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (void)handleTouchGesture:(id)arg1;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isForPreview;
 - (float)layout:(id)arg1 aspectRatioForItemAtIndexPath:(id)arg2;
@@ -142,6 +149,7 @@
 - (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)setBrowsingSession:(id)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)setIsForPreview:(BOOL)arg1;
 - (void)setType:(int)arg1;
 - (id)tilingView:(id)arg1 dataSourceConverterForTransitionFromLayout:(id)arg2 toLayout:(id)arg3;

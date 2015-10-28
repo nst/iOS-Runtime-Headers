@@ -53,6 +53,7 @@
 - (id)fileURL;
 - (id)init;
 - (float)initialContentScale;
+- (id)layerContainingQuickBackgroundForLoupeOnOverlayAtPageIndex:(unsigned int)arg1 forAnnotationController:(id)arg2;
 - (id /* block */)loadCompletionBlock;
 - (void)loadView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maxPageRectWithPageIndex:(unsigned int)arg1 forAnnotationController:(id)arg2;

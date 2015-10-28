@@ -19,6 +19,7 @@
 + (void)useMockSharedInstance:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)activityForActivityId:(int)arg1;
 - (id)copyCriteria:(id)arg1;
 - (void)dealloc;
 - (long)getState:(id)arg1;

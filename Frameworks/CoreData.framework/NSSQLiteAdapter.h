@@ -17,6 +17,7 @@
 - (BOOL)generateTriggerForEntity:(id)arg1 alreadyCreated:(struct __CFDictionary { }*)arg2 correlations:(struct __CFDictionary { }*)arg3 fragments:(id)arg4 error:(id*)arg5;
 - (id)generateTriggerStatementsForEntity:(id)arg1 usingRelationshipCleanupSQL:(id)arg2 error:(id*)arg3;
 - (id)initWithSQLCore:(id)arg1;
+- (id)newConnection;
 - (id)pathnameForDatabase;
 - (id)sqliteVersion;
 - (Class)statementClass;

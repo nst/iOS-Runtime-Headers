@@ -21,6 +21,7 @@
 @property (getter=_fragmentMindingInterval, setter=_setFragmentMindingInterval:, nonatomic) double fragmentMindingInterval;
 @property (nonatomic, readonly) BOOL hasProtectedContent;
 @property (nonatomic, readonly) NSString *lyrics;
+@property (nonatomic, readonly) NSURL *originalNetworkContentURL;
 @property (getter=isPlayable, nonatomic, readonly) BOOL playable;
 @property (getter=_playbackItem, nonatomic, readonly) struct OpaqueFigPlaybackItem { }*playbackItem;
 @property (getter=isReadable, nonatomic, readonly) BOOL readable;
@@ -62,6 +63,7 @@
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)loadValuesAsynchronouslyForKeys:(id)arg1 keysForCollectionKeys:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)lyrics;
+- (id)originalNetworkContentURL;
 - (id)resolvedURL;
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 

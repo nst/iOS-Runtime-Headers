@@ -39,6 +39,7 @@
     unsigned int _numWaveIndices;
     UIImage *_overlayImage;
     UIImageView *_overlayImageView;
+    BOOL _reduceMotionEnabled;
     unsigned int _renderbufferHandle;
     UIScreen *_screen;
     BOOL _shadersAreCompiled;
@@ -69,6 +70,7 @@
 - (BOOL)_initGLAndSetupDisplayLink:(BOOL)arg1;
 - (unsigned int)_numVerticesPerCircle;
 - (void)_predeterminedVertexPositionForAuraWithPolarVertex;
+- (void)_reduceMotionStatusChanged:(id)arg1;
 - (BOOL)_resizeFromLayer:(id)arg1;
 - (void)_setValuesForFidelity:(int)arg1;
 - (void)_setupDisplayLink;

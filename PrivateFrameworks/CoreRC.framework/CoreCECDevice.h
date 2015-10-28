@@ -38,6 +38,7 @@
 - (id)delegate;
 - (id)description;
 - (unsigned int)deviceType;
+- (void)didChangePowerStatus:(unsigned int)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)featureAbort:(id)arg1;
 - (id)initWithBus:(id)arg1 local:(BOOL)arg2;
@@ -79,5 +80,6 @@
 - (BOOL)systemAudioControlEnabled;
 - (BOOL)systemAudioModeRequest:(unsigned int)arg1 error:(id*)arg2;
 - (unsigned int)vendorID;
+- (void)willChangePowerStatus:(unsigned int)arg1;
 
 @end

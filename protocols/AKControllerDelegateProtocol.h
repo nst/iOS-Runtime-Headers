@@ -23,6 +23,7 @@
 - (void)controllerWillExitToolMode:(AKController *)arg1;
 - (void)controllerWillShowSignatureCaptureView:(AKController *)arg1;
 - (void)editCheckpointReachedForAnnotationController:(AKController *)arg1;
+- (CALayer *)layerContainingQuickBackgroundForLoupeOnOverlayAtPageIndex:(unsigned int)arg1 forAnnotationController:(AKController *)arg2;
 - (float)modelBaseScaleFactorOfPageAtIndex:(unsigned int)arg1 forAnnotationController:(AKController *)arg2;
 - (void)placeAuxiliaryView:(UIView *)arg1 forAnnotationController:(AKController *)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })postioningRectForCandidatePicker;

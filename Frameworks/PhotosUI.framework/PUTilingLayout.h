@@ -10,6 +10,7 @@
     } _coordinateSystemOrigin;
     PUTilingDataSource *_dataSource;
     <PUTilingCoordinateSystem> *_parentCoordinateSystem;
+    NSMutableDictionary *_tileIdentifierByIndexPathByKind;
     PUTilingView *_tilingView;
     struct CGRect { 
         struct CGPoint { 
@@ -51,6 +52,7 @@
 - (void)setParentCoordinateSystem:(id)arg1;
 - (void)setTilingView:(id)arg1;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)tileIdentifierForTileWithIndexPath:(id)arg1 kind:(id)arg2;
 - (id)tilingView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRect;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRectForScrollingToItemAtIndexPath:(id)arg1 scrollPosition:(int)arg2;

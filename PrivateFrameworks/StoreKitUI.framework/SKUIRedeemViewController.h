@@ -34,6 +34,7 @@
 - (id)initWithRedeemCategory:(int)arg1;
 - (id)initialCode;
 - (id)operationQueue;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)redeemAgainAnimated:(BOOL)arg1;
 - (void)setAttempsAutomaticRedeem:(BOOL)arg1;
 - (void)setClientContext:(id)arg1;

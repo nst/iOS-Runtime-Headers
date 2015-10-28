@@ -6,9 +6,13 @@
 
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_insetRectForSpaceKeyRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 yOffset:(float)arg2;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
+- (BOOL)forceVariantsInsideKeyplane;
 - (BOOL)includeDeleteInVariants;
 - (BOOL)preferGlyphForClear;
 - (BOOL)preferGlyphForDelete;
+- (BOOL)smallTextForSpaceAndClear;
 - (BOOL)spaceKeyIsPressed;
+- (float)tldKeyFontSize;
+- (float)tldKeyFontWeight;
 
 @end

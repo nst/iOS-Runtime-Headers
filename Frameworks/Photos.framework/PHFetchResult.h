@@ -46,7 +46,6 @@
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (unsigned int)countOfAssetsWithMediaType:(int)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)enumerateObjectsAtIndexes:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;

@@ -12,7 +12,7 @@
 - (id)init;
 - (void)layoutSubviews;
 - (float)minimumTextFieldOffset;
-- (void)setEditableTextFieldOffset:(float)arg1;
+- (void)setMinimumTextLabelWidth:(float)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

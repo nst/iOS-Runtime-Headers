@@ -43,12 +43,14 @@
 - (void).cxx_destruct;
 - (void)_checkContactlessValidity:(unsigned long long)arg1 performWork:(id /* block */)arg2;
 - (void)_internalQueue_deactivateSessionWithCompletion:(id /* block */)arg1;
+- (void)_internalQueue_getContactlessValidityAndPerformWork:(id /* block */)arg1;
 - (void)_internalQueue_invokeDeactivationCompletionBlocks;
-- (void)_internalQueue_updateContactlessSessionForPass:(id)arg1 allVASPasses:(id)arg2;
+- (void)_internalQueue_updateContactlessSessionForPass:(id)arg1 whitelistedVASPasses:(id)arg2 greylistedVASPasses:(id)arg3;
 - (void)_internalQueue_updateContactlessValidityAndPerformWork:(id /* block */)arg1;
+- (void)_loyaltyEngineConfigurationChanged:(id)arg1;
 - (void)_sessionQueue_invokeAppropriateCallbackForActivationWithSuccess:(BOOL)arg1 invokeOnSuccess:(BOOL)arg2 contactlessValidity:(unsigned long long)arg3 forPass:(id)arg4;
 - (BOOL)_sessionQueue_startContactlessSessionWithSuccessfulCompletionOnInternalQueue:(id /* block */)arg1;
-- (BOOL)_sessionQueue_updateContactlessSessionForPass:(id)arg1 paymentApplication:(id)arg2 allVASPasses:(id)arg3 sessionConfirmed:(BOOL)arg4;
+- (BOOL)_sessionQueue_updateContactlessSessionForPass:(id)arg1 paymentApplication:(id)arg2 whitelistedVASPasses:(id)arg3 greylistedVASPasses:(id)arg4 sessionConfirmed:(BOOL)arg5;
 - (id)callbackQueue;
 - (void)confirmSession;
 - (void)contactlessInterfaceSession:(id)arg1 didGeneratePaymentTransaction:(id)arg2 forPaymentApplication:(id)arg3 paymentPass:(id)arg4 andValueAddedServiceTransactions:(id)arg5 forValueAddedServicePasses:(id)arg6;
@@ -56,6 +58,8 @@
 - (void)contactlessInterfaceSessionDidExitField:(id)arg1;
 - (void)contactlessInterfaceSessionDidFail:(id)arg1 forPaymentApplication:(id)arg2 paymentPass:(id)arg3 valueAddedServicePasses:(id)arg4;
 - (void)contactlessInterfaceSessionDidFailTransaction:(id)arg1 forPaymentApplication:(id)arg2 paymentPass:(id)arg3;
+- (void)contactlessInterfaceSessionDidSelectPayment:(id)arg1;
+- (void)contactlessInterfaceSessionDidSelectValueAddedService:(id)arg1;
 - (void)contactlessInterfaceSessionDidTimeout:(id)arg1 forPaymentApplication:(id)arg2 paymentPass:(id)arg3 valueAddedServicePasses:(id)arg4;
 - (id)contactlessSession;
 - (id)contactlessSessionHandle;
@@ -65,7 +69,7 @@
 - (id)deactivationCompletionBlocks;
 - (void)dealloc;
 - (id)delegate;
-- (void)getAllWhitelistedVASPasses:(id /* block */)arg1 queue:(id)arg2;
+- (void)getAllVASPasses:(id /* block */)arg1 queue:(id)arg2;
 - (id)initWithQueue:(id)arg1;
 - (id)internalQueue;
 - (BOOL)isConfirmed;

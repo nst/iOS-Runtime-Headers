@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
  */
 
-@interface BWFigCaptureSession : NSObject <BWGraphStatusDelegate, BWImageQueueSinkNodePreviewTapDelegate, BWIrisStagingNodeUpdateStopPTSDelegate, BWNodeFileWriterStatusDelegate, BWNodeRenderDelegate, BWRemoteQueueSinkNodeDelegate, BWSourceNodeErrorDelegate, BWStillImageCaptureStatusDelegate> {
+@interface BWFigCaptureSession : NSObject <BWGraphStatusDelegate, BWImageQueueSinkNodePreviewTapDelegate, BWIrisStagingNodeEmitIrisRequestDelegate, BWNodeFileWriterStatusDelegate, BWNodeRenderDelegate, BWRemoteQueueSinkNodeDelegate, BWSourceNodeErrorDelegate, BWStillImageCaptureStatusDelegate> {
     struct OpaqueFigCaptureSession { } *_captureSession;
 }
 
@@ -23,7 +23,7 @@
 - (void)node:(id)arg1 willRenderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 forInput:(id)arg3;
 - (void)remoteQueueSinkNode:(id)arg1 queueBecameReady:(struct remoteQueueSenderOpaque { }*)arg2;
 - (void)sourceNode:(id)arg1 didEncounterError:(long)arg2;
-- (void)stagingNode:(id)arg1 choseNewMovieCoordinatorStopPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)stagingNode:(id)arg1 willEmitIrisRequest:(id)arg2;
 - (void)stillImageCoordinator:(id)arg1 didCapturePhotoForSettings:(id)arg2 resolvedCaptureType:(int)arg3 pts:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
 - (void)stillImageCoordinator:(id)arg1 didCapturePreBracketedEV0ImageForSettings:(id)arg2 resolvedCaptureType:(int)arg3 pts:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;
 - (void)stillImageCoordinator:(id)arg1 willBeginCaptureForSettings:(id)arg2 resolvedCaptureType:(int)arg3;

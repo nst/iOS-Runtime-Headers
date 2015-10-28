@@ -13,6 +13,7 @@
     double _keywordWeight;
     double _locationWeight;
     double _outgoingWeight;
+    unsigned int _rankAggregationMethod;
     NSDate *_referenceDate;
     NSSet *_referenceKeywords;
     NSString *_referenceLocationUUID;
@@ -38,6 +39,7 @@
 @property double keywordWeight;
 @property double locationWeight;
 @property double outgoingWeight;
+@property (nonatomic) unsigned int rankAggregationMethod;
 @property (retain) NSDate *referenceDate;
 @property (retain) NSSet *referenceKeywords;
 @property (retain) NSString *referenceLocationUUID;
@@ -68,6 +70,7 @@
 - (double)keywordWeight;
 - (double)locationWeight;
 - (double)outgoingWeight;
+- (unsigned int)rankAggregationMethod;
 - (double)rankContact:(id)arg1;
 - (id)rankInteraction:(id)arg1;
 - (id)referenceDate;
@@ -86,6 +89,7 @@
 - (void)setKeywordWeight:(double)arg1;
 - (void)setLocationWeight:(double)arg1;
 - (void)setOutgoingWeight:(double)arg1;
+- (void)setRankAggregationMethod:(unsigned int)arg1;
 - (void)setReferenceDate:(id)arg1;
 - (void)setReferenceKeywords:(id)arg1;
 - (void)setReferenceLocationUUID:(id)arg1;

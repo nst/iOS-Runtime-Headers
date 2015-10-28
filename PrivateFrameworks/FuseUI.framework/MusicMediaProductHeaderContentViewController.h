@@ -23,6 +23,7 @@
     MusicEntityViewProductHeaderLockupContentDescriptor *_productHeaderLockupContentDecriptor;
     MusicEntityProductHeaderLockupView *_productHeaderLockupView;
     BOOL _shouldDelayTransitionProgress;
+    BOOL _trailingSeparatorInsetFollowsLayoutInsets;
     float _transitionProgress;
     BOOL _wantsRefreshActivityIndicator;
 }
@@ -45,10 +46,11 @@
 @property (nonatomic, readonly) UIButton *shareButton;
 @property (nonatomic) BOOL shouldDelayTransitionProgress;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL trailingSeparatorInsetFollowsLayoutInsets;
 
 - (void).cxx_destruct;
 - (void)_applyLockupArtworkProperty;
-- (void)_applyProductHeaderLayoutMargins;
+- (void)_applyProductHeaderLayoutInsets;
 - (void)_applyTransitionProgress;
 - (BOOL)_calculateWantsRefreshButton;
 - (void)_configureProductHeaderLockupContentDescriptor:(id)arg1 withTintInformation:(id)arg2;
@@ -66,6 +68,7 @@
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_updateContentTaste;
 - (void)_updateHairline;
+- (void)_updateHairlineLayoutInsets;
 - (void)_updateNavigationTitle;
 - (void)_updatePlaybackStatusForLockupView;
 - (void)_updatePreferredContentSize;
@@ -83,6 +86,7 @@
 - (id)lockupArtworkProperty;
 - (void)makeEditableTitleBecomeFirstResponder;
 - (id)mediaDetailTintInformation;
+- (void)music_viewInheritedLayoutInsetsDidChange;
 - (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
 - (int)presentationSource;
 - (void)productHeaderLockupView:(id)arg1 didSelectCameraButton:(id)arg2;
@@ -106,8 +110,10 @@
 - (void)setMediaDetailHeaderHeight:(float)arg1 withMaximumHeaderHeight:(float)arg2 transitionProgress:(float)arg3;
 - (void)setMediaDetailTintInformation:(id)arg1;
 - (void)setShouldDelayTransitionProgress:(BOOL)arg1;
+- (void)setTrailingSeparatorInsetFollowsLayoutInsets:(BOOL)arg1;
 - (id)shareButton;
 - (BOOL)shouldDelayTransitionProgress;
+- (BOOL)trailingSeparatorInsetFollowsLayoutInsets;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

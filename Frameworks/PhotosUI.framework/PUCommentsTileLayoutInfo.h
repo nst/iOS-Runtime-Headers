@@ -20,8 +20,8 @@
 - (id)clone;
 - (float)contentBaseline;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
-- (id)initWithIndexPath:(id)arg1 tileKind:(id)arg2 dataSourceIdentifier:(id)arg3 center:(struct CGPoint { float x1; float x2; })arg4 size:(struct CGSize { float x1; float x2; })arg5 alpha:(float)arg6 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg7 zPosition:(float)arg8 coordinateSystem:(id)arg9;
-- (id)initWithIndexPath:(id)arg1 tileKind:(id)arg2 dataSourceIdentifier:(id)arg3 center:(struct CGPoint { float x1; float x2; })arg4 size:(struct CGSize { float x1; float x2; })arg5 alpha:(float)arg6 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg7 zPosition:(float)arg8 coordinateSystem:(id)arg9 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg10 contentBaseline:(float)arg11 isShowing:(BOOL)arg12;
+- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { float x1; float x2; })arg2 size:(struct CGSize { float x1; float x2; })arg3 alpha:(float)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 zPosition:(float)arg6 coordinateSystem:(id)arg7;
+- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { float x1; float x2; })arg2 size:(struct CGSize { float x1; float x2; })arg3 alpha:(float)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 zPosition:(float)arg6 coordinateSystem:(id)arg7 insets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg8 contentBaseline:(float)arg9 isShowing:(BOOL)arg10;
 - (BOOL)isGeometryEqualToLayoutInfo:(id)arg1;
 - (BOOL)isShowing;
 - (void)setContentBaseline:(float)arg1;

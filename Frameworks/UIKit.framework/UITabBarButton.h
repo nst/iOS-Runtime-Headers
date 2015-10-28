@@ -58,6 +58,8 @@
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
 - (Class)_appearanceGuideClass;
+- (void)_appleTV_layoutSubviews;
+- (struct CGSize { float x1; float x2; })_appleTV_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)_applyTabBarButtonAppearanceStorage:(id)arg1 withTaggedSelectors:(id)arg2;
 - (void)_badgeAnimationDidStop:(id)arg1 finished:(id)arg2;
 - (id)_buttonTintColorForState:(unsigned int)arg1;
@@ -103,7 +105,7 @@
 - (BOOL)_useBarHeight;
 - (BOOL)canBecomeFocused;
 - (void)dealloc;
-- (void)didUpdateFocusFromView:(id)arg1;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)initWithImage:(id)arg1 selectedImage:(id)arg2 label:(id)arg3 withInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg4;
 - (id)labelOffsetValue;
 - (void)layoutSubviews;
@@ -114,6 +116,8 @@
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImage:(id)arg1;
 - (void)setLabelOffsetValue:(id)arg1;
+- (BOOL)shouldUpdateFocusInContext:(id)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)tabBarButtonLabel;
 
 @end

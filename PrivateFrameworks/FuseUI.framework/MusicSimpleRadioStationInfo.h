@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicSimpleRadioStationInfo : NSObject {
+@interface MusicSimpleRadioStationInfo : NSObject <NSSecureCoding> {
     BOOL _isBeats1;
     NSString *_name;
     NSString *_radioID;
@@ -12,8 +12,12 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic, copy) NSString *radioID;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
+- (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithRadioID:(id)arg1 name:(id)arg2;
 - (BOOL)isBeats1;
 - (id)name;

@@ -22,7 +22,7 @@
 - (id)initWithArtworks:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/RadioUI.framework/RadioUI
+// Image: /System/Library/PrivateFrameworks/MediaPlayerUI.framework/MediaPlayerUI
 
 - (id)artworkCatalog;
 

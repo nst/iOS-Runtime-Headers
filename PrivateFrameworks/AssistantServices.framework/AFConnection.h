@@ -103,6 +103,7 @@
 - (void)didDismissUI;
 - (void)endSession;
 - (void)forceAudioSessionActive;
+- (void)forceAudioSessionInactive;
 - (void)getDeferredObjectsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
 - (id)init;
 - (BOOL)isRecording;

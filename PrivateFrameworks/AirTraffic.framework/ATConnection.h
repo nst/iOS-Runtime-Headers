@@ -29,6 +29,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)getAssetMetrics;
+- (BOOL)getDataRestoreIsComplete;
 - (id)init;
 - (BOOL)isSyncing:(BOOL*)arg1 automatically:(BOOL*)arg2 wirelessly:(BOOL*)arg3;
 - (void)keepATCAlive:(BOOL)arg1;
@@ -38,6 +39,7 @@
 - (void)purgePartialAsset:(id)arg1 forDataclass:(id)arg2;
 - (void)registerForAssetProgressForDataclass:(id)arg1;
 - (void)registerForStatus;
+- (void)requestKeybagSyncToPairedDevice;
 - (void)requestSyncForLibrary:(id)arg1;
 - (void)requestSyncForPairedDeviceWithPriority:(int)arg1;
 - (id)restoreDeviceWithIdentifier:(id)arg1;

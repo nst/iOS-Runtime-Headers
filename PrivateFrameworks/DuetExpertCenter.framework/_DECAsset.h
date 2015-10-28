@@ -13,8 +13,8 @@
     NSString *_resourcePath;
 }
 
++ (id)assetFromPlistWithClass:(Class)arg1 onUpdate:(id /* block */)arg2;
 + (int)assetVersion;
-+ (id)assetWithClass:(Class)arg1 onUpdate:(id /* block */)arg2;
 + (id)bundlePath;
 + (void)initialize;
 + (void)updateAssetMetadata;

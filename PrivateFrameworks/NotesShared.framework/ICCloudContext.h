@@ -56,7 +56,6 @@
 @property (nonatomic, retain) ICThreadSafeMutableDictionary *retryCountByZoneID;
 @property (nonatomic) BOOL syncDisabledByServer;
 
-+ (void)clearSharedContext;
 + (void)deleteAllServerChangeTokens;
 + (id)errorForDisabledCloudSyncing;
 + (id)errorFromErrors:(id)arg1;
@@ -65,7 +64,6 @@
 + (id)newNotesContainer;
 + (id)notesZoneID;
 + (id)sharedContext;
-+ (void)startSharedContext;
 
 - (void).cxx_destruct;
 - (int)accountStatus;

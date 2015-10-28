@@ -8,8 +8,10 @@
     float _force;
     NSMutableArray *_forwardingRecord;
     NSMutableArray *_gestureRecognizers;
+    BOOL _isDelayed;
     int _phase;
     UIResponder *_responder;
+    BOOL _sentPressesEnded;
     double _timestamp;
     int _type;
     UIWindow *_window;
@@ -23,8 +25,10 @@
 @property (nonatomic) float force;
 @property (nonatomic, copy) NSArray *gestureRecognizers;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isDelayed;
 @property (nonatomic) int phase;
 @property (nonatomic, retain) UIResponder *responder;
+@property (nonatomic) BOOL sentPressesEnded;
 @property (readonly) Class superclass;
 @property (nonatomic) double timestamp;
 @property (nonatomic) int type;
@@ -37,7 +41,9 @@
 - (BOOL)_isAbandoningForwardingRecord;
 - (BOOL)_isDirectionalPress;
 - (BOOL)_isSynthetic;
+- (void)_loadStateFromPress:(id)arg1;
 - (id)_mutableForwardingRecord;
+- (id)_phaseDescription;
 - (void)_removeGestureRecognizer:(id)arg1;
 - (id)_responder;
 - (SEL)_responderSelectorForPhase:(int)arg1;
@@ -48,12 +54,16 @@
 - (id)description;
 - (float)force;
 - (id)gestureRecognizers;
+- (BOOL)isDelayed;
 - (int)phase;
 - (id)responder;
+- (BOOL)sentPressesEnded;
 - (void)setForce:(float)arg1;
 - (void)setGestureRecognizers:(id)arg1;
+- (void)setIsDelayed:(BOOL)arg1;
 - (void)setPhase:(int)arg1;
 - (void)setResponder:(id)arg1;
+- (void)setSentPressesEnded:(BOOL)arg1;
 - (void)setTimestamp:(double)arg1;
 - (void)setType:(int)arg1;
 - (void)setWindow:(id)arg1;

@@ -51,6 +51,7 @@
 - (id)description;
 - (id)destination;
 - (float)destinationScale;
+- (id)existingColorAnalysisWithAlgorithm:(int)arg1;
 - (struct CGSize { float x1; float x2; })fittingSize;
 - (unsigned int)hash;
 - (id)initWithToken:(id)arg1 dataSource:(id)arg2;

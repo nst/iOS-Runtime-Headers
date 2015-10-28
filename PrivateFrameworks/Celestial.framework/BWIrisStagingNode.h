@@ -15,7 +15,7 @@
         unsigned int flags; 
         long long epoch; 
     } _bufferingTime;
-    <BWIrisStagingNodeUpdateStopPTSDelegate> *_delegate;
+    <BWIrisStagingNodeEmitIrisRequestDelegate> *_delegate;
     int _emittedIrisRequestCount;
     struct { 
         long long value; 
@@ -30,14 +30,21 @@
         unsigned int flags; 
         long long epoch; 
     } _firstTrimStartPTS;
-    NSMutableArray *_irisRequestsInFlight;
-    NSMutableArray *_lastEmittedBuffers;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _lastEmittedVideoPTS;
+    } _frameGovernorNextFrameThreshold;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } _frameGovernorReferenceTime;
+    NSMutableArray *_irisRequestsInFlight;
+    NSMutableArray *_irisRequestsSoonToBeEmitted;
+    NSMutableArray *_lastEmittedBuffers;
     struct { 
         long long value; 
         int timescale; 
@@ -52,13 +59,13 @@
         long long epoch; 
     } _masterMovieStartPTS;
     NSURL *_masterMovieURL;
+    int _numEODMessagesReceived;
     struct { 
         long long value; 
         int timescale; 
         unsigned int flags; 
         long long epoch; 
-    } _nextTargetFramePTS;
-    int _numEODMessagesReceived;
+    } _readyToEmitPTS;
     BWIrisSequenceAdjuster *_sequenceAdjuster;
     NSMutableArray *_stagingQueues;
     struct OpaqueFigSimpleMutex { } *_stateMutex;
@@ -79,19 +86,21 @@
 
 + (void)initialize;
 
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_adjustedStartTimeForTrimmedStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 ensuringAtLeast3FramesBeforeStillTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 butNotEarlierThanOriginalStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3;
 - (int)_emissionStatusForSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1;
 - (void)_emitBuffersThroughPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_emitBuffersThroughPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 forInputIndex:(unsigned int)arg2;
 - (void)_emitIrisRequest:(id)arg1 withEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
+- (void)_emitIrisRequestsOlderThanTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 withEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)_emitSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInputIndex:(unsigned int)arg2;
 - (void)_enqueueIrisRequest:(id)arg1;
-- (BOOL)_fillInRefMovieStartAndTrimTimes;
+- (BOOL)_fillInRefMovieStartAndTrimTimesForStillImageTimesBeforeTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (BOOL)_fillInStartAndTrimTimesForMasterMovieWithInfo:(id)arg1;
 - (unsigned int)_indexOfBufferBeforeOrEqualToPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 inputIndex:(unsigned int)arg2;
+- (void)_informDelegateOfSoonToBeEmittedIrisRequestsForTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_prepareToEmitFramesFromStartTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 throughEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)_processQueuedVideoFrames;
-- (void)_sendUpdateStopPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
-- (void)_serviceIrisRequestsForCurrentTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 emitBuffers:(BOOL)arg2;
+- (void)_serviceIrisRequestsForCurrentTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 emitBuffers:(BOOL)arg2 ensureStillImageTimesAreStaged:(BOOL)arg3;
 - (void)_trimQueueForInputIndex:(unsigned int)arg1;
 - (void)_updateRetainedBufferCount;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })beginIrisMovieCaptureTime;
@@ -104,7 +113,7 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })endIrisMovieCaptureTime;
 - (BOOL)enqueueIrisRequest:(id)arg1;
 - (void)handleNodeError:(id)arg1 forInput:(id)arg2;
-- (id)initWithNumberOfVideoInputs:(unsigned int)arg1 numberOfAudioInputs:(unsigned int)arg2 numberOfMetadataInputs:(unsigned int)arg3 autoTrimMethod:(int)arg4 updateStopPTSDelegate:(id)arg5;
+- (id)initWithNumberOfVideoInputs:(unsigned int)arg1 numberOfAudioInputs:(unsigned int)arg2 numberOfMetadataInputs:(unsigned int)arg3 autoTrimMethod:(int)arg4 emitIrisRequestDelegate:(id)arg5;
 - (struct OpaqueCMClock { }*)masterClock;
 - (BOOL)openValveWithIrisRequest:(id)arg1;
 - (void)prepareForCurrentConfigurationToBecomeLive;

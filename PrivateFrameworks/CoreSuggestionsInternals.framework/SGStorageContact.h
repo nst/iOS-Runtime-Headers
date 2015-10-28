@@ -3,13 +3,14 @@
  */
 
 @interface SGStorageContact : NSObject {
+    long _detectedDetailsOnce;
+    NSArray *_internalDetectedAddresses;
+    SGTuple3 *_internalDetectedDetails;
+    NSArray *_internalDetectedEmailAddresses;
+    NSArray *_internalDetectedPhones;
     long long _masterEntityId;
     NSMutableSet *_profiles;
     SGRecordId *_recordId;
-    long detectedDetailsOnce;
-    NSArray *internalDetectedAddresses;
-    NSArray *internalDetectedEmailAddresses;
-    NSArray *internalDetectedPhones;
 }
 
 @property (nonatomic, readonly) long long masterEntityId;

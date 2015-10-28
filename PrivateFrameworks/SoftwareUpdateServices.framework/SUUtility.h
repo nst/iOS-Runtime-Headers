@@ -19,6 +19,7 @@
 + (id)currentProductVersion;
 + (id)currentReleaseType;
 + (unsigned long long)demoteApps:(unsigned long long)arg1 withError:(id*)arg2;
++ (unsigned long long)devicePadding:(id)arg1;
 + (id)errorWithCode:(int)arg1;
 + (id)errorWithCode:(int)arg1 originalError:(id)arg2;
 + (BOOL)freeCachedSpaceSynchronous:(unsigned long long)arg1 timeout:(double)arg2;
@@ -26,11 +27,11 @@
 + (BOOL)freeCachedSpaceSynchronous:(unsigned long long)arg1 timeout:(double)arg2 isAutoDownload:(BOOL)arg3 disableCDLevelFour:(BOOL)arg4 disableSiriDeletion:(BOOL)arg5 disableAppDemotion:(BOOL)arg6;
 + (id)gregorianCalendar;
 + (BOOL)hasCellularRadio;
-+ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1;
-+ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2;
-+ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2 isAutoDownload:(BOOL)arg3;
-+ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2 isAutoDownload:(BOOL)arg3 disableCDLevelFour:(BOOL)arg4 disableCDLevelThree:(BOOL)arg5 disableSiriDeletion:(BOOL)arg6 disableAppDemotion:(BOOL)arg7;
-+ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 deltaSpaceNeeded:(unsigned long long*)arg2 isAutoDownload:(BOOL)arg3 includePurging:(BOOL)arg4;
++ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 growth:(unsigned long long)arg2;
++ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 growth:(unsigned long long)arg2 deltaSpaceNeeded:(unsigned long long*)arg3;
++ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 growth:(unsigned long long)arg2 deltaSpaceNeeded:(unsigned long long*)arg3 isAutoDownload:(BOOL)arg4;
++ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 growth:(unsigned long long)arg2 deltaSpaceNeeded:(unsigned long long*)arg3 isAutoDownload:(BOOL)arg4 disableCDLevelFour:(BOOL)arg5 disableCDLevelThree:(BOOL)arg6 disableSiriDeletion:(BOOL)arg7 disableAppDemotion:(BOOL)arg8;
++ (BOOL)hasEnoughDiskSpace:(unsigned long long)arg1 growth:(unsigned long long)arg2 deltaSpaceNeeded:(unsigned long long*)arg3 isAutoDownload:(BOOL)arg4 includePurging:(BOOL)arg5;
 + (int)installationKeybagState;
 + (BOOL)isCellularDataCapable;
 + (BOOL)isDaemon;
@@ -42,7 +43,7 @@
 + (id)serialNumber;
 + (void)setCacheable:(BOOL)arg1;
 + (void)setIsDaemon:(BOOL)arg1;
-+ (long long)sortAppsToPurge:(id)arg1 sortedArray:(id*)arg2 spaceNeeded:(id)arg3;
++ (unsigned long long)sortAppsToPurge:(id)arg1 sortedArray:(id*)arg2 spaceNeeded:(id)arg3;
 + (id)taskQueue;
 + (unsigned long long)totalPurgeableSpace:(id)arg1;
 + (id)translateError:(id)arg1;

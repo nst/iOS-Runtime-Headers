@@ -6,6 +6,7 @@
 @required
 
 - (IKDOMNode *)adoptNode:(IKDOMNode *)arg1;
+- (IKDOMCDATASection *)createCDATASection:(NSString *)arg1;
 - (IKDOMComment *)createComment:(NSString *)arg1;
 - (IKDOMDocumentFragment *)createDocumentFragment;
 - (IKDOMElement *)createElement:(NSString *)arg1;

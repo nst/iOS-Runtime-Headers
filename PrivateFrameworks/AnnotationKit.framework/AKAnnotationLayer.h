@@ -5,12 +5,14 @@
 @interface AKAnnotationLayer : CALayer {
     AKAnnotation *_annotation;
     BOOL _isObservingAnnotation;
+    BOOL _lastRedrawWasForDrawingBounds;
     AKPageController *_pageController;
     BOOL _wasLastDrawingClipped;
 }
 
 @property (retain) AKAnnotation *annotation;
 @property BOOL isObservingAnnotation;
+@property BOOL lastRedrawWasForDrawingBounds;
 @property AKPageController *pageController;
 @property BOOL wasLastDrawingClipped;
 
@@ -20,16 +22,18 @@
 - (id)_initWithAnnotation:(id)arg1 andPageController:(id)arg2;
 - (void)_startObservingAnnotation;
 - (void)_stopObservingAnnotation;
-- (void)_updateAnnotationLayer;
+- (void)_updateAnnotationLayerWithLoupeFastPath:(BOOL)arg1;
 - (id)actionForKey:(id)arg1;
 - (id)annotation;
 - (void)dealloc;
 - (void)drawInContext:(struct CGContext { }*)arg1;
 - (BOOL)isObservingAnnotation;
+- (BOOL)lastRedrawWasForDrawingBounds;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pageController;
 - (void)setAnnotation:(id)arg1;
 - (void)setIsObservingAnnotation:(BOOL)arg1;
+- (void)setLastRedrawWasForDrawingBounds:(BOOL)arg1;
 - (void)setPageController:(id)arg1;
 - (void)setWasLastDrawingClipped:(BOOL)arg1;
 - (void)updateContents;

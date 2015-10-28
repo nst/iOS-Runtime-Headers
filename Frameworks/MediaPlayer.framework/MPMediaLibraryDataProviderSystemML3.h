@@ -20,6 +20,7 @@
 - (void*)createGeniusClusterPlaylistWithSeedItemIdentifiers:(long long*)arg1 count:(unsigned int)arg2 error:(id*)arg3;
 - (id)errorResolverForItem:(id)arg1;
 - (long long*)generateItemIdentifiersForGeniusClusterPlaylist:(void*)arg1 count:(unsigned int*)arg2 error:(id*)arg3;
+- (void)geniusItemsForSeedItem:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithLibrary:(id)arg1;
 - (BOOL)isGeniusEnabled;
 - (void)releaseGeniusClusterPlaylist:(void*)arg1;

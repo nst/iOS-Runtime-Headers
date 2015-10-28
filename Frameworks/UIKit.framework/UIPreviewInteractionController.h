@@ -16,8 +16,8 @@
         float y; 
     } _location;
     UIViewController *_presentingViewController;
-    UIGestureRecognizer *_previewGestureRecognizer;
-    UIGestureRecognizer *_revealGestureRecognizer;
+    _UIPreviewGestureRecognizer *_previewGestureRecognizer;
+    _UIRevealGestureRecognizer *_revealGestureRecognizer;
     UIView *_sourceView;
     BOOL _statusBarWasHidden;
     UIGestureRecognizer *_touchObservingGestureRecognizer;
@@ -40,8 +40,8 @@
 @property (nonatomic) struct CGPoint { float x1; float x2; } location;
 @property (nonatomic, readonly) UIGestureRecognizer *presentationGestureRecognizer;
 @property (nonatomic) UIViewController *presentingViewController;
-@property (nonatomic, retain) UIGestureRecognizer *previewGestureRecognizer;
-@property (nonatomic, retain) UIGestureRecognizer *revealGestureRecognizer;
+@property (nonatomic, retain) _UIPreviewGestureRecognizer *previewGestureRecognizer;
+@property (nonatomic, retain) _UIRevealGestureRecognizer *revealGestureRecognizer;
 @property (nonatomic) UIView *sourceView;
 @property (nonatomic) BOOL statusBarWasHidden;
 @property (readonly) Class superclass;
@@ -108,7 +108,7 @@
 - (void)setTouchSelectionWorkaroundSnapshotView:(id)arg1;
 - (void)setWindowForPreviewPresentation:(id)arg1;
 - (id)sourceView;
-- (BOOL)startInteractivePreviewAtPosition:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
+- (BOOL)startInteractivePreviewAtLocation:(struct CGPoint { float x1; float x2; })arg1 inView:(id)arg2;
 - (BOOL)startInteractivePreviewWithGestureRecognizer:(id)arg1;
 - (BOOL)statusBarWasHidden;
 - (id)touchObservingGestureRecognizer;

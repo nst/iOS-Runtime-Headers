@@ -10,6 +10,7 @@
     } _contentCollectionViewItemSize;
     <SKUIScrollingSegmentedControllerDelegate> *_delegate;
     unsigned int _focusedViewControllerIndex;
+    float _maximumContentWidth;
     SKUIScrollingSegmentedControllerNavigationBarTitleView *_navigationBarTitleView;
     SKUIProxyScrollView *_proxyScrollView;
     struct UIEdgeInsets { 
@@ -45,6 +46,7 @@
 @property (nonatomic, readonly) UIViewController *focusedViewController;
 @property (nonatomic, readonly) unsigned int focusedViewControllerIndex;
 @property (readonly) unsigned int hash;
+@property (nonatomic) float maximumContentWidth;
 @property (nonatomic, readonly) UIView *navigationBarTitleView;
 @property (nonatomic, readonly) UIScrollView *scrollingTabNestedPagingScrollView;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } segmentedControlContentEdgeInsets;
@@ -89,12 +91,17 @@
 - (id)focusedViewController;
 - (unsigned int)focusedViewControllerIndex;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (float)maximumContentWidth;
 - (id)navigationBarTitleView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)replaceViewControllerAtIndex:(unsigned int)arg1 withViewController:(id)arg2;
 - (void)scrollViewDidChangeContentInset:(id)arg1;
+- (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidMoveToWindow:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewWillBeginDecelerating:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollingSegmentedControllerCollectionViewDidLayoutSubviews:(id)arg1;
 - (void)scrollingTabAppearanceStatusWasUpdated:(struct { float x1; BOOL x2; })arg1;
 - (id)scrollingTabNestedPagingScrollView;
@@ -105,6 +112,7 @@
 - (void)selectViewControllerAtIndex:(unsigned int)arg1 animated:(BOOL)arg2;
 - (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setMaximumContentWidth:(float)arg1;
 - (void)setSegmentedControlContentEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setSegmentedControlHeight:(float)arg1;
 - (void)setSegmentedControlLayoutStyle:(int)arg1;

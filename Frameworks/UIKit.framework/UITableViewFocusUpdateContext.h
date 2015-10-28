@@ -18,8 +18,8 @@
 
 - (void).cxx_destruct;
 - (id)_initWithContext:(id)arg1 tableView:(id)arg2;
-- (void)_setInitialNextFocusedView:(id)arg1;
-- (void)_setPreviouslyFocusedView:(id)arg1;
+- (void)_setInitialDestinationEnvironment:(id)arg1;
+- (void)_setSourceView:(id)arg1;
 - (id)nextFocusedIndexPath;
 - (id)previouslyFocusedIndexPath;
 - (id)tableView;

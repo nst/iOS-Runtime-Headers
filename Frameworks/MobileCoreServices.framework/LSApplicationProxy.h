@@ -107,6 +107,7 @@
 @property (nonatomic, readonly) BOOL supportsOpenInPlace;
 @property (nonatomic, readonly) NSString *teamID;
 @property (nonatomic, readonly) NSString *vendorName;
+@property (getter=isWhitelisted, nonatomic, readonly) BOOL whitelisted;
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
@@ -167,6 +168,7 @@
 - (BOOL)isPurchasedReDownload;
 - (BOOL)isRestricted;
 - (BOOL)isWatchKitApp;
+- (BOOL)isWhitelisted;
 - (id)itemID;
 - (id)itemName;
 - (id)localizedName;

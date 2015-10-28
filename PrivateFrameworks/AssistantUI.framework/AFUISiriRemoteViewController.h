@@ -5,6 +5,7 @@
 @interface AFUISiriRemoteViewController : _UIRemoteViewController <SVSSiriViewControllerHosting> {
     <AFUISiriRemoteViewControllerDataSource> *_dataSource;
     <AFUISiriRemoteViewControllerDelegate> *_delegate;
+    AFApplicationInfo *_viewServiceApplicationInfo;
 }
 
 @property (nonatomic) <AFUISiriRemoteViewControllerDataSource> *dataSource;
@@ -13,6 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) AFApplicationInfo *viewServiceApplicationInfo;
 
 + (id)exportedInterface;
 + (id)requestViewControllerWithConnectionHandler:(id /* block */)arg1;
@@ -63,6 +65,7 @@
 - (void)setStatusViewDisabled:(BOOL)arg1;
 - (void)setStatusViewHidden:(BOOL)arg1;
 - (void)setStatusViewUserInteractionEnabled:(BOOL)arg1;
+- (void)setViewServiceApplicationInfo:(id)arg1;
 - (void)showPresentationWithIdentifier:(id)arg1 properties:(id)arg2;
 - (void)siriDidActivateFromSource:(int)arg1;
 - (void)siriDidDeactivate;
@@ -74,6 +77,7 @@
 - (void)siriWillShowPasscodeUnlockAndCancelRequest:(BOOL)arg1;
 - (id)speechSynthesisDelegate;
 - (void)userInteractionDidOccur;
+- (id)viewServiceApplicationInfo;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

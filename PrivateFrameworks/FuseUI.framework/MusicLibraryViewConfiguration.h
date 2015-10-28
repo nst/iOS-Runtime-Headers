@@ -35,6 +35,7 @@
 - (int)handleSelectionFromUserActivityContext:(id)arg1 containerItem:(id)arg2 entityValueContext:(id)arg3 viewController:(id)arg4;
 - (void)handleSelectionOfAddButtonForEntityValueProvider:(id)arg1 inEntityProvider:(id)arg2 fromViewController:(id)arg3;
 - (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (int)handleSelectionOfUnplayableEntityValueContext:(id)arg1 withPlayabilityResult:(unsigned int)arg2 fromViewController:(id)arg3;
 - (id)iconName;
 - (id)identifier;
 - (BOOL)isEntityViewDescriptorLoaded;

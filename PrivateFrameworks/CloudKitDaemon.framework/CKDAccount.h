@@ -17,7 +17,6 @@
 @property (nonatomic, readonly) NSString *accountIdentifier;
 @property (nonatomic, readonly) ACAccountStore *accountStore;
 @property (nonatomic) BOOL accountWantsPushRegistration;
-@property (nonatomic, readonly) BOOL allowsCellularAccess;
 @property (nonatomic, readonly) CKDBackingAccount *backingAccount;
 @property (nonatomic, readonly) BOOL canAccessAccount;
 @property (nonatomic, readonly) BOOL cloudKitIsEnabled;
@@ -27,6 +26,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL haveWarnedAboutServerPreferredPushEnvironment;
+@property (nonatomic, readonly) BOOL iCloudDriveAllowsCellularAccess;
 @property (nonatomic) BOOL isAnonymousAccount;
 @property (nonatomic, readonly) BOOL isFakeAccount;
 @property (nonatomic) BOOL isUnitTestingAccount;
@@ -40,7 +40,6 @@
 - (id)accountIdentifier;
 - (id)accountStore;
 - (BOOL)accountWantsPushRegistration;
-- (BOOL)allowsCellularAccess;
 - (id)applicationBundle;
 - (id)backingAccount;
 - (id)baseURLForServerType:(int)arg1 partitionType:(int)arg2;
@@ -64,6 +63,7 @@
 - (id)hardwareID;
 - (BOOL)haveWarnedAboutServerPreferredPushEnvironment;
 - (id)iCloudAuthToken;
+- (BOOL)iCloudDriveAllowsCellularAccess;
 - (id)initAnonymousAccountWithContext:(id)arg1;
 - (id)initFakeAccountWithEmail:(id)arg1 password:(id)arg2 context:(id)arg3;
 - (id)initPrimaryAccountWithContext:(id)arg1;

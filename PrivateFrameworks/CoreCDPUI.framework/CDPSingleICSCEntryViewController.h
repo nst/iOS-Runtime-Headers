@@ -4,6 +4,9 @@
 
 @interface CDPSingleICSCEntryViewController : PSKeychainSyncSecurityCodeController
 
+- (void)disableUserInteractionAndStartSpinner;
+- (void)enableUserInteractionAndStopSpinner;
 - (void)forgotSecurityCode;
+- (void)viewDidDisappear:(BOOL)arg1;
 
 @end

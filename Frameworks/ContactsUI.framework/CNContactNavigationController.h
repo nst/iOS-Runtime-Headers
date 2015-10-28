@@ -60,6 +60,7 @@
 - (void)contactListViewController:(id)arg1 shouldPresentContact:(id)arg2 shouldScrollToContact:(BOOL)arg3;
 - (BOOL)contactListViewController:(id)arg1 shouldSelectContact:(id)arg2 atIndexPath:(id)arg3;
 - (id)contactStore;
+- (id)contactStoreFilterFromPreferences;
 - (id)contactStyle;
 - (void)contactViewController:(id)arg1 didCompleteWithContact:(id)arg2;
 - (void)contactViewController:(id)arg1 didDeleteContact:(id)arg2;
@@ -76,6 +77,7 @@
 - (void)presentGroupsViewController:(id)arg1;
 - (void)refreshEverythingNow:(id)arg1;
 - (int)rightButtonBehavior;
+- (void)saveContactStoreFilterToPreferences:(id)arg1;
 - (void)setAccountsAndGroupsDataSource:(id)arg1;
 - (void)setAllowsCanceling:(BOOL)arg1;
 - (void)setAllowsCardDeletion:(BOOL)arg1;

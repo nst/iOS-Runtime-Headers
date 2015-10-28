@@ -410,10 +410,6 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
 
-+ (void)is_prepareIrisAudioWithAsset:(id)arg1 completion:(id /* block */)arg2;
-+ (void)is_prepareIrisPlayerItemWithAsset:(id)arg1 includeVideo:(BOOL)arg2 includeAudio:(BOOL)arg3 completion:(id /* block */)arg4;
-+ (void)is_prepareIrisVideoWithAsset:(id)arg1 completion:(id /* block */)arg2;
-
 - (BOOL)is_isHighFramerate;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos

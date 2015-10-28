@@ -21,6 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } finalFrameForContainerView;
+@property (nonatomic, readonly) BOOL forceObeyNavigationBarInsets;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) float resultsControllerContentOffset;
 @property (nonatomic, readonly) BOOL resultsUnderlapsSearchBar;
@@ -50,6 +51,7 @@
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)dismissalTransitionWillBegin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForContainerView;
+- (BOOL)forceObeyNavigationBarInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)presentationTransitionDidEnd:(BOOL)arg1;

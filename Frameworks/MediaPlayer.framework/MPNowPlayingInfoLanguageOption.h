@@ -18,6 +18,7 @@
 - (id)identifier;
 - (id)initWithMRLanguageOption:(void*)arg1;
 - (id)initWithType:(unsigned int)arg1 languageTag:(id)arg2 characteristics:(id)arg3 displayName:(id)arg4 identifier:(id)arg5;
+- (BOOL)isAutomaticAudibleLanguageOption;
 - (BOOL)isAutomaticLegibleLanguageOption;
 - (id)languageOptionCharacteristics;
 - (unsigned int)languageOptionType;

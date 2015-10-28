@@ -51,9 +51,9 @@
 - (void)_coalescingTimerFired;
 - (id)_consumeBatchOfSize:(unsigned int)arg1;
 - (void)_dataSourceAssignTransaction:(long long)arg1 forIdentifiers:(id)arg2 completion:(id /* block */)arg3;
-- (void)_dataSourceAssignTransaction:(long long)arg1 forItems:(id)arg2 completion:(id /* block */)arg3;
-- (void)_dataSourceIndexItemsNeedingRefreshWithCompletion:(id /* block */)arg1;
+- (void)_dataSourceAssignTransaction:(long long)arg1 updates:(id)arg2 completion:(id /* block */)arg3;
 - (void)_dataSourceInvalidateItemsGreaterThanTransaction:(long long)arg1 completion:(id /* block */)arg2;
+- (void)_dataSourceRequestNeededUpdatesWithCompletion:(id /* block */)arg1;
 - (void)_dataSourceScheduleWork:(id /* block */)arg1;
 - (void)_dataSourceVerifyRepresentativeSampleWithCompletion:(id /* block */)arg1;
 - (void)_fetchLastClientState;
@@ -65,8 +65,9 @@
 - (void)_noteNeedsLastClientStateFetch;
 - (void)_persistRemainingIndexingBudgetValue:(id)arg1;
 - (void)_powerStateChanged:(id)arg1;
-- (void)_processDomainRemovals:(id)arg1 identifierRemovals:(id)arg2;
-- (void)_processIndexingBatch:(id)arg1;
+- (id)_processDomainRemovals:(id)arg1;
+- (void)_processIdentifierRemovals:(id)arg1;
+- (void)_processIndexingBatch:(id)arg1 clientState:(id)arg2;
 - (void)_processRefreshRequestWithCompletion:(id /* block */)arg1;
 - (void)_processSpotlightVerificationWithCompletion:(id /* block */)arg1;
 - (void)_queueConsumeBudgetElapsedPeriod:(double)arg1;
@@ -100,6 +101,7 @@
 - (void)removeAllItems;
 - (void)removeItemsForDomainIdentifier:(id)arg1;
 - (void)removeItemsWithIdentifiers:(id)arg1;
+- (void)removeItemsWithIdentifiers:(id)arg1 reasons:(id)arg2;
 - (void)resume;
 - (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(id /* block */)arg2;
 - (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(id /* block */)arg3;

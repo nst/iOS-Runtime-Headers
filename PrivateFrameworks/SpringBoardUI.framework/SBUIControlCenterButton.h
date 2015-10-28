@@ -14,6 +14,7 @@
     <SBUIControlCenterButtonDelegate> *_delegate;
     UIVisualEffect *_disabledStateEffect;
     UIImageView *_glyphImageView;
+    NSString *_glyphName;
     UIVisualEffect *_highlightedStateEffect;
     BOOL _isCircleButton;
     BOOL _isRectButton;
@@ -28,6 +29,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SBUIControlCenterButtonDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSString *glyphName;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isCircleButton;
 @property (nonatomic) BOOL isRectButton;
@@ -64,6 +66,8 @@
 - (void)_updateGlyphForStateChange;
 - (void)dealloc;
 - (id)delegate;
+- (void)didMoveToSuperview;
+- (id)glyphName;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 backgroundImage:(id)arg2 glyphImage:(id)arg3 naturalHeight:(float)arg4;
 - (BOOL)isCircleButton;
@@ -76,6 +80,8 @@
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setGlyphImage:(id)arg1 selectedGlyphImage:(id)arg2;
+- (void)setGlyphImage:(id)arg1 selectedGlyphImage:(id)arg2 name:(id)arg3;
+- (void)setGlyphName:(id)arg1;
 - (void)setImage:(id)arg1 forState:(unsigned int)arg2;
 - (void)setIsCircleButton:(BOOL)arg1;
 - (void)setIsRectButton:(BOOL)arg1;

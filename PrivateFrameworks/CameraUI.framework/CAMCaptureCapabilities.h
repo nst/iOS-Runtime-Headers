@@ -5,6 +5,7 @@
 @interface CAMCaptureCapabilities : NSObject {
     double __backCaptureInterval;
     float __backVideoModeMaximumVideoZoomFactor;
+    BOOL __front720p30Supported;
     double __frontCaptureInterval;
     float __frontVideoModeMaximumVideoZoomFactor;
     BOOL _back1080p120Supported;
@@ -55,6 +56,7 @@
 
 @property (nonatomic, readonly) double _backCaptureInterval;
 @property (nonatomic, readonly) float _backVideoModeMaximumVideoZoomFactor;
+@property (getter=_isFront720p30Supported, nonatomic, readonly) BOOL _front720p30Supported;
 @property (nonatomic, readonly) double _frontCaptureInterval;
 @property (nonatomic, readonly) float _frontVideoModeMaximumVideoZoomFactor;
 @property (getter=isBack1080p120Supported, nonatomic, readonly) BOOL back1080p120Supported;
@@ -108,6 +110,7 @@
 - (float)_backVideoModeMaximumVideoZoomFactor;
 - (double)_frontCaptureInterval;
 - (float)_frontVideoModeMaximumVideoZoomFactor;
+- (BOOL)_isFront720p30Supported;
 - (int)back720pMaxFPS;
 - (double)captureIntervalForDevice:(int)arg1;
 - (BOOL)hasSystemTelephonyOfAnyKind;

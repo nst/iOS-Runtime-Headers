@@ -26,7 +26,6 @@
     NSLayoutConstraint *_marginToImageConstraint;
     NSLayoutConstraint *_minimumHeightConstraint;
     UIAlertControllerVisualStyle *_visualStyle;
-    NSMutableArray *backgroundConstraints;
     UIView<UIAlertControllerBackgroundView> *backgroundView;
     UIImageView *checkView;
     UILabel *descriptiveLabel;
@@ -104,6 +103,7 @@
 - (id)labelContainerCenterXConstraint;
 - (id)labelContainerLeadingPinConstraint;
 - (id)labelContainerTrailingPinConstraint;
+- (void)layoutSubviews;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesChanged:(id)arg1 withEvent:(id)arg2;

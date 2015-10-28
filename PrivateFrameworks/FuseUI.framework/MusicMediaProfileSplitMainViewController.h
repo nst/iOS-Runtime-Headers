@@ -32,6 +32,7 @@
         float bottom; 
         float right; 
     } _minimumHeightContentInsetAdditions;
+    float _preferredMaximumContentWidth;
     unsigned int _profileType;
     SKUIScrollingSegmentedController *_scrollingSegmentedController;
     NSMutableArray *_segmentIdentifiers;
@@ -46,6 +47,7 @@
     BOOL _segmentedControlVisible;
     BOOL _shouldAutomaticallySelectMyMusicSegment;
     BOOL _shouldShowStoreSegments;
+    BOOL _visuallyInset;
 }
 
 @property (nonatomic, copy) NSArray *allowedSegments;
@@ -57,17 +59,21 @@
 @property (nonatomic) float headerTransitionProgress;
 @property (nonatomic, copy) MusicMediaDetailTintInformation *mediaDetailTintInformation;
 @property (nonatomic) <MusicMediaProfileSplitMainViewControllerDelegate> *mediaSplitViewControllerDelegate;
+@property (nonatomic) float preferredMaximumContentWidth;
 @property (nonatomic, readonly) SKUIScrollingSegmentedController *scrollingSegmentedController;
 @property (getter=isSegmentedControlVisible, nonatomic, readonly) BOOL segmentedControlVisible;
 @property (nonatomic, copy) NSString *selectedSegmentIdentifier;
 @property (nonatomic) BOOL shouldAutomaticallySelectMyMusicSegment;
 @property (nonatomic) BOOL shouldShowStoreSegments;
 @property (readonly) Class superclass;
+@property (getter=isVisuallyInset, nonatomic) BOOL visuallyInset;
 
 - (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_adjustContentOffsetForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inScrollView:(id)arg2 withContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg3;
 - (void)_applyHairlineTintInformation;
 - (void)_applyTintInformation;
+- (void)_containerScrollViewDidBeginScrolling;
+- (void)_containerScrollViewDidFinishScrolling;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_currentSegmentedControlContentEdgeInsets;
 - (void)_handleCanShowConnectDidChangeNotification:(id)arg1;
 - (void)_handleCanShowSubscriptionContentDidChangeNotification:(id)arg1;
@@ -91,17 +97,22 @@
 - (float)headerTransitionProgress;
 - (id)initWithProfileType:(unsigned int)arg1 artistEntity:(id)arg2;
 - (BOOL)isSegmentedControlVisible;
-- (void)loadView;
+- (BOOL)isVisuallyInset;
 - (id)mediaDetailTintInformation;
 - (id)mediaSplitViewControllerDelegate;
 - (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (void)music_viewInheritedLayoutInsetsDidChange;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (float)preferredMaximumContentWidth;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (id)scrollingSegmentedController;
 - (void)scrollingSegmentedController:(id)arg1 contentScrollViewDidChangeForViewControllerAtIndex:(unsigned int)arg2;
 - (void)scrollingSegmentedController:(id)arg1 didFocusViewControllerAtIndex:(unsigned int)arg2;
 - (void)scrollingSegmentedController:(id)arg1 willDisplayViewControllerAtIndex:(unsigned int)arg2;
+- (void)scrollingSegmentedControllerDidEndDecelerating:(id)arg1;
+- (void)scrollingSegmentedControllerDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollingSegmentedControllerWillBeginDragging:(id)arg1;
 - (id)selectedSegmentIdentifier;
 - (void)setAllowedSegments:(id)arg1;
 - (void)setAvailableContentFlags:(id)arg1;
@@ -109,10 +120,12 @@
 - (void)setHeaderTransitionProgress:(float)arg1;
 - (void)setMediaDetailTintInformation:(id)arg1;
 - (void)setMediaSplitViewControllerDelegate:(id)arg1;
+- (void)setPreferredMaximumContentWidth:(float)arg1;
 - (void)setSelectedSegmentIdentifier:(id)arg1;
 - (void)setShouldAutomaticallySelectMyMusicSegment:(BOOL)arg1;
 - (void)setShouldShowStoreSegments:(BOOL)arg1;
 - (void)setViewController:(id)arg1 forSegmentIdentifier:(id)arg2;
+- (void)setVisuallyInset:(BOOL)arg1;
 - (BOOL)shouldAutomaticallySelectMyMusicSegment;
 - (BOOL)shouldShowStoreSegments;
 - (id)viewControllerForSegmentIdentifier:(id)arg1;

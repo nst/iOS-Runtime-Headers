@@ -61,6 +61,7 @@
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 
+- (id)_dataProvider;
 - (id)attachmentManager;
 - (void)cancel;
 - (BOOL)conformsToType:(id)arg1;

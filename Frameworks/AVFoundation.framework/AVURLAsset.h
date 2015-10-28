@@ -70,6 +70,7 @@
 - (id)init;
 - (id)initWithURL:(id)arg1 options:(id)arg2;
 - (id)lyrics;
+- (id)originalNetworkContentURL;
 - (unsigned int)referenceRestrictions;
 - (id)resolvedURL;
 - (id)resourceLoader;

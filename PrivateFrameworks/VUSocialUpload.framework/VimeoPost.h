@@ -12,10 +12,10 @@
     NSURL *_baseURL;
     BOOL _canUploadOverCellular;
     BOOL _continuingUpload;
+    unsigned int _countOfBytesStored;
     VUDataReader *_dataReader;
     <VimeoPostDelegate> *_delegate;
     NSURL *_exportedVideoURL;
-    unsigned int _lastByteStored;
     NSString *_postDescription;
     int _privacySettings;
     int _retryCount;

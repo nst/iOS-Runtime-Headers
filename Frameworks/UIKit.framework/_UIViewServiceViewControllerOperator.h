@@ -171,6 +171,5 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (void)systemLayoutFittingSizeDidChangeForChildViewController:(id)arg1;
 - (void)viewDidLoad;
-- (void)viewWillMoveToWindow:(id)arg1;
 
 @end

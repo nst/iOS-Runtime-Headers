@@ -10,6 +10,7 @@
     NSDictionary *clientLayers;
     CALayer *closedCaptionLayer;
     BOOL hasPlayerToObserve;
+    AVNetworkPlaybackPerfHUDLayer *hudLayer;
     BOOL isObservingPlayer;
     BOOL isPIPModeEnabled;
     BOOL isPresentationLayer;

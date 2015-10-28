@@ -5,6 +5,7 @@
 
 @required
 
+- (NSObject<OS_xpc_object> *)activityForActivityId:(int)arg1;
 - (NSObject<OS_xpc_object> *)copyCriteria:(NSObject<OS_xpc_object> *)arg1;
 - (long)getState:(NSObject<OS_xpc_object> *)arg1;
 - (void)registerActivitiesWithSystem;

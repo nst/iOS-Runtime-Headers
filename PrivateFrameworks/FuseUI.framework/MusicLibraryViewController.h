@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicLibraryViewController : UIViewController <MusicActionableHeaderViewDelegate, MusicClientContextConsuming, MusicLayoutMarginProxyViewDelegate, MusicLibraryBrowseCollectionViewControllerDelegate, MusicSplitInitialStateProviding, MusicVerticalScrollingContainerViewControllerDelegate, SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate, SKUIProxyScrollViewDelegate, SKUITabBarItemRootViewController, UIViewControllerRestoration> {
+@interface MusicLibraryViewController : UIViewController <MusicActionableHeaderViewDelegate, MusicClientContextConsuming, MusicLibraryBrowseCollectionViewControllerDelegate, MusicSplitInitialStateProviding, MusicVerticalScrollingContainerViewControllerDelegate, SKUIIndexBarControlDataSource, SKUIIndexBarControlDelegate, SKUIProxyScrollViewDelegate, SKUITabBarItemRootViewController, UIViewControllerRestoration> {
     MusicLibraryArtistsViewConfiguration *_artistsViewConfiguration;
     MusicClientContext *_clientContext;
     NSMutableArray *_entityProviderNotificationObservers;
@@ -12,9 +12,8 @@
     int _indexBarControlVisibleTransactionCount;
     MusicVerticalScrollingContainerItem *_indexBarMinimumVerticalScrollingContainerItem;
     <MusicIndexBarDataSource><MusicIndexBarScrollDelegate> *_indexBarSupportDataSource;
-    float _indexBarTrailingLayoutMarginAddition;
+    float _indexBarTrailingLayoutInsetAddition;
     BOOL _isContainedWithinSplitViewPrimary;
-    BOOL _isIgnoringLayoutMarginsChange;
     BOOL _isIndexBarTracking;
     BOOL _isIndexBarVisible;
     UIViewController *_libraryBrowseViewController;
@@ -33,15 +32,15 @@
     MusicStandaloneShuffleViewController *_shuffleAllViewController;
     MusicSwitcherButtonContainerView *_switcherButtonContainerView;
     MusicVerticalScrollingContainerViewController *_verticalScrollingContainerViewController;
-    NSMutableDictionary *_viewConfigurationIdentifierToHasContentNumber;
     NSArray *_viewConfigurations;
 }
 
 @property (nonatomic, retain) SKUIClientContext *clientContext;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasPopulatedViewConfiguration;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) NSArray *populatedViewConfigurations;
+@property (nonatomic, readonly, copy) NSArray *populatedViewConfigurations;
 @property (nonatomic, readonly, copy) NSString *preferredSelectedViewIdentifier;
 @property (nonatomic, readonly) MusicLibraryViewConfiguration *selectedViewConfiguration;
 @property (nonatomic, readonly) UIViewController *selectedViewConfigurationViewController;
@@ -52,14 +51,15 @@
 + (id)viewControllerWithRestorationIdentifierPath:(id)arg1 coder:(id)arg2;
 
 - (void).cxx_destruct;
-- (float)_calculateHairlineViewHeight;
 - (id)_calculateIndexBarBackgroundColor;
+- (float)_calculateIndexBarControlWidth;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_calculateLayoutInsets;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
+- (BOOL)_hasContentForViewConfiguration:(id)arg1;
 - (void)_indexBarControlTouchAction:(id)arg1;
 - (id)_indexBarControllingScrollView;
 - (void)_indexBarDataSourceDidInvalidateNotification:(id)arg1;
 - (void)_musicLibraryViewControllerCommonInitialization;
-- (void)_reapplyLayoutMarginAdditions;
 - (void)_recentlyAddedEntityProviderDidInvalidateNotification:(id)arg1;
 - (void)_registerEntityProviderChangeNotifications;
 - (void)_registerForNotificationsForIndexBarSupportDataSource:(id)arg1;
@@ -68,16 +68,17 @@
 - (void)_switchToViewWithConfiguration:(id)arg1;
 - (void)_unregisterEntityProviderChangeNotifications;
 - (void)_unregisterForNotificationsForIndexBarSupportDataSource:(id)arg1;
-- (void)_updateHasContentFlagForViewConfiguration:(id)arg1;
-- (void)_updateHasContentFlags;
-- (void)_updateIndexBarLayoutMarginsForVisibleIndexBarControl:(BOOL)arg1;
+- (void)_updateHairlineViewSize;
+- (void)_updateIndexBarLayoutInsetsForVisibleIndexBarControl:(BOOL)arg1;
 - (void)_updateIndexBarSupportDataSource;
 - (void)_updateIndexBarVisibilityAnimated:(BOOL)arg1;
+- (void)_updateRecentlyAddedHeaderMetricsAllowingInvalidationOfVerticalScrollingContainerLayout:(BOOL)arg1;
 - (void)_updateRecentlyAddedHeaderViewSize;
 - (void)_updateRecentlyAddedViewMoreButton;
 - (void)_updateRecentlyAddedViewSize;
 - (void)_updateSwitcherButtonContainerViewSize;
 - (void)_updateVerticalScrollingContainerItems;
+- (void)_updateViewLayoutInsets;
 - (id)_verticalScrollingContainerViewController;
 - (id)_viewConfigurations;
 - (void)actionableHeaderViewDidSelectButton:(id)arg1;
@@ -87,6 +88,7 @@
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
+- (BOOL)hasPopulatedViewConfiguration;
 - (void)indexBarControl:(id)arg1 didSelectEntryAtIndexPath:(id)arg2;
 - (id)indexBarControl:(id)arg1 entryAtIndexPath:(id)arg2;
 - (int)indexBarControl:(id)arg1 numberOfEntriesInSection:(int)arg2;
@@ -94,9 +96,8 @@
 - (void)indexBarControlDidSelectBeyondTop:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithTabBarItem:(id)arg1;
-- (void)layoutMarginProxyViewLayoutMarginsDidChange:(id)arg1;
-- (void)loadView;
 - (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
+- (void)music_viewInheritedLayoutInsetsDidChange;
 - (id)populatedIdentifierForUserActivityContainerItemType:(int)arg1;
 - (id)populatedViewConfigurations;
 - (id)preferredSelectedViewIdentifier;

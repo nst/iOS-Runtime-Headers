@@ -9,6 +9,7 @@
     ML3MusicLibrary *_musicLibrary;
     NSURL *_originalFileURL;
     NSString *_relativePath;
+    NSObject<OS_dispatch_queue> *_serialQueue;
     int _sourceType;
 }
 
@@ -21,9 +22,9 @@
 @property (nonatomic, readonly) int sourceType;
 
 - (void).cxx_destruct;
-- (void)_faultInProperties;
 - (id)_interestDataFromInterestDictionary:(id)arg1;
 - (id)_interestDictionaryFromInterestData:(id)arg1;
+- (void)_onSerialQueue_faultInProperties;
 - (id)artworkToken;
 - (int)artworkType;
 - (id)fileURLForSize:(struct CGSize { float x1; float x2; })arg1;

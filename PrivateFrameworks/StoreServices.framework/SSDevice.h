@@ -32,6 +32,7 @@
 @property (readonly) NSSet *automaticDownloadKinds;
 @property (readonly) double batteryLevel;
 @property (copy) NSString *cloudMediaLibraryIdentifier;
+@property (readonly) NSString *compatibleProductType;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) int deviceType;
@@ -95,6 +96,7 @@
 - (double)batteryLevel;
 - (id)carrierBundleStatusForService:(int)arg1;
 - (id)cloudMediaLibraryIdentifier;
+- (id)compatibleProductType;
 - (id)copyStoreFrontRequestHeaders;
 - (void)dealloc;
 - (int)deviceType;

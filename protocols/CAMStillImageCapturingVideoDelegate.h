@@ -6,6 +6,8 @@
 @optional
 
 - (void)didCompleteCapturingVideoForStillImageRequests;
+- (void)startShowingLivePhotoIndicator;
+- (void)stopShowingLivePhotoIndicator;
 - (void)willStartCapturingVideoForStillImageRequests;
 
 @end

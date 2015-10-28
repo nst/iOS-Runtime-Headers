@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicProductAdditionalMetadataViewController : UIViewController <MusicProductDescriptionTableViewCellDelegate, MusicProductMetadataTableViewCellDelegate, UITableViewDataSource, UITableViewDelegate> {
+@interface MusicProductAdditionalMetadataViewController : UIViewController <MusicProductDescriptionTableViewCellDelegate, MusicProductMetadataTableViewCellDelegate, MusicTableViewDelegate, UITableViewDataSource, UITableViewDelegate> {
     NSIndexSet *_allowedMetadataItems;
     UIColor *_customSelectionTintColor;
     UIColor *_defaultSelectionTintColor;
@@ -21,9 +21,11 @@
     MusicProductDescription *_productDescription;
     int _productDescriptionMaximumLengthForTextInput;
     MusicProductDescriptionTableViewCell *_productDescriptionTableViewCell;
+    int _productDescriptionTextStyle;
     NSString *_publicSwitchDescription;
     BOOL _publicSwitchOn;
-    UITableView *_tableView;
+    MusicTableView *_tableView;
+    BOOL _trailingSeparatorInsetFollowsLayoutInsets;
     NSString *_visibleSwitchDescription;
     BOOL _visibleSwitchOn;
 }
@@ -37,9 +39,11 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) MusicProductDescription *productDescription;
 @property (nonatomic) int productDescriptionMaximumLengthForTextInput;
+@property (nonatomic) int productDescriptionTextStyle;
 @property (nonatomic, copy) NSString *publicSwitchDescription;
 @property (getter=isPublicSwitchOn, nonatomic) BOOL publicSwitchOn;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL trailingSeparatorInsetFollowsLayoutInsets;
 @property (nonatomic, copy) NSString *visibleSwitchDescription;
 @property (getter=isVisibleSwitchOn, nonatomic) BOOL visibleSwitchOn;
 
@@ -66,6 +70,7 @@
 - (id)productDescription;
 - (void)productDescriptionDidChangeForProductDescriptionTableViewCell:(id)arg1;
 - (int)productDescriptionMaximumLengthForTextInput;
+- (int)productDescriptionTextStyle;
 - (id)publicSwitchDescription;
 - (void)setAllowedMetadataItems:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -73,8 +78,10 @@
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setProductDescription:(id)arg1;
 - (void)setProductDescriptionMaximumLengthForTextInput:(int)arg1;
+- (void)setProductDescriptionTextStyle:(int)arg1;
 - (void)setPublicSwitchDescription:(id)arg1;
 - (void)setPublicSwitchOn:(BOOL)arg1;
+- (void)setTrailingSeparatorInsetFollowsLayoutInsets:(BOOL)arg1;
 - (void)setVisibleSwitchDescription:(id)arg1;
 - (void)setVisibleSwitchOn:(BOOL)arg1;
 - (void)switchDidChangeStateInProductMetadataTableViewCell:(id)arg1;
@@ -84,9 +91,11 @@
 - (int)tableView:(id)arg1 editingStyleForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForRowAtIndexPath:(id)arg2;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
+- (BOOL)tableView:(id)arg1 shouldForceBottomSeparatorVisibleForSection:(int)arg2;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (BOOL)tableView:(id)arg1 shouldIndentWhileEditingRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
+- (BOOL)trailingSeparatorInsetFollowsLayoutInsets;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

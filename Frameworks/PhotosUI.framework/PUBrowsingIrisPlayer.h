@@ -51,6 +51,7 @@
 - (id)_audioToken;
 - (void)_cancelAllRequests;
 - (void)_configureAudioSession:(id)arg1;
+- (int)_contentMode;
 - (int)_currentUnloadRequestId;
 - (void)_handlePlayerUnloadWithRequestId:(int)arg1;
 - (void)_handleResultWithImage:(id)arg1 info:(id)arg2;

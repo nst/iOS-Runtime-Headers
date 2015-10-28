@@ -57,9 +57,10 @@
 - (id)assetViewModel;
 - (void)becomeReusable;
 - (void)irisBadgeTileInfo:(id)arg1 didTransitionToAppearanceState:(unsigned int)arg2;
-- (void)loadView;
+- (id)loadView;
 - (void)prepareForReuse;
 - (void)setAssetViewModel:(id)arg1;
+- (void)viewDidLoad;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 
 @end

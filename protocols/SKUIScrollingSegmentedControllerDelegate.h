@@ -9,5 +9,9 @@
 - (void)scrollingSegmentedController:(SKUIScrollingSegmentedController *)arg1 didEndDisplayingViewControllerAtIndex:(unsigned int)arg2;
 - (void)scrollingSegmentedController:(SKUIScrollingSegmentedController *)arg1 didFocusViewControllerAtIndex:(unsigned int)arg2;
 - (void)scrollingSegmentedController:(SKUIScrollingSegmentedController *)arg1 willDisplayViewControllerAtIndex:(unsigned int)arg2;
+- (void)scrollingSegmentedControllerDidEndDecelerating:(SKUIScrollingSegmentedController *)arg1;
+- (void)scrollingSegmentedControllerDidEndDragging:(SKUIScrollingSegmentedController *)arg1 willDecelerate:(BOOL)arg2;
+- (void)scrollingSegmentedControllerWillBeginDecelerating:(SKUIScrollingSegmentedController *)arg1;
+- (void)scrollingSegmentedControllerWillBeginDragging:(SKUIScrollingSegmentedController *)arg1;
 
 @end

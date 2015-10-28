@@ -4,6 +4,6 @@
 
 @interface PUPlayheadTileViewController : PUTileViewController
 
-- (void)loadView;
+- (id)loadView;
 
 @end

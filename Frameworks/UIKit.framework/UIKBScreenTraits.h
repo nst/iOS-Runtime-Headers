@@ -21,6 +21,7 @@
 
 + (id)traitsWithScreen:(id)arg1 orientation:(int)arg2;
 
+- (id)description;
 - (int)idiom;
 - (id)initWithScreen:(id)arg1 orientation:(int)arg2;
 - (BOOL)isKeyboardMinorEdgeWidth;
@@ -31,6 +32,6 @@
 - (void)setKeyboardWidth:(float)arg1;
 - (void)setOrientation:(int)arg1;
 - (BOOL)touchInput;
-- (void)updateForTextInputTraits:(id)arg1;
+- (void)updateForTextInputTraits:(id)arg1 supportsTouchInput:(id)arg2;
 
 @end

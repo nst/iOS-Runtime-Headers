@@ -12,6 +12,7 @@
     CAMKeyValueCoalescer *__exposureCoalescer;
     CAMKeyValueCoalescer *__focusCoalescer;
     NSMutableSet *__identifiersForRecordingVideoForStillImageRequests;
+    NSMutableSet *__identifiersForShowingLivePhotoIndicatorForStillImageRequests;
     BOOL __isVideoCaptureAvailable;
     CAMLocationController *__locationController;
     int __maximumNumberOfStillImageRequests;
@@ -61,6 +62,7 @@
 @property (nonatomic, readonly) CAMKeyValueCoalescer *_exposureCoalescer;
 @property (nonatomic, readonly) CAMKeyValueCoalescer *_focusCoalescer;
 @property (nonatomic, readonly) NSMutableSet *_identifiersForRecordingVideoForStillImageRequests;
+@property (nonatomic, readonly) NSMutableSet *_identifiersForShowingLivePhotoIndicatorForStillImageRequests;
 @property (getter=_isVideoCaptureAvailable, setter=_setVideoCaptureAvailable:, nonatomic) BOOL _isVideoCaptureAvailable;
 @property (nonatomic, readonly) CAMLocationController *_locationController;
 @property (setter=_setMaximumNumberOfStillImageRequests:, nonatomic) int _maximumNumberOfStillImageRequests;
@@ -104,6 +106,7 @@
 @property (nonatomic) <CAMCaptureRecoveryDelegate> *recoveryDelegate;
 @property (nonatomic) <CAMCaptureRunningDelegate> *runningDelegate;
 @property (nonatomic, readonly) BOOL shouldAllowUserToChangeFocusAndExposure;
+@property (nonatomic, readonly) BOOL shouldShowLivePhotoIndicator;
 @property (nonatomic) <CAMStillImageCapturingVideoDelegate> *stillImageCapturingVideoDelegate;
 @property (nonatomic) <CAMSuggestionDelegate> *suggestionDelegate;
 @property (readonly) Class superclass;
@@ -139,6 +142,7 @@
 - (void)_handleCaptureEngineExecutionNotification:(id)arg1;
 - (id)_identifierForPendingVideoForStillImageRequest:(id)arg1;
 - (id)_identifiersForRecordingVideoForStillImageRequests;
+- (id)_identifiersForShowingLivePhotoIndicatorForStillImageRequests;
 - (BOOL)_isCapturingPairedVideoPaused;
 - (BOOL)_isFailedConfigurationPreventingCapture;
 - (BOOL)_isVideoCaptureAvailable;
@@ -195,6 +199,8 @@
 - (void)_setupSuggestionMonitoring;
 - (void)_setupZoomMonitoring;
 - (BOOL)_shouldResetFocusAndExposureAfterIrisVideoCapture;
+- (void)_startShowingLivePhotoIndicatorForStillImageRequest:(id)arg1;
+- (void)_stopShowingLivePhotoIndicatorForStillImageRequest:(id)arg1;
 - (void)_subjectAreaDidChange:(id)arg1;
 - (id)_suggestionKeyPaths;
 - (void)_suggestionResultChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;
@@ -306,6 +312,7 @@
 - (void)setSuggestionDelegate:(id)arg1;
 - (void)setZoomDelegate:(id)arg1;
 - (BOOL)shouldAllowUserToChangeFocusAndExposure;
+- (BOOL)shouldShowLivePhotoIndicator;
 - (void)startCaptureSession;
 - (BOOL)startCapturingBurstWithRequest:(id)arg1 error:(id*)arg2;
 - (BOOL)startCapturingPanoramaWithRequest:(id)arg1 error:(id*)arg2;
@@ -318,6 +325,7 @@
 - (void)stillImageRequestDidCompleteCapture:(id)arg1 error:(id)arg2;
 - (void)stillImageRequestDidStartCapturing:(id)arg1;
 - (void)stillImageRequestDidStopCapturing:(id)arg1;
+- (void)stillImageRequestDidStopCapturingVideo:(id)arg1;
 - (void)stillImageRequestWillStartCapturingVideo:(id)arg1;
 - (void)stopCaptureSession;
 - (void)stopCapturingBurst;

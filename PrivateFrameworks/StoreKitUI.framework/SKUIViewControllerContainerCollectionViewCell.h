@@ -5,11 +5,13 @@
 @interface SKUIViewControllerContainerCollectionViewCell : UICollectionViewCell {
     NSIndexPath *_indexPath;
     BOOL _managesViewControllerContainerViewLayout;
+    float _maximumContentWidth;
     SKUIViewControllerContainerView *_viewControllerContainerView;
 }
 
 @property (nonatomic, readonly) NSIndexPath *indexPath;
 @property (nonatomic) BOOL managesViewControllerContainerViewLayout;
+@property (nonatomic) float maximumContentWidth;
 @property (nonatomic, retain) UIViewController *viewController;
 @property (nonatomic, readonly) UIView *viewControllerContainerView;
 
@@ -19,7 +21,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (BOOL)managesViewControllerContainerViewLayout;
+- (float)maximumContentWidth;
 - (void)setManagesViewControllerContainerViewLayout:(BOOL)arg1;
+- (void)setMaximumContentWidth:(float)arg1;
 - (void)setViewController:(id)arg1;
 - (id)viewController;
 - (id)viewControllerContainerView;

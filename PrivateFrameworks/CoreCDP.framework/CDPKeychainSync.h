@@ -5,6 +5,7 @@
 @interface CDPKeychainSync : NSObject
 
 + (BOOL)isUserVisibleKeychainSyncEnabled;
++ (void)removeNonViewAwarePeersFromCircleWithContext:(id)arg1 completion:(id /* block */)arg2;
 + (void)setUserVisibleKeychainSyncEnabled:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 
 @end

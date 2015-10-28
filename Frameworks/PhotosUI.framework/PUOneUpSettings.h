@@ -29,6 +29,8 @@
     BOOL _doubleTapZoomAreaExcludesBars;
     float _doubleTapZoomFactor;
     float _interpageSpacing;
+    float _livePhotoInteractionThreshold;
+    BOOL _lockScrollDuringLivePhotoPlayback;
     float _maximumInitialZoomToFillScale;
     int _minNavigationDistanceForFastRegime;
     int _minNavigationDistanceForQuickPagingRegime;
@@ -83,6 +85,8 @@
 @property (nonatomic) BOOL doubleTapZoomAreaExcludesBars;
 @property (nonatomic) float doubleTapZoomFactor;
 @property (nonatomic) float interpageSpacing;
+@property (nonatomic) float livePhotoInteractionThreshold;
+@property (nonatomic) BOOL lockScrollDuringLivePhotoPlayback;
 @property (nonatomic) float maximumInitialZoomToFillScale;
 @property (nonatomic) int minNavigationDistanceForFastRegime;
 @property (nonatomic) int minNavigationDistanceForQuickPagingRegime;
@@ -140,6 +144,8 @@
 - (BOOL)doubleTapZoomAreaExcludesBars;
 - (float)doubleTapZoomFactor;
 - (float)interpageSpacing;
+- (float)livePhotoInteractionThreshold;
+- (BOOL)lockScrollDuringLivePhotoPlayback;
 - (float)maximumInitialZoomToFillScale;
 - (int)minNavigationDistanceForFastRegime;
 - (int)minNavigationDistanceForQuickPagingRegime;
@@ -177,6 +183,8 @@
 - (void)setDoubleTapZoomAreaExcludesBars:(BOOL)arg1;
 - (void)setDoubleTapZoomFactor:(float)arg1;
 - (void)setInterpageSpacing:(float)arg1;
+- (void)setLivePhotoInteractionThreshold:(float)arg1;
+- (void)setLockScrollDuringLivePhotoPlayback:(BOOL)arg1;
 - (void)setMaximumInitialZoomToFillScale:(float)arg1;
 - (void)setMinNavigationDistanceForFastRegime:(int)arg1;
 - (void)setMinNavigationDistanceForQuickPagingRegime:(int)arg1;

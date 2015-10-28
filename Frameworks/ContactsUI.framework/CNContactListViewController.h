@@ -72,9 +72,7 @@
 - (float)contentOffsetDueToMeContactBanner;
 - (id)dataSource;
 - (void)dealloc;
-- (void)decodeRestorableDataSourceFilterWithCoder:(id)arg1;
 - (id)delegate;
-- (void)encodeRestorableDataSourceFilterWithCoder:(id)arg1;
 - (id)initWithDataSource:(id)arg1;
 - (id)initWithDataSource:(id)arg1 searchable:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1;

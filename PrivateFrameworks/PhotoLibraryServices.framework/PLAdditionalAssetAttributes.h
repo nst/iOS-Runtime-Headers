@@ -28,7 +28,6 @@
 @property (nonatomic, retain) NSString *exifTimestampString;
 @property (nonatomic, retain) NSNumber *externalUsageIntent;
 @property (nonatomic, retain) NSData *faceRegions;
-@property (nonatomic, readonly) BOOL hasVideoComplementData;
 @property (nonatomic, retain) id importSessionID;
 @property (nonatomic, retain) NSSet *keywords;
 @property (nonatomic, retain) NSDate *lastUploadAttemptDate;
@@ -57,12 +56,9 @@
 @property (nonatomic, retain) NSString *title;
 @property (nonatomic, retain) PLUnmanagedAdjustment *unmanagedAdjustment;
 @property (nonatomic, retain) NSNumber *uploadAttempts;
-@property (nonatomic, retain) NSData *videoComplementData;
 @property (nonatomic) int videoCpDisplayTimescale;
 @property (nonatomic) long long videoCpDisplayValue;
 @property (nonatomic) int videoCpDurationTimescale;
-@property (nonatomic) long long videoCpDurationValue;
-@property (nonatomic) unsigned short videoCpVisibilityState;
 
 + (void)fromExtraDurationData:(id)arg1 getStillDisplayTime:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2 videoDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg3;
 + (id)listOfSyncedProperties;
@@ -72,16 +68,13 @@
 - (BOOL)_needToSetModificationDateOnAsset:(id)arg1;
 - (void)_setCachedShiftedLocation:(id)arg1;
 - (void)dealloc;
-- (BOOL)hasVideoComplementData;
 - (id)longDescription;
 - (BOOL)migrateReverseLocationDataFromKeyedArchiverFormat;
 - (void)setLongDescription:(id)arg1;
 - (void)setShiftedLocation:(id)arg1;
-- (void)setVideoComplementData:(id)arg1;
 - (id)shiftedLocation;
 - (BOOL)validateForInsert:(id*)arg1;
 - (BOOL)validateForUpdate:(id*)arg1;
-- (id)videoComplementData;
 - (void)willSave;
 
 @end

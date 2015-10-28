@@ -36,7 +36,7 @@
 - (int)_handleChangeShuffleModeCommand:(id)arg1;
 - (int)_handleCreateRadioStationCommand:(id)arg1;
 - (int)_handleDislikeCommand:(id)arg1;
-- (int)_handleInsertIntoPlaybackQueue:(id)arg1;
+- (void)_handleInsertIntoPlaybackQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (int)_handleLikeCommand:(id)arg1;
 - (int)_handleNextTrackCommand:(id)arg1;
 - (int)_handlePauseCommand:(id)arg1;
@@ -63,6 +63,7 @@
 - (void)_playerContentsDidChangeNotification:(id)arg1;
 - (void)_playerRepeatTypeDidChangeNotification:(id)arg1;
 - (void)_playerShuffleTypeDidChangeNotification:(id)arg1;
+- (void)_prominentRadioStationDidChangeNotification:(id)arg1;
 - (void)_registerPlayerNotifications;
 - (void)_registerPrivateCommands;
 - (void)_registerPublicCommands;
@@ -70,6 +71,7 @@
 - (void)_subscriptionStatusDidChangeNotification:(id)arg1;
 - (void)_unregisterAllCommands;
 - (void)_unregisterPlayerNotifications;
+- (void)_updateProminentRadioStationAvailability;
 - (void)_updateRepeatShuffleCommands;
 - (void)_updateSupportedCommandsForItem:(id)arg1;
 - (void)_updateUserCapabilities;

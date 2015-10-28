@@ -22,8 +22,18 @@
         float width; 
         float height; 
     } _artworkSize;
+    MPULayoutInterpolator *_artworkTrailingEdgeInsetFromLeadingLayoutInsetLayoutInterpolator;
     NSMutableDictionary *_cachedArtworkPlaceholderImages;
+    float _displayScale;
+    BOOL _hasValidLastUsedArtworkEdgeInsets;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _lastUsedArtworkEdgeInsets;
     MusicArtworkPlaceholderKey *_lastUsedArtworkPlaceholderKey;
+    float _lastUsedContainerViewLeadingLayoutInset;
     NSString *_wantsToHideBorderProperty;
 }
 
@@ -38,6 +48,8 @@
 @property (nonatomic) int artworkPlaceholderStyle;
 @property (nonatomic, copy) NSString *artworkProperty;
 @property (nonatomic) struct CGSize { float x1; float x2; } artworkSize;
+@property (nonatomic, copy) MPULayoutInterpolator *artworkTrailingEdgeInsetFromLeadingLayoutInsetLayoutInterpolator;
+@property (nonatomic) float displayScale;
 @property (nonatomic, copy) NSString *wantsToHideBorderProperty;
 
 - (void).cxx_destruct;
@@ -50,12 +62,16 @@
 - (id)artworkBorderColor;
 - (int)artworkContentMode;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })artworkEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })artworkEdgeInsetsForContainerViewLayoutInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (id)artworkHighlightedBackgoundColor;
 - (id)artworkPlaceholderImageForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2;
 - (int)artworkPlaceholderStyle;
 - (id)artworkProperty;
 - (struct CGSize { float x1; float x2; })artworkSize;
+- (id)artworkTrailingEdgeInsetFromLeadingLayoutInsetLayoutInterpolator;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (float)displayScale;
+- (id)init;
 - (void)setArtworkAdditionalPropertiesToPrefetch:(id)arg1;
 - (void)setArtworkAllowsUserInteractionProperty:(id)arg1;
 - (void)setArtworkAspectRatio:(float)arg1;
@@ -67,6 +83,8 @@
 - (void)setArtworkPlaceholderStyle:(int)arg1;
 - (void)setArtworkProperty:(id)arg1;
 - (void)setArtworkSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)setArtworkTrailingEdgeInsetFromLeadingLayoutInsetLayoutInterpolator:(id)arg1;
+- (void)setDisplayScale:(float)arg1;
 - (void)setWantsToHideBorderProperty:(id)arg1;
 - (id)wantsToHideBorderProperty;
 

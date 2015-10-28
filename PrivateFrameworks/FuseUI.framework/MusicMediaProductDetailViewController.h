@@ -67,6 +67,7 @@
 - (id)_loadProductSplitMainViewController;
 - (id)_mediaDetailHeaderViewController;
 - (id)_mediaProductHeaderContentViewController;
+- (int)_productDescriptionTextStyle;
 - (void)_reloadContainerEntityValueContextProperties;
 - (void)_sendPendingTintInformationDispatchEvents;
 - (void)_setNeedsDetailHeaderConfigurationUpdate;

@@ -4,6 +4,7 @@
 
 @interface MusicEntityVerticalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring> {
     <MusicEntityVerticalLockupViewDelegate> *_delegate;
+    float _textLateralEdgePadding;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
@@ -26,5 +27,6 @@
 - (void)layoutSubviews;
 - (void)setContentDescriptor:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setTextLateralEdgePadding:(float)arg1;
 
 @end

@@ -31,6 +31,8 @@
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic) unsigned int vibrantOptions;
 
++ (id)allocWithZone:(struct _NSZone { }*)arg1;
+
 - (void).cxx_destruct;
 - (void)_actionButtonPressed:(id)arg1;
 - (float)_buttonAlpha;

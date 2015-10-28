@@ -9,6 +9,7 @@
     NSDictionary *_attributes;
     NSString *_autoHighlightIdentifier;
     NSArray *_children;
+    BOOL _didUpdateAutoHighlightIdentifier;
     BOOL _disabled;
     NSString *_elementID;
     NSString *_elementName;
@@ -27,8 +28,9 @@
 @property (nonatomic, retain) NSMutableSet *activeSingularEvents;
 @property (nonatomic) IKAppDocument *appDocument;
 @property (nonatomic, readonly, retain) NSDictionary *attributes;
-@property (nonatomic, readonly, copy) NSString *autoHighlightIdentifier;
+@property (nonatomic, copy) NSString *autoHighlightIdentifier;
 @property (nonatomic, retain) NSArray *children;
+@property (nonatomic) BOOL didUpdateAutoHighlightIdentifier;
 @property (getter=isDisabled, nonatomic) BOOL disabled;
 @property (nonatomic, readonly, copy) NSString *elementID;
 @property (nonatomic, readonly, copy) NSString *elementName;
@@ -69,6 +71,7 @@
 - (id)childTextElementWithStyle:(unsigned int)arg1;
 - (id)children;
 - (void)dealloc;
+- (BOOL)didUpdateAutoHighlightIdentifier;
 - (void)dispatchEvent:(id)arg1 eventAttribute:(id)arg2 canBubble:(BOOL)arg3 isCancelable:(BOOL)arg4 extraInfo:(id)arg5 completionBlock:(id /* block */)arg6;
 - (void)dispatchEventOfType:(unsigned int)arg1 canBubble:(BOOL)arg2 isCancelable:(BOOL)arg3 extraInfo:(id)arg4 completionBlock:(id /* block */)arg5;
 - (id)elementID;
@@ -84,9 +87,12 @@
 - (id)objectForKeyedSubscript:(id)arg1;
 - (id)parent;
 - (id)parentStyleableElement;
+- (void)resetProperty:(unsigned int)arg1;
 - (void)setActiveSingularEvents:(id)arg1;
 - (void)setAppDocument:(id)arg1;
+- (void)setAutoHighlightIdentifier:(id)arg1;
 - (void)setChildren:(id)arg1;
+- (void)setDidUpdateAutoHighlightIdentifier:(BOOL)arg1;
 - (void)setDisabled:(BOOL)arg1;
 - (void)setImpressionable:(BOOL)arg1;
 - (void)setMetadataDict:(id)arg1;

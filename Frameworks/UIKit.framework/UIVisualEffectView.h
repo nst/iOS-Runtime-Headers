@@ -9,6 +9,7 @@
     _UIVisualEffectFilterView *_colorBurnSubview;
     _UIVisualEffectFilterView *_colorSubview;
     _UIVisualEffectContentView *_contentView;
+    float _cornerRadius;
     _UIVisualEffectFilterView *_darkeningSubview;
     UIVisualEffect *_effect;
     NSArray *_effectConfigViews;
@@ -28,6 +29,7 @@
 }
 
 @property (setter=_setAdaptsToInterfaceStyle:, nonatomic) BOOL _adaptsToInterfaceStyle;
+@property (setter=_setCornerRadius:, nonatomic) float _cornerRadius;
 @property (setter=_setGroupName:, nonatomic, copy) NSString *_groupName;
 @property (nonatomic, readonly) UIVisualEffect *_trueEffect;
 @property (nonatomic, retain) UIView *contentView;
@@ -42,16 +44,19 @@
 
 - (void).cxx_destruct;
 - (BOOL)_adaptsToInterfaceStyle;
+- (void)_applyCornerRadiusToSubviews;
 - (void)_applyGroupNameToSubviews;
 - (void)_commonInit;
 - (void)_configureForCurrentEffect;
 - (void)_configureForEffectConfig:(id)arg1;
 - (void)_configureForEffectSettings:(id)arg1;
+- (float)_cornerRadius;
 - (void)_createContentViewIfNecessary;
 - (id)_groupName;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_rebuildEffectViewForCurrentEffect;
 - (void)_setAdaptsToInterfaceStyle:(BOOL)arg1;
+- (void)_setCornerRadius:(float)arg1;
 - (void)_setEffect:(id)arg1;
 - (void)_setGroupName:(id)arg1;
 - (void)_setTintOpacity:(float)arg1;

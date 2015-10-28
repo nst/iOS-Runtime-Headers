@@ -180,6 +180,7 @@
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 maximumRevisionType:(int)arg2 usingBlock:(id /* block */)arg3;
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)errorResolverForItem:(id)arg1;
+- (void)geniusItemsForSeedItem:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)hasAlbums;
 - (BOOL)hasArtists;
 - (BOOL)hasAudibleAudioBooks;

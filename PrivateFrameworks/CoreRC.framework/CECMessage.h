@@ -46,7 +46,7 @@
 + (id)routingChangeFrom:(unsigned char)arg1 originalAddress:(unsigned short)arg2 newAddress:(unsigned short)arg3;
 + (id)routingInformationFrom:(unsigned char)arg1 physicalAddress:(unsigned short)arg2;
 + (id)setMenuLanguage:(struct CECLanguage { unsigned char x1[3]; })arg1 from:(unsigned char)arg2;
-+ (id)setOSDName:(union CECOSDName { unsigned char x1[15]; struct { unsigned char x_2_1_1; unsigned char x_2_1_2[14]; } x2; })arg1 from:(unsigned char)arg2 to:(unsigned char)arg3;
++ (id)setOSDName:(struct CECOSDName { unsigned char x1; unsigned char x2[14]; })arg1 from:(unsigned char)arg2 to:(unsigned char)arg3;
 + (id)setStreamPathFrom:(unsigned char)arg1 physicalAddress:(unsigned short)arg2;
 + (id)standbyFrom:(unsigned char)arg1 to:(unsigned char)arg2;
 + (id)systemAudioModeRequestWithPhysicalAddress:(unsigned short)arg1 from:(unsigned char)arg2 to:(unsigned char)arg3;

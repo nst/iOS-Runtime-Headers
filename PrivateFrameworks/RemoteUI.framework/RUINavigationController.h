@@ -12,6 +12,7 @@
 - (void).cxx_destruct;
 - (void)_menuButtonPressed:(id)arg1;
 - (BOOL)canBeShownFromSuspendedState;
+- (void)loadView;
 - (id /* block */)menuDismissalHandler;
 - (void)setMenuDismissalHandler:(id /* block */)arg1;
 - (void)setSupportedInterfaceOrientations:(unsigned int)arg1;

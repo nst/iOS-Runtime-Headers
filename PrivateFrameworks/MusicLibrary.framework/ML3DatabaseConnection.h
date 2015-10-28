@@ -130,6 +130,7 @@
 - (BOOL)registerFunctionName:(id)arg1 argumentCount:(int)arg2 functionPointer:(int (*)arg3 userData:(void*)arg4;
 - (BOOL)registerModule:(id)arg1;
 - (BOOL)registerModuleName:(id)arg1 moduleMethods:(struct sqlite3_module { int x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); int (*x8)(); int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); int (*x13)(); int (*x14)(); int (*x15)(); int (*x16)(); int (*x17)(); int (*x18)(); int (*x19)(); int (*x20)(); int (*x21)(); int (*x22)(); int (*x23)(); }*)arg2;
+- (BOOL)removeModuleNamed:(id)arg1;
 - (BOOL)schemaAddColumnDefinition:(id)arg1 toTable:(id)arg2;
 - (BOOL)schemaDeleteColumn:(id)arg1 inTable:(id)arg2;
 - (BOOL)schemaDeleteColumns:(id)arg1 inTable:(id)arg2;

@@ -116,7 +116,6 @@
 - (void)requestVideoURLForAsset:(id)arg1 format:(int)arg2 networkAccessAllowed:(BOOL)arg3 streamingAllowed:(BOOL)arg4 trackCPLDownload:(BOOL)arg5 handler:(id /* block */)arg6;
 - (void)resetDupesAnalysis;
 - (void)revertToOriginalForAsset:(id)arg1;
-- (void)runPeriodicMaintenanceTasks;
 - (id)sandboxExtensionForAssetResourcePath:(id)arg1;
 - (void)saveAssetWithJobDictionary:(id)arg1 handler:(id /* block */)arg2 imageSurface:(struct __IOSurface { }*)arg3 previewImageSurface:(struct __IOSurface { }*)arg4;
 - (void)sendDaemonJob:(id)arg1 replyHandler:(id /* block */)arg2;

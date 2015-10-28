@@ -80,11 +80,13 @@
     } _currentCenterOffset;
     float _currentInteractiveTransitionProgress;
     double _currentInteractiveTransitionTimeStamp;
+    UICollectionViewCell *_currentPromiseFulfillmentCell;
     UITouch *_currentTouch;
     UICollectionViewUpdate *_currentUpdate;
     <UICollectionViewDataSource_Private> *_dataSource;
     NSMutableArray *_deleteItems;
     _UIDynamicAnimationGroup *_endInteractiveTransitionAnimationGroup;
+    UIFocusContainerGuide *_endOfContentFocusContainerGuide;
     NSIndexPath *_firstResponderIndexPath;
     UICollectionReusableView *_firstResponderView;
     NSString *_firstResponderViewKind;
@@ -176,6 +178,7 @@
 @property (nonatomic, retain) UIView *backgroundView;
 @property (getter=_collectionViewData, nonatomic, readonly) UICollectionViewData *collectionViewData;
 @property (nonatomic, retain) UICollectionViewLayout *collectionViewLayout;
+@property (getter=_currentPromiseFulfillmentCell, setter=_setCurrentPromiseFulfillmentCell:, nonatomic, retain) UICollectionViewCell *currentPromiseFulfillmentCell;
 @property (getter=_currentTouch, setter=_setCurrentTouch:, nonatomic, retain) UITouch *currentTouch;
 @property (getter=_currentUpdate, nonatomic, readonly) UICollectionViewUpdate *currentUpdate;
 @property (nonatomic) <UICollectionViewDataSource> *dataSource;
@@ -183,6 +186,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UICollectionViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=_endOfContentFocusContainerGuide, nonatomic, readonly) UIFocusContainerGuide *endOfContentFocusContainerGuide;
 @property (getter=_focusedCell, setter=_setFocusedCell:, nonatomic, retain) UICollectionReusableView *focusedCell;
 @property (getter=_focusedCellIndexPath, setter=_setFocusedCellIndexPath:, nonatomic, copy) NSIndexPath *focusedCellIndexPath;
 @property (readonly) unsigned int hash;
@@ -218,6 +222,7 @@
 - (void)_cellDidBecomeUnfocused:(id)arg1;
 - (void)_cellMenuDismissed;
 - (void)_checkForPreferredAttributesInView:(id)arg1 originalAttributes:(id)arg2;
+- (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_cleanUpAfterInteractiveTransitionDidFinish:(BOOL)arg1;
 - (id)_collectionViewData;
 - (id)_contentFocusContainerGuide;
@@ -225,6 +230,7 @@
 - (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3;
 - (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3 isFocused:(BOOL)arg4;
 - (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3 applyAttributes:(BOOL)arg4;
+- (id)_currentPromiseFulfillmentCell;
 - (id)_currentTouch;
 - (id)_currentUpdate;
 - (BOOL)_dataSourceImplementsNumberOfSections;
@@ -238,18 +244,18 @@
 - (id)_dynamicAnimationsForTrackValues;
 - (void)_endItemAnimationsWithInvalidationContext:(id)arg1;
 - (void)_endItemAnimationsWithInvalidationContext:(id)arg1 tentativelyForReordering:(BOOL)arg2;
+- (id)_endOfContentFocusContainerGuide;
 - (void)_endReordering;
 - (void)_endUpdatesWithInvalidationContext:(id)arg1 tentativelyForReordering:(BOOL)arg2;
 - (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_finishInteractiveTransitionShouldFinish:(BOOL)arg1 finalAnimation:(BOOL)arg2;
 - (void)_finishInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
 - (id)_focusedCell;
-- (BOOL)_focusedCellContainedInRowsAtIndexPaths:(id)arg1;
-- (BOOL)_focusedCellContainedInSections:(id)arg1;
 - (id)_focusedCellIndexPath;
 - (void)_focusedView:(id)arg1 isMinX:(BOOL*)arg2 isMaxX:(BOOL*)arg3 isMinY:(BOOL*)arg4 isMaxY:(BOOL*)arg5;
+- (id)_fulfillPromisedFocusRegionForCell:(id)arg1;
 - (void)_getOriginalReorderingIndexPaths:(id*)arg1 targetIndexPaths:(id*)arg2;
-- (BOOL)_hasFocusedCellForIndexPath:(id)arg1;
+- (BOOL)_hasFocusedCellForIndexPath:(id)arg1 shouldUsePreUpdateData:(BOOL)arg2;
 - (void)_highlightFirstVisibleItemIfAppropriate;
 - (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3;
 - (BOOL)_highlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(int)arg3 notifyDelegate:(BOOL)arg4;
@@ -289,6 +295,7 @@
 - (void)_selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3 notifyDelegate:(BOOL)arg4;
 - (id)_selectableIndexPathForItemContainingHitView:(id)arg1;
 - (void)_setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 isInteractive:(BOOL)arg3 completion:(id /* block */)arg4;
+- (void)_setCurrentPromiseFulfillmentCell:(id)arg1;
 - (void)_setCurrentTouch:(id)arg1;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfCellWithReuseIdentifier:(id)arg2;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
@@ -300,7 +307,6 @@
 - (void)_setNeedsVisibleCellsUpdate:(BOOL)arg1 withLayoutAttributes:(BOOL)arg2;
 - (void)_setObject:(id)arg1 inDictionary:(id)arg2 forKind:(id)arg3 indexPath:(id)arg4;
 - (void)_setRemembersPreviouslyFocusedItem:(BOOL)arg1;
-- (void)_setUpContentFocusContainerGuide;
 - (void)_setVisibleView:(id)arg1 forLayoutAttributes:(id)arg2;
 - (void)_setupCellAnimations;
 - (BOOL)_shouldFadeCellsForBoundChangeWhileRotating;
@@ -317,6 +323,7 @@
 - (void)_unhighlightItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 notifyDelegate:(BOOL)arg3;
 - (void)_updateAnimationDidStop:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (void)_updateBackgroundView;
+- (void)_updateContentFocusContainerGuides;
 - (void)_updateFocusedCellIndexPathIfNecessaryWithLastFocusedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_updateReorderingTargetPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateReorderingTargetPosition:(struct CGPoint { float x1; float x2; })arg1 forced:(BOOL)arg2;

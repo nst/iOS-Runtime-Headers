@@ -13,9 +13,10 @@
 
 - (void).cxx_destruct;
 - (void)_addGesturesForPress:(id)arg1;
-- (void)_addPhysicalButton:(id)arg1;
+- (void)_addPress:(id)arg1 forDelayedDelivery:(BOOL)arg2;
 - (id)_allPhysicalButtons;
 - (id)_allPresses;
+- (id)_cloneEvent;
 - (id)_directionalPressWithStrongestForce;
 - (id)_gestureRecognizersForWindow:(id)arg1;
 - (id)_init;

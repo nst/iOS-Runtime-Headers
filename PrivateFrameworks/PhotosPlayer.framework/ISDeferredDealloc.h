@@ -9,6 +9,7 @@
 + (id)sharedInstance;
 
 - (void)_performDeferredDealloc:(id)arg1;
+- (void)_performDeferredDealloc:(id)arg1 withDelay:(double)arg2;
 - (void)dealloc;
 - (id)init;
 

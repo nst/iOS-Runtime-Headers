@@ -117,7 +117,7 @@
 - (void)_flushViewController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_handleForwardTapGesture:(id)arg1;
-- (void)_handlePagingInDirection:(int)arg1;
+- (void)_handlePagingInDirection:(int)arg1 completion:(id /* block */)arg2;
 - (void)_handlePanGesture:(id)arg1;
 - (void)_handleReverseTapGesture:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;

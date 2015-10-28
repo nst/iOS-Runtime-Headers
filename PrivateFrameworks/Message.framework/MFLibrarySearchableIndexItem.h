@@ -5,6 +5,7 @@
 @interface MFLibrarySearchableIndexItem : NSObject {
     NSData *_bodyData;
     BOOL _hasCompleteBodyData;
+    NSString *_identifier;
     MFMailMessage *_message;
 }
 
@@ -16,6 +17,7 @@
 @property (nonatomic, readonly, retain) CSSearchableItem *searchableItem;
 
 + (id)itemWithMessage:(id)arg1 bodyData:(id)arg2;
++ (id)transactionAttributeKey;
 
 - (BOOL)_isMessagePartOfExistingThreadWithHeaders:(id)arg1;
 - (id)bodyData;
@@ -25,9 +27,11 @@
 - (BOOL)hasCompleteBodyData;
 - (id)identifier;
 - (id)init;
+- (id)initWithIdentifier:(id)arg1;
 - (id)initWithMessage:(id)arg1 bodyData:(id)arg2;
 - (id)message;
 - (id)searchableItem;
+- (id)searchableItemWithClientState:(id)arg1;
 - (void)setBodyData:(id)arg1;
 - (void)setHasCompleteBodyData:(BOOL)arg1;
 

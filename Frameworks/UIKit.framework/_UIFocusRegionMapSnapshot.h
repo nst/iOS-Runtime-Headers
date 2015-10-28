@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UIFocusRegionMapSnapshot : NSObject {
+@interface _UIFocusRegionMapSnapshot : NSObject <NSCopying> {
     BOOL _clipToSnapshotRect;
     BOOL _committed;
     NSMutableArray *_detectedFocusContainerGuideMapEntries;
@@ -33,6 +33,7 @@
             float height; 
         } size; 
     } _mapEntriesFrame;
+    BOOL _privateSnaphot;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -43,6 +44,8 @@
             float height; 
         } size; 
     } _regionClipFrame;
+    _UIFocusRegionMapSnapshotRequest *_request;
+    NSMutableArray *_retainedPromiseRegions;
     UIView *_rootView;
     struct CGRect { 
         struct CGPoint { 
@@ -66,6 +69,10 @@
             float height; 
         } size; 
     } _visualRepresentationMinimumArea;
+    struct CGPoint { 
+        float x; 
+        float y; 
+    } _visualRepresentationScreenCenter;
 }
 
 @property (nonatomic, readonly, copy) NSArray *allFocusableRegionMapEntries;
@@ -79,25 +86,36 @@
 @property (nonatomic) UIView *focusableRegionAncestorView;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } focusedRect;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } mapEntriesFrame;
+@property (getter=isPrivateSnapshot, nonatomic) BOOL privateSnaphot;
+@property (nonatomic, readonly, copy) _UIFocusRegionMapSnapshotRequest *request;
+@property (nonatomic, retain) NSMutableArray *retainedPromiseRegions;
 @property (nonatomic, readonly) UIView *rootView;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } snapshottedRect;
 @property (nonatomic, copy) NSArray *sortedFocusContainerGuideMapEntries;
 @property (nonatomic, readonly) UIImage *visualRepresentation;
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } visualRepresentationMinimumArea;
+@property (nonatomic) struct CGPoint { float x1; float x2; } visualRepresentationScreenCenter;
+
++ (id)combinedVisualRepresentationForSnapshots:(id)arg1 scaleFactor:(float)arg2;
 
 - (void).cxx_destruct;
-- (void)_addFocusContainerGuide:(id)arg1;
-- (void)_addFocusableRegion:(id)arg1 isFocusGuide:(BOOL)arg2;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedRegionFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)_addFocusContainerGuide:(id)arg1 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (void)_addFocusableRegion:(id)arg1 isFocusGuide:(BOOL)arg2 withFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedRegionFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 isFocusGuide:(BOOL)arg2;
 - (void)_commit;
+- (void)_didChooseFocusCandidateRegion:(id)arg1;
 - (id)_finalFocusableRegionMapEntriesFromMapEntries:(id)arg1;
 - (id)_finalFocusableRegionMapEntriesFromViewMapEntries:(id)arg1 guideMapEntries:(id)arg2;
-- (id)_initWithRootView:(id)arg1 snapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
-- (void)_occludeFocusInRegion:(id)arg1;
+- (id)_initWithRequest:(id)arg1;
+- (void)_occludeFocusInFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_punchHoleInMap:(id)arg1 atFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)_snapshotByFulfillingPromiseFocusRegionEntry:(id)arg1;
 - (id)_sortedEligibleFocusContainerGuidesInArray:(id)arg1;
+- (void)_updateFinalFocusableRegionMapEntries;
+- (void)_updateSortedFocusContainerGuideMapEntries;
 - (id)allFocusableRegionMapEntries;
 - (BOOL)clipToSnapshotRect;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)debugQuickLookObject;
 - (id)detectedFocusContainerGuideMapEntries;
 - (id)detectedFocusableGuideMapEntries;
@@ -107,9 +125,11 @@
 - (id)focusableRegionAncestorView;
 - (id)focusableRegionMapEntriesLimitedByFocusContainerGuide:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })focusedRect;
-- (id)init;
 - (BOOL)isCommitted;
+- (BOOL)isPrivateSnapshot;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })mapEntriesFrame;
+- (id)request;
+- (id)retainedPromiseRegions;
 - (id)rootView;
 - (void)setClipToSnapshotRect:(BOOL)arg1;
 - (void)setCommitted:(BOOL)arg1;
@@ -120,12 +140,16 @@
 - (void)setFocusHeading:(unsigned int)arg1;
 - (void)setFocusableRegionAncestorView:(id)arg1;
 - (void)setFocusedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setPrivateSnaphot:(BOOL)arg1;
+- (void)setRetainedPromiseRegions:(id)arg1;
 - (void)setSortedFocusContainerGuideMapEntries:(id)arg1;
 - (void)setVisualRepresentationMinimumArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setVisualRepresentationScreenCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })snapshottedRect;
 - (id)sortedFocusContainerGuideMapEntries;
 - (id)visualRepresentation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visualRepresentationMinimumArea;
+- (struct CGPoint { float x1; float x2; })visualRepresentationScreenCenter;
 - (id)visualRepresentationWithMinimumArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

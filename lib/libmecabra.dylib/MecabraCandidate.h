@@ -25,7 +25,7 @@
 @property (nonatomic, readonly) int type;
 @property (nonatomic, readonly) unsigned int wordCount;
 
-+ (id)syntheticCandidateFromWords:(id)arg1 withLexicon:(struct Lexicon { int (**x1)(); void *x2; void *x3; }*)arg2 language:(int)arg3;
++ (id)syntheticCandidateFromWords:(id)arg1 withLexicon:(struct Lexicon { void *x1; void *x2; }*)arg2 language:(int)arg3;
 
 - (id)analysisString;
 - (id)convertedAnalysisString;

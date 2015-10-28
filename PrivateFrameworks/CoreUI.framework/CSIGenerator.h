@@ -18,6 +18,7 @@
     NSMutableArray *_bitmaps;
     int _blendMode;
     short _colorSpaceID;
+    float _compressionQuality;
     CUIShapeEffectPreset *_effectPreset;
     int _exifOrientation;
     NSArray *_explicitlyPackedContents;
@@ -57,6 +58,7 @@
     } _size;
     NSMutableArray *_slices;
     int _templateRenderingMode;
+    BOOL _useBlurredImageEncoding;
     NSString *_utiType;
 }
 
@@ -64,6 +66,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } alphaCroppedFrame;
 @property (nonatomic) int blendMode;
 @property (nonatomic) short colorSpaceID;
+@property (nonatomic) float compressionQuality;
 @property (nonatomic, retain) CUIShapeEffectPreset *effectPreset;
 @property (getter=isExcludedFromContrastFilter, nonatomic) BOOL excludedFromContrastFilter;
 @property (nonatomic) int exifOrientation;
@@ -79,6 +82,7 @@
 @property (nonatomic) unsigned int scaleFactor;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 @property (nonatomic) int templateRenderingMode;
+@property BOOL useBlurredImageEncoding;
 @property (nonatomic, copy) NSString *utiType;
 
 + (int)fileEncoding;
@@ -95,6 +99,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })alphaCroppedFrame;
 - (int)blendMode;
 - (short)colorSpaceID;
+- (float)compressionQuality;
 - (void)dealloc;
 - (id)effectPreset;
 - (int)exifOrientation;
@@ -121,6 +126,7 @@
 - (void)setAlphaCroppedFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBlendMode:(int)arg1;
 - (void)setColorSpaceID:(short)arg1;
+- (void)setCompressionQuality:(float)arg1;
 - (void)setEffectPreset:(id)arg1;
 - (void)setExcludedFromContrastFilter:(BOOL)arg1;
 - (void)setExifOrientation:(int)arg1;
@@ -134,9 +140,11 @@
 - (void)setPixelFormat:(unsigned int)arg1;
 - (void)setScaleFactor:(unsigned int)arg1;
 - (void)setTemplateRenderingMode:(int)arg1;
+- (void)setUseBlurredImageEncoding:(BOOL)arg1;
 - (void)setUtiType:(id)arg1;
 - (struct CGSize { float x1; float x2; })size;
 - (int)templateRenderingMode;
+- (BOOL)useBlurredImageEncoding;
 - (id)utiType;
 - (unsigned long)writeBitmap:(id)arg1 toData:(id)arg2 compress:(BOOL)arg3;
 - (unsigned long)writeExternalLinkToData:(id)arg1;

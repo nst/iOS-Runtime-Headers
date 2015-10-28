@@ -428,9 +428,11 @@
 
 // Image: /System/Library/Frameworks/PassKit.framework/PassKit
 
-+ (id)pkui_plainNonInteractiveTextView;
++ (id)pkui_plainInteractiveTextViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
++ (id)pkui_plainNonInteractiveTextViewWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
-- (struct CGSize { float x1; float x2; })pkui_frameSizeForTextSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pkui_frameForTextFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })pkui_textFrame;
 - (struct CGSize { float x1; float x2; })pkui_textSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/DataDetectorsUI.framework/DataDetectorsUI

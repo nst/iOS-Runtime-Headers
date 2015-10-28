@@ -806,6 +806,7 @@
 - (BOOL)_accessibilityAllowsAlternativeCharacterActivation;
 - (BOOL)_accessibilityAlwaysOrderedFirst;
 - (BOOL)_accessibilityAlwaysSpeakTableHeaders;
+- (id)_accessibilityAncestorFocusParcel;
 - (id)_accessibilityAncestorForSiblingsWithTraits:(unsigned long long)arg1;
 - (id)_accessibilityAncestorIsAccessibilityElementsHidden;
 - (id)_accessibilityAncestorIsKindOf:(Class)arg1;
@@ -898,6 +899,7 @@
 - (void)_accessibilityEnumerateSiblingsFromOrderedChildrenContainer:(id)arg1 fromChildAtIndex:(int)arg2 headerIndex:(int)arg3 footerIndex:(int)arg4 isMovingForward:(BOOL)arg5 usingBlock:(id /* block */)arg6;
 - (void)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id /* block */)arg3;
 - (id)_accessibilityEquivalenceTag;
+- (int)_accessibilityExpandedStatus;
 - (id)_accessibilityExplorerElements;
 - (BOOL)_accessibilityFauxCollectionViewCellsDisabled;
 - (id)_accessibilityFindAXDescendants:(id /* block */)arg1 byAddingElements:(id /* block */)arg2;
@@ -908,10 +910,12 @@
 - (void)_accessibilityFindSearchResult:(BOOL)arg1 withString:(id)arg2;
 - (id)_accessibilityFindSubviewDescendant:(id /* block */)arg1;
 - (id)_accessibilityFindSubviewDescendantsPassingTest:(id /* block */)arg1;
+- (id)_accessibilityFindUnsortedSubviewDescendantsPassingTest:(id /* block */)arg1;
 - (id)_accessibilityFirstElementForFocus;
 - (id)_accessibilityFirstOpaqueElement;
 - (id)_accessibilityFirstOpaqueElementForFocus;
 - (id)_accessibilityFirstVisibleItem;
+- (unsigned int)_accessibilityFocusParcelChildrenCount:(unsigned int)arg1;
 - (id)_accessibilityFrameDelegate;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityFrameForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityFrameForSorting;
@@ -952,7 +956,6 @@
 - (BOOL)_accessibilityIgnoreDelegate;
 - (void)_accessibilityIgnoreNextNotification:(unsigned int)arg1;
 - (void)_accessibilityIgnoreNextPostPasteboardTextOperation:(id)arg1;
-- (BOOL)_accessibilityIgnoresChildrenForNativeFocus;
 - (BOOL)_accessibilityIncludeDuringContentReading;
 - (void)_accessibilityIncreaseAutoscrollSpeed;
 - (void)_accessibilityIncreaseSelection:(id)arg1;
@@ -972,6 +975,7 @@
 - (BOOL)_accessibilityIsFirstElementForFocus;
 - (BOOL)_accessibilityIsFirstSibling;
 - (BOOL)_accessibilityIsFirstSiblingForTrait:(unsigned long long)arg1;
+- (BOOL)_accessibilityIsFocusParcel;
 - (BOOL)_accessibilityIsFrameOutOfBounds;
 - (BOOL)_accessibilityIsFrameOutOfBoundsConsideringScrollParents:(BOOL)arg1;
 - (BOOL)_accessibilityIsInAppSwitcher;
@@ -1105,6 +1109,7 @@
 - (void)_accessibilityRemoveTrait:(unsigned long long)arg1;
 - (void)_accessibilityReplace;
 - (void)_accessibilityReplaceCharactersAtCursor:(unsigned int)arg1 withString:(id)arg2;
+- (BOOL)_accessibilityRepresentsInfiniteCollection;
 - (void)_accessibilityResetContainerElements;
 - (BOOL)_accessibilityRespectsTableScrollEnabledFlag;
 - (id)_accessibilityResponderElement;
@@ -1128,10 +1133,13 @@
 - (BOOL)_accessibilityScrollLeftPage;
 - (BOOL)_accessibilityScrollNextPage;
 - (void)_accessibilityScrollOpaqueElementIntoView:(int)arg1 previousScroller:(id)arg2;
+- (BOOL)_accessibilityScrollPageInDirection:(int)arg1 shouldSendScrollFailed:(BOOL)arg2;
 - (id)_accessibilityScrollParent;
+- (id)_accessibilityScrollParentForComparingByXAxis;
 - (BOOL)_accessibilityScrollPreviousPage;
 - (struct CGPoint { float x1; float x2; })_accessibilityScrollRectToVisible:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_accessibilityScrollRightPage;
+- (SEL)_accessibilityScrollSelectorForDirection:(int)arg1;
 - (id)_accessibilityScrollStatus;
 - (BOOL)_accessibilityScrollToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forView:(id)arg2;
 - (void)_accessibilityScrollToPoint:(struct CGPoint { float x1; float x2; })arg1;
@@ -1180,6 +1188,8 @@
 - (void)_accessibilitySetSortPriority:(int)arg1;
 - (void)_accessibilitySetUserTestingIsCancelButton:(BOOL)arg1;
 - (void)_accessibilitySetUserTestingIsDefaultButton:(BOOL)arg1;
+- (void)_accessibilitySetUserTestingIsDestructiveButton:(BOOL)arg1;
+- (void)_accessibilitySetUserTestingIsPreferredButton:(BOOL)arg1;
 - (void)_accessibilitySetValue:(id)arg1;
 - (void)_accessibilitySetVisibleContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_accessibilitySetWantsOpaqueElementProviders:(BOOL)arg1;
@@ -1214,7 +1224,9 @@
 - (id)_accessibilitySpeakThisStringValue;
 - (id)_accessibilityStatusBar;
 - (id)_accessibilityString:(id)arg1 withSpeechHint:(id)arg2;
+- (id)_accessibilitySubviews;
 - (id)_accessibilitySupplementaryFooterViews;
+- (id)_accessibilitySupplementaryHeaderViewAtIndexPath:(id)arg1;
 - (id)_accessibilitySupplementaryHeaderViews;
 - (id)_accessibilitySupportGesturesAttributes;
 - (id)_accessibilitySupportedLanguages;
@@ -1234,6 +1246,7 @@
 - (id)_accessibilityTextChecker;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_accessibilityTextCursorFrame;
 - (id)_accessibilityTextFieldText;
+- (id)_accessibilityTextForSubhierarchyIncludingHeaders:(BOOL)arg1 focusableItems:(BOOL)arg2;
 - (id)_accessibilityTextInputElement;
 - (id)_accessibilityTextMarkerForPosition:(int)arg1;
 - (id)_accessibilityTextMarkerRange;
@@ -1251,7 +1264,7 @@
 - (id)_accessibilityTreeAsString;
 - (id)_accessibilityTreeAsStringWithOptions:(id)arg1;
 - (BOOL)_accessibilityTriggerDictationFromPath:(id)arg1;
-- (BOOL)_accessibilityTryScrollWithSelector:(SEL)arg1;
+- (BOOL)_accessibilityTryScrollWithSelector:(SEL)arg1 shouldSendScrollFailed:(BOOL)arg2;
 - (id)_accessibilityUnignoredDescendant;
 - (void)_accessibilityUnregister;
 - (id)_accessibilityUpcomingRoadsForPoint:(struct CGPoint { float x1; float x2; })arg1 forAngle:(float)arg2;
@@ -1269,6 +1282,8 @@
 - (BOOL)_accessibilityUserTestingIsCancelButton;
 - (BOOL)_accessibilityUserTestingIsContinuityButton;
 - (BOOL)_accessibilityUserTestingIsDefaultButton;
+- (BOOL)_accessibilityUserTestingIsDestructiveButton;
+- (BOOL)_accessibilityUserTestingIsPreferredButton;
 - (BOOL)_accessibilityUserTestingIsRightNavButton;
 - (id)_accessibilityUserTestingParent;
 - (id)_accessibilityUserTestingSnapshot;

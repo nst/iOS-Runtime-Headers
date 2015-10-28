@@ -27,7 +27,7 @@
 - (void)_fakeCreateRemoteCECDeviceAsync:(unsigned int)arg1 bus:(id)arg2 logicalAddress:(unsigned char)arg3 physicalAddress:(unsigned int)arg4 reply:(id /* block */)arg5;
 - (void)_fakeRemoveCECBusAsync:(id)arg1 reply:(id /* block */)arg2;
 - (void)_fakeRemoveCECDeviceAsync:(id)arg1 reply:(id /* block */)arg2;
-- (void)_fakeSetCECBusLinkStateAsync:(id)arg1 linkState:(BOOL)arg2 reply:(id /* block */)arg3;
+- (void)_fakeSetCECBusLinkStateAsync:(id)arg1 linkState:(BOOL)arg2 physicalAddress:(unsigned int)arg3 reply:(id /* block */)arg4;
 - (void)_fakeSetCECDeviceLogicalAddressAsync:(id)arg1 logicalAddress:(unsigned char)arg2 reply:(id /* block */)arg3;
 - (void)_getExtendedPropertyAsyncForKey:(id)arg1 ofDevice:(id)arg2 reply:(id /* block */)arg3;
 - (void)_getPropertyAsyncForKey:(id)arg1 ofBus:(id)arg2 reply:(id /* block */)arg3;
@@ -84,7 +84,7 @@
 - (void)fakeCreateRemoteCECDeviceAsync:(unsigned int)arg1 bus:(id)arg2 logicalAddress:(unsigned char)arg3 physicalAddress:(unsigned int)arg4 reply:(id /* block */)arg5;
 - (void)fakeRemoveCECBusAsync:(id)arg1 reply:(id /* block */)arg2;
 - (void)fakeRemoveCECDeviceAsync:(id)arg1 reply:(id /* block */)arg2;
-- (void)fakeSetCECBusLinkStateAsync:(id)arg1 linkState:(BOOL)arg2 reply:(id /* block */)arg3;
+- (void)fakeSetCECBusLinkStateAsync:(id)arg1 linkState:(BOOL)arg2 physicalAddress:(unsigned int)arg3 reply:(id /* block */)arg4;
 - (void)fakeSetCECDeviceLogicalAddressAsync:(id)arg1 logicalAddress:(unsigned char)arg2 reply:(id /* block */)arg3;
 - (void)getExtendedPropertyAsyncForKey:(id)arg1 ofDevice:(id)arg2 reply:(id /* block */)arg3;
 - (void)getPropertyAsyncForKey:(id)arg1 ofBus:(id)arg2 reply:(id /* block */)arg3;

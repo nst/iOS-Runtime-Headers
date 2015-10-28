@@ -23,6 +23,8 @@
 - (void).cxx_destruct;
 - (void)_addLoadingRequestForArtworkCatalog:(id)arg1;
 - (BOOL)_hasLoadingRequestForArtworkCatalog:(id)arg1;
+- (void)_performAsyncBlock:(id /* block */)arg1;
+- (void)_performSyncBlock:(id /* block */)arg1;
 - (void)_removeLoadingRequestForArtworkCatalog:(id)arg1;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
 - (void)cancelLoadingRepresentationForArtworkCatalog:(id)arg1;

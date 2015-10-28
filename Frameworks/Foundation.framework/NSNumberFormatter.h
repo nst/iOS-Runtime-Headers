@@ -285,6 +285,6 @@
 
 // Image: /System/Library/PrivateFrameworks/SiriUI.framework/SiriUI
 
-+ (id)localizedSiriUIStringFromNumber:(id)arg1;
++ (id)siriui_localizedStringFromNumber:(id)arg1;
 
 @end

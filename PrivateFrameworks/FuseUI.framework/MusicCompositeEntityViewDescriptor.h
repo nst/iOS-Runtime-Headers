@@ -18,6 +18,7 @@
 - (id)entityViewDescriptors;
 - (void)enumerateContentDescriptorsUsingBlock:(id /* block */)arg1;
 - (void)enumerateSectionHeaderContentDescriptorsUsingBlock:(id /* block */)arg1;
+- (BOOL)includesShuffleAction;
 - (id)initWithEntityViewDescriptors:(id)arg1;
 - (id)sectionHeaderContentDescriptorForSectionIndex:(unsigned int)arg1;
 - (void)setEntityProvider:(id)arg1;

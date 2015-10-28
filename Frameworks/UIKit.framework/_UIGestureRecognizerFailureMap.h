@@ -14,14 +14,14 @@
 + (void)buildFailureMapForFailureRequirements:(id)arg1;
 
 - (void).cxx_destruct;
-- (void)_failureRequirementCompleted:(id)arg1 withEvent:(id)arg2;
+- (void)_failureRequirementCompleted:(id)arg1 withEvent:(id)arg2 pressesEvent:(id)arg3;
 - (BOOL)_isFailureRequirementWaitingForOtherFailureRequirements:(id)arg1;
 - (void)_queueRecognizersForResetIfFinished;
 - (void)_rebuildFailureMapDeferringRelease;
 - (void)dealloc;
 - (id)description;
 - (void)failureRequirementBeganRunning:(id)arg1;
-- (void)failureRequirementCompleted:(id)arg1 withEvent:(id)arg2;
+- (void)failureRequirementCompleted:(id)arg1 withEvent:(id)arg2 pressesEvent:(id)arg3;
 - (void)failureRequirementDeallocated:(id)arg1;
 - (void)failureRequirementEnteredOtherFailureMap:(id)arg1;
 - (BOOL)hasUnmetFailureRequirementsOrDependents;

@@ -3,19 +3,19 @@
  */
 
 @interface UIKBRenderFactory_Candidates : UIKBRenderFactory {
-    BOOL _isUCBStyle;
+    BOOL _shouldUseKeyboardBackground;
 }
 
-@property (nonatomic) BOOL isUCBStyle;
+@property (nonatomic) BOOL shouldUseKeyboardBackground;
 
 - (id)controlKeyBackgroundColorName;
 - (id)controlKeyDividerColorName;
 - (id)controlKeyForegroundColorName;
 - (id)defaultKeyDividerColorName;
 - (id)initWithRenderConfig:(id)arg1;
-- (BOOL)isUCBStyle;
 - (int)lightHighQualityEnabledBlendForm;
-- (void)setIsUCBStyle:(BOOL)arg1;
+- (void)setShouldUseKeyboardBackground:(BOOL)arg1;
+- (BOOL)shouldUseKeyboardBackground;
 - (id)traitsForCellSize:(struct CGSize { float x1; float x2; })arg1 highlighted:(BOOL)arg2 edges:(BOOL)arg3;
 - (id)traitsForEdgeGradientWithSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)traitsForEmptyExtendedPane:(struct CGSize { float x1; float x2; })arg1 rowHeight:(float)arg2 idiomPad:(BOOL)arg3 clipCorners:(BOOL)arg4;

@@ -15,7 +15,6 @@
 @property (nonatomic, retain) UIWindow *window;
 
 - (void).cxx_destruct;
-- (BOOL)_shouldForceClassicMode;
 - (void)_showWebApplicationAtURL:(id)arg1;
 - (BOOL)application:(id)arg1 didFinishLaunchingWithOptions:(id)arg2;
 - (void)applicationDidBecomeActive:(id)arg1;

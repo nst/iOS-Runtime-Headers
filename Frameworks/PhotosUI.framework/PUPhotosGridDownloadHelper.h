@@ -7,9 +7,11 @@
     NSString *_currentGridProgressIdentifier;
     PUResourceDownloadRequest *_currentResourceDownloadRequest;
     PUPhotosGridViewController *_gridViewController;
+    BOOL _shouldTreatLivePhotosAsStills;
 }
 
 @property (nonatomic, readonly) PUPhotosGridViewController *gridViewController;
+@property (nonatomic) BOOL shouldTreatLivePhotosAsStills;
 
 - (void).cxx_destruct;
 - (void)_downloadForRequest:(id)arg1 didCompleteWithSuccess:(BOOL)arg2 canceled:(BOOL)arg3 error:(id)arg4;
@@ -20,5 +22,7 @@
 - (void)handleDownloadOfAsset:(id)arg1 inCollection:(id)arg2 withSuccessHandler:(id /* block */)arg3;
 - (id)init;
 - (id)initWithGridViewController:(id)arg1;
+- (void)setShouldTreatLivePhotosAsStills:(BOOL)arg1;
+- (BOOL)shouldTreatLivePhotosAsStills;
 
 @end

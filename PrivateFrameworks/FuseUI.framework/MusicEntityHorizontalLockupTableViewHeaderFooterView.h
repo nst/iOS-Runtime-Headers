@@ -26,5 +26,6 @@
 - (void)setContentDescriptor:(id)arg1;
 - (void)setEntityDisabled:(BOOL)arg1;
 - (void)setEntityValueProvider:(id)arg1;
+- (void)updateForAsynchronousPropertyLoadCompleted;
 
 @end

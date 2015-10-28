@@ -8,7 +8,6 @@
 - (void)__dismissActionSheetWithClickedButtonIndex:(int)arg1 animated:(BOOL)arg2;
 - (void)__dismissTextServiceSessionAnimated:(BOOL)arg1;
 - (void)__presentActionSheetFromYCoordinate:(float)arg1 withTitle:(NSString *)arg2 buttonTitles:(NSArray *)arg3 cancelButtonIndex:(int)arg4 destructiveButtonIndex:(int)arg5 style:(int)arg6;
-- (void)__setServiceMaxFrameSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)__setSupportedInterfaceOrientations:(NSArray *)arg1;
 - (void)__setViewServiceIsDisplayingPopover:(BOOL)arg1;
 - (void)__showServiceForText:(void *)arg1 type:(void *)arg2 fromRectValue:(void *)arg3 replyHandler:(void *)arg4; // needs 4 arg types, found 13: NSString *, int, NSValue *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, void*, const const out const void*, void*

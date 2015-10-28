@@ -48,6 +48,7 @@
         unsigned int focusedItemHighlightShouldBeVisible : 1; 
         unsigned int hasVibrantLabels : 1; 
         unsigned int blurDisabled : 1; 
+        unsigned int pendingFocusAction : 1; 
     } _tabBarFlags;
     int _tabBarSizing;
 }
@@ -78,6 +79,7 @@
 @property (nonatomic) <UITabBarDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (getter=_focusedItemHighlightShouldBeVisible, setter=_setFocusedItemHightlightShouldBeVisible:, nonatomic) BOOL focusedItemHighlightShouldBeVisible;
+@property (getter=_focusedTabBarItem, nonatomic, readonly) UITabBarItem *focusedTabBarItem;
 @property (readonly) unsigned int hash;
 @property (getter=_isHiddenAwaitingFocus, setter=_setHiddenAwaitingFocus:, nonatomic) BOOL hiddenAwaitingFocus;
 @property (nonatomic) int itemPositioning;
@@ -85,6 +87,7 @@
 @property (nonatomic) float itemWidth;
 @property (nonatomic, copy) NSArray *items;
 @property (getter=isLocked, nonatomic) BOOL locked;
+@property (getter=_pendingFocusAction, setter=_setPendingFocusAction:, nonatomic) BOOL pendingFocusAction;
 @property (getter=_preferredFocusHeading, setter=_setPreferredFocusHeading:, nonatomic) unsigned int preferredFocusHeading;
 @property (nonatomic, retain) UIColor *selectedImageTintColor;
 @property (nonatomic) UITabBarItem *selectedItem;
@@ -141,6 +144,7 @@
 - (void)_finishCustomizeAnimation:(id)arg1;
 - (void)_finishSetItems:(id)arg1 finished:(id)arg2 context:(id)arg3;
 - (BOOL)_focusedItemHighlightShouldBeVisible;
+- (id)_focusedTabBarItem;
 - (BOOL)_hasCustomAutolayoutNeighborSpacing;
 - (void)_hideItemsAnimated:(BOOL)arg1;
 - (BOOL)_hidesShadow;
@@ -155,6 +159,7 @@
 - (void)_makeCurrentButtonFirstResponder;
 - (float)_nextSelectionSlideDuration;
 - (id)_parentViewForItems;
+- (BOOL)_pendingFocusAction;
 - (void)_populateArchivedSubviews:(id)arg1;
 - (void)_positionTabBarButtons:(id)arg1 ignoringItem:(id)arg2;
 - (unsigned int)_preferredFocusHeading;
@@ -184,6 +189,7 @@
 - (void)_setLabelShadowOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLabelTextColor:(id)arg1 selectedTextColor:(id)arg2;
 - (void)_setNextSelectionSlideDuration:(float)arg1;
+- (void)_setPendingFocusAction:(BOOL)arg1;
 - (void)_setPreferredFocusHeading:(unsigned int)arg1;
 - (void)_setScrollsItems:(BOOL)arg1;
 - (void)_setSelectionIndicatorImage:(id)arg1;

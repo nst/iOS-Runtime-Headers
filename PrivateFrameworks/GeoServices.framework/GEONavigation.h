@@ -4,6 +4,7 @@
 
 @interface GEONavigation : NSObject {
     NSDate *_arrivalDate;
+    id /* block */ _companionRouteFilterBlock;
     GEONavigationDetails *_details;
     NSDate *_displayETA;
     NSTimer *_etaUpdateTimer;
@@ -22,6 +23,7 @@
 
 @property (nonatomic) unsigned int announcementStage;
 @property (nonatomic, readonly) NSDate *arrivalDate;
+@property (nonatomic, copy) id /* block */ companionRouteFilterBlock;
 @property (nonatomic, readonly) NSString *destinationName;
 @property (nonatomic) int displayStep;
 @property (nonatomic, readonly) double distanceRemainingOnRoute;
@@ -65,6 +67,7 @@
 - (id)arrivalDate;
 - (BOOL)canNavigateWithTransportType:(int)arg1;
 - (BOOL)canRunNavigationForRoute:(id)arg1 withCurrentLocation:(id)arg2;
+- (id /* block */)companionRouteFilterBlock;
 - (void)dealloc;
 - (id)destinationName;
 - (int)displayStep;
@@ -92,6 +95,7 @@
 - (void)selectRoute:(id)arg1 currentLocation:(id)arg2;
 - (void)sendNavigationStatus;
 - (void)setAnnouncementStage:(unsigned int)arg1;
+- (void)setCompanionRouteFilterBlock:(id /* block */)arg1;
 - (void)setDisplayStep:(int)arg1;
 - (void)setGuidanceLevel:(int)arg1;
 - (void)setGuidancePromptsEnabled:(BOOL)arg1;

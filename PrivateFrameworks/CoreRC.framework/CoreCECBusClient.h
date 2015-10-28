@@ -6,13 +6,9 @@
 
 + (BOOL)supportsSecureCoding;
 
-- (void)activeSourceHasChangedTo:(id)arg1 fromDevice:(id)arg2;
 - (id)addDeviceWithType:(unsigned int)arg1 error:(id*)arg2;
 - (Class)classForCoder;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
-- (void)mergePropertiesFromBus:(id)arg1;
 - (BOOL)setOSDName:(id)arg1 error:(id*)arg2;
 - (BOOL)setTvLanguageCode:(id)arg1 error:(id*)arg2;
 

@@ -12,9 +12,11 @@
         float x; 
         float y; 
     } _initialTouchPoint;
+    BOOL _isCurrentlyUnderDirectManipulation;
     float _leadingSwipeEdgeMultiplier;
+    _UIPlatterMenuSnapBehavior *_menuDismissedSnapBehavior;
     UIDynamicItemBehavior *_menuItemBehavior;
-    _UIPlatterMenuSnapBehavior *_menuSnapBehavior;
+    _UIPlatterMenuSnapBehavior *_menuPresentedSnapBehavior;
     UIAttachmentBehavior *_menuVerticalLockAttachment;
     UIView *_menuView;
     UIDynamicItemBehavior *_noRotationBehavior;
@@ -42,9 +44,11 @@
 @property (nonatomic, retain) UIAttachmentBehavior *gestureAttachmentBehavior;
 @property (readonly) unsigned int hash;
 @property (nonatomic) struct CGPoint { float x1; float x2; } initialTouchPoint;
+@property (nonatomic) BOOL isCurrentlyUnderDirectManipulation;
 @property (nonatomic) float leadingSwipeEdgeMultiplier;
+@property (nonatomic, retain) _UIPlatterMenuSnapBehavior *menuDismissedSnapBehavior;
 @property (nonatomic, retain) UIDynamicItemBehavior *menuItemBehavior;
-@property (nonatomic, retain) _UIPlatterMenuSnapBehavior *menuSnapBehavior;
+@property (nonatomic, retain) _UIPlatterMenuSnapBehavior *menuPresentedSnapBehavior;
 @property (nonatomic, retain) UIAttachmentBehavior *menuVerticalLockAttachment;
 @property (nonatomic) UIView *menuView;
 @property (nonatomic, retain) UIDynamicItemBehavior *noRotationBehavior;
@@ -72,7 +76,7 @@
 - (void)_updateSwipeEdgeMultipliersIfNeededForTouchPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (void)addBehaviorIfNotPresent:(id)arg1;
 - (id)animator;
-- (void)beginTransitionWithAnimatorUsingBehaviors:(id)arg1 observedItems:(id)arg2 stateIfCompleted:(int)arg3 underDirectManipulation:(BOOL)arg4;
+- (void)beginTransitionWithAnimatorUsingBehaviors:(id)arg1 observedItems:(id)arg2 stateIfCompleted:(int)arg3;
 - (struct CGPoint { float x1; float x2; })centerForCurrentPlatterPosition;
 - (struct CGPoint { float x1; float x2; })centerForMenuPresentedRelativeToCurrentPlatter;
 - (id)containerView;
@@ -88,6 +92,7 @@
 - (BOOL)hasBeenPresented;
 - (id)initWithContainerView:(id)arg1 platterView:(id)arg2 menuView:(id)arg3 delegate:(id)arg4;
 - (struct CGPoint { float x1; float x2; })initialTouchPoint;
+- (BOOL)isCurrentlyUnderDirectManipulation;
 - (BOOL)isDefaultAnimatorBehavior:(id)arg1;
 - (BOOL)isMenuPresented;
 - (BOOL)isMenuPresenting;
@@ -95,8 +100,9 @@
 - (float)leadingSwipeEdgeMultiplier;
 - (void)lockIntoYAxis;
 - (struct CGPoint { float x1; float x2; })menuCenter;
+- (id)menuDismissedSnapBehavior;
 - (id)menuItemBehavior;
-- (id)menuSnapBehavior;
+- (id)menuPresentedSnapBehavior;
 - (id)menuVerticalLockAttachment;
 - (id)menuView;
 - (struct CGVector { float x1; float x2; })modifiedOffsetForPosition:(struct CGPoint { float x1; float x2; })arg1 offset:(struct CGVector { float x1; float x2; })arg2 touchPosition:(struct CGPoint { float x1; float x2; })arg3 axisLock:(int)arg4;
@@ -125,9 +131,11 @@
 - (void)setDidPresentCount:(int)arg1;
 - (void)setGestureAttachmentBehavior:(id)arg1;
 - (void)setInitialTouchPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setIsCurrentlyUnderDirectManipulation:(BOOL)arg1;
 - (void)setLeadingSwipeEdgeMultiplier:(float)arg1;
+- (void)setMenuDismissedSnapBehavior:(id)arg1;
 - (void)setMenuItemBehavior:(id)arg1;
-- (void)setMenuSnapBehavior:(id)arg1;
+- (void)setMenuPresentedSnapBehavior:(id)arg1;
 - (void)setMenuVerticalLockAttachment:(id)arg1;
 - (void)setMenuView:(id)arg1;
 - (void)setNoRotationBehavior:(id)arg1;

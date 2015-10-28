@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
  */
 
-@interface CDPDevice : NSObject <NSCopying> {
+@interface CDPDevice : NSObject <NSCopying, NSSecureCoding> {
     NSString *_deviceColor;
     NSString *_enclosureColor;
     BOOL _hasNumericSecret;
@@ -11,7 +11,11 @@
     NSString *_localizedDescription;
     NSString *_localizedName;
     NSString *_model;
+    NSString *_modelClass;
+    NSString *_modelVersion;
     NSNumber *_numericSecretLength;
+    unsigned int _platform;
+    NSDate *_recordDate;
     NSString *_recordID;
     unsigned int _remainingAttempts;
 }
@@ -21,27 +25,41 @@
 @property (nonatomic) BOOL hasNumericSecret;
 @property (nonatomic) BOOL hasRandomSecret;
 @property (nonatomic) BOOL isUsingMultipleiCSC;
+@property (nonatomic, readonly) unsigned int localSecretType;
 @property (nonatomic, copy) NSString *localizedDescription;
 @property (nonatomic, copy) NSString *localizedName;
 @property (nonatomic, copy) NSString *model;
+@property (nonatomic, copy) NSString *modelClass;
+@property (nonatomic, copy) NSString *modelVersion;
 @property (nonatomic, copy) NSNumber *numericSecretLength;
+@property (nonatomic) unsigned int platform;
+@property (nonatomic, copy) NSDate *recordDate;
 @property (nonatomic, copy) NSString *recordID;
 @property (nonatomic) unsigned int remainingAttempts;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
+
++ (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)deviceColor;
 - (id)enclosureColor;
+- (void)encodeWithCoder:(id)arg1;
 - (BOOL)hasNumericSecret;
 - (BOOL)hasRandomSecret;
-- (id)initWithSecureBackupMetadataInfo:(id)arg1;
-- (id)initWithSecureBackupRecordInfo:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isUsingMultipleiCSC;
+- (unsigned int)localSecretType;
 - (id)localizedDescription;
 - (id)localizedName;
 - (id)model;
+- (id)modelClass;
+- (id)modelVersion;
 - (id)numericSecretLength;
+- (unsigned int)platform;
+- (id)recordDate;
 - (id)recordID;
 - (unsigned int)remainingAttempts;
 - (void)setDeviceColor:(id)arg1;
@@ -52,8 +70,17 @@
 - (void)setLocalizedDescription:(id)arg1;
 - (void)setLocalizedName:(id)arg1;
 - (void)setModel:(id)arg1;
+- (void)setModelClass:(id)arg1;
+- (void)setModelVersion:(id)arg1;
 - (void)setNumericSecretLength:(id)arg1;
+- (void)setPlatform:(unsigned int)arg1;
+- (void)setRecordDate:(id)arg1;
 - (void)setRecordID:(id)arg1;
 - (void)setRemainingAttempts:(unsigned int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
+
+- (id)initWithSecureBackupMetadataInfo:(id)arg1;
+- (id)initWithSecureBackupRecordInfo:(id)arg1;
 
 @end

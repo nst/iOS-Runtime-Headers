@@ -10,6 +10,7 @@
     NSDictionary *_glyphs;
     NSString *_identifier;
     BOOL _internal;
+    BOOL _lowBattery;
     NSString *_matchIdentifier;
     NSString *_name;
     unsigned int _parts;
@@ -28,6 +29,7 @@
 @property (nonatomic, readonly, retain) UIImage *glyph;
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (getter=isInternal, nonatomic) BOOL internal;
+@property (getter=isLowBattery, nonatomic) BOOL lowBattery;
 @property (nonatomic, readonly, copy) NSString *matchIdentifier;
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) unsigned int parts;
@@ -55,6 +57,7 @@
 - (BOOL)isConnected;
 - (BOOL)isFake;
 - (BOOL)isInternal;
+- (BOOL)isLowBattery;
 - (BOOL)isPowerSource;
 - (id)matchIdentifier;
 - (id)name;
@@ -67,6 +70,7 @@
 - (void)setConnected:(BOOL)arg1;
 - (void)setFake:(BOOL)arg1;
 - (void)setInternal:(BOOL)arg1;
+- (void)setLowBattery:(BOOL)arg1;
 - (void)setName:(id)arg1;
 - (void)setParts:(unsigned int)arg1;
 - (void)setPercentCharge:(int)arg1;

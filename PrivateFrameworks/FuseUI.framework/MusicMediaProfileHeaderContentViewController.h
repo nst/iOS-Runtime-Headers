@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProfileHeaderContentViewController : UIViewController <MusicLayoutMarginProxyViewDelegate, MusicMediaDetailHeaderContentViewController, MusicProfileDetailViewDelegate> {
+@interface MusicMediaProfileHeaderContentViewController : UIViewController <MusicMediaDetailHeaderContentViewController, MusicProfileDetailViewDelegate> {
     BOOL _adminEnabled;
     <MusicEntityProviding> *_containerEntityProvider;
     MusicEntityValueContext *_containerEntityValueContext;
@@ -42,10 +42,10 @@
 - (void)_applyProfileImageTintInformation;
 - (void)_applyTintInformation;
 - (void)_applyTransitionProgress;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_calculateProfileDetailViewLayoutInsets;
 - (void)_containerEntityValueProviderDidInvalidateNotification:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_effectiveLayoutMargins;
-- (float)_profileImageBottomInset;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_effectiveVerticalInsets;
 - (void)_reloadContainerEntityValueContextProperties;
 - (void)_reloadProfileImageView;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -60,9 +60,8 @@
 - (id)initWithContainerEntityProvider:(id)arg1;
 - (BOOL)isAdminEnabled;
 - (BOOL)isFollowHidden;
-- (void)layoutMarginProxyViewLayoutMarginsDidChange:(id)arg1;
-- (void)loadView;
 - (id)mediaDetailTintInformation;
+- (void)music_viewInheritedLayoutInsetsDidChange;
 - (void)profileDetailView:(id)arg1 didUpdateFollowingState:(BOOL)arg2;
 - (void)profileDetailViewDidSelectContextualActionsButton:(id)arg1;
 - (void)profileDetailViewDidSelectEditButton:(id)arg1;

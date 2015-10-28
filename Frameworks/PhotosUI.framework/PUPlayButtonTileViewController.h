@@ -40,7 +40,7 @@
 - (void)becomeReusable;
 - (void)dealloc;
 - (id)delegate;
-- (void)loadView;
+- (id)loadView;
 - (void)setAssetViewModel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

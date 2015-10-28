@@ -21,6 +21,7 @@
     NSString *_hardPauseDigits;
     int _hardPauseDigitsState;
     BOOL _hasAudioFinished;
+    BOOL _hasBegunAudioInterruption;
     BOOL _hasSentInvitation;
     BOOL _hasUpdatedAudio;
     double _hostCreationTime;
@@ -35,6 +36,7 @@
         unsigned int joiningConference : 1; 
         unsigned int leavingConference : 1; 
     } _phoneCallFlags;
+    NSString *_prematurelySelectedAudioRouteUID;
     int _provisionalHoldStatus;
     BOOL _requiresAudioReinterruption;
     BOOL _ringtoneSuppressedRemotely;
@@ -84,6 +86,7 @@
 @property (nonatomic, readonly, retain) NSString *hardPauseDigitsDisplayString;
 @property (nonatomic) int hardPauseDigitsState;
 @property (nonatomic) BOOL hasAudioFinished;
+@property (nonatomic) BOOL hasBegunAudioInterruption;
 @property (nonatomic, readonly) BOOL hasReceivedFirstFrame;
 @property (nonatomic) BOOL hasSentInvitation;
 @property (nonatomic) BOOL hasUpdatedAudio;
@@ -101,6 +104,7 @@
 @property (getter=isMediaStalled, nonatomic, readonly) BOOL mediaStalled;
 @property (nonatomic, readonly) BOOL needsManualInCallSounds;
 @property (getter=isOutgoing, nonatomic, readonly) BOOL outgoing;
+@property (nonatomic, retain) NSString *prematurelySelectedAudioRouteUID;
 @property (nonatomic) int provisionalHoldStatus;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } remoteAspectRatio;
 @property (nonatomic, readonly) int remoteCameraOrientation;
@@ -192,6 +196,7 @@
 - (id)hardPauseDigitsDisplayString;
 - (int)hardPauseDigitsState;
 - (BOOL)hasAudioFinished;
+- (BOOL)hasBegunAudioInterruption;
 - (BOOL)hasReceivedFirstFrame;
 - (BOOL)hasRelaySupport:(int)arg1;
 - (BOOL)hasSentInvitation;
@@ -242,6 +247,7 @@
 - (id)multiLineDisplayName;
 - (BOOL)needsManualInCallSounds;
 - (void)playDTMFToneForKey:(unsigned char)arg1;
+- (id)prematurelySelectedAudioRouteUID;
 - (int)provisionalHoldStatus;
 - (void)receivedConversationData:(id)arg1;
 - (struct CGSize { float x1; float x2; })remoteAspectRatio;
@@ -275,6 +281,7 @@
 - (void)setHardPauseDigits:(id)arg1;
 - (void)setHardPauseDigitsState:(int)arg1;
 - (void)setHasAudioFinished:(BOOL)arg1;
+- (void)setHasBegunAudioInterruption:(BOOL)arg1;
 - (void)setHasSentInvitation:(BOOL)arg1;
 - (void)setHasUpdatedAudio:(BOOL)arg1;
 - (void)setHostCreationTime:(double)arg1;
@@ -284,6 +291,7 @@
 - (void)setIsSendingVideo:(BOOL)arg1;
 - (void)setIsoCountryCode:(id)arg1;
 - (BOOL)setMuted:(BOOL)arg1;
+- (void)setPrematurelySelectedAudioRouteUID:(id)arg1;
 - (void)setProvisionalHoldStatus:(int)arg1;
 - (void)setRemoteVideoBackLayer:(void*)arg1;
 - (void)setRemoteVideoLayer:(void*)arg1;

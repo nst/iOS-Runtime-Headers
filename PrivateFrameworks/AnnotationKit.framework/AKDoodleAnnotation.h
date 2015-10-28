@@ -7,6 +7,7 @@
     BOOL _dashed;
     BOOL _hasShadow;
     UIBezierPath *_path;
+    BOOL _pathIsDot;
     BOOL _pathIsPrestroked;
     struct CGRect { 
         struct CGPoint { 
@@ -30,6 +31,7 @@
 @property BOOL hasShadow;
 @property (readonly) unsigned int hash;
 @property (retain) UIBezierPath *path;
+@property BOOL pathIsDot;
 @property BOOL pathIsPrestroked;
 @property struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } rectangle;
 @property float rotationAngle;
@@ -55,6 +57,7 @@
 - (id)keysForValuesToObserveForRedrawing;
 - (id)keysForValuesToObserveForUndo;
 - (id)path;
+- (BOOL)pathIsDot;
 - (BOOL)pathIsPrestroked;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })rectangle;
 - (float)rotationAngle;
@@ -62,6 +65,7 @@
 - (void)setDashed:(BOOL)arg1;
 - (void)setHasShadow:(BOOL)arg1;
 - (void)setPath:(id)arg1;
+- (void)setPathIsDot:(BOOL)arg1;
 - (void)setPathIsPrestroked:(BOOL)arg1;
 - (void)setRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setRotationAngle:(float)arg1;

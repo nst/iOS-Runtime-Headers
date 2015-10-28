@@ -11,6 +11,7 @@
     IKJSFoundation *_jsFoundation;
     struct __CFRunLoop { } *_jsThreadRunLoop;
     struct __CFRunLoopSource { } *_jsThreadRunLoopSource;
+    NSObject<OS_dispatch_source> *_lowMemoryWarningSource;
     BOOL _mescalPrimeEnabledForXHRRequests;
     unsigned int _mode;
     NSMutableArray *_pendingQueue;
@@ -54,6 +55,7 @@
 - (id)_errorWithMessage:(id)arg1;
 - (void)_evaluate:(id /* block */)arg1;
 - (void)_evaluateFoundationWithDeviceConfig:(id)arg1;
+- (BOOL)_isAppTrusted;
 - (void)_jsThreadMain;
 - (id)_preferredLaunchURL;
 - (void)_sourceCanceledOnRunLoop:(struct __CFRunLoop { }*)arg1;
@@ -71,7 +73,6 @@
 - (void)evaluateFoundationJS;
 - (void)exitAppWithOptions:(id)arg1;
 - (void)handleReloadWithUrgencyType:(unsigned int)arg1 data:(id)arg2;
-- (void)handleRestart;
 - (id)initWithApplication:(id)arg1 mode:(unsigned int)arg2 delegate:(id)arg3;
 - (BOOL)isTrusted;
 - (BOOL)isValid;

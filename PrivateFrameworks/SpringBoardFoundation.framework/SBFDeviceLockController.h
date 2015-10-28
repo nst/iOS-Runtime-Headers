@@ -66,6 +66,7 @@
 - (void)notePasscodeEntryBegan;
 - (void)notePasscodeEntryCancelled;
 - (void)setBlockedForThermalCondition:(BOOL)arg1;
+- (void)setupUnblockTimerIfNeeded;
 - (void)synchronize;
 
 @end

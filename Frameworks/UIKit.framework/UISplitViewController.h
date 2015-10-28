@@ -26,6 +26,7 @@
     float _masterColumnWidth;
     UIFocusContainerGuide *_masterFocusContainerGuide;
     float _maximumPrimaryColumnWidth;
+    UITapGestureRecognizer *_menuGestureRecognizer;
     float _minimumPrimaryColumnWidth;
     int _pendingDisplayModeChangeCount;
     UIGestureRecognizer *_popoverPresentationGestureRecognizer;
@@ -292,6 +293,7 @@
 - (id)displayModeButtonItem;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (float)gutterWidth;
 - (BOOL)hidesMasterViewInLandscape;
 - (BOOL)hidesMasterViewInPortrait;

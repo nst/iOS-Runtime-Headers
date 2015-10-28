@@ -7,6 +7,7 @@
     unsigned int _category;
     NSXPCConnection *_connection;
     unsigned int _consumerType;
+    _DECDataProtectionMonitor *_dataProtectionMonitor;
     id /* block */ _handler;
     unsigned int _limit;
     NSObject<OS_dispatch_queue> *_queue;

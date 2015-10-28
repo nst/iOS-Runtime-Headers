@@ -20,6 +20,8 @@
     NSArray *_filteredCandidates;
     BOOL _forceReloadInitiallyHiddenCandidates;
     NSString *_inlineText;
+    UIKeyboardCandidatePocketShadow *_leftBorder;
+    UIKeyboardCandidatePocketShadow *_rightBorder;
     UIKBThemedView *_secondaryCandidatesViewEdgeGradient;
     BOOL _shouldSkipLayoutUntilScrollViewAnimationEnds;
     id /* block */ _skippedSetCandidatesBlock;
@@ -45,6 +47,8 @@
 @property (nonatomic) BOOL forceReloadInitiallyHiddenCandidates;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *inlineText;
+@property (nonatomic, retain) UIKeyboardCandidatePocketShadow *leftBorder;
+@property (nonatomic, retain) UIKeyboardCandidatePocketShadow *rightBorder;
 @property (nonatomic, retain) UIKBThemedView *secondaryCandidatesViewEdgeGradient;
 @property (nonatomic) BOOL shouldSkipLayoutUntilScrollViewAnimationEnds;
 @property (nonatomic, copy) id /* block */ skippedSetCandidatesBlock;
@@ -63,6 +67,7 @@
 + (unsigned int)numberOfRows;
 + (unsigned int)numberOfRowsForInterfaceOrientation:(int)arg1;
 + (void)setScreenTraits:(id)arg1;
++ (float)widthForCurrentScreenTraits;
 
 - (Class)_barCellClassForSection:(int)arg1;
 - (id)_candidateViewForSection:(int)arg1;
@@ -87,6 +92,7 @@
 - (BOOL)_showingInitiallyHiddenCandidates;
 - (void)_stepSelectedCandidateInDirection:(BOOL)arg1;
 - (void)_stepSelectedCandidateInDirection:(BOOL)arg1 candidateView:(id)arg2 section:(int)arg3;
+- (void)_updateBorders;
 - (void)_updateCanExtendState;
 - (void)_updateCandidateViews;
 - (float)_widthOfItemAtIndex:(unsigned int)arg1 inSection:(int)arg2;
@@ -129,8 +135,10 @@
 - (BOOL)isExtendedList;
 - (BOOL)isHiddenCandidatesList;
 - (id)keyboardBehaviors;
+- (id)leftBorder;
 - (int)numberOfSectionsInCollectionView:(id)arg1;
 - (void)revealHiddenCandidates;
+- (id)rightBorder;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
@@ -155,6 +163,8 @@
 - (void)setForceReloadInitiallyHiddenCandidates:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setInlineText:(id)arg1;
+- (void)setLeftBorder:(id)arg1;
+- (void)setRightBorder:(id)arg1;
 - (void)setSecondaryCandidatesViewEdgeGradient:(id)arg1;
 - (void)setShouldSkipLayoutUntilScrollViewAnimationEnds:(BOOL)arg1;
 - (void)setSkippedSetCandidatesBlock:(id /* block */)arg1;

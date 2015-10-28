@@ -11,6 +11,7 @@
     NSCache *_imageCache;
     double _lastModifiedTimestamp;
     NSString *_name;
+    double _pollInterval;
     int _reloadUrgencyType;
     NSURL *_serverURL;
     NSString *_version;
@@ -25,6 +26,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) double lastModifiedTimestamp;
 @property (nonatomic, copy) NSString *name;
+@property (nonatomic) double pollInterval;
 @property (nonatomic) int reloadUrgencyType;
 @property (nonatomic, retain) NSURL *serverURL;
 @property (readonly) Class superclass;
@@ -39,6 +41,7 @@
 - (void)_setExtraInfo:(id)arg1;
 - (void)_setLastModifiedTimestamp:(double)arg1;
 - (void)_setName:(id)arg1;
+- (void)_setPollInterval:(double)arg1;
 - (void)_setReloadUrgencyType:(int)arg1;
 - (void)_setServerURL:(id)arg1;
 - (void)_setVersion:(id)arg1;
@@ -49,6 +52,7 @@
 - (id)extraInfo;
 - (double)lastModifiedTimestamp;
 - (id)name;
+- (double)pollInterval;
 - (int)reloadUrgencyType;
 - (id)serverURL;
 - (id)version;

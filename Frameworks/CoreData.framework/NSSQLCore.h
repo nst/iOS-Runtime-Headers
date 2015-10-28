@@ -86,6 +86,8 @@
 - (void)_ensureDatabaseMatchesModel;
 - (id)_entityForObject:(id)arg1;
 - (id)_externalDataLinksDirectory;
+- (void)_fixPrimaryKeyTableFromEntities;
+- (void)_fixPrimaryKeyTableFromEntitiesAndJoins;
 - (unsigned int)_knownEntityKeyForObject:(id)arg1;
 - (unsigned int)_knownEntityKeyForObjectID:(id)arg1;
 - (unsigned int)_knownOrderKeyForObject:(id)arg1 from:(id)arg2 inverseToMany:(id)arg3;
@@ -130,6 +132,7 @@
 - (id)_ubiquityDictionaryForAttribute:(id)arg1 onObject:(id)arg2;
 - (void)_uncacheRows:(id)arg1;
 - (BOOL)_unload:(id*)arg1;
+- (BOOL)_updateToVersion640PrimaryKeyTableUsingStatements:(id)arg1;
 - (void)_useModel:(id)arg1;
 - (void)accommodatePresentedItemDeletionWithCompletionHandler:(id /* block */)arg1;
 - (id)adapter;

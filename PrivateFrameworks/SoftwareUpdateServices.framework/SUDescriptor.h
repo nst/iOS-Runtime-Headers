@@ -14,12 +14,14 @@
     BOOL _downloadableOverCellular;
     NSString *_humanReadableUpdateName;
     unsigned long long _installationSize;
+    unsigned long long _minimumSystemPartitionSize;
     unsigned long long _msuPrepareSize;
     NSString *_productBuildVersion;
     NSString *_productSystemName;
     NSString *_productVersion;
     NSString *_publisher;
     BOOL _streamingZipCapable;
+    NSDictionary *_systemPartitionPadding;
     unsigned long long _unarchiveSize;
     int _updateType;
 }
@@ -33,12 +35,14 @@
 @property (getter=isDownloadable, nonatomic) BOOL downloadable;
 @property (getter=isDownloadableOverCellular, nonatomic) BOOL downloadableOverCellular;
 @property (nonatomic) unsigned long long installationSize;
+@property (nonatomic) unsigned long long minimumSystemPartitionSize;
 @property (getter=_msuPrepareSize, setter=_setMsuPrepareSize:, nonatomic) unsigned long long msuPrepareSize;
 @property (nonatomic, retain) NSString *productBuildVersion;
 @property (nonatomic, retain) NSString *productSystemName;
 @property (nonatomic, retain) NSString *productVersion;
 @property (nonatomic, retain) NSString *publisher;
 @property (getter=_isStreamingZipCapable, setter=_setStreamingZipCapable:, nonatomic) BOOL streamingZipCapable;
+@property (nonatomic, retain) NSDictionary *systemPartitionPadding;
 @property (getter=_unarchiveSize, setter=_setUnarchiveSize:, nonatomic) unsigned long long unarchiveSize;
 @property (nonatomic) int updateType;
 
@@ -73,6 +77,7 @@
 - (BOOL)isDownloadableOverCellular;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isValidDescriptor;
+- (unsigned long long)minimumSystemPartitionSize;
 - (unsigned long long)preparationSize;
 - (id)productBuildVersion;
 - (id)productSystemName;
@@ -84,12 +89,15 @@
 - (void)setDownloadable:(BOOL)arg1;
 - (void)setDownloadableOverCellular:(BOOL)arg1;
 - (void)setInstallationSize:(unsigned long long)arg1;
+- (void)setMinimumSystemPartitionSize:(unsigned long long)arg1;
 - (void)setProductBuildVersion:(id)arg1;
 - (void)setProductSystemName:(id)arg1;
 - (void)setProductVersion:(id)arg1;
 - (void)setPublisher:(id)arg1;
+- (void)setSystemPartitionPadding:(id)arg1;
 - (void)setUpdateType:(int)arg1;
 - (BOOL)siriVoiceDeletionDisabled;
+- (id)systemPartitionPadding;
 - (unsigned long long)totalRequiredFreeSpace;
 - (int)updateType;
 

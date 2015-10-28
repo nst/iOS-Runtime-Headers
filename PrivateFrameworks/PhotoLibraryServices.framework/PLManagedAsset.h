@@ -190,6 +190,8 @@
 @property (nonatomic, readonly, retain) NSObject<NSCopying> *uniqueObjectID;
 @property (nonatomic) BOOL userCloudSharedLiked;
 @property (nonatomic, retain) id uuid;
+@property (nonatomic) long long videoCpDurationValue;
+@property (nonatomic) unsigned short videoCpVisibilityState;
 @property (nonatomic) short visibilityState;
 @property (nonatomic, readonly, retain) UIImage *wallpaperFullScreenImage;
 @property (nonatomic) short width;
@@ -336,7 +338,6 @@
 - (id)_createJPEGResourcesFromFullSizeJPEGPath:(id)arg1 withItemIdentifier:(id)arg2 forMaster:(BOOL)arg3 forResourceTypes:(id)arg4;
 - (void)_createPhotoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2;
 - (void)_createTHMFileWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2;
-- (id)_createVideoResourceFromVideoURL:(id)arg1 withResourceType:(unsigned int)arg2 itemIdentifier:(id)arg3 applyVideoAdjustments:(BOOL)arg4 forMaster:(BOOL)arg5;
 - (id)_createVideoResourceFromVideoURL:(id)arg1 withResourceType:(unsigned int)arg2 itemIdentifier:(id)arg3 applyVideoAdjustments:(BOOL)arg4 forMaster:(BOOL)arg5 forPhotoIris:(BOOL)arg6;
 - (void)_createVideoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2;
 - (void)_debugPrintAdjustmentState;
@@ -347,6 +348,7 @@
 - (BOOL)_hasPanoramaDimensions;
 - (BOOL)_hasScreenshotDimensions;
 - (BOOL)_hasScreenshotMetadata;
+- (BOOL)_hasVideoComplementData;
 - (id)_highDynamicRangeTypeDescription;
 - (id)_imageDataForThumbGeneration;
 - (id)_insertResource:(id)arg1 forOtherDuplicatedAssetInMaster:(id)arg2 inPhotoLibrary:(id)arg3;
@@ -373,6 +375,7 @@
 - (void)_setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 isSubstandardRender:(BOOL)arg8 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg9 shouldUpdateAttributes:(BOOL)arg10 useSecureMove:(BOOL)arg11 removeFileOnSuccess:(BOOL)arg12 inManagedObjectContext:(id)arg13;
 - (BOOL)_setDefaultSlowMotionAdjustments;
 - (void)_setLocationFromCoordinate:(struct { double x1; double x2; })arg1;
+- (void)_setVideoComplementData:(id)arg1;
 - (id)_settingsDictionaryFromFilter:(id)arg1;
 - (id)_settingsDictionaryFromFilters:(id)arg1 inputImageExtent:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (id)_sidecarFileMatchingUTI:(struct __CFString { }*)arg1 requireExactMatch:(BOOL)arg2 requireSort:(BOOL)arg3;
@@ -760,6 +763,7 @@
 - (id)userVisibleCloudResourceOfType:(unsigned int)arg1;
 - (BOOL)validateForInsert:(id*)arg1;
 - (BOOL)validateForUpdate:(id*)arg1;
+- (id)videoComplementData;
 - (BOOL)visibilityStateIsEqualToState:(short)arg1;
 - (id)wallpaperFullScreenImage;
 - (void)willSave;

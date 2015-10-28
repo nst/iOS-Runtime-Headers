@@ -13,6 +13,7 @@
     NSArray *_paymentSummaryItems;
     unsigned int _requiredBillingAddressFields;
     unsigned int _requiredShippingAddressFields;
+    BOOL _requiresAddressPrecision;
     const void *_shippingAddress;
     PKContact *_shippingContact;
     BOOL _shippingEditable;
@@ -32,6 +33,7 @@
 @property (nonatomic, copy) NSArray *paymentSummaryItems;
 @property (nonatomic) unsigned int requiredBillingAddressFields;
 @property (nonatomic) unsigned int requiredShippingAddressFields;
+@property (nonatomic) BOOL requiresAddressPrecision;
 @property (nonatomic) const void*shippingAddress;
 @property (nonatomic, retain) PKContact *shippingContact;
 @property (getter=isShippingEditable, nonatomic) BOOL shippingEditable;
@@ -59,6 +61,7 @@
 - (id)paymentSummaryItems;
 - (unsigned int)requiredBillingAddressFields;
 - (unsigned int)requiredShippingAddressFields;
+- (BOOL)requiresAddressPrecision;
 - (void)setApplicationData:(id)arg1;
 - (void)setBillingAddress:(void*)arg1;
 - (void)setBillingContact:(id)arg1;
@@ -69,6 +72,7 @@
 - (void)setPaymentSummaryItems:(id)arg1;
 - (void)setRequiredBillingAddressFields:(unsigned int)arg1;
 - (void)setRequiredShippingAddressFields:(unsigned int)arg1;
+- (void)setRequiresAddressPrecision:(BOOL)arg1;
 - (void)setShippingAddress:(void*)arg1;
 - (void)setShippingContact:(id)arg1;
 - (void)setShippingEditable:(BOOL)arg1;

@@ -17,6 +17,8 @@
 - (float)baselineInsetForHeaderTitle;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForHeader;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForTable:(id)arg1;
+- (float)headerIconBaselineOffset;
+- (float)headerTitleBaselineOffsetHasIcon:(BOOL)arg1;
 - (id)headerTitleFont;
 - (float)nonTableHorizontalMargin;
 - (float)singleLineCellHeightForTable:(id)arg1;

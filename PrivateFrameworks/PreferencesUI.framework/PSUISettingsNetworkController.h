@@ -87,6 +87,7 @@
 - (BOOL)shouldShowLTEOptions;
 - (BOOL)shouldShowLegacyRATOptions;
 - (BOOL)shouldShowViewAccount;
+- (BOOL)shouldShowWifiAssist;
 - (BOOL)showDataPlanOnly;
 - (id)specifiers;
 - (BOOL)supportsVoLTE;

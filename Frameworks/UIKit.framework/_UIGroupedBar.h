@@ -6,6 +6,7 @@
     _UIButtonBar *_centerBar;
     _UIButtonBar *_leftBar;
     float _margin;
+    float _minimumInterGroupSpace;
     float _minimumInterItemSpace;
     _UIButtonBar *_rightBar;
     _UIButtonBarButtonVisualProvider *_visualProvider;
@@ -14,6 +15,7 @@
 @property (nonatomic, copy) NSArray *centerBarButtonGroups;
 @property (nonatomic, copy) NSArray *leadingBarButtonGroups;
 @property (nonatomic) float margin;
+@property (nonatomic) float minimumInterGroupSpace;
 @property (nonatomic) float minimumInterItemSpace;
 @property (nonatomic, copy) NSArray *trailingBarButtonGroups;
 @property (nonatomic, copy) _UIButtonBarButtonVisualProvider *visualProvider;
@@ -33,10 +35,12 @@
 - (void)layoutSubviews;
 - (id)leadingBarButtonGroups;
 - (float)margin;
+- (float)minimumInterGroupSpace;
 - (float)minimumInterItemSpace;
 - (void)setCenterBarButtonGroups:(id)arg1;
 - (void)setLeadingBarButtonGroups:(id)arg1;
 - (void)setMargin:(float)arg1;
+- (void)setMinimumInterGroupSpace:(float)arg1;
 - (void)setMinimumInterItemSpace:(float)arg1;
 - (void)setTrailingBarButtonGroups:(id)arg1;
 - (void)setVisualProvider:(id)arg1;

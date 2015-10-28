@@ -6,6 +6,7 @@
     AVExternalDevice *_externalDevice;
     BOOL _limitedUI;
     BOOL _limiting;
+    MPMediaPredicate *_localPredicate;
     UIView *_nowPlayingButton;
     BOOL _shouldHideIndexTitles;
     BOOL _showMore;
@@ -39,6 +40,7 @@
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (BOOL)showMore;
 - (BOOL)tableView:(id)arg1 shouldChangeFocusedItem:(id)arg2 fromRowAtIndexPath:(id)arg3;
+- (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

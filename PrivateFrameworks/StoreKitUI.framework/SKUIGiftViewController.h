@@ -31,6 +31,7 @@
 - (id)giftDelegate;
 - (id)initWithGift:(id)arg1;
 - (id)operationQueue;
+- (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setClientContext:(id)arg1;
 - (void)setGiftDelegate:(id)arg1;
 - (void)setOperationQueue:(id)arg1;

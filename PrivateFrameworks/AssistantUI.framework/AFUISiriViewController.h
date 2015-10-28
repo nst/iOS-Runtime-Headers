@@ -2,12 +2,13 @@
    Image: /System/Library/PrivateFrameworks/AssistantUI.framework/AssistantUI
  */
 
-@interface AFUISiriViewController : UIViewController <AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate> {
+@interface AFUISiriViewController : UIViewController <AFUIDelayedActionCommandCacheDelegate, AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate> {
     BOOL _active;
     BOOL _attemptingRemoteViewControllerPresentation;
     AFUIRequestOptions *_currentRequestOptions;
     int _currentRequestSource;
     <AFUISiriViewControllerDataSource> *_dataSource;
+    AFUIDelayedActionCommandCache *_delayedActionCommandCache;
     <AFUISiriViewControllerDelegate> *_delegate;
     BOOL _eyesFree;
     BOOL _hasCalledBeginAppearanceTransition;
@@ -22,6 +23,7 @@
     SiriUIAudioRoutePickerController *_routePickerController;
     AFUISiriSession *_session;
     BOOL _showsStatusBar;
+    BOOL _siriSessionWantsToEnd;
     UIStatusBar *_statusBar;
     BOOL _statusBarEnabled;
     BOOL _systemHostedPresentation;
@@ -106,6 +108,8 @@
 - (float)audioRecordingPowerLevelForSiriView:(id)arg1;
 - (id)bulletinsForSiriSession:(id)arg1;
 - (void)cancelTTS;
+- (void)commandCache:(id)arg1 didInvalidateDelayedActionCommand:(id)arg2;
+- (void)commandCache:(id)arg1 didPerformDelayedActionCommand:(id)arg2;
 - (id)contextAppInfosForSiriSession:(id)arg1;
 - (id)currentRequestOptions;
 - (int)currentSource;
@@ -135,12 +139,14 @@
 - (unsigned int)lockStateForSiriSession:(id)arg1;
 - (BOOL)mapsGatekeeperEnabled;
 - (void)notifyOnNextUserInteractionForSiriRemoteViewController:(id)arg1;
+- (void)performGenericAceCommands:(id)arg1 forCommandCache:(id)arg2;
 - (void)preheat;
 - (void)presentRemoteViewControllerIfNecessary;
 - (void)resetContextTypes:(int)arg1;
 - (id)routePickerController;
 - (void)routePickerController:(id)arg1 hasRoutesToPick:(BOOL)arg2;
 - (void)routePickerControllerPickedNewRoute:(id)arg1 isBluetooth:(BOOL)arg2;
+- (void)sendReplyCommand:(id)arg1 forCommandCache:(id)arg2;
 - (void)setAlertContext;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -189,8 +195,13 @@
 - (void)siriSession:(id)arg1 didChangeToState:(int)arg2;
 - (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestAndCancelRequest:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (void)siriSession:(id)arg1 didReceiveDeviceUnlockRequestWithCompletion:(id /* block */)arg2;
+- (BOOL)siriSessionCanEnd:(id)arg1;
+- (void)siriSessionDidEnd:(id)arg1;
+- (void)siriSessionDidReceiveDelayedActionCancelCommand:(id)arg1;
+- (void)siriSessionDidReceiveDelayedActionCommand:(id)arg1;
 - (void)siriSessionDidResetContext:(id)arg1;
 - (void)siriSessionRecordingPreparationHasFinished:(id)arg1;
+- (void)siriSessionWillEnd:(id)arg1;
 - (BOOL)siriView:(id)arg1 attemptUnlockWithPassword:(id)arg2;
 - (void)siriView:(id)arg1 didReceiveSiriActivationMessageWithSource:(int)arg2;
 - (void)siriViewDidReceiveAudioRouteAction:(id)arg1;
@@ -216,6 +227,7 @@
 - (void)userRelevantEventDidOccurInSiriRemoteViewController:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (id)viewServiceApplicationInfo;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillAppearFinishedForSiriRemoteViewController:(id)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;

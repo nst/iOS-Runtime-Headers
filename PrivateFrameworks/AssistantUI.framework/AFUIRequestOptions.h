@@ -16,6 +16,7 @@
     NSDictionary *_messagesDirectActionContext;
     SASPronunciationContext *_pronunciationContext;
     BOOL _pronunciationRequest;
+    BOOL _releaseAudioSessionOnRecordingCompletion;
     AFRequestInfo *_requestInfo;
     int _requestSource;
     NSString *_serverCommandId;
@@ -41,6 +42,7 @@
 @property (nonatomic, copy) NSDictionary *messagesDirectActionContext;
 @property (nonatomic, retain) SASPronunciationContext *pronunciationContext;
 @property (getter=isPronunciationRequest, nonatomic) BOOL pronunciationRequest;
+@property (nonatomic) BOOL releaseAudioSessionOnRecordingCompletion;
 @property (nonatomic, retain) AFRequestInfo *requestInfo;
 @property (nonatomic) int requestSource;
 @property (nonatomic, copy) NSString *serverCommandId;
@@ -75,6 +77,7 @@
 - (BOOL)isPronunciationRequest;
 - (id)messagesDirectActionContext;
 - (id)pronunciationContext;
+- (BOOL)releaseAudioSessionOnRecordingCompletion;
 - (id)requestInfo;
 - (int)requestSource;
 - (id)serverCommandId;
@@ -91,6 +94,7 @@
 - (void)setMessagesDirectActionContext:(id)arg1;
 - (void)setPronunciationContext:(id)arg1;
 - (void)setPronunciationRequest:(BOOL)arg1;
+- (void)setReleaseAudioSessionOnRecordingCompletion:(BOOL)arg1;
 - (void)setRequestInfo:(id)arg1;
 - (void)setRequestSource:(int)arg1;
 - (void)setServerCommandId:(id)arg1;

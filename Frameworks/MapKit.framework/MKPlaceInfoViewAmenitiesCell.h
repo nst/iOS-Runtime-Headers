@@ -6,6 +6,7 @@
     unsigned int _columnCount;
     UIView *_insetMetricView;
     UIColor *_keyLabelColor;
+    UIFont *_keyLabelFont;
     NSArray *_keyValues;
     NSMutableArray *_labelConstraints;
     NSMutableArray *_labels;
@@ -17,6 +18,7 @@
 
 @property (nonatomic) unsigned int columnCount;
 @property (nonatomic, retain) UIColor *keyLabelColor;
+@property (nonatomic, retain) UIFont *keyLabelFont;
 @property (nonatomic, retain) NSArray *keyValues;
 @property (nonatomic, retain) NSMutableArray *labelConstraints;
 @property (nonatomic, retain) UIFont *valueLabelFont;
@@ -36,6 +38,7 @@
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (id)keyLabelColor;
+- (id)keyLabelFont;
 - (id)keyValues;
 - (id)labelConstraints;
 - (void)layoutMarginsDidChange;
@@ -43,6 +46,7 @@
 - (void)refreshContent:(BOOL)arg1;
 - (void)setColumnCount:(unsigned int)arg1;
 - (void)setKeyLabelColor:(id)arg1;
+- (void)setKeyLabelFont:(id)arg1;
 - (void)setKeyValues:(id)arg1;
 - (void)setLabelConstraints:(id)arg1;
 - (void)setValueLabelFont:(id)arg1;

@@ -6,6 +6,7 @@
     NSHashTable *__changeObservers;
     BOOL __didChange;
     BOOL __isPerfomingChanges;
+    BOOL _enabled;
     int _inputType;
     <ISInputObserver> *_observer;
     NSObject<OS_dispatch_queue> *_observerQueue;
@@ -19,6 +20,7 @@
 @property (nonatomic, readonly) NSHashTable *_changeObservers;
 @property (setter=_setDidChange:, nonatomic) BOOL _didChange;
 @property (setter=_setPerformingChanges:, nonatomic) BOOL _isPerfomingChanges;
+@property (nonatomic) BOOL enabled;
 @property (nonatomic, readonly) int inputType;
 @property (nonatomic, readonly) ISPlayer *player;
 @property (nonatomic, readonly) float secondaryValue;
@@ -33,6 +35,7 @@
 - (BOOL)_isPerfomingChanges;
 - (void)_setDidChange:(BOOL)arg1;
 - (void)_setPerformingChanges:(BOOL)arg1;
+- (BOOL)enabled;
 - (id)init;
 - (int)inputType;
 - (id)observer;
@@ -40,6 +43,7 @@
 - (id)player;
 - (void)playerDidChange;
 - (float)secondaryValue;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setPlayer:(id)arg1;
 - (void)setSecondaryValue:(float)arg1;

@@ -3,7 +3,6 @@
  */
 
 @interface ISPlaybackController : NSObject <ISAVPlayerControllerDelegate, ISPlaybackStateTransitionManagerDelegate> {
-    AVPlayer *__audioPlayer;
     ISAVPlayerController *__avPlayerController;
     int __currentPlaybackID;
     int __currentTransitionRequestID;
@@ -23,9 +22,6 @@
     AVPlayer *__videoPlayer;
     id __videoPlayerPerformanceDiagnosticsTimeObserver;
     id __videoTimeObserver;
-    NSError *_audioPlayerError;
-    AVPlayerItem *_audioPlayerItem;
-    int _audioPlayerStatus;
     float _hintProgress;
     struct { 
         long long value; 
@@ -34,10 +30,14 @@
         long long epoch; 
     } _idleTime;
     double _maximumVideoTransitionDelay;
+    NSObject<OS_dispatch_queue> *_observerQueue;
+    NSHashTable *_observers;
     float _playRate;
     id /* block */ _playbackEndHandler;
     ISPlaybackSpec *_playbackSpec;
     int _playbackState;
+    double _prePhotoGapTime;
+    BOOL _shouldReusePlayer;
     float _timeOffset;
     NSError *_videoPlayerError;
     AVPlayerItem *_videoPlayerItem;
@@ -48,7 +48,6 @@
     float _volume;
 }
 
-@property (nonatomic, readonly) AVPlayer *_audioPlayer;
 @property (nonatomic, readonly) ISAVPlayerController *_avPlayerController;
 @property (setter=_setCurrentPlaybackID:, nonatomic) int _currentPlaybackID;
 @property (setter=_setCurrentTransitionRequestID:, nonatomic) int _currentTransitionRequestID;
@@ -63,9 +62,6 @@
 @property (nonatomic, readonly) AVPlayer *_videoPlayer;
 @property (nonatomic, readonly) id _videoPlayerPerformanceDiagnosticsTimeObserver;
 @property (setter=_setVideoTimeObserver:, nonatomic, retain) id _videoTimeObserver;
-@property (nonatomic, retain) NSError *audioPlayerError;
-@property (nonatomic, retain) AVPlayerItem *audioPlayerItem;
-@property (nonatomic) int audioPlayerStatus;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -77,6 +73,7 @@
 @property (nonatomic, copy) id /* block */ playbackEndHandler;
 @property (nonatomic, retain) ISPlaybackSpec *playbackSpec;
 @property (nonatomic) int playbackState;
+@property (nonatomic) double prePhotoGapTime;
 @property (readonly) Class superclass;
 @property (nonatomic) float timeOffset;
 @property (nonatomic, retain) NSError *videoPlayerError;
@@ -91,13 +88,13 @@
 + (void)resetPlayerCache;
 
 - (void).cxx_destruct;
-- (id)_audioPlayer;
 - (id)_avPlayerController;
 - (void)_callPlaybackEndHandler;
 - (void)_configureOutput:(id)arg1;
 - (int)_currentPlaybackID;
 - (int)_currentTransitionRequestID;
 - (void)_didEndTransitionToPlaybackState:(int)arg1 forTransitionRequestID:(int)arg2 finished:(BOOL)arg3;
+- (void)_enumerateObserversWithBlock:(id /* block */)arg1;
 - (void)_handleMediaServiceResetIfNecessaryWithError:(id)arg1;
 - (int)_hasStartedVideoForCurrentPlayback;
 - (float)_lastHintProgress;
@@ -107,8 +104,6 @@
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_playbackStartTime;
 - (id)_playerReuseQueue;
 - (int)_previousPlaybackState;
-- (void)_setAudioPlayerError:(id)arg1;
-- (void)_setAudioPlayerStatus:(int)arg1;
 - (void)_setCurrentPlaybackID:(int)arg1;
 - (void)_setCurrentTransitionRequestID:(int)arg1;
 - (void)_setHasStartedVideoForCurrentPlayback:(int)arg1;
@@ -135,10 +130,8 @@
 - (id)_videoPlayer;
 - (id)_videoPlayerPerformanceDiagnosticsTimeObserver;
 - (id)_videoTimeObserver;
+- (void)_videoWillPlayToEndTime;
 - (void)addOutput:(id)arg1;
-- (id)audioPlayerError;
-- (id)audioPlayerItem;
-- (int)audioPlayerStatus;
 - (void)avPlayerControllerDidBeginPlaying:(id)arg1;
 - (void)avPlayerControllerDidEndPlaying:(id)arg1;
 - (void)avPlayerControllerDidEndSeeking:(id)arg1 seekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 didFinish:(BOOL)arg3;
@@ -148,6 +141,7 @@
 - (float)hintProgress;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })idleTime;
 - (id)init;
+- (id)initWithVideoPlayer:(id)arg1;
 - (double)maximumVideoTransitionDelay;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)outputs;
@@ -155,18 +149,21 @@
 - (id /* block */)playbackEndHandler;
 - (id)playbackSpec;
 - (int)playbackState;
+- (double)prePhotoGapTime;
+- (void)registerObserver:(id)arg1;
 - (void)removeOutput:(id)arg1;
-- (void)setAudioPlayerItem:(id)arg1;
 - (void)setIdleTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setMaximumVideoTransitionDelay:(double)arg1;
 - (void)setPlaybackEndHandler:(id /* block */)arg1;
 - (void)setPlaybackSpec:(id)arg1;
+- (void)setPrePhotoGapTime:(double)arg1;
 - (void)setVideoPlayerItem:(id)arg1;
 - (void)setVitalityHintPlayRate:(float)arg1;
 - (void)setVolume:(float)arg1;
 - (float)timeOffset;
 - (void)transitionManager:(id)arg1 didEndTransitionToPlaybackState:(int)arg2 forRequestID:(int)arg3 finished:(BOOL)arg4;
 - (void)transitionToPlaybackState:(int)arg1 playRate:(float)arg2 withTimeOffset:(float)arg3 vitalityPlayRate:(float)arg4 hintProgress:(float)arg5;
+- (void)unregisterObserver:(id)arg1;
 - (id)videoPlayerError;
 - (id)videoPlayerItem;
 - (int)videoPlayerStatus;

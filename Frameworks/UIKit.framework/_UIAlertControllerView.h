@@ -324,7 +324,7 @@
 - (id)message;
 - (id)messageLabelTopAlignmentConstraint;
 - (id)preferredAction;
-- (id)preferredFocusedItem;
+- (id)preferredFocusedView;
 - (BOOL)presentationContextPrefersCancelActionShown;
 - (id)roundedCornerViewTrailingEdgeConstraint;
 - (void)scrollViewDidEndDecelerating:(id)arg1;

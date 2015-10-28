@@ -6,8 +6,10 @@
 
 + (BOOL)_moveItemAtURL:(id)arg1 toURL:(id)arg2 securely:(BOOL)arg3 error:(id*)arg4;
 + (BOOL)changeFileOwnerToMobileAtPath:(id)arg1 error:(id*)arg2;
++ (BOOL)changeFileOwnerToMobileAtPath:(id)arg1 error:(id*)arg2 usingFileManager:(id)arg3;
 + (BOOL)copyItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 + (BOOL)createDirectoryAtPath:(id)arg1 error:(id*)arg2;
++ (BOOL)createDirectoryAtPath:(id)arg1 error:(id*)arg2 usingFileManager:(id)arg3;
 + (id)fileManager;
 + (BOOL)hasDiskSpaceToCopyFileAtURL:(id)arg1;
 + (BOOL)moveItemAtURL:(id)arg1 toURL:(id)arg2 error:(id*)arg3;

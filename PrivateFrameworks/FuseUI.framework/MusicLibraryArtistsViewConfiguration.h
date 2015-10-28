@@ -3,23 +3,23 @@
  */
 
 @interface MusicLibraryArtistsViewConfiguration : MusicLibraryBrowseTableViewConfiguration {
-    MusicEntityViewDescriptor *_artistsEntityViewDescriptor;
-    MusicEntityViewDescriptor *_recentlyAddedOverviewEntityViewDescriptor;
+    MusicEntityViewDescriptor *_artistsTableViewDescriptor;
+    MusicEntityViewDescriptor *_recentlyAddedOverviewTableViewDescriptor;
     BOOL _shouldIncludeRecentlyAddedOverview;
 }
 
 @property (nonatomic) BOOL shouldIncludeRecentlyAddedOverview;
 
 - (void).cxx_destruct;
-- (id)_artistsEntityViewDescriptor;
+- (id)_artistsTableViewDescriptor;
 - (id)_detailViewControllerForEntityValueContext:(id)arg1 sourceViewController:(id)arg2;
 - (id)_entityViewDescriptorsForCurrentProperties;
 - (id)_loadArtistsEntityProvider;
-- (id)_loadArtistsEntityViewDescriptor;
-- (id)_loadHorizontalLockupContentEntityViewDescriptor;
+- (id)_loadArtistsTableViewDescriptor;
 - (id)_loadRecentlyAddedOverviewEntityProvider;
-- (id)_loadRecentlyAddedOverviewEntityViewDescriptor;
-- (id)_recentlyAddedOverviewEntityViewDescriptor;
+- (id)_loadRecentlyAddedOverviewTableViewDescriptor;
+- (id)_loadTableViewDescriptor;
+- (id)_recentlyAddedOverviewTableViewDescriptor;
 - (BOOL)canPreviewEntityValueContext:(id)arg1;
 - (void)configureContentDescriptorForSearchResults:(id)arg1;
 - (void)handleCommitPreviewViewController:(id)arg1 fromViewController:(id)arg2;

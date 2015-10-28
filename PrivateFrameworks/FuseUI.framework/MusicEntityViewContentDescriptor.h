@@ -3,7 +3,8 @@
  */
 
 @interface MusicEntityViewContentDescriptor : NSObject <NSCopying> {
-    NSSet *_allPropertiesToPrefetch;
+    NSSet *_allPropertiesToLoadAsynchronously;
+    NSSet *_allPropertiesToPrefetchSynchronously;
     BOOL _allowsDeletionWithoutEditingMode;
     MusicEntityViewContentArtworkDescriptor *_artworkDescriptor;
     int _artworkVerticalAlignment;
@@ -11,6 +12,7 @@
     UIColor *_customSelectionTintColor;
     UIColor *_customSeparatorColor;
     NSString *_explicitBadgeProperty;
+    BOOL _hasValidAllPropertiesToLoadAsynchronously;
     UIColor *_keepLocalDeviceColor;
     NSString *_keepLocalPreferenceProperty;
     UIColor *_keepLocalSashColor;
@@ -32,7 +34,8 @@
     NSString *_wantsPlayButtonProperty;
 }
 
-@property (nonatomic, readonly) NSSet *allPropertiesToPrefetch;
+@property (nonatomic, readonly) NSSet *allPropertiesToLoadAsynchronously;
+@property (nonatomic, readonly) NSSet *allPropertiesToPrefetchSynchronously;
 @property (nonatomic) BOOL allowsDeletionWithoutEditingMode;
 @property (nonatomic, retain) MusicEntityViewContentArtworkDescriptor *artworkDescriptor;
 @property (nonatomic) int artworkVerticalAlignment;
@@ -67,8 +70,10 @@
 - (void).cxx_destruct;
 - (void)_handleArtworkDescriptorDidInvalidateNotification:(id)arg1;
 - (void)_handleTextDescriptorDidInvalidateNotification:(id)arg1;
-- (void)_invalidateAllPropertiesToPrefetch;
-- (id)allPropertiesToPrefetch;
+- (void)_invalidateAllPropertiesToLoadAsynchronously;
+- (void)_invalidateAllPropertiesToPrefetchSynchronously;
+- (id)allPropertiesToLoadAsynchronously;
+- (id)allPropertiesToPrefetchSynchronously;
 - (BOOL)allowsDeletionWithoutEditingMode;
 - (id)artworkDescriptor;
 - (int)artworkVerticalAlignment;

@@ -16,6 +16,7 @@
 @property (nonatomic, readonly, retain) IMMessage *lastIncomingFinishedMessage;
 @property (nonatomic, readonly, retain) IMMessage *lastIncomingMessage;
 @property (nonatomic, readonly, retain) IMMessage *lastMessage;
+@property (nonatomic, readonly) unsigned int prevailingLocalSecretType;
 @property (readonly) Class superclass;
 
 // Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
@@ -368,6 +369,10 @@
 - (id)_cn_take:(unsigned int)arg1;
 - (void)_cn_zip:(id)arg1 withBlock:(id /* block */)arg2;
 
+// Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
+
+- (unsigned int)prevailingLocalSecretType;
+
 // Image: /System/Library/PrivateFrameworks/CoreDAV.framework/CoreDAV
 
 + (id)_arrayWithIntArg:(int)arg1 additionalArgs:(void*)arg2;
@@ -482,6 +487,7 @@
 - (BOOL)mf_all:(id /* block */)arg1;
 - (BOOL)mf_any:(id /* block */)arg1;
 - (id)mf_dictionaryWithMessagesSortedByStore;
+- (void)mf_enumerateObjectsInBatchesOfSize:(unsigned int)arg1 block:(id /* block */)arg2;
 - (id)mf_filter:(id /* block */)arg1;
 - (id)mf_firstObjectPassingTest:(id /* block */)arg1;
 - (id)mf_flatMap:(id /* block */)arg1;

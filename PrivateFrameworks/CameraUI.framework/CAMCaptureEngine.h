@@ -181,6 +181,7 @@
 - (void)captureOutput:(id)arg1 didFinishRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3 error:(id)arg4;
 - (void)captureOutput:(id)arg1 didOutputMetadataObjects:(id)arg2 fromConnection:(id)arg3;
 - (void)captureOutput:(id)arg1 didOutputSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg2 fromConnection:(id)arg3;
+- (void)captureOutput:(id)arg1 didRecordMovieForEventualFileAtURL:(id)arg2 settings:(id)arg3;
 - (void)captureOutput:(id)arg1 didStartRecordingToOutputFileAtURL:(id)arg2 fromConnections:(id)arg3;
 - (void)captureOutput:(id)arg1 willBeginCaptureForSettings:(id)arg2;
 - (void)captureOutput:(id)arg1 willCaptureStillImageForSettings:(id)arg2;

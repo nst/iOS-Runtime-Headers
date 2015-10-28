@@ -19,6 +19,7 @@
     UIPreviewForceInteractionProgress *_interactionProgressForCommit;
     UIInteractionProgress *_interactionProgressForPresentation;
     BOOL _isAnimatingActionSheet;
+    UIPreviewAction *_leadingPreviewAction;
     _UIPreviewQuickActionView *_leadingQuickActionView;
     NSLayoutConstraint *_leadingQuickActionViewEdgeConstraint;
     BOOL _leadingQuickActionViewSelected;
@@ -30,11 +31,13 @@
     UIVisualEffectView *_presentationBackgroundView;
     _UIPreviewPresentationContainerView *_presentationContainerView;
     id /* block */ _presentationPhaseCompletionBlock;
+    NSArray *_previewActionItems;
     _UIPreviewActionSheetView *_previewActionSheet;
     _UIPreviewPresentationEffectView *_revealContainerView;
     _UIPlatterPanningVelocityIntegrator *_revealPanningVelocityIntegrator;
     BOOL _sourceViewSnapshotAndScaleTransformSuppressed;
     UITapGestureRecognizer *_tapToDismissGestureRecognizer;
+    UIPreviewAction *_trailingPreviewAction;
     _UIPreviewQuickActionView *_trailingQuickActionView;
     NSLayoutConstraint *_trailingQuickActionViewEdgeConstraint;
     BOOL _trailingQuickActionViewSelected;
@@ -63,6 +66,7 @@
 @property (nonatomic, retain) UIPreviewForceInteractionProgress *interactionProgressForCommit;
 @property (nonatomic, retain) UIInteractionProgress *interactionProgressForPresentation;
 @property (nonatomic) BOOL isAnimatingActionSheet;
+@property (nonatomic, copy) UIPreviewAction *leadingPreviewAction;
 @property (nonatomic, retain) _UIPreviewQuickActionView *leadingQuickActionView;
 @property (nonatomic, retain) NSLayoutConstraint *leadingQuickActionViewEdgeConstraint;
 @property (nonatomic) BOOL leadingQuickActionViewSelected;
@@ -75,11 +79,13 @@
 @property (nonatomic, retain) _UIPreviewPresentationContainerView *presentationContainerView;
 @property (nonatomic, copy) id /* block */ presentationPhaseCompletionBlock;
 @property (nonatomic) float presentationViewCornerRadius;
+@property (nonatomic, copy) NSArray *previewActionItems;
 @property (nonatomic, retain) _UIPreviewActionSheetView *previewActionSheet;
 @property (nonatomic, retain) _UIPreviewPresentationEffectView *revealContainerView;
 @property (nonatomic, retain) _UIPlatterPanningVelocityIntegrator *revealPanningVelocityIntegrator;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITapGestureRecognizer *tapToDismissGestureRecognizer;
+@property (nonatomic, copy) UIPreviewAction *trailingPreviewAction;
 @property (nonatomic, retain) _UIPreviewQuickActionView *trailingQuickActionView;
 @property (nonatomic, retain) NSLayoutConstraint *trailingQuickActionViewEdgeConstraint;
 @property (nonatomic) BOOL trailingQuickActionViewSelected;
@@ -183,6 +189,7 @@
 - (id)interactionProgressForPresentation;
 - (BOOL)isAnimatingActionSheet;
 - (BOOL)isBreathing;
+- (id)leadingPreviewAction;
 - (id)leadingQuickActionView;
 - (id)leadingQuickActionViewEdgeConstraint;
 - (BOOL)leadingQuickActionViewSelected;
@@ -207,6 +214,7 @@
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
 - (float)presentationViewCornerRadius;
+- (id)previewActionItems;
 - (id)previewActionSheet;
 - (BOOL)previewActionSheetCanSelectItem:(id)arg1;
 - (id)revealContainerView;
@@ -226,6 +234,7 @@
 - (void)setInteractionProgressForCommit:(id)arg1;
 - (void)setInteractionProgressForPresentation:(id)arg1;
 - (void)setIsAnimatingActionSheet:(BOOL)arg1;
+- (void)setLeadingPreviewAction:(id)arg1;
 - (void)setLeadingQuickActionView:(id)arg1;
 - (void)setLeadingQuickActionViewEdgeConstraint:(id)arg1;
 - (void)setLeadingQuickActionViewSelected:(BOOL)arg1;
@@ -238,10 +247,12 @@
 - (void)setPresentationContainerView:(id)arg1;
 - (void)setPresentationPhaseCompletionBlock:(id /* block */)arg1;
 - (void)setPresentationViewCornerRadius:(float)arg1;
+- (void)setPreviewActionItems:(id)arg1;
 - (void)setPreviewActionSheet:(id)arg1;
 - (void)setRevealContainerView:(id)arg1;
 - (void)setRevealPanningVelocityIntegrator:(id)arg1;
 - (void)setTapToDismissGestureRecognizer:(id)arg1;
+- (void)setTrailingPreviewAction:(id)arg1;
 - (void)setTrailingQuickActionView:(id)arg1;
 - (void)setTrailingQuickActionViewEdgeConstraint:(id)arg1;
 - (void)setTrailingQuickActionViewSelected:(BOOL)arg1;
@@ -253,6 +264,7 @@
 - (BOOL)shouldRemovePresentersView;
 - (void)systemLayoutFittingSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)tapToDismissGestureRecognizer;
+- (id)trailingPreviewAction;
 - (id)trailingQuickActionView;
 - (id)trailingQuickActionViewEdgeConstraint;
 - (BOOL)trailingQuickActionViewSelected;

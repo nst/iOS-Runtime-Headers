@@ -26,6 +26,7 @@
 - (id)keycapRightSelectRightTransform;
 - (id)keycapRightStandardTransform;
 - (void)reset;
+- (BOOL)shouldAssertCurrentKeyState:(id)arg1;
 - (BOOL)shouldTransitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3;
 - (void)transitionEndedForKeyView:(id)arg1 alternateCount:(unsigned int)arg2;
 - (void)transitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id /* block */)arg4;

@@ -22,6 +22,7 @@
 @property (nonatomic, copy) NSString *text;
 
 - (void).cxx_destruct;
+- (float)_adjustVerticalSpacingForHeight:(float)arg1;
 - (void)_hideKeyboard;
 - (void)_landingButtonAction:(id)arg1;
 - (id)_newTextFieldWithClientContext:(id)arg1 placeholderColor:(id)arg2;

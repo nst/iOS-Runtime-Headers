@@ -25,6 +25,9 @@
 - (id)itemSelected;
 - (id)itemsShown;
 - (id)launchInfo;
+- (unsigned int)outcomeForCategory:(unsigned int)arg1;
+- (unsigned int)outcomeForCategory:(unsigned int)arg1 predictionItem:(id)arg2;
+- (unsigned int)outcomeForCategory:(unsigned int)arg1 predictions:(id)arg2;
 - (id)predictedItemsShown;
 - (id)prediction;
 - (void)setItemSelected:(id)arg1;

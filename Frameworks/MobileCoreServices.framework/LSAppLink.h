@@ -21,7 +21,7 @@
 + (id)_predicateForURLPathPattern:(id)arg1;
 + (void)_setOpenStrategy:(int)arg1 forBundleIdentifier:(id)arg2 XPCConnection:(id)arg3;
 + (BOOL)_shouldAppLinkOpenWithStrategy:(int)arg1 XPCConnection:(id)arg2;
-+ (void)considerPlugInClassAtIndex:(unsigned int)arg1 plugInClasses:(id)arg2 URLComponents:(id)arg3 XPCConnection:(id)arg4 completionHandler:(id /* block */)arg5;
++ (void)considerPlugInClassAtIndex:(unsigned int)arg1 plugInClasses:(id)arg2 URLComponents:(id)arg3 XPCConnection:(id)arg4 previousPlugInError:(id)arg5 completionHandler:(id /* block */)arg6;
 + (id)dispatchQueue;
 + (void)getAppLinkWithURL:(id)arg1 completionHandler:(id /* block */)arg2;
 + (void)openWithURL:(id)arg1 completionHandler:(id /* block */)arg2;

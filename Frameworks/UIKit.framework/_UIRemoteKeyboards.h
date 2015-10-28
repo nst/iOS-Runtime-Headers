@@ -53,6 +53,7 @@
 - (BOOL)allowedToShowKeyboard;
 - (void)applicationResume:(id)arg1;
 - (void)checkConnection;
+- (void)checkState;
 - (void)cleanSuppression;
 - (void)completeMoveKeyboardForWindow:(id)arg1;
 - (void)completeTransition:(id)arg1 withInfo:(id)arg2;

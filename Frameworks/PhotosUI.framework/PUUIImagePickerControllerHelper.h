@@ -19,7 +19,7 @@
 
 - (void).cxx_destruct;
 - (void)_notifyImagePickerOfAssetAvailability:(id)arg1;
-- (void)_pushImageViewControllerForAsset:(id)arg1 allowEditing:(BOOL)arg2;
+- (void)_pushImageViewControllerForAsset:(id)arg1 allowEditing:(BOOL)arg2 expectsLivePhoto:(BOOL)arg3;
 - (void)_selectAsset:(id)arg1 withHintCollection:(id)arg2 hintIndexPath:(id)arg3;
 - (void)cancelCurrentAssetDownload;
 - (id)gridViewController;

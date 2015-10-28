@@ -5,10 +5,12 @@
 @interface _LSAppLinkPlugIn : NSObject {
     NSURLComponents *_URLComponents;
     NSObject<OS_xpc_object> *_XPCConnection;
+    NSError *_previousPlugInError;
 }
 
 @property (retain) NSURLComponents *URLComponents;
 @property (retain) NSObject<OS_xpc_object> *XPCConnection;
+@property (retain) NSError *previousPlugInError;
 
 + (BOOL)canHandleURLComponents:(id)arg1;
 + (Class)plugInClasses;
@@ -17,6 +19,8 @@
 - (id)XPCConnection;
 - (void)dealloc;
 - (void)getAppLinkWithCompletionHandler:(id /* block */)arg1;
+- (id)previousPlugInError;
+- (void)setPreviousPlugInError:(id)arg1;
 - (void)setURLComponents:(id)arg1;
 - (void)setXPCConnection:(id)arg1;
 

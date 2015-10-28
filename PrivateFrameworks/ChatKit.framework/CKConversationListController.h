@@ -52,6 +52,7 @@
 - (void)_chatParticipantsChangedNotification:(id)arg1;
 - (void)_chatUnreadCountDidChange:(id)arg1;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
+- (void)_conversationContactPhotosEnabledChangedNotification:(id)arg1;
 - (void)_conversationDisplayNameChangedNotification:(id)arg1;
 - (void)_conversationFilteringStateChangedNotification:(id)arg1;
 - (void)_conversationIsFilteredChangedNotification:(id)arg1;

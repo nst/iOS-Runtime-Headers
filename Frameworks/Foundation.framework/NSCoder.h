@@ -104,6 +104,12 @@
 - (void)encodeArrayOfConditionalObjects:(id)arg1 forKey:(id)arg2;
 - (void)encodeSetOfConditionalObjects:(id)arg1 forKey:(id)arg2;
 
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (id)_ph_sandboxExtensionTokenKeyForURLKey:(id)arg1;
+- (id)ph_decodeSandboxedURLForKey:(id)arg1 sandboxExtensionWrapper:(id*)arg2;
+- (void)ph_encodeSandboxedURL:(id)arg1 forKey:(id)arg2;
+
 // Image: /System/Library/Frameworks/QuartzCore.framework/QuartzCore
 
 - (BOOL)CA_decodeCGFloatArray:(float*)arg1 count:(unsigned long)arg2 forKey:(id)arg3;

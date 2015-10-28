@@ -3,47 +3,39 @@
  */
 
 @interface MusicEntityCollectionViewDescriptor : MusicEntityViewDescriptor {
-    id /* block */ _layoutMetricsBlock;
+    MPULayoutInterpolator *_lateralContentInsetFromCollectionViewContainerWidthInterpolator;
     float _sectionHeaderBottomContentInset;
     BOOL _shouldFlattenToSingleSectionInRegularWidthAndHeight;
     BOOL _shouldShowOnlyFirstRowOfContent;
     BOOL _showsSectionHeaders;
-    float _verticalLockupMaximumWidth;
-    struct { 
-        float multiplier; 
-        float constant; 
-    } _verticalLockupWidthFromCollectionViewWidthLinearRelation;
-    BOOL _wantsEdgeToEdgeLayout;
+    MPULayoutInterpolator *_textLateralEdgePaddingFromInteritemSpacingLayoutInterpolator;
+    MPULayoutInterpolator *_verticalLockupWidthFromCollectionViewWidthInterpolator;
 }
 
-@property (nonatomic, copy) id /* block */ layoutMetricsBlock;
+@property (nonatomic, copy) MPULayoutInterpolator *lateralContentInsetFromCollectionViewContainerWidthInterpolator;
 @property (nonatomic) float sectionHeaderBottomContentInset;
 @property (nonatomic) BOOL shouldFlattenToSingleSectionInRegularWidthAndHeight;
 @property (nonatomic) BOOL shouldShowOnlyFirstRowOfContent;
 @property (nonatomic) BOOL showsSectionHeaders;
-@property (nonatomic) float verticalLockupMaximumWidth;
-@property (nonatomic) struct { float x1; float x2; } verticalLockupWidthFromCollectionViewWidthLinearRelation;
-@property (nonatomic) BOOL wantsEdgeToEdgeLayout;
+@property (nonatomic, copy) MPULayoutInterpolator *textLateralEdgePaddingFromInteritemSpacingLayoutInterpolator;
+@property (nonatomic, copy) MPULayoutInterpolator *verticalLockupWidthFromCollectionViewWidthInterpolator;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (id /* block */)layoutMetricsBlock;
-- (id)layoutMetricsForTraitCollection:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
+- (id)lateralContentInsetFromCollectionViewContainerWidthInterpolator;
 - (float)sectionHeaderBottomContentInset;
-- (void)setLayoutMetricsBlock:(id /* block */)arg1;
+- (void)setLateralContentInsetFromCollectionViewContainerWidthInterpolator:(id)arg1;
 - (void)setSectionHeaderBottomContentInset:(float)arg1;
 - (void)setShouldFlattenToSingleSectionInRegularWidthAndHeight:(BOOL)arg1;
 - (void)setShouldShowOnlyFirstRowOfContent:(BOOL)arg1;
 - (void)setShowsSectionHeaders:(BOOL)arg1;
-- (void)setVerticalLockupMaximumWidth:(float)arg1;
-- (void)setVerticalLockupWidthFromCollectionViewWidthLinearRelation:(struct { float x1; float x2; })arg1;
-- (void)setWantsEdgeToEdgeLayout:(BOOL)arg1;
+- (void)setTextLateralEdgePaddingFromInteritemSpacingLayoutInterpolator:(id)arg1;
+- (void)setVerticalLockupWidthFromCollectionViewWidthInterpolator:(id)arg1;
 - (BOOL)shouldFlattenToSingleSectionInRegularWidthAndHeight;
 - (BOOL)shouldShowOnlyFirstRowOfContent;
 - (BOOL)showsSectionHeaders;
-- (float)verticalLockupMaximumWidth;
-- (struct { float x1; float x2; })verticalLockupWidthFromCollectionViewWidthLinearRelation;
-- (BOOL)wantsEdgeToEdgeLayout;
+- (id)textLateralEdgePaddingFromInteritemSpacingLayoutInterpolator;
+- (id)verticalLockupWidthFromCollectionViewWidthInterpolator;
 
 @end

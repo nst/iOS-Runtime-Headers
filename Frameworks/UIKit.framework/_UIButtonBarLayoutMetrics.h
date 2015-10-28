@@ -5,6 +5,7 @@
 @interface _UIButtonBarLayoutMetrics : NSObject <NSCopying, _UIButtonBarLayoutMetricsData> {
     NSLayoutDimension *_flexibleSpaceGuide;
     NSLayoutDimension *_groupSizeGuide;
+    NSLayoutDimension *_groupSpacingGuide;
     bool _locked;
     NSLayoutDimension *_minimumSpaceGuide;
     NSLayoutYAxisAnchor *_popoverGuideTopAnchor;
@@ -15,6 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSLayoutDimension *flexibleSpaceGuide;
 @property (nonatomic, retain) NSLayoutDimension *groupSizeGuide;
+@property (nonatomic, retain) NSLayoutDimension *groupSpacingGuide;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSLayoutDimension *minimumSpaceGuide;
 @property (nonatomic, retain) NSLayoutYAxisAnchor *popoverGuideTopAnchor;
@@ -28,10 +30,12 @@
 - (id)description;
 - (id)flexibleSpaceGuide;
 - (id)groupSizeGuide;
+- (id)groupSpacingGuide;
 - (id)minimumSpaceGuide;
 - (id)popoverGuideTopAnchor;
 - (void)setFlexibleSpaceGuide:(id)arg1;
 - (void)setGroupSizeGuide:(id)arg1;
+- (void)setGroupSpacingGuide:(id)arg1;
 - (void)setMinimumSpaceGuide:(id)arg1;
 - (void)setPopoverGuideTopAnchor:(id)arg1;
 - (void)setVerticalSizeGuide:(id)arg1;

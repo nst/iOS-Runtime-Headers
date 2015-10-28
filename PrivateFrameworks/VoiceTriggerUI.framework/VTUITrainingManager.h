@@ -26,6 +26,7 @@
     float _rms;
     float _rmsfBuf;
     BOOL _sessionClosing;
+    BOOL _sessionGettingResultFromASR;
     int _sessionNumber;
     BOOL _sessionStateASRError;
     BOOL _sessionStateBOS;

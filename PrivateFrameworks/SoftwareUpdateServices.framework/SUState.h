@@ -4,6 +4,7 @@
 
 @interface SUState : NSObject <NSKeyedUnarchiverDelegate> {
     BOOL _autodownloadNeedsOneTimeRetry;
+    SUDescriptor *_currentDescriptor;
     _SUAutoInstallOperationModel *_lastAutoInstallOperationModel;
     SUDownload *_lastDownload;
     NSString *_lastProductBuild;
@@ -19,6 +20,7 @@
 }
 
 @property (nonatomic) BOOL autodownloadNeedsOneTimeRetry;
+@property (nonatomic, copy) SUDescriptor *currentDescriptor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -41,6 +43,7 @@
 
 - (id)_stateAsDictionary;
 - (BOOL)autodownloadNeedsOneTimeRetry;
+- (id)currentDescriptor;
 - (void)dealloc;
 - (id)description;
 - (id)init;
@@ -60,6 +63,7 @@
 - (id)scheduledAutodownloadWifiPeriodEndTime;
 - (id)scheduledManualDownloadWifiPeriodEndTime;
 - (void)setAutodownloadNeedsOneTimeRetry:(BOOL)arg1;
+- (void)setCurrentDescriptor:(id)arg1;
 - (void)setLastAutoInstallOperationModel:(id)arg1;
 - (void)setLastDownload:(id)arg1;
 - (void)setLastProductBuild:(id)arg1;

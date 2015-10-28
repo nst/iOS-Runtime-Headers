@@ -4,10 +4,12 @@
 
 @interface PHAssetResource : NSObject {
     NSString *_assetLocalIdentifier;
+    unsigned int _cplResourceType;
     PHAssetResourceCreationOptions *_creationOptions;
     NSData *_data;
     NSURL *_fileURL;
     NSString *_originalFilename;
+    id /* block */ _privateFileLoader;
     NSURL *_privateFileURL;
     int _resourceType;
     PHSandboxExtensionWrapper *_sandboxExtensionWrapper;
@@ -15,26 +17,33 @@
 }
 
 @property (nonatomic, copy) NSString *assetLocalIdentifier;
+@property (nonatomic, readonly) unsigned int cplResourceType;
 @property (nonatomic, copy) PHAssetResourceCreationOptions *creationOptions;
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic, retain) NSURL *fileURL;
 @property (nonatomic, copy) NSString *originalFilename;
+@property (setter=_setPrivateFileLoader:, nonatomic, copy) id /* block */ privateFileLoader;
 @property (setter=_setPrivateFileURL:, nonatomic, retain) NSURL *privateFileURL;
 @property (setter=_setSandboxExtensionWrapper:, nonatomic, retain) PHSandboxExtensionWrapper *sandboxExtensionWrapper;
 @property (nonatomic, readonly) int type;
 @property (nonatomic, copy) NSString *uniformTypeIdentifier;
 
 + (id)_newInfosForResourceType:(int)arg1 asset:(id)arg2 managedAsset:(id*)arg3 library:(id)arg4;
++ (unsigned int)_probableCPLResourceTypeFromAssetResourceType:(int)arg1;
 + (id)assetResourcesForAsset:(id)arg1;
++ (id)assetResourcesForLivePhoto:(id)arg1;
 + (BOOL)uniformTypeIdentifier:(struct __CFString { }*)arg1 conformsToResourceType:(int)arg2;
 
 - (void).cxx_destruct;
 - (void)_setAssetLocalIdentifier:(id)arg1;
+- (void)_setCPLResourceType:(unsigned int)arg1;
 - (void)_setOriginalFilename:(id)arg1;
+- (void)_setPrivateFileLoader:(id /* block */)arg1;
 - (void)_setPrivateFileURL:(id)arg1;
 - (void)_setSandboxExtensionWrapper:(id)arg1;
 - (void)_setUniformTypeIdentifier:(id)arg1;
 - (id)assetLocalIdentifier;
+- (unsigned int)cplResourceType;
 - (id)creationOptions;
 - (id)data;
 - (id)description;
@@ -43,6 +52,7 @@
 - (id)initWithPropertyListRepresentation:(id)arg1;
 - (id)initWithResourceType:(int)arg1;
 - (id)originalFilename;
+- (id /* block */)privateFileLoader;
 - (id)privateFileURL;
 - (id)propertyListRepresentation;
 - (id)sandboxExtensionWrapper;

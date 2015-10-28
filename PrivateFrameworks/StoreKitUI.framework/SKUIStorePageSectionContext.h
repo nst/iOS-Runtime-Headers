@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) UICollectionView *collectionView;
 @property (nonatomic, readonly) SKUIColorScheme *colorScheme;
 @property (nonatomic, readonly) int defaultPinningTransitionStyle;
+@property (nonatomic, readonly) float horizontalPadding;
 @property (nonatomic, readonly) SKUIItemOfferButtonAppearance *itemOfferButtonAppearance;
 @property (nonatomic, readonly) float landscapePageWidth;
 @property (nonatomic, readonly) int layoutStyle;
@@ -54,6 +55,7 @@
 - (id)collectionView;
 - (id)colorScheme;
 - (int)defaultPinningTransitionStyle;
+- (float)horizontalPadding;
 - (id)init;
 - (id)itemOfferButtonAppearance;
 - (float)landscapePageWidth;

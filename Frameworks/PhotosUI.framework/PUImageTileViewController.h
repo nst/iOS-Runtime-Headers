@@ -122,7 +122,7 @@
 - (id)generateAssetTransitionInfo;
 - (id)image;
 - (void)imageRequester:(id)arg1 didChange:(id)arg2;
-- (void)loadView;
+- (id)loadView;
 - (id)mediaProvider;
 - (void)mediaProviderDidChange;
 - (id)placeholderColor;

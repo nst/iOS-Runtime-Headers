@@ -8,18 +8,26 @@
 
 @property (nonatomic, readonly) NSDictionary *bagDictionary;
 @property (nonatomic, readonly) unsigned int librarySharedPlaylistTrackCountLimit;
+@property (nonatomic, readonly) int minimumNumberOfDaysBetweenPresentingWelcomeScreen;
 @property (nonatomic, readonly) NSURL *prominentRadioStationInfoURL;
 @property (nonatomic, readonly) BOOL supportsConnect;
 @property (nonatomic, readonly) BOOL supportsSubscription;
 @property (nonatomic, readonly) NSDictionary *tabConfigurations;
+@property (nonatomic, readonly) int versionForNoThanksOptOut;
+@property (nonatomic, readonly) int versionForNotNowOptOut;
 
 - (void).cxx_destruct;
+- (int)_optOutVersionForKey:(id)arg1;
+- (id)_subscriptionDictionary;
 - (id)bagDictionary;
 - (id)initWithBagDictionary:(id)arg1;
 - (unsigned int)librarySharedPlaylistTrackCountLimit;
+- (int)minimumNumberOfDaysBetweenPresentingWelcomeScreen;
 - (id)prominentRadioStationInfoURL;
 - (BOOL)supportsConnect;
 - (BOOL)supportsSubscription;
 - (id)tabConfigurations;
+- (int)versionForNoThanksOptOut;
+- (int)versionForNotNowOptOut;
 
 @end

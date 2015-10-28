@@ -3,6 +3,7 @@
  */
 
 @interface AKSignaturesViewController_iOS : UIViewController <AKSignatureCreationControllerDelegate, UINavigationBarDelegate, UITableViewDataSource, UITableViewDelegate> {
+    BOOL _allowsEdits;
     AKController *_controller;
     <AKSignaturesViewControllerDelegate> *_delegate;
     NSArray *_editingLeftBarItems;
@@ -10,9 +11,13 @@
     UINavigationBar *_navBar;
     BOOL _presentedInAlert;
     NSArray *_rightBarItems;
+    BOOL _showAddEditButtonRow;
+    BOOL _showsNavigationBar;
+    UIColor *_tableBackgroundColor;
     UITableView *_tableView;
 }
 
+@property (nonatomic) BOOL allowsEdits;
 @property (nonatomic) AKController *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AKSignaturesViewControllerDelegate> *delegate;
@@ -24,7 +29,10 @@
 @property (nonatomic, retain) UINavigationBar *navBar;
 @property (nonatomic) BOOL presentedInAlert;
 @property (nonatomic, retain) NSArray *rightBarItems;
+@property (nonatomic) BOOL showAddEditButtonRow;
+@property (nonatomic) BOOL showsNavigationBar;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) UIColor *tableBackgroundColor;
 @property (nonatomic, retain) UITableView *tableView;
 
 - (void).cxx_destruct;
@@ -33,6 +41,7 @@
 - (void)_continueToCreateSignature:(id)arg1;
 - (void)_deleteSignature:(id)arg1;
 - (id)_signatures;
+- (BOOL)allowsEdits;
 - (id)controller;
 - (id)delegate;
 - (id)editingLeftBarItems;
@@ -44,6 +53,7 @@
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (BOOL)presentedInAlert;
 - (id)rightBarItems;
+- (void)setAllowsEdits:(BOOL)arg1;
 - (void)setController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditingLeftBarItems:(id)arg1;
@@ -51,8 +61,14 @@
 - (void)setNavBar:(id)arg1;
 - (void)setPresentedInAlert:(BOOL)arg1;
 - (void)setRightBarItems:(id)arg1;
+- (void)setShowAddEditButtonRow:(BOOL)arg1;
+- (void)setShowsNavigationBar:(BOOL)arg1;
+- (void)setTableBackgroundColor:(id)arg1;
 - (void)setTableView:(id)arg1;
+- (BOOL)showAddEditButtonRow;
+- (BOOL)showsNavigationBar;
 - (void)signatureCreationControllerDidCreateSignature:(id)arg1;
+- (id)tableBackgroundColor;
 - (id)tableView;
 - (BOOL)tableView:(id)arg1 canEditRowAtIndexPath:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

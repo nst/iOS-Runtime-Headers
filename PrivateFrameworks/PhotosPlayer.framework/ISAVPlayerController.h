@@ -3,7 +3,6 @@
  */
 
 @interface ISAVPlayerController : NSObject {
-    AVPlayerItem *__currentAudioPlayerItem;
     AVPlayerItem *__currentVideoPlayerItem;
     id __didBeginPlaybackObserver;
     struct { 
@@ -25,6 +24,12 @@
         int timescale; 
         unsigned int flags; 
         long long epoch; 
+    } __lastSetForwardPlaybackEndTime;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
     } __observedPlaybackNearEndTime;
     BOOL __pendingReset;
     AVPlayerItem *__playerItemToObservePlaybackEnd;
@@ -33,7 +38,6 @@
     BOOL __seekingVideo;
     BOOL __shouldPlayAudio;
     BOOL __shouldPreroll;
-    AVPlayer *_audioPlayer;
     struct { 
         long long value; 
         int timescale; 
@@ -51,17 +55,18 @@
     float _playRate;
     float _playVolume;
     id _playbackNearEndTimeObserver;
+    double _prePhotoGapTime;
     int _state;
     AVPlayer *_videoPlayer;
 }
 
-@property (setter=_setCurrentAudioPlayerItem:, nonatomic, retain) AVPlayerItem *_currentAudioPlayerItem;
 @property (setter=_setCurrentVideoPlayerItem:, nonatomic, retain) AVPlayerItem *_currentVideoPlayerItem;
 @property (setter=_setDidBeginPlaybackObserver:, nonatomic, retain) id _didBeginPlaybackObserver;
 @property (setter=_setForwardPlaybackEndTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _forwardPlaybackEndTime;
 @property (setter=_setHintPlayRate:, nonatomic) float _hintPlayRate;
 @property (setter=_setPerformingChanges:, nonatomic) BOOL _isPerfomingChanges;
 @property (setter=_setLastResetTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _lastResetTime;
+@property (setter=_setLastSetForwardPlaybackEndTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _lastSetForwardPlaybackEndTime;
 @property (setter=_setObservedPlaybackNearEndTime:, nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } _observedPlaybackNearEndTime;
 @property (getter=_hasPendingReset, setter=_setPendingReset:, nonatomic) BOOL _pendingReset;
 @property (setter=_setPlayerItemToObservePlaybackEnd:, nonatomic, retain) AVPlayerItem *_playerItemToObservePlaybackEnd;
@@ -70,16 +75,15 @@
 @property (getter=_isSeekingVideo, setter=_setSeekingVideo:, nonatomic) BOOL _seekingVideo;
 @property (setter=_setShouldPlayAudio:, nonatomic) BOOL _shouldPlayAudio;
 @property (setter=_setShouldPreroll:, nonatomic) BOOL _shouldPreroll;
-@property (nonatomic, retain) AVPlayer *audioPlayer;
 @property (nonatomic) <ISAVPlayerControllerDelegate> *delegate;
 @property (nonatomic, readonly) BOOL isSeeking;
 @property (nonatomic) float playRate;
 @property (nonatomic) float playVolume;
+@property (nonatomic) double prePhotoGapTime;
 @property (nonatomic) int state;
 @property (nonatomic, retain) AVPlayer *videoPlayer;
 
 - (void).cxx_destruct;
-- (id)_currentAudioPlayerItem;
 - (id)_currentVideoPlayerItem;
 - (id)_didBeginPlaybackObserver;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_duration;
@@ -91,6 +95,7 @@
 - (BOOL)_isPerfomingChanges;
 - (BOOL)_isSeekingVideo;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_lastResetTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })_lastSetForwardPlaybackEndTime;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_observedPlaybackNearEndTime;
 - (void)_pauseVideo;
 - (void)_playVideoWithAudioIfReady;
@@ -101,13 +106,12 @@
 - (void)_safelyUpdateRateForPlayers;
 - (int)_seekRequestID;
 - (void)_seekToDesiredTimeIfReady;
-- (void)_setAudioPlayer:(id)arg1;
-- (void)_setCurrentAudioPlayerItem:(id)arg1;
 - (void)_setCurrentVideoPlayerItem:(id)arg1;
 - (void)_setDidBeginPlaybackObserver:(id)arg1;
 - (void)_setForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setHintPlayRate:(float)arg1;
 - (void)_setLastResetTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)_setLastSetForwardPlaybackEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setObservedPlaybackNearEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)_setPendingReset:(BOOL)arg1;
 - (void)_setPerformingChanges:(BOOL)arg1;
@@ -123,11 +127,10 @@
 - (void)_startPlayingFromTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 withRate:(float)arg3 shouldPlayAudio:(BOOL)arg4;
 - (void)_updatePlayersIfNeeded;
 - (void)_videoPlayerDidBeginPlaybackWithObserver:(id)arg1;
-- (id)audioPlayer;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithVideoPlayer:(id)arg1 audioPlayer:(id)arg2;
+- (id)initWithVideoPlayer:(id)arg1;
 - (BOOL)isSeeking;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
@@ -135,14 +138,14 @@
 - (void)playFromTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 withRate:(float)arg3 shouldPlayAudio:(BOOL)arg4;
 - (float)playRate;
 - (float)playVolume;
+- (double)prePhotoGapTime;
 - (void)resetToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)resetToTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 hintEndTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 hintPlayRate:(float)arg3;
 - (void)setDelegate:(id)arg1;
 - (void)setPlayRate:(float)arg1;
 - (void)setPlayVolume:(float)arg1;
-- (void)startObservingVideoPlayerItem:(id)arg1 audioPlayerItem:(id)arg2;
+- (void)setPrePhotoGapTime:(double)arg1;
 - (int)state;
-- (void)stopObservingVideoPlayerItem:(id)arg1 audioPlayerItem:(id)arg2;
 - (id)videoPlayer;
 
 @end

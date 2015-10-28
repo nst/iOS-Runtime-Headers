@@ -18,13 +18,14 @@
 
 - (void).cxx_destruct;
 - (void)_asyncFlushSubscoreHistory;
+- (void)_setupAsset:(id)arg1 withInitializer:(id /* block */)arg2;
 - (struct { char *x1; double x2[17]; double x3; }*)getPredictionItemsWithCount:(int*)arg1;
 - (id)init;
-- (id)initWithAsset:(id)arg1 withDayZeroAsset:(id)arg2 withAssetGroupId:(id)arg3;
+- (id)initWithAsset:(id)arg1 withDayZeroAsset:(id)arg2;
 - (void)logInputsForPredictionItem:(struct { char *x1; double x2[17]; double x3; })arg1 withOutcome:(unsigned int)arg2;
 - (id)pathsToBackUp;
 - (id)predictWithLimit:(unsigned int)arg1;
-- (double)predictionScoreForItem:(struct { char *x1; double x2[17]; double x3; }*)arg1;
+- (double)predictionScoreForItem:(const struct { char *x1; double x2[17]; double x3; }*)arg1;
 - (void)receiveFeedback:(id)arg1;
 - (void)restoreSerializedState:(id)arg1;
 - (id)serializeState;

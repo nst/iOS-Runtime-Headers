@@ -17,7 +17,6 @@
     BOOL _isPreparingStation;
     int _maximumGetTracksRetryCount;
     MPPlaceholderAVItem *_placeholderAVItem;
-    SSVPlaybackLease *_playbackLease;
     NSArray *_previousDatabaseTrackPlaybackDescriptorQueue;
     NSMapTable *_radioTrackToAdSlot;
     RadioStation *_station;

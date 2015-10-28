@@ -3,7 +3,6 @@
  */
 
 @interface UIStackView : UIView {
-    NSMutableArray *__mutableArrangedSubviews;
     _UIAlignedLayoutArrangement *_alignmentArrangement;
     BOOL _didRequestTallestBaselineViewForFirst;
     BOOL _didRequestTallestBaselineViewForLast;
@@ -14,7 +13,6 @@
     BOOL _viewForLastBaselineLayoutDidChange;
 }
 
-@property (nonatomic, retain) NSMutableArray *_mutableArrangedSubviews;
 @property (nonatomic) int alignment;
 @property (nonatomic, readonly, copy) NSArray *arrangedSubviews;
 @property (nonatomic) int axis;
@@ -31,7 +29,6 @@
 - (void)_commonStackViewInitializationWithArrangedSubviews:(id)arg1;
 - (BOOL)_hasLayoutArrangements;
 - (void)_intrinsicContentSizeInvalidatedForChildView:(id)arg1;
-- (id)_mutableArrangedSubviews;
 - (id)_mutableLayoutArrangements;
 - (BOOL)_recordBaselineLoweringInfo;
 - (BOOL)_shouldRequestTallestBaselineViewForFirst:(BOOL)arg1;
@@ -52,6 +49,7 @@
 - (BOOL)isLayoutMarginsRelativeArrangement;
 - (void)removeArrangedSubview:(id)arg1;
 - (void)setAlignment:(int)arg1;
+- (void)setArrangedSubviews:(id)arg1;
 - (void)setAxis:(int)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBaselineRelativeArrangement:(BOOL)arg1;
@@ -59,7 +57,6 @@
 - (void)setLayoutMarginsRelativeArrangement:(BOOL)arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (void)setSpacing:(float)arg1;
-- (void)set_mutableArrangedSubviews:(id)arg1;
 - (float)spacing;
 - (void)updateConstraints;
 - (id)viewForFirstBaselineLayout;

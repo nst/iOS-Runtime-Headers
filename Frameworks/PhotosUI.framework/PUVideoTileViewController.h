@@ -73,7 +73,7 @@
 - (void)didChangeAnimating;
 - (id)generateAssetTransitionInfo;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (void)loadView;
+- (id)loadView;
 - (id)mediaProvider;
 - (void)setAssetViewModel:(id)arg1;
 - (void)setCanPlayVideo:(BOOL)arg1;

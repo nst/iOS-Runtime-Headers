@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) NSDictionary *hd_persistentUserInfo;
 @property (readonly, copy) NSString *helpAnchor;
 @property (nonatomic, readonly) NSString *idsIdentifier;
+@property (nonatomic, readonly) BOOL isAuthenticationError;
 @property (readonly, copy) NSString *localizedDescription;
 @property (readonly, copy) NSString *localizedFailureReason;
 @property (readonly, copy) NSArray *localizedRecoveryOptions;
@@ -303,6 +304,10 @@
 
 - (BOOL)shouldDisplayToUser;
 
+// Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
+
+- (BOOL)isAuthenticationError;
+
 // Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
 + (id)hmErrorWithCode:(int)arg1;
@@ -364,7 +369,9 @@
 + (id)userErrorForCode:(int)arg1 underlyingError:(id)arg2;
 + (id)userErrorForCode:(int)arg1 userInfo:(id)arg2;
 + (id)userErrorForServerCode:(int)arg1 reason:(id)arg2;
++ (id)userErrorForServerCode:(int)arg1 reason:(id)arg2 userInfo:(id)arg3;
 + (id)userErrorForServerError:(id)arg1;
++ (id)userErrorForServerError:(id)arg1 userInfo:(id)arg2;
 
 - (BOOL)_gkIsUnauthenticatedError;
 

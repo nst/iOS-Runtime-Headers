@@ -9,5 +9,6 @@
 + (BOOL)isDemoModeEnabled;
 + (BOOL)isUnlocked;
 + (void)registerBlockForFirstUnlock:(id /* block */)arg1;
++ (void)registerBlockForFirstUnlock:(id /* block */)arg1 executeIfUnlocked:(BOOL)arg2;
 
 @end

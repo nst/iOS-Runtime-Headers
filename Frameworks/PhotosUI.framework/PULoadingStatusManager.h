@@ -39,6 +39,7 @@
 - (void)_setUpdateScheduled:(BOOL)arg1;
 - (void)_updateIfNeeded;
 - (void)_updateLoadingStatusForItem:(id)arg1;
+- (void)_updateLoadingStatusForItemIfNeeded:(id)arg1;
 - (void)_updateLoadingStatusForItemsIfNeeded;
 - (void)_updateNowIfNeeded;
 - (id)delegate;

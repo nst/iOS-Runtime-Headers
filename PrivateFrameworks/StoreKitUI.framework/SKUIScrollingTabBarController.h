@@ -28,7 +28,6 @@
     BOOL _canHideBarsOnSwipe;
     BOOL _chargeEnabledOnTabBarButtonsContainer;
     SKUIScrollingTabBarContentCollectionView *_contentCollectionView;
-    NSMutableArray *_contentCollectionViewCells;
     struct CGSize { 
         float width; 
         float height; 

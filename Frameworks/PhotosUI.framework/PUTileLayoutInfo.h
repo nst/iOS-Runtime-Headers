@@ -9,19 +9,17 @@
         float y; 
     } _center;
     <PUTilingCoordinateSystem> *_coordinateSystem;
-    NSString *_dataSourceIdentifier;
     struct { 
         float left; 
         float right; 
         float top; 
         float bottom; 
     } _expandedRectInsets;
-    NSIndexPath *_indexPath;
     struct CGSize { 
         float width; 
         float height; 
     } _size;
-    NSString *_tileKind;
+    PUTileIdentifier *_tileIdentifier;
     struct CGAffineTransform { 
         float a; 
         float b; 
@@ -36,12 +34,13 @@
 @property (nonatomic) float alpha;
 @property (nonatomic) struct CGPoint { float x1; float x2; } center;
 @property (nonatomic, retain) <PUTilingCoordinateSystem> *coordinateSystem;
-@property (nonatomic, retain) NSString *dataSourceIdentifier;
+@property (nonatomic, readonly) NSString *dataSourceIdentifier;
 @property (nonatomic) struct { float x1; float x2; float x3; float x4; } expandedRectInsets;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } frame;
-@property (nonatomic, retain) NSIndexPath *indexPath;
+@property (nonatomic, readonly) NSIndexPath *indexPath;
 @property (nonatomic) struct CGSize { float x1; float x2; } size;
-@property (nonatomic, retain) NSString *tileKind;
+@property (nonatomic, retain) PUTileIdentifier *tileIdentifier;
+@property (nonatomic, readonly) NSString *tileKind;
 @property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 @property (nonatomic) float zPosition;
 
@@ -49,10 +48,8 @@
 - (void)_setAlpha:(float)arg1;
 - (void)_setCenter:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_setCoordinateSystem:(id)arg1;
-- (void)_setDataSourceIdentifier:(id)arg1;
-- (void)_setIndexPath:(id)arg1;
 - (void)_setSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setTileKind:(id)arg1;
+- (void)_setTileIdentifier:(id)arg1;
 - (void)_setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)_setZPosition:(float)arg1;
 - (float)alpha;
@@ -68,7 +65,7 @@
 - (unsigned int)hash;
 - (id)indexPath;
 - (id)init;
-- (id)initWithIndexPath:(id)arg1 tileKind:(id)arg2 dataSourceIdentifier:(id)arg3 center:(struct CGPoint { float x1; float x2; })arg4 size:(struct CGSize { float x1; float x2; })arg5 alpha:(float)arg6 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg7 zPosition:(float)arg8 coordinateSystem:(id)arg9;
+- (id)initWithTileIdentifier:(id)arg1 center:(struct CGPoint { float x1; float x2; })arg2 size:(struct CGSize { float x1; float x2; })arg3 alpha:(float)arg4 transform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg5 zPosition:(float)arg6 coordinateSystem:(id)arg7;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isGeometryEqualToLayoutInfo:(id)arg1;
 - (id)layoutInfoByInterpolatingWithLayoutInfo:(id)arg1 mixFactor:(float)arg2 coordinateSystem:(id)arg3;
@@ -81,6 +78,7 @@
 - (struct CGPoint { float x1; float x2; })parallaxOffset;
 - (void)setExpandedRectInsets:(struct { float x1; float x2; float x3; float x4; })arg1;
 - (struct CGSize { float x1; float x2; })size;
+- (id)tileIdentifier;
 - (id)tileKind;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
 - (float)zPosition;

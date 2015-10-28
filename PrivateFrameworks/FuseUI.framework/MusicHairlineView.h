@@ -2,29 +2,22 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicHairlineView : UIImageView {
+@interface MusicHairlineView : UIView {
     UIColor *_lineColor;
-    struct UIOffset { 
-        float horizontal; 
-        float vertical; 
-    } _lineOffset;
     UIView *_lineView;
-    BOOL _rightInsetIgnoresLayoutMargin;
+    int _verticalAlignment;
 }
 
 @property (nonatomic, retain) UIColor *lineColor;
-@property (nonatomic) struct UIOffset { float x1; float x2; } lineOffset;
-@property (nonatomic) BOOL rightInsetIgnoresLayoutMargin;
+@property (nonatomic) int verticalAlignment;
 
 - (void).cxx_destruct;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
-- (void)layoutMarginsDidChange;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)layoutSubviews;
 - (id)lineColor;
-- (struct UIOffset { float x1; float x2; })lineOffset;
-- (BOOL)rightInsetIgnoresLayoutMargin;
+- (void)music_inheritedLayoutInsetsDidChange;
 - (void)setLineColor:(id)arg1;
-- (void)setLineOffset:(struct UIOffset { float x1; float x2; })arg1;
-- (void)setRightInsetIgnoresLayoutMargin:(BOOL)arg1;
+- (void)setVerticalAlignment:(int)arg1;
+- (int)verticalAlignment;
 
 @end

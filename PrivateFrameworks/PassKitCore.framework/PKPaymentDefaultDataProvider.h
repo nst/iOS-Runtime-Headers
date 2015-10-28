@@ -15,6 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isDeviceInRestrictedMode;
 @property (nonatomic, readonly) NSString *secureElementIdentifier;
+@property (nonatomic, readonly) BOOL secureElementIsProductionSigned;
 @property (readonly) Class superclass;
 
 - (void)dealloc;
@@ -27,6 +28,7 @@
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didReceiveTransaction:(id)arg2;
 - (void)paymentPassWithUniqueIdentifier:(id)arg1 didRemoveTransactionWithIdentifier:(id)arg2;
 - (id)secureElementIdentifier;
+- (BOOL)secureElementIsProductionSigned;
 - (void)setDefaultPaymentApplication:(id)arg1 forPassUniqueIdentifier:(id)arg2 completion:(id /* block */)arg3;
 - (void)setDefaultPaymentPassIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;

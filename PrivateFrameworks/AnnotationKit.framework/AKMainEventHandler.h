@@ -32,6 +32,7 @@
         float x; 
         float y; 
     } _leftMouseDownPoint;
+    BOOL _mainEventHandlerIsInDoodleTrackingLoop;
     BOOL _mainEventHandlerIsInRotationLoop;
     BOOL _mainEventHandlerIsInTrackingLoop;
     struct CGPoint { 
@@ -61,6 +62,7 @@
 @property (retain) UIEvent *lastEventWithValidLocationForAutoscroll;
 @property (retain) UIEvent *lastLeftMouseDownEvent;
 @property struct CGPoint { float x1; float x2; } leftMouseDownPoint;
+@property BOOL mainEventHandlerIsInDoodleTrackingLoop;
 @property BOOL mainEventHandlerIsInRotationLoop;
 @property BOOL mainEventHandlerIsInTrackingLoop;
 @property struct CGPoint { float x1; float x2; } panGestureStartPointInWindow;
@@ -93,6 +95,7 @@
 - (id)dragPageController;
 - (BOOL)enterDragEventTrackingLoopWithEvent:(id)arg1 orRecognizer:(id)arg2;
 - (BOOL)enterRotateEventTrackingLoopWithEvent:(id)arg1 orRecognizer:(id)arg2;
+- (void)finishTranslationOfAllSelectedAnnotations;
 - (struct CGPoint { float x1; float x2; })firstDragPoint;
 - (BOOL)handleDoubleDownEvent:(id)arg1 orRecognizer:(id)arg2;
 - (BOOL)handleDownEvent:(id)arg1 orRecognizer:(id)arg2;
@@ -107,6 +110,7 @@
 - (id)lastEventWithValidLocationForAutoscroll;
 - (id)lastLeftMouseDownEvent;
 - (struct CGPoint { float x1; float x2; })leftMouseDownPoint;
+- (BOOL)mainEventHandlerIsInDoodleTrackingLoop;
 - (BOOL)mainEventHandlerIsInRotationLoop;
 - (BOOL)mainEventHandlerIsInTrackingLoop;
 - (BOOL)mainHandleEvent:(id)arg1 orRecognizer:(id)arg2;
@@ -127,6 +131,7 @@
 - (void)setLastEventWithValidLocationForAutoscroll:(id)arg1;
 - (void)setLastLeftMouseDownEvent:(id)arg1;
 - (void)setLeftMouseDownPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setMainEventHandlerIsInDoodleTrackingLoop:(BOOL)arg1;
 - (void)setMainEventHandlerIsInRotationLoop:(BOOL)arg1;
 - (void)setMainEventHandlerIsInTrackingLoop:(BOOL)arg1;
 - (void)setPanGestureStartPointInWindow:(struct CGPoint { float x1; float x2; })arg1;

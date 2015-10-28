@@ -8,15 +8,21 @@
     BOOL _communicatedEndpointDetection;
     BOOL _communicatedStartPointDetection;
     <AFAudioAnalyzerDelegate> *_delegate;
-    BOOL _detectedEndpoint;
-    BOOL _detectedStartPoint;
+    BOOL _detectedOneShotEndpoint;
+    BOOL _detectedOneShotStartpoint;
+    BOOL _detectedRecurrentEndpoint;
+    BOOL _detectedRecurrentStartpoint;
     double _endWaitTime;
     int _endpointMode;
     NSMutableData *_floatSampleBuffer;
     unsigned long _frameRate;
     double _interspeechWaitTime;
     BOOL _isConfigured;
-    double _lastEndOfVoiceActivityTime;
+    double _lastOneShotEndpoint;
+    double _lastOneShotStartpoint;
+    double _lastRecurrentEndpoint;
+    double _lastRecurrentStartpoint;
+    double _minimumDurationForEndpointer;
     NSString *_modelDictPath;
     double _previousSamplesSeen;
     double _sampleRate;
@@ -36,6 +42,7 @@
 @property (readonly) unsigned int hash;
 @property double interspeechWaitTime;
 @property (nonatomic, readonly) double lastEndOfVoiceActivityTime;
+@property (nonatomic) double minimumDurationForEndpointer;
 @property double startWaitTime;
 @property (nonatomic) int style;
 @property (readonly) Class superclass;
@@ -53,6 +60,7 @@
 - (id)init;
 - (double)interspeechWaitTime;
 - (double)lastEndOfVoiceActivityTime;
+- (double)minimumDurationForEndpointer;
 - (void)preheat;
 - (void)reset;
 - (void)saveSamplesSeenOnNextReset;
@@ -61,6 +69,7 @@
 - (void)setEndWaitTime:(double)arg1;
 - (void)setEndpointMode:(int)arg1;
 - (void)setInterspeechWaitTime:(double)arg1;
+- (void)setMinimumDurationForEndpointer:(double)arg1;
 - (void)setStartWaitTime:(double)arg1;
 - (void)setStyle:(int)arg1;
 - (double)startWaitTime;

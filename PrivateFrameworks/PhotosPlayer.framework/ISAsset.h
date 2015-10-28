@@ -3,25 +3,32 @@
  */
 
 @interface ISAsset : NSObject {
+    unsigned int _options;
     struct CGImage { } *_photo;
     int _photoEXIFOrientation;
     double _photoTime;
-    AVURLAsset *_videoAsset;
+    AVAsset *_videoAsset;
 }
 
+@property (nonatomic, readonly) BOOL hasColorAdjustments;
+@property (nonatomic, readonly) unsigned int options;
 @property (nonatomic, readonly) struct CGImage { }*photo;
 @property (nonatomic, readonly) int photoEXIFOrientation;
 @property (nonatomic, readonly) double photoTime;
-@property (nonatomic, readonly, copy) AVURLAsset *videoAsset;
+@property (nonatomic, readonly, copy) AVAsset *videoAsset;
 
 + (id)assetForURL:(id)arg1 error:(id*)arg2;
 
 - (void).cxx_destruct;
 - (void)dealloc;
 - (id)description;
+- (BOOL)hasColorAdjustments;
 - (id)init;
 - (id)initWithVideoAsset:(id)arg1 photo:(struct CGImage { }*)arg2 photoTime:(double)arg3;
+- (id)initWithVideoAsset:(id)arg1 photo:(struct CGImage { }*)arg2 photoTime:(double)arg3 options:(unsigned int)arg4;
 - (id)initWithVideoAsset:(id)arg1 photo:(struct CGImage { }*)arg2 photoTime:(double)arg3 photoEXIFOrientation:(int)arg4;
+- (id)initWithVideoAsset:(id)arg1 photo:(struct CGImage { }*)arg2 photoTime:(double)arg3 photoEXIFOrientation:(int)arg4 options:(unsigned int)arg5;
+- (unsigned int)options;
 - (struct CGImage { }*)photo;
 - (int)photoEXIFOrientation;
 - (double)photoTime;

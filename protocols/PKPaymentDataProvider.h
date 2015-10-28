@@ -10,6 +10,7 @@
 - (<PKPaymentDataProviderDelegate> *)delegate;
 - (BOOL)isDeviceInRestrictedMode;
 - (NSString *)secureElementIdentifier;
+- (BOOL)secureElementIsProductionSigned;
 - (void)setDefaultPaymentApplication:(void *)arg1 forPassUniqueIdentifier:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 8: PKPaymentApplication *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPass *, void*
 - (void)setDefaultPaymentPassIdentifier:(NSString *)arg1;
 - (void)setDelegate:(id <PKPaymentDataProviderDelegate>)arg1;

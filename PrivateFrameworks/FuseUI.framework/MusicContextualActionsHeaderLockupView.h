@@ -35,9 +35,10 @@
 - (void)_shareButtonAction:(id)arg1;
 - (id)_touchForEvent:(id)arg1;
 - (unsigned int)addToLibraryState;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
 - (void)layoutSubviews;
 - (unsigned int)likeState;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })music_inheritedLayoutInsets;
+- (void)music_inheritedLayoutInsetsDidChange;
 - (void)setAddToLibraryState:(unsigned int)arg1;
 - (void)setLikeState:(unsigned int)arg1;
 - (void)setSupportsRadio:(BOOL)arg1;

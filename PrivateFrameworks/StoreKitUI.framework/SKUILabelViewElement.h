@@ -6,7 +6,6 @@
     NSArray *_badges;
     BOOL _containsLinks;
     NSMutableDictionary *_domObjectsToViewElements;
-    BOOL _hasValidEntityText;
     int _labelViewStyle;
     int _linkCounter;
     <SKUILinkHandler> *_linkDelegate;
@@ -34,8 +33,7 @@
 + (BOOL)shouldParseChildDOMElements;
 
 - (void).cxx_destruct;
-- (void)_createText;
-- (void)_loadEntityValuesIfNeeded;
+- (void)_createText:(id)arg1;
 - (id)_stringFromDateElement:(id)arg1;
 - (id)_stringFromDurationElement:(id)arg1;
 - (id)_stringFromNumberElement:(id)arg1;
@@ -43,8 +41,7 @@
 - (id)applyUpdatesWithElement:(id)arg1;
 - (id)badges;
 - (BOOL)containsLinks;
-- (id)entityValueProperties;
-- (void)entityValueProviderDidChange;
+- (void)dealloc;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (int)labelViewStyle;
 - (id)linkDelegate;

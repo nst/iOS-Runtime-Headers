@@ -16,6 +16,8 @@
     NSMutableDictionary *_insertedSupplementaryTopLevelIndexesDict;
     NSMutableIndexSet *_movedItems;
     NSMutableIndexSet *_movedSections;
+    NSIndexPath *_newFocusedIndexPath;
+    int _newFocusedViewType;
     int *_newGlobalItemMap;
     UICollectionViewData *_newModel;
     int *_newSectionMap;
@@ -29,6 +31,8 @@
             float height; 
         } size; 
     } _newVisibleBounds;
+    NSIndexPath *_oldFocusedIndexPath;
+    int _oldFocusedViewType;
     int *_oldGlobalItemMap;
     UICollectionViewData *_oldModel;
     int *_oldSectionMap;

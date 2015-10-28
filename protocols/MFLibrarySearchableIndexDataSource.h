@@ -5,9 +5,9 @@
 
 @required
 
-- (NSArray *)itemsRequiringIndexingForSearchableIndex:(MFLibrarySearchableIndex *)arg1 limit:(unsigned int)arg2;
-- (NSArray *)searchableIndex:(MFLibrarySearchableIndex *)arg1 assignTransaction:(long long)arg2 forIdentifiers:(NSArray *)arg3;
+- (NSArray *)searchableIndex:(MFLibrarySearchableIndex *)arg1 assignTransaction:(long long)arg2 updates:(MFLibrarySearchableIndexUpdates *)arg3;
 - (void)searchableIndex:(MFLibrarySearchableIndex *)arg1 invalidateItemsGreaterThanTransaction:(long long)arg2;
+- (MFLibrarySearchableIndexUpdates *)updatesForSearchableIndex:(MFLibrarySearchableIndex *)arg1 count:(unsigned int)arg2;
 - (unsigned int)verifyRepresentativeSampleForSearchableIndex:(MFLibrarySearchableIndex *)arg1;
 
 @end

@@ -103,9 +103,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didChangeActive;
-- (void)loadView;
 - (void)setAssetViewModel:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)viewDidLoad;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 
 @end

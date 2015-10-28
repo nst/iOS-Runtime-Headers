@@ -20,6 +20,7 @@
 + (id)sharedCoordinator;
 
 - (void).cxx_destruct;
+- (id)_copyStatusDateFromUserDefaults;
 - (id)_copyStatusFromUserDefaults;
 - (id)_copyValidStatusForStatus:(id)arg1;
 - (void)_deviceStoreFrontChangedNotification;

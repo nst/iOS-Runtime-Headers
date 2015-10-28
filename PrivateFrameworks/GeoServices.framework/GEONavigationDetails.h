@@ -5,6 +5,7 @@
 @interface GEONavigationDetails : NSObject {
     unsigned int _annoucementStage;
     GEOCompanionRouteDetails *_companionRoute;
+    id /* block */ _companionRouteFilterBlock;
     GEOCompanionRouteStatus *_companionStatus;
     NSString *_destinationName;
     int _displayStep;
@@ -27,6 +28,7 @@
 
 @property (nonatomic) unsigned int announcementStage;
 @property (nonatomic, readonly) GEOCompanionRouteDetails *companionRoute;
+@property (nonatomic, copy) id /* block */ companionRouteFilterBlock;
 @property (nonatomic, readonly) GEOCompanionRouteStatus *companionStatus;
 @property (nonatomic, readonly) NSString *destinationName;
 @property (nonatomic) int displayStep;
@@ -48,6 +50,7 @@
 
 - (unsigned int)announcementStage;
 - (id)companionRoute;
+- (id /* block */)companionRouteFilterBlock;
 - (id)companionStatus;
 - (void)dealloc;
 - (id)destinationName;
@@ -67,6 +70,7 @@
 - (id)routeMatch;
 - (id)routeSummary;
 - (void)setAnnouncementStage:(unsigned int)arg1;
+- (void)setCompanionRouteFilterBlock:(id /* block */)arg1;
 - (void)setDisplayStep:(int)arg1;
 - (void)setDistanceRemainingOnRoute:(double)arg1;
 - (void)setDistanceToManeuverEnd:(double)arg1;

@@ -4,7 +4,7 @@
 
 @interface _DECFeedbackBuilder : NSObject {
     id /* block */ _feedbackHandler;
-    NSMutableArray *_monitoredResults;
+    NSMutableDictionary *_monitoredResult;
     NSObject<OS_dispatch_queue> *_queue;
 }
 

@@ -64,6 +64,7 @@
 - (void)_handleDidCaptureStillImageNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleDidFinishCaptureNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleDidFinishRecordingIrisMovieNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
+- (void)_handleDidRecordIrisMovieNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleNotification:(id)arg1 payload:(id)arg2;
 - (void)_handleStillImageCompleteNotificationWithPayload:(id)arg1 forRequest:(id)arg2;
 - (void)_handleWillBeginCaptureNotificationWithPayload:(id)arg1 forRequest:(id)arg2;

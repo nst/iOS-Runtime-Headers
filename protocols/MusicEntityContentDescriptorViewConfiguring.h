@@ -15,5 +15,7 @@
 @optional
 
 - (void)setEntityDisabled:(BOOL)arg1;
+- (void)setTextLateralEdgePadding:(float)arg1;
+- (void)updateForAsynchronousPropertyLoadCompleted;
 
 @end

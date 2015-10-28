@@ -28,7 +28,7 @@
         float bottom; 
         float right; 
     } _sectionInsets;
-    BOOL _wantsEdgeToEdgeLayout;
+    float _textLateralEdgePadding;
 }
 
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
@@ -39,18 +39,17 @@
 @property (nonatomic) float itemWidth;
 @property (nonatomic) float minimumInteritemSpacing;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } sectionInsets;
-@property (nonatomic) BOOL wantsEdgeToEdgeLayout;
+@property (nonatomic) float textLateralEdgePadding;
 
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)description;
 - (struct CGSize { float x1; float x2; })headerSize;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })headerViewContentInsets;
+- (id)init;
 - (float)itemHeight;
 - (struct CGSize { float x1; float x2; })itemSize;
 - (float)itemWidth;
 - (float)minimumInteritemSpacing;
-- (void)populateHorizontalMetricsWithSize:(struct CGSize { float x1; float x2; })arg1 linearRelationWidth:(struct { float x1; float x2; })arg2 maximumWidth:(float)arg3;
-- (void)populateHorizontalMetricsWithSize:(struct CGSize { float x1; float x2; })arg1 minimumHorizontalEdgeSpacing:(float)arg2 maximumColumnCount:(int)arg3 interitemSpacing:(float)arg4 minimumCellWidth:(float)arg5 traitCollection:(id)arg6;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionInsets;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setHeaderSize:(struct CGSize { float x1; float x2; })arg1;
@@ -59,7 +58,7 @@
 - (void)setItemWidth:(float)arg1;
 - (void)setMinimumInteritemSpacing:(float)arg1;
 - (void)setSectionInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
-- (void)setWantsEdgeToEdgeLayout:(BOOL)arg1;
-- (BOOL)wantsEdgeToEdgeLayout;
+- (void)setTextLateralEdgePadding:(float)arg1;
+- (float)textLateralEdgePadding;
 
 @end

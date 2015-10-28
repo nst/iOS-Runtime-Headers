@@ -10,6 +10,7 @@
 - (void)stillImageRequestDidCompleteCapture:(CAMStillImageCaptureRequest *)arg1 error:(NSError *)arg2;
 - (void)stillImageRequestDidStartCapturing:(CAMStillImageCaptureRequest *)arg1;
 - (void)stillImageRequestDidStopCapturing:(CAMStillImageCaptureRequest *)arg1;
+- (void)stillImageRequestDidStopCapturingVideo:(CAMStillImageCaptureRequest *)arg1;
 - (void)stillImageRequestWillStartCapturingVideo:(CAMStillImageCaptureRequest *)arg1;
 
 @end

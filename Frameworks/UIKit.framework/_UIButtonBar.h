@@ -15,6 +15,9 @@
     NSMutableArray *_layoutGuides;
     _UIButtonBarLayoutMetrics *_layoutMetrics;
     NSMutableArray *_layoutViews;
+    float _minimumInterGroupSpace;
+    NSLayoutConstraint *_minimumInterGroupSpaceConstraint;
+    UILayoutGuide *_minimumInterGroupSpaceLayoutGuide;
     float _minimumInterItemSpace;
     NSLayoutConstraint *_minimumInterItemSpaceConstraint;
     UILayoutGuide *_minimumInterItemSpaceLayoutGuide;
@@ -31,6 +34,7 @@
 @property (readonly) unsigned int hash;
 @property (getter=_itemsInGroupUseSameSize, setter=_setItemsInGroupUseSameSize:, nonatomic) BOOL itemsInGroupUseSameSize;
 @property (getter=_layoutWidth, nonatomic, readonly) float layoutWidth;
+@property (getter=_minimumInterGroupSpace, setter=_setMinimumInterGroupSpace:, nonatomic) float minimumInterGroupSpace;
 @property (nonatomic) float minimumInterItemSpace;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UIBarButtonItem *ultimateFallbackItem;
@@ -57,10 +61,12 @@
 - (void)_layoutBar;
 - (id)_layoutForGroup:(id)arg1;
 - (float)_layoutWidth;
+- (float)_minimumInterGroupSpace;
 - (id)_newGroupLayout:(id)arg1;
 - (void)_reloadBarButtonGroups;
 - (void)_setCompact:(BOOL)arg1;
 - (void)_setItemsInGroupUseSameSize:(BOOL)arg1;
+- (void)_setMinimumInterGroupSpace:(float)arg1;
 - (void)_setNeedsVisualUpdate;
 - (void)_setVisualProvider:(id)arg1;
 - (id)_targetActionForBarButtonItem:(id)arg1;

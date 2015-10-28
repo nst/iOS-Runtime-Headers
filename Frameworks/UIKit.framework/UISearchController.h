@@ -15,8 +15,8 @@
     } _controllerFlags;
     <UISearchControllerDelegate> *_delegate;
     _UISearchControllerDidScrollDelegate *_didScrollDelegate;
-    BOOL _dimsBackgroundDuringPresentation;
     BOOL _hidesNavigationBarDuringPresentation;
+    BOOL _obscuresBackgroundDuringPresentation;
     UIView *_resultsControllerViewContainer;
     UISearchBar *_searchBar;
     UIViewController *_searchResultsController;
@@ -39,6 +39,7 @@
 @property (nonatomic) BOOL dimsBackgroundDuringPresentation;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL hidesNavigationBarDuringPresentation;
+@property (nonatomic) BOOL obscuresBackgroundDuringPresentation;
 @property (nonatomic, readonly) UISearchBar *searchBar;
 @property (nonatomic, readonly) UIViewController *searchResultsController;
 @property (nonatomic) <UISearchResultsUpdating> *searchResultsUpdater;
@@ -93,6 +94,7 @@
 - (id)_systemInputViewController;
 - (void)_uninstallBackGestureRecognizer;
 - (void)_updateBackdropMaskViewsInScrollView:(id)arg1;
+- (void)_updateBarPresentationStyleForPresentingViewController:(id)arg1;
 - (void)_updateSearchBarMaskIfNecessary;
 - (void)_updateSearchResultsContentScrollViewWithDelta:(struct CGSize { float x1; float x2; })arg1;
 - (void)_updateSearchResultsControllerWithDelta:(struct CGSize { float x1; float x2; })arg1;
@@ -107,14 +109,15 @@
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)dimsBackgroundDuringPresentation;
 - (void)encodeWithCoder:(id)arg1;
-- (void)focusedViewDidChange;
 - (BOOL)hidesNavigationBarDuringPresentation;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSearchResultsController:(id)arg1;
 - (BOOL)isActive;
 - (void)loadView;
+- (BOOL)obscuresBackgroundDuringPresentation;
 - (id)preferredFocusedItem;
 - (id)searchBar;
 - (id)searchResultsController;
@@ -124,6 +127,7 @@
 - (void)setDimsBackgroundDuringPresentation:(BOOL)arg1;
 - (void)setHidesNavigationBarDuringPresentation:(BOOL)arg1;
 - (void)setModalPresentationStyle:(int)arg1;
+- (void)setObscuresBackgroundDuringPresentation:(BOOL)arg1;
 - (void)setSearchResultsUpdater:(id)arg1;
 - (void)set_previousSearchBarPosition:(int)arg1;
 - (void)set_resultsContentScrollViewPresentationOffset:(float)arg1;

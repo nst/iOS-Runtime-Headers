@@ -4,6 +4,6 @@
 
 @interface AKCertificatePinning : NSObject
 
-+ (BOOL)certificateTrust:(struct __SecTrust { }*)arg1 isValidWithServerOID:(id)arg2;
++ (BOOL)isCertificateTrustValidForIDMSServerOID:(struct __SecTrust { }*)arg1;
 
 @end

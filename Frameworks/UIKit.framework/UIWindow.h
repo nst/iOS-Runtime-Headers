@@ -189,6 +189,7 @@
 - (void)_addRotationViewController:(id)arg1;
 - (void)_addTintView:(id)arg1;
 - (void)_adjustSizeClassesAndResizeWindowToFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (float)_adjustedWindowLevelFromLevel:(float)arg1;
 - (BOOL)_alwaysGetsContexts;
 - (id)_animationController;
 - (id)_appearanceContainer;
@@ -263,6 +264,7 @@
 - (void)_finishedFullRotation:(id)arg1 finished:(id)arg2 context:(id)arg3 skipNotification:(BOOL)arg4;
 - (id)_firstResponder;
 - (id)_focusEngine;
+- (id)_focusResponder;
 - (id)_focusedView;
 - (void)_focusedViewDidChange:(id)arg1;
 - (void)_forceTwoPartRotationAnimation:(BOOL)arg1;
@@ -562,6 +564,10 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 - (id)copyIOSurfaceSnapshotView:(int)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (void)music_setWantsDefaultLayoutInsets;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 

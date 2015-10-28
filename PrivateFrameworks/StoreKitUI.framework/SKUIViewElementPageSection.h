@@ -19,6 +19,7 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic, readonly) float defaultVerticalInset;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
@@ -42,6 +43,7 @@
 - (void)collectionViewWillDisplayCellForItemAtIndexPath:(id)arg1;
 - (float)contentInsetAdjustmentForCollectionView:(id)arg1;
 - (int)defaultItemPinningStyle;
+- (float)defaultVerticalInset;
 - (void)entityProvider:(id)arg1 didInvalidateWithContext:(id)arg2;
 - (void)expandEditorialForLabelElement:(id)arg1 indexPath:(id)arg2;
 - (void)getModalSourceViewForViewElement:(id)arg1 completionBlock:(id /* block */)arg2;

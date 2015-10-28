@@ -69,6 +69,7 @@
 - (id)buyButtonDescriptor;
 - (id)confirmationText;
 - (long long)dataPlaybackId;
+- (void)dealloc;
 - (id)description;
 - (unsigned int)elementType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;

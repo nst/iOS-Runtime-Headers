@@ -7,5 +7,6 @@
 - (id)alterations;
 - (BOOL)fullComponentsAreValid:(id)arg1;
 - (id)keysOfInterest;
+- (int)shortNameFormat;
 
 @end

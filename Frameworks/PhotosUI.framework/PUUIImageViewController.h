@@ -10,6 +10,8 @@
     NSString *__videoAssetURL;
     PHAsset *_asset;
     BOOL _isIris;
+    BOOL _wantsLivePhotoResult;
+    BOOL _wantsVideoURLResult;
 }
 
 @property (setter=_setAssetURL:, nonatomic, retain) NSURL *_assetURL;
@@ -24,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)_assetURL;
+- (void)_fetchLivePhotoWithCompletion:(id /* block */)arg1;
 - (void)_fetchVideoWithCompletion:(id /* block */)arg1;
 - (int)_imageManagerVideoRequestID;
 - (id)_irisPlayer;
@@ -36,7 +39,7 @@
 - (id)_videoAssetURL;
 - (void)cropOverlayWasOKed:(id)arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
-- (id)initWithPhoto:(id)arg1 imagePickerProperties:(id)arg2;
+- (id)initWithPhoto:(id)arg1 imagePickerProperties:(id)arg2 expectsLivePhoto:(BOOL)arg3;
 - (id)irisPlayerView:(id)arg1 delegateForGestureRecognizer:(id)arg2;
 - (id)irisPlayerViewViewHostingGestureRecognizers:(id)arg1;
 - (void)loadView;

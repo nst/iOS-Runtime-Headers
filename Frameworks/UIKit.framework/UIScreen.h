@@ -66,6 +66,8 @@
         unsigned int queriedDeviceContentMargins : 1; 
         unsigned int hasCalculatedPointsPerInch : 1; 
         unsigned int screenCreatedFBSDisplay : 1; 
+        unsigned int ignoreFocusUpdateIfNeeded : 1; 
+        unsigned int forceFocusedViewMayRemainFocused : 1; 
     } _screenFlags;
     UISoftwareDimmingWindow *_softwareDimmingWindow;
     double _startedPausingWindows;
@@ -109,6 +111,7 @@
 @property (readonly) <UICoordinateSpace> *fixedCoordinateSpace;
 @property (nonatomic, readonly) UIView *focusedView;
 @property (readonly) unsigned int hash;
+@property (getter=_ignoreFocusUpdateIfNeeded, setter=_setIgnoreFocusUpdateIfNeeded:, nonatomic) BOOL ignoreFocusUpdateIfNeeded;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } is_scaledSize;
 @property (getter=_lastFocusStartTime, nonatomic, readonly) double lastFocusStartTime;
 @property (getter=_lastNotifiedTraitCollection, setter=_setLastNotifiedTraitCollection:, nonatomic, retain) UITraitCollection *lastNotifiedTraitCollection;
@@ -179,6 +182,7 @@
 - (void)_computeMetrics:(BOOL)arg1;
 - (void)_connectScreen;
 - (id)_contextForCurrentFocusState;
+- (id)_contextForProgrammaticFocusUpdateToEnvironment:(id)arg1;
 - (id)_currentFocusAnimationCoordinator;
 - (id)_defaultTraitCollection;
 - (id)_defaultTraitCollectionForInterfaceOrientation:(int)arg1;
@@ -196,6 +200,7 @@
 - (BOOL)_hasStatusBar;
 - (BOOL)_hasWindows;
 - (float)_horizontalPixelScale;
+- (BOOL)_ignoreFocusUpdateIfNeeded;
 - (int)_imageOrientation;
 - (unsigned int)_integerDisplayID;
 - (int)_interfaceOrientation;
@@ -209,6 +214,7 @@
 - (BOOL)_isRightHandDrive;
 - (BOOL)_isRotatable;
 - (BOOL)_isUIElementLimited:(id /* block */)arg1;
+- (BOOL)_isValidInterfaceOrientation:(int)arg1;
 - (BOOL)_isWorkspaceCapable;
 - (double)_lastFocusStartTime;
 - (float)_lastNotifiedBacklightLevel;
@@ -235,6 +241,7 @@
 - (id)_pendingFocusUpdateEnvironment;
 - (id)_pendingPreferredFocusedItem;
 - (float)_pointsPerInch;
+- (void)_possibleFocusedViewAncestor:(id)arg1 willBeRemovedFromSuperview:(id)arg2;
 - (void)_postBrightnessDidChangeNotificationIfAppropriate;
 - (id)_preferredFocusedWindow;
 - (void)_prepareForWindow;
@@ -249,6 +256,7 @@
 - (void)_setDefaultTraitCollection:(id)arg1 notify:(BOOL)arg2;
 - (void)_setExternalDeviceShouldInputText:(BOOL)arg1;
 - (void)_setFocusedWindow:(id)arg1;
+- (void)_setIgnoreFocusUpdateIfNeeded:(BOOL)arg1;
 - (void)_setInterfaceOrientation:(int)arg1;
 - (void)_setInterfaceOrientation:(int)arg1 animated:(BOOL)arg2;
 - (void)_setInterfaceOrientation:(int)arg1 computeMetrics:(BOOL)arg2 animated:(BOOL)arg3;
@@ -277,7 +285,7 @@
 - (void)_updateAvailableDisplayModes;
 - (void)_updateCapabilities;
 - (BOOL)_updateFocusToView:(id)arg1;
-- (BOOL)_updateFocusWithContext:(id)arg1 animationCoordinator:(id)arg2;
+- (BOOL)_updateFocusWithContext:(id)arg1;
 - (void)_updateOverscanCompensationAllowingBackgroundUpdate:(BOOL)arg1;
 - (void)_updateReferenceBoundsToSceneReferenceBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromInterfaceOrientation:(int)arg2 animated:(BOOL)arg3;
 - (void)_updateTraits;

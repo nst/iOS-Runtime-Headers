@@ -7,6 +7,7 @@
 
 - (void)routingController:(MPAVRoutingController *)arg1 didFailToPickRouteWithError:(NSError *)arg2;
 - (void)routingControllerAvailableRoutesDidChange:(MPAVRoutingController *)arg1;
+- (void)routingControllerDidPauseFromActiveRouteChange:(MPAVRoutingController *)arg1;
 - (void)routingControllerExternalScreenTypeDidChange:(MPAVRoutingController *)arg1;
 
 @end

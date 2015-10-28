@@ -15,6 +15,7 @@
     NSMutableArray *_objectModels;
     RUIPage *_pageOriginatingLoad;
     NSURLSessionConfiguration *_sessionConfiguration;
+    RUIStyle *_style;
     NSString *_userAgentString;
 }
 
@@ -27,6 +28,7 @@
 @property (nonatomic, retain) RUILoader *loader;
 @property (nonatomic) UINavigationController *navigationController;
 @property (nonatomic, copy) NSURLSessionConfiguration *sessionConfiguration;
+@property (nonatomic, retain) RUIStyle *style;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *userAgentString;
 
@@ -54,6 +56,7 @@
 - (void)loadURL:(id)arg1 postBody:(id)arg2 completion:(id /* block */)arg3;
 - (id)loader;
 - (void)loader:(id)arg1 didFailWithError:(id)arg2;
+- (void)loader:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)loader:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (void)loader:(id)arg1 receivedObjectModel:(id)arg2 actionSignal:(int)arg3;
 - (id)loader:(id)arg1 willLoadRequest:(id)arg2 redirectResponse:(id)arg3;
@@ -79,7 +82,9 @@
 - (void)setLoader:(id)arg1;
 - (void)setNavigationController:(id)arg1;
 - (void)setSessionConfiguration:(id)arg1;
+- (void)setStyle:(id)arg1;
 - (void)setUserAgentString:(id)arg1;
+- (id)style;
 - (unsigned int)supportedInterfaceOrientationsForObjectModel:(id)arg1 page:(id)arg2;
 - (id)userAgentString;
 - (id)viewControllerForAlertPresentation;

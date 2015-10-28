@@ -59,7 +59,6 @@
 - (void)_contextualActionsButtonTapped:(id)arg1;
 - (id)_currentAddToLibraryButtonImage;
 - (void)_editButtonTapped:(id)arg1;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_effectiveLayoutMargins;
 - (id)_genericActionButtonWithImage:(id)arg1;
 - (id)_genericActionButtonWithImageName:(id)arg1;
 - (id)_genericActionButtonWithText:(id)arg1;
@@ -93,6 +92,7 @@
 - (BOOL)isEditing;
 - (void)layoutSubviews;
 - (int)likeDislikeButtonState;
+- (void)music_inheritedLayoutInsetsDidChange;
 - (id)productHeaderLockupContentDescriptor;
 - (void)setAddToLibraryButtonState:(int)arg1;
 - (void)setDelegate:(id)arg1;
@@ -100,7 +100,6 @@
 - (void)setEditing:(BOOL)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setEntityValueProvider:(id)arg1;
-- (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setLikeDislikeButtonState:(int)arg1;
 - (void)setProductHeaderLockupContentDescriptor:(id)arg1;
 - (id)shareButton;

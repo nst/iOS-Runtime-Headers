@@ -4,10 +4,12 @@
 
 @interface UISaveToCameraRollActivity : UIActivity {
     int _imageCount;
+    int _livePhotoCount;
     int _videoCount;
 }
 
 @property (nonatomic) int imageCount;
+@property (nonatomic) int livePhotoCount;
 @property (nonatomic) int videoCount;
 
 - (id)_activityImage;
@@ -15,9 +17,11 @@
 - (id)activityType;
 - (BOOL)canPerformWithActivityItems:(id)arg1;
 - (int)imageCount;
+- (int)livePhotoCount;
 - (void)performActivity;
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setImageCount:(int)arg1;
+- (void)setLivePhotoCount:(int)arg1;
 - (void)setVideoCount:(int)arg1;
 - (int)videoCount;
 

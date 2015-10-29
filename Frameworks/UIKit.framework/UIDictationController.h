@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIDictationController : NSObject <_UITouchPhaseChangeDelegate> {
+@interface UIDictationController : NSObject <AFDictationDelegate, _UITouchPhaseChangeDelegate> {
     NSArray *_availableLanguages;
     id _callCenter;
     void *_callCenterFrameworkFileHandle;

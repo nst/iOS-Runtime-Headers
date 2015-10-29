@@ -10,6 +10,7 @@
     } _beforeEndEditedRange;
     NSMutableArray *_coalescingUndoCommands;
     BOOL _convertAttributes;
+    BOOL _delayedFixupAfterEditingWantsUndoCommand;
     NSMutableArray *_deletedRanges;
     BOOL _directlyEditing;
     BOOL _disableUndoCoalesceBreaking;
@@ -25,7 +26,8 @@
     BOOL _isFixing;
     BOOL _isHandlingTextCheckingResults;
     BOOL _isResettingBaseWritingDirection;
-    BOOL _isTypingSelectingOrMarkingText;
+    BOOL _isSelectingText;
+    BOOL _isTypingOrMarkingText;
     struct _NSRange { 
         unsigned int location; 
         unsigned int length; 
@@ -52,6 +54,7 @@
 @property (nonatomic, retain) NSMutableArray *coalescingUndoCommands;
 @property (nonatomic) BOOL convertAttributes;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL delayedFixupAfterEditingWantsUndoCommand;
 @property (nonatomic, readonly) NSMutableArray *deletedRanges;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disableUndoCoalesceBreaking;
@@ -69,7 +72,8 @@
 @property (nonatomic) BOOL isFixing;
 @property (nonatomic) BOOL isHandlingTextCheckingResults;
 @property (nonatomic) BOOL isResettingBaseWritingDirection;
-@property (nonatomic) BOOL isTypingSelectingOrMarkingText;
+@property (nonatomic) BOOL isSelectingText;
+@property (nonatomic) BOOL isTypingOrMarkingText;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } lastUndoEditRange;
 @property (nonatomic, readonly) TTMergeableAttributedString *mergeableString;
 @property (nonatomic) BOOL pendingFixupAfterEditing;
@@ -113,6 +117,7 @@
 - (id)dataFromRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 documentAttributes:(id)arg2 error:(id*)arg3;
 - (void)dd_makeLinksForResultsInAttributesOfType:(unsigned int)arg1 context:(id)arg2;
 - (void)dd_resetResults;
+- (BOOL)delayedFixupAfterEditingWantsUndoCommand;
 - (id)deletedRanges;
 - (BOOL)disableUndoCoalesceBreaking;
 - (id)document;
@@ -144,7 +149,8 @@
 - (BOOL)isFixing;
 - (BOOL)isHandlingTextCheckingResults;
 - (BOOL)isResettingBaseWritingDirection;
-- (BOOL)isTypingSelectingOrMarkingText;
+- (BOOL)isSelectingText;
+- (BOOL)isTypingOrMarkingText;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })lastUndoEditRange;
 - (unsigned int)mergeWithDocument:(id)arg1;
 - (id)mergeableString;
@@ -165,6 +171,7 @@
 - (void)setBeforeEndEditedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setCoalescingUndoCommands:(id)arg1;
 - (void)setConvertAttributes:(BOOL)arg1;
+- (void)setDelayedFixupAfterEditingWantsUndoCommand:(BOOL)arg1;
 - (void)setDisableUndoCoalesceBreaking:(BOOL)arg1;
 - (void)setEditingCount:(unsigned int)arg1;
 - (void)setFilterPastedAttributes:(BOOL)arg1;
@@ -177,7 +184,8 @@
 - (void)setIsFixing:(BOOL)arg1;
 - (void)setIsHandlingTextCheckingResults:(BOOL)arg1;
 - (void)setIsResettingBaseWritingDirection:(BOOL)arg1;
-- (void)setIsTypingSelectingOrMarkingText:(BOOL)arg1;
+- (void)setIsSelectingText:(BOOL)arg1;
+- (void)setIsTypingOrMarkingText:(BOOL)arg1;
 - (void)setLastUndoEditRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setPendingFixupAfterEditing:(BOOL)arg1;
 - (void)setRetainOriginalFormatting:(BOOL)arg1;

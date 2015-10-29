@@ -15,7 +15,6 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)didReceiveObjectModel:(id)arg1;
 - (void)dismissBasicLoginUIWithCompletion:(id /* block */)arg1;
 - (id)password;
 - (void)presentBasicLoginUIWithCompletion:(id /* block */)arg1;

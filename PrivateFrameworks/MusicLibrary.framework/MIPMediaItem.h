@@ -7,6 +7,7 @@
     NSString *_artworkId;
     long long _bookmarkTimeMilliseconds;
     NSString *_chapterMetadataUrl;
+    BOOL _cloudAssetAvailable;
     int _cloudStatus;
     NSString *_comment;
     int _contentRating;
@@ -58,6 +59,7 @@
         unsigned int skipCount : 1; 
         unsigned int skipCountDelta : 1; 
         unsigned int year : 1; 
+        unsigned int cloudAssetAvailable : 1; 
         unsigned int explicitContent : 1; 
         unsigned int hasLocalAsset : 1; 
         unsigned int hidden : 1; 
@@ -110,6 +112,7 @@
 @property (nonatomic, retain) NSString *artworkId;
 @property (nonatomic) long long bookmarkTimeMilliseconds;
 @property (nonatomic, retain) NSString *chapterMetadataUrl;
+@property (nonatomic) BOOL cloudAssetAvailable;
 @property (nonatomic) int cloudStatus;
 @property (nonatomic, retain) NSString *comment;
 @property (nonatomic) int contentRating;
@@ -131,6 +134,7 @@
 @property (nonatomic, readonly) BOOL hasArtworkId;
 @property (nonatomic) BOOL hasBookmarkTimeMilliseconds;
 @property (nonatomic, readonly) BOOL hasChapterMetadataUrl;
+@property (nonatomic) BOOL hasCloudAssetAvailable;
 @property (nonatomic) BOOL hasCloudStatus;
 @property (nonatomic, readonly) BOOL hasComment;
 @property (nonatomic) BOOL hasContentRating;
@@ -231,6 +235,7 @@
 - (long long)bookmarkTimeMilliseconds;
 - (id)chapterMetadataUrl;
 - (void)clearLibraryIdentifiers;
+- (BOOL)cloudAssetAvailable;
 - (int)cloudStatus;
 - (id)comment;
 - (int)contentRating;
@@ -256,6 +261,7 @@
 - (BOOL)hasArtworkId;
 - (BOOL)hasBookmarkTimeMilliseconds;
 - (BOOL)hasChapterMetadataUrl;
+- (BOOL)hasCloudAssetAvailable;
 - (BOOL)hasCloudStatus;
 - (BOOL)hasComment;
 - (BOOL)hasContentRating;
@@ -344,6 +350,7 @@
 - (void)setArtworkId:(id)arg1;
 - (void)setBookmarkTimeMilliseconds:(long long)arg1;
 - (void)setChapterMetadataUrl:(id)arg1;
+- (void)setCloudAssetAvailable:(BOOL)arg1;
 - (void)setCloudStatus:(int)arg1;
 - (void)setComment:(id)arg1;
 - (void)setContentRating:(int)arg1;
@@ -363,6 +370,7 @@
 - (void)setGrouping:(id)arg1;
 - (void)setHasAccountId:(BOOL)arg1;
 - (void)setHasBookmarkTimeMilliseconds:(BOOL)arg1;
+- (void)setHasCloudAssetAvailable:(BOOL)arg1;
 - (void)setHasCloudStatus:(BOOL)arg1;
 - (void)setHasContentRating:(BOOL)arg1;
 - (void)setHasContentRatingLevel:(BOOL)arg1;

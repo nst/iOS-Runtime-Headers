@@ -14,8 +14,8 @@
 - (id)_downloadArrowImage;
 - (id)_downloadButton;
 - (id)_downloadImageWithTintColor:(id)arg1;
-- (id)_downloadOptionsDictionary;
 - (void)_handleDownloadButton:(id)arg1;
+- (BOOL)_isStalledAutoDownloadAsset:(id)arg1;
 - (id)dictionaryAssetManager;
 - (id)initWithStyle:(int)arg1;
 - (void)setDictionaryAssetManager:(id)arg1;

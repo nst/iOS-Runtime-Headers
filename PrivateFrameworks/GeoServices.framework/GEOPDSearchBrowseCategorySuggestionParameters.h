@@ -5,13 +5,17 @@
 @interface GEOPDSearchBrowseCategorySuggestionParameters : PBCodable <NSCopying> {
     struct { 
         unsigned int requestLocalTimestamp : 1; 
+        unsigned int minimumNumberOfCategories : 1; 
     } _has;
+    int _minimumNumberOfCategories;
     double _requestLocalTimestamp;
     GEOPDViewportInfo *_viewportInfo;
 }
 
+@property (nonatomic) BOOL hasMinimumNumberOfCategories;
 @property (nonatomic) BOOL hasRequestLocalTimestamp;
 @property (nonatomic, readonly) BOOL hasViewportInfo;
+@property (nonatomic) int minimumNumberOfCategories;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
 
@@ -20,14 +24,18 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasMinimumNumberOfCategories;
 - (BOOL)hasRequestLocalTimestamp;
 - (BOOL)hasViewportInfo;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (int)minimumNumberOfCategories;
 - (BOOL)readFrom:(id)arg1;
 - (double)requestLocalTimestamp;
+- (void)setHasMinimumNumberOfCategories:(BOOL)arg1;
 - (void)setHasRequestLocalTimestamp:(BOOL)arg1;
+- (void)setMinimumNumberOfCategories:(int)arg1;
 - (void)setRequestLocalTimestamp:(double)arg1;
 - (void)setViewportInfo:(id)arg1;
 - (id)viewportInfo;

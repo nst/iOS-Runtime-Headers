@@ -4,6 +4,6 @@
 
 @interface PUVideoPlaceholderTileViewController : PUTileViewController
 
-- (void)loadView;
+- (id)loadView;
 
 @end

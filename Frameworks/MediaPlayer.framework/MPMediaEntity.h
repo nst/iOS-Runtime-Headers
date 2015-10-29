@@ -55,6 +55,7 @@
 + (id)_customPropertyHandlersCollection;
 + (void)registerCustomProperty:(id)arg1 withValueHandler:(id /* block */)arg2;
 + (void)registerSupportedCustomProperties;
++ (BOOL)supportsConcurrentLoadingOfEntityProperties;
 
 - (id)_valuesForRegularEntityProperties:(id)arg1;
 - (id)entityUniqueIdentifier;

@@ -3,6 +3,7 @@
  */
 
 @interface MusicLibraryBrowseTableViewController : UIViewController <MusicClientContextConsuming, MusicEntityPlaybackStatusControllerObserving, MusicIndexBarDataSource, MusicIndexBarScrollDelegate, MusicLibraryBrowseSectionHeaderViewDelegate, MusicLibraryViewConfigurationConsuming, MusicMediaPickerSearchDelegate, MusicSplitInitialStateProviding, MusicTableViewDelegate, UITableViewDataSource, UIViewControllerPreviewingDelegate, UIViewControllerPreviewingDelegate_Private> {
+    MusicAsynchronousPropertyLoadingController *_asynchronousPropertyLoadingController;
     MusicClientContext *_clientContext;
     NSArray *_contentDescriptors;
     UIColor *_defaultSelectionTintColor;
@@ -57,24 +58,24 @@
 - (void)_configureEntityValueContextOutput:(id)arg1 forIndexPath:(id)arg2;
 - (void)_configureForEntityViewDescriptorProperties;
 - (void)_configureSectionEntityValueContextOutput:(id)arg1 forIndex:(unsigned int)arg2;
-- (void)_contentDescriptorDidInvalidateNotification:(id)arg1;
 - (id)_dequeueCoalescingEntityValueProvider;
 - (void)_didFinishContentHeightAnimation;
 - (void)_didFinishEditingStateChangeAnimation;
 - (id)_effectiveEntityProvider;
 - (void)_endIgnoringEntityProviderInvalidation;
-- (void)_entityPlayabilityControllerDidChangeNotification:(id)arg1;
+- (unsigned int)_entityPlayabilityResultForEntityValueContext:(id)arg1;
 - (id)_entityValueContextAtIndexPath:(id)arg1;
-- (void)_entityViewDescriptorDisplayValuesDidChangeNotification:(id)arg1;
+- (void)_handleContentDescriptorDidInvalidateNotification:(id)arg1;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
+- (void)_handleEntityPlayabilityControllerDidChangeNotification:(id)arg1;
 - (void)_handleEntityProviderDidInvalidateNotification:(id)arg1;
+- (void)_handleEntityViewDescriptorDisplayValuesDidChangeNotification:(id)arg1;
+- (void)_handleSectionContentDescriptorDidInvalidateNotification:(id)arg1;
 - (void)_invalidateIndexBarDataSource;
-- (BOOL)_isEntityValueContextDisabled:(id)arg1;
 - (void)_presentContextualActionsWithEntityValueContext:(id)arg1 fromButton:(id)arg2;
 - (void)_recycleCoalescingEntityValueProvider:(id)arg1;
 - (void)_registerForNotificationsForContentDescriptors;
 - (void)_reloadTableViewData;
-- (void)_sectionContentDescriptorDidInvalidateNotification:(id)arg1;
 - (id)_sectionEntityValueContextForIndex:(unsigned int)arg1;
 - (void)_setSelectedIndexPath:(id)arg1 entityValueContext:(id)arg2;
 - (void)_uninstallEditingEntityProviderIfAppropriate;
@@ -160,7 +161,6 @@
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
 - (void)tableViewDataDidReload;
-- (void)tableViewLayoutMarginsDidChange:(id)arg1;
 - (id)tableViewThatNeedsSearchBarHeader;
 - (void)tableViewTintColorDidChange:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

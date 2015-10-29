@@ -23,6 +23,7 @@
     NSMapTable *_textDescriptorsToRecycledTextButtons;
     NSMapTable *_textDescriptorsToTextDrawingViews;
     BOOL _usingPlaceholderArt;
+    BOOL _wasUpdatedForAsynchronousPropertyLoadCompleted;
 }
 
 @property (getter=_currentTextLabelAlpha, nonatomic, readonly) float _currentTextLabelAlpha;
@@ -91,5 +92,6 @@
 - (void)textDrawingCacheWasInvalidated:(id)arg1;
 - (id)traitCollection;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)updateForAsynchronousPropertyLoadCompleted;
 
 @end

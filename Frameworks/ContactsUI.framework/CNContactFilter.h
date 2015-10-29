@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
  */
 
-@interface CNContactFilter : NSObject <NSCopying, NSSecureCoding> {
+@interface CNContactFilter : NSObject <NSCopying> {
     NSString *_fullTextString;
     BOOL _rankSortedResults;
     BOOL _wantsLazyReload;
@@ -14,14 +14,12 @@
 @property (nonatomic, readonly) BOOL supportsSections;
 @property (nonatomic) BOOL wantsLazyReload;
 
-+ (BOOL)supportsSecureCoding;
-
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (void)encodeWithCoder:(id)arg1;
+- (id)dictionaryRepresentation;
 - (id)fullTextString;
-- (id)initWithCoder:(id)arg1;
+- (id)initWithDictionaryRepresentation:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)predicate;
 - (BOOL)rankSortedResults;

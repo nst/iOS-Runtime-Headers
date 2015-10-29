@@ -31,6 +31,7 @@
 - (double)maximumDeceleration;
 - (int)maximumNumberOfFrames;
 - (double)maximumRate;
+- (double)minimumDurationForColorMismatch;
 - (double)minimumVisibilityFactor;
 - (id)oneUpSettings;
 - (id)orbPreviewSettings;

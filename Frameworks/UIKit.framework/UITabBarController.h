@@ -9,6 +9,7 @@
     UIView *_accessoryView;
     UITapGestureRecognizer *_backGestureRecognizer;
     UIView *_containerView;
+    UIFocusContainerGuide *_contentFocusContainerGuide;
     unsigned int _customMaxItems;
     NSArray *_customizableViewControllers;
     unsigned int _defaultMaxItems;
@@ -72,6 +73,8 @@
 - (void)__viewWillLayoutSubviews;
 - (id)_accessoryView;
 - (id)_additionalViewControllersToCheckForUserActivity;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustContentViewFrameForOffscreenFocus:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 viewController:(id)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adjustTabBarFrameForOffscreenFocus:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 barPosition:(int)arg2;
 - (id)_allContainedViewControllers;
 - (BOOL)_allowSelectionWithinMoreList;
 - (BOOL)_allowsAutorotation;
@@ -83,6 +86,7 @@
 - (id)_customAnimatorForFromViewController:(id)arg1 toViewController:(id)arg2;
 - (id)_customInteractionControllerForAnimator:(id)arg1;
 - (id)_deepestUnambiguousResponder;
+- (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)_doAllViewControllersSupportInterfaceOrientation:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_edgeInsetsForChildViewController:(id)arg1 insetsAreAbsolute:(BOOL*)arg2;
 - (unsigned int)_effectiveMaxItems;
@@ -102,6 +106,7 @@
 - (BOOL)_isTabBarFocused;
 - (void)_layoutContainerView;
 - (void)_layoutViewController:(id)arg1;
+- (id)_overridingDestinationEnvironmentForFocusUpdateInContext:(id)arg1;
 - (void)_performBackGesture:(id)arg1;
 - (void)_performFocusGesture:(unsigned int)arg1;
 - (void)_performLeftGesture:(id)arg1;
@@ -130,9 +135,12 @@
 - (void)_setSelectedViewControllerNeedsLayout;
 - (void)_setTabBarPosition:(int)arg1;
 - (void)_setTabBarVisualAltitude;
+- (void)_setUpFocusContainerGuides;
 - (void)_setViewControllers:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)_shouldAdjustContentViewFrameForOffscreenFocus:(id)arg1 adjustedTabBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)_shouldPersistViewWhenCoding;
 - (BOOL)_shouldSynthesizeSupportedOrientations;
+- (BOOL)_shouldUpdateFocusInContext:(id)arg1 position:(int)arg2 heading:(unsigned int)arg3;
 - (BOOL)_shouldUseOnePartRotation;
 - (void)_showBarWithTransition:(int)arg1 isExplicit:(BOOL)arg2;
 - (void)_tabBarItemClicked:(id)arg1;
@@ -142,6 +150,7 @@
 - (void)_updateGestureRecognizersForIdiom:(int)arg1;
 - (void)_updateLayoutForStatusBarAndInterfaceOrientation;
 - (void)_updateLayoutForTraitCollection:(id)arg1;
+- (void)_updateOffscreenStatus:(BOOL)arg1;
 - (id)_viewControllerForSelectAtIndex:(unsigned int)arg1;
 - (id)_viewControllerForTabBarItem:(id)arg1;
 - (id)_viewControllersInTabBar;
@@ -199,6 +208,7 @@
 - (void)setViewControllers:(id)arg1;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
+- (BOOL)shouldUpdateFocusInContext:(id)arg1;
 - (void)showBarWithTransition:(int)arg1;
 - (BOOL)showsEditButtonOnLeft;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
@@ -214,6 +224,7 @@
 - (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2;
 - (void)transitionFromViewController:(id)arg1 toViewController:(id)arg2 transition:(int)arg3 shouldSetSelected:(BOOL)arg4;
 - (void)transitionViewDidComplete:(id)arg1 fromView:(id)arg2 toView:(id)arg3;
+- (void)transitionViewDidStart:(id)arg1;
 - (void)unwindForSegue:(id)arg1 towardsViewController:(id)arg2;
 - (void)updateTabBarItemForViewController:(id)arg1;
 - (id)viewControllers;

@@ -16,5 +16,6 @@
 - (id)initWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 orbValue:(float)arg3;
 - (struct CGPoint { float x1; float x2; })location;
 - (float)orbValue;
+- (unsigned int)type;
 
 @end

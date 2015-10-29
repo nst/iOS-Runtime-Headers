@@ -20,7 +20,6 @@
 - (void)_runOnAgentQueueWithTransaction:(id)arg1 block:(id /* block */)arg2;
 - (void)_runOnAgentQueueWithTransaction:(id)arg1 delay:(double)arg2 block:(id /* block */)arg3;
 - (void)activate;
-- (void)appInForeground:(id)arg1;
 - (unsigned int)batchSize;
 - (void)beginPruningResourcesOfType:(unsigned int)arg1 withFetchRequest:(id)arg2 then:(id /* block */)arg3;
 - (void)cacheDeleteRequestReceived:(id)arg1;
@@ -38,11 +37,11 @@
 - (BOOL)pruningEnabled;
 - (id)remoteLibrary;
 - (void)resetWalkStatus;
+- (void)runningCloudMaintenance:(id)arg1;
 - (void)setLocalLibrary:(id)arg1;
 - (void)setRemoteLibrary:(id)arg1;
 - (void)settingsChanged:(id)arg1;
 - (BOOL)spaceAvailable:(long long*)arg1 totalSpace:(long long*)arg2;
-- (void)standardPruningKick:(id)arg1;
 - (void)systemStarted:(id)arg1;
 - (int)typeToIndex:(unsigned int)arg1;
 

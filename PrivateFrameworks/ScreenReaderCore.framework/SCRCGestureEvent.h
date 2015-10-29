@@ -14,6 +14,7 @@
 }
 
 - (void)addFingerWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 orbValue:(float)arg3;
+- (void)addStylusWithIdentifier:(unsigned int)arg1 location:(struct CGPoint { float x1; float x2; })arg2 pressure:(float)arg3 altitude:(float)arg4 azimuth:(float)arg5;
 - (struct CGPoint { float x1; float x2; })averageLocation;
 - (struct CGPoint { float x1; float x2; })balancedLocation;
 - (void)dealloc;

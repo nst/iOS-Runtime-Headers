@@ -29,6 +29,7 @@
     NSIndexPath *_loupeIndexPath;
     NSIndexPath *_loupeNeighborIndexPath;
     float _loupeTransitionProgress;
+    float _loupeWidth;
     float _maxAspectRatio;
     BOOL _onlyShowExpandedItem;
     NSIndexPath *_overrideLoupeIndexPath;

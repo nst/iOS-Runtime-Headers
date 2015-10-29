@@ -398,6 +398,10 @@
 - (id)MSMutableDeepCopy;
 - (id)MSMutableDeepCopyWithZone:(struct _NSZone { }*)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
+
+- (BOOL)getLinkState:(BOOL*)arg1 physicalAddress:(unsigned int*)arg2;
+
 // Image: /System/Library/PrivateFrameworks/CoreSuggestions.framework/CoreSuggestions
 
 - (BOOL)hasCaseIgnoringKey:(id)arg1;

@@ -42,6 +42,7 @@
 @property (nonatomic, readonly) double duration;
 @property (getter=isFavorite, nonatomic, readonly) BOOL favorite;
 @property (nonatomic, readonly) unsigned int fullsizeDataFormat;
+@property (nonatomic, readonly) BOOL hasPhotoColorAdjustments;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isPhotoIrisPlaceholder;
 @property (nonatomic, readonly) BOOL isTemporaryPlaceholder;
@@ -70,6 +71,7 @@
 - (id)description;
 - (double)duration;
 - (unsigned int)fullsizeDataFormat;
+- (BOOL)hasPhotoColorAdjustments;
 - (id)init;
 - (id)initWithAsset:(id)arg1 convertible:(id)arg2;
 - (id)initWithAsset:(id)arg1 uuid:(id)arg2;

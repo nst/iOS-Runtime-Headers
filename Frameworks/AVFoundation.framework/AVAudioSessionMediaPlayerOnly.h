@@ -45,5 +45,6 @@
 - (BOOL)setMode:(id)arg1 error:(id*)arg2;
 - (BOOL)setPreferredHardwareSampleRate:(double)arg1 error:(id*)arg2;
 - (BOOL)setPreferredIOBufferDuration:(double)arg1 error:(id*)arg2;
+- (BOOL)setUsingLongFormAudio:(BOOL)arg1 error:(id*)arg2;
 
 @end

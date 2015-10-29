@@ -10,6 +10,7 @@
     NSSQLModel *_dstModel;
     BOOL _hasPKTableChanges;
     NSMappingModel *_mappingModel;
+    NSMutableArray *_pkTableUpdateStatements;
     NSMutableDictionary *_reindexedEntities;
     NSMutableDictionary *_reindexedPropertiesByEntity;
     NSMutableDictionary *_removedEntityMigrations;
@@ -31,6 +32,7 @@
 - (long long)_countUnreferencedPrimaryKeysForEntity:(id)arg1 inForeignKeyColumnName:(id)arg2 fromTable:(id)arg3;
 - (void)_determinePropertyDependenciesOnIDForEntity:(id)arg1;
 - (void)_determineReindexedEntitiesAndAffectedProperties;
+- (id)_originalRootsForAddedEntity:(id)arg1;
 - (void)_populateEntityMigrationDescriptionsAndEntityMap;
 - (void)_populateTableMigrationDescriptions;
 - (id)adapter;
@@ -39,6 +41,7 @@
 - (id)createStatementsForUpdatingEntityKeys;
 - (void)dealloc;
 - (id)entityMigrationDescriptionForEntity:(id)arg1;
+- (void)generatePKTableUpdateStatements;
 - (id)initWithStore:(id)arg1 destinationModel:(id)arg2 mappingModel:(id)arg3;
 - (BOOL)performMigration:(id*)arg1;
 - (id)tableMigrationDescriptionForEntity:(id)arg1;

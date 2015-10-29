@@ -11,7 +11,7 @@
 + (BOOL)isDeviceFormattedForProtection;
 + (BOOL)isUnlocked;
 + (int)lockState;
-+ (void)registerBlockForFirstUnlock:(id /* block */)arg1;
 + (void)registerForLockStateChangeNotifications:(id /* block */)arg1;
++ (void)runBlockWhenDeviceIsReadyForSuggestions:(id /* block */)arg1;
 
 @end

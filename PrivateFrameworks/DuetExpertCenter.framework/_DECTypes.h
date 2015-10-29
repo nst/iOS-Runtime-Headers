@@ -8,6 +8,8 @@
 + (unsigned int)intersectCategories:(unsigned int)arg1 withCategories:(unsigned int)arg2;
 + (void)invokeBlockOverCategoriesMatching:(unsigned int)arg1 block:(id /* block */)arg2;
 + (id)stringForCategory:(unsigned int)arg1;
++ (id)stringForConsumerSubtype:(unsigned char)arg1;
 + (id)stringForConsumerType:(unsigned int)arg1;
++ (id)stringForOutcome:(unsigned int)arg1;
 
 @end

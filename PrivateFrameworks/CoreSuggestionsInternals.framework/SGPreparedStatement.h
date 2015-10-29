@@ -9,7 +9,6 @@
 
 @property (nonatomic, readonly) struct sqlite3_stmt { }*stmt;
 
-- (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)initWithStatementPointer:(struct sqlite3_stmt { }*)arg1 owner:(id)arg2;

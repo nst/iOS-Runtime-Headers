@@ -6,6 +6,12 @@
     _MKPlaceInfoViewControllerRouter *_actionsProxy;
     ABCardGroup *_businessInfoGroup;
     NSArray *_businessInfoOrder;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _businessInfoSizedForMargins;
     float _businessInfoSizedForWidth;
     <MKMapItemVendorDeal> *_deal;
     ABCardGroup *_dealsGroup;
@@ -62,7 +68,9 @@
 - (id)contactView:(id)arg1 cellForItemAtIndex:(int)arg2 inGroup:(id)arg3;
 - (int)contactView:(id)arg1 numberOfItemsInGroup:(id)arg2;
 - (BOOL)contactViewController:(id)arg1 shouldPerformDefaultActionForContact:(id)arg2 propertyKey:(id)arg3 propertyIdentifier:(id)arg4;
+- (void)contentSizeDidChange;
 - (id)deal;
+- (void)dealloc;
 - (id)infoAttributionString;
 - (id)infoDelegate;
 - (id)initWithContact:(id)arg1;

@@ -10,11 +10,12 @@
 + (id)keyForExpert:(id)arg1 subkey:(id)arg2 suffix:(id)arg3;
 + (id)keyWithComponents:(id)arg1;
 + (id)keyWithExpertIdentifier:(id)arg1;
++ (id)keyWithExpertIdentifier:(id)arg1 category:(unsigned int)arg2 consumer:(unsigned int)arg3 prefix:(id)arg4;
++ (id)keyWithExpertIdentifier:(id)arg1 category:(unsigned int)arg2 consumerString:(id)arg3 prefix:(id)arg4;
 + (id)keyWithExpertIdentifier:(id)arg1 prefix:(id)arg2;
 + (id)keyWithExpertIdentifier:(id)arg1 subkey:(id)arg2;
 + (id)keyWithExpertIdentifier:(id)arg1 subkey:(id)arg2 suffix:(id)arg3;
 + (id)keyWithSubkey:(id)arg1;
-+ (id)keysWithExpertIdentifier:(id)arg1 category:(unsigned int)arg2 consumer:(unsigned int)arg3 prefix:(id)arg4 subConsumerIdentifier:(id)arg5;
 + (id)timingKeyForExpert:(id)arg1 subkey:(id)arg2;
 + (id)timingKeyWithExpertIdentifier:(id)arg1 subkey:(id)arg2;
 

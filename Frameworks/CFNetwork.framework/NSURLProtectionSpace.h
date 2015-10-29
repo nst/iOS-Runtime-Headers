@@ -6,6 +6,7 @@
     NSURLProtectionSpaceInternal *_internal;
 }
 
+@property (nonatomic, readonly, copy) NSString *_sf_highLevelDomainAndPort;
 @property (readonly, copy) NSString *authenticationMethod;
 @property (readonly, copy) NSString *host;
 @property (readonly) BOOL isProxy;
@@ -44,6 +45,10 @@
 - (id)realm;
 - (BOOL)receivesCredentialSecurely;
 - (struct __SecTrust { }*)serverTrust;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (id)_sf_highLevelDomainAndPort;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 

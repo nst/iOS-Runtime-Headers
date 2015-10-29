@@ -18,6 +18,7 @@
     id _deviceBatteryStateDidChangeObserver;
     BOOL _disablingAutomaticTermination;
     BOOL _forceScanning;
+    unsigned int _hasDiscoveredVideo;
     BOOL _hasProtectedContent;
     unsigned int _isPictureInPictureSupported;
     BOOL _isResumed;
@@ -30,6 +31,7 @@
     NSArray *_legibleMediaSelectionOptions;
     BOOL _looping;
     NSDictionary *_metadata;
+    unsigned int _needsUpdateHasDiscoveredVideo;
     BOOL _pendingSeek;
     unsigned int _pictureInPictureInterrupted;
     BOOL _playbackSuspended;
@@ -152,7 +154,9 @@
 - (id)_seekTimer;
 - (id)_selectedMediaOptionWithMediaCharacteristic:(id)arg1;
 - (void)_setMediaOption:(id)arg1 mediaCharacteristic:(id)arg2;
+- (void)_setNeedsUpdateHasDiscoveredVideo;
 - (id)_subtitlesForOptions:(id)arg1;
+- (void)_updateHasDiscoveredVideoIfNeeded;
 - (void)_updateScanningBackwardRate;
 - (void)_updateScanningForwardRate;
 - (void)actuallySeekToTime;
@@ -200,6 +204,7 @@
 - (BOOL)hasAudioMediaSelectionOptions;
 - (BOOL)hasContent;
 - (BOOL)hasContentChapters;
+- (BOOL)hasDiscoveredVideo;
 - (BOOL)hasEnabledAudio;
 - (BOOL)hasEnabledVideo;
 - (BOOL)hasLegibleMediaSelectionOptions;

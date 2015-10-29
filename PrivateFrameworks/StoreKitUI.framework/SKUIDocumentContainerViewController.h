@@ -48,6 +48,7 @@
 - (void)_finishLegacyProtocolOperationForResponse:(id)arg1 dataProvider:(id)arg2 dictionary:(id)arg3;
 - (void)_finishLoadOperationWithResponse:(id)arg1 error:(id)arg2;
 - (void)_forceOrientationBackToSupportedOrientation;
+- (BOOL)_isFullScreen;
 - (BOOL)_makeSearchBarFirstResponderOnLoad;
 - (id)_millisecondsFromTimeInterval:(double)arg1;
 - (id)_navigationBarViewElement;

@@ -27,8 +27,8 @@
 - (id)outputDevices;
 - (void)setAudioClient:(id)arg1;
 - (void)setCurrentInputDevice:(id)arg1;
-- (void)setCurrentInputDeviceToDeviceWithID:(id)arg1;
+- (void)setCurrentInputDeviceToDeviceWithUID:(id)arg1;
 - (void)setCurrentOutputDevice:(id)arg1;
-- (void)setCurrentOutputDeviceToDeviceWithID:(id)arg1;
+- (void)setCurrentOutputDeviceToDeviceWithUID:(id)arg1;
 
 @end

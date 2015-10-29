@@ -9,6 +9,7 @@
     id *_jobsPrioritized;
     int _lock;
     unsigned int _lookAhead;
+    float _lookAheadResolution;
     unsigned int _nextJobIndex;
     unsigned int _pageCount;
     NSOperationQueue *_renderQueue;
@@ -16,6 +17,7 @@
 
 @property (readonly) UIPDFDocument *document;
 @property (readonly) unsigned int lookAhead;
+@property (readonly) float lookAheadResolution;
 @property (readonly) unsigned int pageCount;
 
 - (void)addRenderJob:(id)arg1;
@@ -29,8 +31,9 @@
 - (id)document;
 - (id)getImageIfAvailableForPage:(unsigned int)arg1;
 - (id)initWithDocument:(id)arg1;
-- (id)initWithDocument:(id)arg1 cacheCount:(unsigned int)arg2 lookAhead:(unsigned int)arg3;
+- (id)initWithDocument:(id)arg1 cacheCount:(unsigned int)arg2 lookAhead:(unsigned int)arg3 withLookAheadResolution:(float)arg4;
 - (unsigned int)lookAhead;
+- (float)lookAheadResolution;
 - (unsigned int)pageCount;
 
 @end

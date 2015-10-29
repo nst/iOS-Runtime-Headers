@@ -55,6 +55,7 @@
     SPUISearchTableView *_tableView;
     UITapGestureRecognizer *_tapRecognizer;
     NSDate *_timeOfLastZKWUpdate;
+    UIView *_topDividerView;
     double _triggerTimestamp;
     float _typingHysteresis;
     BOOL _updateTableWhenFinishedPresenting;
@@ -65,6 +66,7 @@
     SPFeedbackVoiceSearch *_voiceSearchFeedback;
     BOOL _wasPreviouslyScrolledToTop;
     _UIBackdropView *_zkwBackdropView;
+    float _zkwBackdropViewTransitionProgress;
     float _zkwExpirationInterval;
 }
 
@@ -89,11 +91,13 @@
 @property unsigned long long queryStartTime;
 @property (readonly) Class superclass;
 @property (retain) NSDate *timeOfLastZKWUpdate;
+@property (retain) UIView *topDividerView;
 @property float typingHysteresis;
 @property BOOL userInitiatedScrollInProgress;
 @property BOOL userIsTyping;
 @property (getter=isVisible, nonatomic, readonly) BOOL visible;
 @property (retain) _UIBackdropView *zkwBackdropView;
+@property float zkwBackdropViewTransitionProgress;
 @property float zkwExpirationInterval;
 
 + (void)openApplicationWithBundleID:(id)arg1;
@@ -104,6 +108,7 @@
 - (id)_actionManager;
 - (void)_addGaussianBlurWithRadius:(float)arg1;
 - (BOOL)_allowSwipeToDismiss;
+- (void)_animateZKWBlurOut:(BOOL)arg1;
 - (void)_cacheZKWQueryLive:(BOOL)arg1 allowInternet:(BOOL)arg2;
 - (void)_cleanUpAfterScrolling:(id)arg1;
 - (void)_clearSearchResults;
@@ -158,7 +163,8 @@
 - (void)activate;
 - (void)animateForReachabilityActivatedWithOffsetFactor:(float)arg1 handler:(id /* block */)arg2;
 - (void)animateForReachabilityDeactivatedWithHandler:(id /* block */)arg1;
-- (void)animateOutZKWBlur;
+- (void)animateZKWIn;
+- (void)animateZKWOut;
 - (void)attributionButtonTapped:(id)arg1;
 - (float)audioLevelForFlamesView;
 - (void)backgroundResetToFullZKWSearchModeIfNeeded;
@@ -179,7 +185,7 @@
 - (void)dealloc;
 - (void)dictationButtonPressed;
 - (void)didFinishPresenting:(BOOL)arg1;
-- (void)didFinishZKWBlurWithZKWHidden:(BOOL)arg1;
+- (void)didFinishZKWBlur;
 - (void)didReceiveMemoryWarning;
 - (void)didSelectActionItemForResult:(id)arg1;
 - (void)dismiss;
@@ -257,11 +263,13 @@
 - (void)setSearchMode:(int)arg1;
 - (void)setTableViewShown:(BOOL)arg1;
 - (void)setTimeOfLastZKWUpdate:(id)arg1;
+- (void)setTopDividerView:(id)arg1;
 - (void)setTypingHysteresis:(float)arg1;
 - (void)setUserInitiatedScrollInProgress:(BOOL)arg1;
 - (void)setUserIsTyping:(BOOL)arg1;
 - (void)setVoiceQueryIdentifier:(id)arg1 reason:(id)arg2;
 - (void)setZkwBackdropView:(id)arg1;
+- (void)setZkwBackdropViewTransitionProgress:(float)arg1;
 - (void)setZkwExpirationInterval:(float)arg1;
 - (BOOL)shouldHideExpandabilityOfSections;
 - (BOOL)shouldShowMoreButtonForSection:(unsigned int)arg1;
@@ -284,7 +292,6 @@
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didEndDisplayingCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (float)tableView:(id)arg1 estimatedHeightForHeaderInSection:(int)arg2;
 - (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (struct CGPoint { float x1; float x2; })tableView:(id)arg1 newContentOffsetAfterUpdate:(struct CGPoint { float x1; float x2; })arg2 context:(id)arg3;
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
@@ -292,9 +299,11 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableViewDidFinishReload:(id)arg1;
+- (BOOL)tableViewIsShown;
 - (BOOL)textFieldShouldClear:(id)arg1;
 - (id)timeOfLastZKWUpdate;
 - (void)timeToStartDictation:(id)arg1;
+- (id)topDividerView;
 - (void)traitCollectionDidChange:(id)arg1;
 - (float)typingHysteresis;
 - (void)updatePresentationProgress:(float)arg1;
@@ -313,6 +322,7 @@
 - (void)willBeginPresentingAnimated:(BOOL)arg1 fromSource:(unsigned int)arg2;
 - (void)willBeginZKWBlur;
 - (id)zkwBackdropView;
+- (float)zkwBackdropViewTransitionProgress;
 - (float)zkwExpirationInterval;
 
 @end

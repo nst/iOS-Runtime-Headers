@@ -4,6 +4,8 @@
 
 @interface MusicMediaPlaylistDetailViewController : MusicMediaProductDetailViewController <UIImagePickerControllerDelegate, UINavigationControllerDelegate> {
     NSString *_curatorStoreID;
+    BOOL _hasForcedCuratorPlaylistRefresh;
+    unsigned long long _playlistSagaID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -26,6 +28,7 @@
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 existingJSProductNativeViewController:(id)arg4 forContentCreation:(BOOL)arg5 curatorStoreID:(id)arg6;
 - (void)mediaProductHeaderContentViewController:(id)arg1 didSelectCameraButton:(id)arg2;
 - (void)mediaProductSplitDetailViewController:(id)arg1 didSelectCameraButton:(id)arg2;
+- (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)viewDidLoad;
 
 @end

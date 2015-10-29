@@ -3,6 +3,7 @@
  */
 
 @interface UIKBTextStyle : NSObject <NSCopying> {
+    int _anchorCorner;
     NSString *_etchColor;
     struct CGPoint { 
         float x; 
@@ -24,6 +25,7 @@
     float _textOpacity;
 }
 
+@property (nonatomic) int anchorCorner;
 @property (nonatomic, retain) NSString *etchColor;
 @property (nonatomic) struct CGPoint { float x1; float x2; } etchOffset;
 @property (nonatomic, retain) NSString *fontName;
@@ -41,6 +43,7 @@
 + (id)styleWithFontName:(id)arg1 withFontSize:(float)arg2;
 + (id)styleWithTextColor:(id)arg1;
 
+- (int)anchorCorner;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
@@ -57,6 +60,7 @@
 - (void)overlayWithStyle:(id)arg1;
 - (float)pathWeight;
 - (int)selector;
+- (void)setAnchorCorner:(int)arg1;
 - (void)setEtchColor:(id)arg1;
 - (void)setEtchOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setFontName:(id)arg1;

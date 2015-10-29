@@ -4,6 +4,7 @@
 
 @interface _LSHandoffCompatibilityAppLinkPlugIn : _LSSharedWebCredentialsAppLinkPlugIn
 
+- (void)getAppLinkWithCompletionHandler:(id /* block */)arg1;
 - (id)init;
 
 @end

@@ -19,6 +19,7 @@
     NSString *_filename;
     BOOL _hasAdjustments;
     BOOL _hidden;
+    BOOL _isPhotoIris;
     NSData *_locationData;
     unsigned int _mediaSubtypes;
     int _mediaType;
@@ -30,6 +31,8 @@
     unsigned int _thumbnailIndex;
     NSDate *_trashedDate;
     NSString *_uniformTypeIdentifier;
+    long long _videoCpDurationValue;
+    unsigned short _videoCpVisibilityState;
 }
 
 @property (nonatomic, readonly) NSURL *ALAssetURL;
@@ -55,6 +58,7 @@
 @property (nonatomic, readonly) NSString *filename;
 @property (nonatomic, readonly) unsigned int fullsizeDataFormat;
 @property (nonatomic, readonly) BOOL hasAdjustments;
+@property (nonatomic, readonly) BOOL hasPhotoColorAdjustments;
 @property (readonly) unsigned int hash;
 @property (getter=isHidden, nonatomic, readonly) BOOL hidden;
 @property (nonatomic, readonly) int imageOrientation;
@@ -87,13 +91,17 @@
 @property (nonatomic, readonly) NSDate *trashedDate;
 @property (nonatomic, readonly) NSString *uniformTypeIdentifier;
 @property (nonatomic, readonly) NSString *uuid;
+@property (nonatomic, readonly) long long videoCpDurationValue;
+@property (nonatomic, readonly) unsigned short videoCpVisibilityState;
 
 // Image: /System/Library/Frameworks/Photos.framework/Photos
 
 + (void)_computeFingerPrintsOfAsset:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)_fetchAssetsMatchingAdjustedFingerPrint:(id)arg1;
 + (id)_fetchAssetsMatchingMasterFingerPrint:(id)arg1;
-+ (id)_transformMediaSubtypeComparisonPredicate:(id)arg1;
++ (BOOL)_isLivePhotoWithPhotoIris:(BOOL)arg1 hasAdjustments:(BOOL)arg2 videoCpDuration:(long long)arg3 videoCPVisibility:(unsigned short)arg4 sourceType:(unsigned int)arg5;
++ (BOOL)_isPhotoIrisPlaceholderWithPhotoIris:(BOOL)arg1 videoCpDuration:(long long)arg2 sourceType:(unsigned int)arg3;
++ (id)_transformMediaSubtypeComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)_transformValueExpression:(id)arg1 forKeyPath:(id)arg2;
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)fetchAssetsInAssetCollection:(id)arg1 options:(id)arg2;
@@ -104,7 +112,7 @@
 + (id)fetchAssetsWithMediaType:(int)arg1 options:(id)arg2;
 + (id)fetchAssetsWithOptions:(id)arg1;
 + (id)fetchKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
-+ (id)fetchPredicateFromComparisonPredicate:(id)arg1;
++ (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)identifierCode;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsBursts;
@@ -113,7 +121,6 @@
 + (BOOL)managedObjectSupportsTrashedState;
 + (BOOL)managedObjectSupportsVisibilityState;
 + (id)pl_managedAssetsForAssets:(id)arg1;
-+ (unsigned int)pl_phAssetMediaSubtypeForPLAssetSubtype:(short)arg1;
 + (id)propertiesToFetchWithHint:(unsigned int)arg1;
 
 - (void).cxx_destruct;
@@ -178,6 +185,7 @@
 - (id)filename;
 - (BOOL)hasAdjustments;
 - (BOOL)hasLegacyAdjustments;
+- (BOOL)hasPhotoColorAdjustments;
 - (int)imageOrientation;
 - (struct CGSize { float x1; float x2; })imageSize;
 - (id)initWithFetchDictionary:(id)arg1 propertyHint:(unsigned int)arg2 photoLibrary:(id)arg3;
@@ -243,6 +251,8 @@
 - (unsigned int)thumbnailIndex;
 - (id)trashedDate;
 - (id)uniformTypeIdentifier;
+- (long long)videoCpDurationValue;
+- (unsigned short)videoCpVisibilityState;
 
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 

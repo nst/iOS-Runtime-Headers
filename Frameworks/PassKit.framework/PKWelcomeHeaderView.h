@@ -5,13 +5,16 @@
 @interface PKWelcomeHeaderView : UIView {
     UIButton *_actionButton;
     UIActivityIndicatorView *_activityIndicator;
+    UILabel *_environmentLabel;
     unsigned int _passType;
     BOOL _showActivityIndicator;
+    BOOL _showSEHinting;
     UIView *_titleView;
 }
 
 @property (nonatomic, readonly) unsigned int passType;
 @property (nonatomic) BOOL showActivityIndicator;
+@property (nonatomic) BOOL showSEHinting;
 
 - (void)_addTapped;
 - (void)addTapped;
@@ -21,6 +24,8 @@
 - (void)layoutSubviews;
 - (unsigned int)passType;
 - (void)setShowActivityIndicator:(BOOL)arg1;
+- (void)setShowSEHinting:(BOOL)arg1;
 - (BOOL)showActivityIndicator;
+- (BOOL)showSEHinting;
 
 @end

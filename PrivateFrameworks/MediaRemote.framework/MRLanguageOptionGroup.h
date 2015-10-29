@@ -3,7 +3,6 @@
  */
 
 @interface MRLanguageOptionGroup : NSObject <NSSecureCoding> {
-    struct __CFAllocator { } *_allocator;
     BOOL _allowEmptySelection;
     MRLanguageOption *_defaultLanguageOption;
     NSArray *_languageOptions;
@@ -13,7 +12,6 @@
 @property (nonatomic, readonly) MRLanguageOption *defaultLanguageOption;
 @property (nonatomic, readonly) NSArray *languageOptions;
 
-+ (id)allocWithAllocator:(const struct __CFAllocator { }*)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (BOOL)allowEmptySelection;

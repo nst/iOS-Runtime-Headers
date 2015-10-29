@@ -8,10 +8,12 @@
     struct AirPlayPairingSessionPrivate { } *_pairingSession;
     int _pairingState;
     NSObject<OS_dispatch_queue> *_queue;
+    NSObject<OS_dispatch_semaphore> *_responseSemaphore;
     int _scannerState;
     BOOL _started;
     int _state;
     WPTransfer *_transferSession;
+    BOOL _waitingOnSemaphore;
 }
 
 @property (readonly, copy) NSString *debugDescription;

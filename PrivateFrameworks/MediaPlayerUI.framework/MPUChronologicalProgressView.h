@@ -43,6 +43,7 @@
 - (id)_createIndicatorViewWithStyle:(int)arg1;
 - (id)_createTimeLabelWithStyle:(int)arg1;
 - (float)_estimatedTimeLabelsWidth;
+- (float)_estimatedWideTimeLabelsWidth;
 - (void)_internalSetCurrentTime:(double)arg1;
 - (float)_sliderNormalizedValueForTime:(double)arg1;
 - (id)_stringForTime:(double)arg1 isTimeRemaining:(BOOL)arg2;

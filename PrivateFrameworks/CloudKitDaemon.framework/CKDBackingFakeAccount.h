@@ -25,7 +25,6 @@
 - (id)_initFakeAccountWithEmail:(id)arg1 password:(id)arg2;
 - (id)accountBag;
 - (id)accountPropertiesForDataclass:(id)arg1;
-- (BOOL)allowsCellularAccess;
 - (id)ckAccount;
 - (id)cloudKitAuthToken;
 - (BOOL)cloudKitIsEnabled;
@@ -33,6 +32,7 @@
 - (id)dsid;
 - (id)fakeAccountInfoQueue;
 - (id)iCloudAuthToken;
+- (BOOL)iCloudDriveAllowsCellularAccess;
 - (id)identifier;
 - (BOOL)isFakeAccount;
 - (id)password;

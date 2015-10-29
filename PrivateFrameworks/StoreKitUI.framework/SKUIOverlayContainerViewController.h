@@ -16,18 +16,20 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIOverlayContainerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIColor *dimmingViewColor;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSArray *viewControllers;
 
 - (void).cxx_destruct;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_centeredFrameForViewController:(id)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (void)_fadeInViewController:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)_frameAction:(id)arg1;
-- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameToCenterViewController:(id)arg1;
 - (int)_indexOfViewControllerForPoint:(struct CGPoint { float x1; float x2; })arg1;
-- (float)_overlaySpacingForOrientation:(int)arg1;
+- (struct CGSize { float x1; float x2; })_overlaySizeForController:(id)arg1 atBoundsSize:(struct CGSize { float x1; float x2; })arg2;
+- (float)_overlaySpacingForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_popViewControllers;
-- (void)_positionViewControllersForOrientation:(int)arg1;
+- (void)_positionViewControllersForSize:(struct CGSize { float x1; float x2; })arg1 traitCollection:(id)arg2;
 - (void)_pushViewController:(id)arg1;
 - (void)_removeChildren;
 - (id)_selectedViewController;
@@ -37,6 +39,7 @@
 - (id)backstopControl;
 - (void)dealloc;
 - (id)delegate;
+- (id)dimmingViewColor;
 - (void)dismissWithFadeTransitionCompletionBlock:(id /* block */)arg1;
 - (void)dismissWithFlipTransition:(id)arg1 completionBlock:(id /* block */)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
@@ -51,8 +54,9 @@
 - (void)showViewController:(id)arg1 withFlipTransition:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)showViewControllers:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)viewControllers;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)willAnimateRotationToInterfaceOrientation:(int)arg1 duration:(double)arg2;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

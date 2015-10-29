@@ -19,6 +19,8 @@
 - (void)getCommand:(unsigned int*)arg1 pressed:(BOOL*)arg2;
 - (id)init;
 - (id)initKeyboardEventWithUsagePage:(unsigned int)arg1 usageID:(unsigned int)arg2 pressed:(BOOL)arg3;
+- (id)initWithCECDeckControlMode:(unsigned char)arg1 pressed:(BOOL)arg2;
+- (id)initWithCECPlayMode:(unsigned char)arg1 pressed:(BOOL)arg2;
 - (id)initWithCECUserControl:(struct CECUserControl { unsigned char x1; union CECUICommandOperand { struct CECChannelIdentifier { unsigned int x_1_2_1 : 6; unsigned int x_1_2_2 : 10; unsigned int x_1_2_3 : 16; } x_2_1_1; unsigned char x_2_1_2; unsigned char x_2_1_3; unsigned char x_2_1_4; unsigned char x_2_1_5; unsigned char x_2_1_6; unsigned char x_2_1_7; } x2; })arg1 pressed:(BOOL)arg2;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithCommand:(unsigned int)arg1 pressed:(BOOL)arg2;

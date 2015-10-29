@@ -94,8 +94,8 @@
 - (void)setClientCapabilities:(id)arg1;
 - (void)setConnectionRequestNotificationToken:(int)arg1;
 - (void)setCurrentCalls:(id)arg1;
-- (void)setCurrentInputDeviceToDeviceWithID:(id)arg1;
-- (void)setCurrentOutputDeviceToDeviceWithID:(id)arg1;
+- (void)setCurrentInputDeviceToDeviceWithUID:(id)arg1;
+- (void)setCurrentOutputDeviceToDeviceWithUID:(id)arg1;
 - (void)setDaemonDelegate:(id)arg1;
 - (void)setHasRequestedInitialState:(BOOL)arg1;
 - (void)setInitialStateSemaphore:(id)arg1;

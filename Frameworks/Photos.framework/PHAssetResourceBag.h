@@ -34,7 +34,6 @@
 - (BOOL)_extractValidatedVideoURL:(id*)arg1 fromResource:(id)arg2 photoLibrary:(id)arg3 error:(id*)arg4;
 - (id)_validateAssetResourceForAssetCreation:(id)arg1 photoLibrary:(id)arg2 error:(id*)arg3;
 - (BOOL)_validateAssetResourcesForAssetCreation:(id)arg1 photoLibrary:(id)arg2 error:(id*)arg3;
-- (BOOL)_validateImageDataForAssetCreation:(id)arg1 error:(id*)arg2;
 - (id)_validatedContextForResource:(id)arg1;
 - (id)assetCreationRequest;
 - (id)assetResourceWithType:(int)arg1;

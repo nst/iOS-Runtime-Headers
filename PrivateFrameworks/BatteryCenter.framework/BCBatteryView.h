@@ -4,13 +4,13 @@
 
 @interface BCBatteryView : UIView {
     UIImageView *_highCapacityFillImageView;
+    BOOL _lowBattery;
     UIImageView *_lowCapacityFillImageView;
-    unsigned int _lowCharge;
     unsigned int _percentCharge;
     UIImageView *_shellImageView;
 }
 
-@property (nonatomic) unsigned int lowCharge;
+@property (getter=isLowBattery, nonatomic) BOOL lowBattery;
 @property (nonatomic) unsigned int percentCharge;
 
 + (id)chargeGlyph;
@@ -20,10 +20,10 @@
 - (void)_setPercentCharge:(unsigned int)arg1 force:(BOOL)arg2;
 - (void)dealloc;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isLowBattery;
 - (void)layoutSubviews;
-- (unsigned int)lowCharge;
 - (unsigned int)percentCharge;
-- (void)setLowCharge:(unsigned int)arg1;
+- (void)setLowBattery:(BOOL)arg1;
 - (void)setPercentCharge:(unsigned int)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 

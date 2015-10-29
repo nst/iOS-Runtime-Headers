@@ -17,6 +17,7 @@
     int _maximumNumberOfLines;
     int _maximumTextLengthForInput;
     BOOL _needsTextAttributesUpdate;
+    BOOL _prefersAsynchronousLoading;
     float _scaledFirstBaselineOffset;
     BOOL _shouldBaselineAlignTrailingAccessoryImage;
     int _tag;
@@ -58,6 +59,7 @@
 @property (nonatomic, readonly) float maximumHeight;
 @property (nonatomic) int maximumNumberOfLines;
 @property (nonatomic) int maximumTextLengthForInput;
+@property (nonatomic) BOOL prefersAsynchronousLoading;
 @property (nonatomic, readonly) float scaledFirstBaselineOffset;
 @property (nonatomic) BOOL shouldBaselineAlignTrailingAccessoryImage;
 @property (nonatomic) int tag;
@@ -102,6 +104,7 @@
 - (float)maximumHeight;
 - (int)maximumNumberOfLines;
 - (int)maximumTextLengthForInput;
+- (BOOL)prefersAsynchronousLoading;
 - (void)removeTarget:(id)arg1 action:(SEL)arg2 forControlEvents:(unsigned int)arg3;
 - (float)scaledFirstBaselineOffset;
 - (void)setAttributedTextProvider:(id /* block */)arg1;
@@ -115,6 +118,7 @@
 - (void)setLineSpacing:(float)arg1;
 - (void)setMaximumNumberOfLines:(int)arg1;
 - (void)setMaximumTextLengthForInput:(int)arg1;
+- (void)setPrefersAsynchronousLoading:(BOOL)arg1;
 - (void)setShouldBaselineAlignTrailingAccessoryImage:(BOOL)arg1;
 - (void)setTag:(int)arg1;
 - (void)setTextAlignment:(int)arg1;

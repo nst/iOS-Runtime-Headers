@@ -64,6 +64,7 @@
 - (id)_doodleModeToolbarImage;
 - (void)_layoutAttributeContainer;
 - (void)_layoutToolbarForTraitCollection:(id)arg1;
+- (void)_peripheralAvailabilityDidUpdate:(id)arg1;
 - (void)_setupPassthroughViewsForViewController:(id)arg1;
 - (void)_showColorPickerPopover:(id)arg1;
 - (void)_showLineStylePopover:(id)arg1;
@@ -85,7 +86,9 @@
 - (id)colorPickerPopoverViewController;
 - (void)dealloc;
 - (void)dismissAttributeToolbarForSelectedAnnotations;
+- (void)dismissPresentedPopovers;
 - (id)initWithController:(id)arg1;
+- (BOOL)isPresentingPopovers;
 - (id)lineStyleButton;
 - (id)lineStylesViewController;
 - (void)loadView;

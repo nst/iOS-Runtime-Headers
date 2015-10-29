@@ -22,12 +22,14 @@
 - (id)_defaultTextBoxTypingAttributes;
 - (id)_defaultTypingAttributes;
 - (float)_modelBaseScaleFactorForNewAnnotation;
+- (void)_peripheralAvailabilityDidUpdate:(id)arg1;
 - (void)_setRectangleToFitTextOnTextAnnotation:(id)arg1;
 - (float)_strokeWidthForNewAnnotation;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_validatedRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fitsInVisibleRegionOfOverlayView:(id)arg2 centeredAtPoint:(struct CGPoint { float x1; float x2; })arg3;
 - (void)addNewAnnotation:(id)arg1 onPageController:(id)arg2 shouldSelect:(BOOL)arg3 shouldCascade:(BOOL)arg4;
 - (id)controller;
 - (id)createAnnotationOfType:(int)arg1 centeredAtPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (void)dealloc;
 - (id)initWithController:(id)arg1;
 - (BOOL)isInDefaultMode;
 - (void)performToolActionForSender:(id)arg1;

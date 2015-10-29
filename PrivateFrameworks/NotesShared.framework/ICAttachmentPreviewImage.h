@@ -3,6 +3,8 @@
  */
 
 @interface ICAttachmentPreviewImage : ICCloudSyncingObject {
+    NSObject<OS_dispatch_queue> *_fileQueue;
+    long _fileQueueOnceToken;
     unsigned int _imageID;
 }
 
@@ -18,7 +20,7 @@
 
 + (id)allCloudObjects;
 + (id)existingCloudObjectForRecordID:(id)arg1;
-+ (id)fileQueue;
++ (id)fileQueueGroup;
 + (id)identifierForContentIdentifier:(id)arg1 scale:(float)arg2 width:(float)arg3 height:(float)arg4;
 + (id)imageCache;
 + (id)newCloudObjectForRecord:(id)arg1;
@@ -26,14 +28,18 @@
 + (id)previewImageDirectoryURL;
 + (void)purgeAllPreviewImages;
 + (id)recordType;
-+ (void)waitUntilFileAccessIsFinished;
++ (void)waitUntilAllFileWritesAreFinished;
 
+- (void).cxx_destruct;
 - (struct UIImage { Class x1; }*)cachedImage;
 - (struct UIImage { Class x1; }*)cachedOrientedImage;
 - (void)deleteFromLocalDatabase;
+- (id)fileQueue;
 - (void)fixBrokenReferences;
 - (struct UIImage { Class x1; }*)image;
+- (BOOL)imageIsValid;
 - (struct UIImage { Class x1; }*)imageWithBackground:(int)arg1;
+- (id)initWithEntity:(id)arg1 insertIntoManagedObjectContext:(id)arg2;
 - (void)invalidateImage;
 - (void)invalidateOrientedImage;
 - (BOOL)isInICloudAccount;

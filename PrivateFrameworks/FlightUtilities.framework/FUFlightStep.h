@@ -8,6 +8,7 @@
     NSString *_gate;
     NSDate *_scheduledTime;
     NSString *_terminal;
+    int _timeAccuracy;
     NSTimeZone *_timeZone;
 }
 
@@ -16,6 +17,7 @@
 @property (retain) NSString *gate;
 @property (retain) NSDate *scheduledTime;
 @property (retain) NSString *terminal;
+@property int timeAccuracy;
 @property (retain) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
@@ -31,8 +33,10 @@
 - (void)setGate:(id)arg1;
 - (void)setScheduledTime:(id)arg1;
 - (void)setTerminal:(id)arg1;
+- (void)setTimeAccuracy:(int)arg1;
 - (void)setTimeZone:(id)arg1;
 - (id)terminal;
+- (int)timeAccuracy;
 - (id)timeZone;
 
 @end

@@ -13,5 +13,6 @@
 - (void)enableVoiceTrigger:(BOOL)arg1 withAssertion:(id)arg2;
 - (id)init;
 - (void)resetAssertions;
+- (void)setPhraseSpotterBypassing:(BOOL)arg1 timeout:(double)arg2;
 
 @end

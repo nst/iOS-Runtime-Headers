@@ -97,7 +97,7 @@
 + (id)fetchAssetCollectionsWithType:(int)arg1 subtype:(int)arg2 options:(id)arg3;
 + (id)fetchMomentsInMomentList:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsWithOptions:(id)arg1;
-+ (id)fetchPredicateFromComparisonPredicate:(id)arg1;
++ (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchUserLibraryAlbumWithOptions:(id)arg1;
 + (id)identifierCode;
 + (id)managedEntityName;

@@ -81,10 +81,10 @@
 - (void)applyLayoutInfo:(id)arg1;
 - (id)assetSharedViewModel;
 - (void)becomeReusable;
-- (void)loadView;
 - (void)setAssetSharedViewModel:(id)arg1;
 - (void)setVideoPlayer:(id)arg1;
 - (id)videoPlayer;
+- (void)viewDidLoad;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 
 @end

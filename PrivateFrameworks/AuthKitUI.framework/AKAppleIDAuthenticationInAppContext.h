@@ -33,7 +33,6 @@
 - (void)basicLoginAlertControllerWillDismiss:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
-- (void)didReceiveObjectModel:(id)arg1;
 - (void)dismissBasicLoginUIWithCompletion:(id /* block */)arg1;
 - (void)dismissKeepUsingUIWithCompletion:(id /* block */)arg1;
 - (void)dismissSecondFactorUIWithCompletion:(id /* block */)arg1;
@@ -47,11 +46,13 @@
 - (id)presentingViewController;
 - (void)remoteUIController:(id)arg1 didDismissModalNavigationWithObjectModels:(id)arg2;
 - (void)remoteUIController:(id)arg1 didFinishLoadWithError:(id)arg2;
+- (void)remoteUIController:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)remoteUIController:(id)arg1 didReceiveHTTPResponse:(id)arg2;
 - (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(int*)arg3;
 - (BOOL)remoteUIController:(id)arg1 shouldLoadRequest:(id)arg2 redirectResponse:(id)arg3;
 - (void)remoteUIController:(id)arg1 willPresentModalNavigationController:(id)arg2;
 - (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(BOOL)arg3;
+- (id)remoteUIStyle;
 - (id)serverDataHarvester;
 - (void)setDelegate:(id)arg1;
 - (void)setPresentingViewController:(id)arg1;

@@ -4,10 +4,14 @@
 
 @interface MCNewsRestrictions : NSObject
 
++ (id)currentCountryCode;
 + (id)currentNewsRestrictions;
 + (BOOL)isNewsAvailable;
++ (BOOL)isNewsAvailableForCountryCode:(id)arg1;
 + (id)newsAvailableCountryCodes;
++ (id)newsRestrictionsForCountryCode:(id)arg1;
 + (id)newsUnavailableRestrictions;
 + (id)setOfActiveRestrictionUUIDs;
++ (id)setOfActiveRestrictionUUIDsForCountryCode:(id)arg1;
 
 @end

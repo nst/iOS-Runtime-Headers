@@ -204,7 +204,6 @@
 - (id)_HDRBadge;
 - (id)_HDRButton;
 - (struct __CFString { }*)_aggregateDictionaryKeyForCameraMode:(int)arg1 device:(int)arg2;
-- (struct __CFString { }*)_aggregateDictionaryKeyForFlashMode:(int)arg1 flashFired:(BOOL)arg2;
 - (struct __CFString { }*)_aggregateDictionaryKeyForPhysicalButtonType:(int)arg1;
 - (BOOL)_allowsPhysicalCaptureInteraction;
 - (void)_applyAutorotationCorrectingTransformForOrientation:(int)arg1;
@@ -695,12 +694,14 @@
 - (BOOL)shouldHideLivePhotoBadge;
 - (BOOL)shouldHideTimerButton;
 - (BOOL)shouldHideTopBar;
+- (void)startShowingLivePhotoIndicator;
 - (void)stillImageRequestDidCompleteStillImageCapture:(id)arg1 withResponse:(id)arg2 error:(id)arg3;
 - (void)stillImageRequestDidCompleteStillImageLocalPersistence:(id)arg1 withResponse:(id)arg2 error:(id)arg3;
 - (void)stillImageRequestDidCompleteStillImageRemotePersistence:(id)arg1 withResponse:(id)arg2 error:(id)arg3;
 - (void)stillImageRequestDidCompleteVideoCapture:(id)arg1 withResponse:(id)arg2 error:(id)arg3;
 - (void)stillImageRequestDidStartCapturing:(id)arg1;
 - (void)stillImageRequestDidStopCapturing:(id)arg1;
+- (void)stopShowingLivePhotoIndicator;
 - (unsigned int)supportedInterfaceOrientations;
 - (double)timeIntervalForDuration:(int)arg1;
 - (void)timelapseController:(id)arg1 generatedThumbnailImage:(id)arg2 forAssetUUID:(id)arg3 inCaptureSession:(unsigned short)arg4;

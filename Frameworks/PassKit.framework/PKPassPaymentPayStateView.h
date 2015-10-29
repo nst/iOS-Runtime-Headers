@@ -26,7 +26,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL touchRecognizingHint;
 
-- (void)_applyStateWithTextOverride:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_applyStateWithTextOverride:(id)arg1 animated:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)_canEmphasizeState:(int)arg1;
 - (void)_configureLayoutMetrics;
 - (id)_labelForState:(int)arg1 textOverride:(id)arg2;
@@ -43,7 +43,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setLabelAlpha:(float)arg1;
 - (void)setState:(int)arg1;
-- (void)setState:(int)arg1 textOverride:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)setState:(int)arg1 textOverride:(id)arg2 animated:(BOOL)arg3 completionHandler:(id /* block */)arg4;
 - (void)setTouchRecognizingHint:(BOOL)arg1;
 - (int)state;
 - (BOOL)touchRecognizingHint;

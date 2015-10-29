@@ -61,6 +61,7 @@
 - (BOOL)_deleteBookmark:(id)arg1 leaveTombstone:(BOOL)arg2;
 - (BOOL)_deleteRecursively:(unsigned int)arg1;
 - (BOOL)_deleteSyncPropertyForKey:(id)arg1;
+- (BOOL)_ensureFolderChildrenCount:(id)arg1;
 - (void)_enumerateBookmarksForMatchStatement:(id)arg1 normalizedQuery:(id)arg2 usingBlock:(id /* block */)arg3;
 - (id)_errorForMostRecentSQLiteError;
 - (id)_errorForMostRecentSQLiteErrorWithErrorCode:(int)arg1;

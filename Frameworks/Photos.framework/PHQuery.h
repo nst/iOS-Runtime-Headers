@@ -46,7 +46,7 @@
 
 + (id)_containerIdentifierForFetchType:(id)arg1 predicate:(id)arg2 outRelationship:(id*)arg3;
 + (id)_fetchOptionsForFetchingAssetsFromAssetCollection:(id)arg1 options:(id)arg2;
-+ (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 phClass:(Class)arg2;
++ (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 options:(id)arg2 phClass:(Class)arg3;
 + (id)_queryForKeyAssetInAssetCollection:(id)arg1 withRelationshipKeyPath:(id)arg2 options:(id)arg3;
 + (id)_relationshipForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)_rootFolderID;

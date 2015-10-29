@@ -34,7 +34,7 @@
 - (void)_layoutScrollView;
 - (void)_reloadContentSize;
 - (void)_reloadPanelViewWithScrollViewSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_signInFailed:(id)arg1 reason:(id)arg2;
+- (void)_signInFailed:(id)arg1 error:(id)arg2;
 - (void)_signInSuccess:(id)arg1;
 - (void)artworkRequest:(id)arg1 didLoadImage:(id)arg2;
 - (void)dealloc;

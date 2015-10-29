@@ -4,7 +4,7 @@
 
 @interface SANPVideoGetAudioTracksAndSubtitleOptions : SABaseClientBoundCommand
 
-@property (nonatomic, copy) NSLocale *desiredLanguage;
+@property (nonatomic, copy) NSString *desiredLanguage;
 
 + (id)getAudioTracksAndSubtitleOptions;
 + (id)getAudioTracksAndSubtitleOptionsWithDictionary:(id)arg1 context:(id)arg2;

@@ -26,6 +26,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConsumer:(unsigned int)arg1;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isEquivalentToResult:(id)arg1;
 - (BOOL)isEquivalentToResult:(id)arg1 limit:(unsigned int)arg2;
 - (BOOL)isEquivalentToResultForSpotlight:(id)arg1;
 - (int)reason;

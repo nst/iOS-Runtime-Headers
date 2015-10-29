@@ -14,6 +14,7 @@
 + (id)_serviceClient;
 + (BOOL)enabledByAssertion;
 + (BOOL)onBattery;
++ (void)requestPhraseSpotterBypassing:(BOOL)arg1 timeout:(double)arg2;
 + (void)requestVoiceTriggerEnabled:(BOOL)arg1 forReason:(id)arg2;
 
 - (void).cxx_destruct;

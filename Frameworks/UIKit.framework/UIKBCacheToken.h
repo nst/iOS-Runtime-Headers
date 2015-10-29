@@ -33,6 +33,7 @@
 - (int)_writeNumber:(float)arg1 toStr:(char *)arg2;
 - (int)_writeString:(id)arg1 toStr:(char *)arg2 maxLen:(int)arg3;
 - (void)annotateWithBool:(BOOL)arg1;
+- (void)annotateWithInt:(int)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (int)displayHint;

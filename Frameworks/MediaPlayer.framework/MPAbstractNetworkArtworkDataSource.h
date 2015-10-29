@@ -26,6 +26,8 @@
 - (id)_existingRepresentationFromURLCacheForArtworkCatalog:(id)arg1 immediateImageDecompressionAllowed:(BOOL)arg2;
 - (id)_existingRepresentativeObjectForArtworkCatalog:(id)arg1 handler:(id /* block */)arg2;
 - (BOOL)_isRepresentationSize:(struct CGSize { float x1; float x2; })arg1 validForCatalog:(id)arg2;
+- (void)_performAsyncBarrierBlock:(id /* block */)arg1;
+- (void)_performSyncBlock:(id /* block */)arg1;
 - (id)accessQueue;
 - (BOOL)areRepresentationsAvailableForCatalog:(id)arg1;
 - (id)artworkRepresentationCache;

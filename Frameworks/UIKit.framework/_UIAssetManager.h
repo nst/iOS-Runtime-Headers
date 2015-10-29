@@ -41,6 +41,7 @@
 + (id)newAssetNamed:(id)arg1 fromBundle:(id)arg2;
 + (id)sharedRuntimeAssetMap;
 + (id)sharedRuntimeCatalog;
++ (BOOL)validStackImageData:(id)arg1;
 + (BOOL)validStackImageFile:(id)arg1;
 
 - (id)_assetForName:(id)arg1 shouldCreateWhenNotPresent:(BOOL)arg2;
@@ -80,5 +81,6 @@
 - (void)setPreferredScale:(float)arg1;
 - (void)setPreferredTraitCollection:(id)arg1;
 - (id)stackImageWithContentsOfFile:(id)arg1 forTraitCollection:(id)arg2;
+- (id)stackImageWithData:(id)arg1 forTraitCollection:(id)arg2;
 
 @end

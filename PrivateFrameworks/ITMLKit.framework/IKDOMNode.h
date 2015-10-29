@@ -83,7 +83,7 @@
 - (id)nodeValue;
 - (id)nodesForXPath:(id)arg1 error:(id*)arg2;
 - (void)notifyChildrenUpdatedWithUpdatedChildNodes:(id)arg1;
-- (void)notifyUpdated;
+- (void)notifyUpdatedAndMark:(BOOL)arg1;
 - (id)ownerDocument;
 - (id)parentNode;
 - (id)performDOMOperation:(unsigned int)arg1 newNode:(id)arg2 refNode:(id)arg3;

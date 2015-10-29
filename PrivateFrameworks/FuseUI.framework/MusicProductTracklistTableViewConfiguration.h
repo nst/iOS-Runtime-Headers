@@ -49,6 +49,7 @@
 - (id)copyrightSourceEntityProvider;
 - (id)entityProvider;
 - (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
+- (int)handleSelectionOfUnplayableEntityValueContext:(id)arg1 withPlayabilityResult:(unsigned int)arg2 fromViewController:(id)arg3;
 - (id)init;
 - (id)initWithEntityProvider:(id)arg1;
 - (id)loadEntityViewDescriptor;

@@ -18,7 +18,7 @@
 - (void).cxx_destruct;
 - (void)_addEKEventToCalendar:(id)arg1 storageEvent:(id)arg2 ekStore:(id)arg3;
 - (BOOL)_cancelEKEvent:(id)arg1 ekStore:(id)arg2 error:(id*)arg3;
-- (id)_eventAssociatedWithStorageEvent:(id)arg1 store:(id)arg2;
+- (id)_eventsAssociatedWithStorageEvent:(id)arg1 store:(id)arg2;
 - (BOOL)_isEKEventFromSuggestedCalendar:(id)arg1 ekStore:(id)arg2;
 - (void)_removeEKEvent:(id)arg1 store:(id)arg2;
 - (void)_removeEvent:(id)arg1;

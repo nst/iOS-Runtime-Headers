@@ -5,6 +5,6 @@
 
 @required
 
-- (void)escapeHatchTappedFromWaitingApprovalViewController:(CDPWaitingApprovalViewController *)arg1;
+- (void)waitingApprovalViewController:(CDPWaitingApprovalViewController *)arg1 escapeHatchTappedWithOffer:(unsigned int)arg2;
 
 @end

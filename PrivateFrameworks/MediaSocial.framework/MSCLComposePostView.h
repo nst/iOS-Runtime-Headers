@@ -8,7 +8,6 @@
     NSMutableArray *_attachmentViews;
     UILabel *_characterCountLabel;
     <MSCLComposePostViewDataSource> *_dataSource;
-    <MSCLComposePostViewDelegate> *_delegate;
     NSArray *_footerViews;
     NSArray *_headerViews;
     int _numberOfAttachments;
@@ -52,7 +51,6 @@
 - (BOOL)becomeFirstResponder;
 - (id)dataSource;
 - (void)dealloc;
-- (id)delegate;
 - (id)footerViews;
 - (id)headerViews;
 - (void)hideTextCompletionViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
@@ -65,7 +63,6 @@
 - (void)setAllowedCharacterCount:(int)arg1;
 - (void)setAttachmentViews:(id)arg1;
 - (void)setDataSource:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setFooterViews:(id)arg1;
 - (void)setHeaderViews:(id)arg1;
 - (void)setScrollableHeaderViews:(id)arg1;

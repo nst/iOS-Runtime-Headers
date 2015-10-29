@@ -4,6 +4,7 @@
 
 @interface UIImageView : UIView {
     BOOL __animatesContents;
+    BOOL _adjustsImageWhenAncestorFocused;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -11,6 +12,7 @@
         float right; 
     } _cachedEdgeInsetsForEffects;
     BOOL _edgeInsetsForEffectsAreValid;
+    UILayoutGuide *_focusedFrameGuide;
     UITraitCollection *_lastResolvedTraitCollection;
     id _storage;
     BOOL _templateSettingsAreInvalid;
@@ -20,13 +22,17 @@
 @property (setter=_setDefaultRenderingMode:, nonatomic) int _defaultRenderingMode;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } _edgeInsetsForEffects;
 @property (setter=_setEdgeInsetsForEffectsAreValid:, nonatomic) BOOL _edgeInsetsForEffectsAreValid;
+@property (nonatomic, readonly) _UIStackedImageContainerView *_layeredImageContainer;
+@property (setter=_setLayeredImageCornerRadius:, nonatomic) float _layeredImageCornerRadius;
 @property (setter=_setMasksTemplateImages:, nonatomic) BOOL _masksTemplateImages;
 @property (setter=_setTemplateImageRenderingEffects:, nonatomic) unsigned int _templateImageRenderingEffects;
 @property (nonatomic, readonly) BOOL _templateSettingsAreInvalid;
+@property (nonatomic) BOOL adjustsImageWhenAncestorFocused;
 @property (nonatomic) double animationDuration;
 @property (nonatomic, copy) NSArray *animationImages;
 @property (nonatomic) int animationRepeatCount;
 @property (nonatomic) int drawMode;
+@property (readonly) UILayoutGuide *focusedFrameGuide;
 @property (getter=isHighlighted, nonatomic) BOOL highlighted;
 @property (nonatomic, copy) NSArray *highlightedAnimationImages;
 @property (nonatomic, retain) UIImage *highlightedImage;
@@ -61,6 +67,8 @@
 - (id)_generateBackdropMaskImage;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_invalidateTemplateSettings;
+- (id)_layeredImageContainer;
+- (float)_layeredImageCornerRadius;
 - (BOOL)_masksTemplateImages;
 - (BOOL)_needsImageEffectsForImage:(id)arg1;
 - (BOOL)_needsImageEffectsForImage:(id)arg1 suppressColorizing:(BOOL)arg2;
@@ -71,6 +79,8 @@
 - (void)_setDefaultRenderingMode:(int)arg1;
 - (void)_setEdgeInsetsForEffectsAreValid:(BOOL)arg1;
 - (BOOL)_setImageViewContents:(id)arg1;
+- (void)_setLayeredImageContainer:(id)arg1;
+- (void)_setLayeredImageCornerRadius:(float)arg1;
 - (void)_setMasksTemplateImages:(BOOL)arg1;
 - (void)_setTemplateImageRenderingEffects:(unsigned int)arg1;
 - (void)_setViewGeometry:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forMetric:(int)arg2;
@@ -82,10 +92,12 @@
 - (BOOL)_templateSettingsAreInvalid;
 - (void)_templateSettingsDidChange;
 - (void)_updateImageViewForOldImage:(id)arg1 newImage:(id)arg2;
+- (void)_updateLayeredImageIsFocusedWithFocusedView:(id)arg1 focusAnimationCoordinator:(id)arg2;
 - (void)_updateMasking;
 - (void)_updatePretiledImageCacheForImage:(id)arg1;
 - (void)_updateState;
 - (void)_updateTemplateProperties;
+- (BOOL)adjustsImageWhenAncestorFocused;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (double)animationDuration;
 - (id)animationImages;
@@ -97,6 +109,7 @@
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (id)focusedFrameGuide;
 - (id)highlightedAnimationImages;
 - (id)highlightedImage;
 - (id)image;
@@ -110,6 +123,7 @@
 - (BOOL)isElementAccessibilityExposedToInterfaceBuilder;
 - (BOOL)isHighlighted;
 - (void)layoutSubviews;
+- (void)setAdjustsImageWhenAncestorFocused:(BOOL)arg1;
 - (void)setAnimating:(BOOL)arg1;
 - (void)setAnimationDuration:(double)arg1;
 - (void)setAnimationImages:(id)arg1;

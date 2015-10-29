@@ -21,6 +21,7 @@
     BOOL _nonSilentActivation;
     BOOL _passcodeSet;
     NSString *_remoteActivationUserAgent;
+    RUIStyle *_remoteUIStyle;
     <RUILoaderDelegate> *_ruiDelegate;
     RUILoader *_ruiLoader;
     BOOL _selectedPairedUnlock;
@@ -48,6 +49,7 @@
 @property (nonatomic) BOOL nonSilentActivation;
 @property (nonatomic) BOOL passcodeSet;
 @property (nonatomic, copy) NSString *remoteActivationUserAgent;
+@property (nonatomic, retain) RUIStyle *remoteUIStyle;
 @property (nonatomic) <RUILoaderDelegate> *ruiDelegate;
 @property (nonatomic, retain) RUILoader *ruiLoader;
 @property (nonatomic) BOOL selectedPairedUnlock;
@@ -118,6 +120,7 @@
 - (void)queryGizmoForShowWarrantySentinelAndRestoreDeviceName:(id)arg1;
 - (void)refreshTimeoutTimer;
 - (id)remoteActivationUserAgent;
+- (id)remoteUIStyle;
 - (id)ruiDelegate;
 - (id)ruiLoader;
 - (BOOL)selectedPairedUnlock;
@@ -143,6 +146,7 @@
 - (void)setNonSilentActivation:(BOOL)arg1;
 - (void)setPasscodeSet:(BOOL)arg1;
 - (void)setRemoteActivationUserAgent:(id)arg1;
+- (void)setRemoteUIStyle:(id)arg1;
 - (void)setRuiDelegate:(id)arg1;
 - (void)setRuiLoader:(id)arg1;
 - (void)setSelectedPairedUnlock:(BOOL)arg1;

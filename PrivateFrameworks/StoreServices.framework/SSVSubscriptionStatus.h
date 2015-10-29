@@ -14,6 +14,8 @@
     BOOL _familySubscription;
     BOOL _hasFamily;
     BOOL _hasFamilyMembers;
+    BOOL _hasOfflineSlot;
+    BOOL _hasOfflineSlots;
     unsigned long long _latestStoreTermsVersion;
     NSString *_phoneNumber;
     NSString *_sessionIdentifier;
@@ -35,6 +37,8 @@
 @property (getter=isFamilySubscription, nonatomic) BOOL familySubscription;
 @property (nonatomic) BOOL hasFamily;
 @property (nonatomic) BOOL hasFamilyMembers;
+@property (nonatomic, readonly) BOOL hasOfflineSlot;
+@property (nonatomic) BOOL hasOfflineSlots;
 @property (readonly) unsigned int hash;
 @property (nonatomic) unsigned long long latestStoreTermsVersion;
 @property (nonatomic, copy) NSString *phoneNumber;
@@ -57,8 +61,11 @@
 - (id)copyUserDefaultsRepresentation;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyXPCEncoding;
+- (id)description;
 - (BOOL)hasFamily;
 - (BOOL)hasFamilyMembers;
+- (BOOL)hasOfflineSlot;
+- (BOOL)hasOfflineSlots;
 - (id)initWithUserDefaultsRepresentation:(id)arg1;
 - (id)initWithXPCEncoding:(id)arg1;
 - (BOOL)isDiscoveryModeEligible;
@@ -82,6 +89,7 @@
 - (void)setFamilySubscription:(BOOL)arg1;
 - (void)setHasFamily:(BOOL)arg1;
 - (void)setHasFamilyMembers:(BOOL)arg1;
+- (void)setHasOfflineSlots:(BOOL)arg1;
 - (void)setLatestStoreTermsVersion:(unsigned long long)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;

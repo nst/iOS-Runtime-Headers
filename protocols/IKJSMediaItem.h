@@ -9,6 +9,7 @@
 - (NSString *)contentRatingDomain;
 - (NSNumber *)contentRatingRanking;
 - (NSString *)description;
+- (NSString *)externalID;
 - (NSArray *)highlightGroups;
 - (id)initWithType:(NSString *)arg1 :(NSString *)arg2;
 - (NSArray *)interstitials;
@@ -18,6 +19,7 @@
 - (void)setContentRatingDomain:(NSString *)arg1;
 - (void)setContentRatingRanking:(NSNumber *)arg1;
 - (void)setDescription:(NSString *)arg1;
+- (void)setExternalID:(NSString *)arg1;
 - (void)setHighlightGroups:(NSArray *)arg1;
 - (void)setInterstitials:(NSArray *)arg1;
 - (void)setIsExplicit:(BOOL)arg1;

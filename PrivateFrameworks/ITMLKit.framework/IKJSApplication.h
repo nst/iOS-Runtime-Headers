@@ -9,7 +9,6 @@
 - (void)launchAppWithOptions:(id)arg1;
 - (void)openURLWithOptions:(id)arg1;
 - (void)reload:(id)arg1 :(id)arg2;
-- (void)restart;
 - (void)resumeAppWithOptions:(id)arg1;
 - (void)suspendAppWithOptions:(id)arg1;
 

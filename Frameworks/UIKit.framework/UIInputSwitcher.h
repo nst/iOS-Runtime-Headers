@@ -3,32 +3,44 @@
  */
 
 @interface UIInputSwitcher : NSObject {
+    NSString *_loadedIdentifier;
     NSString *_newMode;
+    UIDelayedAction *m_hideSwitcherDelay;
+    UIDelayedAction *m_keyHoldDelay;
+    double m_lastGlobeKeyUpTime;
+    UIDelayedAction *m_showSwitcherDelay;
     int m_state;
-    UIDelayedAction *m_switcherDelay;
     UIInputSwitcherView *m_switcherView;
 }
+
+@property (nonatomic, copy) NSString *loadedIdentifier;
 
 + (id)activeInstance;
 + (id)sharedInstance;
 
-- (void)cancelSwitcherTimer;
+- (void)cancelShowSwitcherTimer;
 - (void)clearHideSwitcherTimer;
-- (void)clearSwitcherTimer;
+- (void)clearKeyHoldTimer;
+- (void)clearShowSwitcherTimer;
 - (void)dealloc;
 - (BOOL)handleModifiersChangedEvent:(id)arg1;
 - (void)handleRotate:(id)arg1;
 - (BOOL)handleSwitchCommand:(BOOL)arg1;
 - (BOOL)handleSwitchCommand:(BOOL)arg1 withHUD:(BOOL)arg2 withDelay:(BOOL)arg3;
+- (BOOL)handleSwitchingKeyEvent:(id)arg1;
 - (void)hideSwitcher;
 - (id)init;
+- (id)inputModeIdentifierWithNextFlag:(BOOL)arg1;
 - (BOOL)isVisible;
 - (BOOL)isVisibleOrHiding;
-- (id)newMode;
-- (void)setNewMode:(id)arg1;
-- (void)showSwitcher;
+- (id)loadedIdentifier;
+- (void)setLoadedIdentifier:(id)arg1;
+- (void)showSwitcherShouldAutoHide:(BOOL)arg1;
+- (void)showSwitcherWithAutoHide;
+- (void)showSwitcherWithoutAutoHide;
 - (BOOL)switchMode:(id)arg1 withHUD:(BOOL)arg2 withDelay:(BOOL)arg3;
 - (void)touchHideSwitcherTimer;
-- (void)touchSwitcherTimer;
+- (void)touchKeyHoldTimer;
+- (void)touchShowSwitcherTimer;
 
 @end

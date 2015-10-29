@@ -129,9 +129,12 @@
 + (id)keyboardWithName:(id)arg1 screenTraits:(id)arg2;
 + (id)sharedRivenKeyplaneGenerator;
 
+- (id)_appendingSecondaryStringToVariantsTop:(id)arg1 secondaryString:(id)arg2 withDirection:(id)arg3;
 - (void)_autoSplit:(id)arg1;
 - (void)_didChangeKeyplaneWithContext:(id)arg1;
 - (id)_keyplaneVariantsKeyForString:(id)arg1;
+- (BOOL)_stringContainsCurrencyCharacters:(id)arg1;
+- (id)_variantsByAppendingDualStringKey:(id)arg1 toVariants:(id)arg2;
 - (void)accessibilitySensitivityChanged;
 - (id)activationIndicatorView;
 - (id)activeKey;
@@ -194,6 +197,7 @@
 - (void)downActionShiftWithKey:(id)arg1;
 - (struct CGSize { float x1; float x2; })dragGestureSize;
 - (BOOL)edgeSwipeGestureEnabled;
+- (void)endMultitapForKey:(id)arg1;
 - (void)fadeMenu:(id)arg1 forKey:(id)arg2;
 - (void)fadeMenu:(id)arg1 forKey:(id)arg2 withDelay:(float)arg3;
 - (void)fadeWithInvocation:(id)arg1;
@@ -211,6 +215,7 @@
 - (id)generateInfoForTouch:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
+- (BOOL)globeKeyDisplaysAsEmojiKey;
 - (void)handleDelayedCentroidUpdate;
 - (void)handleDismissFlickView;
 - (void)handleDismissFlickView:(id)arg1;
@@ -232,10 +237,12 @@
 - (id)infoForTouchUUID:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initialKeyplaneNameWithKBStarName:(id)arg1;
+- (id)inputModeToMergeCapsLockKey;
 - (void)installGestureRecognizers;
 - (float)interpretPinchSeparationValues;
 - (void)interpretTouchesForSplit;
 - (BOOL)isAlphabeticPlane;
+- (BOOL)isEmojiKeyplane;
 - (BOOL)isLongPressedKey:(id)arg1;
 - (BOOL)isRotating;
 - (BOOL)isShiftKeyBeingHeld;
@@ -323,6 +330,7 @@
 - (void)setModalDisplayView:(id)arg1;
 - (void)setMultitapReverseKeyState;
 - (void)setPasscodeOutlineAlpha:(float)arg1;
+- (void)setPercentSignKeysForCurrentLocaleOnKeyplane:(id)arg1;
 - (void)setPlayKeyClickSoundOn:(int)arg1;
 - (void)setPreTouchKeyplaneName:(id)arg1;
 - (void)setRenderConfig:(id)arg1;
@@ -337,6 +345,7 @@
 - (void)setTwoFingerTapTimestamp:(double)arg1;
 - (BOOL)shift;
 - (BOOL)shouldAddHandRestRecognizer;
+- (BOOL)shouldAllowCurrentKeyplaneReload;
 - (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toBegin:(BOOL)arg3;
 - (BOOL)shouldCommitPrecedingTouchesForTouchDownWithActions:(unsigned int)arg1;
 - (BOOL)shouldHitTestKey:(id)arg1;
@@ -365,7 +374,6 @@
 - (id)splitNameForKeyplane:(id)arg1;
 - (id)splitNameForKeyplaneName:(id)arg1;
 - (int)stateForCandidateListKey:(id)arg1;
-- (int)stateForCapslockKey:(id)arg1;
 - (int)stateForDictationKey:(id)arg1;
 - (int)stateForKey:(id)arg1;
 - (int)stateForKeyplaneSwitchKey:(id)arg1;
@@ -394,6 +402,7 @@
 - (void)updateBackgroundCorners;
 - (void)updateBackgroundIfNeeded;
 - (void)updateCachedKeyplaneKeycaps;
+- (void)updateCurrencySymbolForKey:(id)arg1 withCurrencyString:(id)arg2;
 - (void)updateGlobeKeyDisplayString;
 - (void)updateKeyCentroids;
 - (void)updateKeyboardForKeyplane:(id)arg1;

@@ -3,12 +3,14 @@
  */
 
 @interface MusicEntityHorizontalLockupTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate, MusicEntityViewPlaybackStatusObserving> {
+    BOOL _entityDisabled;
     MusicEntityHorizontalLockupView *_lockupView;
 }
 
 @property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (getter=isEntityDisabled, nonatomic) BOOL entityDisabled;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) MusicEntityHorizontalLockupView *lockupView;
@@ -30,6 +32,7 @@
 - (void)horizontalLockupViewDidSelectContextualActionsButton:(id)arg1;
 - (BOOL)horizontalLockupViewShouldLayoutAsEditing:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isEntityDisabled;
 - (void)layoutSubviews;
 - (id)lockupView;
 - (void)setBackgroundColor:(id)arg1;
@@ -39,5 +42,6 @@
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setPlaybackStatus:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)updateForAsynchronousPropertyLoadCompleted;
 
 @end

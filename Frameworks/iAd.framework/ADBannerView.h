@@ -48,6 +48,7 @@
 @property (nonatomic, copy) NSURL *serverURL;
 @property (readonly) Class superclass;
 
++ (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_adWindowBounds;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameThatFits:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 adType:(int)arg2 statusBarOrientationIsPortrait:(BOOL)arg3;
 + (struct CGSize { float x1; float x2; })_landscapeBannerSize;
 + (struct CGSize { float x1; float x2; })_portraitBannerSize;
@@ -168,6 +169,7 @@
 - (id)staticImageURL;
 - (void)storyboardViewControllerDidPresent;
 - (void)suspendImpressionCycling;
+- (void)traitCollectionDidChange:(id)arg1;
 - (id)uniqueIdentifier;
 - (void)updateConstraints;
 - (void)userDidSkipPreroll;

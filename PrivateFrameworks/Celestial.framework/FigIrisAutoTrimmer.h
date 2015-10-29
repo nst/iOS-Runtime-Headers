@@ -3,32 +3,44 @@
  */
 
 @interface FigIrisAutoTrimmer : NSObject {
-    int _badMotionCount;
     double _bufferHistorySeconds;
     CMAttitude *_captureMotionDelta;
     double _captureMotionDeltaPeriod;
     CMAttitude *_lastAttitude;
     double _lastCheckedTimestamp;
     CMAttitude *_lastDelta;
+    int _lastStatus;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } _maxHoldDuration;
     CMMotionManager *_motionManager;
     NSOperationQueue *_motionQueue;
+    double _motionSampleRate;
     NSMutableArray *_motionSamples;
     struct OpaqueFigSimpleMutex { } *_motionSamplesLock;
-    double _videoFrameRate;
 }
 
 @property (nonatomic, readonly) BOOL trimmingActive;
 
 + (void)initialize;
 
-- (int)_emissionStatusForSample:(id)arg1;
+- (double)_getHostTime;
+- (BOOL)_isUnstable:(id)arg1;
+- (void)_processMotionSample:(id)arg1 gravity:(struct { double x1; double x2; double x3; })arg2 timestamp:(double)arg3;
+- (BOOL)_shouldCutUnstable:(id)arg1 withLookahead:(id)arg2;
+- (double)_timeoutThreshold;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })beginTrimmingForStillImageHostPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 minimumPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (double)bufferHistorySeconds;
 - (void)dealloc;
+- (double)directionalWeightForSample:(id)arg1;
 - (int)emissionStatusForHostPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (id)init;
-- (void)injectTimestamp:(double)arg1 attitudeQuaternion:(double)arg2;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })maxHoldDuration;
 - (void)setBufferHistorySeconds:(double)arg1;
+- (void)setMaxHoldDuration:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setVideoFrameRate:(double)arg1;
 - (void)startMotionProcessing;
 - (void)stopMotionProcessing;

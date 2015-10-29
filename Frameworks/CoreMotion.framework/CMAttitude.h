@@ -32,9 +32,9 @@
 
 // Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
 
-- (double)fig_magnitude;
+- (id)description;
+- (double)fig_angularMagnitude;
 - (id)fig_newAttitudeRelativeTo:(id)arg1;
-- (double)fig_rotationAxisDotProductMagnitude:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PrototypeTools.framework/PrototypeTools
 

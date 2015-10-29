@@ -6,6 +6,7 @@
     BOOL _hasImpendingCursorLocation;
     unsigned int _impendingCursorLocation;
     UITextInputTraits *m_defaultTraits;
+    BOOL m_disableTouchInput;
     NSMutableDictionary *m_focusGuides;
     BOOL m_hasExplicitOrientation;
     int m_idiom;
@@ -14,6 +15,12 @@
     BOOL m_respondingToImplGeometryChange;
     UIView *m_snapshot;
     BOOL m_typingDisabled;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } m_unfocusedFocusGuideOutsets;
 }
 
 @property (nonatomic) BOOL caretBlinks;
@@ -52,6 +59,7 @@
 - (void)_changeToKeyplane:(id)arg1;
 - (void)_deactivateForBackgrounding;
 - (void)_didChangeKeyplaneWithContext:(id)arg1;
+- (BOOL)_disableTouchInput;
 - (int)_focusedSound;
 - (id)_getAutocorrection;
 - (id)_getCurrentKeyboardName;
@@ -153,6 +161,8 @@
 - (void)setShowPredictionBar:(BOOL)arg1;
 - (void)setShowsCandidatesInline:(BOOL)arg1;
 - (void)setTypingEnabled:(BOOL)arg1;
+- (void)setUnfocusedFocusGuideOutsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setUnfocusedFocusGuideOutsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 fromView:(id)arg2;
 - (void)setupKeyFocusGuides;
 - (BOOL)shouldChangeFocusedItem:(id)arg1 heading:(unsigned int)arg2;
 - (BOOL)shouldSaveMinimizationState;
@@ -167,6 +177,8 @@
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)touchesMoved:(id)arg1 withEvent:(id)arg2;
 - (BOOL)typingEnabled;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })unfocusedFocusGuideOutsets;
+- (void)updateFocusMarginsUpToView:(id)arg1;
 - (void)updateKeyFocusGuides;
 - (void)updateLayout;
 - (void)willMoveToWindow:(id)arg1;

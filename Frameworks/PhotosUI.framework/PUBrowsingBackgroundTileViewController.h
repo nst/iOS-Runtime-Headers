@@ -35,11 +35,11 @@
 - (void)_updateEmptyPlaceholderAnimated:(BOOL)arg1;
 - (void)applyLayoutInfo:(id)arg1;
 - (id)backgroundColorOverride;
-- (void)loadView;
 - (void)setBackgroundColorOverride:(id)arg1;
 - (void)setShouldDisplayEmptyPlaceholder:(BOOL)arg1;
 - (void)setViewModel:(id)arg1;
 - (BOOL)shouldDisplayEmptyPlaceholder;
+- (void)viewDidLoad;
 - (id)viewModel;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 

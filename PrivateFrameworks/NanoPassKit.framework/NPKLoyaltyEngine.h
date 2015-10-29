@@ -19,11 +19,12 @@
 
 - (void).cxx_destruct;
 - (id)_init;
+- (void)_postLoyaltyEngineConfigurationChanged;
 - (id)greylistedLoyaltyCardDescriptions;
 - (id)init;
 - (id)internalQueue;
 - (void)moveCardDescriptionFromGreylistToWhitelist:(id)arg1;
-- (void)removeCardDescriptionFromGreylist:(id)arg1;
+- (void)removeCardDescriptionFromGreylistAndWhitelist:(id)arg1;
 - (void)reset;
 - (void)setInternalQueue:(id)arg1;
 - (id)storedValueCardDescriptions;

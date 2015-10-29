@@ -10,6 +10,7 @@
 - (NSDate *)creationDate;
 - (double)duration;
 - (unsigned int)fullsizeDataFormat;
+- (BOOL)hasPhotoColorAdjustments;
 - (unsigned int)isContentEqualTo:(id <PUDisplayAsset>)arg1;
 - (BOOL)isFavorite;
 - (BOOL)isPhotoIrisPlaceholder;

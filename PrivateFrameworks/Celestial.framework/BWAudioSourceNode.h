@@ -69,8 +69,10 @@
 + (void)initialize;
 
 - (unsigned int)_audioCombinedLatency;
+- (BOOL)_cmSessionIsActive;
 - (long)_configureCMSessionWithDefaultHardwareSampleRate:(double)arg1;
 - (struct opaqueCMSampleBuffer { }*)_createSampleBufferForTimestampedAudioBufferList:(struct TimestampedAudioBufferList { struct __CFAllocator {} *x1; long long x2; unsigned int x3; unsigned int x4; struct { long long x_5_1_1; int x_5_1_2; unsigned int x_5_1_3; long long x_5_1_4; } x5; struct AudioBufferList {} *x6; unsigned int x7; }*)arg1;
+- (long)_deactivateCMSessionIfNecessary;
 - (long)_generatePullBuffers;
 - (void)_generateSamples;
 - (void)_generateSilenceIfNeeded;

@@ -6,6 +6,7 @@
     float _artworkFittingHeight;
     UIImage *_artworkImage;
     UIView *_contentEffectClippingView;
+    unsigned long long _contentEffectRevisionID;
     UISnapshotView *_contentEffectSnapshotView;
     MusicInteractiveContentEffectView *_contentEffectView;
     UIView *_darkeningTintView;
@@ -24,6 +25,17 @@
     float _headerHeight;
     unsigned int _headerStyle;
     float _headerVerticalOffset;
+    unsigned int _ignoreContentEffectSnapshotCount;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _lastContentEffectViewInputBounds;
     struct CGSize { 
         float width; 
         float height; 
@@ -76,5 +88,6 @@
 - (void)setMediaHeaderViewControllerDelegate:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

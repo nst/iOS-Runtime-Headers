@@ -11,10 +11,13 @@
     unsigned int _contextId;
     struct __IOHIDEvent { } *_creatorHIDEvent;
     NSData *_data;
+    unsigned int _didUpdateMask;
     int _flags;
     AXEventGameControllerInfoRepresentation *_gameControllerInfo;
+    long _generationCount;
     AXEventHandInfoRepresentation *_handInfo;
     BOOL _isBuiltIn;
+    BOOL _isDisplayIntegrated;
     BOOL _isGeneratedEvent;
     AXEventKeyInfoRepresentation *_keyInfo;
     struct CGPoint { 
@@ -29,6 +32,7 @@
     unsigned long long _time;
     unsigned int _type;
     BOOL _useOriginalHIDTime;
+    unsigned int _willUpdateMask;
     void *_window;
     struct CGPoint { 
         float x; 
@@ -44,19 +48,23 @@
 @property (nonatomic) unsigned int contextId;
 @property (nonatomic, retain) struct __IOHIDEvent { }*creatorHIDEvent;
 @property (nonatomic, retain) NSData *data;
+@property (nonatomic) unsigned int didUpdateMask;
 @property (nonatomic, readonly) unsigned int fingerCount;
 @property (nonatomic) int flags;
 @property (nonatomic, retain) AXEventGameControllerInfoRepresentation *gameControllerInfo;
+@property (nonatomic) long generationCount;
 @property (nonatomic, retain) AXEventHandInfoRepresentation *handInfo;
 @property (nonatomic) BOOL isBuiltIn;
 @property (nonatomic, readonly) BOOL isCancel;
 @property (nonatomic, readonly) BOOL isChordChange;
+@property (nonatomic) BOOL isDisplayIntegrated;
 @property (nonatomic) BOOL isGeneratedEvent;
 @property (nonatomic, readonly) BOOL isInRange;
 @property (nonatomic, readonly) BOOL isInRangeLift;
 @property (nonatomic, readonly) BOOL isLift;
 @property (nonatomic, readonly) BOOL isMove;
 @property (nonatomic, readonly) BOOL isTouchDown;
+@property (nonatomic, readonly) BOOL isUpdate;
 @property (nonatomic, retain) AXEventKeyInfoRepresentation *keyInfo;
 @property (nonatomic) struct CGPoint { float x1; float x2; } location;
 @property (nonatomic) int pid;
@@ -67,6 +75,8 @@
 @property (nonatomic) unsigned long long time;
 @property (nonatomic) unsigned int type;
 @property (nonatomic) BOOL useOriginalHIDTime;
+@property (nonatomic, readonly) BOOL willBeUpdated;
+@property (nonatomic) unsigned int willUpdateMask;
 @property (nonatomic) void*window;
 @property (nonatomic) struct CGPoint { float x1; float x2; } windowLocation;
 
@@ -106,26 +116,31 @@
 - (void)dealloc;
 - (id)denormalizedEventRepresentation:(BOOL)arg1 descale:(BOOL)arg2;
 - (id)description;
+- (unsigned int)didUpdateMask;
 - (void)encodeWithCoder:(id)arg1;
 - (id)fakeTouchScaleEventRepresentation:(BOOL)arg1;
 - (unsigned int)fingerCount;
 - (unsigned int)firstPathContextId;
 - (int)flags;
 - (id)gameControllerInfo;
+- (long)generationCount;
 - (id)handInfo;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isBuiltIn;
 - (BOOL)isCancel;
 - (BOOL)isChordChange;
+- (BOOL)isDisplayIntegrated;
 - (BOOL)isGeneratedEvent;
 - (BOOL)isInRange;
 - (BOOL)isInRangeLift;
 - (BOOL)isLift;
 - (BOOL)isMove;
 - (BOOL)isTouchDown;
+- (BOOL)isUpdate;
 - (id)keyInfo;
 - (struct CGPoint { float x1; float x2; })location;
 - (void)modifyPoints:(id /* block */)arg1;
+- (void)neuterUpdates;
 - (struct { int x1; int x2; struct CGPoint { float x_3_1_1; float x_3_1_2; } x3; struct CGPoint { float x_4_1_1; float x_4_1_2; } x4; unsigned int x5; unsigned long long x6; void *x7; int x8; int x9; unsigned int x10; unsigned long long x11; unsigned char x12[0]; }*)newEventRecord;
 - (struct __GSEvent { }*)newGSEventRef;
 - (struct __IOHIDEvent { }*)newHIDEventRef;
@@ -140,12 +155,15 @@
 - (void)setContextId:(unsigned int)arg1;
 - (void)setCreatorHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)setData:(id)arg1;
+- (void)setDidUpdateMask:(unsigned int)arg1;
 - (void)setFlags:(int)arg1;
 - (void)setGameControllerInfo:(id)arg1;
+- (void)setGenerationCount:(long)arg1;
 - (void)setHIDAttributeData:(id)arg1;
 - (void)setHIDTime:(unsigned long long)arg1;
 - (void)setHandInfo:(id)arg1;
 - (void)setIsBuiltIn:(BOOL)arg1;
+- (void)setIsDisplayIntegrated:(BOOL)arg1;
 - (void)setIsGeneratedEvent:(BOOL)arg1;
 - (void)setKeyInfo:(id)arg1;
 - (void)setLocation:(struct CGPoint { float x1; float x2; })arg1;
@@ -157,6 +175,7 @@
 - (void)setTime:(unsigned long long)arg1;
 - (void)setType:(unsigned int)arg1;
 - (void)setUseOriginalHIDTime:(BOOL)arg1;
+- (void)setWillUpdateMask:(unsigned int)arg1;
 - (void)setWindow:(void*)arg1;
 - (void)setWindowLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (int)subtype;
@@ -164,6 +183,8 @@
 - (unsigned long long)time;
 - (unsigned int)type;
 - (BOOL)useOriginalHIDTime;
+- (BOOL)willBeUpdated;
+- (unsigned int)willUpdateMask;
 - (void*)window;
 - (struct CGPoint { float x1; float x2; })windowLocation;
 

@@ -4,14 +4,14 @@
 
 @interface CDPLocalDeviceSecretHandler : NSObject {
     CDPContext *_context;
-    id /* block */ _validationHandler;
+    <CDPLocalDeviceSecretHandlerProtocol> *_handlerProxy;
 }
 
 @property (nonatomic, readonly) CDPContext *context;
 
 - (void).cxx_destruct;
 - (id)context;
-- (id)initWithContext:(id)arg1 validSecretHandler:(id /* block */)arg2;
+- (id)initWithContext:(id)arg1 handler:(id)arg2;
 - (void)userDidCancelWithError:(id)arg1;
 - (void)userDidEnterValidSecret:(id)arg1 type:(unsigned int)arg2;
 

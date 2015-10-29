@@ -7,6 +7,7 @@
     NSSQLCore *_sqlCore;
 }
 
+- (void)_generateFragmentsForEntity:(id)arg1 inArray:(id)arg2;
 - (id)_newSelectStatementWithFetchRequest:(id)arg1 ignoreInheritance:(BOOL)arg2;
 - (id)_originalRowForUpdate:(id)arg1;
 - (void)_setupBindVariablesForCachedStatement:(id)arg1 usingValues:(id)arg2;
@@ -20,6 +21,8 @@
 - (Class)generatorClass;
 - (BOOL)hasOpenConnections;
 - (id)initWithSQLCore:(id)arg1;
+- (id)newComplexPrimaryKeyUpdateStatementForEntity:(id)arg1;
+- (id)newConnection;
 - (id)newConstrainedValuesUpdateStatementWithRow:(id)arg1;
 - (id)newCopyAndInsertStatementForManyToMany:(id)arg1 toManyToMany:(id)arg2 intermediateTableName:(id)arg3 invertColumns:(BOOL)arg4;
 - (id)newCorrelationDeleteStatementForRelationship:(id)arg1;
@@ -43,6 +46,7 @@
 - (id)newRenameTableStatementFrom:(id)arg1 to:(id)arg2;
 - (id)newRenameTableStatementFromManyToMany:(id)arg1 toManyToMany:(id)arg2 orToRandomSpot:(id)arg3;
 - (id)newSelectStatementWithFetchRequest:(id)arg1;
+- (id)newSimplePrimaryKeyUpdateStatementForEntity:(id)arg1;
 - (id)newStatementWithEntity:(id)arg1;
 - (id)newStatementWithSQLString:(id)arg1;
 - (id)newStatementWithoutEntity;

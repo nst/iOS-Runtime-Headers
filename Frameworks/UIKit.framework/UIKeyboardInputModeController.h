@@ -58,6 +58,7 @@
 @property (nonatomic) BOOL shouldRunContinuousDiscovery;
 @property (readonly) NSArray *supportedInputModeIdentifiers;
 
++ (id)inputModeIdentifierForPreferredLanguages:(id)arg1 passingTest:(id /* block */)arg2;
 + (id)sharedInputModeController;
 
 - (id)_MCFilteredExtensionIdentifiers;
@@ -102,6 +103,8 @@
 - (id)identifiersFromInputModes:(id)arg1;
 - (id)init;
 - (id)inputModeContextIdentifier;
+- (id)inputModeIdentifierLastUsedForLanguage:(id)arg1;
+- (id)inputModeLastUsedForLanguage:(id)arg1;
 - (id)inputModeWithIdentifier:(id)arg1;
 - (id)inputModesFromIdentifiers:(id)arg1;
 - (id)inputModesWithoutHardwareSupport;

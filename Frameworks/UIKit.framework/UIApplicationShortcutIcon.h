@@ -13,6 +13,7 @@
 + (id)iconWithCustomImage:(id)arg1;
 + (id)iconWithTemplateImageName:(id)arg1;
 + (id)iconWithType:(int)arg1;
++ (int)sbsIconTypeForIconType:(int)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

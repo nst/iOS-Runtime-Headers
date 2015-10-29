@@ -2,9 +2,12 @@
    Image: /System/Library/PrivateFrameworks/MusicCarDisplayUI.framework/MusicCarDisplayUI
  */
 
-@interface MCDQueryDataSource : MPUCompletionQueryDataSource
+@interface MCDQueryDataSource : MPUCompletionQueryDataSource {
+    MPMediaPredicate *_localPredicate;
+}
 
-- (void)_defaultsDidChangeNotification:(id)arg1;
+- (void).cxx_destruct;
+- (void)_predicateBehaviorsChangedNotification:(id)arg1;
 - (id)_queryForNowPlayingComparisonAtIndex:(unsigned int)arg1;
 - (BOOL)_updateQueryPredicatesAndOrdering;
 - (void)dealloc;

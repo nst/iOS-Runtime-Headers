@@ -6,14 +6,17 @@
     BOOL _allowNonSecureHTTP;
     RUIParser *_parser;
     <RUIParserDelegate> *_parserDelegate;
+    RUIStyle *_style;
     NSURL *_url;
 }
 
 @property (nonatomic) BOOL allowNonSecureHTTP;
 @property (nonatomic) <RUIParserDelegate> *parserDelegate;
+@property (nonatomic, retain) RUIStyle *style;
 
 - (void).cxx_destruct;
 - (id)URL;
+- (void)URLSession:(id)arg1 didReceiveChallenge:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)_finishLoad;
 - (void)allWebViewsFinishedLoading;
@@ -34,6 +37,8 @@
 - (id)sessionConfiguration;
 - (void)setAllowNonSecureHTTP:(BOOL)arg1;
 - (void)setParserDelegate:(id)arg1;
+- (void)setStyle:(id)arg1;
+- (id)style;
 - (void)webViewFinishedLoading;
 
 @end

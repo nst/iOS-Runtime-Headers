@@ -24,6 +24,7 @@
 - (BOOL)allocateCECAddress:(unsigned char*)arg1 forDeviceType:(unsigned char)arg2 error:(id*)arg3;
 - (BOOL)deallocateCECAddress:(unsigned char)arg1 error:(id*)arg2;
 - (id)delegate;
+- (void)didChangeProperties;
 - (BOOL)errorIsNack:(id)arg1;
 - (void)hibernationChanged:(BOOL)arg1;
 - (id)init;

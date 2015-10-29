@@ -4,6 +4,7 @@
 
 @interface MUImageContentViewController : UIViewController <MUContentViewControllerProtocol, UIScrollViewDelegate> {
     AKController *_annotationController;
+    UIView *_combinedContentView;
     float _downsampledImageScale;
     struct UIEdgeInsets { 
         float top; 
@@ -25,6 +26,7 @@
 }
 
 @property AKController *annotationController;
+@property (nonatomic, retain) UIView *combinedContentView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property float downsampledImageScale;
@@ -55,6 +57,7 @@
 - (float)_zoomToFitZoomFactorInBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (float)_zoomToFitZoomFactorIncludingScrollViewEdgeInsets;
 - (id)annotationController;
+- (id)combinedContentView;
 - (id)contentSnapshot;
 - (void)controllerDidEnterToolMode:(id)arg1;
 - (void)controllerDidExitToolMode:(id)arg1;
@@ -70,6 +73,7 @@
 - (BOOL)inDoubleTapZoom;
 - (id)init;
 - (float)initialContentScaleInModel;
+- (id)layerContainingQuickBackgroundForLoupeOnOverlayAtPageIndex:(unsigned int)arg1 forAnnotationController:(id)arg2;
 - (id /* block */)loadCompletionBlock;
 - (void)loadView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })maxPageRectWithPageIndex:(unsigned int)arg1 forAnnotationController:(id)arg2;
@@ -78,6 +82,7 @@
 - (id)scrollView;
 - (void)scrollViewWillBeginZooming:(id)arg1 withView:(id)arg2;
 - (void)setAnnotationController:(id)arg1;
+- (void)setCombinedContentView:(id)arg1;
 - (void)setDownsampledImageScale:(float)arg1;
 - (void)setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setFileURL:(id)arg1;

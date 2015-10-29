@@ -7,8 +7,8 @@
 + (id)_propertySettersForDataObject;
 + (id)columnsDefinition;
 + (id)databaseTable;
-+ (void)enumerateDeletedSamplesWithType:(id)arg1 database:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id /* block */)arg5 limit:(unsigned int)arg6 deletedObjectsAnchor:(long long)arg7 sampleAnchor:(long long*)arg8 handler:(id /* block */)arg9;
-+ (BOOL)enumerateDeletedSamplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 limit:(unsigned int)arg5 anchor:(id)arg6 error:(id*)arg7 handler:(id /* block */)arg8;
++ (BOOL)enumerateDeletedSamplesWithType:(id)arg1 database:(id)arg2 sourceIdentifier:(id)arg3 limit:(unsigned int)arg4 anchor:(long long)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
++ (BOOL)enumerateDeletedSamplesWithType:(id)arg1 healthDaemon:(id)arg2 sourceIdentifier:(id)arg3 limit:(unsigned int)arg4 anchor:(long long)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
 + (id)insertDeletedObject:(id)arg1 dataType:(id)arg2 provenanceIdentifier:(id)arg3 deletionDate:(id)arg4 inDatabase:(id)arg5 error:(id*)arg6;
 + (id)insertDeletedObjectForObject:(id)arg1 provenanceIdentifier:(id)arg2 deletionDate:(id)arg3 inDatabase:(id)arg4 error:(id*)arg5;
 + (int)protectionClass;

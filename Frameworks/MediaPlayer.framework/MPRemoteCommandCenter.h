@@ -13,7 +13,7 @@
     MPPurchaseCommand *_buyTrackCommand;
     BOOL _canBeNowPlayingApplication;
     MPPurchaseCommand *_cancelDownloadCommand;
-    MPRemoteCommand *_changePlaybackPositionCommand;
+    MPChangePlaybackPositionCommand *_changePlaybackPositionCommand;
     MPChangePlaybackRateCommand *_changePlaybackRateCommand;
     MPChangeRepeatModeCommand *_changeRepeatModeCommand;
     MPChangeShuffleModeCommand *_changeShuffleModeCommand;
@@ -44,6 +44,7 @@
 }
 
 @property (nonatomic, readonly) MPFeedbackCommand *bookmarkCommand;
+@property (nonatomic, readonly) MPChangePlaybackPositionCommand *changePlaybackPositionCommand;
 @property (nonatomic, readonly) MPChangePlaybackRateCommand *changePlaybackRateCommand;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;

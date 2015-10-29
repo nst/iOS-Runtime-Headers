@@ -92,6 +92,7 @@
 - (id)timeZone;
 - (id)vendorIdentifier;
 - (id)vendorStorage;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 

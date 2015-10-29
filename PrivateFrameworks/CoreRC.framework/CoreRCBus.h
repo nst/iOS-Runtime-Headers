@@ -7,7 +7,6 @@
     <CoreRCBusDelegate> *_delegate;
     NSMutableSet *_devicesInternal;
     CoreRCManager *_manager;
-    NSObject<OS_dispatch_queue> *_serialQueue;
     NSUUID *_uniqueID;
 }
 
@@ -34,6 +33,7 @@
 - (void)didAddToManager:(id)arg1;
 - (void)didRemoveDevice:(id)arg1;
 - (void)didRemoveFromManager:(id)arg1;
+- (void)didUpdateProperties:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)init;
@@ -42,6 +42,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (id)manager;
 - (id)mergeDevice:(id)arg1;
+- (id)mergeProperties;
 - (void)mergePropertiesFromBus:(id)arg1;
 - (void)notifyDelegateAllDevicesRemoved:(id)arg1;
 - (void)notifyDelegateDeviceAdded:(id)arg1;
@@ -51,14 +52,12 @@
 - (void)removeAllDevices;
 - (void)removeDevice:(id)arg1;
 - (void)replaceDevice:(id)arg1 withDevice:(id)arg2;
-- (void)scheduleWithDispatchQueue:(id)arg1;
 - (id)serialQueue;
 - (BOOL)setAllowHibernation:(BOOL)arg1 error:(id*)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setManager:(id)arg1;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (id)uniqueID;
-- (void)unscheduleFromDispatchQueue:(id)arg1;
 - (void)willAddDevice:(id)arg1;
 - (void)willAddToManager:(id)arg1;
 - (void)willRemoveDevice:(id)arg1;

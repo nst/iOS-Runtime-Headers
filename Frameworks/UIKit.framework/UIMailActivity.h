@@ -9,6 +9,7 @@
     BOOL _keyboardVisible;
     MFMailComposeViewController *_mailComposeViewController;
     BOOL _sourceIsManaged;
+    NSString *_subject;
 }
 
 @property (nonatomic, retain) NSString *autosaveIdentifier;
@@ -22,6 +23,7 @@
 @property (nonatomic, readonly) Class objectRestorationClass;
 @property (nonatomic, readonly) <UIStateRestoring> *restorationParent;
 @property (nonatomic) BOOL sourceIsManaged;
+@property (nonatomic, copy) NSString *subject;
 @property (readonly) Class superclass;
 
 + (int)activityCategory;
@@ -60,5 +62,6 @@
 - (void)setSourceIsManaged:(BOOL)arg1;
 - (void)setSubject:(id)arg1;
 - (BOOL)sourceIsManaged;
+- (id)subject;
 
 @end

@@ -19,6 +19,7 @@
 - (id)deviceInfoScalable:(BOOL)arg1;
 - (id)deviceScales;
 - (id)init;
+- (float)maxSizeOfPreviewDeviceInfoImage;
 - (id)nonScalableDeviceInfo;
 - (id)scalableDeviceInfo;
 - (void)screensChangedNotification:(id)arg1;

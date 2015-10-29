@@ -6,6 +6,7 @@
     BOOL _allowsPaddles;
     BOOL _boldTextEnabled;
     BOOL _lightweightFactory;
+    BOOL _preferStringKeycapOverImage;
     UIKBRenderConfig *_renderConfig;
     float _rivenSizeFactor;
     float _scale;
@@ -16,6 +17,7 @@
 @property (nonatomic) BOOL allowsPaddles;
 @property (nonatomic, readonly) BOOL boldTextEnabled;
 @property (nonatomic) BOOL lightweightFactory;
+@property (nonatomic) BOOL preferStringKeycapOverImage;
 @property (nonatomic, retain) UIKBRenderConfig *renderConfig;
 @property (nonatomic) float rivenSizeFactor;
 @property (nonatomic) float scale;
@@ -36,6 +38,7 @@
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (void)addLayoutSegment:(id)arg1;
 - (BOOL)allowsPaddles;
+- (void)applyBoldTextForContent:(id)arg1 withKey:(id)arg2;
 - (id)backgroundTraitsForKeyplane:(id)arg1;
 - (id)biuKeyImageName;
 - (id)boldKeyImageName;
@@ -83,6 +86,7 @@
 - (id)passcodeKeyEdgeColorName;
 - (id)passcodeShiftedControlKeyTraits;
 - (id)pasteKeyImageName;
+- (BOOL)preferStringKeycapOverImage;
 - (id)renderConfig;
 - (id)rightArrowKeyImageName;
 - (float)rivenSizeFactor;
@@ -91,6 +95,7 @@
 - (id)segmentTraits;
 - (void)setAllowsPaddles:(BOOL)arg1;
 - (void)setLightweightFactory:(BOOL)arg1;
+- (void)setPreferStringKeycapOverImage:(BOOL)arg1;
 - (void)setRenderConfig:(id)arg1;
 - (void)setRivenSizeFactor:(float)arg1;
 - (void)setScale:(float)arg1;
@@ -100,11 +105,12 @@
 - (id)shiftOnKeyImageName;
 - (BOOL)shouldClearBaseDisplayStringForVariants:(id)arg1;
 - (float)skinnyKeyThreshold;
+- (BOOL)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
 - (void)suppressLayoutSegments;
 - (id)thinKeycapsFontName;
 - (id)thinTextFontName;
 - (id)traitsForKey:(id)arg1 onKeyplane:(id)arg2;
-- (id)traitsHashStringForKey:(id)arg1 withGeometry:(id)arg2 controlOpacities:(BOOL)arg3;
+- (id)traitsHashStringForKey:(id)arg1 withGeometry:(id)arg2 withSymbolStyle:(id)arg3 controlOpacities:(BOOL)arg4;
 - (float)translucentGapWidth;
 - (id)undoKeyImageName;
 - (BOOL)useBlueThemingForKey:(id)arg1;

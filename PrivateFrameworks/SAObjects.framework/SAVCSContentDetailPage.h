@@ -6,6 +6,8 @@
 
 @property (nonatomic, copy) NSString *contentType;
 @property (nonatomic, retain) SAUIImageResource *image;
+@property (nonatomic, copy) NSString *seasonId;
+@property (nonatomic, copy) NSString *showId;
 @property (nonatomic) BOOL userDriven;
 @property (nonatomic, copy) NSString *utsId;
 
@@ -16,10 +18,14 @@
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (id)image;
+- (id)seasonId;
 - (void)setContentType:(id)arg1;
 - (void)setImage:(id)arg1;
+- (void)setSeasonId:(id)arg1;
+- (void)setShowId:(id)arg1;
 - (void)setUserDriven:(BOOL)arg1;
 - (void)setUtsId:(id)arg1;
+- (id)showId;
 - (BOOL)userDriven;
 - (id)utsId;
 

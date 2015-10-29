@@ -71,12 +71,14 @@
 - (void)_cleanupAppleIDCredentials;
 - (id)_defaultKeychainViewSet;
 - (void)_deleteSafariAutoFillPasswords;
+- (void)_disableCDPKeychainSyncOverController:(id)arg1 deletingSafariPasswords:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (void)_disableKeychainSyncOverController:(id)arg1 deletingSafariPasswords:(BOOL)arg2 withCompletion:(id /* block */)arg3;
 - (void)_enableSecureBackupWithPhoneNumber:(id)arg1 countryInfo:(id)arg2;
 - (BOOL)_errorRequiresPasswordPrompt:(id)arg1;
 - (void)_finishedWithStatus:(int)arg1 error:(id)arg2;
 - (void)_peerApprovalFromRecoveryFlow;
 - (void)_preSetupCancelledWithCurrentStatus;
+- (void)_promptUserToDeleteSafariSavedContentWithCompletion:(id /* block */)arg1;
 - (void)_recoverWithSecurityCode:(id)arg1 verificationCode:(id)arg2;
 - (void)_registerForCircleChangeNotifications;
 - (void)_registerForCircleChangeNotificationsWithCompletion:(id /* block */)arg1;

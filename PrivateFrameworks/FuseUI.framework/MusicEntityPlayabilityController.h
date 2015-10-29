@@ -19,7 +19,7 @@
 - (int)_networkType;
 - (void)_networkTypeDidChangeNotification:(id)arg1;
 - (void)dealloc;
+- (unsigned int)entityPlayabilityResultForEntityValueContext:(id)arg1;
 - (id)init;
-- (BOOL)isEntityValueContextPlayable:(id)arg1;
 
 @end

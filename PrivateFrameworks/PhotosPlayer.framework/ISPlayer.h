@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
  */
 
-@interface ISPlayer : NSObject <ISInputControllerDelegate, ISPlaybackSpecObserver> {
+@interface ISPlayer : NSObject <ISInputControllerDelegate, ISPlaybackControllerObserver, ISPlaybackSpecObserver, ISPlayerItemObserver> {
     NSHashTable *__changeObservers;
     int __currentMediaServicesResetID;
     NSString *__defaultAudioCategory;
@@ -30,7 +30,9 @@
     ISPlaybackSpec *_playbackSpec;
     int _playbackState;
     ISPlayerItem *_playerItem;
+    BOOL _shouldManagePlayerItemLoading;
     int _status;
+    AVPlayer *_videoPlayer;
 }
 
 @property (nonatomic, readonly) NSHashTable *_changeObservers;
@@ -55,6 +57,7 @@
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoTime;
 @property (nonatomic) int playbackState;
 @property (nonatomic, retain) ISPlayerItem *playerItem;
+@property (nonatomic) BOOL shouldManagePlayerItemLoading;
 @property (nonatomic) int status;
 @property (readonly) Class superclass;
 
@@ -65,6 +68,7 @@
 - (int)_currentMediaServicesResetID;
 - (id)_defaultAudioCategory;
 - (int)_defaultAudioCategoryOptions;
+- (void)_enumerateObserversWithBlock:(id /* block */)arg1;
 - (void)_handleMediaServicesResetIfNecessaryForError:(id)arg1;
 - (BOOL)_hasPendingVitalityHint;
 - (id)_inputController;
@@ -112,17 +116,23 @@
 - (BOOL)forcesPhotoHidden;
 - (id)init;
 - (id)initWithManagesAudioSession:(BOOL)arg1;
+- (id)initWithManagesAudioSession:(BOOL)arg1 videoPlayer:(id)arg2;
+- (id)initWithVideoPlayer:(id)arg1;
 - (void)inputControllerDidChange:(id)arg1;
 - (id)inputs;
 - (BOOL)isPhotoVisible;
+- (BOOL)isPlayingVitalityHint;
 - (BOOL)managesAudioSession;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })photoTime;
 - (void)playVitalityHint;
+- (void)playbackControllerPlaybackStateDidChange:(id)arg1;
+- (void)playbackControllerPlayerStatusDidChange:(id)arg1;
 - (id)playbackSpec;
 - (void)playbackSpecDidChange:(id)arg1;
 - (int)playbackState;
 - (id)playerItem;
+- (void)playerItemStatusDidChange:(id)arg1;
 - (void)registerChangeObserver:(id)arg1;
 - (void)removeAllInputs;
 - (void)removeInput:(id)arg1;
@@ -131,6 +141,8 @@
 - (void)setForcesPhotoHidden:(BOOL)arg1;
 - (void)setPlaybackSpec:(id)arg1;
 - (void)setPlayerItem:(id)arg1;
+- (void)setShouldManagePlayerItemLoading:(BOOL)arg1;
+- (BOOL)shouldManagePlayerItemLoading;
 - (int)status;
 - (void)unregisterChangeObserver:(id)arg1;
 

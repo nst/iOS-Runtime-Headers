@@ -18,8 +18,11 @@
 
 - (void).cxx_destruct;
 - (id)cardSectionViews;
+- (id)fallbackURLForIndexPath:(id)arg1;
 - (id)initWithResult:(id)arg1 style:(unsigned int)arg2;
 - (id)initWithResult:(id)arg1 style:(unsigned int)arg2 inline:(BOOL)arg3;
+- (void)openPunchout:(id)arg1 fallbackURL:(id)arg2;
+- (id)punchoutsForIndexPath:(id)arg1;
 - (id)result;
 - (void)setCardSectionViews:(id)arg1;
 - (void)setResult:(id)arg1;

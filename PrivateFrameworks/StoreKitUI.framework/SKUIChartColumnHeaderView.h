@@ -7,6 +7,7 @@
     int _selectedTitleIndex;
 }
 
+@property (nonatomic, readonly) float edgePadding;
 @property (nonatomic) int selectedTitleIndex;
 @property (nonatomic, copy) NSArray *titles;
 
@@ -14,6 +15,7 @@
 - (void)_buttonAction:(id)arg1;
 - (void)_reloadSelectedButton;
 - (void)dealloc;
+- (float)edgePadding;
 - (void)layoutSubviews;
 - (int)selectedTitleIndex;
 - (void)setBackgroundColor:(id)arg1;

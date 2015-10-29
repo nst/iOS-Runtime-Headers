@@ -16,7 +16,7 @@
 
 - (void).cxx_destruct;
 - (void)allRelatedFailureRequirementsCompleted;
-- (void)completeWithEvent:(id)arg1;
+- (void)completeWithEvent:(id)arg1 pressesEvent:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)dependentFailureRequirements;
@@ -25,7 +25,7 @@
 - (id)gestureRecognizer;
 - (BOOL)isEnabled;
 - (BOOL)isWaitingForOtherFailureRequirements;
-- (void)requiredFailureRequirementCompleted:(id)arg1 withEvent:(id)arg2;
+- (void)requiredFailureRequirementCompleted:(id)arg1 withEvent:(id)arg2 pressesEvent:(id)arg3;
 - (id)requiredFailureRequirements;
 - (void)reset;
 - (void)run;

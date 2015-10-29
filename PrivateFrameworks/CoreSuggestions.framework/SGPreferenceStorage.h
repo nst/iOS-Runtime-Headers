@@ -27,6 +27,7 @@
 + (void)setShowEventsFoundInMailForTests:(BOOL)arg1;
 + (void)setShowPastEvents:(BOOL)arg1;
 + (void)setSyncHistoryToCloud:(BOOL)arg1;
++ (void)setSyncHistoryToCloudForTests:(BOOL)arg1;
 + (BOOL)showContactsFoundInMail;
 + (BOOL)showEventsFoundInMail;
 + (BOOL)showNLEvents;

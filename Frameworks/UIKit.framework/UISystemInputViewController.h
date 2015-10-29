@@ -16,7 +16,7 @@
     BOOL _isVisible;
     UIKeyboard *_keyboard;
     NSArray *_keyboardConstraints;
-    UIInputViewController *_keyboardVC;
+    UICompatibilityInputViewController *_keyboardVC;
     BOOL _needsSetupAgain;
     UIResponder<UITextInput> *_nextInputDelegate;
     UIResponder<UITextInput> *_persistentDelegate;
@@ -35,10 +35,11 @@
 @property (nonatomic) BOOL isAutomaticResponderTransition;
 @property (nonatomic, retain) UIKeyboard *keyboard;
 @property (nonatomic, retain) NSArray *keyboardConstraints;
-@property (nonatomic, retain) UIInputViewController *keyboardVC;
+@property (nonatomic, retain) UICompatibilityInputViewController *keyboardVC;
 @property (nonatomic, retain) UIResponder<UITextInput> *nextInputDelegate;
 @property (nonatomic, retain) UIResponder<UITextInput> *persistentDelegate;
 @property (nonatomic) BOOL supportsTouchInput;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } unfocusedFocusGuideOutsets;
 @property (nonatomic, retain) NSLayoutConstraint *verticalAlignment;
 @property (nonatomic) BOOL willPresentFullscreen;
 
@@ -101,10 +102,12 @@
 - (void)setNextInputDelegate:(id)arg1;
 - (void)setPersistentDelegate:(id)arg1;
 - (void)setSupportsTouchInput:(BOOL)arg1;
+- (void)setUnfocusedFocusGuideOutsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setVerticalAlignment:(id)arg1;
 - (void)setWillPresentFullscreen:(BOOL)arg1;
 - (void)setupKeyboard;
 - (BOOL)supportsTouchInput;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })unfocusedFocusGuideOutsets;
 - (void)updateViewConstraints;
 - (id)verticalAlignment;
 - (void)viewDidAppear:(BOOL)arg1;

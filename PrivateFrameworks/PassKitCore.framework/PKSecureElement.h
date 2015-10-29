@@ -39,6 +39,7 @@
 - (void)markAllAppletsForDeletionWithCompletion:(id /* block */)arg1;
 - (void)markAppletWithIdentifierForDeletion:(id)arg1 completion:(id /* block */)arg2;
 - (void)markAppletsWithIdentifiersForDeletion:(id)arg1 completion:(id /* block */)arg2;
+- (void)pairingStateWithCompletion:(id /* block */)arg1;
 - (BOOL)queueConnectionToSeverForAppletIdentifiers:(id)arg1;
 - (BOOL)queueConnectionToSeverWithPushTopic:(id)arg1;
 - (void)registerObserver:(id)arg1;

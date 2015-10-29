@@ -23,6 +23,7 @@
 - (void)_performActionsForResponse:(id)arg1;
 - (void)_presentDialog:(id)arg1;
 - (BOOL)_processFailureTypeFromDictionary:(id)arg1 error:(id*)arg2;
+- (void)_refreshSubscriptionStatus;
 - (void)_selectFooterSection:(id)arg1;
 - (BOOL)_shouldFailWithTokenErrorForDialog:(id)arg1 dictionary:(id)arg2 error:(id*)arg3;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

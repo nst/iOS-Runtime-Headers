@@ -3,6 +3,8 @@
  */
 
 @interface UIKBKeyView : UIView <UIKBCacheableView> {
+    int _cachedAnchorCorner;
+    BOOL _cachedControlKeyRenderingPreference;
     NSString *_cachedTraitsHashString;
     NSMutableDictionary *_keyLayers;
     UIKeyboardMenuView *_popupMenu;
@@ -27,6 +29,8 @@
 
 @property (nonatomic, readonly) BOOL cacheDeferable;
 @property (nonatomic, readonly) NSString *cacheKey;
+@property (nonatomic) int cachedAnchorCorner;
+@property (nonatomic) BOOL cachedControlKeyRenderingPreference;
 @property (readonly) int cachedRenderFlags;
 @property (nonatomic, retain) NSString *cachedTraitsHashString;
 @property (nonatomic, readonly) float cachedWidth;
@@ -56,6 +60,8 @@
 - (BOOL)cacheDeferable;
 - (id)cacheKey;
 - (id)cacheKeysForRenderFlags:(id)arg1;
+- (int)cachedAnchorCorner;
+- (BOOL)cachedControlKeyRenderingPreference;
 - (int)cachedRenderFlags;
 - (id)cachedTraitsHashString;
 - (float)cachedWidth;
@@ -70,6 +76,7 @@
 - (id)factory;
 - (unsigned int)focusableVariantCount;
 - (BOOL)hasRendered;
+- (int)imageOrientationForLayer:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 keyplane:(id)arg2 key:(id)arg3;
 - (BOOL)keepNonPersistent;
 - (id)key;
@@ -81,6 +88,8 @@
 - (id)renderConfig;
 - (id)renderFlagsForTraits:(id)arg1;
 - (BOOL)requiresSublayers;
+- (void)setCachedAnchorCorner:(int)arg1;
+- (void)setCachedControlKeyRenderingPreference:(BOOL)arg1;
 - (void)setCachedTraitsHashString:(id)arg1;
 - (void)setDrawFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setFactory:(id)arg1;

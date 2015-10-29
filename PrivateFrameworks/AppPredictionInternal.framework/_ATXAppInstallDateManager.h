@@ -5,6 +5,7 @@
 @interface _ATXAppInstallDateManager : NSObject <_ATXAppInstallMonitorDelegate> {
     NSDictionary *_appInstallDates;
     _ATXAppInstallMonitor *_appInstallMonitor;
+    NSSet *_appsOnSpringBoard;
     NSDictionary *_assetData;
     BOOL _includeSystemApps;
     BOOL _persistentStorage;

@@ -3,33 +3,18 @@
  */
 
 @interface CDPRemoteDeviceSecretValidator : NSObject {
-    int _circleChangeToken;
-    CDPContext *_context;
     unsigned int _failedAttempts;
-    BOOL _isAttemptingRecovery;
-    BOOL _isUsingMultipleICSC;
-    BOOL _isWaitingForRemoteApproval;
-    NSString *_localSecret;
-    unsigned int _localSecretType;
-    id /* block */ _requestToJoinCompletion;
-    id /* block */ _validSecretHandler;
+    <CDPRemoteDeviceSecretValidatorProtocol> *_validator;
 }
 
-@property (nonatomic, readonly) CDPContext *context;
-@property (nonatomic, readonly) BOOL isUsingMultipleICSC;
-@property (nonatomic, readonly, copy) NSString *localSecret;
-@property (nonatomic, readonly) unsigned int localSecretType;
+@property (nonatomic, readonly) unsigned int failedAttempts;
 
 - (void).cxx_destruct;
 - (void)approveFromAnotherDeviceWithCompletion:(id /* block */)arg1;
 - (void)cancelApproveFromAnotherDevice;
 - (void)cancelValidationWithError:(id)arg1;
-- (id)context;
-- (void)dealloc;
-- (id)initWithContext:(id)arg1 isUsingMultipleICSC:(BOOL)arg2 validSecretHandler:(id /* block */)arg3;
-- (BOOL)isUsingMultipleICSC;
-- (id)localSecret;
-- (unsigned int)localSecretType;
+- (unsigned int)failedAttempts;
+- (id)initWithContext:(id)arg1 validator:(id)arg2;
 - (void)resetAccountCDPState;
 - (void)validateSecret:(id)arg1 devices:(id)arg2 type:(unsigned int)arg3 withCompletion:(id /* block */)arg4;
 

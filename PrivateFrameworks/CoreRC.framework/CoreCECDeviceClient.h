@@ -12,8 +12,6 @@
 - (BOOL)deckControlPlayWithMode:(unsigned int)arg1 target:(id)arg2 error:(id*)arg3;
 - (BOOL)deckControlRefreshStatus:(id)arg1 requestType:(unsigned int)arg2 error:(id*)arg3;
 - (BOOL)deckControlSetDeckStatus:(unsigned int)arg1 error:(id*)arg2;
-- (unsigned int)hash;
-- (BOOL)isEqual:(id)arg1;
 - (BOOL)makeActiveSourceWithTVMenus:(BOOL)arg1 error:(id*)arg2;
 - (BOOL)performStandbyWithTargetDevice:(id)arg1 error:(id*)arg2;
 - (BOOL)refreshDevices:(id*)arg1;

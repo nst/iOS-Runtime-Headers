@@ -9,8 +9,6 @@
     NSMutableDictionary *_observedMetadataKeys;
     int _playerState;
     IKJSPlaylist *_playlist;
-    JSManagedValue *_requestSeekToTimeListener;
-    JSManagedValue *_shouldHandleStateChangeListener;
     NSMutableDictionary *_timeListeners;
 }
 

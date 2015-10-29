@@ -4,30 +4,35 @@
 
 @interface MusicCoalescingEntityValueProvider : NSObject <MusicEntityValueProviding> {
     <MusicEntityValueProviding> *_baseEntityValueProvider;
-    NSDictionary *_cachedPropertyValues;
+    NSDictionary *_cachedPropertyValuesLoadedAsynchronously;
+    NSDictionary *_cachedPropertyValuesLoadedSynchronously;
     MusicEntityViewContentDescriptor *_contentDescriptor;
-    NSSet *_propertiesToPrefetch;
+    NSSet *_propertiesToLoadAsynchronously;
+    NSSet *_propertiesToPrefetchSynchronously;
 }
 
-@property (nonatomic, retain) <MusicEntityValueProviding> *baseEntityValueProvider;
-@property (nonatomic, retain) MusicEntityViewContentDescriptor *contentDescriptor;
+@property (nonatomic, readonly) <MusicEntityValueProviding> *baseEntityValueProvider;
+@property (nonatomic, readonly) MusicEntityViewContentDescriptor *contentDescriptor;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_cachedPropertyValues;
+- (id)_cachedPropertyValuesLoadedSynchronously;
 - (void)_handleContentDescriptorDidInvalidateNotification:(id)arg1;
-- (void)_invalidateCachedPropertyValues;
-- (void)_updatePropertiesToPrefetch;
+- (void)_invalidateCachedPropertyValuesLoadedAsynchronously;
+- (void)_invalidateCachedPropertyValuesLoadedSynchronously;
+- (void)_updatePropertiesToLoadAndPrefetch;
+- (void)_updateWithBaseEntityValueProvider:(id)arg1 contentDescriptor:(id)arg2;
 - (id)baseEntityValueProvider;
 - (id)contentDescriptor;
 - (void)dealloc;
 - (id)entityUniqueIdentifier;
 - (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
-- (void)setBaseEntityValueProvider:(id)arg1;
-- (void)setContentDescriptor:(id)arg1;
+- (void)reloadWithBaseEntityValueProvider:(id)arg1 contentDescriptor:(id)arg2;
+- (void)reset;
+- (void)updateWithAsynchronouslyLoadedPropertyValues:(id)arg1;
 - (id)valueForEntityProperty:(id)arg1;
 - (id)valuesForEntityProperties:(id)arg1;
 

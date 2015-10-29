@@ -383,6 +383,7 @@
 - (id)routeNameForVolumeControl;
 - (id)routingController;
 - (void)routingControllerAvailableRoutesDidChange:(id)arg1;
+- (void)routingControllerDidPauseFromActiveRouteChange:(id)arg1;
 - (void)routingControllerExternalScreenTypeDidChange:(id)arg1;
 - (void)setActive:(BOOL)arg1;
 - (void)setAlwaysPlayWheneverPossible:(BOOL)arg1;

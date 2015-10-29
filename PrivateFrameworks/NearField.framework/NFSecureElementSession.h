@@ -31,5 +31,6 @@
 - (id)signChallenge:(id)arg1;
 - (id)stateInformation;
 - (id)transceive:(id)arg1;
+- (unsigned int)validateSEPairing;
 
 @end

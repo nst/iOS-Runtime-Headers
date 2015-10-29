@@ -21,6 +21,7 @@
 - (id)passLibraryDataProvider;
 - (id)paymentDataProvider;
 - (id)secureElementID;
+- (BOOL)secureElementIsProductionSigned;
 - (id)setupDelegate;
 - (BOOL)showPassState;
 

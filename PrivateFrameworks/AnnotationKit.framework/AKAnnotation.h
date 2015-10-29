@@ -3,6 +3,7 @@
  */
 
 @interface AKAnnotation : NSObject <NSSecureCoding> {
+    BOOL _isDraggingHandle;
     BOOL _isEditingText;
     BOOL _isTranslating;
     int _originalExifOrientation;
@@ -17,6 +18,7 @@
 @property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } drawingBounds;
 @property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } hitTestBounds;
 @property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } integralDrawingBounds;
+@property BOOL isDraggingHandle;
 @property BOOL isEditingText;
 @property BOOL isTranslating;
 @property (nonatomic) int originalExifOrientation;
@@ -40,6 +42,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })integralDrawingBounds;
+- (BOOL)isDraggingHandle;
 - (BOOL)isEditingText;
 - (BOOL)isTranslating;
 - (id)keysForValuesToObserveForAdornments;
@@ -47,6 +50,7 @@
 - (id)keysForValuesToObserveForUndo;
 - (int)originalExifOrientation;
 - (float)originalModelBaseScaleFactor;
+- (void)setIsDraggingHandle:(BOOL)arg1;
 - (void)setIsEditingText:(BOOL)arg1;
 - (void)setIsTranslating:(BOOL)arg1;
 - (void)setOriginalExifOrientation:(int)arg1;

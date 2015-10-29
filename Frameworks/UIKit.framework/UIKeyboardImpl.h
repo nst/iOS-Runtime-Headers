@@ -49,13 +49,11 @@
     BOOL m_delegateRequiresKeyEvents;
     UIDelayedAction *m_detachHardwareKeyboardAction;
     BOOL m_didAutomaticallyInsertSpace;
-    BOOL m_didDisplayGlobeKeyMenu;
     BOOL m_didSyncDocumentStateToInputDelegate;
     BOOL m_doubleSpacePeriodPreference;
     BOOL m_doubleSpacePeriodWasAppliedInCurrentContext;
     id /* block */ m_externalTask;
     <UIKeyboardImplGeometryDelegate> *m_geometryDelegate;
-    UIDelayedAction *m_globeKeyAction;
     BOOL m_hardwareKeyboardAttached;
     UIPhysicalKeyboardEvent *m_hardwareRepeatEvent;
     UIKeyboardScheduledTask *m_hardwareRepeatTask;
@@ -76,7 +74,6 @@
     NSMutableArray *m_keyplaneNamesCurrentDelegate;
     NSMutableArray *m_keyplaneNamesPreviousDelegate;
     UIView *m_languageIndicator;
-    double m_lastGlobeKeyUpTime;
     WebEvent *m_lastWebEvent;
     UIKeyboardLayout *m_layout;
     BOOL m_longPress;
@@ -191,6 +188,7 @@
 + (id)activeInstance;
 + (float)additionalInstanceHeight;
 + (float)additionalInstanceHeightForInterfaceOrientation:(int)arg1;
++ (void)applicationDidBecomeActive:(id)arg1;
 + (void)applicationDidEnterBackground:(id)arg1;
 + (void)applicationDidReceiveMemoryWarning:(id)arg1;
 + (void)applicationWillEnterForeground:(id)arg1;
@@ -239,7 +237,6 @@
 - (id)_getCurrentKeyboardName;
 - (id)_getCurrentKeyplaneName;
 - (id)_getLocalizedInputMode;
-- (void)_globeKeyAction:(id)arg1;
 - (void)_handleKeyBehavior:(unsigned int)arg1 forKeyType:(id)arg2;
 - (void)_handleKeyEvent:(id)arg1 executionContext:(id)arg2;
 - (void)_handleWebKeyEvent:(id)arg1 withEventType:(int)arg2 withInputString:(id)arg3 withInputStringIgnoringModifiers:(id)arg4;
@@ -451,6 +448,7 @@
 - (void)handleAutoDeleteWithExecutionContext:(id)arg1;
 - (void)handleClear;
 - (void)handleClearWithExecutionContext:(id)arg1;
+- (void)handleClearWithInsertBeforeAdvance:(id)arg1;
 - (void)handleDelayedActionLongPress;
 - (void)handleDelete;
 - (void)handleDeleteAsRepeat:(BOOL)arg1 executionContext:(id)arg2;
@@ -458,7 +456,6 @@
 - (void)handleDeleteWithExecutionContext:(id)arg1;
 - (void)handleDeletionForCandidate:(id)arg1;
 - (id)handleDoubleSpacePeriodForInputString:(id)arg1 afterSpace:(BOOL)arg2 elapsedTime:(double)arg3;
-- (BOOL)handleGlobeKeyActions:(id)arg1 shiftDown:(BOOL)arg2 beforePublic:(BOOL)arg3;
 - (BOOL)handleKeyCommand:(id)arg1 repeatOkay:(BOOL*)arg2;
 - (BOOL)handleKeyCommand:(id)arg1 repeatOkay:(BOOL*)arg2 beforePublicKeyCommands:(BOOL)arg3;
 - (void)handleKeyEvent:(id)arg1;
@@ -489,7 +486,6 @@
 - (void)inputManagerDidGenerateAutocorrections:(id)arg1 executionContext:(id)arg2;
 - (void)inputManagerDidGenerateCandidatesForRequest:(id)arg1 resultSet:(id)arg2;
 - (id)inputManagerState;
-- (id)inputModeLastUsedForLanguage:(id)arg1;
 - (id)inputModeLastUsedPreference;
 - (id)inputModePreference;
 - (id)inputOverlayContainer;
@@ -672,6 +668,7 @@
 - (BOOL)shiftLockPreference;
 - (BOOL)shiftLockedEnabled;
 - (BOOL)shouldAcceptCandidate:(id)arg1 beforeInputString:(id)arg2;
+- (BOOL)shouldAllowRepeatEvent:(id)arg1;
 - (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toBegin:(BOOL)arg3;
 - (BOOL)shouldApplyAcceptedAutocorrection:(id)arg1;
 - (BOOL)shouldDeleteAutospaceBeforeTerminator:(id)arg1;

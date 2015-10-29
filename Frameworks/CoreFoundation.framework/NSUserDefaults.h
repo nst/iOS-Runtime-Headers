@@ -105,6 +105,12 @@
 + (BOOL)shouldShowCNFRegistrationServerLogs;
 + (BOOL)shouldShowCNFRegistrationSettingsUI;
 
+// Image: /System/Library/PrivateFrameworks/CoreRC.framework/CoreRC
+
++ (id)cecUserDefaults;
+
+- (BOOL)cecDeferLossOfLink;
+
 // Image: /System/Library/PrivateFrameworks/CoreUtils.framework/CoreUtils
 
 - (BOOL)boolValueSafeForKey:(id)arg1;

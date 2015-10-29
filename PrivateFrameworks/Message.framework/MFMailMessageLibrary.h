@@ -40,7 +40,8 @@
 - (id)_activeConnectionWrapper;
 - (void)_addMessageToThreadAtUnlock:(unsigned int)arg1;
 - (id)_addThreadingInfoWithContext:(id)arg1 usingDatabase:(struct sqlite3 { }*)arg2;
-- (id)_assignTransaction:(long long)arg1 forLibraryIDs:(id)arg2;
+- (id)_assignTransaction:(long long)arg1 forLibraryIDs:(id)arg2 database:(struct sqlite3 { }*)arg3;
+- (void)_assignTransaction:(long long)arg1 forSpotlightTombstones:(id)arg2 type:(int)arg3 database:(struct sqlite3 { }*)arg4;
 - (unsigned int)_attachmentCountForAggregatedMailboxes:(id)arg1;
 - (BOOL)_canSelectMessagesWithOptions:(unsigned int)arg1 db:(struct sqlite3 { }*)arg2;
 - (BOOL)_checkpointDatabase;
@@ -74,6 +75,8 @@
 - (void)_notifyDidCompact:(BOOL)arg1 messages:(id)arg2 mailboxes:(id)arg3;
 - (void)_performTransaction:(id /* block */)arg1 forWriting:(BOOL)arg2;
 - (struct sqlite3_stmt { }*)_prepareBatchStatement:(struct sqlite3 { }*)arg1 pattern:(id)arg2 libraryIDs:(unsigned int*)arg3 batchSize:(unsigned int)arg4;
+- (struct sqlite3_stmt { }*)_prepareBatchStatement:(struct sqlite3 { }*)arg1 pattern:(id)arg2 objects:(id*)arg3 count:(unsigned int)arg4;
+- (void)_purgeSpotlightTombstonesBeforeTransaction:(long long)arg1 database:(struct sqlite3 { }*)arg2;
 - (id)_queryForMailboxesIDsFromMailboxes:(id)arg1;
 - (id)_quotedPrefixLikeSubclauseForColumn:(id)arg1 value:(id)arg2;
 - (void)_reconcileAfterKeybagUnlock;
@@ -85,10 +88,12 @@
 - (BOOL)_setMessageData:(id)arg1 libraryID:(unsigned int)arg2 part:(id)arg3 partial:(BOOL)arg4 complete:(BOOL)arg5;
 - (void)_setMessageDataString:(id)arg1 forKey:(id)arg2 forMessage:(id)arg3;
 - (void)_setProtectedDataAvailabilityState:(int)arg1;
+- (id)_stringsForIndexSet:(id)arg1;
 - (BOOL)_writeEmlxFile:(id)arg1 withBodyData:(id)arg2 protectionClass:(int)arg3;
 - (id)accountForMessage:(id)arg1;
 - (id)addMessages:(id)arg1 withMailbox:(id)arg2 fetchBodies:(BOOL)arg3 newMessagesByOldMessage:(id)arg4 remoteIDs:(id)arg5 setFlags:(unsigned long long)arg6 clearFlags:(unsigned long long)arg7 messageFlagsForMessages:(id)arg8 copyFiles:(BOOL)arg9 addPOPUIDs:(BOOL)arg10 dataSectionsByMessage:(id)arg11;
 - (long long)addReferenceForContext:(id)arg1 usingDatabase:(struct sqlite3 { }*)arg2 mergeHandler:(id /* block */)arg3;
+- (void)addSpotlightTombstones:(id)arg1 type:(int)arg2;
 - (id)allMailboxURLStrings;
 - (unsigned int)allNonDeleteCountForMailbox:(id)arg1 includeServerSearchResults:(BOOL)arg2 includeThreadSearchResults:(BOOL)arg3;
 - (id)allUIDsInMailbox:(id)arg1;
@@ -165,7 +170,6 @@
 - (void)invalidateAndWait;
 - (BOOL)isMessageContentsLocallyAvailable:(id)arg1;
 - (BOOL)isProtectedDataAvailable:(struct sqlite3 { }*)arg1;
-- (id)itemsRequiringIndexingForSearchableIndex:(id)arg1 limit:(unsigned int)arg2;
 - (void)iterateMessagesMatchingCriterion:(id)arg1 options:(unsigned int)arg2 handler:(id /* block */)arg3;
 - (void)iterateMessagesMatchingCriterion:(id)arg1 withResultHandler:(id)arg2 options:(unsigned int)arg3 withMonitor:(id)arg4;
 - (void)iterateStatement:(struct sqlite3_stmt { }*)arg1 db:(struct sqlite3 { }*)arg2 withProgressMonitor:(id)arg3 andRowHandler:(int (*)arg4 context:(void*)arg5;
@@ -235,7 +239,7 @@
 - (BOOL)renameMailboxes:(id)arg1 to:(id)arg2;
 - (void)renameOrRemoveDatabase;
 - (int)rollbackTransaction:(struct sqlite3 { }*)arg1;
-- (id)searchableIndex:(id)arg1 assignTransaction:(long long)arg2 forIdentifiers:(id)arg3;
+- (id)searchableIndex:(id)arg1 assignTransaction:(long long)arg2 updates:(id)arg3;
 - (void)searchableIndex:(id)arg1 invalidateItemsGreaterThanTransaction:(long long)arg2;
 - (void)sendMessagesForStatement:(struct sqlite3_stmt { }*)arg1 db:(struct sqlite3 { }*)arg2 to:(id)arg3 options:(unsigned int)arg4 timestamp:(unsigned long long)arg5;
 - (void)sendMessagesMatchingCriterion:(id)arg1 to:(id)arg2 options:(unsigned int)arg3;
@@ -283,6 +287,7 @@
 - (void)updateMessage:(id)arg1 withMetadata:(id /* block */)arg2;
 - (void)updateRecipientsForMessage:(id)arg1 fromHeaders:(id)arg2;
 - (void)updateThreadingInfoForMessage:(id)arg1 fromHeaders:(id)arg2;
+- (id)updatesForSearchableIndex:(id)arg1 count:(unsigned int)arg2;
 - (id)urlForMailboxID:(unsigned int)arg1;
 - (void)vacuumDataForObsoleteAccountURLString:(id)arg1;
 - (unsigned int)verifyRepresentativeSampleForSearchableIndex:(id)arg1;

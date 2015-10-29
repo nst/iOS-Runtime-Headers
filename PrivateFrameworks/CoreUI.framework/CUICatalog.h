@@ -5,17 +5,18 @@
 @interface CUICatalog : NSObject {
     NSString *_assetStoreName;
     NSBundle *_bundle;
+    NSCache *_lookupCache;
     unsigned int _purgeWhenFinished;
     NSMapTable *_storageMapTable;
     unsigned int _storageRef;
 }
 
-+ (id)_resolvedRenditionKeyFromThemeRef:(unsigned int)arg1 withBaseKey:(id)arg2 scaleFactor:(float)arg3 deviceIdiom:(int)arg4 deviceSubtype:(unsigned int)arg5 sizeClassHorizontal:(int)arg6 sizeClassVertical:(int)arg7 memoryClass:(unsigned int)arg8 graphicsClass:(unsigned int)arg9 graphicsFallBackOrder:(id)arg10;
 + (id)bestMatchUsingImages:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4;
 + (id)bestMatchUsingImages:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4 sizeClassHorizontal:(int)arg5 sizeClassVertical:(int)arg6;
 + (id)bestMatchUsingObjects:(id)arg1 getAttributeValueUsing:(id /* block */)arg2 scaleFactor:(float)arg3 deviceIdiom:(int)arg4 deviceSubtype:(unsigned int)arg5 sizeClassHorizontal:(int)arg6 sizeClassVertical:(int)arg7 memoryClass:(int)arg8 graphicsFeatureSetClass:(int)arg9 graphicsFallBackOrder:(id)arg10;
 + (id)defaultUICatalog;
 + (id)defaultUICatalogForBundle:(id)arg1;
++ (BOOL)isValidLCRWithBytes:(const void*)arg1 length:(unsigned long)arg2;
 + (id)systemUICatalog;
 
 - (id)_baseAtlasContentsKeyForName:(id)arg1;
@@ -25,6 +26,7 @@
 - (BOOL)_doStyledQuartzDrawingInContext:(struct CGContext { }*)arg1 inBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 stylePresetName:(id)arg3 styleConfiguration:(id)arg4 drawingHandler:(id /* block */)arg5;
 - (id)_imageWithName:(id)arg1 scaleFactor:(float)arg2;
 - (id)_resolvedRenditionKeyForName:(id)arg1 scaleFactor:(float)arg2 deviceIdiom:(int)arg3 deviceSubtype:(unsigned int)arg4 sizeClassHorizontal:(int)arg5 sizeClassVertical:(int)arg6 memoryClass:(unsigned int)arg7 graphicsClass:(unsigned int)arg8 graphicsFallBackOrder:(id)arg9 withBaseKeySelector:(SEL)arg10;
+- (id)_resolvedRenditionKeyFromThemeRef:(unsigned int)arg1 withBaseKey:(id)arg2 scaleFactor:(float)arg3 deviceIdiom:(int)arg4 deviceSubtype:(unsigned int)arg5 sizeClassHorizontal:(int)arg6 sizeClassVertical:(int)arg7 memoryClass:(unsigned int)arg8 graphicsClass:(unsigned int)arg9 graphicsFallBackOrder:(id)arg10;
 - (void)_resourceUnPinnedNotification:(id)arg1;
 - (unsigned int)_storageRefForRendition:(id)arg1 representsODRContent:(BOOL*)arg2;
 - (unsigned int)_themeRef;

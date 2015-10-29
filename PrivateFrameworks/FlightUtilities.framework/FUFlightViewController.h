@@ -43,6 +43,7 @@
 - (id)initWithFlight:(id)arg1;
 - (id)initWithFlightCode:(unsigned int)arg1 airlineCode:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)knownStatus;
 - (void)loadFlightWithFlightCode:(id)arg1 airlineCode:(id)arg2 date:(id)arg3;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)setAirlineCode:(id)arg1;
@@ -60,6 +61,7 @@
 - (void)updateFlightStatus;
 - (void)updateFlightTerminalInfo;
 - (void)updateLocationInfo;
+- (void)updateTimeLabel:(id)arg1 withString:(id)arg2;
 - (void)viewDidDisappear;
 - (void)viewDidLoad;
 - (void)viewWillAppear;

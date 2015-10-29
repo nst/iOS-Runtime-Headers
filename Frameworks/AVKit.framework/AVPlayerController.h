@@ -10,6 +10,7 @@
 
 @property (nonatomic) BOOL CALayerDestinationIsTVOut;
 @property (nonatomic, readonly) NSError *error;
+@property (nonatomic, readonly) BOOL hasDiscoveredVideo;
 @property (nonatomic, readonly) AVPlayer *player;
 @property (getter=isPlayingOnSecondScreen, nonatomic) BOOL playingOnSecondScreen;
 @property (nonatomic, readonly) int status;
@@ -57,6 +58,7 @@
 - (BOOL)hasAudioMediaSelectionOptions;
 - (BOOL)hasContent;
 - (BOOL)hasContentChapters;
+- (BOOL)hasDiscoveredVideo;
 - (BOOL)hasEnabledAudio;
 - (BOOL)hasEnabledVideo;
 - (BOOL)hasLegibleMediaSelectionOptions;

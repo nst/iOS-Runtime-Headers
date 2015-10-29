@@ -9,7 +9,8 @@
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (BOOL)_popupMenuStyleForKey:(id)arg1;
 - (BOOL)_popupStyleForKey:(id)arg1;
-- (float)_row4ControlSegmentWidth;
+- (float)_row4ControlSegmentWidthLeft;
+- (float)_row4ControlSegmentWidthRight;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (id)activeControlKeyTraits;
 - (float)assistKeyFontSize;

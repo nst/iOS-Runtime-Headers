@@ -27,7 +27,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) float topContentInset;
 
-+ (struct { float x1; float x2; })_actionableHeaderMetrics;
++ (struct { float x1; float x2; int x3; int x4; })_actionableHeaderMetricsForDisplayScale:(float)arg1;
 + (float)heightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
@@ -43,6 +43,7 @@
 - (id)initWithReuseIdentifier:(id)arg1;
 - (BOOL)isActionable;
 - (void)layoutSubviews;
+- (void)music_inheritedLayoutInsetsDidChange;
 - (void)setActionable:(BOOL)arg1;
 - (void)setBackdropGroupName:(id)arg1;
 - (void)setBackgroundColorForNonFloatingState:(id)arg1;
@@ -51,8 +52,8 @@
 - (void)setHairlineStyleForNonFloatingState:(int)arg1;
 - (void)setHeaderText:(id)arg1;
 - (void)setHeaderTextColorForNonFloatingState:(id)arg1;
-- (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTopContentInset:(float)arg1;
 - (float)topContentInset;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

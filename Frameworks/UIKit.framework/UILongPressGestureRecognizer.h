@@ -24,6 +24,7 @@
     double _minimumPressDuration;
     unsigned int _numberOfTouchesRequired;
     BOOL _requiresQuietImpulse;
+    BOOL _requiresQuietImpulseForCurrentTouchSequence;
     struct CGPoint { 
         float x; 
         float y; 
@@ -36,6 +37,7 @@
 @property (setter=_setButtonType:, nonatomic) int _buttonType;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } _centroidScreen;
 @property (setter=_setRequiresQuietImpulse:, nonatomic) BOOL _requiresQuietImpulse;
+@property (setter=_setRequiresQuietImpulseForCurrentTouchSequence:, nonatomic) BOOL _requiresQuietImpulseForCurrentTouchSequence;
 @property (nonatomic) float allowableMovement;
 @property (nonatomic) BOOL cancelPastAllowableMovement;
 @property (nonatomic, readonly) struct CGPoint { float x1; float x2; } centroid;
@@ -63,17 +65,20 @@
 - (void)_incorporateTouchForceMessageIntoImpulseQuietness:(id)arg1;
 - (void)_interactionsEndedWithValidTouches:(BOOL)arg1;
 - (BOOL)_requiresQuietImpulse;
+- (BOOL)_requiresQuietImpulseForCurrentTouchSequence;
 - (void)_resetGestureRecognizer;
 - (void)_resetImpulseQuietness;
 - (void)_setAllowableSeparation:(float)arg1;
 - (void)_setAllowsDynamicTouchesList:(BOOL)arg1;
 - (void)_setButtonType:(int)arg1;
 - (void)_setRequiresQuietImpulse:(BOOL)arg1;
+- (void)_setRequiresQuietImpulseForCurrentTouchSequence:(BOOL)arg1;
 - (BOOL)_shouldFailInResponseToPresses:(id)arg1 withEvent:(id)arg2;
 - (BOOL)_shouldReceivePress:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_startPointInView:(id)arg1;
 - (void)_startTapFinishedTimer;
 - (float)_touchSloppinessFactor;
+- (BOOL)_touchesMayBeRecognizedByForcePreviewingRevealGestureRecognizerWhichShouldDelayTimer:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_translationInView:(id)arg1;
 - (BOOL)activeTouchesExceedAllowableSeparation;
 - (float)allowableMovement;

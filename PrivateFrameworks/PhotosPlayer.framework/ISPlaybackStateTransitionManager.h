@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
  */
 
-@interface ISPlaybackStateTransitionManager : NSObject {
+@interface ISPlaybackStateTransitionManager : NSObject <ISPlaybackSpecObserver> {
     int __currentRequestID;
     BOOL __didHideCrossfadeContentForCurrentPlayback;
     BOOL __needsUpdateAnimations;
@@ -21,6 +21,7 @@
     struct { 
         BOOL respondsToDidEndTransition; 
     } _delegateFlags;
+    double _endVitalityTransitionDuration;
     NSHashTable *_outputs;
     ISPlaybackSpec *_playbackSpec;
     float _progress;
@@ -40,10 +41,15 @@
 @property (setter=_setVideoAnimationsForEndingVitality:, nonatomic, retain) NSArray *_videoAnimationsForEndingVitality;
 @property (setter=_setVideoFilters:, nonatomic, retain) NSArray *_videoFilters;
 @property (nonatomic, readonly) int currentPlaybackState;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ISPlaybackStateTransitionManagerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) double endVitalityTransitionDuration;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSHashTable *outputs;
 @property (nonatomic, retain) ISPlaybackSpec *playbackSpec;
 @property (nonatomic, readonly) float progress;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (int)_currentRequestID;
@@ -78,13 +84,16 @@
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (int)currentPlaybackState;
 - (id)delegate;
-- (void)hideCrossfadeContentForTransitionToVideo:(BOOL)arg1 subtractingDuration:(double)arg2;
+- (double)endVitalityTransitionDuration;
+- (void)hideCrossfadeContentWithBlurAndScale:(BOOL)arg1 withDuration:(double)arg2;
 - (id)init;
 - (id)outputs;
 - (int)performTransitionToPlaybackState:(int)arg1 withProgress:(float)arg2;
 - (id)playbackSpec;
+- (void)playbackSpecDidChange:(id)arg1;
 - (float)progress;
 - (void)setDelegate:(id)arg1;
+- (void)setEndVitalityTransitionDuration:(double)arg1;
 - (void)setOutputs:(id)arg1;
 - (void)setPlaybackSpec:(id)arg1;
 - (void)willTransitionToPlaybackState:(int)arg1 withProgress:(float)arg2;

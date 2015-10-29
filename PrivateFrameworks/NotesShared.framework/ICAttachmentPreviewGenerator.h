@@ -6,6 +6,7 @@
     NSOperationQueue *_asyncGeneratorQueue;
     NSMutableSet *_attachmentsToRetry;
     NSOperationQueue *_costlyGeneratorQueue;
+    BOOL _delayPreviewGeneration;
     NSOperationQueue *_generatorQueue;
     ICProgressIndicatorTracker *_progressTracker;
 }
@@ -14,6 +15,7 @@
 @property (nonatomic, retain) NSMutableSet *attachmentsToRetry;
 @property (nonatomic, retain) NSOperationQueue *costlyGeneratorQueue;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL delayPreviewGeneration;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSOperationQueue *generatorQueue;
 @property (readonly) unsigned int hash;
@@ -31,6 +33,7 @@
 - (void)cloudContextFetchRecordChangeOperationDidFinish:(id)arg1;
 - (id)costlyGeneratorQueue;
 - (void)dealloc;
+- (BOOL)delayPreviewGeneration;
 - (void)generatePreviewIfNeededForAttachment:(id)arg1;
 - (void)generatePreviewsIfNeeded;
 - (id)generatorQueue;
@@ -43,6 +46,7 @@
 - (void)setAsyncGeneratorQueue:(id)arg1;
 - (void)setAttachmentsToRetry:(id)arg1;
 - (void)setCostlyGeneratorQueue:(id)arg1;
+- (void)setDelayPreviewGeneration:(BOOL)arg1;
 - (void)setGeneratorQueue:(id)arg1;
 - (void)setProgressTracker:(id)arg1;
 - (void)setupAttachmentPreviewGeneratorObservers;

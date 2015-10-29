@@ -162,7 +162,6 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
 - (void)layoutSubviews;
 - (BOOL)needsReply;
-- (void)prepareForReuse;
 - (id)primaryTextLabelFont;
 - (id)reuseIdentifier;
 - (void)setDrawsOwnRowSeparators:(BOOL)arg1;

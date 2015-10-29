@@ -21,7 +21,7 @@
 + (id)entityKeyForPropertyKey:(id)arg1;
 + (id)fetchCollectionsInCollectionList:(id)arg1 options:(id)arg2;
 + (id)fetchMomentsForAssetsWithLocalIdentifiers:(id)arg1 options:(id)arg2;
-+ (id)fetchPredicateFromComparisonPredicate:(id)arg1;
++ (id)fetchPredicateFromComparisonPredicate:(id)arg1 options:(id)arg2;
 + (id)fetchTopLevelUserCollectionsWithOptions:(id)arg1;
 + (id)managedEntityName;
 + (BOOL)managedObjectSupportsTrashedState;

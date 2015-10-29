@@ -68,6 +68,7 @@
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 - (id)UIImage;
+- (id)imageObj;
 - (id)traitCollection;
 
 @end

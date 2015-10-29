@@ -12,6 +12,7 @@
     ICDDevice *_currentDevice;
     ICNote *_currentNote;
     ICPerson *_currentPerson;
+    BOOL _delaySaving;
     <ICNoteContextDelegate> *_delegate;
     BOOL _didResumeIndexing;
     NSString *_localizedLocalAccountName;
@@ -36,6 +37,7 @@
 @property (nonatomic, retain) ICNote *currentNote;
 @property (nonatomic, retain) ICPerson *currentPerson;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) BOOL delaySaving;
 @property (retain) <ICNoteContextDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL didResumeIndexing;
@@ -139,6 +141,7 @@
 - (void)dealloc;
 - (id)defaultAccount;
 - (id)defaultSortDescriptors;
+- (BOOL)delaySaving;
 - (id)delegate;
 - (void)deleteAccount:(id)arg1;
 - (void)deleteAttachment:(id)arg1;
@@ -259,6 +262,7 @@
 - (id)resumeIndexingDelayer;
 - (BOOL)save;
 - (BOOL)save:(id*)arg1;
+- (BOOL)saveImmediately;
 - (id)searchIndexableObjectInMainContextForObjectIdentifier:(id)arg1 refreshObject:(BOOL)arg2 includeDeleted:(BOOL)arg3;
 - (id)searchIndexer;
 - (id)searchIndexerContext;
@@ -272,6 +276,7 @@
 - (void)setCurrentDevice:(id)arg1;
 - (void)setCurrentNote:(id)arg1;
 - (void)setCurrentPerson:(id)arg1;
+- (void)setDelaySaving:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDidResumeIndexing:(BOOL)arg1;
 - (void)setManagedObjectContext:(id)arg1;

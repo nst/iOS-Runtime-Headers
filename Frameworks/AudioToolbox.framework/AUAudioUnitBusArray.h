@@ -29,6 +29,7 @@
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;
 - (void)dealloc;
+- (void)indexBusses;
 - (id)init;
 - (id)initWithAudioUnit:(id)arg1 busType:(int)arg2;
 - (id)initWithAudioUnit:(id)arg1 busType:(int)arg2 busses:(id)arg3;

@@ -191,6 +191,7 @@
 - (BOOL)markResourceChangeAlerted:(id)arg1 error:(id*)arg2;
 - (BOOL)moveDiagnosticsLogToCrashReporterFolder;
 - (int)notifiableEventCount;
+- (BOOL)objectWithIDExists:(id)arg1;
 - (id)objectWithObjectID:(id)arg1;
 - (id)objectsPendingCommit;
 - (id)occurrenceCacheGetOccurrencesForCalendars:(id)arg1;

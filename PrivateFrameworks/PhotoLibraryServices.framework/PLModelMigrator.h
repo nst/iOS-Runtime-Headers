@@ -38,7 +38,7 @@
 + (BOOL)_fixAlbumAndFolderSortAscending:(id)arg1;
 + (BOOL)_fixCorruptedOrientationsInStore:(id)arg1;
 + (BOOL)_fixDuplicatedAssets:(id)arg1;
-+ (BOOL)_fixEmptyVideoDerivativePathsInStore:(id)arg1;
++ (BOOL)_fixEmptyVideoResourcePathsInStore:(id)arg1;
 + (BOOL)_fixIncorrectAddedDateForAssetsInStore:(id)arg1;
 + (BOOL)_fixItemIdentifierForVideoCmplInStore:(id)arg1;
 + (BOOL)_fixLocalPathForVideoCmplDerivativesInStore:(id)arg1;
@@ -93,6 +93,7 @@
 + (BOOL)_populateHasAdjustmentsForAssetsInStore:(id)arg1;
 + (BOOL)_populateLightweightReimportDirectoryWithPhotoCloudSharingAssetsInManagedObjectContext:(id)arg1 error:(id*)arg2;
 + (BOOL)_populateUnmanagedAdjustmentsFromFileSystemInManagedObjectContext:(id)arg1;
++ (BOOL)_populateVideoCpFieldsInStagedStore:(id)arg1;
 + (BOOL)_postProcessFromVersion6006Store:(id)arg1;
 + (BOOL)_rebuildAllMomentsInStore:(id)arg1;
 + (BOOL)_recoverSingleBurstPhotos:(id)arg1;

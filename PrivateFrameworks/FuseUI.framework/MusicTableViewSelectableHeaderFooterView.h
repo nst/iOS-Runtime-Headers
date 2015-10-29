@@ -8,6 +8,12 @@
     UIView *_highlightOverlayView;
     BOOL _highlighted;
     BOOL _lastHighlightOrSelectionChangeWasAnimated;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _musicSeparatorInset;
     BOOL _selected;
     UIColor *_selectionTintColor;
     UIColor *_separatorColor;
@@ -21,6 +27,7 @@
 @property (getter=isSelected, nonatomic) BOOL selected;
 @property (nonatomic, retain) UIColor *selectionTintColor;
 @property (nonatomic, retain) UIColor *separatorColor;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } separatorInset;
 @property (nonatomic) BOOL showsBottomSeparator;
 @property (nonatomic) BOOL showsTopSeparator;
 
@@ -37,6 +44,7 @@
 - (void)prepareForReuse;
 - (id)selectionTintColor;
 - (id)separatorColor;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })separatorInset;
 - (void)setFloating:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
@@ -44,6 +52,7 @@
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelectionTintColor:(id)arg1;
 - (void)setSeparatorColor:(id)arg1;
+- (void)setSeparatorInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setShowsBottomSeparator:(BOOL)arg1;
 - (void)setShowsTopSeparator:(BOOL)arg1;
 - (BOOL)showsBottomSeparator;

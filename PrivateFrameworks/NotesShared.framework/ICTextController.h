@@ -6,6 +6,8 @@
     BOOL _disableAddingExtraLinesIfNeeded;
     ICLayoutManager *_layoutManager;
     ICNote *_note;
+    BOOL _trackAddedExtraNewlineRanges;
+    NSMutableArray *_trackedRangesForAddedExtraNewlines;
     NSMutableDictionary *_trackedToDoParagraphs;
     BOOL _userChangedWritingDirection;
 }
@@ -13,6 +15,8 @@
 @property (nonatomic) BOOL disableAddingExtraLinesIfNeeded;
 @property (nonatomic) ICLayoutManager *layoutManager;
 @property (nonatomic) ICNote *note;
+@property (nonatomic) BOOL trackAddedExtraNewlineRanges;
+@property (nonatomic, retain) NSMutableArray *trackedRangesForAddedExtraNewlines;
 @property (nonatomic, readonly) NSMutableDictionary *trackedToDoParagraphs;
 @property BOOL userChangedWritingDirection;
 
@@ -55,6 +59,8 @@
 - (void)setNote:(id)arg1 stylingTextUsingSeparateTextStorageForRendering:(BOOL)arg2 withLayoutManager:(id)arg3;
 - (int)setTextStyle:(unsigned int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inTextStorage:(id)arg3;
 - (int)setTextStyle:(unsigned int)arg1 removeExtraStyling:(BOOL)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 inTextStorage:(id)arg4;
+- (void)setTrackAddedExtraNewlineRanges:(BOOL)arg1;
+- (void)setTrackedRangesForAddedExtraNewlines:(id)arg1;
 - (void)setTypingAttributesForUndo:(id)arg1;
 - (void)setTypingTextStyle:(unsigned int)arg1 textView:(struct UITextView { Class x1; }*)arg2;
 - (void)setUserChangedWritingDirection:(BOOL)arg1;
@@ -63,6 +69,9 @@
 - (void)superscriptDelta:(int)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inTextStorage:(id)arg3;
 - (void)superscriptUpdate:(id /* block */)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inTextStorage:(id)arg3;
 - (id)todoForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inTextStorage:(id)arg2;
+- (BOOL)trackAddedExtraNewlineRanges;
+- (void)trackExtraNewLineRangeIfNecessary:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (id)trackedRangesForAddedExtraNewlines;
 - (id)trackedToDoParagraphs;
 - (void)uniqueParagraphStylesInTextStorage:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)unscriptRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 inTextStorage:(id)arg2;

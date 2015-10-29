@@ -3,26 +3,27 @@
  */
 
 @interface BRQueryStitch : NSObject {
+    NSArray *_contexts;
     NSURL *_fromURL;
     BOOL _kind;
     NSNumber *_objid;
-    NSArray *_queries;
     NSURL *_url;
 }
 
+@property (nonatomic, retain) NSArray *contexts;
 @property (nonatomic, retain) NSURL *fromURL;
-@property (nonatomic, retain) NSArray *queries;
 
 - (void)_creationDone;
 - (void)_deletionDone;
 - (void)_enableUpdatesFromIPCAfterStitchingOnAllQueries;
 - (void)_renameDone;
+- (id)contexts;
 - (void)dealloc;
 - (id)description;
 - (void)done;
 - (id)fromURL;
 - (id)initWithURL:(id)arg1 objid:(id)arg2 kind:(BOOL)arg3;
-- (id)queries;
+- (void)setContexts:(id)arg1;
 - (void)setFromURL:(id)arg1;
 - (void)setQueries:(id)arg1;
 

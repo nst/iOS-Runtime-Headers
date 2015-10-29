@@ -49,6 +49,7 @@
 - (id)_defaultResponseForBatchRequest:(id)arg1;
 - (id)_handleAdSlotRequest:(id)arg1 message:(id)arg2;
 - (id)_handleBatchRequest:(id)arg1 message:(id)arg2;
+- (id)_handleConfigurationRequest:(id)arg1 message:(id)arg2;
 - (id)_handleGenericAnalyticsRequest:(id)arg1 message:(id)arg2 type:(int)arg3;
 - (id)_handleGenericPostRequest:(id)arg1;
 - (id)_handleHeartbeatTokenRequest:(id)arg1 message:(id)arg2;

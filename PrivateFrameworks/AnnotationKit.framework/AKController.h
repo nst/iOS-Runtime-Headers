@@ -18,6 +18,7 @@
     NSMutableArray *_pageControllers;
     NSMapTable *_pageModelControllersToPageControllers;
     unsigned int _pasteCascadingMultiplier;
+    AKPeripheralAvailabilityManager_iOS *_peripheralAvailabilityManager;
     BOOL _showingMenu;
     AKSignatureModelController *_signatureModelController;
     AKTextEditorController *_textEditorController;
@@ -44,6 +45,7 @@
 @property (retain) NSMutableArray *pageControllers;
 @property (retain) NSMapTable *pageModelControllersToPageControllers;
 @property unsigned int pasteCascadingMultiplier;
+@property (retain) AKPeripheralAvailabilityManager_iOS *peripheralAvailabilityManager;
 @property (getter=isShowingMenu) BOOL showingMenu;
 @property (retain) AKSignatureModelController *signatureModelController;
 @property (retain) AKTextEditorController *textEditorController;
@@ -55,6 +57,7 @@
 + (void)adjustAnnotationBoundsToFitText:(id)arg1;
 + (id)akBundle;
 + (id)akBundleIdentifier;
++ (BOOL)canConnectToStylus;
 + (id)controllerWithDelegate:(id)arg1;
 + (BOOL)hasPressureCapableHardware;
 + (void)renderAnnotation:(id)arg1 inContext:(struct CGContext { }*)arg2;
@@ -103,6 +106,7 @@
 - (void)paste:(id)arg1;
 - (unsigned int)pasteCascadingMultiplier;
 - (void)performActionForSender:(id)arg1;
+- (id)peripheralAvailabilityManager;
 - (void)prepareOverlayAtIndex:(unsigned int)arg1;
 - (id)pressGestureRecognizer;
 - (void)redo:(id)arg1;
@@ -128,6 +132,7 @@
 - (void)setPageControllers:(id)arg1;
 - (void)setPageModelControllersToPageControllers:(id)arg1;
 - (void)setPasteCascadingMultiplier:(unsigned int)arg1;
+- (void)setPeripheralAvailabilityManager:(id)arg1;
 - (void)setShowingMenu:(BOOL)arg1;
 - (void)setSignatureModelController:(id)arg1;
 - (void)setTextEditorController:(id)arg1;
@@ -135,6 +140,7 @@
 - (void)setToolbarView:(id)arg1;
 - (void)setToolbarViewController:(id)arg1;
 - (void)setUndoController:(id)arg1;
+- (BOOL)shouldDrawVariableStrokeDoodles;
 - (void)showAttributeInspector:(id)arg1;
 - (void)showSelectionMenu:(id)arg1;
 - (id)signatureModelController;

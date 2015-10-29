@@ -5,9 +5,11 @@
 @interface MPUQueryDataSource : MPUDataSource {
     NSMutableSet *_additionalUniqueItemPropertiesToFetch;
     NSArray *_entities;
+    BOOL _hasValidEmpty;
     BOOL _hasValidRepresentativeCollection;
     BOOL _ignoringInvalidationDueToBackgroundApplicationState;
     BOOL _invalidateWhenEnteringForeground;
+    BOOL _isEmpty;
     MPMediaQuery *_query;
     MPMediaItemCollection *_representativeCollection;
     MPMediaQuerySectionInfo *_sectionInfo;

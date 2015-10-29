@@ -17,6 +17,7 @@
 @property (nonatomic, readonly) NSArray *figChapters;
 @property (getter=_formatReader, nonatomic, readonly) struct OpaqueFigFormatReader { }*formatReader;
 @property (nonatomic, readonly) BOOL hasProtectedContent;
+@property (nonatomic, readonly) NSURL *originalNetworkContentURL;
 @property (nonatomic, readonly) NSURL *resolvedURL;
 @property (getter=_isStreaming, nonatomic, readonly) BOOL streaming;
 
@@ -56,6 +57,7 @@
 - (id)metadataForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })naturalSize;
 - (int)naturalTimeScale;
+- (id)originalNetworkContentURL;
 - (float)preferredRate;
 - (float)preferredSoundCheckVolumeNormalization;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })preferredTransform;

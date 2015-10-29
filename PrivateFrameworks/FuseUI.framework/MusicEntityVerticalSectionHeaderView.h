@@ -21,8 +21,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic) float topContentInset;
 
-+ (struct { float x1; float x2; })_actionableHeaderMetrics;
-+ (Class)actionableHeaderViewClass;
++ (struct { float x1; float x2; int x3; int x4; })_actionableHeaderMetricsForDisplayScale:(float)arg1;
 + (float)heightForTraitCollection:(id)arg1;
 
 - (void).cxx_destruct;
@@ -32,13 +31,13 @@
 - (float)bottomContentInset;
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
+- (void)music_inheritedLayoutInsetsDidChange;
 - (void)setAlignsHairlineWithTitle:(BOOL)arg1;
 - (void)setBottomContentInset:(float)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setLayoutMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setTopContentInset:(float)arg1;
 - (float)topContentInset;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

@@ -8,7 +8,7 @@
 - (void)_allFailureRequirementsCompletedRelatedToFailureRequirement:(_UIGestureRecognizerFailureRequirement *)arg1;
 - (NSString *)_delegateDescriptionForFailureRequirement:(_UIGestureRecognizerFailureRequirement *)arg1;
 - (NSSet *)_dependentFailureRequirementsForFailureRequirement:(_UIGestureRecognizerFailureRequirement *)arg1;
-- (void)_failureRequirement:(_UIGestureRecognizerFailureRequirement *)arg1 requiredFailureRequirement:(_UIGestureRecognizerFailureRequirement *)arg2 completedWithEvent:(UIEvent *)arg3;
+- (void)_failureRequirement:(_UIGestureRecognizerFailureRequirement *)arg1 requiredFailureRequirement:(_UIGestureRecognizerFailureRequirement *)arg2 completedWithEvent:(UIEvent *)arg3 pressesEvent:(UIPressesEvent *)arg4;
 - (UIGestureRecognizer *)_gestureRecognizerForFailureRequirement:(_UIGestureRecognizerFailureRequirement *)arg1;
 - (BOOL)_isFailureRequirementEnabled:(_UIGestureRecognizerFailureRequirement *)arg1;
 - (NSSet *)_requiredFailureRequirementsForFailureRequirement:(_UIGestureRecognizerFailureRequirement *)arg1;

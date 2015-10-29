@@ -3,22 +3,30 @@
  */
 
 @interface PHVideoRequestOptions : NSObject {
+    int _contentMode;
     int _deliveryMode;
     BOOL _networkAccessAllowed;
     id /* block */ _progressHandler;
     BOOL _streamingAllowed;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _targetSize;
     int _version;
     BOOL _videoComplementAllowed;
 }
 
+@property (nonatomic) int contentMode;
 @property (nonatomic) int deliveryMode;
 @property (getter=isNetworkAccessAllowed, nonatomic) BOOL networkAccessAllowed;
 @property (nonatomic, copy) id /* block */ progressHandler;
 @property (getter=isStreamingAllowed, nonatomic) BOOL streamingAllowed;
+@property (nonatomic) struct CGSize { float x1; float x2; } targetSize;
 @property (nonatomic) int version;
 @property (getter=isVideoComplementAllowed, nonatomic) BOOL videoComplementAllowed;
 
 - (void).cxx_destruct;
+- (int)contentMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (int)deliveryMode;
 - (id)description;
@@ -27,12 +35,15 @@
 - (BOOL)isStreamingAllowed;
 - (BOOL)isVideoComplementAllowed;
 - (id /* block */)progressHandler;
+- (void)setContentMode:(int)arg1;
 - (void)setDeliveryMode:(int)arg1;
 - (void)setNetworkAccessAllowed:(BOOL)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
 - (void)setStreamingAllowed:(BOOL)arg1;
+- (void)setTargetSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setVersion:(int)arg1;
 - (void)setVideoComplementAllowed:(BOOL)arg1;
+- (struct CGSize { float x1; float x2; })targetSize;
 - (int)version;
 
 @end

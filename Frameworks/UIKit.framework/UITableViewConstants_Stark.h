@@ -35,6 +35,8 @@
 - (id)defaultFooterFontForView:(id)arg1 inTableView:(id)arg2;
 - (id)defaultFooterTextColorForTableViewStyle:(int)arg1;
 - (id)defaultFooterTextColorForView:(id)arg1 inTableView:(id)arg2;
+- (float)defaultGroupedFooterHeightForTableView:(id)arg1;
+- (float)defaultGroupedHeaderHeightForTableView:(id)arg1;
 - (id)defaultHeaderBackgroundColorForView:(id)arg1 inTableView:(id)arg2;
 - (id)defaultHeaderFontForTableViewStyle:(int)arg1;
 - (id)defaultHeaderFontForView:(id)arg1 inTableView:(id)arg2;
@@ -57,11 +59,14 @@
 - (id)defaultReorderControlImageForCell:(id)arg1 inTableView:(id)arg2;
 - (struct CGSize { float x1; float x2; })defaultReorderControlSizeForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultRowHeightForTableView:(id)arg1;
+- (float)defaultRowHeightForTableView:(id)arg1 cellStyle:(int)arg2;
+- (float)defaultSectionContentMarginWidthForTableView:(id)arg1;
 - (float)defaultSectionFooterHeightForTableView:(id)arg1;
 - (float)defaultSectionHeaderHeightForTableView:(id)arg1;
 - (id)defaultSelectionTintColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultSeparatorColorForTableViewStyle:(int)arg1;
 - (int)defaultSeparatorStyleForTableViewStyle:(int)arg1;
+- (float)defaultSpaceBetweenEditAndReorderControlsForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultTextColorForCell:(id)arg1 inTableView:(id)arg2;
 - (id)defaultTextLabelFontForCell:(id)arg1 inTableView:(id)arg2;
 - (float)defaultTextLabelFontSizeForCell:(id)arg1 inTableView:(id)arg2;

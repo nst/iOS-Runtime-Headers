@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUOneUpBarsController : PUBarsController <PUAssetActionPerformerDelegate, PUBarButtonItemCollectionDataSource, PUBrowsingViewModelChangeObserver, PUOverOneUpPresentationSessionBarsDelegate, PUPlayPauseBarItemsControllerChangeObserver, UIPopoverPresentationControllerDelegate> {
+@interface PUOneUpBarsController : PUBarsController <PUAssetActionPerformerDelegate, PUBarButtonItemCollectionDataSource, PUBrowsingViewModelChangeObserver, PUOverOneUpPresentationSessionBarsDelegate, PUPlayPauseBarItemsControllerChangeObserver, PUScrubberViewDelegate, UIPopoverPresentationControllerDelegate> {
     PUAssetActionPerformer *__activeActionPerformer;
     NSDictionary *__cachedDisplayInfoForCurrentAsset;
     NSCache *__cachedDisplayInfosByAssetReference;
@@ -183,6 +183,7 @@
 - (int)preferredBarStyle;
 - (BOOL)prefersStatusBarHidden;
 - (void)prepareForPopoverPresentation:(id)arg1;
+- (BOOL)scrubberView:(id)arg1 shouldIgnoreHitTest:(struct CGPoint { float x1; float x2; })arg2 withEvent:(id)arg3;
 - (void)setBrowsingSession:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMaximumToolbarHeight:(float)arg1;

@@ -12,6 +12,7 @@
     BOOL _fieldPresent;
     PKFieldProperties *_fieldProperties;
     BOOL _fieldPropertiesLookupActive;
+    BOOL _fieldPropertiesLookupProcessed;
     unsigned int _fieldPropertiesLookupTechnology;
     unsigned int _fieldPropertiesLookupValueAddedServiceMode;
     unsigned int _state;
@@ -35,8 +36,9 @@
 - (id)_appletForPaymentApplication:(id)arg1;
 - (id)_appletWithIdentifier:(id)arg1;
 - (void)_beginFieldPropertiesLookupWithFieldTechnology:(unsigned int)arg1 andValueAddedServiceMode:(unsigned int)arg2;
-- (void)_endFieldPropertiesLookupWithMerchantIdentifiers:(id)arg1;
+- (void)_endFieldPropertiesLookup;
 - (id)_filteredLoyaltyPassesFromVASTransactions:(id)arg1 activatedPasses:(id)arg2;
+- (void)_processFieldPropertiesLookupWithMerchantIdentifiers:(id)arg1;
 - (BOOL)activatePaymentApplication:(id)arg1 forPaymentPass:(id)arg2 markAsDefault:(BOOL)arg3;
 - (BOOL)activateValueAddedServicePassWhitelist:(id)arg1 greylist:(id)arg2;
 - (id)activatedPaymentApplication;

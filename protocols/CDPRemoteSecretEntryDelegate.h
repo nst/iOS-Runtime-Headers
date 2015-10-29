@@ -9,5 +9,6 @@
 - (void)exceededMaximumAttemptsForRemoteSecretEntry:(CDPRemoteSecretEntryViewController *)arg1;
 - (void)remoteSecretEntry:(CDPRemoteSecretEntryViewController *)arg1 depletedRemainingAttemptsForDevice:(CDPDevice *)arg2;
 - (void)remoteSecretEntry:(CDPRemoteSecretEntryViewController *)arg1 didAcceptValidRemoteSecretForDevice:(CDPDevice *)arg2;
+- (void)remoteSecretEntry:(CDPRemoteSecretEntryViewController *)arg1 escapeHatchTappedWithOffer:(unsigned int)arg2 device:(CDPDevice *)arg3;
 
 @end

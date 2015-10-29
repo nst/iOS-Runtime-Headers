@@ -15,6 +15,8 @@
 @property (nonatomic, readonly, copy) NSArray *registeredTypeIdentifiers;
 @property (nonatomic, copy) NSDictionary *userInfo;
 
+// Image: /usr/lib/libextension.dylib
+
 + (BOOL)supportsSecureCoding;
 
 - (id)_loadHandlers;
@@ -41,5 +43,9 @@
 - (void)set_loadHandlers:(id)arg1;
 - (void)set_loadOperator:(id)arg1;
 - (id)userInfo;
+
+// Image: /System/Library/Frameworks/Photos.framework/Photos
+
+- (id)initWithLivePhoto:(id)arg1;
 
 @end

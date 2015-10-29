@@ -3,10 +3,13 @@
  */
 
 @interface PKPaymentAuthorizationRemoteAlertViewControllerExportedObject : NSObject <PKPaymentAuthorizationServiceProtocol> {
+    NSMutableSet *_completionHandlers;
     PKPaymentAuthorizationRemoteAlertViewController *_controller;
     <PKPaymentAuthorizationServiceProtocol> *_delegate;
+    BOOL _didForceDismiss;
 }
 
+@property (nonatomic, retain) NSMutableSet *completionHandlers;
 @property (nonatomic) PKPaymentAuthorizationRemoteAlertViewController *controller;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PKPaymentAuthorizationServiceProtocol> *delegate;
@@ -18,13 +21,17 @@
 - (void)authorizationDidSelectPaymentMethodCompleteWithPaymentSummaryItems:(id)arg1;
 - (void)authorizationDidSelectShippingAddressCompleteWithStatus:(int)arg1 shippingMethods:(id)arg2 paymentSummaryItems:(id)arg3;
 - (void)authorizationDidSelectShippingMethodCompleteWithStatus:(int)arg1 paymentSummaryItems:(id)arg2;
+- (id)completionHandlers;
 - (id)controller;
+- (void)dealloc;
 - (id)delegate;
+- (void)forceDismissDidComplete;
 - (void)handleDismissWithCompletion:(id /* block */)arg1;
 - (void)handleHostApplicationDidBecomeActive;
 - (void)handleHostApplicationDidCancel;
 - (void)handleHostApplicationWillResignActive:(BOOL)arg1;
 - (id)initWithController:(id)arg1;
+- (void)setCompletionHandlers:(id)arg1;
 - (void)setController:(id)arg1;
 - (void)setDelegate:(id)arg1;
 

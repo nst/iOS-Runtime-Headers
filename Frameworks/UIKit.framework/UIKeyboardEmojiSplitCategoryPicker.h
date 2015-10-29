@@ -4,7 +4,7 @@
 
 @interface UIKeyboardEmojiSplitCategoryPicker : UIKeyboardEmojiSplit <UIKeyboardEmojiCategoryControl> {
     UIKeyboardEmojiCategoryController *_categoryController;
-    int _currentSelected;
+    unsigned int _currentSelected;
     int _lastUsedCategory;
     BOOL _whiteText;
 }
@@ -25,7 +25,7 @@
 - (id)symbolForRow:(int)arg1;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
-- (id)titleForRow:(int)arg1;
+- (id)titleForRow:(int)arg1 fallback:(BOOL)arg2;
 - (void)updateCategorySelectedIndicator:(int)arg1;
 - (BOOL)whiteText;
 

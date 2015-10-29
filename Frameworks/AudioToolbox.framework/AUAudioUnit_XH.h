@@ -13,7 +13,6 @@
         } __ptr_; 
     } _elementCountListenerToken;
     NSExtension *_extension;
-    BOOL _initialized;
     AUAudioUnitBusArray_XH *_inputBusses;
     AUAudioUnitBusArray_XH *_outputBusses;
     NSObject<OS_dispatch_queue> *_propListenerQueue;

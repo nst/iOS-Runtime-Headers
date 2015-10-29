@@ -24,8 +24,10 @@
 - (void)addFailureBlock:(id /* block */)arg1;
 - (void)addSuccessBlock:(id /* block */)arg1;
 - (BOOL)cancel;
+- (id /* block */)completionHandlerAdapter;
 - (void)dealloc;
 - (void)didCancel;
+- (id /* block */)errorOnlyCompletionHandlerAdapter;
 - (BOOL)finishWithError:(id)arg1;
 - (BOOL)finishWithResult:(id)arg1;
 - (BOOL)finishWithResult:(id)arg1 error:(id)arg2;

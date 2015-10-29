@@ -54,9 +54,9 @@
 - (id)contextualActionsButton;
 - (void)dealloc;
 - (id)delegate;
-- (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
 - (float)leadingTextColumnWidth;
+- (void)music_inheritedLayoutInsetsDidChange;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentDescriptor:(id)arg1;
 - (void)setDelegate:(id)arg1;

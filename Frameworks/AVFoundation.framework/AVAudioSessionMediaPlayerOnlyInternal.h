@@ -10,6 +10,7 @@
     BOOL isActive;
     BOOL isAppAudioSession;
     NSString *mode;
+    BOOL usingLongFormAudio;
     AVWeakReference *weakReference;
 }
 

@@ -14,6 +14,7 @@
     NSNumber *_homeButtonUpFromBeep;
     BOOL _isEyesFree;
     BOOL _isInitialBringUp;
+    BOOL _releaseAudioSessionOnRecordingCompletion;
     NSString *_serverCommandId;
     BOOL _useAutomaticEndpointing;
     BOOL _useStreamingDictation;
@@ -31,6 +32,7 @@
 @property (nonatomic, copy) NSNumber *homeButtonUpFromBeep;
 @property (nonatomic) BOOL isEyesFree;
 @property (nonatomic) BOOL isInitialBringUp;
+@property (nonatomic) BOOL releaseAudioSessionOnRecordingCompletion;
 @property (nonatomic, copy) NSString *serverCommandId;
 @property (nonatomic) BOOL useAutomaticEndpointing;
 @property (nonatomic) BOOL useStreamingDictation;
@@ -45,6 +47,7 @@
 - (id)audioFileHandle;
 - (int)audioFileType;
 - (id)btDeviceAddress;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (double)expectedActivationEventTime;
@@ -54,6 +57,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEyesFree;
 - (BOOL)isInitialBringUp;
+- (BOOL)releaseAudioSessionOnRecordingCompletion;
 - (id)serverCommandId;
 - (void)setAcousticIdEnabled:(BOOL)arg1;
 - (void)setActivationEvent:(int)arg1;
@@ -66,6 +70,7 @@
 - (void)setHomeButtonUpFromBeep:(id)arg1;
 - (void)setIsEyesFree:(BOOL)arg1;
 - (void)setIsInitialBringUp:(BOOL)arg1;
+- (void)setReleaseAudioSessionOnRecordingCompletion:(BOOL)arg1;
 - (void)setServerCommandId:(id)arg1;
 - (void)setUseAutomaticEndpointing:(BOOL)arg1;
 - (void)setUseStreamingDictation:(BOOL)arg1;

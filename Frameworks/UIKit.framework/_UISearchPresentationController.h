@@ -25,9 +25,12 @@
 }
 
 @property (nonatomic, readonly) UIPresentationController<_UISearchControllerPresenting> *adaptivePresentationController;
+@property (nonatomic, readonly) UIView *backgroundObscuringView;
+@property (nonatomic, readonly) BOOL backgroundObscuringViewShouldObeyPresentationContextBounds;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } finalFrameForContainerView;
+@property (nonatomic, readonly) BOOL forceObeyNavigationBarInsets;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) float resultsControllerContentOffset;
 @property (nonatomic, readonly) BOOL resultsUnderlapsSearchBar;
@@ -41,6 +44,7 @@
 
 + (BOOL)shouldExciseSearchBar:(id)arg1 duringPresentationWithPresenter:(id)arg2;
 
+- (id)_constraintCopyOfConstraint:(id)arg1 replaceItem:(id)arg2 withItem:(id)arg3;
 - (void)_exciseSearchBarFromCurrentContext;
 - (void)_placeSearchBarBackIntoOriginalContext;
 - (id)_presentationControllerForTraitCollection:(id)arg1;
@@ -57,11 +61,15 @@
 - (float)_visibleRefreshControlHeightForTableView:(id)arg1;
 - (id)adaptivePresentationController;
 - (int)adaptivePresentationStyle;
+- (id)backgroundObscuringView;
+- (BOOL)backgroundObscuringViewShouldObeyPresentationContextBounds;
 - (void)dealloc;
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)dismissalTransitionWillBegin;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForContainerView;
+- (BOOL)forceObeyNavigationBarInsets;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfPresentedViewInContainerView;
+- (void)hideBackgroundObscuringView;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;
 - (void)presentationTransitionDidEnd:(BOOL)arg1;
 - (void)presentationTransitionWillBegin;
@@ -75,6 +83,7 @@
 - (BOOL)shouldAccountForStatusBar;
 - (BOOL)shouldPresentInFullscreen;
 - (BOOL)shouldRemovePresentersView;
+- (void)showBackgroundObscuringView;
 - (float)statusBarAdjustment;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 

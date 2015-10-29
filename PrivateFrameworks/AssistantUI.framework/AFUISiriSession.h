@@ -92,6 +92,7 @@
 - (id)delegate;
 - (void)end;
 - (void)forceAudioSessionActive;
+- (void)forceAudioSessionInactive;
 - (id)initWithConnection:(id)arg1 delegateQueue:(id)arg2;
 - (BOOL)isEyesFree;
 - (BOOL)isListening;

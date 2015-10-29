@@ -4,6 +4,7 @@
 
 @interface UIKeyboardAssistantBar : _UIGroupedBar {
     BOOL _hideAssistantBar;
+    BOOL _shouldShow;
     UIKeyboardBIUImageGenerator *m_BIUImageGenerator;
     UITextInputAssistantItem *m_currentAssistantItem;
     UITextInputAssistantItem *m_defaultAssistantItem;
@@ -13,10 +14,12 @@
     BOOL m_needsDismissButton;
     UIBarButtonItemGroup *m_predictionGroup;
     NSLayoutConstraint *m_predictionWidthConstraint;
+    BOOL m_show;
     BOOL m_useLargeButton;
 }
 
 @property (nonatomic) BOOL hideAssistantBar;
+@property (nonatomic) BOOL shouldShow;
 @property (nonatomic) BOOL show;
 
 + (id)activeInstance;
@@ -54,10 +57,12 @@
 - (void)setHideAssistantBar:(BOOL)arg1;
 - (void)setInputAssistantButtonItems;
 - (void)setInputAssistantButtonItemsForResponder:(id)arg1;
+- (void)setShouldShow:(BOOL)arg1;
 - (void)setShow:(BOOL)arg1;
+- (BOOL)shouldShow;
 - (BOOL)show;
 - (BOOL)showSwitch;
-- (float)sideBarWidth;
+- (float)sideBarWidthForOrientation:(int)arg1;
 - (BOOL)statisticForCalloutBarButtonSelection:(id)arg1;
 - (void)statisticForShortcutBarHideWithSwitcher;
 - (void)updateBar;

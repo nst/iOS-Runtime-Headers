@@ -10,7 +10,6 @@
 + (void)logPredictionEventWith:(unsigned int)arg1 itemsAndOutcome:(unsigned int)arg2 forABGroup:(id)arg3;
 + (void)logPredictionOfAppWithBundleId:(id)arg1 outcome:(unsigned int)arg2 rank:(int)arg3 score:(double)arg4;
 + (void)logValue:(double)arg1 forScoreInput:(unsigned int)arg2 withOutcome:(unsigned int)arg3;
-+ (void)pushDistributionValue:(double)arg1 forKey:(id)arg2;
 + (BOOL)yesWithProbability:(double)arg1;
 
 @end

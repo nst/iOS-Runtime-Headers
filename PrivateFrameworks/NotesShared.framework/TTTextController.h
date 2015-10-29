@@ -26,8 +26,11 @@
 - (float)bodyStyleFontSizeThreshold;
 - (id)captionAttributes;
 - (id)checklistAttributes;
+- (id)copyAttribute:(id)arg1 fromAttributes:(id)arg2 toAttributes:(id)arg3;
+- (id)copyNSParagraphStylefromAttributes:(id)arg1 toAttributes:(id)arg2;
 - (id)defaultListAttributes;
 - (id)defaultParagraphStyle;
+- (id)defaultTypingAttributesForEmptyDocument;
 - (id)filterStyleAttributes:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)fixModelAttributesInTextStorage:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)fixedWidthAttributes;
@@ -38,9 +41,12 @@
 - (id)modelForStyleAttributes:(id)arg1 filterAttributes:(BOOL)arg2;
 - (id)preferredAttributesForTTTextStyle:(unsigned int)arg1;
 - (struct UIFont { Class x1; }*)preferredFontForTTTextStyle:(unsigned int)arg1;
+- (id)referenceAttributesForLocation:(unsigned int)arg1 textStorage:(id)arg2 currentParagraphStart:(unsigned int)arg3;
+- (id)removeAttribute:(id)arg1 ifInconsistentAtLocation:(unsigned int)arg2 inTextStorage:(id)arg3 forNewTypingAttributes:(id)arg4;
 - (void)resetGuessedFontSizes;
 - (void)setBodyStyleFontSizeThreshold:(float)arg1;
 - (void)setHeadingStyleFontSizeThreshold:(float)arg1;
+- (id)strippedTypingAttributesForEmptyParagraphAtTheEndOfDocument:(id)arg1 isTyping:(BOOL)arg2;
 - (void)styleFontInTextStorage:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (id)styleForModelAttributes:(id)arg1;
 - (void)styleListsAndIndentsInAttributedString:(id)arg1 inRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

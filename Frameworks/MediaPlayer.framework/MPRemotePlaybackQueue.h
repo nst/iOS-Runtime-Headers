@@ -14,6 +14,7 @@
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
 + (id)queueWithMediaRemotePlaybackQueue:(struct _MRSystemAppPlaybackQueue { }*)arg1;
++ (void)registerRemotePlaybackQueueClass:(Class)arg1 forPlaybackQueueType:(int)arg2;
 
 - (void).cxx_destruct;
 - (void)dealloc;
@@ -27,5 +28,6 @@
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
 - (id)createPlaybackContext;
+- (void)createPlaybackContextWithCompletion:(id /* block */)arg1;
 
 @end

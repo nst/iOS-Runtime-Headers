@@ -16,6 +16,7 @@
     UITextView *_placeholderTextView;
     MusicProductDescription *_productDescription;
     int _productDescriptionMaximumLengthForTextInput;
+    int _productDescriptionTextStyle;
     NSString *_productDescriptionTitle;
     UITextView *_textView;
 }
@@ -28,6 +29,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) MusicProductDescription *productDescription;
 @property (nonatomic) int productDescriptionMaximumLengthForTextInput;
+@property (nonatomic) int productDescriptionTextStyle;
 @property (nonatomic, copy) NSString *productDescriptionTitle;
 @property (readonly) Class superclass;
 
@@ -41,6 +43,7 @@
 - (void)_moreButtonAction:(id)arg1;
 - (id)_newTextView;
 - (id)_placeholderAttributedText;
+- (void)_updateForPreferredFontChange;
 - (void)_updateMaximumNumberOfLinesWithEditing:(BOOL)arg1;
 - (void)_updateMoreButtonPropertiesWithTextViewSize:(struct CGSize { float x1; float x2; })arg1 positionYDelta:(float)arg2;
 - (void)_updatePlaceholderTextViewVisibility;
@@ -54,6 +57,7 @@
 - (void)layoutSubviews;
 - (id)productDescription;
 - (int)productDescriptionMaximumLengthForTextInput;
+- (int)productDescriptionTextStyle;
 - (id)productDescriptionTitle;
 - (void)setDelegate:(id)arg1;
 - (void)setDetailTintInformation:(id)arg1;
@@ -61,6 +65,7 @@
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setProductDescription:(id)arg1;
 - (void)setProductDescriptionMaximumLengthForTextInput:(int)arg1;
+- (void)setProductDescriptionTextStyle:(int)arg1;
 - (void)setProductDescriptionTitle:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (BOOL)textView:(id)arg1 shouldChangeTextInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 replacementText:(id)arg3;

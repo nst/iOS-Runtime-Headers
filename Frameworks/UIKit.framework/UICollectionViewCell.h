@@ -13,6 +13,7 @@
     } _collectionCellFlags;
     UIView *_contentView;
     int _focusStyle;
+    _UIFloatingContentView *_focusedFloatingContentView;
     BOOL _highlighted;
     id _highlightingSupport;
     UILongPressGestureRecognizer *_menuGesture;
@@ -43,6 +44,7 @@
 - (void)_descendent:(id)arg1 willMoveFromSuperview:(id)arg2 toSuperview:(id)arg3;
 - (void)_didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)_encodableSubviews;
+- (void)_ensureFocusedFloatingContentView;
 - (int)_focusStyle;
 - (BOOL)_forwardsSystemLayoutFittingSizeToContentView:(id)arg1;
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
@@ -62,6 +64,8 @@
 - (BOOL)_shouldSaveOpaqueStateForView:(id)arg1;
 - (void)_teardownHighlightingSupportIfReady;
 - (void)_updateBackgroundView;
+- (void)_updateFocusedFloatingContentControlStateAnimated:(BOOL)arg1;
+- (void)_updateFocusedFloatingContentControlStateInContext:(id)arg1 withAnimationCoordinator:(id)arg2 animated:(BOOL)arg3;
 - (void)_updateHighlightColorsForAnimationHalfwayPoint;
 - (void)_updateHighlightColorsForView:(id)arg1 highlight:(BOOL)arg2;
 - (id)backgroundView;

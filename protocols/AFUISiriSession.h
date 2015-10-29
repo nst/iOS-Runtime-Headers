@@ -9,6 +9,7 @@
 - (void)clearContext;
 - (void)end;
 - (void)forceAudioSessionActive;
+- (void)forceAudioSessionInactive;
 - (void)performAceCommand:(AceObject<SAAceCommand> *)arg1;
 - (void)performAceCommand:(void *)arg1 conflictHandler:(void *)arg2; // needs 2 arg types, found 6: AceObject<SAAceCommand> *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)preheat;

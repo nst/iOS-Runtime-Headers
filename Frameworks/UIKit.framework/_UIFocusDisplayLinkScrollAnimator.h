@@ -6,7 +6,8 @@
     float _defaultConvergenceRate;
     CADisplayLink *_displayLink;
     UIScreen *_screen;
-    NSMutableSet *_scrollViews;
+    NSMapTable *_scrollViews;
+    _UIFocusEngineScrollViewOffsets *_singleScrollViewEntry;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -19,6 +20,7 @@
 - (void).cxx_destruct;
 - (id)_entryForScrollView:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (void)_heartbeat:(id)arg1;
+- (void)_processEntry:(id)arg1 timeDelta:(int)arg2 completed:(id)arg3;
 - (void)_updateDisplayLinkConfiguration;
 - (void)cancelPeekAdjustmentForScrollView:(id)arg1 performRollback:(BOOL)arg2;
 - (void)cancelScrollingForScrollView:(id)arg1;
@@ -30,5 +32,7 @@
 - (void)setDefaultConvergenceRate:(float)arg1;
 - (void)setPeekOffsetAdjustment:(struct CGPoint { float x1; float x2; })arg1 forScrollView:(id)arg2;
 - (void)setTargetContentOffset:(struct CGPoint { float x1; float x2; })arg1 forScrollView:(id)arg2 convergenceRate:(float)arg3 completion:(id /* block */)arg4;
+- (struct CGPoint { float x1; float x2; })targetContentOffsetForScrollView:(id)arg1;
+- (struct CGPoint { float x1; float x2; })velocityToScrollFromOffset:(struct CGPoint { float x1; float x2; })arg1 toOffset:(struct CGPoint { float x1; float x2; })arg2;
 
 @end

@@ -235,8 +235,8 @@
 - (BOOL)hasMoreMessagesToLoad;
 - (BOOL)hasRecipientsFollowingLocation;
 - (BOOL)hasRecipientsSharingLocation;
-- (BOOL)hasSentMessageWithGUID:(id)arg1;
 - (BOOL)hasSiblingRecipientsSharingLocation;
+- (BOOL)hasStoredMessageWithGUID:(id)arg1;
 - (BOOL)hasUnhandledInvitation;
 - (id)init;
 - (id)invitationForPendingParticipants;

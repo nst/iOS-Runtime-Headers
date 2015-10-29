@@ -3,27 +3,28 @@
  */
 
 @interface PUTileTree : NSObject <NSCopying> {
-    NSMutableDictionary *__objectsByIndexPathByTileKindByDataSourceIdentifier;
+    NSMutableDictionary *__objectsByTileIdentifier;
     BOOL _useUniqueLeafs;
 }
 
-@property (nonatomic, readonly) NSMutableDictionary *_objectsByIndexPathByTileKindByDataSourceIdentifier;
+@property (nonatomic, readonly) NSMutableDictionary *_objectsByTileIdentifier;
 @property (nonatomic, readonly) BOOL useUniqueLeafs;
 
 - (void).cxx_destruct;
-- (id)_objectsByIndexPathByTileKindByDataSourceIdentifier;
-- (void)addObject:(id)arg1 atIndexPath:(id)arg2 tileKind:(id)arg3 dataSourceIdentifier:(id)arg4;
-- (BOOL)containsObject:(id)arg1 atIndexPath:(id)arg2 tileKind:(id)arg3 dataSourceIdentifier:(id)arg4;
+- (id)_objectsByTileIdentifier;
+- (void)addObject:(id)arg1 withTileIdentifier:(id)arg2;
+- (BOOL)containsObject:(id)arg1 withTileIdentifier:(id)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)enumerateObjectsUsingBlock:(id /* block */)arg1;
+- (void)enumerateObjectsWithTileIdentifier:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)init;
 - (id)initUsingUniqueLeafs:(BOOL)arg1;
-- (id)objectAtIndexPath:(id)arg1 tileKind:(id)arg2 dataSourceIdentifier:(id)arg3;
-- (id)objectsAtIndexPath:(id)arg1 tileKind:(id)arg2 dataSourceIdentifier:(id)arg3;
+- (id)initWithTileTree:(id)arg1;
+- (id)objectWithTileIdentifier:(id)arg1;
 - (void)removeAllObjects;
-- (void)removeObject:(id)arg1 atIndexPath:(id)arg2 tileKind:(id)arg3 dataSourceIdentifier:(id)arg4;
-- (void)removeObjectAtIndexPath:(id)arg1 tileKind:(id)arg2 dataSourceIdentifier:(id)arg3;
+- (void)removeObject:(id)arg1 withTileIdentifier:(id)arg2;
+- (void)removeObjectWithTileIdentifier:(id)arg1;
 - (BOOL)useUniqueLeafs;
 
 @end

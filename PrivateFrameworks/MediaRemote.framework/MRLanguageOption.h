@@ -3,7 +3,6 @@
  */
 
 @interface MRLanguageOption : NSObject <NSSecureCoding> {
-    struct __CFAllocator { } *_allocator;
     NSString *_displayName;
     NSString *_identifier;
     NSArray *_languageOptionCharacteristics;
@@ -17,7 +16,6 @@
 @property (nonatomic, readonly) unsigned int languageOptionType;
 @property (nonatomic, readonly) NSString *languageTag;
 
-+ (id)allocWithAllocator:(const struct __CFAllocator { }*)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (void)dealloc;

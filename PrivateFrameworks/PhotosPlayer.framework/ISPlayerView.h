@@ -2,9 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
  */
 
-@interface ISPlayerView : UIView <ISGestureInputDelegate, ISPlayerOutput, UIGestureRecognizerDelegate> {
+@interface ISPlayerView : UIView <ISGestureInputDelegate, ISPlayerChangeObserver, ISPlayerOutput, UIGestureRecognizerDelegate> {
     NSMutableSet *__activeGestures;
-    UIView *__contentContainerView;
     BOOL __crossfadeEnabled;
     _ISCrossfadeView *__crossfadeView;
     _ISPlayerDebugView *__debugInfoView;
@@ -12,10 +11,12 @@
     ISMutedAudioInput *__mutedAudioInput;
     BOOL __needsNewDriver;
     BOOL __needsUpdateDebugView;
+    UIView *__photoContainerView;
     _ISTargetView *__photoView;
     ISGestureInput *__playbackInput;
     <NSObject> *__playerObservationToken;
     BOOL __playerTransitioning;
+    UIView *__videoContainerView;
     struct CGSize { 
         float width; 
         float height; 
@@ -29,17 +30,22 @@
         unsigned int respondsToWillBeginVisualPlayback : 1; 
         unsigned int respondsToDidEndVisualPlayback : 1; 
         unsigned int respondsToDidPlaybackVideoAssetToEnd : 1; 
+        unsigned int respondsToWillPlaybackVideoAssetToEnd : 1; 
         unsigned int respondsToDelegateForGestureReognizer : 1; 
         unsigned int respondsToViewHostingGestureRecognizer : 1; 
         unsigned int respondsToIsInteractingDidChange : 1; 
+        unsigned int respondsToGestureRecognizerDidChange : 1; 
     } _delegateFlags;
     struct CGSize { 
         float width; 
         float height; 
     } _dimensionsOfReservedVideoMemory;
     NSError *_error;
+    BOOL _interactivePlaybackAllowed;
     BOOL _isInteracting;
     BOOL _isReadyForDisplay;
+    NSObject<OS_dispatch_queue> *_observerQueue;
+    NSHashTable *_observers;
     float _photoScale;
     BOOL _photoViewHidden;
     ISPlaybackSpec *_playbackSpec;
@@ -48,17 +54,19 @@
     ISPlayer *_player;
     float _scrubOffset;
     int _scrubRegion;
+    BOOL _shouldManagePlayerItemLoading;
     BOOL _showCrossfadeBorder;
     BOOL _showDebugInfo;
     BOOL _showVideoBorder;
     int _status;
+    BOOL _useSingletonPlayer;
+    AVPlayer *_videoPlayer;
     BOOL _vitalityAllowed;
     ISVitalityFilter *_vitalityFilter;
     UIScrollView *_vitalityScrollView;
 }
 
 @property (nonatomic, readonly) NSMutableSet *_activeGestures;
-@property (setter=_setContentContainerView:, nonatomic, retain) UIView *_contentContainerView;
 @property (getter=_isCrossfadeEnabled, setter=_setCrossfadeEnabled:, nonatomic) BOOL _crossfadeEnabled;
 @property (setter=_setCrossfadeView:, nonatomic, retain) _ISCrossfadeView *_crossfadeView;
 @property (setter=_setDebugInfoView:, nonatomic, retain) _ISPlayerDebugView *_debugInfoView;
@@ -66,10 +74,12 @@
 @property (setter=_setMutedAudioInput:, nonatomic, retain) ISMutedAudioInput *_mutedAudioInput;
 @property (setter=_setNeedsNewDriver:, nonatomic) BOOL _needsNewDriver;
 @property (setter=_setNeedsUpdateDebugView:, nonatomic) BOOL _needsUpdateDebugView;
+@property (setter=_setPhotoContainerView:, nonatomic, retain) UIView *_photoContainerView;
 @property (setter=_setPhotoView:, nonatomic, retain) _ISTargetView *_photoView;
 @property (setter=_setPlaybackInput:, nonatomic, retain) ISGestureInput *_playbackInput;
 @property (setter=_setPlayerObservationToken:, nonatomic, retain) <NSObject> *_playerObservationToken;
 @property (getter=_isPlayerTransitioning, setter=_setPlayerTransitioning:, nonatomic) BOOL _playerTransitioning;
+@property (setter=_setVideoContainerView:, nonatomic, retain) UIView *_videoContainerView;
 @property (setter=_setVideoSize:, nonatomic) struct CGSize { float x1; float x2; } _videoSize;
 @property (setter=_setVideoView:, nonatomic, retain) _ISAVPlayerView *_videoView;
 @property (setter=_setVitalityInput:, nonatomic, retain) ISVitalityInput *_vitalityInput;
@@ -83,6 +93,7 @@
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic, readonly) UIGestureRecognizer *gestureRecognizer;
 @property (readonly) unsigned int hash;
+@property (getter=isInteractivePlaybackAllowed, nonatomic) BOOL interactivePlaybackAllowed;
 @property (nonatomic) BOOL isInteracting;
 @property (nonatomic) BOOL isReadyForDisplay;
 @property (nonatomic, readonly) CALayer *photoLayer;
@@ -93,14 +104,17 @@
 @property (nonatomic) int playbackState;
 @property (nonatomic) unsigned int playbackStyle;
 @property (nonatomic, retain) ISPlayer *player;
+@property (getter=isPlayingVitalityHint, nonatomic, readonly) BOOL playingVitalityHint;
 @property (nonatomic) float scrubOffset;
 @property (nonatomic) int scrubRegion;
 @property (nonatomic) float scrubThreshold;
+@property (nonatomic) BOOL shouldManagePlayerItemLoading;
 @property (nonatomic) BOOL showCrossfadeBorder;
 @property (nonatomic) BOOL showDebugInfo;
 @property (nonatomic) BOOL showVideoBorder;
 @property (nonatomic) int status;
 @property (readonly) Class superclass;
+@property (getter=isUsingSingletonPlayer, nonatomic) BOOL useSingletonPlayer;
 @property (nonatomic, readonly) AVPlayerLayer *videoLayer;
 @property (getter=isVitalityAllowed, nonatomic) BOOL vitalityAllowed;
 @property (nonatomic, retain) ISVitalityFilter *vitalityFilter;
@@ -108,15 +122,16 @@
 
 + (void)initialize;
 + (void)resetCaches;
++ (void)setAllowPlayerReuse:(BOOL)arg1;
 
 - (void).cxx_destruct;
 - (id)_activeGestures;
 - (void)_addPlayerObservers;
 - (float)_backingScaleFactor;
 - (void)_configureForPlaybackSpec:(id)arg1;
-- (id)_contentContainerView;
 - (id)_crossfadeView;
 - (id)_debugInfoView;
+- (void)_enumerateObserversWithBlock:(id /* block */)arg1;
 - (void)_forceTouchStatusDidChange:(id)arg1;
 - (id)_forceTouchStatusObserver;
 - (void)_handleGesture:(id)arg1;
@@ -129,6 +144,7 @@
 - (id)_mutedAudioInput;
 - (BOOL)_needsNewDriver;
 - (BOOL)_needsUpdateDebugView;
+- (id)_photoContainerView;
 - (int)_photoOrientation;
 - (struct CGSize { float x1; float x2; })_photoSize;
 - (id)_photoView;
@@ -138,7 +154,6 @@
 - (id)_playerObservationToken;
 - (void)_playerPlaybackStateDidChange;
 - (void)_removePlayerObservers;
-- (void)_setContentContainerView:(id)arg1;
 - (void)_setCrossfadeEnabled:(BOOL)arg1;
 - (void)_setCrossfadeView:(id)arg1;
 - (void)_setDebugInfoView:(id)arg1;
@@ -148,17 +163,19 @@
 - (void)_setMutedAudioInput:(id)arg1;
 - (void)_setNeedsNewDriver:(BOOL)arg1;
 - (void)_setNeedsUpdateDebugView:(BOOL)arg1;
+- (void)_setPhotoContainerView:(id)arg1;
 - (void)_setPhotoView:(id)arg1;
 - (void)_setPlaybackInput:(id)arg1;
 - (void)_setPlaybackState:(int)arg1;
 - (void)_setPlayerObservationToken:(id)arg1;
 - (void)_setPlayerTransitioning:(BOOL)arg1;
 - (void)_setStatus:(int)arg1;
+- (void)_setVideoContainerView:(id)arg1;
 - (void)_setVideoSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setVideoView:(id)arg1;
 - (void)_setVitalityInput:(id)arg1;
 - (struct CGSize { float x1; float x2; })_uncachedVideoSize;
-- (void)_updateContentContainerView;
+- (void)_updateContainerViews;
 - (void)_updateCrossfadeLayer;
 - (void)_updateDebugViewIfNeeded;
 - (void)_updatePhotoViewVisibility;
@@ -170,6 +187,7 @@
 - (void)_updateVideoLayer;
 - (void)_updateVideoSizeIfNeeded;
 - (void)_updateVitalityInput;
+- (id)_videoContainerView;
 - (struct CGSize { float x1; float x2; })_videoSize;
 - (id)_videoView;
 - (id)_vitalityInput;
@@ -185,16 +203,21 @@
 - (struct CGSize { float x1; float x2; })dimensionsOfReservedVideoMemory;
 - (id)error;
 - (id)gestureInput:(id)arg1 delegateForGestureRecognizer:(id)arg2;
+- (void)gestureInputGestureRecognizerDidChange:(id)arg1;
 - (id)gestureInputViewHostingGestureRecognizers:(id)arg1;
 - (id)gestureRecognizer;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)initWithVideoPlayer:(id)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)invalidateGestureRecognizers;
 - (BOOL)isInteracting;
+- (BOOL)isInteractivePlaybackAllowed;
 - (BOOL)isPhotoViewHidden;
+- (BOOL)isPlayingVitalityHint;
 - (BOOL)isReadyForDisplay;
 - (BOOL)isSupportedContentMode:(int)arg1;
+- (BOOL)isUsingSingletonPlayer;
 - (BOOL)isVitalityAllowed;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -206,13 +229,18 @@
 - (int)playbackState;
 - (unsigned int)playbackStyle;
 - (id)player;
+- (void)player:(id)arg1 didChangePlaybackState:(int)arg2;
+- (void)player:(id)arg1 didChangePlayerItem:(id)arg2;
+- (void)player:(id)arg1 didChangePlayerStatus:(int)arg2;
 - (void)playerDidEndTransitionToPlaybackState:(int)arg1;
 - (void)playerDidPlayVideoToEnd;
 - (void)playerWillBeginTransitionToPlaybackState:(int)arg1;
+- (void)playerWillPlayVideoToEnd;
 - (void)prepareWithBundleURL:(id)arg1;
 - (void)prepareWithPhoto:(struct CGImage { }*)arg1 videoAsset:(id)arg2 photoTime:(double)arg3;
 - (void)prepareWithPhoto:(struct CGImage { }*)arg1 videoAsset:(id)arg2 photoTime:(double)arg3 photoEXIFOrientation:(int)arg4;
 - (void)prepareWithPlayerItem:(id)arg1;
+- (void)registerObserver:(id)arg1;
 - (float)scrubOffset;
 - (int)scrubRegion;
 - (float)scrubThreshold;
@@ -222,6 +250,7 @@
 - (void)setContentMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDimensionsOfReservedVideoMemory:(struct CGSize { float x1; float x2; })arg1;
+- (void)setInteractivePlaybackAllowed:(BOOL)arg1;
 - (void)setIsReadyForDisplay:(BOOL)arg1;
 - (void)setPhotoScale:(float)arg1;
 - (void)setPhotoViewHidden:(BOOL)arg1;
@@ -232,19 +261,23 @@
 - (void)setScrubOffset:(float)arg1;
 - (void)setScrubRegion:(int)arg1;
 - (void)setScrubThreshold:(float)arg1;
+- (void)setShouldManagePlayerItemLoading:(BOOL)arg1;
 - (void)setShowCrossfadeBorder:(BOOL)arg1;
 - (void)setShowDebugInfo:(BOOL)arg1;
 - (void)setShowVideoBorder:(BOOL)arg1;
+- (void)setUseSingletonPlayer:(BOOL)arg1;
 - (void)setVitalityAllowed:(BOOL)arg1;
 - (void)setVitalityEnabled:(BOOL)arg1 inScrollView:(id)arg2;
 - (void)setVitalityFilter:(id)arg1;
 - (void)setVitalityScrollView:(id)arg1;
+- (BOOL)shouldManagePlayerItemLoading;
 - (BOOL)showCrossfadeBorder;
 - (BOOL)showDebugInfo;
 - (BOOL)showVideoBorder;
 - (int)state;
 - (int)status;
 - (id)supportedContentModes;
+- (void)unregisterObserver:(id)arg1;
 - (id)videoLayer;
 - (id)vitalityFilter;
 - (id)vitalityScrollView;

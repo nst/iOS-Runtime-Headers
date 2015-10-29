@@ -4,14 +4,17 @@
 
 @interface SAVCSPlayContent : SABaseClientBoundCommand
 
+@property (nonatomic, copy) NSString *contentType;
 @property (nonatomic, copy) NSString *utsId;
 
 + (id)playContent;
 + (id)playContentWithDictionary:(id)arg1 context:(id)arg2;
 
+- (id)contentType;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
+- (void)setContentType:(id)arg1;
 - (void)setUtsId:(id)arg1;
 - (id)utsId;
 

@@ -35,6 +35,8 @@
 + (id)__scriptIdentifierFromIndex:(unsigned int)arg1;
 + (int)__shortNameFormatForLocale:(id)arg1;
 + (BOOL)__shortStyle:(int)arg1 isRestrictedForLocale:(id)arg2;
++ (BOOL)__shortStyle:(int)arg1 isRestrictedForScript:(unsigned int)arg2;
++ (BOOL)__shortStyleRestrictionExistsForComponents:(id)arg1 shortStyle:(int)arg2;
 + (id)__stringValueForShortStyle:(int)arg1;
 + (id)__stringValueForStyle:(int)arg1;
 + (BOOL)__style:(int)arg1 isRestrictedForLocale:(id)arg2;
@@ -49,6 +51,7 @@
 + (id)_fallbackDescriptorForStyle:(int)arg1 options:(unsigned int)arg2;
 + (id)_formatterWithStyle:(int)arg1 options:(unsigned int)arg2;
 + (BOOL)_isCJKScript:(id)arg1;
++ (BOOL)_isMixedScript:(id)arg1;
 + (id)_localizedDelimiterForComponents:(id)arg1 options:(unsigned int)arg2;
 + (id)_localizedShortNameForComponents:(id)arg1 withStyle:(int)arg2 options:(unsigned int)arg3;
 + (int)_nameOrderWithOverridesForComponents:(id)arg1 options:(unsigned int)arg2;

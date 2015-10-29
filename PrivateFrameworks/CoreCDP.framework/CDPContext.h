@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
  */
 
-@interface CDPContext : NSObject {
+@interface CDPContext : NSObject <NSSecureCoding> {
     BOOL __useSecureBackupCachedPassphrase;
     NSString *_appleID;
     NSDictionary *_authenticationResults;
@@ -26,6 +26,10 @@
 @property (nonatomic, copy) NSString *password;
 @property (nonatomic, copy) NSString *passwordEquivToken;
 
+// Image: /System/Library/PrivateFrameworks/CoreCDP.framework/CoreCDP
+
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (BOOL)_useSecureBackupCachedPassphrase;
 - (id)appleID;
@@ -34,7 +38,9 @@
 - (unsigned int)cachedLocalSecretType;
 - (BOOL)didUseSMSVerification;
 - (id)dsid;
+- (void)encodeWithCoder:(id)arg1;
 - (id)initWithAuthenticationResults:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (BOOL)isHSA2Account;
 - (id)password;
 - (id)passwordEquivToken;
@@ -48,5 +54,10 @@
 - (void)setPassword:(id)arg1;
 - (void)setPasswordEquivToken:(id)arg1;
 - (void)set_useSecureBackupCachedPassphrase:(BOOL)arg1;
+- (void)updateWithAuthenticationResults:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
+
+- (void)reauthenticateUserWithCompletion:(id /* block */)arg1;
 
 @end

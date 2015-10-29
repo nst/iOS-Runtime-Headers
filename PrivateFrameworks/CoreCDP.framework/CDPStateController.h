@@ -4,19 +4,24 @@
 
 @interface CDPStateController : NSObject {
     CDPContext *_context;
+    CDPDaemonConnection *_daemonConn;
     <CDPStateUIProvider> *_uiProvider;
+    CDPStateUIProviderProxy *_uiProviderProxy;
 }
 
 @property (nonatomic, readonly) CDPContext *context;
 @property (nonatomic, retain) <CDPStateUIProvider> *uiProvider;
 
 - (void).cxx_destruct;
+- (void)_handleRejoinURLActionWithInfo:(id)arg1;
 - (id)context;
+- (void)finishOfflineLocalSecretChangeWithCompletion:(id /* block */)arg1;
 - (void)handleCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
+- (void)handleURLActionWithInfo:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (void)localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (void)repairCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
 - (void)setUiProvider:(id)arg1;
-- (BOOL)shouldAllowCDPEnrollment;
 - (id)uiProvider;
 
 @end

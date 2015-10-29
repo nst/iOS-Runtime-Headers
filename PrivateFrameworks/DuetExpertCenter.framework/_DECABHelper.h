@@ -10,7 +10,7 @@
 @property (nonatomic, readonly) NSDictionary *abGroupContents;
 @property (nonatomic, readonly) NSString *groupIdentifier;
 
-+ (unsigned char)_indexForDevice;
++ (unsigned char)indexForDevice;
 
 - (void).cxx_destruct;
 - (id)abGroupContents;

@@ -33,6 +33,7 @@
 - (int)_fixDanglingSourcesAndProvenancesWithError:(id*)arg1;
 - (int)_fixObjectsProvenanceForeignKeyWithError:(id*)arg1;
 - (int)_fixProvenancesWithZeroSourceOrDeviceWithError:(id*)arg1;
+- (int)_fixSyncProvenanceForPostOkemoZurs:(id*)arg1;
 - (int)_fixupMigratedProtectedSchemaWithError:(id*)arg1;
 - (int)_initializeDatabaseIdentifiersWithHealthDaemon:(id)arg1 error:(id*)arg2;
 - (id)_lastReceivedNatalieDatum:(id*)arg1;

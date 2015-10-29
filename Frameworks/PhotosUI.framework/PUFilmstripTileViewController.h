@@ -30,7 +30,7 @@
 - (void)becomeReusable;
 - (void)didChangeAnimating;
 - (void)didChangeVisibleRect;
-- (void)loadView;
+- (id)loadView;
 - (void)setAssetViewModel:(id)arg1;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
 - (BOOL)wantsVisibleRectChanges;

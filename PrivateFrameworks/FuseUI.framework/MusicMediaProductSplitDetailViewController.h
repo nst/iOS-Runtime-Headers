@@ -30,7 +30,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyTintInformation;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_calculateArtworkDescriptorEdgeInsets;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_calculateArtworkEdgeInsets;
 - (void)_containerEntityProviderDidInvalidateNotification:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_reloadContainerEntityValueContextProperties;
@@ -49,6 +49,7 @@
 - (id)lockupArtworkProperty;
 - (id)mediaDetailTintInformation;
 - (id)mediaSplitViewControllerDelegate;
+- (void)music_viewInheritedLayoutInsetsDidChange;
 - (void)playbackStatusControllerPlaybackStatusDidChange:(id)arg1;
 - (id)relatedContentViewController;
 - (void)setClientContext:(id)arg1;
@@ -58,7 +59,6 @@
 - (void)setMediaDetailTintInformation:(id)arg1;
 - (void)setMediaSplitViewControllerDelegate:(id)arg1;
 - (void)setRelatedContentViewController:(id)arg1;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)verticalLockupView:(id)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
 - (void)verticalScrollingContainerViewController:(id)arg1 willEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)verticalScrollingContainerViewControllerContentSizeDidChange:(id)arg1;

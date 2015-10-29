@@ -2,15 +2,8 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityViewVerticalLockupContentDescriptor : MusicEntityViewContentDescriptor {
-    float _textEdgePadding;
-}
+@interface MusicEntityViewVerticalLockupContentDescriptor : MusicEntityViewContentDescriptor
 
-@property (nonatomic) float textEdgePadding;
-
-- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)init;
-- (void)setTextEdgePadding:(float)arg1;
-- (float)textEdgePadding;
 
 @end

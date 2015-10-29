@@ -7,6 +7,9 @@
     unsigned int _domain;
     NSString *_externalIdentifier;
     NSString *_fbq;
+    unsigned int _geoUserSequenceNumber;
+    NSString *_geoUserSessionIDString;
+    double _geoUserSessionStartTime;
     NSString *_identifier;
     NSString *_input;
     NSString *_keyboardLanguage;
@@ -21,6 +24,9 @@
 @property (nonatomic) unsigned int domain;
 @property (nonatomic, retain) NSString *externalIdentifier;
 @property (nonatomic, copy) NSString *fbq;
+@property (nonatomic) unsigned int geoUserSequenceNumber;
+@property (nonatomic, retain) NSString *geoUserSessionIDString;
+@property (nonatomic) double geoUserSessionStartTime;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic, retain) NSString *input;
 @property (nonatomic, retain) NSString *keyboardLanguage;
@@ -40,6 +46,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalIdentifier;
 - (id)fbq;
+- (unsigned int)geoUserSequenceNumber;
+- (id)geoUserSessionIDString;
+- (double)geoUserSessionStartTime;
 - (id)identifier;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
@@ -56,6 +65,9 @@
 - (void)setDomain:(unsigned int)arg1;
 - (void)setExternalIdentifier:(id)arg1;
 - (void)setFbq:(id)arg1;
+- (void)setGeoUserSequenceNumber:(unsigned int)arg1;
+- (void)setGeoUserSessionIDString:(id)arg1;
+- (void)setGeoUserSessionStartTime:(double)arg1;
 - (void)setIdentifier:(id)arg1;
 - (void)setInput:(id)arg1;
 - (void)setKeyboardLanguage:(id)arg1;

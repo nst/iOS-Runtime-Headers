@@ -26,6 +26,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (getter=isDisplayingLocalLibrary, nonatomic, readonly) BOOL displayingLocalLibrary;
+@property (nonatomic, readonly) BOOL hasLoadedStoreBag;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) MusicSimpleRadioStationInfo *prominentRadioStationInfo;
 @property (nonatomic, readonly) RadioAvailabilityController *radioAvailabilityController;
@@ -57,13 +58,16 @@
 - (BOOL)canShowSubscriptionContent;
 - (void)dealloc;
 - (void)endObservingAllowedUserInterfaceComponents;
+- (BOOL)hasLoadedStoreBag;
 - (id)init;
 - (BOOL)isDisplayingLocalLibrary;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (void)profileConnectionDidReceiveRestrictionChangedNotification:(id)arg1 userInfo:(id)arg2;
 - (id)prominentRadioStationInfo;
 - (id)radioAvailabilityController;
+- (BOOL)shouldShowWelcomeScreen;
 - (id)supportedTabIdentifiersForTraitCollection:(id)arg1;
 - (int)tabState;
+- (void)updateWelcomeScreenAcknowledgmentDefaults:(BOOL)arg1;
 
 @end

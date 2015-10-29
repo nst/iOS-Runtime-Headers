@@ -16,10 +16,12 @@
     <MusicMediaDetailSplitViewControllerDelegate> *_mediaSplitViewControllerDelegate;
     int _presentationSource;
     MusicProductAdditionalMetadataViewController *_productAdditionalMetadataViewController;
+    int _productDescriptionTextStyle;
     UIViewController *_relatedContentViewController;
     <MusicEntityProviding> *_tracklistEntityProvider;
     MusicProductTracklistTableViewConfiguration *_tracklistTableViewConfiguration;
     MusicProductTracklistTableViewController *_tracklistTableViewController;
+    BOOL _trailingSeparatorInsetFollowsLayoutInsets;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -47,9 +49,11 @@
 @property (nonatomic, copy) MusicMediaDetailTintInformation *mediaDetailTintInformation;
 @property (nonatomic) <MusicMediaDetailSplitViewControllerDelegate> *mediaSplitViewControllerDelegate;
 @property (nonatomic, readonly) int presentationSource;
+@property (nonatomic) int productDescriptionTextStyle;
 @property (nonatomic, retain) UIViewController *relatedContentViewController;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) <MusicEntityProviding> *tracklistEntityProvider;
+@property (nonatomic) BOOL trailingSeparatorInsetFollowsLayoutInsets;
 
 - (void).cxx_destruct;
 - (void)_commitEditingWithTracklistEntityProviderChangeRecords:(id)arg1;
@@ -87,6 +91,7 @@
 - (int)presentationSource;
 - (void)productAdditionalMetadataViewControllerDidFinishContentHeightAnimation:(id)arg1;
 - (void)productAdditionalMetadataViewControllerWillBeginContentHeightAnimation:(id)arg1;
+- (int)productDescriptionTextStyle;
 - (id)relatedContentViewController;
 - (void)setClientContext:(id)arg1;
 - (void)setEditableComponents:(unsigned int)arg1;
@@ -96,8 +101,11 @@
 - (void)setHeaderContentViewController:(id)arg1;
 - (void)setMediaDetailTintInformation:(id)arg1;
 - (void)setMediaSplitViewControllerDelegate:(id)arg1;
+- (void)setProductDescriptionTextStyle:(int)arg1;
 - (void)setRelatedContentViewController:(id)arg1;
+- (void)setTrailingSeparatorInsetFollowsLayoutInsets:(BOOL)arg1;
 - (id)tracklistEntityProvider;
+- (BOOL)trailingSeparatorInsetFollowsLayoutInsets;
 - (void)verticalScrollingContainerViewController:(id)arg1 willEndDraggingWithVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (void)verticalScrollingContainerViewControllerContentSizeDidChange:(id)arg1;
 - (void)verticalScrollingContainerViewControllerDidScroll:(id)arg1;

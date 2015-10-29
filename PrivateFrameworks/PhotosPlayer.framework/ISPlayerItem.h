@@ -3,13 +3,18 @@
  */
 
 @interface ISPlayerItem : NSObject {
-    id /* block */ __loadingCompletionHandler;
-    BOOL __needToLoadContent;
+    int __crossfadeItemRequestID;
+    BOOL __loadingCancelled;
+    BOOL __needsToLoadCrossfadeItem;
+    BOOL __needsToLoadVideoPlayerItem;
+    int __videoPlayerItemRequestID;
     BOOL _aggressivelyCacheVideoFrames;
     ISAsset *_asset;
-    AVPlayerItem *_audioPlayerItem;
     ISCrossfadeItem *_crossfadeItem;
     NSError *_error;
+    int _loadingTarget;
+    NSObject<OS_dispatch_queue> *_observerQueue;
+    NSHashTable *_observers;
     double _period;
     struct CGImage { } *_photo;
     double _photoTime;
@@ -23,13 +28,16 @@
     AVPlayerItem *_videoPlayerItem;
 }
 
-@property (setter=_setLoadingCompletionHandler:, nonatomic, copy) id /* block */ _loadingCompletionHandler;
-@property (setter=_setNeedsToLoadContent:, nonatomic) BOOL _needToLoadContent;
+@property (setter=_setCrossfadeItemRequestID:, nonatomic) int _crossfadeItemRequestID;
+@property (getter=_isLoadingCancelled, setter=_setLoadingCancelled:, nonatomic) BOOL _loadingCancelled;
+@property (setter=_setNeedsToLoadCrossfadeItem:, nonatomic) BOOL _needsToLoadCrossfadeItem;
+@property (setter=_setNeedsToLoadVideoPlayerItem:, nonatomic) BOOL _needsToLoadVideoPlayerItem;
+@property (setter=_setVideoPlayerItemRequestID:, nonatomic) int _videoPlayerItemRequestID;
 @property (nonatomic) BOOL aggressivelyCacheVideoFrames;
 @property (readonly) ISAsset *asset;
-@property (setter=_setAudioPlayerItem:, nonatomic, retain) AVPlayerItem *audioPlayerItem;
 @property (setter=_setCrossfadeItem:, nonatomic, retain) ISCrossfadeItem *crossfadeItem;
 @property (nonatomic, retain) NSError *error;
+@property (nonatomic) int loadingTarget;
 @property (setter=_setPeriod:, nonatomic) double period;
 @property (setter=_setPhoto:, nonatomic, retain) struct CGImage { }*photo;
 @property (setter=_setphotoTime:, nonatomic) double photoTime;
@@ -43,39 +51,54 @@
 
 - (void).cxx_destruct;
 - (void)_configureVideoPlayerItem;
-- (void)_handleLoadValuesAsynchronouslyForKeysCompleted;
-- (id /* block */)_loadingCompletionHandler;
-- (BOOL)_needToLoadContent;
-- (void)_setAudioPlayerItem:(id)arg1;
+- (int)_crossfadeItemRequestID;
+- (void)_enumerateObserversWithBlock:(id /* block */)arg1;
+- (void)_handleCrossfadeLoadingResultWithSuccess:(BOOL)arg1 crossfadeItem:(id)arg2 error:(id)arg3;
+- (void)_handleVideoPlayerItemLoadResultWithSuccess:(BOOL)arg1 playerItem:(id)arg2 error:(id)arg3;
+- (BOOL)_isLoadingCancelled;
+- (void)_loadCrossfadeItemIfNeeded;
+- (void)_loadNextResourceIfNeeded;
+- (void)_loadVideoPlayerItemIfNeeded;
+- (BOOL)_needsToLoadContent;
+- (BOOL)_needsToLoadCrossfadeItem;
+- (BOOL)_needsToLoadVideoPlayerItem;
 - (void)_setCrossfadeItem:(id)arg1;
+- (void)_setCrossfadeItemRequestID:(int)arg1;
 - (void)_setError:(id)arg1;
-- (void)_setLoadingCompletionHandler:(id /* block */)arg1;
-- (void)_setNeedsToLoadContent:(BOOL)arg1;
+- (void)_setLoadingCancelled:(BOOL)arg1;
+- (void)_setNeedsToLoadCrossfadeItem:(BOOL)arg1;
+- (void)_setNeedsToLoadVideoPlayerItem:(BOOL)arg1;
 - (void)_setPeriod:(double)arg1;
 - (void)_setPhoto:(struct CGImage { }*)arg1;
 - (void)_setStatus:(int)arg1;
 - (void)_setVideoPlayerItem:(id)arg1;
+- (void)_setVideoPlayerItemRequestID:(int)arg1;
 - (void)_setphotoTime:(double)arg1;
 - (void)_updateStatus;
+- (int)_videoPlayerItemRequestID;
 - (BOOL)aggressivelyCacheVideoFrames;
 - (id)asset;
-- (id)audioPlayerItem;
+- (void)cancelLoading;
 - (id)crossfadeItem;
+- (void)dealloc;
 - (id)error;
 - (id)init;
 - (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
-- (void)loadAsynchronouslyWithCompletionHandler:(id /* block */)arg1;
+- (int)loadingTarget;
 - (double)period;
 - (struct CGImage { }*)photo;
 - (double)photoTime;
+- (void)registerObserver:(id)arg1;
 - (void)resetAVObjects;
 - (BOOL)reversesMoreVideoFramesInMemory;
 - (void)setAggressivelyCacheVideoFrames:(BOOL)arg1;
+- (void)setLoadingTarget:(int)arg1;
 - (void)setReversesMoreVideoFramesInMemory:(BOOL)arg1;
 - (void)setShouldLoadCrossfadeContent:(BOOL)arg1;
 - (BOOL)shouldLoadCrossfadeContent;
 - (int)status;
 - (struct CGSize { float x1; float x2; })targetSize;
+- (void)unregisterObserver:(id)arg1;
 - (id)videoPlayerItem;
 
 @end

@@ -10,6 +10,12 @@
         float left; 
         float bottom; 
         float right; 
+    } _borderMargins;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
     } _borderRadii;
     struct UIEdgeInsets { 
         float top; 
@@ -40,6 +46,7 @@
 
 @property (nonatomic, retain) UIColor *backgroundColor;
 @property (nonatomic, retain) UIColor *borderColor;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderMargins;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } borderWidths;
 @property (nonatomic) int imageContentMode;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } imagePadding;
@@ -99,6 +106,7 @@
 - (id)_uberImageWithBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 inputSize:(struct CGSize { float x1; float x2; })arg2 drawBlock:(id /* block */)arg3;
 - (id)backgroundColor;
 - (id)borderColor;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderMargins;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })borderWidths;
 - (int)imageContentMode;
 - (id)imageForColor:(id)arg1;
@@ -112,6 +120,7 @@
 - (id)initWithViewElement:(id)arg1;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBorderColor:(id)arg1;
+- (void)setBorderMargins:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setBorderWidths:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setImageContentMode:(int)arg1;
 - (void)setImagePadding:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;

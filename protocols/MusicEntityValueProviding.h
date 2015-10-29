@@ -8,4 +8,8 @@
 - (id)valueForEntityProperty:(NSString *)arg1;
 - (NSDictionary *)valuesForEntityProperties:(NSSet *)arg1;
 
+@optional
+
++ (BOOL)supportsConcurrentLoadingOfEntityProperties;
+
 @end

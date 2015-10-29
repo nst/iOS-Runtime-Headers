@@ -8,6 +8,9 @@
     NSString *_restorationPath;
 }
 
++ (id)diskBackedCacheWithPath:(id)arg1;
++ (id)inMemoryCache;
+
 - (void).cxx_destruct;
 - (void)_loadFromDisk;
 - (void)_saveToDisk;

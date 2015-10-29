@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Preferences.framework/Preferences
  */
 
-@interface PSAppleIDSplashViewController : PSListController {
+@interface PSAppleIDSplashViewController : PSListController <RemoteUIControllerDelegate> {
     AKAppleIDAuthenticationController *_authController;
     UIBarButtonItem *_cancelButtonBarItem;
     PSSpecifier *_createNewAccountButtonSpecifier;
@@ -13,6 +13,8 @@
     UIBarButtonItem *_nextButtonBarItem;
     NSString *_password;
     void *_powerAssertion;
+    id /* block */ _remoteUICompletion;
+    RemoteUIController *_remoteUIController;
     BOOL _shouldHideBackButton;
     BOOL _shouldShowCreateAppleIDButton;
     PSSpecifier *_signInButtonSpecifier;
@@ -24,11 +26,16 @@
 }
 
 @property (nonatomic, readonly) AKAppleIDAuthenticationController *authenticationController;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (setter=setPresentedModally:, nonatomic) BOOL isPresentedModally;
 @property (nonatomic) BOOL shouldShowCreateAppleIDButton;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_allowSleepAndDimming;
+- (void)_beginiCloudCreationFlowWithContinuationData:(id)arg1 completion:(id /* block */)arg2;
 - (void)_cancelButtonWasTapped:(id)arg1;
 - (void)_createNewAppleIDButtonWasTapped:(id)arg1;
 - (float)_heightForCreateNewAccountFooterWithWidth:(float)arg1;
@@ -41,6 +48,7 @@
 - (void)_presentInvalidUsernameAlert;
 - (void)_preventSleepAndDimming;
 - (BOOL)_runningInMail;
+- (void)_setInteractionEnabled:(BOOL)arg1;
 - (void)_setPassword:(id)arg1 withSpecifier:(id)arg2;
 - (void)_setUsername:(id)arg1 withSpecifier:(id)arg2;
 - (BOOL)_shouldShowCancelDone;
@@ -60,6 +68,7 @@
 - (void)handleAuthCompletionWithResults:(id)arg1;
 - (void)hideBusyUI;
 - (BOOL)isPresentedModally;
+- (void)remoteUIControllerDidDismiss:(id)arg1;
 - (void)returnPressedAtEnd;
 - (id)serviceDescription;
 - (id)serviceIcon;

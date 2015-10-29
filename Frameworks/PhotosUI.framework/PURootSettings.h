@@ -44,6 +44,7 @@
 + (id)_debugRowsForViewControllerStack:(id)arg1;
 + (void)_deleteAllDiagnosticFiles;
 + (void)_setDebugRows:(id)arg1;
++ (id)photosUITesterRootViewController;
 + (void)presentSettingsController;
 + (id)settingsControllerModule;
 + (void)setupStatusBarDoubleTapOnInternalDevices;

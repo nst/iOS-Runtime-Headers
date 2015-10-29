@@ -67,7 +67,8 @@
         unsigned int supportsVideoStillCapture : 1; 
         unsigned int supportsPreviewDuringHDR : 1; 
         unsigned int supportsTimelapse : 1; 
-        unsigned int hasFlash : 1; 
+        unsigned int hasBackFlash : 1; 
+        unsigned int hasFrontFlash : 1; 
         unsigned int hasBackCamera : 1; 
         unsigned int hasFrontCamera : 1; 
         unsigned int deferStartVideoCapture : 1; 
@@ -643,10 +644,11 @@
 - (BOOL)flashWillFire;
 - (float)focusLensPosition;
 - (struct CGPoint { float x1; float x2; })focusPointOfInterest;
-- (BOOL)hasFlash;
 - (BOOL)hasFrontCamera;
+- (BOOL)hasFrontFlash;
 - (BOOL)hasInheritedForegroundState;
 - (BOOL)hasRearCamera;
+- (BOOL)hasRearFlash;
 - (id)imageOutput;
 - (BOOL)imageWriterQueueIsAvailable;
 - (BOOL)inCall;

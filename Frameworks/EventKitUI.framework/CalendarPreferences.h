@@ -12,6 +12,7 @@
 @property (nonatomic) unsigned int debugOccurrenceViewIconOverload;
 @property (nonatomic, retain) NSArray *deselectedCalendarSyncHashes;
 @property (nonatomic) BOOL disableContinuity;
+@property (nonatomic) BOOL disableTodayPushes;
 @property (nonatomic) BOOL drawDebugViewColors;
 @property (nonatomic) BOOL hideInlineDayViewInEventDetails;
 @property (nonatomic) BOOL immediateAlarmCreation;
@@ -49,6 +50,7 @@
 - (id)deselectedCalendarIDsFromCalendars:(id)arg1;
 - (id)deselectedCalendarSyncHashes;
 - (BOOL)disableContinuity;
+- (BOOL)disableTodayPushes;
 - (BOOL)drawDebugViewColors;
 - (BOOL)hideInlineDayViewInEventDetails;
 - (BOOL)immediateAlarmCreation;
@@ -70,6 +72,7 @@
 - (void)setDeselectedCalendarIDs:(id)arg1;
 - (void)setDeselectedCalendarSyncHashes:(id)arg1;
 - (void)setDisableContinuity:(BOOL)arg1;
+- (void)setDisableTodayPushes:(BOOL)arg1;
 - (void)setDrawDebugViewColors:(BOOL)arg1;
 - (void)setHideInlineDayViewInEventDetails:(BOOL)arg1;
 - (void)setImmediateAlarmCreation:(BOOL)arg1;

@@ -7,10 +7,12 @@
     NSString *_cookieURL;
     id _isURLBagDidLoadToken;
     NSNumber *_lastAccountDSID;
+    NSDictionary *_lastKnownStatusDictionary;
     SSMetricsController *_metricsController;
     ISLoadURLBagOperation *_pendingBagOperation;
     id _ssAccountStoreChangedToken;
     NSString *_storeFrontSuffix;
+    id _subscriptionStatusDidChangeToken;
 }
 
 @property (nonatomic, readonly) NSString *DSID;
@@ -30,6 +32,7 @@
 - (id)DSID;
 - (void)_accountStoreChanged;
 - (void)_bagDidLoadNotification:(id)arg1;
+- (void)_subscriptionStatusChanged;
 - (id)_subscriptionStatusDictionaryWithStatus:(id)arg1 isFinal:(BOOL)arg2;
 - (void)_updateBag:(BOOL)arg1;
 - (void)_updateWithBag:(id)arg1;

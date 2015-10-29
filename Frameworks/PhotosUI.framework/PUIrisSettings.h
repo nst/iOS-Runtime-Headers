@@ -11,6 +11,7 @@
     BOOL _shouldAlwaysBadge;
     BOOL _showCrossfadeBorder;
     BOOL _showDebugInfo;
+    BOOL _showStatusBorder;
     BOOL _showVideoBorder;
     float _transitionBlurRadius;
     double _transitionDuration;
@@ -29,6 +30,7 @@
 @property (nonatomic) BOOL shouldAlwaysBadge;
 @property (nonatomic) BOOL showCrossfadeBorder;
 @property (nonatomic) BOOL showDebugInfo;
+@property (getter=showStatusBorder, nonatomic) BOOL showStatusBorder;
 @property (nonatomic) BOOL showVideoBorder;
 @property (nonatomic) float transitionBlurRadius;
 @property (nonatomic) double transitionDuration;
@@ -58,6 +60,7 @@
 - (void)setShouldAlwaysBadge:(BOOL)arg1;
 - (void)setShowCrossfadeBorder:(BOOL)arg1;
 - (void)setShowDebugInfo:(BOOL)arg1;
+- (void)setShowStatusBorder:(BOOL)arg1;
 - (void)setShowVideoBorder:(BOOL)arg1;
 - (void)setTransitionBlurRadius:(float)arg1;
 - (void)setTransitionDuration:(double)arg1;
@@ -70,6 +73,7 @@
 - (BOOL)shouldAlwaysBadge;
 - (BOOL)showCrossfadeBorder;
 - (BOOL)showDebugInfo;
+- (BOOL)showStatusBorder;
 - (BOOL)showVideoBorder;
 - (float)transitionBlurRadius;
 - (double)transitionDuration;

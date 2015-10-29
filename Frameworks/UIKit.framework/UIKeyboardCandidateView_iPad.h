@@ -26,6 +26,7 @@
 - (float)rightButtonYOffset;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setCandidateViewExtended:(BOOL)arg1;
+- (BOOL)shouldUseKeyboardBackground:(id)arg1;
 - (void)updatePageControlStatus;
 
 @end

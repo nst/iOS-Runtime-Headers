@@ -24,11 +24,15 @@
 - (UIImage *)defaultDisclosurePressedImageForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (float)defaultEditControlPaddingForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (struct CGSize { float x1; float x2; })defaultEditControlSizeForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
+- (float)defaultFocusedHorizontalOutsetForTableView:(UITableView *)arg1;
+- (float)defaultFocusedShadowRadiusForTableView:(UITableView *)arg1;
 - (UIColor *)defaultFooterBackgroundColorForView:(UITableViewHeaderFooterView *)arg1 inTableView:(UITableView *)arg2;
 - (UIFont *)defaultFooterFontForTableViewStyle:(int)arg1;
 - (UIFont *)defaultFooterFontForView:(UITableViewHeaderFooterView *)arg1 inTableView:(UITableView *)arg2;
 - (UIColor *)defaultFooterTextColorForTableViewStyle:(int)arg1;
 - (UIColor *)defaultFooterTextColorForView:(UITableViewHeaderFooterView *)arg1 inTableView:(UITableView *)arg2;
+- (float)defaultGroupedFooterHeightForTableView:(UITableView *)arg1;
+- (float)defaultGroupedHeaderHeightForTableView:(UITableView *)arg1;
 - (UIColor *)defaultHeaderBackgroundColorForView:(UITableViewHeaderFooterView *)arg1 inTableView:(UITableView *)arg2;
 - (UIFont *)defaultHeaderFontForTableViewStyle:(int)arg1;
 - (UIFont *)defaultHeaderFontForView:(UITableViewHeaderFooterView *)arg1 inTableView:(UITableView *)arg2;
@@ -37,6 +41,7 @@
 - (UIImage *)defaultInsertImageForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultLayoutMarginsForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (float)defaultMarginWidthForTableView:(UITableView *)arg1;
+- (float)defaultMaskGradientHeightForTableView:(UITableView *)arg1;
 - (float)defaultMinBottomPaddingForTableView:(UITableView *)arg1;
 - (float)defaultMinTopPaddingForTableView:(UITableView *)arg1;
 - (UIImage *)defaultMultiSelectHighlightedImageForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
@@ -50,11 +55,14 @@
 - (UIImage *)defaultReorderControlImageForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (struct CGSize { float x1; float x2; })defaultReorderControlSizeForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (float)defaultRowHeightForTableView:(UITableView *)arg1;
+- (float)defaultRowHeightForTableView:(UITableView *)arg1 cellStyle:(int)arg2;
+- (float)defaultSectionContentMarginWidthForTableView:(UITableView *)arg1;
 - (float)defaultSectionFooterHeightForTableView:(UITableView *)arg1;
 - (float)defaultSectionHeaderHeightForTableView:(UITableView *)arg1;
 - (UIColor *)defaultSelectionTintColorForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (UIColor *)defaultSeparatorColorForTableViewStyle:(int)arg1;
 - (int)defaultSeparatorStyleForTableViewStyle:(int)arg1;
+- (float)defaultSpaceBetweenEditAndReorderControlsForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (UIColor *)defaultTextColorForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (UIFont *)defaultTextLabelFontForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (float)defaultTextLabelFontSizeForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;

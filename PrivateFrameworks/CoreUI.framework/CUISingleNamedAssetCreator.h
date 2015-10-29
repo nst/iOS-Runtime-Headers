@@ -3,10 +3,13 @@
  */
 
 @interface CUISingleNamedAssetCreator : NSObject {
+    float _flattenedCompressionQuality;
     NSMutableArray *_generators;
+    float _layersCompressionQuality;
     NSMutableArray *_names;
     unsigned int _primaryIndex;
     NSString *_primaryName;
+    float _radiosityCompressionQuaility;
     CUIMutableCommonAssetStorage *_store;
 }
 
@@ -17,6 +20,7 @@
 @property CUIMutableCommonAssetStorage *store;
 
 - (void)_addImage:(struct CGImage { }*)arg1 withBaseKey:(id)arg2 name:(id)arg3;
+- (void)_addImageAsJPEG:(struct CGImage { }*)arg1 withBaseKey:(id)arg2 withName:(id)arg3;
 - (void)_configureDefaultStorageParameters;
 - (id)_defaultBaseKey;
 - (BOOL)_distillNameEntries:(id*)arg1;
@@ -30,19 +34,28 @@
 - (id)_radiosityImageBaseKey;
 - (void)addFlattenedImage:(struct CGImage { }*)arg1 forLayerStackWithName:(id)arg2;
 - (void)addImage:(struct CGImage { }*)arg1 withName:(id)arg2;
+- (void)addImageAsJPEG:(struct CGImage { }*)arg1 withName:(id)arg2;
 - (void)addLayerReference:(id)arg1 forImage:(struct CGImage { }*)arg2 toLayerStackWithName:(id)arg3;
 - (void)addLayerStackWithSize:(struct CGSize { float x1; float x2; })arg1 stackData:(id)arg2 name:(id)arg3;
+- (float)compressionQuality;
 - (void)dealloc;
 - (BOOL)distillAndSave:(id*)arg1;
+- (float)flattenedLossyCompressionQuality;
 - (id)generators;
 - (id)initWithOutputURL:(id)arg1 versionString:(id)arg2;
+- (float)layersLossyCompressionQuality;
 - (id)names;
 - (unsigned int)primaryIndex;
 - (id)primaryName;
+- (float)radiosityLossyCompressionQuality;
+- (void)setCompressionQuality:(float)arg1;
+- (void)setFlattenedLossyCompressionQuality:(float)arg1;
 - (void)setGenerators:(id)arg1;
+- (void)setLayersLossyCompressionQuality:(float)arg1;
 - (void)setNames:(id)arg1;
 - (void)setPrimaryIndex:(unsigned int)arg1;
 - (void)setPrimaryName:(id)arg1;
+- (void)setRadiosityLossyCompressionQuality:(float)arg1;
 - (void)setStore:(id)arg1;
 - (id)store;
 

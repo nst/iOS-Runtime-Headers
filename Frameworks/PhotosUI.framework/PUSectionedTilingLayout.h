@@ -11,6 +11,7 @@
         float width; 
         float height; 
     } _interSectionSpacing;
+    BOOL _leftToRight;
     int _numberOfSections;
     NSMutableDictionary *_sectionInfos;
     int _seedSection;
@@ -22,6 +23,7 @@
 
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } computedSections;
 @property (nonatomic) struct CGSize { float x1; float x2; } interSectionSpacing;
+@property (nonatomic) BOOL leftToRight;
 
 - (void).cxx_destruct;
 - (void)_computeSeedSectionIfNeeded;
@@ -40,9 +42,11 @@
 - (void)invalidateLayoutForUpdateWithItems:(id)arg1;
 - (void)invalidateSectionInfos;
 - (id)layoutInfosForTilesInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)leftToRight;
 - (int)numberOfItemsInSection:(int)arg1;
 - (void)prepareLayout;
 - (void)setInterSectionSpacing:(struct CGSize { float x1; float x2; })arg1;
+- (void)setLeftToRight:(BOOL)arg1;
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })sizeForSection:(int)arg1 numberOfItems:(int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })visibleRectForScrollingToItemAtIndexPath:(id)arg1 scrollPosition:(int)arg2;

@@ -8,7 +8,8 @@
 - (void)_customizePopupTraits:(id)arg1 forKey:(id)arg2 onKeyplane:(id)arg3;
 - (void)_customizeSymbolStyle:(id)arg1 forKey:(id)arg2 contents:(id)arg3;
 - (void)_customizeTraits:(id)arg1 forPopupForKey:(id)arg2 withRenderConfig:(id)arg3 keycapsFontName:(id)arg4;
-- (float)_row4ControlSegmentWidth;
+- (float)_row4ControlSegmentWidthLeft;
+- (float)_row4ControlSegmentWidthRight;
 - (id)_traitsForKey:(id)arg1 onKeyplane:(id)arg2;
 - (float)bottomRowDefaultFontSize;
 - (float)cornerRadiusForKey:(id)arg1;
@@ -36,6 +37,7 @@
 - (float)fontSizeAdjustmentForNonAlphanumericKeycaps;
 - (id)globalEmojiKeyImageName;
 - (id)globalKeyImageName;
+- (BOOL)iPadFudgeLayout;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })insetFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forKey:(id)arg2;
 - (float)internationalKeyFontSize;
 - (struct CGPoint { float x1; float x2; })internationalKeyOffset;
@@ -64,6 +66,7 @@
 - (float)spaceKeyFontSize;
 - (float)stringKeyFontSize;
 - (struct CGPoint { float x1; float x2; })stringKeyOffset;
+- (BOOL)supportsInputTraits:(id)arg1 forKeyplane:(id)arg2;
 - (float)symbolFrameInset;
 - (id)thinKeycapsFontName;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })variantDisplayFrameInsets;

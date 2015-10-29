@@ -64,6 +64,7 @@
 - (unsigned int)discNumber;
 - (double)duration;
 - (id)editorNotes;
+- (id)editorNotesWithStyle:(id)arg1;
 - (id)effectiveStorePlatformDictionary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)genreNames;
@@ -77,6 +78,7 @@
 - (BOOL)isPreorder;
 - (id)itemKind;
 - (id)latestAlbumArtworkRequestToken;
+- (id)metadataByAppendingMetadata:(id)arg1;
 - (id)metadataWithChildStorePlatformDictionaries:(id)arg1;
 - (id)metadataWithParentMetadata:(id)arg1;
 - (id)name;

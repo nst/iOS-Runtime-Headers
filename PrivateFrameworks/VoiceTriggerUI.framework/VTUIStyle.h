@@ -8,11 +8,13 @@
     NSArray *_deviceStringSuffixes;
     int _enrollmentMode;
     BOOL _isBuddy;
+    BOOL _isHeySiriAlwaysOn;
     BOOL _isIpad;
 }
 
 @property (nonatomic) int enrollmentMode;
 @property (nonatomic) BOOL isBuddy;
+@property (nonatomic) BOOL isHeySiriAlwaysOn;
 
 + (id)sharedStyle;
 
@@ -43,10 +45,12 @@
 - (float)imageViewTopOffset;
 - (id)init;
 - (BOOL)isBuddy;
+- (BOOL)isHeySiriAlwaysOn;
 - (float)radarBtnHorizontalPadding;
 - (float)radarBtnVerticalPadding;
 - (void)setEnrollmentMode:(int)arg1;
 - (void)setIsBuddy:(BOOL)arg1;
+- (void)setIsHeySiriAlwaysOn:(BOOL)arg1;
 - (BOOL)shouldShowFooterLine;
 - (float)skipButtonBaselineBottomMargin;
 - (float)statusLabelMinHeight;

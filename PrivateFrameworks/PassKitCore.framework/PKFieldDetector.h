@@ -25,7 +25,9 @@
 @property (readonly) Class superclass;
 
 - (void)_endValueAddedLookupSession;
+- (void)_endValueAddedServiceLookupSessionAndNotifyWithError:(id)arg1;
 - (void)_endValueAddedServiceLookupSessionAndNotifyWithMerchantIdentifiers:(id)arg1;
+- (void)_endValueAddedServiceSessionAndNotifyWithFieldProperties:(id)arg1;
 - (void)_restartFieldDetectSession;
 - (void)_startFieldDetectSession;
 - (void)_startValueAddedServiceLookupSessionForTechnology:(unsigned int)arg1 andValueAddedServiceMode:(unsigned int)arg2;

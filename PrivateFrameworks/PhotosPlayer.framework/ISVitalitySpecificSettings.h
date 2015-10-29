@@ -8,6 +8,7 @@
     double _maximumDeceleration;
     int _maximumNumberOfFrames;
     double _maximumRate;
+    double _minimumDurationForColorMismatch;
     double _minimumVisibilityFactor;
     double _playbackRate;
     double _postDuration;
@@ -24,6 +25,7 @@
 @property (nonatomic) double maximumDeceleration;
 @property (nonatomic) int maximumNumberOfFrames;
 @property (nonatomic) double maximumRate;
+@property (nonatomic) double minimumDurationForColorMismatch;
 @property (nonatomic) double minimumVisibilityFactor;
 @property (nonatomic) double playbackRate;
 @property (nonatomic) double postDuration;
@@ -40,6 +42,7 @@
 - (double)maximumDeceleration;
 - (int)maximumNumberOfFrames;
 - (double)maximumRate;
+- (double)minimumDurationForColorMismatch;
 - (double)minimumVisibilityFactor;
 - (double)playbackRate;
 - (double)postDuration;
@@ -52,6 +55,7 @@
 - (void)setMaximumDeceleration:(double)arg1;
 - (void)setMaximumNumberOfFrames:(int)arg1;
 - (void)setMaximumRate:(double)arg1;
+- (void)setMinimumDurationForColorMismatch:(double)arg1;
 - (void)setMinimumVisibilityFactor:(double)arg1;
 - (void)setPlaybackRate:(double)arg1;
 - (void)setPostDuration:(double)arg1;

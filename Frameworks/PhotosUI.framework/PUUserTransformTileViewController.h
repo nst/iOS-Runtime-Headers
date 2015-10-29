@@ -69,7 +69,7 @@
 - (id)delegate;
 - (void)didChangeAnimating;
 - (id)initWithReuseIdentifier:(id)arg1;
-- (void)loadView;
+- (id)loadView;
 - (void)setAssetReference:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setUserInteractionEnabled:(BOOL)arg1;

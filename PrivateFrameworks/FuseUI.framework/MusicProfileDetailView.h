@@ -72,9 +72,8 @@
 - (BOOL)isFollowHidden;
 - (BOOL)isFollowHidden;
 - (BOOL)isFollowing;
-- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })layoutMargins;
-- (void)layoutMarginsDidChange;
 - (void)layoutSubviews;
+- (void)music_inheritedLayoutInsetsDidChange;
 - (void)setAdminEnabled:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDetailTintInformation:(id)arg1;

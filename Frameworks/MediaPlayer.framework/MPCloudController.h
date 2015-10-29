@@ -51,6 +51,7 @@
 - (id)cloudClient;
 - (void)createPlaylistWithPersistentID:(unsigned long long)arg1 properties:(id)arg2 trackList:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)dealloc;
+- (void)deprioritizeArtworkRequestForEntityPersistentID:(long long)arg1 entityType:(int)arg2 artworkType:(int)arg3 artworkSourceType:(int)arg4;
 - (void)disableCloudLibraryWithCompletionHandler:(id /* block */)arg1;
 - (void)enableCloudLibraryWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)enablingJaliscoGeniusRequiresTerms;

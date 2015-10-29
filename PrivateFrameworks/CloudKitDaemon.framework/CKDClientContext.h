@@ -59,6 +59,7 @@
 @property (retain) CKDMMCS *MMCS;
 @property (retain) CKDAccount *account;
 @property (nonatomic, readonly) CKAccountInfo *accountInfoOverride;
+@property (nonatomic, readonly) BOOL allowsCellularAccess;
 @property (nonatomic) BOOL allowsPowerNapScheduling;
 @property (nonatomic, retain) NSString *applicationAssetDbDirectory;
 @property (nonatomic, readonly) NSBundle *applicationBundle;
@@ -135,6 +136,7 @@
 - (id)account;
 - (id)accountInfoOverride;
 - (void)addClientProxy:(id)arg1;
+- (BOOL)allowsCellularAccess;
 - (BOOL)allowsPowerNapScheduling;
 - (id)applicationAssetDbDirectory;
 - (id)applicationBundle;

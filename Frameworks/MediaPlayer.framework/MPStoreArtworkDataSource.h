@@ -14,5 +14,6 @@
 - (id)sortedSupportedSizesForCatalog:(id)arg1;
 - (id)supportedSizesForCatalog:(id)arg1;
 - (id)visualIdenticalityIdentifierForCatalog:(id)arg1;
+- (BOOL)wantsBackgroundImageDecompression;
 
 @end

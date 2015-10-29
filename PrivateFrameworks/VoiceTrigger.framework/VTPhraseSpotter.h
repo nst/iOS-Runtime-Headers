@@ -42,6 +42,7 @@
     NSObject<OS_dispatch_queue> *_ndetectQueue;
     int _nearMissLogPreDelayTimer;
     int _numFramesFromPreTrigger;
+    BOOL _phraseSpotterBypassed;
     BOOL _phraseSpotterEnabled;
     id /* block */ _readyCompletion;
     id /* block */ _readyForAnalyze;
@@ -85,6 +86,7 @@
 - (unsigned long long)_applyExtraTimeTo:(unsigned long long)arg1;
 - (void)_assetsAvailable:(id)arg1;
 - (BOOL)_boolValFromNdetect:(void*)arg1 withName:(const char *)arg2 defaultTo:(BOOL)arg3;
+- (void)_bypassAssertionReceived;
 - (id)_capturePath:(unsigned char)arg1;
 - (void)_commonInit;
 - (BOOL)_configureWithConfig:(id)arg1 resourcePath:(id)arg2;
@@ -107,6 +109,7 @@
 - (BOOL)_retrainingSATModel:(void*)arg1 satAudioPath:(id)arg2;
 - (void)_safeConfigureWithNdetect:(void*)arg1 path:(id)arg2 data:(id)arg3 resourcePath:(id)arg4;
 - (void)_safeReconfig;
+- (void)_unbypassAssertionReceived;
 - (void)_unlistenForFirstUnlockAfterReboot;
 - (void)_unlistenForLanguageCodeUpdates;
 - (void)_voiceTriggerEnabledDidChange;

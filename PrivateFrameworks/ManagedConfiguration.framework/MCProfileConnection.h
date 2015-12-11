@@ -374,6 +374,7 @@
 - (id)userBookmarks;
 - (id)userInfoForClientUUID:(id)arg1;
 - (id)userSettings;
+- (void)validateAppBundleIDs:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)validatePasscode:(id)arg1;
 - (BOOL)validatePasscode:(id)arg1 andUnlockContentProtectedDevice:(BOOL)arg2;
 - (id)valueForFeature:(id)arg1;

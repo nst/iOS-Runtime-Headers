@@ -49,9 +49,13 @@
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
-+ (void)registerSupportedCustomProperties;
++ (id)customPropertyHandlersCollection;
++ (void)registerSupportedCustomPropertiesWithHandlersCollection:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
++ (id)MPU_contentItemIdentifierCollectionPropertiesForGroupingType:(int)arg1;
++ (void)_MPU_getContentItemIdentifierCollectionItemType:(unsigned int*)arg1 storeAdamIDProperty:(id*)arg2 forGroupingType:(int)arg3;
 
 - (id)MPU_contentItemIdentifierCollection;
 

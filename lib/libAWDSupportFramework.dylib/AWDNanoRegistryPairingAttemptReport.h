@@ -4,8 +4,14 @@
 
 @interface AWDNanoRegistryPairingAttemptReport : PBCodable <NSCopying> {
     NSString *_abortPairingReason;
+    unsigned int _attemptCounter;
+    unsigned int _finalDurationSeconds;
+    NSString *_finalScreenName;
+    NSString *_gizmoBuild;
     struct { 
         unsigned int timestamp : 1; 
+        unsigned int attemptCounter : 1; 
+        unsigned int finalDurationSeconds : 1; 
         unsigned int incorrectPINcount : 1; 
         unsigned int pairingType : 1; 
         unsigned int reason : 1; 
@@ -22,7 +28,15 @@
 }
 
 @property (nonatomic, retain) NSString *abortPairingReason;
+@property (nonatomic) unsigned int attemptCounter;
+@property (nonatomic) unsigned int finalDurationSeconds;
+@property (nonatomic, retain) NSString *finalScreenName;
+@property (nonatomic, retain) NSString *gizmoBuild;
 @property (nonatomic, readonly) BOOL hasAbortPairingReason;
+@property (nonatomic) BOOL hasAttemptCounter;
+@property (nonatomic) BOOL hasFinalDurationSeconds;
+@property (nonatomic, readonly) BOOL hasFinalScreenName;
+@property (nonatomic, readonly) BOOL hasGizmoBuild;
 @property (nonatomic) BOOL hasIncorrectPINcount;
 @property (nonatomic) BOOL hasIsAutomated;
 @property (nonatomic) BOOL hasPairingType;
@@ -39,12 +53,20 @@
 @property (nonatomic) unsigned long long timestamp;
 
 - (id)abortPairingReason;
+- (unsigned int)attemptCounter;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (unsigned int)finalDurationSeconds;
+- (id)finalScreenName;
+- (id)gizmoBuild;
 - (BOOL)hasAbortPairingReason;
+- (BOOL)hasAttemptCounter;
+- (BOOL)hasFinalDurationSeconds;
+- (BOOL)hasFinalScreenName;
+- (BOOL)hasGizmoBuild;
 - (BOOL)hasIncorrectPINcount;
 - (BOOL)hasIsAutomated;
 - (BOOL)hasPairingType;
@@ -62,6 +84,12 @@
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)reason;
 - (void)setAbortPairingReason:(id)arg1;
+- (void)setAttemptCounter:(unsigned int)arg1;
+- (void)setFinalDurationSeconds:(unsigned int)arg1;
+- (void)setFinalScreenName:(id)arg1;
+- (void)setGizmoBuild:(id)arg1;
+- (void)setHasAttemptCounter:(BOOL)arg1;
+- (void)setHasFinalDurationSeconds:(BOOL)arg1;
 - (void)setHasIncorrectPINcount:(BOOL)arg1;
 - (void)setHasIsAutomated:(BOOL)arg1;
 - (void)setHasPairingType:(BOOL)arg1;

@@ -8,6 +8,7 @@
     NSDictionary *_connectionProperties;
     WebUIDownloadManager *_downloadManager;
     NSArray *_fallbackURLs;
+    NSMutableSet *_highLevelDomainsAndPortsToUseOnlyAvailableIdentityWithoutPrompting;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -54,6 +55,7 @@
 
 - (void).cxx_destruct;
 - (void)_cancelSnapshotHideTimer;
+- (id)_clientCertificatePromptWhitelistURL;
 - (void)_handleStatusBarHeightChanged:(id)arg1;
 - (void)_ignorePolicyListener:(id)arg1;
 - (void)_inputViewWillRotate:(id)arg1;
@@ -86,6 +88,7 @@
 - (id)sheetController:(id)arg1 viewControllerForAlert:(id)arg2;
 - (void)sheetControllerDidHideSheet:(id)arg1;
 - (void)sheetControllerDidShowSheet:(id)arg1;
+- (BOOL)shouldUseOnlyAvailableIdentityWithoutPromptingForProtectionSpace:(id)arg1;
 - (BOOL)shouldWindowUseOnePartInterfaceRotationAnimation:(id)arg1;
 - (void)showGenericDownloadAlert;
 - (void)showProfileDownloadAlert;
@@ -110,6 +113,7 @@
 - (void)uiWebView:(id)arg1 resource:(id)arg2 didFinishLoadingFromDataSource:(id)arg3;
 - (void)uiWebView:(id)arg1 resource:(id)arg2 didReceiveAuthenticationChallenge:(id)arg3 fromDataSource:(id)arg4;
 - (void)updateStatusBarStyleFromWebClip;
+- (void)useOnlyAvailableIdentityWithoutPromptingForProtectionSpace:(id)arg1;
 - (id)webClip;
 - (id)webView;
 - (void)webView:(id)arg1 decidePolicyForMIMEType:(id)arg2 request:(id)arg3 frame:(id)arg4 decisionListener:(id)arg5;

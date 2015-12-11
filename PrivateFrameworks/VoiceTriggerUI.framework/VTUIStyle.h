@@ -10,6 +10,7 @@
     BOOL _isBuddy;
     BOOL _isHeySiriAlwaysOn;
     BOOL _isIpad;
+    BOOL _needMoreLineSpacing;
 }
 
 @property (nonatomic) int enrollmentMode;
@@ -26,6 +27,7 @@
 - (id)buttonTextColor;
 - (float)continueButtonBaselineOffset;
 - (id)continueButtonFont;
+- (void)dealloc;
 - (id)deviceDoneImage;
 - (id)deviceSetupImage;
 - (int)enrollmentMode;
@@ -40,12 +42,14 @@
 - (float)footerTextBaselineOffsetFromButton;
 - (id)footerTextColor;
 - (id)headerTitleFont;
+- (float)headerTitleLinespacing;
 - (float)horizontalPadding;
 - (float)imageViewBottomOffsetFromFooter;
 - (float)imageViewTopOffset;
 - (id)init;
 - (BOOL)isBuddy;
 - (BOOL)isHeySiriAlwaysOn;
+- (void)orientationChanged:(id)arg1;
 - (float)radarBtnHorizontalPadding;
 - (float)radarBtnVerticalPadding;
 - (void)setEnrollmentMode:(int)arg1;

@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDCloudDataSyncStateFilter : HMDMessageFilter <HMMessageReceiver> {
+@interface HMDCloudDataSyncStateFilter : HMDMessageFilter <HAPTimerDelegate, HMMessageReceiver> {
     int _circleNotificationToken;
     BOOL _cloudDataSyncCompleted;
+    HAPTimer *_cloudDataSyncInProgressTimer;
+    NSDate *_dataSyncTimerStartTimestamp;
     BOOL _decryptionFailed;
     BOOL _iCloudAccountActive;
     BOOL _keychainSyncEnabled;
@@ -12,6 +14,7 @@
     HMMessageDispatcher *_msgDispatcher;
     BOOL _networkConnectivityAvailable;
     NSObject<OS_dispatch_source> *_popupTimer;
+    double _remainingDataSyncPeriod;
     BOOL _serverTokenAvailable;
     int _totalHomes;
     int _totalTransientPeerDevices;
@@ -20,6 +23,8 @@
 
 @property (nonatomic) int circleNotificationToken;
 @property (nonatomic) BOOL cloudDataSyncCompleted;
+@property (nonatomic, retain) HAPTimer *cloudDataSyncInProgressTimer;
+@property (nonatomic, retain) NSDate *dataSyncTimerStartTimestamp;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL decryptionFailed;
 @property (readonly, copy) NSString *description;
@@ -32,6 +37,7 @@
 @property (nonatomic, retain) HMMessageDispatcher *msgDispatcher;
 @property (nonatomic) BOOL networkConnectivityAvailable;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *popupTimer;
+@property (nonatomic) double remainingDataSyncPeriod;
 @property (nonatomic) BOOL serverTokenAvailable;
 @property (readonly) Class superclass;
 @property (nonatomic) int totalHomes;
@@ -46,12 +52,18 @@
 - (void)_handleCircleChangedNotification;
 - (void)_handleRemoteAccessPeersFoundNotification:(id)arg1;
 - (void)_registerForCircleChangeNotifications;
+- (void)_resetCloudDataSyncTimer;
+- (void)_stallCloudDataSyncTimer;
+- (void)_startCloudDataSyncTimer;
 - (void)_startPopupTimer;
+- (void)_stopCloudDataSyncTimer;
 - (void)_stopPopupTimer;
 - (void)_updateCloudDataSyncState:(BOOL)arg1;
 - (BOOL)acceptMessage:(id)arg1 target:(id)arg2 errorReason:(id*)arg3;
 - (int)circleNotificationToken;
 - (BOOL)cloudDataSyncCompleted;
+- (id)cloudDataSyncInProgressTimer;
+- (id)dataSyncTimerStartTimestamp;
 - (void)dealloc;
 - (BOOL)decryptionFailed;
 - (BOOL)iCloudAccountActive;
@@ -63,10 +75,13 @@
 - (id)msgDispatcher;
 - (BOOL)networkConnectivityAvailable;
 - (id)popupTimer;
+- (double)remainingDataSyncPeriod;
 - (void)resetConfiguration;
 - (BOOL)serverTokenAvailable;
 - (void)setCircleNotificationToken:(int)arg1;
 - (void)setCloudDataSyncCompleted:(BOOL)arg1;
+- (void)setCloudDataSyncInProgressTimer:(id)arg1;
+- (void)setDataSyncTimerStartTimestamp:(id)arg1;
 - (void)setDecryptionFailed:(BOOL)arg1;
 - (void)setICloudAccountActive:(BOOL)arg1;
 - (void)setKeychainSyncEnabled:(BOOL)arg1;
@@ -74,11 +89,13 @@
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setNetworkConnectivityAvailable:(BOOL)arg1;
 - (void)setPopupTimer:(id)arg1;
+- (void)setRemainingDataSyncPeriod:(double)arg1;
 - (void)setServerTokenAvailable:(BOOL)arg1;
 - (void)setTotalHomes:(int)arg1;
 - (void)setTotalTransientPeerDevices:(int)arg1;
 - (void)setUuid:(id)arg1;
 - (BOOL)shouldCloudSyncData;
+- (void)timerDidFire:(id)arg1;
 - (int)totalHomes;
 - (int)totalTransientPeerDevices;
 - (void)updateCloudDataSyncState:(BOOL)arg1;

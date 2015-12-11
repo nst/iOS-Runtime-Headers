@@ -14,6 +14,8 @@
 @property (nonatomic, retain) MBConnection *conn;
 @property (nonatomic) int manifestPageSize;
 @property (nonatomic) int maxBatchCount;
+@property (nonatomic, readonly) int maxBatchFetchAssetSize;
+@property (nonatomic, readonly) int maxBatchSaveAssetSize;
 @property (nonatomic) int maxBatchSize;
 @property (nonatomic) int maxDomainsToBackup;
 @property (nonatomic, copy) NSString *minimumBuildVersionForFullBackup;
@@ -44,6 +46,8 @@
 - (id)init;
 - (int)manifestPageSize;
 - (int)maxBatchCount;
+- (int)maxBatchFetchAssetSize;
+- (int)maxBatchSaveAssetSize;
 - (int)maxBatchSize;
 - (int)maxDomainsToBackup;
 - (id)minimumBuildVersionForFullBackup;
@@ -63,6 +67,8 @@
 - (void)setSqlBatchTime:(double)arg1;
 - (void)setUseBackgroundOperationsForBackup:(BOOL)arg1;
 - (void)setWarnForLateiTunesBackups:(BOOL)arg1;
+- (void)setmaxBatchFetchAssetSize:(int)arg1;
+- (void)setmaxBatchSaveAssetSize:(int)arg1;
 - (int)sqlBatchCount;
 - (double)sqlBatchTime;
 - (BOOL)sqlTrace;

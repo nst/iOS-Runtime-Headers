@@ -12,6 +12,8 @@
         float right; 
     } _cancelMargins;
     <SPUISearchHeaderDelegate> *_delegate;
+    BOOL _inputFieldHasFocus;
+    NSArray *_insetConstraints;
     struct UIEdgeInsets { 
         float top; 
         float left; 
@@ -26,6 +28,7 @@
 
 @property (retain) NSLayoutConstraint *cancelButtonTrailingConstraint;
 @property (nonatomic) <SPUISearchHeaderDelegate> *delegate;
+@property BOOL inputFieldHasFocus;
 @property (nonatomic, readonly, retain) UITextField *searchField;
 
 + (id)barTintColor;
@@ -40,12 +43,14 @@
 - (void)handleDictationButtonPress:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)inputFieldHasFocus;
 - (BOOL)isDictationAvailable;
 - (void)layoutSubviews;
 - (id)searchField;
 - (void)setCancelButtonHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setCancelButtonTrailingConstraint:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setInputFieldHasFocus:(BOOL)arg1;
 - (void)setIsCapturing:(BOOL)arg1;
 - (BOOL)shouldHideCancel;
 - (void)showKeyboardAndSelectQueryStringIfPossible;

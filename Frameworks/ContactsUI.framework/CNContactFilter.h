@@ -5,14 +5,12 @@
 @interface CNContactFilter : NSObject <NSCopying> {
     NSString *_fullTextString;
     BOOL _rankSortedResults;
-    BOOL _wantsLazyReload;
 }
 
 @property (nonatomic, copy) NSString *fullTextString;
 @property (nonatomic, readonly) NSPredicate *predicate;
 @property (nonatomic) BOOL rankSortedResults;
 @property (nonatomic, readonly) BOOL supportsSections;
-@property (nonatomic) BOOL wantsLazyReload;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -25,8 +23,6 @@
 - (BOOL)rankSortedResults;
 - (void)setFullTextString:(id)arg1;
 - (void)setRankSortedResults:(BOOL)arg1;
-- (void)setWantsLazyReload:(BOOL)arg1;
 - (BOOL)supportsSections;
-- (BOOL)wantsLazyReload;
 
 @end

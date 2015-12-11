@@ -5,6 +5,7 @@
 @interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLDismissableViewController, PLInvitationRecordsObserver, PLRootLibraryNavigationController, UINavigationControllerDelegate> {
     NSMutableIndexSet *_everDisplayedContentModes;
     NSMutableDictionary *_filteredAlbumListsByContentMode;
+    PUImportViewController *_importViewController;
     int _pendingSelectedContentMode;
     PUSessionInfo *_sessionInfo;
     BOOL _sharedTabBadgeIsDirty;
@@ -15,6 +16,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) PUImportViewController *importViewController;
 @property (nonatomic) int selectedContentMode;
 @property (nonatomic, readonly) UINavigationController *selectedNavigationController;
 @property (nonatomic, retain) PUSessionInfo *sessionInfo;
@@ -36,6 +38,7 @@
 - (void)_libraryDidChange:(id)arg1;
 - (void)_navigateToAlbum:(struct NSObject { Class x1; }*)arg1 andPerformAction:(int)arg2 initiallyHidden:(BOOL)arg3 animated:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)_navigateToAsset:(id)arg1 andPerformAction:(int)arg2 inAlbum:(struct NSObject { Class x1; }*)arg3 animated:(BOOL)arg4;
+- (void)_navigateToContentMode:(int)arg1 defaultLocationIfNeverDisplayed:(BOOL)arg2 animated:(BOOL)arg3;
 - (BOOL)_navigateToDefaultLocationInNavigationController:(id)arg1 animated:(BOOL)arg2;
 - (BOOL)_navigateToRootOfCurrentTabAnimated:(BOOL)arg1;
 - (id)_navigationControllerForContentMode:(int)arg1;
@@ -58,6 +61,7 @@
 - (BOOL)commentIsAvailableForNavigation:(id)arg1 inAsset:(id)arg2;
 - (BOOL)contentModeIsAvailableForNavigation:(int)arg1;
 - (void)dealloc;
+- (id)importViewController;
 - (id)initWithSpec:(id)arg1;
 - (void)invitationRecordsDidChange:(id)arg1;
 - (void)navigateToAlbum:(struct NSObject { Class x1; }*)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
@@ -89,6 +93,8 @@
 - (int)selectedContentMode;
 - (id)selectedNavigationController;
 - (id)sessionInfo;
+- (void)setImportViewController:(id)arg1;
+- (void)setImportViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setSelectedContentMode:(int)arg1;
 - (void)setSelectedViewController:(id)arg1;
 - (void)setSessionInfo:(id)arg1;

@@ -20,6 +20,7 @@
 + (id)imageForStyle:(id)arg1 size:(unsigned int)arg2 forScale:(float)arg3 format:(int)arg4 transparent:(BOOL)arg5 transitMode:(BOOL)arg6 interactive:(BOOL)arg7;
 + (struct CGColor { }*)newFillColorForStyleAttributes:(id)arg1 forScale:(float)arg2;
 + (struct CGColor { }*)newGlyphColorForStyleAttributes:(id)arg1 forScale:(float)arg2;
++ (void)setDiskCacheURL:(id)arg1;
 + (void)setUseSharedCaches;
 
 @end

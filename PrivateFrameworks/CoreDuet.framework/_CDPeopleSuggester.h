@@ -19,6 +19,7 @@
 @property (retain) _CDPeopleSuggesterSettings *settings;
 
 + (id)createAdvisorSettingsFromContext:(id)arg1 settings:(id)arg2;
++ (id)loggingTagForAutocompleteFeedback;
 + (id)peopleSuggester;
 + (id)peopleSuggesterUsingDaemon;
 + (id)peopleSuggesterWithDirectDBAccess;

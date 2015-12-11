@@ -2,63 +2,55 @@
    Image: /System/Library/PrivateFrameworks/DuetExpertCenter.framework/DuetExpertCenter
  */
 
-@interface _DECNowPlayingConsumer : _DECInternalConsumer {
+@interface _DECNowPlayingConsumer : _DECInternalConsumer <_DECNowPlayingFeedbackProviderProtocol> {
     void *_activity;
+    _DECNowPlayingFeedbackProvider *_feedbackProvider;
     NSObject<OS_dispatch_queue> *_mediaremoteQueue;
-    _DECItem *_mostRecentPrediction;
     NSString *_mostRecentPredictionBundleId;
-    NSUUID *_mostRecentPredictionIdentifier;
-    NSUUID *_predictionToClear;
+    int _mostRecentPredictionReason;
     BOOL _providedEngagementFeedback;
     NSObject<OS_dispatch_queue> *_queue;
-    NSObject<OS_dispatch_source> *_recommendationTimer;
 }
 
 @property void*activity;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) _DECNowPlayingFeedbackProvider *feedbackProvider;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *mediaremoteQueue;
-@property (nonatomic, retain) _DECItem *mostRecentPrediction;
 @property (nonatomic, retain) NSString *mostRecentPredictionBundleId;
-@property (nonatomic, retain) NSUUID *mostRecentPredictionIdentifier;
-@property (retain) NSUUID *predictionToClear;
+@property (nonatomic) int mostRecentPredictionReason;
 @property (nonatomic) BOOL providedEngagementFeedback;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic, retain) NSObject<OS_dispatch_source> *recommendationTimer;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_cancelRecommendationTimer;
 - (void)_cleanupRecommendation;
-- (void)_clearPredictionFeedbackState;
-- (void)_clearRecommendation;
-- (void)_handleLockStateDidChange;
 - (void)_handleNowPlayingApplicationIsPlayingDidChange;
 - (void)_provideRecommendationFeedback:(BOOL)arg1;
 - (void)_recommend:(id)arg1;
-- (void)_setupRecommendationTimer;
 - (void*)activity;
+- (unsigned int)currentPlaybackState;
 - (void)dealloc;
+- (id)feedbackProvider;
+- (void)feedbackProvider:(id)arg1 userEngaged:(BOOL)arg2;
 - (void)fetchMediaRemoteNowPlayingApplicationBundleId:(id /* block */)arg1;
 - (void)fetchMediaRemoteNowPlayingApplicationPlaybackState:(id /* block */)arg1;
-- (void)handleLockStateDidChange;
 - (void)handleNowPlayingApplicationIsPlayingDidChange;
 - (id)init;
 - (BOOL)isLocked;
 - (id)mediaremoteQueue;
-- (id)mostRecentPrediction;
 - (id)mostRecentPredictionBundleId;
-- (id)mostRecentPredictionIdentifier;
-- (id)predictionToClear;
+- (int)mostRecentPredictionReason;
 - (BOOL)providedEngagementFeedback;
 - (id)queue;
 - (void)receivePrediction:(id)arg1 reply:(id /* block */)arg2;
-- (id)recommendationTimer;
 - (void)setActivity:(void*)arg1;
+- (void)setFeedbackProvider:(id)arg1;
 - (void)setMediaremoteQueue:(id)arg1;
-- (void)setMostRecentPrediction:(id)arg1;
 - (void)setMostRecentPredictionBundleId:(id)arg1;
-- (void)setMostRecentPredictionIdentifier:(id)arg1;
-- (void)setPredictionToClear:(id)arg1;
+- (void)setMostRecentPredictionReason:(int)arg1;
 - (void)setProvidedEngagementFeedback:(BOOL)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setRecommendationTimer:(id)arg1;
 
 @end

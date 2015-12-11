@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicContextualPlaylistPickerViewConfiguration : MusicLibraryPlaylistsViewConfiguration {
+@interface MusicContextualPlaylistPickerViewConfiguration : MusicPlaylistsWithNewActionViewConfiguration {
     <MusicContextualPlaylistPickerDelegate> *_playlistPickerDelegate;
 }
 

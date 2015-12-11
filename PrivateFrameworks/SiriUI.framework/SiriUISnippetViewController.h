@@ -104,6 +104,7 @@
 - (BOOL)isConfirmed;
 - (BOOL)isFullPadWidth;
 - (BOOL)isLoading;
+- (BOOL)isMemoryIntensive;
 - (BOOL)isTransparent;
 - (BOOL)isVirgin;
 - (id)navigationTitle;

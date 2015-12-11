@@ -7,13 +7,14 @@
     <MusicSwitcherButtonContainerViewDelegate> *_delegate;
     UIFont *_fontOfLeadingAndTrailingButtons;
     UIFont *_fontOfTextRightAbove;
-    BOOL _isSwitcherButtonHidden;
+    BOOL _hairlineHidden;
     MPUTextButton *_leadingButton;
     NSString *_leadingButtonTitle;
     UIView *_leftHairlineView;
     UIView *_rightHairlineView;
     UIButton *_switcherButton;
     UIFont *_switcherButtonFont;
+    BOOL _switcherButtonHidden;
     NSString *_switcherButtonTitle;
     MPUTextButton *_trailingButton;
     NSString *_trailingButtonTitle;
@@ -22,9 +23,10 @@
 @property (nonatomic) <MusicSwitcherButtonContainerViewDelegate> *delegate;
 @property (nonatomic, retain) UIFont *fontOfLeadingAndTrailingButtons;
 @property (nonatomic, retain) UIFont *fontOfTextRightAbove;
-@property (nonatomic) BOOL isSwitcherButtonHidden;
+@property (getter=isHairlineHidden, nonatomic) BOOL hairlineHidden;
 @property (nonatomic, copy) NSString *leadingButtonTitle;
 @property (nonatomic, retain) UIFont *switcherButtonFont;
+@property (getter=isSwitcherButtonHidden, nonatomic) BOOL switcherButtonHidden;
 @property (nonatomic, copy) NSString *switcherButtonTitle;
 @property (nonatomic, readonly) UIView *switcherButtonView;
 @property (nonatomic, copy) NSString *trailingButtonTitle;
@@ -45,6 +47,7 @@
 - (id)fontOfLeadingAndTrailingButtons;
 - (id)fontOfTextRightAbove;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isHairlineHidden;
 - (BOOL)isSwitcherButtonHidden;
 - (void)layoutSubviews;
 - (id)leadingButtonTitle;
@@ -52,9 +55,10 @@
 - (void)setDelegate:(id)arg1;
 - (void)setFontOfLeadingAndTrailingButtons:(id)arg1;
 - (void)setFontOfTextRightAbove:(id)arg1;
-- (void)setIsSwitcherButtonHidden:(BOOL)arg1;
+- (void)setHairlineHidden:(BOOL)arg1;
 - (void)setLeadingButtonTitle:(id)arg1;
 - (void)setSwitcherButtonFont:(id)arg1;
+- (void)setSwitcherButtonHidden:(BOOL)arg1;
 - (void)setSwitcherButtonTitle:(id)arg1;
 - (void)setTrailingButtonTitle:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

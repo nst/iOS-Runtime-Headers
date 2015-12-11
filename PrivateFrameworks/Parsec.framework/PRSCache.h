@@ -2,20 +2,15 @@
    Image: /System/Library/PrivateFrameworks/Parsec.framework/Parsec
  */
 
-@interface PRSCache : NSObject <NSCacheDelegate, NSFastEnumeration> {
+@interface PRSCache : NSObject <NSFastEnumeration> {
     NSMutableOrderedSet *_cache;
-    NSMutableSet *_observers;
+    NSMapTable *_observers;
 }
-
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)addObject:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (id)cachedResultSetForQuery:(id)arg1;
+- (id)cachedResultSetForQuery:(id)arg1 withObserver:(id)arg2;
 - (id)copyCachedResult:(id)arg1;
 - (unsigned int)count;
 - (unsigned int)countByEnumeratingWithState:(struct { unsigned long x1; id *x2; unsigned long x3; unsigned long x4[5]; }*)arg1 objects:(id*)arg2 count:(unsigned int)arg3;

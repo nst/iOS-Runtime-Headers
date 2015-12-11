@@ -207,7 +207,6 @@
 - (void)_dismissSearchViewControllerAnimated:(BOOL)arg1;
 - (id)_emptyPlaceholderView;
 - (void)_ensureOneUpPresentationHelper;
-- (void)_forceDataSourceIfNeeded;
 - (void)_getFirstAsset:(id*)arg1 collection:(id*)arg2;
 - (void)_handleCancelButton:(id)arg1;
 - (void)_handlePhotoOrStackPinchGestureRecognizer:(id)arg1;
@@ -376,6 +375,7 @@
 - (void)endBatchPreheating;
 - (void)endShowingProgressWithIdentifier:(id)arg1;
 - (void)endSuppressingColorSettingsUpdate;
+- (void)forceDataSourceIfNeeded;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (void)getEmptyPlaceholderViewTitle:(id*)arg1 message:(id*)arg2;
 - (void)getTitle:(out id*)arg1 prompt:(out id*)arg2 shouldHideBackButton:(out BOOL*)arg3 leftBarButtonItems:(out id*)arg4 rightBarButtonItems:(out id*)arg5;

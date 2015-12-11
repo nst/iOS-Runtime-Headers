@@ -72,7 +72,7 @@
 
 - (void).cxx_destruct;
 - (id)_addPageAtIndex:(unsigned int)arg1;
-- (void)_addSubViewsInViewCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 force:(BOOL)arg2;
+- (void)_addSubViewsInViewCoordsBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)_checkIfDocumentNeedsUnlock;
 - (void)_didScroll;
 - (BOOL)_hasPageRects;
@@ -81,7 +81,6 @@
 - (id)_pageWithSelection;
 - (void)_recreateUIPDFDocument;
 - (void)_removeBackgroundImageObserverIfNeeded:(id)arg1;
-- (void)_removePageViewsNotInCurrentViewCoordsRect;
 - (void)_removePageViewsNotInViewCoordsRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_selection;
 - (void)_tapGestureRecognized:(id)arg1;

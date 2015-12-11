@@ -24,6 +24,7 @@
 @property (nonatomic, retain) NSMutableDictionary *helpItemMap;
 @property (nonatomic, retain) HLPURLImageCacheController *imageCacheController;
 @property (nonatomic, retain) HLPHelpSectionItem *rootSectionItem;
+@property (getter=isSemanticHTML, nonatomic, readonly) BOOL semanticHTML;
 @property (nonatomic, retain) NSString *welcomeTopicIdentifier;
 
 - (void).cxx_destruct;
@@ -40,6 +41,7 @@
 - (id)helpTopicItemForID:(id)arg1;
 - (id)helpTopicItemForName:(id)arg1;
 - (id)imageCacheController;
+- (BOOL)isSemanticHTML;
 - (void)processData:(id)arg1 formattedData:(id)arg2;
 - (void)processFileURLWithCompletionHandler:(id /* block */)arg1;
 - (id)rootSectionItem;

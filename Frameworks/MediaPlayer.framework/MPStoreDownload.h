@@ -27,6 +27,7 @@
 @property (nonatomic, readonly) NSString *phaseIdentifier;
 @property (nonatomic, readonly) NSError *purchaseError;
 @property (getter=isPurchasing, nonatomic, readonly) BOOL purchasing;
+@property (nonatomic, readonly) NSDictionary *rentalInformation;
 @property (getter=isRestore, nonatomic, readonly) BOOL restore;
 @property (nonatomic, readonly) long long storeItemIdentifier;
 @property (nonatomic, readonly) int type;
@@ -38,6 +39,7 @@
 + (id)storeDownloadForPlaybackItemMetadata:(id)arg1 type:(int)arg2 attributes:(id)arg3;
 + (id)storeDownloadForStoreItemOffer:(id)arg1 attributes:(id)arg2;
 + (id)storeDownloadForStoreOffer:(id)arg1 type:(int)arg2 attributes:(id)arg3;
++ (id)storeDownloadWithDownloadIdentifier:(long long)arg1;
 
 - (void).cxx_destruct;
 - (id)_SSDownload;
@@ -69,6 +71,8 @@
 - (double)percentComplete;
 - (id)phaseIdentifier;
 - (id)purchaseError;
+- (id)rentalInformation;
+- (void)resetCachedRentalInformation;
 - (long long)storeItemIdentifier;
 - (int)type;
 

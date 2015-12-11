@@ -8,6 +8,7 @@
     unsigned int _documentPickerMode;
     BOOL _ignoreApplicationEntitlementForImport;
     _UIRemoteViewService *_remoteViewService;
+    BOOL _sourceIsManaged;
     NSMutableArray *_stitchingTokens;
     NSURL *_uploadURL;
     <UIDocumentPickerDelegate> *_weak_delegate;
@@ -19,6 +20,7 @@
 @property (nonatomic) unsigned int documentPickerMode;
 @property (getter=_remoteViewController, nonatomic, readonly, retain) _UIDocumentPickerRemoteViewController *remoteViewController;
 @property (nonatomic, retain) _UIRemoteViewService *remoteViewService;
+@property (getter=_sourceIsManaged, setter=_setSourceIsManaged:, nonatomic) BOOL sourceIsManaged;
 @property (nonatomic, retain) NSMutableArray *stitchingTokens;
 @property (nonatomic, copy) NSURL *uploadURL;
 
@@ -41,6 +43,8 @@
 - (id)_remoteViewController;
 - (void)_setChildViewController:(id)arg1;
 - (void)_setIgnoreApplicationEntitlementForImport:(BOOL)arg1;
+- (void)_setSourceIsManaged:(BOOL)arg1;
+- (BOOL)_sourceIsManaged;
 - (void)_stitchFileCreationAtURL:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

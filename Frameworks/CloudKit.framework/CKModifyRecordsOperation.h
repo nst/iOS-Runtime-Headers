@@ -15,10 +15,12 @@
     NSArray *_recordIDsToDelete;
     NSDictionary *_recordIDsToDeleteToEtags;
     NSMutableDictionary *_recordsByRecordIDs;
+    id /* block */ _recordsInFlightBlock;
     NSArray *_recordsToSave;
     int _savePolicy;
     NSMutableArray *_savedRecords;
     BOOL _shouldOnlySaveAssetContent;
+    BOOL _shouldReportRecordsInFlight;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *assetsByRecordIDAndRecordKey;
@@ -33,10 +35,12 @@
 @property (nonatomic, copy) NSArray *recordIDsToDelete;
 @property (nonatomic, copy) NSDictionary *recordIDsToDeleteToEtags;
 @property (nonatomic, retain) NSMutableDictionary *recordsByRecordIDs;
+@property (nonatomic, copy) id /* block */ recordsInFlightBlock;
 @property (nonatomic, copy) NSArray *recordsToSave;
 @property (nonatomic) int savePolicy;
 @property (nonatomic, retain) NSMutableArray *savedRecords;
 @property (nonatomic) BOOL shouldOnlySaveAssetContent;
+@property (nonatomic) BOOL shouldReportRecordsInFlight;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -62,6 +66,7 @@
 - (id)recordIDsToDelete;
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsByRecordIDs;
+- (id /* block */)recordsInFlightBlock;
 - (id)recordsToSave;
 - (int)savePolicy;
 - (id)savedRecords;
@@ -77,11 +82,14 @@
 - (void)setRecordIDsToDelete:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
 - (void)setRecordsByRecordIDs:(id)arg1;
+- (void)setRecordsInFlightBlock:(id /* block */)arg1;
 - (void)setRecordsToSave:(id)arg1;
 - (void)setSavePolicy:(int)arg1;
 - (void)setSavedRecords:(id)arg1;
 - (void)setShouldOnlySaveAssetContent:(BOOL)arg1;
+- (void)setShouldReportRecordsInFlight:(BOOL)arg1;
 - (BOOL)shouldOnlySaveAssetContent;
+- (BOOL)shouldReportRecordsInFlight;
 
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 

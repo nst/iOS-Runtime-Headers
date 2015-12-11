@@ -11,6 +11,7 @@
     NSObject<OS_dispatch_group> *_pendingClientHandlingGroup;
     CKServerChangeToken *_previousServerChangeToken;
     id /* block */ _recordChangedBlock;
+    CKDRecordFetchAggregator *_recordFetcher;
     CKRecordZoneID *_recordZoneID;
     NSData *_resultClientChangeToken;
     NSData *_resultClientChangeTokenData;
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *pendingClientHandlingGroup;
 @property (nonatomic, retain) CKServerChangeToken *previousServerChangeToken;
 @property (nonatomic, copy) id /* block */ recordChangedBlock;
+@property (nonatomic, retain) CKDRecordFetchAggregator *recordFetcher;
 @property (nonatomic, retain) CKRecordZoneID *recordZoneID;
 @property (nonatomic, readonly) NSData *resultClientChangeToken;
 @property (nonatomic, retain) NSData *resultClientChangeTokenData;
@@ -42,7 +44,8 @@
 
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
-- (void)_handleFetchChangesRequestFinished:(id)arg1;
+- (void)_handleFetchChangesRequestFinished:(id)arg1 callbackGroup:(id)arg2;
+- (void)_handleRecordChange:(id)arg1 callbackGroup:(id)arg2;
 - (void)_sendFetchChangesRequestWithChangeToken:(id)arg1;
 - (unsigned long long)activityStart;
 - (int)changeTypes;
@@ -57,6 +60,7 @@
 - (id)pendingClientHandlingGroup;
 - (id)previousServerChangeToken;
 - (id /* block */)recordChangedBlock;
+- (id)recordFetcher;
 - (id)recordZoneID;
 - (id)resultClientChangeToken;
 - (id)resultClientChangeTokenData;
@@ -71,6 +75,7 @@
 - (void)setPendingClientHandlingGroup:(id)arg1;
 - (void)setPreviousServerChangeToken:(id)arg1;
 - (void)setRecordChangedBlock:(id /* block */)arg1;
+- (void)setRecordFetcher:(id)arg1;
 - (void)setRecordZoneID:(id)arg1;
 - (void)setResultClientChangeTokenData:(id)arg1;
 - (void)setResultServerChangeToken:(id)arg1;

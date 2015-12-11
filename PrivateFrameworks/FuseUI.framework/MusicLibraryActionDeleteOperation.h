@@ -3,14 +3,22 @@
  */
 
 @interface MusicLibraryActionDeleteOperation : NSOperation {
+    NSObject<OS_dispatch_queue> *_accessQueue;
     MPUContentItemIdentifierCollection *_contentItemIdentifierCollection;
+    NSError *_resultError;
+    BOOL _success;
 }
 
 @property (readonly, copy) MPUContentItemIdentifierCollection *contentItemIdentifierCollection;
+@property (readonly, copy) NSError *resultError;
+@property (readonly) BOOL success;
 
 - (void).cxx_destruct;
 - (id)contentItemIdentifierCollection;
+- (id)init;
 - (id)initWithContentItemIdentifierCollection:(id)arg1;
 - (void)main;
+- (id)resultError;
+- (BOOL)success;
 
 @end

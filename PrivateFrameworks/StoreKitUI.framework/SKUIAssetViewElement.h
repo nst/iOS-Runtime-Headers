@@ -6,6 +6,7 @@
     double _initialPlaybackTime;
     long long _itemIdentifier;
     double _playbackDuration;
+    NSString *_secureKeyDeliveryType;
     NSURL *_url;
 }
 
@@ -13,6 +14,7 @@
 @property (nonatomic) double initialPlaybackTime;
 @property (nonatomic, readonly) long long itemIdentifier;
 @property (nonatomic, readonly) double playbackDuration;
+@property (nonatomic, readonly, copy) NSString *secureKeyDeliveryType;
 
 - (void).cxx_destruct;
 - (id)URL;
@@ -21,6 +23,7 @@
 - (double)initialPlaybackTime;
 - (long long)itemIdentifier;
 - (double)playbackDuration;
+- (id)secureKeyDeliveryType;
 - (void)setInitialPlaybackTime:(double)arg1;
 
 @end

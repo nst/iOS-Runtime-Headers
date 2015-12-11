@@ -5,33 +5,54 @@
 @interface BLTPBTransportData : PBCodable <NSCopying> {
     struct { 
         unsigned int sequenceNumber : 1; 
+        unsigned int sessionState : 1; 
         unsigned int isInitialSequenceNumber : 1; 
     } _has;
     BOOL _isInitialSequenceNumber;
+    NSData *_md5;
     unsigned long long _sequenceNumber;
+    NSData *_sessionIdentifier;
+    unsigned int _sessionState;
 }
 
 @property (nonatomic) BOOL hasIsInitialSequenceNumber;
+@property (nonatomic, readonly) BOOL hasMd5;
 @property (nonatomic) BOOL hasSequenceNumber;
+@property (nonatomic, readonly) BOOL hasSessionIdentifier;
+@property (nonatomic) BOOL hasSessionState;
 @property (nonatomic) BOOL isInitialSequenceNumber;
+@property (nonatomic, retain) NSData *md5;
 @property (nonatomic) unsigned long long sequenceNumber;
+@property (nonatomic, retain) NSData *sessionIdentifier;
+@property (nonatomic) unsigned int sessionState;
 
+- (void).cxx_destruct;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasIsInitialSequenceNumber;
+- (BOOL)hasMd5;
 - (BOOL)hasSequenceNumber;
+- (BOOL)hasSessionIdentifier;
+- (BOOL)hasSessionState;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isInitialSequenceNumber;
+- (id)md5;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned long long)sequenceNumber;
+- (id)sessionIdentifier;
+- (unsigned int)sessionState;
 - (void)setHasIsInitialSequenceNumber:(BOOL)arg1;
 - (void)setHasSequenceNumber:(BOOL)arg1;
+- (void)setHasSessionState:(BOOL)arg1;
 - (void)setIsInitialSequenceNumber:(BOOL)arg1;
+- (void)setMd5:(id)arg1;
 - (void)setSequenceNumber:(unsigned long long)arg1;
+- (void)setSessionIdentifier:(id)arg1;
+- (void)setSessionState:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

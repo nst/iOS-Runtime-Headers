@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardUIServices.framework/SpringBoardUIServices
  */
 
-@interface SBSUIWallpaperPreviewView : UIView <ISPlayerViewDelegate> {
+@interface SBSUIWallpaperPreviewView : UIView <SBFIrisWallpaperViewDelegate> {
     int _batterySaverModeNotificationToken;
     SBFLockScreenDateView *_dateView;
     _UILegibilityLabel *_irisInstructionsLabel1;
@@ -39,9 +39,9 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 wallpaperView:(id)arg2;
 - (id)irisInstructionsLabel1;
 - (id)irisInstructionsLabel2;
+- (void)irisWallpaperViewPlaybackStateDidChange:(id)arg1;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)playerViewPlaybackStateDidChange:(id)arg1;
 - (id)segmentedControl;
 - (void)setDateView:(id)arg1;
 - (void)setIrisInstructionsLabel1:(id)arg1;

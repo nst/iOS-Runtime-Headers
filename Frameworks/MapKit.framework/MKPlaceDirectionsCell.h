@@ -3,17 +3,27 @@
  */
 
 @interface MKPlaceDirectionsCell : ABContactCell <MKLocationManagerObserver, MKQuickRouteConfigurableView, MKQuickRouteManagerDelegate> {
+    NSMutableArray *_baseConstraints;
     NSMutableArray *_buttonBaselineConstraints;
     UIButton *_directionsButton;
+    NSLayoutConstraint *_directionsToDriveButtonConstraint;
+    NSLayoutConstraint *_directionsToTransitButtonConstraint;
+    NSLayoutConstraint *_directionsToWalkButtonConstraint;
+    NSLayoutConstraint *_directionsTrailingConstraint;
     UIButton *_driveButton;
+    NSLayoutConstraint *_driveButtonTrailingConstraint;
     UILabel *_driveTimeLabel;
-    NSArray *_etaConstraints;
     MKMapItem *_mapItem;
     _MKQuickRouteManager *_quickRouteManager;
     id /* block */ _requestDirectionsBlock;
     UIButton *_transitButton;
+    NSLayoutConstraint *_transitButtonToDriveButtonConstraint;
+    NSLayoutConstraint *_transitButtonTrailingConstraint;
     UILabel *_transitTimeLabel;
     UIButton *_walkButton;
+    NSLayoutConstraint *_walkButtonToDriveButtonConstraint;
+    NSLayoutConstraint *_walkButtonToTransitButtonConstraint;
+    NSLayoutConstraint *_walkButtonTrailingConstraint;
     UILabel *_walkTimeLabel;
 }
 
@@ -54,7 +64,8 @@
 - (void)setMapItem:(id)arg1;
 - (void)setRequestDirectionsBlock:(id /* block */)arg1;
 - (id)timeEstimateFont;
+- (void)updateConstraints;
 - (void)updateETAFor:(unsigned int)arg1 button:(id)arg2 label:(id)arg3;
-- (void)updateETAs:(BOOL)arg1;
+- (void)updateETAs:(BOOL)arg1 constraintsOnly:(BOOL)arg2;
 
 @end

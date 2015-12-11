@@ -17,6 +17,7 @@
     BOOL _inBackground;
     BOOL _isVisible;
     double _lastFieldExitTime;
+    double _lastFingerOnTime;
     BOOL _needsConfirmation;
     PKPassLibrary *_passLibrary;
     PKWeakReference *_passcodePresenterVC;

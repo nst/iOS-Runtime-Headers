@@ -17,8 +17,10 @@
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })_rawAffineTransformForExifOrientation:(int)arg1;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_rectForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 alignToContent:(BOOL)arg2 alignToScreenUsingPageController:(id)arg3 orAlignToBitmapContext:(struct CGContext { }*)arg4 usingAnnotation:(id)arg5 withAlignmentBlock:(id /* block */)arg6;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_strokeAlignedRectForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withStrokeWidth:(float)arg2 shouldAlignStrictlyToScreen:(BOOL)arg3 alignToScreenUsingPageController:(id)arg4 orAlignToBitmapContext:(struct CGContext { }*)arg5 usingAnnotation:(id)arg6;
++ (void)adjustOriginalExifOrientationOnAnnotation:(id)arg1 flatteningOriginalModelExif:(int)arg2;
 + (struct CGPoint { float x1; float x2; })adjustPoint:(struct CGPoint { float x1; float x2; })arg1 forExifOrientation:(int)arg2 aboutCenter:(struct CGPoint { float x1; float x2; })arg3;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })adjustRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forExifOrientation:(int)arg2 aboutCenter:(struct CGPoint { float x1; float x2; })arg3;
++ (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransformFlatteningOriginalModelExif:(int)arg1 withOriginalModelSize:(struct CGSize { float x1; float x2; })arg2;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransformForExifOrientation:(int)arg1 aboutCenter:(struct CGPoint { float x1; float x2; })arg2;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })affineTransformRecenteringAboutOriginForExifOrientation:(int)arg1 withOriginalSize:(struct CGSize { float x1; float x2; })arg2;
 + (float)angleBetweenPoint:(struct CGPoint { float x1; float x2; })arg1 andPoint:(struct CGPoint { float x1; float x2; })arg2;
@@ -27,6 +29,7 @@
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })boundsOfRotatedRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 angle:(float)arg2;
 + (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })centeredCircleToEllipseTransform:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (struct CGPoint { float x1; float x2; })compareVectorDirectionsFirstVector:(struct CGPoint { float x1; float x2; })arg1 secondVector:(struct CGPoint { float x1; float x2; })arg2;
++ (int)concatExifOrientation:(int)arg1 withExifOrientation:(int)arg2;
 + (struct CGPoint { float x1; float x2; })convertModelToScreenOrientationForPoint:(struct CGPoint { float x1; float x2; })arg1 relativeToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withPageController:(id)arg3;
 + (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertModelToScreenOrientationForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withPageController:(id)arg2;
 + (struct CGPoint { float x1; float x2; })convertScreenToModelOrientationForPoint:(struct CGPoint { float x1; float x2; })arg1 relativeToRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 withPageController:(id)arg3;
@@ -55,6 +58,7 @@
 + (BOOL)isUnpresentablePoint:(struct CGPoint { float x1; float x2; })arg1;
 + (BOOL)isUnpresentableRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 + (float)lengthOfVector:(struct CGVector { float x1; float x2; })arg1;
++ (struct CGPath { }*)newPathWithPath:(struct CGPath { }*)arg1 applyingExifOrientation:(int)arg2 aboutCenter:(struct CGPoint { float x1; float x2; })arg3;
 + (struct CGVector { float x1; float x2; })normalizeVector:(struct CGVector { float x1; float x2; })arg1;
 + (struct CGPoint { float x1; float x2; })normalizeVectorPoint:(struct CGPoint { float x1; float x2; })arg1;
 + (struct CGPoint { float x1; float x2; })pointAtAngle:(float)arg1 inCircleWithCenter:(struct CGPoint { float x1; float x2; })arg2 andRadius:(float)arg3;

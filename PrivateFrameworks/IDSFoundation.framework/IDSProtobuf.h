@@ -37,6 +37,10 @@
 - (unsigned short)type;
 - (id)uncompressedData;
 
+// Image: /System/Library/PrivateFrameworks/BulletinDistributorCompanion.framework/BulletinDistributorCompanion
+
+- (id)extendedDescription;
+
 // Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
 
 - (id)nfmDescription;

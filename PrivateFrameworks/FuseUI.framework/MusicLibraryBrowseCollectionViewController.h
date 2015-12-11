@@ -10,6 +10,7 @@
     MusicCollectionView *_collectionView;
     MusicLibraryBrowseCollectionViewConfiguration *_collectionViewConfiguration;
     <MusicLibraryBrowseCollectionViewControllerDelegate> *_delegate;
+    MusicEntityDownloadInformationController *_entityDownloadInformationController;
     MusicEntityCollectionViewDescriptor *_entityViewDescriptor;
     SKUIDynamicPageSectionIndexMapper *_indexMapper;
     MusicEntityValueContext *_itemEntityValueContext;
@@ -25,6 +26,7 @@
         float height; 
     } _sizeForLayoutMetrics;
     <UIViewControllerPreviewing> *_viewControllerPreviewing;
+    NSMapTable *_viewToDownloadInformationObserverToken;
 }
 
 @property (getter=_cellClass, nonatomic, readonly) Class _cellClass;
@@ -53,6 +55,7 @@
 - (void)_handleEntityPlayabilityControllerDidChangeNotification:(id)arg1;
 - (void)_handleEntityProviderDidInvalidateNotification:(id)arg1;
 - (void)_invalidateLayoutMetrics;
+- (id)_itemEntityValueContext;
 - (id)_layoutMetrics;
 - (void)_presentContextualActionsWithEntityValueContext:(id)arg1 fromButton:(id)arg2;
 - (void)_recycleCoalescingEntityValueProvider:(id)arg1;

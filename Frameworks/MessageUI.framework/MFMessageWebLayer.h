@@ -12,6 +12,7 @@
     int _displayStyle;
     BOOL _hasUnloadedRemoteImages;
     NSTimer *_ignorePendingStylesheetsTimer;
+    DOMNodeList *_imageElements;
     unsigned int _isFromEntourage;
     BOOL _isReformatting;
     NSString *_mainFrameURL;
@@ -50,6 +51,7 @@
 - (void)_cancelPendingIgnoreStylesheets;
 - (id)_createInlinePluginElementWithHTMLRepresentation:(id)arg1 inDocument:(id)arg2;
 - (void)_didFinishReformattingMessage;
+- (id)_elementForAttachmentWithCID:(id)arg1 inDocument:(id)arg2;
 - (BOOL)_elementHasDefinedWidth:(id)arg1;
 - (void)_frameDidFinishPrePrintURLification:(id)arg1;
 - (void)_ignorePendingStylesheets:(id)arg1;
@@ -62,7 +64,6 @@
 - (BOOL)_rescaleTopLevelElements;
 - (void)_schedulePendingIgnoreStylesheets;
 - (void)_sendDelegateSizeDidChange;
-- (BOOL)_shouldApplyEdgeToEdgeStylingToNode:(id)arg1;
 - (BOOL)_shouldContinueResizingMessage;
 - (BOOL)_shouldRescaleMessage;
 - (BOOL)_shouldResizeMessage;
@@ -91,6 +92,7 @@
 - (int)displayStyle;
 - (BOOL)hasPluginWithUninitializedSize;
 - (BOOL)hasUnloadedRemoteImages;
+- (id)imageElements;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 visibleSize:(struct CGSize { float x1; float x2; })arg2 viewportWidth:(float)arg3 displayStyle:(int)arg4;
 - (void)invalidateDisplayInfoCache;
 - (BOOL)isCancelled;
@@ -101,8 +103,10 @@
 - (id)newQuoteSubparser;
 - (id)objectForDisplayInfoCacheKey:(id)arg1;
 - (id)originalHTMLString;
+- (void)parseAttachmentNodes;
 - (void)parseDocument:(id)arg1;
 - (void)performBatchUpdates:(id /* block */)arg1;
+- (id)pluginViews;
 - (BOOL)prePrintDataDetectionPending;
 - (void)prepareDisplayInfoCacheWithLibraryMessage:(id)arg1;
 - (void)redrawWithViewportSize:(struct CGSize { float x1; float x2; })arg1;
@@ -126,11 +130,12 @@
 - (void)setReformattingContext:(id)arg1;
 - (void)setShouldAttemptToReformatMessage:(BOOL)arg1;
 - (void)setShowRemoteImages:(BOOL)arg1;
+- (BOOL)shouldApplyEdgeToEdgeStylingToNode:(id)arg1;
 - (BOOL)shouldAttemptToReformatMessage;
 - (BOOL)showRemoteImages;
 - (void)stopLoading:(id)arg1;
 - (void)stopLoadingAndClear;
-- (void)updateImageURL:(id)arg1 withURL:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)updateImageWithCID:(id)arg1 withNewCID:(id)arg2 newImageSize:(struct CGSize { float x1; float x2; })arg3;
 - (void)updateImageWithSource:(id)arg1 withHTMLRepresentation:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)updateInlinePluginWithContentID:(id)arg1 withHTMLRepresentation:(id)arg2 completionBlock:(id /* block */)arg3;
 - (BOOL)usePadDisplayStyle;

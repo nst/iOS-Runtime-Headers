@@ -31,7 +31,6 @@
 
 + (id)assetWriterInputWithMediaType:(id)arg1 outputSettings:(id)arg2;
 + (id)assetWriterInputWithMediaType:(id)arg1 outputSettings:(id)arg2 sourceFormatHint:(struct opaqueCMFormatDescription { }*)arg3;
-+ (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
 + (void)initialize;
 
 - (short)_alternateGroupID;
@@ -68,6 +67,7 @@
 - (BOOL)canPerformMultiplePasses;
 - (id)currentPassDescription;
 - (void)dealloc;
+- (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
 - (id)description;
 - (BOOL)expectsMediaDataInRealTime;
 - (id)extendedLanguageTag;

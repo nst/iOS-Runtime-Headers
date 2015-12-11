@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) BOOL rightHandDrive;
 @property (nonatomic, readonly) NSArray *screenIDs;
 @property (nonatomic, readonly) NSDictionary *screenInputCapabilities;
+@property (nonatomic, readonly) NSDictionary *screenPrimaryInputDevices;
 @property (nonatomic, readonly) int transportType;
 
 + (id)currentCarPlayExternalDevice;
@@ -64,6 +65,7 @@
 - (BOOL)rightHandDrive;
 - (id)screenIDs;
 - (id)screenInputCapabilities;
+- (id)screenPrimaryInputDevices;
 - (void)setDelegate:(id)arg1;
 - (void)takeScreenForClient:(id)arg1 reason:(id)arg2;
 - (int)transportType;

@@ -98,7 +98,7 @@
 - (void)fetchPCSForShareWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)fetchPCSForZoneWithID:(id)arg1 operation:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)initWithClientContext:(id)arg1;
-- (id)newAssetKey;
+- (id)newAssetKeyWithError:(id*)arg1;
 - (id)operationQueue;
 - (id)pcsDataFromFetchedShare:(id)arg1 error:(id*)arg2;
 - (id)pcsFetchAggregator;

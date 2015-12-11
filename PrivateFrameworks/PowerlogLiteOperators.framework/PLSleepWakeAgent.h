@@ -21,6 +21,7 @@
 + (id)entryEventBackwardDefinitions;
 + (id)entryEventForwardDefinitionPowerState;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventPointDefinitionCurrentMachWakeTime;
 + (id)entryEventPointDefinitions;
 + (void)load;
 + (id)railDefinitions;
@@ -42,5 +43,6 @@
 - (struct IONotificationPort { }*)systemPowerPortRef;
 - (void)systemPoweredOn;
 - (id)wakeReasons;
+- (id)wakeReasonsAsNSString;
 
 @end

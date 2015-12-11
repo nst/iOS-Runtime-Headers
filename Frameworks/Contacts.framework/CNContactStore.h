@@ -6,6 +6,7 @@
 
 @property (nonatomic, readonly) CNiOSAddressBook *addressBook;
 @property (nonatomic, readonly) unsigned int countOfPreferredNamePeople;
+@property (nonatomic, readonly) BOOL hasMultipleGroupsOrAccounts;
 @property (nonatomic, readonly) CNiOSAddressBookDataMapper *iOSMapper;
 
 // Image: /System/Library/Frameworks/Contacts.framework/Contacts
@@ -44,6 +45,7 @@
 - (BOOL)executeSaveRequest:(id)arg1 error:(id*)arg2;
 - (id)groupWithIdentifier:(id)arg1 error:(id*)arg2;
 - (id)groupsMatchingPredicate:(id)arg1 error:(id*)arg2;
+- (BOOL)hasMultipleGroupsOrAccounts;
 - (id)iOSMapper;
 - (id)init;
 - (id)initWithAddressBook:(void*)arg1;

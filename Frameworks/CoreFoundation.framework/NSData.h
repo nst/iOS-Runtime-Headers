@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSData : NSObject <CKRecordValue, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable, TSPSplitableData>
+@interface NSData : NSObject <CKDParsedObject, CKRecordValue, NSCopying, NSMutableCopying, NSSecureCoding, PQLValuable, TSPSplitableData>
 
 @property (nonatomic, readonly) NSData *SHA1Data;
 @property (nonatomic, readonly) NSString *SHA1HexString;
@@ -173,7 +173,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
 
-- (id)hexString;
+- (id)CertUIHexString;
 
 // Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
 
@@ -186,6 +186,10 @@
 - (BOOL)brc_signatureIsPackage;
 - (BOOL)brc_signatureIsPendingPlaceHolder;
 - (BOOL)brc_signatureIsValid;
+
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 

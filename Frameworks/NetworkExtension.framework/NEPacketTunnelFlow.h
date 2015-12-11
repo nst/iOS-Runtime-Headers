@@ -28,6 +28,7 @@
 - (id /* block */)packetHandler;
 - (id)queue;
 - (void)readPacketsWithCompletionHandler:(id /* block */)arg1;
+- (void)resetReadHandler;
 - (void)setHandlerSetup:(BOOL)arg1;
 - (void)setPacketHandler:(id /* block */)arg1;
 - (void)setQueue:(id)arg1;

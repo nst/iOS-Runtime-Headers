@@ -44,6 +44,7 @@
 
 + (id)helpViewController;
 + (id)helpViewControllerWithIdentifier:(id)arg1 version:(id)arg2;
++ (id)helpViewControllerWithLocalHelpBookFileURL:(id)arg1;
 + (id)helpViewControllerWithTitle:(id)arg1 identifier:(id)arg2 version:(id)arg3;
 + (id)helpViewControllerWithTitle:(id)arg1 identifier:(id)arg2 version:(id)arg3 subpath:(id)arg4;
 

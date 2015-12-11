@@ -26,6 +26,7 @@
 - (void)_asyncFetchCloudSharedVideoComplement:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
 - (id)_domain;
 - (int)_requestAVAssetForAsset:(id)arg1 options:(id)arg2 resultHandler:(id /* block */)arg3;
+- (id)_requestAsynchronousVideoURLForAsset:(id)arg1 chainedToMasterRequest:(id)arg2 options:(id)arg3 resultHandler:(id /* block */)arg4;
 - (id)_videoAVObjectBuilderFromVideoURL:(id)arg1 info:(id)arg2 playbackOnly:(BOOL)arg3;
 - (void)cancelImageRequest:(int)arg1;
 - (void)dealloc;

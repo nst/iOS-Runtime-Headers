@@ -13,7 +13,6 @@
 - (BOOL)isLikedStateEnabled;
 - (void)loadAssetAndPlayerItem;
 - (BOOL)supportsSkip;
-- (unsigned int)type;
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 

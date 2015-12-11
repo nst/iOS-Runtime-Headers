@@ -10,6 +10,7 @@
 + (id)descriptionForError:(id)arg1 paths:(BOOL)arg2;
 + (id)dictionaryRepresentationForError:(id)arg1;
 + (int)errnoForError:(id)arg1;
++ (id)errorForErrors:(id)arg1;
 + (id)errorForHTTPURLResponse:(id)arg1 error:(id)arg2;
 + (id)errorForNSError:(id)arg1 path:(id)arg2 format:(id)arg3;
 + (id)errorWithCode:(int)arg1 URL:(id)arg2 format:(id)arg3;

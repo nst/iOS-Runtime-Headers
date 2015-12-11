@@ -85,6 +85,8 @@
 - (int)statusOfValueForKey:(id)arg1 error:(id*)arg2;
 - (id)stringValue;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })time;
+- (id)unicodeLanguageCode;
+- (id)unicodeLanguageIdentifier;
 - (id)value;
 
 @end

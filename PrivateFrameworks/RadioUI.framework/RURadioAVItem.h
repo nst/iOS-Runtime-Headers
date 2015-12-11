@@ -83,7 +83,6 @@
 - (BOOL)supportsSettingCurrentTime;
 - (id)title;
 - (id)titlesForTime:(double)arg1;
-- (unsigned int)type;
 - (id)urlTimeMarkers;
 - (BOOL)usesSubscriptionLease;
 

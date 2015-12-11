@@ -24,7 +24,6 @@
 - (id)keysForValuesToObserveForRedrawing;
 - (id)keysForValuesToObserveForUndo;
 - (void)setVerticallyFlipped:(BOOL)arg1;
-- (void)translateBy:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)verticallyFlipped;
 
 @end

@@ -47,14 +47,17 @@
 
 - (void).cxx_destruct;
 - (void)_appleIDTextFieldDidChange:(id)arg1;
-- (void)_beginAuthenticationIfPossibleNeedsNewPassword:(BOOL)arg1 needsNewAppleID:(BOOL)arg2;
+- (void)_beginAuthenticationIfPossibleWithOption:(unsigned int)arg1;
+- (BOOL)_canBeginAuthenticationWithOption:(unsigned int)arg1;
 - (void)_hidebusyWorkUI;
 - (BOOL)_isAccountModificationRestricted;
+- (BOOL)_isSignInAllowed;
 - (void)_passwordTextFieldDidChange:(id)arg1;
 - (void)_prefillAuthFields;
 - (void)_startBusyWorkUI;
 - (void)_updateFonts:(id)arg1;
 - (void)_updateSignInButtonState;
+- (void)_updateSignInFieldStatuses;
 - (void)_updateVibrancyAndBlurInTextFields;
 - (id)appleIDField;
 - (id)authenticationController;

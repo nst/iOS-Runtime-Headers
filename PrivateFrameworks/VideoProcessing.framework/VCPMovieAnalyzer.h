@@ -5,7 +5,10 @@
 @interface VCPMovieAnalyzer : NSObject {
     NSMutableDictionary *_analysis;
     AVAsset *_avAsset;
-    unsigned int _mediaSubType;
+    NSNumber *_irisPhotoExposureSec;
+    NSNumber *_irisPhotoOffsetSec;
+    BOOL _isIris;
+    BOOL _isSlowmo;
     unsigned int _requestedAnalyses;
     NSMutableDictionary *_results;
     PFVideoAVObjectBuilder *_slowmoTimeMap;
@@ -22,6 +25,7 @@
 - (id)createDecoderForTrack:(id)arg1;
 - (id)createVideoAnalyzer:(id)arg1;
 - (id)initWithAVAsset:(id)arg1 forAnalysisTypes:(unsigned int)arg2;
+- (id)initWithIrisAVAsset:(id)arg1 irisPhotoOffsetSec:(float)arg2 irisPhotoExposureSec:(float)arg3 forAnalysisTypes:(unsigned int)arg4;
 - (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned int)arg2;
 - (id)orientationForVideoTrack:(id)arg1;
 - (int)status;

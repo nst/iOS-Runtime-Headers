@@ -7,6 +7,7 @@
     LSApplicationProxy *_applicationProxy;
     NSOperation *_operation;
     BOOL _shouldUnlinkFile;
+    BOOL _sourceIsManaged;
     NSURL *_url;
 }
 
@@ -17,6 +18,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSOperation *operation;
 @property (nonatomic) BOOL shouldUnlinkFile;
+@property (nonatomic) BOOL sourceIsManaged;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSURL *url;
 
@@ -45,8 +47,10 @@
 - (void)setApplicationProxy:(id)arg1;
 - (void)setOperation:(id)arg1;
 - (void)setShouldUnlinkFile:(BOOL)arg1;
+- (void)setSourceIsManaged:(BOOL)arg1;
 - (void)setUrl:(id)arg1;
 - (BOOL)shouldUnlinkFile;
+- (BOOL)sourceIsManaged;
 - (id)url;
 
 @end

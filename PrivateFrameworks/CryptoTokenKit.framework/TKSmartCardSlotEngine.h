@@ -8,6 +8,7 @@
     NSHashTable *_clients;
     <TKSmartCardSlotDelegate> *_delegate;
     BOOL _idlePowerDownPending;
+    unsigned int _lastId;
     NSXPCListener *_listener;
     struct __asl_object_s { } *_log;
     int _maxInputLength;
@@ -42,6 +43,8 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_findReservation:(id)arg1 connection:(id)arg2;
+- (id)_getReservationId;
 - (BOOL)apduSentSinceLastReset;
 - (void)cardPresent:(BOOL)arg1;
 - (void)changeStateTo:(int)arg1 powerState:(int)arg2;
@@ -61,7 +64,7 @@
 - (void)powerDownWithEject:(BOOL)arg1 reply:(id /* block */)arg2;
 - (void)powerRequestFinished;
 - (id)queue;
-- (void)reserveProtocols:(id)arg1 currentlyReserved:(id)arg2 reply:(id /* block */)arg3;
+- (void)reserveProtocols:(id)arg1 reservationId:(id)arg2 exclusive:(BOOL)arg3 reply:(id /* block */)arg4;
 - (void)resetWithReply:(id /* block */)arg1;
 - (void)runUserInteraction:(id)arg1 reply:(id /* block */)arg2;
 - (void)scheduleIdlePowerDown;

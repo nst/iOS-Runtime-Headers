@@ -10,6 +10,7 @@
 @property (nonatomic) int locationAuthorization;
 @property (nonatomic, retain) CLRegion *region;
 
++ (id)createWithDictionary:(id)arg1 home:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;

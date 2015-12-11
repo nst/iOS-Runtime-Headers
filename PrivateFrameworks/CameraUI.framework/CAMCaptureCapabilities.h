@@ -25,6 +25,7 @@
     BOOL _backTimelapseSupported;
     BOOL _backTorchPatternSupported;
     BOOL _backTorchSupported;
+    BOOL _forceTouchSupported;
     BOOL _front1080p120Supported;
     BOOL _front4kVideoSupported;
     BOOL _front60FPSVideoSupported;
@@ -76,6 +77,7 @@
 @property (getter=isBackTimelapseSupported, nonatomic, readonly) BOOL backTimelapseSupported;
 @property (getter=isBackTorchPatternSupported, nonatomic, readonly) BOOL backTorchPatternSupported;
 @property (getter=isBackTorchSupported, nonatomic, readonly) BOOL backTorchSupported;
+@property (getter=isForceTouchSupported, nonatomic, readonly) BOOL forceTouchSupported;
 @property (getter=isFront1080p120Supported, nonatomic, readonly) BOOL front1080p120Supported;
 @property (getter=isFront4kVideoSupported, nonatomic, readonly) BOOL front4kVideoSupported;
 @property (getter=isFront60FPSVideoSupported, nonatomic, readonly) BOOL front60FPSVideoSupported;
@@ -139,6 +141,7 @@
 - (BOOL)isBurstSupportedForDevice:(int)arg1;
 - (BOOL)isCameraSupportedForDevice:(int)arg1;
 - (BOOL)isFlashSupportedForDevice:(int)arg1;
+- (BOOL)isForceTouchSupported;
 - (BOOL)isFront1080p120Supported;
 - (BOOL)isFront4kVideoSupported;
 - (BOOL)isFront60FPSVideoSupported;

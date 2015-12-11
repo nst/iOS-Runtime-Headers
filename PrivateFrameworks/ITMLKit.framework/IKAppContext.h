@@ -55,6 +55,7 @@
 - (id)_errorWithMessage:(id)arg1;
 - (void)_evaluate:(id /* block */)arg1;
 - (void)_evaluateFoundationWithDeviceConfig:(id)arg1;
+- (void)_invalidateJSThread;
 - (BOOL)_isAppTrusted;
 - (void)_jsThreadMain;
 - (id)_preferredLaunchURL;

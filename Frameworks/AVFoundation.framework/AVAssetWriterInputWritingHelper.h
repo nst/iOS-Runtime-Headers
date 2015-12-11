@@ -18,8 +18,6 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-+ (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
-
 - (id)_assetWriterTrack;
 - (void)_attachToMediaDataRequester:(id)arg1;
 - (void)_detachFromMediaDataRequester:(id)arg1;
@@ -31,6 +29,7 @@
 - (BOOL)canPerformMultiplePasses;
 - (id)currentPassDescription;
 - (void)dealloc;
+- (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
 - (void)didStartInitialSession;
 - (void)finalize;
 - (id)initWithConfigurationState:(id)arg1;

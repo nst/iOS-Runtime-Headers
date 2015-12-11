@@ -238,6 +238,7 @@
 - (int)updateInterval;
 - (id)updateTime;
 - (id)updateTimeString;
+- (void)updateTimeZoneWithCompletionBlock:(id /* block */)arg1;
 - (id)urlComponents;
 - (unsigned int)uvIndex;
 - (float)visibility;

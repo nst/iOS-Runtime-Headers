@@ -21,6 +21,7 @@
 - (void)setBackdropLayer:(id)arg1;
 - (void)setZoom:(float)arg1;
 - (id)valueForUndefinedKey:(id)arg1;
+- (void)willMoveToWindow:(id)arg1;
 - (float)zoom;
 
 @end

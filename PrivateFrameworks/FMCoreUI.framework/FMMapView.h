@@ -103,7 +103,7 @@
 @property (nonatomic) BOOL shouldDisplayOverlay;
 @property (nonatomic) BOOL showUserLocationCallout;
 @property (readonly) Class superclass;
-@property (nonatomic) MKUserLocation *userLocation;
+@property (nonatomic, retain) MKUserLocation *userLocation;
 @property (nonatomic) MKUserLocationView *userLocationView;
 @property (nonatomic, retain) NSTimer *userSelectionTimer;
 @property (nonatomic, retain) _MKUserTrackingButton *userTrackingButton;
@@ -155,6 +155,7 @@
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)initialize;
+- (void)invalidateLayoutTimer;
 - (BOOL)isAllAnnotationsShown;
 - (BOOL)isFingerOnAnnotation;
 - (BOOL)isFingerOnMap;

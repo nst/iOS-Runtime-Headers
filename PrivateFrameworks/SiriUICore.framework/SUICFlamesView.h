@@ -24,6 +24,7 @@
     EAGLContext *_eaglContext;
     unsigned int _elementArrayHandle;
     int _fShadID;
+    int _fidelity;
     NSMutableArray *_flameGroups;
     int _flameProgramHandle;
     unsigned int _framebufferHandle;
@@ -39,6 +40,7 @@
     unsigned int _numWaveIndices;
     UIImage *_overlayImage;
     UIImageView *_overlayImageView;
+    BOOL _reduceFrameRate;
     BOOL _reduceMotionEnabled;
     unsigned int _renderbufferHandle;
     UIScreen *_screen;
@@ -57,11 +59,13 @@
 @property (nonatomic) <SUICFlamesViewDelegate> *delegate;
 @property (nonatomic) int mode;
 @property (nonatomic, retain) UIImage *overlayImage;
+@property (nonatomic) BOOL reduceFrameRate;
 @property (nonatomic) BOOL showAura;
 @property (nonatomic) int state;
 
 + (Class)layerClass;
 + (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (void)prewarmShadersForScreen:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 fidelity:(int)arg3;
 
 - (void).cxx_destruct;
 - (void)_cleanupGL;
@@ -92,6 +96,7 @@
 - (int)mode;
 - (id)overlayImage;
 - (void)prewarmShadersForCurrentMode;
+- (BOOL)reduceFrameRate;
 - (void)resetAndReinitializeGL:(BOOL)arg1;
 - (void)setActiveFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -100,6 +105,7 @@
 - (void)setHidden:(BOOL)arg1;
 - (void)setMode:(int)arg1;
 - (void)setOverlayImage:(id)arg1;
+- (void)setReduceFrameRate:(BOOL)arg1;
 - (void)setShowAura:(BOOL)arg1;
 - (void)setState:(int)arg1;
 - (BOOL)showAura;

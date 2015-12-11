@@ -91,6 +91,7 @@
 - (BOOL)setupBackupWithPasscode:(id)arg1 error:(id*)arg2;
 - (BOOL)startBackupWithError:(id*)arg1;
 - (BOOL)startRestoreForBackupUDID:(id)arg1 snapshotID:(unsigned int)arg2 error:(id*)arg3;
+- (BOOL)startScanForBundleIDs:(id)arg1 error:(id*)arg2;
 - (BOOL)startScanWithError:(id*)arg1;
 - (void)syncBackupEnabled;
 - (void)wakeUp;

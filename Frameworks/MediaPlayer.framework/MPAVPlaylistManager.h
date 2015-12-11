@@ -75,6 +75,7 @@
 - (unsigned int)displayCountForItem:(id)arg1;
 - (unsigned int)displayIndexForItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)handlePlaybackFailureForItem:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isChangingPlayer;

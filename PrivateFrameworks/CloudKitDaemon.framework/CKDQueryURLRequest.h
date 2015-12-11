@@ -7,6 +7,7 @@
     unsigned int _limit;
     CKQuery *_query;
     NSMutableArray *_queryResponses;
+    id /* block */ _recordResponseBlock;
     NSArray *_requestedFields;
     NSData *_resultsCursor;
     BOOL _shouldFetchAssetContent;
@@ -16,7 +17,8 @@
 @property (nonatomic, retain) NSData *cursor;
 @property (nonatomic) unsigned int limit;
 @property (nonatomic, retain) CKQuery *query;
-@property (nonatomic, retain) NSArray *queryResponses;
+@property (nonatomic, retain) NSMutableArray *queryResponses;
+@property (nonatomic, copy) id /* block */ recordResponseBlock;
 @property (nonatomic, retain) NSArray *requestedFields;
 @property (nonatomic, retain) NSData *resultsCursor;
 @property (nonatomic) BOOL shouldFetchAssetContent;
@@ -30,6 +32,7 @@
 - (int)operationType;
 - (id)query;
 - (id)queryResponses;
+- (id /* block */)recordResponseBlock;
 - (void)requestDidParseNodeFailure:(id)arg1;
 - (id)requestDidParseProtobufObject:(id)arg1;
 - (id)requestOperationClasses;
@@ -40,6 +43,7 @@
 - (void)setLimit:(unsigned int)arg1;
 - (void)setQuery:(id)arg1;
 - (void)setQueryResponses:(id)arg1;
+- (void)setRecordResponseBlock:(id /* block */)arg1;
 - (void)setRequestedFields:(id)arg1;
 - (void)setResultsCursor:(id)arg1;
 - (void)setShouldFetchAssetContent:(BOOL)arg1;

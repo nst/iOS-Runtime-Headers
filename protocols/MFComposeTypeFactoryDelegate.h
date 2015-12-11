@@ -20,6 +20,7 @@
 - (void)setSendingEmailAddress:(NSString *)arg1 addIfNotPresent:(BOOL)arg2;
 - (void)setSubject:(NSString *)arg1;
 - (void)setToRecipients:(NSArray *)arg1;
+- (BOOL)shouldCreateRichTextRepresentation;
 - (NSString *)subject;
 - (NSArray *)toRecipients;
 

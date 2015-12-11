@@ -83,6 +83,7 @@
 - (void)assistantConnectionRequestFinished:(id)arg1;
 - (void)assistantConnectionRequestWillStart:(id)arg1;
 - (void)assistantConnectionSpeechRecordingDidCancel:(id)arg1;
+- (void)assistantConnectionSpeechRecordingDidDetectStartpoint:(id)arg1;
 - (void)assistantConnectionSpeechRecordingDidEnd:(id)arg1;
 - (void)assistantConnectionSpeechRecordingWillBegin:(id)arg1;
 - (void)assistantConnectionWillStartAcousticIDRequest:(id)arg1;
@@ -106,6 +107,7 @@
 - (void)recordRequestMetricEvent:(id)arg1 withTimestamp:(double)arg2;
 - (void)recordUIMetrics:(id)arg1;
 - (float)recordingPowerLevel;
+- (void)requestDidPresentViewForErrorCommand:(id)arg1;
 - (void)requestDidPresentViewForUICommand:(id)arg1;
 - (void)resetContextTypes:(int)arg1;
 - (void)resultDidChangeForAceCommand:(id)arg1;

@@ -9,7 +9,7 @@
         float width; 
         float height; 
     } _alphaMapSize;
-    struct jet_texture { int (**x1)(); struct jet_context {} *x2; } *_backingTexture;
+    struct jet_texture { int (**x1)(); } *_backingTexture;
     struct CGPoint { 
         float x; 
         float y; 
@@ -27,6 +27,7 @@
     BOOL _isRotated;
     NSString *_originalAtlasName;
     SKTexture *_originalTexture;
+    BOOL _performFullCapture;
     int _rowLength;
     NSArray *_searchPaths;
     BOOL _shouldGenerateMipmaps;
@@ -55,7 +56,6 @@
     unsigned int _textureTarget;
 }
 
-@property (nonatomic, readonly) struct CGImage { }*CGImage;
 @property (nonatomic, readonly) unsigned int*alphaMap;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } alphaMapSize;
 @property (nonatomic) struct CGPoint { float x1; float x2; } cropOffset;
@@ -67,6 +67,7 @@
 @property (nonatomic, readonly) BOOL isRepeatable;
 @property (nonatomic) BOOL isRotated;
 @property (nonatomic, copy) NSString *originalAtlasName;
+@property BOOL performFullCapture;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } pixelSize;
 @property (nonatomic, copy) NSString *subTextureName;
 @property (nonatomic) unsigned int textureTarget;
@@ -151,6 +152,7 @@
 - (BOOL)loadImageDataFromPVRGZData:(id)arg1;
 - (id)metalTexture;
 - (id)originalAtlasName;
+- (BOOL)performFullCapture;
 - (struct CGSize { float x1; float x2; })pixelSize;
 - (void)preload;
 - (void)preloadWithCompletionHandler:(id /* block */)arg1;
@@ -160,6 +162,7 @@
 - (void)setFilteringMode:(int)arg1;
 - (void)setIsRotated:(BOOL)arg1;
 - (void)setOriginalAtlasName:(id)arg1;
+- (void)setPerformFullCapture:(BOOL)arg1;
 - (void)setSubTextureName:(id)arg1;
 - (void)setTextureDimension:(const struct CGSize { float x1; float x2; }*)arg1 withPixelSize:(const struct CGSize { float x1; float x2; }*)arg2;
 - (void)setTextureTarget:(unsigned int)arg1;

@@ -33,6 +33,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *metricsConfigurationIdentifier;
+@property (nonatomic, readonly) Class moviePlayerViewControllerClass;
 @property (nonatomic, readonly) NSArray *navigationHistory;
 @property (nonatomic, copy) NSString *navigationHistoryPersistenceKey;
 @property (nonatomic, readonly) SSVPlatformContext *platformContext;
@@ -79,6 +80,7 @@
 - (id)metricsConfigurationIdentifier;
 - (id)metricsPageContextForViewController:(id)arg1;
 - (id)modalDocumentViewControllerForDocument:(id)arg1 options:(id)arg2;
+- (Class)moviePlayerViewControllerClass;
 - (id)navigationHistory;
 - (id)navigationHistoryPersistenceKey;
 - (id)newLegacyStorePageViewControllerForURLResponse:(id)arg1;

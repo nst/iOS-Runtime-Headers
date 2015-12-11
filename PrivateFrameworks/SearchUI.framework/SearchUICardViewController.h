@@ -4,27 +4,34 @@
 
 @interface SearchUICardViewController : SearchUITableViewController {
     NSArray *_cardSectionViews;
+    <SearchUIFeedbackDelegate> *_feedbackDelegate;
     <SearchUIResult> *_result;
     unsigned int _style;
 }
 
 @property (retain) NSArray *cardSectionViews;
-@property (retain) <SearchUIResult> *result;
+@property (nonatomic) <SearchUIFeedbackDelegate> *feedbackDelegate;
+@property (nonatomic, retain) <SearchUIResult> *result;
 @property unsigned int style;
 @property (readonly) UIColor *textColor;
 
 + (id)cardViewControllerForResult:(id)arg1 style:(unsigned int)arg2;
++ (id)cardViewControllerForResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
 + (float)separatorHeight;
 
 - (void).cxx_destruct;
 - (id)cardSectionViews;
 - (id)fallbackURLForIndexPath:(id)arg1;
+- (id)feedbackDelegate;
 - (id)initWithResult:(id)arg1 style:(unsigned int)arg2;
+- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
 - (id)initWithResult:(id)arg1 style:(unsigned int)arg2 inline:(BOOL)arg3;
-- (void)openPunchout:(id)arg1 fallbackURL:(id)arg2;
+- (id)initWithResult:(id)arg1 style:(unsigned int)arg2 inline:(BOOL)arg3 feedbackDelegate:(id)arg4;
+- (void)openPunchout:(id)arg1 fallbackURL:(id)arg2 fromSection:(id)arg3;
 - (id)punchoutsForIndexPath:(id)arg1;
 - (id)result;
 - (void)setCardSectionViews:(id)arg1;
+- (void)setFeedbackDelegate:(id)arg1;
 - (void)setResult:(id)arg1;
 - (void)setStyle:(unsigned int)arg1;
 - (void)setupTableViewInsetsForTraitCollection:(id)arg1;

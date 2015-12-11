@@ -9,6 +9,7 @@
     NSString *_displayHardware;
     NSDictionary *_displayPowerModel;
     PLIOKitOperatorComposition *_iokitBacklight;
+    PLIOKitOperatorComposition *_iokitBacklightControl;
     PLIOKitOperatorComposition *_iokitDisplay;
     PLIOKitOperatorComposition *_iokitTouch;
     BOOL _isMultitouchLoggingEnabled;
@@ -28,6 +29,7 @@
 @property (readonly) NSString *displayHardware;
 @property (readonly) NSDictionary *displayPowerModel;
 @property (readonly) PLIOKitOperatorComposition *iokitBacklight;
+@property (readonly) PLIOKitOperatorComposition *iokitBacklightControl;
 @property (readonly) PLIOKitOperatorComposition *iokitDisplay;
 @property (readonly) PLIOKitOperatorComposition *iokitTouch;
 @property BOOL isMultitouchLoggingEnabled;
@@ -49,6 +51,7 @@
 + (id)entryEventForwardDefinitionALSUserPreferences;
 + (id)entryEventForwardDefinitionDisplay;
 + (id)entryEventForwardDefinitions;
++ (id)entryEventPointDefinitionBacklightControl;
 + (id)entryEventPointDefinitionDisplay;
 + (id)entryEventPointDefinitionMultitouch;
 + (id)entryEventPointDefinitionUserBrightness;
@@ -61,10 +64,12 @@
 - (id)brightnessSystemClient;
 - (id)displayHardware;
 - (id)displayPowerModel;
+- (unsigned long long)getBacklightEnabledTimestamp:(unsigned int)arg1;
 - (void)handleBrightnessClientNotification:(id)arg1 withValue:(id)arg2;
 - (id)init;
 - (void)initOperatorDependancies;
 - (id)iokitBacklight;
+- (id)iokitBacklightControl;
 - (id)iokitDisplay;
 - (id)iokitTouch;
 - (BOOL)isAlsEnabled;

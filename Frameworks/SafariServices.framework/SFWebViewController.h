@@ -45,6 +45,7 @@
 - (BOOL)isLoading;
 - (void)loadView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)resetJavaScriptDialogManagerOnNextCommit;
 - (void)setDelegate:(id)arg1;
 - (void)setLoading:(BOOL)arg1;

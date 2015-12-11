@@ -20,6 +20,10 @@
             } __pair3_; 
         } __tree_; 
     } _nameToStyleManager;
+    struct _opaque_pthread_rwlock_t { 
+        long __sig; 
+        BOOL __opaque[124]; 
+    } _nameToStyleManagerLock;
     NSArray *_nonRegionalResourceNames;
     VKResourceManager *_resourceManager;
     VKStylesheetVendor *_stylesheetVendor;

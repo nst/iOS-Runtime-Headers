@@ -8,8 +8,9 @@
     NSString *_providerName;
     NSMutableArray *_scaledConstraints;
     UILabel *_sectionHeaderLabel;
-    _MKRightImageButton *_seeMoreButton;
+    UILabel *_seeMoreButton;
     NSArray *_seeMoreButtonConstraints;
+    UIGestureRecognizer *_seeMoreGestureRecognizer;
     UIView *_separator;
     BOOL _showSeeMoreButton;
     BOOL _showSeparator;
@@ -21,8 +22,9 @@
 @property (nonatomic, retain) NSString *providerName;
 @property (nonatomic, retain) NSMutableArray *scaledConstraints;
 @property (nonatomic, retain) UILabel *sectionHeaderLabel;
-@property (nonatomic, retain) _MKRightImageButton *seeMoreButton;
+@property (nonatomic, retain) UILabel *seeMoreButton;
 @property (nonatomic, retain) NSArray *seeMoreButtonConstraints;
+@property (nonatomic, retain) UIGestureRecognizer *seeMoreGestureRecognizer;
 @property (nonatomic, retain) UIView *separator;
 @property (nonatomic) BOOL showSeeMoreButton;
 @property (nonatomic) BOOL showSeparator;
@@ -44,6 +46,7 @@
 - (id)sectionHeaderLabel;
 - (id)seeMoreButton;
 - (id)seeMoreButtonConstraints;
+- (id)seeMoreGestureRecognizer;
 - (id)separator;
 - (void)setAction:(SEL)arg1;
 - (void)setMarginConstraints:(id)arg1;
@@ -52,6 +55,7 @@
 - (void)setSectionHeaderLabel:(id)arg1;
 - (void)setSeeMoreButton:(id)arg1;
 - (void)setSeeMoreButtonConstraints:(id)arg1;
+- (void)setSeeMoreGestureRecognizer:(id)arg1;
 - (void)setSeparator:(id)arg1;
 - (void)setShowSeeMoreButton:(BOOL)arg1;
 - (void)setShowSeparator:(BOOL)arg1;

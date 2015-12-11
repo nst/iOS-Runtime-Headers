@@ -5,25 +5,13 @@
 @interface XBSnapshotDataProviderContext : NSObject {
     BOOL _opaque;
     float _scale;
-    struct CGAffineTransform { 
-        float a; 
-        float b; 
-        float c; 
-        float d; 
-        float tx; 
-        float ty; 
-    } _transform;
 }
 
-@property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } baseTransform;
 @property (getter=isOpaque, nonatomic) BOOL opaque;
 @property (nonatomic) float scale;
 
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })baseTransform;
-- (id)init;
 - (BOOL)isOpaque;
 - (float)scale;
-- (void)setBaseTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setOpaque:(BOOL)arg1;
 - (void)setScale:(float)arg1;
 

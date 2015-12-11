@@ -34,6 +34,8 @@
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 
++ (id)_osVersionString;
+
 - (void).cxx_destruct;
 - (void)_setAssets:(id)arg1;
 - (void)_setBootstrapAsset:(id)arg1;

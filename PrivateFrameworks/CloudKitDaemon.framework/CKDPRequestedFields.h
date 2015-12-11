@@ -9,6 +9,7 @@
 @property (nonatomic, retain) NSMutableArray *fields;
 
 - (void).cxx_destruct;
+- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 - (void)addFields:(id)arg1;
 - (void)clearFields;
 - (void)copyTo:(id)arg1;

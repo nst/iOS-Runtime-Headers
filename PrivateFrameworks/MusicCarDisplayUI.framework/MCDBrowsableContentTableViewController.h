@@ -12,6 +12,7 @@
     BOOL _limited;
     UIView *_nowPlayingButton;
     NSIndexPath *_reselectIndexPath;
+    NSIndexPath *_selectedIndexPath;
     NSIndexPath *_selectedNextIndexPath;
     _MCDBrowsableContentTableViewPreloader *_selectionPreloader;
     NSObject<OS_dispatch_queue> *_serialQueue;
@@ -24,6 +25,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (readonly) Class superclass;
 @property (getter=isVisible, nonatomic) BOOL visible;
 
@@ -49,6 +51,8 @@
 - (id)preferredFocusedItem;
 - (void)reloadTable;
 - (void)reloadWithCompletion:(id /* block */)arg1;
+- (id)selectedIndexPath;
+- (void)setSelectedIndexPath:(id)arg1;
 - (void)setVisible:(BOOL)arg1;
 - (void)showActivity:(BOOL)arg1 inCell:(id)arg2;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

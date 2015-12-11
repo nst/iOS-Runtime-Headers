@@ -79,6 +79,7 @@
 - (id)socketFlows;
 - (id)source;
 - (void)startFilterWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)stopWithReason:(int)arg1;
 - (void)teardownSocketSource;
 
 @end

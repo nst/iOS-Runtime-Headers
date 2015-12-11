@@ -21,16 +21,16 @@
 - (void)_browsableContentEndpointChangedNotification:(id)arg1;
 - (void)_checkAndSetupView;
 - (id)_createRootViewController;
-- (void)_evaluateViewControllers;
 - (void)_modelDidInvalidate:(id)arg1;
 - (void)_modelWillInvalidate:(id)arg1;
 - (void)_populateStack;
 - (void)_setupView;
+- (void)_updateStackForPlaying:(BOOL)arg1;
 - (id)bundleID;
 - (id)currentStack;
 - (id)initWithBundleID:(id)arg1;
 - (id)initWithBundleID:(id)arg1 stack:(id)arg2;
-- (void)refreshNavigationStackForLaunch:(BOOL)arg1;
+- (void)refreshNavigationStackForLaunch;
 - (void)setViewControllers:(id)arg1 animated:(BOOL)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLoad;

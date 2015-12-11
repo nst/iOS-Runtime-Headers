@@ -249,6 +249,7 @@
 - (void)removeItemsWithFamilyAccountID:(unsigned long long)arg1 purchaserAccountID:(unsigned long long)arg2 downloaderAccountID:(unsigned long long)arg3;
 - (void)removeOrphanedTracks;
 - (void)removeOrphanedTracksOnlyInCaches:(BOOL)arg1;
+- (void)removePlaylistsWithPersistentIDs:(id)arg1 fromSource:(int)arg2 usingConnection:(id)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)removeSource:(int)arg1 usingConnection:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)removeSource:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)removeTombstonesForDeletedItems;

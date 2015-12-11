@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/VoiceTriggerUI.framework/VoiceTriggerUI
  */
 
-@interface VTUIEnrollTrainingViewController : UIViewController <AFUIDebugControllerDelegate, SUICFlamesViewDelegate, VTUIEnrollmentSetupIntroViewDelegate, VTUITrainingManagerDelegate> {
+@interface VTUIEnrollTrainingViewController : UIViewController <AFUIDebugControllerDelegate, AFUISiriLanguageDelegate, SUICFlamesViewDelegate, VTUIEnrollmentSetupIntroViewDelegate, VTUITrainingManagerDelegate> {
     int _AVVCRetryCount;
     float _audioRms;
     int _badMicRetryCount;
@@ -16,6 +16,7 @@
     SiriUIContentButton *_radarButton;
     UIButton *_radarExitButton;
     unsigned int _sessionId;
+    AFUISiriLanguage *_siriLanguage;
     UIButton *_skipButton;
     NSString *_spokenLanguageCode;
     UILabel *_statusLabel;
@@ -105,6 +106,7 @@
 - (void)setAudioRms:(float)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setHasRetriedTraining:(BOOL)arg1;
+- (void)siriLanguageSpokenLanguageCodeDidChange:(id)arg1;
 - (void)skipAssistant:(id)arg1;
 - (void)skipTraining:(id)arg1;
 - (id)trainingManager;

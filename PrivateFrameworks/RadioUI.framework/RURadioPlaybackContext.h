@@ -4,18 +4,22 @@
 
 @interface RURadioPlaybackContext : MPPlaybackContext {
     NSArray *_allPreparedAdSlotRadioTracks;
+    RadioStationMatchContext *_nowPlayingMatchContext;
     MPAVItem *_prefixItem;
     NSMapTable *_preparedAdSlotByRadioTrack;
     RadioStation *_station;
     RadioStationMatchContext *_stationMatchContext;
     NSArray *_tracks;
+    BOOL _willContinuePlayback;
 }
 
 @property (nonatomic, readonly, copy) NSArray *allPreparedAdSlotRadioTracks;
+@property (nonatomic, retain) RadioStationMatchContext *nowPlayingMatchContext;
 @property (nonatomic, retain) MPAVItem *prefixItem;
 @property (nonatomic, retain) RadioStation *station;
 @property (nonatomic, retain) RadioStationMatchContext *stationMatchContext;
 @property (nonatomic, copy) NSArray *tracks;
+@property (nonatomic) BOOL willContinuePlayback;
 
 + (Class)queueFeederClass;
 
@@ -24,14 +28,18 @@
 - (id)allPreparedAdSlotRadioTracks;
 - (void)configureWithStationPlaybackMetadata:(id)arg1;
 - (id)descriptionComponents;
+- (id)nowPlayingMatchContext;
 - (id)prefixItem;
 - (id)preparedAdSlotForRadioTrack:(id)arg1;
+- (void)setNowPlayingMatchContext:(id)arg1;
 - (void)setPrefixItem:(id)arg1;
 - (void)setStation:(id)arg1;
 - (void)setStationMatchContext:(id)arg1;
 - (void)setTracks:(id)arg1;
+- (void)setWillContinuePlayback:(BOOL)arg1;
 - (id)station;
 - (id)stationMatchContext;
 - (id)tracks;
+- (BOOL)willContinuePlayback;
 
 @end

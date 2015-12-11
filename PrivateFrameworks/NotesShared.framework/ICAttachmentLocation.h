@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
  */
 
-@interface ICAttachmentLocation : ICLocation <ICSearchIndexable>
+@interface ICAttachmentLocation : ICLocation <ICSearchIndexableTarget>
 
 @property (nonatomic, retain) ICAttachment *attachment;
 @property (readonly, copy) NSString *debugDescription;
@@ -12,18 +12,7 @@
 @property (nonatomic) BOOL placeUpdated;
 @property (readonly) Class superclass;
 
-- (void)deleteFromNoteContextUsingIndexerContext:(id)arg1;
 - (id)formattedAddressWithoutAttachmentTitle;
-- (id)identifier;
-- (BOOL)isHiddenFromSearch;
-- (id)modificationDate;
-- (id)objectIdentifier;
-- (id)searchIndexStringsOutHasAdditionalStrings:(BOOL*)arg1;
-- (id)searchIndexableTitleUsingContentTextIfNecessary:(id)arg1;
-- (BOOL)searchResultCanBeDeletedFromNoteContext;
-- (unsigned int)searchResultsSection;
-- (BOOL)shouldUpdateIndexForChangedValues:(id)arg1;
 - (id)targetSearchIndexable;
-- (int)visibilityTestingType;
 
 @end

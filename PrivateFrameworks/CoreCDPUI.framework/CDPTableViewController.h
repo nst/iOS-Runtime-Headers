@@ -7,7 +7,7 @@
     UIView *_containerView;
     NSString *_headerSubTitle;
     NSString *_headerTitle;
-    BFFPaneHeaderView *_headerView;
+    CDPPaneHeaderView *_headerView;
     UITableView *_tableView;
 }
 
@@ -19,7 +19,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSString *headerSubTitle;
 @property (nonatomic, readonly, copy) NSString *headerTitle;
-@property (nonatomic, retain) BFFPaneHeaderView *headerView;
+@property (nonatomic, retain) CDPPaneHeaderView *headerView;
 @property (nonatomic, readonly) BOOL isIPad;
 @property (nonatomic, readonly) BOOL isiPhone5OrSmaller;
 @property (readonly) Class superclass;

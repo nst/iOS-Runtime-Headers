@@ -105,6 +105,7 @@
 - (void)endTwoFingerLongPressWithExecutionContext:(id)arg1;
 - (void)endTwoFingerPanWithExecutionContext:(id)arg1;
 - (void)finishTwoFingerLongPressWithExecutionContext:(id)arg1;
+- (BOOL)forceTouchGestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
@@ -124,6 +125,7 @@
 - (float)oneFingerForcePressAllowableMovement;
 - (double)oneFingerForcePressMinimumDuration;
 - (id)oneFingerForcePressRecognizer;
+- (BOOL)oneFingerForcePressShouldCancelTouchesInView;
 - (BOOL)oneFingerForcePressShouldFailWithoutForce;
 - (int)panGestureState;
 - (int)previousForcePressCount;

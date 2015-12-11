@@ -27,6 +27,7 @@
     MPKnockoutButton *_pictureInPictureButton;
     MPKnockoutButton *_playPauseButton;
     MPAVController *_player;
+    float _previousTopBarMargin;
     MPKnockoutButton *_rightButton;
     UIButton *_scaleButton;
     UILabel *_scrubInstructions1;
@@ -41,6 +42,7 @@
     NSLayoutConstraint *_topBarBottomConstraint;
     UIView *_topBarItemsGuide;
     UIView *_topBarLayoutGuide;
+    NSArray *_topBarTraitCollectionConstraints;
     NSArray *_topItems;
     NSArray *_topItemsConstraints;
     NSLayoutConstraint *_topItemsTrailingConstraint;
@@ -120,6 +122,7 @@
 - (void)_unregisterForPlayerNotifications:(id)arg1;
 - (void)_updateLoadingIndicator;
 - (void)_updateScaleButton;
+- (void)_updateTopBarBoundsBasedConstraints;
 - (void)_updateVolumeSlider;
 - (void)_videoViewDidMoveToWindow:(id)arg1;
 - (int)adaptivePresentationStyleForPresentationController:(id)arg1;

@@ -5,9 +5,11 @@
 
 @required
 
+- (void)recordDuetReturnedResults:(BOOL)arg1;
 - (void)recordUserIgnoredPredictionAfterDelay:(double)arg1;
 - (void)recordUserIgnoredPrefixedResultAfterDelay:(double)arg1 batch:(unsigned int)arg2;
 - (void)recordUserSawPredictions;
+- (void)recordUserSawResultsConsideredSuggestion:(unsigned int)arg1;
 - (void)recordUserSelectedIndex:(unsigned int)arg1;
 - (void)recordUserSelectedPredictionAtIndex:(unsigned int)arg1;
 - (void)recordUserSelectedResultWithSourceType:(unsigned int)arg1;

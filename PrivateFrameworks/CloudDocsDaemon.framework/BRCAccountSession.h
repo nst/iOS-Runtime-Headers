@@ -212,7 +212,6 @@
 - (BOOL)openWithError:(id*)arg1;
 - (id)operationFailureThrottle;
 - (id)ownerIdentityForKey:(id)arg1;
-- (id)ownerIdentityForName:(id)arg1;
 - (id)ownerIdentityForName:(id)arg1 db:(id)arg2;
 - (id)ownerKeyForName:(id)arg1 db:(id)arg2;
 - (id)ownerNameForKey:(id)arg1 db:(id)arg2;

@@ -95,6 +95,7 @@
 - (void)mediaProfileHeaderContentViewControllerDidSelectProfileTitle:(id)arg1;
 - (void)mediaProfileSplitMainViewController:(id)arg1 needsContentForSegmentWithIdentifier:(id)arg2;
 - (void)mediaProfileSplitMainViewControllerSegmentedControlVisibleDidChange:(id)arg1;
+- (BOOL)music_allowsMetricsEvents;
 - (void)setClientContext:(id)arg1;
 - (void)setShouldAutomaticallySelectMyMusicSegment:(BOOL)arg1;
 - (BOOL)shouldAutomaticallySelectMyMusicSegment;

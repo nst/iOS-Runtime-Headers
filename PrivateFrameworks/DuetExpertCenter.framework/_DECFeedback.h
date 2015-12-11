@@ -30,6 +30,7 @@
 - (unsigned int)outcomeForCategory:(unsigned int)arg1 predictions:(id)arg2;
 - (id)predictedItemsShown;
 - (id)prediction;
+- (BOOL)relevantLaunch;
 - (void)setItemSelected:(id)arg1;
 - (void)setItemsShown:(id)arg1;
 - (void)setLaunchInfo:(id)arg1;

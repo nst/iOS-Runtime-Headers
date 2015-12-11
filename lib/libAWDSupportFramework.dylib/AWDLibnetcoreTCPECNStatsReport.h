@@ -11,6 +11,9 @@
         unsigned int tcpECNConnPacketLossNoCE : 1; 
         unsigned int tcpECNConnRecvCE : 1; 
         unsigned int tcpECNConnRecvECE : 1; 
+        unsigned int tcpECNFallbackCE : 1; 
+        unsigned int tcpECNFallbackReorder : 1; 
+        unsigned int tcpECNFallbackSynLoss : 1; 
         unsigned int tcpECNNotSupportedPeer : 1; 
         unsigned int tcpECNRecvCE : 1; 
         unsigned int tcpECNRecvECE : 1; 
@@ -30,6 +33,9 @@
     unsigned long long _tcpECNConnPacketLossNoCE;
     unsigned long long _tcpECNConnRecvCE;
     unsigned long long _tcpECNConnRecvECE;
+    unsigned long long _tcpECNFallbackCE;
+    unsigned long long _tcpECNFallbackReorder;
+    unsigned long long _tcpECNFallbackSynLoss;
     unsigned long long _tcpECNNotSupportedPeer;
     unsigned long long _tcpECNRecvCE;
     unsigned long long _tcpECNRecvECE;
@@ -49,6 +55,9 @@
 @property (nonatomic) BOOL hasTcpECNConnPacketLossNoCE;
 @property (nonatomic) BOOL hasTcpECNConnRecvCE;
 @property (nonatomic) BOOL hasTcpECNConnRecvECE;
+@property (nonatomic) BOOL hasTcpECNFallbackCE;
+@property (nonatomic) BOOL hasTcpECNFallbackReorder;
+@property (nonatomic) BOOL hasTcpECNFallbackSynLoss;
 @property (nonatomic) BOOL hasTcpECNNotSupportedPeer;
 @property (nonatomic) BOOL hasTcpECNRecvCE;
 @property (nonatomic) BOOL hasTcpECNRecvECE;
@@ -66,6 +75,9 @@
 @property (nonatomic) unsigned long long tcpECNConnPacketLossNoCE;
 @property (nonatomic) unsigned long long tcpECNConnRecvCE;
 @property (nonatomic) unsigned long long tcpECNConnRecvECE;
+@property (nonatomic) unsigned long long tcpECNFallbackCE;
+@property (nonatomic) unsigned long long tcpECNFallbackReorder;
+@property (nonatomic) unsigned long long tcpECNFallbackSynLoss;
 @property (nonatomic) unsigned long long tcpECNNotSupportedPeer;
 @property (nonatomic) unsigned long long tcpECNRecvCE;
 @property (nonatomic) unsigned long long tcpECNRecvECE;
@@ -88,6 +100,9 @@
 - (BOOL)hasTcpECNConnPacketLossNoCE;
 - (BOOL)hasTcpECNConnRecvCE;
 - (BOOL)hasTcpECNConnRecvECE;
+- (BOOL)hasTcpECNFallbackCE;
+- (BOOL)hasTcpECNFallbackReorder;
+- (BOOL)hasTcpECNFallbackSynLoss;
 - (BOOL)hasTcpECNNotSupportedPeer;
 - (BOOL)hasTcpECNRecvCE;
 - (BOOL)hasTcpECNRecvECE;
@@ -109,6 +124,9 @@
 - (void)setHasTcpECNConnPacketLossNoCE:(BOOL)arg1;
 - (void)setHasTcpECNConnRecvCE:(BOOL)arg1;
 - (void)setHasTcpECNConnRecvECE:(BOOL)arg1;
+- (void)setHasTcpECNFallbackCE:(BOOL)arg1;
+- (void)setHasTcpECNFallbackReorder:(BOOL)arg1;
+- (void)setHasTcpECNFallbackSynLoss:(BOOL)arg1;
 - (void)setHasTcpECNNotSupportedPeer:(BOOL)arg1;
 - (void)setHasTcpECNRecvCE:(BOOL)arg1;
 - (void)setHasTcpECNRecvECE:(BOOL)arg1;
@@ -126,6 +144,9 @@
 - (void)setTcpECNConnPacketLossNoCE:(unsigned long long)arg1;
 - (void)setTcpECNConnRecvCE:(unsigned long long)arg1;
 - (void)setTcpECNConnRecvECE:(unsigned long long)arg1;
+- (void)setTcpECNFallbackCE:(unsigned long long)arg1;
+- (void)setTcpECNFallbackReorder:(unsigned long long)arg1;
+- (void)setTcpECNFallbackSynLoss:(unsigned long long)arg1;
 - (void)setTcpECNNotSupportedPeer:(unsigned long long)arg1;
 - (void)setTcpECNRecvCE:(unsigned long long)arg1;
 - (void)setTcpECNRecvECE:(unsigned long long)arg1;
@@ -143,6 +164,9 @@
 - (unsigned long long)tcpECNConnPacketLossNoCE;
 - (unsigned long long)tcpECNConnRecvCE;
 - (unsigned long long)tcpECNConnRecvECE;
+- (unsigned long long)tcpECNFallbackCE;
+- (unsigned long long)tcpECNFallbackReorder;
+- (unsigned long long)tcpECNFallbackSynLoss;
 - (unsigned long long)tcpECNNotSupportedPeer;
 - (unsigned long long)tcpECNRecvCE;
 - (unsigned long long)tcpECNRecvECE;

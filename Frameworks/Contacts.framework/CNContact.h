@@ -369,8 +369,9 @@
 // Image: /System/Library/Frameworks/PassKit.framework/PassKit
 
 + (id)contactWithPkDictionary:(id)arg1;
++ (id)pkContactWithFirstName:(id)arg1 lastName:(id)arg2 district:(id)arg3 labeledValue:(id)arg4 property:(id)arg5;
++ (id)pkContactWithFirstName:(id)arg1 lastName:(id)arg2 district:(id)arg3 postalAddresses:(id)arg4 emailAddresses:(id)arg5 phoneNumbers:(id)arg6;
 + (id)pkContactWithFirstName:(id)arg1 lastName:(id)arg2 labeledValue:(id)arg3 property:(id)arg4;
-+ (id)pkContactWithFirstName:(id)arg1 lastName:(id)arg2 postalAddresses:(id)arg3 emailAddresses:(id)arg4 phoneNumbers:(id)arg5;
 + (id)pkContactWithNameFromContact:(id)arg1 labeledValue:(id)arg2 property:(id)arg3;
 + (id)pkPassbookRequiredKeys;
 

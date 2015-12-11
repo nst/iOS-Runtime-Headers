@@ -3,6 +3,7 @@
  */
 
 @interface SSRequest : NSObject <SSXPCCoding> {
+    unsigned int _assertionID;
     NSObject<OS_dispatch_source> *_backgroundTaskExpirationTimer;
     int _backgroundTaskIdentifier;
     BOOL _cancelAfterTaskExpiration;

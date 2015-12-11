@@ -8,6 +8,7 @@
 - (void)presentShareDocument:(IKDOMDocument *)arg1 :(NSDictionary *)arg2;
 - (void)setNumberOfLikes:(unsigned int)arg1;
 - (void)setProductEntityValueProvider:(NSDictionary *)arg1;
+- (void)setProminentTrackStoreID:(NSString *)arg1;
 - (void)setRelatedContentDocument:(IKDOMDocument *)arg1 :(NSDictionary *)arg2;
 - (void)setReportingInformation:(NSDictionary *)arg1;
 - (void)setTracklistItems:(NSArray *)arg1;

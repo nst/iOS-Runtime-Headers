@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityTracklistItemTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityTracklistItemViewDelegate, MusicEntityViewPlaybackStatusObserving> {
+@interface MusicEntityTracklistItemTableViewCell : UITableViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityTracklistItemViewDelegate, MusicEntityViewDownloadInformationObserving, MusicEntityViewPlaybackStatusObserving> {
     BOOL _entityDisabled;
     float _leadingTextColumnWidth;
     MusicEntityTracklistItemView *_tracklistItemView;
@@ -30,6 +30,7 @@
 - (float)leadingTextColumnWidth;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentDescriptor:(id)arg1;
+- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { int x1; float x2; })arg1;
 - (void)setEntityDisabled:(BOOL)arg1;
 - (void)setEntityValueProvider:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;

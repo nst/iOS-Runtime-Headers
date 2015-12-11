@@ -48,6 +48,7 @@
 - (void)registerZoomAttributesChangeHandler:(id /* block */)arg1;
 - (BOOL)requestGuidedAccessSession:(BOOL)arg1 appID:(id)arg2;
 - (void)setAccessibilityPreferenceAsMobile:(id)arg1 value:(id)arg2 notification:(id)arg3;
+- (void)setCapsLockLightOn:(BOOL)arg1;
 - (void)setHearingAidControlIsVisible:(BOOL)arg1;
 - (void)setInPreboardMode:(BOOL)arg1;
 - (void)setInvertColorsEnabled:(BOOL)arg1;

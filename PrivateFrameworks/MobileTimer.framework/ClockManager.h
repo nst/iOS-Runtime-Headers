@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/MobileTimer.framework/MobileTimer
  */
 
-@interface ClockManager : NSObject {
+@interface ClockManager : NSObject <UNSNotificationSchedulerDelegate> {
     ObjectUpdates *_localNotificationUpdates;
     UNSNotificationScheduler *_notificationScheduler;
     BOOL _performingUpgrade;
@@ -11,10 +11,14 @@
     BOOL runningInAssistantPlugin;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (getter=isIgnoringNotificationPostRequests, nonatomic) BOOL ignoringNotificationPostRequests;
 @property (nonatomic, retain) UNSNotificationScheduler *notificationScheduler;
 @property (getter=isRunningInAssistantPlugin, nonatomic) BOOL runningInAssistantPlugin;
 @property (nonatomic, readonly) NSArray *scheduledLocalNotificationsCache;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) ObjectUpdates *updatesToLocalNotificationsCache;
 
 + (void)loadUserPreferences;
@@ -30,6 +34,7 @@
 - (BOOL)isIgnoringNotificationPostRequests;
 - (BOOL)isRunningInAssistantPlugin;
 - (id)notificationScheduler;
+- (void)notificationScheduler:(id)arg1 didChangeScheduledLocalNotifications:(id)arg2;
 - (void)postUserPreferencesChangedNotification;
 - (void)refreshScheduledLocalNotificationsCache;
 - (void)resetUpdatesToLocalNotificationsCache;

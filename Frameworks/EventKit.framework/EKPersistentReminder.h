@@ -12,6 +12,7 @@
 @property (nonatomic, copy) NSDate *dueDate;
 @property (nonatomic) BOOL dueDateAllDay;
 @property (nonatomic, copy) NSTimeZone *dueDateTimeZone;
+@property (nonatomic, copy) NSDate *firstAlertDate;
 @property (nonatomic, copy) EKObjectID *parentID;
 
 + (id)generateUniqueIDWithReminder:(id)arg1 calendar:(id)arg2;
@@ -27,6 +28,7 @@
 - (id)dueDateTimeZone;
 - (int)entityType;
 - (id)externalURI;
+- (id)firstAlertDate;
 - (BOOL)isCompleted;
 - (id)parentID;
 - (void)setCompleted:(BOOL)arg1;
@@ -35,6 +37,7 @@
 - (void)setDueDate:(id)arg1;
 - (void)setDueDateAllDay:(BOOL)arg1;
 - (void)setDueDateTimeZone:(id)arg1;
+- (void)setFirstAlertDate:(id)arg1;
 - (void)setParentID:(id)arg1;
 - (BOOL)validate:(id*)arg1;
 

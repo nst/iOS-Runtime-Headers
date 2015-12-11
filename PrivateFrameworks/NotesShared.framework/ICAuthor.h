@@ -11,6 +11,9 @@
 @property (nonatomic, retain) ICPerson *person;
 @property (nonatomic, retain) NSNumber *status;
 
++ (id)authorForPerson:(id)arg1 inGroup:(id)arg2 createIfNecessary:(BOOL)arg3 context:(id)arg4;
++ (id)currentAuthorInGroup:(id)arg1 context:(id)arg2;
+
 - (unsigned int)authorStatus;
 - (struct UIImage { Class x1; }*)icon;
 - (id)name;

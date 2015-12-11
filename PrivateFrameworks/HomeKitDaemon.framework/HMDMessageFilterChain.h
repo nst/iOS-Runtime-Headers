@@ -19,7 +19,7 @@
 - (id)init;
 - (id)messageFilters;
 - (void)removeMessageFilter:(id)arg1;
-- (void)resetConfiguration;
+- (void)resetConfiguration:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)setMessageFilters:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (BOOL)shouldCloudSyncData;

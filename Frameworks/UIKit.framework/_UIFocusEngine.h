@@ -70,6 +70,7 @@
     } _progressAccumulator;
     NSArray *_remoteGestures;
     <_UIFocusScrollAnimator> *_scrollViewAnimator;
+    _UIFocusPressGestureRecognizer *_selectGestureRecognizer;
     BOOL _sendsFocusDirection;
     BOOL _shouldShowDebugOverlays;
     _UIFocusSoundPool *_smallSoundPool;
@@ -127,6 +128,7 @@
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (void)_handleButtonGesture:(id)arg1;
 - (void)_handlePanGesture:(id)arg1;
+- (void)_handleSelectGesture:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;
 - (float)_horizontalFrictionInterpolationForMomentumSpeed:(float)arg1 totalDistance:(float)arg2;
 - (void)_invalidateControllerDisplayLink;

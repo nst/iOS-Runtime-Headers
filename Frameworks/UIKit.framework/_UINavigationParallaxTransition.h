@@ -3,6 +3,7 @@
  */
 
 @interface _UINavigationParallaxTransition : NSObject <UIViewControllerAnimatedTransitioningEx, _UIBasicAnimationFactory> {
+    BOOL __shouldReverseLayoutDirection;
     _UIParallaxDimmingView *_borderDimmingView;
     UIView *_clipUnderView;
     BOOL _clipUnderlapWhileTransitioning;
@@ -17,6 +18,7 @@
     int _transitionStyle;
 }
 
+@property (setter=_setShouldReverseLayoutDirection:, nonatomic) BOOL _shouldReverseLayoutDirection;
 @property (nonatomic, retain) _UIParallaxDimmingView *borderDimmingView;
 @property (nonatomic, retain) UIView *clipUnderView;
 @property (nonatomic) BOOL clipUnderlapWhileTransitioning;
@@ -36,6 +38,8 @@
 
 - (void).cxx_destruct;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
+- (void)_setShouldReverseLayoutDirection:(BOOL)arg1;
+- (BOOL)_shouldReverseLayoutDirection;
 - (id)_timingFunctionForAnimation;
 - (void)animateKeyboard:(id)arg1;
 - (void)animateTransition:(id)arg1;

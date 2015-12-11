@@ -114,6 +114,7 @@
 - (id)_prepareMessagePayloadForCharacteristicRemoteWrite:(id)arg1;
 - (void)_readCharacteristicValues:(id)arg1 hapAccessory:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_readValueForCharacteristic:(id)arg1 hapAccessory:(id)arg2 messageIdentifier:(id)arg3 responseHandler:(id /* block */)arg4;
+- (void)_reenableNotificationsOnWatch;
 - (void)_registerForMessages;
 - (id)_relayIdentifier;
 - (void)_relayIdentifyAccessorytoResidentForMessage:(id)arg1;
@@ -283,7 +284,6 @@
 - (void)unconfigure;
 - (void)unconfigureAccessoryWithServerIdentifier:(id)arg1 linkType:(int)arg2;
 - (id)uniqueIdentifier;
-- (void)updateAccessoryBrowsingState:(id)arg1;
 - (void)updateCategory:(id)arg1;
 - (void)updateName:(id)arg1;
 - (void)updateReachability;

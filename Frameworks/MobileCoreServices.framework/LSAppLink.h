@@ -15,10 +15,8 @@
 + (BOOL)_XPCConnectionIsBrowser:(id)arg1;
 + (id)_appLinkWithURL:(id)arg1 applicationProxy:(id)arg2 plugIn:(id)arg3 error:(id*)arg4;
 + (void)_getAppLinkWithURL:(id)arg1 requireEntitlement:(BOOL)arg2 XPCConnection:(id)arg3 completionHandler:(id /* block */)arg4;
-+ (id)_normalizedURLPath:(id)arg1 escapeCharacters:(BOOL)arg2;
 + (int)_openStrategyForBundleIdentifier:(id)arg1;
 + (void)_openWithState:(id)arg1 XPCConnection:(id)arg2 machPort:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
-+ (id)_predicateForURLPathPattern:(id)arg1;
 + (void)_setOpenStrategy:(int)arg1 forBundleIdentifier:(id)arg2 XPCConnection:(id)arg3;
 + (BOOL)_shouldAppLinkOpenWithStrategy:(int)arg1 XPCConnection:(id)arg2;
 + (void)considerPlugInClassAtIndex:(unsigned int)arg1 plugInClasses:(id)arg2 URLComponents:(id)arg3 XPCConnection:(id)arg4 previousPlugInError:(id)arg5 completionHandler:(id /* block */)arg6;

@@ -105,7 +105,6 @@
 - (BOOL)isRadioQueueFeeder;
 - (Class)itemClass;
 - (unsigned int)itemCount;
-- (unsigned int)itemTypeForIndex:(unsigned int)arg1;
 - (id)localizedAttributedPositionInPlaylistStringForItem:(id)arg1 withRegularTextAttributes:(id)arg2 emphasizedTextAttributes:(id)arg3;
 - (id)localizedPositionInPlaylistString:(id)arg1;
 - (id)playbackInfoForIdentifier:(id)arg1;

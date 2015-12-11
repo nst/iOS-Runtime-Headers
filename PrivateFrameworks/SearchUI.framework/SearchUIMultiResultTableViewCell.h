@@ -5,6 +5,8 @@
 @interface SearchUIMultiResultTableViewCell : SearchUITableViewCell <UICollectionViewDataSource, UICollectionViewDelegate> {
     NSLayoutConstraint *_collectionHeightConstraint;
     UICollectionView *_collectionView;
+    NSLayoutConstraint *_collectionViewLeadingConstraint;
+    NSLayoutConstraint *_collectionViewTrailingConstraint;
     SearchUIRowFormatter *_formatter;
     int _numberOfColumns;
     float _oneRowHeight;
@@ -16,6 +18,8 @@
 
 @property (retain) NSLayoutConstraint *collectionHeightConstraint;
 @property (retain) UICollectionView *collectionView;
+@property (retain) NSLayoutConstraint *collectionViewLeadingConstraint;
+@property (retain) NSLayoutConstraint *collectionViewTrailingConstraint;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (retain) SearchUIRowFormatter *formatter;
@@ -31,6 +35,7 @@
 + (float)baselineSpacing;
 + (Class)classForResults:(id)arg1;
 + (float)horizontalImagePadding;
++ (struct CGSize { float x1; float x2; })iconSize;
 + (id)labelFont;
 + (id)reuseIdentifierForResults:(id)arg1;
 + (id)rowViewForResults:(id)arg1 style:(unsigned int)arg2;
@@ -45,13 +50,13 @@
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
 - (id)collectionViewDataSource;
 - (id)collectionViewLayout;
+- (id)collectionViewLeadingConstraint;
+- (id)collectionViewTrailingConstraint;
 - (id)collectionViewWrapper;
 - (id)formatter;
-- (struct CGSize { float x1; float x2; })imageSize;
 - (BOOL)includeTopPaddingInSingleRowHeight;
 - (id)initWithResults:(id)arg1 style:(unsigned int)arg2;
 - (BOOL)isExpandable;
-- (BOOL)isExpanded;
 - (float)itemWidth;
 - (void)layoutSubviews;
 - (id)makeCollectionView;
@@ -59,13 +64,14 @@
 - (int)minDisplayedResults;
 - (int)numberOfColumns;
 - (float)numberOfColumnsForCurrentLayout;
-- (int)numberOfVisibleResults;
+- (unsigned int)numberOfVisibleResults;
 - (float)oneRowHeight;
 - (id)results;
 - (id)rowHeightConstraint;
 - (void)setCollectionHeightConstraint:(id)arg1;
 - (void)setCollectionView:(id)arg1;
-- (void)setExpanded:(BOOL)arg1;
+- (void)setCollectionViewLeadingConstraint:(id)arg1;
+- (void)setCollectionViewTrailingConstraint:(id)arg1;
 - (void)setFormatter:(id)arg1;
 - (void)setNumberOfColumns:(int)arg1;
 - (void)setOneRowHeight:(float)arg1;
@@ -79,6 +85,7 @@
 - (float)topPadding;
 - (id)trimResults:(id)arg1;
 - (float)twoRowHeight;
+- (void)updateExpanded:(BOOL)arg1;
 - (void)updateNumberOfColumns:(int)arg1;
 - (void)updateWithResults:(id)arg1;
 

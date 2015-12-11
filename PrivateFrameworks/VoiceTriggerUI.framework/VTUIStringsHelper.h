@@ -13,9 +13,9 @@
 
 - (void).cxx_destruct;
 - (id)_bundleStringTableForLanguages:(id)arg1;
-- (void)_setSiriLanguage:(id)arg1;
 - (id)_siriLanguageSubstitutedString:(id)arg1;
 - (id)init;
+- (void)setSiriLanguage:(id)arg1;
 - (void)setupForCurrentLocaleAndSiriLanguage;
 - (id)siriLanguageStringForKey:(id)arg1;
 - (id)uiLocalizedStringForKey:(id)arg1;

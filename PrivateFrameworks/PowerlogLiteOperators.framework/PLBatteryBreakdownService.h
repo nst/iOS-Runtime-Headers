@@ -32,9 +32,12 @@
 @property BOOL showGizmoQualifier;
 @property (nonatomic, retain) NSSet *webAppNames;
 
++ (id)appNameForBundleID:(id)arg1;
 + (BOOL)canSetQualifier:(int)arg1 forBundleID:(id)arg2;
 + (id)combineQualifiers:(id)arg1;
++ (id)installedPlugins;
 + (void)load;
++ (id)pluginEntryFromProxy:(id)arg1;
 + (id)rootNodeQualificationNameWithQualificationName:(id)arg1 withRootNodeName:(id)arg2;
 + (id)whereValidName;
 

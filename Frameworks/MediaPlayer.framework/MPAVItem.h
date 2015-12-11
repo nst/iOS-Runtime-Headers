@@ -101,6 +101,7 @@
 @property (nonatomic) float defaultPlaybackRate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL didAttemptToLoadAsset;
+@property (nonatomic, readonly) BOOL didDeferLeaseStart;
 @property (nonatomic, readonly) unsigned int discCount;
 @property (nonatomic, readonly) unsigned int discNumber;
 @property (nonatomic, readonly) NSString *displayableText;
@@ -256,6 +257,7 @@
 - (void)dealloc;
 - (float)defaultPlaybackRate;
 - (BOOL)didAttemptToLoadAsset;
+- (BOOL)didDeferLeaseStart;
 - (unsigned int)discCount;
 - (unsigned int)discNumber;
 - (id)displayableText;
@@ -386,8 +388,8 @@
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
 + (id /* block */)_music_entityValueHandlerForProperty:(id)arg1;
++ (void)_registerCustomEntityValueHandlers;
 + (void)_registerEntityValueHandler:(id /* block */)arg1 forProperty:(id)arg2;
-+ (void)initialize;
 
 - (id)entityUniqueIdentifier;
 - (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;

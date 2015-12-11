@@ -13,6 +13,7 @@
 - (void)assistantConnection:(AFConnection *)arg1 speechRecordingDidFail:(NSError *)arg2;
 - (void)assistantConnectionDidChangeAudioRecordingPower:(AFConnection *)arg1;
 - (void)assistantConnectionSpeechRecordingDidCancel:(AFConnection *)arg1;
+- (void)assistantConnectionSpeechRecordingDidDetectStartpoint:(AFConnection *)arg1;
 - (void)assistantConnectionSpeechRecordingDidEnd:(AFConnection *)arg1;
 - (void)assistantConnectionSpeechRecordingWillBegin:(AFConnection *)arg1;
 

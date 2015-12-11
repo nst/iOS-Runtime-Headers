@@ -20,6 +20,7 @@
     BOOL _supportsDPANNotifications;
     BOOL _supportsDefaultCardSelection;
     BOOL _supportsFPANNotifications;
+    BOOL _supportsSerialNumberBasedProvisioning;
     NSString *_transactionPushTopic;
     NSURL *_transactionServiceURL;
 }
@@ -45,6 +46,7 @@
 @property (nonatomic) BOOL supportsDPANNotifications;
 @property (nonatomic) BOOL supportsDefaultCardSelection;
 @property (nonatomic) BOOL supportsFPANNotifications;
+@property (nonatomic) BOOL supportsSerialNumberBasedProvisioning;
 @property (nonatomic, copy) NSString *transactionPushTopic;
 @property (nonatomic, copy) NSURL *transactionServiceURL;
 
@@ -106,11 +108,13 @@
 - (void)setSupportsDPANNotifications:(BOOL)arg1;
 - (void)setSupportsDefaultCardSelection:(BOOL)arg1;
 - (void)setSupportsFPANNotifications:(BOOL)arg1;
+- (void)setSupportsSerialNumberBasedProvisioning:(BOOL)arg1;
 - (void)setTransactionPushTopic:(id)arg1;
 - (void)setTransactionServiceURL:(id)arg1;
 - (BOOL)supportsDPANNotifications;
 - (BOOL)supportsDefaultCardSelection;
 - (BOOL)supportsFPANNotifications;
+- (BOOL)supportsSerialNumberBasedProvisioning;
 - (id)transactionPushTopic;
 - (id)transactionServiceURL;
 - (void)updateDevicePaymentApplicationsWithSecureElementIdentifier:(id)arg1;

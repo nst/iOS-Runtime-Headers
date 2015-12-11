@@ -4,6 +4,7 @@
 
 @interface MKStackingViewController : UIViewController <UIScrollViewDelegate> {
     _MKStackingContentView *_contentView;
+    BOOL _contentViewConstraintsAdded;
     unsigned int _countOfCurrentLayoutInvocations;
     _MKStackingPlaceholderView *_headerPlaceholderView;
     UIView *_headerView;
@@ -19,6 +20,7 @@
     UIColor *_separatorBackgroundColor;
     NSMutableArray *_separatorControllers;
     UIColor *_separatorLineColor;
+    NSMutableArray *_separatorViewConstraints;
     _MKStackView *_stackView;
     <MKStackingViewControllerDelegate> *_stackingDelegate;
     NSMapTable *_titleHeaderViewsByViewController;

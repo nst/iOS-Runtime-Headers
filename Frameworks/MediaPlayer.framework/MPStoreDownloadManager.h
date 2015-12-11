@@ -4,7 +4,9 @@
 
 @interface MPStoreDownloadManager : NSObject <SSDownloadManagerObserver, SSPurchaseManagerDelegate, UIAlertViewDelegate> {
     NSObject<OS_dispatch_queue> *_accessQueue;
+    NSArray *_activeDownloads;
     NSMutableArray *_blockObservers;
+    NSObject<OS_dispatch_queue> *_calloutSerialQueue;
     UIAlertView *_cellularDownloadAlertView;
     NSMutableArray *_cellularDownloadRequestCompletionHandlers;
     NSMapTable *_downloadIdentifiersToDownloads;
@@ -17,6 +19,7 @@
     NSMapTable *_storeIdentifiersToDownloads;
 }
 
+@property (nonatomic, readonly) NSArray *activeDownloads;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSArray *downloads;
@@ -41,13 +44,18 @@
 - (BOOL)_onQueue_hasExistingDownloadForStoreDownload:(id)arg1;
 - (void)_onQueue_removeDownloadFromMapTables:(id)arg1;
 - (void)_registerBlockObserver:(id)arg1;
+- (void)_sendActiveDownloadsDidChangeToObserversWithAddedDownloads:(id)arg1 removedDownloads:(id)arg2;
 - (void)_sendDownloadsDidChangeToObserversWithAddedDownloads:(id)arg1 removedDownloads:(id)arg2;
 - (void)_sendDownloadsDidFinishPurchasesToObserversForDownloads:(id)arg1;
 - (void)_sendDownloadsDidFinishToObserversForDownloads:(id)arg1 notifyDownloadManager:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)_sendDownloadsDidProgressToObserversForDownloads:(id)arg1;
 - (void)_unregisterBlockObserver:(id)arg1;
+- (void)_updateActiveDownloadsWithChangedActiveDownloads:(id)arg1 inactiveDownloads:(id)arg2;
 - (void)_updateDownloadsWithAdditions:(id)arg1 removals:(id)arg2;
 - (void)_updateMediaItemPropertiesForFinishedStoreDownload:(id)arg1 SSDownload:(id)arg2;
+- (id)activeDownloadForMediaItemPersistentID:(unsigned long long)arg1;
+- (id)activeDownloadForStoreID:(long long)arg1;
+- (id)activeDownloads;
 - (id)addDownloads:(id)arg1;
 - (void)addFinishHandler:(id /* block */)arg1 forDownloads:(id)arg2;
 - (void)addObserver:(id)arg1 forDownloads:(id)arg2;
@@ -67,8 +75,10 @@
 - (void)pauseDownloads:(id)arg1;
 - (void)prioritizeDownloads:(id)arg1;
 - (void)purchaseManager:(id)arg1 didFinishPurchasesWithResponses:(id)arg2;
+- (void)reloadFromServer;
 - (void)removeObserver:(id)arg1 forDownloads:(id)arg2;
 - (void)requestPermissionToDownloadWithType:(int)arg1 completionHandler:(id /* block */)arg2;
+- (void)restartDownloads:(id)arg1;
 - (void)resumeDownloads:(id)arg1;
 
 @end

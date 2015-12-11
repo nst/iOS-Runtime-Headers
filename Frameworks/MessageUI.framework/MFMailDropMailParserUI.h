@@ -4,7 +4,6 @@
 
 @interface MFMailDropMailParserUI : MFMailDropMailParser
 
-+ (void)MFConvertHTMLBannerToInvisibleAttachmentNode:(id)arg1 element:(id)arg2 mailDrop:(id)arg3;
 + (void)MFConvertHTMLNodeToAttachmentNode:(id)arg1 element:(id)arg2 mailDrop:(id)arg3;
 + (id)_extractElementURL:(id)arg1;
 + (id)_mailDropClassName:(id)arg1;

@@ -2,14 +2,26 @@
    Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
  */
 
-@interface MFMailDropMailDeliveryUI : MFMailDropMailDelivery
+@interface MFMailDropMailDeliveryUI : MFMailDropMailDelivery <MFMessageRewriterPlaceholderResolver> {
+    MFPlaceholderMessageRewriter *_rewriter;
+}
 
-- (void)_addBannerToDocument:(id)arg1;
-- (void)_convertToMailDropAttachmentFromAttachmentNode:(id)arg1 forDocument:(id)arg2;
-- (id)_updatedHeadersWithAttachments;
-- (void)recreateMessageWithHTMLDocument:(id)arg1 plainDocument:(id)arg2 otherDocuments:(id)arg3 charSets:(id)arg4;
-- (void)regenerateMessageParts:(id)arg1 htmlBody:(id*)arg2 plainTextAlternative:(id*)arg3 otherHTMLAndAttachments:(id*)arg4 charsets:(id*)arg5;
-- (BOOL)scaleImages:(id)arg1;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+- (id)_contentForAttachmentPassingTest:(id /* block */)arg1;
+- (id)_headersByAddingMailDropHeaders:(id)arg1;
+- (id)_mailDropAttachmentHTMLStringForAttachment:(id)arg1;
+- (id)_mailDropBannerHTMLString;
+- (id)_scaleImages:(id)arg1 toFit:(unsigned int)arg2 resultingSize:(out unsigned int*)arg3;
+- (id)contentForContentID:(id)arg1;
+- (id)contentForPlaceholder:(id)arg1;
+- (id)contentForURL:(id)arg1;
+- (void)dealloc;
+- (id)deliverSynchronously;
+- (id)scaledImages:(id)arg1;
 - (BOOL)updateMessageWithAttachmentsSynchronously;
 
 @end

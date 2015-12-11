@@ -4,25 +4,27 @@
 
 @interface _ATXAppLaunchMonitor : NSObject {
     _ATXAppInfoManager *_appInfoManager;
+    _ATXAppLaunchHistogramManager *_appLaunchHistogramManager;
     NSObject<OS_dispatch_queue> *_appLaunchHistoryQueue;
     CDContextStore *_ctxStore;
+    _ATXDuetHelper *_duetHelper;
     NSMutableDictionary *_launchedBundleIds;
     NSObject<OS_dispatch_queue> *_registrationQueue;
 }
 
 - (void).cxx_destruct;
 - (id)appInfoManager;
+- (id)appLaunchHistogramManager;
 - (void)dealloc;
-- (id)getMostRecentAppLaunchesSyncForTimeInterval:(double)arg1;
 - (void)handleAppLaunchNotification:(id)arg1 reason:(id)arg2;
 - (id)init;
-- (id)initWithDiskPersistence:(BOOL)arg1;
+- (id)initWithAppInfoManager:(id)arg1 andAppLaunchHistogramManager:(id)arg2;
 - (id)initWithInMemoryStore;
-- (id)initWithPersistentStore;
 - (void)registerForAppChange;
 - (void)start;
 - (void)stop;
+- (void)swapDuetHelper:(id)arg1;
 - (void)updateLaunchHistoryFromDuet;
-- (void)updateLaunchHistoryFromDuet:(double)arg1;
+- (void)updateLaunchHistoryFromDuet:(double)arg1 completionBlock:(id /* block */)arg2;
 
 @end

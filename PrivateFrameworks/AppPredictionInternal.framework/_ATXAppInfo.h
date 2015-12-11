@@ -2,23 +2,29 @@
    Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
  */
 
-@interface _ATXAppInfo : NSObject {
+@interface _ATXAppInfo : NSObject <NSCopying> {
     NSString *_bundleId;
+    NSDate *_installDate;
     NSDate *_lastLaunch;
     NSDate *_lastSpotlightLaunch;
 }
 
 @property (nonatomic, retain) NSString *bundleId;
+@property (nonatomic, retain) NSDate *installDate;
 @property (nonatomic, retain) NSDate *lastLaunch;
 @property (nonatomic, retain) NSDate *lastSpotlightLaunch;
 
 - (void).cxx_destruct;
 - (id)bundleId;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)init;
 - (id)initWithBundleId:(id)arg1;
-- (id)initWithBundleId:(id)arg1 lastLaunch:(id)arg2 lastSpotlightLaunch:(id)arg3;
+- (id)initWithBundleId:(id)arg1 installDate:(id)arg2 lastLaunch:(id)arg3 lastSpotlightLaunch:(id)arg4;
+- (id)installDate;
 - (id)lastLaunch;
 - (id)lastSpotlightLaunch;
 - (void)setBundleId:(id)arg1;
+- (void)setInstallDate:(id)arg1;
 - (void)setLastLaunch:(id)arg1;
 - (void)setLastSpotlightLaunch:(id)arg1;
 

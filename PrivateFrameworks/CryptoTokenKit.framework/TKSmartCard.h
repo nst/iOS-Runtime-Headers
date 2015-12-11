@@ -8,7 +8,7 @@
     unsigned char _cla;
     id _context;
     unsigned int _currentProtocol;
-    NSNumber *_reservedProtocols;
+    NSNumber *_reservationId;
     BOOL _sensitive;
     id _session;
     int _sessionCounter;

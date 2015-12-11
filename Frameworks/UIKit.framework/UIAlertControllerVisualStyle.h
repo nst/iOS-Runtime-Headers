@@ -43,7 +43,7 @@
 - (BOOL)focusedActionAnimatesOnPresentationAndDismissal;
 - (BOOL)hideActionSeparators;
 - (BOOL)hideCancelAction:(id)arg1 inAlertController:(id)arg2;
-- (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })highlightedActionTransformForActionSize:(struct CGSize { float x1; float x2; })arg1;
+- (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })highlightedActionTransformForActionSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)interactionProgressForTransitionOfType:(int)arg1 forAlertController:(id)arg2;
 - (BOOL)isEqual:(id)arg1;
 - (float)marginAboveMessageLabelFirstBaseline;
@@ -60,6 +60,7 @@
 - (id)messageLabelFont;
 - (float)minimumActionHeight;
 - (float)minimumWidth;
+- (id)motionEffects;
 - (int)permittedActionLayoutDirection;
 - (void)positionAlertControllerView:(id)arg1 ofAlertController:(id)arg2 inAvailableSpaceView:(id)arg3;
 - (id)preferredActionFont;

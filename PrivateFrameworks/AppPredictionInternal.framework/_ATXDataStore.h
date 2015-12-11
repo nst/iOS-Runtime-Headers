@@ -4,6 +4,7 @@
 
 @interface _ATXDataStore : NSObject {
     struct sqlite3 { } *_db;
+    _ATXDuetHelper *_duetHelper;
     NSString *_path;
     NSObject<OS_dispatch_queue> *_queue;
     unsigned int _schemaVersion;
@@ -15,8 +16,9 @@
 
 - (void).cxx_destruct;
 - (BOOL)_reset;
+- (void)addAppInstallForBundleId:(id)arg1 withDate:(id)arg2;
 - (void)addAppLaunchForBundleId:(id)arg1 withDate:(id)arg2 withLaunchType:(int)arg3;
-- (id /* block */)addLaunchBlock;
+- (void)addHistogramData:(id)arg1 forHistogramOfType:(int)arg2;
 - (id)appInfoForBundleId:(id)arg1;
 - (void)clearDatabase;
 - (int)configureDatabase;
@@ -24,22 +26,30 @@
 - (void)dealloc;
 - (void)enumerateStateForApps:(id)arg1 withGlobalBlock:(id /* block */)arg2 thenWithPerAppBlock:(id /* block */)arg3;
 - (id)getColumnNameForLaunchType:(int)arg1;
+- (id)histogramDataForHistogramType:(int)arg1;
 - (id)init;
 - (id)initWithInMemoryDataStore;
-- (id)initWithPath:(id)arg1;
+- (id)initWithPath:(id)arg1 andDuetHelper:(id)arg2;
 - (id)lastAppLaunch;
 - (int)launchedAppCount;
 - (id)loadAppInfo;
+- (id)loadDataFromFile:(id)arg1;
 - (void)migrate;
 - (int)migrateToVersion:(unsigned int)arg1 withMigrationPlan:(id)arg2;
+- (int)migration_AppLaunchHistogramToTable;
+- (int)migration_InstallDateToAppTable;
 - (int)migration_LaunchHistoriesToAppTable;
+- (void)notifyObserversAboutRestore;
 - (id)pathsToBackUp;
 - (void)removeAppInfoForBundleId:(id)arg1;
 - (void)removeFeedbackForBundleId:(id)arg1;
+- (BOOL)removeFile:(id)arg1;
+- (void)resetInstance;
 - (int)runMigrationPlan:(id)arg1;
 - (void)runQuery:(id)arg1 onPrep:(id /* block */)arg2 onRow:(id /* block */)arg3 onError:(id /* block */)arg4;
 - (int)skipFromZeroSchema;
-- (void)synchronousAddAppLaunchForBundleId:(id)arg1 withDate:(id)arg2 withLaunchType:(int)arg3;
+- (void)swapInDuetHelperStub:(id)arg1;
+- (BOOL)updateOrInsertHistogramData:(id)arg1 forHistogram:(int)arg2;
 - (BOOL)updateOrInsertTimestamp:(long long)arg1 intoColumn:(id)arg2 forBundleId:(id)arg3;
 - (void)updateSchemaVersionNumberTo:(int)arg1;
 

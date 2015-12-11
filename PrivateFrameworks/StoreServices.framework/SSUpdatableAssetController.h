@@ -5,6 +5,7 @@
 @interface SSUpdatableAssetController : NSObject <SKUIExternalResourceManager> {
     SSUpdatableAssetManifest *_bundledManifest;
     NSURL *_bundledManifestURL;
+    NSString *_bundledManifestVersion;
     SSUpdatableAssetCacheManager *_cacheManager;
     SSXPCConnection *_connection;
     SSUpdatableAssetManifest *_currentManifest;
@@ -25,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)_bundledManifest;
+- (id)_bundledManifestVersion;
 - (id)_connection;
 - (id)bundledManifestURL;
 - (void)clearCache:(id /* block */)arg1;

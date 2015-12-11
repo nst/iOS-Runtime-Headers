@@ -2,8 +2,10 @@
    Image: /System/Library/Frameworks/AddressBookUI.framework/AddressBookUI
  */
 
-@interface ABMembersViewController : ABAbstractViewController <ABMembersControllerDelegate, ABNewPersonViewControllerDelegate, ABPersonEditDelegate, ABViewControllerBannerViewProtocol, CNContactViewControllerAddContactPresenter> {
+@interface ABMembersViewController : ABAbstractViewController <ABMembersControllerDelegate, ABNewPersonViewControllerDelegate, ABPersonEditDelegate, ABViewControllerBannerViewProtocol, CNAvatarCardControllerDelegate, CNContactViewControllerAddContactPresenter> {
     _UIAccessDeniedView *_accessDeniedView;
+    CNAvatarCardController *_cardController;
+    CNContactStore *_contactStore;
     id _insertionLabel;
     int _insertionProperty;
     id _insertionValue;
@@ -16,6 +18,8 @@
 @property (nonatomic, readonly) _UIAccessDeniedView *accessDeniedView;
 @property (readonly) BOOL allowsCancel;
 @property (readonly) BOOL allowsCardEditing;
+@property (nonatomic, retain) CNAvatarCardController *cardController;
+@property (nonatomic, retain) CNContactStore *contactStore;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -37,10 +41,13 @@
 - (BOOL)allowsCardEditing;
 - (BOOL)allowsShowingPersonsCards;
 - (void)applicationDidResume;
+- (int)avatarCardController:(id)arg1 presentationResultForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (BOOL)canHandleSnapbackIdentifier:(id)arg1 animated:(BOOL)arg2;
 - (void)cancel:(id)arg1;
 - (void)cancelRefreshingAccount;
 - (void)cancelSearching:(id)arg1;
+- (id)cardController;
+- (id)contactStore;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (id)defaultPNGName;
@@ -73,6 +80,7 @@
 - (void)preferredPersonDidChangeToPerson:(void*)arg1;
 - (void)presentAddContactViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)presentGroupsViewController;
+- (id)presentingViewControllerForAvatarCardController:(id)arg1;
 - (void)reallyHandleExternalChangeOnPersonViewControllers;
 - (void)refreshEverythingNow;
 - (void)resetInsertionData;
@@ -81,6 +89,8 @@
 - (BOOL)selectAndScrollMemberVisible:(void*)arg1;
 - (void)setAddressBook:(void*)arg1;
 - (void)setBannerTitle:(id)arg1 value:(id)arg2;
+- (void)setCardController:(id)arg1;
+- (void)setContactStore:(id)arg1;
 - (void)setStyleProvider:(id)arg1;
 - (BOOL)shouldShowGroups;
 - (BOOL)showCardForPerson:(void*)arg1 animate:(BOOL)arg2;

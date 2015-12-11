@@ -12,6 +12,7 @@
 - (UIImage *)placeholderImage;
 - (BOOL)preventImageScaling;
 - (BOOL)supportsActions;
+- (BOOL)supportsExpansion;
 - (BOOL)supportsImageAsyncLoading;
 
 @end

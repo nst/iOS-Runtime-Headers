@@ -102,6 +102,7 @@
 - (BOOL)setHDRSceneDetectionEnabled:(BOOL)arg1 error:(id*)arg2;
 - (long)setImageControlMode:(int)arg1;
 - (long)setLowLightBoostAutomaticallyEnabled:(BOOL)arg1 supportedForFormat:(BOOL)arg2;
+- (void)setMaxTorchLevel:(float)arg1;
 - (void)setMaximumFrameRate:(float)arg1;
 - (void)setMinimumFrameRate:(float)arg1;
 - (void)setOverscanPercentage:(struct CGSize { float x1; float x2; })arg1;

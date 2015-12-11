@@ -57,8 +57,8 @@
 - (void)noteWatchOfferShownForPaymentPass:(id)arg1;
 - (void)paymentPassUniqueIDs:(id /* block */)arg1;
 - (void)paymentPassWithDeviceAccountIdentifier:(id)arg1 completion:(id /* block */)arg2;
-- (void)paymentPassWithPrimaryAccountIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)paymentPassWithUniqueID:(id)arg1 reply:(id /* block */)arg2;
+- (void)paymentPassesWithPrimaryAccountIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)queueAppropriateFailedActions;
 - (void)redownloadAllPaymentPassesWithCompletion:(id /* block */)arg1;
 - (void)removePaymentPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;

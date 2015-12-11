@@ -165,6 +165,7 @@
 + (id)afui_assistantUIFrameworkBundle;
 
 - (id)_assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3 language:(id)arg4;
+- (BOOL)assistantLanguageIsRTL;
 - (id)assistantUILocale;
 - (id)assistantUILocalizedStringForKey:(id)arg1 table:(id)arg2;
 - (id)assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;

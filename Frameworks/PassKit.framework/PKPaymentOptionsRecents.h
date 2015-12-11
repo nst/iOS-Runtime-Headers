@@ -10,6 +10,7 @@
 + (id)_coreRecentsKindForProperty:(id)arg1;
 + (id)defaultInstance;
 
+- (BOOL)_addressIsInChina:(id)arg1;
 - (id)_contactFromRecent:(id)arg1 property:(id)arg2;
 - (void)_coreRecentsContactsForProperty:(id)arg1 queue:(id)arg2 completion:(id /* block */)arg3;
 - (void)dealloc;

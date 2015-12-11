@@ -2,7 +2,12 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKBKeyViewAnimator : NSObject
+@interface UIKBKeyViewAnimator : NSObject {
+    BOOL _disabled;
+}
+
+@property (nonatomic) BOOL disabled;
+@property (nonatomic, readonly) BOOL shouldPurgeKeyViews;
 
 + (id)normalizedAnimationWithKeyPath:(id)arg1 fromValue:(id)arg2 toValue:(id)arg3;
 + (id)normalizedUnwindAnimationWithKeyPath:(id)arg1 originallyFromValue:(id)arg2 toValue:(id)arg3;
@@ -10,6 +15,7 @@
 - (void)_fadeInKeyView:(id)arg1 duration:(float)arg2 completion:(id /* block */)arg3;
 - (void)_fadeOutKeyView:(id)arg1 duration:(float)arg2 completion:(id /* block */)arg3;
 - (Class)_keyViewClassForSpecialtyKey:(id)arg1;
+- (BOOL)disabled;
 - (void)endTransitionForKeyView:(id)arg1;
 - (Class)keyViewClassForKey:(id)arg1 traits:(id)arg2;
 - (id)keycapAlternateStandardTransform;
@@ -26,7 +32,9 @@
 - (id)keycapRightSelectRightTransform;
 - (id)keycapRightStandardTransform;
 - (void)reset;
+- (void)setDisabled:(BOOL)arg1;
 - (BOOL)shouldAssertCurrentKeyState:(id)arg1;
+- (BOOL)shouldPurgeKeyViews;
 - (BOOL)shouldTransitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3;
 - (void)transitionEndedForKeyView:(id)arg1 alternateCount:(unsigned int)arg2;
 - (void)transitionKeyView:(id)arg1 fromState:(int)arg2 toState:(int)arg3 completion:(id /* block */)arg4;

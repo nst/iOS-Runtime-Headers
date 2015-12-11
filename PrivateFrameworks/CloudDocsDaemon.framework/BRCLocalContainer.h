@@ -23,6 +23,7 @@
     BOOL _isInitialCreation;
     NSString *_lastForegroundClientDescription;
     long long _lastInsertedRank;
+    NSDate *_lastSyncDownDate;
     NSError *_lastSyncDownError;
     NSError *_lastSyncUpError;
     long long _lostHeapKey;
@@ -146,7 +147,7 @@
 - (void)didFindLostItem:(id)arg1;
 - (void)didGCTombstoneRanks:(id)arg1;
 - (void)didReceiveHandoffRequest;
-- (void)didSyncDownRequestID:(unsigned long long)arg1 maxApplyRank:(long long)arg2 caughtUpWithServer:(BOOL)arg3;
+- (void)didSyncDownRequestID:(unsigned long long)arg1 maxApplyRank:(long long)arg2 caughtUpWithServer:(BOOL)arg3 syncDownDate:(id)arg4;
 - (id)directoryItemIDByFileID:(unsigned long long)arg1;
 - (unsigned long long)documentCount;
 - (unsigned long long)documentEvictableSizeUsage;
@@ -168,6 +169,7 @@
 - (BOOL)hasActiveAliasQueries;
 - (BOOL)hasActiveQueries;
 - (BOOL)hasActiveRecursiveQueries;
+- (BOOL)hasCompletedInitialSyncDownOnce;
 - (BOOL)hasDocumentsOrDirectory;
 - (BOOL)hasHighPriorityWatchers;
 - (BOOL)hasLocalChanges;

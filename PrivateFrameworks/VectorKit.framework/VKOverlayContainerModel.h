@@ -93,6 +93,7 @@
 - (void)setSkyModel:(id)arg1;
 - (void)setStyleManager:(struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })arg1;
 - (BOOL)shouldCheckForOcclusion;
+- (BOOL)shouldLayoutWithoutStyleManager;
 - (BOOL)shouldOccludeTraffic;
 - (BOOL)shouldShowTraffic;
 - (id)skyModel;

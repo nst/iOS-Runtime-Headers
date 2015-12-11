@@ -15,12 +15,12 @@
 @property (readonly) Class superclass;
 
 + (id)assetWriterInputPixelBufferAdaptorWithAssetWriterInput:(id)arg1 sourcePixelBufferAttributes:(id)arg2;
-+ (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
 
 - (void)addCallbackToCancelDuringDeallocation:(id)arg1;
 - (BOOL)appendPixelBuffer:(struct __CVBuffer { }*)arg1 withPresentationTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (id)assetWriterInput;
 - (void)dealloc;
+- (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
 - (id)description;
 - (void)finalize;
 - (id)init;

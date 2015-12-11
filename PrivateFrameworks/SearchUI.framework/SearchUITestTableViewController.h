@@ -22,6 +22,7 @@
 - (void)setResultsForSection:(id)arg1;
 - (void)setSections:(id)arg1;
 - (void)setStyle:(unsigned int)arg1;
+- (void)showMore:(id)arg1;
 - (unsigned int)style;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;

@@ -11,9 +11,14 @@
     MusicEntityValueContext *_containerEntityValueContext;
     <MusicEntityProviding> *_contextualActionsOverrideTracklistEntityProvider;
     <MusicMediaProductHeaderContentViewControllerDelegate> *_delegate;
+    struct MusicEntityDownloadInformation { 
+        int downloadStatus; 
+        float downloadProgress; 
+    } _downloadInformation;
     UIImage *_editedContentArtworkImage;
     MusicHairlineView *_hairlineView;
     BOOL _hairlineVisible;
+    MusicContextualLibraryUpdateAlertAction *_keepLocalAlertAction;
     NSString *_lockupArtworkProperty;
     MusicMediaDetailTintInformation *_mediaDetailTintInformation;
     BOOL _needToMakeTitleFirstResponder;
@@ -36,6 +41,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicMediaProductHeaderContentViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) struct MusicEntityDownloadInformation { int x1; float x2; } downloadInformation;
 @property (nonatomic, readonly, copy) NSString *editableText;
 @property (nonatomic, retain) UIImage *editedContentArtworkImage;
 @property (getter=isHairlineVisible, nonatomic) BOOL hairlineVisible;
@@ -63,8 +69,9 @@
 - (id)_loadProductHeaderLockupContentDescriptor;
 - (void)_presentContextualActionsFromButton:(id)arg1;
 - (id)_productHeaderLockupContentDescriptor;
+- (void)_reloadAddRemoveLibraryAndKeepLocalActions;
 - (void)_reloadContainerEntityValueContextProperties;
-- (void)_reloadWantsAddToLibraryButton;
+- (void)_reloadDownloadProgressButtonState;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_updateContentTaste;
 - (void)_updateHairline;
@@ -79,6 +86,7 @@
 - (id)contextualActionsOverrideTracklistEntityProvider;
 - (void)dealloc;
 - (id)delegate;
+- (struct MusicEntityDownloadInformation { int x1; float x2; })downloadInformation;
 - (id)editableText;
 - (id)editedContentArtworkImage;
 - (id)initWithContainerEntityProvider:(id)arg1 presentationSource:(int)arg2;
@@ -91,8 +99,8 @@
 - (int)presentationSource;
 - (void)productHeaderLockupView:(id)arg1 didSelectCameraButton:(id)arg2;
 - (void)productHeaderLockupView:(id)arg1 didSelectPlayButtonAction:(unsigned int)arg2;
-- (void)productHeaderLockupViewDidSelectAddToLibraryButton:(id)arg1;
 - (void)productHeaderLockupViewDidSelectContextualActionsButton:(id)arg1;
+- (void)productHeaderLockupViewDidSelectDownloadProgressButton:(id)arg1;
 - (void)productHeaderLockupViewDidSelectEditButton:(id)arg1;
 - (void)productHeaderLockupViewDidSelectLikeDislikeButton:(id)arg1;
 - (void)productHeaderLockupViewDidSelectRefreshButton:(id)arg1;
@@ -103,6 +111,7 @@
 - (void)setClientContext:(id)arg1;
 - (void)setContextualActionsOverrideTracklistEntityProvider:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { int x1; float x2; })arg1;
 - (void)setEditedContentArtworkImage:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setHairlineVisible:(BOOL)arg1;

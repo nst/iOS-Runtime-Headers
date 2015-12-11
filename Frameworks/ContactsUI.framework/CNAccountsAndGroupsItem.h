@@ -35,6 +35,7 @@
 - (id)identifier;
 - (id)initWithType:(int)arg1;
 - (BOOL)isSelected;
+- (int)localizedCompare:(id)arg1;
 - (id)name;
 - (id /* block */)nameProvider;
 - (id)parentItem;

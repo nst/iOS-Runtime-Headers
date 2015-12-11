@@ -37,6 +37,11 @@
 
 - (void)sqliteBind:(struct sqlite3_stmt { }*)arg1 index:(int)arg2;
 
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
+- (BOOL)_hasIvar:(struct objc_ivar { }*)arg1;
+
 // Image: /System/Library/PrivateFrameworks/NanoMediaRemote.framework/NanoMediaRemote
 
 - (id)nmr_valueForPotentiallyUndefinedKey:(id)arg1;

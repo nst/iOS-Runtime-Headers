@@ -15,9 +15,10 @@
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didResumeAtOffset:(long long)arg3 expectedTotalBytes:(long long)arg4;
 - (void)URLSession:(id)arg1 downloadTask:(id)arg2 didWriteData:(long long)arg3 totalBytesWritten:(long long)arg4 totalBytesExpectedToWrite:(long long)arg5;
 - (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (id)_defaultDownloadSessionForAttachment:(id)arg1;
 - (void)contentDirectoryOfAttachment:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)dealloc;
 - (void)downloadMainEntryOfAttachment:(id)arg1 withCompletion:(id /* block */)arg2;
-- (BOOL)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 error:(id*)arg3;
+- (void)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 completion:(id /* block */)arg3;
 
 @end

@@ -14,7 +14,8 @@
 + (id)archiveIDSDataSyncJournal:(id)arg1;
 + (id)archiveMetadata:(id)arg1;
 + (id)archiveTransactions:(id)arg1;
-+ (id)decryptDataWithControllerKey:(id)arg1 totalKeysFound:(unsigned int*)arg2 deleteExtraKeys:(BOOL)arg3 extraKeysWereDeleted:(BOOL*)arg4 error:(id*)arg5;
++ (void)cleanupKeysInStore;
++ (id)decryptDataWithControllerKey:(id)arg1 totalKeysFound:(unsigned int*)arg2 deleteExtraKeys:(BOOL)arg3 controllerIdentifierChanged:(BOOL*)arg4 successfulKeyUserName:(id*)arg5 error:(id*)arg6;
 + (id)decryptDataWithMetadataKey:(id)arg1 error:(id*)arg2;
 + (id)decryptUsingLocalKeyAndUnarchiveFromPath:(id)arg1 error:(id*)arg2;
 + (id)deserializeBlacklistedBundlesFromData:(id)arg1;

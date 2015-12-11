@@ -32,6 +32,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL suppressesIncrementalRendering;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (void)_fixPathsForSandboxDirectoryChange;
 + (id)_relativePathFromAbsolutePath:(id)arg1 removingPathComponents:(unsigned int)arg2;
 + (void)_updatePersistentStoragePaths;
@@ -209,5 +211,13 @@
 - (void)webViewMainFrameDidFinishLoad:(id)arg1;
 - (void)webViewMainFrameDidFirstVisuallyNonEmptyLayoutInFrame:(id)arg1;
 - (void)webViewSupportedOrientationsUpdated:(id)arg1;
+
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (void)_accessibilityPauseSpeaking:(id)arg1;
+- (void)_accessibilitySpeak:(id)arg1;
+- (id)_accessibilitySpeakSelectionTextInputResponder;
 
 @end

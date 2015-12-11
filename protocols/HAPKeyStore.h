@@ -20,7 +20,7 @@
 - (BOOL)removeControllerKeyPairWithError:(id*)arg1;
 - (BOOL)saveKeyPair:(NSData *)arg1 username:(NSString *)arg2 syncable:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)savePublicKey:(NSData *)arg1 forAccessoryName:(NSString *)arg2 error:(id*)arg3;
-- (void)updateActiveControllerPairingIdentifier:(NSString *)arg1;
+- (BOOL)updateActiveControllerPairingIdentifier:(NSString *)arg1;
 - (BOOL)updateCurrentiCloudIdentifier:(NSString *)arg1 controllerPairingIdentifier:(NSString *)arg2 error:(id*)arg3;
 
 @optional

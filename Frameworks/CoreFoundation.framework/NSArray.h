@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSArray : NSObject <CKRecordValue, CSCoderEncoder, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
+@interface NSArray : NSObject <CKDParsedObject, CKRecordValue, CSCoderEncoder, NSCopying, NSFastEnumeration, NSMutableCopying, NSSecureCoding, PQLBindable>
 
 @property (nonatomic, readonly, retain) IMMessageItem *__imLastMessageItem;
 @property (nonatomic, readonly) NSDictionary *bw_builtInMicRouteDictionary;
@@ -264,6 +264,7 @@
 - (id)axFilterObjectsUsingBlock:(id /* block */)arg1;
 - (BOOL)axIsEqualToOrderedArray:(id)arg1 withPredicate:(id /* block */)arg2;
 - (id)axMapObjectsUsingBlock:(id /* block */)arg1;
+- (id)axSafeObjectAtIndex:(unsigned int)arg1;
 - (id)axUniqueArrayWithPredicate:(id /* block */)arg1;
 - (id)firstPath;
 
@@ -331,6 +332,7 @@
 // Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
 
 - (id)CKSortedForUpload;
+- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 

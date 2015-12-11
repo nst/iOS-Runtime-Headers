@@ -12,6 +12,11 @@
 @property (nonatomic, retain) NSString *publicCloudKitRecordName;
 @property (nonatomic, retain) NSUUID *uuid;
 
++ (id)currentPersonInContext:(id)arg1;
++ (void)initialize;
++ (id)personForDeviceCreatingIfNecessary:(id)arg1 context:(id)arg2;
++ (id)personWithUUIDCreatingIfNecessary:(id)arg1 context:(id)arg2;
+
 - (struct UIImage { Class x1; }*)icon;
 - (void)setUuid:(id)arg1;
 - (id)uuid;

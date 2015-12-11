@@ -5,9 +5,7 @@
 
 @required
 
-- (NSURL *)appURLForIndexerContext:(ICSearchIndexerContext *)arg1;
 - (NSString *)contentInfoText;
-- (NSNumber *)integerId;
 - (NSString *)noteAsPlainTextWithoutTitle;
 - (NSArray *)searchableContentKeyPaths;
 - (NSString *)title;

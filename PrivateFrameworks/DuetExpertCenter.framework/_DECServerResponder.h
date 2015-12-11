@@ -6,10 +6,14 @@
     _DECBackupHelper *_backupHelper;
     _DECFeedbackBuilder *_feedbackBuilder;
     <_DECFilter> *_predictionFilter;
+    _DECPredictionMap *_predictionsAwaitingFeedback;
     NSObject<OS_dispatch_queue> *_queue;
     <_DECRankBuilder> *_rankBuilder;
     NSMutableArray *_servers;
-    NSObject<OS_dispatch_queue> *_serversQueue;
+    struct _opaque_pthread_rwlock_t { 
+        long __sig; 
+        BOOL __opaque[124]; 
+    } _serversRWLock;
 }
 
 @property (nonatomic, retain) <_DECFilter> *predictionFilter;
@@ -24,6 +28,7 @@
 - (id)_validConsumers;
 - (id)_validExperts;
 - (void)addServer:(id)arg1;
+- (void)dealloc;
 - (id)init;
 - (void)initializeCaches;
 - (id)predictionFilter;
@@ -38,7 +43,7 @@
 - (void)setPredictionFilter:(id)arg1;
 - (void)setRankBuilder:(id)arg1;
 - (void)trainExperts;
-- (void)userAbandoned:(id)arg1 resultIdentifier:(id)arg2 metadata:(id)arg3 reply:(id /* block */)arg4;
-- (void)userEngaged:(id)arg1 resultIdentifier:(id)arg2 metadata:(id)arg3 reply:(id /* block */)arg4;
+- (void)userAbandoned:(id)arg1 result:(id)arg2 metadata:(id)arg3 reply:(id /* block */)arg4;
+- (void)userEngaged:(id)arg1 result:(id)arg2 metadata:(id)arg3 reply:(id /* block */)arg4;
 
 @end

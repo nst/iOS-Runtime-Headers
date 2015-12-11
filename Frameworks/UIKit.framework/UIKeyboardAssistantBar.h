@@ -45,6 +45,7 @@
 - (id)currentAssistantItem;
 - (void)dealloc;
 - (id)defaultAssistantItem;
+- (void)didMoveToWindow;
 - (void)dimKeys:(id)arg1;
 - (BOOL)disabledByPrediction;
 - (BOOL)enabled;

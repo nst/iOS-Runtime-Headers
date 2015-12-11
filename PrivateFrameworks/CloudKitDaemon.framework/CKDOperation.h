@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDOperation : NSOperation <CKDFlowControllable, CKDURLRequestMetricsDelegate> {
+@interface CKDOperation : NSOperation <CKDFlowControllable, CKDURLRequestAuthRetryDelegate, CKDURLRequestMetricsDelegate> {
     CKDOperationMetrics *_MMCSMetrics;
     unsigned long long _activityID;
     BOOL _allowsBackgroundNetworking;
@@ -86,9 +86,11 @@
 - (id)CKPropertiesDescription;
 - (id)MMCSMetrics;
 - (unsigned int)QOSClass;
+- (void)_acquirePowerAssertion;
 - (BOOL)_checkAppVersion;
 - (void)_combineMetricsWithOperation:(id)arg1;
 - (void)_continueOperationStart;
+- (void)_dropPowerAssertion;
 - (BOOL)_errorShouldImpactFlowControl:(id)arg1;
 - (void)_finishInternalOnCallbackQueueWithError:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
@@ -136,6 +138,8 @@
 - (BOOL)preferAnonymousRequests;
 - (id)proxy;
 - (id)request;
+- (void)requestDidBeginWaitingForUserAuth:(id)arg1;
+- (void)requestDidEndWaitingForUserAuth:(id)arg1;
 - (void)requestDidFinishWithMetrics:(id)arg1;
 - (id)requestUUIDs;
 - (id)sectionID;

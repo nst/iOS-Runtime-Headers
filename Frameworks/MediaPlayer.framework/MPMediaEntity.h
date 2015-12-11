@@ -52,9 +52,8 @@
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
-+ (id)_customPropertyHandlersCollection;
-+ (void)registerCustomProperty:(id)arg1 withValueHandler:(id /* block */)arg2;
-+ (void)registerSupportedCustomProperties;
++ (id)customPropertyHandlersCollection;
++ (void)registerSupportedCustomPropertiesWithHandlersCollection:(id)arg1;
 + (BOOL)supportsConcurrentLoadingOfEntityProperties;
 
 - (id)_valuesForRegularEntityProperties:(id)arg1;

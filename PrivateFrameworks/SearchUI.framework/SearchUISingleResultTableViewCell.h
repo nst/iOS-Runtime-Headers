@@ -53,6 +53,7 @@
 - (id)containerTrailingInset;
 - (void)defaultAction;
 - (id)initWithResult:(id)arg1 style:(unsigned int)arg2;
+- (void)layoutSubviews;
 - (struct CGSize { float x1; float x2; })maxThumbnailSize;
 - (id)result;
 - (void)setAccessoryContainer:(id)arg1;

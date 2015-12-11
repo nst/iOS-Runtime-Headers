@@ -6,6 +6,7 @@
     BOOL _autoDownloadAllowableForCellular;
     BOOL _disableAppDemotion;
     BOOL _disableCDLevel4;
+    BOOL _disableIntallTonight;
     BOOL _disableSiriVoiceDeletion;
     SUDocumentation *_documentation;
     BOOL _downloadAllowableForCellular;
@@ -29,6 +30,7 @@
 @property (nonatomic) BOOL autoDownloadAllowableForCellular;
 @property (getter=appDemotionDisabled, setter=_setDisableAppDemotion:, nonatomic) BOOL disableAppDemotion;
 @property (getter=cdLevel4Disabled, setter=_setDisableCDLevel4:, nonatomic) BOOL disableCDLevel4;
+@property (getter=installTonightDisabled, setter=_setDisableInstallTonight:, nonatomic) BOOL disableInstallTonight;
 @property (getter=siriVoiceDeletionDisabled, setter=_setDisableSiriVoiceDeletion:, nonatomic) BOOL disableSiriVoiceDeletion;
 @property (nonatomic, retain) SUDocumentation *documentation;
 @property (nonatomic) unsigned long long downloadSize;
@@ -54,6 +56,7 @@
 - (unsigned long long)_msuPrepareSize;
 - (void)_setDisableAppDemotion:(BOOL)arg1;
 - (void)_setDisableCDLevel4:(BOOL)arg1;
+- (void)_setDisableInstallTonight:(BOOL)arg1;
 - (void)_setDisableSiriVoiceDeletion:(BOOL)arg1;
 - (void)_setMsuPrepareSize:(unsigned long long)arg1;
 - (void)_setStreamingZipCapable:(BOOL)arg1;
@@ -72,6 +75,7 @@
 - (id)humanReadableUpdateName;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)installTonightDisabled;
 - (unsigned long long)installationSize;
 - (BOOL)isDownloadable;
 - (BOOL)isDownloadableOverCellular;

@@ -18,6 +18,7 @@
     double _period;
     struct CGImage { } *_photo;
     double _photoTime;
+    BOOL _preparesForVitalityOnLoad;
     BOOL _reversesMoreVideoFramesInMemory;
     BOOL _shouldLoadCrossfadeContent;
     int _status;
@@ -41,6 +42,7 @@
 @property (setter=_setPeriod:, nonatomic) double period;
 @property (setter=_setPhoto:, nonatomic, retain) struct CGImage { }*photo;
 @property (setter=_setphotoTime:, nonatomic) double photoTime;
+@property (nonatomic) BOOL preparesForVitalityOnLoad;
 @property (nonatomic) BOOL reversesMoreVideoFramesInMemory;
 @property (nonatomic) BOOL shouldLoadCrossfadeContent;
 @property (nonatomic) int status;
@@ -88,11 +90,13 @@
 - (double)period;
 - (struct CGImage { }*)photo;
 - (double)photoTime;
+- (BOOL)preparesForVitalityOnLoad;
 - (void)registerObserver:(id)arg1;
 - (void)resetAVObjects;
 - (BOOL)reversesMoreVideoFramesInMemory;
 - (void)setAggressivelyCacheVideoFrames:(BOOL)arg1;
 - (void)setLoadingTarget:(int)arg1;
+- (void)setPreparesForVitalityOnLoad:(BOOL)arg1;
 - (void)setReversesMoreVideoFramesInMemory:(BOOL)arg1;
 - (void)setShouldLoadCrossfadeContent:(BOOL)arg1;
 - (BOOL)shouldLoadCrossfadeContent;

@@ -2,8 +2,12 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityLockupContainerCollectionViewCell : UICollectionViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate, MusicEntityVerticalLockupViewDelegate, MusicEntityViewPlaybackStatusObserving> {
+@interface MusicEntityLockupContainerCollectionViewCell : UICollectionViewCell <MusicEntityContentDescriptorViewConfiguring, MusicEntityHorizontalLockupViewDelegate, MusicEntityVerticalLockupViewDelegate, MusicEntityViewDownloadInformationObserving, MusicEntityViewPlaybackStatusObserving> {
     UITraitCollection *_cachedTraitCollection;
+    struct MusicEntityDownloadInformation { 
+        int downloadStatus; 
+        float downloadProgress; 
+    } _downloadInformation;
     BOOL _entityDisabled;
     UIColor *_hairlineColor;
     UIView *_hairlineView;
@@ -42,6 +46,7 @@
 - (void)layoutSubviews;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setContentDescriptor:(id)arg1;
+- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { int x1; float x2; })arg1;
 - (void)setEntityDisabled:(BOOL)arg1;
 - (void)setEntityValueProvider:(id)arg1;
 - (void)setHairlineColor:(id)arg1;

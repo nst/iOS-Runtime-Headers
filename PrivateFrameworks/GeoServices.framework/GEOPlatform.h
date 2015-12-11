@@ -4,6 +4,7 @@
 
 @interface GEOPlatform : NSObject
 
++ (void)setIsRunningInGeod:(BOOL)arg1;
 + (id)sharedPlatform;
 
 - (BOOL)_deviceSupportsNavigation;

@@ -77,6 +77,7 @@
     float _unfocusedShadowRadius;
     float _unfocusedShadowVerticalOffset;
     BOOL _useShadowImage;
+    _UIFloatingContentSpecialAnimatingView *_visualEffectContainerView;
 }
 
 @property (nonatomic) BOOL _disableOutsetShadowPath;
@@ -109,6 +110,7 @@
 @property (nonatomic) float unfocusedShadowRadius;
 @property (nonatomic) float unfocusedShadowVerticalOffset;
 @property (nonatomic) BOOL useShadowImage;
+@property (nonatomic, readonly) UIView *visualEffectContainerView;
 
 + (id)_defaultFocusAnimationConfiguration;
 + (Class)layerClass;
@@ -206,5 +208,6 @@
 - (float)unfocusedShadowRadius;
 - (float)unfocusedShadowVerticalOffset;
 - (BOOL)useShadowImage;
+- (id)visualEffectContainerView;
 
 @end

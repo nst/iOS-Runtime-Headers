@@ -16,6 +16,7 @@
     CKContainer *_container;
     id /* block */ _controllerKeyAvailableNotificationHandler;
     NSObject<OS_dispatch_source> *_controllerKeyPollTimer;
+    NSMutableArray *_currentBackoffTimerValuesInMinutes;
     CKDatabase *_database;
     BOOL _decryptionFailed;
     id /* block */ _fetchCompletionHandler;
@@ -53,6 +54,7 @@
 @property (nonatomic, retain) CKContainer *container;
 @property (nonatomic, copy) id /* block */ controllerKeyAvailableNotificationHandler;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *controllerKeyPollTimer;
+@property (nonatomic, retain) NSMutableArray *currentBackoffTimerValuesInMinutes;
 @property (nonatomic, retain) CKDatabase *database;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) BOOL decryptionFailed;
@@ -106,6 +108,8 @@
 - (void)_resetMetadataRecordState;
 - (void)_setupSubscription;
 - (void)_startControllerKeyPollTimer;
+- (void)_startControllerKeyPollTimerWithBackoff;
+- (void)_startControllerKeyPollTimerWithValue:(long long)arg1;
 - (void)_startFetchPollTimer;
 - (void)_startFetchRetryTimer;
 - (void)_stopControllerKeyPollTimer;
@@ -130,6 +134,7 @@
 - (id)container;
 - (id /* block */)controllerKeyAvailableNotificationHandler;
 - (id)controllerKeyPollTimer;
+- (id)currentBackoffTimerValuesInMinutes;
 - (id)database;
 - (void)dealloc;
 - (BOOL)decryptionFailed;
@@ -173,6 +178,7 @@
 - (void)setControllerKeyAvailableNotificationBlock:(id /* block */)arg1;
 - (void)setControllerKeyAvailableNotificationHandler:(id /* block */)arg1;
 - (void)setControllerKeyPollTimer:(id)arg1;
+- (void)setCurrentBackoffTimerValuesInMinutes:(id)arg1;
 - (void)setDataAvailableFromCloudCompletionBlock:(id /* block */)arg1;
 - (void)setDatabase:(id)arg1;
 - (void)setDecryptionFailed:(BOOL)arg1;
@@ -197,6 +203,7 @@
 - (void)setUuid:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)updateAccountStatusChanged:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateServerTokenStatusOnCloudFilter;
 - (void)uploadHomeData:(id)arg1 metadata:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)uuid;
 - (id)workQueue;

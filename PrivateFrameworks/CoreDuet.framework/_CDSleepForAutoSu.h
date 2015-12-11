@@ -14,7 +14,7 @@
 - (id)getUnlockAndSoftwareUpdateTimes;
 - (id)makeDictionaryForEventStreamWhenPredictionTemporarilyUnavailable:(id)arg1;
 - (id)predictForDate:(id)arg1 fromState:(id)arg2;
-- (id)proposeTimesFromRelativeOffsetsForDate:(id)arg1 lastUnlock:(int)arg2 suStart:(int)arg3 suEnd:(int)arg4;
+- (id)proposeTimesFromRelativeOffsetsForDate:(id)arg1 lastUnlock:(int)arg2 suStart:(int)arg3 suEnd:(int)arg4 unrestrictedSleepEnd:(int)arg5;
 - (id)retrieveSleepProbabilities:(id)arg1;
 - (void)setAutoSuConfig:(id)arg1;
 

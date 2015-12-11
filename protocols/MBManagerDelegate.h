@@ -9,6 +9,7 @@
 - (void)manager:(MBManager *)arg1 didFailRestoreWithError:(NSError *)arg2;
 - (void)manager:(MBManager *)arg1 didFailScanWithError:(NSError *)arg2;
 - (void)manager:(MBManager *)arg1 didFailVerificationWithError:(NSError *)arg2;
+- (void)manager:(MBManager *)arg1 didScanBundleWithID:(NSString *)arg2 bytesUsed:(unsigned long long)arg3;
 - (void)manager:(MBManager *)arg1 didSetBackupEnabled:(BOOL)arg2;
 - (void)manager:(MBManager *)arg1 didUpdateProgress:(float)arg2 estimatedTimeRemaining:(unsigned int)arg3;
 - (void)managerDidCancelRestore:(MBManager *)arg1;

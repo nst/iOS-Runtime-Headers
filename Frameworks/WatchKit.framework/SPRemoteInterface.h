@@ -6,7 +6,7 @@
     NSMutableArray *_activeComplicationsConnections;
     id /* block */ _addPassesCompletion;
     NSString *_appClientIdentifier;
-    id /* block */ _audioRecordingControllerCompletion;
+    id /* block */ _audioRecorderControllerCompletion;
     <SPRemoteInterfaceDataDelegateProtocol> *_dataDelegate;
     NSMutableDictionary *_interfaceControllers;
     NSObject<OS_dispatch_queue> *_interfaceControllersAccessQueue;
@@ -24,7 +24,7 @@
 @property (nonatomic, retain) NSMutableArray *activeComplicationsConnections;
 @property (nonatomic, copy) id /* block */ addPassesCompletion;
 @property (nonatomic, retain) NSString *appClientIdentifier;
-@property (nonatomic, copy) id /* block */ audioRecordingControllerCompletion;
+@property (nonatomic, copy) id /* block */ audioRecorderControllerCompletion;
 @property (nonatomic, retain) <SPRemoteInterfaceDataDelegateProtocol> *dataDelegate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -110,7 +110,7 @@
 - (void)applicationDidTerminate:(id)arg1;
 - (void)applicationIsStillActive;
 - (void)applicationWillResignActive:(id)arg1;
-- (id /* block */)audioRecordingControllerCompletion;
+- (id /* block */)audioRecorderControllerCompletion;
 - (id)complicationDefaultImagesAssetName;
 - (void)controller:(id)arg1 presentInterfaceController:(id)arg2 initializationContextID:(id)arg3;
 - (void)controller:(id)arg1 presentInterfaceControllers:(id)arg2 initializationContextIDs:(id)arg3;
@@ -129,6 +129,8 @@
 - (void)dataInterfaceWillResignActive:(id)arg1;
 - (void)dealloc;
 - (void)didFinishHandlingActivity:(id)arg1;
+- (void)extensionDidBeginNotificationUICreation;
+- (void)extensionDidEndNotificationUICreation;
 - (void)fetchNotificationForNotificationID:(id)arg1 completion:(id /* block */)arg2;
 - (void)getComplicationData:(id)arg1;
 - (void)handlePlist:(id)arg1 fromIdentifier:(id)arg2;
@@ -138,6 +140,7 @@
 - (id)interfaceControllersAccessQueue;
 - (id)interfaceControllersOwners;
 - (id)interfaceCreationContextForID:(id)arg1;
+- (void)layoutDirection:(int)arg1;
 - (id /* block */)mediaPlayerControllerCompletion;
 - (id)missingInterfaceControllers;
 - (void)movePageControllerAtIndex:(int)arg1 toIndex:(int)arg2;
@@ -166,7 +169,7 @@
 - (void)setActiveComplicationsConnections:(id)arg1;
 - (void)setAddPassesCompletion:(id /* block */)arg1;
 - (void)setAppClientIdentifier:(id)arg1;
-- (void)setAudioRecordingControllerCompletion:(id /* block */)arg1;
+- (void)setAudioRecorderControllerCompletion:(id /* block */)arg1;
 - (void)setDataDelegate:(id)arg1;
 - (void)setInterfaceControllers:(id)arg1;
 - (void)setInterfaceControllersAccessQueue:(id)arg1;

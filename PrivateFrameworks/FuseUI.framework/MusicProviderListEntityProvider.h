@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)_entityProviderDidInvalidateNotification:(id)arg1;
 - (void)_getEntityProvider:(id*)arg1 forIndexBarEntryIndex:(unsigned int)arg2 returningLocalIndexBarEntryIndex:(unsigned int*)arg3;
+- (id)additionalPropertiesToFetchSynchronouslyForEntityValueContext:(id)arg1;
 - (id)clientContext;
 - (void)configureEntityValueContextOutput:(id)arg1 forIndexPath:(id)arg2;
 - (void)configureEntityValueContextOutputForAnyIndexPath:(id)arg1;
@@ -35,7 +36,7 @@
 - (unsigned int)numberOfSections;
 - (unsigned int)sectionForSectionIndexBarEntryAtIndex:(unsigned int)arg1;
 - (void)setClientContext:(id)arg1;
-- (void)setEditing:(BOOL)arg1 returningInsertedSectionIndexSet:(id*)arg2 deletedSectionIndexSet:(id*)arg3;
+- (BOOL)setEditing:(BOOL)arg1;
 - (void)setEntityProviderList:(id)arg1;
 
 @end

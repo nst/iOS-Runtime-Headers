@@ -178,7 +178,8 @@
         unsigned int firstResponderKeyboardAvoidanceDisabled : 1; 
         unsigned int hasGradientMaskView : 1; 
         unsigned int interruptingDeceleration : 1; 
-        unsigned int delegateScrollViewAdjustedCentroid : 1; 
+        unsigned int delegateScrollViewAdjustedOffset : 1; 
+        unsigned int disableUpdateOffsetOnCancelTracking : 1; 
     } _scrollViewFlags;
     id *_shadows;
     double _startOffsetX;
@@ -202,6 +203,7 @@
 @property (setter=_setAutomaticContentConstraints:, nonatomic, copy) NSArray *_automaticContentConstraints;
 @property (nonatomic, readonly, retain) NSISVariable *_contentHeightVariable;
 @property (nonatomic, readonly, retain) NSISVariable *_contentWidthVariable;
+@property (setter=_setDisableUpdateOffsetOnCancelTracking:, nonatomic) BOOL _disableUpdateOffsetOnCancelTracking;
 @property (nonatomic, readonly) _UIStaticScrollBar *_staticScrollBar;
 @property (setter=_setUseContentDimensionVariablesForConstraintLowering:, nonatomic) BOOL _useContentDimensionVariablesForConstraintLowering;
 @property (setter=_setWantsConstrainedContentSize:, nonatomic) BOOL _wantsConstrainedContentSize;
@@ -276,12 +278,12 @@
 - (void)_adjustContentOffsetIfNecessary;
 - (void)_adjustContentSizeForView:(id)arg1 atScale:(float)arg2;
 - (void)_adjustCrossingConstraintsIfNecessaryForOldContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (struct CGPoint { float x1; float x2; })_adjustFocusContentOffset:(struct CGPoint { float x1; float x2; })arg1 forView:(id)arg2;
 - (void)_adjustForAutomaticKeyboardInfo:(id)arg1 animated:(BOOL)arg2 lastAdjustment:(float*)arg3;
 - (void)_adjustScrollerIndicators:(BOOL)arg1 alwaysShowingThem:(BOOL)arg2;
 - (void)_adjustShadowsIfNecessary;
 - (void)_adjustShadowsIfNecessaryForOffset:(float)arg1;
 - (void)_adjustStartOffsetForGrabbedBouncingScrollView;
-- (struct CGPoint { float x1; float x2; })_adjustedCentroidForCentroid:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })_adjustedContentOffsetForContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_adjustedHorizontalOffsetPinnedToScrollableBounds:(float)arg1;
 - (float)_adjustedVerticalOffsetPinnedToScrollableBounds:(float)arg1;
@@ -318,6 +320,7 @@
 - (void)_didChangeFromIdiom:(int)arg1 onScreen:(id)arg2 traverseHierarchy:(BOOL)arg3;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
 - (void)_didRemoveDependentConstraint:(id)arg1;
+- (BOOL)_disableUpdateOffsetOnCancelTracking;
 - (void)_enableOnlyGestureRecognizersForCurrentTouchLevel;
 - (void)_endPanNormal:(BOOL)arg1;
 - (void)_ensureViewsAreLoadedInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -428,6 +431,7 @@
 - (void)_setContentOffsetPinned:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)_setContentOffsetRoundingEnabled:(BOOL)arg1;
 - (void)_setContentScrollInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)_setDisableUpdateOffsetOnCancelTracking:(BOOL)arg1;
 - (void)_setFirstPageOffset:(struct UIOffset { float x1; float x2; })arg1;
 - (void)_setFirstResponderKeyboardAvoidanceEnabled:(BOOL)arg1;
 - (void)_setForwardsTouchesUpResponderChain:(BOOL)arg1;
@@ -672,6 +676,7 @@
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 
+- (void)_swizzled_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
 - (float)akMagnification;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit

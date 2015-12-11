@@ -31,7 +31,7 @@
     int _preferredStyle;
     UIPreviewInteractionController *_previewInteractionController;
     int _resolvedStyle;
-    UITapGestureRecognizer *_selectGestureRecognizer;
+    _UIAlertControllerSelectGestureRecognizer *_selectGestureRecognizer;
     BOOL _shouldEnsureContentControllerViewIsVisibleOnAppearance;
     BOOL _shouldInformViewOfAddedContentViewController;
     NSObject<UIAlertControllerVisualStyleProviding> *_styleProvider;
@@ -47,6 +47,7 @@
 @property (setter=_setCompatibilityPopoverController:, nonatomic) UIPopoverController *_compatibilityPopoverController;
 @property (setter=_setDefaultAlertAction:, nonatomic) UIAlertAction *_defaultAlertAction;
 @property (readonly) UIView *_dimmingView;
+@property (readonly) UIAlertAction *_focusedAction;
 @property (readonly) UIView *_foregroundView;
 @property (getter=_isHidden, setter=_setHidden:, nonatomic) BOOL _hidden;
 @property (setter=_setPresentationSourceRepresentationView:, nonatomic, retain) UIView *_presentationSourceRepresentationView;
@@ -134,6 +135,7 @@
 - (float)_effectAlpha;
 - (void)_fireOffActionOnTargetIfValidForAction:(id)arg1;
 - (void)_flipFrameForShimDismissalIfNecessary;
+- (id)_focusedAction;
 - (id)_foregroundView;
 - (void)_getRotationContentSettings:(struct { BOOL x1; BOOL x2; BOOL x3; BOOL x4; BOOL x5; float x6; int x7; }*)arg1;
 - (void)_handleKeyCommand:(id)arg1;

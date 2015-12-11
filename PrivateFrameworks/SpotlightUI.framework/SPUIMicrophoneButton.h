@@ -2,28 +2,10 @@
    Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
  */
 
-@interface SPUIMicrophoneButton : UIButton {
-    CALayer *_bottomLayer;
-    BOOL _hasInitialized;
-    UIImage *_image;
-    CALayer *_middleLayer;
-    UIImageView *_overlayView;
-}
+@interface SPUIMicrophoneButton : UIButton
 
-@property BOOL hasInitialized;
-@property (retain) UIImage *image;
-@property (retain) UIImageView *overlayView;
-
-- (void).cxx_destruct;
-- (BOOL)hasInitialized;
-- (id)image;
+- (void)addTintingLayerWithColor:(id)arg1 filter:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)overlayView;
-- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (void)setHasInitialized:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
-- (void)setImage:(id)arg1;
-- (void)setOverlayView:(id)arg1;
-- (void)setup;
 
 @end

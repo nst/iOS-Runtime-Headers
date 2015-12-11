@@ -22,8 +22,10 @@
 - (double)confidence;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithLocationOfInterest:(id)arg1 confidence:(double)arg2 nextEntryTime:(id)arg3 modeOfTransportation:(int)arg4 source:(id)arg5;
+- (BOOL)isEqual:(id)arg1;
 - (id)locationOfInterest;
 - (int)modeOfTransportation;
 - (id)nextEntryTime;

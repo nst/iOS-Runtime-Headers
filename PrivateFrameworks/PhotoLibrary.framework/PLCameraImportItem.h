@@ -28,6 +28,8 @@
 @property (nonatomic, readonly, retain) UIImage *thumbnail;
 @property (nonatomic, retain) NSData *thumbnailData;
 
+// Image: /System/Library/PrivateFrameworks/PhotoLibrary.framework/PhotoLibrary
+
 - (void)_addRepresentation:(id)arg1;
 - (id)_fileExtensionForTypeWithSelector:(SEL)arg1;
 - (BOOL)_isTypeWithSelector:(SEL)arg1;
@@ -84,5 +86,9 @@
 - (id)thumbnail;
 - (id)thumbnailData;
 - (int)thumbnailState;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
+- (id)pu_extenstion;
 
 @end

@@ -52,6 +52,7 @@
 
 - (void).cxx_destruct;
 - (id)_displayName;
+- (void)_notifyOfNewIncomingClientMessage;
 - (void)activate;
 - (BOOL)activated;
 - (unsigned int)activeMessageCount;

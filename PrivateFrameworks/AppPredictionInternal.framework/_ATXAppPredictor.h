@@ -23,6 +23,7 @@
 - (id)init;
 - (id)initWithAsset:(id)arg1 withDayZeroAsset:(id)arg2;
 - (void)logInputsForPredictionItem:(struct { char *x1; double x2[17]; double x3; })arg1 withOutcome:(unsigned int)arg2;
+- (id)oldPathsToRestore;
 - (id)pathsToBackUp;
 - (id)predictWithLimit:(unsigned int)arg1;
 - (double)predictionScoreForItem:(const struct { char *x1; double x2[17]; double x3; }*)arg1;

@@ -10,18 +10,24 @@
 }
 
 @property (nonatomic, readonly) CDPContext *context;
+@property (nonatomic, retain) CDPDaemonConnection *daemonConn;
 @property (nonatomic, retain) <CDPStateUIProvider> *uiProvider;
+@property (nonatomic, retain) CDPStateUIProviderProxy *uiProviderProxy;
 
 - (void).cxx_destruct;
 - (void)_handleRejoinURLActionWithInfo:(id)arg1;
 - (id)context;
+- (id)daemonConn;
 - (void)finishOfflineLocalSecretChangeWithCompletion:(id /* block */)arg1;
 - (void)handleCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
 - (void)handleURLActionWithInfo:(id)arg1;
 - (id)initWithContext:(id)arg1;
 - (void)localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (void)repairCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
+- (void)setDaemonConn:(id)arg1;
 - (void)setUiProvider:(id)arg1;
+- (void)setUiProviderProxy:(id)arg1;
 - (id)uiProvider;
+- (id)uiProviderProxy;
 
 @end

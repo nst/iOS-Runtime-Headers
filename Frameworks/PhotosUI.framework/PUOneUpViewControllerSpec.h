@@ -15,7 +15,6 @@
         float width; 
         float height; 
     } _loadingIndicatorSize;
-    float _maximumInitialZoomToFillScale;
     float _maximumToolbarHeight;
     struct CGSize { 
         float width; 
@@ -36,6 +35,7 @@
     BOOL _shouldUseCompactTitleView;
     BOOL _shouldUseContentGuideInsets;
     BOOL _shouldUseUserTransformTiles;
+    int _tileInitialContentMode;
 }
 
 @property (nonatomic, retain) UIColor *backgroundColorOverride;
@@ -45,7 +45,6 @@
 @property (setter=setPresentedForPreview:, nonatomic) BOOL isPresentedForPreview;
 @property (setter=setShowingPlayPauseButtonInBars:, nonatomic) BOOL isShowingPlayPauseButtonInBars;
 @property (nonatomic) struct CGSize { float x1; float x2; } loadingIndicatorSize;
-@property (nonatomic) float maximumInitialZoomToFillScale;
 @property (nonatomic) float maximumToolbarHeight;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } playButtonSize;
 @property (nonatomic) struct CGSize { float x1; float x2; } progressIndicatorSize;
@@ -64,12 +63,12 @@
 @property (nonatomic) BOOL shouldUseCompactTitleView;
 @property (nonatomic) BOOL shouldUseContentGuideInsets;
 @property (nonatomic) BOOL shouldUseUserTransformTiles;
+@property (nonatomic) int tileInitialContentMode;
 
 - (void).cxx_destruct;
 - (void)_setBackgroundColorOverride:(id)arg1;
 - (void)_setBufferingIndicatorSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setLoadingIndicatorSize:(struct CGSize { float x1; float x2; })arg1;
-- (void)_setMaximumInitialZoomToFillScale:(float)arg1;
 - (void)_setMaximumToolbarHeight:(float)arg1;
 - (void)_setProgressIndicatorSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setShouldAutoplayOnAppear:(BOOL)arg1;
@@ -87,6 +86,7 @@
 - (void)_setShouldUseCompactTitleView:(BOOL)arg1;
 - (void)_setShouldUseContentGuideInsets:(BOOL)arg1;
 - (void)_setShouldUseUserTransformTiles:(BOOL)arg1;
+- (void)_setTileInitialContentMode:(int)arg1;
 - (id)backgroundColorOverride;
 - (struct CGSize { float x1; float x2; })bufferingIndicatorSize;
 - (id)currentChange;
@@ -94,7 +94,6 @@
 - (BOOL)isPresentedForPreview;
 - (BOOL)isShowingPlayPauseButtonInBars;
 - (struct CGSize { float x1; float x2; })loadingIndicatorSize;
-- (float)maximumInitialZoomToFillScale;
 - (float)maximumToolbarHeight;
 - (id)newSpecChange;
 - (struct CGSize { float x1; float x2; })playButtonSize;
@@ -117,6 +116,7 @@
 - (BOOL)shouldUseCompactTitleView;
 - (BOOL)shouldUseContentGuideInsets;
 - (BOOL)shouldUseUserTransformTiles;
+- (int)tileInitialContentMode;
 - (void)updateIfNeeded;
 
 @end

@@ -15,6 +15,7 @@
     BOOL _hasCustomDesiredAccuracy;
     CLHeading *_heading;
     NSHashTable *_headingObservers;
+    double _headingUpdateTime;
     BOOL _isLastLocationStale;
     BOOL _isReceivingAccurateLocations;
     CLLocation *_lastGoodLocation;
@@ -43,6 +44,7 @@
     NSLock *_observersLock;
     NSMutableArray *_recentLocationUpdateIntervals;
     BOOL _suspended;
+    CLHeading *_throttledHeading;
     BOOL _trackingHeading;
     BOOL _trackingLocation;
     BOOL _useCourseForHeading;
@@ -72,6 +74,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) CLHeading *heading;
 @property (nonatomic) int headingOrientation;
+@property (nonatomic, readonly) double headingUpdateTimeInterval;
 @property (nonatomic, readonly) BOOL isHeadingServicesAvailable;
 @property (nonatomic, readonly) BOOL isLastLocationStale;
 @property (nonatomic, readonly) BOOL isLocationServicesApproved;
@@ -84,6 +87,7 @@
 @property (nonatomic, readonly) CLLocation *lastLocation;
 @property (getter=wasLastLocationPushed, nonatomic, readonly) BOOL lastLocationPushed;
 @property (nonatomic, readonly) int lastLocationSource;
+@property (nonatomic, readonly) CLLocation *lastProviderLocation;
 @property (nonatomic, copy) id /* block */ locationCorrector;
 @property (nonatomic, readonly) NSError *locationError;
 @property (nonatomic, retain) <MKLocationProvider> *locationProvider;
@@ -97,6 +101,7 @@
 @property (nonatomic, readonly) double navigationCourse;
 @property (nonatomic, copy) id /* block */ networkActivity;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) CLHeading *throttledHeading;
 @property (nonatomic, readonly) double timeScale;
 @property (nonatomic) BOOL useCourseForHeading;
 @property (nonatomic, readonly) double vehicleHeadingOrCourse;
@@ -148,6 +153,7 @@
 - (BOOL)hasLocation;
 - (id)heading;
 - (int)headingOrientation;
+- (double)headingUpdateTimeInterval;
 - (id)init;
 - (BOOL)isEnabled;
 - (BOOL)isHeadingServicesAvailable;
@@ -164,6 +170,7 @@
 - (id)lastGoodLocation;
 - (id)lastLocation;
 - (int)lastLocationSource;
+- (id)lastProviderLocation;
 - (void)listenForLocationUpdates:(id)arg1;
 - (id /* block */)locationCorrector;
 - (id)locationError;
@@ -214,6 +221,7 @@
 - (void)setMatchInfoEnabled:(BOOL)arg1;
 - (void)setMinimumLocationUpdateInterval:(double)arg1;
 - (void)setNetworkActivity:(id /* block */)arg1;
+- (void)setThrottledHeading:(id)arg1;
 - (void)setUseCourseForHeading:(BOOL)arg1;
 - (BOOL)shouldCoalesceUpdates;
 - (BOOL)shouldStartCoalescingLocation:(id)arg1;
@@ -230,6 +238,7 @@
 - (void)stopLocationUpdateWithObserver:(id)arg1;
 - (void)stopVehicleHeadingUpdate;
 - (void)stopVehicleSpeedUpdate;
+- (id)throttledHeading;
 - (double)timeScale;
 - (BOOL)useCourseForHeading;
 - (double)vehicleHeadingOrCourse;

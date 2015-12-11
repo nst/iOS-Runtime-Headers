@@ -3,6 +3,7 @@
  */
 
 @interface CKDJSONResponseBodyParser : NSObject <CKDResponseBodyParser> {
+    id /* block */ _logParsedObjectBlock;
     id /* block */ _objectParsedBlock;
     NSObject<OS_dispatch_queue> *_parseQueue;
     NSMutableData *_parserData;
@@ -12,6 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ logParsedObjectBlock;
 @property (nonatomic, copy) id /* block */ objectParsedBlock;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *parseQueue;
 @property (nonatomic, retain) NSMutableData *parserData;
@@ -21,11 +23,13 @@
 - (void).cxx_destruct;
 - (void)finishWithCompletion:(id /* block */)arg1;
 - (id)init;
+- (id /* block */)logParsedObjectBlock;
 - (id /* block */)objectParsedBlock;
 - (id)parseQueue;
 - (id)parserData;
 - (id)parserError;
 - (void)processData:(id)arg1;
+- (void)setLogParsedObjectBlock:(id /* block */)arg1;
 - (void)setObjectParsedBlock:(id /* block */)arg1;
 - (void)setParseQueue:(id)arg1;
 - (void)setParserData:(id)arg1;

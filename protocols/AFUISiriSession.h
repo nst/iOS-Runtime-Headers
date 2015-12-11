@@ -15,6 +15,7 @@
 - (void)preheat;
 - (void)recordRequestMetricEvent:(NSString *)arg1 withTimestamp:(double)arg2;
 - (void)recordUIMetrics:(AFMetrics *)arg1;
+- (void)requestDidPresentViewForErrorCommand:(SABaseClientBoundCommand *)arg1;
 - (void)requestDidPresentViewForUICommand:(SABaseClientBoundCommand *)arg1;
 - (void)resetContextTypes:(int)arg1;
 - (void)resultDidChangeForAceCommand:(AceObject<SAAceCommand> *)arg1;

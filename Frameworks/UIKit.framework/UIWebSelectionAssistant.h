@@ -55,7 +55,7 @@
 - (void)rangedMagnifierWithState:(int)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)resignedFirstResponder;
 - (void)scaleChanged;
-- (void)scrollSelectionToVisible;
+- (void)scrollSelectionToVisible:(BOOL)arg1;
 - (id)scrollView;
 - (id)selection;
 - (void)selectionChanged;
@@ -67,6 +67,7 @@
 - (void)setLongPressGestureRecognizer:(id)arg1;
 - (void)setSelectionView:(id)arg1;
 - (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toBegin:(BOOL)arg3;
+- (void)showSelectionCommands;
 - (void)tap:(id)arg1;
 - (id)taskQueue;
 - (id)textSelectionController;

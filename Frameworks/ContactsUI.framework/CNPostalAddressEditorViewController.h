@@ -5,9 +5,11 @@
 @interface CNPostalAddressEditorViewController : UITableViewController <CNPresenterDelegate, CNPropertyCellDelegate> {
     CNMutableContact *_contact;
     UIViewController *_currentPresentedViewController;
+    BOOL _editNames;
     CNCardPropertyGroup *_propertyGroup;
     NSMutableArray *_propertyItems;
     NSString *_propertyKey;
+    BOOL _showDistrictField;
 }
 
 @property (retain) UIViewController *currentPresentedViewController;
@@ -25,10 +27,12 @@
 - (void)_startEditingFirstCell;
 - (void)cancel:(id)arg1;
 - (id)currentPresentedViewController;
+- (void)dealloc;
 - (id)defaultValueForPropertyCell:(id)arg1;
 - (void)done:(id)arg1;
 - (id)initWithContact:(id)arg1 propertyKey:(id)arg2 editNames:(BOOL)arg3;
 - (BOOL)isPresentingModalViewController;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewLabel:(id)arg3;
 - (void)propertyCell:(id)arg1 didUpdateItem:(id)arg2 withNewValue:(id)arg3;
 - (void)propertyCell:(id)arg1 performActionForItem:(id)arg2 withTransportType:(int)arg3;

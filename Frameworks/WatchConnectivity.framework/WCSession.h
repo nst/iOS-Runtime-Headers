@@ -172,6 +172,7 @@
 - (void)xpcManager:(id)arg1 handleSessionStateChanged:(id)arg2 forceReachableChanged:(BOOL)arg3;
 - (void)xpcManager:(id)arg1 handleUserInfoTransfer:(id)arg2;
 - (void)xpcManager:(id)arg1 handleUserInfoTransferFinishedWithIdentifier:(id)arg2 error:(id)arg3;
+- (void)xpcManagerConnectionInterrupted:(id)arg1;
 - (void)xpcManagerHandleMessageSendingAllowed:(id)arg1;
 
 @end

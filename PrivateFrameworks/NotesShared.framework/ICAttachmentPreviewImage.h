@@ -18,16 +18,23 @@
 @property (nonatomic) BOOL versionOutOfDate;
 @property (nonatomic) double width;
 
++ (id)allAttachmentPreviewImagesInContext:(id)arg1;
 + (id)allCloudObjects;
++ (id)attachmentPreviewImageWithIdentifier:(id)arg1 inContext:(id)arg2;
++ (id)attachmentPreviewImagesMatchingPredicate:(id)arg1 inContext:(id)arg2;
++ (void)deleteStrandedAttachmentPreviewImagesInContext:(id)arg1;
 + (id)existingCloudObjectForRecordID:(id)arg1;
 + (id)fileQueueGroup;
 + (id)identifierForContentIdentifier:(id)arg1 scale:(float)arg2 width:(float)arg3 height:(float)arg4;
 + (id)imageCache;
++ (id)newAttachmentPreviewImageInContext:(id)arg1;
 + (id)newCloudObjectForRecord:(id)arg1;
 + (struct UIImage { Class x1; }*)orientedImage:(struct UIImage { Class x1; }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 background:(int)arg3 backgroundTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg4;
 + (id)previewImageDirectoryURL;
++ (void)purgeAllAttachmentPreviewImagesInContext:(id)arg1;
 + (void)purgeAllPreviewImages;
 + (id)recordType;
++ (id)visibleAttachmentPreviewImagesInContext:(id)arg1;
 + (void)waitUntilAllFileWritesAreFinished;
 
 - (void).cxx_destruct;

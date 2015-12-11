@@ -23,7 +23,7 @@
 @property (nonatomic) BOOL shouldCrashOnError;
 @property (nonatomic) BOOL shouldLogToConsole;
 @property (nonatomic) BOOL shouldReportToServer;
-@property (nonatomic, retain) <AXValidationReportingServices> *validateionReportingServices;
+@property (nonatomic, retain) <AXValidationReportingServices> *validationReportingServices;
 @property (nonatomic, copy) NSString *validationTargetName;
 
 + (id)sharedInstance;
@@ -79,6 +79,7 @@
 - (void)sendValidateExceptionForClass:(id)arg1 isKindOfClass:(id)arg2 errorMessage:(id)arg3 overrideProcessName:(id)arg4;
 - (void)sendValidateExceptionForProtocol:(id)arg1 hasMethod:(id)arg2 errorMessage:(id)arg3 overrideProcessName:(id)arg4;
 - (void)sendValidateExceptionForProtocol:(id)arg1 hasProperty:(id)arg2 errorMessage:(id)arg3 overrideProcessName:(id)arg4;
+- (void)sendValidationSuccessForProcessName:(id)arg1;
 - (void)setConsoleErrorMessages:(id)arg1;
 - (void)setDebugBuild:(BOOL)arg1;
 - (void)setForceDoNotReport:(BOOL)arg1;
@@ -87,7 +88,7 @@
 - (void)setShouldCrashOnError:(BOOL)arg1;
 - (void)setShouldLogToConsole:(BOOL)arg1;
 - (void)setShouldReportToServer:(BOOL)arg1;
-- (void)setValidateionReportingServices:(id)arg1;
+- (void)setValidationReportingServices:(id)arg1;
 - (void)setValidationTargetName:(id)arg1;
 - (BOOL)shouldCrashOnError;
 - (BOOL)shouldLogToConsole;
@@ -109,7 +110,7 @@
 - (BOOL)validateProtocol:(id)arg1 hasProperty:(id)arg2;
 - (BOOL)validateProtocol:(id)arg1 hasRequiredClassMethod:(id)arg2;
 - (BOOL)validateProtocol:(id)arg1 hasRequiredInstanceMethod:(id)arg2;
-- (id)validateionReportingServices;
+- (id)validationReportingServices;
 - (id)validationTargetName;
 
 @end

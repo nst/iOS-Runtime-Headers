@@ -21,6 +21,7 @@
 - (UIColor *)averageColorForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (UIColor *)averageLifetimeColor;
 - (struct __IOSurface { }*)copyBlurForRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
+- (struct __IOSurface { }*)copySnapshotImageForRect:(inout struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1;
 - (<SBFProceduralWallpaperDelegate> *)delegate;
 - (void)setDelegate:(id <SBFProceduralWallpaperDelegate>)arg1;
 - (void)setWallpaperOptions:(NSDictionary *)arg1;

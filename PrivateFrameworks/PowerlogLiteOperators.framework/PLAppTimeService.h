@@ -12,6 +12,7 @@
     NSDictionary *_backgroundAppToBundleID;
     PLEntryNotificationOperatorComposition *_backgroundTransferCallback;
     PLEntryNotificationOperatorComposition *_batteryCallback;
+    PLEntryNotificationOperatorComposition *_canSleepEntryNotifications;
     PLEntryNotificationOperatorComposition *_coalitionCallback;
     BOOL _deviceIsPluggedIn;
     PLEntryNotificationOperatorComposition *_displayCallback;
@@ -22,6 +23,7 @@
     NSSet *_excludedFGAppsSet;
     BOOL _inCallNow;
     NSMutableDictionary *_inFlightBundleIDStartTime;
+    BOOL _isAPOn;
     NSDate *_lastAudioTime;
     NSString *_lastCallBundleID;
     NSDate *_lastCallTime;
@@ -33,6 +35,7 @@
     PLEntryNotificationOperatorComposition *_pluginCallback;
     PLTimer *_runTimeAggregatorTimer;
     PLEntryNotificationOperatorComposition *_screenstateCallback;
+    PLEntryNotificationOperatorComposition *_wakeEntryNotifications;
     NSMutableSet *_watchkitExtensions;
 }
 
@@ -45,6 +48,7 @@
 @property (readonly) NSDictionary *backgroundAppToBundleID;
 @property (retain) PLEntryNotificationOperatorComposition *backgroundTransferCallback;
 @property (retain) PLEntryNotificationOperatorComposition *batteryCallback;
+@property (readonly) PLEntryNotificationOperatorComposition *canSleepEntryNotifications;
 @property (retain) PLEntryNotificationOperatorComposition *coalitionCallback;
 @property BOOL deviceIsPluggedIn;
 @property (retain) PLEntryNotificationOperatorComposition *displayCallback;
@@ -55,6 +59,7 @@
 @property (readonly) NSSet *excludedFGAppsSet;
 @property BOOL inCallNow;
 @property (retain) NSMutableDictionary *inFlightBundleIDStartTime;
+@property BOOL isAPOn;
 @property (retain) NSDate *lastAudioTime;
 @property (retain) NSString *lastCallBundleID;
 @property (retain) NSDate *lastCallTime;
@@ -66,6 +71,7 @@
 @property (retain) PLEntryNotificationOperatorComposition *pluginCallback;
 @property (retain) PLTimer *runTimeAggregatorTimer;
 @property (retain) PLEntryNotificationOperatorComposition *screenstateCallback;
+@property (readonly) PLEntryNotificationOperatorComposition *wakeEntryNotifications;
 @property (retain) NSMutableSet *watchkitExtensions;
 
 + (id)defaults;
@@ -87,6 +93,7 @@
 - (id)backgroundTransferCallback;
 - (id)batteryCallback;
 - (id)buildCallBack:(id)arg1 withGroup:(BOOL)arg2 withHandler:(id /* block */)arg3;
+- (id)canSleepEntryNotifications;
 - (id)coalitionCallback;
 - (double)convertCPUTimeToBackgroundTime:(double)arg1 withDuration:(double)arg2;
 - (void)debugAppTimeService;
@@ -107,10 +114,13 @@
 - (void)handleInCallServiceCallback:(id)arg1;
 - (void)handlePluginCallback:(id)arg1;
 - (void)handleScreenStateCallback:(id)arg1;
+- (void)handleSleepCallBack:(id)arg1;
+- (void)handleWakeCallBack:(id)arg1;
 - (BOOL)inCallNow;
 - (id)inFlightBundleIDStartTime;
 - (id)init;
 - (void)initOperatorDependancies;
+- (BOOL)isAPOn;
 - (id)lastAudioTime;
 - (id)lastCallBundleID;
 - (id)lastCallTime;
@@ -119,7 +129,7 @@
 - (id)lastScreenOnTime;
 - (void)loadWatchKitExtensionsSet;
 - (BOOL)musicPlayerForeground;
-- (void)periodicUpdateAppRunTime;
+- (void)periodicUpdateAppRunTimeWithDate:(id)arg1;
 - (BOOL)pluggedInBetweenCoalitionSBC;
 - (id)pluginCallback;
 - (void)resetLayoutElementsPLEntryArray:(id)arg1 withNowDate:(id)arg2;
@@ -139,6 +149,7 @@
 - (void)setInCallNow:(BOOL)arg1;
 - (void)setInCallServiceCallback:(id)arg1;
 - (void)setInFlightBundleIDStartTime:(id)arg1;
+- (void)setIsAPOn:(BOOL)arg1;
 - (void)setLastAudioTime:(id)arg1;
 - (void)setLastCallBundleID:(id)arg1;
 - (void)setLastCallTime:(id)arg1;
@@ -160,6 +171,7 @@
 - (void)updateInCallServiceTimeAtDate:(id)arg1;
 - (void)updateInCallServiceTimeInDBForBundleId:(id)arg1 withTime:(double)arg2 withDate:(id)arg3;
 - (void)updateScreenOnTimeInDBForBundleId:(id)arg1 withTime:(double)arg2 withDate:(id)arg3;
+- (id)wakeEntryNotifications;
 - (id)watchkitExtensions;
 
 @end

@@ -106,6 +106,7 @@
 - (void)setAllowVitality:(BOOL)arg1;
 - (void)setDefaultValues;
 - (void)setEndVitalityTransitionDuration:(double)arg1;
+- (void)setHintPlaybackValuesWithPhotoHasColorAdjustments:(BOOL)arg1;
 - (void)setPlaybackPostDuration:(double)arg1;
 - (void)setPlaybackPreDuration:(double)arg1;
 - (void)setPlaybackTransitionBlurRadius:(float)arg1;

@@ -12,6 +12,7 @@
     BOOL _editing;
     UILabel *_nameLabel;
     int _nowInMinutes;
+    BOOL _shouldAddLayoutConstraints;
     BOOL _started;
     int _style;
     NSTimeZone *_timeZone;
@@ -25,6 +26,7 @@
 @property (nonatomic, readonly) DigitalClockLabel *digitalClock;
 @property (nonatomic, readonly) UILabel *nameLabel;
 @property (nonatomic, readonly) int runMode;
+@property (nonatomic) BOOL shouldAddLayoutConstraints;
 @property (nonatomic, readonly) BOOL started;
 @property (nonatomic) int style;
 
@@ -48,10 +50,11 @@
 - (void)setCurrentConstraints:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEditing:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setShouldAddLayoutConstraints:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
 - (void)setStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setTimeZone:(id)arg1;
-- (void)setupConstraints;
+- (BOOL)shouldAddLayoutConstraints;
 - (void)significantTimeChange:(id)arg1;
 - (void)start;
 - (BOOL)started;

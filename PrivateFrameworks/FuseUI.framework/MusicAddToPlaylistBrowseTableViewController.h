@@ -18,16 +18,20 @@
 
 - (void).cxx_destruct;
 - (void)_performBlockAfterDerivingPrepopulatedItems:(id /* block */)arg1;
+- (void)_showNewPlaylistCreationFlow;
 - (void)_updateNoContentViewVisibility;
 - (void)dealloc;
 - (void)handleEntityProviderDidInvalidate;
 - (id)initWithLibraryViewConfiguration:(id)arg1;
+- (void)music_handleCreatePlaylistAction;
 - (id)noContentView;
 - (void)noContentViewDidTapButton:(id)arg1;
 - (id)prepopulatedItemsEntityValueContext;
 - (id)prepopulatedMediaItems;
 - (void)setPrepopulatedItemsEntityValueContext:(id)arg1;
 - (void)setPrepopulatedMediaItems:(id)arg1;
+- (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;
+- (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)viewDidLoad;
 
 @end

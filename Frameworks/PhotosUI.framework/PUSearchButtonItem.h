@@ -7,6 +7,7 @@
     UINavigationItem *_navigationItem;
     BOOL _nudgesSearchIcon;
     UISearchBar *_searchBar;
+    <UISearchBarDelegate> *_searchBarDelegate;
     UIView *_searchIcon;
     struct CGRect { 
         struct CGPoint { 
@@ -26,6 +27,7 @@
 @property (nonatomic, readonly) UINavigationItem *navigationItem;
 @property (nonatomic) BOOL nudgesSearchIcon;
 @property (nonatomic, readonly) UISearchBar *searchBar;
+@property (nonatomic) <UISearchBarDelegate> *searchBarDelegate;
 @property (nonatomic, readonly) BOOL showingSearchBar;
 
 - (void).cxx_destruct;
@@ -37,8 +39,10 @@
 - (id)navigationItem;
 - (BOOL)nudgesSearchIcon;
 - (id)searchBar;
+- (id)searchBarDelegate;
 - (void)setMaxSearchBarWidth:(float)arg1;
 - (void)setNudgesSearchIcon:(BOOL)arg1;
+- (void)setSearchBarDelegate:(id)arg1;
 - (void)setShowingSearchBar:(BOOL)arg1 animated:(BOOL)arg2;
 - (BOOL)showingSearchBar;
 

@@ -11,17 +11,19 @@
     BOOL _hasRespondedToCurrentQuery;
     WBSParsecHiddenResultInfo *_lastHiddenResultInfo;
     WBSParsecSearchResultCache *_searchResultCache;
+    NSMutableDictionary *_searchResultIdentifierToCardFetchDispatchGroupDictionary;
+    NSMutableDictionary *_searchResultIdentifierToCardFetchErrorDictionary;
     struct time_point<std::__1::chrono::steady_clock, std::__1::chrono::duration<long long, std::__1::ratio<1, 1000000000> > > { 
         struct duration<long long, std::__1::ratio<1, 1000000000> > { 
             long long __rep_; 
         } __d_; 
     } _sessionStartTimestamp;
     float _uiScale;
-    NSURLSession *_urlSession;
     BOOL _valid;
 }
 
-@property (nonatomic, readonly) WBSParsecSearchClient *client;
+@property (nonatomic, readonly) NSURLSession *_urlSession;
+@property (nonatomic, retain) WBSParsecSearchClient *client;
 @property (nonatomic, copy) NSString *connectionType;
 @property (nonatomic, retain) WBSCompletionQuery *currentQuery;
 @property (nonatomic) <WBSParsecSearchSessionDelegate> *delegate;
@@ -45,6 +47,7 @@
 - (id)_queryItemForInputMode;
 - (id)_queryItemForUnitPreference;
 - (void)_respondToCurrentQueryIfNeededWithResults:(id)arg1;
+- (void)_scheduleCardDetailPreFetchIfNecessary:(id)arg1;
 - (id)_searchFallbackURLForQuery:(id)arg1;
 - (void)_searchRequestFailedForQuery:(id)arg1;
 - (id)_searchRequestForQuery:(id)arg1;
@@ -65,6 +68,7 @@
 - (void)fetchCardDetailsForResult:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)initWithClient:(id)arg1;
 - (BOOL)isValid;
+- (void)setClient:(id)arg1;
 - (void)setConnectionType:(id)arg1;
 - (void)setCurrentQuery:(id)arg1;
 - (void)setDelegate:(id)arg1;

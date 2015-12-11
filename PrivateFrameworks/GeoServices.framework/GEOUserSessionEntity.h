@@ -27,6 +27,7 @@
 - (id)init;
 - (id)initWithSessionEntityString:(id)arg1;
 - (id)initWithSessionID:(struct { unsigned long long x1; unsigned long long x2; })arg1 sessionCreationTime:(double)arg2 sequenceNumber:(unsigned int)arg3;
+- (unsigned int)rawSequenceNumber;
 - (unsigned int)sequenceNumber;
 - (double)sessionCreationTime;
 - (id)sessionEntityString;

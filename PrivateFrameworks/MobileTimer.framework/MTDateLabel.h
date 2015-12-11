@@ -6,14 +6,18 @@
     NSArray *_currentConstraints;
     NSDate *_date;
     UILabel *_dateLabel;
+    UIFont *_font;
     BOOL _hideTimeDesignator;
     <MTDateLabelObserver> *_observer;
     float _paddingFromTimeToDesignator;
-    UILabel *_timeDesignatorLabel;
+    BOOL _shouldAddLayoutConstraints;
+    UIColor *_textColor;
+    UIFont *_timeDesignatorFont;
+    NSString *_timeDesignatorString;
     NSTimeZone *_timeZone;
 }
 
-@property (retain) NSArray *currentConstraints;
+@property (nonatomic, retain) NSArray *currentConstraints;
 @property (nonatomic, copy) NSDate *date;
 @property (nonatomic, readonly) UILabel *dateLabel;
 @property (nonatomic, retain) UIFont *font;
@@ -21,9 +25,10 @@
 @property (nonatomic) BOOL hideTimeDesignator;
 @property (nonatomic) <MTDateLabelObserver> *observer;
 @property (nonatomic) float paddingFromTimeToDesignator;
+@property (nonatomic) BOOL shouldAddLayoutConstraints;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic, retain) UIFont *timeDesignatorFont;
-@property (nonatomic, readonly) UILabel *timeDesignatorLabel;
+@property (nonatomic, copy) NSString *timeDesignatorString;
 @property (nonatomic, retain) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
@@ -45,13 +50,16 @@
 - (void)setHideTimeDesignator:(BOOL)arg1;
 - (void)setObserver:(id)arg1;
 - (void)setPaddingFromTimeToDesignator:(float)arg1;
+- (void)setShouldAddLayoutConstraints:(BOOL)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTimeDesignatorFont:(id)arg1;
+- (void)setTimeDesignatorString:(id)arg1;
 - (void)setTimeZone:(id)arg1;
+- (BOOL)shouldAddLayoutConstraints;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)textColor;
 - (id)timeDesignatorFont;
-- (id)timeDesignatorLabel;
+- (id)timeDesignatorString;
 - (id)timeZone;
 - (void)updateConstraints;
 - (id)viewForBaselineLayout;

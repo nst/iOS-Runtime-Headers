@@ -9,6 +9,7 @@
     UIColor *_borderColor;
     CAFilter *_borderCompositingFilter;
     float _borderCornerRadius;
+    BOOL _borderCornerRadiusMatchesHalfBoundingDimension;
     float _borderWidth;
     BOOL _cancelRecognizer;
     int _confirmationTitleStyle;
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) UIColor *borderColor;
 @property (nonatomic, retain) CAFilter *borderCompositingFilter;
 @property (nonatomic) float borderCornerRadius;
+@property (nonatomic) BOOL borderCornerRadiusMatchesHalfBoundingDimension;
 @property (nonatomic) float borderWidth;
 @property (nonatomic) BOOL cancelRecognizer;
 @property (nonatomic) int confirmationTitleStyle;
@@ -49,6 +51,7 @@
 - (id)borderColor;
 - (id)borderCompositingFilter;
 - (float)borderCornerRadius;
+- (BOOL)borderCornerRadiusMatchesHalfBoundingDimension;
 - (float)borderWidth;
 - (BOOL)cancelRecognizer;
 - (int)confirmationTitleStyle;
@@ -64,6 +67,7 @@
 - (void)setBorderColor:(id)arg1;
 - (void)setBorderCompositingFilter:(id)arg1;
 - (void)setBorderCornerRadius:(float)arg1;
+- (void)setBorderCornerRadiusMatchesHalfBoundingDimension:(BOOL)arg1;
 - (void)setBorderWidth:(float)arg1;
 - (void)setCancelRecognizer:(BOOL)arg1;
 - (void)setConfirmationTitleStyle:(int)arg1;

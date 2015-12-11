@@ -16,6 +16,7 @@
     NSArray *_recordIDsToDelete;
     NSDictionary *_recordIDsToDeleteToEtags;
     NSMutableDictionary *_recordsByServerID;
+    id /* block */ _recordsInFlightBlock;
     NSArray *_recordsToSave;
     BOOL _retriedRecords;
     BOOL _retryPCSFailures;
@@ -23,6 +24,7 @@
     int _savePolicy;
     id /* block */ _saveProgressBlock;
     BOOL _shouldOnlySaveAssetContent;
+    BOOL _shouldReportRecordsInFlight;
     CKDProtocolTranslator *_translator;
     id /* block */ _uploadCompletionBlock;
 }
@@ -40,6 +42,7 @@
 @property (nonatomic, retain) NSArray *recordIDsToDelete;
 @property (nonatomic, retain) NSDictionary *recordIDsToDeleteToEtags;
 @property (nonatomic, retain) NSMutableDictionary *recordsByServerID;
+@property (nonatomic, copy) id /* block */ recordsInFlightBlock;
 @property (nonatomic, retain) NSArray *recordsToSave;
 @property (nonatomic) BOOL retriedRecords;
 @property (nonatomic) BOOL retryPCSFailures;
@@ -47,6 +50,7 @@
 @property (nonatomic) int savePolicy;
 @property (nonatomic, copy) id /* block */ saveProgressBlock;
 @property (nonatomic) BOOL shouldOnlySaveAssetContent;
+@property (nonatomic) BOOL shouldReportRecordsInFlight;
 @property (nonatomic, readonly) CKDProtocolTranslator *translator;
 @property (nonatomic, copy) id /* block */ uploadCompletionBlock;
 
@@ -74,6 +78,7 @@
 - (BOOL)_prepareAsset:(id)arg1 recordKey:(id)arg2 record:(id)arg3 error:(id*)arg4;
 - (id)_prepareAssetsForUpload;
 - (BOOL)_prepareRecordsForSave;
+- (void)_reportRecordsInFlight;
 - (BOOL)_topoSortRecords;
 - (void)_unwrapRecordPCSForShare:(id)arg1;
 - (void)_unwrapRecordPCSForZone:(id)arg1;
@@ -100,6 +105,7 @@
 - (id)recordIDsToDelete;
 - (id)recordIDsToDeleteToEtags;
 - (id)recordsByServerID;
+- (id /* block */)recordsInFlightBlock;
 - (id)recordsToSave;
 - (BOOL)retriedRecords;
 - (BOOL)retryPCSFailures;
@@ -119,6 +125,7 @@
 - (void)setRecordIDsToDelete:(id)arg1;
 - (void)setRecordIDsToDeleteToEtags:(id)arg1;
 - (void)setRecordsByServerID:(id)arg1;
+- (void)setRecordsInFlightBlock:(id /* block */)arg1;
 - (void)setRecordsToSave:(id)arg1;
 - (void)setRetriedRecords:(BOOL)arg1;
 - (void)setRetryPCSFailures:(BOOL)arg1;
@@ -126,8 +133,10 @@
 - (void)setSavePolicy:(int)arg1;
 - (void)setSaveProgressBlock:(id /* block */)arg1;
 - (void)setShouldOnlySaveAssetContent:(BOOL)arg1;
+- (void)setShouldReportRecordsInFlight:(BOOL)arg1;
 - (void)setUploadCompletionBlock:(id /* block */)arg1;
 - (BOOL)shouldOnlySaveAssetContent;
+- (BOOL)shouldReportRecordsInFlight;
 - (id)translator;
 - (id /* block */)uploadCompletionBlock;
 

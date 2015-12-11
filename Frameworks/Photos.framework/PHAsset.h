@@ -269,11 +269,14 @@
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
+- (id)avAsset;
+- (unsigned long)fullFilesizeBytes;
 - (struct CGSize { float x1; float x2; })fullSize;
 - (id)getVideoAdjustmentPath;
 - (BOOL)hasFull;
 - (BOOL)hasIris;
 - (BOOL)isPano;
+- (BOOL)isVideoSlowmo;
 - (unsigned long)localFilesizeBytes;
 - (struct CGSize { float x1; float x2; })localSize;
 - (BOOL)original;

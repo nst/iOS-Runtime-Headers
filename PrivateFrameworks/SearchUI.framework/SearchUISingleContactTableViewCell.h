@@ -21,8 +21,8 @@
 - (void)clearPurgeableMemory;
 - (id)contactIdentifier;
 - (BOOL)hasActionButton;
+- (id)initWithResult:(id)arg1 style:(unsigned int)arg2;
 - (id)quickActionsView;
-- (void)reset;
 - (void)setAvatarView:(id)arg1;
 - (void)setContactIdentifier:(id)arg1;
 - (void)setQuickActionsView:(id)arg1;

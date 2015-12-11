@@ -2,8 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFDictationConnection : NSObject {
-    BOOL _cachedReachability;
+@interface AFDictationConnection : NSObject <AFNetworkAvailabilityObserver> {
     NSXPCConnection *_connection;
     <AFDictationDelegate> *_delegate;
     BOOL _hasActiveRequest;
@@ -12,13 +11,14 @@
     NSSet *_knownOfflineInstalledLanguages;
     NSString *_lastUsedLanguage;
     void *_levelsSharedMem;
-    struct __SCNetworkReachability { } *_reachability;
-    int _reachabilityMonitoringCounter;
-    NSObject<OS_dispatch_queue> *_reachabilityQueue;
     unsigned long _sharedMemSize;
 }
 
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <AFDictationDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)dictationIsEnabled;
 + (BOOL)dictationIsSupportedForLanguageCode:(id)arg1 error:(id*)arg2;
@@ -63,7 +63,7 @@
 - (id)delegate;
 - (BOOL)dictationIsAvailableForLanguage:(id)arg1;
 - (void)endSession;
-- (id)init;
+- (void)networkAvailability:(id)arg1 isAvailable:(BOOL)arg2;
 - (float)peakPower;
 - (void)preheat;
 - (void)sendEngagementFeedback:(int)arg1 voiceQueryIdentifier:(id)arg2;

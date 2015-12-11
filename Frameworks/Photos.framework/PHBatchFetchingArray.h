@@ -9,7 +9,7 @@
     <PHBatchFetchingArrayDataSource> *_dataSource;
     NSArray *_firstBatch;
     unsigned int _firstBatchIndex;
-    NSRecursiveLock *_firstBatchLock;
+    NSObject<OS_dispatch_queue> *_firstBatchQueue;
     NSArray *_oids;
     NSSet *_oidsSet;
     unsigned int _propertyHint;

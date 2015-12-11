@@ -10,7 +10,6 @@
     MusicEntityViewContentTextDescriptor *_editableTextDescriptor;
     MusicEntityViewContentTextDescriptor *_editableTextHeaderDescriptor;
     BOOL _wantsAddSongsButton;
-    BOOL _wantsAddToLibraryButton;
     BOOL _wantsBackgroundBlur;
     BOOL _wantsBackgroundImage;
     BOOL _wantsCameraButtonWhenEditing;
@@ -28,7 +27,6 @@
 @property (nonatomic, retain) MusicEntityViewContentTextDescriptor *editableTextDescriptor;
 @property (nonatomic, retain) MusicEntityViewContentTextDescriptor *editableTextHeaderDescriptor;
 @property (nonatomic) BOOL wantsAddSongsButton;
-@property (nonatomic) BOOL wantsAddToLibraryButton;
 @property (nonatomic) BOOL wantsBackgroundBlur;
 @property (nonatomic) BOOL wantsBackgroundImage;
 @property (nonatomic) BOOL wantsCameraButtonWhenEditing;
@@ -53,7 +51,6 @@
 - (void)setEditableTextDescriptor:(id)arg1;
 - (void)setEditableTextHeaderDescriptor:(id)arg1;
 - (void)setWantsAddSongsButton:(BOOL)arg1;
-- (void)setWantsAddToLibraryButton:(BOOL)arg1;
 - (void)setWantsBackgroundBlur:(BOOL)arg1;
 - (void)setWantsBackgroundImage:(BOOL)arg1;
 - (void)setWantsCameraButtonWhenEditing:(BOOL)arg1;
@@ -63,7 +60,6 @@
 - (void)setWantsRefreshButton:(BOOL)arg1;
 - (void)setWantsShareButtonProperty:(id)arg1;
 - (BOOL)wantsAddSongsButton;
-- (BOOL)wantsAddToLibraryButton;
 - (BOOL)wantsBackgroundBlur;
 - (BOOL)wantsBackgroundImage;
 - (BOOL)wantsCameraButtonWhenEditing;

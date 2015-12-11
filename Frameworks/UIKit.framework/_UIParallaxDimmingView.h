@@ -19,6 +19,7 @@
 
 - (void).cxx_destruct;
 - (id)_basicAnimationWithKeyPath:(id)arg1;
+- (void)_updateLeftEdgeFade:(BOOL)arg1;
 - (id)addingSubview;
 - (BOOL)backgroundIsDimmed;
 - (void)crossFade;

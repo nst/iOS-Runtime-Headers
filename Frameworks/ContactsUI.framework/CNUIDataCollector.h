@@ -23,6 +23,8 @@
 - (void)logIndexUsage;
 - (void)logPresentation;
 - (void)logRefreshUsage;
+- (void)logSearchResultSelectedSuggested:(BOOL)arg1;
+- (void)logSearchResultsFetchedSuggested:(BOOL)arg1;
 - (void)logSearchUsage;
 - (id)logger;
 - (void)setAppIdentifier:(id)arg1;

@@ -177,6 +177,7 @@
 - (void)stopBrowsingForNearbyPlayers;
 - (void)stopNearbyAdvertising;
 - (void)stopNearbyBrowsing;
+- (id)unreleasedHash;
 - (void)updateNearbyAdvertising;
 - (BOOL)wasNearbyBrowsing;
 

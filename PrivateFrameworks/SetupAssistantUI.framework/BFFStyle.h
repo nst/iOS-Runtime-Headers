@@ -8,6 +8,7 @@
 
 - (void)applyThemeToAllTableViews;
 - (void)applyThemeToLabel:(id)arg1;
+- (void)applyThemeToNavigationController:(id)arg1;
 - (void)applyThemeToRemoteUIWebViewController:(id)arg1;
 - (void)applyThemeToSectionHeaderLabel:(id)arg1;
 - (void)applyThemeToTableCell:(id)arg1;

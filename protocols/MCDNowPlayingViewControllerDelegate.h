@@ -5,6 +5,7 @@
 
 @optional
 
+- (BOOL)nowPlayingViewController:(MCDNowPlayingViewController *)arg1 buttonShouldBeActive:(int)arg2;
 - (void)nowPlayingViewController:(MCDNowPlayingViewController *)arg1 didSendAction:(int)arg2 state:(int)arg3;
 - (BOOL)nowPlayingViewController:(MCDNowPlayingViewController *)arg1 shouldDisplayButton:(int)arg2 withImage:(out id*)arg3 tinted:(out BOOL*)arg4;
 - (BOOL)nowPlayingViewController:(MCDNowPlayingViewController *)arg1 shouldEnableButton:(int)arg2;

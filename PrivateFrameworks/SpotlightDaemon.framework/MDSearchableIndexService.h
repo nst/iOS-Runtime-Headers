@@ -42,7 +42,6 @@
 - (BOOL)_jobForTest:(int)arg1;
 - (void)_notifyIndexAndObserversForActivities:(id)arg1;
 - (void)_userPerformedAction:(id)arg1 withItem:(id)arg2 protectionClass:(id)arg3;
-- (void)acknowledgeReindex;
 - (id)agent;
 - (void)changeStateOfSearchableItemsWithUIDs:(id)arg1 toState:(int)arg2 protectionClass:(id)arg3 forBundleID:(id)arg4 forUTIType:(id)arg5 options:(int)arg6;
 - (void)checkInWithProtectionClass:(id)arg1 completionHandler:(id /* block */)arg2;

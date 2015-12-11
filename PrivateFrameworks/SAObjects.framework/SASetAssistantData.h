@@ -25,6 +25,7 @@
 @property (nonatomic) BOOL inRetailStoreDemoMode;
 @property (nonatomic, copy) NSString *lastName;
 @property (nonatomic, copy) NSArray *meCards;
+@property (nonatomic, retain) SAMediaContentRatingRestrictions *mediaContentRatingRestrictions;
 @property (nonatomic) BOOL mediaPlayerExplicitContentDisallowed;
 @property (nonatomic, copy) NSString *osVersion;
 @property (nonatomic, copy) NSArray *parentalRestrictions;
@@ -64,6 +65,7 @@
 - (BOOL)inRetailStoreDemoMode;
 - (id)lastName;
 - (id)meCards;
+- (id)mediaContentRatingRestrictions;
 - (BOOL)mediaPlayerExplicitContentDisallowed;
 - (id)osVersion;
 - (id)parentalRestrictions;
@@ -85,6 +87,7 @@
 - (void)setInRetailStoreDemoMode:(BOOL)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setMeCards:(id)arg1;
+- (void)setMediaContentRatingRestrictions:(id)arg1;
 - (void)setMediaPlayerExplicitContentDisallowed:(BOOL)arg1;
 - (void)setOsVersion:(id)arg1;
 - (void)setParentalRestrictions:(id)arg1;

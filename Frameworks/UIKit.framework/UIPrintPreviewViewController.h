@@ -25,6 +25,7 @@
     UIPrintPanelViewController *_printPanelViewController;
     NSURL *_quickLookPDFURL;
     BOOL _scaleUpOnDestinationPaper;
+    NSURL *_sharePDFFileURL;
     id previousNavigationControllerDelegate;
 }
 

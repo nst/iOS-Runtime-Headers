@@ -4,8 +4,11 @@
 
 @interface SKUIItemOfferButton : UIControl <SKUIViewElementOfferButton> {
     UIColor *_backgroundColor;
+    float _borderColorAlphaMultiplier;
+    BOOL _borderCornerRadiusMatchesHalfBoundingDimension;
     UIView *_borderView;
     SKUIFocusedTouchGestureRecognizer *_cancelGestureRecognizer;
+    id /* block */ _centerImageProvider;
     UIImage *_cloudImage;
     UIColor *_cloudTintColor;
     UIColor *_confirmationColor;
@@ -35,6 +38,8 @@
     BOOL _usesDrawRectPath;
 }
 
+@property (nonatomic) float borderColorAlphaMultiplier;
+@property (nonatomic, copy) id /* block */ centerImageProvider;
 @property (nonatomic, copy) UIColor *cloudTintColor;
 @property (nonatomic, copy) NSString *confirmationTitle;
 @property (nonatomic) int confirmationTitleStyle;
@@ -73,6 +78,7 @@
 - (id)_buttonPropertiesForState:(id)arg1;
 - (void)_cancelGestureAction:(id)arg1;
 - (float)_horizontalInsetForTitleStyle:(int)arg1;
+- (id)_imageForProgressType:(int)arg1;
 - (void)_insertBorderView;
 - (void)_insertCancelGestureRecognizer;
 - (void)_insertImageView;
@@ -93,7 +99,9 @@
 - (void)_updateForChangedConfirmationTitleProperty;
 - (void)_updateForChangedTitleProperty;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
+- (float)borderColorAlphaMultiplier;
 - (void)cancelTrackingWithEvent:(id)arg1;
+- (id /* block */)centerImageProvider;
 - (id)cloudTintColor;
 - (id)confirmationTitle;
 - (int)confirmationTitleStyle;
@@ -115,6 +123,8 @@
 - (int)progressType;
 - (void)removeButtonStateAnimations;
 - (void)setBackgroundColor:(id)arg1;
+- (void)setBorderColorAlphaMultiplier:(float)arg1;
+- (void)setCenterImageProvider:(id /* block */)arg1;
 - (void)setCloudTintColor:(id)arg1;
 - (void)setColoringWithAppearance:(id)arg1;
 - (void)setConfirmationTitle:(id)arg1;

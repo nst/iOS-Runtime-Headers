@@ -5,12 +5,14 @@
 @interface GEORPProblemContext : PBCodable <NSCopying> {
     NSMutableArray *_auxiliaryControls;
     double _creationDate;
+    int _deviceGmtOffset;
     NSMutableArray *_directionsRequests;
     NSMutableArray *_directionsResponses;
     struct { 
         unsigned int sessionId : 1; 
         unsigned int creationDate : 1; 
         unsigned int originatingAuxiliaryControlIndex : 1; 
+        unsigned int deviceGmtOffset : 1; 
         unsigned int pinType : 1; 
     } _has;
     NSString *_lastSearchString;
@@ -32,9 +34,11 @@
 
 @property (nonatomic, retain) NSMutableArray *auxiliaryControls;
 @property (nonatomic) double creationDate;
+@property (nonatomic) int deviceGmtOffset;
 @property (nonatomic, retain) NSMutableArray *directionsRequests;
 @property (nonatomic, retain) NSMutableArray *directionsResponses;
 @property (nonatomic) BOOL hasCreationDate;
+@property (nonatomic) BOOL hasDeviceGmtOffset;
 @property (nonatomic, readonly) BOOL hasLastSearchString;
 @property (nonatomic, readonly) BOOL hasLastUserTypedSearchString;
 @property (nonatomic, readonly) BOOL hasMapLocation;
@@ -75,6 +79,7 @@
 - (double)creationDate;
 - (void)dealloc;
 - (id)description;
+- (int)deviceGmtOffset;
 - (id)dictionaryRepresentation;
 - (id)directionsRequestAtIndex:(unsigned int)arg1;
 - (id)directionsRequests;
@@ -83,6 +88,7 @@
 - (id)directionsResponses;
 - (unsigned int)directionsResponsesCount;
 - (BOOL)hasCreationDate;
+- (BOOL)hasDeviceGmtOffset;
 - (BOOL)hasLastSearchString;
 - (BOOL)hasLastUserTypedSearchString;
 - (BOOL)hasMapLocation;
@@ -109,9 +115,11 @@
 - (struct { unsigned long long x1; unsigned long long x2; })sessionId;
 - (void)setAuxiliaryControls:(id)arg1;
 - (void)setCreationDate:(double)arg1;
+- (void)setDeviceGmtOffset:(int)arg1;
 - (void)setDirectionsRequests:(id)arg1;
 - (void)setDirectionsResponses:(id)arg1;
 - (void)setHasCreationDate:(BOOL)arg1;
+- (void)setHasDeviceGmtOffset:(BOOL)arg1;
 - (void)setHasOriginatingAuxiliaryControlIndex:(BOOL)arg1;
 - (void)setHasPinType:(BOOL)arg1;
 - (void)setHasSessionId:(BOOL)arg1;

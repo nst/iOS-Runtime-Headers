@@ -7,6 +7,7 @@
     MKSmallCalloutView *_smallCalloutView;
 }
 
+@property (getter=isButtonEnabled, nonatomic) BOOL buttonEnabled;
 @property (nonatomic, retain) MKCalloutBackgroundView *calloutBackgroundView;
 @property (nonatomic, copy) NSString *calloutSubtitle;
 @property (nonatomic, copy) NSString *calloutTitle;
@@ -33,6 +34,7 @@
 - (id)delegate;
 - (id)detailView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (BOOL)isButtonEnabled;
 - (id)leftView;
 - (void)loadView;
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; })mapDisplayStyle;
@@ -40,6 +42,7 @@
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)reset;
 - (id)rightView;
+- (void)setButtonEnabled:(BOOL)arg1;
 - (void)setCalloutBackgroundView:(id)arg1;
 - (void)setCalloutSubtitle:(id)arg1;
 - (void)setCalloutSubtitle:(id)arg1 animated:(BOOL)arg2;

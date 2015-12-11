@@ -59,7 +59,7 @@
 - (id)_captureController;
 - (id)_captureTimer;
 - (void)_captureTimerFired;
-- (id)_createPlaceholderAssetForTimelapseState:(id)arg1;
+- (id)_createThumbnailImageFromPlaceholderResult:(id)arg1;
 - (void)_deviceStarted:(id)arg1;
 - (id)_diskSpaceAlert;
 - (void)_dismissDiskSpaceAlert;

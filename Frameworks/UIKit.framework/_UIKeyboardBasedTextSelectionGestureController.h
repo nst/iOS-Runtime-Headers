@@ -20,6 +20,7 @@
 - (void)oneFingerForcePan:(id)arg1;
 - (void)oneFingerForcePress:(id)arg1;
 - (double)oneFingerForcePressMinimumDuration;
+- (BOOL)oneFingerForcePressShouldCancelTouchesInView;
 - (BOOL)oneFingerForcePressShouldFailWithoutForce;
 - (void)setDelayForceMagnify:(BOOL)arg1;
 - (void)setDidLongForcePress:(BOOL)arg1;

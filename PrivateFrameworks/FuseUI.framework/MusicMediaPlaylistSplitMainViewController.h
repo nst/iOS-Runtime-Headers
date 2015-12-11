@@ -7,11 +7,13 @@
     MusicProductDescription *_editedPlaylistDescription;
     NSNumber *_editedPlaylistPublicState;
     NSNumber *_editedPlaylistVisibleState;
+    NSNumber *_parentFolderPersistentID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) NSNumber *parentFolderPersistentID;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -29,6 +31,7 @@
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 presentationSource:(int)arg4 forContentCreation:(BOOL)arg5;
 - (id)initWithContainerEntityProvider:(id)arg1 tracklistEntityProvider:(id)arg2 clientContext:(id)arg3 presentationSource:(int)arg4 forContentCreation:(BOOL)arg5 curatorStoreID:(id)arg6;
 - (void)mediaPickerNavigationController:(id)arg1 didFinishWithSelectedEntities:(id)arg2;
+- (id)parentFolderPersistentID;
 - (void)productAdditionalMetadataViewControllerDidSelectAddSongsButton:(id)arg1;
 - (void)productAdditionalMetadataViewControllerDidUpdateProductDescription:(id)arg1;
 - (void)productAdditionalMetadataViewControllerDidUpdatePublicSwitchState:(id)arg1;
@@ -36,5 +39,6 @@
 - (BOOL)productAdditionalMetadataViewControllerShouldDeferContentHeightAnimationUpdates:(id)arg1;
 - (void)setEditedContentArtworkImage:(id)arg1;
 - (void)setEditedContentTitle:(id)arg1;
+- (void)setParentFolderPersistentID:(id)arg1;
 
 @end

@@ -15,6 +15,7 @@
     NSString *_keyboardLanguage;
     NSString *_predictionIdentifier;
     NSString *_protectionClass;
+    NSString *_resultSetIdentifier;
     NSArray *_results;
     double _timestamp;
     NSString *_web_fbq;
@@ -32,6 +33,7 @@
 @property (nonatomic, retain) NSString *keyboardLanguage;
 @property (nonatomic, copy) NSString *predictionIdentifier;
 @property (nonatomic, retain) NSString *protectionClass;
+@property (nonatomic, copy) NSString *resultSetIdentifier;
 @property (nonatomic, retain) NSArray *results;
 @property (nonatomic, readonly) double timestamp;
 @property (nonatomic, copy) NSString *web_fbq;
@@ -59,6 +61,7 @@
 - (id)parsecFeedbackFromSession:(id)arg1 class:(Class)arg2;
 - (id)predictionIdentifier;
 - (id)protectionClass;
+- (id)resultSetIdentifier;
 - (id)results;
 - (id)serializedActivityInfoWithResult:(id)arg1 attributes:(id)arg2;
 - (void)setBundleID:(id)arg1;
@@ -73,6 +76,7 @@
 - (void)setKeyboardLanguage:(id)arg1;
 - (void)setPredictionIdentifier:(id)arg1;
 - (void)setProtectionClass:(id)arg1;
+- (void)setResultSetIdentifier:(id)arg1;
 - (void)setResults:(id)arg1;
 - (void)setWeb_fbq:(id)arg1;
 - (id)sha1:(id)arg1;

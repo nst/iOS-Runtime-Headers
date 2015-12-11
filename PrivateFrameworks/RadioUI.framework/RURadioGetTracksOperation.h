@@ -6,7 +6,9 @@
     ISDialogOperation *_dialogOperation;
     MPUserNotification *_explicitUserNotification;
     RadioGetTracksRequest *_getTracksRequest;
+    BOOL _hasSetWillContinuePlayback;
     NSLock *_lock;
+    RadioStationMatchContext *_nowPlayingMatchContext;
     unsigned int _numberOfTracks;
     RadioPlaybackContext *_playbackContext;
     SSVPlaybackLease *_playbackLease;
@@ -16,8 +18,10 @@
     BOOL _shouldIncludeStationInResponse;
     RadioStation *_station;
     RadioStationMatchContext *_stationMatchContext;
+    BOOL _willContinuePlayback;
 }
 
+@property (nonatomic, retain) RadioStationMatchContext *nowPlayingMatchContext;
 @property unsigned int numberOfTracks;
 @property (copy) RadioPlaybackContext *playbackContext;
 @property (retain) SSVPlaybackLease *playbackLease;
@@ -27,6 +31,7 @@
 @property BOOL shouldIncludeStationInResponse;
 @property (retain) RadioStation *station;
 @property (retain) RadioStationMatchContext *stationMatchContext;
+@property (nonatomic) BOOL willContinuePlayback;
 
 - (void).cxx_destruct;
 - (id)_heartbeatTokenDataAllowingDelay:(BOOL)arg1 error:(id*)arg2;
@@ -38,12 +43,14 @@
 - (id)init;
 - (id)initWithReasonType:(int)arg1;
 - (void)main;
+- (id)nowPlayingMatchContext;
 - (unsigned int)numberOfTracks;
 - (id)playbackContext;
 - (id)playbackLease;
 - (int)reasonType;
 - (id)requestContext;
 - (id /* block */)responseBlock;
+- (void)setNowPlayingMatchContext:(id)arg1;
 - (void)setNumberOfTracks:(unsigned int)arg1;
 - (void)setPlaybackContext:(id)arg1;
 - (void)setPlaybackLease:(id)arg1;
@@ -52,8 +59,10 @@
 - (void)setShouldIncludeStationInResponse:(BOOL)arg1;
 - (void)setStation:(id)arg1;
 - (void)setStationMatchContext:(id)arg1;
+- (void)setWillContinuePlayback:(BOOL)arg1;
 - (BOOL)shouldIncludeStationInResponse;
 - (id)station;
 - (id)stationMatchContext;
+- (BOOL)willContinuePlayback;
 
 @end

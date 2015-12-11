@@ -26,6 +26,7 @@
     UIFont *_reviewsFont;
     UIView *_screen;
     UIFont *_subtitleFont;
+    BOOL _subtitleWillAppear;
     UIFont *_titleFont;
     struct UILabel { Class x1; } *_titleLabel;
     NSLayoutConstraint *_titleToBottomConstraint;
@@ -62,6 +63,7 @@
 
 - (void).cxx_destruct;
 - (void)_configureLabelForHeader:(id)arg1;
+- (void)_performWhenViewHasAppeared:(id /* block */)arg1;
 - (void)_updateCurrentEnvironmentName;
 - (void)_updateFontBasedConstraints;
 - (void)_updateFonts;
@@ -84,6 +86,7 @@
 - (struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })perspectiveTransform;
 - (void)prepareForPresentation;
 - (void)present;
+- (void)presentAnimated:(BOOL)arg1;
 - (void)presentBackgroundIfNeeded;
 - (float)rating;
 - (void)refreshContent;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UIKeyboardLayoutCursor : UIKeyboardLayoutStar {
+@interface UIKeyboardLayoutCursor : UIKeyboardLayoutStar <UIKBAlertControllerDelegate> {
     BOOL _cachedCanMultitap;
     UIKBTree *_cachedMultitapKeyplane;
     BOOL _disableTouchInput;
@@ -19,7 +19,11 @@
 }
 
 @property (nonatomic, readonly) UIKBTree *currentKey;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIAlertController *recentInputsAlert;
+@property (readonly) Class superclass;
 
 + (id)carKeyboardNameForKeyboard:(id)arg1 screenTraits:(id)arg2;
 + (struct CGSize { float x1; float x2; })keyboardSizeForInputMode:(id)arg1 screenTraits:(id)arg2 keyboardType:(int)arg3;
@@ -36,6 +40,7 @@
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (void)acceptRecentInputIfNecessary;
 - (int)activeStateForKey:(id)arg1;
+- (void)alertDidDismiss;
 - (id)cacheTokenForKeyplane:(id)arg1;
 - (BOOL)canHandleEvent:(id)arg1;
 - (BOOL)canMultitap;
@@ -46,6 +51,7 @@
 - (void)deactivateKey:(id)arg1;
 - (void)dealloc;
 - (int)defaultSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2;
+- (BOOL)diacriticForwardCompose;
 - (void)didSelectRecentInputString:(id)arg1;
 - (unsigned long long)downActionFlagsForKey:(id)arg1;
 - (int)enabledStateForKey:(id)arg1;

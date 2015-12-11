@@ -6,6 +6,7 @@
     MPPlaybackContext *_lastPlaybackContext;
 }
 
++ (Class)playlistManagerClass;
 + (id)sharedAVPlayer;
 
 - (void).cxx_destruct;

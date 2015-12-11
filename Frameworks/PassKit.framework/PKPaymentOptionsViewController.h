@@ -27,8 +27,9 @@
 - (id)_passSnapshotter;
 - (BOOL)_presentedModally;
 - (void)_showAddressEntryViewControllerForOptionsGroup:(id)arg1;
+- (BOOL)_showChinaDistrictAddressFlowIfRequiredWithOptionsGroup:(id)arg1 contact:(id)arg2 labeledValue:(id)arg3;
 - (void)_showContactsPickerForProperty:(id)arg1 optionsGroup:(id)arg2;
-- (void)_showEntryViewControllerForProperty:(id)arg1 optionsGroup:(id)arg2;
+- (void)_showEntryViewControllerForProperty:(id)arg1 optionsGroup:(id)arg2 contact:(id)arg3;
 - (void)_updateContactName;
 - (void)_updateNavigationBar;
 - (void)contactPicker:(id)arg1 didSelectContact:(id)arg2;

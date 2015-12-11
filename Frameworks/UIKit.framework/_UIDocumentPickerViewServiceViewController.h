@@ -56,6 +56,7 @@
 - (void)_setAuxiliaryOptions:(id)arg1;
 - (void)_setPickableTypes:(id)arg1;
 - (void)_setPickerMode:(unsigned int)arg1;
+- (void)_setSourceIsManaged:(BOOL)arg1;
 - (void)_setTintColor:(id)arg1;
 - (void)_setUploadURL:(id)arg1;
 - (void)_setUploadURLWrapper:(id)arg1;

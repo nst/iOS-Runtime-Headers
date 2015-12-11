@@ -14,6 +14,7 @@
     BOOL _open;
     BOOL _ownsTheAnchor;
     int _packageID;
+    NSObject<OS_dispatch_queue> *_queue;
     CKRecord *_record;
     NSString *_recordKey;
     struct _OpaquePCSShareProtection { } *_recordPCS;
@@ -41,6 +42,7 @@
 @property (getter=isOpen, nonatomic) BOOL open;
 @property (nonatomic) BOOL ownsTheAnchor;
 @property (nonatomic) int packageID;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) CKRecord *record;
 @property (nonatomic, copy) NSString *recordKey;
 @property (nonatomic) struct _OpaquePCSShareProtection { }*recordPCS;
@@ -68,6 +70,11 @@
 - (id)_initWithPath:(id)arg1 UUID:(id)arg2;
 - (id)_itemOrNilAtIndex:(unsigned int)arg1;
 - (id)_itemWithColumnsByName:(id)arg1;
+- (void)_locked_beginTransaction;
+- (BOOL)_locked_decReferenceCount;
+- (void)_locked_endTransaction;
+- (void)_locked_incReferenceCount;
+- (void)_locked_open;
 - (id)_packageDatabasePathWithUUID:(id)arg1;
 - (void)_setReferenceCount:(int)arg1;
 - (void)addItem:(id)arg1;
@@ -103,6 +110,7 @@
 - (void)open;
 - (BOOL)ownsTheAnchor;
 - (int)packageID;
+- (id)queue;
 - (id)record;
 - (id)recordKey;
 - (struct _OpaquePCSShareProtection { }*)recordPCS;
@@ -119,6 +127,7 @@
 - (void)setOpen:(BOOL)arg1;
 - (void)setOwnsTheAnchor:(BOOL)arg1;
 - (void)setPackageID:(int)arg1;
+- (void)setQueue:(id)arg1;
 - (void)setRecord:(id)arg1;
 - (void)setRecordKey:(id)arg1;
 - (void)setRecordPCS:(struct _OpaquePCSShareProtection { }*)arg1;

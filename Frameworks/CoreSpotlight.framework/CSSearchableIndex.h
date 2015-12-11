@@ -55,12 +55,6 @@
 - (id)_itemsBySanitizingItemsForSpotlight:(id)arg1;
 - (void)_performIndexJob:(id)arg1 acknowledgementHandler:(id /* block */)arg2;
 - (void)_registerAwakeNotifyToken;
-- (id /* block */)_registerCompletionBlock:(id /* block */)arg1 label:(id)arg2;
-- (id /* block */)_registerCompletionBlock:(id /* block */)arg1 label:(id)arg2 throttle:(BOOL)arg3;
-- (id /* block */)_registerDataCompletionBlock:(id /* block */)arg1 label:(id)arg2;
-- (id)_remoteProxy;
-- (id)_remoteProxyWithCompletionBlock:(id /* block */)arg1;
-- (id)_remoteProxyWithDataCompletionBlock:(id /* block */)arg1;
 - (void)_setMailMessageAttributes:(id)arg1;
 - (void)_standardizeItems:(id)arg1;
 - (BOOL)_supportsBatching;
@@ -112,6 +106,8 @@
 - (void)performIndexJob:(id)arg1;
 - (void)performIndexJob:(id)arg1 acknowledgementHandler:(id /* block */)arg2;
 - (id)protectionClass;
+- (id)remoteProxyWithErrorHandler:(id /* block */)arg1;
+- (id)requestQueue;
 - (void)setActivityQueue:(id)arg1;
 - (void)setAwakeNotifyToken:(int)arg1;
 - (void)setBatchOpen:(BOOL)arg1;
@@ -126,6 +122,9 @@
 - (void)setProtectionClass:(id)arg1;
 - (void)setTestProxy:(id)arg1;
 - (id)testProxy;
+- (void)throttle;
+- (id)throttleQueue;
+- (void)unthrottle;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)willModifySearchableItemsWithIdentifiers:(id)arg1 protectionClass:(id)arg2 forBundleID:(id)arg3 options:(int)arg4 completionHandler:(id /* block */)arg5;
 

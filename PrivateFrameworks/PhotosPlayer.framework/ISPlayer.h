@@ -5,8 +5,6 @@
 @interface ISPlayer : NSObject <ISInputControllerDelegate, ISPlaybackControllerObserver, ISPlaybackSpecObserver, ISPlayerItemObserver> {
     NSHashTable *__changeObservers;
     int __currentMediaServicesResetID;
-    NSString *__defaultAudioCategory;
-    int __defaultAudioCategoryOptions;
     BOOL __hasPendingVitalityHint;
     ISInputController *__inputController;
     BOOL __needsUpdateContent;
@@ -15,7 +13,7 @@
     NSHashTable *__outputs;
     ISPlaybackController *__playbackController;
     ISVitalityInput *__vitalityHintInput;
-    NSObject<OS_dispatch_queue> *_audioSessionConfigurationQueue;
+    <ISPlayerDelegate> *_delegate;
     NSError *_error;
     BOOL _forcesPhotoHidden;
     BOOL _managesAudioSession;
@@ -37,8 +35,6 @@
 
 @property (nonatomic, readonly) NSHashTable *_changeObservers;
 @property (setter=_setCurrentMediaServicesResetID:, nonatomic) int _currentMediaServicesResetID;
-@property (setter=_setDefaultAudioCategory:, nonatomic, retain) NSString *_defaultAudioCategory;
-@property (setter=_setDefaultAudioCategoryOptions:, nonatomic) int _defaultAudioCategoryOptions;
 @property (setter=_setHasPendingHint:, nonatomic) BOOL _hasPendingVitalityHint;
 @property (setter=_inputController:, nonatomic, retain) ISInputController *_inputController;
 @property (setter=_setNeedsUpdateContent:, nonatomic) BOOL _needsUpdateContent;
@@ -48,6 +44,7 @@
 @property (setter=_setPlaybackController:, nonatomic, retain) ISPlaybackController *_playbackController;
 @property (nonatomic, readonly) ISVitalityInput *_vitalityHintInput;
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <ISPlayerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic) BOOL forcesPhotoHidden;
@@ -62,12 +59,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_audioSessionCategoryDidChange;
 - (id)_changeObservers;
 - (void)_configurePlayerItemWithPlaybackSpec;
 - (int)_currentMediaServicesResetID;
-- (id)_defaultAudioCategory;
-- (int)_defaultAudioCategoryOptions;
 - (void)_enumerateObserversWithBlock:(id /* block */)arg1;
 - (void)_handleMediaServicesResetIfNecessaryForError:(id)arg1;
 - (BOOL)_hasPendingVitalityHint;
@@ -85,8 +79,6 @@
 - (void)_resetMediaObjectsWithResetID:(int)arg1;
 - (void)_seekForVitalityHintIsScrubbing:(BOOL)arg1;
 - (void)_setCurrentMediaServicesResetID:(int)arg1;
-- (void)_setDefaultAudioCategory:(id)arg1;
-- (void)_setDefaultAudioCategoryOptions:(int)arg1;
 - (void)_setError:(id)arg1;
 - (void)_setHasPendingHint:(BOOL)arg1;
 - (void)_setNeedsUpdateContent:(BOOL)arg1;
@@ -98,7 +90,6 @@
 - (void)_setStatus:(int)arg1;
 - (void)_setupAVObjects;
 - (void)_triggerVitalyHintPlayback;
-- (void)_updateAudioCategory;
 - (void)_updateContentIfNeeded;
 - (void)_updateIfNeeded;
 - (BOOL)_updateNeeded;
@@ -110,20 +101,19 @@
 - (void)addOutput:(id)arg1;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })currentTime;
 - (void)dealloc;
+- (id)delegate;
 - (id)description;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })duration;
 - (id)error;
 - (BOOL)forcesPhotoHidden;
 - (id)init;
 - (id)initWithManagesAudioSession:(BOOL)arg1;
-- (id)initWithManagesAudioSession:(BOOL)arg1 videoPlayer:(id)arg2;
 - (id)initWithVideoPlayer:(id)arg1;
 - (void)inputControllerDidChange:(id)arg1;
 - (id)inputs;
 - (BOOL)isPhotoVisible;
 - (BOOL)isPlayingVitalityHint;
 - (BOOL)managesAudioSession;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })photoTime;
 - (void)playVitalityHint;
 - (void)playbackControllerPlaybackStateDidChange:(id)arg1;
@@ -138,6 +128,7 @@
 - (void)removeInput:(id)arg1;
 - (void)removeOutput:(id)arg1;
 - (void)seekForVitalityHintIfNeeded;
+- (void)setDelegate:(id)arg1;
 - (void)setForcesPhotoHidden:(BOOL)arg1;
 - (void)setPlaybackSpec:(id)arg1;
 - (void)setPlayerItem:(id)arg1;

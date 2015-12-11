@@ -3,6 +3,7 @@
  */
 
 @interface MSCLAttachment : NSObject <NSCopying> {
+    NSString *_UTI;
     MSCLStoreItem *_album;
     NSArray *_artists;
     UIImage *_assetImage;
@@ -12,6 +13,7 @@
     NSData *_data;
     double _duration;
     BOOL _explicitContent;
+    MPMediaItem *_mediaItem;
     NSString *_message;
     struct CGSize { 
         float width; 
@@ -20,7 +22,6 @@
     UIImage *_thumbnailImage;
     double _thumbnailImageTime;
     NSString *_title;
-    NSString *_uti;
 }
 
 @property (nonatomic, copy) NSString *UTI;
@@ -32,8 +33,10 @@
 @property (nonatomic, readonly) int attachmentType;
 @property (nonatomic, copy) NSString *categoryName;
 @property (nonatomic, copy) NSData *data;
+@property (getter=isDownloadable, nonatomic, readonly) BOOL downloadable;
 @property (nonatomic) double duration;
 @property (getter=isExplicitContent, nonatomic) BOOL explicitContent;
+@property (nonatomic, retain) MPMediaItem *mediaItem;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic) struct CGSize { float x1; float x2; } pixelSize;
 @property (nonatomic, retain) UIImage *thumbnailImage;
@@ -42,6 +45,7 @@
 
 - (void).cxx_destruct;
 - (id)UTI;
+- (void)_configureWithMediaItem:(id)arg1;
 - (id)album;
 - (id)artists;
 - (id)assetImage;
@@ -57,7 +61,10 @@
 - (id)initWithAssetData:(id)arg1 typeIdentifier:(id)arg2;
 - (id)initWithAssetURL:(id)arg1 typeIdentifier:(id)arg2;
 - (id)initWithImage:(id)arg1 typeIdentifier:(id)arg2;
+- (id)initWithMediaItem:(id)arg1;
+- (BOOL)isDownloadable;
 - (BOOL)isExplicitContent;
+- (id)mediaItem;
 - (id)message;
 - (struct CGSize { float x1; float x2; })pixelSize;
 - (void)setAlbum:(id)arg1;
@@ -69,6 +76,7 @@
 - (void)setData:(id)arg1;
 - (void)setDuration:(double)arg1;
 - (void)setExplicitContent:(BOOL)arg1;
+- (void)setMediaItem:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setPixelSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setThumbnailImage:(id)arg1;

@@ -8,4 +8,6 @@
 + (void)requestContentViewControllerWithName:(id)arg1 bundleIdentifier:(id)arg2 context:(id)arg3 completion:(id /* block */)arg4;
 + (id)serviceViewControllerInterface;
 
+- (BOOL)__shouldRemoteViewControllerFenceOperations;
+
 @end

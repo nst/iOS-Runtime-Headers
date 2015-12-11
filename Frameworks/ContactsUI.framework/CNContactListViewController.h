@@ -77,6 +77,7 @@
 - (id)initWithDataSource:(id)arg1 searchable:(BOOL)arg2;
 - (id)initWithStyle:(int)arg1;
 - (BOOL)isContactWithIdentifierMeContactOrLinkedToMeContact:(id)arg1;
+- (BOOL)isHandlingSearch;
 - (BOOL)isSearching;
 - (void)loadView;
 - (id)meContact;

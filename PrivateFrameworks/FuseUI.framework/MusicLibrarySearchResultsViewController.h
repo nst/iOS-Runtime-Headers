@@ -4,6 +4,7 @@
 
 @interface MusicLibrarySearchResultsViewController : MusicLibraryBrowseHeterogenousCollectionViewController {
     MusicEntityCollectionViewDescriptor *_collectionViewDescriptor;
+    BOOL _hasPreviousReceivedSearchTerm;
     MusicEntityValueContext *_itemEntityValueContext;
     NSMutableDictionary *_layoutMetricsForSection;
     <MusicLibrarySearchResultsViewControllerDelegate> *_searchResultsDelegate;
@@ -30,6 +31,7 @@
 - (unsigned int)_overrideMaximumNumberOfEntitesForSection:(unsigned int)arg1;
 - (void)_recordRecentForIndexPath:(id)arg1;
 - (void)_updateForResultsCount;
+- (void)_updateLayoutForSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })collectionView:(id)arg1 layout:(id)arg2 insetForSectionAtIndex:(int)arg3;
 - (float)collectionView:(id)arg1 layout:(id)arg2 minimumLineSpacingForSectionAtIndex:(int)arg3;
@@ -55,6 +57,7 @@
 - (void)setShowsAllSectionResults:(BOOL)arg1;
 - (BOOL)showsAllSectionResults;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;

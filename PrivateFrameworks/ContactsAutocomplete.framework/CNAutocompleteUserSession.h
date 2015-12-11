@@ -5,6 +5,7 @@
 @interface CNAutocompleteUserSession : NSObject {
     unsigned int _currentBatch;
     CNAutocompleteFetchRequest *_currentRequest;
+    <CNFuture> *_duetResultsFuture;
     _CNAutocompleteUserSessionDisplayedResults *_lastDisplayedResults;
     <CNAutocompleteProbeProvider> *_probeProvider;
     NSDate *_requestStartTime;
@@ -14,6 +15,7 @@
 
 @property (nonatomic) unsigned int currentBatch;
 @property (nonatomic, retain) CNAutocompleteFetchRequest *currentRequest;
+@property (nonatomic, retain) <CNFuture> *duetResultsFuture;
 @property (nonatomic, retain) _CNAutocompleteUserSessionDisplayedResults *lastDisplayedResults;
 @property (nonatomic, readonly) <CNAutocompleteProbeProvider> *probeProvider;
 @property (nonatomic, retain) NSDate *requestStartTime;
@@ -26,18 +28,21 @@
 - (id)currentRequest;
 - (void)didReceiveResults:(id)arg1 forRequest:(id)arg2;
 - (void)didSelectResult:(id)arg1 atSortedIndex:(unsigned int)arg2;
-- (void)didStartExecutingRequest:(id)arg1;
+- (id)duetResultsFuture;
 - (id)initWithProbeProvider:(id)arg1;
 - (id)lastDisplayedResults;
 - (id)probeProvider;
 - (id)requestStartTime;
 - (void)setCurrentBatch:(unsigned int)arg1;
 - (void)setCurrentRequest:(id)arg1;
+- (void)setDuetResultsFuture:(id)arg1;
 - (void)setLastDisplayedResults:(id)arg1;
 - (void)setRequestStartTime:(id)arg1;
 - (void)setSyncQueue:(id)arg1;
 - (void)setUsageMonitor:(id)arg1;
 - (id)syncQueue;
 - (id)usageMonitor;
+- (void)willStartDuetRequestWithMatchingResultsFuture:(id)arg1;
+- (void)willStartExecutingRequest:(id)arg1;
 
 @end

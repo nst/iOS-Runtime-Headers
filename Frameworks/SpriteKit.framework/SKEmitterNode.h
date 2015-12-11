@@ -184,6 +184,7 @@
 - (void)setWantsNewParticles:(BOOL)arg1;
 - (void)setXAcceleration:(float)arg1;
 - (void)setYAcceleration:(float)arg1;
+- (void)setZPosition:(float)arg1;
 - (id)shader;
 - (id)targetNode;
 - (BOOL)wantsNewParticles;

@@ -9,6 +9,7 @@
     NSArray *_menuItemViewElements;
     BOOL _needsReload;
     <_SKUIMenuBarViewElementConfigurationReloadDelegate> *_reloadDelegate;
+    BOOL _scrollEnabled;
     SKUIMenuItemViewElement *_selectedMenuItemViewElement;
 }
 
@@ -20,6 +21,7 @@
 @property (getter=_needsReload, setter=_setNeedsReload:, nonatomic) BOOL needsReload;
 @property (nonatomic, readonly) unsigned int numberOfMenuItems;
 @property (getter=_reloadDelegate, setter=_setReloadDelegate:, nonatomic) <_SKUIMenuBarViewElementConfigurationReloadDelegate> *reloadDelegate;
+@property (nonatomic, readonly) BOOL scrollEnabled;
 @property (nonatomic, readonly) SKUIMenuItemViewElement *selectedMenuItemViewElement;
 @property (readonly) Class superclass;
 
@@ -28,7 +30,7 @@
 - (id)_initWithMenuBarDocument:(id)arg1;
 - (BOOL)_needsReload;
 - (id)_reloadDelegate;
-- (void)_reloadWithMenuBarStyle:(int)arg1 menuItemViewElements:(id)arg2;
+- (void)_reloadWithMenuBarStyle:(int)arg1 menuItemViewElements:(id)arg2 scrollEnabled:(BOOL)arg3;
 - (void)_setNeedsReload:(BOOL)arg1;
 - (void)_setReloadDelegate:(id)arg1;
 - (void)contentWillAppearForMenuItemAtIndex:(unsigned int)arg1 withEntityValueProvider:(id)arg2 clientContext:(id)arg3;
@@ -43,6 +45,7 @@
 - (void)menuBarDocument:(id)arg1 didSelectMenuItem:(id)arg2 animated:(BOOL)arg3;
 - (int)menuBarStyle;
 - (unsigned int)numberOfMenuItems;
+- (BOOL)scrollEnabled;
 - (id)selectedMenuItemViewElement;
 - (void)setDelegate:(id)arg1;
 

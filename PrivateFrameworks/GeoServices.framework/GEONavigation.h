@@ -7,7 +7,9 @@
     id /* block */ _companionRouteFilterBlock;
     GEONavigationDetails *_details;
     NSDate *_displayETA;
+    double _displayRemainingTime;
     NSTimer *_etaUpdateTimer;
+    BOOL _forceUpdateETA;
     GEONavigationGuidanceState *_guidanceState;
     BOOL _hasNavigationStartedToken;
     BOOL _hasStartedGuidance;
@@ -46,7 +48,8 @@
 @property (nonatomic, readonly) BOOL shouldSuppressCellularDataAlerts;
 @property (nonatomic, readonly) double timeUntilNextAnnouncement;
 
-+ (double)displayRemainingTimeForRemainingTime:(double)arg1;
++ (id)displayDateForDate:(id)arg1;
++ (double)displayTimeIntervalForTimeInterval:(double)arg1;
 + (id)sharedInstance;
 
 - (BOOL)_canRunNavigationBasedOnDistanceForRoute:(id)arg1 withCurrentLocation:(id)arg2;
@@ -55,6 +58,7 @@
 - (void)_closeNavdConnection;
 - (void)_createNanomapscdConnection;
 - (void)_createNavdConnection;
+- (void)_forceUpdateETA;
 - (void)_invalidateNavigationSessionWithRouteContext:(id)arg1;
 - (void)_sendMessage:(int)arg1 data:(id)arg2;
 - (void)_updateETA;

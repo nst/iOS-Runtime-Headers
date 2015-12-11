@@ -86,6 +86,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) AVCaptureVideoPreviewLayer *videoPreviewLayer;
 
++ (void)preheatCaptureResources;
+
 - (void).cxx_destruct;
 - (id)_accumulatedUserInfoFromCommand:(id)arg1;
 - (id)_attemptRecordingRecoveryOfFileAtURL:(id)arg1;

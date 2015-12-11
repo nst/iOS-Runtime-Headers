@@ -33,6 +33,7 @@
 - (BOOL)_identifyBus:(id)arg1 scope:(unsigned int*)arg2 element:(unsigned int*)arg3;
 - (void)addPropertyObserver:(id)arg1;
 - (void)addRemoteParameterObserver:(BOOL)arg1 reply:(id /* block */)arg2;
+- (void)close:(id /* block */)arg1;
 - (id)currentParameterTree;
 - (void)dealloc;
 - (void)getBusses:(unsigned long)arg1 reply:(id /* block */)arg2;

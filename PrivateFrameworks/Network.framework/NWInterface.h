@@ -36,6 +36,7 @@
 - (id)delegateInterface;
 - (id)description;
 - (id)descriptionWithIndent:(int)arg1 showFullContent:(BOOL)arg2;
+- (BOOL)hasNetworkAgentWithDomain:(id)arg1 type:(id)arg2;
 - (id)initWithInterface:(id)arg1;
 - (id)initWithInterfaceIndex:(unsigned int)arg1;
 - (id)initWithInterfaceName:(id)arg1;

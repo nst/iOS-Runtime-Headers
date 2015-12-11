@@ -186,6 +186,7 @@
 
 + (id)userInfoDictionaryWithErrorStringsForErrorCode:(int)arg1;
 + (id)wcErrorFromInternalError:(id)arg1;
++ (id)wcErrorFromReceivedCode:(int)arg1;
 + (id)wcErrorWithCode:(int)arg1;
 + (id)wcErrorWithCode:(int)arg1 underlyingError:(id)arg2;
 + (id)wcErrorWithCode:(int)arg1 underlyingWCErrorWithCode:(int)arg2;

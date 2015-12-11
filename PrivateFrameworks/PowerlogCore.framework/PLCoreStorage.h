@@ -19,6 +19,7 @@
     BOOL _storageLocked;
     PLStorageOperator *_storageOperator;
     BOOL _storageReady;
+    NSString *_uuid;
 }
 
 @property (retain) PLSQLiteConnection *connection;
@@ -37,6 +38,7 @@
 @property (nonatomic) BOOL storageLocked;
 @property (retain) PLStorageOperator *storageOperator;
 @property BOOL storageReady;
+@property (retain) NSString *uuid;
 
 + (id)allOperatorTablesToTrimConditionsForTrimDate:(id)arg1;
 + (void)logMessage:(id)arg1 fromFile:(id)arg2 fromFunction:(id)arg3 fromLineNumber:(long)arg4;
@@ -133,6 +135,7 @@
 - (void)setStorageLocked:(BOOL)arg1;
 - (void)setStorageOperator:(id)arg1;
 - (void)setStorageReady:(BOOL)arg1;
+- (void)setUuid:(id)arg1;
 - (void)setupArrayForTableName:(id)arg1 forColumnNamed:(id)arg2 withValueType:(short)arg3;
 - (void)setupCoveringIndexOnTable:(id)arg1 withColumns:(id)arg2;
 - (void)setupStorageForEntryKey:(id)arg1;
@@ -146,6 +149,7 @@
 - (id)storageOperator;
 - (BOOL)storageReady;
 - (void)updateEntry:(id)arg1 withBlock:(id /* block */)arg2;
+- (id)uuid;
 - (short)verifySchemaVersionOfTable:(id)arg1 matchesExpectedVersion:(double)arg2;
 - (id)whiteBlackListForOperatorName:(id)arg1;
 - (void)writeAggregateEntry:(id)arg1;

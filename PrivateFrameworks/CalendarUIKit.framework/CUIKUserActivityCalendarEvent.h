@@ -6,6 +6,7 @@
     NSDate *_endDate;
     NSString *_externalID;
     NSString *_location;
+    NSString *_relatedUniqueIdentifier;
     NSDate *_startDate;
     NSString *_title;
     unsigned int _view;

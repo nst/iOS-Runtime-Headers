@@ -24,7 +24,6 @@
 + (id)_errorForOSStatus:(long)arg1;
 + (id)assetWriterWithURL:(id)arg1 fileType:(id)arg2 error:(id*)arg3;
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
-+ (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
 + (void)initialize;
 
 - (id)_helper;
@@ -41,6 +40,7 @@
 - (BOOL)canApplyOutputSettings:(id)arg1 forMediaType:(id)arg2;
 - (void)cancelWriting;
 - (void)dealloc;
+- (void)declareKeyPathDependenciesWithRegistry:(id)arg1;
 - (id)description;
 - (id)directoryForTemporaryFiles;
 - (void)endSessionAtSourceTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;

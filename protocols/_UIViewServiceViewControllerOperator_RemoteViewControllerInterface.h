@@ -5,6 +5,7 @@
 
 @required
 
+- (void)__cancelAlertActionWithToken:(long)arg1;
 - (void)__createViewController:(void *)arg1 withAppearanceSerializedRepresentations:(void *)arg2 legacyAppearance:(void *)arg3 hostAccessibilityServerPort:(void *)arg4 canShowTextServices:(void *)arg5 replyHandler:(void *)arg6; // needs 6 arg types, found 16: NSString *, NSArray *, BOOL, BSMachPortSendRight *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, int, BOOL, BSMachPortSendRight *, NSError *, void*
 - (void)__createViewController:(void *)arg1 withContextToken:(void *)arg2 fbsDisplays:(void *)arg3 appearanceSerializedRepresentations:(void *)arg4 legacyAppearance:(void *)arg5 traitCollection:(void *)arg6 initialInterfaceOrientation:(void *)arg7 hostAccessibilityServerPort:(void *)arg8 canShowTextServices:(void *)arg9 replyHandler:(void *)arg10; // needs 10 arg types, found 20: NSString *, NSUUID *, NSArray *, NSArray *, BOOL, UITraitCollection *, int, BSMachPortSendRight *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, _UIHostedWindowHostingHandle *, NSArray *, int, BOOL, BSMachPortSendRight *, NSError *, void*
 - (void)__dimmingViewWasTapped;
@@ -34,6 +35,7 @@
 - (void)__hostedActionSheetClickedButtonAtIndex:(int)arg1;
 - (void)__hostedActionSheetDidDismissWithClickedButtonIndex:(int)arg1;
 - (void)__hostedActionSheetDidPresent;
+- (void)__redoActionWithToken:(long)arg1;
 - (void)__restoreStateForSession:(NSString *)arg1 restorationAnchor:(NSString *)arg2;
 - (void)__saveStateForSession:(void *)arg1 restorationAnchor:(void *)arg2 completionHandler:(void *)arg3; // needs 3 arg types, found 9: NSString *, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)__scrollToTopFromTouchAtViewLocation:(void *)arg1 resultHandler:(void *)arg2; // needs 2 arg types, found 8: struct CGPoint { float x1; float x2; }, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
@@ -43,5 +45,6 @@
 - (void)__setHostViewUnderlapsStatusBar:(BOOL)arg1;
 - (void)__setServiceInPopover:(BOOL)arg1;
 - (void)__textServiceDidDismiss;
+- (void)__undoActionWithToken:(long)arg1;
 
 @end

@@ -11,6 +11,7 @@
     CNCardPropertyGroup *_group;
     CNLabeledValue *_labeledValue;
     CNLabeledValue *_originalLabeledValue;
+    NSString *_property;
 }
 
 @property (nonatomic) BOOL allowsEmail;
@@ -27,14 +28,14 @@
 @property (nonatomic, readonly) NSString *editingStringValue;
 @property (getter=isEmpty, nonatomic, readonly) BOOL empty;
 @property (getter=isFavorite, nonatomic, readonly) BOOL favorite;
-@property (nonatomic) CNCardPropertyGroup *group;
+@property (nonatomic, readonly) CNCardPropertyGroup *group;
 @property (nonatomic, retain) CNLabeledValue *labeledValue;
 @property (nonatomic, readonly) BOOL modified;
 @property (nonatomic, readonly) CNMutableContact *mutableContact;
 @property (nonatomic, readonly) id normalizedValue;
 @property (nonatomic, retain) CNLabeledValue *originalLabeledValue;
 @property (nonatomic, readonly) NSString *placeholderString;
-@property (nonatomic, readonly) NSString *property;
+@property (nonatomic, retain) NSString *property;
 @property (getter=isReadonly, nonatomic, readonly) BOOL readonly;
 @property (getter=isSuggested, nonatomic, readonly) BOOL suggested;
 @property (nonatomic, readonly) NSArray *supportedLabels;
@@ -96,9 +97,9 @@
 - (void)setAllowsPhone:(BOOL)arg1;
 - (void)setContact:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setGroup:(id)arg1;
 - (void)setLabeledValue:(id)arg1;
 - (void)setOriginalLabeledValue:(id)arg1;
+- (void)setProperty:(id)arg1;
 - (id)supportedLabels;
 - (void)updateLabeledValueWithLabel:(id)arg1;
 - (void)updateLabeledValueWithValue:(id)arg1;

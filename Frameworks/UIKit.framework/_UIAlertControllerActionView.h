@@ -25,6 +25,7 @@
     NSLayoutConstraint *_labelWidthConstraint;
     NSLayoutConstraint *_marginToImageConstraint;
     NSLayoutConstraint *_minimumHeightConstraint;
+    NSArray *_motionEffectsFromStyle;
     UIAlertControllerVisualStyle *_visualStyle;
     UIView<UIAlertControllerBackgroundView> *backgroundView;
     UIImageView *checkView;
@@ -70,6 +71,7 @@
 - (void)_contentSizeChanged;
 - (id)_descriptiveFont;
 - (int)_effectiveTitleTextAlignment;
+- (void)_installMotionEffects;
 - (float)_minimumLabelScaleFactor;
 - (void)_prepareConstraintsForDescriptiveText:(BOOL)arg1;
 - (int)_pressTypeForBackGesture;
@@ -77,6 +79,7 @@
 - (void)_recomputeTextColor;
 - (id)_titleFont;
 - (id)_touchForEvent:(id)arg1;
+- (void)_uninstallMotionEffects;
 - (void)_updateBackgroundView;
 - (void)_updateContentViewControllerContainerViewConstraints;
 - (void)_updateFontSize;
@@ -95,8 +98,8 @@
 - (float)currentLabelTextWidth;
 - (void)dealloc;
 - (id)description;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (BOOL)discrete;
-- (void)focusedViewDidChange;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isHighlighted;

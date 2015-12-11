@@ -16,6 +16,7 @@
 @property (nonatomic) <_SFBrowserToolbarDataSource> *dataSource;
 
 - (void).cxx_destruct;
+- (float)URLFieldHorizontalMargin;
 - (id)_toolbarItems;
 - (void)actionButtonPressed;
 - (id)actionItem;

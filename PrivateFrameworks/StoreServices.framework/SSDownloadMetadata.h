@@ -236,6 +236,7 @@
 - (void)setViewStoreItemURL:(id)arg1;
 - (id)shortDescription;
 - (BOOL)shouldDownloadAutomatically;
+- (id)showComposer;
 - (id)sinfs;
 - (id)sortArtistName;
 - (id)sortCollectionName;
@@ -253,5 +254,6 @@
 - (id)variantIdentifier;
 - (id)videoDetailsDictionary;
 - (id)viewStoreItemURL;
+- (id)workName;
 
 @end

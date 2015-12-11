@@ -46,6 +46,7 @@
 + (id)contactResultWithDisplayName:(id)arg1 value:(id)arg2 nameComponents:(id)arg3 identifier:(id)arg4;
 + (id)contactStoreForFetchingFullContacts;
 + (id)groupResultWithDisplayName:(id)arg1 identifier:(id)arg2;
++ (BOOL)isSourceTypeConsideredSuggestion:(unsigned int)arg1;
 + (id)localeForHashing;
 + (id)messagesResultWithAddress:(id)arg1 displayName:(id)arg2 nameComponents:(id)arg3 resultType:(int)arg4 addressType:(int)arg5 identifier:(id)arg6 contactProvider:(id /* block */)arg7 groupMembersProvider:(id /* block */)arg8 userInfo:(id)arg9;
 + (id)messagesResultWithAddress:(id)arg1 displayName:(id)arg2 nameComponents:(id)arg3 resultType:(int)arg4 groupMembersProvider:(id /* block */)arg5 userInfo:(id)arg6;

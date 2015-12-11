@@ -6,6 +6,7 @@
 
 + (id)URLIfFileExists:(id)arg1;
 + (id)addToDate:(id)arg1 numberOfDays:(int)arg2;
++ (BOOL)alarmSetBeforeDate:(id)arg1;
 + (unsigned long long)appDemoteableSpace;
 + (void)assignError:(id*)arg1 withCode:(int)arg2;
 + (void)assignError:(id*)arg1 withError:(id)arg2 translate:(BOOL)arg3;
@@ -39,6 +40,7 @@
 + (BOOL)isPasswordProtected;
 + (BOOL)isRestoringFromCloud;
 + (BOOL)isWiFiCapable;
++ (void)postFailureNotification:(id)arg1 body:(id)arg2 buttonText:(id)arg3 altButtonText:(id)arg4;
 + (id)prettyPrintDate:(id)arg1;
 + (id)serialNumber;
 + (void)setCacheable:(BOOL)arg1;

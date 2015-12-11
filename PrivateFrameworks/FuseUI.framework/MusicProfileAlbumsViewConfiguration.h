@@ -6,8 +6,8 @@
 
 + (Class)tracklistItemContentDescriptorClass;
 
-- (void)_configureTracklistEntityViewDescriptorWithTintInformation:(id)arg1;
-- (id)_loadTracklistEntityViewDescriptor;
+- (void)_configureTracklistTableViewDescriptorWithTintInformation:(id)arg1;
+- (id)_loadTracklistTableViewDescriptor;
 - (void)handleCommitPreviewViewController:(id)arg1 fromViewController:(id)arg2;
 - (id)initWithEntityProvider:(id)arg1;
 - (id)initWithMediaItemCollection:(id)arg1;

@@ -21,6 +21,7 @@
 @property (nonatomic, readonly, copy) MPUContentItemIdentifierCollection *contentItemIdentifierCollection;
 @property (nonatomic, readonly, copy) NSString *copyrightText;
 @property (nonatomic, readonly, copy) NSString *curatorName;
+@property (nonatomic, readonly, copy) NSString *descriptionText;
 @property (nonatomic, readonly) unsigned int discCount;
 @property (nonatomic, readonly) unsigned int discNumber;
 @property (nonatomic, readonly) double duration;
@@ -34,9 +35,11 @@
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *offers;
 @property (nonatomic, readonly, copy) NSDate *releaseDate;
+@property (nonatomic, readonly) BOOL showComposer;
 @property (nonatomic, readonly, copy) id storeID;
 @property (nonatomic, readonly) unsigned int trackCount;
 @property (nonatomic, readonly) unsigned int trackNumber;
+@property (nonatomic, readonly, copy) NSString *workName;
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
@@ -60,6 +63,8 @@
 - (id)copyrightText;
 - (id)curatorName;
 - (id)description;
+- (id)descriptionText;
+- (id)descriptionTextWithStyle:(id)arg1;
 - (unsigned int)discCount;
 - (unsigned int)discNumber;
 - (double)duration;
@@ -84,9 +89,11 @@
 - (id)name;
 - (id)offers;
 - (id)releaseDate;
+- (BOOL)showComposer;
 - (id)storeID;
 - (unsigned int)trackCount;
 - (unsigned int)trackNumber;
+- (id)workName;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 

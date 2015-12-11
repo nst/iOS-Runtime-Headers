@@ -9,6 +9,7 @@
     <AAUIGenericTermsRemoteUIDelegate> *_delegate;
     UINavigationController *_genericTermsUIViewController;
     BOOL _isModal;
+    BOOL _isPreferringPassword;
     RUILoader *_loader;
     NSMutableArray *_objectModels;
     UIViewController *_originatingViewController;
@@ -29,6 +30,7 @@
 - (void)_cleanUpAndDismissWithSuccess:(BOOL)arg1;
 - (void)_cleanupRUILoader;
 - (void)_displayConnectionErrorAndDismiss;
+- (void)_loadRequestPreferingPassword:(BOOL)arg1;
 - (void)_popObjectModelAnimated:(BOOL)arg1;
 - (id)account;
 - (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;

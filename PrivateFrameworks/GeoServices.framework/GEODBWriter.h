@@ -85,6 +85,6 @@
 - (void)setExpirationRecords:(struct { unsigned int x1; double x2; }*)arg1 count:(unsigned int)arg2;
 - (void)setMaxDatabaseSize:(unsigned long long)arg1;
 - (void)shrinkBySize:(unsigned long long)arg1 callback:(id /* block */)arg2 onQueue:(id)arg3;
-- (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2;
+- (void)shrinkToSize:(unsigned long long)arg1 finished:(id /* block */)arg2 onQueue:(id)arg3;
 
 @end

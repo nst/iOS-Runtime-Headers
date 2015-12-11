@@ -105,6 +105,7 @@
 - (double)_loadingPriority;
 - (double)_loadingPriorityValue;
 - (int)_networkServiceType;
+- (void)_onSessionQueue_cleanupAndBreakCycles;
 - (void)_onqueue_adjustPriorityHint:(float)arg1;
 - (void)_onqueue_releasePowerAsssertion;
 - (struct __PerformanceTiming { }*)_performanceTiming;
@@ -141,7 +142,6 @@
 - (void)adjustConditionalConnectionProperties:(struct __CFDictionary { }*)arg1;
 - (id)authenticator;
 - (void)cancel;
-- (void)cleanupAndBreakCycles;
 - (long long)computeAdjustedPoolPriority;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)countOfBytesExpectedToReceive;

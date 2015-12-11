@@ -43,6 +43,7 @@
 + (BOOL)creativeTypeMatches:(id)arg1 type:(int)arg2 creativeType:(id)arg3;
 + (id)creativesForAdBundleAtURL:(id)arg1 matchingRequest:(id)arg2;
 + (id)manifestForAdAtURL:(id)arg1;
++ (id)supportedDevicesForAdProperties:(id)arg1;
 
 - (id)_actionDictionaryFromProperties:(id)arg1 path:(id)arg2 error:(id*)arg3;
 - (id)_adDataForPath:(id)arg1 creative:(id)arg2 error:(id*)arg3;

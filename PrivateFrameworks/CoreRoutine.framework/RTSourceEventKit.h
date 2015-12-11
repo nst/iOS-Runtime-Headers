@@ -14,7 +14,9 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)eventIdentifier;
+- (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithEventIdentifier:(id)arg1;
+- (BOOL)isEqual:(id)arg1;
 
 @end

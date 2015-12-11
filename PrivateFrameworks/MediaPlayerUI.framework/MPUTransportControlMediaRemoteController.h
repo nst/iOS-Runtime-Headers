@@ -46,12 +46,13 @@
 - (void).cxx_destruct;
 - (id)_commandOptionsForFeedbackOrPurchase;
 - (void)_completeInitializationWithTransportControlsView:(id)arg1;
-- (struct __CFString { }*)_nowPlayingInfoActiveKeyForMediaRemoteCommand:(unsigned int)arg1;
+- (BOOL)_isSupportedCommandActiveForMediaRemoteCommand:(unsigned int)arg1;
 - (id)_nowPlayingInfoValueForMediaRemoteNowPlayingInfoKey:(struct __CFString { }*)arg1;
 - (void)_presentFirstLoveAlertIfNeeded;
 - (void)_presentLikeBanActionSheetForCommand:(unsigned int)arg1;
 - (void)_updateForNowPlayingInfoChange;
 - (void)_updateForSupportedCommandsChange;
+- (void)_updateLikedState;
 - (id)allowedTransportControlTypes;
 - (void)cancelRunningLongPressCommand;
 - (id)delegate;

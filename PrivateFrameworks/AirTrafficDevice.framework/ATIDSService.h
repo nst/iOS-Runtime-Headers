@@ -6,6 +6,7 @@
     ATIDSConnectionInfo *_connectionInfo;
     NSMutableArray *_listeners;
     NSObject<OS_dispatch_queue> *_queue;
+    BOOL _running;
     IDSService *_service;
 }
 

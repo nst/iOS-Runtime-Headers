@@ -23,8 +23,6 @@
 + (id)entryEventForwardDefinitionBatterySaverMode;
 + (id)entryEventForwardDefinitions;
 + (id)entryEventIntervalDefinitions;
-+ (id)entryEventNoneDefinitionUUID;
-+ (id)entryEventNoneDefinitions;
 + (id)eventIntervalDefinitionDuetEvents;
 + (void)load;
 + (id)mapBundleID:(id)arg1;
@@ -48,7 +46,5 @@
 - (void)setEnergyResponder:(id)arg1;
 - (void)setEventListener:(id)arg1;
 - (void)setupBatterySaverModeForNotification:(id)arg1;
-- (id)trimConditionsForEntryKey:(id)arg1 forTrimDate:(id)arg2;
-- (id)uuid;
 
 @end

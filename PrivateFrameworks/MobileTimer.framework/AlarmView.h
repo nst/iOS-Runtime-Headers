@@ -14,8 +14,10 @@
     UILabel *_repeatLabel;
     NSString *_repeatText;
     UILabel *_secondaryDesignatorLabel;
+    BOOL _shouldAddLayoutConstraints;
     UIView *_singleStyleDetailContainer;
     int _style;
+    BOOL _switchVisible;
     DigitalClockLabel *_timeLabel;
 }
 
@@ -32,8 +34,10 @@
 @property (nonatomic, readonly) UILabel *repeatLabel;
 @property (nonatomic, copy) NSString *repeatText;
 @property (nonatomic, readonly) UILabel *secondaryDesignatorLabel;
+@property (nonatomic) BOOL shouldAddLayoutConstraints;
 @property (nonatomic) int style;
 @property (readonly) Class superclass;
+@property (getter=isSwitchVisible, nonatomic) BOOL switchVisible;
 @property (nonatomic, readonly) DigitalClockLabel *timeLabel;
 @property (nonatomic, readonly) NSDictionary *viewsByIdentifier;
 
@@ -44,6 +48,7 @@
 - (id)detailLabel;
 - (id)enabledSwitch;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isSwitchVisible;
 - (id)name;
 - (id)nameFont;
 - (id)nameLabel;
@@ -57,7 +62,10 @@
 - (void)setNameFont:(id)arg1;
 - (void)setRepeatFont:(id)arg1;
 - (void)setRepeatText:(id)arg1;
+- (void)setShouldAddLayoutConstraints:(BOOL)arg1;
 - (void)setStyle:(int)arg1;
+- (void)setSwitchVisible:(BOOL)arg1;
+- (BOOL)shouldAddLayoutConstraints;
 - (int)style;
 - (void)tearDownContentSizeChangeObserver;
 - (id)timeLabel;

@@ -346,7 +346,7 @@
 - (void)handleLargeMessageComposeContinuationWithInputStream:(id)arg1 outputStream:(id)arg2 error:(id)arg3;
 - (void)handleMarkupData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 attachment:(id)arg4;
 - (void)handleMarkupError:(id)arg1 attachment:(id)arg2;
-- (void)handleMarkupURL:(id)arg1 attachment:(id)arg2;
+- (void)handleMarkupURL:(id)arg1 attachment:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)hasAnyHiddenTrailingEmptyQuote;
 - (BOOL)hasAttachments;
 - (void)hostApplicationDidEnterBackground;
@@ -455,6 +455,7 @@
 - (void)setSubject:(id)arg1;
 - (void)setToRecipients:(id)arg1;
 - (void)setUseMailDrop:(BOOL)arg1;
+- (BOOL)shouldCreateRichTextRepresentation;
 - (BOOL)shouldShowSMIMEButton;
 - (void)showPhotoPickerWithSourceType:(int)arg1 fromSource:(id)arg2;
 - (int)sourceAccountManagement;

@@ -31,6 +31,7 @@
         unsigned int numPrependedSilenceFrames; 
     } _currentSilenceBuffer;
     BOOL _didBeginInterruption;
+    BOOL _doEndInterruption;
     struct opaqueCMFormatDescription { } *_formatDescription;
     NSObject<OS_dispatch_queue> *_generateSamplesDispatchQueue;
     struct opaqueCMSimpleQueue { } *_inactiveBuffersQueue;
@@ -60,6 +61,7 @@
 }
 
 @property (nonatomic, readonly) NSArray *audioLevels;
+@property (nonatomic, readonly) BOOL didBeginInterruption;
 @property (nonatomic) BOOL interrupted;
 @property (nonatomic) BOOL levelMeteringEnabled;
 @property (nonatomic) BOOL selectsMicForFrontCamera;
@@ -85,8 +87,9 @@
 - (id)audioLevels;
 - (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;
+- (BOOL)didBeginInterruption;
 - (BOOL)hasNonLiveConfigurationChanges;
-- (id)initWithCMSession:(struct opaqueCMSession { }*)arg1 configureSession:(BOOL)arg2 mixWithOthers:(BOOL)arg3 clientToken:(id)arg4 clientPID:(int)arg5;
+- (id)initWithCMSession:(struct opaqueCMSession { }*)arg1 configureSession:(BOOL)arg2 mixWithOthers:(BOOL)arg3 doEndInterruption:(BOOL)arg4 clientToken:(id)arg5 clientPID:(int)arg6;
 - (BOOL)interrupted;
 - (BOOL)levelMeteringEnabled;
 - (void)makeCurrentConfigurationLive;

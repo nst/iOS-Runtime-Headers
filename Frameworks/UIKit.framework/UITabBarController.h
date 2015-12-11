@@ -120,6 +120,7 @@
 - (void)_rebuildTabBarItemsIfNeeded;
 - (id)_recallRememberedFocusedViewForViewController:(id)arg1;
 - (void)_rememberFocusedView:(id)arg1 forViewController:(id)arg2;
+- (void)_rememberPresentingFocusedView:(id)arg1;
 - (id)_responderSelectionContainerViewForResponder:(id)arg1;
 - (void)_selectDefaultViewControllerIfNecessaryWithAppearanceTransitions:(BOOL)arg1;
 - (id)_selectedViewControllerInTabBar;

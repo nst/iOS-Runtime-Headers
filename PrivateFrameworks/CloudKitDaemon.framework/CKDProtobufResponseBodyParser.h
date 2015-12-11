@@ -5,6 +5,7 @@
 @interface CKDProtobufResponseBodyParser : NSObject <CKDResponseBodyParser> {
     unsigned int _curObjectLength;
     BOOL _isParsing;
+    id /* block */ _logParsedObjectBlock;
     struct CC_SHA256state_st { 
         unsigned int count[2]; 
         unsigned int hash[8]; 
@@ -23,6 +24,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isParsing;
+@property (nonatomic, copy) id /* block */ logParsedObjectBlock;
 @property (nonatomic) struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; } mescalSignature;
 @property (nonatomic) Class messageClass;
 @property (nonatomic, copy) id /* block */ objectParsedBlock;
@@ -39,6 +41,7 @@
 - (void)finishWithCompletion:(id /* block */)arg1;
 - (id)init;
 - (BOOL)isParsing;
+- (id /* block */)logParsedObjectBlock;
 - (struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; })mescalSignature;
 - (Class)messageClass;
 - (id /* block */)objectParsedBlock;
@@ -48,6 +51,7 @@
 - (void)processData:(id)arg1;
 - (void)setCurObjectLength:(unsigned int)arg1;
 - (void)setIsParsing:(BOOL)arg1;
+- (void)setLogParsedObjectBlock:(id /* block */)arg1;
 - (void)setMescalSignature:(struct CC_SHA256state_st { unsigned int x1[2]; unsigned int x2[8]; unsigned int x3[16]; })arg1;
 - (void)setMessageClass:(Class)arg1;
 - (void)setObjectParsedBlock:(id /* block */)arg1;

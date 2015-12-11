@@ -39,6 +39,8 @@
     int restartCheckNotificationToken;
     NSMutableArray *runQueue;
     CDSession *session;
+    NSDate *sleepEnd1;
+    NSDate *sleepEnd2;
     NSMutableArray *submittedActivities;
     NSMutableArray *suspendQueue;
     unsigned int swNotifier;
@@ -78,6 +80,7 @@
 - (id)getForecastForAttribute:(id)arg1;
 - (BOOL)getForecastForDevicePlugin:(char *)arg1;
 - (BOOL)getForecastForUserInactivity:(char *)arg1;
+- (id)getUnrestrictedSleepEnd;
 - (void)handleActivitySubmission:(id)arg1;
 - (void)handleSystemNotification:(unsigned int)arg1;
 - (id)init;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
  */
 
-@interface AFSiriTaskExecution : NSObject <AFSiriResponseHandling, NSXPCListenerDelegate> {
+@interface AFSiriTaskExecution : NSObject <AFSiriRequestFailureHandling, AFSiriResponseHandling, NSXPCListenerDelegate> {
     id /* block */ _completionHandler;
     id /* block */ _deliveryHandler;
     NSObject<OS_dispatch_queue> *_queue;

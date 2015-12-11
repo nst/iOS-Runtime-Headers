@@ -12,6 +12,7 @@
     struct _opaque_pthread_t { long x1; struct __darwin_pthread_handler_rec {} *x2; BOOL x3[4088]; } *_threadInQueue;
     int _transactionDepth;
     BOOL _transactionRolledback;
+    NSHashTable *_weakQueries;
 }
 
 @property (nonatomic, readonly) NSString *filename;
@@ -21,6 +22,7 @@
 + (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 double:(double)arg3;
 + (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 int64:(long long)arg3;
 + (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 int:(int)arg3;
++ (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 nscoding:(id)arg3;
 + (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 nsdata:(id)arg3;
 + (int)bindParam:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2 nsstring:(id)arg3;
 + (int)bindParamToNull:(struct sqlite3_stmt { }*)arg1 name:(const char *)arg2;

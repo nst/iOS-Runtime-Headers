@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
  */
 
-@interface NoteBodyObject : NSManagedObject <ICSearchIndexable>
+@interface NoteBodyObject : NSManagedObject <ICSearchIndexableTarget>
 
 @property (nonatomic, retain) NSString *content;
 @property (nonatomic, readonly) NSString *contentAsPlainText;
@@ -16,17 +16,6 @@
 
 - (id)contentAsPlainText;
 - (id)contentAsPlainTextPreservingNewlines;
-- (void)deleteFromNoteContextUsingIndexerContext:(id)arg1;
-- (id)identifier;
-- (BOOL)isHiddenFromSearch;
-- (id)modificationDate;
-- (id)objectIdentifier;
-- (id)searchIndexStringsOutHasAdditionalStrings:(BOOL*)arg1;
-- (id)searchIndexableTitleUsingContentTextIfNecessary:(id)arg1;
-- (BOOL)searchResultCanBeDeletedFromNoteContext;
-- (unsigned int)searchResultsSection;
-- (BOOL)shouldUpdateIndexForChangedValues:(id)arg1;
 - (id)targetSearchIndexable;
-- (int)visibilityTestingType;
 
 @end

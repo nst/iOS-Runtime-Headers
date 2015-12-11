@@ -34,6 +34,7 @@
 - (int)_buttonType;
 - (BOOL)_delaysRecognitionForGreaterTapCounts;
 - (struct CGPoint { float x1; float x2; })_digitizerLocation;
+- (int)_finalStateForRecognition;
 - (void)_resetGestureRecognizer;
 - (void)_setAllowableSeparation:(float)arg1;
 - (void)_setAllowableTouchTimeSeparation:(double)arg1;

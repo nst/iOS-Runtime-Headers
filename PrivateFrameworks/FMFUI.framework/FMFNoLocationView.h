@@ -27,6 +27,7 @@
 @property (nonatomic, retain) NSLayoutConstraint *topInsetConstraint;
 
 - (void).cxx_destruct;
+- (id)accessibilityLabel;
 - (void)addLayoutConstraints;
 - (BOOL)blockLabelUpdates;
 - (id)blur;

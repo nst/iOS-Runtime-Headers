@@ -21,6 +21,7 @@
 - (id)_visualEffectForStyle:(int)arg1;
 - (float)cornerRadius;
 - (id)initWithStyle:(int)arg1;
+- (void)layoutSubviews;
 - (void)setAlpha:(float)arg1;
 - (void)setCornerRadius:(float)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;

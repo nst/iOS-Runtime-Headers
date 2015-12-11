@@ -7,6 +7,7 @@
     NSSet *_desiredKeySet;
     CKQuery *_query;
     id /* block */ _recordFetchedBlock;
+    CKDRecordFetchAggregator *_recordFetcher;
     CKQueryCursor *_resultsCursor;
     unsigned int _resultsLimit;
     BOOL _shouldFetchAssetContent;
@@ -17,6 +18,7 @@
 @property (nonatomic, retain) NSSet *desiredKeySet;
 @property (nonatomic, readonly) CKQuery *query;
 @property (nonatomic, copy) id /* block */ recordFetchedBlock;
+@property (nonatomic, retain) CKDRecordFetchAggregator *recordFetcher;
 @property (nonatomic, retain) CKQueryCursor *resultsCursor;
 @property (nonatomic, readonly) unsigned int resultsLimit;
 @property (nonatomic) BOOL shouldFetchAssetContent;
@@ -25,6 +27,7 @@
 - (void).cxx_destruct;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleQueryRequestFinished:(id)arg1;
+- (void)_handleRecordResponse:(id)arg1;
 - (unsigned long long)activityStart;
 - (id)cursor;
 - (id)desiredKeySet;
@@ -34,10 +37,12 @@
 - (Class)operationResultClass;
 - (id)query;
 - (id /* block */)recordFetchedBlock;
+- (id)recordFetcher;
 - (id)resultsCursor;
 - (unsigned int)resultsLimit;
 - (void)setDesiredKeySet:(id)arg1;
 - (void)setRecordFetchedBlock:(id /* block */)arg1;
+- (void)setRecordFetcher:(id)arg1;
 - (void)setResultsCursor:(id)arg1;
 - (void)setShouldFetchAssetContent:(BOOL)arg1;
 - (void)setZoneID:(id)arg1;

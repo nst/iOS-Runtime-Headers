@@ -5,8 +5,8 @@
 
 @required
 
-- (void)timelapseController:(CAMTimelapseController *)arg1 generatedThumbnailImage:(UIImage *)arg2 forAssetUUID:(NSString *)arg3 inCaptureSession:(unsigned short)arg4;
-- (void)timelapseController:(CAMTimelapseController *)arg1 persistedPlaceholderResult:(CAMTimelapsePlaceholderResult *)arg2;
+- (void)timelapseController:(CAMTimelapseController *)arg1 generatedPlaceholderResult:(CAMTimelapsePlaceholderResult *)arg2 withThumbnailImage:(UIImage *)arg3 forAssetUUID:(NSString *)arg4 inCaptureSession:(unsigned short)arg5;
+- (void)timelapseController:(CAMTimelapseController *)arg1 persistedPlaceholderResult:(CAMTimelapsePlaceholderResult *)arg2 error:(NSError *)arg3;
 - (void)timelapseControllerStarted:(CAMTimelapseController *)arg1;
 - (void)timelapseControllerStopped:(CAMTimelapseController *)arg1;
 

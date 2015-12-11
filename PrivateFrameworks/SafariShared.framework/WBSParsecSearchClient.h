@@ -50,6 +50,7 @@
     NSURL *_searchFallbackURL;
     NSNumber *_searchRenderTimeout;
     NSURL *_searchURL;
+    NSDate *_sharedURLSessionExpirationTime;
     <WBSParsecSearchClientStorage> *_storage;
     NSString *_storeFrontIdentifier;
     NSArray *_subscriptionProviderBundleIdentifierWhitelist;
@@ -61,6 +62,7 @@
     NSTimer *_updateTimer;
     BOOL _updatingLocation;
     NSURLSessionConfiguration *_urlSessionConfiguration;
+    NSURLSession *_urlSessionForSearchSessions;
     NSString *_userAgent;
     NSString *_userGUID;
     BOOL _userGUIDEnabled;
@@ -109,6 +111,7 @@
 @property (setter=test_setHasCompletedBagFetch:, nonatomic) BOOL test_hasCompletedBagFetch;
 @property (getter=test_isValid, setter=test_setValid:, nonatomic) BOOL test_valid;
 @property (nonatomic, readonly) NSURLSessionConfiguration *urlSessionConfiguration;
+@property (nonatomic, retain) NSURLSession *urlSessionForSearchSessions;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 + (id)_preferredLanguages;
@@ -190,6 +193,7 @@
 - (void)setMinimumIntervalBetweenQueriesFromSearchResponse:(double)arg1;
 - (void)setSafeModeEnabled:(BOOL)arg1;
 - (void)setSupportedDomainIdentifiers:(id)arg1;
+- (void)setUrlSessionForSearchSessions:(id)arg1;
 - (void)startUpdatingLocation;
 - (void)stopUpdatingLocation;
 - (id)storage;
@@ -208,5 +212,6 @@
 - (void)updateRecentlyUsedAppIdentifiers;
 - (void)updateURLSessionConfiguration;
 - (id)urlSessionConfiguration;
+- (id)urlSessionForSearchSessions;
 
 @end

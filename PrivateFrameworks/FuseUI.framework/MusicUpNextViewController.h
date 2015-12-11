@@ -16,6 +16,7 @@
     BOOL _hidesNowPlaying;
     BOOL _ignoreUpdates;
     NSIndexPath *_indexPathForNowPlayingFrame;
+    BOOL _isFirstAppearance;
     BOOL _isReordering;
     UIView *_itemContentViewContainerView;
     BOOL _loadingCells;
@@ -89,6 +90,7 @@
 - (id)tableView:(id)arg1 viewForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willBeginReorderingRowAtIndexPath:(id)arg2;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

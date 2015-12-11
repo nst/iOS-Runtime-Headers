@@ -8,6 +8,7 @@
     NSURL *_appInstallURL;
     NSString *_appName;
     NSURL *_appPunchoutURL;
+    NSNumber *_cardLoadHint;
     NSArray *_cardSections;
     NSURL *_cardURL;
     NSString *_completion;
@@ -35,6 +36,7 @@
 @property (nonatomic, readonly) NSURL *appInstallURL;
 @property (nonatomic, readonly) NSString *appName;
 @property (nonatomic, readonly) NSURL *appPunchoutURL;
+@property (nonatomic, readonly) NSNumber *cardLoadHint;
 @property (nonatomic, copy) NSArray *cardSections;
 @property (nonatomic, readonly) NSURL *cardURL;
 @property (nonatomic, readonly) NSString *completion;
@@ -81,6 +83,7 @@
 - (id)appInstallURL;
 - (id)appName;
 - (id)appPunchoutURL;
+- (id)cardLoadHint;
 - (id)cardSections;
 - (id)cardURL;
 - (id)completion;

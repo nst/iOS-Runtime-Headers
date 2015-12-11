@@ -2,24 +2,16 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUISoftwareUpdateController : PSListController <DevicePINControllerDelegate, PSUISoftwareUpdateManagerDelegate, SUNetworkObserver, UITableViewDelegate> {
-    BOOL _connectedToPowerSource;
-    <PSUISoftwareUpdateControllerDelegate> *_delegate;
+@interface PSUISoftwareUpdateController : PSListController <DevicePINControllerDelegate, PSUISoftwareUpdateManagerDelegate, UITableViewDelegate> {
     NSString *_devicePasscode;
     id /* block */ _devicePasscodeCompletion;
     BOOL _disableInstallButton;
-    NSDateComponentsFormatter *_durationFormatter;
     BOOL _hideInsufficientStorageUI;
     PSSpecifier *_installButtonGroup;
     PSSpecifier *_installButtonSpecifier;
     PSUISoftwareUpdateManager *_manager;
-    int _networkType;
-    unsigned char _originalCellFlag;
-    unsigned char _originalWifiFlag;
-    BOOL _presentedCellularFees;
     BOOL _refreshOnNextAppearance;
     BOOL _showingTerms;
-    UIAlertView *_softwareUpdateAlert;
     NSError *_suError;
     PSSoftwareUpdateTitleCell *_titleCell;
     PSSpecifier *_titleGroup;
@@ -28,7 +20,6 @@
 
 @property (nonatomic, retain) NSError *SUError;
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <PSUISoftwareUpdateControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, copy) id /* block */ devicePasscodeCompletion;
 @property (readonly) unsigned int hash;
@@ -36,43 +27,27 @@
 
 - (void).cxx_destruct;
 - (id)SUError;
-- (BOOL)_SUDownloadPhaseIsQueued:(id)arg1;
-- (BOOL)_alertForDownloadConstraintsWithContext:(id)arg1;
-- (void)_batteryStateChanged:(id)arg1;
-- (void)_reallyDownloadAndInstallAcceptingCellularFees:(BOOL)arg1;
-- (void)_reallyInstall;
-- (void)_reallyResumeDownloadAcceptingCellularFees:(BOOL)arg1;
-- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
 - (void)autoInstallCancel:(id)arg1;
 - (void)autoInstallCancelPrompt:(id)arg1;
 - (id)controllerForSpecifier:(id)arg1;
 - (void)dealloc;
-- (id)delegate;
 - (void)detailedReleaseNotesDonePressed:(id)arg1;
 - (void)devicePINControllerDidDismissPINPane:(id)arg1;
 - (id /* block */)devicePasscodeCompletion;
 - (void)didAcceptEnteredPIN:(id)arg1;
 - (void)downloadAndInstall:(id)arg1;
-- (void)handleDownloadError:(id)arg1;
-- (void)handleInstallationError:(id)arg1;
-- (void)handleScanError:(id)arg1;
-- (id)humanReadableDescriptionForError:(id)arg1 enableButton:(BOOL*)arg2 showAsButtonFooter:(BOOL*)arg3;
 - (id)init;
 - (void)install:(id)arg1;
 - (void)loadView;
 - (void)manager:(id)arg1 didTransitionToState:(int)arg2 fromState:(int)arg3 error:(id)arg4;
 - (void)manager:(id)arg1 download:(id)arg2 failedWithError:(id)arg3;
-- (void)manager:(id)arg1 downloadProgressChanged:(id)arg2;
-- (void)manager:(id)arg1 installFailedWithError:(id)arg2;
+- (void)manager:(id)arg1 downloadProgressChanged:(id)arg2 displayStyle:(int)arg3;
+- (void)manager:(id)arg1 promptForDevicePasscodeWithCompletion:(id /* block */)arg2;
 - (void)manager:(id)arg1 scanFoundUpdate:(id)arg2 error:(id)arg3;
-- (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
 - (void)presentError:(id)arg1;
-- (void)presentTermsIfNecessaryWithAcceptanceAction:(id /* block */)arg1;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)promptForDevicePasscodeFromSpecifier:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)refreshState;
 - (void)resumeDownload:(id)arg1;
-- (void)setDelegate:(id)arg1;
 - (void)setDevicePasscodeCompletion:(id /* block */)arg1;
 - (void)setSUError:(id)arg1;
 - (void)setSUError:(id)arg1 disableButton:(BOOL)arg2 reload:(BOOL)arg3;

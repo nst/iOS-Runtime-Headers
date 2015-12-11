@@ -5,16 +5,12 @@
 @interface SPFeedbackRender : SPFeedback {
     NSArray *_hiddentExtResults;
     BOOL _leftOfHome;
-    NSDictionary *_renderedZKW;
-    NSArray *_renderedZKWMaps;
     NSArray *_sections;
     double _triggerTimestamp;
 }
 
 @property (nonatomic, retain) NSArray *hiddentExtResults;
 @property (nonatomic) BOOL leftOfHome;
-@property (nonatomic, retain) NSDictionary *renderedZKW;
-@property (nonatomic, retain) NSArray *renderedZKWMaps;
 @property (nonatomic, retain) NSArray *sections;
 @property (nonatomic) double triggerTimestamp;
 
@@ -24,13 +20,9 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)leftOfHome;
 - (id)parsecFeedbackFromSession:(id)arg1;
-- (id)renderedZKW;
-- (id)renderedZKWMaps;
 - (id)sections;
 - (void)setHiddentExtResults:(id)arg1;
 - (void)setLeftOfHome:(BOOL)arg1;
-- (void)setRenderedZKW:(id)arg1;
-- (void)setRenderedZKWMaps:(id)arg1;
 - (void)setSections:(id)arg1;
 - (void)setTriggerTimestamp:(double)arg1;
 - (double)triggerTimestamp;

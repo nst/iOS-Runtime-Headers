@@ -134,6 +134,7 @@
 - (id)_imageThatSuppressesAccessibilityHairlineThickening;
 - (id)_imageWithBrightnessModifiedForLegibilityStyle:(int)arg1;
 - (id)_imageWithStylePresets:(id)arg1 withTintColor:(id)arg2;
+- (id)_initWithContentsOfLCRFile:(id)arg1;
 - (id)_initWithData:(id)arg1 immediateLoadWithMaxSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 renderingIntent:(int)arg4;
 - (id)_initWithData:(id)arg1 preserveScale:(BOOL)arg2;
 - (id)_initWithData:(id)arg1 preserveScale:(BOOL)arg2 cache:(BOOL)arg3;
@@ -366,13 +367,17 @@
 
 - (id)scaledImageWithSize:(struct CGSize { float x1; float x2; })arg1;
 
-// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
 + (id)UIImageFromCIImage:(id)arg1;
 + (struct UIImage { Class x1; }*)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize { float x1; float x2; })arg2;
 + (struct UIImage { Class x1; }*)imageNamed:(id)arg1 withTint:(struct UIColor { Class x1; }*)arg2;
 
+- (void)decodeInBackground;
+- (void)decodeWithCompletion:(id /* block */)arg1;
 - (id)ic_JPEGData;
+- (id)ic_PNGData;
+- (id)ic_imageDataWithUTType:(id)arg1;
 - (struct UIImage { Class x1; }*)imageFromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct UIImage { Class x1; }*)scaledImageMaxDimension:(float)arg1 scale:(float)arg2;
 - (struct UIImage { Class x1; }*)scaledImageMinDimension:(float)arg1 scale:(float)arg2;
@@ -503,7 +508,6 @@
 
 // Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
 
-+ (struct CGSize { float x1; float x2; })ZKWIconSize;
 + (struct CGSize { float x1; float x2; })nonZKWIconSize;
 + (id)tableViewChevronImageWithColor:(id)arg1;
 

@@ -89,6 +89,7 @@
 - (id)avAudioEnvironmentNode;
 - (id)backgroundColor;
 - (id)camera;
+- (void)checkAudioEngine;
 - (struct CGPoint { float x1; float x2; })convertPointFromParent:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPointFromView:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })convertPointToParent:(struct CGPoint { float x1; float x2; })arg1;

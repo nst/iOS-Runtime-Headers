@@ -71,6 +71,7 @@
 - (void)_fetchUserIdentityWithInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_initWithContainerIdentifier:(id)arg1;
 - (id)_initWithContainerIdentifier:(id)arg1 environment:(int)arg2;
+- (void)_prepareForDaemonLaunch;
 - (void)_setupWithContainerID:(id)arg1 accountInfoOverride:(id)arg2;
 - (int)_untrustedDatabaseEnvironment;
 - (id)_untrustedEntitlementForKey:(id)arg1;

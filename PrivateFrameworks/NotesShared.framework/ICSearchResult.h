@@ -7,14 +7,13 @@
     NSString *_highlightString;
     <ICSearchIndexable> *_object;
     unsigned int _relevance;
-    ICSearchString *_searchString;
+    NSString *_searchString;
 }
 
 @property (nonatomic, readonly) NSString *highlightString;
 @property (nonatomic, readonly) <ICSearchIndexable> *object;
 @property (nonatomic, readonly) unsigned int relevance;
-@property (nonatomic, readonly, copy) ICSearchString *searchString;
-@property (nonatomic, readonly) NSString *string;
+@property (nonatomic, readonly, copy) NSString *searchString;
 
 + (id)attributedStringWithMatchHighlightedWithString:(id)arg1 withinString:(id)arg2 usingAttributes:(id)arg3 insideFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 + (id)attributesByHighlightingAttributes:(id)arg1;
@@ -41,9 +40,9 @@
 - (id)initWithObject:(id)arg1 relevance:(unsigned int)arg2 searchString:(id)arg3 highlightString:(id)arg4;
 - (BOOL)isEqual:(id)arg1;
 - (id)object;
+- (void)refetchObjectFromContext:(id)arg1;
 - (unsigned int)relevance;
 - (id)searchResultByHighlightingWithString:(id)arg1;
 - (id)searchString;
-- (id)string;
 
 @end

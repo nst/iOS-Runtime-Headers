@@ -167,5 +167,6 @@
 - (void)updateEditNavigationItemsAnimated:(BOOL)arg1 doneButtonEnabled:(BOOL)arg2 doneButtonText:(id)arg3;
 - (void)updateEditing:(BOOL)arg1 doneButtonEnabled:(BOOL)arg2 doneButtonText:(id)arg3;
 - (id)viewController;
+- (void)viewDidAppear:(BOOL)arg1;
 
 @end

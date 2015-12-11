@@ -15,6 +15,6 @@
 - (void)recordPasteboardAttachmentsForURLs:(id)arg1 forContextID:(id)arg2;
 - (void)recordUndoAttachmentsForURLs:(id)arg1 forContextID:(id)arg2;
 - (void)removeAttachmentForURL:(id)arg1;
-- (void)updateAttachment:(id)arg1 withNewData:(id)arg2;
+- (BOOL)updateAttachment:(id)arg1 withNewData:(id)arg2;
 
 @end

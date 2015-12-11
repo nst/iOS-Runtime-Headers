@@ -15,6 +15,7 @@
     NSString *_playbackSessionID;
     MPAVController *_player;
     MPUReportingController *_reportingController;
+    BOOL _shouldReportAsPlaying;
     double _startTimeForCurrentTimeChange;
     unsigned long long _storeAccountID;
 }

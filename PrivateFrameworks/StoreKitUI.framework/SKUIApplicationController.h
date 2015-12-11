@@ -93,7 +93,7 @@
 - (BOOL)_isStoreFront:(id)arg1 equalToStoreFront:(id)arg2;
 - (id)_launchOptionsWithURL:(id)arg1;
 - (void)_legacyResolveExternalURL:(id)arg1;
-- (void)_loadApplicationFromUpdatableAssetsCache;
+- (void)_loadApplicationFromUpdatableAssetsCache:(id)arg1;
 - (void)_loadApplicationScript;
 - (id)_navigationContainerViewController;
 - (id)_navigationControllers;
@@ -123,7 +123,7 @@
 - (BOOL)_sendNativeBackButtonMetricEvents;
 - (void)_setClientContextWithDictionary:(id)arg1;
 - (void)_setHidesTabBar:(BOOL)arg1;
-- (void)_setManifestURLOnUpdatableAssetController:(id /* block */)arg1;
+- (void)_setManifestURLOnUpdatableAssetController:(id)arg1 completion:(id /* block */)arg2;
 - (void)_setSelectedTabBarIndex:(int)arg1;
 - (BOOL)_shouldUseLegacyURLHandlingForExternalURL:(id)arg1;
 - (void)_showFloatingStatusOverlayAnimated:(BOOL)arg1;

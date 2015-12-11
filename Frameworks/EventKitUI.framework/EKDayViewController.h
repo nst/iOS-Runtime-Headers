@@ -253,6 +253,7 @@
 - (void)significantTimeChangeOccurred;
 - (float)timedRegionOriginForEventGestureController:(id)arg1;
 - (id)touchTrackingViewForEventGestureController:(id)arg1;
+- (void)traitCollectionDidChange:(id)arg1;
 - (BOOL)transitionedToSameDay;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

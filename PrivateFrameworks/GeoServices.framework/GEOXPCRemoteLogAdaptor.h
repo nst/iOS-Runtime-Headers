@@ -32,6 +32,7 @@
 - (void)_queueNextLogMessagesChunkForSending;
 - (void)_registerXPCActivityTimer;
 - (void)_requesterDidCompleteHandler:(id)arg1;
+- (void)_requesterStartSend;
 - (void)_sendLogMessageRequest:(id)arg1;
 - (void)_sendNextLogMessageChunk;
 - (long long)_sizeOfLogMessageRequest:(id)arg1;

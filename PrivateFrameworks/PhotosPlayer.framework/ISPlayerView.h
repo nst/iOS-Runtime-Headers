@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
  */
 
-@interface ISPlayerView : UIView <ISGestureInputDelegate, ISPlayerChangeObserver, ISPlayerOutput, UIGestureRecognizerDelegate> {
+@interface ISPlayerView : UIView <ISGestureInputDelegate, ISPlayerChangeObserver, ISPlayerDelegate, ISPlayerOutput, UIGestureRecognizerDelegate> {
     NSMutableSet *__activeGestures;
     BOOL __crossfadeEnabled;
     _ISCrossfadeView *__crossfadeView;
@@ -193,6 +193,7 @@
 - (id)_vitalityInput;
 - (BOOL)allowReversePlayback;
 - (BOOL)audioMuted;
+- (id)avPlayerForPlayer:(id)arg1;
 - (void)awakeFromNib;
 - (void)cancelGestureRecognizers;
 - (id)contentLayer;
@@ -203,8 +204,8 @@
 - (struct CGSize { float x1; float x2; })dimensionsOfReservedVideoMemory;
 - (id)error;
 - (id)gestureInput:(id)arg1 delegateForGestureRecognizer:(id)arg2;
+- (id)gestureInput:(id)arg1 viewHostingGestureRecognizer:(id)arg2;
 - (void)gestureInputGestureRecognizerDidChange:(id)arg1;
-- (id)gestureInputViewHostingGestureRecognizers:(id)arg1;
 - (id)gestureRecognizer;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

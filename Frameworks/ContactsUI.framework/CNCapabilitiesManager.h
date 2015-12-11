@@ -29,6 +29,7 @@
 - (BOOL)hasCellularDataCapability;
 - (BOOL)hasCellularTelephonyCapability;
 - (BOOL)hasCellularTelephonyHardwareCapability;
+- (BOOL)hasForceTouchCapability;
 - (BOOL)hasPreviouslyConferencedWithID:(id)arg1;
 - (BOOL)hasSMSCapability;
 - (BOOL)hasSiriCapability;

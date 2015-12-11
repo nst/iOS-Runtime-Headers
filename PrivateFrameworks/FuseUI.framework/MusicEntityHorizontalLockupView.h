@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicEntityHorizontalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring, RUTrackDownloadViewDelegate> {
+@interface MusicEntityHorizontalLockupView : MusicEntityAbstractLockupView <MusicEntityContentDescriptorViewConfiguring, MusicEntityViewDownloadInformationObserving, RUTrackDownloadViewDelegate> {
     MPUHalfTintedTransportButton *_addButton;
+    UIImageView *_availableOfflineBadgeImageView;
     RUTrackDownloadView *_buyButton;
     UIButton *_checkmarkButton;
     UIButton *_contextualActionsButton;
@@ -15,7 +16,12 @@
         unsigned int didLayoutSubviews : 1; 
         unsigned int shouldLayoutAsEditing : 1; 
     } _delegateRespondsToSelector;
+    struct MusicEntityDownloadInformation { 
+        int downloadStatus; 
+        float downloadProgress; 
+    } _downloadInformation;
     UIImageView *_explicitBadgeImageView;
+    BOOL _isAvailableOffline;
     BOOL _isContainedWithinSplitViewPrimary;
     float _textContentLeadingInset;
 }
@@ -26,6 +32,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicEntityHorizontalLockupViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) struct MusicEntityDownloadInformation { int x1; float x2; } downloadInformation;
 @property (nonatomic, retain) <MusicEntityValueProviding> *entityValueProvider;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
@@ -54,10 +61,12 @@
 - (id)contextualActionsButton;
 - (void)dealloc;
 - (id)delegate;
+- (struct MusicEntityDownloadInformation { int x1; float x2; })downloadInformation;
 - (void)layoutSubviews;
 - (void)music_inheritedLayoutInsetsDidChange;
 - (void)setContentDescriptor:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDownloadInformation:(struct MusicEntityDownloadInformation { int x1; float x2; })arg1;
 - (float)textContentLeadingInset;
 - (void)trackDownloadViewWillTransition:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;

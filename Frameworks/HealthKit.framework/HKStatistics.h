@@ -49,6 +49,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)dataCount;
 - (id)dataCountBySource;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)endDate;
 - (id)init;

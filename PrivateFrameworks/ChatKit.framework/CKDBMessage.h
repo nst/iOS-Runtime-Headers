@@ -5,6 +5,7 @@
 @interface CKDBMessage : NSObject {
     NSString *_address;
     NSDate *_date;
+    NSString *_displayName;
     NSString *_groupID;
     NSString *_guid;
     BOOL _hasBeenRead;
@@ -33,6 +34,7 @@
 @property (nonatomic, readonly, retain) NSString *address;
 @property (nonatomic, readonly, copy) NSString *attachmentText;
 @property (nonatomic, readonly, retain) NSDate *date;
+@property (nonatomic, readonly) NSString *displayName;
 @property (nonatomic, readonly, retain) NSString *formattedAddress;
 @property (nonatomic, readonly, retain) NSString *groupID;
 @property (nonatomic, readonly, retain) NSString *guid;
@@ -64,6 +66,7 @@
 - (id)date;
 - (void)dealloc;
 - (id)description;
+- (id)displayName;
 - (id)formattedAddress;
 - (id)groupID;
 - (id)guid;

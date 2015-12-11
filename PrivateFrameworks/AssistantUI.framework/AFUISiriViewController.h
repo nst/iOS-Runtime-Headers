@@ -5,6 +5,7 @@
 @interface AFUISiriViewController : UIViewController <AFUIDelayedActionCommandCacheDelegate, AFUISiriRemoteViewControllerDataSource, AFUISiriRemoteViewControllerDelegate, AFUISiriSessionLocalDataSource, AFUISiriSessionLocalDelegate, AFUISiriViewDelegate, SiriUIAudioRoutePickerControllerDelegate> {
     BOOL _active;
     BOOL _attemptingRemoteViewControllerPresentation;
+    SiriUIConfiguration *_configuration;
     AFUIRequestOptions *_currentRequestOptions;
     int _currentRequestSource;
     <AFUISiriViewControllerDataSource> *_dataSource;
@@ -26,7 +27,6 @@
     BOOL _siriSessionWantsToEnd;
     UIStatusBar *_statusBar;
     BOOL _statusBarEnabled;
-    BOOL _systemHostedPresentation;
     id /* block */ _triggerUpdater;
     double _viewDidAppearTime;
     BOOL _visible;
@@ -75,6 +75,7 @@
 - (BOOL)_hasCalledEndAppearanceTransition;
 - (BOOL)_holdToTalkThresholdHasElapsed;
 - (void)_holdToTalkTriggerDidReleaseFromSource:(int)arg1;
+- (void)_informRemoteViewControllerOfParentIfNecessary;
 - (BOOL)_isInHoldToTalkMode;
 - (double)_manualEndpointingThreshold;
 - (void)_presentDeferredFlamesViewIfNecessary;
@@ -117,6 +118,7 @@
 - (void)dealloc;
 - (void)defrost;
 - (id)delegate;
+- (void)didMoveToParentViewController:(id)arg1;
 - (void)dismissSiriRemoteViewController:(id)arg1 delayForTTS:(BOOL)arg2;
 - (void)dismissViewControllerAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)endSession;
@@ -126,8 +128,7 @@
 - (BOOL)hasQueuedTTS;
 - (BOOL)hasScreenSnapshot;
 - (id)init;
-- (id)initWithConnection:(id)arg1;
-- (id)initWithConnection:(id)arg1 systemHostedPresentation:(BOOL)arg2;
+- (id)initWithConnection:(id)arg1 configuration:(id)arg2;
 - (BOOL)isEyesFree;
 - (BOOL)isListening;
 - (BOOL)isPreventingActivationGesture;
@@ -170,7 +171,7 @@
 - (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didReadBulletinWithIdentifier:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 handlePasscodeUnlockWithCompletion:(id /* block */)arg2;
-- (BOOL)siriRemoteViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3;
+- (void)siriRemoteViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3 replyHandler:(id /* block */)arg4;
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 appBundleID:(id)arg3 allowSiriDismissal:(BOOL)arg4;
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 delaySessionEndForTTS:(BOOL)arg3;
 - (void)siriRemoteViewController:(id)arg1 setBugReportingAvailable:(BOOL)arg2;

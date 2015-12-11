@@ -47,6 +47,7 @@
     BOOL _opaque;
     UILabel *_primaryLabel;
     NSLayoutConstraint *_primaryTextBaseline_to_secondaryTextBaseline_Constraint;
+    UIColor *_rowSeparatorColor;
     UILabel *_secondaryLabel;
     NSDictionary *_secondaryStringDrawingAttributes;
     NSLayoutConstraint *_secondaryTextBaseline_to_attendeesTextBaseline_Constraint;
@@ -75,6 +76,7 @@
 }
 
 @property (nonatomic) BOOL drawsOwnRowSeparators;
+@property (nonatomic, retain) UIColor *rowSeparatorColor;
 @property (nonatomic) BOOL usesInsetMargin;
 @property (nonatomic) BOOL usesVibrantSeparatorOverlayDrawing;
 
@@ -164,8 +166,10 @@
 - (BOOL)needsReply;
 - (id)primaryTextLabelFont;
 - (id)reuseIdentifier;
+- (id)rowSeparatorColor;
 - (void)setDrawsOwnRowSeparators:(BOOL)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)setRowSeparatorColor:(id)arg1;
 - (void)setUsesInsetMargin:(BOOL)arg1;
 - (void)setUsesVibrantSeparatorOverlayDrawing:(BOOL)arg1;
 - (void)updateConstraints;

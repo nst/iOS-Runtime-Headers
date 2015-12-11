@@ -20,6 +20,7 @@
     NSString *_lastSearchQuery;
     NSData *_thumbnailData;
     BOOL _topHit;
+    NSString *_url;
 }
 
 @property (nonatomic, retain) NSData *activityData;
@@ -40,6 +41,7 @@
 @property (readonly) NSString *parsecString;
 @property (nonatomic, retain) NSData *thumbnailData;
 @property (nonatomic) BOOL topHit;
+@property (nonatomic, retain) NSString *url;
 
 + (BOOL)supportsSecureCoding;
 
@@ -79,8 +81,10 @@
 - (void)setLastSearchQuery:(id)arg1;
 - (void)setThumbnailData:(id)arg1;
 - (void)setTopHit:(BOOL)arg1;
+- (void)setUrl:(id)arg1;
 - (id)thumbnailData;
 - (BOOL)topHit;
 - (id)topHitStringForDomain:(id)arg1;
+- (id)url;
 
 @end

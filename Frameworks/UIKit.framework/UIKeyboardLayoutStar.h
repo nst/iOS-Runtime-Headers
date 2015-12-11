@@ -184,6 +184,7 @@
 - (id)defaultNameForKeyplaneName:(id)arg1;
 - (int)defaultSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2;
 - (void)deleteHandwritingStrokesAtIndexes:(id)arg1;
+- (BOOL)diacriticForwardCompose;
 - (void)didClearInput;
 - (void)didEndIndirectSelectionGesture;
 - (void)didEndIndirectSelectionGesture:(BOOL)arg1;
@@ -242,6 +243,7 @@
 - (float)interpretPinchSeparationValues;
 - (void)interpretTouchesForSplit;
 - (BOOL)isAlphabeticPlane;
+- (BOOL)isDeadkeyInput:(id)arg1;
 - (BOOL)isEmojiKeyplane;
 - (BOOL)isLongPressedKey:(id)arg1;
 - (BOOL)isRotating;
@@ -259,6 +261,7 @@
 - (id)keyboardLayoutWithBias:(int)arg1;
 - (id)keyboardName;
 - (int)keycodeForKey:(id)arg1;
+- (id)keylistContainingKey:(id)arg1;
 - (id)keyplane;
 - (BOOL)keyplaneContainsEmojiKey;
 - (id)keyplaneForKey:(id)arg1;
@@ -412,6 +415,7 @@
 - (void)updateLocalizedKeysOnKeyplane:(id)arg1;
 - (void)updateMoreAndInternationalKeys;
 - (void)updatePanAlternativesForTouchInfo:(id)arg1;
+- (void)updatePhysicalKeyboardEvent:(id)arg1 withMarkedInput:(id)arg2;
 - (void)updateReturnKeysIfNeeded;
 - (void)updateSelectedVariantIndexForKey:(id)arg1 withActions:(unsigned long long)arg2 withPoint:(struct CGPoint { float x1; float x2; })arg3;
 - (void)updateShiftKeyState;

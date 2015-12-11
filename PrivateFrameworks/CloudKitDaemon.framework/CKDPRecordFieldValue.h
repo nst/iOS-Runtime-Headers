@@ -44,6 +44,7 @@
 @property (nonatomic) int type;
 
 - (void).cxx_destruct;
+- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 - (id)_descriptionForType:(int)arg1;
 - (id)_prettyDictionaryRepresentation;
 - (id)_prettyRepresentationFromObject:(id)arg1;

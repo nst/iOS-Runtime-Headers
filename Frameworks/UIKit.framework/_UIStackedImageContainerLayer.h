@@ -122,6 +122,7 @@
 - (unsigned int)controlState;
 - (void)dealloc;
 - (struct CGPoint { float x1; float x2; })focusDirection;
+- (id)init;
 - (BOOL)isPressed;
 - (BOOL)isSelected;
 - (id)layerStack;

@@ -3,6 +3,7 @@
  */
 
 @interface MKExpandingLabel : UIView <UIGestureRecognizerDelegate> {
+    BOOL _constraintsAdded;
     unsigned int _expansionMode;
     UIFont *_font;
     id /* block */ _labelResizedBlock;
@@ -67,5 +68,6 @@
 - (id)text;
 - (int)textAlignment;
 - (id)textColor;
+- (void)updateConstraints;
 
 @end

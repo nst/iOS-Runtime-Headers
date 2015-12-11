@@ -3,6 +3,7 @@
  */
 
 @interface WKInterfaceDevice : NSObject {
+    int _layoutDirection;
     NSString *_localizedModel;
     NSString *_model;
     NSString *_name;
@@ -23,6 +24,7 @@
 }
 
 @property (nonatomic, readonly) NSDictionary *cachedImages;
+@property (nonatomic, readonly) int layoutDirection;
 @property (nonatomic, copy) NSString *localizedModel;
 @property (nonatomic, copy) NSString *model;
 @property (nonatomic, copy) NSString *name;
@@ -38,6 +40,7 @@
 - (BOOL)addCachedImage:(id)arg1 name:(id)arg2;
 - (BOOL)addCachedImageWithData:(id)arg1 name:(id)arg2;
 - (id)cachedImages;
+- (int)layoutDirection;
 - (id)localizedModel;
 - (id)model;
 - (id)name;

@@ -19,6 +19,7 @@
 @property (nonatomic) <MPPlayableContentDataSource> *dataSource;
 @property (nonatomic) <MPPlayableContentDelegate> *delegate;
 
++ (BOOL)_deviceIsCarplayCapable;
 + (id)sharedContentManager;
 
 - (void).cxx_destruct;

@@ -22,8 +22,8 @@
 
 - (void).cxx_destruct;
 - (void)_didFinishDownloadWithSuccess:(BOOL)arg1 error:(id)arg2;
-- (void)_fetchResourcesForConsumingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
 - (void)_fetchResourcesForEditingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
+- (void)_fetchResourcesForSharingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
 - (void)_fetchResourcesWithNetworkAccessAllowed:(BOOL)arg1 handler:(id /* block */)arg2;
 - (BOOL)_isDownloadCanceled;
 - (void)_setDownloadCanceled:(BOOL)arg1;

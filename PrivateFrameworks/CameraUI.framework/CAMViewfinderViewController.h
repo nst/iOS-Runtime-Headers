@@ -384,7 +384,6 @@
 - (id)_modeDial;
 - (id)_motionController;
 - (id)_nextModeGestureRecognizer;
-- (void)_notifyCameraRollDidPersistAssetWithUUID:(id)arg1 captureSession:(unsigned short)arg2;
 - (unsigned int)_numFilterSelectionsBeforeCapture;
 - (int)_numberOfTicksForTimerDuration:(int)arg1;
 - (id)_panoramaCaptureRequestWithCurrentSettings;
@@ -704,8 +703,8 @@
 - (void)stopShowingLivePhotoIndicator;
 - (unsigned int)supportedInterfaceOrientations;
 - (double)timeIntervalForDuration:(int)arg1;
-- (void)timelapseController:(id)arg1 generatedThumbnailImage:(id)arg2 forAssetUUID:(id)arg3 inCaptureSession:(unsigned short)arg4;
-- (void)timelapseController:(id)arg1 persistedPlaceholderResult:(id)arg2;
+- (void)timelapseController:(id)arg1 generatedPlaceholderResult:(id)arg2 withThumbnailImage:(id)arg3 forAssetUUID:(id)arg4 inCaptureSession:(unsigned short)arg5;
+- (void)timelapseController:(id)arg1 persistedPlaceholderResult:(id)arg2 error:(id)arg3;
 - (void)timelapseControllerStarted:(id)arg1;
 - (void)timelapseControllerStopped:(id)arg1;
 - (void)updateControlVisibilityAnimated:(BOOL)arg1;

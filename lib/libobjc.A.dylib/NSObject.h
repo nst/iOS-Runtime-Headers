@@ -2,7 +2,7 @@
    Image: /usr/lib/libobjc.A.dylib
  */
 
-@interface NSObject <NSObject, PQLResultSetInitializer> {
+@interface NSObject <CKDParsedObject, NSObject, PQLResultSetInitializer> {
     Class isa;
 }
 
@@ -120,6 +120,26 @@
 - (id)self;
 - (Class)superclass;
 - (struct _NSZone { }*)zone;
+
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
+- (void)_accessibilityCacheContentIfNecessary;
+- (void)_accessibilityPauseSpeaking:(id)arg1;
+- (BOOL)_accessibilityQScanPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (BOOL)_accessibilityQuickSpeakContentIsSpeakable;
+- (BOOL)_accessibilityShouldShowPauseBubble;
+- (BOOL)_accessibilityShouldShowSpeakBubble;
+- (BOOL)_accessibilityShouldShowSpeakLanguageBubble;
+- (BOOL)_accessibilityShouldUpdateQuickSpeakContent;
+- (void)_accessibilitySpeak:(id)arg1;
+- (void)_accessibilitySpeakLanguageSelection:(id)arg1;
+- (id)_accessibilitySpeakSelectionAssociatedScrollView;
+- (id)_accessibilitySpeakSelectionTextInputResponder;
+- (void)_accessibilitySpeakWithLanguage:(id)arg1;
+- (BOOL)_accessibilitySystemShouldShowPauseBubble;
+- (BOOL)_accessibilitySystemShouldShowSpeakBubble;
+- (BOOL)_accessibilitySystemShouldShowSpeakBubbleCommon;
+- (BOOL)_accessibilitySystemShouldShowSpeakLanguageBubble;
 
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
@@ -535,6 +555,11 @@
 + (BOOL)brc_swizzleClassMethod:(SEL)arg1 with:(SEL)arg2;
 + (BOOL)brc_swizzleInstanceMethod:(SEL)arg1 with:(SEL)arg2;
 
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (void)CKLogToFileHandle:(id)arg1;
+- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
+
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 + (void)_addPropertyAttributeMapToPropertyMapLocked:(id)arg1;
@@ -668,6 +693,10 @@
 
 - (void)mf_performOnewaySelectorInMainThread:(SEL)arg1 withObject:(id)arg2 withObject:(id)arg3;
 
+// Image: /System/Library/PrivateFrameworks/MessageSupport.framework/MessageSupport
+
+- (id)mf_observeKeyPath:(id)arg1 options:(unsigned int)arg2 usingBlock:(id /* block */)arg3;
+
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 
 - (void)ml_bindToSQLiteStatement:(struct sqlite3_stmt { }*)arg1 atPosition:(int)arg2;
@@ -688,7 +717,7 @@
 - (void)naui_removeNotificationBlockObserver:(id)arg1;
 - (void)naui_setAssociatedObject:(id)arg1 assocatedObjectDescriptor:(const struct { char *x1; unsigned long x2; }*)arg2;
 
-// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
 + (BOOL)ICLogging_isLoggingEnabledAtLevel:(int)arg1;
 
@@ -783,8 +812,10 @@
 + (void)_accessibilityUnsetUnitTestingOrientation;
 + (id)accessibilityBundles;
 + (void)accessibilityInitializeBundle;
++ (Class)safeCategoryBaseClass;
 
 - (BOOL)__accessibilityReadAllOnFocus;
+- (id)__accessibilityRetrieveFrameOrPathDelegate;
 - (BOOL)__accessibilitySupportsActivateAction;
 - (BOOL)__accessibilitySupportsSecondaryActivateAction;
 - (void)__accessibilityUnregister:(void*)arg1 shouldRelease:(BOOL)arg2;
@@ -1000,6 +1031,7 @@
 - (BOOL)_accessibilityIsSpeakThisElement;
 - (BOOL)_accessibilityIsStarkElement;
 - (BOOL)_accessibilityIsTableCell;
+- (BOOL)_accessibilityIsTextInput;
 - (BOOL)_accessibilityIsTitleElement;
 - (BOOL)_accessibilityIsTouchContainer;
 - (BOOL)_accessibilityIsTourGuideRunning;
@@ -1096,6 +1128,7 @@
 - (int)_accessibilityPreferredScrollAction;
 - (id)_accessibilityPreviousMarker:(id)arg1;
 - (void)_accessibilityProcessScannerGroupElementPieces:(id)arg1;
+- (id)_accessibilityQuickSpeakContent;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForLineNumber:(int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForLineNumberAndColumn:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_accessibilityRangeForTextMarker:(id)arg1;

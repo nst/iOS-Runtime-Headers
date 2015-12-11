@@ -3,20 +3,26 @@
  */
 
 @interface SKUIScrollingSegmentedControllerNavigationBarTitleView : UIView {
-    struct CGSize { 
-        float width; 
-        float height; 
-    } _lastMeasuredNavigationBarTitleViewSizeBeforeCurrentCommit;
-    SKUIScrollingSegmentedController *_owningController;
+    int _layoutStyle;
+    SKUIInteractiveSegmentedControl *_segmentedControl;
+    float _segmentedControlMinimumHeight;
 }
 
-@property (nonatomic) SKUIScrollingSegmentedController *owningController;
+@property (nonatomic) int layoutStyle;
+@property (nonatomic, retain) SKUIInteractiveSegmentedControl *segmentedControl;
+@property (nonatomic) float segmentedControlMinimumHeight;
+
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultLayoutMargins;
 
 - (void).cxx_destruct;
-- (struct CGSize { float x1; float x2; })_navigationBarTitleViewSizeWithDesiredValue:(struct CGSize { float x1; float x2; })arg1 originalValue:(struct CGSize { float x1; float x2; })arg2;
-- (void)didMoveToSuperview;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (int)layoutStyle;
 - (void)layoutSubviews;
-- (id)owningController;
-- (void)setOwningController:(id)arg1;
+- (id)segmentedControl;
+- (float)segmentedControlMinimumHeight;
+- (void)setLayoutStyle:(int)arg1;
+- (void)setSegmentedControl:(id)arg1;
+- (void)setSegmentedControlMinimumHeight:(float)arg1;
+- (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 
 @end

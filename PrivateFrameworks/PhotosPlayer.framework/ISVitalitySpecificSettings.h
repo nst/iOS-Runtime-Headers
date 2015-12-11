@@ -6,6 +6,7 @@
     int _behavior;
     double _endTimeOffset;
     double _maximumDeceleration;
+    double _maximumDelayBeforePlayback;
     int _maximumNumberOfFrames;
     double _maximumRate;
     double _minimumDurationForColorMismatch;
@@ -23,6 +24,7 @@
 @property (nonatomic) double endTimeOffset;
 @property (readonly) unsigned int hash;
 @property (nonatomic) double maximumDeceleration;
+@property (nonatomic) double maximumDelayBeforePlayback;
 @property (nonatomic) int maximumNumberOfFrames;
 @property (nonatomic) double maximumRate;
 @property (nonatomic) double minimumDurationForColorMismatch;
@@ -40,6 +42,7 @@
 - (int)behavior;
 - (double)endTimeOffset;
 - (double)maximumDeceleration;
+- (double)maximumDelayBeforePlayback;
 - (int)maximumNumberOfFrames;
 - (double)maximumRate;
 - (double)minimumDurationForColorMismatch;
@@ -53,6 +56,7 @@
 - (void)setDefaultValues;
 - (void)setEndTimeOffset:(double)arg1;
 - (void)setMaximumDeceleration:(double)arg1;
+- (void)setMaximumDelayBeforePlayback:(double)arg1;
 - (void)setMaximumNumberOfFrames:(int)arg1;
 - (void)setMaximumRate:(double)arg1;
 - (void)setMinimumDurationForColorMismatch:(double)arg1;

@@ -18,8 +18,8 @@
 + (id)_extensionAuxiliaryVendorProtocol;
 
 - (void).cxx_destruct;
+- (void)cancelWithError:(id)arg1;
 - (void)didSetReasserting:(BOOL)arg1;
-- (void)dispose;
 - (void)establishIPCWithCompletionHandler:(id /* block */)arg1;
 - (void)handleAppMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)handleIPCDetached;

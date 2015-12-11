@@ -14,6 +14,7 @@
 - (void)xpcManager:(WCXPCManager *)arg1 handleSessionStateChanged:(WCSessionState *)arg2 forceReachableChanged:(BOOL)arg3;
 - (void)xpcManager:(WCXPCManager *)arg1 handleUserInfoTransfer:(WCSessionUserInfoTransfer *)arg2;
 - (void)xpcManager:(WCXPCManager *)arg1 handleUserInfoTransferFinishedWithIdentifier:(NSString *)arg2 error:(NSError *)arg3;
+- (void)xpcManagerConnectionInterrupted:(WCXPCManager *)arg1;
 - (void)xpcManagerHandleMessageSendingAllowed:(WCXPCManager *)arg1;
 
 @end

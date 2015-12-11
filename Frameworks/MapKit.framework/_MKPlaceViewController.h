@@ -86,6 +86,7 @@
 - (id)_mapTableKeyForSectionPosition:(int)arg1;
 - (void)_openAppWithBundleID:(id)arg1;
 - (void)_openInfoAttribution;
+- (void)_performWhenViewHasAppeared:(id /* block */)arg1;
 - (void*)_recordForContact:(id)arg1;
 - (BOOL)_removeMapsDataFromContactWithRecordID:(int)arg1;
 - (void)_searchForNearbyApps;

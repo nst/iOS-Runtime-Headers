@@ -4,6 +4,7 @@
 
 @interface HMDOutgoingHomeInvitation : HMDHomeInvitation {
     NSString *_inviteeDestinationAddress;
+    NSUUID *_messageIdentifier;
     NSArray *_operations;
     BOOL _responseReceived;
     HMDUser *_user;
@@ -11,6 +12,7 @@
 
 @property (getter=isComplete, nonatomic, readonly) BOOL complete;
 @property (nonatomic, retain) NSString *inviteeDestinationAddress;
+@property (nonatomic, readonly) NSUUID *messageIdentifier;
 @property (nonatomic, retain) NSArray *operations;
 @property (nonatomic) BOOL responseReceived;
 @property (nonatomic, readonly) HMDUser *user;
@@ -23,10 +25,11 @@
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithInvitee:(id)arg1 invitationState:(int)arg2 forHome:(id)arg3 expiryDate:(id)arg4;
+- (id)initWithInvitee:(id)arg1 invitationState:(int)arg2 forHome:(id)arg3 expiryDate:(id)arg4 messageIdentifier:(id)arg5;
 - (id)inviteeDestinationAddress;
 - (BOOL)isComplete;
 - (BOOL)mergeWithInvitation:(id)arg1;
+- (id)messageIdentifier;
 - (id)operations;
 - (BOOL)responseReceived;
 - (void)setInviteeDestinationAddress:(id)arg1;

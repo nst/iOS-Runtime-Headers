@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UICollectionViewCell : UICollectionReusableView <UIGestureRecognizerDelegate> {
+@interface UICollectionViewCell : UICollectionReusableView <UIGestureRecognizerDelegate, _UILayoutEngineSuspending> {
     UIView *_backgroundView;
     struct { 
         unsigned int selected : 1; 
@@ -16,12 +16,14 @@
     _UIFloatingContentView *_focusedFloatingContentView;
     BOOL _highlighted;
     id _highlightingSupport;
+    BOOL _isLayoutEngineSuspended;
     UILongPressGestureRecognizer *_menuGesture;
     BOOL _selected;
     UIView *_selectedBackgroundView;
     id _selectionSegueTemplate;
 }
 
+@property (getter=_isLayoutEngineSuspended, setter=_setLayoutEngineSuspended:, nonatomic) BOOL _layoutEngineSuspended;
 @property (nonatomic, retain) UIView *backgroundView;
 @property (nonatomic, readonly) UIView *contentView;
 @property (readonly, copy) NSString *debugDescription;
@@ -50,6 +52,7 @@
 - (BOOL)_gestureRecognizerShouldBegin:(id)arg1;
 - (void)_handleMenuGesture:(id)arg1;
 - (BOOL)_highlightDescendantsWhenSelected;
+- (BOOL)_isLayoutEngineSuspended;
 - (BOOL)_isUsingOldStyleMultiselection;
 - (void)_menuDismissed:(id)arg1;
 - (void)_performAction:(SEL)arg1 sender:(id)arg2;
@@ -57,6 +60,7 @@
 - (id)_selectionSegueTemplate;
 - (void)_setFocusStyle:(int)arg1;
 - (void)_setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)_setLayoutEngineSuspended:(BOOL)arg1;
 - (void)_setOpaque:(BOOL)arg1 forSubview:(id)arg2;
 - (void)_setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)_setSelectionSegueTemplate:(id)arg1;

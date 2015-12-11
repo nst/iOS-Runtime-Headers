@@ -11,6 +11,7 @@
     IDSService *_service;
     ACXSocket *_socket;
     NSObject<OS_dispatch_semaphore> *_socketInUse;
+    int _socketInUseCount;
     NSObject<OS_dispatch_source> *_socketSetupTimer;
     NSObject<OS_dispatch_source> *_socketTeardownTimer;
     BOOL _wiFiAsserted;
@@ -35,6 +36,7 @@
 + (id)sharedSocketManager;
 
 - (void).cxx_destruct;
+- (void)_doneUsingSocket;
 - (void)_onInternalQueue_armSocketShutdownTimer;
 - (void)_onInternalQueue_beginUsingSocketAsDelegate:(id)arg1 onQueue:(id)arg2 tryWiFi:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)_onInternalQueue_disarmSocketShutdownTimer;
@@ -44,6 +46,7 @@
 - (void)_onQueue_stopSocketSetupTimer;
 - (void)_readSourceReturnedDictionaryOrData:(id)arg1 error:(id)arg2;
 - (id)_sendMessage:(id)arg1 messageDictionary:(id)arg2 error:(id*)arg3;
+- (void)_waitForSocket;
 - (void)beginUsingSocketAsDelegate:(id)arg1 onQueue:(id)arg2 tryWiFi:(BOOL)arg3 completion:(id /* block */)arg4;
 - (id)currentSetupUUID;
 - (id)delegate;

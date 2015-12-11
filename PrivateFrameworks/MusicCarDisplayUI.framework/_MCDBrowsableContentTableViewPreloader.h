@@ -22,7 +22,8 @@
 
 - (void).cxx_destruct;
 - (void)_deregister;
-- (void)_loadContainerAndPush;
+- (void)_displayErrorAlertController:(id)arg1;
+- (void)_loadContainerAndPush:(id)arg1;
 - (void)_pushToPlayback:(id)arg1;
 - (id /* block */)cancelledBlock;
 - (id)container;

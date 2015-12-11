@@ -106,6 +106,8 @@
 @property (nonatomic, copy) NSString *untruncatedString;
 @property (nonatomic, readonly) BOOL visible;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (void)_releaseSharedInstance;
 + (id)activeCalloutBar;
 + (void)fadeSharedCalloutBar;
@@ -127,7 +129,6 @@
 - (void)applicationDidAddDeactivationReason:(id)arg1;
 - (int)arrowDirection;
 - (void)buttonHighlighted:(id)arg1 highlighted:(BOOL)arg2;
-- (void)buttonPressed:(id)arg1;
 - (BOOL)calculateControlFrameForCalloutSize:(struct CGSize { float x1; float x2; })arg1 below:(BOOL)arg2;
 - (BOOL)calculateControlFrameForCalloutSize:(struct CGSize { float x1; float x2; })arg1 right:(BOOL)arg2;
 - (BOOL)calculateControlFrameInsideTargetRect:(struct CGSize { float x1; float x2; })arg1;
@@ -140,10 +141,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)extraItems;
-- (void)fade;
 - (void)fadeAnimationDidStopWithContext:(id)arg1 finished:(BOOL)arg2;
 - (BOOL)hasReplacements;
-- (void)hide;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGPoint { float x1; float x2; })pointAboveControls;
@@ -196,8 +195,16 @@
 - (id)untruncatedString;
 - (void)update;
 - (void)updateAnimated:(BOOL)arg1;
-- (void)updateAvailableButtons;
 - (void)updateForCurrentPage;
 - (BOOL)visible;
+
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (void)buttonPressed:(id)arg1;
+- (void)fade;
+- (void)hide;
+- (void)updateAvailableButtons;
 
 @end

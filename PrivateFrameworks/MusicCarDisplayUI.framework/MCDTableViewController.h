@@ -11,11 +11,13 @@
     BOOL _shouldHideIndexTitles;
     BOOL _showMore;
     UIView *_snapshotView;
+    BOOL _topLevel;
 }
 
 @property (nonatomic) BOOL limitedUI;
 @property (nonatomic) BOOL shouldHideIndexTitles;
 @property (nonatomic) BOOL showMore;
+@property (nonatomic) BOOL topLevel;
 
 + (Class)_tableViewClass;
 
@@ -24,6 +26,7 @@
 - (void)_MCD_nowPlayingButtonAction:(id)arg1;
 - (void)_itemChanged:(id)arg1;
 - (void)_limitedUIDidChange;
+- (void)_updateNowPlayingVisibility;
 - (BOOL)_viewControllerWasSelected;
 - (void)dataSourceDidInvalidate;
 - (void)dealloc;
@@ -35,12 +38,14 @@
 - (void)setLimitedUI:(BOOL)arg1;
 - (void)setShouldHideIndexTitles:(BOOL)arg1;
 - (void)setShowMore:(BOOL)arg1;
+- (void)setTopLevel:(BOOL)arg1;
 - (BOOL)shouldHideIndexTitles;
 - (BOOL)shouldScrollToFirstDataSourceSectionOnInitialAppearance;
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (BOOL)showMore;
 - (BOOL)tableView:(id)arg1 shouldChangeFocusedItem:(id)arg2 fromRowAtIndexPath:(id)arg3;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
+- (BOOL)topLevel;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;

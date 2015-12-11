@@ -4,6 +4,7 @@
 
 @interface GEOMapItemStorage : PBCodable <GEOMapItemPrivate, NSCopying> {
     GEOMapItemClientAttributes *_clientAttributes;
+    GEOLatLng *_originatingCoordinate;
     GEOPlace *_place;
     GEOPDPlace *_placeData;
     GEOPlaceResult *_placeResult;
@@ -55,6 +56,7 @@
 @property (getter=_hasGoodForKidsAmenity, nonatomic, readonly) BOOL hasGoodForKidsAmenity;
 @property (getter=_hasMUID, nonatomic, readonly) BOOL hasMUID;
 @property (getter=_hasOperatingHours, nonatomic, readonly) BOOL hasOperatingHours;
+@property (nonatomic, readonly) BOOL hasOriginatingCoordinate;
 @property (getter=_hasPairOfFactoids, nonatomic, readonly) BOOL hasPairOfFactoids;
 @property (nonatomic, readonly) BOOL hasPlace;
 @property (nonatomic, readonly) BOOL hasPlaceData;
@@ -76,6 +78,7 @@
 @property (getter=_normalizedUserRatingScore, nonatomic, readonly) float normalizedUserRatingScore;
 @property (getter=_openingHoursOptions, nonatomic, readonly) unsigned int openingHoursOptions;
 @property (getter=_operatingHours, nonatomic, readonly) NSArray *operatingHours;
+@property (nonatomic, retain) GEOLatLng *originatingCoordinate;
 @property (getter=_photos, nonatomic, readonly) NSArray *photos;
 @property (getter=_photosAttribution, nonatomic, readonly) GEOMapItemPhotosAttribution *photosAttribution;
 @property (getter=_place, nonatomic, readonly) GEOPlace *place;
@@ -219,6 +222,7 @@
 - (id)geoAddress;
 - (id)geoFenceMapRegion;
 - (BOOL)hasClientAttributes;
+- (BOOL)hasOriginatingCoordinate;
 - (BOOL)hasPlace;
 - (BOOL)hasPlaceData;
 - (BOOL)hasPlaceResult;
@@ -233,12 +237,14 @@
 - (id)mapRegion;
 - (void)mergeFrom:(id)arg1;
 - (id)name;
+- (id)originatingCoordinate;
 - (id)place;
 - (id)placeData;
 - (id)placeResult;
 - (BOOL)readFrom:(id)arg1;
 - (int)referenceFrame;
 - (void)setClientAttributes:(id)arg1;
+- (void)setOriginatingCoordinate:(id)arg1;
 - (void)setPlace:(id)arg1;
 - (void)setPlaceData:(id)arg1;
 - (void)setPlaceResult:(id)arg1;

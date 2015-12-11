@@ -7,7 +7,7 @@
     BKSApplicationStateMonitor *_appStateMonitor;
     AFWatchdogTimer *_assertionTimer;
     BKSProcessAssertion *_bKSAssertionForBgLaunch;
-    NSObject<OS_dispatch_group> *_group;
+    NSObject<OS_dispatch_group> *_bKSAssertionSetupGroup;
     NSObject<OS_dispatch_queue> *_queue;
     AFSiriTaskmaster *_taskmaster;
 }
@@ -19,12 +19,17 @@
 @property (nonatomic) AFSiriTaskmaster *taskmaster;
 
 - (void).cxx_destruct;
+- (void)_handleSuccessfulAppLaunchToBackground:(BOOL)arg1 forRequest:(id)arg2 completion:(id /* block */)arg3;
 - (void)_invalidateAssertionTimer;
 - (void)_invalidateBackboardServices;
-- (id)_queue;
+- (void)_processAssertionWasAcquired:(BOOL)arg1;
+- (void)_processAssertionWasInvalidatedForRequest:(id)arg1;
+- (void)_startAppStateLogging;
+- (void)dealloc;
 - (void)deliverSiriTask:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)description;
 - (id)initWithAppBundleIdentifier:(id)arg1;
+- (void)processAssertionWasInvalidatedForRequest:(id)arg1;
 - (void)setTaskmaster:(id)arg1;
 - (void)siriTaskDidFinish;
 - (id)taskmaster;

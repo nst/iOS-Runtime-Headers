@@ -90,6 +90,7 @@
 - (id /* block */)deferredTouchMovedTask;
 - (id)deferredTouchTasks;
 - (id)deferredTouches;
+- (BOOL)diacriticForwardCompose;
 - (void)didClearInput;
 - (void)didCommitTouch:(id)arg1;
 - (void)didEndIndirectSelectionGesture;

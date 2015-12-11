@@ -7,6 +7,7 @@
 + (id)activityType;
 + (id)expirationDate;
 + (id)itemIdentifier;
++ (id)itemRelatedUniqueIdentifier;
 + (id)title;
 
 @end

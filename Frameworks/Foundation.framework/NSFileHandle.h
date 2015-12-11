@@ -51,6 +51,10 @@
 - (void)writeData:(id)arg1;
 - (id /* block */)writeabilityHandler;
 
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (void)writeString:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
 - (BOOL)hk_readValue:(void*)arg1 ofSize:(unsigned long)arg2;

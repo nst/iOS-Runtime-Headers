@@ -202,7 +202,6 @@
 - (BOOL)becomeFirstResponder;
 - (void)beginSelectionChange;
 - (BOOL)canBecomeFirstResponder;
-- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 - (BOOL)canResignFirstResponder;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
@@ -254,6 +253,12 @@
 - (id)undoManager;
 - (void)updateUserActivityState:(id)arg1;
 - (id)userActivity;
+
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

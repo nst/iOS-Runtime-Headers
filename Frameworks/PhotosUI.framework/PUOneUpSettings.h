@@ -31,7 +31,8 @@
     float _interpageSpacing;
     float _livePhotoInteractionThreshold;
     BOOL _lockScrollDuringLivePhotoPlayback;
-    float _maximumInitialZoomToFillScale;
+    float _maximumInitialZoomToFillScaleForCompactSizeClass;
+    float _maximumInitialZoomToFillScaleForRegularSizeClass;
     int _minNavigationDistanceForFastRegime;
     int _minNavigationDistanceForQuickPagingRegime;
     float _pagingFrictionAdjustment;
@@ -87,7 +88,8 @@
 @property (nonatomic) float interpageSpacing;
 @property (nonatomic) float livePhotoInteractionThreshold;
 @property (nonatomic) BOOL lockScrollDuringLivePhotoPlayback;
-@property (nonatomic) float maximumInitialZoomToFillScale;
+@property (nonatomic) float maximumInitialZoomToFillScaleForCompactSizeClass;
+@property (nonatomic) float maximumInitialZoomToFillScaleForRegularSizeClass;
 @property (nonatomic) int minNavigationDistanceForFastRegime;
 @property (nonatomic) int minNavigationDistanceForQuickPagingRegime;
 @property (nonatomic) float pagingFrictionAdjustment;
@@ -146,7 +148,8 @@
 - (float)interpageSpacing;
 - (float)livePhotoInteractionThreshold;
 - (BOOL)lockScrollDuringLivePhotoPlayback;
-- (float)maximumInitialZoomToFillScale;
+- (float)maximumInitialZoomToFillScaleForCompactSizeClass;
+- (float)maximumInitialZoomToFillScaleForRegularSizeClass;
 - (int)minNavigationDistanceForFastRegime;
 - (int)minNavigationDistanceForQuickPagingRegime;
 - (float)pagingFrictionAdjustment;
@@ -185,7 +188,8 @@
 - (void)setInterpageSpacing:(float)arg1;
 - (void)setLivePhotoInteractionThreshold:(float)arg1;
 - (void)setLockScrollDuringLivePhotoPlayback:(BOOL)arg1;
-- (void)setMaximumInitialZoomToFillScale:(float)arg1;
+- (void)setMaximumInitialZoomToFillScaleForCompactSizeClass:(float)arg1;
+- (void)setMaximumInitialZoomToFillScaleForRegularSizeClass:(float)arg1;
 - (void)setMinNavigationDistanceForFastRegime:(int)arg1;
 - (void)setMinNavigationDistanceForQuickPagingRegime:(int)arg1;
 - (void)setPagingFrictionAdjustment:(float)arg1;

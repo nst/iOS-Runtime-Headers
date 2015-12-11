@@ -10,6 +10,7 @@
     PHImageManager *_imageManager;
     NSURL *_imageURL;
     PHSandboxExtensionWrapper *_imageURLSandboxExtensionWrapper;
+    unsigned int _options;
     struct { 
         long long value; 
         int timescale; 
@@ -39,6 +40,7 @@
 @property (nonatomic, readonly) NSString *imageTypeIdentifier;
 @property (nonatomic, readonly) NSURL *imageURL;
 @property (nonatomic, readonly) PHSandboxExtensionWrapper *imageURLSandboxExtensionWrapper;
+@property (nonatomic, readonly) unsigned int options;
 @property (nonatomic, readonly) NSString *originalFilename;
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoTime;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
@@ -71,6 +73,7 @@
 - (int)contentMode;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (BOOL)hasPhotoColorAdjustments;
 - (id)image;
 - (id /* block */)imageFileLoader;
 - (id)imageManager;
@@ -79,6 +82,8 @@
 - (id)imageURLSandboxExtensionWrapper;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithImage:(id)arg1 videoAsset:(id)arg2 photoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 assetLocalIdentifier:(id)arg4;
+- (id)initWithImage:(id)arg1 videoAsset:(id)arg2 photoTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg3 assetLocalIdentifier:(id)arg4 options:(unsigned int)arg5;
+- (unsigned int)options;
 - (id)originalFilename;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })photoTime;
 - (void)saveToPhotoLibraryWithCompletionHandler:(id /* block */)arg1;

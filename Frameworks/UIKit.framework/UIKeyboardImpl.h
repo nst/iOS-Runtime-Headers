@@ -482,6 +482,7 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)inputDelegate;
 - (id)inputEventForInputString:(id)arg1;
+- (id)inputForMarkedText;
 - (id)inputManager;
 - (void)inputManagerDidGenerateAutocorrections:(id)arg1 executionContext:(id)arg2;
 - (void)inputManagerDidGenerateCandidatesForRequest:(id)arg1 resultSet:(id)arg2;
@@ -673,6 +674,7 @@
 - (BOOL)shouldApplyAcceptedAutocorrection:(id)arg1;
 - (BOOL)shouldDeleteAutospaceBeforeTerminator:(id)arg1;
 - (BOOL)shouldEnableShiftForDeletedCharacter:(unsigned long)arg1;
+- (double)shouldExtendLongPressAction:(id)arg1;
 - (BOOL)shouldGenerateCandidatesAfterSelectionChange;
 - (BOOL)shouldSetInputModeInNextRun;
 - (BOOL)shouldShowCandidateBar;
@@ -775,6 +777,7 @@
 - (void)updateShiftState;
 - (void)updateStylingTraitsIfNeeded;
 - (void)updateTextCandidateView;
+- (id)updatedKeyBehaviors;
 - (BOOL)userSelectedCurrentCandidate;
 - (BOOL)usesAutoDeleteWord;
 - (BOOL)usesAutocorrectionLists;

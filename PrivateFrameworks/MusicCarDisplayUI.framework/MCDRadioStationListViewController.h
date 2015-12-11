@@ -3,14 +3,31 @@
  */
 
 @interface MCDRadioStationListViewController : MCD_OLD_TableViewController {
+    UIActivityIndicatorView *_activityIndicator;
+    RadioStation *_currentlyPlayingStation;
+    UINavigationController *_nowPlayingNavigationController;
+    NSIndexPath *_selectedIndexPath;
     NSMutableDictionary *_stationArtworkRequests;
     NSArray *_stations;
 }
 
+@property (nonatomic, retain) UIActivityIndicatorView *activityIndicator;
+@property (nonatomic, retain) RadioStation *currentlyPlayingStation;
+@property (nonatomic, retain) UINavigationController *nowPlayingNavigationController;
+@property (nonatomic, retain) NSIndexPath *selectedIndexPath;
 @property (nonatomic, retain) NSArray *stations;
 
 - (void).cxx_destruct;
+- (id)activityIndicator;
+- (id)currentlyPlayingStation;
+- (void)didStartPlaying:(id)arg1;
 - (id)initWithQuery:(id)arg1 player:(id)arg2 serviceProvider:(id)arg3;
+- (id)nowPlayingNavigationController;
+- (id)selectedIndexPath;
+- (void)setActivityIndicator:(id)arg1;
+- (void)setCurrentlyPlayingStation:(id)arg1;
+- (void)setNowPlayingNavigationController:(id)arg1;
+- (void)setSelectedIndexPath:(id)arg1;
 - (void)setStations:(id)arg1;
 - (id)stations;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;

@@ -7,21 +7,21 @@
     unsigned int _category;
     NSXPCConnection *_connection;
     <_DECExpertDelegate> *_delegate;
-    NSString *_identifier;
+    struct NSString { Class x1; } *_identifier;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property (nonatomic) unsigned int category;
 @property (nonatomic) <_DECExpertDelegate> *delegate;
-@property (nonatomic) NSString *identifier;
+@property (nonatomic, retain) NSString *identifier;
 
 - (void).cxx_destruct;
 - (unsigned int)category;
 - (id)delegate;
-- (id)identifier;
+- (struct NSString { Class x1; }*)identifier;
 - (id)init;
-- (id)initWithCategory:(unsigned int)arg1 identifier:(id)arg2;
-- (id)initWithCategory:(unsigned int)arg1 identifier:(id)arg2 queue:(id)arg3;
+- (id)initWithCategory:(unsigned int)arg1 identifier:(struct NSString { Class x1; }*)arg2;
+- (id)initWithCategory:(unsigned int)arg1 identifier:(struct NSString { Class x1; }*)arg2 queue:(id)arg3;
 - (void)predictionForCategories:(unsigned int)arg1 consumer:(unsigned int)arg2 limit:(unsigned int)arg3 reply:(id /* block */)arg4;
 - (void)prewarmPredictionForCategories:(unsigned int)arg1 consumer:(unsigned int)arg2 reply:(id /* block */)arg3;
 - (void)receiveFeedback:(id)arg1 consumer:(unsigned int)arg2 reply:(id /* block */)arg3;
@@ -29,7 +29,7 @@
 - (void)saveModelWithByteLimit:(unsigned int)arg1 reply:(id /* block */)arg2;
 - (void)setCategory:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIdentifier:(id)arg1;
+- (void)setIdentifier:(struct NSString { Class x1; }*)arg1;
 - (void)setPrediction:(id)arg1 category:(unsigned int)arg2 consumer:(unsigned int)arg3;
 - (void)trainWithReply:(id /* block */)arg1;
 

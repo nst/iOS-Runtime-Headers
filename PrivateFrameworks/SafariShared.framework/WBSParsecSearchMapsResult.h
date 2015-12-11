@@ -26,6 +26,7 @@
 @property (nonatomic, readonly) NSString *nearbyBusinessesString;
 @property (nonatomic, retain) WBSParsecSearchSession *parsecSearchSession;
 @property (readonly) Class superclass;
+@property (nonatomic, readonly) BOOL willPresentResultInCard;
 
 - (void).cxx_destruct;
 - (id)additionalMapItems;
@@ -42,5 +43,6 @@
 - (void)setHiddenParsecResult:(id)arg1;
 - (void)setParsecSearchSession:(id)arg1;
 - (id)supportedStyleOverrides;
+- (BOOL)willPresentResultInCard;
 
 @end

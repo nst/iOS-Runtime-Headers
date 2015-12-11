@@ -2,9 +2,11 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface _SFWebProcessPlugInReaderEnabledPageController : WBUWebProcessPlugInAutoFillPageController <SFReaderWebProcessControllerProtocol> {
+@interface _SFWebProcessPlugInReaderEnabledPageController : WBUWebProcessPlugInAutoFillPageController <RequestDesktopSiteWebProcessPlugInListener, SFReaderWebProcessControllerProtocol> {
     _WKRemoteObjectInterface *_availabilityControllerInterface;
     int _cachedReaderTopScrollOffset;
+    NSMutableSet *_domainsNeedingDesktopUserAgent;
+    SFWebProcessPlugInPageExtensionController *_extensionController;
     NSDictionary *_initalArticleScrollPositionAsDictionary;
     NSDictionary *_initialReaderConfiguration;
     NSDictionary *_initialScrollPositionAsDictionary;
@@ -16,6 +18,8 @@
     } _readerAvailabilityController;
     _SFReaderWebProcessPlugInPageController *_readerPageController;
     float _readerUserVisibleWidth;
+    <RequestDesktopSiteUIProcessListener> *_requestDesktopSiteUIProcessListener;
+    _WKRemoteObjectInterface *_requestDesktopSiteWebProcessPlugInListenerInterface;
     _SFWebProcessPlugInPageSafeBrowsingController *_safeBrowsingController;
     BOOL _viewingReadingListArchive;
 }
@@ -23,6 +27,7 @@
 @property (nonatomic) int cachedReaderTopScrollOffset;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSMutableSet *domainsNeedingDesktopUserAgent;
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSDictionary *initalArticleScrollPositionAsDictionary;
 @property (nonatomic, readonly) NSDictionary *initialReaderConfiguration;
@@ -45,12 +50,14 @@
 - (void)didCreateReaderPageContextHandle:(id)arg1;
 - (void)didDetermineReaderAvailability:(BOOL)arg1;
 - (void)didSetReaderConfiguration:(id)arg1;
+- (id)domainsNeedingDesktopUserAgent;
 - (void)increaseReaderTextSize;
 - (id)initWithPlugIn:(id)arg1 contextController:(id)arg2;
 - (id)initalArticleScrollPositionAsDictionary;
 - (id)initialReaderConfiguration;
 - (BOOL)isViewingReadingListArchive;
 - (void)loadNewReaderArticle;
+- (void)markURLAsNeedingDesktopUserAgent:(id)arg1;
 - (struct OpaqueJSValue { }*)originalArticleFinder;
 - (void)prepareReaderContentForPrinting;
 - (void)prepareToTransitionToReader;

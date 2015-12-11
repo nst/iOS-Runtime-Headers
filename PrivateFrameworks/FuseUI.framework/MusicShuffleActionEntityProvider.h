@@ -34,7 +34,7 @@
 - (unsigned int)numberOfIndexBarEntries;
 - (unsigned int)numberOfSections;
 - (unsigned int)sectionForSectionIndexBarEntryAtIndex:(unsigned int)arg1;
-- (void)setEditing:(BOOL)arg1 returningInsertedSectionIndexSet:(id*)arg2 deletedSectionIndexSet:(id*)arg3;
+- (BOOL)setEditing:(BOOL)arg1;
 - (id)sourceEntityProvider;
 
 @end

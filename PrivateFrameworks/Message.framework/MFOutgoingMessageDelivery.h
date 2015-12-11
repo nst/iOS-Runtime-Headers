@@ -4,6 +4,7 @@
 
 @interface MFOutgoingMessageDelivery : NSObject {
     MailAccount *_archiveAccount;
+    MFAttachmentCompositionContext *_attachmentContext;
     NSArray *_charsets;
     NSDictionary *_compositionSpecification;
     unsigned long long _conversationFlags;
@@ -21,6 +22,7 @@
     BOOL _textPartsAreHTML;
 }
 
+@property (nonatomic, retain) MFAttachmentCompositionContext *attachmentContext;
 @property (nonatomic, retain) NSDictionary *compositionSpecification;
 @property (nonatomic) unsigned long long conversationFlags;
 @property (nonatomic) BOOL isUserRequested;
@@ -34,6 +36,7 @@
 - (id)_deliverSynchronouslyWithCurrentSettings:(BOOL)arg1;
 - (id)_deliveryAccountForInitializers;
 - (id)account;
+- (id)attachmentContext;
 - (id)compositionSpecification;
 - (unsigned long long)conversationFlags;
 - (void)dealloc;
@@ -49,6 +52,7 @@
 - (id)originalHeaders;
 - (void)setAccount:(id)arg1;
 - (void)setArchiveAccount:(id)arg1;
+- (void)setAttachmentContext:(id)arg1;
 - (void)setCompositionSpecification:(id)arg1;
 - (void)setConversationFlags:(unsigned long long)arg1;
 - (void)setDelegate:(id)arg1;

@@ -6,12 +6,16 @@
 
 + (id)addAspectRatioConstraintForImageView:(id)arg1;
 + (id)buttonColorForStyle:(unsigned int)arg1;
++ (id)captionFont;
 + (id)chevronImage;
 + (id)contactForResult:(id)arg1 withKeys:(id)arg2;
 + (void)cropImageViewToCircle:(id)arg1;
++ (BOOL)deviceSupportsRotation;
++ (id)hyphenatableStringForString:(id)arg1;
 + (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 + (id)imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2 cornersToRound:(unsigned int)arg3 cornerRadius:(float)arg4;
 + (void)initialize;
++ (BOOL)isPortrait;
 + (BOOL)isWideScreen;
 + (float)onePixelForCurrentScreenResolution;
 + (void)roundImageViewCorners:(id)arg1 withRadius:(float)arg2;

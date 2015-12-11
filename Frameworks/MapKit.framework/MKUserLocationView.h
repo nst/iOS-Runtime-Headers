@@ -33,13 +33,14 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) double heading;
 @property (nonatomic) double headingAccuracy;
+@property (nonatomic, readonly) CLLocation *lastLocation;
 @property (nonatomic, readonly) double locationAccuracy;
 @property (nonatomic) float maxRadiusToShowAccuracyRing;
 @property (nonatomic) float opacity;
 @property (nonatomic) double presentationCourse;
 @property (nonatomic) BOOL shouldDisplayHeading;
 @property (nonatomic) BOOL shouldDisplayInaccurateHeading;
-@property (getter=isStale, nonatomic, readonly) BOOL stale;
+@property (getter=isStale, nonatomic) BOOL stale;
 @property (readonly) Class superclass;
 @property (nonatomic) int zoomDirection;
 
@@ -85,6 +86,7 @@
 - (id)initWithAnnotation:(id)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isEffectsEnabled;
 - (BOOL)isStale;
+- (id)lastLocation;
 - (void)layoutSubviews;
 - (double)locationAccuracy;
 - (void)locationManagerFailedToUpdateLocation;
@@ -106,6 +108,7 @@
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShouldDisplayHeading:(BOOL)arg1;
 - (void)setShouldDisplayInaccurateHeading:(BOOL)arg1;
+- (void)setStale:(BOOL)arg1;
 - (void)setZoomDirection:(int)arg1;
 - (void)setZoomDirection:(int)arg1 deltaScale:(float)arg2;
 - (BOOL)shouldDisplayHeading;

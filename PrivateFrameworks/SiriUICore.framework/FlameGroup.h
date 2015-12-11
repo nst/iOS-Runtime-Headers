@@ -24,6 +24,7 @@
 @property (nonatomic) float*transitionPhasePtr;
 @property (nonatomic) float zTime;
 
+- (id)description;
 - (float)globalAlpha;
 - (id)init;
 - (BOOL)isAura;

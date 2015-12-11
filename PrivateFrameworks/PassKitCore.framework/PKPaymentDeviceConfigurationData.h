@@ -4,9 +4,11 @@
 
 @interface PKPaymentDeviceConfigurationData : NSObject <NSSecureCoding> {
     BOOL _devSigned;
+    NSString *_secureElementIdentifier;
 }
 
 @property (nonatomic) BOOL devSigned;
+@property (nonatomic, copy) NSString *secureElementIdentifier;
 
 + (BOOL)supportsSecureCoding;
 
@@ -15,6 +17,8 @@
 - (BOOL)devSigned;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)secureElementIdentifier;
 - (void)setDevSigned:(BOOL)arg1;
+- (void)setSecureElementIdentifier:(id)arg1;
 
 @end

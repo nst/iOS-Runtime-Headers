@@ -30,8 +30,6 @@
 @property (nonatomic) double startTime;
 @property (readonly) Class superclass;
 
-+ (id)existingQueryForString:(id)arg1 scaleFactor:(float)arg2 webSearch:(BOOL)arg3 handler:(id)arg4;
-
 - (void).cxx_destruct;
 - (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
 - (void)URLSession:(id)arg1 didBecomeInvalidWithError:(id)arg2;
@@ -62,5 +60,6 @@
 - (void)setStartTime:(double)arg1;
 - (double)startTime;
 - (void)triggerQuery:(BOOL)arg1;
+- (void)trigger_noresults;
 
 @end

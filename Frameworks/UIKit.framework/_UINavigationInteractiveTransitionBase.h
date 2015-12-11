@@ -6,6 +6,7 @@
     BOOL __completesTransitionOnEnd;
     int __interactionState;
     UIViewController *__parent;
+    BOOL __shouldReverseLayoutDirection;
     BOOL __stoppedTransitionWasCancelled;
     BOOL __transitionWasStopped;
     BOOL __useAugmentedShouldPopDecisionProcedure;
@@ -34,6 +35,7 @@
 @property (setter=_setCompletesTransitionOnEnd:, nonatomic) BOOL _completesTransitionOnEnd;
 @property (setter=_setInteractionState:, nonatomic) int _interactionState;
 @property (setter=_setParent:, nonatomic) UIViewController *_parent;
+@property (setter=_setShouldReverseLayoutDirection:, nonatomic) BOOL _shouldReverseLayoutDirection;
 @property (setter=_setStoppedTransitionWasCancelled:, nonatomic) BOOL _stoppedTransitionWasCancelled;
 @property (setter=_setTransitionWasStopped:, nonatomic) BOOL _transitionWasStopped;
 @property (setter=_setUseAugmentedShouldPopDecisionProcedure:, nonatomic) BOOL _useAugmentedShouldPopDecisionProcedure;
@@ -69,9 +71,11 @@
 - (void)_setCompletesTransitionOnEnd:(BOOL)arg1;
 - (void)_setInteractionState:(int)arg1;
 - (void)_setParent:(id)arg1;
+- (void)_setShouldReverseLayoutDirection:(BOOL)arg1;
 - (void)_setStoppedTransitionWasCancelled:(BOOL)arg1;
 - (void)_setTransitionWasStopped:(BOOL)arg1;
 - (void)_setUseAugmentedShouldPopDecisionProcedure:(BOOL)arg1;
+- (BOOL)_shouldReverseLayoutDirection;
 - (void)_stopInteractiveTransition;
 - (BOOL)_stoppedTransitionWasCancelled;
 - (BOOL)_transitionWasStopped;

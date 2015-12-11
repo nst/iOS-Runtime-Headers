@@ -4,20 +4,24 @@
 
 @interface IMSPIHandle : NSObject {
     NSString *_address;
+    NSString *_cnContactID;
     NSString *_displayName;
     NSString *_identifier;
 }
 
 @property (retain) NSString *address;
+@property (retain) NSString *cnContactID;
 @property (retain) NSString *displayName;
 @property (retain) NSString *identifier;
 
 - (id)address;
+- (id)cnContactID;
 - (void)dealloc;
 - (id)description;
 - (id)displayName;
 - (id)identifier;
 - (void)setAddress:(id)arg1;
+- (void)setCnContactID:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setIdentifier:(id)arg1;
 

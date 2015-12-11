@@ -176,6 +176,7 @@
 - (BOOL)lightenGrayscaleWithSourceOver;
 - (void)removeKeyPathObserver:(id)arg1;
 - (int)renderingHint;
+- (BOOL)requiresBackdropLayer;
 - (BOOL)requiresColorStatistics;
 - (void)restoreDefaultValues;
 - (float)saturationDeltaFactor;

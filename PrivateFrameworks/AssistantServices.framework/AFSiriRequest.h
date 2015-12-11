@@ -14,6 +14,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_af_analyticsContextDescription;
 - (id)_descriptionWithProperties:(id)arg1;
 - (id)_identifier;
 - (id)_initWithOriginatingAceID:(id)arg1;

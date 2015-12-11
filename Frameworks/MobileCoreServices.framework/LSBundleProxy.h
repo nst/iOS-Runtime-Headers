@@ -48,7 +48,8 @@
 
 - (unsigned char)_createContext:(struct LSContext { struct LSDatabase {} *x1; }*)arg1 andGetBundle:(unsigned int*)arg2 withData:(const struct LSBundleData {}**)arg3;
 - (id)_initWithBundleUnit:(unsigned long)arg1 bundleType:(unsigned int)arg2 BundleID:(id)arg3 localizedName:(id)arg4 bundleContainerURL:(id)arg5 dataContainerURL:(id)arg6 resourcesDirectoryURL:(id)arg7 iconsDictionary:(id)arg8 iconFileNames:(id)arg9 version:(id)arg10;
-- (id)_plistValueForKey:(id)arg1;
+- (id)_plistValueForKey:(id)arg1 ofClass:(Class)arg2;
+- (id)_plistValueForKey:(id)arg1 ofClass:(Class)arg2 valuesOfClass:(Class)arg3;
 - (id)appStoreReceiptURL;
 - (id)bundleContainerURL;
 - (id)bundleExecutable;

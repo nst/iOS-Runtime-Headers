@@ -24,5 +24,6 @@
 - (BOOL)isExtensionInputMode;
 - (id)normalizedIdentifierLevels;
 - (void)setExtension:(id)arg1;
+- (void)setPrimaryLanguage:(id)arg1;
 
 @end

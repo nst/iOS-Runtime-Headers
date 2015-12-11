@@ -59,6 +59,7 @@
 - (void)cacheQueryResponse:(id)arg1 webSearch:(BOOL)arg2;
 - (id)cachedResultSetForCompletionString:(id)arg1 webSearch:(BOOL)arg2;
 - (id)cachedResultSetForQuery:(id)arg1 webSearch:(BOOL)arg2;
+- (id)cachedResultSetForQueryTask:(id)arg1;
 - (id)cannedCEPValues;
 - (id)clientQueue;
 - (id)compressedData:(id)arg1;

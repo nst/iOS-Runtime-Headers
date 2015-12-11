@@ -57,7 +57,8 @@
         float height; 
     } _progressIndicatorSize;
     BOOL _shouldPinContentToTop;
-    float _tileContentMaximumInitialZoomToFillScale;
+    int _tileInitialContentMode;
+    UITraitCollection *_traitCollection;
     float _transitionProgress;
     BOOL _useBackgroundTile;
     BOOL _useBadgeTiles;
@@ -76,7 +77,8 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } playButtonSize;
 @property (nonatomic) struct CGSize { float x1; float x2; } progressIndicatorSize;
 @property (nonatomic) BOOL shouldPinContentToTop;
-@property (nonatomic) float tileContentMaximumInitialZoomToFillScale;
+@property (nonatomic) int tileInitialContentMode;
+@property (nonatomic, retain) UITraitCollection *traitCollection;
 @property (nonatomic, readonly) float transitionProgress;
 @property (nonatomic) BOOL useBackgroundTile;
 @property (nonatomic) BOOL useBadgeTiles;
@@ -132,7 +134,8 @@
 - (void)setPlayButtonSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setProgressIndicatorSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setShouldPinContentToTop:(BOOL)arg1;
-- (void)setTileContentMaximumInitialZoomToFillScale:(float)arg1;
+- (void)setTileInitialContentMode:(int)arg1;
+- (void)setTraitCollection:(id)arg1;
 - (void)setUseBackgroundTile:(BOOL)arg1;
 - (void)setUseBadgeTiles:(BOOL)arg1;
 - (void)setUseCommentsTiles:(BOOL)arg1;
@@ -140,7 +143,8 @@
 - (void)setVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)shouldPinContentToTop;
 - (struct CGSize { float x1; float x2; })sizeForSection:(int)arg1 numberOfItems:(int)arg2;
-- (float)tileContentMaximumInitialZoomToFillScale;
+- (int)tileInitialContentMode;
+- (id)traitCollection;
 - (float)transitionProgress;
 - (BOOL)useBackgroundTile;
 - (BOOL)useBadgeTiles;

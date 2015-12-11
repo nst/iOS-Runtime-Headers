@@ -3,6 +3,7 @@
  */
 
 @interface NPKPaymentWebServiceTargetDevice : NSObject <IDSServiceDelegate, PKPaymentWebServiceArchiver, PKPaymentWebServiceTargetDeviceProtocol> {
+    NPKCompanionAgentConnection *_companionAgentConnection;
     unsigned int _context;
     <NPKPaymentWebServiceTargetDeviceDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_internalQueue;
@@ -11,6 +12,7 @@
     NSObject<OS_dispatch_queue> *_responseQueue;
 }
 
+@property (nonatomic, retain) NPKCompanionAgentConnection *companionAgentConnection;
 @property (nonatomic) unsigned int context;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <NPKPaymentWebServiceTargetDeviceDelegate> *delegate;
@@ -32,6 +34,7 @@
 - (void)archiveBackgroundContext:(id)arg1;
 - (void)archiveContext:(id)arg1;
 - (id)bridgedClientInfo;
+- (id)companionAgentConnection;
 - (void)configurationDataResponse:(id)arg1;
 - (unsigned int)context;
 - (id)delegate;
@@ -82,6 +85,7 @@
 - (void)service:(id)arg1 account:(id)arg2 incomingUnhandledProtobuf:(id)arg3 fromID:(id)arg4 context:(id)arg5;
 - (void)service:(id)arg1 activeAccountsChanged:(id)arg2;
 - (void)service:(id)arg1 devicesChanged:(id)arg2;
+- (void)setCompanionAgentConnection:(id)arg1;
 - (void)setContext:(unsigned int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalQueue:(id)arg1;

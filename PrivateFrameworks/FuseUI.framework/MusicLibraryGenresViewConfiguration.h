@@ -4,7 +4,7 @@
 
 @interface MusicLibraryGenresViewConfiguration : MusicLibraryBrowseTableViewConfiguration
 
-- (id)_detailViewControllerForEntityValueContext:(id)arg1;
+- (id)_detailViewControllerForEntityValueContext:(id)arg1 sourceViewController:(id)arg2;
 - (int)handleSelectionFromUserActivityContext:(id)arg1 containerItem:(id)arg2 entityValueContext:(id)arg3 viewController:(id)arg4;
 - (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)init;

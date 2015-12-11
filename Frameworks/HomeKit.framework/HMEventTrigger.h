@@ -12,8 +12,10 @@
 @property (nonatomic, copy) NSPredicate *predicate;
 
 + (id)_predicateForEvaluatingTriggerWithCharacteristic:(id)arg1 value:(id)arg2 valueFormatString:(id)arg3;
++ (id)_rewritePredicateForClient:(id)arg1 home:(id)arg2;
 + (id)_rewritePredicateForDaemon:(id)arg1 characteristicIsInvalid:(BOOL*)arg2;
 + (BOOL)_validatePredicate:(id)arg1;
++ (id)createWithDictionary:(id)arg1 home:(id)arg2;
 + (id)predicateForEvaluatingTriggerOccurringAfterDateWithComponents:(id)arg1;
 + (id)predicateForEvaluatingTriggerOccurringAfterSignificantEvent:(id)arg1 applyingOffset:(id)arg2;
 + (id)predicateForEvaluatingTriggerOccurringBeforeDateWithComponents:(id)arg1;
@@ -33,8 +35,10 @@
 - (void)_removeEvent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_retrieveLocationEvent:(id)arg1;
 - (id)_rewritePredicateForClient:(id)arg1;
+- (id)_rewritePredicateForMerge:(id)arg1 existingHome:(id)arg2 characteristicIsInvalid:(BOOL*)arg3;
 - (id)_serializeEvent:(id)arg1;
 - (id)_serializeForAdd;
+- (BOOL)_updateCharacterisiticReferenceInNewEvent:(id)arg1;
 - (void)_updatePredicate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_updateRegion:(id)arg1 forLocationEvent:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_updateTriggerValue:(id)arg1 forCharacteristicEvent:(id)arg2 completionHandler:(id /* block */)arg3;

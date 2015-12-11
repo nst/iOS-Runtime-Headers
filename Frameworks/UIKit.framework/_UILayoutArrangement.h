@@ -72,6 +72,7 @@
 - (id)_outgoingItems;
 - (id)_propertySource;
 - (void)_registerAnimationRequest;
+- (void)_removeSpanningLayoutGuide;
 - (void)_respondToChangesWithIncomingItem:(id)arg1 outgoingItem:(id)arg2 newlyHiddenItem:(id)arg3 newlyUnhiddenItem:(id)arg4;
 - (void)_setMutableItems:(id)arg1;
 - (void)_setUnanimatedConfigurationTarget:(id)arg1;

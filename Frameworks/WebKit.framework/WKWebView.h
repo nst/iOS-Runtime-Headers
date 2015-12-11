@@ -314,6 +314,7 @@
 - (Class)_printFormatterClass;
 - (struct CGPDFDocument { }*)_printedDocument;
 - (void)_processDidExit;
+- (id)_reloadWithoutContentBlockers;
 - (id)_remoteObjectRegistry;
 - (void)_resizeWhileHidingContentWithUpdates:(id /* block */)arg1;
 - (void)_restoreFromSessionStateData:(id)arg1;

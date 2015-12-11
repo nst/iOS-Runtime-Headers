@@ -15,6 +15,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)_af_analyticsContextDescription;
 - (BOOL)_launchToForeground;
 - (BOOL)_makeAppFrontmost;
 - (void)_setLaunchToForeground:(BOOL)arg1;

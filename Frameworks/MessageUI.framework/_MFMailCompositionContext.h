@@ -3,6 +3,7 @@
  */
 
 @interface _MFMailCompositionContext : NSObject {
+    MFAttachmentCompositionContext *_attachmentContext;
     NSString *_attachmentToMarkupContentID;
     id _autosaveIdentifier;
     NSArray *_bccRecipients;
@@ -10,7 +11,6 @@
     unsigned int _caretPosition;
     NSArray *_ccRecipients;
     int _composeType;
-    NSString *_contextID;
     NSMutableArray *_deferredAttachments;
     BOOL _includeAttachments;
     BOOL _loadRest;
@@ -30,6 +30,7 @@
     BOOL _usingDefaultAccount;
 }
 
+@property (nonatomic, readonly) MFAttachmentCompositionContext *attachmentContext;
 @property (nonatomic, retain) NSString *attachmentToMarkupContentID;
 @property (nonatomic, readonly) id autosaveIdentifier;
 @property (nonatomic, copy) NSArray *bccRecipients;
@@ -57,6 +58,7 @@
 - (void)_contextUnregisterForDrawNotification;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3;
 - (id)addAttachmentData:(id)arg1 mimeType:(id)arg2 fileName:(id)arg3 contentID:(id)arg4;
+- (id)attachmentContext;
 - (id)attachmentToMarkupContentID;
 - (id)attachments;
 - (id)autosaveIdentifier;
@@ -82,7 +84,6 @@
 - (id)initWithComposeType:(int)arg1 originalMessage:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 composeType:(int)arg2 originalMessage:(id)arg3;
-- (void)insertAttachmentWithData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3;
 - (void)insertAttachmentWithData:(id)arg1 fileName:(id)arg2 mimeType:(id)arg3 contentID:(id)arg4;
 - (void)insertAttachmentWithURL:(id)arg1;
 - (BOOL)loadRest;

@@ -2,16 +2,20 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface SFSafariViewController : UIViewController <SFBrowserRemoveViewControllerDelegate, _SFAddBookmarkActivityDelegate, _SFQueueingBrowserServiceViewControllerProxyDelegate> {
+@interface SFSafariViewController : UIViewController <SFBrowserRemoveViewControllerDelegate, SFInteractiveDismissControllerDelegate, _SFQueueingBrowserServiceViewControllerProxyDelegate> {
     _WKActivatedElementInfo *_activatedElementInfo;
+    NSMutableDictionary *_activitiesMap;
     _UIAsyncInvocation *_cancelViewServiceRequest;
+    NSArray *_customActivities;
     <SFSafariViewControllerDelegate> *_delegate;
     NSURL *_initialURL;
+    SFInteractiveDismissController *_interactiveDismissController;
     int _preferredStatusBarStyle;
     NSArray *_previewActions;
     SFBrowserRemoteViewController *_remoteViewController;
     _SFQueueingBrowserServiceViewControllerProxy *_serviceProxy;
     BOOL _showingLinkPreview;
+    BOOL _swipeGestureEnabled;
 }
 
 @property (setter=_setActivatedElementInfo:, nonatomic, retain) _WKActivatedElementInfo *_activatedElementInfo;
@@ -33,28 +37,35 @@
 - (id)_previewActions;
 - (void)_removeRemoteView;
 - (void)_setActivatedElementInfo:(id)arg1;
+- (void)_setEdgeSwipeDismissalEnabled:(BOOL)arg1;
 - (void)_setPreviewActions:(id)arg1;
 - (void)_setShowingLinkPreview:(BOOL)arg1;
 - (BOOL)_showingLinkPreview;
-- (void)addBookmarkActivityDidFinish:(id)arg1;
 - (id)delegate;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithURL:(id)arg1;
 - (id)initWithURL:(id)arg1 entersReaderIfAvailable:(BOOL)arg2;
 - (id)initialURL;
+- (void)interactiveDismissControllerDidBegin:(id)arg1;
+- (void)interactiveDismissControllerDidCancel:(id)arg1;
+- (void)interactiveDismissControllerDidEnd:(id)arg1;
 - (void)loadView;
 - (int)preferredStatusBarStyle;
 - (id)previewActions;
 - (void)remoteViewController:(id)arg1 didFinishInitialLoad:(BOOL)arg2;
+- (void)remoteViewController:(id)arg1 executeCustomActivityProxyID:(id)arg2;
+- (void)remoteViewController:(id)arg1 fetchHostAppCustomActivitiesForURL:(id)arg2 title:(id)arg3;
+- (void)remoteViewController:(id)arg1 setSwipeGestureEnabled:(BOOL)arg2;
 - (void)remoteViewController:(id)arg1 viewServiceDidTerminateWithError:(id)arg2;
-- (void)remoteViewController:(id)arg1 willShowActivitySheetForURL:(id)arg2 title:(id)arg3 fromRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (void)remoteViewController:(id)arg1 willUpdateStatusBarStyle:(int)arg2;
 - (void)remoteViewControllerDidLoadWebView:(id)arg1;
 - (void)remoteViewControllerWillDismiss:(id)arg1;
 - (id)serviceProxy;
 - (void)serviceProxyWillQueueInvocation:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setModalPresentationStyle:(int)arg1;
+- (void)setTransitioningDelegate:(id)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
 

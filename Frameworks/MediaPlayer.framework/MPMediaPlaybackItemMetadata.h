@@ -16,6 +16,7 @@
     NSString *_contentTitle;
     unsigned int _contentType;
     NSString *_copyrightText;
+    long long _downloadIdentifier;
     int _endpointType;
     double _expectedDuration;
     NSString *_genreTitle;
@@ -28,6 +29,7 @@
     NSURL *_protectedContentSupportStorageURL;
     BOOL _requiresPlayWhileDownload;
     BOOL _shouldReportPlayEventsToStore;
+    BOOL _showComposer;
     unsigned long long _storeAccountID;
     long long _storeAdamID;
     unsigned long long _storeSagaID;
@@ -49,6 +51,7 @@
 @property (nonatomic, readonly, copy) NSString *contentTitle;
 @property (nonatomic, readonly) unsigned int contentType;
 @property (nonatomic, readonly, copy) NSString *copyrightText;
+@property (nonatomic, readonly) long long downloadIdentifier;
 @property (nonatomic, readonly) int endpointType;
 @property (nonatomic, readonly) double expectedDuration;
 @property (nonatomic, readonly, copy) NSString *genreTitle;
@@ -66,6 +69,7 @@
 @property (nonatomic, readonly, copy) NSURL *protectedContentSupportStorageURL;
 @property (nonatomic, readonly) BOOL requiresPlayWhileDownload;
 @property (nonatomic, readonly) BOOL shouldReportPlayEventsToStore;
+@property (nonatomic, readonly) BOOL showComposer;
 @property (nonatomic, readonly) unsigned long long storeAccountID;
 @property (nonatomic, readonly) long long storeAdamID;
 @property (nonatomic, readonly) unsigned long long storeSagaID;
@@ -100,6 +104,7 @@
 - (unsigned int)contentType;
 - (id)copyrightText;
 - (void)dealloc;
+- (long long)downloadIdentifier;
 - (int)endpointType;
 - (double)expectedDuration;
 - (id)genreTitle;
@@ -123,6 +128,7 @@
 - (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned int)arg2 assetQuality:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)setLikedState:(int)arg1 withCompletionHandler:(id /* block */)arg2;
 - (BOOL)shouldReportPlayEventsToStore;
+- (BOOL)showComposer;
 - (unsigned long long)storeAccountID;
 - (long long)storeAdamID;
 - (unsigned long long)storeSagaID;

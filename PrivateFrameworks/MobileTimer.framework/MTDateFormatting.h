@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (void)_clearLocaleDependentState;
 - (id)_dateOnlyFormatter;
+- (void)_loadLocaleInfo;
 - (void)_reloadLocaleInfo;
 - (id)_timeOnlyFormatter;
 - (id)amString;

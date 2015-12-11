@@ -11,6 +11,7 @@
     NSArray *_recordsToSave;
     int _savePolicy;
     BOOL _shouldOnlySaveAssetContent;
+    BOOL _shouldReportRecordsInFlight;
 }
 
 @property (nonatomic) BOOL atomic;
@@ -21,6 +22,7 @@
 @property (nonatomic, retain) NSArray *recordsToSave;
 @property (nonatomic) int savePolicy;
 @property (nonatomic) BOOL shouldOnlySaveAssetContent;
+@property (nonatomic) BOOL shouldReportRecordsInFlight;
 
 + (BOOL)supportsSecureCoding;
 
@@ -42,6 +44,8 @@
 - (void)setRecordsToSave:(id)arg1;
 - (void)setSavePolicy:(int)arg1;
 - (void)setShouldOnlySaveAssetContent:(BOOL)arg1;
+- (void)setShouldReportRecordsInFlight:(BOOL)arg1;
 - (BOOL)shouldOnlySaveAssetContent;
+- (BOOL)shouldReportRecordsInFlight;
 
 @end

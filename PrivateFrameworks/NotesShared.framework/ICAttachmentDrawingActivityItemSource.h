@@ -2,23 +2,11 @@
    Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
  */
 
-@interface ICAttachmentDrawingActivityItemSource : ICAttachmentActivityItemSource <UIActivityItemSourceAttachment> {
-    struct UIImage { Class x1; } *_image;
-}
+@interface ICAttachmentDrawingActivityItemSource : ICAttachmentActivityItemSource
 
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (nonatomic, retain) UIImage *image;
-@property (readonly) Class superclass;
-
-- (void).cxx_destruct;
 - (id)activityViewController:(id)arg1 dataTypeIdentifierForActivityType:(id)arg2;
 - (id)activityViewController:(id)arg1 itemForActivityType:(id)arg2;
 - (id)activityViewControllerPlaceholderItem:(id)arg1;
 - (id)attachmentTypeUTI;
-- (struct UIImage { Class x1; }*)image;
-- (id)initWithImage:(struct UIImage { Class x1; }*)arg1 attachment:(id)arg2;
-- (void)setImage:(struct UIImage { Class x1; }*)arg1;
 
 @end

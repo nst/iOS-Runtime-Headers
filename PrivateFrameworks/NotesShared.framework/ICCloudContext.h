@@ -116,6 +116,7 @@
 - (id)lastSyncDate;
 - (void)logErrorAndRetryUpdateSubscription:(id)arg1;
 - (void)logStartModifyRecordsOperation:(id)arg1 cloudObjectsByRecordID:(id)arg2;
+- (id)managedObjectContext;
 - (id)newCloudObjectForRecord:(id)arg1;
 - (void)noteContextObjectsDidChange:(id)arg1;
 - (int)numberOfRetriesForProcessing;

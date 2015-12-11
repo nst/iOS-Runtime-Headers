@@ -7,6 +7,7 @@
     <PSPasscodeFieldDelegate> *_delegate;
     NSMutableArray *_digitViews;
     NSMutableArray *_dotViews;
+    BOOL _enabled;
     NSArray *_fieldSpacing;
     UIColor *_foregroundColor;
     int _keyboardAppearance;
@@ -20,6 +21,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSPasscodeFieldDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
 @property (nonatomic, retain) NSArray *fieldSpacing;
 @property (nonatomic, retain) UIColor *foregroundColor;
@@ -43,6 +45,7 @@
 - (BOOL)hasText;
 - (id)initWithNumberOfEntryFields:(unsigned int)arg1;
 - (void)insertText:(id)arg1;
+- (BOOL)isEnabled;
 - (BOOL)isSecureTextEntry;
 - (int)keyboardAppearance;
 - (int)keyboardType;
@@ -51,6 +54,7 @@
 - (void)passcodeFieldTapped:(id)arg1;
 - (BOOL)securePasscodeEntry;
 - (void)setDelegate:(id)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setFieldSpacing:(id)arg1;
 - (void)setForegroundColor:(id)arg1;
 - (void)setKeyboardAppearance:(int)arg1;

@@ -6,9 +6,11 @@
 @required
 
 - (void)finishWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (id /* block */)logParsedObjectBlock:(void *)arg1; // needs 1 arg types, found 5: id /* block */, <CKDParsedObject> *, void*, id, SEL
 - (id /* block */)objectParsedBlock:(void *)arg1; // needs 1 arg types, found 12: id /* block */, id, void*, inout unsigned short, long double, void*, void*, void*, void*, void*, id, SEL
 - (NSError *)parserError;
 - (void)processData:(NSData *)arg1;
+- (void)setLogParsedObjectBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, <CKDParsedObject> *, void*
 - (void)setObjectParsedBlock:(void *)arg1; // needs 1 arg types, found 13: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, id, void*, inout unsigned short, long double, void*, void*, void*, void*, void*
 
 @end

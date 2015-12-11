@@ -14,6 +14,7 @@
     BOOL _contentViewEnabled;
     NSArray *_gestureRecognizers;
     BOOL _isReadyForDisplay;
+    UIView *_loadedView;
     UIView *_view;
 }
 
@@ -29,6 +30,7 @@
 @property (nonatomic, retain) NSArray *gestureRecognizers;
 @property (setter=_setReadyForDisplay:, nonatomic) BOOL isReadyForDisplay;
 @property (nonatomic, readonly) BOOL isViewLoaded;
+@property (setter=_setLoadedView:, nonatomic, retain) UIView *loadedView;
 @property (nonatomic, retain) UIView *view;
 
 - (void).cxx_destruct;
@@ -42,6 +44,7 @@
 - (void)_setContentView:(id)arg1;
 - (void)_setEdgeAntialiasingEnabled:(BOOL)arg1;
 - (void)_setGestureRecognizers:(id)arg1;
+- (void)_setLoadedView:(id)arg1;
 - (void)_setLoadingView:(BOOL)arg1;
 - (void)_setMaskView:(id)arg1;
 - (void)_setOnReadyToDisplayBlock:(id /* block */)arg1;
@@ -66,6 +69,7 @@
 - (BOOL)isReadyForDisplay;
 - (BOOL)isViewLoaded;
 - (id)loadView;
+- (id)loadedView;
 - (void)notifyWhenReadyForDisplayWithTimeOut:(double)arg1 completionHandler:(id /* block */)arg2;
 - (void)prepareForReuse;
 - (id)presentationLayoutInfo;

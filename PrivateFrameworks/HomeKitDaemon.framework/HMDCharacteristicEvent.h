@@ -10,6 +10,7 @@
 @property (nonatomic, readonly) HMDCharacteristic *characteristic;
 @property (nonatomic, retain) id eventValue;
 
++ (id)characteristicEventWithDictionary:(id)arg1 home:(id)arg2 error:(id*)arg3;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -18,7 +19,6 @@
 - (id)eventValue;
 - (id)initWithCharacteristic:(id)arg1 eventValue:(id)arg2;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithDictionary:(id)arg1 home:(id)arg2;
 - (void)setEventValue:(id)arg1;
 
 @end

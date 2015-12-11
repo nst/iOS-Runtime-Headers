@@ -8,6 +8,8 @@
 
 - (void).cxx_destruct;
 - (void)cancel;
+- (BOOL)cancelIfNotAlreadyCanceled;
+- (id)initWithTimeoutInterval:(double)arg1 onQueue:(id)arg2 timeoutHandler:(id /* block */)arg3;
 - (id)initWithTimeoutInterval:(double)arg1 timeoutHandler:(id /* block */)arg2;
 - (void)start;
 

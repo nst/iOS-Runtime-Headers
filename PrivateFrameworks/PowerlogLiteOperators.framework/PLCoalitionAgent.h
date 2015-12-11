@@ -30,8 +30,8 @@
 - (void).cxx_destruct;
 - (void)addAccountingEventsFromCoalitions:(id)arg1;
 - (id)batteryLevelChanged;
-- (id)buildPLCoalitionDataObject:(struct coalition_resource_usage { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3 withDate:(id)arg4 withCoalitionId:(unsigned long long)arg5;
-- (id)buildPLEntry:(struct coalition_resource_usage { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3 withDate:(id)arg4 withCoalitionId:(unsigned long long)arg5;
+- (id)buildPLCoalitionDataObject:(struct coalition_resource_usage { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3 withDate:(id)arg4 withCoalitionId:(unsigned long long)arg5;
+- (id)buildPLEntry:(struct coalition_resource_usage { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3 withDate:(id)arg4 withCoalitionId:(unsigned long long)arg5;
 - (id)buildPLEntryDiffWithStartEntry:(id)arg1 withEndEntry:(id)arg2 withLastDate:(id)arg3;
 - (id)buildPLEntryDiffWithStartObject:(id)arg1 withEndObject:(id)arg2 withStartDate:(id)arg3 withEndDate:(id)arg4;
 - (id)coalitionIDToCoalitionNameMapping;
@@ -52,7 +52,7 @@
 - (void)logCoalitionObjectSnapshot:(id)arg1;
 - (void)logCoalitionSnapshot:(id)arg1;
 - (void)logEventIntervalUsage;
-- (void)printCoalitionResourceUsage:(struct coalition_resource_usage { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3;
+- (void)printCoalitionResourceUsage:(struct coalition_resource_usage { unsigned long long x1; unsigned long long x2; unsigned long long x3; unsigned long long x4; unsigned long long x5; unsigned long long x6; unsigned long long x7; unsigned long long x8; unsigned long long x9; unsigned long long x10; unsigned long long x11; unsigned long long x12; unsigned long long x13; unsigned long long x14; unsigned long long x15; }*)arg1 withBundleId:(id)arg2 withLaunchdName:(id)arg3;
 - (id)processmonitorCallback;
 - (void)setBatteryLevelChanged:(id)arg1;
 - (void)setCoalitionIDToCoalitionNameMapping:(id)arg1;

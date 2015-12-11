@@ -55,6 +55,7 @@
 - (void)textDidChange:(id)arg1;
 - (id)textDocumentProxy;
 - (void)textWillChange:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

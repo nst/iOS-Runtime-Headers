@@ -10,6 +10,7 @@
     NSObject<OS_dispatch_queue> *_eventListenerQueue;
     AUV2BridgeBusArray *_inputBusses;
     AUV2BridgeBusArray *_outputBusses;
+    struct AUListenerBase { } *_parameterListener;
     struct unique_ptr<AUAudioUnitV2Bridge_Renderer, std::__1::default_delete<AUAudioUnitV2Bridge_Renderer> > { 
         struct __compressed_pair<AUAudioUnitV2Bridge_Renderer *, std::__1::default_delete<AUAudioUnitV2Bridge_Renderer> > { 
             struct AUAudioUnitV2Bridge_Renderer {} *__first_; 
@@ -21,6 +22,8 @@
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_addOrRemoveParameterListeners:(BOOL)arg1;
+- (void)_createEventListenerQueue;
 - (unsigned long)_elementCount:(unsigned long)arg1;
 - (BOOL)_elementCountWritable:(unsigned long)arg1;
 - (void)_invalidateParameterTree;

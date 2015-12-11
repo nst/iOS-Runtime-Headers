@@ -3,11 +3,17 @@
  */
 
 @interface GEORPProblemStatusRequest : PBRequest <NSCopying> {
+    GEOPDAnalyticMetadata *_analyticMetadata;
+    GEORPClientCapabilities *_clientCapabilities;
     NSMutableArray *_problemIds;
     NSString *_statusNotificationId;
     GEORPUserCredentials *_userCredentials;
 }
 
+@property (nonatomic, retain) GEOPDAnalyticMetadata *analyticMetadata;
+@property (nonatomic, retain) GEORPClientCapabilities *clientCapabilities;
+@property (nonatomic, readonly) BOOL hasAnalyticMetadata;
+@property (nonatomic, readonly) BOOL hasClientCapabilities;
 @property (nonatomic, readonly) BOOL hasStatusNotificationId;
 @property (nonatomic, readonly) BOOL hasUserCredentials;
 @property (nonatomic, retain) NSMutableArray *problemIds;
@@ -15,23 +21,30 @@
 @property (nonatomic, retain) GEORPUserCredentials *userCredentials;
 
 - (void)addProblemId:(id)arg1;
+- (id)analyticMetadata;
 - (void)clearProblemIds;
+- (id)clientCapabilities;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasAnalyticMetadata;
+- (BOOL)hasClientCapabilities;
 - (BOOL)hasStatusNotificationId;
 - (BOOL)hasUserCredentials;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (void)populateAnalyticsMetadata;
 - (id)problemIdAtIndex:(unsigned int)arg1;
 - (id)problemIds;
 - (unsigned int)problemIdsCount;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)requestTypeCode;
 - (Class)responseClass;
+- (void)setAnalyticMetadata:(id)arg1;
+- (void)setClientCapabilities:(id)arg1;
 - (void)setProblemIds:(id)arg1;
 - (void)setStatusNotificationId:(id)arg1;
 - (void)setUserCredentials:(id)arg1;

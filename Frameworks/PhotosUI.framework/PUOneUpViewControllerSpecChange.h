@@ -7,7 +7,6 @@
     BOOL _bufferingIndicatorSizeChanged;
     BOOL _chromeVisibilityChanged;
     BOOL _loadingIndicatorSizeChanged;
-    BOOL _maximumInitialZoomToFillScaleChanged;
     BOOL _maximumToolbarHeightChanged;
     BOOL _presentedForPreviewChanged;
     BOOL _progressIndicatorSizeChanged;
@@ -26,13 +25,13 @@
     BOOL _shouldUseCompactTitleViewChanged;
     BOOL _shouldUseContentGuideInsetsChanged;
     BOOL _shouldUseUserTransformTilesChanged;
+    BOOL _tileInitialContentModeChanged;
 }
 
 @property (nonatomic) BOOL backgroundColorOverrideChanged;
 @property (nonatomic) BOOL bufferingIndicatorSizeChanged;
 @property (nonatomic) BOOL chromeVisibilityChanged;
 @property (nonatomic) BOOL loadingIndicatorSizeChanged;
-@property (nonatomic) BOOL maximumInitialZoomToFillScaleChanged;
 @property (nonatomic) BOOL maximumToolbarHeightChanged;
 @property (nonatomic) BOOL presentedForPreviewChanged;
 @property (nonatomic) BOOL progressIndicatorSizeChanged;
@@ -51,12 +50,12 @@
 @property (nonatomic) BOOL shouldUseCompactTitleViewChanged;
 @property (nonatomic) BOOL shouldUseContentGuideInsetsChanged;
 @property (nonatomic) BOOL shouldUseUserTransformTilesChanged;
+@property (nonatomic) BOOL tileInitialContentModeChanged;
 
 - (void)_setBackgroundColorOverrideChanged:(BOOL)arg1;
 - (void)_setBufferingIndicatorSizeChanged:(BOOL)arg1;
 - (void)_setChromeVisibilityChanged:(BOOL)arg1;
 - (void)_setLoadingIndicatorSizeChanged:(BOOL)arg1;
-- (void)_setMaximumInitialZoomToFillScaleChanged:(BOOL)arg1;
 - (void)_setMaximumToolbarHeightChanged:(BOOL)arg1;
 - (void)_setPresentedForPreviewChanged:(BOOL)arg1;
 - (void)_setProgressIndicatorSizeChanged:(BOOL)arg1;
@@ -75,12 +74,12 @@
 - (void)_setShouldUseCompactTitleViewChanged:(BOOL)arg1;
 - (void)_setShouldUseContentGuideInsetsChanged:(BOOL)arg1;
 - (void)_setShouldUseUserTransformTilesChanged:(BOOL)arg1;
+- (void)_setTileInitialContentModeChanged:(BOOL)arg1;
 - (BOOL)backgroundColorOverrideChanged;
 - (BOOL)bufferingIndicatorSizeChanged;
 - (BOOL)changed;
 - (BOOL)chromeVisibilityChanged;
 - (BOOL)loadingIndicatorSizeChanged;
-- (BOOL)maximumInitialZoomToFillScaleChanged;
 - (BOOL)maximumToolbarHeightChanged;
 - (BOOL)presentedForPreviewChanged;
 - (BOOL)progressIndicatorSizeChanged;
@@ -99,5 +98,6 @@
 - (BOOL)shouldUseCompactTitleViewChanged;
 - (BOOL)shouldUseContentGuideInsetsChanged;
 - (BOOL)shouldUseUserTransformTilesChanged;
+- (BOOL)tileInitialContentModeChanged;
 
 @end

@@ -6,17 +6,15 @@
     UISwitch *_alertShowOfflineSwitch;
     MusicClientContext *_clientContext;
     NSDictionary *_curatorsByID;
-    UIBarButtonItem *_editButtonItem;
     UIAlertController *_filterAlertController;
     MusicHairlineView *_hairlineView;
     BOOL _hasSubscribedPlaylistsCapability;
     MusicSwitcherButtonContainerView *_librarySwitcherButtonContainerView;
     MusicMatchLoadingViewController *_matchLoadingViewController;
-    UIBarButtonItem *_newButtonItem;
     UIViewController *_noContentViewController;
     unsigned int _playlistsConfigurationOptions;
     MusicActionableHeaderView *_playlistsHeaderView;
-    MusicLibraryPlaylistsViewConfiguration *_playlistsViewConfiguration;
+    MusicPlaylistsWithNewActionViewConfiguration *_playlistsViewConfiguration;
     UIViewController *_playlistsViewController;
     SKUIProxyScrollView *_proxyScrollView;
     struct UIEdgeInsets { 
@@ -29,7 +27,7 @@
     MusicLibraryBrowseCollectionViewController *_recentlyAddedPlaylistsViewController;
     NSString *_selectedFilter;
     BOOL _selectedFilterIsCuratorID;
-    MusicLibraryPlaylistsViewConfiguration *_selectedPlaylistsViewConfiguration;
+    MusicPlaylistsWithNewActionViewConfiguration *_selectedPlaylistsViewConfiguration;
     BOOL _shouldShowMatchLoadingView;
     BOOL _shouldShowNoContentView;
     MusicLibraryTopBarController *_topBarController;
@@ -55,7 +53,6 @@
 - (void)_delayedDismissFilterAlertController;
 - (void)_didUpdateDefaultLibrary:(id)arg1;
 - (void)_dismissEditSheet;
-- (void)_editButtonTapped:(id)arg1;
 - (id)_getCurrentSortedPlaylistsOverviewFilters;
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_handlePlaylistsOverviewFilterAlertControllerDismissal;
@@ -63,7 +60,6 @@
 - (void)_loadRecentlyAddedPlaylistsViewController;
 - (id)_matchLoadingViewController;
 - (void)_musicLibraryPlaylistsOverviewViewControllerCommonInitialization;
-- (void)_newButtonTapped:(id)arg1;
 - (id)_newLibraryPlaylistsViewConfiguration;
 - (id)_noContentViewController;
 - (void)_playlistsEntityProviderDidInvalidateNotification:(id)arg1;
@@ -95,7 +91,7 @@
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithTabBarItem:(id)arg1;
-- (void)leadingButtonWasSelectedInContainerView:(id)arg1;
+- (void)music_handleCreatePlaylistAction;
 - (BOOL)music_handleUserActivityContext:(id)arg1 containerItem:(id)arg2;
 - (void)noContentViewDidTapButton:(id)arg1;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
@@ -103,7 +99,6 @@
 - (void)setClientContext:(id)arg1;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)switcherButtonWasSelectedInContainerView:(id)arg1;
-- (void)trailingButtonWasSelectedInContainerView:(id)arg1;
 - (void)traitCollectionDidChange:(id)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;

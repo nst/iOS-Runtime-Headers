@@ -10,6 +10,7 @@
     BOOL _dismissDelegateCalled;
     unsigned int _documentPickerMode;
     BOOL _ignoreApplicationEntitlementForImport;
+    BOOL _sourceIsManaged;
     NSURL *_uploadURL;
     <UIDocumentMenuDelegate> *_weak_delegate;
 }
@@ -25,6 +26,7 @@
 @property (nonatomic) unsigned int documentPickerMode;
 @property (readonly) unsigned int hash;
 @property (getter=_remoteViewController, nonatomic, readonly, retain) _UIDocumentPickerRemoteViewController *remoteViewController;
+@property (getter=_sourceIsManaged, setter=_setSourceIsManaged:, nonatomic) BOOL sourceIsManaged;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSURL *uploadURL;
 
@@ -44,6 +46,8 @@
 - (BOOL)_requiresCustomPresentationController;
 - (void)_setChildViewController:(id)arg1;
 - (void)_setIgnoreApplicationEntitlementForImport:(BOOL)arg1;
+- (void)_setSourceIsManaged:(BOOL)arg1;
+- (BOOL)_sourceIsManaged;
 - (void)_stitchFileCreationAtURL:(id)arg1;
 - (void)addOptionWithTitle:(id)arg1 image:(id)arg2 order:(unsigned int)arg3 handler:(id /* block */)arg4;
 - (id)alertController;

@@ -17,6 +17,12 @@
         float stopSquareCornerRadius; 
     } _spec;
     BOOL _spinning;
+    struct UIEdgeInsets { 
+        float top; 
+        float left; 
+        float bottom; 
+        float right; 
+    } _tappableEdgeInsets;
 }
 
 @property (nonatomic, readonly) UIView *_innerView;
@@ -28,6 +34,7 @@
 @property (getter=isPulsing, nonatomic) BOOL pulsing;
 @property (nonatomic) struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; } spec;
 @property (getter=isSpinning, nonatomic) BOOL spinning;
+@property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } tappableEdgeInsets;
 
 + (id)shutterButton;
 + (id)shutterButtonWithSpec:(struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; })arg1;
@@ -55,6 +62,7 @@
 - (id)_timelapseOuterView;
 - (void)_updateOuterAndInnerLayers;
 - (void)_updateSpinningAnimations;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
@@ -67,7 +75,9 @@
 - (void)setMode:(int)arg1 animated:(BOOL)arg2;
 - (void)setPulsing:(BOOL)arg1;
 - (void)setSpinning:(BOOL)arg1;
+- (void)setTappableEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct CAMShutterButtonSpec { float x1; float x2; float x3; float x4; })spec;
+- (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })tappableEdgeInsets;
 
 @end

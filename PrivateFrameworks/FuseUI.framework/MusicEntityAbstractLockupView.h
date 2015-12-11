@@ -58,7 +58,7 @@
 - (float)_currentTextLabelAlpha;
 - (id)_effectiveArtworkBackgroundColor;
 - (void)_entityDisabledDidChange;
-- (void)_getViewToProposedFrameMap:(id*)arg1 withTextDescriptors:(id)arg2 availableContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 totalInsetContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 totalTextHeight:(float*)arg5;
+- (void)_getViewToProposedFrameMap:(id*)arg1 withTextDescriptors:(id)arg2 availableContentBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 exclusionRectangle:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 totalTextHeight:(float*)arg5;
 - (void)_handleArtworkImageUpdate:(id)arg1 idealArtworkSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_handleArtworkViewTapped;
 - (void)_handleContentDescriptorDidInvalidate:(id)arg1;

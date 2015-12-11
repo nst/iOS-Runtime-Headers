@@ -9,6 +9,7 @@
     NSURLConnection *_conn;
     NSMutableData *_data;
     BOOL _expectsPartialContent;
+    NSLock *_lock;
     NSURL *_url;
 }
 

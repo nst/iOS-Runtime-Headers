@@ -32,6 +32,7 @@
 @property (nonatomic) int headingOrientation;
 @property (nonatomic, readonly) BOOL isSimulation;
 @property (nonatomic, readonly) BOOL isTracePlayer;
+@property (nonatomic, readonly) CLLocation *lastLocation;
 @property (getter=isLocationServicesPreferencesDialogEnabled, nonatomic) BOOL locationServicesPreferencesDialogEnabled;
 @property (nonatomic) BOOL matchInfoEnabled;
 @property (readonly) Class superclass;
@@ -59,6 +60,7 @@
 - (BOOL)isLocationServicesPreferencesDialogEnabled;
 - (BOOL)isSimulation;
 - (BOOL)isTracePlayer;
+- (id)lastLocation;
 - (void)locationManager:(id)arg1 didChangeAuthorizationStatus:(int)arg2;
 - (void)locationManager:(id)arg1 didFailWithError:(id)arg2;
 - (void)locationManager:(id)arg1 didUpdateHeading:(id)arg2;

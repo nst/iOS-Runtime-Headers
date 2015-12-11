@@ -15,13 +15,14 @@
 - (void)applicationWillResignActive:(NSString *)arg1;
 - (void)dataInterfaceDidBecomeActive:(NSString *)arg1;
 - (void)dataInterfaceWillResignActive:(NSString *)arg1;
+- (void)layoutDirection:(int)arg1;
 - (void)preferredContentSizeCategory:(NSString *)arg1;
 - (void)receiveData:(NSData *)arg1 fromIdentifier:(NSString *)arg2;
 - (void)receiveProtoData:(NSData *)arg1 fromIdentifier:(NSString *)arg2;
 
 @optional
 
-- (void)extensionDidBeginUsing;
+- (void)extensionDidBeginUsingWithLaunchEnv:(NSDictionary *)arg1 launchArgs:(NSArray *)arg2;
 - (void)extensionWillEndUsing;
 - (void)receiveNativeComplicationRequest:(void *)arg1 completion:(void *)arg2; // needs 2 arg types, found 7: NSDictionary *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, void*
 - (void)replyTimingData:(NSDictionary *)arg1;

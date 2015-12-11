@@ -5,12 +5,10 @@
 @interface PLCloudMetadataService : PLCloudService {
     NSObject<OS_dispatch_queue> *_agentQueue;
     PLPhotoLibrary *_localLibrary;
-    PLCloudCoalescingQueue *_messageQueue;
     PLCloudPhotoLibraryManager *_remoteLibrary;
     unsigned long long _version;
 }
 
-- (void)_enumerateNodesWithLayoutStatus:(unsigned int)arg1 usingBlock:(id /* block */)arg2;
 - (void)activate;
 - (BOOL)agentRunning;
 - (void)dealloc;

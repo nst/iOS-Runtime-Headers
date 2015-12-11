@@ -6,6 +6,8 @@
     <CDPStateUIProvider> *_uiProvider;
 }
 
+@property (nonatomic, retain) <CDPStateUIProvider> *uiProvider;
+
 - (void).cxx_destruct;
 - (void)cdpContext:(id)arg1 promptForAccountPasswordWithCompletion:(id /* block */)arg2;
 - (void)cdpContext:(id)arg1 promptForAdoptionOfMultipleICSC:(id /* block */)arg2;
@@ -16,5 +18,7 @@
 - (void)cdpContext:(id)arg1 promptToInformUserOfAccountLockOutWithCompletion:(id /* block */)arg2;
 - (void)cdpContext:(id)arg1 promptToInformUserOfAccountUnlockWithCompletion:(id /* block */)arg2;
 - (id)initWithUIProvider:(id)arg1;
+- (void)setUiProvider:(id)arg1;
+- (id)uiProvider;
 
 @end

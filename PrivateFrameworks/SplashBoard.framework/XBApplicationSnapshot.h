@@ -106,7 +106,7 @@
 
 + (id)normalizeSnapshotName:(id)arg1;
 
-- (void)_cacheImage:(id)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
+- (void)_cacheImage:(id)arg1;
 - (id)_cachedImage;
 - (void)_clearImagePurgeTimer;
 - (void)_commonInit;

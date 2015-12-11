@@ -39,7 +39,6 @@
 - (void).cxx_destruct;
 - (id)__sanitizedPrimaryPhoneCallOrdering:(id)arg1;
 - (void)_sendMessageResponse:(id)arg1 toCall:(id)arg2;
-- (void)_wheelChangedWithEvent:(id)arg1;
 - (id)allConferenceParticipantCalls;
 - (BOOL)areIncomingCallOptionsAllowed;
 - (id)buttonsView;
@@ -55,6 +54,7 @@
 - (unsigned short)currentMode;
 - (void)dealloc;
 - (id)delegate;
+- (void)didUpdateFocusInContext:(id)arg1 withAnimationCoordinator:(id)arg2;
 - (id)failedCall;
 - (id)flippyView;
 - (id)galleryView;

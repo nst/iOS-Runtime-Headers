@@ -185,6 +185,7 @@
 @property (nonatomic, retain) NSString *summary;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL supportsActions;
+@property (nonatomic, readonly) BOOL supportsExpansion;
 @property (nonatomic, readonly) BOOL supportsImageAsyncLoading;
 @property (nonatomic) BOOL supportsImageAsyncLoading;
 @property (nonatomic, retain) NSString *templateName;
@@ -347,6 +348,7 @@
 - (BOOL)shouldCropImageToCircle;
 - (BOOL)shouldFetchMediaArtwork;
 - (BOOL)supportsActions;
+- (BOOL)supportsExpansion;
 - (BOOL)supportsImageAsyncLoading;
 - (unsigned int)titleMaxLines;
 - (BOOL)useAppIconForFallbackThumbnail;

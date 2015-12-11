@@ -12,13 +12,25 @@
 @property (readonly) Class superclass;
 
 + (id)allCloudObjects;
++ (id)allMediaInContext:(id)arg1;
 + (id)containerDirectoryURLForMediaWithIdentifier:(id)arg1;
++ (void)deleteMedia:(id)arg1;
 + (id)existingCloudObjectForRecordID:(id)arg1;
 + (id)mediaDirectoryURL;
 + (id)mediaURLForMediaWithIdentifier:(id)arg1 filename:(id)arg2;
++ (id)mediaWithIdentifier:(id)arg1 context:(id)arg2;
 + (id)newCloudObjectForRecord:(id)arg1;
++ (id)newFetchRequestForMediaInContext:(id)arg1;
++ (id)newMediaWithData:(id)arg1 filename:(id)arg2 forceWriteInBackground:(BOOL)arg3 context:(id)arg4 completionBlock:(id /* block */)arg5;
++ (id)newMediaWithFileWrapper:(id)arg1 context:(id)arg2 completionBlock:(id /* block */)arg3;
++ (id)newMediaWithIdentifier:(id)arg1 context:(id)arg2;
++ (id)newMediaWithURL:(id)arg1 context:(id)arg2 completionBlock:(id /* block */)arg3;
 + (void)purgeAllMedia;
++ (void)purgeAllMediaFiles;
++ (void)purgeAllMediaInContext:(id)arg1;
++ (void)purgeMedia:(id)arg1;
 + (id)recordType;
++ (id)visibleMediaInContext:(id)arg1;
 
 - (id)anyNote;
 - (id)containerDirectoryURL;

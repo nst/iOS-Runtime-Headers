@@ -7,6 +7,7 @@
 }
 
 @property (nonatomic, readonly) ICDrawing *drawing;
+@property (nonatomic, readonly) UIImage *imageForActivityItem;
 
 + (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
 

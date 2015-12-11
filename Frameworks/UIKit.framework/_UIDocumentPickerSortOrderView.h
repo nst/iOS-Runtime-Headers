@@ -25,6 +25,7 @@
 - (void)_toggleListMode:(id)arg1;
 - (id)centeredConstraints;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)layoutSubviews;
 - (id)leftAlignedConstraints;
 - (int)listMode;
 - (id)listModeToggle;
@@ -35,13 +36,12 @@
 - (void)setListMode:(int)arg1;
 - (void)setListModeToggle:(id)arg1;
 - (void)setListModeToggleHidden:(BOOL)arg1;
+- (void)setNeedsLayout;
 - (void)setServiceViewController:(id)arg1;
 - (void)setSortOrder:(id)arg1;
 - (void)setValue:(int)arg1;
 - (id)sortOrder;
-- (void)traitCollectionDidChange:(id)arg1;
 - (void)updateForListMode;
-- (void)updateLayout;
 - (int)value;
 - (void)valueChanged:(id)arg1;
 

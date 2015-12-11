@@ -8,6 +8,8 @@
         float x; 
         float y; 
     } end;
+    float force;
+    float majorRadius;
     struct CGPoint { 
         float x; 
         float y; 
@@ -16,12 +18,20 @@
 
 @property double dt;
 @property struct CGPoint { float x1; float x2; } end;
+@property float force;
+@property float majorRadius;
 @property struct CGPoint { float x1; float x2; } start;
 
 - (double)dt;
 - (struct CGPoint { float x1; float x2; })end;
+- (float)force;
+- (float)majorRadius;
+- (void)pullValuesFrom:(id)arg1;
+- (void)resetValues;
 - (void)setDt:(double)arg1;
 - (void)setEnd:(struct CGPoint { float x1; float x2; })arg1;
+- (void)setForce:(float)arg1;
+- (void)setMajorRadius:(float)arg1;
 - (void)setStart:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGPoint { float x1; float x2; })start;
 

@@ -3,7 +3,7 @@
  */
 
 @interface IKDOMNodeData : NSObject {
-    BOOL _autoHighlightUpdated;
+    BOOL _autoHighlightRead;
     BOOL _childrenUpdated;
     NSMutableDictionary *_featuresMap;
     IKDOMNode *_ownerJSNode;
@@ -11,7 +11,7 @@
     BOOL _updated;
 }
 
-@property (getter=isAutoHighlightUpdated, nonatomic) BOOL autoHighlightUpdated;
+@property (getter=isAutoHighlightRead, nonatomic) BOOL autoHighlightRead;
 @property (getter=isChildrenUpdated, nonatomic) BOOL childrenUpdated;
 @property (nonatomic, retain) NSMutableDictionary *featuresMap;
 @property (nonatomic) IKDOMNode *ownerJSNode;
@@ -23,12 +23,12 @@
 - (void).cxx_destruct;
 - (id)featureForName:(id)arg1;
 - (id)featuresMap;
-- (BOOL)isAutoHighlightUpdated;
+- (BOOL)isAutoHighlightRead;
 - (BOOL)isChildrenUpdated;
 - (BOOL)isSubtreeUpdated;
 - (BOOL)isUpdated;
 - (id)ownerJSNode;
-- (void)setAutoHighlightUpdated:(BOOL)arg1;
+- (void)setAutoHighlightRead:(BOOL)arg1;
 - (void)setChildrenUpdated:(BOOL)arg1;
 - (void)setFeature:(id)arg1 forName:(id)arg2;
 - (void)setFeaturesMap:(id)arg1;

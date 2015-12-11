@@ -21,7 +21,10 @@
         struct jet_program {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     } _backingProgram;
+    NSString *_compileLog;
     NSString *_fileName;
+    BOOL _performFullCapture;
+    bool _programDirty;
     NSString *_source;
     NSMutableDictionary *_uniformData;
     NSMutableArray *_uniforms;
@@ -31,6 +34,7 @@
 @property (readonly) struct shared_ptr<jet_program> { struct jet_program {} *x1; struct __shared_weak_count {} *x2; } _backingProgram;
 @property (readonly) struct shared_ptr<jet_command_buffer> { struct jet_command_buffer {} *x1; struct __shared_weak_count {} *x2; } _commands;
 @property (readonly) NSArray *_textureUniforms;
+@property BOOL performFullCapture;
 @property (copy) NSString *source;
 @property (copy) NSArray *uniforms;
 
@@ -69,8 +73,10 @@
 - (id)initWithSource:(id)arg1;
 - (id)initWithSource:(id)arg1 uniforms:(id)arg2;
 - (BOOL)isValid;
+- (BOOL)performFullCapture;
 - (void)removeUniformNamed:(id)arg1;
 - (void)setAttributes:(id)arg1;
+- (void)setPerformFullCapture:(BOOL)arg1;
 - (void)setSource:(id)arg1;
 - (void)setUniforms:(id)arg1;
 - (id)source;

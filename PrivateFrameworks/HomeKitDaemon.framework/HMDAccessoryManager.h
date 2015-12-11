@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDAccessoryManager : NSObject <HAPAccessoryServerBrowserDelegate, HAPAccessoryServerDelegate> {
+@interface HMDAccessoryManager : NSObject <HAPAccessoryServerBrowserDelegate, HAPAccessoryServerDelegate, HMDWatchSystemStateDelegate> {
     NSMutableArray *_accessoryServerBrowsers;
     NSMapTable *_addAccessoryCompletionHandlersForAccessoryServers;
     BOOL _appIsInForeground;

@@ -43,4 +43,8 @@
 - (double)timeScale;
 - (BOOL)usesCLMapCorrection;
 
+@optional
+
+- (CLLocation *)lastLocation;
+
 @end

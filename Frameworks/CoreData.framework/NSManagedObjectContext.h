@@ -61,6 +61,7 @@
 }
 
 @property (readonly) unsigned int concurrencyType;
+@property (nonatomic, retain) NSString *debugName;
 @property (nonatomic, readonly) NSSet *deletedObjects;
 @property (nonatomic, readonly) BOOL hasChanges;
 @property (nonatomic, readonly) NSSet *insertedObjects;
@@ -107,7 +108,7 @@
 - (void)_copyChildObject:(id)arg1 toParentObject:(id)arg2 fromChildContext:(id)arg3;
 - (unsigned int)_countWithMergedChangesForRequest:(id)arg1 possibleChanges:(id)arg2 possibleDeletes:(id)arg3 error:(id*)arg4;
 - (unsigned int)_countWithNoChangesForRequest:(id)arg1 error:(id*)arg2;
-- (void)_createAndPostChangeNotification:(id)arg1 withDeletions:(id)arg2 withUpdates:(id)arg3 withRefreshes:(id)arg4;
+- (void)_createAndPostChangeNotification:(id)arg1 deletions:(id)arg2 updates:(id)arg3 refreshes:(id)arg4 deferrals:(id)arg5;
 - (id)_createStoreFetchRequestForFetchRequest:(id)arg1;
 - (id)_currentEventSnapshotForObject:(id)arg1;
 - (void)_dealloc__;
@@ -311,6 +312,11 @@
 - (void)unlockObjectStore;
 - (id)updatedObjects;
 - (id)userInfo;
+
+// Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
+
+- (id)debugName;
+- (void)setDebugName:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
 

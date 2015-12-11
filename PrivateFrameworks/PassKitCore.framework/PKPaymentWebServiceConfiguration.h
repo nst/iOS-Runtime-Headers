@@ -25,6 +25,7 @@
 - (BOOL)cameraFirstProvisioningEnabledForCurrentRegion;
 - (id)configuration;
 - (id)configurationURL;
+- (BOOL)currentRegionHasProvisioningEnablementPercentage;
 - (void)dealloc;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)findWithoutNumberEnabledForCurrentRegion;
@@ -34,6 +35,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)manualProvisioningEnabledForCurrentRegion;
 - (id)paymentSetupFeaturedNetworksForCurrentRegion;
+- (double)provisioningEnablementPercentageForCurrentRegion;
 - (void)setConfiguration:(id)arg1;
 - (void)setConfigurationURL:(id)arg1;
 - (id)supportedRegionsForOSVersion:(id)arg1 deviceClass:(id)arg2;

@@ -2,7 +2,9 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMediaItem : MPMediaEntity
+@interface MPMediaItem : MPMediaEntity {
+    BOOL _protectedAsset;
+}
 
 @property (nonatomic, readonly) NSString *albumArtist;
 @property (nonatomic, readonly) unsigned long long albumArtistPersistentID;
@@ -47,6 +49,7 @@
 @property (nonatomic, readonly) double playbackDuration;
 @property (nonatomic, readonly) unsigned long long podcastPersistentID;
 @property (nonatomic, readonly) NSString *podcastTitle;
+@property (getter=hasProtectedAsset, nonatomic, readonly) BOOL protectedAsset;
 @property (nonatomic, readonly) unsigned int rating;
 @property (nonatomic, readonly) NSDate *releaseDate;
 @property (nonatomic, readonly) BOOL rememberBookmarkTime;
@@ -116,6 +119,7 @@
 - (id)genre;
 - (unsigned long long)genrePersistentID;
 - (BOOL)hasBeenPlayed;
+- (BOOL)hasProtectedAsset;
 - (unsigned int)hash;
 - (void)incrementPlayCountForPlayingToEnd;
 - (BOOL)incrementPlayCountForStopTime:(double)arg1;
@@ -174,9 +178,12 @@
 
 // Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
 
-+ (void)registerSupportedCustomProperties;
++ (id)customPropertyHandlersCollection;
++ (void)registerSupportedCustomPropertiesWithHandlersCollection:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
++ (id)MPU_contentItemIdentifierCollectionProperties;
 
 - (id)MPU_contentItemIdentifierCollection;
 

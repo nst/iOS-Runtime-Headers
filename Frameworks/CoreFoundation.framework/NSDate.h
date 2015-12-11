@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/CoreFoundation.framework/CoreFoundation
  */
 
-@interface NSDate : NSObject <CKRecordValue, NSCopying, NSSecureCoding, PQLValuable, TSCHChartGridValue>
+@interface NSDate : NSObject <CKDParsedObject, CKRecordValue, NSCopying, NSSecureCoding, PQLValuable, TSCHChartGridValue>
 
 @property (nonatomic, readonly) NSString *briefFormattedDate;
 @property (nonatomic, readonly) int chartGridValueType;
@@ -66,9 +66,9 @@
 
 - (id)dateForDayInTimeZone:(id)arg1;
 - (id)dateForDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
-- (id)dateForEndOfDayInTimeZone:(id)arg1;
 - (id)dateForEndOfDayInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
 - (id)dateInTimeZone:(id)arg1 fromTimeZone:(id)arg2;
+- (id)ek_ios_dateForEndOfDayInTimeZone:(id)arg1;
 
 // Image: /System/Library/Frameworks/Foundation.framework/Foundation
 
@@ -228,6 +228,10 @@
 
 - (BOOL)isSameDayAsDate:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
+
+- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
+
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 - (id)initWithCPLArchiver:(id)arg1;
@@ -294,6 +298,9 @@
 
 + (id)mf_copyDateInCommonFormatsWithString:(id)arg1;
 + (id)mf_copyLenientDateInCommonFormatsWithString:(id)arg1;
+
+- (BOOL)mf_isEarlierThanDate:(id)arg1;
+- (BOOL)mf_isLaterThanDate:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/Message.framework/Message
 

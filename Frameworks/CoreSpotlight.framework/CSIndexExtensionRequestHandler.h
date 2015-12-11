@@ -2,25 +2,20 @@
    Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
  */
 
-@interface CSIndexExtensionRequestHandler : NSObject <CSSearchableIndexDelegate, NSExtensionRequestHandling> {
-    NSExtensionContext *_context;
-}
+@interface CSIndexExtensionRequestHandler : NSObject <CSSearchableIndexDelegate, NSExtensionRequestHandling>
 
-@property (retain) NSExtensionContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void).cxx_destruct;
 - (void)beginRequestWithExtensionContext:(id)arg1;
-- (id)context;
+- (void)dealloc;
 - (void)index:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(id /* block */)arg3;
 - (void)reindexAllSearchableItemsForIndex:(id)arg1 acknowledgementHandler:(id /* block */)arg2;
 - (void)searchableIndex:(id)arg1 reindexAllSearchableItemsWithAcknowledgementHandler:(id /* block */)arg2;
 - (void)searchableIndex:(id)arg1 reindexSearchableItemsWithIdentifiers:(id)arg2 acknowledgementHandler:(id /* block */)arg3;
 - (void)searchableIndexDidFinishThrottle:(id)arg1;
 - (void)searchableIndexDidThrottle:(id)arg1;
-- (void)setContext:(id)arg1;
 
 @end

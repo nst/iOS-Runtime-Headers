@@ -13,9 +13,10 @@
 - (id)_presentedViewControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
 - (id)adaptivePresentationController;
 - (int)adaptivePresentationStyle;
+- (BOOL)animatorShouldSizeResultsContainerView;
 - (id)backgroundObscuringView;
-- (BOOL)backgroundObscuringViewShouldObeyPresentationContextBounds;
 - (id)blurView;
+- (unsigned int)edgeForHidingNavigationBar;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })finalFrameForContainerView;
 - (BOOL)forceObeyNavigationBarInsets;
 - (void)hideBackgroundObscuringView;

@@ -179,6 +179,7 @@
 - (BOOL)_isEquivalentURLRepresentationTo:(id)arg1;
 - (BOOL)_isTransitItem;
 - (id)_localizedBusinessHoursWithCurrentOpeningHoursOptions;
+- (id)_localizedBusinessHoursWithOptions:(unsigned int)arg1;
 - (id)_localizedCategoryNamesForType:(unsigned int)arg1;
 - (id)_localizedOperatingHours;
 - (id)_mapsDataString;

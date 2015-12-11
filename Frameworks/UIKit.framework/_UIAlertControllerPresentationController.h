@@ -56,6 +56,7 @@
 - (void)_willRunTransitionForCurrentStateDeferred:(BOOL)arg1;
 - (int)adaptivePresentationStyle;
 - (int)adaptivePresentationStyleForPresentationController:(id)arg1;
+- (void)containerViewDidLayoutSubviews;
 - (void)containerViewWillLayoutSubviews;
 - (id)forcePresentationControllerDelegate;
 - (id)initWithPresentedViewController:(id)arg1 presentingViewController:(id)arg2;

@@ -9,7 +9,7 @@
     unsigned int _entityVersion;
     BOOL _executeJournals;
     SGSuggestHistory *_history;
-    BOOL _identityStoreDirty;
+    unsigned int _identityStoreDirty;
     BOOL _isEphemeral;
     SGJournal *_journal;
     unsigned int _lostMessageOverflow;
@@ -59,8 +59,10 @@
 - (void)_addLocations:(id)arg1 toEntityWriteDictionary:(id)arg2;
 - (void)_addSpotlightReferenceToEmailRecordId:(id)arg1 withBundleIdentifier:(id)arg2 uniqueIdentifier:(id)arg3 domainIdentifier:(id)arg4;
 - (void)_addTimeRange:(id)arg1 toEntityWriteDictionary:(id)arg2;
+- (BOOL)_analyzeMergeBlobsIncremental:(id)arg1;
 - (id)_buildContactMatchForStorageContact:(id)arg1 fromQuery:(id)arg2 tokens:(id)arg3 preprocessSgContact:(id /* block */)arg4;
 - (id)_buildNameBasedContactMatchForStorageContact:(id)arg1 preprocessSgContact:(id /* block */)arg2;
+- (id)_computeBlobsRaw:(id*)arg1;
 - (id)_computePseudoContactContentHash:(id)arg1 contactDetails:(id)arg2;
 - (BOOL)_createEntityFTSTableWithName:(id)arg1;
 - (void)_deleteIfNoSpotlightReferences:(id)arg1 addToRecentlyDeletedCache:(BOOL)arg2;
@@ -78,16 +80,23 @@
 - (id)_filterOutUndisplayableEntities:(id)arg1;
 - (void)_handleProtection;
 - (id)_initializeDatabase:(id)arg1 withProtection:(BOOL)arg2 newDatabaseCreated:(BOOL*)arg3;
+- (BOOL)_isBlobAnalysisQueueEmpty;
+- (BOOL)_isIdentityStoreDirty;
 - (void)_joinNamelessEmailWithOthersOfItsIlk:(id)arg1 recordId:(id)arg2;
 - (void)_joinNamelessPhonesWithOthersOfTheirIlk:(id)arg1 recordId:(id)arg2;
+- (id)_labelIdentityBlobs:(id)arg1;
 - (void)_linkNamelessEmailsIfAppropriate:(struct graph_t { unsigned int x1; unsigned int x2; struct _vertex_t {} *x3; }*)arg1 nameToVertex:(id)arg2 disjointSets:(struct DisjointSetHandle { }*)arg3;
 - (void)_linkNamelessPhonesIfAppropriate:(struct graph_t { unsigned int x1; unsigned int x2; struct _vertex_t {} *x3; }*)arg1 nameToVertex:(id)arg2 disjointSets:(struct DisjointSetHandle { }*)arg3;
 - (id)_loadContactForStorageContact:(id)arg1 usingSerializedContactCache:(BOOL)arg2;
+- (id)_loadIdentityBlobs;
 - (void)_logConfirmPercentWithConfirmCount:(double)arg1 rejectCount:(double)arg2 domain:(id)arg3 suffix:(id)arg4;
+- (void)_markIdentityStoreClean;
+- (void)_markIdentityStoreDirty;
 - (void)_markRecordsLostIfNoSpotlightReferences:(id)arg1;
 - (id)_masterEntityIDsForMasterEntityQuery:(id)arg1 bindings:(id /* block */)arg2;
 - (int)_maxIdForTable:(id)arg1;
 - (id)_popBatchOfCNContactIds;
+- (id)_popMergeBlobForAnalysis;
 - (long long)_popQueuedSerializedContactId;
 - (BOOL)_prepareToCopyFrom:(id)arg1 toNewTableNamed:(id)arg2;
 - (BOOL)_processBatchOfSerializedContactJobs;
@@ -110,6 +119,8 @@
 - (void)_writeEntityToSnippetsDb:(id)arg1;
 - (void)_writeEventEntityToJournal:(id)arg1;
 - (void)_writeFTSTermsForEntity:(id)arg1 entityId:(long long)arg2;
+- (void)_writeLabeledBlobs:(id)arg1 isDelete:(BOOL)arg2;
+- (void)_writeMergeBlobSnapshotForAnalysis:(id)arg1;
 - (void)_writeTombstoneForSpotlightReferenceWithBundleIdentifier:(id)arg1 uniqueIdentifier:(id)arg2 domainIdentifier:(id)arg3;
 - (void)addInterdictFrom:(id)arg1 with:(id)arg2;
 - (BOOL)addSpotlightReferenceToEmailIfFullyDownloaded:(id)arg1 withBundleIdentifier:(id)arg2 uniqueIdentifier:(id)arg3 domainIdentifier:(id)arg4;
@@ -118,6 +129,7 @@
 - (id)allContactsWithEntityType:(unsigned int)arg1;
 - (id)allPseudoContacts;
 - (void)analyzeDatabase;
+- (void)analyzeMergeBlobs:(id)arg1;
 - (id)batch:(id /* block */)arg1;
 - (id)batchOf:(unsigned int)arg1 contactsStartingAtEntityId:(unsigned int)arg2;
 - (id)childrenFromParentKey:(id)arg1;
@@ -218,6 +230,7 @@
 - (void)logConfirmPercentAfterContactDetailConfirmation;
 - (void)logConfirmPercentAfterContactDetailRejection;
 - (void)logConfirmPercentAfterContactRejection;
+- (id)makeInterdictsForBlob:(id)arg1 withContactStore:(id)arg2;
 - (void)markLostSpotlightReferencesWithBundleIdentifier:(id)arg1 uniqueIdentifiers:(id)arg2;
 - (void)markMessagesFound:(id)arg1;
 - (void)markMessagesLost:(id)arg1;

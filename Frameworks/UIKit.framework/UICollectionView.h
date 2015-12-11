@@ -43,6 +43,8 @@
         unsigned int delegateIndexPathForPreferredFocusedView : 1; 
         unsigned int delegateShouldUpdateFocusInContext : 1; 
         unsigned int delegateDidUpdateFocusInContext : 1; 
+        unsigned int delegateTemplateLayoutCell : 1; 
+        unsigned int delegateWillLayoutCellUsingTemplateLayoutCell : 1; 
         unsigned int delegateWasNonNil : 1; 
         unsigned int dataSourceNumberOfSections : 1; 
         unsigned int dataSourceViewForSupplementaryElement : 1; 
@@ -72,6 +74,7 @@
         unsigned int updateFocusAfterLoadingCells : 1; 
         unsigned int performingLayout : 1; 
         unsigned int keepsFirstResponderVisibleOnBoundsChange : 1; 
+        unsigned int inCreateTemplateCell : 1; 
     } _collectionViewFlags;
     UIFocusContainerGuide *_contentFocusContainerGuide;
     struct CGPoint { 
@@ -92,6 +95,7 @@
     NSString *_firstResponderViewKind;
     int _firstResponderViewType;
     UICollectionReusableView *_focusedCell;
+    NSString *_focusedCellElementKind;
     NSIndexPath *_focusedCellIndexPath;
     int _focusedViewType;
     NSMutableSet *_indexPathsForHighlightedItems;
@@ -153,6 +157,7 @@
     NSMutableDictionary *_supplementaryViewNibDict;
     NSMutableDictionary *_supplementaryViewNibExternalObjectsTables;
     NSMutableDictionary *_supplementaryViewReuseQueues;
+    NSMutableDictionary *_templateLayoutCells;
     NSMutableArray *_trackedValuesKeys;
     UICollectionViewLayoutAttributes *_transitionLayoutAttributes;
     int _updateAnimationCount;
@@ -188,6 +193,7 @@
 @property (readonly, copy) NSString *description;
 @property (getter=_endOfContentFocusContainerGuide, nonatomic, readonly) UIFocusContainerGuide *endOfContentFocusContainerGuide;
 @property (getter=_focusedCell, setter=_setFocusedCell:, nonatomic, retain) UICollectionReusableView *focusedCell;
+@property (getter=_focusedCellElementKind, setter=_setFocusedCellElementKind:, nonatomic, copy) NSString *focusedCellElementKind;
 @property (getter=_focusedCellIndexPath, setter=_setFocusedCellIndexPath:, nonatomic, copy) NSIndexPath *focusedCellIndexPath;
 @property (readonly) unsigned int hash;
 @property (getter=_keepsFirstResponderVisibleOnBoundsChange, setter=_setKeepsFirstResponderVisibleOnBoundsChange:, nonatomic) BOOL keepsFirstResponderVisibleOnBoundsChange;
@@ -230,6 +236,7 @@
 - (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3;
 - (id)_createPreparedCellForItemAtIndexPath:(id)arg1 withLayoutAttributes:(id)arg2 applyAttributes:(BOOL)arg3 isFocused:(BOOL)arg4;
 - (id)_createPreparedSupplementaryViewForElementOfKind:(id)arg1 atIndexPath:(id)arg2 withLayoutAttributes:(id)arg3 applyAttributes:(BOOL)arg4;
+- (id)_createTemplateLayoutCellForCellsWithIdentifier:(id)arg1;
 - (id)_currentPromiseFulfillmentCell;
 - (id)_currentTouch;
 - (id)_currentUpdate;
@@ -251,6 +258,7 @@
 - (void)_finishInteractiveTransitionShouldFinish:(BOOL)arg1 finalAnimation:(BOOL)arg2;
 - (void)_finishInteractiveTransitionWithFinalAnimation:(BOOL)arg1;
 - (id)_focusedCell;
+- (id)_focusedCellElementKind;
 - (id)_focusedCellIndexPath;
 - (void)_focusedView:(id)arg1 isMinX:(BOOL*)arg2 isMaxX:(BOOL*)arg3 isMinY:(BOOL*)arg4 isMaxY:(BOOL*)arg5;
 - (id)_fulfillPromisedFocusRegionForCell:(id)arg1;
@@ -270,6 +278,7 @@
 - (BOOL)_itemIndexPathIsReordered:(id)arg1;
 - (BOOL)_keepsFirstResponderVisibleOnBoundsChange;
 - (id)_keysForObject:(id)arg1 inDictionary:(id)arg2;
+- (id)_managedSubviewForView:(id)arg1;
 - (id /* block */)_navigationCompletion;
 - (id)_objectInDictionary:(id)arg1 forKind:(id)arg2 indexPath:(id)arg3;
 - (void)_performAction:(SEL)arg1 forCell:(id)arg2 sender:(id)arg3;
@@ -287,6 +296,8 @@
 - (struct CGPoint { float x1; float x2; })_reorderingTargetPosition;
 - (void)_resumeReloads;
 - (void)_reuseCell:(id)arg1;
+- (void)_reusePreviouslyFocusedManagedSubviewIfNeeded:(id)arg1;
+- (id)_reuseQueueForViewWithElementCategory:(unsigned int)arg1 elementKind:(id)arg2 reuseIdentifier:(id)arg3;
 - (void)_reuseSupplementaryView:(id)arg1;
 - (void)_scrollFirstResponderCellToVisible:(BOOL)arg1;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
@@ -300,6 +311,7 @@
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfCellWithReuseIdentifier:(id)arg2;
 - (void)_setExternalObjectTable:(id)arg1 forNibLoadingOfSupplementaryViewOfKind:(id)arg2 withReuseIdentifier:(id)arg3;
 - (void)_setFocusedCell:(id)arg1;
+- (void)_setFocusedCellElementKind:(id)arg1;
 - (void)_setFocusedCellIndexPath:(id)arg1;
 - (void)_setIsAncestorOfFirstResponder:(BOOL)arg1;
 - (void)_setKeepsFirstResponderVisibleOnBoundsChange:(BOOL)arg1;
@@ -315,6 +327,7 @@
 - (BOOL)_shouldUpdateFocusInContext:(id)arg1;
 - (void)_stopAutoscrollTimer;
 - (void)_suspendReloads;
+- (id)_templateLayoutCellForCellsWithReuseIdentifier:(id)arg1;
 - (void)_trackLayoutValue:(float)arg1 forKey:(id)arg2;
 - (float)_trackedLayoutValueForKey:(id)arg1;
 - (void)_unhighlightAllItems;

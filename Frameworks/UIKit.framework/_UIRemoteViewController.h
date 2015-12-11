@@ -19,6 +19,9 @@
     int _preferredStatusBarStyle;
     int _preferredStatusBarUpdateAnimation;
     BOOL _prefersStatusBarHidden;
+    long _proxiedEditAlertToken;
+    UIAlertView *_proxiedEditAlertView;
+    int _redoButtonIndex;
     _UITextEffectsRemoteView *_remoteKeyboardRemoteView;
     _UIRemoteViewService *_remoteViewService;
     unsigned int _serviceAccessibilityServerPort;
@@ -49,6 +52,7 @@
     _UITextServiceSession *_textServiceSession;
     BKSTouchDeliveryPolicyAssertion *_touchDeliveryPolicyAssertion;
     UIView *_touchGrabbingView;
+    int _undoButtonIndex;
     _UIAsyncInvocation *_viewControllerOperatorHalfDisconnectionInvocation;
     id _viewControllerOperatorProxy;
     UIView *_viewServiceTouchInterdictionView;
@@ -90,8 +94,10 @@
 - (void)__setSupportedInterfaceOrientations:(id)arg1;
 - (void)__setViewServiceIsDisplayingPopover:(BOOL)arg1;
 - (BOOL)__shouldRemoteViewControllerFenceOperations;
+- (void)__showEditAlertViewWithToken:(long)arg1 canUndo:(BOOL)arg2 canRedo:(BOOL)arg3;
 - (void)__showServiceForText:(id)arg1 type:(int)arg2 fromRectValue:(id)arg3 replyHandler:(id /* block */)arg4;
 - (void)__trampolineButtonPressData:(id)arg1 canceled:(BOOL)arg2;
+- (void)__updateDeferralPropertiesForScreen:(id)arg1;
 - (void)__viewServiceDidPromoteFirstResponder;
 - (void)__viewServiceDidRegisterScrollToTopView;
 - (void)__viewServiceDidUnregisterScrollToTopView;
@@ -131,6 +137,7 @@
 - (void)_restoreTextEffectsRemoteView;
 - (void)_screenDidConnect:(id)arg1;
 - (void)_screenDidDisconnect:(id)arg1;
+- (void)_screenIDChanged:(id)arg1;
 - (void)_scrollToTopFromTouchAtViewLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id /* block */)arg2;
 - (BOOL)_serviceHasScrollToTopView;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
@@ -153,6 +160,9 @@
 - (void)_willBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)_willRotateToInterfaceOrientation:(int)arg1 duration:(double)arg2 forwardToChildControllers:(BOOL)arg3 skipSelf:(BOOL)arg4;
 - (void)actionSheet:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 clickedButtonAtIndex:(int)arg2;
+- (void)alertView:(id)arg1 didDismissWithButtonIndex:(int)arg2;
+- (void)alertViewCancel:(id)arg1;
 - (id)allowedNotifications;
 - (id)autorelease;
 - (BOOL)canBecomeFirstResponder;

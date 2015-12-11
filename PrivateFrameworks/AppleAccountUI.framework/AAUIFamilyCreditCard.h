@@ -3,33 +3,33 @@
  */
 
 @interface AAUIFamilyCreditCard : NSObject {
-    NSDate *_expirationDate;
+    NSString *_details;
+    NSString *_footer;
     UIImage *_image;
     NSURL *_imageURL;
-    NSString *_lastFourDigits;
     NSString *_providerDescription;
     NSString *_type;
     NSString *_usageNotice;
 }
 
-@property (nonatomic, copy) NSDate *expirationDate;
+@property (nonatomic, copy) NSString *details;
+@property (nonatomic, copy) NSString *footer;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic, copy) NSURL *imageURL;
-@property (nonatomic, copy) NSString *lastFourDigits;
 @property (nonatomic, copy) NSString *providerDescription;
 @property (nonatomic, copy) NSString *type;
 @property (nonatomic, copy) NSString *usageNotice;
 
 - (void).cxx_destruct;
-- (id)expirationDate;
+- (id)details;
+- (id)footer;
 - (id)image;
 - (id)imageURL;
-- (id)lastFourDigits;
 - (id)providerDescription;
-- (void)setExpirationDate:(id)arg1;
+- (void)setDetails:(id)arg1;
+- (void)setFooter:(id)arg1;
 - (void)setImage:(id)arg1;
 - (void)setImageURL:(id)arg1;
-- (void)setLastFourDigits:(id)arg1;
 - (void)setProviderDescription:(id)arg1;
 - (void)setType:(id)arg1;
 - (void)setUsageNotice:(id)arg1;

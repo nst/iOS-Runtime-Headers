@@ -6,6 +6,8 @@
     _UIButtonBar *_buttonBar;
 }
 
++ (Class)layerClass;
+
 - (void).cxx_destruct;
 - (id)init;
 - (id)initWithButtonBar:(id)arg1;

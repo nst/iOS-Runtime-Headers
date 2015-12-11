@@ -118,6 +118,7 @@
 - (BOOL)shouldProfileSQL;
 - (id)testRunIDHeader;
 - (int)trafficLogMaximumDataSize;
+- (int)trafficLogQueueWidth;
 - (BOOL)useBackgroundSessions;
 - (BOOL)useEncryption;
 - (BOOL)useStingray;

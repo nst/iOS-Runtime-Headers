@@ -13,7 +13,7 @@
     NSLayoutConstraint *_reviewLabelBaselineConstraint;
     NSLayoutConstraint *_reviewLabelHeightConstraint;
     NSLayoutConstraint *_reviewLabelToBottomConstraint;
-    MKStarRatingAndLabelView *_starView;
+    MKStarRatingView *_starView;
 }
 
 @property (nonatomic) NSString *author;

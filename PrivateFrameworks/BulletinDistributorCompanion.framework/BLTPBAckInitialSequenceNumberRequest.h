@@ -5,25 +5,40 @@
 @interface BLTPBAckInitialSequenceNumberRequest : PBRequest <NSCopying> {
     BOOL _assert;
     struct { 
+        unsigned int sessionState : 1; 
         unsigned int assert : 1; 
     } _has;
+    NSData *_sessionIdentifier;
+    unsigned int _sessionState;
 }
 
 @property (nonatomic) BOOL assert;
 @property (nonatomic) BOOL hasAssert;
+@property (nonatomic, readonly) BOOL hasSessionIdentifier;
+@property (nonatomic) BOOL hasSessionState;
+@property (nonatomic, retain) NSData *sessionIdentifier;
+@property (nonatomic) unsigned int sessionState;
 
+- (void).cxx_destruct;
 - (BOOL)assert;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasAssert;
+- (BOOL)hasSessionIdentifier;
+- (BOOL)hasSessionState;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
+- (id)sessionIdentifier;
+- (unsigned int)sessionState;
 - (void)setAssert:(BOOL)arg1;
 - (void)setHasAssert:(BOOL)arg1;
+- (void)setHasSessionState:(BOOL)arg1;
+- (void)setSessionIdentifier:(id)arg1;
+- (void)setSessionState:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;
 
 @end

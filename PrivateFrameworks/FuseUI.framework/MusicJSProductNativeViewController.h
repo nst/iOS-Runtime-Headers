@@ -5,6 +5,7 @@
 @interface MusicJSProductNativeViewController : MusicJSNativeViewController <MusicJSProductNativeViewController, SKUIDOMFeature> {
     <MusicJSProductNativeViewControllerDelegate> *_delegate;
     NSDictionary *_productEntityValueProviderData;
+    long long _prominentTrackStoreID;
     IKAppDocument *_relatedContentDocument;
     NSDictionary *_relatedContentDocumentOptions;
     IKDOMDocument *_relatedContentJSDocument;
@@ -22,6 +23,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) IKJSNavigationDocument *navigationDocument;
 @property (nonatomic, readonly) NSDictionary *productEntityValueProviderData;
+@property (nonatomic, readonly) long long prominentTrackStoreID;
 @property (nonatomic, readonly) IKAppDocument *relatedContentDocument;
 @property (nonatomic, readonly) NSDictionary *relatedContentDocumentOptions;
 @property (nonatomic, readonly) NSDictionary *reportingInformation;
@@ -36,12 +38,14 @@
 - (void)navigationDocumentDidChange;
 - (void)presentShareDocument:(id)arg1 :(id)arg2;
 - (id)productEntityValueProviderData;
+- (long long)prominentTrackStoreID;
 - (id)relatedContentDocument;
 - (id)relatedContentDocumentOptions;
 - (id)reportingInformation;
 - (void)setDelegate:(id)arg1;
 - (void)setNumberOfLikes:(unsigned int)arg1;
 - (void)setProductEntityValueProvider:(id)arg1;
+- (void)setProminentTrackStoreID:(id)arg1;
 - (void)setRelatedContentDocument:(id)arg1 :(id)arg2;
 - (void)setReportingInformation:(id)arg1;
 - (void)setTracklistItems:(id)arg1;

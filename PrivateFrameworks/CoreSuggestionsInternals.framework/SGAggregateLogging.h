@@ -12,6 +12,7 @@
 + (void)clearDistributionKey:(id)arg1;
 + (void)contactConfirmed:(id)arg1;
 + (void)contactRejected:(id)arg1;
++ (void)contactSuggestionImpressionsViaBanner:(int)arg1;
 + (id)contactsFromEntity:(id)arg1;
 + (void)contactsSuggested:(id)arg1 withElapsedTime:(unsigned long long)arg2;
 + (void)detail:(id)arg1 confirmedForContact:(id)arg2;
@@ -20,12 +21,15 @@
 + (void)eventConfirmedByRecord:(id)arg1;
 + (void)eventRejected:(id)arg1;
 + (void)eventRejectedByRecord:(id)arg1;
++ (void)eventSuggestionImpressionsViaBanner:(int)arg1;
 + (id)eventsFromEntity:(id)arg1;
 + (void)eventsSuggested:(id)arg1 withElapsedTime:(unsigned long long)arg2;
 + (void)harvestDrainedBatches:(int)arg1 outOf:(int)arg2;
 + (void)harvestDrainedNumberOfMails:(int)arg1;
 + (void)harvestedEntity:(id)arg1 withElapsedTime:(unsigned long long)arg2;
 + (void)harvestedMessageInQueueSince:(double)arg1;
++ (void)hypotheticalContactSuggestionImpressionsIncludingInsignificant:(int)arg1;
++ (void)hypotheticalSuggestionImpressionsIncludingActedOn:(int)arg1;
 + (void)identityGroupSize:(unsigned int)arg1;
 + (void)inMemoryDissectionCacheAttempted;
 + (void)inMemoryDissectionCacheHit;
@@ -62,5 +66,7 @@
 + (void)sqlStatementCacheHit;
 + (void)sqlStoreDissectionCacheAttempted;
 + (void)sqlStoreDissectionCacheHit;
++ (void)suggestionImpressionsViaBanner:(int)arg1;
++ (void)suggestionImpressionsViaBannerSuppressed:(int)arg1;
 
 @end

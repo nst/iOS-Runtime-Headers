@@ -33,6 +33,7 @@
 - (void)onqueue_dequeueMessage;
 - (void)onqueue_enqueueMessage:(id)arg1;
 - (void)onqueue_handleAcceptanceWithCurrentAccepted:(BOOL)arg1 nextAvailable:(BOOL)arg2;
+- (void)onqueue_handleFailedDaemonConnectionForQueuedMessage:(id)arg1;
 - (void)onqueue_handleSentMessageWithIdentifier:(id)arg1 error:(id)arg2;
 - (id)onqueue_peekMessage;
 - (void)onqueue_sendMessage:(id)arg1 completionHandler:(id /* block */)arg2;

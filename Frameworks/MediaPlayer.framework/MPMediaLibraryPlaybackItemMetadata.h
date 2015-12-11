@@ -35,6 +35,7 @@
 - (unsigned int)contentType;
 - (id)copyrightText;
 - (void)dealloc;
+- (long long)downloadIdentifier;
 - (int)endpointType;
 - (double)expectedDuration;
 - (unsigned int)hash;
@@ -51,6 +52,7 @@
 - (void)setCachedLocalPlaybackAssetFilePath:(id)arg1 protectionType:(unsigned int)arg2 assetQuality:(unsigned int)arg3 withCompletionHandler:(id /* block */)arg4;
 - (void)setMediaItem:(id)arg1;
 - (BOOL)shouldReportPlayEventsToStore;
+- (BOOL)showComposer;
 - (unsigned long long)storeAccountID;
 - (long long)storeAdamID;
 - (unsigned long long)storeSagaID;

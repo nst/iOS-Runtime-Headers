@@ -13,6 +13,8 @@
     BOOL _disableAutomaticKeyboardBehavior;
     UIPopoverController *_displayedPopoverController;
     _UIViewServiceDummyPopoverController *_dummyPopoverController;
+    long _editAlertToken;
+    NSUndoManager *_editAlertUndoManager;
     unsigned int _hostAccessibilityServerPort;
     struct { 
         unsigned int val[8]; 
@@ -56,6 +58,7 @@
 
 - (void).cxx_destruct;
 - (int)__automatic_invalidation_logic;
+- (void)__cancelAlertActionWithToken:(long)arg1;
 - (void)__createViewController:(id)arg1 withAppearanceSerializedRepresentations:(id)arg2 legacyAppearance:(BOOL)arg3 hostAccessibilityServerPort:(id)arg4 canShowTextServices:(BOOL)arg5 replyHandler:(id /* block */)arg6;
 - (void)__createViewController:(id)arg1 withContextToken:(id)arg2 fbsDisplays:(id)arg3 appearanceSerializedRepresentations:(id)arg4 legacyAppearance:(BOOL)arg5 traitCollection:(id)arg6 initialInterfaceOrientation:(int)arg7 hostAccessibilityServerPort:(id)arg8 canShowTextServices:(BOOL)arg9 replyHandler:(id /* block */)arg10;
 - (void)__dimmingViewWasTapped;
@@ -87,6 +90,7 @@
 - (void)__hostedActionSheetDidPresent;
 - (BOOL)__knownPresentationWithoutPresentationControllerInstance;
 - (void)__prepareForDisconnectionWithCompletionHandler:(id /* block */)arg1;
+- (void)__redoActionWithToken:(long)arg1;
 - (void)__restoreStateForSession:(id)arg1 restorationAnchor:(id)arg2;
 - (void)__saveStateForSession:(id)arg1 restorationAnchor:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)__scrollToTopFromTouchAtViewLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id /* block */)arg2;
@@ -95,7 +99,9 @@
 - (void)__setHostTraitCollection:(id)arg1 deferIfAnimated:(BOOL)arg2;
 - (void)__setHostViewUnderlapsStatusBar:(BOOL)arg1;
 - (void)__setServiceInPopover:(BOOL)arg1;
+- (void)__showEditAlertView;
 - (void)__textServiceDidDismiss;
+- (void)__undoActionWithToken:(long)arg1;
 - (id)_appearanceSource;
 - (BOOL)_canShowTextServices;
 - (id)_dataFromPressesEvent:(id)arg1;
@@ -153,6 +159,7 @@
 - (void)establishViewControllerDeputyWithProxy:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)invalidate;
 - (void)loadView;
+- (void)motionEnded:(int)arg1 withEvent:(id)arg2;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)preferredContentSizeDidChangeForChildContentContainer:(id)arg1;
 - (id)preferredFocusedItem;

@@ -7,4 +7,8 @@
 
 - (UIViewController *)previewCommitViewController;
 
+@optional
+
+- (void)prepareForCommit;
+
 @end

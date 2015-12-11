@@ -61,6 +61,7 @@
 - (struct CGPoint { float x1; float x2; })_centroidInView:(id)arg1;
 - (struct CGPoint { float x1; float x2; })_centroidScreen;
 - (void)_changeTouchesListTo:(id)arg1;
+- (int)_finalStateForRecognition;
 - (BOOL)_impulseQuietEnough;
 - (void)_incorporateTouchForceMessageIntoImpulseQuietness:(id)arg1;
 - (void)_interactionsEndedWithValidTouches:(BOOL)arg1;

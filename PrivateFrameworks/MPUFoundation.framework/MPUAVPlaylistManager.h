@@ -70,6 +70,7 @@
 - (unsigned int)displayCountForItem:(id)arg1;
 - (unsigned int)displayIndexForItem:(id)arg1;
 - (void)encodeWithCoder:(id)arg1;
+- (void)handlePlaybackFailureForItem:(id)arg1;
 - (int)hardQueueInsertionIndex;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })hardQueuePlaylistIndexRange;
 - (id)hardQueueSourceContexts;
@@ -93,7 +94,6 @@
 - (int)playlistIndexWithDelta:(int)arg1 fromIndex:(int)arg2 ignoreElapsedTime:(BOOL)arg3;
 - (unsigned int)playlistItemCount;
 - (BOOL)preventsHardQueueModificationsForItem:(id)arg1;
-- (void)queueCoordinator:(id)arg1 failedToLoadItem:(id)arg2;
 - (id)queueCoordinator:(id)arg1 itemToFollowItem:(id)arg2;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithPreferredStartIndex:(unsigned int)arg2 error:(id)arg3;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithReplacementPlaybackContext:(id)arg2;

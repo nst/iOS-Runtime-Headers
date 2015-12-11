@@ -5,6 +5,7 @@
 @interface MPStoreAVItem : MPAVItem {
     NSString *_aggregateDictionaryItemIdentifier;
     unsigned int _assetQuality;
+    BOOL _didDeferLeaseStart;
     BOOL _hasEverPrioritizedPlayerItem;
     BOOL _hasPrioritizedPlayWhileDownloadSession;
     BOOL _hasPrioritizedStreamingDownloadSession;
@@ -66,6 +67,7 @@
 - (int)customAVEQPreset;
 - (void)dealloc;
 - (id)description;
+- (BOOL)didDeferLeaseStart;
 - (unsigned int)discCount;
 - (unsigned int)discNumber;
 - (id)displayableText;
@@ -109,6 +111,10 @@
 - (BOOL)useEmbeddedChapterData;
 - (float)userRating;
 - (BOOL)usesSubscriptionLease;
+
+// Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
+
++ (void)_registerCustomEntityValueHandlers;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 

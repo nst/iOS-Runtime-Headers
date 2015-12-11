@@ -19,6 +19,8 @@
 @property (getter=isPlayable, nonatomic, readonly) BOOL playable;
 @property (nonatomic, readonly) AVAssetTrack *track;
 @property (nonatomic, readonly) int trackID;
+@property (nonatomic, readonly) NSString *unicodeLanguageCode;
+@property (nonatomic, readonly) NSString *unicodeLanguageIdentifier;
 
 // Image: /System/Library/Frameworks/AVFoundation.framework/AVFoundation
 
@@ -38,6 +40,7 @@
 - (id)associatedExtendedLanguageTag;
 - (id)associatedMediaSelectionOptionInMediaSelectionGroup:(id)arg1;
 - (id)associatedPersistentIDs;
+- (id)associatedUnicodeLanguageIdentifier;
 - (id)availableMetadataFormats;
 - (id)commonMetadata;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -67,6 +70,8 @@
 - (id)propertyList;
 - (id)track;
 - (int)trackID;
+- (id)unicodeLanguageCode;
+- (id)unicodeLanguageIdentifier;
 
 // Image: /System/Library/Frameworks/AVKit.framework/AVKit
 

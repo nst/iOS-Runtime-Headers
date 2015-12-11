@@ -43,10 +43,10 @@
         unsigned int annotationImplementsAccuracy : 1; 
         unsigned int annotationImplementsHeading : 1; 
         unsigned int annotationImplementsExpectedCoordinateUpdateInterval : 1; 
+        unsigned int annotationImplementsExpectedHeadingUpdateInterval : 1; 
     } _flags;
     float _headingAnimationCompletedAngle;
     int _headingAnimationDisplayRate;
-    VKTimer *_headingRegionChangeEndTimer;
     double _pendingChangeDuration;
     double _pendingHeadingChangeDuration;
     int _zoomStyle;
@@ -60,7 +60,6 @@
 
 - (id).cxx_construct;
 - (void)_goToAnnotationAnimated:(BOOL)arg1 duration:(double)arg2 isInitial:(BOOL)arg3;
-- (void)_headingRegionChangeTimerFired:(id)arg1;
 - (void)_rotateToHeadingAnimated:(BOOL)arg1 duration:(double)arg2;
 - (id)annotation;
 - (void)dealloc;

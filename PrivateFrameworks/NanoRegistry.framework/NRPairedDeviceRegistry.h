@@ -131,6 +131,7 @@
 - (void)notifyStatus;
 - (int)pairedStateNotifyToken;
 - (BOOL)pairingClient;
+- (void)pairingClientDidEnterPhase:(id)arg1;
 - (int)pairingCompatibilityVersion;
 - (id)pairingID;
 - (id)pairingStorePath;

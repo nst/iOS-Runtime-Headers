@@ -13,6 +13,7 @@
 @property (nonatomic) BOOL isServerFilter;
 @property (nonatomic, readonly) BOOL showsEverything;
 
++ (id)contactStoreFilterFromPreferencesWithContactStore:(id)arg1;
 + (BOOL)getContainerIdentifiers:(id*)arg1 groupIdentifiers:(id*)arg2 serverFilter:(BOOL*)arg3 fromLegacyDictionary:(id)arg4 contactStore:(id)arg5;
 + (BOOL)getContainerIdentifiers:(id*)arg1 groupIdentifiers:(id*)arg2 serverFilter:(BOOL*)arg3 fromPreSundanceDictionary:(id)arg4 contactStore:(id)arg5;
 + (BOOL)getContainerIdentifiers:(id*)arg1 groupIdentifiers:(id*)arg2 serverFilter:(BOOL*)arg3 fromSundanceToOkemoAndAddressBookUIDictionary:(id)arg4 contactStore:(id)arg5;
@@ -30,6 +31,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isServerFilter;
 - (id)predicate;
+- (void)saveToPreferencesWithContactStore:(id)arg1;
 - (void)setContainerIdentifiers:(id)arg1;
 - (void)setGroupIdentifiers:(id)arg1;
 - (void)setIsServerFilter:(BOOL)arg1;

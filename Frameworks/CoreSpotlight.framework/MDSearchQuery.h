@@ -3,6 +3,7 @@
  */
 
 @interface MDSearchQuery : NSObject <MDSearchQueryResultProcessor> {
+    BOOL _canceled;
     NSString *_clientBundleID;
     NSXPCConnection *_connection;
     <MDSearchQueryDelegate> *_delegate;
@@ -10,8 +11,8 @@
     NSPredicate *_predicate;
     <MDSearchQueryService> *_queryServiceProxy;
     NSString *_queryString;
+    NSObject<OS_dispatch_queue> *_queue;
     unsigned int _status;
-    NSObject<OS_dispatch_queue> *_synchronizationQueue;
 }
 
 @property (retain) NSString *clientBundleID;
@@ -20,8 +21,8 @@
 @property (copy) NSDictionary *options;
 @property (copy) NSPredicate *predicate;
 @property (retain) <MDSearchQueryService> *queryServiceProxy;
+@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 @property unsigned int status;
-@property (retain) NSObject<OS_dispatch_queue> *synchronizationQueue;
 
 - (void).cxx_destruct;
 - (void)_didFailWithError:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -41,16 +42,16 @@
 - (id)predicate;
 - (id)queryServiceProxy;
 - (id)queryString;
+- (id)queue;
 - (void)setClientBundleID:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setOptions:(id)arg1;
 - (void)setPredicate:(id)arg1;
 - (void)setQueryServiceProxy:(id)arg1;
+- (void)setQueue:(id)arg1;
 - (void)setStatus:(unsigned int)arg1;
-- (void)setSynchronizationQueue:(id)arg1;
 - (void)start;
 - (unsigned int)status;
-- (id)synchronizationQueue;
 
 @end

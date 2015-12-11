@@ -55,6 +55,8 @@
 @property (retain) NSNumber *fileIdentifier;
 @property (copy) NSString *filename;
 @property (nonatomic, readonly) BOOL hasCodedCustomAttributes;
+@property (nonatomic, copy) NSString *ic_dataSourceIdentifier;
+@property (nonatomic, copy) NSString *ic_managedObjectIDURI;
 @property (copy) NSArray *mailAttachmentKinds;
 @property (copy) NSArray *mailAttachmentNames;
 @property (copy) NSArray *mailAttachmentTypes;
@@ -79,6 +81,8 @@
 @property (copy) NSString *uniqueIdentifier;
 @property (copy) NSString *userActivityType;
 @property (copy) NSArray *userTags;
+
+// Image: /System/Library/Frameworks/CoreSpotlight.framework/CoreSpotlight
 
 + (id)_allKeys;
 + (id)_requiredAttributesForContentType:(id)arg1;
@@ -562,5 +566,15 @@
 - (id)version;
 - (id)videoBitRate;
 - (id)whiteBalance;
+
+// Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
+
++ (id)ic_dataSourceIdentifierCustomKey;
++ (id)ic_managedObjectIDCustomKey;
+
+- (id)ic_dataSourceIdentifier;
+- (id)ic_managedObjectIDURI;
+- (void)setIc_dataSourceIdentifier:(id)arg1;
+- (void)setIc_managedObjectIDURI:(id)arg1;
 
 @end

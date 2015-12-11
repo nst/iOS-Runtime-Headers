@@ -3,6 +3,7 @@
  */
 
 @interface MusicCoalescingEntityValueProvider : NSObject <MusicEntityValueProviding> {
+    NSSet *_additionalPropertiesToPrefetchSynchronously;
     <MusicEntityValueProviding> *_baseEntityValueProvider;
     NSDictionary *_cachedPropertyValuesLoadedAsynchronously;
     NSDictionary *_cachedPropertyValuesLoadedSynchronously;
@@ -11,6 +12,7 @@
     NSSet *_propertiesToPrefetchSynchronously;
 }
 
+@property (nonatomic, copy) NSSet *additionalPropertiesToPrefetchSynchronously;
 @property (nonatomic, readonly) <MusicEntityValueProviding> *baseEntityValueProvider;
 @property (nonatomic, readonly) MusicEntityViewContentDescriptor *contentDescriptor;
 @property (readonly, copy) NSString *debugDescription;
@@ -25,6 +27,7 @@
 - (void)_invalidateCachedPropertyValuesLoadedSynchronously;
 - (void)_updatePropertiesToLoadAndPrefetch;
 - (void)_updateWithBaseEntityValueProvider:(id)arg1 contentDescriptor:(id)arg2;
+- (id)additionalPropertiesToPrefetchSynchronously;
 - (id)baseEntityValueProvider;
 - (id)contentDescriptor;
 - (void)dealloc;
@@ -32,6 +35,7 @@
 - (id)imageURLForEntityArtworkProperty:(id)arg1 fittingSize:(struct CGSize { float x1; float x2; })arg2 destinationScale:(float)arg3;
 - (void)reloadWithBaseEntityValueProvider:(id)arg1 contentDescriptor:(id)arg2;
 - (void)reset;
+- (void)setAdditionalPropertiesToPrefetchSynchronously:(id)arg1;
 - (void)updateWithAsynchronouslyLoadedPropertyValues:(id)arg1;
 - (id)valueForEntityProperty:(id)arg1;
 - (id)valuesForEntityProperties:(id)arg1;

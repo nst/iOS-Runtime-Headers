@@ -11,7 +11,7 @@
     BOOL _installPlaceholder;
     double _lastPercentComplete;
     unsigned int _lastPhase;
-    unsigned char _lastSentMessageType;
+    unsigned char _nextMessageType;
     id /* block */ _progressBlock;
     NSObject<OS_dispatch_queue> *_queue;
     NSURL *_snapshotURL;
@@ -30,7 +30,7 @@
 @property BOOL installPlaceholder;
 @property double lastPercentComplete;
 @property unsigned int lastPhase;
-@property unsigned char lastSentMessageType;
+@property unsigned char nextMessageType;
 @property (copy) id /* block */ progressBlock;
 @property (readonly) NSObject<OS_dispatch_queue> *queue;
 @property (retain) NSURL *snapshotURL;
@@ -59,7 +59,7 @@
 - (BOOL)installPlaceholder;
 - (double)lastPercentComplete;
 - (unsigned int)lastPhase;
-- (unsigned char)lastSentMessageType;
+- (unsigned char)nextMessageType;
 - (id /* block */)progressBlock;
 - (id)queue;
 - (void)receivedDictionaryOrData:(id)arg1;
@@ -70,7 +70,7 @@
 - (void)setInstallPlaceholder:(BOOL)arg1;
 - (void)setLastPercentComplete:(double)arg1;
 - (void)setLastPhase:(unsigned int)arg1;
-- (void)setLastSentMessageType:(unsigned char)arg1;
+- (void)setNextMessageType:(unsigned char)arg1;
 - (void)setProgressBlock:(id /* block */)arg1;
 - (void)setSnapshotURL:(id)arg1;
 - (void)setStreamingZipSender:(id)arg1;

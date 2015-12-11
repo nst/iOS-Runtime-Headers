@@ -3,11 +3,13 @@
  */
 
 @interface MKPlaceTextBlockCell : MKTableViewCell {
+    BOOL _constraintsAdded;
     NSArray *_marginConstraints;
     MKExpandingLabel *_textBlock;
     NSString *_textBlockText;
 }
 
+@property (nonatomic) BOOL constraintsAdded;
 @property (nonatomic, retain) NSArray *marginConstraints;
 @property (nonatomic, retain) MKExpandingLabel *textBlock;
 @property (getter=isTextBlockExpanded, nonatomic) BOOL textBlockExpanded;
@@ -18,11 +20,13 @@
 
 - (void).cxx_destruct;
 - (void)_refreshLayoutMargins;
+- (BOOL)constraintsAdded;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
 - (BOOL)isTextBlockExpanded;
 - (void)layoutMarginsDidChange;
 - (id)marginConstraints;
 - (void)prepareForReuse;
+- (void)setConstraintsAdded:(BOOL)arg1;
 - (void)setMarginConstraints:(id)arg1;
 - (void)setTextBlock:(id)arg1;
 - (void)setTextBlockExpanded:(BOOL)arg1;
@@ -31,5 +35,6 @@
 - (id)textBlock;
 - (id /* block */)textBlockResizedBlock;
 - (id)textBlockText;
+- (void)updateConstraints;
 
 @end

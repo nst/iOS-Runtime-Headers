@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AppPredictionInternal.framework/AppPredictionInternal
  */
 
-@interface _ATXAppLaunchHistogram : NSObject <NSSecureCoding> {
+@interface _ATXAppLaunchHistogram : NSObject <NSSecureCoding, _ATXAppLaunchHistogramInterface> {
     NSObject<OS_dispatch_queue> *_bundleIdQueue;
     NSMutableDictionary *_bundleIdToEventId;
     NSMutableDictionary *_eventIdToBundleId;
@@ -14,7 +14,6 @@
     int _secondsPerLocaltimeInterval;
 }
 
-+ (id)sharedInstance;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -38,6 +37,7 @@
 - (void)removeMappingForBundleId:(id)arg1;
 - (void)resetData;
 - (double)smoothRatio:(double)arg1 denom:(double)arg2;
+- (void)swapWithCoder:(id)arg1;
 - (void)verifyDataIntegrity;
 
 @end

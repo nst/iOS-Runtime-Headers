@@ -2,8 +2,14 @@
    Image: /System/Library/PrivateFrameworks/SpotlightUI.framework/SpotlightUI
  */
 
-@interface SPUISearchUICardViewControllerAction : SPUISearchResultsDetailsViewControllerAction
+@interface SPUISearchUICardViewControllerAction : SPUISearchResultsDetailsViewControllerAction <SearchUIFeedbackDelegate>
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+- (void)feedbackEvent:(id)arg1 triggeredOnResult:(id)arg2;
 - (id)performWithCompletionBlock:(id /* block */)arg1;
 - (void)slideInCardForResult:(id)arg1;
 

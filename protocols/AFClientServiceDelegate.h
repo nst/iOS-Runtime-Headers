@@ -27,6 +27,7 @@
 - (oneway void)speechRecordingDidChangeAVRecordRoute:(NSString *)arg1;
 - (oneway void)speechRecordingDidEnd;
 - (oneway void)speechRecordingDidFail:(NSError *)arg1;
+- (oneway void)speechRecordingStartpointDetected;
 - (oneway void)speechRecordingWillBeginWithLevelsSharedMem:(AFXPCWrapper *)arg1;
 
 @end

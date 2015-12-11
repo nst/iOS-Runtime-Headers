@@ -5,13 +5,12 @@
 @interface WorldClockCellViewLayout : NSObject
 
 + (id)activeClockViewFromViews:(id)arg1;
++ (id)analogClockConstraintsForViews:(id)arg1;
 + (id)cityNameConstraintsForViews:(id)arg1;
-+ (id)clockConstraintsForViews:(id)arg1;
++ (id)combinedDetailLabelConstraintsForViews:(id)arg1;
 + (id)combinedLabelContainerConstraintsForViews:(id)arg1;
-+ (id)dynamicCombinedDetailLabelConstraintsForViews:(id)arg1;
-+ (id)dynamicConstraintsForViews:(id)arg1;
-+ (id)staticCombinedDetailLabelConstraintsForViews:(id)arg1;
-+ (id)staticConstraintsForViews:(id)arg1;
++ (id)constraintsForViews:(id)arg1 style:(int)arg2;
++ (id)digitalClockConstraintsForViews:(id)arg1;
 + (id)trailingLabelConstraintsForViews:(id)arg1;
 
 @end

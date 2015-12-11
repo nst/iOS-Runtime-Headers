@@ -212,7 +212,6 @@
 + (id)_placeAnnotationFromAnnotationData:(id)arg1;
 + (id)_ptpCalendar;
 + (id)_ptpEventInfoIsolationQueue;
-+ (id)_resourceForQualityClass:(unsigned short)arg1 onAsset:(id)arg2;
 + (id)_supportedAssetTypesForUpload;
 + (id)abbreviatedMetadataDirectoryForDirectory:(id)arg1;
 + (int)adjustmentBaseVersionFromImageFormat:(int)arg1;
@@ -432,7 +431,6 @@
 - (id)cloudOwnerFirstName;
 - (id)cloudOwnerFullName;
 - (id)cloudOwnerLastName;
-- (id)cloudResourceForQualityClass:(unsigned short)arg1;
 - (id)cloudResourceForResourceType:(unsigned int)arg1;
 - (id)cloudResources;
 - (id)cloudShareAlbum;
@@ -508,7 +506,6 @@
 - (id)globalUUID;
 - (struct { double x1; double x2; })gpsCoordinate;
 - (BOOL)hasEmbeddedThumbnail;
-- (BOOL)hasFullDerivativesSet;
 - (BOOL)hasGPS;
 - (BOOL)hasJustBeenHidden;
 - (BOOL)hasJustBeenShown;
@@ -656,7 +653,6 @@
 - (void)registerForChanges;
 - (void)removeLegacyAdjustments;
 - (id)reservedPathForLargeDisplayableImageFileForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
-- (id)resourceForQualityClass:(unsigned short)arg1;
 - (id)reverseGeoDescription;
 - (id)reverseLocationData;
 - (BOOL)reverseLocationDataIsValid;
@@ -738,7 +734,6 @@
 - (BOOL)shiftedLocationIsValid;
 - (id)shortenedFilePath;
 - (id)sortedSidecarFiles;
-- (id)supportingResourcesForQualityClass:(unsigned short)arg1;
 - (BOOL)supportsCloudUpload;
 - (void)synchronizeWithPersistedFileSystemAttributes;
 - (void)synchronouslyFetchAdjustmentDataWithCompletionHandler:(id /* block */)arg1;

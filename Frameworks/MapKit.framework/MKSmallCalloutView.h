@@ -50,6 +50,7 @@
 
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange:(id)arg1;
+- (id)_maskedContainerView;
 - (struct CGSize { float x1; float x2; })_preferredContentSize;
 - (BOOL)_shouldCenterDetailView;
 - (id)_subtitleLabel;

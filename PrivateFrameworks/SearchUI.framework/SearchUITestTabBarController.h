@@ -12,6 +12,7 @@
 - (void)didSelectRowAtIndexPath:(id)arg1;
 - (void)didShowTableView;
 - (id)initWithResults:(id)arg1 styles:(id)arg2;
+- (BOOL)shouldAutorotate;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
 - (void)updateAppearanceForViewController:(id)arg1;
 

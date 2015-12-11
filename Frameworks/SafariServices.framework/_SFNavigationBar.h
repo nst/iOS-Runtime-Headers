@@ -107,6 +107,7 @@
 - (id)_URLControlsColor;
 - (float)_URLFieldHorizontalMargin;
 - (void)_URLTapped:(id)arg1;
+- (id)_URLTextColor;
 - (id)_backdropInputSettings;
 - (id)_basicAnimationForView:(id)arg1 withKeyPath:(id)arg2;
 - (void)_cancelButtonTapped:(id)arg1;

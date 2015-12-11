@@ -74,9 +74,9 @@
 + (id)_CNKeyFromABKey:(id)arg1;
 + (id)backwardsCompatiblePostalAddressDictionary:(id)arg1;
 
-- (id)_countryCodeForCountryName:(id)arg1;
 - (id)backwardsCompatibleDictionaryRepresentation;
 - (id)redactedPostalAddress;
 - (id)redactedStreetAddress;
+- (id)suggestedCountryCode;
 
 @end

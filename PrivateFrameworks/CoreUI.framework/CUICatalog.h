@@ -16,6 +16,7 @@
 + (id)bestMatchUsingObjects:(id)arg1 getAttributeValueUsing:(id /* block */)arg2 scaleFactor:(float)arg3 deviceIdiom:(int)arg4 deviceSubtype:(unsigned int)arg5 sizeClassHorizontal:(int)arg6 sizeClassVertical:(int)arg7 memoryClass:(int)arg8 graphicsFeatureSetClass:(int)arg9 graphicsFallBackOrder:(id)arg10;
 + (id)defaultUICatalog;
 + (id)defaultUICatalogForBundle:(id)arg1;
++ (BOOL)isValidAssetStorageWithURL:(id)arg1;
 + (BOOL)isValidLCRWithBytes:(const void*)arg1 length:(unsigned long)arg2;
 + (id)systemUICatalog;
 

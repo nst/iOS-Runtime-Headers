@@ -9,11 +9,13 @@
     NSDictionary *_compositionSpecification;
     id _delegate;
     Class _messageClassToInstantiate;
+    BOOL _shouldWriteAttachmentPlaceholders;
     unsigned int _writeSizeDispositionParameter;
 }
 
 @property (nonatomic, readonly) NSDictionary *compositionSpecification;
 @property (nonatomic) id delegate;
+@property (nonatomic) BOOL shouldWriteAttachmentPlaceholders;
 
 - (BOOL)allows8BitMimeParts;
 - (BOOL)allowsBinaryMimeParts;
@@ -34,6 +36,8 @@
 - (void)setAllowsQuotedPrintable:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setMessageClassToInstantiate:(Class)arg1;
+- (void)setShouldWriteAttachmentPlaceholders:(BOOL)arg1;
 - (void)setWriteSizeDispositionParameter:(BOOL)arg1;
+- (BOOL)shouldWriteAttachmentPlaceholders;
 
 @end

@@ -392,7 +392,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CertInfo.framework/CertInfo
 
-+ (id)verifiedColor;
++ (id)CertUIVerifiedColor;
 
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 

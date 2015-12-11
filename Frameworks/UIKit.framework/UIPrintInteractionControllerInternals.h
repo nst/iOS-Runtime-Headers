@@ -27,6 +27,7 @@
     NSURL *_tempPreviewFileURL;
 }
 
+@property int pageCount;
 @property int pageCountWithRanges;
 @property (retain) NSArray *pageRanges;
 @property (retain) UIPrintPaper *paper;
@@ -36,11 +37,13 @@
 
 - (void).cxx_destruct;
 - (id)init;
+- (int)pageCount;
 - (int)pageCountWithRanges;
 - (id)pageRanges;
 - (id)paper;
 - (id)previewStates;
 - (id)printer;
+- (void)setPageCount:(int)arg1;
 - (void)setPageCountWithRanges:(int)arg1;
 - (void)setPageRanges:(id)arg1;
 - (void)setPaper:(id)arg1;

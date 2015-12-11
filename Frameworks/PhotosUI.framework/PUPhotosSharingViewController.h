@@ -54,7 +54,6 @@
     PUPhotosSharingViewControllerSpec *_spec;
     PUScrollViewSpeedometer *_speedometer;
     UITapGestureRecognizer *_tapGestureRecognizer;
-    PUBrowsingIrisPlayer *_transitionContextAssetIrisPlayer;
 }
 
 @property (nonatomic, readonly) PUActivityViewController *_activityViewController;

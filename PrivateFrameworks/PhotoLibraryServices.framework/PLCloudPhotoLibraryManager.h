@@ -16,6 +16,7 @@
     unsigned int _boundForUploadingVideos;
     NSMutableSet *_cameraAsset;
     BOOL _closeLibrary;
+    PFCoalescer *_coalescer;
     CPLLibraryManager *_cplLibrary;
     unsigned int _defaultResourceDownloadType;
     unsigned int _downloadCounterCheck;
@@ -51,6 +52,7 @@
     NSObject<OS_dispatch_source> *_unpauseDispatchTimer;
     NSMutableArray *_uploadBatchArray;
     unsigned int _uploadCounterCheck;
+    NSObject<OS_dispatch_queue> *_uploadDownloadCountQueue;
     BOOL _wasRebuild;
 }
 

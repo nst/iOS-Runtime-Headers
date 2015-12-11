@@ -21,7 +21,7 @@
 @property (nonatomic) BOOL hasAttribution;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
-@property (nonatomic, retain) ABMonogrammer *monogrammer;
+@property (nonatomic, readonly) ABMonogrammer *monogrammer;
 @property (nonatomic) _MKPlaceViewController *owner;
 @property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
 @property (nonatomic, retain) NSArray *reviews;
@@ -35,6 +35,7 @@
 @property (nonatomic, retain) NSMutableArray *viewDidAppearBlocks;
 
 - (void).cxx_destruct;
+- (void)_performWhenViewHasAppeared:(id /* block */)arg1;
 - (void)_showReview:(id)arg1;
 - (void)_viewAllReviews;
 - (void)checkInWriteReviewCellDidSelectCheckIn:(id)arg1;
@@ -45,7 +46,6 @@
 - (id)monogrammer;
 - (int)numberOfSectionsInTableView:(id)arg1;
 - (id)owner;
-- (void)performWhenViewHasAppeared:(id /* block */)arg1;
 - (BOOL)requiresPreferredContentSizeInStackingView;
 - (id)reviewAtIndex:(unsigned int)arg1;
 - (id)reviews;
@@ -53,7 +53,6 @@
 - (unsigned int)reviewsCount;
 - (void)setHasAttribution:(BOOL)arg1;
 - (void)setMapItem:(id)arg1;
-- (void)setMonogrammer:(id)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setReviews:(id)arg1;
 - (void)setReviewsControllerDelegate:(id)arg1;

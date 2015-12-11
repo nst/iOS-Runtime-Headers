@@ -12,14 +12,12 @@
     NoteStoreObject *_localStore;
     BOOL _logChanges;
     NSManagedObjectContext *_managedObjectContext;
-    NSManagedObjectModel *_managedObjectModel;
     NSNumber *_nextId;
     NSManagedObjectContext *_nextIdContext;
     CPExclusiveLock *_nextIdLock;
     NSMutableDictionary *_notePropertyObjectsRealized;
     unsigned int _notificationCount;
     CPExclusiveLock *_objectCreationLock;
-    NSPersistentStoreCoordinator *_persistentStoreCoordinator;
 }
 
 @property (nonatomic, retain) AccountUtilities *accountUtilities;
@@ -33,8 +31,19 @@
 + (id)defaultNotesSortDescriptors;
 + (id)fileProtectionOption;
 + (id)generateGUID;
++ (id)managedObjectModel;
++ (id)newManagedObjectContext;
++ (id)pathForIndex;
++ (id)pathForPersistentStore;
++ (id)persistentStoreCoordinator;
++ (void)removeConflictingSqliteAndIdxFiles;
++ (void)removeSqliteAndIdxFiles;
++ (id)searchIndexerDataSource;
 + (void)setTestsNotesRootPath:(id)arg1;
 + (BOOL)shouldLogIndexing;
++ (id)storeOptions;
++ (id)urlForPersistentStore;
++ (id)visibleNotesPredicate;
 
 - (void).cxx_destruct;
 - (void)_createLocalAccount:(id*)arg1 andStore:(id*)arg2;
@@ -72,7 +81,6 @@
 - (id)defaultStoreForNewNote;
 - (BOOL)deleteAccount:(id)arg1;
 - (void)deleteChanges:(id)arg1;
-- (BOOL)deleteIndexFile;
 - (void)deleteNote:(id)arg1;
 - (void)deleteNoteRegardlessOfConstraints:(id)arg1;
 - (BOOL)deleteStore:(id)arg1;
@@ -96,7 +104,6 @@
 - (id)localStore;
 - (id)managedObjectContext;
 - (void)managedObjectContextWillSaveNotification:(id)arg1;
-- (id)managedObjectModel;
 - (id)mostRecentlyModifiedNoteInCollection:(id)arg1;
 - (id)newFRCForCollection:(id)arg1 delegate:(id)arg2;
 - (id)newFRCForCollection:(id)arg1 delegate:(id)arg2 performFetch:(BOOL)arg3;
@@ -111,13 +118,8 @@
 - (id)noteChangeWithType:(int)arg1 store:(id)arg2;
 - (id)noteForObjectID:(id)arg1;
 - (id)notesForIntegerIds:(id)arg1;
-- (id)pathForIndex;
-- (id)pathForPersistentStore;
-- (id)persistentStoreCoordinator;
 - (id)propertyValueForKey:(id)arg1;
 - (void)receiveDarwinNotificationWithChangeLogging:(BOOL)arg1;
-- (void)removeConflictingSqliteAndIdxFiles;
-- (void)removeSqliteAndIdxFiles;
 - (void)resetNotificationCount;
 - (BOOL)save:(id*)arg1;
 - (BOOL)saveOutsideApp:(id*)arg1;
@@ -134,10 +136,8 @@
 - (BOOL)shouldObserveDarwinNotifications;
 - (void)sortNotes:(id)arg1;
 - (id)storeForObjectID:(id)arg1;
-- (id)storeOptions;
 - (void)tearDownCoreDataStack;
 - (void)trackChanges:(id)arg1;
-- (id)urlForPersistentStore;
 - (id)visibleNoteForObjectID:(id)arg1;
 - (id)visibleNotesForIntegerIds:(id)arg1;
 - (id)visibleNotesPredicate;

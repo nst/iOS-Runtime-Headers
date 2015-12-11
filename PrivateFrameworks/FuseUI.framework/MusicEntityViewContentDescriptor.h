@@ -11,16 +11,15 @@
     UIColor *_backgroundColor;
     UIColor *_customSelectionTintColor;
     UIColor *_customSeparatorColor;
+    UIColor *_downloadProgressButtonTintColor;
     NSString *_explicitBadgeProperty;
     BOOL _hasValidAllPropertiesToLoadAsynchronously;
-    UIColor *_keepLocalDeviceColor;
-    NSString *_keepLocalPreferenceProperty;
-    UIColor *_keepLocalSashColor;
     BOOL _leftSeparatorInsetFollowsText;
     Class _lockupViewClass;
     float _minimumHeight;
     int _selectionStyle;
     BOOL _shouldDisableWhenUnplayable;
+    BOOL _shouldDisplayProminently;
     BOOL _shouldForceBottomSeparatorVisible;
     NSString *_storeDownloadIDProperty;
     NSString *_storeOffersProperty;
@@ -31,6 +30,7 @@
     NSString *_wantsBuyButtonProperty;
     NSString *_wantsContextualActionsButtonProperty;
     NSString *_wantsDisclosureIndicatorProperty;
+    BOOL _wantsDownloadProgress;
     NSString *_wantsPlayButtonProperty;
 }
 
@@ -42,15 +42,14 @@
 @property (nonatomic, copy) UIColor *backgroundColor;
 @property (nonatomic, retain) UIColor *customSelectionTintColor;
 @property (nonatomic, retain) UIColor *customSeparatorColor;
+@property (nonatomic, retain) UIColor *downloadProgressButtonTintColor;
 @property (nonatomic, copy) NSString *explicitBadgeProperty;
-@property (nonatomic, retain) UIColor *keepLocalDeviceColor;
-@property (nonatomic, copy) NSString *keepLocalPreferenceProperty;
-@property (nonatomic, retain) UIColor *keepLocalSashColor;
 @property (nonatomic) BOOL leftSeparatorInsetFollowsText;
 @property (nonatomic, retain) Class lockupViewClass;
 @property (nonatomic) float minimumHeight;
 @property (nonatomic) int selectionStyle;
 @property (nonatomic) BOOL shouldDisableWhenUnplayable;
+@property (nonatomic) BOOL shouldDisplayProminently;
 @property (nonatomic) BOOL shouldForceBottomSeparatorVisible;
 @property (nonatomic, copy) NSString *storeDownloadIDProperty;
 @property (nonatomic, copy) NSString *storeOffersProperty;
@@ -60,6 +59,7 @@
 @property (nonatomic, copy) NSString *wantsBuyButtonProperty;
 @property (nonatomic, copy) NSString *wantsContextualActionsButtonProperty;
 @property (nonatomic, copy) NSString *wantsDisclosureIndicatorProperty;
+@property (nonatomic) BOOL wantsDownloadProgress;
 @property (nonatomic, copy) NSString *wantsPlayButtonProperty;
 
 + (Class)tableViewCellClass;
@@ -82,11 +82,9 @@
 - (id)customSelectionTintColor;
 - (id)customSeparatorColor;
 - (void)dealloc;
+- (id)downloadProgressButtonTintColor;
 - (id)explicitBadgeProperty;
 - (id)init;
-- (id)keepLocalDeviceColor;
-- (id)keepLocalPreferenceProperty;
-- (id)keepLocalSashColor;
 - (BOOL)leftSeparatorInsetFollowsText;
 - (Class)lockupViewClass;
 - (float)minimumHeight;
@@ -97,15 +95,14 @@
 - (void)setBackgroundColor:(id)arg1;
 - (void)setCustomSelectionTintColor:(id)arg1;
 - (void)setCustomSeparatorColor:(id)arg1;
+- (void)setDownloadProgressButtonTintColor:(id)arg1;
 - (void)setExplicitBadgeProperty:(id)arg1;
-- (void)setKeepLocalDeviceColor:(id)arg1;
-- (void)setKeepLocalPreferenceProperty:(id)arg1;
-- (void)setKeepLocalSashColor:(id)arg1;
 - (void)setLeftSeparatorInsetFollowsText:(BOOL)arg1;
 - (void)setLockupViewClass:(Class)arg1;
 - (void)setMinimumHeight:(float)arg1;
 - (void)setSelectionStyle:(int)arg1;
 - (void)setShouldDisableWhenUnplayable:(BOOL)arg1;
+- (void)setShouldDisplayProminently:(BOOL)arg1;
 - (void)setShouldForceBottomSeparatorVisible:(BOOL)arg1;
 - (void)setStoreDownloadIDProperty:(id)arg1;
 - (void)setStoreOffersProperty:(id)arg1;
@@ -115,8 +112,10 @@
 - (void)setWantsBuyButtonProperty:(id)arg1;
 - (void)setWantsContextualActionsButtonProperty:(id)arg1;
 - (void)setWantsDisclosureIndicatorProperty:(id)arg1;
+- (void)setWantsDownloadProgress:(BOOL)arg1;
 - (void)setWantsPlayButtonProperty:(id)arg1;
 - (BOOL)shouldDisableWhenUnplayable;
+- (BOOL)shouldDisplayProminently;
 - (BOOL)shouldForceBottomSeparatorVisible;
 - (id)storeDownloadIDProperty;
 - (id)storeOffersProperty;
@@ -130,6 +129,7 @@
 - (id)wantsBuyButtonProperty;
 - (id)wantsContextualActionsButtonProperty;
 - (id)wantsDisclosureIndicatorProperty;
+- (BOOL)wantsDownloadProgress;
 - (id)wantsPlayButtonProperty;
 - (void)willAddTextDescriptor:(id)arg1;
 - (void)willRemoveTextDescriptor:(id)arg1;

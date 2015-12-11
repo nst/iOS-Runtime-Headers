@@ -9,11 +9,12 @@
 @property (nonatomic) MFMessageLibrary *messageLibrary;
 
 - (void)dealloc;
-- (BOOL)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 error:(id*)arg3;
+- (void)fetchDataForAttachment:(id)arg1 withDataConsumer:(id)arg2 completion:(id /* block */)arg3;
 - (id)fetchLocalDataForAttachment:(id)arg1;
 - (id)initWithLibrary:(id)arg1;
 - (id)messageForAttachment:(id)arg1;
 - (id)messageLibrary;
 - (void)setMessageLibrary:(id)arg1;
+- (id)storageLocationForAttachment:(id)arg1 withMessage:(id)arg2;
 
 @end

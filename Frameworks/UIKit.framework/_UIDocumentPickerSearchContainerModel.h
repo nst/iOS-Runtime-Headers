@@ -9,6 +9,7 @@
 @property (nonatomic, copy) NSString *queryString;
 
 - (void).cxx_destruct;
+- (id)_createObserver;
 - (void)_updateObserverForQuery;
 - (void)arrayController:(id)arg1 modelChanged:(id)arg2 differences:(id)arg3;
 - (id)displayTitle;

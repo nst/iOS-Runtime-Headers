@@ -16,6 +16,7 @@
     id /* block */ _editingChangesCommitBlock;
     MusicEditingEntityProvider *_editingEntityProvider;
     BOOL _editingWasCancelled;
+    MusicEntityDownloadInformationController *_entityDownloadInformationController;
     MusicEntityViewDescriptor *_entityViewDescriptor;
     unsigned int _firstSectionHeaderIndex;
     BOOL _hasValidFirstSectionHeaderIndex;
@@ -29,13 +30,15 @@
     float _previousWidth;
     unsigned int _referenceCountForIgnoringEntityProviderInvalidation;
     unsigned int _referenceCountForRunningEditingStateAnimations;
-    NSMutableArray *_reusableCoalescingEntityValueProviders;
+    NSMutableArray *_reusableItemCoalescingEntityValueProviders;
+    NSMutableArray *_reusableSectionCoalescingEntityValueProviders;
     NSMapTable *_sectionContentDescriptorToMaximumHeaderHeight;
     MusicSectionEntityValueContext *_sectionEntityValueContext;
     MusicEntityValueContext *_selectedItemEntityValueContext;
     BOOL _shouldReloadTableViewOnceStoppedIgnoringNotifications;
     MusicTableView *_tableView;
     <UIViewControllerPreviewing> *_viewControllerPreviewing;
+    NSMapTable *_viewToDownloadInformationObserverToken;
     NSMutableArray *_visibleFlexibleHeaderViews;
 }
 
@@ -58,7 +61,8 @@
 - (void)_configureEntityValueContextOutput:(id)arg1 forIndexPath:(id)arg2;
 - (void)_configureForEntityViewDescriptorProperties;
 - (void)_configureSectionEntityValueContextOutput:(id)arg1 forIndex:(unsigned int)arg2;
-- (id)_dequeueCoalescingEntityValueProvider;
+- (id)_dequeueItemCoalescingEntityValueProvider;
+- (id)_dequeueSectionCoalescingEntityValueProvider;
 - (void)_didFinishContentHeightAnimation;
 - (void)_didFinishEditingStateChangeAnimation;
 - (id)_effectiveEntityProvider;
@@ -69,11 +73,14 @@
 - (void)_handleContentSizeCategoryDidChangeNotification:(id)arg1;
 - (void)_handleEntityPlayabilityControllerDidChangeNotification:(id)arg1;
 - (void)_handleEntityProviderDidInvalidateNotification:(id)arg1;
+- (void)_handleEntityViewDescriptorDisplayPropertiesDidChangeNotification:(id)arg1;
 - (void)_handleEntityViewDescriptorDisplayValuesDidChangeNotification:(id)arg1;
 - (void)_handleSectionContentDescriptorDidInvalidateNotification:(id)arg1;
 - (void)_invalidateIndexBarDataSource;
+- (id)_itemEntityValueContext;
 - (void)_presentContextualActionsWithEntityValueContext:(id)arg1 fromButton:(id)arg2;
-- (void)_recycleCoalescingEntityValueProvider:(id)arg1;
+- (void)_recycleItemCoalescingEntityValueProvider:(id)arg1;
+- (void)_recycleSectionCoalescingEntityValueProvider:(id)arg1;
 - (void)_registerForNotificationsForContentDescriptors;
 - (void)_reloadTableViewData;
 - (id)_sectionEntityValueContextForIndex:(unsigned int)arg1;

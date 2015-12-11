@@ -5,6 +5,6 @@
 
 @required
 
-+ (void)declareKeyPathDependenciesWithRegistry:(id <AVKeyPathDependencyRegistration>)arg1;
+- (void)declareKeyPathDependenciesWithRegistry:(id <AVKeyPathDependencyRegistration>)arg1;
 
 @end

@@ -24,51 +24,24 @@
 
 + (id)_findPasteboard;
 + (id)_printPasteboard;
-+ (id)generalPasteboard;
-+ (id)pasteboardWithName:(id)arg1 create:(BOOL)arg2;
-+ (id)pasteboardWithUniqueName;
 + (void)removePasteboardWithName:(id)arg1;
 
-- (id)URL;
-- (id)URLs;
 - (void)_addItems:(id)arg1 oldPasteboardTypes:(id)arg2;
 - (id)_initWithName:(id)arg1 system:(BOOL)arg2 create:(BOOL)arg3;
 - (void)_pasteboardChanged:(id)arg1;
-- (void)addItems:(id)arg1;
-- (int)changeCount;
-- (id)color;
-- (id)colors;
-- (BOOL)containsPasteboardTypes:(id)arg1;
-- (BOOL)containsPasteboardTypes:(id)arg1 inItemSet:(id)arg2;
-- (id)dataForPasteboardType:(id)arg1;
-- (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 - (void)dealloc;
-- (id)image;
-- (id)images;
 - (id)init;
 - (BOOL)isPersistent;
-- (id)itemSetWithPasteboardTypes:(id)arg1;
-- (id)items;
 - (id)name;
-- (int)numberOfItems;
-- (id)pasteboardTypes;
-- (id)pasteboardTypesForItemSet:(id)arg1;
 - (void)setColor:(id)arg1;
 - (void)setColors:(id)arg1;
-- (void)setData:(id)arg1 forPasteboardType:(id)arg2;
 - (void)setImage:(id)arg1;
 - (void)setImages:(id)arg1;
-- (void)setItems:(id)arg1;
 - (void)setPersistent:(BOOL)arg1;
 - (void)setString:(id)arg1;
 - (void)setStrings:(id)arg1;
 - (void)setURL:(id)arg1;
 - (void)setURLs:(id)arg1;
-- (void)setValue:(id)arg1 forPasteboardType:(id)arg2;
-- (id)string;
-- (id)strings;
-- (id)valueForPasteboardType:(id)arg1;
-- (id)valuesForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 
 // Image: /System/Library/Frameworks/MessageUI.framework/MessageUI
 
@@ -112,5 +85,41 @@
 // Image: /System/Library/PrivateFrameworks/SlideshowKit.framework/Frameworks/OpusFoundation.framework/OpusFoundation
 
 - (id)objectsForPasteboardType:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UIAccessibility.framework/UIAccessibility
+
++ (id)_accessibilityQuickSpeakPasteboard;
++ (void)_accessibilitySetUseQuickSpeakPasteBoard:(BOOL)arg1;
++ (BOOL)_accessibilityUseQuickSpeakPasteBoard;
++ (id)generalPasteboard;
++ (id)pasteboardWithName:(id)arg1 create:(BOOL)arg2;
++ (id)pasteboardWithUniqueName;
++ (Class)safeCategoryBaseClass;
+
+- (id)URL;
+- (id)URLs;
+- (BOOL)_accessibilityShouldSwapReceiverWithQuickSpeakPasteboard;
+- (void)addItems:(id)arg1;
+- (int)changeCount;
+- (id)color;
+- (id)colors;
+- (BOOL)containsPasteboardTypes:(id)arg1;
+- (BOOL)containsPasteboardTypes:(id)arg1 inItemSet:(id)arg2;
+- (id)dataForPasteboardType:(id)arg1;
+- (id)dataForPasteboardType:(id)arg1 inItemSet:(id)arg2;
+- (id)image;
+- (id)images;
+- (id)itemSetWithPasteboardTypes:(id)arg1;
+- (id)items;
+- (int)numberOfItems;
+- (id)pasteboardTypes;
+- (id)pasteboardTypesForItemSet:(id)arg1;
+- (void)setData:(id)arg1 forPasteboardType:(id)arg2;
+- (void)setItems:(id)arg1;
+- (void)setValue:(id)arg1 forPasteboardType:(id)arg2;
+- (id)string;
+- (id)strings;
+- (id)valueForPasteboardType:(id)arg1;
+- (id)valuesForPasteboardType:(id)arg1 inItemSet:(id)arg2;
 
 @end

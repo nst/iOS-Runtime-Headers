@@ -15,9 +15,7 @@
 
 - (float)desiredHeight;
 - (float)desiredHeightForWidth:(float)arg1;
-- (void)didEndDisplayingView;
 - (void)endEditingAndCorrect:(BOOL)arg1;
 - (NSString *)navigationTitle;
-- (void)willBeginDisplayingView;
 
 @end

@@ -11,5 +11,6 @@
 + (id)stringForConsumerSubtype:(unsigned char)arg1;
 + (id)stringForConsumerType:(unsigned int)arg1;
 + (id)stringForOutcome:(unsigned int)arg1;
++ (id)stringForPredictionReason:(int)arg1;
 
 @end

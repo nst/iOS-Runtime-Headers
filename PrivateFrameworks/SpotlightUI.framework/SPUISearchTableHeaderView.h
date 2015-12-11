@@ -28,6 +28,7 @@
 - (id)moreButtonVisibleConstraints;
 - (unsigned int)section;
 - (void)setDelegate:(id)arg1;
+- (void)setFloating:(BOOL)arg1;
 - (void)setMoreButton:(id)arg1;
 - (void)setMoreButtonHiddenConstraints:(id)arg1;
 - (void)setMoreButtonVisible:(BOOL)arg1;

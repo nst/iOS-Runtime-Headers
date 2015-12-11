@@ -6,11 +6,13 @@
     id /* block */ _completionHandler;
     NSDate *_creationDate;
     WCMessage *_message;
+    int _retryCount;
 }
 
 @property (copy) id /* block */ completionHandler;
 @property (readonly) NSDate *creationDate;
 @property (retain) WCMessage *message;
+@property int retryCount;
 
 - (void).cxx_destruct;
 - (int)compare:(id)arg1;
@@ -19,7 +21,9 @@
 - (id)description;
 - (id)initWithMessage:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)message;
+- (int)retryCount;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setMessage:(id)arg1;
+- (void)setRetryCount:(int)arg1;
 
 @end

@@ -5,7 +5,9 @@
 @interface CNAutocompleteAggdUsageMonitorProbe : NSObject <CNAutocompleteUsageMonitorProbe> {
     CNAutocompleteAggdProbe *_aggdProbe;
     NSNumber *_lengthOfSearchString;
+    NSNumber *_returnedDuetResults;
     NSNumber *_selectedIndex;
+    NSNumber *_selectedPredictionIndex;
     NSNumber *_sourceType;
 }
 
@@ -14,7 +16,9 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSNumber *lengthOfSearchString;
+@property (nonatomic, retain) NSNumber *returnedDuetResults;
 @property (nonatomic, retain) NSNumber *selectedIndex;
+@property (nonatomic, retain) NSNumber *selectedPredictionIndex;
 @property (nonatomic, retain) NSNumber *sourceType;
 @property (readonly) Class superclass;
 
@@ -22,21 +26,25 @@
 - (id)aggdProbe;
 - (id)init;
 - (id)initWithAggdProbe:(id)arg1;
-- (id)keyWithPredictionCategoryPrefix:(id)arg1;
-- (id)keyWithPrefixedCategoryPrefix:(id)arg1;
 - (id)lengthOfSearchString;
+- (void)recordDuetReturnedResults:(BOOL)arg1;
 - (void)recordUserIgnoredPredictionAfterDelay:(double)arg1;
 - (void)recordUserIgnoredPrefixedResultAfterDelay:(double)arg1 batch:(unsigned int)arg2;
 - (void)recordUserSawPredictions;
+- (void)recordUserSawResultsConsideredSuggestion:(unsigned int)arg1;
 - (void)recordUserSelectedIndex:(unsigned int)arg1;
 - (void)recordUserSelectedPredictionAtIndex:(unsigned int)arg1;
 - (void)recordUserSelectedResultWithSourceType:(unsigned int)arg1;
 - (void)recordUserTypedInNumberOfCharacters:(unsigned int)arg1;
+- (id)returnedDuetResults;
 - (id)selectedIndex;
+- (id)selectedPredictionIndex;
 - (void)sendData;
 - (void)setAggdProbe:(id)arg1;
 - (void)setLengthOfSearchString:(id)arg1;
+- (void)setReturnedDuetResults:(id)arg1;
 - (void)setSelectedIndex:(id)arg1;
+- (void)setSelectedPredictionIndex:(id)arg1;
 - (void)setSourceType:(id)arg1;
 - (id)sourceKeysForSourceType:(unsigned int)arg1;
 - (id)sourceType;

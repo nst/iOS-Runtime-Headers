@@ -19,6 +19,7 @@
 
 + (void)initialize;
 + (BOOL)isValidAssetStorageWithBytes:(const void*)arg1 length:(unsigned long)arg2;
++ (BOOL)isValidAssetStorageWithURL:(id)arg1;
 
 - (void)_bringHeaderInfoUpToDate;
 - (BOOL)_commonInitWithStorage:(struct _BOMStorage { }*)arg1 forWritting:(BOOL)arg2;

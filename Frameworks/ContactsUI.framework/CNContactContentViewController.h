@@ -374,6 +374,7 @@
 - (id)indexPathOfDisplayedPropertyItem:(id)arg1;
 - (id)init;
 - (id)initWithContact:(id)arg1;
+- (id)initWithContact:(id)arg1 andContactStore:(id)arg2;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)isMailVIP;
 - (BOOL)isOutOfProcess;

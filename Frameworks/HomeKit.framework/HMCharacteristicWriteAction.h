@@ -20,7 +20,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (void)_configureWithMerge:(id)arg1 actionSet:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
+- (void)_configure:(id)arg1 actionSet:(id)arg2 clientQueue:(id)arg3 delegateCaller:(id)arg4;
 - (BOOL)_handleUpdates:(id)arg1;
 - (BOOL)_mergeWithNewObject:(id)arg1 operations:(id)arg2;
 - (id)_serializeForAdd;

@@ -47,7 +47,6 @@
 + (id)_containerIdentifierForFetchType:(id)arg1 predicate:(id)arg2 outRelationship:(id*)arg3;
 + (id)_fetchOptionsForFetchingAssetsFromAssetCollection:(id)arg1 options:(id)arg2;
 + (id)_filterPredicateFromFetchOptionsPredicate:(id)arg1 options:(id)arg2 phClass:(Class)arg3;
-+ (id)_queryForKeyAssetInAssetCollection:(id)arg1 withRelationshipKeyPath:(id)arg2 options:(id)arg3;
 + (id)_relationshipForFetchType:(id)arg1 predicate:(id)arg2;
 + (id)_rootFolderID;
 + (id)_transformedSortDescriptors:(id)arg1 forFetchType:(id)arg2;
@@ -79,10 +78,7 @@
 + (id)queryForMoments;
 + (id)queryForMomentsContainingAssetsWithLocalIdentifiers:(id)arg1;
 + (id)queryForMomentsInMomentList:(id)arg1;
-+ (id)queryForPrimaryKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)queryForRootAlbumCollectionList;
-+ (id)queryForSecondaryKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
-+ (id)queryForTertiaryKeyAssetsInAssetCollection:(id)arg1 options:(id)arg2;
 + (id)queryForTopLevelUserCollections;
 + (id)queryForType:(id)arg1 withBasePredicate:(id)arg2 inLibrary:(id)arg3;
 + (id)queryForType:(id)arg1 withBasePredicate:(id)arg2 seedOIDs:(id)arg3 inLibrary:(id)arg4;

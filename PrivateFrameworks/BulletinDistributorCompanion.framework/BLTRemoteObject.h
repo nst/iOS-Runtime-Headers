@@ -11,6 +11,7 @@
     NSMutableDictionary *_idsRequestMessageTypeToSelector;
     NSMutableDictionary *_idsSendIDToCompletionHandler;
     NSMutableDictionary *_idsSendIDToResponseHandler;
+    double _lastTimeRaisedBadIDSProtobuf;
     BLTPBProtobufSequenceNumberManager *_sequenceNumberManager;
     NSLock *_sequenceNumberSendLock;
     <BLTAbstractIDSService> *_service;
@@ -29,6 +30,9 @@
 - (void).cxx_destruct;
 - (BOOL)_callSendCompletionHandlerWithSuccess:(BOOL)arg1 identifier:(id)arg2 error:(id)arg3;
 - (void)_queueSendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8;
+- (void)_sendAckInitialSequenceNumberForSession:(id)arg1 sessionState:(unsigned int)arg2;
+- (void)_sendAckInitialSequenceNumberForSession:(id)arg1 withAssert:(BOOL)arg2 sessionState:(unsigned int*)arg3;
+- (void)_sendAssertForSession;
 - (void)_sendMessage:(id)arg1 type:(unsigned short)arg2 responseToRequest:(id)arg3 withTimeout:(id)arg4 withDescription:(id)arg5 onlyOneFor:(id)arg6 didSend:(id /* block */)arg7 andResponse:(id /* block */)arg8;
 - (void)_setStandaloneTestModeEnabled:(BOOL)arg1;
 - (void)_storeProtobufAction:(SEL)arg1 messageType:(unsigned short)arg2 messageSendType:(int)arg3;

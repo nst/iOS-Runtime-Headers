@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSString : NSObject <CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CSCoderEncoder, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable>
+@interface NSString : NSObject <CKDParsedObject, CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CSCoderEncoder, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable>
 
 @property (nonatomic, readonly) NSData *_FTDataFromBase64String;
 @property (nonatomic, readonly) NSData *_FTDataFromHexString;
@@ -655,6 +655,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
++ (id)brc_emptyFilenameAlternativeName;
 + (id)brc_pathWithDeviceID:(int)arg1 fileID:(unsigned long long)arg2;
 + (id)brc_pathWithFileSystemRepresentation:(const char *)arg1;
 + (id)brc_representableHFSFileNameWithBase:(id)arg1 suffix:(id)arg2 extension:(id)arg3 makeDotFile:(BOOL)arg4;
@@ -706,6 +707,7 @@
 - (id)CKDPIdentifier_User;
 - (id)CKDPIdentifier_Zone;
 - (id)_CKDPIdentifierWithType:(int)arg1;
+- (void)_CKLogToFileHandle:(id)arg1 atDepth:(int)arg2;
 
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
@@ -1049,6 +1051,7 @@
 + (id)mf_stringWithAttachmentCharacter;
 
 - (id)mf_betterStringByResolvingSymlinksInPath;
+- (id)mf_canonicalizedAbsolutePath;
 - (BOOL)mf_caseInsensitiveIsEqualToString:(id)arg1;
 - (BOOL)mf_containsSubstring:(id)arg1 options:(unsigned int)arg2;
 - (id)mf_convertFromFlowedText:(unsigned int)arg1;
@@ -1505,9 +1508,11 @@
 - (BOOL)_looksLikeURL;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfBackwardDeletionClusterAtIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfCharacterClusterAtIndex:(unsigned int)arg1 withClusterOffset:(int)arg2;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfLongCharacterAtIndex:(unsigned int)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_rangeOfString:(id)arg1 fromLocation:(unsigned int)arg2;
 - (BOOL)_shouldBePaddedWithSpaces;
 - (id)_stringByApplyingTransform:(id)arg1;
+- (id)_stringByComposingDiacriticsLogicalOrder:(BOOL)arg1 allowedCharacters:(id /* block */)arg2;
 - (id)_stringByConvertingFromFullWidthToHalfWidth;
 - (id)_stringByConvertingFromHalfWidthToFullWidth;
 - (id)_stringByDeletingInteriorSentences;

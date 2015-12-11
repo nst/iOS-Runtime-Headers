@@ -23,7 +23,7 @@
 + (void)hijackThreadFromDelegate:(id)arg1;
 + (unsigned int)imageScaleFromUserDefaults;
 + (id)messageFromDelegate:(id)arg1 originatingBundleID:(id)arg2 sourceAccountManagement:(int)arg3;
-+ (id)messageFromDelegate:(id)arg1 withSubstituteDOMDocument:(id)arg2 originatingBundleID:(id)arg3 sourceAccountManagement:(int)arg4;
++ (id)messageFromDelegate:(id)arg1 withSubstituteDOMDocument:(id)arg2 originatingBundleID:(id)arg3 sourceAccountManagement:(int)arg4 writeAttachmentPlaceholders:(BOOL)arg5;
 + (void)setupWithCompositionModel:(id)arg1 delegate:(id)arg2;
 + (void)setupWithContent:(id)arg1 delegate:(id)arg2;
 + (id)subjectFromSubject:(id)arg1 withComposeType:(int)arg2;

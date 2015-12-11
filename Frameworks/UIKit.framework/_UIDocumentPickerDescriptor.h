@@ -28,6 +28,8 @@
 + (void)setCloudEnabledStatus:(BOOL)arg1;
 + (void)setHostBundleID:(id)arg1;
 + (void)setOrderFromPickers:(id)arg1;
++ (void)setSourceIsManaged:(BOOL)arg1;
++ (BOOL)sourceIsManaged;
 
 - (void).cxx_destruct;
 - (id)_extensionValueOfClass:(Class)arg1 forKey:(id)arg2;

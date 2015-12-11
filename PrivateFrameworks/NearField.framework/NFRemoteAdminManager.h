@@ -15,6 +15,7 @@
 
 + (id)sharedRemoteAdminManager;
 
+- (void)_checkForConnectionReset;
 - (void)connectToServer:(id)arg1 callback:(id /* block */)arg2;
 - (void)dealloc;
 - (void)didCloseXPCConnection:(id)arg1;

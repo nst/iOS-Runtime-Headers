@@ -14,14 +14,11 @@
 
 @property (readonly) unsigned int acceleratorPort;
 @property (readonly) MTLCompiler *compiler;
-@property (getter=isDepth24Stencil8PixelFormatSupported, readonly) BOOL depth24Stencil8PixelFormatSupported;
 @property (readonly) unsigned long long globalTraceObjectID;
-@property (getter=isHeadless, readonly) BOOL headless;
 @property (readonly) unsigned int iosurfaceReadOnlyTextureAlignmentBytes;
 @property (readonly) unsigned int iosurfaceTextureAlignmentBytes;
 @property (readonly) const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; }*limits;
 @property (readonly) unsigned int linearTextureAlignmentBytes;
-@property (getter=isLowPower, readonly) BOOL lowPower;
 @property (readonly) unsigned int maxBufferLength;
 @property (readonly) unsigned int maxColorAttachments;
 @property (readonly) unsigned int maxComputeBuffers;
@@ -82,9 +79,6 @@
 - (void)initLimits;
 - (unsigned int)iosurfaceReadOnlyTextureAlignmentBytes;
 - (unsigned int)iosurfaceTextureAlignmentBytes;
-- (BOOL)isDepth24Stencil8PixelFormatSupported;
-- (BOOL)isHeadless;
-- (BOOL)isLowPower;
 - (struct { unsigned int x1; unsigned int x2; })libraryCacheStats;
 - (const struct { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; unsigned int x6; unsigned int x7; unsigned int x8; unsigned int x9; unsigned int x10; unsigned int x11; unsigned int x12; unsigned int x13; unsigned int x14; unsigned int x15; unsigned int x16; unsigned int x17; unsigned int x18; float x19; float x20; unsigned int x21; unsigned int x22; unsigned int x23; unsigned int x24; unsigned int x25; unsigned int x26; unsigned int x27; unsigned int x28; unsigned int x29; unsigned int x30; unsigned int x31; unsigned int x32; unsigned int x33; unsigned int x34; unsigned int x35; unsigned int x36; }*)limits;
 - (unsigned int)linearTextureAlignmentBytes;

@@ -4,11 +4,14 @@
 
 @interface VCPPhotoAnalyzer : NSObject {
     NSMutableDictionary *_analysis;
+    NSDictionary *_exifProperties;
     struct __CVBuffer { } *_image;
     struct __CVBuffer { } *_imageLowRes;
     unsigned int _irisAnalyses;
     AVAsset *_irisAsset;
-    BOOL _requestFullImage;
+    float _irisPhotoExposureSec;
+    float _irisPhotoOffsetSec;
+    BOOL _isPano;
     unsigned int _requestedAnalyses;
     NSMutableDictionary *_results;
     int _status;
@@ -24,12 +27,14 @@
 
 @property (readonly) int status;
 
-+ (BOOL)canAnalyzeUndegraded:(id)arg1 forAnalysisTypes:(unsigned int)arg2;
++ (BOOL)canAnalyzeUndegraded:(id)arg1;
 + (struct CGSize { float x1; float x2; })getMaxDecodeSize:(id)arg1;
++ (id)requestExifPropertiesFromAsset:(id)arg1;
 + (id)requestImageForAsset:(id)arg1 withMajorDimension:(float)arg2;
 
 - (void).cxx_destruct;
 - (id)analyzeAsset:(id /* block */)arg1;
+- (long)analyzeImage:(unsigned int*)arg1 performedAnalyses:(unsigned int*)arg2 cancel:(id /* block */)arg3;
 - (void)dealloc;
 - (long)downscaleImage;
 - (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned int)arg2;

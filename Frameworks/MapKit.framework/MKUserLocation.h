@@ -4,6 +4,7 @@
 
 @interface MKUserLocation : NSObject <MKAnnotation> {
     double _expectedCoordinateUpdateInterval;
+    double _expectedHeadingUpdateInterval;
     MKUserLocationInternal *_internal;
 }
 
@@ -12,6 +13,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) double expectedCoordinateUpdateInterval;
+@property (nonatomic) double expectedHeadingUpdateInterval;
 @property (nonatomic, retain) CLLocation *fixedLocation;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) CLHeading *heading;
@@ -37,6 +39,7 @@
 - (double)course;
 - (void)dealloc;
 - (double)expectedCoordinateUpdateInterval;
+- (double)expectedHeadingUpdateInterval;
 - (id)fixedLocation;
 - (id)heading;
 - (double)headingDegrees;
@@ -49,6 +52,7 @@
 - (void)setCoordinate:(struct { double x1; double x2; })arg1;
 - (void)setCourse:(double)arg1;
 - (void)setExpectedCoordinateUpdateInterval:(double)arg1;
+- (void)setExpectedHeadingUpdateInterval:(double)arg1;
 - (void)setFixedLocation:(id)arg1;
 - (void)setHeading:(id)arg1;
 - (void)setLocation:(id)arg1;

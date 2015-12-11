@@ -3,6 +3,7 @@
  */
 
 @interface AVPlayerLayerInternal : NSObject {
+    NSSet *KVOInvokers;
     AVPlayer *_player;
     AVPlayerLayer *associatedPIPLayer;
     BOOL canDispatchOverrides;

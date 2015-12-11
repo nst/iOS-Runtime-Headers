@@ -29,7 +29,6 @@
 @property (retain) UILabel *titleLabel;
 
 + (id)_reuseIDForResult:(id)arg1 textAreaData:(id)arg2 formatter:(id)arg3;
-+ (id)hyphenationStyleAttributedStringForTitle:(id)arg1;
 + (id)reuseIDForData:(id)arg1 formatter:(id)arg2;
 + (id)reuseIDForResult:(id)arg1 formatter:(id)arg2;
 + (float)uiLabelTwoRowHeightForFont:(id)arg1;

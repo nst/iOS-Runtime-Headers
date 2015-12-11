@@ -18,7 +18,6 @@
 
 - (void)_forceAppWithBundleID:(NSString *)arg1 toPerformJob:(CSIndexJob *)arg2;
 - (void)_issueCommand:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSData *, NSError *, void*
-- (void)acknowledgeReindex;
 - (void)checkInWithProtectionClass:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, CSIndexJob *, NSError *, void*
 - (void)indexFromBundle:(void *)arg1 protectionClass:(void *)arg2 options:(void *)arg3 items:(void *)arg4 itemsText:(void *)arg5 itemsHTML:(void *)arg6 clientState:(void *)arg7 clientStateName:(void *)arg8 deletes:(void *)arg9 completionHandler:(void *)arg10; // needs 10 arg types, found 15: NSString *, NSString *, int, NSData *, NSData *, NSData *, NSData *, NSString *, NSData *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)performDataMigrationWithTimeout:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 7: NSNumber *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*

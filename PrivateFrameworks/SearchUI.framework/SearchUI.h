@@ -5,6 +5,7 @@
 @interface SearchUI : NSObject
 
 + (id)cardViewControllerForResult:(id)arg1 style:(unsigned int)arg2;
++ (id)cardViewControllerForResult:(id)arg1 style:(unsigned int)arg2 feedbackDelegate:(id)arg3;
 + (id)rowViewForResult:(id)arg1 style:(unsigned int)arg2;
 + (id)rowViewForResults:(id)arg1 style:(unsigned int)arg2;
 

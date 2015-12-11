@@ -31,6 +31,7 @@
 + (BOOL)isCachedLanguageStaleForProperties:(id)arg1;
 + (BOOL)isCachedLanguageStaleForProperties:(id)arg1 systemLanguage:(id)arg2;
 + (BOOL)isWorldClockCityProperties:(id)arg1;
++ (id)unlocalizedExampleCity;
 
 - (void).cxx_destruct;
 - (id)alCity;
@@ -55,8 +56,6 @@
 
 // Image: /System/Library/PrivateFrameworks/NanoTimeKitCompanion.framework/NanoTimeKitCompanion
 
-- (id)_bundleWithAbbreviations;
-- (id)_filePathForAbbreviationsResource;
 - (id)abbreviation;
 
 @end

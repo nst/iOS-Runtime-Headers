@@ -36,6 +36,7 @@
 - (void)setSkipDownloads:(BOOL)arg1;
 - (BOOL)skipDownloads;
 - (void)startWithDetailedResponseBlock:(id /* block */)arg1;
+- (void)startWithMetadataResponseBlock:(id /* block */)arg1;
 - (void)startWithResponseBlock:(id /* block */)arg1;
 
 @end

@@ -61,7 +61,7 @@
 - (BOOL)savePublicKey:(id)arg1 forAccessoryName:(id)arg2 error:(id*)arg3;
 - (void)setActiveControllerIdentifier:(id)arg1;
 - (void)setQueue:(id)arg1;
-- (void)updateActiveControllerPairingIdentifier:(id)arg1;
+- (BOOL)updateActiveControllerPairingIdentifier:(id)arg1;
 - (BOOL)updateCurrentiCloudIdentifier:(id)arg1 controllerPairingIdentifier:(id)arg2 error:(id*)arg3;
 - (BOOL)updatePeripheralIdentifier:(id)arg1 forAccessoryName:(id)arg2 protocolVersion:(unsigned int)arg3 error:(id*)arg4;
 

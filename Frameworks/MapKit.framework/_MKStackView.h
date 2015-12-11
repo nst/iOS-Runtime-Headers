@@ -12,5 +12,6 @@
 - (void).cxx_destruct;
 - (void)setStackedSubviews:(id)arg1;
 - (id)stackedSubviews;
+- (void)updateConstraints;
 
 @end

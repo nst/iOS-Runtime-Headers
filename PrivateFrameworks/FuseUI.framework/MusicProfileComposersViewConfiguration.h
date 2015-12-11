@@ -4,6 +4,6 @@
 
 @interface MusicProfileComposersViewConfiguration : MusicProfileAlbumsViewConfiguration
 
-- (id)_loadTracklistEntityViewDescriptor;
+- (id)_loadTracklistTableViewDescriptor;
 
 @end

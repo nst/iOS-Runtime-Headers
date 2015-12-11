@@ -83,11 +83,12 @@
 + (Class)invalidationContextClass;
 
 - (void).cxx_destruct;
+- (BOOL)_boundsAndInsetsAreValidForReferenceDimension;
 - (void)_calculateAttributesForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })_estimatedItemSize;
 - (BOOL)_estimatesSizes;
 - (id)_existingLayoutAttributesForItemAtIndexPath:(id)arg1;
-- (id)_fetchAndCacheNewLayoutAttributesForCellWithIndexPath:(id)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
+- (id)_fetchAndCache:(BOOL)arg1 newLayoutAttributesForCellWithIndexPath:(id)arg2 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_fetchItemsInfoForRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForFooterInSection:(int)arg1 usingData:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForHeaderInSection:(int)arg1 usingData:(id)arg2;

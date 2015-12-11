@@ -67,6 +67,7 @@
 - (int)monogrammerStyle;
 - (id)nameLabel;
 - (id)nameTextAttributes;
+- (id)preferredLayoutAttributesFittingAttributes:(id)arg1;
 - (void)setActionCategories:(id)arg1;
 - (void)setActionsClippingView:(id)arg1;
 - (void)setActionsContainerView:(id)arg1;

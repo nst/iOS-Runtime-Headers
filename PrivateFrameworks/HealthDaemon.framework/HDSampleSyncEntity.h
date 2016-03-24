@@ -4,9 +4,16 @@
 
 @interface HDSampleSyncEntity : HDDataSyncEntity
 
-+ (long long)finalAnchorForNanoSyncRestoreWithStore:(id)arg1 nowDate:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (id)_appleWatchSamplesPredicateForSession:(id)arg1;
++ (id)_companionNanoSyncPredicateConjunctionForSession:(id)arg1;
++ (id)_defaultCompanionNanoSyncSampleAgePredicateForSession:(id)arg1;
++ (id)_nanoSyncWatchRestorePredicatesWithSession:(id)arg1;
++ (id)_predicateForNanoSyncRestoreSession:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
++ (long long)finalAnchorForNanoSyncRestoreSession:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (int)nanoSyncObjectType;
-+ (id)objectsForNanoSyncRestoreWithStore:(id)arg1 nowDate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 lastSyncAnchor:(long long*)arg4 healthDaemon:(id)arg5 error:(id*)arg6;
-+ (id)sampleTypesByAgeInDaysForNanoSyncRestore;
++ (id)nanoSyncPredicateForSession:(id)arg1;
++ (id)objectsForNanoSyncRestoreSession:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (BOOL)supportsSpeculativeNanoSyncChanges;
 
 @end

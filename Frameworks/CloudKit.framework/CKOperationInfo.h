@@ -3,10 +3,15 @@
  */
 
 @interface CKOperationInfo : NSObject <NSSecureCoding> {
+    NSDictionary *_additionalRequestHTTPHeaders;
     BOOL _allowsBackgroundNetworking;
     BOOL _allowsCellularAccess;
     NSString *_authPromptReason;
     NSString *_deviceIdentifier;
+    BOOL _isLongLived;
+    BOOL _isOutstandingOperation;
+    NSString *_name;
+    NSString *_operationClass;
     NSString *_operationID;
     id _parentOperation;
     NSString *_parentSectionID;
@@ -17,10 +22,15 @@
     NSString *_sourceApplicationSecondaryIdentifier;
 }
 
+@property (nonatomic, retain) NSDictionary *additionalRequestHTTPHeaders;
 @property (nonatomic) BOOL allowsBackgroundNetworking;
 @property (nonatomic) BOOL allowsCellularAccess;
 @property (nonatomic, retain) NSString *authPromptReason;
 @property (nonatomic, retain) NSString *deviceIdentifier;
+@property (nonatomic) BOOL isLongLived;
+@property (nonatomic) BOOL isOutstandingOperation;
+@property (nonatomic, retain) NSString *name;
+@property (nonatomic, retain) NSString *operationClass;
 @property (nonatomic, retain) NSString *operationID;
 @property (nonatomic) id parentOperation;
 @property (nonatomic, retain) NSString *parentSectionID;
@@ -33,6 +43,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)additionalRequestHTTPHeaders;
 - (BOOL)allowsBackgroundNetworking;
 - (BOOL)allowsCellularAccess;
 - (id)authPromptReason;
@@ -40,15 +51,24 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isLongLived;
+- (BOOL)isOutstandingOperation;
+- (id)name;
+- (id)operationClass;
 - (id)operationID;
 - (id)parentOperation;
 - (id)parentSectionID;
 - (BOOL)preferAnonymousRequests;
 - (int)qualityOfService;
+- (void)setAdditionalRequestHTTPHeaders:(id)arg1;
 - (void)setAllowsBackgroundNetworking:(BOOL)arg1;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
 - (void)setAuthPromptReason:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
+- (void)setIsLongLived:(BOOL)arg1;
+- (void)setIsOutstandingOperation:(BOOL)arg1;
+- (void)setName:(id)arg1;
+- (void)setOperationClass:(id)arg1;
 - (void)setOperationID:(id)arg1;
 - (void)setParentOperation:(id)arg1;
 - (void)setParentSectionID:(id)arg1;

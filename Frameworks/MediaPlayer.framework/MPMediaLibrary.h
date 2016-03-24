@@ -83,6 +83,7 @@
 + (id)_libraryForDataProvider:(id)arg1;
 + (id)_mediaLibraries;
 + (void)addLibraryDataProvider:(id)arg1;
++ (int)authorizationStatus;
 + (void)beginDiscoveringMediaLibraries;
 + (BOOL)companionDeviceActiveStoreAccountIsSubscriber;
 + (id)defaultMediaLibrary;
@@ -98,6 +99,7 @@
 + (void)reloadInvisiblePropertiesForLibraryDataProvider:(id)arg1;
 + (void)reloadLibraryDataProvider:(id)arg1;
 + (void)removeLibraryDataProvider:(id)arg1 removalReason:(int)arg2;
++ (void)requestAuthorization:(id /* block */)arg1;
 + (void)setDefaultMediaLibrary:(id)arg1;
 + (void)setLibraryServerDisabled:(BOOL)arg1;
 + (void)setRunLoopForNotifications:(id)arg1;
@@ -138,6 +140,7 @@
 - (void)_tearDownNotifications;
 - (void)addAdvertisementItemWithDictionary:(id)arg1 completion:(id /* block */)arg2;
 - (void)addGlobalPlaylistWithID:(id)arg1 andAddToCloudLibrary:(BOOL)arg2 completion:(id /* block */)arg3;
+- (void)addItemWithProductID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addLibraryFilterPredicate:(id)arg1;
 - (void)addNonLibraryOwnedPlaylistWithGlobalID:(id)arg1 completion:(id /* block */)arg2;
 - (void)addPlaylistStoreItemsWithMetadata:(id)arg1 completion:(id /* block */)arg2;
@@ -181,6 +184,7 @@
 - (void)enumerateEntityChangesAfterSyncAnchor:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)errorResolverForItem:(id)arg1;
 - (void)geniusItemsForSeedItem:(id)arg1 completion:(id /* block */)arg2;
+- (void)getPlaylistWithUUID:(id)arg1 creationMetadata:(id)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)hasAlbums;
 - (BOOL)hasArtists;
 - (BOOL)hasAudibleAudioBooks;

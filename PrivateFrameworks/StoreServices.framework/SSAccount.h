@@ -21,6 +21,7 @@
     NSString *_itunesPassSerialNumber;
     NSString *_lastName;
     NSLock *_lock;
+    BOOL _managedAppleID;
     BOOL _newCustomer;
     int _paidPurchasesPasswordSetting;
     NSString *_secureToken;
@@ -48,6 +49,7 @@
 @property int freeDownloadsPasswordSetting;
 @property (readonly) unsigned int hash;
 @property (copy) NSString *lastName;
+@property (getter=isManagedAppleID) BOOL managedAppleID;
 @property (getter=isNewCustomer) BOOL newCustomer;
 @property int paidPurchasesPasswordSetting;
 @property (copy) NSString *secureToken;
@@ -94,6 +96,7 @@
 - (BOOL)isAuthenticated;
 - (BOOL)isDemoAccount;
 - (BOOL)isEqual:(id)arg1;
+- (BOOL)isManagedAppleID;
 - (BOOL)isNewCustomer;
 - (BOOL)isSocialEnabled;
 - (id)lastName;
@@ -123,6 +126,7 @@
 - (void)setITunesPassSerialNumber:(id)arg1;
 - (void)setLastName:(id)arg1;
 - (void)setLockdownDictionary:(id)arg1;
+- (void)setManagedAppleID:(BOOL)arg1;
 - (void)setNewCustomer:(BOOL)arg1;
 - (void)setPaidPurchasesPasswordSetting:(int)arg1;
 - (void)setSecureToken:(id)arg1;
@@ -132,5 +136,6 @@
 - (id)storeFrontIdentifier;
 - (id)uniqueIdentifier;
 - (void)updateAccountPasswordSettings:(id /* block */)arg1;
+- (void)updateAccountPasswordSettingsWithRequestProperties:(id)arg1 completionBlock:(id /* block */)arg2;
 
 @end

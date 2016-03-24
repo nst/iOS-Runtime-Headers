@@ -4,10 +4,10 @@
 
 @interface BKSRestartAction : BSAction
 
-@property (nonatomic, readonly) BOOL shouldShowAppleLogo;
+@property (nonatomic, readonly) unsigned int options;
 
-+ (id)restartActionWithAppleLogoDesired:(BOOL)arg1;
++ (id)actionWithOptions:(unsigned int)arg1;
 
-- (BOOL)shouldShowAppleLogo;
+- (unsigned int)options;
 
 @end

@@ -20,6 +20,7 @@
 @property (nonatomic) BOOL hasErrorCode;
 @property (nonatomic, readonly) BOOL hasErrorDict;
 @property (nonatomic, readonly) BOOL hasErrorDomain;
+@property (nonatomic, readonly) BOOL hasIdentifier;
 @property (nonatomic) BOOL hasStatus;
 @property (nonatomic, retain) NSString *identifier;
 @property (nonatomic) int status;
@@ -35,6 +36,7 @@
 - (BOOL)hasErrorCode;
 - (BOOL)hasErrorDict;
 - (BOOL)hasErrorDomain;
+- (BOOL)hasIdentifier;
 - (BOOL)hasStatus;
 - (unsigned int)hash;
 - (id)identifier;

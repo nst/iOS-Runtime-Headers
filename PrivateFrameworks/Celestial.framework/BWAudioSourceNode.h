@@ -72,15 +72,15 @@
 
 - (unsigned int)_audioCombinedLatency;
 - (BOOL)_cmSessionIsActive;
-- (long)_configureCMSessionWithDefaultHardwareSampleRate:(double)arg1;
+- (long)_configureCMSessionWithDefaultHardwareSampleRate:(double)arg1 didCallDoNotNotifyOtherSessionsOnNextInactive:(BOOL*)arg2;
 - (struct opaqueCMSampleBuffer { }*)_createSampleBufferForTimestampedAudioBufferList:(struct TimestampedAudioBufferList { struct __CFAllocator {} *x1; long long x2; unsigned int x3; unsigned int x4; struct { long long x_5_1_1; int x_5_1_2; unsigned int x_5_1_3; long long x_5_1_4; } x5; struct AudioBufferList {} *x6; unsigned int x7; }*)arg1;
-- (long)_deactivateCMSessionIfNecessary;
+- (long)_deactivateCMSessionIfNecessary:(BOOL*)arg1;
 - (long)_generatePullBuffers;
 - (void)_generateSamples;
 - (void)_generateSilenceIfNeeded;
 - (long)_getAudioDevicePullFrames:(unsigned int*)arg1;
 - (long)_selectMicForAudioRoute:(id)arg1;
-- (long)_setCMSessionAudioModeAndSelectMic;
+- (long)_setCMSessionAudioModeAndSelectMic:(BOOL*)arg1;
 - (long)_setCMSessionPropertyWithKey:(struct __CFString { }*)arg1 value:(void*)arg2;
 - (long)_setupAudioUnit;
 - (long)_updatePullFormatDescription;

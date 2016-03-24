@@ -63,10 +63,8 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)_activityCacheWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 cacheIndex:(long long)arg7 energyBurned:(id)arg8 briskMinutes:(double)arg9 activeHours:(double)arg10 stepCount:(int)arg11 walkingAndRunningDistance:(id)arg12 energyBurnedGoal:(id)arg13;
-+ (id)_activityCacheWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 cacheIndex:(long long)arg7 energyBurned:(id)arg8 walkingAndRunningDistance:(id)arg9 energyBurnedGoal:(id)arg10;
++ (id)_activityCacheWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(double)arg4 startDate:(double)arg5 endDate:(double)arg6 cacheIndex:(long long)arg7 energyBurned:(id)arg8 walkingAndRunningDistance:(id)arg9 energyBurnedGoal:(id)arg10;
 + (BOOL)_isConcreteObjectClass;
-+ (id)_newActivityCacheWithStartDate:(id)arg1 endDate:(id)arg2 dateComponents:(id)arg3 energyBurned:(id)arg4 briskMinutes:(double)arg5 activeHours:(double)arg6 energyBurnedGoal:(id)arg7 stepCount:(int)arg8 walkingAndRunningDistance:(id)arg9 metadata:(id)arg10;
 + (id)_newActivityCacheWithStartDate:(id)arg1 endDate:(id)arg2 dateComponents:(id)arg3 energyBurned:(id)arg4 energyBurnedGoal:(id)arg5 walkingAndRunningDistance:(id)arg6 metadata:(id)arg7;
 + (id)_newActivityCacheWithUUID:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 dateComponents:(id)arg4;
 + (BOOL)supportsSecureCoding;
@@ -147,6 +145,5 @@
 - (BOOL)addCodableRepresentationToCollectionForSync:(id)arg1;
 - (id)codableRepresentationForJournal;
 - (id)codableRepresentationForSync;
-- (BOOL)hd_isEnergyBurnedGoalSet;
 
 @end

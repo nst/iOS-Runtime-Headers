@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBApplicationLaunchCompatibilityInfo : NSObject <BSXPCCoding> {
+@interface XBApplicationLaunchCompatibilityInfo : NSObject <BSXPCCoding, NSCoding> {
     NSString *_bundleContainerPath;
     NSString *_bundleIdentifier;
     NSString *_bundlePath;
@@ -41,9 +41,11 @@
 - (void)dealloc;
 - (id)defaultLaunchInterface;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)existingLaunchImageForRequest:(id)arg1;
 - (id)initWithBundle:(id)arg1;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithXPCDictionary:(id)arg1;
 - (id)launchInterfaceIdentifierForRequest:(id)arg1;
 - (id)launchInterfaceWithIdentifier:(id)arg1;

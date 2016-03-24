@@ -201,6 +201,7 @@
 - (id)markupStringForCompositionWithPrependedBlankLine:(BOOL)arg1 imageScale:(unsigned int)arg2;
 - (id)markupStringForDisplayWithData:(id)arg1 displayStyle:(int)arg2 printableWidth:(float)arg3 useEdgeToEdgeFormattingIfApplicable:(BOOL)arg4;
 - (id)meetingStorePersistentID;
+- (BOOL)needsColorspaceConversion;
 - (id)pass;
 - (id)passWithError:(id*)arg1;
 - (unsigned int)scaledFileSize;

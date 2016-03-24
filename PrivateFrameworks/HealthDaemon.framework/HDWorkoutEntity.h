@@ -4,17 +4,15 @@
 
 @interface HDWorkoutEntity : HDSampleEntity
 
-+ (Class)_associatedDataObjectClass;
 + (id)_databaseTable;
-+ (id)_propertySettersForDataObject;
 + (BOOL)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (BOOL)associateSamples:(id)arg1 toWorkout:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)codableObjectsFromObjectCollection:(id)arg1;
-+ (id)codableRepresentationEncoderForHealthDaemon:(id)arg1 database:(id)arg2;
 + (id)columnNameForSortIdentifier:(id)arg1;
 + (id)columnsDefinition;
++ (BOOL)copySampleAssociationsFromWorkout:(id)arg1 toWorkout:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)deleteStatementsForRelatedEntitiesInDatabase:(id)arg1;
++ (id)entityEncoderForHealthDaemon:(id)arg1 database:(id)arg2 purpose:(int)arg3 authorizationFilter:(id /* block */)arg4;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id*)arg5;
-+ (Class)propertyApplierClass;
 
 @end

@@ -6,6 +6,7 @@
     NSURLCredentialStorageInternal *_internal;
 }
 
+@property (nonatomic) BOOL _useSystemKeychain;
 @property (readonly, copy) NSDictionary *allCredentials;
 
 // Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
@@ -15,6 +16,7 @@
 - (struct _CFURLCredentialStorage { }*)_CFURLCredentialStorage;
 - (id)_initWithCFURLCredentialStorage:(struct _CFURLCredentialStorage { }*)arg1;
 - (id)_initWithIdentifier:(id)arg1 private:(bool)arg2;
+- (BOOL)_useSystemKeychain;
 - (id)allCredentials;
 - (id)credentialsForProtectionSpace:(id)arg1;
 - (void)dealloc;
@@ -29,6 +31,7 @@
 - (void)setCredential:(id)arg1 forProtectionSpace:(id)arg2 task:(id)arg3;
 - (void)setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2;
 - (void)setDefaultCredential:(id)arg1 forProtectionSpace:(id)arg2 task:(id)arg3;
+- (void)set_useSystemKeychain:(BOOL)arg1;
 
 // Image: /System/Library/PrivateFrameworks/SafariShared.framework/SafariShared
 

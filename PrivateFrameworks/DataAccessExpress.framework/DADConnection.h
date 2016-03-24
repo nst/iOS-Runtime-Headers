@@ -15,12 +15,14 @@
     NSMutableDictionary *_inFlightShareRequests;
     NSObject<OS_dispatch_queue> *_muckingWithConn;
     NSObject<OS_dispatch_queue> *_muckingWithInFlightCollections;
+    BOOL _registered;
     id /* block */ _statusReportBlock;
 }
 
+@property (nonatomic) BOOL registered;
+
 + (void)setShouldIgnoreAccountChanges;
 + (id)sharedConnection;
-+ (id)sharedConnectionIfServerIsRunning;
 
 - (void).cxx_destruct;
 - (void)_calendarAvailabilityRequestFinished:(id)arg1;
@@ -41,7 +43,6 @@
 - (void)_oofSettingsRequestsFinished:(id)arg1;
 - (BOOL)_performOofSettingsRequest:(id)arg1 forAccountWithID:(id)arg2 forUpdate:(BOOL)arg3;
 - (void)_policyKeyChanged:(id)arg1;
-- (void)_reallyRegisterForInterrogation;
 - (void)_registerForAppResumedNotification;
 - (void)_requestDaemonChangeAgentMonitoringStatus:(BOOL)arg1 waitForReply:(BOOL)arg2;
 - (void)_requestDaemonStopMonitoringAgents_Sync;
@@ -70,7 +71,9 @@
 - (BOOL)performServerContactsSearch:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)processFolderChange:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)processMeetingRequests:(id)arg1 deliveryIdsToClear:(id)arg2 deliveryIdsToSoftClear:(id)arg3 inFolderWithId:(id)arg4 forAccountWithId:(id)arg5;
+- (void)reallyRegisterForInterrogation;
 - (BOOL)registerForInterrogationWithBlock:(id /* block */)arg1;
+- (BOOL)registered;
 - (void)removeStoresForAccountWithID:(id)arg1;
 - (void)reportFolderItemsSyncSuccess:(BOOL)arg1 forFolderWithID:(id)arg2 withItemsCount:(unsigned int)arg3 andAccountWithID:(id)arg4;
 - (id)requestCalendarAvailabilityWithAccountID:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 ignoredEventID:(id)arg4 addresses:(id)arg5 resultsBlock:(id /* block */)arg6 completionBlock:(id /* block */)arg7;
@@ -84,6 +87,7 @@
 - (BOOL)resumeWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (BOOL)retrieveOofSettingsRequest:(id)arg1 forAccountWithID:(id)arg2;
 - (BOOL)setFolderIdsThatExternalClientsCareAboutAdded:(id)arg1 deleted:(id)arg2 foldersTag:(id)arg3 forAccountID:(id)arg4;
+- (void)setRegistered:(BOOL)arg1;
 - (id)statusReports;
 - (BOOL)stopWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;
 - (BOOL)suspendWatchingFoldersWithKeys:(id)arg1 forAccountID:(id)arg2;

@@ -51,7 +51,10 @@
 @property (nonatomic, retain) UIColor *thumbTintColor;
 @property (nonatomic) float value;
 
++ (BOOL)_allowActionsToQueue;
+
 - (void).cxx_destruct;
+- (id)__distributionStatisticsForUserInteractionDuration;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_buildTrackArtwork;
 - (id)_contentForState:(unsigned int)arg1;

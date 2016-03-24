@@ -14,11 +14,12 @@
 + (id)currentInternalDeviceModel;
 + (id)currentOSBuild;
 + (id)currentOSVersion;
++ (BOOL)hasPairedWatch;
 + (BOOL)isAppleInternalInstall;
++ (BOOL)isAppleWatch;
 + (BOOL)isCoachingEventLoggingEnabled;
 + (BOOL)isCompanionCapable;
 + (BOOL)isDeviceSupported;
-+ (BOOL)isNano;
 + (unsigned long long)totalDiskCapacity;
 
 @end

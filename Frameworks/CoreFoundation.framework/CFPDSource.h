@@ -16,6 +16,7 @@
     unsigned int _lastEuid;
     unsigned int _managed;
     unsigned int _neverCache;
+    struct __CFDictionary { } *_observingConnections;
     int _owner;
     const char *_pathToTemporaryFileToWriteTo;
     struct __CFArray { } *_pendingChangesQueue;
@@ -26,17 +27,19 @@
     unsigned int _unusedBits;
     struct __CFString { } *_userName;
     unsigned int _waitingForDeviceUnlock;
+    unsigned int _watchingParentDirectory;
 }
 
 + (void)synchronousWithSourceCache:(id /* block */)arg1;
 + (void)withSourceCache:(id /* block */)arg1;
-+ (void)withSourceForDomain:(struct __CFString { }*)arg1 inContainer:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 byHost:(BOOL)arg4 managed:(BOOL)arg5 synchronously:(BOOL)arg6 perform:(id /* block */)arg7;
++ (void)withSourceForDomain:(struct __CFString { }*)arg1 inContainer:(struct __CFString { }*)arg2 user:(struct __CFString { }*)arg3 byHost:(BOOL)arg4 managed:(BOOL)arg5 cloudStoreEntitlement:(id)arg6 cloudConfigurationPath:(struct __CFString { }*)arg7 synchronously:(BOOL)arg8 perform:(id /* block */)arg9;
 
 - (unsigned char)_backingPlistChangedSinceLastSync:(unsigned long long*)arg1;
 - (void)_writeToDisk:(BOOL)arg1;
 - (BOOL)acceptLocalMessage:(id)arg1 withReply:(struct __CFDictionary { }*)arg2 inode:(unsigned long long*)arg3;
 - (id)acceptMessage:(id)arg1;
 - (void)addOwner:(id)arg1;
+- (void)asyncNotifyObserversOfChanges;
 - (void)asyncWriteToDisk;
 - (void)attachSizeWarningsToReply:(id)arg1 forByteCount:(unsigned long)arg2;
 - (void)beginHandlingRequest;
@@ -46,8 +49,10 @@
 - (void)cacheActualPathCreatingIfNecessary:(BOOL)arg1 euid:(unsigned int)arg2 egid:(unsigned int)arg3;
 - (void)clearCache;
 - (BOOL)clearCacheIfStale:(unsigned long long*)arg1;
+- (struct __CFString { }*)cloudConfigurationPath;
 - (struct __CFString { }*)container;
-- (void)corruptedPlistFileDetected;
+- (id)copyPropertyList;
+- (id)copyPropertyListWithoutDrainingPendingChanges;
 - (void)dealloc;
 - (struct __CFString { }*)debugDump;
 - (id)description;
@@ -70,13 +75,13 @@
 - (void)lockedSync:(id /* block */)arg1;
 - (BOOL)managed;
 - (void)markNeedsToReloadFromDiskDueToFailedWrite;
-- (id)propertyList;
-- (id)propertyListWithoutDrainingPendingChanges;
 - (void)removeOwner;
 - (void)setDirty:(BOOL)arg1;
+- (void)setObserved:(BOOL)arg1 bySenderOfMessage:(id)arg2;
 - (void)setPlist:(id)arg1;
 - (short)shmemIndex;
 - (BOOL)shouldBePurgable;
+- (void)stopObservingProcess:(int)arg1;
 - (void)syncWriteToDisk;
 - (void)syncWriteToDiskAndFlushCache;
 - (void)transitionToMultiOwner;

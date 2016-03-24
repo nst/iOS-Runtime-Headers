@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBProcessManager : NSObject <FBApplicationProcessDelegate, FBApplicationProcessObserver> {
+@interface FBProcessManager : NSObject <FBApplicationProcessDelegate, FBApplicationProcessObserver, FBUIProcessManagerInternal> {
     NSObject<OS_dispatch_queue> *_callOutQueue;
     FBApplicationProcessWatchdogPolicy *_defaultWatchdogPolicy;
     FBApplicationProcess *_foregroundAppProcess;
@@ -16,6 +16,7 @@
     BKSProcessAssertion *_systemAppProcessAssertion;
     int _workspaceLocked;
     int _workspaceLockedToken;
+    NSMutableDictionary *_workspacesByClientIdentity;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -47,9 +48,11 @@
 - (id)applicationProcessesForBundleIdentifier:(id)arg1;
 - (id)createApplicationProcessForBundleID:(id)arg1;
 - (id)createApplicationProcessForBundleID:(id)arg1 withExecutionContext:(id)arg2;
+- (id)currentProcess;
 - (void)dealloc;
 - (id)description;
 - (id)init;
+- (void)invalidateClientWorkspace:(id)arg1;
 - (void)noteProcess:(id)arg1 didUpdateState:(id)arg2;
 - (void)noteProcessDidExit:(id)arg1;
 - (BOOL)ping;
@@ -58,5 +61,6 @@
 - (void)removeObserver:(id)arg1;
 - (id)systemApplicationProcess;
 - (double)watchdogIntervalForProcess:(id)arg1 eventContext:(struct { int x1; id x2; })arg2;
+- (id)workspaceForSceneClientWithIdentity:(id)arg1;
 
 @end

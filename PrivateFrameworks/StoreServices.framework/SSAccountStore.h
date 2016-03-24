@@ -24,6 +24,7 @@
 + (void)setDefaultStore:(id)arg1;
 + (double)tokenExpirationInterval;
 
+- (id)_accountsFromDaemon;
 - (void)_dispatchAsync:(id /* block */)arg1;
 - (void)_dispatchSync:(id /* block */)arg1;
 - (id)_keyValueStore;
@@ -44,6 +45,7 @@
 - (void)reloadAccounts;
 - (void)resetExpiration;
 - (void)resetExpirationForTokenType:(int)arg1;
+- (BOOL)sdk_hasActiveLockerAccount;
 - (void)setAccountCredits:(id)arg1 forAccountWithUniqueIdentifier:(id)arg2;
 - (id)setActiveAccount:(id)arg1;
 - (id)setActiveLockerAccount:(id)arg1;

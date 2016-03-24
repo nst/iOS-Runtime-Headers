@@ -26,6 +26,7 @@
 @property (retain) NSMutableArray *notificationBlocks;
 @property (readonly) Class superclass;
 
++ (id)allArchivePaths;
 + (id)archiveEntriesFinished;
 + (id)archiveEntriesUnfinished;
 + (id)archiveEntriesWithComparisons:(id)arg1;

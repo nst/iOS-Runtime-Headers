@@ -4,6 +4,7 @@
 
 @interface PLManagedAsset : PLManagedObject <PLMomentAssetData_Private, UIActivityItemSource, _PLImageLoadingAsset> {
     CLLocation *_cachedLocation;
+    BOOL _deleteReasonExists;
     BOOL _didLoadReverseGeo;
     BOOL _didPrepareForDeletion;
     BOOL _disableDupeAnalysis;
@@ -58,14 +59,12 @@
 @property (nonatomic) BOOL cloudIsMyAsset;
 @property (nonatomic, retain) NSDate *cloudLastViewedCommentDate;
 @property (nonatomic) short cloudLocalState;
-@property (nonatomic, retain) PLCloudMaster *cloudMaster;
 @property (nonatomic, readonly) NSString *cloudOwnerEmail;
 @property (nonatomic, readonly) NSString *cloudOwnerFirstName;
 @property (nonatomic, readonly) NSString *cloudOwnerFullName;
 @property (nonatomic, retain) NSString *cloudOwnerHashedPersonID;
 @property (nonatomic, readonly) NSString *cloudOwnerLastName;
 @property (nonatomic) short cloudPlaceholderKind;
-@property (nonatomic, retain) NSSet *cloudResources;
 @property (nonatomic, retain) NSDate *cloudServerPublishDate;
 @property (nonatomic, readonly) <PLCloudSharedAlbumProtocol> *cloudShareAlbum;
 @property (nonatomic) BOOL complete;
@@ -116,6 +115,7 @@
 @property (nonatomic, readonly) BOOL isAudio;
 @property (nonatomic, readonly) BOOL isCloudPhotoLibraryAsset;
 @property (nonatomic, readonly) BOOL isCloudSharedAsset;
+@property (nonatomic, readonly) BOOL isColorAware;
 @property (nonatomic, readonly) BOOL isHDVideo;
 @property (nonatomic) BOOL isInFlight;
 @property (nonatomic, readonly) BOOL isJPEG;
@@ -137,6 +137,7 @@
 @property (nonatomic) int locationHash;
 @property (nonatomic, retain) NSString *longDescription;
 @property (nonatomic, readonly, copy) NSURL *mainFileURL;
+@property (nonatomic, retain) PLCloudMaster *master;
 @property (nonatomic, retain) NSString *mediaGroupUUID;
 @property (nonatomic, retain) NSDate *modificationDate;
 @property (nonatomic, retain) PLMoment *moment;
@@ -144,6 +145,7 @@
 @property (nonatomic) short orientation;
 @property (nonatomic, retain) PLManagedAsset *originalAsset;
 @property (nonatomic, retain) NSString *originalAssetsUUID;
+@property (nonatomic, retain) NSString *originalColorSpace;
 @property (nonatomic, retain) NSString *originalFilename;
 @property (nonatomic) int originalFilesize;
 @property (nonatomic, retain) NSData *originalHash;
@@ -169,6 +171,7 @@
 @property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } photoIrisVideoDuration;
 @property (nonatomic, retain) NSData *placeAnnotationData;
 @property (nonatomic, retain) NSString *publicGlobalUUID;
+@property (nonatomic, retain) NSSet *resources;
 @property (nonatomic, retain) NSData *reverseLocationData;
 @property (nonatomic) BOOL reverseLocationDataIsValid;
 @property (nonatomic) short savedAssetType;
@@ -212,9 +215,7 @@
 + (id)_placeAnnotationFromAnnotationData:(id)arg1;
 + (id)_ptpCalendar;
 + (id)_ptpEventInfoIsolationQueue;
-+ (id)_supportedAssetTypesForUpload;
 + (id)abbreviatedMetadataDirectoryForDirectory:(id)arg1;
-+ (int)adjustmentBaseVersionFromImageFormat:(int)arg1;
 + (int)adjustmentBaseVersionFromPFAdjustmentsBaseVersion:(int)arg1;
 + (id)allCloudSharedAssetsInLibrary:(id)arg1;
 + (id)assetBaseFilenameForAdjustmentFilePath:(id)arg1;
@@ -237,6 +238,7 @@
 + (id)bestCreationDateForAssetAtURL:(id)arg1 modificationDate:(id*)arg2 creationDateString:(id*)arg3;
 + (id)cloudAssetsInLibrary:(id)arg1;
 + (id)cloudSharedAssetsWithGUIDs:(id)arg1 inLibrary:(id)arg2;
++ (id)colorSpaceNameFromURL:(id)arg1;
 + (id)convertKey:(unsigned long)arg1 toBases:(id)arg2;
 + (unsigned int)countUsedAssetsWithKind:(short)arg1 excludeTrashed:(BOOL)arg2 excludeInvisible:(BOOL)arg3 excludeCloudShared:(BOOL)arg4 inManagedObjectContext:(id)arg5;
 + (id)createCloudPhotoLibraryAssetWithAssetRecord:(id)arg1 withCloudMaster:(id)arg2 inLibrary:(id)arg3;
@@ -254,17 +256,12 @@
 + (id)extensionForLargeThumbnailFile;
 + (id)extensionForMediumThumbnailFile;
 + (void)extractDirectory:(id*)arg1 andFilename:(id*)arg2 fromMainFileURL:(id)arg3;
-+ (int)feedEntryThumbnailFormat;
 + (id)fetchPredicateForLegacyRequiredResourcesLocallyAvailable;
 + (id)fileURLFromAssetURL:(id)arg1 photoLibrary:(id)arg2;
 + (void)fixupCloudPhotoLibraryAsset:(id)arg1 withCloudMaster:(id)arg2 inLibrary:(id)arg3;
-+ (int)formatForThumbnailGeneration;
 + (int)fullSizeImageFormat;
 + (BOOL)guaranteedFlashOffForAssetAtURL:(id)arg1;
-+ (int)imageFormatFromAdjustmentBaseVersion:(int)arg1;
 + (id)incompleteAssetsInManagedObjectContext:(id)arg1;
-+ (int)indexSheetBakedFormat;
-+ (int)indexSheetUnbakedFormat;
 + (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6;
 + (id)insertAssetIntoPhotoLibrary:(id)arg1 mainFileURL:(id)arg2 savedAssetType:(short)arg3 replacementUUID:(id)arg4 imageSource:(struct CGImageSource {}**)arg5 imageData:(id*)arg6 isPlaceholder:(BOOL)arg7 deleteFileOnFailure:(BOOL)arg8;
 + (id)insertInManagedObjectContext:(id)arg1;
@@ -275,7 +272,6 @@
 + (id)keyPathsForValuesAffectingIsJPEG;
 + (id)keyPathsForValuesAffectingIsPhotoStreamPhoto;
 + (int)landscapeScrubberThumbnailFormat;
-+ (int)largestNonJPEGThumbnailFormat;
 + (id)listOfSyncedProperties;
 + (struct { double x1; double x2; })locationFromAVAsset:(id)arg1;
 + (void)markAssetAsRecentlyUsed:(id)arg1;
@@ -283,10 +279,6 @@
 + (id)newImagePropertiesFromImageSource:(struct CGImageSource { }*)arg1;
 + (id)newLocationDataFromLocation:(id)arg1;
 + (id)newLocationFromLocationData:(id)arg1 timestampIfMissing:(id)arg2;
-+ (unsigned int)numberOfCPLSupportedAssetsOfKind:(short)arg1 inPhotoLibrary:(id)arg2 includingTrashedSinceDate:(id)arg3;
-+ (unsigned int)numberOfCPLSupportedAssetsOfKind:(short)arg1 trashedSinceDate:(id)arg2 inPhotoLibrary:(id)arg3;
-+ (unsigned int)numberOfPushedAssetsInPhotoLibrary:(id)arg1;
-+ (unsigned int)numberOfUnpushedAssetsOfKind:(short)arg1 inPhotoLibrary:(id)arg2;
 + (id)pathAndDateDictionariesForAllIncompleteAssetsInManagedObjectContext:(id)arg1;
 + (id)pathForAdjustmentDirectoryWithMutationsDirectory:(id)arg1;
 + (id)pathForMutationsDirectoryWithDirectory:(id)arg1 filename:(id)arg2;
@@ -295,7 +287,6 @@
 + (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2;
 + (id)photoFromAssetURL:(id)arg1 photoLibrary:(id)arg2 sidecar:(id*)arg3;
 + (int)portraitScrubberThumbnailFormat;
-+ (int)posterThumbnailFormat;
 + (id)predicateForSupportedAssetTypesForUpload;
 + (id)preferredFileExtensionForType:(id)arg1;
 + (id)ptpAssetIDForEventAndFilenameKey:(id)arg1;
@@ -305,16 +296,12 @@
 + (void)resetAssetsForCloudInLibrary:(id)arg1 hardReset:(BOOL)arg2;
 + (struct CGSize { float x1; float x2; })sizeOfImageAtURL:(id)arg1 outOrientation:(short*)arg2;
 + (id)sortedCloudSharedAssetsWithPlaceholderKind:(short)arg1 ascending:(BOOL)arg2 inLibrary:(id)arg3;
-+ (int)thumbnailFormat;
++ (id)supportedAssetTypesForUpload;
 + (unsigned long long)totalSizeOfUnpushedOriginalsInPhotoLibrary:(id)arg1;
 + (id)uniformTypeIdentifierFromPathExtension:(id)arg1 assetType:(short)arg2;
 + (id)uuidFromAssetURL:(id)arg1;
 + (id)uuidFromAssetURL:(id)arg1 fileExtension:(id*)arg2 sidecarIndex:(id*)arg3;
-+ (int)wildcatIndexSheetFormat;
-+ (int)wildcatPhotoScrubberFormat;
-+ (int)wildcatStackFormat;
 
-- (unsigned int)CPLResourceTypeFromImageFormat:(int)arg1;
 - (unsigned int)CPLResourceTypeFromVideoFormat:(int)arg1;
 - (void)_addSidecarFromResource:(id)arg1 inManagedObjectContext:(id)arg2;
 - (void)_appendAssetTextDataToAsset:(id)arg1;
@@ -322,7 +309,9 @@
 - (void)_appendGEODataToAsset:(id)arg1;
 - (void)_appendKeywords:(id)arg1 toAsset:(id)arg2;
 - (void)_appendPersonNamesToAsset:(id)arg1;
+- (void)_applyResourceChangeToCPLAsset:(id)arg1 withIdentifier:(id)arg2 forChangeType:(unsigned int)arg3 shouldGenerateDerivatives:(BOOL)arg4 inLibrary:(id)arg5;
 - (void)_asyncGenerateRenderImageFileWithSize:(struct CGSize { float x1; float x2; })arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 adjustmentDataBlob:(id)arg4 originalImageFilePath:(id)arg5 originalImageEXIFOrientation:(int)arg6 renderedImageFilePath:(id)arg7 completionHandler:(id /* block */)arg8;
+- (id)_availableCloudResourcesForPhotosRequireUnadjusted:(BOOL)arg1;
 - (int)_avalancheTypeFromCplBurstFlags:(unsigned int)arg1;
 - (void)_cleanSubstandardFile;
 - (id)_compactDebugDescription;
@@ -335,10 +324,10 @@
 - (id)_createImageResourceForResourceType:(unsigned int)arg1 withPreviewImagePath:(id)arg2 itemIdentifier:(id)arg3 forMaster:(BOOL)arg4;
 - (id)_createJPEGResourcesFromFullSizeJPEGPath:(id)arg1 withItemIdentifier:(id)arg2 forMaster:(BOOL)arg3;
 - (id)_createJPEGResourcesFromFullSizeJPEGPath:(id)arg1 withItemIdentifier:(id)arg2 forMaster:(BOOL)arg3 forResourceTypes:(id)arg4;
-- (void)_createPhotoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2;
+- (void)_createPhotoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2 shouldGenerateDerivatives:(BOOL)arg3;
 - (void)_createTHMFileWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2;
 - (id)_createVideoResourceFromVideoURL:(id)arg1 withResourceType:(unsigned int)arg2 itemIdentifier:(id)arg3 applyVideoAdjustments:(BOOL)arg4 forMaster:(BOOL)arg5 forPhotoIris:(BOOL)arg6;
-- (void)_createVideoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2;
+- (void)_createVideoResourcesForMaster:(id)arg1 intoMasterResources:(id)arg2 shouldGenerateDerivatives:(BOOL)arg3;
 - (void)_debugPrintAdjustmentState;
 - (id)_generatePosterFrameForVideoAtURL:(id)arg1 withResourceType:(unsigned int)arg2 itemIdentifier:(id)arg3 forMaster:(BOOL)arg4;
 - (id)_generateVideoResourcesFromURL:(id)arg1 withIdentifier:(id)arg2 shouldGenerateVideoDerivatives:(BOOL)arg3 forMaster:(BOOL)arg4;
@@ -351,6 +340,8 @@
 - (id)_highDynamicRangeTypeDescription;
 - (id)_imageDataForThumbGeneration;
 - (id)_insertResource:(id)arg1 forOtherDuplicatedAssetInMaster:(id)arg2 inPhotoLibrary:(id)arg3;
+- (BOOL)_isAdjustedResourceAvailableForResourceType:(unsigned int)arg1 outResource:(id*)arg2;
+- (BOOL)_isMasterResourceAvailableForResourceType:(unsigned int)arg1 outResource:(id*)arg2;
 - (BOOL)_isResourceAvailableForResourceType:(unsigned int)arg1 outResource:(id*)arg2;
 - (BOOL)_isResourceType:(unsigned int)arg1 inResources:(id)arg2;
 - (BOOL)_isSavedAssetTypeValid:(short)arg1;
@@ -371,7 +362,7 @@
 - (id)_savedAssetTypeDescription;
 - (id)_searchDataCreateIfNeeded;
 - (id)_serializedPropertyDataFromFilter:(id)arg1;
-- (void)_setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 isSubstandardRender:(BOOL)arg8 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg9 shouldUpdateAttributes:(BOOL)arg10 useSecureMove:(BOOL)arg11 removeFileOnSuccess:(BOOL)arg12 inManagedObjectContext:(id)arg13;
+- (void)_setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 isSubstandardRender:(BOOL)arg8 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg9 useSecureMove:(BOOL)arg10 removeFileOnSuccess:(BOOL)arg11 inManagedObjectContext:(id)arg12;
 - (BOOL)_setDefaultSlowMotionAdjustments;
 - (void)_setLocationFromCoordinate:(struct { double x1; double x2; })arg1;
 - (void)_setVideoComplementData:(id)arg1;
@@ -401,7 +392,6 @@
 - (void)applyPropertiesChangeToCPLAssetChange:(id)arg1 withMasterID:(id)arg2 inLibrary:(id)arg3;
 - (void)applyPropertiesFromAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)applyPropertiesFromCloudMaster:(id)arg1;
-- (void)applyResourceChangeToCPLAsset:(id)arg1 withIdentifier:(id)arg2 forChangeType:(unsigned int)arg3 inLibrary:(id)arg4;
 - (void)applyResourcesFromAssetChange:(id)arg1 inLibrary:(id)arg2;
 - (void)applyTrashedState:(short)arg1;
 - (double)aspectRatio;
@@ -409,6 +399,8 @@
 - (id)assetURLForSidecarFile:(id)arg1;
 - (id)assetURLWithExtension:(id)arg1;
 - (id)assetsLibraryURL;
+- (id)availableAdjustedCloudResourcesForPhotos;
+- (id)availableUnadjustedCloudResourcesForPhotos;
 - (id)avalanchePickDescription;
 - (BOOL)avalanchePickTypeIsVisible;
 - (void)awakeFromFetch;
@@ -420,34 +412,31 @@
 - (id)cachedNonPersistedVideoPlaybackURL;
 - (id)cachedNonPersistedVideoPlaybackURLError;
 - (id)cachedNonPersistedVideoPlaybackURLExpiration;
-- (id)calculateReturnPathForForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
 - (id)cameraMake;
 - (BOOL)canMoveToTrash;
 - (BOOL)canPerformEditOperation:(unsigned int)arg1;
 - (int)cloudCommentsStatusForOwnedAsset:(BOOL)arg1;
 - (BOOL)cloudHasSameOwnerAsAsset:(id)arg1;
-- (id)cloudMaster;
 - (id)cloudOwnerEmail;
 - (id)cloudOwnerFirstName;
 - (id)cloudOwnerFullName;
 - (id)cloudOwnerLastName;
 - (id)cloudResourceForResourceType:(unsigned int)arg1;
-- (id)cloudResources;
 - (id)cloudShareAlbum;
 - (int)cloudSharedAssetPlaceholderKind;
 - (int)compareToAsset:(id)arg1;
 - (BOOL)couldBeStoredInDCIM;
-- (id)cplAssetChangeWithMasterID:(id)arg1 withChangeType:(unsigned int)arg2 inLibrary:(id)arg3;
+- (id)cplAssetChangeWithMasterID:(id)arg1 withChangeType:(unsigned int)arg2 shouldGenerateDerivatives:(BOOL)arg3 inLibrary:(id)arg4;
 - (unsigned int)cplAssetSubtypeFromPLAssetSubtype:(short)arg1;
 - (unsigned int)cplBurstFlagsFromPLAvalancheType:(int)arg1;
-- (id)cplMasterChangeInLibrary:(id)arg1 forceUpdateForVideo:(BOOL)arg2;
+- (id)cplMasterChangeInLibrary:(id)arg1 forceUpdateForVideo:(BOOL)arg2 shouldGenerateDerivatives:(BOOL)arg3;
 - (id)cplRelationsForAssetInLibrary:(id)arg1;
 - (id)cplResourceForResourceType:(unsigned int)arg1;
 - (void)createMasterIfNecessaryInLibrary:(id)arg1;
 - (void)createMasterResourcesIn:(id)arg1 inManagedObjectContext:(id)arg2;
 - (BOOL)createNewResourcesIn:(id)arg1 inManagedObjectContext:(id)arg2;
-- (id)createResourcesForAssetInPhotoLibrary:(id)arg1;
-- (id)createResourcesForMaster:(id)arg1 inPhotoLibrary:(id)arg2;
+- (id)createResourcesForAssetInPhotoLibrary:(id)arg1 shouldGenerateDerivatives:(BOOL)arg2;
+- (id)createResourcesForMaster:(id)arg1 shouldGenerateDerivatives:(BOOL)arg2 inPhotoLibrary:(id)arg3;
 - (id)creatorBundleID;
 - (id)customCollectionName;
 - (id)customCollectionUUID;
@@ -498,9 +487,9 @@
 - (id)fileURLForPrebakedPortraitScrubberThumbnails;
 - (id)fileURLForThumbnailFile;
 - (id)filteredImage:(id)arg1 withCIContext:(id)arg2;
-- (void)generateAndUpdateThumbnailsWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2 fromImageSource:(struct CGImageSource { }*)arg3 imageData:(id)arg4 thumbnailDataByFormatID:(struct __CFDictionary { }*)arg5 updateExistingLargePreview:(BOOL)arg6;
+- (void)generateAndUpdateThumbnailsWithPreviewImage:(id)arg1 thumbnailImage:(id)arg2 fromImageSource:(struct CGImageSource { }*)arg3 imageData:(id)arg4 thumbnailDataByFormatID:(struct __CFDictionary { }*)arg5 updateExistingLargePreview:(BOOL)arg6 forceSRGBConversion:(BOOL)arg7;
 - (void)generateLargeThumbnailFileIfNecessary;
-- (void)generateThumbnailsWithImageSource:(struct CGImageSource { }*)arg1 imageData:(id)arg2 updateExistingLargePreview:(BOOL)arg3 allowMediumPreview:(BOOL)arg4 outSmallThumbnail:(id*)arg5 outLargeThumbnail:(id*)arg6;
+- (void)generateThumbnailsWithImageSource:(struct CGImageSource { }*)arg1 imageData:(id)arg2 updateExistingLargePreview:(BOOL)arg3 allowMediumPreview:(BOOL)arg4 forceSRGBConversion:(BOOL)arg5 outSmallThumbnail:(id*)arg6 outLargeThumbnail:(id*)arg7;
 - (void)getFileURL:(id*)arg1 originalFilename:(id*)arg2 uti:(id*)arg3 forSidecarMatchingUTI:(id)arg4 requireExactMatch:(BOOL)arg5;
 - (void)getSearchIndexContents:(id)arg1 dateFormatter:(id)arg2 keywords:(id)arg3;
 - (id)globalUUID;
@@ -530,6 +519,7 @@
 - (BOOL)isCloudPhotoLibraryAsset;
 - (BOOL)isCloudPlaceholder;
 - (BOOL)isCloudSharedAsset;
+- (BOOL)isColorAware;
 - (BOOL)isDeletableFromAssetsLibrary;
 - (BOOL)isEditable;
 - (BOOL)isEditableFromAssetsLibrary;
@@ -544,6 +534,7 @@
 - (BOOL)isLocatedAtCoordinates:(struct { double x1; double x2; })arg1;
 - (BOOL)isLocatedAtHome;
 - (BOOL)isMogul;
+- (BOOL)isOriginalSRGB;
 - (BOOL)isPanorama;
 - (BOOL)isPartOfBurst;
 - (BOOL)isPhoto;
@@ -589,6 +580,7 @@
 - (id)nonAdjustedPathForCPLResourceType:(unsigned int)arg1;
 - (id)originalAsset;
 - (id)originalAssetsUUID;
+- (id)originalColorSpace;
 - (id)originalFilename;
 - (int)originalFilesize;
 - (id)originalHash;
@@ -633,6 +625,7 @@
 - (id)pathForPrebakedLandscapeScrubberThumbnails;
 - (id)pathForPrebakedPortraitScrubberThumbnails;
 - (id)pathForPrebakedWildcatThumbnailsFile;
+- (id)pathForSRGBLargeThumbnailFile;
 - (id)pathForSideCarImageFile;
 - (id)pathForSubstandardFullsizeRenderImageFile;
 - (id)pathForTrimmedVideoFile;
@@ -652,14 +645,13 @@
 - (id)publicGlobalUUID;
 - (void)registerForChanges;
 - (void)removeLegacyAdjustments;
-- (id)reservedPathForLargeDisplayableImageFileForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
 - (id)reverseGeoDescription;
 - (id)reverseLocationData;
 - (BOOL)reverseLocationDataIsValid;
 - (void)revertToOriginal;
 - (id)searchCategoryData;
 - (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7;
-- (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 isSubstandardRender:(BOOL)arg8 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg9 shouldUpdateAttributes:(BOOL)arg10 inManagedObjectContext:(id)arg11;
+- (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 isSubstandardRender:(BOOL)arg8 fullSizeRenderSize:(struct CGSize { float x1; float x2; })arg9 inManagedObjectContext:(id)arg10;
 - (void)setAdjustmentDataBlob:(id)arg1 formatIdentifier:(id)arg2 formatVersion:(id)arg3 baseVersion:(int)arg4 editorBundleID:(id)arg5 renderedContentURL:(id)arg6 penultimateRenderedJPEGData:(id)arg7 useSecureMove:(BOOL)arg8;
 - (BOOL)setAttributesFromMainFileURL:(id)arg1 fullSizeRenderURL:(id)arg2 savedAssetType:(short)arg3 isPlaceholder:(BOOL)arg4 overwriteOriginalProperties:(BOOL)arg5 imageSource:(struct CGImageSource {}**)arg6 imageData:(id*)arg7;
 - (void)setCachedLocation:(id)arg1;
@@ -667,8 +659,6 @@
 - (void)setCachedNonPersistedVideoPlaybackURLError:(id)arg1;
 - (void)setCachedNonPersistedVideoPlaybackURLExpiration:(id)arg1;
 - (BOOL)setCameraCaptureDeviceFromImageProperties:(id)arg1;
-- (void)setCloudMaster:(id)arg1;
-- (void)setCloudResources:(id)arg1;
 - (void)setCreatorBundleID:(id)arg1;
 - (void)setCustomCollectionName:(id)arg1;
 - (void)setCustomCollectionUUID:(id)arg1;
@@ -704,6 +694,7 @@
 - (void)setNeedsMomentUpdate:(BOOL)arg1;
 - (void)setOriginalAsset:(id)arg1;
 - (void)setOriginalAssetsUUID:(id)arg1;
+- (void)setOriginalColorSpace:(id)arg1;
 - (void)setOriginalFilename:(id)arg1;
 - (void)setOriginalFilesize:(int)arg1;
 - (void)setOriginalHash:(id)arg1;

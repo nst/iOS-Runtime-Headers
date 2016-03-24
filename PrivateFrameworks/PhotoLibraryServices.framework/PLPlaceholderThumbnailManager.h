@@ -10,8 +10,8 @@
 
 + (id)sharedManager;
 
-- (id)_cacheKeyForFormat:(int)arg1 photoImageSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)_placeholderImageForFormat:(int)arg1;
+- (id)_cacheKeyForFormat:(id)arg1 photoImageSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)_placeholderImage;
 - (void)dealloc;
 - (id)init;
 - (id)newPlaceholderImageForFormat:(int)arg1 photoImageSize:(struct CGSize { float x1; float x2; })arg2;

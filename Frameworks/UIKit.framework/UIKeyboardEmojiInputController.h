@@ -3,11 +3,7 @@
  */
 
 @interface UIKeyboardEmojiInputController : NSObject {
-    int _currentSequence;
     UIKeyboardEmojiCategory *_lastViewedCategory;
-    NSMutableArray *_recents;
-    NSMutableDictionary *_skinToneBaseKeyPreferences;
-    NSMutableDictionary *_usageHistory;
 }
 
 @property UIKeyboardEmojiCategory *lastViewedCategory;
@@ -17,17 +13,11 @@
 + (void)writeEmojiDefaults;
 + (void)writeEmojiDefaultsAndReleaseActiveInputView;
 
-- (void)clearAncientHistory;
-- (void)dealloc;
-- (id)defaultsDictionary;
 - (void)emojiUsed:(id)arg1;
 - (id)initWithInputView:(id)arg1;
-- (BOOL)isAncientSequence:(int)arg1;
 - (id)lastViewedCategory;
 - (int)lastVisibleFirstEmojiIndexforCategory:(id)arg1;
 - (id)recents;
-- (double)scoreForEmoji:(id)arg1;
-- (double)scoreForSequence:(int)arg1;
 - (void)setLastViewedCategory:(id)arg1;
 - (id)skinToneBaseKeyPreferences;
 - (void)updateSkinToneBaseKey:(id)arg1 variantUsed:(id)arg2;

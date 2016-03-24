@@ -25,6 +25,7 @@
 - (void).cxx_destruct;
 - (void)_queue_deliverUpdatedStatistics:(id)arg1 error:(id)arg2;
 - (void)_queue_fetchAndDeliverAllStatisticsInitial:(BOOL)arg1;
+- (id)_queue_fetchStatisticsArrayWithError:(id*)arg1;
 - (BOOL)_queue_objectIsRelevant:(id)arg1;
 - (void)_queue_start;
 - (void)_queue_updateStatistics;
@@ -34,7 +35,7 @@
 - (id)anchorDate;
 - (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 healthDaemon:(id)arg6;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
-- (void)samplesOfTypeWereRemoved:(id)arg1 anchor:(id)arg2;
+- (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (unsigned int)statisticsOptions;
 
 @end

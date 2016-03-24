@@ -20,6 +20,8 @@
 @property (getter=isReady, readonly) BOOL ready;
 @property double threadPriority;
 
+// Image: /System/Library/Frameworks/Foundation.framework/Foundation
+
 + (BOOL)automaticallyNotifiesObserversForKey:(id)arg1;
 + (id)currentOperation;
 
@@ -58,5 +60,13 @@
 - (double)threadPriority;
 - (void)waitUntilFinished;
 - (void)waitUntilFinishedOrTimeout:(double)arg1;
+
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
+- (void)cat_addDependencies:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
+
+- (void)addCompletionBlock:(id /* block */)arg1;
 
 @end

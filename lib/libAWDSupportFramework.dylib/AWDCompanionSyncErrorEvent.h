@@ -23,12 +23,14 @@
 @property (nonatomic, retain) NSString *service;
 @property (nonatomic) unsigned long long timestamp;
 
+- (int)StringAsError:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)error;
+- (id)errorAsString:(int)arg1;
 - (BOOL)hasError;
 - (BOOL)hasSequenceNumber;
 - (BOOL)hasService;

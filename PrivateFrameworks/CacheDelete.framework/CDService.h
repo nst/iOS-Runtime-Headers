@@ -9,6 +9,8 @@
     BOOL _doesPeriodic;
     BOOL _doesPurge;
     NSXPCListenerEndpoint *_endpoint;
+    BOOL _multiUserOnly;
+    BOOL _noQuota;
     BOOL _userAgent;
     NSXPCConnection *_xpcConn;
 }
@@ -19,6 +21,8 @@
 @property BOOL doesPeriodic;
 @property BOOL doesPurge;
 @property (nonatomic, retain) NSXPCListenerEndpoint *endpoint;
+@property BOOL multiUserOnly;
+@property BOOL noQuota;
 @property BOOL userAgent;
 @property (nonatomic, retain) NSXPCConnection *xpcConn;
 
@@ -29,12 +33,16 @@
 - (BOOL)doesPeriodic;
 - (BOOL)doesPurge;
 - (id)endpoint;
+- (BOOL)multiUserOnly;
+- (BOOL)noQuota;
 - (void)setDesiredNotifications:(id)arg1;
 - (void)setDoNotQuery:(BOOL)arg1;
 - (void)setDoesPeriodic:(BOOL)arg1;
 - (void)setDoesPurge:(BOOL)arg1;
 - (void)setEndpoint:(id)arg1;
 - (void)setID:(id)arg1;
+- (void)setMultiUserOnly:(BOOL)arg1;
+- (void)setNoQuota:(BOOL)arg1;
 - (void)setUserAgent:(BOOL)arg1;
 - (void)setXpcConn:(id)arg1;
 - (BOOL)userAgent;

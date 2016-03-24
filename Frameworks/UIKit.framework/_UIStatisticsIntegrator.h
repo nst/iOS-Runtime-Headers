@@ -7,6 +7,7 @@
 }
 
 + (void)createSharedInstanceIfNecessary;
++ (void)setSharedInstance:(id)arg1;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;

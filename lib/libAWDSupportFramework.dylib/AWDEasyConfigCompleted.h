@@ -129,6 +129,8 @@
 @property (nonatomic) int wifiJoinDestinationAPError;
 @property (nonatomic) int wifiJoinSWAPError;
 
++ (Class)eaProtocolStringsType;
+
 - (void)addEaProtocolStrings:(id)arg1;
 - (BOOL)adminPasswordSet;
 - (unsigned int)channelOfDestinationAP;

@@ -10,11 +10,14 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly, copy) NSString *hostApp;
 @property (nonatomic, readonly) SKUIJSAppleAccount *primaryAppleAccount;
+@property (nonatomic, readonly) SKUIJSRestrictions *restrictions;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (void)_finishPurchaseForOptions:(id)arg1 purchaseResponse:(id)arg2;
+- (id)_millisecondsFromTimeInterval:(double)arg1;
 - (void)_purchaseRequestDidSucceedNotification:(id)arg1;
 - (int)applicationIconBadgeNumber;
 - (void)approveInPerson:(id)arg1 :(id)arg2;
@@ -30,7 +33,9 @@
 - (void)getAdminStatus:(id)arg1 :(id)arg2;
 - (void)getBookSample:(id)arg1;
 - (void)getProfilePermissions:(id)arg1 :(id)arg2;
+- (id)hostApp;
 - (id)initWithAppContext:(id)arg1 clientContext:(id)arg2;
+- (void)isRemovedSystemApp:(id)arg1 :(id)arg2;
 - (void)itemStateCenterMediaLibrariesDidChange:(id)arg1;
 - (void)launchICloudFamilySettings;
 - (void)loadGratisContent:(id)arg1;
@@ -38,6 +43,8 @@
 - (id)primaryAppleAccount;
 - (void)resetStateForActiveDocument;
 - (BOOL)resourceExists:(id)arg1;
+- (void)restoreRemovedSystemApp:(id)arg1 :(id)arg2;
+- (id)restrictions;
 - (void)sendApplicationDidEnterBackground;
 - (void)sendApplicationWillEnterForeground;
 - (void)sendOnPageResponseWithDocument:(id)arg1 data:(id)arg2 URLResponse:(id)arg3 performanceMetrics:(id)arg4;

@@ -17,6 +17,7 @@
     GEORouteAttributes *_routeAttributes;
     GEORouteMatch *_routeMatch;
     GEORouteSummaryAttributes *_routeSummaryAttributes;
+    BOOL _shouldUpdateTrafficOnRoute;
     BOOL _shouldUseConditionalRequest;
     GEOLocation *_userLocation;
 }
@@ -30,6 +31,7 @@
 @property (nonatomic, retain) GEOComposedRoute *route;
 @property (nonatomic, retain) GEORouteAttributes *routeAttributes;
 @property (nonatomic, retain) GEORouteMatch *routeMatch;
+@property (nonatomic) BOOL shouldUpdateTrafficOnRoute;
 @property (nonatomic) BOOL shouldUseConditionalRequest;
 @property (nonatomic, retain) GEOLocation *userLocation;
 
@@ -73,8 +75,10 @@
 - (void)setRoute:(id)arg1;
 - (void)setRouteAttributes:(id)arg1;
 - (void)setRouteMatch:(id)arg1;
+- (void)setShouldUpdateTrafficOnRoute:(BOOL)arg1;
 - (void)setShouldUseConditionalRequest:(BOOL)arg1;
 - (void)setUserLocation:(id)arg1;
+- (BOOL)shouldUpdateTrafficOnRoute;
 - (BOOL)shouldUseConditionalRequest;
 - (void)startUpdateRequests;
 - (void)stopUpdateRequests;

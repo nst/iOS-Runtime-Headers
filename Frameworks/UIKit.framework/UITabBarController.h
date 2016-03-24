@@ -82,6 +82,7 @@
 - (id)_animator;
 - (id)_backdropBarGroupName;
 - (id)_backdropGroupName;
+- (id)_childViewControllerForWhitePointAdaptivityStyle;
 - (void)_configureTargetActionForTabBarItem:(id)arg1;
 - (id)_customAnimatorForFromViewController:(id)arg1 toViewController:(id)arg2;
 - (id)_customInteractionControllerForAnimator:(id)arg1;
@@ -141,7 +142,6 @@
 - (BOOL)_shouldAdjustContentViewFrameForOffscreenFocus:(id)arg1 adjustedTabBarFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)_shouldPersistViewWhenCoding;
 - (BOOL)_shouldSynthesizeSupportedOrientations;
-- (BOOL)_shouldUpdateFocusInContext:(id)arg1 position:(int)arg2 heading:(unsigned int)arg3;
 - (BOOL)_shouldUseOnePartRotation;
 - (void)_showBarWithTransition:(int)arg1 isExplicit:(BOOL)arg2;
 - (void)_tabBarItemClicked:(id)arg1;

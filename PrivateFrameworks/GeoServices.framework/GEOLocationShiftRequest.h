@@ -15,7 +15,6 @@
 
 @property (nonatomic) struct { double x1; double x2; int x3; struct { unsigned int x_4_1_1 : 1; } x4; } pixel;
 
-- (struct { double x1; double x2; })coordinate;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;

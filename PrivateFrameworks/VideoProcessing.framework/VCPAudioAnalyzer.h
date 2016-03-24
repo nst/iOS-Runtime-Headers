@@ -66,7 +66,7 @@
 
 - (void).cxx_destruct;
 - (void)addDetectionFromTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1 toTime:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg2;
-- (id)analyzeAsset:(id)arg1;
+- (long)analyzeAsset:(id)arg1 cancel:(id /* block */)arg2 result:(id*)arg3;
 - (id)audioFormatRequirements;
 - (void)dealloc;
 - (id)init;

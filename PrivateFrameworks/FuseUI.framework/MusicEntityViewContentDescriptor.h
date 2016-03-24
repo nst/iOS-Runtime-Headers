@@ -17,6 +17,8 @@
     BOOL _leftSeparatorInsetFollowsText;
     Class _lockupViewClass;
     float _minimumHeight;
+    float _popularityIndicatorThreshold;
+    UIColor *_popularityIndicatorTintColor;
     int _selectionStyle;
     BOOL _shouldDisableWhenUnplayable;
     BOOL _shouldDisplayProminently;
@@ -32,6 +34,7 @@
     NSString *_wantsDisclosureIndicatorProperty;
     BOOL _wantsDownloadProgress;
     NSString *_wantsPlayButtonProperty;
+    BOOL _wantsPopularityIndicator;
 }
 
 @property (nonatomic, readonly) NSSet *allPropertiesToLoadAsynchronously;
@@ -47,6 +50,8 @@
 @property (nonatomic) BOOL leftSeparatorInsetFollowsText;
 @property (nonatomic, retain) Class lockupViewClass;
 @property (nonatomic) float minimumHeight;
+@property (nonatomic) float popularityIndicatorThreshold;
+@property (nonatomic, retain) UIColor *popularityIndicatorTintColor;
 @property (nonatomic) int selectionStyle;
 @property (nonatomic) BOOL shouldDisableWhenUnplayable;
 @property (nonatomic) BOOL shouldDisplayProminently;
@@ -61,6 +66,7 @@
 @property (nonatomic, copy) NSString *wantsDisclosureIndicatorProperty;
 @property (nonatomic) BOOL wantsDownloadProgress;
 @property (nonatomic, copy) NSString *wantsPlayButtonProperty;
+@property (nonatomic) BOOL wantsPopularityIndicator;
 
 + (Class)tableViewCellClass;
 + (id)tableViewCellReuseIdentifier;
@@ -88,6 +94,8 @@
 - (BOOL)leftSeparatorInsetFollowsText;
 - (Class)lockupViewClass;
 - (float)minimumHeight;
+- (float)popularityIndicatorThreshold;
+- (id)popularityIndicatorTintColor;
 - (int)selectionStyle;
 - (void)setAllowsDeletionWithoutEditingMode:(BOOL)arg1;
 - (void)setArtworkDescriptor:(id)arg1;
@@ -100,6 +108,8 @@
 - (void)setLeftSeparatorInsetFollowsText:(BOOL)arg1;
 - (void)setLockupViewClass:(Class)arg1;
 - (void)setMinimumHeight:(float)arg1;
+- (void)setPopularityIndicatorThreshold:(float)arg1;
+- (void)setPopularityIndicatorTintColor:(id)arg1;
 - (void)setSelectionStyle:(int)arg1;
 - (void)setShouldDisableWhenUnplayable:(BOOL)arg1;
 - (void)setShouldDisplayProminently:(BOOL)arg1;
@@ -114,6 +124,7 @@
 - (void)setWantsDisclosureIndicatorProperty:(id)arg1;
 - (void)setWantsDownloadProgress:(BOOL)arg1;
 - (void)setWantsPlayButtonProperty:(id)arg1;
+- (void)setWantsPopularityIndicator:(BOOL)arg1;
 - (BOOL)shouldDisableWhenUnplayable;
 - (BOOL)shouldDisplayProminently;
 - (BOOL)shouldForceBottomSeparatorVisible;
@@ -131,6 +142,7 @@
 - (id)wantsDisclosureIndicatorProperty;
 - (BOOL)wantsDownloadProgress;
 - (id)wantsPlayButtonProperty;
+- (BOOL)wantsPopularityIndicator;
 - (void)willAddTextDescriptor:(id)arg1;
 - (void)willRemoveTextDescriptor:(id)arg1;
 

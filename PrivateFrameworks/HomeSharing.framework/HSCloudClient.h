@@ -35,6 +35,7 @@
 - (BOOL)canShowCloudMusic;
 - (BOOL)canShowCloudVideo;
 - (void)cancelUpdateJaliscoGeniusDataInProgressWithCompletionHandler:(id /* block */)arg1;
+- (int)cloudAddToPlaylistBehavior;
 - (id)connection;
 - (void)createPlaylistWithPersistentID:(unsigned long long)arg1 properties:(id)arg2 trackList:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)dealloc;
@@ -86,7 +87,11 @@
 - (void)removePlaylistsWithSagaIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetConfiguration:(id)arg1;
 - (void)resignActive;
+- (void)sdk_addStoreItemWithOpaqueID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)sdk_addStoreItemWithOpaqueID:(id)arg1 toPlaylistWithPersistentID:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)sdk_createPlaylistWithPersistentID:(unsigned long long)arg1 properties:(id)arg2 tracklist:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)searchJaliscoAppsLibrary:(id)arg1 searchMethod:(long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)setCloudAddToPlaylistBehavior:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)setCollectionProperties:(id)arg1 forCollectionWithPersistentID:(long long)arg2 groupingType:(int)arg3 completionHandler:(id /* block */)arg4;
 - (void)setDaemonConfiguration:(unsigned long long)arg1;
 - (void)setHidden:(BOOL)arg1 purchasedAppWithStoreID:(id)arg2 completionHandler:(id /* block */)arg3;

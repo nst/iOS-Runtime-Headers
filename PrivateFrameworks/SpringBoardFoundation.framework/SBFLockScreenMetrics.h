@@ -10,6 +10,12 @@
 + (float)dateBaselineOffsetFromTime;
 + (float)dateLabelFontSize;
 + (float)dateViewBaselineY;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })deviceInformationInsets;
++ (float)deviceInformationLabelFontLeading;
++ (float)deviceInformationLabelFontSize;
++ (float)deviceInformationParagraphSpacing;
++ (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })logoutInsets;
++ (float)logoutLabelFontSize;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })notificationListInsets;
 + (float)pinFixedDigitEntryFieldBottomYDistanceFromNumberPadTopButton:(BOOL)arg1;
 + (float)pinFixedDigitEntryFieldIndicatorDiameter;

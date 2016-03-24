@@ -3,15 +3,16 @@
  */
 
 @interface UIPress : NSObject <_UIResponderForwardable> {
-    BOOL __synthetic;
     BOOL _abandonForwardingRecord;
     float _force;
     NSMutableArray *_forwardingRecord;
+    unsigned int _gameControllerComponent;
     NSMutableArray *_gestureRecognizers;
     BOOL _isDelayed;
     int _phase;
     UIResponder *_responder;
     BOOL _sentPressesEnded;
+    unsigned int _source;
     double _timestamp;
     int _type;
     UIWindow *_window;
@@ -19,16 +20,17 @@
 
 @property (setter=_setForwardablePhase:, nonatomic) int _forwardablePhase;
 @property (setter=_setResponder:, nonatomic, retain) UIResponder *_responder;
-@property (getter=_isSynthetic, setter=_setSynthetic:, nonatomic) BOOL _synthetic;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) float force;
+@property (getter=_gameControllerComponent, setter=_setGameControllerComponent:, nonatomic) unsigned int gameControllerComponent;
 @property (nonatomic, copy) NSArray *gestureRecognizers;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isDelayed;
 @property (nonatomic) int phase;
 @property (nonatomic, retain) UIResponder *responder;
 @property (nonatomic) BOOL sentPressesEnded;
+@property (getter=_source, setter=_setSource:, nonatomic) unsigned int source;
 @property (readonly) Class superclass;
 @property (nonatomic) double timestamp;
 @property (nonatomic) int type;
@@ -38,18 +40,22 @@
 - (void)_abandonForwardingRecord;
 - (int)_forwardablePhase;
 - (id)_forwardingRecord;
+- (unsigned int)_gameControllerComponent;
 - (BOOL)_isAbandoningForwardingRecord;
 - (BOOL)_isDirectionalPress;
 - (BOOL)_isSynthetic;
 - (void)_loadStateFromPress:(id)arg1;
+- (void)_loadStateFromPressInfo:(id)arg1;
 - (id)_mutableForwardingRecord;
 - (id)_phaseDescription;
 - (void)_removeGestureRecognizer:(id)arg1;
 - (id)_responder;
 - (SEL)_responderSelectorForPhase:(int)arg1;
 - (void)_setForwardablePhase:(int)arg1;
+- (void)_setGameControllerComponent:(unsigned int)arg1;
 - (void)_setResponder:(id)arg1;
-- (void)_setSynthetic:(BOOL)arg1;
+- (void)_setSource:(unsigned int)arg1;
+- (unsigned int)_source;
 - (BOOL)_wantsForwardingFromResponder:(id)arg1 toNextResponder:(id)arg2 withEvent:(id)arg3;
 - (id)description;
 - (float)force;

@@ -16,6 +16,7 @@
     struct OpaqueFigFormatWriter { } *_formatWriter;
     char *_parentPath;
     NSObject<OS_dispatch_queue> *_propertySyncQueue;
+    BOOL _recordingIsSubjectToDiskSpaceQuota;
     FigCaptureAudioFileRecordingSettings *_settings;
     FigStateMachine *_stateMachine;
     int _trackID;

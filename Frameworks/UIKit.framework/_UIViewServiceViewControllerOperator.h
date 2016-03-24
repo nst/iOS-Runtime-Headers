@@ -104,6 +104,7 @@
 - (void)__undoActionWithToken:(long)arg1;
 - (id)_appearanceSource;
 - (BOOL)_canShowTextServices;
+- (id)_childViewControllerForWhitePointAdaptivityStyle;
 - (id)_dataFromPressesEvent:(id)arg1;
 - (void)_didBecomeContentViewControllerOfPopover:(id)arg1;
 - (void)_didResignContentViewControllerOfPopover:(id)arg1;
@@ -126,6 +127,7 @@
 - (id)_presentationControllerClassName;
 - (id)_queue;
 - (id)_sessionForStateRestoration:(id)arg1;
+- (void)_setNeedsScreenWhitePointAdaptivityStyleUpdate;
 - (void)_setTraitsDidChangeHandler:(id /* block */)arg1;
 - (void)_setTraitsWillChangeHandler:(id /* block */)arg1;
 - (BOOL)_shouldForwardLegacyRotationOnly;

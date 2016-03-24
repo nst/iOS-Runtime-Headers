@@ -17,6 +17,7 @@
 - (void).cxx_destruct;
 - (void)beginSession;
 - (BOOL)buffersSessions;
+- (id)cancelMessagesReturningFailures:(id)arg1;
 - (void)endSession;
 - (void)enqueueSyncRequest:(id)arg1 withMessageID:(unsigned short)arg2 priority:(int)arg3 options:(id)arg4 userContext:(id)arg5 callback:(id /* block */)arg6;
 - (id)initWithService:(id)arg1 queue:(id)arg2;

@@ -19,6 +19,7 @@
 @property (nonatomic) unsigned int powerMicroWatt;
 @property (nonatomic) int rAT;
 
+- (int)StringAsRAT:(id)arg1;
 - (id)bundleName;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -33,6 +34,7 @@
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)powerMicroWatt;
 - (int)rAT;
+- (id)rATAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBundleName:(id)arg1;
 - (void)setHasPowerMicroWatt:(BOOL)arg1;

@@ -31,6 +31,7 @@
 - (void)_enableKVSForAccount:(id)arg1 store:(id)arg2 completion:(id /* block */)arg3;
 - (void)_enableSecureBackupWithCompletion:(id /* block */)arg1;
 - (void)_handleCloudDataProtectionStateWithCompletion:(id /* block */)arg1;
+- (void)_performInteractivelyAuthenticatedRepair:(id /* block */)arg1;
 - (void)_preflightAccountStateWithContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)_recoverSecureBackupWithHasPeersForRemoteApproval:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_resetAccountCDPStateWithCompletion:(id /* block */)arg1;

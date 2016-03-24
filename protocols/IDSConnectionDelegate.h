@@ -5,6 +5,7 @@
 
 @optional
 
+- (void)connection:(IDSConnection *)arg1 connectedDevicesChanged:(NSArray *)arg2;
 - (void)connection:(IDSConnection *)arg1 devicesChanged:(NSArray *)arg2;
 - (void)connection:(IDSConnection *)arg1 identifier:(NSString *)arg2 didSendWithSuccess:(BOOL)arg3 error:(NSError *)arg4 context:(IDSMessageContext *)arg5;
 - (void)connection:(IDSConnection *)arg1 identifier:(NSString *)arg2 hasBeenDeliveredWithContext:(id)arg3;

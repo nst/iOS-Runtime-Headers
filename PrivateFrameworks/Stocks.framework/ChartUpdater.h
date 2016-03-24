@@ -23,6 +23,7 @@
 - (void)failWithError:(id)arg1;
 - (void)parseData:(id)arg1;
 - (void)parseDataSeriesDictionary:(id)arg1;
+- (void)parseDataSeriesDictionary:(id)arg1 interval:(int)arg2;
 - (void)setDelegate:(id)arg1;
 - (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2;
 - (BOOL)updateChartForStock:(id)arg1 interval:(int)arg2 withCompletion:(id /* block */)arg3;

@@ -21,6 +21,7 @@
 - (id)profileIDForACAccount:(id)arg1;
 - (void)requestAuthTokenForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 outRequestID:(id*)arg5 completionBlock:(id /* block */)arg6;
 - (void)requestPasswordForUsername:(id)arg1 service:(id)arg2 badPassword:(BOOL)arg3 showForgotPassword:(BOOL)arg4 shouldRememberPassword:(BOOL)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
+- (void)setAuthTokenForUsername:(id)arg1 service:(id)arg2 authToken:(id)arg3 profileID:(id)arg4 selfHandle:(id)arg5 accountStatus:(id)arg6 outRequestID:(id*)arg7 completionBlock:(id /* block */)arg8;
 - (void)setAuthTokenForUsername:(id)arg1 service:(id)arg2 authToken:(id)arg3 profileID:(id)arg4 selfHandle:(id)arg5 outRequestID:(id*)arg6 completionBlock:(id /* block */)arg7;
 - (void)setPairedAccountPasswordForUsername:(id)arg1 password:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)setPasswordForUsername:(id)arg1 service:(id)arg2 password:(id)arg3 outRequestID:(id*)arg4 completionBlock:(id /* block */)arg5;

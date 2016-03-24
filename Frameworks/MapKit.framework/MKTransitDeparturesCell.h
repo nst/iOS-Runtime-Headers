@@ -30,6 +30,7 @@
     UIView *_dragBackgroundView;
     float _dragGestureStartingPercentage;
     _MKGradientView *_dragGradientView;
+    BOOL _inactive;
     UIButton *_incidentButton;
     BOOL _incidentButtonHidden;
     UIImageView *_incidentIconImageView;
@@ -52,6 +53,7 @@
     UIImageView *_lineImageView;
     NSLayoutConstraint *_lineImageViewCenteringConstraint;
     float _lineImageViewSize;
+    NSLayoutConstraint *_lineImageViewToBottomConstraint;
     NSLayoutConstraint *_lineImageViewTopConstraint;
     UILabel *_primaryLabel;
     NSLayoutConstraint *_primaryLabelCenteringConstraint;
@@ -82,8 +84,8 @@
 @property (nonatomic, retain) NSTimeZone *departureTimeZone;
 @property (nonatomic, retain) NSArray *departures;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) NSArray *displayableDepartures;
 @property (readonly) unsigned int hash;
+@property (getter=isInactive, nonatomic) BOOL inactive;
 @property (nonatomic, retain) UIButton *incidentButton;
 @property (getter=isIncidentButtonHidden, nonatomic) BOOL incidentButtonHidden;
 @property (nonatomic, copy) NSString *incidentTitle;
@@ -100,12 +102,14 @@
 + (void)_calculateMaxLabelWidths;
 + (id)_departureSubtextAttributes;
 + (id)_departureSubtextFont;
++ (void)_enumerateMinutesUntilDepartureDates:(id)arg1 withReferenceDate:(id)arg2 block:(id /* block */)arg3;
 + (float)_maxSingleDepartureLabelWidth;
 + (float)_maxSingleDepartureSubtextLabelWidth;
 + (float)_minTextWidth:(BOOL)arg1;
 + (id)_multipleCountdownDepartureAttributes;
 + (id)_multipleCountdownFont;
 + (BOOL)_needsUpdateMaxLabelWidths;
++ (id)_nowFont;
 + (id)_nowString;
 + (id)_nowStringAttributes;
 + (id)_primaryFont;
@@ -118,6 +122,7 @@
 + (float)defaultLabelMargin;
 + (float)defaultLineImageViewSize;
 + (id)defaultSecondaryFont;
++ (id)displayableCountdowDepartureDatesFromDates:(id)arg1 withReferenceDate:(id)arg2;
 + (float)labelMarginWithLineImageViewWidth:(float)arg1;
 + (float)maxLineImageWidthforWidth:(float)arg1 compressed:(BOOL)arg2;
 + (id)strongSecondaryFont;
@@ -149,13 +154,14 @@
 - (BOOL)_pointIsInCustomGestureBounds:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_removeIncidentButton;
 - (void)_removeIncidentIcon;
+- (float)_separatorHeight;
 - (void)_setLineImageColumnCentered:(BOOL)arg1 withImageWidth:(float)arg2 centeringWidth:(float)arg3;
 - (void)_updateConstraintValues;
 - (void)_updateCountdownConstraintsForString:(id)arg1;
 - (void)_updateDepartureLabelToTopConstraintWithString:(id)arg1;
 - (void)_updateIncidentConstraints;
 - (void)_updateLabelFonts;
-- (void)centerContentIfNeccessaryForWidth:(float)arg1;
+- (void)_updateLineImageViewConstraints;
 - (BOOL)centerDepartureLabel;
 - (BOOL)centerPrimaryLabel;
 - (id)countdownReferenceDate;
@@ -166,13 +172,13 @@
 - (unsigned int)departureStyle;
 - (id)departureTimeZone;
 - (id)departures;
-- (id)displayableDepartures;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)incidentButton;
 - (id)incidentTitle;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
+- (BOOL)isInactive;
 - (BOOL)isIncidentButtonHidden;
 - (BOOL)isOpaque;
 - (BOOL)isShowingIncidentIcon;
@@ -180,6 +186,7 @@
 - (BOOL)isShowingNoConnectionEmDash;
 - (float)labelMargin;
 - (void)layoutMarginsDidChange;
+- (void)layoutSubviews;
 - (float)lineImageViewSize;
 - (void)refreshDeparturesDisplay;
 - (void)setCenterDepartureLabel:(BOOL)arg1;
@@ -190,6 +197,7 @@
 - (void)setDepartureTimeZone:(id)arg1;
 - (void)setDepartures:(id)arg1;
 - (void)setHighlighted:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setInactive:(BOOL)arg1;
 - (void)setIncidentButton:(id)arg1;
 - (void)setIncidentButtonHidden:(BOOL)arg1;
 - (void)setIncidentTitle:(id)arg1;
@@ -200,6 +208,7 @@
 - (void)setPrimaryText:(id)arg1;
 - (void)setSecondaryText:(id)arg1;
 - (void)setSelected:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setSeparatorHidden:(BOOL)arg1;
 - (void)setShouldAdjustSeparatorInsetToMargin:(BOOL)arg1;
 - (void)setShowIncidentIcon:(BOOL)arg1;
 - (void)setShowNoConnectionEmDash:(BOOL)arg1;
@@ -211,6 +220,7 @@
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)touchesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
+- (void)updateConstraints;
 - (BOOL)useCompressedGutter;
 - (BOOL)useCompressedLeading;
 

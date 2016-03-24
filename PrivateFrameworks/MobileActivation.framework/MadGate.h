@@ -2,23 +2,31 @@
    Image: /System/Library/PrivateFrameworks/MobileActivation.framework/MobileActivation
  */
 
-@interface MadGate : NSObject
+@interface MadGate : NSObject {
+    NSXPCConnection *_connection;
+}
 
-- (id)copyActivationRecord;
-- (id)copyRegulatoryImages;
-- (id)createActivationInfo;
-- (id)createRecertInfo;
-- (void)deactivateDevice;
-- (bool)getActivationBuild;
-- (id)getActivationState;
-- (id)handleActivationInfo:(id)arg1;
-- (id)handleReCertInfo:(id)arg1;
-- (unsigned char)hasActivationTicket;
-- (unsigned char)isDeviceABrick;
-- (void)performSelectorOnRemoteObject:(SEL)arg1 withParam:(id)arg2 completionBlock:(id /* block */)arg3 waitBlock:(id /* block */)arg4;
-- (void)reactivateDevice;
-- (bool)recertifyDevice;
-- (bool)recertifyDeviceSB;
-- (bool)unbrickDevice;
+@property (nonatomic, readonly) NSXPCConnection *connection;
+
+- (void).cxx_destruct;
+- (id)connection;
+- (id)copyActivationRecord:(id*)arg1;
+- (id)copyRegulatoryImages:(id*)arg1;
+- (id)createActivationInfo:(id*)arg1;
+- (id)createRecertInfo:(id*)arg1;
+- (id)createTunnel1ActivationInfo:(id)arg1 error:(id*)arg2;
+- (id)createTunnel1SessionInfo:(id*)arg1;
+- (BOOL)deactivateDevice:(id*)arg1;
+- (void)dealloc;
+- (id)getActivationBuild:(id*)arg1;
+- (id)getActivationState:(id*)arg1;
+- (BOOL)handleActivationInfo:(id)arg1 withError:(id*)arg2;
+- (BOOL)handleActivationInfoWithSession:(id)arg1 activationSignature:(id)arg2 error:(id*)arg3;
+- (BOOL)handleReCertInfo:(id)arg1 withError:(id*)arg2;
+- (id)init;
+- (BOOL)isDeviceABrick:(id*)arg1;
+- (BOOL)reactivateDevice:(id*)arg1;
+- (BOOL)recertifyDevice:(BOOL)arg1 withError:(id*)arg2;
+- (BOOL)unbrickDevice:(id*)arg1;
 
 @end

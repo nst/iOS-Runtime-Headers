@@ -9,16 +9,19 @@
     NSSet *_items;
     NSSet *_itemsToDiscard;
     NSSet *_itemsToKeep;
+    int _reason;
     WBSHistorySQLiteStore *_store;
 }
 
+@property (nonatomic, readonly) WBSHistoryDeletionPlan *deletionPlan;
 @property (nonatomic, readonly) NSSet *itemsToDiscard;
 @property (nonatomic, readonly) NSSet *itemsToKeep;
 
 - (void).cxx_destruct;
 - (id)_itemsToDiscardFromItemsOrderedByLastVisitTime:(id)arg1;
+- (id)deletionPlan;
 - (void)execute;
-- (id)initWithSQLiteStore:(id)arg1 items:(id)arg2 ageLimit:(double)arg3 itemCountLimit:(unsigned int)arg4;
+- (id)initWithSQLiteStore:(id)arg1 items:(id)arg2 ageLimit:(double)arg3 itemCountLimit:(unsigned int)arg4 reason:(int)arg5;
 - (id)itemsToDiscard;
 - (id)itemsToKeep;
 - (void)prepare;

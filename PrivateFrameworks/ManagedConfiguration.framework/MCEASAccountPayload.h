@@ -46,6 +46,7 @@
 - (id)accountPersistentUUID;
 - (id)certificatePersistentID;
 - (id)certificateUUID;
+- (BOOL)containsSensitiveUserInformation;
 - (id)description;
 - (id)emailAddress;
 - (id)embeddedCertificate;

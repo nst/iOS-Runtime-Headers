@@ -6,9 +6,9 @@
     NSData *_imagePNGData;
 }
 
-@property (nonatomic, readonly, retain) NSData *imagePNGData;
+@property (nonatomic, readonly) NSData *imagePNGData;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned int)hash;
 - (id)imagePNGData;

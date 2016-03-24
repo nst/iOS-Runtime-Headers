@@ -6,4 +6,6 @@
 
 + (Class)queueFeederClass;
 
+- (BOOL)mpuReporting_isQuickPlay;
+
 @end

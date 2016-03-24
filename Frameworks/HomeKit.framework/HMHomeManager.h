@@ -74,13 +74,16 @@
 - (void)_queryHomeKitUsageStateWithCompletionHandler:(id /* block */)arg1;
 - (void)_queryMetadata:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_queryVersionWithCompletionHandler:(id /* block */)arg1;
+- (void)_queryiCloudSwitchStateWithCompletionHandler:(id /* block */)arg1;
 - (void)_registerNotificationHandlers;
 - (void)_removeHome:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_setMetadata:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_shouldDisplayiCloudSwitchWithCompletionHandler:(id /* block */)arg1;
 - (void)_start;
 - (void)_updateHomes:(id)arg1;
 - (void)_updateInvitation:(id)arg1 invitationState:(int)arg2 completionHandler:(id /* block */)arg3;
 - (void)_updatePrimaryHome:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_updateiCloudSwitchState:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (void)addHomeWithName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)clientQueue;
 - (id)currentHomes;
@@ -114,6 +117,7 @@
 - (void)queryHomeKitUsageStateWithCompletionHandler:(id /* block */)arg1;
 - (void)queryMetadata:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)queryVersionWithCompletionHandler:(id /* block */)arg1;
+- (void)queryiCloudSwitchStateWithCompletionHandler:(id /* block */)arg1;
 - (void)removeHome:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)resetConfiguration:(BOOL)arg1 withoutPopup:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)setCurrentHomes:(id)arg1;
@@ -132,7 +136,9 @@
 - (void)setUuid:(id)arg1;
 - (void)setViewServiceActive:(BOOL)arg1;
 - (void)setXpcClient:(id)arg1;
+- (void)shouldDisplayiCloudSwitchWithCompletionHandler:(id /* block */)arg1;
 - (void)updatePrimaryHome:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)updateiCloudSwitchState:(BOOL)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;
 - (id)xpcClient;
 

@@ -12,8 +12,11 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSXPCConnection *xpcConnection;
 
++ (id)deviceForPairingID:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)connection;
+- (void)createBackupForDevice:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)createBackupForPairingID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)dealloc;
 - (void)deleteBackup:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -22,9 +25,9 @@
 - (id)initWithQueue:(id)arg1;
 - (id)internalQueue;
 - (void)listBackupsWithCompletionHandler:(id /* block */)arg1;
-- (void)restoreFromBackup:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)restoreFromBackup:(id)arg1 forDevice:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)restoreFromBackup:(id)arg1 forPairingID:(id)arg2 pairingDataStore:(id)arg3 completionHandler:(id /* block */)arg4;
-- (void)restoreFromPairingID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)restoreFromDevice:(id)arg1 forDevice:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)setExternalQueue:(id)arg1;
 - (void)setInternalQueue:(id)arg1;
 - (void)setXpcConnection:(id)arg1;

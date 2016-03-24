@@ -10,6 +10,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *metricsContext;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
 
@@ -20,8 +21,10 @@
 - (id)callbacks;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)metricsContext;
 - (BOOL)requiresResponse;
 - (void)setAppId:(id)arg1;
 - (void)setCallbacks:(id)arg1;
+- (void)setMetricsContext:(id)arg1;
 
 @end

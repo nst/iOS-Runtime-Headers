@@ -6,19 +6,24 @@
     NSString *_bundleId;
     NSDate *_date;
     NSString *_reason;
+    NSTimeZone *_timeZone;
 }
 
 @property (nonatomic, readonly) NSString *bundleId;
 @property (nonatomic, readonly) NSDate *date;
 @property (nonatomic, readonly) NSString *reason;
+@property (nonatomic, readonly) NSTimeZone *timeZone;
 
 - (void).cxx_destruct;
 - (id)bundleId;
 - (id)date;
 - (id)description;
+- (unsigned int)hash;
 - (id)init;
-- (id)initWithBundleId:(id)arg1 date:(id)arg2 reason:(id)arg3;
+- (id)initWithBundleId:(id)arg1 date:(id)arg2 timeZone:(id)arg3 reason:(id)arg4;
+- (BOOL)isEqual:(id)arg1;
 - (BOOL)isEqualToLaunch:(id)arg1;
 - (id)reason;
+- (id)timeZone;
 
 @end

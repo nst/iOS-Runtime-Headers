@@ -46,6 +46,7 @@
 - (void)_fetchDataTypesForDevice:(id)arg1 completion:(id /* block */)arg2;
 - (void)_fetchDataTypesForSource:(id)arg1 completion:(id /* block */)arg2;
 - (void)_fetchDevicesMatchingProperty:(id)arg1 values:(id)arg2 completion:(id /* block */)arg3;
+- (void)_firstPartyWorkoutSnapshotWithCompletion:(id /* block */)arg1;
 - (void)_handleInterruption;
 - (void)_hasAnyActiveWorkoutsWithCompletion:(id /* block */)arg1;
 - (id)_heightCharacteristicQuantityWithError:(id*)arg1;
@@ -58,8 +59,11 @@
 - (id)_remoteObjectProxyWithActionCompletion:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithObjectCompletion:(id /* block */)arg1;
 - (id)_remoteObjectProxyWithSelectCompletion:(id /* block */)arg1;
+- (void)_replaceWorkout:(id)arg1 withWorkout:(id)arg2 completion:(id /* block */)arg3;
 - (void)_saveActiveWorkout:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)_saveObjects:(id)arg1 atomically:(BOOL)arg2 completion:(id /* block */)arg3;
 - (id /* block */)_selectCompletionOnClientQueue:(id /* block */)arg1;
+- (void)_sendNextObjectBatch:(id)arg1 lastRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 proxy:(id)arg3 transaction:(id)arg4 completion:(id /* block */)arg5;
 - (id)_serverProxyForSelector:(SEL)arg1 sanitizedErrorHandler:(id /* block */)arg2;
 - (void)_setBackgroundDeliveryFrequencyDataType:(id)arg1 frequency:(int)arg2 withCompletion:(id /* block */)arg3;
 - (BOOL)_setBiologicalSex:(int)arg1 error:(id*)arg2;
@@ -90,7 +94,7 @@
 - (id /* block */)bluetoothStatusHandler;
 - (void)closeTransactionForType:(id)arg1 anchor:(id)arg2 ackTime:(id)arg3 query:(id)arg4;
 - (void)createBluetoothSourceWithBundleIdentifier:(id)arg1 name:(id)arg2 completion:(id /* block */)arg3;
-- (void)currentlyPairedWatchIdentifierWithCompletion:(id /* block */)arg1;
+- (void)currentlyPairedWatchIdentifiersWithCompletion:(id /* block */)arg1;
 - (id)dateOfBirthWithError:(id*)arg1;
 - (void)dealloc;
 - (void)deleteAllSamplesWithTypes:(id)arg1 sourceBundleIdentifier:(id)arg2 completion:(id /* block */)arg3;
@@ -99,6 +103,7 @@
 - (void)deleteObject:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)deleteObjects:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)deleteObjectsOfType:(id)arg1 predicate:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)deleteObjectsWithUUIDs:(id)arg1 completion:(id /* block */)arg2;
 - (void)deleteSourceWithBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)deliverBluetoothStatus:(int)arg1 withError:(id)arg2;
 - (void)deliverDiscoveryHealthService:(id)arg1 toClient:(unsigned int)arg2 finished:(BOOL)arg3 withError:(id)arg4;
@@ -107,7 +112,7 @@
 - (void)deliverSessionTransitoryData:(id)arg1 toClient:(unsigned int)arg2 withError:(id)arg3;
 - (void)deliverWorkoutSessionChangedToState:(int)arg1 fromState:(int)arg2 date:(id)arg3 forSessionUUID:(id)arg4;
 - (void)deliverWorkoutSessionError:(id)arg1 forSessionUUID:(id)arg2;
-- (void)diagnosticsForKey:(id)arg1 completion:(id /* block */)arg2;
+- (void)diagnosticsForKeys:(id)arg1 completion:(id /* block */)arg2;
 - (void)disableAllBackgroundDeliveryWithCompletion:(id /* block */)arg1;
 - (void)disableBackgroundDeliveryForType:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)dropEntitlement:(id)arg1;
@@ -123,12 +128,16 @@
 - (void)fetchMedicalIDDataCreateIfNecessary:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (void)fetchMedicalIDDataWithCompletion:(id /* block */)arg1;
 - (id)fitzpatrickSkinTypeWithError:(id*)arg1;
+- (void)forceLastChanceNanoSyncWithCompletion:(id /* block */)arg1;
+- (void)forceNanoSyncWithOptions:(unsigned int)arg1 completion:(id /* block */)arg2;
 - (void)forceNanoSyncWithPullRequest:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)generateFakeDataForActivityType:(int)arg1 minutes:(double)arg2 completion:(id /* block */)arg3;
 - (void)getDatabaseUsageInBytesWithCompletion:(id /* block */)arg1;
 - (void)getDefaultValueForKey:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)getEnabledStatusForPeripheral:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)getHealthLiteValueForKey:(id)arg1 completion:(id /* block */)arg2;
 - (void)getHealthServiceProperty:(id)arg1 forSession:(id)arg2 withHandler:(id /* block */)arg3;
+- (void)getHealthServicePropertyNamesWithHandler:(id /* block */)arg1;
 - (void)handleAuthorizationForExtensionWithCompletion:(id /* block */)arg1;
 - (void)hasSourceWithBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)healthServicePairingsWithHandler:(id /* block */)arg1;
@@ -161,21 +170,18 @@
 - (void)setBluetoothStatusHandler:(id /* block */)arg1;
 - (void)setDefaultValue:(id)arg1 forKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)setEnabledStatus:(BOOL)arg1 forPeripheral:(id)arg2 withCompletion:(id /* block */)arg3;
+- (void)setHealthLiteValue:(id)arg1 forKey:(id)arg2 completion:(id /* block */)arg3;
 - (void)setOrderedSources:(id)arg1 forObjectType:(id)arg2 completion:(id /* block */)arg3;
 - (void)setRequestedAuthorizationForBundleIdentifier:(id)arg1 shareTypes:(id)arg2 readTypes:(id)arg3 prompt:(BOOL)arg4 completion:(id /* block */)arg5;
 - (void)splitTotalEnergy:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 resultsHandler:(id /* block */)arg4;
-- (void)startAllHealthServicesDiscoveryWithHandler:(id /* block */)arg1;
+- (id)startAllHealthServicesDiscoveryWithHandler:(id /* block */)arg1;
 - (void)startBluetoothStatusUpdates:(id /* block */)arg1;
 - (void)startFakingDataWithActivityType:(int)arg1 speed:(id)arg2 completion:(id /* block */)arg3;
 - (void)startHealthServiceDiscovery:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)startHealthServiceSession:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)startRecordingDataToFile:(id)arg1 completion:(id /* block */)arg2;
-- (void)startReplayingDataFromFile:(id)arg1 repeat:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)startWorkoutSession:(id)arg1;
 - (void)stopFakingDataWithCompletion:(id /* block */)arg1;
 - (void)stopQuery:(id)arg1;
-- (void)stopRecordingDataWithCompletion:(id /* block */)arg1;
-- (void)stopReplayingDataWithCompletion:(id /* block */)arg1;
 - (void)submitMetricsIgnoringAnchor:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)suppressActivityAlertsForIdentifier:(id)arg1 suppressionReason:(int)arg2 timeoutUntilDate:(id)arg3 completion:(id /* block */)arg4;
 - (void)unitPreferencesDidUpdate;
@@ -183,9 +189,10 @@
 - (void)unregisterPeripheralIdentifier:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)updateMedicalIDData:(id)arg1;
 - (void)updateMedicalIDData:(id)arg1 completion:(id /* block */)arg2;
+- (void)waitForLastChanceSyncWithDevicePairingID:(id)arg1 timeout:(double)arg2 completion:(id /* block */)arg3;
 - (void)workoutDidComplete:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (id)_sortedSources:(id)arg1;
 - (id)createMedicalIDData;

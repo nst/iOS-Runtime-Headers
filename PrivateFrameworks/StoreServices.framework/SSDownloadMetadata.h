@@ -98,6 +98,7 @@
 - (id)dictionary;
 - (id)documentTargetIdentifier;
 - (id)downloadKey;
+- (id)downloadPermalink;
 - (id)downloaderAccountIdentifier;
 - (id)durationInMilliseconds;
 - (void)encodeWithCoder:(id)arg1;
@@ -125,6 +126,7 @@
 - (BOOL)isRedownloadDownload;
 - (BOOL)isRental;
 - (BOOL)isSample;
+- (BOOL)isSharedResource;
 - (BOOL)isTvTemplate;
 - (unsigned long long)itemIdentifier;
 - (int)keyStyle;
@@ -145,6 +147,7 @@
 - (id)preferredAssetFlavor;
 - (id)primaryAssetDictionary;
 - (id)primaryAssetURL;
+- (id)publicationVersion;
 - (id)purchaseDate;
 - (id)redownloadActionParameters;
 - (id)releaseDate;
@@ -175,6 +178,7 @@
 - (void)setDictionary:(id)arg1;
 - (void)setDocumentTargetIdentifier:(id)arg1;
 - (void)setDownloadKey:(id)arg1;
+- (void)setDownloadPermalink:(id)arg1;
 - (void)setDurationInMilliseconds:(id)arg1;
 - (void)setEpisodeIdentifier:(id)arg1;
 - (void)setEpisodeSortIdentifier:(id)arg1;
@@ -203,6 +207,7 @@
 - (void)setPreOrderIdentifier:(unsigned long long)arg1;
 - (void)setPreferredAssetFlavor:(id)arg1;
 - (void)setPrimaryAssetURL:(id)arg1;
+- (void)setPublicationVersion:(id)arg1;
 - (void)setPurchaseDate:(id)arg1;
 - (void)setRedownloadActionParameters:(id)arg1;
 - (void)setRedownloadDownload:(BOOL)arg1;
@@ -215,6 +220,7 @@
 - (void)setSample:(BOOL)arg1;
 - (void)setSeasonNumber:(id)arg1;
 - (void)setSeriesName:(id)arg1;
+- (void)setSharedResource:(BOOL)arg1;
 - (void)setShortDescription:(id)arg1;
 - (void)setShouldDownloadAutomatically:(BOOL)arg1;
 - (void)setSinfs:(id)arg1;

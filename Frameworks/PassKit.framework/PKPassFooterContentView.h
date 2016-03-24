@@ -3,7 +3,9 @@
  */
 
 @interface PKPassFooterContentView : UIView {
+    PKLinkedAppIconView *_appIconView;
     UIView *_bottomRule;
+    <PKPassFooterContentViewDelegate> *_delegate;
     UIButton *_infoButton;
     BOOL _isPassAuthorized;
     BOOL _isVisibleAsFooter;
@@ -11,7 +13,9 @@
     int _style;
 }
 
+@property (nonatomic, readonly) PKLinkedAppIconView *appIconView;
 @property (nonatomic, readonly) UIView *bottomRule;
+@property (nonatomic) <PKPassFooterContentViewDelegate> *delegate;
 @property (nonatomic, readonly) UIButton *infoButton;
 @property (nonatomic, readonly) BOOL isPassAuthorized;
 @property (nonatomic, readonly) BOOL isVisibleAsFooter;
@@ -19,9 +23,12 @@
 @property (nonatomic, readonly) PKPaymentPass *paymentPass;
 @property (nonatomic, readonly) int style;
 
+- (float)_bottomRulePadding;
 - (void)_infoButtonPressed:(id)arg1;
+- (id)appIconView;
 - (id)bottomRule;
 - (void)dealloc;
+- (id)delegate;
 - (void)didBecomeHiddenAnimated:(BOOL)arg1;
 - (void)didBecomeVisibleAnimated:(BOOL)arg1;
 - (id)infoButton;
@@ -31,6 +38,7 @@
 - (void)layoutSubviews;
 - (id)pass;
 - (id)paymentPass;
+- (void)setDelegate:(id)arg1;
 - (int)style;
 - (void)willBecomeHiddenAnimated:(BOOL)arg1;
 - (void)willBecomeVisibleAnimated:(BOOL)arg1;

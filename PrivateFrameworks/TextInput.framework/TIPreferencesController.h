@@ -13,6 +13,7 @@
 
 + (id)sharedPreferencesController;
 
+- (int)MCValueForManagedKey:(int)arg1;
 - (BOOL)boolForKey:(int)arg1;
 - (void)clearSynchronizePreferencesTimer;
 - (void)dealloc;

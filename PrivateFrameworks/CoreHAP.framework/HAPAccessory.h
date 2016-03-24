@@ -3,6 +3,7 @@
  */
 
 @interface HAPAccessory : NSObject {
+    NSNumber *_category;
     <HAPAccessoryDelegate> *_delegate;
     NSString *_firmwareVersion;
     NSString *_identifier;
@@ -17,12 +18,13 @@
     HAPAccessoryServer *_server;
     NSString *_serverIdentifier;
     NSArray *_services;
+    BOOL _supportsBridgeConfiguration;
     BOOL _supportsRelay;
     NSString *_uniqueIdentifier;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
-@property (nonatomic, readonly, copy) NSNumber *category;
+@property (nonatomic, copy) NSNumber *category;
 @property (nonatomic) <HAPAccessoryDelegate> *delegate;
 @property (nonatomic, copy) NSString *firmwareVersion;
 @property (nonatomic, copy) NSString *identifier;
@@ -38,6 +40,7 @@
 @property (nonatomic) HAPAccessoryServer *server;
 @property (nonatomic, copy) NSString *serverIdentifier;
 @property (nonatomic, retain) NSArray *services;
+@property (nonatomic) BOOL supportsBridgeConfiguration;
 @property (nonatomic) BOOL supportsRelay;
 @property (nonatomic, copy) NSString *uniqueIdentifier;
 @property (retain) NSObject<OS_dispatch_queue> *workQueue;
@@ -49,7 +52,10 @@
 
 - (void).cxx_destruct;
 - (BOOL)_isReachable;
+- (void)_setCategory:(id)arg1;
 - (void)_setReachable:(BOOL)arg1;
+- (void)_setSupportsBridgeConfiguration:(BOOL)arg1;
+- (BOOL)_supportsBridgeConfiguration;
 - (BOOL)_updateAndValidateServices;
 - (BOOL)_updateForAccessoryInformationService;
 - (BOOL)_updateService:(id)arg1;
@@ -79,6 +85,7 @@
 - (id)serverIdentifier;
 - (id)services;
 - (id)servicesOfType:(id)arg1;
+- (void)setCategory:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFirmwareVersion:(id)arg1;
 - (void)setIdentifier:(id)arg1;
@@ -92,9 +99,11 @@
 - (void)setServer:(id)arg1;
 - (void)setServerIdentifier:(id)arg1;
 - (void)setServices:(id)arg1;
+- (void)setSupportsBridgeConfiguration:(BOOL)arg1;
 - (void)setSupportsRelay:(BOOL)arg1;
 - (void)setUniqueIdentifier:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
+- (BOOL)supportsBridgeConfiguration;
 - (BOOL)supportsRelay;
 - (id)uniqueIdentifier;
 - (BOOL)validateCharacteristicValues:(id*)arg1;

@@ -2,7 +2,8 @@
    Image: /System/Library/PrivateFrameworks/PairedSync.framework/PairedSync
  */
 
-@interface PSYSyncCoordinator : NSObject <NSXPCListenerDelegate, PSYActivity, PSYSyncRestrictionProviderDelegate> {
+@interface PSYSyncCoordinator : NSObject <NSXPCListenerDelegate, PSYActivity, PSYServiceSyncSessionDelegate> {
+    PSYServiceSyncSession *_activeSyncSession;
     NSXPCConnection *_connection;
     <PSYSyncCoordinatorDelegate> *_delegate;
     struct _opaque_pthread_mutex_t { 
@@ -11,15 +12,16 @@
     } _delegateLock;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     BOOL _hasStartedListening;
-    BOOL _isFullSyncInProgress;
     NSXPCListener *_listener;
     id /* block */ _pendingCompletion;
     NSObject<OS_dispatch_queue> *_queue;
     NSString *_serviceName;
+    unsigned long long _syncIDOfStartedSync;
     unsigned int _syncRestriction;
-    PSYSyncRestrictionProvider *_syncRestrictionProvider;
+    int _syncSwitchIDToken;
 }
 
+@property (nonatomic, readonly) PSYServiceSyncSession *activeSyncSession;
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PSYSyncCoordinatorDelegate> *delegate;
@@ -27,44 +29,47 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, copy) NSString *serviceName;
 @property (readonly) Class superclass;
-@property unsigned int syncRestriction;
 
++ (id)filteredErrorWithError:(id)arg1;
 + (void)initialize;
 + (id)syncCoordinatorWithServiceName:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_cleanup;
+- (unsigned int)_syncRestriction;
+- (void)_syncRestrictionDidUpdate:(id)arg1 forServiceName:(id)arg2;
+- (oneway void)abortSyncWithCompletion:(id /* block */)arg1;
+- (id)activeSyncSession;
 - (void)beginDryRunSyncWithOptions:(id)arg1 completion:(id /* block */)arg2;
 - (oneway void)beginSyncWithOptions:(id)arg1 completion:(id /* block */)arg2;
-- (void)clearPersistentState;
 - (id)connection;
-- (id)defaultsCompletionErrorKey;
-- (id)defaultsPersistentStateKey;
-- (id)defaultsTransactionIDKey;
 - (id)delegate;
+- (void)deviceChanged:(id)arg1;
 - (void)exitForTestInput:(id)arg1;
 - (id)initWithServiceName:(id)arg1;
 - (id)initWithServiceName:(id)arg1 serviceLookupPath:(id)arg2;
+- (void)invalidateActiveSyncSession;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)performDelegateBlock:(id /* block */)arg1;
-- (id)persistedCompletionError;
-- (int)persistedState;
-- (id)persistedTransactionID;
 - (id)progressHandler;
+- (unsigned long long)readNotifyToken:(int)arg1;
+- (void)registerForDeviceChangeNotifications;
+- (int)registerNotifyTokenWithName:(id)arg1 withBlock:(id /* block */)arg2;
+- (int)registerNotifyTokenWithName:(id)arg1 withQueue:(id)arg2 withBlock:(id /* block */)arg3;
 - (void)reportProgress:(double)arg1;
-- (BOOL)savePersistentState;
 - (id)serviceName;
 - (void)setConnection:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
-- (void)setPersistedCompletionError:(id)arg1;
-- (void)setPersistedState:(int)arg1;
-- (void)setPersistedTransactionID:(id)arg1;
-- (void)setSyncRestriction:(unsigned int)arg1;
 - (void)syncDidComplete;
 - (void)syncDidCompleteSending;
 - (void)syncDidFailWithError:(id)arg1;
 - (unsigned int)syncRestriction;
-- (void)syncRestrictionProviderDidChangeRestriction:(id)arg1;
+- (void)syncSession:(id)arg1 didFailWithError:(id)arg2;
+- (void)syncSession:(id)arg1 reportProgress:(double)arg2;
+- (void)syncSessionDidComplete:(id)arg1;
+- (void)syncSessionDidCompleteSending:(id)arg1;
+- (id)syncSessionForOptions:(id)arg1;
+- (void)unregisterForDeviceChangeNotifications;
 
 @end

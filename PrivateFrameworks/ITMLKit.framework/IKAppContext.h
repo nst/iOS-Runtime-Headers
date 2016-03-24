@@ -46,6 +46,7 @@
 @property (nonatomic, retain) IKJSInspectorController *webInspectorController;
 
 + (id)currentAppContext;
++ (void)load;
 + (void)registerPrivateProtocols:(id)arg1 forClass:(Class)arg2;
 
 - (void).cxx_destruct;
@@ -73,7 +74,7 @@
 - (void)evaluateDelegateBlockSync:(id /* block */)arg1;
 - (void)evaluateFoundationJS;
 - (void)exitAppWithOptions:(id)arg1;
-- (void)handleReloadWithUrgencyType:(unsigned int)arg1 data:(id)arg2;
+- (void)handleReloadWithUrgencyType:(unsigned int)arg1 minInterval:(double)arg2 data:(id)arg3;
 - (id)initWithApplication:(id)arg1 mode:(unsigned int)arg2 delegate:(id)arg3;
 - (BOOL)isTrusted;
 - (BOOL)isValid;

@@ -87,6 +87,8 @@
 - (void)stressCacheSmall;
 - (void)stressMidnightCalculation;
 - (void)stressMonotonicTimer;
+- (void)stressMonotonicTimer2;
+- (void)stressMonotonicTimer3;
 - (void)stressObjectForKey;
 - (void)stressPLEntry;
 - (void)stressSetObjectForKey;

@@ -19,8 +19,10 @@
     MusicEntityProviderDownloadInformationController *_entityProviderDownloadInformationController;
     BOOL _forContentCreation;
     BOOL _hasDetailTintInformation;
+    BOOL _hasPresentedExplicitByDefaultAlert;
     BOOL _hasReceivedViewWillAppearAtLeastOnce;
     BOOL _isObservingClientContextTransferAggregatorDidChangeNotification;
+    BOOL _isViewFullyVisible;
     MusicMediaDetailHeaderViewController *_mediaDetailHeaderViewController;
     MusicMediaProductHeaderContentViewController *_mediaProductHeaderContentViewController;
     BOOL _needsArtworkCatalogUpdate;
@@ -65,6 +67,7 @@
 - (id)_containerEntityValueContext;
 - (id)_containerMetadataContextWithContainerJSDictionary:(id)arg1 tracklistItemJSDictionaries:(id)arg2;
 - (void)_dispatchNativeViewEventOfType:(int)arg1 withExtraInfo:(id)arg2 forViewController:(id)arg3 completion:(id /* block */)arg4;
+- (BOOL)_editingWasCancelled;
 - (id)_effectiveNavigationItem;
 - (void)_handleCancelButtonTapped:(id)arg1;
 - (void)_handleClientContextTransferAggregatorDidChangeNotification:(id)arg1;
@@ -75,6 +78,7 @@
 - (id)_loadProductSplitMainViewController;
 - (id)_mediaDetailHeaderViewController;
 - (id)_mediaProductHeaderContentViewController;
+- (void)_presentExplicitByDefaultAlertIfNeeded;
 - (int)_productDescriptionTextStyle;
 - (void)_registerForClientContextTransferAggregatorDidChangeNotification;
 - (void)_reloadContainerEntityValueContextProperties;
@@ -124,9 +128,11 @@
 - (void)transferAggregator:(id)arg1 downloadStatusChangedAtIndexes:(id)arg2;
 - (void)transferAggregatorDownloadsDidChange:(id)arg1;
 - (void)updateWithHeaderHeight:(float)arg1 maximumHeaderHeight:(float)arg2 headerVerticalOffset:(float)arg3 transitionProgress:(float)arg4;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

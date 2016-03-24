@@ -10,6 +10,7 @@
 
 - (void).cxx_destruct;
 - (id)database;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (void)setDatabase:(id)arg1;
 

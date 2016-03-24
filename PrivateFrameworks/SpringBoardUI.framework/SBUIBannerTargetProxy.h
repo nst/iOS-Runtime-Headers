@@ -15,6 +15,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void*)bannerTargetIdentifier;
 - (int)bannerTargetIdiom;
 - (void)cacheBannerForContext:(id)arg1 withCompletion:(id /* block */)arg2;

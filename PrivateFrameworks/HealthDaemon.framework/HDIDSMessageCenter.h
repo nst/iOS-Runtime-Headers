@@ -3,12 +3,12 @@
  */
 
 @interface HDIDSMessageCenter : NSObject <IDSServiceDelegate> {
-    NSString *_cacheDirectoryPath;
+    HDDaemon *_daemon;
     <HDIDSMessageCenterDelegate> *_delegate;
     NSMutableDictionary *_errorHandlers;
     NSObject<OS_dispatch_source> *_expireTimer;
-    NSString *_launchNotification;
-    NSDate *_nextExpireTimerFireDate;
+    double _nextExpireTimerFireDate;
+    NSUUID *_pairingUUID;
     NSMutableDictionary *_pbMapping;
     HDIDSPersistentDictionary *_persistentContextStore;
     NSObject<OS_dispatch_queue> *_queue;
@@ -16,39 +16,46 @@
     NSMutableDictionary *_responseHandlers;
     IDSService *_service;
     NSString *_serviceIdentifier;
+    NSString *_shortServiceIdentifier;
 }
 
-@property (nonatomic, readonly, copy) NSString *cacheDirectoryPath;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <HDIDSMessageCenterDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) IDSService *idsService;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly, copy) NSString *serviceIdentifier;
 @property (readonly) Class superclass;
+
++ (id)createPersistentDictionaryWithURL:(id)arg1;
 
 - (void).cxx_destruct;
 - (void)_expireMessages;
 - (void)_handleError:(id)arg1 context:(id)arg2;
+- (id)_logPrefix;
 - (id)_pbMappingForMessageID:(unsigned short)arg1;
 - (id)_queue;
 - (void)_sendResponse:(id)arg1;
-- (void)_updateExpireTimerWithDate:(id)arg1;
+- (void)_updateExpireTimerWithTimestamp:(double)arg1;
 - (void)addErrorHandler:(SEL)arg1 forMessageID:(unsigned short)arg2;
 - (void)addRequestHandler:(SEL)arg1 forMessageID:(unsigned short)arg2;
 - (void)addResponseHandler:(SEL)arg1 forMessageID:(unsigned short)arg2;
-- (id)cacheDirectoryPath;
+- (void)cancelPendingRequestsWithMessageID:(unsigned short)arg1 device:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
-- (id)description;
+- (id)deviceForFromID:(id)arg1;
 - (id)idsService;
-- (id)initWithIDSServiceIdentifier:(id)arg1 launchOnDemandNotification:(id)arg2 cacheDirectoryPath:(id)arg3;
+- (id)initWithIDSServiceIdentifier:(id)arg1 persistentDictionary:(id)arg2 queue:(id)arg3 daemon:(id)arg4;
 - (void)mapPBRequest:(Class)arg1 toResponse:(Class)arg2 messageID:(unsigned short)arg3;
+- (id)nanoSyncDevices;
 - (id)queue;
 - (void)resume;
 - (void)sendRequest:(id)arg1;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;
 - (void)service:(id)arg1 account:(id)arg2 incomingData:(id)arg3 fromID:(id)arg4 context:(id)arg5;
+- (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(id /* block */)arg3;
+- (id)serviceIdentifier;
 - (void)setDelegate:(id)arg1;
 - (void)setQueue:(id)arg1;
 

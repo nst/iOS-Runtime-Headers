@@ -17,6 +17,7 @@
 - (id)bundle;
 - (id)content;
 - (void)contentWithCompletion:(id /* block */)arg1;
+- (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2;
 - (id)dictionary;
 - (void)dictionaryWithCompletion:(id /* block */)arg1;
 - (id)displayProfileOfType:(int)arg1;

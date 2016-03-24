@@ -5,6 +5,8 @@
 @interface WLAppMigrator : WLMigrationWebService
 
 + (void)_sendStoreAddToWishlistRequestForMigratableApps:(id)arg1 completion:(id /* block */)arg2;
++ (void)_sendStoreDownloadRequestForFreeMigratableApps:(id)arg1 completion:(id /* block */)arg2;
++ (id)_ssItemForiTunesStoreIdentifier:(id)arg1;
 + (id)contentType;
 + (id)dataType;
 + (void)installMigratableApps:(id)arg1 completion:(id /* block */)arg2;

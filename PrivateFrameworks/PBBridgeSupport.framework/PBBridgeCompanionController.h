@@ -22,9 +22,12 @@
     BOOL _passcodeSet;
     NSString *_remoteActivationUserAgent;
     RUIStyle *_remoteUIStyle;
+    NSMutableDictionary *_reportMapping;
     <RUILoaderDelegate> *_ruiDelegate;
     RUILoader *_ruiLoader;
     BOOL _selectedPairedUnlock;
+    BOOL _sentActivationRequest;
+    BOOL _sentSessionRequest;
     struct __MKBAssertion { } *_unlockPairingAssertion;
 }
 
@@ -50,9 +53,12 @@
 @property (nonatomic) BOOL passcodeSet;
 @property (nonatomic, copy) NSString *remoteActivationUserAgent;
 @property (nonatomic, retain) RUIStyle *remoteUIStyle;
+@property (nonatomic, retain) NSMutableDictionary *reportMapping;
 @property (nonatomic) <RUILoaderDelegate> *ruiDelegate;
 @property (nonatomic, retain) RUILoader *ruiLoader;
 @property (nonatomic) BOOL selectedPairedUnlock;
+@property (nonatomic) BOOL sentActivationRequest;
+@property (nonatomic) BOOL sentSessionRequest;
 @property (readonly) Class superclass;
 
 + (id)displayNameWithFirstName:(id)arg1 lastName:(id)arg2;
@@ -121,12 +127,16 @@
 - (void)refreshTimeoutTimer;
 - (id)remoteActivationUserAgent;
 - (id)remoteUIStyle;
+- (id)reportMapping;
+- (id)reporterForConnection:(id)arg1;
 - (id)ruiDelegate;
 - (id)ruiLoader;
 - (BOOL)selectedPairedUnlock;
 - (void)sendGizmoPasscodeRestrictions;
 - (void)sendProxyActivationRequest:(id)arg1;
 - (void)sendProxyActivationWithCustomRequest:(id)arg1;
+- (BOOL)sentActivationRequest;
+- (BOOL)sentSessionRequest;
 - (id)serviceIdentifier;
 - (void)setActivationConnection:(id)arg1;
 - (void)setActivationData:(id)arg1;
@@ -147,9 +157,13 @@
 - (void)setPasscodeSet:(BOOL)arg1;
 - (void)setRemoteActivationUserAgent:(id)arg1;
 - (void)setRemoteUIStyle:(id)arg1;
+- (void)setReportMapping:(id)arg1;
+- (void)setReporter:(id)arg1 forConnection:(id)arg2;
 - (void)setRuiDelegate:(id)arg1;
 - (void)setRuiLoader:(id)arg1;
 - (void)setSelectedPairedUnlock:(BOOL)arg1;
+- (void)setSentActivationRequest:(BOOL)arg1;
+- (void)setSentSessionRequest:(BOOL)arg1;
 - (void)setupServiceMessageSelectorMappings;
 - (void)startEstablishingPairing;
 - (void)tellGizmoToBeginActivation;

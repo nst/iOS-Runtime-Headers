@@ -15,6 +15,7 @@
     int _numberColumnsInDefaultGrid;
     int _numberOfColumnsInWideGrid;
     float _previewRevealProgressToFreezeMagnifier;
+    BOOL _shouldExitEditingModeAfterDuplication;
     float _sideMargins;
     BOOL _swipeSelectionEnabled;
     BOOL _useFloatingHeaders;
@@ -32,6 +33,7 @@
 @property (nonatomic) int numberColumnsInDefaultGrid;
 @property (nonatomic) int numberOfColumnsInWideGrid;
 @property (nonatomic) float previewRevealProgressToFreezeMagnifier;
+@property (nonatomic) BOOL shouldExitEditingModeAfterDuplication;
 @property (nonatomic) float sideMargins;
 @property (getter=isSwipeSelectionEnabled, nonatomic) BOOL swipeSelectionEnabled;
 @property (nonatomic) BOOL useFloatingHeaders;
@@ -65,9 +67,11 @@
 - (void)setNumberColumnsInDefaultGrid:(int)arg1;
 - (void)setNumberOfColumnsInWideGrid:(int)arg1;
 - (void)setPreviewRevealProgressToFreezeMagnifier:(float)arg1;
+- (void)setShouldExitEditingModeAfterDuplication:(BOOL)arg1;
 - (void)setSideMargins:(float)arg1;
 - (void)setSwipeSelectionEnabled:(BOOL)arg1;
 - (void)setUseFloatingHeaders:(BOOL)arg1;
+- (BOOL)shouldExitEditingModeAfterDuplication;
 - (float)sideMargins;
 - (BOOL)useFloatingHeaders;
 

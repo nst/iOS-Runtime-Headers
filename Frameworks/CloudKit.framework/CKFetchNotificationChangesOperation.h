@@ -26,7 +26,9 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (unsigned long long)activityStart;
 - (id /* block */)fetchNotificationChangesCompletionBlock;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)initWithPreviousServerChangeToken:(id)arg1;
 - (BOOL)moreComing;
 - (id /* block */)notificationChangedBlock;

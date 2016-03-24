@@ -5,7 +5,9 @@
 @interface GEODeviceState : PBCodable <NSCopying> {
     GEOCarInfo *_carInfo;
     int _deviceBatteryState;
+    NSString *_deviceCarrierName;
     int _deviceConnectivity;
+    NSString *_deviceCountryCode;
     NSString *_deviceInputLocale;
     int _deviceInterfaceOrientation;
     NSString *_deviceLocale;
@@ -19,14 +21,18 @@
 
 @property (nonatomic, retain) GEOCarInfo *carInfo;
 @property (nonatomic) int deviceBatteryState;
+@property (nonatomic, retain) NSString *deviceCarrierName;
 @property (nonatomic) int deviceConnectivity;
+@property (nonatomic, retain) NSString *deviceCountryCode;
 @property (nonatomic, retain) NSString *deviceInputLocale;
 @property (nonatomic) int deviceInterfaceOrientation;
 @property (nonatomic, retain) NSString *deviceLocale;
 @property (nonatomic, retain) NSString *deviceOutputLocale;
 @property (nonatomic, readonly) BOOL hasCarInfo;
 @property (nonatomic) BOOL hasDeviceBatteryState;
+@property (nonatomic, readonly) BOOL hasDeviceCarrierName;
 @property (nonatomic) BOOL hasDeviceConnectivity;
+@property (nonatomic, readonly) BOOL hasDeviceCountryCode;
 @property (nonatomic, readonly) BOOL hasDeviceInputLocale;
 @property (nonatomic) BOOL hasDeviceInterfaceOrientation;
 @property (nonatomic, readonly) BOOL hasDeviceLocale;
@@ -38,7 +44,9 @@
 - (void)dealloc;
 - (id)description;
 - (int)deviceBatteryState;
+- (id)deviceCarrierName;
 - (int)deviceConnectivity;
+- (id)deviceCountryCode;
 - (id)deviceInputLocale;
 - (int)deviceInterfaceOrientation;
 - (id)deviceLocale;
@@ -46,7 +54,9 @@
 - (id)dictionaryRepresentation;
 - (BOOL)hasCarInfo;
 - (BOOL)hasDeviceBatteryState;
+- (BOOL)hasDeviceCarrierName;
 - (BOOL)hasDeviceConnectivity;
+- (BOOL)hasDeviceCountryCode;
 - (BOOL)hasDeviceInputLocale;
 - (BOOL)hasDeviceInterfaceOrientation;
 - (BOOL)hasDeviceLocale;
@@ -57,7 +67,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (void)setCarInfo:(id)arg1;
 - (void)setDeviceBatteryState:(int)arg1;
+- (void)setDeviceCarrierName:(id)arg1;
 - (void)setDeviceConnectivity:(int)arg1;
+- (void)setDeviceCountryCode:(id)arg1;
 - (void)setDeviceInputLocale:(id)arg1;
 - (void)setDeviceInterfaceOrientation:(int)arg1;
 - (void)setDeviceLocale:(id)arg1;

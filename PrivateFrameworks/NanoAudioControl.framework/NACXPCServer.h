@@ -7,6 +7,7 @@
     NSObject<OS_dispatch_queue> *_audioAndHapticPreviewQueue;
     NSObject<OS_dispatch_source> *_audioRouteDeferTimer;
     NSMutableDictionary *_audioRoutesRecords;
+    NPSDomainAccessor *_domainAccessor;
     float _hapticIntensity;
     NACIDSClient *_idsClient;
     BOOL _systemMutedState;
@@ -25,13 +26,13 @@
 - (void).cxx_destruct;
 - (void)EULimitForCategory:(id)arg1 result:(id /* block */)arg2;
 - (id)_audioRoutesRecordForCategory:(id)arg1;
+- (float)_cachedHapticIntensity;
+- (BOOL)_cachedSystemMutedState;
+- (id)_cachedVolumeRecords;
 - (void)_cancelDeferredAudioRoutesUpdate;
 - (void)_cleanupConnection:(id)arg1;
 - (void)_endObservingAudioRoutesForCategory:(id)arg1 connection:(id)arg2;
 - (void)_endObservingVolumeForConnection:(id)arg1;
-- (void)_loadHapticIntensity;
-- (void)_loadSystemMutedState;
-- (void)_loadVolumeRecords;
 - (void)_persistHapticIntensity;
 - (void)_persistSystemMutedState;
 - (void)_persistVolumeRecords;

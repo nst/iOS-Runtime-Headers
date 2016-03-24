@@ -41,6 +41,7 @@
 - (int)compareAnchorY:(id)arg1;
 - (int)compareAnchorYDescending:(id)arg1;
 - (int)compareChunkPosition:(id)arg1;
+- (int)compareCommonAnchorX:(id)arg1;
 - (int)compareInsertionOrder:(id)arg1;
 - (int)compareLinearBounds:(id)arg1;
 - (int)compareTopDescending:(id)arg1;

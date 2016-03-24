@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DuetExpertCenter.framework/DuetExpertCenter
  */
 
-@interface _DECItem : NSObject <NSSecureCoding, _DECItemEquivalency> {
+@interface _DECItem : NSObject <NSCopying, NSSecureCoding, _DECItemEquivalency> {
     NSUUID *_identifier;
     NSMutableDictionary *_metadata;
 }
@@ -17,6 +17,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (id)identifier;
 - (id)init;

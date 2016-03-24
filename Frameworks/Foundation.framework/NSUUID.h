@@ -53,6 +53,10 @@
 
 + (id)_LS_UUIDWithData:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/ClassroomKit.framework/ClassroomKit
+
++ (id)crk_zerosUUID;
+
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 - (id)initWithCPLArchiver:(id)arg1;

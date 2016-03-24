@@ -5,7 +5,8 @@
 @interface MusicWelcomeNavigationController : MusicNavigationController <MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSWelcomeNativeViewControllerDelegate> {
     MusicClientContext *_clientContext;
     <MusicWelcomeNavigationControllerDisappearanceObserver> *_disappearanceObserver;
-    NSMutableArray *_queuedNativeViewEventTypes;
+    int _presentationReason;
+    NSMutableArray *_queuedNativeViewEvents;
     BOOL _registeredWithModalNavigationStackRegistry;
     MusicWelcomePlaceholderView *_welcomePlaceholderView;
 }
@@ -15,6 +16,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) <MusicWelcomeNavigationControllerDisappearanceObserver> *disappearanceObserver;
 @property (readonly) unsigned int hash;
+@property (nonatomic) int presentationReason;
 @property (readonly) Class superclass;
 
 + (BOOL)automaticallyInstallAccountBarButtonItem;
@@ -22,7 +24,9 @@
 
 - (void).cxx_destruct;
 - (void)_dispatchNativeViewEventOfType:(int)arg1;
+- (void)_dispatchNativeViewEventOfType:(int)arg1 withInfo:(id)arg2;
 - (void)_handleClientDidLoadNotification:(id)arg1;
+- (id)_loadEventExtraInfo;
 - (void)_setRegisteredWithModalNavigationStackRegistry:(BOOL)arg1;
 - (id)clientContext;
 - (void)dealloc;
@@ -31,8 +35,10 @@
 - (void)jsDidCloseWelcomeNativeViewController:(id)arg1 withOptions:(id)arg2;
 - (void)jsWelcomeNativeViewController:(id)arg1 setWelcomeDocument:(id)arg2 options:(id)arg3;
 - (id)loadJSNativeViewControllerWithAppContext:(id)arg1;
+- (int)presentationReason;
 - (void)setClientContext:(id)arg1;
 - (void)setDisappearanceObserver:(id)arg1;
+- (void)setPresentationReason:(int)arg1;
 - (BOOL)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)viewDidDisappear:(BOOL)arg1;

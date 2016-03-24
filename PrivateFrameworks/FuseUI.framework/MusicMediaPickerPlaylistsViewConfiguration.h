@@ -5,10 +5,12 @@
 @interface MusicMediaPickerPlaylistsViewConfiguration : MusicLibraryPlaylistsViewConfiguration
 
 - (void)_multipleSelectionAllowanceDidChange:(id)arg1;
+- (BOOL)canPreviewEntityValueContext:(id)arg1;
 - (void)dealloc;
 - (void)handleSelectionOfAddButtonForEntityValueProvider:(id)arg1 inEntityProvider:(id)arg2 fromViewController:(id)arg3;
 - (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)initWithPlaylistsFilter:(id)arg1 playlistsConfigurationOptions:(unsigned int)arg2;
 - (id)loadEntityViewDescriptor;
+- (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 
 @end

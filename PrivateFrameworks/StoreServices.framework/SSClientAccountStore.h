@@ -10,7 +10,9 @@
 @property (copy) NSArray *accounts;
 
 - (id)_accountWithUniqueIdentifier:(id)arg1;
+- (id)_accountsFromDaemon;
 - (id)_addAccount:(id)arg1 asActiveAccount:(BOOL)arg2 activeLockerAccount:(BOOL)arg3;
+- (id)_copyDaemonAccounts;
 - (id)_copyReloadedAccounts;
 - (void)_invalidateAccounts;
 - (void)_reloadAccountsIfNeeded;
@@ -25,6 +27,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)reloadAccounts;
+- (BOOL)sdk_hasActiveLockerAccount;
 - (void)setAccountCredits:(id)arg1 forAccountWithUniqueIdentifier:(id)arg2;
 - (void)setAccounts:(id)arg1;
 - (id)setActiveAccount:(id)arg1;

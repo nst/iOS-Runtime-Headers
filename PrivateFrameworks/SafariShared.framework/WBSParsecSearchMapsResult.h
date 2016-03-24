@@ -30,6 +30,7 @@
 
 - (void).cxx_destruct;
 - (id)additionalMapItems;
+- (void)didDisplayMapsResultForQuery:(id)arg1;
 - (id)extraCompletionItem;
 - (id)hiddenParsecResult;
 - (id)initWithDictionary:(id)arg1;

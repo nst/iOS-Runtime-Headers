@@ -8,6 +8,8 @@
     BOOL _didResetTorchMode;
     BOOL _irisCaptureEnabled;
     BOOL _lockAsShutterEnabled;
+    int _overriddenBackCaptureInterval;
+    int _overriddenFrontCaptureInterval;
     int _previewViewAspectMode;
     BOOL _shouldCaptureHDREV0;
     BOOL _shouldDelayRemotePersistence;
@@ -21,6 +23,8 @@
 @property (nonatomic) BOOL didResetTorchMode;
 @property (getter=isIrisCaptureEnabled, nonatomic, readonly) BOOL irisCaptureEnabled;
 @property (getter=isLockAsShutterEnabled, nonatomic, readonly) BOOL lockAsShutterEnabled;
+@property (nonatomic, readonly) int overriddenBackCaptureInterval;
+@property (nonatomic, readonly) int overriddenFrontCaptureInterval;
 @property (nonatomic) int previewViewAspectMode;
 @property (nonatomic, readonly) BOOL shouldCaptureHDREV0;
 @property (nonatomic, readonly) BOOL shouldDelayRemotePersistence;
@@ -38,6 +42,8 @@
 - (BOOL)didResetTorchMode;
 - (BOOL)isIrisCaptureEnabled;
 - (BOOL)isLockAsShutterEnabled;
+- (int)overriddenBackCaptureInterval;
+- (int)overriddenFrontCaptureInterval;
 - (int)previewViewAspectMode;
 - (void)readPreferences;
 - (BOOL)readPreferencesWithLaunchOptions:(id)arg1;

@@ -24,7 +24,6 @@
 - (void)requestLegacyAuthenticationWithAccountID:(id)arg1 completion:(id /* block */)arg2;
 - (void)requestPermissionForDiagnosticSubmissionWithCompletion:(id /* block */)arg1;
 - (void)requestPermissionToInitiateSetupWithCompletion:(id /* block */)arg1;
-- (void)requestPermissionToRememberPasswordForiTunesStoreID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setActiveUserNotification:(id)arg1;
 
 @end

@@ -75,6 +75,7 @@
 - (void)locationManager:(id)arg1 didUpdateLocations:(id)arg2;
 - (BOOL)locationTrackingIsReady;
 - (BOOL)locationUpdatesEnabled;
+- (void)monitorLocationAuthorization;
 - (double)nextPlannedUpdate;
 - (double)oldestAllowedUpdateTime;
 - (void)scheduleDelayedUpdate:(double)arg1;
@@ -91,6 +92,7 @@
 - (void)setLocationTrackingActive:(BOOL)arg1;
 - (void)setLocationTrackingIsReady:(BOOL)arg1;
 - (void)setLocationTrackingReady:(BOOL)arg1 activelyTracking:(BOOL)arg2 watchKitExtension:(BOOL)arg3;
+- (void)setLocationTrackingReady:(BOOL)arg1 activelyTracking:(BOOL)arg2 watchKitExtension:(BOOL)arg3 shouldRequestAuthorization:(BOOL)arg4;
 - (void)setLocationUpdatesEnabled:(BOOL)arg1;
 - (void)setNextPlannedUpdate:(double)arg1;
 - (void)setOldestAllowedUpdateTime:(double)arg1;

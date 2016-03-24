@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (void)beginRequestWithExtensionContext:(id)arg1;
 - (id)context;
+- (id)createTCPConnectionToEndpoint:(id)arg1 enableTFO:(BOOL)arg2 initialData:(id)arg3 enableMultipath:(BOOL)arg4 enableTLS:(BOOL)arg5 TLSParameters:(id)arg6 delegate:(id)arg7;
 - (id)createTCPConnectionToEndpoint:(id)arg1 enableTLS:(BOOL)arg2 TLSParameters:(id)arg3 delegate:(id)arg4;
 - (id)createUDPSessionToEndpoint:(id)arg1 fromEndpoint:(id)arg2;
 - (void)dealloc;

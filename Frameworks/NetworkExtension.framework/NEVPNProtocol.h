@@ -99,7 +99,7 @@
 - (id)passwordKeychainItem;
 - (id)passwordReference;
 - (id)proxySettings;
-- (void)removeKeychainItemsInDomain:(int)arg1;
+- (void)removeKeychainItemsInDomain:(int)arg1 keepIdentity:(bool)arg2;
 - (id)serverAddress;
 - (void)setDNSSettings:(id)arg1;
 - (void)setDisconnectOnIdle:(BOOL)arg1;

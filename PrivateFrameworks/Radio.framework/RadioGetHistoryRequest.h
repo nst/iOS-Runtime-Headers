@@ -8,7 +8,7 @@
     BOOL _fetchForAccount;
     BOOL _includesAds;
     unsigned int _maxNumberOfTracks;
-    NSArray *_playActivityFeedEvents;
+    NSArray *_playActivityEvents;
     RadioPlayEventCollection *_playEventCollection;
     SSURLConnectionRequest *_request;
     BOOL _shouldProcessCategories;
@@ -21,7 +21,7 @@
 @property (nonatomic) BOOL fetchForAccount;
 @property (nonatomic) BOOL includesAds;
 @property (nonatomic) unsigned int maxNumberOfTracks;
-@property (nonatomic, copy) NSArray *playActivityFeedEvents;
+@property (nonatomic, copy) NSArray *playActivityEvents;
 @property (nonatomic, copy) RadioPlayEventCollection *playEventCollection;
 @property (nonatomic) BOOL shouldProcessCategories;
 @property (nonatomic, copy) NSString *stationHash;
@@ -37,13 +37,13 @@
 - (BOOL)includesAds;
 - (id)init;
 - (unsigned int)maxNumberOfTracks;
-- (id)playActivityFeedEvents;
+- (id)playActivityEvents;
 - (id)playEventCollection;
 - (void)setAggregateSessions:(BOOL)arg1;
 - (void)setFetchForAccount:(BOOL)arg1;
 - (void)setIncludesAds:(BOOL)arg1;
 - (void)setMaxNumberOfTracks:(unsigned int)arg1;
-- (void)setPlayActivityFeedEvents:(id)arg1;
+- (void)setPlayActivityEvents:(id)arg1;
 - (void)setPlayEventCollection:(id)arg1;
 - (void)setShouldProcessCategories:(BOOL)arg1;
 - (void)setStationHash:(id)arg1;

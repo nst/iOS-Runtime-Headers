@@ -34,6 +34,7 @@
 + (BOOL)_disableICloudPhoto;
 + (BOOL)_fixAdjustedAssets:(id)arg1;
 + (BOOL)_fixAlbumAndFolderSortAscending:(id)arg1;
++ (BOOL)_fixCloudMasterCloudLocalState:(id)arg1;
 + (BOOL)_fixCorruptedOrientationsInStore:(id)arg1;
 + (BOOL)_fixDuplicatedAssets:(id)arg1;
 + (BOOL)_fixEmptyVideoResourcePathsInStore:(id)arg1;
@@ -68,6 +69,7 @@
 + (BOOL)_markOldPhotoIrisEditsEvaluatedInStore:(id)arg1;
 + (BOOL)_markPhotoIrisVideoOrphansInStore:(id)arg1;
 + (BOOL)_migrateAssetLocationData:(id)arg1;
++ (BOOL)_migrateCloudResourcesRelationshipsInStagedStore:(id)arg1;
 + (int)_migrateLegacySlomoAdjustmentsForAsset:(id)arg1;
 + (BOOL)_migrateLegacySlomoAdjustmentsInStore:(id)arg1 fromLegacySLMFormat:(BOOL)arg2;
 + (BOOL)_migrateRevGeoLocationDataFromKeyedArchiverFormat:(id)arg1;
@@ -76,7 +78,7 @@
 + (BOOL)_moveMyPhotoStreamToAlbumsListInStore:(id)arg1;
 + (id)_newSyncedPropertiesByAssetUUIDs:(BOOL)arg1;
 + (void)_parseDMContextForRestartingAfterRestoreFromBackup:(BOOL*)arg1 restartingAfterRestoreFromCloud:(BOOL*)arg2;
-+ (BOOL)_performMigrationWithMarkThumbnailsAsAltAvailable:(BOOL)arg1 cacheDateCreatedOnResources:(BOOL)arg2 cacheItemIdentifierOnResources:(BOOL)arg3 store:(id)arg4;
++ (BOOL)_performMigrationCacheDateCreatedOnResources:(BOOL)arg1 cacheItemIdentifierOnResources:(BOOL)arg2 store:(id)arg3;
 + (void)_persistMetadataToFileSystemForAlbum:(id)arg1;
 + (BOOL)_persistPhotoIrisVisibilityStateToDiskInStore:(id)arg1;
 + (BOOL)_persistPlaceAnnotationData:(id)arg1;
@@ -143,7 +145,7 @@
 + (id)generatePathToAssetUUIDRecoveryMapping;
 + (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id /* block */)arg3;
 + (BOOL)isPostProcessingLightweightMigration;
-+ (void)loadFileSystemDataIntoDatabase;
++ (void)loadFileSystemDataIntoDatabaseIfNeededWithReason:(id)arg1;
 + (id)managedObjectModelForLightweightMigrationStageWithURL:(id)arg1;
 + (id)nextRequiredStagedMigrationVersionAfterVersion:(id)arg1;
 + (void)postProcessFixesAfterOTARestoreForCompleteAsset:(id)arg1;
@@ -164,6 +166,7 @@
 - (void)_collectFileURLs:(id)arg1 forAddingToAlbum:(id)arg2 intoAssetsArray:(id)arg3 assetsKind:(int)arg4 testCreationDates:(BOOL)arg5;
 - (void)_importAllDCIMAssets;
 - (id)_importFileSystemImportAssets:(id)arg1 forceUpdate:(BOOL)arg2;
+- (void)_loadFileSystemDataIntoDatabaseIfNeededWithReason:(id)arg1;
 - (id)_orderedAssetsToImportCameraRollOnly:(BOOL)arg1;
 - (id)_syncedPropertiesForAssetUUID:(id)arg1;
 - (void)cleanupModelForDataMigration;
@@ -174,7 +177,6 @@
 - (void)importAfterCrash:(id)arg1 dictionariesByPhotoStreamID:(id)arg2 completionBlock:(id /* block */)arg3;
 - (id)init;
 - (id)initWithImplicitTransaction:(BOOL)arg1;
-- (void)loadFileSystemDataIntoDatabase;
 - (void)pausePhotoStreams;
 - (id)photoLibrary;
 - (void)repairPotentialModelCorruption;

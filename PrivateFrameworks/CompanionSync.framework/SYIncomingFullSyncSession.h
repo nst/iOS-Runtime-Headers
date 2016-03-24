@@ -15,15 +15,16 @@
 - (void)_continueProcessing;
 - (void)_handleBatchChunk:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handleEndSync:(id)arg1 completion:(id /* block */)arg2;
-- (void)_handleError:(id)arg1;
 - (void)_installStateListener;
 - (void)_notifyErrorAndShutdown;
 - (void)_processNextState;
 - (void)_sendEndSessionResponse:(id)arg1;
 - (void)_sessionComplete;
 - (void)_sessionEnded;
+- (void)_setStateQuietly:(int)arg1;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
+- (void)cancel;
 - (id)initWithService:(id)arg1;
 - (BOOL)isResetSync;
 - (BOOL)isSending;

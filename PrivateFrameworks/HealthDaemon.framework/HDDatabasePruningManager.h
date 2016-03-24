@@ -24,8 +24,8 @@
 - (id)_predicateForPruningSamplesExcludingTypes:(id)arg1 daysOld:(unsigned int)arg2 calendar:(id)arg3 nowDate:(id)arg4;
 - (id)_predicateForPruningThirdPartySampleTypes:(id)arg1 daysOld:(unsigned int)arg2 calendar:(id)arg3 nowDate:(id)arg4;
 - (id)_predicatesForPruningWithCalendar:(id)arg1 nowDate:(id)arg2;
-- (void)_queue_pruneExpiredDeletedObjectsWithCompletion:(id /* block */)arg1;
-- (void)_queue_pruneExpiredSamplesWithCompletion:(id /* block */)arg1;
+- (void)_queue_pruneExpiredDeletedObjectsWithNowDate:(id)arg1 completion:(id /* block */)arg2;
+- (void)_queue_pruneExpiredSamplesWithNowDate:(id)arg1 completion:(id /* block */)arg2;
 - (void)_registerActivity;
 - (void)_setLastAttemptDate:(id)arg1 completed:(BOOL)arg2;
 - (void)daemonReady:(id)arg1;
@@ -34,6 +34,7 @@
 - (id)healthDaemon;
 - (id)initWithHealthDaemon:(id)arg1;
 - (void)pruneDatabaseWithCompletion:(id /* block */)arg1;
+- (void)pruneDatabaseWithOptions:(unsigned int)arg1 nowDate:(id)arg2 completion:(id /* block */)arg3;
 - (id)queue;
 - (void)setHealthDaemon:(id)arg1;
 - (void)setQueue:(id)arg1;

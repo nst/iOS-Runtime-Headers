@@ -79,13 +79,13 @@
 - (void)editor:(id)arg1 didSelectSubitem:(unsigned int)arg2;
 - (void)editor:(id)arg1 didStartEditingItem:(id)arg2;
 - (void)endInlineEditing;
-- (BOOL)forceRefreshInviteesItemOnCommit;
-- (BOOL)forceRefreshLocationItemOnCommit;
+- (BOOL)forceRefreshInviteesItemOnSave;
+- (BOOL)forceRefreshLocationItemOnSave;
 - (id)init;
 - (BOOL)isInline;
 - (unsigned int)numberOfSubitems;
 - (void)refreshFromCalendarItemAndStore;
-- (BOOL)requiresReconfigurationOnCommit;
+- (BOOL)requiresReconfigurationOnSave;
 - (BOOL)saveAndDismissWithForce:(BOOL)arg1;
 - (void)setShowsAllDay:(BOOL)arg1;
 - (void)shortenCell:(id)arg1;

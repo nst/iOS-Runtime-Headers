@@ -3,6 +3,7 @@
  */
 
 @interface __NSCFURLLocalStreamTask : NSURLSessionTask {
+    NSData *_TCPConnectionMetadata;
     NSMutableArray *_afterConnectQueue;
     BOOL _betterRouteDiscovered;
     NSString *_boundInterfaceIdentifier;
@@ -57,6 +58,7 @@
     double startTime;
 }
 
+@property (copy) NSData *_TCPConnectionMetadata;
 @property (readonly) BOOL _goneSecure;
 @property long long countOfBytesExpectedToReceive;
 @property long long countOfBytesExpectedToSend;
@@ -70,6 +72,7 @@
 @property (copy) NSString *taskDescription;
 @property unsigned int taskIdentifier;
 
+- (id)_TCPConnectionMetadata;
 - (id)_boundInterfaceIdentifier;
 - (struct __CFDictionary { }*)_copySocketStreamProperties;
 - (BOOL)_disallowCellular;
@@ -124,6 +127,7 @@
 - (void)closeRead;
 - (void)closeWrite;
 - (long long)computeAdjustedPoolPriority;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (long long)countOfBytesExpectedToReceive;
 - (long long)countOfBytesExpectedToSend;
 - (long long)countOfBytesReceived;
@@ -150,6 +154,7 @@
 - (void)setState:(int)arg1;
 - (void)setTaskDescription:(id)arg1;
 - (void)setTaskIdentifier:(unsigned int)arg1;
+- (void)set_TCPConnectionMetadata:(id)arg1;
 - (void)set_boundInterfaceIdentifier:(id)arg1;
 - (void)set_disallowCellular:(BOOL)arg1;
 - (void)set_expectedWorkload:(long long)arg1;

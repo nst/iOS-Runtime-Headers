@@ -14,6 +14,8 @@
 @property (nonatomic, readonly) unsigned int sphericalHarmonicsLevel;
 
 - (void).cxx_destruct;
+- (id)_computeSceneKitRenderingTexture:(unsigned int)arg1;
+- (float)computeInnerAngle;
 - (void)computeLumens;
 - (struct CGColor { }*)evaluatedColorFromSHVector;
 - (void)generateCubemapFromLight:(unsigned int)arg1;

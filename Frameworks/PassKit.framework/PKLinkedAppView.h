@@ -2,22 +2,15 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKLinkedAppView : PKTableViewCell <SKStoreProductViewControllerDelegate> {
+@interface PKLinkedAppView : PKTableViewCell <PKLinkedApplicationDelegate> {
     UIActivityIndicatorView *_activityIndicator;
-    NSURL *_appLaunchURL;
     UILabel *_appName;
     UILabel *_appPublisher;
-    SSSoftwareLibraryItem *_foundLibraryItem;
-    NSDictionary *_foundStoreItem;
     UIImageView *_iconView;
-    BOOL _loaded;
-    BOOL _loading;
-    unsigned int _loadingCounter;
+    PKLinkedApplication *_linkedApplication;
     UILabel *_loadingLabel;
     UIColor *_mainLabelColor;
     UILabel *_price;
-    SKStoreProductViewController *_productViewController;
-    NSArray *_storeIDs;
     UIColor *_subTextLabelColor;
     PKLinkedAppUserRatingView *_userRatingView;
     UIButton *_viewButton;
@@ -27,6 +20,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) PKLinkedApplication *linkedApplication;
 @property (nonatomic) UIColor *mainLabelColor;
 @property (nonatomic, copy) NSArray *storeIDs;
 @property (nonatomic) UIColor *subTextLabelColor;
@@ -34,32 +28,22 @@
 
 - (void)_buttonPressed:(id)arg1;
 - (void)_cleanupViews;
-- (int)_iconOptionsForItem:(id)arg1;
-- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2;
-- (id)_iconURLFromArtwork:(id)arg1 withDesiredSize:(struct CGSize { float x1; float x2; })arg2 requireStrictMatch:(BOOL)arg3;
-- (int)_iconVariantForScale:(float)arg1 item:(id)arg2;
-- (id)_imageForSize:(struct CGSize { float x1; float x2; })arg1 fromArtwork:(id)arg2 requireStrictMatch:(BOOL)arg3;
-- (BOOL)_itemArtNeedsShine:(id)arg1;
 - (void)_layoutLoadingView;
 - (void)_layoutLockupView;
 - (void)_layoutNotAvailableView;
-- (void)_performStoreLookupWithCompletion:(id /* block */)arg1;
-- (id)_priceForItem:(id)arg1;
-- (struct CGSize { float x1; float x2; })_sizeFromImage:(id)arg1;
-- (void)_updateApplicationStateWithCompletion:(id /* block */)arg1;
 - (id)appLaunchURL;
 - (void)dealloc;
 - (void)didMoveToWindow;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStoreIDs:(id)arg1 appLaunchURL:(id)arg2 reuseIdentifier:(id)arg3;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (void)installedApplicationsDidChangeNotification:(id)arg1;
 - (void)layoutSubviews;
+- (id)linkedApplication;
+- (void)linkedApplicationDidChangeState:(id)arg1;
 - (id)mainLabelColor;
-- (void)productViewControllerDidFinish:(id)arg1;
-- (void)reloadApplicationState;
 - (void)reloadApplicationStateIfNecessary;
 - (void)setAppLaunchURL:(id)arg1;
+- (void)setApplicationIcon:(id)arg1;
 - (void)setApplicationName:(id)arg1;
 - (void)setLoadingText:(id)arg1;
 - (void)setMainLabelColor:(id)arg1;
@@ -68,6 +52,5 @@
 - (void)setSubTextLabelColor:(id)arg1;
 - (id)storeIDs;
 - (id)subTextLabelColor;
-- (void)unloadApplicationState;
 
 @end

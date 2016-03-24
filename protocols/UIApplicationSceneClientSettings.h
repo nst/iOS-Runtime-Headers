@@ -24,5 +24,6 @@
 - (BOOL)statusBarHidden;
 - (int)statusBarStyle;
 - (unsigned int)supportedInterfaceOrientations;
+- (int)whitePointAdaptivityStyle;
 
 @end

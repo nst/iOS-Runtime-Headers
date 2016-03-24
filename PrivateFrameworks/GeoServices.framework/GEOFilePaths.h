@@ -4,8 +4,13 @@
 
 @interface GEOFilePaths : NSObject
 
++ (id)geoServicesCacheDirectoryPath;
++ (id)homeDirectory;
++ (void)initialize;
 + (id)navdCacheDirectoryPath;
 + (id)phoneNumberMUIDMappingFilePath;
 + (id)placeDataCacheDirectoryPath;
++ (id)preferencesDirectoryPath;
++ (id)tileCacheDirectoryPath;
 
 @end

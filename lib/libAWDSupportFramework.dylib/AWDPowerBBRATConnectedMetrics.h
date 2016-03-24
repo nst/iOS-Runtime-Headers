@@ -14,6 +14,8 @@
 @property (nonatomic, retain) NSMutableArray *rATPowers;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)rATPowerType;
+
 - (void)addRATPower:(id)arg1;
 - (void)clearRATPowers;
 - (void)copyTo:(id)arg1;

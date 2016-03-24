@@ -14,6 +14,8 @@
 @property (nonatomic, retain) NSMutableArray *instances;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)instanceType;
+
 - (void)addInstance:(id)arg1;
 - (void)clearInstances;
 - (void)copyTo:(id)arg1;

@@ -4,7 +4,6 @@
 
 @interface FBSSystemServiceFacilityClient : NSObject <FBSSystemServiceClient, FBSSystemServiceClientDelegate> {
     FBSSystemServiceClient *_client;
-    BOOL _connectionDenied;
     NSString *_identifier;
     NSObject<OS_dispatch_queue> *_queue;
 }
@@ -18,13 +17,15 @@
 
 - (id)calloutQueue;
 - (void)client:(id)arg1 configureConnectMessage:(id)arg2;
-- (void)client:(id)arg1 didConnectWithSuccess:(BOOL)arg2;
+- (void)client:(id)arg1 handleError:(id)arg2;
 - (void)client:(id)arg1 handleMessage:(id)arg2 withType:(long long)arg3;
 - (void)configureConnectMessage:(id)arg1;
 - (void)dealloc;
 - (id)description;
+- (void)handleError:(id)arg1;
 - (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (id)identifier;
+- (id)init;
 - (id)initWithIdentifier:(id)arg1 calloutQueue:(id)arg2;
 - (void)invalidate;
 - (void)sendMessage:(id)arg1 withType:(long long)arg2;

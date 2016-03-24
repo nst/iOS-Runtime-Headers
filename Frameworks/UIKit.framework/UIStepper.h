@@ -29,6 +29,7 @@
 @property (nonatomic) BOOL wraps;
 
 - (void).cxx_destruct;
+- (id)__scalarStatisticsForUserValueChangedEvent;
 - (void)_commonStepperInit;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedHeight;
 - (BOOL)_contentHuggingDefault_isUsuallyFixedWidth;

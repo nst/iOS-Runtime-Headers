@@ -11,6 +11,7 @@
 }
 
 @property (nonatomic) HAPAccessory *accessory;
+@property (setter=setCBService:, nonatomic, retain) CBService *cbService;
 @property (nonatomic, retain) NSArray *characteristics;
 @property (nonatomic, readonly) NSArray *includedServices;
 @property (nonatomic, copy) NSNumber *instanceID;
@@ -22,6 +23,7 @@
 - (BOOL)_validateMandatoryCharacteristics;
 - (BOOL)_validateServiceCharacteristics;
 - (id)accessory;
+- (id)cbService;
 - (id)characteristics;
 - (id)characteristicsOfType:(id)arg1;
 - (id)description;
@@ -31,6 +33,7 @@
 - (id)instanceID;
 - (BOOL)isEqualToService:(id)arg1;
 - (void)setAccessory:(id)arg1;
+- (void)setCBService:(id)arg1;
 - (void)setCharacteristics:(id)arg1;
 - (void)setInstanceID:(id)arg1;
 - (void)setType:(id)arg1;

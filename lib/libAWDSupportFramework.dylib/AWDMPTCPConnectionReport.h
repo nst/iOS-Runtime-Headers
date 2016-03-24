@@ -74,6 +74,9 @@
 @property (nonatomic, retain) NSMutableArray *subflowSwitchingReports;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)interfaceReportsType;
++ (Class)subflowSwitchingReportsType;
+
 - (void)addInterfaceReports:(id)arg1;
 - (void)addSubflowSwitchingReports:(id)arg1;
 - (void)clearInterfaceReports;

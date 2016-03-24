@@ -4,7 +4,6 @@
 
 @interface ICAttachmentModel : NSObject <QLPreviewItem> {
     ICAttachment *_attachment;
-    BOOL _generatingPreviews;
     BOOL _hasAdditionalSearchIndexStrings;
     struct CGSize { 
         float width; 
@@ -20,7 +19,6 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL generateAsynchronousPreviews;
 @property (nonatomic, readonly) BOOL generatePreviewsDuringCloudActivity;
-@property (getter=isGeneratingPreviews) BOOL generatingPreviews;
 @property (nonatomic, readonly) id /* block */ genericBrickThumbnailCreator;
 @property (nonatomic, readonly) id /* block */ genericListThumbnailCreator;
 @property BOOL hasAdditionalSearchIndexStrings;
@@ -60,7 +58,6 @@
 - (id)initWithAttachment:(id)arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
 - (void)invalidateSearchStrings;
-- (BOOL)isGeneratingPreviews;
 - (BOOL)isMergeableDataDirty;
 - (BOOL)isReadyToPresent;
 - (void)mergeWithMergeableData:(id)arg1;
@@ -72,7 +69,6 @@
 - (id)previewItemTitle;
 - (id)previewItemURL;
 - (id)searchStrings;
-- (void)setGeneratingPreviews:(BOOL)arg1;
 - (void)setHasAdditionalSearchIndexStrings:(BOOL)arg1;
 - (void)setIntrinsicContentSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setMergeableDataDirty:(BOOL)arg1;

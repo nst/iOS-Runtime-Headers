@@ -4,6 +4,7 @@
 
 @interface NMSPersistentDictionary : NSObject <NSLocking> {
     struct sqlite3_stmt { } *_byDate;
+    struct sqlite3_stmt { } *_byEnqueueDate;
     struct sqlite3 { } *_db;
     struct sqlite3_stmt { } *_fetch;
     struct sqlite3_stmt { } *_insert;
@@ -18,6 +19,7 @@
 }
 
 - (void).cxx_destruct;
+- (unsigned int)_checkSchemaVersion;
 - (id)_dataFromObject:(id)arg1;
 - (void)_ensureDBSchema;
 - (id)_objectFromData:(id)arg1;
@@ -25,6 +27,7 @@
 - (void)_prepareStatements;
 - (void)_withDB:(id /* block */)arg1;
 - (void)dealloc;
+- (void)enumerateObjectsSortedByEnqueueDate:(id /* block */)arg1;
 - (void)enumerateObjectsSortedByExpirationDate:(id /* block */)arg1;
 - (id)init;
 - (id)initWithPath:(id)arg1 objectClass:(Class)arg2 loggingFacility:(struct __CFString { }*)arg3;

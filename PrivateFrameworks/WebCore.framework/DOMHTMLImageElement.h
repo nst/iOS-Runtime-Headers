@@ -34,6 +34,7 @@
 - (id)border;
 - (BOOL)complete;
 - (id)crossOrigin;
+- (id)currentSrc;
 - (id)dataRepresentation:(BOOL)arg1;
 - (int)height;
 - (int)hspace;
@@ -54,11 +55,13 @@
 - (void)setLongDesc:(id)arg1;
 - (void)setLowsrc:(id)arg1;
 - (void)setName:(id)arg1;
+- (void)setSizes:(id)arg1;
 - (void)setSrc:(id)arg1;
 - (void)setSrcset:(id)arg1;
 - (void)setUseMap:(id)arg1;
 - (void)setVspace:(int)arg1;
 - (void)setWidth:(int)arg1;
+- (id)sizes;
 - (id)src;
 - (id)srcset;
 - (id)useMap;

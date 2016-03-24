@@ -4,16 +4,14 @@
 
 @interface CDPDCircleController : NSObject {
     CDPDCircleStateObserver *_circleJoinObserver;
-    CDPContext *_context;
+    <CDPDCircleProxy> *_circleProxy;
     <CDPDCircleDelegate> *_delegate;
     <CDPStateUIProviderInternal> *_uiProvider;
 }
 
-@property (nonatomic, readonly) CDPContext *context;
-@property (nonatomic, readonly) <CDPDCircleDelegate> *delegate;
-@property (nonatomic, readonly) <CDPStateUIProviderInternal> *uiProvider;
-
-+ (void)registerCredentialsFromContext:(id)arg1;
+@property (nonatomic, retain) <CDPDCircleProxy> *circleProxy;
+@property (nonatomic) <CDPDCircleDelegate> *delegate;
+@property (nonatomic, retain) <CDPStateUIProviderInternal> *uiProvider;
 
 - (void).cxx_destruct;
 - (void)_joinCDPCircleIgnoringBackups:(BOOL)arg1 completion:(id /* block */)arg2;
@@ -22,17 +20,19 @@
 - (void)_resetCicleToResolvePendingAfterRecoveryWithCompletion:(id /* block */)arg1;
 - (BOOL)applyToJoinCircleWithJoinHandler:(id /* block */)arg1;
 - (void)cancelApplicationToJoinCircle;
-- (void)cancelPendingCircleJoinWithCompletion:(id /* block */)arg1;
+- (id)circleProxy;
 - (int)circleStatus;
-- (id)context;
 - (void)dealloc;
 - (id)delegate;
-- (id)initWithContext:(id)arg1 uiProvider:(id)arg2 delegate:(id)arg3;
+- (id)initWithUiProvider:(id)arg1 delegate:(id)arg2 circleProxy:(id)arg3;
 - (void)joinCDPCircleIgnoringBackups:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)joinCDPCircleWithCompletion:(id /* block */)arg1;
 - (void)joinCircleAfterRecoveryWithCompletion:(id /* block */)arg1;
 - (id)peerID;
 - (void)prepareCircleStateForRecoveryWithCompletion:(id /* block */)arg1;
+- (void)setCircleProxy:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)setUiProvider:(id)arg1;
 - (BOOL)synchronizeCircleViews;
 - (id)uiProvider;
 - (void)useCircleInfoToUpdateNameForDevices:(id)arg1;

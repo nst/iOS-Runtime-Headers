@@ -142,6 +142,7 @@
 - (void)_adjustPopoverForNewContentSizeFromViewController:(id)arg1 allowShrink:(BOOL)arg2;
 - (BOOL)_alwaysAdaptToFullscreenForTraitCollection:(id)arg1;
 - (BOOL)_attemptsToAvoidKeyboard;
+- (id)_backgroundView;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_baseContentInsets;
 - (struct CGPoint { float x1; float x2; })_centerPointForScale:(float)arg1 frame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 anchor:(struct CGPoint { float x1; float x2; })arg3;
 - (BOOL)_centersPopoverIfSourceViewNotSet;

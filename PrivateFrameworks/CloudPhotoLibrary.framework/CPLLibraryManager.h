@@ -74,6 +74,7 @@
 - (id)addSubscriberUsingPublishingHandler:(id /* block */)arg1;
 - (void)barrier;
 - (void)beginDownloadForResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (void)beginDownloadForResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 proposedTaskIdentifier:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)beginDownloadForResource:(id)arg1 highPriority:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)beginPullChangeSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)beginPushChangeSessionWithKnownLibraryVersion:(id)arg1 completionHandler:(id /* block */)arg2;

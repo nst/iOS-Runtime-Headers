@@ -58,6 +58,9 @@
 
 + (id)_mapkit_fontFeaturesForTabularFigures;
 + (id)_mapkit_fontFeaturesForTimeDisplay;
++ (id)_mapkit_fontFeaturesForTimeDisplayUseMonospace:(BOOL)arg1;
++ (id)_mapkit_fontMonospaceFeature;
++ (id)_mapkit_fontRoundedColonFeature;
 
 - (id)_mapkit_fontDescriptorByAddingFeaturesForTabularFigures;
 - (id)_mapkit_fontDescriptorByAddingFeaturesForTimeDisplay;

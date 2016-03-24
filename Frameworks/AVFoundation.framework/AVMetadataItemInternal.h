@@ -5,6 +5,7 @@
 @interface AVMetadataItemInternal : NSObject {
     NSString *commonKey;
     NSString *dataType;
+    NSDate *discoveryTimestamp;
     struct { 
         long long value; 
         int timescale; 

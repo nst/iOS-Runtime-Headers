@@ -11,7 +11,9 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) <BSSettingDescriptionProvider> *descriptionProvider;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) BOOL isEmpty;
 @property (readonly) Class superclass;
 
 + (id)_newHashTableWithInitialCapacity:(unsigned int)arg1;
@@ -26,10 +28,13 @@
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionProvider;
 - (id)descriptionWithMultilinePrefix:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)init;
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)inspectChangesWithBlock:(id /* block */)arg1;
+- (BOOL)isEmpty;
+- (void)setDescriptionProvider:(id)arg1;
 
 @end

@@ -21,7 +21,9 @@
 - (id)_processClassSelector:(id)arg1;
 - (id)_templateNameForDocument:(id)arg1;
 - (void)addRuleWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 contextNodeId:(int)arg3 selector:(id)arg4;
+- (void)addRuleWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 styleSheetId:(id)arg3 selector:(id)arg4;
 - (id)controller;
+- (void)createStyleSheetWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 frameId:(id)arg3;
 - (void)disableWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (void)enableWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (void)forcePseudoStateWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 nodeId:(int)arg3 forcedPseudoClasses:(id)arg4;
@@ -33,6 +35,7 @@
 - (void)getStyleSheetTextWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 styleSheetId:(id)arg3;
 - (void)getStyleSheetWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 styleSheetId:(id)arg3;
 - (void)getSupportedCSSPropertiesWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
+- (void)getSupportedSystemFontFamilyNamesWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2;
 - (id)initWithInspectorController:(id)arg1;
 - (void)resetStylesFromNode:(id)arg1;
 - (void)setPropertyTextWithErrorCallback:(id /* block */)arg1 successCallback:(id /* block */)arg2 styleId:(id)arg3 propertyIndex:(int)arg4 text:(id)arg5 overwrite:(BOOL)arg6;

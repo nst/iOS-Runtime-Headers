@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKTransitDeparturesViewController : UITableViewController <MKTransitDeparturesCellDelegate, _MKPlaceTransitIncidentCellDelegate, _MKTransitConnectionCellDelegate> {
+@interface MKTransitDeparturesViewController : UITableViewController <GEOResourceManifestTileGroupObserver, MKTransitDeparturesCellDelegate, _MKPlaceTransitIncidentCellDelegate, _MKTransitConnectionCellDelegate> {
     BOOL _allowsTransitLineSelection;
     NSMutableSet *_animatingSequences;
     BOOL _anyIncidentAdvisoryShown;
@@ -10,14 +10,16 @@
     NSMutableDictionary *_cachedImages;
     NSMapTable *_cachedSectionHeaders;
     NSMutableDictionary *_cachedSequencesForSection;
+    NSMapTable *_cachedSystemHasInactiveLines;
     NSTimer *_cellRefreshTimer;
     <MKTransitDepaturesViewControllerDelegate> *_delegate;
     NSDate *_departureCutoffDate;
     BOOL _fetchingTransitInfo;
     <GEOTransitSystem> *_filterSystem;
-    BOOL _hasNoDisplayableDepartures;
+    BOOL _hasNoDisplayableDepartureInfo;
     _MKPlaceTransitIncidentsController *_incidentsController;
     NSString *_infoRefreshErrorDescription;
+    BOOL _isAttributionURLAvailable;
     BOOL _isFilteredSelection;
     NSDate *_lastCutoffDateWithValidSchedule;
     int _lastFailureDiagnosis;
@@ -51,22 +53,27 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_blockedLines;
+- (id)_attributionCell;
+- (id)_blockedIncidentEntities;
 - (id)_cellForRowAtIndexPath:(id)arg1;
 - (float)_columnCenteringImageWidth;
 - (void)_configureDeparturesCell:(id)arg1 forIndexPath:(id)arg2;
+- (void)_configureLeadingForDeparturesCell:(id)arg1 width:(float)arg2 compressed:(BOOL)arg3;
 - (id)_connectionCellForRow:(int)arg1;
 - (id)_controllerForSection:(int)arg1;
+- (float)_defaultLeadingSeparatorInset;
+- (id)_departureCutoffDateForLine:(id)arg1;
 - (id)_departureCutoffDateForSequence:(id)arg1;
 - (id)_departureSequenceForIndexPath:(id)arg1;
 - (id)_departureSequenceForIndexPath:(id)arg1 outDepartureIndex:(unsigned int*)arg2 outIsNewLine:(BOOL*)arg3 outNextLineIsSame:(BOOL*)arg4;
 - (int)_departureSequenceFrequencyTypeForAllDeparturesSections;
 - (int)_departureSequenceFrequencyTypeForSection:(int)arg1;
 - (id)_departureSequencesForSection:(int)arg1;
-- (id)_descriptionForDepartureDate:(id)arg1 canIncludeDate:(BOOL)arg2;
+- (id)_departuresControllerForSection:(int)arg1;
 - (id)_directionForSection:(int)arg1;
 - (id)_directionsForSystem:(id)arg1 hasSequencesWithNoDirection:(out BOOL*)arg2;
-- (id)_dominantIncidentForLine:(id)arg1;
+- (id)_dominantIncidentForSequence:(id)arg1;
+- (BOOL)_hasAttribution;
 - (BOOL)_hasConnectionsSection;
 - (BOOL)_hasIncidentsSection;
 - (BOOL)_hasMessageSection;
@@ -79,14 +86,15 @@
 - (id)_imageForSystem:(id)arg1;
 - (id)_imageKeyForLine:(id)arg1 size:(int)arg2;
 - (id)_imageWithArtworkDataSource:(id)arg1;
+- (id)_inactiveLinesControllerForSection:(int)arg1;
+- (id)_inactiveLinesForSystem:(id)arg1 linesWithServiceResumesDataOnly:(BOOL)arg2;
 - (id)_incidentCellForRow:(int)arg1;
-- (id)_incidents;
-- (void)_incrementPageControlValueForSection:(id)arg1;
+- (id)_incidentsFilteredToOnePerLine:(BOOL)arg1;
+- (void)_incrementPageControlValueForSection:(int)arg1 identifier:(id)arg2;
 - (id)_indexPathWithHeader:(id)arg1;
 - (id)_indexPathWithoutHeader:(id)arg1;
 - (BOOL)_isCompressed;
 - (BOOL)_isCompressedWithTraits:(id)arg1;
-- (BOOL)_isDateLastDeparture:(id)arg1 withNextDepartureDate:(id)arg2 forSequence:(id)arg3;
 - (BOOL)_isImageCandidateForColumnCentering:(id)arg1;
 - (BOOL)_isInfoExpired;
 - (BOOL)_isStuckWithExpiredInfo;
@@ -96,10 +104,9 @@
 - (float)_maxImageWidthPassingTest:(id /* block */)arg1;
 - (id)_messageCell;
 - (void)_multiSystemRefreshCellsIfNecessary:(id)arg1;
-- (id)_nextLastDepartureDateForSequence:(id)arg1 afterDate:(id)arg2;
+- (int)_numberOfDeparturesSectionsForSystem:(id)arg1;
 - (int)_numberOfRowsInSection:(int)arg1;
-- (int)_numberOfSectionsForSystem:(id)arg1;
-- (void)_pageControlButtonPressed:(id)arg1;
+- (void)_openAttributionURL;
 - (id)_pagingPromptForSection:(int)arg1;
 - (void)_rebuildSections;
 - (void)_refresh;
@@ -109,22 +116,26 @@
 - (int)_sectionForIdentifier:(id)arg1;
 - (BOOL)_sectionHasFooter:(int)arg1;
 - (BOOL)_sectionHasHeader:(int)arg1;
+- (void)_sectionHeaderButtonPressed:(id)arg1;
 - (int)_sectionTypeForSection:(int)arg1;
 - (int)_sectionsCount;
 - (id)_separatorColor;
-- (id)_serviceGapDescriptionForDepartureDates:(id)arg1 inSequence:(id)arg2;
 - (BOOL)_shouldPageSection:(int)arg1;
+- (BOOL)_showInactiveWithDataOnly;
 - (id)_smallerImageWithArtworkDataSource:(id)arg1;
 - (id)_startEndDatesForSequence:(id)arg1 date:(id)arg2;
 - (id)_systemForSection:(int)arg1;
 - (id)_systemForSection:(int)arg1 firstSection:(int*)arg2;
-- (id)_timestampFormatterForTimeZoneDisplay:(BOOL)arg1;
+- (BOOL)_systemHasAllInactiveLines:(id)arg1;
+- (BOOL)_systemHasAllInactiveLines:(id)arg1 serviceResumesDescription:(id*)arg2;
+- (BOOL)_systemHasInactiveLines:(id)arg1;
 - (void)_toggleShowingMultipleDeparturesForCell:(id)arg1 atIndexPath:(id)arg2;
 - (int)_transitCategoryForSection:(int)arg1;
 - (int)_transitCategoryForSequence:(id)arg1;
+- (void)_transitInfoUpdated;
 - (void)_updateDepartureCutoffDate;
 - (void)_updateScheduleInfoIfNeeded;
-- (void)_updateSecondaryTextForHighFrequencyCell:(id)arg1 withSequence:(id)arg2;
+- (void)_updateSecondaryTextForHighFrequencyCell:(id)arg1 withSequence:(id)arg2 serviceGapDescription:(id)arg3;
 - (BOOL)_updateSecondaryTextForOperatingHours:(id)arg1 withSequence:(id)arg2;
 - (id)_viewForFooterInSection:(int)arg1;
 - (id)_viewForHeaderInSection:(int)arg1;
@@ -150,6 +161,7 @@
 - (BOOL)pagingAllowed;
 - (BOOL)pendingRefresh;
 - (void)recordIncidentShown:(id)arg1 system:(id)arg2;
+- (void)resourceManifestManagerDidChangeActiveTileGroup:(id)arg1;
 - (void)setCellRefreshTimer:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDepartureCutoffDate:(id)arg1;

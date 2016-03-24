@@ -17,6 +17,7 @@
 - (void)__viewServiceDidRegisterScrollToTopView;
 - (void)__viewServiceDidUnregisterScrollToTopView;
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(int)arg1 hidden:(BOOL)arg2 updateAnimation:(int)arg3;
+- (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(int)arg1 animationSettings:(BSAnimationSettings *)arg2;
 - (void)__viewServiceDidUpdateTintColor:(UIColor *)arg1 duration:(double)arg2;
 - (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize { float x1; float x2; })arg1 fence:(BKSAnimationFenceHandle *)arg2;
 - (void)__viewServicePopoverDidChangeContentSize:(void *)arg1 animated:(void *)arg2 fence:(void *)arg3 withReplyHandler:(void *)arg4; // needs 4 arg types, found 9: struct CGSize { float x1; float x2; }, BOOL, BKSAnimationFenceHandle *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, struct CGSize { float x1; float x2; }, void*

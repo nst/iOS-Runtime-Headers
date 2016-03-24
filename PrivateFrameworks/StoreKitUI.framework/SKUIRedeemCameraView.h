@@ -5,6 +5,7 @@
 @interface SKUIRedeemCameraView : UIView <UITextFieldDelegate> {
     SKUIClientContext *_clientContext;
     <SKUIRedeemCameraViewDelegate> *_delegate;
+    BOOL _displayRedeem;
     SKUIITunesPassConfiguration *_iTunesPassConfiguration;
     SKUIRedeemITunesPassLockup *_iTunesPassLockup;
     SKUIRedeemTextField *_inputAccessoryTextField;
@@ -55,6 +56,8 @@
 - (void)showKeyboard;
 - (void)start;
 - (id)text;
+- (BOOL)textFieldShouldBeginEditing:(id)arg1;
+- (BOOL)textFieldShouldEndEditing:(id)arg1;
 - (BOOL)textFieldShouldReturn:(id)arg1;
 - (void)textFieldTextDidChange:(id)arg1;
 

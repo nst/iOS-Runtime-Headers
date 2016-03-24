@@ -20,7 +20,9 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (unsigned long long)activityStart;
 - (id)errorsByNotificationID;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithNotificationIDsToMarkRead:(id)arg1;
 - (id /* block */)markNotificationsReadCompletionBlock;

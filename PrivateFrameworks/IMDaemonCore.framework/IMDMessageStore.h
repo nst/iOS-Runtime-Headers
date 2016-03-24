@@ -13,7 +13,7 @@
 
 @property (retain) NSString *modificationStamp;
 
-+ (void)_updateCacheForMessageGUID:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3;
++ (void)_updateCacheForMessageGUID:(id)arg1 fromMessage:(id)arg2 toMessage:(id)arg3 updateLastMessage:(BOOL)arg4;
 + (id)sharedInstance;
 
 - (void)__postDBUpdate;

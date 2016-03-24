@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDTimeIntervalCollectionCalculator : NSObject {
+@interface HDTimeIntervalCollectionCalculator : HDCollectionCalculator {
     double _endInterval;
     NSArray *_orderedSourceIds;
     double _startInterval;
@@ -14,8 +14,8 @@
 - (void).cxx_destruct;
 - (BOOL)_isSource:(long long)arg1 preferredTo:(long long)arg2;
 - (void)_shortenRangesConsideringPreferredSourceValue:(id)arg1 lesserRange:(id)arg2;
-- (void)addValueWithStart:(double)arg1 end:(double)arg2 source:(long long)arg3 value:(double)arg4;
-- (id)initWithOrderedSourceIds:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
+- (void)addValue:(double)arg1 startTime:(double)arg2 endTime:(double)arg3 sourceID:(long long)arg4;
+- (id)initWithBucketBoundaries:(id)arg1 orderedSourceIds:(id)arg2;
 - (double)mergedTimeIntervalForValue:(double)arg1;
 - (id)orderedSourceIds;
 - (void)setOrderedSourceIds:(id)arg1;

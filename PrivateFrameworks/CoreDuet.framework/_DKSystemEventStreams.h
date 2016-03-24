@@ -36,10 +36,12 @@
 + (id)nowPlayingStream;
 + (id)periodOfDayEventStream;
 + (id)spotlightActivityStream;
++ (id)sunriseSunsetStream;
 + (id)userActivityDetectedStream;
 + (id)userIsCurrentlyAsleepStream;
 + (id)userIsFirstBacklightOnAfterWakeup;
 + (id)userNextSleepPeriodStream;
++ (id)watchActiveStream;
 + (id)watchNearbyStream;
 
 // Image: /System/Library/PrivateFrameworks/DuetExpertCenter.framework/DuetExpertCenter

@@ -4,6 +4,7 @@
 
 @interface CLLocationManagerInternal : NSObject {
     int fActivityType;
+    BOOL fAllowsAlteredAccessoryLocations;
     BOOL fAllowsBackgroundLocationUpdates;
     BOOL fAllowsLocationPrompts;
     BOOL fAllowsMapCorrection;

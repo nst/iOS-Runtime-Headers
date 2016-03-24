@@ -20,6 +20,7 @@
 @property (nonatomic, retain) NSTimer *timer;
 @property (nonatomic, copy) NSString *titleText;
 
+- (void).cxx_destruct;
 - (void)_clearTimer;
 - (id)_localizedPlatformName;
 - (void)_scheduleTimerIfNecessaryAndUpdateState;

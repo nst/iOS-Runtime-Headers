@@ -14,6 +14,7 @@
     HDIDSIncomingRequest *_request;
     double _sendTimeout;
     BOOL _sent;
+    IDSDevice *_toDevice;
 }
 
 @property (nonatomic, retain) NSData *data;
@@ -31,10 +32,11 @@
 @property (nonatomic) double sendTimeout;
 @property (getter=isSent) BOOL sent;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) IDSDevice *toDevice;
 
 - (void).cxx_destruct;
-- (void)configureWithActivationRestore:(id)arg1 forStore:(id)arg2;
-- (void)configureWithStatus:(id)arg1 forStore:(id)arg2;
+- (void)configureWithActivationRestore:(id)arg1 syncStore:(id)arg2;
+- (void)configureWithStatus:(id)arg1 syncStore:(id)arg2;
 - (id)data;
 - (void)dealloc;
 - (id)description;
@@ -62,5 +64,7 @@
 - (void)setRequest:(id)arg1;
 - (void)setSendTimeout:(double)arg1;
 - (void)setSent:(BOOL)arg1;
+- (void)setToDevice:(id)arg1;
+- (id)toDevice;
 
 @end

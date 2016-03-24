@@ -73,6 +73,7 @@
 - (void)getSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg1 forCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)getSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg1 forTopoIDRange:(struct TopoIDRange { struct TopoID { id x_1_1_1; } x1; unsigned int x2; })arg2;
 - (void)getSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg1 inOrderedSubstrings:(struct vector<TopoSubstring *, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x1; struct TopoSubstring {} **x2; struct __compressed_pair<TopoSubstring **, std::__1::allocator<TopoSubstring *> > { struct TopoSubstring {} **x_3_1_1; } x3; }*)arg2 forCharacterRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3;
+- (BOOL)graphIsEqual:(id)arg1;
 - (BOOL)hasDeltas;
 - (BOOL)hasLocalChanges;
 - (unsigned int)hash;

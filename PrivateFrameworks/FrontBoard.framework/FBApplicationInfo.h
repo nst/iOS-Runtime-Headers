@@ -102,6 +102,7 @@
 - (double)_lastModifiedDateForPath:(id)arg1;
 - (id)_localizedGenreFromDictionary:(id)arg1;
 - (id)_localizedGenreNameForID:(int)arg1;
+- (void)_parse:(id)arg1 fromBundle:(id)arg2;
 - (id)_preferenceDomain;
 - (void)_setInstalling:(BOOL)arg1;
 - (void)_setUninstalling:(BOOL)arg1;

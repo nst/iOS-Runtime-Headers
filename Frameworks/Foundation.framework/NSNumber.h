@@ -134,6 +134,10 @@
 - (id)CA_roundToIntegerFromValue:(id)arg1;
 - (void)encodeWithCAMLWriter:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
++ (id)cat_numberWithObject:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (id)__ck_localizedString;
@@ -187,7 +191,7 @@
 
 - (BOOL)hk_hasFloatingPointValue;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (BOOL)hk_animatable;
 - (id)hk_midPointToValue:(id)arg1 percentage:(float)arg2;

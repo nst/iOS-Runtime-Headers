@@ -15,11 +15,16 @@
 @property (nonatomic, retain) <CDPStateUIProviderInternal> *uiProvider;
 
 - (void).cxx_destruct;
+- (id)_cdpStateMachine;
+- (void)_deleteFollowUpItemForOfflineLocalSecretChange;
+- (void)_finishOfflineLocalSecretChange:(id /* block */)arg1;
 - (void)_localSecretChangedTo:(id)arg1 secretType:(unsigned int)arg2 completion:(id /* block */)arg3;
+- (void)_postFollowUpItemForOfflineLocalSecretChange;
 - (id)circleController;
 - (void)circleController:(id)arg1 secureBackupRecordsArePresentWithCompletion:(id /* block */)arg2;
 - (id)circlePeerIDForSecureBackupController:(id)arg1;
 - (id)context;
+- (void)dealloc;
 - (void)finishOfflineLocalSecretChangeWithCompletion:(id /* block */)arg1;
 - (id)initWithContext:(id)arg1;
 - (void)joinCircleAfterRecoveryWithCompletion:(id /* block */)arg1;

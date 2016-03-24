@@ -7,7 +7,6 @@
     NSObject<OS_dispatch_queue> *_callbackQueue;
     BOOL _didReset;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    SSVFamilyNotificationObserver *_familyNotificationObserver;
     SSVSubscriptionStatus *_lastKnownStatus;
     NSDate *_lastStatusDate;
     int _notificationToken;
@@ -25,7 +24,6 @@
 - (id)_copyValidStatusForStatus:(id)arg1;
 - (void)_deviceStoreFrontChangedNotification;
 - (void)_externalChangeNotification;
-- (void)_familyDidChangeNotification;
 - (void)_fireStatusBlocksWithStatus:(id)arg1 isFinal:(BOOL)arg2 error:(id)arg3;
 - (void)_handleRequestResponseWithStatus:(id)arg1 isFinal:(BOOL)arg2 error:(id)arg3;
 - (void)_invalidateLastKnownStatus;
@@ -36,5 +34,6 @@
 - (id)lastKnownStatus;
 - (void)modifyLastKnownStatusUsingBlock:(id /* block */)arg1;
 - (void)reset;
+- (void)sdk_getStatusWithBlock:(id /* block */)arg1;
 
 @end

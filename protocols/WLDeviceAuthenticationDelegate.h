@@ -5,7 +5,6 @@
 
 @required
 
-- (void)authenticator:(id <WLDeviceAuthenticatorProtocol>)arg1 didCalculateSecurityCode:(NSString *)arg2;
 - (void)authenticator:(id <WLDeviceAuthenticatorProtocol>)arg1 didFailWithError:(NSError *)arg2;
 - (void)authenticator:(id <WLDeviceAuthenticatorProtocol>)arg1 didFinishWithAuthentication:(WLDeviceAuthentication *)arg2;
 

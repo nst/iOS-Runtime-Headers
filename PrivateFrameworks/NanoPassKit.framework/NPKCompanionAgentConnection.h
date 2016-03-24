@@ -37,9 +37,9 @@
 - (int)_isApplePaySupportedInCurrentRegion;
 - (id)_remoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (void)_removePassWithUniqueIDFromCache:(id)arg1;
-- (void)_savePaymentPass:(id)arg1 atURL:(id)arg2 completion:(id /* block */)arg3;
+- (void)_savePaymentPass:(id)arg1 atURL:(id)arg2 forDevice:(id)arg3 completion:(id /* block */)arg4;
 - (void)_setCachedUniqueIDs:(id)arg1;
-- (void)_sharedPaymentWebServiceContextWithCompletion:(id /* block */)arg1;
+- (void)_sharedPaymentWebServiceContextForDevice:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)beginProvisioningFromWatchOfferForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)cachedPasses;
 - (id)cachedUniqueIDs;
@@ -52,7 +52,6 @@
 - (void)handlePendingUnpairingWithCompletion:(id /* block */)arg1;
 - (void)handlePendingiCloudSignoutWithCompletion:(id /* block */)arg1;
 - (id)init;
-- (BOOL)isIssuerAppProvisioningSupported;
 - (void)noteProvisioningPreflightCompleteWithSuccess:(BOOL)arg1 error:(id)arg2 completion:(id /* block */)arg3;
 - (void)noteWatchOfferShownForPaymentPass:(id)arg1;
 - (void)paymentPassUniqueIDs:(id /* block */)arg1;
@@ -61,8 +60,8 @@
 - (void)paymentPassesWithPrimaryAccountIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)queueAppropriateFailedActions;
 - (void)redownloadAllPaymentPassesWithCompletion:(id /* block */)arg1;
-- (void)removePaymentPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
-- (void)savePaymentPass:(id)arg1 completion:(id /* block */)arg2;
+- (void)removePaymentPassWithUniqueID:(id)arg1 forDevice:(id)arg2 completion:(id /* block */)arg3;
+- (void)savePaymentPass:(id)arg1 forDevice:(id)arg2 completion:(id /* block */)arg3;
 - (void)setCachedPasses:(id)arg1;
 - (void)setCachedUniqueIDs:(id)arg1;
 - (void)setConnectionAvailableActions:(id)arg1;
@@ -70,8 +69,9 @@
 - (void)setDefaultCardUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setDefaultPaymentApplication:(id)arg1 forPassWithUniqueID:(id)arg2 completion:(id /* block */)arg3;
 - (void)setQueueAppropriateFailedActions:(BOOL)arg1;
-- (void)setSharedPaymentWebServiceContext:(id)arg1;
+- (void)setSharedPaymentWebServiceContext:(id)arg1 forDevice:(id)arg2;
 - (id)sharedPaymentWebServiceContext;
+- (id)sharedPaymentWebServiceContextForDevice:(id)arg1;
 - (void)shouldShowApplePaySettingsWithCompletion:(id /* block */)arg1;
 - (void)shouldShowWatchOfferForPaymentPass:(id)arg1 withCompletion:(id /* block */)arg2;
 - (id)watchPaymentWebService;

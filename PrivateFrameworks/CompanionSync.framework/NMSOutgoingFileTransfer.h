@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@interface NMSOutgoingFileTransfer : NSObject <NMSObfuscatableDescriptionProviding> {
+@interface NMSOutgoingFileTransfer : NSObject <NMSDeviceTargetable, NMSObfuscatableDescriptionProviding> {
     NSDictionary *_extraIDSOptions;
     NSURL *_fileURL;
     NSString *_idsIdentifier;
@@ -12,6 +12,7 @@
     NSDictionary *_persistentUserInfo;
     unsigned int _priority;
     double _sendTimeout;
+    NSSet *targetDeviceIDs;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -27,6 +28,7 @@
 @property (nonatomic) unsigned int priority;
 @property (nonatomic) double sendTimeout;
 @property (readonly) Class superclass;
+@property (nonatomic, copy) NSSet *targetDeviceIDs;
 
 - (void).cxx_destruct;
 - (id)CPObfuscatedDescriptionObject;
@@ -49,5 +51,7 @@
 - (void)setPersistentUserInfo:(id)arg1;
 - (void)setPriority:(unsigned int)arg1;
 - (void)setSendTimeout:(double)arg1;
+- (void)setTargetDeviceIDs:(id)arg1;
+- (id)targetDeviceIDs;
 
 @end

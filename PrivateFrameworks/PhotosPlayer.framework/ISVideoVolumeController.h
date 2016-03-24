@@ -12,7 +12,7 @@
     struct { 
         BOOL respondsToVolumeDidChange; 
     } _delegateFlags;
-    AVPlayer *_player;
+    ISWrappedAVPlayer *_player;
 }
 
 @property (setter=_setTargetVolume:, nonatomic) float _targetVolume;
@@ -21,7 +21,7 @@
 @property (setter=_setVolumeRampStartTime:, nonatomic) double _volumeRampStartTime;
 @property (setter=_setVolumeRampStartValue:, nonatomic) float _volumeRampStartValue;
 @property (nonatomic) <ISVideoVolumeControllerDelegate> *delegate;
-@property (nonatomic, readonly) AVPlayer *player;
+@property (nonatomic, readonly) ISWrappedAVPlayer *player;
 @property (nonatomic) float volume;
 
 - (void).cxx_destruct;

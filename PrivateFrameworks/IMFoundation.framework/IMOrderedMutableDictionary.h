@@ -3,15 +3,17 @@
  */
 
 @interface IMOrderedMutableDictionary : NSObject {
-    NSMutableDictionary *_dictionnary;
+    NSMutableDictionary *_dictionary;
     IMDoubleLinkedList *_linkedList;
 }
 
+- (BOOL)containsKey:(id)arg1;
+- (BOOL)containsOrderedObject:(id)arg1;
 - (void)dealloc;
 - (id)init;
 - (id)orderedObjectForKey:(id)arg1;
 - (id)orderedObjects;
-- (BOOL)removeOrderedObjectForKey:(id)arg1;
+- (void)removeOrderedObjectForKey:(id)arg1;
 - (void)setOrderedObject:(id)arg1 forKey:(id)arg2;
 
 @end

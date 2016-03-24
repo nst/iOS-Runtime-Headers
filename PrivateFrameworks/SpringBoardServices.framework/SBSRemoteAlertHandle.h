@@ -20,11 +20,11 @@
 + (id)handleWithConfiguration:(id)arg1;
 + (id)lookupHandlesForConfiguration:(id)arg1 creatingIfNone:(BOOL)arg2;
 
+- (void).cxx_destruct;
 - (id)_initWithHandleToken:(id)arg1;
 - (void)_queue_callObserversWithBlock:(id /* block */)arg1;
 - (void)activateWithOptions:(id)arg1;
 - (void)addObserver:(id)arg1;
-- (void)dealloc;
 - (id)init;
 - (void)invalidate;
 - (BOOL)isActive;

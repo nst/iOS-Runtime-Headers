@@ -158,9 +158,6 @@
 - (BOOL)_isFailureRequirementEnabled:(id)arg1;
 - (BOOL)_isFriendWithGesture:(id)arg1;
 - (BOOL)_isRecognized;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (void)_pressWasCancelled:(id)arg1;
 - (void)_queueForResetIfFinished;
 - (id)_relationshipFailureRequirement;

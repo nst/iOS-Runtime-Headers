@@ -23,6 +23,7 @@
 - (void)_updateContainerMetadataFromRecord:(id)arg1 stripIcons:(BOOL)arg2;
 - (id)aliasByUnsaltedBookmarkData:(id)arg1;
 - (id)asPrivateContainer;
+- (BOOL)checkIfAppSyncShouldBeEnabled;
 - (id)containerMetadata;
 - (id)containerMetadataEtag;
 - (BOOL)containerMetadataNeedsSyncUp;
@@ -42,7 +43,7 @@
 - (void)performBlock:(id /* block */)arg1 whenSyncDownCompletesLookingForAliasWithBookmarkData:(id)arg2;
 - (id)plist;
 - (id)privateZone;
-- (BOOL)recomputeSyncBlockState;
+- (BOOL)recomputeAppSyncBlockState;
 - (BOOL)removeSyncDownForAliasData:(id)arg1;
 - (id)reservedItemByParentID:(id)arg1 andDisplayName:(id)arg2;
 - (id)resolveClashOfAlias:(id)arg1 atPath:(id)arg2 withAlias:(id)arg3 atPath:(id)arg4;

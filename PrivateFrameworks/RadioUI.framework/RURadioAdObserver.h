@@ -54,7 +54,6 @@
 - (void)_itemDidFinishLoadingNotification:(id)arg1;
 - (void)_itemWillChangeNotification:(id)arg1;
 - (void)_loadMinDurationToCountAsPlayedFromURLBag;
-- (id)_playActivityFeedEventsForPendingPlayActivityEvents:(id)arg1;
 - (void)_playbackStateDidChangeNotification:(id)arg1;
 - (void)_radioStreamTrackAVItemDidReceiveTimedMetadataPingsNotification:(id)arg1;
 - (void)_registerForPlayerNotifications;

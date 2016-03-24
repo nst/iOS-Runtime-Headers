@@ -17,6 +17,7 @@
 }
 
 @property (getter=isBuiltIn, nonatomic, readonly) BOOL builtIn;
+@property (nonatomic, readonly, copy) NSString *compactLocalizedDisplayName;
 @property (nonatomic, copy) <NSObject><NSCopying> *currentValue;
 @property (getter=isCurrentValueFromCameraCapture, nonatomic) BOOL currentValueFromCameraCapture;
 @property (nonatomic, copy) NSString *defaultValue;
@@ -38,6 +39,7 @@
 + (id)sampleCustomPaymentSetupFields;
 
 - (void)_setLocalizedDisplayName:(id)arg1;
+- (id)compactLocalizedDisplayName;
 - (id)currentValue;
 - (id)dateFieldObject;
 - (void)dealloc;

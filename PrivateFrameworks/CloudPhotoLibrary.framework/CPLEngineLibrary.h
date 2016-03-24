@@ -4,6 +4,7 @@
 
 @interface CPLEngineLibrary : NSObject <CPLAbstractObject> {
     NSHashTable *_attachedObjects;
+    NSDate *_cachedLastQuarantineCountReportDate;
     NSURL *_clientLibraryBaseURL;
     BOOL _closed;
     NSURL *_cloudLibraryResourceStorageURL;
@@ -16,7 +17,6 @@
     CPLPlatformObject *_platformObject;
     NSObject<OS_dispatch_queue> *_queue;
     CPLEngineScheduler *_scheduler;
-    CPLStatistics *_statistics;
     CPLStatus *_status;
     CPLEngineStore *_store;
     CPLEngineSyncManager *_syncManager;
@@ -42,7 +42,6 @@
 @property (nonatomic, readonly) BOOL libraryIsCorrupted;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (nonatomic, readonly) CPLEngineScheduler *scheduler;
-@property (nonatomic, readonly) CPLStatistics *statistics;
 @property (nonatomic, readonly) CPLEngineStore *store;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) CPLEngineSyncManager *syncManager;
@@ -55,6 +54,7 @@
 - (void)_closeNextComponent:(id)arg1 deactivate:(BOOL)arg2 lastError:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_openNextComponent:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_performBlockWithLibrary:(BOOL)arg1 enumerateAttachedObjects:(id /* block */)arg2;
+- (void)_reportQuarantineCountIfNecessaryWithLastReportDate:(id)arg1;
 - (void)_updateTotalAssetCountWithAssetCounts:(id)arg1;
 - (void)attachObject:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)clientLibraryBaseURL;
@@ -87,6 +87,7 @@
 - (void)openWithCompletionHandler:(id /* block */)arg1;
 - (id)platformObject;
 - (void)reportLibraryCorrupted;
+- (void)reportQuarantineCountIfNecessary;
 - (void)reportRadar:(unsigned int)arg1;
 - (void)reportUnsuccessfulSync;
 - (void)requestAttachedLibrary;
@@ -97,7 +98,6 @@
 - (void)setICloudLibraryHasBeenWiped:(BOOL)arg1;
 - (void)setIsExceedingQuota:(BOOL)arg1;
 - (void)startSyncSession;
-- (id)statistics;
 - (id)store;
 - (id)syncManager;
 - (id)systemMonitor;

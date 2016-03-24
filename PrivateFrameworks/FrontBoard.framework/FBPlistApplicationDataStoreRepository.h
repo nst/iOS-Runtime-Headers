@@ -14,7 +14,7 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
-@property (nonatomic) <FBApplicationDataStoreRepositoryDelegate> *delegate;
+@property (nonatomic) <FBApplicationDataStoreRepositoryReadingDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;

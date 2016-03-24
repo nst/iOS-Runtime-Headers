@@ -15,6 +15,7 @@
 - (void).cxx_destruct;
 - (void*)addressBook;
 - (id)addressBookCache;
+- (void)cleanUpAddressBookCache_sync;
 - (void)createAddressBook;
 - (void)dealloc;
 - (id)description;

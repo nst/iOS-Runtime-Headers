@@ -3,17 +3,29 @@
  */
 
 @interface CTCellularPlanItem : NSObject <NSCopying, NSSecureCoding> {
-    NSString *_identifier;
+    NSString *_iccid;
+    BOOL _isSelectable;
     NSNumber *_isSelectedOverride;
+    BOOL _isSimStateValid;
+    NSString *_name;
     CTCellularPlan *_plan;
+    BOOL _shouldAutoSelectWhenInRange;
+    BOOL _shouldDisplayType;
+    int _type;
 }
 
+@property (nonatomic, readonly) NSString *iccid;
 @property (nonatomic, readonly) NSString *identifier;
 @property (nonatomic, readonly) BOOL isBackedByCellularPlan;
-@property (nonatomic, readonly) BOOL isSelectable;
+@property (nonatomic) BOOL isSelectable;
 @property (nonatomic, readonly) BOOL isSelected;
 @property (nonatomic, retain) NSNumber *isSelectedOverride;
+@property (nonatomic) BOOL isSimStateValid;
+@property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) CTCellularPlan *plan;
+@property (nonatomic) BOOL shouldAutoSelectWhenInRange;
+@property (nonatomic) BOOL shouldDisplayType;
+@property (nonatomic) int type;
 
 + (BOOL)supportsSecureCoding;
 
@@ -21,15 +33,28 @@
 - (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
+- (id)iccid;
 - (id)identifier;
-- (id)init;
-- (id)initWithCellularPlan:(id)arg1 identifier:(id)arg2;
+- (id)initWithCellularPlan:(id)arg1;
+- (id)initWithCellularPlan:(id)arg1 iccid:(id)arg2 name:(id)arg3 type:(int)arg4;
+- (id)initWithCellularPlan:(id)arg1 type:(int)arg2;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithIccid:(id)arg1 name:(id)arg2;
 - (BOOL)isBackedByCellularPlan;
 - (BOOL)isSelectable;
 - (BOOL)isSelected;
 - (id)isSelectedOverride;
+- (BOOL)isSimStateValid;
+- (id)name;
 - (id)plan;
+- (void)setIsSelectable:(BOOL)arg1;
 - (void)setIsSelectedOverride:(id)arg1;
+- (void)setIsSimStateValid:(BOOL)arg1;
+- (void)setShouldAutoSelectWhenInRange:(BOOL)arg1;
+- (void)setShouldDisplayType:(BOOL)arg1;
+- (void)setType:(int)arg1;
+- (BOOL)shouldAutoSelectWhenInRange;
+- (BOOL)shouldDisplayType;
+- (int)type;
 
 @end

@@ -3,11 +3,15 @@
  */
 
 @interface GEOComposedTransitTripRouteLeg : GEOComposedTransitBaseRouteLeg {
+    NSArray *_actionSheetDescriptions;
+    NSArray *_actionSheetOptionsArtwork;
     GEOComposedTransitTripRouteStep *_alightStep;
     GEOComposedTransitTripRouteStep *_blockTransferStep;
     GEOComposedTransitTripRouteStep *_boardStep;
     unsigned int _numberOfTransitStops;
-    unsigned int _vehicleIndex;
+    NSArray *_routeDetailsOptionsArtwork;
+    unsigned int _selectedRideOptionIndex;
+    NSArray *_transitLineOptions;
 }
 
 @property (nonatomic, readonly) GEOComposedTransitTripRouteStep *alightStep;
@@ -18,14 +22,17 @@
 @property (nonatomic, readonly) NSTimeZone *departureTimeZone;
 @property (nonatomic, readonly) NSArray *departureTimes;
 @property (nonatomic, readonly) NSDate *lastStepArrivalDate;
-@property (nonatomic, readonly) <GEOTransitArtworkDataSource> *routeLineArtwork;
+@property (nonatomic, readonly) unsigned int rideOptionsCount;
+@property (nonatomic, readonly) NSArray *routeLineArtwork;
+@property (nonatomic) unsigned int selectedRideOptionIndex;
 @property (nonatomic, readonly) <GEOTransitLine> *transitLine;
+@property (nonatomic, readonly) NSArray *transitLineOptions;
 @property (nonatomic, readonly) <GEOTransitSystem> *transitSystem;
-@property (nonatomic, readonly) unsigned int vehicleCount;
-@property (nonatomic) unsigned int vehicleIndex;
 
 - (void)_cacheStepData;
 - (BOOL)_needsStepData;
+- (id)actionSheetArtworkForRideOption:(unsigned int)arg1;
+- (id)actionSheetDescriptionForRideOption:(unsigned int)arg1;
 - (id)alightStep;
 - (id)blockTransferStep;
 - (id)boardStep;
@@ -35,17 +42,17 @@
 - (id)departureTime;
 - (id)departureTimeZone;
 - (id)departureTimes;
-- (id)initWithComposedRoute:(id)arg1 stepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 transitStepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4;
+- (id)initWithComposedRoute:(id)arg1 tripIndex:(unsigned int)arg2 stepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 transitStepRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg4 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg5;
 - (id)lastStepArrivalDate;
 - (unsigned int)numberOfTransitStops;
-- (id)routeDetailsPrimaryArtworkForVehicle:(unsigned int)arg1;
-- (id)routeDetailsSecondaryArtworkForVehicle:(unsigned int)arg1;
+- (unsigned int)rideOptionsCount;
+- (id)routeDetailsPrimaryArtworkForRideOption:(unsigned int)arg1;
 - (id)routeLineArtwork;
-- (void)setVehicleIndex:(unsigned int)arg1;
-- (id)steppingArtworkForVehicle:(unsigned int)arg1;
+- (unsigned int)selectedRideOptionIndex;
+- (void)setSelectedRideOptionIndex:(unsigned int)arg1;
 - (id)transitLine;
+- (id)transitLineForRideOption:(unsigned int)arg1;
+- (id)transitLineOptions;
 - (id)transitSystem;
-- (unsigned int)vehicleCount;
-- (unsigned int)vehicleIndex;
 
 @end

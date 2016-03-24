@@ -57,8 +57,8 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
-- (BOOL)hk_readValue:(void*)arg1 ofSize:(unsigned long)arg2;
-- (BOOL)hk_writeValue:(const void*)arg1 size:(unsigned long)arg2;
+- (BOOL)hk_readValue:(void*)arg1 ofSize:(unsigned long)arg2 error:(id*)arg3;
+- (BOOL)hk_writeValue:(const void*)arg1 size:(unsigned long)arg2 error:(id*)arg3;
 
 // Image: /System/Library/PrivateFrameworks/MusicLibrary.framework/MusicLibrary
 

@@ -3,6 +3,7 @@
  */
 
 @interface PKPaymentDeviceRegistrationData : NSObject <NSSecureCoding> {
+    NSArray *_additionalDeviceSerialNumbers;
     NSString *_companionSerialNumber;
     BOOL _devSigned;
     NSString *_deviceSerialNumber;
@@ -12,6 +13,7 @@
     NSDictionary *_stateInformation;
 }
 
+@property (nonatomic, copy) NSArray *additionalDeviceSerialNumbers;
 @property (nonatomic, copy) NSString *companionSerialNumber;
 @property (nonatomic) BOOL devSigned;
 @property (nonatomic, copy) NSString *deviceSerialNumber;
@@ -22,6 +24,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (id)additionalDeviceSerialNumbers;
 - (id)companionSerialNumber;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -31,6 +34,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)productType;
 - (id)secureElementIdentifier;
+- (void)setAdditionalDeviceSerialNumbers:(id)arg1;
 - (void)setCompanionSerialNumber:(id)arg1;
 - (void)setDevSigned:(BOOL)arg1;
 - (void)setDeviceSerialNumber:(id)arg1;

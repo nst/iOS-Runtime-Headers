@@ -3,7 +3,7 @@
  */
 
 @interface FBApplicationDataStoreRepositoryManager : NSObject <FBApplicationDataStoreRepositoryDelegate> {
-    FBPlistApplicationDataStoreRepository *_dataStore;
+    FBSqliteApplicationDataStoreRepository *_dataStore;
     NSURL *_dataStoreURL;
     LSApplicationWorkspace *_lsApplicationWorkspace;
     FBSSerialQueue *_queue;
@@ -28,9 +28,13 @@
 - (id)initWithQueue:(id)arg1;
 - (id)lsApplicationWorkspace;
 - (void)migrateApplicationStorePathIfNecessary;
+- (BOOL)migrateFromApplicationStore:(id)arg1 toApplicationStore:(id)arg2 error:(id*)arg3;
+- (BOOL)migrateFromPlistStoreAtURL:(id)arg1 toSqliteStoreAtURL:(id)arg2 error:(id*)arg3;
 - (void)objectChangedForKeys:(id)arg1 application:(id)arg2;
+- (BOOL)removeStoreAtURL:(id)arg1 error:(out id*)arg2;
 - (void)setDataStore:(id)arg1;
 - (void)setLsApplicationWorkspace:(id)arg1;
 - (void)storeInvalidatedForIdentifier:(id)arg1;
+- (id)urlByAppendingString:(id)arg1 toURL:(id)arg2;
 
 @end

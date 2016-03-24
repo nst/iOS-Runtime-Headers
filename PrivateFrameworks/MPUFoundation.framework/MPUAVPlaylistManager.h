@@ -16,6 +16,7 @@
     unsigned int _maximumPlaylistIndex;
     unsigned int _minimumPlaylistIndex;
     int _nextCurrentIndex;
+    _MPUAVItemSourceContext *_repeatPlaylistIdentifer;
     int _repeatStartIndex;
     MPQueueFeeder *_softQueueFeeder;
 }
@@ -34,6 +35,7 @@
 @property (nonatomic, retain) MPAVItem *lastPlayedSoftQueueItem;
 @property (nonatomic) int nextCurrentIndex;
 @property (nonatomic, readonly) int playbackMode;
+@property (nonatomic, copy) _MPUAVItemSourceContext *repeatPlaylistIdentifer;
 @property (nonatomic) int repeatStartIndex;
 @property (nonatomic, retain) MPQueueFeeder *softQueueFeeder;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } softQueuePlaylistIndexRange;
@@ -98,6 +100,7 @@
 - (void)queueFeeder:(id)arg1 didChangeContentsWithPreferredStartIndex:(unsigned int)arg2 error:(id)arg3;
 - (void)queueFeeder:(id)arg1 didChangeContentsWithReplacementPlaybackContext:(id)arg2;
 - (void)removeItemAtPlaybackIndex:(int)arg1;
+- (id)repeatPlaylistIdentifer;
 - (int)repeatStartIndex;
 - (void)setCurrentIndex:(int)arg1 selectionDirection:(int)arg2;
 - (void)setDisableQueueModifications:(BOOL)arg1;
@@ -108,6 +111,7 @@
 - (void)setNextCurrentIndex:(int)arg1;
 - (BOOL)setPlaylistFeeder:(id)arg1 startIndex:(int)arg2 keepPlaying:(BOOL)arg3;
 - (void)setRepeatMode:(int)arg1;
+- (void)setRepeatPlaylistIdentifer:(id)arg1;
 - (void)setRepeatStartIndex:(int)arg1;
 - (void)setSoftQueueFeeder:(id)arg1;
 - (id)softQueueFeeder;

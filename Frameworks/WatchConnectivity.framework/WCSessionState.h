@@ -3,42 +3,43 @@
  */
 
 @interface WCSessionState : NSObject <NSSecureCoding> {
+    NSString *_appInstallationID;
     BOOL _appInstalled;
     BOOL _complicationEnabled;
     BOOL _iOSDeviceNeedsFirstUnlock;
     BOOL _paired;
+    NSSet *_pairedDevicesPairingIDs;
     NSString *_pairingID;
     BOOL _reachable;
-    BOOL _shouldCancelTransfers;
-    NSURL *_watchDirectoryURL;
 }
 
+@property (readonly, copy) NSString *appInstallationID;
 @property (getter=isAppInstalled, readonly) BOOL appInstalled;
 @property (getter=isComplicationEnabled, readonly) BOOL complicationEnabled;
 @property (readonly) BOOL iOSDeviceNeedsFirstUnlock;
 @property (getter=isPaired, readonly) BOOL paired;
+@property (readonly, copy) NSSet *pairedDevicesPairingIDs;
 @property (readonly, copy) NSString *pairingID;
 @property (getter=isReachable, readonly) BOOL reachable;
-@property (readonly) BOOL shouldCancelTransfers;
-@property (copy) NSURL *watchDirectoryURL;
+@property (readonly, copy) NSURL *watchDirectoryURL;
 
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)appInstallationID;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)iOSDeviceNeedsFirstUnlock;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithReachable:(BOOL)arg1 iOSDeviceNeedsFirstUnlock:(BOOL)arg2 pairingID:(id)arg3;
-- (id)initWithReachable:(BOOL)arg1 paired:(BOOL)arg2 appInstalled:(BOOL)arg3 complicationEnabled:(BOOL)arg4 shouldCancelTransfers:(BOOL)arg5 iOSDeviceNeedsFirstUnlock:(BOOL)arg6 pairingID:(id)arg7;
-- (id)initWithReachable:(BOOL)arg1 paired:(BOOL)arg2 appInstalled:(BOOL)arg3 complicationEnabled:(BOOL)arg4 shouldCancelTransfers:(BOOL)arg5 pairingID:(id)arg6;
+- (id)initWithReachable:(BOOL)arg1 iOSDeviceNeedsFirstUnlock:(BOOL)arg2 activePairingID:(id)arg3;
+- (id)initWithReachable:(BOOL)arg1 paired:(BOOL)arg2 appInstalled:(BOOL)arg3 complicationEnabled:(BOOL)arg4 activePairingID:(id)arg5 pairedDevicesPairingIDs:(id)arg6 appInstallationID:(id)arg7;
+- (id)initWithReachable:(BOOL)arg1 paired:(BOOL)arg2 appInstalled:(BOOL)arg3 complicationEnabled:(BOOL)arg4 iOSDeviceNeedsFirstUnlock:(BOOL)arg5 pairingID:(id)arg6 pairedDevicesPairingIDs:(id)arg7 appInstallationID:(id)arg8;
 - (BOOL)isAppInstalled;
 - (BOOL)isComplicationEnabled;
 - (BOOL)isPaired;
 - (BOOL)isReachable;
+- (id)pairedDevicesPairingIDs;
 - (id)pairingID;
-- (void)setWatchDirectoryURL:(id)arg1;
-- (BOOL)shouldCancelTransfers;
 - (id)watchDirectoryURL;
 
 @end

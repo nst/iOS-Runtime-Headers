@@ -37,6 +37,7 @@
 - (void)reloadData;
 - (void)setAllowsAutomaticHDR:(BOOL)arg1;
 - (void)setAllowsHDROn:(BOOL)arg1;
+- (void)setExpansionOrientation:(int)arg1;
 - (void)setHDRMode:(int)arg1;
 - (BOOL)shouldAllowExpansion;
 - (id)titleForMenuItemAtIndex:(int)arg1;

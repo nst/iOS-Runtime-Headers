@@ -29,6 +29,7 @@
 - (void)_recoverConnection;
 - (void)_scheduleRecovery;
 - (BOOL)_setPermanentError:(id)arg1;
+- (id)_updateOptions:(id)arg1;
 - (id)connectToContext;
 - (void)dealloc;
 - (void)enterPassword:(id)arg1 reply:(id /* block */)arg2;

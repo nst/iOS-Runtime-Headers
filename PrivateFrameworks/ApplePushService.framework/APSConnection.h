@@ -47,6 +47,7 @@
 + (double)keepAliveIntervalForEnvironmentName:(id)arg1;
 + (void)notifySafeToSendFilter;
 + (void)requestCourierConnection;
++ (double)serverTime;
 
 - (void)_addEnableCriticalReliabilityToXPCMessage:(id)arg1;
 - (void)_addEnableStatusNotificationsToXPCMessage:(id)arg1;

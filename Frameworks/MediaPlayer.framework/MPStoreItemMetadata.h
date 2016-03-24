@@ -18,6 +18,8 @@
 @property (nonatomic, readonly, copy) NSArray *childrenStoreIDs;
 @property (nonatomic, readonly, copy) NSString *collectionName;
 @property (nonatomic, readonly, copy) id collectionStoreID;
+@property (getter=isCompilation, nonatomic, readonly) BOOL compilation;
+@property (nonatomic, readonly, copy) NSString *composerName;
 @property (nonatomic, readonly, copy) MPUContentItemIdentifierCollection *contentItemIdentifierCollection;
 @property (nonatomic, readonly, copy) NSString *copyrightText;
 @property (nonatomic, readonly, copy) NSString *curatorName;
@@ -29,12 +31,17 @@
 @property (nonatomic, readonly, copy) NSDictionary *effectiveStorePlatformDictionary;
 @property (getter=isExplicitContent, nonatomic, readonly) BOOL explicitContent;
 @property (nonatomic, readonly, copy) NSArray *genreNames;
+@property (nonatomic, readonly) BOOL hasArtistBiography;
+@property (nonatomic, readonly) BOOL hasSocialPosts;
 @property (nonatomic, readonly) BOOL isPreorder;
 @property (nonatomic, readonly, copy) NSString *itemKind;
 @property (nonatomic, readonly) MPStoreArtworkRequestToken *latestAlbumArtworkRequestToken;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *offers;
+@property (nonatomic, readonly, copy) NSArray *playlistIdentifiers;
+@property (nonatomic, readonly) float popularity;
 @property (nonatomic, readonly, copy) NSDate *releaseDate;
+@property (nonatomic, readonly) NSString *shortName;
 @property (nonatomic, readonly) BOOL showComposer;
 @property (nonatomic, readonly, copy) id storeID;
 @property (nonatomic, readonly) unsigned int trackCount;
@@ -59,6 +66,7 @@
 - (id)childrenStoreIDs;
 - (id)collectionName;
 - (id)collectionStoreID;
+- (id)composerName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)copyrightText;
 - (id)curatorName;
@@ -73,6 +81,8 @@
 - (id)effectiveStorePlatformDictionary;
 - (void)encodeWithCoder:(id)arg1;
 - (id)genreNames;
+- (BOOL)hasArtistBiography;
+- (BOOL)hasSocialPosts;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithDownloadAssetDictionary:(id)arg1;
 - (id)initWithStorePlatformDictionary:(id)arg1;
@@ -88,7 +98,10 @@
 - (id)metadataWithParentMetadata:(id)arg1;
 - (id)name;
 - (id)offers;
+- (id)playlistIdentifiers;
+- (float)popularity;
 - (id)releaseDate;
+- (id)shortName;
 - (BOOL)showComposer;
 - (id)storeID;
 - (unsigned int)trackCount;

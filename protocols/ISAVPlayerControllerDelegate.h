@@ -5,6 +5,7 @@
 
 @optional
 
+- (void)avPlayerController:(ISAVPlayerController *)arg1 avPlayer:(ISWrappedAVPlayer *)arg2 didChangeToStatus:(int)arg3;
 - (void)avPlayerControllerDidBeginPlaying:(ISAVPlayerController *)arg1;
 - (void)avPlayerControllerDidEndPlaying:(ISAVPlayerController *)arg1;
 - (void)avPlayerControllerDidEndSeeking:(ISAVPlayerController *)arg1 seekTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 didFinish:(BOOL)arg3;

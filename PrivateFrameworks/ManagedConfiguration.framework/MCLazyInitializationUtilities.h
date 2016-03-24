@@ -7,10 +7,12 @@
 + (void)initAddressBook;
 + (void)initAppleKeyStore;
 + (void)initCoreGraphics;
++ (void)initCoreLocation;
 + (void)initCoreText;
 + (void)initDAEAS;
 + (void)initDataAccess;
 + (void)initImageIO;
++ (void)initMobileCoreServices;
 + (void)initPowerlog;
 + (void)initServerAccounts;
 + (void)initSetupAssistant;

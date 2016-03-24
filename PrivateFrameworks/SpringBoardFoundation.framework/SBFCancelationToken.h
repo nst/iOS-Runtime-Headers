@@ -15,10 +15,10 @@
 + (id)tokenWithCancelationBlock:(id /* block */)arg1;
 + (id)tokenWrappingCancelable:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)addCancelationBlock:(id /* block */)arg1;
 - (void)callCancelationBlocks:(id)arg1;
 - (void)cancel;
-- (void)dealloc;
 - (id)init;
 - (BOOL)isCanceled;
 - (id)nts_cancel;

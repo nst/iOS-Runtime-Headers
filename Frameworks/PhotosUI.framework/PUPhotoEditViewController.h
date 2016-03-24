@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoEditViewController : PUEditViewController <GLKViewDelegate, PLDismissableViewController, PUEditPluginSessionDelegate, PUImageEditPluginSessionDataSource, PUOneUpAssetTransitionViewController, PUPhotoEditIrisModelChangeObserver, PUPhotoEditLayoutSource, PUPhotoEditToolControllerDelegate, PUPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate> {
+@interface PUPhotoEditViewController : PUEditViewController <GLKViewDelegate, PHLivePhotoViewDelegate, PLDismissableViewController, PUEditPluginSessionDelegate, PUImageEditPluginSessionDataSource, PUOneUpAssetTransitionViewController, PUPhotoEditIrisModelChangeObserver, PUPhotoEditLayoutSource, PUPhotoEditToolControllerDelegate, PUPhotoLibraryUIChangeObserver, UIGestureRecognizerDelegate, UIPopoverPresentationControllerDelegate, UIScrollViewDelegate> {
     PLPhotoEditAggregateSession *__aggregateSession;
     NSArray *__allTools;
     unsigned int __assetChangeDismissalState;
@@ -16,6 +16,7 @@
         float width; 
         float height; 
     } __layoutReferenceSize;
+    PHLivePhoto *__livePhoto;
     PLPhotoEditRenderer *__mainRenderer;
     id /* block */ __nextRenderCompletionBlock;
     CIImage *__originalWorkCIImage;
@@ -34,6 +35,7 @@
     PLPhotoEditModel *__uneditedPhotoEditModel;
     PUPhotoEditValuesCalculator *__valuesCalculator;
     BOOL __waitingForBaseImageRequest;
+    BOOL __waitingForLivePhotoRequest;
     BOOL __waitingForOriginalImageRequest;
     int __workImageVersion;
     PUAdjustmentsToolController *_adjustmentsController;
@@ -61,9 +63,11 @@
         float height; 
     } _lastKnownWorkImageSize;
     int _layoutOrientation;
+    BOOL _livePhotoIsPlaying;
     UIButton *_mainActionButton;
     int _mainButtonAction;
-    GLKView *_mainPreviewView;
+    PHLivePhotoView *_mainLivePhotoView;
+    GLKView *_mainRenderView;
     NSArray *_mainToolButtons;
     PUPhotoEditToolbar *_mainToolbar;
     NSArray *_mainToolbarConstraints;
@@ -78,6 +82,7 @@
     PUEditPluginSession *_pluginSession;
     int _pluginWorkImageVersion;
     BOOL _pluginWorkImageVersionIsValid;
+    UIView *_previewContainerView;
     BOOL _previewViewHidden;
     UIScrollView *_previewViewScrollingContainer;
     NSArray *_previewViewScrollingContainerConstraints;
@@ -112,6 +117,7 @@
 @property (setter=_setCurrentResourceLoadRequest:, nonatomic, retain) PUResourceDownloadRequest *_currentResourceLoadRequest;
 @property (setter=_setIrisRevertConfirmationAlert:, nonatomic) UIAlertController *_irisRevertConfirmationAlert;
 @property (setter=_setLayoutReferenceSize:, nonatomic) struct CGSize { float x1; float x2; } _layoutReferenceSize;
+@property (setter=_setLivePhoto:, nonatomic, retain) PHLivePhoto *_livePhoto;
 @property (setter=_setMainRenderer:, nonatomic, retain) PLPhotoEditRenderer *_mainRenderer;
 @property (setter=_setNextRenderCompletionBlock:, nonatomic, copy) id /* block */ _nextRenderCompletionBlock;
 @property (setter=_setOriginalWorkCIImage:, nonatomic, retain) CIImage *_originalWorkCIImage;
@@ -130,6 +136,7 @@
 @property (setter=_setUneditedPhotoEditModel:, nonatomic, copy) PLPhotoEditModel *_uneditedPhotoEditModel;
 @property (setter=_setValuesCalculator:, nonatomic, retain) PUPhotoEditValuesCalculator *_valuesCalculator;
 @property (setter=_setWaitingForBaseImageRequest:, nonatomic) BOOL _waitingForBaseImageRequest;
+@property (setter=_setWaitingForLivePhotoRequest:, nonatomic) BOOL _waitingForLivePhotoRequest;
 @property (setter=_setWaitingForOriginalImageRequest:, nonatomic) BOOL _waitingForOriginalImageRequest;
 @property (setter=_setWorkImageVersion:, nonatomic) int _workImageVersion;
 @property (readonly, copy) NSString *debugDescription;
@@ -144,6 +151,7 @@
 @property (readonly) Class superclass;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
++ (double)toggleOriginalLongPressDelay;
 
 - (void).cxx_destruct;
 - (id)_aggregateSession;
@@ -160,6 +168,8 @@
 - (id)_defaultInitialEditingTool;
 - (void)_handleAutoEnhanceButton:(id)arg1;
 - (void)_handleCancelButton:(id)arg1;
+- (void)_handleDidLoadBaseImageWithResult:(id)arg1 info:(id)arg2 startTime:(double)arg3;
+- (void)_handleDidLoadLivePhotoContentWithResult:(id)arg1 info:(id)arg2;
 - (void)_handleDoneButton:(id)arg1;
 - (void)_handleIrisButton:(id)arg1;
 - (void)_handleMainActionButton:(id)arg1;
@@ -177,7 +187,9 @@
 - (BOOL)_isWaitingForAssetChange;
 - (BOOL)_isWaitingForSaveCompletion;
 - (struct CGSize { float x1; float x2; })_layoutReferenceSize;
+- (id)_livePhoto;
 - (void)_loadBaseImageIfNecessary;
+- (void)_loadLivePhotoContentIfNecessary;
 - (void)_loadOriginalImageIfNecessary;
 - (void)_loadPhotoEditModelIfNecessary;
 - (void)_loadRemoteResourcesIfNecessary;
@@ -204,7 +216,7 @@
 - (int)_resourcesAvailability;
 - (void)_restoreSnapshot:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (id)_revertConfirmationAlert;
-- (void)_revertToOriginalWithCompletionHandler:(id /* block */)arg1;
+- (id)_revertToOriginalWithCompletionHandler:(id /* block */)arg1;
 - (unsigned int)_saveCompetionDismissalState;
 - (struct CGSize { float x1; float x2; })_scaleSize:(struct CGSize { float x1; float x2; })arg1 toFitSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)_setAggregateSession:(id)arg1;
@@ -218,6 +230,7 @@
 - (void)_setLayoutOrientation:(int)arg1;
 - (void)_setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (void)_setLayoutReferenceSize:(struct CGSize { float x1; float x2; })arg1;
+- (void)_setLivePhoto:(id)arg1;
 - (void)_setMainRenderer:(id)arg1;
 - (void)_setNextRenderCompletionBlock:(id /* block */)arg1;
 - (void)_setOriginalWorkCIImage:(id)arg1;
@@ -236,6 +249,7 @@
 - (void)_setUneditedPhotoEditModel:(id)arg1;
 - (void)_setValuesCalculator:(id)arg1;
 - (void)_setWaitingForBaseImageRequest:(BOOL)arg1;
+- (void)_setWaitingForLivePhotoRequest:(BOOL)arg1;
 - (void)_setWaitingForOriginalImageRequest:(BOOL)arg1;
 - (void)_setWorkImageVersion:(int)arg1;
 - (void)_setupToolsIfNeeded;
@@ -243,9 +257,9 @@
 - (BOOL)_shouldDisplayRedEyeTool;
 - (void)_showCancelAndRevertOptionsAllowResetTool:(BOOL)arg1;
 - (void)_startWaitingForAssetChange;
-- (void)_startWaitingForSaveCompletion;
+- (void)_startWaitingForSaveRequest:(id)arg1;
 - (void)_stopWaitingForAssetChangeWithSuccess:(BOOL)arg1;
-- (void)_stopWaitingForSaveCompletionWithSuccess:(BOOL)arg1;
+- (void)_stopWaitingForSaveRequestWithSuccess:(BOOL)arg1;
 - (void)_switchToEditingTool:(id)arg1 animated:(BOOL)arg2;
 - (id)_uneditedPhotoEditModel;
 - (void)_updateAlternateToolbarAnimated:(BOOL)arg1;
@@ -254,6 +268,8 @@
 - (void)_updateIrisButtonAnimated:(BOOL)arg1;
 - (void)_updateLastKnownImageSize;
 - (void)_updateLayoutOrientationWithViewSize:(struct CGSize { float x1; float x2; })arg1 transitionCoordinator:(id)arg2;
+- (void)_updateLivePhotoPlaybackGestureRecognizer;
+- (void)_updateLivePhotoView;
 - (void)_updateMainActionButtonAnimated:(BOOL)arg1;
 - (void)_updateMainRenderer;
 - (void)_updateModelDependentControlsAnimated:(BOOL)arg1;
@@ -279,6 +295,7 @@
 - (void)_updateValuesCalculator;
 - (id)_valuesCalculator;
 - (BOOL)_waitingForBaseImageRequest;
+- (BOOL)_waitingForLivePhotoRequest;
 - (BOOL)_waitingForOriginalImageRequest;
 - (struct CGSize { float x1; float x2; })_workImageSizeForScreen:(id)arg1;
 - (int)_workImageVersion;
@@ -300,6 +317,8 @@
 - (id)initWithPhoto:(id)arg1;
 - (BOOL)isPreviewViewHidden;
 - (int)layoutOrientation;
+- (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(int)arg2;
+- (void)livePhotoView:(id)arg1 willBeginPlaybackWithStyle:(int)arg2;
 - (void)oneUpAssetTransition:(id)arg1 animateTransitionWithContext:(id)arg2 duration:(double)arg3 completion:(id /* block */)arg4;
 - (void)oneUpAssetTransition:(id)arg1 requestTransitionContextWithCompletion:(id /* block */)arg2;
 - (void)oneUpAssetTransitionDidEnd:(id)arg1;
@@ -308,6 +327,7 @@
 - (id)photoEditSpec;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (void)popoverPresentationControllerDidDismissPopover:(id)arg1;
+- (void)ppt_cancelEdits;
 - (BOOL)prefersStatusBarHidden;
 - (BOOL)prepareForDismissingForced:(BOOL)arg1;
 - (void)prepareForPhotoLibraryChange:(id)arg1;
@@ -332,6 +352,7 @@
 - (void)toolControllerDidChangeWantsDefaultPreviewView:(id)arg1;
 - (void)toolControllerDidFinish:(id)arg1;
 - (id)toolControllerImageScrollView:(id)arg1;
+- (id)toolControllerLivePhoto:(id)arg1;
 - (id)toolControllerMainContainerView:(id)arg1;
 - (id)toolControllerMainRenderer:(id)arg1;
 - (struct CGSize { float x1; float x2; })toolControllerOriginalImageSize:(id)arg1;

@@ -2,14 +2,10 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface _HDCorrelationSampleEntityEncoder : HDEncoder {
-    HDEncoder *_sampleEntityEncoder;
-}
+@interface _HDCorrelationSampleEntityEncoder : HDEntityEncoder
 
-- (void).cxx_destruct;
-- (id)codableRepresentationOfEntity:(id)arg1 collection:(id)arg2 row:(struct HDSQLiteRow { }*)arg3;
-- (void)finish;
-- (id)initForHealthDaemon:(id)arg1 database:(id)arg2;
-- (id)orderedProperties;
+- (void)applyPropertiesToObject:(id)arg1 persistentID:(long long)arg2 row:(struct HDSQLiteRow { }*)arg3;
+- (id)codableRepresentationForPersistentID:(long long)arg1 row:(struct HDSQLiteRow { }*)arg2 collection:(id)arg3;
+- (id)objectForPersistentID:(long long)arg1 row:(struct HDSQLiteRow { }*)arg2 error:(id*)arg3;
 
 @end

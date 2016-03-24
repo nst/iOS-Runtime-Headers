@@ -19,6 +19,7 @@
 @property (nonatomic, retain) SUDescriptor *installDescriptor;
 @property (nonatomic, retain) SUDescriptor *scanDescriptor;
 
++ (BOOL)_isMultiUserAppleId;
 + (BOOL)_shouldDisallowAvailabilityNotifications;
 
 - (void)_cancelAutoInstallOperation:(id)arg1 withResult:(id /* block */)arg2;
@@ -77,6 +78,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setInstallDescriptor:(id)arg1;
 - (void)setScanDescriptor:(id)arg1;
+- (void)slaVersion:(id /* block */)arg1;
 - (void)startDownload:(id /* block */)arg1;
 - (void)startDownloadWithMetadata:(id)arg1 withResult:(id /* block */)arg2;
 - (unsigned long long)totalPurgeableSpace;

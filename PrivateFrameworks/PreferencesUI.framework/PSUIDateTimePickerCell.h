@@ -6,6 +6,8 @@
     UIDatePicker *_datePicker;
 }
 
++ (float)preferredHeight;
+
 - (void).cxx_destruct;
 - (id)datePicker;
 - (void)dealloc;

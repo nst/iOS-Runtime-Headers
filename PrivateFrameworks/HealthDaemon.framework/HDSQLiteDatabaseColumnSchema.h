@@ -14,7 +14,7 @@
     NSString *_type;
 }
 
-@property (nonatomic) NSString *defaultValue;
+@property (nonatomic, copy) NSString *defaultValue;
 @property (nonatomic) int deletionAction;
 @property (nonatomic, copy) NSString *foreignKeyTargetColumn;
 @property (nonatomic, copy) NSString *foreignKeyTargetTable;

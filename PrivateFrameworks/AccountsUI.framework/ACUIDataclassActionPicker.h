@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) int priorityIndex;
 
 - (void).cxx_destruct;
+- (id)actionOfType:(int)arg1;
 - (id)actions;
 - (void)addAffectedDataclass:(id)arg1;
 - (id)affectedAccount;

@@ -13,6 +13,7 @@
     double _intervalForRetry;
     unsigned int _lastRequestGeneration;
     NSDate *_lastSyncSessionDateCausedByForeground;
+    BOOL _needsPrepull;
     NSDate *_nextScheduledDate;
     BOOL _opened;
     CPLPlatformObject *_platformObject;
@@ -20,7 +21,7 @@
     NSSet *_rejectedRecordIdentifiers;
     unsigned int _rejectedRecordsRetries;
     unsigned int _requiredFirstState;
-    BOOL _shouldDoSecondNormalPullPhase;
+    id /* block */ _requiredStateObserverBlock;
     BOOL _shouldRetryASyncSessionForResourcesUpload;
     NSDate *_unavailabilityLimitDate;
 }
@@ -29,8 +30,9 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) CPLEngineLibrary *engineLibrary;
 @property (readonly) unsigned int hash;
+@property (readonly) BOOL needsPrepull;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
-@property (nonatomic, readonly) BOOL shouldDoSecondNormalPullPhase;
+@property (nonatomic, copy) id /* block */ requiredStateObserverBlock;
 @property (readonly) Class superclass;
 
 + (id)platformImplementationProtocol;
@@ -51,6 +53,7 @@
 - (void)_reallyStartSyncSession;
 - (void)_reallyUnscheduleSession;
 - (void)_scheduleNextSyncSession;
+- (void)_setRequiredFirstState:(unsigned int)arg1;
 - (void)_startRequiredSyncSession;
 - (void)_startSyncSessionWithMinimalPhase:(unsigned int)arg1;
 - (BOOL)_syncSessionIsPossible;
@@ -70,6 +73,7 @@
 - (BOOL)isMinglingEnabled;
 - (BOOL)isSynchronizationDisabledWithReasonError:(id*)arg1;
 - (void)kickOffSyncSession;
+- (BOOL)needsPrepull;
 - (void)noteClientIsInBackground;
 - (void)noteClientIsInForeground;
 - (void)noteClientIsInSyncWithClientCache;
@@ -87,8 +91,9 @@
 - (void)noteSyncSessionSucceeded;
 - (void)openWithCompletionHandler:(id /* block */)arg1;
 - (id)platformObject;
+- (id /* block */)requiredStateObserverBlock;
 - (void)resetBackoffInterval;
-- (BOOL)shouldDoSecondNormalPullPhase;
+- (void)setRequiredStateObserverBlock:(id /* block */)arg1;
 - (void)startRequiredSyncSessionNow;
 
 @end

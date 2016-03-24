@@ -18,6 +18,8 @@
     BOOL isReadyForDisplay;
     struct OpaqueFigSimpleMutex { } *isReadyForDisplayMutex;
     AVPlayerItem *itemMarkedReadyForDisplay;
+    BOOL lanczosDownscalingEnabled;
+    int lanczosDownscalingFactor;
     struct CGRect { 
         struct CGPoint { 
             float x; 

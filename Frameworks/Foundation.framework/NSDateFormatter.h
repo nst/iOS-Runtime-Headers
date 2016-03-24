@@ -179,7 +179,7 @@
 + (BOOL)_dateStringFits:(id)arg1 font:(id)arg2 maxWidth:(float)arg3;
 + (void)_unitPreferencesDidChange:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (id)hk_stringWithAMPMSpaceRemovedFromDate:(id)arg1;
 

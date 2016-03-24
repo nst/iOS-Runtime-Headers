@@ -3,12 +3,10 @@
  */
 
 @interface HAPAccessoryServerIP : HAPAccessoryServer <HAPHTTPClientDebugDelegate, HAPHTTPClientDelegate> {
-    NSString *_accessoryServerName;
     NSDictionary *_bonjourDeviceInfo;
     HAPAccessoryServerBrowserIP *_browser;
     unsigned int _configNumber;
     NSString *_controllerUsername;
-    NSString *_deviceID;
     BOOL _establishingSecureConnection;
     unsigned long long _featureFlags;
     BOOL _hasTunnelService;
@@ -26,14 +24,12 @@
     unsigned int _statusFlags;
 }
 
-@property (nonatomic, copy) NSString *accessoryServerName;
 @property (nonatomic, retain) NSDictionary *bonjourDeviceInfo;
 @property (nonatomic) HAPAccessoryServerBrowserIP *browser;
 @property (nonatomic) unsigned int configNumber;
 @property (nonatomic, retain) NSString *controllerUsername;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, copy) NSString *deviceID;
 @property BOOL establishingSecureConnection;
 @property (nonatomic) BOOL hasTunnelService;
 @property (readonly) unsigned int hash;
@@ -51,10 +47,9 @@
 
 - (void).cxx_destruct;
 - (void)__registerForInternalCharacteristicNotifications;
-- (BOOL)_checkPairedState;
+- (BOOL)_bridgeDelegateRespondsToSelector:(SEL)arg1;
 - (long)_continuePairingAfterAuthPrompt;
 - (BOOL)_delegateRespondsToSelector:(SEL)arg1;
-- (id)_deviceID;
 - (void)_enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (long)_ensureHTTPClientSetUp;
 - (long)_ensurePairingSessionIsInitializedWithType:(unsigned int)arg1;
@@ -62,7 +57,10 @@
 - (void)_error:(id)arg1 forWriteCharacteristicValues:(id)arg2 queue:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_establishSecureConnectionAndFetchAttributeDatabase;
 - (void)_establishSecureSession;
+- (void)_fetchDiscoveredAccessoriesAttributeDatabase;
+- (void)_fetchEntireAttributeDatabase;
 - (void)_getAttributeDatabase;
+- (void)_getDiscoveredAccessoriesAttributeDatabase;
 - (void)_handleEventResponseObject:(id)arg1 type:(unsigned int)arg2 httpStatus:(int)arg3 error:(id)arg4 characteristics:(id)arg5 requestedEventState:(BOOL)arg6 completion:(id /* block */)arg7 queue:(id)arg8;
 - (void)_handleHTTPClientErrors;
 - (long)_handlePairSetupCompletionWithData:(id)arg1;
@@ -78,9 +76,15 @@
 - (long)_pairSetupStart;
 - (long)_pairSetupTryPassword:(id)arg1;
 - (long)_pairVerifyStart;
+- (id)_parseAccessories:(id)arg1 andDiscoveredAccessories:(id)arg2;
 - (BOOL)_parseAndValidateTXTRecord;
 - (void)_parseAttributeDatabase:(id)arg1 transaction:(id)arg2;
+- (id)_parseDiscoveredAccessories:(id)arg1 withError:(id)arg2;
+- (void)_parseDiscoveredAttributeDatabase:(id)arg1 transaction:(id)arg2;
+- (id)_parseSerializedAccessories:(id)arg1 andInstanceIDs:(id)arg2 withError:(id)arg3;
+- (id)_parseSerializedDiscoveredAccessories:(id)arg1 andInstanceIDs:(id)arg2 withError:(id)arg3;
 - (BOOL)_parseTXTRecordDictionary:(id)arg1;
+- (id)_parsewithAssociated:(id)arg1 withError:(id)arg2;
 - (BOOL)_processEvent:(id)arg1 matchedCharacteristic:(id*)arg2;
 - (void)_processQueuedOperationsWithError:(id)arg1;
 - (void)_queueAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
@@ -90,15 +94,12 @@
 - (void)_readCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (void)_reset;
-- (id)_serverIdentifier;
-- (id)_serverName;
-- (void)_setDeviceIDWithString:(id)arg1;
 - (void)_startAddPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (void)_tearDownSession;
 - (BOOL)_updateAccessories:(id)arg1;
 - (void)_updateWithBonjourDeviceInfo:(id)arg1;
+- (BOOL)_updatewithNewAccessories:(id)arg1 associated:(BOOL)arg2;
 - (void)_writeCharacteristicValues:(id)arg1 queue:(id)arg2 completionHandler:(id /* block */)arg3;
-- (id)accessoryServerName;
 - (BOOL)addPairingWithIdentifier:(id)arg1 publicKey:(id)arg2 admin:(BOOL)arg3 queue:(id)arg4 completion:(id /* block */)arg5;
 - (id)bonjourDeviceInfo;
 - (id)browser;
@@ -107,10 +108,11 @@
 - (id)controllerUsername;
 - (void)dealloc;
 - (id)description;
-- (id)deviceID;
 - (void)discoverAccessories;
 - (void)enableEvents:(BOOL)arg1 forCharacteristics:(id)arg2 withCompletionHandler:(id /* block */)arg3 queue:(id)arg4;
 - (BOOL)establishingSecureConnection;
+- (void)fetchDiscoveredAccessoriesAttributeDatabase;
+- (void)fetchEntireAttributeDatabase;
 - (void)handleUpdatesForCharacteristics:(id)arg1;
 - (BOOL)hasTunnelService;
 - (id)httpClient;
@@ -118,16 +120,14 @@
 - (void)httpClient:(id)arg1 didReceiveHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
 - (void)httpClient:(id)arg1 willSendHTTPMessageWithHeaders:(id)arg2 body:(id)arg3;
 - (void)httpClientDidCloseConnectionDueToServer:(id)arg1;
-- (id)identifier;
 - (void)identifyWithCompletion:(id /* block */)arg1;
 - (id)initWithBonjourDeviceInfo:(id)arg1 keyStore:(id)arg2 browser:(id)arg3;
 - (void)invalidate;
 - (id)ipServices;
-- (BOOL)isPaired;
 - (BOOL)isSessionEstablised;
 - (int)linkType;
+- (void)listPairingsWithCompletionQueue:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)model;
-- (id)name;
 - (id /* block */)netServiceResolveCompletionBlock;
 - (id /* block */)pairVerifyCompletionBlock;
 - (id)primaryAccessory;
@@ -139,13 +139,10 @@
 - (BOOL)removePairingForCurrentControllerOnQueue:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)removePairingWithIdentifier:(id)arg1 publicKey:(id)arg2 queue:(id)arg3 completion:(id /* block */)arg4;
 - (id)services;
-- (void)setAccessoryServerName:(id)arg1;
 - (void)setBonjourDeviceInfo:(id)arg1;
 - (void)setBrowser:(id)arg1;
-- (void)setCategory:(id)arg1;
 - (void)setConfigNumber:(unsigned int)arg1;
 - (void)setControllerUsername:(id)arg1;
-- (void)setDeviceID:(id)arg1;
 - (void)setEstablishingSecureConnection:(BOOL)arg1;
 - (void)setHasTunnelService:(BOOL)arg1;
 - (void)setHttpClient:(id)arg1;

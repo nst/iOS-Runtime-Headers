@@ -9,6 +9,7 @@
 
 @optional
 
+- (NSIndexSet *)PINEntrySeparatorIndexes;
 - (BOOL)acceptsEmoji;
 - (BOOL)acceptsFloatingKeyboard;
 - (BOOL)acceptsSplitKeyboard;
@@ -16,6 +17,7 @@
 - (BOOL)contentsIsSingleValue;
 - (BOOL)deferBecomingResponder;
 - (BOOL)disablePrediction;
+- (BOOL)displaySecureEditsUsingPlainText;
 - (BOOL)displaySecureTextUsingPlainText;
 - (int)emptyContentReturnKeyType;
 - (BOOL)enablesReturnKeyOnNonWhiteSpaceContent;
@@ -38,6 +40,7 @@
 - (void)setContentsIsSingleValue:(BOOL)arg1;
 - (void)setDeferBecomingResponder:(BOOL)arg1;
 - (void)setDisablePrediction:(BOOL)arg1;
+- (void)setDisplaySecureEditsUsingPlainText:(BOOL)arg1;
 - (void)setDisplaySecureTextUsingPlainText:(BOOL)arg1;
 - (void)setEmptyContentReturnKeyType:(int)arg1;
 - (void)setEnablesReturnKeyOnNonWhiteSpaceContent:(BOOL)arg1;
@@ -47,6 +50,7 @@
 - (void)setIsCarPlayIdiom:(BOOL)arg1;
 - (void)setIsSingleLineDocument:(BOOL)arg1;
 - (void)setLearnsCorrections:(BOOL)arg1;
+- (void)setPINEntrySeparatorIndexes:(NSIndexSet *)arg1;
 - (void)setRecentInputIdentifier:(NSString *)arg1;
 - (void)setResponseContext:(NSString *)arg1;
 - (void)setReturnKeyGoesToNextResponder:(BOOL)arg1;
@@ -60,6 +64,7 @@
 - (void)setTextSuggestionDelegate:(id)arg1;
 - (void)setTextTrimmingSet:(struct __CFCharacterSet { }*)arg1;
 - (void)setUseInterfaceLanguageForLocalization:(BOOL)arg1;
+- (void)setValidTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (int)shortcutConversionType;
 - (BOOL)suppressReturnKeyStyling;
 - (int)textLoupeVisibility;
@@ -67,5 +72,6 @@
 - (id)textSuggestionDelegate;
 - (struct __CFCharacterSet { }*)textTrimmingSet;
 - (BOOL)useInterfaceLanguageForLocalization;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })validTextRange;
 
 @end

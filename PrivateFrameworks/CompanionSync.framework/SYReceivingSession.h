@@ -12,6 +12,7 @@
         unsigned int started : 1; 
         unsigned int cancelled : 1; 
         unsigned int completed : 1; 
+        unsigned int changedMetadata : 1; 
     } _flags;
     int _flagsLock;
     NSMutableIndexSet *_receivedBatchIndices;
@@ -19,17 +20,17 @@
     NSObject<OS_dispatch_source> *_stateUpdateSource;
 }
 
+@property (nonatomic, readonly) BOOL metadataModified;
+
 - (void).cxx_destruct;
 - (void)_handleEndSession:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_handleEndSessionResponse:(id)arg1 error:(id*)arg2;
-- (void)_handleError:(id)arg1;
 - (void)_handleRestartSession:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_handleRestartSessionResponse:(id)arg1 error:(id*)arg2;
 - (BOOL)_handleStartSessionResponse:(id)arg1 error:(id*)arg2;
 - (void)_handleSyncBatch:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_handleSyncBatchResponse:(id)arg1 error:(id*)arg2;
 - (BOOL)_hasStarted;
-- (BOOL)_hasValidSessionID:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (void)_installStateListener;
 - (void)_installTimers;
 - (BOOL)_isMissingSyncBatches;
@@ -47,14 +48,18 @@
 - (void)_setCancelled;
 - (void)_setCompleted;
 - (void)_setStarted;
+- (void)_setStateQuietly:(int)arg1;
 - (void)_tweakMessageHeader:(id)arg1;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
-- (id)initWithService:(id)arg1 isReset:(BOOL)arg2;
+- (void)cancel;
+- (id)initWithService:(id)arg1 isReset:(BOOL)arg2 metadata:(id)arg3;
 - (BOOL)isResetSync;
 - (BOOL)isSending;
+- (BOOL)metadataModified;
 - (void)setCanRestart:(BOOL)arg1;
 - (void)setCanRollback:(BOOL)arg1;
+- (void)setSessionMetadata:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)start:(id /* block */)arg1;
 - (int)state;

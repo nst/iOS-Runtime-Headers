@@ -11,7 +11,7 @@
     BOOL _includeCleanTracksOnly;
     RadioStationMatchContext *_nowPlayingMatchContext;
     unsigned int _numberOfTracks;
-    NSArray *_playActivityFeedEvents;
+    NSArray *_playActivityEvents;
     RadioPlayEventCollection *_playEventCollection;
     RadioPlaybackContext *_playbackContext;
     SSVPlaybackLease *_playbackLease;
@@ -33,7 +33,7 @@
 @property (nonatomic) BOOL includeCleanTracksOnly;
 @property (nonatomic, retain) RadioStationMatchContext *nowPlayingMatchContext;
 @property (nonatomic) unsigned int numberOfTracks;
-@property (nonatomic, copy) NSArray *playActivityFeedEvents;
+@property (nonatomic, copy) NSArray *playActivityEvents;
 @property (nonatomic, copy) RadioPlayEventCollection *playEventCollection;
 @property (nonatomic, copy) RadioPlaybackContext *playbackContext;
 @property (nonatomic, retain) SSVPlaybackLease *playbackLease;
@@ -57,7 +57,7 @@
 - (id)initWithStationStringID:(id)arg1 globalVersion:(unsigned long long)arg2;
 - (id)nowPlayingMatchContext;
 - (unsigned int)numberOfTracks;
-- (id)playActivityFeedEvents;
+- (id)playActivityEvents;
 - (id)playEventCollection;
 - (id)playbackContext;
 - (id)playbackLease;
@@ -67,7 +67,7 @@
 - (void)setIncludeCleanTracksOnly:(BOOL)arg1;
 - (void)setNowPlayingMatchContext:(id)arg1;
 - (void)setNumberOfTracks:(unsigned int)arg1;
-- (void)setPlayActivityFeedEvents:(id)arg1;
+- (void)setPlayActivityEvents:(id)arg1;
 - (void)setPlayEventCollection:(id)arg1;
 - (void)setPlaybackContext:(id)arg1;
 - (void)setPlaybackLease:(id)arg1;

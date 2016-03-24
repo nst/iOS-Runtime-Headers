@@ -59,6 +59,8 @@
 - (double)flowControlRegenerationOverride;
 - (id)init;
 - (BOOL)isAppleInternalInstall;
+- (int)longlivedOperationMaxRetryCount;
+- (int)longlivedOperationThrottlingRetryCount;
 - (unsigned int)maxBatchSize;
 - (unsigned int)maxPackageDownloadsPerBatchWithDefaultValue:(unsigned int)arg1;
 - (unsigned int)maxPackageUploadsPerBatchWithDefaultValue:(unsigned int)arg1;

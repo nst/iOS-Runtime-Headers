@@ -14,6 +14,7 @@
     unsigned char _itemScope;
     NSNumber *_knownByServer;
     unsigned long long _localDiffs;
+    NSNumber *_minimumSupportedOSRowID;
     unsigned long long _notifsRank;
     BRCLocalItem *_orig;
     NSNumber *_ownerKey;
@@ -62,6 +63,7 @@
 @property (nonatomic, readonly) unsigned long long localDiffs;
 @property (nonatomic, readonly) NSString *logicalName;
 @property (nonatomic, readonly) BOOL needsInsert;
+@property (nonatomic, readonly) BOOL needsOSUpgradeToSyncUp;
 @property (nonatomic, readonly) BOOL needsReading;
 @property (nonatomic, readonly) BOOL needsSyncUp;
 @property (nonatomic, readonly) BOOL needsUpload;
@@ -78,7 +80,9 @@
 @property (nonatomic) unsigned int sharingOptions;
 @property (nonatomic, readonly) BRCLocalStatInfo *st;
 @property (nonatomic, readonly) CKRecordID *structureRecordID;
+@property (nonatomic, readonly) NSError *syncUpError;
 @property (nonatomic, readonly) unsigned int syncUpState;
+@property (nonatomic, readonly) unsigned int uploadStatus;
 
 + (id)newItemWithPath:(id)arg1 parentID:(id)arg2;
 + (BOOL)supportsSecureCoding;
@@ -124,6 +128,7 @@
 - (void)fixupStagedItemAtStartup;
 - (void)handleUnknownItemError;
 - (id)inFlightDiffs;
+- (void)inheritOSUpgradeNeededFromItem:(id)arg1;
 - (id)initFromPQLResultSet:(id)arg1 container:(id)arg2 error:(id*)arg3;
 - (id)initFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)initWithCoder:(id)arg1;
@@ -167,6 +172,7 @@
 - (void)markLostWhenReplacedByItem:(id)arg1;
 - (void)markLostWithoutBackoff;
 - (void)markNeedsDeleteForRescheduleOfItem:(id)arg1;
+- (void)markNeedsOSUpgradeToSyncUpWithName:(id)arg1;
 - (void)markNeedsReading;
 - (void)markNeedsUploadOrSyncingUpWithAliasTarget:(id)arg1;
 - (void)markRemovedFromFilesystemForServerEdit:(BOOL)arg1;
@@ -176,11 +182,13 @@
 - (void)markStagedWithFileID:(unsigned long long)arg1 generationID:(unsigned int)arg2 documentID:(unsigned int)arg3;
 - (void)moveAsideLocally;
 - (BOOL)needsInsert;
+- (BOOL)needsOSUpgradeToSyncUp;
 - (BOOL)needsReading;
 - (BOOL)needsSyncUp;
 - (BOOL)needsUpload;
 - (unsigned long long)notifsRank;
 - (id)orig;
+- (id)osNameNeededToSyncUp;
 - (id)ownerKey;
 - (id)parentFileID;
 - (id)parentItem;
@@ -201,8 +209,9 @@
 - (void)startDownloadWithOptions:(unsigned int)arg1 group:(id)arg2;
 - (id)structureRecordBeingDeadInServerTruth:(BOOL)arg1 stageID:(id)arg2;
 - (id)structureRecordID;
+- (id)syncUpError;
 - (unsigned int)syncUpState;
-- (void)triggerTransferNotificationIfNeeded;
+- (void)triggerNotificationIfNeeded;
 - (void)updateFromFSAtPath:(id)arg1;
 - (BOOL)updateFromFSAtPath:(id)arg1 parentID:(id)arg2;
 - (void)updateItemMetadataFromServerItem:(id)arg1;
@@ -210,6 +219,7 @@
 - (void)updateStatMetadataFromServerItem:(id)arg1;
 - (void)updateStructuralCKInfoFromServerItem:(id)arg1;
 - (BOOL)updateXattrInfoFromPathPath:(id)arg1 error:(id*)arg2;
+- (unsigned int)uploadStatus;
 - (BOOL)validateLoggingToFile:(struct __sFILE { char *x1; int x2; int x3; short x4; short x5; struct __sbuf { char *x_6_1_1; int x_6_1_2; } x6; int x7; void *x8; int (*x9)(); int (*x10)(); int (*x11)(); int (*x12)(); struct __sbuf { char *x_13_1_1; int x_13_1_2; } x13; struct __sFILEX {} *x14; int x15; unsigned char x16[3]; unsigned char x17[1]; struct __sbuf { char *x_18_1_1; int x_18_1_2; } x18; int x19; long long x20; }*)arg1;
 
 @end

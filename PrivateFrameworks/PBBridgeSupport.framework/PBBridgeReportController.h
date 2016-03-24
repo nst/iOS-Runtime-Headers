@@ -6,6 +6,7 @@
     NSArray *_attachmentFilepaths;
     NSString *_companionBuildVersion;
     NSString *_companionDescriptionString;
+    NSNumber *_componentID;
     NSString *_componentName;
     NSString *_componentVersion;
     id _radarCompose;
@@ -20,6 +21,7 @@
 @property (nonatomic, retain) NSArray *attachmentFilepaths;
 @property (nonatomic, copy) NSString *companionBuildVersion;
 @property (nonatomic, copy) NSString *companionDescriptionString;
+@property (nonatomic, copy) NSNumber *componentID;
 @property (nonatomic, copy) NSString *componentName;
 @property (nonatomic, copy) NSString *componentVersion;
 @property (readonly, copy) NSString *debugDescription;
@@ -40,6 +42,7 @@
 - (id)attachmentFilepaths;
 - (id)companionBuildVersion;
 - (id)companionDescriptionString;
+- (id)componentID;
 - (id)componentName;
 - (id)componentVersion;
 - (id)init;
@@ -53,6 +56,7 @@
 - (void)setAttachmentFilepaths:(id)arg1;
 - (void)setCompanionBuildVersion:(id)arg1;
 - (void)setCompanionDescriptionString:(id)arg1;
+- (void)setComponentID:(id)arg1;
 - (void)setComponentName:(id)arg1;
 - (void)setComponentVersion:(id)arg1;
 - (void)setRadarCompose:(id)arg1;

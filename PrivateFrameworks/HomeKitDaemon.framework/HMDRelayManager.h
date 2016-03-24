@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDRelayManager : NSObject <IDSServiceDelegateHomeKit> {
+@interface HMDRelayManager : NSObject <HMDNetworkMonitorDelegate, IDSServiceDelegateHomeKit, NSURLSessionDelegate> {
     NSObject<OS_dispatch_queue> *_clientQueue;
     NSString *_controllerIdentifier;
     unsigned int _currentState;
@@ -10,10 +10,13 @@
     BOOL _enabled;
     HMDHome *_home;
     IDSService *_idsService;
+    HMDNetworkMonitor *_networkMonitor;
+    BOOL _networkReachable;
     NSObject<OS_dispatch_queue> *_propertyQueue;
     NSHashTable *_relayAccessories;
     NSMutableArray *_relayStreams;
     BOOL _supported;
+    NSURLSession *_urlSession;
 }
 
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
@@ -26,15 +29,19 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) HMDHome *home;
 @property (nonatomic, readonly) IDSService *idsService;
+@property (nonatomic, readonly) HMDNetworkMonitor *networkMonitor;
+@property (getter=isNetworkReachable, nonatomic) BOOL networkReachable;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic, readonly) NSHashTable *relayAccessories;
 @property (nonatomic, readonly) NSMutableArray *relayStreams;
 @property (readonly) Class superclass;
 @property (getter=isSupported, nonatomic) BOOL supported;
-
-+ (id)sharedURLSession;
+@property (nonatomic, readonly) NSURLSession *urlSession;
 
 - (void).cxx_destruct;
+- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)__resumeAllStreams;
+- (void)__suspendAllStreams;
 - (id)_accessTokenForAccessTokenAttributes:(id)arg1 consentTokens:(id)arg2 matchedConsentToken:(id*)arg3 error:(id*)arg4;
 - (void)_accessTokensForConsentTokens:(id)arg1 user:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_activateAccessory:(id)arg1;
@@ -72,7 +79,11 @@
 - (id)init;
 - (id)initWithHome:(id)arg1;
 - (BOOL)isEnabled;
+- (BOOL)isNetworkReachable;
 - (BOOL)isSupported;
+- (id)networkMonitor;
+- (void)networkMonitorIsReachable:(id)arg1;
+- (void)networkMonitorIsUnreachable:(id)arg1;
 - (id)propertyQueue;
 - (id)relayAccessories;
 - (id)relayStreams;
@@ -84,7 +95,9 @@
 - (void)setCurrentState:(unsigned int)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHome:(id)arg1;
+- (void)setNetworkReachable:(BOOL)arg1;
 - (void)setSupported:(BOOL)arg1;
 - (void)startAccessories:(id)arg1;
+- (id)urlSession;
 
 @end

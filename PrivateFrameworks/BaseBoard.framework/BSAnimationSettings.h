@@ -29,6 +29,7 @@
 - (void)_setDuration:(double)arg1;
 - (void)_setFrameInterval:(double)arg1;
 - (void)_setTimingFunction:(id)arg1;
+- (void)applyToCAAnimation:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (double)delay;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotosSharingViewController : UIViewController <PHAssetCollectionDataSource, PLDismissableViewController, PUActivityViewControllerDelegate, PUOneUpAssetTransitionViewController, PUOneUpPhotosSharingTransitionViewController, PUPhotoLibraryUIChangeObserver, PUPhotoViewContentHelperIrisDelegate, PUPhotosSharingCollectionViewLayoutDelegate, PUPhotosSharingTransitionViewController, PUScrollViewSpeedometerDelegate, PUTransitionViewAnimatorDelegate, UIActivityViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
+@interface PUPhotosSharingViewController : UIViewController <PHAssetCollectionDataSource, PLDismissableViewController, PUActivityViewControllerDelegate, PUOneUpAssetTransitionViewController, PUOneUpPhotosSharingTransitionViewController, PUPhotoLibraryUIChangeObserver, PUPhotoViewContentHelperDelegate, PUPhotosSharingCollectionViewLayoutDelegate, PUPhotosSharingTransitionViewController, PUScrollViewSpeedometerDelegate, PUTransitionViewAnimatorDelegate, UIActivityViewControllerDelegate, UICollectionViewDataSource, UICollectionViewDelegate, UIGestureRecognizerDelegate> {
     PHCachingImageManager *__cachingImageManager;
     PUActivityViewController *__embeddedActivityViewController;
     PHAsset *__lastKnownReferenceAsset;
@@ -110,6 +110,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameAtIndexPath:(id)arg1 inView:(id)arg2;
 - (void)_getFirstValidIndexPath:(id*)arg1 lastValidIndexPath:(id*)arg2;
 - (void)_getMainCollectionViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 collectionViewLayoutInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; }*)arg2 embeddedActivityViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
+- (void)_handleLivePhotoRequestResult:(id)arg1 forCell:(id)arg2 tag:(int)arg3;
 - (void)_handlePhotoPinch:(id)arg1;
 - (void)_handleSelectionOption:(id)arg1;
 - (void)_handleTapAtIndexPath:(id)arg1;
@@ -134,7 +135,7 @@
 - (id)_photoZoomAnimator;
 - (id)_photoZoomCell;
 - (id)_photoZoomPinchGestureRecognizer;
-- (void)_playPhotoIrisHintIfNeededAtIndexPath:(id)arg1;
+- (void)_playLivePhotoHintIfNeededAtIndexPath:(id)arg1;
 - (id /* block */)_pptOnDidEndScrollingBlock;
 - (void)_pptSetOnDidEndScrollingBlock:(id /* block */)arg1;
 - (id)_preheatedAssets;
@@ -170,8 +171,8 @@
 - (void)_updateCell:(id)arg1 forItemAtIndexPath:(id)arg2;
 - (void)_updateEmbeddedActivityViewAppearance;
 - (void)_updateInterfaceForModelReloadAnimated:(BOOL)arg1;
-- (void)_updateIrisPlayerForAsset:(id)arg1 cell:(id)arg2;
 - (void)_updateLastKnownReferenceIndexPath;
+- (void)_updateLivePhotoForAsset:(id)arg1 cell:(id)arg2;
 - (void)_updateMainViewAnimated:(BOOL)arg1;
 - (void)_updateNavigationBarAnimated:(BOOL)arg1;
 - (void)_updateOptionView:(id)arg1 atIndexPath:(id)arg2;
@@ -220,7 +221,7 @@
 - (id)photoCollectionsFetchResult;
 - (void)photoLibraryDidChangeOnMainQueue:(id)arg1;
 - (id)photoSelectionManager;
-- (void)photoViewContentHelper:(id)arg1 irisPlayerPlaybackStateDidChange:(int)arg2;
+- (void)photoViewContentHelper:(id)arg1 livePhotoWillBeginPlaybackWithStyle:(int)arg2;
 - (id)photosSharingTransitionContext;
 - (void)ppt_faultInScollViewContentSize;
 - (BOOL)ppt_scrollToAssetAtRelativeIndex:(int)arg1 completion:(id /* block */)arg2;

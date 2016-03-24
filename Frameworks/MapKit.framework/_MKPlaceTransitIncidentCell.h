@@ -3,17 +3,13 @@
  */
 
 @interface _MKPlaceTransitIncidentCell : MKCustomSeparatorTableViewCell {
-    UIButton *_button;
     <_MKPlaceTransitIncidentCellDelegate> *_delegate;
-    UILabel *_summaryLabel;
-    NSLayoutConstraint *_summaryToTitleConstraint;
-    UILabel *_titleLabel;
-    NSLayoutConstraint *_titleToTopConstraint;
+    UILabel *_messageLabel;
+    NSLayoutConstraint *_messageToTopConstraint;
 }
 
 @property (nonatomic) <_MKPlaceTransitIncidentCellDelegate> *delegate;
-@property (nonatomic, copy) NSString *incidentSummary;
-@property (nonatomic, copy) NSString *incidentTitle;
+@property (nonatomic, copy) NSString *incidentMessage;
 
 - (void).cxx_destruct;
 - (void)_buttonSelected;
@@ -22,12 +18,9 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)didMoveToWindow;
-- (id)incidentSummary;
-- (id)incidentTitle;
+- (id)incidentMessage;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setIncidentSummary:(id)arg1;
-- (void)setIncidentTitle:(id)arg1;
-- (void)tintColorDidChange;
+- (void)setIncidentMessage:(id)arg1;
 
 @end

@@ -4,6 +4,6 @@
 
 @interface PKPaymentUnregisterRequest : PKPaymentWebServiceRequest
 
-- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 account:(id)arg3;
+- (id)_urlRequestWithServiceURL:(id)arg1 deviceIdentifier:(id)arg2 companionSerialNumber:(id)arg3 account:(id)arg4;
 
 @end

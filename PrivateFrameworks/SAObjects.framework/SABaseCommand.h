@@ -25,8 +25,11 @@
 
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
+- (void)af_addSendCompletion:(id /* block */)arg1;
 - (BOOL)af_bufferingAllowedDuringActiveSession;
+- (void)af_dispatchSendCompletionsWithResult:(int)arg1 error:(id)arg2;
 - (void)af_logDiagnostics;
+- (BOOL)af_supportsSendCompletions;
 - (id)serializedAceDataError:(id*)arg1;
 
 @end

@@ -180,6 +180,7 @@
         unsigned int interruptingDeceleration : 1; 
         unsigned int delegateScrollViewAdjustedOffset : 1; 
         unsigned int disableUpdateOffsetOnCancelTracking : 1; 
+        unsigned int needToIncrementScrollBounceStatistic : 1; 
     } _scrollViewFlags;
     id *_shadows;
     double _startOffsetX;
@@ -296,6 +297,7 @@
 - (id)_automaticContentConstraints;
 - (id)_backgroundShadowForSlideAnimation;
 - (BOOL)_beginTrackingWithEvent:(id)arg1;
+- (BOOL)_bounceForLowFidelityPanIfNecessary;
 - (BOOL)_canCancelContentTouches:(id)arg1;
 - (BOOL)_canScrollX;
 - (BOOL)_canScrollY;
@@ -304,6 +306,8 @@
 - (void)_clearContentOffsetAnimation;
 - (void)_clearContentOffsetAnimation:(id)arg1;
 - (void)_clearParentAdjustment;
+- (void)_clearScrollBounceStatisticsTrackingState;
+- (void)_commitScrollBounceStatisticsTrackingState;
 - (BOOL)_constraintAffectsContentSize:(id)arg1;
 - (id)_constraintsFromContentSize;
 - (id)_contentHeightVariable;
@@ -342,6 +346,7 @@
 - (void)_getStandardDecelerationOffset:(double*)arg1 forTimeInterval:(double)arg2 min:(double)arg3 max:(double)arg4 decelerationFactor:(double)arg5 decelerationLnFactor:(double)arg6 velocity:(double*)arg7;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_gradientMaskInsets;
 - (void)_handleDirectionalPress:(id)arg1;
+- (void)_handleDirectionalScrollToOffset:(struct CGPoint { float x1; float x2; })arg1 clampingToBounds:(BOOL)arg2;
 - (void)_handleLowFidelitySwipe:(id)arg1;
 - (void)_handleSwipe:(id)arg1;
 - (void)_hideScrollIndicators;
@@ -396,6 +401,7 @@
 - (void)_reenableImplicitAnimationsAfterScrollTest;
 - (void)_registerAsScrollToTopViewIfPossible;
 - (void)_registerForRotation:(BOOL)arg1 ofWindow:(id)arg2;
+- (void)_registerForSpringBoardBlankedScreenNotification;
 - (void)_removeScrollNotificationView:(id)arg1;
 - (BOOL)_resetScrollingForGestureEvent:(id)arg1;
 - (void)_resetScrollingWithUIEvent:(id)arg1;
@@ -409,6 +415,8 @@
 - (void)_scrollToTopFromTouchAtScreenLocation:(struct CGPoint { float x1; float x2; })arg1 resultHandler:(id /* block */)arg2;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
 - (void)_scrollViewDidEndDecelerating;
+- (void)_scrollViewDidEndDeceleratingForDelegate;
+- (void)_scrollViewDidEndDraggingForDelegateWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewDidEndDraggingWithDeceleration:(BOOL)arg1;
 - (void)_scrollViewDidEndZooming;
 - (id)_scrollViewTouchDelayGesture;
@@ -458,15 +466,14 @@
 - (BOOL)_showsBackgroundShadow;
 - (void)_skipNextStartOffsetAdjustment;
 - (void)_smoothScrollDisplayLink:(id)arg1;
-- (void)_smoothScrollIntoBounds;
 - (void)_smoothScrollTimer:(id)arg1;
 - (void)_smoothScrollWithUpdateTime:(double)arg1;
+- (void)_springBoardBlankedScreenNotification:(id)arg1;
 - (BOOL)_startBeingDraggedByChild:(id)arg1;
 - (void)_startDraggingParent:(id)arg1;
 - (void)_startTimer:(BOOL)arg1;
 - (id)_staticScrollBar;
 - (void)_staticScrollBar:(id)arg1 didScrollInDirection:(struct CGPoint { float x1; float x2; })arg2;
-- (void)_staticScrollBarScrollAnimationEnded;
 - (BOOL)_staysCenteredDuringPinch;
 - (BOOL)_stopBeingDraggedByChild:(id)arg1;
 - (void)_stopDraggingParent:(id)arg1;
@@ -485,6 +492,7 @@
 - (struct CGPoint { float x1; float x2; })_touchPositionForTouches:(id)arg1;
 - (id)_touchesDelayedGestureRecognizer;
 - (BOOL)_transfersScrollToContainer;
+- (void)_unregisterForSpringBoardBlankedScreenNotification;
 - (void)_updateContentFitDisableScrolling;
 - (void)_updateForChangedScrollRelatedInsets;
 - (void)_updateGradientMaskView;
@@ -493,6 +501,7 @@
 - (void)_updatePanGestureConfiguration;
 - (void)_updatePinchGesture;
 - (void)_updatePinchGestureForState:(int)arg1;
+- (void)_updateRubberbandingStatisticTrackingState;
 - (void)_updateScrollAnimationForChangedTargetOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateScrollGestureRecognizersEnabled;
 - (void)_updateUsesStaticScrollBar;
@@ -673,6 +682,11 @@
 - (void)pu_performPageSwipeTest:(id)arg1 iterations:(int)arg2 numberOfPages:(int)arg3 scrollAxis:(int)arg4;
 - (void)pu_scrollToContentOffset:(struct CGPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)pu_scrollToEdge:(unsigned int)arg1 animated:(BOOL)arg2;
+
+// Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
+
+- (BOOL)_sf_isScrolledToOrPastBottom;
+- (void)_sf_setContentInsetAdjustments:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 
 // Image: /System/Library/PrivateFrameworks/AnnotationKit.framework/AnnotationKit
 

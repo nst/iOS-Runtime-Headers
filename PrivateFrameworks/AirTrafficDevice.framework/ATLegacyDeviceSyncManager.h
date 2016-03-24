@@ -39,6 +39,8 @@
 + (id)legacyDeviceSyncManager;
 
 - (void).cxx_destruct;
+- (void)_cancelExistingSyncSession;
+- (id)_currentHostType;
 - (BOOL)_currentLinkIsWifiConnection;
 - (void)_handleAssetMetricsMessage:(id)arg1 fromLink:(id)arg2;
 - (void)_handleCapabilitiesMessage:(id)arg1 fromLink:(id)arg2;

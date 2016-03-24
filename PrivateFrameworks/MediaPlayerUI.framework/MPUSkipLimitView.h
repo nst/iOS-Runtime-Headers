@@ -37,6 +37,6 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (struct { int x1; int x2; double x3; })skipLimit;
 - (id)textAttributes;
-- (id)viewForBaselineLayout;
+- (id)viewForLastBaselineLayout;
 
 @end

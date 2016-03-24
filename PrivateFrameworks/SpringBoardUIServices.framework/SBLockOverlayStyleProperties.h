@@ -17,14 +17,14 @@
 @property (nonatomic, readonly) int graphicsQuality;
 @property (nonatomic, readonly) unsigned int style;
 @property (nonatomic, readonly) float tintAlpha;
-@property (nonatomic, readonly, retain) UIColor *tintColor;
+@property (nonatomic, readonly) UIColor *tintColor;
 
+- (void).cxx_destruct;
 - (void)_configure;
 - (id)_settingsForStyle;
 - (id)_stringForQuality;
 - (id)_stringForStyle;
 - (float)blurRadius;
-- (void)dealloc;
 - (id)description;
 - (int)graphicsQuality;
 - (id)initWithStyle:(unsigned int)arg1 quality:(int)arg2;

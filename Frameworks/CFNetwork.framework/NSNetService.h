@@ -17,6 +17,8 @@
 @property (readonly) int port;
 @property (readonly, copy) NSString *type;
 
+// Image: /System/Library/Frameworks/CFNetwork.framework/CFNetwork
+
 + (id)dataFromTXTRecordDictionary:(id)arg1;
 + (id)dictionaryFromTXTRecordData:(id)arg1;
 
@@ -59,5 +61,10 @@
 - (void)stop;
 - (void)stopMonitoring;
 - (id)type;
+
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
++ (id)cat_dataFromDictionary:(id)arg1;
++ (id)cat_dictionaryFromData:(id)arg1;
 
 @end

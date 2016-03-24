@@ -2,13 +2,14 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@interface NMSIncomingFileTransfer : NSObject <NMSObfuscatableDescriptionProviding> {
+@interface NMSIncomingFileTransfer : NSObject <NMSDeviceSourced, NMSObfuscatableDescriptionProviding> {
     NSURL *_fileURL;
     NSString *_idsIdentifier;
     NMSMessageCenter *_messageCenter;
     NSDictionary *_metadata;
     id _pbHeaderInfo;
     unsigned int _priority;
+    NSString *sourceDeviceID;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -20,6 +21,7 @@
 @property (nonatomic, copy) NSDictionary *metadata;
 @property (nonatomic, retain) id pbHeaderInfo;
 @property (nonatomic) unsigned int priority;
+@property (nonatomic, retain) NSString *sourceDeviceID;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -37,5 +39,7 @@
 - (void)setMetadata:(id)arg1;
 - (void)setPbHeaderInfo:(id)arg1;
 - (void)setPriority:(unsigned int)arg1;
+- (void)setSourceDeviceID:(id)arg1;
+- (id)sourceDeviceID;
 
 @end

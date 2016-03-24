@@ -13,6 +13,7 @@
 @property (nonatomic, readonly) BOOL OEMIconVisible;
 @property (nonatomic, readonly) NSArray *OEMIcons;
 @property (nonatomic) <AVExternalDeviceDelegate> *delegate;
+@property (nonatomic, readonly) int electronicTollCollection;
 @property (nonatomic, readonly) NSArray *externalDeviceHIDs;
 @property (nonatomic, readonly) BOOL limitedUI;
 @property (nonatomic, readonly) NSArray *limitedUIElements;
@@ -26,6 +27,7 @@
 @property (nonatomic, readonly) NSArray *screenIDs;
 @property (nonatomic, readonly) NSDictionary *screenInputCapabilities;
 @property (nonatomic, readonly) NSDictionary *screenPrimaryInputDevices;
+@property (nonatomic, readonly) NSArray *supportedFeatures;
 @property (nonatomic, readonly) int transportType;
 
 + (id)currentCarPlayExternalDevice;
@@ -45,6 +47,7 @@
 - (id)borrowScreenForClient:(id)arg1 reason:(id)arg2;
 - (void)dealloc;
 - (id)delegate;
+- (int)electronicTollCollection;
 - (id)externalDeviceHIDWithUUID:(id)arg1;
 - (id)externalDeviceHIDs;
 - (struct OpaqueFigEndpoint { }*)figEndpoint;
@@ -61,13 +64,16 @@
 - (BOOL)ownsTurnByTurnNavigation;
 - (BOOL)recognizingSpeech;
 - (void)requestCarUI;
+- (void)requestCarUIForURL:(id)arg1;
 - (id)requestTurnByTurnNavigationOwnership;
 - (BOOL)rightHandDrive;
 - (id)screenIDs;
 - (id)screenInputCapabilities;
 - (id)screenPrimaryInputDevices;
 - (void)setDelegate:(id)arg1;
+- (id)supportedFeatures;
 - (void)takeScreenForClient:(id)arg1 reason:(id)arg2;
+- (void)takeScreenForConnection;
 - (int)transportType;
 
 @end

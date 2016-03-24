@@ -3,6 +3,7 @@
  */
 
 @interface _MKCalloutBackgroundMaskView : UIView {
+    UIMotionEffect *_arrowMotionEffect;
     UIView *_baseView;
     UIImageView *_bottomArrow;
     UIView *_currentArrowContainer;
@@ -11,6 +12,7 @@
     UIImageView *_topArrow;
 }
 
+@property (nonatomic, copy) UIMotionEffect *arrowMotionEffect;
 @property (nonatomic, readonly) UIView *baseView;
 @property (nonatomic, readonly) UIImageView *bottomArrow;
 @property (nonatomic, readonly) UIView *currentArrowContainer;
@@ -21,12 +23,14 @@
 - (void).cxx_destruct;
 - (void)_removeArrows;
 - (void)_setupViews;
+- (id)arrowMotionEffect;
 - (id)baseView;
 - (id)bottomArrow;
 - (id)currentArrowContainer;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)leftArrow;
 - (id)rightArrow;
+- (void)setArrowMotionEffect:(id)arg1;
 - (id)topArrow;
 
 @end

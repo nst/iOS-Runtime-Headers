@@ -14,6 +14,7 @@
     GLKTextureInfo *_colorTexture;
     EAGLContext *_context;
     BOOL _contextPushed;
+    <FIUIBadgeViewControllerDelegate> *_delegate;
     GLKTextureInfo *_envTexture;
     unsigned int _faceProgram;
     struct __UniformBindings { 
@@ -127,6 +128,7 @@
     int _numGroups;
     unsigned int _program;
     unsigned int _shape;
+    id /* block */ _shortenedBadgeBacksideStringProvider;
     double _spinRate;
     UIPanGestureRecognizer *_spinRecognizer;
     UITapGestureRecognizer *_tapRecognizer;
@@ -203,8 +205,10 @@
 }
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <FIUIBadgeViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) id /* block */ shortenedBadgeBacksideStringProvider;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL verticalPanningDisabled;
 
@@ -212,7 +216,7 @@
 
 - (void).cxx_destruct;
 - (void)_applyImpulse:(double)arg1;
-- (id)_attributedStringForUserName:(id)arg1 achievement:(id)arg2 usingSmallVariant:(BOOL)arg3;
+- (id)_attributedStringForUserName:(id)arg1 achievement:(id)arg2 usingSmallVariant:(BOOL)arg3 smallDateVariant:(BOOL)arg4;
 - (union _GLKVector3 { struct { float x_1_1_1; float x_1_1_2; float x_1_1_3; } x1; struct { float x_2_1_1; float x_2_1_2; float x_2_1_3; } x2; struct { float x_3_1_1; float x_3_1_2; float x_3_1_3; } x3; float x4[3]; })_colorVectorFromString:(id)arg1;
 - (void)_context_createBuffers;
 - (void)_context_destroyBuffers;
@@ -235,6 +239,7 @@
 - (void)_withContext:(id /* block */)arg1;
 - (void)configureForAchievement:(id)arg1 userName:(id)arg2 usingSmallVariant:(BOOL)arg3;
 - (void)dealloc;
+- (id)delegate;
 - (unsigned int)drawInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)init;
@@ -247,8 +252,11 @@
 - (void)setBadgeBacksideAttributedString:(id)arg1;
 - (void)setBadgeBacksideIcon:(id)arg1;
 - (void)setBadgeModelPath:(id)arg1 texturePath:(id)arg2 plistPath:(id)arg3;
+- (void)setDelegate:(id)arg1;
 - (void)setFixedBadgeAngle:(float)arg1;
+- (void)setShortenedBadgeBacksideStringProvider:(id /* block */)arg1;
 - (void)setVerticalPanningDisabled:(BOOL)arg1;
+- (id /* block */)shortenedBadgeBacksideStringProvider;
 - (BOOL)shouldAutorotate;
 - (BOOL)shouldAutorotateToInterfaceOrientation:(int)arg1;
 - (unsigned int)supportedInterfaceOrientations;

@@ -2,26 +2,25 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUIrisImageTileViewController : PUImageTileViewController <ISPlayerViewDelegate, _UISettingsKeyObserver> {
-    ISPlayerView *__irisPlayerView;
+@interface PUIrisImageTileViewController : PUImageTileViewController <PHLivePhotoViewDelegate, PHLivePhotoViewDelegatePrivate, _UISettingsKeyObserver> {
     ISPlayerView *__irisPlayerViewWithVitalityEnabled;
+    PHLivePhotoView *__livePhotoView;
     BOOL __needUpdateIrisContent;
-    BOOL __needsUpdateIrisPlayerView;
     BOOL _canLoadIrisContent;
     <PUIrisImageTileViewControllerDelegate> *_delegate;
     struct { 
         BOOL respondsToDidBeginPlaying; 
         BOOL respondsToWillEndPlaying; 
         BOOL respondsToDidEndPlaying; 
+        BOOL respondsToDidEndVitality; 
         BOOL respondsToViewHostingGestureRecognizers; 
         BOOL respondsToDelegateForGestureRecognizer; 
     } _delegateFlags;
 }
 
-@property (setter=_setIrisPlayerView:, nonatomic, retain) ISPlayerView *_irisPlayerView;
 @property (setter=_setIrisPlayerViewWithVitalityEnabled:, nonatomic, retain) ISPlayerView *_irisPlayerViewWithVitalityEnabled;
+@property (setter=_setLivePhotoView:, nonatomic, retain) PHLivePhotoView *_livePhotoView;
 @property (setter=_setNeedsUpdateIrisContent:, nonatomic) BOOL _needUpdateIrisContent;
-@property (setter=_setNeedsUpdateIrisPlayerView:, nonatomic) BOOL _needsUpdateIrisPlayerView;
 @property (nonatomic) BOOL canLoadIrisContent;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUIrisImageTileViewControllerDelegate> *delegate;
@@ -31,35 +30,29 @@
 
 - (void).cxx_destruct;
 - (void)_assetFocusValueDidChange;
-- (void)_assetIsInFocusChanged;
 - (void)_handleBrowsingIrisPlayer:(id)arg1 didChange:(id)arg2;
 - (void)_invalidateIrisContent;
-- (void)_invalidateIrisPlayerView;
-- (id)_irisPlayerView;
 - (id)_irisPlayerViewWithVitalityEnabled;
+- (id)_livePhotoView;
 - (BOOL)_needUpdateIrisContent;
 - (BOOL)_needsIrisUpdate;
-- (BOOL)_needsUpdateIrisPlayerView;
+- (void)_playVitalityHintIfNeeded;
 - (void)_playerViewReadinessDidChange;
-- (void)_setIrisPlayerView:(id)arg1;
 - (void)_setIrisPlayerViewWithVitalityEnabled:(id)arg1;
+- (void)_setLivePhotoView:(id)arg1;
 - (void)_setNeedsUpdateIrisContent:(BOOL)arg1;
-- (void)_setNeedsUpdateIrisPlayerView:(BOOL)arg1;
 - (void)_updateIrisContentIfNeeded;
 - (void)_updateIrisIfNeeded;
-- (void)_updateIrisPlayerViewIfNeeded;
 - (void)_updateIrisPlayerViewWithVitalityEnabled;
+- (void)_updatePlaybackGestureRecognizer;
 - (void)_updatePlayerViewInteractivePlaybackAllowed;
-- (void)_updatePlayerViewScrubOffset;
 - (void)assetViewModelDidChange;
 - (void)becomeReusable;
 - (BOOL)canLoadIrisContent;
-- (void)dealloc;
 - (id)delegate;
-- (id)irisPlayerView:(id)arg1 delegateForGestureRecognizer:(id)arg2;
-- (id)irisPlayerViewViewHostingGestureRecognizers:(id)arg1;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)playerViewPlaybackStateDidChange:(id)arg1;
+- (void)livePhotoView:(id)arg1 didEndPlaybackWithStyle:(int)arg2;
+- (void)livePhotoView:(id)arg1 willBeginPlaybackWithStyle:(int)arg2;
+- (void)livePhotoViewDidEndPlayingVitality:(id)arg1;
 - (void)setAssetViewModel:(id)arg1;
 - (void)setCanLoadIrisContent:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;

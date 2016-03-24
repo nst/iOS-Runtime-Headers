@@ -25,7 +25,9 @@
 - (unsigned long long)activityStart;
 - (id)discoveredUserIdentities;
 - (id /* block */)fetchIdentitiesCompletionBlock;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)identities;
 - (id /* block */)identityFetchedBlock;
 - (id)init;

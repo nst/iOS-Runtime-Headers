@@ -66,6 +66,7 @@
 - (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
+- (void)scrollViewWillBeginDragging:(id)arg1;
 - (void)scrollViewWillEndDragging:(id)arg1 withVelocity:(struct CGPoint { float x1; float x2; })arg2 targetContentOffset:(inout struct CGPoint { float x1; float x2; }*)arg3;
 - (float)scrollWheelLabelPageSize;
 - (void)setActiveScrollWheel;

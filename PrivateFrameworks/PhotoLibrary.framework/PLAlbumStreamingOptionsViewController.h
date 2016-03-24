@@ -65,8 +65,8 @@
 - (id)_lastMultiContributorsSectionFooterTitle;
 - (id)_lastPublicURLSectionFooterTitle;
 - (BOOL)_multipleContributorsEnabled;
-- (id)_newPersonViewControllerWithEmail:(id)arg1 phone:(id)arg2 firstName:(id)arg3 lastName:(id)arg4 canResendInvitation:(BOOL)arg5 canRemoveSubscriber:(BOOL)arg6;
-- (void*)_personMatchingEmail:(id)arg1 orPhone:(id)arg2 matchingProperty:(out int*)arg3 matchingValueIdentifier:(out int*)arg4;
+- (id)_personMatchingEmail:(id)arg1 orPhone:(id)arg2 withFirstName:(id)arg3 lastName:(id)arg4 outMatchingKey:(id*)arg5 outMatchingIdentifier:(id*)arg6 keysToFetch:(id)arg7;
+- (id)_personViewControllerWithEmail:(id)arg1 phone:(id)arg2 firstName:(id)arg3 lastName:(id)arg4 canResendInvitation:(BOOL)arg5 canRemoveSubscriber:(BOOL)arg6;
 - (BOOL)_publicURLEnabled;
 - (void)_removeSelectedSubscriber;
 - (void)_resendInvitationToSelectedSubscriber;

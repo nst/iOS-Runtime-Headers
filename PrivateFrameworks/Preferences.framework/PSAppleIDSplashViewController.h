@@ -85,5 +85,6 @@
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)willBeginAuthWithContext:(id)arg1;
+- (void)willMoveToParentViewController:(id)arg1;
 
 @end

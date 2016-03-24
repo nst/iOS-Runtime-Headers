@@ -21,6 +21,7 @@
 - (void).cxx_destruct;
 - (id)accountStore;
 - (void)accountStoreDidChange:(id)arg1;
+- (id)allICloudACAccounts;
 - (id)currentICloudAccountState;
 - (void)dealloc;
 - (BOOL)didChooseToMigratePrimaryICloudAccount;

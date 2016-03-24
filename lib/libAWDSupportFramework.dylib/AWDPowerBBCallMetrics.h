@@ -38,6 +38,8 @@
 @property (nonatomic, retain) NSMutableArray *metrics;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)metricsType;
+
 - (void)addMetrics:(id)arg1;
 - (unsigned int)bBAndDataPowerMicroWatt;
 - (unsigned int)bBPowerMicroWatt;

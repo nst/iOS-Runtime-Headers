@@ -16,6 +16,7 @@
     GEORouteSet *_routeSet;
     NSMutableDictionary *_routeUniquePointRangeDict;
     NSArray *_routes;
+    NSArray *_routesAndContingencies;
     NSArray *_routesAndGaps;
     NSMutableDictionary *_routesDict;
     <GEOTransitRoutingIncidentMessage> *_transitRoutingIncidentMessage;

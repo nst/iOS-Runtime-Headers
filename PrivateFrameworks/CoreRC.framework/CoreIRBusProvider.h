@@ -26,7 +26,6 @@
 - (void)dealloc;
 - (BOOL)deleteDevicePrefsWithUUID:(id)arg1 UUIDKey:(id)arg2;
 - (void)didAddDevice:(id)arg1;
-- (void)didAddToManager:(id)arg1;
 - (void)didRemoveDevice:(id)arg1;
 - (id)getExistingDeviceWithType:(unsigned int)arg1 matching:(id)arg2;
 - (id)initWithInterface:(id)arg1;
@@ -44,6 +43,7 @@
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2 error:(id*)arg3;
 - (void)updateAllowHibernation;
 - (BOOL)updatePersistentValue:(id)arg1 forProperty:(id)arg2 ofDevice:(id)arg3;
+- (void)willAddToManager:(id)arg1;
 - (void)willRemoveDevice:(id)arg1;
 
 @end

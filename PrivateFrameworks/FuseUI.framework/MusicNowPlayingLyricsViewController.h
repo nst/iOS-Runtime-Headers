@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicNowPlayingLyricsViewController : UIViewController <UIViewControllerTransitioningDelegate> {
+@interface MusicNowPlayingLyricsViewController : UIViewController <MPURatingControlDelegate, UIViewControllerTransitioningDelegate> {
     _UIBackdropView *_backdropView;
     MPAVItem *_currentItem;
+    UIView *_hairlineView;
+    MusicNowPlayingRatingControl *_ratingControl;
     UITextView *_textView;
 }
 
@@ -12,7 +14,9 @@
 @property (nonatomic, retain) MPAVItem *currentItem;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) UIView *hairlineView;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MusicNowPlayingRatingControl *ratingControl;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) UITextView *textView;
 
@@ -22,7 +26,10 @@
 - (id)animationControllerForPresentedController:(id)arg1 presentingController:(id)arg2 sourceController:(id)arg3;
 - (id)backdropView;
 - (id)currentItem;
+- (id)hairlineView;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
+- (id)ratingControl;
+- (void)ratingDidChangeForRatingControl:(id)arg1;
 - (void)setCurrentItem:(id)arg1;
 - (id)textView;
 - (void)viewDidLayoutSubviews;

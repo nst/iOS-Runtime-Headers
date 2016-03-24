@@ -3,6 +3,7 @@
  */
 
 @interface HAPCharacteristic : NSObject {
+    HAPCharacteristicMetadata *_accessoryMetadata;
     BOOL _eventNotificationsEnabled;
     NSNumber *_instanceID;
     HAPCharacteristicMetadata *_metadata;
@@ -14,9 +15,11 @@
     unsigned long long _valueUpdateTime;
 }
 
+@property (nonatomic, readonly) HAPCharacteristicMetadata *accessoryMetadata;
+@property (setter=setCBCharacteristic:, nonatomic, retain) CBCharacteristic *cbCharacteristic;
 @property (nonatomic) BOOL eventNotificationsEnabled;
 @property (nonatomic, copy) NSNumber *instanceID;
-@property (nonatomic, retain) HAPCharacteristicMetadata *metadata;
+@property (nonatomic, copy) HAPCharacteristicMetadata *metadata;
 @property (nonatomic) unsigned int properties;
 @property (nonatomic) HAPService *service;
 @property (nonatomic) BOOL shouldValidateValueAfterReading;
@@ -28,6 +31,8 @@
 - (void).cxx_destruct;
 - (id)_generateValidMetadata:(id)arg1;
 - (void)_updateMetadata:(id)arg1 withProvidedMetadata:(id)arg2;
+- (id)accessoryMetadata;
+- (id)cbCharacteristic;
 - (id)description;
 - (BOOL)eventNotificationsEnabled;
 - (id)initWithType:(id)arg1 instanceID:(id)arg2 value:(id)arg3 properties:(unsigned int)arg4 eventNotificationsEnabled:(BOOL)arg5 metadata:(id)arg6;
@@ -37,6 +42,7 @@
 - (unsigned int)properties;
 - (id)propertiesDescription;
 - (id)service;
+- (void)setCBCharacteristic:(id)arg1;
 - (void)setEventNotificationsEnabled:(BOOL)arg1;
 - (void)setInstanceID:(id)arg1;
 - (void)setMetadata:(id)arg1;

@@ -202,6 +202,7 @@
 - (id)_photoPinchGestureRecognizer;
 - (id)_pickerBannerView;
 - (void)_preferredContentSizeChanged:(id)arg1;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (id)_preheatedCollections;
 - (void)_prepareStackView:(id)arg1 forCollection:(id)arg2 withStackCount:(int)arg3 withCustomEmptyPlaceHolderImage:(id)arg4;
 - (void)_presentSearchViewController:(id)arg1 forTraitCollection:(id)arg2 animated:(BOOL)arg3 completion:(id /* block */)arg4;

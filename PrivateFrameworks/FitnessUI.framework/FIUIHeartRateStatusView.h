@@ -11,6 +11,7 @@
     UIImageView *_fullHeartImageView;
     NSString *_heartImageNameFormat;
     double _heartRate;
+    BOOL _isBeatingHeart;
     UIImageView *_reloadArrowView;
     UIImageView *_reloadOutlineView;
     NSBundle *_resourceBundle;
@@ -28,6 +29,7 @@
 - (void)_loadHeartMeasuringImagesWithCompletion:(id /* block */)arg1;
 - (id)_queue_heartMeasuringImages;
 - (void)_resumeAnimations;
+- (void)_startBeatingHeart;
 - (void)_startMeasuringAnimationAnimated:(BOOL)arg1;
 - (void)_suspendAnimations;
 - (id)animatingImageView;

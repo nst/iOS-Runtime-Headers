@@ -4,11 +4,15 @@
 
 @interface SAMPLoadQP : SADomainCommand
 
+@property (nonatomic, copy) NSNumber *startPlaying;
+
 + (id)loadQP;
 + (id)loadQPWithDictionary:(id)arg1 context:(id)arg2;
 
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (BOOL)requiresResponse;
+- (void)setStartPlaying:(id)arg1;
+- (id)startPlaying;
 
 @end

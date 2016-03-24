@@ -164,6 +164,7 @@
 + (id)_topVisibleWindowPassingTest:(id /* block */)arg1;
 + (BOOL)_transformLayerRotationsAreEnabled;
 + (void)_unregisterChargedView:(id)arg1;
++ (id)_whitePointAdaptivityStyleControllingWindow;
 + (id)_windowWithContextId:(unsigned int)arg1;
 + (void)adjustForAccessibilityIfNeeded:(id)arg1;
 + (id)allWindowsIncludingInternalWindows:(BOOL)arg1 onlyVisibleWindows:(BOOL)arg2;
@@ -204,6 +205,7 @@
 - (void)_beginKeyWindowDeferral;
 - (void)_beginModalSession;
 - (BOOL)_canActAsKeyWindowForScreen:(id)arg1;
+- (BOOL)_canAffectDisplayAdaptation;
 - (BOOL)_canAffectStatusBarAppearance;
 - (BOOL)_canBecomeKeyWindow;
 - (BOOL)_canBecomeLayoutEngineDelegate;

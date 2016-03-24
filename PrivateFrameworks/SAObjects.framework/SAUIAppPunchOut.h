@@ -12,6 +12,7 @@
 @property (nonatomic) BOOL appInstalled;
 @property (nonatomic, copy) NSURL *appStoreUri;
 @property (nonatomic, copy) NSString *bundleId;
+@property (nonatomic) BOOL launchOverSiri;
 @property (nonatomic, copy) NSString *predefinedButtonType;
 @property (nonatomic, copy) NSString *providerId;
 @property (nonatomic, copy) NSString *punchOutName;
@@ -33,6 +34,7 @@
 - (id)bundleId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (BOOL)launchOverSiri;
 - (id)predefinedButtonType;
 - (id)providerId;
 - (id)punchOutName;
@@ -46,6 +48,7 @@
 - (void)setAppInstalled:(BOOL)arg1;
 - (void)setAppStoreUri:(id)arg1;
 - (void)setBundleId:(id)arg1;
+- (void)setLaunchOverSiri:(BOOL)arg1;
 - (void)setPredefinedButtonType:(id)arg1;
 - (void)setProviderId:(id)arg1;
 - (void)setPunchOutName:(id)arg1;

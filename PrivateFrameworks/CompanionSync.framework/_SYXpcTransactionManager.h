@@ -3,6 +3,7 @@
  */
 
 @interface _SYXpcTransactionManager : NSObject {
+    NSObject<OS_dispatch_queue> *_syncQ;
     NSMutableDictionary *_table;
 }
 

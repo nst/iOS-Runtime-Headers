@@ -17,6 +17,7 @@
 - (JSValue *)getBag;
 - (void)getServiceEligibility:(NSDictionary *)arg1 :(JSValue *)arg2;
 - (void)invalidateBag;
+- (BOOL)isManagedAppleID;
 - (void)loadStoreContent:(NSDictionary *)arg1 :(JSValue *)arg2;
 - (id)makeStoreXMLHttpRequest;
 - (NSString *)networkConnectionType;

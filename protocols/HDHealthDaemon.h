@@ -9,21 +9,25 @@
 - (HDBackgroundTaskScheduler *)backgroundTaskScheduler;
 - (void)beginTransaction:(NSString *)arg1;
 - (HDContentProtectionManager *)contentProtectionManager;
+- (HDCurrentActivitySummaryHelper *)currentActivitySummaryHelper;
 - (HDDataProvenanceManager *)dataProvenanceManager;
 - (HDDatabasePruningManager *)databasePruningManager;
 - (void)didUpdateActiveWorkoutServers;
 - (void)endTransaction:(NSString *)arg1;
+- (_HKFirstPartyWorkoutSnapshot *)firstPartyWorkoutSnapshot;
 - (BOOL)hasAnyActiveWorkouts;
 - (<HDHealthDataCollectionManager> *)healthDataCollectionManager;
 - (<HDHealthDataManager> *)healthDataManager;
 - (<HDHealthDatabase> *)healthDatabase;
-- (<HDDaemonDeviceManager> *)healthDeviceManager;
+- (HDDeviceManager *)healthDeviceManager;
 - (<HDHealthMetadataManager> *)healthMetadataManager;
-- (HDDeviceManager *)healthSourceDeviceManager;
+- (HDHealthServiceManager *)healthServiceManager;
 - (HDSourceManager *)healthSourceManager;
 - (NSString *)homeDirectoryPath;
+- (NSURL *)homeDirectoryURL;
 - (void)invalidateActivityAlertSuppressionForIdentifier:(NSString *)arg1;
 - (BOOL)isAppleWatch;
+- (NSObject<OS_dispatch_queue> *)mainQueue;
 - (HDNanoSyncManager *)nanoSyncManager;
 - (void)pauseAllActiveWorkoutsWithCompletion:(void *)arg1; // needs 1 arg types, found 5: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (void)performBlockWithPowerAssertionIdentifier:(void *)arg1 transactionName:(void *)arg2 powerAssertionInterval:(void *)arg3 block:(void *)arg4; // needs 4 arg types, found 8: NSString *, NSString *, double, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
@@ -33,17 +37,18 @@
 - (HDProcessStateManager *)processStateManager;
 - (void)registerForDaemonReady:(id <HDHealthDaemonReadyObserver>)arg1;
 - (void)registerForLaunchNotification:(const char *)arg1;
+- (HDRoutineGateway *)routineGateway;
+- (HDServiceConnectionManager *)serviceConnectionManager;
+- (void)setCurrentActivityCacheOverrideDate:(void *)arg1 timeZone:(void *)arg2 completion:(void *)arg3; // needs 3 arg types, found 9: NSDate *, NSTimeZone *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (void)setDataCollectionOptions:(NSDictionary *)arg1 forKey:(NSString *)arg2 type:(HKSampleType *)arg3 clientUUID:(NSUUID *)arg4;
-- (void)setPairedWatchBundleIdentifierProvider:(id <HDPairedWatchBundleIdentifierProvider>)arg1;
 - (void)setViewOnWakeService:(id <HDViewOnWakeService>)arg1;
 - (void)setWorkoutManager:(HDWorkoutManager *)arg1;
+- (HDAppSubscriptionManager *)subscriptionManager;
 - (void)suppressActivityAlertsForIdentifier:(NSString *)arg1 suppressionReason:(int)arg2 timeoutUntilDate:(NSDate *)arg3;
 - (<HDSyncEngine> *)syncEngine;
-- (void)syncImmediatelyWithReason:(NSString *)arg1;
 - (void)terminate;
 - (HDUnitPreferencesManager *)unitPreferencesManager;
 - (void)unregisterForLaunchNotification:(const char *)arg1;
-- (void)updateActivityCacheForNewWorkoutSamples;
 - (HDUserCharacteristicsManager *)userCharacteristicsManager;
 - (<HDViewOnWakeService> *)viewOnWakeService;
 - (HDWorkoutManager *)workoutManager;

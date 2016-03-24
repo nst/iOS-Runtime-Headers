@@ -5,6 +5,7 @@
 @interface PUAggregateDictionaryTracer : NSObject {
     int __assetPlayCount;
     NSMapTable *__browsingViewModelTracers;
+    NSDate *__lastPlayStartDate;
     <PUDisplayAsset> *__lastPlayedAsset;
     <PUDisplayAsset> *__lastViewedAsset;
     <PUDisplayAsset> *__streamedVideo;
@@ -15,6 +16,7 @@
 
 @property (setter=_setAssetPlayCount:, nonatomic) int _assetPlayCount;
 @property (nonatomic, readonly) NSMapTable *_browsingViewModelTracers;
+@property (setter=_setLastPlayStartDate:, nonatomic, retain) NSDate *_lastPlayStartDate;
 @property (setter=_setLastPlayedAsset:, nonatomic) <PUDisplayAsset> *_lastPlayedAsset;
 @property (setter=_setLastViewedAsset:, nonatomic) <PUDisplayAsset> *_lastViewedAsset;
 @property (setter=_setStreamedVideo:, nonatomic) <PUDisplayAsset> *_streamedVideo;
@@ -29,9 +31,11 @@
 - (int)_assetTypeForAsset:(id)arg1;
 - (id)_browsingViewModelTracerForBrowsingViewModel:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (id)_browsingViewModelTracers;
+- (id)_lastPlayStartDate;
 - (id)_lastPlayedAsset;
 - (id)_lastViewedAsset;
 - (void)_setAssetPlayCount:(int)arg1;
+- (void)_setLastPlayStartDate:(id)arg1;
 - (void)_setLastPlayedAsset:(id)arg1;
 - (void)_setLastViewedAsset:(id)arg1;
 - (void)_setStreamedVideo:(id)arg1;
@@ -49,10 +53,13 @@
 - (void)streamedVideoPlaybackStalled:(id)arg1;
 - (void)streamedVideoPlaybackStartedActuallyPlaying:(id)arg1;
 - (void)userBrowsedOneUpFor:(double)arg1;
-- (void)userPlayedAssetInOneUp:(id)arg1;
+- (void)userDidPlayAssetInOneUp:(id)arg1;
+- (void)userStartedViewingAssetCollection:(id)arg1;
 - (void)userStartedViewingCurrentAssetOfBrowsingViewModel:(id)arg1 inContext:(id)arg2;
 - (void)userStoppedViewingCurrentAssetOfBrowsingViewModel:(id)arg1 inContext:(id)arg2;
 - (void)userViewedAssetInOneUp:(id)arg1;
 - (void)userViewedPhotoInOneUpFor:(double)arg1;
+- (void)userWillPlayAssetInOneUp:(id)arg1;
+- (void)vitalityPlayedForAssetInOneUp:(id)arg1;
 
 @end

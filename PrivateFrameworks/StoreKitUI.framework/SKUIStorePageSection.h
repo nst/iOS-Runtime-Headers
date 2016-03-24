@@ -92,8 +92,7 @@
 - (void)playVideoWithURL:(id)arg1;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)prefetchResourcesWithReason:(int)arg1;
-- (id)previewViewControllerForIndexPath:(id)arg1;
-- (BOOL)previewsSupportedForIndexPath:(id)arg1;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)productPageOverlayDidDismiss:(id)arg1;
 - (id)relevantEntityProviders;
 - (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;
@@ -113,6 +112,7 @@
 - (int)updateWithContext:(id)arg1 pageComponent:(id)arg2;
 - (void)willAppearInContext:(id)arg1;
 - (void)willHideInContext:(id)arg1;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 - (void)willTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

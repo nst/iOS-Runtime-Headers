@@ -52,6 +52,7 @@
 }
 
 @property (nonatomic) int abUID;
+@property (getter=isAlerting, nonatomic, readonly) BOOL alerting;
 @property (nonatomic) BOOL allowsTTYSettingChanges;
 @property (nonatomic, readonly, copy) NSString *audioCategory;
 @property (nonatomic, readonly, copy) NSString *audioMode;

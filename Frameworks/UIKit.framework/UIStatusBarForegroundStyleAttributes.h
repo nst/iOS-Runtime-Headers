@@ -4,6 +4,7 @@
 
 @interface UIStatusBarForegroundStyleAttributes : NSObject {
     NSMutableDictionary *_cachedFonts;
+    NSString *_cachedUniqueIdentifier;
     BOOL _canShowBreadcrumbs;
     BOOL _hasBusyBackground;
     float _height;

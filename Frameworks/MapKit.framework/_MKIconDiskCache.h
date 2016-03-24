@@ -17,6 +17,7 @@
 - (void)_updateVersionsInfo;
 - (void)dealloc;
 - (id)imageForStyleAttributes:(id)arg1 size:(unsigned int)arg2 scale:(float)arg3 drawingBlock:(id /* block */)arg4;
+- (id)imageForStyleAttributes:(id)arg1 size:(unsigned int)arg2 scale:(float)arg3 isCarplay:(BOOL)arg4 drawingBlock:(id /* block */)arg5;
 - (id)initWithDirectoryURL:(id)arg1;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 

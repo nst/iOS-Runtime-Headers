@@ -3,13 +3,16 @@
  */
 
 @interface HMAccessory : NSObject <HMMessageReceiver, HMObjectMerge, NSSecureCoding> {
+    HMThreadSafeMutableArrayCollection *_accessories;
     BOOL _blocked;
+    BOOL _bridgeSupportsConfiguration;
     BOOL _bridgedAccessory;
     HMAccessoryCategory *_category;
     NSObject<OS_dispatch_queue> *_clientQueue;
     HMThreadSafeMutableArrayCollection *_currentServices;
     <HMAccessoryDelegate> *_delegate;
     HMDelegateCaller *_delegateCaller;
+    BOOL _discoveredBridgeableAccessory;
     HMHome *_home;
     HMMessageDispatcher *_msgDispatcher;
     NSString *_name;
@@ -18,11 +21,14 @@
     BOOL _reachable;
     HMRoom *_room;
     NSUUID *_uniqueIdentifier;
+    NSArray *_uniqueIdentifiersForBridgeAccessories;
     NSArray *_uniqueIdentifiersForBridgedAccessories;
     NSUUID *_uuid;
 }
 
+@property (nonatomic, retain) HMThreadSafeMutableArrayCollection *accessories;
 @property (getter=isBlocked, nonatomic) BOOL blocked;
+@property (nonatomic) BOOL bridgeSupportsConfiguration;
 @property (getter=isBridged, nonatomic, readonly) BOOL bridged;
 @property (nonatomic) BOOL bridgedAccessory;
 @property (nonatomic, retain) HMAccessoryCategory *category;
@@ -32,6 +38,7 @@
 @property (nonatomic) <HMAccessoryDelegate> *delegate;
 @property (nonatomic, retain) HMDelegateCaller *delegateCaller;
 @property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL discoveredBridgeableAccessory;
 @property (readonly) unsigned int hash;
 @property (nonatomic) HMHome *home;
 @property (nonatomic, readonly, copy) NSUUID *identifier;
@@ -47,6 +54,7 @@
 @property (nonatomic, readonly, copy) NSArray *services;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly, copy) NSUUID *uniqueIdentifier;
+@property (nonatomic, copy) NSArray *uniqueIdentifiersForBridgeAccessories;
 @property (nonatomic, copy) NSArray *uniqueIdentifiersForBridgedAccessories;
 @property (nonatomic, readonly, copy) NSUUID *uuid;
 
@@ -62,6 +70,7 @@
 - (id)_findService:(id)arg1;
 - (void)_handleAccessoryCategoryChanged:(id)arg1;
 - (void)_handleAccessoryNotificationsUpdated:(id)arg1;
+- (void)_handleBridgeStatusNotification:(id)arg1;
 - (void)_handleCharacteristicValueUpdated:(id)arg1;
 - (void)_handleCharacteristicsUpdated:(id)arg1;
 - (void)_handleConnectivityChanged:(id)arg1;
@@ -83,6 +92,8 @@
 - (void)_updateName:(id)arg1 forService:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)_updateRoom:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_writeValue:(id)arg1 forCharacteristic:(id)arg2 completionHandler:(id /* block */)arg3;
+- (id)accessories;
+- (BOOL)bridgeSupportsConfiguration;
 - (BOOL)bridgedAccessory;
 - (id)category;
 - (id)clientQueue;
@@ -91,6 +102,7 @@
 - (id)delegate;
 - (id)delegateCaller;
 - (id)description;
+- (BOOL)discoveredBridgeableAccessory;
 - (void)encodeWithCoder:(id)arg1;
 - (id)home;
 - (id)identifier;
@@ -109,13 +121,16 @@
 - (id)propertyQueue;
 - (id)room;
 - (id)services;
+- (void)setAccessories:(id)arg1;
 - (void)setBlocked:(BOOL)arg1;
+- (void)setBridgeSupportsConfiguration:(BOOL)arg1;
 - (void)setBridgedAccessory:(BOOL)arg1;
 - (void)setCategory:(id)arg1;
 - (void)setClientQueue:(id)arg1;
 - (void)setCurrentServices:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegateCaller:(id)arg1;
+- (void)setDiscoveredBridgeableAccessory:(BOOL)arg1;
 - (void)setHome:(id)arg1;
 - (void)setMsgDispatcher:(id)arg1;
 - (void)setName:(id)arg1;
@@ -123,8 +138,10 @@
 - (void)setPropertyQueue:(id)arg1;
 - (void)setReachable:(BOOL)arg1;
 - (void)setRoom:(id)arg1;
+- (void)setUniqueIdentifiersForBridgeAccessories:(id)arg1;
 - (void)setUniqueIdentifiersForBridgedAccessories:(id)arg1;
 - (id)uniqueIdentifier;
+- (id)uniqueIdentifiersForBridgeAccessories;
 - (id)uniqueIdentifiersForBridgedAccessories;
 - (void)updateName:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)uuid;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
  */
 
-@interface CKConversationListCell : UITableViewCell <CNAvatarViewDelegate> {
+@interface CKConversationListCell : UITableViewCell <CKConversationListCell, CNAvatarViewDelegate> {
     CKAvatarView *_avatarView;
     UIImageView *_chevronImageView;
     CKConversation *_conversation;

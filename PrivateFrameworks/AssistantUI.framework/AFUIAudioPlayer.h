@@ -22,6 +22,8 @@
 + (id)voicemailPlayer;
 
 - (void).cxx_destruct;
+- (id)_audioCategory;
+- (unsigned int)_audioOptions;
 - (id)_audioURL;
 - (id)_player;
 - (void)_setPlayer:(id)arg1;

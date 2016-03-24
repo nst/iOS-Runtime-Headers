@@ -97,6 +97,12 @@
 
 + (id)secureUnarchiveData:(id)arg1 withExpectedClass:(Class)arg2 otherAllowedClasses:(id)arg3;
 
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
++ (id)cat_unarchiveObjectOfClass:(Class)arg1 withData:(id)arg2;
++ (id)cat_unarchiveObjectOfClasses:(id)arg1 withData:(id)arg2;
++ (id)cat_unarchivePropertyListObjectWithData:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
 
 + (id)cpl_safeUnarchiveObjectWithData:(id)arg1;

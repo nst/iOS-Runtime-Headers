@@ -3,7 +3,6 @@
  */
 
 @interface FTMessageDelivery_HTTP : FTMessageDelivery <FTMessageQueueDelegate> {
-    NSObject<OS_dispatch_queue> *_anisetteHeadersQueue;
     BOOL _pendingRetryAfterAirplaneMode;
     IDSRemoteURLConnection *_remoteConnection;
     double _retryTimeAfterAirplaneMode;

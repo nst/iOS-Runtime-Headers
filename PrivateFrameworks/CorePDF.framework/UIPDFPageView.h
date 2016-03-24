@@ -32,6 +32,7 @@
     <NSObject><UIPDFPageViewDelegate> *_delegate;
     UIPDFDocument *_document;
     CALayer *_effectsLayer;
+    BOOL _enableLightMemoryFootprint;
     struct CGColor { } *_highLightColor;
     NSMutableArray *_highlights;
     int _lock;
@@ -100,6 +101,8 @@
 @property (nonatomic) BOOL showTextAnnotations;
 @property (nonatomic) BOOL useBackingLayer;
 
+// Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
+
 - (struct CGPDFDictionary { }*)_annotForPoint:(struct CGPoint { float x1; float x2; })arg1 rect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
 - (void)addLayers:(BOOL)arg1;
 - (void)addPage:(id)arg1;
@@ -119,6 +122,7 @@
 - (struct CGPoint { float x1; float x2; })convertPointToPDFPageSpace:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectFromPDFPageSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertRectToPDFPageSpace:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)createBackingLayer;
 - (void)dealloc;
 - (id)delegate;
 - (void)didReceiveMemoryWarning:(id)arg1;
@@ -187,5 +191,11 @@
 - (void)viewDidZoom:(id)arg1;
 - (BOOL)willDoSomethingWithTap:(struct CGPoint { float x1; float x2; })arg1;
 - (void)willMoveToSuperview:(id)arg1;
+
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (id)_accessibilityQuickSpeakContent;
 
 @end

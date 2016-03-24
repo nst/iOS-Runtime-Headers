@@ -170,6 +170,9 @@
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned long long uniqueActiveAppCount;
 
++ (Class)activeNameDuringPeriodType;
+
+- (int)StringAsPeriodType:(id)arg1;
 - (id)activeNameDuringPeriodAtIndex:(unsigned int)arg1;
 - (id)activeNameDuringPeriods;
 - (unsigned int)activeNameDuringPeriodsCount;
@@ -239,6 +242,7 @@
 - (unsigned long long)packetsOut;
 - (unsigned long long)periodDurationUsecs;
 - (int)periodType;
+- (id)periodTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setActiveNameDuringPeriods:(id)arg1;
 - (void)setAnyListener:(unsigned int)arg1;

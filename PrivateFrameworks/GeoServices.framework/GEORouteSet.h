@@ -32,13 +32,14 @@
 @property (nonatomic, readonly) NSArray *waypoints;
 
 - (void)_appendNewPage:(id)arg1;
+- (void)_clearRoutes;
+- (void)_clearWeakReferences;
 - (id)_pageForRoute:(id)arg1;
 - (void)_prependNewPage:(id)arg1;
 - (void)addRoutesForRequest:(id)arg1 response:(id)arg2;
 - (void)addRoutesForReroute:(id)arg1;
 - (BOOL)allTransitRoutesBlockedByIncident;
 - (id)alternateStartRoutesLookup:(id)arg1;
-- (void)clearRoutes;
 - (void)dealloc;
 - (id)directionsResponseID:(id)arg1;
 - (id)displayHints:(id)arg1;

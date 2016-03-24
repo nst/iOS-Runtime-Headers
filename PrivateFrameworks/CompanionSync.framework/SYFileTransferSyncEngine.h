@@ -3,6 +3,7 @@
  */
 
 @interface SYFileTransferSyncEngine : SYSyncEngine <IDSServiceDelegate> {
+    SYDevice *_activeDevice;
     NSDictionary *_customIDSOptions;
     NSMutableArray *_deferredIncomingSessions;
     NSObject<OS_dispatch_queue> *_idsQueue;
@@ -14,6 +15,7 @@
     NSURL *_outputFileURL;
     _SYOutputStreamer *_outputStream;
     BOOL _sessionCanceled;
+    SYDevice *_sessionDevice;
     SYStartSyncSession *_sessionStartMessage;
 }
 
@@ -26,13 +28,15 @@
 - (void).cxx_destruct;
 - (id)_assumeOwnershipOfURL:(id)arg1 error:(id*)arg2;
 - (void)_cancelSession;
+- (void)_consumeRemainingStreamDataWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)_fileTransferHeader;
 - (void)_handleIncomingSessionFileAtOwnedURL:(id)arg1 metadata:(id)arg2 identifier:(id)arg3;
 - (void)_handleIncomingSessionFileAtURL:(id)arg1 metadata:(id)arg2 identifier:(id)arg3;
-- (void)_handleIncomingStreamDataWithIdentifier:(id)arg1;
+- (void)_handleIncomingStreamDataWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)_handleSessionRestart:(id)arg1 priority:(int)arg2 options:(id)arg3 userContext:(id)arg4 callback:(id /* block */)arg5;
 - (void)_readNextProtobuf:(id /* block */)arg1;
 - (void)_reallyHandleSessionRestart:(id)arg1 priority:(int)arg2 options:(id)arg3 userContext:(id)arg4 callback:(id /* block */)arg5;
+- (void)_recordLastSeqNo:(id)arg1;
 - (BOOL)_shouldTreatAsSessionEnd:(id)arg1;
 - (id)_wrapIncomingMessage:(id)arg1 ofType:(unsigned short)arg2 identifier:(id)arg3;
 - (id)_wrapIncomingResponse:(id)arg1 ofType:(unsigned short)arg2 identifier:(id)arg3;
@@ -40,6 +44,7 @@
 - (id)_wrapResponse:(id)arg1 toRequest:(id)arg2 ofType:(unsigned short)arg3;
 - (void)beginSession;
 - (BOOL)buffersSessions;
+- (id)cancelMessagesReturningFailures:(id)arg1;
 - (id)customIDSOptions;
 - (void)endSession;
 - (void)enqueueSyncRequest:(id)arg1 withMessageID:(unsigned short)arg2 priority:(int)arg3 options:(id)arg4 userContext:(id)arg5 callback:(id /* block */)arg6;
@@ -49,7 +54,9 @@
 - (id)outputStreamWithMetadata:(id)arg1 priority:(int)arg2 options:(id)arg3 context:(id)arg4 error:(id*)arg5;
 - (BOOL)resume:(id*)arg1;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5 context:(id)arg6;
+- (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 hasBeenDeliveredWithContext:(id)arg4;
 - (void)service:(id)arg1 account:(id)arg2 incomingResourceAtURL:(id)arg3 metadata:(id)arg4 fromID:(id)arg5 context:(id)arg6;
+- (void)service:(id)arg1 didSwitchActivePairedDevice:(id)arg2 acknowledgementBlock:(id /* block */)arg3;
 - (void)setCustomIDSOptions:(id)arg1;
 - (void)suspend;
 

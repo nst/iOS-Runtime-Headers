@@ -70,9 +70,9 @@
 - (void)renderEdgeEffect:(id)arg1 withTraits:(id)arg2;
 - (int)renderFlags;
 - (void)renderKeyContents:(id)arg1 withTraits:(id)arg2;
-- (BOOL)renderKeyImageContents:(id)arg1 withTraits:(id)arg2;
+- (unsigned int)renderKeyImageContents:(id)arg1 withTraits:(id)arg2 status:(unsigned int)arg3;
 - (BOOL)renderKeyPathContents:(id)arg1 withTraits:(id)arg2;
-- (BOOL)renderKeyStringContents:(id)arg1 withTraits:(id)arg2;
+- (unsigned int)renderKeyStringContents:(id)arg1 withTraits:(id)arg2 status:(unsigned int)arg3;
 - (void)renderShadowEffect:(id)arg1 withTraits:(id)arg2;
 - (id)renderedImage;
 - (float)scale;

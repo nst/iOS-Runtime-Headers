@@ -18,9 +18,11 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (struct CGPoint { float x1; float x2; })_applyAccelerationLimitToAcceleration:(struct CGPoint { float x1; float x2; })arg1 currentOffset:(struct CGPoint { float x1; float x2; })arg2 targetOffset:(struct CGPoint { float x1; float x2; })arg3;
 - (id)_entryForScrollView:(id)arg1 createIfNeeded:(BOOL)arg2;
 - (void)_heartbeat:(id)arg1;
 - (void)_processEntry:(id)arg1 timeDelta:(int)arg2 completed:(id)arg3;
+- (BOOL)_shouldPushAndPopRunLoopModes;
 - (void)_updateDisplayLinkConfiguration;
 - (void)cancelPeekAdjustmentForScrollView:(id)arg1 performRollback:(BOOL)arg2;
 - (void)cancelScrollingForScrollView:(id)arg1;

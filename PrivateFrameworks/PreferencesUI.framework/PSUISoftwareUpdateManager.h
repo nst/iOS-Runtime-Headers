@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUISoftwareUpdateManager : NSObject <RemoteUIControllerDelegate, SUManagerClientDelegate, SUNetworkObserver> {
+@interface PSUISoftwareUpdateManager : NSObject <SUManagerClientDelegate, SUNetworkObserver> {
     SUManagerClient *_SUManager;
     NSString *_actionString;
     BOOL _allowCellularDownloads;
@@ -13,7 +13,6 @@
     SUDownload *_download;
     SUMutableDownloadMetadata *_downloadMetadata;
     NSDateComponentsFormatter *_durationFormatter;
-    BOOL _forceTermsModal;
     UIViewController *_hostController;
     BOOL _manuallyStartedScan;
     int _networkType;
@@ -24,8 +23,6 @@
     BOOL _readyToResume;
     RUIStyle *_serverFlowStyle;
     int _state;
-    id /* block */ _termsCompletion;
-    RemoteUIController *_termsRemoteUI;
     SUDescriptor *_update;
 }
 
@@ -52,18 +49,11 @@
 - (void)_alertForDownloadConstraintsWithCompletion:(id /* block */)arg1;
 - (void)_batteryStateChanged:(id)arg1;
 - (void)_didBecomeActive:(id)arg1;
-- (void)_finishTermsWithAcceptance:(BOOL)arg1 error:(id)arg2;
-- (void)_handleAgreeFromObjectModel:(id)arg1;
-- (void)_loadRemoteUITermsWithCloudAtURL:(id)arg1;
-- (void)_loadTermsFromUpdateAsset;
-- (void)_loadTermsRemoteUIFailureWithError:(id)arg1;
 - (void)_notifyScanFailed:(id)arg1;
 - (BOOL)_readyToDownloadWithError:(id*)arg1;
 - (void)_reallyDownloadAndInstallAcceptingCellularFees:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)_reallyResumeDownloadAcceptingCellularFees:(BOOL)arg1;
 - (void)_setState:(int)arg1 error:(id)arg2;
-- (void)_termsAgree;
-- (void)_termsDisagree;
 - (id)actionString;
 - (BOOL)allowCellularDownloads;
 - (void)cancelAutoInstall;
@@ -88,7 +78,7 @@
 - (id)initWithDelegate:(id)arg1 hostController:(id)arg2;
 - (Class)managerClientClass;
 - (void)networkChangedFromNetworkType:(int)arg1 toNetworkType:(int)arg2;
-- (void)presentTermsIfNececssaryOverViewController:(id)arg1 completion:(id /* block */)arg2;
+- (void)presentTermsIfNecessaryCompletion:(id /* block */)arg1;
 - (id)prettyNameForUpdate:(id)arg1;
 - (id)prettyUpdateName;
 - (id)progressString;
@@ -96,9 +86,6 @@
 - (BOOL)readyToDownload;
 - (BOOL)readyToResume;
 - (void)refreshState;
-- (void)remoteUIController:(id)arg1 didFinishLoadWithError:(id)arg2;
-- (void)remoteUIController:(id)arg1 didReceiveObjectModel:(id)arg2 actionSignal:(int*)arg3;
-- (void)remoteUIController:(id)arg1 willPresentObjectModel:(id)arg2 modally:(BOOL)arg3;
 - (void)resumeDownload;
 - (void)scanFinishedWithUpdate:(id)arg1 error:(id)arg2;
 - (void)scanForUpdateCompletion:(id /* block */)arg1;

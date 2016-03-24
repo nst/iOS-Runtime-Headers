@@ -50,6 +50,7 @@
 - (id)creationDate;
 - (double)duration;
 - (unsigned int)fullsizeDataFormat;
+- (BOOL)hasPhotoColorAdjustments;
 - (unsigned int)hash;
 - (id)init;
 - (id)initWithNormalizedTime:(double)arg1 asset:(id)arg2;

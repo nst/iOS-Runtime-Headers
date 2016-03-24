@@ -138,6 +138,11 @@
 
 - (struct UIImage { Class x1; }*)previewImage;
 
+// Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
+
+- (float)is_cropFactor;
+- (id)is_valueForMetadataIdentifier:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
 - (id)rc_composedAVURL;

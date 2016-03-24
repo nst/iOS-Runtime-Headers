@@ -17,6 +17,8 @@
 - (void)_webView:(WKWebView *)arg1 willSnapshotBackForwardListItem:(WKBackForwardListItem *)arg2;
 - (void)_webViewDidBeginNavigationGesture:(WKWebView *)arg1;
 - (void)_webViewDidEndNavigationGesture:(WKWebView *)arg1 withNavigationToBackForwardListItem:(WKBackForwardListItem *)arg2;
+- (void)_webViewWebProcessDidBecomeResponsive:(WKWebView *)arg1;
+- (void)_webViewWebProcessDidBecomeUnresponsive:(WKWebView *)arg1;
 - (void)_webViewWebProcessDidCrash:(WKWebView *)arg1;
 - (void)_webViewWillEndNavigationGesture:(WKWebView *)arg1 withNavigationToBackForwardListItem:(WKBackForwardListItem *)arg2;
 

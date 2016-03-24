@@ -6,25 +6,25 @@
     WLEasyToHitCustomButton *_barcodeButton;
     PKBarcodeStickerView *_barcodeView;
     WLEasyToHitCustomButton *_flipButton;
+    PKLinkedAppIconView *_linkedApp;
     UILabel *_logoLabel;
-    WLEasyToHitCustomButton *_shareButton;
     BOOL _showsBarcodeButton;
     BOOL _showsBarcodeView;
     BOOL _showsInfo;
-    BOOL _showsShare;
+    BOOL _showsLinkedApp;
 }
 
 @property (nonatomic, readonly) PKBarcodeStickerView *barcodeView;
+@property (nonatomic, readonly) PKLinkedAppIconView *linkedApp;
 @property (nonatomic) BOOL showsBarcodeButton;
 @property (nonatomic) BOOL showsBarcodeView;
 @property (nonatomic) BOOL showsInfo;
-@property (nonatomic) BOOL showsShare;
+@property (nonatomic) BOOL showsLinkedApp;
 
 - (void)_barcodeButtonPressed;
 - (void)_flipButtonPressed;
 - (void)_positionBarcodeView;
 - (id)_relevantBuckets;
-- (void)_shareButtonPressed;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })barcodeFrame;
 - (id)barcodeView;
 - (struct CGSize { float x1; float x2; })contentSize;
@@ -35,21 +35,21 @@
 - (void)insertContentView:(id)arg1 ofType:(int)arg2;
 - (BOOL)isFrontFace;
 - (void)layoutSubviews;
+- (id)linkedApp;
 - (id)passFaceTemplate;
-- (void)prepareForFlip;
 - (void)setClipsContent:(BOOL)arg1;
 - (void)setShowsBarcodeButton:(BOOL)arg1;
 - (void)setShowsBarcodeButton:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsBarcodeView:(BOOL)arg1;
 - (void)setShowsBarcodeView:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setShowsInfo:(BOOL)arg1;
-- (void)setShowsShare:(BOOL)arg1;
+- (void)setShowsLinkedApp:(BOOL)arg1;
 - (id)shortFaceTemplate;
 - (id)shortScrunchedFaceTemplate;
 - (BOOL)showsBarcodeButton;
 - (BOOL)showsBarcodeView;
 - (BOOL)showsInfo;
-- (BOOL)showsShare;
+- (BOOL)showsLinkedApp;
 - (id)tallFaceTemplate;
 - (void)updateValidity;
 

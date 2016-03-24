@@ -4,7 +4,6 @@
 
 @interface HMDHomeData : NSObject {
     NSArray *_accessories;
-    HMDApplicationVendorIDStore *_appVendorIDStore;
     unsigned int _assistantGenerationCounter;
     NSUUID *_dataTag;
     int _dataVersion;
@@ -16,7 +15,6 @@
 }
 
 @property (nonatomic, readonly, copy) NSArray *accessories;
-@property (nonatomic, readonly) HMDApplicationVendorIDStore *appVendorIDStore;
 @property (nonatomic, readonly) unsigned int assistantGenerationCounter;
 @property (nonatomic, readonly, copy) NSUUID *dataTag;
 @property (nonatomic, readonly) int dataVersion;
@@ -28,13 +26,12 @@
 
 - (void).cxx_destruct;
 - (id)accessories;
-- (id)appVendorIDStore;
 - (unsigned int)assistantGenerationCounter;
 - (id)dataTag;
 - (int)dataVersion;
 - (id)homes;
 - (id)incomingInvitations;
-- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 dataVersion:(int)arg4 dataTag:(id)arg5 uuidsOfRemovedHomes:(id)arg6 incomingInvitations:(id)arg7 assistantGenerationCounter:(unsigned int)arg8 appVendorIDStore:(id)arg9 pendingUserManagementOperations:(id)arg10;
+- (id)initWithHomes:(id)arg1 accessories:(id)arg2 primaryHomeUUID:(id)arg3 dataVersion:(int)arg4 dataTag:(id)arg5 uuidsOfRemovedHomes:(id)arg6 incomingInvitations:(id)arg7 assistantGenerationCounter:(unsigned int)arg8 pendingUserManagementOperations:(id)arg9;
 - (id)pendingUserManagementOperations;
 - (id)primaryHomeUUID;
 - (id)uuidsOfRemovedHomes;

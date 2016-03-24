@@ -3,20 +3,24 @@
  */
 
 @interface IMDoubleLinkedListNode : NSObject {
-    id _dataValue;
     IMDoubleLinkedListNode *_next;
+    id _object;
     IMDoubleLinkedListNode *_prev;
 }
 
-@property (retain) id dataValue;
 @property (retain) IMDoubleLinkedListNode *next;
+@property (retain) id object;
 @property (retain) IMDoubleLinkedListNode *prev;
 
-- (id)dataValue;
+- (void)dealloc;
+- (id)initWithObject:(id)arg1;
 - (id)next;
+- (id)object;
+- (void)orphan;
 - (id)prev;
-- (void)setDataValue:(id)arg1;
+- (void)removeFromList;
 - (void)setNext:(id)arg1;
+- (void)setObject:(id)arg1;
 - (void)setPrev:(id)arg1;
 
 @end

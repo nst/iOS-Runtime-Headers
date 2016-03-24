@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKCodeAcquisitionViewController : UIViewController <NSURLConnectionDataDelegate, PKCaptureDelegate, UIGestureRecognizerDelegate> {
+@interface PKCodeAcquisitionViewController : UIViewController <NSURLConnectionDataDelegate, PKCaptureDelegate, PKPassPersonalizationViewControllerDelegate, PKPaymentSetupViewControllerDelegate, UIGestureRecognizerDelegate> {
     UILabel *_captionLabel;
     PKCaptureSession *_captureSession;
     <PKCodeAcquisitionDelegate> *_delegate;
@@ -42,9 +42,11 @@
 - (id)delegate;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (id)init;
+- (void)passPersonalizationViewController:(id)arg1 didFinishPersonalizingPass:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (BOOL)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;
+- (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewDidLayoutSubviews;

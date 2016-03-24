@@ -8,6 +8,7 @@
     BOOL _extension;
     NSString *_facilityID;
     <FBSystemServiceFacilityClient> *_facilityclient;
+    BOOL _suspended;
     BOOL _uiApp;
 }
 
@@ -24,6 +25,7 @@
 @property (nonatomic, readonly) int pid;
 @property (nonatomic, readonly, retain) FBProcess *process;
 @property (readonly) Class superclass;
+@property (getter=isSuspended, nonatomic, readonly) BOOL suspended;
 
 - (id)bundleID;
 - (id)bundlePath;
@@ -33,13 +35,16 @@
 - (id)facilityID;
 - (id)initWithConnection:(id)arg1;
 - (BOOL)isExtension;
+- (BOOL)isSuspended;
 - (BOOL)isUIApp;
 - (int)pid;
 - (id)process;
+- (void)resume;
 - (void)setBundlePath:(id)arg1;
 - (void)setExtension:(BOOL)arg1;
 - (void)setFacilityClient:(id)arg1;
 - (void)setFacilityID:(id)arg1;
 - (void)setUIApp:(BOOL)arg1;
+- (void)suspend;
 
 @end

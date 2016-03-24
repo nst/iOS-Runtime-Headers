@@ -29,6 +29,7 @@
 - (void).cxx_destruct;
 - (BOOL)_canAddPaymentPass;
 - (id)_defaultPaymentPassIdentifier;
+- (void)_deviceFailedToPair:(id)arg1;
 - (void)_setDeletionInProgress:(BOOL)arg1 forPassWithUniqueID:(id)arg2;
 - (id)_webServiceContext;
 - (BOOL)canAddPaymentPass;

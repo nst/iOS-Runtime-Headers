@@ -2,39 +2,6 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKSearchCompletion : NSObject {
-    <GEOCompletionItem> *_item;
-    NSString *_localizedSectionHeader;
-    MKMapItem *_mapItem;
-    NSString *_sourceID;
-}
-
-@property (nonatomic, readonly) GEOSearchCategory *category;
-@property (nonatomic, readonly) NSArray *displayLines;
-@property (nonatomic, readonly) <GEOCompletionItem> *geoCompletionItem;
-@property (nonatomic, copy) NSString *localizedSectionHeader;
-@property (nonatomic, readonly) MKMapItem *mapItem;
-@property (nonatomic, copy) NSString *sourceID;
-
-- (void).cxx_destruct;
-- (id)calloutTitle;
-- (id)category;
-- (id)copyStorage;
-- (id)description;
-- (id)displayLines;
-- (id)geoCompletionItem;
-- (BOOL)getCoordinate:(struct { double x1; double x2; }*)arg1;
-- (unsigned int)hash;
-- (id)highlightsForLine:(unsigned int)arg1;
-- (id)iconWithScale:(float)arg1;
-- (id)initWithGeoCompletionItem:(id)arg1;
-- (BOOL)isEqual:(id)arg1;
-- (id)localizedSectionHeader;
-- (id)mapItem;
-- (id)queryLine;
-- (void)sendFeedback;
-- (void)setLocalizedSectionHeader:(id)arg1;
-- (void)setSourceID:(id)arg1;
-- (id)sourceID;
+@interface MKSearchCompletion : MKLocalSearchCompletion
 
 @end

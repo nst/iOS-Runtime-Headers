@@ -18,7 +18,7 @@
 - (id)_keyForKeyID:(id)arg1 database:(id)arg2;
 - (id)init;
 - (BOOL)insertMetadata:(id)arg1 forDataEntityWithID:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
-- (id)metadataForDataEntity:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
-- (id)metadataForDataEntity:(id)arg1 withStatement:(id)arg2 error:(id*)arg3;
+- (id)metadataForDataEntityWithPersistentID:(long long)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
+- (id)metadataForDataEntityWithPersistentID:(long long)arg1 statement:(id)arg2 error:(id*)arg3;
 
 @end

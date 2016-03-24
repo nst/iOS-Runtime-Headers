@@ -9,6 +9,7 @@
 + (id)batterySaver;
 
 - (void).cxx_destruct;
+- (void)dealloc;
 - (int)getPowerMode;
 - (id)init;
 - (int)setMode:(int)arg1;

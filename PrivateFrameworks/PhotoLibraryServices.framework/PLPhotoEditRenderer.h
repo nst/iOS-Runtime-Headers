@@ -59,6 +59,7 @@
 - (void)_invalidateCachedFilters;
 - (BOOL)_isOrientationMirrored;
 - (struct CGImage { }*)_newCGImageFromEditedCIImage:(id)arg1;
+- (struct CGColorSpace { }*)_newOutputColorSpace;
 - (id)_renderingQueue;
 - (id)_smartBWAdjustments;
 - (double)_smartBWBaseValueForKey:(id)arg1 defaultValue:(double)arg2;

@@ -23,6 +23,7 @@
         int width; 
         int height; 
     } _irisMovieDimensions;
+    BOOL _irisSupported;
     long long _lastSettingsUniqueID;
     struct { 
         long long value; 
@@ -72,6 +73,7 @@
 - (id)_irisRequestForUniqueID:(long long)arg1;
 - (id)_sanitizedSettingsForSettings:(id)arg1;
 - (void)_updateIrisMovieDimensionsForSourceDevice:(id)arg1;
+- (void)_updateIrisSupportedForSourceDevice:(id)arg1;
 - (void)_updateOfflineVISSupportedForSourceDevice:(id)arg1;
 - (void)_updateSISSupportedForSourceDevice:(id)arg1;
 - (id)addConnection:(id)arg1 error:(id*)arg2;

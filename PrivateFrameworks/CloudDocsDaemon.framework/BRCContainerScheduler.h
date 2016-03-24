@@ -9,6 +9,7 @@
     BRCDeadlineToken *_containerMetadataSyncToken;
     NSString *_environmentName;
     NSObject<OS_dispatch_group> *_initialSyncDownGroup;
+    BOOL _isInSyncBubble;
     NSDate *_lastPeriodicSyncDate;
     struct _BRCOperation { Class x1; id x2; id x3; /* Warning: Unrecognized filer type: '1' using 'void*' */ void*x4; void*x5; unsigned char x6; void*x7; } *_periodicSyncOperation;
     APSConnection *_pushConnection;

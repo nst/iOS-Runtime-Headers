@@ -58,6 +58,7 @@
 - (struct CGSize { float x1; float x2; })pageSizeAtIndex:(int)arg1;
 - (id)pdfPreviewData;
 - (void)pdfViewHandlerCompletedLayoutAndIsUnlocked:(id)arg1;
+- (int)preferredWhitePointAdaptivityStyle;
 - (id)previewConverter;
 - (id)printPageHelper;
 - (void)scrollToPage:(unsigned int)arg1;

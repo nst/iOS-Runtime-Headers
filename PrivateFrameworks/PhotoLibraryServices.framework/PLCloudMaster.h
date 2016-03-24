@@ -4,7 +4,7 @@
 
 @interface PLCloudMaster : PLManagedObject
 
-@property (nonatomic, retain) NSSet *assetAttributes;
+@property (nonatomic, retain) NSSet *assets;
 @property (nonatomic) short cloudLocalState;
 @property (nonatomic, retain) NSString *cloudMasterGUID;
 @property (nonatomic, retain) NSDate *creationDate;
@@ -18,10 +18,10 @@
 @property (nonatomic, retain) NSSet *resources;
 @property (nonatomic, retain) NSString *uniformTypeIdentifier;
 
-+ (id)allCloudMastersInManagedObjectContext:(id)arg1;
 + (id)cloudMasterWithGUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)cloudMastersByGUID:(id)arg1 inManagedObjectContext:(id)arg2;
 + (id)cloudMastersWithGUIDs:(id)arg1 inManagedObjectContext:(id)arg2;
++ (void)deleteAllCloudMastersInManagedObjectContext:(id)arg1;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 withCloudMasterGUID:(id)arg2;

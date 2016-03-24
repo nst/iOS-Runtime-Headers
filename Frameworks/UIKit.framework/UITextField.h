@@ -20,6 +20,7 @@
     UIVisualEffectView *_contentBackdropView;
     BOOL _deferringBecomeFirstResponder;
     id _delegate;
+    UITextFieldLabel *_dictationLabel;
     UIImage *_disabledBackground;
     UITextFieldBorderView *_disabledBackgroundView;
     UITextFieldLabel *_displayLabel;
@@ -91,15 +92,21 @@
         unsigned int shouldResignWithoutUpdate : 1; 
         unsigned int blurEnabled : 1; 
         unsigned int disableFocus : 1; 
+        unsigned int disableRemoteTextEditing : 1; 
     } _textFieldFlags;
     _UICascadingTextStorage *_textStorage;
     UITextInputTraits *_traits;
+    UIColor *_tvCustomTextColor;
+    BOOL _tvUseVibrancy;
 }
 
 @property (setter=MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:, nonatomic) BOOL MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
 @property (nonatomic, readonly) MPUTextContainerContentSizeUpdater *MPU_contentSizeUpdater;
+@property (nonatomic, copy) NSIndexSet *PINEntrySeparatorIndexes;
 @property (setter=_setBaselineLayoutConstraint:, nonatomic, retain) NSLayoutConstraint *_baselineLayoutConstraint;
 @property (setter=_setBaselineLayoutLabel:, nonatomic, retain) _UIBaselineLayoutStrut *_baselineLayoutLabel;
+@property (nonatomic, retain) UIColor *_tvCustomTextColor;
+@property (nonatomic) BOOL _tvUseVibrancy;
 @property (nonatomic, copy) NSString *ab_text;
 @property (nonatomic, copy) NSDictionary *ab_textAttributes;
 @property (nonatomic) BOOL acceptsEmoji;
@@ -126,6 +133,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disablePrediction;
 @property (nonatomic, retain) UIImage *disabledBackground;
+@property (nonatomic) BOOL displaySecureEditsUsingPlainText;
 @property (nonatomic) BOOL displaySecureTextUsingPlainText;
 @property (getter=isEditing, nonatomic, readonly) BOOL editing;
 @property (nonatomic) int emptyContentReturnKeyType;
@@ -178,6 +186,7 @@
 @property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
 @property (nonatomic, copy) NSDictionary *typingAttributes;
 @property (nonatomic) BOOL useInterfaceLanguageForLocalization;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } validTextRange;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -226,6 +235,7 @@
 - (BOOL)_fieldEditorAttached;
 - (BOOL)_finishResignFirstResponder;
 - (id)_floatingContentView;
+- (void)_forceObscureAllText;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForLabel:(id)arg1 inTextRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)_hasContent;
 - (BOOL)_hasSuffixField;
@@ -235,6 +245,7 @@
 - (void)_initialScrollDidFinish:(id)arg1;
 - (id)_inputController;
 - (void)_insertAttributedTextWithoutClosingTyping:(id)arg1;
+- (id)_insertDictationResultPlaceholderOverlay;
 - (void)_installSelectGestureRecognizer;
 - (struct CGSize { float x1; float x2; })_intrinsicSizeWithinSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)_invalidateBaselineLayoutConstraints;
@@ -301,6 +312,7 @@
 - (void)_setRightViewOffset:(struct CGSize { float x1; float x2; })arg1;
 - (void)_setSuffix:(id)arg1 withColor:(id)arg2;
 - (void)_setSystemBackgroundViewActive:(BOOL)arg1;
+- (void)_setTextColor:(id)arg1 focusStateChange:(BOOL)arg2;
 - (void)_setUpBaselineLayoutConstraintsForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_share:(id)arg1;
 - (BOOL)_shouldEndEditing;
@@ -328,6 +340,8 @@
 - (struct CGSize { float x1; float x2; })_textSize;
 - (struct CGSize { float x1; float x2; })_textSizeUsingFullFontSize:(BOOL)arg1;
 - (void)_transliterateChinese:(id)arg1;
+- (id)_tvCustomTextColor;
+- (BOOL)_tvUseVibrancy;
 - (void)_uninstallSelectGestureRecognizer;
 - (void)_updateAtomBackground;
 - (void)_updateAtomTextColor;
@@ -409,6 +423,7 @@
 - (id)disabledBackground;
 - (id)documentFragmentForPasteboardItemAtIndex:(int)arg1;
 - (void)drawBorder:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (void)drawDictationLabelInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawPlaceholderInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawPrefixInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -537,6 +552,8 @@
 - (void)setDefaultTextAttributes:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDisabledBackground:(id)arg1;
+- (void)setDisplaySecureEditsUsingPlainText:(BOOL)arg1;
+- (void)setDisplaySecureTextUsingPlainText:(BOOL)arg1;
 - (void)setDrawsAsAtom:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFont:(id)arg1;
@@ -579,6 +596,8 @@
 - (void)setTextColor:(id)arg1;
 - (void)setTypingAttributes:(id)arg1;
 - (void)setUndoEnabled:(BOOL)arg1;
+- (void)set_tvCustomTextColor:(id)arg1;
+- (void)set_tvUseVibrancy:(BOOL)arg1;
 - (float)shadowBlur;
 - (id)shadowColor;
 - (struct CGSize { float x1; float x2; })shadowOffset;
@@ -632,7 +651,7 @@
 
 // Image: /System/Library/Frameworks/PassKit.framework/PassKit
 
-- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; double x53; void*x54; void*x55; void*x56; void*x57; void*x58; void*x59; void*x60; out in void*x61; void*x62; in void*x63; short x64; void*x65; void*x66; const int x67; unsigned int x68/* : ? */; void*x69; void*x70; void*x71; double x72; unsigned short x73; void*x74; const int x75; in void*x76; void*x77; void*x78; void*x79; void*x80; void*x81; void*x82; void*x83; void*x84; void*x85; void*x86; void*x87; void*x88; void*x89; void*x90; void*x91; void*x92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; unsigned char x100; void*x101; void*x102; int x103; void*x104; void*x105; long x106; void*x107; void*x108; short x109; void*x110; unsigned short x111; void*x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; void*x120; void*x121; void*x122; float x123; short x124; unsigned long long x125; void*x126; }*)arg1;
+- (void)pk_applyAppearance:(struct _PKAppearanceSpecifier { BOOL x1; id x2; id x3; id x4; id x5; id x6; id x7; id x8; id x9; id x10; id x11; id x12; id x13; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; inout unsigned short x28; unsigned int x29; in BOOL x30; const void*x31; void*x32; void*x33; in void*x34; void*x35; long x36; unsigned short x37; void*x38; out const void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; void*x53; void*x54; unsigned short x55; void*x56; short x57; void*x58; void*x59; void*x60; void*x61; unsigned long x62; int x63; unsigned int x64/* : ? */; const void*x65; const void*x66; void*x67; void*x68; const void*x69; void*x70; void*x71; void*x72; out const void*x73; short x74; void*x75; unsigned char x76; out const void*x77; long doublex78; void*x79; void*x80; void*x81; void*x82; float x83; const void*x84; void*x85; void*x86; void*x87; out const void*x88; void*x89; unsigned char x90; out const void*x91; long doublex92; void*x93; void*x94; void*x95; void*x96; void*x97; void*x98; void*x99; long long x100; void*x101; void*x102; oneway void*x103; void*x104; void*x105; void*x106; void*x107; void*x108; void*x109; void*x110; void*x111; void x112; void*x113; void*x114; void*x115; void*x116; void*x117; void*x118; void*x119; SEL x120; void*x121; void*x122; void*x123; void*x124; void*x125; void*x126; void*x127; void x128; void*x129; void*x130; void*x131; void*x132; void*x133; void*x134; unsigned char x135; void*x136; unsigned short x137; void*x138; short x139; void*x140; void*x141; void*x142; void*x143; unsigned long x144; int x145; unsigned int x146/* : ? */; const void*x147; const void*x148; void*x149; void*x150; const int x151; void x152; void*x153; void*x154; void*x155; void*x156; const void*x157; void*x158; void*x159; void*x160; out const void*x161; short x162; void*x163; void*x164; void*x165; out unsigned short x166; void*x167; const void x168; int x169; BOOL x170; void*x171; short x172; void*x173; float x174; const void*x175; void*x176; void*x177; void*x178; out const void*x179; void*x180; void*x181; void*x182; out unsigned short x183; void*x184; const void x185; int x186; BOOL x187; void*x188; short x189; void*x190; void*x191; void*x192; void*x193; oneway void*x194; void*x195; void*x196; void*x197; void*x198; in void*x199; void*x200; void*x201; void*x202; void*x203; void*x204; void*x205; void*x206; void*x207; void*x208; void*x209; void*x210; void*x211; void*x212; void*x213; void*x214; void*x215; void*x216; void*x217; void*x218; void*x219; void*x220; void*x221; void*x222; void*x223; void*x224; void*x225; void*x226; void*x227; void*x228; in void*x229; void*x230; void*x231; void*x232; void*x233; void*x234; void*x235; void*x236; void*x237; void*x238; void*x239; void*x240; void*x241; void*x242; void*x243; void*x244; void*x245; void*x246; void*x247; void*x248; void*x249; void*x250; void*x251; void*x252; void*x253; void*x254; Class x255; void*x256; struct x257; void*x258; void*x259; void*x260; void*x261; void*x262; void*x263; void*x264; void*x265; void*x266; void*x267; void*x268; void*x269; void*x270; void*x271; void*x272; void*x273; void*x274; void*x275; void*x276; void*x277; void*x278; void*x279; void*x280; void*x281; void*x282; void*x283; void*x284; void*x285; void*x286; void*x287; void*x288; void*x289; void*x290; void*x291; void*x292; void*x293; void*x294; void*x295; void*x296; void*x297; void*x298; void*x299; void*x300; void*x301; void*x302; void*x303; void*x304; void*x305; void*x306; void*x307; long x308; void*x309; void*x310; id x311; void*x312; void*x313; void*x314; void*x315; void*x316; void*x317; void*x318; void*x319; void*x320; void*x321; void*x322; void x323; void*x324; void*x325; void*x326; void*x327; void*x328; void*x329; void*x330; void*x331; unsigned long x332; unsigned short x333; unsigned int x334; BOOL x335; out in unsigned char x336; void*x337; BOOL x338; void*x339; void*x340; unsigned char x341; long x342; int x343; void*x344; in void*x345; void*x346; void*x347; void*x348; void*x349; void*x350; void*x351; void*x352; void*x353; void*x354; void*x355; void*x356; void*x357; void*x358; void*x359; in void*x360; void*x361; void*x362; in void*x363; void*x364; void*x365; in void*x366; void*x367; void*x368; void*x369; void*x370; void*x371; void*x372; void*x373; void*x374; void*x375; void*x376; void*x377; void*x378; void*x379; void*x380; void x381; void*x382; void*x383; void*x384; void*x385; void*x386; void*x387; void*x388; void*x389; unsigned long x390; unsigned short x391; unsigned int x392; BOOL x393; out in unsigned char x394; void*x395; BOOL x396; void*x397; void*x398; unsigned char x399; long x400; int x401; void*x402; in void*x403; void*x404; void*x405; void*x406; void*x407; void*x408; void*x409; void x410; void*x411; void*x412; void*x413; void*x414; void*x415; void*x416; void*x417; void*x418; unsigned short x419; void*x420; short x421; void*x422; void*x423; void*x424; void*x425; unsigned long x426; int x427; unsigned int x428/* : ? */; const void*x429; const void*x430; void*x431; void*x432; const void*x433; void*x434; void*x435; void*x436; out const void*x437; short x438; void*x439; void*x440; out unsigned int x441/* : ? */; int x442; long x443; void*x444; unsigned char x445; out const void*x446; unsigned short x447; void*x448; const void x449; int x450; BOOL x451; void*x452; short x453; void*x454; float x455; const void*x456; void*x457; void*x458; void*x459; out const void*x460; void*x461; void*x462; out unsigned int x463/* : ? */; int x464; long x465; void*x466; unsigned char x467; out const void*x468; unsigned short x469; void*x470; const void x471; int x472; BOOL x473; void*x474; short x475; void*x476; void*x477; void*x478; void*x479; void*x480; void*x481; void*x482; void*x483; void*x484; void*x485; void*x486; void*x487; void*x488; void*x489; void*x490; void*x491; void*x492; void*x493; void*x494; void*x495; void*x496; void*x497; void*x498; void*x499; void*x500; void*x501; void*x502; void*x503; void*x504; void*x505; void*x506; void*x507; void*x508; void*x509; void*x510; void*x511; void*x512; void*x513; void*x514; void*x515; void*x516; void*x517; void*x518; void*x519; void*x520; void*x521; void*x522; void x523; void*x524; void*x525; void*x526; struct x527; void*x528; void*x529; void*x530; void*x531; void*x532; void*x533; void*x534; void*x535; void*x536; void*x537; void*x538; void*x539; void*x540; void*x541; void*x542; void*x543; void*x544; void*x545; void*x546; void*x547; void*x548; void*x549; void*x550; void*x551; void x552; void*x553; void*x554; void*x555; void*x556; void*x557; void*x558; void*x559; void*x560; void*x561; void*x562; void*x563; void*x564; void*x565; void*x566; void*x567; void*x568; void*x569; void*x570; void*x571; void*x572; void*x573; void*x574; void*x575; void*x576; void*x577; void*x578; void*x579; void*x580; void*x581; void*x582; void*x583; void*x584; void*x585; id x586; in void*x587; void*x588; void*x589; void*x590; void*x591; void*x592; void*x593; void*x594; void*x595; void*x596; void*x597; void*x598; void*x599; void*x600; void*x601; void*x602; void*x603; void*x604; void*x605; void*x606; void*x607; void*x608; void*x609; void*x610; void*x611; void*x612; Class x613; void*x614; struct x615; void*x616; void*x617; void*x618; void*x619; void x620; void*x621; void*x622; void*x623; void*x624; void*x625; void*x626; unsigned char x627; void*x628; unsigned short x629; void*x630; short x631; void*x632; void*x633; void*x634; void*x635; unsigned long x636; int x637; unsigned int x638/* : ? */; const void*x639; const void*x640; void*x641; void*x642; const int x643; void x644; void*x645; void*x646; void*x647; void*x648; const void*x649; void*x650; void*x651; void*x652; out const void*x653; short x654; void*x655; int x656; void*x657; out const void*x658; unsigned int x659; void*x660; void*x661; out const void*x662; void*x663; float x664; const void*x665; void*x666; void*x667; void*x668; out const void*x669; void*x670; int x671; void*x672; out const void*x673; unsigned int x674; void*x675; void*x676; out const void*x677; void*x678; void*x679; void*x680; void*x681; void*x682; void*x683; const void*x684; void*x685; void*x686; void*x687; unsigned long long x688; void*x689; void*x690; unsigned short x691; void*x692; double x693; double x694; void*x695; double x696; void*x697; out long doublex698; out BOOL x699; void*x700; void*x701; void*x702; in void*x703; unsigned char x704; out in void*x705; void*x706; void*x707; void*x708; void*x709; void*x710; int x711; void*x712; const void*x713; void*x714; int x715; in void*x716; unsigned short x717; void*x718; void*x719; long x720; void*x721; short x722; void*x723; void*x724; void*x725; void*x726; void*x727; void*x728; void*x729; void*x730; void*x731; void*x732; void*x733; void*x734; void*x735; void*x736; void*x737; void*x738; void*x739; id x740; void*x741; in void*x742; void*x743; void*x744; unsigned short x745; void*x746; short x747; void*x748; void*x749; void*x750; void*x751; unsigned long x752; int x753; unsigned int x754/* : ? */; const void*x755; const void*x756; void*x757; void*x758; const int x759; void x760; void*x761; void*x762; void*x763; void*x764; const void*x765; void*x766; void*x767; void*x768; out const void*x769; short x770; void*x771; int x772; void*x773; out const void*x774; unsigned int x775; void*x776; void*x777; out const void*x778; void*x779; float x780; const void*x781; void*x782; void*x783; void*x784; out const void*x785; void*x786; int x787; void*x788; out const void*x789; unsigned int x790; void*x791; void*x792; out const void*x793; void*x794; void*x795; void*x796; void*x797; void*x798; void*x799; void*x800; id x801; void*x802; in void*x803; void*x804; void*x805; void*x806; void*x807; void*x808; void*x809; void*x810; void*x811; void*x812; void*x813; void*x814; void*x815; void*x816; void*x817; void*x818; void*x819; void*x820; void*x821; void*x822; void*x823; void*x824; void*x825; void*x826; void*x827; void*x828; void x829; void*x830; void*x831; void*x832; void*x833; void*x834; void*x835; void*x836; void*x837; void*x838; short x839; int x840; BOOL x841; void*x842; unsigned short x843; inout void*x844; void*x845; int x846; void x847; void*x848; oneway int x849; void*x850; void*x851; void*x852; void x853; void*x854; in void*x855; void*x856; void*x857; void*x858; int x859; short x860; void*x861; const void*x862; void*x863; void*x864; void*x865; void*x866; void*x867; void*x868; void*x869; void*x870; void*x871; void*x872; void*x873; const void*x874; void*x875; void*x876; void*x877; void*x878; void*x879; void*x880; void*x881; void*x882; void*x883; void*x884; void*x885; void*x886; void*x887; void*x888; void*x889; void*x890; void*x891; void*x892; void*x893; void*x894; void*x895; void*x896; void*x897; void*x898; void*x899; void*x900; void*x901; void*x902; void*x903; void*x904; id x905; void*x906; in void*x907; void*x908; void*x909; unsigned short x910; void*x911; double x912; double x913; void*x914; double x915; void*x916; out long doublex917; out BOOL x918; void*x919; void*x920; void*x921; in void*x922; unsigned char x923; out in void*x924; void*x925; void*x926; void*x927; void*x928; void*x929; void*x930; void*x931; void*x932; void*x933; void*x934; void*x935; void*x936; void*x937; void*x938; void*x939; void*x940; void*x941; void*x942; void*x943; void*x944; id x945; void*x946; in void*x947; void*x948; void*x949; unsigned short x950; void*x951; short x952; void*x953; void*x954; void*x955; void*x956; unsigned long x957; int x958; unsigned int x959/* : ? */; const void*x960; const void*x961; void*x962; void*x963; const int x964; void x965; void*x966; void*x967; void*x968; void*x969; const void*x970; void*x971; void*x972; void*x973; out const void*x974; short x975; void*x976; int x977; void*x978; out const void*x979; unsigned int x980; void*x981; void*x982; out const void*x983; void*x984; float x985; const void*x986; void*x987; void*x988; void*x989; out const void*x990; void*x991; int x992; void*x993; out const void*x994; unsigned int x995; void*x996; void*x997; out const void*x998; void*x999; void*x1000; void*x1001; void*x1002; void*x1003; void*x1004; void*x1005; id x1006; void*x1007; in void*x1008; void*x1009; void*x1010; void*x1011; void*x1012; void*x1013; void*x1014; void*x1015; void*x1016; void*x1017; void*x1018; void*x1019; void*x1020; void*x1021; char *x1022; void*x1023; void*x1024; void*x1025; void*x1026; void*x1027; void*x1028; void*x1029; void*x1030; void*x1031; void*x1032; void*x1033; void x1034; void*x1035; void*x1036; void*x1037; void*x1038; void*x1039; void*x1040; void*x1041; void*x1042; unsigned short x1043; void*x1044; short x1045; void*x1046; void*x1047; void*x1048; void*x1049; unsigned long x1050; int x1051; unsigned int x1052/* : ? */; const void*x1053; const void*x1054; void*x1055; void*x1056; const void*x1057; void*x1058; void*x1059; void*x1060; out const void*x1061; short x1062; void*x1063; int x1064; double x1065; void*x1066; float x1067; const void*x1068; void*x1069; void*x1070; void*x1071; out const void*x1072; void*x1073; int x1074; double x1075; void*x1076; void*x1077; void*x1078; void*x1079; void*x1080; void*x1081; void*x1082; void*x1083; void*x1084; void*x1085; void*x1086; void*x1087; void*x1088; void*x1089; void*x1090; void*x1091; void*x1092; void*x1093; void*x1094; void*x1095; void*x1096; void*x1097; void*x1098; void*x1099; void*x1100; void*x1101; void*x1102; void*x1103; void*x1104; void*x1105; void*x1106; void*x1107; void*x1108; void*x1109; void*x1110; void*x1111; void*x1112; void*x1113; void*x1114; void*x1115; void*x1116; void*x1117; void*x1118; void*x1119; }*)arg1;
 - (id)pk_childrenForAppearance;
 - (id)pk_placeholderColor;
 - (void)pk_setPlaceholderColor:(id)arg1;

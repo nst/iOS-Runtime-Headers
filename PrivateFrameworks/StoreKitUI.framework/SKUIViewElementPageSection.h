@@ -52,8 +52,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })pinningContentInsetForItemAtIndexPath:(id)arg1;
 - (struct CGSize { float x1; float x2; })preferredContentSize;
 - (void)prefetchResourcesWithReason:(int)arg1;
-- (id)previewViewControllerForIndexPath:(id)arg1;
-- (BOOL)previewsSupportedForIndexPath:(id)arg1;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (void)reloadCellWithIndexPath:(id)arg1 reason:(int)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })sectionContentInset;
 - (BOOL)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(BOOL)arg3;

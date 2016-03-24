@@ -36,6 +36,7 @@
 - (id)_initWithDictionary:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3;
 - (id)_internal;
 - (BOOL)_isEnabled;
+- (void)_reloadCachedDevices;
 - (void)_reregisterAndReidentify:(BOOL)arg1;
 - (void)_setIsEnabled:(BOOL)arg1;
 - (id)accountInfo;

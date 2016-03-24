@@ -21,8 +21,8 @@
 @property (nonatomic, readonly) NSArray *photosActivities;
 @property (readonly) Class superclass;
 
-+ (id)_defaultActivityTypeOrder;
 + (BOOL)_isOutboundShareActivity:(id)arg1;
++ (id)defaultActivityTypeOrder;
 + (id)photosApplicationActivities;
 + (void)trackUserActivity:(id)arg1 forAssets:(id)arg2;
 

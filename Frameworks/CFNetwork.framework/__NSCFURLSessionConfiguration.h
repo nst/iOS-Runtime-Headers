@@ -13,6 +13,7 @@
     unsigned int _TCPAdaptiveWriteTimeout;
     int _TLSMaximumSupportedProtocol;
     int _TLSMinimumSupportedProtocol;
+    BOOL _allowTCPIOConnectionStreamTask;
     BOOL _allowsCellularAccess;
     BOOL _allowsExpensiveAccess;
     BOOL _allowsIndefiniteConnections;
@@ -107,6 +108,7 @@
 - (id)_CTDataConnectionServiceType;
 - (unsigned int)_TCPAdaptiveReadTimeout;
 - (unsigned int)_TCPAdaptiveWriteTimeout;
+- (BOOL)_allowTCPIOConnectionStreamTask;
 - (BOOL)_allowsExpensiveAccess;
 - (BOOL)_allowsIndefiniteConnections;
 - (BOOL)_allowsMultipathTCP;
@@ -224,6 +226,7 @@
 - (void)set_CTDataConnectionServiceType:(id)arg1;
 - (void)set_TCPAdaptiveReadTimeout:(unsigned int)arg1;
 - (void)set_TCPAdaptiveWriteTimeout:(unsigned int)arg1;
+- (void)set_allowTCPIOConnectionStreamTask:(BOOL)arg1;
 - (void)set_allowsExpensiveAccess:(BOOL)arg1;
 - (void)set_allowsIndefiniteConnections:(BOOL)arg1;
 - (void)set_allowsMultipathTCP:(BOOL)arg1;

@@ -5,14 +5,12 @@
 @interface GEOTransitSuggestedRoute : PBCodable <NSCopying> {
     unsigned int _absEndTime;
     unsigned int _absStartTime;
-    NSMutableArray *_connectionSets;
     GEOTransitRouteDisplayStrings *_displayStrings;
     struct { 
         unsigned int absEndTime : 1; 
         unsigned int absStartTime : 1; 
         unsigned int rank : 1; 
     } _has;
-    NSMutableArray *_legs;
     unsigned int _rank;
     struct { 
         int *list; 
@@ -21,13 +19,14 @@
     } _routeBadges;
     NSData *_routeHandle;
     NSMutableArray *_routePlanningArtworks;
+    NSMutableArray *_sectionOptions;
+    NSMutableArray *_sections;
     NSMutableArray *_steps;
     GEOPBTransitRoutingIncidentMessage *_transitIncidentMessage;
 }
 
 @property (nonatomic) unsigned int absEndTime;
 @property (nonatomic) unsigned int absStartTime;
-@property (nonatomic, retain) NSMutableArray *connectionSets;
 @property (nonatomic, retain) GEOTransitRouteDisplayStrings *displayStrings;
 @property (nonatomic) BOOL hasAbsEndTime;
 @property (nonatomic) BOOL hasAbsStartTime;
@@ -35,30 +34,28 @@
 @property (nonatomic) BOOL hasRank;
 @property (nonatomic, readonly) BOOL hasRouteHandle;
 @property (nonatomic, readonly) BOOL hasTransitIncidentMessage;
-@property (nonatomic, retain) NSMutableArray *legs;
 @property (nonatomic) unsigned int rank;
 @property (nonatomic, readonly) int*routeBadges;
 @property (nonatomic, readonly) unsigned int routeBadgesCount;
 @property (nonatomic, retain) NSData *routeHandle;
 @property (nonatomic, retain) NSMutableArray *routePlanningArtworks;
+@property (nonatomic, retain) NSMutableArray *sectionOptions;
+@property (nonatomic, retain) NSMutableArray *sections;
 @property (nonatomic, retain) NSMutableArray *steps;
 @property (nonatomic, retain) GEOPBTransitRoutingIncidentMessage *transitIncidentMessage;
 
 - (unsigned int)absEndTime;
 - (unsigned int)absStartTime;
-- (void)addConnectionSet:(id)arg1;
-- (void)addLeg:(id)arg1;
 - (void)addRouteBadge:(int)arg1;
 - (void)addRoutePlanningArtwork:(id)arg1;
+- (void)addSection:(id)arg1;
+- (void)addSectionOption:(id)arg1;
 - (void)addSteps:(id)arg1;
-- (void)clearConnectionSets;
-- (void)clearLegs;
 - (void)clearRouteBadges;
 - (void)clearRoutePlanningArtworks;
+- (void)clearSectionOptions;
+- (void)clearSections;
 - (void)clearSteps;
-- (id)connectionSetAtIndex:(unsigned int)arg1;
-- (id)connectionSets;
-- (unsigned int)connectionSetsCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -73,9 +70,6 @@
 - (BOOL)hasTransitIncidentMessage;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
-- (id)legAtIndex:(unsigned int)arg1;
-- (id)legs;
-- (unsigned int)legsCount;
 - (void)mergeFrom:(id)arg1;
 - (unsigned int)rank;
 - (BOOL)readFrom:(id)arg1;
@@ -86,18 +80,24 @@
 - (id)routePlanningArtworkAtIndex:(unsigned int)arg1;
 - (id)routePlanningArtworks;
 - (unsigned int)routePlanningArtworksCount;
+- (id)sectionAtIndex:(unsigned int)arg1;
+- (id)sectionOptionAtIndex:(unsigned int)arg1;
+- (id)sectionOptions;
+- (unsigned int)sectionOptionsCount;
+- (id)sections;
+- (unsigned int)sectionsCount;
 - (void)setAbsEndTime:(unsigned int)arg1;
 - (void)setAbsStartTime:(unsigned int)arg1;
-- (void)setConnectionSets:(id)arg1;
 - (void)setDisplayStrings:(id)arg1;
 - (void)setHasAbsEndTime:(BOOL)arg1;
 - (void)setHasAbsStartTime:(BOOL)arg1;
 - (void)setHasRank:(BOOL)arg1;
-- (void)setLegs:(id)arg1;
 - (void)setRank:(unsigned int)arg1;
 - (void)setRouteBadges:(int*)arg1 count:(unsigned int)arg2;
 - (void)setRouteHandle:(id)arg1;
 - (void)setRoutePlanningArtworks:(id)arg1;
+- (void)setSectionOptions:(id)arg1;
+- (void)setSections:(id)arg1;
 - (void)setSteps:(id)arg1;
 - (void)setTransitIncidentMessage:(id)arg1;
 - (id)steps;

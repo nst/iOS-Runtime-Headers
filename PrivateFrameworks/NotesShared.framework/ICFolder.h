@@ -43,7 +43,6 @@
 + (id)predicateForVisibleFolders;
 + (id)predicateForVisibleFoldersIncludingHiddenNoteContainers:(BOOL)arg1;
 + (void)purgeFolder:(id)arg1;
-+ (id)recordType;
 + (id)reservedFolderTitles;
 + (id)stringByScrubbingStringForFolderName:(id)arg1;
 + (id)visibleFoldersInContext:(id)arg1;
@@ -54,6 +53,7 @@
 - (unsigned int)countOfVisibleNotesInFolder;
 - (void)deleteFromLocalDatabase;
 - (void)fixBrokenReferences;
+- (id)foldersInFolder;
 - (BOOL)hasAllMandatoryFields;
 - (BOOL)isAncestorOfFolder:(id)arg1;
 - (BOOL)isDefaultFolderForAccount;
@@ -76,6 +76,7 @@
 - (id)objectsToBeDeletedBeforeThisObject;
 - (id)parentFolder;
 - (id)predicateForAttachmentsInFolder;
+- (id)predicateForFoldersInFolder;
 - (id)predicateForNotesInFolder;
 - (id)predicateForSearchableAttachments;
 - (id)predicateForSearchableNotes;
@@ -84,6 +85,7 @@
 - (id)predicateForVisibleNotes;
 - (id)predicateForVisibleNotesInFolder;
 - (void)prepareForDeletion;
+- (id)recordType;
 - (id)recordZoneID;
 - (void)regenerateNestedTitleForSorting;
 - (void)resetUniqueIdentifier;

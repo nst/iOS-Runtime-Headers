@@ -49,6 +49,6 @@
 - (void)sendSceneActionsEvent:(id)arg1;
 - (void)sendSceneUpdateEvent:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)setDelegate:(id)arg1;
-- (void)unregisterSceneEventHandlerForSceneID:(id)arg1;
+- (void)unregisterSceneEventHandler:(id)arg1 forSceneID:(id)arg2;
 
 @end

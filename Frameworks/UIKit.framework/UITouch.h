@@ -78,6 +78,7 @@
 @property (setter=_setPathIndex:, nonatomic) unsigned char _pathIndex;
 @property (setter=_setPhaseChangeDelegate:, nonatomic, retain) <_UITouchPhaseChangeDelegate> *_phaseChangeDelegate;
 @property (nonatomic, readonly) float _pressure;
+@property (nonatomic, readonly) BOOL _respectsCharge;
 @property (setter=_setResponder:, nonatomic, retain) UIResponder *_responder;
 @property (setter=_setSenderID:, nonatomic) unsigned long long _senderID;
 @property (nonatomic, readonly) float _unclampedForce;
@@ -159,6 +160,7 @@
 - (struct CGPoint { float x1; float x2; })_previousLocationInSceneReferenceSpace;
 - (struct CGPoint { float x1; float x2; })_previousLocationInWindow:(id)arg1;
 - (void)_removeGestureRecognizer:(id)arg1;
+- (BOOL)_respectsCharge;
 - (id)_responder;
 - (SEL)_responderSelectorForPhase:(int)arg1;
 - (unsigned long long)_senderID;

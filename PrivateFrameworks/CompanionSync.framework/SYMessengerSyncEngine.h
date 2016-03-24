@@ -3,11 +3,13 @@
  */
 
 @interface SYMessengerSyncEngine : SYSyncEngine <NMSMessageCenterDelegate> {
+    SYDevice *_activeDevice;
     struct NSMapTable { Class x1; } *_callbackLookup;
     NSDictionary *_customIDSOptions;
     NSObject<OS_dispatch_queue> *_idsQueue;
     NMSMessageCenter *_messageCenter;
     struct NSMapTable { Class x1; } *_requestLookup;
+    NSString *_sessionDeviceID;
 }
 
 @property (nonatomic, copy) NSDictionary *customIDSOptions;
@@ -29,10 +31,14 @@
 - (void)_suspendIncomingMessages;
 - (void)_updateMessageCenterPrefs:(id)arg1;
 - (id)_wrapMessage:(id)arg1 ofType:(unsigned short)arg2 userInfo:(id)arg3;
+- (void)beginSession;
+- (id)cancelMessagesReturningFailures:(id)arg1;
 - (id)customIDSOptions;
 - (void)enqueueSyncRequest:(id)arg1 withMessageID:(unsigned short)arg2 priority:(int)arg3 options:(id)arg4 userContext:(id)arg5 callback:(id /* block */)arg6;
 - (id)idsQueue;
 - (id)initWithService:(id)arg1 queue:(id)arg2;
+- (id)messageCenter;
+- (void)messageCenter:(id)arg1 activeDeviceChanged:(id)arg2 acknowledgement:(id /* block */)arg3;
 - (void)messageCenter:(id)arg1 didReceiveIncomingFileTransfer:(id)arg2;
 - (void)messageCenter:(id)arg1 didReceiveUnknownRequest:(id)arg2;
 - (void)messageCenter:(id)arg1 didResolveIDSIdentifier:(id)arg2 forFileTransfer:(id)arg3;
@@ -40,6 +46,7 @@
 - (void)messageCenter:(id)arg1 didResolveIDSIdentifierForRequest:(id)arg2;
 - (void)messageCenter:(id)arg1 didSuccessfullyDeliverRequestWithIdentifier:(id)arg2 userInfo:(id)arg3;
 - (void)messageCenter:(id)arg1 didSuccessfullySendRequestWithIdentifier:(id)arg2 userInfo:(id)arg3;
+- (void)messageCenter:(id)arg1 failedToSendMessageWithIdentifier:(id)arg2 error:(id)arg3 userInfo:(id)arg4;
 - (id)outputStreamWithMetadata:(id)arg1 priority:(int)arg2 options:(id)arg3 context:(id)arg4 error:(id*)arg5;
 - (BOOL)resume:(id*)arg1;
 - (void)setCustomIDSOptions:(id)arg1;

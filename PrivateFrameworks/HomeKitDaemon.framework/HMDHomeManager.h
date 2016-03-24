@@ -2,14 +2,13 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDHomeManager : NSObject <HAPFragmentationStreamDelegate, HAPTimerDelegate, HMDAccessoryManagerDelegate, HMMessageReceiver, IDSServiceDelegate> {
+@interface HMDHomeManager : NSObject <HAPFragmentationStreamDelegate, HAPTimerDelegate, HMDAccessoryManagerDelegate, HMDPairedSyncDelegate, HMMessageReceiver, IDSServiceDelegate> {
     NSObject<OS_dispatch_source> *_accessoryFinderTimer;
     HMDAccessoryManager *_accessoryManager;
     BOOL _accountActive;
     BOOL _accountStatusFailedDueToNetworkFailure;
     BOOL _accountStatusIsAuthenticated;
     HMDApplicationRegistry *_appRegistry;
-    HMDApplicationVendorIDStore *_applicationVendorIDStore;
     int _assetUpdatedNotification;
     unsigned int _assistantGenerationCounter;
     NSMutableDictionary *_associatedRemotePeers;
@@ -20,12 +19,14 @@
     HMDCloudDataSyncStateFilter *_cloudDataSyncStateFilter;
     unsigned int _cloudOperationRetryCount;
     NSObject<OS_dispatch_source> *_cloudOperationRetryTimer;
+    HMDCloudReadOnlyModeFilter *_cloudReadonlyFilter;
     NSObject<OS_dispatch_source> *_cloudUploadTimer;
     HAPTimer *_cloudkitAccountChangedDebounceTimer;
     BOOL _cloudkitAccountStatusDetermined;
     BOOL _companionReachable;
     NSUUID *_dataTag;
     NSMutableSet *_dialogCancelationContexts;
+    NSMutableSet *_fullSyncedWatchPeers;
     HMDAssistantGather *_gatherer;
     unsigned int _generationCounter;
     BOOL _homeDataLoadedFromArchive;
@@ -45,6 +46,7 @@
     int _networkConnectionAvailable;
     int _newAssetInstalledNotification;
     unsigned short _nextRequestTransactionIdentifier;
+    HMDPairedSync *_pairedSync;
     NSMutableDictionary *_pendingDataSyncAcks;
     NSMutableDictionary *_pendingFragmentationStream;
     NSMutableDictionary *_pendingRemoteSessions;
@@ -56,12 +58,14 @@
     struct __SCNetworkReachability { } *_reachability;
     NSArray *_reachableWatchDeviceAddresses;
     HAPTimer *_remoteAccessHealthMonitorTimer;
+    HMDTimeInformationMonitor *_timeInformationMonitor;
     NSMutableSet *_unassociatedRemotePeers;
     BOOL _uploadHomeDataToCloud;
     BOOL _uploadMetadataToCloud;
     BOOL _uploadToCloudIsPending;
     NSUUID *_uuid;
     NSMutableArray *_uuidsOfRemovedHomes;
+    NSMutableDictionary *_watchSyncStateMap;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
@@ -71,7 +75,6 @@
 @property (nonatomic) BOOL accountStatusFailedDueToNetworkFailure;
 @property (nonatomic) BOOL accountStatusIsAuthenticated;
 @property (nonatomic, retain) HMDApplicationRegistry *appRegistry;
-@property (nonatomic, retain) HMDApplicationVendorIDStore *applicationVendorIDStore;
 @property (nonatomic) int assetUpdatedNotification;
 @property (nonatomic) unsigned int assistantGenerationCounter;
 @property (nonatomic, retain) NSMutableDictionary *associatedRemotePeers;
@@ -82,6 +85,7 @@
 @property (nonatomic, retain) HMDCloudDataSyncStateFilter *cloudDataSyncStateFilter;
 @property (nonatomic) unsigned int cloudOperationRetryCount;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *cloudOperationRetryTimer;
+@property (nonatomic, retain) HMDCloudReadOnlyModeFilter *cloudReadonlyFilter;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *cloudUploadTimer;
 @property (nonatomic, retain) HAPTimer *cloudkitAccountChangedDebounceTimer;
 @property (nonatomic) BOOL cloudkitAccountStatusDetermined;
@@ -90,6 +94,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMutableSet *dialogCancelationContexts;
+@property (nonatomic, retain) NSMutableSet *fullSyncedWatchPeers;
 @property (nonatomic, retain) HMDAssistantGather *gatherer;
 @property (nonatomic) unsigned int generationCounter;
 @property (readonly) unsigned int hash;
@@ -112,6 +117,7 @@
 @property (nonatomic) int networkConnectionAvailable;
 @property (nonatomic) int newAssetInstalledNotification;
 @property (nonatomic, readonly) unsigned short nextRequestTransactionIdentifier;
+@property (nonatomic, readonly) HMDPairedSync *pairedSync;
 @property (nonatomic, retain) NSMutableDictionary *pendingDataSyncAcks;
 @property (nonatomic, retain) NSMutableDictionary *pendingFragmentationStream;
 @property (nonatomic, retain) NSMutableDictionary *pendingRemoteSessions;
@@ -124,17 +130,20 @@
 @property (nonatomic, retain) NSArray *reachableWatchDeviceAddresses;
 @property (nonatomic, retain) HAPTimer *remoteAccessHealthMonitorTimer;
 @property (readonly) Class superclass;
+@property (nonatomic, retain) HMDTimeInformationMonitor *timeInformationMonitor;
 @property (nonatomic, retain) NSMutableSet *unassociatedRemotePeers;
 @property (nonatomic) BOOL uploadHomeDataToCloud;
 @property (nonatomic) BOOL uploadMetadataToCloud;
 @property (nonatomic) BOOL uploadToCloudIsPending;
 @property (nonatomic, retain) NSUUID *uuid;
 @property (nonatomic, retain) NSMutableArray *uuidsOfRemovedHomes;
+@property (nonatomic, retain) NSMutableDictionary *watchSyncStateMap;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *workQueue;
 
 + (id)activeAccountIdentifier;
 + (id)createIdentifierSalt:(id)arg1;
 + (BOOL)doesSaveReasonAffectOnlyLocalData:(id)arg1;
++ (void)enableDisplayOfHomeKitSettings;
 + (id)getCurrentUserID;
 + (id)getUniqueDeviceIdSalt;
 + (id)remotePeerDeviceAddress:(id)arg1;
@@ -147,14 +156,17 @@
 - (void)_accessoriesAreLocallyReachableOnTransientDevice:(BOOL)arg1 forHome:(id)arg2;
 - (id)_accessoryIdentifiersForHome:(id)arg1;
 - (void)_addPendingDataSyncAcksForUser:(id)arg1 forHome:(id)arg2;
-- (void)_addWatch:(id)arg1;
+- (void)_addSyncOperation:(id)arg1;
+- (void)_addWatch:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)_addWatch:(id)arg1 toAssociatedList:(id)arg2;
 - (void)_cancelAccessoryFinderTimer;
-- (void)_checkAndAddWatchDevices:(id)arg1 resend:(BOOL)arg2;
+- (void)_checkAndAddWatchDevices:(id)arg1 resend:(BOOL)arg2 requestFromWatch:(BOOL)arg3;
 - (void)_checkAndAddWatchDevicesWithResend:(BOOL)arg1;
 - (void)_checkAndInformCompanionDevices:(id)arg1;
 - (void)_checkForAccountChanged;
 - (void)_checkForRemotePeers;
+- (void)_checkForRemotePeersAndRegisterForRemoteNotifications:(BOOL)arg1;
+- (void)_cleariCloudSwitchState;
 - (BOOL)_configureHomes:(id)arg1;
 - (BOOL)_configureHomesImpl:(id)arg1;
 - (void)_detectGuestHomesAddedAndRemovedWithCloudHomes:(id)arg1;
@@ -201,6 +213,7 @@
 - (void)_handleQueryAddressesOfControllersOnYourAccount:(id)arg1;
 - (void)_handleQueryMetadata:(id)arg1;
 - (void)_handleQueryVersionInformation:(id)arg1;
+- (void)_handleQueryiCloudSwitchState:(id)arg1;
 - (void)_handleReachableCompanionDevicesChanged:(id)arg1;
 - (void)_handleReachableWatchDevicesChanged:(id)arg1;
 - (void)_handleRemoteAccessPeersFoundNotification:(id)arg1;
@@ -218,20 +231,25 @@
 - (void)_handleRetrieveVendorIdentifier:(id)arg1;
 - (void)_handleSaveRequest:(id)arg1;
 - (void)_handleSetMetadata:(id)arg1;
+- (void)_handleShouldDisplayiCloudSwitch:(id)arg1;
+- (void)_handleUpdateiCloudSwitchState:(id)arg1;
 - (void)_handleUserRemoved:(id)arg1;
 - (id)_homeWithName:(id)arg1;
 - (id)_homeWithUUID:(id)arg1;
 - (void)_installAvailableAsset:(id)arg1 version:(unsigned int)arg2;
+- (BOOL)_isiCloudSwitchStateEnabled;
+- (BOOL)_isiCloudSwitchStatePresent;
 - (void)_loadMessageDispatcher:(id)arg1 idsMessageDispatcher:(id)arg2 accessoryManager:(id)arg3 messageFilterChain:(id)arg4 homeData:(id)arg5 identityRegistry:(id)arg6 appRegistry:(id)arg7 reloadData:(BOOL)arg8;
 - (void)_loadMetadataFromURL:(id)arg1 identifier:(id)arg2 remoteSource:(BOOL)arg3 responseHandler:(id /* block */)arg4;
-- (void)_mergeHomeDataWithRemoteHomes:(id)arg1 remotePrimaryHome:(id)arg2 remoteAccessories:(id)arg3 needConflictResolution:(BOOL)arg4 idsDataSync:(BOOL)arg5 idsSyncUser:(id)arg6 dataVersion:(int)arg7;
+- (void)_mergeHomeDataWithRemoteHomes:(id)arg1 remotePrimaryHome:(id)arg2 remoteAccessories:(id)arg3 needConflictResolution:(BOOL)arg4 idsDataSync:(BOOL)arg5 idsSyncUser:(id)arg6 dataVersion:(int)arg7 newResidentDevice:(BOOL*)arg8;
 - (void)_monitorReachability;
 - (unsigned short)_nextTransactionIdentifier;
 - (void)_notifySyncDataChanged;
+- (void)_pairedSyncDidStart;
 - (void)_postCloudSyncNotificationWithSuccess:(BOOL)arg1;
 - (void)_postHomesDidUpdateNotification;
 - (void)_postIncomingInvitationStateChangedNotification:(id)arg1 newInvitationState:(int)arg2;
-- (void)_postMergeDataFromCloud;
+- (void)_postMergeDataFromCloud:(BOOL)arg1;
 - (void)_postiCloudSigninState:(BOOL)arg1;
 - (id)_prepareDataForDevicesOnSameAccountForHome:(id)arg1 remoteGateway:(BOOL)arg2;
 - (id)_prepareHomesVersionDict;
@@ -264,9 +282,9 @@
 - (void)_saveWithReason:(id)arg1 postSyncNotification:(BOOL)arg2;
 - (void)_sendFragmentedMessage:(id)arg1 messageIndex:(unsigned int)arg2 messageIdentity:(id)arg3 userID:(id)arg4 destination:(id)arg5 completionHandler:(id /* block */)arg6;
 - (void)_sendHomeDataToAllWatches;
-- (void)_sendHomeDataToWatch:(id)arg1 performVersionCheck:(BOOL)arg2;
+- (void)_sendHomeDataToWatch:(id)arg1 performVersionCheck:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)_sendInviteRequestToUser:(id)arg1 inviteIdentifier:(id)arg2 forHome:(id)arg3 confirm:(BOOL)arg4 expiryDate:(id)arg5 queue:(id)arg6 completionHandler:(id /* block */)arg7;
-- (void)_sendKeysToWatch:(id)arg1;
+- (void)_sendKeysToWatch:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_sendUpdateRequestToAdminForInvitation:(id)arg1 homeUUID:(id)arg2 invitationState:(int)arg3;
 - (void)_sendUserAdded:(id)arg1 destination:(id)arg2 toHome:(id)arg3;
 - (void)_sendUserRemoved:(id)arg1 fromHome:(id)arg2 pairingUsername:(id)arg3 completionHandler:(id /* block */)arg4;
@@ -291,12 +309,16 @@
 - (void)_updateHomeKitInUsePreferences;
 - (void)_updateHomesAboutNetworkConnectivity:(BOOL)arg1;
 - (void)_updateTransportInformationInstances:(id)arg1 remoteAccessories:(id)arg2;
+- (void)_updateiCloudSwitchState:(BOOL)arg1;
+- (void)_updateiCloudSwitchStateFromiCloudDriveState;
 - (void)_uploadHomeConfigToCloud;
 - (void)accessoriesAreLocallyReachableOnTransientDevice:(BOOL)arg1 forHome:(id)arg2;
 - (id)accessoryFinderTimer;
 - (id)accessoryManager;
+- (void)accessoryManager:(id)arg1 didAddDiscoveredAccessories:(id)arg2 toBridgeAccessory:(id)arg3;
 - (void)accessoryManager:(id)arg1 didAddPairedAccessories:(id)arg2 toBridgeAccessory:(id)arg3;
 - (void)accessoryManager:(id)arg1 didFindNewAccessory:(id)arg2;
+- (void)accessoryManager:(id)arg1 didRemoveDiscoveredAccessories:(id)arg2 fromBridgeAccessory:(id)arg3;
 - (void)accessoryManager:(id)arg1 didRemoveNewAccessory:(id)arg2;
 - (void)accessoryManager:(id)arg1 didRemovePairedAccessories:(id)arg2 fromBridgeAccessory:(id)arg3;
 - (BOOL)accountActive;
@@ -305,7 +327,6 @@
 - (BOOL)accountStatusIsAuthenticated;
 - (id)addName:(id)arg1 namespace:(id)arg2;
 - (id)appRegistry;
-- (id)applicationVendorIDStore;
 - (void)archiveServerToken:(id)arg1;
 - (int)assetUpdatedNotification;
 - (unsigned int)assistantGenerationCounter;
@@ -319,10 +340,12 @@
 - (id)cloudDataSyncStateFilter;
 - (unsigned int)cloudOperationRetryCount;
 - (id)cloudOperationRetryTimer;
+- (id)cloudReadonlyFilter;
 - (id)cloudUploadTimer;
 - (id)cloudkitAccountChangedDebounceTimer;
 - (BOOL)cloudkitAccountStatusDetermined;
 - (BOOL)companionReachable;
+- (void)controllerKeyPairGenerated:(id)arg1;
 - (id)dataTag;
 - (void)dealloc;
 - (id)dialogCancelationContexts;
@@ -331,12 +354,14 @@
 - (void)electDeviceForUser:(id)arg1 destination:(id)arg2 deviceCapabilities:(id)arg3 queue:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)electRemoteAccessPeerForHome:(id)arg1;
 - (void)eraseLocalHomeData;
-- (void)forcePushLocalDataToCloud;
+- (void)forcePushLocalDataToCloud:(id)arg1;
 - (void)fragmentationStream:(id)arg1 didCloseWithError:(id)arg2;
 - (void)fragmentationStream:(id)arg1 didReceiveData:(id)arg2 transactionIdentifier:(unsigned short)arg3 error:(id)arg4;
+- (id)fullSyncedWatchPeers;
 - (id)gatherer;
 - (unsigned int)generationCounter;
 - (void)handleBackgroundTaskAgentJob:(const char *)arg1 forHomeWithUUID:(id)arg2;
+- (void)handleEducationAccountEnabled:(id)arg1;
 - (BOOL)homeDataLoadedFromArchive;
 - (unsigned int)homeDatabaseSize;
 - (id)homeNames;
@@ -360,6 +385,8 @@
 - (int)newAssetInstalledNotification;
 - (unsigned short)nextRequestTransactionIdentifier;
 - (void)notifyPrimaryHomeUpdated:(id)arg1;
+- (id)pairedSync;
+- (void)pairedSyncDidStart:(id)arg1;
 - (id)pendingDataSyncAcks;
 - (id)pendingFragmentationStream;
 - (id)pendingRemoteSessions;
@@ -391,7 +418,6 @@
 - (void)setAccountStatusFailedDueToNetworkFailure:(BOOL)arg1;
 - (void)setAccountStatusIsAuthenticated:(BOOL)arg1;
 - (void)setAppRegistry:(id)arg1;
-- (void)setApplicationVendorIDStore:(id)arg1;
 - (void)setAssetUpdatedNotification:(int)arg1;
 - (void)setAssistantGenerationCounter:(unsigned int)arg1;
 - (void)setAssociatedRemotePeers:(id)arg1;
@@ -402,14 +428,17 @@
 - (void)setCloudDataSyncStateFilter:(id)arg1;
 - (void)setCloudOperationRetryCount:(unsigned int)arg1;
 - (void)setCloudOperationRetryTimer:(id)arg1;
+- (void)setCloudReadonlyFilter:(id)arg1;
 - (void)setCloudUploadTimer:(id)arg1;
 - (void)setCloudkitAccountChangedDebounceTimer:(id)arg1;
 - (void)setCloudkitAccountStatusDetermined:(BOOL)arg1;
 - (void)setCompanionReachable:(BOOL)arg1;
 - (void)setDataTag:(id)arg1;
 - (void)setDialogCancelationContexts:(id)arg1;
+- (void)setFullSyncedWatchPeers:(id)arg1;
 - (void)setGatherer:(id)arg1;
 - (void)setGenerationCounter:(unsigned int)arg1;
+- (void)setHomeConfigurationKey:(struct __CFString { }*)arg1 value:(void*)arg2;
 - (void)setHomeConfigurationVersion:(unsigned int)arg1;
 - (void)setHomeDataLoadedFromArchive:(BOOL)arg1;
 - (void)setHomeDatabaseSize:(unsigned int)arg1;
@@ -438,25 +467,30 @@
 - (void)setReachability:(struct __SCNetworkReachability { }*)arg1;
 - (void)setReachableWatchDeviceAddresses:(id)arg1;
 - (void)setRemoteAccessHealthMonitorTimer:(id)arg1;
+- (void)setTimeInformationMonitor:(id)arg1;
 - (void)setUnassociatedRemotePeers:(id)arg1;
 - (void)setUploadHomeDataToCloud:(BOOL)arg1;
 - (void)setUploadMetadataToCloud:(BOOL)arg1;
 - (void)setUploadToCloudIsPending:(BOOL)arg1;
 - (void)setUuid:(id)arg1;
 - (void)setUuidsOfRemovedHomes:(id)arg1;
+- (void)setWatchSyncStateMap:(id)arg1;
 - (void)setWorkQueue:(id)arg1;
 - (void)teardownRemoteAccessForHome:(id)arg1;
+- (id)timeInformationMonitor;
 - (void)timerDidFire:(id)arg1;
 - (id)transientDeviceAddresses;
 - (id)unassociatedRemotePeers;
 - (void)updateGenerationCounter;
 - (void)updateHomesConfigured;
 - (void)updateIncomingInvitesPresent;
+- (void)updateiCloudSwitchState:(BOOL)arg1;
 - (BOOL)uploadHomeDataToCloud;
 - (BOOL)uploadMetadataToCloud;
 - (BOOL)uploadToCloudIsPending;
 - (id)uuid;
 - (id)uuidsOfRemovedHomes;
+- (id)watchSyncStateMap;
 - (id)workQueue;
 
 @end

@@ -3,6 +3,7 @@
  */
 
 @interface HDAppSubscriptionManager : NSObject <HDDatabaseProtectedDataObserver> {
+    HDAppAssertionManager *_appAssertionManager;
     int _backgroundAppRefreshNotifyToken;
     HDDaemon *_healthDaemon;
     NSObject<OS_dispatch_queue> *_launchQueue;
@@ -13,6 +14,7 @@
     BOOL _shouldScheduleLaunches;
 }
 
+@property (nonatomic, retain) HDAppAssertionManager *appAssertionManager;
 @property (nonatomic) int backgroundAppRefreshNotifyToken;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -25,8 +27,6 @@
 @property (nonatomic, retain) NSMutableSet *pendingTypeCodes;
 @property (nonatomic) BOOL shouldScheduleLaunches;
 @property (readonly) Class superclass;
-
-+ (id)defaultManager;
 
 - (void).cxx_destruct;
 - (id)_activityNameForSubscription:(id)arg1;
@@ -43,6 +43,7 @@
 - (void)_removeLaunchForSubscription:(id)arg1;
 - (void)_removeSubscriptionForBundleID:(id)arg1 dataCode:(int)arg2;
 - (void)ackForBundleID:(id)arg1 dataCode:(int)arg2 anchor:(id)arg3 ackTime:(id)arg4;
+- (id)appAssertionManager;
 - (int)backgroundAppRefreshNotifyToken;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
 - (void)dealloc;
@@ -57,6 +58,7 @@
 - (void)removeBundleID:(id)arg1;
 - (void)removeSubscriptionForBundleID:(id)arg1 dataCode:(int)arg2;
 - (void)setAnchor:(id)arg1 forDataCode:(int)arg2;
+- (void)setAppAssertionManager:(id)arg1;
 - (void)setBackgroundAppRefreshNotifyToken:(int)arg1;
 - (void)setHealthDaemon:(id)arg1;
 - (void)setLaunchQueue:(id)arg1;

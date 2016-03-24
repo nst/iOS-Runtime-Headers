@@ -4,7 +4,7 @@
 
 @interface PLCloudResource : PLManagedObject
 
-@property (nonatomic, retain) PLAdditionalAssetAttributes *assetAttributes;
+@property (nonatomic, retain) PLManagedAsset *asset;
 @property (nonatomic, retain) NSString *assetUuid;
 @property (nonatomic, retain) PLCloudMaster *cloudMaster;
 @property (nonatomic, retain) NSDate *dateCreated;
@@ -12,30 +12,29 @@
 @property (nonatomic) long long fileSize;
 @property (nonatomic, retain) NSString *fingerprint;
 @property (nonatomic) int height;
-@property (nonatomic) BOOL isAlternativeRepresentationAvailable;
 @property (nonatomic) BOOL isAvailable;
-@property (nonatomic) BOOL isFlattened;
 @property (nonatomic) BOOL isLocallyAvailable;
 @property (nonatomic, retain) NSString *itemIdentifier;
 @property (nonatomic, retain) NSDate *lastOnDemandDownloadDate;
+@property (nonatomic, retain) NSDate *lastPrefetchDate;
+@property (nonatomic) short prefetchCount;
 @property (nonatomic, retain) NSDate *prunedAt;
 @property (nonatomic) int type;
 @property (nonatomic, retain) NSString *uniformTypeIdentifier;
 @property (nonatomic) int width;
 
-+ (id)allCloudResourcesInManagedObjectContext:(id)arg1;
 + (long long)bytesNeededToDownloadOriginalResourcesInLibrary:(id)arg1;
 + (void)countNonLocalOriginalResourcesInLibrary:(id)arg1 outCount:(unsigned int*)arg2 photoCount:(unsigned int*)arg3 videoCount:(unsigned int*)arg4;
 + (id)duplicateCloudResource:(id)arg1 forAsset:(id)arg2 withFilePath:(id)arg3 inManagedObjectContext:(id)arg4;
 + (id)entityInManagedObjectContext:(id)arg1;
 + (id)entityName;
 + (id)insertIntoPhotoLibrary:(id)arg1 forAsset:(id)arg2 withCPLResource:(id)arg3 adjusted:(BOOL)arg4 withCreationDate:(id)arg5;
++ (void)resetCloudResourcesStateForCloudInManagedObjectContext:(id)arg1 hardReset:(BOOL)arg2;
 + (id)resourceWithFingerprint:(id)arg1 inPhotoLibrary:(id)arg2;
 
 - (void)_duplicatePropertiesFromCloudResource:(id)arg1 withFilePath:(id)arg2 forAssetUuid:(id)arg3;
 - (void)applyPropertiesFromCloudResource:(id)arg1;
-- (id)cplResource;
-- (id)cplResourceWithItemIdentifier:(id)arg1 includeFile:(BOOL)arg2;
+- (id)cplResourceIncludeFile:(BOOL)arg1;
 - (id)description;
 
 @end

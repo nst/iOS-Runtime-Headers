@@ -17,6 +17,7 @@
 @property (readonly) NSString *creditsString;
 @property (readonly) int enabledServiceTypes;
 @property (readonly) NSNumber *failureType;
+@property (getter=isManagedStudent, readonly) BOOL managedStudent;
 @property (getter=isNewCustomer, readonly) BOOL newCustomer;
 @property (readonly) NSDictionary *responseDictionary;
 @property (readonly) int responseType;
@@ -39,6 +40,7 @@
 - (int)enabledServiceTypes;
 - (id)failureType;
 - (id)initWithURLResponse:(id)arg1 dictionary:(id)arg2;
+- (BOOL)isManagedStudent;
 - (BOOL)isNewCustomer;
 - (id)newAccount;
 - (id)responseDictionary;

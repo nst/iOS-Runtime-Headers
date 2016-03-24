@@ -11,6 +11,7 @@
     SSDownloadManager *_downloadManager;
     NSMutableArray *_finishLoadBlocks;
     int _gratisState;
+    NSDate *_gratisStateLastUpdate;
     NSMutableDictionary *_itemStates;
     int _loadCount;
     NSMutableArray *_mediaLibraries;
@@ -20,6 +21,7 @@
     NSHashTable *_observers;
     int _parentalControlsRank;
     SSAppPurchaseHistoryDatabase *_purchaseHistoryDatabase;
+    SKUIStoreItemRelationshipCounsellor *_relationshipCouncellor;
     BOOL _runningInStoreDemoMode;
 }
 
@@ -38,10 +40,10 @@
 - (void).cxx_destruct;
 - (id)_addState:(unsigned int)arg1 forItemIdentifier:(id)arg2;
 - (id)_appUpdatesStore;
-- (void)_applicationDidEnterBackgroundNotification:(id)arg1;
 - (id)_copyItemsStatesForLibraryItems:(id)arg1;
 - (void)_enumerateAvailableItemsForLibraryItems:(id)arg1 usingBlock:(id /* block */)arg2;
 - (void)_fireFinishLoadBlocksIfNecessary;
+- (BOOL)_gratisStateIsValid;
 - (void)_mediaLibraryDidChangeNotification:(id)arg1;
 - (id)_newPurchaseWithItem:(id)arg1 offer:(id)arg2;
 - (id)_newPurchasesWithBundleItem:(id)arg1 bundleOffer:(id)arg2;
@@ -65,12 +67,14 @@
 - (void)_restrictionsChangedNotification:(id)arg1;
 - (void)_setAvailableUpdatesWithUpdates:(id)arg1 decrementLoadCount:(BOOL)arg2;
 - (void)_setDownloads:(id)arg1;
+- (void)_setFirstPartyRemovableItemsIdentifiers:(id)arg1;
 - (void)_setGratisIdentifiers:(id)arg1 error:(id)arg2;
 - (void)_setInstalledItems:(id)arg1;
 - (void)_setPurchaseHistoryItemsWithIdentifiers:(id)arg1;
 - (void)_setPurchaseHistoryVPPItemsWithIdentifiers:(id)arg1;
 - (id)_setStateFlag:(unsigned int)arg1 forItemsWithIdentifiers:(id)arg2 sendNotification:(BOOL)arg3;
 - (id)_setStateFlag:(unsigned int)arg1 forOnlyItemsWithIdentifiers:(id)arg2 sendNotification:(BOOL)arg3;
+- (void)_storefrontDidChangeNotification:(id)arg1;
 - (void)_updatesStoreChangeNotification:(id)arg1;
 - (void)addDownloads:(id)arg1;
 - (void)addManifestDownloadWithURL:(id)arg1 placeholderMetadata:(id)arg2;

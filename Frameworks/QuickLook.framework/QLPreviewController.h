@@ -32,6 +32,7 @@
 - (unsigned int)_buttonForArchive;
 - (id)_buttonItemForArchive;
 - (BOOL)_canShowStatusBar;
+- (id)_childViewControllerForWhitePointAdaptivityStyle;
 - (void)_commonInit;
 - (void)_configurePreviewContentController;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_contentFrameForRemoteView;
@@ -55,6 +56,7 @@
 - (BOOL)_overlayVisibleBeforeDismissal;
 - (int)_preferredModeWithParentViewController:(id)arg1 presentingViewController:(id)arg2;
 - (int)_preferredModeWithParentViewController:(id)arg1 presentingViewController:(id)arg2 traitCollection:(id)arg3;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (void)_prepareDelayedAppearance;
 - (void)_removeChildPreviewContentControllerIfNeeded;
 - (void)_removeOverlayButtons;
@@ -95,6 +97,7 @@
 - (void)customActionButtonTapped:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
+- (int)defaultWhitePointAdaptivityStyleForCurrentPreviewItem;
 - (id)delegate;
 - (void)didReceiveMemoryWarning;
 - (void)dismissDisplayedInteractionControllerAnimated:(BOOL)arg1;
@@ -132,6 +135,7 @@
 - (void)previewContentController:(id)arg1 willHideOverlayWithDuration:(double)arg2;
 - (void)previewContentController:(id)arg1 willMoveToItemAtIndex:(int)arg2;
 - (void)previewContentController:(id)arg1 willShowOverlayWithDuration:(double)arg2;
+- (void)previewContentControllerPrefersWhitePointAdaptiveStyle:(int)arg1 atIndex:(unsigned int)arg2;
 - (id)previewItemAtIndex:(int)arg1;
 - (id)printInfoForDocumentInteractionController:(id)arg1;
 - (void)refreshCurrentPreviewItem;

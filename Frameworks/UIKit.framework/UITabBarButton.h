@@ -57,6 +57,7 @@
 
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (Class)_appearanceGuideClass;
 - (void)_appleTV_layoutSubviews;
 - (struct CGSize { float x1; float x2; })_appleTV_sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
@@ -92,6 +93,7 @@
 - (void)_setUnselectedTintColor:(id)arg1;
 - (void)_setUnselectedTintColor:(id)arg1 forceLabelToConform:(BOOL)arg2;
 - (void)_setUpSelectedIndicatorViewIfNeeded;
+- (BOOL)_shouldBeVibrant;
 - (void)_showSelectedIndicator:(BOOL)arg1 changeSelection:(BOOL)arg2;
 - (BOOL)_showsHighlightedState;
 - (id)_swappableImageView;

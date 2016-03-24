@@ -87,6 +87,8 @@
 @property (nonatomic) BOOL websheetScraped;
 @property (nonatomic) BOOL wisprDetected;
 
++ (Class)installedCNPDisplayIDsType;
+
 - (void)addInstalledCNPDisplayIDs:(id)arg1;
 - (id)appTriggeredPassiveSymptom;
 - (id)autoLoginCarrierID;

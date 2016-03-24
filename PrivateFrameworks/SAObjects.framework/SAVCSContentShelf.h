@@ -5,6 +5,7 @@
 @interface SAVCSContentShelf : SAAceView
 
 @property (nonatomic, copy) NSArray *contentHead;
+@property (nonatomic, copy) NSArray *fetchMoreResultsCommands;
 @property (nonatomic, copy) NSString *title;
 @property (nonatomic, copy) NSURL *url;
 
@@ -13,8 +14,10 @@
 
 - (id)contentHead;
 - (id)encodedClassName;
+- (id)fetchMoreResultsCommands;
 - (id)groupIdentifier;
 - (void)setContentHead:(id)arg1;
+- (void)setFetchMoreResultsCommands:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (void)setUrl:(id)arg1;
 - (id)title;

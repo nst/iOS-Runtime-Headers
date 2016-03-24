@@ -14,8 +14,8 @@
 + (BOOL)_isLocalDeviceBundleIdentifier:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_addToSourceCache:(id)arg1;
 - (id)_authorizedSourcesForType:(id)arg1 error:(id*)arg2;
-- (id)_createSourceEntityForAppleDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 isLocalDevice:(BOOL)arg4 error:(id*)arg5;
 - (id)_createSourceEntityForBundleIdentifier:(id)arg1 name:(id)arg2 options:(unsigned long long)arg3 isCurrentDevice:(BOOL)arg4 productType:(id)arg5 error:(id*)arg6;
 - (id)_createSourceEntityForClientWithBundleIdentifier:(id)arg1 name:(id)arg2 entitlements:(id)arg3 error:(id*)arg4;
 - (id)_createSourceEntityForExternalHealthDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 error:(id*)arg4;
@@ -32,26 +32,29 @@
 - (id)_sourceCacheItemFromUnorderedIDs:(id)arg1;
 - (id)_sourceForBundleIdentifier:(id)arg1 createSourceBlock:(id /* block */)arg2 modifySourceBlock:(id /* block */)arg3 error:(id*)arg4;
 - (BOOL)addOrderedSource:(id)arg1 forType:(id)arg2 error:(id*)arg3;
-- (id)allSourcesWithError:(id*)arg1;
+- (id)allSourcesByIDWithError:(id*)arg1;
+- (id)allWatchSourcesByIDWithError:(id*)arg1;
 - (id)clientSourceForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (id)clientSourceForPersistentID:(id)arg1 error:(id*)arg2;
-- (id)clientSourceForSourceEntity:(id)arg1;
-- (BOOL)createSourcesWithCodables:(id)arg1 provenance:(int)arg2 error:(id*)arg3;
+- (id)clientSourceForSourceEntity:(id)arg1 error:(id*)arg2;
+- (BOOL)createSourcesWithCodables:(id)arg1 provenance:(long long)arg2 error:(id*)arg3;
 - (id)dataTypesForSource:(id)arg1 error:(id*)arg2;
 - (void)deleteSourceWithBundleIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (id)healthAppSourceWithError:(id*)arg1;
 - (id)init;
 - (id)initWithDaemon:(id)arg1;
 - (id)localDeviceSourceWithError:(id*)arg1;
+- (id)orderedSourceIdentifiersForObjectType:(id)arg1 error:(id*)arg2;
 - (id)orderedSourcesForObjectType:(id)arg1 error:(id*)arg2;
 - (BOOL)removeOrderedSource:(id)arg1 forType:(id)arg2 error:(id*)arg3;
 - (BOOL)setLocalDeviceSourceUUID:(id)arg1 bundleIdentifier:(id)arg2 error:(id*)arg3;
 - (BOOL)setOrderedSources:(id)arg1 forObjectType:(id)arg2 error:(id*)arg3;
-- (id)sourceForAppleDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 createIfNecessary:(BOOL)arg4 error:(id*)arg5;
+- (id)setSourceName:(id)arg1 forBundleIdentifier:(id)arg2 error:(id*)arg3;
+- (id)sourceForAppleDeviceWithUUID:(id)arg1 identifier:(id)arg2 name:(id)arg3 productType:(id)arg4 createIfNecessary:(BOOL)arg5 error:(id*)arg6;
 - (id)sourceForApplicationIdentifier:(id)arg1 entitlements:(id)arg2 name:(id)arg3 createIfNecessary:(BOOL)arg4 error:(id*)arg5;
 - (id)sourceForBundleIdentifier:(id)arg1 error:(id*)arg2;
 - (id)sourceForClient:(id)arg1 createIfNecessary:(BOOL)arg2 error:(id*)arg3;
-- (id)sourceForCodableSource:(id)arg1 provenance:(int)arg2 createIfNecessary:(BOOL)arg3 error:(id*)arg4;
+- (id)sourceForCodableSource:(id)arg1 provenance:(long long)arg2 createIfNecessary:(BOOL)arg3 error:(id*)arg4;
 - (id)sourceForExternalHealthDeviceWithIdentifier:(id)arg1 name:(id)arg2 productType:(id)arg3 createIfNecessary:(BOOL)arg4 error:(id*)arg5;
 - (void)updateCurrentDeviceNameInDatabase:(id)arg1;
 

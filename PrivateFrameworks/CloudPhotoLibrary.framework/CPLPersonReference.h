@@ -19,10 +19,12 @@
 - (id)extraProperties;
 - (unsigned int)hash;
 - (id)init;
+- (id)initWithCPLArchiver:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithSerializedString:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (id)personIdentifier;
+- (id)plistArchiveWithCPLArchiver:(id)arg1;
 - (id)serializedString;
 - (void)setExtraProperties:(id)arg1;
 - (void)setPersonIdentifier:(id)arg1;

@@ -17,7 +17,7 @@
 - (id)contentForPlaceholder:(id)arg1;
 - (id)contentForURL:(id)arg1;
 - (void)dealloc;
-- (id)deliverSynchronously;
+- (id)deliverSynchronouslyWithCompletion:(id /* block */)arg1;
 - (id)initWithMessage:(id)arg1;
 
 @end

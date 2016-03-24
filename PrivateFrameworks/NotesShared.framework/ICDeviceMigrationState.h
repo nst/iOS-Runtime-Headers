@@ -19,7 +19,6 @@
 + (id)identifierForDeviceIdentifier:(id)arg1;
 + (id)newCloudObjectForRecord:(id)arg1;
 + (id)newDeviceMigrationStateWithDeviceIdentifier:(id)arg1 account:(id)arg2;
-+ (id)recordType;
 + (id)stringFromMigrationState:(short)arg1;
 
 - (void)deleteFromLocalDatabase;
@@ -30,6 +29,7 @@
 - (void)objectWasDeletedFromCloud;
 - (void)objectWasDeletedFromCloudByAnotherDevice;
 - (id)recordName;
+- (id)recordType;
 - (id)recordZoneID;
 - (id)threadUnsafeNewlyCreatedRecord;
 

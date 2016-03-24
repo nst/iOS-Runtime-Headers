@@ -13,8 +13,6 @@
 @property (nonatomic) short cameraCaptureDevice;
 @property (nonatomic) int cloudAvalanchePickType;
 @property (nonatomic) short cloudKindSubtype;
-@property (nonatomic, retain) PLCloudMaster *cloudMaster;
-@property (nonatomic, retain) NSSet *cloudResources;
 @property (nonatomic, retain) NSString *creatorBundleID;
 @property (nonatomic, retain) NSString *customCollectionName;
 @property (nonatomic, retain) NSString *customCollectionUUID;
@@ -35,6 +33,7 @@
 @property (nonatomic, retain) NSString *longDescription;
 @property (nonatomic, copy) NSString *masterFingerPrint;
 @property (nonatomic, retain) id originalAssetsUUID;
+@property (nonatomic, retain) NSString *originalColorSpace;
 @property (nonatomic, retain) NSString *originalFilename;
 @property (nonatomic, retain) NSNumber *originalFilesize;
 @property (nonatomic, retain) NSData *originalHash;

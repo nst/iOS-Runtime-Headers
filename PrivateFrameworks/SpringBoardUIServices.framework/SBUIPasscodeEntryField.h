@@ -18,10 +18,11 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *stringValue;
 @property (readonly) Class superclass;
-@property (getter=_textField, nonatomic, readonly, retain) UITextField *textField;
+@property (getter=_textField, nonatomic, readonly) UITextField *textField;
 
 + (BOOL)_usesTextFieldForFirstResponder;
 
+- (void).cxx_destruct;
 - (void)_appendString:(id)arg1;
 - (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
 - (void)_deleteLastCharacter;
@@ -35,7 +36,6 @@
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (id)customBackgroundColor;
-- (void)dealloc;
 - (id)delegate;
 - (void)deleteLastCharacter;
 - (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;

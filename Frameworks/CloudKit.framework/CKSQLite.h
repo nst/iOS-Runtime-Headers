@@ -83,6 +83,7 @@
 - (id)selectAllObjectsOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3 limit:(id)arg4;
 - (unsigned int)selectCountFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3;
 - (id)selectFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3 limit:(id)arg4;
+- (void)selectFrom:(id)arg1 where:(id)arg2 bindings:(id)arg3 limit:(id)arg4 block:(id /* block */)arg5;
 - (id)selectObjectOfClass:(Class)arg1 where:(id)arg2 bindings:(id)arg3;
 - (void)setCorrupt:(BOOL)arg1;
 - (void)setDateFormatter:(id)arg1;

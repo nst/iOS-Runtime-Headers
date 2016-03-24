@@ -80,11 +80,24 @@
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned int transitionsSuppressedByMobility;
 
++ (Class)egressTriggerSignatureType;
++ (Class)ingressTriggerSignatureType;
+
+- (int)StringAsAdvice:(id)arg1;
+- (int)StringAsBailOutOf:(id)arg1;
+- (int)StringAsEgressMobilityCode:(id)arg1;
+- (int)StringAsEgressTrigger:(id)arg1;
+- (int)StringAsEgressTriggerOn:(id)arg1;
+- (int)StringAsIngressMobilityCode:(id)arg1;
+- (int)StringAsIngressTrigger:(id)arg1;
+- (int)StringAsIngressTriggerOn:(id)arg1;
 - (void)addEgressTriggerSignature:(id)arg1;
 - (void)addIngressTriggerSignature:(id)arg1;
 - (int)advice;
+- (id)adviceAsString:(int)arg1;
 - (unsigned long long)adviceHeldForSecs;
 - (int)bailOutOf;
+- (id)bailOutOfAsString:(int)arg1;
 - (void)clearEgressTriggerSignatures;
 - (void)clearIngressTriggerSignatures;
 - (unsigned int)comingFromState;
@@ -94,9 +107,12 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (int)egressMobilityCode;
+- (id)egressMobilityCodeAsString:(int)arg1;
 - (int)egressTrigger;
+- (id)egressTriggerAsString:(int)arg1;
 - (unsigned int)egressTriggerMultiplier;
 - (int)egressTriggerOn;
+- (id)egressTriggerOnAsString:(int)arg1;
 - (unsigned int)egressTriggerPercentagex100;
 - (id)egressTriggerSignatureAtIndex:(unsigned int)arg1;
 - (id)egressTriggerSignatures;
@@ -120,9 +136,12 @@
 - (BOOL)hasTransitionsSuppressedByMobility;
 - (unsigned int)hash;
 - (int)ingressMobilityCode;
+- (id)ingressMobilityCodeAsString:(int)arg1;
 - (int)ingressTrigger;
+- (id)ingressTriggerAsString:(int)arg1;
 - (unsigned int)ingressTriggerMultiplier;
 - (int)ingressTriggerOn;
+- (id)ingressTriggerOnAsString:(int)arg1;
 - (unsigned int)ingressTriggerPercentagex100;
 - (id)ingressTriggerSignatureAtIndex:(unsigned int)arg1;
 - (id)ingressTriggerSignatures;

@@ -9,6 +9,7 @@
     struct sqlite3_stmt { } *_insertIncoming;
     struct sqlite3_stmt { } *_insertOutgoing;
     long long _lastIncomingRowID;
+    struct sqlite3_stmt { } *_logFileActivity;
     struct sqlite3_stmt { } *_markCompleteIncoming;
     NSObject<OS_dispatch_queue> *_operations_queue;
     NSString *_path;
@@ -16,6 +17,7 @@
     struct sqlite3_stmt { } *_reserveRowID;
     struct sqlite3_stmt { } *_responseReceived;
     struct sqlite3_stmt { } *_timestampForID;
+    struct sqlite3_stmt { } *_updateFileOutgoing;
     struct sqlite3_stmt { } *_updateOutgoing;
     struct sqlite3_stmt { } *_updateOutgoingIdentifier;
 }
@@ -28,8 +30,11 @@
 - (double)_getMachTimestamp;
 - (int)_getSchemaVersion;
 - (id)_keySetForMessageLogTable;
+- (void)_onQueueAsync:(id /* block */)arg1;
+- (void)_onQueueSync:(id /* block */)arg1;
 - (void)_openDB;
 - (BOOL)_openDBFile:(BOOL)arg1;
+- (id)_openDBIfNecessary;
 - (BOOL)_tableEmpty:(id)arg1;
 - (id)_unpackMessageData:(id)arg1;
 - (void)_unpackPBRequest:(id)arg1 forMessageID:(unsigned short)arg2 intoDictionary:(id)arg3;
@@ -43,12 +48,12 @@
 - (id)initWithPath:(id)arg1;
 - (void)markLastIncomingMessageComplete;
 - (id)operationQ;
-- (void)recordIncomingFileTransferAtURL:(id)arg1 metadata:(id)arg2 identifier:(id)arg3;
+- (void)recordIncomingFileTransferAtURL:(id)arg1 metadata:(id)arg2 identifier:(id)arg3 forService:(id)arg4;
 - (void)recordIncomingMessage:(id)arg1 forService:(id)arg2;
-- (void)recordOutgoingFileTransferAtURL:(id)arg1 metadata:(id)arg2 identifier:(id)arg3 error:(id)arg4;
+- (void)recordOutgoingFileTransferAtURL:(id)arg1 metadata:(id)arg2 identifier:(id)arg3 error:(id)arg4 forService:(id)arg5;
 - (void)recordOutgoingMessage:(id)arg1 forService:(id)arg2;
 - (unsigned long long)rowIDForPartialMessage:(id)arg1;
-- (void)setIdentifier:(id)arg1 forOutgoingMessagesWithRowIDs:(id)arg2;
+- (void)setFileTransferIdentifier:(id)arg1 forOutgoingMessagesWithRowIDs:(id)arg2;
 - (void)updateLastIncomingMessageWithError:(id)arg1;
 - (void)updateLastIncomingMessageWithProcessingTime:(double)arg1;
 - (void)updateOutgoingFileTransferWithIdentifier:(id)arg1 sentSuccessfully:(BOOL)arg2 error:(id)arg3;

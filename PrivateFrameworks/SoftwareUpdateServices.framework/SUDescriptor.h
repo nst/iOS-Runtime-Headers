@@ -21,6 +21,7 @@
     NSString *_productSystemName;
     NSString *_productVersion;
     NSString *_publisher;
+    NSString *_releaseType;
     BOOL _streamingZipCapable;
     NSDictionary *_systemPartitionPadding;
     unsigned long long _unarchiveSize;
@@ -43,6 +44,7 @@
 @property (nonatomic, retain) NSString *productSystemName;
 @property (nonatomic, retain) NSString *productVersion;
 @property (nonatomic, retain) NSString *publisher;
+@property (nonatomic, retain) NSString *releaseType;
 @property (getter=_isStreamingZipCapable, setter=_setStreamingZipCapable:, nonatomic) BOOL streamingZipCapable;
 @property (nonatomic, retain) NSDictionary *systemPartitionPadding;
 @property (getter=_unarchiveSize, setter=_setUnarchiveSize:, nonatomic) unsigned long long unarchiveSize;
@@ -87,6 +89,7 @@
 - (id)productSystemName;
 - (id)productVersion;
 - (id)publisher;
+- (id)releaseType;
 - (void)setAutoDownloadAllowableForCellular:(BOOL)arg1;
 - (void)setDocumentation:(id)arg1;
 - (void)setDownloadSize:(unsigned long long)arg1;
@@ -98,6 +101,7 @@
 - (void)setProductSystemName:(id)arg1;
 - (void)setProductVersion:(id)arg1;
 - (void)setPublisher:(id)arg1;
+- (void)setReleaseType:(id)arg1;
 - (void)setSystemPartitionPadding:(id)arg1;
 - (void)setUpdateType:(int)arg1;
 - (BOOL)siriVoiceDeletionDisabled;

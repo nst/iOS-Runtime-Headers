@@ -76,5 +76,6 @@
 - (void)startRecordedAudioDictationWithOptions:(id)arg1 forLanguage:(id)arg2;
 - (void)stopSpeech;
 - (void)stopSpeechWithOptions:(id)arg1;
+- (void)updateSpeechOptions:(id)arg1;
 
 @end

@@ -26,7 +26,9 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (unsigned long long)activityStart;
 - (id)deletedSubscriptionIDs;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithSubscriptionsToSave:(id)arg1 subscriptionIDsToDelete:(id)arg2;
 - (id /* block */)modifySubscriptionsCompletionBlock;

@@ -28,7 +28,7 @@
 @property (nonatomic, readonly, retain) NSData *optionsData;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } size;
 
-+ (BOOL)saveBakedThumbnailsOfImages:(id)arg1 toFile:(id)arg2 format:(int)arg3 orientation:(int*)arg4 options:(id)arg5 delegate:(id)arg6;
++ (BOOL)_transformForImage:(struct CGImage { }*)arg1 isCropped:(BOOL)arg2 captureOrientation:(int)arg3 sizeInOut:(struct CGSize { float x1; float x2; }*)arg4 contextSizeOut:(struct CGSize { float x1; float x2; }*)arg5 transformOut:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg6;
 + (id)thumbnailsWithContentsOfFile:(id)arg1 format:(int)arg2;
 
 - (id)_thumbnailData;
@@ -53,7 +53,6 @@
 - (char *)thumbnailBytesAtIndex:(int)arg1;
 - (id)thumbnailDataAtIndex:(int)arg1;
 - (struct CGImage { }*)thumbnailImageAtIndex:(int)arg1;
-- (unsigned long)thumbnailLength;
 - (BOOL)writeBorderedThumbnailOfImage:(struct CGImage { }*)arg1 toBuffer:(void*)arg2 orientation:(int*)arg3 format:(int)arg4 formatInfo:(const struct { int x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_3_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_3_1_2; } x3; struct CGRect { struct CGPoint { float x_1_2_1; float x_1_2_2; } x_4_1_1; struct CGSize { float x_2_2_1; float x_2_2_2; } x_4_1_2; } x4; unsigned int x5; int x6; int x7; float x8[4]; float x9[4]; unsigned int x10; }*)arg5 delegate:(id)arg6;
 
 @end

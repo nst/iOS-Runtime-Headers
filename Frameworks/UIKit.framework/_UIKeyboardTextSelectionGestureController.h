@@ -26,6 +26,7 @@
         float y; 
     } _lastPanTranslation;
     double _lastPressTimestamp;
+    UIDelayedAction *_longForcePressAction;
     int _panGestureState;
     int _previousForcePressCount;
     int _previousRepeatedGranularity;
@@ -34,6 +35,7 @@
     double _twoFingerTapTimestamp;
     BOOL _wasNestedPinchingDisabled;
     BOOL _wasScrollingEnabled;
+    UITextMagnifierTimeWeightedPoint *_weightedPoint;
 }
 
 @property (nonatomic) struct CGPoint { float x1; float x2; } accumulatedAcceleration;
@@ -49,6 +51,7 @@
 @property (nonatomic) BOOL isPanning;
 @property (nonatomic) struct CGPoint { float x1; float x2; } lastPanTranslation;
 @property (nonatomic) double lastPressTimestamp;
+@property (nonatomic, retain) UIDelayedAction *longForcePressAction;
 @property (nonatomic) int panGestureState;
 @property (nonatomic) int previousForcePressCount;
 @property (nonatomic) int previousRepeatedGranularity;
@@ -59,16 +62,20 @@
 @property (nonatomic) double twoFingerTapTimestamp;
 @property (nonatomic) BOOL wasNestedPinchingDisabled;
 @property (nonatomic) BOOL wasScrollingEnabled;
+@property (nonatomic, retain) UITextMagnifierTimeWeightedPoint *weightedPoint;
 
 + (id)sharedInstance;
 
+- (void)_beginLongForcePressTimerForGesture:(id)arg1;
+- (void)_cancelLongForcePressTimer;
 - (void)_cleanupDeadGesturesIfNecessary;
 - (void)_didEndIndirectSelectionGesture:(id)arg1;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (void)_granularityExpandingGestureWithTimeInterval:(double)arg1 timeGranularity:(double)arg2 isMidPan:(BOOL)arg3;
 - (void)_logTapCounts:(id)arg1;
+- (void)_longForcePressDetected:(id)arg1;
 - (void)_willBeginIndirectSelectionGesture:(id)arg1;
-- (struct CGPoint { float x1; float x2; })acceleratedTranslation:(struct CGPoint { float x1; float x2; })arg1 velocity:(struct CGPoint { float x1; float x2; })arg2;
+- (struct CGPoint { float x1; float x2; })acceleratedTranslation:(struct CGPoint { float x1; float x2; })arg1 velocity:(struct CGPoint { float x1; float x2; })arg2 final:(BOOL)arg3;
 - (struct CGPoint { float x1; float x2; })accumulatedAcceleration;
 - (struct CGPoint { float x1; float x2; })accumulatedBounding;
 - (id)activeGestures;
@@ -117,9 +124,11 @@
 - (id)init;
 - (BOOL)isLongPressing;
 - (BOOL)isPanning;
+- (BOOL)isPlacedCarefully;
 - (struct CGPoint { float x1; float x2; })lastPanTranslation;
 - (double)lastPressTimestamp;
 - (int)layoutDirectionFromFlickDirection:(unsigned int)arg1;
+- (id)longForcePressAction;
 - (void)oneFingerForcePan:(id)arg1;
 - (void)oneFingerForcePress:(id)arg1;
 - (float)oneFingerForcePressAllowableMovement;
@@ -142,6 +151,7 @@
 - (void)setIsPanning:(BOOL)arg1;
 - (void)setLastPanTranslation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setLastPressTimestamp:(double)arg1;
+- (void)setLongForcePressAction:(id)arg1;
 - (void)setPanGestureState:(int)arg1;
 - (void)setPreviousForcePressCount:(int)arg1;
 - (void)setPreviousRepeatedGranularity:(int)arg1;
@@ -150,6 +160,7 @@
 - (void)setTwoFingerTapTimestamp:(double)arg1;
 - (void)setWasNestedPinchingDisabled:(BOOL)arg1;
 - (void)setWasScrollingEnabled:(BOOL)arg1;
+- (void)setWeightedPoint:(id)arg1;
 - (BOOL)suppressTwoFingerPan;
 - (id)tapLogTimer;
 - (void)twoFingerLongPressGestureWithState:(int)arg1 withTranslation:(struct CGPoint { float x1; float x2; })arg2;
@@ -164,6 +175,7 @@
 - (void)updateTwoFingerPanWithTranslation:(struct CGPoint { float x1; float x2; })arg1 executionContext:(id)arg2;
 - (BOOL)wasNestedPinchingDisabled;
 - (BOOL)wasScrollingEnabled;
+- (id)weightedPoint;
 - (void)willRemoveSelectionController;
 
 @end

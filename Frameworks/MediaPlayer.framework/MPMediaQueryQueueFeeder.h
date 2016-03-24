@@ -31,6 +31,7 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (id)_itemsForQuery:(id)arg1 shuffleType:(unsigned int)arg2;
 + (id)audioSessionModeForMediaType:(unsigned int)arg1;
 + (Class)playbackItemMetadataClass;
 
@@ -38,6 +39,7 @@
 - (void).cxx_destruct;
 - (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_commonInit;
+- (id)_currentEmptyQueueError;
 - (void)_handleMediaLibraryDidChange;
 - (id)_identifierAtIndex:(unsigned int)arg1;
 - (unsigned int)_indexForPersistentID:(unsigned long long)arg1;
@@ -46,6 +48,7 @@
 - (void)_libraryDidChangeNotification:(id)arg1;
 - (id)_mediaItemForPID:(unsigned long long)arg1;
 - (unsigned int)_playbackIndexByApplyShuffleType:(unsigned int)arg1 withStartIndex:(unsigned int)arg2 startIndexMediaItem:(id)arg3 shouldKeepConsistentQueueOrder:(BOOL)arg4;
+- (void)_reloadQueryItems;
 - (void)_verifyQueueInvalidationCompletionHandler:(id /* block */)arg1;
 - (id)audioSessionModeForItemAtIndex:(unsigned int)arg1;
 - (id)cloudDialogAllowedMediaItem;

@@ -13,14 +13,15 @@
     SBLockOverlayStylePropertiesFactory *_underlayPropertiesFactory;
 }
 
-@property (nonatomic, readonly, retain) UIButton *actionButton;
+@property (nonatomic, readonly) UIButton *actionButton;
 @property (nonatomic) <SBUILockOverlayViewDelegate> *delegate;
-@property (nonatomic, readonly, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, readonly) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic, readonly) unsigned int style;
-@property (nonatomic, readonly, retain) UILabel *subtitleLabel;
-@property (nonatomic, readonly, retain) UILabel *titleLabel;
-@property (nonatomic, readonly, retain) SBLockOverlayStylePropertiesFactory *underlayPropertiesFactory;
+@property (nonatomic, readonly) UILabel *subtitleLabel;
+@property (nonatomic, readonly) UILabel *titleLabel;
+@property (nonatomic, readonly) SBLockOverlayStylePropertiesFactory *underlayPropertiesFactory;
 
+- (void).cxx_destruct;
 - (id)_actionFont;
 - (void)_buttonPressed;
 - (id)_legibilitySettingsForStyle:(unsigned int)arg1;
@@ -30,7 +31,6 @@
 - (id)_subtitleFont;
 - (id)_titleFont;
 - (id)actionButton;
-- (void)dealloc;
 - (id)delegate;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 style:(unsigned int)arg2;

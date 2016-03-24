@@ -41,5 +41,6 @@
 - (void)viewControllerDidShowEligibilityIssue:(id)arg1;
 - (void)viewControllerDidTerminateSetupFlow:(id)arg1;
 - (void)viewDidLoad;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 
 @end

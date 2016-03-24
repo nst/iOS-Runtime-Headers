@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAirPlayActivity : PUActivity <PUAirPlayControllerRouteObserver> {
+@interface PUAirPlayActivity : PUActivity <PHAirPlayControllerRouteObserver> {
     BOOL __needsUpdateRouteAvailable;
     BOOL __routeAvailable;
 }

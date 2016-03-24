@@ -11,6 +11,7 @@
 @property (readonly) Class superclass;
 
 - (BOOL)addQuarantinedRecordsWithIdentifier:(id)arg1 error:(id*)arg2;
+- (unsigned int)countOfQuarantinedRecords;
 - (BOOL)isRecordWithIdentifierQuarantined:(id)arg1;
 - (BOOL)removeQuarantinedRecordsWithIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)resetWithError:(id*)arg1;

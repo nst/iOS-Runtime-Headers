@@ -2,9 +2,7 @@
    Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
  */
 
-@interface MPMediaItem : MPMediaEntity {
-    BOOL _protectedAsset;
-}
+@interface MPMediaItem : MPMediaEntity
 
 @property (nonatomic, readonly) NSString *albumArtist;
 @property (nonatomic, readonly) unsigned long long albumArtistPersistentID;

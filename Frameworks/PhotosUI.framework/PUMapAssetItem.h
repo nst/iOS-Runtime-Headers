@@ -11,6 +11,5 @@
 - (void).cxx_destruct;
 - (id)asset;
 - (void)setAsset:(id)arg1;
-- (id)thumbnailImage;
 
 @end

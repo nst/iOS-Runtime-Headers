@@ -58,7 +58,6 @@
 - (unsigned int)groupCount;
 - (unsigned int)groupIndexForPassUniqueID:(id)arg1;
 - (void)handleUserPassDelete:(id)arg1;
-- (void)handleUserPassIngestionWithData:(id)arg1 passType:(unsigned int)arg2 completion:(id /* block */)arg3;
 - (unsigned int)indexOfGroup:(id)arg1;
 - (unsigned int)indexOfSeparationGroup;
 - (id)init;

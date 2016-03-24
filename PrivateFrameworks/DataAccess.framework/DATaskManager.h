@@ -19,7 +19,9 @@
     NSMutableArray *_queuedExclusiveTasks;
     NSMutableArray *_queuedModalTasks;
     int _state;
+    DATransaction *_transaction;
     NSTimer *_userInitiatedSyncTimer;
+    NSTimer *_xpcTransactionTimer;
 }
 
 @property (nonatomic) DAAccount *account;
@@ -41,10 +43,12 @@
 @property (nonatomic, readonly) NSArray *queuedTasks;
 @property (nonatomic) int state;
 @property (nonatomic, retain) NSTimer *userInitiatedSyncTimer;
+@property (nonatomic, retain) NSTimer *xpcTransactionTimer;
 
 - (void).cxx_destruct;
 - (void)_cancelTasksWithReason:(int)arg1;
 - (void)_clearUserInitiatedSyncTimer;
+- (void)_endXpcTransaction;
 - (BOOL)_hasTasksForcingNetworkConnection;
 - (BOOL)_hasTasksIndicatingARunningSync;
 - (void)_logSyncEnd;
@@ -113,6 +117,7 @@
 - (void)setQueuedModalTasks:(id)arg1;
 - (void)setState:(int)arg1;
 - (void)setUserInitiatedSyncTimer:(id)arg1;
+- (void)setXpcTransactionTimer:(id)arg1;
 - (void)shutdown;
 - (int)state;
 - (id)stateString;
@@ -130,5 +135,6 @@
 - (id)user;
 - (id)userAgent;
 - (id)userInitiatedSyncTimer;
+- (id)xpcTransactionTimer;
 
 @end

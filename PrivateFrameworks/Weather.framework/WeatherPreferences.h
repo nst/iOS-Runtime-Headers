@@ -12,7 +12,6 @@
     BOOL _serviceDebugging;
     NSString *_serviceHost;
     <SynchronizedDefaultsDelegate> *_syncDelegate;
-    NSString *_twcURLString;
     BOOL _userGroupPrefsLockedWhenInit;
 }
 
@@ -23,9 +22,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 @property (nonatomic) <SynchronizedDefaultsDelegate> *syncDelegate;
-@property (nonatomic, copy) NSString *twcURLString;
 @property (nonatomic) BOOL userGroupPrefsLockedWhenInit;
-@property (nonatomic, copy) NSString *yahooWeatherURLString;
 
 + (id)_getGroupDefaultsFromURLInApp:(id)arg1;
 + (void)clearSharedPreferences;
@@ -86,7 +83,6 @@
 - (void)setDefaultSelectedCityID:(id)arg1;
 - (void)setLocalWeatherEnabled:(BOOL)arg1;
 - (void)setSyncDelegate:(id)arg1;
-- (void)setTwcURLString:(id)arg1;
 - (void)setUserGroupPrefsLockedWhenInit:(BOOL)arg1;
 - (void)setYahooWeatherURLString:(id)arg1;
 - (void)setupUbiquitousStoreIfNeeded;
@@ -95,7 +91,6 @@
 - (void)synchronizeStateToDiskDoNotify:(BOOL)arg1;
 - (id)twcLogoURL;
 - (id)twcLogoURL:(id)arg1;
-- (id)twcURLString;
 - (void)updateUnitsFromNotification;
 - (BOOL)userGroupPrefsLockedWhenInit;
 - (void)writeDefaultValue:(id)arg1 forKey:(id)arg2;

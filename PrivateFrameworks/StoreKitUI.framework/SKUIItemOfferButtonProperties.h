@@ -19,6 +19,7 @@
     float _progress;
     BOOL _progressIndeterminate;
     int _progressType;
+    BOOL _restores;
     UIColor *_textColor;
     int _titleStyle;
     BOOL _universal;
@@ -40,6 +41,7 @@
 @property (nonatomic) float progress;
 @property (nonatomic) BOOL progressIndeterminate;
 @property (nonatomic) int progressType;
+@property (nonatomic) BOOL restores;
 @property (nonatomic, retain) UIColor *textColor;
 @property (nonatomic) int titleStyle;
 @property (nonatomic) BOOL universal;
@@ -61,6 +63,7 @@
 - (float)progress;
 - (BOOL)progressIndeterminate;
 - (int)progressType;
+- (BOOL)restores;
 - (void)setAlpha:(float)arg1;
 - (void)setAttributedText:(id)arg1;
 - (void)setBorderBackgroundColor:(id)arg1;
@@ -77,6 +80,7 @@
 - (void)setProgress:(float)arg1;
 - (void)setProgressIndeterminate:(BOOL)arg1;
 - (void)setProgressType:(int)arg1;
+- (void)setRestores:(BOOL)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTitleStyle:(int)arg1;
 - (void)setUniversal:(BOOL)arg1;

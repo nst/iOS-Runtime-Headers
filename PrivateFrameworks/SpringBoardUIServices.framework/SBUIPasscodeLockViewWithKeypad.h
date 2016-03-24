@@ -26,6 +26,7 @@
 @property (readonly) Class superclass;
 @property (getter=_undoInputOnTouchCancellation, setter=_setUndoInputOnTouchCancellation:, nonatomic) BOOL undoInputOnTouchCancellation;
 
+- (void).cxx_destruct;
 - (float)_entryFieldBottomYDistanceFromNumberPadTopButton;
 - (BOOL)_includesStatusView;
 - (void)_layoutStatusView;

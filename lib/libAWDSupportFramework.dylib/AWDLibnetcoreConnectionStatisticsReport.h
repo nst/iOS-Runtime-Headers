@@ -164,6 +164,8 @@
 @property (nonatomic) unsigned long long timeToDNSStartMsecs;
 @property (nonatomic) unsigned long long trafficClass;
 
+- (int)StringAsConnectedInterfaceType:(id)arg1;
+- (int)StringAsInterfaceType:(id)arg1;
 - (unsigned long long)appDataStallTimerMsecs;
 - (unsigned long long)appReportingDataStallCount;
 - (unsigned long long)bestRTTMsecs;
@@ -177,6 +179,7 @@
 - (BOOL)cellularRRCConnected;
 - (BOOL)connected;
 - (int)connectedInterfaceType;
+- (id)connectedInterfaceTypeAsString:(int)arg1;
 - (unsigned long long)connectionEstablishmentTimeMsecs;
 - (unsigned long long)connectionReuseCount;
 - (void)copyTo:(id)arg1;
@@ -229,6 +232,7 @@
 - (unsigned int)hash;
 - (unsigned long long)iPAddressAttemptCount;
 - (int)interfaceType;
+- (id)interfaceTypeAsString:(int)arg1;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)kernelReportedStalls;
 - (BOOL)kernelReportingConnectionStalled;

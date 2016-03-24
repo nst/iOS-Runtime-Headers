@@ -50,8 +50,10 @@
 - (void)setRecording:(BOOL)arg1;
 - (void)setWindowRotationLocked:(BOOL)arg1;
 - (void)startRecordingWithMicrophoneEnabled:(BOOL)arg1 handler:(id /* block */)arg2;
+- (void)stopRecordingWithAdditionalShareFileAttachment:(id)arg1 overrideShareMessage:(id)arg2 handler:(id /* block */)arg3;
 - (void)stopRecordingWithError:(id)arg1 movieURL:(id)arg2;
 - (void)stopRecordingWithHandler:(id /* block */)arg1;
+- (void)stopRecordingWithVideoURLHandler:(id /* block */)arg1;
 - (void)updateRecordingAvailability;
 
 @end

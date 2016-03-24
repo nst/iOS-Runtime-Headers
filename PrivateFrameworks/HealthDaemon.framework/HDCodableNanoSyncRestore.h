@@ -18,7 +18,7 @@
 @property (nonatomic) int objectType;
 @property (readonly) Class superclass;
 
-+ (id)restoreWithNanoSyncEntityClass:(Class)arg1;
++ (id)restoreWithNanoSyncEntityClass:(Class)arg1 protocolVersion:(int)arg2;
 
 - (void).cxx_destruct;
 - (void)addObjectData:(id)arg1;

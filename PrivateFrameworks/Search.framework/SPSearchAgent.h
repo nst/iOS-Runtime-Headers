@@ -5,7 +5,6 @@
 @interface SPSearchAgent : NSObject <MCProfileConnectionObserver, SPDaemonQueryDelegate> {
     BOOL _activeCachedZKW;
     SPSearchResult *_appStoreSearchThroughResult;
-    NSMutableArray *_cachedSections;
     NSMutableArray *_cachedZKW1;
     NSMutableArray *_cachedZKW2;
     SPDaemonQueryToken *_currentToken;
@@ -18,6 +17,7 @@
     BOOL _isActivated;
     NSDictionary *_lastParsecResults;
     NSString *_lastQueryString;
+    int _lastUpdateSeqNo;
     NSString *_lastVoiceQuery;
     BOOL _liveAndCached;
     SPSearchResult *_mapsSearchThroughResult;
@@ -34,10 +34,8 @@
     BOOL _queryComplete;
     NSObject<OS_dispatch_queue> *_queryProcessor;
     unsigned int _resultCount;
-    NSMutableArray *_savedSections;
     NSArray *_searchDomains;
     BOOL _searchThroughAllowed;
-    SPSearchResultSection *_searchThroughSection;
     NSArray *_sections;
     int _seqNo;
     BOOL _shouldCacheResults;
@@ -50,6 +48,7 @@
     BOOL _willNotify;
 }
 
+@property (readonly) int currentZKWLevel;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) NSObject<SPSearchAgentDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -83,6 +82,8 @@
 - (void)clearInternal:(int)arg1;
 - (void)clearParsecResultsIfStale;
 - (int)contentFilters;
+- (int)currentQuerySeqNo;
+- (int)currentZKWLevel;
 - (void)deactivate;
 - (void)dealloc;
 - (id)delegate;
@@ -92,6 +93,7 @@
 - (void)handleHiddenResult:(id)arg1 shownResult:(id)arg2 inSection:(id)arg3;
 - (void)handleOptionsForNewSections:(id)arg1;
 - (BOOL)hasParsecNews;
+- (BOOL)hasParsecNewsHigh;
 - (BOOL)hasResults;
 - (id)init;
 - (id)initWithZKWLevel:(int)arg1 andOptions:(int)arg2;
@@ -135,8 +137,6 @@
 - (void)testPermuteSection:(id)arg1 domain:(unsigned int)arg2 count:(int)arg3;
 - (void)testRestoreCacheZKW;
 - (void)testSaveCachedZKWPermUsers:(int)arg1 appLinks:(int)arg2 apps:(int)arg3;
-- (void)updateEpilog:(id)arg1;
-- (void)updateProlog:(id)arg1;
 - (void)updateResultsThroughDelegate;
 - (void)updateResultsThroughDelegate:(BOOL)arg1;
 - (void)updateSearchThroughSectionWithQuery:(id)arg1;

@@ -109,7 +109,7 @@
 
 - (struct CGPath { }*)newCGPathForPlatformBezierPath;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (void)hk_applyBlock:(id /* block */)arg1;
 - (id)hk_firstPoint;

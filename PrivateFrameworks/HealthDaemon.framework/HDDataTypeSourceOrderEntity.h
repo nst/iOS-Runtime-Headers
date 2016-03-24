@@ -5,7 +5,7 @@
 @interface HDDataTypeSourceOrderEntity : HDHealthEntity
 
 + (BOOL)_insertCodableObjectTypeSourceOrders:(id)arg1 syncStore:(id)arg2 healthDatabase:(id)arg3 error:(id*)arg4;
-+ (BOOL)_saveOrderedSourceIDs:(id)arg1 dataTypeCode:(int)arg2 userOrdered:(BOOL)arg3 syncProvenance:(int)arg4 database:(id)arg5 error:(id*)arg6;
++ (BOOL)_saveOrderedSourceIDs:(id)arg1 dataTypeCode:(int)arg2 userOrdered:(BOOL)arg3 syncProvenance:(long long)arg4 database:(id)arg5 error:(id*)arg6;
 + (id)columnsDefinition;
 + (id)databaseTable;
 + (id)joinClausesForProperty:(id)arg1;

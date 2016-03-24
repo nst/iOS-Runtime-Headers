@@ -40,6 +40,7 @@
 + (void)controlAppearanceDidChangeForState:(int)arg1;
 + (void)initialize;
 
+- (void).cxx_destruct;
 - (void)_configureControlStates;
 - (float)_naturalTrackWidth;
 - (void)_setTrackImage:(id)arg1;

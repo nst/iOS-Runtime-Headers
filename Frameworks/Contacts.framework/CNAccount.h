@@ -39,6 +39,8 @@
 // Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
 
 + (id)_cnui_accountStore;
++ (void)_cnui_canRequestRefreshWithCompletion:(id /* block */)arg1;
++ (BOOL)_cnui_requestRefreshWithUserAction:(BOOL)arg1;
 
 - (id)_cnui_displayName;
 - (BOOL)_cnui_isFacebook;

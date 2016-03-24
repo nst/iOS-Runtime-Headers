@@ -24,6 +24,7 @@
     long long _persistentID;
     BOOL _premiumPlacement;
     BOOL _previewOnly;
+    BOOL _requiresSubscription;
     id _seedTracks;
     NSString *_shareToken;
     BOOL _shared;
@@ -77,6 +78,7 @@
 @property (getter=isPremiumPlacement, nonatomic) BOOL premiumPlacement;
 @property (getter=isPreview, nonatomic, readonly) BOOL preview;
 @property (getter=isPreviewOnly, nonatomic) BOOL previewOnly;
+@property (nonatomic) BOOL requiresSubscription;
 @property (nonatomic, retain) id seedTracks;
 @property (nonatomic, copy) NSString *shareToken;
 @property (getter=isShared, nonatomic) BOOL shared;
@@ -140,6 +142,7 @@
 - (id)model;
 - (id)name;
 - (long long)persistentID;
+- (BOOL)requiresSubscription;
 - (id)seedTracks;
 - (void)setAdData:(id)arg1;
 - (void)setAdamID:(long long)arg1;
@@ -159,6 +162,7 @@
 - (void)setPersistentID:(long long)arg1;
 - (void)setPremiumPlacement:(BOOL)arg1;
 - (void)setPreviewOnly:(BOOL)arg1;
+- (void)setRequiresSubscription:(BOOL)arg1;
 - (void)setSeedTracks:(id)arg1;
 - (void)setShareToken:(id)arg1;
 - (void)setShared:(BOOL)arg1;

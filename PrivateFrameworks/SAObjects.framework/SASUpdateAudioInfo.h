@@ -21,6 +21,7 @@
 @property (nonatomic, retain) SASRecordingInfo *recordingInfo;
 @property (nonatomic, copy) NSString *refId;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL triggeredTwoShotBorealis;
 
 + (id)updateAudioInfo;
 + (id)updateAudioInfoWithDictionary:(id)arg1 context:(id)arg2;
@@ -49,5 +50,7 @@
 - (void)setNoiseReductionLevel:(id)arg1;
 - (void)setOrigin:(id)arg1;
 - (void)setRecordingInfo:(id)arg1;
+- (void)setTriggeredTwoShotBorealis:(BOOL)arg1;
+- (BOOL)triggeredTwoShotBorealis;
 
 @end

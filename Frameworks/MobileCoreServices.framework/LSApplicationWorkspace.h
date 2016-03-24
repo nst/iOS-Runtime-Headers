@@ -6,11 +6,14 @@
 
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
++ (id)activeManagedConfigurationRestrictionUUIDs;
 + (id)defaultWorkspace;
 
 - (id)URLOverrideForURL:(id)arg1;
 - (void)_LSClearSchemaCaches;
+- (BOOL)_LSPrivateDatabaseNeedsRebuild;
 - (BOOL)_LSPrivateRebuildApplicationDatabasesForSystemApps:(BOOL)arg1 internal:(BOOL)arg2 user:(BOOL)arg3;
+- (void)_LSPrivateSyncWithMobileInstallation;
 - (void)_clearCachedAdvertisingIdentifier;
 - (void)addObserver:(id)arg1;
 - (id)allApplications;
@@ -75,8 +78,11 @@
 - (id)remoteObserver;
 - (void)removeInstallProgressForBundleID:(id)arg1;
 - (void)removeObserver:(id)arg1;
+- (id)removedSystemApplications;
+- (BOOL)restoreSystemApplication:(id)arg1;
 - (BOOL)uninstallApplication:(id)arg1 withOptions:(id)arg2;
 - (BOOL)uninstallApplication:(id)arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
+- (BOOL)uninstallSystemApplication:(id)arg1 withOptions:(id)arg2 usingBlock:(id /* block */)arg3;
 - (BOOL)unregisterApplication:(id)arg1;
 - (BOOL)unregisterPlugin:(id)arg1;
 - (id)unrestrictedApplications;

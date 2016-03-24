@@ -78,7 +78,7 @@
 - (void)setWeight:(id)arg1;
 - (id)weight;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)contactKeysToLoadForMedicalID;
 

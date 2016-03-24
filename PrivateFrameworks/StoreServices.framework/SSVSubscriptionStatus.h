@@ -12,6 +12,7 @@
     BOOL _discoveryModeEligible;
     BOOL _familyOrganizer;
     BOOL _familySubscription;
+    BOOL _freeTrialIneligible;
     BOOL _hasFamily;
     BOOL _hasFamilyMembers;
     BOOL _hasOfflineSlot;
@@ -36,6 +37,7 @@
 @property (getter=isDiscoveryModeEligible, nonatomic) BOOL discoveryModeEligible;
 @property (getter=isFamilyOrganizer, nonatomic) BOOL familyOrganizer;
 @property (getter=isFamilySubscription, nonatomic) BOOL familySubscription;
+@property (getter=isFreeTrialIneligible, nonatomic) BOOL freeTrialIneligible;
 @property (nonatomic) BOOL hasFamily;
 @property (nonatomic) BOOL hasFamilyMembers;
 @property (nonatomic, readonly) BOOL hasOfflineSlot;
@@ -73,6 +75,7 @@
 - (BOOL)isDiscoveryModeEligible;
 - (BOOL)isFamilyOrganizer;
 - (BOOL)isFamilySubscription;
+- (BOOL)isFreeTrialIneligible;
 - (BOOL)isSubscribed;
 - (BOOL)isSubscriptionPurchaser;
 - (unsigned long long)latestStoreTermsVersion;
@@ -90,6 +93,7 @@
 - (void)setDiscoveryModeEligible:(BOOL)arg1;
 - (void)setFamilyOrganizer:(BOOL)arg1;
 - (void)setFamilySubscription:(BOOL)arg1;
+- (void)setFreeTrialIneligible:(BOOL)arg1;
 - (void)setHasFamily:(BOOL)arg1;
 - (void)setHasFamilyMembers:(BOOL)arg1;
 - (void)setHasOfflineSlots:(BOOL)arg1;

@@ -3,7 +3,7 @@
  */
 
 @interface RTRoutineManager : NSObject <RTFrameworkProtocol> {
-    id /* block */ _RTPredicatedApplicationsHandler;
+    RTRoutineManagerRegistrantApplicationPrediction *_applicationPredictionRegistrant;
     RTEventAgentHelper *_eventAgentHelper;
     id /* block */ _nextPredictedLocationsOfInterestHandler;
     NSObject<OS_dispatch_queue> *_queue;
@@ -13,7 +13,7 @@
     NSXPCConnection *_xpcConnection;
 }
 
-@property (nonatomic, copy) id /* block */ RTPredicatedApplicationsHandler;
+@property (nonatomic, retain) RTRoutineManagerRegistrantApplicationPrediction *applicationPredictionRegistrant;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) RTEventAgentHelper *eventAgentHelper;
@@ -31,8 +31,8 @@
 + (id)routineModeToString:(int)arg1;
 
 - (void).cxx_destruct;
-- (id /* block */)RTPredicatedApplicationsHandler;
 - (void)_createConnection;
+- (id)applicationPredictionRegistrant;
 - (void)clearRoutine;
 - (void)createConnection;
 - (void)dealloc;
@@ -67,15 +67,16 @@
 - (id)queue;
 - (id)restorationIdentifier;
 - (id)scenarioTriggerHandlers;
+- (void)setApplicationPredictionRegistrant:(id)arg1;
 - (void)setEventAgentHelper:(id)arg1;
 - (void)setNextPredictedLocationsOfInterestHandler:(id /* block */)arg1;
 - (void)setQueue:(id)arg1;
-- (void)setRTPredicatedApplicationsHandler:(id /* block */)arg1;
 - (void)setRestorationIdentifier:(id)arg1;
 - (void)setRoutineEnabled:(BOOL)arg1;
 - (void)setScenarioTriggerHandlers:(id)arg1;
 - (void)setVisitHandler:(id /* block */)arg1;
 - (void)setXpcConnection:(id)arg1;
+- (void)startMonitoringForPredictedApplicationsUsingPredicate:(id)arg1 handler:(id /* block */)arg2;
 - (void)startMonitoringForPredictedApplicationsWithHandler:(id /* block */)arg1;
 - (void)startMonitoringNextPredictedLocationsOfInterestWithHandler:(id /* block */)arg1;
 - (void)startMonitoringScenarioTriggerOfType:(unsigned int)arg1 withHandler:(id /* block */)arg2;

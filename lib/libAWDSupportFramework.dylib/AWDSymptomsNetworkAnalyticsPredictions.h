@@ -64,6 +64,8 @@
 @property (nonatomic) unsigned int trainingProgress1000;
 @property (nonatomic) unsigned long long uniquePredictionClients;
 
+- (int)StringAsNetworkType:(id)arg1;
+- (int)StringAsTrainingCompletionCode:(id)arg1;
 - (unsigned int)calendarTypeMarker;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -91,6 +93,7 @@
 - (unsigned long long)modelGraphPullups;
 - (unsigned long long)modelRecalls;
 - (int)networkType;
+- (id)networkTypeAsString:(int)arg1;
 - (unsigned int)predictionErrorOver24hr1000;
 - (unsigned long long)predictionQueries;
 - (BOOL)readFrom:(id)arg1;
@@ -126,6 +129,7 @@
 - (unsigned int)timeZoneMarker;
 - (unsigned long long)timestamp;
 - (int)trainingCompletionCode;
+- (id)trainingCompletionCodeAsString:(int)arg1;
 - (unsigned int)trainingProgress1000;
 - (unsigned long long)uniquePredictionClients;
 - (void)writeTo:(id)arg1;

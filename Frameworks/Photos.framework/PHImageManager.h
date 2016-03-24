@@ -18,7 +18,6 @@
 + (id)defaultManager;
 + (struct CGSize { float x1; float x2; })fullScreenSizeForScreen:(id)arg1 contentMode:(int*)arg2;
 + (void)initialize;
-+ (struct CGSize { float x1; float x2; })sizeForPLFormat:(int)arg1 fallBackSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int*)arg3;
 + (struct CGSize { float x1; float x2; })sizeOfBestNonFullscreenThumbnailAndContentMode:(int*)arg1;
 + (BOOL)useNewImageManager;
 
@@ -34,6 +33,7 @@
 - (unsigned int)hash;
 - (id)imageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 outInfo:(id*)arg5;
 - (id)init;
+- (id)localOptionsFromOptions:(id)arg1;
 - (unsigned int)managerID;
 - (id)memoryEventSource;
 - (struct CGImage { }*)newResizedImageForImage:(struct CGImage { }*)arg1 withSize:(struct CGSize { float x1; float x2; })arg2 normalizedCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 contentMode:(int)arg4;
@@ -54,7 +54,6 @@
 - (void)requestSynchronousImageForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)requestSynchronousImageForImageLoadingAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 contentMode:(int)arg3 options:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)setMemoryEventSource:(id)arg1;
-- (id)thumbnailDataForAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
 - (void)unloadImageFilesForAsset:(id)arg1 minimumFormat:(int)arg2 completionHandler:(id /* block */)arg3;
 - (void)unregisterRequest:(id)arg1;
 

@@ -6,6 +6,7 @@
     NSString *_assetType;
     BOOL _bypassStore;
     unsigned long long _bytesRemaining;
+    NSDictionary *_clientParams;
     unsigned int _completedAssetParts;
     id /* block */ _completionBlock;
     NSString *_dataclass;
@@ -36,6 +37,7 @@
 @property (nonatomic, retain) NSString *assetType;
 @property (nonatomic) BOOL bypassStore;
 @property (nonatomic) unsigned long long bytesRemaining;
+@property (nonatomic, retain) NSDictionary *clientParams;
 @property (nonatomic) unsigned int completedAssetParts;
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, retain) NSString *dataclass;
@@ -74,6 +76,7 @@
 - (id)assetType;
 - (BOOL)bypassStore;
 - (unsigned long long)bytesRemaining;
+- (id)clientParams;
 - (unsigned int)completedAssetParts;
 - (id /* block */)completionBlock;
 - (id)dataclass;
@@ -105,6 +108,7 @@
 - (void)setAssetType:(id)arg1;
 - (void)setBypassStore:(BOOL)arg1;
 - (void)setBytesRemaining:(unsigned long long)arg1;
+- (void)setClientParams:(id)arg1;
 - (void)setCompletedAssetParts:(unsigned int)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setDataclass:(id)arg1;

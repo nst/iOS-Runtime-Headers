@@ -14,6 +14,8 @@
 - (id)messageBodyIfAvailable;
 - (id)messageData;
 - (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
+- (id)messageDataHolder;
+- (BOOL)messageDataHolder:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
 - (unsigned int)messageSize;
 - (id)messageStore;
 - (id)mutableHeaders;

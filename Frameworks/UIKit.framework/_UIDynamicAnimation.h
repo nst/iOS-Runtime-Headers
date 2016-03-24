@@ -4,6 +4,7 @@
 
 @interface _UIDynamicAnimation : NSObject {
     unsigned int _began;
+    unsigned int _completing;
     id /* block */ _completion;
     unsigned int _grouped;
     unsigned int _running;
@@ -26,6 +27,7 @@
 - (void)_appendSubclassDescription:(id)arg1 atLevel:(int)arg2;
 - (void)_callAppliers:(id /* block */)arg1 additionalEndAppliers:(id /* block */)arg2 done:(BOOL)arg3;
 - (void)_cancelWithAppliers:(id /* block */)arg1;
+- (void)_completeWithFinished:(BOOL)arg1;
 - (BOOL)_isGrouped;
 - (BOOL)_isRunning;
 - (void)_setGrouped:(BOOL)arg1;

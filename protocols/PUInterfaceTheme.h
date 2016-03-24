@@ -38,6 +38,7 @@
 - (float)cloudFeedSeparatorHeight;
 - (NSDictionary *)cloudFeedWhiteDefaultTextAttributes;
 - (NSDictionary *)cloudFeedWhiteEmphasizedTextAttributes;
+- (UIColor *)cloudStatusHighlightColor;
 - (UIFont *)cloudWelcomeViewTitleLabelFontForSize:(float)arg1;
 - (NSString *)commentsButtonStringForCount:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })commentsButtonTextInset;

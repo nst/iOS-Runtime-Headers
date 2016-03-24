@@ -34,7 +34,7 @@
 - (id)_semaphoreForDatabaseType:(int)arg1 waitCounter:(int**)arg2;
 - (unsigned int)backgroundReadersWaiting;
 - (unsigned int)cacheSize;
-- (void)checkInDatabase:(id)arg1;
+- (void)checkInDatabase:(id)arg1 closeImmediately:(BOOL)arg2;
 - (void)dealloc;
 - (id)delegate;
 - (id)diagnosticDescription;

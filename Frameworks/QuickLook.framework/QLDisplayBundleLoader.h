@@ -12,6 +12,7 @@
 - (void)_lookForDisplayBundles;
 - (id)copyDisplayBundleWithPreviewItem:(id)arg1 displayBundleIdentifier:(id)arg2;
 - (void)dealloc;
+- (int)defaultWhitePointAdaptivityStyleForPreviewItem:(id)arg1;
 - (Class)displayBundleClassForPreviewItem:(id)arg1;
 - (id)init;
 - (Class)loadDisplayBundle:(id)arg1;

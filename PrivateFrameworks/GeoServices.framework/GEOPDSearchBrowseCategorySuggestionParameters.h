@@ -6,15 +6,19 @@
     struct { 
         unsigned int requestLocalTimestamp : 1; 
         unsigned int minimumNumberOfCategories : 1; 
+        unsigned int isCarplayRequest : 1; 
     } _has;
+    BOOL _isCarplayRequest;
     int _minimumNumberOfCategories;
     double _requestLocalTimestamp;
     GEOPDViewportInfo *_viewportInfo;
 }
 
+@property (nonatomic) BOOL hasIsCarplayRequest;
 @property (nonatomic) BOOL hasMinimumNumberOfCategories;
 @property (nonatomic) BOOL hasRequestLocalTimestamp;
 @property (nonatomic, readonly) BOOL hasViewportInfo;
+@property (nonatomic) BOOL isCarplayRequest;
 @property (nonatomic) int minimumNumberOfCategories;
 @property (nonatomic) double requestLocalTimestamp;
 @property (nonatomic, retain) GEOPDViewportInfo *viewportInfo;
@@ -24,17 +28,21 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasIsCarplayRequest;
 - (BOOL)hasMinimumNumberOfCategories;
 - (BOOL)hasRequestLocalTimestamp;
 - (BOOL)hasViewportInfo;
 - (unsigned int)hash;
+- (BOOL)isCarplayRequest;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)minimumNumberOfCategories;
 - (BOOL)readFrom:(id)arg1;
 - (double)requestLocalTimestamp;
+- (void)setHasIsCarplayRequest:(BOOL)arg1;
 - (void)setHasMinimumNumberOfCategories:(BOOL)arg1;
 - (void)setHasRequestLocalTimestamp:(BOOL)arg1;
+- (void)setIsCarplayRequest:(BOOL)arg1;
 - (void)setMinimumNumberOfCategories:(int)arg1;
 - (void)setRequestLocalTimestamp:(double)arg1;
 - (void)setViewportInfo:(id)arg1;

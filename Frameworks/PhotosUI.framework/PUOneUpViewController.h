@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUOneUpViewController : UIViewController <PUAirPlayControllerContentProvider, PUAssetDisplayDescriptorNavigator, PUBarsControllerDelegate, PUBrowsingViewModelChangeObserver, PUCommentsTileViewControllerDelegate, PUDoubleTapZoomControllerDelegate, PUInteractiveDismissalControllerDelegate, PUIrisImageTileViewControllerDelegate, PUOneUpAssetTransitionViewController, PUOneUpBarsControllerDelegate, PUOneUpGestureRecognizerCoordinatorDelegate, PUOneUpTilingLayoutDelegate, PUOverOneUpPresentationSessionDelegate, PUOverOneUpPresentationSessionViewController, PUPlayButtonTileViewControllerDelegate, PUTilingViewControllerTransitionEndPoint, PUTilingViewScrollDelegate, PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, PUTilingViewTileUseDelegate, PUUserTransformTileViewControllerDelegate, PUViewControllerSpecChangeObserver, UIScrollViewDelegate, _UISettingsKeyObserver> {
+@interface PUOneUpViewController : UIViewController <PHAirPlayControllerContentProvider, PUAssetDisplayDescriptorNavigator, PUBarsControllerDelegate, PUBrowsingViewModelChangeObserver, PUCommentsTileViewControllerDelegate, PUDoubleTapZoomControllerDelegate, PUInteractiveDismissalControllerDelegate, PUIrisImageTileViewControllerDelegate, PUOneUpAssetTransitionViewController, PUOneUpBarsControllerDelegate, PUOneUpGestureRecognizerCoordinatorDelegate, PUOneUpTilingLayoutDelegate, PUOverOneUpPresentationSessionDelegate, PUOverOneUpPresentationSessionViewController, PUPlayButtonTileViewControllerDelegate, PUTilingViewControllerTransitionEndPoint, PUTilingViewScrollDelegate, PUTilingViewTileSource, PUTilingViewTileTransitionDelegate, PUTilingViewTileUseDelegate, PUUserTransformTileViewControllerDelegate, PUViewControllerSpecChangeObserver, UIScrollViewDelegate, _UISettingsKeyObserver> {
     PUBrowsingBackgroundTileViewController *__backgroundTileViewController;
     PUOneUpBarsController *__barsController;
     NSTimer *__chromeAutoHideTimer;
@@ -224,6 +224,7 @@
 - (id)irisImageTileViewController:(id)arg1 delegateForGestureRecognizer:(id)arg2;
 - (void)irisImageTileViewControllerDidBeginPlaying:(id)arg1;
 - (void)irisImageTileViewControllerDidEndPlaying:(id)arg1;
+- (void)irisImageTileViewControllerDidEndVitality:(id)arg1;
 - (id)irisImageTileViewControllerViewHostingGestureRecognizers:(id)arg1;
 - (BOOL)isPresentedForPreview;
 - (double)layout:(id)arg1 aspectRatioForItemAtIndexPath:(id)arg2;
@@ -254,6 +255,7 @@
 - (id)overOneUpPresentationSessionCreateIfNeeded:(BOOL)arg1;
 - (id)overOneUpPresentationSessionCurrentTileController:(id)arg1;
 - (void)overOneUpPresentationSessionDidFinish:(id)arg1;
+- (BOOL)overOneUpPresentationSessionPresentingViewControllerIsReady:(id)arg1;
 - (id)overOneUpPresentationSessionTilingView:(id)arg1;
 - (id)overOneUpPresentationSessionViewController:(id)arg1;
 - (double)playButtonTileViewController:(id)arg1 delayForButtonAnimation:(BOOL)arg2;

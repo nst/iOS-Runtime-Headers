@@ -10,8 +10,10 @@
 @property (nonatomic, readonly, retain) NSString *deviceColor;
 @property (nonatomic, readonly, retain) NSString *enclosureColor;
 @property (nonatomic, readonly, retain) NSArray *identities;
+@property (nonatomic, readonly) BOOL isActive;
 @property (nonatomic, readonly) BOOL isDefaultPairedDevice;
 @property (nonatomic, readonly) BOOL isHSATrusted;
+@property (nonatomic, readonly) BOOL isLocallyPaired;
 @property (nonatomic, readonly, retain) NSDate *lastActivityDate;
 @property (nonatomic, readonly, retain) NSArray *linkedUserURIs;
 @property (nonatomic, readonly) BOOL locallyPresent;
@@ -54,10 +56,11 @@
 - (void)establishStreamPairWithOptions:(id)arg1 completionHandler:(id /* block */)arg2 onQueue:(id)arg3;
 - (id)identities;
 - (id)initWithDictionary:(id)arg1;
+- (BOOL)isActive;
 - (BOOL)isConnected;
-- (BOOL)isDefaultLocalDevice;
 - (BOOL)isDefaultPairedDevice;
 - (BOOL)isHSATrusted;
+- (BOOL)isLocallyPaired;
 - (BOOL)isNearby;
 - (id)lastActivityDate;
 - (id)linkedUserURIs;
@@ -91,5 +94,12 @@
 // Image: /System/Library/PrivateFrameworks/CommunicationsSetupUI.framework/CommunicationsSetupUI
 
 - (BOOL)isWatch;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
+- (id)hd_destinationIdentifier;
+- (id)hd_deviceIdentifier;
+- (BOOL)hd_isEquivalentToDevice:(id)arg1;
+- (id)hd_shortDescription;
 
 @end

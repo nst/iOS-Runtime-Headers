@@ -11,10 +11,15 @@
 - (void).cxx_destruct;
 - (id)autoSuConfig;
 - (id)defaultTimesWhenPredictionUnavailable:(id)arg1;
+- (id)defaultTimesWhenPredictionUnavailable:(id)arg1 withConfig:(id)arg2;
 - (id)getUnlockAndSoftwareUpdateTimes;
+- (id)getUnlockAndSoftwareUpdateTimesWithConfig:(id)arg1 referenceDate:(id)arg2;
 - (id)makeDictionaryForEventStreamWhenPredictionTemporarilyUnavailable:(id)arg1;
+- (id)predicitLastUnlockForDay:(id)arg1;
 - (id)predictForDate:(id)arg1 fromState:(id)arg2;
-- (id)proposeTimesFromRelativeOffsetsForDate:(id)arg1 lastUnlock:(int)arg2 suStart:(int)arg3 suEnd:(int)arg4 unrestrictedSleepEnd:(int)arg5;
+- (id)predictForDate:(id)arg1 fromState:(id)arg2 withConfig:(id)arg3;
+- (id)predictNextDateForLastUnlockAttemptOfTheDay;
+- (id)proposeTimesFromRelativeOffsetsForDate:(id)arg1 lastUnlock:(int)arg2 suStart:(int)arg3 suEnd:(int)arg4 unrestrictedSleepEnd:(int)arg5 config:(id)arg6;
 - (id)retrieveSleepProbabilities:(id)arg1;
 - (void)setAutoSuConfig:(id)arg1;
 

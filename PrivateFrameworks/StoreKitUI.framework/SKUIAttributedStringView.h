@@ -3,6 +3,7 @@
  */
 
 @interface SKUIAttributedStringView : UIView {
+    int _badgePlacement;
     float _calculatedTopInset;
     BOOL _containsLinks;
     int _firstLineTopInset;
@@ -34,6 +35,7 @@
     UIColor *_treatmentColor;
 }
 
+@property (nonatomic) int badgePlacement;
 @property (nonatomic, readonly) float baselineOffset;
 @property (nonatomic) BOOL containsLinks;
 @property (nonatomic, readonly) float firstBaselineOffset;
@@ -55,6 +57,7 @@
 - (void)_setTrackingTouch:(BOOL)arg1;
 - (void)_setupTapLocatorContainer;
 - (BOOL)_touchInsideLinkText:(struct CGPoint { float x1; float x2; })arg1 linkTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg2;
+- (int)badgePlacement;
 - (float)baselineOffset;
 - (BOOL)containsLinks;
 - (id)description;
@@ -65,6 +68,7 @@
 - (id)layout;
 - (id)linkDelegate;
 - (id)requiredBadges;
+- (void)setBadgePlacement:(int)arg1;
 - (void)setContainsLinks:(BOOL)arg1;
 - (void)setFirstLineTopInset:(int)arg1;
 - (void)setLayout:(id)arg1;

@@ -11,7 +11,7 @@
     unsigned int _biometricMatchMode;
     float _currentBacklightLevel;
     UIColor *_customBackgroundColor;
-    <SBUIPasscodeLockViewDelegate_Internal> *_delegate;
+    <SBUIPasscodeLockViewDelegate> *_delegate;
     BOOL _deviceHasBeenUnlockedOnceSinceBoot;
     BOOL _enabledMatching;
     SBUIPasscodeEntryField *_entryField;
@@ -19,6 +19,7 @@
     float _luminanceBoost;
     BOOL _mesaLockedOut;
     BOOL _playsKeypadSounds;
+    NSTimer *_screenBrightnessChangedTimer;
     BOOL _screenOn;
     BOOL _shouldResetForFailedPasscodeAttempt;
     BOOL _showsEmergencyCallButton;
@@ -41,6 +42,7 @@
 @property (getter=_luminosityBoost, setter=_setLuminosityBoost:, nonatomic) float luminosityBoost;
 @property (nonatomic, readonly) NSString *passcode;
 @property (nonatomic) BOOL playsKeypadSounds;
+@property (retain) NSTimer *screenBrightnessChangedTimer;
 @property (getter=isScreenOn, nonatomic) BOOL screenOn;
 @property (nonatomic) BOOL shouldResetForFailedPasscodeAttempt;
 @property (nonatomic) BOOL showsEmergencyCallButton;
@@ -51,6 +53,7 @@
 @property (nonatomic) int style;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)_clearBrightnessChangeTimer;
 - (id)_defaultStatusText;
 - (id)_entryField;
@@ -108,6 +111,7 @@
 - (void)resetForFailedPasscode;
 - (void)resetForScreenOff;
 - (BOOL)resignFirstResponder;
+- (id)screenBrightnessChangedTimer;
 - (void)setAllowsStatusTextUpdatingOnResignFirstResponder:(BOOL)arg1;
 - (void)setBackgroundAlpha:(float)arg1;
 - (void)setBackgroundLegibilitySettingsProvider:(id)arg1;
@@ -116,6 +120,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setKeyPressClicksPrewarmed:(BOOL)arg1;
 - (void)setPlaysKeypadSounds:(BOOL)arg1;
+- (void)setScreenBrightnessChangedTimer:(id)arg1;
 - (void)setScreenOn:(BOOL)arg1;
 - (void)setShouldResetForFailedPasscodeAttempt:(BOOL)arg1;
 - (void)setShowsEmergencyCallButton:(BOOL)arg1;

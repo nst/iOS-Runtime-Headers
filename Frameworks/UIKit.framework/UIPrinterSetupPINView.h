@@ -26,6 +26,7 @@
 
 - (void).cxx_destruct;
 - (id)PIN;
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (void)dealloc;
 - (id)enterLabel;
 - (int)failedAttemptCount;

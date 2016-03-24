@@ -21,31 +21,37 @@
 }
 
 + (int)_extendedKeybagState;
++ (BOOL)_isInBioUnlockState;
++ (id)_selectDeviceLockModel;
 + (BOOL)_shouldTreatExtendedKeybagStateAsLocked:(int)arg1;
 
+- (void).cxx_destruct;
 - (void)_addDeviceLockDisableAssertion:(id)arg1;
 - (void)_cachePassword:(id)arg1;
 - (void)_clearBlockedState;
 - (void)_clearUnblockTimer;
 - (void)_enablePasscodeLockImmediately:(BOOL)arg1;
+- (void)_invalidateCachedPasscodeLockState;
 - (BOOL)_isAssertionValid:(id)arg1;
 - (void)_keybagLockStateChangedTo:(int)arg1;
 - (void)_lockStateChangedFrom:(int)arg1 to:(int)arg2;
 - (void)_noteBlockedReasonsMayHaveChanged;
 - (void)_notePasscodeLockedOrBlockedStateMayHaveChanged:(BOOL)arg1;
 - (void)_notifyOfFirstUnlock;
+- (BOOL)_permanentlyBlocked;
 - (void)_removeDeviceLockDisableAssertion:(id)arg1;
 - (void)_scheduleUnblockTimer;
 - (void)_setLockState:(int)arg1;
 - (void)_setupRunLoopObserverIfNecessary;
 - (BOOL)_shouldLockDeviceNow;
 - (BOOL)_shouldSuppressLockOnInit;
+- (BOOL)_shouldVetoPasscodeLock;
 - (BOOL)_temporarilyBlocked;
 - (void)_unblockTimerFired;
 - (void)_uncachePasscodeIfNecessary;
 - (BOOL)_unlockWithPasscode:(id)arg1 outError:(id*)arg2;
 - (void)_updateDeviceHasPasscodeSetForLockState:(int)arg1;
-- (void)_updateDeviceLockedState;
+- (void)_updateDeviceLockedStateLockingImmediatelyIfNecessary:(BOOL)arg1;
 - (void)_wipeDevice;
 - (BOOL)attemptDeviceUnlockWithPassword:(id)arg1 appRequested:(BOOL)arg2;
 - (void)dealloc;
@@ -54,7 +60,9 @@
 - (BOOL)deviceHasPasscodeSet;
 - (void)deviceLockModelRequestsDeviceWipe:(id)arg1;
 - (void)deviceLockStateMayHaveChangedForModel:(id)arg1;
+- (void)enablePasscodeLockIfNecessary;
 - (void)enablePasscodeLockImmediately;
+- (void)enablePasscodeLockImmediatelyIfNecessary;
 - (id)init;
 - (BOOL)isBlocked;
 - (BOOL)isBlockedForThermalCondition;

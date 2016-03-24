@@ -10,6 +10,9 @@
 @property (nonatomic, retain) NSMutableArray *futures;
 @property (nonatomic, retain) NSMutableArray *pasts;
 
++ (Class)futureType;
++ (Class)pastType;
+
 - (void)addFuture:(id)arg1;
 - (void)addPast:(id)arg1;
 - (void)clearFutures;

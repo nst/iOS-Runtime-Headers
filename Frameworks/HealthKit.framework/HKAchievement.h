@@ -5,6 +5,7 @@
 @interface HKAchievement : NSObject <HDCoding, NSSecureCoding> {
     NSUUID *_UUID;
     unsigned int _achievementType;
+    BOOL _alerted;
     NSDate *_completedDate;
     NSNumber *_value;
     BOOL _viewed;
@@ -12,6 +13,7 @@
 
 @property (nonatomic, retain) NSUUID *UUID;
 @property (nonatomic) unsigned int achievementType;
+@property (getter=isAlerted, nonatomic) BOOL alerted;
 @property (nonatomic, retain) NSDate *completedDate;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -26,7 +28,7 @@
 + (id)_achievementStringFromType:(unsigned int)arg1;
 + (unsigned int)_achievementTypeFromString:(id)arg1;
 + (id)_achievementTypeNameMappings;
-+ (id)_achievementWithUUID:(id)arg1 type:(unsigned int)arg2 completedDate:(id)arg3 value:(id)arg4 extraData:(id)arg5;
++ (id)_achievementWithUUID:(id)arg1 type:(unsigned int)arg2 completedDate:(id)arg3 value:(id)arg4 extraData:(id)arg5 alerted:(BOOL)arg6;
 + (id)_allAchievementTypeNames;
 + (Class)_classForAchievementType:(unsigned int)arg1;
 + (id)_nextUUID;
@@ -42,6 +44,9 @@
 - (void)_decodeExtraDataWithCoder:(id)arg1;
 - (void)_encodeExtraDataWithCoder:(id)arg1;
 - (BOOL)_hasExtraData;
+- (id)_localizedDescriptionForCompleteNumberOfTimes:(int)arg1;
+- (id)_localizedDescriptionForIncomplete;
+- (id)_localizedShareDescriptionWithNumberOfTimesAchieved:(int)arg1;
 - (BOOL)_validateConfiguration;
 - (unsigned int)achievementType;
 - (id)completedDate;
@@ -51,9 +56,16 @@
 - (unsigned int)hash;
 - (id)initWithAchievementType:(unsigned int)arg1 completedDate:(id)arg2 value:(id)arg3;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isAlerted;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isViewed;
+- (id)localizedDescription;
+- (id)localizedDescriptionForAlertWithUserName:(id)arg1;
+- (id)localizedDescriptionWithNumberOfTimesAchieved:(int)arg1;
+- (id)localizedShareDescriptionWithNumberOfTimesAchieved:(int)arg1;
+- (id)localizedTitle;
 - (void)setAchievementType:(unsigned int)arg1;
+- (void)setAlerted:(BOOL)arg1;
 - (void)setCompletedDate:(id)arg1;
 - (void)setExtraData:(id)arg1;
 - (void)setUUID:(id)arg1;
@@ -77,17 +89,6 @@
 + (id)createWithCodable:(id)arg1;
 
 - (id)codableRepresentationForSync;
-- (BOOL)isEquivalentToAchievement:(id)arg1 inCalendar:(id)arg2;
-
-// Image: /System/Library/PrivateFrameworks/HealthKitExtensions.framework/HealthKitExtensions
-
-- (id)_localizedDescriptionForCompleteNumberOfTimes:(int)arg1;
-- (id)_localizedDescriptionForIncomplete;
-- (id)_localizedShareDescriptionWithNumberOfTimesAchieved:(int)arg1;
-- (id)localizedDescription;
-- (id)localizedDescriptionForAlertWithUserName:(id)arg1;
-- (id)localizedDescriptionWithNumberOfTimesAchieved:(int)arg1;
-- (id)localizedShareDescriptionWithNumberOfTimesAchieved:(int)arg1;
-- (id)localizedTitle;
+- (BOOL)isEquivalentToAchievement:(id)arg1 inCalendar:(id)arg2 requireSameDay:(BOOL)arg3 sameWeek:(BOOL)arg4 sameValue:(BOOL)arg5;
 
 @end

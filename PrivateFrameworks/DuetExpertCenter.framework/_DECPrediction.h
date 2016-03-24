@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DuetExpertCenter.framework/DuetExpertCenter
  */
 
-@interface _DECPrediction : NSObject <NSSecureCoding> {
+@interface _DECPrediction : NSObject <NSCopying, NSSecureCoding> {
     NSDate *_creationDate;
     _DECPredictionExpiry *_expiry;
     NSArray *_items;
@@ -20,6 +20,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)creationDate;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

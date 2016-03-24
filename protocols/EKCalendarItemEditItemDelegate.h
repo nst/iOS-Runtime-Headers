@@ -9,8 +9,8 @@
 
 @optional
 
-- (void)editItem:(EKCalendarItemEditItem *)arg1 didCommitFromDetailViewController:(BOOL)arg2;
 - (void)editItem:(EKCalendarItemEditItem *)arg1 didEndDatePickingAnimated:(BOOL)arg2;
+- (void)editItem:(EKCalendarItemEditItem *)arg1 didSaveFromDetailViewController:(BOOL)arg2;
 - (void)editItem:(void *)arg1 performActionsOnCellAtSubitem:(void *)arg2 actions:(void *)arg3; // needs 3 arg types, found 8: EKCalendarItemEditItem *, unsigned int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, UITableViewCell *, void*
 - (void)editItem:(EKCalendarItemEditItem *)arg1 textViewShouldReturn:(UIView *)arg2;
 - (void)editItem:(EKCalendarItemEditItem *)arg1 wantsDoneButtonDisabled:(BOOL)arg2;

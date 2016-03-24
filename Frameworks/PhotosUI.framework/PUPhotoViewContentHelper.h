@@ -2,10 +2,8 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoViewContentHelper : NSObject {
+@interface PUPhotoViewContentHelper : NSObject <PHLivePhotoViewDelegate> {
     UIImageView *__crossfadeImageView;
-    BOOL __isIrisVitalityEnabled;
-    BOOL __isPerformingIrisPlayerChanges;
     struct CGColor { } *_avalancheStackBackgroundColor;
     PUAvalancheStackView *_avalancheStackView;
     BOOL _avoidsImageViewIfPossible;
@@ -13,8 +11,13 @@
     int _badgeType;
     PUBadgeView *_badgeView;
     UIView *_contentView;
+    <PUPhotoViewContentHelperDelegate> *_delegate;
+    struct { 
+        BOOL respondsToLivePhotoWillBeginPlaybackWithStyle; 
+    } _delegateFlags;
     int _fillMode;
     BOOL _flattensBadgeView;
+    BOOL _hasPendingPlaybackRequest;
     BOOL _hasTransform;
     struct CGAffineTransform { 
         float a; 
@@ -24,17 +27,12 @@
         float tx; 
         float ty; 
     } _imageTransform;
-    UICollectionView *_irisContainerScrollView;
-    <PUPhotoViewContentHelperIrisDelegate> *_irisDelegate;
-    struct { 
-        BOOL respondsToPlaybackStateDidChange; 
-    } _irisDelegateFlags;
-    PUBrowsingIrisPlayer *_irisPlayer;
-    BOOL _irisPlayerHidden;
-    float _irisPlayerScrubOffset;
-    ISPlayerView *_irisPlayerView;
     BOOL _isTextBannerVisible;
+    PHLivePhoto *_livePhoto;
+    BOOL _livePhotoHidden;
+    PHLivePhotoView *_livePhotoView;
     BOOL _needsAvalancheStack;
+    int _pendingPlaybackRequestStyle;
     PUPhotoDecoration *_photoDecoration;
     PUBackgroundColorView *_photoDecorationBorderView;
     PUBackgroundColorView *_photoDecorationOverlayView;
@@ -45,13 +43,12 @@
         float height; 
     } _photoSize;
     UIImage *_placeHolderImage;
+    BOOL _shouldPrepareForPlayback;
     PUTextBannerView *_textBannerView;
     double _videoDuration;
 }
 
 @property (nonatomic, retain) UIImageView *_crossfadeImageView;
-@property (setter=_setIrisVitalityEnabled:, nonatomic) BOOL _isIrisVitalityEnabled;
-@property (setter=_setPerformingIrisPlayerChanges:, nonatomic) BOOL _isPerformingIrisPlayerChanges;
 @property (nonatomic) struct CGColor { }*avalancheStackBackgroundColor;
 @property (nonatomic, retain) PUAvalancheStackView *avalancheStackView;
 @property (nonatomic) BOOL avoidsImageViewIfPossible;
@@ -59,16 +56,17 @@
 @property (nonatomic, readonly) UIView *badgeContainerView;
 @property (nonatomic, readonly) int badgeType;
 @property (nonatomic, readonly) UIView *contentView;
+@property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PUPhotoViewContentHelperDelegate> *delegate;
+@property (readonly, copy) NSString *description;
 @property (nonatomic) int fillMode;
 @property (nonatomic) BOOL flattensBadgeView;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } imageContentFrame;
 @property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } imageTransform;
-@property (nonatomic) UICollectionView *irisContainerScrollView;
-@property (nonatomic) <PUPhotoViewContentHelperIrisDelegate> *irisDelegate;
-@property (nonatomic, retain) PUBrowsingIrisPlayer *irisPlayer;
-@property (getter=isIrisPlayerHidden, nonatomic) BOOL irisPlayerHidden;
-@property (nonatomic) float irisPlayerScrubOffset;
-@property (nonatomic, retain) ISPlayerView *irisPlayerView;
+@property (nonatomic, retain) PHLivePhoto *livePhoto;
+@property (getter=isLivePhotoHidden, nonatomic) BOOL livePhotoHidden;
+@property (nonatomic, retain) PHLivePhotoView *livePhotoView;
 @property (nonatomic) BOOL needsAvalancheStack;
 @property (nonatomic, copy) PUPhotoDecoration *photoDecoration;
 @property (nonatomic, retain) UIImage *photoImage;
@@ -76,6 +74,8 @@
 @property (nonatomic) struct CGSize { float x1; float x2; } photoSize;
 @property (nonatomic, retain) UIImage *placeHolderImage;
 @property (nonatomic, readonly) BOOL providesVisualFeedbackOnPress;
+@property (nonatomic) BOOL shouldPrepareForPlayback;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) PUTextBannerView *textBannerView;
 @property (getter=isTextBannerVisible, nonatomic) BOOL textBannerVisible;
 @property (nonatomic, readonly) double videoDuration;
@@ -85,21 +85,17 @@
 
 - (void).cxx_destruct;
 - (void)_addAvalancheStackViewIfNecessary;
-- (void)_addIrisPlayerViewIfNecessary;
-- (void)_assertInsideIrisPlayerChanges;
+- (void)_addLivePhotoViewIfNecessary;
 - (id)_crossfadeImageView;
-- (BOOL)_isIrisVitalityEnabled;
-- (BOOL)_isPerformingIrisPlayerChanges;
-- (void)_playerPlaybackStateDidChange;
 - (void)_removeAvalancheStackViewIfNecessary;
-- (void)_removeIrisPlayerViewIfNecessary;
+- (void)_removeLivePhotoViewIfNecessary;
 - (void)_removePhotoImageViewIfNecessary;
-- (void)_setIrisVitalityEnabled:(BOOL)arg1;
-- (void)_setPerformingIrisPlayerChanges:(BOOL)arg1;
+- (void)_startPlaybackWhenLivePhotoAvailableWithStyle:(int)arg1;
 - (void)_updateBadgeView;
 - (void)_updateContentViewClipsToBounds;
 - (void)_updateImageView;
-- (void)_updateIrisVitalityEnabled;
+- (void)_updateLivePhotoViewPreparing;
+- (void)_updateLivePhotoViewVisibility;
 - (void)_updatePhotoDecoration;
 - (void)_updateSubviewOrdering;
 - (void)_updateTextBannerView;
@@ -112,7 +108,7 @@
 - (int)badgeType;
 - (id)contentView;
 - (struct CGSize { float x1; float x2; })contentViewSizeThatFits:(struct CGSize { float x1; float x2; })arg1;
-- (void)dealloc;
+- (id)delegate;
 - (int)fillMode;
 - (BOOL)flattensBadgeView;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })imageContentFrame;
@@ -120,17 +116,13 @@
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })imageTransform;
 - (id)init;
 - (id)initWithContentView:(id)arg1;
-- (id)irisContainerScrollView;
-- (id)irisDelegate;
-- (id)irisPlayer;
-- (float)irisPlayerScrubOffset;
-- (id)irisPlayerView;
-- (BOOL)isIrisPlayerHidden;
+- (BOOL)isLivePhotoHidden;
 - (BOOL)isTextBannerVisible;
 - (void)layoutSubviewsOfContentView;
+- (id)livePhoto;
+- (id)livePhotoView;
+- (void)livePhotoView:(id)arg1 willBeginPlaybackWithStyle:(int)arg2;
 - (BOOL)needsAvalancheStack;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
-- (void)performIrisPlayerChanges:(id /* block */)arg1;
 - (id)photoDecoration;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })photoDecorationBorderViewFrameForImageContentFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)photoImage;
@@ -143,23 +135,25 @@
 - (void)setAvoidsImageViewIfPossible:(BOOL)arg1;
 - (void)setAvoidsPhotoDecoration:(BOOL)arg1;
 - (void)setBadgeType:(int)arg1 videoDuration:(double)arg2;
+- (void)setDelegate:(id)arg1;
 - (void)setFillMode:(int)arg1;
 - (void)setFlattensBadgeView:(BOOL)arg1;
 - (void)setImageTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-- (void)setIrisContainerScrollView:(id)arg1;
-- (void)setIrisDelegate:(id)arg1;
-- (void)setIrisPlayer:(id)arg1;
-- (void)setIrisPlayerHidden:(BOOL)arg1;
-- (void)setIrisPlayerScrubOffset:(float)arg1;
-- (void)setIrisPlayerView:(id)arg1;
+- (void)setLivePhoto:(id)arg1;
+- (void)setLivePhotoHidden:(BOOL)arg1;
+- (void)setLivePhotoView:(id)arg1;
 - (void)setNeedsAvalancheStack:(BOOL)arg1;
 - (void)setPhotoDecoration:(id)arg1;
 - (void)setPhotoImage:(id)arg1;
 - (void)setPhotoImageView:(id)arg1;
 - (void)setPhotoSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPlaceHolderImage:(id)arg1;
+- (void)setShouldPrepareForPlayback:(BOOL)arg1;
 - (void)setTextBannerVisible:(BOOL)arg1;
 - (void)set_crossfadeImageView:(id)arg1;
+- (BOOL)shouldPrepareForPlayback;
+- (void)startPlaybackWithStyle:(int)arg1;
+- (void)stopPlayback;
 - (id)textBannerView;
 - (void)updatePhotoImageWithoutReconfiguring:(id)arg1;
 - (double)videoDuration;

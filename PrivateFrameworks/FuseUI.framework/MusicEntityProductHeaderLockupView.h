@@ -7,6 +7,7 @@
     UIView *_artworkEditingOverlayView;
     _UIBackdropView *_backdropView;
     UIView *_bottomHairlineView;
+    float _cachedTallestButtonHeight;
     MusicNowPlayingFloatingButton *_cameraButton;
     UIButton *_contextualActionsButton;
     <MusicEntityProductHeaderLockupViewDelegate> *_delegate;
@@ -28,6 +29,7 @@
     UIButton *_refreshButton;
     UIButton *_shareButton;
     BOOL _shouldIgnoreArtworkImageChanges;
+    BOOL _shouldUpdateTallestButtonHeightCache;
 }
 
 @property (nonatomic, readonly) UIButton *contextualActionsButton;
@@ -110,5 +112,6 @@
 - (void)textViewDidChange:(id)arg1;
 - (void)tintColorDidChange;
 - (void)traitCollectionDidChange:(id)arg1;
+- (void)willMoveToSuperview:(id)arg1;
 
 @end

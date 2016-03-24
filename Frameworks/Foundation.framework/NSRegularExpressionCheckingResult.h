@@ -7,6 +7,8 @@
 @property (readonly) NSArray *rangeArray;
 @property (readonly) NSRegularExpression *regularExpression;
 
++ (BOOL)supportsSecureCoding;
+
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

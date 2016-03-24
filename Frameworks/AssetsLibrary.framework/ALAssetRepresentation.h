@@ -17,7 +17,7 @@
 - (id)UTI;
 - (int)_fileDescriptor;
 - (id)_imageData;
-- (struct CGImage { }*)_largeDisplayableImageForFormat:(int)arg1;
+- (struct CGImage { }*)_largeDisplayableImageForFormatID:(int)arg1;
 - (void)dealloc;
 - (id)description;
 - (struct CGSize { float x1; float x2; })dimensions;

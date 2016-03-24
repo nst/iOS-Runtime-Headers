@@ -2,31 +2,30 @@
    Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
  */
 
-@interface ATDevicePairedSyncManager : NSObject <ATIDSServiceListener, ATMessageLinkObserver, ATSessionObserver, PSYProgressObserverDelegate> {
+@interface ATDevicePairedSyncManager : NSObject <ATMessageLinkObserver, ATSessionObserver, PSYInitialSyncStateObserverDelegate> {
     ATDeviceService *_deviceService;
-    ATIDSService *_idsService;
-    BOOL _initialSyncPhaseCompleted;
+    PSYInitialSyncStateObserver *_initialSyncStateObserver;
     NSObject<OS_dispatch_queue> *_queue;
-    PSYProgressObserver *_syncProgressObserver;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property BOOL initialSyncPhaseCompleted;
 @property (readonly) Class superclass;
 
++ (id)activePairedDevicePairingId;
++ (id)devicePairingId;
+
 - (void).cxx_destruct;
+- (void)_cleanupSyncState;
+- (void)_triggerInitialSync;
+- (void)deviceBecameActive:(id)arg1;
 - (void)handleDevicePairedNotification;
 - (void)handleDeviceUnPairedNotification;
 - (BOOL)hasRestriction;
-- (void)idsServiceDevicesDidChange:(id)arg1;
-- (id)initWithIDSService:(id)arg1;
-- (BOOL)initialSyncPhaseCompleted;
-- (void)progressObserver:(id)arg1 didFinishActivity:(id)arg2 withError:(id)arg3;
-- (void)progressObserverDidChangeProgress:(id)arg1;
-- (void)progressObserverDidChangeState:(id)arg1;
-- (void)setInitialSyncPhaseCompleted:(BOOL)arg1;
-- (void)start;
+- (id)init;
+- (void)initialSyncStateObserver:(id)arg1 initialSyncDidCompleteForPairingIdentifier:(id)arg2;
+- (void)initialSyncStateObserver:(id)arg1 syncDidCompleteForPairingIdentifier:(id)arg2;
+- (void)initialSyncStateObserver:(id)arg1 syncDidResetForPairingIdentifier:(id)arg2;
 
 @end

@@ -45,6 +45,7 @@
 - (id)contentLoadedIfNeeded;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)dataAccessor;
+- (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2;
 - (void)dealloc;
 - (id)displayProfile;
 - (void)downloadRemoteAssetsWithCompletion:(id /* block */)arg1;
@@ -57,8 +58,8 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithData:(id)arg1 error:(id*)arg2;
 - (id)initWithData:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
-- (id)initWithDataAccessor:(id)arg1;
 - (id)initWithDictionary:(id)arg1 bundle:(id)arg2;
+- (id)initWithFileDataAccessor:(id)arg1;
 - (id)initWithFileURL:(id)arg1 error:(id*)arg2;
 - (id)initWithFileURL:(id)arg1 warnings:(id*)arg2 orError:(id*)arg3;
 - (BOOL)initializedViaInitWithCoder;

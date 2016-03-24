@@ -18,6 +18,7 @@
 - (void)performBlock:(id /* block */)arg1 waitUntilDone:(BOOL)arg2;
 - (void)registerClass:(const struct { char *x1; int (*x2)(); int (*x3)(); int (*x4)(); int (*x5)(); int (*x6)(); int (*x7)(); unsigned char x8; void *x9; int x10; struct { /* ? */ } *x11; void *x12; char *x13; int (*x14)(); int (*x15)(); int x16; struct { /* ? */ } *x17; int x18; int (*x19)(); }*)arg1;
 - (void)setupDatabaseWithAllowLocalMigration:(BOOL)arg1 pathBlock:(id /* block */)arg2 setupStoreHandler:(int (*)arg3 connectionInitializer:(int (*)arg4 versionChecker:(int (*)arg5 migrationHandler:(int (*)arg6 schemaVersion:(int)arg7 dataProtectionClass:(unsigned int)arg8 registerBlock:(id /* block */)arg9;
+- (void)setupDatabaseWithAllowLocalMigration:(BOOL)arg1 pathBlock:(id /* block */)arg2 setupStoreHandler:(int (*)arg3 connectionInitializer:(int (*)arg4 versionChecker:(int (*)arg5 migrationHandler:(int (*)arg6 schemaVersion:(int)arg7 dataProtectionClass:(unsigned int)arg8 registerBlock:(id /* block */)arg9 exclusiveOwnership:(BOOL)arg10;
 - (void)teardownDatabase;
 
 @end

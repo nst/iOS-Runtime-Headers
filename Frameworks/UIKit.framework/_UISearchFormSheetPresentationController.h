@@ -18,7 +18,7 @@
 }
 
 @property (nonatomic, readonly) UIPresentationController<_UISearchControllerPresenting> *adaptivePresentationController;
-@property (nonatomic, readonly) BOOL animatorShouldSizeResultsContainerView;
+@property (nonatomic, readonly) BOOL animatorShouldLayoutPresentationViews;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) unsigned int edgeForHidingNavigationBar;
@@ -49,7 +49,7 @@
 - (void)_transitionToWillBegin;
 - (id)adaptivePresentationController;
 - (int)adaptivePresentationStyle;
-- (BOOL)animatorShouldSizeResultsContainerView;
+- (BOOL)animatorShouldLayoutPresentationViews;
 - (void)dealloc;
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;
 - (void)dismissalTransitionWillBegin;

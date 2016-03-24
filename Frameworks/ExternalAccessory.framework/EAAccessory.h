@@ -73,6 +73,7 @@
 - (BOOL)sendDestinationInformation:(id)arg1 identifier:(id)arg2;
 - (BOOL)sendEphemeris:(id)arg1;
 - (BOOL)sendEphemerisPointDataGpsWeek:(unsigned int)arg1 gpsTOW:(double)arg2 latitude:(double)arg3 longitude:(double)arg4 accuracy:(unsigned short)arg5;
+- (BOOL)sendGPRMCDataStatusValueA:(BOOL)arg1 ValueV:(BOOL)arg2 ValueX:(BOOL)arg3;
 - (BOOL)sendGpsWeek:(unsigned int)arg1 gpsTOW:(double)arg2;
 - (BOOL)sendPointOfInterestInformation:(id)arg1 identifier:(unsigned short)arg2;
 - (id)serialNumber;

@@ -9,6 +9,7 @@
     NSString *_localizedProgressDescription;
     NSString *_productIdentifier;
     PKPaymentPass *_provisionedPass;
+    BOOL _provisioningUserInterfaceIsVisible;
     PKPaymentRequirementsResponse *_requirementsResponse;
     int _state;
     NSMutableSet *_tasks;
@@ -54,10 +55,13 @@
 - (id)eligibilityResponse;
 - (id)initWithWebService:(id)arg1;
 - (id)localizedProgressDescription;
+- (void)noteProvisioningUserInterfaceDidAppear;
+- (void)noteProvisioningUserInterfaceDidDisappear;
 - (void)paymentWebService:(id)arg1 didCompleteTSMConnectionForTaskID:(unsigned int)arg2;
 - (void)paymentWebService:(id)arg1 didQueueTSMConnectionForTaskID:(unsigned int)arg2;
 - (id)productIdentifier;
 - (id)provisionedPass;
+- (BOOL)provisioningUserInterfaceIsVisible;
 - (void)requestEligibility:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)requestProvisioning:(id)arg1 withCompletionHandler:(id /* block */)arg2;
 - (void)requestRequirements:(id)arg1 withCompletionHandler:(id /* block */)arg2;

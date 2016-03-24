@@ -7,6 +7,8 @@
     NSString *_applicationVersion;
     NSString *_countryCode;
     NSString *_dataDirectory;
+    NSString *_disputedBorderCountryOverride;
+    NSString *_disputedBorderRegionOverride;
     NSString *_environment;
     NSString *_hardwareIdentifier;
     NSString *_os;
@@ -20,6 +22,8 @@
 @property (nonatomic, copy) NSString *countryCode;
 @property (nonatomic, copy) NSString *dataDirectory;
 @property (nonatomic, readonly) NSString *directorySuffix;
+@property (nonatomic, copy) NSString *disputedBorderCountryOverride;
+@property (nonatomic, copy) NSString *disputedBorderRegionOverride;
 @property (nonatomic, copy) NSString *environment;
 @property (nonatomic, copy) NSString *hardwareIdentifier;
 @property (nonatomic, copy) NSString *os;
@@ -37,6 +41,8 @@
 - (id)dataDirectory;
 - (void)dealloc;
 - (id)directorySuffix;
+- (id)disputedBorderCountryOverride;
+- (id)disputedBorderRegionOverride;
 - (id)environment;
 - (id)hardwareIdentifier;
 - (unsigned int)hash;
@@ -51,6 +57,8 @@
 - (void)setApplicationVersion:(id)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setDataDirectory:(id)arg1;
+- (void)setDisputedBorderCountryOverride:(id)arg1;
+- (void)setDisputedBorderRegionOverride:(id)arg1;
 - (void)setEnvironment:(id)arg1;
 - (void)setHardwareIdentifier:(id)arg1;
 - (void)setOs:(id)arg1;

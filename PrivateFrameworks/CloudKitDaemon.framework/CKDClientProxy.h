@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudKitDaemon.framework/CloudKitDaemon
  */
 
-@interface CKDClientProxy : NSObject <CKDSystemAvailabilityWatcher, CKXPCDaemon> {
+@interface CKDClientProxy : NSObject <CKDSystemAvailabilityWatcher> {
     NSOperationQueue *_backgroundOperationThrottleQueue;
     NSString *_bundleIdentifier;
     NSArray *_cachedSandboxExtensions;
@@ -25,7 +25,6 @@
     CKWatchdog *_watchdog;
 }
 
-@property (nonatomic, readonly) struct { unsigned int x1[8]; } auditToken;
 @property (nonatomic, retain) NSOperationQueue *backgroundOperationThrottleQueue;
 @property (nonatomic, retain) NSString *bundleIdentifier;
 @property (nonatomic, retain) NSArray *cachedSandboxExtensions;
@@ -36,7 +35,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *cancellationQueue;
 @property (nonatomic, retain) NSOperationQueue *cleanupOperationQueue;
 @property (nonatomic) NSXPCConnection *connection;
-@property (nonatomic, readonly) CKDClientContext *context;
+@property (nonatomic, retain) CKDClientContext *context;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
@@ -61,9 +60,12 @@
 - (id)_clientPrefixEntitlement;
 - (void)_finishClientSetupWithClientContext:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_globalStatusForApplicationPermission:(unsigned int)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
+- (void)_handleCheckpointForOperationWithID:(id)arg1 withArguments:(id)arg2;
 - (void)_handleCompletionForOperation:(id)arg1 withBlock:(id /* block */)arg2;
+- (void)_handleCompletionForOperationWithID:(id)arg1 isLongLived:(BOOL)arg2 withResult:(id)arg3 block:(id /* block */)arg4;
 - (void)_handleProgressForOperation:(id)arg1 withArguments:(id)arg2;
 - (void)_handleProgressForOperation:(id)arg1 withArguments:(id)arg2 completion:(id /* block */)arg3;
+- (void)_handleProgressForOperationWithID:(id)arg1 withArguments:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_hasCustomAccountsEntitlement;
 - (BOOL)_hasEntitlementForKey:(id)arg1;
 - (BOOL)_hasEnvironmentEntitlement;
@@ -79,7 +81,6 @@
 - (void)accountsWillDeleteAccount:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)applicationIdentifier;
 - (id)apsEnvironmentEntitlement;
-- (struct { unsigned int x1[8]; })auditToken;
 - (id)backgroundOperationThrottleQueue;
 - (id)bundleIdentifier;
 - (id)cachedSandboxExtensions;
@@ -98,10 +99,13 @@
 - (void)clearRecordCacheWithSetupInfo:(id)arg1 databaseScope:(int)arg2;
 - (id)connection;
 - (id)context;
+- (void)currentDeviceIDWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)currentUserIDWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)darkWakeEnabledEntitlement;
 - (void)dealloc;
 - (id)description;
+- (void)fetchAllLongLivedOperationIDsWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchLongLivedOperationsWithIDs:(id)arg1 setupInfo:(id)arg2 completionHandler:(id /* block */)arg3;
 - (void)forceFinishClientSetupWithClientContext:(id)arg1;
 - (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(BOOL)arg2 completionHandler:(id /* block */)arg3;
 - (void)getNewWebSharingIdentityWithSetupInfo:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -112,9 +116,12 @@
 - (BOOL)hasCloudKitSystemServiceEntitlement;
 - (BOOL)hasDarkWakeNetworkReachabilityEnabledEntitlement;
 - (BOOL)hasDeviceIdentifierEntitlement;
+- (BOOL)hasLightweightPCSEntitlement;
 - (BOOL)hasMasqueradingEntitlement;
 - (BOOL)hasProtectionDataEntitlement;
+- (BOOL)hasTCCAuthorization;
 - (id)initWithConnection:(id)arg1;
+- (BOOL)isLongLived;
 - (BOOL)isSandboxed;
 - (id)openFileWithOpenInfo:(id)arg1 error:(id*)arg2;
 - (id)operationQueue;

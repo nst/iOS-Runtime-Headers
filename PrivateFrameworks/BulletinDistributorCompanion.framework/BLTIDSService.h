@@ -18,6 +18,7 @@
 - (id)initWithService:(id)arg1;
 - (void)removeDelegate:(id)arg1;
 - (BOOL)sendProtobuf:(id)arg1 toDestinations:(id)arg2 priority:(int)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
+- (BOOL)sendResourceAtURL:(id)arg1 metadata:(id)arg2 toDestinations:(id)arg3 priority:(int)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
 - (void)setProtobufAction:(SEL)arg1 forIncomingRequestsOfType:(unsigned short)arg2;
 - (void)setProtobufAction:(SEL)arg1 forIncomingResponsesOfType:(unsigned short)arg2;
 

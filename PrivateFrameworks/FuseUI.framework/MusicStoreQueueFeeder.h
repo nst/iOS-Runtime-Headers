@@ -25,6 +25,7 @@
 - (id)MPU_contentItemIdentifierCollection;
 - (void)_allowsHighQualityMusicStreamingOnCellularDidChangeNotification:(id)arg1;
 - (void)_configurePlaceholderItem;
+- (id)_currentEmptyQueueErrorUsingEntityProviderCount:(BOOL)arg1;
 - (BOOL)_hasPlaceholderItemAtIndex:(unsigned int)arg1;
 - (BOOL)_reloadStoreMetadataContexts;
 - (void)_resolveItemMetadataContexts:(id)arg1 clientContext:(id)arg2 responseHandler:(id /* block */)arg3;

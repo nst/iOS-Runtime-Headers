@@ -36,6 +36,7 @@
 @property (nonatomic, readonly) float cloudFeedSeparatorHeight;
 @property (nonatomic, readonly) NSDictionary *cloudFeedWhiteDefaultTextAttributes;
 @property (nonatomic, readonly) NSDictionary *cloudFeedWhiteEmphasizedTextAttributes;
+@property (nonatomic, readonly) UIColor *cloudStatusHighlightColor;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } commentsButtonTextInset;
 @property (nonatomic, readonly) UIImage *compactLoadErrorIcon;
 @property (nonatomic, readonly) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentCommentsButtonImageInset;
@@ -174,6 +175,7 @@
 - (float)cloudFeedSeparatorHeight;
 - (id)cloudFeedWhiteDefaultTextAttributes;
 - (id)cloudFeedWhiteEmphasizedTextAttributes;
+- (id)cloudStatusHighlightColor;
 - (id)cloudWelcomeViewTitleLabelFontForSize:(float)arg1;
 - (id)commentsButtonStringForCount:(int)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })commentsButtonTextInset;

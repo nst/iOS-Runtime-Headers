@@ -12,9 +12,6 @@
     BOOL _loopingNecessaryForString;
     BOOL _loopingNow;
     float _maxWidth;
-    _UILegibilityImageSet *_serviceImage;
-    float _serviceImageLetterSpacing;
-    float _serviceImageWidth;
     NSString *_serviceString;
     float _serviceWidth;
 }

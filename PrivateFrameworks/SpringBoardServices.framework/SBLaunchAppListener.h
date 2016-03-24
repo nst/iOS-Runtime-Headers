@@ -15,6 +15,7 @@
 
 + (BOOL)waitForLaunchThatSpringBoardKnowsAbout:(id)arg1 timeout:(double)arg2;
 
+- (void).cxx_destruct;
 - (void)_didFailToLaunch;
 - (void)_didLaunch;
 - (void)dealloc;

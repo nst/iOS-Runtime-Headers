@@ -9,6 +9,7 @@
 @property (nonatomic, copy) NSNumber *outgoing;
 @property (nonatomic, copy) NSArray *recipients;
 @property (nonatomic, copy) NSArray *senders;
+@property (nonatomic, retain) SASmsGroupName *smsGroup;
 @property (nonatomic, copy) NSDate *start;
 @property (nonatomic, copy) NSString *subject;
 @property (nonatomic, copy) NSNumber *unread;
@@ -29,9 +30,11 @@
 - (void)setOutgoing:(id)arg1;
 - (void)setRecipients:(id)arg1;
 - (void)setSenders:(id)arg1;
+- (void)setSmsGroup:(id)arg1;
 - (void)setStart:(id)arg1;
 - (void)setSubject:(id)arg1;
 - (void)setUnread:(id)arg1;
+- (id)smsGroup;
 - (id)start;
 - (id)subject;
 - (id)unread;

@@ -6,6 +6,8 @@
     NSArray *_alternativeStrings;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)alternativeStrings;
 - (void)dealloc;
 - (id)description;

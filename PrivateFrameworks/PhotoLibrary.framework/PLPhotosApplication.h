@@ -57,6 +57,7 @@
 - (void)disableNetworkObservation;
 - (void)enableNetworkObservation;
 - (void*)getSharedAddressBook;
+- (id)getSharedContactStore;
 - (void)handleImportCompleteAlertResponse:(struct __CFUserNotification { }*)arg1 flags:(unsigned long)arg2;
 - (id)iPhotoMigrationActivityAlert;
 - (BOOL)isOnWifi;

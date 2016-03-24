@@ -10,6 +10,7 @@
     BOOL _isURLBagRequest;
     int _machineDataStyle;
     BOOL _needsAuthentication;
+    BOOL _needsTermsAndConditionsAcceptance;
     BOOL _needsURLBag;
     SSVFairPlaySAPSession *_sapSession;
     BOOL _shouldSendXTokenHeader;
@@ -26,6 +27,7 @@
 @property (nonatomic) BOOL ignorePreexistingSecureToken;
 @property int machineDataStyle;
 @property BOOL needsAuthentication;
+@property BOOL needsTermsAndConditionsAcceptance;
 @property BOOL needsURLBag;
 @property BOOL performsMachineDataActions;
 @property BOOL shouldSendXTokenHeader;
@@ -70,6 +72,7 @@
 - (BOOL)isURLBagRequest;
 - (int)machineDataStyle;
 - (BOOL)needsAuthentication;
+- (BOOL)needsTermsAndConditionsAcceptance;
 - (BOOL)needsURLBag;
 - (id)newRequestWithURL:(id)arg1;
 - (BOOL)performsMachineDataActions;
@@ -79,6 +82,7 @@
 - (void)setIgnorePreexistingSecureToken:(BOOL)arg1;
 - (void)setMachineDataStyle:(int)arg1;
 - (void)setNeedsAuthentication:(BOOL)arg1;
+- (void)setNeedsTermsAndConditionsAcceptance:(BOOL)arg1;
 - (void)setNeedsURLBag:(BOOL)arg1;
 - (void)setPerformsMachineDataActions:(BOOL)arg1;
 - (void)setSAPSession:(id)arg1;

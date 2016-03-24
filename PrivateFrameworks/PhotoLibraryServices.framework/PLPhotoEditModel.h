@@ -53,6 +53,18 @@
     float _smartToneLevel;
     NSDictionary *_smartToneStatistics;
     float _straightenAngle;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } _trimEndTimeOffset;
+    struct { 
+        long long value; 
+        int timescale; 
+        unsigned int flags; 
+        long long epoch; 
+    } _trimStartTimeOffset;
     BOOL _whiteBalanceEnabled;
     float _whiteBalanceFaceI;
     float _whiteBalanceFaceQ;
@@ -105,6 +117,8 @@
 @property (nonatomic, readonly) float smartToneLevel;
 @property (nonatomic, readonly, copy) NSDictionary *smartToneStatistics;
 @property (nonatomic, readonly) float straightenAngle;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } trimEndTimeOffset;
+@property (nonatomic, readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } trimStartTimeOffset;
 @property (getter=isWhiteBalanceEnabled, nonatomic, readonly) BOOL whiteBalanceEnabled;
 @property (nonatomic, readonly) float whiteBalanceFaceI;
 @property (nonatomic, readonly) float whiteBalanceFaceQ;
@@ -193,6 +207,7 @@
 - (BOOL)isSmartColorPrecisionEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isSmartToneEnabled;
 - (BOOL)isSmartTonePrecisionEqualToPhotoEditModel:(id)arg1;
+- (BOOL)isTrimEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isVisuallyEqualToPhotoEditModel:(id)arg1;
 - (BOOL)isWhiteBalanceEnabled;
 - (id)legacyAutoEnhanceFilters;
@@ -214,6 +229,8 @@
 - (float)smartToneLevel;
 - (id)smartToneStatistics;
 - (float)straightenAngle;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })trimEndTimeOffset;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })trimStartTimeOffset;
 - (float)whiteBalanceFaceI;
 - (float)whiteBalanceFaceQ;
 - (float)whiteBalanceFaceStrength;

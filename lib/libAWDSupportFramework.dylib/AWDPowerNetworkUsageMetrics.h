@@ -14,6 +14,8 @@
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic, retain) NSMutableArray *usages;
 
++ (Class)usageType;
+
 - (void)addUsage:(id)arg1;
 - (void)clearUsages;
 - (void)copyTo:(id)arg1;

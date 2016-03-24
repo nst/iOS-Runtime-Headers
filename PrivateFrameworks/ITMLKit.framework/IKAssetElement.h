@@ -10,6 +10,7 @@
 @property (nonatomic, readonly, retain) NSString *adamID;
 @property (nonatomic, readonly, retain) NSString *bookmarkID;
 @property (nonatomic, readonly, retain) NSString *contentID;
+@property (nonatomic, readonly, retain) NSString *externalID;
 @property (getter=isInfiniteDuration, nonatomic, readonly) BOOL infiniteDuration;
 @property (nonatomic, readonly) int keyDelivery;
 @property (nonatomic, readonly, retain) NSString *serviceID;
@@ -22,6 +23,7 @@
 - (id)adamID;
 - (id)bookmarkID;
 - (id)contentID;
+- (id)externalID;
 - (BOOL)infiniteDuration;
 - (BOOL)isInfiniteDuration;
 - (int)keyDelivery;

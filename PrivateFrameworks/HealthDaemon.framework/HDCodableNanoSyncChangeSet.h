@@ -4,19 +4,36 @@
 
 @interface HDCodableNanoSyncChangeSet : PBCodable <HDNanoSyncDescription, HDNanoSyncPersistentUserInfoCopying, NSCopying> {
     NSMutableArray *_changes;
+    struct { 
+        unsigned int sessionStartDate : 1; 
+        unsigned int statusCode : 1; 
+    } _has;
+    HDCodableError *_sessionError;
+    double _sessionStartDate;
+    NSData *_sessionUUID;
+    int _statusCode;
 }
 
 @property (nonatomic, retain) NSMutableArray *changes;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasSessionError;
+@property (nonatomic) BOOL hasSessionStartDate;
+@property (nonatomic, readonly) BOOL hasSessionUUID;
+@property (nonatomic) BOOL hasStatusCode;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) HDCodableError *sessionError;
+@property (nonatomic) double sessionStartDate;
+@property (nonatomic, retain) NSData *sessionUUID;
+@property (nonatomic) int statusCode;
 @property (readonly) Class superclass;
 
-+ (id)changeSetWithChanges:(id)arg1;
++ (id)changeSetWithChanges:(id)arg1 sessionUUID:(id)arg2 startDate:(id)arg3 sessionError:(id)arg4 statusCode:(int)arg5;
 + (id)persistentUserInfoKey;
 + (id)retreiveFromPersistentUserInfo:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_addChanges:(id)arg1;
 - (void)addChanges:(id)arg1;
 - (void)addToPersistentUserInfo:(id)arg1;
 - (id)changes;
@@ -26,14 +43,31 @@
 - (id)copyForPersistentUserInfo;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)decodedSessionError;
+- (id)decodedSessionStartDate;
+- (id)decodedSessionUUID;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasSessionError;
+- (BOOL)hasSessionStartDate;
+- (BOOL)hasSessionUUID;
+- (BOOL)hasStatusCode;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (id)nanoSyncDescription;
 - (BOOL)readFrom:(id)arg1;
+- (id)sessionError;
+- (double)sessionStartDate;
+- (id)sessionUUID;
 - (void)setChanges:(id)arg1;
+- (void)setHasSessionStartDate:(BOOL)arg1;
+- (void)setHasStatusCode:(BOOL)arg1;
+- (void)setSessionError:(id)arg1;
+- (void)setSessionStartDate:(double)arg1;
+- (void)setSessionUUID:(id)arg1;
+- (void)setStatusCode:(int)arg1;
+- (int)statusCode;
 - (void)writeTo:(id)arg1;
 
 @end

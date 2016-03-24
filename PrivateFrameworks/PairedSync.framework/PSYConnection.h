@@ -15,9 +15,6 @@
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 - (void).cxx_destruct;
-- (void)_handleConnectionInterruption;
-- (void)_handleConnectionInvalidation;
-- (void)_resumeConnectionIfPossible;
 - (id)connection;
 - (id)delegate;
 - (id)init;

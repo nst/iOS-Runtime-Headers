@@ -4,6 +4,7 @@
 
 @interface UIStatusBarRadarItemView : UIStatusBarButtonActionItemView
 
+- (float)buttonCharge;
 - (int)buttonType;
 - (id)contentsImage;
 - (float)extraRightPadding;

@@ -14,8 +14,6 @@
 @property (nonatomic, retain) CPLResource *resource;
 @property (nonatomic, copy) NSString *taskIdentifier;
 
-// Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
-
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -36,10 +34,5 @@
 - (void)setResource:(id)arg1;
 - (void)setTaskIdentifier:(id)arg1;
 - (id)taskIdentifier;
-
-// Image: /System/Library/PrivateFrameworks/PhotoLibraryServices.framework/PhotoLibraryServices
-
-- (id)assetUuid;
-- (void)setAssetUuid:(id)arg1;
 
 @end

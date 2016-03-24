@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBScene : NSObject <BSDescriptionProviding, FBSceneHost> {
+@interface FBScene : NSObject <BSDescriptionProviding, FBSceneHost, FBUISceneUpdater> {
     <FBSceneClient> *_client;
     FBProcess *_clientProcess;
     <FBSceneClientProvider> *_clientProvider;
@@ -16,8 +16,11 @@
     BOOL _lockedForMutation;
     FBSMutableSceneSettings *_mutableSettings;
     FBSSceneSettings *_settings;
+    FBUISceneSpecification *_specification;
     unsigned int _transactionID;
     BOOL _valid;
+    BOOL _waitingForResponse;
+    NSString *_workspaceIdentifier;
 }
 
 @property (setter=_setLockedForMutation:, nonatomic) BOOL _lockedForMutation;
@@ -37,14 +40,17 @@
 @property (nonatomic, readonly, copy) NSString *identifier;
 @property (nonatomic, readonly, retain) FBSceneLayerManager *layerManager;
 @property (nonatomic, readonly, retain) FBSMutableSceneSettings *mutableSettings;
+@property (nonatomic, readonly, copy) NSString *sceneIdentifier;
 @property (nonatomic, readonly, retain) FBSSceneSettings *settings;
+@property (nonatomic, copy) FBUISceneSpecification *specification;
 @property (readonly) Class superclass;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
+@property (getter=isWaitingForResponse, nonatomic, readonly) BOOL waitingForResponse;
+@property (nonatomic, copy) NSString *workspaceIdentifier;
 
 - (void)_addSceneGeometryObserver:(id)arg1;
-- (void)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
+- (unsigned int)_applyMutableSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)_handleSceneClientMessage:(id)arg1 withBlock:(id /* block */)arg2;
-- (unsigned int)_incrementTransactionID;
 - (void)_invalidateWithTransitionContext:(id)arg1;
 - (BOOL)_lockedForMutation;
 - (void)_removeSceneGeometryObserver:(id)arg1;
@@ -59,6 +65,7 @@
 - (id)clientProcess;
 - (id)clientProvider;
 - (id)clientSettings;
+- (id)contentView;
 - (id)contextHostManager;
 - (id)contextManager;
 - (id)createSnapshot;
@@ -75,20 +82,27 @@
 - (id)identifier;
 - (id)initWithIdentifier:(id)arg1 display:(id)arg2 initialClientSettings:(id)arg3 clientProvider:(id)arg4;
 - (BOOL)isValid;
+- (BOOL)isWaitingForResponse;
 - (id)layerManager;
 - (id)mutableSettings;
+- (id)sceneIdentifier;
 - (void)sendActions:(id)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setSpecification:(id)arg1;
+- (void)setWorkspaceIdentifier:(id)arg1;
 - (id)settings;
 - (id)snapshotContext;
+- (id)specification;
 - (id)succinctDescription;
 - (id)succinctDescriptionBuilder;
 - (id)uiClientSettings;
 - (id)uiSettings;
 - (void)updateSettings:(id)arg1 withTransitionContext:(id)arg2;
+- (void)updateSettings:(id)arg1 withTransitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)updateSettingsWithBlock:(id /* block */)arg1;
 - (void)updateSettingsWithTransitionBlock:(id /* block */)arg1;
 - (void)updateUISettingsWithBlock:(id /* block */)arg1;
 - (void)updateUISettingsWithTransitionBlock:(id /* block */)arg1;
+- (id)workspaceIdentifier;
 
 @end

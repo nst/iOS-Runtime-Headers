@@ -9,6 +9,7 @@
     int _orientation;
     UIScreen *_screen;
     BOOL _touchInput;
+    BOOL _touchpadInput;
 }
 
 @property (nonatomic, readonly) int idiom;
@@ -18,6 +19,7 @@
 @property (nonatomic) int orientation;
 @property (nonatomic, readonly) UIScreen *screen;
 @property (nonatomic, readonly) BOOL touchInput;
+@property (nonatomic, readonly) BOOL touchpadInput;
 
 + (id)traitsWithScreen:(id)arg1 orientation:(int)arg2;
 
@@ -32,6 +34,7 @@
 - (void)setKeyboardWidth:(float)arg1;
 - (void)setOrientation:(int)arg1;
 - (BOOL)touchInput;
+- (BOOL)touchpadInput;
 - (void)updateForTextInputTraits:(id)arg1 supportsTouchInput:(id)arg2;
 
 @end

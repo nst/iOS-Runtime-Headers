@@ -14,6 +14,8 @@
 @property (nonatomic) BOOL hasTimestamp;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)appPowerType;
+
 - (void)addAppPower:(id)arg1;
 - (id)appPowerAtIndex:(unsigned int)arg1;
 - (id)appPowers;

@@ -11,6 +11,9 @@
 
 @property (nonatomic, readonly) long error;
 
++ (id)_badURLError;
++ (id)establishedSessionWithCertURL:(id)arg1 sessionURL:(id)arg2 error:(id*)arg3;
+
 - (void).cxx_destruct;
 - (void)dealloc;
 - (long)error;

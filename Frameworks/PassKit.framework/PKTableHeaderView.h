@@ -6,7 +6,6 @@
     UIButton *_actionButton;
     UIActivityIndicatorView *_activityIndicator;
     float _bottomPadding;
-    BOOL _buddyPad;
     UIImageView *_checkmarkView;
     UIImageView *_imageView;
     struct CGSize { 
@@ -14,6 +13,7 @@
         float height; 
     } _originalImageViewSize;
     BOOL _shouldResizeImageToFit;
+    unsigned int _style;
     UILabel *_subtitleLabel;
     UILabel *_titleLabel;
     float _topPadding;
@@ -22,10 +22,10 @@
 @property (nonatomic, readonly, retain) UIButton *actionButton;
 @property (nonatomic, readonly, retain) UIActivityIndicatorView *activityIndicator;
 @property (nonatomic) float bottomPadding;
-@property (getter=isBuddyPad, nonatomic) BOOL buddyPad;
 @property (nonatomic, readonly, retain) UIImageView *checkmarkView;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (nonatomic) BOOL shouldResizeImageToFit;
+@property (nonatomic) unsigned int style;
 @property (nonatomic, readonly, retain) UILabel *subtitleLabel;
 @property (nonatomic, readonly, retain) UILabel *titleLabel;
 @property (nonatomic) float topPadding;
@@ -39,15 +39,15 @@
 - (id)checkmarkView;
 - (void)dealloc;
 - (id)imageView;
-- (BOOL)isBuddyPad;
 - (void)layoutSubviews;
 - (void)setBottomPadding:(float)arg1;
-- (void)setBuddyPad:(BOOL)arg1;
 - (void)setImageView:(id)arg1;
 - (void)setShouldResizeImageToFit:(BOOL)arg1;
+- (void)setStyle:(unsigned int)arg1;
 - (void)setTopPadding:(float)arg1;
 - (BOOL)shouldResizeImageToFit;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
+- (unsigned int)style;
 - (id)subtitleLabel;
 - (void)tintColorDidChange;
 - (id)titleLabel;

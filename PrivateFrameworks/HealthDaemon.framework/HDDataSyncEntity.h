@@ -9,16 +9,18 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (id)_baseDataObjectPredicate;
 + (BOOL)_insertObjectsFromCodableObjectCollection:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)_objectWithCodable:(id)arg1;
++ (id)_provenanceFromCollection:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (id)_syncObjectPredicateWithPredicate:(id)arg1;
 + (id)decodeSyncObjectWithData:(id)arg1;
 + (Class)healthEntityClass;
-+ (long long)nextSyncAnchorWithStore:(id)arg1 startSyncAnchor:(long long)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (long long)nextSyncAnchorWithStore:(id)arg1 predicate:(id)arg2 startSyncAnchor:(long long)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
 + (id)objectsFromCodableObjectsInCollection:(id)arg1;
-+ (id)predicateForSyncObjects;
-+ (BOOL)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (int)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
 + (id)syncEntityDependencies;
 + (int)syncEntityType;
-+ (id)syncObjectsWithStore:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (id)syncObjectsWithStore:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 lastSyncAnchor:(long long*)arg4 limit:(unsigned int)arg5 healthDaemon:(id)arg6 error:(id*)arg7;
 
 @end

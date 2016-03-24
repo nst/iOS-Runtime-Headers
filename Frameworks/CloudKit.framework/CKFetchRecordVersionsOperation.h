@@ -30,7 +30,9 @@
 - (id)desiredKeys;
 - (id /* block */)fetchRecordVersionsCompletionBlock;
 - (id /* block */)fetchRecordVersionsProgressBlock;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)initWithRecordIDs:(id)arg1;
 - (BOOL)isDeleted;
 - (id)minimumVersionETag;

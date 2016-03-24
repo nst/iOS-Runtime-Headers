@@ -13,6 +13,8 @@
     NSString *_name;
     BOOL _prelaunch;
     NSString *_sockPuppetIdentifier;
+    BOOL _systemGlance;
+    unsigned int _watchKitVersion;
 }
 
 @property (getter=isActive, nonatomic) BOOL active;
@@ -27,6 +29,8 @@
 @property (nonatomic, copy) NSString *name;
 @property (nonatomic) BOOL prelaunch;
 @property (nonatomic, copy) NSString *sockPuppetIdentifier;
+@property (getter=isSystemGlance, nonatomic) BOOL systemGlance;
+@property (nonatomic) unsigned int watchKitVersion;
 
 - (void).cxx_destruct;
 - (id)_localizedName;
@@ -42,6 +46,7 @@
 - (BOOL)isActive;
 - (BOOL)isDefaultGlance;
 - (BOOL)isInstalled;
+- (BOOL)isSystemGlance;
 - (id)name;
 - (BOOL)prelaunch;
 - (void)setActive:(BOOL)arg1;
@@ -54,6 +59,9 @@
 - (void)setName:(id)arg1;
 - (void)setPrelaunch:(BOOL)arg1;
 - (void)setSockPuppetIdentifier:(id)arg1;
+- (void)setSystemGlance:(BOOL)arg1;
+- (void)setWatchKitVersion:(unsigned int)arg1;
 - (id)sockPuppetIdentifier;
+- (unsigned int)watchKitVersion;
 
 @end

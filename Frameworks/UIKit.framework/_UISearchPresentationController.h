@@ -25,7 +25,7 @@
 }
 
 @property (nonatomic, readonly) UIPresentationController<_UISearchControllerPresenting> *adaptivePresentationController;
-@property (nonatomic, readonly) BOOL animatorShouldSizeResultsContainerView;
+@property (nonatomic, readonly) BOOL animatorShouldLayoutPresentationViews;
 @property (nonatomic, readonly) UIView *backgroundObscuringView;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -62,7 +62,7 @@
 - (float)_visibleRefreshControlHeightForTableView:(id)arg1;
 - (id)adaptivePresentationController;
 - (int)adaptivePresentationStyle;
-- (BOOL)animatorShouldSizeResultsContainerView;
+- (BOOL)animatorShouldLayoutPresentationViews;
 - (id)backgroundObscuringView;
 - (void)dealloc;
 - (void)dismissalTransitionDidEnd:(BOOL)arg1;

@@ -11,7 +11,6 @@
 - (void).cxx_destruct;
 - (void)_limitedUIDidChange;
 - (void)_updateQuery;
-- (void)dealloc;
 - (id)initWithDataSource:(id)arg1 cellConfigurationClass:(Class)arg2;
 - (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 

@@ -27,7 +27,7 @@
 - (void)_loadHistory;
 - (BOOL)_loadHistoryFromDictionary:(id)arg1;
 - (id)delegate;
-- (id)initWithURL:(id)arg1 itemCountLimit:(unsigned int)arg2 ageLimit:(double)arg3 historyItemClass:(Class)arg4;
+- (id)initWithURL:(id)arg1 itemCountLimit:(unsigned int)arg2 historyAgeLimit:(double)arg3 historyItemClass:(Class)arg4;
 - (void)setDelegate:(id)arg1;
 - (void)startLoading;
 - (void)waitForLoadingToComplete;

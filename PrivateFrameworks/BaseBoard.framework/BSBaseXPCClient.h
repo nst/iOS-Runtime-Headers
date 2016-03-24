@@ -41,6 +41,7 @@
 - (void)queue_connectionWasInvalidated;
 - (void)queue_connectionWasResumed;
 - (void)queue_connectionWasSuspended;
+- (void)queue_handleError:(id)arg1;
 - (void)queue_handleMessage:(id)arg1;
 - (void)queue_invalidate;
 - (BOOL)queue_isSuspended;

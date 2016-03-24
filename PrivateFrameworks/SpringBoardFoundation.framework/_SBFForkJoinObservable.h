@@ -8,9 +8,9 @@
     unsigned int _uncompletedObservableCount;
 }
 
+- (void).cxx_destruct;
 - (void)_observableFinishedForObserver:(id)arg1;
 - (void)_setResult:(id)arg1 atIndex:(unsigned int)arg2;
-- (void)dealloc;
 - (id)initWithWithObservables:(id)arg1;
 - (id)subscribe:(id)arg1;
 

@@ -39,7 +39,7 @@
 + (id)imageNameFor1024ThumbnailInMetadataDictionary:(id)arg1;
 + (id)imageNameForThumbnailInImageSource:(struct CGImageSource { }*)arg1;
 + (BOOL)makeAdditionFromStagingURL:(id)arg1 metadata:(id)arg2 inStorage:(id)arg3 error:(id*)arg4;
-+ (id)metadataForGeneratedThumbnailAtURL:(id)arg1 maximumDimension:(float)arg2;
++ (id)metadataForGeneratedThumbnailForURL:(id)arg1 maximumDimension:(float)arg2;
 + (void)noteCloudDocsDownloadedFileAtURL:(id)arg1;
 + (void)noteCloudDocsDownloadedFileAtURL:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)plistInExtendedAttributeNamed:(const char *)arg1 flags:(unsigned long long)arg2 onFileDescriptor:(int)arg3 error:(id*)arg4;

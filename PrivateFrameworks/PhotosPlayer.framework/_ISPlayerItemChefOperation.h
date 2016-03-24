@@ -7,20 +7,36 @@
     BOOL _includeAudio;
     BOOL _includeVideo;
     id /* block */ _resultHandler;
+    struct { 
+        struct { 
+            long long value; 
+            int timescale; 
+            unsigned int flags; 
+            long long epoch; 
+        } start; 
+        struct { 
+            long long value; 
+            int timescale; 
+            unsigned int flags; 
+            long long epoch; 
+        } duration; 
+    } _trimmedTimeRange;
 }
 
 @property (nonatomic, readonly) AVAsset *asset;
 @property (nonatomic, readonly) BOOL includeAudio;
 @property (nonatomic, readonly) BOOL includeVideo;
 @property (nonatomic, readonly, copy) id /* block */ resultHandler;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } trimmedTimeRange;
 
 - (void).cxx_destruct;
 - (void)_handleValuesDidLoad;
 - (id)asset;
 - (BOOL)includeAudio;
 - (BOOL)includeVideo;
-- (id)initWithAsset:(id)arg1 includeAudio:(BOOL)arg2 includeVideo:(BOOL)arg3 resultHandler:(id /* block */)arg4;
+- (id)initWithAsset:(id)arg1 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg2 includeAudio:(BOOL)arg3 includeVideo:(BOOL)arg4 resultHandler:(id /* block */)arg5;
 - (void)main;
 - (id /* block */)resultHandler;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })trimmedTimeRange;
 
 @end

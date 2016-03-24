@@ -66,6 +66,7 @@
 - (id)_initWithBitmapData:(id)arg1 bytesPerRow:(unsigned long)arg2 size:(struct CGSize { float x1; float x2; })arg3 format:(int)arg4 options:(id)arg5;
 - (id)_initWithCVImageBuffer:(struct __CVBuffer { }*)arg1 options:(id)arg2;
 - (id)_initWithIOSurface:(struct __IOSurface { }*)arg1 options:(id)arg2 owner:(void*)arg3;
+- (id)_initWithImageProvider:(id /* block */)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace { }*)arg5 surfaceCache:(bool)arg6 options:(id)arg7;
 - (id)_initWithInternalRepresentation:(void*)arg1;
 - (void*)_internalRepresentation;
 - (id)_scaleImageToMaxDimension:(unsigned int)arg1;
@@ -86,6 +87,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })extent;
 - (id)filteredImage:(id)arg1 keysAndValues:(id)arg2;
+- (void)finalize;
 - (id)getAutoRotateFilter:(id)arg1 ciImage:(id)arg2 rgbRows:(id)arg3 inputRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4 rotateCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
 - (void)getAutocropRect:(id)arg1 rotateXfrm:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 inputImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3 clipRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg4;
 - (id)imageByApplyingFilter:(id)arg1 withInputParameters:(id)arg2;
@@ -122,6 +124,7 @@
 - (id)initWithIOSurface:(struct __IOSurface { }*)arg1 options:(id)arg2;
 - (id)initWithImageProvider:(id)arg1 size:(unsigned long)arg2 :(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace { }*)arg5 options:(id)arg6;
 - (id)initWithImageProvider:(id)arg1 userInfo:(id)arg2 size:(struct CGSize { float x1; float x2; })arg3 format:(int)arg4 flipped:(BOOL)arg5 colorSpace:(struct CGColorSpace { }*)arg6;
+- (id)initWithImageProvider:(id /* block */)arg1 width:(unsigned long)arg2 height:(unsigned long)arg3 format:(int)arg4 colorSpace:(struct CGColorSpace { }*)arg5 options:(id)arg6;
 - (id)initWithMTLTexture:(id)arg1 options:(id)arg2;
 - (id)initWithTexture:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 flipped:(BOOL)arg3 colorSpace:(struct CGColorSpace { }*)arg4;
 - (id)initWithTexture:(unsigned int)arg1 size:(struct CGSize { float x1; float x2; })arg2 flipped:(BOOL)arg3 options:(id)arg4;

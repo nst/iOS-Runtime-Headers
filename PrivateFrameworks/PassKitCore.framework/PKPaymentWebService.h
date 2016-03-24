@@ -138,6 +138,7 @@
 - (void)startBackgroundURLSessionWithIdentifier:(id)arg1 context:(id)arg2 backgroundDelegate:(id)arg3;
 - (unsigned int)submitVerificationCode:(id)arg1 verificationData:(id)arg2 forPass:(id)arg3 completion:(id /* block */)arg4;
 - (id)targetDevice;
+- (unsigned int)unregisterDeviceWithCompanionSerialNumber:(id)arg1 completion:(id /* block */)arg2;
 - (unsigned int)unregisterDeviceWithCompletion:(id /* block */)arg1;
 - (unsigned int)userPassesWithCompletion:(id /* block */)arg1;
 - (unsigned int)verificationChannelsForPass:(id)arg1 completion:(id /* block */)arg2;

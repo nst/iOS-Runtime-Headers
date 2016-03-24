@@ -12,7 +12,7 @@
     NSMutableDictionary *_groupViewsByGroupID;
     NSMutableDictionary *_groupViewsInFlightByGroupID;
     BOOL _hasSuspendedTransition;
-    UIView *_headerContainerView;
+    PKPassthroughView *_headerContainerView;
     BOOL _inPassthroughHitTest;
     unsigned int _initialIndexOfReorderedGroup;
     struct { 
@@ -40,7 +40,7 @@
         float x; 
         float y; 
     } _panningVelocity;
-    UIView *_passContainerView;
+    PKPassthroughView *_passContainerView;
     PKPassFooterView *_passFooterView;
     PKPGSVHeaderContext *_passHeaderContext;
     NSMutableArray *_passPileViews;
@@ -67,7 +67,7 @@
     int _scrollingTestState;
     PKSecureElement *_secureElement;
     BOOL _showingFooter;
-    UIView *_subheaderContainerView;
+    PKPassthroughView *_subheaderContainerView;
     int _suspendedNextState;
     NSMutableArray *_suspendedTransitionCompletionHandlers;
     id /* block */ _transitionCanceller;

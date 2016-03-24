@@ -65,6 +65,7 @@
 @property (nonatomic, readonly) NSArray *unavailablePasses;
 @property (nonatomic, copy) id /* block */ updateHandler;
 
+- (id)_contactFromABRecordRef:(void*)arg1;
 - (void)_ensureItemForClass:(Class)arg1;
 - (void)_ensureItems;
 - (void)_ensurePlaceholderItems;

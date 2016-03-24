@@ -58,6 +58,7 @@
 - (void)_performWriteTransactionAndWait:(id /* block */)arg1;
 - (id)_valueOfClass:(Class)arg1 forAssetInfoKey:(id)arg2;
 - (id)_valueOfClass:(Class)arg1 forMetadataKey:(id)arg2 fallbackTrackDictionaryKey:(id)arg3;
+- (id)_valueRespondingToSelector:(SEL)arg1 forAssetInfoKey:(id)arg2;
 - (id)_valueRespondingToSelector:(SEL)arg1 forMetadataKey:(id)arg2 fallbackTrackDictionaryKey:(id)arg3;
 - (id)adData;
 - (id)adInfo;

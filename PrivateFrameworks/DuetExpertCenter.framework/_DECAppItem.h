@@ -13,6 +13,7 @@
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

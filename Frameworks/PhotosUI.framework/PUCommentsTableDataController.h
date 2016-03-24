@@ -30,7 +30,8 @@
 
 - (void).cxx_destruct;
 - (int)_assetOwnerCommentSection;
-- (BOOL)_checkAndAlertMaxCommentsReachedWhenFinalizing:(BOOL)arg1;
+- (BOOL)_canPostCommentWithText:(id)arg1 localizedFailureDescription:(id*)arg2;
+- (id)_commentText;
 - (id)_currentEntryView;
 - (void)_fontCacheDidChange:(id)arg1;
 - (float)_heightForComment:(id)arg1 forWidth:(float)arg2 forInterfaceOrientation:(int)arg3;
@@ -38,12 +39,13 @@
 - (BOOL)_isBeginningToEdit;
 - (BOOL)_isEditingAllowed;
 - (int)_postCommentSection;
-- (void)_postCommentValidated:(id)arg1;
+- (void)_postCommentWithText:(id)arg1;
 - (void)_scrollToComment:(id)arg1 animated:(BOOL)arg2;
 - (void)_setBeginningToEdit:(BOOL)arg1;
 - (int)_smileCommentSection;
 - (int)_textCommentSection;
 - (void)_updateFirstResponder;
+- (void)_validateAndPostComment:(id)arg1;
 - (id)asset;
 - (void)cloudCommentsDidChange:(id)arg1;
 - (void)dealloc;
@@ -57,6 +59,7 @@
 - (void)photoCommentEntryViewDidBeginEditing:(id)arg1;
 - (void)photoCommentEntryViewDidEndEditing:(id)arg1;
 - (void)photoCommentEntryViewHeightDidChange:(id)arg1;
+- (BOOL)photoCommentEntryViewShouldEndEditing:(id)arg1;
 - (void)photoCommentEntryViewWillBeginEditing:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)setAsset:(id)arg1;

@@ -27,6 +27,7 @@
 @property (getter=isHighResPhotoFormat, readonly) BOOL highResPhotoFormat;
 @property (readonly) struct { int x1; int x2; } highResStillImageDimensions;
 @property (getter=isHighResStillImageSupported, readonly) BOOL highResStillImageSupported;
+@property (getter=isIrisSupported, readonly) BOOL irisSupported;
 @property (readonly) BOOL isExternalFormat;
 @property (readonly) BOOL ispChromaNoiseReductionEnabled;
 @property (readonly) struct { long long x1; int x2; unsigned int x3; long long x4; } maxExposureDuration;
@@ -96,6 +97,7 @@
 - (BOOL)isHighProfileH264Supported;
 - (BOOL)isHighResPhotoFormat;
 - (BOOL)isHighResStillImageSupported;
+- (BOOL)isIrisSupported;
 - (BOOL)isMultiStreamFormat;
 - (BOOL)isPhotoFormat;
 - (BOOL)isQuadraHighResStillImageSupported;

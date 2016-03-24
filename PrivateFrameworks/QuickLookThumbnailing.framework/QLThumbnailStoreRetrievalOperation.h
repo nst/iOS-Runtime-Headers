@@ -3,6 +3,7 @@
  */
 
 @interface QLThumbnailStoreRetrievalOperation : NSOperation {
+    unsigned long long _activity;
     QLThumbnailAddition *_addition;
     BOOL _allowsThumbnailGeneration;
     NSURL *_destinationURL;
@@ -11,7 +12,9 @@
     BOOL _executing;
     BOOL _finished;
     BOOL _generateThumbnailsAtBackgroundPriority;
-    <QLThumbnailGenerationRequest> *_thumbnailRequest;
+    unsigned long long _generationActivity;
+    <QLThumbnailGenerationRequest><NSXPCProxyCreating> *_thumbnailRequest;
+    BOOL _thumbnailWasJustAutomaticallyGenerated;
 }
 
 @property BOOL allowsThumbnailGeneration;
@@ -23,6 +26,7 @@
 @property (readonly) NSData *serializedQuickLookMetadataDictionary;
 @property (readonly) NSDictionary *thumbnailImagesDictionary;
 @property (readonly) BOOL thumbnailWasAutomaticallyGenerated;
+@property (readonly) BOOL thumbnailWasJustAutomaticallyGenerated;
 
 + (BOOL)canMostRecentClientsGenerateThumbnailsForUTI:(id)arg1;
 
@@ -44,6 +48,7 @@
 - (BOOL)isConcurrent;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
+- (id)issueSandboxExtension;
 - (void)main;
 - (id)serializedQuickLookMetadataDictionary;
 - (void)setAllowsThumbnailGeneration:(BOOL)arg1;
@@ -54,5 +59,6 @@
 - (void)start;
 - (id)thumbnailImagesDictionary;
 - (BOOL)thumbnailWasAutomaticallyGenerated;
+- (BOOL)thumbnailWasJustAutomaticallyGenerated;
 
 @end

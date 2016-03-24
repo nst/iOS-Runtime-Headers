@@ -9,5 +9,6 @@
 - (void)dealloc;
 - (id)endpoint;
 - (id)init;
+- (void)invalidate;
 
 @end

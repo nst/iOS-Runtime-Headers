@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)accountDescription;
 - (id)configuredAccounts;
+- (BOOL)containsSensitiveUserInformation;
 - (id)description;
 - (BOOL)documentsConfigured;
 - (id)documentsPort;

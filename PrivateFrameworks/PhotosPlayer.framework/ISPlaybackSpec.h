@@ -19,6 +19,7 @@
     double _settleTransitionDuration;
     BOOL _shouldScaleAndBlurForPlayback;
     BOOL _shouldSettleAutomatically;
+    double _timeMultiplier;
     struct CGPoint { 
         float x; 
         float y; 
@@ -69,6 +70,7 @@
 @property (nonatomic) double settleTransitionDuration;
 @property (nonatomic) BOOL shouldScaleAndBlurForPlayback;
 @property (nonatomic) BOOL shouldSettleAutomatically;
+@property (nonatomic) double timeMultiplier;
 @property (nonatomic) struct CGPoint { float x1; float x2; } transitionBlurTimingFunctionControlPoint1;
 @property (nonatomic) struct CGPoint { float x1; float x2; } transitionBlurTimingFunctionControlPoint2;
 @property (nonatomic) struct CGPoint { float x1; float x2; } transitionFadeTimingFunctionControlPoint1;
@@ -106,6 +108,7 @@
 - (void)setAllowVitality:(BOOL)arg1;
 - (void)setDefaultValues;
 - (void)setEndVitalityTransitionDuration:(double)arg1;
+- (void)setHintPlaybackValuesWithAssetOptions:(unsigned int)arg1;
 - (void)setHintPlaybackValuesWithPhotoHasColorAdjustments:(BOOL)arg1;
 - (void)setPlaybackPostDuration:(double)arg1;
 - (void)setPlaybackPreDuration:(double)arg1;
@@ -118,6 +121,7 @@
 - (void)setSettleTransitionDuration:(double)arg1;
 - (void)setShouldScaleAndBlurForPlayback:(BOOL)arg1;
 - (void)setShouldSettleAutomatically:(BOOL)arg1;
+- (void)setTimeMultiplier:(double)arg1;
 - (void)setTransitionBlurTimingFunctionControlPoint1:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setTransitionBlurTimingFunctionControlPoint2:(struct CGPoint { float x1; float x2; })arg1;
 - (void)setTransitionFadeTimingFunctionControlPoint1:(struct CGPoint { float x1; float x2; })arg1;
@@ -136,6 +140,7 @@
 - (double)settleTransitionDuration;
 - (BOOL)shouldScaleAndBlurForPlayback;
 - (BOOL)shouldSettleAutomatically;
+- (double)timeMultiplier;
 - (struct CGPoint { float x1; float x2; })transitionBlurTimingFunctionControlPoint1;
 - (struct CGPoint { float x1; float x2; })transitionBlurTimingFunctionControlPoint2;
 - (struct CGPoint { float x1; float x2; })transitionFadeTimingFunctionControlPoint1;

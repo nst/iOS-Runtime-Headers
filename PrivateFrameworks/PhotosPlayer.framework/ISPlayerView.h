@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
  */
 
-@interface ISPlayerView : UIView <ISGestureInputDelegate, ISPlayerChangeObserver, ISPlayerDelegate, ISPlayerOutput, UIGestureRecognizerDelegate> {
+@interface ISPlayerView : UIView <ISGestureInputDelegate, ISPlayerChangeObserver, ISPlayerChangeObserverPrivate, ISPlayerDelegate, ISPlayerOutput, UIGestureRecognizerDelegate> {
     NSMutableSet *__activeGestures;
     BOOL __crossfadeEnabled;
     _ISCrossfadeView *__crossfadeView;
@@ -17,6 +17,7 @@
     <NSObject> *__playerObservationToken;
     BOOL __playerTransitioning;
     UIView *__videoContainerView;
+    _ISTargetView *__videoMaskView;
     struct CGSize { 
         float width; 
         float height; 
@@ -35,6 +36,7 @@
         unsigned int respondsToViewHostingGestureRecognizer : 1; 
         unsigned int respondsToIsInteractingDidChange : 1; 
         unsigned int respondsToGestureRecognizerDidChange : 1; 
+        unsigned int respondsToPlayerItemDidChange : 1; 
     } _delegateFlags;
     struct CGSize { 
         float width; 
@@ -46,6 +48,8 @@
     BOOL _isReadyForDisplay;
     NSObject<OS_dispatch_queue> *_observerQueue;
     NSHashTable *_observers;
+    CALayer *_overridePhotoLayer;
+    struct CGImage { } *_photoContents;
     float _photoScale;
     BOOL _photoViewHidden;
     ISPlaybackSpec *_playbackSpec;
@@ -60,7 +64,7 @@
     BOOL _showVideoBorder;
     int _status;
     BOOL _useSingletonPlayer;
-    AVPlayer *_videoPlayer;
+    ISWrappedAVPlayer *_videoPlayer;
     BOOL _vitalityAllowed;
     ISVitalityFilter *_vitalityFilter;
     UIScrollView *_vitalityScrollView;
@@ -80,6 +84,7 @@
 @property (setter=_setPlayerObservationToken:, nonatomic, retain) <NSObject> *_playerObservationToken;
 @property (getter=_isPlayerTransitioning, setter=_setPlayerTransitioning:, nonatomic) BOOL _playerTransitioning;
 @property (setter=_setVideoContainerView:, nonatomic, retain) UIView *_videoContainerView;
+@property (nonatomic, readonly) _ISTargetView *_videoMaskView;
 @property (setter=_setVideoSize:, nonatomic) struct CGSize { float x1; float x2; } _videoSize;
 @property (setter=_setVideoView:, nonatomic, retain) _ISAVPlayerView *_videoView;
 @property (setter=_setVitalityInput:, nonatomic, retain) ISVitalityInput *_vitalityInput;
@@ -96,6 +101,8 @@
 @property (getter=isInteractivePlaybackAllowed, nonatomic) BOOL interactivePlaybackAllowed;
 @property (nonatomic) BOOL isInteracting;
 @property (nonatomic) BOOL isReadyForDisplay;
+@property (nonatomic, retain) CALayer *overridePhotoLayer;
+@property (nonatomic, retain) struct CGImage { }*photoContents;
 @property (nonatomic, readonly) CALayer *photoLayer;
 @property (nonatomic) float photoScale;
 @property (getter=isPhotoViewHidden, nonatomic) BOOL photoViewHidden;
@@ -104,6 +111,7 @@
 @property (nonatomic) int playbackState;
 @property (nonatomic) unsigned int playbackStyle;
 @property (nonatomic, retain) ISPlayer *player;
+@property (getter=isPlayingVitality, nonatomic, readonly) BOOL playingVitality;
 @property (getter=isPlayingVitalityHint, nonatomic, readonly) BOOL playingVitalityHint;
 @property (nonatomic) float scrubOffset;
 @property (nonatomic) int scrubRegion;
@@ -188,12 +196,12 @@
 - (void)_updateVideoSizeIfNeeded;
 - (void)_updateVitalityInput;
 - (id)_videoContainerView;
+- (id)_videoMaskView;
 - (struct CGSize { float x1; float x2; })_videoSize;
 - (id)_videoView;
 - (id)_vitalityInput;
 - (BOOL)allowReversePlayback;
 - (BOOL)audioMuted;
-- (id)avPlayerForPlayer:(id)arg1;
 - (void)awakeFromNib;
 - (void)cancelGestureRecognizers;
 - (id)contentLayer;
@@ -215,6 +223,7 @@
 - (BOOL)isInteracting;
 - (BOOL)isInteractivePlaybackAllowed;
 - (BOOL)isPhotoViewHidden;
+- (BOOL)isPlayingVitality;
 - (BOOL)isPlayingVitalityHint;
 - (BOOL)isReadyForDisplay;
 - (BOOL)isSupportedContentMode:(int)arg1;
@@ -222,6 +231,8 @@
 - (BOOL)isVitalityAllowed;
 - (void)layoutSubviews;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)overridePhotoLayer;
+- (struct CGImage { }*)photoContents;
 - (id)photoLayer;
 - (float)photoScale;
 - (float)playThreshold;
@@ -235,6 +246,7 @@
 - (void)player:(id)arg1 didChangePlayerStatus:(int)arg2;
 - (void)playerDidEndTransitionToPlaybackState:(int)arg1;
 - (void)playerDidPlayVideoToEnd;
+- (void)playerPlayingVitalityChanged:(id)arg1;
 - (void)playerWillBeginTransitionToPlaybackState:(int)arg1;
 - (void)playerWillPlayVideoToEnd;
 - (void)prepareWithBundleURL:(id)arg1;
@@ -253,6 +265,8 @@
 - (void)setDimensionsOfReservedVideoMemory:(struct CGSize { float x1; float x2; })arg1;
 - (void)setInteractivePlaybackAllowed:(BOOL)arg1;
 - (void)setIsReadyForDisplay:(BOOL)arg1;
+- (void)setOverridePhotoLayer:(id)arg1;
+- (void)setPhotoContents:(struct CGImage { }*)arg1;
 - (void)setPhotoScale:(float)arg1;
 - (void)setPhotoViewHidden:(BOOL)arg1;
 - (void)setPlayThreshold:(float)arg1;
@@ -280,6 +294,7 @@
 - (id)supportedContentModes;
 - (void)unregisterObserver:(id)arg1;
 - (id)videoLayer;
+- (id)videoPlayerForPlayer:(id)arg1;
 - (id)vitalityFilter;
 - (id)vitalityScrollView;
 

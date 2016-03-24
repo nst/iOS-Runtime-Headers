@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileContainerManager.framework/MobileContainerManager
  */
 
-@interface MCMSharedDataContainer : MCMContainer
+@interface MCMSharedDataContainer : MCMDataContainer
 
 @end

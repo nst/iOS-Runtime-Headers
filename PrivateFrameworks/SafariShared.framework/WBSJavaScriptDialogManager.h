@@ -3,20 +3,16 @@
  */
 
 @interface WBSJavaScriptDialogManager : NSObject {
-    double _intervalAfterWhichDateOfLastShownDialogForURLIsForgotten;
-    NSMutableDictionary *_mapOfURLToDateDialogWasLastShown;
-    NSMutableSet *_setOfBannedURLs;
+    NSMutableDictionary *_completionHandlers;
 }
 
 - (void).cxx_destruct;
-- (id)_earliestDateADialogCanBeShownWithoutSuppressionOptionFromURL:(id)arg1;
-- (void)_pruneMapOfURLToDateDialogWasLastShown;
-- (void)_test_setIntervalAfterWhichDateOfLastShownDialogForURLIsForgotten:(double)arg1;
-- (BOOL)canRunDialogFromURL:(id)arg1;
-- (void)didRunDialogFromURL:(id)arg1;
+- (void)dismissAlertDialogForWebPID:(int)arg1;
+- (void)dismissConfirmDialogForWebPID:(int)arg1 withResponse:(int)arg2;
+- (void)dismissDialogForWebPIDIfNeeded:(int)arg1;
+- (void)dismissPromptDialogForWebPID:(int)arg1 withResponse:(id)arg2;
 - (id)init;
-- (BOOL)shouldOfferToSuppressDialogsFromURL:(id)arg1;
-- (void)suppressDialogsFromURL:(id)arg1;
-- (void)willRedirectFromURL:(id)arg1 toURL:(id)arg2;
+- (void)registerDialogForWebPID:(int)arg1 withCompletionHandler:(id)arg2;
+- (id)unregisterDialogForWebPID:(int)arg1;
 
 @end

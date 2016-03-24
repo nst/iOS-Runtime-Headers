@@ -20,6 +20,7 @@
     MPUNowPlayingIndicatorView *_indicatorView;
     float _leadingTextColumnWidth;
     UIImageView *_mediaTypeImageView;
+    MusicPopularityIndicatorView *_popularityIndicatorView;
     NSMapTable *_textDescriptorToTextDrawingView;
     NSMutableArray *_textDrawingViewReusePool;
     UIImageView *_trailingAccessoryImageView;

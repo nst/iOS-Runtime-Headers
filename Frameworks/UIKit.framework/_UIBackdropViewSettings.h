@@ -29,6 +29,7 @@
     BOOL _designMode;
     BOOL _enabled;
     BOOL _explicitlySetGraphicsQuality;
+    float _extendedRangeClamp;
     float _filterMaskAlpha;
     UIImage *_filterMaskImage;
     int _graphicsQuality;
@@ -88,6 +89,7 @@
 @property (setter=setDesignMode:, nonatomic) BOOL designMode;
 @property (getter=isEnabled, nonatomic) BOOL enabled;
 @property (nonatomic) BOOL explicitlySetGraphicsQuality;
+@property (nonatomic) float extendedRangeClamp;
 @property (nonatomic) float filterMaskAlpha;
 @property (nonatomic, retain) UIImage *filterMaskImage;
 @property (nonatomic) int graphicsQuality;
@@ -148,6 +150,7 @@
 - (id)colorTintMaskImage;
 - (id)combinedTintColor;
 - (void)computeOutputSettingsUsingModel:(id)arg1;
+- (void)copyAdditionalSettingsFromSettings:(id)arg1;
 - (BOOL)darkenWithSourceOver;
 - (float)darkeningTintAlpha;
 - (float)darkeningTintBrightness;
@@ -158,6 +161,7 @@
 - (id)description;
 - (BOOL)designMode;
 - (BOOL)explicitlySetGraphicsQuality;
+- (float)extendedRangeClamp;
 - (float)filterMaskAlpha;
 - (id)filterMaskImage;
 - (int)graphicsQuality;
@@ -209,6 +213,7 @@
 - (void)setDesignMode:(BOOL)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setExplicitlySetGraphicsQuality:(BOOL)arg1;
+- (void)setExtendedRangeClamp:(float)arg1;
 - (void)setFilterMaskAlpha:(float)arg1;
 - (void)setFilterMaskImage:(id)arg1;
 - (void)setGraphicsQuality:(int)arg1;

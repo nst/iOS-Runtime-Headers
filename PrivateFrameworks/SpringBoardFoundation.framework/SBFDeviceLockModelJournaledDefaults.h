@@ -5,11 +5,11 @@
 @interface SBFDeviceLockModelJournaledDefaults : NSObject <SBFDeviceLockModel> {
     <SBFDeviceLockModelDelegate> *_delegate;
     NSString *_journalPath;
-    NSUserDefaults *_lockStateDefaults;
     NSDictionary *_originalDefaultsForRollback;
     BOOL _pendingWipe;
     BOOL _permanentlyBlocked;
     NSObject<OS_dispatch_queue> *_persistentStateQueue;
+    SBSecurityDefaults *_securityDefaults;
     BOOL _speculativePasscodeFailureChargeOutstanding;
     double _unblockTime;
 }
@@ -25,8 +25,10 @@
 
 + (id)_journaledDefaultsAndTypes;
 
+- (void).cxx_destruct;
 - (id)_copyLockControllerDefaults;
 - (void)_evaluatePendingWipe;
+- (BOOL)_isDeviceWipePreferenceEnabled;
 - (void)_loadLockControllerDefaults:(id)arg1;
 - (void)_loadLockControllerDefaultsJournalIfNecessary;
 - (void)_persistentStateQueue_beginSpeculativeFailureCharge;
@@ -38,10 +40,9 @@
 - (void)_persistentStateQueue_unlockSucceeded;
 - (void)_updateLockControllerDefaultsJournal;
 - (void)clearBlockedState;
-- (void)dealloc;
 - (id)delegate;
 - (id)init;
-- (id)initWithDefaultsDomain:(id)arg1 journalPath:(id)arg2;
+- (id)initWithJournalPath:(id)arg1;
 - (BOOL)isPermanentlyBlocked;
 - (BOOL)isTemporarilyBlocked;
 - (void)notePasscodeEntryBegan;

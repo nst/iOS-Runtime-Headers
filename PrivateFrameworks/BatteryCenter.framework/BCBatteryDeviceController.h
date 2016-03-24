@@ -17,10 +17,9 @@
 @property (nonatomic, readonly) NSString *connectedDevicesDidChangeNotificationName;
 @property (nonatomic, readonly) NSArray *connectedDevicesIncludingMissingParts;
 
-+ (id)_glyphForFirstPartyBatteryDeviceWithBaseIdentifier:(id)arg1;
++ (id)_glyphForFirstPartyBatteryDeviceWithBaseIdentifier:(id)arg1 parts:(unsigned int)arg2;
 + (id)_glyphsForBatteryDevice:(id)arg1;
 + (id)_glyphsForFirstPartyBatteryDevice:(id)arg1;
-+ (id)_identifierForBatteryDevice:(id)arg1;
 + (id)_internalBatteryDeviceGlyph;
 + (id)sharedInstance;
 
@@ -29,10 +28,11 @@
 - (int)_displayChargePercentForCurrentCapacity:(id)arg1 andMaxCapacity:(id)arg2 updateZeroValue:(BOOL)arg3;
 - (BOOL)_displayIsChargingFromPowerSourceDescription:(id)arg1;
 - (id)_displayNameForBaseIdentifier:(id)arg1 andParts:(unsigned int)arg2 fromPowerSourceDescription:(id)arg3;
+- (id)_groupNameForBaseIdentifier:(id)arg1 fromPowerSourceDescription:(id)arg2;
 - (void)_handlePSChange;
+- (id)_identifierFromPowerSourceDescription:(id)arg1;
 - (void)_incrementPercentChargeForConnectedDevices:(BOOL)arg1;
-- (BOOL)_isCompositeIdentifierValidForDeviceWithBaseIdentifier:(id)arg1;
-- (BOOL)_isDevicePartOfPairWithBaseIdentifier:(id)arg1 matchIdentifier:(id)arg2 andParts:(unsigned int)arg3;
+- (BOOL)_isDevicePartOfPairWithBaseIdentifier:(id)arg1 matchIdentifier:(id)arg2 andPart:(unsigned int)arg3;
 - (struct CGSize { float x1; float x2; })_largestBatteryDeviceGlyphSize;
 - (int)_lowBatteryLevelForBaseIdentifier:(id)arg1 fromPowerSourceDescription:(id)arg2;
 - (id)_matchIdentifierFromPowerSourceDescription:(id)arg1;

@@ -37,6 +37,8 @@
 @property (nonatomic) BOOL hasStartTime;
 @property (nonatomic) long long startTime;
 
++ (Class)chunkingErrorType;
+
 - (void)addChunkingError:(id)arg1;
 - (long long)byteCount;
 - (BOOL)cancelled;

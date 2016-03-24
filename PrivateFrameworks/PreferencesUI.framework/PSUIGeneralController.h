@@ -33,6 +33,7 @@
 - (void)handleTVOutChange;
 - (void)handleURL:(id)arg1;
 - (id)init;
+- (id)lockGroupFooter;
 - (id)locksAndUnlocksWithCase:(id)arg1;
 - (id)parentalControlsEnabled:(id)arg1;
 - (void)profileNotification:(id)arg1;

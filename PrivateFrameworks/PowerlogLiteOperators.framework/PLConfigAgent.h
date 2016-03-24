@@ -25,6 +25,7 @@
 - (id)bootArgs;
 - (id)buildVersion;
 - (id)crashReporterKey;
+- (void)dealloc;
 - (id)deviceName;
 - (BOOL)disableCABlanking;
 - (id)hardwareModel;
@@ -35,6 +36,7 @@
 - (void)logEventNoneConfig;
 - (void)logEventNonePairedDeviceConfig;
 - (BOOL)noWatchdogs;
+- (void)pairStatusDidChange:(id)arg1;
 - (id)seedGroup;
 - (void)setTimedTrigger:(id)arg1;
 - (id)timedTrigger;

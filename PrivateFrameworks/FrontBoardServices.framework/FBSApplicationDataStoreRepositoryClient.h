@@ -28,12 +28,12 @@
 - (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (id)init;
 - (void)invalidate;
-- (void)objectForKey:(id)arg1 forApplication:(id)arg2 useBSXPCCoding:(BOOL)arg3 withResult:(id /* block */)arg4;
-- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3 checkPrefetch:(BOOL)arg4 useBSXPCCoding:(BOOL)arg5;
+- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3;
+- (void)objectForKey:(id)arg1 forApplication:(id)arg2 withResult:(id /* block */)arg3 checkPrefetch:(BOOL)arg4;
 - (void)removeAllObjectsForApplication:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)removeObjectForKey:(id)arg1 forApplication:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)removePrefetchedKeys:(id)arg1 withCompletion:(id /* block */)arg2;
-- (void)setObject:(id)arg1 forKey:(id)arg2 forApplication:(id)arg3 useBSXPCCoding:(BOOL)arg4 withCompletion:(id /* block */)arg5;
+- (void)setObject:(id)arg1 forKey:(id)arg2 forApplication:(id)arg3 withCompletion:(id /* block */)arg4;
 - (void)synchronizeWithCompletion:(id /* block */)arg1;
 
 @end

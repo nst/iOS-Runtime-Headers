@@ -45,6 +45,7 @@
 - (unsigned int)minimumSendDelay;
 - (void)removeDelegate:(id)arg1;
 - (BOOL)sendProtobuf:(id)arg1 toDestinations:(id)arg2 priority:(int)arg3 options:(id)arg4 identifier:(id*)arg5 error:(id*)arg6;
+- (BOOL)sendResourceAtURL:(id)arg1 metadata:(id)arg2 toDestinations:(id)arg3 priority:(int)arg4 options:(id)arg5 identifier:(id*)arg6 error:(id*)arg7;
 - (void)setMaximumResponseDelay:(unsigned int)arg1;
 - (void)setMaximumSendDelay:(unsigned int)arg1;
 - (void)setMinimumResponseDelay:(unsigned int)arg1;

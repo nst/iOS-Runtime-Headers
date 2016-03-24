@@ -3,8 +3,9 @@
 
 @protocol ISPlayerViewDelegatePrivate <ISPlayerViewDelegate>
 
-@required
+@optional
 
-- (AVPlayer *)avPlayerForPlayerView:(ISPlayerView *)arg1;
+- (void)playerViewPlayingVitalityChanged:(ISPlayerView *)arg1;
+- (AVPlayer *)videoPlayerForPlayerView:(ISPlayerView *)arg1;
 
 @end

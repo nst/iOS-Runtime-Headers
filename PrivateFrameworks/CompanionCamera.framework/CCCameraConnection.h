@@ -3,14 +3,17 @@
  */
 
 @interface CCCameraConnection : NSObject <AVCaptureVideoDataOutputSampleBufferDelegate, CCCameraConnectionProtocol, FigCameraViewfinderDelegate, FigCameraViewfinderSessionDelegate> {
+    unsigned int _currentPreviewState;
     <CCCameraConnectionDelegate> *_delegate;
+    unsigned int _desiredPreviewState;
+    int _deviceConnectedNotificationToken;
+    int _deviceDisconnectedNotificationToken;
     CCCameraConnectionInternal *_internal;
     unsigned int _interruptionCount;
     id _orientationChangeObserver;
     NSString *_previewEndpoint;
     FigCameraViewfinder *_remoteViewfinder;
     FigCameraViewfinderSession *_remoteViewfinderSession;
-    BOOL _remoteViewfinderSessionActive;
     NSXPCConnection *_xpc;
 }
 
@@ -25,6 +28,7 @@
 - (int)_currentOrientation;
 - (void)_handleInterruption;
 - (void)_handleInvalidation;
+- (void)_performPreviewStateTransitionsIfNeeded;
 - (void)cameraViewfinder:(id)arg1 viewfinderSessionDidBegin:(id)arg2;
 - (void)cameraViewfinder:(id)arg1 viewfinderSessionDidEnd:(id)arg2;
 - (void)cameraViewfinderSession:(id)arg1 didCapturePhotoWithStatus:(long)arg2 thumbnailData:(id)arg3 timestamp:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg4;

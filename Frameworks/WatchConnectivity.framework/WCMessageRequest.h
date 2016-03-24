@@ -15,7 +15,7 @@
 - (BOOL)expectsResponse;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 data:(id)arg2 dictionaryMessage:(BOOL)arg3 expectsResponse:(BOOL)arg4;
+- (id)initWithPairingID:(id)arg1 identifier:(id)arg2 data:(id)arg3 dictionaryMessage:(BOOL)arg4 expectsResponse:(BOOL)arg5;
 - (BOOL)isEqual:(id)arg1;
 - (void)setExpectsResponse:(BOOL)arg1;
 

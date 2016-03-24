@@ -13,6 +13,7 @@
 + (id)grabberImage;
 
 - (void).cxx_destruct;
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (BOOL)beginTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (void)cancelTrackingWithEvent:(id)arg1;
 - (BOOL)continueTrackingWithTouch:(id)arg1 withEvent:(id)arg2;

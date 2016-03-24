@@ -13,7 +13,7 @@
 - (id)_presentedViewControllerForSizeClassPair:(struct { int x1; int x2; })arg1;
 - (id)adaptivePresentationController;
 - (int)adaptivePresentationStyle;
-- (BOOL)animatorShouldSizeResultsContainerView;
+- (BOOL)animatorShouldLayoutPresentationViews;
 - (id)backgroundObscuringView;
 - (id)blurView;
 - (unsigned int)edgeForHidingNavigationBar;

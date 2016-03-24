@@ -42,14 +42,16 @@
 - (void)submitUsageForTraits:(id)arg1;
 - (void)submitUsageForTraits:(id)arg1 actionDetails:(id)arg2 routeDetails:(id)arg3;
 - (void)submitUsageForTraits:(id)arg1 actionDetails:(id)arg2 uiTarget:(int)arg3;
+- (void)submitUsageForTraits:(id)arg1 actionDetails:(id)arg2 uiTarget:(int)arg3 eventValue:(id)arg4;
+- (void)submitUsageForTraits:(id)arg1 eventKey:(id)arg2 eventValue:(id)arg3 placeActionDetails:(id)arg4 providerId:(id)arg5;
 - (void)submitUsageForTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7 transitDepartureSequence:(id)arg8;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5 transitCardCategory:(int)arg6 transitSystem:(id)arg7 transitIncident:(id)arg8;
+- (void)submitUsageForTraits:(id)arg1 searchFieldType:(int)arg2 prefix:(id)arg3 displayedResults:(id)arg4 selectedIndex:(int)arg5;
 - (void)submitUsageForTraits:(id)arg1 suggestionEntryMetadatasDisplayed:(id)arg2 categorySelected:(id)arg3;
 - (void)submitUsageForTraits:(id)arg1 uiTarget:(int)arg2;
-- (void)submitUsageForTraits:(id)arg1 userActionsUsageLogMessage:(id)arg2 eventKey:(int)arg3;
 - (id)ticketForBatchPopularNearbyForSearchCategories:(id)arg1 maxResults:(unsigned int)arg2 traits:(id)arg3;
 - (id)ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 additionalPlaceTypes:(int*)arg3 additionalPlaceTypesCount:(unsigned int)arg4 traits:(id)arg5;
 - (id)ticketForBatchReverseGeocodeLocations:(id)arg1 shiftLocationsIfNeeded:(BOOL)arg2 traits:(id)arg3;

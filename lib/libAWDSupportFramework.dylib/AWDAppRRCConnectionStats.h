@@ -35,6 +35,7 @@
 @property (nonatomic) int rAT;
 @property (nonatomic) unsigned int totalBytesTransferred;
 
+- (int)StringAsRAT:(id)arg1;
 - (unsigned int)bundleBGDuration;
 - (unsigned int)bundleFGDuration;
 - (id)bundleName;
@@ -56,6 +57,7 @@
 - (unsigned int)numMOConnectionTriggered;
 - (unsigned int)numMTConnectionTriggered;
 - (int)rAT;
+- (id)rATAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setBundleBGDuration:(unsigned int)arg1;
 - (void)setBundleFGDuration:(unsigned int)arg1;

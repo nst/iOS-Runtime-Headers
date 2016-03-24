@@ -6,6 +6,8 @@
 @required
 
 - (NSString *)contentInfoText;
+- (NSDate *)dateForCurrentSortType;
+- (BOOL)isPasswordProtected;
 - (NSString *)noteAsPlainTextWithoutTitle;
 - (NSArray *)searchableContentKeyPaths;
 - (NSString *)title;

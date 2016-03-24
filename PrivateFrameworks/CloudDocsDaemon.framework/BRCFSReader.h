@@ -23,6 +23,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_attemptSchedulingCoordinatedReadForItem:(id)arg1 path:(id)arg2;
 - (BOOL)_canRetryThrottleID:(long long)arg1 zone:(id)arg2;
 - (void)_cancelScan;
 - (void)_close;
@@ -30,8 +31,8 @@
 - (void)_createOrRetryThrottleID:(long long)arg1 zone:(id)arg2 state:(int)arg3 throttle:(id)arg4 hasBeenTried:(BOOL)arg5;
 - (void)_delayThrottleID:(long long)arg1 zone:(id)arg2 by:(double)arg3;
 - (void)_didResolvedDocumentID:(unsigned int)arg1 fileID:(unsigned long long)arg2 zone:(id)arg3;
-- (void)_fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 item:(id)arg3 lookup:(id)arg4;
-- (void)_fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 item:(id)arg3 lookup:(id)arg4 unresolvedLastPathComponent:(id)arg5;
+- (void)_fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 options:(unsigned int)arg3 item:(id)arg4 lookup:(id)arg5;
+- (void)_fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 options:(unsigned int)arg3 item:(id)arg4 lookup:(id)arg5 unresolvedLastPathComponent:(id)arg6;
 - (void)_lostScanSchedule;
 - (void)_processDeadItem:(id)arg1;
 - (void)_processLostItem:(id)arg1;
@@ -52,13 +53,15 @@
 - (void)didChangeLostScanStatusForContainer:(id)arg1;
 - (void)endReadCoordinationInZone:(id)arg1;
 - (void)fseventAtPath:(id)arg1 flags:(unsigned long)arg2;
+- (void)fseventAtPath:(id)arg1 flags:(unsigned long)arg2 options:(unsigned int)arg3 unresolvedLastPathComponent:(id)arg4;
 - (void)fseventAtPath:(id)arg1 flags:(unsigned long)arg2 unresolvedLastPathComponent:(id)arg3;
 - (void)fseventInsideSharedEnclosure:(id)arg1 flags:(unsigned long)arg2;
 - (void)fseventOnAlias:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3;
 - (void)fseventOnContainer:(id)arg1 flags:(unsigned long)arg2;
 - (void)fseventOnDirectory:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3;
 - (void)fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3;
-- (void)fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 lookup:(id)arg3 unresolvedLastPathComponent:(id)arg4;
+- (void)fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 options:(unsigned int)arg3 lookup:(id)arg4;
+- (void)fseventOnDocument:(id)arg1 flags:(unsigned long)arg2 options:(unsigned int)arg3 lookup:(id)arg4 unresolvedLastPathComponent:(id)arg5;
 - (void)fseventOnRoot:(id)arg1 flags:(unsigned long)arg2;
 - (void)fseventOnSharedRoot:(id)arg1 flags:(unsigned long)arg2;
 - (id)initWithAccountSession:(id)arg1;

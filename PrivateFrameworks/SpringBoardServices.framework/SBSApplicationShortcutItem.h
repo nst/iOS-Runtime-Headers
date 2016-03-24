@@ -31,10 +31,10 @@
 + (int)_iconTypeForString:(id)arg1;
 + (id)staticShortcutItemWithDictionary:(id)arg1 localizationHandler:(id /* block */)arg2;
 
+- (void).cxx_destruct;
 - (unsigned int)activationMode;
 - (id)bundleIdentifierToLaunch;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned int)hash;

@@ -10,7 +10,6 @@
 - (NSString *)deviceName;
 - (NSString *)deviceRegion;
 - (void)downloadAllPaymentPassesForPaymentWebService:(PKPaymentWebService *)arg1;
-- (void)noteProvisioningInProgress:(BOOL)arg1;
 - (int)paymentSupportedInCurrentRegionForWebService:(PKPaymentWebService *)arg1;
 - (void)paymentWebService:(void *)arg1 addPaymentPass:(void *)arg2 withCompletionHandler:(void *)arg3; // needs 3 arg types, found 7: PKPaymentWebService *, PKPaymentPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, void*
 - (BOOL)paymentWebService:(PKPaymentWebService *)arg1 canProvisionPaymentPassWithPrimaryAccountIdentifier:(NSString *)arg2;
@@ -30,6 +29,10 @@
 
 @optional
 
+- (void)noteProvisioningDidBegin;
+- (void)noteProvisioningDidEnd;
+- (void)noteProvisioningUserInterfaceDidAppear;
+- (void)noteProvisioningUserInterfaceDidDisappear;
 - (void)paymentWebService:(void *)arg1 addPaymentPass:(void *)arg2 withCompletionHandlerV2:(void *)arg3; // needs 3 arg types, found 8: PKPaymentWebService *, PKPaymentPass *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, PKPaymentPass *, void*
 
 @end

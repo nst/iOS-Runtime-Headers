@@ -3,7 +3,6 @@
  */
 
 @interface HKWorkoutSession : NSObject <NSSecureCoding, _HKWorkoutSessionDelegate> {
-    unsigned int _activityType;
     <HKWorkoutSessionDelegate> *_delegate;
     _HKWorkoutSession *_privateSession;
     NSObject<OS_dispatch_queue> *_queue;

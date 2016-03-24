@@ -55,6 +55,14 @@
 + (id)_mapkit_networkIORunLoop;
 + (void)set_mapkit_networkIORunLoop:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
++ (void)cat_performBlock:(id /* block */)arg1;
++ (void)cat_performBlockOnMainRunLoop:(id /* block */)arg1;
+
+- (void)cat_performBlock:(id /* block */)arg1;
+- (void)cat_performInModes:(id)arg1 block:(id /* block */)arg2;
+
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 
 - (BOOL)rc_runUntilNextDisplayLinkEventWithTimeout:(double)arg1;

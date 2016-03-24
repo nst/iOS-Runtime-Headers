@@ -7,6 +7,7 @@
     NSString *_appIdentifier;
     NSString *_appMajorVersion;
     NSString *_appMinorVersion;
+    int _carHeadunitConnectionType;
     int _carHeadunitInteractionModel;
     NSString *_carHeadunitManufacturer;
     NSString *_carHeadunitModel;
@@ -25,6 +26,7 @@
         unsigned int carHeadunitPixelWidth : 1; 
         unsigned int mapZoomLevel : 1; 
         unsigned int action : 1; 
+        unsigned int carHeadunitConnectionType : 1; 
         unsigned int carHeadunitInteractionModel : 1; 
         unsigned int deviceBatteryState : 1; 
         unsigned int deviceInterfaceOrientation : 1; 
@@ -66,6 +68,7 @@
 @property (nonatomic, retain) NSString *appIdentifier;
 @property (nonatomic, retain) NSString *appMajorVersion;
 @property (nonatomic, retain) NSString *appMinorVersion;
+@property (nonatomic) int carHeadunitConnectionType;
 @property (nonatomic) int carHeadunitInteractionModel;
 @property (nonatomic, retain) NSString *carHeadunitManufacturer;
 @property (nonatomic, retain) NSString *carHeadunitModel;
@@ -82,6 +85,7 @@
 @property (nonatomic, readonly) BOOL hasAppIdentifier;
 @property (nonatomic, readonly) BOOL hasAppMajorVersion;
 @property (nonatomic, readonly) BOOL hasAppMinorVersion;
+@property (nonatomic) BOOL hasCarHeadunitConnectionType;
 @property (nonatomic) BOOL hasCarHeadunitInteractionModel;
 @property (nonatomic, readonly) BOOL hasCarHeadunitManufacturer;
 @property (nonatomic, readonly) BOOL hasCarHeadunitModel;
@@ -132,6 +136,7 @@
 - (id)appIdentifier;
 - (id)appMajorVersion;
 - (id)appMinorVersion;
+- (int)carHeadunitConnectionType;
 - (int)carHeadunitInteractionModel;
 - (id)carHeadunitManufacturer;
 - (id)carHeadunitModel;
@@ -159,6 +164,7 @@
 - (BOOL)hasAppIdentifier;
 - (BOOL)hasAppMajorVersion;
 - (BOOL)hasAppMinorVersion;
+- (BOOL)hasCarHeadunitConnectionType;
 - (BOOL)hasCarHeadunitInteractionModel;
 - (BOOL)hasCarHeadunitManufacturer;
 - (BOOL)hasCarHeadunitModel;
@@ -206,6 +212,7 @@
 - (void)setAppIdentifier:(id)arg1;
 - (void)setAppMajorVersion:(id)arg1;
 - (void)setAppMinorVersion:(id)arg1;
+- (void)setCarHeadunitConnectionType:(int)arg1;
 - (void)setCarHeadunitInteractionModel:(int)arg1;
 - (void)setCarHeadunitManufacturer:(id)arg1;
 - (void)setCarHeadunitModel:(id)arg1;
@@ -219,6 +226,7 @@
 - (void)setDeviceSpokenLocale:(id)arg1;
 - (void)setDisplayRegion:(id)arg1;
 - (void)setHasAction:(BOOL)arg1;
+- (void)setHasCarHeadunitConnectionType:(BOOL)arg1;
 - (void)setHasCarHeadunitInteractionModel:(BOOL)arg1;
 - (void)setHasCarHeadunitPixelHeight:(BOOL)arg1;
 - (void)setHasCarHeadunitPixelWidth:(BOOL)arg1;

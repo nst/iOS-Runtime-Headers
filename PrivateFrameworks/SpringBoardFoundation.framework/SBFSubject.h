@@ -11,8 +11,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_observers;
-- (void)dealloc;
 - (id)init;
 - (void)observerDidComplete;
 - (void)observerDidFailWithError:(id)arg1;

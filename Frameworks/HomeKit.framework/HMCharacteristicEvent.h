@@ -20,6 +20,7 @@
 - (id)characteristic;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCharacteristic:(id)arg1 triggerValue:(id)arg2;
+- (id)initWithCharacteristic:(id)arg1 triggerValue:(id)arg2 allowWithoutNotification:(BOOL)arg3;
 - (id)initWithCoder:(id)arg1;
 - (void)setCharacteristic:(id)arg1;
 - (void)setTriggerValue:(id)arg1;

@@ -126,6 +126,7 @@
 - (void)previewItem:(id)arg1 willShowOverlayWithDuration:(double)arg2;
 - (void)previewItemDidExitFullScreen:(id)arg1;
 - (void)previewItemDidLoad:(id)arg1 atIndex:(int)arg2 withError:(id)arg3;
+- (void)previewItemNeedsWhitePointAdaptivityStyle:(int)arg1 atIndex:(int)arg2;
 - (void)previewItemWillLoad:(id)arg1;
 - (int)previewMode;
 - (void)refreshPreviewItem;

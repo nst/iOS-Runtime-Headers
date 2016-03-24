@@ -6,6 +6,7 @@
     UITextInputTraits *m_traits;
 }
 
+@property (nonatomic, copy) NSIndexSet *PINEntrySeparatorIndexes;
 @property (nonatomic) BOOL acceptsEmoji;
 @property (nonatomic) BOOL acceptsFloatingKeyboard;
 @property (nonatomic) BOOL acceptsSplitKeyboard;
@@ -18,6 +19,7 @@
 @property (nonatomic) BOOL deferBecomingResponder;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disablePrediction;
+@property (nonatomic) BOOL displaySecureEditsUsingPlainText;
 @property (nonatomic) BOOL displaySecureTextUsingPlainText;
 @property (nonatomic) int emptyContentReturnKeyType;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
@@ -58,6 +60,7 @@
 @property (nonatomic) struct __CFCharacterSet { }*textTrimmingSet;
 @property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
 @property (nonatomic) BOOL useInterfaceLanguageForLocalization;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } validTextRange;
 
 - (BOOL)acceptsEmoji;
 - (int)baseWritingDirectionForPosition:(id)arg1 inDirection:(int)arg2;

@@ -16,9 +16,9 @@
 @property (nonatomic, readonly) int minorBuildNumber;
 @property (nonatomic, readonly, copy) NSString *stringRepresentation;
 
+- (void).cxx_destruct;
 - (int)compareBuildVersion:(id)arg1 withPrecision:(int)arg2;
 - (int)compareBuildVersionString:(id)arg1 withPrecision:(int)arg2;
-- (void)dealloc;
 - (id)description;
 - (unsigned int)hash;
 - (id)initWithString:(id)arg1;

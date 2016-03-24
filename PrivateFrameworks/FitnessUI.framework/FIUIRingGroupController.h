@@ -38,9 +38,12 @@
 
 - (void).cxx_destruct;
 - (double)_adjustedDurationForRingWithIndex:(int)arg1 startPercentage:(double)arg2 targetPercentage:(double)arg3 defaultDuration:(double)arg4;
+- (void)_configureIconWithStartingPercentage:(double)arg1 forRingAtIndex:(unsigned int)arg2 animated:(BOOL)arg3;
 - (float)_diameterForRingAtIndex:(unsigned int)arg1;
+- (unsigned int)_lastRingFrameNumberForRingAtIndex:(unsigned int)arg1;
 - (void)_markRingStartingStateDirty;
 - (id)_newAnimatablePropertyForType:(unsigned int)arg1;
+- (double)_ringPercentageAdjustedForProximityToFull:(double)arg1 withRingDiameter:(double)arg2 thickness:(double)arg3;
 - (float)_scaledRingDiameter;
 - (float)_scaledRingIconSize;
 - (float)_scaledRingInterspacing;

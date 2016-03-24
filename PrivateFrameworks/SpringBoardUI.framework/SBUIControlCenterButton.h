@@ -44,11 +44,13 @@
 + (id)_circleBackgroundImage;
 + (id)_circleBackgroundImageForSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)_roundRectBackgroundImage;
++ (id)_roundRectBackgroundImageForSize:(struct CGSize { float x1; float x2; })arg1;
 + (id)_smallCircleBackgroundImage;
++ (id)_smallRoundRectBackgroundImage;
 + (id)circularButton;
-+ (void)controlAppearanceDidChangeForState:(int)arg1;
 + (id)roundRectButton;
 
+- (void).cxx_destruct;
 - (id)_backgroundImage;
 - (id)_backgroundImageWithGlyphImage:(id)arg1 state:(int)arg2;
 - (id)_controlStateStringFromState:(int)arg1;

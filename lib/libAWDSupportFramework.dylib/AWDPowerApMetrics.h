@@ -34,6 +34,8 @@
 @property (nonatomic) unsigned int socPowerMicroWatt;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)dataType;
+
 - (void)addData:(id)arg1;
 - (unsigned int)apAwakeDuration;
 - (void)clearDatas;

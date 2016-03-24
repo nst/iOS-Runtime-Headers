@@ -9,6 +9,7 @@
     UIViewController *_inputController;
     UIView *_inputControllerSnapshot;
     UIKeyboardInputMode *_inputMode;
+    double _lastSuspendedTime;
     BOOL _shouldRegenerateSizingConstraints;
     BOOL _shouldSuppressRemoteInputController;
 }

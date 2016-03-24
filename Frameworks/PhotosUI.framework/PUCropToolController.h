@@ -185,6 +185,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_denormalizeImageRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)_geometry;
 - (void)_handleCropHandlePan:(id)arg1;
+- (void)_handleDidCreateEditedImage:(struct CGImage { }*)arg1;
 - (void)_handleTouchingGesture:(id)arg1;
 - (BOOL)_hasAppliedCropSuggestion;
 - (BOOL)_hasAutoAppliedCropSuggestion;
@@ -220,6 +221,7 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_previewViewInsets;
 - (void)_recomposeCropRectAnimated:(BOOL)arg1;
 - (void)_recomposeCropRectDelayed;
+- (void)_removeSnapshotView:(id)arg1;
 - (id)_renderer;
 - (void)_resetAllValuesAnimated:(BOOL)arg1;
 - (id)_rotateButton;
@@ -293,6 +295,7 @@
 - (void)_updateCropToggleButton;
 - (void)_updateCropToggleConstraintsIfNeeded;
 - (void)_updateCropViewsForInteraction;
+- (void)_updateLivePhoto;
 - (void)_updatePreviewViewInsets;
 - (void)_updateTiltControlColor;
 - (void)_updateTiltWheelConstraintsIfNeeded;
@@ -318,6 +321,7 @@
 - (void)prepareForPopoverPresentation:(id)arg1;
 - (void)resetToDefaultValueAnimated:(BOOL)arg1;
 - (id)selectedToolbarIcon;
+- (void)setDelegate:(id)arg1;
 - (void)setLayoutOrientation:(int)arg1 withTransitionCoordinator:(id)arg2;
 - (id)toolbarIcon;
 - (void)updateViewConstraints;

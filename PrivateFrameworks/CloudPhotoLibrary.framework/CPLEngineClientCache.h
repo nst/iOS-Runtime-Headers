@@ -2,15 +2,21 @@
    Image: /System/Library/PrivateFrameworks/CloudPhotoLibrary.framework/CloudPhotoLibrary
  */
 
-@interface CPLEngineClientCache : CPLEngineStorage <CPLAbstractObject>
+@interface CPLEngineClientCache : CPLEngineStorage <CPLAbstractObject> {
+    NSArray *__lastModifiedProperties;
+}
 
+@property (setter=_setLastModifiedProperties:, copy) NSArray *_lastModifiedProperties;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) CPLPlatformObject *platformObject;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
+- (id)_lastModifiedProperties;
 - (id)_relatedIdentifierForRecordWithIdentifier:(id)arg1;
+- (void)_setLastModifiedProperties:(id)arg1;
 - (BOOL)addRecord:(id)arg1 error:(id*)arg2;
 - (BOOL)applyBatch:(id)arg1 withError:(id*)arg2;
 - (id)compactedBatchFromExpandedBatch:(id)arg1;
@@ -22,6 +28,8 @@
 - (id)relatedIdentifierForRecordWithIdentifier:(id)arg1;
 - (BOOL)resetWithError:(id*)arg1;
 - (id)resourceOfType:(unsigned int)arg1 forRecordWithIdentifier:(id)arg2 error:(id*)arg3;
+- (id)status;
+- (id)statusDictionary;
 - (BOOL)updateRecord:(id)arg1 error:(id*)arg2;
 
 @end

@@ -10,8 +10,6 @@
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
-+ (id)defaultWorkspace;
-
 - (void).cxx_destruct;
 - (void)_connectionInvalidated;
 - (void)_loadConnectionIfNeeded;
@@ -22,5 +20,6 @@
 - (id)queue;
 - (void)setConnection:(id)arg1;
 - (void)setQueue:(id)arg1;
+- (id)workspaceInfo:(id*)arg1;
 
 @end

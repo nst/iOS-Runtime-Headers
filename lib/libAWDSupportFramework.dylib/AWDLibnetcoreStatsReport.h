@@ -33,6 +33,8 @@
 @property (nonatomic, retain) AWDLibnetcoreTCPTFOStatsReport *tcpTFOStatisticsReport;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)tcpECNInterfaceReportType;
+
 - (void)addTcpECNInterfaceReport:(id)arg1;
 - (void)clearTcpECNInterfaceReports;
 - (void)copyTo:(id)arg1;

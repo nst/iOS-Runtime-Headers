@@ -4,12 +4,12 @@
 
 @interface _HKQueryServerDataObject : NSObject <NSSecureCoding> {
     _HKFilter *_filter;
-    HKSampleType *_sampleType;
+    HKObjectType *_objectType;
     BOOL _shouldStayAliveAfterInitialResults;
 }
 
 @property (nonatomic, retain) _HKFilter *filter;
-@property (nonatomic, retain) HKSampleType *sampleType;
+@property (nonatomic, retain) HKObjectType *objectType;
 @property (nonatomic) BOOL shouldStayAliveAfterInitialResults;
 
 + (BOOL)supportsSecureCoding;
@@ -18,9 +18,9 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)filter;
 - (id)initWithCoder:(id)arg1;
-- (id)sampleType;
+- (id)objectType;
 - (void)setFilter:(id)arg1;
-- (void)setSampleType:(id)arg1;
+- (void)setObjectType:(id)arg1;
 - (void)setShouldStayAliveAfterInitialResults:(BOOL)arg1;
 - (BOOL)shouldStayAliveAfterInitialResults;
 

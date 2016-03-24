@@ -2,11 +2,14 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface UISystemInputViewController : UIViewController {
+@interface UISystemInputViewController : UIViewController <UIRecentsInputViewControllerDelegate> {
     NSMutableDictionary *_accessoryConstraints;
     NSMutableDictionary *_accessoryViewControllers;
+    int _blurEffectStyle;
+    UILexicon *_cachedRecents;
     UIView *_containingView;
     UIView *_contentLayoutView;
+    BOOL _didDisplayRecents;
     UIButton *_doneButton;
     NSArray *_editorConstraints;
     UIKBSystemLayoutViewController *_editorVC;
@@ -20,16 +23,26 @@
     BOOL _needsSetupAgain;
     UIResponder<UITextInput> *_nextInputDelegate;
     UIResponder<UITextInput> *_persistentDelegate;
+    UIRecentsInputViewController *_recentsVC;
+    BOOL _supportsRecentInputsIntegration;
     BOOL _supportsTouchInput;
+    <UISystemInputViewControllerDelegate> *_systemInputViewControllerDelegate;
+    UITextInputTraits *_textInputTraits;
     NSLayoutConstraint *_verticalAlignment;
     BOOL _willPresentFullscreen;
 }
 
+@property (nonatomic) int blurEffectStyle;
+@property (nonatomic, retain) UILexicon *cachedRecents;
 @property (nonatomic, retain) UIView *containingView;
 @property (nonatomic, retain) UIView *contentLayoutView;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic) BOOL didDisplayRecents;
 @property (nonatomic, retain) UIButton *doneButton;
 @property (nonatomic, retain) NSArray *editorConstraints;
 @property (nonatomic, retain) UIKBSystemLayoutViewController *editorVC;
+@property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSLayoutConstraint *horizontalAlignment;
 @property (nonatomic, retain) UIViewController *inputVC;
 @property (nonatomic) BOOL isAutomaticResponderTransition;
@@ -38,7 +51,12 @@
 @property (nonatomic, retain) UICompatibilityInputViewController *keyboardVC;
 @property (nonatomic, retain) UIResponder<UITextInput> *nextInputDelegate;
 @property (nonatomic, retain) UIResponder<UITextInput> *persistentDelegate;
+@property (nonatomic, retain) UIRecentsInputViewController *recentsVC;
+@property (readonly) Class superclass;
+@property (nonatomic) BOOL supportsRecentInputsIntegration;
 @property (nonatomic) BOOL supportsTouchInput;
+@property (nonatomic) <UISystemInputViewControllerDelegate> *systemInputViewControllerDelegate;
+@property (nonatomic, retain) UITextInputTraits *textInputTraits;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } unfocusedFocusGuideOutsets;
 @property (nonatomic, retain) NSLayoutConstraint *verticalAlignment;
 @property (nonatomic) BOOL willPresentFullscreen;
@@ -49,21 +67,29 @@
 
 - (id)_accessoryViewControllerForEdge:(int)arg1;
 - (void)_addAccessoryViewController:(id)arg1;
+- (void)_addChildInputViewController;
+- (void)_createKeyboardIfNecessary;
 - (void)_didSuspend:(id)arg1;
 - (BOOL)_disableAutomaticKeyboardBehavior;
 - (void)_dismissSystemInputViewController;
 - (unsigned int)_horizontalLayoutTypeForEdge:(int)arg1;
 - (void)_removeAccessoryViewController:(id)arg1;
 - (void)_returnButtonPressed;
+- (void)_setNonInputViewVisibility:(BOOL)arg1;
 - (unsigned int)_verticalLayoutTypeForEdge:(int)arg1;
 - (void)_willResume:(id)arg1;
 - (id)accessoryViewControllerForEdge:(int)arg1;
 - (id)alignmentConstraintForAxis:(int)arg1;
+- (int)blurEffectStyle;
+- (id)cachedRecents;
+- (void)configureRecentsVCIfNecessary;
 - (id)constraintFromView:(id)arg1 attribute:(int)arg2 toView:(id)arg3 attribute:(int)arg4;
 - (id)constraintsForEdge:(int)arg1;
 - (id)containingView;
 - (id)contentLayoutView;
 - (void)dealloc;
+- (BOOL)didDisplayRecents;
+- (void)didSelectRecentInput;
 - (id)doneButton;
 - (id)doneButtonStringForCurrentInputDelegate;
 - (id)editorConstraints;
@@ -78,18 +104,23 @@
 - (id)keyboardConstraints;
 - (id)keyboardVC;
 - (id)nextInputDelegate;
+- (void)notifyDelegateWithAccessoryVisibility:(BOOL)arg1;
 - (id)persistentDelegate;
 - (void)populateCoreHierarchy;
 - (id)preferredFocusedItem;
 - (void)pressesBegan:(id)arg1 withEvent:(id)arg2;
 - (void)pressesCancelled:(id)arg1 withEvent:(id)arg2;
 - (void)pressesEnded:(id)arg1 withEvent:(id)arg2;
+- (id)recentsVC;
 - (void)reloadInputViewsForPersistentDelegate;
 - (void)setAccessoryViewController:(id)arg1 forEdge:(int)arg2;
 - (void)setAlignmentConstraint:(id)arg1 forAxis:(int)arg2;
+- (void)setBlurEffectStyle:(int)arg1;
+- (void)setCachedRecents:(id)arg1;
 - (void)setConstraints:(id)arg1 forEdge:(int)arg2;
 - (void)setContainingView:(id)arg1;
 - (void)setContentLayoutView:(id)arg1;
+- (void)setDidDisplayRecents:(BOOL)arg1;
 - (void)setDoneButton:(id)arg1;
 - (void)setEditorConstraints:(id)arg1;
 - (void)setEditorVC:(id)arg1;
@@ -101,13 +132,22 @@
 - (void)setKeyboardVC:(id)arg1;
 - (void)setNextInputDelegate:(id)arg1;
 - (void)setPersistentDelegate:(id)arg1;
+- (void)setRecentsVC:(id)arg1;
+- (void)setSupportsRecentInputsIntegration:(BOOL)arg1;
 - (void)setSupportsTouchInput:(BOOL)arg1;
+- (void)setSystemInputViewControllerDelegate:(id)arg1;
+- (void)setTextInputTraits:(id)arg1;
 - (void)setUnfocusedFocusGuideOutsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setVerticalAlignment:(id)arg1;
 - (void)setWillPresentFullscreen:(BOOL)arg1;
 - (void)setupKeyboard;
+- (BOOL)supportsRecentInputsIntegration;
 - (BOOL)supportsTouchInput;
+- (void)switchToKeyboard;
+- (id)systemInputViewControllerDelegate;
+- (id)textInputTraits;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })unfocusedFocusGuideOutsets;
+- (void)updateAlignmentConstraints;
 - (void)updateViewConstraints;
 - (id)verticalAlignment;
 - (void)viewDidAppear:(BOOL)arg1;

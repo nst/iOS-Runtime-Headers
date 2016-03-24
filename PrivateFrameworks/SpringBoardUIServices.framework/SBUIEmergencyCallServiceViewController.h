@@ -8,14 +8,14 @@
 }
 
 @property (nonatomic) int backgroundStyle;
-@property (nonatomic, readonly, retain) UIColor *tintColor;
+@property (nonatomic, readonly) UIColor *tintColor;
 
 + (id)_exportedInterface;
 + (id)_remoteViewControllerInterface;
 
+- (void).cxx_destruct;
 - (int)backgroundStyle;
 - (void)backgroundStyle:(id /* block */)arg1;
-- (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (void)noteTintColorForBackgroundStyleChanged:(id)arg1;
 - (void)noteViewMovedOffscreenTemporarily;

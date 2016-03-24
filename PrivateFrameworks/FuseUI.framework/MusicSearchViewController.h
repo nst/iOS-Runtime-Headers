@@ -8,8 +8,6 @@
     MusicClientContext *_clientContext;
     BOOL _didInsertStoreSearchResultsDocument;
     BOOL _didMakeSearchBarFirstResponder;
-    BOOL _hasPreviouslyShownLibrarySearchResults;
-    BOOL _hasPreviouslyShownStoreSearchResults;
     MusicLibrarySearchResultsViewController *_librarySearchResultsViewController;
     BOOL _mediaPickerAllowsLocalSearchOnly;
     BOOL _mediaPickerAllowsMultipleSelection;
@@ -57,7 +55,6 @@
 - (void)_handleCanShowRadioDidChangeNotification:(id)arg1;
 - (void)_handleCanShowSubscriptionContentDidChangeNotification:(id)arg1;
 - (void)_handleCancelButtonPressed;
-- (void)_handleMetricsWithSearchTerm:(id)arg1 focusedViewControllerIndex:(unsigned int)arg2;
 - (void)_recordSearchRecent:(id)arg1;
 - (void)_removeConstraints;
 - (id)_storeSearchSegmentTitle;

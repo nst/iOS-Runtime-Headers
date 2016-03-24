@@ -22,7 +22,6 @@
     NSDictionary *_groupContainers;
     NSArray *_groupIdentifiers;
     unsigned int _installType;
-    BOOL _isContainerized;
     NSNumber *_itemID;
     NSString *_itemName;
     NSString *_minimumSystemVersion;
@@ -77,7 +76,6 @@
 @property (nonatomic, readonly) BOOL isAdHocCodeSigned;
 @property (nonatomic, readonly) BOOL isAppUpdate;
 @property (nonatomic, readonly) BOOL isBetaApp;
-@property (nonatomic, readonly) BOOL isContainerized;
 @property (nonatomic, readonly) BOOL isInstalled;
 @property (nonatomic, readonly) BOOL isNewsstandApp;
 @property (nonatomic, readonly) BOOL isPlaceholder;
@@ -94,6 +92,8 @@
 @property (nonatomic, readonly) BOOL profileValidated;
 @property (nonatomic, readonly) NSNumber *purchaserDSID;
 @property (nonatomic, readonly) NSDate *registeredDate;
+@property (getter=isRemoveableSystemApp, nonatomic, readonly) BOOL removeableSystemApp;
+@property (getter=isRemovedSystemApp, nonatomic, readonly) BOOL removedSystemApp;
 @property (nonatomic, readonly) NSArray *requiredDeviceCapabilities;
 @property (nonatomic, readonly) NSString *roleIdentifier;
 @property (nonatomic, readonly) NSString *sdkVersion;
@@ -105,6 +105,7 @@
 @property (nonatomic, readonly) BOOL supportsAudiobooks;
 @property (nonatomic, readonly) BOOL supportsExternallyPlayableContent;
 @property (nonatomic, readonly) BOOL supportsOpenInPlace;
+@property (nonatomic, readonly) BOOL supportsPurgeableLocalStorage;
 @property (nonatomic, readonly) NSString *teamID;
 @property (nonatomic, readonly) NSString *vendorName;
 @property (getter=isWhitelisted, nonatomic, readonly) BOOL whitelisted;
@@ -112,6 +113,7 @@
 // Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
 
 + (id)applicationProxyForBundleURL:(id)arg1;
++ (id)applicationProxyForCompanionIdentifier:(id)arg1;
 + (id)applicationProxyForIdentifier:(id)arg1;
 + (id)applicationProxyForIdentifier:(id)arg1 placeholder:(BOOL)arg2;
 + (id)applicationProxyForIdentifier:(id)arg1 roleIdentifier:(id)arg2;
@@ -160,13 +162,15 @@
 - (BOOL)isAdHocCodeSigned;
 - (BOOL)isAppUpdate;
 - (BOOL)isBetaApp;
-- (BOOL)isContainerized;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isInstalled;
 - (BOOL)isNewsstandApp;
 - (BOOL)isPlaceholder;
 - (BOOL)isPurchasedReDownload;
+- (BOOL)isRemoveableSystemApp;
+- (BOOL)isRemovedSystemApp;
 - (BOOL)isRestricted;
+- (BOOL)isSystemOrInternalApp;
 - (BOOL)isWatchKitApp;
 - (BOOL)isWhitelisted;
 - (id)itemID;
@@ -203,6 +207,7 @@
 - (BOOL)supportsAudiobooks;
 - (BOOL)supportsExternallyPlayableContent;
 - (BOOL)supportsOpenInPlace;
+- (BOOL)supportsPurgeableLocalStorage;
 - (id)teamID;
 - (id)uniqueIdentifier;
 - (id)userActivityStringForAdvertisementData:(id)arg1;
@@ -216,16 +221,16 @@
 
 // Image: /System/Library/PrivateFrameworks/UserNotification.framework/UserNotification
 
-+ (id)un_applicationProxyForBundleIdentifier:(id)arg1;
 + (id)un_bundleForBundleIdentifier:(id)arg1;
 
+- (id)_un_bundle;
+- (BOOL)_un_isReallyInstalled;
 - (BOOL)_un_isResourceValidForPath:(id)arg1 withContainerPath:(id)arg2;
-- (id)un_bundle;
+- (BOOL)_un_usesLocalNotification;
 - (id)un_infoDictionary;
 - (BOOL)un_isSystemApplication;
 - (id)un_pathForSoundName:(id)arg1;
 - (BOOL)un_requiresLocalNotification;
 - (BOOL)un_shouldUseDefaultDataProvider;
-- (BOOL)un_usesLocalNotification;
 
 @end

@@ -2,8 +2,9 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicMediaProfileHeaderContentViewController : UIViewController <MusicMediaDetailHeaderContentViewController, MusicProfileDetailViewDelegate> {
+@interface MusicMediaProfileHeaderContentViewController : UIViewController <MusicClientContextConsuming, MusicMediaDetailHeaderContentViewController, MusicProfileDetailViewDelegate> {
     BOOL _adminEnabled;
+    MusicClientContext *_clientContext;
     <MusicEntityProviding> *_containerEntityProvider;
     MusicEntityValueContext *_containerEntityValueContext;
     <MusicMediaProfileHeaderContentViewControllerDelegate> *_delegate;
@@ -22,6 +23,7 @@
 }
 
 @property (getter=isAdminEnabled, nonatomic) BOOL adminEnabled;
+@property (nonatomic, retain) MusicClientContext *clientContext;
 @property (nonatomic, readonly) <MusicEntityProviding> *containerEntityProvider;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <MusicMediaProfileHeaderContentViewControllerDelegate> *delegate;
@@ -46,10 +48,12 @@
 - (void)_containerEntityValueProviderDidInvalidateNotification:(id)arg1;
 - (void)_contentSizeCategoryDidChangeNotification:(id)arg1;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_effectiveVerticalInsets;
+- (BOOL)_isFollowActionAvailable;
 - (void)_reloadContainerEntityValueContextProperties;
 - (void)_reloadProfileImageView;
 - (void)_setContentOverlayInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_updatePreferredContentSize;
+- (id)clientContext;
 - (void)configureArtworkCatalog:(id)arg1;
 - (id)containerEntityProvider;
 - (void)dealloc;
@@ -70,6 +74,7 @@
 - (id)profileImage;
 - (id)profileTitle;
 - (void)setAdminEnabled:(BOOL)arg1;
+- (void)setClientContext:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFollowHidden:(BOOL)arg1;
 - (void)setFollowersCountText:(id)arg1;

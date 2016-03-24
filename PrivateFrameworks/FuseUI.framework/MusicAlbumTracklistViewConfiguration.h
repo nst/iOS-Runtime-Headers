@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicAlbumTracklistViewConfiguration : MusicProductTracklistTableViewConfiguration {
+@interface MusicAlbumTracklistViewConfiguration : MusicProductTracklistTableViewConfiguration <ISURLBagObserver> {
     <MusicEntityProviding> *_entityProvider;
     NSString *_groupingProperty;
     <MusicEntityProviding> *_originalEntityProvider;
@@ -10,7 +10,11 @@
     NSString *_wantsGroupingProperty;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSString *groupingProperty;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *wantsGroupingProperty;
 
 - (void).cxx_destruct;
@@ -19,6 +23,8 @@
 - (void)_entityProviderDidInvalidate;
 - (void)_groupIfNecessary;
 - (id)_loadTracklistTableViewDescriptor;
+- (void)_updateTracklistPopularityIndicatorVisibility;
+- (void)bagDidChange:(id)arg1;
 - (void)dealloc;
 - (id)entityProvider;
 - (id)groupingProperty;

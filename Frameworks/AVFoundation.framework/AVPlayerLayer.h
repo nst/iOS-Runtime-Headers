@@ -36,6 +36,7 @@
 - (void)_notifyPlayerOfDisplaySize;
 - (BOOL)_preventsChangesToSublayerHierarchy;
 - (void)_restoreClientLayers:(id)arg1 intoMaskLayer:(id)arg2;
+- (void)_scaleVideoLayerUsingLanczosFilterWithSublayerTransform:(struct CATransform3D { float x1; float x2; float x3; float x4; float x5; float x6; float x7; float x8; float x9; float x10; float x11; float x12; float x13; float x14; float x15; float x16; })arg1;
 - (void)_setCanHandleCALayerOverridesAsynchronously:(BOOL)arg1;
 - (void)_setHasPlayerToObserve:(int)arg1 andShouldObserveIt:(int)arg2;
 - (void)_setItem:(id)arg1 readyForDisplay:(BOOL)arg2;
@@ -62,9 +63,11 @@
 - (void)insertSublayer:(id)arg1 above:(id)arg2;
 - (void)insertSublayer:(id)arg1 atIndex:(unsigned int)arg2;
 - (void)insertSublayer:(id)arg1 below:(id)arg2;
+- (BOOL)isLanczosFilterDownscalingEnabled;
 - (BOOL)isOverscanSubtitleSupportEnabled;
 - (BOOL)isPIPModeEnabled;
 - (BOOL)isReadyForDisplay;
+- (int)lanczosFilterDownscaleFactor;
 - (void)layerDidBecomeVisible:(BOOL)arg1;
 - (void)leavePIPMode;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
@@ -77,6 +80,8 @@
 - (void)replaceSublayer:(id)arg1 with:(id)arg2;
 - (void)setBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setContentsScale:(float)arg1;
+- (void)setLanczosFilterDownscaleFactor:(int)arg1;
+- (void)setLanczosFilterDownscalingEnabled:(BOOL)arg1;
 - (void)setOverscanSubtitleSupportEnabled:(BOOL)arg1;
 - (void)setPIPModeEnabled:(BOOL)arg1;
 - (void)setPixelBufferAttributes:(id)arg1;

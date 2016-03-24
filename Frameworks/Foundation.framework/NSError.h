@@ -20,10 +20,12 @@
 @property (getter=isFromRequest, nonatomic, readonly) BOOL fromRequest;
 @property (getter=hd_isFromRequest, nonatomic, readonly) BOOL hd_fromRequest;
 @property (nonatomic, readonly) unsigned short hd_messageID;
+@property (nonatomic, readonly) NSString *hd_messageIDSDeviceIdentifier;
 @property (nonatomic, readonly) NSString *hd_messageIDSIdentifier;
 @property (nonatomic, readonly) NSDate *hd_messageSent;
 @property (nonatomic, readonly) NSDictionary *hd_persistentUserInfo;
 @property (readonly, copy) NSString *helpAnchor;
+@property (getter=isHMError, nonatomic, readonly) BOOL hmError;
 @property (nonatomic, readonly) NSString *idsIdentifier;
 @property (nonatomic, readonly) BOOL isAuthenticationError;
 @property (readonly, copy) NSString *localizedDescription;
@@ -99,7 +101,7 @@
 
 // Image: /System/Library/Frameworks/CoreBluetooth.framework/CoreBluetooth
 
-+ (id)errorWithBTResult:(id)arg1;
++ (id)errorWithInfo:(id)arg1;
 
 // Image: /System/Library/Frameworks/CoreLocation.framework/CoreLocation
 
@@ -120,26 +122,34 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (BOOL)hk_assignError:(id*)arg1 code:(int)arg2 description:(id)arg3;
++ (BOOL)hk_assignError:(id*)arg1 code:(int)arg2 description:(id)arg3 underlyingError:(id)arg4;
++ (BOOL)hk_assignError:(id*)arg1 code:(int)arg2 format:(id)arg3;
 + (id)hk_error:(int)arg1 description:(id)arg2;
 + (id)hk_error:(int)arg1 description:(id)arg2 underlyingError:(id)arg3;
 + (id)hk_error:(int)arg1 format:(id)arg2;
++ (id)hk_protectedDataInaccessibilityError;
 
 - (BOOL)hk_isAuthorizationDeniedError;
 - (BOOL)hk_isAuthorizationNotDeterminedError;
 - (BOOL)hk_isDatabaseAccessibilityError;
-- (BOOL)hk_isDeviceNotFoundError;
 - (BOOL)hk_isHealthKitError;
 - (BOOL)hk_isInternalFailureError;
 - (BOOL)hk_isInvalidArgumentError;
+- (BOOL)hk_isServiceDeviceNotFoundError;
+- (BOOL)hk_isTimeoutError;
 - (void)hk_logWithDatabaseAccessibilityAtLogLevel:(int)arg1 format:(id)arg2;
 - (void)hk_logWithoutDatabaseAccessibiityErrors:(id)arg1;
+- (id)hk_underlyingErrorWithDomain:(id)arg1;
 
 // Image: /System/Library/Frameworks/HomeKit.framework/HomeKit
 
 + (id)hmErrorWithCode:(int)arg1;
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
++ (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
 + (id)hmErrorWithCode:(int)arg1 userInfo:(id)arg2;
 
+- (BOOL)isHMError;
 - (id)shortDescription;
 
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
@@ -222,6 +232,14 @@
 - (BOOL)bs_isCancelledError;
 - (BOOL)bs_isTimeoutError;
 
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
++ (id)formattedCode:(int)arg1;
+
+- (id)formattedCode;
+- (id)verboseDescription;
+- (id)verboseDescriptionWithIdentation:(unsigned int)arg1;
+
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
 + (id)brc_addPartialError:(id)arg1 forURL:(id)arg2 toError:(id)arg3;
@@ -242,6 +260,7 @@
 + (id)brc_errorOperationCancelled;
 + (id)brc_errorPathOutsideAnyCloudDocsContainerAtURL:(id)arg1;
 + (id)brc_errorPermissionErrorAtURL:(id)arg1;
++ (id)brc_errorUnknownKey:(id)arg1;
 + (id)errorFromErrno;
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 description:(id)arg3;
 + (id)errorWithPOSIXCode:(int)arg1;
@@ -256,6 +275,7 @@
 + (id)brc_daemonAccessDisabledError;
 + (void)load;
 
+- (id)_brc_cloudKitInternalWithErrorCode:(int)arg1;
 - (id)br_cloudKitErrorForIdentifier:(id)arg1;
 - (double)br_suggestedRetryTimeInterval;
 - (BOOL)brc_checkErrorsFromCloudKit:(id /* block */)arg1;
@@ -269,6 +289,7 @@
 - (BOOL)brc_isCloudKitErrorRequiringAssetReupload;
 - (BOOL)brc_isCloudKitErrorRequiringSkipThrottling;
 - (BOOL)brc_isCloudKitErrorRequiringSyncDownFirst;
+- (BOOL)brc_isCloudKitErrorUnsupportedOSAndGetMinimumSupported:(id*)arg1;
 - (BOOL)brc_isCloudKitInternalErrorCode:(int)arg1;
 - (BOOL)brc_isCloudKitOutOfQuota;
 - (BOOL)brc_isCloudKitUnknownItemError;
@@ -311,10 +332,14 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
 
++ (id)errorWithOSStatus:(long)arg1;
++ (id)hapErrorWithcode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
 + (id)hmErrorWithCode:(int)arg1;
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
++ (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
 + (id)hmErrorWithCode:(int)arg1 userInfo:(id)arg2;
 
+- (BOOL)isHMError;
 - (id)shortDescription;
 
 // Image: /System/Library/PrivateFrameworks/CoreMediaStream.framework/CoreMediaStream
@@ -392,22 +417,30 @@
 
 // Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
++ (id)hk_errorWithCodableError:(id)arg1;
+
+- (BOOL)hd_isDatabaseCorruptionError;
 - (BOOL)hd_isFromRequest;
 - (BOOL)hd_isResponseTimeout;
 - (unsigned short)hd_messageID;
+- (id)hd_messageIDSDeviceIdentifier;
 - (id)hd_messageIDSIdentifier;
 - (id)hd_messageSent;
 - (id)hd_persistentMessage;
 - (id)hd_persistentUserInfo;
+- (id)hd_underlyingSQLiteError;
+- (id)hk_codableError;
 
 // Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
 
 + (id)hmErrorWithCode:(int)arg1;
 + (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4;
++ (id)hmErrorWithCode:(int)arg1 description:(id)arg2 reason:(id)arg3 suggestion:(id)arg4 underlyingError:(id)arg5;
 + (id)hmErrorWithCode:(int)arg1 userInfo:(id)arg2;
 
 - (id)conciseCKError;
 - (id)hmErrorFromCKError;
+- (BOOL)isHMError;
 
 // Image: /System/Library/PrivateFrameworks/HomeSharing.framework/HomeSharing
 
@@ -494,6 +527,10 @@
 + (id)errorWithDescription:(id)arg1;
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3;
 + (id)errorWithDomain:(id)arg1 code:(int)arg2 localizedDescription:(id)arg3 userInfo:(id)arg4;
+
+// Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
+
+- (BOOL)sbf_isFileNotFoundError;
 
 // Image: /System/Library/PrivateFrameworks/StoreServices.framework/StoreServices
 

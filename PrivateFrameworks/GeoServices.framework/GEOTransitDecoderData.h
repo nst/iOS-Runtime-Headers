@@ -9,6 +9,7 @@
     NSMutableArray *_halls;
     NSMutableArray *_lines;
     NSMutableArray *_stations;
+    NSMutableArray *_steps;
     NSMutableArray *_stops;
     NSMutableArray *_systems;
     NSMutableArray *_transitIncidentMessages;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) NSMutableArray *halls;
 @property (nonatomic, retain) NSMutableArray *lines;
 @property (nonatomic, retain) NSMutableArray *stations;
+@property (nonatomic, retain) NSMutableArray *steps;
 @property (nonatomic, retain) NSMutableArray *stops;
 @property (nonatomic, retain) NSMutableArray *systems;
 @property (nonatomic, retain) NSMutableArray *transitIncidentMessages;
@@ -39,6 +41,7 @@
 - (void)addHall:(id)arg1;
 - (void)addLine:(id)arg1;
 - (void)addStation:(id)arg1;
+- (void)addStep:(id)arg1;
 - (void)addStop:(id)arg1;
 - (void)addSystem:(id)arg1;
 - (void)addTransitIncident:(id)arg1;
@@ -46,6 +49,7 @@
 - (void)addWalking:(id)arg1;
 - (void)addZilchPoints:(id)arg1;
 - (id)artworkAtIndex:(unsigned int)arg1;
+- (id)artworkFromIndices:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (id)artworks;
 - (unsigned int)artworksCount;
 - (id)brandAtIndex:(unsigned int)arg1;
@@ -57,6 +61,7 @@
 - (void)clearHalls;
 - (void)clearLines;
 - (void)clearStations;
+- (void)clearSteps;
 - (void)clearStops;
 - (void)clearSystems;
 - (void)clearTransitIncidentMessages;
@@ -84,6 +89,7 @@
 - (void)setHalls:(id)arg1;
 - (void)setLines:(id)arg1;
 - (void)setStations:(id)arg1;
+- (void)setSteps:(id)arg1;
 - (void)setStops:(id)arg1;
 - (void)setSystems:(id)arg1;
 - (void)setTransitIncidentMessages:(id)arg1;
@@ -93,6 +99,9 @@
 - (id)stationAtIndex:(unsigned int)arg1;
 - (id)stations;
 - (unsigned int)stationsCount;
+- (id)stepAtIndex:(unsigned int)arg1;
+- (id)steps;
+- (unsigned int)stepsCount;
 - (id)stopAtIndex:(unsigned int)arg1;
 - (id)stops;
 - (unsigned int)stopsCount;

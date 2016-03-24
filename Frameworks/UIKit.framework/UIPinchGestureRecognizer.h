@@ -13,6 +13,8 @@
     float _initialTouchDistance;
     float _initialTouchScale;
     double _lastTouchTime;
+    unsigned int _loggedPinchStatistic;
+    unsigned int _loggedZoomStatistic;
     float _previousVelocity;
     float _scaleThreshold;
     UITouch *_touches;
@@ -42,6 +44,7 @@
 - (BOOL)_enableNestedHysteresis;
 - (BOOL)_endsOnSingleTouch;
 - (float)_hysteresis;
+- (void)_logStatisticsForScale:(float)arg1;
 - (void)_resetGestureRecognizer;
 - (void)_setEndsOnSingleTouch:(BOOL)arg1;
 - (void)_setHysteresis:(float)arg1;

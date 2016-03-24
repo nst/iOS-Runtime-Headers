@@ -4,6 +4,7 @@
 
 @interface PHAssetOriginalMetadataProperties : NSObject {
     PHAsset *_asset;
+    BOOL _isOriginalSRGB;
     NSString *_originalAssetsUUID;
     short _originalExifOrientation;
     NSString *_originalFilename;
@@ -14,6 +15,7 @@
 }
 
 @property (nonatomic, readonly) PHAsset *asset;
+@property (nonatomic, readonly) BOOL isOriginalSRGB;
 @property (nonatomic, readonly) NSString *originalAssetsUUID;
 @property (nonatomic, readonly) short originalExifOrientation;
 @property (nonatomic, readonly) NSString *originalFilename;
@@ -25,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)asset;
 - (id)initWithFetchDictionary:(id)arg1 asset:(id)arg2;
+- (BOOL)isOriginalSRGB;
 - (id)originalAssetsUUID;
 - (short)originalExifOrientation;
 - (id)originalFilename;

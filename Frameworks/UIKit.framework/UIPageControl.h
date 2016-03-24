@@ -34,6 +34,7 @@
 + (BOOL)doesOverrideMethod:(SEL)arg1 inBaseClass:(Class)arg2;
 
 - (void).cxx_destruct;
+- (id)__scalarStatisticsForUserValueChangedEvent;
 - (id)_activePageIndicatorImage;
 - (void)_cachePageIndicatorImages;
 - (id)_cachedPageIndicatorCurrentImageForPage:(int)arg1;

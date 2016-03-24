@@ -33,6 +33,7 @@
 - (void)prepareHeaderViewForExpanding:(BOOL)arg1;
 - (void)reloadData;
 - (void)setAllowsAutomaticFlash:(BOOL)arg1;
+- (void)setExpansionOrientation:(int)arg1;
 - (void)setFlashMode:(int)arg1;
 - (void)setUnavailable:(BOOL)arg1;
 - (BOOL)shouldIgnoreMenuInteraction;

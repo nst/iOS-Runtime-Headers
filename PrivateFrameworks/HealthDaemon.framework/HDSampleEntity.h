@@ -4,39 +4,29 @@
 
 @interface HDSampleEntity : HDDataEntity
 
-+ (Class)_associatedDataObjectClass;
-+ (void)_columnNamesAndSortOrderingsForDataType:(id)arg1 sortDescriptors:(id)arg2 withBlock:(id /* block */)arg3;
 + (id)_databaseTable;
-+ (void)_deleteSamplesWithPredicate:(id)arg1 limit:(unsigned int)arg2 generateDeletedObjects:(BOOL)arg3 database:(id)arg4 completionHandler:(id /* block */)arg5;
 + (Class)_deletedEntityClass;
 + (id)_predicateWithSampleType:(id)arg1 predicate:(id)arg2;
 + (id)_predicateWithSampleType:(id)arg1 sourceIdentifier:(id)arg2 predicate:(id)arg3;
-+ (id)_propertySettersForDataObject;
 + (id)anySampleOfType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
-+ (id)codableRepresentationEncoderForHealthDaemon:(id)arg1 database:(id)arg2;
 + (id)columnNameForSortIdentifier:(id)arg1;
++ (id)columnNamesForTimeOffset;
 + (id)columnsDefinition;
-+ (int)countOfSamplesWithType:(id)arg1 healthDaemon:(id)arg2 matchingFilter:(id)arg3 withError:(id*)arg4;
 + (int)countOfSamplesWithType:(id)arg1 healthDaemon:(id)arg2 matchingPredicate:(id)arg3 withError:(id*)arg4;
++ (void)deleteSamplesWithPredicate:(id)arg1 limit:(unsigned int)arg2 generateDeletedObjects:(BOOL)arg3 database:(id)arg4 completionHandler:(id /* block */)arg5;
 + (void)deleteSamplesWithPredicate:(id)arg1 limit:(unsigned int)arg2 generateDeletedObjects:(BOOL)arg3 healthDaemon:(id)arg4 completionHandler:(id /* block */)arg5;
 + (void)deleteSamplesWithTypes:(id)arg1 sourceIdentifier:(id)arg2 healthDaemon:(id)arg3 completionHandler:(id /* block */)arg4;
-+ (void)enumerateObjectsWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id /* block */)arg5 limit:(unsigned int)arg6 anchor:(id)arg7 includeDeletedObjects:(BOOL)arg8 deletedObjectsAnchor:(id)arg9 handler:(id /* block */)arg10;
-+ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 filter:(id)arg3 predicate:(id)arg4 sourceIdentifier:(id)arg5 authorizationFilter:(id /* block */)arg6 sortDescriptors:(id)arg7 limit:(unsigned int)arg8 anchor:(id*)arg9 handler:(id /* block */)arg10;
-+ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 filter:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id /* block */)arg5 sortDescriptors:(id)arg6 limit:(unsigned int)arg7 handler:(id /* block */)arg8;
-+ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id /* block */)arg5 limit:(unsigned int)arg6 anchor:(id*)arg7 withHandler:(id /* block */)arg8;
-+ (void)enumerateSamplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 sourceIdentifier:(id)arg4 authorizationFilter:(id /* block */)arg5 orderBy:(id)arg6 directions:(id)arg7 limit:(unsigned int)arg8 handler:(id /* block */)arg9;
-+ (void)enumerateUUIDsOfSamplesWithType:(id)arg1 healthDaemon:(id)arg2 matchingFilter:(id)arg3 limit:(unsigned int)arg4 withHandler:(id /* block */)arg5;
-+ (long long)finalAnchorForNanoSyncRestoreWithStore:(id)arg1 sampleTypesByAgeInDays:(id)arg2 nowDate:(id)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (id)entityEncoderForHealthDaemon:(id)arg1 database:(id)arg2 purpose:(int)arg3 authorizationFilter:(id /* block */)arg4;
++ (id)entityEnumeratorWithType:(id)arg1 daemon:(id)arg2;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id*)arg5;
 + (id)mostRecentSampleWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
-+ (id)objectsForNanoSyncRestoreWithStore:(id)arg1 sampleTypesByAgeInDays:(id)arg2 nowDate:(id)arg3 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg4 lastSyncAnchor:(long long*)arg5 healthDaemon:(id)arg6 error:(id*)arg7;
-+ (id)predicateForNanoSyncRestoreWithDeviceSourceIdentifier:(id)arg1 sampleTypesByAgeInDays:(id)arg2 nowDate:(id)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (id)oldestSampleWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
 + (int)preferredEntityType;
 + (BOOL)requiresSampleTypePredicate;
-+ (id)sampleCountAndDatesOfType:(id)arg1 healthDaemon:(id)arg2 matchingPredicate:(id)arg3 cancellationBlock:(id /* block */)arg4;
 + (id)samplesTypesForSamplesMatchingPredicate:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (id)samplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 limit:(unsigned int)arg4 anchor:(id*)arg5 error:(id*)arg6;
 + (id)sourceIDsForSamplesWithType:(id)arg1 healthDaemon:(id)arg2 predicate:(id)arg3 error:(id*)arg4;
++ (id)timePeriodForSamplesOfType:(id)arg1 healthDaemon:(id)arg2 matchingPredicate:(id)arg3 error:(id*)arg4 cancellationBlock:(id /* block */)arg5;
 
 - (id)_sampleTypeInDatabase:(id)arg1;
 

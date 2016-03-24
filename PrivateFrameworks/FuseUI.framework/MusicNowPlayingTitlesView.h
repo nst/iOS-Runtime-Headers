@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicNowPlayingTitlesView : UIView {
+@interface MusicNowPlayingTitlesView : UIControl {
     NSArray *_attributedTexts;
     BOOL _clampLabels;
     struct UIEdgeInsets { 
@@ -34,12 +34,14 @@
 - (void)_applyMarqueeFade;
 - (float)_baselineOffsetForAttributedText:(id)arg1 returningFont:(out id*)arg2;
 - (void)_layoutLabel:(id)arg1 withMarqueeView:(id)arg2 previousLabelBaselineOffsetFromBottom:(float)arg3 previousMarqueeViewFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
+- (void)_reloadVisualHighlightStateAnimated:(BOOL)arg1;
 - (void)_setupLabel:(inout id*)arg1 marqueeView:(inout id*)arg2 withAttributedText:(id)arg3;
 - (void)_updateViewsIfNeeded;
 - (id)attributedTexts;
 - (BOOL)clampLabels;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInset;
 - (float)firstBaselineOffsetFromTop;
+- (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isMarqueeEnabled;
 - (void)layoutSubviews;
@@ -48,6 +50,7 @@
 - (void)setAttributedTexts:(id)arg1;
 - (void)setClampLabels:(BOOL)arg1;
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
+- (void)setHighlighted:(BOOL)arg1;
 - (void)setMarqueeEnabled:(BOOL)arg1 withOptions:(long long)arg2;
 - (void)setMarqueeFadeEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

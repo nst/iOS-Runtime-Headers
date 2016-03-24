@@ -14,9 +14,11 @@
 
 - (void).cxx_destruct;
 - (void)changeVisibility:(BOOL)arg1 completion:(id /* block */)arg2;
+- (void)forceMigrationOnNextRebootWithCompletion:(id /* block */)arg1;
 - (void)handleMessage:(id)arg1;
+- (void)isMigrationNeeded:(id /* block */)arg1;
 - (id)lastPlugin;
-- (void)migrateWithCompletion:(id /* block */)arg1;
+- (void)migrateCheckingNecessity:(BOOL)arg1 completion:(id /* block */)arg2;
 - (void)orderedPluginIdentifiersWithCompletion:(id /* block */)arg1;
 - (void)testMigrationUIWithProgress:(BOOL)arg1 forceInvert:(BOOL)arg2 completion:(id /* block */)arg3;
 

@@ -19,7 +19,6 @@
     CAMMotionController *__motionController;
     BOOL __needsInitialPairedVideoUpdate;
     NSCountedSet *__numberOfInflightRequestsByType;
-    CAMCaptureRequest *__pendingBurstCaptureRequest;
     CAMVideoCaptureRequest *__pendingVideoCaptureRequest;
     CAMPowerController *__powerController;
     CAMProtectionController *__protectionController;
@@ -69,7 +68,6 @@
 @property (nonatomic, readonly) CAMMotionController *_motionController;
 @property (setter=_setNeedsInitialPairedVideoUpdate:, nonatomic) BOOL _needsInitialPairedVideoUpdate;
 @property (nonatomic, readonly) NSCountedSet *_numberOfInflightRequestsByType;
-@property (setter=_setPendingBurstCaptureRequest:, nonatomic, retain) CAMCaptureRequest *_pendingBurstCaptureRequest;
 @property (setter=_setPendingVideoCaptureRequest:, nonatomic, retain) CAMVideoCaptureRequest *_pendingVideoCaptureRequest;
 @property (nonatomic, readonly) CAMPowerController *_powerController;
 @property (nonatomic, readonly) CAMProtectionController *_protectionController;
@@ -150,12 +148,12 @@
 - (BOOL)_kvoDidStartForChange:(id)arg1;
 - (id)_locationController;
 - (int)_maximumNumberOfStillImageRequests;
+- (unsigned int)_maximumNumberOfStillImageRequestsDuringBurst;
 - (id)_motionController;
 - (BOOL)_needsInitialPairedVideoUpdate;
 - (void)_notifyDelegateOfCaptureAvailabilityChanged:(BOOL)arg1;
 - (void)_notifyDelegateOfConfigurationAvailabilityChanged:(BOOL)arg1;
 - (id)_numberOfInflightRequestsByType;
-- (id)_pendingBurstCaptureRequest;
 - (id)_pendingVideoCaptureRequest;
 - (void)_playBongIfNecessary;
 - (id)_powerController;
@@ -166,7 +164,6 @@
 - (id)_resetFocus:(BOOL)arg1 resetExposure:(BOOL)arg2 resetExposureTargetBias:(BOOL)arg3;
 - (void)_resetFocusAndExposureAfterCapture;
 - (void)_resetFocusAndExposureIfAppropriateForReason:(int)arg1;
-- (void)_resetMaximumNumberOfStillImageRequests;
 - (id)_responseQueue;
 - (id)_responseThumbnailGenerator;
 - (id)_sanitizeLegacyStillImageRequest:(id)arg1;
@@ -186,7 +183,6 @@
 - (void)_setHDRSuggested:(BOOL)arg1;
 - (void)_setMaximumNumberOfStillImageRequests:(int)arg1;
 - (void)_setNeedsInitialPairedVideoUpdate:(BOOL)arg1;
-- (void)_setPendingBurstCaptureRequest:(id)arg1;
 - (void)_setPendingVideoCaptureRequest:(id)arg1;
 - (void)_setShouldResetFocusAndExposureAfterIrisVideoCapture:(BOOL)arg1;
 - (void)_setTorchActive:(BOOL)arg1;
@@ -216,7 +212,9 @@
 - (void)_updateAvailabilityWhenPreparingToStopCapturingForRequest:(id)arg1;
 - (id)_updateFocusAndExposureForStartBurstCapture;
 - (id)_updateFocusAndExposureForStartPanorama;
-- (void)_updateMaximumNumberOfStillImageRequestsAfterRequestWithFlashMode:(int)arg1 HDRMode:(int)arg2;
+- (void)_updateMaximumNumberOfStillImageRequestsAfterBurst;
+- (void)_updateMaximumNumberOfStillImageRequestsAfterCapturedRequestIfNecessary:(id)arg1;
+- (void)_updateMaximumNumberOfStillImageRequestsAfterEnqueuingRequestWithFlashMode:(int)arg1 HDRMode:(int)arg2 burstIdentifier:(id)arg3;
 - (BOOL)_useSmoothFocus;
 - (id)_zoomKeyPaths;
 - (void)_zoomResultChangedForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3;

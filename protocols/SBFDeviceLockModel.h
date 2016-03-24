@@ -21,5 +21,6 @@
 
 - (void)clearBlockedState;
 - (void)noteNewMkbDeviceLockStateInfo:(NSDictionary *)arg1 options:(NSDictionary *)arg2;
+- (void)refreshBlockedState;
 
 @end

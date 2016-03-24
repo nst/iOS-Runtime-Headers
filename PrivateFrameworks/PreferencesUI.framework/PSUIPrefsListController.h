@@ -111,8 +111,9 @@
 - (id)init;
 - (void)insertMovedThirdPartySpecifiersAnimated:(BOOL)arg1;
 - (void)insertOrderedSpecifier:(id)arg1 animated:(BOOL)arg2;
+- (BOOL)isBundleIDHiddenDueToRestrictions:(id)arg1;
 - (BOOL)isHomeKitInUse;
-- (BOOL)isSpecifierIDHiddenDueToRestrictions:(id)arg1;
+- (BOOL)isSpecifierHiddenDueToRestrictions:(id)arg1;
 - (void)lazyLoadSpecialBundleForSpecifier:(id)arg1;
 - (void)loadPPTTestSpecifiers:(int)arg1;
 - (void)loadThirdPartySpecifierForBundleID:(id)arg1;

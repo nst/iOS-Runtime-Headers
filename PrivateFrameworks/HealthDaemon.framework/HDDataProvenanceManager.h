@@ -32,7 +32,7 @@
 - (void)_loadDefaults;
 - (id)_lookupOrInsertProvenance:(id)arg1 withError:(id*)arg2;
 - (void)checkDefaultsLoaded;
-- (id)dataProvenanceDefaultsWithSyncProvenance:(int)arg1 deviceModel:(id)arg2 buildNumber:(id)arg3 sourceID:(id)arg4 deviceID:(id)arg5 sourceVersion:(id)arg6;
+- (id)dataProvenanceDefaultsWithSyncProvenance:(long long)arg1 deviceModel:(id)arg2 buildNumber:(id)arg3 sourceID:(id)arg4 deviceID:(id)arg5 sourceVersion:(id)arg6;
 - (id)defaultLocalDataProvenance;
 - (id)description;
 - (id)deviceNoneID;

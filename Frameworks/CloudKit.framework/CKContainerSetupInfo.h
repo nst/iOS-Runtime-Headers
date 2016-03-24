@@ -4,11 +4,13 @@
 
 @interface CKContainerSetupInfo : NSObject <NSSecureCoding> {
     CKAccountInfo *_accountInfoOverride;
+    BOOL _captureResponseHTTPHeaders;
     CKContainerID *_containerID;
     NSString *_sourceApplicationBundleIdentifier;
 }
 
 @property (nonatomic, retain) CKAccountInfo *accountInfoOverride;
+@property (nonatomic) BOOL captureResponseHTTPHeaders;
 @property (nonatomic, retain) CKContainerID *containerID;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
 
@@ -16,10 +18,12 @@
 
 - (void).cxx_destruct;
 - (id)accountInfoOverride;
+- (BOOL)captureResponseHTTPHeaders;
 - (id)containerID;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (void)setAccountInfoOverride:(id)arg1;
+- (void)setCaptureResponseHTTPHeaders:(BOOL)arg1;
 - (void)setContainerID:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (id)sourceApplicationBundleIdentifier;

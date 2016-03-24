@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CloudDocsDaemon.framework/CloudDocsDaemon
  */
 
-@interface BRCDaemon : NSObject <BRCAccountHandlerDelegate, BRCReachabilityDelegate, NSXPCListenerDelegate> {
+@interface BRCDaemon : NSObject <BRCAccountHandlerDelegate, BRCReachabilityDelegate, NSXPCListenerDelegate, UMUserSyncStakeholder> {
     BRCAccountHandler *_accountHandler;
     NSObject<OS_dispatch_queue> *_accountLoaderQueue;
     NSString *_appSupportDirPath;
@@ -14,7 +14,9 @@
     BRCCloudFileProvider *_fileProvider;
     unsigned int _forceIsGreedyState;
     BOOL _hasNotEnoughDiskSpaceToBeFunctional;
+    BOOL _isInSyncBubble;
     NSError *_loggedOutError;
+    UMUserSyncTask *_loginTask;
     NSString *_logsDirPath;
     BOOL _resumed;
     NSString *_rootDirPath;
@@ -45,6 +47,7 @@
 @property (nonatomic, readonly) BRCCloudFileProvider *fileProvider;
 @property (nonatomic) unsigned int forceIsGreedyState;
 @property (readonly) unsigned int hash;
+@property (nonatomic) BOOL isInSyncBubble;
 @property (nonatomic, retain) NSError *loggedOutError;
 @property (nonatomic, retain) NSString *logsDirPath;
 @property (nonatomic, retain) NSString *rootDirPath;
@@ -57,6 +60,7 @@
 + (id)daemon;
 
 - (void).cxx_destruct;
+- (void)_createSyncBubbleTasks;
 - (BOOL)_haveRequiredKernelFeatures;
 - (void)_initSignals;
 - (BOOL)_isDeviceUnlocked;
@@ -77,6 +81,7 @@
 - (void)handleExitSignal:(int)arg1;
 - (BOOL)hasEnoughDiskSpaceToBeFunctional;
 - (id)init;
+- (BOOL)isInSyncBubble;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)loadAccount;
 - (void)localeDidChange;
@@ -93,6 +98,7 @@
 - (void)setDisableAccountChangesHandling:(BOOL)arg1;
 - (void)setDisableAppsChangesHandling:(BOOL)arg1;
 - (void)setForceIsGreedyState:(unsigned int)arg1;
+- (void)setIsInSyncBubble:(BOOL)arg1;
 - (void)setLoggedOutError:(id)arg1;
 - (void)setLogsDirPath:(id)arg1;
 - (void)setRootDirPath:(id)arg1;
@@ -102,8 +108,10 @@
 - (void)setUpSandbox;
 - (id)startupDate;
 - (id)ubiquityTokenSalt;
+- (void)uploadContent;
 - (id)versionsProvider;
 - (void)waitForConfiguration;
 - (void)waitUntilDeviceIsUnlocked;
+- (void)willSwitchUser;
 
 @end

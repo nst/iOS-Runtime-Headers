@@ -4,13 +4,11 @@
 
 @interface HDCategorySampleEntity : HDSampleEntity
 
-+ (Class)_associatedDataObjectClass;
 + (id)_databaseTable;
-+ (id)_propertySettersForDataObject;
 + (BOOL)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (id)codableObjectsFromObjectCollection:(id)arg1;
-+ (id)codableRepresentationEncoderForHealthDaemon:(id)arg1 database:(id)arg2;
 + (id)columnsDefinition;
++ (id)entityEncoderForHealthDaemon:(id)arg1 database:(id)arg2 purpose:(int)arg3 authorizationFilter:(id /* block */)arg4;
 + (id)insertDataObject:(id)arg1 withProvenance:(id)arg2 inDatabase:(id)arg3 persistentID:(id)arg4 error:(id*)arg5;
 
 @end

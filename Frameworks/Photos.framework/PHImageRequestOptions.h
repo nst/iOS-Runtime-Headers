@@ -4,9 +4,9 @@
 
 @interface PHImageRequestOptions : NSObject <NSCopying> {
     BOOL _allowPlaceholder;
+    BOOL _allowSecondaryOpportunisticImage;
     double _aspectRatioHint;
     id /* block */ _cachingCompletedHandler;
-    BOOL _degradedFormatPreferJPEG;
     BOOL _deliveryFirstResultAsynchronously;
     int _deliveryMode;
     double _demoteFactor;
@@ -26,15 +26,16 @@
     } _normalizedCropRect;
     id /* block */ _progressHandler;
     int _rank;
+    int _requestID;
     int _resizeMode;
     BOOL _synchronous;
     int _version;
 }
 
 @property (nonatomic) BOOL allowPlaceholder;
+@property (nonatomic) BOOL allowSecondaryOpportunisticImage;
 @property (nonatomic) double aspectRatioHint;
 @property (nonatomic, copy) id /* block */ cachingCompletedHandler;
-@property (nonatomic) BOOL degradedFormatPreferJPEG;
 @property (nonatomic) BOOL deliveryFirstResultAsynchronously;
 @property (nonatomic) int deliveryMode;
 @property (nonatomic) double demoteFactor;
@@ -45,6 +46,7 @@
 @property (nonatomic) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } normalizedCropRect;
 @property (nonatomic, copy) id /* block */ progressHandler;
 @property (nonatomic) int rank;
+@property (nonatomic) int requestID;
 @property (nonatomic) int resizeMode;
 @property (getter=isSynchronous, nonatomic) BOOL synchronous;
 @property (nonatomic) int version;
@@ -53,10 +55,10 @@
 
 - (void).cxx_destruct;
 - (BOOL)allowPlaceholder;
+- (BOOL)allowSecondaryOpportunisticImage;
 - (double)aspectRatioHint;
 - (id /* block */)cachingCompletedHandler;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (BOOL)degradedFormatPreferJPEG;
 - (BOOL)deliveryFirstResultAsynchronously;
 - (int)deliveryMode;
 - (double)demoteFactor;
@@ -70,11 +72,13 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })normalizedCropRect;
 - (id /* block */)progressHandler;
 - (int)rank;
+- (int)requestID;
+- (int)requestIDOrNextIfInvalid;
 - (int)resizeMode;
 - (void)setAllowPlaceholder:(BOOL)arg1;
+- (void)setAllowSecondaryOpportunisticImage:(BOOL)arg1;
 - (void)setAspectRatioHint:(double)arg1;
 - (void)setCachingCompletedHandler:(id /* block */)arg1;
-- (void)setDegradedFormatPreferJPEG:(BOOL)arg1;
 - (void)setDeliveryFirstResultAsynchronously:(BOOL)arg1;
 - (void)setDeliveryMode:(int)arg1;
 - (void)setDemoteFactor:(double)arg1;
@@ -85,6 +89,7 @@
 - (void)setNormalizedCropRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
 - (void)setRank:(int)arg1;
+- (void)setRequestID:(int)arg1;
 - (void)setResizeMode:(int)arg1;
 - (void)setSynchronous:(BOOL)arg1;
 - (void)setVersion:(int)arg1;

@@ -37,6 +37,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCustomVoice;
 - (BOOL)isDefault;
+- (BOOL)isEqual:(id)arg1;
 - (id)language;
 - (id)name;
 - (id)service;

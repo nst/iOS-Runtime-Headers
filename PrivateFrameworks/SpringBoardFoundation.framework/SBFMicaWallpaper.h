@@ -12,6 +12,7 @@
 + (id)presetWallpaperOptions;
 + (id)thumbnailImageForOptions:(id)arg1;
 
+- (void).cxx_destruct;
 - (void)_loadView;
 - (void)_unloadView;
 - (void)dealloc;

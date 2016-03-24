@@ -13,7 +13,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)initWithResultBlock:(id /* block */)arg1 completionBlock:(id /* block */)arg2 failureBlock:(id /* block */)arg3;
 - (void)observerDidComplete;
 - (void)observerDidFailWithError:(id)arg1;

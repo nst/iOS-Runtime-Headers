@@ -14,6 +14,8 @@
 @property (nonatomic, retain) NSMutableArray *loads;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)loadType;
+
 - (void)addLoad:(id)arg1;
 - (void)clearLoads;
 - (void)copyTo:(id)arg1;

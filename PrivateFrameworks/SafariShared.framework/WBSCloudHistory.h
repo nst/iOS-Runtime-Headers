@@ -19,6 +19,12 @@
     WBSCloudHistoryPushAgentProxy *_pushAgent;
     NSTimer *_pushNotificationFetchTimer;
     BOOL _removedHistoryItemsArePendingSave;
+    BOOL _replayLongLivedSaveOperationHasBeenPerformed;
+    struct unique_ptr<SafariShared::SuddenTerminationDisabler, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
+        struct __compressed_pair<SafariShared::SuddenTerminationDisabler *, std::__1::default_delete<SafariShared::SuddenTerminationDisabler> > { 
+            struct SuddenTerminationDisabler {} *__first_; 
+        } __ptr_; 
+    } _replayLongLivedSaveOperationSuddenTerminationDisabler;
     WBSCloudHistoryThrottler *_saveChangesThrottler;
     BOOL _saveChangesWhenBackoffTimerFires;
     BOOL _saveChangesWhenHistoryLoads;
@@ -59,16 +65,20 @@
 - (void)_historyWasLoaded:(id)arg1;
 - (void)_initializePushNotificationSupport;
 - (void)_performBlockAsynchronouslyOnCloudHistoryQueueAfterHistoryHasLoaded:(id /* block */)arg1;
+- (void)_persistLongLivedSaveOperationDictionaryWithOperationID:(id)arg1 databaseGeneration:(long long)arg2;
+- (void)_persistedLongLivedSaveOperationID:(id*)arg1 databaseGeneration:(long long*)arg2;
 - (void)_postSaveChangesAttemptCompletedNotificationWithAllPendingDataSaved:(BOOL)arg1;
 - (int)_priorityForSaveWithVisits:(id)arg1 tombstones:(id)arg2 bypassingThrottler:(BOOL)arg3;
 - (void)_processPendingPushNotifications;
 - (void)_pruneTombstonesThatCanNoLongerMatchVisitsFetchedFromCloud;
 - (void)_pushNotificationReceived:(id)arg1;
 - (void)_registerForHistoryWasLoadedNotificationIfNecessary;
+- (void)_removePersistedLongLivedSaveOperationDictionary;
+- (void)_replayPersistedLongLivedSaveOperationIfNecessary;
 - (int)_resultFromError:(id)arg1;
 - (void)_saveChangesToCloudHistoryStoreBypassingThrottler:(BOOL)arg1;
 - (void)_saveChangesWhenHistoryLoads;
-- (void)_saveVisits:(id)arg1 tombstones:(id)arg2 toCloudHistoryBypassingThrottler:(BOOL)arg3 withCallback:(id /* block */)arg4;
+- (void)_saveVisits:(id)arg1 tombstones:(id)arg2 toCloudHistoryBypassingThrottler:(BOOL)arg3 longLivedOperationPersistenceCompletion:(id /* block */)arg4 withCallback:(id /* block */)arg5;
 - (void)_serverBackoffTimerFired:(id)arg1;
 - (void)_setCachedNumberOfDevicesInSyncCircle:(unsigned int)arg1;
 - (void)_updateDeviceCountInResponseToPushNotification;

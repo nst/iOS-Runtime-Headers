@@ -20,6 +20,7 @@
 - (id)_loadProductHeaderContentViewController;
 - (id)_loadProductSplitDetailViewController;
 - (id)_loadProductSplitMainViewController;
+- (void)_proceedWithSetEditing:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
 - (void)encodeRestorableStateWithCoder:(id)arg1;
 - (void)imagePickerController:(id)arg1 didFinishPickingMediaWithInfo:(id)arg2;

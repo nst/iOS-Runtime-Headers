@@ -14,6 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic) UIViewController *formPresentationViewController;
 @property (readonly) unsigned int hash;
+@property (getter=isManagedAppleID, nonatomic, readonly) BOOL managedAppleID;
 @property (nonatomic, readonly) NSString *networkConnectionType;
 @property (nonatomic, retain) NSString *storefront;
 @property (readonly) Class superclass;

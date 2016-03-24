@@ -27,6 +27,7 @@
 - (void)_setStatusBarData:(id)arg1 actions:(int)arg2 animated:(BOOL)arg3;
 - (BOOL)_tryToPlaceItem:(id)arg1 inItemArray:(id)arg2 layoutManager:(id)arg3 roomRemaining:(float*)arg4 allowSwap:(BOOL)arg5 swappedItem:(id*)arg6;
 - (void)dealloc;
+- (void)didMoveToWindow;
 - (float)edgePadding;
 - (id)foregroundStyle;
 - (int)idiom;

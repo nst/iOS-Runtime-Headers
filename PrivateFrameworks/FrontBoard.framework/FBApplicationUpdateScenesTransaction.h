@@ -27,6 +27,8 @@
 - (void)_didComplete;
 - (void)_didRemoveChildTransaction:(id)arg1;
 - (void)_executeSceneUpdatesIfAppropriate;
+- (void)_noteDidCommitUpdateForScene:(id)arg1;
+- (void)_noteWillCommitUpdateForScene:(id)arg1;
 - (void)_performSynchronizedCommit:(id)arg1;
 - (BOOL)_shouldFailForChildTransaction:(id)arg1;
 - (void)_willAddChildTransaction:(id)arg1;

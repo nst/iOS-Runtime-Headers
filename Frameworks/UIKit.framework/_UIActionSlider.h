@@ -75,6 +75,7 @@
 @property (nonatomic, retain) _UIVibrantSettings *vibrantSettings;
 
 - (void).cxx_destruct;
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (void)_hideTrackLabel:(BOOL)arg1;
 - (float)_knobAvailableX;
 - (float)_knobHorizontalPosition;

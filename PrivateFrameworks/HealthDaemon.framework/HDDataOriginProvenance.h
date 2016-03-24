@@ -8,7 +8,7 @@
     NSString *_deviceModel;
     NSNumber *_sourceID;
     NSString *_sourceVersion;
-    int _syncProvenance;
+    long long _syncProvenance;
 }
 
 @property (nonatomic, copy) NSString *buildNumber;
@@ -16,9 +16,9 @@
 @property (nonatomic, copy) NSString *deviceModel;
 @property (nonatomic, retain) NSNumber *sourceID;
 @property (nonatomic, retain) NSString *sourceVersion;
-@property (nonatomic) int syncProvenance;
+@property (nonatomic) long long syncProvenance;
 
-+ (id)dataProvenanceWithSyncProvenance:(int)arg1 deviceModel:(id)arg2 buildNumber:(id)arg3 sourceID:(id)arg4 deviceID:(id)arg5 sourceVersion:(id)arg6;
++ (id)dataProvenanceWithSyncProvenance:(long long)arg1 deviceModel:(id)arg2 buildNumber:(id)arg3 sourceID:(id)arg4 deviceID:(id)arg5 sourceVersion:(id)arg6;
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
@@ -37,9 +37,9 @@
 - (void)setDeviceModel:(id)arg1;
 - (void)setSourceID:(id)arg1;
 - (void)setSourceVersion:(id)arg1;
-- (void)setSyncProvenance:(int)arg1;
+- (void)setSyncProvenance:(long long)arg1;
 - (id)sourceID;
 - (id)sourceVersion;
-- (int)syncProvenance;
+- (long long)syncProvenance;
 
 @end

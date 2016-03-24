@@ -38,6 +38,7 @@
 @property (nonatomic, copy) NSString *vibrationIdentifier;
 @property (nonatomic, retain) NSDictionary *vibrationPattern;
 
+- (void).cxx_destruct;
 - (id /* block */)_completionBlock;
 - (unsigned long)_resolvedSystemSoundID;
 - (id)_resolvedToneIdentifier;
@@ -48,7 +49,6 @@
 - (int)alertType;
 - (id)avItem;
 - (id)controllerAttributes;
-- (void)dealloc;
 - (id)description;
 - (id)initWithAVItem:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 maxDuration:(double)arg4 controllerAttributes:(id)arg5;
 - (id)initWithRingtone:(id)arg1 vibrationPattern:(id)arg2 repeats:(BOOL)arg3 maxDuration:(double)arg4 controllerAttributes:(id)arg5;

@@ -15,6 +15,7 @@
 + (id)minusImage;
 + (id)plusImage;
 
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (void)_toggleRotateAnimationDidStop:(id)arg1 finished:(BOOL)arg2;
 - (void)animator:(id)arg1 stopAnimation:(id)arg2;
 - (void)dealloc;

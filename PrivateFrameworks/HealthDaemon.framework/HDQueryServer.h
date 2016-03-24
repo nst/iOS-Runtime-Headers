@@ -8,13 +8,13 @@
     <HDQueryServerDelegate> *_delegate;
     BOOL _didEndActivationTransaction;
     _HKFilter *_filter;
-    int _observingData;
-    int _pauseRequested;
+    HKObjectType *_objectType;
+    BOOL _observingData;
     NSObject<OS_dispatch_queue> *_queryQueue;
     int _queryState;
     NSUUID *_queryUUID;
-    HKSampleType *_sampleType;
-    int _shouldDeactivate;
+    int _shouldFinish;
+    int _shouldPause;
 }
 
 @property (nonatomic, readonly) <NSXPCProxyCreating> *clientProxy;
@@ -24,7 +24,8 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) _HKFilter *filter;
 @property (readonly) unsigned int hash;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queryQueue;
+@property (nonatomic, readonly) HKObjectType *objectType;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queryQueue;
 @property (nonatomic) int queryState;
 @property (nonatomic, readonly) NSUUID *queryUUID;
 @property (nonatomic, readonly) HKSampleType *sampleType;
@@ -32,25 +33,29 @@
 
 - (void).cxx_destruct;
 - (id)_activationTransactionString;
-- (void)_batchSamplesWithLimit:(unsigned int)arg1 predicate:(id)arg2 anchor:(id)arg3 includeDeletedObjects:(BOOL)arg4 batchHandler:(id /* block */)arg5;
-- (void)_batchSamplesWithLimit:(unsigned int)arg1 sortDescriptors:(id)arg2 predicate:(id)arg3 anchor:(id)arg4 batchHandler:(id /* block */)arg5;
+- (void)_batchSamplesWithLimit:(unsigned int)arg1 anchor:(id)arg2 includeDeletedObjects:(BOOL)arg3 batchHandler:(id /* block */)arg4;
+- (void)_batchSamplesWithLimit:(unsigned int)arg1 sortDescriptors:(id)arg2 anchor:(id)arg3 batchHandler:(id /* block */)arg4;
 - (BOOL)_isAuthorizedToReadType:(id)arg1 withRestrictedSourceIdentifier:(id*)arg2;
 - (BOOL)_isAuthorizedToReadType:(id)arg1 withRestrictedSourceIdentifier:(id*)arg2 authorizationAnchor:(id*)arg3;
 - (void)_pauseServerValidate:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 - (id)_predicateString;
 - (id)_queryStateString;
+- (void)_queue_beginObservingDataTypes;
 - (void)_queue_closeActivationTransactionIfNecessary;
+- (void)_queue_endObservingDataTypes;
 - (void)_queue_start;
 - (void)_queue_startQueryIfNecessary;
 - (void)_queue_stop;
-- (void)_queue_transitionToDisabledState:(int)arg1;
+- (void)_queue_transitionToFinished;
 - (void)_queue_transitionToPaused;
-- (void)_queue_transitionToStarted;
-- (void)_queue_transitionToStopped;
+- (void)_queue_transitionToRunning;
+- (void)_queue_transitionToSuspendedState:(int)arg1;
 - (BOOL)_queue_validateConfiguration:(id*)arg1;
+- (id)_sampleTypeToObserveForUpdates;
 - (void)_scheduleStartQuery;
 - (BOOL)_shouldExecuteWhenProtectedDataIsUnavailable;
 - (BOOL)_shouldListenForUpdates;
+- (BOOL)_shouldObserveAllSampleTypes;
 - (BOOL)_shouldObserveOnPause;
 - (BOOL)_shouldStopProcessingQuery;
 - (BOOL)_shouldSuspendQuery;
@@ -64,6 +69,7 @@
 - (id)diagnosticDescription;
 - (id)filter;
 - (id)initWithQueryUUID:(id)arg1 dataObject:(id)arg2 clientProxy:(id)arg3 client:(id)arg4 delegate:(id)arg5 healthDaemon:(id)arg6;
+- (id)objectType;
 - (void)onQueue:(id /* block */)arg1;
 - (void)pauseServer;
 - (void)pauseServerValidateWithCompletion:(id /* block */)arg1;
@@ -74,9 +80,8 @@
 - (id /* block */)sampleAuthorizationFilter;
 - (id)sampleType;
 - (void)samplesAdded:(id)arg1 anchor:(id)arg2;
-- (void)samplesOfTypeWereRemoved:(id)arg1 anchor:(id)arg2;
+- (void)samplesOfTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)scheduleDatabaseAccessOnQueueWithBlock:(id /* block */)arg1;
-- (void)setQueryQueue:(id)arg1;
 - (void)setQueryState:(int)arg1;
 
 @end

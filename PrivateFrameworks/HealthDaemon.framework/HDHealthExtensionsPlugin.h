@@ -17,6 +17,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)activate;
 - (void)dealloc;
 - (id)diagnosticDescription;
 - (id)healthDaemon;

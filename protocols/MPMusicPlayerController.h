@@ -44,6 +44,7 @@
 - (void)setQueueWithQuery:(MPMediaQuery *)arg1 firstItem:(MPMediaItem *)arg2;
 - (void)setQueueWithRadioStation:(MPRadioStation *)arg1;
 - (NSNumber *)setQueueWithSeedItems:(NSArray *)arg1;
+- (NSNumber *)setQueueWithStoreIDs:(NSArray *)arg1;
 - (void)setRepeatMode:(NSNumber *)arg1;
 - (void)setShuffleMode:(NSNumber *)arg1;
 - (void)setUseApplicationSpecificQueue:(NSNumber *)arg1;

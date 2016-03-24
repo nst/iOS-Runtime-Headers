@@ -75,6 +75,7 @@
 - (void)isMediaPlayingForApp:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)isMultiTaskingActive;
 - (BOOL)isNotificationCenterVisible;
+- (BOOL)isNowPlayingUIVisible;
 - (BOOL)isOrientationLocked;
 - (BOOL)isPointInsideAccessibilityInspector:(id)arg1;
 - (BOOL)isPurpleBuddyAppFrontmost;

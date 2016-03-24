@@ -26,6 +26,11 @@
     unsigned int _routeLocationIndex;
     float _routeLocationOffset;
     GEOLatLng *_routeMatchCoordinate;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _selectedRideIndexs;
     unsigned int _stepID;
     double _timestamp;
 }
@@ -60,9 +65,15 @@
 @property (nonatomic) unsigned int routeLocationIndex;
 @property (nonatomic) float routeLocationOffset;
 @property (nonatomic, retain) GEOLatLng *routeMatchCoordinate;
+@property (nonatomic, readonly) unsigned int*selectedRideIndexs;
+@property (nonatomic, readonly) unsigned int selectedRideIndexsCount;
+@property (nonatomic, readonly) NSArray *selectedRideIndices;
 @property (nonatomic) unsigned int stepID;
 @property (nonatomic) double timestamp;
 
+- (void)_updateClusteredSectionSelectedRideIndicesFromRoute:(id)arg1;
+- (void)addSelectedRideIndex:(unsigned int)arg1;
+- (void)clearSelectedRideIndexs;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -104,6 +115,10 @@
 - (unsigned int)routeLocationIndex;
 - (float)routeLocationOffset;
 - (id)routeMatchCoordinate;
+- (unsigned int)selectedRideIndexAtIndex:(unsigned int)arg1;
+- (unsigned int*)selectedRideIndexs;
+- (unsigned int)selectedRideIndexsCount;
+- (id)selectedRideIndices;
 - (void)setDistanceRemainingOnRoute:(unsigned int)arg1;
 - (void)setDistanceToManeuver:(unsigned int)arg1;
 - (void)setDistanceToRoute:(unsigned int)arg1;
@@ -125,10 +140,12 @@
 - (void)setRouteLocationIndex:(unsigned int)arg1;
 - (void)setRouteLocationOffset:(float)arg1;
 - (void)setRouteMatchCoordinate:(id)arg1;
+- (void)setSelectedRideIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setStepID:(unsigned int)arg1;
 - (void)setTimestamp:(double)arg1;
 - (unsigned int)stepID;
 - (double)timestamp;
+- (void)updateClusteredSectionSelectedRideIndicesFromRoute:(id)arg1 routeID:(id)arg2;
 - (void)updateFeedbackWithNavigationState:(int)arg1 locationUnreliable:(BOOL)arg2 announcementStage:(unsigned int)arg3 nextAnnouncementStage:(unsigned int)arg4 nextAnnouncementTime:(double)arg5;
 - (void)updateWithRoute:(id)arg1 routeID:(id)arg2;
 - (void)writeTo:(id)arg1;

@@ -12,6 +12,7 @@
     BOOL _isSending;
     int _maxConcurrentMessages;
     NSDictionary *_options;
+    NSMutableSet *_pendingMessageIDs;
     double _perMessageTimeout;
     int _priority;
     NSObject<OS_dispatch_queue> *_queue;
@@ -48,11 +49,15 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *targetQueue;
 @property (nonatomic, retain) NSDictionary *userContext;
 @property (readonly) BOOL wasCancelled;
+@property (nonatomic, readonly) NSDictionary *wrappedUserContext;
 
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 
 - (void).cxx_destruct;
 - (BOOL)_beginTransaction;
+- (id)_cancelPendingMessagesReturningFailures;
+- (void)_clearOutgoingMessageUUID:(id)arg1;
+- (void)_continue;
 - (BOOL)_endTransaction;
 - (void)_handleEndSession:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_handleEndSessionResponse:(id)arg1 error:(id*)arg2;
@@ -62,10 +67,14 @@
 - (BOOL)_handleStartSessionResponse:(id)arg1 error:(id*)arg2;
 - (void)_handleSyncBatch:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_handleSyncBatchResponse:(id)arg1 error:(id*)arg2;
+- (void)_pause;
 - (void)_peerProcessedMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
+- (void)_recordOutgoingMessageUUID:(id)arg1;
 - (void)_resolvedIdentifier:(id)arg1 forResponse:(id)arg2;
 - (void)_resolvedIdentifierForRequest:(id)arg1;
 - (void)_sentMessageWithIdentifier:(id)arg1 userInfo:(id)arg2;
+- (void)_setStateQuietly:(int)arg1;
+- (void)_supercededWithSession:(id)arg1;
 - (double)birthDate;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
@@ -73,9 +82,11 @@
 - (id)changeFromData:(id)arg1 ofType:(int)arg2;
 - (id)dataFromChange:(id)arg1;
 - (void)dealloc;
+- (id)decodeChangeData:(id)arg1 fromProtocolVersion:(int)arg2 ofType:(int)arg3;
 - (id)delegate;
 - (void)didCompleteSession;
 - (void)didStartSession;
+- (id)encodeSYChangeForBackwardCompatibility:(id)arg1 protocolVersion:(int)arg2;
 - (id)error;
 - (double)fullSessionTimeout;
 - (id)identifier;
@@ -112,5 +123,6 @@
 - (id)targetQueue;
 - (id)userContext;
 - (BOOL)wasCancelled;
+- (id)wrappedUserContext;
 
 @end

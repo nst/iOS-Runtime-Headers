@@ -6,6 +6,7 @@
     <SBFDeviceLockModelDelegate> *_delegate;
     BOOL _pendingWipe;
     BOOL _permanentlyBlocked;
+    SBSecurityDefaults *_securityDefaults;
     double _unblockTime;
 }
 
@@ -18,10 +19,11 @@
 @property (getter=isTemporarilyBlocked, nonatomic, readonly) BOOL temporarilyBlocked;
 @property (nonatomic, readonly) double timeUntilUnblockedSinceReferenceDate;
 
+- (void).cxx_destruct;
+- (BOOL)_isDeviceWipePreferenceEnabled;
 - (void)_refreshStateAndNotify:(BOOL)arg1;
 - (void)_refreshStateForMkbState:(id)arg1 notify:(BOOL)arg2;
 - (void)clearBlockedState;
-- (void)dealloc;
 - (id)delegate;
 - (id)description;
 - (id)descriptionBuilder;
@@ -34,6 +36,7 @@
 - (void)notePasscodeUnlockFailedWithError:(id)arg1;
 - (void)notePasscodeUnlockSucceeded;
 - (void)performPasswordTest:(id /* block */)arg1;
+- (void)refreshBlockedState;
 - (void)setDelegate:(id)arg1;
 - (void)synchronize;
 - (double)timeUntilUnblockedSinceReferenceDate;

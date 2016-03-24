@@ -35,6 +35,11 @@
 
 - (void)hk_appendBytesWithUUID:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
+- (void)fiui_appendHeartRate:(double)arg1 date:(id)arg2;
+- (double)fiui_weightedAverageHeartRateWithStartDate:(id)arg1 endDate:(id)arg2;
+
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
 - (void)mf_appendCString:(const char *)arg1;

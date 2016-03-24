@@ -13,7 +13,8 @@
 @property (nonatomic, copy) NSString *displayAppName;
 @property (nonatomic, copy) NSDictionary *displayAppNameMap;
 @property (nonatomic, retain) SAGlance *glance;
-@property (nonatomic, copy) NSNumber *isNanoApp;
+@property (nonatomic) BOOL hidden;
+@property (nonatomic) BOOL isNanoApp;
 @property (nonatomic, copy) NSNumber *nowPlayingAppWithBrowsableContent;
 @property (nonatomic, copy) NSString *providerName;
 @property (nonatomic, retain) SASiriSupport *siriSupport;
@@ -37,7 +38,8 @@
 - (id)encodedClassName;
 - (id)glance;
 - (id)groupIdentifier;
-- (id)isNanoApp;
+- (BOOL)hidden;
+- (BOOL)isNanoApp;
 - (id)nowPlayingAppWithBrowsableContent;
 - (id)providerName;
 - (void)setAppId:(id)arg1;
@@ -49,7 +51,8 @@
 - (void)setDisplayAppName:(id)arg1;
 - (void)setDisplayAppNameMap:(id)arg1;
 - (void)setGlance:(id)arg1;
-- (void)setIsNanoApp:(id)arg1;
+- (void)setHidden:(BOOL)arg1;
+- (void)setIsNanoApp:(BOOL)arg1;
 - (void)setNowPlayingAppWithBrowsableContent:(id)arg1;
 - (void)setProviderName:(id)arg1;
 - (void)setSiriSupport:(id)arg1;

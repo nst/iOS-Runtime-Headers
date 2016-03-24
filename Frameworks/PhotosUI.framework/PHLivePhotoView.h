@@ -2,22 +2,27 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PHLivePhotoView : UIView <ISPlayerItemObserver, ISPlayerViewDelegate, _UISettingsKeyObserver> {
+@interface PHLivePhotoView : UIView <ISPlayerItemObserver, ISPlayerViewDelegate, ISPlayerViewDelegatePrivate, _UISettingsKeyObserver> {
     int __configuredPlaybackStyle;
     int __currentPlaybackStyle;
     BOOL __didPlayToEnd;
     ISManualPlaybackInput *__playbackInput;
     BOOL __playbackRequested;
     ISPlayerItem *__playerItem;
-    ISPlayerView *__playerView;
+    BOOL __playingVitality;
     <PHLivePhotoViewDelegate> *_delegate;
     struct { 
         BOOL respondsToWillBeginPlaybackWithStyle; 
         BOOL respondsToDidEndPlaybackWithStyle; 
     } _delegateFlags;
+    struct { 
+        BOOL respondsToDidEndPlayingVitality; 
+    } _delegatePrivateFlags;
     PHLivePhoto *_livePhoto;
     BOOL _muted;
+    UIView *_photoView;
     UIGestureRecognizer *_playbackGestureRecognizer;
+    ISPlayerView *_playerView;
     BOOL _shouldAutomaticallyPrepareForPlayback;
 }
 
@@ -26,15 +31,17 @@
 @property (setter=_setDidPlayToEnd:, nonatomic) BOOL _didPlayToEnd;
 @property (nonatomic, readonly) ISManualPlaybackInput *_playbackInput;
 @property (setter=_setPlaybackRequested:, nonatomic) BOOL _playbackRequested;
-@property (setter=_setPlayerItem:, nonatomic) ISPlayerItem *_playerItem;
-@property (nonatomic, readonly) ISPlayerView *_playerView;
+@property (setter=_setPlayerItem:, nonatomic, retain) ISPlayerItem *_playerItem;
+@property (getter=_isPlayingVitality, setter=_setPlayingVitality:, nonatomic) BOOL _playingVitality;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PHLivePhotoViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) PHLivePhoto *livePhoto;
 @property (getter=isMuted, nonatomic) BOOL muted;
+@property (nonatomic, retain) UIView *photoView;
 @property (nonatomic, readonly) UIGestureRecognizer *playbackGestureRecognizer;
+@property (nonatomic, retain) ISPlayerView *playerView;
 @property (nonatomic) BOOL shouldAutomaticallyPrepareForPlayback;
 @property (readonly) Class superclass;
 
@@ -47,17 +54,19 @@
 - (int)_currentPlaybackStyle;
 - (BOOL)_didPlayToEnd;
 - (void)_ensurePlaybackInput;
+- (BOOL)_isPlayingVitality;
 - (id)_playbackInput;
 - (BOOL)_playbackRequested;
 - (id)_playerItem;
-- (id)_playerView;
 - (void)_setCurrentPlaybackStyle:(int)arg1;
 - (void)_setDidPlayToEnd:(BOOL)arg1;
 - (void)_setPlaybackRequested:(BOOL)arg1;
 - (void)_setPlayerItem:(id)arg1;
+- (void)_setPlayingVitality:(BOOL)arg1;
 - (void)_updateCurrentPlaybackStyle;
 - (void)_updateMuted;
 - (void)_updatePlayerItemLoadingTarget;
+- (void)_updatePlayingVitality;
 - (void)_updateStatusBorder;
 - (void)dealloc;
 - (id)delegate;
@@ -65,17 +74,22 @@
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isMuted;
 - (id)livePhoto;
+- (id)photoView;
 - (id)playbackGestureRecognizer;
 - (void)playerItemStatusDidChange:(id)arg1;
 - (id)playerView;
 - (void)playerViewDidPlaybackVideoAssetToEnd:(id)arg1;
 - (void)playerViewIsInteractingDidChange:(id)arg1;
 - (void)playerViewPlaybackStateDidChange:(id)arg1;
+- (void)playerViewPlayerItemDidChange:(id)arg1;
+- (void)playerViewPlayingVitalityChanged:(id)arg1;
 - (void)playerViewWillPlaybackVideoAssetToEnd:(id)arg1;
 - (void)setContentMode:(int)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setLivePhoto:(id)arg1;
 - (void)setMuted:(BOOL)arg1;
+- (void)setPhotoView:(id)arg1;
+- (void)setPlayerView:(id)arg1;
 - (void)setShouldAutomaticallyPrepareForPlayback:(BOOL)arg1;
 - (void)settings:(id)arg1 changedValueForKey:(id)arg2;
 - (BOOL)shouldAutomaticallyPrepareForPlayback;

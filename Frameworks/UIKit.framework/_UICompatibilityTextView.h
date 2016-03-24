@@ -224,11 +224,13 @@
 - (void)setSelectionGranularity:(int)arg1;
 - (void)setSelectionToEnd;
 - (void)setSelectionToStart;
+- (void)setShouldAutoscrollAboveBottom:(BOOL)arg1;
 - (void)setShowScrollerIndicators:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
 - (void)setTextColor:(id)arg1;
 - (void)setTypingAttributes:(id)arg1;
+- (BOOL)shouldAutoscrollAboveBottom;
 - (BOOL)shouldScrollEnclosingScrollView;
 - (BOOL)shouldStartDataDetectors;
 - (BOOL)showScrollerIndicators;
@@ -258,6 +260,7 @@
 - (id)undoManager;
 - (id)undoManagerForWebView:(id)arg1;
 - (void)unmarkText;
+- (void)updateAutoscrollAboveBottom;
 - (void)updateContentEditableAttribute:(BOOL)arg1;
 - (void)updateInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateSelection;

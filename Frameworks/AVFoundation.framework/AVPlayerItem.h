@@ -21,6 +21,7 @@
 @property (getter=isContentAuthorizedForPlayback, nonatomic, readonly) BOOL contentAuthorizedForPlayback;
 @property (nonatomic, readonly) NSError *error;
 @property (getter=is_isHighFramerate, nonatomic, readonly) BOOL is_highFramerate;
+@property (nonatomic, readonly) NSArray *mediaDataCollectors;
 @property (nonatomic, copy) NSString *mediaKind;
 @property (nonatomic, readonly) NSArray *outputs;
 @property (nonatomic, readonly) double rc_durationInSeconds;
@@ -68,6 +69,7 @@
 - (void)_addFAListeners;
 - (void)_addFPListeners;
 - (void)_addLegibleOutput:(id)arg1;
+- (void)_addMetadataCollector:(id)arg1;
 - (void)_addMetadataOutput:(id)arg1;
 - (void)_addSyncLayer:(id)arg1;
 - (BOOL)_addToPlayQueueOfFigPlayerOfPlayer:(id)arg1 afterFigPlaybackItemOfItem:(id)arg2;
@@ -148,6 +150,7 @@
 - (void)_markAssetWithFigPlaybackItemAsNeedingNewTracks;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })_maximumForwardBufferDuration;
 - (id)_mediaKind;
+- (id)_metadataCollectors;
 - (id)_metadataOutputForKey:(id)arg1;
 - (id)_metadataOutputsForKeys;
 - (id)_nextItem;
@@ -198,6 +201,7 @@
 - (void)_removeFromItems;
 - (void)_removeFromPlayQueueOfFigPlayerOfAttachedPlayer;
 - (void)_removeLegibleOutput:(id)arg1;
+- (void)_removeMetadataCollector:(id)arg1;
 - (void)_removeMetadataOutput:(id)arg1;
 - (void)_removeSyncLayer:(id)arg1;
 - (void)_removeVideoOutput:(id)arg1;
@@ -242,6 +246,7 @@
 - (id)_tracksWithFPTrackIDArray:(id)arg1 fromFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg2;
 - (void)_unregisterInvokeAndReleasePendingSeekCompletionHandlerForSeekID:(int)arg1 finished:(BOOL)arg2;
 - (void)_updateLegibleSuppressionOnFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 basedOnOutputs:(id)arg2;
+- (void)_updateTaggedMetadataArray:(id)arg1;
 - (void)_updateTimebase;
 - (void)_updateVideoSuppressionOnFigPlaybackItem:(struct OpaqueFigPlaybackItem { }*)arg1 basedOnOutputs:(id)arg2;
 - (BOOL)_usesMinimalLatencyForVideoCompositionRendering;
@@ -250,6 +255,7 @@
 - (void)_willAccessKVOForKey:(id)arg1;
 - (BOOL)_willNeverSeekBackwardsHint;
 - (id)accessLog;
+- (void)addMediaDataCollector:(id)arg1;
 - (void)addObserver:(id)arg1 forKeyPath:(id)arg2 options:(unsigned int)arg3 context:(void*)arg4;
 - (void)addOutput:(id)arg1;
 - (BOOL)aggressivelyCachesVideoFrames;
@@ -309,6 +315,7 @@
 - (float)maximumBitRate;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumForwardBufferDuration;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })maximumTrailingBufferDuration;
+- (id)mediaDataCollectors;
 - (id)mediaKind;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })minimumIntervalForIFrameOnlyPlayback;
 - (BOOL)networkUsuallyExceedsMaxBitRate;
@@ -319,6 +326,7 @@
 - (double)preferredPeakBitRate;
 - (struct CGSize { float x1; float x2; })presentationSize;
 - (float)progressTowardsPlaybackLikelyToKeepUp;
+- (void)removeMediaDataCollector:(id)arg1;
 - (void)removeOutput:(id)arg1;
 - (BOOL)requiresAccessLog;
 - (unsigned int)restrictions;
@@ -410,7 +418,9 @@
 
 // Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
 
+- (void)is_enableColorMatching;
 - (BOOL)is_isHighFramerate;
+- (BOOL)is_setEnabled:(BOOL)arg1 forTracksWithMediaType:(id)arg2 force:(BOOL)arg3;
 
 // Image: /System/Library/PrivateFrameworks/VoiceMemos.framework/VoiceMemos
 

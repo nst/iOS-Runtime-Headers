@@ -14,7 +14,9 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (unsigned long long)activityStart;
 - (unsigned int)badgeValue;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithBadgeValue:(unsigned int)arg1;
 - (id /* block */)modifyBadgeCompletionBlock;

@@ -13,6 +13,7 @@
     unsigned int _nextJobIndex;
     unsigned int _pageCount;
     NSOperationQueue *_renderQueue;
+    int jobsComplete;
 }
 
 @property (readonly) UIPDFDocument *document;
@@ -30,6 +31,7 @@
 - (void)didReceiveMemoryWarning:(id)arg1;
 - (id)document;
 - (id)getImageIfAvailableForPage:(unsigned int)arg1;
+- (int)getRenderQueueJobsCount;
 - (id)initWithDocument:(id)arg1;
 - (id)initWithDocument:(id)arg1 cacheCount:(unsigned int)arg2 lookAhead:(unsigned int)arg3 withLookAheadResolution:(float)arg4;
 - (unsigned int)lookAhead;

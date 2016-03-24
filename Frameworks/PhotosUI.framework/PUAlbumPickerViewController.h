@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (id)_albumListViewController;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (void)_setAlbumListViewController:(id)arg1;
 - (void)_setContentNavigationController:(id)arg1;
 - (void)_setSessionInfo:(id)arg1;

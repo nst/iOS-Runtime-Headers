@@ -58,6 +58,7 @@
         unsigned int purchaseHistoryToken : 1; 
         unsigned int skipCount : 1; 
         unsigned int skipCountDelta : 1; 
+        unsigned int storeProtectionType : 1; 
         unsigned int year : 1; 
         unsigned int cloudAssetAvailable : 1; 
         unsigned int explicitContent : 1; 
@@ -100,6 +101,7 @@
     NSString *_storeAssetFlavor;
     long long _storeId;
     long long _storePlaylistId;
+    int _storeProtectionType;
     NSString *_storeXID;
     long long _storefrontId;
     long long _subscriptionStoreItemId;
@@ -184,6 +186,7 @@
 @property (nonatomic, readonly) BOOL hasStoreAssetFlavor;
 @property (nonatomic) BOOL hasStoreId;
 @property (nonatomic) BOOL hasStorePlaylistId;
+@property (nonatomic) BOOL hasStoreProtectionType;
 @property (nonatomic, readonly) BOOL hasStoreXID;
 @property (nonatomic) BOOL hasStorefrontId;
 @property (nonatomic) BOOL hasSubscriptionStoreItemId;
@@ -221,6 +224,7 @@
 @property (nonatomic, retain) NSString *storeAssetFlavor;
 @property (nonatomic) long long storeId;
 @property (nonatomic) long long storePlaylistId;
+@property (nonatomic) int storeProtectionType;
 @property (nonatomic, retain) NSString *storeXID;
 @property (nonatomic) long long storefrontId;
 @property (nonatomic) long long subscriptionStoreItemId;
@@ -311,6 +315,7 @@
 - (BOOL)hasStoreAssetFlavor;
 - (BOOL)hasStoreId;
 - (BOOL)hasStorePlaylistId;
+- (BOOL)hasStoreProtectionType;
 - (BOOL)hasStoreXID;
 - (BOOL)hasStorefrontId;
 - (BOOL)hasSubscriptionStoreItemId;
@@ -407,6 +412,7 @@
 - (void)setHasSkipCountDelta:(BOOL)arg1;
 - (void)setHasStoreId:(BOOL)arg1;
 - (void)setHasStorePlaylistId:(BOOL)arg1;
+- (void)setHasStoreProtectionType:(BOOL)arg1;
 - (void)setHasStorefrontId:(BOOL)arg1;
 - (void)setHasSubscriptionStoreItemId:(BOOL)arg1;
 - (void)setHasYear:(BOOL)arg1;
@@ -441,6 +447,7 @@
 - (void)setStoreAssetFlavor:(id)arg1;
 - (void)setStoreId:(long long)arg1;
 - (void)setStorePlaylistId:(long long)arg1;
+- (void)setStoreProtectionType:(int)arg1;
 - (void)setStoreXID:(id)arg1;
 - (void)setStorefrontId:(long long)arg1;
 - (void)setSubscriptionStoreItemId:(long long)arg1;
@@ -455,6 +462,7 @@
 - (id)storeAssetFlavor;
 - (long long)storeId;
 - (long long)storePlaylistId;
+- (int)storeProtectionType;
 - (id)storeXID;
 - (long long)storefrontId;
 - (long long)subscriptionStoreItemId;

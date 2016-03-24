@@ -23,9 +23,9 @@
 @property (readonly) Class superclass;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
+- (void).cxx_destruct;
 - (void)attachLayer:(id)arg1;
 - (id)clientSettings;
-- (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

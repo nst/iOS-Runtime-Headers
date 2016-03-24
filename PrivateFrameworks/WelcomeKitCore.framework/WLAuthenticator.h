@@ -29,8 +29,9 @@
 @property (nonatomic, readonly) <WLDeviceAuthenticationDelegate> *delegate;
 @property (nonatomic, readonly) WLSourceDevice *device;
 
++ (id)generateAuthenticationCredentialsContainingSelfSignedCertificate;
+
 - (void).cxx_destruct;
-- (void)_appendBase64Data:(id)arg1 toString:(id)arg2;
 - (id)_authenticateCommandData;
 - (void)_authenticationDidSucceed;
 - (id)_commandStringWithData:(id)arg1;
@@ -40,7 +41,6 @@
 - (unsigned long)_fieldTypeDERLength;
 - (char *)_fieldTypeOID;
 - (void)_generateAndSendPublicKey;
-- (void)_generateSelfSignedCertificateWithCompletion:(id /* block */)arg1;
 - (BOOL)_handleCertificateSignatureWithData:(id)arg1;
 - (BOOL)_handleCertificateWithData:(id)arg1;
 - (void)_handleCommitmentValueOKWithData:(id)arg1;
@@ -62,7 +62,6 @@
 - (unsigned long)_publicKeyDERLength;
 - (BOOL)_shouldForceAuthenticationError;
 - (void)cancelAuthenticationWithReply:(id /* block */)arg1;
-- (id)dataFromPEMFormattedData:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
 - (id)device;
@@ -73,9 +72,6 @@
 - (void)invalidateWithError:(id)arg1;
 - (id)parseDataAsBlob:(id)arg1;
 - (void)parsePublicKeyDER:(id)arg1 completion:(id /* block */)arg2;
-- (void)pause;
-- (id)pemFormattedCertificateData:(id)arg1;
-- (id)pemFormattedPublicKeyData:(id)arg1;
 - (void)resume;
 - (void)sendData:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendDataAsBlob:(id)arg1 completion:(id /* block */)arg2;

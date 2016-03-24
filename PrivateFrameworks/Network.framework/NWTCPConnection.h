@@ -17,6 +17,7 @@
     BOOL _viable;
 }
 
+@property (readonly) BOOL TFOSucceeded;
 @property (retain) NSArray *certificateChain;
 @property (readonly) NWPath *connectedPath;
 @property struct SSLCertificate { struct SSLCertificate {} *x1; struct { unsigned int x_2_1_1; char *x_2_1_2; } x2; }*coreTLSCertificateChain;
@@ -40,6 +41,7 @@
 + (id)stringFromNWTCPConnectionState:(int)arg1;
 
 - (void).cxx_destruct;
+- (BOOL)TFOSucceeded;
 - (void)cancel;
 - (id)certificateChain;
 - (void)cleanupPreviousTLSIdentity;

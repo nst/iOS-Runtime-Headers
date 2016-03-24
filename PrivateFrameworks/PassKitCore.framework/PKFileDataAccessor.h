@@ -14,6 +14,7 @@
 - (id)archiveData;
 - (id)bundle;
 - (void)contentWithCompletion:(id /* block */)arg1;
+- (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2;
 - (void)dealloc;
 - (void)dictionaryWithCompletion:(id /* block */)arg1;
 - (id)displayProfileOfType:(int)arg1;

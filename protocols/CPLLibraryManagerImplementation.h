@@ -5,7 +5,7 @@
 
 @required
 
-- (void)beginDownloadForResource:(void *)arg1 clientBundleID:(void *)arg2 highPriority:(void *)arg3 completionHandler:(void *)arg4; // needs 4 arg types, found 9: CPLResource *, NSString *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, CPLResourceTransferTask *, void*
+- (void)beginDownloadForResource:(void *)arg1 clientBundleID:(void *)arg2 highPriority:(void *)arg3 proposedTaskIdentifier:(void *)arg4 completionHandler:(void *)arg5; // needs 5 arg types, found 10: CPLResource *, NSString *, BOOL, NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, CPLResourceTransferTask *, void*
 - (void)closeWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (void)deactivateWithCompletionHandler:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (BOOL)diagnosticsEnabled;
@@ -21,7 +21,6 @@
 - (void)resetStatus;
 - (void)setDiagnosticsEnabled:(BOOL)arg1;
 - (void)startSyncSession;
-- (void)takeStatisticsSnapshotSinceDate:(void *)arg1 completionHandler:(void *)arg2; // needs 2 arg types, found 8: NSDate *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSDictionary *, NSError *, void*
 
 @optional
 

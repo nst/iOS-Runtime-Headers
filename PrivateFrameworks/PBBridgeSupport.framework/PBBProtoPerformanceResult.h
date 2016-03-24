@@ -26,12 +26,14 @@
 @property (nonatomic) double timeEnded;
 @property (nonatomic) double timeStarted;
 
++ (void)initialize;
+
 - (void).cxx_destruct;
 - (id)activityType;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
-- (id)description;
+- (id)detailedDescription;
 - (id)dictionaryRepresentation;
 - (BOOL)hasActivityType;
 - (BOOL)hasIdentifier;

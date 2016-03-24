@@ -5,6 +5,6 @@
 
 @required
 
-- (void)ingestionDidFinishWithResult:(int)arg1;
+- (void)ingestionDidFinishWithResult:(unsigned int)arg1;
 
 @end

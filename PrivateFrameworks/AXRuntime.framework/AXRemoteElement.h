@@ -39,7 +39,7 @@
 - (id)_accessibilitySortedElementsWithin;
 - (id)_accessibilityTextOperations;
 - (id)_accessibilityTextViewTextOperationResponder;
-- (id)_remoteElementWithAttribute:(int)arg1;
+- (id)_remoteElementWithAttribute:(int)arg1 limitToRemoteSubviews:(BOOL)arg2;
 - (id)accessibilityContainer;
 - (id)accessibilityContainerElements;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })accessibilityFrame;

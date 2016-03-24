@@ -8,6 +8,7 @@
     BOOL _connected;
     BOOL _fake;
     NSDictionary *_glyphs;
+    NSString *_groupName;
     NSString *_identifier;
     BOOL _internal;
     BOOL _lowBattery;
@@ -27,7 +28,8 @@
 @property (getter=isConnected, nonatomic) BOOL connected;
 @property (getter=isFake, nonatomic) BOOL fake;
 @property (nonatomic, readonly, retain) UIImage *glyph;
-@property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, copy) NSString *groupName;
+@property (nonatomic, copy) NSString *identifier;
 @property (getter=isInternal, nonatomic) BOOL internal;
 @property (getter=isLowBattery, nonatomic) BOOL lowBattery;
 @property (nonatomic, readonly, copy) NSString *matchIdentifier;
@@ -40,7 +42,7 @@
 @property (nonatomic) int transportType;
 @property (nonatomic, readonly) int vendor;
 
-+ (id)batteryDeviceWithVendor:(int)arg1 productIdentifier:(int)arg2 baseIdentifier:(id)arg3 parts:(unsigned int)arg4 matchIdentifier:(id)arg5;
++ (id)batteryDeviceWithIdentifier:(id)arg1 vendor:(int)arg2 productIdentifier:(int)arg3 baseIdentifier:(id)arg4 parts:(unsigned int)arg5 matchIdentifier:(id)arg6;
 
 - (id)_lazyGlyphs;
 - (id)baseIdentifier;
@@ -50,9 +52,10 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)glyph;
 - (id)glyphForPartKey:(id)arg1;
+- (id)groupName;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithVendor:(int)arg1 productIdentifier:(int)arg2 baseIdentifier:(id)arg3 parts:(unsigned int)arg4 matchIdentifier:(id)arg5;
+- (id)initWithIdentifier:(id)arg1 vendor:(int)arg2 productIdentifier:(int)arg3 baseIdentifier:(id)arg4 parts:(unsigned int)arg5 matchIdentifier:(id)arg6;
 - (BOOL)isCharging;
 - (BOOL)isConnected;
 - (BOOL)isFake;
@@ -69,6 +72,8 @@
 - (void)setCharging:(BOOL)arg1;
 - (void)setConnected:(BOOL)arg1;
 - (void)setFake:(BOOL)arg1;
+- (void)setGroupName:(id)arg1;
+- (void)setIdentifier:(id)arg1;
 - (void)setInternal:(BOOL)arg1;
 - (void)setLowBattery:(BOOL)arg1;
 - (void)setName:(id)arg1;

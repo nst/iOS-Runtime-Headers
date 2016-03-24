@@ -27,6 +27,7 @@
 @property (nonatomic) unsigned int stateDuration;
 @property (nonatomic) unsigned int txBytes;
 
+- (int)StringAsLQM:(id)arg1;
 - (id)bundleName;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -41,6 +42,7 @@
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (int)lQM;
+- (id)lQMAsString:(int)arg1;
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)rxBytes;

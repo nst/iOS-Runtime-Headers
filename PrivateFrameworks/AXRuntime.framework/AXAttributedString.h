@@ -27,6 +27,7 @@
 - (id)description;
 - (void)enumerateAttributesUsingBlock:(id /* block */)arg1;
 - (BOOL)hasAttribute:(id)arg1;
+- (BOOL)hasAttributes;
 - (id)initWithCFAttributedString:(struct __CFAttributedString { }*)arg1;
 - (id)initWithString:(id)arg1;
 - (BOOL)isAXAttributedString;

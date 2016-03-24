@@ -3,30 +3,63 @@
  */
 
 @interface GEOLongSessionUsageLogMessage : PBCodable <NSCopying> {
+    GEOCacheHitLogMessage *_cacheHitLogMessage;
     struct { 
         unsigned int sessionId : 1; 
+        unsigned int timestamp : 1; 
     } _has;
+    GEOLogFrameworkMetricLogMessage *_logFrameworkMetricLogMessage;
+    GEONetworkUsageLogMessage *_networkUsageLogMessage;
+    NSString *_requestingAppIdentifier;
     struct { 
         unsigned long long _high; 
         unsigned long long _low; 
     } _sessionId;
+    double _timestamp;
 }
 
+@property (nonatomic, retain) GEOCacheHitLogMessage *cacheHitLogMessage;
+@property (nonatomic, readonly) BOOL hasCacheHitLogMessage;
+@property (nonatomic, readonly) BOOL hasLogFrameworkMetricLogMessage;
+@property (nonatomic, readonly) BOOL hasNetworkUsageLogMessage;
+@property (nonatomic, readonly) BOOL hasRequestingAppIdentifier;
 @property (nonatomic) BOOL hasSessionId;
+@property (nonatomic) BOOL hasTimestamp;
+@property (nonatomic, retain) GEOLogFrameworkMetricLogMessage *logFrameworkMetricLogMessage;
+@property (nonatomic, retain) GEONetworkUsageLogMessage *networkUsageLogMessage;
+@property (nonatomic, retain) NSString *requestingAppIdentifier;
 @property (nonatomic) struct { unsigned long long x1; unsigned long long x2; } sessionId;
+@property (nonatomic) double timestamp;
 
+- (id)cacheHitLogMessage;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)hasCacheHitLogMessage;
+- (BOOL)hasLogFrameworkMetricLogMessage;
+- (BOOL)hasNetworkUsageLogMessage;
+- (BOOL)hasRequestingAppIdentifier;
 - (BOOL)hasSessionId;
+- (BOOL)hasTimestamp;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
+- (id)logFrameworkMetricLogMessage;
 - (void)mergeFrom:(id)arg1;
+- (id)networkUsageLogMessage;
 - (BOOL)readFrom:(id)arg1;
+- (id)requestingAppIdentifier;
 - (struct { unsigned long long x1; unsigned long long x2; })sessionId;
+- (void)setCacheHitLogMessage:(id)arg1;
 - (void)setHasSessionId:(BOOL)arg1;
+- (void)setHasTimestamp:(BOOL)arg1;
+- (void)setLogFrameworkMetricLogMessage:(id)arg1;
+- (void)setNetworkUsageLogMessage:(id)arg1;
+- (void)setRequestingAppIdentifier:(id)arg1;
 - (void)setSessionId:(struct { unsigned long long x1; unsigned long long x2; })arg1;
+- (void)setTimestamp:(double)arg1;
+- (double)timestamp;
 - (void)writeTo:(id)arg1;
 
 @end

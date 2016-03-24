@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIDateTimeController : PSListController <UIPopoverControllerDelegate> {
+@interface PSUIDateTimeController : PSListController <PSUIDateTimePickerCellDelegate, UIPopoverControllerDelegate> {
     PSSpecifier *_currentTimeSpecifier;
     struct __CFDateFormatter { } *_dateFormatter;
     BOOL _localeForces24HourTime;

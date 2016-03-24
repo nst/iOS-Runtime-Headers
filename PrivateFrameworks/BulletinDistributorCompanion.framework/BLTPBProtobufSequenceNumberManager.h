@@ -9,6 +9,7 @@
     NSUUID *_recvSessionIdentifier;
     unsigned long long _sendSequenceNumber;
     NSLock *_sequenceNumberAccess;
+    NSURL *_sequenceNumbersURL;
     NSString *_serviceName;
     unsigned int _sessionState;
 }

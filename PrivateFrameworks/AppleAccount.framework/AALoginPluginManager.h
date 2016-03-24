@@ -17,12 +17,13 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
-- (void)_loadPlugins;
+- (void)_loadPluginsLimitedToBundleIDs:(id)arg1;
 - (BOOL)_notifyServicesOfLoginResponse:(id)arg1 forAppleID:(id)arg2 password:(id)arg3;
 - (void)_stashServiceTokensFromResponse:(id)arg1;
 - (id)collectParametersForIdentityEstablishmentRequest;
 - (id)collectParametersForLoginRequest;
 - (id)init;
+- (id)initForPluginBundleIDs:(id)arg1;
 - (void)notifyServicesOfLoginResponse:(id)arg1 forAppleID:(id)arg2 password:(id)arg3 completion:(id /* block */)arg4;
 - (void)setShouldSkipiTunesPlugin:(BOOL)arg1;
 - (void)setShouldStashLoginResponse:(BOOL)arg1;

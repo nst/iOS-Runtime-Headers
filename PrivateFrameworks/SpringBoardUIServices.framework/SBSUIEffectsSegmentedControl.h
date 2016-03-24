@@ -11,8 +11,7 @@
 @property (nonatomic, retain) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic) unsigned int selectedEffect;
 
-- (void)dealloc;
-- (id)initWithParallaxPossible:(BOOL)arg1;
+- (void).cxx_destruct;
 - (id)initWithParallaxPossible:(BOOL)arg1 irisPossible:(BOOL)arg2;
 - (id)legibilitySettings;
 - (unsigned int)selectedEffect;

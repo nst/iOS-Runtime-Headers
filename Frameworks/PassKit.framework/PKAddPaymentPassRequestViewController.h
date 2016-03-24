@@ -65,6 +65,7 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;
+- (void)viewDidMoveToWindow:(id)arg1 shouldAppearOrDisappear:(BOOL)arg2;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillLayoutSubviews;
 - (id)webService;

@@ -21,6 +21,7 @@
     } _mapDisplayStyle;
     _MKSmallCalloutPassthroughButton *_maskedContainerView;
     float _maxWidth;
+    BOOL _needsPreferredContentSizeUpdate;
     struct CGSize { 
         float width; 
         float height; 
@@ -34,7 +35,6 @@
     UIView *_unmaskedContainerView;
 }
 
-@property (nonatomic, readonly) struct CGSize { float x1; float x2; } _preferredContentSize;
 @property (nonatomic, retain) MKCalloutBackgroundView *calloutBackgroundView;
 @property (nonatomic, copy) NSString *calloutSubtitle;
 @property (nonatomic, copy) NSString *calloutTitle;
@@ -45,6 +45,7 @@
 @property (nonatomic, retain) UIView *leftView;
 @property (nonatomic) struct { unsigned char x1; unsigned char x2; unsigned char x3; } mapDisplayStyle;
 @property (nonatomic) float maximumWidth;
+@property (getter=_preferredContentSize, nonatomic, readonly) struct CGSize { float x1; float x2; } preferredContentSize;
 @property (nonatomic, retain) UIView *rightView;
 @property (readonly) Class superclass;
 
@@ -52,10 +53,12 @@
 - (void)_contentSizeCategoryDidChange:(id)arg1;
 - (id)_maskedContainerView;
 - (struct CGSize { float x1; float x2; })_preferredContentSize;
+- (void)_setNeedsUpdatePreferredContentSize;
 - (BOOL)_shouldCenterDetailView;
 - (id)_subtitleLabel;
 - (void)_updateAccessoryViewStyles;
 - (void)_updatePreferredContentSize;
+- (void)_updatePreferredContentSizeIfNeeded;
 - (void)beginMapsTransitionMovingSideways;
 - (id)calloutBackgroundView;
 - (id)calloutSubtitle;

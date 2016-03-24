@@ -10,8 +10,8 @@
 
 + (id)eventForBulletin:(id)arg1 feed:(unsigned int)arg2 block:(id /* block */)arg3;
 
+- (void).cxx_destruct;
 - (id)bulletinID;
-- (void)dealloc;
 - (void)execute;
 - (unsigned int)feed;
 - (id)initWithBulletin:(id)arg1 feed:(unsigned int)arg2 block:(id /* block */)arg3;

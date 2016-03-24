@@ -3,7 +3,6 @@
  */
 
 @interface BSZeroingWeakReference : NSObject {
-    NSString *_debug;
     id _object;
     unsigned long _objectAddress;
     Class _objectClass;

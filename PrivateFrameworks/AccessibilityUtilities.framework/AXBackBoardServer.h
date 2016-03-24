@@ -10,6 +10,7 @@
 
 @property (nonatomic) BOOL inPreboardMode;
 @property (nonatomic) BOOL invertColorsEnabled;
+@property (nonatomic) BOOL sessionIsLoginSession;
 
 + (id)server;
 
@@ -21,14 +22,18 @@
 - (id)_springboardParametersForGuidedAccessAvailability;
 - (void)_willClearServer;
 - (int)accessibilityUIServicePID;
+- (BOOL)adaptationEnabled;
 - (void)adjustSystemZoom:(int)arg1;
 - (id)backboardServiceInstance;
+- (BOOL)blueLightStatusEnabled;
+- (BOOL)brightnessFiltersEnabled;
 - (unsigned int)contextIdForPosition:(struct CGPoint { float x1; float x2; })arg1;
 - (unsigned int)contextIdHostingContextId:(unsigned int)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromContextId:(unsigned int)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromContextId:(unsigned int)arg2 toContextId:(unsigned int)arg3;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })convertFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toContextId:(unsigned int)arg2;
 - (void)dealloc;
+- (void)disableBrightnessFilters;
 - (unsigned int)guidedAccessAvailability;
 - (id)guidedAccessIgnoredRegions;
 - (BOOL)inPreboardMode;
@@ -47,15 +52,20 @@
 - (void)registerSiriViewServicePID:(int)arg1;
 - (void)registerZoomAttributesChangeHandler:(id /* block */)arg1;
 - (BOOL)requestGuidedAccessSession:(BOOL)arg1 appID:(id)arg2;
+- (void)restoreCachedBrightnessFilters;
+- (BOOL)sessionIsLoginSession;
 - (void)setAccessibilityPreferenceAsMobile:(id)arg1 value:(id)arg2 notification:(id)arg3;
 - (void)setCapsLockLightOn:(BOOL)arg1;
 - (void)setHearingAidControlIsVisible:(BOOL)arg1;
 - (void)setInPreboardMode:(BOOL)arg1;
 - (void)setInvertColorsEnabled:(BOOL)arg1;
 - (void)setLockScreenDimTimerEnabled:(BOOL)arg1;
+- (void)setSessionIsLoginSession:(BOOL)arg1;
 - (void)setSwitchControlRendersDeviceUnusable:(BOOL)arg1;
 - (void)setVoiceOverItemChooserVisible:(BOOL)arg1;
 - (void)setZoomInitialFocusRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromContext:(unsigned int)arg2;
+- (BOOL)supportsAdaptation;
+- (BOOL)supportsBlueLightReduction;
 - (void)toggleGuidedAccess;
 - (void)userEventOccurred;
 - (void)wakeUpDeviceIfNecessary;

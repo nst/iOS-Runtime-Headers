@@ -45,11 +45,13 @@
         unsigned int interactiveSelectionDisabled : 1; 
         unsigned int selectable : 1; 
         unsigned int shouldPresentSheetsInAWindowLayeredAboveTheKeyboard : 1; 
+        unsigned int shouldAutoscrollAboveBottom : 1; 
     } _tvFlags;
 }
 
 @property (setter=MPU_setAutomaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts:, nonatomic) BOOL MPU_automaticallyUpdatesTextStyleFontsToPreferredTextStyleFonts;
 @property (nonatomic, readonly) MPUTextContainerContentSizeUpdater *MPU_contentSizeUpdater;
+@property (nonatomic, copy) NSIndexSet *PINEntrySeparatorIndexes;
 @property (setter=_setDrawsDebugBaselines:, nonatomic) BOOL _drawsDebugBaselines;
 @property (nonatomic, copy) NSString *ab_text;
 @property (nonatomic, copy) NSDictionary *ab_textAttributes;
@@ -71,6 +73,7 @@
 @property (nonatomic) <UITextViewDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disablePrediction;
+@property (nonatomic) BOOL displaySecureEditsUsingPlainText;
 @property (nonatomic) BOOL displaySecureTextUsingPlainText;
 @property (getter=isEditable, nonatomic) BOOL editable;
 @property (nonatomic) int emptyContentReturnKeyType;
@@ -125,6 +128,7 @@
 @property (nonatomic, readonly) <UITextInputTokenizer> *tokenizer;
 @property (nonatomic, copy) NSDictionary *typingAttributes;
 @property (nonatomic) BOOL useInterfaceLanguageForLocalization;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } validTextRange;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
@@ -203,8 +207,10 @@
 - (void)_resyncContainerFrameForNonAutolayout;
 - (void)_resyncContainerFrameForNonAutolayoutDeferringSizeToFit:(BOOL)arg1;
 - (void)_scrollRangeToVisible:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 animated:(BOOL)arg2;
+- (void)_scrollRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toVisibleInContainingScrollView:(BOOL)arg2;
 - (void)_scrollSelectionToVisibleInContainingScrollView;
 - (void)_scrollSelectionToVisibleInContainingScrollView:(BOOL)arg1;
+- (void)_scrollToCaretIfNeeded;
 - (void)_scrollToSelectionIfNeeded;
 - (void)_scrollViewAnimationEnded:(id)arg1 finished:(BOOL)arg2;
 - (void)_selectionMayChange:(id)arg1;
@@ -370,6 +376,7 @@
 - (void)setSelectable:(BOOL)arg1;
 - (void)setSelectedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setSelectedTextRange:(id)arg1;
+- (void)setShouldAutoscrollAboveBottom:(BOOL)arg1;
 - (void)setShouldPresentSheetsInAWindowLayeredAboveTheKeyboard:(BOOL)arg1;
 - (void)setText:(id)arg1;
 - (void)setTextAlignment:(int)arg1;
@@ -378,6 +385,7 @@
 - (void)setTiledViewsDrawAsynchronously:(BOOL)arg1;
 - (void)setTypingAttributes:(id)arg1;
 - (void)setUsesTiledViews:(BOOL)arg1;
+- (BOOL)shouldAutoscrollAboveBottom;
 - (BOOL)shouldPresentSheetsInAWindowLayeredAboveTheKeyboard;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)startAutoscroll:(struct CGPoint { float x1; float x2; })arg1;
@@ -408,6 +416,7 @@
 - (id)typingAttributes;
 - (id)undoManager;
 - (void)unmarkText;
+- (void)updateAutoscrollAboveBottom;
 - (void)updateConstraints;
 - (void)updateFloatingCursorAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updateInteractionWithLinkAtPoint:(struct CGPoint { float x1; float x2; })arg1;

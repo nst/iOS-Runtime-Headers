@@ -41,6 +41,9 @@
 @property (nonatomic, retain) NSString *radarVersion;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)keywordsType;
++ (Class)radarAttachmentTypesType;
+
 - (void)addKeywords:(id)arg1;
 - (void)addRadarAttachmentTypes:(id)arg1;
 - (void)clearKeywords;

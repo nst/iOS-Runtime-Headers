@@ -41,6 +41,7 @@
 + (id)mainBundleID;
 + (id)mainBundleLocalizedString;
 + (void)notifyIndexDelegates;
++ (id)requestBundleID;
 
 - (void).cxx_destruct;
 - (void)_cancelAwakeNotifyToken;

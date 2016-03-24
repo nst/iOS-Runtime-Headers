@@ -33,6 +33,7 @@
     unsigned int _forceDelayedCurrentTimeToSet;
     unsigned int _hasDelayedCurrentTimeToSet;
     BOOL _hasPendingRate;
+    BOOL _hasSentTracePlaybackStartDidFinish;
     int _indexChangeDirection;
     float _inflightSeekRate;
     BOOL _isConnectingPlayer;
@@ -254,6 +255,7 @@
 - (void)_resumeTickTimer;
 - (void)_scheduleUpdateCurrentItemBookkeepingTimer;
 - (int)_seeklessStateForState:(int)arg1;
+- (void)_sendTracePlaybackStartDidFinishIfNeededForItem:(id)arg1;
 - (void)_serverConnectionDidDie:(id)arg1;
 - (void)_setActionAtEndAttributeForState:(int)arg1;
 - (void)_setBufferingState:(unsigned int)arg1;

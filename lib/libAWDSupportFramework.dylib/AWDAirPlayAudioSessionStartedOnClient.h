@@ -8,6 +8,7 @@
     unsigned int _bonjourMs;
     unsigned int _compressionType;
     unsigned int _connectMs;
+    BOOL _didFallbackToInfraToAvoidP2POverDFS;
     unsigned int _encryptionType;
     struct { 
         unsigned int timestamp : 1; 
@@ -22,6 +23,7 @@
         unsigned int setupScreenMs : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
+        unsigned int didFallbackToInfraToAvoidP2POverDFS : 1; 
     } _has;
     unsigned int _recordMs;
     NSString *_sessionUUID;
@@ -37,12 +39,14 @@
 @property (nonatomic) unsigned int bonjourMs;
 @property (nonatomic) unsigned int compressionType;
 @property (nonatomic) unsigned int connectMs;
+@property (nonatomic) BOOL didFallbackToInfraToAvoidP2POverDFS;
 @property (nonatomic) unsigned int encryptionType;
 @property (nonatomic) BOOL hasAnnounceMs;
 @property (nonatomic) BOOL hasAuthMs;
 @property (nonatomic) BOOL hasBonjourMs;
 @property (nonatomic) BOOL hasCompressionType;
 @property (nonatomic) BOOL hasConnectMs;
+@property (nonatomic) BOOL hasDidFallbackToInfraToAvoidP2POverDFS;
 @property (nonatomic) BOOL hasEncryptionType;
 @property (nonatomic) BOOL hasRecordMs;
 @property (nonatomic, readonly) BOOL hasSessionUUID;
@@ -69,12 +73,14 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)didFallbackToInfraToAvoidP2POverDFS;
 - (unsigned int)encryptionType;
 - (BOOL)hasAnnounceMs;
 - (BOOL)hasAuthMs;
 - (BOOL)hasBonjourMs;
 - (BOOL)hasCompressionType;
 - (BOOL)hasConnectMs;
+- (BOOL)hasDidFallbackToInfraToAvoidP2POverDFS;
 - (BOOL)hasEncryptionType;
 - (BOOL)hasRecordMs;
 - (BOOL)hasSessionUUID;
@@ -94,12 +100,14 @@
 - (void)setBonjourMs:(unsigned int)arg1;
 - (void)setCompressionType:(unsigned int)arg1;
 - (void)setConnectMs:(unsigned int)arg1;
+- (void)setDidFallbackToInfraToAvoidP2POverDFS:(BOOL)arg1;
 - (void)setEncryptionType:(unsigned int)arg1;
 - (void)setHasAnnounceMs:(BOOL)arg1;
 - (void)setHasAuthMs:(BOOL)arg1;
 - (void)setHasBonjourMs:(BOOL)arg1;
 - (void)setHasCompressionType:(BOOL)arg1;
 - (void)setHasConnectMs:(BOOL)arg1;
+- (void)setHasDidFallbackToInfraToAvoidP2POverDFS:(BOOL)arg1;
 - (void)setHasEncryptionType:(BOOL)arg1;
 - (void)setHasRecordMs:(BOOL)arg1;
 - (void)setHasSetupAudioMs:(BOOL)arg1;

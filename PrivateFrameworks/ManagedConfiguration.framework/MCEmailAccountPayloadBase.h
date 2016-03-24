@@ -47,6 +47,7 @@
 - (id)SMIMEPerMessageSwitchEnabledNum;
 - (id)SMIMESigningIdentityPersistentID;
 - (id)SMIMESigningIdentityUUID;
+- (BOOL)containsSensitiveUserInformation;
 - (id)description;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;
 - (BOOL)isMailDropEnabled;

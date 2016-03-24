@@ -18,6 +18,7 @@
 @property (readonly) NSString *integratedCircuitCardIdentifier;
 @property (readonly) NSString *internationalMobileEquipmentIdentity;
 @property (readonly) BOOL isInternalBuild;
+@property (readonly) BOOL isMultiUserMode;
 @property (readonly) BOOL isProtectedWithPasscode;
 @property (copy) NSLocale *locale;
 @property (readonly) NSString *mobileEquipmentIdentifier;
@@ -53,6 +54,7 @@
 - (id)integratedCircuitCardIdentifier;
 - (id)internationalMobileEquipmentIdentity;
 - (BOOL)isInternalBuild;
+- (BOOL)isMultiUserMode;
 - (BOOL)isProtectedWithPasscode;
 - (id)locale;
 - (id)mobileEquipmentIdentifier;

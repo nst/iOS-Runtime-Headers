@@ -25,6 +25,7 @@
 @property (nonatomic) id destination;
 @property (nonatomic) float destinationScale;
 @property (nonatomic) struct CGSize { float x1; float x2; } fittingSize;
+@property (nonatomic, readonly) BOOL hasImageOnDisk;
 @property (getter=isLoadingRepresentation) BOOL loadingRepresentation;
 @property (nonatomic) id requestingContext;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } scaledFittingSize;
@@ -53,6 +54,7 @@
 - (float)destinationScale;
 - (id)existingColorAnalysisWithAlgorithm:(int)arg1;
 - (struct CGSize { float x1; float x2; })fittingSize;
+- (BOOL)hasImageOnDisk;
 - (unsigned int)hash;
 - (id)initWithToken:(id)arg1 dataSource:(id)arg2;
 - (BOOL)isArtworkVisuallyIdenticalToCatalog:(id)arg1;

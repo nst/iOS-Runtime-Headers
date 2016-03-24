@@ -46,6 +46,7 @@
 - (BOOL)hasWork;
 - (id)hasWorkGroup;
 - (BOOL)isCancelled;
+- (void)resetBackoffForThrottleID:(long long)arg1 zone:(id)arg2;
 - (void)resume;
 - (void)setHasActiveWork:(BOOL)arg1;
 - (void)setHasWork:(BOOL)arg1;

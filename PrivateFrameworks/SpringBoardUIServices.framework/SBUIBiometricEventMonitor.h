@@ -35,6 +35,7 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_descriptionForMatchMode:(unsigned int)arg1;
 - (void)_deviceWillWake;
 - (id)_matchOptionForMode:(unsigned int)arg1;

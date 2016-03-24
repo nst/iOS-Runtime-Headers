@@ -4,6 +4,7 @@
 
 @interface SAMediaContentRatingRestrictions : AceObject <SAAceSerializable>
 
+@property (nonatomic) int appRestriction;
 @property (nonatomic, copy) NSString *countryCode;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
@@ -15,10 +16,12 @@
 + (id)mediaContentRatingRestrictions;
 + (id)mediaContentRatingRestrictionsWithDictionary:(id)arg1 context:(id)arg2;
 
+- (int)appRestriction;
 - (id)countryCode;
 - (id)encodedClassName;
 - (id)groupIdentifier;
 - (int)movieRestriction;
+- (void)setAppRestriction:(int)arg1;
 - (void)setCountryCode:(id)arg1;
 - (void)setMovieRestriction:(int)arg1;
 - (void)setTvRestriction:(int)arg1;

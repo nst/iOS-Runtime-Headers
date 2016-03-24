@@ -13,6 +13,7 @@
 - (NSArray *)labelItems;
 - (NSArray *)lines;
 - (unsigned int)linesCount;
+- (NSArray *)linesForSystem:(id <GEOTransitSystem>)arg1;
 - (NSArray *)systems;
 - (unsigned int)systemsCount;
 

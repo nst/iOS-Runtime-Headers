@@ -2,17 +2,25 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKRemoteAddPassesViewController : _UIRemoteViewController <PKRemoteAddPassesViewControllerProtocol>
+@interface PKRemoteAddPassesViewController : _UIRemoteViewController <PKRemoteAddPassesViewControllerProtocol> {
+    PKWeakReference *_delegate;
+    BOOL _finished;
+}
 
 @property (readonly, copy) NSString *debugDescription;
+@property (nonatomic) <PKAddPassesViewControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
 + (id)exportedInterface;
 + (id)serviceViewControllerInterface;
++ (BOOL)shouldPropagateAppearanceCustomizations;
 
-- (void)ingestionDidFinishWithResult:(int)arg1;
+- (void)dealloc;
+- (id)delegate;
+- (void)ingestionDidFinishWithResult:(unsigned int)arg1;
+- (void)setDelegate:(id)arg1;
 - (void)viewServiceDidTerminateWithError:(id)arg1;
 
 @end

@@ -4,6 +4,12 @@
 
 @interface SPUINavigationController : UINavigationController
 
+- (void)addKeyCommandForKey:(id)arg1 includeCommand:(BOOL)arg2 action:(SEL)arg3;
+- (BOOL)canPerformAction:(SEL)arg1 withSender:(id)arg2;
+- (void)deletePressed;
+- (void)goBack;
 - (id)initWithRootViewController:(id)arg1;
+- (void)leftArrowPressed;
+- (void)rightArrowPressed;
 
 @end

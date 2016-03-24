@@ -6,6 +6,8 @@
     PUTabbedLibraryViewController *__tabbedLibraryViewController;
     id /* block */ _completionHandler;
     int _currentContentMode;
+    BOOL _needsToSetupOptions;
+    PHPhotosPickerOptions *_photosPickerOptions;
     PUPhotosPickerSessionInfo *_photosPickerSessionInfo;
     PUPhotosPickerViewControllerSpec *_spec;
 }
@@ -16,10 +18,12 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) PHPhotosPickerOptions *photosPickerOptions;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2 orTargetAlbumName:(id)arg3 isLocal:(BOOL)arg4;
+- (id)_initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2 orTargetAlbumName:(id)arg3 isLocal:(BOOL)arg4 options:(id)arg5;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (void)_setTabbedLibraryViewController:(id)arg1;
 - (id)_tabbedLibraryViewController;
 - (void)assetContainerListDidChange:(id)arg1;
@@ -29,12 +33,16 @@
 - (void)didReceiveMemoryWarning;
 - (id)initWithSpec:(id)arg1 targetAlbum:(struct NSObject { Class x1; }*)arg2;
 - (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2 isLocal:(BOOL)arg3;
+- (id)initWithSpec:(id)arg1 targetAlbumName:(id)arg2 options:(id)arg3;
 - (void)loadView;
+- (id)photosPickerOptions;
 - (void)sessionInfoStatusDidChange:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setCurrentContentMode:(int)arg1;
+- (void)setPhotosPickerOptions:(id)arg1;
 - (BOOL)shouldAutorotate;
 - (unsigned int)supportedInterfaceOrientations;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
+- (void)viewWillLayoutSubviews;
 
 @end

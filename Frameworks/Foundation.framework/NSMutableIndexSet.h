@@ -32,6 +32,14 @@
 - (void)removeIndexesWithOptions:(unsigned int)arg1 passingTest:(id /* block */)arg2;
 - (void)shiftIndexesStartingAtIndex:(unsigned int)arg1 by:(int)arg2;
 
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
+- (void)cat_moveIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
+- (void)cat_shiftAndAddIndex:(unsigned int)arg1;
+- (void)cat_shiftAndAddIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+- (void)cat_shiftAndRemoveIndex:(unsigned int)arg1;
+- (void)cat_shiftAndRemoveIndexesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
+
 // Image: /System/Library/PrivateFrameworks/ChatKit.framework/ChatKit
 
 - (void)__ck_intersectIndexes:(id)arg1;

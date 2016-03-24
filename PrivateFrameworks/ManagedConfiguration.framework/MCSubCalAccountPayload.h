@@ -27,6 +27,7 @@
 - (void).cxx_destruct;
 - (id)accountDescription;
 - (id)accountPersistentUUID;
+- (BOOL)containsSensitiveUserInformation;
 - (id)description;
 - (id)hostname;
 - (id)initWithDictionary:(id)arg1 profile:(id)arg2 outError:(id*)arg3;

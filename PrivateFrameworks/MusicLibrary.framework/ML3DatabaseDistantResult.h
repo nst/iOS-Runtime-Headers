@@ -3,6 +3,7 @@
  */
 
 @interface ML3DatabaseDistantResult : ML3DatabaseResult {
+    NSDictionary *_cachedColumnNameIndexMap;
     NSArray *_cachedRows;
     ML3DatabaseDistantConnection *_distantConnection;
     NSArray *_parameters;

@@ -5,6 +5,7 @@
 
 @required
 
+- (<GEOServerFormatTokenPriceValue> *)priceValue;
 - (NSString *)token;
 - (int)type;
 - (unsigned int)value1;

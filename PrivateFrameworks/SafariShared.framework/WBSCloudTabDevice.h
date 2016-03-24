@@ -4,6 +4,7 @@
 
 @interface WBSCloudTabDevice : NSObject <NSCopying> {
     BOOL _closeRequestSupported;
+    BOOL _ephemeralDevice;
     BOOL _hasDuplicateName;
     NSDate *_lastModified;
     NSString *_name;
@@ -13,16 +14,18 @@
 
 @property (getter=isCloseRequestSupported, nonatomic, readonly) BOOL closeRequestSupported;
 @property (nonatomic, readonly) NSDictionary *dictionaryRepresentation;
+@property (getter=isEphemeralDevice, nonatomic, readonly) BOOL ephemeralDevice;
 @property (nonatomic, readonly) BOOL hasDuplicateName;
 @property (nonatomic, readonly) NSDate *lastModified;
 @property (nonatomic, readonly, copy) NSString *name;
 @property (nonatomic, readonly, copy) NSArray *tabs;
 @property (nonatomic, readonly, copy) NSString *uuid;
 
-+ (id)_dictionaryWithDeviceName:(id)arg1 lastModified:(id)arg2 hasDuplicateName:(BOOL)arg3 tabs:(id)arg4;
++ (id)_dictionaryWithDeviceName:(id)arg1 lastModified:(id)arg2 hasDuplicateName:(BOOL)arg3 tabs:(id)arg4 isEphemeralDevice:(BOOL)arg5;
 + (id)deviceNameInDictionary:(id)arg1;
 + (BOOL)hasDuplicateDeviceNameInDictionary:(id)arg1;
 + (BOOL)isCloudTabDeviceDictionary:(id)arg1;
++ (BOOL)isEphemeralDeviceInDictionary:(id)arg1;
 + (id)lastModifiedDateInDictionary:(id)arg1;
 + (unsigned int)tabCountInDictionary:(id)arg1;
 
@@ -35,8 +38,10 @@
 - (BOOL)hasDuplicateName;
 - (unsigned int)hash;
 - (id)initWithDeviceName:(id)arg1 lastModified:(id)arg2 hasDuplicateName:(BOOL)arg3 tabs:(id)arg4 uuid:(id)arg5;
+- (id)initWithDeviceName:(id)arg1 lastModified:(id)arg2 hasDuplicateName:(BOOL)arg3 tabs:(id)arg4 uuid:(id)arg5 isEphemeralDevice:(BOOL)arg6;
 - (id)initWithDictionary:(id)arg1 uuid:(id)arg2;
 - (BOOL)isCloseRequestSupported;
+- (BOOL)isEphemeralDevice;
 - (BOOL)isEqual:(id)arg1;
 - (id)lastModified;
 - (id)name;

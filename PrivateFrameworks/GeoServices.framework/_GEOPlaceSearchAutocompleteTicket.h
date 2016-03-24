@@ -19,10 +19,13 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) GEOMapServiceTraits *traits;
 
+- (void)applyToSuggestionEntry:(id)arg1 withAutocompleteSearchResultMuid:(unsigned long long)arg2;
+- (void)applyToSuggestionList:(id)arg1;
 - (void)cancel;
 - (void)dealloc;
 - (id)initWithRequest:(id)arg1 traits:(id)arg2 searchQuery:(id)arg3;
 - (BOOL)isCanceled;
+- (BOOL)isRapEnabled;
 - (BOOL)matchesFragment:(id)arg1;
 - (id)responseUserInfo;
 - (void)submitWithAutoCompletionHandler:(id /* block */)arg1 networkActivity:(id /* block */)arg2;

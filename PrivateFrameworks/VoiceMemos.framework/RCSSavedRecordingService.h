@@ -56,6 +56,7 @@
 - (oneway void)prepareToPreviewCompositionAVURL:(id)arg1 accessRequestHandler:(id /* block */)arg2;
 - (oneway void)prepareToTrimCompositionAVURL:(id)arg1 accessRequestHandler:(id /* block */)arg2;
 - (oneway void)reloadExistingSearchMetadataWithCompletionBlock:(id /* block */)arg1;
+- (oneway void)removeAllUserDataWithCompletion:(id /* block */)arg1;
 - (id)serviceProxy;
 - (void)setCompositionAVURLsBeingExported:(id)arg1;
 - (void)setCompositionAVURLsBeingModified:(id)arg1;

@@ -27,6 +27,7 @@
 - (float)defaultFocusedHorizontalOutsetForTableView:(UITableView *)arg1;
 - (float)defaultFocusedShadowRadiusForTableView:(UITableView *)arg1;
 - (UIColor *)defaultFooterBackgroundColorForView:(UITableViewHeaderFooterView *)arg1 inTableView:(UITableView *)arg2;
+- (float)defaultFooterBottomPaddingForTableView:(UITableView *)arg1 section:(unsigned int)arg2;
 - (UIFont *)defaultFooterFontForTableViewStyle:(int)arg1;
 - (UIFont *)defaultFooterFontForView:(UITableViewHeaderFooterView *)arg1 inTableView:(UITableView *)arg2;
 - (UIColor *)defaultFooterTextColorForTableViewStyle:(int)arg1;
@@ -38,6 +39,7 @@
 - (UIFont *)defaultHeaderFontForView:(UITableViewHeaderFooterView *)arg1 inTableView:(UITableView *)arg2;
 - (UIColor *)defaultHeaderTextColorForTableViewStyle:(int)arg1;
 - (UIColor *)defaultHeaderTextColorForView:(UITableViewHeaderFooterView *)arg1 inTableView:(UITableView *)arg2;
+- (float)defaultHeaderTopPaddingForTableView:(UITableView *)arg1 section:(unsigned int)arg2;
 - (UIImage *)defaultInsertImageForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })defaultLayoutMarginsForCell:(UITableViewCell *)arg1 inTableView:(UITableView *)arg2;
 - (float)defaultMarginWidthForTableView:(UITableView *)arg1;

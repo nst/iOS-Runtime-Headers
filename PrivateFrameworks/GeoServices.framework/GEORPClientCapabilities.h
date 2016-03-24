@@ -6,18 +6,22 @@
     struct { 
         unsigned int hasFeatureHandle : 1; 
         unsigned int hasNoOptInRequest : 1; 
+        unsigned int hasSupportForIdsBasedNotifications : 1; 
         unsigned int hasUnconstrainedProblemStatusSize : 1; 
     } _has;
     BOOL _hasFeatureHandle;
     BOOL _hasNoOptInRequest;
+    BOOL _hasSupportForIdsBasedNotifications;
     BOOL _hasUnconstrainedProblemStatusSize;
 }
 
 @property (nonatomic) BOOL hasFeatureHandle;
 @property (nonatomic) BOOL hasHasFeatureHandle;
 @property (nonatomic) BOOL hasHasNoOptInRequest;
+@property (nonatomic) BOOL hasHasSupportForIdsBasedNotifications;
 @property (nonatomic) BOOL hasHasUnconstrainedProblemStatusSize;
 @property (nonatomic) BOOL hasNoOptInRequest;
+@property (nonatomic) BOOL hasSupportForIdsBasedNotifications;
 @property (nonatomic) BOOL hasUnconstrainedProblemStatusSize;
 
 - (void)copyTo:(id)arg1;
@@ -27,8 +31,10 @@
 - (BOOL)hasFeatureHandle;
 - (BOOL)hasHasFeatureHandle;
 - (BOOL)hasHasNoOptInRequest;
+- (BOOL)hasHasSupportForIdsBasedNotifications;
 - (BOOL)hasHasUnconstrainedProblemStatusSize;
 - (BOOL)hasNoOptInRequest;
+- (BOOL)hasSupportForIdsBasedNotifications;
 - (BOOL)hasUnconstrainedProblemStatusSize;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -37,8 +43,10 @@
 - (void)setHasFeatureHandle:(BOOL)arg1;
 - (void)setHasHasFeatureHandle:(BOOL)arg1;
 - (void)setHasHasNoOptInRequest:(BOOL)arg1;
+- (void)setHasHasSupportForIdsBasedNotifications:(BOOL)arg1;
 - (void)setHasHasUnconstrainedProblemStatusSize:(BOOL)arg1;
 - (void)setHasNoOptInRequest:(BOOL)arg1;
+- (void)setHasSupportForIdsBasedNotifications:(BOOL)arg1;
 - (void)setHasUnconstrainedProblemStatusSize:(BOOL)arg1;
 - (void)writeTo:(id)arg1;
 

@@ -146,4 +146,8 @@
 - (id)processBundleIdentifier;
 - (id)processName;
 
+// Image: /System/Library/PrivateFrameworks/UserManagement.framework/UserManagement
+
+- (BOOL)hasEntitlement:(id)arg1;
+
 @end

@@ -4,6 +4,9 @@
 
 @interface BLTSectionInfoList : NSObject <BLTSectionInfoListProviderDelegate> {
     <BLTSectionInfoListDelegate> *_delegate;
+    BOOL _loaded;
+    BOOL _loading;
+    NSMutableArray *_loadingCompletionHandlers;
     struct _opaque_pthread_mutex_t { 
         long __sig; 
         BOOL __opaque[40]; 
@@ -17,6 +20,7 @@
 @property (nonatomic) <BLTSectionInfoListDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (getter=hasLoaded, nonatomic, readonly) BOOL loaded;
 @property (nonatomic, retain) <BLTSectionInfoListProvider> *overrideProvider;
 @property (nonatomic, retain) <BLTSectionInfoListProvider> *sectionInfoProvider;
 @property (readonly) Class superclass;
@@ -26,6 +30,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)effectiveSectionInfoForSectionID:(id)arg1;
+- (BOOL)hasLoaded;
 - (id)init;
 - (id)originalSettings;
 - (id)overriddenSectionInfoForSectionID:(id)arg1;

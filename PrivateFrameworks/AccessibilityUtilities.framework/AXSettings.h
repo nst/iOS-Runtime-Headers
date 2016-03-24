@@ -215,9 +215,11 @@
 - (void)_synchronizeIfNecessary:(id)arg1 domain:(int)arg2;
 - (void)_updateTouchAccommodationsTripleClickSetting;
 - (BOOL)_updateWithoutSavingExistingRecipe:(id)arg1 allRecipes:(id)arg2;
+- (id)_userDefaultsStoreForDomain:(int)arg1;
 - (id)_valueForPreferenceKey:(id)arg1;
 - (BOOL)_voiceOverRotorItemEnabled:(id)arg1;
 - (id)_voiceOverTouchSpeakingRateLanguages;
+- (void)addRotorOptionsForLoginSession;
 - (id)alexLocalAssetURL;
 - (id)allAvailableVoices;
 - (BOOL)allowHearingAidControlOnLockScreen;
@@ -268,6 +270,7 @@
 - (id)assistiveTouchSwitches;
 - (void)clearExistingValueForPreference:(SEL)arg1;
 - (void)clearVoicePrefersCompactSettings;
+- (void)configureZoomForLoginSession;
 - (id)createAndSaveRecipeForInterfaceOrientedPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)dealloc;
 - (BOOL)enableHearingAidReporter;
@@ -304,6 +307,7 @@
 - (BOOL)isNewRecipe:(id)arg1;
 - (BOOL)logAXNotificationPosting;
 - (id)logToFileSubsystems;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)pairedHearingAids;
 - (BOOL)preferenceHasExistingValue:(SEL)arg1;
 - (id)quickSpeakAlternativeVoiceForLanguage:(id)arg1;

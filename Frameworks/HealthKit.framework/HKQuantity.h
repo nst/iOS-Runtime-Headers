@@ -9,6 +9,8 @@
 
 @property (getter=_unit, nonatomic, readonly) HKUnit *unit;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
 + (id)quantityWithUnit:(id)arg1 doubleValue:(double)arg2;
 + (BOOL)supportsSecureCoding;
 
@@ -27,5 +29,10 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isCompatibleWithUnit:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
+- (double)fiui_doubleValueByDividingByQuantity:(id)arg1;
+- (BOOL)fiui_isNonzero;
 
 @end

@@ -5,6 +5,7 @@
 @interface MPAVItem : NSObject <MPAVMetadataItem, MusicEntityValueProviding, RURadioItemIdentifier> {
     NSObject<OS_dispatch_queue> *_accessQueue;
     unsigned int _advancedDuringPlayback;
+    NSString *_aggregateDictionaryItemIdentifier;
     long long _albumStoreID;
     BOOL _allowsAirPlayFromCloud;
     BOOL _allowsExternalPlayback;
@@ -160,12 +161,14 @@
 @property (nonatomic, readonly) MPStoreDownload *storeDownload;
 @property (nonatomic, readonly) NSString *storeItemID;
 @property (nonatomic, readonly) long long storeItemInt64ID;
+@property (nonatomic, readonly) int storePlaybackEndpointType;
 @property (nonatomic, readonly) long long storeSubscriptionAdamID;
 @property (nonatomic, readonly) RadioStreamTrack *streamTrack;
 @property (getter=isStreamable, nonatomic, readonly) BOOL streamable;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL supportsLikedState;
 @property (nonatomic, readonly) BOOL supportsRadioTrackActions;
+@property (nonatomic, readonly) BOOL supportsRating;
 @property (nonatomic, readonly) BOOL supportsRewindAndFastForward15Seconds;
 @property (nonatomic, readonly) BOOL supportsSettingCurrentTime;
 @property (nonatomic, readonly) BOOL supportsSkip;
@@ -364,9 +367,11 @@
 - (id)storeDownload;
 - (id)storeItemID;
 - (long long)storeItemInt64ID;
+- (int)storePlaybackEndpointType;
 - (long long)storeSubscriptionAdamID;
 - (int)subtitleTrackID;
 - (BOOL)supportsLikedState;
+- (BOOL)supportsRating;
 - (BOOL)supportsRewindAndFastForward15Seconds;
 - (BOOL)supportsSettingCurrentTime;
 - (BOOL)supportsSkip;

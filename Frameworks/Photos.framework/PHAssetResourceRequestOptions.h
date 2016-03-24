@@ -5,16 +5,20 @@
 @interface PHAssetResourceRequestOptions : NSObject <NSCopying> {
     BOOL _networkAccessAllowed;
     id /* block */ _progressHandler;
+    BOOL _resistentToPrune;
 }
 
 @property (getter=isNetworkAccessAllowed, nonatomic) BOOL networkAccessAllowed;
 @property (nonatomic, copy) id /* block */ progressHandler;
+@property (nonatomic) BOOL resistentToPrune;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (BOOL)isNetworkAccessAllowed;
 - (id /* block */)progressHandler;
+- (BOOL)resistentToPrune;
 - (void)setNetworkAccessAllowed:(BOOL)arg1;
 - (void)setProgressHandler:(id /* block */)arg1;
+- (void)setResistentToPrune:(BOOL)arg1;
 
 @end

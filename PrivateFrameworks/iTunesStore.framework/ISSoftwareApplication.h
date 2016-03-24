@@ -20,6 +20,7 @@
     BOOL _placeholder;
     BOOL _profileValidated;
     NSDate *_receiptExpirationDate;
+    unsigned int _removableStatus;
     NSString *_softwareType;
     NSNumber *_storeFrontIdentifier;
     NSString *_vendorName;
@@ -48,6 +49,7 @@
 @property (getter=isPlaceholder, nonatomic) BOOL placeholder;
 @property (getter=isProfileValidated, nonatomic) BOOL profileValidated;
 @property (nonatomic, readonly) NSDate *receiptExpirationDate;
+@property (nonatomic, readonly) unsigned int removableStatus;
 @property (nonatomic, copy) NSString *softwareType;
 @property (nonatomic, retain) NSNumber *storeFrontIdentifier;
 @property (readonly) Class superclass;
@@ -81,6 +83,7 @@
 - (id)itemName;
 - (BOOL)missingRequiredSINF;
 - (id)receiptExpirationDate;
+- (unsigned int)removableStatus;
 - (void)resetVPPStateFlags;
 - (void)setAccountDSID:(id)arg1;
 - (void)setAccountIdentifier:(id)arg1;

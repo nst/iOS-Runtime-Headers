@@ -117,6 +117,7 @@
 - (BOOL)hasAttendees;
 - (BOOL)hasNotes;
 - (BOOL)hasRecurrenceRules;
+- (int)indexForAlarm:(id)arg1;
 - (BOOL)isAlarmAcknowledgedPropertyDirty;
 - (BOOL)isAllDay;
 - (BOOL)isDefaultAlarmRemoved;
@@ -198,6 +199,7 @@
 - (id)sharedItemModifiedTimeZone;
 - (void)snoozeAlarm:(id)arg1 withLocation:(id)arg2 proximity:(int)arg3;
 - (void)snoozeAlarm:(id)arg1 withTimeIntervalFromNow:(double)arg2;
+- (id)sortedAlarms;
 - (id)startDateForRecurrence;
 - (id)startLocation;
 - (id)startTimeZone;

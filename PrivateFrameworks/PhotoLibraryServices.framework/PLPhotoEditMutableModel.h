@@ -46,6 +46,8 @@
 @property (nonatomic) float smartToneLevel;
 @property (nonatomic, copy) NSDictionary *smartToneStatistics;
 @property (nonatomic) float straightenAngle;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } trimEndTimeOffset;
+@property (nonatomic) struct { long long x1; int x2; unsigned int x3; long long x4; } trimStartTimeOffset;
 @property (getter=isWhiteBalanceEnabled, nonatomic) BOOL whiteBalanceEnabled;
 @property (nonatomic) float whiteBalanceFaceI;
 @property (nonatomic) float whiteBalanceFaceQ;
@@ -102,6 +104,8 @@
 - (void)setSmartToneLevel:(float)arg1;
 - (void)setSmartToneStatistics:(id)arg1;
 - (void)setStraightenAngle:(float)arg1;
+- (void)setTrimEndTimeOffset:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
+- (void)setTrimStartTimeOffset:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setWhiteBalanceEnabled:(BOOL)arg1;
 - (void)setWhiteBalanceFaceI:(float)arg1;
 - (void)setWhiteBalanceFaceQ:(float)arg1;

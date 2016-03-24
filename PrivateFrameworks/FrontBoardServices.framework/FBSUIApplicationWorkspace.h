@@ -11,9 +11,9 @@
 @property (readonly) Class superclass;
 
 - (Class)_clientClass;
+- (void)client:(id)arg1 handleExit:(id)arg2;
 - (void)client:(id)arg1 handleLaunch:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)clientHandleAssertionExpirationImminent:(id)arg1;
-- (void)clientHandleExit:(id)arg1;
 - (BOOL)isUIApplicationWorkspace;
 
 @end

@@ -29,6 +29,7 @@
 @property (nonatomic) BOOL enforceRemoteTimeouts;
 @property (nonatomic) BOOL expectsPeerResponse;
 @property (nonatomic, readonly, retain) NSDate *expirationDate;
+@property (nonatomic) BOOL fakeMessage;
 @property (nonatomic) BOOL fireAndForget;
 @property (nonatomic) BOOL forceEncryptionOff;
 @property (nonatomic, retain) NSString *fromID;
@@ -37,10 +38,12 @@
 @property (nonatomic, retain) NSArray *interestingRegistrationProperties;
 @property (nonatomic) BOOL isProxiedOutgoingMessage;
 @property (nonatomic) BOOL localDelivery;
+@property (nonatomic, retain) NSString *localDestinationDeviceUUID;
 @property (nonatomic, retain) NSString *mainAccountUUID;
 @property (nonatomic, retain) NSDictionary *message;
 @property (nonatomic, retain) NSData *messageUUID;
 @property (nonatomic) BOOL nonWaking;
+@property (nonatomic, retain) NSString *originalfromID;
 @property (nonatomic, retain) NSString *peerResponseIdentifier;
 @property (nonatomic) int priority;
 @property (nonatomic, retain) NSDictionary *protobuf;
@@ -84,6 +87,7 @@
 - (BOOL)enforceRemoteTimeouts;
 - (BOOL)expectsPeerResponse;
 - (id)expirationDate;
+- (BOOL)fakeMessage;
 - (BOOL)fireAndForget;
 - (BOOL)forceEncryptionOff;
 - (id)fromID;
@@ -95,11 +99,13 @@
 - (id)interestingRegistrationProperties;
 - (BOOL)isProxiedOutgoingMessage;
 - (BOOL)localDelivery;
+- (id)localDestinationDeviceUUID;
 - (id)mainAccountUUID;
 - (id)message;
 - (id)messageUUID;
 - (BOOL)nonWaking;
 - (id)objectForKey:(id)arg1;
+- (id)originalfromID;
 - (id)peerResponseIdentifier;
 - (int)priority;
 - (id)protobuf;
@@ -130,6 +136,7 @@
 - (void)setEncryptPayload:(BOOL)arg1;
 - (void)setEnforceRemoteTimeouts:(BOOL)arg1;
 - (void)setExpectsPeerResponse:(BOOL)arg1;
+- (void)setFakeMessage:(BOOL)arg1;
 - (void)setFireAndForget:(BOOL)arg1;
 - (void)setForceEncryptionOff:(BOOL)arg1;
 - (void)setFromID:(id)arg1;
@@ -138,11 +145,13 @@
 - (void)setInterestingRegistrationProperties:(id)arg1;
 - (void)setIsProxiedOutgoingMessage:(BOOL)arg1;
 - (void)setLocalDelivery:(BOOL)arg1;
+- (void)setLocalDestinationDeviceUUID:(id)arg1;
 - (void)setMainAccountUUID:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMessageUUID:(id)arg1;
 - (void)setNonWaking:(BOOL)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
+- (void)setOriginalfromID:(id)arg1;
 - (void)setPeerResponseIdentifier:(id)arg1;
 - (void)setPriority:(int)arg1;
 - (void)setProtobuf:(id)arg1;

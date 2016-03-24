@@ -72,8 +72,8 @@
 - (struct _OpaquePCSShareProtection { }*)createRecordPCSFromData:(id)arg1 sharePCS:(struct _OpaquePCSShareProtection { }*)arg2 logFailure:(BOOL)arg3 error:(id*)arg4;
 - (struct _OpaquePCSShareProtection { }*)createRecordPCSFromData:(id)arg1 zonePCS:(struct _OpaquePCSShareProtection { }*)arg2 error:(id*)arg3;
 - (struct _OpaquePCSShareProtection { }*)createRecordPCSFromData:(id)arg1 zonePCS:(struct _OpaquePCSShareProtection { }*)arg2 logFailure:(BOOL)arg3 error:(id*)arg4;
-- (struct _OpaquePCSShareProtection { }*)createRecordPCSWithEncryptedZonePCS:(struct __CFData { }*)arg1 sharePCS:(struct _OpaquePCSShareProtection { }*)arg2 error:(id*)arg3;
-- (struct _OpaquePCSShareProtection { }*)createRecordPCSWithZonePCS:(struct _OpaquePCSShareProtection { }*)arg1 sharePCS:(struct _OpaquePCSShareProtection { }*)arg2 error:(id*)arg3;
+- (struct _OpaquePCSShareProtection { }*)createRecordPCSWithEncryptedZonePCS:(struct __CFData { }*)arg1 sharePCS:(struct _OpaquePCSShareProtection { }*)arg2 createLite:(BOOL)arg3 error:(id*)arg4;
+- (struct _OpaquePCSShareProtection { }*)createRecordPCSWithZonePCS:(struct _OpaquePCSShareProtection { }*)arg1 sharePCS:(struct _OpaquePCSShareProtection { }*)arg2 createLite:(BOOL)arg3 error:(id*)arg4;
 - (struct _OpaquePCSShareProtection { }*)createSharePCSFromData:(id)arg1 error:(id*)arg2;
 - (struct _OpaquePCSShareProtection { }*)createSharePCSFromData:(id)arg1 logFailure:(BOOL)arg2 error:(id*)arg3;
 - (struct _OpaquePCSShareProtection { }*)createSharePCSFromData:(id)arg1 sharingIdentity:(struct _PCSIdentityData { }*)arg2 error:(id*)arg3;

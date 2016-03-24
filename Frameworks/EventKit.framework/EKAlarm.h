@@ -64,6 +64,7 @@
 - (BOOL)isAbsolute;
 - (BOOL)isDefaultAlarm;
 - (BOOL)isSnoozedAlarm;
+- (BOOL)isTopographicallyEqualToAlarm:(id)arg1;
 - (id)lazyLoadRelationForKey:(id)arg1;
 - (id)locationRelation;
 - (id)originalAlarm;

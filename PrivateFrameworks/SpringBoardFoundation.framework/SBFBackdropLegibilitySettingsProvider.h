@@ -12,9 +12,10 @@
 @property (nonatomic) <SBFLegibilitySettingsProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, readonly) _UILegibilitySettings *legibilitySettings;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (void)backdropViewDidChange:(id)arg1;
 - (void)dealloc;
 - (id)delegate;

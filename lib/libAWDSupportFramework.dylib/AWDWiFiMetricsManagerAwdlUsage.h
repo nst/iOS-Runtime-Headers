@@ -120,6 +120,9 @@
 @property (nonatomic, retain) NSMutableArray *states;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)servicesType;
++ (Class)statesType;
+
 - (void)addServices:(id)arg1;
 - (void)addStates:(id)arg1;
 - (unsigned int)advertiseAddFilteredCount;

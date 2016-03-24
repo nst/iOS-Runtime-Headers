@@ -28,6 +28,7 @@
 - (id)artistName;
 - (long long)artistStoreAdamID;
 - (id)artworkCatalogForPlaybackTime:(double)arg1;
+- (id)composerName;
 - (id)contentTitle;
 - (unsigned int)contentType;
 - (id)copyrightText;
@@ -41,6 +42,7 @@
 - (void)loadMediaItemWithCompletionHandler:(id /* block */)arg1;
 - (void)setStoreItemMetadataContext:(id)arg1;
 - (BOOL)shouldReportPlayEventsToStore;
+- (BOOL)showComposer;
 - (long long)storeAdamID;
 - (id)storeItemMetadataContext;
 - (long long)storeSubscriptionAdamID;

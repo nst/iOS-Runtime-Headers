@@ -4,9 +4,9 @@
 
 @interface FBWorkspaceScene : NSObject <BSDescriptionProviding, FBSceneClient, FBWorkspaceServerSceneEventHandler> {
     FBSSceneClientSettings *_clientSettings;
-    FBSDisplay *_display;
     <FBSceneHost> *_host;
     NSString *_identifier;
+    FBUISceneIdentity *_identity;
     BOOL _invalidated;
     BOOL _sentCreationEvent;
     FBSSceneSettings *_settings;
@@ -19,12 +19,15 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) <FBSceneHost> *host;
 @property (nonatomic, readonly, copy) NSString *identifier;
+@property (nonatomic, readonly, copy) FBUISceneIdentity *identity;
 @property (nonatomic, readonly) FBWorkspace *parentWorkspace;
 @property (getter=_workspaceQueue_sceneSettings, setter=_workspaceQueue_setSceneSettings:, nonatomic, copy) FBSSceneSettings *sceneSettings;
 @property (getter=_workspaceQueue_hasSentCreationEvent, setter=_workspaceQueue_setSentCreationEvent:, nonatomic) BOOL sentCreationEvent;
 @property (nonatomic, readonly, copy) FBSSceneSettings *settings;
 @property (readonly) Class superclass;
 
+- (void)_handleDidUpdateSettings:(id)arg1 withDiff:(id)arg2 transitionContext:(id)arg3 completion:(id /* block */)arg4;
+- (void)_handleInvalidationWithTransitionContext:(id)arg1 completion:(id /* block */)arg2;
 - (id)_workspaceQueue;
 - (void)_workspaceQueue_dispatchClientBlockIfNecessary:(id /* block */)arg1 success:(BOOL)arg2;
 - (BOOL)_workspaceQueue_hasSentCreationEvent;
@@ -46,7 +49,8 @@
 - (void)host:(id)arg1 didReceiveActions:(id)arg2;
 - (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
 - (id)identifier;
-- (id)initWithParentWorkspace:(id)arg1 host:(id)arg2;
+- (id)identity;
+- (id)initWithParentWorkspace:(id)arg1 identity:(id)arg2;
 - (void)invalidate;
 - (id)parentWorkspace;
 - (void)sceneAttachLayer:(id)arg1;

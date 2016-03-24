@@ -2,21 +2,32 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUIDisplayController : PSListController <PSMagnifyControllerDelegate>
+@interface PSUIDisplayController : PSListController <PSMagnifyControllerDelegate> {
+    CBClient *_brightnessClient;
+    NSDateFormatter *_timeFormatter;
+}
 
+- (void).cxx_destruct;
 - (void)_cleanupTransactionRef;
 - (id)backlightValue:(id)arg1;
+- (id)blueLightSchedule:(id)arg1;
 - (id)boldTextEnabledForSpecifier:(id)arg1;
 - (void)brightnessChangedExternally;
 - (id)controllerForSpecifier:(id)arg1;
 - (void)dealloc;
+- (id)getAutoWhiteBalanceEnabled:(id)arg1;
+- (void)handleBlueLightStatusChanged:(struct { BOOL x1; BOOL x2; BOOL x3; int x4; struct { struct { int x_1_2_1; int x_1_2_2; } x_5_1_1; struct { int x_2_2_1; int x_2_2_2; } x_5_1_2; } x5; unsigned long x6; }*)arg1;
 - (void)handleBrightnessChangedNotification:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)localizedMagnifyModeName;
+- (id)localizedTimeForTime:(struct { int x1; int x2; })arg1;
 - (void)magnifyController:(id)arg1 didFinishWithDisplayMode:(id)arg2;
 - (void)presentModalMagnifyController;
+- (void)reloadBlueLightSpecifiers;
+- (void)setAutoWhiteBalanceEnabled:(id)arg1 forSpecifier:(id)arg2;
 - (void)setBacklightValue:(id)arg1 specifier:(id)arg2;
 - (void)setBoldTextEnabled:(id)arg1 specifier:(id)arg2;
+- (void)showAlertToDisableAccessibilityFilters:(id /* block */)arg1 cancel:(id /* block */)arg2;
 - (id)specifiers;
 
 @end

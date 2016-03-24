@@ -23,6 +23,7 @@
 - (void)_updateDisclosureIndicator;
 - (void)_updateHighlightColorsForView:(id)arg1 highlighted:(BOOL)arg2;
 - (void)_updateHighlightStateAnimated:(BOOL)arg1;
+- (void)_updateLockupViewBackgroundColor;
 - (id)contentDescriptor;
 - (void)dealloc;
 - (id)entityValueProvider;

@@ -55,6 +55,7 @@
 + (float)defaultHeightForStyle:(int)arg1 size:(int)arg2;
 
 - (void).cxx_destruct;
+- (id)__scalarStatisticsForUserValueChangedEvent;
 - (void)_animateContentChangeWithAnimations:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (id)_attributedTitleForSegmentAtIndex:(unsigned int)arg1;
 - (float)_backgroundVerticalPositionAdjustmentForBarMetrics:(int)arg1;

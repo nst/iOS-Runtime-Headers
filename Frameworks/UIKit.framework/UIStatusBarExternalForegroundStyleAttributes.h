@@ -8,7 +8,6 @@
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBatteryInsides;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })edgeInsetsForBluetoothBatteryInsides;
 - (float)edgePadding;
-- (id)expandedNameForImageName:(id)arg1;
 - (id)makeTextFontForStyle:(int)arg1;
 - (float)scale;
 - (float)standardPadding;

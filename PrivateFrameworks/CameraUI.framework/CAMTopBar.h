@@ -82,7 +82,6 @@
 - (void)layoutSubviews;
 - (int)orientation;
 - (BOOL)pointInside:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
-- (void)sensitiveConfigureForMode:(int)arg1;
 - (void)setBackgroundStyle:(int)arg1;
 - (void)setBackgroundStyle:(int)arg1 animated:(BOOL)arg2;
 - (void)setElapsedTimeView:(id)arg1;

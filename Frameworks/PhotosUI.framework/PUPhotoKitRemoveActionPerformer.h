@@ -2,19 +2,30 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUPhotoKitRemoveActionPerformer : PUPhotoKitActionPerformer {
+@interface PUPhotoKitRemoveActionPerformer : PUPhotoKitActionPerformer <PUAssetActionPerformerDelegate> {
     NSDictionary *_fetchResultsByAssetCollection;
+    PUPhotoKitTrashActionPerformer *_trashActionPerformer;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSDictionary *fetchResultsByAssetCollection;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+@property (nonatomic, retain) PUPhotoKitTrashActionPerformer *trashActionPerformer;
 
 + (BOOL)canPerformOnAsset:(id)arg1 inAssetCollection:(id)arg2;
 
 - (void).cxx_destruct;
+- (void)_performTrashTask;
+- (BOOL)assetActionPerformer:(id)arg1 dismissViewController:(id)arg2 completionHandler:(id /* block */)arg3;
+- (BOOL)assetActionPerformer:(id)arg1 presentViewController:(id)arg2;
 - (id)fetchResultsByAssetCollection;
 - (void)performBackgroundTask;
 - (void)performUserInteractionTask;
 - (void)setFetchResultsByAssetCollection:(id)arg1;
+- (void)setTrashActionPerformer:(id)arg1;
 - (BOOL)shouldShowConfirmation;
+- (id)trashActionPerformer;
 
 @end

@@ -91,6 +91,8 @@
 @property (nonatomic, readonly) int scannerActivateBehavior;
 @property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } selectedTextRange;
 @property (nonatomic, readonly) NSDictionary *semanticContext;
+@property (nonatomic, readonly) NSArray *siriContentElementsWithSemanticContext;
+@property (nonatomic, readonly) NSArray *siriContentNativeFocusableElements;
 @property (nonatomic, readonly) AXElement *springBoardApplication;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) NSArray *supportedGestures;
@@ -257,10 +259,14 @@
 - (void)setSelectedTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (void)setUiElement:(id)arg1;
 - (void)setValue:(id)arg1;
+- (id)siriContentElementsWithSemanticContext;
+- (id)siriContentNativeFocusableElements;
 - (id)springBoardApplication;
 - (id)supportedGestures;
 - (BOOL)supportsAction:(int)arg1;
 - (id)systemApplication;
+- (BOOL)systemPressTVPlayPauseButton;
+- (BOOL)systemPressTVSelectButton;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })textCursorFrame;
 - (id)textOperations;
 - (id)touchContainer;

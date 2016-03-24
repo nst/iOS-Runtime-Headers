@@ -16,11 +16,10 @@
 + (id)allLegacyTombstones;
 + (id)existingCloudObjectForRecordID:(id)arg1;
 + (BOOL)hasTombstonePrefix:(id)arg1;
-+ (id)legacyTombstoneWithIdentifier:(id)arg1;
-+ (id)legacyTombstonesMatchingPredicate:(id)arg1;
++ (id)legacyTombstoneWithIdentifier:(id)arg1 context:(id)arg2;
++ (id)legacyTombstonesMatchingPredicate:(id)arg1 context:(id)arg2;
 + (id)newCloudObjectForRecord:(id)arg1;
 + (id)newLegacyTombstoneWithIdentifier:(id)arg1 type:(short)arg2;
-+ (id)recordType;
 + (void)removeLegacyTombstoneForFolder:(id)arg1;
 + (void)removeLegacyTombstoneForNote:(id)arg1;
 + (void)removeLegacyTombstoneWithObjectIdentifier:(id)arg1 type:(short)arg2;
@@ -34,6 +33,7 @@
 - (void)mergeDataFromRecord:(id)arg1;
 - (void)objectWasDeletedFromCloud;
 - (void)objectWasDeletedFromCloudByAnotherDevice;
+- (id)recordType;
 - (id)recordZoneID;
 - (id)threadUnsafeNewlyCreatedRecord;
 

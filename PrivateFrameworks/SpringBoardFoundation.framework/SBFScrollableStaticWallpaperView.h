@@ -24,9 +24,11 @@
 
 + (BOOL)_shouldScaleForParallax;
 
+- (void).cxx_destruct;
 - (struct CGPoint { float x1; float x2; })_boundedContentOffsetForOverhang;
-- (void)_cacheImagesIfNeededTreated:(BOOL)arg1;
+- (void)_cacheImagesIfNeeded;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_cropRect;
+- (id)_displayedSurfaceImage;
 - (struct CGSize { float x1; float x2; })_imageSize;
 - (struct CGPoint { float x1; float x2; })_maximumContentOffsetForOverhang;
 - (struct CGPoint { float x1; float x2; })_minimumContentOffsetForOverhang;

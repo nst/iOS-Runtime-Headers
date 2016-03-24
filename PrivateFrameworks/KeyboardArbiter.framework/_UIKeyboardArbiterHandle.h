@@ -5,6 +5,7 @@
 @interface _UIKeyboardArbiterHandle : NSObject <_UIKeyboardArbitration> {
     BOOL _active;
     NSString *_bundleIdentifier;
+    BOOL _checkingShowability;
     NSXPCConnection *_connection;
     NSMutableSet *_hostedPids;
     BOOL _invalidated;

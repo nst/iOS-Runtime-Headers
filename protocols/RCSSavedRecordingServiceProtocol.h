@@ -19,6 +19,7 @@
 - (oneway void)prepareToPreviewCompositionAVURL:(void *)arg1 accessRequestHandler:(void *)arg2; // needs 2 arg types, found 8: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, RCSSavedRecordingAccessToken *, NSError *, void*
 - (oneway void)prepareToTrimCompositionAVURL:(void *)arg1 accessRequestHandler:(void *)arg2; // needs 2 arg types, found 8: NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, RCSSavedRecordingAccessToken *, NSError *, void*
 - (oneway void)reloadExistingSearchMetadataWithCompletionBlock:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (oneway void)removeAllUserDataWithCompletion:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 - (oneway void)updateSearchMetadataWithRecordingURIsToInsert:(void *)arg1 recordingURIsToUpdate:(void *)arg2 recordingURIsToDelete:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 9: NSArray *, NSArray *, NSArray *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
 
 @end

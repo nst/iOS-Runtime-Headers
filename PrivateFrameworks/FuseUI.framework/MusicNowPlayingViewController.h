@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FuseUI.framework/FuseUI
  */
 
-@interface MusicNowPlayingViewController : UIViewController <MPURatingControlDelegate, MPUTransportControlMediaRemoteControllerDelegate, MPUTransportControlsViewDataSource, MPUTransportControlsViewDelegate, MPUTransportControlsViewLayoutDelegate, MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSNowPlayingNativeViewControllerDelegate, MusicNowPlayingItemViewControllerDelegate, MusicNowPlayingVolumeSliderDelegate, MusicPlaybackProgressScrubberDelegate, RUTrackDownloadViewDelegate, UIGestureRecognizerDelegate, UIPopoverControllerDelegate, UIViewControllerTransitioningDelegate> {
+@interface MusicNowPlayingViewController : UIViewController <MPUTransportControlMediaRemoteControllerDelegate, MPUTransportControlsViewDataSource, MPUTransportControlsViewDelegate, MPUTransportControlsViewLayoutDelegate, MusicClientContextConsuming, MusicJSNativeViewControllerFactory, MusicJSNowPlayingNativeViewControllerDelegate, MusicNowPlayingItemViewControllerDelegate, MusicNowPlayingVolumeSliderDelegate, MusicPlaybackProgressScrubberDelegate, RUTrackDownloadViewDelegate, UIGestureRecognizerDelegate, UIPopoverControllerDelegate, UIViewControllerTransitioningDelegate> {
     int _accessoryStyle;
     MusicNowPlayingFloatingButton *_adInfoButton;
     NSArray *_allowedSecondaryControls;
@@ -16,17 +16,20 @@
     UIView *_detailContainerView;
     BOOL _detailedScrubbing;
     MusicNowPlayingFloatingButton *_dismissButton;
+    MusicNowPlayingFloatingButton *_iPadFullScreenVideoButton;
+    BOOL _iPadFullScreenVideoPlayback;
+    UIPinchGestureRecognizer *_pinchGestureRecognizer;
     MusicPlaybackProgressScrubberController *_playbackProgressSliderController;
     MusicPlaybackProgressSliderView *_playbackProgressSliderView;
     MPAVController *_player;
     UIViewController *_presentedDetailViewController;
-    MusicNowPlayingRatingControl *_ratingControl;
     MPAudioVideoRoutingPopoverController *_routingPopoverController;
+    MPAVRoutingSheet *_routingSheet;
     MPUTransportControlMediaRemoteController *_secondaryTransportControlMediaRemoteController;
     MPUTransportControlsView *_secondaryTransportControls;
     NSTimer *_skipInformationRevealTimer;
     MPUSkipLimitView *_skipLimitView;
-    CAGradientLayer *_statusBarLegibilityGradient;
+    MPUGradientView *_statusBarLegibilityGradient;
     UITapGestureRecognizer *_tapGestureRecognizer;
     MusicNowPlayingTitlesView *_titlesView;
     RUTrackDownloadView *_trackDownloadButton;
@@ -51,16 +54,16 @@
 @property (nonatomic, readonly) UIView *detailContainerView;
 @property (nonatomic, readonly) MusicNowPlayingFloatingButton *dismissButton;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) MusicNowPlayingFloatingButton *iPadFullScreenVideoButton;
 @property (nonatomic, readonly) NSArray *persistentAnimationLayers;
 @property (nonatomic, readonly) MusicPlaybackProgressScrubberController *playbackProgressSliderController;
 @property (nonatomic, readonly) MusicPlaybackProgressSliderView *playbackProgressSliderView;
 @property (nonatomic, readonly) MPAVController *player;
 @property (nonatomic, readonly) UIViewController *presentedDetailViewController;
-@property (nonatomic, readonly) MusicNowPlayingRatingControl *ratingControl;
 @property (nonatomic, readonly) MPUTransportControlMediaRemoteController *secondaryTransportControlMediaRemoteController;
 @property (nonatomic, readonly) MPUTransportControlsView *secondaryTransportControls;
 @property (nonatomic, readonly) MPUSkipLimitView *skipLimitView;
-@property (nonatomic, readonly) CAGradientLayer *statusBarLegibilityGradient;
+@property (nonatomic, readonly) MPUGradientView *statusBarLegibilityGradient;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) MusicNowPlayingTitlesView *titlesView;
 @property (nonatomic, readonly) RUTrackDownloadView *trackDownloadButton;
@@ -72,10 +75,13 @@
 - (void).cxx_destruct;
 - (void)_adInfoButtonTapped:(id)arg1;
 - (void)_beginVisualEngagement;
+- (id)_contextualActionsConfiguationWithTransportButton:(id)arg1;
 - (void)_currentItemTitlesDidChangeNotification:(id)arg1;
 - (void)_didSkipTrackNotification:(id)arg1;
 - (void)_didUpdateSupportedCommandsNotification:(id)arg1;
 - (void)_dismissDetailViewControllerWithCompletionHandler:(id /* block */)arg1;
+- (void)_fullScreenButtonTapped:(id)arg1;
+- (void)_handlePinchGestureRecognizer:(id)arg1;
 - (void)_handleTapGestureRecognizerAction:(id)arg1;
 - (void)_handleTransitionPanGestureRecognizerAction:(id)arg1;
 - (BOOL)_hasShareButton;
@@ -92,14 +98,13 @@
 - (void)_scheduleSkipInformationRevealTimer;
 - (void)_setCurrentItem:(id)arg1 skipUpdatingView:(BOOL)arg2 forceUpdatingView:(BOOL)arg3;
 - (void)_setLyricsVisible:(BOOL)arg1;
-- (void)_setRatingsVisible:(BOOL)arg1;
 - (id)_shareButton;
 - (BOOL)_shouldDismissAutomaticallyForCurrentPlaybackState;
-- (void)_showContextualActionsWithTransportButton:(id)arg1 forSharing:(BOOL)arg2;
 - (void)_showUpNext;
 - (void)_showUpNext:(id)arg1;
 - (void)_skipLimitDidChangeNotification:(id)arg1;
 - (void)_statusBarFrameChangeNotification:(id)arg1;
+- (void)_titlesViewButtonTapped:(id)arg1;
 - (void)_triggerAutomaticDismissalWithCompletionHandler:(id /* block */)arg1;
 - (void)_updateBackgroundEffects;
 - (void)_updateNowPlayingInfo;
@@ -122,6 +127,7 @@
 - (void)dismissButtonTapped:(id)arg1;
 - (void)dismissDetailViewController:(id)arg1;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (id)iPadFullScreenVideoButton;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithPlayer:(id)arg1;
@@ -145,8 +151,6 @@
 - (id)presentationControllerForPresentedViewController:(id)arg1 presentingViewController:(id)arg2 sourceViewController:(id)arg3;
 - (id)presentedDetailViewController;
 - (id)presentingViewControllerForLikeBanActionSheetForTransportControlMediaRemoteController:(id)arg1;
-- (id)ratingControl;
-- (void)ratingDidChangeForRatingControl:(id)arg1;
 - (id)secondaryTransportControlMediaRemoteController;
 - (id)secondaryTransportControls;
 - (void)setAccessoryStyle:(int)arg1;

@@ -4,6 +4,7 @@
 
 @interface SBFScrollableIrisWallpaperView : SBFScrollableStaticWallpaperView <ISPlayerViewDelegate, SBFIrisWallpaperView, UIGestureRecognizerDelegate> {
     <SBFIrisWallpaperViewDelegate> *_irisDelegate;
+    int _playbackState;
     ISPlayerView *_playerView;
     AVAsset *_video;
 }
@@ -16,6 +17,7 @@
 @property (nonatomic, readonly) BOOL isIrisInteracting;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
 - (id)_newImageView;
 - (void)dealloc;
 - (BOOL)gestureRecognizer:(id)arg1 shouldRecognizeSimultaneouslyWithGestureRecognizer:(id)arg2;

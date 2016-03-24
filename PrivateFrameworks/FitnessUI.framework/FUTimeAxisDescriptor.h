@@ -71,6 +71,7 @@
 - (void).cxx_destruct;
 - (BOOL)_assertPropertiesValid;
 - (void)_clearCache;
+- (void)_clearFormatters;
 - (void)_generateAxisLabels;
 - (void)_generateAxisSubLabels;
 - (id)_getLabelsForSpacingInterval:(unsigned int)arg1 withSpacing:(id)arg2 textStyle:(unsigned int)arg3;
@@ -94,6 +95,7 @@
 - (id)highlightedSubLabelColor;
 - (id)hourFormatter:(unsigned int)arg1;
 - (id)init;
+- (void)invalidateCaches;
 - (unsigned int)labelAlignment;
 - (id)labelFont;
 - (id)maxValue;

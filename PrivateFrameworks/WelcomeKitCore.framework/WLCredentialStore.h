@@ -3,13 +3,15 @@
  */
 
 @interface WLCredentialStore : NSObject {
-    NSMutableDictionary *_credentialsByUUID;
+    WLDeviceAuthentication *_authentication;
+    WLAuthenticationCredentials *_credentials;
 }
 
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
 - (id)credentialsForAuthentication:(id)arg1;
+- (id)currentAuthentication;
 - (id)init;
 - (void)setCredentials:(id)arg1 forAuthentication:(id)arg2;
 

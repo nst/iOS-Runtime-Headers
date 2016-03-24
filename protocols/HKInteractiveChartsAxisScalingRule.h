@@ -3,6 +3,10 @@
 
 @protocol HKInteractiveChartsAxisScalingRule <HKGraphSeriesAxisScalingRule>
 
+@required
+
+- (HKValueRange *)portraitYValueRangeForRange:(HKValueRange *)arg1 zoomLevel:(int)arg2 allowedDecimalPrecision:(int)arg3;
+
 @optional
 
 - (BOOL)isCompatibleWithQuantityType:(HKQuantityType *)arg1;

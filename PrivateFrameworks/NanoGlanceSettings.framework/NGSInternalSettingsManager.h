@@ -3,6 +3,7 @@
  */
 
 @interface NGSInternalSettingsManager : NSObject {
+    NSArray *_blacklistedWatchKitIDs;
     NSMutableArray *_glanceDefinitions;
     BOOL _hasSettings;
     NSMutableDictionary *_installStatesByGlanceID;
@@ -20,6 +21,7 @@
 - (void).cxx_destruct;
 - (unsigned int)_glanceCount;
 - (BOOL)_hasSettings;
+- (void)_loadBlacklistedWatchKitIDs;
 - (void)_mergeAdditionalGlanceDefinitionsIntoArray:(id)arg1;
 - (unsigned int)_numberOfActiveGlances;
 - (void)_saveSettings;
@@ -44,6 +46,8 @@
 - (BOOL)hasMaximumNumberOfActiveGlances;
 - (BOOL)hasSettings;
 - (id)init;
+- (void)invalidateAndReloadSettings;
+- (BOOL)isWatchKitBundleIDBlacklisted:(id)arg1;
 - (void)loadSettings;
 - (void)moveGlanceDefinitionFromIndex:(unsigned int)arg1 toIndex:(unsigned int)arg2;
 - (id)queue;

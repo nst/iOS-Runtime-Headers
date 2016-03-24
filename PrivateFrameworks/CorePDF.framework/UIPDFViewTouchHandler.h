@@ -26,6 +26,8 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+// Image: /System/Library/PrivateFrameworks/CorePDF.framework/CorePDF
+
 + (void)releaseViewManager;
 
 - (BOOL)allowMenu;
@@ -52,5 +54,11 @@
 - (void)showMenu;
 - (void)singleTapRecognized:(id)arg1;
 - (void)twoFingerTapRecognized:(id)arg1;
+
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (id)_accessibilityQuickSpeakContent;
 
 @end

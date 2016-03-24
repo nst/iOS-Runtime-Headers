@@ -9,13 +9,13 @@
 
 - (id)appleCareCSVFieldsWithCount:(unsigned int)arg1;
 - (void)dealloc;
-- (id)fileExtension;
 - (void)generateCustomLogAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
 - (void)generateLogAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
 - (id)initWithType:(int)arg1 withFile:(id)arg2;
 - (BOOL)isActionable;
+- (id)overrideFileExtension;
 - (id)problemType;
-- (id)reportIdAtDate:(id)arg1;
+- (id)reportNamePrefix;
 - (int)streamContentAtLevel:(BOOL)arg1 withBlock:(id /* block */)arg2;
 
 @end

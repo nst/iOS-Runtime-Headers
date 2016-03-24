@@ -8,6 +8,7 @@
     NSObject<OS_dispatch_queue> *_generationQueue;
     <QLPreviewItem> *_item;
     NSData *_jpegRepresentation;
+    long long _sandboxExtension;
     float _scale;
     struct CGSize { 
         float width; 
@@ -20,10 +21,12 @@
 
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *generationQueue;
 @property (readonly) NSData *jpegRepresentation;
+@property (nonatomic) long long sandboxExtension;
 @property (readonly) UIImage *thumbnailImage;
 @property BOOL wantsJPEGRepresentationInstead;
 
 + (BOOL)canGenerateThumbnailForPreviewItem:(id)arg1;
++ (BOOL)contentTypeIsPlainText:(id)arg1;
 + (id)generatorForPreviewItem:(id)arg1 maxSize:(struct CGSize { float x1; float x2; })arg2 scale:(float)arg3 decorations:(BOOL)arg4;
 + (id)generatorForPreviewItem:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
 
@@ -37,12 +40,16 @@
 - (id)_thumbnailForIris;
 - (id)_thumbnailForMovie;
 - (id)_thumbnailForPDF;
+- (id)_thumbnailForPlainText;
 - (void)cancel;
 - (void)dealloc;
 - (void)generateWithCompletionBlock:(id /* block */)arg1;
 - (id)generationQueue;
 - (id)jpegRepresentation;
+- (void)releaseSandboxExtension;
+- (long long)sandboxExtension;
 - (void)setGenerationQueue:(id)arg1;
+- (void)setSandboxExtension:(long long)arg1;
 - (void)setWantsJPEGRepresentationInstead:(BOOL)arg1;
 - (id)thumbnailImage;
 - (BOOL)wantsJPEGRepresentationInstead;

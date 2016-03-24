@@ -6,6 +6,8 @@
     NSString *_dataclass;
 }
 
++ (BOOL)_isDisabledDataclass:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)_deviceSpecificLocalizedString:(id)arg1;
 - (id)init;

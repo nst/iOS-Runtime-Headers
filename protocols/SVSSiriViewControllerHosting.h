@@ -17,7 +17,7 @@
 - (void)serviceDidPresentBugReporter;
 - (void)serviceDidPresentUserInterface;
 - (void)serviceDidReadBulletinWithIdentifier:(NSString *)arg1;
-- (void)serviceLaunchApplicationWithBundleIdentifier:(void *)arg1 withURL:(void *)arg2 replyHandler:(void *)arg3; // needs 3 arg types, found 8: NSString *, NSURL *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
+- (void)serviceLaunchApplicationWithBundleIdentifier:(void *)arg1 withURL:(void *)arg2 launchOverSiri:(void *)arg3 replyHandler:(void *)arg4; // needs 4 arg types, found 9: NSString *, NSURL *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)serviceOpenURL:(NSURL *)arg1 appBundleID:(NSString *)arg2 allowSiriDismissal:(BOOL)arg3;
 - (void)serviceOpenURL:(void *)arg1 delaySessionEndForTTS:(void *)arg2 replyHandler:(void *)arg3; // needs 3 arg types, found 8: NSURL *, BOOL, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (void)servicePresentationDidChangePeekMode:(unsigned int)arg1;

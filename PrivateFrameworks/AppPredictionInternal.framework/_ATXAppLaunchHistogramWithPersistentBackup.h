@@ -17,7 +17,7 @@
 - (void).cxx_destruct;
 - (void)_cancelSaveTimer;
 - (void)_scheduleSave;
-- (void)addLaunchWithBundleId:(id)arg1 withDate:(id)arg2;
+- (void)addLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3;
 - (id)datastore;
 - (void)dealloc;
 - (void)flush;
@@ -27,7 +27,7 @@
 - (void)receivedDataStoreResetNotification:(id)arg1;
 - (void)registerForRestoreNotificationsFrom:(id)arg1;
 - (BOOL)removeAllHistoryForBundleId:(id)arg1;
-- (void)removeLaunchWithBundleId:(id)arg1 withDate:(id)arg2;
+- (void)removeLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3;
 - (void)resetData;
 - (BOOL)saveInBackground;
 - (void)setSaveInBackground:(BOOL)arg1;

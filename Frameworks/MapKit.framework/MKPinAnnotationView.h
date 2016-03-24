@@ -34,7 +34,7 @@
 + (id)redPinColor;
 
 - (void).cxx_destruct;
-- (id)_bounceAnimation:(BOOL)arg1 withBeginTime:(double)arg2 addToLayer:(BOOL)arg3;
+- (id)_bounceAnimation:(BOOL)arg1 withDelay:(double)arg2 addToLayer:(BOOL)arg3;
 - (void)_cleanupAfterPinDropAnimation;
 - (id)_delegate;
 - (void)_didUpdatePosition;

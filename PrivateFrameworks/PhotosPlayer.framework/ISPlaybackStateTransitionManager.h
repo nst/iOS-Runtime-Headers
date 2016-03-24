@@ -16,6 +16,7 @@
     NSArray *__videoAnimationsForEndingPlayback;
     NSArray *__videoAnimationsForEndingVitality;
     NSArray *__videoFilters;
+    BOOL _applyScaleToVideo;
     int _currentPlaybackState;
     <ISPlaybackStateTransitionManagerDelegate> *_delegate;
     struct { 
@@ -40,6 +41,7 @@
 @property (setter=_setVideoAnimationsForEndingPlayback:, nonatomic, retain) NSArray *_videoAnimationsForEndingPlayback;
 @property (setter=_setVideoAnimationsForEndingVitality:, nonatomic, retain) NSArray *_videoAnimationsForEndingVitality;
 @property (setter=_setVideoFilters:, nonatomic, retain) NSArray *_videoFilters;
+@property (nonatomic) BOOL applyScaleToVideo;
 @property (nonatomic, readonly) int currentPlaybackState;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ISPlaybackStateTransitionManagerDelegate> *delegate;
@@ -82,6 +84,7 @@
 - (id)_videoAnimationsForEndingVitality;
 - (id)_videoFilters;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
+- (BOOL)applyScaleToVideo;
 - (int)currentPlaybackState;
 - (id)delegate;
 - (double)endVitalityTransitionDuration;
@@ -92,6 +95,7 @@
 - (id)playbackSpec;
 - (void)playbackSpecDidChange:(id)arg1;
 - (float)progress;
+- (void)setApplyScaleToVideo:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setEndVitalityTransitionDuration:(double)arg1;
 - (void)setOutputs:(id)arg1;

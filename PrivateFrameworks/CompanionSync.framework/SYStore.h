@@ -75,6 +75,7 @@
 - (id)changeFromData:(id)arg1 ofType:(int)arg2;
 - (id)customIDSDeliveryOptions;
 - (id)dataFromChange:(id)arg1;
+- (id)decodeChangeData:(id)arg1 fromProtocolVersion:(int)arg2 ofType:(int)arg3;
 - (id)decodeSYObject:(id)arg1;
 - (id)delegate;
 - (id)delegateQueue;
@@ -86,6 +87,7 @@
 - (BOOL)deleteObject:(id)arg1 error:(id*)arg2;
 - (unsigned int)deliveryQOS;
 - (void)didEndDeltaSync;
+- (id)encodeSYChangeForBackwardCompatibility:(id)arg1 protocolVersion:(int)arg2;
 - (id)encodeSYObject:(id)arg1;
 - (BOOL)hasCompletedFullSync;
 - (BOOL)inDeltaSync;
@@ -106,12 +108,12 @@
 - (int)priority;
 - (BOOL)resume:(id*)arg1;
 - (id)serializer;
+- (void)service:(id)arg1 didSwitchFromPairingID:(id)arg2 toPairingID:(id)arg3;
 - (void)service:(id)arg1 encounteredError:(id)arg2 context:(id)arg3;
 - (void)service:(id)arg1 incomingData:(id)arg2 identifier:(id)arg3 completion:(id /* block */)arg4;
 - (void)service:(id)arg1 incomingStream:(id)arg2 metadata:(id)arg3 identifier:(id)arg4 completion:(id /* block */)arg5;
 - (BOOL)service:(id)arg1 startSession:(id)arg2 error:(id*)arg3;
-- (void)serviceDidPairDevice:(id)arg1;
-- (void)serviceDidUnpairDevice:(id)arg1;
+- (void)service:(id)arg1 willSwitchFromPairingID:(id)arg2 toPairingID:(id)arg3;
 - (id)sessionOwner;
 - (id)sessionQueue;
 - (void)setAllowsDeletes:(BOOL)arg1;

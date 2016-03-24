@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileContainerManager.framework/MobileContainerManager
  */
 
-@interface MCMXPCServiceDataContainer : MCMContainer
+@interface MCMXPCServiceDataContainer : MCMDataContainer
 
 @end

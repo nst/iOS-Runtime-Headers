@@ -10,6 +10,8 @@
 - (void)passView:(PKPassView *)arg1 flipButtonPressedForPass:(PKPass *)arg2;
 - (void)passView:(PKPassView *)arg1 resizeButtonPressedForPass:(PKPass *)arg2;
 - (BOOL)passViewBackGrowsCentered:(PKPassView *)arg1;
+- (void)passViewDidBeginAuthenticating:(PKPassView *)arg1;
+- (void)passViewDidEndAuthenticating:(PKPassView *)arg1;
 - (void)passViewDidFlip:(PKPassView *)arg1 animated:(BOOL)arg2;
 - (void)passViewDidResize:(PKPassView *)arg1 animated:(BOOL)arg2;
 - (BOOL)passViewShouldFlip:(PKPassView *)arg1;

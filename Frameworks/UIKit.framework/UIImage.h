@@ -334,6 +334,11 @@
 - (id)tintedImageWithColor:(id)arg1;
 - (id)tintedImageWithColor:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
++ (id)fiui_imageWithColor:(id)arg1 size:(struct CGSize { float x1; float x2; })arg2;
++ (id)fiui_pixelImageWithColor:(id)arg1;
+
 // Image: /System/Library/PrivateFrameworks/FlightUtilities.framework/FlightUtilities
 
 - (id)FU_imageTintedWithColor:(id)arg1;
@@ -371,9 +376,10 @@
 
 + (id)UIImageFromCIImage:(id)arg1;
 + (struct UIImage { Class x1; }*)fileIconForURL:(id)arg1 withPreferredSize:(struct CGSize { float x1; float x2; })arg2;
++ (struct UIImage { Class x1; }*)ic_imageWithContentsOfURL:(id)arg1;
 + (struct UIImage { Class x1; }*)imageNamed:(id)arg1 withTint:(struct UIColor { Class x1; }*)arg2;
 
-- (void)decodeInBackground;
+- (struct UIImage { Class x1; }*)decodeInBackground;
 - (void)decodeWithCompletion:(id /* block */)arg1;
 - (id)ic_JPEGData;
 - (id)ic_PNGData;
@@ -516,13 +522,18 @@
 
 // Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
 
++ (id)_sbf_imageFromContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 type:(int)arg3 colorSpace:(struct CGColorSpace { }*)arg4 pool:(id)arg5 drawing:(id /* block */)arg6 encapsulation:(id /* block */)arg7;
++ (unsigned long)sbf_bytesNeededForSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 withContextType:(int)arg3;
++ (id)sbf_imageFromBGRAContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 colorSpace:(struct CGColorSpace { }*)arg3 withAlpha:(BOOL)arg4 pool:(id)arg5 drawing:(id /* block */)arg6 encapsulation:(id /* block */)arg7;
++ (id)sbf_imageFromContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5;
++ (id)sbf_imageFromContextWithSize:(struct CGSize { float x1; float x2; })arg1 scale:(float)arg2 type:(int)arg3 pool:(id)arg4 drawing:(id /* block */)arg5 encapsulation:(id /* block */)arg6;
+
+- (int)sbf_EXIFOrientation;
+- (struct CGColorSpace { }*)sbf_colorSpace;
 - (id)sbf_cropImageWithRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 outputSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)sbf_imageByManipulatingInDeviceColorSpaceWithBlock:(id /* block */)arg1;
 - (id)sbf_imageMaskedByColor:(id)arg1;
-- (id)sbf_imageMaskedByColor:(id)arg1 withShadow:(id)arg2;
-- (id)sbf_imageWithEtchedBorderOfColor:(id)arg1 radius:(float)arg2;
-- (id)sbf_imageWithShadow:(id)arg1;
-- (id)sbf_invertedMaskImage;
-- (id)sbf_maskImage;
+- (id)sbf_memoryMappedImageWithPool:(id)arg1;
 - (id)sbf_resizeImageToSize:(struct CGSize { float x1; float x2; })arg1;
 - (id)sbf_resizeImageToSize:(struct CGSize { float x1; float x2; })arg1 preservingAspectRatio:(BOOL)arg2;
 - (id)sbf_resizedImagedForCurrentMagnifyMode;
@@ -542,6 +553,10 @@
 // Image: /System/Library/PrivateFrameworks/Weather.framework/Weather
 
 - (id)WAImageLoaderPreCacheImage;
+
+// Image: /System/Library/PrivateFrameworks/iCloudQuotaUI.framework/iCloudQuotaUI
+
++ (id)icqBundleImageNamed:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/iPhotoMigrationSupport.framework/iPhotoMigrationSupport
 

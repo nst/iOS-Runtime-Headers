@@ -35,6 +35,7 @@
 - (void)_previewContentControllerDidLoadItem:(id)arg1 atIndex:(int)arg2 withError:(id)arg3;
 - (void)_previewContentControllerDidMoveToItemAtIndex:(int)arg1;
 - (void)_previewContentControllerGetPreviewItemAtIndex:(int)arg1 sourceUUID:(int)arg2 handler:(id /* block */)arg3;
+- (void)_previewContentControllerPrefersWhitePointAdaptiveStyle:(int)arg1 atIndex:(int)arg2;
 - (void)_previewContentControllerReceivedTapOnURL:(id)arg1;
 - (void)_previewContentControllerWillHideOverlayWithDuration:(double)arg1;
 - (void)_previewContentControllerWillMoveToItemAtIndex:(int)arg1;

@@ -6,6 +6,8 @@
     NSString *_detailTimeFormatted;
     GEOFormattedString *_duration;
     GEOFormattedString *_durationList;
+    GEOFormattedString *_fareErrorMessage;
+    GEOFormattedString *_overviewSubtitle;
     GEOFormattedString *_planningDescription;
     GEOFormattedString *_serviceGap;
 }
@@ -13,11 +15,15 @@
 @property (nonatomic, retain) NSString *detailTimeFormatted;
 @property (nonatomic, retain) GEOFormattedString *duration;
 @property (nonatomic, retain) GEOFormattedString *durationList;
+@property (nonatomic, retain) GEOFormattedString *fareErrorMessage;
 @property (nonatomic, readonly) BOOL hasDetailTimeFormatted;
 @property (nonatomic, readonly) BOOL hasDuration;
 @property (nonatomic, readonly) BOOL hasDurationList;
+@property (nonatomic, readonly) BOOL hasFareErrorMessage;
+@property (nonatomic, readonly) BOOL hasOverviewSubtitle;
 @property (nonatomic, readonly) BOOL hasPlanningDescription;
 @property (nonatomic, readonly) BOOL hasServiceGap;
+@property (nonatomic, retain) GEOFormattedString *overviewSubtitle;
 @property (nonatomic, retain) GEOFormattedString *planningDescription;
 @property (nonatomic, retain) GEOFormattedString *serviceGap;
 
@@ -29,20 +35,26 @@
 - (id)dictionaryRepresentation;
 - (id)duration;
 - (id)durationList;
+- (id)fareErrorMessage;
 - (BOOL)hasDetailTimeFormatted;
 - (BOOL)hasDuration;
 - (BOOL)hasDurationList;
+- (BOOL)hasFareErrorMessage;
+- (BOOL)hasOverviewSubtitle;
 - (BOOL)hasPlanningDescription;
 - (BOOL)hasServiceGap;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
+- (id)overviewSubtitle;
 - (id)planningDescription;
 - (BOOL)readFrom:(id)arg1;
 - (id)serviceGap;
 - (void)setDetailTimeFormatted:(id)arg1;
 - (void)setDuration:(id)arg1;
 - (void)setDurationList:(id)arg1;
+- (void)setFareErrorMessage:(id)arg1;
+- (void)setOverviewSubtitle:(id)arg1;
 - (void)setPlanningDescription:(id)arg1;
 - (void)setServiceGap:(id)arg1;
 - (void)writeTo:(id)arg1;

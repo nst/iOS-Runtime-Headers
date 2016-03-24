@@ -7,7 +7,7 @@
     NSObject<OS_dispatch_queue> *_clientCalloutQueue;
     NSMutableDictionary *_currentProcessStateByBundleID;
     HDDaemon *_daemon;
-    NSPointerArray *_generalProcessObservers;
+    NSHashTable *_generalProcessObservers;
     NSMutableDictionary *_processObserversByBundleID;
     NSObject<OS_dispatch_queue> *_queue;
 }

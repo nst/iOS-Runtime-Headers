@@ -4,6 +4,7 @@
 
 @interface AKAppleIDSession : NSObject <NSURLSessionAppleIDContext> {
     AKAnisetteProvisioningController *_anisetteController;
+    NSLock *_anisetteControllerLock;
     AKAnisetteData *_proxiedAnisetteData;
     NSString *_serviceID;
 }
@@ -25,6 +26,7 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)encodeWithCoder:(id)arg1;
 - (void)handleResponse:(id)arg1 forRequest:(id)arg2 shouldRetry:(BOOL*)arg3;
+- (id)init;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithIdentifier:(id)arg1;
 - (id)proxiedAnisetteData;

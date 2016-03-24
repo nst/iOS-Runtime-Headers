@@ -3,7 +3,7 @@
  */
 
 @interface ICBaseSearchIndexerDataSource : NSObject <ICSearchIndexerDataSource> {
-    NSMutableSet *_contextsToObserve;
+    NSHashTable *_contextsToObserve;
     NSMutableDictionary *_identifiersByObjectID;
     BOOL _needsReindexing;
     NSMutableSet *_objectIDsBeingProcessed;
@@ -14,7 +14,7 @@
     BOOL _reindexing;
 }
 
-@property (nonatomic, retain) NSMutableSet *contextsToObserve;
+@property (nonatomic, retain) NSHashTable *contextsToObserve;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;

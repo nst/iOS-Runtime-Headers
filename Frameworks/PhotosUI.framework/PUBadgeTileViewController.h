@@ -2,10 +2,9 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUBadgeTileViewController : PUTileViewController <PUAssetViewModelChangeObserver, PUIrisBadgeVisibilityControllerDelegate> {
+@interface PUBadgeTileViewController : PUTileViewController <PUAssetViewModelChangeObserver> {
     PUBadgeInfo *__badgeInfo;
     PLPhotoTileBadgeView *__badgeView;
-    PUIrisBadgeVisibilityController *__irisBadgeVisibilityController;
     BOOL __isOverContent;
     BOOL __needsUpdateBadgeInfo;
     BOOL __needsUpdateBadgeView;
@@ -15,7 +14,6 @@
 
 @property (setter=_setBadgeInfo:, nonatomic, copy) PUBadgeInfo *_badgeInfo;
 @property (nonatomic, readonly) PLPhotoTileBadgeView *_badgeView;
-@property (setter=_setIrisBadgeVisibilityController:, nonatomic, retain) PUIrisBadgeVisibilityController *_irisBadgeVisibilityController;
 @property (setter=_setOverContent:, nonatomic) BOOL _isOverContent;
 @property (setter=_setNeedsUpdateBadgeInfo:, nonatomic) BOOL _needsUpdateBadgeInfo;
 @property (setter=_setNeedsUpdateBadgeView:, nonatomic) BOOL _needsUpdateBadgeView;
@@ -36,14 +34,12 @@
 - (void)_invalidateBadgeInfo;
 - (void)_invalidateBadgeView;
 - (void)_invalidateIrisBadge;
-- (id)_irisBadgeVisibilityController;
 - (BOOL)_isOverContent;
 - (BOOL)_needsUpdate;
 - (BOOL)_needsUpdateBadgeInfo;
 - (BOOL)_needsUpdateBadgeView;
 - (BOOL)_needsUpdateIrisBadge;
 - (void)_setBadgeInfo:(id)arg1;
-- (void)_setIrisBadgeVisibilityController:(id)arg1;
 - (void)_setNeedsUpdate;
 - (void)_setNeedsUpdateBadgeInfo:(BOOL)arg1;
 - (void)_setNeedsUpdateBadgeView:(BOOL)arg1;
@@ -56,7 +52,6 @@
 - (void)applyLayoutInfo:(id)arg1;
 - (id)assetViewModel;
 - (void)becomeReusable;
-- (void)irisBadgeTileInfo:(id)arg1 didTransitionToAppearanceState:(unsigned int)arg2;
 - (id)loadView;
 - (void)prepareForReuse;
 - (void)setAssetViewModel:(id)arg1;

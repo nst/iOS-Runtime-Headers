@@ -22,6 +22,7 @@
     BOOL m_readyForScroll;
     BOOL m_reentrancyGuard;
     UIDelayedAction *m_selectionTimer;
+    BOOL m_shouldAutoscrollAboveBottom;
     BOOL m_skipScrollContainingView;
     int m_textAlignment;
     UIColor *m_textColor;

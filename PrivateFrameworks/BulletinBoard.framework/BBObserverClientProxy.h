@@ -7,14 +7,14 @@
     NSString *_clientBundleIdentifier;
     NSXPCConnection *_connection;
     NSObject<OS_dispatch_queue> *_queue;
-    BBServer *_serverWeak;
+    BBZeroingWeakReference *_serverZWR;
 }
 
 @property (nonatomic, retain) NSMutableDictionary *bulletinIDsToTransaction;
 @property (nonatomic, retain) NSString *clientBundleIdentifier;
 @property (nonatomic, retain) NSXPCConnection *connection;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
-@property (nonatomic) BBServer *serverWeak;
+@property (nonatomic, retain) BBZeroingWeakReference *serverZWR;
 
 + (id)xpcInterface;
 
@@ -56,14 +56,14 @@
 - (void)requestNoticesBulletinsForSectionID:(id)arg1;
 - (void)requestTodayBulletinsForSectionID:(id)arg1;
 - (id)server;
-- (id)serverWeak;
+- (id)serverZWR;
 - (void)setBulletinIDsToTransaction:(id)arg1;
 - (void)setClientBundleIdentifier:(id)arg1;
 - (void)setConnection:(id)arg1;
 - (void)setObserverFeed:(unsigned int)arg1 asLightsAndSirensGateway:(id)arg2 priority:(unsigned int)arg3;
 - (void)setObserverFeed:(unsigned int)arg1 attachToLightsAndSirensGateway:(id)arg2;
 - (void)setQueue:(id)arg1;
-- (void)setServerWeak:(id)arg1;
+- (void)setServerZWR:(id)arg1;
 - (id)transactionBulletinIDs;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id /* block */)arg3;

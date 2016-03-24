@@ -5,14 +5,11 @@
 @interface HMDApplicationVendorIDStore : NSObject <NSSecureCoding> {
     NSMutableDictionary *_applicationVendorIdMapping;
     NSObject<OS_dispatch_queue> *_clientQueue;
-    HMDHomeManager *_homeManager;
 }
 
 @property (nonatomic, readonly) NSMutableDictionary *applicationVendorIdMapping;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *clientQueue;
-@property (nonatomic) HMDHomeManager *homeManager;
 
-+ (id)setSharedStore:(id)arg1 withManager:(id)arg2;
 + (id)sharedStore;
 + (BOOL)supportsSecureCoding;
 
@@ -29,11 +26,9 @@
 - (void)checkCorrectness;
 - (id)clientQueue;
 - (void)encodeWithCoder:(id)arg1;
-- (id)homeManager;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
 - (void)removeVendorIDForApplicationBundleId:(id)arg1;
-- (void)setHomeManager:(id)arg1;
 - (id)vendorIDForApplication:(id)arg1;
 
 @end

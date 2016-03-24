@@ -4,15 +4,15 @@
 
 @interface GEOUsageLogMessage : PBCodable <NSCopying> {
     GEOLongSessionUsageLogMessage *_longSessionUsageLogMessage;
-    GEONoSessionUsageLogMessage *_noSessionUsageLogMessage;
+    GEOSessionlessUsageLogMessage *_sessionlessUsageLogMessage;
     GEOShortSessionUsageLogMessage *_shortSessionUsageLogMessage;
 }
 
 @property (nonatomic, readonly) BOOL hasLongSessionUsageLogMessage;
-@property (nonatomic, readonly) BOOL hasNoSessionUsageLogMessage;
+@property (nonatomic, readonly) BOOL hasSessionlessUsageLogMessage;
 @property (nonatomic, readonly) BOOL hasShortSessionUsageLogMessage;
 @property (nonatomic, retain) GEOLongSessionUsageLogMessage *longSessionUsageLogMessage;
-@property (nonatomic, retain) GEONoSessionUsageLogMessage *noSessionUsageLogMessage;
+@property (nonatomic, retain) GEOSessionlessUsageLogMessage *sessionlessUsageLogMessage;
 @property (nonatomic, retain) GEOShortSessionUsageLogMessage *shortSessionUsageLogMessage;
 
 - (void)copyTo:(id)arg1;
@@ -21,16 +21,16 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasLongSessionUsageLogMessage;
-- (BOOL)hasNoSessionUsageLogMessage;
+- (BOOL)hasSessionlessUsageLogMessage;
 - (BOOL)hasShortSessionUsageLogMessage;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)longSessionUsageLogMessage;
 - (void)mergeFrom:(id)arg1;
-- (id)noSessionUsageLogMessage;
 - (BOOL)readFrom:(id)arg1;
+- (id)sessionlessUsageLogMessage;
 - (void)setLongSessionUsageLogMessage:(id)arg1;
-- (void)setNoSessionUsageLogMessage:(id)arg1;
+- (void)setSessionlessUsageLogMessage:(id)arg1;
 - (void)setShortSessionUsageLogMessage:(id)arg1;
 - (id)shortSessionUsageLogMessage;
 - (void)writeTo:(id)arg1;

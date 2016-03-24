@@ -4,8 +4,8 @@
 
 @interface SBSRemoteAlertClient : FBSSystemServiceFacilityClient {
     NSObject<OS_dispatch_queue> *_handleObserverQueue;
-    NSMapTable *_portToDeathWatcherMap;
-    NSMapTable *_portToHandleMap;
+    NSMutableDictionary *_portToDeathWatcherMap;
+    NSMutableDictionary *_portToHandleMap;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
@@ -14,8 +14,9 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (id)_queue_addHandleForToken:(id)arg1;
-- (void)_queue_removeHandleForTokenStore:(union { id x1; })arg1 withErrorCode:(int)arg2 underlyingError:(id)arg3;
+- (void)_queue_removeHandleForTokenStore:(id)arg1 withErrorCode:(int)arg2 underlyingError:(id)arg3;
 - (void)dealloc;
 - (void)handleMessage:(id)arg1 withType:(long long)arg2;
 - (id)handleObserverQueue;

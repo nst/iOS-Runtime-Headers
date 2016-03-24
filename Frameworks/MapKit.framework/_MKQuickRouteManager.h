@@ -53,6 +53,7 @@
 - (struct { double x1; double x2; })coordinate;
 - (void)dealloc;
 - (id)delegate;
+- (id)description;
 - (struct { double x1; double x2; })destinationCoordinate;
 - (unsigned int)directionsTypeForMapType:(unsigned int)arg1;
 - (unsigned int)directionsTypeForOriginCoordinate:(struct { double x1; double x2; })arg1 destinationCoordinate:(struct { double x1; double x2; })arg2 preferredDirectionsType:(unsigned int)arg3;

@@ -35,7 +35,7 @@
 + (unsigned int)_workoutActivityTypeFromString:(id)arg1;
 + (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned int)arg9 goal:(id)arg10 device:(id)arg11 metadata:(id)arg12;
 + (id)_workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 duration:(double)arg5 totalActiveEnergyBurned:(id)arg6 totalBasalEnergyBurned:(id)arg7 totalDistance:(id)arg8 goalType:(unsigned int)arg9 goal:(id)arg10 device:(id)arg11 metadata:(id)arg12 config:(id /* block */)arg13;
-+ (id)_workoutWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 startDate:(id)arg5 endDate:(id)arg6 workoutType:(id)arg7 activityType:(unsigned int)arg8 workoutEvents:(id)arg9 duration:(double)arg10 totalActiveEnergyBurned:(id)arg11 totalBasalEnergyBurned:(id)arg12 totalDistance:(id)arg13 goalType:(unsigned int)arg14 goal:(id)arg15;
++ (id)_workoutWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(double)arg4 startDate:(double)arg5 endDate:(double)arg6 workoutType:(id)arg7 activityType:(unsigned int)arg8 workoutEvents:(id)arg9 duration:(double)arg10 totalActiveEnergyBurned:(id)arg11 totalBasalEnergyBurned:(id)arg12 totalDistance:(id)arg13 goalType:(unsigned int)arg14 goal:(id)arg15;
 + (BOOL)supportsSecureCoding;
 + (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3;
 + (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 duration:(double)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 device:(id)arg7 metadata:(id)arg8;
@@ -44,6 +44,7 @@
 + (id)workoutWithActivityType:(unsigned int)arg1 startDate:(id)arg2 endDate:(id)arg3 workoutEvents:(id)arg4 totalEnergyBurned:(id)arg5 totalDistance:(id)arg6 metadata:(id)arg7;
 
 - (void).cxx_destruct;
+- (id)_deepCopy;
 - (void)_enumerateActiveTimePeriods:(id /* block */)arg1;
 - (id)_goal;
 - (double)_goalInCanonicalUnit;
@@ -83,6 +84,7 @@
 
 - (double)FU_completionFactor;
 - (id)FU_fitnessLocalizedGoalDescriptionWithValue:(id*)arg1;
+- (id)FU_fitnessLocalizedGoalWithValue:(id*)arg1;
 - (id)FU_localizedKeyMetricCyclingStringWithUnitStyle:(int)arg1;
 - (id)FU_localizedKeyMetricDistanceStringWithUnitStyle:(int)arg1;
 - (id)FU_localizedKeyMetricDurationString;
@@ -90,6 +92,7 @@
 - (id)FU_localizedKeyMetricStringWithUnitStyle:(int)arg1;
 - (id)FU_localizedOpenGoalKeyMetricStringWithUnitStyle:(int)arg1;
 - (id)FU_localizedShareTextWithShareValue:(id)arg1;
+- (unsigned int)_FU_effectiveGoalType;
 - (id)_localizedGoalDescriptionWithActivity:(id)arg1 formattedValue:(id*)arg2;
 - (id)fiui_splitsFromDistanceSamples:(id)arg1 userPreferredUnit:(id)arg2;
 
@@ -103,9 +106,10 @@
 - (id)codableWorkoutEvents;
 - (BOOL)hd_insertRelatedDataWithHealthDaemon:(id)arg1 database:(id)arg2 entityPersistentID:(id)arg3 error:(id*)arg4;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (int)hk_integerValue;
 - (id)hk_timePeriods;
+- (id)hkui_localizedActivityTypeName;
 
 @end

@@ -67,6 +67,7 @@
 - (void)setSampleBufferCoalescingInterval:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1;
 - (void)setSampleReferenceBaseURL:(id)arg1;
 - (void)setTrackVolume:(float)arg1;
+- (void)setWritesMediaDataToBeginningOfFile:(BOOL)arg1;
 - (int)trackID;
 
 @end

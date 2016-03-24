@@ -8,6 +8,7 @@
 
 @property (nonatomic) <SBNumberPadDelegate> *delegate;
 
+- (void).cxx_destruct;
 - (void)buttonCancelled:(id)arg1;
 - (void)buttonDown:(id)arg1;
 - (id)buttonForPoint:(struct CGPoint { float x1; float x2; })arg1 forEvent:(id)arg2;

@@ -11,6 +11,7 @@
 @property (nonatomic, readonly, copy) _UIButtonBarButtonVisualProvider *visualProvider;
 
 - (void).cxx_destruct;
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (void)_accessibilitySettingsChanged:(id)arg1;
 - (void)_configureFromBarItem:(id)arg1 isBackButton:(BOOL)arg2;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })alignmentRectInsets;

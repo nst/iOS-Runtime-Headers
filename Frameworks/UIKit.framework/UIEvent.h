@@ -12,7 +12,6 @@
 @property (nonatomic, readonly) double timestamp;
 @property (nonatomic, readonly) int type;
 
-- (id)_allPhysicalButtons;
 - (struct CGPoint { float x1; float x2; })_digitizerLocation;
 - (unsigned int)_focusHeading;
 - (struct __GSEvent { }*)_gsEvent;
@@ -23,8 +22,6 @@
 - (id)_modifiedInput;
 - (int)_modifierFlags;
 - (int)_moveDirection;
-- (id)_physicalButtonsForGestureRecognizer:(id)arg1;
-- (id)_physicalButtonsForResponder:(id)arg1;
 - (id)_screen;
 - (void)_sendEventToResponder:(id)arg1;
 - (void)_setGSEvent:(struct __GSEvent { }*)arg1;

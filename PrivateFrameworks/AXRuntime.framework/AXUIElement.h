@@ -87,6 +87,7 @@
 - (id)stringWithAXAttribute:(int)arg1;
 - (id)uiElementsWithAttribute:(int)arg1;
 - (id)uiElementsWithAttribute:(int)arg1 parameter:(void*)arg2;
+- (id)uiElementsWithAttribute:(int)arg1 parameter:(void*)arg2 fetchAttributes:(BOOL)arg3;
 - (void)updateCache:(int)arg1;
 - (void)updateCacheWithAttributes:(id)arg1;
 - (id)valueArrayWithAXAttributes:(struct __CFArray { }*)arg1;

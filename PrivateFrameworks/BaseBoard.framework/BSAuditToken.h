@@ -33,5 +33,6 @@
 - (BOOL)isEqual:(id)arg1;
 - (int)pid;
 - (struct { unsigned int x1[8]; })realToken;
+- (id)valueForEntitlement:(id)arg1;
 
 @end

@@ -14,9 +14,9 @@
 + (id)contextWithState:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)animationName;
 - (id)associatedBundleID;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;

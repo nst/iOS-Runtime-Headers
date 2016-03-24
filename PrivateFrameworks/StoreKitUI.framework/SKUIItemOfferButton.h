@@ -19,6 +19,9 @@
     } _confirmationTitleFitSize;
     int _confirmationTitleStyle;
     <SKUIItemOfferButtonDelegate> *_delegate;
+    BOOL _disabledButSelectable;
+    BOOL _downloadRestores;
+    SKUIButtonViewElement *_element;
     int _fillStyle;
     UIImage *_image;
     UIImageView *_imageView;
@@ -46,12 +49,15 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <SKUIItemOfferButtonDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=isDisabledButSelectable, nonatomic) BOOL disabledButSelectable;
+@property (nonatomic, retain) SKUIButtonViewElement *element;
 @property (nonatomic) int fillStyle;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIImage *image;
 @property (nonatomic) <SKUIItemOfferButtonDelegate> *itemOfferDelegate;
 @property (nonatomic) float progress;
 @property (nonatomic) int progressType;
+@property (nonatomic, readonly) BOOL restores;
 @property (getter=isShowingConfirmation, nonatomic, readonly) BOOL showingConfirmation;
 @property (nonatomic) BOOL showsConfirmationState;
 @property (readonly) Class superclass;
@@ -110,10 +116,12 @@
 - (id)delegate;
 - (void)didMoveToWindow;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)element;
 - (void)endTrackingWithTouch:(id)arg1 withEvent:(id)arg2;
 - (int)fillStyle;
 - (id)image;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (BOOL)isDisabledButSelectable;
 - (BOOL)isShowingConfirmation;
 - (BOOL)isUniversal;
 - (id)itemOfferDelegate;
@@ -122,6 +130,7 @@
 - (float)progress;
 - (int)progressType;
 - (void)removeButtonStateAnimations;
+- (BOOL)restores;
 - (void)setBackgroundColor:(id)arg1;
 - (void)setBorderColorAlphaMultiplier:(float)arg1;
 - (void)setCenterImageProvider:(id /* block */)arg1;
@@ -130,6 +139,8 @@
 - (void)setConfirmationTitle:(id)arg1;
 - (void)setConfirmationTitleStyle:(int)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setDisabledButSelectable:(BOOL)arg1;
+- (void)setElement:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setFillStyle:(int)arg1;
 - (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;

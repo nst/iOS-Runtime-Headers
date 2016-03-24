@@ -17,6 +17,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (BOOL)_needsHeaderForSection:(int)arg1;
 - (void)_performBlockAfterDerivingPrepopulatedItems:(id /* block */)arg1;
 - (void)_showNewPlaylistCreationFlow;
 - (void)_updateNoContentViewVisibility;

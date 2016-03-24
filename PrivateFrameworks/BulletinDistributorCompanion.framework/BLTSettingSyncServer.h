@@ -25,6 +25,7 @@
 - (void)handleSetSectionSubtypeParametersIconRequest:(id)arg1;
 - (void)handleSetSectionSubtypeParametersIconResponse:(id)arg1;
 - (id)init;
+- (BOOL)isSectionInfoSentCacheEmpty;
 - (void)registerProtobufHandlers;
 - (id)sectionInfoPreviouslySentMessageStore;
 - (id)sectionSubtypeParametersIconsPreviouslySentMessageStore;

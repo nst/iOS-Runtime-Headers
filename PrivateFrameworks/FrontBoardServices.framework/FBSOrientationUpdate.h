@@ -14,6 +14,7 @@
 
 - (id)description;
 - (double)duration;
+- (id)init;
 - (id)initWithOrientation:(int)arg1 duration:(double)arg2 rotationDirection:(int)arg3;
 - (int)orientation;
 - (int)rotationDirection;

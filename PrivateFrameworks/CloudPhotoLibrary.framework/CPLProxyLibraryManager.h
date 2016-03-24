@@ -37,7 +37,7 @@
 - (void)backgroundDownloadDidFailForResource:(id)arg1;
 - (void)backgroundDownloadDidFinishForResource:(id)arg1;
 - (void)barrier;
-- (void)beginDownloadForResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 completionHandler:(id /* block */)arg4;
+- (void)beginDownloadForResource:(id)arg1 clientBundleID:(id)arg2 highPriority:(BOOL)arg3 proposedTaskIdentifier:(id)arg4 completionHandler:(id /* block */)arg5;
 - (void)cancelTask:(id)arg1;
 - (void)closeWithCompletionHandler:(id /* block */)arg1;
 - (void)cloudCacheGetDescriptionForRecordWithIdentifier:(id)arg1 related:(BOOL)arg2 completionHandler:(id /* block */)arg3;
@@ -76,7 +76,6 @@
 - (void)resetStatus;
 - (void)setDiagnosticsEnabled:(BOOL)arg1;
 - (void)startSyncSession;
-- (void)takeStatisticsSnapshotSinceDate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)uploadDidStartForResource:(id)arg1 withResourceTransferTask:(id)arg2;
 - (void)uploadOfResource:(id)arg1 didFinishForResourceTransferTask:(id)arg2 withError:(id)arg3;
 - (void)uploadOfResource:(id)arg1 didProgress:(float)arg2 forResourceTransferTask:(id)arg3;

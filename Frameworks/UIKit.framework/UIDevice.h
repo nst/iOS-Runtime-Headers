@@ -47,6 +47,7 @@
 
 - (float)_backlightLevel;
 - (void)_clearGraphicsQualityOverride;
+- (id)_defaultSimulatorName;
 - (id)_deviceInfoForKey:(struct __CFString { }*)arg1;
 - (void)_enableDeviceOrientationEvents:(BOOL)arg1;
 - (int)_graphicsQuality;
@@ -69,6 +70,7 @@
 - (void)_setHasTouchPad:(BOOL)arg1;
 - (void)_setProximityState:(BOOL)arg1;
 - (float)_softwareDimmingAlpha;
+- (BOOL)_supportsDeepColor;
 - (BOOL)_supportsForceTouch;
 - (BOOL)_supportsHapticFeedback;
 - (id)_tapticEngine;

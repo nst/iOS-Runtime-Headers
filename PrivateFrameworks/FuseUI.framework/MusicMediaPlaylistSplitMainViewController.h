@@ -24,6 +24,8 @@
 - (void)_configureProductAdditionalMetadataViewController:(id)arg1;
 - (BOOL)_isCuratorPlaylist;
 - (id)_loadProductTracklistTableViewConfigurationWithTracklistEntityProvider:(id)arg1;
+- (void)_prepareToCommitEditingWithBagDictionary:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)_prepareToCommitEditingWithCompletionHandler:(id /* block */)arg1;
 - (void)_resetAdditionalMetadataViewController:(id)arg1;
 - (void)_setEditedValue:(id)arg1 forProperty:(id)arg2 onPlaylist:(id)arg3 withSuccessfullyEditedPropertiesAccumulatorDictionary:(id)arg4;
 - (void)_updateEditableComponents;

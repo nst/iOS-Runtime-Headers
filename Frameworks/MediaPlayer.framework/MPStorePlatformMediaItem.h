@@ -12,6 +12,7 @@
 
 - (void).cxx_destruct;
 - (id)_valueFromMetadataForProperty:(id)arg1;
+- (id)artworkCatalog;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithStoreItemMetadata:(id)arg1;

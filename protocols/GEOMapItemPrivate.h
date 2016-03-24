@@ -57,6 +57,7 @@
 - (GEOPDPlace *)_placeData;
 - (NSData *)_placeDataAsData;
 - (int)_placeType;
+- (NSString *)_poiPinpointURLString;
 - (NSString *)_poiSurveyURLString;
 - (unsigned int)_priceRange;
 - (NSURL *)_providerURL;

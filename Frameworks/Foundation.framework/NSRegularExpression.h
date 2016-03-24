@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSRegularExpression : NSObject <NSCoding, NSCopying> {
+@interface NSRegularExpression : NSObject <NSCopying, NSSecureCoding> {
     int _checkout;
     void *_internal;
     unsigned int _options;
@@ -19,6 +19,7 @@
 + (id)escapedTemplateForString:(id)arg1;
 + (void)initialize;
 + (id)regularExpressionWithPattern:(id)arg1 options:(unsigned int)arg2 error:(id*)arg3;
++ (BOOL)supportsSecureCoding;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

@@ -3,8 +3,6 @@
  */
 
 @interface CUIStructuredThemeStore : NSObject <CUIStructuredThemeStorage, CUIStructuredThemeStorage2> {
-    NSCache *_assetExistanceCache;
-    NSCache *_assetFPOStatus;
     NSString *_bundleID;
     NSMutableDictionary *_cache;
     NSLock *_cacheLock;

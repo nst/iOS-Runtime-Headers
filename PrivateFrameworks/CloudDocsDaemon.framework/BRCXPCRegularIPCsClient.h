@@ -9,13 +9,16 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (id)_loggedInUserPropertyValuesForKeys:(id)arg1 error:(id*)arg2;
+- (void)_t_blockSyncForContainerID:(id)arg1 withPendingUpgradeToOSName:(id)arg2 reply:(id /* block */)arg3;
+- (void)_t_blockSyncUpOfItemWithID:(id)arg1 containerID:(id)arg2 withPendingUpgradeToOSName:(id)arg3 reply:(id /* block */)arg4;
+- (void)_t_clearAllBlockedItemsForContainerID:(id)arg1 reply:(id /* block */)arg2;
 - (void)addExternalDocumentReferenceTo:(id)arg1 forPid:(int)arg2 inContainer:(id)arg3 underParent:(id)arg4 reply:(id /* block */)arg5;
 - (oneway void)bundleDidAccessExternalDocument:(id)arg1;
 - (oneway void)checkinAskClientIfUsingUbiquity:(BOOL)arg1;
 - (void)computePurgableSpaceWithUrgency:(int)arg1 reply:(id /* block */)arg2;
 - (void)copyBulkShareIDsAtURLs:(id)arg1 reply:(id /* block */)arg2;
 - (void)copyCurrentUserIdentifierWithReply:(id /* block */)arg1;
-- (void)copyLoggedInUserFirstAndLastNameWithReply:(id /* block */)arg1;
 - (void)createContainerWithID:(id)arg1 ownerName:(id)arg2 reply:(id /* block */)arg3;
 - (void)createSharingInfoForURL:(id)arg1 reply:(id /* block */)arg2;
 - (void)currentAccountCreateWithID:(id)arg1 reply:(id /* block */)arg2;
@@ -47,6 +50,7 @@
 - (void)getIsContainerWithIDOverQuota:(id)arg1 reply:(id /* block */)arg2;
 - (void)getItemUpdateSenderWithReceiver:(id)arg1 reply:(id /* block */)arg2;
 - (void)getLastSyncDateWithReply:(id /* block */)arg1;
+- (void)getLoggedInUserPropertyValuesForKeys:(id)arg1 reply:(id /* block */)arg2;
 - (void)getMigrationStatusForPrimaryiCloudAccount:(id /* block */)arg1;
 - (void)getNonLocalVersionSenderWithReceiver:(id)arg1 documentURL:(id)arg2 includeCachedVersions:(BOOL)arg3 reply:(id /* block */)arg4;
 - (void)getNotificationInfoAtURL:(id)arg1 reply:(id /* block */)arg2;
@@ -74,6 +78,7 @@
 - (void)setiWorkPublishingInfoAtURL:(id)arg1 publish:(BOOL)arg2 readonly:(BOOL)arg3 reply:(id /* block */)arg4;
 - (void)setupInstanceWithDict:(id)arg1 reply:(id /* block */)arg2;
 - (void)startDownloadItemsAtURLs:(id)arg1 options:(unsigned int)arg2 reply:(id /* block */)arg3;
+- (void)startOperation:(id)arg1 toCopyAvailibleQuoteWithReply:(id /* block */)arg2;
 - (void)startOperation:(id)arg1 toCopyShareURLForShare:(id)arg2 appName:(id)arg3 reply:(id /* block */)arg4;
 - (void)startOperation:(id)arg1 toCopySharingAccessToken:(id)arg2 reply:(id /* block */)arg3;
 - (void)startOperation:(id)arg1 toCopySharingInfoAtURL:(id)arg2 reply:(id /* block */)arg3;

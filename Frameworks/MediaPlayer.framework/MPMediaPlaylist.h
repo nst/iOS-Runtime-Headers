@@ -7,6 +7,8 @@
     MPMediaQuery *_seedTracksQuery;
 }
 
+@property (nonatomic, readonly) NSString *authorDisplayName;
+@property (nonatomic, readonly) NSString *descriptionText;
 @property (nonatomic, readonly) NSString *name;
 @property (nonatomic, readonly) unsigned long long persistentID;
 @property (nonatomic, readonly) unsigned int playlistAttributes;
@@ -19,10 +21,14 @@
 + (BOOL)canFilterByProperty:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)addItemWithProductID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)addMediaItems:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)artworkCatalog;
 - (id)artworkCatalogsWithMaximumCount:(unsigned int)arg1;
+- (id)authorDisplayName;
 - (BOOL)canPlayUsingNetworkType:(int)arg1;
 - (unsigned int)count;
+- (id)descriptionText;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)existsInLibrary;
 - (unsigned int)hash;

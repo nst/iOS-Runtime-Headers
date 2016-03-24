@@ -51,6 +51,7 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_applicationEnteringForeground:(id)arg1;
 - (id)_contactAtIndexPath:(id)arg1;
 - (id)_sections;
 - (void)_updateCountString;

@@ -9,6 +9,7 @@
     CLLocation *_deviceLocation;
     <GEOCompletionItem> *_geoCompletionItem;
     BOOL _hasRegion;
+    BOOL _hasSentFeedbackForCompletion;
     _MKLocalSearchMerchantParameters *_merchantParameters;
     NSArray *_muids;
     NSString *_naturalLanguageQuery;
@@ -32,6 +33,7 @@
 @property (getter=_contactsDataString, setter=_setContactsDataString:, nonatomic, retain) NSString *contactsDataString;
 @property (getter=_deviceLocation, setter=_setDeviceLocation:, nonatomic, retain) CLLocation *deviceLocation;
 @property (nonatomic, readonly) <GEOCompletionItem> *geoCompletionItem;
+@property (nonatomic) BOOL hasSentFeedbackForCompletion;
 @property (getter=_merchantParameters, setter=_setMerchantParameters:, nonatomic, retain) _MKLocalSearchMerchantParameters *merchantParameters;
 @property (getter=_muids, setter=_setMuids:, nonatomic, retain) NSArray *muids;
 @property (nonatomic, copy) NSString *naturalLanguageQuery;
@@ -63,10 +65,12 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (id)geoCompletionItem;
+- (BOOL)hasSentFeedbackForCompletion;
 - (id)initWithCompletion:(id)arg1;
 - (id)initWithMapsURL:(id)arg1;
 - (id)naturalLanguageQuery;
 - (struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })region;
+- (void)setHasSentFeedbackForCompletion:(BOOL)arg1;
 - (void)setNaturalLanguageQuery:(id)arg1;
 - (void)setRegion:(struct { struct { double x_1_1_1; double x_1_1_2; } x1; struct { double x_2_1_1; double x_2_1_2; } x2; })arg1;
 

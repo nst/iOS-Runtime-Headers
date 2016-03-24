@@ -4,6 +4,7 @@
 
 @interface HAPRecentlySeenPairedBTLEPeripheralTuple : NSObject {
     NSMutableDictionary *_cachedDescriptors;
+    NSMapTable *_cachedSignatures;
     NSNumber *_categoryIdentifier;
     NSNumber *_configNumber;
     NSString *_identifier;
@@ -14,18 +15,20 @@
     NSNumber *_statusFlags;
 }
 
-@property (nonatomic, retain) NSMutableDictionary *cachedDescriptors;
+@property (nonatomic, readonly) NSMutableDictionary *cachedDescriptors;
+@property (nonatomic, readonly) NSMapTable *cachedSignatures;
 @property (nonatomic, retain) NSNumber *categoryIdentifier;
 @property (nonatomic, retain) NSNumber *configNumber;
-@property (nonatomic, retain) NSString *identifier;
-@property (nonatomic) double lastSeen;
-@property BOOL notifyingCharacteristicUpdated;
-@property (nonatomic, retain) CBPeripheral *peripheral;
+@property (nonatomic, readonly) NSString *identifier;
+@property (nonatomic, readonly) double lastSeen;
+@property (nonatomic) BOOL notifyingCharacteristicUpdated;
+@property (nonatomic, readonly) CBPeripheral *peripheral;
 @property (nonatomic, retain) NSNumber *stateNumber;
 @property (nonatomic, retain) NSNumber *statusFlags;
 
 - (void).cxx_destruct;
 - (id)cachedDescriptors;
+- (id)cachedSignatures;
 - (id)categoryIdentifier;
 - (id)configNumber;
 - (id)identifier;
@@ -33,13 +36,9 @@
 - (double)lastSeen;
 - (BOOL)notifyingCharacteristicUpdated;
 - (id)peripheral;
-- (void)setCachedDescriptors:(id)arg1;
 - (void)setCategoryIdentifier:(id)arg1;
 - (void)setConfigNumber:(id)arg1;
-- (void)setIdentifier:(id)arg1;
-- (void)setLastSeen:(double)arg1;
 - (void)setNotifyingCharacteristicUpdated:(BOOL)arg1;
-- (void)setPeripheral:(id)arg1;
 - (void)setStateNumber:(id)arg1;
 - (void)setStatusFlags:(id)arg1;
 - (id)stateNumber;

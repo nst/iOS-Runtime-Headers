@@ -3,11 +3,14 @@
  */
 
 @interface GEOLogMessageCacheManager : NSObject {
+    NSString *_adaptorId;
     int _currentRetrivedLogMessageRetryCount;
     NSObject<OS_dispatch_queue> *_databaseQueue;
     void *_databaseQueueIdentityKey;
     void *_databaseQueueIdentityValue;
+    BOOL _fromLogFrameworkAdaptor;
     struct sqlite3 { } *_logMessageCacheDatabase;
+    int _logMessageCacheEndIterator;
     NSString *_logMessageCacheFilePath;
     int _logMessageCacheIterator;
     NSMutableArray *_retrivedLogMessageCacheIds;
@@ -23,16 +26,19 @@
 - (void)_executeSQL:(id)arg1;
 - (int)_getNumberOfLogMessagesInCache;
 - (id)_groupIDOfNextPendingLogMessage;
+- (BOOL)_logMessageCacheFileExists;
 - (void)_migrateDatabaseIfNeeded;
 - (void)_openCreateLogMessageCacheDBFile;
 - (void)_openLogMessageCacheDBFile;
 - (int)_queryLogMessageCacheDBUserVersion;
 - (id)_retrieveBatchOfLogMessagesLimitCount:(int)arg1 limitSize:(int)arg2;
+- (int)_retrieveEndLogMessageCacheIterator;
 - (void)_updateLogMessageCacheDBUserVersion;
+- (BOOL)_usingInMemoryLogMessageCacheFile;
 - (void)closeLogMessageCache;
 - (int)currentRetrivedLogMessageRetryCount;
 - (void)dealloc;
-- (id)initWithLogMessageCacheFilePath:(id)arg1;
+- (id)initWithLogMessageCacheFilePath:(id)arg1 adaptorId:(id)arg2 fromLogFrameworkAdaptor:(BOOL)arg3;
 - (void)insertLogMessageIntoCache:(id)arg1;
 - (BOOL)isLogMessageCacheEmpty;
 - (void)openLogMessageCache;

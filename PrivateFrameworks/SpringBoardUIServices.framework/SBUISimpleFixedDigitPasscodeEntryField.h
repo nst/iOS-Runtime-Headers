@@ -12,6 +12,7 @@
     UIView *_springViewParent;
 }
 
+- (void).cxx_destruct;
 - (void)_appendString:(id)arg1;
 - (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
 - (void)_deleteLastCharacter;
@@ -21,7 +22,6 @@
 - (void)_resetForFailedPasscode:(BOOL)arg1 playUnlockFailedSound:(BOOL)arg2;
 - (void)_setLuminosityBoost:(float)arg1;
 - (struct CGSize { float x1; float x2; })_viewSize;
-- (void)dealloc;
 - (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;
 - (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1 numberOfDigits:(unsigned int)arg2;
 - (void)layoutSubviews;

@@ -6,26 +6,26 @@
     GEODirectionsFeedback *_currentDirectionsFeedback;
     double _currentDirectionsNavigationEndTime;
     double _currentDirectionsNavigationStartTime;
-    GEODirectionsFeedbackCollection *_currentFeedbackCollection;
+    GEODirectionsFeedbackLogMessage *_currentFeedbackLogMessage;
     NSMutableSet *_routeIDs;
 }
 
 @property (nonatomic, retain) GEODirectionsFeedback *currentDirectionsFeedback;
-@property (nonatomic, retain) GEODirectionsFeedbackCollection *currentFeedbackCollection;
+@property (nonatomic, retain) GEODirectionsFeedbackLogMessage *currentFeedbackLogMessage;
 @property (nonatomic, retain) NSMutableSet *routeIDs;
 
 - (void)_updateFeedbackSessionWithResponseID:(id)arg1;
 - (void)addRouteID:(id)arg1 routeIndex:(unsigned int)arg2 stepID:(unsigned int)arg3 completeStep:(BOOL)arg4;
 - (void)addTrafficRerouteFeedback:(id)arg1;
 - (id)currentDirectionsFeedback;
-- (id)currentFeedbackCollection;
+- (id)currentFeedbackLogMessage;
 - (void)dealloc;
 - (void)endFeedbackSession;
 - (void)reset;
 - (id)routeIDs;
 - (void)setAudioFeedback:(struct { int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; BOOL x6; BOOL x7; BOOL x8; BOOL x9; BOOL x10; BOOL x11; BOOL x12; BOOL x13; BOOL x14; BOOL x15; BOOL x16; BOOL x17; BOOL x18; struct { unsigned int x_19_1_1 : 1; unsigned int x_19_1_2 : 1; unsigned int x_19_1_3 : 1; unsigned int x_19_1_4 : 1; unsigned int x_19_1_5 : 1; unsigned int x_19_1_6 : 1; unsigned int x_19_1_7 : 1; unsigned int x_19_1_8 : 1; unsigned int x_19_1_9 : 1; unsigned int x_19_1_10 : 1; unsigned int x_19_1_11 : 1; unsigned int x_19_1_12 : 1; unsigned int x_19_1_13 : 1; unsigned int x_19_1_14 : 1; unsigned int x_19_1_15 : 1; unsigned int x_19_1_16 : 1; unsigned int x_19_1_17 : 1; unsigned int x_19_1_18 : 1; } x19; }*)arg1;
 - (void)setCurrentDirectionsFeedback:(id)arg1;
-- (void)setCurrentFeedbackCollection:(id)arg1;
+- (void)setCurrentFeedbackLogMessage:(id)arg1;
 - (void)setFinalLocation:(id)arg1 asArrival:(BOOL)arg2;
 - (void)setRouteIDs:(id)arg1;
 - (void)setupFeedbackSessionWithResponseID:(id)arg1;

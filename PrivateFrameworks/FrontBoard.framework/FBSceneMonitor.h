@@ -59,7 +59,7 @@
 - (void)sceneManager:(id)arg1 willDestroyScene:(id)arg2;
 - (void)sceneManagerDidEndSceneUpdateSynchronization:(id)arg1;
 - (void)sceneManagerWillBeginSceneUpdateSynchronization:(id)arg1;
-- (void)sceneMonitor:(id)arg1 effectiveSceneSettingsDidChangeWithDiff:(id)arg2;
+- (void)sceneMonitor:(id)arg1 effectiveSceneSettingsDidChangeWithDiff:(id)arg2 previousSettings:(id)arg3;
 - (id)sceneSettings;
 - (void)setDelegate:(id)arg1;
 

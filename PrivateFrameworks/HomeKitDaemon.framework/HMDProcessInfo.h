@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) unsigned int proxyCount;
 @property (nonatomic) unsigned int state;
 @property (getter=isSuspended, nonatomic, readonly) BOOL suspended;
+@property (getter=isTerminated, nonatomic, readonly) BOOL terminated;
 @property (getter=isViewService, nonatomic, readonly) BOOL viewService;
 
 - (void).cxx_destruct;
@@ -37,6 +38,7 @@
 - (BOOL)isBackgrounded;
 - (BOOL)isForegrounded;
 - (BOOL)isSuspended;
+- (BOOL)isTerminated;
 - (BOOL)isViewService;
 - (int)pid;
 - (unsigned int)proxyCount;

@@ -238,9 +238,11 @@
 - (id /* block */)annotationRectTest;
 - (id)attributionsForCurrentRegion;
 - (void)beginStyleAnimationGroup;
+- (id)boundsForSelectedTransitLines;
 - (id)buildingFootprintModel;
 - (id)buildingMarkerAtScreenPoint:(struct CGPoint { float x1; float x2; })arg1 groundPoint:(struct VKPoint { double x1; double x2; double x3; })arg2;
 - (BOOL)buildingsAreVisible;
+- (void)buildingsDidBecome3D:(bool)arg1;
 - (int)buildingsMapMode;
 - (void)cancelTileRequests;
 - (struct Matrix<float, 4, 1> { float x1[4]; })clearColor;
@@ -346,7 +348,8 @@
 - (void)removePersistentOverlay:(id)arg1;
 - (void)removeRasterOverlay:(id)arg1;
 - (void)requestStylesheetAnimation:(id)arg1 targetMapDisplayStyle:(struct DisplayStyle { unsigned char x1; unsigned char x2; unsigned char x3; })arg2 setupHandler:(id /* block */)arg3;
-- (void)reserveStencilRangeBetweenPolygonLayersForScene:(id)arg1 context:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (void)reserveStencilRangeForBuildingsForScene:(id)arg1 context:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
+- (void)reserveStencilRangeForRoadsForScene:(id)arg1 context:(id)arg2 renderQueue:(struct RenderQueue { int (**x1)(); struct shared_ptr<ggl::RenderQueue> { struct RenderQueue {} *x_2_1_1; struct __shared_weak_count {} *x_2_1_2; } x2; }*)arg3;
 - (void)resetTileContainers;
 - (void)resourceManifestManager:(id)arg1 didChangeActiveTileGroup:(id)arg2 fromOldTileGroup:(id)arg3;
 - (void)resourceManifestManagerWillChangeActiveTileGroup:(id)arg1;
@@ -360,6 +363,7 @@
 - (void)selectTransitLineMarker:(id)arg1;
 - (id)selectedAnnotationMarker;
 - (id)selectedLabelMarker;
+- (id)selectedTransitLineIDs;
 - (void)setAdditionalManifestConfiguration:(id)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id /* block */)arg1;
 - (void)setApplicationState:(unsigned char)arg1;

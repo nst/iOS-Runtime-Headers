@@ -18,6 +18,7 @@
 - (void)previewContentController:(id <QLPreviewContentControllerProtocol>)arg1 willMoveToItemAtIndex:(int)arg2;
 - (void)previewContentController:(id <QLPreviewContentControllerProtocol>)arg1 willShowOverlayWithDuration:(double)arg2;
 - (void)previewContentControllerDidExitFullScreen:(id <QLPreviewContentControllerProtocol>)arg1;
+- (void)previewContentControllerPrefersWhitePointAdaptiveStyle:(int)arg1 atIndex:(unsigned int)arg2;
 - (void)showContentsWasTappedInPreviewContentController:(id <QLPreviewContentControllerProtocol>)arg1;
 
 @optional

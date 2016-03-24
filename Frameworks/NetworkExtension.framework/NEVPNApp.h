@@ -4,10 +4,12 @@
 
 @interface NEVPNApp : NEVPN {
     NSArray *_appRules;
+    BOOL _noRestriction;
     int _tunnelType;
 }
 
 @property (copy) NSArray *appRules;
+@property BOOL noRestriction;
 @property int tunnelType;
 
 + (BOOL)supportsSecureCoding;
@@ -25,8 +27,10 @@
 - (id)init;
 - (id)initFromLegacyDictionary:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)noRestriction;
 - (BOOL)removeAppRuleByID:(id)arg1;
 - (void)setAppRules:(id)arg1;
+- (void)setNoRestriction:(BOOL)arg1;
 - (void)setTunnelType:(int)arg1;
 - (int)tunnelType;
 

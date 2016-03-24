@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (int)changeType;
+- (id)description;
 - (id)initWithSYObject:(id)arg1 type:(int)arg2;
 - (id)objectIdentifier;
 - (id)sequencer;

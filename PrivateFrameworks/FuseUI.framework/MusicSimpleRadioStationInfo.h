@@ -20,6 +20,7 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithRadioID:(id)arg1 name:(id)arg2;
 - (BOOL)isBeats1;
+- (BOOL)isEqual:(id)arg1;
 - (id)name;
 - (id)radioID;
 - (void)setIsBeats1:(BOOL)arg1;

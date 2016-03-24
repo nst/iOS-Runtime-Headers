@@ -102,10 +102,15 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
++ (id)hk_componentsWithDays:(int)arg1;
++ (id)hk_oneDay;
+
 - (id)_hk_dateByAddingFilteredInterval:(int)arg1 toDate:(id)arg2;
 - (double)hk_approximateDuration;
 - (id)hk_dateByAddingInterval:(int)arg1 toDate:(id)arg2;
 - (int)hk_maxComponentValue;
+- (id)hk_populatedCalendarGregorianCalendarDefault;
+- (id)hk_translateDateComponentsToCalendar:(id)arg1 calendarUnits:(unsigned int)arg2;
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 

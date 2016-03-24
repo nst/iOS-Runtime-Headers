@@ -6,9 +6,9 @@
     NSString *_templateImageName;
 }
 
-@property (nonatomic, readonly, retain) NSString *templateImageName;
+@property (nonatomic, readonly) NSString *templateImageName;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithTemplateImageName:(id)arg1;

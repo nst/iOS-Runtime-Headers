@@ -12,6 +12,7 @@
     MRNowPlayingArtwork *_nowPlayingArtwork;
     NSDictionary *_nowPlayingInfo;
     struct _MROrigin { } *_origin;
+    id /* block */ _playbackQueueCallback;
     unsigned int _routeDiscoveryMode;
     NSArray *_supportedCommands;
 }
@@ -22,6 +23,7 @@
 @property (nonatomic, retain) MRNowPlayingArtwork *nowPlayingArtwork;
 @property (nonatomic, copy) NSDictionary *nowPlayingInfo;
 @property (nonatomic, readonly) struct _MROrigin { }*origin;
+@property (nonatomic, copy) id /* block */ playbackQueueCallback;
 @property (nonatomic) unsigned int routeDiscoveryMode;
 @property (nonatomic, copy) NSArray *supportedCommands;
 
@@ -35,12 +37,14 @@
 - (id)nowPlayingArtwork;
 - (id)nowPlayingInfo;
 - (struct _MROrigin { }*)origin;
+- (id /* block */)playbackQueueCallback;
 - (void)removeCommandHandlerBlockForKey:(id)arg1;
 - (unsigned int)routeDiscoveryMode;
 - (void)setCanBeNowPlayingApp:(BOOL)arg1;
 - (void)setIsOverrideApp:(BOOL)arg1;
 - (void)setNowPlayingArtwork:(id)arg1;
 - (void)setNowPlayingInfo:(id)arg1;
+- (void)setPlaybackQueueCallback:(id /* block */)arg1;
 - (void)setRouteDiscoveryMode:(unsigned int)arg1;
 - (void)setSupportedCommands:(id)arg1;
 - (id)supportedCommands;

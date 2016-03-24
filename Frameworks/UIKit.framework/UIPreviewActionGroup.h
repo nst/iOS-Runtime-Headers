@@ -23,6 +23,7 @@
 @property (nonatomic, copy) NSString *title;
 
 + (id)_actionGroupWithPreviewMenuItemWithSubactions:(id)arg1;
++ (id)_actionGroupWithTitle:(id)arg1 style:(int)arg2 color:(id)arg3 actions:(id)arg4;
 + (id)actionGroupWithTitle:(id)arg1 style:(int)arg2 actions:(id)arg3;
 
 - (void).cxx_destruct;

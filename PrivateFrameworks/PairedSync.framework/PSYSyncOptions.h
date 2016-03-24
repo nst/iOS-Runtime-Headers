@@ -4,15 +4,19 @@
 
 @interface PSYSyncOptions : NSObject <NSSecureCoding> {
     BOOL _dryRun;
+    NSUUID *_pairingIdentifier;
+    NSUUID *_sessionIdentifier;
+    unsigned int _syncSessionType;
     BOOL _terminateDuringDryRun;
     PSYTestInput *_testInput;
-    NSUUID *_transactionID;
 }
 
 @property (nonatomic) BOOL dryRun;
+@property (nonatomic, retain) NSUUID *pairingIdentifier;
+@property (nonatomic, retain) NSUUID *sessionIdentifier;
+@property (nonatomic) unsigned int syncSessionType;
 @property (nonatomic) BOOL terminateDuringDryRun;
 @property (nonatomic, retain) PSYTestInput *testInput;
-@property (nonatomic, copy) NSUUID *transactionID;
 
 + (BOOL)supportsSecureCoding;
 
@@ -21,12 +25,16 @@
 - (BOOL)dryRun;
 - (void)encodeWithCoder:(id)arg1;
 - (id)initWithCoder:(id)arg1;
+- (id)pairingIdentifier;
+- (id)sessionIdentifier;
 - (void)setDryRun:(BOOL)arg1;
+- (void)setPairingIdentifier:(id)arg1;
+- (void)setSessionIdentifier:(id)arg1;
+- (void)setSyncSessionType:(unsigned int)arg1;
 - (void)setTerminateDuringDryRun:(BOOL)arg1;
 - (void)setTestInput:(id)arg1;
-- (void)setTransactionID:(id)arg1;
+- (unsigned int)syncSessionType;
 - (BOOL)terminateDuringDryRun;
 - (id)testInput;
-- (id)transactionID;
 
 @end

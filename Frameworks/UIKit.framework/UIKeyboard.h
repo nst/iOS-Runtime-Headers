@@ -21,6 +21,7 @@
         float bottom; 
         float right; 
     } m_unfocusedFocusGuideOutsets;
+    BOOL m_useRecentsAlert;
 }
 
 @property (nonatomic) BOOL caretBlinks;
@@ -81,9 +82,11 @@
 - (void)_setRenderConfig:(id)arg1;
 - (void)_setSplit:(BOOL)arg1;
 - (void)_setUndocked:(BOOL)arg1;
+- (void)_setUseRecentsAlert:(BOOL)arg1;
 - (id)_touchPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)_touchesInsideShouldHideCalloutBar;
 - (id)_typeCharacter:(id)arg1 withError:(struct CGPoint { float x1; float x2; })arg2 shouldTypeVariants:(BOOL)arg3 baseKeyForVariants:(BOOL)arg4;
+- (BOOL)_useRecentsAlert;
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (void)acceptAutocorrection;
 - (void)activate;

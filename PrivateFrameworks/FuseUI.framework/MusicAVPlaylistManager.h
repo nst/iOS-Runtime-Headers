@@ -4,6 +4,4 @@
 
 @interface MusicAVPlaylistManager : MPUAVPlaylistManager
 
-- (void)addPlaybackContext:(id)arg1 toHardQueueWithInsertionType:(int)arg2 completionHandler:(id /* block */)arg3;
-
 @end

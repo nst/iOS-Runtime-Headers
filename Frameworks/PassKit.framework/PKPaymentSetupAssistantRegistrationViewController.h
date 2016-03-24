@@ -2,9 +2,15 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPaymentSetupAssistantRegistrationViewController : PKPaymentSetupViewController {
+@interface PKPaymentSetupAssistantRegistrationViewController : PKPaymentSetupViewController <PKPaymentSetupViewControllerDelegate> {
+    <PKPaymentSetupViewControllerDelegate> *_externalDelegate;
     UIButton *_skipButton;
 }
+
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
 
 + (BOOL)bridgeSetupAssistantNeedsToRunReturningRequirements:(unsigned int*)arg1;
 + (id)defaultWebServiceForContext:(int)arg1;
@@ -13,10 +19,17 @@
 
 - (id)_bridgeContextDefaultLocalCredential;
 - (id)_deviceSpecificLocalizedStringKeyForKey:(id)arg1;
+- (void)_setExternalDelegate:(id)arg1;
 - (void)dealloc;
+- (id)delegate;
 - (id)initWithPaymentWebService:(id)arg1 context:(int)arg2 delegate:(id)arg3;
 - (void)preflightWithCompletion:(id /* block */)arg1;
 - (void)privacyButtonTouched:(id)arg1;
+- (void)setDelegate:(id)arg1;
+- (void)viewController:(id)arg1 didShowProvisioningError:(id)arg2;
+- (void)viewControllerDidShowEligibilityIssue:(id)arg1;
+- (void)viewControllerDidTerminateSetupFlow:(id)arg1;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 
 @end

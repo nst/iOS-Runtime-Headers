@@ -15,7 +15,7 @@
 @property (nonatomic) <_SBUIWidgetHost> *widgetHost;
 @property (nonatomic, copy) NSString *widgetIdentifier;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (void)hostDidDismiss;
 - (void)hostDidPresent;
 - (void)hostWillDismiss;

@@ -89,6 +89,9 @@
 - (id)messageBodyUpdatingFlags:(BOOL)arg1;
 - (id)messageData;
 - (BOOL)messageData:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
+- (id)messageDataHolder;
+- (BOOL)messageDataHolder:(id*)arg1 messageSize:(unsigned int*)arg2 isComplete:(BOOL*)arg3 downloadIfNecessary:(BOOL)arg4;
+- (id)messageDataHolderIsComplete:(BOOL*)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)messageDataIsComplete:(BOOL*)arg1 downloadIfNecessary:(BOOL)arg2;
 - (id)messageID;
 - (long long)messageIDHash;

@@ -9,7 +9,6 @@
     NSMutableArray *_devices;
     BOOL _devicesLoaded;
     BOOL _isEnabled;
-    IDSDevice *_localDevice;
     NSMapTable *_registrationDelegateToInfo;
     NSString *_service;
     NSString *_serviceToken;
@@ -50,6 +49,9 @@
 @property (nonatomic, readonly, retain) NSString *uniqueID;
 @property (nonatomic, readonly, retain) NSArray *vettedAliases;
 
+- (void)_callConnectedDevicesChanged;
+- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4;
+- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4 group:(id)arg5;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1 group:(id)arg2;
 - (void)_callDevicesChanged;
@@ -62,6 +64,7 @@
 - (void)_loadCachedDevices;
 - (id)_objectForKey:(id)arg1;
 - (id)_registeredURIs;
+- (void)_reloadCachedDevices;
 - (void)_reregisterAndReidentify:(BOOL)arg1;
 - (void)_setIsEnabled:(BOOL)arg1;
 - (void)_setObject:(id)arg1 forKey:(id)arg2;
@@ -85,6 +88,7 @@
 - (id)aliases;
 - (void)authenticateAccount;
 - (BOOL)canSend;
+- (id)connectedDevices;
 - (id)dateRegistered;
 - (void)deactivateAndPurgeIdentify;
 - (void)dealloc;
@@ -92,7 +96,6 @@
 - (void)device:(id)arg1 nsuuidChanged:(id)arg2;
 - (id)devices;
 - (id)displayName;
-- (id)init;
 - (id)initWithDictionary:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3 delegateContext:(id)arg4;
 - (id)initWithLoginID:(id)arg1 uniqueID:(id)arg2 serviceName:(id)arg3 delegateContext:(id)arg4;
 - (BOOL)isActive;

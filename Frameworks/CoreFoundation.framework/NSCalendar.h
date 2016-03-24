@@ -140,6 +140,8 @@
 
 + (id)hk_gregorianCalendarWithUTCTimeZone;
 
+- (id)hk_activitySummaryDateComponentsFromDate:(id)arg1;
+- (id)hk_dateBySubtractingDays:(unsigned int)arg1 fromDate:(id)arg2;
 - (id)hk_startOfDateByAddingDays:(int)arg1 toDate:(id)arg2;
 - (id)hk_startOfDateBySubtractingDays:(int)arg1 fromDate:(id)arg2;
 - (id)hk_startOfFitnessWeekBeforeDate:(id)arg1;
@@ -152,6 +154,8 @@
 - (BOOL)_maps_isDateInToday:(id)arg1 inTimeZone:(id)arg2;
 - (BOOL)_maps_isDateInTomorrow:(id)arg1 inTimeZone:(id)arg2;
 - (id)_maps_offsetDate:(id)arg1 toTimeZone:(id)arg2;
+- (id)_maps_relativeDateStringForDate:(id)arg1 context:(int)arg2 inTimeZone:(id)arg3;
+- (id)_maps_transitRelativeDateStringForDate:(id)arg1 context:(int)arg2 inTimeZone:(id)arg3;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -195,8 +199,16 @@
 
 - (int)_cd_daysFromDate:(id)arg1 toDate:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
 
+- (id)hd_predicateForDeletedObjectsCreatedBeforeDate:(id)arg1 minusDays:(unsigned int)arg2;
+- (id)hd_predicateForDeletedObjectsCreatedOnOrAfterDate:(id)arg1 minusDays:(unsigned int)arg2;
+- (id)hd_predicateForSamplesWithTypes:(id)arg1 endingAfterDate:(id)arg2 minusDays:(unsigned int)arg3;
+- (id)hd_predicateForSamplesWithTypes:(id)arg1 endingBeforeDate:(id)arg2 minusDays:(unsigned int)arg3;
+
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
+
+- (id)hk_disambiguatedDSTDatesForComponents:(id)arg1;
 - (id)hk_startOfMonthForDate:(id)arg1;
 - (id)hk_startOfTomorrowForDate:(id)arg1;
 - (id)hk_yesterdayAtNoonForDate:(id)arg1;

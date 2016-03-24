@@ -8,8 +8,13 @@
     PUSectionedGridLayout *_collectionViewLayout;
     PUGridRenderedStrip *_currentRenderedStrip;
     NSString *_displayTitle;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _lastItemPixelSize;
     int _maxRowsPerSection;
     float _pendingContentWidth;
+    PHAssetResourceQualityClass *_qualityClass;
     BOOL _summarizeSections;
     struct CGSize { 
         float width; 
@@ -29,8 +34,10 @@
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *displayTitle;
 @property (readonly) unsigned int hash;
+@property (nonatomic) struct CGSize { float x1; float x2; } lastItemPixelSize;
 @property (nonatomic, readonly) int maxRowsPerSection;
 @property (nonatomic) float pendingContentWidth;
+@property (nonatomic, retain) PHAssetResourceQualityClass *qualityClass;
 @property (nonatomic, readonly) NSString *renderedStripsElementKind;
 @property (nonatomic, readonly) NSString *sectionHeaderElementKind;
 @property (nonatomic) BOOL summarizeSections;
@@ -64,12 +71,14 @@
 - (id)imageDataForAsset:(id)arg1 itemContentScale:(float)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (int)imageDeliveryMode;
 - (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
+- (struct CGSize { float x1; float x2; })lastItemPixelSize;
 - (int)maxRowsPerSection;
 - (void)modelDidChange:(id)arg1;
 - (id)newCollectionViewLayout;
 - (float)pendingContentWidth;
 - (void)prepareForTransitionFromZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
 - (void)prepareForTransitionToZoomLevelInfo:(id)arg1 animated:(BOOL)arg2 interactive:(BOOL)arg3;
+- (id)qualityClass;
 - (void)registerReusableViewClassesForCollectionView:(id)arg1;
 - (void)renderedStrip:(id)arg1 enumerateAssetsForVisualSection:(int)arg2 inVisualItemRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 usingBlock:(id /* block */)arg4;
 - (id)renderedStrip:(id)arg1 imageDataForAsset:(id)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
@@ -83,7 +92,9 @@
 - (id)sectionedGridLayoutAnchorItemForAdjustingContentOffset:(id)arg1;
 - (id)sectionedGridLayoutName:(id)arg1;
 - (BOOL)sectionedGridLayoutTransitionAutoAdjustContentOffsetEnabled:(id)arg1;
+- (void)setLastItemPixelSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setPendingContentWidth:(float)arg1;
+- (void)setQualityClass:(id)arg1;
 - (void)setSummarizeSections:(BOOL)arg1;
 - (void)setUseFloatingHeaderGroupName:(BOOL)arg1;
 - (void)setZoomableGridViewController:(id)arg1;

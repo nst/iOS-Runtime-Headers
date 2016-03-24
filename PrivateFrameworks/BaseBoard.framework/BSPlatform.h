@@ -4,10 +4,14 @@
 
 @interface BSPlatform : NSObject
 
+@property (nonatomic, readonly) int deviceClass;
 @property (nonatomic, readonly) BOOL hasGasGauge;
 @property (nonatomic, readonly) BOOL hasOrbCapability;
 @property (getter=isInternalInstall, nonatomic, readonly) BOOL internalInstall;
 @property (nonatomic, readonly, copy) NSString *localizedProductName;
+@property (nonatomic, readonly) float mainScreenOrientation;
+@property (nonatomic, readonly) int mainScreenPitch;
+@property (nonatomic, readonly) float mainScreenScale;
 @property (getter=isMultiCore, nonatomic, readonly) BOOL multiCore;
 @property (nonatomic, readonly, copy) NSString *productBuildVersion;
 @property (nonatomic, readonly, copy) NSString *productClass;
@@ -18,11 +22,16 @@
 
 + (id)sharedInstance;
 
+- (int)deviceClass;
 - (BOOL)hasGasGauge;
 - (BOOL)hasOrbCapability;
+- (id)init;
 - (BOOL)isInternalInstall;
 - (BOOL)isMultiCore;
 - (id)localizedProductName;
+- (float)mainScreenOrientation;
+- (int)mainScreenPitch;
+- (float)mainScreenScale;
 - (id)productBuildVersion;
 - (id)productClass;
 - (id)productHardwareModel;

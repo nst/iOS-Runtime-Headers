@@ -2,9 +2,11 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDIDSIncomingResponse : NSObject {
+@interface HDIDSIncomingResponse : NSObject <HDNanoSyncDescription> {
     NSData *_data;
+    IDSDevice *_fromDevice;
     NSString *_idsIdentifier;
+    HDIDSMessageCenter *_messageCenter;
     unsigned short _messageID;
     id _pbResponse;
     NSString *_requestIDSIdentifier;
@@ -13,24 +15,35 @@
 }
 
 @property (nonatomic, retain) NSData *data;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (nonatomic, retain) IDSDevice *fromDevice;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *idsIdentifier;
+@property (nonatomic) HDIDSMessageCenter *messageCenter;
 @property (nonatomic) unsigned short messageID;
 @property (nonatomic, retain) id pbResponse;
 @property (nonatomic, copy) NSString *requestIDSIdentifier;
 @property (nonatomic, retain) NSDictionary *requestPersistentUserInfo;
 @property (nonatomic, retain) NSDate *requestSent;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
 - (id)data;
 - (id)description;
+- (id)fromDevice;
 - (id)idsIdentifier;
+- (id)messageCenter;
 - (unsigned short)messageID;
+- (id)nanoSyncDescription;
 - (id)pbResponse;
 - (id)requestIDSIdentifier;
 - (id)requestPersistentUserInfo;
 - (id)requestSent;
 - (void)setData:(id)arg1;
+- (void)setFromDevice:(id)arg1;
 - (void)setIdsIdentifier:(id)arg1;
+- (void)setMessageCenter:(id)arg1;
 - (void)setMessageID:(unsigned short)arg1;
 - (void)setPbResponse:(id)arg1;
 - (void)setRequestIDSIdentifier:(id)arg1;

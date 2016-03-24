@@ -79,6 +79,7 @@
 - (BOOL)_disableAutomaticKeyboardBehavior;
 - (BOOL)_disableAutomaticKeyboardUI;
 - (id)_editingDelegate;
+- (BOOL)_enableAutomaticKeyboardPressDone;
 - (void)_endPinningInputViews;
 - (void)_expandSelectionToBackwardDeletionCluster;
 - (void)_expandSelectionToStartOfWordBeforeCaretSelection;
@@ -132,9 +133,6 @@
 - (void)_overrideInputViewNextResponderWithResponder:(id)arg1;
 - (BOOL)_ownsInputAccessoryView;
 - (void)_phraseBoundaryGesture:(id)arg1;
-- (void)_physicalButtonsBegan:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsCancelled:(id)arg1 withEvent:(id)arg2;
-- (void)_physicalButtonsEnded:(id)arg1 withEvent:(id)arg2;
 - (id)_positionAtStartOfWords:(unsigned int)arg1 beforePosition:(id)arg2;
 - (id)_positionFromPosition:(id)arg1 inDirection:(int)arg2 offset:(int)arg3 withAffinityDownstream:(BOOL)arg4;
 - (id)_positionFromPosition:(id)arg1 pastTextUnit:(int)arg2 inDirection:(int)arg3;

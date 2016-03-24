@@ -6,6 +6,7 @@
     NSString *_label;
 }
 
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (BOOL)_alwaysHandleScrollerMouseEvent;
 - (void)_controlTouchBegan:(id)arg1 withEvent:(id)arg2;
 - (void)_controlTouchEnded:(id)arg1 withEvent:(id)arg2;

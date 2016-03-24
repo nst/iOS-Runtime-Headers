@@ -6,6 +6,7 @@
     HMDAccessory *_accessory;
     NSString *_associatedServiceType;
     NSArray *_characteristics;
+    BOOL _hidden;
     NSNumber *_instanceID;
     NSString *_name;
     NSString *_providedName;
@@ -16,6 +17,7 @@
 @property (nonatomic, readonly) NSString *associatedServiceType;
 @property (nonatomic, readonly, copy) NSArray *characteristics;
 @property (nonatomic, readonly, copy) NSString *contextID;
+@property (getter=isHidden, nonatomic) BOOL hidden;
 @property (nonatomic, copy) NSNumber *instanceID;
 @property (getter=getName, nonatomic, copy) NSString *name;
 @property (nonatomic, retain) NSString *providedName;
@@ -26,6 +28,7 @@
 
 - (void).cxx_destruct;
 - (void)_readNameCharacterisiticIfNeeded:(id)arg1;
+- (void)_shouldServiceBeHidden;
 - (void)_updateName:(id)arg1;
 - (void)_updateProvidedName:(id)arg1;
 - (id)accessory;
@@ -43,8 +46,10 @@
 - (id)initWithCoder:(id)arg1;
 - (id)initWithService:(id)arg1 accessory:(id)arg2;
 - (id)instanceID;
+- (BOOL)isHidden;
 - (id)providedName;
 - (id)serviceType;
+- (void)setHidden:(BOOL)arg1;
 - (void)setInstanceID:(id)arg1;
 - (void)setName:(id)arg1;
 - (void)setProvidedName:(id)arg1;

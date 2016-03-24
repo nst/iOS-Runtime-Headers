@@ -10,6 +10,8 @@
     NSURL *_url;
 }
 
++ (BOOL)supportsSecureCoding;
+
 - (id)URL;
 - (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (void)dealloc;

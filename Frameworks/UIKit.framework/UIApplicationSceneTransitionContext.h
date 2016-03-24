@@ -13,6 +13,7 @@
 @property (nonatomic) BOOL safeMode;
 @property (nonatomic) BOOL shouldTakeKeyboardFocus;
 @property (nonatomic) double userLaunchEventTime;
+@property (nonatomic) BOOL waitForBackgroundTaskCompletion;
 @property (nonatomic) double watchdogExtension;
 @property (nonatomic) int watchdogPolicy;
 @property (nonatomic) double watchdogScaleFactor;
@@ -33,9 +34,11 @@
 - (void)setSafeMode:(BOOL)arg1;
 - (void)setShouldTakeKeyboardFocus:(BOOL)arg1;
 - (void)setUserLaunchEventTime:(double)arg1;
+- (void)setWaitForBackgroundTaskCompletion:(BOOL)arg1;
 - (BOOL)shouldTakeKeyboardFocus;
 - (double)userLaunchEventTime;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (BOOL)waitForBackgroundTaskCompletion;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 

@@ -3,6 +3,7 @@
  */
 
 @interface WBUFormAutoCompleteState : NSObject <UIActionSheetDelegate, WBUCreditCardCaptureViewControllerDelegate> {
+    BOOL _URLIsAllowedByWhiteList;
     int _action;
     BOOL _canAutoComplete;
     NSArray *_credentialMatches;
@@ -13,6 +14,7 @@
     unsigned int _formType;
     NSDictionary *_formValues;
     BOOL _gatheringFormValues;
+    BOOL _hasDeterminedIfURLIsAllowedByWhiteList;
     NSMutableDictionary *_matchesByCompletion;
     WBSMultiRoundAutoFillManager *_multiRoundAutoFillManager;
     NSArray *_relatedCredentialMatches;

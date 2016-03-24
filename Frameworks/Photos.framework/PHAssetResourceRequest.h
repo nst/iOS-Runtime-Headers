@@ -3,7 +3,7 @@
  */
 
 @interface PHAssetResourceRequest : NSOperation {
-    PHAssetResource *_assetResource;
+    PHInternalAssetResource *_assetResource;
     NSObject<OS_dispatch_semaphore> *_cloudResourceDownloadWaitSemaphore;
     int _cloudResourceRequestID;
     id /* block */ _dataHandler;

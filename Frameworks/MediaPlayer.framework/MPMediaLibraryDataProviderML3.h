@@ -11,6 +11,7 @@
     BOOL _hasScheduledEventPosting;
     ML3MusicLibrary *_library;
     int _refreshState;
+    NSOperationQueue *_setValuesWidthLimitedQueue;
     NSString *_uniqueIdentifier;
 }
 
@@ -140,6 +141,9 @@
 - (void)removeItemsWithIdentifiers:(id)arg1 atFilteredIndexes:(id)arg2 inPlaylistWithIdentifier:(long long)arg3 completionBlock:(id /* block */)arg4;
 - (BOOL)removeItemsWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2;
 - (BOOL)removePlaylistWithIdentifier:(long long)arg1;
+- (void)sdk_addItemWithOpaqueID:(id)arg1 withCompletion:(id /* block */)arg2;
+- (void)sdk_addItemWithOpaqueIdentifier:(id)arg1 toPlaylistWithIdentifier:(long long)arg2 completionBlock:(id /* block */)arg3;
+- (long long)sdk_addPlaylistWithValuesForProperties:(id)arg1;
 - (void)setLibrary:(id)arg1;
 - (void)setLibraryContainerFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(id)arg2;
 - (void)setLibraryEntityFilterPredicatesWithCloudFilteringType:(int)arg1 additionalFilterPredicates:(id)arg2;

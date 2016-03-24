@@ -14,7 +14,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) <HDHealthDaemon> *healthDaemon;
-@property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
+@property (nonatomic, readonly) NSObject<OS_dispatch_queue> *queue;
 @property (nonatomic) BOOL registeredForAchievementNotifications;
 @property (readonly) Class superclass;
 
@@ -27,6 +27,8 @@
 - (id)client;
 - (id)clientInterface;
 - (void)dealloc;
+- (void)deleteAchievementWithUUID:(id)arg1 completion:(id /* block */)arg2;
+- (void)deleteAllAchievementsWithCompletion:(id /* block */)arg1;
 - (id)diagnosticDescription;
 - (void)fetchAchievementsWithCompletedDateBetweenStart:(id)arg1 end:(id)arg2 completion:(id /* block */)arg3;
 - (void)fetchNumberOfUnviewedAchievementsWithCompletion:(id /* block */)arg1;
@@ -43,8 +45,8 @@
 - (void)runAchievementsFixupAsDryRun:(BOOL)arg1 completion:(id /* block */)arg2;
 - (id)serverInterface;
 - (void)setClient:(id)arg1;
+- (void)setCurrentActivityCacheOverrideDate:(id)arg1 timeZone:(id)arg2 completion:(id /* block */)arg3;
 - (void)setHealthDaemon:(id)arg1;
-- (void)setQueue:(id)arg1;
 - (void)setRegisteredForAchievementNotifications:(BOOL)arg1;
 
 @end

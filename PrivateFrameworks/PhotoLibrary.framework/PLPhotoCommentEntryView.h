@@ -34,6 +34,7 @@
 - (void)textViewDidChange:(id)arg1;
 - (void)textViewDidEndEditing:(id)arg1;
 - (BOOL)textViewShouldBeginEditing:(id)arg1;
+- (BOOL)textViewShouldEndEditing:(id)arg1;
 - (id)trimmedText;
 
 @end

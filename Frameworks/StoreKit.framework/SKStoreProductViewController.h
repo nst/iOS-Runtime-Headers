@@ -75,6 +75,7 @@
 - (void)loadProductWithRequest:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)loadProductWithURL:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)loadView;
+- (int)preferredStatusBarStyle;
 - (int)productPageStyle;
 - (id)promptString;
 - (id)rightBarButtonTitle;

@@ -24,6 +24,7 @@
 
 - (void).cxx_destruct;
 - (void)addExtraLinesIfNeededToTextStorage:(id)arg1 editedRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
+- (BOOL)anyAttachmentInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 textStorage:(id)arg2;
 - (BOOL)canChangeStyleForSelectedRanges:(id)arg1 inTextStorage:(id)arg2;
 - (BOOL)canIndentTextView:(struct UITextView { Class x1; }*)arg1 byDelta:(int)arg2;
 - (void)cleanupTextStorage:(id)arg1 afterProcessingEditing:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 changeInLength:(int)arg4;
@@ -37,6 +38,7 @@
 - (id)indentParagraphStyle:(id)arg1 byAmount:(int)arg2;
 - (void)indentRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 byAmount:(int)arg2 inTextStorage:(id)arg3 textView:(struct UITextView { Class x1; }*)arg4;
 - (id)init;
+- (void)insertNewlineAtCharacterIndex:(unsigned int)arg1 textStorage:(id)arg2;
 - (BOOL)insertNewlineInTextView:(struct UITextView { Class x1; }*)arg1;
 - (BOOL)insertedSpaceInTextView:(struct UITextView { Class x1; }*)arg1 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)insertedText:(id)arg1 replacementRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 inTextView:(struct UITextView { Class x1; }*)arg3;

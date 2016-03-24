@@ -7,7 +7,6 @@
     NSSet *_desiredKeys;
     id /* block */ _fetchAggregatorCompletionBlock;
     BOOL _fetchAssetContents;
-    NSMutableDictionary *_fetchErrorsByRecordID;
     NSObject<OS_dispatch_group> *_fetchGroup;
     NSMutableDictionary *_fetchInfosByOrder;
     NSObject<OS_dispatch_queue> *_fetchQueue;
@@ -25,7 +24,6 @@
 @property (nonatomic, retain) NSSet *desiredKeys;
 @property (nonatomic, copy) id /* block */ fetchAggregatorCompletionBlock;
 @property (nonatomic) BOOL fetchAssetContents;
-@property (nonatomic, retain) NSMutableDictionary *fetchErrorsByRecordID;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *fetchGroup;
 @property (nonatomic, retain) NSMutableDictionary *fetchInfosByOrder;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *fetchQueue;
@@ -41,6 +39,7 @@
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (void)_addRecordFetchInfo:(id)arg1;
+- (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_finishRecordFetchAggregator;
 - (void)_flushFetchedRecordsToConsumerLocked;
 - (void)_flushFetchedRecordsToConsumerNoOrderingLocked;
@@ -55,7 +54,6 @@
 - (id)desiredKeys;
 - (id /* block */)fetchAggregatorCompletionBlock;
 - (BOOL)fetchAssetContents;
-- (id)fetchErrorsByRecordID;
 - (id)fetchGroup;
 - (id)fetchInfosByOrder;
 - (id)fetchQueue;
@@ -73,7 +71,6 @@
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchAggregatorCompletionBlock:(id /* block */)arg1;
 - (void)setFetchAssetContents:(BOOL)arg1;
-- (void)setFetchErrorsByRecordID:(id)arg1;
 - (void)setFetchGroup:(id)arg1;
 - (void)setFetchInfosByOrder:(id)arg1;
 - (void)setFetchQueue:(id)arg1;

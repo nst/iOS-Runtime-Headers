@@ -9,8 +9,10 @@
         unsigned int date : 1; 
         unsigned int updateType : 1; 
         unsigned int shouldPlayLightsAndSirens : 1; 
+        unsigned int trafficRestricted : 1; 
     } _has;
     BOOL _shouldPlayLightsAndSirens;
+    BOOL _trafficRestricted;
     unsigned int _updateType;
 }
 
@@ -19,8 +21,10 @@
 @property (nonatomic, readonly) BOOL hasBulletin;
 @property (nonatomic) BOOL hasDate;
 @property (nonatomic) BOOL hasShouldPlayLightsAndSirens;
+@property (nonatomic) BOOL hasTrafficRestricted;
 @property (nonatomic) BOOL hasUpdateType;
 @property (nonatomic) BOOL shouldPlayLightsAndSirens;
+@property (nonatomic) BOOL trafficRestricted;
 @property (nonatomic) unsigned int updateType;
 
 - (void).cxx_destruct;
@@ -33,6 +37,7 @@
 - (BOOL)hasBulletin;
 - (BOOL)hasDate;
 - (BOOL)hasShouldPlayLightsAndSirens;
+- (BOOL)hasTrafficRestricted;
 - (BOOL)hasUpdateType;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
@@ -42,10 +47,13 @@
 - (void)setDate:(double)arg1;
 - (void)setHasDate:(BOOL)arg1;
 - (void)setHasShouldPlayLightsAndSirens:(BOOL)arg1;
+- (void)setHasTrafficRestricted:(BOOL)arg1;
 - (void)setHasUpdateType:(BOOL)arg1;
 - (void)setShouldPlayLightsAndSirens:(BOOL)arg1;
+- (void)setTrafficRestricted:(BOOL)arg1;
 - (void)setUpdateType:(unsigned int)arg1;
 - (BOOL)shouldPlayLightsAndSirens;
+- (BOOL)trafficRestricted;
 - (unsigned int)updateType;
 - (void)writeTo:(id)arg1;
 

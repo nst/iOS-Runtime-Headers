@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSTextCheckingResult : NSObject <NSCoding, NSCopying>
+@interface NSTextCheckingResult : NSObject <NSCopying, NSSecureCoding>
 
 @property (readonly) struct _NSRange { unsigned int x1; unsigned int x2; } range;
 @property (readonly) unsigned long long resultType;
@@ -22,6 +22,7 @@
 + (id)regularExpressionCheckingResultWithRanges:(struct _NSRange { unsigned int x1; unsigned int x2; }*)arg1 count:(unsigned int)arg2 regularExpression:(id)arg3;
 + (id)replacementCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 replacementString:(id)arg2;
 + (id)spellCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
++ (BOOL)supportsSecureCoding;
 + (id)transitInformationCheckingResultWithRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 components:(id)arg2;
 
 - (id)URL;

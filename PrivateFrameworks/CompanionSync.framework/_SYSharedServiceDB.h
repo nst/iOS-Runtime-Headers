@@ -8,14 +8,24 @@
         struct _os_lock_type_handoff_s {} *osl_type; 
         unsigned long _osl_handoff_opaque[1]; 
     } _lock;
+    NSString *_name;
 }
 
+@property (getter=_dbPath, nonatomic, readonly) NSString *dbPath;
+
++ (void)_releaseSharedInstanceForServiceName:(id)arg1;
++ (void)initialize;
++ (void)pairingStorePathWasReset;
 + (id)sharedInstanceForServiceName:(id)arg1;
 
+- (void).cxx_destruct;
+- (void)_LOCKED_ensureSchemaVersionsTableInDB:(struct sqlite3 { }*)arg1;
 - (int)_LOCKED_getClientVersion:(id)arg1;
 - (BOOL)_LOCKED_hasSchemaVersionForClient:(id)arg1;
 - (void)_LOCKED_setVersion:(int)arg1 forClient:(id)arg2;
 - (BOOL)_createOrOpenDBForServiceName:(id)arg1 error:(id*)arg2;
+- (id)_dbPath;
+- (BOOL)_ensureDBExists;
 - (BOOL)_ensureParentExists:(id)arg1 error:(id*)arg2;
 - (void)_ensureSchemaVersionsTable;
 - (BOOL)_runTransactionBlock:(id /* block */)arg1 exclusive:(BOOL)arg2;

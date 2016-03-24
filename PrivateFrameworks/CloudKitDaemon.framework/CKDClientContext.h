@@ -6,7 +6,8 @@
     CKDMMCS *_MMCS;
     CKDAccount *_account;
     CKAccountInfo *_accountInfoOverride;
-    BOOL _allowsPowerNapScheduling;
+    CKDAppContainerIntersectionMetadata *_appContainerIntersectionMetadata;
+    CKDAppContainerTuple *_appContainerTuple;
     NSString *_applicationAssetDbDirectory;
     NSBundle *_applicationBundle;
     NSString *_applicationBundleID;
@@ -17,6 +18,7 @@
     NSString *_applicationFileDownloadDirectory;
     NSURL *_applicationIcon;
     NSString *_applicationMMCSDirectory;
+    CKDApplicationMetadata *_applicationMetadata;
     NSString *_applicationPackageDownloadDirectory;
     NSString *_applicationPackageUploadDirectory;
     NSString *_applicationRecordCacheDirectory;
@@ -24,20 +26,17 @@
     CKDPublicIdentityLookupService *_backgroundPublicIdentityLookupService;
     CKDZoneGatekeeper *_backgroundZoneGatekeeper;
     int _cachedEnvironment;
-    BOOL _canAccessProtectionData;
-    BOOL _canSetDeviceIdentifier;
+    BOOL _captureResponseHTTPHeaders;
     CKDServerConfiguration *_config;
     NSString *_containerHardwareIDHash;
     CKContainerID *_containerID;
     NSString *_containerScopedUserID;
     NSString *_contextID;
-    int _darkWakeEnabled;
     NSMutableDictionary *_fakeErrorByClassName;
     BOOL _finishedAppProxySetup;
     CKDFlowControlManager *_flowControlManager;
     CKDPublicIdentityLookupService *_foregroundPublicIdentityLookupService;
     CKDZoneGatekeeper *_foregroundZoneGatekeeper;
-    BOOL _hasAllowAccessDuringBuddyEntitlement;
     BOOL _hasDataContainer;
     BOOL _isForClouddInternalUse;
     CKDMescalSession *_mescalSession;
@@ -53,7 +52,6 @@
     NSString *_sourceApplicationBundleID;
     CKTimeLogger *_timeLogger;
     int _type;
-    int _usesAPSPublicToken;
 }
 
 @property (retain) CKDMMCS *MMCS;
@@ -61,6 +59,8 @@
 @property (nonatomic, readonly) CKAccountInfo *accountInfoOverride;
 @property (nonatomic, readonly) BOOL allowsCellularAccess;
 @property (nonatomic) BOOL allowsPowerNapScheduling;
+@property (nonatomic, retain) CKDAppContainerIntersectionMetadata *appContainerIntersectionMetadata;
+@property (nonatomic, retain) CKDAppContainerTuple *appContainerTuple;
 @property (nonatomic, retain) NSString *applicationAssetDbDirectory;
 @property (nonatomic, readonly) NSBundle *applicationBundle;
 @property (nonatomic, readonly) NSString *applicationBundleID;
@@ -70,7 +70,9 @@
 @property (nonatomic, readonly) NSString *applicationDisplayName;
 @property (nonatomic, retain) NSString *applicationFileDownloadDirectory;
 @property (nonatomic, readonly) NSURL *applicationIcon;
+@property (nonatomic, retain) NSString *applicationIdentifier;
 @property (nonatomic, retain) NSString *applicationMMCSDirectory;
+@property (nonatomic, retain) CKDApplicationMetadata *applicationMetadata;
 @property (nonatomic, retain) NSString *applicationPackageDownloadDirectory;
 @property (nonatomic, retain) NSString *applicationPackageUploadDirectory;
 @property (nonatomic, retain) NSString *applicationRecordCacheDirectory;
@@ -82,6 +84,8 @@
 @property (nonatomic, readonly) BOOL canAccessAccount;
 @property (nonatomic) BOOL canAccessProtectionData;
 @property (nonatomic) BOOL canSetDeviceIdentifier;
+@property (nonatomic) BOOL captureResponseHTTPHeaders;
+@property (nonatomic, retain) NSString *clientPrefixEntitlement;
 @property (nonatomic, retain) CKDServerConfiguration *config;
 @property (nonatomic, readonly) NSString *containerHardwareIDHash;
 @property (nonatomic, readonly) CKContainerID *containerID;
@@ -96,8 +100,13 @@
 @property (nonatomic, retain) CKDPublicIdentityLookupService *foregroundPublicIdentityLookupService;
 @property (nonatomic, retain) CKDZoneGatekeeper *foregroundZoneGatekeeper;
 @property (nonatomic) BOOL hasAllowAccessDuringBuddyEntitlement;
+@property (nonatomic) BOOL hasAllowCustomAccountsEntitlement;
+@property (nonatomic) BOOL hasAllowSetEnvironmentEntitlement;
 @property (nonatomic) BOOL hasDataContainer;
+@property (nonatomic) BOOL hasLightweightPCSEntitlement;
+@property (nonatomic) BOOL hasMasqueradingEntitlement;
 @property (setter=setHasSystemServiceEntitlement:, nonatomic) BOOL hasSystemServiceEntitlement;
+@property (nonatomic) BOOL hasTCCAuthorization;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isForClouddInternalUse;
 @property (nonatomic, retain) CKDMescalSession *mescalSession;
@@ -127,6 +136,7 @@
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
 - (id)MMCS;
+- (void)_cancelAllLongLivedOperations;
 - (void)_determineHardwareInfo;
 - (id)_issueSandboxExtensionForPath:(id)arg1 error:(id*)arg2;
 - (void)_loadApplicationContainerPathAndType;
@@ -138,6 +148,8 @@
 - (void)addClientProxy:(id)arg1;
 - (BOOL)allowsCellularAccess;
 - (BOOL)allowsPowerNapScheduling;
+- (id)appContainerIntersectionMetadata;
+- (id)appContainerTuple;
 - (id)applicationAssetDbDirectory;
 - (id)applicationBundle;
 - (id)applicationBundleID;
@@ -147,7 +159,9 @@
 - (id)applicationDisplayName;
 - (id)applicationFileDownloadDirectory;
 - (id)applicationIcon;
+- (id)applicationIdentifier;
 - (id)applicationMMCSDirectory;
+- (id)applicationMetadata;
 - (id)applicationPackageDownloadDirectory;
 - (id)applicationPackageUploadDirectory;
 - (id)applicationRecordCacheDirectory;
@@ -159,10 +173,12 @@
 - (BOOL)canAccessAccount;
 - (BOOL)canAccessProtectionData;
 - (BOOL)canSetDeviceIdentifier;
+- (BOOL)captureResponseHTTPHeaders;
 - (void)clearAssetCache;
 - (void)clearAssetCacheWithDatabaseScope:(int)arg1;
 - (void)clearAuthTokensForRecordWithID:(id)arg1 databaseScope:(int)arg2;
 - (void)clearRecordCacheWithDatabaseScope:(int)arg1;
+- (id)clientPrefixEntitlement;
 - (id)config;
 - (id)containerHardwareIDHash;
 - (id)containerID;
@@ -178,8 +194,13 @@
 - (id)foregroundPublicIdentityLookupService;
 - (id)foregroundZoneGatekeeper;
 - (BOOL)hasAllowAccessDuringBuddyEntitlement;
+- (BOOL)hasAllowCustomAccountsEntitlement;
+- (BOOL)hasAllowSetEnvironmentEntitlement;
 - (BOOL)hasDataContainer;
+- (BOOL)hasLightweightPCSEntitlement;
+- (BOOL)hasMasqueradingEntitlement;
 - (BOOL)hasSystemServiceEntitlement;
+- (BOOL)hasTCCAuthorization;
 - (id)initWithAppContainerTuple:(id)arg1 accountInfoOverride:(id)arg2 proxy:(id)arg3;
 - (BOOL)isForClouddInternalUse;
 - (BOOL)isSandboxed;
@@ -198,12 +219,16 @@
 - (void)setAPSEnvironmentString:(id)arg1;
 - (void)setAccount:(id)arg1;
 - (void)setAllowsPowerNapScheduling:(BOOL)arg1;
+- (void)setAppContainerIntersectionMetadata:(id)arg1;
+- (void)setAppContainerTuple:(id)arg1;
 - (void)setApplicationAssetDbDirectory:(id)arg1;
 - (void)setApplicationCachesDirectory:(id)arg1;
 - (void)setApplicationContainerCloudKitDirectory:(id)arg1;
 - (void)setApplicationContainerPath:(id)arg1;
 - (void)setApplicationFileDownloadDirectory:(id)arg1;
+- (void)setApplicationIdentifier:(id)arg1;
 - (void)setApplicationMMCSDirectory:(id)arg1;
+- (void)setApplicationMetadata:(id)arg1;
 - (void)setApplicationPackageDownloadDirectory:(id)arg1;
 - (void)setApplicationPackageUploadDirectory:(id)arg1;
 - (void)setApplicationRecordCacheDirectory:(id)arg1;
@@ -213,6 +238,8 @@
 - (void)setCachedEnvironment:(int)arg1;
 - (void)setCanAccessProtectionData:(BOOL)arg1;
 - (void)setCanSetDeviceIdentifier:(BOOL)arg1;
+- (void)setCaptureResponseHTTPHeaders:(BOOL)arg1;
+- (void)setClientPrefixEntitlement:(id)arg1;
 - (void)setConfig:(id)arg1;
 - (void)setContainerScopedUserID:(id)arg1;
 - (void)setDarkWakeEnabled:(int)arg1;
@@ -223,8 +250,13 @@
 - (void)setForegroundPublicIdentityLookupService:(id)arg1;
 - (void)setForegroundZoneGatekeeper:(id)arg1;
 - (void)setHasAllowAccessDuringBuddyEntitlement:(BOOL)arg1;
+- (void)setHasAllowCustomAccountsEntitlement:(BOOL)arg1;
+- (void)setHasAllowSetEnvironmentEntitlement:(BOOL)arg1;
 - (void)setHasDataContainer:(BOOL)arg1;
+- (void)setHasLightweightPCSEntitlement:(BOOL)arg1;
+- (void)setHasMasqueradingEntitlement:(BOOL)arg1;
 - (void)setHasSystemServiceEntitlement:(BOOL)arg1;
+- (void)setHasTCCAuthorization:(BOOL)arg1;
 - (void)setIsForClouddInternalUse:(BOOL)arg1;
 - (void)setMMCS:(id)arg1;
 - (void)setMescalSession:(id)arg1;

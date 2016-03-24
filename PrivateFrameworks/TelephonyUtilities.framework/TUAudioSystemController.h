@@ -56,9 +56,11 @@
 - (BOOL)isDownlinkMuted;
 - (BOOL)isTTY;
 - (BOOL)isUplinkMuted;
+- (id)pickableRouteWithUniqueIdentifier:(id)arg1;
 - (id)pickableRoutesForCategory:(id)arg1 andMode:(id)arg2;
 - (id)pickableRoutesForTTY;
 - (BOOL)setDownlinkMuted:(BOOL)arg1;
 - (BOOL)setUplinkMuted:(BOOL)arg1;
+- (BOOL)shouldSuppressCallUsingRoute:(id)arg1;
 
 @end

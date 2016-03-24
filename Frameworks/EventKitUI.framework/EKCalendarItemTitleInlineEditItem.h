@@ -39,8 +39,8 @@
 - (void)dealloc;
 - (float)defaultCellHeightForSubitemAtIndex:(unsigned int)arg1 forWidth:(float)arg2;
 - (id)detailViewControllerWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 forSubitemAtIndex:(unsigned int)arg2;
-- (BOOL)editItemViewControllerCommit:(id)arg1;
-- (BOOL)forceRefreshStartAndEndDatesOnCommit;
+- (BOOL)editItemViewControllerSave:(id)arg1;
+- (BOOL)forceRefreshStartAndEndDatesOnSave;
 - (id)init;
 - (id)initWithLocation:(BOOL)arg1;
 - (BOOL)isInline;

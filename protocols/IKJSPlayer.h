@@ -11,6 +11,7 @@
 - (IKDOMDocument *)overlayDocument;
 - (void)pause;
 - (void)play;
+- (double)playbackRate;
 - (NSString *)playbackState;
 - (IKJSPlaylist *)playlist;
 - (void)present;

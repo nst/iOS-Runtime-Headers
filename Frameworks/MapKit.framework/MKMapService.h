@@ -15,10 +15,12 @@
 - (id)mapItemsForPlacesInDetails:(id)arg1;
 - (void)submitUsageForTraits:(id)arg1;
 - (void)submitUsageForTraits:(id)arg1 actionDetails:(id)arg2 routeDetails:(id)arg3;
+- (void)submitUsageForTraits:(id)arg1 eventValue:(id)arg2;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)submitUsageForTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4 targetID:(unsigned long long)arg5;
 - (void)submitUsageForTraitsWithAction:(int)arg1;
 - (void)submitUsageForTraitsWithAction:(int)arg1 actionDetails:(id)arg2 uiTarget:(int)arg3;
+- (void)submitUsageForTraitsWithAction:(int)arg1 actionDetails:(id)arg2 uiTarget:(int)arg3 eventValue:(id)arg4;
 - (void)submitUsageForTraitsWithAction:(int)arg1 categoriesDisplayed:(id)arg2 categorySelected:(id)arg3;
 - (void)submitUsageForTraitsWithAction:(int)arg1 flyoverAnimationID:(unsigned long long)arg2;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2;
@@ -30,7 +32,9 @@
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 providerID:(id)arg3 targetID:(unsigned long long)arg4;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapItem:(id)arg2 targetID:(unsigned long long)arg3;
 - (void)submitUsageForTraitsWithAction:(int)arg1 mapRegion:(id)arg2 zoomLevel:(double)arg3;
+- (void)submitUsageForTraitsWithAction:(int)arg1 regionName:(id)arg2;
 - (void)submitUsageForTraitsWithAction:(int)arg1 uiTarget:(int)arg2;
+- (void)submitUsageForTraitsWithSearchFieldType:(int)arg1 prefix:(id)arg2 displayedResults:(id)arg3 selectedIndex:(int)arg4;
 - (void)submitUserAction:(id)arg1 eventKey:(int)arg2;
 - (void)submitUserAction:(id)arg1 eventKey:(int)arg2 eventValue:(id)arg3;
 - (void)submitUserAction:(id)arg1 eventKey:(int)arg2 selectedIndex:(unsigned int)arg3 uniqueID:(id)arg4;

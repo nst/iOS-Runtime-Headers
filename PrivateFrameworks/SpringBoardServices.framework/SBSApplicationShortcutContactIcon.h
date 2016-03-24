@@ -9,13 +9,13 @@
     NSString *_lastName;
 }
 
-@property (nonatomic, readonly, retain) NSString *contactIdentifier;
-@property (nonatomic, readonly, retain) NSString *firstName;
-@property (nonatomic, readonly, retain) NSData *imageData;
-@property (nonatomic, readonly, retain) NSString *lastName;
+@property (nonatomic, readonly) NSString *contactIdentifier;
+@property (nonatomic, readonly) NSString *firstName;
+@property (nonatomic, readonly) NSData *imageData;
+@property (nonatomic, readonly) NSString *lastName;
 
+- (void).cxx_destruct;
 - (id)contactIdentifier;
-- (void)dealloc;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)firstName;
 - (unsigned int)hash;

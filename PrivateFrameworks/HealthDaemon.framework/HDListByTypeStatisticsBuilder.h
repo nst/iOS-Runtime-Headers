@@ -8,9 +8,13 @@
     NSMutableDictionary *_calculatorByTypes;
     <HDHealthDaemon> *_healthDaemon;
     NSNumber *_lastAnchor;
+    NSMutableDictionary *_lastIntervalInfoByTypes;
     NSMutableArray *_lastUpdatedDatatypes;
+    NSDate *_noonEndDate;
+    NSDate *_noonStartDate;
     NSMutableDictionary *_quantitiesByDataType;
     id /* block */ _shouldStopProcessing;
+    NSMutableDictionary *_statisticsByTypes;
     NSMutableDictionary *_timestampByDataType;
 }
 
@@ -18,15 +22,18 @@
 @property (nonatomic, copy) id /* block */ shouldStopProcessing;
 
 - (void).cxx_destruct;
-- (id)_calculatedValuesForDatabase:(id)arg1;
+- (id)_calculatedValuesForDatabase:(id)arg1 error:(id*)arg2;
 - (void)_enumerateSamplesWithDatabase:(id)arg1 handler:(id /* block */)arg2;
 - (double)_relevantValueForType:(int)arg1;
-- (BOOL)addCategorySamplesForType:(int)arg1 value:(double)arg2 startTimeInterval:(double)arg3 endTimeInterval:(double)arg4 sourceId:(long long)arg5 enforceLatest:(BOOL)arg6;
-- (BOOL)addQuantitySamplesForType:(int)arg1 value:(double)arg2 startTimeInterval:(double)arg3 endTimeInterval:(double)arg4 sourceId:(long long)arg5 enforceLatest:(BOOL)arg6;
-- (BOOL)addWorkoutSamplesWithStartTimeInterval:(double)arg1 endTimeInterval:(double)arg2 sourceId:(long long)arg3;
+- (BOOL)_resetCalculatorForDataType:(int)arg1 bucketStartTime:(double)arg2 bucketEndTime:(double)arg3;
+- (void)_updateStatisticsForAllCalculators;
+- (void)_updateStatistisForDataType:(id)arg1;
+- (BOOL)addCategorySamplesForType:(int)arg1 value:(double)arg2 startTime:(double)arg3 endTime:(double)arg4 sourceId:(long long)arg5 enforceLatest:(BOOL)arg6;
+- (BOOL)addQuantitySamplesForType:(int)arg1 value:(double)arg2 startTime:(double)arg3 endTime:(double)arg4 sourceId:(long long)arg5 enforceLatest:(BOOL)arg6;
+- (BOOL)addWorkoutSamplesWithStartTime:(double)arg1 endTime:(double)arg2 sourceId:(long long)arg3;
 - (id)calculatedQuantitiesByDataType;
-- (id)collectionCalculatorForType:(id)arg1 from:(id)arg2 to:(id)arg3;
-- (id)initWithHealthDaemon:(id)arg1 startDate:(id)arg2 endDate:(id)arg3;
+- (id)collectionCalculatorForType:(id)arg1 from:(double)arg2 to:(double)arg3;
+- (id)initWithHealthDaemon:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 noonStartDate:(id)arg4 noonEndDate:(id)arg5;
 - (id)lastAnchor;
 - (id)quantitiesWithError:(id*)arg1;
 - (void)setLastAnchor:(id)arg1;

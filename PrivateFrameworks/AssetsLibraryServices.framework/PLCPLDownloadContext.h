@@ -31,6 +31,7 @@
 - (void)setTaskIdentifier:(id)arg1;
 - (void)setUpdateLastQueuedTime:(double)arg1;
 - (id)taskIdentifier;
+- (void)updateFromDownloadStatusUserInfo:(id)arg1;
 - (double)updateLastQueuedTime;
 
 @end

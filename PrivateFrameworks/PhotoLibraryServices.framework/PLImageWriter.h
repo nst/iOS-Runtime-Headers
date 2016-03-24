@@ -18,7 +18,7 @@
 }
 
 + (void)decorateThumbnail:(id)arg1 inContext:(struct CGContext { }*)arg2;
-+ (void)decorateThumbnailInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 duration:(id)arg3 inContext:(struct CGContext { }*)arg4 format:(int)arg5;
++ (void)decorateThumbnailInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 size:(struct CGSize { float x1; float x2; })arg2 duration:(id)arg3 inContext:(struct CGContext { }*)arg4 format:(id)arg5;
 + (BOOL)setAdjustmentsForNewPhoto:(id)arg1 withEffectFilterName:(id)arg2 filteredImagePath:(id)arg3 isSubstandardRender:(BOOL)arg4;
 + (id)sharedWriter;
 

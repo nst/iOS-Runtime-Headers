@@ -3,28 +3,22 @@
  */
 
 @interface BRCSyncDownOperation : _BRCOperation <BRCOperationSubclass> {
-    BOOL _hasCaughtUp;
-    BOOL _isConsistent;
+    unsigned int _editedAndDeletedRecordsCount;
     BRCServerZone *_serverZone;
+    BOOL _wantsCrossZoneMove;
 }
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
-@property (nonatomic, readonly) BOOL hasCaughtUp;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) BOOL isConsistent;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (void)_learnOwnerIdentity:(id)arg1;
-- (void)_performAfterFetchingOwnerIdentityForShareID:(id)arg1 block:(id /* block */)arg2;
 - (void)_performAfterFetchingRecordChanges:(id /* block */)arg1;
-- (void)_performAfterFetchingXattrsForRecordsByID:(id)arg1 block:(id /* block */)arg2;
-- (void)_processXattrFetchWithRecord:(id)arg1 recordIDsToETags:(id)arg2 askedXattrs:(id)arg3;
+- (void)_startCreateZoneAndSubscriptionAndSyncDown;
+- (void)_startSyncDown;
 - (void)finishWithResult:(id)arg1 error:(id)arg2;
-- (BOOL)hasCaughtUp;
 - (id)initWithServerZone:(id)arg1;
-- (BOOL)isConsistent;
 - (void)main;
 - (BOOL)shouldRetryForError:(id)arg1;
 - (unsigned long long)startActivity;

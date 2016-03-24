@@ -8,6 +8,7 @@
     NSString *_bluetoothDeviceAddress;
     AFBulletin *_bulletin;
     double _buttonDownTimestamp;
+    SAGuidanceCheckForGuideUpdateContext *_checkForGuideUpdateContext;
     NSDictionary *_continuityInfo;
     int _directActionEvent;
     double _expectedTimestamp;
@@ -32,6 +33,7 @@
 @property (nonatomic, copy) NSString *bluetoothDeviceAddress;
 @property (nonatomic, retain) AFBulletin *bulletin;
 @property (nonatomic) double buttonDownTimestamp;
+@property (nonatomic, copy) SAGuidanceCheckForGuideUpdateContext *checkForGuideUpdateContext;
 @property (nonatomic, copy) NSDictionary *continuityInfo;
 @property (nonatomic) int directActionEvent;
 @property (nonatomic) double expectedTimestamp;
@@ -61,6 +63,7 @@
 - (id)bluetoothDeviceAddress;
 - (id)bulletin;
 - (double)buttonDownTimestamp;
+- (id)checkForGuideUpdateContext;
 - (id)continuityInfo;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -86,6 +89,7 @@
 - (void)setBluetoothDeviceAddress:(id)arg1;
 - (void)setBulletin:(id)arg1;
 - (void)setButtonDownTimestamp:(double)arg1;
+- (void)setCheckForGuideUpdateContext:(id)arg1;
 - (void)setContinuityInfo:(id)arg1;
 - (void)setDirectActionEvent:(int)arg1;
 - (void)setExpectedTimestamp:(double)arg1;

@@ -2,10 +2,13 @@
    Image: /System/Library/Frameworks/WatchConnectivity.framework/WatchConnectivity
  */
 
-@interface WCXPCManager : NSObject <NSXPCConnectionDelegate, WCXPCManagerClientProtocol> {
+@interface WCXPCManager : NSObject <NSXPCConnectionDelegate, WCXPCManagerClientProtocol, WCXPCManagerDaemonProtocol> {
     NSXPCConnection *_connection;
     BOOL _connectionInvalidated;
     NSObject<WCXPCManagerDelegate> *_delegate;
+    int _listenerResumedToken;
+    BOOL _reconnectFailed;
+    unsigned int _reconnectRetryCount;
     NSObject<OS_dispatch_queue> *_workQueue;
 }
 
@@ -15,6 +18,9 @@
 @property NSObject<WCXPCManagerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property int listenerResumedToken;
+@property BOOL reconnectFailed;
+@property unsigned int reconnectRetryCount;
 @property (readonly) Class superclass;
 @property (readonly) NSObject<OS_dispatch_queue> *workQueue;
 
@@ -24,39 +30,47 @@
 + (id)sharedManager;
 
 - (void).cxx_destruct;
-- (void)acknowledgeFileIndexWithIdentifier:(id)arg1;
-- (void)acknowledgeFileResultIndexWithIdentifier:(id)arg1;
-- (void)acknowledgeUserInfoIndexWithIdentifier:(id)arg1;
-- (void)acknowledgeUserInfoResultIndexWithIdentifier:(id)arg1;
+- (void)acknowledgeFileIndexWithIdentifier:(id)arg1 clientPairingID:(id)arg2;
+- (void)acknowledgeFileResultIndexWithIdentifier:(id)arg1 clientPairingID:(id)arg2;
+- (void)acknowledgeUserInfoIndexWithIdentifier:(id)arg1 clientPairingID:(id)arg2;
+- (void)acknowledgeUserInfoResultIndexWithIdentifier:(id)arg1 clientPairingID:(id)arg2;
 - (void)cancelAllOutstandingMessages;
 - (void)cancelSendWithIdentifier:(id)arg1;
 - (id)connection;
 - (void)connection:(id)arg1 handleInvocation:(id)arg2 isReply:(BOOL)arg3;
 - (BOOL)connectionInvalidated;
 - (id)delegate;
-- (void)handleApplicationContext:(id)arg1;
-- (void)handleFileTransferFinishedWithIdentifier:(id)arg1 error:(id)arg2;
+- (void)handleActiveDeviceSwitchStarted;
+- (void)handleApplicationContextWithPairingID:(id)arg1;
+- (void)handleFileResultWithPairingID:(id)arg1;
+- (void)handleIncomingFileWithPairingID:(id)arg1;
+- (void)handleIncomingUserInfoWithPairingID:(id)arg1;
 - (void)handleInterruptedConnection;
 - (void)handleMessageSendingAllowed;
 - (void)handleRequest:(id)arg1;
 - (void)handleResponse:(id)arg1;
 - (void)handleSentMessageWithIdentifier:(id)arg1 error:(id)arg2;
-- (void)handleSessionFile:(id)arg1;
 - (void)handleSessionStateChanged:(id)arg1;
-- (void)handleSessionStateChanged:(id)arg1 forceReachableChanged:(BOOL)arg2;
-- (void)handleUserInfoTransfer:(id)arg1;
-- (void)handleUserInfoTransferFinishedWithIdentifier:(id)arg1 error:(id)arg2;
+- (void)handleUserInfoResultWithPairingID:(id)arg1;
 - (id)init;
 - (void)invalidateConnection;
+- (int)listenerResumedToken;
 - (void)onqueue_reconnect;
-- (void)retrieveSessionStateWithCompletionHandler:(id /* block */)arg1;
-- (void)sendMessage:(id)arg1 acceptanceHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (void)onqueue_retryConnectIfNecessary;
+- (BOOL)reconnectFailed;
+- (unsigned int)reconnectRetryCount;
+- (void)sendMessage:(id)arg1 clientPairingID:(id)arg2 acceptanceHandler:(id /* block */)arg3;
+- (void)sendMessage:(id)arg1 clientPairingID:(id)arg2 acceptanceHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4;
+- (void)sessionReadyForInitialStateForClientPairingID:(id)arg1 supportsActiveDeviceSwitch:(BOOL)arg2 withErrorHandler:(id /* block */)arg3;
 - (void)setConnectionInvalidated:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
+- (void)setListenerResumedToken:(int)arg1;
+- (void)setReconnectFailed:(BOOL)arg1;
+- (void)setReconnectRetryCount:(unsigned int)arg1;
 - (void)setupConnection;
-- (void)transferFile:(id)arg1 sandboxToken:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)transferUserInfo:(id)arg1 withURL:(id)arg2 completionHandler:(id /* block */)arg3;
-- (void)updateApplicationContext:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)transferFile:(id)arg1 sandboxToken:(id)arg2 clientPairingID:(id)arg3 errorHandler:(id /* block */)arg4;
+- (void)transferUserInfo:(id)arg1 withURL:(id)arg2 clientPairingID:(id)arg3 errorHandler:(id /* block */)arg4;
+- (void)updateApplicationContext:(id)arg1 clientPairingID:(id)arg2 errorHandler:(id /* block */)arg3;
 - (id)workQueue;
 
 @end

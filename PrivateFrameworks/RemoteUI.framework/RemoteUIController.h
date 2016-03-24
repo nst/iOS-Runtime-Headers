@@ -22,6 +22,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <RemoteUIControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *displayedPages;
 @property (readonly) unsigned int hash;
 @property (nonatomic) UIViewController *hostViewController;
 @property (nonatomic, copy) id /* block */ loadCompletion;
@@ -46,6 +47,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)dismissObjectModelsAnimated:(BOOL)arg1 completion:(id /* block */)arg2;
+- (id)displayedPages;
 - (id)hostViewController;
 - (id)init;
 - (id /* block */)loadCompletion;

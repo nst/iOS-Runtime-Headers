@@ -75,6 +75,9 @@
 @property (nonatomic) BOOL timedOut;
 @property (nonatomic) BOOL transactionComplete;
 
++ (Class)httpErrorType;
++ (Class)tcpInfoType;
+
 - (void)addHttpError:(id)arg1;
 - (void)addTcpInfo:(id)arg1;
 - (BOOL)cancelled;

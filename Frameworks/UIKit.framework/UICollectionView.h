@@ -53,6 +53,7 @@
         unsigned int dataSourceCanMoveItemAtIndexPath : 1; 
         unsigned int dataSourceMoveItemAtIndexPath : 1; 
         unsigned int dataSourceWasNonNil : 1; 
+        unsigned int dataSourceWillRequestCellForItemAtIndexPath : 1; 
         unsigned int reloadSkippedDuringSuspension : 1; 
         unsigned int scheduledUpdateVisibleCells : 1; 
         unsigned int scheduledUpdateVisibleCellLayoutAttributes : 1; 
@@ -133,12 +134,29 @@
             float height; 
         } size; 
     } _preRotationBounds;
+    NSMutableDictionary *_prefetchCacheItems;
+    NSMutableArray *_prefetchCandidateItems;
+    int _prefetchMode;
     struct CGPoint { 
         float x; 
         float y; 
     } _previousCenterOffset;
     float _previousInteractiveTransitionProgress;
     double _previousInteractiveTransitionTimeStamp;
+    struct CGVector { 
+        float dx; 
+        float dy; 
+    } _previousPrefetchUnitVector;
+    struct CGRect { 
+        struct CGPoint { 
+            float x; 
+            float y; 
+        } origin; 
+        struct CGSize { 
+            float width; 
+            float height; 
+        } size; 
+    } _previousVisibleBounds;
     NSMutableArray *_reloadItems;
     int _reloadingSuspendedCount;
     NSMutableArray *_reorderedItems;
@@ -227,6 +245,7 @@
 - (void)_cellDidBecomeFocused:(id)arg1;
 - (void)_cellDidBecomeUnfocused:(id)arg1;
 - (void)_cellMenuDismissed;
+- (int)_cellPrefetchMode;
 - (void)_checkForPreferredAttributesInView:(id)arg1 originalAttributes:(id)arg2;
 - (id)_childFocusRegionsInRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)_cleanUpAfterInteractiveTransitionDidFinish:(BOOL)arg1;
@@ -242,6 +261,7 @@
 - (id)_currentUpdate;
 - (BOOL)_dataSourceImplementsNumberOfSections;
 - (BOOL)_dataSourceSupportsReordering;
+- (id)_delegatePreferredIndexPath;
 - (struct CGPoint { float x1; float x2; })_delegateTargetOffsetForProposedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
 - (id)_dequeueReusableViewOfKind:(id)arg1 withIdentifier:(id)arg2 forIndexPath:(id)arg3 viewCategory:(unsigned int)arg4;
 - (void)_deselectAllAnimated:(BOOL)arg1 notifyDelegate:(BOOL)arg2;
@@ -286,6 +306,7 @@
 - (void)_performBatchUpdates:(id /* block */)arg1 completion:(id /* block */)arg2 invalidationContext:(id)arg3 tentativelyForReordering:(BOOL)arg4;
 - (id)_pivotForTransitionFromLayout:(id)arg1 toLayout:(id)arg2;
 - (id)_preReorderingIndexPathForLayoutIndexPath:(id)arg1;
+- (unsigned int)_prefetchItemsForVelocity:(struct CGVector { float x1; float x2; })arg1 maxItemsToPrefetch:(unsigned int)arg2;
 - (void)_prepareLayoutForUpdates;
 - (void)_prepareViewForUse:(id)arg1 withElementCategory:(unsigned int)arg2 elementKind:(id)arg3 reuseIdentifier:(id)arg4 indexPath:(id)arg5;
 - (void)_prepareViewForUse:(id)arg1 withElementCategory:(unsigned int)arg2 elementKind:(id)arg3 reuseIdentifier:(id)arg4 indexPath:(id)arg5 applyDefaultAttributes:(BOOL)arg6;
@@ -294,6 +315,7 @@
 - (id)_reorderedItemForView:(id)arg1;
 - (id)_reorderedItems;
 - (struct CGPoint { float x1; float x2; })_reorderingTargetPosition;
+- (void)_resetPrefetchState;
 - (void)_resumeReloads;
 - (void)_reuseCell:(id)arg1;
 - (void)_reusePreviouslyFocusedManagedSubviewIfNeeded:(id)arg1;
@@ -305,6 +327,7 @@
 - (void)_selectAllSelectedItems;
 - (void)_selectItemAtIndexPath:(id)arg1 animated:(BOOL)arg2 scrollPosition:(unsigned int)arg3 notifyDelegate:(BOOL)arg4;
 - (id)_selectableIndexPathForItemContainingHitView:(id)arg1;
+- (void)_setCellPrefetchMode:(int)arg1;
 - (void)_setCollectionViewLayout:(id)arg1 animated:(BOOL)arg2 isInteractive:(BOOL)arg3 completion:(id /* block */)arg4;
 - (void)_setCurrentPromiseFulfillmentCell:(id)arg1;
 - (void)_setCurrentTouch:(id)arg1;
@@ -344,7 +367,7 @@
 - (void)_updateSections:(id)arg1 updateAction:(int)arg2;
 - (void)_updateTrackedLayoutValuesWith:(id)arg1;
 - (void)_updateTransitionWithProgress:(float)arg1;
-- (void)_updateVisibleCellsNow:(BOOL)arg1;
+- (unsigned int)_updateVisibleCellsNow:(BOOL)arg1;
 - (void)_updateWithItems:(id)arg1 tentativelyForReordering:(BOOL)arg2;
 - (void)_userSelectItemAtIndexPath:(id)arg1;
 - (id)_viewAnimationsForCurrentUpdate;

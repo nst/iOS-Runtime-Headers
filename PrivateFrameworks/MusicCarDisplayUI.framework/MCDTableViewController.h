@@ -43,6 +43,8 @@
 - (BOOL)shouldScrollToFirstDataSourceSectionOnInitialAppearance;
 - (BOOL)shouldShowActionCellConfiguration:(Class)arg1;
 - (BOOL)showMore;
+- (void)tableView:(id)arg1 didHighlightRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didUnhighlightRowAtIndexPath:(id)arg2;
 - (BOOL)tableView:(id)arg1 shouldChangeFocusedItem:(id)arg2 fromRowAtIndexPath:(id)arg3;
 - (BOOL)tableView:(id)arg1 shouldHighlightRowAtIndexPath:(id)arg2;
 - (BOOL)topLevel;

@@ -38,7 +38,7 @@
 - (id)machineIdentityDataInternal;
 - (id)machineIdentityReference;
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences { }*)arg1;
-- (void)removeKeychainItemsInDomain:(int)arg1;
+- (void)removeKeychainItemsInDomain:(int)arg1 keepIdentity:(bool)arg2;
 - (void)setIPSecSettingsFromLegacyDictionary:(id)arg1;
 - (void)setLocalIdentifier:(id)arg1;
 - (void)setMachineAuthenticationMethod:(int)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBProcess : NSObject <BSDescriptionProviding> {
+@interface FBProcess : NSObject <BSDescriptionProviding, FBUIProcess> {
     NSString *_bundleIdentifier;
     NSObject<OS_dispatch_queue> *_callOutQueue;
     <FBProcessDelegate> *_delegate;

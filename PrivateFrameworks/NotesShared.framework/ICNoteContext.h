@@ -71,6 +71,7 @@
 - (id)addLocalAccount;
 - (void)addOrDeleteLocalAccountIfNecessary;
 - (void)addPersistentStoreIfNeeded;
+- (id)allICloudACAccounts;
 - (id)appURLForFolderList;
 - (id)appURLForNote:(id)arg1;
 - (void)applicationWillTerminate;
@@ -93,6 +94,7 @@
 - (BOOL)didResumeIndexing;
 - (void)disableChangeTracking;
 - (void)enableChangeTracking;
+- (void)ensureNextIdContext;
 - (id)fetchedResultsControllerForFetchRequest:(id)arg1 sectionNameKeyPath:(id)arg2;
 - (id)getNextIdObject;
 - (BOOL)hasAnyContextOptions:(unsigned int)arg1;
@@ -170,6 +172,7 @@
 - (void)trackChangesForSync:(id)arg1;
 - (id)trashDeletionTimer;
 - (id)updateAttachmentLocationsTimer;
+- (void)vacuumStore;
 - (id)visibleNoteWithIdentifier:(id)arg1;
 - (id)visibleNotes;
 - (unsigned int)visibleNotesCount;

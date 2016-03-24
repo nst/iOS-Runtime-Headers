@@ -20,6 +20,7 @@
 + (BOOL)haveApplicationsOfType:(id)arg1;
 + (void)invalidateCurrentMap;
 + (id)loadedMap;
++ (void)removableSystemApplicationsWithCompletionBlock:(id /* block */)arg1;
 + (void)setCurrentMap:(id)arg1;
 + (void)startObservingNotifications;
 

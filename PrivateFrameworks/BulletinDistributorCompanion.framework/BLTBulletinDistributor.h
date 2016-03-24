@@ -12,6 +12,7 @@
     NSMutableSet *_noticesFeed;
     BLTSettingSync *_settingSync;
     BOOL _standaloneTestModeEnabled;
+    NSDate *_startupTime;
     BLTBulletinDistributorSubscriberList *_subscribers;
     BLTWatchKitAppList *_watchKitAppList;
 }
@@ -27,6 +28,9 @@
 @property (nonatomic, readonly) BOOL isStandaloneTestModeEnabled;
 @property (nonatomic, retain) NSMutableSet *lockScreenFeed;
 @property (nonatomic, retain) NSMutableSet *noticesFeed;
+@property (nonatomic, retain) BLTSettingSync *settingSync;
+@property (nonatomic) BOOL standaloneTestModeEnabled;
+@property (nonatomic, retain) NSDate *startupTime;
 @property (nonatomic, retain) BLTBulletinDistributorSubscriberList *subscribers;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) BLTWatchKitAppList *watchKitAppList;
@@ -38,16 +42,21 @@
 - (id)_bulletinWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
 - (void)_handleDidPlayLightsAndSirens:(BOOL)arg1 forBulletin:(id)arg2 inPhoneSection:(id)arg3 finalReply:(BOOL)arg4;
 - (void)_handleDidPlayLightsAndSirens:(BOOL)arg1 forBulletin:(id)arg2 inPhoneSection:(id)arg3 transmissionDate:(id)arg4 receptionDate:(id)arg5 fromGizmo:(BOOL)arg6 finalReply:(BOOL)arg7;
+- (void)_handleInitialSyncStateCompleteChanged:(id)arg1;
+- (void)_handleSyncStateChanged:(id)arg1;
 - (BOOL)_isObsoleteBulletin:(id)arg1;
 - (void)_loadPingSubscriberBundles;
 - (unsigned int)_nanoPresentableFeedFromPhoneFeed:(unsigned int)arg1;
 - (void)_notifyGizmoOfBulletin:(id)arg1 forFeed:(unsigned int)arg2 updateType:(unsigned int)arg3 playLightsAndSirens:(BOOL)arg4 shouldSendReplyIfNeeded:(BOOL)arg5 attachment:(id)arg6 attachmentType:(int)arg7;
 - (void)_notifyGizmoOfCancelBulletin:(id)arg1 universalSectionID:(id)arg2 feed:(unsigned int)arg3 withBulletinDate:(id)arg4;
+- (void)_performSync;
 - (void)_pingSubscriberWithBulletin:(id)arg1;
 - (void)_reconnectObserver;
 - (void)_reloadBulletinsWithCompletion:(id /* block */)arg1;
 - (void)_rememberBulletin:(id)arg1 forFeed:(unsigned int)arg2;
 - (void)_sendCurrentBulletinIdentifiers;
+- (void)_sendCurrentBulletinList;
+- (void)_startBulletinListening;
 - (BOOL)_willNanoPresent:(unsigned int)arg1;
 - (BOOL)_willNanoPresent:(unsigned int)arg1 forBulletin:(id)arg2 feed:(unsigned int)arg3;
 - (id)attachmentHashCache;
@@ -83,6 +92,7 @@
 - (BOOL)observerShouldFetchAttachmentSizeBeforeBulletinDelivery:(id)arg1;
 - (id)originalSettings;
 - (id)overriddenSettings;
+- (void)performInitialSyncWithProgress:(id /* block */)arg1 completion:(id /* block */)arg2;
 - (void)removeBulletinWithPublisherBulletinID:(id)arg1 recordID:(id)arg2 sectionID:(id)arg3;
 - (void)sendAllSectionInfoWithCompletion:(id /* block */)arg1;
 - (void)sendBulletinSummary:(id)arg1;
@@ -95,10 +105,16 @@
 - (void)setLockScreenFeed:(id)arg1;
 - (void)setNoticesFeed:(id)arg1;
 - (void)setReplyBlock:(id /* block */)arg1 forSection:(id)arg2 bulletin:(id)arg3 publicationDate:(id)arg4;
+- (void)setSettingSync:(id)arg1;
+- (void)setStandaloneTestModeEnabled:(BOOL)arg1;
+- (void)setStartupTime:(id)arg1;
 - (void)setSubscribers:(id)arg1;
 - (void)setWatchKitAppList:(id)arg1;
 - (id)settingOverrides;
+- (id)settingSync;
 - (bool)shouldSuppressLightsAndSirensNow;
+- (BOOL)standaloneTestModeEnabled;
+- (id)startupTime;
 - (id)subscribers;
 - (id)watchKitAppList;
 

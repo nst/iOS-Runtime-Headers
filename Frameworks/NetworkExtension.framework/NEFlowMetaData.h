@@ -3,16 +3,22 @@
  */
 
 @interface NEFlowMetaData : NSObject {
+    BOOL _fastOpenRequested;
+    BOOL _multipathRequested;
     NSString *_sourceAppSigningIdentifier;
     NSData *_sourceAppUniqueIdentifier;
 }
 
+@property (readonly) BOOL fastOpenRequested;
+@property (readonly) BOOL multipathRequested;
 @property (readonly) NSString *sourceAppSigningIdentifier;
 @property (readonly) NSData *sourceAppUniqueIdentifier;
 
 - (void).cxx_destruct;
 - (id)description;
+- (BOOL)fastOpenRequested;
 - (id)initFromFlow:(struct _NEFlow { }*)arg1;
+- (BOOL)multipathRequested;
 - (id)sourceAppSigningIdentifier;
 - (id)sourceAppUniqueIdentifier;
 

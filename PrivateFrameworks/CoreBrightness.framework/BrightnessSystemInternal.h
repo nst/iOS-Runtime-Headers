@@ -8,6 +8,7 @@
     NSMutableDictionary *_clients;
     NSMutableDictionary *_clientsProps;
     bool _initializationComplete;
+    NSMutableDictionary *_ownedProps;
     bool _shouldKeepRunning;
     NSTimer *_timer;
     BLControl *bl;
@@ -31,8 +32,10 @@
 - (void)notifyClientsForProperty:(id)arg1 key:(id)arg2;
 - (void)registerNotificationBlock:(id /* block */)arg1;
 - (void)runXPCServer;
+- (void)setOwnedProperty:(id)arg1 forKey:(id)arg2 client:(id)arg3;
 - (BOOL)setProperty:(id)arg1 forKey:(id)arg2 client:(id)arg3;
 - (void)stopRL;
 - (void)timerFire:(id)arg1;
+- (void)undoOwnedPropertiesForClient:(id)arg1;
 
 @end

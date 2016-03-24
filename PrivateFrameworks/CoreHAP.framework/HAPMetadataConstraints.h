@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPMetadataConstraints : NSObject {
+@interface HAPMetadataConstraints : NSObject <NSCopying> {
     NSNumber *_maxLength;
     NSNumber *_maximumValue;
     NSNumber *_minLength;
@@ -17,6 +17,7 @@
 @property (nonatomic, retain) NSNumber *stepValue;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (BOOL)isEqualToMetadataConstraints:(id)arg1;
 - (id)maxLength;

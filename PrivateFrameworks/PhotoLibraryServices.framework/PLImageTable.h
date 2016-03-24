@@ -9,7 +9,7 @@
     int _entryLength;
     int _fid;
     long long _fileLength;
-    int _format;
+    PLImageFormat *_format;
     int _imageLength;
     int _imageRowBytes;
     NSString *_path;
@@ -40,7 +40,7 @@
 @property (readonly) Class superclass;
 
 + (void)releaseSegmentCache;
-+ (void)writeImage:(id)arg1 toData:(id*)arg2 thumbnailFormat:(int)arg3 videoDuration:(id)arg4 width:(int*)arg5 height:(int*)arg6 bytesPerRow:(int*)arg7 dataWidth:(int*)arg8 dataHeight:(int*)arg9 dataOffset:(int*)arg10;
++ (void)writeImage:(id)arg1 toData:(id*)arg2 thumbnailFormat:(id)arg3 videoDuration:(id)arg4 width:(int*)arg5 height:(int*)arg6 bytesPerRow:(int*)arg7 dataWidth:(int*)arg8 dataHeight:(int*)arg9 dataOffset:(int*)arg10;
 
 - (void)_addEntriesIfNecessaryForIndex:(int)arg1;
 - (void)_adviseWillNeedEntriesInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
@@ -67,7 +67,7 @@
 - (void)deleteEntryWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 uuid:(id)arg3;
 - (void)endThumbnailSafePropertyUpdatesOnAsset:(id)arg1 withToken:(id)arg2;
 - (int)entryCount;
-- (void)finishUnicornEntryAtIndex:(unsigned int)arg1 withImageData:(id)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 asset:(id)arg4;
+- (void)finishUnicornEntryAtIndex:(unsigned int)arg1 withImageData:(id)arg2 imageSize:(struct CGSize { float x1; float x2; })arg3 assetUUID:(id)arg4;
 - (id)imageDataAtIndex:(unsigned int)arg1 width:(int*)arg2 height:(int*)arg3 bytesPerRow:(int*)arg4 dataWidth:(int*)arg5 dataHeight:(int*)arg6 dataOffset:(int*)arg7;
 - (id)imageDataWithIdentifier:(id)arg1 orIndex:(unsigned int)arg2 width:(int*)arg3 height:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 dataOffset:(int*)arg8;
 - (int)imageFormat;

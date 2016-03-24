@@ -12,11 +12,16 @@
 @property float overhangY;
 @property float perspectiveTransform;
 
++ (int)_currentDeviceType;
 + (struct CGSize { float x1; float x2; })_requiredOverhangSizeForCurrentDevice;
++ (struct CGSize { float x1; float x2; })_requiredOverhangSizeForDeviceType:(int)arg1;
 + (struct CGSize { float x1; float x2; })bestWallpaperSizeForParallaxFactor:(float)arg1;
 + (struct CGSize { float x1; float x2; })bestWallpaperSizeForParallaxFactor:(float)arg1 portrait:(BOOL)arg2;
++ (struct CGSize { float x1; float x2; })bestWallpaperSizeForWallpaperSize:(struct CGSize { float x1; float x2; })arg1 deviceType:(int)arg2 parallaxFactor:(float)arg3 portrait:(BOOL)arg4;
 + (struct CGSize { float x1; float x2; })minimumWallpaperSizeForCurrentDevice;
++ (struct CGSize { float x1; float x2; })minimumWallpaperSizeForWallpaperSize:(struct CGSize { float x1; float x2; })arg1 deviceType:(int)arg2;
 + (struct CGSize { float x1; float x2; })overhangSizeForCurrentDevice;
++ (struct CGSize { float x1; float x2; })overhangSizeForDeviceType:(int)arg1;
 + (id)settingsControllerModule;
 
 - (float)overhangX;

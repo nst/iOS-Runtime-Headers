@@ -4,6 +4,8 @@
 
 @interface WLMigrationProgressViewController : WLWelcomeGroupViewController <WLDataMigrationDelegate, WLDeviceAuthenticationDelegate> {
     WLDeviceAuthenticationController *_authController;
+    NSObject<OS_dispatch_queue> *_authDelegateSerialQueue;
+    BOOL _authDidSucceed;
     id /* block */ _authenticationDidSucceedHandler;
     id /* block */ _completionHandler;
     UILabel *_deviceNameView;
@@ -39,7 +41,6 @@
 - (void)_uiTestModeStartFakeMigration;
 - (void)_updateProgressViewsWithOneLineStateKey:(id)arg1 twoLineStateKey:(id)arg2 showDeviceName:(BOOL)arg3 showSpinner:(BOOL)arg4 explanationText:(id)arg5;
 - (id /* block */)authenticationDidSucceedHandler;
-- (void)authenticator:(id)arg1 didCalculateSecurityCode:(id)arg2;
 - (void)authenticator:(id)arg1 didFailWithError:(id)arg2;
 - (void)authenticator:(id)arg1 didFinishWithAuthentication:(id)arg2;
 - (id /* block */)completionHandler;

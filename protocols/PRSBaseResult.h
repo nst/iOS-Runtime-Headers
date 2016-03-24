@@ -24,6 +24,7 @@
 - (<PRSApp> *)app;
 - (NSString *)bundle_id;
 - (NSString *)geoUserSessionIDString;
+- (unsigned int)geoUserSessionSequenceNumber;
 - (double)geoUserSessionStartTime;
 - (BOOL)isQuickGlance;
 - (int)max_age;
@@ -38,6 +39,7 @@
 - (void)setApp:(id <PRSApp>)arg1;
 - (void)setBundle_id:(NSString *)arg1;
 - (void)setGeoUserSessionIDString:(NSString *)arg1;
+- (void)setGeoUserSessionSequenceNumber:(unsigned int)arg1;
 - (void)setGeoUserSessionStartTime:(double)arg1;
 - (void)setIsQuickGlance:(BOOL)arg1;
 - (void)setMax_age:(int)arg1;

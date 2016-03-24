@@ -18,12 +18,12 @@
 
 + (id)sharedInstance;
 
+- (void).cxx_destruct;
 - (void)_internalQueue_removeStatusBarStyleOverridesAssertionWithIdentifier:(id)arg1 invalidate:(BOOL)arg2;
 - (void)_reactivateAssertions;
 - (void)_tearDownXPCConnection;
 - (void)addStatusBarStyleOverridesAssertion:(id)arg1 withHandler:(id /* block */)arg2 onQueue:(id)arg3;
 - (id)assertionsByIdentifier;
-- (void)dealloc;
 - (id)init;
 - (id)internalQueue;
 - (void)invalidateStatusBarStyleOverridesAssertionsWithIdentifiers:(id)arg1;

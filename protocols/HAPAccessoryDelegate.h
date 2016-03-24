@@ -5,6 +5,7 @@
 
 @optional
 
+- (void)accessory:(HAPAccessory *)arg1 didUpdateCategory:(NSNumber *)arg2;
 - (void)accessoryDidBecomeReachable:(HAPAccessory *)arg1;
 - (void)accessoryDidBecomeUnreachable:(HAPAccessory *)arg1;
 

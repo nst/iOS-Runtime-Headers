@@ -24,6 +24,7 @@
 - (void)_doneButtonAction:(id)arg1;
 - (id)_facebookPageTableViewCellInTableView:(id)arg1 forIndexPath:(id)arg2;
 - (id)_imageDataConsumer;
+- (void)_layoutTableHeaderView;
 - (id)_newImageOperationWithObjectIdentifier:(id)arg1;
 - (id)_removalConfirmationMessage;
 - (void)_removeAccount;
@@ -39,6 +40,7 @@
 - (int)tableView:(id)arg1 numberOfRowsInSection:(int)arg2;
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
+- (void)viewDidLayoutSubviews;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

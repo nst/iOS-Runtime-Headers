@@ -3,16 +3,24 @@
  */
 
 @interface ICAttachmentPreviewGeneratorOperation : NSOperation {
-    ICAttachment *_attachment;
+    NSManagedObjectID *_attachmentID;
+    ICAttachmentModel *_attachmentModel;
+    NSManagedObjectContext *_managedObjectContext;
 }
 
-@property (nonatomic, retain) ICAttachment *attachment;
+@property (retain) NSManagedObjectID *attachmentID;
+@property (retain) ICAttachmentModel *attachmentModel;
+@property (retain) NSManagedObjectContext *managedObjectContext;
 
 - (void).cxx_destruct;
-- (id)attachment;
+- (id)attachmentID;
+- (id)attachmentModel;
 - (void)cancel;
-- (id)initWithAttachment:(id)arg1;
+- (id)initWithAttachmentManagedObjectID:(id)arg1;
 - (void)main;
-- (void)setAttachment:(id)arg1;
+- (id)managedObjectContext;
+- (void)setAttachmentID:(id)arg1;
+- (void)setAttachmentModel:(id)arg1;
+- (void)setManagedObjectContext:(id)arg1;
 
 @end

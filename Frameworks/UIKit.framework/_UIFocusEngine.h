@@ -22,17 +22,21 @@
         unsigned int isEligibleToCrossSpeedBump : 1; 
         unsigned int isContinuingTouchWithMomentum : 1; 
         unsigned int isAnimatingFocusDirectionRollback : 1; 
+        unsigned int isPerformingJoystickRollback : 1; 
+        unsigned int isJoystickInRepeatMode : 1; 
+        unsigned int isPendingJoystickRepeat : 1; 
         unsigned int isPeekingScrollView : 1; 
         unsigned int shouldApplyAcceleration : 1; 
         unsigned int shouldShowDebugOverlays : 1; 
     } _flags;
     NSMapTable *_focusRollbackAnimations;
     unsigned int _focusUpdateCountSinceLastPanBegan;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _gameControllerVirtualTrackpadLocation;
     unsigned int _inputType;
+    CADisplayLink *_joystickFocusDirectionDisplayLink;
+    _UIFocusEngineJoystickGestureRecognizer *_joystickGestureRecognizer;
+    NSTimer *_joystickModeExitTimer;
+    NSTimer *_joystickModeRepeatTimer;
+    unsigned int _joystickRepeatingHeading;
     _UIFocusSoundPool *_keyboardSoundPool;
     _UIFocusSoundPool *_largeSoundPool;
     float _lastEdgeScrollEdgeValue;
@@ -44,10 +48,6 @@
         float x; 
         float y; 
     } _lastMomentumTouchPoint;
-    struct CGPoint { 
-        float x; 
-        float y; 
-    } _lastReadGameControllerStickLocation;
     UIScrollView *_lastScrolledScroll;
     CADisplayLink *_momentumDisplayLink;
     float _momentumFriction;
@@ -64,6 +64,8 @@
         float height; 
     } _peekingScrollViewPeekSize;
     BOOL _playsSoundOnFocusChange;
+    double _previousJoystickFocusMovementTime;
+    double _previousJoystickRegionEntryTime;
     struct CGVector { 
         float dx; 
         float dy; 
@@ -75,7 +77,6 @@
     BOOL _shouldShowDebugOverlays;
     _UIFocusSoundPool *_smallSoundPool;
     NSObject<OS_dispatch_queue> *_soundQueue;
-    CADisplayLink *_stickDisplayLink;
     UITapGestureRecognizer *_tapGestureRecognizer;
     UIWindow *_targetWindow;
     struct CGPoint { 
@@ -102,7 +103,6 @@
 @property (nonatomic) BOOL wantsScrollPeeking;
 
 - (void).cxx_destruct;
-- (void)_activateControllerDisplayLink;
 - (void)_addGestureRecognizers;
 - (void)_addVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 toScrollViewForAnimation:(id)arg2;
 - (void)_animateOffsetOfScrollView:(id)arg1 toShowFocusedView:(id)arg2;
@@ -121,19 +121,31 @@
 - (void)_continueTouchWithMomentum;
 - (float)_effortRequiredToMoveAlongHeading:(unsigned int)arg1;
 - (void)_ensureFocusedViewIsOnscreen:(id)arg1;
+- (void)_exitJoystickModeForReal:(id)arg1;
 - (id)_findFocusCandidateByExhaustivelySearchingScrollView:(id)arg1 focusHeading:(unsigned int)arg2 startingView:(id)arg3;
 - (id)_findFocusCandidateStartingInRegionWithoutLoadingScrollViewContent:(id)arg1 focusHeading:(unsigned int)arg2 startingView:(id)arg3 minimumSearchArea:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg4;
 - (id)_focusedView;
 - (float)_frictionInterpolationForMomentumSpeed:(float)arg1 totalDistance:(float)arg2 slope:(float)arg3 shortDistance:(float)arg4 longDistance:(float)arg5;
 - (void)_gestureRecognizerFailed:(id)arg1;
 - (void)_handleButtonGesture:(id)arg1;
+- (void)_handleJoystickGesture:(id)arg1;
+- (void)_handleJoystickRepeatMode:(id)arg1;
+- (void)_handleJoystickTiltMode:(id)arg1;
 - (void)_handlePanGesture:(id)arg1;
 - (void)_handleSelectGesture:(id)arg1;
 - (void)_handleTapGesture:(id)arg1;
+- (unsigned int)_headingForJoystickPosition:(struct CGPoint { float x1; float x2; })arg1 usingMinimumRadius:(float)arg2;
 - (float)_horizontalFrictionInterpolationForMomentumSpeed:(float)arg1 totalDistance:(float)arg2;
-- (void)_invalidateControllerDisplayLink;
 - (BOOL)_isContinuingTouchWithMomentum;
 - (BOOL)_isScrollingScrollView:(id)arg1;
+- (BOOL)_joystickAttemptToMoveAlongHeading:(unsigned int)arg1 withVelocity:(struct CGVector { float x1; float x2; })arg2;
+- (void)_joystickDisplayLinkHeartbeat:(id)arg1;
+- (void)_joystickGestureBegan:(id)arg1;
+- (void)_joystickGestureEnded:(id)arg1;
+- (void)_joystickGestureUpdated:(id)arg1;
+- (void)_joystickPerformRepeat:(id)arg1;
+- (double)_joystickRepeatDurationForTimeInMovementZone:(double)arg1;
+- (struct CGVector { float x1; float x2; })_joystickVelocityForHeading:(unsigned int)arg1 timeInMovementZone:(double)arg2;
 - (void)_loadScrollViewContentAlongHeading:(unsigned int)arg1 fromView:(id)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_minimumSearchAreaForContainerView:(id)arg1;
 - (void)_momentumHeartbeat:(id)arg1;
@@ -152,6 +164,7 @@
 - (void)_removeVisibleRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 fromScrollViewForAnimation:(id)arg2;
 - (void)_resetFocusDirectionRollbackForAllViews;
 - (void)_resetFocusDirectionRollbackForView:(id)arg1;
+- (void)_resetJoystick;
 - (void)_resetMomentum;
 - (void)_resetScrollViewPeek:(BOOL)arg1;
 - (void)_resetViewSearchCache;
@@ -174,16 +187,15 @@
 - (void)_setupDebugOverlays;
 - (BOOL)_shouldEagerlyValidateFocusCandidates;
 - (BOOL)_shouldPerformFocusUpdateWithCurrentMomentumStatus;
+- (BOOL)_shouldRecordDestinationViewDistanceOffscreen;
+- (id)_soundQueue;
 - (BOOL)_speedBumpsAllowFocusToMoveAlongHeading:(unsigned int)arg1;
 - (void)_startFocusDirectionRollbackForView:(id)arg1;
-- (void)_stickDrivenGestureEnd:(id)arg1;
-- (void)_stickDrivenGestureStart:(id)arg1;
 - (void)_stopMomentumAndPerformRollback;
 - (struct CGPoint { float x1; float x2; })_targetContentOffsetForScrollView:(id)arg1;
 - (void)_teardownDebugOverlays;
 - (int)_touchRegionForDigitizerLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (struct CGSize { float x1; float x2; })_touchSensitivityForView:(id)arg1;
-- (void)_updateControllerState:(id)arg1;
 - (void)_updateDebugOverlayByRemovingTouchIndicators;
 - (void)_updateDebugOverlayWithTouchAtNormalizedPoint:(struct CGPoint { float x1; float x2; })arg1 navigationBoundary:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2;
 - (BOOL)_updateFocusWithContext:(id)arg1;

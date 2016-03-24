@@ -15,6 +15,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSDictionary *timings;
 
+// Image: /System/Library/PrivateFrameworks/SAObjects.framework/SAObjects
+
 + (id)metrics;
 + (id)metricsWithDictionary:(id)arg1 context:(id)arg2;
 
@@ -28,5 +30,11 @@
 - (void)setOriginalCommandId:(id)arg1;
 - (void)setTimings:(id)arg1;
 - (id)timings;
+
+// Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
+
+- (void)af_addSendCompletion:(id /* block */)arg1;
+- (void)af_dispatchSendCompletionsWithResult:(int)arg1 error:(id)arg2;
+- (BOOL)af_supportsSendCompletions;
 
 @end

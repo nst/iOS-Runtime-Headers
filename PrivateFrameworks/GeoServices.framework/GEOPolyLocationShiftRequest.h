@@ -8,7 +8,6 @@
 
 @property (nonatomic, retain) GEOLatLng *location;
 
-- (struct { double x1; double x2; })coordinate;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

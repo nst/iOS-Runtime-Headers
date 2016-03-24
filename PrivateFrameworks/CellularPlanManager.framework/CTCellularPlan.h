@@ -4,7 +4,6 @@
 
 @interface CTCellularPlan : NSObject <NSCopying, NSSecureCoding> {
     BOOL _isHomePlan;
-    BOOL _isSelectable;
     NSString *_phoneNumber;
     CTCellularPlanProfile *_profile;
     CTCellularPlanSubscription *_subscription;
@@ -20,7 +19,7 @@
 @property (nonatomic, readonly) NSArray *dataUsage;
 @property (nonatomic, readonly) NSString *iccid;
 @property (nonatomic) BOOL isHomePlan;
-@property (nonatomic) BOOL isSelectable;
+@property (nonatomic, readonly) BOOL isSelectable;
 @property (nonatomic, readonly) BOOL isSelected;
 @property (nonatomic, retain) NSString *phoneNumber;
 @property (nonatomic, readonly) NSString *planDescription;
@@ -61,7 +60,6 @@
 - (id)profile;
 - (id)profileId;
 - (void)setIsHomePlan:(BOOL)arg1;
-- (void)setIsSelectable:(BOOL)arg1;
 - (void)setPhoneNumber:(id)arg1;
 - (void)setProfile:(id)arg1;
 - (void)setSubscription:(id)arg1;

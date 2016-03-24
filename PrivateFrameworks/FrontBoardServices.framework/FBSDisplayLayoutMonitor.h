@@ -5,6 +5,7 @@
 @interface FBSDisplayLayoutMonitor : NSObject <FBSDisplayLayoutMonitorClientDelegate> {
     NSObject<OS_dispatch_queue> *_calloutQueue;
     unsigned int _displayType;
+    unsigned int _qualityOfService;
     NSObject<OS_dispatch_queue> *_queue;
     FBSDisplayLayoutMonitorClient *_queue_client;
     FBSDisplayLayout *_queue_currentLayout;
@@ -20,6 +21,7 @@
 @property (nonatomic, readonly) unsigned int displayType;
 @property (nonatomic, copy) id /* block */ handler;
 @property (readonly) unsigned int hash;
+@property (nonatomic, readonly) unsigned int qualityOfService;
 @property (readonly) Class superclass;
 
 + (id)sharedMonitorForDisplayType:(unsigned int)arg1;
@@ -31,13 +33,16 @@
 - (void)addObserver:(id)arg1;
 - (void)client:(id)arg1 handleNewDisplayLayout:(id)arg2 withContext:(id)arg3;
 - (unsigned int)clientDisplayType:(id)arg1;
+- (unsigned int)clientQualityOfService:(id)arg1;
 - (id)currentLayout;
 - (void)dealloc;
 - (unsigned int)displayType;
 - (id /* block */)handler;
 - (id)initWithDisplayType:(unsigned int)arg1;
 - (id)initWithDisplayType:(unsigned int)arg1 handler:(id /* block */)arg2;
+- (id)initWithDisplayType:(unsigned int)arg1 qualityOfService:(unsigned int)arg2 handler:(id /* block */)arg3;
 - (void)invalidate;
+- (unsigned int)qualityOfService;
 - (void)removeObserver:(id)arg1;
 - (void)setHandler:(id /* block */)arg1;
 

@@ -2,12 +2,17 @@
    Image: /System/Library/PrivateFrameworks/CoreCDPInternal.framework/CoreCDPInternal
  */
 
-@interface CDPDKeychainSync : NSObject
+@interface CDPDKeychainSync : NSObject {
+    <CDPDCircleProxy> *_circleProxy;
+}
 
 + (id)_defaultUserVisibleViewSet;
-+ (BOOL)_hasNonViewAwarePeers;
-+ (BOOL)isUserVisibleKeychainSyncEnabled;
-+ (void)removeNonViewAwarePeersFromCircleWithContext:(id)arg1 completion:(id /* block */)arg2;
-+ (void)setUserVisibleKeychainSyncEnabled:(BOOL)arg1 withCompletion:(id /* block */)arg2;
++ (id)keyChainSync;
++ (id)keyChainSyncWithProxy:(id)arg1;
+
+- (void).cxx_destruct;
+- (BOOL)isUserVisibleKeychainSyncEnabled;
+- (void)removeNonViewAwarePeersFromCircleWithCompletion:(id /* block */)arg1;
+- (void)setUserVisibleKeychainSyncEnabled:(BOOL)arg1 withCompletion:(id /* block */)arg2;
 
 @end

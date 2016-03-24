@@ -113,6 +113,7 @@
 - (void)refuseBannerViewAction;
 - (id)remoteViewController;
 - (id)remoteViewControllerRequestCancelationInvocation;
+- (BOOL)remoteViewControllerShouldAnimate:(id)arg1;
 - (BOOL)requiresFastVisibiltyTestOnly;
 - (id)serverURL;
 - (id)serviceAdSpace;

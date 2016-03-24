@@ -166,6 +166,7 @@
 - (int)annotationTrackingZoomStyle;
 - (unsigned char)applicationState;
 - (id)attributionsForCurrentRegion;
+- (id)boundsContextForSelectedTransitLines;
 - (BOOL)buildingFootprintsDisabled;
 - (id)buildingMarkerAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (BOOL)canEnter3DMode;
@@ -332,6 +333,7 @@
 - (void)selectLabelMarker:(id)arg1;
 - (void)selectTransitLineMarker:(id)arg1;
 - (id)selectedLabelMarker;
+- (id)selectedTransitLineIDs;
 - (void)setAdditionalManifestConfiguration:(id)arg1;
 - (void)setAllowDatelineWraparound:(BOOL)arg1;
 - (void)setAnnotationMarkerDeselectionCallback:(id /* block */)arg1;

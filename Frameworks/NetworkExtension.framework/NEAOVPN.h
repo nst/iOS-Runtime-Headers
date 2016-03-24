@@ -3,6 +3,7 @@
  */
 
 @interface NEAOVPN : NSObject <NEConfigurationValidating, NEPrettyDescription, NSCopying, NSSecureCoding> {
+    NSString *_activeInterfaceProtocolKey;
     BOOL _allowAllCaptiveNetworkPlugins;
     BOOL _allowCaptiveWebSheet;
     NSDictionary *_allowedCaptiveNetworkPlugins;
@@ -12,6 +13,7 @@
     BOOL _toggleEnabled;
 }
 
+@property (copy) NSString *activeInterfaceProtocolKey;
 @property (getter=isAllowAllCaptiveNetworkPlugins) BOOL allowAllCaptiveNetworkPlugins;
 @property (getter=isAllowCaptiveWebSheet) BOOL allowCaptiveWebSheet;
 @property (copy) NSDictionary *allowedCaptiveNetworkPlugins;
@@ -23,6 +25,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)activeInterfaceProtocolKey;
 - (id)allowedCaptiveNetworkPlugins;
 - (BOOL)checkValidityAndCollectErrors:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -35,6 +38,7 @@
 - (BOOL)isEnabled;
 - (BOOL)isToggleEnabled;
 - (id)serviceExceptions;
+- (void)setActiveInterfaceProtocolKey:(id)arg1;
 - (void)setAllowAllCaptiveNetworkPlugins:(BOOL)arg1;
 - (void)setAllowCaptiveWebSheet:(BOOL)arg1;
 - (void)setAllowedCaptiveNetworkPlugins:(id)arg1;

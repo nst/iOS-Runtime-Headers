@@ -3,25 +3,25 @@
  */
 
 @interface _UIGameControllerEvent : UIEvent {
-    int _inputType;
+    unsigned int _activeComponent;
     struct { 
+        unsigned long long senderID; 
         float controllerState[16]; 
         float normalizedLeftStickState[4]; 
+        float normalizedRightStickState[4]; 
         float normalizedShoulderButtonState[4]; 
-        BOOL didSendEvent; 
-        BOOL dPadActive; 
-        BOOL leftStickActive; 
-        BOOL shoulderButtonActive; 
     } _previousState;
 }
 
-- (BOOL)_determineInputTypeAndProcess:(struct { float x1[16]; float x2[4]; float x3[4]; BOOL x4; BOOL x5; BOOL x6; BOOL x7; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (BOOL)_determineInputTypeAndProcess:(struct { unsigned long long x1; float x2[16]; float x3[4]; float x4[4]; float x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
 - (struct CGPoint { float x1; float x2; })_leftStickPosition;
 - (void)_maybeConvertAndSendAsPressesEvent;
-- (BOOL)_processDPad:(struct { float x1[16]; float x2[4]; float x3[4]; BOOL x4; BOOL x5; BOOL x6; BOOL x7; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
-- (BOOL)_processLeftStick:(struct { float x1[16]; float x2[4]; float x3[4]; BOOL x4; BOOL x5; BOOL x6; BOOL x7; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
-- (BOOL)_processShoulder:(struct { float x1[16]; float x2[4]; float x3[4]; BOOL x4; BOOL x5; BOOL x6; BOOL x7; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
-- (BOOL)_processStandardButtons:(struct { float x1[16]; float x2[4]; float x3[4]; BOOL x4; BOOL x5; BOOL x6; BOOL x7; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (BOOL)_processDPad:(struct { unsigned long long x1; float x2[16]; float x3[4]; float x4[4]; float x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (BOOL)_processLeftStick:(struct { unsigned long long x1; float x2[16]; float x3[4]; float x4[4]; float x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (BOOL)_processRightStick:(struct { unsigned long long x1; float x2[16]; float x3[4]; float x4[4]; float x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (BOOL)_processShoulder:(struct { unsigned long long x1; float x2[16]; float x3[4]; float x4[4]; float x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (BOOL)_processStandardButtons:(struct { unsigned long long x1; float x2[16]; float x3[4]; float x4[4]; float x5[4]; }*)arg1 pressesEvent:(id)arg2 timestamp:(double)arg3;
+- (void)_reset;
 - (void)_sendEventToResponder:(id)arg1;
 - (int)subtype;
 - (int)type;

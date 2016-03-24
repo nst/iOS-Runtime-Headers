@@ -29,6 +29,7 @@
 - (void)findGuides;
 - (void)findGutters;
 - (void)findWordEdgeClusters;
+- (void)func:(id)arg1 and:(id)arg2 and:(unsigned int)arg3 and:(unsigned int)arg4;
 - (void)getWordEdges;
 - (id)gutters;
 - (BOOL)hasGutters;

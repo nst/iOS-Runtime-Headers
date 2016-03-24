@@ -4,6 +4,7 @@
 
 @interface MKTransitLoadingTableViewCell : MKCustomSeparatorTableViewCell {
     UIActivityIndicatorView *_loadingIndicator;
+    UILabel *_loadingLabel;
 }
 
 - (void).cxx_destruct;

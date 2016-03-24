@@ -49,10 +49,7 @@
 
 // Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
 
-+ (float)fiui_defaultDynamicTrackingFactor;
-
-- (void)fiui_addDynamicTrackingAttribute;
-- (struct CGSize { float x1; float x2; })scaleFontAndKerningToFitSize:(struct CGSize { float x1; float x2; })arg1 minimumFontSize:(float)arg2 minimumKerning:(float)arg3;
+- (struct CGSize { float x1; float x2; })scaleFontAndKerningToFitSize:(struct CGSize { float x1; float x2; })arg1 minimumFontSize:(float)arg2 minimumKerning:(float)arg3 stillDidntFit:(BOOL*)arg4;
 - (float)scaleFontSizeByAmount:(float)arg1 minimumFontSize:(float)arg2;
 - (float)scaleNumericAttribute:(id)arg1 byAmount:(float)arg2;
 - (void)scaleToFitWidth:(float)arg1;

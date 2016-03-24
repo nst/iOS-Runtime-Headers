@@ -16,7 +16,6 @@
 + (id)metadataValueStatementWithDatabase:(id)arg1;
 + (int)protectionClass;
 
-- (id)_clientValueForProperty:(id)arg1 value:(id)arg2;
 - (id)valueWithDatabase:(id)arg1;
 
 @end

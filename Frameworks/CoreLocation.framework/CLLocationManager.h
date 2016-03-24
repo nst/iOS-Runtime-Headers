@@ -7,6 +7,7 @@
 }
 
 @property (nonatomic) int activityType;
+@property (nonatomic) BOOL allowsAlteredAccessoryLocations;
 @property (nonatomic) BOOL allowsBackgroundLocationUpdates;
 @property (nonatomic, readonly) double bestAccuracy;
 @property (nonatomic) <CLLocationManagerDelegate> *delegate;
@@ -82,6 +83,7 @@
 
 - (int)activityType;
 - (void)allowDeferredLocationUpdatesUntilTraveled:(double)arg1 timeout:(double)arg2;
+- (BOOL)allowsAlteredAccessoryLocations;
 - (BOOL)allowsBackgroundLocationUpdates;
 - (id)appsUsingLocation;
 - (id)appsUsingLocationWithDetails;
@@ -150,6 +152,7 @@
 - (void)resetApps;
 - (void)resumeLocationUpdates;
 - (void)setActivityType:(int)arg1;
+- (void)setAllowsAlteredAccessoryLocations:(BOOL)arg1;
 - (void)setAllowsBackgroundLocationUpdates:(BOOL)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDesiredAccuracy:(double)arg1;

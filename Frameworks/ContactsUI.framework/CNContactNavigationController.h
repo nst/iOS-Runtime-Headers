@@ -77,7 +77,6 @@
 - (void)presentAddContactViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)presentContactViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)presentGroupsViewController:(id)arg1;
-- (void)refreshEverythingNow:(id)arg1;
 - (int)rightButtonBehavior;
 - (void)setAccountsAndGroupsDataSource:(id)arg1;
 - (void)setAllowsCanceling:(BOOL)arg1;
@@ -101,8 +100,6 @@
 - (void)updateNavigationButtonsAnimated:(BOOL)arg1;
 - (void)updateNavigationButtonsInSearchMode:(BOOL)arg1;
 - (void)updateNavigationButtonsInSearchMode:(BOOL)arg1 animated:(BOOL)arg2;
-- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
-- (void)viewWillDisappear:(BOOL)arg1;
 
 @end

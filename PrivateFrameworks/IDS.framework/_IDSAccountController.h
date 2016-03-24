@@ -22,6 +22,8 @@
 @property (nonatomic, readonly, retain) NSString *serviceName;
 @property (readonly) Class superclass;
 
+- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4;
+- (void)_callDelegatesRespondingToSelector:(SEL)arg1 withPreCallbacksBlock:(id /* block */)arg2 callbackBlock:(id /* block */)arg3 postCallbacksBlock:(id /* block */)arg4 group:(id)arg5;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1;
 - (void)_callDelegatesWithBlock:(id /* block */)arg1 group:(id)arg2;
 - (void)_connect;

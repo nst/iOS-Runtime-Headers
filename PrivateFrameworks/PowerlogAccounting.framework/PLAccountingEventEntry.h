@@ -12,7 +12,7 @@
 + (int)classDirectionality;
 
 - (void).cxx_destruct;
-- (BOOL)canMerge;
+- (BOOL)canMergeWithEvent:(id)arg1;
 - (id)initWithRange:(id)arg1;
 - (int)instanceDirectionality;
 - (BOOL)isEmptyEvent;

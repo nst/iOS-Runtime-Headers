@@ -23,6 +23,7 @@
 - (void)observeStatusBarHiddenWithBlock:(id /* block */)arg1;
 - (void)observeStatusBarStyleWithBlock:(id /* block */)arg1;
 - (void)observeSupportedInterfaceOrientationsWithBlock:(id /* block */)arg1;
+- (void)observeWhitePointAdaptivityStyleWithBlock:(id /* block */)arg1;
 - (void)observeWindowOverlayInsetsWithBlock:(id /* block */)arg1;
 
 @end

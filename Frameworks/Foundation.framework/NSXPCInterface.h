@@ -46,6 +46,10 @@
 + (id)mf_mailComposeRemoteHostInterface;
 + (id)mf_mailComposeRemoteServiceInterface;
 
+// Image: /System/Library/Frameworks/MobileCoreServices.framework/MobileCoreServices
+
+- (void)setArgumentClasses:(id)arg1 replyClasses:(id)arg2 forSelector:(SEL)arg3;
+
 // Image: /System/Library/PrivateFrameworks/AssistantServices.framework/AssistantServices
 
 + (id)af_siriTaskDeliveringInterface;

@@ -11,8 +11,8 @@
 
 + (id)overlayPropertiesFactoryWithStyle:(unsigned int)arg1;
 
+- (void).cxx_destruct;
 - (id)_fetchAndCachePropsForDeviceQuality:(int)arg1;
-- (void)dealloc;
 - (id)initWithStyle:(unsigned int)arg1;
 - (id)propertiesWithDeviceDefaultGraphicsQuality;
 - (id)propertiesWithGraphicsQuality:(int)arg1;

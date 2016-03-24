@@ -20,6 +20,7 @@
 @property (nonatomic) int networkType;
 @property (nonatomic) unsigned long long timestamp;
 
+- (int)StringAsNetworkType:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -32,6 +33,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)networkType;
+- (id)networkTypeAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setDnsServers:(unsigned int)arg1;
 - (void)setHasDnsServers:(BOOL)arg1;

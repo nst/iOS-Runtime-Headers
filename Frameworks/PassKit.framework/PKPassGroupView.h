@@ -10,17 +10,17 @@
     unsigned int _displayIndex;
     PKPassView *_frontmostPassView;
     PKGroup *_group;
-    UIInterpolatingMotionEffect *_horizontalMotionEffect;
     float _horizontalMotionRelativeValue;
     UIScrollView *_horizontalScrollView;
+    BOOL _isAuthenticating;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
+    UIMotionEffectGroup *_motionEffectGroup;
     UIPageControl *_pageControl;
+    BOOL _pageControlHidden;
     UIPanGestureRecognizer *_panGestureRecognizer;
     PKReusablePassViewQueue *_passViewQueue;
     NSMutableDictionary *_passViewsByUniqueID;
     int _presentationState;
-    BOOL _showPageControl;
-    UIInterpolatingMotionEffect *_verticalMotionEffect;
     float _verticalMotionRelativeValue;
 }
 
@@ -34,6 +34,7 @@
 @property (nonatomic) float horizontalMotionRelativeValue;
 @property (nonatomic, readonly) struct UIOffset { float x1; float x2; } offsetForFrontmostPassWhileStacked;
 @property (nonatomic, readonly) UIPageControl *pageControl;
+@property (nonatomic, readonly) BOOL pageControlHidden;
 @property (nonatomic) PKReusablePassViewQueue *passViewQueue;
 @property (nonatomic) int presentationState;
 @property (readonly) Class superclass;
@@ -84,11 +85,14 @@
 - (id)initWithGroup:(id)arg1 delegate:(id)arg2 contentMode:(int)arg3;
 - (struct UIOffset { float x1; float x2; })offsetForFrontmostPassWhileStacked;
 - (id)pageControl;
+- (BOOL)pageControlHidden;
 - (BOOL)passView:(id)arg1 deleteButtonEnabledForPass:(id)arg2;
 - (void)passView:(id)arg1 deleteButtonPressedForPass:(id)arg2;
 - (void)passView:(id)arg1 flipButtonPressedForPass:(id)arg2;
 - (void)passView:(id)arg1 resizeButtonPressedForPass:(id)arg2;
 - (BOOL)passViewBackGrowsCentered:(id)arg1;
+- (void)passViewDidBeginAuthenticating:(id)arg1;
+- (void)passViewDidEndAuthenticating:(id)arg1;
 - (void)passViewDidFlip:(id)arg1 animated:(BOOL)arg2;
 - (void)passViewDidResize:(id)arg1 animated:(BOOL)arg2;
 - (id)passViewQueue;
@@ -109,14 +113,16 @@
 - (void)setFrontmostPassView:(id)arg1;
 - (void)setFrontmostPassViewFromPassIndex:(int)arg1;
 - (void)setGroup:(id)arg1;
-- (void)setHorizontalMotionEnabled:(BOOL)arg1;
 - (void)setHorizontalMotionRelativeValue:(float)arg1;
+- (void)setPageControlHidden:(BOOL)arg1;
+- (void)setPageControlHidden:(BOOL)arg1 animated:(BOOL)arg2;
+- (void)setPageControlHidden:(BOOL)arg1 duration:(double)arg2 delay:(double)arg3;
+- (void)setPageControlHidden:(BOOL)arg1 scrollEnabled:(BOOL)arg2 duration:(double)arg3 delay:(double)arg4;
 - (void)setPassViewQueue:(id)arg1;
+- (void)setPileMotionEffectsEnabled:(BOOL)arg1;
 - (void)setPresentationState:(int)arg1;
 - (void)setPresentationState:(int)arg1 animated:(BOOL)arg2;
 - (void)setPresentationState:(int)arg1 animated:(BOOL)arg2 resizePasses:(BOOL)arg3;
-- (void)setShowPageControlWithAnimation:(BOOL)arg1 duration:(double)arg2 delay:(double)arg3;
-- (void)setVerticalMotionEnabled:(BOOL)arg1;
 - (void)setVerticalMotionRelativeValue:(float)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)sizeToFit;

@@ -156,6 +156,7 @@
 - (void)displayVideoViewOnTV;
 - (void)enableAirPlayVideoRoutesIfNecessary;
 - (void)exitFullscreen;
+- (void)handleExternalPlaybackDidChange;
 - (void)handleScaleModeChange;
 - (id)hostedWindow;
 - (unsigned int)hostedWindowContextID;

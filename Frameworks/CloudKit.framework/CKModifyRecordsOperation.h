@@ -55,7 +55,9 @@
 - (id)clientChangeTokenData;
 - (id)conflictLosersToResolveByRecordID;
 - (id)deletedRecordIDs;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithRecordsToSave:(id)arg1 recordIDsToDelete:(id)arg2;
 - (id /* block */)modifyRecordsCompletionBlock;

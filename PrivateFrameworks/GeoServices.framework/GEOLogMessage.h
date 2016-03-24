@@ -54,6 +54,7 @@
 - (id)deviceState;
 - (id)dictionaryRepresentation;
 - (id)groupIdentifier;
+- (unsigned int)groupSequenceNumber;
 - (BOOL)hasAppConfig;
 - (BOOL)hasAppState;
 - (BOOL)hasDebugLogMessage;

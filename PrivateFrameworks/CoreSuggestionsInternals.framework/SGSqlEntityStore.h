@@ -85,11 +85,12 @@
 - (void)_joinNamelessEmailWithOthersOfItsIlk:(id)arg1 recordId:(id)arg2;
 - (void)_joinNamelessPhonesWithOthersOfTheirIlk:(id)arg1 recordId:(id)arg2;
 - (id)_labelIdentityBlobs:(id)arg1;
-- (void)_linkNamelessEmailsIfAppropriate:(struct graph_t { unsigned int x1; unsigned int x2; struct _vertex_t {} *x3; }*)arg1 nameToVertex:(id)arg2 disjointSets:(struct DisjointSetHandle { }*)arg3;
-- (void)_linkNamelessPhonesIfAppropriate:(struct graph_t { unsigned int x1; unsigned int x2; struct _vertex_t {} *x3; }*)arg1 nameToVertex:(id)arg2 disjointSets:(struct DisjointSetHandle { }*)arg3;
+- (void)_linkNamelessEmailsIfAppropriate:(struct graph_t { unsigned int x1; unsigned int x2; struct _vertex_t {} *x3; }*)arg1 nameToVertex:(id)arg2 disjointSets:(struct DisjointSetHandle { }*)arg3 edges:(id)arg4;
+- (void)_linkNamelessPhonesIfAppropriate:(struct graph_t { unsigned int x1; unsigned int x2; struct _vertex_t {} *x3; }*)arg1 nameToVertex:(id)arg2 disjointSets:(struct DisjointSetHandle { }*)arg3 edges:(id)arg4;
 - (id)_loadContactForStorageContact:(id)arg1 usingSerializedContactCache:(BOOL)arg2;
 - (id)_loadIdentityBlobs;
 - (void)_logConfirmPercentWithConfirmCount:(double)arg1 rejectCount:(double)arg2 domain:(id)arg3 suffix:(id)arg4;
+- (id)_makeBlobsFromConnectedComponents:(id)arg1 edges:(id)arg2;
 - (void)_markIdentityStoreClean;
 - (void)_markIdentityStoreDirty;
 - (void)_markRecordsLostIfNoSpotlightReferences:(id)arg1;
@@ -106,7 +107,7 @@
 - (void)_removeCorruptionMarker;
 - (BOOL)_removeEntitiesWhere:(id)arg1 onPrep:(id /* block */)arg2;
 - (void)_removeSnippetsForEntities:(id)arg1;
-- (void)_reportDbStats;
+- (void)_reportDbStatsBackground;
 - (int)_scoreContactDetail:(id)arg1;
 - (void)_selectAuthoritativeDetailsForContactWithId:(long long)arg1;
 - (void)_slowCopyFromTable:(id)arg1 toTable:(id)arg2 startingAtEntityId:(unsigned long long)arg3;
@@ -280,6 +281,7 @@
 - (BOOL)rejectRealtimeContact:(id)arg1 error:(id*)arg2;
 - (BOOL)rejectRealtimeEvent:(id)arg1 error:(id*)arg2;
 - (BOOL)rejectStoredEvent:(id)arg1 error:(id*)arg2;
+- (void)reportDbStats;
 - (void)resolveFullDownloadRequests:(id)arg1;
 - (int)rowIdWhenContactsEnabled;
 - (int)rowIdWhenEventsEnabled;

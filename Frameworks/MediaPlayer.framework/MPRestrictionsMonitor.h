@@ -20,6 +20,7 @@
 @property (nonatomic, readonly) BOOL allowsStorePurchases;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) BOOL hasRestrictionsPasscode;
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
@@ -36,6 +37,7 @@
 - (BOOL)allowsStorePurchases;
 - (void)dealloc;
 - (id)effectiveValueForSetting:(id)arg1;
+- (BOOL)hasRestrictionsPasscode;
 - (id)init;
 - (void)profileConnectionDidReceiveEffectiveSettingsChangedNotification:(id)arg1 userInfo:(id)arg2;
 

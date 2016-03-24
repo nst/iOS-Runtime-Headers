@@ -25,6 +25,7 @@
 - (void)_updateEntityProviders;
 - (void)_updateStoreCompleteOfferAvailable;
 - (void)dealloc;
+- (BOOL)hasMultipleEntitiesIncludingStoreContent;
 - (id)init;
 - (BOOL)isStoreCompleteOfferAvailable;
 - (id)localEntityProvider;

@@ -8,6 +8,7 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property (retain) NSData *applicationData;
 @property struct _NEFlow { }*flow;
 @property (readonly) NEFlowMetaData *metaData;
 @property (retain) NSObject<OS_dispatch_queue> *queue;
@@ -16,6 +17,7 @@
 + (id)flowErrorForVPNFlowError:(long)arg1;
 
 - (void).cxx_destruct;
+- (id)applicationData;
 - (void)clearEventHandlers;
 - (void)closeReadWithError:(id)arg1;
 - (void)closeWriteWithError:(id)arg1;
@@ -26,6 +28,7 @@
 - (id)metaData;
 - (void)openWithLocalEndpoint:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)queue;
+- (void)setApplicationData:(id)arg1;
 - (void)setFlow:(struct _NEFlow { }*)arg1;
 - (void)setQueue:(id)arg1;
 

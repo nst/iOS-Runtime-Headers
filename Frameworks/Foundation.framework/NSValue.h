@@ -184,7 +184,7 @@
 - (union _GEOPlaceDataComponentKey { struct { unsigned long long x_1_1_1; unsigned short x_1_1_2; unsigned short x_1_1_3; unsigned int x_1_1_4; } x1; struct { unsigned int x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; unsigned int x_2_1_4; } x2; })_geo_GEOPlaceDataComponentKeyValue;
 - (struct { double x1; double x2; })coordinateValue;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)valueWithHKGraphSeriesDataBlockPath:(struct { int x1; int x2; })arg1;
 + (id)valueWithHKLinearTransform:(struct HKLinearTransform { float x1; float x2; })arg1;

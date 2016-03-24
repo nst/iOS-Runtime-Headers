@@ -8,6 +8,7 @@
     <NPKPaymentWebServiceTargetDeviceDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_internalQueue;
     NSMutableDictionary *_outstandingRequests;
+    NRActiveDeviceAssertion *_provisioningActiveDeviceAssertion;
     IDSService *_provisioningService;
     NSObject<OS_dispatch_queue> *_responseQueue;
 }
@@ -20,6 +21,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *internalQueue;
 @property (nonatomic, retain) NSMutableDictionary *outstandingRequests;
+@property (nonatomic, retain) NRActiveDeviceAssertion *provisioningActiveDeviceAssertion;
 @property (nonatomic, retain) IDSService *provisioningService;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *responseQueue;
 @property (readonly) Class superclass;
@@ -29,6 +31,7 @@
 - (void).cxx_destruct;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(BOOL)arg2;
 - (id)_sendProtobuf:(id)arg1 responseExpected:(BOOL)arg2 extraOptions:(id)arg3;
+- (id)_serialNumbersOfAllPairedDevices;
 - (void)_setOrResetCleanupTimerForRequest:(id)arg1;
 - (id)_supportedRegionsForWebService:(id)arg1;
 - (void)archiveBackgroundContext:(id)arg1;
@@ -51,7 +54,10 @@
 - (id)init;
 - (id)initWithContext:(unsigned int)arg1 responseQueue:(id)arg2;
 - (id)internalQueue;
-- (void)noteProvisioningInProgress:(BOOL)arg1;
+- (void)noteProvisioningDidBegin;
+- (void)noteProvisioningDidEnd;
+- (void)noteProvisioningUserInterfaceDidAppear;
+- (void)noteProvisioningUserInterfaceDidDisappear;
 - (id)outstandingRequests;
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
 - (void)paymentWebService:(id)arg1 addPaymentPass:(id)arg2 withCompletionHandler:(id /* block */)arg3;
@@ -72,6 +78,7 @@
 - (void)preconditionNotMet:(id)arg1;
 - (void)preferredAIDRequest:(id)arg1;
 - (void)preferredAIDResponse:(id)arg1;
+- (id)provisioningActiveDeviceAssertion;
 - (void)provisioningDataResponse:(id)arg1;
 - (id)provisioningService;
 - (void)queueTSMConnectionResponse:(id)arg1;
@@ -92,6 +99,7 @@
 - (void)setNewAuthRandomIfNecessaryAtBeginningOfProvisioningFlow:(id /* block */)arg1;
 - (void)setNewAuthRandomIfNecessaryResponse:(id)arg1;
 - (void)setOutstandingRequests:(id)arg1;
+- (void)setProvisioningActiveDeviceAssertion:(id)arg1;
 - (void)setProvisioningService:(id)arg1;
 - (void)setResponseQueue:(id)arg1;
 - (void)signDataResponse:(id)arg1;

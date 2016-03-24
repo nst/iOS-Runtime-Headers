@@ -12,6 +12,7 @@
 @property (nonatomic) <WeatherValidatorDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) <GEOMapServiceCompletionTicket> *lastTicket;
 @property (readonly) Class superclass;
 
 + (id)sharedValidator;

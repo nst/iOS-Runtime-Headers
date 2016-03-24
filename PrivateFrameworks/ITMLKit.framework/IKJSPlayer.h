@@ -16,6 +16,7 @@
 @property (nonatomic, readonly) IKJSMediaItem *currentMediaItem;
 @property (nonatomic, readonly) IKJSMediaItem *nextMediaItem;
 @property (nonatomic, retain) IKDOMDocument *overlayDocument;
+@property (nonatomic) double playbackRate;
 @property (nonatomic, readonly) NSString *playbackState;
 @property (nonatomic, retain) IKJSPlaylist *playlist;
 @property (nonatomic, readonly) IKJSMediaItem *previousMediaItem;
@@ -34,6 +35,7 @@
 - (id)overlayDocument;
 - (void)pause;
 - (void)play;
+- (double)playbackRate;
 - (id)playbackState;
 - (id)playlist;
 - (void)present;

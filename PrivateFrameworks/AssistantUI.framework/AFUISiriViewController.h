@@ -171,7 +171,7 @@
 - (void)siriRemoteViewController:(id)arg1 didEncounterUnexpectedServiceError:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 didReadBulletinWithIdentifier:(id)arg2;
 - (void)siriRemoteViewController:(id)arg1 handlePasscodeUnlockWithCompletion:(id /* block */)arg2;
-- (void)siriRemoteViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3 replyHandler:(id /* block */)arg4;
+- (void)siriRemoteViewController:(id)arg1 launchApplicationWithBundleIdentifier:(id)arg2 withURL:(id)arg3 launchOverSiri:(BOOL)arg4 replyHandler:(id /* block */)arg5;
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 appBundleID:(id)arg3 allowSiriDismissal:(BOOL)arg4;
 - (BOOL)siriRemoteViewController:(id)arg1 openURL:(id)arg2 delaySessionEndForTTS:(BOOL)arg3;
 - (void)siriRemoteViewController:(id)arg1 setBugReportingAvailable:(BOOL)arg2;

@@ -10,8 +10,8 @@
 }
 
 - (id)_identifierForResource:(id)arg1;
-- (id)addProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4;
-- (void)cancelTaskWithTaskIdentifier:(id)arg1;
+- (BOOL)addProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4 withTaskIdentifier:(id)arg5;
+- (BOOL)cancelTaskWithTaskIdentifier:(id)arg1;
 - (void)createPendingTaskWithProgressBlock:(id /* block */)arg1 completionHandler:(id /* block */)arg2 forResource:(id)arg3 highPriority:(BOOL)arg4 withTaskIdentifier:(id)arg5;
 - (void)dealloc;
 - (id)firstTaskIdentifierForResource:(id)arg1 highPriority:(BOOL)arg2;

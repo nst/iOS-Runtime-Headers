@@ -12,6 +12,7 @@
     } _autocorrectionListUIState;
     NSString *_clientIdentifier;
     TIKeyboardCandidate *_currentCandidate;
+    NSUUID *_documentIdentifier;
     TIDocumentState *_documentState;
     NSString *_inputForMarkedText;
     NSString *_inputMode;
@@ -49,6 +50,7 @@
 @property (nonatomic) BOOL candidateSelectionPredictionEnabled;
 @property (nonatomic, copy) NSString *clientIdentifier;
 @property (nonatomic, retain) TIKeyboardCandidate *currentCandidate;
+@property (nonatomic, retain) NSUUID *documentIdentifier;
 @property (nonatomic, retain) TIDocumentState *documentState;
 @property (nonatomic) BOOL hardwareKeyboardMode;
 @property (nonatomic, copy) NSString *inputForMarkedText;
@@ -85,6 +87,7 @@
 - (id)currentCandidate;
 - (void)dealloc;
 - (id)description;
+- (id)documentIdentifier;
 - (id)documentState;
 - (void)encodeWithCoder:(id)arg1;
 - (BOOL)hardwareKeyboardMode;
@@ -108,6 +111,7 @@
 - (void)setCandidateSelectionPredictionEnabled:(BOOL)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setCurrentCandidate:(id)arg1;
+- (void)setDocumentIdentifier:(id)arg1;
 - (void)setDocumentState:(id)arg1;
 - (void)setHardwareKeyboardMode:(BOOL)arg1;
 - (void)setInputForMarkedText:(id)arg1;

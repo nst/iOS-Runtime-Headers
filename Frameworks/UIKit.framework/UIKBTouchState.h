@@ -26,7 +26,10 @@
 + (void)releaseUUIDForTouch:(id)arg1;
 + (id)touchForTouchUUID:(id)arg1;
 + (id)touchStateForTouch:(id)arg1;
++ (id)touchStateForTouchUUID:(id)arg1 withTimestamp:(double)arg2 phase:(int)arg3 location:(struct CGPoint { float x1; float x2; })arg4 pathIndex:(unsigned char)arg5 inView:(id)arg6;
 + (id)touchUUIDForTouch:(id)arg1;
++ (id)touchUUIDsForTouches:(id)arg1;
++ (id)touchesForTouchUUIDs:(id)arg1;
 
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;

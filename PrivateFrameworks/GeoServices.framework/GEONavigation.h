@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEONavigation : NSObject {
+@interface GEONavigation : NSObject <GEOComposedRouteObserver> {
     NSDate *_arrivalDate;
     id /* block */ _companionRouteFilterBlock;
     GEONavigationDetails *_details;
@@ -26,6 +26,8 @@
 @property (nonatomic) unsigned int announcementStage;
 @property (nonatomic, readonly) NSDate *arrivalDate;
 @property (nonatomic, copy) id /* block */ companionRouteFilterBlock;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) NSString *destinationName;
 @property (nonatomic) int displayStep;
 @property (nonatomic, readonly) double distanceRemainingOnRoute;
@@ -36,6 +38,7 @@
 @property (nonatomic, readonly) int guidanceLevelIgnoringTimeCriterion;
 @property (nonatomic) BOOL guidancePromptsEnabled;
 @property (nonatomic, readonly) BOOL hasStartedGuidance;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isNavigating;
 @property (nonatomic, readonly) GEOLocation *location;
 @property (nonatomic, readonly) BOOL locationUnreliable;
@@ -46,6 +49,7 @@
 @property (nonatomic, readonly) GEOComposedRoute *route;
 @property (nonatomic, readonly) GEORouteMatch *routeMatch;
 @property (nonatomic, readonly) BOOL shouldSuppressCellularDataAlerts;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) double timeUntilNextAnnouncement;
 
 + (id)displayDateForDate:(id)arg1;
@@ -72,6 +76,10 @@
 - (BOOL)canNavigateWithTransportType:(int)arg1;
 - (BOOL)canRunNavigationForRoute:(id)arg1 withCurrentLocation:(id)arg2;
 - (id /* block */)companionRouteFilterBlock;
+- (void)composedRoute:(id)arg1 changedSelectedRideInClusteredLeg:(id)arg2 fromIndex:(unsigned int)arg3 toIndex:(unsigned int)arg4;
+- (void)composedRoute:(id)arg1 selectedSections:(id)arg2 deselectedSections:(id)arg3;
+- (void)composedRouteUpdatedSnappedPaths:(id)arg1;
+- (void)composedRouteUpdatedTraffic:(id)arg1;
 - (void)dealloc;
 - (id)destinationName;
 - (int)displayStep;

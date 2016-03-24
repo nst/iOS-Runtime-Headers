@@ -34,6 +34,7 @@
 + (struct CGSize { float x1; float x2; })_inputButtonCircleSize;
 + (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_inputButtonCircleSpacing;
 
+- (void).cxx_destruct;
 - (void)_backspaceButtonHit;
 - (void)_cancelButtonHit;
 - (void)_configureAdditionalButtons;
@@ -46,7 +47,6 @@
 - (void)_numberPadTouchUp:(id)arg1 forEvent:(id)arg2;
 - (void)_setLuminosityBoost:(float)arg1;
 - (id)buttons;
-- (void)dealloc;
 - (id)delegate;
 - (id)downButton;
 - (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;

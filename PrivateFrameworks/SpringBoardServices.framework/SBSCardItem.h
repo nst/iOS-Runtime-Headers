@@ -26,11 +26,11 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
 - (id)attachmentData;
 - (id)body;
 - (id)bundleName;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

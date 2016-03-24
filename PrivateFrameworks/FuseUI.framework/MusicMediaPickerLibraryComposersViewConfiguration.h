@@ -4,7 +4,9 @@
 
 @interface MusicMediaPickerLibraryComposersViewConfiguration : MusicLibraryComposersViewConfiguration
 
+- (BOOL)canPreviewEntityValueContext:(id)arg1;
 - (int)handleSelectionOfEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 - (id)loadEntityViewDescriptor;
+- (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 
 @end

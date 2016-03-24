@@ -6,7 +6,7 @@
     int _activeComponent;
     NSString *_activePrefix;
     NSMutableString *_description;
-    NSObject *_object;
+    <NSObject> *_object;
     NSMutableString *_proem;
     BOOL _useDebugDescription;
 }
@@ -32,6 +32,7 @@
 - (id)appendBodySectionWithName:(id)arg1 multilinePrefix:(id)arg2 block:(id /* block */)arg3;
 - (id)appendBool:(BOOL)arg1 withName:(id)arg2;
 - (id)appendCString:(const char *)arg1 withName:(id)arg2;
+- (id)appendClass:(Class)arg1 withName:(id)arg2;
 - (id)appendDictionarySection:(id)arg1 withName:(id)arg2 multilinePrefix:(id)arg3 skipIfEmpty:(BOOL)arg4;
 - (id)appendDictionarySection:(id)arg1 withName:(id)arg2 skipIfEmpty:(BOOL)arg3;
 - (id)appendFlag:(int)arg1 withName:(id)arg2;

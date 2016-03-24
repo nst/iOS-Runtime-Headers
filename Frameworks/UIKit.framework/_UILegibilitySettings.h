@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/UIKit.framework/UIKit
  */
 
-@interface _UILegibilitySettings : NSObject {
+@interface _UILegibilitySettings : NSObject <NSSecureCoding> {
     UIColor *_contentColor;
     float _imageOutset;
     float _minFillHeight;
@@ -29,10 +29,13 @@
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (id)sharedInstanceForStyle:(int)arg1;
++ (BOOL)supportsSecureCoding;
 
 - (id)contentColor;
 - (void)dealloc;
+- (void)encodeWithCoder:(id)arg1;
 - (float)imageOutset;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithContentColor:(id)arg1;
 - (id)initWithContentColor:(id)arg1 contrast:(float)arg2;
 - (id)initWithStyle:(int)arg1;

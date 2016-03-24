@@ -125,6 +125,7 @@
     unsigned int _externalDeactivationReasons;
     BKSProcessAssertion *_fenceTaskAssertion;
     _UIGameControllerEvent *_gameControllerEvent;
+    <UIApplicationGameControllerMenuButtonDelegate> *_gameControllerMenuButtonDelegate;
     NSTimer *_hideNetworkActivityIndicatorTimer;
     _UIIdleModeController *_idleModeController;
     NSMutableSet *_idleTimerDisabledReasons;
@@ -144,6 +145,7 @@
     UIEvent *_motionEvent;
     UIMoveEvent *_moveEvent;
     int _networkResourcesCurrentlyLoadingCount;
+    int _normativeWhitePointAdaptivityStyle;
     UNSNotificationScheduler *_notificationScheduler;
     NSMutableArray *_observerBlocks;
     NSMutableDictionary *_physicalKeyCommandMap;
@@ -165,7 +167,7 @@
     UIApplicationSceneSettingsDiffInspector *_sceneSettingsGeometryMutationDiffInspector;
     UIApplicationSceneSettingsDiffInspector *_sceneSettingsPostLifecycleEventDiffInspector;
     UIApplicationSceneSettingsDiffInspector *_sceneSettingsPreLifecycleEventDiffInspector;
-    SBSApplicationShortcutService *_shortcutService;
+    SBSApplicationService *_shortcutService;
     UIStatusBar *_statusBar;
     int _statusBarRequestedStyle;
     NSMutableArray *_statusBarTintColorLockingControllers;
@@ -205,6 +207,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <UIApplicationDelegate> *delegate;
 @property (readonly, copy) NSString *description;
+@property (getter=_gameControllerMenuButtonDelegate, setter=_setGameControllerMenuButtonDelegate:, nonatomic) <UIApplicationGameControllerMenuButtonDelegate> *gameControllerMenuButtonDelegate;
 @property (readonly) unsigned int hash;
 @property (getter=isIdleTimerDisabled, nonatomic) BOOL idleTimerDisabled;
 @property (nonatomic, readonly) UIWindow *keyWindow;
@@ -217,7 +220,7 @@
 @property (nonatomic, readonly) NSString *preferredContentSizeCategory;
 @property (setter=_setPreferredContentSizeCategoryName:, nonatomic, copy) NSString *preferredContentSizeCategoryName;
 @property (getter=isProtectedDataAvailable, nonatomic, readonly) BOOL protectedDataAvailable;
-@property (nonatomic, retain) SBSApplicationShortcutService *shortcutService;
+@property (nonatomic, retain) SBSApplicationService *shortcutService;
 @property (nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } statusBarFrame;
 @property (getter=isStatusBarHidden, nonatomic, readonly) BOOL statusBarHidden;
 @property (nonatomic, readonly) int statusBarOrientation;
@@ -377,6 +380,7 @@
 - (int)_frontMostAppOrientation;
 - (unsigned int)_frontmostApplicationPort;
 - (id)_gameControllerEvent;
+- (id)_gameControllerMenuButtonDelegate;
 - (id)_getActivityContinuationDictionaryIfPresent:(id)arg1;
 - (unsigned char)_getIOHIDKeyboardTypeForGSKeyboardType:(unsigned char)arg1;
 - (int)_getSpringBoardOrientation;
@@ -388,6 +392,7 @@
 - (void)_handleApplicationLifecycleEventWithScene:(id)arg1 transitionContext:(id)arg2 completion:(id /* block */)arg3;
 - (void)_handleApplicationShortcutAction:(id)arg1;
 - (BOOL)_handleDelegateCallbacksWithOptions:(id)arg1 isSuspended:(BOOL)arg2 restoreState:(BOOL)arg3;
+- (void)_handleDeviceOrientationChangedEvent:(struct __GSEvent { }*)arg1;
 - (void)_handleGameControllerEvent:(id)arg1;
 - (void)_handleHIDEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)_handleHeadsetButtonClick;
@@ -466,6 +471,7 @@
 - (BOOL)_needsShakesWhenInactive;
 - (id)_newDefaultStoryboardWindow;
 - (id)_newSceneForWindow:(id)arg1 oldDisplay:(id)arg2 newDisplay:(id)arg3;
+- (int)_normativeWhitePointAdaptivityStyle;
 - (void)_noteAnimationFinished:(id)arg1;
 - (void)_noteAnimationStarted:(id)arg1;
 - (id)_notificationScheduler;
@@ -494,6 +500,7 @@
 - (BOOL)_prepareButtonEvent:(id)arg1 type:(int)arg2 phase:(int)arg3 timestamp:(double)arg4;
 - (BOOL)_prepareButtonEvent:(id)arg1 type:(int)arg2 phase:(int)arg3 timestamp:(double)arg4 force:(float)arg5;
 - (BOOL)_prepareButtonEvent:(id)arg1 type:(int)arg2 phase:(int)arg3 timestamp:(double)arg4 force:(float)arg5 isSynthetic:(BOOL)arg6;
+- (BOOL)_prepareButtonEvent:(id)arg1 withPressInfo:(id)arg2;
 - (id)_pressForType:(int)arg1;
 - (id)_pressesEvent;
 - (void)_purgeSharedInstances;
@@ -544,6 +551,7 @@
 - (id)_sceneSettingsPreLifecycleEventDiffInspector;
 - (void)_scheduleSceneEventResponseForScene:(id)arg1 withResponseBlock:(id /* block */)arg2;
 - (void)_scrollsToTopInitiatorView:(id)arg1 touchesEnded:(id)arg2 withEvent:(id)arg3;
+- (void)_sendButtonEventWithPressInfo:(id)arg1;
 - (void)_sendButtonEventWithType:(int)arg1 phase:(int)arg2 timestamp:(double)arg3;
 - (void)_sendButtonEventWithType:(int)arg1 phase:(int)arg2 timestamp:(double)arg3 synthetic:(BOOL)arg4;
 - (void)_sendDictionaryToPPT:(id)arg1;
@@ -569,6 +577,7 @@
 - (void)_setDefaultTopNavBarTintColor:(id)arg1;
 - (void)_setDelegate:(id)arg1 assumeOwnership:(BOOL)arg2;
 - (void)_setExpectedViewOrientation:(int)arg1;
+- (void)_setGameControllerMenuButtonDelegate:(id)arg1;
 - (void)_setHandlingURL:(BOOL)arg1 url:(id)arg2;
 - (void)_setIdleModeVisualEffectsEnabled:(BOOL)arg1;
 - (void)_setIdleTimerDisabled:(BOOL)arg1 forReason:(id)arg2;
@@ -585,6 +594,7 @@
 - (void)_setRestorationExtended:(BOOL)arg1;
 - (void)_setRotationDisabledDuringTouch:(BOOL)arg1;
 - (void)_setSaveStateRestorationArchiveWithFileProtectionCompleteUntilFirstUserAuthentication;
+- (void)_setScreenWhitePointAdaptivityStyle:(int)arg1;
 - (void)_setShouldFixMainThreadPriority:(BOOL)arg1;
 - (void)_setShouldZoom:(BOOL)arg1;
 - (void)_setStatusBarHidden:(BOOL)arg1 animationParameters:(id)arg2 changeApplicationFlag:(BOOL)arg3;
@@ -653,6 +663,7 @@
 - (void)_updateCurrentStatusBarViewControllerAppearance;
 - (void)_updateCurrentTintViewColor;
 - (void)_updateCurrentTintViewForWindow:(id)arg1;
+- (void)_updateCurrentWhitePointAdaptivityStyle;
 - (BOOL)_updateDefaultImage;
 - (void)_updateEstimatedTouchesWithEvent:(struct __IOHIDEvent { }*)arg1;
 - (void)_updateForcedStatusBarHidden;
@@ -660,11 +671,11 @@
 - (void)_updateIdleModeStatus;
 - (void)_updateLargeTextNotification;
 - (void)_updateOrientation;
-- (void)_updateSceneGeometryWithSettingObserverContext:(struct { id x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; void*x20; void*x21; void*x22; void*x23; void*x24; void*x25; void*x26; void*x27; void*x28; void*x29; void*x30; void*x31; void*x32; void*x33; void*x34; void*x35; void*x36; void*x37; void*x38; void*x39; void*x40; void*x41; void*x42; void*x43; void*x44; void*x45; void*x46; void*x47; void*x48; void*x49; void*x50; void*x51; void*x52; double x53; void*x54; void*x55; void*x56; long x57; void*x58; void*x59; void*x60; double x61; void*x62; void*x63; void*x64; void*x65; void*x66; void*x67; void*x68; const void*x69; void*x70; void*x71; unsigned short x72; void*x73; void*x74; void*x75; unsigned char x76; void*x77; void*x78; void*x79; void*x80; void*x81; in void*x82; double x83; void*x84; void*x85; void*x86; const void*x87; void*x88; void*x89; void*x90; void*x91; short x92; void*x93; short x94; void*x95; void*x96; void*x97; void*x98; void*x99; struct x100; void*x101; void*x102; void*x103; short x104; void*x105; void*x106; void*x107; const void*x108; void*x109; void*x110; BOOL x111; void*x112; void*x113; void*x114; void*x115; void*x116; unsigned short x117; void*x118; void*x119; void*x120; unsigned char x121; void*x122; void*x123; void*x124; void*x125; void*x126; in void*x127; double x128; void*x129; void*x130; void*x131; const void*x132; void*x133; void*x134; void*x135; void*x136; short x137; void*x138; short x139; void*x140; void*x141; void*x142; struct x143; void*x144; })arg1;
+- (void)_updateSceneGeometryWithSettingObserverContext:(struct { id x1; id x2; /* Warning: Unrecognized filer type: '' using 'void*' */ void*x3; void*x4; void*x5; void*x6; void*x7; void*x8; void*x9; void*x10; void*x11; void*x12; void*x13; void*x14; void*x15; void*x16; void*x17; void*x18; void*x19; })arg1;
 - (void)_updateSerializableKeyCommandsForResponder:(id)arg1;
-- (void)_updateSnapshotAndStateRestorationArchiveForBackgroundEvent:(id /* block */)arg1 saveState:(BOOL)arg2 exitIfCouldNotRestoreState:(BOOL)arg3;
 - (void)_updateSnapshotAndStateRestorationWithAction:(id)arg1;
 - (void)_updateSnapshotForBackgroundApplication:(BOOL)arg1;
+- (void)_updateStateRestorationArchiveForBackgroundEvent:(id /* block */)arg1 saveState:(BOOL)arg2 exitIfCouldNotRestoreState:(BOOL)arg3 updateSnapshot:(BOOL)arg4;
 - (void)_userActivityWillSave:(id)arg1;
 - (id)_userNotificationRegistrar;
 - (BOOL)_usesEmoji;
@@ -675,6 +686,7 @@
 - (void)_wakeTimerFired;
 - (void)_wheelChangedWithEvent:(id)arg1;
 - (id)_wheelEvent;
+- (id)_whitePointAdaptivityStyleControllingWindow;
 - (id)_workspace;
 - (void)acceleratedInX:(float)arg1 Y:(float)arg2 Z:(float)arg3;
 - (void)accessoryKeyStateChanged:(struct __GSEvent { }*)arg1;
@@ -989,6 +1001,7 @@
 - (void)workspaceDidEndTransaction:(id)arg1;
 - (void)workspaceNoteAssertionExpirationImminent:(id)arg1;
 - (void)workspaceShouldExit:(id)arg1;
+- (void)workspaceShouldExit:(id)arg1 withTransitionContext:(id)arg2;
 
 // Image: /System/Library/AccessibilityBundles/AccessibilitySettingsLoader.bundle/AccessibilitySettingsLoader
 
@@ -1039,6 +1052,7 @@
 - (void)_accessibilityAddKeyboardWindowToArray:(id)arg1 forModalWindow:(id)arg2;
 - (id)_accessibilityElementWindowsWithOptions:(id)arg1 referenceWindow:(id)arg2;
 - (void)_accessibilityEnumerateSiblingsWithParent:(id*)arg1 options:(id)arg2 usingBlock:(id /* block */)arg3;
+- (BOOL)_accessibilityIsAppReadyToBeProbed;
 - (BOOL)_accessibilityIsSystemAppServer;
 - (BOOL)_accessibilitySystemAppServerIsReady;
 - (id)_accessibilityViewChildrenWithOptions:(id)arg1;

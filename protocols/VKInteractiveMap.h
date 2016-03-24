@@ -25,6 +25,7 @@
 - (int)annotationTrackingZoomStyle;
 - (NSArray *)attributionsForCurrentRegion;
 - (void)beginStyleAnimationGroup;
+- (VKObjectBoundsContext *)boundsForSelectedTransitLines;
 - (BOOL)canEnter3DMode;
 - (BOOL)canZoomInForTileSize:(int)arg1;
 - (BOOL)canZoomOutForTileSize:(int)arg1;
@@ -96,6 +97,7 @@
 - (void)selectTransitLineMarker:(VKTransitLineMarker *)arg1;
 - (VKAnnotationMarker *)selectedAnnotationMarker;
 - (VKLabelMarker *)selectedLabelMarker;
+- (NSArray *)selectedTransitLineIDs;
 - (void)setAnnotationMarkerDeselectionCallback:(void *)arg1; // needs 1 arg types, found 6: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, VKAnnotationMarker *, void*
 - (void)setAnnotationTrackingHeadingAnimationDisplayRate:(int)arg1;
 - (void)setAnnotationTrackingZoomStyle:(int)arg1;

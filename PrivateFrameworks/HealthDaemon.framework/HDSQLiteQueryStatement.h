@@ -11,6 +11,6 @@
 - (void).cxx_destruct;
 - (id)anyEntityWithPredicate:(id)arg1;
 - (void)enumerateEntitiesWithPredicate:(id)arg1 usingBlock:(id /* block */)arg2;
-- (id)initWithDescriptor:(id)arg1 properties:(id)arg2 database:(id)arg3 cache:(BOOL)arg4;
+- (id)initWithDescriptor:(id)arg1 properties:(id)arg2 database:(id)arg3;
 
 @end

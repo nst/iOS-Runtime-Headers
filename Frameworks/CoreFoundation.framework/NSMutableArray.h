@@ -83,6 +83,10 @@
 - (void)removeObjectsFromIndices:(unsigned int*)arg1 numIndices:(unsigned int)arg2;
 - (void)sortUsingDescriptors:(id)arg1;
 
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
+
+- (void)hk_removeObjectsPassingTest:(id /* block */)arg1;
+
 // Image: /System/Library/Frameworks/MapKit.framework/MapKit
 
 - (unsigned int)_mapkit_insertSortedAnnotationView:(id)arg1;
@@ -110,9 +114,17 @@
 
 - (void)_addObjectsFromArray:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;
 - (void)_kb_reverse;
+- (BOOL)_listContainsOrderedItems;
+- (void)_set_listContainsOrderedItems:(BOOL)arg1;
+- (void)_set_syncQueue:(id)arg1;
+- (id)_syncQueue;
 - (id)_ui_dequeue;
 - (void)_ui_enqueue:(id)arg1;
 - (id)_ui_peek;
+- (void)_uikbrtInsert:(id)arg1 after:(id)arg2;
+- (void)_uikbrtInsert:(id)arg1 before:(id)arg2;
+- (void)_uikbrtInsert:(id)arg1 beforeItemPassingTest:(id /* block */)arg2;
+- (void)_uikbrtRemove:(id)arg1;
 - (void)removeViewsFromSuperview;
 
 // Image: /System/Library/PrivateFrameworks/AccessibilityUtilities.framework/AccessibilityUtilities

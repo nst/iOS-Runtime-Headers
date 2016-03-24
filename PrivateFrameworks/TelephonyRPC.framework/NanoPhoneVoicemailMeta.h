@@ -63,7 +63,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (id)dictionaryRepresentation;
-- (id)displayLabelFromAddressBook:(void*)arg1 withUpdateBlock:(id /* block */)arg2;
+- (void)displayLabelFromAddressBook:(void*)arg1 withUpdateBlock:(id /* block */)arg2;
 - (id)displayNameFromAddressBook:(void*)arg1;
 - (int)duration;
 - (int)flags;

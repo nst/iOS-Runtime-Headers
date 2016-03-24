@@ -10,6 +10,5 @@
 @optional
 
 - (void)activityCacheManager:(HDActivityCacheManager *)arg1 changedYesterdayActivityCache:(HKActivityCache *)arg2 updatedFields:(unsigned int)arg3 error:(NSError *)arg4;
-- (void)activityCacheManagerVoidedActivityCaches:(HDActivityCacheManager *)arg1;
 
 @end

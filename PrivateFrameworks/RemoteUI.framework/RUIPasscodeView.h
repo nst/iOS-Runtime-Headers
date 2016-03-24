@@ -19,6 +19,7 @@
     PSPasscodeField *_passcodeField;
     unsigned int _passcodeValidationAttempts;
     NSString *_pendingAutoFillToken;
+    NSString *_submittedPIN;
     UILabel *_titleLabel;
 }
 
@@ -34,6 +35,7 @@
 @property (nonatomic) RUIObjectModel *objectModel;
 @property (nonatomic) RUIPage *page;
 @property (nonatomic, readonly) PSPasscodeField *passcodeField;
+@property (nonatomic, copy) NSString *submittedPIN;
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
@@ -68,8 +70,10 @@
 - (void)setNumberOfEntryFields:(unsigned int)arg1;
 - (void)setObjectModel:(id)arg1;
 - (void)setPage:(id)arg1;
+- (void)setSubmittedPIN:(id)arg1;
 - (id)sourceURL;
 - (void)submitPIN;
+- (id)submittedPIN;
 - (id)titleLabel;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLayout;

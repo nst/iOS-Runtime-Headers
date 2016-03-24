@@ -15,7 +15,7 @@
 
 // Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
-+ (id)_categorySampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(id)arg4 categoryType:(id)arg5 startDate:(id)arg6 endDate:(id)arg7 value:(int)arg8;
++ (id)_categorySampleWithUUID:(id)arg1 metadata:(id)arg2 sourceBundleIdentifier:(id)arg3 creationDate:(double)arg4 categoryType:(id)arg5 startDate:(double)arg6 endDate:(double)arg7 value:(int)arg8;
 + (BOOL)_isConcreteObjectClass;
 + (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4;
 + (id)categorySampleWithType:(id)arg1 value:(int)arg2 startDate:(id)arg3 endDate:(id)arg4 device:(id)arg5 metadata:(id)arg6;
@@ -39,7 +39,7 @@
 - (BOOL)addCodableRepresentationToCollection:(id)arg1;
 - (id)codableRepresentationForSync;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (int)hk_integerValue;
 

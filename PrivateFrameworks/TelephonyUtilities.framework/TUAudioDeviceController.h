@@ -11,6 +11,7 @@
 @property (nonatomic, retain) AVAudioDevice *currentOutputDevice;
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, readonly) NSArray *devices;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSArray *inputDevices;
 @property (nonatomic, readonly) NSArray *outputDevices;
@@ -22,6 +23,7 @@
 - (id)audioClient;
 - (id)currentInputDevice;
 - (id)currentOutputDevice;
+- (id)devices;
 - (id)init;
 - (id)inputDevices;
 - (id)outputDevices;

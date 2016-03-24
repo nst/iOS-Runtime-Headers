@@ -16,9 +16,9 @@
 @property (nonatomic, copy) id /* block */ modifySharesCompletionBlock;
 @property (nonatomic, retain) NSMutableDictionary *savedSharesByShareID;
 @property (nonatomic, retain) NSMutableDictionary *shareErrorsByShareID;
-@property (nonatomic, readonly) NSArray *shareIDsToDelete;
+@property (nonatomic, retain) NSArray *shareIDsToDelete;
 @property (nonatomic, retain) NSMutableDictionary *sharesByShareID;
-@property (nonatomic, readonly) NSArray *sharesToSave;
+@property (nonatomic, retain) NSArray *sharesToSave;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
@@ -26,7 +26,9 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (unsigned long long)activityStart;
 - (id)deletedShareIDs;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithSharesToSave:(id)arg1 shareIDsToDelete:(id)arg2;
 - (id /* block */)modifySharesCompletionBlock;
@@ -36,7 +38,9 @@
 - (void)setModifySharesCompletionBlock:(id /* block */)arg1;
 - (void)setSavedSharesByShareID:(id)arg1;
 - (void)setShareErrorsByShareID:(id)arg1;
+- (void)setShareIDsToDelete:(id)arg1;
 - (void)setSharesByShareID:(id)arg1;
+- (void)setSharesToSave:(id)arg1;
 - (id)shareErrorsByShareID;
 - (id)shareIDsToDelete;
 - (id)sharesByShareID;

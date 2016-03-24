@@ -4,13 +4,15 @@
 
 @interface HDDeletedSampleEntity : HDDeletedObjectEntity
 
-+ (id)_propertySettersForDataObject;
++ (BOOL)addCodableObject:(id)arg1 toCollection:(id)arg2;
 + (id)columnsDefinition;
 + (id)databaseTable;
-+ (BOOL)enumerateDeletedSamplesWithType:(id)arg1 database:(id)arg2 sourceIdentifier:(id)arg3 limit:(unsigned int)arg4 anchor:(long long)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
++ (id)entityEncoderForHealthDaemon:(id)arg1 database:(id)arg2 purpose:(int)arg3 authorizationFilter:(id /* block */)arg4;
 + (BOOL)enumerateDeletedSamplesWithType:(id)arg1 healthDaemon:(id)arg2 sourceIdentifier:(id)arg3 limit:(unsigned int)arg4 anchor:(long long)arg5 error:(id*)arg6 handler:(id /* block */)arg7;
++ (BOOL)enumerateEntitiesForSyncWithProperties:(id)arg1 predicate:(id)arg2 excludedSyncStore:(id)arg3 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg4 limit:(unsigned int)arg5 lastSyncAnchor:(long long*)arg6 healthDatabase:(id)arg7 error:(id*)arg8 block:(id /* block */)arg9;
 + (id)insertDeletedObject:(id)arg1 dataType:(id)arg2 provenanceIdentifier:(id)arg3 deletionDate:(id)arg4 inDatabase:(id)arg5 error:(id*)arg6;
 + (id)insertDeletedObjectForObject:(id)arg1 provenanceIdentifier:(id)arg2 deletionDate:(id)arg3 inDatabase:(id)arg4 error:(id*)arg5;
++ (long long)nextSyncAnchorWithStartAnchor:(long long)arg1 predicate:(id)arg2 excludedSyncStore:(id)arg3 healthDatabase:(id)arg4 error:(id*)arg5;
 + (int)protectionClass;
 
 @end

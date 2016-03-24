@@ -20,10 +20,11 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) _UILegibilityLabel *irisInstructionsLabel1;
 @property (nonatomic, retain) _UILegibilityLabel *irisInstructionsLabel2;
-@property (nonatomic) SBSUIEffectsSegmentedControl *segmentedControl;
+@property (nonatomic, retain) SBSUIEffectsSegmentedControl *segmentedControl;
 @property (readonly) Class superclass;
-@property (nonatomic, readonly, retain) SBFWallpaperView *wallpaperView;
+@property (nonatomic, readonly) SBFWallpaperView *wallpaperView;
 
+- (void).cxx_destruct;
 - (void)_batterySaverModeChanged;
 - (void)_effectChanged:(id)arg1;
 - (void)_layoutDateView;

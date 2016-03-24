@@ -15,7 +15,7 @@
 - (BOOL)deliverData;
 - (void)handleBodyLocation:(id)arg1;
 - (void)handleHeartRate:(id)arg1;
-- (id)initWithDeviceManager:(id)arg1 propertyManager:(id)arg2 healthDaemon:(id)arg3 peripheral:(id)arg4;
+- (id)initWithServiceManager:(id)arg1 propertyManager:(id)arg2 healthDaemon:(id)arg3 peripheral:(id)arg4;
 - (void)performOperation:(id)arg1 onPeripheral:(id)arg2 withParameters:(id)arg3 completion:(id /* block */)arg4;
 - (void)peripheral:(id)arg1 didDiscoverCharacteristic:(id)arg2;
 - (void)peripheral:(id)arg1 didUpdateValueForCharacteristic:(id)arg2 error:(id)arg3;

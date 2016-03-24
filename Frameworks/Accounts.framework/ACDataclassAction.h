@@ -3,22 +3,27 @@
  */
 
 @interface ACDataclassAction : NSObject <NSSecureCoding> {
+    NSArray *_affectedContainers;
     BOOL _isDestructive;
     int _type;
 }
 
+@property (nonatomic, readonly) NSArray *affectedContainers;
 @property (nonatomic, readonly) BOOL isDestructive;
 @property (nonatomic, readonly) int type;
 
 + (id)actionWithType:(int)arg1;
 + (id)destructiveActionWithType:(int)arg1;
++ (id)destructiveActionWithType:(int)arg1 affectedContainers:(id)arg2;
 + (BOOL)supportsSecureCoding;
 
+- (void).cxx_destruct;
+- (id)affectedContainers;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithType:(int)arg1 destructivity:(BOOL)arg2;
+- (id)initWithType:(int)arg1 destructivity:(BOOL)arg2 affectedContainers:(id)arg3;
 - (BOOL)isDestructive;
 - (BOOL)isEqual:(id)arg1;
 - (int)type;

@@ -7,7 +7,9 @@
     SKUIRoundedRectButton *_appleIDButton;
     SKUIClientContext *_clientContext;
     SKUILinkButton *_ecommerceButton;
+    BOOL _ecommerceVisibilityHidden;
     SKUIRoundedRectButton *_giftingButton;
+    BOOL _giftingVisibilityHidden;
     UIButton *_redeemButton;
     UIButton *_termsAndConditionsButton;
     SKUIRoundedRectButton *_usernameButton;
@@ -35,7 +37,9 @@
 - (void)dealloc;
 - (id)giftingButton;
 - (id)initWithClientContext:(id)arg1;
+- (BOOL)isEcommerceHidden;
 - (BOOL)isGiftingHidden;
+- (BOOL)isRedeemHidden;
 - (BOOL)isTermsAndConditionsHidden;
 - (void)layoutSubviews;
 - (id)redeemButton;

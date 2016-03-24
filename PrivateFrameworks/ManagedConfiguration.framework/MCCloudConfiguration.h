@@ -25,5 +25,6 @@
 - (void)setDetails:(id)arg1;
 - (void)setMemberQueue:(id)arg1;
 - (void)setMemberQueueDetails:(id)arg1;
+- (int)userMode;
 
 @end

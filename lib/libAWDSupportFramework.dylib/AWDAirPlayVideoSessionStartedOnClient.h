@@ -8,6 +8,7 @@
     unsigned int _bitrate;
     unsigned int _bonjourMs;
     unsigned int _connectMs;
+    BOOL _didFallbackToInfraToAvoidP2POverDFS;
     unsigned int _duration;
     unsigned long long _fileBytes;
     struct { 
@@ -25,6 +26,7 @@
         unsigned int status : 1; 
         unsigned int transportType : 1; 
         unsigned int type : 1; 
+        unsigned int didFallbackToInfraToAvoidP2POverDFS : 1; 
     } _has;
     unsigned int _infoMs;
     unsigned int _postAuthMs;
@@ -43,6 +45,7 @@
 @property (nonatomic) unsigned int bitrate;
 @property (nonatomic) unsigned int bonjourMs;
 @property (nonatomic) unsigned int connectMs;
+@property (nonatomic) BOOL didFallbackToInfraToAvoidP2POverDFS;
 @property (nonatomic) unsigned int duration;
 @property (nonatomic) unsigned long long fileBytes;
 @property (nonatomic) BOOL hasAudioOnly;
@@ -50,6 +53,7 @@
 @property (nonatomic) BOOL hasBitrate;
 @property (nonatomic) BOOL hasBonjourMs;
 @property (nonatomic) BOOL hasConnectMs;
+@property (nonatomic) BOOL hasDidFallbackToInfraToAvoidP2POverDFS;
 @property (nonatomic) BOOL hasDuration;
 @property (nonatomic) BOOL hasFileBytes;
 @property (nonatomic) BOOL hasInfoMs;
@@ -83,6 +87,7 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)didFallbackToInfraToAvoidP2POverDFS;
 - (unsigned int)duration;
 - (unsigned long long)fileBytes;
 - (BOOL)hasAudioOnly;
@@ -90,6 +95,7 @@
 - (BOOL)hasBitrate;
 - (BOOL)hasBonjourMs;
 - (BOOL)hasConnectMs;
+- (BOOL)hasDidFallbackToInfraToAvoidP2POverDFS;
 - (BOOL)hasDuration;
 - (BOOL)hasFileBytes;
 - (BOOL)hasInfoMs;
@@ -117,6 +123,7 @@
 - (void)setBitrate:(unsigned int)arg1;
 - (void)setBonjourMs:(unsigned int)arg1;
 - (void)setConnectMs:(unsigned int)arg1;
+- (void)setDidFallbackToInfraToAvoidP2POverDFS:(BOOL)arg1;
 - (void)setDuration:(unsigned int)arg1;
 - (void)setFileBytes:(unsigned long long)arg1;
 - (void)setHasAudioOnly:(BOOL)arg1;
@@ -124,6 +131,7 @@
 - (void)setHasBitrate:(BOOL)arg1;
 - (void)setHasBonjourMs:(BOOL)arg1;
 - (void)setHasConnectMs:(BOOL)arg1;
+- (void)setHasDidFallbackToInfraToAvoidP2POverDFS:(BOOL)arg1;
 - (void)setHasDuration:(BOOL)arg1;
 - (void)setHasFileBytes:(BOOL)arg1;
 - (void)setHasInfoMs:(BOOL)arg1;

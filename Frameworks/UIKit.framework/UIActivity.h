@@ -12,6 +12,8 @@
 @property (nonatomic, copy) id /* block */ activityCompletionWithItemsHandler;
 @property (nonatomic, readonly) NSExtension *applicationExtension;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 + (id)_activityFunctionImage:(id)arg1;
 + (id)_activityGenericImage:(id)arg1;
 + (id)_activityImageForApplication:(id)arg1;
@@ -53,5 +55,10 @@
 - (void)prepareWithActivityItems:(id)arg1;
 - (void)setActivityCompletionHandler:(id /* block */)arg1;
 - (void)setActivityCompletionWithItemsHandler:(id /* block */)arg1;
+
+// Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
+
++ (id)ph_PhotosApplicationActivitiesTypePublish;
++ (id)ph_PhotosApplicationActivityTypeOrder;
 
 @end

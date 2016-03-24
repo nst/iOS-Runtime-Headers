@@ -57,6 +57,7 @@
 @property (nonatomic, readonly) NSString *aa_fmipToken;
 @property (nonatomic, readonly) NSString *aa_hsaToken;
 @property (setter=aa_setCloudDocsMigrationComplete:, nonatomic) BOOL aa_isCloudDocsMigrationComplete;
+@property (nonatomic, readonly) BOOL aa_isManagedAppleID;
 @property (setter=aa_setPrimaryAccount:, nonatomic) BOOL aa_isPrimaryAccount;
 @property (setter=aa_setPrimaryEmailVerified:, nonatomic) BOOL aa_isPrimaryEmailVerified;
 @property (setter=aa_setSyncedAccount:, nonatomic) BOOL aa_isSyncedAccount;
@@ -66,7 +67,6 @@
 @property (setter=aa_setLastName:, nonatomic, copy) NSString *aa_lastName;
 @property (nonatomic, readonly) NSString *aa_mapsToken;
 @property (nonatomic, readonly) BOOL aa_needsEmailConfiguration;
-@property (nonatomic, readonly) BOOL aa_needsPCSRepair;
 @property (nonatomic, readonly) BOOL aa_needsRegistration;
 @property (setter=aa_setNeedsToVerifyTerms:, nonatomic) BOOL aa_needsToVerifyTerms;
 @property (setter=aa_setPassword:, nonatomic, copy) NSString *aa_password;
@@ -290,6 +290,7 @@
 - (id)aa_hsaToken;
 - (id)aa_hsaTokenWithError:(id*)arg1;
 - (BOOL)aa_isCloudDocsMigrationComplete;
+- (BOOL)aa_isManagedAppleID;
 - (BOOL)aa_isPrimaryAccount;
 - (BOOL)aa_isPrimaryEmailVerified;
 - (BOOL)aa_isSyncedAccount;
@@ -300,6 +301,7 @@
 - (id)aa_mapsToken;
 - (BOOL)aa_needsEmailConfiguration;
 - (BOOL)aa_needsPCSRepair;
+- (BOOL)aa_needsPCSRepairWithAuthToken:(id)arg1;
 - (BOOL)aa_needsRegistration;
 - (BOOL)aa_needsToVerifyTerms;
 - (id)aa_password;
@@ -429,6 +431,7 @@
 - (BOOL)br_isCloudDocsMigrationComplete;
 - (BOOL)br_isEnabledForCloudDocs;
 - (BOOL)br_isEnabledForUbiquity;
+- (BOOL)br_isManagedAppleID;
 - (BOOL)br_isPrimaryAccount;
 - (BOOL)br_isPrimaryiCloudAccount;
 - (BOOL)br_isiCloudAccount;
@@ -461,5 +464,6 @@
 // Image: /System/Library/PrivateFrameworks/NotesShared.framework/NotesShared
 
 - (BOOL)ic_hasICloudEmailAddress;
+- (BOOL)ic_isManagedAppleID;
 
 @end

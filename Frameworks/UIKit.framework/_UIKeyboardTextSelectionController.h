@@ -16,6 +16,7 @@
     UITextPosition *_cursorPosition;
     BOOL _hasInteractionAssistant;
     BOOL _hasSelectionInteractionAssistant;
+    BOOL _hasTextInputView;
     UITextRange *_initialSelection;
     UIResponder<UITextInput> *_inputDelegate;
     UITextRange *_selectionBase;

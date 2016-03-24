@@ -5,6 +5,7 @@
 @interface SAMPGeniusSummon : SADomainCommand
 
 @property (nonatomic, retain) SAMPMediaItem *mediaItem;
+@property (nonatomic, copy) NSNumber *startPlaying;
 @property (nonatomic, copy) NSString *upNextQueueInsertLocation;
 
 + (id)geniusSummon;
@@ -15,7 +16,9 @@
 - (id)mediaItem;
 - (BOOL)requiresResponse;
 - (void)setMediaItem:(id)arg1;
+- (void)setStartPlaying:(id)arg1;
 - (void)setUpNextQueueInsertLocation:(id)arg1;
+- (id)startPlaying;
 - (id)upNextQueueInsertLocation;
 
 @end

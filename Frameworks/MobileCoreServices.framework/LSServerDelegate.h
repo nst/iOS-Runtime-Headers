@@ -5,6 +5,7 @@
 @interface LSServerDelegate : NSObject {
     NSObject<OS_dispatch_queue> *_databaseAccessQueue;
     LSDatabaseBuilder *_dbBuilder;
+    _LSInstallationService *_instalationService;
     NSObject<OS_dispatch_queue> *_ioQueue;
     NSObject<OS_xpc_object> *_listenerArray;
     int _msgsReceived;
@@ -15,9 +16,14 @@
 }
 
 - (void)beginListening;
+- (void)beginListeningOnInterface:(unsigned short)arg1 eventHandler:(SEL)arg2;
 - (void)dealloc;
 - (void)dispatchMessage:(id)arg1 withConnection:(id)arg2;
-- (void)dispatchXPCEvent:(id)arg1;
+- (void)handleAdvertisingEvent:(id)arg1;
+- (void)handleMapDBEvent:(id)arg1;
+- (void)handleModifyDBEvent:(id)arg1;
+- (void)handleOpenEvent:(id)arg1;
+- (void)handleOpenURLEvent:(id)arg1;
 - (id)initWithQueue:(id)arg1 asRoot:(unsigned char)arg2;
 - (void)languagePrefChanged;
 

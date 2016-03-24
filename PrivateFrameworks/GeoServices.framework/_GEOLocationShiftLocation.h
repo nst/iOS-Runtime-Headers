@@ -10,8 +10,10 @@
         double longitude; 
     } _coordinate;
     id /* block */ _errorHandler;
+    id /* block */ _functionHandler;
     id /* block */ _mustGoToNetworkCallback;
     NSObject<OS_dispatch_queue> *_queue;
+    BOOL _recordCacheInfo;
     struct __CFRunLoop { } *_runLoop;
 }
 
@@ -25,7 +27,8 @@
 - (void)dealloc;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4 mustGoToNetworkCallback:(id /* block */)arg5 callbackQueue:(id)arg6;
 - (id)initWithCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 completionHandler:(id /* block */)arg3 errorHandler:(id /* block */)arg4 mustGoToNetworkCallback:(id /* block */)arg5 callbackRunLoop:(struct __CFRunLoop { }*)arg6;
-- (void)performCompletionHandlerWithShiftedCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2;
+- (id)initWithCoordinate:(struct { double x1; double x2; })arg1 functionHandler:(id /* block */)arg2 errorHandler:(id /* block */)arg3 callbackQueue:(id)arg4;
+- (void)performCompletionHandlerWithShiftedCoordinate:(struct { double x1; double x2; })arg1 accuracy:(double)arg2 function:(id)arg3 wasFunctionCached:(BOOL)arg4;
 - (void)performErrorHandler:(id)arg1;
 - (void)performMustGoToNetwork;
 

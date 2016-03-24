@@ -11,6 +11,7 @@
         unsigned int _restrictedAccess : 1; 
         unsigned int _checkedInvalidHome : 1; 
         unsigned int _lastWriteFailed : 1; 
+        unsigned int _observing : 1; 
     } _flags;
     struct __CFDictionary { } *_locallySetDict;
     NSObject<OS_dispatch_group> *_synchGroup;
@@ -29,14 +30,14 @@
 - (void*)alreadylocked_copyValueForKey:(struct __CFString { }*)arg1;
 - (long)alreadylocked_generationCount;
 - (BOOL)alreadylocked_requestNewData;
-- (void)alreadylocked_setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
+- (void)alreadylocked_setValues:(const void**)arg1 forKeys:(const struct __CFString {}**)arg2 count:(long)arg3;
+- (void)alreadylocked_updateObservingRemoteChanges;
 - (BOOL)attachAccessTokenToMessage:(id)arg1 accessType:(int)arg2;
 - (struct __CFString { }*)container;
 - (void*)copyValueForKey:(struct __CFString { }*)arg1;
 - (id)createRequestNewContentMessageForDaemon:(BOOL)arg1;
 - (id)createSynchronizeMessage;
 - (void)dealloc;
-- (id)description;
 - (struct __CFString { }*)domainIdentifier;
 - (void)finalize;
 - (long)generationCount;
@@ -47,6 +48,7 @@
 - (void)handleReply:(id)arg1 toRequestNewDataMessage:(id)arg2 onConnection:(id)arg3 retryCount:(int)arg4 error:(BOOL*)arg5;
 - (id)initWithDomain:(struct __CFString { }*)arg1 user:(struct __CFString { }*)arg2 byHost:(BOOL)arg3 containerPath:(struct __CFString { }*)arg4;
 - (BOOL)isByHost;
+- (BOOL)isVolatile;
 - (void)mergeIntoDictionary:(struct __CFDictionary { }*)arg1;
 - (void)sendFullyPreparedMessage:(id)arg1 settingValue:(void*)arg2 forKey:(struct __CFString { }*)arg3 retryCount:(int)arg4;
 - (long)sendMessageSettingValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;

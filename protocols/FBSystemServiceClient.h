@@ -7,6 +7,7 @@
 
 - (NSObject<OS_xpc_object> *)connection;
 - (<FBSystemServiceFacilityClient> *)facilityClient;
+- (BOOL)isSuspended;
 - (int)pid;
 - (FBProcess *)process;
 - (void)setFacilityClient:(id <FBSystemServiceFacilityClient>)arg1;

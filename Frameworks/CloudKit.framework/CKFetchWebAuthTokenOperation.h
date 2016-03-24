@@ -18,7 +18,9 @@
 - (void)_handleCompletionCallback:(id)arg1;
 - (unsigned long long)activityStart;
 - (id /* block */)fetchWebAuthTokenCompletionBlock;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithAPIToken:(id)arg1;
 - (Class)operationInfoClass;

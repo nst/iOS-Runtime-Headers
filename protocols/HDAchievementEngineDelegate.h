@@ -5,7 +5,7 @@
 
 @required
 
-- (long long)activityCacheIndexToday;
+- (long long)activitySummaryIndexToday;
 - (double)briskMinutesToday;
 - (double)briskMinutesYesterday;
 - (double)caloriesBurnedToday;
@@ -14,7 +14,7 @@
 - (HKQuantity *)energyBurnedGoalToday;
 - (HKQuantity *)energyBurnedGoalYesterday;
 - (unsigned int)numberOfSessionsCompletedAfterDate:(NSDate *)arg1 beforeDate:(NSDate *)arg2 minimumSessionDuration:(double)arg3;
-- (NSArray *)sessionsEndingAfterDate:(NSDate *)arg1;
+- (NSArray *)sessionsEndingAfterAnchor:(long long)arg1 newAnchor:(long long*)arg2;
 - (unsigned int)standingHoursToday;
 - (unsigned int)standingHoursYesterday;
 - (unsigned int)stepsTakenToday;

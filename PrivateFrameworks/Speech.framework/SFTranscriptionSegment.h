@@ -25,6 +25,7 @@
 - (id)_initWithSubstring:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 timestamp:(double)arg3 duration:(double)arg4 alternativeSubstrings:(id)arg5;
 - (id)alternativeSubstrings;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (double)duration;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

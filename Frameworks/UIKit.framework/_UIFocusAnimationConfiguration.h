@@ -5,6 +5,7 @@
 @interface _UIFocusAnimationConfiguration : NSObject <NSCopying> {
     unsigned int _animationOptions;
     double _focusingBaseDuration;
+    double _focusingDelay;
     float _focusingDurationScaleFactorLowerBound;
     float _focusingDurationScaleFactorUpperBound;
     double _minimumFocusDuration;
@@ -17,6 +18,7 @@
 
 @property (nonatomic) unsigned int animationOptions;
 @property (nonatomic) double focusingBaseDuration;
+@property (nonatomic) double focusingDelay;
 @property (nonatomic) float focusingDurationScaleFactorLowerBound;
 @property (nonatomic) float focusingDurationScaleFactorUpperBound;
 @property (nonatomic) double minimumFocusDuration;
@@ -35,12 +37,14 @@
 - (unsigned int)animationOptions;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)focusingBaseDuration;
+- (double)focusingDelay;
 - (float)focusingDurationScaleFactorLowerBound;
 - (float)focusingDurationScaleFactorUpperBound;
 - (id)init;
 - (double)minimumFocusDuration;
 - (void)setAnimationOptions:(unsigned int)arg1;
 - (void)setFocusingBaseDuration:(double)arg1;
+- (void)setFocusingDelay:(double)arg1;
 - (void)setFocusingDurationScaleFactorLowerBound:(float)arg1;
 - (void)setFocusingDurationScaleFactorUpperBound:(float)arg1;
 - (void)setMinimumFocusDuration:(double)arg1;

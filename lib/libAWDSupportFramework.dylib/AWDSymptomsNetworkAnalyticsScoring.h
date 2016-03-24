@@ -52,6 +52,8 @@
 @property (nonatomic) unsigned long long timeSinceLastScoringSecs;
 @property (nonatomic) unsigned long long timestamp;
 
+- (int)StringAsNetworkType:(id)arg1;
+- (int)StringAsScoringCompletionCode:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -72,6 +74,7 @@
 - (unsigned long long)lifetimeOldestItemSecs;
 - (void)mergeFrom:(id)arg1;
 - (int)networkType;
+- (id)networkTypeAsString:(int)arg1;
 - (unsigned long long)numberEntriesWithHomeLOI;
 - (unsigned long long)numberEntriesWithUnapprovedLOI;
 - (unsigned long long)numberEntriesWithUndefinedLOI;
@@ -80,6 +83,7 @@
 - (unsigned long long)scoredEntries;
 - (unsigned long long)scoredKnownGood;
 - (int)scoringCompletionCode;
+- (id)scoringCompletionCodeAsString:(int)arg1;
 - (void)setHasLifetimeOldestItemSecs:(BOOL)arg1;
 - (void)setHasNetworkType:(BOOL)arg1;
 - (void)setHasNumberEntriesWithHomeLOI:(BOOL)arg1;

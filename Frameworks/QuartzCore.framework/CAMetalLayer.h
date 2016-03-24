@@ -19,9 +19,11 @@
 
 - (void)_didCommitLayer:(struct Transaction { struct Shared {} *x1; int x2; struct HashTable<CA::Layer *, unsigned int *> {} *x3; struct SpinLock {} *x4; unsigned int x5; struct Level {} *x6; struct List<void (^)()> {} *x7; struct Command {} *x8; struct Deleted {} *x9; struct List<const void *> {} *x10; struct Context {} *x11; struct HashTable<CA::Layer *, CA::Layer *> {} *x12; struct __CFRunLoop {} *x13; struct __CFRunLoopObserver {} *x14; struct LayoutList {} *x15; struct List<CA::Layer *> {} *x16; struct Atomic { struct { int x_1_2_1; } x_17_1_1; } x17; unsigned int x18 : 1; unsigned int x19 : 1; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; }*)arg1;
 - (void)_display;
+- (struct CGColorSpace { }*)colorspace;
 - (void)dealloc;
 - (id)device;
 - (void)didChangeValueForKey:(id)arg1;
+- (void)discardContents;
 - (struct CGSize { float x1; float x2; })drawableSize;
 - (BOOL)framebufferOnly;
 - (id)init;
@@ -32,6 +34,7 @@
 - (id)nextDrawable;
 - (unsigned int)pixelFormat;
 - (BOOL)presentsWithTransaction;
+- (void)setColorspace:(struct CGColorSpace { }*)arg1;
 - (void)setDevice:(id)arg1;
 - (void)setDrawableSize:(struct CGSize { float x1; float x2; })arg1;
 - (void)setFramebufferOnly:(BOOL)arg1;

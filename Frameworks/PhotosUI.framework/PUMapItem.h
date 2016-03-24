@@ -28,6 +28,5 @@
 - (void)setDateCreated:(id)arg1;
 - (void)setItemId:(id)arg1;
 - (void)setLocation:(id)arg1;
-- (id)thumbnailImage;
 
 @end

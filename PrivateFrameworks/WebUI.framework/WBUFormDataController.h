@@ -29,7 +29,7 @@
 - (void)_saveUser:(id)arg1 password:(id)arg2 forURL:(id)arg3 andPromptToUpdateRelatedCredentialsWithWebView:(id)arg4;
 - (BOOL)_saveUser:(id)arg1 password:(id)arg2 forURL:(id)arg3 formType:(unsigned int)arg4 promptingPolicy:(int)arg5 webView:(id)arg6 completionHandler:(id /* block */)arg7;
 - (BOOL)_shouldSaveCreditCardDataInWebView:(id)arg1 frame:(id)arg2;
-- (BOOL)_shouldSaveUsernamesAndPasswordsInWebView:(id)arg1;
+- (BOOL)_shouldSaveUsernamesAndPasswordsForURL:(id)arg1 inWebView:(id)arg2;
 - (void)_showCreditCardPromptForWebView:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_showPasswordPromptForWebView:(id)arg1 formType:(unsigned int)arg2 username:(id)arg3 host:(id)arg4 hasCredentialForCurrentHost:(BOOL)arg5 existingCredentialMatchesForCurrentHost:(id)arg6 otherSubdomainCredentialMatches:(id)arg7 completionHandler:(id /* block */)arg8;
 - (BOOL)_updateCredentialsWithGeneratedPasswordForForm:(id)arg1 inWebView:(id)arg2 frame:(id)arg3;
@@ -62,8 +62,9 @@
 - (BOOL)shouldAutoFillFromCreditCardDataInFrame:(id)arg1;
 - (BOOL)shouldAutoFillFromPreviousData;
 - (BOOL)shouldAutoFillPasswords;
-- (BOOL)shouldAutoGeneratePasswordsInWebView:(id)arg1;
+- (BOOL)shouldAutoGeneratePasswordsForURL:(id)arg1 inWebView:(id)arg2;
 - (void)textDidChangeInForm:(id)arg1 inWebView:(id)arg2 frame:(id)arg3;
 - (BOOL)webView:(id)arg1 frame:(id)arg2 willNavigateFromForm:(id)arg3 bySubmitting:(BOOL)arg4 submissionHandler:(id /* block */)arg5;
+- (BOOL)whiteListAllowsURL:(id)arg1;
 
 @end

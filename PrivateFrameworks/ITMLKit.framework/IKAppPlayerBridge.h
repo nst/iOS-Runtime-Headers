@@ -17,6 +17,7 @@
 @property (nonatomic, retain) IKDOMDocument *overlayDocument;
 @property (nonatomic) IKAppPlaylistBridge *playlist;
 @property (nonatomic, readonly) IKAppMediaItemBridge *previousMediaItem;
+@property (nonatomic, readonly) double scanRate;
 @property (nonatomic, readonly) int state;
 
 - (void).cxx_destruct;
@@ -44,6 +45,7 @@
 - (BOOL)requestSeekToTime:(double*)arg1 currentTime:(double)arg2;
 - (void)requestSeekToTime:(double)arg1 currentTime:(double)arg2 completion:(id /* block */)arg3;
 - (void)scan:(double)arg1;
+- (double)scanRate;
 - (void)setElapsedTime:(double)arg1 precise:(BOOL)arg2;
 - (void)setOverlayDocument:(id)arg1;
 - (void)setPlaylist:(id)arg1;

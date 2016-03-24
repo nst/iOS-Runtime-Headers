@@ -32,6 +32,7 @@
 - (id)dsID;
 - (id)identifier;
 - (id)init;
+- (BOOL)isManagedAppleID;
 - (BOOL)isPrimaryAccount;
 - (id)isPrimaryLockerAccount;
 - (BOOL)isSecureTokenValid;

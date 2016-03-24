@@ -7,6 +7,7 @@
     id _appToken;
     BOOL _blink;
     char *_blinkerBuffer;
+    BOOL _brailleChunksAreDirty;
     <SCROBrailleDriverProtocol> *_brailleDriver;
     struct __CFArray { } *_chunkArray;
     struct __CFDictionary { } *_chunkDictionary;
@@ -16,6 +17,7 @@
     char *_displayFilter;
     int _displayMode;
     int _firstToken;
+    int _focusLocation;
     int _iBeamLocation;
     int _insetSize;
     BOOL _isPanning;
@@ -29,6 +31,10 @@
     BOOL _needsFocusFlush;
     BOOL _needsStatusFlush;
     int _rightInset;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } _selectionRange;
     BOOL _showDotsSevenAndEight;
     int _size;
     NSData *_statusData;

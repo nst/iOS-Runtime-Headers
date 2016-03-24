@@ -17,6 +17,7 @@
 - (id)adviseInteractionsForLocation:(id)arg1 usingSettings:(id)arg2;
 - (id)adviseInteractionsUsingSettings:(id)arg1;
 - (id)adviseSocialInteractionsForDate:(id)arg1 andSeedContacts:(id)arg2 usingSettings:(id)arg3;
+- (void)dealloc;
 - (id)error;
 - (id)initWithServiceName:(id)arg1;
 - (id)rankCandidateContacts:(id)arg1 usingSettings:(id)arg2;

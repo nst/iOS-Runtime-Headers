@@ -21,11 +21,13 @@
     double _editStartTime;
     AVAssetExportSession *_exportSession;
     BOOL _exporting;
+    NSURL *_fileAttachmentURL;
     UIBarButtonItem *_fixSpace;
     UIBarButtonItem *_flexSpace;
     BOOL _hasEdit;
     BOOL _introMode;
     NSURL *_originalVideoURL;
+    NSString *_overrideShareMessage;
     BOOL _padMode;
     UIBarButtonItem *_pauseButton;
     UIBarButtonItem *_playButton;
@@ -69,12 +71,14 @@
 @property (nonatomic) double editStartTime;
 @property (nonatomic, retain) AVAssetExportSession *exportSession;
 @property (getter=isExporting, nonatomic) BOOL exporting;
+@property (nonatomic, retain) NSURL *fileAttachmentURL;
 @property (nonatomic, retain) UIBarButtonItem *fixSpace;
 @property (nonatomic, retain) UIBarButtonItem *flexSpace;
 @property BOOL hasEdit;
 @property (readonly) unsigned int hash;
 @property (getter=isIntroMode, nonatomic) BOOL introMode;
 @property (nonatomic, retain) NSURL *originalVideoURL;
+@property (nonatomic, retain) NSString *overrideShareMessage;
 @property (getter=isPadMode, nonatomic) BOOL padMode;
 @property (nonatomic, retain) UIBarButtonItem *pauseButton;
 @property (nonatomic, retain) UIBarButtonItem *playButton;
@@ -128,6 +132,7 @@
 - (double)editStartTime;
 - (id)exportSession;
 - (void)exportTrimVideoSaveToCameraRoll;
+- (id)fileAttachmentURL;
 - (id)fixSpace;
 - (id)flexSpace;
 - (double)getPlayerDuration;
@@ -158,6 +163,7 @@
 - (float)movieScrubberThumbnailAspectRatio:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (id)originalVideoURL;
+- (id)overrideShareMessage;
 - (void)pauseAction;
 - (id)pauseButton;
 - (void)playAction;
@@ -187,11 +193,13 @@
 - (void)setEditStartTime:(double)arg1;
 - (void)setExportSession:(id)arg1;
 - (void)setExporting:(BOOL)arg1;
+- (void)setFileAttachmentURL:(id)arg1;
 - (void)setFixSpace:(id)arg1;
 - (void)setFlexSpace:(id)arg1;
 - (void)setHasEdit:(BOOL)arg1;
 - (void)setIntroMode:(BOOL)arg1;
 - (void)setOriginalVideoURL:(id)arg1;
+- (void)setOverrideShareMessage:(id)arg1;
 - (void)setPadMode:(BOOL)arg1;
 - (void)setPauseButton:(id)arg1;
 - (void)setPlayButton:(id)arg1;

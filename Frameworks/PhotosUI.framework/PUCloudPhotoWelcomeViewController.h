@@ -23,6 +23,7 @@
 + (void)showWithPresentingViewController:(id)arg1;
 
 - (void).cxx_destruct;
+- (void)_applicationWillEnterForeground:(id)arg1;
 - (void)_continueWithoutStoragePurchase:(id)arg1;
 - (void)_dismiss;
 - (void)_enableButtons;

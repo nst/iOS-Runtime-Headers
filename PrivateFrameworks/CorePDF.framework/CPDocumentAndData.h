@@ -3,8 +3,8 @@
  */
 
 @interface CPDocumentAndData : NSObject {
-    struct CGPDFDocument { } *document;
-    struct __CFData { } *sourceData;
+    struct CGPDFDocument { } *_document;
+    struct __CFData { } *_sourceData;
 }
 
 @property (retain) struct CGPDFDocument { }*document;

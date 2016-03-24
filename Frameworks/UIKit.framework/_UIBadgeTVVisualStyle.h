@@ -4,6 +4,7 @@
 
 @interface _UIBadgeTVVisualStyle : _UIBadgeVisualStyle
 
+- (BOOL)allowsDrawingOutsideTabBar;
 - (float)edgePadding;
 - (float)fontSize;
 - (float)horizontalInset;

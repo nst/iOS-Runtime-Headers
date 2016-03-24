@@ -25,6 +25,7 @@
 + (BOOL)_allowAuthorizationForSharingWithTypes:(id)arg1 entitlements:(id)arg2 disallowedTypes:(id)arg3;
 + (void)_insertCode:(int)arg1 forIdentifier:(id)arg2;
 + (id)activityCacheType;
++ (id)activitySummaryType;
 + (id)briskMinuteDataType;
 + (id)calorieGoal;
 + (id)categoryTypeForIdentifier:(id)arg1;
@@ -34,6 +35,7 @@
 + (id)dataTypeWithCode:(int)arg1;
 + (id)quantityTypeForIdentifier:(id)arg1;
 + (BOOL)supportsSecureCoding;
++ (id)watchActivationType;
 + (id)workoutType;
 
 - (void).cxx_destruct;
@@ -53,7 +55,7 @@
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (id)hk_categoryID;
 - (id)hk_localizedName;

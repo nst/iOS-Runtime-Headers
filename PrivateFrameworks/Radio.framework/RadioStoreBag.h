@@ -25,6 +25,7 @@
 @property (nonatomic, readonly) NSString *platformLookupURLString;
 @property (nonatomic, readonly) NSDictionary *radioConfigurationDictionary;
 @property (nonatomic, readonly) BOOL shouldSendKBSyncData;
+@property (nonatomic, readonly) NSString *storeFrontSuffix;
 @property (nonatomic, readonly) NSString *streamingDownloadURLString;
 
 - (void).cxx_destruct;
@@ -43,6 +44,7 @@
 - (BOOL)shouldMescalSignRequestWithURL:(id)arg1;
 - (BOOL)shouldMescalVerifyResponseFromURL:(id)arg1;
 - (BOOL)shouldSendKBSyncData;
+- (id)storeFrontSuffix;
 - (id)streamingDownloadURLString;
 
 @end

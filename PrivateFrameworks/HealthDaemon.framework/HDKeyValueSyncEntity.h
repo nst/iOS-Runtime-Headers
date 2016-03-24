@@ -9,16 +9,20 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (int)_outgoingCategoryForNanoSyncProtocolVersion:(int)arg1;
++ (id)_syncObjectPredicateWithPredicate:(id)arg1;
 + (int)category;
 + (id)decodeSyncObjectWithData:(id)arg1;
 + (void)didReceiveKeysAndValuesWithHealthDaemon:(id)arg1;
-+ (long long)finalAnchorForNanoSyncRestoreWithStore:(id)arg1 nowDate:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (long long)finalAnchorForNanoSyncRestoreSession:(id)arg1 healthDaemon:(id)arg2 error:(id*)arg3;
 + (int)nanoSyncObjectType;
-+ (long long)nextSyncAnchorWithStore:(id)arg1 startSyncAnchor:(long long)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
-+ (id)objectsForNanoSyncRestoreWithStore:(id)arg1 nowDate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 lastSyncAnchor:(long long*)arg4 healthDaemon:(id)arg5 error:(id*)arg6;
-+ (BOOL)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (long long)nextSyncAnchorWithStore:(id)arg1 predicate:(id)arg2 startSyncAnchor:(long long)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (id)objectsForNanoSyncRestoreSession:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (int)outgoingCategoryWithSyncStore:(id)arg1;
++ (int)receiveSyncObjects:(id)arg1 syncStore:(id)arg2 healthDaemon:(id)arg3 error:(id*)arg4;
++ (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
 + (id)syncEntityDependencies;
 + (int)syncEntityType;
-+ (id)syncObjectsWithStore:(id)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 healthDaemon:(id)arg4 error:(id*)arg5;
++ (id)syncObjectsWithStore:(id)arg1 predicate:(id)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 lastSyncAnchor:(long long*)arg4 limit:(unsigned int)arg5 healthDaemon:(id)arg6 error:(id*)arg7;
 
 @end

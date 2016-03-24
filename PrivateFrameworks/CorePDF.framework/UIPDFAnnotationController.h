@@ -90,6 +90,7 @@
 - (void)mergeSelectionOfAnnotation:(id)arg1;
 - (struct CGImage { }*)newHighlightMaskImageFor:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)pageView;
+- (void)resetBeingPressedForRecognizer:(id)arg1 withDelegate:(id)arg2 withAnnotation:(id)arg3;
 - (void)setAllowEditing:(BOOL)arg1;
 - (void)setCurrentAnnotation:(id)arg1;
 - (void)setCurrentColor:(id)arg1;

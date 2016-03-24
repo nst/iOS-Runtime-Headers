@@ -7,7 +7,7 @@
     BOOL _executingOnMainThread;
     UIKeyboardTaskExecutionContext *_executionContext;
     NSConditionLock *_lock;
-    id /* block */ _mainThreadContinuation;
+    UIKeyboardTaskEntry *_mainThreadContinuation;
     NSMutableArray *_tasks;
 }
 

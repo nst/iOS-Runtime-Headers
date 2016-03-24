@@ -3,49 +3,36 @@
  */
 
 @interface PKAddPassesViewController : UIViewController {
-    NSURL *_URL;
-    BOOL _allowsPassIngestion;
-    _UIAsyncInvocation *_cancelViewServiceRequest;
     PKAssertion *_contactlessInterfaceAssertion;
-    <PKAddPassesViewControllerDelegate> *_delegate;
-    NSArray *_passes;
-    NSDate *_perfTestingForIngestion;
+    PKWeakReference *_delegate;
+    NSArray *_passDataArray;
+    unsigned int _presentationSource;
     PKRemoteAddPassesViewController *_remoteViewController;
     BOOL _succeeded;
     BOOL _viewHasAppeared;
+    _UIAsyncInvocation *_viewServiceCancelRequest;
 }
 
-@property (nonatomic, retain) NSURL *URL;
-@property (nonatomic, retain) _UIAsyncInvocation *cancelViewServiceRequest;
 @property (nonatomic) <PKAddPassesViewControllerDelegate> *delegate;
-@property (nonatomic, retain) NSArray *passes;
-@property (nonatomic, retain) PKRemoteAddPassesViewController *remoteViewController;
 
 + (BOOL)_shouldForwardViewWillTransitionToSize;
 + (BOOL)canAddPasses;
 
-- (id)URL;
-- (id)cancelViewServiceRequest;
+- (void)_applyRemoteViewController:(id)arg1;
+- (void)_ingestionDidFinishWithResult:(unsigned int)arg1;
+- (void)_requestRemoteViewController;
 - (id)childViewControllerForStatusBarHidden;
 - (id)childViewControllerForStatusBarStyle;
 - (void)dealloc;
 - (id)delegate;
-- (void)ingestionDidFinishWithResult:(int)arg1;
-- (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (id)initWithPass:(id)arg1;
 - (id)initWithPasses:(id)arg1;
+- (id)initWithPasses:(id)arg1 presentationSource:(unsigned int)arg2;
 - (int)modalPresentationStyle;
 - (int)modalTransitionStyle;
-- (id)passes;
 - (int)preferredStatusBarStyle;
 - (BOOL)prefersStatusBarHidden;
-- (id)remoteViewController;
-- (void)setAllowsPassIngestion:(BOOL)arg1;
-- (void)setCancelViewServiceRequest:(id)arg1;
 - (void)setDelegate:(id)arg1;
-- (void)setPasses:(id)arg1;
-- (void)setRemoteViewController:(id)arg1;
-- (void)setURL:(id)arg1;
 - (BOOL)shouldAutorotate;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;
 - (BOOL)succeeded;

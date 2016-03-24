@@ -52,6 +52,9 @@
 - (void)removeItemsWithIdentifiers:(void *)arg1 atFilteredIndexes:(void *)arg2 inPlaylistWithIdentifier:(void *)arg3 completionBlock:(void *)arg4; // needs 4 arg types, found 9: NSArray *, NSIndexSet *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, void*
 - (BOOL)removeItemsWithIdentifiers:(long long*)arg1 count:(unsigned int)arg2;
 - (BOOL)removePlaylistWithIdentifier:(long long)arg1;
+- (void)sdk_addItemWithOpaqueID:(void *)arg1 withCompletion:(void *)arg2; // needs 2 arg types, found 8: NSString *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSArray *, NSError *, void*
+- (void)sdk_addItemWithOpaqueIdentifier:(void *)arg1 toPlaylistWithIdentifier:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 8: NSString *, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, NSError *, void*
+- (long long)sdk_addPlaylistWithValuesForProperties:(NSDictionary *)arg1;
 - (void)seedPlaylistWithIdentifier:(void *)arg1 withItemWithIdentifier:(void *)arg2 completionBlock:(void *)arg3; // needs 3 arg types, found 9: long long, long long, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*
 - (BOOL)setValue:(id)arg1 forDatabaseProperty:(NSString *)arg2;
 - (void)setValue:(void *)arg1 forProperty:(void *)arg2 ofCollectionWithIdentifier:(void *)arg3 groupingType:(void *)arg4 completionBlock:(void *)arg5; // needs 5 arg types, found 11: id, NSString *, long long, int, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, BOOL, NSError *, void*

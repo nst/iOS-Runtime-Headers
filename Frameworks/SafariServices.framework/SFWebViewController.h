@@ -2,15 +2,15 @@
    Image: /System/Library/Frameworks/SafariServices.framework/SafariServices
  */
 
-@interface SFWebViewController : UIViewController <WBUFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _WKFormDelegate> {
+@interface SFWebViewController : UIViewController <WBUFormAutoFillControllerDelegate, WKNavigationDelegatePrivate, WKUIDelegatePrivate, _SFJavaScriptDialogControllerDelegate, _WKFormDelegate> {
     WBUFormAutoFillController *_autoFillController;
     <SFWebViewControllerDelegate> *_delegate;
     BOOL _didFinishDocumentLoad;
     BOOL _didFirstLayout;
     BOOL _didFirstVisuallyNonEmptyLayout;
-    _SFJavaScriptDialogManager *_javaScriptDialogManager;
+    _SFJavaScriptDialogController *_javaScriptDialogController;
     BOOL _loading;
-    BOOL _shouldResetJavaScriptDialogManagerOnNextCommit;
+    BOOL _shouldSuppressJavaScriptDialogs;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -35,9 +35,12 @@
 - (void)_webView:(id)arg1 renderingProgressDidChange:(unsigned int)arg2;
 - (BOOL)_webView:(id)arg1 shouldIncludeAppLinkActionsForElement:(id)arg2;
 - (void)_webView:(id)arg1 willSubmitFormValues:(id)arg2 userObject:(id)arg3 submissionHandler:(id /* block */)arg4;
+- (void)_webViewWebProcessDidBecomeResponsive:(id)arg1;
+- (void)_webViewWebProcessDidBecomeUnresponsive:(id)arg1;
 - (void)_webViewWebProcessDidCrash:(id)arg1;
 - (void)dealloc;
 - (id)delegate;
+- (BOOL)dialogControllerShouldSuppressDialogs:(id)arg1;
 - (BOOL)didFirstVisuallyNonEmptyLayout;
 - (BOOL)formAutoFillControllerCanPrefillForm:(id)arg1;
 - (BOOL)formAutoFillControllerShouldDisableAutoFill:(id)arg1;
@@ -46,7 +49,6 @@
 - (void)loadView;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)presentViewController:(id)arg1 animated:(BOOL)arg2 completion:(id /* block */)arg3;
-- (void)resetJavaScriptDialogManagerOnNextCommit;
 - (void)setDelegate:(id)arg1;
 - (void)setLoading:(BOOL)arg1;
 - (id)webView;
@@ -64,5 +66,7 @@
 - (void)webView:(id)arg1 runJavaScriptConfirmPanelWithMessage:(id)arg2 initiatedByFrame:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)webView:(id)arg1 runJavaScriptTextInputPanelWithPrompt:(id)arg2 defaultText:(id)arg3 initiatedByFrame:(id)arg4 completionHandler:(id /* block */)arg5;
 - (id)webViewConfiguration;
+- (void)willActivateWebViewController;
+- (void)willBeginUserInitiatedNavigation;
 
 @end

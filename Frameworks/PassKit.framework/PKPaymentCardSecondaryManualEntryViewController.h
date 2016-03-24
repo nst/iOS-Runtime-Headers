@@ -17,6 +17,7 @@
 - (void)performNextActionForProvisioningState:(int)arg1 withCompletion:(id /* block */)arg2;
 - (id)readonlyFieldIdentifiers;
 - (void)setSuppressPrimarySetupFields:(BOOL)arg1;
+- (BOOL)shouldAppearWithFirstEmptyFieldAsFirstResponder;
 - (BOOL)suppressPrimarySetupFields;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

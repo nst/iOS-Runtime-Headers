@@ -33,6 +33,7 @@
 + (id)filterWithName:(id)arg1 setDefaults:(BOOL)arg2;
 + (id)filterWithName:(id)arg1 withInputParameters:(id)arg2;
 + (id)filterWithString:(id)arg1;
++ (id)keyPathsForValuesAffectingValueForKey:(id)arg1;
 + (id)localizedDescriptionForFilterName:(id)arg1;
 + (id)localizedNameForCategory:(id)arg1;
 + (id)localizedNameForFilterName:(id)arg1;

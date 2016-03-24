@@ -4,6 +4,7 @@
 
 @interface MCProfileTrustEvaluator : NSObject
 
+- (BOOL)sanitizedProfileSignerCertificateChainIsAllowedToInstallUnsupportedPayload:(id)arg1;
 - (BOOL)sanitizedProfileSignerCertificateChainIsAllowedToWriteDefaults:(id)arg1;
 
 @end

@@ -4,6 +4,7 @@
 
 @interface CSSearchableIndexRequest : NSObject {
     id /* block */ _completionBlock;
+    id /* block */ _completionDataBlock;
     NSData *_data;
     BOOL _finished;
     CSSearchableIndex *_index;
@@ -18,6 +19,7 @@
 }
 
 @property (nonatomic, copy) id /* block */ completionBlock;
+@property (nonatomic, copy) id /* block */ completionDataBlock;
 @property (nonatomic, retain) NSData *data;
 @property (nonatomic) BOOL finished;
 @property (nonatomic, retain) CSSearchableIndex *index;
@@ -38,6 +40,7 @@
 - (void)_throttleIfNecessary;
 - (void)_unthrottleIfNecessary;
 - (id /* block */)completionBlock;
+- (id /* block */)completionDataBlock;
 - (id)data;
 - (void)dealloc;
 - (id)description;
@@ -53,6 +56,7 @@
 - (void)retryIfNecessaryWithError:(id)arg1;
 - (void)retryIfNecessaryWithError:(id)arg1 data:(id)arg2;
 - (void)setCompletionBlock:(id /* block */)arg1;
+- (void)setCompletionDataBlock:(id /* block */)arg1;
 - (void)setData:(id)arg1;
 - (void)setFinished:(BOOL)arg1;
 - (void)setIndex:(id)arg1;

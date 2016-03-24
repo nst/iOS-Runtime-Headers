@@ -3,9 +3,7 @@
  */
 
 @interface VTUIASRGrammars : NSObject <NSURLSessionDelegate> {
-    NSDictionary *_cachedGrammar;
     NSDictionary *_grammar;
-    NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property (readonly, copy) NSString *debugDescription;

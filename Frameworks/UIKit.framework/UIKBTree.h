@@ -113,6 +113,7 @@
 - (id)keysByKeyName:(id)arg1;
 - (id)keysForMergeConditions;
 - (id)keysOrderedByPosition;
+- (id)keysOrderedByPositionRTL;
 - (id)keysOrderedByPositionWithoutZip;
 - (id)keysWithString:(id)arg1;
 - (id)layoutName;
@@ -126,6 +127,7 @@
 - (BOOL)modifiesKeyplane;
 - (id)name;
 - (id)nameFromAttributes;
+- (struct CGPoint { float x1; float x2; })navigationPointOfKey;
 - (BOOL)noLanguageIndicator;
 - (BOOL)notUseCandidateSelection;
 - (id)numberForProperty:(id)arg1;

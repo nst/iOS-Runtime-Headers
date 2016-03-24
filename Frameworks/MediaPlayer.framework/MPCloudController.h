@@ -3,6 +3,7 @@
  */
 
 @interface MPCloudController : NSObject {
+    MSVDistributedNotificationObserver *_addToPlaylistBehaviorChangedObserver;
     NSObject<HSCloudAvailability> *_cloudAvailabilityController;
     HSCloudClient *_cloudClient;
     SSVMediaContentTasteController *_contentTasteController;
@@ -48,6 +49,7 @@
 - (BOOL)canShowCloudMusic;
 - (void)canShowCloudTracksDidChangeNotification:(id)arg1;
 - (BOOL)canShowCloudVideo;
+- (int)cloudAddToPlaylistBehavior;
 - (id)cloudClient;
 - (void)createPlaylistWithPersistentID:(unsigned long long)arg1 properties:(id)arg2 trackList:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)dealloc;
@@ -78,6 +80,10 @@
 - (void)removeItemsWithSagaIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)removePlaylistsWithSagaIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)resignActive;
+- (void)sdk_addStoreItemWithOpaqueID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)sdk_addStoreItemWithOpaqueID:(id)arg1 toPlaylistWithPersistentID:(unsigned long long)arg2 completionHandler:(id /* block */)arg3;
+- (void)sdk_createPlaylistWithPersistenID:(unsigned long long)arg1 properties:(id)arg2 tracklist:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)setCloudAddToPlaylistBehavior:(int)arg1 completionHandler:(id /* block */)arg2;
 - (void)setCollectionProperties:(id)arg1 forCollectionWithPersistentID:(long long)arg2 groupingType:(int)arg3 completionHandler:(id /* block */)arg4;
 - (void)setItemProperties:(id)arg1 forPurchaseHistoryID:(unsigned long long)arg2;
 - (void)setItemProperties:(id)arg1 forSagaID:(unsigned long long)arg2;

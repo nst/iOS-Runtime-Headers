@@ -46,6 +46,7 @@
 + (void)setCacheable:(BOOL)arg1;
 + (void)setIsDaemon:(BOOL)arg1;
 + (unsigned long long)sortAppsToPurge:(id)arg1 sortedArray:(id*)arg2 spaceNeeded:(id)arg3;
++ (id)systemContainerURL;
 + (id)taskQueue;
 + (unsigned long long)totalPurgeableSpace:(id)arg1;
 + (id)translateError:(id)arg1;

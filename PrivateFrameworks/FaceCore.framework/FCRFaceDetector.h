@@ -50,8 +50,6 @@
 
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
-+ (int)angleForTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
-
 - (long)detectFacesAndFeaturesInPixelBuffer:(struct __CVBuffer { }*)arg1 detectOptions:(id)arg2 detailOptions:(id)arg3 faces:(id*)arg4;
 
 @end

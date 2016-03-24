@@ -7,13 +7,15 @@
 
 - (double)aspectRatio;
 - (NSURL *)assetsLibraryURL;
+- (int)cloudPlaceholderKind;
 - (int)cloudSharedAssetPlaceholderKind;
 - (BOOL)complete;
 - (NSString *)debugFilename;
-- (BOOL)duration;
+- (double)duration;
 - (unsigned int)effectiveThumbnailIndex;
 - (NSURL *)fileURLForFullsizeRenderImage;
 - (NSURL *)fileURLForFullsizeRenderVideo;
+- (void)generateLargeThumbnailFileIfNecessary;
 - (BOOL)hasAdjustments;
 - (BOOL)hasLegacyAdjustments;
 - (struct CGSize { float x1; float x2; })imageSize;
@@ -22,8 +24,10 @@
 - (BOOL)isCloudSharedAsset;
 - (BOOL)isInFlight;
 - (BOOL)isJPEG;
+- (BOOL)isOriginalSRGB;
 - (BOOL)isPartOfBurst;
 - (BOOL)isRAW;
+- (BOOL)isStreamedVideo;
 - (BOOL)isTimelapsePlaceholder;
 - (BOOL)isVideo;
 - (short)kind;
@@ -34,11 +38,16 @@
 - (int)originalImageOrientation;
 - (NSString *)pathForAdjustmentDataFile;
 - (NSString *)pathForAdjustmentFile;
+- (NSString *)pathForFullsizeRenderImageFile;
+- (NSString *)pathForLargeThumbnailFile;
+- (NSString *)pathForMediumThumbnailFile;
+- (NSString *)pathForNonAdjustedFullsizeImageFile;
 - (NSString *)pathForOriginalFile;
 - (NSString *)pathForPenultimateFullsizeRenderImageFile;
+- (NSString *)pathForSRGBLargeThumbnailFile;
 - (NSString *)pathForSubstandardFullsizeRenderImageFile;
+- (NSString *)pathForVideoPreviewFile;
 - (PLPhotoLibrary *)pl_photoLibrary;
-- (NSString *)reservedPathForLargeDisplayableImageFileForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
 - (short)savedAssetType;
 - (NSString *)thumbnailIdentifier;
 - (NSString *)uniformTypeIdentifier;

@@ -11,16 +11,25 @@
 
 @property (nonatomic) double sampleRate;
 
-+ (id)peekCount;
-+ (id)peekDuration;
-+ (id)popCount;
++ (id)_sharedStatisticScalarWithDomain:(id)arg1 statisticsClass:(Class)arg2 identifierReporting:(int)arg3;
++ (id)alertButtonTapCount;
++ (id)controlInteractionDurationDistributionWithCategory:(id)arg1 suffix:(id)arg2;
++ (id)controlTapCountWithCategory:(id)arg1 suffix:(id)arg2;
++ (id)controlValueChangeEmittedCountWithCategory:(id)arg1 suffix:(id)arg2;
++ (id)orbPeekCount;
++ (id)orbPeekDuration;
++ (id)orbPopCount;
++ (id)orbTapCount;
++ (id)pinchGestureCount;
++ (id)scrollBounceCount;
 + (id)scrubberUsageCount;
 + (id)scrubberUsageTime;
-+ (id)tapCount;
++ (id)zoomGestureCount;
 
 - (void).cxx_destruct;
 - (void)_addChildStatistic:(id)arg1;
 - (void)_incrementValueBy:(long long)arg1;
+- (id)_key;
 - (void)_recordDistributionTime:(unsigned long long)arg1;
 - (void)_recordDistributionValue:(double)arg1;
 - (void)_removeChildStatistic:(id)arg1;

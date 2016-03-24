@@ -36,9 +36,8 @@
 - (void).cxx_destruct;
 - (id)_backgroundColor;
 - (void)_changeCommenter;
-- (void)_checkSubscriptionStatus:(id)arg1 isFinal:(BOOL)arg2 error:(id)arg3;
+- (void)_checkAdminStatus;
 - (id)_getSelectedCommenter;
-- (void)_getSubscriptionStatus;
 - (void)_keyboardDidHideChangeNotification:(id)arg1;
 - (void)_keyboardWillChangeFrameNotification:(id)arg1;
 - (void)_keyboardWillChangeNotification:(id)arg1 accountForGuideLines:(BOOL)arg2 applyKeyboardOffset:(BOOL)arg3;

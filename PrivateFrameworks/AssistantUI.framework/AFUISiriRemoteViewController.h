@@ -40,7 +40,7 @@
 - (void)serviceDidPresentBugReporter;
 - (void)serviceDidPresentUserInterface;
 - (void)serviceDidReadBulletinWithIdentifier:(id)arg1;
-- (void)serviceLaunchApplicationWithBundleIdentifier:(id)arg1 withURL:(id)arg2 replyHandler:(id /* block */)arg3;
+- (void)serviceLaunchApplicationWithBundleIdentifier:(id)arg1 withURL:(id)arg2 launchOverSiri:(BOOL)arg3 replyHandler:(id /* block */)arg4;
 - (void)serviceOpenURL:(id)arg1 appBundleID:(id)arg2 allowSiriDismissal:(BOOL)arg3;
 - (void)serviceOpenURL:(id)arg1 delaySessionEndForTTS:(BOOL)arg2 replyHandler:(id /* block */)arg3;
 - (void)servicePresentationDidChangePeekMode:(unsigned int)arg1;

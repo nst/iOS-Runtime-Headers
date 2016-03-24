@@ -3,6 +3,7 @@
  */
 
 @interface CDPContext : NSObject <NSSecureCoding> {
+    BOOL __alwaysCreateEscrowRecord;
     BOOL __useSecureBackupCachedPassphrase;
     NSString *_appleID;
     NSDictionary *_authenticationResults;
@@ -15,6 +16,7 @@
     NSString *_passwordEquivToken;
 }
 
+@property (nonatomic) BOOL _alwaysCreateEscrowRecord;
 @property (nonatomic) BOOL _useSecureBackupCachedPassphrase;
 @property (nonatomic, copy) NSString *appleID;
 @property (nonatomic, copy) NSDictionary *authenticationResults;
@@ -31,6 +33,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (BOOL)_alwaysCreateEscrowRecord;
 - (BOOL)_useSecureBackupCachedPassphrase;
 - (id)appleID;
 - (id)authenticationResults;
@@ -53,6 +56,7 @@
 - (void)setIsHSA2Account:(BOOL)arg1;
 - (void)setPassword:(id)arg1;
 - (void)setPasswordEquivToken:(id)arg1;
+- (void)set_alwaysCreateEscrowRecord:(BOOL)arg1;
 - (void)set_useSecureBackupCachedPassphrase:(BOOL)arg1;
 - (void)updateWithAuthenticationResults:(id)arg1;
 

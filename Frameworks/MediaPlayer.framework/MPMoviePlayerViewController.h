@@ -13,6 +13,7 @@
 - (BOOL)_canReloadView;
 - (void)_moviePlayerViewController_applicationDidEnterBackgroundNotification:(id)arg1;
 - (void)_moviePlayerViewController_playbackDidFinishNotification:(id)arg1;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (BOOL)_shouldUseFullScreenLayoutInWindow:(id)arg1 parentViewController:(id)arg2;
 - (BOOL)canBecomeFirstResponder;
 - (void)dealloc;

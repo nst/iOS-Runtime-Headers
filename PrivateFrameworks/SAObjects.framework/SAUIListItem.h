@@ -5,6 +5,7 @@
 @interface SAUIListItem : SAAceView
 
 @property (nonatomic, copy) NSArray *commands;
+@property (nonatomic, copy) NSString *imageType;
 @property (nonatomic, retain) <SAAceSerializable> *object;
 @property (nonatomic, copy) NSString *selectionResponse;
 @property (nonatomic, copy) NSString *selectionText;
@@ -17,10 +18,12 @@
 - (id)commands;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)imageType;
 - (id)object;
 - (id)selectionResponse;
 - (id)selectionText;
 - (void)setCommands:(id)arg1;
+- (void)setImageType:(id)arg1;
 - (void)setObject:(id)arg1;
 - (void)setSelectionResponse:(id)arg1;
 - (void)setSelectionText:(id)arg1;

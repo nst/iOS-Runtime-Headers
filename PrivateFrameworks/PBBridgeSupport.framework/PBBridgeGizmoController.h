@@ -7,13 +7,13 @@
     unsigned short _activationState;
     NSTimer *_activationTimeout;
     BOOL _canBeginActivation;
-    UIAlertView *_confirmationAlert;
     <PBBridgeConnectionDelegate> *_delegate;
     id /* block */ _enableSiriCompletion;
     NSString *_internalLastSendMessageID;
     NSString *_languageIdentifer;
     BOOL _readyToCreatePasscode;
     NSString *_regionIdentifer;
+    id /* block */ _sessionCompletion;
     id /* block */ _siriStateCompletion;
     id /* block */ _updateLanguageCompletion;
     id /* block */ _updateRegionCompletion;
@@ -23,7 +23,6 @@
 @property (nonatomic) unsigned short activationState;
 @property (nonatomic, retain) NSTimer *activationTimeout;
 @property (nonatomic, readonly) BOOL canBeginActivation;
-@property (nonatomic, retain) UIAlertView *confirmationAlert;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PBBridgeConnectionDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -33,6 +32,7 @@
 @property (nonatomic, readonly) NSString *languageIdentifer;
 @property (nonatomic, readonly) BOOL readyToCreatePasscode;
 @property (nonatomic, readonly) NSString *regionIdentifer;
+@property (nonatomic, copy) id /* block */ sessionCompletion;
 @property (nonatomic, copy) id /* block */ siriStateCompletion;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) id /* block */ updateLanguageCompletion;
@@ -43,6 +43,7 @@
 + (id)warrantyFilePathForLanguageCode:(id)arg1 countryCode:(id)arg2;
 
 - (void).cxx_destruct;
+- (BOOL)_getActivationData:(BOOL)arg1 forRequest:(id)arg2 withCompletion:(id /* block */)arg3;
 - (BOOL)_sendRemoteCommandWithMessageID:(unsigned short)arg1 withArguments:(id)arg2;
 - (BOOL)_sendResponseToMessage:(id)arg1 withResponseMessageID:(unsigned short)arg2 withArguments:(id)arg3;
 - (id /* block */)activationCompletion;
@@ -52,7 +53,6 @@
 - (void)beganAwaitingAbilityToActivate;
 - (BOOL)canBeginActivation;
 - (void)companionBecameAvailableWantsConfirmation:(id)arg1;
-- (id)confirmationAlert;
 - (id)customDescriptionOfMessageType:(unsigned short)arg1;
 - (id)delegate;
 - (void)doInitialSyncPrep:(id)arg1;
@@ -61,6 +61,7 @@
 - (void)enabledSiri:(id)arg1;
 - (void)endSetupTransaction;
 - (BOOL)getActivationDataForRequest:(id)arg1 withCompletion:(id /* block */)arg2;
+- (BOOL)getSessionDataForRequest:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)getSiriStateWithCompletion:(id /* block */)arg1;
 - (void)gotSiriState:(id)arg1;
 - (void)handleActivationData:(id)arg1;
@@ -78,13 +79,13 @@
 - (void)retryActivation:(id)arg1;
 - (BOOL)sendCompanionPerformanceResults;
 - (id)serviceIdentifier;
+- (id /* block */)sessionCompletion;
 - (void)setActivationCompletion:(id /* block */)arg1;
 - (void)setActivationState:(unsigned short)arg1;
 - (void)setActivationTimeout:(id)arg1;
 - (void)setCanBeginActivating:(id)arg1;
 - (void)setCompanionLanguage:(id)arg1;
 - (void)setCompanionRegion:(id)arg1;
-- (void)setConfirmationAlert:(id)arg1;
 - (void)setCrownOrientationRight:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setDiagnosticsEnabled:(id)arg1;
@@ -92,6 +93,7 @@
 - (void)setInternalLastSendMessageID:(id)arg1;
 - (void)setLocationEnabled:(id)arg1;
 - (void)setPasscodeRestrictions:(id)arg1;
+- (void)setSessionCompletion:(id /* block */)arg1;
 - (void)setSiriStateCompletion:(id /* block */)arg1;
 - (void)setUpdateLanguageCompletion:(id /* block */)arg1;
 - (void)setUpdateRegionCompletion:(id /* block */)arg1;

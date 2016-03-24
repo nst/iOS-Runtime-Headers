@@ -4,14 +4,14 @@
 
 @interface AFMetrics : NSObject <NSSecureCoding> {
     int _category;
-    NSDictionary *_context;
     NSNumber *_duration;
+    NSDictionary *_eventInfo;
     NSString *_originalCommandId;
 }
 
 @property (nonatomic) int category;
-@property (nonatomic, copy) NSDictionary *context;
 @property (nonatomic, retain) NSNumber *duration;
+@property (nonatomic, copy) NSDictionary *eventInfo;
 @property (nonatomic, copy) NSString *originalCommandId;
 
 + (BOOL)supportsSecureCoding;
@@ -21,17 +21,17 @@
 - (id)aceMetrics;
 - (int)category;
 - (id)categoryString;
-- (id)context;
 - (id)description;
 - (id)duration;
 - (void)encodeWithCoder:(id)arg1;
+- (id)eventInfo;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithOriginalCommandId:(id)arg1 category:(int)arg2 context:(id)arg3 duration:(id)arg4;
 - (id)initWithOriginalCommandId:(id)arg1 category:(int)arg2 duration:(id)arg3;
+- (id)initWithOriginalCommandId:(id)arg1 category:(int)arg2 eventInfo:(id)arg3 duration:(id)arg4;
 - (id)originalCommandId;
 - (void)setCategory:(int)arg1;
-- (void)setContext:(id)arg1;
 - (void)setDuration:(id)arg1;
+- (void)setEventInfo:(id)arg1;
 - (void)setOriginalCommandId:(id)arg1;
 
 @end

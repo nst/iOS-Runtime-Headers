@@ -45,6 +45,7 @@
 - (void)_addCharacteristic:(id)arg1;
 - (void)_configure:(id)arg1 clientQueue:(id)arg2 delegateCaller:(id)arg3;
 - (id)_findCharacteristic:(id)arg1;
+- (void)_handleMarkServiceInteractive:(id)arg1;
 - (void)_handleUpdateAssociatedServiceType:(id)arg1;
 - (void)_handleUpdateName:(id)arg1;
 - (BOOL)_hasCharacteristic:(id)arg1;

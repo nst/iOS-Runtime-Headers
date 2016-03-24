@@ -113,6 +113,7 @@
 - (void)collectionView:(id)arg1 didSelectItemAtIndexPath:(id)arg2;
 - (struct CGSize { float x1; float x2; })collectionView:(id)arg1 layout:(id)arg2 sizeForItemAtIndexPath:(id)arg3;
 - (int)collectionView:(id)arg1 numberOfItemsInSection:(int)arg2;
+- (BOOL)collectionView:(id)arg1 shouldSelectItemAtIndexPath:(id)arg2;
 - (id)collectionView:(id)arg1 viewForSupplementaryElementOfKind:(id)arg2 atIndexPath:(id)arg3;
 - (unsigned int)count;
 - (id)currentCandidate;

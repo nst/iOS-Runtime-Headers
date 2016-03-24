@@ -7,6 +7,7 @@
     unsigned int _bonjourMs;
     unsigned int _configMs;
     unsigned int _connectMs;
+    BOOL _didFallbackToInfraToAvoidP2POverDFS;
     struct { 
         unsigned int timestamp : 1; 
         unsigned int audioCompressionType : 1; 
@@ -16,6 +17,7 @@
         unsigned int prepareMs : 1; 
         unsigned int status : 1; 
         unsigned int transportType : 1; 
+        unsigned int didFallbackToInfraToAvoidP2POverDFS : 1; 
     } _has;
     unsigned int _prepareMs;
     NSString *_sessionUUID;
@@ -28,10 +30,12 @@
 @property (nonatomic) unsigned int bonjourMs;
 @property (nonatomic) unsigned int configMs;
 @property (nonatomic) unsigned int connectMs;
+@property (nonatomic) BOOL didFallbackToInfraToAvoidP2POverDFS;
 @property (nonatomic) BOOL hasAudioCompressionType;
 @property (nonatomic) BOOL hasBonjourMs;
 @property (nonatomic) BOOL hasConfigMs;
 @property (nonatomic) BOOL hasConnectMs;
+@property (nonatomic) BOOL hasDidFallbackToInfraToAvoidP2POverDFS;
 @property (nonatomic) BOOL hasPrepareMs;
 @property (nonatomic, readonly) BOOL hasSessionUUID;
 @property (nonatomic) BOOL hasStatus;
@@ -52,10 +56,12 @@
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
+- (BOOL)didFallbackToInfraToAvoidP2POverDFS;
 - (BOOL)hasAudioCompressionType;
 - (BOOL)hasBonjourMs;
 - (BOOL)hasConfigMs;
 - (BOOL)hasConnectMs;
+- (BOOL)hasDidFallbackToInfraToAvoidP2POverDFS;
 - (BOOL)hasPrepareMs;
 - (BOOL)hasSessionUUID;
 - (BOOL)hasStatus;
@@ -71,10 +77,12 @@
 - (void)setBonjourMs:(unsigned int)arg1;
 - (void)setConfigMs:(unsigned int)arg1;
 - (void)setConnectMs:(unsigned int)arg1;
+- (void)setDidFallbackToInfraToAvoidP2POverDFS:(BOOL)arg1;
 - (void)setHasAudioCompressionType:(BOOL)arg1;
 - (void)setHasBonjourMs:(BOOL)arg1;
 - (void)setHasConfigMs:(BOOL)arg1;
 - (void)setHasConnectMs:(BOOL)arg1;
+- (void)setHasDidFallbackToInfraToAvoidP2POverDFS:(BOOL)arg1;
 - (void)setHasPrepareMs:(BOOL)arg1;
 - (void)setHasStatus:(BOOL)arg1;
 - (void)setHasTimestamp:(BOOL)arg1;

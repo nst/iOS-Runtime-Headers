@@ -33,6 +33,7 @@
 
 + (BOOL)FMFAllowed;
 + (BOOL)FMFRestricted;
++ (BOOL)isProvisionedForLocationSharing;
 + (id)sharedInstance;
 
 - (void).cxx_destruct;

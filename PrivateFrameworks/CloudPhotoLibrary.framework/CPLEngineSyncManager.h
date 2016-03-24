@@ -116,7 +116,10 @@
 - (unsigned int)state;
 - (void)task:(id)arg1 didFinishWithError:(id)arg2;
 - (void)task:(id)arg1 didProgress:(float)arg2 userInfo:(id)arg3;
+- (id)task:(id)arg1 wantsToCheckRecordsExistence:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (id)task:(id)arg1 wantsToDownloadBatchesFromSyncAnchor:(id)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (id)task:(id)arg1 wantsToPushBatch:(id)arg2 progressBlock:(id /* block */)arg3 continuationBlock:(id /* block */)arg4;
+- (id)task:(id)arg1 wantsToQueryTaskForCursor:(id)arg2 class:(Class)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (BOOL)taskSupportsBatchDownloadPipelining:(id)arg1;
 
 @end

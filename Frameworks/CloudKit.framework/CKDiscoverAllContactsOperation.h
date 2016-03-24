@@ -17,6 +17,7 @@
 - (unsigned long long)activityStart;
 - (id /* block */)discoverAllContactsCompletionBlock;
 - (id)discoveredUserInfos;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (Class)operationInfoClass;
 - (void)performCKOperation;

@@ -4,20 +4,8 @@
 
 @interface PLAssetFormats : NSObject
 
-+ (int)bestFormatWithSize:(struct CGSize { float x1; float x2; })arg1 contentMode:(int)arg2 demoteFactor:(double)arg3 srcAspectRatio:(double)arg4 isTableFormat:(BOOL*)arg5 desiredImagePixelSize:(struct CGSize { float x1; float x2; }*)arg6;
 + (id)descriptionForImageFormat:(int)arg1;
 + (id)descriptionForVideoFormat:(int)arg1;
-+ (unsigned int)desiredLongSideForFullSizeFormat:(int)arg1;
-+ (BOOL)formatIsBadgedForVideo:(int)arg1;
-+ (BOOL)formatIsCropped:(int)arg1;
-+ (BOOL)formatIsFullscreen:(int)arg1;
-+ (BOOL)formatIsReferringToLatestVersion:(int)arg1;
-+ (BOOL)formatSizeIsShortSide:(int)arg1;
-+ (BOOL)isAlbumVideoPath:(id)arg1;
-+ (unsigned int)maxLongSideForFullSizeFormat:(int)arg1;
-+ (unsigned int)minShortSideForFullSizeFormat:(int)arg1;
-+ (struct CGSize { float x1; float x2; })scaledSizeForSize:(struct CGSize { float x1; float x2; })arg1 format:(int)arg2 capLength:(BOOL)arg3;
 + (struct CGSize { float x1; float x2; })sizeForFormat:(int)arg1;
-+ (BOOL)transformForImage:(struct CGImage { }*)arg1 captureOrientation:(int)arg2 format:(int)arg3 sizeInOut:(struct CGSize { float x1; float x2; }*)arg4 contextSizeOut:(struct CGSize { float x1; float x2; }*)arg5 transformOut:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; }*)arg6;
 
 @end

@@ -67,6 +67,7 @@
 @property (nonatomic) unsigned long long timestamp;
 @property (nonatomic) unsigned long long totalStaySecs;
 
+- (int)StringAsNetworkType:(id)arg1;
 - (unsigned long long)bytesIn;
 - (unsigned long long)bytesOut;
 - (unsigned long long)connAttempts;
@@ -100,6 +101,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (void)mergeFrom:(id)arg1;
 - (int)networkType;
+- (id)networkTypeAsString:(int)arg1;
 - (unsigned long long)packetsIn;
 - (unsigned long long)packetsOut;
 - (BOOL)readFrom:(id)arg1;

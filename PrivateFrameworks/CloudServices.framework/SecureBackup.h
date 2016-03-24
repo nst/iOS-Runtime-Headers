@@ -26,6 +26,7 @@
 - (void)_recoverWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_setBackOffDateWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_startSMSChallengeWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)_stashRecoveryDataWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_uncachePassphraseWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_uncachePassphraseWithInfoAsync:(id)arg1 completionQueue:(id)arg2;
 - (void)_updateMetadataWithInfo:(id)arg1 completionQueue:(id)arg2 completionBlock:(id /* block */)arg3;
@@ -55,6 +56,7 @@
 - (void)startSMSChallengeWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)startSMSChallengeWithInfo:(id)arg1 completionBlockWithResults:(id /* block */)arg2;
 - (id)startSMSChallengeWithInfo:(id)arg1 results:(id*)arg2;
+- (void)stashRecoveryDataWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;
 - (id)syncQueue;
 - (id)uncachePassphraseWithInfo:(id)arg1;
 - (void)uncachePassphraseWithInfo:(id)arg1 completionBlock:(id /* block */)arg2;

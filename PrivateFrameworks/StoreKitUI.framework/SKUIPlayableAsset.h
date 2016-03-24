@@ -3,15 +3,21 @@
  */
 
 @interface SKUIPlayableAsset : NSObject {
+    BOOL _ITunesStream;
     NSURL *_contentURL;
     double _initialPlaybackTime;
+    NSURL *_keyCertificateURL;
+    NSURL *_keyServerURL;
     double _playbackDuration;
     BOOL _shouldUseITunesStoreSecureKeyDelivery;
     long long _storeItemIdentifier;
 }
 
+@property (getter=isITunesStream, nonatomic, readonly) BOOL ITunesStream;
 @property (nonatomic, copy) NSURL *contentURL;
 @property (nonatomic) double initialPlaybackTime;
+@property (nonatomic, readonly, retain) NSURL *keyCertificateURL;
+@property (nonatomic, readonly, retain) NSURL *keyServerURL;
 @property (nonatomic) double playbackDuration;
 @property (nonatomic) BOOL shouldUseITunesStoreSecureKeyDelivery;
 @property (nonatomic) long long storeItemIdentifier;
@@ -23,6 +29,9 @@
 - (id)initWithVideo:(id)arg1;
 - (id)initWithVideoViewElement:(id)arg1 assetViewElement:(id)arg2;
 - (double)initialPlaybackTime;
+- (BOOL)isITunesStream;
+- (id)keyCertificateURL;
+- (id)keyServerURL;
 - (double)playbackDuration;
 - (void)setContentURL:(id)arg1;
 - (void)setInitialPlaybackTime:(double)arg1;

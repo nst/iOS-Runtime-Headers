@@ -29,7 +29,6 @@
 - (struct CGImage { }*)CGImage;
 - (struct __IOSurface { }*)IOSurface;
 - (id)UIImage;
-- (id)_IOSurfacePropertyDictionaryForSize:(struct CGSize { float x1; float x2; })arg1;
 - (float)_scale;
 - (struct CGSize { float x1; float x2; })_scaledSnapshotSize;
 - (void)_synchronizedCaptureWithCompletion:(id /* block */)arg1;

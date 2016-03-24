@@ -18,6 +18,8 @@
 @property (nonatomic) unsigned int numRRCConnections;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)appConnStatsType;
+
 - (void)addAppConnStats:(id)arg1;
 - (id)appConnStats;
 - (id)appConnStatsAtIndex:(unsigned int)arg1;

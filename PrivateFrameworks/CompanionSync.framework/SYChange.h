@@ -26,11 +26,13 @@
 @property (nonatomic) unsigned long long version;
 
 + (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2;
++ (id)changeWithChangeObject:(id)arg1 serializer:(id)arg2 encodeUsingVersion:(int)arg3;
 + (id)changeWithObject:(id)arg1 updateType:(int)arg2 store:(id)arg3;
 
 - (void).cxx_destruct;
 - (id)changeData;
 - (id)changeObjectWithSerializer:(id)arg1;
+- (id)changeObjectWithSerializer:(id)arg1 encodedByVersion:(int)arg2;
 - (int)changeType;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;

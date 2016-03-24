@@ -145,6 +145,7 @@
 - (int)annotationTrackingZoomStyle;
 - (id)attributionsForCurrentRegion;
 - (void)beginStyleAnimationGroup;
+- (id)boundsForSelectedTransitLines;
 - (id)camera;
 - (void)cameraController:(id)arg1 canEnter3DModeDidChange:(BOOL)arg2;
 - (void)cameraController:(id)arg1 didBecomePitched:(BOOL)arg2;
@@ -170,6 +171,7 @@
 - (struct { double x1; double x2; })convertPointToCoordinate:(struct CGPoint { float x1; float x2; })arg1;
 - (struct { double x1; double x2; })convertPointToCoordinateOnSphere:(struct CGPoint { float x1; float x2; })arg1;
 - (struct { double x1; double x2; })convertPointToMapPoint:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)currentSceneRequiresMSAA;
 - (double)currentZoomLevel;
 - (BOOL)currentZoomLevelAllowsRotation;
 - (double)currentZoomLevelForTileSize:(int)arg1;
@@ -264,6 +266,7 @@
 - (void)selectTransitLineMarker:(id)arg1;
 - (id)selectedAnnotationMarker;
 - (id)selectedLabelMarker;
+- (id)selectedTransitLineIDs;
 - (void)setAnnotationMarkerDeselectionCallback:(id /* block */)arg1;
 - (void)setAnnotationTrackingHeadingAnimationDisplayRate:(int)arg1;
 - (void)setAnnotationTrackingZoomStyle:(int)arg1;

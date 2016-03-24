@@ -5,19 +5,18 @@
 @interface HDAppAssertionManager : NSObject {
     NSMutableSet *_activeAssertions;
     NSMutableDictionary *_appAssertions;
+    HDDaemon *_daemon;
     NSMutableArray *_pendingAssertions;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property (nonatomic, retain) NSMutableSet *activeAssertions;
 @property (nonatomic, retain) NSMutableDictionary *appAssertions;
+@property (nonatomic) HDDaemon *daemon;
 @property (nonatomic, retain) NSMutableArray *pendingAssertions;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
-+ (id)sharedManager;
-
 - (void).cxx_destruct;
-- (id)_init;
 - (void)_queue_assertionDidFinish:(id)arg1;
 - (void)_queue_considerLaunchingApp;
 - (void)_queue_extendAssertionWithBundleID:(id)arg1 dataCode:(int)arg2 completion:(id /* block */)arg3;
@@ -26,13 +25,16 @@
 - (void)_queue_retryAppLaunchForAssertion:(id)arg1;
 - (id)activeAssertions;
 - (id)appAssertions;
+- (id)daemon;
 - (void)extendAssertionWithBundleID:(id)arg1 dataCode:(int)arg2 completion:(id /* block */)arg3;
 - (id)init;
+- (id)initWithDaemon:(id)arg1;
 - (void)invalidateAssertionWithBundleID:(id)arg1 dataCode:(int)arg2;
 - (id)pendingAssertions;
 - (id)queue;
 - (void)setActiveAssertions:(id)arg1;
 - (void)setAppAssertions:(id)arg1;
+- (void)setDaemon:(id)arg1;
 - (void)setPendingAssertions:(id)arg1;
 - (void)setQueue:(id)arg1;
 

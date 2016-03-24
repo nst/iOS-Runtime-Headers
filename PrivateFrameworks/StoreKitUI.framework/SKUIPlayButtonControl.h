@@ -22,6 +22,8 @@
     UIImage *_customPlayImage;
     UIImage *_customToggleImage;
     BOOL _didInitialHighlightForTouch;
+    BOOL _disabledButSelectable;
+    SKUIButtonViewElement *_element;
     SKUIPlayButtonGradientView *_gradientBackgroundView;
     NSArray *_gradientColors;
     int _gradientType;
@@ -47,6 +49,8 @@
 @property (nonatomic, readonly) UIColor *controlForeGroundColor;
 @property (nonatomic, retain) UIImage *customPlayImage;
 @property (nonatomic, retain) UIImage *customToggleImage;
+@property (getter=isDisabledButSelectable, nonatomic) BOOL disabledButSelectable;
+@property (nonatomic, retain) SKUIButtonViewElement *element;
 @property (nonatomic, retain) UIImageView *imageView;
 @property (getter=isIndeterminate, nonatomic, readonly) BOOL indeterminate;
 @property (nonatomic) float progress;
@@ -74,12 +78,14 @@
 - (id)_outerProgressLayer;
 - (id)_playImage;
 - (void)_prepareForReuse;
+- (BOOL)_renderAsEnabled;
 - (id)_selectedLayer;
 - (void)_showPlayIndicator:(BOOL)arg1;
 - (id)_simpleBackdrop;
 - (void)_toggleToPlayState;
 - (void)_updateBackdropView;
 - (void)_updateBackgroundBlur:(id)arg1 withOffsetRight:(float)arg2 withOffsetBottom:(float)arg3;
+- (void)_updateEnabledState;
 - (void)_updateInnerProgressLayerStroke;
 - (void)_useBlurredBackground:(BOOL)arg1;
 - (id)backdropGroupName;
@@ -94,12 +100,14 @@
 - (id)customPlayImage;
 - (id)customToggleImage;
 - (id)defaultBackgroundColor;
+- (id)element;
 - (void)endIndeterminateAnimation;
 - (void)hideProgressAnimated:(BOOL)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })hitRect;
 - (id)imageView;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (struct CGSize { float x1; float x2; })intrinsicContentSize;
+- (BOOL)isDisabledButSelectable;
 - (BOOL)isIndeterminate;
 - (void)layoutSubviews;
 - (id)outerBorderColor;
@@ -121,6 +129,8 @@
 - (void)setControlForegroundColor:(id)arg1;
 - (void)setCustomPlayImage:(id)arg1;
 - (void)setCustomToggleImage:(id)arg1;
+- (void)setDisabledButSelectable:(BOOL)arg1;
+- (void)setElement:(id)arg1;
 - (void)setEnabled:(BOOL)arg1;
 - (void)setHighlighted:(BOOL)arg1;
 - (void)setImageView:(id)arg1;
@@ -139,6 +149,7 @@
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (void)tintColorDidChange;
 - (void)touchesBegan:(id)arg1 withEvent:(id)arg2;
+- (void)touchesEnded:(id)arg1 withEvent:(id)arg2;
 - (void)updateOuterProgressLayerStroke;
 
 @end

@@ -6,8 +6,11 @@
 @required
 
 - (NSString *)aceId;
+- (void)af_addSendCompletion:(void *)arg1; // needs 1 arg types, found 7: id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, NSError *, void*
 - (BOOL)af_bufferingAllowedDuringActiveSession;
+- (void)af_dispatchSendCompletionsWithResult:(int)arg1 error:(NSError *)arg2;
 - (void)af_logDiagnostics;
+- (BOOL)af_supportsSendCompletions;
 - (NSString *)refId;
 - (NSData *)serializedAceDataError:(id*)arg1;
 - (void)setAceId:(NSString *)arg1;

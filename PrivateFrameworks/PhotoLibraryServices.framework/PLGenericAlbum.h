@@ -126,6 +126,7 @@
 + (id)keyPathsForValuesAffectingName;
 + (id)localizedTitleForAlbumKind:(int)arg1;
 + (id)otaRestoreProgressAlbumInLibrary:(id)arg1;
++ (void)removeAllUserAlbumsAndFoldersInLibrary:(id)arg1;
 + (void)removeEmptyAlbumsForCloudResetInLibrary:(id)arg1;
 + (void)removeTrashedAlbumsAndFoldersForCloudResetInLibrary:(id)arg1;
 + (void)resetAlbumStateForCloudInLibrary:(id)arg1;

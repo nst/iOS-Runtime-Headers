@@ -11,7 +11,7 @@
 }
 
 @property (nonatomic) unsigned int appearanceState;
-@property (nonatomic, retain) PUAssetViewModel *assetViewModel;
+@property (nonatomic) PUAssetViewModel *assetViewModel;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <PUIrisBadgeVisibilityControllerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
@@ -19,12 +19,15 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (void)_cancelHideRequest;
+- (unsigned int)_defaultAppearanceState;
+- (void)_enqueueHideRequest;
 - (void)_transitionToAppearanceState:(unsigned int)arg1;
 - (void)_updateAppearance;
 - (unsigned int)appearanceState;
 - (id)assetViewModel;
 - (id)delegate;
-- (void)reset;
+- (id)init;
 - (void)setAssetViewModel:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;

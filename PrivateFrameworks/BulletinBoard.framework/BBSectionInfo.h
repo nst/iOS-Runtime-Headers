@@ -3,8 +3,6 @@
  */
 
 @interface BBSectionInfo : NSObject <NSCopying, NSSecureCoding> {
-    unsigned int _alertType;
-    BOOL _allowsNotifications;
     NSArray *_dataProviderIDs;
     NSString *_displayName;
     BOOL _displaysCriticalBulletins;
@@ -12,17 +10,13 @@
     NSArray *_filters;
     BOOL _hideWeeApp;
     BBSectionIcon *_icon;
+    BBSectionInfoSettings *_managedSectionInfoSettings;
     BBSectionInfo *_parentSection;
     NSString *_pathToWeeAppPluginBundle;
-    unsigned int _pushSettings;
     int _sectionCategory;
     NSString *_sectionID;
+    BBSectionInfoSettings *_sectionInfoSettings;
     int _sectionType;
-    BOOL _showsInLockScreen;
-    BOOL _showsInNotificationCenter;
-    BOOL _showsMessagePreview;
-    BOOL _showsOnBluetoothDevices;
-    BOOL _showsOnExternalDevices;
     NSString *_subsectionID;
     int _subsectionPriority;
     NSArray *_subsections;
@@ -43,12 +37,15 @@
 @property (nonatomic) BOOL hideWeeApp;
 @property (nonatomic, copy) BBSectionIcon *icon;
 @property (nonatomic, readonly, copy) NSData *iconData;
+@property (nonatomic, copy) BBSectionInfoSettings *managedSectionInfoSettings;
 @property (nonatomic) unsigned int notificationCenterLimit;
 @property (nonatomic) BBSectionInfo *parentSection;
 @property (nonatomic, copy) NSString *pathToWeeAppPluginBundle;
 @property (nonatomic) unsigned int pushSettings;
+@property (nonatomic, readonly) BBSectionInfoSettings *readableSettings;
 @property (nonatomic) int sectionCategory;
 @property (nonatomic, copy) NSString *sectionID;
+@property (nonatomic, copy) BBSectionInfoSettings *sectionInfoSettings;
 @property (nonatomic) int sectionType;
 @property (nonatomic) BOOL showsInLockScreen;
 @property (nonatomic) BOOL showsInNotificationCenter;
@@ -59,13 +56,14 @@
 @property (nonatomic, copy) NSArray *subsections;
 @property (nonatomic) BOOL suppressFromSettings;
 @property (nonatomic) unsigned int suppressedSettings;
+@property (nonatomic, readonly) BOOL usesManagedSettings;
 @property (nonatomic) unsigned int version;
+@property (nonatomic, readonly) BBSectionInfoSettings *writableSettings;
 
 // Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
 
 + (id)defaultSectionInfoForSection:(id)arg1;
 + (id)defaultSectionInfoForType:(int)arg1;
-+ (BOOL)defaultStateForSetting:(unsigned int)arg1 inSectionType:(int)arg2;
 + (BOOL)supportsSecureCoding;
 
 - (void)_addSubsection:(id)arg1;
@@ -94,12 +92,18 @@
 - (id)iconData;
 - (id)init;
 - (id)initWithCoder:(id)arg1;
+- (id)initWithDefaultsForSectionType:(int)arg1;
+- (id)managedSectionInfoSettings;
 - (unsigned int)notificationCenterLimit;
 - (id)parentSection;
 - (id)pathToWeeAppPluginBundle;
 - (unsigned int)pushSettings;
+- (BOOL)queryAndUseManagedSettings;
+- (BOOL)queryAndUseManagedSettingsForSectionID:(id)arg1;
+- (id)readableSettings;
 - (int)sectionCategory;
 - (id)sectionID;
+- (id)sectionInfoSettings;
 - (int)sectionType;
 - (void)setAlertType:(unsigned int)arg1;
 - (void)setAllowsNotifications:(BOOL)arg1;
@@ -112,12 +116,14 @@
 - (void)setFilters:(id)arg1;
 - (void)setHideWeeApp:(BOOL)arg1;
 - (void)setIcon:(id)arg1;
+- (void)setManagedSectionInfoSettings:(id)arg1;
 - (void)setNotificationCenterLimit:(unsigned int)arg1;
 - (void)setParentSection:(id)arg1;
 - (void)setPathToWeeAppPluginBundle:(id)arg1;
 - (void)setPushSettings:(unsigned int)arg1;
 - (void)setSectionCategory:(int)arg1;
 - (void)setSectionID:(id)arg1;
+- (void)setSectionInfoSettings:(id)arg1;
 - (void)setSectionType:(int)arg1;
 - (void)setShowsInLockScreen:(BOOL)arg1;
 - (void)setShowsInNotificationCenter:(BOOL)arg1;
@@ -140,7 +146,9 @@
 - (unsigned int)suppressedSettings;
 - (void)updateWithDefaultFilters:(id)arg1;
 - (void)updateWithDefaultSectionInfo:(id)arg1;
+- (BOOL)usesManagedSettings;
 - (unsigned int)version;
+- (id)writableSettings;
 
 // Image: /System/Library/PrivateFrameworks/UserNotification.framework/UserNotification
 

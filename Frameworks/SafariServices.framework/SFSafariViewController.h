@@ -32,6 +32,7 @@
 - (void).cxx_destruct;
 - (id)_activatedElementInfo;
 - (void)_addRemoteView;
+- (id)_childViewControllerForWhitePointAdaptivityStyle;
 - (void)_connectToService;
 - (void)_forwardNotificationToViewService:(id)arg1;
 - (id)_previewActions;

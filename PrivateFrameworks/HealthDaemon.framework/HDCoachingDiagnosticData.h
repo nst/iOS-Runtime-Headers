@@ -3,14 +3,18 @@
  */
 
 @interface HDCoachingDiagnosticData : NSObject {
+    HKCategorySample *_coachingEventSample;
     NSArray *_items;
 }
 
+@property (nonatomic, retain) HKCategorySample *coachingEventSample;
 @property (nonatomic, readonly) NSArray *items;
 
 - (void).cxx_destruct;
+- (id)coachingEventSample;
 - (id)init;
 - (id)itemForInterval:(unsigned int)arg1 future:(BOOL)arg2;
 - (id)items;
+- (void)setCoachingEventSample:(id)arg1;
 
 @end

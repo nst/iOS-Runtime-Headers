@@ -5,6 +5,7 @@
 @interface PRSBagHandler : NSObject <CLLocationManagerDelegate, PRSParsecDataHandler, PRSResourceProvider, PRSSessionController> {
     PRSFairPlaySAPSession *_SAPSession;
     BOOL _active;
+    BOOL _allowStoreResults;
     NSSet *_appBlacklist;
     NSMutableData *_appBlacklistCollectedData;
     NSURL *_appBlacklistURL;
@@ -100,6 +101,7 @@
 
 @property (nonatomic, retain) PRSFairPlaySAPSession *SAPSession;
 @property (nonatomic) BOOL active;
+@property (readonly) BOOL allowStoreResults;
 @property (nonatomic, readonly) NSSet *appBlacklist;
 @property (retain) NSMutableData *appBlacklistCollectedData;
 @property (readonly) NSURL *appBlacklistURL;
@@ -219,6 +221,7 @@
 - (void)_tearDownLocationManager;
 - (void)_updateLocale:(BOOL)arg1;
 - (BOOL)active;
+- (BOOL)allowStoreResults;
 - (id)appBlacklist;
 - (id)appBlacklistCollectedData;
 - (id)appBlacklistURL;
@@ -369,6 +372,7 @@
 - (void)triggerTaskWhenReady:(id)arg1;
 - (void)triggerTaskWhenReadyInternal:(id)arg1;
 - (void)updateRecentlyUsedAppIdentifiers;
+- (void)updateStoreRestrictions;
 - (void)updateWithDictionary:(id)arg1;
 - (id)urlSessionConfiguration;
 - (BOOL)useGUID;

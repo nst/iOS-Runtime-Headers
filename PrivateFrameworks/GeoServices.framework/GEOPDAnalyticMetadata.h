@@ -19,6 +19,7 @@
     BOOL _isInternalInstall;
     BOOL _isInternalTool;
     NSString *_osVersion;
+    NSString *_productName;
     int _requestSource;
     unsigned int _sequenceNumber;
     NSMutableArray *_serviceTags;
@@ -40,6 +41,7 @@
 @property (nonatomic) BOOL hasIsInternalInstall;
 @property (nonatomic) BOOL hasIsInternalTool;
 @property (nonatomic, readonly) BOOL hasOsVersion;
+@property (nonatomic, readonly) BOOL hasProductName;
 @property (nonatomic) BOOL hasRequestSource;
 @property (nonatomic) BOOL hasSequenceNumber;
 @property (nonatomic) BOOL hasSessionId;
@@ -47,6 +49,7 @@
 @property (nonatomic) BOOL isInternalInstall;
 @property (nonatomic) BOOL isInternalTool;
 @property (nonatomic, retain) NSString *osVersion;
+@property (nonatomic, retain) NSString *productName;
 @property (nonatomic) int requestSource;
 @property (nonatomic) unsigned int sequenceNumber;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
@@ -71,6 +74,7 @@
 - (BOOL)hasIsInternalInstall;
 - (BOOL)hasIsInternalTool;
 - (BOOL)hasOsVersion;
+- (BOOL)hasProductName;
 - (BOOL)hasRequestSource;
 - (BOOL)hasSequenceNumber;
 - (BOOL)hasSessionId;
@@ -82,6 +86,7 @@
 - (BOOL)isInternalTool;
 - (void)mergeFrom:(id)arg1;
 - (id)osVersion;
+- (id)productName;
 - (BOOL)readFrom:(id)arg1;
 - (int)requestSource;
 - (unsigned int)sequenceNumber;
@@ -103,6 +108,7 @@
 - (void)setIsInternalInstall:(BOOL)arg1;
 - (void)setIsInternalTool:(BOOL)arg1;
 - (void)setOsVersion:(id)arg1;
+- (void)setProductName:(id)arg1;
 - (void)setRequestSource:(int)arg1;
 - (void)setSequenceNumber:(unsigned int)arg1;
 - (void)setServiceTags:(id)arg1;

@@ -24,6 +24,7 @@
 - (void).cxx_destruct;
 - (id)SQLJoinClause;
 - (id)_initWithJoinType:(int)arg1 fromEntity:(Class)arg2 toTargetEntity:(Class)arg3 as:(id)arg4 localReference:(id)arg5 targetKey:(id)arg6;
+- (id)description;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)joinAsName;

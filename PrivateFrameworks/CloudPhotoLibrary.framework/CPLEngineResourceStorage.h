@@ -33,7 +33,6 @@
 - (unsigned long long)sizeOfOriginalResourcesToUpload;
 - (unsigned long long)sizeOfResourcesToUpload;
 - (BOOL)storeDownloadedResource:(id)arg1 atURL:(id)arg2 error:(id*)arg3;
-- (BOOL)storeResource:(id)arg1 toURL:(id)arg2 error:(id*)arg3;
 - (BOOL)storeResourceForUpload:(id)arg1 error:(id*)arg2;
 - (void)writeTransactionDidFail;
 - (void)writeTransactionDidSucceed;

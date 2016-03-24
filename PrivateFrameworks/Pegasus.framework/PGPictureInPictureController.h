@@ -13,8 +13,8 @@
     NSXPCListener *_listener;
     NSObject<OS_dispatch_queue> *_listenerQueue;
     BOOL _pictureInPictureActive;
-    NSArray *_pictureInPictureApplications;
-    NSMutableArray *_pictureInPictureRemoteObjects;
+    NSSet *_pictureInPictureApplications;
+    NSMutableSet *_pictureInPictureRemoteObjects;
     PGPictureInPictureRemoteObject *_suspenedPictureInPictureRemoteObject;
 }
 
@@ -24,7 +24,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (getter=isPictureInPictureActive, nonatomic, readonly) BOOL pictureInPictureActive;
-@property (nonatomic, readonly) NSArray *pictureInPictureApplications;
+@property (nonatomic, readonly) NSSet *pictureInPictureApplications;
 @property (readonly) Class superclass;
 
 + (void)initialize;

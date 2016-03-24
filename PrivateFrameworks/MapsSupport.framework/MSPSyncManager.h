@@ -4,6 +4,7 @@
 
 @interface MSPSyncManager : NSObject <SYStoreDelegate> {
     NSMutableArray *_bookmarks;
+    NSMutableArray *_bookmarksForDisplay;
     NSMutableDictionary *_bookmarksMap;
     NSMutableArray *_history;
     NSMutableDictionary *_historyMap;
@@ -19,10 +20,13 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (BOOL)_bookmarkIsDisplayable:(id)arg1;
+
 - (void).cxx_destruct;
 - (void)_addBookmark:(id)arg1;
 - (void)_addHistoryItem:(id)arg1;
 - (void)_addPin:(id)arg1;
+- (void)_findDisplayableBookmarks;
 - (void)_notifyObservers;
 - (void)_removeBookmark:(id)arg1;
 - (void)_removeHistoryItem:(id)arg1;
@@ -40,6 +44,7 @@
 - (id)bookmarks;
 - (void)completedPreparingSync;
 - (void)completedSync;
+- (id)displayableBookmarks;
 - (id)history;
 - (id)init;
 - (void)notifyObservers;

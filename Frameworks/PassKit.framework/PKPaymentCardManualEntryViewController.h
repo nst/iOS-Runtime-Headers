@@ -37,6 +37,7 @@
 - (id)newPaymentEligibilityRequest;
 - (void)performNextActionForProvisioningState:(int)arg1 withCompletion:(id /* block */)arg2;
 - (id)readonlyFieldIdentifiers;
+- (BOOL)shouldAppearWithFirstEmptyFieldAsFirstResponder;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)updateFieldsModelWithCameraCaptureObjects:(id)arg1;
 - (void)viewDidAppear:(BOOL)arg1;

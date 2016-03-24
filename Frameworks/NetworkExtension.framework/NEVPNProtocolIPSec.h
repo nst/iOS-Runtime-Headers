@@ -44,7 +44,7 @@
 - (id)localIdentifier;
 - (void)migratePasswordsFromPreferences:(struct __SCPreferences { }*)arg1;
 - (id)remoteIdentifier;
-- (void)removeKeychainItemsInDomain:(int)arg1;
+- (void)removeKeychainItemsInDomain:(int)arg1 keepIdentity:(bool)arg2;
 - (void)setAuthenticationMethod:(int)arg1;
 - (void)setExtendedAuthPasswordPrompt:(BOOL)arg1;
 - (void)setLegacyExchangeMode:(id)arg1;

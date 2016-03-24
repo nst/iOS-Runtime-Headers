@@ -81,5 +81,6 @@
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 - (void)viewWillAppear:(BOOL)arg1;
+- (void)viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 
 @end

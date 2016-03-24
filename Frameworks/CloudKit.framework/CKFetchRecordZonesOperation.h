@@ -31,7 +31,9 @@
 - (unsigned long long)activityStart;
 - (id)fetchAllRecordZonesError;
 - (id /* block */)fetchRecordZonesCompletionBlock;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (BOOL)ignorePCSFailures;
 - (id)init;
 - (id)initWithRecordZoneIDs:(id)arg1;

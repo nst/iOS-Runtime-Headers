@@ -10,6 +10,7 @@
     NSOperationQueue *_backgroundThrottlingOperationQueue;
     CKContainerSetupInfo *_cachedSetupInfo;
     CKOperationCallbackManager *_callbackManager;
+    BOOL _captureResponseHTTPHeaders;
     CKContainerID *_containerID;
     CKRecordID *_containerScopedUserID;
     NSOperationQueue *_convenienceOperationQueue;
@@ -36,6 +37,7 @@
 @property (nonatomic, retain) NSOperationQueue *backgroundThrottlingOperationQueue;
 @property (nonatomic, retain) CKContainerSetupInfo *cachedSetupInfo;
 @property (nonatomic, retain) CKOperationCallbackManager *callbackManager;
+@property (nonatomic) BOOL captureResponseHTTPHeaders;
 @property (nonatomic, retain) CKContainerID *containerID;
 @property (nonatomic, readonly) NSString *containerIdentifier;
 @property (nonatomic, retain) CKRecordID *containerScopedUserID;
@@ -61,6 +63,9 @@
 + (id)containerWithIdentifier:(id)arg1;
 + (id)defaultContainer;
 + (void)getBehaviorOptionForKey:(id)arg1 isContainerOption:(BOOL)arg2 completionHandler:(id /* block */)arg3;
++ (void)registerOutstandingOperationWithID:(id)arg1;
++ (id)sharedOutstandingOperations;
++ (void)unregisterOutstandingOperationWithID:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)CKPropertiesDescription;
@@ -68,6 +73,7 @@
 - (id)_checkSelfContainerIdentifier;
 - (void)_cleanupSandboxExtensionHandles:(id)arg1;
 - (void)_consumeSandboxExtensions:(id)arg1;
+- (void)_fetchLongLivedOperationsWithIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)_fetchUserIdentityWithInfo:(id)arg1 completionHandler:(id /* block */)arg2;
 - (id)_initWithContainerIdentifier:(id)arg1;
 - (id)_initWithContainerIdentifier:(id)arg1 environment:(int)arg2;
@@ -88,6 +94,7 @@
 - (id)backgroundThrottlingOperationQueue;
 - (id)cachedSetupInfo;
 - (id)callbackManager;
+- (BOOL)captureResponseHTTPHeaders;
 - (id)connection;
 - (id)containerID;
 - (id)containerIdentifier;
@@ -99,6 +106,10 @@
 - (void)discoverAllContactUserInfosWithCompletionHandler:(id /* block */)arg1;
 - (void)discoverUserInfoWithEmailAddress:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)discoverUserInfoWithUserRecordID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchAllLongLivedOperationIDsWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchCurrentDeviceIDWithCompletionHandler:(id /* block */)arg1;
+- (void)fetchLongLivedOperationWithID:(id)arg1 completionHandler:(id /* block */)arg2;
+- (void)fetchLongLivedOperationsWithIDs:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchServerEnvironment:(id /* block */)arg1;
 - (void)fetchUserIdentityWithEmailAddress:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchUserIdentityWithUserRecordID:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -106,6 +117,7 @@
 - (id)findTrackedAssetByUUID:(id)arg1;
 - (id)flowControlManager;
 - (void)getNewWebSharingIdentity:(id /* block */)arg1;
+- (void)handleOperationCheckpoint:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationCompletion:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2;
 - (void)handleOperationProgress:(id)arg1 forOperationWithID:(id)arg2 reply:(id /* block */)arg3;
@@ -131,6 +143,7 @@
 - (void)setBackgroundThrottlingOperationQueue:(id)arg1;
 - (void)setCachedSetupInfo:(id)arg1;
 - (void)setCallbackManager:(id)arg1;
+- (void)setCaptureResponseHTTPHeaders:(BOOL)arg1;
 - (void)setContainerID:(id)arg1;
 - (void)setContainerScopedUserID:(id)arg1;
 - (void)setConvenienceOperationQueue:(id)arg1;

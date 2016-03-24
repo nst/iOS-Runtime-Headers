@@ -12,6 +12,7 @@
 - (BOOL)isAppSwitcherVisible;
 - (BOOL)isControlCenterVisible;
 - (BOOL)isNotificationCenterVisible;
+- (BOOL)isNowPlayingUIVisible;
 - (BOOL)isReceivingAirPlay;
 - (BOOL)isScreenSaverVisible;
 - (BOOL)isSideSwitcherVisible;

@@ -3,13 +3,11 @@
  */
 
 @interface MPStoreAVItem : MPAVItem {
-    NSString *_aggregateDictionaryItemIdentifier;
     unsigned int _assetQuality;
     BOOL _didDeferLeaseStart;
     BOOL _hasEverPrioritizedPlayerItem;
     BOOL _hasPrioritizedPlayWhileDownloadSession;
     BOOL _hasPrioritizedStreamingDownloadSession;
-    BOOL _hasValidAggregateDictionaryItemIdentifier;
     BOOL _hasValidAssetQuality;
     BOOL _isActivePlayerItem;
     unsigned int _options;
@@ -46,7 +44,6 @@
 - (void)_updateBookmarkTimeIfNecessary:(double)arg1 isCheckpoint:(BOOL)arg2;
 - (void)_willBecomeActivePlayerItem;
 - (void)_willResignActivePlayerItem;
-- (id)aggregateDictionaryItemIdentifier;
 - (id)album;
 - (id)albumArtist;
 - (long long)albumStoreID;
@@ -102,6 +99,7 @@
 - (void)setRating:(float)arg1;
 - (id)storeDownload;
 - (long long)storeItemInt64ID;
+- (int)storePlaybackEndpointType;
 - (long long)storeSubscriptionAdamID;
 - (BOOL)supportsLikedState;
 - (BOOL)supportsRewindAndFastForward15Seconds;

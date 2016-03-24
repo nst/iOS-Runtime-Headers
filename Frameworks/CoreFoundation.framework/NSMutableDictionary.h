@@ -106,6 +106,10 @@
 - (void)safelyMapKey:(id)arg1 toObject:(id)arg2;
 - (void)safelySetObject:(id)arg1 forKey:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
+
+- (void)fiui_incrementValueForKey:(id)arg1 byValue:(double)arg2;
+
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 
 - (void)_gkAddEntriesFromFormEncodedString:(id)arg1;
@@ -133,8 +137,10 @@
 - (id)MCMutableDictionaryContainingValidatedKeysAndClasses:(id)arg1 removeKeys:(BOOL)arg2 outError:(id*)arg3;
 - (void)MCSetBoolRestriction:(id)arg1 value:(BOOL)arg2;
 - (void)MCSetIntersectionRestriction:(id)arg1 values:(id)arg2;
+- (void)MCSetIntersectionSetting:(id)arg1 values:(id)arg2;
 - (void)MCSetObjectIfNotNil:(id)arg1 forKey:(id)arg2;
 - (void)MCSetUnionRestriction:(id)arg1 values:(id)arg2;
+- (void)MCSetUnionSetting:(id)arg1 values:(id)arg2;
 - (void)MCSetValueRestriction:(id)arg1 value:(id)arg2;
 - (id)MCValidateAndRemoveArrayOfClass:(Class)arg1 withKey:(id)arg2 isRequired:(BOOL)arg3 outError:(id*)arg4;
 - (id)MCValidateAndRemoveNonZeroLengthStringWithKey:(id)arg1 isRequired:(BOOL)arg2 outError:(id*)arg3;
@@ -213,13 +219,23 @@
 
 - (void)setSafeObject:(id)arg1 forKey:(id)arg2;
 
-// Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
-
-- (void)sbs_setSafeObject:(id)arg1 forKey:(id)arg2;
-
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
+- (void)addFlags:(unsigned int)arg1;
+- (void)addResult:(id)arg1 forKey:(id)arg2;
+- (void)addResults:(id)arg1;
+- (void)addTypes:(unsigned int)arg1;
+- (id)mutableResults;
+- (void)removeSyncPoint;
+- (void)setDateAnalyzed:(id)arg1;
+- (void)setDateModified:(id)arg1;
+- (void)setFlags:(unsigned int)arg1;
+- (void)setQuality:(double)arg1;
+- (void)setResults:(id)arg1;
+- (void)setSyncPoint:(const struct { long long x1; int x2; unsigned int x3; long long x4; }*)arg1;
 - (void)setTimerange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg1;
+- (void)setTypes:(unsigned int)arg1;
+- (void)setVersion:(int)arg1;
 
 // Image: /System/Library/PrivateFrameworks/VisualVoicemail.framework/VisualVoicemail
 

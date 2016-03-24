@@ -10,10 +10,10 @@
     NSMutableArray *_deletedObjects;
     _HKFilter *_filter;
     BOOL _hasBeenExecuted;
+    HKObjectType *_objectType;
     NSPredicate *_predicate;
     BOOL _receivedInitialResults;
     NSMutableArray *_sampleObjects;
-    HKSampleType *_sampleType;
     <NSXPCProxyCreating> *_serverProxy;
 }
 
@@ -25,6 +25,7 @@
 @property (getter=_filter, nonatomic, retain) _HKFilter *filter;
 @property (nonatomic, readonly) BOOL hasBeenExecuted;
 @property (readonly) unsigned int hash;
+@property (readonly) HKObjectType *objectType;
 @property (readonly) NSPredicate *predicate;
 @property (getter=_hasReceivedInitialResults, nonatomic, readonly) BOOL receivedInitialResults;
 @property (readonly) HKSampleType *sampleType;
@@ -35,10 +36,14 @@
 
 + (id)_clientInterfaceProtocol;
 + (void)_configureClientInterface:(id)arg1;
++ (id)_predicateForObjectsFromAppleWatches;
 + (id)_predicateForSamplesSyncedFromOtherDevice;
 + (Class)_queryServerDataObjectClass;
 + (id)_serverInterfaceProtocol;
 + (id)clientInterface;
++ (id)predicateForActivityCachesBetweenStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
++ (id)predicateForActivitySummariesBetweenStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
++ (id)predicateForActivitySummaryWithDateComponents:(id)arg1;
 + (id)predicateForCategorySamplesWithOperatorType:(unsigned int)arg1 value:(int)arg2;
 + (id)predicateForObjectWithUUID:(id)arg1;
 + (id)predicateForObjectsFromDevices:(id)arg1;
@@ -87,6 +92,7 @@
 - (void)dataUpdatedInDatabaseWithAnchor:(id)arg1 query:(id)arg2;
 - (void)deactivate;
 - (id)delegate;
+- (void)deliverActivityStatisticsObjects:(id)arg1 forQuery:(id)arg2;
 - (void)deliverError:(id)arg1 forQuery:(id)arg2;
 - (void)deliverInitialStatisticsObjects:(id)arg1 anchor:(id)arg2 forQuery:(id)arg3;
 - (void)deliverResetStatisticsObjects:(id)arg1 forQuery:(id)arg2;
@@ -102,6 +108,7 @@
 - (void)deliverValuesByType:(id)arg1 forQuery:(id)arg2;
 - (BOOL)hasBeenExecuted;
 - (id)init;
+- (id)objectType;
 - (id)predicate;
 - (void)reactivateWithConnection:(id)arg1;
 - (id)sampleType;
@@ -118,9 +125,5 @@
 
 + (Class)hd_queryServerClass;
 + (BOOL)hd_requiresPrivateEntitlements;
-
-// Image: /System/Library/PrivateFrameworks/HealthKitExtensions.framework/HealthKitExtensions
-
-+ (id)predicateForActivityCachesBetweenStartDateComponents:(id)arg1 endDateComponents:(id)arg2;
 
 @end

@@ -47,6 +47,7 @@
 - (void)_continueFromIntro:(id)arg1;
 - (void)_createTrainingManagerIfNeeded;
 - (void)_finishSiriSetup:(id)arg1;
+- (id)_getSetupModeString;
 - (void)_handleTrainingResultForNonRetryablePhraseWithStatus:(int)arg1;
 - (void)_handleTrainingResultForRetryablePhraseWithStatus:(int)arg1;
 - (void)_hideInstruction;
@@ -91,6 +92,7 @@
 - (float)audioRms;
 - (int)currentTrainingState;
 - (void)dealloc;
+- (void)debugController:(id)arg1 openURL:(id)arg2;
 - (void)debugController:(id)arg1 stateDidChangeWithAddViews:(id)arg2;
 - (void)debugController:(id)arg1 wantsDismissViewController:(id)arg2;
 - (void)debugController:(id)arg1 wantsPresentViewController:(id)arg2;

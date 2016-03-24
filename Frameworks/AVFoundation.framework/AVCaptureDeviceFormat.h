@@ -42,6 +42,7 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExperimental;
 - (BOOL)isHighResPhotoFormat;
+- (BOOL)isIrisSupported;
 - (BOOL)isPhotoFormat;
 - (BOOL)isSISSupported;
 - (BOOL)isVideoBinned;

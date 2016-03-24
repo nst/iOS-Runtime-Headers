@@ -12,9 +12,11 @@
 - (BOOL)containsDataObject:(HKObject *)arg1;
 - (BOOL)deleteDataObjects:(NSArray *)arg1 restrictedSourceEntity:(HDSourceEntity *)arg2 failIfNotFound:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)deleteDataObjects:(NSArray *)arg1 sourceBundleIdentifier:(NSString *)arg2 error:(id*)arg3;
-- (BOOL)deleteDataObjectsWithPredicate:(HDSQLitePredicate *)arg1 limit:(unsigned int)arg2 deletedSampleCount:(unsigned int*)arg3 notifyObservers:(BOOL)arg4 generateDeletedObjects:(BOOL)arg5 error:(id*)arg6;
+- (BOOL)deleteDataObjectsOfClass:(Class)arg1 predicate:(HDSQLitePredicate *)arg2 limit:(unsigned int)arg3 deletedSampleCount:(unsigned int*)arg4 notifyObservers:(BOOL)arg5 generateDeletedObjects:(BOOL)arg6 error:(id*)arg7;
 - (BOOL)deleteSamplesWithSourceIdentifier:(NSNumber *)arg1 error:(id*)arg2;
 - (BOOL)deleteSamplesWithTypes:(NSSet *)arg1 sourceID:(NSNumber *)arg2 error:(id*)arg3;
+- (BOOL)deleteSamplesWithUUIDs:(NSArray *)arg1 error:(id*)arg2;
+- (BOOL)deleteSamplesWithUUIDs:(NSArray *)arg1 generateDeletedObjects:(BOOL)arg2 database:(HDSQLiteDatabase *)arg3 error:(id*)arg4;
 - (BOOL)insertDataObjects:(NSArray *)arg1 sourceEntity:(HDSourceEntity *)arg2 deviceEntity:(HDDeviceEntity *)arg3 sourceVersion:(NSString *)arg4 creationDate:(double)arg5 error:(id*)arg6;
 - (BOOL)insertDataObjects:(NSArray *)arg1 withProvenance:(HDDataOriginProvenance *)arg2 creationDate:(double)arg3 error:(id*)arg4;
 - (BOOL)insertDataObjects:(NSArray *)arg1 withProvenance:(HDDataOriginProvenance *)arg2 creationDate:(double)arg3 skipInsertionFilter:(BOOL)arg4 error:(id*)arg5;

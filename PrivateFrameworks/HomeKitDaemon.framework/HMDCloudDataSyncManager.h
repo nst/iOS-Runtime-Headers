@@ -11,6 +11,7 @@
     BOOL _cloudHomeDataRecordExists;
     id /* block */ _cloudMetadataDeletedNotificationHandler;
     BOOL _cloudMetadataRecordExists;
+    HMDCloudReadOnlyModeFilter *_cloudReadonlyModeFilter;
     NSData *_cloudServerTokenData;
     HMMessageDispatcher *_configSyncDispatcher;
     CKContainer *_container;
@@ -49,6 +50,7 @@
 @property (nonatomic) BOOL cloudHomeDataRecordExists;
 @property (nonatomic, copy) id /* block */ cloudMetadataDeletedNotificationHandler;
 @property (nonatomic) BOOL cloudMetadataRecordExists;
+@property (nonatomic, retain) HMDCloudReadOnlyModeFilter *cloudReadonlyModeFilter;
 @property (nonatomic, retain) NSData *cloudServerTokenData;
 @property (nonatomic, retain) HMMessageDispatcher *configSyncDispatcher;
 @property (nonatomic, retain) CKContainer *container;
@@ -95,7 +97,7 @@
 - (void)_handleChangedMetadataRecordWithEncodedData:(id)arg1 transaction:(id)arg2;
 - (void)_handleChangedRecordWithEncodedData:(id)arg1 encodeDataVersion2:(id)arg2;
 - (void)_handleControllerKeyAvailable;
-- (void)_handleFetchCompletedWithError:(id)arg1 serverToken:(id)arg2 completionHandler:(id /* block */)arg3 moreRecordsComing:(BOOL)arg4;
+- (void)_handleFetchCompletedWithError:(id)arg1 serverToken:(id)arg2 completionHandler:(id /* block */)arg3 moreRecordsComing:(BOOL)arg4 emptyRecord:(BOOL)arg5;
 - (void)_handleFetchedHomeDataRecord;
 - (void)_handleKeychainSyncChanged:(id)arg1;
 - (void)_handleKeychainSyncStateChanged:(BOOL)arg1;
@@ -126,6 +128,7 @@
 - (BOOL)cloudHomeDataRecordExists;
 - (id /* block */)cloudMetadataDeletedNotificationHandler;
 - (BOOL)cloudMetadataRecordExists;
+- (id)cloudReadonlyModeFilter;
 - (id)cloudServerTokenData;
 - (id)configSyncDispatcher;
 - (void)connection:(id)arg1 didReceiveIncomingMessage:(id)arg2;
@@ -146,7 +149,7 @@
 - (id)homeDataFetchedTransaction;
 - (id)homeDataRecord;
 - (id)homeManager;
-- (id)initWithCloudServerTokenData:(id)arg1 messageDispatcher:(id)arg2 cloudDataSyncStateFilter:(id)arg3 homeManager:(id)arg4 callbackQueue:(id)arg5;
+- (id)initWithCloudServerTokenData:(id)arg1 messageDispatcher:(id)arg2 cloudDataSyncStateFilter:(id)arg3 cloudReadonlyModeFilter:(id)arg4 homeManager:(id)arg5 callbackQueue:(id)arg6;
 - (BOOL)keychainSyncEnabled;
 - (id)lastHomeDataChangeTag;
 - (id)lastMetadataChangeTag;
@@ -160,6 +163,7 @@
 - (id)pollTimer;
 - (id)pushConnection;
 - (void)resetCloudDataAndDeleteMetadataForCurrentAccount:(BOOL)arg1 completionHandler:(id /* block */)arg2;
+- (void)resetCloudServerTokenData:(id)arg1;
 - (id)retryTimer;
 - (id)serverTokenData;
 - (void)setAccountActive:(BOOL)arg1;
@@ -172,6 +176,7 @@
 - (void)setCloudMetadataDeletedNotificationBlock:(id /* block */)arg1;
 - (void)setCloudMetadataDeletedNotificationHandler:(id /* block */)arg1;
 - (void)setCloudMetadataRecordExists:(BOOL)arg1;
+- (void)setCloudReadonlyModeFilter:(id)arg1;
 - (void)setCloudServerTokenData:(id)arg1;
 - (void)setConfigSyncDispatcher:(id)arg1;
 - (void)setContainer:(id)arg1;

@@ -14,6 +14,7 @@
     double _stillTimeInVideo;
     int _variant;
     AVURLAsset *_video;
+    SBFWallpaperConfigurationManager *_wallpaperConfigurationManager;
     UIImage *_wallpaperImage;
 }
 
@@ -21,11 +22,12 @@
 @property (nonatomic) <SBFLegibilitySettingsProviderDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly, retain) _UILegibilitySettings *legibilitySettings;
+@property (nonatomic, readonly) _UILegibilitySettings *legibilitySettings;
 @property (nonatomic) BOOL motionEnabled;
 @property (readonly) Class superclass;
 @property (readonly) UIImage *wallpaperImage;
 
+- (void).cxx_destruct;
 - (id)_dateView;
 - (float)_parallaxFactor;
 - (id)_previewView;
@@ -60,6 +62,7 @@
 - (void)setWallpaperForLocations:(int)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 - (void)viewWillDisappear:(BOOL)arg1;
+- (id)wallpaperConfigurationManager;
 - (id)wallpaperImage;
 
 @end

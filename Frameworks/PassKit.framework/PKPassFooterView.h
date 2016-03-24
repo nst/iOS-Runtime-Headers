@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPassFooterView : UIView {
+@interface PKPassFooterView : UIView <PKPassFooterContentViewDelegate> {
     PKPassFooterContentView *_contentView;
     BOOL _isBackgrounded;
     BOOL _isVisible;
@@ -14,9 +14,13 @@
     int _state;
 }
 
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isPassAuthorized;
 @property (nonatomic, retain) PKPassView *passView;
 @property (nonatomic, readonly) int state;
+@property (readonly) Class superclass;
 
 - (BOOL)_canApplyContentViewForPersonalizedApplication;
 - (BOOL)_canApplyContentViewForValueAddedService;
@@ -40,6 +44,8 @@
 - (id)initWithPassView:(id)arg1 context:(id)arg2;
 - (BOOL)isPassAuthorized;
 - (void)layoutSubviews;
+- (void)passFooterContentViewDidBeginAuthenticating:(id)arg1;
+- (void)passFooterContentViewDidEndAuthenticating:(id)arg1;
 - (id)passView;
 - (void)setPassView:(id)arg1;
 - (int)state;

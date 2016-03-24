@@ -12,6 +12,7 @@
     <SBFScheduler> *_scheduler;
 }
 
+- (void).cxx_destruct;
 - (void)_cancel;
 - (void)_clearResult;
 - (void)_sendCompletionToObsever:(id)arg1;

@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/SplashBoard.framework/SplashBoard
  */
 
-@interface XBLaunchInterface : NSObject {
+@interface XBLaunchInterface : NSObject <BSXPCCoding, NSCoding> {
     BOOL _default;
     NSString *_identifier;
     NSString *_name;
@@ -11,18 +11,24 @@
 }
 
 @property (getter=_isDefault, nonatomic) BOOL _default;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, copy) NSString *identifier;
 @property (nonatomic, readonly) BOOL isStoryboard;
 @property (nonatomic, readonly) BOOL isXIB;
 @property (nonatomic, copy) NSString *name;
+@property (readonly) Class superclass;
 @property (nonatomic) unsigned int type;
 @property (nonatomic, retain) NSArray *urlSchemes;
 
 - (BOOL)_isDefault;
 - (void)dealloc;
 - (id)description;
+- (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;
 - (id)identifier;
+- (id)initWithCoder:(id)arg1;
 - (id)initWithType:(unsigned int)arg1 name:(id)arg2 identifier:(id)arg3 urlSchemes:(id)arg4 isDefault:(BOOL)arg5;
 - (id)initWithXPCDictionary:(id)arg1;
 - (BOOL)isStoryboard;

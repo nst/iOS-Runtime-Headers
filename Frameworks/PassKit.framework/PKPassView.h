@@ -72,6 +72,7 @@
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })frameOfVisibleFace;
 - (BOOL)frontFaceBodyContentCreated;
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
+- (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithPass:(id)arg1;
 - (id)initWithPass:(id)arg1 content:(int)arg2;
@@ -81,12 +82,12 @@
 - (id)item;
 - (void)layoutSubviews;
 - (id)pass;
+- (void)passBackFaceShareButtonPressed:(id)arg1;
 - (BOOL)passFaceBarcodeButtonEnabled;
 - (void)passFaceBarcodeButtonPressed:(id)arg1;
 - (BOOL)passFaceDeleteButtonEnabled;
 - (void)passFaceDeleteButtonPressed:(id)arg1;
 - (void)passFaceFlipButtonPressed:(id)arg1;
-- (void)passFaceShareButtonPressed:(id)arg1;
 - (void)passcodeLockManager:(id)arg1 didReceivePasscodeSet:(BOOL)arg2;
 - (void)prepareForFlip;
 - (void)presentDiff:(id)arg1 completion:(id /* block */)arg2;

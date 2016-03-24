@@ -20,6 +20,7 @@
 @property (nonatomic) unsigned int powerConnectedMicroWatt;
 @property (nonatomic) int rAT;
 
+- (int)StringAsRAT:(id)arg1;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -33,6 +34,7 @@
 - (unsigned int)powerConnSetupMicroWatt;
 - (unsigned int)powerConnectedMicroWatt;
 - (int)rAT;
+- (id)rATAsString:(int)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setHasPowerConnSetupMicroWatt:(BOOL)arg1;
 - (void)setHasPowerConnectedMicroWatt:(BOOL)arg1;

@@ -43,6 +43,7 @@
 @property (readonly) NSString *ssid;
 @property (readonly) int status;
 @property (readonly) NSString *statusAsString;
+@property (readonly) BOOL supportsDNS;
 @property (readonly) BOOL supportsIPv4;
 @property (readonly) BOOL supportsIPv6;
 
@@ -104,6 +105,7 @@
 - (id)ssid;
 - (int)status;
 - (id)statusAsString;
+- (BOOL)supportsDNS;
 - (BOOL)supportsIPv4;
 - (BOOL)supportsIPv6;
 - (BOOL)unsatisfiedVoluntaryAgentMatchesAddress:(id)arg1 triggerImmediately:(BOOL*)arg2;

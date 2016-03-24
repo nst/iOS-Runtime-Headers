@@ -3,9 +3,9 @@
  */
 
 @interface PKPassBackFaceView : PKPassFaceView <UITableViewDataSource, UITableViewDelegate, UITextViewDelegate> {
-    PKSettingTableCell *_automaticSelection;
+    PKSettingTableCell *_automaticSelectionCell;
     unsigned int _automaticSelectionSection;
-    PKSettingTableCell *_automaticUpdates;
+    PKSettingTableCell *_automaticUpdatesCell;
     UITableView *_bodyTable;
     BluetoothManager *_btManager;
     UIButton *_doneButton;
@@ -17,15 +17,21 @@
     PKLinkedAppView *_linkedApp;
     unsigned int _linkedAppSection;
     UIView *_locationHelpView;
+    UITableViewCell *_personalizePassCell;
+    unsigned int _personalizePassSection;
     UIRefreshControl *_refreshControl;
     NSTimer *_refreshTimeoutTimer;
     NSArray *_rowCountBySection;
     unsigned int _settingsSection;
-    PKSettingTableCell *_showInLockScreen;
+    UITableViewCell *_shareCell;
+    unsigned int _shareSection;
+    PKSettingTableCell *_showInLockScreenCell;
     BOOL _showsDelete;
     BOOL _showsLinkedApp;
     BOOL _showsLinks;
+    BOOL _showsPersonalize;
     BOOL _showsSettings;
+    BOOL _showsShare;
     BOOL _tall;
     UILabel *_updateDateLabel;
 }
@@ -37,7 +43,9 @@
 @property (nonatomic) BOOL showsDelete;
 @property (nonatomic) BOOL showsLinkedApp;
 @property (nonatomic) BOOL showsLinks;
+@property (nonatomic) BOOL showsPersonalize;
 @property (nonatomic) BOOL showsSettings;
+@property (nonatomic) BOOL showsShare;
 @property (readonly) Class superclass;
 
 + (id)_linkColor;
@@ -55,10 +63,13 @@
 - (id)_locationHelpViewForTableView:(id)arg1;
 - (id)_locationRelevancyHelpText;
 - (void)_passSettingsChanged:(id)arg1;
+- (BOOL)_personalizeAvailable;
+- (id)_personalizePassCell;
 - (void)_refreshTimeoutFired;
 - (id)_relevantBuckets;
 - (BOOL)_settingsAvailable;
 - (id)_settingsCellForRow:(unsigned int)arg1;
+- (id)_shareCell;
 - (id)_updateLabelAttributedStringWithDate:(id)arg1;
 - (id)_updateLabelAttributedStringWithString:(id)arg1;
 - (void)_wifiChanged:(id)arg1;
@@ -78,7 +89,9 @@
 - (void)setShowsDelete:(BOOL)arg1;
 - (void)setShowsLinkedApp:(BOOL)arg1;
 - (void)setShowsLinks:(BOOL)arg1;
+- (void)setShowsPersonalize:(BOOL)arg1;
 - (void)setShowsSettings:(BOOL)arg1;
+- (void)setShowsShare:(BOOL)arg1;
 - (void)setupRefreshControl:(id)arg1;
 - (BOOL)shouldAllowRefresh;
 - (BOOL)showBackgroundMatte;
@@ -86,8 +99,11 @@
 - (BOOL)showsDelete;
 - (BOOL)showsLinkedApp;
 - (BOOL)showsLinks;
+- (BOOL)showsPersonalize;
 - (BOOL)showsSettings;
+- (BOOL)showsShare;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
+- (void)tableView:(id)arg1 didSelectRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 estimatedHeightForRowAtIndexPath:(id)arg2;
 - (float)tableView:(id)arg1 heightForFooterInSection:(int)arg2;
 - (float)tableView:(id)arg1 heightForHeaderInSection:(int)arg2;

@@ -19,7 +19,8 @@
 - (void).cxx_destruct;
 - (unsigned int)_eventIdforBundleId:(id)arg1;
 - (unsigned short)_localTimeWithDate:(id)arg1;
-- (void)addLaunchWithBundleId:(id)arg1 withDate:(id)arg2;
+- (unsigned short)_localTimeWithDate:(id)arg1 timeZone:(id)arg2;
+- (void)addLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3;
 - (BOOL)bundleHasBeenLaunched:(id)arg1;
 - (void)decayByFactor:(double)arg1;
 - (void)decayWithHalfLife:(double)arg1;
@@ -33,7 +34,7 @@
 - (double)overallLaunchPopularityForBundleId:(id)arg1;
 - (double)relativeLaunchPopularityWithBundleId:(id)arg1 date:(id)arg2;
 - (BOOL)removeAllHistoryForBundleId:(id)arg1;
-- (void)removeLaunchWithBundleId:(id)arg1 withDate:(id)arg2;
+- (void)removeLaunchWithBundleId:(id)arg1 withDate:(id)arg2 timeZone:(id)arg3;
 - (void)removeMappingForBundleId:(id)arg1;
 - (void)resetData;
 - (double)smoothRatio:(double)arg1 denom:(double)arg2;

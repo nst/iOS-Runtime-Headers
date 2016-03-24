@@ -13,11 +13,12 @@
     CAMFlipButton *_flipButton;
     CAMFramerateIndicatorView *_framerateIndicatorView;
     CAMImageWell *_imageWell;
+    CAMIrisButton *_irisButton;
     CAMModeDial *_modeDial;
     CUShutterButton *_shutterButton;
     CUShutterButton *_stillDuringVideoButton;
     CAMTimerButton *_timerButton;
-    <CAMControlVisibilityDelegate> *_visibilityDelegate;
+    <CAMControlVisibilityUpdateDelegate> *_visibilityUpdateDelegate;
 }
 
 @property (nonatomic, retain) CAMHDRButton *HDRButton;
@@ -30,11 +31,12 @@
 @property (nonatomic, retain) CAMFlipButton *flipButton;
 @property (nonatomic, retain) CAMFramerateIndicatorView *framerateIndicatorView;
 @property (nonatomic, retain) CAMImageWell *imageWell;
+@property (nonatomic, retain) CAMIrisButton *irisButton;
 @property (nonatomic, retain) CAMModeDial *modeDial;
 @property (nonatomic, retain) CUShutterButton *shutterButton;
 @property (nonatomic, retain) CUShutterButton *stillDuringVideoButton;
 @property (nonatomic, retain) CAMTimerButton *timerButton;
-@property (nonatomic) <CAMControlVisibilityDelegate> *visibilityDelegate;
+@property (nonatomic) <CAMControlVisibilityUpdateDelegate> *visibilityUpdateDelegate;
 
 + (BOOL)wantsVerticalBarForTraitCollection:(id)arg1;
 
@@ -48,6 +50,7 @@
 - (void)_layoutFlipButtonForTraitCollection:(id)arg1;
 - (void)_layoutFramerateIndicatorForTraitCollection:(id)arg1;
 - (void)_layoutImageWellForTraitCollection:(id)arg1;
+- (void)_layoutIrisButtonForTraitCollection:(id)arg1;
 - (void)_layoutMenuButtons:(id)arg1 apply:(BOOL)arg2 withExpandedMenuButton:(id)arg3 collapsingMenuButton:(id)arg4 collapsingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
 - (void)_layoutModeDialForTraitCollection:(id)arg1;
 - (void)_layoutShutterButtonForTraitCollection:(id)arg1;
@@ -70,6 +73,7 @@
 - (id)imageWell;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
+- (id)irisButton;
 - (void)layoutSubviews;
 - (id)modeDial;
 - (void)setBackgroundStyle:(int)arg1;
@@ -81,15 +85,20 @@
 - (void)setFramerateIndicatorView:(id)arg1;
 - (void)setHDRButton:(id)arg1;
 - (void)setImageWell:(id)arg1;
+- (void)setIrisButton:(id)arg1;
 - (void)setModeDial:(id)arg1;
 - (void)setShutterButton:(id)arg1;
 - (void)setStillDuringVideoButton:(id)arg1;
 - (void)setTimerButton:(id)arg1;
-- (void)setVisibilityDelegate:(id)arg1;
+- (void)setVisibilityUpdateDelegate:(id)arg1;
+- (BOOL)shouldHideElapsedTimeViewForMode:(int)arg1 device:(int)arg2;
+- (BOOL)shouldHideFlashButtonForMode:(int)arg1 device:(int)arg2;
+- (BOOL)shouldHideHDRButtonForMode:(int)arg1 device:(int)arg2;
+- (BOOL)shouldHideTimerButtonForMode:(int)arg1 device:(int)arg2;
 - (id)shutterButton;
 - (id)stillDuringVideoButton;
 - (id)timerButton;
 - (void)traitCollectionDidChange:(id)arg1;
-- (id)visibilityDelegate;
+- (id)visibilityUpdateDelegate;
 
 @end

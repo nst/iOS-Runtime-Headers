@@ -2,79 +2,57 @@
    Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
  */
 
-@interface GEOUsageManager : NSObject <PBRequesterDelegate> {
-    id /* block */ _backgroundTaskEnd;
-    id /* block */ _backgroundTaskStart;
-    GEOUsageCollectionRequest *_request;
-    NSLock *_requestLock;
-    GEORequester *_requester;
-    NSMapTable *_requesterToBackgroundTask;
-    NSMutableDictionary *_stateData;
-    NSMutableDictionary *_stateTimingData;
-    NSTimer *_updateTimer;
-}
+@interface GEOUsageManager : NSObject
 
-@property (nonatomic, copy) id /* block */ backgroundTaskEnd;
-@property (nonatomic, copy) id /* block */ backgroundTaskStart;
-@property (readonly, copy) NSString *debugDescription;
-@property (readonly, copy) NSString *description;
-@property (readonly) unsigned int hash;
-@property (readonly) Class superclass;
-
++ (void)registerConnectedCarInfoTraits:(id)arg1;
++ (void)registerGEOLogFacility;
 + (id)sharedManager;
 
-- (void)_applicationDeactivating;
-- (void)_captureUsageCollection:(id)arg1;
-- (void)_cleanupRequester;
-- (void)_cleanupTimer;
-- (void)_endBackgroundTaskForRequester:(id)arg1;
-- (void)_prepareRequest;
-- (void)_scheduleUpdateTimer;
-- (void)_sendUsageToServer;
-- (void)_startBackgroundTaskForRequester:(id)arg1;
-- (void)_updateTimerFired:(id)arg1;
-- (id)_usageCollectionForRequest:(id)arg1 service:(int)arg2 requestType:(int)arg3 requestErrorDomain:(id)arg4 requestErrorCode:(long long)arg5 requestErrorDescription:(id)arg6;
-- (id)_usageCollectionForRequestToService:(int)arg1 requestType:(int)arg2 requestErrorDomain:(id)arg3 requestErrorCode:(long long)arg4 requestErrorDescription:(id)arg5 requestDataSize:(int)arg6 responseDataSize:(int)arg7 responseTime:(int)arg8;
-- (id)_usageURL;
-- (id /* block */)backgroundTaskEnd;
-- (id /* block */)backgroundTaskStart;
-- (void)captureDirectionsFeedbackCollection:(id)arg1;
-- (void)captureLeaveNowFeedbackCollection:(id)arg1;
-- (void)captureLogMessageUsageMetric:(id)arg1;
+- (void)_captureNetworUsageLogMessageForRequester:(id)arg1 service:(int)arg2 requestType:(int)arg3 requestErrorDomain:(id)arg4 requestErrorCode:(long long)arg5 requestErrorDescription:(id)arg6 requestingAppId:(id)arg7 fromLogFrameworkAdaptor:(BOOL)arg8;
+- (void)_captureNetworUsageLogMessageForService:(int)arg1 requestType:(int)arg2 requestErrorDomain:(id)arg3 requestErrorCode:(long long)arg4 requestErrorDescription:(id)arg5 requestDataSize:(int)arg6 responseDataSize:(int)arg7 responseTime:(int)arg8 requestingAppId:(id)arg9 fromLogFrameworkAdaptor:(BOOL)arg10;
+- (BOOL)_isDiagnosticSubmissionEnabled;
+- (void)captureCacheHitLogMessageForLocationShiftWithHitCount:(unsigned int)arg1 cacheMissCount:(unsigned int)arg2;
+- (void)captureCacheHitLogMessageForTilesWithTileStyle:(int)arg1 cacheHitCount:(unsigned int)arg2 cacheMissCount:(unsigned int)arg3;
+- (void)captureDirectionsFeedbackLogMessage:(id)arg1;
+- (void)captureFailedMsgMetricWithCount:(int)arg1 fromLogFrameworkAdaptor:(BOOL)arg2;
+- (void)captureFeedbackForSearchFieldType:(int)arg1 prefix:(id)arg2 displayedResults:(id)arg3 selectedIndex:(int)arg4 traits:(id)arg5;
+- (void)captureFeedbackForSuggestionEntry:(id)arg1 entryListIndex:(int)arg2 entryIndex:(int)arg3 traits:(id)arg4;
+- (void)captureFeedbackForSuggestionEntry:(id)arg1 suggestionEntryMetadata:(id)arg2 entryListIndex:(int)arg3 entryIndex:(int)arg4 traits:(id)arg5;
+- (void)captureForcePurgeMetricWithState:(int)arg1 fromLogFrameworkAdaptor:(BOOL)arg2;
 - (void)captureMapsLaunchURLScheme:(id)arg1 sourceApplication:(id)arg2;
-- (void)captureMapsUsageFeedbackCollection:(id)arg1;
+- (void)captureMapsResultsDisplayedFeedbackForQueryString:(id)arg1 resultsArray:(id)arg2;
+- (void)captureNetworkMetricWithState:(int)arg1 messageCount:(int)arg2 messageSize:(long long)arg3 retryCount:(int)arg4 fromLogFrameworkAdaptor:(BOOL)arg5;
+- (void)captureNetworkUsageForRequest:(id)arg1 service:(int)arg2;
+- (void)captureNetworkUsageForRequest:(id)arg1 service:(int)arg2 fromLogFrameworkAdaptor:(BOOL)arg3;
+- (void)captureNetworkUsageForRequest:(id)arg1 service:(int)arg2 requestError:(id)arg3;
+- (void)captureNetworkUsageForRequest:(id)arg1 service:(int)arg2 requestErrorDomain:(id)arg3 requestErrorCode:(long long)arg4 requestErrorDescription:(id)arg5;
+- (void)captureNetworkUsageForRequest:(id)arg1 service:(int)arg2 requestErrorDomain:(id)arg3 requestErrorCode:(long long)arg4 requestErrorDescription:(id)arg5 fromLogFrameworkAdaptor:(BOOL)arg6;
+- (void)captureNetworkUsageForRequest:(id)arg1 service:(int)arg2 requestType:(int)arg3 requestErrorDomain:(id)arg4 requestErrorCode:(long long)arg5 requestErrorDescription:(id)arg6 requestingAppId:(id)arg7;
+- (void)captureNetworkUsageForRequest:(id)arg1 service:(int)arg2 requestType:(int)arg3 requestingAppId:(id)arg4;
+- (void)captureNetworkUsageForRequestToService:(int)arg1 requestError:(id)arg2 responseSize:(unsigned int)arg3 responseTime:(unsigned int)arg4;
+- (void)captureNetworkUsageForRequestToService:(int)arg1 requestErrorDomain:(id)arg2 requestErrorCode:(long long)arg3 requestErrorDescription:(id)arg4 responseSize:(unsigned int)arg5 responseTime:(unsigned int)arg6;
+- (void)captureNetworkUsageForTiles:(id)arg1;
+- (void)capturePurgeMetricWithState:(int)arg1 messageCount:(int)arg2 fromLogFrameworkAdaptor:(BOOL)arg3;
 - (void)captureRequestsForPlaceDataCache:(id)arg1 appIdentifier:(id)arg2;
-- (void)captureStateTimingFeedbackCollection:(id)arg1;
 - (void)captureStateTransition:(id)arg1 force:(BOOL)arg2;
-- (void)captureSuggestionsFeedbackCollection:(id)arg1;
 - (void)captureTileStateForGridCoverage:(double)arg1 oldCoverage:(double)arg2 durationInLastState:(double)arg3;
 - (void)captureTileStateForLoadCoverage:(double)arg1 oldCoverage:(double)arg2 durationInLastState:(double)arg3;
-- (void)captureTimeToLeaveHypothesisFeedbackCollection:(id)arg1;
-- (void)captureTimeToLeaveInitialTravelTimeFeedbackCollection:(id)arg1;
+- (void)captureTimeToLeaveHypothesisWithEarlyDepartureDelta:(double)arg1 lateDepartureDelta:(double)arg2 earlyArrivalDelta:(double)arg3 lateArrivalDelta:(double)arg4 rerouteCount:(unsigned int)arg5 uiNotification:(int)arg6;
+- (void)captureTimeToLeaveInitialTravelTime:(double)arg1;
+- (void)captureTraits:(id)arg1 eventKey:(id)arg2 eventValue:(id)arg3 placeActionDetails:(id)arg4 providerId:(id)arg5;
 - (void)captureTraits:(id)arg1 flyoverAnimationID:(unsigned long long)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)captureTraits:(id)arg1 mapItem:(id)arg2 timestamp:(double)arg3 resultIndex:(int)arg4;
 - (void)captureTraits:(id)arg1 placeActionDetails:(id)arg2 routeDetails:(id)arg3;
 - (void)captureTraits:(id)arg1 placeActionDetails:(id)arg2 uiTarget:(int)arg3;
+- (void)captureTraits:(id)arg1 placeActionDetails:(id)arg2 uiTarget:(int)arg3 eventValue:(id)arg4;
 - (void)captureTraits:(id)arg1 suggestionEntryMetadatasDisplayed:(id)arg2 suggestionEntryMetadataSelected:(id)arg3;
 - (void)captureTraits:(id)arg1 uiTarget:(int)arg2;
-- (void)captureTraits:(id)arg1 userActionsUsageLogMessage:(id)arg2 eventKey:(int)arg3;
 - (void)captureTransitAppLaunchSource:(struct { double x1; double x2; })arg1 destination:(struct { double x1; double x2; })arg2 bundleIdentifier:(id)arg3;
-- (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2;
-- (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2 requestErrorDomain:(id)arg3 requestErrorCode:(long long)arg4 requestErrorDescription:(id)arg5;
-- (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2 requestType:(int)arg3;
-- (void)captureUsageDataForRequest:(id)arg1 service:(int)arg2 requestType:(int)arg3 requestErrorDomain:(id)arg4 requestErrorCode:(long long)arg5 requestErrorDescription:(id)arg6;
-- (void)captureUsageDataForRequestToService:(int)arg1 requestErrorDomain:(id)arg2 requestErrorCode:(long long)arg3 requestErrorDescription:(id)arg4 responseSize:(unsigned int)arg5 responseTime:(unsigned int)arg6;
-- (void)captureUsageDataForTiles:(id)arg1;
 - (void)clearStateTimingData;
-- (id)createTileSetStateForType:(int)arg1 newCoverage:(double)arg2 oldCoverage:(double)arg3 seconds:(double)arg4;
 - (void)dealloc;
 - (id)init;
-- (void)requester:(id)arg1 didFailWithError:(id)arg2;
-- (void)requesterDidCancel:(id)arg1;
-- (void)requesterDidFinish:(id)arg1;
-- (void)sendUsageIfNecessary;
-- (void)setBackgroundTaskEnd:(id /* block */)arg1;
-- (void)setBackgroundTaskStart:(id /* block */)arg1;
+- (id)sharedLogManagerInstance;
+- (id)sharedLogMessageFactoryInstance;
 - (BOOL)shouldIgnoreCollectionForCountry;
 
 @end

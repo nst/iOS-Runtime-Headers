@@ -2,32 +2,48 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUResourceDownloadRequest : NSObject {
+@interface PUResourceDownloadRequest : NSObject <NSProgressReporting> {
+    NSMutableArray *__activeAssetResourcesRequest;
+    NSArray *__assetResources;
     BOOL __downloadCanceled;
     PHAsset *_asset;
     id /* block */ _downloadCompletionHandler;
-    double _progress;
+    NSProgress *_progress;
     NSMutableDictionary *_progressByRequestIdentifier;
     id /* block */ _progressChangeHandler;
+    double _progressFraction;
     int _requestType;
     BOOL _shouldTreatLivePhotosAsStills;
 }
 
+@property (nonatomic, readonly) NSMutableArray *_activeAssetResourcesRequest;
+@property (setter=_setAssetResources:, nonatomic, retain) NSArray *_assetResources;
 @property (getter=_isDownloadCanceled, setter=_setDownloadCanceled:, nonatomic) BOOL _downloadCanceled;
 @property (readonly) PHAsset *asset;
-@property (nonatomic) double progress;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) NSProgress *progress;
 @property (nonatomic, copy) id /* block */ progressChangeHandler;
+@property (nonatomic) double progressFraction;
 @property (readonly) int requestType;
 @property (nonatomic) BOOL shouldTreatLivePhotosAsStills;
+@property (readonly) Class superclass;
 
 - (void).cxx_destruct;
+- (id)_activeAssetResourcesRequest;
+- (id)_assetResources;
+- (void)_cancelActiveAssetResourceRequests;
 - (void)_didFinishDownloadWithSuccess:(BOOL)arg1 error:(id)arg2;
+- (void)_fetchResourcesForDuplicatingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
 - (void)_fetchResourcesForEditingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
 - (void)_fetchResourcesForSharingAsset:(id)arg1 networkAccessAllowed:(BOOL)arg2 handler:(id /* block */)arg3;
 - (void)_fetchResourcesWithNetworkAccessAllowed:(BOOL)arg1 handler:(id /* block */)arg2;
+- (void)_handleCompletionOfAssetResourceDataRequestWithId:(int)arg1 error:(id)arg2;
 - (BOOL)_isDownloadCanceled;
+- (void)_setAssetResources:(id)arg1;
 - (void)_setDownloadCanceled:(BOOL)arg1;
-- (void)_setProgress:(double)arg1;
+- (void)_setProgressFraction:(double)arg1;
 - (void)_simulateFetchResourcesWithDuration:(double)arg1 success:(BOOL)arg2 networkAccessAllowed:(BOOL)arg3 handler:(id /* block */)arg4;
 - (void)_updateCombinedProgressWithValue:(double)arg1 forRequestIdentifier:(id)arg2 networkAccessAllowed:(BOOL)arg3;
 - (id)asset;
@@ -36,8 +52,9 @@
 - (void)fetchIsDownloadRequiredWithHandler:(id /* block */)arg1;
 - (id)init;
 - (id)initWithAsset:(id)arg1 requestType:(int)arg2;
-- (double)progress;
+- (id)progress;
 - (id /* block */)progressChangeHandler;
+- (double)progressFraction;
 - (int)requestType;
 - (void)setProgressChangeHandler:(id /* block */)arg1;
 - (void)setShouldTreatLivePhotosAsStills:(BOOL)arg1;

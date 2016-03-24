@@ -18,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (id)connection;
+- (void)dealloc;
 - (id)defaultQueue;
 - (void)deleteObjects:(id)arg1 responseQueue:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)executeQuery:(id)arg1 responseQueue:(id)arg2;

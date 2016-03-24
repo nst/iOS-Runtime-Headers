@@ -40,7 +40,7 @@
 - (id)compositionSpecification;
 - (unsigned long long)conversationFlags;
 - (void)dealloc;
-- (id)deliverSynchronously;
+- (id)deliverSynchronouslyWithCompletion:(id /* block */)arg1;
 - (int)deliveryStatus;
 - (id)init;
 - (id)initWithHeaders:(id)arg1 HTML:(id)arg2 plainTextAlternative:(id)arg3 other:(id)arg4 charsets:(id)arg5;

@@ -4,8 +4,13 @@
 
 @interface MPRadioController : NSObject <MPClientRadioController> {
     NSObject<OS_dispatch_queue> *_accessQueue;
+    BKSApplicationStateMonitor *_applicationStateMonitor;
     NSXPCConnection *_connection;
+    BOOL _hasLaunchedService;
     BOOL _isRadioAvailable;
+    BKSProcessAssertion *_remoteProcessAssertion;
+    id /* block */ _remoteProcessAssertionCompletionHandler;
+    int _remoteProcessAssertionCount;
 }
 
 @property (readonly, copy) NSString *debugDescription;
@@ -15,7 +20,9 @@
 @property (readonly) Class superclass;
 
 - (void).cxx_destruct;
-- (id)_connection;
+- (void)_beginRemoteProcessAssertionWithCompletionHandler:(id /* block */)arg1;
+- (void)_endRemoteProcessAssertion;
+- (void)_getConnectionWithCompletionHandler:(id /* block */)arg1;
 - (void)_setRadioAvailable:(BOOL)arg1;
 - (void)clientRadioControllerRadioAvailabilityDidChange:(BOOL)arg1;
 - (void)clientRadioControllerRecentStationsDidChange;

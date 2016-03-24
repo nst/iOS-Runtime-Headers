@@ -69,6 +69,13 @@
 @property (nonatomic) long long startTime;
 @property (nonatomic) long long timestamp;
 
++ (Class)authHttpInfosType;
++ (Class)cancelErrorType;
++ (Class)chunkingInfosType;
++ (Class)completeHttpInfosType;
++ (Class)containerHttpInfosType;
++ (Class)errorType;
+
 - (void)addAuthHttpInfos:(id)arg1;
 - (void)addCancelError:(id)arg1;
 - (void)addChunkingInfos:(id)arg1;

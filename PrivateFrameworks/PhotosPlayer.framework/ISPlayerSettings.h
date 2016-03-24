@@ -7,6 +7,7 @@
     BOOL _allowFrameBlending;
     BOOL _allowPlayerReuse;
     BOOL _allowVideoPreRoll;
+    BOOL _assumeCroppedVideo;
     float _audioRampDuration;
     double _crossfadeDuration;
     float _crossfadeTargetBlur;
@@ -30,6 +31,7 @@
 @property (nonatomic) BOOL allowFrameBlending;
 @property (nonatomic) BOOL allowPlayerReuse;
 @property (nonatomic) BOOL allowVideoPreRoll;
+@property (nonatomic) BOOL assumeCroppedVideo;
 @property (nonatomic) float audioRampDuration;
 @property (nonatomic) double crossfadeDuration;
 @property (nonatomic) float crossfadeTargetBlur;
@@ -55,6 +57,7 @@
 - (BOOL)allowFrameBlending;
 - (BOOL)allowPlayerReuse;
 - (BOOL)allowVideoPreRoll;
+- (BOOL)assumeCroppedVideo;
 - (float)audioRampDuration;
 - (double)crossfadeDuration;
 - (float)crossfadeTargetBlur;
@@ -73,6 +76,7 @@
 - (void)setAllowFrameBlending:(BOOL)arg1;
 - (void)setAllowPlayerReuse:(BOOL)arg1;
 - (void)setAllowVideoPreRoll:(BOOL)arg1;
+- (void)setAssumeCroppedVideo:(BOOL)arg1;
 - (void)setAudioRampDuration:(float)arg1;
 - (void)setCrossfadeDuration:(double)arg1;
 - (void)setCrossfadeTargetBlur:(float)arg1;

@@ -118,6 +118,7 @@
 - (BOOL)allocateRenderResourcesAndReturnError:(id*)arg1;
 - (void)dealloc;
 - (void)deallocateRenderResources;
+- (void)didCrash;
 - (void)doOpen:(id)arg1 completion:(id /* block */)arg2;
 - (id)inputBusses;
 - (void)internalInitWithExtension:(id)arg1 componentDescription:(struct AudioComponentDescription { unsigned int x1; unsigned int x2; unsigned int x3; unsigned int x4; unsigned int x5; })arg2 instance:(struct OpaqueAudioComponentInstance { }*)arg3 completion:(id /* block */)arg4;

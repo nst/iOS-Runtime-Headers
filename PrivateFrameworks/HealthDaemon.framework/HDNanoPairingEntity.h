@@ -3,20 +3,24 @@
  */
 
 @interface HDNanoPairingEntity : HDHealthEntity {
-    BOOL _activated;
+    NSString *_defaultSourceBundleIdentifier;
+    NSString *_deviceIdentifier;
     HDNanoPairingEntity *_entity;
     NSUUID *_healthUUID;
     NSUUID *_nanoRegistryUUID;
     NSUUID *_persistentUUID;
-    int _syncProvenance;
+    BOOL _restoreComplete;
+    long long _syncProvenance;
 }
 
-@property (getter=isActivated, nonatomic) BOOL activated;
+@property (nonatomic, copy) NSString *defaultSourceBundleIdentifier;
+@property (nonatomic, copy) NSString *deviceIdentifier;
 @property (nonatomic, retain) HDNanoPairingEntity *entity;
 @property (nonatomic, retain) NSUUID *healthUUID;
 @property (nonatomic, retain) NSUUID *nanoRegistryUUID;
 @property (nonatomic, retain) NSUUID *persistentUUID;
-@property (nonatomic) int syncProvenance;
+@property (getter=isRestoreComplete, nonatomic) BOOL restoreComplete;
+@property (nonatomic) long long syncProvenance;
 
 + (id)_nanoPairingEntityWithPredicate:(id)arg1 database:(id)arg2;
 + (id)_predicateWithRegistryUUID:(id)arg1;
@@ -24,23 +28,27 @@
 + (id)databaseTable;
 + (id)nanoPairingEntityWithRegistryUUID:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 + (int)protectionClass;
++ (id)sourceEntityForRegistryUUID:(id)arg1 healthDatabase:(id)arg2 error:(id*)arg3;
 
 - (void).cxx_destruct;
-- (id)_initWithNanoRegistryUUID:(id)arg1 persistentUUID:(id)arg2 healthUUID:(id)arg3 syncProvenance:(int)arg4 activated:(BOOL)arg5 database:(id)arg6 error:(id*)arg7;
-- (id)_propertyValues;
+- (id)_initWithNanoRegistryUUID:(id)arg1 persistentUUID:(id)arg2 healthUUID:(id)arg3 sourceBundleIdentifier:(id)arg4 deviceIdentifier:(id)arg5 syncStoreEntity:(id)arg6 restoreComplete:(BOOL)arg7 database:(id)arg8 error:(id*)arg9;
+- (id)defaultSourceBundleIdentifier;
 - (id)description;
+- (id)deviceIdentifier;
 - (id)entity;
 - (id)healthUUID;
-- (BOOL)isActivated;
+- (BOOL)isRestoreComplete;
 - (id)nanoRegistryUUID;
 - (id)persistentUUID;
 - (BOOL)saveWithHealthDatabase:(id)arg1 error:(id*)arg2;
-- (void)setActivated:(BOOL)arg1;
+- (void)setDefaultSourceBundleIdentifier:(id)arg1;
+- (void)setDeviceIdentifier:(id)arg1;
 - (void)setEntity:(id)arg1;
 - (void)setHealthUUID:(id)arg1;
 - (void)setNanoRegistryUUID:(id)arg1;
 - (void)setPersistentUUID:(id)arg1;
-- (void)setSyncProvenance:(int)arg1;
-- (int)syncProvenance;
+- (void)setRestoreComplete:(BOOL)arg1;
+- (void)setSyncProvenance:(long long)arg1;
+- (long long)syncProvenance;
 
 @end

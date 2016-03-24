@@ -20,7 +20,7 @@
 - (BOOL)_uploadAttachmentsViaCloudKit:(id)arg1 zone:(id)arg2 records:(id)arg3 zippedPhotos:(id)arg4 attachmentRecords:(id)arg5 images:(id)arg6;
 - (id)attachments;
 - (void)dealloc;
-- (id)deliverSynchronously;
+- (id)deliverSynchronouslyWithCompletion:(id /* block */)arg1;
 - (id)imageArchiveMetadata;
 - (int)mailDropState;
 - (id)scaledImages:(id)arg1;

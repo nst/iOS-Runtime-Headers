@@ -16,9 +16,11 @@
 
 @property (getter=isHiding, nonatomic) BOOL hiding;
 @property (getter=isRotated, nonatomic) BOOL rotated;
+@property (nonatomic, readonly) BOOL wantsImageShadow;
 @property (nonatomic, readonly) BOOL wantsMaskingWhileAnimatingDisabled;
 
 - (void).cxx_destruct;
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (unsigned int)_controlEventsForActionTriggered;
 - (id)_currentImage;
 - (id)_deleteImage:(float)arg1;
@@ -46,6 +48,7 @@
 - (void)setRotated:(BOOL)arg1;
 - (void)setRotated:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setSelected:(BOOL)arg1;
+- (BOOL)wantsImageShadow;
 - (BOOL)wantsMaskingWhileAnimatingDisabled;
 
 @end

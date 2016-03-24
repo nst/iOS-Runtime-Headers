@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DuetExpertCenter.framework/DuetExpertCenter
  */
 
-@interface _DECPredictionItem : NSObject <NSSecureCoding> {
+@interface _DECPredictionItem : NSObject <NSCopying, NSSecureCoding> {
     unsigned int _appDeeplinkHeuristic;
     double _confidence;
     _DECItem *_item;
@@ -19,6 +19,7 @@
 - (void).cxx_destruct;
 - (unsigned int)appDeeplinkHeuristic;
 - (double)confidence;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;

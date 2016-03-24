@@ -56,7 +56,6 @@
 - (void)setMaximumWidth:(float)arg1;
 - (void)setRightView:(id)arg1;
 - (void)setRightView:(id)arg1 animated:(BOOL)arg2;
-- (void)updatePreferredContentSize;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidLoad;
 

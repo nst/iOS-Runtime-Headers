@@ -28,6 +28,7 @@
 - (void)preflightRequiredFieldsWithCompletion:(id /* block */)arg1;
 - (id)readonlyFieldIdentifiers;
 - (void)setPaymentCredential:(id)arg1;
+- (BOOL)shouldAppearWithFirstEmptyFieldAsFirstResponder;
 - (id)tableView:(id)arg1 cellForRowAtIndexPath:(id)arg2;
 - (void)viewDidAppear:(BOOL)arg1;
 - (void)viewDidDisappear:(BOOL)arg1;

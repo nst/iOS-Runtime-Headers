@@ -22,10 +22,10 @@
 
 + (id)actionWithBlock:(id /* block */)arg1;
 
+- (void).cxx_destruct;
 - (id /* block */)actionBlock;
 - (unsigned int)activationMode;
 - (unsigned int)behavior;
-- (void)dealloc;
 - (id)identifier;
 - (id)initWithActionBlock:(id /* block */)arg1 remoteViewControllerClassName:(id)arg2 remoteServiceBundleIdentifier:(id)arg3 actionIdentifier:(id)arg4 activationMode:(unsigned int)arg5 behavior:(unsigned int)arg6 parameters:(id)arg7;
 - (id)parameters;

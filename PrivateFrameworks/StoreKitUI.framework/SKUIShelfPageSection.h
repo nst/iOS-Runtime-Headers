@@ -52,6 +52,7 @@
 - (void)invalidateCachedLayoutInformation;
 - (int)numberOfCells;
 - (void)prefetchResourcesWithReason:(int)arg1;
+- (id)previewingContext:(id)arg1 viewControllerForLocation:(struct CGPoint { float x1; float x2; })arg2;
 - (id)scrollViewDelegateObserver;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
@@ -65,5 +66,6 @@
 - (BOOL)updateCellWithIndexPath:(id)arg1 itemState:(id)arg2 animated:(BOOL)arg3;
 - (void)viewElementSlideshowWillDismiss:(id)arg1;
 - (void)willAppearInContext:(id)arg1;
+- (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 
 @end

@@ -8,14 +8,17 @@
     TTTextStorage *_textStorage;
     NSUUID *_uuid;
     TTVectorMultiTimestamp *archivedTimestamp;
+    NSData *decryptedData;
     BOOL needsRefresh;
 }
 
 @property (nonatomic, retain) ICAccount *account;
 @property (nonatomic, copy) TTVectorMultiTimestamp *archivedTimestamp;
+@property (nonatomic) short attachmentViewType;
 @property (nonatomic, retain) NSSet *attachments;
 @property (nonatomic, retain) NSDate *creationDate;
 @property (readonly, copy) NSString *debugDescription;
+@property (retain) NSData *decryptedData;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSSet *folders;
 @property (nonatomic, retain) NSDate *foldersModificationDate;
@@ -42,10 +45,12 @@
 + (id)allCloudObjects;
 + (id)allNotesInContext:(id)arg1;
 + (id)attributedStringFromHTMLString:(id)arg1;
++ (id)attributedStringFromHTMLString:(id)arg1 baseURL:(id)arg2 readerDelegate:(id)arg3;
 + (id)attributedStringFromHTMLString:(id)arg1 readerDelegate:(id)arg2;
 + (unsigned int)countOfAllNotesInContext:(id)arg1;
 + (unsigned int)countOfNotesMatchingPredicate:(id)arg1 context:(id)arg2;
 + (unsigned int)countOfVisibleNotesInContext:(id)arg1;
++ (id)createNoteFromNote:(id)arg1 isPasswordProtected:(BOOL)arg2 removingOriginalNote:(BOOL)arg3;
 + (id)defaultTitleForEmptyNote;
 + (void)deleteEmptyNote:(id)arg1;
 + (void)deleteNote:(id)arg1;
@@ -59,7 +64,7 @@
 + (id)htmlStringFromAttributedString:(id)arg1 attachmentConversionHandler:(id /* block */)arg2;
 + (BOOL)isDefaultColor:(struct UIColor { Class x1; }*)arg1;
 + (unsigned int)maxNoteTextLength;
-+ (id)mutableAttributedStringFromHTMLString:(id)arg1;
++ (id)mutableAttributedStringFromHTMLString:(id)arg1 baseURL:(id)arg2;
 + (id)mutableAttributedStringFromHTMLString:(id)arg1 readerDelegate:(id)arg2;
 + (id)newCloudObjectForRecord:(id)arg1;
 + (id)newEmptyNoteInContext:(id)arg1;
@@ -78,7 +83,7 @@
 + (id)predicateForVisibleNotesIncludingTrash:(BOOL)arg1;
 + (void)purgeAllNotesInContext:(id)arg1;
 + (void)purgeNote:(id)arg1;
-+ (id)recordType;
++ (void)redactNote:(id)arg1;
 + (id)refreshAllOfNoteWithIdentifier:(id)arg1 context:(id)arg2;
 + (id)tagDictionariesForAttributes:(id)arg1 attachmentConversionHandler:(id /* block */)arg2;
 + (id)tagDictionaryForWrapperAroundParagraphStyle:(id)arg1;
@@ -110,7 +115,11 @@
 - (BOOL)canAddAttachments:(unsigned int)arg1;
 - (id)connectedDevices;
 - (id)connectedSockets;
+- (BOOL)containsAttachmentsUnsupportedInPasswordProtection;
 - (id)contentInfoText;
+- (id)dateForCurrentSortType;
+- (void)decrypt;
+- (id)decryptedData;
 - (void)deduplicateSelfAndCreateNewObjectFromRecord:(id)arg1;
 - (void)deleteFromLocalDatabase;
 - (void)didChangeNoteText;
@@ -120,6 +129,7 @@
 - (void)fixBrokenReferences;
 - (id)folder;
 - (BOOL)hasAllMandatoryFields;
+- (BOOL)hasTextStorage;
 - (BOOL)hasThumbnailImage;
 - (id)htmlString;
 - (id)htmlStringWithAttachmentConversionHandler:(id /* block */)arg1;
@@ -129,13 +139,17 @@
 - (BOOL)isEmpty;
 - (BOOL)isHiddenFromSearch;
 - (BOOL)isInICloudAccount;
+- (BOOL)isTooLargeForPasswordProtection;
 - (BOOL)isVisible;
 - (id)loggingDescriptionValues;
 - (void)markForDeletion;
 - (void)mergeDataFromRecord:(id)arg1;
 - (void)mergeDataFromRecord:(id)arg1 withMergePolicy:(int)arg2;
+- (void)mergeEncryptedDataFromRecord:(id)arg1;
 - (void)mergeFoldersFromRecord:(id)arg1;
 - (int)mergePolicyForRecord:(id)arg1;
+- (void)mergeTextData:(id)arg1 record:(id)arg2 mergePolicy:(int)arg3;
+- (void)mergeTextDataFromRecord:(id)arg1 mergePolicy:(int)arg2;
 - (unsigned int)mergeWithNoteData:(id)arg1;
 - (unsigned int)mergeWithNoteDocument:(id)arg1;
 - (BOOL)needsRefresh;
@@ -145,10 +159,12 @@
 - (id)objectIdentifier;
 - (void)objectWasFetchedFromCloudWithRecord:(id)arg1;
 - (id)objectsToBeDeletedBeforeThisObject;
+- (id)parentEncryptableObject;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForAttachment:(id)arg1;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForSnippet;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })rangeForTitle:(BOOL*)arg1;
 - (id)recordName;
+- (id)recordType;
 - (id)recordZoneID;
 - (void)refreshNoteTextFromDataStore;
 - (void)regenerateSnippet;
@@ -159,6 +175,7 @@
 - (BOOL)requiresLegacyTombstoneAfterDeletion;
 - (void)resetUniqueIdentifier;
 - (void)save;
+- (void)saveAndClearDecryptedData;
 - (void)saveNoteData;
 - (id)searchDomainIdentifier;
 - (id)searchIndexStringsOutHasAdditionalStrings:(BOOL*)arg1;
@@ -169,6 +186,7 @@
 - (id)searchableItemAttributeSet;
 - (id)searchableItemIdentifier;
 - (void)setArchivedTimestamp:(id)arg1;
+- (void)setDecryptedData:(id)arg1;
 - (void)setFolder:(id)arg1;
 - (void)setFolders:(id)arg1;
 - (void)setLegacyManagedObjectID:(id)arg1;
@@ -179,6 +197,8 @@
 - (void)setTextStorage:(id)arg1;
 - (BOOL)shouldUpdateIndexForChangedValues:(id)arg1;
 - (BOOL)supportsDeletionByTTL;
+- (BOOL)supportsEncryptedValuesDictionary;
+- (id)textDataDecryptedIfNecessary;
 - (id)textStorage;
 - (void)textStorage:(id)arg1 didProcessEditing:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 changeInLength:(int)arg4;
 - (void)textStorage:(id)arg1 willProcessEditing:(unsigned int)arg2 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg3 changeInLength:(int)arg4;

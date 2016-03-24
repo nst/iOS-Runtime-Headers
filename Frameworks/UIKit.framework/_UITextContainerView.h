@@ -59,6 +59,7 @@
 - (void)_ensureMinAndMaxSizesConsistentWithBounds;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })_extendedGlyphRangeForRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 maxGlyphIndex:(unsigned int)arg2 drawingToScreen:(BOOL)arg3;
 - (void)_setFrameOrBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 oldRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 settingAction:(id /* block */)arg3;
+- (void)_sizeToConstrainedContainerUsedRect;
 - (void)dealloc;
 - (id)delegate;
 - (id)description;

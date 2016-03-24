@@ -7,6 +7,7 @@
 + (char *)aslLevelForLogLevel:(int)arg1;
 + (BOOL)detailedLoggingEnabled;
 + (BOOL)fastUserActivites;
++ (BOOL)forceDataMigration;
 + (void)initialize;
 + (BOOL)logsToConsole;
 + (BOOL)logsToFile;

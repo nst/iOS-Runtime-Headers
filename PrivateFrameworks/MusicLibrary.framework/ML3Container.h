@@ -18,6 +18,7 @@
 
 + (id)__mediaTypesForTracksWithDatabaseConnection:(id)arg1 tracksPersistentIDsEnumerationBlock:(id /* block */)arg2;
 + (void)_addMediaTypesToContainerWithPersistentID:(long long)arg1 mediaTypes:(id)arg2 connection:(id)arg3;
++ (id)_allStaticItemContainersInLibrary:(id)arg1 usingConnection:(id)arg2;
 + (void)_clearContainerMediaTypeInContainerWithPersistentID:(long long)arg1 connection:(id)arg2;
 + (void)_insertNewSmartPlaylist:(id)arg1 criteriaBlob:(id)arg2 evaluationOrder:(unsigned long)arg3 limited:(BOOL)arg4 trackOrder:(unsigned long)arg5 distinguishedKind:(int)arg6 inLibrary:(id)arg7 cachedNameOrders:(id)arg8;
 + (id)_mediaTypesForTracksInContainerWithPersistentID:(long long)arg1 connection:(id)arg2;
@@ -53,6 +54,8 @@
 + (id)predicateForCriteriaList:(struct SearchCriteriaList { }*)arg1 dynamicCriteria:(BOOL)arg2 parentMatchedAny:(BOOL)arg3;
 + (int)protocolSortTypeFromTrackOrder:(unsigned long)arg1;
 + (void)reloadContainedMediaTypesForContainerWithPersistID:(long long)arg1 connection:(id)arg2;
++ (void)removeAnyNonLibraryItemsInPersistentIDs:(id)arg1 fromContainersInLibrary:(id)arg2 usingConnection:(id)arg3;
++ (void)removeNonLibraryItemsFromContainersInLibrary:(id)arg1 usingConnection:(id)arg2;
 + (int)revisionTrackingCode;
 + (id)sectionPropertyForProperty:(id)arg1;
 + (BOOL)smartCriteriaCanBeEvaluated:(id)arg1;
@@ -70,9 +73,9 @@
 - (id)_numericStringForCriteriaInfo:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (void)_setContainerSeedItemPersistentIDValue:(id)arg1;
 - (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 mediaTypesToRemove:(id)arg2 mediaTypesToAdd:(id)arg3 size:(int)arg4 notify:(BOOL)arg5;
-- (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 reloadContainedMediaTypes:(BOOL)arg2 mediaTypesToRemove:(id)arg3 mediaTypesToAdd:(id)arg4 size:(int)arg5 notify:(BOOL)arg6;
-- (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 reloadContainedMediaTypes:(BOOL)arg2 size:(int)arg3;
-- (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 reloadContainedMediaTypes:(BOOL)arg2 size:(int)arg3 notify:(BOOL)arg4;
+- (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 reloadContainedMediaTypes:(BOOL)arg2 mediaTypesToRemove:(id)arg3 mediaTypesToAdd:(id)arg4 size:(int)arg5 notify:(BOOL)arg6 incrementEntityRevision:(BOOL)arg7;
+- (BOOL)_setSwappedItemPersistentIDs:(const long long*)arg1 reloadContainedMediaTypes:(BOOL)arg2 mediaTypesToRemove:(id)arg3 mediaTypesToAdd:(id)arg4 size:(int)arg5 notify:(BOOL)arg6 incrementEntityRevision:(BOOL)arg7 usingConnection:(id)arg8;
+- (BOOL)_setTracksWithPersistentIDs:(const long long*)arg1 count:(unsigned int)arg2 notify:(BOOL)arg3 incrementEntityRevision:(BOOL)arg4;
 - (id)_stringForCriterionBuffer:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (id)_stringForCriterionMatchKey:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;
 - (id)_stringForCriterionMatchType:(struct { unsigned int x1; unsigned int x2; unsigned char x3; unsigned char x4; unsigned char x5; unsigned char x6; union { struct { void *x_1_2_1; unsigned int x_1_2_2; } x_7_1_1; struct SearchCriteriaList {} *x_7_1_2; } x7; })arg1;

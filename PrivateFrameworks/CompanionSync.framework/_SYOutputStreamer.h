@@ -20,6 +20,7 @@
 
 - (void).cxx_destruct;
 - (void)_completeAllItemsWithError:(id)arg1;
+- (id /* block */)_getCompletionBlock;
 - (void)_tryToSendData;
 - (void)close;
 - (BOOL)hasWrittenData;

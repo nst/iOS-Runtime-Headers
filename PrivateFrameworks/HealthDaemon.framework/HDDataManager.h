@@ -26,6 +26,7 @@
 - (void)_callObservers:(id)arg1 withObjects:(id)arg2 type:(id)arg3 anchor:(id)arg4;
 - (void)_callObserversIfPossible;
 - (BOOL)_deleteObjectsWithTypes:(id)arg1 sourceIdentifier:(id)arg2 error:(id*)arg3;
+- (BOOL)_insertDataObjects:(id)arg1 intoDatabase:(id)arg2 withProvenance:(id)arg3 creationDate:(double)arg4 skipInsertionFilter:(BOOL)arg5 error:(id*)arg6;
 - (id)_medicalIDURL;
 - (void)_notificationQueue_notifyObserversSamplesWithTypesWereRemoved:(id)arg1 anchor:(id)arg2;
 - (void)_notifyObserversSamplesWithTypesWereRemoved:(id)arg1 anchor:(id)arg2;
@@ -46,11 +47,13 @@
 - (id)daemon;
 - (BOOL)deleteDataObjects:(id)arg1 restrictedSourceEntity:(id)arg2 failIfNotFound:(BOOL)arg3 error:(id*)arg4;
 - (BOOL)deleteDataObjects:(id)arg1 sourceBundleIdentifier:(id)arg2 error:(id*)arg3;
-- (BOOL)deleteDataObjectsWithPredicate:(id)arg1 limit:(unsigned int)arg2 deletedSampleCount:(unsigned int*)arg3 notifyObservers:(BOOL)arg4 generateDeletedObjects:(BOOL)arg5 error:(id*)arg6;
+- (BOOL)deleteDataObjectsOfClass:(Class)arg1 predicate:(id)arg2 limit:(unsigned int)arg3 deletedSampleCount:(unsigned int*)arg4 notifyObservers:(BOOL)arg5 generateDeletedObjects:(BOOL)arg6 error:(id*)arg7;
 - (BOOL)deleteMedicalIDData:(id*)arg1;
 - (BOOL)deleteSamplesWithSourceIdentifier:(id)arg1 error:(id*)arg2;
 - (BOOL)deleteSamplesWithTypes:(id)arg1 sourceBundleIdentifier:(id)arg2 error:(id*)arg3;
 - (BOOL)deleteSamplesWithTypes:(id)arg1 sourceID:(id)arg2 error:(id*)arg3;
+- (BOOL)deleteSamplesWithUUIDs:(id)arg1 error:(id*)arg2;
+- (BOOL)deleteSamplesWithUUIDs:(id)arg1 generateDeletedObjects:(BOOL)arg2 database:(id)arg3 error:(id*)arg4;
 - (id)diagnosticDescription;
 - (id)initWithDaemon:(id)arg1;
 - (BOOL)insertDataObjects:(id)arg1 sourceEntity:(id)arg2 deviceEntity:(id)arg3 sourceVersion:(id)arg4 creationDate:(double)arg5 error:(id*)arg6;

@@ -3,6 +3,7 @@
  */
 
 @interface HDStatisticsBuilder : NSObject {
+    long long _anchor;
     _HKFilter *_filter;
     <HDHealthDaemon> *_healthDaemon;
     unsigned int _mergeStrategy;
@@ -13,6 +14,7 @@
     unsigned int _statisticsOptions;
 }
 
+@property (nonatomic) long long anchor;
 @property (nonatomic, readonly) _HKFilter *filter;
 @property (nonatomic, readonly) <HDHealthDaemon> *healthDaemon;
 @property (nonatomic, readonly) unsigned int mergeStrategy;
@@ -27,23 +29,27 @@
 
 - (void).cxx_destruct;
 - (void)_enumerateSamplesWithType:(id)arg1 predicate:(id)arg2 database:(id)arg3 handler:(id /* block */)arg4;
-- (id)_initialStatisticsForCollection:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 sampleCount:(int)arg4 shouldStopProcessing:(id /* block */)arg5 error:(id*)arg6;
+- (id)_initialStatisticsForCollection:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 shouldStopProcessing:(id /* block */)arg4 error:(id*)arg5;
 - (id)_initialStatisticsForStartDate:(id)arg1 endDate:(id)arg2 shouldStopProcessing:(id /* block */)arg3 error:(id*)arg4;
 - (void)_setupOrderedSources;
+- (BOOL)_setupStatistics:(id)arg1 withCalculator:(id)arg2;
+- (id)_updateStatisticsCollection:(id)arg1 withSamples:(id)arg2 error:(id*)arg3;
+- (long long)anchor;
+- (id)buildStatisticsObjectFromCalculator:(id)arg1;
+- (id)collectionCalculatorWithBucketBoundaries:(id)arg1;
 - (id)filter;
 - (id)healthDaemon;
 - (id)initWithQuantityType:(id)arg1 filter:(id)arg2 statisticsOptions:(unsigned int)arg3 mergeStrategy:(unsigned int)arg4 restrictedSourceIdentifier:(id)arg5 healthDaemon:(id)arg6;
 - (id)initialStatisticsForCollection:(id)arg1 shouldStopProcessing:(id /* block */)arg2 error:(id*)arg3;
 - (id)initialStatisticsShouldStopProcessing:(id /* block */)arg1 error:(id*)arg2;
-- (BOOL)isTimeIntervalTooLong:(long long)arg1 sampleStartTime:(double)arg2 sampleEndTime:(double)arg3 seconds:(double)arg4;
 - (unsigned int)mergeStrategy;
 - (id)orderedSourceIDsFromSources:(id)arg1 sourceManager:(id)arg2;
 - (id)orderedSources;
 - (id)predicate;
 - (id)quantityType;
 - (id)restrictedSourceIdentifier;
+- (void)setAnchor:(long long)arg1;
 - (unsigned int)statisticsOptions;
-- (id)updateStatistics:(id)arg1 withSamples:(id)arg2 error:(id*)arg3;
-- (id)updateStatisticsCollection:(id)arg1 withSamples:(id)arg2 anchor:(id)arg3 error:(id*)arg4;
+- (id)updateStatisticsCollection:(id)arg1 withSamples:(id)arg2 anchor:(id)arg3 restrictedSourceIdentifier:(id)arg4 error:(id*)arg5;
 
 @end

@@ -2,13 +2,14 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface _MKPlaceViewController : MKStackingViewController <ABContactViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, MKActivityViewControllerDelegate, MKPlaceActionsViewControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceHeaderViewDelegate, MKPlaceInfoViewControllerDelegate, MKPlaceNearbyAppsViewControllerDelegate, MKPlaceSharedAttributionDelegate, MKStackingViewControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKTransitReroutingViewDelegate, SKProductPageViewControllerDelegate> {
+@interface _MKPlaceViewController : MKStackingViewController <ABContactViewControllerDelegate, ABNewPersonViewControllerDelegate, ABPeoplePickerNavigationControllerDelegate, MKActivityViewControllerDelegate, MKPlaceActionsViewControllerDelegate, MKPlaceCardEncyclopedicControllerDelegate, MKPlaceCardPhotosControllerDelegate, MKPlaceCardReviewsControllerDelegate, MKPlaceHeaderViewDelegate, MKPlaceInfoViewControllerDelegate, MKPlaceNearbyAppsViewControllerDelegate, MKPlaceSharedAttributionDelegate, MKStackingViewControllerDelegate, MKTransitDepaturesViewControllerDelegate, MKTransitReroutingViewDelegate, RadiosPreferencesDelegate, SKProductPageViewControllerDelegate> {
     MKPlaceActionsViewController *_actionsViewController;
     NSMapTable *_additionalViewControllers;
     void *_addressBook;
     BOOL _attemptedToCreateAddressBook;
     CNContact *_contact;
     CNContactNavigationController<ABContactViewControllerDelegate> *_contactsNavigationController;
+    MKMapItemMetadataDealRequest *_dealRequest;
     _MKDistanceDetailProvider *_distanceMonitor;
     UIButton *_favoriteButton;
     UITapGestureRecognizer *_flyoverTourTapRecognizer;
@@ -16,6 +17,7 @@
     BOOL _hasContactOnlyMapItem;
     float _headerHeight;
     NSString *_headerTitle;
+    BOOL _inAirplaneModeAndNetworkUnreachable;
     MKPlaceInfoViewController *_infoViewController;
     BOOL _isMapItemUpdating;
     BOOL _isSearchingForNearbyApps;
@@ -29,6 +31,7 @@
     <_MKPlaceViewControllerDelegate> *_placeViewControllerDelegate;
     id /* block */ _placeViewFeedbackAppLaunchHandler;
     <_MKPlaceViewControllerFeedbackDelegate> *_placeViewFeedbackDelegate;
+    RadiosPreferences *_radioPreferences;
     GEORouteGenerator *_routeGenerator;
     BOOL _showContactActions;
     NSArray *_storeItems;
@@ -49,6 +52,7 @@
 @property (nonatomic, copy) NSString *headerTitle;
 @property (nonatomic) BOOL hideDirectionsButtons;
 @property (nonatomic) BOOL hideInlineMap;
+@property (nonatomic) BOOL inAirplaneModeAndNetworkUnreachable;
 @property (nonatomic) BOOL isMapItemUpdating;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic, readonly) MKPlaceNearbyAppsMetricsCoordinator *metricsCoordinator;
@@ -58,12 +62,14 @@
 @property (nonatomic) <_MKPlaceViewControllerDelegate> *placeViewControllerDelegate;
 @property (nonatomic, copy) id /* block */ placeViewFeedbackAppLaunchHandler;
 @property (nonatomic) <_MKPlaceViewControllerFeedbackDelegate> *placeViewFeedbackDelegate;
+@property (nonatomic, retain) RadiosPreferences *radioPreferences;
 @property (nonatomic, retain) GEORouteGenerator *routeGenerator;
 @property (nonatomic) BOOL showContactActions;
 @property (nonatomic) BOOL showEditButton;
 @property (nonatomic) BOOL showFlyoverTour;
 @property (nonatomic) BOOL showInlineMapInHeader;
 @property (nonatomic) BOOL showNearbyApps;
+@property (nonatomic) BOOL showOpenInPinpoint;
 @property (nonatomic) BOOL showOpenInSkyline;
 @property (nonatomic) BOOL showRemovePin;
 @property (nonatomic) BOOL showReportAProblem;
@@ -75,6 +81,7 @@
 
 - (void).cxx_destruct;
 - (void*)_addressBook;
+- (void)_checkForDealsIfNecessary;
 - (void)_commonInit;
 - (id)_contactForEditOperations;
 - (id)_createFavoriteButton;
@@ -92,6 +99,7 @@
 - (void)_searchForNearbyApps;
 - (void)_searchForNearbyAppsIfNecessary;
 - (int)_sectionPositionForMapTableKey:(id)arg1;
+- (void)_setDeal:(id)arg1 forYelpId:(id)arg2;
 - (void)_setDefaultViewControllers:(id)arg1;
 - (void)_setHeaderSubtitleWithDistance:(id)arg1 reviewInfo:(id)arg2;
 - (void)_setHeaderSubtitleWithDistanceInfo:(id)arg1;
@@ -101,11 +109,14 @@
 - (void)_showEditSheet:(id)arg1;
 - (BOOL)_showReportAProblem;
 - (void)_showShareSheet:(id)arg1;
+- (void)_showShareSheet:(id)arg1 completion:(id /* block */)arg2;
 - (void)_tappedForFlyoverTour;
 - (void)_updateHeaderHeight;
+- (void)_updateViewControllerStatesForOffline;
 - (void)_updateViewControllers;
 - (void)actionsViewControllerAddContactToExistingContact:(id)arg1;
 - (void)actionsViewControllerCreateNewContact:(id)arg1;
+- (void)actionsViewControllerOpenInPinpoint:(id)arg1;
 - (void)actionsViewControllerOpenInSkyline:(id)arg1;
 - (void)actionsViewControllerRemovePin:(id)arg1;
 - (void)actionsViewControllerReportAProblem:(id)arg1;
@@ -113,6 +124,7 @@
 - (void)actionsViewControllerSimulateLocation:(id)arg1;
 - (void)addAdditionalViewController:(id)arg1 atPosition:(int)arg2;
 - (id)additionalViewControllersAtPosition:(int)arg1;
+- (void)airplaneModeChanged;
 - (BOOL)allowTransitLineSelection;
 - (void)animationDidStart:(id)arg1;
 - (void)animationDidStop:(id)arg1 finished:(BOOL)arg2;
@@ -132,6 +144,7 @@
 - (BOOL)hideDirectionsButtons;
 - (BOOL)hideFavoriteToobarButton;
 - (BOOL)hideInlineMap;
+- (BOOL)inAirplaneModeAndNetworkUnreachable;
 - (void)infoViewController:(id)arg1 didSelectDeal:(id)arg2;
 - (id)init;
 - (id)initWithContact:(id)arg1 mapItem:(id)arg2;
@@ -146,6 +159,7 @@
 - (id)metricsCoordinator;
 - (void)nearbyAppsController:(id)arg1 openAppWithBundleID:(id)arg2 storeID:(id)arg3;
 - (void)nearbyAppsController:(id)arg1 showStorePageWithURL:(id)arg2 storeID:(id)arg3;
+- (void)networkReachableChanged:(id)arg1;
 - (void)newPersonViewController:(id)arg1 didCompleteWithNewPerson:(void*)arg2;
 - (void)openInfoAttribution;
 - (unsigned int)options;
@@ -168,6 +182,7 @@
 - (id)placeViewFeedbackDelegate;
 - (int)preferredStatusBarStyle;
 - (void)presentHeaderView;
+- (id)radioPreferences;
 - (void)removeAdditionalViewController:(id)arg1;
 - (void)resetHeaderView;
 - (void)resetHeaderViewAnimations;
@@ -184,6 +199,7 @@
 - (void)setHideDirectionsButtons:(BOOL)arg1;
 - (void)setHideFavoriteToobarButton:(BOOL)arg1;
 - (void)setHideInlineMap:(BOOL)arg1;
+- (void)setInAirplaneModeAndNetworkUnreachable:(BOOL)arg1;
 - (void)setIsMapItemUpdating:(BOOL)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setMapItem:(id)arg1 contact:(id)arg2 updateOriginalContact:(BOOL)arg3;
@@ -194,12 +210,14 @@
 - (void)setPlaceViewControllerDelegate:(id)arg1;
 - (void)setPlaceViewFeedbackAppLaunchHandler:(id /* block */)arg1;
 - (void)setPlaceViewFeedbackDelegate:(id)arg1;
+- (void)setRadioPreferences:(id)arg1;
 - (void)setRouteGenerator:(id)arg1;
 - (void)setShowContactActions:(BOOL)arg1;
 - (void)setShowEditButton:(BOOL)arg1;
 - (void)setShowFlyoverTour:(BOOL)arg1;
 - (void)setShowInlineMapInHeader:(BOOL)arg1;
 - (void)setShowNearbyApps:(BOOL)arg1;
+- (void)setShowOpenInPinpoint:(BOOL)arg1;
 - (void)setShowOpenInSkyline:(BOOL)arg1;
 - (void)setShowRemovePin:(BOOL)arg1;
 - (void)setShowReportAProblem:(BOOL)arg1;
@@ -215,6 +233,7 @@
 - (BOOL)showFlyoverTour;
 - (BOOL)showInlineMapInHeader;
 - (BOOL)showNearbyApps;
+- (BOOL)showOpenInPinpoint;
 - (BOOL)showOpenInSkyline;
 - (BOOL)showRemovePin;
 - (BOOL)showReportAProblem;
@@ -230,11 +249,13 @@
 - (void)stackingViewControllerDidEndScroll:(id)arg1;
 - (float)stackingViewControllerHeightForHeaderView:(id)arg1;
 - (void)stackingViewControllerWillBeginScroll:(id)arg1;
+- (void)syncFavoritesUI:(BOOL)arg1;
 - (void)transitDeparturesViewController:(id)arg1 didSelectConnectionInformation:(id)arg2;
 - (void)transitDeparturesViewController:(id)arg1 didSelectTransitLine:(id)arg2;
 - (void)transitDeparturesViewController:(id)arg1 showIncidents:(id)arg2;
 - (void)transitReroutingViewController:(id)arg1 selectedRoute:(id)arg2 withDecoderData:(id)arg3 withOrigin:(id)arg4;
 - (void)updateActionVisibility;
+- (void)updateAirplaneModeNetworkUnreachable;
 - (void)viewDidAppear:(BOOL)arg1;
 - (id)viewDidAppearBlocks;
 - (void)viewDidDisappear:(BOOL)arg1;

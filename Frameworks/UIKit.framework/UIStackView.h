@@ -13,6 +13,7 @@
     BOOL _viewForLastBaselineLayoutDidChange;
 }
 
+@property (nonatomic) int _mk_axis;
 @property (nonatomic) int alignment;
 @property (nonatomic, readonly, copy) NSArray *arrangedSubviews;
 @property (nonatomic) int axis;
@@ -20,6 +21,8 @@
 @property (nonatomic) int distribution;
 @property (getter=isLayoutMarginsRelativeArrangement, nonatomic) BOOL layoutMarginsRelativeArrangement;
 @property (nonatomic) float spacing;
+
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
 + (Class)layerClass;
 
@@ -61,5 +64,10 @@
 - (void)updateConstraints;
 - (id)viewForFirstBaselineLayout;
 - (id)viewForLastBaselineLayout;
+
+// Image: /System/Library/Frameworks/MapKit.framework/MapKit
+
+- (int)_mk_axis;
+- (void)set_mk_axis:(int)arg1;
 
 @end

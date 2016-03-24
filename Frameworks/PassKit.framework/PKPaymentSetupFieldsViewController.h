@@ -102,6 +102,7 @@
 - (void)setWebService:(id)arg1;
 - (id)setupDelegate;
 - (void)setupLater:(id)arg1;
+- (BOOL)shouldAppearWithFirstEmptyFieldAsFirstResponder;
 - (void)showActivitySpinnerWithTitle:(id)arg1 subtitle:(id)arg2;
 - (void)showEligibilityIssueWithReason:(int)arg1 learnMoreURL:(id)arg2 completion:(id /* block */)arg3;
 - (void)showPrivacy:(id)arg1;

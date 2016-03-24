@@ -18,20 +18,26 @@
     NSMutableDictionary *_notePropertyObjectsRealized;
     unsigned int _notificationCount;
     CPExclusiveLock *_objectCreationLock;
+    BOOL _usePrivateQueue;
 }
 
 @property (nonatomic, retain) AccountUtilities *accountUtilities;
 @property (nonatomic) BOOL isMainContext;
 @property (nonatomic, readonly, retain) NSManagedObjectContext *managedObjectContext;
+@property (nonatomic) BOOL usePrivateQueue;
 
 // Image: /System/Library/PrivateFrameworks/Notes.framework/Notes
 
++ (id)allVisibleNotesMatchingPredicate:(id)arg1 context:(id)arg2;
++ (id)allVisibleNotesMatchingPredicate:(id)arg1 sorted:(BOOL)arg2 context:(id)arg3;
 + (void)clearTestsNotesRootPath;
 + (BOOL)databaseIsCorrupt:(id)arg1;
 + (id)defaultNotesSortDescriptors;
 + (id)fileProtectionOption;
 + (id)generateGUID;
 + (id)managedObjectModel;
++ (id)newFetchRequestForNotes;
++ (id)newLegacyContext;
 + (id)newManagedObjectContext;
 + (id)pathForIndex;
 + (id)pathForPersistentStore;
@@ -57,6 +63,7 @@
 - (id)allNotesMatchingPredicate:(id)arg1;
 - (id)allNotesWithoutBodiesInCollection:(id)arg1;
 - (id)allStores;
+- (id)allVisibleNoteObjectIDsForAccountWithObjectID:(id)arg1;
 - (id)allVisibleNotes;
 - (id)allVisibleNotesForAccountWithObjectID:(id)arg1;
 - (id)allVisibleNotesInCollection:(id)arg1;
@@ -85,6 +92,7 @@
 - (void)deleteNoteRegardlessOfConstraints:(id)arg1;
 - (BOOL)deleteStore:(id)arg1;
 - (void)enableChangeLogging:(BOOL)arg1;
+- (id)existingObjectWithID:(id)arg1 error:(id*)arg2;
 - (id)faultedInStoresForAccounts:(id)arg1;
 - (BOOL)forceDeleteAccount:(id)arg1;
 - (void)forceSetUpUniqueObjects;
@@ -96,7 +104,8 @@
 - (id)initForMigrator;
 - (id)initWithAccountUtilities:(id)arg1;
 - (id)initWithAccountUtilities:(id)arg1 inMigrator:(BOOL)arg2;
-- (id)initWithAccountUtilities:(id)arg1 inMigrator:(BOOL)arg2 isMainContext:(BOOL)arg3;
+- (id)initWithAccountUtilities:(id)arg1 inMigrator:(BOOL)arg2 isMainContext:(BOOL)arg3 usePrivateQueue:(BOOL)arg4;
+- (id)initWithPrivateQueue;
 - (void)invalidate;
 - (BOOL)isMainContext;
 - (id)liveNotesNeedingBodiesPredicate;
@@ -118,8 +127,11 @@
 - (id)noteChangeWithType:(int)arg1 store:(id)arg2;
 - (id)noteForObjectID:(id)arg1;
 - (id)notesForIntegerIds:(id)arg1;
+- (void)performBlock:(id /* block */)arg1;
+- (void)performBlockAndWait:(id /* block */)arg1;
 - (id)propertyValueForKey:(id)arg1;
 - (void)receiveDarwinNotificationWithChangeLogging:(BOOL)arg1;
+- (void)reset;
 - (void)resetNotificationCount;
 - (BOOL)save:(id*)arg1;
 - (BOOL)saveOutsideApp:(id*)arg1;
@@ -132,12 +144,14 @@
 - (BOOL)setUpLastIndexTid;
 - (BOOL)setUpLocalAccountAndStore;
 - (void)setUpUniqueObjects;
+- (void)setUsePrivateQueue:(BOOL)arg1;
 - (BOOL)shouldDisableLocalStore;
 - (BOOL)shouldObserveDarwinNotifications;
 - (void)sortNotes:(id)arg1;
 - (id)storeForObjectID:(id)arg1;
 - (void)tearDownCoreDataStack;
 - (void)trackChanges:(id)arg1;
+- (BOOL)usePrivateQueue;
 - (id)visibleNoteForObjectID:(id)arg1;
 - (id)visibleNotesForIntegerIds:(id)arg1;
 - (id)visibleNotesPredicate;

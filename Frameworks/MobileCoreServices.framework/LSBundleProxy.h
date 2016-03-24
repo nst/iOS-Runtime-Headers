@@ -14,6 +14,7 @@
     NSDictionary *_environmentVariables;
     BOOL _foundBackingBundle;
     NSDictionary *_groupContainerURLs;
+    BOOL _isContainerized;
     NSString *_localizedShortName;
     NSArray *_machOUUIDs;
     unsigned long long _plistContentFlags;
@@ -35,6 +36,7 @@
 @property (nonatomic, readonly) NSDictionary *environmentVariables;
 @property (nonatomic, readonly) BOOL foundBackingBundle;
 @property (nonatomic, readonly) NSDictionary *groupContainerURLs;
+@property (nonatomic, readonly) BOOL isContainerized;
 @property (nonatomic, readonly) NSString *localizedShortName;
 @property (nonatomic, readonly) NSArray *machOUUIDs;
 @property (nonatomic, readonly) unsigned int sequenceNumber;
@@ -46,11 +48,16 @@
 + (id)bundleProxyForURL:(id)arg1;
 + (BOOL)supportsSecureCoding;
 
+- (unsigned long long)_containerClassForLSBundleType:(id)arg1;
 - (unsigned char)_createContext:(struct LSContext { struct LSDatabase {} *x1; }*)arg1 andGetBundle:(unsigned int*)arg2 withData:(const struct LSBundleData {}**)arg3;
+- (id)_dataContainerURLFromContainerManager;
+- (id)_environmentVariablesFromContainerManager;
+- (id)_groupContainerURLsFromContainerManager;
 - (id)_initWithBundleUnit:(unsigned long)arg1 bundleType:(unsigned int)arg2 BundleID:(id)arg3 localizedName:(id)arg4 bundleContainerURL:(id)arg5 dataContainerURL:(id)arg6 resourcesDirectoryURL:(id)arg7 iconsDictionary:(id)arg8 iconFileNames:(id)arg9 version:(id)arg10;
 - (id)_plistValueForKey:(id)arg1 ofClass:(Class)arg2;
 - (id)_plistValueForKey:(id)arg1 ofClass:(Class)arg2 valuesOfClass:(Class)arg3;
 - (id)appStoreReceiptURL;
+- (id)applicationGroupIdentifiers;
 - (id)bundleContainerURL;
 - (id)bundleExecutable;
 - (id)bundleIdentifier;
@@ -68,6 +75,7 @@
 - (id)groupContainerURLs;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
+- (BOOL)isContainerized;
 - (BOOL)isEqual:(id)arg1;
 - (id)localizedShortName;
 - (id)machOUUIDs;

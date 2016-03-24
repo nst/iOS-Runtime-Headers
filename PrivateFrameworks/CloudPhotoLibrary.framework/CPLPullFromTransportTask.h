@@ -4,30 +4,38 @@
 
 @interface CPLPullFromTransportTask : CPLEngineSyncTask {
     NSString *_clientCacheIdentifier;
-    BOOL _didGetSomeChanges;
+    Class _currentQueryClass;
     <CPLEngineTransportDownloadBatchTask> *_downloadTask;
     <CPLEngineTransportGetAssetCountsTask> *_getAssetCountsTask;
+    BOOL _gotSomeChanges;
+    BOOL _ignoreNewBatches;
     NSData *_initialSyncAnchor;
     BOOL _isPostPushPhase;
+    NSData *_lastKnownSyncAnchor;
+    <CPLEngineTransportQueryTask> *_queryTask;
     NSObject<OS_dispatch_queue> *_queue;
     BOOL _resetSyncAnchor;
     BOOL _shouldGetAssetCounts;
-    BOOL _signaledTaskEnd;
 }
 
 @property (retain) <CPLPullFromTransportTaskDelegate> *delegate;
-@property (nonatomic, readonly) BOOL didGetSomeChanges;
 @property (nonatomic) BOOL isPostPushPhase;
 @property (nonatomic) BOOL shouldGetAssetCounts;
 
 - (void).cxx_destruct;
 - (void)_checkServerFeatureVersion:(unsigned int)arg1 withCompletionHandler:(id /* block */)arg2;
-- (void)_finishTaskWithErrorAndCleanupIfNecessary:(id)arg1;
-- (void)_handleNewBatch:(id)arg1 newSyncAnchor:(id)arg2;
+- (BOOL)_checkStateBeforeContinuingInTransaction:(id)arg1;
+- (void)_extractAndMingleAssetsIfPossibleFromBatch:(id)arg1 inTransaction:(id)arg2;
+- (void)_handleNewBatchFromChanges:(id)arg1 newSyncAnchor:(id)arg2;
+- (void)_handleNewBatchFromChanges:(id)arg1 newSyncAnchor:(id)arg2 inTransaction:(id)arg3;
+- (void)_handleNewBatchFromQuery:(id)arg1 newCursor:(id)arg2;
+- (void)_handleNewBatchFromQuery:(id)arg1 newCursor:(id)arg2 inTransaction:(id)arg3;
 - (void)_launch;
-- (void)_launchPullTasks;
+- (void)_launchFetchChangesFromSyncAnchor:(id)arg1;
+- (void)_launchNextQueryTask;
+- (void)_launchPullTasksAndDisableQueries:(BOOL)arg1;
+- (void)_launchQueryForClass:(Class)arg1 cursor:(id)arg2;
 - (void)cancel;
-- (BOOL)didGetSomeChanges;
 - (id)initWithEngineLibrary:(id)arg1;
 - (BOOL)isPostPushPhase;
 - (void)launch;

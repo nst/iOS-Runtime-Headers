@@ -73,6 +73,7 @@
 - (void)previewContentController:(id)arg1 willMoveToItemAtIndex:(int)arg2;
 - (void)previewContentController:(id)arg1 willShowOverlayWithDuration:(double)arg2;
 - (void)previewContentControllerDidExitFullScreen:(id)arg1;
+- (void)previewContentControllerPrefersWhitePointAdaptiveStyle:(int)arg1 atIndex:(unsigned int)arg2;
 - (int)previewMode;
 - (id)printPageHelper;
 - (id)printPageRenderer;

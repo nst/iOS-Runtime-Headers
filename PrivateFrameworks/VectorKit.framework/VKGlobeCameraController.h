@@ -122,6 +122,7 @@
 - (void)_rotateAroundTargetWithDuration:(double)arg1 rotations:(double)arg2 completion:(id /* block */)arg3;
 - (struct CGPoint { float x1; float x2; })_scaledScreenPointForPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_updateCanEnter3DMode;
+- (void)_updateGlobeFromCamera;
 - (void)_updateIsPitched;
 - (void)adjustLoadingForAnimation:(float)arg1 progressFactor:(float)arg2;
 - (double)altitude;
@@ -189,7 +190,6 @@
 - (void)transitionToFlyoverMode:(int)arg1 animated:(BOOL)arg2;
 - (void)updateCameraManager;
 - (void)updateFlyoverMode;
-- (void)updateGlobeFromCamera;
 - (void)updatePanWithTranslation:(struct CGPoint { float x1; float x2; })arg1;
 - (void)updatePinchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 oldFactor:(double)arg2 newFactor:(double)arg3;
 - (void)updatePitchWithFocusPoint:(struct CGPoint { float x1; float x2; })arg1 translation:(double)arg2;

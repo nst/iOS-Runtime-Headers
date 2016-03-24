@@ -24,6 +24,7 @@
 @property (nonatomic, copy) NSData *recommendationData;
 @property (nonatomic) unsigned int sourceType;
 @property (nonatomic) unsigned long long storeAccountID;
+@property (nonatomic, copy) NSString *storeFrontID;
 @property (nonatomic, copy) NSString *storeID;
 @property (nonatomic, copy) NSData *timedMetadata;
 @property (nonatomic, copy) NSData *trackInfo;
@@ -50,6 +51,7 @@
 - (void)setSBEnabled:(BOOL)arg1;
 - (void)setSourceType:(unsigned int)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;
+- (void)setStoreFrontID:(id)arg1;
 - (void)setStoreID:(id)arg1;
 - (void)setTimedMetadata:(id)arg1;
 - (void)setTrackInfo:(id)arg1;

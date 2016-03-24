@@ -24,6 +24,7 @@
     int _previewState;
     UITapGestureRecognizer *_tapGestureRecognizer;
     NSMutableArray *_tappableViews;
+    BOOL _updateLayoutOnButtonConfirmation;
     BOOL _useClearBackground;
     NSMapTable *_viewElementViews;
 }
@@ -33,6 +34,7 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) UIView *metadataBackgroundView;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL updateLayoutOnButtonConfirmation;
 
 + (id)_attributedStringForButton:(id)arg1 context:(id)arg2;
 + (id)_attributedStringForLabel:(id)arg1 context:(id)arg2;
@@ -62,6 +64,7 @@
 - (void)_previewIndicatorAction:(id)arg1;
 - (id)_previewMediaURL;
 - (id)_previewProgressIndicator;
+- (void)_resizeMetadataRelativeToItemOfferView:(id)arg1;
 - (void)_resolvePreviewStateAfterTransitionForFlipView:(id)arg1;
 - (void)_showConfirmationAction:(id)arg1;
 - (struct CGSize { float x1; float x2; })_sizeViewsForColumn:(id)arg1 toFitWidth:(float)arg2;
@@ -88,6 +91,7 @@
 - (BOOL)setImage:(id)arg1 forArtworkRequest:(id)arg2 context:(id)arg3;
 - (void)setMetadataBackgroundView:(id)arg1;
 - (void)setPerspectiveTargetView:(id)arg1;
+- (void)setUpdateLayoutOnButtonConfirmation:(BOOL)arg1;
 - (void)setVanishingPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)showPreviewProgressWithStatus:(id)arg1 animated:(BOOL)arg2;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
@@ -95,6 +99,7 @@
 - (void)toggleButtonWillAnimateTransition:(id)arg1;
 - (void)togglePreviewPlaybackAnimated:(BOOL)arg1;
 - (void)updateForChangedDistanceFromVanishingPoint;
+- (BOOL)updateLayoutOnButtonConfirmation;
 - (BOOL)updateWithItemState:(id)arg1 context:(id)arg2 animated:(BOOL)arg3;
 - (id)viewForElementIdentifier:(id)arg1;
 

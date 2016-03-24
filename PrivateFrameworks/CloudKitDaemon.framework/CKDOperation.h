@@ -5,13 +5,14 @@
 @interface CKDOperation : NSOperation <CKDFlowControllable, CKDURLRequestAuthRetryDelegate, CKDURLRequestMetricsDelegate> {
     CKDOperationMetrics *_MMCSMetrics;
     unsigned long long _activityID;
+    NSDictionary *_additionalHTTPRequestHeaders;
     BOOL _allowsBackgroundNetworking;
     BOOL _allowsCellularAccess;
-    BOOL _allowsPowerNapScheduling;
     NSString *_authPromptReason;
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSMutableArray *_childOperations;
     NSObject<OS_dispatch_group> *_childOperationsGroup;
+    NSString *_clientSuppliedDeviceIdentifier;
     CKDOperationMetrics *_cloudKitMetrics;
     CKDClientContext *_context;
     NSString *_deviceIdentifier;
@@ -19,6 +20,8 @@
     NSMutableArray *_finishedChildOperationIDs;
     BOOL _isExecuting;
     BOOL _isFinished;
+    BOOL _isLongLived;
+    BOOL _isProxyOperation;
     NSDate *_metricExecuteStartDate;
     NSString *_operationID;
     CKDOperation *_parentOperation;
@@ -28,6 +31,7 @@
     CKDClientProxy *_proxy;
     CKDURLRequest *_request;
     NSMutableArray *_requestUUIDs;
+    NSMutableDictionary *_responseHTTPHeadersByRequestUUID;
     NSString *_sourceApplicationBundleIdentifier;
     NSString *_sourceApplicationSecondaryIdentifier;
     NSDate *_startDate;
@@ -35,18 +39,22 @@
     NSObject<OS_dispatch_group> *_stateTransitionGroup;
     CKTimeLogger *_timeLogger;
     BOOL _useEncryption;
+    UMUserSyncTask *_userSyncTask;
+    NSMutableDictionary *_w3cNavigationTimingByRequestUUID;
 }
 
 @property (nonatomic, retain) CKDOperationMetrics *MMCSMetrics;
 @property (nonatomic, readonly) unsigned int QOSClass;
 @property unsigned long long activityID;
+@property (nonatomic, retain) NSDictionary *additionalHTTPRequestHeaders;
 @property (nonatomic) BOOL allowsBackgroundNetworking;
 @property (nonatomic) BOOL allowsCellularAccess;
-@property (nonatomic) BOOL allowsPowerNapScheduling;
+@property (nonatomic, readonly) BOOL allowsPowerNapScheduling;
 @property (nonatomic, retain) NSString *authPromptReason;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *callbackQueue;
 @property (nonatomic, retain) NSMutableArray *childOperations;
 @property (nonatomic, retain) NSObject<OS_dispatch_group> *childOperationsGroup;
+@property (nonatomic, retain) NSString *clientSuppliedDeviceIdentifier;
 @property (nonatomic, retain) CKDOperationMetrics *cloudKitMetrics;
 @property (nonatomic, retain) CKDClientContext *context;
 @property (readonly, copy) NSString *debugDescription;
@@ -58,6 +66,8 @@
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL isExecuting;
 @property (nonatomic) BOOL isFinished;
+@property (nonatomic, readonly) BOOL isLongLived;
+@property (nonatomic, readonly) BOOL isProxyOperation;
 @property (nonatomic, retain) NSDate *metricExecuteStartDate;
 @property (nonatomic, readonly) NSString *operationID;
 @property (nonatomic, readonly) CKOperationResult *operationResult;
@@ -68,6 +78,7 @@
 @property (nonatomic) CKDClientProxy *proxy;
 @property (nonatomic, retain) CKDURLRequest *request;
 @property (nonatomic, retain) NSMutableArray *requestUUIDs;
+@property (nonatomic, retain) NSMutableDictionary *responseHTTPHeadersByRequestUUID;
 @property (nonatomic, readonly) NSString *sectionID;
 @property (nonatomic, readonly) BOOL shouldCheckAppVersion;
 @property (nonatomic, retain) NSString *sourceApplicationBundleIdentifier;
@@ -78,7 +89,9 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKTimeLogger *timeLogger;
 @property (nonatomic) BOOL useEncryption;
+@property (nonatomic, retain) UMUserSyncTask *userSyncTask;
 @property (nonatomic, readonly) BOOL usesBackgroundSession;
+@property (nonatomic, retain) NSMutableDictionary *w3cNavigationTimingByRequestUUID;
 
 + (id)_globalOperationCallbackQueueForQOS:(int)arg1;
 
@@ -94,17 +107,21 @@
 - (BOOL)_errorShouldImpactFlowControl:(id)arg1;
 - (void)_finishInternalOnCallbackQueueWithError:(id)arg1;
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
+- (void)_registerAttemptForOperation;
 - (unsigned long long)activityID;
 - (unsigned long long)activityStart;
 - (void)addAndRunChildOperation:(id)arg1;
+- (id)additionalHTTPRequestHeaders;
 - (BOOL)allowsBackgroundNetworking;
 - (BOOL)allowsCellularAccess;
 - (BOOL)allowsPowerNapScheduling;
 - (id)authPromptReason;
+- (void)beginUserSyncTask;
 - (id)callbackQueue;
 - (void)cancel;
 - (id)childOperations;
 - (id)childOperationsGroup;
+- (id)clientSuppliedDeviceIdentifier;
 - (id)cloudKitMetrics;
 - (void)configureRequest:(id)arg1;
 - (id)context;
@@ -122,6 +139,8 @@
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isExecuting;
 - (BOOL)isFinished;
+- (BOOL)isLongLived;
+- (BOOL)isProxyOperation;
 - (void)main;
 - (BOOL)makeStateTransition;
 - (void)makeStateTransition:(BOOL)arg1;
@@ -138,19 +157,21 @@
 - (BOOL)preferAnonymousRequests;
 - (id)proxy;
 - (id)request;
+- (void)request:(id)arg1 didFinishWithMetrics:(id)arg2 w3cNavigationTiming:(id)arg3;
 - (void)requestDidBeginWaitingForUserAuth:(id)arg1;
 - (void)requestDidEndWaitingForUserAuth:(id)arg1;
-- (void)requestDidFinishWithMetrics:(id)arg1;
 - (id)requestUUIDs;
+- (id)responseHTTPHeadersByRequestUUID;
 - (id)sectionID;
 - (void)setActivityID:(unsigned long long)arg1;
+- (void)setAdditionalHTTPRequestHeaders:(id)arg1;
 - (void)setAllowsBackgroundNetworking:(BOOL)arg1;
 - (void)setAllowsCellularAccess:(BOOL)arg1;
-- (void)setAllowsPowerNapScheduling:(BOOL)arg1;
 - (void)setAuthPromptReason:(id)arg1;
 - (void)setCallbackQueue:(id)arg1;
 - (void)setChildOperations:(id)arg1;
 - (void)setChildOperationsGroup:(id)arg1;
+- (void)setClientSuppliedDeviceIdentifier:(id)arg1;
 - (void)setCloudKitMetrics:(id)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDeviceIdentifier:(id)arg1;
@@ -167,6 +188,7 @@
 - (void)setProxy:(id)arg1;
 - (void)setRequest:(id)arg1;
 - (void)setRequestUUIDs:(id)arg1;
+- (void)setResponseHTTPHeadersByRequestUUID:(id)arg1;
 - (void)setSourceApplicationBundleIdentifier:(id)arg1;
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setStartDate:(id)arg1;
@@ -174,6 +196,8 @@
 - (void)setStateTransitionGroup:(id)arg1;
 - (void)setTimeLogger:(id)arg1;
 - (void)setUseEncryption:(BOOL)arg1;
+- (void)setUserSyncTask:(id)arg1;
+- (void)setW3cNavigationTimingByRequestUUID:(id)arg1;
 - (BOOL)shouldCheckAppVersion;
 - (id)sourceApplicationBundleIdentifier;
 - (id)sourceApplicationSecondaryIdentifier;
@@ -183,6 +207,8 @@
 - (id)stateTransitionGroup;
 - (id)timeLogger;
 - (BOOL)useEncryption;
+- (id)userSyncTask;
 - (BOOL)usesBackgroundSession;
+- (id)w3cNavigationTimingByRequestUUID;
 
 @end

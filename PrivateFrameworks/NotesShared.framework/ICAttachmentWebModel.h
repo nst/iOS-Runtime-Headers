@@ -10,9 +10,9 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
-@property (nonatomic, copy) id /* block */ pendingFetchCompletionHandler;
+@property (copy) id /* block */ pendingFetchCompletionHandler;
 @property (readonly) Class superclass;
-@property (nonatomic, retain) WKWebView *webView;
+@property (retain) WKWebView *webView;
 
 + (id)contentInfoTextWithAttachmentCount:(unsigned int)arg1;
 + (id)sharedWKProcessPool;

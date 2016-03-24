@@ -151,6 +151,7 @@
 - (void)setForceFallbackEligibility:(BOOL)arg1;
 - (void)setForceFallbackWin:(BOOL)arg1;
 - (void)setIndefinite:(BOOL)arg1;
+- (void)setInitialDataPayload:(id)arg1;
 - (void)setInternalParameters:(id)arg1;
 - (void)setIpProtocol:(unsigned short)arg1;
 - (void)setLaunchOnDemandJob:(unsigned long long)arg1;

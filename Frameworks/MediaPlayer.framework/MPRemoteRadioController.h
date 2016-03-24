@@ -20,7 +20,6 @@
 
 - (void).cxx_destruct;
 - (void)_addConnection:(id)arg1;
-- (BOOL)_isRadioAvailable;
 - (void)_radioAvailabilityControllerRadioAvailableDidChangeNotification:(id)arg1;
 - (void)_recentStationsControllerDidChangeStationsNotification:(id)arg1;
 - (void)_removeConnection:(id)arg1;

@@ -9,6 +9,9 @@
     struct CGContext { } *_imageContext;
     float _imageContextScale;
     UIStatusBarItem *_item;
+    _UILegibilityImageSet *_lastGeneratedTextImage;
+    float _lastGeneratedTextImageLetterSpacing;
+    NSString *_lastGeneratedTextImageText;
     UIStatusBarLayoutManager *_layoutManager;
     _UILegibilityView *_legibilityView;
     BOOL _visible;
@@ -31,6 +34,8 @@
 - (BOOL)animatesDataChange;
 - (void)beginDisablingRasterization;
 - (void)beginImageContextWithMinimumWidth:(float)arg1;
+- (id)cachedImageWithText:(id)arg1 truncatedWithEllipsesAtMaxWidth:(float)arg2 letterSpacing:(float)arg3;
+- (void)clearCachedTextImage;
 - (id)contentsImage;
 - (float)currentLeftOverlap;
 - (float)currentOverlap;

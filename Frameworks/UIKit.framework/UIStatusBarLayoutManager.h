@@ -19,7 +19,6 @@
 - (id)_createViewForItem:(id)arg1 withData:(id)arg2 actions:(int)arg3;
 - (float)_dimensionForSize:(struct CGSize { float x1; float x2; })arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_frameForItemView:(id)arg1 startPosition:(float)arg2 firstView:(BOOL)arg3;
-- (SEL)_itemSortSelector;
 - (id)_itemViews;
 - (id)_itemViewsSortedForLayout;
 - (float)_positionAfterPlacingItemView:(id)arg1 startPosition:(float)arg2 firstView:(BOOL)arg3;

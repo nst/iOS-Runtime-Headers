@@ -54,6 +54,7 @@
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 shared:(BOOL)arg2;
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3;
 - (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4;
+- (id)initWithApplicationID:(struct __CFString { }*)arg1 storeID:(struct __CFString { }*)arg2 shared:(BOOL)arg3 additionalSource:(BOOL)arg4 containerPath:(struct __CFString { }*)arg5;
 - (unsigned char)isInitialSync;
 - (long)maximumDataLengthPerKey;
 - (long)maximumKeyCount;
@@ -63,6 +64,7 @@
 - (void)registerForSynchronizedDefaults;
 - (void)scheduleRemoteSynchronization;
 - (id)serverSideDebugDescription;
+- (void)setDefaultsConfiguration:(id)arg1;
 - (void)setValue:(void*)arg1 forKey:(struct __CFString { }*)arg2;
 - (void)synchronizationWithCompletionHandler:(id /* block */)arg1;
 - (unsigned char)synchronize;

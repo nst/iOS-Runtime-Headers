@@ -3,7 +3,6 @@
  */
 
 @interface MRApplicationActivity : NSObject <NSMutableCopying, NSSecureCoding> {
-    struct __CFAllocator { } *_allocator;
     int _creatorProcessID;
     NSString *_primaryApplicationDisplayID;
     NSString *_secondaryApplicationDisplayID;
@@ -19,7 +18,6 @@
 @property (nonatomic, readonly) int status;
 @property (nonatomic, readonly) NSUUID *uniqueIdentifier;
 
-+ (id)allocWithAllocator:(struct __CFAllocator { }*)arg1;
 + (BOOL)supportsSecureCoding;
 
 - (id)_copyWithZone:(struct _NSZone { }*)arg1 usingConcreteClass:(Class)arg2;

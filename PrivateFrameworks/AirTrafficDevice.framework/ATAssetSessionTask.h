@@ -5,6 +5,7 @@
 @interface ATAssetSessionTask : ATSessionTask <ATAssetLinkControllerObserver> {
     ATAssetLinkController *_assetLinkController;
     BOOL _cancelAtStart;
+    NSMutableSet *_currentAssets;
     NSString *_dataClass;
     NSMutableSet *_failedAssets;
     unsigned int _failedAssetsCount;

@@ -31,6 +31,7 @@
 - (void).cxx_destruct;
 - (void)_addActionParameterWithName:(id)arg1 value:(id)arg2;
 - (void)_setFileSizeWithAssets:(id)arg1;
+- (void)_setFileSizeWithDeviceSizes:(id)arg1;
 - (void)_setFileSizeWithFlavors:(id)arg1;
 - (id)actionParameters;
 - (id)buttonText;

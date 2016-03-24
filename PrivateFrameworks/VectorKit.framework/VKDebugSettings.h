@@ -32,8 +32,11 @@
         struct StyleManager {} *__ptr_; 
         struct __shared_weak_count {} *__cntrl_; 
     } _debugStyleManager;
+    BOOL _disableIntraLinkTransitLineCrossings;
     BOOL _disableRoute;
     BOOL _disableStylesheetAnimations;
+    BOOL _disableTransitLineGroupMerging;
+    BOOL _disableTransitLineMerging;
     BOOL _dontMapMatchToSnappedRouteLine;
     BOOL _dontMatchRouteLine;
     BOOL _dontVerifyRouteToTransitSnapping;
@@ -58,6 +61,7 @@
     BOOL _isInstalledInLockScreen;
     BOOL _keepTooCloseServerPositionedTransitFeatures;
     BOOL _labelAllowDefaultStyle;
+    BOOL _labelAutoOffsetRoadText;
     BOOL _labelCollideContinuously;
     BOOL _labelCollisionEnabled;
     BOOL _labelFlipAlternatePositionsEnable;
@@ -99,7 +103,6 @@
     BOOL _readLandmarksFromDisk;
     BOOL _realisticWireframeEnabled;
     BOOL _renderInSeparateThread;
-    BOOL _strictLineOffsetMatching;
     BOOL _trackingCameraAutoPitch;
     BOOL _trackingCameraRoutePanning;
     BOOL _trackingCameraZoomFurther;
@@ -132,8 +135,11 @@
 @property (nonatomic) float altitudeTourSpeedupFactor;
 @property (nonatomic) BOOL debugStyleAnimations;
 @property (nonatomic) struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; } debugStyleManager;
+@property (nonatomic) BOOL disableIntraLinkTransitLineCrossings;
 @property (nonatomic) BOOL disableRoute;
 @property (nonatomic) BOOL disableStylesheetAnimations;
+@property (nonatomic) BOOL disableTransitLineGroupMerging;
+@property (nonatomic) BOOL disableTransitLineMerging;
 @property (nonatomic) BOOL dontMapMatchToSnappedRouteLine;
 @property (nonatomic) BOOL dontMatchRouteLine;
 @property (nonatomic) BOOL dontVerifyRouteToTransitSnapping;
@@ -158,6 +164,7 @@
 @property (nonatomic) BOOL isInstalledInLockScreen;
 @property (nonatomic) BOOL keepTooCloseServerPositionedTransitFeatures;
 @property (nonatomic) BOOL labelAllowDefaultStyle;
+@property (nonatomic) BOOL labelAutoOffsetRoadText;
 @property (nonatomic) BOOL labelCollideContinuously;
 @property (nonatomic) BOOL labelCollisionEnabled;
 @property (nonatomic) BOOL labelFlipAlternatePositionsEnable;
@@ -193,7 +200,6 @@
 @property (nonatomic) BOOL readLandmarksFromDisk;
 @property (nonatomic) BOOL realisticWireframeEnabled;
 @property (nonatomic) BOOL renderInSeparateThread;
-@property (nonatomic) BOOL strictLineOffsetMatching;
 @property (nonatomic) BOOL trackingCameraAutoPitch;
 @property (nonatomic) BOOL trackingCameraRoutePanning;
 @property (nonatomic) BOOL trackingCameraZoomFurther;
@@ -233,8 +239,11 @@
 - (void)dealloc;
 - (BOOL)debugStyleAnimations;
 - (struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })debugStyleManager;
+- (BOOL)disableIntraLinkTransitLineCrossings;
 - (BOOL)disableRoute;
 - (BOOL)disableStylesheetAnimations;
+- (BOOL)disableTransitLineGroupMerging;
+- (BOOL)disableTransitLineMerging;
 - (BOOL)dontMapMatchToSnappedRouteLine;
 - (BOOL)dontMatchRouteLine;
 - (BOOL)dontVerifyRouteToTransitSnapping;
@@ -262,6 +271,7 @@
 - (BOOL)isPerformanceGroupShown:(unsigned int)arg1;
 - (BOOL)keepTooCloseServerPositionedTransitFeatures;
 - (BOOL)labelAllowDefaultStyle;
+- (BOOL)labelAutoOffsetRoadText;
 - (BOOL)labelCollideContinuously;
 - (BOOL)labelCollisionEnabled;
 - (BOOL)labelFlipAlternatePositionsEnable;
@@ -327,8 +337,11 @@
 - (void)setCustomLandmarkFromDisk:(id)arg1 tileKey:(const struct _GEOTileKey { unsigned int x1 : 6; unsigned int x2 : 26; unsigned int x3 : 26; unsigned int x4 : 6; unsigned int x5 : 8; unsigned int x6 : 8; unsigned int x7 : 8; unsigned int x8 : 1; unsigned int x9 : 7; unsigned char x10[4]; }*)arg2 styleKey:(unsigned int)arg3 styleValue:(int)arg4;
 - (void)setDebugStyleAnimations:(BOOL)arg1;
 - (void)setDebugStyleManager:(struct shared_ptr<gss::StyleManager> { struct StyleManager {} *x1; struct __shared_weak_count {} *x2; })arg1;
+- (void)setDisableIntraLinkTransitLineCrossings:(BOOL)arg1;
 - (void)setDisableRoute:(BOOL)arg1;
 - (void)setDisableStylesheetAnimations:(BOOL)arg1;
+- (void)setDisableTransitLineGroupMerging:(BOOL)arg1;
+- (void)setDisableTransitLineMerging:(BOOL)arg1;
 - (void)setDontMapMatchToSnappedRouteLine:(BOOL)arg1;
 - (void)setDontMatchRouteLine:(BOOL)arg1;
 - (void)setDontVerifyRouteToTransitSnapping:(BOOL)arg1;
@@ -353,6 +366,7 @@
 - (void)setIsInstalledInLockScreen:(BOOL)arg1;
 - (void)setKeepTooCloseServerPositionedTransitFeatures:(BOOL)arg1;
 - (void)setLabelAllowDefaultStyle:(BOOL)arg1;
+- (void)setLabelAutoOffsetRoadText:(BOOL)arg1;
 - (void)setLabelCollideContinuously:(BOOL)arg1;
 - (void)setLabelCollisionEnabled:(BOOL)arg1;
 - (void)setLabelFlipAlternatePositionsEnable:(BOOL)arg1;
@@ -388,7 +402,6 @@
 - (void)setReadLandmarksFromDisk:(BOOL)arg1;
 - (void)setRealisticWireframeEnabled:(BOOL)arg1;
 - (void)setRenderInSeparateThread:(BOOL)arg1;
-- (void)setStrictLineOffsetMatching:(BOOL)arg1;
 - (void)setTrackingCameraAutoPitch:(BOOL)arg1;
 - (void)setTrackingCameraRoutePanning:(BOOL)arg1;
 - (void)setTrackingCameraZoomFurther:(BOOL)arg1;
@@ -397,7 +410,6 @@
 - (void)setUseTransactionManager:(BOOL)arg1;
 - (BOOL)shouldDrawDebug;
 - (void)showPerformanceGroup:(unsigned int)arg1;
-- (BOOL)strictLineOffsetMatching;
 - (BOOL)trackingCameraAutoPitch;
 - (BOOL)trackingCameraRoutePanning;
 - (BOOL)trackingCameraZoomFurther;

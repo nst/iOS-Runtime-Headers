@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUAssetViewModel : PUViewModel <PUAssetSharedViewModelChangeObserver, PUBrowsingIrisPlayerChangeObserver, PUBrowsingVideoPlayerChangeObserver> {
+@interface PUAssetViewModel : PUViewModel <PUAssetSharedViewModelChangeObserver, PUBrowsingIrisPlayerChangeObserver, PUBrowsingVideoPlayerChangeObserver, PUIrisBadgeVisibilityControllerDelegate> {
     int __currentFavoriteOverrideRequest;
     BOOL __needsUpdateVideoPlayers;
     BOOL _areCommentsVisible;
@@ -16,6 +16,7 @@
     } _commentsOffset;
     float _focusValue;
     BOOL _forceBadgesVisible;
+    PUIrisBadgeVisibilityController *_irisBadgeVisibilityController;
     PUBrowsingIrisPlayer *_irisPlayer;
     BOOL _isFavorite;
     NSNumber *_isFavoriteOverride;
@@ -27,6 +28,7 @@
     PUMediaProvider *_mediaProvider;
     PUModelTileTransform *_modelTileTransform;
     PUBrowsingVideoPlayer *_videoPlayer;
+    BOOL _wantsIrisBadgeVisible;
 }
 
 @property (setter=_setCurrentFavoriteOverrideRequest:, nonatomic) int _currentFavoriteOverrideRequest;
@@ -55,6 +57,7 @@
 @property (nonatomic, copy) PUModelTileTransform *modelTileTransform;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) PUBrowsingVideoPlayer *videoPlayer;
+@property (nonatomic) BOOL wantsIrisBadgeVisible;
 
 - (void).cxx_destruct;
 - (int)_currentFavoriteOverrideRequest;
@@ -69,10 +72,12 @@
 - (void)_setLastCommentsVisibilityChangeReason:(int)arg1;
 - (void)_setLoadingStatus:(id)arg1;
 - (void)_setNeedsUpdateVideoPlayers:(BOOL)arg1;
+- (void)_setWantsIrisBadgeVisible:(BOOL)arg1;
 - (BOOL)_shouldPauseAndRewindVideo;
 - (void)_updateFavoriteState;
 - (void)_updateVideoPlayersIfNeeded;
 - (void)_updateVideoPlayersLoadingAllowed;
+- (void)_updateWantsIrisBadgeVisible;
 - (BOOL)areCommentsVisible;
 - (id)asset;
 - (id)assetReference;
@@ -85,6 +90,7 @@
 - (float)focusValue;
 - (BOOL)forceBadgesVisible;
 - (id)init;
+- (void)irisBadgeTileInfo:(id)arg1 didTransitionToAppearanceState:(unsigned int)arg2;
 - (id)irisPlayer;
 - (BOOL)isFavorite;
 - (id)isFavoriteOverride;
@@ -115,5 +121,6 @@
 - (void)unregisterChangeObserver:(id)arg1;
 - (id)videoPlayer;
 - (void)viewModel:(id)arg1 didChange:(id)arg2;
+- (BOOL)wantsIrisBadgeVisible;
 
 @end

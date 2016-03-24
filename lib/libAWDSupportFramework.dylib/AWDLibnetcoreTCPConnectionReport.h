@@ -38,6 +38,9 @@
 @property (nonatomic, retain) NSString *sourceAppIdentifier;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)connectionAttemptStatisticsReportsType;
+
+- (int)StringAsReportReason:(id)arg1;
 - (void)addConnectionAttemptStatisticsReports:(id)arg1;
 - (id)cellularFallbackReport;
 - (void)clearConnectionAttemptStatisticsReports;
@@ -66,6 +69,7 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (int)reportReason;
+- (id)reportReasonAsString:(int)arg1;
 - (void)setCellularFallbackReport:(id)arg1;
 - (void)setClientIdentifier:(id)arg1;
 - (void)setConnectionAttemptStatisticsReports:(id)arg1;

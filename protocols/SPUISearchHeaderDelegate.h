@@ -7,6 +7,7 @@
 
 - (void)cancelButtonPressed;
 - (void)dictationButtonPressed;
+- (UIResponder *)headerNextResponder;
 - (BOOL)isDictationAvailable;
 
 @end

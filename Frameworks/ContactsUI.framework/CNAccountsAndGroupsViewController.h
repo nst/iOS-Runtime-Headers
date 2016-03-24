@@ -6,8 +6,6 @@
     CNAccountsAndGroupsDataSource *_dataSource;
     <CNAccountsAndGroupsViewControllerDelegate> *_delegate;
     BOOL _needsReload;
-    UIRefreshControl *_refreshControl;
-    BOOL _showsRefreshButton;
     BOOL _tableViewNeedsReloadAfterResume;
 }
 
@@ -20,6 +18,7 @@
 
 - (void).cxx_destruct;
 - (void)applicationDidResume;
+- (void)contactStoreDidChangeWithNotification:(id)arg1;
 - (id)dataSource;
 - (void)dealloc;
 - (id)delegate;
@@ -27,7 +26,6 @@
 - (id)initWithStyle:(int)arg1;
 - (void)loadView;
 - (int)numberOfSectionsInTableView:(id)arg1;
-- (void)refreshEverythingNow;
 - (void)reloadData;
 - (void)setDataSource:(id)arg1;
 - (void)setDelegate:(id)arg1;
@@ -37,6 +35,7 @@
 - (id)tableView:(id)arg1 titleForHeaderInSection:(int)arg2;
 - (void)tableView:(id)arg1 willDisplayCell:(id)arg2 forRowAtIndexPath:(id)arg3;
 - (void)tableView:(id)arg1 willDisplayHeaderView:(id)arg2 forSection:(int)arg3;
+- (void)viewDidAppear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;
 
 @end

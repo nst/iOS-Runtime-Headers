@@ -39,6 +39,7 @@
     BOOL _sBEnabled;
     int _sourceType;
     unsigned long long _storeAccountID;
+    NSString *_storeFrontID;
     NSString *_storeID;
     NSData *_timedMetadata;
     NSData *_trackInfo;
@@ -72,6 +73,7 @@
 @property (nonatomic) BOOL hasSBEnabled;
 @property (nonatomic) BOOL hasSourceType;
 @property (nonatomic) BOOL hasStoreAccountID;
+@property (nonatomic, readonly) BOOL hasStoreFrontID;
 @property (nonatomic, readonly) BOOL hasStoreID;
 @property (nonatomic, readonly) BOOL hasTimedMetadata;
 @property (nonatomic, readonly) BOOL hasTrackInfo;
@@ -87,6 +89,7 @@
 @property (nonatomic) BOOL sBEnabled;
 @property (nonatomic) int sourceType;
 @property (nonatomic) unsigned long long storeAccountID;
+@property (nonatomic, retain) NSString *storeFrontID;
 @property (nonatomic, retain) NSString *storeID;
 @property (nonatomic, retain) NSData *timedMetadata;
 @property (nonatomic, retain) NSData *trackInfo;
@@ -124,6 +127,7 @@
 - (BOOL)hasSBEnabled;
 - (BOOL)hasSourceType;
 - (BOOL)hasStoreAccountID;
+- (BOOL)hasStoreFrontID;
 - (BOOL)hasStoreID;
 - (BOOL)hasTimedMetadata;
 - (BOOL)hasTrackInfo;
@@ -175,11 +179,13 @@
 - (void)setSBEnabled:(BOOL)arg1;
 - (void)setSourceType:(int)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;
+- (void)setStoreFrontID:(id)arg1;
 - (void)setStoreID:(id)arg1;
 - (void)setTimedMetadata:(id)arg1;
 - (void)setTrackInfo:(id)arg1;
 - (int)sourceType;
 - (unsigned long long)storeAccountID;
+- (id)storeFrontID;
 - (id)storeID;
 - (id)timedMetadata;
 - (id)trackInfo;

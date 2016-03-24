@@ -3,25 +3,33 @@
  */
 
 @interface PSSegmentableSlider : UISlider {
+    BOOL _locksToSegment;
     unsigned int _segmentCount;
     BOOL _segmented;
+    BOOL _snapsToSegment;
     UIColor *_trackMarkersColor;
 }
 
+@property (nonatomic) BOOL locksToSegment;
 @property (nonatomic) unsigned int segmentCount;
 @property (getter=isSegmented, nonatomic) BOOL segmented;
+@property (nonatomic) BOOL snapsToSegment;
 
 - (void).cxx_destruct;
 - (void)drawRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (BOOL)isSegmented;
+- (BOOL)locksToSegment;
 - (unsigned int)numberOfTicks;
 - (float)offsetBetweenTicksForNumberOfTicks:(unsigned int)arg1;
 - (unsigned int)segmentCount;
+- (void)setLocksToSegment:(BOOL)arg1;
 - (void)setSegmentCount:(unsigned int)arg1;
 - (void)setSegmented:(BOOL)arg1;
+- (void)setSnapsToSegment:(BOOL)arg1;
 - (void)setValue:(float)arg1 animated:(BOOL)arg2;
 - (void)sliderTapped:(id)arg1;
+- (BOOL)snapsToSegment;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })trackRectForBounds:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 
 @end

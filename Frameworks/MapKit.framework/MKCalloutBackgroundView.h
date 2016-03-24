@@ -4,7 +4,9 @@
 
 @interface MKCalloutBackgroundView : UIPopoverBackgroundView {
     unsigned int _arrowDirection;
+    UIMotionEffect *_arrowMotionEffect;
     float _arrowOffset;
+    UIMotionEffect *_arrowShadowMotionEffect;
     UIView *_baseBorderView;
     UIView *_containerView;
     UIImageView *_currentArrowShadow;
@@ -44,6 +46,7 @@
 - (struct { unsigned char x1; unsigned char x2; unsigned char x3; })mapDisplayStyle;
 - (id)newMaskLayer;
 - (void)setArrowDirection:(unsigned int)arg1;
+- (void)setArrowMotionEffect:(id)arg1;
 - (void)setArrowOffset:(float)arg1;
 - (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
 

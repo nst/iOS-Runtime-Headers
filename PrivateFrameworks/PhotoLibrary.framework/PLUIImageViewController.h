@@ -43,6 +43,7 @@
 - (void)_editabilityChanged:(id)arg1;
 - (void)_enableCropOverlayIfNecessary;
 - (int)_imagePickerStatusBarStyle;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (void)_removedAsTopViewController;
 - (unsigned int)_tileAutoresizingMask;
 - (id)_trimMessage;

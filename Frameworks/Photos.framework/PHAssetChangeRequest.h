@@ -4,14 +4,15 @@
 
 @interface PHAssetChangeRequest : NSObject <PHUpdateChangeRequest> {
     NSString *_assetDescription;
+    BOOL _clientEntitled;
     NSString *_clientName;
     int _clientProcessID;
     PHContentEditingOutput *_contentEditingOutput;
     BOOL _didChangeAdjustments;
     BOOL _didSetVisibilityState;
+    BOOL _duplicateAllowsPrivateMetadata;
     NSString *_editorBundleID;
     NSURL *_editorBundleURL;
-    BOOL _entitled;
     PHChangeRequestHelper *_helper;
     struct { 
         long long value; 
@@ -33,6 +34,7 @@
 }
 
 @property (nonatomic, retain) NSString *assetDescription;
+@property (getter=isClientEntitled, nonatomic, readonly) BOOL clientEntitled;
 @property (nonatomic, readonly) NSString *clientName;
 @property (nonatomic, readonly) int clientProcessID;
 @property (nonatomic, retain) PHContentEditingOutput *contentEditingOutput;
@@ -40,8 +42,8 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) BOOL didChangeAdjustments;
+@property (nonatomic, readonly) BOOL duplicateAllowsPrivateMetadata;
 @property (nonatomic, readonly, copy) NSString *editorBundleID;
-@property (getter=isEntitled, nonatomic, readonly) BOOL entitled;
 @property (getter=isFavorite, nonatomic) BOOL favorite;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) PHChangeRequestHelper *helper;
@@ -81,6 +83,7 @@
 - (id)creationDate;
 - (BOOL)didChangeAdjustments;
 - (void)didMutate;
+- (BOOL)duplicateAllowsPrivateMetadata;
 - (id)editorBundleID;
 - (void)encodeToXPCDict:(id)arg1;
 - (id)helper;
@@ -88,8 +91,8 @@
 - (id)init;
 - (id)initWithHelper:(id)arg1;
 - (id)initWithUUID:(id)arg1 objectID:(id)arg2;
-- (id)initWithXPCDict:(id)arg1 entitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
-- (BOOL)isEntitled;
+- (id)initWithXPCDict:(id)arg1 clientEntitled:(BOOL)arg2 clientName:(id)arg3 clientBundleID:(id)arg4 clientProcessID:(int)arg5;
+- (BOOL)isClientEntitled;
 - (BOOL)isFavorite;
 - (BOOL)isHidden;
 - (BOOL)isHiding;
@@ -124,9 +127,10 @@
 - (BOOL)validateAdjustmentDataForAssetMutation:(id)arg1 error:(id*)arg2;
 - (BOOL)validateAssetDescription:(id)arg1 error:(id*)arg2;
 - (BOOL)validateContentEditingOutput:(id)arg1 error:(id*)arg2;
-- (BOOL)validateContentURL:(id)arg1 error:(id*)arg2 writeAccessRequired:(BOOL)arg3;
 - (BOOL)validateMutationsToManagedObject:(id)arg1 error:(id*)arg2;
+- (BOOL)validateReadAccessForContentURL:(id)arg1 assetResource:(id)arg2 error:(id*)arg3;
 - (BOOL)validateVideoURLForAssetMutation:(id)arg1 error:(id*)arg2;
+- (BOOL)validateWriteAccessForContentURL:(id)arg1 error:(id*)arg2;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })videoDuration;
 - (id)videoURLForUpdate;
 

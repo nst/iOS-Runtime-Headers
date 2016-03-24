@@ -6,7 +6,7 @@
     NSMutableDictionary *_entriesByURLString;
     NSObject<OS_dispatch_queue> *_entriesByURLStringAccessQueue;
     BOOL _hasStartedLoadingHistory;
-    unsigned int _historyAgeLimitInDays;
+    double _historyAgeLimit;
     WBSHistorySQLiteStore *_historyStore;
     NSCountedSet *_stringsForUserTypedDomainExpansion;
     NSObject<OS_dispatch_queue> *_waitUntilHistoryHasLoadedQueue;
@@ -19,7 +19,7 @@
 @property (nonatomic, copy) NSData *fetchThrottlerData;
 @property (nonatomic, readonly) BOOL hasAnyHistoryItems;
 @property (readonly) unsigned int hash;
-@property (nonatomic, readonly) unsigned int historyAgeLimitInDays;
+@property (nonatomic) double historyAgeLimit;
 @property (nonatomic, readonly) unsigned int numberOfHistoryItems;
 @property (nonatomic, readonly) unsigned int numberOfHistoryItemsOnHistoryQueue;
 @property (nonatomic) BOOL pushNotificationsAreInitialized;
@@ -37,7 +37,6 @@
 - (void)_addItem:(id)arg1 addToStringsForUserTypedDomainExpansions:(BOOL)arg2;
 - (void)_addItemToStringsForUserTypedDomainExpansion:(id)arg1;
 - (void)_addVisitedLinksForItemsIfNeeded:(id)arg1;
-- (double)_ageLimitDay;
 - (void)_clearHistoryVisitsAddedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (id)_createHistoryStore;
 - (void)_dispatchHistoryCleared:(id)arg1;
@@ -76,7 +75,7 @@
 - (void)getVisitsAndTombstonesNeedingSyncWithVisitSyncWindow:(double)arg1 completion:(id /* block */)arg2;
 - (void)getVisitsCreatedAfterDate:(id)arg1 beforeDate:(id)arg2 completionHandler:(id /* block */)arg3;
 - (BOOL)hasAnyHistoryItems;
-- (unsigned int)historyAgeLimitInDays;
+- (double)historyAgeLimit;
 - (void)historyLoader:(id)arg1 didLoadItems:(id)arg2 discardedItems:(id)arg3 stringsForUserTypeDomainExpansion:(id)arg4;
 - (void)historyLoaderDidFinishLoading:(id)arg1;
 - (id)historyStore;
@@ -90,10 +89,12 @@
 - (id)itemRedirectedFrom:(id)arg1 to:(id)arg2 origin:(int)arg3 date:(id)arg4;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 timeOfVisit:(double)arg3 wasHTTPNonGet:(BOOL)arg4 wasFailure:(BOOL)arg5 increaseVisitCount:(BOOL)arg6 origin:(int)arg7;
 - (id)itemVisitedAtURLString:(id)arg1 title:(id)arg2 wasHTTPNonGet:(BOOL)arg3 wasFailure:(BOOL)arg4 increaseVisitCount:(BOOL)arg5;
+- (id)lastSeenDateForCloudClientVersion:(unsigned int)arg1;
 - (unsigned int)numberOfHistoryItems;
 - (unsigned int)numberOfHistoryItemsOnHistoryQueue;
 - (void)performBlockAfterHistoryHasLoaded:(id /* block */)arg1;
 - (void)performMaintenance;
+- (void)performMaintenance:(id /* block */)arg1;
 - (void)pruneTombstonesWithEndDatePriorToDate:(id)arg1;
 - (BOOL)pushNotificationsAreInitialized;
 - (id)pushThrottlerData;
@@ -103,11 +104,14 @@
 - (void)savePendingChangesBeforeTerminationWithCompletionHandler:(id /* block */)arg1;
 - (void)setCachedNumberOfDevicesInSyncCircle:(unsigned int)arg1;
 - (void)setFetchThrottlerData:(id)arg1;
+- (void)setHistoryAgeLimit:(double)arg1;
+- (void)setLastSeenDate:(id)arg1 forCloudClientVersion:(unsigned int)arg2;
 - (void)setPushNotificationsAreInitialized:(BOOL)arg1;
 - (void)setPushThrottlerData:(id)arg1;
 - (void)setServerChangeTokenData:(id)arg1;
 - (void)setSyncCircleSizeRetrievalThrottlerData:(id)arg1;
 - (id)syncCircleSizeRetrievalThrottlerData;
+- (void)updateHistoryAfterSuccessfulPersistedLongLivedSaveOperationWithGeneration:(long long)arg1 completion:(id /* block */)arg2;
 - (void)updateTitle:(id)arg1 forVisit:(id)arg2;
 - (void)visitIdentifiersMatchingExistingVisits:(id)arg1 populateAssociatedVisits:(BOOL)arg2 completion:(id /* block */)arg3;
 - (void)waitUntilHistoryHasLoaded;

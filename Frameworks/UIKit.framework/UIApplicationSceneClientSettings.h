@@ -27,6 +27,7 @@
 @property (nonatomic, readonly) int statusBarStyle;
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) unsigned int supportedInterfaceOrientations;
+@property (nonatomic, readonly) int whitePointAdaptivityStyle;
 
 - (int)backgroundStyle;
 - (int)compatibilityMode;
@@ -53,5 +54,6 @@
 - (unsigned int)supportedInterfaceOrientations;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofOtherSetting:(unsigned int)arg3;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (int)whitePointAdaptivityStyle;
 
 @end

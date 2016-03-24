@@ -11,10 +11,8 @@
 
 - (id)canOpenURL:(id)arg1 connection:(id)arg2;
 - (id)clearAdvertisingIdentifier:(id)arg1 connection:(id)arg2;
-- (id)clearIconBitmapCache:(id)arg1 connection:(id)arg2;
 - (id)copyAdvertisingIdentifier:(id)arg1 connection:(id)arg2;
 - (id)copyDiskUsageForBundle:(id)arg1;
-- (id)copyIconBitmapCacheSalt:(id)arg1 connection:(id)arg2;
 - (id)copyKernelPackageExtensionsFromServer:(id)arg1;
 - (id)copyLocalizedName:(id)arg1;
 - (id)copyServerStore:(id)arg1;
@@ -23,8 +21,6 @@
 - (id)copyVendorIdentifierForAppIdentifier:(id)arg1 connection:(id)arg2;
 - (void)dealloc;
 - (id)finishOpenOperation:(id)arg1 connection:(id)arg2;
-- (id)generateIconBitmap:(id)arg1;
-- (id)generateIconBitmapForIconsDictionary:(id)arg1;
 - (void)getAppLinkOpenStrategy:(id)arg1 connection:(id)arg2;
 - (id)getServerStatus:(id)arg1;
 - (id)initWithQueue:(id)arg1;

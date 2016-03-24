@@ -6,8 +6,11 @@
 
 @property (nonatomic, copy) NSURL *attachment;
 @property (nonatomic, copy) NSString *chatIdentifier;
+@property (nonatomic, copy) NSDate *dateLastMessageReadInThread;
 @property (nonatomic, copy) NSDate *dateSent;
+@property (nonatomic, copy) NSString *groupName;
 @property (nonatomic, copy) NSString *groupNameId;
+@property (nonatomic) BOOL hasGroupName;
 @property (nonatomic, copy) NSNumber *isAudioMessage;
 @property (nonatomic, copy) NSString *message;
 @property (nonatomic, copy) NSArray *msgRecipients;
@@ -25,10 +28,13 @@
 
 - (id)attachment;
 - (id)chatIdentifier;
+- (id)dateLastMessageReadInThread;
 - (id)dateSent;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)groupName;
 - (id)groupNameId;
+- (BOOL)hasGroupName;
 - (id)isAudioMessage;
 - (id)message;
 - (id)msgRecipients;
@@ -38,8 +44,11 @@
 - (id)sender;
 - (void)setAttachment:(id)arg1;
 - (void)setChatIdentifier:(id)arg1;
+- (void)setDateLastMessageReadInThread:(id)arg1;
 - (void)setDateSent:(id)arg1;
+- (void)setGroupName:(id)arg1;
 - (void)setGroupNameId:(id)arg1;
+- (void)setHasGroupName:(BOOL)arg1;
 - (void)setIsAudioMessage:(id)arg1;
 - (void)setMessage:(id)arg1;
 - (void)setMsgRecipients:(id)arg1;

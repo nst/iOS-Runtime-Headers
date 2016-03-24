@@ -26,6 +26,7 @@
 }
 
 @property (nonatomic) <AFAssistantUIService> *delegate;
+@property (nonatomic, readonly) BOOL hasActiveRequest;
 @property (nonatomic, readonly) BOOL isRecording;
 @property (nonatomic) <AFSpeechDelegate> *speechDelegate;
 
@@ -106,6 +107,7 @@
 - (void)forceAudioSessionActive;
 - (void)forceAudioSessionInactive;
 - (void)getDeferredObjectsWithIdentifiers:(id)arg1 completion:(id /* block */)arg2;
+- (BOOL)hasActiveRequest;
 - (id)init;
 - (BOOL)isRecording;
 - (float)peakPower;

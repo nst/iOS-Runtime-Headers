@@ -10,6 +10,7 @@
     unsigned int _changeCountAtLastOptimization;
     <NSISEngineDelegate> *_delegate;
     int _engineDelegateCallsDisabledCount;
+    BOOL _engineNeedsRebuildFromConstraints;
     struct CGSize { 
         float width; 
         float height; 
@@ -53,6 +54,7 @@
 - (id)_brokenConstraintPositiveErrorsIfAvailable;
 - (void)_coreReplaceMarker:(id)arg1 withMarkerPlusDelta:(double)arg2;
 - (void)_flushPendingRemovals;
+- (unsigned int)_optimizeWithoutRebuilding;
 - (void)addExpression:(id)arg1 priority:(float)arg2 times:(double)arg3 toObjectiveRowWithHead:(id)arg4 body:(id)arg5;
 - (void)addExpression:(id)arg1 times:(double)arg2 toRowWithHead:(id)arg3 body:(id)arg4;
 - (void)addVariable:(id)arg1 coefficient:(double)arg2 toRowWithHead:(id)arg3 body:(id)arg4;
@@ -106,6 +108,7 @@
 - (id)positiveErrorVarForBrokenConstraintWithMarker:(id)arg1;
 - (void)rawRemoveRowWithHead:(id)arg1;
 - (void)rawSetRowWithHead:(id)arg1 body:(id)arg2;
+- (void)rebuildFromConstraints;
 - (id)recordedCommandsData;
 - (void)removeBodyVarFromAllRows:(id)arg1;
 - (void)removeConstraintWithMarker:(id)arg1;

@@ -13,6 +13,7 @@
     CIImage *inputImage;
     NSNumber *inputShadows;
     NSNumber *inputUseCube;
+    id inputUseCubeColorSpace;
 }
 
 @property (nonatomic, retain) NSNumber *inputBlack;
@@ -23,6 +24,7 @@
 @property (nonatomic, retain) CIImage *inputImage;
 @property (nonatomic, retain) NSNumber *inputShadows;
 @property (nonatomic, retain) NSNumber *inputUseCube;
+@property (nonatomic, retain) id inputUseCubeColorSpace;
 
 + (id)customAttributes;
 
@@ -40,6 +42,7 @@
 - (id)inputImage;
 - (id)inputShadows;
 - (id)inputUseCube;
+- (id)inputUseCubeColorSpace;
 - (id)outputImage;
 - (void)setInputBlack:(id)arg1;
 - (void)setInputBrightness:(id)arg1;
@@ -49,6 +52,7 @@
 - (void)setInputImage:(id)arg1;
 - (void)setInputShadows:(id)arg1;
 - (void)setInputUseCube:(id)arg1;
+- (void)setInputUseCubeColorSpace:(id)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 
 @end

@@ -38,6 +38,7 @@
 - (void)dealloc;
 - (id)delegate;
 - (void)deleteAsset:(struct NSObject { Class x1; }*)arg1;
+- (void)enumeratePTPInformationForFilesInDirectory:(id)arg1 usingBlock:(id /* block */)arg2;
 - (id)fileManager;
 - (void)handlePhotoLibraryAvailableNotification;
 - (id)infoForAlbum:(struct NSObject { Class x1; }*)arg1;

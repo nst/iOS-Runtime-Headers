@@ -7,7 +7,9 @@
     NSURL *__assetsLibraryURL;
     int __imageManagerImageRequestID;
     int __imageManagerVideoRequestID;
+    NSURL *__irisRemakerURL;
     NSDictionary *__pasteboardRepresentation;
+    NSURL *__photoRemakerURL;
     int __remakerWasCancelled;
     NSURL *__videoComplementAssetURL;
     NSURL *__videoRemakerURL;
@@ -15,7 +17,10 @@
     id /* block */ _completionHandler;
     _PUActivityItemSourceOperation *_currentOperation;
     BOOL _hasRecognizedVideoAdjustments;
+    PFColorConverter *_irisRemaker;
+    NSArray *_nonLocalAssetsActivities;
     NSURL *_photoIrisBundleURL;
+    PFSharingRemaker *_photoRemaker;
     id /* block */ _postCompletionHandler;
     id /* block */ _progressHandler;
     PLVideoRemaker *_remaker;
@@ -28,7 +33,9 @@
 @property (setter=_setAssetsLibraryURL:, retain) NSURL *_assetsLibraryURL;
 @property (setter=_setImageManagerImageRequestID:) int _imageManagerImageRequestID;
 @property (setter=_setImageManagerVideoRequestID:) int _imageManagerVideoRequestID;
+@property (setter=_setIrisRemakerURL:, retain) NSURL *_irisRemakerURL;
 @property (setter=_setPasteboardRepresentation:, retain) NSDictionary *_pasteboardRepresentation;
+@property (setter=_setPhotoRemakerURL:, retain) NSURL *_photoRemakerURL;
 @property (setter=_setRemakerWasCancelled:) int _remakerWasCancelled;
 @property (setter=_setVideoComplementAssetURL:, retain) NSURL *_videoComplementAssetURL;
 @property (setter=_setVideoRemakerURL:, retain) NSURL *_videoRemakerURL;
@@ -43,12 +50,16 @@
 @property (readonly) Class superclass;
 @property (nonatomic, readonly) BOOL useStillImage;
 
++ (BOOL)_wantsIrisRemakerURLForActivityType:(id)arg1;
++ (BOOL)_wantsPhotoRemakerURLForActivityType:(id)arg1;
 + (BOOL)supportsPhotoIrisBundleForActivityType:(id)arg1;
 
 - (void).cxx_destruct;
 - (id)_assetURL;
 - (id)_assetsLibraryURL;
 - (void)_cancelVideoRemaking:(id)arg1;
+- (void)_cleanupIrisRemaker;
+- (void)_cleanupPhotoRemaker;
 - (void)_cleanupRemaker;
 - (id)_createTempPhotoIrisBundle;
 - (void)_fetchImageWithProgressHandler:(id /* block */)arg1 completionHandler:(id /* block */)arg2;
@@ -56,18 +67,25 @@
 - (void)_fetchVideoForActivityType:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3 wantsAssetsLibraryURL:(BOOL)arg4;
 - (int)_imageManagerImageRequestID;
 - (int)_imageManagerVideoRequestID;
+- (id)_irisRemakerURL;
 - (id)_itemForActivityType:(id)arg1;
 - (id)_newOperationForActivityType:(id)arg1;
 - (id)_newPasteboardRepresentationForURL:(id)arg1;
 - (void)_operation:(id)arg1 prepareItemForActivityType:(id)arg2;
 - (id)_pasteboardRepresentation;
+- (id)_photoRemakerURL;
 - (int)_remakerWasCancelled;
-- (void)_removeTempFile;
+- (void)_removeTempFiles;
+- (void)_removeTempIrisVideoFile;
+- (void)_removeTempPhotoFile;
+- (void)_removeTempVideoFile;
 - (void)_setAssetURL:(id)arg1;
 - (void)_setAssetsLibraryURL:(id)arg1;
 - (void)_setImageManagerImageRequestID:(int)arg1;
 - (void)_setImageManagerVideoRequestID:(int)arg1;
+- (void)_setIrisRemakerURL:(id)arg1;
 - (void)_setPasteboardRepresentation:(id)arg1;
+- (void)_setPhotoRemakerURL:(id)arg1;
 - (void)_setRemakerWasCancelled:(int)arg1;
 - (void)_setVideoComplementAssetURL:(id)arg1;
 - (void)_setVideoRemakerURL:(id)arg1;
@@ -92,6 +110,8 @@
 - (id)photoIrisBundleURL;
 - (id /* block */)postCompletionHandler;
 - (id /* block */)progressHandler;
+- (void)remakeIrisWithURL:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
+- (void)remakePhotoWithURL:(id)arg1 progressHandler:(id /* block */)arg2 completionHandler:(id /* block */)arg3;
 - (void)remakeVideoWithTrimStartTime:(double)arg1 endTime:(double)arg2 forMail:(BOOL)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
 - (void)runWithActivityType:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;

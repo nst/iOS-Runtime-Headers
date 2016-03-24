@@ -46,6 +46,7 @@
 + (BOOL)_shouldDefaultToTouches;
 
 - (void).cxx_destruct;
+- (id)_activeTouches;
 - (struct CGPoint { float x1; float x2; })_adjustSceneReferenceLocation:(struct CGPoint { float x1; float x2; })arg1;
 - (float)_allowableSeparation;
 - (BOOL)_canPanHorizontally;

@@ -6,6 +6,7 @@
     MBAppManager *_appManager;
     MBDebugContext *_debugContext;
     MBDomainManager *_domainManager;
+    NSMutableDictionary *_domainRestoreBehaviors;
     BOOL _encrypted;
     MBProperties *_properties;
     MBSettingsContext *_settingsContext;
@@ -18,6 +19,7 @@
 @property (getter=shouldCommitIfPossible, nonatomic, readonly) BOOL commitIfPossible;
 @property (nonatomic, readonly) MBDebugContext *debugContext;
 @property (nonatomic, readonly) MBDomainManager *domainManager;
+@property (nonatomic, retain) NSMutableDictionary *domainRestoreBehaviors;
 @property (getter=isDriveEngine, nonatomic, readonly) BOOL driveEngine;
 @property (getter=isEncrypted, nonatomic) BOOL encrypted;
 @property (nonatomic, readonly) int engineMode;
@@ -42,6 +44,7 @@
 - (void)dealloc;
 - (id)debugContext;
 - (id)domainManager;
+- (id)domainRestoreBehaviors;
 - (int)engineMode;
 - (id)engineModeString;
 - (int)engineType;
@@ -56,10 +59,14 @@
 - (BOOL)isMigrate;
 - (BOOL)isRestoreEngine;
 - (BOOL)isServiceEngine;
+- (id)localRootPathForDomain:(id)arg1;
 - (id)properties;
 - (void)pushAggregateDictionaryTotalFileCount:(long long)arg1 totalFileSize:(long long)arg2 duration:(double)arg3;
+- (int)restoreBehaviorForDomain:(id)arg1 error:(id*)arg2;
+- (int)restoreBehaviorForFile:(id)arg1 error:(id*)arg2;
 - (int)restoreType;
 - (id)restoreTypeString;
+- (void)setDomainRestoreBehaviors:(id)arg1;
 - (void)setEncrypted:(BOOL)arg1;
 - (id)settingsContext;
 - (BOOL)shouldCommitIfPossible;

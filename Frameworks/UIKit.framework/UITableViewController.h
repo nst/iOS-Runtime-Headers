@@ -25,6 +25,8 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) UITableView *tableView;
 
+// Image: /System/Library/Frameworks/UIKit.framework/UIKit
+
 - (void).cxx_destruct;
 - (void)_applyDefaultDataSourceToTable:(id)arg1;
 - (id)_existingTableView;
@@ -76,5 +78,11 @@
 - (void)willPresentPreviewViewController:(id)arg1 forLocation:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 - (void)willPresentPreviewViewController:(id)arg1 forPosition:(struct CGPoint { float x1; float x2; })arg2 inSourceView:(id)arg3;
 - (void)willPresentPreviewViewController:(id)arg1 forRowAtIndexPath:(id)arg2;
+
+// Image: /System/Library/Frameworks/ContactsUI.framework/ContactsUI
+
+- (void)_cnui_beginRefreshingWithDuration:(double)arg1;
+- (void)_cnui_updateAccountsRefreshControl;
+- (void)refreshAccountsNow:(id)arg1;
 
 @end

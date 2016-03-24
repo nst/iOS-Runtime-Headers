@@ -190,8 +190,10 @@
 + (id)predicateForContactsInGroupWithIdentifier:(id)arg1;
 + (id)predicateForContactsLinkedToContact:(id)arg1;
 + (id)predicateForContactsLinkedToContactWithIdentifier:(id)arg1;
++ (id)predicateForContactsMatchingEmailAddress:(id)arg1;
 + (id)predicateForContactsMatchingFullTextSearch:(id)arg1 containerIdentifiers:(id)arg2 groupIdentifiers:(id)arg3;
 + (id)predicateForContactsMatchingName:(id)arg1;
++ (id)predicateForContactsMatchingPhoneNumber:(id)arg1;
 + (id)predicateForContactsMatchingString:(id)arg1 accountIdentifier:(id)arg2 containerIdentifier:(id)arg3 groupIdentifier:(id)arg4;
 + (id)predicateForContactsWithIdentifiers:(id)arg1;
 + (id)predicateForLegacyIdentifier:(unsigned int)arg1;
@@ -382,5 +384,9 @@
 - (id)pkSingleLineFormattedContactAddress;
 - (id)recentContact;
 - (void)setRecentContact:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/UserManagementUI.framework/UserManagementUI
+
++ (id)contactForUser:(id)arg1;
 
 @end

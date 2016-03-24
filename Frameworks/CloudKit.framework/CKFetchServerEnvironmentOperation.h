@@ -16,6 +16,7 @@
 - (unsigned long long)activityStart;
 - (int)environment;
 - (id /* block */)fetchServerEnvironmentCompletionBlock;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (Class)operationInfoClass;
 - (void)performCKOperation;

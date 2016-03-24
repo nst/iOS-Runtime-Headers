@@ -4,6 +4,7 @@
 
 @interface PURootSettings : PUSettings {
     PUAirPlaySettings *_airPlaySettings;
+    BOOL _allowIrisEditing;
     BOOL _allowIrisUI;
     NSMutableSet *_archivedSettings;
     BOOL _enforceDisableIrisUI;
@@ -24,6 +25,7 @@
 }
 
 @property (nonatomic, retain) PUAirPlaySettings *airPlaySettings;
+@property (nonatomic) BOOL allowIrisEditing;
 @property (nonatomic) BOOL allowIrisUI;
 @property (nonatomic, retain) PUFeedSettings *feedSettings;
 @property (nonatomic) Class interfaceThemeClass;
@@ -40,10 +42,12 @@
 @property (nonatomic, retain) PUSlideshowSettings *slideshowSettings;
 @property (nonatomic, retain) PUTilingViewSettings *tilingViewSettings;
 
-+ (id)_currentViewControllerStack;
 + (id)_debugRowsForViewControllerStack:(id)arg1;
 + (void)_deleteAllDiagnosticFiles;
++ (void)_setCurrentAsset:(id)arg1;
 + (void)_setDebugRows:(id)arg1;
++ (id)currentAsset;
++ (void)dismissSettingsController:(id)arg1;
 + (id)photosUITesterRootViewController;
 + (void)presentSettingsController;
 + (id)settingsControllerModule;
@@ -52,6 +56,7 @@
 
 - (void).cxx_destruct;
 - (id)airPlaySettings;
+- (BOOL)allowIrisEditing;
 - (BOOL)allowIrisUI;
 - (void)applyArchiveValue:(id)arg1 forKey:(id)arg2;
 - (id)archiveValueForKey:(id)arg1;
@@ -70,6 +75,7 @@
 - (void)restoreDefaultValues;
 - (void)save;
 - (void)setAirPlaySettings:(id)arg1;
+- (void)setAllowIrisEditing:(BOOL)arg1;
 - (void)setAllowIrisUI:(BOOL)arg1;
 - (void)setDefaultValues;
 - (void)setEnforceDisableIrisUI:(BOOL)arg1;

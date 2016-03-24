@@ -31,6 +31,7 @@
 - (BOOL)_displaysFullScreen;
 - (void)_editabilityChanged:(id)arg1;
 - (int)_imagePickerStatusBarStyle;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (void)_setAllowsStillFromVideoMode:(BOOL)arg1;
 - (void)_setCameraCaptureMode:(int)arg1;
 - (void)_setCameraCaptureMode:(int)arg1 device:(int)arg2;

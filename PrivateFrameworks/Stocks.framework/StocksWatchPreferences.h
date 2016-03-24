@@ -8,6 +8,9 @@
     NPSDomainAccessor *_watchDefaults;
 }
 
+@property (nonatomic) int complicationDisplayMode;
+@property (nonatomic) NSString *defaultStockSymbol;
+
 + (id)sharedPreferences;
 
 - (void).cxx_destruct;
@@ -15,6 +18,7 @@
 - (void)dealloc;
 - (id)defaultStockSymbol;
 - (id)init;
+- (void)reactivateWatchNPSAccessor;
 - (void)setComplicationDisplayMode:(int)arg1;
 - (void)setDefaultStockSymbol:(id)arg1;
 - (void)syncChartInterval;

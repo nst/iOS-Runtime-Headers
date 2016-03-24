@@ -17,9 +17,11 @@
 + (id)_achievementTypesModifiedPerFixupVersion;
 
 - (void).cxx_destruct;
+- (long long)_activityInterval;
 - (void)_generateCrashReportForMissingAchievements:(id)arg1;
 - (id)_lastSuccessfulFixupDate;
 - (int)_lastSuccessfulFixupVersion;
+- (BOOL)_multipleWatchesArePaired;
 - (void)_performAchievementsFixupActivity:(id)arg1;
 - (void)_performAchievementsFixupIfWaiting;
 - (BOOL)_queue_isWaitingToRun;

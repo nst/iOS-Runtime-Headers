@@ -18,6 +18,7 @@
     BOOL _isVisible;
     double _lastFieldExitTime;
     double _lastFingerOnTime;
+    double _lastTransactionTime;
     BOOL _needsConfirmation;
     PKPassLibrary *_passLibrary;
     PKWeakReference *_passcodePresenterVC;
@@ -36,6 +37,7 @@
     BOOL _shouldShowApplications;
     NSData *_stashedAuthenticationCredential;
     int _style;
+    NSObject<OS_dispatch_source> *_summaryAuthenticationTimer;
     UIView *_summaryView;
     NSMutableArray *_transitionCompletionHandlers;
     BOOL _transitioning;
@@ -71,6 +73,7 @@
 - (id)_buttonWithTitle:(id)arg1 alignment:(int)arg2 action:(SEL)arg3;
 - (BOOL)_canAuthenticateWithPasscode;
 - (BOOL)_canAuthenticateWithTouchID;
+- (void)_cancelSummaryAuthenticationTimer;
 - (void)_configureForPaymentWithPaymentPass:(id)arg1 context:(id)arg2;
 - (void)_configureForStyle:(int)arg1 context:(id)arg2;
 - (void)_configureForValueAddedServiceWithPass:(id)arg1 context:(id)arg2;

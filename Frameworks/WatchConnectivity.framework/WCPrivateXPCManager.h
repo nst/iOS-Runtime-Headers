@@ -33,6 +33,8 @@
 - (void)dealloc;
 - (id)delegate;
 - (id)delegateQueue;
+- (void)fakeIncomingPayloadOnSubService:(id)arg1 ofType:(id)arg2 clientData:(id)arg3 resource:(id)arg4 resourceSandboxToken:(id)arg5 completionHandler:(id /* block */)arg6;
+- (void)handlePairedSyncComplicationsStartedWithCompletionHandler:(id /* block */)arg1;
 - (void)handlePingForExtensionBundleID:(id)arg1;
 - (id)init;
 - (void)isExtensionPrivileged:(id)arg1 completionHandler:(id /* block */)arg2;

@@ -70,6 +70,8 @@
 @property (nonatomic) unsigned int wepNetsCount;
 @property (nonatomic) unsigned int wpaNetsCount;
 
++ (Class)mostUsedNetworksType;
+
 - (void)addMostUsedNetworks:(id)arg1;
 - (unsigned int)adhocNetsCount;
 - (unsigned int)applePersHotspotNetsCount;

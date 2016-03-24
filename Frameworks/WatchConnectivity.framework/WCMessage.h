@@ -6,11 +6,13 @@
     NSData *_data;
     BOOL _dictionaryMessage;
     NSString *_identifier;
+    NSString *_pairingID;
 }
 
 @property (readonly, copy) NSData *data;
 @property (getter=isDictionaryMessage, readonly) BOOL dictionaryMessage;
 @property (readonly, copy) NSString *identifier;
+@property (readonly, copy) NSString *pairingID;
 
 + (BOOL)supportsSecureCoding;
 
@@ -21,8 +23,9 @@
 - (unsigned int)hash;
 - (id)identifier;
 - (id)initWithCoder:(id)arg1;
-- (id)initWithIdentifier:(id)arg1 data:(id)arg2 dictionaryMessage:(BOOL)arg3;
+- (id)initWithPairingID:(id)arg1 identifier:(id)arg2 data:(id)arg3 dictionaryMessage:(BOOL)arg4;
 - (BOOL)isDictionaryMessage;
 - (BOOL)isEqual:(id)arg1;
+- (id)pairingID;
 
 @end

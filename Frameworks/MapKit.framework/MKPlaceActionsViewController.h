@@ -2,11 +2,13 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceActionsViewController : UITableViewController <MKHideableBottomSeparator, MKStackingViewControllerPreferredSizeUse> {
+@interface MKPlaceActionsViewController : UITableViewController <MKHideableBottomSeparator, MKOfflineModeViewController, MKStackingViewControllerPreferredSizeUse> {
     <MKPlaceActionsViewControllerDelegate> *_actionDelegate;
     NSArray *_actions;
     MKMapItem *_mapItem;
+    BOOL _offlineMode;
     BOOL _showContactActions;
+    BOOL _showOpenInPinpoint;
     BOOL _showOpenInSkyline;
     BOOL _showRemovePin;
     BOOL _showReportAProblem;
@@ -21,8 +23,10 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic) BOOL offlineMode;
 @property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
 @property (nonatomic) BOOL showContactActions;
+@property (nonatomic) BOOL showOpenInPinpoint;
 @property (nonatomic) BOOL showOpenInSkyline;
 @property (nonatomic) BOOL showRemovePin;
 @property (nonatomic) BOOL showReportAProblem;
@@ -37,11 +41,14 @@
 - (id)init;
 - (id)mapItem;
 - (int)numberOfSectionsInTableView:(id)arg1;
+- (BOOL)offlineMode;
 - (BOOL)requiresPreferredContentSizeInStackingView;
 - (void)setActionDelegate:(id)arg1;
 - (void)setActions:(id)arg1;
 - (void)setMapItem:(id)arg1;
+- (void)setOfflineMode:(BOOL)arg1;
 - (void)setShowContactActions:(BOOL)arg1;
+- (void)setShowOpenInPinpoint:(BOOL)arg1;
 - (void)setShowOpenInSkyline:(BOOL)arg1;
 - (void)setShowRemovePin:(BOOL)arg1;
 - (void)setShowReportAProblem:(BOOL)arg1;
@@ -49,6 +56,7 @@
 - (void)setShowSimulateLocation:(BOOL)arg1;
 - (void)setViewShouldHideBottommostSeparator:(BOOL)arg1;
 - (BOOL)showContactActions;
+- (BOOL)showOpenInPinpoint;
 - (BOOL)showOpenInSkyline;
 - (BOOL)showRemovePin;
 - (BOOL)showReportAProblem;

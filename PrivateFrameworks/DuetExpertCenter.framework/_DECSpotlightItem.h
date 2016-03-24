@@ -14,6 +14,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
 - (int)domain;
 - (unsigned int)hash;

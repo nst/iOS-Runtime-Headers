@@ -19,6 +19,7 @@
 - (unsigned int)countContactsUsingPredicate:(id)arg1 error:(id*)arg2;
 - (void)countInteractionsUsingPredicate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (unsigned int)countInteractionsUsingPredicate:(id)arg1 error:(id*)arg2;
+- (void)dealloc;
 - (void)deleteInteractionsMatchingPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned int)arg3 completionHandler:(id /* block */)arg4;
 - (unsigned int)deleteInteractionsMatchingPredicate:(id)arg1 sortDescriptors:(id)arg2 limit:(unsigned int)arg3 error:(id*)arg4;
 - (void)deleteInteractionsWithBundleId:(id)arg1 account:(id)arg2 completionHandler:(id /* block */)arg3;

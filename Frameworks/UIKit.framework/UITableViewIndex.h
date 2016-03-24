@@ -37,6 +37,7 @@
 @property (nonatomic, retain) NSArray *titles;
 
 - (void).cxx_destruct;
+- (id)__scalarStatisticsForUserValueChangedEvent;
 - (void)_cacheAndMeasureTitles;
 - (id)_displayTitles;
 - (id)_dotImage;

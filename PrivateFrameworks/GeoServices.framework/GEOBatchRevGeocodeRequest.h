@@ -8,12 +8,18 @@
         unsigned int count; 
         unsigned int size; 
     } _additionalPlaceTypes;
+    NSString *_deviceCountryCode;
+    NSString *_displayRegion;
     NSMutableArray *_locations;
     NSMutableArray *_serviceTags;
 }
 
 @property (nonatomic, readonly) int*additionalPlaceTypes;
 @property (nonatomic, readonly) unsigned int additionalPlaceTypesCount;
+@property (nonatomic, retain) NSString *deviceCountryCode;
+@property (nonatomic, retain) NSString *displayRegion;
+@property (nonatomic, readonly) BOOL hasDeviceCountryCode;
+@property (nonatomic, readonly) BOOL hasDisplayRegion;
 @property (nonatomic, retain) NSMutableArray *locations;
 @property (nonatomic, retain) NSMutableArray *serviceTags;
 
@@ -30,7 +36,11 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (id)deviceCountryCode;
 - (id)dictionaryRepresentation;
+- (id)displayRegion;
+- (BOOL)hasDeviceCountryCode;
+- (BOOL)hasDisplayRegion;
 - (unsigned int)hash;
 - (BOOL)isEqual:(id)arg1;
 - (id)locationAtIndex:(unsigned int)arg1;
@@ -44,6 +54,8 @@
 - (id)serviceTags;
 - (unsigned int)serviceTagsCount;
 - (void)setAdditionalPlaceTypes:(int*)arg1 count:(unsigned int)arg2;
+- (void)setDeviceCountryCode:(id)arg1;
+- (void)setDisplayRegion:(id)arg1;
 - (void)setLocations:(id)arg1;
 - (void)setServiceTags:(id)arg1;
 - (void)writeTo:(id)arg1;

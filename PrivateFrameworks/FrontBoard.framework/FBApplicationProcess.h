@@ -64,6 +64,7 @@
 - (id)_createWorkspace;
 - (id)_queue_GSEventPortName;
 - (id)_queue_UIRemoteAppPortName;
+- (void)_queue_addAllowedLockedFilePath:(id)arg1;
 - (int)_queue_bksVisibilityForVisibility:(int)arg1;
 - (BOOL)_queue_bootstrapAndExecWithContext:(id)arg1;
 - (int)_queue_calculateDefaultSceneSuspendType;
@@ -74,6 +75,7 @@
 - (id)_queue_crashReportThermalsInfo;
 - (int)_queue_defaultSuspendType;
 - (void)_queue_doGracefulKillWithCompletion:(id /* block */)arg1 withWatchdog:(BOOL)arg2;
+- (void)_queue_doGracefulKillWithCompletion:(id /* block */)arg1 withWatchdog:(BOOL)arg2 transitionContext:(id)arg3;
 - (void)_queue_dropContinuousProcessAssertion;
 - (void)_queue_dropLaunchProcessAssertion;
 - (int)_queue_effectiveVisibilityForSceneSettings:(id)arg1;
@@ -87,6 +89,7 @@
 - (void)_queue_forceCrashReportWithReason:(int)arg1 description:(id)arg2;
 - (id)_queue_internalDebugEnvironmentVariables;
 - (void)_queue_invalidateBKSProcess;
+- (BOOL)_queue_isAllowedLockedFilePath:(id)arg1 standardizedPath:(out id*)arg2;
 - (BOOL)_queue_isSystemApplication;
 - (void)_queue_killForReason:(int)arg1 andReport:(BOOL)arg2 withDescription:(id)arg3 completion:(id /* block */)arg4;
 - (void)_queue_killWithSignal:(int)arg1;
@@ -100,7 +103,6 @@
 - (void)_queue_processReallyDidExit;
 - (void)_queue_sceneLifecycleStateChanged:(id)arg1;
 - (void)_queue_sceneNeedsGracefulExit:(id)arg1 withExitCompletion:(id /* block */)arg2;
-- (void)_queue_setAllowedLockedFilePaths:(id)arg1;
 - (void)_queue_setSupportsBackgroundTaskAssertions:(BOOL)arg1;
 - (void)_queue_setSupportsSuspendOnLock:(BOOL)arg1;
 - (void)_queue_setTaskPort:(id)arg1;

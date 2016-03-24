@@ -67,6 +67,7 @@
 - (BOOL)aa_addGrandSlamAuthorizationHeaderWithAccount:(id)arg1 grandslamToken:(id)arg2;
 - (void)aa_addLocationSharingAllowedHeader;
 - (void)aa_addLoggedInAppleIDHeaderWithAccount:(id)arg1;
+- (void)aa_addMultiUserDeviceHeaderIfEnabled;
 - (void)aa_addTokenAuthHeaderWithAccount:(id)arg1;
 - (void)aa_addiTunesHeadersWithAccount:(id)arg1;
 - (void)aa_setBodyWithParameters:(id)arg1;
@@ -99,6 +100,7 @@
 - (void)ak_addProxiedAnisetteHeaders:(id)arg1;
 - (void)ak_addProxiedClientInfoHeader:(id)arg1;
 - (void)ak_addProxiedDeviceUDIDHeader:(id)arg1;
+- (void)ak_addShortLivedTokenHeaderWithIdentityToken:(id)arg1 forAltDSID:(id)arg2;
 - (void)ak_setBodyWithParameters:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CaptiveNetwork.framework/CaptiveNetwork

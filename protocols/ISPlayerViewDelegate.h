@@ -12,6 +12,7 @@
 - (void)playerViewGestureRecognizerDidChange:(ISPlayerView *)arg1;
 - (void)playerViewIsInteractingDidChange:(ISPlayerView *)arg1;
 - (void)playerViewPlaybackStateDidChange:(ISPlayerView *)arg1;
+- (void)playerViewPlayerItemDidChange:(ISPlayerView *)arg1;
 - (void)playerViewWillBeginVisualPlayback:(ISPlayerView *)arg1;
 - (void)playerViewWillPlaybackVideoAssetToEnd:(ISPlayerView *)arg1;
 

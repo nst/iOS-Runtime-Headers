@@ -27,8 +27,10 @@
 - (void)_finishOnCallbackQueueWithError:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (unsigned long long)activityStart;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
 - (id)grantedRecordIDs;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)initWithRecordIDsToGrantAccess:(id)arg1 recordIDsToRevokeAccess:(id)arg2;
 - (void)performCKOperation;
 - (id /* block */)recordAccessCompletionBlock;

@@ -102,6 +102,7 @@
 - (void)setOnImage:(id)arg1;
 - (void)setOnTintColor:(id)arg1;
 - (void)setPressedIsHandledByGestureRecognizer:(BOOL)arg1;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (void)setSendAction:(BOOL)arg1;
 - (void)setThumbTintColor:(id)arg1;
 - (void)setTintColor:(id)arg1;

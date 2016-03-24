@@ -5,7 +5,8 @@
 @interface MKPlaceHeaderView : UIView <MKPlaceHeaderBackgroundViewDelegate, MKPlaceHeaderViewCinematics, MKStackingViewControllerSizableView> {
     MKPlaceHeaderBackgroundView *_background;
     int _backgroundTypeOverride;
-    UILayoutGuide *_bottomLayoutSpacer;
+    UILayoutGuide *_centeringLayoutGuide_Bottom;
+    UILayoutGuide *_centeringLayoutGuide_Top;
     BOOL _compressedMode;
     <MKPlaceHeaderViewDelegate> *_delegate;
     NSLayoutConstraint *_distanceLabelToBottomConstraint;
@@ -16,9 +17,12 @@
     struct { 
         unsigned int isPresenting; 
     } _headerViewFlags;
+    BOOL _isTranitLine;
     NSArray *_labelWidthConstraints;
     MKMapItem *_mapItem;
     BOOL _needsToUpdateTitleLabel;
+    BOOL _needsToUpdateTransitLabel;
+    MKPlaceHeaderBackgroundView *_oldBackground;
     MKStarRatingAndLabelView *_ratingView;
     NSLayoutConstraint *_ratingViewToBottomConstraint;
     NSLayoutConstraint *_ratingViewToDistanceLabelConstraint;
@@ -26,13 +30,13 @@
     UIFont *_reviewsFont;
     UIView *_screen;
     UIFont *_subtitleFont;
-    BOOL _subtitleWillAppear;
     UIFont *_titleFont;
     struct UILabel { Class x1; } *_titleLabel;
     NSLayoutConstraint *_titleToBottomConstraint;
     NSLayoutConstraint *_topBottomDifferenceConstraint;
-    UILayoutGuide *_topLayoutSpacer;
     NSLayoutConstraint *_topSpacerToTitleConstraint;
+    NSLayoutConstraint *_topToTransitViewConstraint_Shield;
+    NSLayoutConstraint *_topToTransitViewConstraint_Text;
     UIFont *_transitFont;
     MKTransitInfoLabelView *_transitInfoView;
     NSLayoutConstraint *_transitViewToBottomConstraint_Shield;
@@ -42,6 +46,7 @@
     NSLayoutConstraint *_transitViewToTitleConstraint_Shield;
     NSLayoutConstraint *_transitViewToTitleConstraint_Text;
     NSMutableArray *_viewDidAppearBlocks;
+    NSMutableArray *_viewsToAnimate;
 }
 
 @property (nonatomic) int backgroundTypeOverride;
@@ -52,6 +57,7 @@
 @property (nonatomic, retain) NSArray *labelWidthConstraints;
 @property (nonatomic, retain) MKMapItem *mapItem;
 @property (nonatomic) BOOL needsToUpdateTitleLabel;
+@property (nonatomic) BOOL needsToUpdateTransitLabel;
 @property (nonatomic) unsigned int numberOfReviews;
 @property (nonatomic) float rating;
 @property (nonatomic, copy) NSString *reviewsSourceName;
@@ -59,10 +65,13 @@
 @property (nonatomic, readonly) UIFont *subtitleFont;
 @property (readonly) Class superclass;
 @property (nonatomic, copy) NSString *title;
+@property (nonatomic, copy) NSArray *transitLabelItems;
 @property (nonatomic, retain) NSMutableArray *viewDidAppearBlocks;
 
 - (void).cxx_destruct;
 - (void)_configureLabelForHeader:(id)arg1;
+- (void)_didAppearAfterSettingMapItemAnimated:(BOOL)arg1;
+- (struct UILabel { Class x1; }*)_newInfoLabel;
 - (void)_performWhenViewHasAppeared:(id /* block */)arg1;
 - (void)_updateCurrentEnvironmentName;
 - (void)_updateFontBasedConstraints;
@@ -74,12 +83,12 @@
 - (id)delegate;
 - (void)headerViewBackgroundDidFinishLoading:(id)arg1;
 - (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
-- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCompressedMode:(BOOL)arg2;
+- (id)initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withCompressedMode:(BOOL)arg2 isTransitLine:(BOOL)arg3;
 - (id)labelWidthConstraints;
 - (void)layoutSubviews;
 - (id)mapItem;
 - (BOOL)needsToUpdateTitleLabel;
-- (struct UILabel { Class x1; }*)newInfoLabel;
+- (BOOL)needsToUpdateTransitLabel;
 - (unsigned int)numberOfReviews;
 - (void)pause;
 - (void)pauseAnimations;
@@ -92,6 +101,7 @@
 - (void)refreshContent;
 - (void)reset;
 - (void)resetAnimations;
+- (void)resetViewDidAppear;
 - (void)restartAnimations;
 - (void)resume;
 - (void)resumeAnimations;
@@ -103,19 +113,23 @@
 - (void)setLabelWidthConstraints:(id)arg1;
 - (void)setMapItem:(id)arg1;
 - (void)setNeedsToUpdateTitleLabel:(BOOL)arg1;
+- (void)setNeedsToUpdateTransitLabel:(BOOL)arg1;
 - (void)setNumberOfReviews:(unsigned int)arg1;
 - (void)setRating:(float)arg1;
 - (void)setReviewsSourceName:(id)arg1;
 - (void)setShowInlineMapInHeader:(BOOL)arg1;
 - (void)setSubTitle:(id)arg1;
 - (void)setTitle:(id)arg1;
+- (void)setTransitLabelItems:(id)arg1;
 - (void)setViewDidAppearBlocks:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;
 - (id)subTitle;
 - (id)subtitleFont;
 - (id)title;
+- (id)transitLabelItems;
 - (void)updateConstraints;
 - (void)updateTitleLabel;
+- (void)updateTransitLabel;
 - (void)viewDidAppear:(BOOL)arg1;
 - (id)viewDidAppearBlocks;
 - (id)viewsForPresentation;

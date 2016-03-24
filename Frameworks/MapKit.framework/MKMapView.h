@@ -34,6 +34,11 @@
         float bottom; 
         float right; 
     } _edgeInsets;
+    NSLayoutConstraint *_edgeInsetsBottomConstraint;
+    UILayoutGuide *_edgeInsetsGuide;
+    NSLayoutConstraint *_edgeInsetsLeftConstraint;
+    NSLayoutConstraint *_edgeInsetsRightConstraint;
+    NSLayoutConstraint *_edgeInsetsTopConstraint;
     struct { 
         unsigned int changingRegion : 1; 
         unsigned int debugViewHeading : 1; 
@@ -43,6 +48,7 @@
         unsigned int ignoreHeadingUpdates : 1; 
         unsigned int ignoreLocationUpdates : 1; 
         unsigned int isSuspended : 1; 
+        unsigned int forceDisplayEffects : 1; 
         unsigned int longPressing : 1; 
         unsigned int persistFixedUserLocation : 1; 
         unsigned int regionChangeIsAnimated : 1; 
@@ -104,6 +110,7 @@
     MKMapGestureController *_gestureController;
     BOOL _hasSetLayoutMargins;
     double _heading;
+    int _interactionMode;
     MKMapViewInternal *_internal;
     UIGestureRecognizer *_locationConsoleGesture;
     UILongPressGestureRecognizer *_longPressGestureRecognizer;
@@ -154,6 +161,7 @@
 @property (getter=_automaticallySnapsToNorth, setter=_setAutomaticallySnapsToNorth:, nonatomic) BOOL automaticallySnapsToNorth;
 @property (getter=_calloutContentRect, nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } calloutContentRect;
 @property (getter=_calloutPopoverController, nonatomic, readonly) UIPopoverController *calloutPopoverController;
+@property (getter=_calloutPopoverTargetRect, nonatomic, readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } calloutPopoverTargetRect;
 @property (nonatomic, copy) MKMapCamera *camera;
 @property (getter=_canEnter3DMode, nonatomic, readonly) BOOL canEnter3DMode;
 @property (getter=_canEnterNightMode, nonatomic, readonly) BOOL canEnterNightMode;
@@ -172,10 +180,12 @@
 @property (getter=_detailedDescription, nonatomic, readonly) NSString *detailedDescription;
 @property (getter=_doubleTapGestureRecognizer, nonatomic, readonly) UITapGestureRecognizer *doubleTapGestureRecognizer;
 @property (getter=_edgeInsets, setter=_setEdgeInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } edgeInsets;
+@property (getter=_forceDisplayEffects, setter=_setForceDisplayEffects:, nonatomic) BOOL forceDisplayEffects;
 @property (getter=_isHandlingNonselectingTap, nonatomic, readonly) BOOL handlingNonselectingTap;
 @property (nonatomic, readonly) BOOL hasUserLocation;
 @property (readonly) unsigned int hash;
 @property (nonatomic) BOOL ignoreLocationUpdates;
+@property (getter=_interactionMode, setter=_setInteractionMode:, nonatomic) int interactionMode;
 @property (getter=_labelEdgeInsets, setter=_setLabelEdgeInsets:, nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } labelEdgeInsets;
 @property (getter=_localizeLabels, setter=_setLocalizeLabels:, nonatomic) BOOL localizeLabels;
 @property (getter=_isLocationPulseEnabled, setter=_setLocationPulseEnabled:, nonatomic) BOOL locationPulseEnabled;
@@ -269,6 +279,7 @@
 - (float)_boundedZoomLevel:(float)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calloutContentRect;
 - (id)_calloutPopoverController;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_calloutPopoverTargetRect;
 - (id)_camera;
 - (BOOL)_canEnter3DMode;
 - (BOOL)_canEnterNightMode;
@@ -317,6 +328,7 @@
 - (void)_exit3DMode;
 - (id)_findLayoutGuideVC;
 - (void)_fixUserLocationFromPresentationValue;
+- (BOOL)_forceDisplayEffects;
 - (void)_forceFrame;
 - (double)_goToCenterCoordinate:(struct { double x1; double x2; })arg1 zoomLevel:(float)arg2 animated:(BOOL)arg3;
 - (void)_goToMapRegion:(id)arg1 duration:(double)arg2 animated:(BOOL)arg3;
@@ -328,6 +340,7 @@
 - (BOOL)_iconsShouldAlignToPixels;
 - (id)_initWithFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 gestureRecognizerHostView:(id)arg2 showsAttribution:(BOOL)arg3;
 - (void)_insertSubview:(id)arg1;
+- (int)_interactionMode;
 - (int)_interfaceOrientation;
 - (BOOL)_isCalloutExpanded;
 - (BOOL)_isChangingRegionForGesture;
@@ -385,8 +398,10 @@
 - (void)_selectLabelMarker:(id)arg1 animated:(BOOL)arg2;
 - (void)_selectLabelMarker:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
 - (void)_selectTransitLineMarker:(id)arg1;
+- (void)_selectTransitLineMarkerWithFeatureID:(unsigned long long)arg1;
 - (void)_selectUserLocationTypeWithDeltaZoomLevel:(float)arg1;
 - (id)_selectedLabelMarker;
+- (id)_selectedTransitLineIDs;
 - (id)_selectingTapGestureRecognizer;
 - (void)_setAdditionalManifestConfiguration:(id)arg1;
 - (void)_setAllowsPopoverWhenNotInWindow:(BOOL)arg1;
@@ -409,6 +424,8 @@
 - (void)_setDebugConsoleAdditionalInfoProvider:(id /* block */)arg1;
 - (void)_setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1 explicit:(BOOL)arg2;
+- (void)_setForceDisplayEffects:(BOOL)arg1;
+- (void)_setInteractionMode:(int)arg1;
 - (void)_setLabelEdgeInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)_setLocalizeLabels:(BOOL)arg1;
 - (void)_setLocationPropagationEnabled:(BOOL)arg1;
@@ -463,11 +480,13 @@
 - (void)_sizeWillChange;
 - (void)_snapToNorthIfNecessary;
 - (void)_snapToTrueNorthAndCallBack:(BOOL)arg1;
+- (void)_startEffects;
 - (id)_startEffectsTimer;
 - (void)_startFlyoverTourAnimation:(unsigned long long)arg1 duration:(double)arg2 completion:(id /* block */)arg3;
 - (void)_startPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_startTrackingHeading;
 - (void)_startZoomForExternalGesture;
+- (void)_stopEffects;
 - (void)_stopFlyoverAnimation;
 - (void)_stopPanningAtPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (void)_stopTrackingHeading;
@@ -563,6 +582,7 @@
 - (void)applicationWillResignActive:(id)arg1;
 - (void)applicationWillTerminate:(id)arg1;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })attributionFrame;
+- (id)beginStoppingEffects;
 - (void)calloutDidAppearForAnnotationView:(id)arg1 inContainer:(id)arg2;
 - (BOOL)calloutViewContainsPoint:(struct CGPoint { float x1; float x2; })arg1;
 - (id)camera;
@@ -597,6 +617,7 @@
 - (void)geoDefaultsDidChange:(id)arg1;
 - (BOOL)gestureController:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (double)gestureController:(id)arg1 shouldWaitForNextTapForDuration:(double)arg2 afterTouch:(id)arg3;
+- (struct CGPoint { float x1; float x2; })gestureController:(id)arg1 smartAimingPointForPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)gestureControllerDidStopPanning:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)gestureControllerDidStopPanningDecelerating:(id)arg1;
 - (void)gestureControllerDidStopRotating:(id)arg1 willDecelerate:(BOOL)arg2;
@@ -607,6 +628,7 @@
 - (void)gestureControllerDidStopUserInteraction:(id)arg1;
 - (void)gestureControllerDidStopZooming:(id)arg1 direction:(int)arg2 willDecelerate:(BOOL)arg3;
 - (void)gestureControllerDidStopZoomingDecelerating:(id)arg1 direction:(int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })gestureControllerSignificantViewFrame:(id)arg1;
 - (void)gestureControllerWillStartPanning:(id)arg1;
 - (void)gestureControllerWillStartRotating:(id)arg1;
 - (void)gestureControllerWillStartTilting:(id)arg1;
@@ -772,9 +794,7 @@
 - (BOOL)showsTraffic;
 - (BOOL)showsUserLocation;
 - (void)snapToNorth:(id)arg1;
-- (void)startEffects;
 - (void)startUpdatingUserLocation;
-- (void)stopEffects;
 - (void)stopUpdatingUserLocation;
 - (void)toggleLocationConsole:(id)arg1;
 - (void)updateLayoutGuides;

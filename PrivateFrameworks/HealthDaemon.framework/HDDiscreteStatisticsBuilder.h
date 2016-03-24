@@ -2,22 +2,16 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDDiscreteStatisticsBuilder : HDStatisticsBuilder {
-    long long _anchor;
-    HDDiscreteCollectionCalculator *_collectionCalculator;
-}
+@interface HDDiscreteStatisticsBuilder : HDStatisticsBuilder
 
-- (void).cxx_destruct;
 - (void)_addSample:(id)arg1 toStatistics:(id)arg2;
 - (id)_getQuantitiesBySourceForProperty:(id)arg1 functions:(id)arg2 predicate:(id)arg3 unit:(id)arg4 healthDaemon:(id)arg5 database:(id)arg6;
-- (id)_initialStatisticsForCollection:(id)arg1 startDate:(id)arg2 endDate:(id)arg3 sampleCount:(int)arg4 shouldStopProcessing:(id /* block */)arg5 error:(id*)arg6;
 - (id)_initialStatisticsForStartDate:(id)arg1 endDate:(id)arg2 shouldStopProcessing:(id /* block */)arg3 error:(id*)arg4;
 - (void)_setDataCount:(int)arg1 inStatistics:(id)arg2 forSource:(id)arg3;
-- (void)_setupStatistics:(id)arg1 withStats:(const struct { double x1; double x2; double x3; unsigned int x4; }*)arg2 unit:(id)arg3 collectionCalculator:(id)arg4 sourceManager:(id)arg5;
+- (BOOL)_setupStatistics:(id)arg1 withCalculator:(id)arg2;
 - (id)_statQuantityBySourceFromIdsAndStats:(id)arg1 unit:(id)arg2 sourceManager:(id)arg3;
-- (id)_statisticsArrayWithStartDate:(id)arg1 endDate:(id)arg2 timePeriods:(id)arg3 shouldStopProcessing:(id /* block */)arg4 error:(id*)arg5;
 - (id)_statisticsForPredicate:(id)arg1 shouldStopProcessing:(id /* block */)arg2 error:(id*)arg3;
-- (id)updateStatistics:(id)arg1 withSamples:(id)arg2 error:(id*)arg3;
-- (id)updateStatisticsCollection:(id)arg1 withSamples:(id)arg2 anchor:(id)arg3 error:(id*)arg4;
+- (id)_updateStatisticsCollection:(id)arg1 withSamples:(id)arg2 error:(id*)arg3;
+- (id)collectionCalculatorWithBucketBoundaries:(id)arg1;
 
 @end

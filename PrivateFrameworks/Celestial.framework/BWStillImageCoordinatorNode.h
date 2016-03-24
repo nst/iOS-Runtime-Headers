@@ -24,6 +24,7 @@
     <BWStillImageCaptureStatusDelegate> *_stillImageCaptureStatusDelegate;
     NSObject<OS_dispatch_group> *_stillImageDispatchGroup;
     NSObject<OS_dispatch_queue> *_stillImageDispatchQueue;
+    BOOL _stillImageGraphSupportsMultipleInflightCaptures;
     BWNodeInput *_stillImageInput;
     BOOL _stillImageInputActive;
     struct opaqueCMSimpleQueue { } *_stillImageRequestQueue;
@@ -63,8 +64,8 @@
 - (void)captureDevice:(id)arg1 didCompleteStillImageCaptureWithPTS:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2;
 - (void)captureDevice:(id)arg1 stillImageCaptureError:(long)arg2;
 - (void)captureDeviceWillBeginStillImageCapture:(id)arg1;
-- (void)captureFinished:(id)arg1 withStatus:(long)arg2;
 - (long)captureStillImageNowWithSettings:(id)arg1;
+- (void)clientReceivedPayloadForSettings:(id)arg1 status:(long)arg2 clientIsMidStillImageGraph:(BOOL)arg3;
 - (void)configurationWithID:(long long)arg1 updatedFormat:(id)arg2 didBecomeLiveForInput:(id)arg3;
 - (void)dealloc;
 - (id)defaultOutput;
@@ -78,8 +79,10 @@
 - (long)prepareStillImageBracketNowWithSettings:(id)arg1;
 - (void)renderSampleBuffer:(struct opaqueCMSampleBuffer { }*)arg1 forInput:(id)arg2;
 - (void)setStillImageCaptureStatusDelegate:(id)arg1;
+- (void)setStillImageGraphSupportsMultipleInflightCaptures:(BOOL)arg1;
 - (id)sisOutput;
 - (id)stillImageCaptureStatusDelegate;
+- (BOOL)stillImageGraphSupportsMultipleInflightCaptures;
 - (id)stillImageInput;
 - (void)willStopGraph:(BOOL)arg1;
 - (int)worstCaseInitialMaxBracketCountForBracketingMode:(int)arg1;

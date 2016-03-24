@@ -15,7 +15,6 @@
     int _loadingTarget;
     NSObject<OS_dispatch_queue> *_observerQueue;
     NSHashTable *_observers;
-    double _period;
     struct CGImage { } *_photo;
     double _photoTime;
     BOOL _preparesForVitalityOnLoad;
@@ -26,6 +25,21 @@
         float width; 
         float height; 
     } _targetSize;
+    struct { 
+        struct { 
+            long long value; 
+            int timescale; 
+            unsigned int flags; 
+            long long epoch; 
+        } start; 
+        struct { 
+            long long value; 
+            int timescale; 
+            unsigned int flags; 
+            long long epoch; 
+        } duration; 
+    } _trimmedTimeRange;
+    float _videoCropFactor;
     AVPlayerItem *_videoPlayerItem;
 }
 
@@ -39,24 +53,26 @@
 @property (setter=_setCrossfadeItem:, nonatomic, retain) ISCrossfadeItem *crossfadeItem;
 @property (nonatomic, retain) NSError *error;
 @property (nonatomic) int loadingTarget;
-@property (setter=_setPeriod:, nonatomic) double period;
-@property (setter=_setPhoto:, nonatomic, retain) struct CGImage { }*photo;
-@property (setter=_setphotoTime:, nonatomic) double photoTime;
+@property (nonatomic, readonly) struct CGImage { }*photo;
+@property (nonatomic, readonly) double photoTime;
 @property (nonatomic) BOOL preparesForVitalityOnLoad;
 @property (nonatomic) BOOL reversesMoreVideoFramesInMemory;
 @property (nonatomic) BOOL shouldLoadCrossfadeContent;
 @property (nonatomic) int status;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } targetSize;
+@property (nonatomic, readonly) struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; } trimmedTimeRange;
+@property (nonatomic, readonly) float videoCropFactor;
 @property (setter=_setVideoPlayerItem:, nonatomic, retain) AVPlayerItem *videoPlayerItem;
 
 + (id)playerItemWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
++ (id)playerItemWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
 
 - (void).cxx_destruct;
 - (void)_configureVideoPlayerItem;
 - (int)_crossfadeItemRequestID;
 - (void)_enumerateObserversWithBlock:(id /* block */)arg1;
 - (void)_handleCrossfadeLoadingResultWithSuccess:(BOOL)arg1 crossfadeItem:(id)arg2 error:(id)arg3;
-- (void)_handleVideoPlayerItemLoadResultWithSuccess:(BOOL)arg1 playerItem:(id)arg2 error:(id)arg3;
+- (void)_handleVideoPlayerItemLoadResultWithSuccess:(BOOL)arg1 playerItem:(id)arg2 videoCropFactor:(float)arg3 error:(id)arg4;
 - (BOOL)_isLoadingCancelled;
 - (void)_loadCrossfadeItemIfNeeded;
 - (void)_loadNextResourceIfNeeded;
@@ -70,12 +86,10 @@
 - (void)_setLoadingCancelled:(BOOL)arg1;
 - (void)_setNeedsToLoadCrossfadeItem:(BOOL)arg1;
 - (void)_setNeedsToLoadVideoPlayerItem:(BOOL)arg1;
-- (void)_setPeriod:(double)arg1;
-- (void)_setPhoto:(struct CGImage { }*)arg1;
 - (void)_setStatus:(int)arg1;
 - (void)_setVideoPlayerItem:(id)arg1;
+- (void)_setVideoPlayerItem:(id)arg1 cropFactor:(float)arg2;
 - (void)_setVideoPlayerItemRequestID:(int)arg1;
-- (void)_setphotoTime:(double)arg1;
 - (void)_updateStatus;
 - (int)_videoPlayerItemRequestID;
 - (BOOL)aggressivelyCacheVideoFrames;
@@ -86,8 +100,8 @@
 - (id)error;
 - (id)init;
 - (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2;
+- (id)initWithAsset:(id)arg1 targetSize:(struct CGSize { float x1; float x2; })arg2 trimmedTimeRange:(struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })arg3;
 - (int)loadingTarget;
-- (double)period;
 - (struct CGImage { }*)photo;
 - (double)photoTime;
 - (BOOL)preparesForVitalityOnLoad;
@@ -102,7 +116,9 @@
 - (BOOL)shouldLoadCrossfadeContent;
 - (int)status;
 - (struct CGSize { float x1; float x2; })targetSize;
+- (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })trimmedTimeRange;
 - (void)unregisterObserver:(id)arg1;
+- (float)videoCropFactor;
 - (id)videoPlayerItem;
 
 @end

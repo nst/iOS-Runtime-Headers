@@ -3,6 +3,7 @@
  */
 
 @interface UIColor : NSObject <NSCopying, NSSecureCoding> {
+    NSString *_cachedStyleString;
     NSString *_systemColorName;
 }
 
@@ -423,6 +424,10 @@
 + (struct UIColor { Class x1; }*)ICGrayColor;
 + (struct UIColor { Class x1; }*)ICGrayTodoButtonColor;
 + (struct UIColor { Class x1; }*)ICGrayTodoButtonHighlightColor;
++ (struct UIColor { Class x1; }*)ICLearnMoreButtonPressedColor;
++ (struct UIColor { Class x1; }*)ICLearnMoreButtonUnpressedColor;
++ (struct UIColor { Class x1; }*)ICLockIconColor;
++ (struct UIColor { Class x1; }*)ICLockIconColorList;
 + (struct UIColor { Class x1; }*)ICRedColor;
 + (struct UIColor { Class x1; }*)ICTintColor;
 + (struct UIColor { Class x1; }*)ICTintedSelectionColor;

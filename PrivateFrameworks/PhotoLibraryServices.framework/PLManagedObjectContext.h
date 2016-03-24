@@ -43,6 +43,7 @@
 
 + (void)__prepareEntityPropertyLookups;
 + (id)_attributeNamesByIndexByEntityNames;
++ (id)_changeNotificationKeys;
 + (void)_getStoreURL:(id*)arg1 options:(id*)arg2 enableNotifications:(BOOL)arg3;
 + (void)_getStoreURL:(id*)arg1 options:(id*)arg2 forFileURL:(id)arg3 enableNotifications:(BOOL)arg4;
 + (unsigned long long)_indexValueForPropertyNames:(id)arg1 entityName:(id)arg2 indexesByPropertyNamesByEntityNames:(id)arg3;

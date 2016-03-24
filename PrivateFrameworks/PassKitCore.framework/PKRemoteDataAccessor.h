@@ -12,6 +12,7 @@
 
 - (id)archiveData;
 - (void)contentWithCompletion:(id /* block */)arg1;
+- (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2;
 - (void)dealloc;
 - (id)displayProfileOfType:(int)arg1;
 - (void)imageSetForType:(int)arg1 screenScale:(float)arg2 suffix:(id)arg3 displayProfile:(id)arg4 preheat:(BOOL)arg5 withCompletion:(id /* block */)arg6;

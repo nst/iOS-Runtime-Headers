@@ -16,6 +16,6 @@
 - (void)dealloc;
 - (id)initWithReportingURL:(id)arg1 insertTimestamp:(long long)arg2 eventController:(id)arg3;
 - (BOOL)markEventsAsReported;
-- (void)writeEventsToStream:(id)arg1;
+- (id)writeEventsToStream:(id)arg1;
 
 @end

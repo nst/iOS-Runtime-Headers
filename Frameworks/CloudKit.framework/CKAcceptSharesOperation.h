@@ -21,7 +21,9 @@
 - (id /* block */)acceptSharesCompletionBlock;
 - (unsigned long long)activityStart;
 - (id)errorsByShareURL;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithShareURLs:(id)arg1;
 - (id /* block */)perShareCompletionBlock;

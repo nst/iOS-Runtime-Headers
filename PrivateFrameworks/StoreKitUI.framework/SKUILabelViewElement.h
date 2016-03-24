@@ -3,6 +3,7 @@
  */
 
 @interface SKUILabelViewElement : SKUIViewElement <SKUILinkHandler> {
+    int _badgePlacement;
     NSArray *_badges;
     BOOL _containsLinks;
     NSMutableDictionary *_domObjectsToViewElements;
@@ -17,6 +18,7 @@
     IKDOMElement *_xml;
 }
 
+@property (nonatomic, readonly) int badgePlacement;
 @property (nonatomic, readonly) NSArray *badges;
 @property (nonatomic) BOOL containsLinks;
 @property (readonly, copy) NSString *debugDescription;
@@ -39,6 +41,7 @@
 - (id)_stringFromNumberElement:(id)arg1;
 - (void)_walkDOM:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (id)applyUpdatesWithElement:(id)arg1;
+- (int)badgePlacement;
 - (id)badges;
 - (BOOL)containsLinks;
 - (void)dealloc;

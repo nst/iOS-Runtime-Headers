@@ -4,7 +4,10 @@
 
 @interface GEOTileSet : PBCodable <NSCopying> {
     NSString *_baseURL;
+    int _checksumType;
+    NSMutableArray *_countryRegionWhitelists;
     struct { 
+        unsigned int checksumType : 1; 
         unsigned int updateBehavior : 1; 
         unsigned int multiTileURLUsesStatusCodes : 1; 
     } _has;
@@ -20,7 +23,10 @@
 }
 
 @property (nonatomic, retain) NSString *baseURL;
+@property (nonatomic) int checksumType;
+@property (nonatomic, retain) NSMutableArray *countryRegionWhitelists;
 @property (nonatomic, readonly) BOOL hasBaseURL;
+@property (nonatomic) BOOL hasChecksumType;
 @property (nonatomic, readonly) BOOL hasLocalizationURL;
 @property (nonatomic, readonly) BOOL hasMultiTileURL;
 @property (nonatomic) BOOL hasMultiTileURLUsesStatusCodes;
@@ -35,17 +41,24 @@
 @property (nonatomic) int updateBehavior;
 @property (nonatomic, retain) NSMutableArray *validVersions;
 
+- (void)addCountryRegionWhitelist:(id)arg1;
 - (void)addSupportedLanguage:(id)arg1;
 - (void)addValidVersion:(id)arg1;
 - (id)baseURL;
+- (int)checksumType;
+- (void)clearCountryRegionWhitelists;
 - (void)clearSupportedLanguages;
 - (void)clearValidVersions;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)countryRegionWhitelistAtIndex:(unsigned int)arg1;
+- (id)countryRegionWhitelists;
+- (unsigned int)countryRegionWhitelistsCount;
 - (void)dealloc;
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasBaseURL;
+- (BOOL)hasChecksumType;
 - (BOOL)hasLocalizationURL;
 - (BOOL)hasMultiTileURL;
 - (BOOL)hasMultiTileURLUsesStatusCodes;
@@ -59,6 +72,9 @@
 - (BOOL)readFrom:(id)arg1;
 - (int)scale;
 - (void)setBaseURL:(id)arg1;
+- (void)setChecksumType:(int)arg1;
+- (void)setCountryRegionWhitelists:(id)arg1;
+- (void)setHasChecksumType:(BOOL)arg1;
 - (void)setHasMultiTileURLUsesStatusCodes:(BOOL)arg1;
 - (void)setHasUpdateBehavior:(BOOL)arg1;
 - (void)setLocalizationURL:(id)arg1;

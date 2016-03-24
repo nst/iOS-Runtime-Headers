@@ -14,13 +14,13 @@
 - (id)dataRoamingSpecifiers;
 - (void)dealloc;
 - (id)getCDMARoamingStatus:(id)arg1;
-- (id)getDataRoamingPlanName:(id)arg1;
 - (id)getDataRoamingStatus:(id)arg1;
 - (id)getEUInternetStatus:(id)arg1;
 - (id)getVoiceRoamingStatus:(id)arg1;
 - (id)init;
 - (void)newCarrierNotification;
 - (void)reloadRoamingStatus;
+- (void)roamingOptionsDidChange;
 - (void)setCDMARoamingEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setDataRoamingEnabled:(id)arg1 specifier:(id)arg2;
 - (void)setEUInternetEnabled:(id)arg1 specifier:(id)arg2;

@@ -30,7 +30,7 @@
     ISPlayerItem *_playerItem;
     BOOL _shouldManagePlayerItemLoading;
     int _status;
-    AVPlayer *_videoPlayer;
+    ISWrappedAVPlayer *_videoPlayer;
 }
 
 @property (nonatomic, readonly) NSHashTable *_changeObservers;
@@ -112,12 +112,14 @@
 - (void)inputControllerDidChange:(id)arg1;
 - (id)inputs;
 - (BOOL)isPhotoVisible;
+- (BOOL)isPlayingVitality;
 - (BOOL)isPlayingVitalityHint;
 - (BOOL)managesAudioSession;
 - (struct { long long x1; int x2; unsigned int x3; long long x4; })photoTime;
 - (void)playVitalityHint;
 - (void)playbackControllerPlaybackStateDidChange:(id)arg1;
 - (void)playbackControllerPlayerStatusDidChange:(id)arg1;
+- (void)playbackControllerPlayingVitalityDidChange:(id)arg1;
 - (id)playbackSpec;
 - (void)playbackSpecDidChange:(id)arg1;
 - (int)playbackState;

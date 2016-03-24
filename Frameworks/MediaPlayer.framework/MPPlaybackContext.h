@@ -11,6 +11,7 @@
 }
 
 @property (setter=mpuReporting_setFeatureName:, nonatomic, copy) NSString *mpuReporting_featureName;
+@property (getter=mpuReporting_isQuickPlay, nonatomic, readonly) BOOL mpuReporting_quickPlay;
 @property (setter=mpuReporting_setRecommendationData:, nonatomic, copy) NSData *mpuReporting_recommendationData;
 @property (nonatomic) unsigned int repeatType;
 @property (nonatomic) BOOL shouldRestartPlayback;
@@ -41,6 +42,7 @@
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 
 - (id)mpuReporting_featureName;
+- (BOOL)mpuReporting_isQuickPlay;
 - (id)mpuReporting_recommendationData;
 - (void)mpuReporting_setFeatureName:(id)arg1;
 - (void)mpuReporting_setRecommendationData:(id)arg1;

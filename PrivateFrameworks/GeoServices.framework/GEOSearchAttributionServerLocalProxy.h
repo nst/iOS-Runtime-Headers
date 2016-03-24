@@ -6,6 +6,7 @@
     GEOSearchAttributionManifest *_attributionManifest;
     NSLock *_attributionManifestLock;
     NSMapTable *_listeners;
+    NSLock *_listenersLock;
     NSMutableArray *_updateManifestCompletionHandlers;
     NSMutableArray *_updateManifestErrorHandlers;
     BOOL _updatingManifest;

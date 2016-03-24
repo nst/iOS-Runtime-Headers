@@ -47,7 +47,7 @@
 - (id)hd_associatedSampleTypes;
 - (id)hd_sampleType;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (id)hk_timePeriods;
 

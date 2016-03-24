@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HomeKitDaemon.framework/HomeKitDaemon
  */
 
-@interface HMDServerBag : NSObject {
+@interface HMDServerBag : NSObject <NSURLSessionDelegate> {
     NSDictionary *_dictionaryRepresentation;
     unsigned int _environment;
     NSObject<OS_dispatch_queue> *_propertyQueue;
@@ -16,10 +16,14 @@
 @property (nonatomic, readonly, copy) NSURL *accessoryReportURL;
 @property (nonatomic, readonly, copy) NSURL *activationCertificateHostnameURL;
 @property (nonatomic, readonly, copy) NSURL *activationHostnameURL;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
 @property (nonatomic, copy) NSDictionary *dictionaryRepresentation;
 @property (nonatomic, readonly) unsigned int environment;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *propertyQueue;
 @property (nonatomic) BOOL refreshing;
+@property (readonly) Class superclass;
 @property (nonatomic, readonly) NSURL *url;
 @property (nonatomic, readonly) NSURLSession *urlSession;
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
@@ -31,6 +35,7 @@
 + (id)serverBagURLForEnvironment:(unsigned int)arg1;
 
 - (void).cxx_destruct;
+- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_handleServerBagResponseData:(id)arg1 response:(id)arg2 error:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)_loadDefaultBag;
 - (void)_synchronizeWithCompletion:(id /* block */)arg1;

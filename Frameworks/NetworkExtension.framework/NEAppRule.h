@@ -9,6 +9,8 @@
     NSArray *_matchDomains;
     NSString *_matchPath;
     NSString *_matchSigningIdentifier;
+    BOOL _noDivertDNS;
+    BOOL _noRestriction;
 }
 
 @property (copy) NSArray *additionalExecutables;
@@ -17,6 +19,8 @@
 @property (copy) NSArray *matchDomains;
 @property (copy) NSString *matchPath;
 @property (readonly) NSString *matchSigningIdentifier;
+@property BOOL noDivertDNS;
+@property BOOL noRestriction;
 
 + (BOOL)supportsSecureCoding;
 
@@ -35,11 +39,15 @@
 - (id)matchDomains;
 - (id)matchPath;
 - (id)matchSigningIdentifier;
+- (BOOL)noDivertDNS;
+- (BOOL)noRestriction;
 - (BOOL)overlapsWithRule:(id)arg1;
 - (void)setAdditionalExecutables:(id)arg1;
 - (void)setMatchAccountIdentifiers:(id)arg1;
 - (void)setMatchDomains:(id)arg1;
 - (void)setMatchPath:(id)arg1;
+- (void)setNoDivertDNS:(BOOL)arg1;
+- (void)setNoRestriction:(BOOL)arg1;
 - (BOOL)signingIdentifierAllowed:(id)arg1 domainsRequired:(out BOOL*)arg2;
 
 @end

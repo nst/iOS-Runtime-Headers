@@ -158,5 +158,6 @@
 // Image: /System/Library/PrivateFrameworks/GeoServices.framework/GeoServices
 
 - (void)_scheduleThrottlingError;
+- (void)_scheduleThrottlingErrorForKey:(id)arg1;
 
 @end

@@ -13,6 +13,7 @@
     SKUIBuyButtonDescriptor *_buyButtonDescriptor;
     NSString *_confirmationText;
     long long _dataPlaybackId;
+    BOOL _disabledButSelectable;
     BOOL _enabled;
     long long _itemIdentifier;
     NSString *_nonToggledText;
@@ -42,6 +43,7 @@
 @property (nonatomic, readonly) SKUIBuyButtonDescriptor *buyButtonDescriptor;
 @property (nonatomic, readonly) NSString *confirmationText;
 @property (nonatomic, readonly) long long dataPlaybackId;
+@property (getter=isDisabledButSelectable, nonatomic, readonly) BOOL disabledButSelectable;
 @property (nonatomic, readonly) long long itemIdentifier;
 @property (nonatomic, readonly) NSString *nonToggledText;
 @property (nonatomic, readonly) NSString *playItemIdentifier;
@@ -74,6 +76,7 @@
 - (unsigned int)elementType;
 - (id)initWithDOMElement:(id)arg1 parent:(id)arg2 elementFactory:(id)arg3;
 - (BOOL)isBigHitButton;
+- (BOOL)isDisabledButSelectable;
 - (BOOL)isEnabled;
 - (BOOL)isSelected;
 - (BOOL)isToggled;

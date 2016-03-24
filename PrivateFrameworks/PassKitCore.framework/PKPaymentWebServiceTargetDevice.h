@@ -23,7 +23,10 @@
 - (id)deviceRegion;
 - (void)downloadAllPaymentPassesForPaymentWebService:(id)arg1;
 - (id)init;
-- (void)noteProvisioningInProgress:(BOOL)arg1;
+- (void)noteProvisioningDidBegin;
+- (void)noteProvisioningDidEnd;
+- (void)noteProvisioningUserInterfaceDidAppear;
+- (void)noteProvisioningUserInterfaceDidDisappear;
 - (int)paymentSupportedInCurrentRegionForWebService:(id)arg1;
 - (void)paymentWebService:(id)arg1 addPaymentPass:(id)arg2 withCompletionHandler:(id /* block */)arg3;
 - (void)paymentWebService:(id)arg1 addPaymentPass:(id)arg2 withCompletionHandlerV2:(id /* block */)arg3;

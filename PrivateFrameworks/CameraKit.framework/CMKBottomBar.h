@@ -4,7 +4,6 @@
 
 @interface CMKBottomBar : UIView <CMKExpandableMenuButtonDelegate> {
     CMKHDRButton *_HDRButton;
-    BOOL __HDRButtonExpanded;
     UIView *__elapsedTimeViewCenteringLayoutSpacer;
     CMKExpandableMenuButton *__expandedMenuButton;
     UIView *__filterButtonBottomLayoutSpacer;
@@ -13,13 +12,13 @@
     UIView *__shutterButtomBottomLayoutSpacer;
     UIView *__slalomIndicatorBottomLayoutSpacer;
     UIView *__stillDuringVideoButtonBottomLayoutSpacer;
-    BOOL __timerButtonExpanded;
     int _backgroundStyle;
     UIView *_backgroundView;
     UIButton *_cancelButton;
     <CMKBottomBarDelegate> *_delegate;
     CMKElapsedTimeView *_elapsedTimeView;
     CMKFilterButton *_filterButton;
+    CMKFlashButton *_flashButton;
     CMKFlipButton *_flipButton;
     CMKImageWell *_imageWell;
     CMKModeDial *_modeDial;
@@ -31,7 +30,6 @@
 }
 
 @property (nonatomic, retain) CMKHDRButton *HDRButton;
-@property (getter=_isHDRButtonExpanded, setter=_setHDRButtonExpanded:, nonatomic) BOOL _HDRButtonExpanded;
 @property (nonatomic, readonly) UIView *_elapsedTimeViewCenteringLayoutSpacer;
 @property (setter=_setExpandedMenuButton:, nonatomic, retain) CMKExpandableMenuButton *_expandedMenuButton;
 @property (nonatomic, readonly) UIView *_filterButtonBottomLayoutSpacer;
@@ -40,13 +38,13 @@
 @property (nonatomic, readonly) UIView *_shutterButtomBottomLayoutSpacer;
 @property (nonatomic, readonly) UIView *_slalomIndicatorBottomLayoutSpacer;
 @property (nonatomic, readonly) UIView *_stillDuringVideoButtonBottomLayoutSpacer;
-@property (getter=_isTimerButtonExpanded, setter=_setTimerButtonExpanded:, nonatomic) BOOL _timerButtonExpanded;
 @property (nonatomic) int backgroundStyle;
 @property (nonatomic, readonly) UIView *backgroundView;
 @property (nonatomic, retain) UIButton *cancelButton;
 @property (nonatomic) <CMKBottomBarDelegate> *delegate;
 @property (nonatomic, retain) CMKElapsedTimeView *elapsedTimeView;
 @property (nonatomic, retain) CMKFilterButton *filterButton;
+@property (nonatomic, retain) CMKFlashButton *flashButton;
 @property (nonatomic, retain) CMKFlipButton *flipButton;
 @property (nonatomic, retain) CMKImageWell *imageWell;
 @property (nonatomic, retain) CMKModeDial *modeDial;
@@ -67,15 +65,11 @@
 - (id)_filterButtonBottomLayoutSpacer;
 - (id)_hdrButtonCenteringLayoutSpacer;
 - (id)_imageWellBottomLayoutSpacer;
-- (BOOL)_isHDRButtonExpanded;
-- (BOOL)_isTimerButtonExpanded;
 - (void)_layoutForHorizontalOrientation;
 - (void)_layoutForVerticalOrientation;
 - (void)_layoutMenuButtons:(id)arg1 apply:(BOOL)arg2 withExpandedMenuButton:(id)arg3 collapsingMenuButton:(id)arg4 collapsingFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg5;
 - (void)_removeAllConstraints;
 - (void)_setExpandedMenuButton:(id)arg1;
-- (void)_setHDRButtonExpanded:(BOOL)arg1;
-- (void)_setTimerButtonExpanded:(BOOL)arg1;
 - (void)_setupHorizontalBackgroundViewConstraints;
 - (void)_setupHorizontalCancelButtonConstraints;
 - (void)_setupHorizontalConstraints;
@@ -95,7 +89,7 @@
 - (void)_setupVerticalShutterButtonConstraints;
 - (void)_setupVerticalSlalomIndicatorConstraints;
 - (BOOL)_shouldHideElapsedTimeView;
-- (BOOL)_shouldHideFlipButton;
+- (BOOL)_shouldHideFlashButton;
 - (BOOL)_shouldHideHDRButton;
 - (BOOL)_shouldHideTimerButton;
 - (id)_shutterButtomBottomLayoutSpacer;
@@ -114,6 +108,7 @@
 - (void)expandMenuButton:(id)arg1 animated:(BOOL)arg2;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })expandedFrameForMenuButton:(id)arg1;
 - (id)filterButton;
+- (id)flashButton;
 - (id)flipButton;
 - (id)imageWell;
 - (id)initWithCoder:(id)arg1;
@@ -128,6 +123,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setElapsedTimeView:(id)arg1;
 - (void)setFilterButton:(id)arg1;
+- (void)setFlashButton:(id)arg1;
 - (void)setFlipButton:(id)arg1;
 - (void)setHDRButton:(id)arg1;
 - (void)setImageWell:(id)arg1;

@@ -30,13 +30,16 @@
 - (double)doubleForKey:(id)arg1;
 - (void)expectCommitWithCompletion:(id /* block */)arg1;
 - (id)initWithHealthDaemon:(id)arg1;
+- (long long)int64ForKey:(id)arg1;
 - (void)markAchievementAlerted:(id)arg1;
+- (id)modifiedKeyValues;
 - (void)setAchievements:(id)arg1;
 - (void)setAddedAchievements:(id)arg1;
 - (void)setCommitExpects:(id)arg1;
 - (void)setDate:(id)arg1 forKey:(id)arg2;
 - (void)setDict:(id)arg1;
 - (void)setDouble:(double)arg1 forKey:(id)arg2;
+- (void)setInt64:(long long)arg1 forKey:(id)arg2;
 - (void)setUnalertedAchievements:(id)arg1;
 - (void)setUnsignedInteger:(unsigned int)arg1 forKey:(id)arg2;
 - (id)unalertedAchievements;

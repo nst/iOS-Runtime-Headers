@@ -11,6 +11,7 @@
     id _mcNotificationToken;
     NSObject<OS_dispatch_queue> *_queue;
     id /* block */ _report;
+    NSObject<OS_dispatch_queue> *_sync;
 }
 
 @property int annotationNotifyToken;
@@ -25,6 +26,7 @@
 @property (retain) NSObject<OS_dispatch_queue> *queue;
 @property (copy) id /* block */ report;
 @property (readonly) Class superclass;
+@property (retain) NSObject<OS_dispatch_queue> *sync;
 
 - (void).cxx_destruct;
 - (int)annotationNotifyToken;
@@ -49,5 +51,7 @@
 - (void)setMcNotificationToken:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)setReport:(id /* block */)arg1;
+- (void)setSync:(id)arg1;
+- (id)sync;
 
 @end

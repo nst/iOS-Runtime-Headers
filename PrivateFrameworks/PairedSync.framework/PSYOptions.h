@@ -8,6 +8,7 @@
     NSArray *_jobs;
     BOOL _resetDeviceSyncState;
     BOOL _resumePendingJobs;
+    unsigned int _syncSessionType;
     unsigned int _terminationJobCount;
     NSArray *_testInputs;
 }
@@ -17,6 +18,7 @@
 @property (nonatomic, copy) NSArray *jobs;
 @property (getter=shouldResetDeviceSyncState, nonatomic) BOOL resetDeviceSyncState;
 @property (getter=shouldResumePendingJobs, nonatomic) BOOL resumePendingJobs;
+@property (nonatomic) unsigned int syncSessionType;
 @property (nonatomic) unsigned int terminationJobCount;
 @property (nonatomic, copy) NSArray *testInputs;
 
@@ -35,10 +37,12 @@
 - (void)setJobs:(id)arg1;
 - (void)setResetDeviceSyncState:(BOOL)arg1;
 - (void)setResumePendingJobs:(BOOL)arg1;
+- (void)setSyncSessionType:(unsigned int)arg1;
 - (void)setTerminationJobCount:(unsigned int)arg1;
 - (void)setTestInputs:(id)arg1;
 - (BOOL)shouldResetDeviceSyncState;
 - (BOOL)shouldResumePendingJobs;
+- (unsigned int)syncSessionType;
 - (unsigned int)terminationJobCount;
 - (id)testInputs;
 

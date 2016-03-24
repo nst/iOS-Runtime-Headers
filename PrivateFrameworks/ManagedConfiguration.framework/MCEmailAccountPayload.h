@@ -56,6 +56,7 @@
 - (void).cxx_destruct;
 - (id)_authenticationTypeLocalizedString:(id)arg1;
 - (id)_emailAccountTypeLocalizedString;
+- (BOOL)containsSensitiveUserInformation;
 - (id)description;
 - (id)emailAccountDescription;
 - (id)emailAccountName;

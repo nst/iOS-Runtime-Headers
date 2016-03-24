@@ -19,6 +19,7 @@
 + (void)setHidePastEventsForTests:(BOOL)arg1;
 + (void)setMessagesToHarvestImmediately:(int)arg1;
 + (void)setNLEventsEnabledForTests:(BOOL)arg1;
++ (void)setOnlyShowSignificantPseudoContacts:(BOOL)arg1;
 + (void)setProactiveEnabledForTests:(BOOL)arg1;
 + (void)setShowCancelledEventsForTests:(BOOL)arg1;
 + (void)setShowContactsFoundInMail:(BOOL)arg1;

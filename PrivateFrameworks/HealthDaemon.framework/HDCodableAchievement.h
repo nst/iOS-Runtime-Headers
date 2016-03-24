@@ -4,6 +4,7 @@
 
 @interface HDCodableAchievement : PBCodable <NSCopying> {
     long long _achievementType;
+    BOOL _alerted;
     double _completedDate;
     double _doubleValue;
     NSData *_extraData;
@@ -12,16 +13,19 @@
         unsigned int completedDate : 1; 
         unsigned int doubleValue : 1; 
         unsigned int intValue : 1; 
+        unsigned int alerted : 1; 
     } _has;
     long long _intValue;
     NSData *_uuid;
 }
 
 @property (nonatomic) long long achievementType;
+@property (nonatomic) BOOL alerted;
 @property (nonatomic) double completedDate;
 @property (nonatomic) double doubleValue;
 @property (nonatomic, retain) NSData *extraData;
 @property (nonatomic) BOOL hasAchievementType;
+@property (nonatomic) BOOL hasAlerted;
 @property (nonatomic) BOOL hasCompletedDate;
 @property (nonatomic) BOOL hasDoubleValue;
 @property (nonatomic, readonly) BOOL hasExtraData;
@@ -32,6 +36,7 @@
 
 - (void).cxx_destruct;
 - (long long)achievementType;
+- (BOOL)alerted;
 - (double)completedDate;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -43,6 +48,7 @@
 - (double)doubleValue;
 - (id)extraData;
 - (BOOL)hasAchievementType;
+- (BOOL)hasAlerted;
 - (BOOL)hasCompletedDate;
 - (BOOL)hasDoubleValue;
 - (BOOL)hasExtraData;
@@ -54,10 +60,12 @@
 - (void)mergeFrom:(id)arg1;
 - (BOOL)readFrom:(id)arg1;
 - (void)setAchievementType:(long long)arg1;
+- (void)setAlerted:(BOOL)arg1;
 - (void)setCompletedDate:(double)arg1;
 - (void)setDoubleValue:(double)arg1;
 - (void)setExtraData:(id)arg1;
 - (void)setHasAchievementType:(BOOL)arg1;
+- (void)setHasAlerted:(BOOL)arg1;
 - (void)setHasCompletedDate:(BOOL)arg1;
 - (void)setHasDoubleValue:(BOOL)arg1;
 - (void)setHasIntValue:(BOOL)arg1;

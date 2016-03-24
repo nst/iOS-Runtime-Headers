@@ -8,7 +8,6 @@
 + (int)masterThumbnailFormat;
 + (struct CGSize { float x1; float x2; })scaledSizeForSize:(struct CGSize { float x1; float x2; })arg1 format:(int)arg2 capLength:(BOOL)arg3;
 + (struct CGSize { float x1; float x2; })sizeForFormat:(int)arg1;
-+ (int)thumbnailFormat;
 + (int)wildcatStackFormat;
 
 @end

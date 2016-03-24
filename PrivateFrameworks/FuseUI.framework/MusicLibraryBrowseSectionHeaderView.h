@@ -11,6 +11,7 @@
     int _hairlineStyleForNonFloatingState;
     UIView *_hairlineView;
     UIColor *_headerTextColorForNonFloatingState;
+    BOOL _shouldSkipLayout;
     float _topContentInset;
 }
 
@@ -42,6 +43,7 @@
 - (id)headerTextColorForNonFloatingState;
 - (id)initWithReuseIdentifier:(id)arg1;
 - (BOOL)isActionable;
+- (void)layoutBelowIfNeeded;
 - (void)layoutSubviews;
 - (void)music_inheritedLayoutInsetsDidChange;
 - (void)setActionable:(BOOL)arg1;
@@ -49,6 +51,7 @@
 - (void)setBackgroundColorForNonFloatingState:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setFloating:(BOOL)arg1;
+- (void)setFrame:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
 - (void)setHairlineStyleForNonFloatingState:(int)arg1;
 - (void)setHeaderText:(id)arg1;
 - (void)setHeaderTextColorForNonFloatingState:(id)arg1;

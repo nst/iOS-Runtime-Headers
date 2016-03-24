@@ -6,10 +6,10 @@
 @required
 
 + (<HDSyncCodable> *)decodeSyncObjectWithData:(NSData *)arg1;
-+ (long long)nextSyncAnchorWithStore:(id <HDSyncStore>)arg1 startSyncAnchor:(long long)arg2 healthDaemon:(id <HDHealthDaemon>)arg3 error:(id*)arg4;
-+ (BOOL)receiveSyncObjects:(NSArray *)arg1 syncStore:(id <HDSyncStore>)arg2 healthDaemon:(id <HDHealthDaemon>)arg3 error:(id*)arg4;
++ (long long)nextSyncAnchorWithStore:(id <HDSyncStore>)arg1 predicate:(HDSQLitePredicate *)arg2 startSyncAnchor:(long long)arg3 healthDaemon:(id <HDHealthDaemon>)arg4 error:(id*)arg5;
++ (int)receiveSyncObjects:(NSArray *)arg1 syncStore:(id <HDSyncStore>)arg2 healthDaemon:(id <HDHealthDaemon>)arg3 error:(id*)arg4;
 + (NSSet *)syncEntityDependencies;
 + (int)syncEntityType;
-+ (NSArray *)syncObjectsWithStore:(id <HDSyncStore>)arg1 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg2 lastSyncAnchor:(long long*)arg3 healthDaemon:(id <HDHealthDaemon>)arg4 error:(id*)arg5;
++ (NSArray *)syncObjectsWithStore:(id <HDSyncStore>)arg1 predicate:(HDSQLitePredicate *)arg2 syncAnchorRange:(struct HDSyncAnchorRange { long long x1; long long x2; })arg3 lastSyncAnchor:(long long*)arg4 limit:(unsigned int)arg5 healthDaemon:(id <HDHealthDaemon>)arg6 error:(id*)arg7;
 
 @end

@@ -10,6 +10,7 @@
 @property (nonatomic) <SBUIPluginControllerHost> *host;
 @property (getter=isVisible, nonatomic) BOOL visible;
 
+- (void).cxx_destruct;
 - (void)cancelPendingActivationEvent:(int)arg1;
 - (BOOL)handleActivationEvent:(int)arg1 eventSource:(int)arg2 context:(void*)arg3;
 - (void)handleBluetoothDismissal;

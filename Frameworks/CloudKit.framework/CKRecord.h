@@ -28,6 +28,7 @@
     CKShareID *_shareID;
     NSString *_shareProtectionEtag;
     BOOL _trackChanges;
+    BOOL _useLightweightPCS;
     NSMutableDictionary *_values;
     BOOL _wasCached;
     NSString *_zoneProtectionEtag;
@@ -70,6 +71,7 @@
 @property (nonatomic, readonly) unsigned int size;
 @property (readonly) Class superclass;
 @property (nonatomic) BOOL trackChanges;
+@property (nonatomic) BOOL useLightweightPCS;
 @property (nonatomic, retain) NSDictionary *values;
 @property (nonatomic) BOOL wasCached;
 @property (nonatomic, retain) NSString *zoneProtectionEtag;
@@ -149,6 +151,7 @@
 - (void)setNilValueForKey:(id)arg1;
 - (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setObject:(id)arg1 forKeyedSubscript:(id)arg2;
+- (void)setObjectNoValidate:(id)arg1 forKey:(id)arg2;
 - (void)setOriginalValues:(id)arg1;
 - (void)setPermission:(int)arg1;
 - (void)setPluginFields:(id)arg1;
@@ -162,6 +165,7 @@
 - (void)setShareID:(id)arg1;
 - (void)setShareProtectionEtag:(id)arg1;
 - (void)setTrackChanges:(BOOL)arg1;
+- (void)setUseLightweightPCS:(BOOL)arg1;
 - (void)setValue:(id)arg1 forKey:(id)arg2;
 - (void)setValues:(id)arg1;
 - (void)setWasCached:(BOOL)arg1;
@@ -170,6 +174,7 @@
 - (id)shareProtectionEtag;
 - (unsigned int)size;
 - (BOOL)trackChanges;
+- (BOOL)useLightweightPCS;
 - (id)valueForKey:(id)arg1;
 - (id)values;
 - (BOOL)wasCached;

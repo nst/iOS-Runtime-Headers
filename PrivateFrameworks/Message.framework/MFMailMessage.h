@@ -65,6 +65,7 @@
 
 // Image: /System/Library/PrivateFrameworks/CoreSuggestionsInternals.framework/CoreSuggestionsInternals
 
++ (void)_loadMailCoreFramework;
 + (id)sg_messageWithRFC822Data:(id)arg1;
 
 - (id)sg_bestAlternativePart;

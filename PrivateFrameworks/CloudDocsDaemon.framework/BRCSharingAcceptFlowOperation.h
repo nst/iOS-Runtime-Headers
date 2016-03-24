@@ -45,6 +45,7 @@
 - (void)_isUserSignedInToiCloudDrive;
 - (void)_openSharedDocument;
 - (void)_performNextStep;
+- (void)_showGenericErrorAndFinish:(id)arg1;
 - (void)_showSharingOpenDialog;
 - (void)_waitForFaultToBeOnDisk;
 - (void)_waitForSharedItemToSyncDown;

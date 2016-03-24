@@ -20,7 +20,7 @@
 @property (nonatomic, retain) NSDictionary *userInfo;
 @property (nonatomic, readonly) NSString *viewControllerClassName;
 
-- (void)dealloc;
+- (void).cxx_destruct;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
 - (id)descriptionWithMultilinePrefix:(id)arg1;

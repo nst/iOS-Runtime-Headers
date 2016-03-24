@@ -14,14 +14,15 @@
     UIView *_springViewParent;
 }
 
-@property (nonatomic, readonly, retain) UIButton *okButton;
-@property (nonatomic, readonly, retain) UILabel *promptLabel;
+@property (nonatomic, readonly) UIButton *okButton;
+@property (nonatomic, readonly) UILabel *promptLabel;
 @property (nonatomic) BOOL showsOkButton;
 @property (nonatomic) BOOL showsPromptLabel;
 
 + (BOOL)_shouldResetAutoAcceptWhenMaxNumbersMetInResignFirstResponder;
 + (BOOL)_usesTextFieldForFirstResponder;
 
+- (void).cxx_destruct;
 - (void)_autofillForMesaWithCompletion:(id /* block */)arg1;
 - (void)_getPasscodeFieldSize:(struct CGSize { float x1; float x2; }*)arg1 okButtonSize:(struct CGSize { float x1; float x2; }*)arg2;
 - (void)_handleKeyUIEvent:(id)arg1;
@@ -31,7 +32,6 @@
 - (BOOL)becomeFirstResponder;
 - (BOOL)canBecomeFirstResponder;
 - (BOOL)canResignFirstResponder;
-- (void)dealloc;
 - (id)hitTest:(struct CGPoint { float x1; float x2; })arg1 withEvent:(id)arg2;
 - (id)initWithDefaultSizeAndLightStyle:(BOOL)arg1;
 - (BOOL)isFirstResponder;

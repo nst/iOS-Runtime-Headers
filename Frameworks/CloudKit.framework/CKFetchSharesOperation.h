@@ -13,10 +13,10 @@
 
 @property (nonatomic, copy) id /* block */ fetchSharesCompletionBlock;
 @property (nonatomic, retain) NSMutableDictionary *shareIDErrors;
-@property (nonatomic, readonly) NSArray *shareIDs;
+@property (nonatomic, retain) NSArray *shareIDs;
 @property (nonatomic, retain) NSMutableDictionary *sharesByShareID;
 @property (nonatomic, retain) NSMutableDictionary *zoneIDErrors;
-@property (nonatomic, readonly) NSArray *zoneIDs;
+@property (nonatomic, retain) NSArray *zoneIDs;
 
 - (void).cxx_destruct;
 - (BOOL)CKOperationShouldRun:(id*)arg1;
@@ -24,15 +24,19 @@
 - (void)_handleProgressCallback:(id)arg1;
 - (unsigned long long)activityStart;
 - (id /* block */)fetchSharesCompletionBlock;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithShareIDs:(id)arg1;
 - (id)initWithZoneIDs:(id)arg1;
 - (void)performCKOperation;
 - (void)setFetchSharesCompletionBlock:(id /* block */)arg1;
 - (void)setShareIDErrors:(id)arg1;
+- (void)setShareIDs:(id)arg1;
 - (void)setSharesByShareID:(id)arg1;
 - (void)setZoneIDErrors:(id)arg1;
+- (void)setZoneIDs:(id)arg1;
 - (id)shareIDErrors;
 - (id)shareIDs;
 - (id)sharesByShareID;

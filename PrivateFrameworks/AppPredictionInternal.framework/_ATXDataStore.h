@@ -15,6 +15,7 @@
 + (id)sharedInstance;
 
 - (void).cxx_destruct;
+- (void)_removeFeedbackForBundleId:(id)arg1;
 - (BOOL)_reset;
 - (void)addAppInstallForBundleId:(id)arg1 withDate:(id)arg2;
 - (void)addAppLaunchForBundleId:(id)arg1 withDate:(id)arg2 withLaunchType:(int)arg3;
@@ -39,6 +40,7 @@
 - (int)migration_AppLaunchHistogramToTable;
 - (int)migration_InstallDateToAppTable;
 - (int)migration_LaunchHistoriesToAppTable;
+- (int)migration_RemoveFeedbackForUninstalledApps;
 - (void)notifyObserversAboutRestore;
 - (id)pathsToBackUp;
 - (void)removeAppInfoForBundleId:(id)arg1;

@@ -6,12 +6,14 @@
     int _defaultTaskHint;
     <SFSpeechRecognizerDelegate> *_delegate;
     AFDictationConnection *_dictationConnection;
+    <NSObject> *_facetimeObserver;
     NSString *_languageCode;
     NSLocale *_locale;
     NSOperationQueue *_queue;
 }
 
 @property (getter=isAvailable, nonatomic, readonly) BOOL available;
+@property (getter=isAvailableForRecordingRecognition, nonatomic, readonly) BOOL availableForRecordingRecognition;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) int defaultTaskHint;
 @property (nonatomic) <SFSpeechRecognizerDelegate> *delegate;
@@ -25,6 +27,7 @@
 + (id)supportedLocales;
 
 - (void).cxx_destruct;
+- (void)_informDelegateOfAvailabilityChange;
 - (void)_sendEngagementFeedback:(int)arg1 requestIdentifier:(id)arg2;
 - (void)dealloc;
 - (int)defaultTaskHint;
@@ -33,6 +36,7 @@
 - (id)init;
 - (id)initWithLocale:(id)arg1;
 - (BOOL)isAvailable;
+- (BOOL)isAvailableForRecordingRecognition;
 - (id)locale;
 - (void)prepareWithRequest:(id)arg1;
 - (id)queue;

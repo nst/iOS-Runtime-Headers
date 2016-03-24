@@ -6,6 +6,8 @@
     HSCloudItemIDList *_cloudItemIDList;
 }
 
++ (id)cloudItemIDListForPlaylist:(id)arg1;
+
 - (void).cxx_destruct;
 - (id)HSCloudItemIDList;
 - (void)addCloudItemID:(unsigned long long)arg1 idType:(int)arg2;

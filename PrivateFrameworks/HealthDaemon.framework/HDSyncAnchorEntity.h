@@ -7,8 +7,8 @@
 + (id)_predicateForSyncEntityClass:(Class)arg1;
 + (id)_predicateForSyncEntityClass:(Class)arg1 syncStore:(id)arg2;
 + (id)_predicateForSyncStore:(id)arg1;
-+ (BOOL)_setSyncAnchor:(long long)arg1 forProperties:(id)arg2 entityClass:(Class)arg3 store:(id)arg4 enforceOrder:(BOOL)arg5 database:(id)arg6 error:(id*)arg7;
-+ (BOOL)_setSyncAnchor:(long long)arg1 forProperties:(id)arg2 entityClass:(Class)arg3 store:(id)arg4 enforceOrder:(BOOL)arg5 healthDatabase:(id)arg6 error:(id*)arg7;
++ (BOOL)_setSyncAnchor:(long long)arg1 options:(unsigned int)arg2 updatePolicy:(int)arg3 entityClass:(Class)arg4 store:(id)arg5 database:(id)arg6 error:(id*)arg7;
++ (BOOL)_setSyncAnchor:(long long)arg1 options:(unsigned int)arg2 updatePolicy:(int)arg3 entityClass:(Class)arg4 store:(id)arg5 healthDatabase:(id)arg6 error:(id*)arg7;
 + (long long)_syncAnchorForProperty:(id)arg1 entityClass:(Class)arg2 store:(id)arg3 healthDatabase:(id)arg4 error:(id*)arg5;
 + (id)columnsDefinition;
 + (id)databaseTable;

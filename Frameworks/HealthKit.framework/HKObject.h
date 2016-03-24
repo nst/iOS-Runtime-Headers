@@ -76,7 +76,7 @@
 - (id)hd_relatedJournalEntries;
 - (id)hd_sampleType;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 - (int)hk_integerValue;
 

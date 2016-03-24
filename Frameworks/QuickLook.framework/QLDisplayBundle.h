@@ -108,6 +108,7 @@
 - (BOOL)overlayIsHidden;
 - (id)password;
 - (id)pdfPreviewData;
+- (int)preferredWhitePointAdaptivityStyle;
 - (id)previewItem;
 - (int)previewMode;
 - (id)printPageHelper;

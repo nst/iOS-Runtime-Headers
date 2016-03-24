@@ -25,6 +25,7 @@
 @property (readonly) struct { unsigned long long x1; unsigned long long x2; } usageCollectionSessionID;
 @property BOOL zeroSessionIDMode;
 
++ (BOOL)isGeod;
 + (void)registerGEOLogFacility;
 + (void)setIsGeod;
 + (id)sharedInstance;

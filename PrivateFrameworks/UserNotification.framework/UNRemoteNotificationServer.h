@@ -27,6 +27,7 @@
 + (id)_environmentFromAuditToken:(struct { unsigned int x1[8]; }*)arg1;
 + (id)environmentFromAuditToken:(struct { unsigned int x1[8]; }*)arg1;
 
+- (id)_portNameForEnvironmentName:(id)arg1;
 - (id)_queue_allTopicsForApplication:(id)arg1;
 - (void)_queue_appDebugStateDidChange:(id)arg1;
 - (void)_queue_appDidBecomeBackground:(id)arg1;

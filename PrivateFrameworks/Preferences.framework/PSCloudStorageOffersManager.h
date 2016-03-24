@@ -17,6 +17,7 @@
 
 - (void).cxx_destruct;
 - (void)beginFlowWithNavigationController:(id)arg1 modally:(BOOL)arg2;
+- (void)beginFlowWithNavigationController:(id)arg1 purchaseToken:(id)arg2 buyParameters:(id)arg3 requestHeaders:(id)arg4 modally:(BOOL)arg5;
 - (void)cancelLoad;
 - (void)commerceDelegate:(id)arg1 loadDidFailWithError:(id)arg2;
 - (void)commerceDelegate:(id)arg1 willPresentObjectModel:(id)arg2 page:(id)arg3;

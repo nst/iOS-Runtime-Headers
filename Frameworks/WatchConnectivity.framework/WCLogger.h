@@ -5,7 +5,7 @@
 @interface WCLogger : NSObject
 
 + (id)daemonLog;
-+ (id)frameworkComplicationLog;
 + (id)frameworkLog;
++ (id)frameworkPrivateLog;
 
 @end

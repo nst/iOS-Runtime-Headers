@@ -7,6 +7,7 @@
     <GEOMapItemTransitInfo> *_defaultTransitInfo;
     <NSObject> *_didResolveAttributionToken;
     _MKMapItemAttribution *_encyclopedicAttribution;
+    NSString *_firstLocalizedCategoryName;
     <GEOMapItemPrivate> *_geoMapItem;
     BOOL _isCurrentLocation;
     BOOL _isPlaceHolder;
@@ -18,6 +19,7 @@
     _MKMapItemPhotosAttribution *_photosAttribution;
     GEOPlace *_place;
     _MKMapItemReviewsAttribution *_reviewsAttribution;
+    NSString *_shortAddress;
     NSTimeZone *_timeZone;
     <GEOMapItemTransitInfo> *_updatedTransitInfo;
     NSURL *_url;
@@ -82,6 +84,7 @@
 @property (nonatomic, readonly) GEOPlace *place;
 @property (getter=_placeDataAsData, nonatomic, readonly) NSData *placeDataAsData;
 @property (nonatomic, readonly) MKPlacemark *placemark;
+@property (getter=_poiPinpointURLString, nonatomic, readonly) NSString *poiPinpointURLString;
 @property (getter=_poiSurveyURLString, nonatomic, readonly) NSString *poiSurveyURLString;
 @property (getter=_priceRangeString, nonatomic, readonly) NSString *priceRangeString;
 @property (getter=_providerURL, nonatomic, readonly, copy) NSURL *providerURL;
@@ -105,9 +108,11 @@
 @property (getter=_webURL, nonatomic, readonly, copy) NSURL *webURL;
 @property (nonatomic, readonly) NSString *yelpID;
 
++ (id)_deserializeResourceOptionsFromURL:(id)arg1 error:(out id*)arg2;
 + (void)_fillOutRequest:(id)arg1 withMapsDataString:(id)arg2;
 + (id)_itemWithAddressBookRef:(void*)arg1 geoMapItem:(id)arg2;
 + (id)_itemWithGeoMapItem:(id)arg1;
++ (id)_launchOptionsFromResourceOptionsDictionary:(id)arg1;
 + (void)_mapItemFromHandle:(id)arg1 completionHandler:(id /* block */)arg2;
 + (id)_mapItemWithWithLocation:(id)arg1 addressDictionary:(id)arg2 name:(id)arg3 businessURL:(id)arg4 phoneNumber:(id)arg5 sessionID:(id)arg6 muid:(unsigned long long)arg7 attributionID:(id)arg8 sampleSizeForUserRatingScore:(unsigned int)arg9 normalizedUserRatingScore:(float)arg10;
 + (void)_mapItemsFromHandleURL:(id)arg1 completionHandler:(id /* block */)arg2;
@@ -117,6 +122,7 @@
 + (id)_urlForMapItemHandles:(id)arg1 options:(id)arg2;
 + (id)contactsAddressDictionaryFromGeoAddressDictionary:(id)arg1;
 + (id)contactsAddressKeysForGeoAddressKeys;
++ (id)launchOptionsFromURL:(id)arg1;
 + (id)mapItemForCurrentLocation;
 + (id)mapItemWithDictionary:(id)arg1;
 + (id)mapItemWithSerializedPlaceData:(id)arg1;
@@ -191,6 +197,7 @@
 - (id)_photosAttribution;
 - (id)_placeCardContact;
 - (id)_placeDataAsData;
+- (id)_poiPinpointURLString;
 - (id)_poiSurveyURLString;
 - (id)_priceRangeString;
 - (id)_providerURL;

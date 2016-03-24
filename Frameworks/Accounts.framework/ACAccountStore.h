@@ -55,6 +55,7 @@
 - (id)credentialForAccount:(id)arg1 bundleID:(id)arg2;
 - (id)credentialForAccount:(id)arg1 error:(id*)arg2;
 - (id)credentialForAccount:(id)arg1 serviceID:(id)arg2;
+- (id)credentialForAccount:(id)arg1 serviceID:(id)arg2 error:(id*)arg3;
 - (id)credentialItemForAccount:(id)arg1 serviceName:(id)arg2;
 - (id)dataclassActionsForAccountDeletion:(id)arg1;
 - (id)dataclassActionsForAccountSave:(id)arg1;

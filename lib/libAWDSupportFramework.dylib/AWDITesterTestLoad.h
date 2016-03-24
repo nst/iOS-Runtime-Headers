@@ -14,6 +14,8 @@
 @property (nonatomic, retain) NSMutableArray *testNames;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)testNamesType;
+
 - (void)addTestNames:(id)arg1;
 - (void)clearTestNames;
 - (void)copyTo:(id)arg1;

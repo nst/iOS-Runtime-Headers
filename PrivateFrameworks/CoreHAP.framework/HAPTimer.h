@@ -4,7 +4,6 @@
 
 @interface HAPTimer : NSObject {
     <HAPTimerDelegate> *_delegate;
-    NSDate *_fireDate;
     unsigned int _options;
     BOOL _running;
     double _timeInterval;
@@ -13,7 +12,6 @@
 }
 
 @property <HAPTimerDelegate> *delegate;
-@property (nonatomic, readonly) NSDate *fireDate;
 @property (nonatomic, readonly) unsigned int options;
 @property (getter=isRunning, nonatomic) BOOL running;
 @property (nonatomic, readonly) double timeInterval;
@@ -21,13 +19,13 @@
 @property (nonatomic, readonly) NSObject<OS_dispatch_queue> *workQueue;
 
 - (void).cxx_destruct;
+- (void)_fire;
 - (void)_handleExpiration;
 - (void)_kick;
 - (void)_resume;
 - (void)_suspend;
 - (void)dealloc;
 - (id)delegate;
-- (id)fireDate;
 - (id)init;
 - (id)initWithTimeInterval:(double)arg1 options:(unsigned int)arg2;
 - (BOOL)isRunning;

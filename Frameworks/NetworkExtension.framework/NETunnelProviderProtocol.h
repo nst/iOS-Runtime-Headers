@@ -42,7 +42,7 @@
 - (id)providerBundleIdentifier;
 - (id)providerConfiguration;
 - (int)reassertTimeout;
-- (void)removeKeychainItemsInDomain:(int)arg1;
+- (void)removeKeychainItemsInDomain:(int)arg1 keepIdentity:(bool)arg2;
 - (void)setAuthenticationMethod:(int)arg1;
 - (void)setAuthenticationPluginType:(id)arg1;
 - (void)setPluginType:(id)arg1;

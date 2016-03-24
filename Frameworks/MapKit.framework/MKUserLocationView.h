@@ -55,6 +55,7 @@
 - (id)_baseLayer;
 - (struct UIImage { Class x1; }*)_headingImageForAccuracy:(double)arg1 anchorPoint:(struct CGPoint { float x1; float x2; }*)arg2;
 - (BOOL)_hideLargeAccuracyRing;
+- (BOOL)_isLocationStale:(id)arg1;
 - (id)_layerToMatchAccuracyRing;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_mapkit_visibleRect;
 - (void)_pausePulse;

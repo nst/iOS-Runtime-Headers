@@ -171,6 +171,10 @@
 - (id)assistantUILocalizedStringForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
 - (id)assistantUILocalizedStringFromSiriLanguageForKey:(id)arg1 table:(id)arg2;
 
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
+- (id)cat_localizedStringsForKey:(id)arg1 value:(id)arg2 table:(id)arg3;
+
 // Image: /System/Library/PrivateFrameworks/CoreRoutine.framework/CoreRoutine
 
 + (id)_coreroutineBundle;

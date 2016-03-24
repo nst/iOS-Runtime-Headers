@@ -11,6 +11,7 @@
     id /* block */ _handler;
     BOOL _isVerifyingExistingEmailAccount;
     NSMutableDictionary *_queuedDataclassActions;
+    NSMutableDictionary *_queuedDataclassStates;
     MFAccountValidator *_validator;
     AAAutoAccountVerifier *_verifier;
 }

@@ -4,6 +4,7 @@
 
 @interface PKPaymentSetupFieldBuiltInPrimaryAccountNumber : PKPaymentSetupFieldText
 
+- (id)compactLocalizedDisplayName;
 - (id)displayFormatPaddingCharacters;
 - (BOOL)hasDisplayFormat;
 - (id)initWithIdentifier:(id)arg1 type:(unsigned int)arg2;

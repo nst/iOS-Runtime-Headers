@@ -3,8 +3,10 @@
  */
 
 @interface GEOCarInfo : PBCodable <NSCopying> {
+    int _deviceConnection;
     struct { 
         unsigned int screenResolution : 1; 
+        unsigned int deviceConnection : 1; 
         unsigned int interactionModel : 1; 
     } _has;
     int _interactionModel;
@@ -20,6 +22,8 @@
     } _screenResolution;
 }
 
+@property (nonatomic) int deviceConnection;
+@property (nonatomic) BOOL hasDeviceConnection;
 @property (nonatomic) BOOL hasInteractionModel;
 @property (nonatomic, readonly) BOOL hasManufacturer;
 @property (nonatomic, readonly) BOOL hasModel;
@@ -35,7 +39,9 @@
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
 - (id)description;
+- (int)deviceConnection;
 - (id)dictionaryRepresentation;
+- (BOOL)hasDeviceConnection;
 - (BOOL)hasInteractionModel;
 - (BOOL)hasManufacturer;
 - (BOOL)hasModel;
@@ -49,6 +55,8 @@
 - (id)model;
 - (BOOL)readFrom:(id)arg1;
 - (struct { double x1; double x2; struct { unsigned int x_3_1_1 : 1; unsigned int x_3_1_2 : 1; } x3; })screenResolution;
+- (void)setDeviceConnection:(int)arg1;
+- (void)setHasDeviceConnection:(BOOL)arg1;
 - (void)setHasInteractionModel:(BOOL)arg1;
 - (void)setHasScreenResolution:(BOOL)arg1;
 - (void)setInteractionModel:(int)arg1;

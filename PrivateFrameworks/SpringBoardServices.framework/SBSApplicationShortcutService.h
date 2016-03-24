@@ -3,12 +3,10 @@
  */
 
 @interface SBSApplicationShortcutService : NSObject {
-    NSObject<OS_dispatch_queue> *_callbackQueue;
-    SBSApplicationShortcutClient *_client;
-    NSObject<OS_dispatch_queue> *_queue;
-    BOOL _wasInvalidated;
+    SBSApplicationService *_service;
 }
 
+- (void).cxx_destruct;
 - (void)dealloc;
 - (void)fetchDynamicApplicationShortcutItemsForBundleIdentifier:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)fetchDynamicApplicationShortcutItemsWithCompletionHandler:(id /* block */)arg1;

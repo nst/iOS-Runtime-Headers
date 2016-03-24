@@ -146,6 +146,7 @@
 
 + (id)_mapkit_preferredFontForTextStyleInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
 + (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2;
++ (id)_mapkit_preferredFontForTextStyleTimeDisplayInTableViewCell:(id)arg1 addingSymbolicTraits:(unsigned int)arg2 useMonospace:(BOOL)arg3;
 
 - (id)_mapkit_fontByAddingFeaturesForTabularFigures;
 - (id)_mapkit_fontByAddingFeaturesForTimeDisplay;
@@ -237,6 +238,11 @@
 + (id)fu_sausageFontOfSize:(float)arg1;
 + (id)fu_sausageFontOfSize:(float)arg1 centeredColons:(BOOL)arg2;
 + (id)fu_systemFontOfSize:(float)arg1 centeredColons:(BOOL)arg2;
+
+- (id)fu_fontWithCenteredColons;
+- (id)fu_fontWithSize:(float)arg1;
+- (id)fu_fontWithSizeFittingString:(id)arg1 withinWidth:(float)arg2;
+- (id)fu_fontWithSizeFittingString:(id)arg1 withinWidth:(float)arg2 accountForGlyphOffset:(BOOL)arg3;
 
 // Image: /System/Library/PrivateFrameworks/MPUFoundation.framework/MPUFoundation
 

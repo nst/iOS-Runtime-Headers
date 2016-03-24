@@ -9,6 +9,7 @@
     unsigned int _activeQueries;
     unsigned int _activeRecursiveQueries;
     NSMutableIndexSet *_appliedTombstoneRanks;
+    UMUserSyncTask *_bubbleSyncTask;
     NSString *_containerID;
     NSDate *_dateWhenLastForegroundClientLeft;
     PQLConnection *_db;
@@ -32,6 +33,7 @@
     BOOL _needsSave;
     int _notifyTokenForFramework;
     NSMutableDictionary *_onDiskBlockToPerformForItemID;
+    NSString *_osNameRequiredToSync;
     NSMutableIndexSet *_pendingCoordinatedIOs;
     NSMutableSet *_pendingFileCoordinators;
     BRCThrottleBase *_readerThrottle;
@@ -53,9 +55,13 @@
     BRCSyncUpOperation *_syncUpOperation;
     long long _syncUpRetryAfter;
     BRCSyncOperationThrottle *_syncUpThrottle;
+    NSMutableDictionary *_t_osNamesByItemIDBlockedForSyncUp;
+    NSString *_t_syncBlockedUntilOSName;
     NSObject<OS_dispatch_source> *_timerForGraceForegroundPeriod;
 }
 
+@property (nonatomic, readonly) NSMutableDictionary *_t_osNamesByItemIDBlockedForSyncUp;
+@property (nonatomic, readonly) NSString *_t_syncBlockedUntilOSName;
 @property (nonatomic, readonly) NSString *absolutePath;
 @property (nonatomic, readonly) BOOL activated;
 @property (nonatomic, retain) NSString *containerID;
@@ -78,6 +84,7 @@
 @property (nonatomic, readonly) unsigned long long lostHeapKey;
 @property (nonatomic, readonly) NSString *mangledID;
 @property (nonatomic) BOOL needsSave;
+@property (nonatomic, readonly) NSString *osNameRequiredToSync;
 @property (nonatomic, readonly) NSString *ownerName;
 @property (nonatomic, readonly) NSString *pathRelativeToRoot;
 @property (nonatomic, readonly) NSMutableIndexSet *pendingCoordinatedIOs;
@@ -116,6 +123,11 @@
 - (void)_showiCloudDriveAppUpSellDialogIfNeeded;
 - (void)_startSync;
 - (void)_syncUpOfRecords:(id)arg1 didFinishWithError:(id)arg2;
+- (void)_t_addItemID:(id)arg1 blockedForSyncUpUntilOSName:(id)arg2;
+- (void)_t_markBlockedUntilOSName:(id)arg1;
+- (id)_t_osNamesByItemIDBlockedForSyncUp;
+- (void)_t_removeAllItemIDsSyncUpBlocking;
+- (id)_t_syncBlockedUntilOSName;
 - (id)absolutePath;
 - (BOOL)activated;
 - (void)addClientUsingUbiquity:(id)arg1;
@@ -125,6 +137,7 @@
 - (id)asSharedContainer;
 - (void)associateWithServerZone:(id)arg1;
 - (unsigned long long)backoffBeforeProcessingLostItemWithStamp:(unsigned long long)arg1;
+- (void)beginSyncBubbleActivityIfNecessary;
 - (void)cancelFileCoordinators;
 - (void)cancelReset;
 - (void)clearStateBits:(unsigned int)arg1;
@@ -149,6 +162,7 @@
 - (void)didReceiveHandoffRequest;
 - (void)didSyncDownRequestID:(unsigned long long)arg1 maxApplyRank:(long long)arg2 caughtUpWithServer:(BOOL)arg3 syncDownDate:(id)arg4;
 - (id)directoryItemIDByFileID:(unsigned long long)arg1;
+- (void)disconnectNSMDQListenerAsync;
 - (unsigned long long)documentCount;
 - (unsigned long long)documentEvictableSizeUsage;
 - (unsigned long long)documentEvictableSizeUsageWithAccessTimeDelta:(double)arg1;
@@ -166,6 +180,7 @@
 - (id)generationID;
 - (BOOL)handleResetErrorIfNeeded:(id)arg1;
 - (void)handleRootRecordDeletion;
+- (void)handleZoneBlockedErrorIfNeeded:(id)arg1;
 - (BOOL)hasActiveAliasQueries;
 - (BOOL)hasActiveQueries;
 - (BOOL)hasActiveRecursiveQueries;
@@ -185,10 +200,14 @@
 - (BOOL)isGreedy;
 - (BOOL)isPrivateContainer;
 - (BOOL)isSharedContainer;
+- (BOOL)isSyncBlocked;
+- (BOOL)isSyncBlockedBecauseAppNotInstalled;
+- (BOOL)isSyncBlockedBecauseOSNeedsUpgrade;
 - (id)itemByDocumentID:(unsigned int)arg1;
 - (id)itemByFileID:(unsigned long long)arg1;
 - (id)itemByItemID:(id)arg1;
 - (id)itemByRowID:(unsigned long long)arg1;
+- (id)itemCountNeedingUploadOrSyncUp;
 - (struct PQLResultSet { Class x1; }*)itemsEnumerator;
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorChildOf:(id)arg1 rankMin:(unsigned long long)arg2 rankMax:(unsigned long long)arg3 count:(unsigned long long)arg4;
 - (struct PQLResultSet { Class x1; }*)itemsEnumeratorWithDB:(id)arg1;
@@ -203,6 +222,7 @@
 - (id)newLocalItemFromPQLResultSet:(id)arg1 error:(id*)arg2;
 - (id)nextLostItemIDWithBackoff:(long long*)arg1 now:(long long)arg2;
 - (unsigned long long)nextSyncUpRequestID;
+- (id)osNameRequiredToSync;
 - (id)ownerName;
 - (id)pathRelativeToRoot;
 - (id)pendingCoordinatedIOs;
@@ -237,15 +257,15 @@
 - (void)setServerZone:(id)arg1;
 - (void)setSession:(id)arg1;
 - (BOOL)setStateBits:(unsigned int)arg1;
-- (void)setSyncDisabled:(BOOL)arg1;
 - (void)setSyncStateBits:(unsigned int)arg1;
+- (void)setupOperationForTestsIfNeeded:(id)arg1 recordsToSave:(id)arg2;
 - (void)signalFaultingWatchers:(id)arg1;
 - (void)startDownloadItem:(id)arg1 options:(unsigned int)arg2 group:(id)arg3;
 - (void)startDownloadingItemsUsingGroup:(id)arg1;
 - (unsigned int)state;
 - (id)syncDeadlineToken;
 - (id)syncDownImmediately;
-- (void)syncDownOperation:(id)arg1 didFinishWithError:(id)arg2;
+- (void)syncDownOperation:(id)arg1 didFinishWithError:(id)arg2 status:(int)arg3;
 - (unsigned int)syncState;
 - (id)syncThrottles;
 - (long long)throttleHashWithItemID:(id)arg1;

@@ -10,6 +10,7 @@
 
 + (id)dataDetectorWithTypes:(unsigned long long)arg1 error:(id*)arg2;
 + (void)initialize;
++ (BOOL)supportsSecureCoding;
 
 - (unsigned long long)checkingTypes;
 - (void)dealloc;

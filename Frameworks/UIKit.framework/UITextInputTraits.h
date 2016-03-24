@@ -3,6 +3,7 @@
  */
 
 @interface UITextInputTraits : NSObject <NSCopying, UITextInputTraits, UITextInputTraits_Private> {
+    NSIndexSet *PINEntrySeparatorIndexes;
     BOOL acceptsEmoji;
     BOOL acceptsFloatingKeyboard;
     BOOL acceptsSplitKeyboard;
@@ -12,6 +13,7 @@
     BOOL contentsIsSingleValue;
     BOOL deferBecomingResponder;
     BOOL disablePrediction;
+    BOOL displaySecureEditsUsingPlainText;
     BOOL displaySecureTextUsingPlainText;
     int emptyContentReturnKeyType;
     BOOL enablesReturnKeyAutomatically;
@@ -40,8 +42,13 @@
     id textSuggestionDelegate;
     struct __CFCharacterSet { } *textTrimmingSet;
     BOOL useInterfaceLanguageForLocalization;
+    struct _NSRange { 
+        unsigned int location; 
+        unsigned int length; 
+    } validTextRange;
 }
 
+@property (nonatomic, copy) NSIndexSet *PINEntrySeparatorIndexes;
 @property (nonatomic) BOOL acceptsEmoji;
 @property (nonatomic) BOOL acceptsFloatingKeyboard;
 @property (nonatomic) BOOL acceptsSplitKeyboard;
@@ -53,6 +60,7 @@
 @property (nonatomic) BOOL deferBecomingResponder;
 @property (readonly, copy) NSString *description;
 @property (nonatomic) BOOL disablePrediction;
+@property (nonatomic) BOOL displaySecureEditsUsingPlainText;
 @property (nonatomic) BOOL displaySecureTextUsingPlainText;
 @property (nonatomic) int emptyContentReturnKeyType;
 @property (nonatomic) BOOL enablesReturnKeyAutomatically;
@@ -83,6 +91,7 @@
 @property (nonatomic) id textSuggestionDelegate;
 @property (nonatomic) struct __CFCharacterSet { }*textTrimmingSet;
 @property (nonatomic) BOOL useInterfaceLanguageForLocalization;
+@property (nonatomic) struct _NSRange { unsigned int x1; unsigned int x2; } validTextRange;
 
 + (int)accessibleAppearanceForAppearance:(int)arg1;
 + (int)configuredAppearanceForAppearance:(int)arg1 withTraitEnvironment:(id)arg2;
@@ -91,6 +100,7 @@
 + (id)traitsByAdoptingTraits:(id)arg1;
 
 - (void).cxx_destruct;
+- (id)PINEntrySeparatorIndexes;
 - (void)_setColorsToMatchTintColor:(id)arg1;
 - (BOOL)acceptsEmoji;
 - (BOOL)acceptsFloatingKeyboard;
@@ -105,6 +115,7 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)disablePrediction;
+- (BOOL)displaySecureEditsUsingPlainText;
 - (BOOL)displaySecureTextUsingPlainText;
 - (int)emptyContentReturnKeyType;
 - (BOOL)enablesReturnKeyAutomatically;
@@ -137,6 +148,7 @@
 - (void)setContentsIsSingleValue:(BOOL)arg1;
 - (void)setDeferBecomingResponder:(BOOL)arg1;
 - (void)setDisablePrediction:(BOOL)arg1;
+- (void)setDisplaySecureEditsUsingPlainText:(BOOL)arg1;
 - (void)setDisplaySecureTextUsingPlainText:(BOOL)arg1;
 - (void)setEmptyContentReturnKeyType:(int)arg1;
 - (void)setEnablesReturnKeyAutomatically:(BOOL)arg1;
@@ -149,6 +161,7 @@
 - (void)setKeyboardAppearance:(int)arg1;
 - (void)setKeyboardType:(int)arg1;
 - (void)setLearnsCorrections:(BOOL)arg1;
+- (void)setPINEntrySeparatorIndexes:(id)arg1;
 - (void)setRecentInputIdentifier:(id)arg1;
 - (void)setResponseContext:(id)arg1;
 - (void)setReturnKeyGoesToNextResponder:(BOOL)arg1;
@@ -167,6 +180,7 @@
 - (void)setToDefaultValues;
 - (void)setToSecureValues;
 - (void)setUseInterfaceLanguageForLocalization:(BOOL)arg1;
+- (void)setValidTextRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1;
 - (int)shortcutConversionType;
 - (int)spellCheckingType;
 - (BOOL)suppressReturnKeyStyling;
@@ -177,5 +191,6 @@
 - (struct __CFCharacterSet { }*)textTrimmingSet;
 - (int)updateResultComparedToTraits:(id)arg1;
 - (BOOL)useInterfaceLanguageForLocalization;
+- (struct _NSRange { unsigned int x1; unsigned int x2; })validTextRange;
 
 @end

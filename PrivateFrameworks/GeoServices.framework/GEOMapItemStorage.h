@@ -88,6 +88,7 @@
 @property (getter=_placeDataAsData, nonatomic, readonly) NSData *placeDataAsData;
 @property (nonatomic, retain) GEOPlaceResult *placeResult;
 @property (getter=_placeType, nonatomic, readonly) int placeType;
+@property (getter=_poiPinpointURLString, nonatomic, readonly) NSString *poiPinpointURLString;
 @property (getter=_poiSurveyURLString, nonatomic, readonly) NSString *poiSurveyURLString;
 @property (getter=_priceRange, nonatomic, readonly) unsigned int priceRange;
 @property (getter=_providerURL, nonatomic, readonly, copy) NSURL *providerURL;
@@ -177,6 +178,7 @@
 - (id)_placeData;
 - (id)_placeDataAsData;
 - (int)_placeType;
+- (id)_poiPinpointURLString;
 - (id)_poiSurveyURLString;
 - (unsigned int)_priceRange;
 - (id)_providerURL;

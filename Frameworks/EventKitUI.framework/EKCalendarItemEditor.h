@@ -98,7 +98,7 @@
 - (id)defaultTitleForCalendarItem;
 - (void)deleteClicked:(id)arg1;
 - (void)done:(id)arg1;
-- (void)editItem:(id)arg1 didCommitFromDetailViewController:(BOOL)arg2;
+- (void)editItem:(id)arg1 didSaveFromDetailViewController:(BOOL)arg2;
 - (void)editItem:(id)arg1 performActionsOnCellAtSubitem:(unsigned int)arg2 actions:(id /* block */)arg3;
 - (void)editItem:(id)arg1 textViewShouldReturn:(id)arg2;
 - (void)editItem:(id)arg1 wantsDoneButtonDisabled:(BOOL)arg2;

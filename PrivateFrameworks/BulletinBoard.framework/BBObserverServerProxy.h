@@ -6,12 +6,12 @@
     NSXPCConnection *_connection;
     BOOL _isEstablished;
     BOOL _isValid;
-    BBObserver *_observerWeak;
+    BBZeroingWeakReference *_observerZWR;
     NSObject<OS_dispatch_queue> *_queue;
 }
 
 @property (nonatomic, retain) NSXPCConnection *connection;
-@property (nonatomic) BBObserver *observerWeak;
+@property (nonatomic, retain) BBZeroingWeakReference *observerZWR;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *queue;
 
 + (id)xpcInterface;
@@ -46,7 +46,7 @@
 - (void)noteAlertBehaviorOverridesChanged:(id)arg1;
 - (void)noteServerReceivedResponseForBulletin:(id)arg1;
 - (id)observer;
-- (id)observerWeak;
+- (id)observerZWR;
 - (id)queue;
 - (void)removeBulletins:(id)arg1 inSection:(id)arg2 fromFeeds:(unsigned int)arg3;
 - (void)requestFutureBulletinsForSectionID:(id)arg1;
@@ -55,7 +55,7 @@
 - (void)setConnection:(id)arg1;
 - (void)setObserverFeed:(unsigned int)arg1 asLightsAndSirensGateway:(id)arg2 priority:(unsigned int)arg3;
 - (void)setObserverFeed:(unsigned int)arg1 attachToLightsAndSirensGateway:(id)arg2;
-- (void)setObserverWeak:(id)arg1;
+- (void)setObserverZWR:(id)arg1;
 - (void)setQueue:(id)arg1;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2;
 - (void)updateBulletin:(id)arg1 forFeeds:(unsigned int)arg2 withHandler:(id /* block */)arg3;

@@ -23,7 +23,9 @@
 - (unsigned long long)activityStart;
 - (id)errorsByURL;
 - (id /* block */)fetchShareInfoCompletionBlock;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)initWithShareURLs:(id)arg1;
 - (id /* block */)perShareInfoBlock;
 - (void)performCKOperation;

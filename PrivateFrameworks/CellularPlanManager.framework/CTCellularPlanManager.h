@@ -39,6 +39,7 @@
 - (void)isRoamingPlanSupportAvailable:(id /* block */)arg1;
 - (void)latitudeLongitudeOverride:(id /* block */)arg1;
 - (void)launchSequoia;
+- (void)manageAccountForPlan:(id)arg1 completion:(id /* block */)arg2;
 - (void)mccMncOverride:(id /* block */)arg1;
 - (void)openInternalUrlId:(int)arg1;
 - (void)planInfoDidUpdate;

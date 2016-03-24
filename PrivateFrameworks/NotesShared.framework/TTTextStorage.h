@@ -154,6 +154,7 @@
 - (struct _NSRange { unsigned int x1; unsigned int x2; })lastUndoEditRange;
 - (unsigned int)mergeWithDocument:(id)arg1;
 - (id)mergeableString;
+- (BOOL)mergeableStringIsEqualAfterSerialization:(id)arg1;
 - (BOOL)pendingFixupAfterEditing;
 - (void)preReplaceCharactersInRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 withStringLength:(unsigned int)arg2;
 - (void)removeAttribute:(id)arg1 range:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2;

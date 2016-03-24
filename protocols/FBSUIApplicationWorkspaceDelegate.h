@@ -9,4 +9,8 @@
 - (void)workspaceNoteAssertionExpirationImminent:(FBSUIApplicationWorkspace *)arg1;
 - (void)workspaceShouldExit:(FBSUIApplicationWorkspace *)arg1;
 
+@optional
+
+- (void)workspaceShouldExit:(FBSUIApplicationWorkspace *)arg1 withTransitionContext:(FBSSceneTransitionContext *)arg2;
+
 @end

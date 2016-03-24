@@ -5,7 +5,6 @@
 @interface ATDeviceService : ATConcreteService <ATEnvironmentMonitorObserver, ATIDSServiceListener, ATMessageLinkListenerDelegate, ATMessageLinkRequestHandler, ATSyncClientDelegate, ATWorkspaceObserverDelegate, ATXPCInterfaceProtocol> {
     int _atcRunningToken;
     ATDeviceSyncManager *_deviceSyncManager;
-    ATRemoteFileManagerLinkHandler *_driveHandler;
     ATEnvironmentMonitor *_environmentMonitor;
     ATIDSService *_idsService;
     ATLegacyDeviceSyncManager *_legacyDeviceSyncManager;
@@ -73,6 +72,7 @@
 - (void)restoreFromDeviceWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (BOOL)run;
 - (BOOL)stop;
+- (void)syncChangesForDataClass:(id)arg1 withPriority:(int)arg2;
 - (void)syncClient:(id)arg1 hasChangesWithPriority:(int)arg2;
 
 @end

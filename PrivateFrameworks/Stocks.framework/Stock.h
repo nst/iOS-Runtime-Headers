@@ -7,6 +7,7 @@
     NSString *_change;
     StockChartData *_chartDataArray;
     NSString *_companyName;
+    NSString *_currency;
     StockDataSource *_dataSource;
     NSString *_dividendYield;
     Exchange *_exchange;
@@ -32,6 +33,7 @@
 @property (nonatomic, retain) NSString *averageVolume;
 @property (nonatomic, retain) NSString *change;
 @property (nonatomic, retain) NSString *companyName;
+@property (nonatomic, retain) NSString *currency;
 @property (nonatomic, retain) StockDataSource *dataSource;
 @property (nonatomic, retain) NSString *dividendYield;
 @property (nonatomic, retain) Exchange *exchange;
@@ -83,6 +85,7 @@
 - (BOOL)changeIsZero;
 - (id)chartDataForInterval:(int)arg1;
 - (id)companyName;
+- (id)currency;
 - (id)dataSource;
 - (void)dealloc;
 - (id)description;
@@ -118,6 +121,7 @@
 - (void)setChange:(id)arg1;
 - (void)setChartData:(id)arg1 forInterval:(int)arg2;
 - (void)setCompanyName:(id)arg1;
+- (void)setCurrency:(id)arg1;
 - (void)setDataSource:(id)arg1;
 - (void)setDividendYield:(id)arg1;
 - (void)setExchange:(id)arg1;

@@ -7,6 +7,8 @@
     NSNumber *_assetSyncLimit;
     unsigned int _assetSyncLimitType;
     NSNumber *_assetSyncPlaylistPersistentID;
+    NPSDomainAccessor *_domainAccessor;
+    NSObject<OS_dispatch_queue> *_domainAccessorQueue;
     NSNumber *_lastFullySentAssetSyncPlaylistPersistentID;
     NSNumber *_lastFullySentAssetSyncPlaylistVersion;
     NSDate *_modificationDate;
@@ -31,9 +33,11 @@
 - (void).cxx_destruct;
 - (id)_associatedObject;
 - (void)_clearAssetSyncPlaylistDependentDefaults;
+- (id)_companionSidePerDeviceDefaults;
 - (void)_handleRemoteChangeIgnoringSenderPID:(BOOL)arg1;
 - (void)_perDeviceSettingsDidResetNotification:(id)arg1;
 - (void)_reloadPropertiesFromDefaults;
+- (void)_resetDomainAccessor;
 - (void)_setNeedsSynchronize;
 - (void)_writePropertiesToDefaults;
 - (id)assetSyncLimit;

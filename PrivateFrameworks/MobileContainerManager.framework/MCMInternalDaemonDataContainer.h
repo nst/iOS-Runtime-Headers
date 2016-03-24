@@ -2,6 +2,6 @@
    Image: /System/Library/PrivateFrameworks/MobileContainerManager.framework/MobileContainerManager
  */
 
-@interface MCMInternalDaemonDataContainer : MCMContainer
+@interface MCMInternalDaemonDataContainer : MCMDataContainer
 
 @end

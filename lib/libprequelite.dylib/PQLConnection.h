@@ -61,6 +61,7 @@
 - (void).cxx_destruct;
 - (void)_batchStartIfNeeded;
 - (void)_batchStopIfNeeded;
+- (void)_clearCleanupCacheQueueIfNeeded;
 - (void)_clearStatementCache;
 - (void)_createCacheIfNeeded;
 - (id)_description:(BOOL)arg1;

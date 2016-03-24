@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/AirTraffic.framework/AirTraffic
  */
 
-@interface ATStoreInfo : NSObject {
+@interface ATStoreInfo : NSObject <NSSecureCoding> {
     NSMutableDictionary *_assetDictionary;
     NSMutableDictionary *_downloadDictionary;
 }
@@ -24,6 +24,8 @@
 @property (nonatomic, retain) NSString *storefrontID;
 @property (nonatomic, retain) NSNumber *versionID;
 
++ (BOOL)supportsSecureCoding;
+
 - (void).cxx_destruct;
 - (id)DSID;
 - (id)XID;
@@ -34,8 +36,10 @@
 - (id)dimensions;
 - (id)downloadDictionary;
 - (id)drmFree;
+- (void)encodeWithCoder:(id)arg1;
 - (id)flavor;
 - (id)init;
+- (id)initWithCoder:(id)arg1;
 - (id)matchStatus;
 - (id)podcastEpisodeGUID;
 - (id)redownloadStatus;

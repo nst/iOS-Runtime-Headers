@@ -21,6 +21,8 @@
 @property (nonatomic, readonly) unsigned int lQMTransitionCntBucketsCount;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)lQMBytesType;
+
 - (void)addLQMBytes:(id)arg1;
 - (void)addLQMTransitionCntBuckets:(unsigned int)arg1;
 - (void)clearLQMBytes;

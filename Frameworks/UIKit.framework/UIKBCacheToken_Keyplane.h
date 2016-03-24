@@ -3,6 +3,7 @@
  */
 
 @interface UIKBCacheToken_Keyplane : UIKBCacheToken {
+    NSString *_annotations;
     NSString *_geometrySetName;
     NSString *_keySetName;
     struct CGSize { 
@@ -24,6 +25,8 @@
 + (id)tokenForKeyplane:(id)arg1;
 
 - (id)_initWithKeyplane:(id)arg1 keylayout:(id)arg2;
+- (void)annotateWithBool:(BOOL)arg1;
+- (void)annotateWithInt:(int)arg1;
 - (void)dealloc;
 - (BOOL)isUsableForCacheToken:(id)arg1 withRenderFlags:(int)arg2;
 - (void)setSize:(struct CGSize { float x1; float x2; })arg1;

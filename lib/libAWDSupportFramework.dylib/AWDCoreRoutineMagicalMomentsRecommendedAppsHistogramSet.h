@@ -30,6 +30,8 @@
 @property (nonatomic) int modelType;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)instanceType;
+
 - (void)addInstance:(id)arg1;
 - (void)clearInstances;
 - (int)confidenceOfMostConfidentModel;

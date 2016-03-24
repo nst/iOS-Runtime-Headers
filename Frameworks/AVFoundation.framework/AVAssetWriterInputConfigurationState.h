@@ -40,6 +40,7 @@
         float tx; 
         float ty; 
     } _transform;
+    BOOL _writesMediaDataToBeginningOfFile;
 }
 
 @property (nonatomic) short alternateGroupID;
@@ -64,6 +65,7 @@
 @property (nonatomic, copy) NSDictionary *sourcePixelBufferAttributes;
 @property (nonatomic, copy) NSDictionary *trackReferences;
 @property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
+@property (nonatomic) BOOL writesMediaDataToBeginningOfFile;
 
 - (short)alternateGroupID;
 - (BOOL)attachedToPixelBufferAdaptor;
@@ -106,9 +108,11 @@
 - (void)setSourcePixelBufferAttributes:(id)arg1;
 - (void)setTrackReferences:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setWritesMediaDataToBeginningOfFile:(BOOL)arg1;
 - (struct opaqueCMFormatDescription { }*)sourceFormatHint;
 - (id)sourcePixelBufferAttributes;
 - (id)trackReferences;
 - (struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })transform;
+- (BOOL)writesMediaDataToBeginningOfFile;
 
 @end

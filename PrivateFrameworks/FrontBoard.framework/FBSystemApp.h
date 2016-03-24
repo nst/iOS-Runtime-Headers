@@ -16,6 +16,7 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
++ (Class)_applicationInfoClass;
 + (void)initializeSystemServices;
 + (void)postFrontBoardInitializationHook;
 + (void)preFrontBoardInitializationHook;

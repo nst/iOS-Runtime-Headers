@@ -22,6 +22,8 @@
 - (void)webViewControllerDidChangeLoadingState:(SFWebViewController *)arg1;
 - (void)webViewControllerDidChangeURL:(SFWebViewController *)arg1;
 - (void)webViewControllerDidFirstVisuallyNonEmptyLayout:(SFWebViewController *)arg1;
+- (void)webViewControllerWebProcessDidBecomeResponsive:(SFWebViewController *)arg1;
+- (void)webViewControllerWebProcessDidBecomeUnresponsive:(SFWebViewController *)arg1;
 - (void)webViewControllerWebProcessDidCrash:(SFWebViewController *)arg1;
 
 @end

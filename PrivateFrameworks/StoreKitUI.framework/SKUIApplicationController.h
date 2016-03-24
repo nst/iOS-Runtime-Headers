@@ -204,6 +204,7 @@
 - (void)tabBarController:(id)arg1 didEndCustomizingViewControllers:(id)arg2 changed:(BOOL)arg3;
 - (void)tabBarController:(id)arg1 didReselectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 didSelectViewController:(id)arg2;
+- (BOOL)tabBarController:(id)arg1 shouldFallbackToRootForController:(id)arg2;
 - (BOOL)tabBarController:(id)arg1 shouldSelectViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willDisplayViewController:(id)arg2;
 - (void)tabBarController:(id)arg1 willTransitionToSize:(struct CGSize { float x1; float x2; })arg2 withTransitionCoordinator:(id)arg3;

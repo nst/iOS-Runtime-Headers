@@ -10,6 +10,7 @@
     NSString *_clientName;
     BOOL _entitledForAPIAccess;
     BOOL _entitledForBackgroundMode;
+    BOOL _entitledForBridgeSPIAccess;
     BOOL _entitledForSPIAccess;
     NSMutableSet *_pendingRequests;
     NSDictionary *_privateAccessEntitlement;
@@ -36,6 +37,7 @@
 @property (nonatomic, readonly) NSString *effectiveLocationBundleIdentifier;
 @property (getter=isEntitledForAPIAccess, nonatomic, readonly) BOOL entitledForAPIAccess;
 @property (getter=isEntitledForBackgroundMode, nonatomic, readonly) BOOL entitledForBackgroundMode;
+@property (getter=isEntitledForBridgeSPIAccess, nonatomic, readonly) BOOL entitledForBridgeSPIAccess;
 @property (getter=isEntitledForSPIAccess, nonatomic, readonly) BOOL entitledForSPIAccess;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly) NSString *name;
@@ -76,6 +78,7 @@
 - (BOOL)isAuthorizedForLocationAccess;
 - (BOOL)isEntitledForAPIAccess;
 - (BOOL)isEntitledForBackgroundMode;
+- (BOOL)isEntitledForBridgeSPIAccess;
 - (BOOL)isEntitledForSPIAccess;
 - (id)name;
 - (id)pendingRequests;

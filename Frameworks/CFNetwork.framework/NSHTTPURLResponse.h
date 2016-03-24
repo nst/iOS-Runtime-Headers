@@ -33,9 +33,11 @@
 
 // Image: /System/Library/Frameworks/Social.framework/Social
 
++ (id)sl_twitterErrorMessageFromResponseObject:(id)arg1;
 + (id)sl_twitterResponseObjectErrorCode:(id)arg1;
 
 - (int)sl_twitterResponseType:(id)arg1;
+- (int)sl_twitterResponseTypeFromResponseObject:(id)arg1 looseAuthFailureMatching:(BOOL)arg2;
 
 // Image: /System/Library/PrivateFrameworks/GameCenterFoundation.framework/GameCenterFoundation
 

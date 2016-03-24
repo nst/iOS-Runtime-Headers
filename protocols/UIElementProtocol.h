@@ -47,6 +47,7 @@
 - (NSString *)stringWithAXAttribute:(int)arg1;
 - (NSArray *)uiElementsWithAttribute:(int)arg1;
 - (NSArray *)uiElementsWithAttribute:(int)arg1 parameter:(void*)arg2;
+- (NSArray *)uiElementsWithAttribute:(int)arg1 parameter:(void*)arg2 fetchAttributes:(BOOL)arg3;
 - (void)updateCache:(int)arg1;
 - (void)updateCacheWithAttributes:(NSArray *)arg1;
 

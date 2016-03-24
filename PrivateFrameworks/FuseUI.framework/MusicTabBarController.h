@@ -3,6 +3,7 @@
  */
 
 @interface MusicTabBarController : SKUIScrollingTabBarController {
+    BOOL _isMiniPlayerPresented;
     MusicMiniPlayerViewController *_miniPlayerViewController;
     BOOL _miniPlayerVisible;
     id /* block */ _nowPlayingPresentationCompletionHandler;
@@ -33,6 +34,7 @@
 - (void)setClientContext:(id)arg1;
 - (void)setMiniPlayerVisible:(BOOL)arg1;
 - (void)setPlayer:(id)arg1;
+- (void)setTransientViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)viewDidLayoutSubviews;
 - (void)viewDidLoad;
 

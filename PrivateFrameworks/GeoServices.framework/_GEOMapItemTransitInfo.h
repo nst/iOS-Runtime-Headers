@@ -34,14 +34,16 @@
 @property (nonatomic, readonly) NSArray *systems;
 @property (nonatomic, readonly) unsigned int systemsCount;
 
-- (id)_departureSequencesForSystem:(id)arg1 excludingLines:(id)arg2 ignoreDirectionFilter:(BOOL)arg3 direction:(id)arg4 validForDateFromBlock:(id /* block */)arg5;
+- (id)_departureSequencesForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 ignoreDirectionFilter:(BOOL)arg3 direction:(id)arg4 validForDateFromBlock:(id /* block */)arg5;
+- (id)allSequencesForSystem:(id)arg1 direction:(id)arg2;
 - (id)connections;
 - (void)dealloc;
 - (id)departureSequences;
-- (id)departureSequencesForSystem:(id)arg1 excludingLines:(id)arg2 direction:(id)arg3 validForDateFromBlock:(id /* block */)arg4;
-- (id)directionsForSystem:(id)arg1 excludingLines:(id)arg2 validForDateFromBlock:(id /* block */)arg3 hasSequencesWithNoDirection:(out BOOL*)arg4;
+- (id)departureSequencesForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 direction:(id)arg3 validForDateFromBlock:(id /* block */)arg4;
+- (id)directionsForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 validForDateFromBlock:(id /* block */)arg3 hasSequencesWithNoDirection:(out BOOL*)arg4;
 - (id)displayName;
 - (BOOL)hasTransitIncidentComponent;
+- (id)inactiveLinesForSystem:(id)arg1 relativeToDateFromBlock:(id /* block */)arg2 excludingIncidentEntities:(id)arg3;
 - (id)incidents;
 - (id)initWithTransitInfo:(id)arg1 schedule:(id)arg2 timeZone:(id)arg3 incidents:(id)arg4 hasTransitIncidentComponent:(BOOL)arg5 incidentExpirationDate:(id)arg6 providerID:(int)arg7;
 - (BOOL)isTransitIncidentsTTLExpired;
@@ -49,8 +51,10 @@
 - (id)lastFullScheduleValidDate;
 - (id)lines;
 - (unsigned int)linesCount;
+- (id)linesForSystem:(id)arg1;
 - (unsigned int)numAdditionalDepartures;
-- (id)sequencesForSystem:(id)arg1 excludingLines:(id)arg2 direction:(id)arg3 validForDateFromBlock:(id /* block */)arg4;
+- (id)sequencesForSystem:(id)arg1 excludingIncidentEntities:(id)arg2 direction:(id)arg3 validForDateFromBlock:(id /* block */)arg4;
+- (id)serviceResumesDateForLine:(id)arg1 excludingIncidentEntities:(id)arg2 afterDate:(id)arg3 blocked:(out BOOL*)arg4;
 - (id)systems;
 - (unsigned int)systemsCount;
 

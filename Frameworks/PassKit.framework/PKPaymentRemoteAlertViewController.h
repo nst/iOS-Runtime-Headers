@@ -36,6 +36,7 @@
 - (void)dealloc;
 - (void)handleHomeButtonPressed;
 - (id)init;
+- (void)linkedApplicationOpen:(id)arg1;
 - (void)setUserInfo:(id)arg1;
 - (BOOL)shouldAutorotate;
 - (struct CGSize { float x1; float x2; })sizeForChildContentContainer:(id)arg1 withParentContainerSize:(struct CGSize { float x1; float x2; })arg2;

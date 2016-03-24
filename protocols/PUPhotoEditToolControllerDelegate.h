@@ -15,6 +15,7 @@
 - (void)toolControllerDidChangeWantsDefaultPreviewView:(PUPhotoEditToolController *)arg1;
 - (void)toolControllerDidFinish:(PUPhotoEditToolController *)arg1;
 - (UIScrollView *)toolControllerImageScrollView:(PUPhotoEditToolController *)arg1;
+- (PHLivePhoto *)toolControllerLivePhoto:(PUPhotoEditToolController *)arg1;
 - (UIView *)toolControllerMainContainerView:(PUPhotoEditToolController *)arg1;
 - (PLPhotoEditRenderer *)toolControllerMainRenderer:(PUPhotoEditToolController *)arg1;
 - (struct CGSize { float x1; float x2; })toolControllerOriginalImageSize:(PUPhotoEditToolController *)arg1;

@@ -4,15 +4,20 @@
 
 @interface _MKPlaceAction : NSObject {
     SEL _action;
+    BOOL _enabled;
     NSString *_title;
 }
 
 @property (nonatomic) SEL action;
+@property (nonatomic) BOOL enabled;
 @property (nonatomic, copy) NSString *title;
 
 - (void).cxx_destruct;
 - (SEL)action;
+- (BOOL)enabled;
+- (id)init;
 - (void)setAction:(SEL)arg1;
+- (void)setEnabled:(BOOL)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
 

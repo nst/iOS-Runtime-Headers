@@ -2,11 +2,17 @@
    Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
  */
 
-@interface HKDeletedObject : NSObject <NSSecureCoding> {
+@interface HKDeletedObject : NSObject <HDCoding, NSSecureCoding> {
     NSUUID *_UUID;
 }
 
 @property (readonly) NSUUID *UUID;
+@property (readonly, copy) NSString *debugDescription;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
+@property (readonly) Class superclass;
+
+// Image: /System/Library/Frameworks/HealthKit.framework/HealthKit
 
 + (id)_deletedObjectWithUUID:(id)arg1;
 + (BOOL)supportsSecureCoding;
@@ -19,5 +25,12 @@
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;
 - (BOOL)isEqual:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
++ (id)createWithCodable:(id)arg1;
+
+- (BOOL)addCodableRepresentationToCollection:(id)arg1;
+- (id)codableRepresentationForSync;
 
 @end

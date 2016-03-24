@@ -8,6 +8,7 @@
     unsigned int _imagePixelThreshold;
     ICLRUCache *_smallImageCache;
     unsigned int _smallImageCacheCount;
+    NSMapTable *_weakImageMap;
 }
 
 @property (readonly) ICLRUCache *bigImageCache;
@@ -15,6 +16,7 @@
 @property (nonatomic, readonly) unsigned int imagePixelThreshold;
 @property (readonly) ICLRUCache *smallImageCache;
 @property (nonatomic, readonly) unsigned int smallImageCacheCount;
+@property (readonly) NSMapTable *weakImageMap;
 
 - (void).cxx_destruct;
 - (id)bigImageCache;
@@ -29,5 +31,6 @@
 - (void)setObject:(struct UIImage { Class x1; }*)arg1 forKey:(id)arg2;
 - (id)smallImageCache;
 - (unsigned int)smallImageCacheCount;
+- (id)weakImageMap;
 
 @end

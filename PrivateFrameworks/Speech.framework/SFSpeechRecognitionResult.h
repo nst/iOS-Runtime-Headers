@@ -3,6 +3,7 @@
  */
 
 @interface SFSpeechRecognitionResult : NSObject <NSCopying, NSSecureCoding> {
+    SFTranscription *_bestTranscription;
     BOOL _final;
     NSArray *_transcriptions;
 }
@@ -14,9 +15,10 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
-- (id)_initWithTranscriptions:(id)arg1 final:(BOOL)arg2;
+- (id)_initWithBestTranscription:(id)arg1 final:(BOOL)arg2;
 - (id)bestTranscription;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (unsigned int)hash;
 - (id)initWithCoder:(id)arg1;

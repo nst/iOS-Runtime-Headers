@@ -15,10 +15,12 @@
 + (BOOL)isNatalimeterAvailable;
 + (id)maxNatalieEntries;
 + (BOOL)resetCalibrationDataWithError:(id*)arg1;
++ (BOOL)setUserInfo:(id)arg1 error:(id*)arg2;
 + (BOOL)setUserProfile:(id)arg1 error:(id*)arg2;
 + (id)userProfile;
 
 - (id)_internal;
+- (bool)_shouldAllowMotionCalibrationPromptsForSession:(int)arg1;
 - (void)dealloc;
 - (unsigned int)getSupportedMetricsForSession:(int)arg1;
 - (id)init;

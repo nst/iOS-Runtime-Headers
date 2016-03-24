@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
  */
 
-@interface FBSystemServiceFacility : NSObject <FBSystemServiceServer> {
+@interface FBSystemServiceFacility : NSObject <BSDescriptionProviding, FBProcessObserver, FBSystemServiceServer> {
     FBServiceClientAuthenticator *_authenticator;
     NSMutableSet *_clients;
     NSString *_identifier;
@@ -24,20 +24,27 @@
 - (void)_clientDidDisconnect:(id)arg1;
 - (id)_facilityClientForClient:(id)arg1;
 - (void)_handleMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
-- (BOOL)_queue_clientIsAuthenticated:(id)arg1;
+- (BOOL)_queue_clientIsAuthenticated:(id)arg1 error:(out id*)arg2;
 - (id)authenticator;
 - (Class)classForClient:(id)arg1;
 - (id)clients;
 - (void)dealloc;
+- (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
+- (id)descriptionWithMultilinePrefix:(id)arg1;
 - (id)identifier;
 - (id)init;
 - (id)initWithIdentifier:(id)arg1 queue:(id)arg2 clientAuthenticator:(id)arg3;
 - (void)invalidate;
 - (void)noteClientDidConnect:(id)arg1 withMessage:(id)arg2;
 - (void)noteClientDidDisconnect:(id)arg1;
+- (void)noteClientDidResume:(id)arg1;
+- (void)noteClientDidSuspend:(id)arg1;
 - (void)noteDidReceiveMessage:(id)arg1 withType:(long long)arg2 fromClient:(id)arg3;
 - (id)prerequisiteMilestones;
+- (void)process:(id)arg1 stateDidChangeFromState:(id)arg2 toState:(id)arg3;
 - (id)queue;
 - (void)sendMessage:(id)arg1 withType:(long long)arg2 toClients:(id)arg3;
+- (id)succinctDescription;
+- (id)succinctDescriptionBuilder;
 
 @end

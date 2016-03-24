@@ -10,6 +10,9 @@
     NSArray *_dataDetected;
     NSArray *_interrogatives;
     NSArray *_inversions;
+    NSString *_languageIdentifier;
+    BOOL _lemmaAvailable;
+    BOOL _lexicalClassAvailable;
     NSArray *_sentenceEntities;
     BOOL _sentenceHasAlternativeConjunction;
     BOOL _sentenceHasQuestionTerminator;
@@ -28,6 +31,9 @@
 @property (retain) NSArray *dataDetected;
 @property (retain) NSArray *interrogatives;
 @property (retain) NSArray *inversions;
+@property (readonly) NSString *languageIdentifier;
+@property (readonly) BOOL lemmaAvailable;
+@property (readonly) BOOL lexicalClassAvailable;
 @property (retain) NSArray *sentenceEntities;
 @property BOOL sentenceHasAlternativeConjunction;
 @property BOOL sentenceHasQuestionTerminator;
@@ -42,7 +48,6 @@
 + (BOOL)canClassifyLanguageIdentifier:(id)arg1;
 + (id)categoryKeywordMapForLanguage:(id)arg1;
 + (id)languageIdentifierFromClassName;
-+ (id)lexicalEntitiesFromString:(id)arg1;
 + (id)polarTagRegularExpressionForLanguage:(id)arg1;
 + (id)preProcessTextMessageForLinguisticTagger:(id)arg1 withLocale:(id)arg2;
 + (id)sensitiveSubjectRegularExpressionForLanguage:(id)arg1;
@@ -61,10 +66,13 @@
 - (id)choiceDelimiters;
 - (id)classifySentence;
 - (id)dataDetected;
+- (id)init;
 - (id)interrogatives;
 - (id)inversions;
-- (BOOL)isLexicalClassAvailable;
 - (id)languageIdentifier;
+- (BOOL)lemmaAvailable;
+- (BOOL)lexicalClassAvailable;
+- (id)lexicalEntitiesFromString:(id)arg1;
 - (id)sentenceClassification:(id)arg1 options:(unsigned int)arg2;
 - (id)sentenceEntities;
 - (BOOL)sentenceHasAlternativeConjunction;

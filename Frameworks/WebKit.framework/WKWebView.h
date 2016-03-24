@@ -3,9 +3,11 @@
  */
 
 @interface WKWebView : UIView <UIScrollViewDelegate> {
+    BOOL __allowsDoubleTapGestures;
     unsigned int _activeFocusedStateRetainCount;
     BOOL _allowsBackForwardNavigationGestures;
     BOOL _allowsLinkPreview;
+    BOOL _allowsViewportShrinkToFit;
     struct RetainPtr<WKWebViewConfiguration> { 
         void *m_ptr; 
     } _configuration;
@@ -30,6 +32,7 @@
             float m_height; 
         } m_size; 
     } _exposedRectToRestore;
+    BOOL _fastClickingIsDisabled;
     unsigned long long _firstPaintAfterCommitLoadTransactionID;
     unsigned long long _firstTransactionIDAfterPageRestore;
     /* Warning: unhandled struct encoding: '{WeakObjCPtr<id<_WKFormDelegate> >="m_weakReference"@}' */ struct WeakObjCPtr<id<_WKFormDelegate> > { 
@@ -55,6 +58,7 @@
     BOOL _hadDelayedUpdateVisibleContentRects;
     BOOL _hasCommittedLoadForMainFrame;
     BOOL _haveSetObscuredInsets;
+    float _initialScaleFactor;
     struct CGRect { 
         struct CGPoint { 
             float x; 
@@ -144,15 +148,19 @@
         float m_x; 
         float m_y; 
     } _unobscuredCenterToRestore;
+    BOOL _viewportMetaTagCameFromImageDocument;
     float _viewportMetaTagWidth;
+    BOOL _viewportMetaTagWidthWasExplicit;
 }
 
 @property (nonatomic) <WKUIDelegate> *UIDelegate;
 @property (nonatomic, readonly, copy) NSURL *URL;
 @property (nonatomic, readonly) NSString *_MIMEType;
 @property (setter=_setAddsVisitedLinks:, nonatomic) BOOL _addsVisitedLinks;
+@property (nonatomic, readonly) BOOL _allowsDoubleTapGestures;
 @property (getter=_allowsMediaDocumentInlinePlayback, setter=_setAllowsMediaDocumentInlinePlayback:, nonatomic) BOOL _allowsMediaDocumentInlinePlayback;
 @property (setter=_setAllowsRemoteInspection:, nonatomic) BOOL _allowsRemoteInspection;
+@property (setter=_setAllowsViewportShrinkToFit:, nonatomic) BOOL _allowsViewportShrinkToFit;
 @property (setter=_setApplicationNameForUserAgent:, copy) NSString *_applicationNameForUserAgent;
 @property (setter=_setBackgroundExtendsBeyondPage:, nonatomic) BOOL _backgroundExtendsBeyondPage;
 @property (nonatomic, readonly) NSArray *_certificateChain;
@@ -172,6 +180,7 @@
 @property (nonatomic, readonly) WKBrowsingContextHandle *_handle;
 @property (setter=_setHistoryDelegate:, nonatomic) <WKHistoryDelegatePrivate> *_historyDelegate;
 @property (setter=_setInterfaceOrientationOverride:, nonatomic) int _interfaceOrientationOverride;
+@property (nonatomic, readonly) BOOL _isBackground;
 @property (setter=_setLayoutMode:, nonatomic) unsigned int _layoutMode;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } _maximumUnobscuredSizeOverride;
 @property (nonatomic, readonly) struct CGSize { float x1; float x2; } _minimumLayoutSizeOverride;
@@ -199,7 +208,6 @@
 @property (nonatomic, readonly) NSString *_userAgent;
 @property (setter=_setUserContentExtensionsEnabled:, nonatomic) BOOL _userContentExtensionsEnabled;
 @property (setter=_setViewScale:, nonatomic) float _viewScale;
-@property (nonatomic, readonly) float _viewportMetaTagWidth;
 @property (nonatomic, readonly) int _webProcessIdentifier;
 @property (nonatomic, readonly) _WKWebViewPrintFormatter *_webViewPrintFormatter;
 @property (nonatomic) BOOL allowsBackForwardNavigationGestures;
@@ -230,8 +238,11 @@
 - (id)_MIMEType;
 - (BOOL)_addsVisitedLinks;
 - (struct CGPoint { float x1; float x2; })_adjustedContentOffset:(struct CGPoint { float x1; float x2; })arg1;
+- (BOOL)_allowsDoubleTapGestures;
+- (BOOL)_allowsDoubleTapGestures;
 - (BOOL)_allowsMediaDocumentInlinePlayback;
 - (BOOL)_allowsRemoteInspection;
+- (BOOL)_allowsViewportShrinkToFit;
 - (id)_applicationNameForUserAgent;
 - (BOOL)_backgroundExtendsBeyondPage;
 - (void)_becomeFirstResponderWithSelectionMovingForward:(BOOL)arg1 completionHandler:(id /* block */)arg2;
@@ -251,7 +262,7 @@
 - (id)_customUserAgent;
 - (id)_dataForDisplayedPDF;
 - (id)_diagnosticLoggingDelegate;
-- (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct Vector<WebKit::RemoteLayerTreeTransaction::LayerCreationProperties, 0, WTF::CrashOnOverflow, 16> { struct LayerCreationProperties {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_5_1_1; unsigned int x_5_1_2; unsigned int x_5_1_3; } x5; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; } x6; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_8_1_1; unsigned int x_8_1_2; unsigned int x_8_1_3; } x8; struct IntSize { int x_9_1_1; int x_9_1_2; } x9; struct IntPoint { int x_10_1_1; int x_10_1_2; } x10; struct Color { unsigned int x_11_1_1; bool x_11_1_2; } x11; double x12; double x13; double x14; unsigned long long x15; unsigned long long x16; bool x17; bool x18; }*)arg1;
+- (void)_didCommitLayerTree:(const struct RemoteLayerTreeTransaction { unsigned long long x1; struct Vector<WTF::RefPtr<WebKit::PlatformCALayerRemote>, 0, WTF::CrashOnOverflow, 16> { struct RefPtr<WebKit::PlatformCALayerRemote> {} *x_2_1_1; unsigned int x_2_1_2; unsigned int x_2_1_3; } x2; struct HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > > { struct HashTable<unsigned long long, WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > >, WTF::KeyValuePairKeyExtractor<WTF::KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >, WTF::IntHash<unsigned long long>, WTF::HashMap<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> >, WTF::IntHash<unsigned long long>, WTF::HashTraits<unsigned long long>, WTF::HashTraits<std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > >::KeyValuePairTraits, WTF::HashTraits<unsigned long long> > { struct KeyValuePair<unsigned long long, std::__1::unique_ptr<WebKit::RemoteLayerTreeTransaction::LayerProperties, std::__1::default_delete<WebKit::RemoteLayerTreeTransaction::LayerProperties> > > {} *x_1_2_1; unsigned int x_1_2_2; unsigned int x_1_2_3; unsigned int x_1_2_4; unsigned int x_1_2_5; } x_3_1_1; } x3; struct Vector<WebKit::RemoteLayerTreeTransaction::LayerCreationProperties, 0, WTF::CrashOnOverflow, 16> { struct LayerCreationProperties {} *x_4_1_1; unsigned int x_4_1_2; unsigned int x_4_1_3; } x4; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_5_1_1; unsigned int x_5_1_2; unsigned int x_5_1_3; } x5; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_6_1_1; unsigned int x_6_1_2; unsigned int x_6_1_3; } x6; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_7_1_1; unsigned int x_7_1_2; unsigned int x_7_1_3; } x7; struct Vector<unsigned long long, 0, WTF::CrashOnOverflow, 16> { unsigned long long *x_8_1_1; unsigned int x_8_1_2; unsigned int x_8_1_3; } x8; struct IntSize { int x_9_1_1; int x_9_1_2; } x9; struct IntPoint { int x_10_1_1; int x_10_1_2; } x10; struct Color { unsigned int x_11_1_1; bool x_11_1_2; } x11; double x12; double x13; double x14; double x15; double x16; unsigned long long x17; unsigned long long x18; bool x19; bool x20; bool x21; bool x22; }*)arg1;
 - (void)_didCommitLoadForMainFrame;
 - (void)_didFailLoadForMainFrame;
 - (void)_didFinishLoadForMainFrame;
@@ -277,6 +288,7 @@
 - (void)_hideFindUI;
 - (id)_historyDelegate;
 - (int)_interfaceOrientationOverride;
+- (BOOL)_isBackground;
 - (BOOL)_isDisplayingPDF;
 - (BOOL)_isDisplayingStandaloneImageDocument;
 - (BOOL)_isDisplayingStandaloneMediaDocument;
@@ -323,7 +335,7 @@
 - (id)_restoreSessionState:(id)arg1 andNavigate:(BOOL)arg2;
 - (id /* block */)_retainActiveFocusedState;
 - (void)_saveBackForwardSnapshotForItem:(id)arg1;
-- (void)_scrollByOffset:(struct FloatPoint { float x1; float x2; })arg1;
+- (void)_scrollByContentOffset:(struct FloatPoint { float x1; float x2; })arg1;
 - (id)_scrollPerformanceData;
 - (BOOL)_scrollPerformanceDataCollectionEnabled;
 - (void)_scrollToContentOffset:(struct FloatPoint { float x1; float x2; })arg1 scrollOrigin:(struct IntPoint { int x1; int x2; })arg2;
@@ -335,6 +347,7 @@
 - (void)_setAddsVisitedLinks:(BOOL)arg1;
 - (void)_setAllowsMediaDocumentInlinePlayback:(BOOL)arg1;
 - (void)_setAllowsRemoteInspection:(BOOL)arg1;
+- (void)_setAllowsViewportShrinkToFit:(BOOL)arg1;
 - (void)_setApplicationNameForUserAgent:(id)arg1;
 - (void)_setBackgroundExtendsBeyondPage:(BOOL)arg1;
 - (void)_setCustomUserAgent:(id)arg1;
@@ -363,13 +376,13 @@
 - (void)_setTextZoomFactor:(double)arg1;
 - (void)_setUserContentExtensionsEnabled:(BOOL)arg1;
 - (void)_setViewScale:(float)arg1;
-- (void)_setViewportMetaTagWidth:(float)arg1;
 - (BOOL)_shouldUpdateKeyboardWithInfo:(id)arg1;
 - (id)_snapshotLayerContentsForBackForwardListItem:(id)arg1;
 - (void)_snapshotRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 intoImageOfWidth:(float)arg2 completionHandler:(id /* block */)arg3;
 - (id)_suggestedFilenameForDisplayedPDF;
 - (BOOL)_supportsTextZoom;
 - (struct PassRefPtr<WebKit::ViewSnapshot> { struct ViewSnapshot {} *x1; })_takeViewSnapshot;
+- (float)_targetContentZoomScaleForRect:(const struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg1 currentScale:(double)arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5;
 - (double)_textZoomFactor;
 - (id)_unreachableURL;
 - (void)_updateScrollViewBackground;
@@ -378,13 +391,13 @@
 - (BOOL)_userContentExtensionsEnabled;
 - (id)_viewForFindUI;
 - (float)_viewScale;
-- (float)_viewportMetaTagWidth;
 - (int)_webProcessIdentifier;
 - (id)_webViewPrintFormatter;
 - (void)_willInvokeUIScrollViewDelegateCallback;
 - (void)_windowDidRotate:(id)arg1;
 - (void)_zoomOutWithOrigin:(struct FloatPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)_zoomToFocusRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 selectionRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg2 fontSize:(float)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 allowScaling:(BOOL)arg6 forceScroll:(BOOL)arg7;
+- (void)_zoomToInitialScaleWithOrigin:(struct FloatPoint { float x1; float x2; })arg1 animated:(BOOL)arg2;
 - (void)_zoomToPoint:(struct FloatPoint { float x1; float x2; })arg1 atScale:(double)arg2 animated:(BOOL)arg3;
 - (void)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 atScale:(double)arg2 origin:(struct FloatPoint { float x1; float x2; })arg3 animated:(BOOL)arg4;
 - (BOOL)_zoomToRect:(struct FloatRect { struct FloatPoint { float x_1_1_1; float x_1_1_2; } x1; struct FloatSize { float x_2_1_1; float x_2_1_2; } x2; })arg1 withOrigin:(struct FloatPoint { float x1; float x2; })arg2 fitEntireRect:(BOOL)arg3 minimumScale:(double)arg4 maximumScale:(double)arg5 minimumScrollDistance:(float)arg6;
@@ -393,6 +406,7 @@
 - (id)backForwardList;
 - (BOOL)becomeFirstResponder;
 - (id)browsingContextController;
+- (BOOL)canBecomeFirstResponder;
 - (BOOL)canGoBack;
 - (BOOL)canGoForward;
 - (id)certificateChain;

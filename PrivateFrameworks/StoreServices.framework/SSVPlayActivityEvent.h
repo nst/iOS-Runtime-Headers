@@ -23,6 +23,7 @@
     NSData *_recommendationData;
     unsigned int _sourceType;
     unsigned long long _storeAccountID;
+    NSString *_storeFrontID;
     NSString *_storeID;
     NSData *_timedMetadata;
     NSData *_trackInfo;
@@ -49,6 +50,7 @@
 @property (nonatomic, readonly, copy) NSData *recommendationData;
 @property (nonatomic, readonly) unsigned int sourceType;
 @property (nonatomic, readonly) unsigned long long storeAccountID;
+@property (nonatomic, readonly, copy) NSString *storeFrontID;
 @property (nonatomic, readonly, copy) NSString *storeID;
 @property (nonatomic, readonly, copy) NSData *timedMetadata;
 @property (nonatomic, readonly, copy) NSData *trackInfo;
@@ -86,6 +88,7 @@
 - (id)recommendationData;
 - (unsigned int)sourceType;
 - (unsigned long long)storeAccountID;
+- (id)storeFrontID;
 - (id)storeID;
 - (id)timedMetadata;
 - (id)trackInfo;

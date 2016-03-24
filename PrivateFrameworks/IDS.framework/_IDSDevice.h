@@ -25,9 +25,10 @@
 @property (nonatomic, readonly, retain) NSString *enclosureColor;
 @property (readonly) unsigned int hash;
 @property (nonatomic, readonly, retain) NSArray *identities;
-@property (nonatomic, readonly) BOOL isDefaultLocalDevice;
+@property (nonatomic, readonly) BOOL isActive;
 @property (nonatomic, readonly) BOOL isDefaultPairedDevice;
 @property (nonatomic, readonly) BOOL isHSATrusted;
+@property (nonatomic, readonly) BOOL isLocallyPaired;
 @property (nonatomic, readonly, retain) NSDate *lastActivityDate;
 @property (nonatomic, readonly, retain) NSArray *linkedUserURIs;
 @property (nonatomic, readonly) BOOL locallyPresent;
@@ -55,6 +56,7 @@
 
 - (void)_addIdentity:(id)arg1;
 - (void)_connect;
+- (void)_connectedStateChanged;
 - (void)_nearbyStateChanged;
 - (void)_setAccount:(id)arg1;
 - (void)_updateNSUUID:(id)arg1;
@@ -67,10 +69,11 @@
 - (id)enclosureColor;
 - (id)identities;
 - (id)initWithDictionary:(id)arg1;
+- (BOOL)isActive;
 - (BOOL)isConnected;
-- (BOOL)isDefaultLocalDevice;
 - (BOOL)isDefaultPairedDevice;
 - (BOOL)isHSATrusted;
+- (BOOL)isLocallyPaired;
 - (BOOL)isNearby;
 - (id)lastActivityDate;
 - (id)linkedUserURIs;

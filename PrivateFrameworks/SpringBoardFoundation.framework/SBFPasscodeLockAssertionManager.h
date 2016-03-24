@@ -7,8 +7,8 @@
     SBFPasscodeLockAssertionTracker *_transientTracker;
 }
 
+- (void).cxx_destruct;
 - (void)addAssertion:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (BOOL)hasActiveAssertions;
 - (id)init;

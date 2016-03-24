@@ -17,7 +17,6 @@
 + (id)propertiesForGroupingUniqueCollections;
 + (BOOL)removeOrphanedCollectionsInLibrary:(id)arg1 withConnection:(id)arg2;
 + (id)trackForeignPersistentID;
-+ (BOOL)updateRepresentativeItemPersistentIDsInLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3;
 + (BOOL)updateRepresentativeItemPersistentIDsInLibrary:(id)arg1 persistentIDs:(const long long*)arg2 count:(unsigned int)arg3 usingConnection:(id)arg4;
 
 - (id)initWithDictionary:(id)arg1 inLibrary:(id)arg2 cachedNameOrders:(id)arg3 usingConnection:(id)arg4;

@@ -13,6 +13,8 @@
 
 @property (readonly) void*underlyingResult;
 
++ (BOOL)supportsSecureCoding;
+
 - (BOOL)_adjustRangesWithOffset:(int)arg1;
 - (id)components;
 - (void)dealloc;

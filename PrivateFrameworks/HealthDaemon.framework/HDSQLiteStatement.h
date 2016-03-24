@@ -3,19 +3,19 @@
  */
 
 @interface HDSQLiteStatement : NSObject {
+    BOOL _cache;
     HDSQLiteDatabase *_database;
-    BOOL _didCache;
-    struct sqlite3_stmt { } *_stmt;
+    NSString *_sql;
 }
 
 @property (nonatomic, readonly) HDSQLiteDatabase *database;
 
 - (void).cxx_destruct;
 - (id)database;
-- (void)dealloc;
+- (id)description;
 - (BOOL)enumerateStatementWithError:(id*)arg1 bindingHandler:(id /* block */)arg2 block:(id /* block */)arg3;
 - (void)finish;
-- (id)initWithSQL:(id)arg1 database:(id)arg2 cache:(BOOL)arg3;
+- (id)initWithSQL:(id)arg1 database:(id)arg2;
 - (BOOL)performStatementWithError:(id*)arg1 bindingHandler:(id /* block */)arg2;
 
 @end

@@ -37,6 +37,7 @@
 @property (nonatomic, readonly) NSDictionary *trackReferences;
 @property (nonatomic) struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; } transform;
 @property (retain) AVWeakReference *weakReferenceToAssetWriterInput;
+@property (nonatomic) BOOL writesMediaDataToBeginningOfFile;
 
 - (void)addTrackAssociationWithTrackOfInput:(id)arg1 type:(id)arg2;
 - (short)alternateGroupID;
@@ -94,6 +95,7 @@
 - (void)setSourcePixelBufferAttributes:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
 - (void)setWeakReferenceToAssetWriterInput:(id)arg1;
+- (void)setWritesMediaDataToBeginningOfFile:(BOOL)arg1;
 - (BOOL)shouldRespondToInitialPassDescription;
 - (struct opaqueCMFormatDescription { }*)sourceFormatHint;
 - (id)sourcePixelBufferAttributes;
@@ -104,5 +106,6 @@
 - (void)transitionAssetWriterAndAllInputsToFailedStatusWithError:(id)arg1;
 - (id)transitionToAndReturnTerminalHelperWithTerminalStatus:(int)arg1;
 - (id)weakReferenceToAssetWriterInput;
+- (BOOL)writesMediaDataToBeginningOfFile;
 
 @end

@@ -5,8 +5,6 @@
 @interface SKUIMediaSocialAdminPermissionsCoordinator : NSObject {
     NSObject<OS_dispatch_queue> *_callbackQueue;
     NSObject<OS_dispatch_queue> *_dispatchQueue;
-    NSDate *_lastAdminStatusRequestDate;
-    NSNumber *_lastKnownAdminStatus;
     NSArray *_lastKnownAuthors;
     NSDate *_lastRequestDate;
     NSMutableArray *_resultBlocks;

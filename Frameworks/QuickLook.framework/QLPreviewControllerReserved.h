@@ -14,6 +14,7 @@
     UIBarButtonItem *customActionItem;
     UIBarButtonItem *defaultActionItem;
     id delegate;
+    int enqueuedWhitePointAdaptivityStyle;
     BOOL hasToolBar;
     UIDocumentInteractionController *interactionController;
     BOOL internalViewsLoaded;
@@ -51,6 +52,7 @@
     unsigned int toolbarButtonsMask;
     unsigned int toolbarWasHidden;
     BOOL useCustomActionButton;
+    int whitePointAdaptivityStyle;
 }
 
 - (void).cxx_destruct;

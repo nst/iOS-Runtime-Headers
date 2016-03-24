@@ -197,7 +197,7 @@
 - (id /* block */)_setupCodeProviderForMessage:(id)arg1;
 - (BOOL)_shouldAddAccessory:(id)arg1;
 - (BOOL)_shouldWaitForAccessoriesToBeReachable;
-- (void)_subscribeForNotificationFromRemoteGateway;
+- (void)_subscribeForNotificationFromRemoteGateway:(BOOL)arg1;
 - (void)_updateBulletinBoardOfChangedCharacteristics:(id)arg1;
 - (void)_updateCloudRelaySupport;
 - (void)_updateConfigurationStateForResidentDevice:(id)arg1 desiredConfigState:(unsigned int)arg2 message:(id)arg3;
@@ -228,6 +228,7 @@
 - (BOOL)applyDeviceLockStatus:(id)arg1;
 - (id)assistantOperations;
 - (id)assistantUniqueIdentifier;
+- (void)auditUsersForNotifications:(id)arg1;
 - (id)builtInActionSetInfo;
 - (id)characteristicNotificationRegistry;
 - (void)checkTimerTriggers;
@@ -250,6 +251,7 @@
 - (void)fixupReplacementAccessories:(id)arg1 commonAccessories:(id)arg2 idsDataSync:(BOOL)arg3 dataVersion:(int)arg4 locallyAdded:(id)arg5;
 - (void)handleBackgroundTaskAgentJob:(id)arg1;
 - (void)handleDidReceiveIDSMessageWithNoListener:(id)arg1;
+- (void)handleDisableNotificationForApp:(id)arg1;
 - (id)heartbeatPingMessagesQueuedWithServer;
 - (id)homeLocationHandler;
 - (id)homeManager;
@@ -269,7 +271,7 @@
 - (id)msgDispatcher;
 - (id)name;
 - (void)notifyChangedCharacteristics:(id)arg1;
-- (void)notifyNewRemotePeersFound:(BOOL)arg1 remoteUsersRemoved:(id)arg2;
+- (void)notifyNewRemotePeersFound:(BOOL)arg1 remoteUsersRemoved:(id)arg2 forceRemoteNotificationRegistration:(BOOL)arg3;
 - (void)notifyOfChangedCharacterisitic:(id)arg1;
 - (id)outgoingInvitations;
 - (id)pendingAccessoriesToAdd;

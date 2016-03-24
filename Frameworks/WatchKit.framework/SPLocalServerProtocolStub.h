@@ -20,7 +20,6 @@
 - (void)fetchProvisioningProfilesForApplicationWithBundleID:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchProvisioningProfilesWithCompletion:(id /* block */)arg1;
 - (void)fetchWatchAppBundleIDForCompanionAppBundleID:(id)arg1 completion:(id /* block */)arg2;
-- (void)fetchWatchAppBundleURLWithinCompanionAppWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)fetchWatchAppBundleURLWithinCompanionAppWithWatchAppIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)getAlwaysInstallWithCompletion:(id /* block */)arg1;
 - (void)getCompanionExtensionPIDForCompanionAppWithIdentifier:(id)arg1 completion:(id /* block */)arg2;
@@ -34,6 +33,7 @@
 - (void)removeApplicationWithIdentifier:(id)arg1 installer:(id)arg2 completion:(id /* block */)arg3;
 - (void)removeProvisioningProfileWithID:(id)arg1 completion:(id /* block */)arg2;
 - (void)setAlwaysInstall:(id)arg1;
+- (void)setAlwaysInstall:(id)arg1 forNRDeviceWithPairingID:(id)arg2;
 - (void)setLogLevel:(id)arg1;
 - (void)showUserNotification:(int)arg1 applicationName:(id)arg2;
 - (void)terminateSockPuppetAppForCompanionAppWithIdentifier:(id)arg1 completion:(id /* block */)arg2;

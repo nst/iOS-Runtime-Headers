@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUBrowsingSession : NSObject <PUAssetActionManagerDelegate, PUAssetsDataSourceManagerDelegate, PULoadingStatusManagerDelegate, PUTilingViewLayoutDelegate> {
+@interface PUBrowsingSession : NSObject <PUAssetActionManagerDelegate, PUAssetsDataSourceManagerDelegate, PULoadingStatusManagerDelegate> {
     PUAudioSessionCategoryToken *__audioSessionCategoryToken;
     PUAssetActionManager *_actionManager;
     BOOL _active;
@@ -52,7 +52,6 @@
 - (void)setTileAnimator:(id)arg1;
 - (void)setViewModel:(id)arg1;
 - (id)tileAnimator;
-- (void)tilingViewDidLayoutTileControllers:(id)arg1;
 - (id)viewModel;
 
 @end

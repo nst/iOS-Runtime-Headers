@@ -46,6 +46,7 @@
 - (BOOL)inputFieldHasFocus;
 - (BOOL)isDictationAvailable;
 - (void)layoutSubviews;
+- (id)nextResponder;
 - (id)searchField;
 - (void)setCancelButtonHidden:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setCancelButtonTrailingConstraint:(id)arg1;

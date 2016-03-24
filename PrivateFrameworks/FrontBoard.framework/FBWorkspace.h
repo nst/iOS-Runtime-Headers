@@ -6,6 +6,7 @@
     NSObject<OS_dispatch_queue> *_callOutQueue;
     NSMapTable *_hostToClientMap;
     BOOL _invalidated;
+    NSMutableSet *_invalidatingScenes;
     FBSceneClientProviderInvalidationAction *_invalidationAction;
     NSObject<OS_dispatch_queue> *_queue;
     FBWorkspaceServer *_server;
@@ -22,13 +23,16 @@
 @property (nonatomic, readonly) FBProcess *process;
 @property (readonly) Class superclass;
 
-- (id)_newSceneWithHost:(id)arg1;
+- (id)_createSceneClientWithIdentity:(id)arg1;
+- (void)_invalidateSceneClientWithIdentity:(id)arg1;
 - (id)_newWorkspaceServer;
 - (id)_queue;
 - (void)_queue_enumerateScenes:(id /* block */)arg1;
 - (void)_queue_fireInvalidationAction;
 - (void)_queue_invalidateAllScenes;
+- (void)_queue_sceneDidInvalidate:(id)arg1;
 - (void)_queue_willInvalidateAllScenes;
+- (Class)_sceneClassForIdentity:(id)arg1;
 - (id)_server;
 - (id)auditToken;
 - (void)beginTransaction;

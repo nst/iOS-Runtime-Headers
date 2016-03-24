@@ -58,20 +58,6 @@
 
 - (BOOL)scanCGFloat:(float*)arg1;
 
-// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
-
-+ (id)SQLParsingScannerWithSQL:(id)arg1;
-
-- (BOOL)_scanBalancedSubstringFromCharacter:(unsigned short)arg1 appendToString:(id)arg2;
-- (BOOL)_scanSQLiteIdentifierCharactersIntoString:(id*)arg1;
-- (BOOL)_scanSQLiteIdentifierIntoString:(id*)arg1;
-- (BOOL)_scanTableSQLColumn:(id*)arg1;
-- (BOOL)_scanTableSQLConstraint:(id*)arg1;
-- (BOOL)_scanThroughQuoteWithDelimiter:(id)arg1 appendToString:(id)arg2;
-- (BOOL)_scanUpToTopLevelDelimiters:(id)arg1 intoString:(id*)arg2;
-- (BOOL)scanTableSQLColumns:(id*)arg1 constraints:(id*)arg2;
-- (BOOL)scanTableSQLPreambleAndTableName:(id*)arg1;
-
 // Image: /System/Library/PrivateFrameworks/MIME.framework/MIME
 
 - (id)mf_nextTokenWithPunctuation:(struct __CFCharacterSet { }*)arg1;

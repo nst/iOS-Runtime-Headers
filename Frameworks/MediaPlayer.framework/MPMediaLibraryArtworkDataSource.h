@@ -30,6 +30,7 @@
 - (id)existingArtworkEffectResultForEffectType:(unsigned int)arg1 catalog:(id)arg2 options:(id)arg3;
 - (id)existingRepresentationForArtworkCatalog:(id)arg1;
 - (id)fallbackCache;
+- (BOOL)hasExistingRepresentationOnDiskForArtworkCatalog:(id)arg1;
 - (id)init;
 - (BOOL)isRepresentation:(id)arg1 bestRepresentationForArtworkCatalog:(id)arg2;
 - (void)loadArtworkEffectResultForEffectType:(unsigned int)arg1 catalog:(id)arg2 options:(id)arg3 systemEffectHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;

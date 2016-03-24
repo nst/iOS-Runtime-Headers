@@ -4,15 +4,17 @@
 
 @interface MCDBrowserViewController : UINavigationController <UITabBarControllerDelegate> {
     AVExternalDevice *_externalDevice;
+    int _fuseSubscriber;
     UITabBarController *_hostTabBarController;
     BOOL _libraryHasSongs;
-    NSMapTable *_noContentViews;
     UIButton *_nowPlayingButton;
     MPAVController *_player;
     MCDRadioViewController *_radioViewController;
     RadioRecentStationsController *_recentStationsController;
     <MCDCarDisplayServiceProvider> *_serviceProvider;
+    BOOL _showRadioTab;
     UITabBarController *_tabBarController;
+    NSArray *_tabIdentifiers;
     BOOL _viewHasAppeared;
 }
 
@@ -47,7 +49,7 @@
 - (void)pushNowPlaying:(BOOL)arg1;
 - (id)recentStationsController;
 - (void)refreshNavigationPath;
-- (void)reloadWithTabs:(id)arg1 forceReload:(BOOL)arg2;
+- (void)reloadTabsAndForceReload:(BOOL)arg1;
 - (id)serviceProvider;
 - (void)setHostTabBarController:(id)arg1;
 - (void)setPlayer:(id)arg1;

@@ -8,6 +8,7 @@
 
 @property (nonatomic) <RPPreviewViewControllerDelegate> *previewControllerDelegate;
 
++ (void)loadPreviewViewControllerWithMovieURL:(id)arg1 attachmentURL:(id)arg2 overrideShareMessage:(id)arg3 completion:(id /* block */)arg4;
 + (void)loadPreviewViewControllerWithMovieURL:(id)arg1 completion:(id /* block */)arg2;
 + (void)viewControllerForExtension:(id)arg1 inputItems:(id)arg2 completionHandler:(id /* block */)arg3;
 

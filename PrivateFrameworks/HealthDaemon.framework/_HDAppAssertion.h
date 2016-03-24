@@ -3,7 +3,9 @@
  */
 
 @interface _HDAppAssertion : NSObject {
+    HDAppAssertionManager *_assertionManager;
     NSString *_bundleIdentifier;
+    HDDaemon *_daemon;
     BOOL _invalidated;
     double _lastLaunchAttempt;
     int _launchErrorCount;
@@ -14,7 +16,9 @@
     NSObject<OS_dispatch_queue> *_queue;
 }
 
+@property (nonatomic) HDAppAssertionManager *assertionManager;
 @property (nonatomic, readonly, copy) NSString *bundleIdentifier;
+@property (nonatomic) HDDaemon *daemon;
 @property (nonatomic) BOOL invalidated;
 @property (nonatomic, readonly) double lastLaunchAttempt;
 @property (nonatomic, readonly) int launchErrorCount;
@@ -28,10 +32,12 @@
 - (void).cxx_destruct;
 - (void)_queue_acquireAssertionWithCompletion:(id /* block */)arg1;
 - (void)_queue_invalidate;
+- (id)assertionManager;
 - (id)bundleIdentifier;
+- (id)daemon;
 - (void)extendForDataType:(int)arg1 completion:(id /* block */)arg2;
 - (unsigned int)hash;
-- (id)initWithBundleIdentifier:(id)arg1 queue:(id)arg2;
+- (id)initWithBundleIdentifier:(id)arg1 assertionManager:(id)arg2 daemon:(id)arg3 queue:(id)arg4;
 - (void)invalidateForDataType:(int)arg1;
 - (BOOL)invalidated;
 - (BOOL)isEqual:(id)arg1;
@@ -44,6 +50,8 @@
 - (id)processAssertions;
 - (id)processDeathSource;
 - (id)queue;
+- (void)setAssertionManager:(id)arg1;
+- (void)setDaemon:(id)arg1;
 - (void)setInvalidated:(BOOL)arg1;
 - (void)setPendingLaunchCompletions:(id)arg1;
 - (void)setProcessAssertions:(id)arg1;

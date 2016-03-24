@@ -31,6 +31,7 @@
 - (void)setSampleReferenceBaseURL:(id)arg1;
 - (void)setSourcePixelBufferAttributes:(id)arg1;
 - (void)setTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg1;
+- (void)setWritesMediaDataToBeginningOfFile:(BOOL)arg1;
 - (int)status;
 
 @end

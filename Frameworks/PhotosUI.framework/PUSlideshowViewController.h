@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
  */
 
-@interface PUSlideshowViewController : UIViewController <OKPresentationViewControllerDelegate, PUAirPlayControllerContentProvider, PUAirPlayControllerRouteObserver, PUSlideshowDisplayContext, PUSlideshowSettingsViewControllerDelegate, PUSlideshowViewModelChangeObserver, PUViewControllerSpecChangeObserver, UIGestureRecognizerDelegate> {
+@interface PUSlideshowViewController : UIViewController <OKPresentationViewControllerDelegate, PHAirPlayControllerContentProvider, PHAirPlayControllerRouteObserver, PUSlideshowDisplayContext, PUSlideshowSettingsViewControllerDelegate, PUSlideshowViewModelChangeObserver, PUViewControllerSpecChangeObserver, UIGestureRecognizerDelegate> {
     BOOL __needsUpdateSpec;
     PUSlideshowViewController *__secondScreenBrowser;
     PUPlaceholderView *__slideshowPlaceholderView;

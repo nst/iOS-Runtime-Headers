@@ -20,6 +20,10 @@
     struct __IOSurface { } *_ioSurface;
     CALayer *_ioSurfaceLayer;
     CALayer *_layer;
+    struct CGSize { 
+        float width; 
+        float height; 
+    } _layerPositioningSize;
     NSString *_pluginName;
     CALayer *_pluginNameLayer;
     CALayer *_progressLayer;

@@ -18,6 +18,7 @@
     BOOL _shouldReportAsPlaying;
     double _startTimeForCurrentTimeChange;
     unsigned long long _storeAccountID;
+    NSString *_storeFrontID;
 }
 
 @property (getter=isSBEnabled, nonatomic) BOOL SBEnabled;
@@ -25,6 +26,7 @@
 @property (nonatomic, readonly) MPAVController *player;
 @property (nonatomic, readonly) MPUReportingController *reportingController;
 @property (nonatomic) unsigned long long storeAccountID;
+@property (nonatomic, copy) NSString *storeFrontID;
 
 - (void).cxx_destruct;
 - (double)_itemEndTimeForItem:(id)arg1 withProposedEndTime:(double)arg2;
@@ -54,7 +56,9 @@
 - (void)setOffline:(BOOL)arg1;
 - (void)setSBEnabled:(BOOL)arg1;
 - (void)setStoreAccountID:(unsigned long long)arg1;
+- (void)setStoreFrontID:(id)arg1;
 - (unsigned long long)storeAccountID;
+- (id)storeFrontID;
 - (void)willHitPlaybackTimeoutEndingPlayback:(BOOL)arg1 withCurrentItem:(id)arg2;
 - (void)willTransitionItemForBan:(id)arg1;
 

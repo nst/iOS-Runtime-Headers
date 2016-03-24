@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PhotosPlayer.framework/PhotosPlayer
  */
 
-@interface ISAVPlayerController : NSObject {
+@interface ISAVPlayerController : NSObject <ISWrappedAVPlayerDelegate> {
     AVPlayerItem *__currentVideoPlayerItem;
     id __didBeginPlaybackObserver;
     struct { 
@@ -51,13 +51,14 @@
         BOOL respondsToWillEndPlaying; 
         BOOL respondsToDidEndPlaying; 
         BOOL respondsToDidEndSeeking; 
+        BOOL respondsToPlayerDidChangeToStatus; 
     } _delegateFlags;
     float _playRate;
     float _playVolume;
     id _playbackNearEndTimeObserver;
     double _prePhotoGapTime;
     int _state;
-    AVPlayer *_videoPlayer;
+    ISWrappedAVPlayer *_videoPlayer;
 }
 
 @property (setter=_setCurrentVideoPlayerItem:, nonatomic, retain) AVPlayerItem *_currentVideoPlayerItem;
@@ -75,13 +76,17 @@
 @property (getter=_isSeekingVideo, setter=_setSeekingVideo:, nonatomic) BOOL _seekingVideo;
 @property (setter=_setShouldPlayAudio:, nonatomic) BOOL _shouldPlayAudio;
 @property (setter=_setShouldPreroll:, nonatomic) BOOL _shouldPreroll;
+@property (readonly, copy) NSString *debugDescription;
 @property (nonatomic) <ISAVPlayerControllerDelegate> *delegate;
+@property (readonly, copy) NSString *description;
+@property (readonly) unsigned int hash;
 @property (nonatomic, readonly) BOOL isSeeking;
 @property (nonatomic) float playRate;
 @property (nonatomic) float playVolume;
 @property (nonatomic) double prePhotoGapTime;
 @property (nonatomic) int state;
-@property (nonatomic, retain) AVPlayer *videoPlayer;
+@property (readonly) Class superclass;
+@property (nonatomic, readonly) ISWrappedAVPlayer *videoPlayer;
 
 - (void).cxx_destruct;
 - (id)_currentVideoPlayerItem;
@@ -121,18 +126,19 @@
 - (void)_setShouldPlayAudio:(BOOL)arg1;
 - (void)_setShouldPreroll:(BOOL)arg1;
 - (void)_setState:(int)arg1;
-- (void)_setVideoPlayer:(id)arg1;
 - (BOOL)_shouldPlayAudio;
 - (BOOL)_shouldPreroll;
 - (void)_startPlayingFromTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 withRate:(float)arg3 shouldPlayAudio:(BOOL)arg4;
 - (void)_updatePlayersIfNeeded;
 - (void)_videoPlayerDidBeginPlaybackWithObserver:(id)arg1;
+- (void)avPlayer:(id)arg1 didChangeToItem:(id)arg2;
+- (void)avPlayer:(id)arg1 didChangeToStatus:(int)arg2;
+- (void)avPlayer:(id)arg1 item:(id)arg2 didChangeToStatus:(int)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)init;
 - (id)initWithVideoPlayer:(id)arg1;
 - (BOOL)isSeeking;
-- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (void)pause;
 - (void)performChanges:(id /* block */)arg1;
 - (void)playFromTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg1 toTime:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 withRate:(float)arg3 shouldPlayAudio:(BOOL)arg4;

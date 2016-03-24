@@ -115,6 +115,7 @@
 - (void)_performAirPlayAction;
 - (void)_performAllPhotosAction;
 - (void)_performCancelAction;
+- (void)_performDuplicateActivityWithAssetsByAssetCollection:(id)arg1;
 - (void)_performEditAction;
 - (void)_performFavoriteAction:(BOOL)arg1;
 - (void)_performHideActivityWithAssetsByAssetCollection:(id)arg1;
@@ -178,7 +179,7 @@
 - (id)overOneUpPresentationSession:(id)arg1 barButtonItemForActivityType:(id)arg2;
 - (void)overOneUpPresentationSession:(id)arg1 didCompleteWithActivityType:(id)arg2 assetsByAssetCollection:(id)arg3 success:(BOOL)arg4;
 - (void)playPauseBarItemsController:(id)arg1 didChange:(id)arg2;
-- (void)ppt_performShareAction;
+- (void)ppt_performAction:(unsigned int)arg1;
 - (id)ppt_scrubberView;
 - (int)preferredBarStyle;
 - (BOOL)prefersStatusBarHidden;

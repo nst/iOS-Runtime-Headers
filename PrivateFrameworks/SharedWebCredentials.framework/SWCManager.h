@@ -2,16 +2,24 @@
    Image: /System/Library/PrivateFrameworks/SharedWebCredentials.framework/SharedWebCredentials
  */
 
-@interface SWCManager : NSObject <NSXPCListenerDelegate, SWCXPCServer> {
+@interface SWCManager : NSObject <NSURLSessionDelegate, NSXPCListenerDelegate, SWCXPCServer> {
     BOOL _addedAllApps;
     BOOL _allowUnsigned;
     NSMutableArray *_database;
+    NSMutableArray *_deferredRequests;
+    unsigned int _maxNetRequests;
     NSMutableArray *_netRequests;
-    NSObject<OS_dispatch_source> *_recheckTimer;
+    long long _recheckFailureMaxCount;
+    long long _recheckFailureSecs;
+    double _recheckForceTime;
+    long long _recheckSuccessSecs;
+    BOOL _recheckVersionChange;
     BOOL _redirects;
-    NSObject<OS_dispatch_source> *_retryTimer;
     BOOL _started;
+    NSURLSession *_urlSession;
     BOOL _verifyEV;
+    BOOL _wellKnown;
+    BOOL _wildcardDomains;
     NSXPCListener *_xpcListener;
     NSMutableArray *_xpcRequests;
 }
@@ -21,24 +29,33 @@
 @property (readonly) unsigned int hash;
 @property (readonly) Class superclass;
 
+- (void).cxx_destruct;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveData:(id)arg3;
+- (void)URLSession:(id)arg1 dataTask:(id)arg2 didReceiveResponse:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 didCompleteWithError:(id)arg3;
+- (void)URLSession:(id)arg1 task:(id)arg2 didReceiveChallenge:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)URLSession:(id)arg1 task:(id)arg2 willPerformHTTPRedirection:(id)arg3 newRequest:(id)arg4 completionHandler:(id /* block */)arg5;
 - (long)_addService:(id)arg1 app:(id)arg2 domain:(id)arg3;
 - (id)_appEntitlementsByID:(id)arg1;
-- (void)_completeAppsRequestForURLConnection:(id)arg1 status:(long)arg2 services:(id)arg3;
+- (void)_completeAppsRequestForTask:(id)arg1 status:(long)arg2 services:(id)arg3;
 - (void)_connectionInvalidated:(id)arg1;
 - (long)_ensureDatabaseLoaded;
-- (id)_findAppRequestForURLConnection:(id)arg1;
+- (BOOL)_equivalentDomain:(id)arg1 toDomain:(id)arg2 wildcards:(BOOL)arg3;
+- (id)_findAppRequestForTask:(id)arg1;
 - (id)_findService:(id)arg1 app:(id)arg2 domain:(id)arg3;
+- (id)_findService:(id)arg1 app:(id)arg2 domain:(id)arg3 wildcards:(BOOL)arg4;
 - (id)_installedAppByID:(id)arg1;
 - (void)_parseServiceDomainString:(id)arg1 legacy:(BOOL)arg2 service:(id*)arg3 domain:(id*)arg4;
-- (void)_performPeriodicRechecks;
+- (void)_processDeferredNetRequests;
+- (void)_recheckPerform;
+- (void)_recheckSchedule;
+- (void)_recheckStartTimer:(double)arg1;
 - (void)_reorderAppLinks:(id)arg1 domain:(id)arg2;
-- (void)_retryDownloads;
 - (void)_sanitizeDatabase;
 - (long)_saveDatabase;
-- (void)_schedulePeriodicRechecks;
-- (void)_scheduleRetries;
 - (long)_startAppsRequestForDomain:(id)arg1;
-- (long)_verifyTrust:(struct __SecTrust { }*)arg1;
+- (long)_startAppsRequestForDomain:(id)arg1 wellKnown:(BOOL)arg2 immediate:(BOOL)arg3;
+- (long)_verifyTrust:(struct __SecTrust { }*)arg1 isFile:(BOOL)arg2;
 - (void)addAllAppleApps;
 - (void)addAllApps;
 - (void)addAllAppsWithReply:(id /* block */)arg1;
@@ -46,15 +63,7 @@
 - (void)addBundleID:(id)arg1 preApproved:(BOOL)arg2;
 - (void)addService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id /* block */)arg4;
 - (void)checkService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id /* block */)arg4;
-- (void)connection:(id)arg1 didFailWithError:(id)arg2;
-- (void)connection:(id)arg1 didReceiveData:(id)arg2;
-- (void)connection:(id)arg1 didReceiveResponse:(id)arg2;
-- (id)connection:(id)arg1 willSendRequest:(id)arg2 redirectResponse:(id)arg3;
-- (void)connection:(id)arg1 willSendRequestForAuthenticationChallenge:(id)arg2;
-- (void)connectionDidFinishLoading:(id)arg1;
-- (void)dealloc;
 - (void)getInfoForService:(id)arg1 app:(id)arg2 domain:(id)arg3 reply:(id /* block */)arg4;
-- (id)init;
 - (BOOL)listener:(id)arg1 shouldAcceptNewConnection:(id)arg2;
 - (void)logControl:(id)arg1 reply:(id /* block */)arg2;
 - (void)removeBundleID:(id)arg1;

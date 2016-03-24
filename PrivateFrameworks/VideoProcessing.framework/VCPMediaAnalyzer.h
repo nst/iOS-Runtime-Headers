@@ -12,11 +12,15 @@
 + (id)sharedMediaAnalyzer;
 
 - (void).cxx_destruct;
+- (id)analyzeOndemand:(id)arg1 forAnalysisTypes:(unsigned int)arg2;
 - (void)assetsAnalyzedSinceDate:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)cancelAnalysisWithRequestID:(int)arg1;
 - (void)checkDuplicate:(id)arg1 withAsset:(id)arg2 duplicate:(int*)arg3;
 - (void)distanceFromAsset:(id)arg1 toAsset:(id)arg2 duplicate:(int*)arg3 distance:(float*)arg4;
 - (id)init;
+- (id)queryImageDescriptorOfAsset:(id)arg1 withExistingAnalysis:(id)arg2 lastFeature:(BOOL)arg3;
+- (int)requestAnalysesForAssets:(id)arg1 analysisTypes:(unsigned int)arg2 allowOndemand:(BOOL)arg3 progressHandler:(id /* block */)arg4 completionHandler:(id /* block */)arg5;
+- (id)requestAnalysisForAsset:(id)arg1 analysisTypes:(unsigned int)arg2 allowOndemand:(BOOL)arg3;
 - (int)requestAnalysisForAsset:(id)arg1 analysisTypes:(unsigned int)arg2 progressHandler:(id /* block */)arg3 completionHandler:(id /* block */)arg4;
 - (unsigned long long)sizeOfAsset:(id)arg1;
 

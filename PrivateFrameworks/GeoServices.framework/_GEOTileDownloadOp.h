@@ -8,6 +8,7 @@
     _GEOTileDownloadOp *_baseTile;
     NSData *_cachedData;
     NSString *_cachedEtag;
+    int _checksumMethod;
     NSURLConnection *_conn;
     unsigned int _contentLength;
     NSMutableData *_data;

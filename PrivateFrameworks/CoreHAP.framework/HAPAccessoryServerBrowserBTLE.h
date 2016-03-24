@@ -2,11 +2,12 @@
    Image: /System/Library/PrivateFrameworks/CoreHAP.framework/CoreHAP
  */
 
-@interface HAPAccessoryServerBrowserBTLE : HAPAccessoryServerBrowser <CBCentralManagerDelegate> {
+@interface HAPAccessoryServerBrowserBTLE : HAPAccessoryServerBrowser <CBCentralManagerDelegate, HAPAccessoryServerBrowserWiProxBTLEDelegate> {
     CBCentralManager *_centralManager;
     <HAPAccessoryServerBrowserBTLEDelegate> *_delegate;
     NSObject<OS_dispatch_queue> *_delegateQueue;
     NSMapTable *_discoveredPeripheralsWithAccessories;
+    HAPAccessoryServerBrowserWiProxBTLE *_hapWiProxBLEBrowser;
     NSMapTable *_identifersWithReachabilityScanTuples;
     NSObject<OS_dispatch_source> *_lostAccessoryServerTimer;
     BOOL _performingGeneralScan;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *delegateQueue;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, retain) NSMapTable *discoveredPeripheralsWithAccessories;
+@property (nonatomic, retain) HAPAccessoryServerBrowserWiProxBTLE *hapWiProxBLEBrowser;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) NSMapTable *identifersWithReachabilityScanTuples;
 @property (nonatomic, retain) NSObject<OS_dispatch_source> *lostAccessoryServerTimer;
@@ -40,15 +42,15 @@
 - (void)_callPowerOnCompletionsWithError:(id)arg1;
 - (void)_cancelLostAccessoryServerTimer;
 - (void)_clearCachedDescriptorsForIdentifier:(id)arg1;
-- (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 category:(id)arg6 version:(unsigned int)arg7;
+- (void)_createHAPAccessoryAndNotifyDelegateWithPeripheral:(id)arg1 name:(id)arg2 pairingUsername:(id)arg3 statusFlags:(id)arg4 stateNumber:(id)arg5 category:(id)arg6 format:(unsigned int)arg7;
 - (BOOL)_delegateRespondsToSelector:(SEL)arg1;
+- (void)_didDiscoverPeripheral:(id)arg1 accessoryName:(id)arg2 pairingIdentifier:(id)arg3 format:(unsigned int)arg4 statusFlags:(id)arg5 stateNumber:(id)arg6 category:(id)arg7 configNumber:(id)arg8;
 - (void)_discoverAccessoryServerWithIdentifier:(id)arg1;
 - (void)_forgetPairedAccesoryWithIdentifier:(id)arg1;
 - (void)_handleConnectionRequestCompletionForPeripheral:(id)arg1;
 - (void)_handleTargetedScanTimeout;
 - (void)_notifyDelegatesOfRemovedAccessoryServer:(id)arg1;
 - (unsigned int)_parseAdvertisementData:(id)arg1 forPeripheral:(id)arg2 name:(id*)arg3 pairingUsername:(id*)arg4 statusFlags:(id*)arg5 stateNumber:(id*)arg6 category:(id*)arg7 configNumber:(id*)arg8;
-- (unsigned int)_parseManufacturerSpecificData:(id)arg1 reservedByte:(id*)arg2 configNumber:(id*)arg3 pairingStatusFlag:(id*)arg4 stateNumber:(id*)arg5 uniqueIdentifier:(id*)arg6 category:(id*)arg7;
 - (void)_performTargetedScanForAccessoryWithIdentifier:(id)arg1;
 - (void)_performTimedConnectionRequestForIdentifier:(id)arg1;
 - (void)_performTimedScanForIdentifiers:(id)arg1 workQueue:(id)arg2 withCompletion:(id /* block */)arg3;
@@ -57,12 +59,14 @@
 - (void)_removeIdentifiersForReachabilityScan;
 - (void)_removeLostAccessoryServers;
 - (void)_setupLostAccessoryServerTimer;
-- (BOOL)_shouldCreateHAPAccessoryServerWithIdentifier:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 forPeripheral:(id)arg6;
+- (BOOL)_shouldCreateHAPAccessoryServerWithIdentifier:(id)arg1 statusFlags:(id)arg2 stateNumber:(id)arg3 category:(id)arg4 configNumber:(id)arg5 forPeripheral:(id)arg6 stateChanged:(BOOL*)arg7;
 - (void)_startDiscoveringAccessoryServers;
 - (void)_startScanningForPairingPeers;
 - (void)_stopActiveScan;
 - (void)_updateTargetedScanTimer;
-- (id)cachedDescriptorsForCharacteristic:(id)arg1;
+- (void)accessoryServerBrowserBTLE:(id)arg1 didDiscoverHAPPeripheral:(id)arg2 accessoryName:(id)arg3 pairingIdentifier:(id)arg4 advertisementFormat:(unsigned int)arg5 statusFlags:(id)arg6 stateNumber:(id)arg7 category:(id)arg8 configurationNumber:(id)arg9;
+- (void)cacheCharacteristicSignature:(id)arg1 characteristicInstanceID:(id)arg2 forCharacteristic:(id)arg3;
+- (id)cachedDescriptorsForCharacteristic:(id)arg1 forServiceInstance:(id)arg2;
 - (id)centralManager;
 - (void)centralManager:(id)arg1 didConnectPeripheral:(id)arg2;
 - (void)centralManager:(id)arg1 didDisconnectPeripheral:(id)arg2 error:(id)arg3;
@@ -70,12 +74,17 @@
 - (void)centralManager:(id)arg1 didFailToConnectPeripheral:(id)arg2 error:(id)arg3;
 - (void)centralManagerDidUpdateState:(id)arg1;
 - (void)connectToBTLEAccessoryServer:(id)arg1;
+- (void)connectedHAPPeripheral:(id)arg1;
 - (id)delegate;
 - (id)delegateQueue;
 - (void)disconnectFromBTLEAccessoryServer:(id)arg1;
+- (void)disconnectedHAPPeripheral:(id)arg1 error:(id)arg2;
 - (void)discoverAccessoryServerWithIdentifier:(id)arg1;
 - (id)discoveredPeripheralsWithAccessories;
+- (void)failedToConnectHAPPeripheral:(id)arg1 error:(id)arg2;
 - (void)forgetPairedAccesoryWithIdentifier:(id)arg1;
+- (id)getCachedCharacteristicSignatureForCharacteristicInstanceID:(id)arg1 characteristic:(id)arg2;
+- (id)hapWiProxBLEBrowser;
 - (id)identifersWithReachabilityScanTuples;
 - (id)initWithQueue:(id)arg1;
 - (BOOL)isPerformingGeneralScan;
@@ -88,10 +97,12 @@
 - (id /* block */)reachabilityCompletion;
 - (id)recentlySeenPairedPeripherals;
 - (void)setCentralManager:(id)arg1;
+- (void)setConnectionLatency:(int)arg1 forPeripheral:(id)arg2;
 - (void)setDelegate:(id)arg1;
 - (void)setDelegate:(id)arg1 queue:(id)arg2;
 - (void)setDelegateQueue:(id)arg1;
 - (void)setDiscoveredPeripheralsWithAccessories:(id)arg1;
+- (void)setHapWiProxBLEBrowser:(id)arg1;
 - (void)setIdentifersWithReachabilityScanTuples:(id)arg1;
 - (void)setLostAccessoryServerTimer:(id)arg1;
 - (void)setPerformingGeneralScan:(BOOL)arg1;
@@ -106,6 +117,6 @@
 - (void)stopDiscoveringAccessoryServers;
 - (id)targetedScanAccessoryIdentifiers;
 - (id)targetedScanTimer;
-- (void)updateCacheWithDescriptor:(id)arg1;
+- (void)updateCacheWithDescriptor:(id)arg1 forServiceInstance:(id)arg2;
 
 @end

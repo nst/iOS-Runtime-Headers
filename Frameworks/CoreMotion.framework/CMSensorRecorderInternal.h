@@ -17,5 +17,6 @@
 - (id)newAccelMetaByID:(unsigned long long)arg1;
 - (id)newAccelMetaFrom:(double)arg1 to:(double)arg2;
 - (id)newAccelMetaSinceID:(unsigned long long)arg1;
+- (void)teardown;
 
 @end

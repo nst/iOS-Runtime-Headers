@@ -8,6 +8,7 @@
 - (Class)classForAnnotationType:(const char *)arg1;
 - (void)didTap:(UIPDFPageView *)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)doubleTapIn:(UIPDFPageView *)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (NSArray *)menuItems:(NSArray *)arg1 forPage:(UIPDFPageView *)arg2;
 - (void)pageWasRendered:(UIPDFPageView *)arg1;
 - (void)resetZoom:(UIPDFPageView *)arg1;
 - (void)selectionDidEndTracking:(UIPDFPageView *)arg1;

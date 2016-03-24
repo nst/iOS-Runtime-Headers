@@ -29,6 +29,7 @@
 + (Class)_internalViewClass;
 
 - (void).cxx_destruct;
+- (id)__scalarStatisticsForUserValueChangedEvent;
 - (BOOL)_alwaysShowOnOffLabel;
 - (void)_animateToOn:(BOOL)arg1 withDuration:(float)arg2 sendAction:(BOOL)arg3;
 - (void)_commonInitNewLook;
@@ -86,6 +87,7 @@
 - (void)setOn:(BOOL)arg1 animated:(BOOL)arg2;
 - (void)setOnImage:(id)arg1;
 - (void)setOnTintColor:(id)arg1;
+- (void)setSemanticContentAttribute:(int)arg1;
 - (void)setThumbTintColor:(id)arg1;
 - (void)setTintColor:(id)arg1;
 - (struct CGSize { float x1; float x2; })sizeThatFits:(struct CGSize { float x1; float x2; })arg1;

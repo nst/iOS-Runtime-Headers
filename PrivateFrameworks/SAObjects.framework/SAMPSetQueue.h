@@ -9,6 +9,7 @@
 @property (nonatomic) BOOL shouldOverrideManuallyCuratedUpNext;
 @property (nonatomic) BOOL shouldShuffle;
 @property (nonatomic, copy) NSArray *sort;
+@property (nonatomic, copy) NSNumber *startPlaying;
 
 + (id)setQueue;
 + (id)setQueueWithDictionary:(id)arg1 context:(id)arg2;
@@ -23,8 +24,10 @@
 - (void)setShouldOverrideManuallyCuratedUpNext:(BOOL)arg1;
 - (void)setShouldShuffle:(BOOL)arg1;
 - (void)setSort:(id)arg1;
+- (void)setStartPlaying:(id)arg1;
 - (BOOL)shouldOverrideManuallyCuratedUpNext;
 - (BOOL)shouldShuffle;
 - (id)sort;
+- (id)startPlaying;
 
 @end

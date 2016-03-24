@@ -3,8 +3,11 @@
  */
 
 @interface BFFNavigationController : PSRootController {
+    BOOL _animating;
     NSMutableArray *_observers;
 }
+
+@property (getter=isAnimating, nonatomic, readonly) BOOL animating;
 
 - (void).cxx_destruct;
 - (BOOL)_canShowTextServices;
@@ -13,6 +16,7 @@
 - (void)addDelegateObserver:(id)arg1;
 - (id)backgroundColor;
 - (id)init;
+- (BOOL)isAnimating;
 - (void)navigationController:(id)arg1 didShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (void)navigationController:(id)arg1 willShowViewController:(id)arg2 animated:(BOOL)arg3;
 - (int)preferredStatusBarStyle;

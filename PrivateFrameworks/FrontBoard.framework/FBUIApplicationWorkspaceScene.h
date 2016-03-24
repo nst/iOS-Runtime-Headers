@@ -19,6 +19,8 @@
 @property (getter=_workspaceQueue_isTransitioningToForeground, nonatomic, readonly) BOOL transitioningToForeground;
 
 - (void)_dispatchBlockAfterProcessLaunch:(id /* block */)arg1;
+- (void)_handleDidUpdateSettings:(id)arg1 withDiff:(id)arg2 transitionContext:(id)arg3 completion:(id /* block */)arg4;
+- (void)_handleInvalidationWithTransitionContext:(id)arg1 completion:(id /* block */)arg2;
 - (void)_workspaceQueue_activateForSEO:(BOOL)arg1 withSettings:(id)arg2 transitionContext:(id)arg3 eventBlock:(id /* block */)arg4;
 - (void)_workspaceQueue_activateResponseReceived:(id)arg1;
 - (void)_workspaceQueue_cancelAllWatchdogTimers;
@@ -45,10 +47,7 @@
 - (void)_workspaceQueue_takeSEOProcessAssertionWithTransitionContext:(id)arg1;
 - (void)_workspaceQueue_takeSuspendingProcessAssertion;
 - (void)dealloc;
-- (void)host:(id)arg1 configureWithInitialClientSettings:(id)arg2;
-- (void)host:(id)arg1 didInvalidateWithTransitionContext:(id)arg2 completion:(id /* block */)arg3;
-- (void)host:(id)arg1 didUpdateSettings:(id)arg2 withDiff:(id)arg3 transitionContext:(id)arg4 completion:(id /* block */)arg5;
-- (id)initWithParentWorkspace:(id)arg1 host:(id)arg2;
+- (id)initWithParentWorkspace:(id)arg1 identity:(id)arg2;
 - (id)parentWorkspace;
 
 @end

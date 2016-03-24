@@ -4,8 +4,6 @@
 
 @interface FBSSettingsDiff : NSObject <BSSettingDescriptionProvider, BSXPCCoding> {
     BSSettings *_changes;
-    <BSSettingDescriptionProvider> *_descriptionProvider;
-    BSSettings *_otherSettingsChanges;
     BSSettingsDiff *_otherSettingsDiff;
     Class _settingsClass;
 }
@@ -16,10 +14,6 @@
 @property (readonly) Class superclass;
 
 - (id)_initWithChanges:(id)arg1 otherSettingsDiff:(id)arg2 settingsClass:(Class)arg3;
-- (BOOL)_inspectSetting:(unsigned int)arg1 ofSettings:(id)arg2 forCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg3;
-- (BOOL)_inspectSetting:(unsigned int)arg1 ofSettings:(id)arg2 forFlag:(int*)arg3;
-- (BOOL)_inspectSetting:(unsigned int)arg1 ofSettings:(id)arg2 forObject:(id*)arg3 ofClass:(Class)arg4;
-- (id)_otherSettingsDescriptionProvider;
 - (void)dealloc;
 - (id)description;
 - (id)descriptionBuilderWithMultilinePrefix:(id)arg1;
@@ -30,14 +24,6 @@
 - (id)initWithXPCDictionary:(id)arg1;
 - (void)inspectChangesWithBlock:(id /* block */)arg1;
 - (void)inspectOtherChangesWithBlock:(id /* block */)arg1;
-- (BOOL)inspectOtherSetting:(unsigned int)arg1 forCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
-- (BOOL)inspectOtherSetting:(unsigned int)arg1 forFlag:(int*)arg2;
-- (BOOL)inspectOtherSetting:(unsigned int)arg1 forNumber:(id*)arg2;
-- (BOOL)inspectOtherSetting:(unsigned int)arg1 forObject:(id*)arg2 ofClass:(Class)arg3;
-- (BOOL)inspectSetting:(unsigned int)arg1 forCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; }*)arg2;
-- (BOOL)inspectSetting:(unsigned int)arg1 forFlag:(int*)arg2;
-- (BOOL)inspectSetting:(unsigned int)arg1 forNumber:(id*)arg2;
-- (BOOL)inspectSetting:(unsigned int)arg1 forObject:(id*)arg2 ofClass:(Class)arg3;
 - (id)keyDescriptionForSetting:(unsigned int)arg1;
 - (id)settings:(id)arg1 keyDescriptionForSetting:(unsigned int)arg2;
 - (id)settings:(id)arg1 valueDescriptionForFlag:(int)arg2 object:(id)arg3 ofSetting:(unsigned int)arg4;

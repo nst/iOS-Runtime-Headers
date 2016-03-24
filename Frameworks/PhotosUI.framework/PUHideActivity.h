@@ -4,7 +4,6 @@
 
 @interface PUHideActivity : PUActivity {
     PUAssetHidingHelper *_assetHidingHelper;
-    UIViewController *_hideAlertViewController;
 }
 
 + (int)activityCategory;

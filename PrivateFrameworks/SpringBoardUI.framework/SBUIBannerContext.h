@@ -11,18 +11,18 @@
     <SBUIBannerTarget> *_target;
 }
 
-@property (nonatomic, readonly, retain) SBUIBannerItem *item;
+@property (nonatomic, readonly) SBUIBannerItem *item;
 @property (nonatomic, copy) NSString *presentingActionIdentifier;
 @property (nonatomic, readonly) SBUIBannerAction *remoteInteractiveAction;
 @property (nonatomic) BOOL requestsModalPresentation;
-@property (nonatomic, readonly, retain) <SBUIBannerSource> *source;
-@property (nonatomic, readonly, retain) <SBUIBannerTarget> *target;
+@property (nonatomic, readonly) <SBUIBannerSource> *source;
+@property (nonatomic, readonly) <SBUIBannerTarget> *target;
 @property (nonatomic, readonly) SBUIBannerAction *textInputAction;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
+- (void).cxx_destruct;
 - (id)_presentingAction;
 - (id)actionForIdentifier:(id)arg1;
-- (void)dealloc;
 - (id)description;
 - (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3;
 - (id)initWithItem:(id)arg1 source:(id)arg2 target:(id)arg3 presentingActionIdentifier:(id)arg4 requestModalPresentation:(BOOL)arg5;

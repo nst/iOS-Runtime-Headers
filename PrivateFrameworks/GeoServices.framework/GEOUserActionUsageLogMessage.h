@@ -13,7 +13,6 @@
     NSString *_providerId;
     GEORouteDetails *_routeDetails;
     GEOMapsServerMetadata *_serverMetadata;
-    GEOTransitAppLaunchDetails *_transitAppLaunchDetails;
     int _uiTarget;
     NSString *_usageEventKey;
     NSString *_usageEventValue;
@@ -25,7 +24,6 @@
 @property (nonatomic, readonly) BOOL hasProviderId;
 @property (nonatomic, readonly) BOOL hasRouteDetails;
 @property (nonatomic, readonly) BOOL hasServerMetadata;
-@property (nonatomic, readonly) BOOL hasTransitAppLaunchDetails;
 @property (nonatomic) BOOL hasUiTarget;
 @property (nonatomic, readonly) BOOL hasUsageEventKey;
 @property (nonatomic, readonly) BOOL hasUsageEventValue;
@@ -35,7 +33,6 @@
 @property (nonatomic, retain) NSString *providerId;
 @property (nonatomic, retain) GEORouteDetails *routeDetails;
 @property (nonatomic, retain) GEOMapsServerMetadata *serverMetadata;
-@property (nonatomic, retain) GEOTransitAppLaunchDetails *transitAppLaunchDetails;
 @property (nonatomic) int uiTarget;
 @property (nonatomic, retain) NSString *usageEventKey;
 @property (nonatomic, retain) NSString *usageEventValue;
@@ -51,7 +48,6 @@
 - (BOOL)hasProviderId;
 - (BOOL)hasRouteDetails;
 - (BOOL)hasServerMetadata;
-- (BOOL)hasTransitAppLaunchDetails;
 - (BOOL)hasUiTarget;
 - (BOOL)hasUsageEventKey;
 - (BOOL)hasUsageEventValue;
@@ -73,11 +69,9 @@
 - (void)setProviderId:(id)arg1;
 - (void)setRouteDetails:(id)arg1;
 - (void)setServerMetadata:(id)arg1;
-- (void)setTransitAppLaunchDetails:(id)arg1;
 - (void)setUiTarget:(int)arg1;
 - (void)setUsageEventKey:(id)arg1;
 - (void)setUsageEventValue:(id)arg1;
-- (id)transitAppLaunchDetails;
 - (int)uiTarget;
 - (id)usageEventKey;
 - (id)usageEventValue;

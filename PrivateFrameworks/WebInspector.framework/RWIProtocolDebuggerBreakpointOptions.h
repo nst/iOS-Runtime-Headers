@@ -7,12 +7,15 @@
 @property (nonatomic, copy) NSArray *actions;
 @property (nonatomic) BOOL autoContinue;
 @property (nonatomic, copy) NSString *condition;
+@property (nonatomic) int ignoreCount;
 
 - (id)actions;
 - (BOOL)autoContinue;
 - (id)condition;
+- (int)ignoreCount;
 - (void)setActions:(id)arg1;
 - (void)setAutoContinue:(BOOL)arg1;
 - (void)setCondition:(id)arg1;
+- (void)setIgnoreCount:(int)arg1;
 
 @end

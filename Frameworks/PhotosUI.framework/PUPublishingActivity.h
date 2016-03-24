@@ -3,11 +3,14 @@
  */
 
 @interface PUPublishingActivity : PUActivity {
+    PLPublishingMedia *__publishingMedia;
     PLPublishingAgent *_currentAgent;
     double _endTime;
     UIViewController *_referenceViewController;
     double _startTime;
 }
+
+@property (setter=_setPublishingMedia:, nonatomic, retain) PLPublishingMedia *_publishingMedia;
 
 + (int)activityCategory;
 
@@ -19,6 +22,9 @@
 - (void)_publishOverReferenceViewController;
 - (void)_publishingAgentDidCancel:(id)arg1;
 - (void)_publishingAgentDidStartPublishing:(id)arg1;
+- (id)_publishingMedia;
+- (void)_setPublishMediaWithAsset:(id)arg1;
+- (void)_setPublishingMedia:(id)arg1;
 - (void)_showPublishingSheetInViewController:(id)arg1 remakeAfterPublish:(BOOL)arg2;
 - (void)_showTrimViewController;
 - (void)_showVideoTooLongAlert;

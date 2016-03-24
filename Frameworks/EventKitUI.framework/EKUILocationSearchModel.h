@@ -37,6 +37,7 @@
 @property (nonatomic, readonly) NSArray *eventsSearchResults;
 @property (nonatomic, readonly) NSArray *frequentsSearchResults;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) <GEOMapServiceCompletionTicket> *lastTicket;
 @property (nonatomic, readonly) NSArray *mapCompletionSearchResults;
 @property (nonatomic, readonly) NSArray *recentsSearchResults;
 @property (readonly) Class superclass;

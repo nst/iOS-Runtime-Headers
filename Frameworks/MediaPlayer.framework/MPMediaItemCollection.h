@@ -19,6 +19,7 @@
 
 // Image: /System/Library/Frameworks/MediaPlayer.framework/MediaPlayer
 
++ (id)artworkCatalogCachePropertiesForGroupingType:(int)arg1;
 + (id)collectionWithItems:(id)arg1;
 + (id)representativePersistentIDPropertyForGroupingType:(int)arg1;
 + (id)sortTitlePropertyForGroupingType:(int)arg1;
@@ -28,6 +29,7 @@
 - (void).cxx_destruct;
 - (BOOL)MPSD_hasDownloadableItem;
 - (BOOL)MPSD_hasDownloadingItem;
+- (id)_artworkCatalogRepresentativeItem;
 - (id)albumArtistArtworkCatalog;
 - (id)artistArtworkCatalog;
 - (id)artworkCatalog;

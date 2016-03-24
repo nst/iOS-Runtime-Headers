@@ -12,6 +12,8 @@
 @property (nonatomic) WKWebView<UIScrollViewDelegate> *internalDelegate;
 @property (nonatomic, readonly) float preferredScrollDecelerationFactor;
 
+// Image: /System/Library/Frameworks/WebKit.framework/WebKit
+
 - (struct CGSize { float x1; float x2; })_currentTopLeftRubberbandAmount;
 - (void)_restoreContentOffsetWithRubberbandAmount:(struct CGSize { float x1; float x2; })arg1;
 - (float)_rubberBandOffsetForOffset:(float)arg1 maxOffset:(float)arg2 minOffset:(float)arg3 range:(float)arg4 outside:(BOOL*)arg5;
@@ -25,5 +27,11 @@
 - (void)setContentInset:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setInternalDelegate:(id)arg1;
+
+// Image: /System/Library/AccessibilityBundles/QuickSpeak.bundle/QuickSpeak
+
++ (Class)safeCategoryBaseClass;
+
+- (id)_accessibilitySpeakSelectionTextInputResponder;
 
 @end

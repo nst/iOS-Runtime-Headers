@@ -14,8 +14,10 @@
     NSString *_languageCodeOverride;
     NSString *_postfixText;
     NSString *_prefixText;
+    BOOL _releaseAudioSessionOnRecordingCompletion;
     NSString *_requestIdentifier;
     int _returnKeyType;
+    BOOL _secureOfflineOnly;
     NSString *_selectedText;
     int _transcriptionMode;
     NSDictionary *_voiceSearchHeaderFields;
@@ -35,8 +37,10 @@
 @property (nonatomic, copy) NSString *languageCodeOverride;
 @property (nonatomic, copy) NSString *postfixText;
 @property (nonatomic, copy) NSString *prefixText;
+@property (nonatomic) BOOL releaseAudioSessionOnRecordingCompletion;
 @property (nonatomic, copy) NSString *requestIdentifier;
 @property (nonatomic) int returnKeyType;
+@property (nonatomic) BOOL secureOfflineOnly;
 @property (nonatomic, copy) NSString *selectedText;
 @property (nonatomic) int transcriptionMode;
 @property (nonatomic, copy) NSDictionary *voiceSearchHeaderFields;
@@ -62,8 +66,10 @@
 - (id)languageCodeOverride;
 - (id)postfixText;
 - (id)prefixText;
+- (BOOL)releaseAudioSessionOnRecordingCompletion;
 - (id)requestIdentifier;
 - (int)returnKeyType;
+- (BOOL)secureOfflineOnly;
 - (id)selectedText;
 - (void)setApplicationName:(id)arg1;
 - (void)setApplicationVersion:(id)arg1;
@@ -76,8 +82,10 @@
 - (void)setLanguageCodeOverride:(id)arg1;
 - (void)setPostfixText:(id)arg1;
 - (void)setPrefixText:(id)arg1;
+- (void)setReleaseAudioSessionOnRecordingCompletion:(BOOL)arg1;
 - (void)setRequestIdentifier:(id)arg1;
 - (void)setReturnKeyType:(int)arg1;
+- (void)setSecureOfflineOnly:(BOOL)arg1;
 - (void)setSelectedText:(id)arg1;
 - (void)setTranscriptionMode:(int)arg1;
 - (void)setVoiceSearchHeaderFields:(id)arg1;

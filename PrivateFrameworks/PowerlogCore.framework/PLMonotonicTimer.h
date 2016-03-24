@@ -20,6 +20,8 @@
 @property (retain) PLEntryNotificationOperatorComposition *wakeEntryNotification;
 @property (retain) NSObject<OS_dispatch_queue> *workQueue;
 
++ (BOOL)debugInstance;
++ (id)debugScheduledTimerWithMonotonicFireDate:(id)arg1 withInterval:(double)arg2 withQueue:(id)arg3 withBlock:(id /* block */)arg4;
 + (id)scheduledTimerWithMonotonicFireDate:(id)arg1 withInterval:(double)arg2 withQueue:(id)arg3 withBlock:(id /* block */)arg4;
 
 - (void).cxx_destruct;

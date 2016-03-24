@@ -75,6 +75,7 @@
 - (void)setQueueWithQuery:(id)arg1 firstItem:(id)arg2;
 - (void)setQueueWithRadioStation:(id)arg1;
 - (BOOL)setQueueWithSeedItems:(id)arg1;
+- (void)setQueueWithStoreIDs:(id)arg1;
 - (void)setRepeatMode:(int)arg1;
 - (void)setShuffleMode:(int)arg1;
 - (void)setUseCachedPlaybackState:(BOOL)arg1;

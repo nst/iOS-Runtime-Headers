@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
  */
 
-@interface VCPImageDescriptor : NSObject {
-    float *_featureVector;
-}
+@interface VCPImageDescriptor : NSObject
 
++ (id)descriptorWithData:(id)arg1;
++ (id)descriptorWithImage:(struct __CVBuffer { }*)arg1;
 + (int)preferredPixelFormat;
 
 - (long)computeDistanceWith:(id)arg1 distance:(float*)arg2;
-- (long)computeFeature:(struct __CVBuffer { }*)arg1;
-- (long)computeRegionHistogram:(char *)arg1 width:(int)arg2 height:(int)arg3 stride:(int)arg4 histogram:(float*)arg5;
-- (void)dealloc;
-- (id)initWithImage:(struct __CVBuffer { }*)arg1;
+- (id)serialize;
 
 @end

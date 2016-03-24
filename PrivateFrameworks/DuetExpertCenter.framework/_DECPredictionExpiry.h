@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/DuetExpertCenter.framework/DuetExpertCenter
  */
 
-@interface _DECPredictionExpiry : NSObject <NSSecureCoding> {
+@interface _DECPredictionExpiry : NSObject <NSCopying, NSSecureCoding> {
     NSDate *_date;
     unsigned int _type;
     int _value;
@@ -16,6 +16,7 @@
 + (BOOL)supportsSecureCoding;
 
 - (void).cxx_destruct;
+- (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)date;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;

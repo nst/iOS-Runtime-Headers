@@ -65,6 +65,7 @@
 - (void)_UIAppearance_setTintColor:(id)arg1;
 - (void)_UIAppearance_setTitlePositionAdjustment:(struct UIOffset { float x1; float x2; })arg1 forBarMetrics:(int)arg2;
 - (void)_UIAppearance_setTitleTextAttributes:(id)arg1 forState:(unsigned int)arg2;
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })_additionalSelectionInsets;
 - (void)_adjustPushButtonForMiniBar:(BOOL)arg1 isChangingBarHeight:(BOOL)arg2;
 - (void)_adjustToolbarButtonInfo;

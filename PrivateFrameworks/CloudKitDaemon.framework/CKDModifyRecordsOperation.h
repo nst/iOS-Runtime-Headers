@@ -58,6 +58,7 @@
 - (void)_addShareToPCSData:(id)arg1 forMetadata:(id)arg2 withError:(id)arg3;
 - (BOOL)_canSetPreviousProtectionEtag;
 - (void)_clearProtectionDataForRecord:(id)arg1;
+- (void)_clearProtectionDataIfNotEntitled;
 - (void)_continueCreateAndSavePCSForMetadata:(id)arg1 zonePCS:(id)arg2 sharePCS:(id)arg3;
 - (void)_continueRecordsModify;
 - (void)_createAndSavePCSForMetadata:(id)arg1;

@@ -26,7 +26,9 @@
 - (unsigned long long)activityStart;
 - (id /* block */)assetPublishedBlock;
 - (id)fileNamesByAssetFieldNames;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)initWithRecordIDs:(id)arg1;
 - (void)performCKOperation;
 - (id /* block */)publishAssetCompletionBlock;

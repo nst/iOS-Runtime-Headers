@@ -123,6 +123,7 @@
 - (void)setFlagForAllMessages:(id)arg1 state:(BOOL)arg2;
 - (void)setFlagsCancelled:(id)arg1 forMessages:(id)arg2;
 - (void)setFlagsForAllMessagesFromDictionary:(id)arg1;
+- (id)setFlagsFromDictionary:(id)arg1 forMessageSelection:(id)arg2;
 - (id)setFlagsFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (id)setFlagsLocallyFromDictionary:(id)arg1 forMessages:(id)arg2;
 - (void)setLibrary:(id)arg1;

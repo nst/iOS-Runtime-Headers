@@ -18,6 +18,7 @@
     int _cachedPartitionType;
     int _cachedServerType;
     BOOL _cancelled;
+    NSDictionary *_clientProvidedAdditionalHeaderValues;
     id /* block */ _completionBlock;
     CKDClientContext *_context;
     int _databaseScope;
@@ -76,6 +77,7 @@
     CKDProtobufStreamWriter *_streamWriter;
     CKTimeLogger *_timeLogger;
     double _timeoutInterval;
+    NSDictionary *_timingData;
     CKBlockingAsyncQueue *_trafficQueue;
     CKDProtocolTranslator *_translator;
     unsigned long long _transmissionActivityID;
@@ -99,6 +101,7 @@
 @property (nonatomic) int cachedPartitionType;
 @property (nonatomic) int cachedServerType;
 @property (getter=isCancelled) BOOL cancelled;
+@property (nonatomic, retain) NSDictionary *clientProvidedAdditionalHeaderValues;
 @property (nonatomic, copy) id /* block */ completionBlock;
 @property (nonatomic, retain) CKDClientContext *context;
 @property (nonatomic) int databaseScope;
@@ -157,6 +160,7 @@
 @property (readonly) Class superclass;
 @property (nonatomic, retain) CKTimeLogger *timeLogger;
 @property (nonatomic) double timeoutInterval;
+@property (nonatomic, retain) NSDictionary *timingData;
 @property (nonatomic, retain) CKBlockingAsyncQueue *trafficQueue;
 @property (nonatomic, retain) CKDProtocolTranslator *translator;
 @property (nonatomic, readonly) NSURL *url;
@@ -232,6 +236,7 @@
 - (int)cachedServerType;
 - (void)cancel;
 - (id)ckShortDescription;
+- (id)clientProvidedAdditionalHeaderValues;
 - (id /* block */)completionBlock;
 - (id)context;
 - (int)databaseScope;
@@ -321,6 +326,7 @@
 - (void)setCachedPartitionType:(int)arg1;
 - (void)setCachedServerType:(int)arg1;
 - (void)setCancelled:(BOOL)arg1;
+- (void)setClientProvidedAdditionalHeaderValues:(id)arg1;
 - (void)setCompletionBlock:(id /* block */)arg1;
 - (void)setContext:(id)arg1;
 - (void)setDatabaseScope:(int)arg1;
@@ -355,6 +361,7 @@
 - (void)setSourceApplicationSecondaryIdentifier:(id)arg1;
 - (void)setTimeLogger:(id)arg1;
 - (void)setTimeoutInterval:(double)arg1;
+- (void)setTimingData:(id)arg1;
 - (void)setTrafficQueue:(id)arg1;
 - (void)setTranslator:(id)arg1;
 - (void)setUrlSessionTask:(id)arg1;
@@ -368,6 +375,7 @@
 - (void)tearDownResourcesAndReleaseTheZoneLocks;
 - (id)timeLogger;
 - (double)timeoutInterval;
+- (id)timingData;
 - (id)trafficQueue;
 - (id)translator;
 - (void)updateSignatureWithReceivedBytes:(id)arg1;

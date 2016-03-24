@@ -10,9 +10,12 @@
 }
 
 - (void).cxx_destruct;
+- (BOOL)_allowsEditing;
 - (void)_updateLibraryForPlaylistEdit:(id)arg1;
 - (void)addItem:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)addItemWithProductID:(id)arg1 completionHandler:(id /* block */)arg2;
 - (void)addItems:(id)arg1 completionBlock:(id /* block */)arg2;
+- (void)addMediaItems:(id)arg1 completionHandler:(id /* block */)arg2;
 - (BOOL)beginGeneratingGeniusClusterItemsWithSeedItems:(id)arg1 error:(id*)arg2;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (unsigned int)count;

@@ -31,6 +31,7 @@
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithGeniusMixPlaylist:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithQuery:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 prepareQueueWithRadioStation:(id)arg2;
+- (void)musicPlayerServer:(id)arg1 prepareQueueWithStoreIDs:(id)arg2;
 - (void)musicPlayerServer:(id)arg1 registerForRepeatModeChangesWithChangeHandler:(id /* block */)arg2;
 - (void)musicPlayerServer:(id)arg1 registerForShuffleModeChangesWithChangeHandler:(id /* block */)arg2;
 - (void)musicPlayerServer:(id)arg1 setFirstItem:(id)arg2;

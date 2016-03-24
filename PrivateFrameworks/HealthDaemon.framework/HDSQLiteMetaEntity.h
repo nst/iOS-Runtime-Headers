@@ -7,8 +7,6 @@
 + (id)_namePredicate:(id)arg1;
 + (id)_tableNamePredicate:(id)arg1;
 + (id)_typePredicate:(id)arg1;
-+ (id)anyInDatabase:(id)arg1 withType:(id)arg2 name:(id)arg3;
-+ (id)anyInDatabase:(id)arg1 withType:(id)arg2 tableName:(id)arg3;
 + (id)databaseTable;
 + (id)queryWithDatabase:(id)arg1 type:(id)arg2;
 + (id)queryWithDatabase:(id)arg1 type:(id)arg2 tableName:(id)arg3;

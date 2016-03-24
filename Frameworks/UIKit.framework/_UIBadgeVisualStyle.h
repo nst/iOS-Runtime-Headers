@@ -4,6 +4,7 @@
 
 @interface _UIBadgeVisualStyle : NSObject
 
+@property (nonatomic, readonly) BOOL allowsDrawingOutsideTabBar;
 @property (nonatomic, readonly) float blinkImagePadding;
 @property (nonatomic, readonly) float blinkLeftBadgePadding;
 @property (nonatomic, readonly) float blinkMaxBadgeWidth;
@@ -28,6 +29,7 @@
 @property (nonatomic, readonly) float verticalBorderedInset;
 @property (nonatomic, readonly) float verticalInset;
 
+- (BOOL)allowsDrawingOutsideTabBar;
 - (float)blinkImagePadding;
 - (float)blinkLeftBadgePadding;
 - (float)blinkMaxBadgeWidth;

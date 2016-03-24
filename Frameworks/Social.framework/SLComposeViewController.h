@@ -31,6 +31,7 @@
 + (id)_extensionIdentifierForServiceType:(id)arg1;
 + (BOOL)_isAvailableForMediaShareExtension:(id)arg1;
 + (BOOL)_isAvailableForService:(id)arg1;
++ (BOOL)_isMultiUserDevice;
 + (BOOL)_isServiceType:(id)arg1;
 + (id)_serviceTypeForExtensionIdentifier:(id)arg1;
 + (id)_serviceTypeToExtensionIdentifierMap;

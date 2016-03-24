@@ -13,6 +13,7 @@
 @property (nonatomic, retain) NSNumber *animationStartTime;
 @property (nonatomic) BOOL shouldAnimateIn;
 
+- (void).cxx_destruct;
 - (id)activationContext;
 - (BOOL)allowStackingOfAlert:(id)arg1;
 - (BOOL)allowSuspension;
@@ -20,7 +21,6 @@
 - (void)animateViewOut;
 - (id)animationStartTime;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
-- (void)dealloc;
 - (BOOL)definesPresentationContext;
 - (void)didFinishLaunchingFrontmost;
 - (void)didReceiveMemoryWarning;

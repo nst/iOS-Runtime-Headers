@@ -183,6 +183,7 @@
 - (id)fileURLForVideoPreviewFile;
 - (id)fileURLForXMPFile;
 - (id)filename;
+- (void)generateLargeThumbnailFileIfNecessary;
 - (BOOL)hasAdjustments;
 - (BOOL)hasLegacyAdjustments;
 - (BOOL)hasPhotoColorAdjustments;
@@ -204,6 +205,7 @@
 - (BOOL)isLocatedAtCoordinates:(struct { double x1; double x2; })arg1;
 - (BOOL)isMediaSubtype:(unsigned int)arg1;
 - (BOOL)isMogul;
+- (BOOL)isOriginalSRGB;
 - (BOOL)isPartOfBurst;
 - (BOOL)isPhoto;
 - (BOOL)isPhotoIris;
@@ -231,10 +233,16 @@
 - (id)pathForAdjustmentDataFile;
 - (id)pathForAdjustmentDirectory;
 - (id)pathForAdjustmentFile;
+- (id)pathForFullsizeRenderImageFile;
+- (id)pathForLargeThumbnailFile;
+- (id)pathForMediumThumbnailFile;
 - (id)pathForMutationsDirectory;
+- (id)pathForNonAdjustedFullsizeImageFile;
 - (id)pathForOriginalFile;
 - (id)pathForPenultimateFullsizeRenderImageFile;
+- (id)pathForSRGBLargeThumbnailFile;
 - (id)pathForSubstandardFullsizeRenderImageFile;
+- (id)pathForVideoPreviewFile;
 - (unsigned int)persistenceState;
 - (id)photoIrisProperties;
 - (unsigned int)pixelHeight;
@@ -243,8 +251,6 @@
 - (id)pl_photoLibrary;
 - (BOOL)representsBurst;
 - (unsigned int)requestContentEditingInputWithOptions:(id)arg1 completionHandler:(id /* block */)arg2;
-- (id)reservedFileURLForLargeDisplayableImageFileForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
-- (id)reservedPathForLargeDisplayableImageFileForceLarge:(BOOL)arg1 forceUpgradeFromSubstandardIfNecessary:(BOOL)arg2 outImageType:(int*)arg3;
 - (short)savedAssetType;
 - (unsigned int)sourceType;
 - (id)thumbnailIdentifier;
@@ -257,8 +263,10 @@
 // Image: /System/Library/Frameworks/PhotosUI.framework/PhotosUI
 
 + (int)_pu_mediaTypeForAssets:(id)arg1;
++ (int)pu_commonMediaTypeForPhotoCount:(int)arg1 videoCount:(int)arg2 otherCount:(int)arg3;
 + (id)pu_typeStringForAssets:(id)arg1;
 + (id)pu_typeStringForAssetsWithIdentifiers:(id)arg1;
++ (id)pu_typeStringForMediaType:(int)arg1;
 
 - (unsigned int)fullsizeDataFormat;
 - (unsigned int)isContentEqualTo:(id)arg1;
@@ -270,18 +278,22 @@
 // Image: /System/Library/PrivateFrameworks/VideoProcessing.framework/VideoProcessing
 
 - (id)avAsset;
+- (id)exif;
 - (unsigned long)fullFilesizeBytes;
 - (struct CGSize { float x1; float x2; })fullSize;
 - (id)getVideoAdjustmentPath;
 - (BOOL)hasFull;
 - (BOOL)hasIris;
+- (BOOL)hasThumbnail;
 - (BOOL)isPano;
 - (BOOL)isVideoSlowmo;
 - (unsigned long)localFilesizeBytes;
 - (struct CGSize { float x1; float x2; })localSize;
 - (BOOL)original;
+- (unsigned long)originalFilesizeBytes;
 - (struct CGSize { float x1; float x2; })originalSize;
-- (struct CGSize { float x1; float x2; })sizeForFormat:(int)arg1;
+- (id)partialIdentifier;
+- (struct CGSize { float x1; float x2; })sizeForFormat:(id)arg1;
 - (struct CGSize { float x1; float x2; })thumbnailSize;
 
 @end

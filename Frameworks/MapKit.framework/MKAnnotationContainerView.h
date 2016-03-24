@@ -37,6 +37,7 @@
         float y; 
     } _mouseDownPoint;
     MKAnnotationView *_selectedAnnotationView;
+    BOOL _suppressCallout;
     MKAnnotationView *_userLocationView;
     NSMutableSet *_viewsToAnimate;
 }
@@ -55,6 +56,7 @@
 @property (nonatomic) unsigned int mapType;
 @property (nonatomic, readonly) UIPopoverController *popoverController;
 @property (readonly) Class superclass;
+@property (nonatomic) BOOL suppressCallout;
 @property (nonatomic, readonly) MKAnnotationView *userLocationView;
 
 - (void).cxx_destruct;
@@ -115,6 +117,7 @@
 - (void)pinDidDrop:(id)arg1 animated:(BOOL)arg2;
 - (struct CGPoint { float x1; float x2; })pointForCoordinate:(struct { double x1; double x2; })arg1;
 - (id)popoverController;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })popoverTargetRectForSelectedAnnotationInView:(id)arg1;
 - (void)removeAnnotationView:(id)arg1;
 - (void)removeAnnotationViewsRotationAnimations;
 - (void)selectAnnotationView:(id)arg1 animated:(BOOL)arg2 avoid:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg3;
@@ -124,8 +127,10 @@
 - (void)setMapDisplayStyle:(struct { unsigned char x1; unsigned char x2; unsigned char x3; })arg1;
 - (void)setMapPitchRadians:(float)arg1;
 - (void)setMapType:(unsigned int)arg1;
+- (void)setSuppressCallout:(BOOL)arg1;
 - (void)setUserLocationView:(id)arg1;
 - (void)stopSuppressingUpdates;
+- (BOOL)suppressCallout;
 - (void)suppressUpdates;
 - (void)transitionFrom:(int)arg1 to:(int)arg2 duration:(double)arg3;
 - (void)updateAnnotationLocationsDuringAnimation:(BOOL)arg1;

@@ -36,6 +36,7 @@
 + (BOOL)SCServiceWithIdentifier:(id)arg1 existsInPreferences:(struct __SCPreferences { }*)arg2;
 + (void)addError:(id)arg1 toList:(id)arg2;
 + (id)configurationWithProfilePayload:(id)arg1;
++ (id)configurationWithProfilePayload:(id)arg1 grade:(int)arg2;
 + (struct __CFDictionary { }*)copyConfigurationForProtocol:(struct __CFString { }*)arg1 inService:(struct __SCNetworkService { }*)arg2;
 + (BOOL)removeSCServiceWithIdentifier:(id)arg1 fromPreferences:(struct __SCPreferences { }*)arg2;
 + (BOOL)setConfiguration:(struct __CFDictionary { }*)arg1 forProtocol:(struct __CFString { }*)arg2 inService:(struct __SCNetworkService { }*)arg3;
@@ -91,15 +92,15 @@
 - (BOOL)ingestPPPDict:(id)arg1;
 - (BOOL)ingestProxyOptions:(id)arg1;
 - (id)initFromSCService:(struct __SCNetworkService { }*)arg1;
-- (id)initWithAlwaysOnVPNPayload:(id)arg1 configurationName:(id)arg2;
-- (id)initWithAppLayerVPNPayload:(id)arg1 configurationName:(id)arg2;
+- (id)initWithAlwaysOnVPNPayload:(id)arg1 configurationName:(id)arg2 grade:(int)arg3;
+- (id)initWithAppLayerVPNPayload:(id)arg1 configurationName:(id)arg2 grade:(int)arg3;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithConfiguration:(id)arg1;
-- (id)initWithContentFilterPayload:(id)arg1 configurationName:(id)arg2;
+- (id)initWithContentFilterPayload:(id)arg1 configurationName:(id)arg2 grade:(int)arg3;
 - (id)initWithIdentifier:(id)arg1;
 - (id)initWithName:(id)arg1 grade:(int)arg2;
-- (id)initWithPathControllerPayload:(id)arg1 configurationName:(id)arg2;
-- (id)initWithVPNPayload:(id)arg1 configurationName:(id)arg2;
+- (id)initWithPathControllerPayload:(id)arg1 configurationName:(id)arg2 grade:(int)arg3;
+- (id)initWithVPNPayload:(id)arg1 configurationName:(id)arg2 grade:(int)arg3;
 - (BOOL)isEqual:(id)arg1;
 - (BOOL)isSupportedBySC;
 - (id)name;
@@ -137,5 +138,6 @@
 - (void)syncWithSystemKeychain;
 - (void)syncWithUserKeychain;
 - (BOOL)updateFromSCService:(struct __SCNetworkService { }*)arg1;
+- (void)updateWithConfiguration:(id)arg1;
 
 @end

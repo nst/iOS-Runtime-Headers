@@ -14,6 +14,7 @@
     NSLayoutConstraint *_driveButtonTrailingConstraint;
     UILabel *_driveTimeLabel;
     MKMapItem *_mapItem;
+    BOOL _offlineMode;
     _MKQuickRouteManager *_quickRouteManager;
     id /* block */ _requestDirectionsBlock;
     UIButton *_transitButton;
@@ -31,6 +32,7 @@
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic) BOOL offlineMode;
 @property (nonatomic, copy) id /* block */ requestDirectionsBlock;
 @property (readonly) Class superclass;
 
@@ -56,12 +58,14 @@
 - (id)mapItem;
 - (id)newButtonWithImage:(id)arg1 andSelector:(SEL)arg2;
 - (id)newLabel;
+- (BOOL)offlineMode;
 - (unsigned int)preferredDirectionsTypeForQuickRoute;
 - (void)quickRouteManager:(id)arg1 didUpdateETA:(id)arg2 error:(id)arg3 animated:(BOOL)arg4;
 - (BOOL)quickRouteShouldIncludeTransit;
 - (BOOL)quickRouteShouldOnlyUseAutomobile;
 - (id /* block */)requestDirectionsBlock;
 - (void)setMapItem:(id)arg1;
+- (void)setOfflineMode:(BOOL)arg1;
 - (void)setRequestDirectionsBlock:(id /* block */)arg1;
 - (id)timeEstimateFont;
 - (void)updateConstraints;

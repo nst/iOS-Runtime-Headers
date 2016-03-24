@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/PreferencesUI.framework/PreferencesUI
  */
 
-@interface PSUICellularAccountGroupController : NSObject <PSSpecifierGroupController, PSUICellularAccountDetailDelegate> {
+@interface PSUICellularAccountGroupController : NSObject <PSSpecifierGroupController> {
     PSSpecifier *_groupSpecifier;
     PSListController *_listController;
 }
@@ -14,14 +14,16 @@
 @property (nonatomic) PSListController *listController;
 @property (readonly) Class superclass;
 
++ (id)accountManageButtonForPlanItem:(id)arg1 target:(id)arg2;
++ (void)configurePlanSpecifiers:(id)arg1 planItem:(id)arg2 target:(id)arg3;
 + (BOOL)shouldShowAccountSpecificUsage;
++ (id)specifiersFromCellularPlanItem:(id)arg1 target:(id)arg2;
++ (id)usageSpecifiersFromCellularPlanItem:(id)arg1 target:(id)arg2;
 
 - (void).cxx_destruct;
-- (id)getCarrierName:(id)arg1;
+- (id)getPlanCellDataNumber:(id)arg1;
 - (id)getPlanDetailedStatus:(id)arg1;
 - (id)getPlanExpireDate:(id)arg1;
-- (id)getPlanICCID:(id)arg1;
-- (id)getPlanName:(id)arg1;
 - (id)getPlanPurchaseDate:(id)arg1;
 - (id)getPlanStatus:(id)arg1;
 - (id)getPlanStatusDataOnly:(id)arg1;
@@ -31,8 +33,6 @@
 - (id)lastUpdatedText;
 - (id)listController;
 - (void)managePlanPressed:(id)arg1;
-- (void)openDataActivationURLForSelectedAccount;
-- (void)openDataRoamingOptions;
 - (void)otherButtonPressed:(id)arg1;
 - (void)setGroupSpecifier:(id)arg1;
 - (void)setListController:(id)arg1;

@@ -46,7 +46,9 @@
 - (id)desiredKeys;
 - (id)desiredPackageFileIndices;
 - (id /* block */)fetchRecordsCompletionBlock;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)init;
 - (id)initWithRecordIDs:(id)arg1;
 - (BOOL)isFetchCurrentUserOperation;

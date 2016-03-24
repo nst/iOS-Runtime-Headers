@@ -36,6 +36,7 @@
 + (id)entryEventBackwardDefinitionEnergyModel;
 + (id)entryEventBackwardDefinitionGPUStatsActiveTimeHistogram;
 + (id)entryEventBackwardDefinitionGPUStatsDVDRequestStates;
++ (id)entryEventBackwardDefinitionGPUStatsGPUCLTM;
 + (id)entryEventBackwardDefinitionGPUStatsGPUPerformanceStates;
 + (id)entryEventBackwardDefinitionGPUStatsIdleTimeHistogram;
 + (id)entryEventBackwardDefinitionH6ISPH6ISPPowerState;

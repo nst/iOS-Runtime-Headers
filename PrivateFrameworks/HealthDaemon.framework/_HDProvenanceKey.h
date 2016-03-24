@@ -11,7 +11,7 @@
     NSString *_originDevice;
     NSNumber *_sourceID;
     NSString *_sourceVersion;
-    int _syncProvenance;
+    long long _syncProvenance;
 }
 
 @property (nonatomic, readonly) NSNumber *deviceID;
@@ -21,10 +21,10 @@
 @property (nonatomic, readonly, copy) NSString *originDevice;
 @property (nonatomic, readonly) NSNumber *sourceID;
 @property (nonatomic, readonly, copy) NSString *sourceVersion;
-@property (nonatomic, readonly) int syncProvenance;
+@property (nonatomic, readonly) long long syncProvenance;
 
 + (id)provenanceKeyForProvenance:(id)arg1 localDevice:(id)arg2 localBuild:(id)arg3;
-+ (id)provenanceKeyWithSyncProvenance:(int)arg1 originDevice:(id)arg2 originBuild:(id)arg3 localDevice:(id)arg4 localBuild:(id)arg5 sourceID:(id)arg6 deviceID:(id)arg7 sourceVersion:(id)arg8;
++ (id)provenanceKeyWithSyncProvenance:(long long)arg1 originDevice:(id)arg2 originBuild:(id)arg3 localDevice:(id)arg4 localBuild:(id)arg5 sourceID:(id)arg6 deviceID:(id)arg7 sourceVersion:(id)arg8;
 
 - (void).cxx_destruct;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
@@ -38,6 +38,6 @@
 - (id)originDevice;
 - (id)sourceID;
 - (id)sourceVersion;
-- (int)syncProvenance;
+- (long long)syncProvenance;
 
 @end

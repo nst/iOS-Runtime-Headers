@@ -12,6 +12,8 @@
 - (void).cxx_destruct;
 - (void)_connectAVPlayer;
 - (id)_expectedAssetTypesForPlaybackMode:(int)arg1;
+- (id)_fallbackMusicPlaybackContext;
+- (void)_initiateMusicPlayback;
 - (void)_musicPlayer_defaultsDidChangeNotification:(id)arg1;
 - (void)_streamingDownloadSessionControllerDidFailDownloadSessionNotification:(id)arg1;
 - (void)beginOrTogglePlayback;

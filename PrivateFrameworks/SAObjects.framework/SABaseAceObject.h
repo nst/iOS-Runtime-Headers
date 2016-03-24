@@ -8,6 +8,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, copy) NSString *metricsContext;
 @property (readonly) Class superclass;
 
 + (id)baseAceObject;
@@ -16,6 +17,8 @@
 - (id)aceId;
 - (id)encodedClassName;
 - (id)groupIdentifier;
+- (id)metricsContext;
 - (void)setAceId:(id)arg1;
+- (void)setMetricsContext:(id)arg1;
 
 @end

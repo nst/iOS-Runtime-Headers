@@ -3,6 +3,7 @@
  */
 
 @interface CKFetchRecordChangesOperation : CKDatabaseOperation {
+    id /* block */ _changeTokensUpdatedBlock;
     NSArray *_desiredKeys;
     BOOL _fetchAllChanges;
     id /* block */ _fetchRecordChangesCompletionBlock;
@@ -21,6 +22,7 @@
     int _status;
 }
 
+@property (nonatomic, copy) id /* block */ changeTokensUpdatedBlock;
 @property (nonatomic, copy) NSArray *desiredKeys;
 @property (nonatomic) BOOL fetchAllChanges;
 @property (nonatomic, copy) id /* block */ fetchRecordChangesCompletionBlock;
@@ -47,11 +49,14 @@
 - (void)_handleCompletionCallback:(id)arg1;
 - (void)_handleProgressCallback:(id)arg1;
 - (unsigned long long)activityStart;
+- (id /* block */)changeTokensUpdatedBlock;
 - (int)changeTypesFromSetCallbacks;
 - (id)desiredKeys;
 - (BOOL)fetchAllChanges;
 - (id /* block */)fetchRecordChangesCompletionBlock;
+- (void)fillFromOperationInfo:(id)arg1;
 - (void)fillOutOperationInfo:(id)arg1;
+- (BOOL)hasCKOperationCallbacksSet;
 - (id)initWithRecordZoneID:(id)arg1 previousServerChangeToken:(id)arg2;
 - (BOOL)moreComing;
 - (void)performCKOperation;
@@ -64,6 +69,7 @@
 - (id)resultServerChangeToken;
 - (unsigned int)resultsLimit;
 - (id /* block */)serverChangeTokenFetchedBlock;
+- (void)setChangeTokensUpdatedBlock:(id /* block */)arg1;
 - (void)setDesiredKeys:(id)arg1;
 - (void)setFetchAllChanges:(BOOL)arg1;
 - (void)setFetchRecordChangesCompletionBlock:(id /* block */)arg1;

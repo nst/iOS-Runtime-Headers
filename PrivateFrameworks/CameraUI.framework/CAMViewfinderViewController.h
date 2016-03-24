@@ -6,6 +6,7 @@
     CAMHDRBadge *__HDRBadge;
     CAMHDRButton *__HDRButton;
     CAMBottomBar *__bottomBar;
+    BOOL __burstEndSoundPlaying;
     CAMBurstIndicatorView *__burstIndicatorView;
     float __cachedVideoZoomFactor;
     CAMCameraRollController *__cameraRollController;
@@ -97,6 +98,7 @@
 @property (nonatomic, readonly) CAMHDRButton *_HDRButton;
 @property (nonatomic, readonly) int _autorotationStyle;
 @property (nonatomic, readonly) CAMBottomBar *_bottomBar;
+@property (getter=_isBurstEndSoundPlaying, setter=_setBurstEndSoundPlaying:, nonatomic) BOOL _burstEndSoundPlaying;
 @property (nonatomic, readonly) CAMBurstIndicatorView *_burstIndicatorView;
 @property (setter=_setCachedVideoZoomFactor:, nonatomic) float _cachedVideoZoomFactor;
 @property (nonatomic, readonly) CAMCameraRollController *_cameraRollController;
@@ -360,6 +362,7 @@
 - (int)_irisAndFilterConflictingControl;
 - (id)_irisButton;
 - (int)_irisMode;
+- (BOOL)_isBurstEndSoundPlaying;
 - (BOOL)_isCapturingFromTimer;
 - (BOOL)_isCapturingTimelapse;
 - (BOOL)_isClosingViewfinder;
@@ -395,6 +398,7 @@
 - (int)_photoModeEffectFilterType;
 - (id)_physicalCaptureRecognizer;
 - (id)_powerController;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (void)_prepareTopBarForOrientationChangeDuringConfiguration;
 - (void)_presentCameraRollViewControllerAnimated:(BOOL)arg1 interactive:(BOOL)arg2;
 - (void)_previewDidStartRunning:(id)arg1;
@@ -416,6 +420,7 @@
 - (BOOL)_sanitizeDeferredModeChange;
 - (BOOL)_sanitizePendingDeviceChange;
 - (BOOL)_sanitizePendingModeChange;
+- (void)_setBurstEndSoundPlaying:(BOOL)arg1;
 - (void)_setCachedVideoZoomFactor:(float)arg1;
 - (void)_setCapturingFromPhysicalButton:(BOOL)arg1;
 - (void)_setCapturingFromTimer:(BOOL)arg1;
@@ -573,12 +578,14 @@
 - (void)_updateIdleTimerForStillImageCaptured;
 - (void)_updateImageWellWithImage:(id)arg1 forUUID:(id)arg2 animated:(BOOL)arg3;
 - (void)_updateImageWellWithStillImageResponse:(id)arg1 forRequest:(id)arg2 error:(id)arg3;
+- (void)_updateLivePhotoAggregateDictionaryForRequest:(id)arg1 response:(id)arg2;
 - (void)_updatePairedVideoCaptureOnControllerForMode:(int)arg1 isShowingCameraRoll:(BOOL)arg2;
 - (void)_updatePanoramaViewVisibilityForViewfinderTransition;
 - (void)_updatePausingOfCameraRollAudioHandlingForCapture;
 - (void)_updatePhysicalButtonCapturedEnabledResigningActive:(BOOL)arg1;
 - (void)_updatePropertiesForCaptureConfiguration:(id)arg1 conflictingControlConfiguration:(id)arg2;
 - (void)_updateSphereAggregateDictionariesForResponse:(id)arg1;
+- (void)_updateStillImageCaptureTypeAggregateDictionariesForRequest:(id)arg1 response:(id)arg2;
 - (void)_updateTopBarStyleForMode:(int)arg1 device:(int)arg2 capturing:(BOOL)arg3 animated:(BOOL)arg4;
 - (void)_updateTorchMode;
 - (void)_updateTorchModeOnControllerIfNecessaryForMode:(int)arg1;
@@ -589,6 +596,7 @@
 - (id)_videoCaptureRequestWithCurrentSettings;
 - (int)_videoConfigurationForMode:(int)arg1 device:(int)arg2;
 - (float)_videoZoomFactorAtPinchStart;
+- (void)_viewWillTransitionToSize:(struct CGSize { float x1; float x2; })arg1 withTransitionCoordinator:(id)arg2;
 - (void)_willChangeFromMode:(int)arg1 toMode:(int)arg2 fromDevice:(int)arg3 toDevice:(int)arg4 animated:(BOOL)arg5;
 - (void)_writeUserPreferences;
 - (float)_zoomFactorForZoomSliderValue:(float)arg1;
@@ -636,10 +644,12 @@
 - (void)captureControllerDidReachMaximumBurstLength:(id)arg1;
 - (void)captureControllerDidStartRunning:(id)arg1;
 - (void)captureControllerDidStopCapturingBurst:(id)arg1;
+- (void)captureControllerDidStopPlayingBurstEndSound:(id)arg1;
 - (void)captureControllerDidStopRunning:(id)arg1;
 - (void)captureControllerInterruptionEnded:(id)arg1;
 - (void)captureControllerWasInterrupted:(id)arg1;
 - (void)captureControllerWillStartCapturingBurst:(id)arg1;
+- (void)captureControllerWillStartPlayingBurstEndSound:(id)arg1;
 - (void)changeToMode:(int)arg1 device:(int)arg2;
 - (void)changeToMode:(int)arg1 device:(int)arg2 animated:(BOOL)arg3;
 - (void)closedViewfinderController:(id)arg1 wantsViewfinderClosedForReason:(int)arg2;

@@ -13,6 +13,7 @@
     NSString *_releaseNotesSummaryFileName;
     NSURL *_releaseNotesSummaryURL;
     NSURL *_releaseNotesURL;
+    NSNumber *_slaVersion;
 }
 
 @property (nonatomic, retain) NSURL *baseDocumentationURL;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) NSString *releaseNotesSummaryFileName;
 @property (nonatomic, retain) NSURL *releaseNotesSummaryURL;
 @property (nonatomic, retain) NSURL *releaseNotesURL;
+@property (nonatomic, retain) NSNumber *slaVersion;
 
 + (BOOL)supportsSecureCoding;
 
@@ -63,5 +65,7 @@
 - (void)setReleaseNotesSummaryFileName:(id)arg1;
 - (void)setReleaseNotesSummaryURL:(id)arg1;
 - (void)setReleaseNotesURL:(id)arg1;
+- (void)setSlaVersion:(id)arg1;
+- (id)slaVersion;
 
 @end

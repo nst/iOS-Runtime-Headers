@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/PassKit.framework/PassKit
  */
 
-@interface PKPassGroupsViewController : UIViewController <PKCodeAcquisitionDelegate, PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKPaymentServiceDelegate, UIScrollViewDelegate> {
+@interface PKPassGroupsViewController : UIViewController <PKCodeAcquisitionDelegate, PKGroupsControllerDelegate, PKPassGroupStackViewDatasource, PKPassGroupStackViewDelegate, PKPassPersonalizationViewControllerDelegate, PKPaymentServiceDelegate, UIScrollViewDelegate> {
     NSTimer *_allowDimmingTimer;
     BOOL _backgroundMode;
     NSMutableArray *_blocksQueuedForUpdateCompletion;
@@ -55,7 +55,9 @@
 - (void)addVASPassWithIdentifier:(id)arg1;
 - (void)allowIdleTimer;
 - (void)cardsChanged:(id)arg1;
-- (void)codeAcquisitionController:(id)arg1 didAcquirePass:(id)arg2;
+- (void)codeAcquisitionController:(id)arg1 didAddPass:(id)arg2;
+- (void)codeAcquisitionController:(id)arg1 didFinishWithPass:(id)arg2;
+- (void)codeAcquisitionController:(id)arg1 willAddPass:(id)arg2;
 - (void)codeAcquisitionControllerDidCancel:(id)arg1;
 - (void)dealloc;
 - (void)decodeRestorableStateWithCoder:(id)arg1;
@@ -89,6 +91,7 @@
 - (BOOL)isWelcomeStateEnabled;
 - (void)loadView;
 - (unsigned int)numberOfGroups;
+- (void)passPersonalizationViewController:(id)arg1 didFinishPersonalizingPass:(id)arg2;
 - (BOOL)passesAreOutdated;
 - (BOOL)passesGrowWhenFlipped;
 - (void)paymentDeviceDidEnterFieldWithProperties:(id)arg1;
@@ -111,6 +114,7 @@
 - (void)reloadPasses;
 - (void)reloadPassesWithCompletion:(id /* block */)arg1;
 - (void)scrollViewDidEndDecelerating:(id)arg1;
+- (void)scrollViewDidEndDragging:(id)arg1 willDecelerate:(BOOL)arg2;
 - (void)scrollViewDidEndScrollingAnimation:(id)arg1;
 - (void)scrollViewDidScroll:(id)arg1;
 - (void)scrollViewDidScrollToTop:(id)arg1;
@@ -126,6 +130,7 @@
 - (unsigned int)suppressedContent;
 - (void)terminateFieldDetect;
 - (void)updateLockscreenIdleTimer;
+- (void)updatePassesIfNecessaryWithCompletion:(id /* block */)arg1;
 - (void)updateRegionSupportIfNecessary;
 - (void)viewDidDisappear:(BOOL)arg1;
 - (void)viewWillAppear:(BOOL)arg1;

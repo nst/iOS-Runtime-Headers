@@ -29,6 +29,7 @@
 - (id)_extendedRemoteObjectProxyWithFailureHandler:(id /* block */)arg1;
 - (id)_extendedRemoteObjectProxyWithSemaphore:(id)arg1;
 - (void)_getArchivedObjectWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
+- (void)_getDataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2 objectUniqueIdentifier:(id)arg3 completion:(id /* block */)arg4;
 - (void)_getPassWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
 - (void)_getPassesAndCatalogOfPassTypes:(unsigned int)arg1 limitResults:(BOOL)arg2 withRetries:(unsigned int)arg3 handler:(id /* block */)arg4;
 - (BOOL)_hasRemoteLibrary;
@@ -48,6 +49,7 @@
 - (BOOL)canAddPaymentPassWithPrimaryAccountIdentifier:(id)arg1;
 - (void)catalogChanged:(id)arg1 withNewPasses:(id)arg2;
 - (BOOL)containsPass:(id)arg1;
+- (id)dataForBundleResourceNamed:(id)arg1 withExtension:(id)arg2 objectUniqueIdentifier:(id)arg3;
 - (void)dealloc;
 - (id)delegate;
 - (id)diffForPassBulletinWithRecordID:(id)arg1;
@@ -69,10 +71,10 @@
 - (void)inAppPaymentPassesForNetworks:(id)arg1 capabilities:(unsigned int)arg2 withHandler:(id /* block */)arg3;
 - (void)inAppPaymentPassesForNetworks:(id)arg1 withHandler:(id /* block */)arg2;
 - (void)inAppPrivateLabelPaymentPassesForApplicationIdentifier:(id)arg1 withHandler:(id /* block */)arg2;
-- (void)ingestPassData:(id)arg1 settings:(id)arg2 completion:(id /* block */)arg3;
 - (id)init;
 - (id)initWithMachServiceName:(id)arg1 resumeNotificationName:(id)arg2 extendedInterface:(BOOL)arg3;
 - (void)introduceDatabaseIntegrityProblem;
+- (BOOL)isPassbookVisible;
 - (BOOL)isPaymentPassActivationAvailable;
 - (BOOL)isRemovingPassesOfType:(unsigned int)arg1;
 - (void)logDelayExitReasons;
@@ -99,7 +101,8 @@
 - (void)removingPassesOfType:(unsigned int)arg1 didUpdateWithProgress:(double)arg2;
 - (BOOL)replacePassWithPass:(id)arg1;
 - (void)requestContactlessInterfaceSuppressionFromUserWithCompletion:(id /* block */)arg1;
-- (void)requestUpdateOfObjectWithUniqueID:(id)arg1 completion:(id /* block */)arg2;
+- (void)requestPersonalizationOfPassWithUniqueIdentifier:(id)arg1 contact:(id)arg2 personalizationToken:(id)arg3 requiredPersonalizationFields:(unsigned int)arg4 personalizationSource:(unsigned int)arg5 handler:(id /* block */)arg6;
+- (void)requestUpdateOfObjectWithUniqueIdentifier:(id)arg1 completion:(id /* block */)arg2;
 - (void)sendUserEditedCatalog:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)shuffleGroups:(int)arg1;

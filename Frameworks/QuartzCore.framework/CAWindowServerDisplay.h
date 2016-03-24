@@ -8,6 +8,7 @@
 
 @property (copy) NSString *TVMode;
 @property (copy) NSString *TVSignalType;
+@property BOOL allowsDisplayCompositing;
 @property BOOL allowsVirtualModes;
 @property (getter=isBlanked) BOOL blanked;
 @property (readonly) struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; } bounds;
@@ -16,6 +17,7 @@
 @property (nonatomic, copy) NSString *colorMode;
 @property float contrast;
 @property (readonly) NSString *deviceName;
+@property BOOL disablesUpdates;
 @property (readonly) unsigned int displayId;
 @property (getter=isGrayscale) BOOL grayscale;
 @property float idealRefreshRate;
@@ -38,9 +40,10 @@
 
 - (id)TVMode;
 - (id)TVSignalType;
-- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; struct Display {} *x4; struct __CFString {} *x5; struct ContextItem {} *x6; unsigned int x7; unsigned int x8; struct ContextItem {} *x9; unsigned int x10; struct SpinLock { struct { int x_1_2_1; } x_11_1_1; } x11; struct PendingOperation {} *x12; struct Context {} *x13; struct Shape {} *x14; unsigned int x15; struct Context {} *x16; struct Renderer {} *x17; double x18; double x19; unsigned int x20 : 1; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; }*)arg1;
+- (id)_initWithCADisplayServer:(struct Server { int (**x1)(); struct SpinLock { struct { int x_1_2_1; } x_2_1_1; } x2; struct Mutex { struct _opaque_pthread_mutex_t { long x_1_2_1; BOOL x_1_2_2[40]; } x_3_1_1; } x3; id x4; struct Display {} x5; struct __CFString {} *x6; struct ContextItem {} *x7; unsigned int x8; unsigned int x9; struct ContextItem {} *x10; unsigned int x11; struct SpinLock { struct { int x_1_2_1; } x_12_1_1; } x12; struct PendingOperation {} *x13; struct Context {} *x14; struct Shape {} *x15; unsigned int x16; struct Context {} *x17; struct Renderer {} *x18; double x19; double x20; unsigned int x21 : 1; unsigned int x22 : 1; unsigned int x23 : 1; unsigned int x24 : 1; unsigned int x25 : 1; unsigned int x26 : 1; }*)arg1;
 - (void)addClone:(id)arg1;
 - (void)addClone:(id)arg1 options:(id)arg2;
+- (BOOL)allowsDisplayCompositing;
 - (BOOL)allowsVirtualModes;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })bounds;
 - (unsigned int)clientPortAtPosition:(struct CGPoint { float x1; float x2; })arg1;
@@ -55,7 +58,9 @@
 - (void)dealloc;
 - (id)description;
 - (id)deviceName;
+- (BOOL)disablesUpdates;
 - (unsigned int)displayId;
+- (void)freeze;
 - (float)idealRefreshRate;
 - (void)invalidate;
 - (BOOL)invertsColors;
@@ -75,10 +80,13 @@
 - (void)removeClone:(id)arg1;
 - (unsigned int)rendererFlags;
 - (float)scale;
+- (void)setAllowsDisplayCompositing:(BOOL)arg1;
 - (void)setAllowsVirtualModes:(BOOL)arg1;
 - (void)setBlanked:(BOOL)arg1;
+- (void)setColorMatrix:(float*)arg1 scale:(float)arg2 rampDuration:(double)arg3;
 - (void)setColorMode:(id)arg1;
 - (void)setContrast:(float)arg1;
+- (void)setDisablesUpdates:(BOOL)arg1;
 - (void)setGrayscale:(BOOL)arg1;
 - (void)setIdealRefreshRate:(float)arg1;
 - (void)setInvertsColors:(BOOL)arg1;

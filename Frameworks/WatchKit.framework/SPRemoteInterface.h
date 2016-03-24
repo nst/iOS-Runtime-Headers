@@ -74,8 +74,8 @@
 + (void)removePageControllerAtIndexes:(id)arg1;
 + (void)sendCacheRequest:(id)arg1;
 + (void)sendCacheRequestMessage:(id)arg1;
-+ (void)sendData:(id)arg1;
-+ (void)sendData:(id)arg1 reply:(id /* block */)arg2;
++ (BOOL)sendDataToApp:(id)arg1;
++ (BOOL)sendDataToApp:(id)arg1 reply:(id /* block */)arg2;
 + (void)setController:(id)arg1 key:(id)arg2 property:(id)arg3 value:(id)arg4;
 + (void)setControllerActive:(id)arg1;
 + (void)setControllerInactive:(id)arg1;
@@ -95,6 +95,7 @@
 - (id)_interfaceControllerWithID:(id)arg1;
 - (void)_registerInterfaceController:(id)arg1 interfaceControllerID:(id)arg2 interfaceControllerClientID:(id)arg3 applicationRootController:(BOOL)arg4;
 - (void)_requestTimingData:(id)arg1;
+- (BOOL)_sendDataToApp:(id)arg1 reply:(id /* block */)arg2;
 - (void)_sendOpenParentApplicationRequest;
 - (id)_setupSignal:(int)arg1 handler:(id /* block */)arg2;
 - (void)_setupSignalHandlers;

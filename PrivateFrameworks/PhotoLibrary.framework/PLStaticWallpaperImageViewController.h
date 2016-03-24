@@ -7,6 +7,7 @@
 @property (nonatomic) BOOL colorSamplingEnabled;
 
 - (void)_fetchImageForWallPaperAsset:(id)arg1 resultHandler:(id /* block */)arg2;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (id)_wallPaperPreviewControllerForAsset:(id)arg1;
 - (id)_wallPaperPreviewControllerForPhotoIrisAsset:(id)arg1;
 - (BOOL)colorSamplingEnabled;

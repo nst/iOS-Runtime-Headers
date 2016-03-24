@@ -14,6 +14,7 @@
 @property (nonatomic, copy) NSString *fromID;
 @property (nonatomic, copy) NSString *incomingResponseIdentifier;
 @property (nonatomic) NSNumber *originalCommand;
+@property (nonatomic, copy) NSString *originalDestinationDevice;
 @property (nonatomic, copy) NSString *outgoingResponseIdentifier;
 @property (nonatomic) NSNumber *priority;
 @property (nonatomic, copy) NSString *serviceIdentifier;
@@ -30,10 +31,12 @@
 - (void)dealloc;
 - (BOOL)expectsPeerResponse;
 - (id)fromID;
+- (id)idsGuard_objectForKey:(id)arg1;
+- (void)idsGuard_setObject:(id)arg1 forKey:(id)arg2;
 - (id)incomingResponseIdentifier;
 - (id)initWithDictionary:(id)arg1 boostContext:(id)arg2;
-- (id)objectForKey:(id)arg1;
 - (id)originalCommand;
+- (id)originalDestinationDevice;
 - (id)outgoingResponseIdentifier;
 - (id)priority;
 - (id)serviceIdentifier;
@@ -43,8 +46,8 @@
 - (void)setExpectsPeerResponse:(BOOL)arg1;
 - (void)setFromID:(id)arg1;
 - (void)setIncomingResponseIdentifier:(id)arg1;
-- (void)setObject:(id)arg1 forKey:(id)arg2;
 - (void)setOriginalCommand:(id)arg1;
+- (void)setOriginalDestinationDevice:(id)arg1;
 - (void)setOutgoingResponseIdentifier:(id)arg1;
 - (void)setPriority:(id)arg1;
 - (void)setServiceIdentifier:(id)arg1;
@@ -56,6 +59,13 @@
 - (id)toID;
 - (BOOL)wantsAppAck;
 - (BOOL)wantsManualAck;
+
+// Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
+
++ (void)load;
+
+- (id)objectForKey:(id)arg1;
+- (void)setObject:(id)arg1 forKey:(id)arg2;
 
 // Image: /System/Library/PrivateFrameworks/NanoLeash.framework/NanoLeash
 

@@ -83,6 +83,7 @@
     NSMutableArray *_pendingIrisRefMovieRequests;
     struct OpaqueFigSimpleMutex { } *_propertyMutex;
     BOOL _recordingIsForFrontCamera;
+    BOOL _recordingIsSubjectToDiskSpaceQuota;
     int _recordingState;
     FigCaptureMovieFileRecordingSettings *_settings;
     NSArray *_stagingQueues;

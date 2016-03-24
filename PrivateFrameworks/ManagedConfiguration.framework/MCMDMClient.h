@@ -19,8 +19,10 @@
 - (BOOL)isActivationLockAllowedWhileSupervised;
 - (BOOL)isManagedByMDM;
 - (void)notifyNewConfiguration;
+- (void)processUserRequest:(id)arg1 completionBlock:(id /* block */)arg2;
 - (void)retryNotNowResponse;
 - (void)scheduleTokenUpdate;
+- (void)scheduleTokenUpdateIfNecessary;
 - (void)setXpcConnection:(id)arg1;
 - (void)simulatePush;
 - (void)uprootMDM;

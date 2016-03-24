@@ -29,7 +29,7 @@
 @property (nonatomic, retain) HMDMessageFilterChain *msgFilterChain;
 @property (nonatomic, retain) HMMessageDispatcher *notificationDispatcher;
 @property (nonatomic, retain) HMDNotificationRelay *notificationRelay;
-@property (nonatomic, readonly) NSArray *pairedWatchDevices;
+@property (nonatomic, readonly) NSSet *pairedWatchAddresses;
 @property (nonatomic, readonly) NSArray *reachableCompanionDevices;
 @property (nonatomic, readonly) NSArray *reachableWatchDevices;
 @property (nonatomic, retain) HMMessageDispatcher *recvDispatcher;
@@ -50,13 +50,13 @@
 - (void)_handleSecureServerMessage:(id)arg1 fromID:(id)arg2;
 - (BOOL)_haveAllCapabilities:(id)arg1;
 - (id)_pairedCompanionDevices;
-- (id)_pairedWatchDevices;
+- (id)_pairedWatchAddresses;
 - (id)_reachableCompanionDevices;
 - (id)_reachableWatchDevices;
 - (void)_sendMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseTimeout:(double)arg4 responseQueue:(id)arg5 responseHandler:(id /* block */)arg6;
 - (void)_sendSecureMessage:(id)arg1 target:(id)arg2 destination:(id)arg3 responseQueue:(id)arg4 responseHandler:(id /* block */)arg5;
 - (void)_setRemoteAccessPeer:(id)arg1 forHome:(id)arg2 sendNotification:(BOOL)arg3;
-- (BOOL)_watchCompanionCommunication:(id)arg1;
+- (BOOL)_watchCompanionCommunication:(id)arg1 isConnected:(BOOL*)arg2;
 - (id)activeClientSecureSessions;
 - (id)activeServerSecureSessions;
 - (id)adminMsgFilter;
@@ -77,7 +77,7 @@
 - (id)notificationDispatcher;
 - (id)notificationRelay;
 - (id)pairedCompanionDevices;
-- (id)pairedWatchDevices;
+- (id)pairedWatchAddresses;
 - (id)prepareAnswerForRequestedCapabilities:(id)arg1;
 - (id)reachableCompanionDevices;
 - (id)reachableWatchDevices;

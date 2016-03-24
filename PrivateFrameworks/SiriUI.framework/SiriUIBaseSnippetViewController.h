@@ -23,6 +23,7 @@
 - (void)setDelegate:(id)arg1;
 - (void)setSnippet:(id)arg1;
 - (void)siriDidDeactivate;
+- (void)siriDidReceiveAdditionalContent:(id)arg1 error:(id)arg2;
 - (void)siriWillActivateFromSource:(int)arg1;
 - (id)snippet;
 - (void)wasAddedToTranscript;

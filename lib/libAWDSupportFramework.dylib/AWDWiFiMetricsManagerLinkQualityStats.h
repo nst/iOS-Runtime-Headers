@@ -14,6 +14,8 @@
 @property (nonatomic, retain) NSMutableArray *statRecords;
 @property (nonatomic) unsigned long long timestamp;
 
++ (Class)statRecordType;
+
 - (void)addStatRecord:(id)arg1;
 - (void)clearStatRecords;
 - (void)copyTo:(id)arg1;

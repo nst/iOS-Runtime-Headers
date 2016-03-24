@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSOrthography : NSObject <NSCoding, NSCopying>
+@interface NSOrthography : NSObject <NSCopying, NSSecureCoding>
 
 @property (readonly, copy) NSString *dominantScript;
 @property (readonly, copy) NSDictionary *languageMap;
@@ -10,6 +10,7 @@
 + (id)allocWithZone:(struct _NSZone { }*)arg1;
 + (void)initialize;
 + (id)orthographyWithDominantScript:(id)arg1 languageMap:(id)arg2;
++ (BOOL)supportsSecureCoding;
 
 - (id)allLanguages;
 - (id)allScripts;

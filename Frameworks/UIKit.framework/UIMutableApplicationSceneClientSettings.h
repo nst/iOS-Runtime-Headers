@@ -27,6 +27,7 @@
 @property (nonatomic) int statusBarStyle;
 @property (readonly) Class superclass;
 @property (nonatomic) unsigned int supportedInterfaceOrientations;
+@property (nonatomic) int whitePointAdaptivityStyle;
 
 - (int)backgroundStyle;
 - (int)compatibilityMode;
@@ -65,10 +66,12 @@
 - (void)setStatusBarHidden:(BOOL)arg1;
 - (void)setStatusBarStyle:(int)arg1;
 - (void)setSupportedInterfaceOrientations:(unsigned int)arg1;
+- (void)setWhitePointAdaptivityStyle:(int)arg1;
 - (unsigned int)statusBarContextID;
 - (BOOL)statusBarHidden;
 - (int)statusBarStyle;
 - (unsigned int)supportedInterfaceOrientations;
 - (id)valueDescriptionForFlag:(int)arg1 object:(id)arg2 ofSetting:(unsigned int)arg3;
+- (int)whitePointAdaptivityStyle;
 
 @end

@@ -5,6 +5,8 @@
 @interface MBAppManager : NSObject {
     NSMutableDictionary *_containersByID;
     MBSettingsContext *_settingsContext;
+    NSMutableDictionary *_systemDataContainersByID;
+    NSMutableDictionary *_systemSharedContainersByID;
 }
 
 + (id)appManager;
@@ -12,12 +14,15 @@
 
 - (id)_copyAppsWithPlists:(id)arg1 error:(id*)arg2;
 - (id)_copySafeHarborsWithError:(id*)arg1;
+- (id)_copySystemContainersWithError:(id*)arg1;
+- (id)_copySystemContainersWithPlists:(id)arg1 error:(id*)arg2;
 - (id)_copyUserAppsWithError:(id*)arg1;
 - (id)_subdomainNamesForAppDomainNames:(id)arg1;
 - (id)allApps;
 - (id)allContainers;
 - (id)allDisabledDomainNames;
 - (id)allRestrictedDomainNames;
+- (id)allSystemContainers;
 - (id)appWithIdentifier:(id)arg1;
 - (id)containerWithIdentifier:(id)arg1;
 - (id)createSafeHarborForContainer:(id)arg1 error:(id*)arg2;
@@ -29,5 +34,7 @@
 - (void)removeAllDisabledDomainNames;
 - (void)removeOldSafeHarbors;
 - (void)setEnabled:(BOOL)arg1 forDomainName:(id)arg2;
+- (id)systemDataContainerWithIdentifier:(id)arg1;
+- (id)systemSharedContainerWithIdentifier:(id)arg1;
 
 @end

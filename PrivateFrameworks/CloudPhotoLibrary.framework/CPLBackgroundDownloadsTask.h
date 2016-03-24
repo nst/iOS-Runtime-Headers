@@ -11,6 +11,7 @@
     BOOL _hasResetQueue;
     NSObject<OS_dispatch_queue> *_lock;
     BOOL _shouldStop;
+    NSError *_stopError;
     unsigned int _successfullyDownloadedResourcesCount;
     unsigned int _total;
 }

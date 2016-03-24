@@ -108,6 +108,8 @@
 - (struct CGSize { float x1; float x2; })_layoutReferenceSize;
 - (void)_loadAVAsset;
 - (void)_loadAVAssetValues;
+- (void)_loadFallbackAdjustmentsIfNeeded;
+- (void)_loadInitialVideoBuilderWithAdjustments:(id)arg1;
 - (void)_loadVideo;
 - (unsigned int)_loadingState;
 - (void)_pausePlayer;

@@ -30,6 +30,7 @@
 - (void)testDistribution5;
 - (id)testNames;
 - (void)testPerformance;
+- (void)testPowerEventIntervalOverlap;
 - (void)testQualification1;
 - (void)testQualification2;
 - (void)testReloadAfter1;

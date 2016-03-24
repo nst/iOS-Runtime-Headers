@@ -67,4 +67,16 @@
 
 - (unsigned int)bltVersion;
 
+// Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
+
+- (BOOL)hd_isActive;
+- (BOOL)hd_isPaired;
+- (id)hd_lastActiveDate;
+- (id)hd_lastInactiveDate;
+- (id)hd_name;
+- (id)hd_pairingID;
+- (id)hd_productType;
+- (id)hd_shortDescription;
+- (id)hd_systemBuildVersion;
+
 @end

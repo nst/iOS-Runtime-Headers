@@ -3,6 +3,7 @@
  */
 
 @interface UIPDFDocument : NSObject {
+    float _cachedHeight;
     float _cachedWidth;
     struct CGPDFDocument { } *_cgDocument;
     <NSObject><UIPDFDocumentDelegate> *_delegate;
@@ -54,6 +55,7 @@
 - (float)sumHeight;
 - (float)sumWidth;
 - (id)thumbnailCache;
+- (void)updateWidthHeightCache;
 
 // Image: /System/Library/PrivateFrameworks/MarkupUI.framework/MarkupUI
 

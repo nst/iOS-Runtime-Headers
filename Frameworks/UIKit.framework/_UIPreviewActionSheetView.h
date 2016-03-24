@@ -4,6 +4,7 @@
 
 @interface _UIPreviewActionSheetView : UIView <UIGestureRecognizerDelegate, UIScrollViewDelegate> {
     NSArray *_actions;
+    _UIDimmingKnockoutBackdropView *_backdropView;
     id /* block */ _completionHandler;
     struct UIEdgeInsets { 
         float top; 
@@ -16,10 +17,12 @@
     UIPanGestureRecognizer *_panGestureRecognizer;
     UIScrollView *_scrollView;
     _UIPreviewActionSheetItemView *_selectedActionView;
+    NSArray *_separatorViews;
     NSString *_title;
 }
 
 @property (nonatomic, retain) NSArray *actions;
+@property (nonatomic) _UIDimmingKnockoutBackdropView *backdropView;
 @property (nonatomic, copy) id /* block */ completionHandler;
 @property (nonatomic) struct UIEdgeInsets { float x1; float x2; float x3; float x4; } contentInsets;
 @property (readonly, copy) NSString *debugDescription;
@@ -30,17 +33,21 @@
 @property (nonatomic, retain) UIPanGestureRecognizer *panGestureRecognizer;
 @property (nonatomic, retain) UIScrollView *scrollView;
 @property (nonatomic) _UIPreviewActionSheetItemView *selectedActionView;
+@property (nonatomic, retain) NSArray *separatorViews;
 @property (readonly) Class superclass;
 @property (nonatomic, retain) NSString *title;
 
 - (void).cxx_destruct;
 - (void)_changeSelectedActionViewWithView:(id)arg1;
 - (void)_fireActionForSelectedView;
+- (BOOL)_isInDarkMode;
 - (void)_longPressDidFire:(id)arg1;
 - (void)_panDidFire:(id)arg1;
+- (id)_separatorColorForDarkMode:(BOOL)arg1;
 - (void)_setupGestureRecognizers;
 - (void)_setupViewHierarchy;
 - (id)actions;
+- (id)backdropView;
 - (id /* block */)completionHandler;
 - (struct UIEdgeInsets { float x1; float x2; float x3; float x4; })contentInsets;
 - (id)delegate;
@@ -53,7 +60,9 @@
 - (id)scrollView;
 - (void)scrollViewDidScroll:(id)arg1;
 - (id)selectedActionView;
+- (id)separatorViews;
 - (void)setActions:(id)arg1;
+- (void)setBackdropView:(id)arg1;
 - (void)setCompletionHandler:(id /* block */)arg1;
 - (void)setContentInsets:(struct UIEdgeInsets { float x1; float x2; float x3; float x4; })arg1;
 - (void)setDelegate:(id)arg1;
@@ -61,7 +70,9 @@
 - (void)setPanGestureRecognizer:(id)arg1;
 - (void)setScrollView:(id)arg1;
 - (void)setSelectedActionView:(id)arg1;
+- (void)setSeparatorViews:(id)arg1;
 - (void)setTitle:(id)arg1;
 - (id)title;
+- (void)traitCollectionDidChange:(id)arg1;
 
 @end

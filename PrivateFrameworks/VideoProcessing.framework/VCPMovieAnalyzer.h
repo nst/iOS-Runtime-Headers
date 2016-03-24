@@ -10,7 +10,6 @@
     BOOL _isIris;
     BOOL _isSlowmo;
     unsigned int _requestedAnalyses;
-    NSMutableDictionary *_results;
     PFVideoAVObjectBuilder *_slowmoTimeMap;
     int _status;
 }
@@ -18,16 +17,15 @@
 @property (readonly) int status;
 
 - (void).cxx_destruct;
-- (void)addResults:(id)arg1;
-- (void)addResults:(id)arg1 forKey:(id)arg2;
 - (id)analyzeAsset:(id /* block */)arg1;
-- (long)analyzeVideoTrack:(id)arg1 cancel:(id /* block */)arg2 flags:(unsigned int*)arg3;
-- (id)createDecoderForTrack:(id)arg1;
+- (long)analyzeVideoSegment:(id)arg1 timerange:(const struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; }*)arg2 cancel:(id /* block */)arg3;
+- (long)analyzeVideoTrack:(id)arg1 start:(struct { long long x1; int x2; unsigned int x3; long long x4; })arg2 cancel:(id /* block */)arg3;
+- (id)createDecoderForTrack:(id)arg1 timerange:(const struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; }*)arg2;
 - (id)createVideoAnalyzer:(id)arg1;
 - (id)initWithAVAsset:(id)arg1 forAnalysisTypes:(unsigned int)arg2;
 - (id)initWithIrisAVAsset:(id)arg1 irisPhotoOffsetSec:(float)arg2 irisPhotoExposureSec:(float)arg3 forAnalysisTypes:(unsigned int)arg4;
+- (id)initWithPHAsset:(id)arg1 existingAnalysis:(id)arg2 forAnalysisTypes:(unsigned int)arg3;
 - (id)initWithPHAsset:(id)arg1 forAnalysisTypes:(unsigned int)arg2;
-- (id)orientationForVideoTrack:(id)arg1;
 - (int)status;
 
 @end

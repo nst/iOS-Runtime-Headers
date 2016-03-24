@@ -23,6 +23,7 @@
 - (id)_makeWipeDeviceGroupFooter;
 - (void)_setWipeEnabled:(BOOL)arg1;
 - (void)_showDeleteSavedFingerprintsAlert;
+- (void)_showWeakWarningAlertForController:(id)arg1 withCompletion:(id /* block */)arg2;
 - (void)_updateGracePeriodForSpecifier:(id)arg1;
 - (id)assistantUnderLockEnabled:(id)arg1;
 - (BOOL)canBeShownFromSuspendedState;
@@ -30,6 +31,7 @@
 - (void)dealloc;
 - (void)devicePINController:(id)arg1 didAcceptChangedPIN:(id)arg2;
 - (void)devicePINController:(id)arg1 didAcceptSetPIN:(id)arg2;
+- (void)devicePINController:(id)arg1 shouldAcceptPIN:(id)arg2 withCompletion:(id /* block */)arg3;
 - (void)didAcceptRemovePIN;
 - (void)disablePasscodeRequiredSpecifiers:(id)arg1;
 - (id)enabledInLockScreen:(id)arg1;

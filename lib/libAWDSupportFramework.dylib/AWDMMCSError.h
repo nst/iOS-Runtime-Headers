@@ -17,6 +17,8 @@
 @property (nonatomic, readonly) BOOL hasDomain;
 @property (nonatomic, retain) NSMutableArray *underlyingErrors;
 
++ (Class)underlyingErrorsType;
+
 - (void)addUnderlyingErrors:(id)arg1;
 - (void)clearUnderlyingErrors;
 - (int)code;

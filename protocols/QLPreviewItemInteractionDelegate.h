@@ -17,6 +17,7 @@
 - (void)previewItem:(id <QLPreviewItem>)arg1 willShowOverlayWithDuration:(double)arg2;
 - (void)previewItemDidExitFullScreen:(id <QLPreviewItem>)arg1;
 - (void)previewItemDidLoad:(id <QLPreviewItem>)arg1 atIndex:(int)arg2 withError:(NSError *)arg3;
+- (void)previewItemNeedsWhitePointAdaptivityStyle:(int)arg1 atIndex:(int)arg2;
 - (void)previewItemWillLoad:(id <QLPreviewItem>)arg1;
 - (void)showContentsWasTappedForPreviewItem:(id <QLPreviewItem>)arg1;
 - (void)viewDidUpdateForPreviewItem:(id <QLPreviewItem>)arg1;

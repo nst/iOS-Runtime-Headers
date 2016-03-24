@@ -10,6 +10,7 @@
 @property (nonatomic) double lastResetTime;
 @property (nonatomic) unsigned int requestCount;
 
+- (id)description;
 - (double)lastResetTime;
 - (unsigned int)requestCount;
 - (void)setLastResetTime:(double)arg1;

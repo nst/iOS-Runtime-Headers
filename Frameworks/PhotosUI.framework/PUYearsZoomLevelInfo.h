@@ -21,7 +21,6 @@
 - (void)configureSectionHeaderView:(id)arg1 forVisualSection:(int)arg2;
 - (id)diagnosticsProviderForVisualSection:(int)arg1;
 - (id)displayTitle;
-- (id)imageDataForAsset:(id)arg1 itemContentScale:(float)arg2 imageWidth:(int*)arg3 imageHeight:(int*)arg4 bytesPerRow:(int*)arg5 dataWidth:(int*)arg6 dataHeight:(int*)arg7 imageDataOffset:(int*)arg8;
 - (int)imageDeliveryMode;
 - (id)initWithZoomLevel:(unsigned int)arg1 zoomLevelManager:(id)arg2 baseZoomLevelInfo:(id)arg3;
 - (int)maxRowsPerSection;

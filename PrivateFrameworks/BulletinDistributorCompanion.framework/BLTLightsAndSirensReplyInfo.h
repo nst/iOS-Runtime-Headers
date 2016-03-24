@@ -4,25 +4,25 @@
 
 @interface BLTLightsAndSirensReplyInfo : NSObject {
     NSDate *_bulletinPublicationDate;
+    NSDate *_creation;
     bool _didLogAggd;
     unsigned int _didPlayLightsAndSirens;
-    NSDate *_expiration;
     id /* block */ _reply;
     BOOL _replySent;
 }
 
 @property (nonatomic, retain) NSDate *bulletinPublicationDate;
+@property (nonatomic, readonly) NSDate *creation;
 @property (nonatomic) bool didLogAggd;
 @property (nonatomic) unsigned int didPlayLightsAndSirens;
-@property (nonatomic, retain) NSDate *expiration;
 @property (nonatomic, copy) id /* block */ reply;
 @property (nonatomic, readonly) BOOL replySent;
 
 - (void).cxx_destruct;
 - (id)bulletinPublicationDate;
+- (id)creation;
 - (bool)didLogAggd;
 - (unsigned int)didPlayLightsAndSirens;
-- (id)expiration;
 - (BOOL)hasExpired;
 - (id)init;
 - (id /* block */)reply;
@@ -31,7 +31,6 @@
 - (void)setBulletinPublicationDate:(id)arg1;
 - (void)setDidLogAggd:(bool)arg1;
 - (void)setDidPlayLightsAndSirens:(unsigned int)arg1;
-- (void)setExpiration:(id)arg1;
 - (void)setReply:(id /* block */)arg1;
 
 @end

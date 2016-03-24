@@ -10,7 +10,7 @@
     BOOL _hasAdjustments;
     unsigned int _mediaSubtype;
     int _mediaType;
-    PHAssetResource *_primaryResource;
+    PHExternalAssetResource *_primaryResource;
     BOOL _valid;
 }
 
@@ -20,7 +20,7 @@
 @property (nonatomic, readonly) BOOL hasAdjustments;
 @property (nonatomic, readonly) unsigned int mediaSubtype;
 @property (nonatomic, readonly) int mediaType;
-@property (nonatomic, readonly) PHAssetResource *primaryResource;
+@property (nonatomic, readonly) PHExternalAssetResource *primaryResource;
 @property (getter=isValid, nonatomic, readonly) BOOL valid;
 
 + (id)_primaryAssetResource:(id)arg1;

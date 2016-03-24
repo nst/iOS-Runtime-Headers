@@ -5,6 +5,6 @@
 
 @required
 
-- (AVPlayer *)avPlayerForPlayer:(ISPlayer *)arg1;
+- (ISWrappedAVPlayer *)videoPlayerForPlayer:(ISPlayer *)arg1;
 
 @end

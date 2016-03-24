@@ -2,12 +2,8 @@
    Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
  */
 
-@interface SBSRestartRenderServerAction : BSAction
-
-@property (nonatomic, readonly) NSURL *targetURL;
+@interface SBSRestartRenderServerAction : SBSRelaunchAction
 
 + (id)restartActionWithTargetRelaunchURL:(id)arg1;
-
-- (id)targetURL;
 
 @end

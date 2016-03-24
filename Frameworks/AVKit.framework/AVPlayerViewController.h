@@ -114,6 +114,7 @@
 - (BOOL)_isAudioOnlyContent;
 - (BOOL)_isUnsupportedContent;
 - (void)_mediaSelectionDoneButtonTapped:(id)arg1;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (void)_setPlaybackControlsViewVisibilityNeedsUpdate;
 - (void)_showOrHidePlaybackControlsView;
 - (void)_showPlaybackControlsViewIfNeeded;

@@ -15,6 +15,7 @@
 @property (nonatomic, readonly, copy) NSString *assertionName;
 @property (nonatomic, readonly, copy) NSString *reason;
 
+- (void).cxx_destruct;
 - (id)assertionName;
 - (void)dealloc;
 - (id)init;

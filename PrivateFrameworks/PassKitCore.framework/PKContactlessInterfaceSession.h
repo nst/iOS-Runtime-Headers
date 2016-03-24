@@ -9,6 +9,7 @@
     NSArray *_activatedValueAddedServicePasses;
     unsigned char _cardEmulationMode;
     <PKContactlessInterfaceSessionDelegate> *_delegate;
+    int _encryptionScheme;
     BOOL _fieldPresent;
     PKFieldProperties *_fieldProperties;
     BOOL _fieldPropertiesLookupActive;

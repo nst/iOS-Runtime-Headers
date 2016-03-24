@@ -6,6 +6,8 @@
     NSMutableIndexSet *_ackedBatchIndices;
     unsigned long long _activity;
     unsigned long long _batchIndex;
+    _SYCountedSemaphore *_changeConcurrencySemaphore;
+    NSObject<OS_dispatch_queue> *_changeFetcherQueue;
     struct { 
         unsigned int state : 4; 
         unsigned int canRestart : 1; 
@@ -32,14 +34,12 @@
 - (void)_fetchNextBatch;
 - (void)_handleEndSession:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_handleEndSessionResponse:(id)arg1 error:(id*)arg2;
-- (void)_handleError:(id)arg1;
 - (void)_handleRestartSession:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_handleRestartSessionResponse:(id)arg1 error:(id*)arg2;
 - (BOOL)_handleStartSessionResponse:(id)arg1 error:(id*)arg2;
 - (void)_handleSyncBatch:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (BOOL)_handleSyncBatchResponse:(id)arg1 error:(id*)arg2;
 - (BOOL)_hasSentEnd;
-- (BOOL)_hasValidSessionID:(id)arg1 response:(id)arg2 completion:(id /* block */)arg3;
 - (void)_installStateListener;
 - (void)_installTimers;
 - (BOOL)_localErrorOccurred;
@@ -63,7 +63,10 @@
 - (void)_setLocalErrorOccurred;
 - (void)_setMessageTimer;
 - (void)_setStateQuietly:(int)arg1;
+- (void)_setupChangeConcurrency;
+- (void)_startFailedForStateChangeWithError:(id)arg1;
 - (void)_tweakMessageHeader:(id)arg1;
+- (void)_waitForMessageWindow;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
 - (void)cancel;

@@ -16,9 +16,11 @@
 
 - (void).cxx_destruct;
 - (id)_fetchWatchKitGlances;
+- (void)_filterRemovedSystemAppsFromArray:(id)arg1;
 - (void)_handleLocaleChange:(id)arg1;
 - (unsigned int)_installStateForWatchKitInstallState:(int)arg1;
 - (void)_mergeAdditionalGlanceDefinitionsIntoArray:(id)arg1;
+- (void)_mergeWatchKitGlanceDefinitionsIntoArray:(id)arg1;
 - (BOOL)_shouldMergeGlanceDefinitions;
 - (BOOL)_shouldSaveGlanceDefinitions;
 - (void)_willSaveGlanceDefinitions;

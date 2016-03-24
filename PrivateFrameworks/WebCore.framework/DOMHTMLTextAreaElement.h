@@ -25,6 +25,7 @@
 - (BOOL)_isEdited;
 - (id)accessKey;
 - (id)autocapitalize;
+- (id)autocomplete;
 - (BOOL)autocorrect;
 - (BOOL)autofocus;
 - (BOOL)checkValidity;
@@ -46,6 +47,7 @@
 - (int)selectionStart;
 - (void)setAccessKey:(id)arg1;
 - (void)setAutocapitalize:(id)arg1;
+- (void)setAutocomplete:(id)arg1;
 - (void)setAutocorrect:(BOOL)arg1;
 - (void)setAutofocus:(BOOL)arg1;
 - (void)setCols:(int)arg1;

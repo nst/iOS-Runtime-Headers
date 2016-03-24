@@ -25,7 +25,7 @@
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (double)creationDate;
-- (id)decodedCreationDate;
+- (double)decodedCreationDate;
 - (id)decodedMetadata;
 - (id)decodedUUID;
 - (id)description;

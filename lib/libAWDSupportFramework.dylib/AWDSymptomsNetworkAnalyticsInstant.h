@@ -107,6 +107,7 @@
 @property (nonatomic) BOOL supportsIPv6;
 @property (nonatomic) unsigned long long timestamp;
 
+- (int)StringAsNetworkType:(id)arg1;
 - (unsigned int)arpThreshold;
 - (BOOL)arpThresholded;
 - (unsigned long long)bytesIn;
@@ -156,6 +157,7 @@
 - (unsigned int)lastReportedRSSI;
 - (void)mergeFrom:(id)arg1;
 - (int)networkType;
+- (id)networkTypeAsString:(int)arg1;
 - (unsigned long long)packetsIn;
 - (unsigned long long)packetsOut;
 - (unsigned int)penalizedDnsServers;

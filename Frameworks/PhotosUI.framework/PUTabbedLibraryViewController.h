@@ -4,6 +4,7 @@
 
 @interface PUTabbedLibraryViewController : UITabBarController <PLAssetContainerListChangeObserver, PLAssetContainerObserver, PLDismissableViewController, PLInvitationRecordsObserver, PLRootLibraryNavigationController, UINavigationControllerDelegate> {
     NSMutableIndexSet *_everDisplayedContentModes;
+    NSArray *_excludedContentModes;
     NSMutableDictionary *_filteredAlbumListsByContentMode;
     PUImportViewController *_importViewController;
     int _pendingSelectedContentMode;
@@ -15,6 +16,7 @@
 
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
+@property (nonatomic, copy) NSArray *excludedContentModes;
 @property (readonly) unsigned int hash;
 @property (nonatomic, retain) PUImportViewController *importViewController;
 @property (nonatomic) int selectedContentMode;
@@ -61,6 +63,7 @@
 - (BOOL)commentIsAvailableForNavigation:(id)arg1 inAsset:(id)arg2;
 - (BOOL)contentModeIsAvailableForNavigation:(int)arg1;
 - (void)dealloc;
+- (id)excludedContentModes;
 - (id)importViewController;
 - (id)initWithSpec:(id)arg1;
 - (void)invitationRecordsDidChange:(id)arg1;
@@ -93,6 +96,7 @@
 - (int)selectedContentMode;
 - (id)selectedNavigationController;
 - (id)sessionInfo;
+- (void)setExcludedContentModes:(id)arg1;
 - (void)setImportViewController:(id)arg1;
 - (void)setImportViewController:(id)arg1 animated:(BOOL)arg2;
 - (void)setSelectedContentMode:(int)arg1;

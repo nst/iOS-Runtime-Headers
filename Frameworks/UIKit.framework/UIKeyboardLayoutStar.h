@@ -29,11 +29,13 @@
     NSTimer *_flickPopuptimer;
     BOOL _ghostKeysEnabled;
     NSMutableSet *_hasAccents;
+    BOOL _holdingShift;
     UIKBTree *_inactiveLanguageIndicator;
     int _initialBias;
     float _initialEdgeTranslation;
     float _initialPinchSeparation;
     float _initialSplitProgress;
+    BOOL _inputTraitsPreventInitialReuse;
     BOOL _isOutOfBounds;
     BOOL _isRebuilding;
     BOOL _isTrackpadMode;
@@ -55,6 +57,7 @@
     UIDelayedAction *_multitapAction;
     int _multitapCount;
     UIKBTree *_multitapKey;
+    BOOL _muteNextKeyClickSound;
     UIKBRenderConfig *_passcodeRenderConfig;
     BOOL _pinchDetected;
     float _pinchSeparationValues;
@@ -113,6 +116,7 @@
 @property (nonatomic, copy) NSString *localizedInputKey;
 @property (nonatomic, readonly) NSString *localizedInputMode;
 @property (nonatomic, retain) UIView *modalDisplayView;
+@property (nonatomic) BOOL muteNextKeyClickSound;
 @property (nonatomic) int playKeyClickSoundOn;
 @property (nonatomic, copy) NSString *preTouchKeyplaneName;
 @property (nonatomic, retain) UIKBRenderConfig *renderConfig;
@@ -148,13 +152,14 @@
 - (id)cacheIdentifierForKeyplaneNamed:(id)arg1;
 - (id)cacheTokenForKeyplane:(id)arg1 caseAlternates:(BOOL)arg2;
 - (struct CGImage { }*)cachedCompositeImageWithCacheKey:(id)arg1;
-- (BOOL)canForceTouchCommit:(id)arg1;
+- (BOOL)canForceTouchUUIDCommit:(id)arg1 inWindow:(id)arg2;
 - (BOOL)canMultitap;
 - (BOOL)canProduceString:(id)arg1;
 - (BOOL)canReuseKeyplaneView;
 - (void)cancelDelayedCentroidUpdate;
 - (void)cancelMultitapTimer;
 - (void)cancelTouchIfNecessaryForInfo:(id)arg1;
+- (void)cancelTouchesForTwoFingerTapGesture:(id)arg1;
 - (id)candidateList;
 - (void)changeToKeyplane:(id)arg1;
 - (void)cleanupPreviousKeyboardWithNewInputTraits:(id)arg1;
@@ -217,6 +222,9 @@
 - (BOOL)gestureRecognizer:(id)arg1 shouldReceiveTouch:(id)arg2;
 - (BOOL)gestureRecognizerShouldBegin:(id)arg1;
 - (BOOL)globeKeyDisplaysAsEmojiKey;
+- (BOOL)handRestRecognizerShouldNeverIgnoreTouchState:(id)arg1 fromPoint:(struct CGPoint { float x1; float x2; })arg2 toPoint:(struct CGPoint { float x1; float x2; })arg3 whenResting:(BOOL)arg4 otherRestedTouchLocations:(id)arg5;
+- (id /* block */)handRestRecognizerSilenceNextTouchDown;
+- (struct CGSize { float x1; float x2; })handRestRecognizerStandardKeyPixelSize;
 - (void)handleDelayedCentroidUpdate;
 - (void)handleDismissFlickView;
 - (void)handleDismissFlickView:(id)arg1;
@@ -280,6 +288,7 @@
 - (id)multitapCompleteKeys;
 - (void)multitapExpired;
 - (void)multitapInterrupted;
+- (BOOL)muteNextKeyClickSound;
 - (void)nextToUseInputModeDidChange:(id)arg1;
 - (void)performHitTestForTouchInfo:(id)arg1 touchStage:(int)arg2 executionContextPassingUIKBTree:(id)arg3;
 - (BOOL)performReturnAction;
@@ -332,6 +341,7 @@
 - (void)setLongPressAction:(SEL)arg1 forKey:(id)arg2;
 - (void)setModalDisplayView:(id)arg1;
 - (void)setMultitapReverseKeyState;
+- (void)setMuteNextKeyClickSound:(BOOL)arg1;
 - (void)setPasscodeOutlineAlpha:(float)arg1;
 - (void)setPercentSignKeysForCurrentLocaleOnKeyplane:(id)arg1;
 - (void)setPlayKeyClickSoundOn:(int)arg1;
@@ -351,6 +361,7 @@
 - (BOOL)shouldAllowCurrentKeyplaneReload;
 - (BOOL)shouldAllowSelectionGestures:(BOOL)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2 toBegin:(BOOL)arg3;
 - (BOOL)shouldCommitPrecedingTouchesForTouchDownWithActions:(unsigned int)arg1;
+- (BOOL)shouldDeactivateWithoutWindow;
 - (BOOL)shouldHitTestKey:(id)arg1;
 - (BOOL)shouldMatchCaseForDomainKeys;
 - (BOOL)shouldMergeKey:(id)arg1;
@@ -363,6 +374,7 @@
 - (BOOL)shouldShowDictationKey;
 - (BOOL)shouldShowIndicator;
 - (BOOL)shouldSkipResponseToGlobeKey:(id)arg1 atPoint:(struct CGPoint { float x1; float x2; })arg2;
+- (BOOL)shouldUseDefaultShiftStateFromLayout;
 - (BOOL)shouldYieldToControlCenterForFlickWithInitialPoint:(struct CGPoint { float x1; float x2; })arg1 finalPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)showFlickView:(int)arg1 withKey:(id)arg2 flickString:(id)arg3;
 - (void)showKeyboardWithInputTraits:(id)arg1 screenTraits:(id)arg2 splitTraits:(id)arg3;

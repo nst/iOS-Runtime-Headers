@@ -25,6 +25,8 @@
 - (id)_linkedOnVersion;
 - (void)_remote_heartbeatTokenDidChange:(id)arg1 expirationDate:(double)arg2 error:(id)arg3;
 - (void)_remote_policyEngineDidIdleDisable;
+- (void)_reportAdSpaceStatusEventWithAdOpportunityIdentifier:(id)arg1 adOriginIdentifier:(id)arg2 durationInFeed:(double)arg3 responseTime:(double)arg4 firstMessage:(BOOL)arg5 screenfuls:(int)arg6 errorCode:(int)arg7;
+- (void)_reportAdSpaceStatusEventWithAdOpportunityIdentifier:(id)arg1 adOriginIdentifier:(id)arg2 durationInFeed:(double)arg3 responseTime:(double)arg4 screenfuls:(int)arg5 errorCode:(int)arg6;
 - (void)adSheetConnectionEstablished;
 - (void)adSheetConnectionLost;
 - (id)adSheetMachServiceName;

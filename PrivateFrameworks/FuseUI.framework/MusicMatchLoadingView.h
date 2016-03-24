@@ -5,7 +5,6 @@
 @interface MusicMatchLoadingView : UIView {
     UIProgressView *_progressView;
     UILabel *_titleLabel;
-    NSObject<OS_dispatch_source> *_updateTimerSource;
 }
 
 @property (nonatomic, readonly) UIProgressView *progressView;

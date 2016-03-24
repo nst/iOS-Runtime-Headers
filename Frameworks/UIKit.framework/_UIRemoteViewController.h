@@ -16,6 +16,7 @@
     UIDimmingView *_hostedDimmingView;
     BOOL _isFocusDeferred;
     BOOL _isUpdatingSize;
+    int _preferredAdaptivityStyle;
     int _preferredStatusBarStyle;
     int _preferredStatusBarUpdateAnimation;
     BOOL _prefersStatusBarHidden;
@@ -102,6 +103,7 @@
 - (void)__viewServiceDidRegisterScrollToTopView;
 - (void)__viewServiceDidUnregisterScrollToTopView;
 - (void)__viewServiceDidUpdatePreferredStatusBarStyle:(int)arg1 hidden:(BOOL)arg2 updateAnimation:(int)arg3;
+- (void)__viewServiceDidUpdatePreferredWhitePointAdaptationStyle:(int)arg1 animationSettings:(id)arg2;
 - (void)__viewServiceDidUpdateTintColor:(id)arg1 duration:(double)arg2;
 - (void)__viewServiceInstrinsicContentSizeDidChange:(struct CGSize { float x1; float x2; })arg1 fence:(id)arg2;
 - (void)__viewServicePopoverDidChangeContentSize:(struct CGSize { float x1; float x2; })arg1 animated:(BOOL)arg2 fence:(id)arg3 withReplyHandler:(id /* block */)arg4;
@@ -132,6 +134,7 @@
 - (void)_initializeAccessibilityPortInformation;
 - (BOOL)_isDeallocating;
 - (BOOL)_isUpdatingSize;
+- (int)_preferredWhitePointAdaptivityStyle;
 - (void)_prepareTouchDeliveryPolicy;
 - (BOOL)_requiresKeyboardWindowWhenFirstResponder;
 - (void)_restoreTextEffectsRemoteView;

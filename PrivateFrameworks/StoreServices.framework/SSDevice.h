@@ -15,6 +15,7 @@
     NSString *_localStoreFrontIdentifier;
     BOOL _localStoreFrontIsTransient;
     id _mediaLibraryIdentifier;
+    NSObject<OS_dispatch_queue> *_notificationQueue;
     NSString *_phoneNumber;
     BOOL _pluggedIn;
     int _pluggedInToken;
@@ -24,6 +25,7 @@
     id _softwareLibraryIdentifier;
     NSString *_synchedStoreFrontIdentifier;
     int _telephonyCapability;
+    struct __CTServerConnection { } *_telephonyServer;
     NSString *_udid;
     SSURLBag *_urlBag;
     NSString *_userAgent;
@@ -86,6 +88,7 @@
 - (id)_productVersion;
 - (void)_reloadAfterStoreFrontChange;
 - (void)_reloadPluggedInState;
+- (int)_screenClass;
 - (BOOL)_setStoreFrontIdentifier:(id)arg1 isTransient:(BOOL)arg2;
 - (void)_updateAutomaticDownloadKinds:(id)arg1 withValue:(id)arg2 completionBlock:(id /* block */)arg3;
 - (void)_updateBatteryLevelFromService:(unsigned int)arg1;
@@ -118,6 +121,7 @@
 - (id)productVersion;
 - (void)reloadStoreFrontIdentifier;
 - (void)resetStoreFrontForSignOut;
+- (void)sdk_loadStoreFrontIdentifier:(id /* block */)arg1;
 - (id)serialNumber;
 - (void)setAutomaticDownloadKinds:(id)arg1 withCompletionBlock:(id /* block */)arg2;
 - (void)setCellularNetworkingAllowed:(BOOL)arg1;

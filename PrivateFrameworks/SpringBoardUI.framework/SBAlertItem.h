@@ -11,6 +11,7 @@
     BOOL _didEverActivate;
     BOOL _didEverDeactivate;
     BOOL _didPlayPresentationSound;
+    UIImage *_iconImage;
     BOOL _ignoreIfAlreadyDisplaying;
     BOOL _orderOverSBAlert;
     BOOL _pendInSetupIfNotAllowed;
@@ -25,6 +26,7 @@
 @property (readonly, copy) NSString *debugDescription;
 @property (readonly, copy) NSString *description;
 @property (readonly) unsigned int hash;
+@property (nonatomic, retain) UIImage *iconImage;
 @property (nonatomic) BOOL ignoreIfAlreadyDisplaying;
 @property (nonatomic) BOOL pendInSetupIfNotAllowed;
 @property (nonatomic) BOOL pendWhileKeyBagLocked;
@@ -33,6 +35,7 @@
 + (id)_alertItemsController;
 + (void)activateAlertItem:(id)arg1;
 
+- (void).cxx_destruct;
 - (BOOL)_didEverActivate;
 - (BOOL)_didEverDeactivate;
 - (BOOL)_dismissesOverlaysOnLockScreen;
@@ -71,6 +74,7 @@
 - (BOOL)displayActionButtonOnLockScreen;
 - (BOOL)forcesModalAlertAppearance;
 - (BOOL)hasActiveKeyboardOnScreen;
+- (id)iconImage;
 - (BOOL)ignoreIfAlreadyDisplaying;
 - (id)init;
 - (BOOL)isCriticalAlert;
@@ -90,6 +94,7 @@
 - (void)setAllowInSetup:(BOOL)arg1;
 - (void)setAllowMessageInCar:(BOOL)arg1;
 - (void)setAllowedBundleIDs:(id)arg1;
+- (void)setIconImage:(id)arg1;
 - (void)setIgnoreIfAlreadyDisplaying:(BOOL)arg1;
 - (void)setOrderOverSBAlert:(BOOL)arg1;
 - (void)setPendInSetupIfNotAllowed:(BOOL)arg1;

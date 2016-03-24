@@ -4,6 +4,7 @@
 
 @interface CAContext : NSObject
 
+@property BOOL colorMatchUntaggedContent;
 @property struct CGColorSpace { }*colorSpace;
 @property (readonly) unsigned int contextId;
 @property (retain) CALayer *layer;

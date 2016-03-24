@@ -6,6 +6,7 @@
 @required
 
 - (BOOL)gestureController:(MKMapGestureController *)arg1 shouldReceiveTouch:(UITouch *)arg2;
+- (struct CGPoint { float x1; float x2; })gestureController:(MKMapGestureController *)arg1 smartAimingPointForPoint:(struct CGPoint { float x1; float x2; })arg2;
 - (void)gestureControllerDidStopPanning:(MKMapGestureController *)arg1 willDecelerate:(BOOL)arg2;
 - (void)gestureControllerDidStopPanningDecelerating:(MKMapGestureController *)arg1;
 - (void)gestureControllerDidStopRotating:(MKMapGestureController *)arg1 willDecelerate:(BOOL)arg2;
@@ -16,6 +17,7 @@
 - (void)gestureControllerDidStopUserInteraction:(MKMapGestureController *)arg1;
 - (void)gestureControllerDidStopZooming:(MKMapGestureController *)arg1 direction:(int)arg2 willDecelerate:(BOOL)arg3;
 - (void)gestureControllerDidStopZoomingDecelerating:(MKMapGestureController *)arg1 direction:(int)arg2;
+- (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })gestureControllerSignificantViewFrame:(MKMapGestureController *)arg1;
 - (void)gestureControllerWillStartPanning:(MKMapGestureController *)arg1;
 - (void)gestureControllerWillStartRotating:(MKMapGestureController *)arg1;
 - (void)gestureControllerWillStartTilting:(MKMapGestureController *)arg1;

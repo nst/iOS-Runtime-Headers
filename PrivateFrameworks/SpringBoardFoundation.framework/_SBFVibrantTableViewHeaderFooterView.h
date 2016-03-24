@@ -16,8 +16,8 @@
 
 + (id)defaultBackgroundColorForGraphicsQuality:(int)arg1;
 
+- (void).cxx_destruct;
 - (id)backdropGroupName;
-- (void)dealloc;
 - (int)graphicsQuality;
 - (id)initWithCoder:(id)arg1;
 - (id)initWithReuseIdentifier:(id)arg1;

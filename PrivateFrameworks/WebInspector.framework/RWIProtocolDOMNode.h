@@ -18,6 +18,8 @@
 @property (nonatomic, copy) NSString *nodeName;
 @property (nonatomic) int nodeType;
 @property (nonatomic, copy) NSString *nodeValue;
+@property (nonatomic, copy) NSArray *pseudoElements;
+@property (nonatomic) int pseudoType;
 @property (nonatomic, copy) NSString *publicId;
 @property (nonatomic, copy) NSString *role;
 @property (nonatomic, copy) NSArray *shadowRoots;
@@ -41,6 +43,8 @@
 - (id)nodeName;
 - (int)nodeType;
 - (id)nodeValue;
+- (id)pseudoElements;
+- (int)pseudoType;
 - (id)publicId;
 - (id)role;
 - (void)setAttributes:(id)arg1;
@@ -57,6 +61,8 @@
 - (void)setNodeName:(id)arg1;
 - (void)setNodeType:(int)arg1;
 - (void)setNodeValue:(id)arg1;
+- (void)setPseudoElements:(id)arg1;
+- (void)setPseudoType:(int)arg1;
 - (void)setPublicId:(id)arg1;
 - (void)setRole:(id)arg1;
 - (void)setShadowRoots:(id)arg1;

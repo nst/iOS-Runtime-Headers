@@ -5,6 +5,7 @@
 @interface UIFocusUpdateContext : NSObject {
     UIScrollView *_commonScrollView;
     UIView *_destinationView;
+    float _destinationViewDistanceOffscreen;
     unsigned int _focusHeading;
     int _focusUpdateType;
     struct CGVector { 
@@ -27,6 +28,7 @@
 
 @property (getter=_commonScrollView, setter=_setCommonScrollView:, nonatomic, retain) UIScrollView *commonScrollView;
 @property (getter=_destinationView, nonatomic, readonly) UIView *destinationView;
+@property (getter=_destinationViewDistanceOffscreen, setter=_setDestinationViewDistanceOffscreen:, nonatomic) float destinationViewDistanceOffscreen;
 @property (nonatomic) unsigned int focusHeading;
 @property (getter=_focusUpdateType, setter=_setFocusUpdateType:, nonatomic) int focusUpdateType;
 @property (getter=_focusVelocity, nonatomic, readonly) struct CGVector { float x1; float x2; } focusVelocity;
@@ -52,6 +54,7 @@
 - (void).cxx_destruct;
 - (id)_commonScrollView;
 - (id)_destinationView;
+- (float)_destinationViewDistanceOffscreen;
 - (void)_didUpdateFocus;
 - (int)_focusUpdateType;
 - (struct CGVector { float x1; float x2; })_focusVelocity;
@@ -70,6 +73,7 @@
 - (BOOL)_requiresDestinationView;
 - (BOOL)_requiresEnvironmentValidation;
 - (void)_setCommonScrollView:(id)arg1;
+- (void)_setDestinationViewDistanceOffscreen:(float)arg1;
 - (void)_setFocusHeading:(unsigned int)arg1;
 - (void)_setFocusUpdateType:(int)arg1;
 - (void)_setFocusVelocity:(struct CGVector { float x1; float x2; })arg1;

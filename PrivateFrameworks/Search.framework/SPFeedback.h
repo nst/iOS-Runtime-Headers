@@ -7,6 +7,7 @@
     unsigned int _domain;
     NSString *_externalIdentifier;
     NSString *_fbq;
+    NSArray *_geoPlaceData;
     unsigned int _geoUserSequenceNumber;
     NSString *_geoUserSessionIDString;
     double _geoUserSessionStartTime;
@@ -25,6 +26,7 @@
 @property (nonatomic) unsigned int domain;
 @property (nonatomic, retain) NSString *externalIdentifier;
 @property (nonatomic, copy) NSString *fbq;
+@property (nonatomic, retain) NSArray *geoPlaceData;
 @property (nonatomic) unsigned int geoUserSequenceNumber;
 @property (nonatomic, retain) NSString *geoUserSessionIDString;
 @property (nonatomic) double geoUserSessionStartTime;
@@ -48,6 +50,7 @@
 - (void)encodeWithCoder:(id)arg1;
 - (id)externalIdentifier;
 - (id)fbq;
+- (id)geoPlaceData;
 - (unsigned int)geoUserSequenceNumber;
 - (id)geoUserSessionIDString;
 - (double)geoUserSessionStartTime;
@@ -68,6 +71,7 @@
 - (void)setDomain:(unsigned int)arg1;
 - (void)setExternalIdentifier:(id)arg1;
 - (void)setFbq:(id)arg1;
+- (void)setGeoPlaceData:(id)arg1;
 - (void)setGeoUserSequenceNumber:(unsigned int)arg1;
 - (void)setGeoUserSessionIDString:(id)arg1;
 - (void)setGeoUserSessionStartTime:(double)arg1;

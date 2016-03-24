@@ -103,6 +103,7 @@
 @property (readonly) bool interfaceExpensive;
 @property (readonly) bool interfaceLoopback;
 @property (readonly) bool interfaceUnknown;
+@property (readonly) bool interfaceViaCellFallback;
 @property (readonly) bool interfaceWifi;
 @property (readonly) bool interfaceWired;
 @property (retain) NSData *localAddress;
@@ -143,6 +144,7 @@
 - (bool)interfaceExpensive;
 - (bool)interfaceLoopback;
 - (bool)interfaceUnknown;
+- (bool)interfaceViaCellFallback;
 - (bool)interfaceWifi;
 - (bool)interfaceWired;
 - (id)localAddress;

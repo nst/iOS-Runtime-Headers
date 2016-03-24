@@ -56,6 +56,7 @@
 @property (nonatomic, readonly, copy) UIImage *icon;
 @property (nonatomic, readonly) PKImage *iconImage;
 @property (nonatomic, retain) NSDate *ingestedDate;
+@property (nonatomic, readonly) BOOL isPersonalizable;
 @property (nonatomic, copy) NSURL *localLocationsURL;
 @property (nonatomic, readonly, copy) NSString *localizedDescription;
 @property (nonatomic, readonly, copy) NSString *localizedName;
@@ -78,6 +79,8 @@
 @property (nonatomic, copy) NSString *passTypeIdentifier;
 @property (nonatomic, copy) NSURL *passURL;
 @property (nonatomic, readonly) PKPaymentPass *paymentPass;
+@property (nonatomic, readonly) PKPassPersonalization *personalization;
+@property (nonatomic, readonly) PKImage *personalizationLogoImage;
 @property (nonatomic, readonly) NSString *pluralLocalizedName;
 @property (nonatomic, copy) NSDate *relevantDate;
 @property (getter=isRemotePass, nonatomic) BOOL remotePass;
@@ -107,7 +110,6 @@
 + (BOOL)supportsSecureCoding;
 
 - (id)_changeMessageForFieldKey:(id)arg1;
-- (id)_groupingIDFromPassDictionary:(id)arg1;
 - (id)_localizationKeyForMultipleDiff;
 - (id)appLaunchURL;
 - (id)associatedPassTypeIdentifiers;
@@ -143,6 +145,7 @@
 - (BOOL)isEqualToPassIncludingMetadata:(id)arg1;
 - (BOOL)isExpired;
 - (BOOL)isNFCPayloadEncrypted;
+- (BOOL)isPersonalizable;
 - (BOOL)isRelevantDateOld;
 - (BOOL)isRemotePass;
 - (BOOL)isRevoked;
@@ -167,6 +170,8 @@
 - (id)passTypeIdentifier;
 - (id)passURL;
 - (id)paymentPass;
+- (id)personalization;
+- (id)personalizationLogoImage;
 - (id)pluralLocalizedName;
 - (id)relevantDate;
 - (id)sequenceCounter;

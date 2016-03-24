@@ -22,6 +22,7 @@
 - (void)dealloc;
 - (id)init;
 - (void)loadView;
+- (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
 - (BOOL)privateBrowsingEnabled;
 - (id)readerController;
 - (void)readerController:(id)arg1 didClickLinkInReaderWithRequest:(id)arg2;

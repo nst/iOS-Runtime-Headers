@@ -9,35 +9,40 @@
     void *_loggingQueueIdentityValue;
     NSMutableArray *_remoteAdaptorOptions;
     NSLock *_remoteAdaptorOptionsLock;
+    <GEOLogAdaptor> *_serverLogAdaptorManager;
 }
+
+@property (nonatomic, retain) <GEOLogAdaptor> *serverLogAdaptorManager;
 
 + (id)sharedInstance;
 
 - (void)_addLogAdaptor:(id)arg1;
 - (void)_applicationDeactivating:(id)arg1;
 - (void)_applicationWillTerminate:(id)arg1;
+- (void)_disableLogMsgInstrumentation;
 - (BOOL)_disableUsageLoggingForCountry;
+- (void)_enableLogMsgInstrumentation;
 - (void)_flushLogs;
 - (id)_logMessageUsageURL;
 - (void)_queueLogMessage:(id)arg1;
 - (void)_removeAllLogAdaptors;
 - (void)_removeLogAdaptor:(id)arg1;
 - (void)_setupDefaultAdaptors;
-- (void)_setupLogAdaptorsBackgroundTaskStartBlock:(id /* block */)arg1 endBlock:(id /* block */)arg2;
 - (void)_setupXPCRemoteAdators;
-- (BOOL)_shouldSendLogMessageUsageUsingGeoServices;
-- (BOOL)_shouldSendLogMessageUsageWithPersistence;
 - (void)_updateAndSetupRemoteAdaptors;
 - (BOOL)_updateRemoteAdaptorOptions;
 - (void)addLogAdaptor:(id)arg1;
 - (void)dealloc;
+- (void)disableLogMsgInstrumentation;
+- (void)enableLogMsgInstrumentation;
 - (void)flushLogs;
 - (id)init;
 - (void)queueLogMessage:(id)arg1;
 - (void)removeAllLogAdators;
 - (void)removeLogAdaptor:(id)arg1;
-- (void)setupLogAdaptorsBackgroundTaskStartBlock:(id /* block */)arg1 endBlock:(id /* block */)arg2;
+- (id)serverLogAdaptorManager;
+- (void)setServerLogAdaptorManager:(id)arg1;
 - (BOOL)shouldSendUsageUsingNewLogManager;
-- (BOOL)shouldSendUsageUsingOldUsageManager;
+- (void)waitForEmptyLoggingQueue:(id /* block */)arg1;
 
 @end

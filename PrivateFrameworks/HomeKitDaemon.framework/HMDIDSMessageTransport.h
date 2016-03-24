@@ -32,9 +32,9 @@
 @property (nonatomic, retain) IDSService *idsService;
 @property (nonatomic) HMMessageDispatcher *messageDispatcher;
 @property (nonatomic, retain) NSString *pairedCompanionDestination;
+@property (nonatomic, readonly) NSSet *pairedWatchAddresses;
 @property (nonatomic, retain) NSString *pairedWatchDestination;
 @property (nonatomic, retain) NSMutableSet *pairedWatchDeviceAddresses;
-@property (nonatomic, readonly) NSArray *pairedWatchDevices;
 @property (nonatomic, retain) NSMutableSet *peerResidentDeviceAddresses;
 @property (nonatomic, retain) NSMutableSet *peerTransientDeviceAddresses;
 @property (nonatomic, retain) NSMutableDictionary *pendingResponseTimers;
@@ -62,8 +62,8 @@
 - (void)_pendingResponseTimeoutFor:(id)arg1;
 - (void)_removePendingResponseTimerForTransaction:(id)arg1;
 - (void)_removePendingResponseTransaction:(id)arg1;
-- (BOOL)_rerouteDestinationIfCompanion:(id)arg1 newDestination:(id*)arg2;
-- (BOOL)_rerouteDestinationIfWatch:(id)arg1 newDestination:(id*)arg2;
+- (BOOL)_rerouteDestinationIfCompanion:(id)arg1 newDestination:(id*)arg2 isConnected:(BOOL*)arg3;
+- (BOOL)_rerouteDestinationIfWatch:(id)arg1 isConnected:(BOOL*)arg2;
 - (void)_restartPendingResponseTimerFor:(id)arg1 withReducedFactor:(unsigned long)arg2;
 - (void)_setDestinationAddress;
 - (void)_startPendingResponseTimer:(id)arg1 responseTimeout:(double)arg2 identifier:(id)arg3;
@@ -80,9 +80,9 @@
 - (BOOL)isAccountActive;
 - (id)messageDispatcher;
 - (id)pairedCompanionDestination;
+- (id)pairedWatchAddresses;
 - (id)pairedWatchDestination;
 - (id)pairedWatchDeviceAddresses;
-- (id)pairedWatchDevices;
 - (id)peerResidentDeviceAddresses;
 - (id)peerTransientDeviceAddresses;
 - (id)pendingResponseTimers;
@@ -95,8 +95,8 @@
 - (id)reachableWatchDevices;
 - (id)receivedResponses;
 - (id)requestedCapabilities;
-- (BOOL)rerouteDestinationIfCompanion:(id)arg1 newDestination:(id*)arg2;
-- (BOOL)rerouteDestinationIfWatch:(id)arg1 newDestination:(id*)arg2;
+- (BOOL)rerouteDestinationIfCompanion:(id)arg1 newDestination:(id*)arg2 isConnected:(BOOL*)arg3;
+- (BOOL)rerouteDestinationIfWatch:(id)arg1 isConnected:(BOOL*)arg2;
 - (id)residentDevices;
 - (id)sendMessage:(id)arg1 destinations:(id)arg2 msgType:(unsigned int)arg3 error:(id*)arg4;
 - (void)service:(id)arg1 account:(id)arg2 identifier:(id)arg3 didSendWithSuccess:(BOOL)arg4 error:(id)arg5;

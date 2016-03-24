@@ -37,7 +37,7 @@
 - (id)delegate;
 - (id)init;
 - (id /* block */)pendingSendDataHandler;
-- (BOOL)performSetup;
+- (BOOL)performSetupAndReturnError:(id*)arg1;
 - (void)setAuthenticatediTunesStoreID:(id)arg1;
 - (void)setDelegate:(id)arg1;
 - (void)setPendingSendDataHandler:(id /* block */)arg1;

@@ -7,6 +7,8 @@
 + (int)category;
 + (void)didReceiveKeysAndValuesWithHealthDaemon:(id)arg1;
 + (int)nanoSyncObjectType;
++ (unsigned int)supportedNanoSyncDirectionsForProtocolVersion:(int)arg1;
++ (BOOL)supportsSpeculativeNanoSyncChanges;
 + (id)syncEntityDependencies;
 + (int)syncEntityType;
 

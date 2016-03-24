@@ -6,7 +6,9 @@
 @required
 
 - (NSArray *)allYValues;
+- (NSDate *)maxXValue;
 - (id)maxYValue;
+- (NSDate *)minXValue;
 - (id)minYValue;
 - (id)userInfo;
 - (NSDate *)xValue;

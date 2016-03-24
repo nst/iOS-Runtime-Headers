@@ -96,7 +96,7 @@
 
 - (id)FU_uppercaseAttributedString;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)hk_attributedStringForSpacing:(float)arg1;
 
@@ -234,5 +234,11 @@
 // Image: /System/Library/PrivateFrameworks/VoiceServices.framework/VoiceServices
 
 + (id)attributedStringWithFormatAndAttributes:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/iCloudQuotaUI.framework/iCloudQuotaUI
+
++ (id)attributedStringWithFormat:(id)arg1 attributes:(id)arg2 links:(id)arg3;
++ (id)attributesForIndex:(int)arg1 baseAttributes:(id)arg2;
++ (id)spaceArrowAttributedStringWithBaseAttributes:(id)arg1;
 
 @end

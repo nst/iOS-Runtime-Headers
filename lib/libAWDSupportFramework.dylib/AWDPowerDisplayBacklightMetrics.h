@@ -110,6 +110,8 @@
 @property (nonatomic) unsigned int totalDisplayPower;
 @property (nonatomic) unsigned int unpluggedDisplayOnDuration;
 
++ (Class)backlightBucketType;
+
 - (void)addBacklightBucket:(id)arg1;
 - (unsigned int)alsAutoBrightnessChangeCount;
 - (int)alsAutoBrightnessCurveE0A;

@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/MapKit.framework/MapKit
  */
 
-@interface MKPlaceInfoViewController : ABContactViewController <ABContactViewControllerDelegate, MKHideableBottomSeparator, MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse> {
+@interface MKPlaceInfoViewController : ABContactViewController <ABContactViewControllerDelegate, MKHideableBottomSeparator, MKOfflineModeViewController, MKPlaceAttributionCellProvider, MKStackingViewControllerPreferredSizeUse> {
     _MKPlaceInfoViewControllerRouter *_actionsProxy;
     ABCardGroup *_businessInfoGroup;
     NSArray *_businessInfoOrder;
@@ -21,6 +21,8 @@
     UIImage *_inlineMap;
     ABCardGroup *_inlineMapGroup;
     MKMapItem *_mapItem;
+    ABCardGroup *_offlineGroup;
+    BOOL _offlineMode;
     _MKPlaceViewController *_owner;
     NSMutableDictionary *_removedContactsFields;
     BOOL _shouldHideContactInfo;
@@ -38,6 +40,7 @@
 @property (nonatomic) <MKPlaceInfoViewControllerDelegate> *infoDelegate;
 @property (nonatomic, retain) UIImage *inlineMap;
 @property (nonatomic, retain) MKMapItem *mapItem;
+@property (nonatomic) BOOL offlineMode;
 @property (nonatomic) _MKPlaceViewController *owner;
 @property (nonatomic, retain) NSMutableDictionary *removedContactsFields;
 @property (nonatomic, readonly) BOOL requiresPreferredContentSizeInStackingView;
@@ -77,6 +80,7 @@
 - (id)inlineMap;
 - (id)mapItem;
 - (void)moveInfoForContact:(id)arg1 intoInfo:(id)arg2;
+- (BOOL)offlineMode;
 - (id)owner;
 - (id)removedContactsFields;
 - (BOOL)removedInfoExistsForContact:(id)arg1;
@@ -91,6 +95,7 @@
 - (void)setInfoDelegate:(id)arg1;
 - (void)setInlineMap:(id)arg1;
 - (void)setMapItem:(id)arg1;
+- (void)setOfflineMode:(BOOL)arg1;
 - (void)setOwner:(id)arg1;
 - (void)setRemovedContactsFields:(id)arg1;
 - (void)setRemovedInfo:(id)arg1 forContact:(id)arg2;

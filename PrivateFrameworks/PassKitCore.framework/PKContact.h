@@ -18,6 +18,7 @@
 
 + (BOOL)supportsSecureCoding;
 
+- (id)cnMutableContact;
 - (void)dealloc;
 - (id)emailAddress;
 - (void)encodeWithCoder:(id)arg1;

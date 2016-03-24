@@ -27,6 +27,7 @@
 - (void)reportSignOutForAppleID:(id)arg1 service:(int)arg2 completion:(id /* block */)arg3;
 - (void)setAppleIDWithAltDSID:(id)arg1 inUse:(BOOL)arg2 forService:(int)arg3;
 - (void)setAppleIDWithDSID:(id)arg1 inUse:(BOOL)arg2 forService:(int)arg3;
+- (void)setConfigurationInfo:(id)arg1 forIdentifier:(id)arg2 forAltDSID:(id)arg3 completion:(id /* block */)arg4;
 - (void)setDelegate:(id)arg1;
 - (void)updateStateWithExternalAuthenticationResponse:(id)arg1 forAppleID:(id)arg2 completion:(id /* block */)arg3;
 - (void)validateLoginCode:(unsigned int)arg1 forAppleID:(id)arg2 completion:(id /* block */)arg3;

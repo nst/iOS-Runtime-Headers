@@ -2,16 +2,13 @@
    Image: /System/Library/PrivateFrameworks/ResponseKit.framework/ResponseKit
  */
 
-@interface RKLinguisticDataProvider : RKDataProvider {
+@interface RKLinguisticDataProvider : NSObject <RKPolarityDataProvider> {
     NSMutableDictionary *_polarityMapsByLanguageID;
 }
 
 @property (retain) NSMutableDictionary *polarityMapsByLanguageID;
 
-+ (id)sharedProvider;
-
 - (void).cxx_destruct;
-- (id)_init;
 - (id)init;
 - (struct __LSMMap { }*)polarityMapForLanguageID:(id)arg1;
 - (id)polarityMapsByLanguageID;

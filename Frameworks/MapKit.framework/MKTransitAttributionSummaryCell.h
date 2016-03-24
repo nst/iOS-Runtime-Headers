@@ -10,15 +10,13 @@
 
 @property (nonatomic, copy) NSString *attributionSummary;
 
-+ (id)reuseIdentifier;
-
 - (void).cxx_destruct;
 - (void)_contentSizeCategoryDidChange;
+- (id)_moreString;
 - (void)_updateConstraintValues;
 - (id)attributionSummary;
 - (void)dealloc;
 - (id)initWithStyle:(int)arg1 reuseIdentifier:(id)arg2;
-- (id)moreString;
 - (void)setAttributionSummary:(id)arg1;
 - (void)tintColorDidChange;
 

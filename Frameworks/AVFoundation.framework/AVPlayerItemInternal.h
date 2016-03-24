@@ -83,7 +83,9 @@
     } initialTime;
     int initialVariantIndex;
     BOOL initialWillNeverSeekBackwardsHint;
+    NSArray *itemCollectors;
     NSMutableDictionary *itemLegibleOutputsForKeys;
+    NSMutableArray *itemMetadataCollectors;
     NSMutableDictionary *itemMetadataOutputsForKeys;
     NSArray *itemOutputs;
     NSMutableArray *itemVideoOutputs;

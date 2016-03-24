@@ -5,10 +5,12 @@
 @interface BSColor : NSObject <BSXPCCoding, NSCopying, NSSecureCoding> {
     float _alpha;
     float _blue;
+    struct CGColor { } *_colorRef;
     float _green;
     float _red;
 }
 
+@property (nonatomic, readonly) struct CGColor { }*CGColor;
 @property (nonatomic, readonly) float alpha;
 @property (nonatomic, readonly) float blue;
 @property (readonly, copy) NSString *debugDescription;
@@ -18,12 +20,15 @@
 @property (nonatomic, readonly) float red;
 @property (readonly) Class superclass;
 
++ (id)blackColor;
 + (id)colorWithRed:(float)arg1 green:(float)arg2 blue:(float)arg3 alpha:(float)arg4;
 + (BOOL)supportsSecureCoding;
 
+- (struct CGColor { }*)CGColor;
 - (float)alpha;
 - (float)blue;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
+- (void)dealloc;
 - (id)description;
 - (void)encodeWithCoder:(id)arg1;
 - (void)encodeWithXPCDictionary:(id)arg1;

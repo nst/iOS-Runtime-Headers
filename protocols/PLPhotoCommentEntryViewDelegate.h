@@ -12,5 +12,6 @@
 @optional
 
 - (void)photoCommentEntryViewDidBeginEditing:(PLPhotoCommentEntryView *)arg1;
+- (BOOL)photoCommentEntryViewShouldEndEditing:(PLPhotoCommentEntryView *)arg1;
 
 @end

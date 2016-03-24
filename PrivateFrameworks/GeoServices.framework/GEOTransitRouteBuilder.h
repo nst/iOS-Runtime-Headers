@@ -11,6 +11,7 @@
     NSMutableArray *_stepInfos;
     NSMutableArray *_steps;
     GEOTransitSuggestedRoute *_suggestedRoute;
+    unsigned int _tripCount;
     BOOL _usesZilch;
 }
 
@@ -19,7 +20,11 @@
 - (void)_buildExpandedWalkingStepInfos:(id)arg1;
 - (void)_buildPointSectionsForRoute:(id)arg1;
 - (void)_buildPointSectionsForRoute:(id)arg1 pointRange:(struct _NSRange { unsigned int x1; unsigned int x2; })arg2 stepIndex:(unsigned int)arg3 currentTransitLineColor:(id)arg4;
+- (void)_buildRouteFromSections:(id)arg1;
+- (void)_buildRouteFromSteps:(id)arg1;
 - (void)_buildTransitStepInfo:(id)arg1;
+- (BOOL)_index:(unsigned int)arg1 matchesArray:(unsigned int*)arg2 ofLength:(unsigned int)arg3;
+- (BOOL)_isWalkingOnlyRoute:(id)arg1;
 - (id)_legForSteps:(struct _NSRange { unsigned int x1; unsigned int x2; })arg1 route:(id)arg2;
 - (int)_legTypeForTransitManeuver:(int)arg1;
 - (void)_reset;
@@ -32,6 +37,5 @@
 - (void)buildRoute:(id)arg1;
 - (void)dealloc;
 - (id)initWithSuggestedRoute:(id)arg1 data:(id)arg2;
-- (void)updateSectionsForRoute:(id)arg1;
 
 @end

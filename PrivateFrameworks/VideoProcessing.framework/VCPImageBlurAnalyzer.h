@@ -4,16 +4,24 @@
 
 @interface VCPImageBlurAnalyzer : VCPImageAnalyzer {
     NSArray *_faces;
+    float _irisSharpness;
+    NSArray *_objects;
     float _sharpness;
     float _sharpnessBlocks;
 }
+
+@property (readonly) float irisSharpness;
+@property (readonly) float sharpness;
 
 - (void).cxx_destruct;
 - (long)analyzePixelBuffer:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2 flags:(unsigned int*)arg3 results:(id*)arg4 cancel:(id /* block */)arg5;
 - (float)computeFaceSharpness:(struct __CVBuffer { }*)arg1 withTransform:(struct CGAffineTransform { float x1; float x2; float x3; float x4; float x5; float x6; })arg2;
 - (void)computeLocalSharpness:(struct __CVBuffer { }*)arg1;
+- (float)computeObjectSharpness:(struct __CVBuffer { }*)arg1;
 - (float)computeRegionSharpness:(char *)arg1 width:(int)arg2 height:(int)arg3 stride:(int)arg4;
-- (id)initWithFaceResults:(id)arg1;
+- (id)initWithFaceResults:(id)arg1 objectRect:(id)arg2;
+- (float)irisSharpness;
+- (float)sharpness;
 - (void)spatialPooling;
 
 @end

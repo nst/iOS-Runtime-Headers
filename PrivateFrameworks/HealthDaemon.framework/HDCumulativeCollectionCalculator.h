@@ -2,9 +2,7 @@
    Image: /System/Library/PrivateFrameworks/HealthDaemon.framework/HealthDaemon
  */
 
-@interface HDCumulativeCollectionCalculator : NSObject {
-    unsigned int _bucketIndex;
-    NSArray *_bucketPeriods;
+@interface HDCumulativeCollectionCalculator : HDCollectionCalculator {
     struct map<long long, double, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, double> > > { 
         struct __tree<std::__1::__value_type<long long, double>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, double>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, double> > > { 
             struct __tree_node<std::__1::__value_type<long long, double>, void *> {} *__begin_node_; 
@@ -18,7 +16,6 @@
             } __pair3_; 
         } __tree_; 
     } _bySource;
-    unsigned int _currPeriod;
     long long _currentAligned;
     struct map<long long, double, std::__1::less<long long>, std::__1::allocator<std::__1::pair<const long long, double> > > { 
         struct __tree<std::__1::__value_type<long long, double>, std::__1::__map_value_compare<long long, std::__1::__value_type<long long, double>, std::__1::less<long long>, true>, std::__1::allocator<std::__1::__value_type<long long, double> > > { 
@@ -33,9 +30,7 @@
             } __pair3_; 
         } __tree_; 
     } _currentInterval;
-    <HDHealthDaemon> *_daemon;
     unsigned int _dataCount;
-    BOOL _detailBySource;
     NSMutableArray *_futureBuckets;
     NSMutableArray *_futureCounts;
     NSMutableArray *_futureIntervals;
@@ -59,65 +54,50 @@
     NSArray *_orderedSourceIds;
 }
 
-@property (nonatomic) unsigned int bucketIndex;
-@property (nonatomic, retain) NSArray *bucketPeriods;
-@property (nonatomic) unsigned int currPeriod;
 @property (nonatomic) long long currentAligned;
-@property (nonatomic, retain) <HDHealthDaemon> *daemon;
 @property (nonatomic) unsigned int dataCount;
-@property (nonatomic) BOOL detailBySource;
 @property (nonatomic, retain) NSMutableArray *futureBuckets;
 @property (nonatomic, retain) NSMutableArray *futureCounts;
 @property (nonatomic, retain) NSMutableArray *futureIntervals;
 @property (nonatomic) BOOL lastBucket;
 @property (nonatomic, readonly) HDLastIntervalInfo *lastIntervalInfo;
 @property (nonatomic) unsigned int mergeStrategy;
-@property (nonatomic, readonly) double mergedSum;
 @property (nonatomic, retain) NSArray *orderedSourceIds;
 @property (nonatomic, readonly) NSDictionary *sumsBySource;
 
 - (id).cxx_construct;
 - (void).cxx_destruct;
+- (void)_addCurrentValue:(double)arg1 sourceId:(long long)arg2;
+- (double)_advanceUntilInterval:(long long)arg1;
+- (unsigned int)_bucketCount;
+- (double)_endDateForBucket:(unsigned int)arg1;
 - (double)_putInFutureBucketsValue:(double)arg1 timeAfterEnd:(double)arg2 valuePerSecond:(double)arg3 sampleEndTime:(double)arg4 sourceId:(unsigned long long)arg5;
+- (void)_splitValue:(double)arg1 perSecond:(double)arg2 sourceId:(long long)arg3 sampleInfo:(struct { double x1; double x2; long long x3; long long x4; double x5; })arg4 sampleEndTime:(double)arg5;
+- (double)_startDateForBucket:(unsigned int)arg1;
 - (double)addCurrentBucket;
-- (void)addCurrentValue:(double)arg1 sourceId:(long long)arg2;
-- (void)addSumsBySource:(id)arg1 lastInterval:(id)arg2 currentAligned:(long long)arg3 unit:(id)arg4;
-- (void)addValue:(double)arg1 startDate:(double)arg2 endDate:(double)arg3 valuePerSecond:(double)arg4 seconds:(double)arg5 sourceId:(long long)arg6 sum:(double*)arg7 bucketLength:(double)arg8 bucketStartTime:(double)arg9 bucketEndTime:(double)arg10;
-- (void)advanceBucket;
-- (double)advanceUntilInterval:(long long)arg1;
-- (unsigned int)bucketIndex;
-- (id)bucketPeriods;
-- (unsigned int)currPeriod;
+- (void)addValue:(double)arg1 startTime:(double)arg2 endTime:(double)arg3 sourceID:(long long)arg4;
+- (BOOL)advanceBucket;
 - (long long)currentAligned;
-- (id)daemon;
 - (unsigned int)dataCount;
 - (id)description;
-- (BOOL)detailBySource;
 - (id)futureBuckets;
 - (id)futureCounts;
 - (id)futureIntervals;
 - (BOOL)hasData;
-- (BOOL)hasFutureBuckets;
-- (id)initWithDaemon:(id)arg1 orderedSourceIds:(id)arg2 bucketPeriods:(id)arg3 mergeStrategy:(unsigned int)arg4;
+- (id)initWithBucketBoundaries:(id)arg1 orderedSourceIds:(id)arg2 mergeStrategy:(unsigned int)arg3;
 - (BOOL)lastBucket;
 - (id)lastIntervalInfo;
 - (unsigned int)mergeStrategy;
-- (double)mergedSum;
 - (id)orderedSourceIds;
-- (void)setBucketIndex:(unsigned int)arg1;
-- (void)setBucketPeriods:(id)arg1;
-- (void)setCurrPeriod:(unsigned int)arg1;
+- (void)resumeWithValue:(double)arg1 sumsBySource:(id)arg2 lastIntervalInfo:(id)arg3 dataCount:(unsigned int)arg4;
 - (void)setCurrentAligned:(long long)arg1;
-- (void)setDaemon:(id)arg1;
 - (void)setDataCount:(unsigned int)arg1;
-- (void)setDetailBySource:(BOOL)arg1;
 - (void)setFutureBuckets:(id)arg1;
 - (void)setFutureCounts:(id)arg1;
 - (void)setFutureIntervals:(id)arg1;
 - (void)setLastBucket:(BOOL)arg1;
 - (void)setMergeStrategy:(unsigned int)arg1;
 - (void)setOrderedSourceIds:(id)arg1;
-- (void)splitValue:(double)arg1 perSecond:(double)arg2 sourceId:(long long)arg3 sampleInfo:(struct { double x1; double x2; long long x3; long long x4; double x5; })arg4 sampleEndTime:(double)arg5;
 - (id)sumsBySource;
 
 @end

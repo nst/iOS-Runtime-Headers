@@ -14,6 +14,8 @@
 - (void)_handleFailedXPCMessageWithName:(id)arg1 userInfo:(id)arg2;
 - (void)_resendFailedXPCMessages;
 - (void)dealloc;
+- (void)disableLogMsgInstrumentation;
+- (void)enableLogMsgInstrumentation;
 - (void)flushLogs;
 - (id)init;
 - (void)queueLogMessage:(id)arg1;

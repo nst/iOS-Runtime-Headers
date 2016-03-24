@@ -13,6 +13,7 @@
     int _repeatMode;
     BOOL _seeking;
     int _shuffleMode;
+    NSArray *_storeIDs;
     BOOL _useApplicationSpecificQueue;
     BOOL _videoPlaybackEnabled;
 }
@@ -27,6 +28,7 @@
 @property (nonatomic) int repeatMode;
 @property (nonatomic) BOOL seeking;
 @property (nonatomic) int shuffleMode;
+@property (nonatomic, copy) NSArray *storeIDs;
 @property (nonatomic) BOOL useApplicationSpecificQueue;
 @property (nonatomic) BOOL videoPlaybackEnabled;
 
@@ -50,9 +52,11 @@
 - (void)setRepeatMode:(int)arg1;
 - (void)setSeeking:(BOOL)arg1;
 - (void)setShuffleMode:(int)arg1;
+- (void)setStoreIDs:(id)arg1;
 - (void)setUseApplicationSpecificQueue:(BOOL)arg1;
 - (void)setVideoPlaybackEnabled:(BOOL)arg1;
 - (int)shuffleMode;
+- (id)storeIDs;
 - (BOOL)useApplicationSpecificQueue;
 - (BOOL)videoPlaybackEnabled;
 

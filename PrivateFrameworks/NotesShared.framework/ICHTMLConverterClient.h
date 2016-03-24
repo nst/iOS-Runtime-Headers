@@ -14,7 +14,7 @@
 + (id)sharedClient;
 
 - (void).cxx_destruct;
-- (void)attributedStringFromHTMLString:(id)arg1 timeoutDate:(id)arg2 completionBlock:(id /* block */)arg3;
+- (void)attributedStringFromHTMLString:(id)arg1 baseURL:(id)arg2 timeoutDate:(id)arg3 completionBlock:(id /* block */)arg4;
 - (void)dealloc;
 - (id)init;
 - (unsigned int)requestCount;

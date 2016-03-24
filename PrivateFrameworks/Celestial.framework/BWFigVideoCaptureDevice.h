@@ -269,7 +269,6 @@
 - (void)captureStillImageBracketNow:(int)arg1 bracketSettings:(id)arg2;
 - (void)captureStillImageNow;
 - (void)captureStillImageWithFlashNow;
-- (void)checkRestrictionsAndTCCAccess;
 - (int)clientRetainedBufferCountHint;
 - (struct OpaqueCMClock { }*)clock;
 - (void)dealloc;

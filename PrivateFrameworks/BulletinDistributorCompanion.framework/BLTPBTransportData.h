@@ -26,7 +26,10 @@
 @property (nonatomic, retain) NSData *sessionIdentifier;
 @property (nonatomic) unsigned int sessionState;
 
++ (id)transportDataWithSequenceNumberManager:(id)arg1;
+
 - (void).cxx_destruct;
+- (unsigned int)backwardsCompatibleSessionState;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (id)description;
@@ -45,12 +48,14 @@
 - (unsigned long long)sequenceNumber;
 - (id)sessionIdentifier;
 - (unsigned int)sessionState;
+- (id)sessionUUID;
 - (void)setHasIsInitialSequenceNumber:(BOOL)arg1;
 - (void)setHasSequenceNumber:(BOOL)arg1;
 - (void)setHasSessionState:(BOOL)arg1;
 - (void)setIsInitialSequenceNumber:(BOOL)arg1;
 - (void)setMd5:(id)arg1;
 - (void)setSequenceNumber:(unsigned long long)arg1;
+- (int)setSequenceNumberOnManager:(id)arg1;
 - (void)setSessionIdentifier:(id)arg1;
 - (void)setSessionState:(unsigned int)arg1;
 - (void)writeTo:(id)arg1;

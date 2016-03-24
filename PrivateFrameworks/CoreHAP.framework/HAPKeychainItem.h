@@ -6,23 +6,27 @@
     NSString *_accessGroup;
     NSString *_account;
     NSData *_genericData;
+    BOOL _invisible;
     NSString *_itemDescription;
     NSString *_label;
     void *_platformReference;
     BOOL _syncable;
     NSNumber *_type;
     NSData *_valueData;
+    NSString *_viewHint;
 }
 
 @property (nonatomic, retain) NSString *accessGroup;
 @property (nonatomic, retain) NSString *account;
 @property (nonatomic, retain) NSData *genericData;
+@property (getter=isInvisible, nonatomic, readonly) BOOL invisible;
 @property (nonatomic, retain) NSString *itemDescription;
 @property (nonatomic, retain) NSString *label;
 @property (nonatomic) void*platformReference;
 @property (getter=isSyncable, nonatomic) BOOL syncable;
 @property (nonatomic, retain) NSNumber *type;
 @property (nonatomic, retain) NSData *valueData;
+@property (nonatomic, retain) NSString *viewHint;
 
 - (void).cxx_destruct;
 - (id)accessGroup;
@@ -30,6 +34,7 @@
 - (void)dealloc;
 - (id)genericData;
 - (id)initWithQueryResult:(struct __CFDictionary { }*)arg1 shouldIncludeData:(BOOL)arg2;
+- (BOOL)isInvisible;
 - (BOOL)isSyncable;
 - (id)itemDescription;
 - (id)label;
@@ -43,7 +48,9 @@
 - (void)setSyncable:(BOOL)arg1;
 - (void)setType:(id)arg1;
 - (void)setValueData:(id)arg1;
+- (void)setViewHint:(id)arg1;
 - (id)type;
 - (id)valueData;
+- (id)viewHint;
 
 @end

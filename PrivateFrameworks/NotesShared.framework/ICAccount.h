@@ -13,6 +13,7 @@
 
 @property (nonatomic, retain) ICAccountProxy *accountProxy;
 @property (nonatomic) int accountType;
+@property (nonatomic, retain) NSData *cryptoVerifier;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, retain) ICFolder *defaultFolder;
 @property (readonly, copy) NSString *description;
@@ -56,7 +57,6 @@
 + (id)newAccountWithIdentifier:(id)arg1 type:(int)arg2 context:(id)arg3;
 + (id)newCloudObjectForRecord:(id)arg1;
 + (id)newLocalAccountInContext:(id)arg1;
-+ (id)recordType;
 + (id)standardFolderIdentifierWithPrefix:(id)arg1 accountIdentifier:(id)arg2 accountType:(int)arg3;
 
 - (void).cxx_destruct;
@@ -70,6 +70,7 @@
 - (int)compare:(id)arg1;
 - (unsigned int)countOfVisibleFolders;
 - (void)createStandardFolders;
+- (id)cryptoPassphraseVerifier;
 - (void)dealloc;
 - (id)defaultFolder;
 - (id)defaultFolderIdentifier;
@@ -90,6 +91,7 @@
 - (id)noteVisibilityTestingForSearchingAccount;
 - (void)noteWillBeDeletedOrUndeleted:(id)arg1;
 - (void)observeValueForKeyPath:(id)arg1 ofObject:(id)arg2 change:(id)arg3 context:(void*)arg4;
+- (id)passwordProtectedNotes;
 - (id)predicateForFolders;
 - (id)predicateForNotesInAccount;
 - (id)predicateForSearchableAttachments;
@@ -100,6 +102,7 @@
 - (id)predicateForVisibleNotesIncludingTrash;
 - (void)prepareForDeletion;
 - (id)recordName;
+- (id)recordType;
 - (id)recordZoneID;
 - (void)removeAllObserversIfNecessary;
 - (void)removeTrashObserversIfNecessary;

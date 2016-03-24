@@ -2,7 +2,7 @@
    Image: /System/Library/Frameworks/Foundation.framework/Foundation
  */
 
-@interface NSString : NSObject <CKDParsedObject, CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CSCoderEncoder, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable>
+@interface NSString : NSObject <CKDParsedObject, CKRecordValue, CKShortDescription, CNKeyDescriptor_Private, CSCoderEncoder, NSCopying, NSMutableCopying, NSSecureCoding, PASerializable, PQLValuable, SBFFileCacheFileIdentifier>
 
 @property (nonatomic, readonly) NSData *_FTDataFromBase64String;
 @property (nonatomic, readonly) NSData *_FTDataFromHexString;
@@ -282,6 +282,7 @@
 // Image: /System/Library/Frameworks/CloudKit.framework/CloudKit
 
 - (id)CKMangledDocumentNameForURLFragment;
+- (id)CKNilIfLengthZero;
 - (id)CKSHA256;
 - (id)CKSafeHashStringForPathComponent;
 - (id)CKSafeStringForPathComponent;
@@ -352,6 +353,7 @@
 + (id)_mapkit_formattedStringForFloatingPointNumber:(id)arg1;
 + (id)_mapkit_formattedStringForHourRanges:(id)arg1 timeZone:(id)arg2;
 + (id)_mapkit_formattedStringForInteger:(int)arg1;
++ (id)_mapkit_languageDirectionStringWithFormat:(id)arg1;
 + (id)_mapkit_localizedDistanceStringWithMeters:(unsigned int)arg1 includeTrip:(BOOL)arg2 abbreviated:(BOOL)arg3;
 + (id)_mapkit_stringForExpectedTravelTime:(double)arg1;
 + (id)_mapkit_voiceOverLocalizedDistanceStringWithMeters:(unsigned int)arg1 includeTrip:(BOOL)arg2;
@@ -548,6 +550,8 @@
 
 - (id)_af_stringByRemovingPrefixWithLength:(unsigned int)arg1;
 - (id)_af_stringByRemovingSuffix:(id)arg1;
+- (BOOL)_afpreferences_isLanguageCodePrefix;
+- (id)_afpreferences_languageCodePrefix;
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
@@ -656,6 +660,7 @@
 // Image: /System/Library/PrivateFrameworks/CloudDocs.framework/CloudDocs
 
 + (id)brc_emptyFilenameAlternativeName;
++ (id)brc_pathForDirectory:(unsigned int)arg1;
 + (id)brc_pathWithDeviceID:(int)arg1 fileID:(unsigned long long)arg2;
 + (id)brc_pathWithFileSystemRepresentation:(const char *)arg1;
 + (id)brc_representableHFSFileNameWithBase:(id)arg1 suffix:(id)arg2 extension:(id)arg3 makeDotFile:(BOOL)arg4;
@@ -673,6 +678,7 @@
 - (BOOL)brc_nameIsRepresentableOnHFS;
 - (id)brc_pathExtension;
 - (id)brc_pathOfPackageRoot;
+- (id)brc_pathRelativeToDirectory:(unsigned int)arg1;
 - (id)brc_pathRelativeToPackageRoot;
 - (id)brc_pathRelativeToPath:(id)arg1;
 - (id)brc_realpath;
@@ -816,15 +822,6 @@
 - (id)da_trimWhiteSpace;
 - (id)stringByURLQuoting;
 
-// Image: /System/Library/PrivateFrameworks/ETPeople.framework/ETPeople
-
-- (id)etMessageCanonicalRawAddress;
-- (int)etMessageDestinationType;
-- (id)etMessageIDSIdentifier;
-- (BOOL)etMessageIsIDSIdentifier;
-- (BOOL)etMessageIsRawAddress;
-- (id)etMessageRawAddress;
-
 // Image: /System/Library/PrivateFrameworks/FMCore.framework/FMCore
 
 - (id)decodeFromPercentEscape;
@@ -832,6 +829,7 @@
 - (id)encodeToPercentEscape;
 - (BOOL)isNumeric;
 - (id)legacyAllowedCharacterSet;
+- (id)wifiToWLAN;
 
 // Image: /System/Library/PrivateFrameworks/FTServices.framework/FTServices
 
@@ -842,6 +840,15 @@
 
 - (id)FU_uppercaseString;
 - (id)localizedTerminalOrGateID;
+
+// Image: /System/Library/PrivateFrameworks/FriendKit.framework/FriendKit
+
+- (id)fkMessageCanonicalRawAddress;
+- (int)fkMessageDestinationType;
+- (id)fkMessageIDSIdentifier;
+- (BOOL)fkMessageIsIDSIdentifier;
+- (BOOL)fkMessageIsRawAddress;
+- (id)fkMessageRawAddress;
 
 // Image: /System/Library/PrivateFrameworks/FrontBoard.framework/FrontBoard
 
@@ -896,7 +903,7 @@
 
 - (int)hd_compareBuildVersionWithString:(id)arg1;
 
-// Image: /System/Library/PrivateFrameworks/HealthKitUI.framework/HealthKitUI
+// Image: /System/Library/PrivateFrameworks/HealthUI.framework/HealthUI
 
 + (id)hk_deviceClassLocalizedStringForKey:(id)arg1;
 
@@ -1426,6 +1433,10 @@
 
 - (int)compareNumerically:(id)arg1;
 
+// Image: /System/Library/PrivateFrameworks/SpringBoardFoundation.framework/SpringBoardFoundation
+
+- (id)fileCacheStableDataRepresentation;
+
 // Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
 
 + (id)sbs_stringFromCGRect:(struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })arg1;
@@ -1436,6 +1447,10 @@
 
 - (BOOL)isNewline;
 - (BOOL)isSingleCharacterAndMemberOfSet:(id)arg1;
+
+// Image: /System/Library/PrivateFrameworks/TelephonyRPC.framework/TelephonyRPC
+
+- (id)nph_localizedUppercaseString;
 
 // Image: /System/Library/PrivateFrameworks/TelephonyUtilities.framework/TelephonyUtilities
 
@@ -1491,6 +1506,7 @@
 - (id)_firstGrapheme;
 - (unsigned long)_firstLongCharacter;
 - (unsigned int)_graphemeCount;
+- (unsigned int)_indexFromStartingIndex:(unsigned int)arg1 byIncrementingComposedCharacterSequenceCount:(unsigned int)arg2;
 - (BOOL)_isDelete;
 - (BOOL)_isIdeographicGlyphs;
 - (BOOL)_isLeftAssociative;
@@ -1709,6 +1725,10 @@
 - (id)_ICSStringForParameterValue;
 - (id)_ICSStringForProperyValue;
 - (void)_ICSStringWithOptions:(unsigned int)arg1 appendingToString:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/iCloudQuota.framework/iCloudQuota
+
+- (id)stringWithNonBreakingSpaces;
 
 // Image: /System/Library/PrivateFrameworks/iTunesStore.framework/iTunesStore
 

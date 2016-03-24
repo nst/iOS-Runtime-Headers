@@ -12,9 +12,11 @@
 - (void)dealloc;
 - (long)executeDatabaseBlock:(id /* block */)arg1;
 - (id)init;
+- (BOOL)isAssetBlacklisted:(id)arg1 blacklistDate:(id*)arg2;
 - (long)openDatabase;
 - (id)queryAnalysisForAsset:(id)arg1;
 - (id)queryAssetsAnalyzedSince:(id)arg1;
+- (id)queryFeatureVectorResultForAsset:(id)arg1;
 - (long)queryHeaderForAsset:(id)arg1 analysis:(id*)arg2 assetId:(long long*)arg3;
 - (long)queryResultsForAssetId:(long long)arg1 analysis:(id)arg2;
 

@@ -16,6 +16,7 @@
 
 - (void).cxx_destruct;
 - (id)bundleIdentifier;
+- (id)description;
 - (id)displayName;
 - (double)roamingBytesUsed;
 - (void)setBundleIdentifier:(id)arg1;

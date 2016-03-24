@@ -4,6 +4,7 @@
 
 @interface AVFullScreenViewController : UIViewController
 
+- (int)_preferredWhitePointAdaptivityStyle;
 - (void)dealloc;
 - (id)initWithNibName:(id)arg1 bundle:(id)arg2;
 - (BOOL)modalPresentationCapturesStatusBarAppearance;

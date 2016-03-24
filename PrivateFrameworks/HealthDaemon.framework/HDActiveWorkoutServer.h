@@ -3,7 +3,6 @@
  */
 
 @interface HDActiveWorkoutServer : NSObject <HDDataObserver, HDDatabaseProtectedDataObserver, _HKActiveWorkoutServer, _HKWorkoutSessionDelegate> {
-    <_HKActiveWorkoutClient> *_client;
     <NSXPCProxyCreating> *_clientServer;
     _HKActiveWorkoutServerConfiguration *_configuration;
     NSMutableDictionary *_currentAnchors;
@@ -23,15 +22,17 @@
     NSUUID *_workoutSessionUUID;
 }
 
-@property (nonatomic, readonly) <_HKActiveWorkoutClient> *client;
+@property (readonly) int activeWorkoutState;
 @property (nonatomic, readonly) <NSXPCProxyCreating> *clientServer;
 @property (nonatomic, retain) NSMutableDictionary *currentAnchors;
+@property (readonly) NSArray *currentWorkoutEvents;
 @property (nonatomic, readonly) <HDHealthDaemon> *daemon;
 @property (readonly, copy) NSString *debugDescription;
 @property (nonatomic, readonly) <HDActiveWorkoutServerDelegate> *delegate;
 @property (readonly, copy) NSString *description;
 @property (nonatomic, readonly) HKQuantityType *distanceType;
 @property (readonly) unsigned int hash;
+@property (readonly) BOOL isActivated;
 @property (readonly) HKSource *localDeviceSource;
 @property (nonatomic, retain) NSSet *observedTypes;
 @property (nonatomic, retain) NSObject<OS_dispatch_queue> *observerQueue;
@@ -40,8 +41,10 @@
 @property (nonatomic, retain) NSMutableDictionary *resumeDataByType;
 @property (nonatomic, readonly) HDServer *server;
 @property (nonatomic) int serverState;
+@property (readonly) NSDate *startDate;
 @property int state;
 @property (readonly) Class superclass;
+@property (readonly) unsigned int workoutActivityType;
 @property (nonatomic, retain) NSMutableArray *workoutEvents;
 @property (nonatomic, readonly) NSUUID *workoutUUID;
 
@@ -75,10 +78,11 @@
 - (void)_updateClientTotalsWithQuantities:(id)arg1 resumeData:(id)arg2 UUIDs:(id)arg3;
 - (unsigned int)_workoutActivityType;
 - (void)activateWorkoutWithCompletion:(id /* block */)arg1;
-- (id)client;
+- (int)activeWorkoutState;
 - (id)clientServer;
 - (id)clientWithErrorHandler:(id /* block */)arg1;
 - (id)currentAnchors;
+- (id)currentWorkoutEvents;
 - (id)daemon;
 - (void)database:(id)arg1 protectedDataDidBecomeAvailable:(BOOL)arg2;
 - (void)deactivate;
@@ -89,6 +93,7 @@
 - (id)distanceType;
 - (void)endWorkoutWithEndDate:(id)arg1 completion:(id /* block */)arg2;
 - (id)initWithClient:(id)arg1 workoutConfiguration:(id)arg2 daemon:(id)arg3 server:(id)arg4 delegate:(id)arg5;
+- (BOOL)isActivated;
 - (id)localDeviceSource;
 - (id)observedTypes;
 - (id)observerQueue;
@@ -111,7 +116,9 @@
 - (void)setServerState:(int)arg1;
 - (void)setState:(int)arg1;
 - (void)setWorkoutEvents:(id)arg1;
+- (id)startDate;
 - (int)state;
+- (unsigned int)workoutActivityType;
 - (id)workoutEvents;
 - (void)workoutSession:(id)arg1 didChangeToState:(int)arg2 fromState:(int)arg3 date:(id)arg4;
 - (void)workoutSession:(id)arg1 didFailWithError:(id)arg2;

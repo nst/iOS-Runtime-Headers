@@ -11,6 +11,7 @@
     BOOL _nonCatalogSBEnabled;
     unsigned int _nonCatalogSourceType;
     unsigned long long _nonCatalogStoreAccountID;
+    NSString *_nonCatalogStoreFrontID;
     SSVPlayActivityController *_playActivityController;
     BOOL _shouldReportAggregateTimePlayActivityEvents;
     BOOL _shouldReportPlayActivityEvents;
@@ -22,7 +23,7 @@
 
 - (void).cxx_destruct;
 - (void)_applicationWillTerminateNotification:(id)arg1;
-- (id)_captureNonCatalogAggregatePlayActivityEvent;
+- (id)_captureNonCatalogAggregatePlayActivityEventWithNonCatalogAggregateEndTime:(double)arg1;
 - (void)_clearNonCatalogAggregatePlayActivityEventData;
 - (void)_recordReportingEvents:(id)arg1;
 - (void)acquirePendingPlayActivityEventsForStoreAccountID:(unsigned long long)arg1 completionHandler:(id /* block */)arg2;

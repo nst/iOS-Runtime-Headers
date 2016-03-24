@@ -4,7 +4,6 @@
 
 @interface ICCloudContext : NSObject {
     <ICCloudContextDelegate> *_cloudContextDelegate;
-    NSDictionary *_cloudObjectClassesByRecordType;
     NSMutableSet *_cloudObjectsToProcess;
     NSMutableSet *_cloudObjectsToRetry;
     CKContainer *_container;
@@ -67,12 +66,15 @@
 
 - (void).cxx_destruct;
 - (int)accountStatus;
+- (void)addCallbackBlocksToDeleteRecordsOperation:(id)arg1 recordIDsToDelete:(id)arg2 cloudObjects:(id)arg3 completionHandler:(id /* block */)arg4;
+- (void)addCallbackBlocksToPushRecordsOperation:(id)arg1 recordsToSave:(id)arg2 cloudObjectsByRecordID:(id)arg3 completionHandler:(id /* block */)arg4;
 - (void)addDependenciesForModifyRecordsOperation:(id)arg1;
 - (void)addProcessObjectsOperationWithName:(id)arg1 block:(id /* block */)arg2;
 - (id)allCloudObjects;
 - (id)allZoneIDs;
 - (BOOL)canRetryImmediatelyAfterError:(id)arg1;
 - (void)cancelEverythingWithCompletionHandler:(id /* block */)arg1;
+- (void)checkForLongLivedOperations;
 - (void)clearPendingActivity;
 - (id)cloudContextDelegate;
 - (id)cloudObjectClassesByRecordType;

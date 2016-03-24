@@ -192,9 +192,10 @@
 - (id)numberForKey:(id)arg1;
 - (id)predicateFromDataForKey:(id)arg1;
 - (id)regionFromDataForKey:(id)arg1;
+- (id)secureDescriptionWithBlacklistKeys:(id)arg1;
+- (id)secureDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2 blacklistedKeys:(id)arg3;
 - (id)setForKey:(id)arg1;
 - (id)shortDescription;
-- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
 - (id)stringForKey:(id)arg1;
 - (id)timeZoneForKey:(id)arg1;
 - (id)timeZoneFromDataForKey:(id)arg1;
@@ -265,6 +266,7 @@
 
 // Image: /System/Library/PrivateFrameworks/AirTrafficDevice.framework/AirTrafficDevice
 
+- (id)devicePairingId;
 - (id)displayName;
 - (id)enabledDataClasses;
 - (id)grappaInfo;
@@ -272,7 +274,9 @@
 - (unsigned long long)lastServerRevision;
 - (id)model;
 - (unsigned long long)newRevision;
+- (id)osType;
 - (id)osVersion;
+- (void)setDevicePairingId:(id)arg1;
 - (void)setDisplayName:(id)arg1;
 - (void)setEnabledDataClasses:(id)arg1;
 - (void)setGrappaInfo:(id)arg1;
@@ -280,6 +284,7 @@
 - (void)setLastServerRevision:(unsigned long long)arg1;
 - (void)setModel:(id)arg1;
 - (void)setNewRevision:(unsigned long long)arg1;
+- (void)setOsType:(id)arg1;
 - (void)setOsVersion:(id)arg1;
 - (void)setVersionToken:(id)arg1;
 - (id)versionToken;
@@ -290,8 +295,15 @@
 
 // Image: /System/Library/PrivateFrameworks/BaseBoard.framework/BaseBoard
 
+- (BOOL)bs_boolForKey:(id)arg1;
+- (id)bs_dictionaryByAddingEntriesFromDictionary:(id)arg1;
 - (void)bs_eachValue:(id /* block */)arg1;
 - (id)bs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
+
+// Image: /System/Library/PrivateFrameworks/BulletinBoard.framework/BulletinBoard
+
+- (BOOL)bb_boolForKey:(id)arg1;
+- (int)bb_integerForKey:(id)arg1;
 
 // Image: /System/Library/PrivateFrameworks/CalDAV.framework/CalDAV
 
@@ -307,6 +319,11 @@
 // Image: /System/Library/PrivateFrameworks/CameraUI.framework/CameraUI
 
 - (BOOL)cam_compareKey:(id)arg1 withDictionary:(id)arg2;
+
+// Image: /System/Library/PrivateFrameworks/Catalyst.framework/Catalyst
+
+- (id)cat_calculateAddedObjects;
+- (id)cat_calculateRemovedObjects;
 
 // Image: /System/Library/PrivateFrameworks/Celestial.framework/Celestial
 
@@ -375,9 +392,10 @@
 - (id)nullForKey:(id)arg1;
 - (id)numberForKey:(id)arg1;
 - (id)predicateFromDataForKey:(id)arg1;
+- (id)secureDescriptionWithBlacklistKeys:(id)arg1;
+- (id)secureDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2 blacklistedKeys:(id)arg3;
 - (id)setForKey:(id)arg1;
 - (id)shortDescription;
-- (id)shortDescriptionWithIndent:(id)arg1 newLine:(BOOL)arg2;
 - (id)stringForKey:(id)arg1;
 - (id)timeZoneForKey:(id)arg1;
 - (id)timeZoneFromDataForKey:(id)arg1;
@@ -498,6 +516,11 @@
 - (id)MCRetainOptionalObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 invalidDataCode:(int)arg4 invalidDataErrorString:(id)arg5 outError:(id*)arg6;
 - (id)MCRetainRequiredNonZeroLengthStringKey:(id)arg1 errorDomain:(id)arg2 missingDataCode:(int)arg3 missingDataErrorString:(id)arg4 invalidDataCode:(int)arg5 invalidDataErrorString:(id)arg6 outError:(id*)arg7;
 - (id)MCRetainRequiredObjectKey:(id)arg1 type:(Class)arg2 errorDomain:(id)arg3 missingDataCode:(int)arg4 missingDataErrorString:(id)arg5 invalidDataCode:(int)arg6 invalidDataErrorString:(id)arg7 outError:(id*)arg8;
+- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2;
+- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
+- (BOOL)MCSCWriteToFile:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
+- (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 error:(id*)arg3;
+- (BOOL)MCSCWriteToURL:(id)arg1 atomically:(BOOL)arg2 mode:(unsigned short)arg3 error:(id*)arg4;
 
 // Image: /System/Library/PrivateFrameworks/MediaRemote.framework/MediaRemote
 
@@ -660,11 +683,6 @@
 
 - (id)safeObjectForKey:(id)arg1 ofClass:(Class)arg2;
 
-// Image: /System/Library/PrivateFrameworks/SpringBoardServices.framework/SpringBoardServices
-
-- (id)sbs_dictionaryByAddingEntriesFromDictionary:(id)arg1;
-- (id)sbs_safeObjectForKey:(id)arg1 ofType:(Class)arg2;
-
 // Image: /System/Library/PrivateFrameworks/Stocks.framework/Stocks
 
 - (id)objectForKey:(id)arg1 ofClass:(Class)arg2;
@@ -683,8 +701,11 @@
 - (id)dateModified;
 - (BOOL)degraded;
 - (unsigned int)flags;
+- (id)initWithImageURL:(id)arg1;
 - (double)quality;
 - (id)results;
+- (float)scaledExposureTime;
+- (struct { long long x1; int x2; unsigned int x3; long long x4; })syncPoint;
 - (struct { struct { long long x_1_1_1; int x_1_1_2; unsigned int x_1_1_3; long long x_1_1_4; } x1; struct { long long x_2_1_1; int x_2_1_2; unsigned int x_2_1_3; long long x_2_1_4; } x2; })timerange;
 - (unsigned int)types;
 - (int)version;

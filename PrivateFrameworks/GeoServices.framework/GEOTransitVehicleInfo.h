@@ -4,7 +4,11 @@
 
 @interface GEOTransitVehicleInfo : PBCodable <NSCopying> {
     GEOTransitVehicleTime *_arrivalTime;
-    GEOTransitClusterInfo *_clusterInfo;
+    struct { 
+        unsigned int *list; 
+        unsigned int count; 
+        unsigned int size; 
+    } _clusteredRouteLineArtworkIndexs;
     unsigned int _departureFrequencyMax;
     unsigned int _departureFrequencyMin;
     GEOTransitVehicleTime *_departureTime;
@@ -24,12 +28,12 @@
 }
 
 @property (nonatomic, retain) GEOTransitVehicleTime *arrivalTime;
-@property (nonatomic, retain) GEOTransitClusterInfo *clusterInfo;
+@property (nonatomic, readonly) unsigned int*clusteredRouteLineArtworkIndexs;
+@property (nonatomic, readonly) unsigned int clusteredRouteLineArtworkIndexsCount;
 @property (nonatomic) unsigned int departureFrequencyMax;
 @property (nonatomic) unsigned int departureFrequencyMin;
 @property (nonatomic, retain) GEOTransitVehicleTime *departureTime;
 @property (nonatomic, readonly) BOOL hasArrivalTime;
-@property (nonatomic, readonly) BOOL hasClusterInfo;
 @property (nonatomic) BOOL hasDepartureFrequencyMax;
 @property (nonatomic) BOOL hasDepartureFrequencyMin;
 @property (nonatomic, readonly) BOOL hasDepartureTime;
@@ -44,8 +48,12 @@
 @property (nonatomic) unsigned long long tripMuid;
 @property (nonatomic, retain) NSString *vehicleNumber;
 
+- (void)addClusteredRouteLineArtworkIndex:(unsigned int)arg1;
 - (id)arrivalTime;
-- (id)clusterInfo;
+- (void)clearClusteredRouteLineArtworkIndexs;
+- (unsigned int)clusteredRouteLineArtworkIndexAtIndex:(unsigned int)arg1;
+- (unsigned int*)clusteredRouteLineArtworkIndexs;
+- (unsigned int)clusteredRouteLineArtworkIndexsCount;
 - (void)copyTo:(id)arg1;
 - (id)copyWithZone:(struct _NSZone { }*)arg1;
 - (void)dealloc;
@@ -55,7 +63,6 @@
 - (id)description;
 - (id)dictionaryRepresentation;
 - (BOOL)hasArrivalTime;
-- (BOOL)hasClusterInfo;
 - (BOOL)hasDepartureFrequencyMax;
 - (BOOL)hasDepartureFrequencyMin;
 - (BOOL)hasDepartureTime;
@@ -72,7 +79,7 @@
 - (BOOL)readFrom:(id)arg1;
 - (unsigned int)routeLineArtworkIndex;
 - (void)setArrivalTime:(id)arg1;
-- (void)setClusterInfo:(id)arg1;
+- (void)setClusteredRouteLineArtworkIndexs:(unsigned int*)arg1 count:(unsigned int)arg2;
 - (void)setDepartureFrequencyMax:(unsigned int)arg1;
 - (void)setDepartureFrequencyMin:(unsigned int)arg1;
 - (void)setDepartureTime:(id)arg1;

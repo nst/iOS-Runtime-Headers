@@ -20,9 +20,6 @@
 @property (nonatomic) float paragraphSpacingBefore;
 @property (nonatomic, copy) NSArray *tabStops;
 @property (nonatomic) float tailIndent;
-@property float tighteningFactorForTruncation;
-
-// Image: /System/Library/PrivateFrameworks/UIFoundation.framework/UIFoundation
 
 - (void)_mutateTabStops;
 - (void)_setLineBoundsOptions:(unsigned long)arg1;
@@ -53,11 +50,5 @@
 - (void)setTextLists:(id)arg1;
 - (void)setTighteningFactorForTruncation:(float)arg1;
 - (void)setUsesOpticalAlignment:(BOOL)arg1;
-
-// Image: /System/Library/PrivateFrameworks/FitnessUI.framework/FitnessUI
-
-+ (id)_fiui_mutableParagraphStyleWithDynamicTracking;
-
-- (void)_fiui_addDynamicTracking;
 
 @end

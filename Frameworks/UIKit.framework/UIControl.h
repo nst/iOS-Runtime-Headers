@@ -39,16 +39,27 @@
 
 // Image: /System/Library/Frameworks/UIKit.framework/UIKit
 
++ (BOOL)_allowActionsToQueue;
+
 - (void).cxx_destruct;
+- (id)__distributionStatisticsForUserInteractionDuration;
+- (id)__scalarStatisticsForUserTouchUpInsideEvent;
+- (id)__scalarStatisticsForUserValueChangedEvent;
+- (void)_beginInteractionDurationStatisticMeasurements;
 - (void)_cancelDelayedActions;
 - (struct CGRect { struct CGPoint { float x_1_1_1; float x_1_1_2; } x1; struct CGSize { float x_2_1_1; float x_2_1_2; } x2; })_clippedHighlightBounds;
+- (void)_commitInteractionDurationStatisticMeasurements;
 - (void)_connectInterfaceBuilderEventConnection:(id)arg1;
 - (unsigned int)_controlEventsForActionTriggered;
 - (void)_delayActions;
 - (void)_didMoveFromWindow:(id)arg1 toWindow:(id)arg2;
+- (id)_distributionStatisticsForUserInteractionDuration;
 - (int)_focusedSound;
 - (BOOL)_hasActionForEventMask:(unsigned int)arg1;
 - (float)_highlightCornerRadius;
+- (void)_incrementStatisticsForUserActionForEvents:(unsigned int)arg1;
+- (id)_scalarStatisticsForUserTouchUpInsideEvent;
+- (id)_scalarStatisticsForUserValueChangedEvent;
 - (void)_sendActionsForEvents:(unsigned int)arg1 withEvent:(id)arg2;
 - (void)_sendDelayedActions;
 - (void)_sendDelayedActions:(BOOL)arg1;

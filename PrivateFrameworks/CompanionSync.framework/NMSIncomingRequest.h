@@ -2,7 +2,7 @@
    Image: /System/Library/PrivateFrameworks/CompanionSync.framework/CompanionSync
  */
 
-@interface NMSIncomingRequest : NSObject <NMSObfuscatableDescriptionProviding> {
+@interface NMSIncomingRequest : NSObject <NMSDeviceSourced, NMSObfuscatableDescriptionProviding> {
     NSData *_data;
     BOOL _expectsResponse;
     NSString *_idsIdentifier;
@@ -11,6 +11,7 @@
     id _pbRequest;
     unsigned int _priority;
     NMSOutgoingResponse *_response;
+    NSString *sourceDeviceID;
 }
 
 @property (nonatomic, retain) NSData *data;
@@ -24,6 +25,7 @@
 @property (nonatomic, retain) id pbRequest;
 @property (nonatomic) unsigned int priority;
 @property (nonatomic, retain) NMSOutgoingResponse *response;
+@property (nonatomic, retain) NSString *sourceDeviceID;
 @property (readonly) Class superclass;
 
 + (BOOL)allowsUnrepliedRequestsForUnitTesting;
@@ -51,5 +53,7 @@
 - (void)setPbRequest:(id)arg1;
 - (void)setPriority:(unsigned int)arg1;
 - (void)setResponse:(id)arg1;
+- (void)setSourceDeviceID:(id)arg1;
+- (id)sourceDeviceID;
 
 @end

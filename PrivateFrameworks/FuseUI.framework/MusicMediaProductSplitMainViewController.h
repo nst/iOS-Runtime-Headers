@@ -65,6 +65,7 @@
 - (id)_contextualActionsOverrideTracklistEntityProvider;
 - (id)_loadProductHeaderLockupContentDescriptor;
 - (id)_loadProductTracklistTableViewConfigurationWithTracklistEntityProvider:(id)arg1;
+- (void)_prepareToCommitEditingWithCompletionHandler:(id /* block */)arg1;
 - (id)_productAdditionalMetadataViewController;
 - (void)_reloadContainerEntityValueContextProperties;
 - (void)_reloadVerticalScrollingContainerItems;

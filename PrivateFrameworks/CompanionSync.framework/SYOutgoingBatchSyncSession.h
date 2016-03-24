@@ -9,6 +9,8 @@
     BOOL _canRestart;
     BOOL _canRollback;
     BOOL _cancelled;
+    _SYCountedSemaphore *_changeConcurrencySemaphore;
+    NSObject<OS_dispatch_queue> *_changeFetcherQueue;
     BOOL _errorIsLocal;
     BOOL _hasSentEnd;
     NSObject<OS_dispatch_source> *_sessionTimer;
@@ -21,7 +23,6 @@
 - (void)_fetchNextBatch;
 - (BOOL)_handleBatchAck:(id)arg1 error:(id*)arg2;
 - (BOOL)_handleBatchSyncEndResponse:(id)arg1 error:(id*)arg2;
-- (void)_handleError:(id)arg1;
 - (void)_installStateListener;
 - (void)_installTimers;
 - (void)_messageExpiredWithSeqno:(unsigned long long)arg1 identifier:(id)arg2;
@@ -36,6 +37,8 @@
 - (void)_sessionComplete;
 - (void)_setMessageTimerForSeqno:(unsigned long long)arg1;
 - (void)_setStateQuietly:(int)arg1;
+- (void)_setupChangeConcurrency;
+- (void)_waitForMessageWindow;
 - (BOOL)canRestart;
 - (BOOL)canRollback;
 - (void)cancel;

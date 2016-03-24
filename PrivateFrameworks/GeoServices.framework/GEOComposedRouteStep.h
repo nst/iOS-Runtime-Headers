@@ -28,6 +28,7 @@
 @property (nonatomic, readonly) GEOInstructionSet *instructions;
 @property (nonatomic, readonly) BOOL isArrivalStep;
 @property (nonatomic, readonly) BOOL isUncertainArrival;
+@property (nonatomic, readonly) GEOComposedRouteLeg *leg;
 @property (nonatomic, readonly) unsigned int maneuverEndPointIndex;
 @property (nonatomic, readonly) struct _NSRange { unsigned int x1; unsigned int x2; } maneuverPointRange;
 @property (nonatomic, readonly) unsigned int maneuverStartPointIndex;
@@ -59,7 +60,6 @@
 @property (nonatomic, readonly) GEOTransitStep *transitStep;
 @property (nonatomic, readonly) int transportType;
 
-- (id)_artworkFromDecoderData:(id)arg1 artworkIndices:(unsigned int*)arg2 artworkCount:(unsigned int)arg3;
 - (BOOL)_belongsToTransferGroup;
 - (id)composedRoute;
 - (void)dealloc;
@@ -79,6 +79,7 @@
 - (id)instructions;
 - (BOOL)isArrivalStep;
 - (BOOL)isUncertainArrival;
+- (id)leg;
 - (int)maneuver;
 - (unsigned int)maneuverEndPointIndex;
 - (struct _NSRange { unsigned int x1; unsigned int x2; })maneuverPointRange;

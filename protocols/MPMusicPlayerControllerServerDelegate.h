@@ -12,6 +12,7 @@
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 prepareQueueWithGeniusMixPlaylist:(MPMediaPlaylist *)arg2;
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 prepareQueueWithQuery:(MPMediaQuery *)arg2;
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 prepareQueueWithRadioStation:(MPRadioStation *)arg2;
+- (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 prepareQueueWithStoreIDs:(NSArray *)arg2;
 - (void)musicPlayerServer:(void *)arg1 registerForRepeatModeChangesWithChangeHandler:(void *)arg2; // needs 2 arg types, found 7: MPMusicPlayerControllerServer *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)musicPlayerServer:(void *)arg1 registerForShuffleModeChangesWithChangeHandler:(void *)arg2; // needs 2 arg types, found 7: MPMusicPlayerControllerServer *, id /* block */, /* Warning: Unrecognized filer type: '<' using 'void*' */ void*, void, id /* block */, int, void*
 - (void)musicPlayerServer:(MPMusicPlayerControllerServer *)arg1 setFirstItem:(MPMediaItem *)arg2;

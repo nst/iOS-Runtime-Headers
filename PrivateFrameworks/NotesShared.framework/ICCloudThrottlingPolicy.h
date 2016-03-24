@@ -15,9 +15,9 @@
 @property (nonatomic) unsigned int currentBatchCount;
 @property (nonatomic, readonly) ICCloudThrottlingLevel *currentLevel;
 @property (nonatomic) unsigned int currentLevelIndex;
-@property (nonatomic, retain) NSTimer *policyResetTimer;
-@property (nonatomic, retain) NSDate *policyStartDate;
-@property (nonatomic) double resetInterval;
+@property (retain) NSTimer *policyResetTimer;
+@property (retain) NSDate *policyStartDate;
+@property double resetInterval;
 @property (nonatomic, retain) NSArray *throttlingLevels;
 
 + (void)resetSavedPolicyState;

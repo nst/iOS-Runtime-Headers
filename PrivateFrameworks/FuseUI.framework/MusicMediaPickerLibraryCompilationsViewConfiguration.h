@@ -4,7 +4,9 @@
 
 @interface MusicMediaPickerLibraryCompilationsViewConfiguration : MusicMediaPickerLibraryAlbumsViewConfiguration
 
+- (BOOL)canPreviewEntityValueContext:(id)arg1;
 - (id)init;
 - (id)initWithFilterPredicate:(id)arg1 multipleSelectionAllowed:(BOOL)arg2 includeCompilations:(BOOL)arg3;
+- (id)previewViewControllerForEntityValueContext:(id)arg1 fromViewController:(id)arg2;
 
 @end

@@ -22,6 +22,7 @@
         BOOL respondsToBrowsingViewModel; 
         BOOL respondsToDidPresent; 
         BOOL respondsToDidFinish; 
+        BOOL respondsToIsReady; 
     } _delegateFlags;
 }
 
@@ -110,6 +111,7 @@
 - (void)photosSharingViewControllerWillCancel:(id)arg1 withAsset:(id)arg2;
 - (void)ppt_cancelActivity;
 - (void)ppt_dismissShareSheetWithCompletion:(id /* block */)arg1;
+- (void)ppt_presentPhotoEditor;
 - (void)ppt_presentShareSheetWithCompletion:(id /* block */)arg1;
 - (void)ppt_shareUsing:(id)arg1;
 - (void)ppt_tapNextButton:(id /* block */)arg1;
